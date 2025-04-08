@@ -138,6 +138,12 @@
     {
       "name": "base-colorB-inhand-right",
         "directions": 4
+    },
+    {
+      "name": "painpen"
+    },
+    {
+      "name": "painpen_empty"
     }
   ]
 }

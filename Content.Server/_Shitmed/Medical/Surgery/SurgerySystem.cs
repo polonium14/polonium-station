@@ -267,7 +267,7 @@ public sealed class SurgerySystem : SharedSurgerySystem
 
     private void OnStepScreamComplete(Entity<SurgeryStepEmoteEffectComponent> ent, ref SurgeryStepEvent args)
     {
-        if (HasComp<AnesthesiaComponent>(args.Body)) // DeltaV
+        if (HasComp<AnesthesiaComponent>(args.Body) || HasComp<NoScreamComponent>(args.Body))
             return;
 
         _chat.TryEmoteWithChat(args.Body, ent.Comp.Emote);

@@ -418,3 +418,8 @@ reagent-effect-guidebook-plant-seeds-remove =
         [1] Removes the
        *[other] remove the
     } seeds of the plant
+reagent-effect-guidebook-add-moodlet =
+    Modifies mood by {$amount}
+    { $timeout ->
+        [0] indefinitely
+        *[other] for {$timeout} seconds
