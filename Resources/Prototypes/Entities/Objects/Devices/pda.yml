@@ -220,6 +220,8 @@
         type: InstrumentBoundUserInterface
       enum.HealthAnalyzerUiKey.Key:
         type: HealthAnalyzerBoundUserInterface
+      enum.PlantAnalyzerUiKey.Key:
+        type: PlantAnalyzerBoundUserInterface
   - type: Tag
     tags:
     - DoorBumpOpener
@@ -1149,6 +1151,7 @@
       - NanoChatCartridge # DeltaV
       - SOSCartridge # Imp
       - WordleCartridge
+      - PlantScanCartridge # Mira Sector
 
 - type: entity
   parent: CentcomOfficialPDA
@@ -1179,6 +1182,7 @@
       - NanoChatCartridge # DeltaV
       - SOSCartridge # Imp
       - WordleCartridge
+      - PlantScanCartridge # Mira Sector
   - type: Tag #  Ignore Chameleon tags
     tags:
     - DoorBumpOpener
@@ -1332,6 +1336,7 @@
       - AstroNavCartridge
       - NanoChatCartridge # DeltaV
       - SOSCartridge # Imp
+      - PlantScanCartridge # Mira Sector
 
 - type: entity
   parent: ERTLeaderPDA

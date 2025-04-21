@@ -34,37 +34,41 @@
 //
 // SPDX-License-Identifier: MIT
 
+
+using System.Diagnostics.CodeAnalysis;
+using Content.Server.BaseAnalyzer;
 using Content.Server.Body.Components;
 using Content.Server.Medical.Components;
-using Content.Server.PowerCell;
 using Content.Server.Temperature.Components;
 using Content.Shared.Traits.Assorted;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Damage;
-using Content.Shared.DoAfter;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
+using Content.Shared.MedicalScanner;
+using Content.Shared.Mobs.Components;
+using Robust.Server.GameObjects;
+using Robust.Shared.Timing;
+using Content.Shared.DoAfter;
+using Content.Server.PowerCell;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Item.ItemToggle;
 using Content.Shared.Item.ItemToggle.Components;
-using Content.Shared.MedicalScanner;
-using Content.Shared.Mobs.Components;
 using Content.Shared.Popups;
-using Robust.Server.GameObjects;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
-using Robust.Shared.Timing;
+
+
 
 // Shitmed Change
 using Content.Shared.Body.Part;
 using Content.Shared.Body.Systems;
 using Content.Shared._Shitmed.Targeting;
 using System.Linq;
-using Content.Server.Traits.Assorted;
 
 namespace Content.Server.Medical;
 
-public sealed class HealthAnalyzerSystem : EntitySystem
+public sealed class HealthAnalyzerSystem : BaseAnalyzerSystem<HealthAnalyzerComponent, HealthAnalyzerDoAfterEvent>
 {
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly PowerCellSystem _cell = default!;
@@ -137,76 +141,6 @@ public sealed class HealthAnalyzerSystem : EntitySystem
         }
     }
 
-    /// <summary>
-    /// Trigger the doafter for scanning
-    /// </summary>
-    private void OnAfterInteract(Entity<HealthAnalyzerComponent> uid, ref AfterInteractEvent args)
-    {
-        if (args.Target == null || !args.CanReach || !HasComp<MobStateComponent>(args.Target) || !_cell.HasDrawCharge(uid, user: args.User))
-            return;
-
-        _audio.PlayPvs(uid.Comp.ScanningBeginSound, uid);
-
-        var doAfterCancelled = !_doAfterSystem.TryStartDoAfter(new DoAfterArgs(EntityManager, args.User, uid.Comp.ScanDelay, new HealthAnalyzerDoAfterEvent(), uid, target: args.Target, used: uid)
-        {
-            NeedHand = true,
-            BreakOnMove = true,
-        });
-
-        if (args.Target == args.User || doAfterCancelled || uid.Comp.Silent)
-            return;
-
-        var msg = Loc.GetString("health-analyzer-popup-scan-target", ("user", Identity.Entity(args.User, EntityManager)));
-        _popupSystem.PopupEntity(msg, args.Target.Value, args.Target.Value, PopupType.Medium);
-    }
-
-    private void OnDoAfter(Entity<HealthAnalyzerComponent> uid, ref HealthAnalyzerDoAfterEvent args)
-    {
-        if (args.Handled || args.Cancelled || args.Target == null || !_cell.HasDrawCharge(uid, user: args.User))
-            return;
-
-        if (!uid.Comp.Silent)
-            _audio.PlayPvs(uid.Comp.ScanningEndSound, uid);
-
-        OpenUserInterface(args.User, uid);
-        BeginAnalyzingEntity(uid, args.Target.Value);
-        args.Handled = true;
-    }
-
-    /// <summary>
-    /// Turn off when placed into a storage item or moved between slots/hands
-    /// </summary>
-    private void OnInsertedIntoContainer(Entity<HealthAnalyzerComponent> uid, ref EntGotInsertedIntoContainerMessage args)
-    {
-        if (uid.Comp.ScannedEntity is { } patient)
-            _toggle.TryDeactivate(uid.Owner);
-    }
-
-    /// <summary>
-    /// Disable continuous updates once turned off
-    /// </summary>
-    private void OnToggled(Entity<HealthAnalyzerComponent> ent, ref ItemToggledEvent args)
-    {
-        if (!args.Activated && ent.Comp.ScannedEntity is { } patient)
-            StopAnalyzingEntity(ent, patient);
-    }
-
-    /// <summary>
-    /// Turn off the analyser when dropped
-    /// </summary>
-    private void OnDropped(Entity<HealthAnalyzerComponent> uid, ref DroppedEvent args)
-    {
-        if (uid.Comp.ScannedEntity is { } patient)
-            _toggle.TryDeactivate(uid.Owner);
-    }
-
-    private void OpenUserInterface(EntityUid user, EntityUid analyzer)
-    {
-        if (!_uiSystem.HasUi(analyzer, HealthAnalyzerUiKey.Key))
-            return;
-
-        _uiSystem.OpenUi(analyzer, HealthAnalyzerUiKey.Key, user);
-    }
 
     /// <summary>
     /// Mark the entity as having its health analyzed, and link the analyzer to it
@@ -214,7 +148,7 @@ public sealed class HealthAnalyzerSystem : EntitySystem
     /// <param name="healthAnalyzer">The health analyzer that should receive the updates</param>
     /// <param name="target">The entity to start analyzing</param>
     /// <param name="part">Shitmed Change: The body part to analyze, if any</param>
-    private void BeginAnalyzingEntity(Entity<HealthAnalyzerComponent> healthAnalyzer, EntityUid target, EntityUid? part = null)
+    public override void BeginAnalyzingEntity(Entity<HealthAnalyzerComponent> healthAnalyzer, EntityUid target, EntityUid? part = null)
     {
         //Link the health analyzer to the scanned entity
         healthAnalyzer.Comp.ScannedEntity = target;
@@ -271,7 +205,9 @@ public sealed class HealthAnalyzerSystem : EntitySystem
     /// <param name="target">The entity being scanned</param>
     /// <param name="scanMode">True makes the UI show ACTIVE, False makes the UI show INACTIVE</param>
     /// <param name="part">Shitmed Change: The body part being scanned, if any</param>
-    public void UpdateScannedUser(EntityUid healthAnalyzer, EntityUid target, bool scanMode, EntityUid? part = null)
+
+    public override void UpdateScannedUser(EntityUid healthAnalyzer, EntityUid target, bool scanMode, EntityUid? part = null)
+
     {
         if (!_uiSystem.HasUi(healthAnalyzer, HealthAnalyzerUiKey.Key))
             return;
@@ -315,5 +251,21 @@ public sealed class HealthAnalyzerSystem : EntitySystem
             body,
             part != null ? GetNetEntity(part) : null
         ));
+    }
+
+    protected override Enum GetUiKey()
+    {
+        return HealthAnalyzerUiKey.Key;
+    }
+
+    protected override bool ScanTargetPopupMessage(Entity<HealthAnalyzerComponent> uid, AfterInteractEvent args, [NotNullWhen(true)] out string? message)
+    {
+        message = Loc.GetString("health-analyzer-popup-scan-target", ("user", Identity.Entity(args.User, EntityManager)));
+        return true;
+    }
+
+    protected override bool ValidScanTarget(EntityUid? target)
+    {
+        return HasComp<MobStateComponent>(target);
     }
 }

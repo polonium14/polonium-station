@@ -246,3 +246,23 @@
     - type: Tag
       tags:
       - PDACart
+
+- type: entity
+  parent: BaseItem
+  id: PlantScanCartridge
+  name: PlantScan cartridge
+  description: A program that provides botanical analysis tools.
+  components:
+    - type: Sprite
+      sprite: Objects/Devices/cartridge.rsi
+      state: cart-plant
+    - type: Icon
+      sprite: Objects/Devices/cartridge.rsi
+      state: cart-plant
+    - type: Cartridge
+      programName: plant-scan-program-name
+      icon:
+        sprite: Objects/Specific/Hydroponics/plant_analyzer.rsi
+        state: icon
+    - type: PlantScanCartridge
+

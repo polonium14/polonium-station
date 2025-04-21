@@ -367,3 +367,16 @@
   materials:
     Steel: 100
     Plastic: 100
+
+# Mira Sector
+
+- type: latheRecipe
+  id: PlantScanCartridge
+  result: PlantScanCartridge
+  completetime: 5
+  materials:
+    Plastic: 100
+    Steel: 100
+    Glass: 400
+    Gold: 100
+

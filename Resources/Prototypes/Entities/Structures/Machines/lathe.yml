@@ -529,7 +529,7 @@
     - BoomboxRed
     - BoomboxGreen
     - BoomboxBlue
-
+    - HydroponicsStatic
   - type: EmagLatheRecipes
     emagStaticRecipes:
     - BoxLethalshot
@@ -729,6 +729,7 @@
     - SadTromboneImplanter
     - LightImplanter
     - BikeHornImplanter
+    - Cartridge # Mira Sector - Plants Analyzer Cartridge
   - type: EmagLatheRecipes
     emagDynamicRecipes:
     - BoxBeanbag

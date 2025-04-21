@@ -39,10 +39,10 @@
     RobustHarvestChemistryBottle: 3
     EZNutrientChemistryBottle: 3
     Bucket: 3
+    PlantAnalyzer: 1
     BoxMouthSwab: 1
     BoxAgrichem: 1
-    #TO DO:
-    #plant analyzer
+    TrashBag: 1
   contrabandInventory:
     UnstableMutagenChemistryBottle: 1
     Joint: 1

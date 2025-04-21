@@ -45,7 +45,7 @@
   - SeedExtractorMachineCircuitboard
   - HydroponicsTrayMachineCircuitboard
   - ReagentGrinderIndustrialMachineCircuitboard
-  - PlantAnalyzer # Frontier
+  - PlantScanCartridge # Mira Sector
 
 - type: technology
   id: CritterMechs

@@ -47,6 +47,8 @@ med-tek-program-name = MedTek
 
 wordle-program-name = Wordle
 
+plant-scan-program-name = PlantScan
+
 # NanoTask cartridge
 
 nano-task-ui-heading-high-priority-tasks =
