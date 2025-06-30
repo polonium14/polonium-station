@@ -111,6 +111,14 @@ public class Player
 
 ## Zasady ogólne
 
+#### 0. Ogólny przebieg pracy nad zmianami
+
+1) Tworzysz forka naszego repozytorium (robisz to tylko raz, a później już zawsze korzystasz z tego forka).
+
+2) Tworzysz nową gałąź w swoim forku zgodnie z zasadami opisanymi [tutaj](#2-twórz-osobne-gałęzie-dla-każdego-tematu-zmian).
+
+3) Wprowadzasz zmiany na tej gałęzi, a następnie tworzysz pull request (twoja gałąź -> `master` naszego repozytorium).
+
 #### 1. Twórz osobne PR dla zmian funkcji, poprawek błędów, czyszczenia i refaktoryzacji.
 
 Ułatwia to przeglądanie zmian, zmniejsza liczbę konfliktów oraz upraszcza przywracanie wcześniejszego stanu w razie problemów.
