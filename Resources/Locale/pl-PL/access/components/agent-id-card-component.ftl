@@ -1,5 +1,5 @@
 ssssagent-id-new = { $number ->
-    [0] Nie zdobyto żadnych nowych dostepów z {THE($card)}.
+    [0] Nie uzyskano żadnych nowych dostępów z {THE($card)}.
     [one] Zyskano jeden nowy dostęp z {THE($card)}.
    *[other] Zyskano {$number} nowych dostępów z {THE($card)}.
 }
