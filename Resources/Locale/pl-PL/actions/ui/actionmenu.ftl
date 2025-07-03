@@ -13,4 +13,4 @@ ui-actionmenu-enabled = Włączone
 ui-actionmenu-item = przedmiot
 ui-actionmenu-innate = Wrodzony
 ui-actionmenu-instant = Natychmiastowe
-ui-actionmenu-targeted = kierunkowe
+ui-actionmenu-targeted = Kierunkowe
