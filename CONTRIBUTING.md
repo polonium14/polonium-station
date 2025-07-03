@@ -115,9 +115,13 @@ public class Player
 
 1. Tworzysz forka naszego repozytorium (robisz to tylko raz, a później już zawsze korzystasz z tego forka).
 
-2. Tworzysz nową gałąź w swoim forku zgodnie z zasadami opisanymi [tutaj](#2-twórz-osobne-gałęzie-dla-każdego-tematu-zmian).
+2. Klonujesz forka na swój komputer.
 
-3. Wprowadzasz zmiany na tej gałęzi, a następnie tworzysz pull request (twoja gałąź -> `master` naszego repozytorium).
+3. Tworzysz nową gałąź w swoim forku zgodnie z zasadami opisanymi [tutaj](#2-twórz-osobne-gałęzie-dla-każdego-tematu-zmian).
+
+4. Wprowadzasz zmiany na tej gałęzi, a następnie tworzysz pull request (twoja gałąź -> `master` naszego repozytorium).
+
+-   ⚠️ Nie zapomnij również o sklonowaniu modułów podrzędnych: `git submodule update --init --recursive`
 
 #### 1. Twórz osobne PR dla zmian funkcji, poprawek błędów, czyszczenia i refaktoryzacji.
 
@@ -164,11 +168,11 @@ Sklonuj swoją gałąź, [skonfiguruj środowisko programistyczne](https://docs.
    Jeśli PR naprawia błąd, dodaj powiązanie do zgłoszenia (np. `Fixes #123`).
 
 6. **Dodaj changelog.**
-   Bardzo krótko przelicz, co zostało zmienione w grze.
+   Bardzo krótko przelicz, co zostało zmienione w grze. Te zmiany będą wyświetlane w grze.
    Każdy wiersz changelogu powinien zaczynać się od jednej z kategorii: `add`, `remove`, `tweak` lub `fix`. Podstawowy format:
 
 ```
-:cl:
+:cl: nazwa_użytkownika
 - add: Dodano coś
 - remove: Usunieto coś
 - tweak: Zmieniono coś
