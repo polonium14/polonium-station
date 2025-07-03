@@ -12,14 +12,14 @@ genpop-prisoner-id-examine-wait = Odbyłeś {$minutes} {$minutes ->
 genpop-prisoner-id-examine-wait-perm = Odsiadasz wyrok dożywotni za {$crime}.
 genpop-prisoner-id-examine-served = Odbyłeś swoją karę za {$crime}.
 
-genpop-locker-name-default = Szafka więznia
+genpop-locker-name-default = szafka więznia
 genpop-locker-desc-default = To jest szafka na osobiste rzeczy więźnia podczas jego pobytu w więzieniu.
 
-genpop-locker-name-used = Szafka więznia ({$name})
+genpop-locker-name-used = szafka więznia ({$name})
 genpop-locker-desc-used = To jest szafka na osobiste rzeczy więźnia podczas jego pobytu w więzieniu. Zawiera osobiste rzeczy {$name}.
 
 genpop-locker-ui-label-name = [bold]Imię więźnia:[/bold]
-genpop-locker-ui-label-sentence = [bold]Długość kary w minutach:[/bold] [color=gray](0 oznacza wyrok dożywotni.)[/color]
+genpop-locker-ui-label-sentence = [bold]Długość kary w minutach:[/bold] [color=gray](0 oznacza wyrok dożywotni)[/color]
 genpop-locker-ui-label-crime = [bold]Przestępstwo:[/bold]
 genpop-locket-ui-button-done = Gotowe
 
