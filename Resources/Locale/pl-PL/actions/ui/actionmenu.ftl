@@ -10,7 +10,7 @@ ui-actionsui-function-lock-action-slots = (De)zaktywuj przeciąganie i czyszczen
 ui-actionsui-function-open-abilities-menu = Otwórz menu akcji
 
 ui-actionmenu-enabled = Włączone
-ui-actionmenu-item = przedmiot
+ui-actionmenu-item = Przedmiot
 ui-actionmenu-innate = Wrodzony
 ui-actionmenu-instant = Natychmiastowe
 ui-actionmenu-targeted = Kierunkowe
