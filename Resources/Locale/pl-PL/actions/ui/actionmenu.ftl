@@ -2,7 +2,7 @@
 
 ui-actionmenu-title = Akcje
 ui-actionmenu-filter-label = Filtry: {$selectedLabels}
-ui-actionmenu-filter-button = Filtr
+ui-actionmenu-filter-button = Filtruj
 ui-actionmenu-search-bar-placeholder-text = Szukaj
 ui-actionmenu-clear-button = Wyczyść
 
