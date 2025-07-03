@@ -23,6 +23,6 @@ genpop-locker-ui-label-sentence = [bold]Długość kary w minutach:[/bold] [colo
 genpop-locker-ui-label-crime = [bold]Przestępstwo:[/bold]
 genpop-locket-ui-button-done = Gotowe
 
-genpop-locker-action-end-early = Skończ wyrok wcześniej.
+genpop-locker-action-end-early = Skończ wyrok wcześniej
 genpop-locker-action-clear-id = Odlącz identyfikator
 genpop-locker-action-reset-sentence = Zresetuj wyrok ({NATURALFIXED($percent, 0)}% odbyte)
