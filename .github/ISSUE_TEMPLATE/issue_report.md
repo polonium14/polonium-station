@@ -1,20 +1,23 @@
 ---
-name: Report an Issue
+name: Zgłoś problem
 about: "..."
-title: ''
-labels: ''
-assignees: ''
-
+title: ""
+labels: ""
+assignees: ""
 ---
 
-## Description
-<!-- Explain your issue in detail. Issues without proper explanation are liable to be closed by maintainers. -->
+## Opis
 
-**Reproduction**
-<!-- Include the steps to reproduce if applicable. -->
+<!-- Wyjaśnij swój problem szczegółowo. Zgłoszenia bez odpowiedniego opisu mogą zostać zamknięte przez opiekunów projektu. -->
 
-**Screenshots**
-<!-- If applicable, add screenshots to help explain your problem. -->
+**Jak odtworzyć**
 
-**Additional context**
-<!-- Add any other context about the problem here. Anything you think is related to the issue. -->
+<!-- Jeśli dotyczy, podaj kroki potrzebne do odtworzenia problemu. -->
+
+**Zrzuty ekranu**
+
+<!-- Jeśli to możliwe, dołącz zrzuty ekranu, które pomogą wyjaśnić problem. -->
+
+**Dodatkowy kontekst**
+
+<!-- Dodaj tutaj inne informacje związane z problemem. Wszystko, co może być pomocne. -->
