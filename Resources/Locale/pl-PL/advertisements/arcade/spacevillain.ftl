@@ -1,11 +1,11 @@
 advertisement-space-villain-1 = Czy jesteś wystarczająco twardy by przejśc tą grę?
-advertisement-space-villain-2 = Sklep złego ziomka; zgarnij nagrode!
+advertisement-space-villain-2 = Ubij łotra; zgarnij nagrode!
 advertisement-space-villain-3 = WALCZ ZE MNĄ!
 advertisement-space-villain-4 = Kosmos potrzebuje bohatera!
 advertisement-space-villain-5 = Czekam na bohatera!
 advertisement-space-villain-6 = Czy ktoś nas uratuje?
 advertisement-space-villain-7 = Mua-hah-hah-hah!
-advertisement-space-villain-8 = Kosmiczny złol!
+advertisement-space-villain-8 = Kosmiczny łotr!
 advertisement-space-villain-9 = Nikt mnie nie pokona!
 advertisement-space-villain-10 = Drżyjcie przede mną!
 advertisement-space-villain-11 = RZUĆ MI WYZWANIE!
