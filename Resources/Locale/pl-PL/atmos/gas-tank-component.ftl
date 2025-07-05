@@ -22,5 +22,5 @@ gas-tank-window-internal-connected = [color=green]Połączony[/color]
 gas-tank-window-internal-disconnected = [color=red]Rozłączony[/color]
 
 ## Valve
-comp-gas-tank-open-valve = Otwórz zawór
+comp-gas-tank-open-valve = Otwórz Zawór
 comp-gas-tank-close-valve = Zamknij zawór
