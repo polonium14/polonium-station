@@ -1,4 +1,4 @@
-atmos-alerts-window-title = Komputer alarmów atmosferycznych
+atmos-alerts-window-title = Komputer Alarmów Atmosferycznych
 atmos-alerts-window-station-name = [color=white][font size=14]{$stationName}[/font][/color]
 atmos-alerts-window-unknown-location = Nieznana lokalizacja
 
