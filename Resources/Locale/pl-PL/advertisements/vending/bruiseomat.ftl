@@ -1,6 +1,6 @@
-﻿advertisement-bruiseomat-1 = I VOTE WAROPS!!! GŁOSSUJE NA WOJNE!!!
+advertisement-bruiseomat-1 = GŁOSUJE NA WOJNE!!!
 advertisement-bruiseomat-2 = Kto ma TC?
-advertisement-bruiseomat-3 = Did anyone buy an EMAG? Ktoś kupił EMAGa?
+advertisement-bruiseomat-3 = Ktoś kupił EMAGa?
 advertisement-bruiseomat-4 = Chcę wrócić na swoją stację...
 advertisement-bruiseomat-5 = Uważaj na Mima i Klauna. UWAŻAJ!
 advertisement-bruiseomat-6 = Jedna bomba dziennie trzyma deathsquad z dala!
