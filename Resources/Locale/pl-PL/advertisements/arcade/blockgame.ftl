@@ -23,4 +23,4 @@ thankyou-block-game-8 = Bip Buooop!
 thankyou-block-game-9 = Zawsze jest czas na następna gre!
 thankyou-block-game-10 = Nie poddawaj się teraz!
 thankyou-block-game-11 = Zawsze jest więcej bloków!
-thankyou-block-game-12 = Bloki będą czekały na twój powrót
+thankyou-block-game-12 = Bloki będą czekały na twój powrót!
