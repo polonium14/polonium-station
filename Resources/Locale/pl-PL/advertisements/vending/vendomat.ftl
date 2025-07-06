@@ -1,8 +1,7 @@
-﻿advertisement-vendomat-1 = Only the finest!
-advertisement-vendomat-2 = Have some tools.
-advertisement-vendomat-3 = The most robust equipment.
-advertisement-vendomat-4 = The finest gear in space!
-advertisement-vendomat-5 = This is surely better than standard issued equipment!
-advertisement-vendomat-6 = Get your good ol' crowbar here!
-advertisement-vendomat-7 = Here for when you need a full set of tools!
-
+﻿advertisement-vendomat-1 = Tylko to, co najlepsze!
+advertisement-vendomat-2 = Weź trochę narzędzi.
+advertisement-vendomat-3 = Najsolidniejszy sprzęt.
+advertisement-vendomat-4 = Najlepszy ekwipunek w kosmosie!
+advertisement-vendomat-5 = To na pewno lepsze niż standardowy sprzęt!
+advertisement-vendomat-6 = Weź swój dobry, stary łom tutaj!
+advertisement-vendomat-7 = Dla tych, którzy potrzebują pełnego zestawu narzędzi!

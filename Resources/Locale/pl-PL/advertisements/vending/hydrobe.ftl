@@ -1,5 +1,6 @@
-advertisement-hydrobe-1 = Do you love soil? Then buy our clothes!
-advertisement-hydrobe-2 = Get outfits to match your green thumb here!
-advertisement-hydrobe-3 = Here to give you an outfit perfect for handling plants!
-advertisement-hydrobe-4 = Perfect outfits for tree huggers... or just literal trees!
-advertisement-hydrobe-5 = Wear green and grow!
+advertisement-hydrobe-1 = Kochasz ziemię? Kup nasze ubrania!
+advertisement-hydrobe-2 = Znajdź tu stroje idealne dla zielonych palców!
+advertisement-hydrobe-3 = Mamy dla ciebie ubranie idealne do pielęgnacji roślin!
+advertisement-hydrobe-4 = Idealne stroje dla miłośników drzew... albo dosłownie dla drzew!
+advertisement-hydrobe-5 = Noś zieleń i rośnij!
+
