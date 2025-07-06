@@ -1,7 +1,7 @@
-cmd-setalertlevel-desc = Set current station alert level for grid on which the player is standing.
-cmd-setalertlevel-help = Usage: setalertlevel <level> [locked]
-cmd-setalertlevel-invalid-grid = You must be on grid of station code that you are going to change.
-cmd-setalertlevel-invalid-level = Specified alert level does not exist on that grid.
+cmd-setalertlevel-desc = Ustaw bieżący kod alarmowy stacji dla grida, na którym stoi gracz
+cmd-setalertlevel-help = Użycie: setalertlevel <poziom> [zablokowany]
+cmd-setalertlevel-invalid-grid = Musisz znajdować się na gridzie stacji, dla której chcesz zmienić kod alarmowy.
+cmd-setalertlevel-invalid-level = Okreslony poziom alarmowy nie istnieje na tym gridzie.
 
-cmd-setalertlevel-hint-1 = <level>
-cmd-setalertlevel-hint-2 = [locked]
+cmd-setalertlevel-hint-1 = <poziom>
+cmd-setalertlevel-hint-2 = [zablokowany]
