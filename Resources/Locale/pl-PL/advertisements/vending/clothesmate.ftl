@@ -1,7 +1,7 @@
-﻿advertisement-clothes-1 = Dress for success!
-advertisement-clothes-2 = Prepare to look swagalicious!
-advertisement-clothes-3 = Look at all this swag!
-advertisement-clothes-4 = Why leave style up to fate? Use the ClothesMate!
-advertisement-clothes-5 = Now with added neck warmers!
-advertisement-clothes-6 = You are looking stylish!
-advertisement-clothes-7 = Lovely outfit you have going there!
+﻿advertisement-clothes-1 = Ubierz się na sukces!
+advertisement-clothes-2 = Przygotuj się na styl totalny!
+advertisement-clothes-3 = Spójrz na ten cały styl!
+advertisement-clothes-4 = Po co zdawać się na los w kwestii mody? Skorzystaj z ClothesMate!
+advertisement-clothes-5 = Teraz także z ocieplaczami na szyję!
+advertisement-clothes-6 = Wyglądasz stylowo!
+advertisement-clothes-7 = Świetny strój masz na sobie!
