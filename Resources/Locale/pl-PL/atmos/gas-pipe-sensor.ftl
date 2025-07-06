@@ -1,5 +1,5 @@
-gas-pipe-sensor-distribution-loop = Pętla dystrybucyjna
-gas-pipe-sensor-waste-loop = Pętla odpadów
-gas-pipe-sensor-mixed-air = Powietrze mieszane
-gas-pipe-sensor-teg-hot-loop = Gorąca pętla TEG
-gas-pipe-sensor-teg-cold-loop = Zimna pętla TEG
+gas-pipe-sensor-distribution-loop = Distribution loop
+gas-pipe-sensor-waste-loop = Waste loop
+gas-pipe-sensor-mixed-air = Mixed air
+gas-pipe-sensor-teg-hot-loop = TEG hot loop
+gas-pipe-sensor-teg-cold-loop = TEG cold loop

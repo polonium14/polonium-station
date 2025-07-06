@@ -1,18 +1,18 @@
-inner-anomaly-start-message-pyro = Czujesz w sobie szaloną płomienną iskrę. Stałeś się nosicielem anomalii piroklastycznej.
-inner-anomaly-start-message-shock = Błyskawice drżą na Twoich opuszkach! Stałeś się nosicielem anomalii elektrycznej.
-inner-anomaly-start-message-shadow = Z Ciebie wypływa nieprzenikniona ciemność... Stałeś się nosicielem anomalii cienia.
-inner-anomaly-start-message-frost = Lodowy mróz więzi Twoje kości. Stałeś się nosicielem anomalii lodowej.
-inner-anomaly-start-message-flora = Przez Twoją skórę wyrastają liście i kwiaty! Stałeś się nosicielem anomalii roślinnej.
-inner-anomaly-start-message-bluespace = Twoje myśli szaleńczo pędzą! Stałeś się nosicielem anomalii przestrzeni niebieskiej.
-inner-anomaly-start-message-flesh = Twoje ciało rośnie w szaleńczym tempie. Stałeś się nosicielem anomalii ciała.
-inner-anomaly-start-message-grav = Wszystko staje się nienaturalnie ciężkie i lekkie jednocześnie... Stałeś się nosicielem anomalii grawitacyjnej.
-inner-anomaly-start-message-tech = Twoja głowa buzuję od ogromu chaotycznych informacji! Stałeś się nosicielem anomalii technologicznej.
-inner-anomaly-start-message-rock = Kryształy wyrastają przez Twoje kości! Stałeś się nosicielem anomalii skalnej.
-inner-anomaly-start-message-santa = Opanowuje Cię obsesja na punkcie świątecznego ducha! Stałeś się nosicielem anomalii świątecznej.
+inner-anomaly-start-message-pyro = You can feel the insane flame inside of you. You became the host of a pyroclastic anomaly.
+inner-anomaly-start-message-shock = Lightning bolts quivering at your fingertips! You became the host of a electric anomaly.
+inner-anomaly-start-message-shadow = There's an impenetrable darkness oozing out of you... You became the host of a shadow anomaly.
+inner-anomaly-start-message-frost = The icy frost is binding your bones. You became the host of a ice anomaly.
+inner-anomaly-start-message-flora = Leaves and flowers sprout through your skin! You became the host of a floral anomaly.
+inner-anomaly-start-message-bluespace = Your thoughts are racing like mad! You became the host of a bluespace anomaly.
+inner-anomaly-start-message-flesh = Your body is growing frantically. You became the host of a flesh anomaly.
+inner-anomaly-start-message-grav = Everything becames unnaturally heavy and light at the same time... You became the host of a gravity anomaly.
+inner-anomaly-start-message-tech = Your head is buzzing with the amount of chaotic information! You became the host of a tech anomaly.
+inner-anomaly-start-message-rock = The crystals are growing through your bones! You became the host of a rock anomaly.
+inner-anomaly-start-message-santa = You're becoming obsessed with the Christmas spirit! You became the host of a Christmas anomaly.
 
-inner-anomaly-end-message = Nienaturalna aktywność w Tobie znika bez śladu....
+inner-anomaly-end-message = The abnormal activity within you disappears without a trace....
 
-inner-anomaly-severity-info-50 = Czujesz, że anomalia opanowuje połowę Twojego ciała.
-inner-anomaly-severity-info-75 = Czujesz, że anomalia opanowuje dużą część Twojego ciała.
-inner-anomaly-severity-info-90 = Czujesz, że anomalia prawie całkowicie opanowała Twoje ciało.
-inner-anomaly-severity-info-100 = Anomalia w Tobie rośnie bez kontroli, powodując ogromny ból i rozdzierając Cię na kawałki!
+inner-anomaly-severity-info-50 = You feel that the anomaly is taking over half your body.
+inner-anomaly-severity-info-75 = You feel that the anomaly is taking over a large part of your body.
+inner-anomaly-severity-info-90 = You feel that the anomaly has almost completely taken over your body.
+inner-anomaly-severity-info-100 = The anomaly inside you is growing uncontrollably, causing immense pain, and tearing you apart!

@@ -2,82 +2,82 @@
 
 ## Window
 
-air-alarm-ui-access-denied = Brak wystarczających uprawnień!
+air-alarm-ui-access-denied = Insufficient access!
 
-air-alarm-ui-window-pressure-label = Ciśnienie
-air-alarm-ui-window-temperature-label = Temperatura
+air-alarm-ui-window-pressure-label = Pressure
+air-alarm-ui-window-temperature-label = Temperature
 air-alarm-ui-window-alarm-state-label = Status
 
-air-alarm-ui-window-address-label = Adres
-air-alarm-ui-window-device-count-label = Liczba urządzeń
-air-alarm-ui-window-resync-devices-label = Ponowna synchronizacja
+air-alarm-ui-window-address-label = Address
+air-alarm-ui-window-device-count-label = Total Devices
+air-alarm-ui-window-resync-devices-label = Resync
 
-air-alarm-ui-window-mode-label = Tryb
-air-alarm-ui-window-mode-select-locked-label = [bold][color=red] Błąd selektora trybu! [/color][/bold]
-air-alarm-ui-window-auto-mode-label = Tryb automatyczny
+air-alarm-ui-window-mode-label = Mode
+air-alarm-ui-window-mode-select-locked-label = [bold][color=red] Mode selector failure! [/color][/bold]
+air-alarm-ui-window-auto-mode-label = Auto mode
 
 -air-alarm-state-name = { $state ->
-    [normal] Normalny
-    [warning] Ostrzeżenie
-    [danger] Niebezpieczeństwo
-    [emagged] Zhakowane
-   *[invalid] Nieprawidłowe
+    [normal] Normal
+    [warning] Warning
+    [danger] Danger
+    [emagged] Emagged
+   *[invalid] Invalid
 }
 
 air-alarm-ui-window-listing-title = {$address} : {-air-alarm-state-name(state:$state)}
 air-alarm-ui-window-pressure = {$pressure} kPa
-air-alarm-ui-window-pressure-indicator = Ciśnienie: [color={$color}]{$pressure} kPa[/color]
-air-alarm-ui-window-temperature = {$tempC} °C ({$temperature} K)
-air-alarm-ui-window-temperature-indicator = Temperatura: [color={$color}]{$tempC} °C ({$temperature} K)[/color]
+air-alarm-ui-window-pressure-indicator = Pressure: [color={$color}]{$pressure} kPa[/color]
+air-alarm-ui-window-temperature = {$tempC} C ({$temperature} K)
+air-alarm-ui-window-temperature-indicator = Temperature: [color={$color}]{$tempC} C ({$temperature} K)[/color]
 air-alarm-ui-window-alarm-state = [color={$color}]{-air-alarm-state-name(state:$state)}[/color]
 air-alarm-ui-window-alarm-state-indicator = Status: [color={$color}]{-air-alarm-state-name(state:$state)}[/color]
 
-air-alarm-ui-window-tab-vents = Odpowietrzniki
-air-alarm-ui-window-tab-scrubbers = Filtry
-air-alarm-ui-window-tab-sensors = Czujniki
+air-alarm-ui-window-tab-vents = Vents
+air-alarm-ui-window-tab-scrubbers = Scrubbers
+air-alarm-ui-window-tab-sensors = Sensors
 
 air-alarm-ui-gases = {$gas}: {$amount} mol ({$percentage}%)
 air-alarm-ui-gases-indicator = {$gas}: [color={$color}]{$amount} mol ({$percentage}%)[/color]
 
-air-alarm-ui-mode-filtering = Filtrowanie
-air-alarm-ui-mode-wide-filtering = Filtrowanie (szerokie)
-air-alarm-ui-mode-fill = Napełnianie
-air-alarm-ui-mode-panic = Tryb paniki
-air-alarm-ui-mode-none = Brak
+air-alarm-ui-mode-filtering = Filtering
+air-alarm-ui-mode-wide-filtering = Filtering (wide)
+air-alarm-ui-mode-fill = Fill
+air-alarm-ui-mode-panic = Panic
+air-alarm-ui-mode-none = None
 
 ## Widgets
 
 ### General
 
-air-alarm-ui-widget-enable = Włączone
-air-alarm-ui-widget-copy = Skopiuj ustawienia do podobnych urządzeń
-air-alarm-ui-widget-copy-tooltip = Kopiuje ustawienia tego urządzenia do wszystkich urządzeń w tej zakładce alarmu powietrza.
-air-alarm-ui-widget-ignore = Ignoruj
-air-alarm-ui-atmos-net-device-label = Adres: {$address}
+air-alarm-ui-widget-enable = Enabled
+air-alarm-ui-widget-copy = Copy settings to similar devices
+air-alarm-ui-widget-copy-tooltip = Copies the settings of this device to all devices in this air alarm tab.
+air-alarm-ui-widget-ignore = Ignore
+air-alarm-ui-atmos-net-device-label = Address: {$address}
 
 ### Vent pumps
 
-air-alarm-ui-vent-pump-label = Kierunek odpowietrzania
-air-alarm-ui-vent-pressure-label = Granica ciśnienia
-air-alarm-ui-vent-external-bound-label = Granica zewnętrzna
-air-alarm-ui-vent-internal-bound-label = Granica wewnętrzna
+air-alarm-ui-vent-pump-label = Vent direction
+air-alarm-ui-vent-pressure-label = Pressure bound
+air-alarm-ui-vent-external-bound-label = External bound
+air-alarm-ui-vent-internal-bound-label = Internal bound
 
 ### Scrubbers
 
-air-alarm-ui-scrubber-pump-direction-label = Kierunek
-air-alarm-ui-scrubber-volume-rate-label = Prędkość (L)
+air-alarm-ui-scrubber-pump-direction-label = Direction
+air-alarm-ui-scrubber-volume-rate-label = Rate (L)
 air-alarm-ui-scrubber-wide-net-label = WideNet
 
 ### Thresholds
 
-air-alarm-ui-sensor-gases = Gazy
-air-alarm-ui-sensor-thresholds = Progi
-air-alarm-ui-thresholds-pressure-title = Progi ciśnienia (kPa)
-air-alarm-ui-thresholds-temperature-title = Progi temperatury (K)
-air-alarm-ui-thresholds-gas-title = Progi gazów (%)
-air-alarm-ui-thresholds-upper-bound = Niebezpieczeństwo powyżej
-air-alarm-ui-thresholds-lower-bound = Niebezpieczeństwo poniżej
-air-alarm-ui-thresholds-upper-warning-bound = Ostrzeżenie powyżej
-air-alarm-ui-thresholds-lower-warning-bound = Ostrzeżenie poniżej
-air-alarm-ui-thresholds-copy = Skopiuj progi do wszystkich urządzeń
-air-alarm-ui-thresholds-copy-tooltip = Kopiuje progi czujników tego urządzenia do wszystkich urządzeń w tej zakładce alarmu powietrza.
+air-alarm-ui-sensor-gases = Gases
+air-alarm-ui-sensor-thresholds = Thresholds
+air-alarm-ui-thresholds-pressure-title = Thresholds (kPa)
+air-alarm-ui-thresholds-temperature-title = Thresholds (K)
+air-alarm-ui-thresholds-gas-title = Thresholds (%)
+air-alarm-ui-thresholds-upper-bound = Danger above
+air-alarm-ui-thresholds-lower-bound = Danger below
+air-alarm-ui-thresholds-upper-warning-bound = Warning above
+air-alarm-ui-thresholds-lower-warning-bound = Warning below
+air-alarm-ui-thresholds-copy = Copy thresholds to all devices
+air-alarm-ui-thresholds-copy-tooltip = Copies the sensor thresholds of this device to all devices in this air alarm tab.

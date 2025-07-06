@@ -1,24 +1,24 @@
 ## Entity
 
-gas-analyzer-object-out-of-range = Obiekt jest poza zasięgiem.
-gas-analyzer-shutoff = Analizator gazów wyłącza się.
+gas-analyzer-object-out-of-range = The object went out of range.
+gas-analyzer-shutoff = The gas analyzer shuts off.
 
 ## UI
 
-gas-analyzer-window-name = Analizator Gazów
-gas-analyzer-window-environment-tab-label = Środowisko
+gas-analyzer-window-name = Gas Analyzer
+gas-analyzer-window-environment-tab-label = Environment
 gas-analyzer-window-tab-title-capitalized = {CAPITALIZE($title)}
-gas-analyzer-window-refresh-button = Odśwież
-gas-analyzer-window-no-data = Brak danych
-gas-analyzer-window-no-gas-text = Brak gazów
-gas-analyzer-window-error-text = Błąd: {$errorText}
-gas-analyzer-window-volume-text = Objętość:
+gas-analyzer-window-refresh-button = Refresh
+gas-analyzer-window-no-data = No Data
+gas-analyzer-window-no-gas-text = No Gases
+gas-analyzer-window-error-text = Error: {$errorText}
+gas-analyzer-window-volume-text = Volume:
 gas-analyzer-window-volume-val-text = {$volume} L
-gas-analyzer-window-pressure-text = Ciśnienie:
+gas-analyzer-window-pressure-text = Pressure:
 gas-analyzer-window-pressure-val-text = {$pressure} kPa
-gas-analyzer-window-temperature-text = Temperatura:
+gas-analyzer-window-temperature-text = Temperature:
 gas-analyzer-window-temperature-val-text = {$tempK}K ({$tempC}°C)
-gas-analyzer-window-gas-column-name = Gaz
+gas-analyzer-window-gas-column-name = Gas
 gas-analyzer-window-molarity-column-name = mol
 gas-analyzer-window-percentage-column-name = %
 gas-analyzer-window-molarity-text = {$mol}
@@ -29,6 +29,6 @@ gas-analyzer-window-molarity-percentage-text = {$gasName}: {$amount} mol ({$perc
 gas-entry-info = {$gasName}: {$gasAmount} mol
 
 # overrides for trinary devices to have saner names
-gas-analyzer-window-text-inlet = Wlot
-gas-analyzer-window-text-outlet = Wylot
-gas-analyzer-window-text-filter = Filtr
+gas-analyzer-window-text-inlet = Inlet
+gas-analyzer-window-text-outlet = Outlet
+gas-analyzer-window-text-filter = Filter

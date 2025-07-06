@@ -1,2 +1,2 @@
-ame-part-component-interact-using-no-hands = Nie masz rąk.
-ame-part-component-shielding-already-present = Osłona jest już obecna!
+ame-part-component-interact-using-no-hands = You have no hands.
+ame-part-component-shielding-already-present = Shielding is already there!
