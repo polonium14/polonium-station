@@ -1,13 +1,11 @@
-alert-level-announcement = Uwaga!
-    Poziom bezpieczeństwa stacji został zmieniony na {$name}!
-    {$announcement}
+alert-level-announcement = Uwaga! Poziom bezpieczeństwa stacji został zmieniony na {$name}! {$announcement}
 
 alert-level-unknown = Nieznany.
 alert-level-unknown-instructions = Nieznane.
 
 alert-level-green = Zielony
-alert-level-green-announcement = Możesz teraz bezpiecznie powrocic do swojego stanowiska pracy.
-alert-level-green-instructions = Rób swoją pracę.
+alert-level-green-announcement = Członkowie załogi mogą teraz bezpiecznie powrócić do swojego stanowiska pracy.
+alert-level-green-instructions = Pracuj.
 
 alert-level-blue = Niebieski
 alert-level-blue-announcement = Istnieje potwierdzone zagrożenie dla stacji.
@@ -18,8 +16,8 @@ alert-level-blue-instructions = Członkowie załogi powinni zachować czujność
 alert-level-red = Czerwony
 alert-level-red-announcement = Istnieje bezpośrednie zagrożenie dla stacji.
     Ochrona powinna być gotowa do użycia śmiercionośnej siły, jeśli zajdzie taka potrzeba.
-    Członkowie załogi muszą znaleźć bezpieczne schronienie i stosować się do rozkazów wydawanych przez władze.
-alert-level-red-instructions = Członkowie załogi muszą znaleźć bezpieczne schronienie i stosować się do rozkazów wydawanych przez władze.
+    Członkowie załogi muszą znaleźć schronienie i stosować się do rozkazów przełożonych.
+alert-level-red-instructions = Członkowie załogi muszą znaleźć schronienie i stosować się do rozkazów przełożonych.
 
 alert-level-violet = Fioletowy
 alert-level-violet-announcement = Istnieje zagrożenie wirusowe na stacji. Dział medyczny powinien izolować członków załogi z jakimikolwiek objawami.
