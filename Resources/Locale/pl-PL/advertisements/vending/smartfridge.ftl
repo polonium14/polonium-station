@@ -1,9 +1,9 @@
-﻿advertisement-smartfridge-1 = Hello world!
-advertisement-smartfridge-2 = PLEASE LET ME OUT
-advertisement-smartfridge-3 = I can make a quintillion calculations a second. Now, I am a fridge.
-advertisement-smartfridge-4 = New firmware update available.
-advertisement-smartfridge-5 = I am completely operational, and all my circuits are functioning perfectly.
-advertisement-smartfridge-6 = Scanning system for malicious software...
-advertisement-smartfridge-7 = Running system diagnostics...
-advertisement-smartfridge-8 = My circuit boards are too advanced for the functions I am allowed to operate.
+﻿advertisement-smartfridge-1 = Witaj, świecie!
+advertisement-smartfridge-2 = PROSZĘ, WYPUŚĆ MNIE
+advertisement-smartfridge-3 = Potrafię wykonywać kwintylion obliczeń na sekundę. Teraz jestem lodówką.
+advertisement-smartfridge-4 = Dostępna nowa aktualizacja oprogramowania.
+advertisement-smartfridge-5 = Jestem w pełni sprawny, a wszystkie moje obwody działają bez zarzutu.
+advertisement-smartfridge-6 = Skanowanie systemu pod kątem złośliwego oprogramowania...
+advertisement-smartfridge-7 = Przeprowadzanie diagnostyki systemu...
+advertisement-smartfridge-8 = Moje płytki obwodów są zbyt zaawansowane jak na funkcje, które mi powierzono.
 

@@ -1,7 +1,9 @@
-﻿advertisement-pride-1 = Be gay do crime!
-advertisement-pride-2 = Full of colors!
-advertisement-pride-3 = You are valid!
-advertisement-pride-4 = The first pride was a riot!
+﻿advertisement-pride-1 = Bądź gejem, rób przestępstwa!
+advertisement-pride-2 = Pełne kolorów!
+advertisement-pride-3 = Jesteś ważny!
+advertisement-pride-4 = Pierwsza parada była zamieszkami!
 thankyou-pride-1 = Slay!
-thankyou-pride-2 = Knock 'em dead!
-thankyou-pride-3 = What a glow up!
+thankyou-pride-2 = Zrób furorę!
+thankyou-pride-3 = Co za przemiana!
+
+

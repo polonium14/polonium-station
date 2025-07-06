@@ -1,4 +1,5 @@
-advertisement-medidrobe-1 = Make those blood stains look fashionable!!
-advertisement-medidrobe-2 = Clean and hygienic! Don't get too many bloodstains on yourself!
-advertisement-medidrobe-3 = With these outfits, you'll look like a professional doctor now!
-advertisement-medidrobe-4 = Jumpsuit, check. Coat, check. Someone who will wear this? Check!
+advertisement-medidrobe-1 = Spraw, by te plamy krwi wyglądały modnie!!
+advertisement-medidrobe-2 = Czysto i higienicznie! Nie pobrudz się za bardzo krwią!
+advertisement-medidrobe-3 = W tych strojach wyglądasz jak prawdziwy profesjonalny lekarz!
+advertisement-medidrobe-4 = Kombinezon, jest. Fartuch, jest. Ktoś, kto to założy? Jest!
+

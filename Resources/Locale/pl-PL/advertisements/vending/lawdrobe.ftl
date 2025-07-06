@@ -1,14 +1,16 @@
-advertisement-lawdrobe-1 = OBJECTION! Get the rule of law for yourself!
-advertisement-lawdrobe-2 = Go pester security until they abide by your own rules!
-advertisement-lawdrobe-3 = A new case just came in? Go get them out of jail!
-advertisement-lawdrobe-4 = A dougnut a day keeps security away!
-advertisement-lawdrobe-5 = No one is above the law!
-advertisement-lawdrobe-6 = No officer, I do not consent to a search!
-advertisement-lawdrobe-7 = Injecting space drugs leaves no evidence!
-advertisement-lawdrobe-8 = You or a loved one hurt by Nanotrasen? Too bad!
-advertisement-lawdrobe-9 = Case closed! Defendant has too much drip!
-thankyou-lawdrobe-1 = You can win any case in that outfit!
-thankyou-lawdrobe-2 = Get one for your client as well!
-thankyou-lawdrobe-3 = Win or lose, you get paid either way!
-thankyou-lawdrobe-4 = Remember: It's only illegal if you get caught!
-thankyou-lawdrobe-5 = OBJECTION! That outfit is too cool for court!
+advertisement-lawdrobe-1 = SPRZECIW! Zdobądź władzę prawa dla siebie!
+advertisement-lawdrobe-2 = Nękaj ochronę, aż zastosują się do twoich własnych zasad!
+advertisement-lawdrobe-3 = Nowa sprawa? Wyciągnij ich z więzienia!
+advertisement-lawdrobe-4 = Pączek dziennie trzyma ochronę z daleka!
+advertisement-lawdrobe-5 = Nikt nie jest ponad prawem!
+advertisement-lawdrobe-6 = Nie, funkcjonariuszu, nie zgadzam się na przeszukanie!
+advertisement-lawdrobe-7 = Wstrzykiwanie kosmicznych narkotyków nie pozostawia śladów!
+advertisement-lawdrobe-8 = Ty lub bliska ci osoba poszkodowana przez Nanotrasen? Szkoda!
+advertisement-lawdrobe-9 = Sprawa zamknięta! Oskarżony ma za dużo stylu!
+thankyou-lawdrobe-1 = W tej stylówce wygrasz każdą sprawę!
+thankyou-lawdrobe-2 = Weź jedną także dla swojego klienta!
+thankyou-lawdrobe-3 = Wygrasz albo przegrasz — i tak ci zapłacą!
+thankyou-lawdrobe-4 = Pamiętaj: to nielegalne tylko jeśli cię złapią!
+thankyou-lawdrobe-5 = SPRZECIW! Ten strój jest za cool na sąd!
+
+

@@ -1,12 +1,14 @@
-﻿advertisement-gibb-1 = Delicious!
-advertisement-gibb-2 = Recommended by at least one doctor!
-advertisement-gibb-3 = Over 1 million drinks sold!
-advertisement-gibb-4 = Dr. Gibb, what's the worst that could happen?
-advertisement-gibb-5 = Dr. Gibb, the flavor explosion!
-advertisement-gibb-6 = Trust me, I'm a doctor!
-advertisement-gibb-7 = The best sugar infusion in the galaxy!
-advertisement-gibb-8 = Space Cola can get Gibbed!
-thankyou-gibb-1 = The Dr. is in... your belly!
-thankyou-gibb-2 = Prognosis: flavor!
-thankyou-gibb-3 = Enjoy the 42 flavors!
-thankyou-gibb-4 = Enjoy the syrupy goodness!
+﻿advertisement-gibb-1 = Pyszne!
+advertisement-gibb-2 = Polecane przynajmniej przez jednego lekarza!
+advertisement-gibb-3 = Ponad milion sprzedanych napojów!
+advertisement-gibb-4 = Dr Gibb, co najgorszego może się stać?
+advertisement-gibb-5 = Dr Gibb, eksplozja smaku!
+advertisement-gibb-6 = Zaufaj mi, jestem lekarzem!
+advertisement-gibb-7 = Najlepsza cukrowa mikstura w galaktyce!
+advertisement-gibb-8 = Space Cola może się schować!
+thankyou-gibb-1 = Doktor jest... w twoim brzuchu!
+thankyou-gibb-2 = Prognoza: smak!
+thankyou-gibb-3 = Ciesz się 42 smakami!
+thankyou-gibb-4 = Smacznej, syropowej rozkoszy!
+
+

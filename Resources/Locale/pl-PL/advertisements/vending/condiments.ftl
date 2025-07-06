@@ -1,7 +1,7 @@
-﻿advertisement-condiment-1 = Tired of dry meat? Squirt some flavor-packed condiments on it!
-advertisement-condiment-2 = Child-safe utensils. Forks, spoons, and knives that won't cut a thing.
-advertisement-condiment-3 = Corn oil!
-advertisement-condiment-4 = Sweeten up your day with Astrotame! Eight out of ten doctors agree, it probably won't cause cancer.
-advertisement-condiment-5 = Hot Sauce! Barbecue Sauce! Cold Sauce! Ketchup! Soy Sauce! Horseradish Sauce! We got all the sauce!
-advertisement-condiment-6 = Make sure to put ketchup and mustard on your burgers! The chefs often forget.
+﻿advertisement-condiment-1 = Masz dość suchego mięsa? Chlupnij na nie trochę przypraw pełnych smaku!
+advertisement-condiment-2 = Sztućce bezpieczne dla dzieci. Widelce, łyżki i noże, które niczego nie przetną.
+advertisement-condiment-3 = Olej kukurydziany!
+advertisement-condiment-4 = Osłódź sobie dzień Astrotamem! Ośmiu na dziesięciu lekarzy twierdzi, że raczej nie powoduje raka.
+advertisement-condiment-5 = Ostry sos! Sos barbecue! Zimny sos! Ketchup! Sos sojowy! Sos chrzanowy! Mamy każdy sos!
+advertisement-condiment-6 = Pamiętaj, żeby dodać ketchup i musztardę do burgerów! Szefowie kuchni często zapominają.
 
