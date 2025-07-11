@@ -26,7 +26,7 @@ jobs:
         run: echo "No .ftl" && exit 78
 
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           repository: polonium14/polonium-space
           ref: master
@@ -37,7 +37,11 @@ jobs:
           dotnet-version: "9.0.x"
 
       - name: Check current path
-        run: ls -la
+        run: |
+          ls -l
+          ls -l .github/
+          ls -l .github/update-translate-checklist/
+          ls -l .github/update-translate-checklist/pr-open/
 
       - name: Restore and build
         run: |
