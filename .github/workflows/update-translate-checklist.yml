@@ -38,11 +38,11 @@ jobs:
 
       - name: Restore and build
         run: |
-          dotnet restore update-translate-checklist/pr-open/update-translate-checklist.csproj
-          dotnet build   update-translate-checklist/pr-open/update-translate-checklist.csproj --configuration Release
+          dotnet restore .github/update-translate-checklist/pr-open/update-translate-checklist.csproj
+          dotnet build   .github/update-translate-checklist/pr-open/update-translate-checklist.csproj --configuration Release
 
       - name: Run
-        run: bash update-translate-checklist/run.sh
+        run: bash .github/update-translate-checklist/run.sh
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
