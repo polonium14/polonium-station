@@ -33,6 +33,9 @@ jobs:
         with:
           dotnet-version: "9.0.x"
 
+      - name: Check current path
+        run: ls -la
+
       - name: Restore and build
         run: |
           dotnet restore update-translate-checklist/pr-open/update-translate-checklist.csproj
