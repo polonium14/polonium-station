@@ -44,7 +44,7 @@ jobs:
           dotnet build   .github/update-translate-checklist/update-translate-checklist.csproj --configuration Release
 
       - name: Run
-        run: bash update-translate-checklist/run.sh
+        run: bash .github/update-translate-checklist/run.sh
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
