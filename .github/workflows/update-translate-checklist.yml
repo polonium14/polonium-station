@@ -3,14 +3,10 @@ on:
     branches: [master]
     types: [opened, synchronize, reopened, closed]
 
-permissions:
-  contents: read
-  pull-requests: read
-  issues: write
+permissions: write-all
 
 jobs:
   update-checklist:
-    permissions: write-all
     runs-on: ubuntu-latest
     steps:
       - name: Filter .ftl files
