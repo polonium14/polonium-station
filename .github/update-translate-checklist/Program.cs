@@ -24,9 +24,29 @@ class Program
             _ => throw new ArgumentOutOfRangeException()
         };
 
-        var token = Environment.GetEnvironmentVariable("GITHUB_TOKEN")!;
-        var repoId = long.Parse(Environment.GetEnvironmentVariable("REPO_ID")!);
-        var prNumber = int.Parse(Environment.GetEnvironmentVariable("PR_NUMBER")!);
+        var token = Environment.GetEnvironmentVariable("GITHUB_TOKEN");
+        var repoId = long.Parse(Environment.GetEnvironmentVariable("REPO_ID"));
+        var prNumber = int.Parse(Environment.GetEnvironmentVariable("PR_NUMBER"));
+
+        if (string.IsNullOrEmpty(token))
+        {
+            await Console.Error.WriteLineAsync("Brak tokena GITHUB_TOKEN");
+            return 1;
+        }
+
+        if (repoId == null)
+        {
+            await Console.Error.WriteLineAsync("Brak repozytorium REPO_ID");
+            return 1;
+        }
+
+        if (prNumber == null)
+        {
+            await Console.Error.WriteLineAsync("Brak numeru PR PR_NUMBER");
+            return 1;
+        }
+
+        Console.WriteLine($"Sprawdzam PR #{prNumber} w trybie {mode}");
 
         var client = new GitHubClient(new ProductHeaderValue("update-checklist-action"))
         {
