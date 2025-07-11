@@ -41,7 +41,7 @@ jobs:
       - name: Run
         run: |
           MODE=${{ github.event.action == 'closed' && github.event.pull_request.merged == true && echo merge || \
-                 github.event.action == 'closed' && echo nomerge || echo open }}
+            github.event.action == 'closed' && echo nomerge || echo open }}
           dotnet run --project update-translate-checklist/pr-open/update-translate-checklist.csproj -- $MODE
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
