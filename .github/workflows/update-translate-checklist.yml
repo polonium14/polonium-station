@@ -39,10 +39,7 @@ jobs:
           dotnet build   update-translate-checklist/pr-open/update-translate-checklist.csproj --configuration Release
 
       - name: Run
-        run: |
-          MODE=${{ github.event.action == 'closed' && github.event.pull_request.merged == true && echo merge || \
-            github.event.action == 'closed' && echo nomerge || echo open }}
-          dotnet run --project update-translate-checklist/pr-open/update-translate-checklist.csproj -- $MODE
+        run: bash update-translate-checklist/run.sh
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
