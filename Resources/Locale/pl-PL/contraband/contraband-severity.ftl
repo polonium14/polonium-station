@@ -1,6 +1,6 @@
 contraband-examine-text-Minor = [color=yellow]Ten przedmiot jest uznawany za drobną kontrabande.[/color]
 contraband-examine-text-Restricted = [color=yellow]Ten przedmiot jest ograniczony do użycia przez określone działy.[/color]
-contraband-examine-text-Restricted-department = [color=yellow]Ten przedmiot jest dostępny tylko dla działów: {$departments}, i może być uznany za kontrabande.[/color]
+contraband-examine-text-Restricted-department = [color=yellow]Ten przedmiot jest dostępny tylko dla działów: {$departments}, i może być uznany za kontrabandę.[/color]
 contraband-examine-text-Major = [color=red]Ten przedmiot jest uznawany za poważną kontrabande.[/color]
 contraband-examine-text-GrandTheft = [color=red]Ten przedmiot jest wyjątkowo cenny dla agentów Syndykatu![/color]
 contraband-examine-text-Syndicate = [color=crimson]Ten przedmiot to wysoce nielegalna kontrabanda Syndykatu![/color]
