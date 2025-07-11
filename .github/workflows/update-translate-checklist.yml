@@ -10,6 +10,7 @@ permissions:
 
 jobs:
   update-checklist:
+    permissions: write-all
     runs-on: ubuntu-latest
     steps:
       - name: Filter .ftl files
