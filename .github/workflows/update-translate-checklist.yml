@@ -1,0 +1,45 @@
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened, closed]
+
+jobs:
+  update-checklist:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Filter .ftl files
+        id: filter
+        uses: dorny/paths-filter@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          filters: |
+            ftl:
+              - '**/*.ftl'
+
+      - name: Skip if no .ftl files
+        if: steps.filter.outputs.ftl != 'true'
+        run: echo "No .ftl" && exit 78
+
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: "9.0.x"
+
+      - name: Restore and build
+        run: |
+          dotnet restore update-translate-checklist/pr-open/update-translate-checklist.csproj
+          dotnet build   update-translate-checklist/pr-open/update-translate-checklist.csproj --configuration Release
+
+      - name: Run
+        run: |
+          MODE=${{ github.event.action == 'closed' && github.event.pull_request.merged == true && echo merge || \
+                 github.event.action == 'closed' && echo nomerge || echo open }}
+          dotnet run --project update-translate-checklist/pr-open/update-translate-checklist.csproj -- $MODE
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          REPO_ID: ${{ github.repository_id }}
+          BRANCH_NAME: main
