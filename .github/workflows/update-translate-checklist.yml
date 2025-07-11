@@ -25,6 +25,12 @@ jobs:
         if: steps.filter.outputs.ftl != 'true'
         run: echo "No .ftl" && exit 78
 
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          repository: polonium14/polonium-space
+          ref: master
+
       - name: Setup .NET SDK
         uses: actions/setup-dotnet@v1
         with:
@@ -39,7 +45,7 @@ jobs:
           dotnet build   .github/update-translate-checklist/pr-open/update-translate-checklist.csproj --configuration Release
 
       - name: Run
-        run: bash .github/update-translate-checklist/run.sh
+        run: bash update-translate-checklist/run.sh
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
