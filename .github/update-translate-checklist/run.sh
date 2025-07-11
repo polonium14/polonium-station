@@ -8,4 +8,4 @@ fi
 
 echo "Running update-translate-checklist with mode: $MODE"
 
-dotnet run --project ./update-translate-checklist.csproj -- $MODE
+dotnet run --project .github/update-translate-checklist.csproj -- $MODE
