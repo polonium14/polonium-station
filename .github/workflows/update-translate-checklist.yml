@@ -30,6 +30,8 @@ jobs:
         with:
           repository: polonium14/polonium-space
           ref: master
+          submodules: recursive
+          fetch-depth: 0
 
       - name: Setup .NET SDK
         uses: actions/setup-dotnet@v1
