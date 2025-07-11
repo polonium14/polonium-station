@@ -18,4 +18,3 @@ handcuff-component-cuff-interrupt-self-message = Przerwano ci zakładanie sobie 
 handcuff-component-cuff-interrupt-buckled-message = Nie możesz się przypiąć będąc w kajdankach!
 handcuff-component-cuff-interrupt-unbuckled-message = Nie możesz się odpiąć będąc w kajdankach!
 handcuff-component-cannot-drop-cuffs = Nie możesz założyć kajdanek {$target}.
-s
