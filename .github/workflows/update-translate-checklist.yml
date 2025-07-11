@@ -46,7 +46,7 @@ jobs:
       - name: Run
         run: bash .github/update-translate-checklist/run.sh
         env:
-          GITHUB_TOKEN: ${{ secrets.G_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
           REPO_ID: ${{ github.repository_id }}
           BRANCH_NAME: main
