@@ -36,17 +36,10 @@ jobs:
         with:
           dotnet-version: "9.0.x"
 
-      - name: Check current path
-        run: |
-          ls -l
-          ls -l .github/
-          ls -l .github/update-translate-checklist/
-          ls -l .github/update-translate-checklist/pr-open/
-
       - name: Restore and build
         run: |
-          dotnet restore .github/update-translate-checklist/pr-open/update-translate-checklist.csproj
-          dotnet build   .github/update-translate-checklist/pr-open/update-translate-checklist.csproj --configuration Release
+          dotnet restore .github/update-translate-checklist/update-translate-checklist.csproj
+          dotnet build   .github/update-translate-checklist/update-translate-checklist.csproj --configuration Release
 
       - name: Run
         run: bash update-translate-checklist/run.sh
