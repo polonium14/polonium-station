@@ -1,6 +1,6 @@
 # Headings
 turret-controls-window-title = Autonomiczny System Kontroli Obronnej
-turret-controls-window-turret-status-label = Powiązano urządzeń: [{$count}]
+turret-controls-window-turret-status-label = Powiązane urządzenia: [{$count}]
 turret-controls-window-armament-controls-label = Ustawienie uzbrojenia
 turret-controls-window-targeting-controls-label = Upoważniony personel
 
