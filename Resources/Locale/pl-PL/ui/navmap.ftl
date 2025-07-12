@@ -1,3 +1,3 @@
 ﻿navmap-zoom = Przybliżenie: {$value}x
-navmap-recenter = Recentruj
+navmap-recenter = Centruj
 navmap-toggle-beacons = Pokaż wydziały
