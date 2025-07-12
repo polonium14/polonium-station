@@ -1,35 +1,35 @@
 # Displayed as initiator of vote when no user creates the vote
-ui-vote-initiator-server = The server
+ui-vote-initiator-server = Serwer
 
 ## Default.Votes
 
-ui-vote-restart-title = Restart round
-ui-vote-restart-succeeded = Restart vote succeeded.
-ui-vote-restart-failed = Restart vote failed (need { TOSTRING($ratio, "P0") }).
-ui-vote-restart-fail-not-enough-ghost-players = Restart vote failed: A minimum of { $ghostPlayerRequirement }% ghost players is required to initiate a restart vote. Currently, there are not enough ghost players.
-ui-vote-restart-yes = Yes
-ui-vote-restart-no = No
-ui-vote-restart-abstain = Abstain
+ui-vote-restart-title = Restart rundy
+ui-vote-restart-succeeded = Głosowanie na restart powiodło się.
+ui-vote-restart-failed = Głosowanie za restartem nie powiodło się (wymagane { TOSTRING($ratio, "P0") }).
+ui-vote-restart-fail-not-enough-ghost-players = Głosowanie za restartem nie powiodło się: wymagane jest co najmniej { $ghostPlayerRequirement }% martwych graczy, aby rozpocząć głosowanie. Obecnie jest ich za mało.
+ui-vote-restart-yes = Tak
+ui-vote-restart-no = Nie
+ui-vote-restart-abstain = Wtrzymuję się
 
-ui-vote-gamemode-title = Next gamemode
-ui-vote-gamemode-tie = Tie for gamemode vote! Picking... { $picked }
-ui-vote-gamemode-win = { $winner } won the gamemode vote!
+ui-vote-gamemode-title = Następny tryb
+ui-vote-gamemode-tie = Remis w głosowaniu za trybem gry! Wybieramy... { $picked }
+ui-vote-gamemode-win = { $winner } wygrał głosowanie za trybem gry!
 
-ui-vote-map-title = Next map
-ui-vote-map-tie = Tie for map vote! Picking... { $picked }
-ui-vote-map-win = { $winner } won the map vote!
-ui-vote-map-notlobby = Voting for maps is only valid in the pre-round lobby!
-ui-vote-map-notlobby-time = Voting for maps is only valid in the pre-round lobby with { $time } remaining!
+ui-vote-map-title = Następna mapa
+ui-vote-map-tie = Remis w głosowaniu na mapę! Wybieramy... { $picked }
+ui-vote-map-win = { $winner } wygrała głosowanie na mapę!
+ui-vote-map-notlobby = Głosowanie za mapą jest ważne tylko w lobby przedrundowym!
+ui-vote-map-notlobby-time = Głosowanie za mapą jest ważne tylko w lobby przed rundą, w której pozostało { $time }!
 
 
 # Votekick votes
-ui-vote-votekick-unknown-initiator = A player
-ui-vote-votekick-unknown-target = Unknown Player
-ui-vote-votekick-title = { $initiator } has called a votekick for user: { $targetEntity }. Reason: { $reason }
-ui-vote-votekick-yes = Yes
-ui-vote-votekick-no = No
-ui-vote-votekick-abstain = Abstain
-ui-vote-votekick-success = Votekick for { $target } succeeded. Votekick reason: { $reason }
-ui-vote-votekick-failure = Votekick for { $target } failed. Votekick reason: { $reason }
-ui-vote-votekick-not-enough-eligible = Not enough eligible voters online to start a votekick: { $voters }/{ $requirement }
-ui-vote-votekick-server-cancelled = Votekick for { $target } was cancelled by the server.
+ui-vote-votekick-unknown-initiator = Gracz
+ui-vote-votekick-unknown-target = Nieznany Gracz
+ui-vote-votekick-title = { $initiator } rozpoczął votekick dla użytkownika: { $targetEntity }. Powód: { $powód }
+ui-vote-votekick-yes = Tak
+ui-vote-votekick-no = Nie
+ui-vote-votekick-abstain = Wstrzymuję się
+ui-vote-votekick-success = Votekick gracza { $target } powiódł się. Powód votekick'a: { $reason }
+ui-vote-votekick-failure = Votekick gracza { $target } nie powiódł się. Powód votekick'a: { $reason }
+ui-vote-votekick-not-enough-eligible = Niewystarczająco upoważnionych aktywnych graczy, aby rozpocząć głosowanie: { $voters }/{ $requirement }
+ui-vote-votekick-server-cancelled = Votekick gracza { $target } został anulowane przez serwer.

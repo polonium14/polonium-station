@@ -1,42 +1,42 @@
-ui-vote-type-restart = Restart round
-ui-vote-type-gamemode = Next gamemode
-ui-vote-type-map = Next map
-ui-vote-type-votekick = Votekick
+ui-vote-type-restart = Restart rundy
+ui-vote-type-gamemode = Następny tryb
+ui-vote-type-map = Następna mapa
+ui-vote-type-votekick = Głosowanie na wyrzucenie
 
 # Votekick reasons
-ui-vote-votekick-type-raiding = Raiding
-ui-vote-votekick-type-cheating = Cheating
-ui-vote-votekick-type-spamming = Spamming
+ui-vote-votekick-type-raiding = Próba rajdu
+ui-vote-votekick-type-cheating = Oszukiwanie
+ui-vote-votekick-type-spamming = Spamowanie
 
 # Window title of the vote create menu
-ui-vote-create-title = Call Vote
+ui-vote-create-title = Rozpocznij głosowanie
 
 # Submit button in the vote create button
-ui-vote-create-button = Call Vote
+ui-vote-create-button = Rozpocznij głosowanie
 
 # Follow button in the vote create menu
-ui-vote-follow-button = Follow User
+ui-vote-follow-button = Śledź gracza
 
 # Timeout text if a standard vote type is currently on timeout.
-ui-vote-type-timeout = This vote was called too recently ({$remaining})
+ui-vote-type-timeout = To głosowanie było przeprowadzone zbyt niedawno ({$remaining})
 
 # Unavailable text if a vote type has been disabled manually.
-ui-vote-type-not-available = This vote type has been disabled
+ui-vote-type-not-available = Ten typ głosowania został wyłączony
 
 # Vote option only available for specific users.
 ui-vote-trusted-users-notice =
-  This vote option is only available to players who have enough playtime or are whitelisted.
-  In addition, you must have been a ghost for { $timeReq } seconds.
+  Ta opcja głosowania jest dostępna tylko dla graczy z odpowiednim czasem gry lub z listy dozwolonych.
+  Dodatkowo musisz być duchem przez { $timeReq } sekund.
 
 # Warning to not abuse a specific vote option.
 ui-vote-abuse-warning =
-  Warning!
-  Abuse of the votekick system may result in an indefinite ban!
+  Uwaga!
+  Nadużywanie systemu głosowania może skutkować permanentnym banem!
 
 # Hue hue hue
-ui-vote-fluff = Powered by Robust™ Anti-Tamper Technology
+ui-vote-fluff = Napędzane przez Robust™ Anti-Tamper Technology
 
 ## Vote menu command
 
-cmd-votemenu-desc = Opens the voting menu.
-cmd-votemenu-help = Usage: votemenu
+cmd-votemenu-desc = Otwiera menu głosowania.
+cmd-votemenu-help = Użycie: votemenu
