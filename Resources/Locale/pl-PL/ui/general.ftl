@@ -2,4 +2,4 @@
 ui-verb-toggle-open = Przełącz UI
 verb-instrument-openui = Włącz Muzykę
 
-ui-needs-anchor = Najpierw go zakotwicz!
+ui-needs-anchor = Najpierw go przymocuj!
