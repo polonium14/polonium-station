@@ -12,7 +12,7 @@ cmd-whitelistremove-removed = {$username} został usunięty z białej listy.
 cmd-whitelistremove-not-found = Nie można znaleść '{$username}'.
 cmd-whitelistremove-arg-player = [player]
 
-cmd-kicknonwhitelisted-desc = Wywalenie wszystkich nie będących w whitelist z serwera.
+cmd-kicknonwhitelisted-desc = Wyrzucenie wszystkich nie będących na białej liście z serwera.
 cmd-kicknonwhitelisted-help = Użycie: kicknonwhitelisted
 
 ban-banned-permanent = Ten ban może być przerwany przez prośbę.
