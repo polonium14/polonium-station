@@ -1,17 +1,17 @@
 
 ## Entity
 
-crayon-drawing-label = Drawing: [color={$color}]{$state}[/color] ({$charges}/{$capacity})
-crayon-interact-not-enough-left-text = Not enough left.
-crayon-interact-used-up-text = The {$owner} got used up.
-crayon-interact-invalid-location = Can't reach there!
+crayon-drawing-label = Rysunek: [color={$color}]{$state}[/color] ({$charges}/{$capacity})
+crayon-interact-not-enough-left-text = Za mało pozostało.
+crayon-interact-used-up-text = {$owner} się zużył.
+crayon-interact-invalid-location = Nie możesz tam dosięgnąć!
 
 ## UI
-crayon-window-title = Crayon
-crayon-window-placeholder = Search, or queue a comma-separated list of names
-crayon-category-1-brushes = Brushes
-crayon-category-2-alphanum = Numbers and letters
-crayon-category-3-symbols = Symbols
-crayon-category-4-info = Signs
+crayon-window-title = Kredka
+crayon-window-placeholder = Wyszukaj lub wpisz listę nazw oddzieloną przecinkami
+crayon-category-1-brushes = Pędzle
+crayon-category-2-alphanum = Cyfry i litery
+crayon-category-3-symbols = Symbole
+crayon-category-4-info = Znaki
 crayon-category-5-graffiti = Graffiti
-crayon-category-random = Random
+crayon-category-random = Losowe

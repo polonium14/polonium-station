@@ -1,17 +1,15 @@
-apc-menu-title = APC
-apc-menu-breaker-label = Main Breaker
-apc-menu-breaker-button = Toggle
-apc-menu-power-label = Load
-apc-menu-external-label = External Power
-apc-menu-charge-label = {$percent} Charged
+apc-menu-title = Sterownik zasilania (APC)
+apc-menu-breaker-label = Główny wyłącznik
+apc-menu-breaker-button = Przełącz
+apc-menu-power-label = Obciążenie
+apc-menu-external-label = Zasilanie zewnętrzne
+apc-menu-charge-label = Naładowanie: {$percent}
 
-# For the power state label
+# Stan zasilania
+apc-menu-power-state-good = Dobry
+apc-menu-power-state-low = Niski
+apc-menu-power-state-none = Brak
 
-apc-menu-power-state-good = Good
-apc-menu-power-state-low = Low
-apc-menu-power-state-none = None
-
-# For the flavor text on the footer
-
-apc-menu-flavor-left = Contact an engineer for assistance.
-apc-menu-flavor-right = v1.2
+# Tekst pomocniczy na dole
+apc-menu-flavor-left = Skontaktuj się z inżynierem w celu uzyskania pomocy.
+apc-menu-flavor-right = wersja 1.2
