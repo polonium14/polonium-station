@@ -37,7 +37,7 @@ whitelist-always-deny = Nie masz pozwolenia by dołączyć do tego serwera.
 whitelist-fail-prefix = Poza whitelist: {$msg}
 
 cmd-blacklistadd-desc = Dodanie gracza z podanym nickiem do czarnej listy serwera.
-cmd-blacklistadd-help = Użycie: blacklistadd <username>
+cmd-blacklistadd-help = Użycie: blacklistadd <nazwa_użytkownika>
 cmd-blacklistadd-existing = {$username} jest w blacklist!
 cmd-blacklistadd-added = {$username} nie jest w blacklist!
 cmd-blacklistadd-not-found = Nie można znaleść '{$username}'
