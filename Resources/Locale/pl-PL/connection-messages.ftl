@@ -61,4 +61,4 @@ ipintel-server-ratelimited = Ten serwer używa systemu dodatkowej weryfikacji, k
 ipintel-unknown = Ten serwer używa systemu dodatkowej weryfikacji, który napotkał problem. Proszę o kontakt z administratorem serweru i ponowną próbę puźniej.
 ipintel-suspicious = Wygląda na to, że łączysz się za pomocą centrum danych lub VPN. Ze względów administracyjnych nie zezwalamy na grę przy pomocy VPN. Proszę o kontakt z administratorem serwera, jeśli jest to błędny komunikat.
 
-hwid-required = Twój klient odmówił wysłania id hardware'u. Proszę o kontakt z zespołem administracyjnym, by uzyskać dalszą pomoc.
+hwid-required = Twój klient odmówił wysłania identyfikatora sprzętu. Proszę o kontakt z zespołem administracyjnym, by uzyskać dalszą pomoc.
