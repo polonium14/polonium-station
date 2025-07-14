@@ -32,7 +32,7 @@ whitelist-playtime = Nie masz wystarczającego czasu w grze by dołączyć do se
 whitelist-player-count = Ten serwer nie przyjmuje więcej graczy. Proszę, spróbuj puźniej.
 whitelist-notes = Masz zbyt dużo notatek administratorów by dołączyć do serwera. Możesz je sprawdzić wpisując /adminremarks do okna czatu.
 whitelist-manual = Nie jesteś na białej liście tego serweru.
-whitelist-blacklisted = Jesteś w blacklist na tym serwerze.
+whitelist-blacklisted = Jesteś na czarnej liście tego serweru.
 whitelist-always-deny = Nie masz pozwolenia by dołączyć do tego serwera.
 whitelist-fail-prefix = Poza whitelist: {$msg}
 
