@@ -1,5 +1,5 @@
 # addaction
-cmd-addaction-desc = Dodaj akcję do wybranej jednostki. Akcja nie będzie działać gdy cel potrzebuje dodatkowych komponent użyty na niej (takie jak Dragon's Devour).
+cmd-addaction-desc = Dodaj akcję do wybranej jednostki. Akcja nie będzie działać, jeśli cel wymaga dodatkowych komponentów użytych w niej (takich jak Dragon’s Devour).
 cmd-addaction-help = addaction <EntityUid> <ActionPrototype>
 
 cmd-addaction-invalid-args = Potrzebuje dokładnie 2 argumentów.
