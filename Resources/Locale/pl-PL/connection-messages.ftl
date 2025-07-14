@@ -44,7 +44,7 @@ cmd-blacklistadd-not-found = Nie można znaleść '{$username}'
 cmd-blacklistadd-arg-player = [player]
 
 cmd-blacklistremove-desc = Usunięcie gracza z podanym nickiem z blacklist serwera.
-cmd-blacklistremove-help = Użycie: blacklistremove <username>
+cmd-blacklistremove-help = Użycie: blacklistremove <nazwa_użytkownika>
 cmd-blacklistremove-existing = {$username} nie ma w blacklist!
 cmd-blacklistremove-removed = {$username} usunięty z blacklist.
 cmd-blacklistremove-not-found = Nie można znaleść '{$username}'
