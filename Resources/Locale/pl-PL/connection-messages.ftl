@@ -15,7 +15,7 @@ cmd-whitelistremove-arg-player = [player]
 cmd-kicknonwhitelisted-desc = Wyrzucenie wszystkich nie będących na białej liście z serwera.
 cmd-kicknonwhitelisted-help = Użycie: kicknonwhitelisted
 
-ban-banned-permanent = Ten ban może być przerwany przez prośbę.
+ban-banned-permanent = Ten ban zostanie zniesiony wyłącznie w drodze odwołania.
 ban-banned-permanent-appeal = Ten ban może być przerwany przez prośbę. Możesz wysłać prośbę tu {$link}
 ban-expires = Ten ban skończy się za {$duration} minut lub o {$time} w systemie UTC.
 ban-banned-1 = Ty lub inny użytkownik tego komputera lub łącza został zbanowany z rozgrywki.
