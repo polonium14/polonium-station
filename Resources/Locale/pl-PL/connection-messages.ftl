@@ -8,7 +8,7 @@ cmd-whitelistadd-arg-player = [player]
 cmd-whitelistremove-desc = Usuwa gracza z podanym nickiem z białej listy.
 cmd-whitelistremove-help = Użycie: whitelistremove <nazwa_użytkownika lub ID>
 cmd-whitelistremove-existing = {$username} nie znajduje się na białej liście.
-cmd-whitelistremove-removed = {$username} usunięty z whitelist.
+cmd-whitelistremove-removed = {$username} został usunięty z białej listy.
 cmd-whitelistremove-not-found = Nie można znaleść '{$username}'.
 cmd-whitelistremove-arg-player = [player]
 
