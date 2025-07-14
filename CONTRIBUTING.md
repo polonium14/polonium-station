@@ -185,8 +185,98 @@ Duże nowe funkcjonalności oraz kompleksowe przeróbki istniejących, rozbudowa
 
 ---
 
+# Często Zadawane Pytania
+
+#### 1. Mam już forka SS14 na swoim profilu, więc GitHub nie pozwala mi utworzyć forka PS14. Jak mogę to obejść?
+
+Rzeczywiście, zgodnie z zasadami GitHuba, w profilu może znajdować się _tylko jeden_ fork danego repozytorium.
+Aby to obejść, powinieneś mieć jeden **wspólny fork**, na którym będziesz pracować z różnymi repozytoriami.
+Kluczowe jest, aby ten fork miał **poprawnie skonfigurowane remote'y**.
+
+Oto jak wyglądają twoje działania, gdy chesz mieć "drugi fork":
+
+1. Upewnij się, że masz już sklonowany istniejący fork na swoim komputerze.
+
+2. Dodaj `remote` na repozytorium PS14:
+
+Na tym etapie twoje `remote`'y mogą wyglądać tak:
+
+```bash
+$ git remote -v
+origin  https://github.com/nikitosych/space-station-14 (fetch)
+origin  https://github.com/nikitosych/space-station-14 (push)
+upstream        https://github.com/space-wizards/space-station-14 (fetch)
+upstream        https://github.com/space-wizards/space-station-14 (push)
+```
+
+-   `origin` to wskaźnik na twój własny fork SS14.
+-   `upstream` to wskaźnik na oryginalne repozytorium SS14 (opcjonalnie, ale zalecane).
+
+Teraz dodaj kolejny `remote`, który będzie wskazywać na repozytorium PS14 i wczytaj z niego dane:
+
+```bash
+$ git remote add polonium https://github.com/polonium14/polonium-space
+$ git fetch polonium
+```
+
+Teraz twoje lokalne repo powinno wyglądać tak:
+
+```bash
+$ git remote -v
+origin  https://github.com/ghostxne/space-station-14 (fetch)
+origin  https://github.com/ghostxne/space-station-14 (push)
+polonium        https://github.com/polonium14/polonium-space (fetch)
+polonium        https://github.com/polonium14/polonium-space (push)
+upstream        https://github.com/space-wizards/space-station-14 (fetch)
+upstream        https://github.com/space-wizards/space-station-14 (push)
+```
+
+3. Stwórz nową gałąź:
+
+```bash
+$ git checkout -b new-feature
+Switched to a new branch 'new-feature'
+```
+
+4. Zastąp stan gałęzi zawartością PS14 (gałęzi `master`)
+
+```bash
+$ git reset --hard polonium/master
+HEAD is now at 3c38b14144 Tłumaczenie HUD/UI (#15)
+```
+
+5. Wyślij nową gałąź na GitHub:
+
+```bash
+$ git push -u origin new-feature
+```
+
+Przykładowy wynik:
+
+```bash
+Enumerating objects: 760, done.
+Counting objects: 100% (744/744), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (493/493), done.
+Writing objects: 100% (718/718), 172.37 KiB | 17.24 MiB/s, done.
+Total 718 (delta 219), reused 662 (delta 202), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (219/219), completed with 9 local objects.
+remote:
+To https://github.com/nikitosych/space-station-14
+ * [new branch]            new-feature -> new-feature
+branch 'new-feature' set up to track 'origin/new-feature'.
+```
+
+✅ Gotowe! Teraz możesz wprowadzać potrzebne zmiany i utworzyć Pull Request do PS14 z czystą historią commitów.
+
+---
+
 W razie jakichkolwiek pytań lub sugestii zapraszamy na nasz [Discord](https://discord.gg/AnCVTJEmnN) :)
 
 ---
 
 _Te konwecje zostały opracowane na podstawie [zasad](https://docs.spacestation14.com/en/general-development/codebase-info.html) zdefiniowanych przez Wizardów (uzupełnione/przetłumaczone/skrócone)_
+
+```
+
+```
