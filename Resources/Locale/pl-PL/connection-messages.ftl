@@ -41,7 +41,7 @@ cmd-blacklistadd-help = Użycie: blacklistadd <nazwa_użytkownika>
 cmd-blacklistadd-existing = {$username} jest już na czarnej liście!
 cmd-blacklistadd-added = {$username} dodany do czarnej listy
 cmd-blacklistadd-not-found = Nie można znaleść '{$username}'
-cmd-blacklistadd-arg-player = [player]
+cmd-blacklistadd-arg-player = [gracz]
 
 cmd-blacklistremove-desc = Usunięcie gracza z podanym nickiem z blacklist serwera.
 cmd-blacklistremove-help = Użycie: blacklistremove <nazwa_użytkownika>
