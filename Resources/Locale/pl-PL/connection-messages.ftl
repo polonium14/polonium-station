@@ -2,7 +2,7 @@ cmd-whitelistadd-desc = Dodaj gracza o podanej nazwie użytkownika do białej li
 cmd-whitelistadd-help = Użycie: whitelistadd <nazwa_użytkownika lub ID>
 cmd-whitelistadd-existing = {$username} jest już zapisany w białej liście!
 cmd-whitelistadd-added = {$username} dodany do białej listy.
-cmd-whitelistadd-not-found = Nie można dodać '{$username}'.
+cmd-whitelistadd-not-found = Nie można znaleźć '{$username}'.
 cmd-whitelistadd-arg-player = [player]
 
 cmd-whitelistremove-desc = Usuwa gracza z podanym nickiem z whitelist.
