@@ -5,7 +5,7 @@ cmd-addaction-help = addaction <EntityUid> <ActionPrototype>
 cmd-addaction-invalid-args = Potrzebuje dokładnie 2 argumentów.
 cmd-addaction-actions-not-found = Wybrana jednostka nie może użyć akcji.
 cmd-addaction-action-not-found = Nie można znaleść pasującego prototypu akcji {$action}.
-cmd-addaction-adding-failed = Nie powodzenie w dodaniu akcji.
+cmd-addaction-adding-failed = Dodanie akcji nie powiodło się.
 
 cmd-addaction-player-completion = <EntityUid>
 cmd-addaction-action-completion = <ActionProto>
