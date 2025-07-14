@@ -1,6 +1,6 @@
 # rmaction
 cmd-rmaction-desc = Usuwa akcję z jednostki.
-cmd-rmaction-help = Usuń akcję <ActionUid> z <EntityUid>
+cmd-rmaction-help = rmaction <EntityUid> <ActionUid> 
 
 cmd-rmaction-invalid-args = Potrzebuje dokładnie 2 argumentów.
 cmd-rmaction-actions-not-found = Wybrana jednostka nie może użyć akcji.
