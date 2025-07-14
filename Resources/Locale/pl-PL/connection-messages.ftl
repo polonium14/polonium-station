@@ -30,7 +30,7 @@ panic-bunker-account-reason-overall = Twój czas grania na serwerze musi być d�
 
 whitelist-playtime = Nie masz wystarczającego czasu w grze by dołączyć do serwera, Potrzebujesz co najmniej {$minutes} minut.
 whitelist-player-count = Ten serwer nie przyjmuje więcej graczy. Proszę, spróbuj puźniej.
-whitelist-notes = Masz zbyt dużo notatek admina by dołączyć do serwera. Możesz je sprawdzić wpisując /adminremarks do okna czatu.
+whitelist-notes = Masz zbyt dużo notatek administratorów by dołączyć do serwera. Możesz je sprawdzić wpisując /adminremarks do okna czatu.
 whitelist-manual = Nie jesteś w whitelist na tym serwerze.
 whitelist-blacklisted = Jesteś w blacklist na tym serwerze.
 whitelist-always-deny = Nie masz pozwolenia by dołączyć do tego serwera.
