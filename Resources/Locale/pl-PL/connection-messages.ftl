@@ -51,7 +51,7 @@ cmd-blacklistremove-not-found = Nie można znaleść '{$username}'
 cmd-blacklistremove-arg-player = [player]
 
 baby-jail-account-denied = Ten serwer jest dla nowych graczy i tych którzy chcą im pomóc. Nowe połączenia z kontami, które są za stare lub nie są w whitelist, nie będą zaakceptowane. Sprawdź inne serwery i zobaczy wszystko co ma do zaoferowania Space Station 14. Dobrej zabawy!
-baby-jail-account-denied-reason = Ten serwer jest dla nowych graczy i tych którzy chcą im pomóc. Nowe połączenia z kontami, które są za stare lub nie są w whitelist, nie będą zaakceptowane. Sprawdź inne serwery i zobaczy wszystko co ma do zaoferowania Space Station 14. Dobrej zabawy! Powód: "{$reason}".
+baby-jail-account-denied-reason = Ten serwer jest dla nowych graczy i tych którzy chcą im pomóc. Nowe połączenia z kontami, które są za stare lub nie są na białej liście, nie będą zaakceptowane. Sprawdź inne serwery i zobacz wszystko, co ma do zaoferowania Space Station 14. Dobrej zabawy! Powód: "{$reason}".
 baby-jail-account-reason-account = Twoje konto Space Station 14 jest zbyt stare. Musi być młodsze niż {$minutes} minut.
 baby-jail-account-reason-overall = Twój czas gry na serwerze musi być krótszy niż {$minutes} minut.
 
