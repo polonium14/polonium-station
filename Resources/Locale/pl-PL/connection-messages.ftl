@@ -24,7 +24,7 @@ ban-banned-3 = Próby takie jak ominięcie bana przez utworzenie nowego konta b�
 
 soft-player-cap-full = Ten serwer jest pełny!
 panic-bunker-account-denied = Ten serwer jest w trybie bunkrowej paniki, często by pozowolić na środki ostrożności przeciwko rajdom. Nowe połączenia z kont, które nie spełniają warunków, są czasowo nie zakceptowane. Spróbuj ponownie później
-panic-bunker-account-denied-reason = Ten serwer jest w trybie bunkrowej paniki, często by pozowolić na środki ostrożności przeciwko rajdom. Nowe połączenia z kont, które nie spełniają warunków, są czasowo nie zakceptowane. Spróbuj ponownie. Powód: "{$reason}".
+panic-bunker-account-denied-reason = Ten serwer jest w trybie bunkrowej paniki, często by pozowolić na środki ostrożności przeciwko rajdom. Nowe połączenia z kont, które nie spełniają warunków, są czasowo nie zakceptowane. Spróbuj ponownie. Powód: "{$reason}"
 panic-bunker-account-reason-account = Twoje konto Space Station 14 jest zbyt nowe. Musi być starsze niż {$minutes} minut.
 panic-bunker-account-reason-overall = Twój czas grania na serwerze musi być dłuższy niż {$minutes} minut.
 
