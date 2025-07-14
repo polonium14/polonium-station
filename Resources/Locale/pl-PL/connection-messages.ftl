@@ -19,7 +19,7 @@ ban-banned-permanent = Ten ban zostanie zniesiony wyłącznie w drodze odwołani
 ban-banned-permanent-appeal = Ten ban zostanie zniesiony wyłącznie w drodze odwołania. Odwołanie można złożyć pod adresem {$link}.
 ban-expires = Ten ban skończy się za {$duration} minut lub o {$time} w systemie UTC.
 ban-banned-1 = Ty lub inny użytkownik tego komputera lub łącza został zbanowany z rozgrywki.
-ban-banned-2 = Powód bana to: "{$reason}".
+ban-banned-2 = Powód bana to: "{$reason}"
 ban-banned-3 = Próby takie jak ominięcie bana przez utworzenie nowego konta będą zarejestrowane.
 
 soft-player-cap-full = Ten serwer jest pełny!
