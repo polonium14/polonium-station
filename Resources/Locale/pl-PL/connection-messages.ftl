@@ -39,7 +39,7 @@ whitelist-fail-prefix = Poza whitelist: {$msg}
 cmd-blacklistadd-desc = Dodanie gracza z podanym nickiem do czarnej listy serwera.
 cmd-blacklistadd-help = Użycie: blacklistadd <nazwa_użytkownika>
 cmd-blacklistadd-existing = {$username} jest już na czarnej liście!
-cmd-blacklistadd-added = {$username} nie jest w blacklist!
+cmd-blacklistadd-added = {$username} dodany do czarnej listy
 cmd-blacklistadd-not-found = Nie można znaleść '{$username}'
 cmd-blacklistadd-arg-player = [player]
 
