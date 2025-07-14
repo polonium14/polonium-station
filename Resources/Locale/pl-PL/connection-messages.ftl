@@ -48,7 +48,7 @@ cmd-blacklistremove-help = Użycie: blacklistremove <nazwa_użytkownika>
 cmd-blacklistremove-existing = {$username} nie ma w blacklist!
 cmd-blacklistremove-removed = {$username} usunięty z blacklist.
 cmd-blacklistremove-not-found = Nie można znaleść '{$username}'
-cmd-blacklistremove-arg-player = [player]
+cmd-blacklistremove-arg-player = [gracz]
 
 baby-jail-account-denied = Ten serwer jest dla nowych graczy i tych którzy chcą im pomóc. Nowe połączenia z kontami, które są za stare lub nie są na białej liście, nie będą zaakceptowane. Sprawdź inne serwery i zobaczy wszystko co ma do zaoferowania Space Station 14. Dobrej zabawy!
 baby-jail-account-denied-reason = Ten serwer jest dla nowych graczy i tych którzy chcą im pomóc. Nowe połączenia z kontami, które są za stare lub nie są na białej liście, nie będą zaakceptowane. Sprawdź inne serwery i zobacz wszystko, co ma do zaoferowania Space Station 14. Dobrej zabawy! Powód: "{$reason}".
