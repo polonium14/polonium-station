@@ -273,6 +273,8 @@ branch 'new-feature' set up to track 'origin/new-feature'.
 
 W razie jakichkolwiek pytań lub sugestii zapraszamy na nasz [Discord](https://discord.gg/AnCVTJEmnN) :)
 
+Zaleca się również zapoznanie z [poradnikiem Slartiego](https://hackmd.io/@Slart/S1hsoGFm1l), który ułatwia naukę struktury i zasad działania codebase SS14.
+
 ---
 
 _Te konwecje zostały opracowane na podstawie [zasad](https://docs.spacestation14.com/en/general-development/codebase-info.html) zdefiniowanych przez Wizardów (uzupełnione/przetłumaczone/skrócone)_
