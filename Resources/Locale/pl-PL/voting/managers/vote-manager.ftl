@@ -25,7 +25,7 @@ ui-vote-map-notlobby-time = Głosowanie za mapą jest ważne tylko w lobby przed
 # Votekick votes
 ui-vote-votekick-unknown-initiator = Gracz
 ui-vote-votekick-unknown-target = Nieznany Gracz
-ui-vote-votekick-title = { $initiator } rozpoczął votekick dla użytkownika: { $targetEntity }. Powód: { $powód }
+ui-vote-votekick-title = { $initiator } rozpoczął votekick dla użytkownika: { $targetEntity }. Powód: { $reason }
 ui-vote-votekick-yes = Tak
 ui-vote-votekick-no = Nie
 ui-vote-votekick-abstain = Wstrzymuję się
