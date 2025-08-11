@@ -40,6 +40,7 @@ def main():
     }
 
     print(f"Starting publish on Robust.Cdn for version {VERSION}")
+    print(f"Token length: {len(PUBLISH_TOKEN)}")
 
     data = {
         "version": VERSION,
