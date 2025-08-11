@@ -24,8 +24,8 @@ RELEASE_DIR = "release"
 # CONFIGURATION PARAMETERS
 # Forks should change these to publish to their own infrastructure.
 #
-ROBUST_CDN_URL = "https://build.funkystation.org/"
-FORK_ID = "funkystation"
+ROBUST_CDN_URL = "https://central.ss14.pl/"
+FORK_ID = "polonium"
 
 def main():
     parser = argparse.ArgumentParser()
