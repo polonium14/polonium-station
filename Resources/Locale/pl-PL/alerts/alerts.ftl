@@ -30,7 +30,7 @@ alerts-weightless-desc =
 alerts-walking-name = Chodzenie
 alerts-walking-desc = Poruszasz się powoli, idąc.
 
-alerts-stunned-name = [color=yellow]Oślepiony[/color]
+alerts-stunned-name = [color=yellow]Ogłuszony[/color]
 alerts-stunned-desc = Jesteś [color=yellow]ogłuszony[/color]! Coś utrudnia ci poruszanie się lub interakcję z przedmiotami.
 
 alerts-handcuffed-name = [color=yellow]Zakuty[/color]
