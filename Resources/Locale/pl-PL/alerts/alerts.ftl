@@ -31,7 +31,7 @@ alerts-walking-name = Chodzenie
 alerts-walking-desc = Poruszasz się powoli, idąc.
 
 alerts-stunned-name = [color=yellow]Oślepiony[/color]
-alerts-stunned-desc = Jesteś [color=yellow]oślepiony[/color]! Coś utrudnia ci poruszanie się lub interakcję z przedmiotami.
+alerts-stunned-desc = Jesteś [color=yellow]ogłuszony[/color]! Coś utrudnia ci poruszanie się lub interakcję z przedmiotami.
 
 alerts-handcuffed-name = [color=yellow]Zakuty[/color]
 alerts-handcuffed-desc = Jesteś [color=yellow]zakuty[/color] i nie możesz używać rąk. Jeśli ktoś cię ciągnie, nie będziesz mógł się opierać.
