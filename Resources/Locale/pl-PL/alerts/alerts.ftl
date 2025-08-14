@@ -1,121 +1,121 @@
-alerts-low-oxygen-name = [color=red]Low Oxygen[/color]
-alerts-low-oxygen-desc = There is [color=red]not enough oxygen[/color] in the air you are breathing. Put on [color=green]internals[/color].
+alerts-low-oxygen-name = [color=red]Niski poziom tlenu[/color]
+alerts-low-oxygen-desc = W powietrzu, które oddychasz, jest [color=red]za mało tlenu[/color]. Załóż [color=green]internale[/color].
 
-alerts-low-nitrogen-name = [color=red]Low Nitrogen[/color]
-alerts-low-nitrogen-desc = There is [color=red]not enough nitrogen[/color] in the air you are breathing. Put on [color=green]internals[/color].
+alerts-low-nitrogen-name = [color=red]Niski poziom azotu[/color]
+alerts-low-nitrogen-desc = W powietrzu, które oddychasz, jest [color=red]za mało azotu[/color]. Załóż [color=green]internale[/color].
 
-alerts-high-toxin-name = [color=red]High Toxin Level[/color]
-alerts-high-toxin-desc = There are [color=red]too many toxins[/color] in the air you are breathing. Put on [color=green]internals[/color] or get away.
+alerts-high-toxin-name = [color=red]Wysoki poziom toksyn[/color]
+alerts-high-toxin-desc = W powietrzu, które oddychasz, jest [color=red]za dużo toksyn[/color]. Załóż [color=green]internale[/color] lub odejdź.
 
-alerts-low-pressure-name = [color=red]Low Pressure[/color]
-alerts-low-pressure-desc = The air around you is [color=red]hazardously thin[/color]. A [color=green]space suit[/color] would protect you.
+alerts-low-pressure-name = [color=red]Niskie ciśnienie[/color]
+alerts-low-pressure-desc = Powietrze wokół ciebie jest [color=red]niebezpiecznie rzadkie[/color]. [color=green]Skafander kosmiczny[/color] cię ochroni.
 
-alerts-high-pressure-name = [color=red]High Pressure[/color]
-alerts-high-pressure-desc = The air around you is [color=red]hazardously thick[/color]. A [color=green]pressurized suit[/color] would be enough protect you.
+alerts-high-pressure-name = [color=red]Wysokie ciśnienie[/color]
+alerts-high-pressure-desc = Powietrze wokół ciebie jest [color=red]niebezpiecznie gęste[/color]. Wystarczy [color=green]skafander z ciśnieniem[/color], by się ochronić.
 
-alerts-on-fire-name = [color=red]On Fire[/color]
-alerts-on-fire-desc = You're [color=red]on fire[/color]. Click the alert to stop, drop and roll to put the fire out or move to a vacuum area.
+alerts-on-fire-name = [color=red]Płoniesz[/color]
+alerts-on-fire-desc = Jesteś [color=red]w ogniu[/color]. Kliknij alert, aby się zatrzymać, upaść i turlać, by ugasić ogień lub przejdź do strefy próżni.
 
-alerts-too-cold-name = [color=cyan]Too Cold[/color]
-alerts-too-cold-desc = You're [color=cyan]freezing cold![/color] Get somewhere warmer and take off any insulating clothing like a space suit.
+alerts-too-cold-name = [color=cyan]Zimno[/color]
+alerts-too-cold-desc = Jest ci [color=cyan]bardzo zimno![/color] Znajdź cieplejsze miejsce i zdejmij izolujące ubrania, np. skafander.
 
-alerts-too-hot-name = [color=red]Too Hot[/color]
-alerts-too-hot-desc = It's [color=red]too hot![/color] Get somewhere colder, take off any insulating clothing like a space suit, or at least get away from the flames.
+alerts-too-hot-name = [color=red]Gorąco[/color]
+alerts-too-hot-desc = Jest ci [color=red]zbyt gorąco![/color] Znajdź chłodniejsze miejsce, zdejmij izolujące ubrania jak skafander albo przynajmniej odejdź od ognia.
 
-alerts-weightless-name = Weightless
+alerts-weightless-name = Bezwładność
 alerts-weightless-desc =
-    Gravity has ceased affecting you, and you're floating around aimlessly. Find something sturdy to hold onto, or throw or shoot something in a direction opposite of you.
-    Mag-boots or jetpacks would help you move with more control.
+    Grawitacja przestała na ciebie działać i unosisz się bez celu. Znajdź coś solidnego, do czego się możesz przytrzymać, lub rzuć albo wystrzel coś w kierunku przeciwnym do siebie.
+    Magnetyczne buty lub plecak odrzutowy pomogą ci się lepiej poruszać.
 
-alerts-walking-name = Walking
-alerts-walking-desc = You are walking, moving at a slow pace.
+alerts-walking-name = Chodzenie
+alerts-walking-desc = Poruszasz się powoli, idąc.
 
-alerts-stunned-name = [color=yellow]Stunned[/color]
-alerts-stunned-desc = You're [color=yellow]stunned[/color]! Something is impairing your ability to move or interact with objects.
+alerts-stunned-name = [color=yellow]Ogłuszony[/color]
+alerts-stunned-desc = Jesteś [color=yellow]ogłuszony[/color]! Coś utrudnia ci poruszanie się lub interakcję z przedmiotami.
 
-alerts-handcuffed-name = [color=yellow]Handcuffed[/color]
-alerts-handcuffed-desc = You're [color=yellow]handcuffed[/color] and can't use your hands. If anyone drags you, you won't be able to resist.
+alerts-handcuffed-name = [color=yellow]Zakuty[/color]
+alerts-handcuffed-desc = Jesteś [color=yellow]zakuty[/color] i nie możesz używać rąk. Jeśli ktoś cię ciągnie, nie będziesz mógł się opierać.
 
-alerts-ensnared-name = [color=yellow]Ensnared[/color]
-alerts-ensnared-desc = You're [color=yellow]ensnared[/color] and is impairing your ability to move.
+alerts-ensnared-name = [color=yellow]Uwięziony[/color]
+alerts-ensnared-desc = Jesteś [color=yellow]uwięziony[/color], co utrudnia ci poruszanie się.
 
-alerts-buckled-name = [color=yellow]Buckled[/color]
-alerts-buckled-desc = You've been [color=yellow]buckled[/color] to something. Click the alert to unbuckle unless you're [color=yellow]handcuffed.[/color]
+alerts-buckled-name = [color=yellow]Zapięty[/color]
+alerts-buckled-desc = Jesteś [color=yellow]przypięty[/color] do czegoś. Kliknij alert, aby się odpiąć, chyba że jesteś [color=yellow]zakuty.[/color]
 
-alerts-crit-name = [color=red]Critical Condition[/color]
-alerts-crit-desc = You're severely injured and unconscious.
+alerts-crit-name = [color=red]Stan krytyczny[/color]
+alerts-crit-desc = Jesteś ciężko ranny i nieprzytomny.
 
-alerts-dead-name = Dead
-alerts-dead-desc = You're dead, note that you can still be revived!
+alerts-dead-name = Nie żyjesz
+alerts-dead-desc = Jesteś martwy, ale pamiętaj, że możesz zostać wskrzeszony!
 
-alerts-health-name = Health
-alerts-health-desc = [color=green]Green[/color] good. [color=red]Red[/color] bad.
+alerts-health-name = Zdrowie
+alerts-health-desc = [color=green]Zielony[/color] – dobrze. [color=red]Czerwony[/color] – źle.
 
-alerts-battery-name = Battery
-alerts-battery-desc = If your battery depletes, you will be unable to use your abilities.
+alerts-battery-name = Bateria
+alerts-battery-desc = Gdy bateria się wyczerpie, nie będziesz mógł używać swoich zdolności.
 
-alerts-no-battery-name = No Battery
-alerts-no-battery-desc = You don't have a battery, rendering you unable to charge or use your abilities.
+alerts-no-battery-name = Brak baterii
+alerts-no-battery-desc = Nie masz baterii, więc nie możesz się ładować ani używać zdolności.
 
-alerts-internals-name = Toggle internals
-alerts-internals-desc = Toggles your gas tank internals on or off.
+alerts-internals-name = Włącz/wyłącz internale
+alerts-internals-desc = Włącza lub wyłącza twoje wewnętrzne zbiorniki gazów.
 
-alerts-piloting-name = Piloting Shuttle
-alerts-piloting-desc = You are piloting a shuttle. Click the alert to stop.
+alerts-piloting-name = Pilotowanie wahadłowca
+alerts-piloting-desc = Sterujesz wahadłowiec. Kliknij alert, aby przerwać.
 
-alerts-hunger-name = [color=yellow]Peckish[/color]
-alerts-hunger-desc = Some food would be good right about now.
+alerts-hunger-name = [color=yellow]Głodny[/color]
+alerts-hunger-desc = Przydałoby się coś zjeść.
 
-alerts-stamina-name = Stamina
-alerts-stamina-desc = Stuns you if it is too low.
+alerts-stamina-name = Wytrzymałość
+alerts-stamina-desc = Jeśli jest za niska, ogłusza cię.
 
-alerts-starving-name = [color=red]Starving[/color]
-alerts-starving-desc = You're severely malnourished. The hunger pains make moving around a chore.
+alerts-starving-name = [color=red]Głodujący[/color]
+alerts-starving-desc = Jesteś bardzo niedożywiony. Głód utrudnia ci poruszanie się.
 
-alerts-thirsty-name = [color=yellow]Thirsty[/color]
-alerts-thirsty-desc = Something to drink would be good right about now.
+alerts-thirsty-name = [color=yellow]Spragniony[/color]
+alerts-thirsty-desc = Przydałoby się coś do picia.
 
-alerts-parched-name = [color=red]Parched[/color]
-alerts-parched-desc = You're severely thirsty. The thirst makes moving around a chore.
+alerts-parched-name = [color=red]Wysuszony[/color]
+alerts-parched-desc = Jesteś bardzo spragniony. Pragnienie utrudnia ci poruszanie się.
 
-alerts-muted-name = Muted
-alerts-muted-desc = You have lost the ability to speak.
+alerts-muted-name = Niemy
+alerts-muted-desc = Straciłeś zdolność mówienia.
 
-alerts-vow-silence-name = Vow of Silence
-alerts-vow-silence-desc = You have taken a vow forbidding verbal or written communication as part of initiation into the Mystiko Tagma Mimon. Click to break your vow.
+alerts-vow-silence-name = Przysięga milczenia
+alerts-vow-silence-desc = Złożyłeś przysięgę zakazującą werbalnej lub pisemnej komunikacji jako część inicjacji w Mystiko Tagma Mimon. Kliknij, aby złamać przysięgę.
 
-alerts-vow-broken-name = Vow Broken
-alerts-vow-broken-desc = You've broken your vows to Mimes everywhere. You can speak and write, but you've lost your powers for at least 5 entire minutes!!! Click to try and retake your vow.
+alerts-vow-broken-name = Przysięga złamana
+alerts-vow-broken-desc = Złamałeś przysięgi wobec wszystkich mimów. Możesz mówić i pisać, ale straciłeś swoje moce na co najmniej 5 minut!!! Kliknij, aby spróbować ponownie złożyć przysięgę.
 
-alerts-pulled-name = Pulled
-alerts-pulled-desc = You're being pulled. Move to break free.
+alerts-pulled-name = Ciągnięty
+alerts-pulled-desc = Jesteś ciągnięty. Ruszaj się, aby się uwolnić.
 
-alerts-pulling-name = Pulling
-alerts-pulling-desc = You're pulling something. Click the alert to stop.
+alerts-pulling-name = Ciągniesz
+alerts-pulling-desc = Ciągniesz coś. Kliknij alert, aby przestać.
 
-alerts-bleed-name = [color=red]Bleed[/color]
-alerts-bleed-desc = You're [color=red]bleeding[/color].
+alerts-bleed-name = [color=red]Krwawienie[/color]
+alerts-bleed-desc = Krwawisz.
 
-alerts-pacified-name = [color=green]Pacified[/color]
-alerts-pacified-desc = You're pacified; you won't be able to harm living creatures.
+alerts-pacified-name = [color=green]Uspokojony[/color]
+alerts-pacified-desc = Jesteś uspokojony; nie będziesz mógł skrzywdzić żywych istot.
 
-alerts-adrenaline-name = [color=red]Adrenaline[/color]
-alerts-adrenaline-desc = You're full of adrenaline: pain won't slow you down.
+alerts-adrenaline-name = [color=red]Adrenalina[/color]
+alerts-adrenaline-desc = Jesteś pełen adrenaliny: ból cię nie spowolni.
 
-alerts-suit-power-name = Suit Power
-alerts-suit-power-desc = How much power your space ninja suit has.
+alerts-suit-power-name = Moc skafandra
+alerts-suit-power-desc = Ile energii ma twój skafander kosmicznego ninja.
 
-alerts-magboots-name = Magboots
-alerts-magboots-desc = You are immune to airflow, but slightly slower.
+alerts-magboots-name = Magnetyczne buty
+alerts-magboots-desc = Jesteś odporny na przepływ powietrza, ale poruszasz się trochę wolniej.
 
-alerts-revenant-essence-name = Essence
-alerts-revenant-essence-desc = The power of souls. It sustains you and is used for abilities. It regenerates slowly over time.
+alerts-revenant-essence-name = Esencja
+alerts-revenant-essence-desc = Moc dusz. Podtrzymuje cię i służy do zdolności. Regeneruje się powoli.
 
-alerts-revenant-corporeal-name = Corporeal
-alerts-revenant-corporeal-desc = You have manifested physically. People around you can see and hurt you.
+alerts-revenant-corporeal-name = Cielesny
+alerts-revenant-corporeal-desc = Ujawniłeś się fizycznie. Ludzie wokół mogą cię zobaczyć i zranić.
 
-alerts-rooted-name = Rooted
-alerts-rooted-desc = You are attached to the ground. You can't slip, but you absorb fluids under you.
+alerts-rooted-name = Zakorzeniony
+alerts-rooted-desc = Jesteś przytwierdzony do ziemi. Nie możesz się poślizgnąć, ale pochłaniasz płyny spod siebie.
 
-alerts-stealthy-name = Pickpocketing
-alerts-stealthy-desc = Whether you are currently pickpocketing. Click to toggle.
+alerts-stealthy-name = Kieszonkowiec
+alerts-stealthy-desc = Czy aktualnie dokonujesz kieszonkowania. Kliknij, aby przełączyć.
