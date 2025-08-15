@@ -729,3 +729,21 @@
     - id: ClothingMaskRaven
     - id: ClothingMaskRat
     - id: ClothingMaskJackal
+
+- type: entity
+  parent: ClothingMaskBase
+  id: MaskaWielkiegoPolaka
+  name: Maska Wielkiego Polaka
+  description: Bardzo duża maska bardzo dużego człowieka, z wiekiem nabrała lekko żółtego koloru.
+  components:
+  - type: Sprite
+    sprite: Clothing/Mask/maska_polaka.rsi
+    scale: 0.1, 0.1
+  - type: Clothing
+    sprite: Clothing/Mask/maska_polaka.rsi
+    scale: 0.1, 0.1
+  - type: BreathMask
+  - type: IdentityBlocker
+  - type: HideLayerClothing
+    slots:
+    - Snout
