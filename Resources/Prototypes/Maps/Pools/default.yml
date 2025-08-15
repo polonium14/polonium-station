@@ -1,14 +1,14 @@
 - type: gameMapPool
   id: DefaultMapPool
   maps:
-  - Amber
+#  - Amber
   - Bagel
   - Box
-  - Elkridge
-  - Fland
+#  - Elkridge
+#  - Fland
   - Marathon
   - Oasis
   - Packed
-  - Plasma
+#  - Plasma
   - Reach
   - Exo
