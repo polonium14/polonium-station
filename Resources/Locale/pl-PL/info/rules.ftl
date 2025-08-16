@@ -1,9 +1,10 @@
 ﻿# Rules
 
-ui-rules-header = Wizard's Den Official Server Rules
-ui-rules-header-rp = Wizard's Den Roleplay Official Server Rules
-ui-rules-accept = I have read and agree to follow the rules
-ui-rules-wait = The accept button will be enabled after {$time} seconds.
+ui-rules-header = Oficjalne zasady serwera Polonium Station
+ui-rules-header-rp = Oficjalne zasady serwera roleplay Polonium Station
+ui-rules-accept = Przeczytałem(-am) i zgadzam się przestrzegać zasad
+ui-rules-wait = Przycisk akceptacji zostanie aktywowany po {$time} sekundach.
 
-ui-rules-button-home = Home
-ui-rules-button-back = Back
+ui-rules-button-home = Strona główna
+ui-rules-button-back = Wstecz
+

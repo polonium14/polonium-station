@@ -1,9 +1,9 @@
 ﻿identity-unknown-name = ???
 
-identity-age-young = young
-identity-age-middle-aged = middle-aged
-identity-age-old = old
+identity-age-young = młody(-a)
+identity-age-middle-aged = w średnim wieku
+identity-age-old = stary(-a)
 
-identity-gender-feminine = woman
-identity-gender-masculine = man
-identity-gender-person = person
+identity-gender-feminine = kobieta
+identity-gender-masculine = mężczyzna
+identity-gender-person = osoba
