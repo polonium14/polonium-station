@@ -1,6 +1,6 @@
 # ban
 cmd-ban-desc = Banuje kogoś
-cmd-ban-help = Wykorzystanie: ban <nazwa albo id gracza> <powód> [długość w minutachm, zostaw 0 jeśli ban jest pernamentny]
+cmd-ban-help = Wykorzystanie: ban <nazwa albo id gracza> <powód> [długość w minutachm, zostaw 0 jeśli ban jest permanentny]
 cmd-ban-player = Nie znaleziono takiego gracza o takiej nazwie.
 cmd-ban-invalid-minutes = {$minutes} nie jest prawidłową liczbą minut!
 cmd-ban-invalid-severity = {$severity} nie jest prawidłowym poziomem surowości!
@@ -10,7 +10,7 @@ cmd-ban-hint-reason = <powód>
 cmd-ban-hint-duration = [czas trwania]
 cmd-ban-hint-severity = [poziom surowości]
 
-cmd-ban-hint-duration-1 = Pernamentny
+cmd-ban-hint-duration-1 = Permanentny
 cmd-ban-hint-duration-2 = 1 dzień
 cmd-ban-hint-duration-3 = 3 dni
 cmd-ban-hint-duration-4 = 1 tydzień
