@@ -1,4 +1,4 @@
-action-name-wake = Obudź się
+action-name-wake = Obudź
 
 sleep-onomatopoeia = Zzz...
 sleep-examined = [color=lightblue]Śpi.[/color]

@@ -4,7 +4,7 @@
 
 Oczywiście nie można zabronić wykorzystywania AI, ale powinno ono służyć jako narzędzie do szybkiego uczenia się, poszukiwania informacji lub podstawowej pomocy. Lepiej napisać nieidealny, ale własny i zrozumiały kod, który zawsze da się wyjaśnić, zdebugować i w razie potrzeby naprawić, niż generować kod za pomocą AI nie wiedząc do końca, co się w nim dzieje. Ustalamy twardą regułę: **generowanie kodu przez AI to tabu**.
 
-#### 2. Jedna zmiana = jeden PR (Pull Request).
+#### 2. Jeden teman zmian = jeden PR (Pull Request).
 
 Pełną treść wytycznych dotyczących PR można znaleźć [niżej](#wytyczne-dotyczące-pull-requestów).
 
