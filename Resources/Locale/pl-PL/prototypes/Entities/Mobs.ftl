@@ -97,7 +97,7 @@ ent-MobOreCrab = ore crab
 # flesh.yml
 ent-BaseMobFlesh = aberrant flesh
     .desc = A shambling mass of flesh, animated through anomalous energy.
-ent-BaseMobFleshSalvage #This one is immune to space! = aberrant flesh
+ent-BaseMobFleshSalvage = aberrant flesh
     .desc = A shambling mass of flesh, animated through anomalous energy.
 ent-MobAbomination = abomination
     .desc = A rejected clone, in constant pain and seeking revenge.
@@ -277,7 +277,7 @@ ent-MobParadox = space-time paradox
 ent-ParadoxCloneDummy = Paradox Clone
 
 # ratvar.yml
-ent-MobRatvarBase #can't have the clockwork justiciar be associated with his (im)mortal enemy = Ratvar
+ent-MobRatvarBase = Ratvar
     .desc = Your mind aches as it fails to understand the complex mechanics of what is before you.
 
 # silicon.yml

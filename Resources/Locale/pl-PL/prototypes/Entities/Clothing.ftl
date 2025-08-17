@@ -64,7 +64,6 @@ ent-ClothingBackpackScience = science backpack
 ent-ClothingBackpackSecurity = security backpack
     .desc = It's a very robust backpack.
 ent-ClothingBackpackSyndicate = syndicate backpack
-    .desc = 
 ent-ClothingBackpackVirology = virology backpack
     .desc = A backpack made of hypo-allergenic fibers. It's designed to help prevent the spread of disease. Smells like monkey.
 
@@ -297,7 +296,7 @@ ent-ClothingEyesGlassesJensen = jensen glasses
     .desc = A pair of yellow tinted folding glasses. You never asked for these.
 ent-ClothingEyesGlassesMercenary = mercenary glasses
     .desc = Glasses made for combat, to protect the eyes from bright blinding flashes.
-ent-ClothingEyesGlassesMeson = engineering goggles #less confusion
+ent-ClothingEyesGlassesMeson = engineering goggles
     .desc = Green-tinted goggles using a proprietary polymer that provides protection from eye damage of all types.
 ent-ClothingEyesGlassesNoir = noir-tech glasses
     .desc = A pair of glasses that simulate what the world looked like before the invention of color.
@@ -361,7 +360,7 @@ ent-ClothingEyesEyepatch = eyepatch
     .desc = Yarr.
 
 # specific.yml
-ent-ClothingEyesChameleon # no flash immunity, sorry = sun glasses
+ent-ClothingEyesChameleon = sun glasses
     .desc = Useful both for security and cargonia.
 
 # base_clothinghands.yml
@@ -467,7 +466,7 @@ ent-SilverRingGem = silver gem ring
     .desc = Shiny and not quite as valuable!
 
 # specific.yml
-ent-ClothingHandsChameleon # doesn't protect from electricity or heat = black gloves
+ent-ClothingHandsChameleon = black gloves
     .desc = Regular black gloves that do not keep you from frying.
 
 # animals.yml
@@ -567,7 +566,7 @@ ent-ClothingHeadHelmetHardsuitGoliath = goliath hardsuit helmet
     .desc = A sturdy hardsuit helmet, infused with a goliath's hide and an eerie, unblinking eye cut from its mass.
 ent-ClothingHeadHelmetHardsuitLing = organic space helmet
     .desc = A spaceworthy biomass of pressure and temperature resistant tissue.
-ent-ClothingHeadHelmetHardsuitLuxury #DO NOT MAP - https://github.com/space-wizards/space-station-14/pull/19738#issuecomment-1703486738 = luxury mining hardsuit helmet
+ent-ClothingHeadHelmetHardsuitLuxury = luxury mining hardsuit helmet
     .desc = A refurbished mining hardsuit helmet, fitted with satin cushioning and an extra (non-functioning) antenna, because you're that extra.
 ent-ClothingHeadHelmetHardsuitMaxim = salvager maxim helmet
     .desc = A predication of decay washes over your mind.
@@ -935,7 +934,7 @@ ent-WaterDropletHat = water droplet
     .desc = Makes 8-eyed friends 8 times more adorable!
 
 # scraphelmet.yml
-ent-ClothingHeadHelmetScrap #When we get the tech for it this bad boy needs to be given a vision reduction when equipped. 1-2 tiles less than normal should be good. = scrap helmet
+ent-ClothingHeadHelmetScrap = scrap helmet
     .desc = A cobbled-together helmet made from cabling, steel, and a bucket.
 
 # soft.yml
@@ -1520,7 +1519,7 @@ ent-ClothingOuterHardsuitJuggernaut = cybersun juggernaut suit
     .desc = A suit made by the cutting edge R&D department at cybersun to be hyper resilient.
 ent-ClothingOuterHardsuitLing = organic space suit
     .desc = A spaceworthy biomass of pressure and temperature resistant tissue.
-ent-ClothingOuterHardsuitLuxury #DO NOT MAP - https://github.com/space-wizards/space-station-14/pull/19738#issuecomment-1703486738 = luxury mining hardsuit
+ent-ClothingOuterHardsuitLuxury = luxury mining hardsuit
     .desc = A refurbished mining hardsuit, fashioned after the Quartermaster's colors. Graphene lining provides less protection, but is much easier to move.
 ent-ClothingOuterHardsuitMaxim = salvager maxim hardsuit
     .desc = Fire. Heat. These things forge great weapons, they also forge great salvagers.

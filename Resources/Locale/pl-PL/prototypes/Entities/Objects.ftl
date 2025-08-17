@@ -22,15 +22,10 @@ ent-DrinkSoyMilkCarton = soy milk
 
 # drinks.yml
 ent-DrinkShakeBlue = blue milkshake
-    .desc = 
 ent-DrinkShakeEmpty = shakeempty
-    .desc = 
 ent-DrinkShakeMeat = meat shake
-    .desc = 
 ent-DrinkShakeRobo = robo shake
-    .desc = 
 ent-DrinkShakeWhite = white shake
-    .desc = 
 ent-DrinkTeapot = teapot  # short and stout
     .desc = An elegant teapot. It simply oozes class.
 ent-DrinkWaterJug = water jug
@@ -47,7 +42,7 @@ ent-DrinkAleBottleFullGrowler = Magm-Ale growler
     .desc = A true dorf's drink of choice. XL growler bottle.
 ent-DrinkBeerBottleFull = beer bottle # beer it is. coffee. beer? coff-ee? be-er? c-o... b-e
     .desc = An alcoholic beverage made from malted grains, hops, yeast, and water.
-ent-DrinkBeerGrowler # Needs to be renamed DrinkBeerBottleFull = beer growler  # beer it is. coffee. beer? coff-ee? be-er? c-o... b-e
+ent-DrinkBeerGrowler = beer growler  # beer it is. coffee. beer? coff-ee? be-er? c-o... b-e
     .desc = An alcoholic beverage made from malted grains, hops, yeast, and water. XL growler bottle.
 ent-DrinkBlueCuracaoBottleFull = Miss Blue Curaçao
     .desc = A fruity, exceptionally azure drink. Does not allow the imbiber to use the fifth magic.
@@ -1349,9 +1344,9 @@ ent-ReinforcementRadioSyndicate = syndicate reinforcement radio
     .desc = Call in a syndicate agent of questionable quality, instantly!
 ent-ReinforcementRadioSyndicateAncestor = syndicate genetic ancestor reinforcement radio
     .desc = Calls in a specially trained ancestor of your choosing to assist you.
-ent-ReinforcementRadioSyndicateCyborgAssault # Reinforcement radio exclusive to nukeops uplink = syndicate assault cyborg reinforcement radio
+ent-ReinforcementRadioSyndicateCyborgAssault = syndicate assault cyborg reinforcement radio
     .desc = Call in a well armed assault cyborg, instantly!
-ent-ReinforcementRadioSyndicateNukeops # Reinforcement radio exclusive to nukeops uplink = nuclear operative radio
+ent-ReinforcementRadioSyndicateNukeops = nuclear operative radio
     .desc = Call in a nuclear operative of questionable quality, instantly! Basic nukeop equipment provided.
 ent-ReinforcementRadioSyndicateSyndiCat = syndicat reinforcement radio
     .desc = Calls in a faithfully trained cat with a microbomb to assist you.
@@ -1606,7 +1601,7 @@ ent-PlushieCarp = carp plushie
     .desc = An adorable stuffed toy that resembles the monstrous space carp.
 ent-PlushieDiona = diona plushie
     .desc = An adorable stuffed toy that resembles a diona. Love water and cuddles. Do not wet!
-ent-PlushieExperiment #Arf! = experiment plushie
+ent-PlushieExperiment = experiment plushie
     .desc = A plushie of a canid of sorts, it yearns to be detonated on a landmine.
 ent-PlushieGhost = ghost soft toy
     .desc = The start of your personal GHOST GANG!
@@ -1620,9 +1615,9 @@ ent-PlushieHuman = human plushie
     .desc = This is a felt plush of a human. All craftsmanship is of the lowest quality. The human is naked. The human is crying. The human is screaming.
 ent-PlushieLamp = lamp plushie
     .desc = A light emitting friend!
-ent-PlushieLizard #Weh! = lizard plushie
+ent-PlushieLizard = lizard plushie
     .desc = An adorable stuffed toy that resembles a lizardperson. Made by CentComm as a token initiative to combat speciesism in work environments. "Welcome your new colleagues as you do this plush, with open arms!
-ent-PlushieLizardInversed #Hew! = drazil plushie
+ent-PlushieLizardInversed = drazil plushie
     .desc = An adorable stuffed toy that resembles a lizardperson from an inversed dimension. Hew!
 ent-PlushieMagicarp = magicarp plushie
     .desc = An adorable stuffed toy resembling the exceedingly rare magicarp.
@@ -1638,7 +1633,7 @@ ent-PlushieRGBee = RGBee plushie
     .desc = A cute toy that resembles a bee plushie while you're on LSD.
 ent-PlushieRainbowCarp = rainbow carp plushie
     .desc = An adorable stuffed toy resembling the legendary rainbow carp.
-ent-PlushieRainbowLizard #Weh but gay = rainbow lizard plushie
+ent-PlushieRainbowLizard = rainbow lizard plushie
     .desc = An adorable stuffed toy that resembles a lizardperson of every color. You just might trip while staring at it...
 ent-PlushieRatvar = ratvar plushie
     .desc = A large stuffed doll of the elder god Ratvar.
@@ -1654,7 +1649,7 @@ ent-PlushieSlime = slime plushie
     .desc = An adorable stuffed toy that resembles a slime. It's basically a hacky sack.
 ent-PlushieSnake = snake plushie
     .desc = An adorable stuffed toy that resembles a snake.
-ent-PlushieSpaceLizard #ᵂᵉʰ! = space lizard plushie
+ent-PlushieSpaceLizard = space lizard plushie
     .desc = An adorable stuffed toy that resembles a lizardperson in an EVA suit. Made by CentComm as a token initiative to combat speciesism in space environments. "Welcome your new colleges as you do this plush, with open arms!
 ent-PlushieThrongler = throngler plushie
     .desc = A stuffed toy to remind cargo techs of what they can no longer have.
@@ -1861,18 +1856,9 @@ ent-BackgammonBoard = backgammon board
 ent-BackgammonBoardTabletop = backgammon
 
 # base.yml
-ent-BaseBoardEntity # Board item = board
+ent-BaseBoardEntity = board
     .desc = A blank board.
 ent-BaseBoardTabletop = baseboard
-
-# checkers.yml
-ent-*checkerboard = checkerboard
-ent-*crownBlack = black checker crown
-ent-*crownWhite = white checker crown
-ent-*pieceBlack = black checker piece
-ent-*pieceWhite = white checker piece
-ent-CheckerBoard = checkerboard
-    .desc = A checkerboard. Pieces included!
 
 # chess.yml
 ent-BlackBishop = black bishop
@@ -2802,7 +2788,7 @@ ent-MechVim = Vim
 # defib.yml
 ent-BaseDefibrillator = defibrillator
     .desc = CLEAR! Zzzzat!
-ent-DefibrillatorCompact # This should be a research item at some point = compact defibrillator
+ent-DefibrillatorCompact = compact defibrillator
     .desc = Now in fun size!
 ent-DefibrillatorSyndicate = interdyne defibrillator
     .desc = Doubles as a self-defense weapon against war-crime inclined tiders.
@@ -2888,7 +2874,7 @@ ent-BorgModuleCleaning = cleaning cyborg module
 ent-BorgModuleClowning = clowning cyborg module
 ent-BorgModuleConstruction = construction cyborg module
 ent-BorgModuleCustodial = custodial cyborg module
-ent-BorgModuleDiagnosis # todo: reuse when med refractor is finished = diagnosis cyborg module
+ent-BorgModuleDiagnosis = diagnosis cyborg module
 ent-BorgModuleEsword = energy sword cyborg module
     .desc = A module that comes with a double energy sword.
 ent-BorgModuleFireExtinguisher = thruster cyborg module
@@ -3495,7 +3481,7 @@ ent-MagazineMagnumUranium = pistol magazine (.45 magnum uranium)
 # pistol.yml
 ent-BaseMagazinePistol = pistol magazine (.35 auto)
 ent-BaseMagazinePistolHighCapacity = machine pistol magazine (.35 auto)
-ent-BaseMagazinePistolSubMachineGun  # Yeah it's weird but it's pistol caliber = SMG magazine (.35 auto)
+ent-BaseMagazinePistolSubMachineGun = SMG magazine (.35 auto)
 ent-MagazinePistol = pistol magazine (.35 auto)
     .desc = 10-round single-stack magazine for pistols. Intended to hold general-purpose kinetic ammunition.
 ent-MagazinePistolEmpty = pistol magazine (.35 auto any)
@@ -3586,7 +3572,7 @@ ent-BulletRifleUranium = bullet (0.20 rifle uranium)
 
 # shotgun.yml
 ent-PelletGlass = glass shard
-ent-PelletGrapeshot #tally fucking ho = grapeshot pellet
+ent-PelletGrapeshot = grapeshot pellet
 ent-PelletShotgun = pellet (.50)
 ent-PelletShotgunBeanbag = beanbag (.50)
 ent-PelletShotgunFlare = pellet (.50 flare)
@@ -3813,7 +3799,7 @@ ent-BladedFlatcapGrey = grey flatcap
     .desc = Fashionable for both the working class and old man Jenkins. It has glass shards hidden in the brim.
 
 # mining.yml
-ent-BaseWeaponCrusher # Crusher? But I... = crusher
+ent-BaseWeaponCrusher = crusher
     .desc = An early design of the proto-kinetic accelerator.
 ent-WeaponCrusherDagger = crusher dagger
     .desc = A scaled down version of a proto-kinetic crusher. Uses kinetic energy to vibrate the blade at high speeds.

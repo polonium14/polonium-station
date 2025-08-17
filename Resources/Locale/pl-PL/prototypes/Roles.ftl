@@ -27,7 +27,6 @@ ent-MindRoleParadoxClone = Paradox Clone Role
 ent-MindRoleRevolutionary = Revolutionary Role
 ent-MindRoleSiliconBrain = Borg Brain Role
 ent-MindRoleSubvertedSilicon = Subverted Silicon Role
-    .desc = 
 ent-MindRoleSurvivor = Survivor Role
 ent-MindRoleThief = Thief Role
 ent-MindRoleTraitor = Traitor Role
