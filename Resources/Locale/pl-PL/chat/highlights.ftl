@@ -1,57 +1,57 @@
-# Command
-highlights-captain = Captain, "Cap", Bridge, Command
-highlights-head-of-personnel = Head Of Personnel, "HoP", Service, Bridge, Command
-highlights-chief-engineer = Chief Engineer, "CE", Engineering, Engineer, "Engi", Bridge, Command
-highlights-chief-medical-officer = Chief Medical Officer, "CMO", MedBay, "Med", Bridge, Command
-highlights-head-of-security = Head of Security, "HoS", Security, "Sec", Bridge, Command
-highlights-quartermaster = Quartermaster, "QM", Cargo, Bridge, Command
-highlights-research-director = Research Director, "RD", Science, "Sci", Bridge, Command
+# Rada
+highlights-captain = Kapitan, "Kap", Mostek, Rada Stacji, Rada
+highlights-head-of-personnel = Szef Personelu, "SP", Serwis, Dział Serwisowy, Serwis, Mostek, Rada Stacji, Rada
+highlights-chief-engineer = Inżynier Naczelny, "IN", Dział Inżynierii, Inżynier, "Inż", Mostek, Rada Stacji, Rada
+highlights-chief-medical-officer = Dyrektor Medyczny, "DM", Dział Medyczny, "Med", Mostek, Rada Stacji, Rada
+highlights-head-of-security = Szef Ochrony, "SO", Ochrona, Mostek, Rada Stacji, Rada
+highlights-quartermaster = Kierownik Logistyki, "KL", Dział Logistyki, "Logistyka", "Kargo", Mostek, Rada Stacji, Rada
+highlights-research-director = Kierownik Badań, "KB", RND, Mostek, Rada Stacji, Rada
 
-# Security
-highlights-detective = Detective, "Det", Security, "Sec"
-highlights-security-cadet = Security Cadet, Secoff, Cadet, Security, "Sec"
-highlights-security-officer = Security Officer, Secoff, Officer, Security, "Sec"
-highlights-warden = Warden, "Ward", Security, "Sec"
+# Ochrona
+highlights-detective = Detektyw, "Det", Ochrona
+highlights-security-cadet = Kadet Ochrony, Kadet, Ochrona
+highlights-security-officer = Oficer Ochrony, Oficer, Ochrona
+highlights-warden = Strażnik, Ochrona
 
-# Cargo
-highlights-cargo-technician = Cargo Technician, Cargo Tech, "Cargo"
-highlights-salvage-specialist = Salvage Specialist, Salvager, Salvage, "Salv", "Cargo", Miner
+# Logistyka
+highlights-cargo-technician = Technik Logistyki, Logistyk, Ładowacz, Dział Logistyki, Logistyka, "Kargo"
+highlights-salvage-specialist = Technik Odzysku, Odzysk, Dział Logistyki, Logistyka, "Kargo"
 
-# Engineering
-highlights-atmospheric-technician = Atmospheric Technician, Atmos tech, Atmospheric, Engineering, "Atmos", "Engi"
-highlights-station-engineer = Station Engineer, Engineering, Engineer, "Engi"
-highlights-technical-assistant = Technical Assistant, Tech Assistant, Engineering, Engineer, "Engi"
+# Inżynierowie
+highlights-atmospheric-technician = Technik Atmosferyki, Atmosferyczny, Dział Inżynierii, "Inż", "Atmos"
+highlights-station-engineer = Inżynier, Engineering, Dział Inżynierii "Inż"
+highlights-technical-assistant = Pomocnik Techniczny, Dział Inżynierii, Inżynier, "Inż"
 
-# Medical
-highlights-chemist = Chemist, Chemistry, "Chem", MedBay, "Med"
-highlights-medical-doctor = Medical Doctor, Doctor, "Doc", MedBay, "Med"
-highlights-medical-intern = Medical Intern, "Doc", Intern, MedBay, "Med"
-highlights-paramedic = Paramedic, "Para", MedBay, "Med"
+# Medycy
+highlights-chemist = Chemik, Chemia, "Chem", Dział Medyczny, "Med"
+highlights-medical-doctor = Doktor, Lekarz, "Dok", Dział Medyczny, "Med"
+highlights-medical-intern = Stażysta Medyczny, Stażysta, Dział Medyczny, "Med"
+highlights-paramedic = Ratownik, "Rat", Dział Medyczny, "Med"
 
-# Science
-highlights-scientist = Scientist, Science, "Sci"
-highlights-research-assistant = Research Assistant, Science, "Sci"
+# Naukowcy
+highlights-scientist = Naukowca, RND
+highlights-research-assistant = Asystent Naukowy, RND
 
-# Civilian
+# Cywile (Dział Obsługi)
 highlights-bartender = Bartender, Barkeeper, Barkeep, "Bar"
-highlights-botanist = Botanist, Botany, Hydroponics
-highlights-chaplain = Chaplain, "Chap", Chapel
+highlights-botanist = Botanik, Hydroponika
+highlights-chaplain = Kapłan
 highlights-chef = Chef, "Cook", Kitchen
-highlights-clown = Clown, Jester
-highlights-janitor = Janitor, "Jani"
-highlights-lawyer = Lawyer, Attorney
-highlights-librarian = Librarian, Library
-highlights-mime = Mime
-highlights-passenger = Passenger, Greytider, "Tider"
-highlights-service-worker = Service Worker
+highlights-clown = Klaun
+highlights-janitor = Sprzątacz, "Sprz"
+highlights-lawyer = Prawnik, "Prawo"
+highlights-librarian = Bibliotekarz, Biblioteka
+highlights-mime = Mim
+highlights-passenger = Pasażer, Greytider, "Tider"
+highlights-service-worker = Praconik Obsługi
 
 # Station-specific
-highlights-boxer = Boxer
-highlights-reporter = Reporter, Journalist
-highlights-zookeeper = Zookeeper
-highlights-psychologist = Psychologist, Psychology
+highlights-boxer = Bokser
+highlights-reporter = Reporter, Dziennikarz
+highlights-zookeeper = Opiekun Zoo, Opiekun, Zoo
+highlights-psychologist = Psychologist, Psycholog
 
 # Silicon
-highlights-personal-ai = Personal AI, "pAI"
-highlights-cyborg = Cyborg, Silicon, Borg
-highlights-station-ai = Station AI, Silicon, "AI", "sAI"
+highlights-personal-ai = Personalna SI, "pSI"
+highlights-cyborg = Cyborg, Silikon, Borg
+highlights-station-ai = Station AI, Silikon, "AI", "sAI"
