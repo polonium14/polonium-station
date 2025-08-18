@@ -1,6 +1,6 @@
 # Blocking examines
-blocking-examinable-verb-text = Protection
-blocking-examinable-verb-message = Examine the protection values.
-blocking-fraction = It blocks [color=lightblue]{$value}%[/color] of incoming damage and:
-blocking-coefficient-value = - It takes [color=lightblue]{$value}%[/color] of [color=yellow]{$type}[/color] damage.
-blocking-reduction-value = - It takes [color=lightblue]{$value}[/color] less [color=yellow]{$type}[/color] damage.
+blocking-examinable-verb-text = Ochrona
+blocking-examinable-verb-message = Zbadaj wartości ochrony.
+blocking-fraction = Blokuje [color=lightblue]{$value}%[/color] nadchodzących obrażeń i:
+blocking-coefficient-value = - Otrzymuje [color=lightblue]{$value}%[/color] obrażeń od [color=yellow]{$type}[/color].
+blocking-reduction-value = - Otrzymuje o [color=lightblue]{$value}[/color] mniej obrażeń od [color=yellow]{$type}[/color].
