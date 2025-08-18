@@ -2,7 +2,7 @@
 
 ## General stuff
 ui-info-title = Informacje
-ui-info-tab-rules = Zasady serwera
+ui-info-tab-rules = Zasady Serwera
 ui-info-tab-tutorial = Samouczek
 
 ## Tutorial tab
