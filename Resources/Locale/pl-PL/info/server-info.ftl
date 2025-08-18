@@ -5,6 +5,6 @@ server-info-website-button = Strona Internetowa
 server-info-wiki-button = Wiki
 server-info-forum-button = Forum
 server-info-telegram-button = Telegram
-server-info-report-button = Zgłoś błędy
+server-info-report-button = Zgłoś Błędy
 server-info-credits-button = Twórcy
 
