@@ -16,4 +16,4 @@ ui-info-subheader-entityoptions = Opcje panelu generatora obiektów:
 ui-info-subheader-gridoptions = Opcje wyrównania do siatki:
 ui-info-header-feedback = Opinie
 
-ui-info-button-controls = Menu opcji
+ui-info-button-controls = Menu Opcji
