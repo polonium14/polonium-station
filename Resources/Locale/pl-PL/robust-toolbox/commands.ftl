@@ -29,8 +29,8 @@ cmd-help-help = Użycie: help [nazwa polecenia]
     Jeśli nazwa polecenia została podana, wyświetlana jest pomoc dla tego polecenia.
 
 cmd-help-no-args = Aby wyświetlić pomoc dla konkretnego polecenia, wpisz 'help <polecenie>'.
-Aby zobaczyć listę wszystkich dostępnych poleceń, wpisz 'list'.
-Aby wyszukać polecenia, użyj 'list <filtr>'.
+    Aby zobaczyć listę wszystkich dostępnych poleceń, wpisz 'list'.
+    Aby wyszukać polecenia, użyj 'list <filtr>'.
 cmd-help-unknown = Nieznane polecenie: { $command }
 cmd-help-top = { $command } - { $description }
 cmd-help-invalid-args = Nieprawidłowa liczba argumentów.
