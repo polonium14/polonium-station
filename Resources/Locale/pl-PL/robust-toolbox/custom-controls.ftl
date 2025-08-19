@@ -9,7 +9,7 @@ entity-spawn-window-override-menu-tooltip = Zastąpienie rozmieszczenia
 ## TileSpawnWindow
 
 tile-spawn-window-title = Umieść Płytki
-tile-spawn-window-mirror-button-text = Płytki Lustrzane
+tile-spawn-window-mirror-button-text = Odbicie Lustrzane Płytek
 
 ## Console
 
