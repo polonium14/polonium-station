@@ -14,8 +14,8 @@ highlights-security-officer = Oficer Ochrony, Oficer, Ochrona
 highlights-warden = Strażnik, Ochrona
 
 # Logistyka
-highlights-cargo-technician = Technik Logistyki, Logistyk, Ładowacz, Dział Logistyki, Logistyka, "Kargo"
-highlights-salvage-specialist = Technik Odzysku, Odzysk, Dział Logistyki, Logistyka, "Kargo"
+highlights-cargo-technician = Technik Logistyki, Logistyk, Dział Logistyki, Logistyka, "Cargo"
+highlights-salvage-specialist = Technik Odzysku, Odzysk, Dział Logistyki, Logistyka, "Cargo"
 
 # Inżynierowie
 highlights-atmospheric-technician = Technik Atmosferyki, Atmosferyczny, Dział Inżynierii, "Inż", "Atmos"
@@ -52,6 +52,6 @@ highlights-zookeeper = Opiekun Zoo, Opiekun, Zoo
 highlights-psychologist = Psychologist, Psycholog
 
 # Silicon
-highlights-personal-ai = Personalna SI, "pSI"
+highlights-personal-ai = Personalna SI, "pAI", "pSI"
 highlights-cyborg = Cyborg, Silikon, Borg
-highlights-station-ai = Station AI, Silikon, "AI", "sAI"
+highlights-station-ai = SI Stacji, Silikon, "AI", "SI"
