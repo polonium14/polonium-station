@@ -1,24 +1,24 @@
 ## EntitySpawnWindow
 
-entity-spawn-window-title = Entity Spawn Panel
-entity-spawn-window-search-bar-placeholder = search
-entity-spawn-window-clear-button = Clear
-entity-spawn-window-replace-button-text = Replace
-entity-spawn-window-override-menu-tooltip = Override placement
+entity-spawn-window-title = Panel Spawnowania Jednostek
+entity-spawn-window-search-bar-placeholder = wyszukaj
+entity-spawn-window-clear-button = Wyczyść
+entity-spawn-window-replace-button-text = Zamień
+entity-spawn-window-override-menu-tooltip = Zastąpienie rozmieszczenia
 
 ## TileSpawnWindow
 
-tile-spawn-window-title = Place Tiles
-tile-spawn-window-mirror-button-text = Mirror Tiles
+tile-spawn-window-title = Umieść Płytki
+tile-spawn-window-mirror-button-text = Płytki Lustrzane
 
 ## Console
 
-console-line-edit-placeholder = Command Here
+console-line-edit-placeholder = Komendę Tutaj
 
 ## OutputPanel
 
-output-panel-scroll-down-button-text = Scroll Down
+output-panel-scroll-down-button-text = Przewiń w Dół
 
 ## Common Used
 
-window-erase-button-text = Erase Mode
+window-erase-button-text = Tryb Usuwania
