@@ -12,16 +12,16 @@ jobs:
       contents: write
       pull-requests: write
     steps:
-      - name: git identity
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
       - name: Checkout
         uses: actions/checkout@v4
         with:
           submodules: recursive
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
+      - name: git identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
       - name: Dodajemy remote public
         run: git remote add public https://github.com/polonium14/polonium-station.git
       - name: Pobieramy zmiany z głównego repozytorium
