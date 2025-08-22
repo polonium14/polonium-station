@@ -31,7 +31,7 @@ jobs:
       - name: Sprawdzamy czy są jakieś zmiany
         run: git diff --exit-code || echo "Są zmiany"
       - name: Push changes
-        run: git push origin testing || (echo "Nie udało się wypchnąć zmian" && exit 1)
+        run: git push origin master || (echo "Nie udało się wypchnąć zmian" && exit 1) # Niech chroni nas Bóg
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY: ${{ github.repository }}
