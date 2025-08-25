@@ -1,34 +1,34 @@
 ## Entity
 
-plant-holder-component-plant-success-message = You plant the {$seedName} {$seedNoun}.
-plant-holder-component-already-seeded-message = The {$name} already has seeds in it!
-plant-holder-component-remove-weeds-message = You remove the weeds from the {$name}.
-plant-holder-component-remove-weeds-others-message = {$otherName} starts uprooting the weeds.
-plant-holder-component-no-weeds-message = This plot is devoid of weeds! It doesn't need uprooting.
-plant-holder-component-remove-plant-message = You remove the plant from the {$name}.
-plant-holder-component-remove-plant-others-message = {$name} removes the plant.
-plant-holder-component-no-plant-message = There is no plant to remove.
-plant-holder-component-transfer-message = You transfer {$amount}u to {$owner}.
-plant-holder-component-nothing-to-sample-message = There is nothing to take a sample of!
-plant-holder-component-already-sampled-message = This plant has already been sampled.
-plant-holder-component-dead-plant-message = This plant is dead.
-plant-holder-component-take-sample-message = You take a sample from the {$seedName}.
-plant-holder-component-compost-message = You compost {$usingItem} into {$owner}.
-plant-holder-component-compost-others-message = {$user} composts {$usingItem} into {$owner}.
-plant-holder-component-nothing-planted-message = It has nothing planted in it..
-plant-holder-component-something-already-growing-message = [color=green]{$seedName}[/color] {$toBeForm} growing here.
-plant-holder-component-something-already-growing-low-health-message = The plant looks [color=red]{$healthState}[/color].
-plant-holder-component-plant-old-adjective = old and wilting
-plant-holder-component-plant-unhealthy-adjective = unhealthy
-plant-holder-component-dead-plant-matter-message = It's full of [color=red]dead plant matter[/color].
-plant-holder-component-weed-high-level-message = It's filled with [color=green]weeds[/color]!
-plant-holder-component-pest-high-level-message = It's filled with [color=gray]tiny worms[/color]!
-plant-holder-component-water-level-message = Water:     [color=cyan]{$waterLevel}[/color].
-plant-holder-component-nutrient-level-message = Nutrient: [color=orange]{$nutritionLevel}[/color].
-plant-holder-component-toxins-high-warning = The [color=red]toxicity level alert[/color] is flashing red.
-plant-holder-component-light-improper-warning = The [color=yellow]improper light level alert[/color] is blinking.
-plant-holder-component-heat-improper-warning = The [color=orange]improper temperature level alert[/color] is blinking.
-plant-holder-component-pressure-improper-warning = The [color=lightblue]improper environment pressure alert[/color] is blinking.
-plant-holder-component-gas-missing-warning = The [color=cyan]improper gas environment alert[/color] is blinking.
-plant-holder-component-early-sample-message = The plant hasn't grown enough to take a sample yet.
-plant-holder-component-ligneous-cant-harvest-message = The plant is too tough to harvest with your bare hands.
+plant-holder-component-plant-success-message = Zasadziłeś {$seedName} {$seedNoun}.
+plant-holder-component-already-seeded-message = {$name} ma już posadzone nasiona!
+plant-holder-component-remove-weeds-message = Usuwasz chwasty z {$name}.
+plant-holder-component-remove-weeds-others-message = {$otherName} zaczyna wyrywać chwasty.
+plant-holder-component-no-weeds-message = Ta grządka jest wolna od chwastów! Nie trzeba ich usuwać.
+plant-holder-component-remove-plant-message = Usuwasz roślinę z {$name}.
+plant-holder-component-remove-plant-others-message = {$name} usuwa roślinę.
+plant-holder-component-no-plant-message = Nie ma tu żadnej rośliny do usunięcia.
+plant-holder-component-transfer-message = Przenosisz {$amount}u do {$owner}.
+plant-holder-component-nothing-to-sample-message = Nie ma nic, z czego można pobrać próbkę!
+plant-holder-component-already-sampled-message = Z tej rośliny już pobrano próbkę.
+plant-holder-component-dead-plant-message = Ta roślina jest martwa.
+plant-holder-component-take-sample-message = Pobierasz próbkę z {$seedName}.
+plant-holder-component-compost-message = Kompostujesz {$usingItem} w {$owner}.
+plant-holder-component-compost-others-message = {$user} kompostuje {$usingItem} w {$owner}.
+plant-holder-component-nothing-planted-message = Nic tu nie zostało posadzone.
+plant-holder-component-something-already-growing-message = [color=green]{$seedName}[/color] {$toBeForm} rośnie tutaj.
+plant-holder-component-something-already-growing-low-health-message = Roślina wygląda na [color=red]{$healthState}[/color].
+plant-holder-component-plant-old-adjective = stara i więdnąca
+plant-holder-component-plant-unhealthy-adjective = niezdrowa
+plant-holder-component-dead-plant-matter-message = Jest pełna [color=red]martwej materii roślinnej[/color].
+plant-holder-component-weed-high-level-message = Jest pełna [color=green]chwastów[/color]!
+plant-holder-component-pest-high-level-message = Jest pełna [color=gray]małych robaków[/color]!
+plant-holder-component-water-level-message = Woda:     [color=cyan]{$waterLevel}[/color].
+plant-holder-component-nutrient-level-message = Składniki Odżywcze: [color=orange]{$nutritionLevel}[/color].
+plant-holder-component-toxins-high-warning = [color=red]Alarm toksyczności[/color] miga.
+plant-holder-component-light-improper-warning = [color=yellow]Alarm nieodpowiedniego poziomu światła[/color] miga.
+plant-holder-component-heat-improper-warning = [color=orange]Alarm nieodpowiedniej temperatury[/color] miga.
+plant-holder-component-pressure-improper-warning = [color=lightblue]Alarm nieodpowiedniego ciśnienia środowiska[/color] miga.
+plant-holder-component-gas-missing-warning = [color=cyan]Alarm nieodpowiedniego składu gazowego[/color] miga.
+plant-holder-component-early-sample-message = Roślina nie urosła jeszcze wystarczająco, aby pobrać próbkę.
+plant-holder-component-ligneous-cant-harvest-message = Roślina jest zbyt twarda, by zerwać ją gołymi rękami.
