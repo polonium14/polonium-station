@@ -99,7 +99,6 @@ def process_directory_and_generate_ftl(input_dir, output_ftl_path):
                     if entity_id not in existing_ids:
                         new_entities_in_file[entity_id] = data
                         total_new_entities += 1
-                        print("new entity"+entity_id)
 
                 if new_entities_in_file:
                     new_data_to_append.append((filename, new_entities_in_file))
@@ -110,17 +109,19 @@ def process_directory_and_generate_ftl(input_dir, output_ftl_path):
         needs_separator = os.path.exists(output_ftl_path) and os.path.getsize(output_ftl_path) > 0
         
         with open(output_ftl_path, 'a', encoding='utf-8') as f:
-            if needs_separator:
-                f.write(f"\n\n# === Entries Appended on {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} ===\n\n")
-            
             for filename, entities in new_data_to_append:
-                f.write(f"# {filename}\n")
+                name_written = False
                 for entity_id, data in sorted(entities.items()):
                     if 'name' in data:
+                        if not name_written:
+                            f.write(f"\n# {filename}\n")
+                            name_written = True
+                        if needs_separator:
+                            f.write(f"\n\n# === Entries Appended on {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} ===\n\n")
+                            needs_separator = False
                         f.write(f"ent-{entity_id} = {data['name']}\n")
                         if 'description' in data and data['description']:
                             f.write(f"    .desc = {data['description']}\n")
-                f.write("\n")
         print(f"\nSuccessfully appended {total_new_entities} new entities to '{output_ftl_path}'.")
     else:
         print("\nNo new hardcoded strings found to add to the FTL file.")
