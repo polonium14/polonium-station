@@ -7,7 +7,7 @@
   name: trait-accentless-name
   description: trait-accentless-desc
   category: SpeechTraits
-  cost: 2
+  cost: 0
   components:
   - type: Accentless
     removes:
@@ -92,6 +92,15 @@
   components:
   - type: ReplacementAccent
     accent: liar
+
+- type: trait
+  id: Kurwalski
+  name: trait-kurwalski-name
+  description: trait-kurwalski-desc
+  category: SpeechTraits
+  cost: 1
+  components:
+  - type: KurwalskiAccent
 
 # 2 Cost
 

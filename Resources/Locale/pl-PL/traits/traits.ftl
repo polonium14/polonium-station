@@ -48,6 +48,10 @@ trait-snoring-desc = You will snore while sleeping.
 trait-liar-name = Pathological liar
 trait-liar-desc = You can hardly bring yourself to tell the truth. Sometimes you lie anyway.
 
+trait-kurwalski-name = Kurwalski
+trait-kurwalski-desc = Teraz gadasz jak prawdziwy polak! kurwa!
+
+
 trait-cowboy-name = Cowboy accent
 trait-cowboy-desc = You speak with a distinct cowboy accent!
 
