@@ -45,7 +45,7 @@
   alias:
     - survival
   name: survival-title
-  showInVote: false # secret
+  showInVote: true # secret
   description: survival-description
   rules:
     - MeteorSwarmScheduler
@@ -102,7 +102,8 @@
   - all
   name: all-at-once-title
   description: all-at-once-description
-  showInVote: false
+  showInVote: true
+  minPlayers: 20
   rules:
     - Nukeops
     - Traitor
@@ -151,7 +152,7 @@
   - extended
   - shittersafari
   name: extended-title
-  showInVote: false #2boring2vote
+  showInVote: true #2boring2vote
   description: extended-description
   rules:
   - BasicStationEventScheduler
@@ -165,7 +166,7 @@
   - greenshift
   - shittersafarideluxeedition
   name: greenshift-title
-  showInVote: false #4boring4vote
+  showInVote: true #4boring4vote
   description: greenshift-description
   rules:
   - SpaceTrafficControlFriendlyEventScheduler
@@ -224,7 +225,8 @@
     - tator
   name: traitor-title
   description: traitor-description
-  showInVote: false
+  showInVote: true
+  minPlayers: 6
   rules:
     - DummyNonAntagChance
     - Traitor
@@ -269,7 +271,8 @@
     - nukeops
   name: nukeops-title
   description: nukeops-description
-  showInVote: false
+  showInVote: true
+  minPlayers: 10
   rules:
     - Nukeops
     - DummyNonAntagChance
@@ -303,7 +306,8 @@
     - revolutionaries
   name: rev-title
   description: rev-description
-  showInVote: false
+  showInVote: true
+  minPlayers: 10
   rules:
   - DummyNonAntagChance
   - Revolutionary
@@ -355,7 +359,8 @@
   - zomber
   name: zombie-title
   description: zombie-description
-  showInVote: false
+  showInVote: true
+  minPlayers: 10
   rules:
   - Zombie
   - BasicStationEventScheduler
