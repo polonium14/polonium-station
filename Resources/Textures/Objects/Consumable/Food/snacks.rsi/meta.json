@@ -297,6 +297,20 @@
       "name": "susjerky-trash"
     },
     {
+      "name": "dumplings"
+    },
+    {
+      "name": "dumplings-inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "dumplings-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "dumplings-trash"
+    },
+    {
       "name": "syndicakes"
     },
     {

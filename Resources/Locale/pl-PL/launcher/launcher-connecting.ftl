@@ -1,21 +1,23 @@
 ### Connecting dialog when you start up the game
 
 connecting-title = Space Station 14
-connecting-exit = Exit
-connecting-retry = Retry
-connecting-reconnect = Reconnect
-connecting-copy = Copy Message
-connecting-redial = Relaunch
-connecting-redial-wait = Please wait: { TOSTRING($time, "G3") }
-connecting-in-progress = Connecting to server...
-connecting-disconnected = Disconnected from server:
+connecting-exit = Wyjdź
+connecting-retry = Spróbuj ponownie
+connecting-reconnect = Połącz ponownie
+connecting-copy = Skopiuj wiadomość
+connecting-redial = Zrestartuj grę
+connecting-redial-wait = Proszę czekać: { TOSTRING($time, "G3") }
+connecting-in-progress = Łączenie z serwerem...
+connecting-disconnected = Rozłączono z serwera:
 connecting-tip = Don't die!
-connecting-window-tip = Tip { $numberTip }
+connecting-window-tip = Wskazówka { $numberTip }
 connecting-version = ver 0.1
-connecting-fail-reason = Failed to connect to server:
+connecting-fail-reason = Połączenie z serwerem nieudane:
                          { $reason }
-connecting-state-NotConnecting = Not connecting
+connecting-state-NotConnecting = Brak połączenia
 connecting-state-ResolvingHost = Resolving host
-connecting-state-EstablishingConnection = Establishing connection
+# Tego też bo resolving host to DNS i ponownie, termin IT
+connecting-state-EstablishingConnection = Rozpoczynanie połączenia
 connecting-state-Handshake = Handshake
-connecting-state-Connected = Connected
+# Radzę nie tłumaczyć jako że handshake to termin IT
+connecting-state-Connected = Połączono
