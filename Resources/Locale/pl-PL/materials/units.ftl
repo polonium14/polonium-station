@@ -1,24 +1,24 @@
 # sheets of steel
-materials-unit-sheet = sheet
+materials-unit-sheet = arkusz
 # bars of gold
-materials-unit-bar = bar
+materials-unit-bar = sztabka
 # planks of wood
-materials-unit-plank = plank
+materials-unit-plank = deska
 # rolls of cloth
-materials-unit-roll = roll
+materials-unit-roll = rolka
 # pieces of biomass
-materials-unit-piece = piece
+materials-unit-piece = kawałek
 # bunches of bananium
-materials-unit-bunch = bunch
+materials-unit-bunch = pęczek
 # slabs of meat
-materials-unit-slab = slab
+materials-unit-slab = kawał
 # webs of silk
-materials-unit-web = web
+materials-unit-web = sieć
 # chunks of ore
-materials-unit-chunk = chunk
+materials-unit-chunk = kawałek
 # boll of cotton
-materials-unit-boll = boll
+materials-unit-boll = kula
 
 # bills of spesos... not very good but they are not (yet?) used for crafting anything
 # also the lathe/atm would need bigger denominations to output...
-materials-unit-bill = bill
+materials-unit-bill = banknot
