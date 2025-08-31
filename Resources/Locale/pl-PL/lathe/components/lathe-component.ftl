@@ -1,4 +1,4 @@
-lathe-component-upgrade-speed = speed
-lathe-component-upgrade-material-use = material use
+lathe-component-upgrade-speed = prędkość
+lathe-component-upgrade-material-use = zużycie materiałów
 
-lathe-component-output-slot-beaker-name = Beaker slot
+lathe-component-output-slot-beaker-name = Wejście na zlewkę

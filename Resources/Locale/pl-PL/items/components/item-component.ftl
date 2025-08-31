@@ -1,16 +1,16 @@
 ## PickUpVerb
 
-pick-up-verb-get-data-text = Pick Up
+pick-up-verb-get-data-text = Podnieś
 
 # "pick up" doesn't make sense if the item is already in their inventory
 
-pick-up-verb-get-data-text-inventory = Put in hand
+pick-up-verb-get-data-text-inventory = Włóż do ręki
 
-item-component-on-examine-size = This is {INDEFINITE($size)} [bold]{$size}[/bold] item.
+item-component-on-examine-size = To jest {INDEFINITE($size)} [bold]{$size}[/bold] przedmiot.
 
-item-component-size-Tiny = tiny
-item-component-size-Small = small
-item-component-size-Normal = medium
-item-component-size-Large = large
-item-component-size-Huge = huge
-item-component-size-Ginormous = ginormous
+item-component-size-Tiny = malutki
+item-component-size-Small = mały
+item-component-size-Normal = średni
+item-component-size-Large = duży
+item-component-size-Huge = wielki
+item-component-size-Ginormous = ogromny

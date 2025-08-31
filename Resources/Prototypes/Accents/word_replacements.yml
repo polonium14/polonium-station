@@ -384,8 +384,8 @@
     chatsan-word-1: chatsan-replacement-1
     chatsan-word-2: chatsan-replacement-2
     chatsan-word-3: chatsan-replacement-3
-    chatsan-word-4: chatsan-replacement-4
-    chatsan-word-5: chatsan-replacement-5
+    #    chatsan-word-4: chatsan-replacement-4
+    #    chatsan-word-5: chatsan-replacement-5
     chatsan-word-6: chatsan-replacement-6
     chatsan-word-7: chatsan-replacement-7
     chatsan-word-8: chatsan-replacement-8
@@ -397,10 +397,10 @@
     chatsan-word-14: chatsan-replacement-14
     chatsan-word-15: chatsan-replacement-15
     chatsan-word-16: chatsan-replacement-16
-    chatsan-word-17: chatsan-replacement-17
+    #    chatsan-word-17: chatsan-replacement-17
     chatsan-word-18: chatsan-replacement-18
     chatsan-word-19: chatsan-replacement-19
-    chatsan-word-20: chatsan-replacement-20
+    #  chatsan-word-20: chatsan-replacement-20
     chatsan-word-21: chatsan-replacement-please
     chatsan-word-22: chatsan-replacement-please
     chatsan-word-23: chatsan-replacement-please
@@ -408,8 +408,8 @@
     chatsan-word-25: chatsan-replacement-25
     chatsan-word-26: chatsan-replacement-26
     chatsan-word-27: chatsan-replacement-27
-    chatsan-word-28: chatsan-replacement-28
-    chatsan-word-29: chatsan-replacement-29
+    #    chatsan-word-28: chatsan-replacement-28
+    #    chatsan-word-29: chatsan-replacement-29
     chatsan-word-30: chatsan-replacement-30
     chatsan-word-31: chatsan-replacement-31
     chatsan-word-32: chatsan-replacement-32
@@ -448,6 +448,16 @@
     chatsan-word-65: chatsan-replacement-65
     chatsan-word-66: chatsan-replacement-66
     chatsan-word-67: chatsan-replacement-67
+
+# For the chat sanitization system for Polish language
+- type: accent
+  id: chatsanitize-pl
+  wordReplacements:
+    pl-word-1: pl-replacement-1
+    pl-word-2: pl-replacement-2
+    pl-word-3: pl-replacement-3
+    pl-word-4: pl-replacement-4
+    pl-word-5: pl-replacement-5
 
 - type: accent
   id: liar

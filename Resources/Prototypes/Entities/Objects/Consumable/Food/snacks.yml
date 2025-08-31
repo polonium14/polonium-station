@@ -283,6 +283,25 @@
     - Meat
 
 - type: entity
+  name: pierogi liofilizowane
+  parent: FoodSnackBase
+  id: FoodSnackDumplings
+  description: Klasyczne polskie pierogi z kapustą i grzybami, liofilizowane na potrzeby misji kosmicznej. Smacznego!
+  components:
+  - type: FlavorProfile
+    flavors:
+      - savory
+      - cabbage
+      - mushroom
+  - type: Sprite
+    state: dumplings
+  - type: Item
+    heldPrefix: dumplings
+  - type: Food
+    trash:
+    - FoodPacketDumplingsTrash
+
+- type: entity
   name: syndi-cakes
   parent: FoodSnackBase
   id: FoodSnackSyndi
@@ -774,6 +793,23 @@
       right:
       - state: trash-inhand-right
         color: "#990033"
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: FoodPacketTrash
+  id: FoodPacketDumplingsTrash
+  name: pierogi liofilizowane
+  components:
+  - type: Sprite
+    state: dumplings-trash
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: trash-inhand-left
+        color: "#F6F5F4"
+      right:
+      - state: trash-inhand-right
+        color: "#F6F5F4"
 
 - type: entity
   categories: [ HideSpawnMenu ]
