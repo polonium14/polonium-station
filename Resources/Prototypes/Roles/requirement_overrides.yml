@@ -123,10 +123,6 @@
     - !type:DepartmentTimeRequirement
       department: Civilian
       time: 0
-    Bartender:
-    - !type:DepartmentTimeRequirement
-      department: Civilian
-      time: 0
     Botanist:
     - !type:DepartmentTimeRequirement
       department: Civilian
