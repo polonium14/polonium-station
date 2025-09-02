@@ -19,3 +19,15 @@
     - !type:DepartmentTimeRequirement
       department: Command
       time: 3600 # 1 hour
+
+- type: jobRequirementOverride
+  id: Zeroed
+  jobs:
+    Captain:
+    - !type:DepartmentTimeRequirement
+      department: Engineering
+      time: 0
+    HeadOfPersonnel:
+    - !type:DepartmentTimeRequirement
+      department: Engineering
+      time: 0
