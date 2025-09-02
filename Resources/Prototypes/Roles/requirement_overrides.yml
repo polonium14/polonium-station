@@ -25,9 +25,161 @@
   jobs:
     Captain:
     - !type:DepartmentTimeRequirement
-      department: Engineering
+      department: Civilian
       time: 0
     HeadOfPersonnel:
     - !type:DepartmentTimeRequirement
-      department: Engineering
+      department: Civilian
+      time: 0
+    AtmosphericTechnician:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 0
+    ChiefEngineer:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 0
+    StationEngineer:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 0
+    TechnicalAssistant:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 0
+    MedicalIntern:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 0
+    MedicalDoctor:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 0
+    Paramedic:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 0
+    Psychologist:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 0
+    Chemist:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 0
+    ChiefMedicalOfficer:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 0
+    SecurityOfficer:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 0
+    SecurityCadet:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 0
+    HeadOfSecurity:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 0
+    Detective:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 0
+    Warden:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 0
+    ResearchAssistant:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 0
+    Scientist:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 0
+    ResearchDirector:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 0
+    Borg:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 0
+    StationAi:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 0
+    Boxer:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 0
+    Janitor:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 0
+    Chef:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 0
+    Bartender:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 0
+    Botanist:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 0
+    Quartermaster:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 0
+    CargoTechnician:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 0
+    SalvageSpecialist:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 0
+    Bartender:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 0
+    Assistant:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 0
+    Chaplain:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 0
+    Clown:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 0
+    Mime:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 0
+    Lawyer:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 0
+    Librarian:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 0
+    Musician:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 0
+    ServiceWorker:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 0
+    Zookeeper:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
       time: 0
