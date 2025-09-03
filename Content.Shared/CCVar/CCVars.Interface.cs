@@ -39,7 +39,7 @@ public sealed partial class CCVars
 
     // Polonium
     public static readonly CVarDef<bool> ShowUUIDButton =
-        CVarDef.Create("ui.uuid_banner_enabled", true, CVar.SERVER);
+        CVarDef.Create("ui.uuid_banner_enabled", false, CVar.SERVER);
 
     /// <summary>
     /// Determines how antagonist status/roletype is displayed. Based on AdminOverlayAntagFormats enum
