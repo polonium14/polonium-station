@@ -37,6 +37,10 @@ public sealed partial class CCVars
     public static readonly CVarDef<bool> OutlineEnabled =
         CVarDef.Create("outline.enabled", true, CVar.CLIENTONLY);
 
+    // Polonium
+    public static readonly CVarDef<bool> ShowUUIDButton =
+        CVarDef.Create("ui.uuid_banner_enabled", true, CVar.SERVER);
+
     /// <summary>
     /// Determines how antagonist status/roletype is displayed. Based on AdminOverlayAntagFormats enum
     /// Binary: Roletypes of interest get an "ANTAG" label
