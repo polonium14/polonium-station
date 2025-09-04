@@ -216,7 +216,7 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
 
         _ = DiscordBanNotify(
             adminName,
-            targetName,
+            targetUsername ?? targetName,
             reason,
             expires.GetValueOrDefault().ToUnixTimeSeconds(),
             DateTimeOffset.UtcNow.ToUnixTimeSeconds(),
@@ -294,7 +294,8 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
             Footer = new ()
             {
                 Text = _cfg.GetCVar(CVars.GameHostName),
-            }
+            },
+            Color = Color.Red.ToArgb() & 16777215,
         });
     }
 
@@ -309,7 +310,7 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
 
         WebhookIdentifier? webhook = null;
 
-        _dc.GetWebhook(webhookUri, w => webhook = w.ToIdentifier());
+        await _dc.GetWebhook(webhookUri, w => webhook = w.ToIdentifier());
 
         if (webhook == null)
             return;

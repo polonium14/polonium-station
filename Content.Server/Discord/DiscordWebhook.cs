@@ -40,7 +40,8 @@ public sealed class DiscordWebhook : IPostInjectInit
     {
         try
         {
-            return await _http.GetFromJsonAsync<WebhookData>(url);
+            var req = await _http.GetFromJsonAsync<WebhookData>(url);
+            return req;
         }
         catch (Exception e)
         {
@@ -54,7 +55,7 @@ public sealed class DiscordWebhook : IPostInjectInit
     /// </summary>
     /// <param name="url">The url to get the data from.</param>
     /// <param name="onComplete">The delegate to invoke with the obtained data, if any.</param>
-    public async void GetWebhook(string url, Action<WebhookData> onComplete)
+    public async Task GetWebhook(string url, Action<WebhookData> onComplete)
     {
         if (await GetWebhook(url) is { } data)
             onComplete(data);
