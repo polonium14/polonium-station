@@ -271,7 +271,7 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
                 Name = "Wygasa",
                 Value = expirationTime switch
                 {
-                    0 => "Nigdy",
+                    0 => "**Nigdy.**",
                     _ => $"<t:{expirationTime}:F>",
                 },
             },
@@ -415,9 +415,11 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
             SendRoleBans(session);
         }
 
+        var isAdminFetched = _playerManager.TryGetSessionById(banningAdmin, out var adminSession);
+
         _ = DiscordBanNotify(
-            banningAdmin.GetValueOrDefault().ToString(),
-            target.GetValueOrDefault().ToString(),
+            isAdminFetched ? adminSession!.Name : "Nie znany",
+            targetUsername ?? (session != null ? session.Name : "Nie znany"),
             reason,
             expires.GetValueOrDefault().ToUnixTimeSeconds(),
             DateTimeOffset.UtcNow.ToUnixTimeSeconds(),
