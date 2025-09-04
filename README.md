@@ -1,7 +1,6 @@
 <img alt="Space Station 14" width="880" height="300" src="https://raw.githubusercontent.com/space-wizards/asset-dump/de329a7898bb716b9d5ba9a0cd07f38e61f1ed05/github-logo.svg">  
 </div>
 
-
 Space Station 14 to remake SS13 działający na [Robust Toolbox](https://github.com/space-wizards/RobustToolbox), naszym autorskim silniku napisanym w C#.
 
 To jest polska wersja gry. Aby zapobiec forkom RobustToolbox, klient i serwer ładują paczkę "content". Ta paczka zawiera wszystko, co potrzebne do gry na jednym konkretnym serwerze.
@@ -15,7 +14,6 @@ Jeśli chcesz hostować lub tworzyć zawartość dla SS14, to właśnie to repoz
 [Strona WWW](https://spacestation14.com/) | [Discord](https://discord.ss14.io/) | [Forum](https://forum.spacestation14.com/) | [Mastodon](https://mastodon.gamedev.place/@spacestation14) | [Lemmy](https://lemmy.spacestation14.com/) | [Patreon](https://www.patreon.com/spacestation14) | [Steam](https://store.steampowered.com/app/1255460/Space_Station_14/) | [Pobierz wersję standalone](https://spacestation14.com/about/nightlies/)  
 
 </div>
-
 
 ## Dokumentacja/Wiki
 
