@@ -50,6 +50,7 @@ Zbuduj serwer używając `dotnet build`.
 [Dokładniejsze instrukcje dotyczące budowania projektu.](https://docs.spacestation14.com/en/general-development/setup.html)
 
 ## Licencja
+
 Cały kod repozytorium content jest licencjonowany na zasadach [licencji MIT](https://github.com/space-wizards/space-station-14/blob/master/LICENSE.TXT).
 
 Większość assetów jest licencjonowana na [CC-BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/), chyba że zaznaczono inaczej. Assety mają swoją licencję i prawa autorskie określone w pliku metadata. Na przykład zobacz [metadata dla łomu](https://github.com/space-wizards/space-station-14/blob/master/Resources/Textures/Objects/Tools/crowbar.rsi/meta.json).
