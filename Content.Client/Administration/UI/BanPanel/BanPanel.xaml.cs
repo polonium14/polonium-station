@@ -139,7 +139,6 @@ public sealed partial class BanPanel : DefaultWindow
 
         ResetRoundButton.OnPressed += ResetRoundPressed;
 
-
         SeverityOption.AddItem(Loc.GetString("admin-note-editor-severity-none"), (int) NoteSeverity.None);
         SeverityOption.AddItem(Loc.GetString("admin-note-editor-severity-low"), (int) NoteSeverity.Minor);
         SeverityOption.AddItem(Loc.GetString("admin-note-editor-severity-medium"), (int) NoteSeverity.Medium);

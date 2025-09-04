@@ -277,7 +277,7 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
                 Value = expirationTime switch
                 {
                     0 => "**Nigdy.**",
-                    _ => $"<t:{expirationTime}:F>",
+                    _ => $"<t:{expirationTime}:R>",
                 },
             },
         ];
