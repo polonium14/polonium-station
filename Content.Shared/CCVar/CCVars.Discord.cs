@@ -56,6 +56,10 @@ public sealed partial class CCVars
     public static readonly CVarDef<string> DiscordVotekickWebhook =
         CVarDef.Create("discord.votekick_webhook", string.Empty, CVar.SERVERONLY);
 
+    // Polonium
+    public static readonly CVarDef<string> BanWebhook =
+        CVarDef.Create("discord.ban_webhook", string.Empty, CVar.SERVERONLY | CVar.CONFIDENTIAL);
+
     /// <summary>
     ///     URL of the Discord webhook which will relay round restart messages.
     /// </summary>
