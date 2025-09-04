@@ -1,59 +1,79 @@
-<div class="header" align="center">  
 <img alt="Space Station 14" width="880" height="300" src="https://raw.githubusercontent.com/space-wizards/asset-dump/de329a7898bb716b9d5ba9a0cd07f38e61f1ed05/github-logo.svg">  
 </div>
 
-Space Station 14 is a remake of SS13 that runs on [Robust Toolbox](https://github.com/space-wizards/RobustToolbox), our homegrown engine written in C#.
 
-This is the primary repo for Space Station 14. To prevent people forking RobustToolbox, a "content" pack is loaded by the client and server. This content pack contains everything needed to play the game on one specific server.
+Space Station 14 to remake SS13 działający na [Robust Toolbox](https://github.com/space-wizards/RobustToolbox), naszym autorskim silniku napisanym w C#.
 
-If you want to host or create content for SS14, this is the repo you need. It contains both RobustToolbox and the content pack for development of new content packs.
 
-## Links
+To jest polska wersja gry. Aby zapobiec forkom RobustToolbox, klient i serwer ładują paczkę "content". Ta paczka zawiera wszystko, co potrzebne do gry na jednym konkretnym serwerze.
+
+
+Jeśli chcesz hostować lub tworzyć zawartość dla SS14, to właśnie to repozytorium jest ci potrzebne. Zawiera zarówno RobustToolbox, jak i paczkę content do rozwoju nowych paczek zawartości.
+
+
+## Linki
+
 
 <div class="header" align="center">  
 
-[Website](https://spacestation14.com/) | [Discord](https://discord.ss14.io/) | [Forum](https://forum.spacestation14.com/) | [Mastodon](https://mastodon.gamedev.place/@spacestation14) | [Lemmy](https://lemmy.spacestation14.com/) | [Patreon](https://www.patreon.com/spacestation14) | [Steam](https://store.steampowered.com/app/1255460/Space_Station_14/) | [Standalone Download](https://spacestation14.com/about/nightlies/)  
+
+[Strona WWW](https://spacestation14.com/) | [Discord](https://discord.ss14.io/) | [Forum](https://forum.spacestation14.com/) | [Mastodon](https://mastodon.gamedev.place/@spacestation14) | [Lemmy](https://lemmy.spacestation14.com/) | [Patreon](https://www.patreon.com/spacestation14) | [Steam](https://store.steampowered.com/app/1255460/Space_Station_14/) | [Pobierz wersję standalone](https://spacestation14.com/about/nightlies/)  
+
 
 </div>
 
-## Documentation/Wiki
 
-Our [docs site](https://docs.spacestation14.com/) has documentation on SS14's content, engine, game design, and more.  
-Additionally, see these resources for license and attribution information:  
+## Dokumentacja/Wiki
+
+
+Nasza [strona z dokumentacją](https://docs.spacestation14.com/) zawiera informacje o zawartości SS14, silniku, projektowaniu gry i nie tylko.  
+Dodatkowo, zobacz te zasoby dotyczące licencji i atrybucji:  
 - [Robust Generic Attribution](https://docs.spacestation14.com/en/specifications/robust-generic-attribution.html)  
 - [Robust Station Image](https://docs.spacestation14.com/en/specifications/robust-station-image.html)
 
-We also have lots of resources for new contributors to the project.
 
-## Contributing
+Mamy też wiele materiałów dla nowych kontrybutorów projektu.
 
-We are happy to accept contributions from anybody. Get in Discord if you want to help. We've got a [list of issues](https://github.com/space-wizards/space-station-14-content/issues) that need to be done and anybody can pick them up. Don't be afraid to ask for help either!  
-Just make sure your changes and pull requests are in accordance with the [contribution guidelines](https://docs.spacestation14.com/en/general-development/codebase-info/pull-request-guidelines.html).
 
-We are not currently accepting translations of the game on our main repository. If you would like to translate the game into another language, consider creating a fork or contributing to a fork.
+## Wkład w projekt
 
-## Building
 
-1. Clone this repo:
+Chętnie przyjmujemy wkład od każdego. Dołącz na Discord, jeśli chcesz pomóc. Mamy [listę zadań](https://github.com/space-wizards/space-station-14-content/issues), które trzeba wykonać, i każdy może je podjąć. Nie bój się pytać o pomoc!  
+Upewnij się tylko, że twoje zmiany i pull requesty są zgodne z [wytycznymi dotyczącymi kontrybucji](https://docs.spacestation14.com/en/general-development/codebase-info/pull-request-guidelines.html).
+
+
+Obecnie nie przyjmujemy tłumaczeń gry w naszym głównym repozytorium. Jeśli chcesz przetłumaczyć grę na inny język, rozważ stworzenie forka lub kontrybuowanie do istniejącego forka.
+
+
+## Budowanie
+
+
+1. Sklonuj repozytorium:
 ```shell
-git clone https://github.com/space-wizards/space-station-14.git
+git clone https://github.com/polonium14/polonium-station.git
 ```
-2. Go to the project folder and run `RUN_THIS.py` to initialize the submodules and load the engine:
+2. Przejdź do folderu projektu i uruchom `RUN_THIS.py`, aby zainicjalizować submoduły i załadować silnik:
 ```shell
 cd space-station-14
 python RUN_THIS.py
 ```
-3. Compile the solution:  
+3. Skompiluj rozwiązanie:
 
-Build the server using `dotnet build`.
 
-[More detailed instructions on building the project.](https://docs.spacestation14.com/en/general-development/setup.html)
+Zbuduj serwer używając `dotnet build`.
 
-## License
 
-All code for the content repository is licensed under the [MIT license](https://github.com/space-wizards/space-station-14/blob/master/LICENSE.TXT).  
+[Dokładniejsze instrukcje dotyczące budowania projektu.](https://docs.spacestation14.com/en/general-development/setup.html)
 
-Most assets are licensed under [CC-BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) unless stated otherwise. Assets have their license and copyright specified in the metadata file. For example, see the [metadata for a crowbar](https://github.com/space-wizards/space-station-14/blob/master/Resources/Textures/Objects/Tools/crowbar.rsi/meta.json).  
+
+## Licencja
+Cały kod repozytorium content jest licencjonowany na zasadach [licencji MIT](https://github.com/space-wizards/space-station-14/blob/master/LICENSE.TXT).
+
+
+Większość assetów jest licencjonowana na [CC-BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/), chyba że zaznaczono inaczej. Assety mają swoją licencję i prawa autorskie określone w pliku metadata. Na przykład zobacz [metadata dla łomu](https://github.com/space-wizards/space-station-14/blob/master/Resources/Textures/Objects/Tools/crowbar.rsi/meta.json).
+
+
+
 
 > [!NOTE]
-> Some assets are licensed under the non-commercial [CC-BY-NC-SA 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/) or similar non-commercial licenses and will need to be removed if you wish to use this project commercially.
+> Niektóre assety są licencjonowane na zasadach niekomercyjnych, takich jak [CC-BY-NC-SA 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/) lub podobnych. Należy je usunąć, jeśli chcesz używać tego projektu komercyjnie.
