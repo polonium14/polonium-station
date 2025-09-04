@@ -18,10 +18,13 @@ using Content.Server.Administration.Managers;
 using Content.Server.Administration.Systems;
 using Content.Server.Chat.Managers;
 using Content.Server.EUI;
+using Content.Server.GameTicking;
 using Content.Shared.Administration;
 using Content.Shared.Database;
 using Content.Shared.Eui;
+using Content.Shared.Roles;
 using Robust.Shared.Network;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server.Administration;
 
@@ -33,8 +36,11 @@ public sealed class BanPanelEui : BaseEui
     [Dependency] private readonly IPlayerLocator _playerLocator = default!;
     [Dependency] private readonly IChatManager _chat = default!;
     [Dependency] private readonly IAdminManager _admins = default!;
+    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    [Dependency] private readonly IEntitySystemManager _sysMan = default!;
 
     private readonly ISawmill _sawmill;
+    private readonly GameTicker? _ticker = null;
 
     private NetUserId? PlayerId { get; set; }
     private string PlayerName { get; set; } = string.Empty;
@@ -48,12 +54,14 @@ public sealed class BanPanelEui : BaseEui
         IoCManager.InjectDependencies(this);
 
         _sawmill = _log.GetSawmill("admin.bans_eui");
+
+        _sysMan.TryGetEntitySystem(out _ticker);
     }
 
     public override EuiStateBase GetNewState()
     {
         var hasBan = _admins.HasAdminFlag(Player, AdminFlags.Ban);
-        return new BanPanelEuiState(PlayerName, hasBan);
+        return new BanPanelEuiState(PlayerName, hasBan, _ticker?.RoundId ?? 0);
     }
 
     public override void HandleMessage(EuiMessageBase msg)
@@ -63,7 +71,7 @@ public sealed class BanPanelEui : BaseEui
         switch (msg)
         {
             case BanPanelEuiStateMsg.CreateBanRequest r:
-                BanPlayer(r.Player, r.IpAddress, r.UseLastIp, r.Hwid, r.UseLastHwid, r.Minutes, r.Severity, r.Reason, r.Roles, r.Erase);
+                BanPlayer(r.Player, r.IpAddress, r.UseLastIp, r.Hwid, r.UseLastHwid, r.Minutes, r.Severity, r.Reason, r.Roles, r.Erase, r.Round);
                 break;
             case BanPanelEuiStateMsg.GetPlayerInfoRequest r:
                 ChangePlayer(r.PlayerUsername);
@@ -71,7 +79,7 @@ public sealed class BanPanelEui : BaseEui
         }
     }
 
-    private async void BanPlayer(string? target, string? ipAddressString, bool useLastIp, ImmutableTypedHwid? hwid, bool useLastHwid, uint minutes, NoteSeverity severity, string reason, IReadOnlyCollection<string>? roles, bool erase)
+    private async void BanPlayer(string? target, string? ipAddressString, bool useLastIp, ImmutableTypedHwid? hwid, bool useLastHwid, uint minutes, NoteSeverity severity, string reason, IReadOnlyCollection<string>? roles, bool erase, int round = 0)
     {
         if (!_admins.HasAdminFlag(Player, AdminFlags.Ban))
         {
@@ -135,7 +143,14 @@ public sealed class BanPanelEui : BaseEui
             var now = DateTimeOffset.UtcNow;
             foreach (var role in roles)
             {
-                _banManager.CreateRoleBan(targetUid, target, Player.UserId, addressRange, targetHWid, role, minutes, severity, reason, now);
+                if (_prototypeManager.HasIndex<JobPrototype>(role))
+                {
+                    _banManager.CreateRoleBan(targetUid, target, Player.UserId, addressRange, targetHWid, role, minutes, severity, reason, now, round);
+                }
+                else
+                {
+                    _sawmill.Warning($"{Player.Name} ({Player.UserId}) tried to issue a job ban with an invalid job: {role}");
+                }
             }
 
             Close();
@@ -156,7 +171,7 @@ public sealed class BanPanelEui : BaseEui
             }
         }
 
-        _banManager.CreateServerBan(targetUid, target, Player.UserId, addressRange, targetHWid, minutes, severity, reason);
+        _banManager.CreateServerBan(targetUid, target, Player.UserId, addressRange, targetHWid, minutes, severity, reason, round);
 
         Close();
     }

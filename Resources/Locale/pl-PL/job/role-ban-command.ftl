@@ -17,6 +17,7 @@ cmd-roleban-hint-duration-4 = 1 week
 cmd-roleban-hint-duration-5 = 2 week
 cmd-roleban-hint-duration-6 = 1 month
 
+cmd-roleban-hint-round = Numer rundy sytuacji
 
 ### Localization for role unban command
 
@@ -44,6 +45,7 @@ cmd-roleban-severity-parse = ${severity} is not a valid severity\n{$help}.
 cmd-roleban-arg-count = Invalid amount of arguments.
 cmd-roleban-job-parse = Job {$job} does not exist.
 cmd-roleban-name-parse = Unable to find a player with that name.
+cmd-roleban-round-parse = "{$round}" nie jest numerem rundy.
 cmd-roleban-existing = {$target} already has a role ban for {$role}.
 cmd-roleban-success = Role banned {$target} from {$role} with reason {$reason} {$length}.
 

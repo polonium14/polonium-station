@@ -158,7 +158,7 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
     }
 
     #region Server Bans
-    public async void CreateServerBan(NetUserId? target, string? targetUsername, NetUserId? banningAdmin, (IPAddress, int)? addressRange, ImmutableTypedHwid? hwid, uint? minutes, NoteSeverity severity, string reason)
+    public async void CreateServerBan(NetUserId? target, string? targetUsername, NetUserId? banningAdmin, (IPAddress, int)? addressRange, ImmutableTypedHwid? hwid, uint? minutes, NoteSeverity severity, string reason, int? situationRound = 0)
     {
         DateTimeOffset? expires = null;
         if (minutes > 0)
@@ -169,6 +169,11 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
         _systems.TryGetEntitySystem<GameTicker>(out var ticker);
         int? roundId = ticker == null || ticker.RoundId == 0 ? null : ticker.RoundId;
         var playtime = target == null ? TimeSpan.Zero : (await _db.GetPlayTimes(target.Value)).Find(p => p.Tracker == PlayTimeTrackingShared.TrackerOverall)?.TimeSpent ?? TimeSpan.Zero;
+        reason = situationRound is null or 0
+            ? (roundId != null
+                ? $"**#{roundId}** | {reason}"
+                : reason)
+            : $"**#{situationRound}** | {reason}";
 
         var banDef = new ServerBanDef(
             null,
@@ -221,7 +226,7 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
             expires.GetValueOrDefault().ToUnixTimeSeconds(),
             DateTimeOffset.UtcNow.ToUnixTimeSeconds(),
             roundId,
-            null,
+            situationRound,
             null
         );
     }
@@ -272,7 +277,7 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
                 Value = expirationTime switch
                 {
                     0 => "**Nigdy.**",
-                    _ => $"<t:{expirationTime}:F>",
+                    _ => $"<t:{expirationTime}:R>",
                 },
             },
         ];
@@ -283,13 +288,13 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
             {
                 Inline = false,
                 Name = "Role",
-                Value = $"```{string.Join("", roleBans.Select(b => $"-{b.Role}\n"))}```",
+                Value = $"```{string.Join("", roleBans.Select(b => b.Role.Contains(':') ? $"- {b.Role.Split(':')[1]}\n" : $"- {b.Role}\n"))}```",
             });
         }
 
         await DiscordBanNotify(new WebhookEmbed
         {
-            Title = isRoleBan ? "Zakaz grania na rolach": "Zakaz grania na serwerze",
+            Title = isRoleBan ? "Zakaz grania ról": "Zakaz grania na serwerze",
             Fields = fields,
             Footer = new ()
             {
@@ -366,7 +371,7 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
     #region Job Bans
     // If you are trying to remove timeOfBan, please don't. It's there because the note system groups role bans by time, reason and banning admin.
     // Removing it will clutter the note list. Please also make sure that department bans are applied to roles with the same DateTimeOffset.
-    public async void CreateRoleBan(NetUserId? target, string? targetUsername, NetUserId? banningAdmin, (IPAddress, int)? addressRange, ImmutableTypedHwid? hwid, string role, uint? minutes, NoteSeverity severity, string reason, DateTimeOffset timeOfBan)
+    public async void CreateRoleBan(NetUserId? target, string? targetUsername, NetUserId? banningAdmin, (IPAddress, int)? addressRange, ImmutableTypedHwid? hwid, string role, uint? minutes, NoteSeverity severity, string reason, DateTimeOffset timeOfBan, int? situationRound = 0)
     {
         if (!_prototypeManager.TryIndex(role, out JobPrototype? _))
         {
@@ -383,6 +388,11 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
         _systems.TryGetEntitySystem(out GameTicker? ticker);
         int? roundId = ticker == null || ticker.RoundId == 0 ? null : ticker.RoundId;
         var playtime = target == null ? TimeSpan.Zero : (await _db.GetPlayTimes(target.Value)).Find(p => p.Tracker == PlayTimeTrackingShared.TrackerOverall)?.TimeSpent ?? TimeSpan.Zero;
+        reason = situationRound is null or 0
+            ? (roundId != null
+                ? $"**#{roundId}** | {reason}"
+                : reason)
+            : $"**#{situationRound}** | {reason}";
 
         var banDef = new ServerRoleBanDef(
             null,
@@ -424,7 +434,7 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
             expires.GetValueOrDefault().ToUnixTimeSeconds(),
             DateTimeOffset.UtcNow.ToUnixTimeSeconds(),
             roundId,
-            null,
+            situationRound,
             session != null ? _cachedRoleBans.GetValueOrDefault(session) ?? [] : []
         );
     }
