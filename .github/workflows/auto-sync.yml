@@ -27,7 +27,9 @@ jobs:
       - name: Pobieramy zmiany z głównego repozytorium
         run: git fetch public master
       - name: Mergujemy zmiany z głównego repozytorium
-        run: git merge public/master --allow-unrelated-histories -m "Merge public by runner:${{GITHUB.run_id}}}" || true
+        run: git merge public/master --allow-unrelated-histories -m "Merge public by runner:${{ github.run_id }}}" || true
+      - name: Przywracamy nasze workflows
+        run: git checkout origin/master -- .github/workflows
       - name: Sprawdzamy czy są jakieś zmiany
         run: git diff --exit-code || echo "Są zmiany"
       - name: Push changes
