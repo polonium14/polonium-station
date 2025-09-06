@@ -197,6 +197,11 @@ namespace Content.Client.Ghost
             _console.RemoteExecuteCommand(null, "ghostroles");
         }
 
+        public void OpenNewLife() //🌟Starlight🌟
+        {
+            _console.RemoteExecuteCommand(null, "newlife");
+        }
+
         public void ToggleGhostVisibility(bool? visibility = null)
         {
             GhostVisibility = visibility ?? !GhostVisibility;
