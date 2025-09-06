@@ -60,9 +60,6 @@ public sealed partial class CharacterPickerButton : ContainerButton
         View.Initialize(prefMan, protoMan, playerMan);
         View.LoadPreview(profile);
 
-        EnabledCheck.Pressed = profile.Enabled;
-        EnabledCheck.Text = Loc.GetString(profile.Enabled ? EnabledLoc : DisabledLoc);
-
         Pressed = isSelected;
 
         DescriptionLabel.Text = View.FullDescription;
@@ -98,8 +95,6 @@ public sealed partial class CharacterPickerButton : ContainerButton
 
             EnabledCheck.OnToggled += args =>
             {
-                OnEnableToggled?.Invoke(args.Pressed);
-                EnabledCheck.Text = Loc.GetString(profile.Enabled ? EnabledLoc : DisabledLoc);
             };
         }
     }
