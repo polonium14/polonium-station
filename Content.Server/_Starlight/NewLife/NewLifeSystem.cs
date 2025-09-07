@@ -49,7 +49,9 @@ public sealed class NewLifeSystem : EntitySystem
     [Dependency] private readonly IConfigurationManager _configuration = default!;
 
     private readonly Dictionary<ICommonSession, NewLifeEui> _openUis = [];
+    [ViewVariables]
     private readonly Dictionary<NetUserId, HashSet<int>> _roundCharactersUsed = [];
+    [ViewVariables]
     private readonly Dictionary<NetUserId, int> _newLifesLeft = [];
     private int MaxNewLifes = 5;
     public override void Initialize()

@@ -64,6 +64,7 @@ public sealed partial class CharacterPickerButton : ContainerButton
         }
 
         Pressed = isSelected;
+        ButtonDivider.Visible = !simple;
         DeleteButton.Visible = !isSelected && !simple;
 
         View.SetEntity(_previewDummy);
