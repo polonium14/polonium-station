@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿/*
+using System.Linq;
 using Content.Client.Humanoid;
 using Content.Client.Station;
 using Content.Shared.Clothing;
@@ -151,14 +152,14 @@ public sealed partial class ProfilePreviewSpriteView
         ProtoId<JobPrototype> highPriorityJob = default;
         if (profile.JobPriorities.Count == 1)
         {
-            highPriorityJob = profile.JobPriorities.First();
+            highPriorityJob = profile.JobPriorities.First().Key;
         }
         else
         {
-            var priorities = _preferencesManager.Preferences?.JobPriorities ?? [];
+            var priorities = profile.JobPriorities;
             foreach (var priority in new List<JobPriority>{JobPriority.High, JobPriority.Medium, JobPriority.Low})
             {
-                highPriorityJob = profile.JobPreferences.FirstOrDefault(p => priorities.GetValueOrDefault(p) == priority);
+                highPriorityJob = profile.JobPriorities.FirstOrDefault(p => priorities.GetValueOrDefault<>(p) == priority);
                 if (highPriorityJob.Id != null)
                     break;
             }
@@ -186,7 +187,7 @@ public sealed partial class ProfilePreviewSpriteView
         var spawnSys = EntMan.System<StationSpawningSystem>();
 
         spawnSys.EquipStartingGear(PreviewDummy, antag.PreviewStartingGear);
-    }*/
+    }
 
     /// <summary>
     /// Applies the specified job's clothes to the dummy.
@@ -303,3 +304,4 @@ public sealed partial class ProfilePreviewSpriteView
         }).Where(p => p.Item1 != HumanoidVisualLayers.Special).ToDictionary();
     }  
 }
+*/

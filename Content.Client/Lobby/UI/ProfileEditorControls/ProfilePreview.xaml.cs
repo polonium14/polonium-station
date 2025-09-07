@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿/*
+using System.ComponentModel;
 using System.Threading.Tasks;
 using Content.Client.Sprite;
 using Content.Shared.Humanoid;
@@ -132,3 +133,4 @@ public sealed partial class ProfilePreview : BoxContainer
             buttonToDisable.Disabled = false;
     }
 }
+*/

@@ -1,4 +1,5 @@
-﻿<BoxContainer xmlns="https://spacestation14.io"
+﻿<!--
+<BoxContainer xmlns="https://spacestation14.io"
               xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
               xmlns:customControls="clr-namespace:Content.Client.Administration.UI.CustomControls"
               xmlns:profile="clr-namespace:Content.Client.Lobby.UI.ProfileEditorControls"
@@ -18,3 +19,4 @@
     </BoxContainer>
 
 </BoxContainer>
+-->

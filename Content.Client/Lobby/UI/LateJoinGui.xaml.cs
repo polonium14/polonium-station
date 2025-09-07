@@ -29,6 +29,7 @@ namespace Content.Client.Lobby.UI
         [Dependency] private readonly IClientConsoleHost _consoleHost = default!;
         [Dependency] private readonly IConfigurationManager _configManager = default!;
         [Dependency] private readonly IEntitySystemManager _entitySystem = default!;
+        [Dependency] private readonly IEntityManager _entityManager = default!;
         [Dependency] private readonly JobRequirementsManager _jobRequirements = default!;
         [Dependency] private readonly IClientPreferencesManager _preferencesManager = default!;
         [Dependency] private readonly ISharedPlayerManager _playerManager = default!;
@@ -92,7 +93,7 @@ namespace Content.Client.Lobby.UI
                 if (profile is not HumanoidCharacterProfile humanoid)
                     continue;
                 var characterPickerButton =
-                    new CharacterPickerButton(_preferencesManager, _prototypeManager, _playerManager, group, humanoid, isSelected, true);
+                    new CharacterPickerButton(_entityManager, _prototypeManager, group, profile, isSelected, true);
                 CharacterList.AddChild(characterPickerButton);
 
                 if (isSelected && _selectedSlot != slot)

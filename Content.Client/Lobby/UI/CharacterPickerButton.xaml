@@ -11,11 +11,11 @@
                   Name="InternalHBox">
 
         <!-- Left side: sprite preview -->
-        <profile:ProfilePreviewSpriteView Scale="2 2"
-                                          Margin="0 4 4 4"
-                                          OverrideDirection="South"
-                                          Name="View"
-                                          SetSize="64 64"/>
+        <SpriteView Scale="2 2"
+                    Margin="0 4 4 4"
+                    OverrideDirection="South"
+                    Name="View"
+                    SetSize="64 64"/>
 
         <!-- Name and job text -->
         <Label Name="DescriptionLabel" HorizontalExpand="True" ClipText="True"/>
@@ -31,23 +31,14 @@
         <BoxContainer Name="ButtonBox" Orientation="Vertical" VerticalAlignment="Center" VerticalExpand="True"
                       SeparationOverride="4" SetWidth="80" Margin="8 0 0 0">
 
-            <!-- Enabled button -->
-            <PanelContainer Name="EnabledCheckOutline">
-                <PanelContainer.PanelOverride>
-                    <gfx:StyleBoxTexture />
-                </PanelContainer.PanelOverride>
-                <Button Name="EnabledCheck" ToggleMode="True" HorizontalAlignment="Stretch"
-                        Text="{Loc 'character-setup-gui-character-picker-button-enabled-button'}"/>
-            </PanelContainer>
-
             <!-- Delete button -->
-            <PanelContainer Name="DeleteButtonOutline" Visible="False">
-                <PanelContainer.PanelOverride>
-                    <gfx:StyleBoxTexture/>
-                </PanelContainer.PanelOverride>
-                <controls:ConfirmButton Name="DeleteButton" HorizontalAlignment="Stretch"
-                        Text="{Loc 'character-setup-gui-character-picker-button-delete-button'}"/>
-            </PanelContainer>
+            <Button Name="DeleteButton"
+                Text="{Loc 'character-setup-gui-character-picker-button-delete-button'}"
+                Visible="False"/>
+            <Button Name="ConfirmDeleteButton"
+                Text="{Loc 'character-setup-gui-character-picker-button-confirm-delete-button'}"
+                Visible="False"
+                ModulateSelfOverride="{x:Static style:StyleNano.ButtonColorCautionDefault}"/>
 
         </BoxContainer> <!-- End button container -->
     </BoxContainer>
