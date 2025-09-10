@@ -1,7 +1,10 @@
 name: Publish Changelog Only
 
 on:
-  workflow_dispatch:
+  workflow_run:
+    workflows: ["Publish"]
+    types:
+      - completed
 
 jobs:
   publish-changelog:
@@ -10,12 +13,17 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4.2.2
 
+      - name: Install Python dependencies
+        run: |
+          pip install --upgrade pip
+          pip install paramiko PyYAML lxml
+
       - name: Publish changelog (Discord)
         continue-on-error: true
         run: Tools/actions_changelogs_since_last_run.py
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          DISCORD_WEBHOOK_URL: ${{ secrets.CHANGELOG_DISCORD_WEBHOOK }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
 
       - name: Publish changelog (RSS)
         continue-on-error: true
