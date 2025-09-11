@@ -14,11 +14,11 @@
   description: Used for advanced medical procedures. # Shitmed
   components:
   - type: Sprite
-    sprite: Structures/Furniture/Tables/optable.rsi
+    sprite: _DV/Structures/Furniture/Tables/optable.rsi
     state: operating_table
     noRot: true
   - type: Icon
-    sprite: Structures/Furniture/Tables/optable.rsi
+    sprite: _DV/Structures/Furniture/Tables/optable.rsi
     state: operating_table
   - type: OperatingTable
   # Begin Shitmed Changes
