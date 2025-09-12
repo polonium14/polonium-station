@@ -169,11 +169,6 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
         _systems.TryGetEntitySystem<GameTicker>(out var ticker);
         int? roundId = ticker == null || ticker.RoundId == 0 ? null : ticker.RoundId;
         var playtime = target == null ? TimeSpan.Zero : (await _db.GetPlayTimes(target.Value)).Find(p => p.Tracker == PlayTimeTrackingShared.TrackerOverall)?.TimeSpent ?? TimeSpan.Zero;
-        reason = situationRound is null or 0
-            ? (roundId != null
-                ? $"**#{roundId}** | {reason}"
-                : reason)
-            : $"**#{situationRound}** | {reason}";
 
         var banDef = new ServerBanDef(
             null,
@@ -231,7 +226,6 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
         );
     }
 
-    // webhoook, inicjator, cel, powód, data wydania, okres banu
     private async Task DiscordBanNotify (
         string adminName,
         string targetName,
@@ -256,11 +250,15 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
             {
                 Inline = false,
                 Name = "Powód banu",
-                Value = reason,
+                Value = situationRnd is null or 0
+            ? (issuanceRnd != null
+                ? $"**#{issuanceRnd}** | {reason}"
+                : reason)
+            : $"**#{situationRnd}** | {reason}",
             },
             new()
             {
-                Inline = true,
+                Inline = false,
                 Name = "Administrator",
                 Value = adminName
             },
@@ -272,7 +270,7 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
             },
             new()
             {
-                Inline = false,
+                Inline = true,
                 Name = "Wygasa",
                 Value = expirationTime switch
                 {
@@ -294,7 +292,7 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
 
         await DiscordBanNotify(new WebhookEmbed
         {
-            Title = isRoleBan ? "Zakaz grania ról": "Zakaz grania na serwerze",
+            Title = isRoleBan ? "Zakaz grania ról" : "Zakaz grania na serwerze",
             Fields = fields,
             Footer = new ()
             {
