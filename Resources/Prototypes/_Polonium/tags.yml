@@ -1,8 +1,8 @@
 - type: Tag
-  id: VisMPSPistolMagazine
-
-- type: Tag
   id: BorSniperMagazine
 
 - type: Tag
   id: PMMMachineGunMagazine
+
+- type: Tag
+  id: VisMPSPistolMagazine

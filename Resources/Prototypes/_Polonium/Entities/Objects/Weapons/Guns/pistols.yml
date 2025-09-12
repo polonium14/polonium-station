@@ -13,7 +13,7 @@
         map: ["enum.GunVisualLayers.Mag"]
   # broni dostępne tryby: tylko samoczynny
   - type: Gun
-    fireRate: 6
+    fireRate: 3.5
     availableModes:
         - SemiAuto
     soundGunshot:

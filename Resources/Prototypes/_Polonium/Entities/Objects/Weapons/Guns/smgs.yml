@@ -20,11 +20,12 @@
       minAngle: -18
       maxAngle: -24
     - type: Gun
-      fireRate: 7
-      burstFireRate: 9
+      fireRate: 8
+      burstFireRate: 15
+      BurstCooldown: 0.75
       shotsPerBurst: 3
-      minAngle: 24
-      maxAngle: 36
+      minAngle: 26
+      maxAngle: 45
       soundGunshot:
         path: /Audio/Weapons/Guns/Gunshots/c-20r.ogg
       availableModes:

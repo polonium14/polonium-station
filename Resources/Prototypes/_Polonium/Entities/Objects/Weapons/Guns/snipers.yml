@@ -19,8 +19,8 @@
     - suitStorage
   - type: AmmoCounter
   - type: Gun
-    minAngle: 1
-    maxAngle: 5
+    minAngle: 21
+    maxAngle: 35
     fireRate: 0.75
     selectedMode: SemiAuto
     availableModes:
