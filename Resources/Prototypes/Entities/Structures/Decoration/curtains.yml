@@ -67,7 +67,7 @@
   components:
   - type: Sprite
     snapCardinals: true
-    sprite: Structures/Decoration/Curtains/hospital.rsi
+    sprite: _DV/Structures/Decoration/Curtains/hospital.rsi
     layers:
     - state: closed
       map: ["enum.DoorVisualLayers.Base"]

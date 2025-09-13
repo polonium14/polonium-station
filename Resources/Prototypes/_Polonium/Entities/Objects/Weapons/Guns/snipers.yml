@@ -1,0 +1,71 @@
+- type: entity
+  name: Alexis-BOR .30
+  parent: [BaseItem, BaseGunWieldable, BaseSecurityContraband]
+  id: BORSniperGun
+  description: Najnowszy model snajperki bazowana na BOR 7,62. modyfikowana, żeby mogła używać amunicji .30
+  components:
+  - type: Sprite
+    sprite: _Polonium/Weapons/Guns/Snipers/Bor.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Polonium/Weapons/Guns/Snipers/Bor.rsi
+    quickEquip: false
+    slots:
+    - Back
+    - suitStorage
+  - type: AmmoCounter
+  - type: Gun
+    minAngle: 21
+    maxAngle: 35
+    fireRate: 0.75
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/_Polonium/Weapons/Guns/AlexisBorSniper.ogg
+    defaultDirection: 1,0
+  - type: ChamberMagazineAmmoProvider
+    soundRack:
+      path: /Audio/Weapons/Guns/Cock/smg_cock.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: BorSniperMagazine
+        insertSound: /Audio/Weapons/Guns/MagIn/rifle_load.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/sfrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - BorSniperMagazine
+        whitelistFailPopup: gun-magazine-whitelist-fail
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeLightRifle
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeLightRifle
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: StaticPrice
+    price: 1500
+  - type: GunRequiresWield
+  - type: CursorOffsetRequiresWield
+  - type: EyeCursorOffset # Mniejszy dystans bo to nie jest Hristov.
+    maxOffset: 1.5
+    pvsIncrease: 0.15
+  - type: SpeedModifiedOnWield
+    walkModifier: 0.8
+    sprintModifier: 0.8
+  - type: Appearance
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true

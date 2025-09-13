@@ -5,9 +5,9 @@
   components:
   - type: Sprite
     drawdepth: WallTops
-    sprite: Structures/Windows/plasma_window.rsi
+    sprite: _DV/Structures/Windows/plasma_window.rsi
   - type: Icon
-    sprite: Structures/Windows/plasma_window.rsi
+    sprite: _DV/Structures/Windows/plasma_window.rsi
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: Glass
@@ -64,10 +64,10 @@
     - Window
   components:
   - type: Sprite
-    sprite: Structures/Windows/directional.rsi
+    sprite: _DV/Structures/Windows/directional.rsi
     state: plasma_window
   - type: Icon
-    sprite: Structures/Windows/directional.rsi
+    sprite: _DV/Structures/Windows/directional.rsi
     state: plasma_window
   - type: Construction
     graph: WindowDirectional

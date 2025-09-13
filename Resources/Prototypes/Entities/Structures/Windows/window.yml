@@ -20,9 +20,9 @@
       - Window
   - type: Sprite
     drawdepth: WallTops
-    sprite: Structures/Windows/window.rsi
+    sprite: _DV/Structures/Windows/window.rsi
   - type: Icon
-    sprite: Structures/Windows/window.rsi
+    sprite: _DV/Structures/Windows/window.rsi
     state: full
   - type: Physics
     bodyType: Static
@@ -100,9 +100,9 @@
   components:
   - type: Sprite
     drawdepth: WallTops
-    sprite: Structures/Windows/tinted_window.rsi
+    sprite: _DV/Structures/Windows/tinted_window.rsi
   - type: Icon
-    sprite: Structures/Windows/tinted_window.rsi
+    sprite: _DV/Structures/Windows/tinted_window.rsi
   - type: IconSmooth
     base: twindow
   - type: Construction
@@ -141,10 +141,10 @@
         collection: GlassSmack
   - type: Sprite
     drawdepth: Mobs
-    sprite: Structures/Windows/directional.rsi
+    sprite: _DV/Structures/Windows/directional.rsi
     state: window
   - type: Icon
-    sprite: Structures/Windows/directional.rsi
+    sprite: _DV/  Structures/Windows/directional.rsi
     state: window
   - type: InteractionPopup
     interactSuccessString: comp-window-knock
@@ -233,10 +233,10 @@
     - Window
   components:
   - type: Sprite
-    sprite: Structures/Windows/directional.rsi
+    sprite: _DV/Structures/Windows/directional.rsi
     state: frosted_window
   - type: Icon
-    sprite: Structures/Windows/directional.rsi
+    sprite: _DV/Structures/Windows/directional.rsi
     state: frosted_window
   - type: StaticPrice
     price: 35
@@ -252,7 +252,7 @@
   components:
   - type: Sprite
     drawdepth: WallTops
-    sprite: Structures/Windows/window_diagonal.rsi
+    sprite: _DV/Structures/Windows/window_diagonal.rsi
     state: state0
   - type: Tag
     tags:
@@ -262,7 +262,7 @@
     key: windows
     base: state
   - type: Icon
-    sprite: Structures/Windows/window_diagonal.rsi
+    sprite: _DV/Structures/Windows/window_diagonal.rsi
     state: state0
   - type: Fixtures
     fixtures:

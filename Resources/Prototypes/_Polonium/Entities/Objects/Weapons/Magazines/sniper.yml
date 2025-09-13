@@ -1,0 +1,41 @@
+- type: entity
+
+  # Muszę zrobić poprawny prototyp do tłumaczenia kiedyś
+  id: BorSniperMagazineBase
+  name: Magazynek Alexis-BOR (.30 rifle any)
+  parent: [ BaseItem, BaseSecurityContraband]
+  components:
+    - type: Tag
+      tags:
+        - BorSniperMagazine
+    - type: BallisticAmmoProvider
+      mayTransfer: true
+      whitelist:
+        tags:
+          - CartridgeLightRifle
+      capacity: 5
+    - type: Item
+      size: Small
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
+    - type: Sprite
+      sprite: _Polonium/Weapons/Guns/Magazines/BOR_Mag.rsi
+      layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-1
+        map: ["enum.GunVisualLayers.Mag"]
+    - type: MagazineVisuals
+      magState: mag
+      steps: 2
+      zeroVisible: false
+    - type: Appearance
+
+- type: entity
+  id: BorSniperMagazine
+  name: Magazynek Alexis-BOR (.30 rifle )
+  parent: BorSniperMagazineBase
+  components:
+    - type: BallisticAmmoProvider
+      proto: CartridgeLightRifle
