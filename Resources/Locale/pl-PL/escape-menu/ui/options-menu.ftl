@@ -127,12 +127,14 @@ ui-options-header-text-other = Inne pola tekstowe
 
 ui-options-hotkey-keymap = Używaj metodę wprowadzania amerykańską QWERTY
 ui-options-hotkey-toggle-walk = Przełącz chodzenie
+ui-options-hotkey-toggle-sprint = Przełącz bieg
 
 ui-options-function-move-up = Ruch w górę
 ui-options-function-move-left = Ruch w lewo
 ui-options-function-move-down = Ruch w dół
 ui-options-function-move-right = Ruch w prawo
 ui-options-function-walk = Chodzenie
+ui-options-function-sprint = Sprint
 
 ui-options-function-camera-rotate-left = Obróć w lewo
 ui-options-function-camera-rotate-right = Obróć w prawo

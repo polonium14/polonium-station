@@ -1,0 +1,64 @@
+- type: entity
+  id: PMMMachineGunMagazineBase
+  name: Magazynek PMM Model-X (.35 auto any)
+  parent: [ BaseItem, BaseSecurityContraband]
+  components:
+    - type: Tag
+      tags:
+        - PMMMachineGunMagazine
+    - type: BallisticAmmoProvider
+      mayTransfer: true
+      whitelist:
+        tags:
+          - CartridgePistol
+      capacity: 22
+    - type: Item
+      size: Small
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
+    - type: Sprite
+      sprite: _Polonium/Weapons/Guns/Magazines/PMM_Mag.rsi
+      layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-1
+        map: ["enum.GunVisualLayers.Mag"]
+    - type: MagazineVisuals
+      magState: mag
+      steps: 2
+      zeroVisible: false
+    - type: Appearance
+
+- type: entity
+  id: PMMMachineGunMagazine
+  parent: PMMMachineGunMagazineBase
+  name: Magazynek PMM Model-X (.35 auto )
+  components:
+    - type: BallisticAmmoProvider
+      proto: CartridgePistol
+
+- type: entity
+  id: PMMMachineGunMagazineUranium
+  parent: PMMMachineGunMagazineBase
+  name: Magazynek PMM Model-X (.35 auto uranium)
+  components:
+    - type: BallisticAmmoProvider
+      proto: CartridgePistolUranium
+
+- type: entity
+  id: PMMMachineGunMagazineIncendiary
+  parent: PMMMachineGunMagazineBase
+  name: Magazynek PMM Model-X (.35 auto incendiary)
+  components:
+    - type: BallisticAmmoProvider
+      proto: CartridgePistolIncendiary
+
+
+- type: entity
+  id: PMMMachineGunMagazinePractice
+  parent: PMMMachineGunMagazineBase
+  name: Magazynek PMM Model-X (.35 auto practice)
+  components:
+    - type: BallisticAmmoProvider
+      proto: CartridgePistolPractice

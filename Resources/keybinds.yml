@@ -43,7 +43,10 @@ binds:
   key: S
 - function: Walk
   type: State
-  key: Shift
+  key: Control
+- function: Sprint
+  type: State
+  key: Shift # Sprint system by Polonium
 # Shuttle
 - function: ShuttleStrafeUp
   type: State

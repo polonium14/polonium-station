@@ -66,7 +66,7 @@ alerts-piloting-desc = Sterujesz wahadłowiec. Kliknij alert, aby przerwać.
 alerts-hunger-name = [color=yellow]Głodny[/color]
 alerts-hunger-desc = Przydałoby się coś zjeść.
 
-alerts-stamina-name = Wytrzymałość
+alerts-stamina-name = Równowaga
 alerts-stamina-desc = Jeśli jest za niska, ogłusza cię.
 
 alerts-starving-name = [color=red]Głodujący[/color]

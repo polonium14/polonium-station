@@ -24,6 +24,7 @@ public sealed partial class CharacterPickerButton : ContainerButton
 
     private EntityUid _previewDummy;
 
+    public ICharacterProfile Profile { get; private init; }
     /// <summary>
     /// Invoked if we should delete the attached character
     /// </summary>
@@ -34,7 +35,8 @@ public sealed partial class CharacterPickerButton : ContainerButton
         IPrototypeManager prototypeManager,
         ButtonGroup group,
         ICharacterProfile profile,
-        bool isSelected)
+        bool isSelected,
+        bool simple = false) 
     {
         RobustXamlLoader.Load(this);
         _entManager = entityManager;
@@ -42,6 +44,7 @@ public sealed partial class CharacterPickerButton : ContainerButton
         ToggleMode = true;
         Group = group;
         var description = profile.Name;
+        Profile = profile;
 
         if (profile is not HumanoidCharacterProfile humanoid)
         {
@@ -61,7 +64,8 @@ public sealed partial class CharacterPickerButton : ContainerButton
         }
 
         Pressed = isSelected;
-        DeleteButton.Visible = !isSelected;
+        ButtonDivider.Visible = !simple;
+        DeleteButton.Visible = !isSelected && !simple;
 
         View.SetEntity(_previewDummy);
         DescriptionLabel.Text = description;

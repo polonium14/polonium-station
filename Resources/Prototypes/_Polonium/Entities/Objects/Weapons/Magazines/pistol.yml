@@ -1,0 +1,72 @@
+- type: entity
+
+  # Muszę zrobić poprawny prototyp do tłumaczenia kiedyś
+  id: VisMPSPistolMagazineBase
+  name: Magazynek VIS MPS (.35 auto any)
+  parent: [ BaseItem, BaseSecurityContraband]
+  components:
+    - type: Tag
+      tags:
+        - VisMPSPistolMagazine
+    - type: BallisticAmmoProvider
+      mayTransfer: true
+      whitelist:
+        tags:
+          - CartridgePistol
+      capacity: 16
+    - type: Item
+      size: Small
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
+    - type: Sprite
+      sprite: _Polonium/Weapons/Guns/Magazines/VIS_MPS_Mag.rsi
+      layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-1
+        map: ["enum.GunVisualLayers.Mag"]
+    - type: MagazineVisuals
+      magState: mag
+      steps: 6
+      zeroVisible: false
+    - type: Appearance
+
+
+# Pierdyłiard wersji tego magazyneku
+
+- type: entity
+  id: VisMPSPistolMagazine
+  parent: VisMPSPistolMagazineBase
+  name: Magazynek VIS MPS (.35 auto)
+  description: Magazynek VIS MPS (.35 auto)
+  components:
+    - type: BallisticAmmoProvider
+      proto: CartridgePistol
+
+- type : entity
+  id: VisMPSPistolMagazineIncendiary
+  parent: VisMPSPistolMagazineBase
+  name: Magazynek VIS MPS (.35 auto incendiary)
+  description: Magazynek VIS MPS (.35 auto incendiary)
+  components:
+    - type: BallisticAmmoProvider
+      proto: CartridgePistolIncendiary
+
+- type : entity
+  id: VisMPSPistolMagazinUranium
+  parent: VisMPSPistolMagazineBase
+  name: Magazynek VIS MPS (.35 auto uranium)
+  description: Magazynek VIS MPS (.35 auto uranium)
+  components:
+    - type: BallisticAmmoProvider
+      proto: CartridgePistolUranium
+
+- type : entity
+  id: VisMPSPistolMagazinePractice
+  parent: VisMPSPistolMagazineBase
+  name: Magazynek VIS MPS (.35 auto practice)
+  description: Magazynek VIS MPS (.35 auto practice)
+  components:
+    - type: BallisticAmmoProvider
+      proto: CartridgePistolPractice

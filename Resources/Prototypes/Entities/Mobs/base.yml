@@ -44,6 +44,7 @@
   - type: MovementSpeedModifier
   - type: RequireProjectileTarget
     active: False
+  - type: Sprinter
 
 - type: entity
   save: false

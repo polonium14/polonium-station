@@ -1,0 +1,64 @@
+- type: entity
+  name: PMM Model-X
+  id: PMMMachineGun
+  parent: [BaseWeaponSubMachineGun, BaseSecurityContraband]
+  description: Najbardziej poważany pistolet maszynowy w Działach ochrony w polskich stacjach kosmicznych
+  components:
+    - type: Clothing
+      sprite: _Polonium/Weapons/Guns/SMGs/PMM.rsi
+    - type: Item
+    - type: Sprite
+      sprite: _Polonium/Weapons/Guns/SMGs/PMM.rsi
+      layers:
+        - state: base
+          map: ["enum.GunVisualLayers.Base"]
+        - state: mag-0
+          map: ["enum.GunVisualLayers.Mag"]
+    - type: Wieldable
+      unwieldOnUse: false
+    - type: GunWieldBonus
+      minAngle: -18
+      maxAngle: -24
+    - type: Gun
+      fireRate: 8
+      burstFireRate: 15
+      BurstCooldown: 0.75
+      shotsPerBurst: 3
+      minAngle: 26
+      maxAngle: 45
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Gunshots/c-20r.ogg
+      availableModes:
+        - FullAuto
+        - Burst
+        - SemiAuto
+    - type: Appearance
+    - type: MagazineVisuals
+      magState: mag
+      steps: 1
+      zeroVisible: true
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          startingItem: PMMMachineGunMagazine
+          insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+          ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+          priority: 2
+          whitelist:
+            tags:
+              - PMMMachineGunMagazine
+          whitelistFailPopup: gun-magazine-whitelist-fail
+        gun_chamber:
+          name: Chamber
+          startingItem: CartridgePistol
+          priority: 1
+          whitelist:
+            tags:
+              - CartridgePistol
+    - type: ContainerContainer
+      containers:
+        gun_magazine: !type:ContainerSlot
+        gun_chamber: !type:ContainerSlot
+    - type: StaticPrice
+      price: 1250

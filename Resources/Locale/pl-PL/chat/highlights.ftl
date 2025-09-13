@@ -29,7 +29,7 @@ highlights-medical-intern = Stażysta Medyczny, Stażysta, Dział Medyczny, "Med
 highlights-paramedic = Ratownik, "Rat", Dział Medyczny, "Med"
 
 # Naukowcy
-highlights-scientist = Naukowca, RND
+highlights-scientist = Naukowiec, RND
 highlights-research-assistant = Asystent Naukowy, RND
 
 # Cywile (Dział Obsługi)
