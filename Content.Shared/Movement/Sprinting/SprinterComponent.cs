@@ -148,6 +148,7 @@ public sealed partial class SprinterComponent : Component
     ///     What sound do we play when stamina is exhausted?
     /// </summary>
     [DataField]
+
     /// <summary>
     ///     Which sound to play based on sex?
     /// </summary>
