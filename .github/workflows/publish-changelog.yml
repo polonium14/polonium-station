@@ -1,10 +1,8 @@
 name: Publish Changelog Only
 
 on:
-  workflow_run:
-    workflows: ["Publish"]
-    types:
-      - completed
+  schedule:
+    - cron: "0 9 * * *"
   workflow_dispatch:
 
 jobs:
