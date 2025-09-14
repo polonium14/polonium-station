@@ -1,17 +1,18 @@
 // SPDX-FileCopyrightText: 2025 August Eymann <august.eymann@gmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 // SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
+// SPDX-FileCopyrightText: 2025 Polonium Space <admin@ss14.pl>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Shared.Damage;
-using Content.Shared.FixedPoint;
+using Content.Shared.Alert;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
-namespace Content.Goobstation.Shared.Sprinting;
+namespace Content.Shared.Movement.Sprinting;
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class SprinterComponent : Component
@@ -23,56 +24,88 @@ public sealed partial class SprinterComponent : Component
     public bool IsSprinting = false;
 
     /// <summary>
-    ///     Does the entity scale their stamina drain with their stamina modifiers?
+    ///     Current sprint capacity of the entity.
     /// </summary>
-    [DataField, AutoNetworkedField]
-    public bool ScaleWithStamina = true;
+    [ViewVariables(VVAccess.ReadOnly), AutoNetworkedField]
+    public float CurrentSprintCapacity;
+
+    /// <summary>
+    ///     How long can the entity sprint for?
+    /// </summary>
+    [DataField, AutoNetworkedField, ViewVariables]
+    public float SprintCapacity = 1f;
 
     /// <summary>
     ///     Can the entity sprint?
     /// </summary>
-    [DataField, AutoNetworkedField]
+    [DataField, AutoNetworkedField, ViewVariables(VVAccess.ReadOnly)]
     public bool CanSprint = true;
 
     /// <summary>
-    ///     How much stamina is drained per second?
+    ///     How much sprint bar is drained per update cycle?
     /// </summary>
-    [DataField, AutoNetworkedField]
-    public float StaminaDrainRate = 10f;
+    [DataField, AutoNetworkedField, ViewVariables]
+    public float SprintCapacityDrainRate = 0.01f;
 
     /// <summary>
-    ///     By how much do we multiply stamina recovery while sprinting?
+    ///     How much do we multiply stamina drains while there's a StaminaModifierComponent?
     /// </summary>
-    /// <remarks>
-    ///     This is used to compensate for the average stamina modifying chem giving you speed.
-    ///     Could be made a CVAR but durk takes ages to update those so eh.
-    /// </remarks>
-    [DataField, AutoNetworkedField]
-    public float StaminaRegenMultiplier = 0.75f;
+    [DataField, AutoNetworkedField, ViewVariables(VVAccess.ReadWrite)]
+    public float SprintCapacityDrainMultiplier = 6f;
 
     /// <summary>
-    ///     How much do we multiply stamina drains while theres a StaminaModifierComponent?
+    ///     How much sprint bar is regenerated per update cycle?
     /// </summary>
-    [DataField, AutoNetworkedField]
-    public float StaminaDrainMultiplier = 1.3f;
+    [DataField, AutoNetworkedField, ViewVariables]
+    public float SprintCapacityRegenRate = 0.01f;
+
+    /// <summary>
+    ///     How much do we multiply stamina regeneration while there's a StaminaModifierComponent?
+    /// </summary>
+    [DataField, AutoNetworkedField, ViewVariables(VVAccess.ReadWrite)]
+    public float SprintCapacityRegenMultiplier = 4f;
 
     /// <summary>
     ///     How much do we multiply sprint speed?
     /// </summary>
-    [DataField, AutoNetworkedField]
-    public float SprintSpeedMultiplier = 1.6f;
+    [DataField, AutoNetworkedField, ViewVariables]
+    public float SprintSpeedMultiplier = 1.35f;
 
     /// <summary>
-    ///     How long do we have to wait between sprints?
+    ///     How often the component updates its state.
     /// </summary>
-    [DataField, AutoNetworkedField]
-    public TimeSpan TimeBetweenSprints = TimeSpan.FromSeconds(3);
+    [ViewVariables, AutoNetworkedField]
+    public TimeSpan UpdateRate = TimeSpan.FromSeconds(0.33f);
 
     /// <summary>
     ///     When did we last sprint?
     /// </summary>
-    [ViewVariables, AutoNetworkedField]
+    [ViewVariables(VVAccess.ReadOnly), AutoNetworkedField]
     public TimeSpan LastSprint = TimeSpan.Zero;
+
+    /// <summary>
+    ///     How many seconds to wait after stamina depletes before regeneration starts.
+    /// </summary>
+    [DataField, AutoNetworkedField, ViewVariables]
+    public float DelaySecondsAfterDeplete = 3f;
+
+    /// <summary>
+    ///     When did we last deplete our sprint?
+    /// </summary>
+    [ViewVariables(VVAccess.ReadOnly), AutoNetworkedField]
+    public TimeSpan LastDepleted = TimeSpan.Zero;
+
+    /// <summary>
+    ///     Speed modifier applied when stamina is depleted.
+    /// </summary>
+    [DataField, AutoNetworkedField, ViewVariables(VVAccess.ReadWrite)]
+    public float DepletedSpeedModifier = 0.65f;
+
+    /// <summary>
+    ///     The threshold above which sprinting is allowed again.
+    /// </summary>
+    [DataField, AutoNetworkedField, ViewVariables]
+    public float SprintThreshold = 0.2f;
 
     /// <summary>
     ///     What string do we use to tag stamina drain?
@@ -93,6 +126,12 @@ public sealed partial class SprinterComponent : Component
     public TimeSpan LastStep = TimeSpan.Zero;
 
     /// <summary>
+    ///     When is the next update tick for this component.
+    /// </summary>
+    [DataField(customTypeSerializer: typeof(TimeOffsetSerializer)), AutoNetworkedField, ViewVariables]
+    public TimeSpan NextUpdate = TimeSpan.Zero;
+
+    /// <summary>
     ///     What entity do we use for stepping visuals?
     /// </summary>
     [DataField]
@@ -105,22 +144,22 @@ public sealed partial class SprinterComponent : Component
     public SoundSpecifier SprintStartupSound = new SoundPathSpecifier("/Audio/_Goobstation/Effects/Sprinting/sprint_puff.ogg");
 
     /// <summary>
-    ///     How long do we have to wait between spawning step visuals?
-    /// </summary>
-    [DataField, AutoNetworkedField]
-    public TimeSpan TimeBetweenSteps = TimeSpan.FromSeconds(0.6);
-
-    /// <summary>
-    ///     What damage specifier do we use if sprinting stops abruptly?
+    ///     What sound do we play when stamina is exhausted?
     /// </summary>
     [DataField]
-    public DamageSpecifier SprintDamageSpecifier = new()
-    {
-        DamageDict = new Dictionary<string, FixedPoint2>
-        {
-            { "Blunt", 6.5 }, // real
-        }
-    };
+    public SoundSpecifier ExhaustedSound = new SoundPathSpecifier("/Audio/_Polonium/Effects/Sprinting/sprintExhausted.ogg");
+
+    /// <summary>
+    ///     Alert to show when sprinting.
+    /// </summary>
+    [DataField]
+    public ProtoId<AlertPrototype> SprintAlert = "Sprint";
+
+    /// <summary>
+    ///     How long do we have to wait between spawning step visuals?
+    /// </summary>
+    [DataField, AutoNetworkedField, ViewVariables]
+    public TimeSpan TimeBetweenSteps = TimeSpan.FromSeconds(0.3);
 }
 
 [Serializable, NetSerializable]
@@ -131,6 +170,12 @@ public sealed class SprintToggleEvent(bool isSprinting) : EntityEventArgs
 
 [Serializable, NetSerializable]
 public sealed class SprintStartEvent : EntityEventArgs;
+
+[Serializable, NetSerializable]
+public record struct SprintCapacityDepletedEvent;
+
+[Serializable, NetSerializable]
+public record struct SprintCapacityRecoveredEvent;
 
 [ByRefEvent]
 public sealed class SprintAttemptEvent : CancellableEntityEventArgs;

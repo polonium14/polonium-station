@@ -69,16 +69,6 @@ public sealed partial class StaminaComponent : Component
     public float CritThreshold = 100f;
 
     /// <summary>
-    /// Goob Edit: A dictionary of active stamina drains, with the key being the source of the drain,
-    /// DrainRate how much it changes per tick, and ModifiesSpeed if it should slow down the user.
-    /// </summary>
-    /// <remarks>
-    /// TODO: Refactor into a struct or another component at some point idk.
-    /// </remarks>
-    [DataField, AutoNetworkedField]
-    public Dictionary<string, (float DrainRate, bool ModifiesSpeed, NetEntity? Source)> ActiveDrains = new();
-
-    /// <summary>
     /// How long will this mob be stunned for?
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite), DataField]

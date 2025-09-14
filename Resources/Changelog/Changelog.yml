@@ -1,33 +1,4 @@
 ﻿Entries:
-- author: IProduceWidgets
-  changes:
-  - message: filing cabinets no longer have whitelists.
-    type: Tweak
-  id: 8234
-  time: '2025-04-18T17:37:56.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/36185
-- author: aada
-  changes:
-  - message: Egg-plants now have 6 reagent per egg at 20 potency, up from 3.
-    type: Tweak
-  id: 8235
-  time: '2025-04-18T19:52:12.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/36693
-- author: Nox38
-  changes:
-  - message: Nuclear operative agent is renamed to nuclear operative corpsman.
-    type: Tweak
-  id: 8236
-  time: '2025-04-18T19:56:57.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34627
-- author: Ilya246
-  changes:
-  - message: The actions hotbar now has up to 10 more hotkeys accessible through the
-      shift key.
-    type: Add
-  id: 8237
-  time: '2025-04-18T22:45:20.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/33872
 - author: lzk228
   changes:
   - message: Fixed breaking small mobs (e.g. mice) mask after getting into an air
@@ -3891,3 +3862,43 @@
   id: 8745
   time: '2025-09-13T19:10:53.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/66
+- author: Nikitosych
+  changes:
+  - message: "Dodano pasek kondycji. Wci\u015Bnij \"Shift\", \u017Ceby sprintowa\u0107\
+      !"
+    type: Add
+  - message: "Od tego momentu na ko\u0144cu sprintu nikt nie upada twarz\u0105 na\
+      \ pod\u0142og\u0119"
+    type: Tweak
+  - message: "Wyczerpanie kondycji sprawia kr\xF3tkie spowolnienie"
+    type: Add
+  id: 8746
+  time: '2025-09-14T15:15:14.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/69
+- author: Tofi
+  changes:
+  - message: 'Spolszczenie Tritu: Tritium -> Trit'
+    type: Tweak
+  - message: 'Spolszczenie Tritu: Tritium -> Trit'
+    type: Tweak
+  id: 8747
+  time: '2025-09-14T15:16:39.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/67
+- author: Tofi
+  changes:
+  - message: 'Spolszczenie Tritu: Tritium -> Trit'
+    type: Tweak
+  - message: 'Spolszczenie Tritu: Tritium -> Trit'
+    type: Tweak
+  id: 8748
+  time: '2025-09-14T15:16:39.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/67
+- author: Tofi
+  changes:
+  - message: 'Spolszczenie Tritu: Tritium -> Trit'
+    type: Tweak
+  - message: 'Spolszczenie Tritu: Tritium -> Trit'
+    type: Tweak
+  id: 8749
+  time: '2025-09-14T15:16:39.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/67
