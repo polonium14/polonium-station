@@ -4,7 +4,6 @@
 // SPDX-FileCopyrightText: 2025 Polonium Station <admin@ss14.pl>
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Goobstation.Shared.Sprinting;
 using Content.Shared.Movement.Sprinting;
 using Robust.Client.Animations;
 using Robust.Client.GameObjects;
@@ -57,7 +56,6 @@ public sealed class SprintingSystem : SharedSprintingSystem
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
-
         var query = EntityQueryEnumerator<SprinterComponent>();
         while (query.MoveNext(out var uid, out var component))
         {

@@ -56,4 +56,11 @@ public sealed partial class CCVars
     [CVarControl(AdminFlags.VarEdit)]
     public static readonly CVarDef<float> MovementPushMassCap =
         CVarDef.Create("movement.push_mass_cap", 1.75f, CVar.SERVER | CVar.REPLICATED);
+
+    // Polonium
+    /// <summary>
+    /// Delay between sprints. Zero means there's no delay.
+    /// </summary>
+    public static readonly CVarDef<float> SecondsBetweenSprints =
+        CVarDef.Create("movement.seconds_between_sprints", 0f, CVar.SERVER | CVar.REPLICATED);
 }

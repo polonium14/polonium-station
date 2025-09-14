@@ -273,9 +273,6 @@ public abstract class SharedStunSystem : EntitySystem
             return;
         }
 
-        // Gooby nie powinni byli w tej funkcji dodawać jednostkom jakieś wizualne efekty, jest to shitcode
-        // TODO: Po wyczerpaniu kondycji dodać jakiś charakterystyczny efekt wizualny, np. duszność po bieganiu. Ale błagam, nie róbcie tego tutaj
-
         EnsureComp<SlowedDownComponent>(ent, out var comp);
 
         comp.WalkSpeedModifier = walkSpeedModifier;

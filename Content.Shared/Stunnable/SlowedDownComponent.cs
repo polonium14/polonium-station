@@ -1,9 +1,10 @@
+using Content.Shared.Movement.Sprinting;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared.Stunnable;
 
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState, Access(typeof(SharedStunSystem))]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState, Access(typeof(SharedStunSystem), typeof(SharedSprintingSystem))]
 public sealed partial class SlowedDownComponent : Component
 {
     [ViewVariables, DataField("sprintSpeedModifier"), AutoNetworkedField]

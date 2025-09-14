@@ -2,21 +2,21 @@
   id: Sprint
   category: Sprint
   icons:
-  - sprite: _Polonium/Interface/Alerts/Sprint-Bar.rsi
+  - sprite: _Polonium/Interface/Alerts/sprint-bar.rsi
     state: sprint-bar0
-  - sprite: _Polonium/Interface/Alerts/Sprint-Bar.rsi
+  - sprite: _Polonium/Interface/Alerts/sprint-bar.rsi
     state: sprint-bar1
-  - sprite: _Polonium/Interface/Alerts/Sprint-Bar.rsi
+  - sprite: _Polonium/Interface/Alerts/sprint-bar.rsi
     state: sprint-bar2
-  - sprite: _Polonium/Interface/Alerts/Sprint-Bar.rsi
+  - sprite: _Polonium/Interface/Alerts/sprint-bar.rsi
     state: sprint-bar3
-  - sprite: _Polonium/Interface/Alerts/Sprint-Bar.rsi
+  - sprite: _Polonium/Interface/Alerts/sprint-bar.rsi
     state: sprint-bar4
-  - sprite: _Polonium/Interface/Alerts/Sprint-Bar.rsi
+  - sprite: _Polonium/Interface/Alerts/sprint-bar.rsi
     state: sprint-bar5
-  - sprite: _Polonium/Interface/Alerts/Sprint-Bar.rsi
+  - sprite: _Polonium/Interface/Alerts/sprint-bar.rsi
     state: sprint-bar6
-  - sprite: _Polonium/Interface/Alerts/Sprint-Bar.rsi
+  - sprite: _Polonium/Interface/Alerts/sprint-bar.rsi
     state: sprint-bar7
   name: Kondycja
   description: Placeholder tutaj
