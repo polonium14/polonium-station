@@ -22,3 +22,14 @@ lobby-state-song-text = Obecnie grane: [color=white]{$songTitle}[/color] autorst
 lobby-state-song-no-song-text = Nie odtwarzana jest obecnie żadna piosenka.
 lobby-state-song-unknown-title = [color=dimgray]Nieznany tytuł[/color]
 lobby-state-song-unknown-artist = [color=dimgray]Nieznany wykonawca[/color]
+
+# Wspomnienie o przerwach, nie było powszednio w tłumaczeniu
+lobby-state-playtime-comment-normal =
+    Spędziłeś(-aś) {$hours} {$hours ->
+    [1]hour
+    [few]godziny
+    *[other]godzin
+    } w grze, nie zapomnij o przerwach!
+lobby-state-playtime-comment-concerning = Grałeś(-aś) dzisiaj {$hours} godzin. proszę zrób sobie Przerwę.
+lobby-state-playtime-comment-grasstouchless = Grałeś(-aś) przez {$hours} godzin, może czas się wylogować i zająć się sobą.
+lobby-state-playtime-comment-selfdestructive = {$hours} godzin. Serio?
