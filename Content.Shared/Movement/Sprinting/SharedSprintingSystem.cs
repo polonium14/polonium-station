@@ -34,6 +34,9 @@ using Content.Shared.Rounding;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Components;
 using Robust.Shared.Configuration;
+using Content.Shared.Humanoid;
+using Robust.Shared.Toolshed.Commands.Values;
+using Content.Shared.Jittering;
 
 namespace Content.Shared.Movement.Sprinting;
 
@@ -52,6 +55,9 @@ public abstract class SharedSprintingSystem : EntitySystem
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly AlertsSystem _alerts = default!;
     [Dependency] private readonly SharedStunSystem _stun = default!;
+
+    [Dependency] private readonly SharedJitteringSystem _sharedJitteringSystem = default!;
+
 
     public TimeSpan SprintsDelay { get; private set; }
 
@@ -230,10 +236,16 @@ public abstract class SharedSprintingSystem : EntitySystem
 
         if (depleted)
         {
-            var playback = _audio.PlayPredicted(sprintComp.ExhaustedSound, uid, uid, AudioParams.Default.WithVariation(0.3f).AddVolume(-3f));
+            var sex = CompOrNull<HumanoidAppearanceComponent>(uid)?.Sex ?? Sex.Unsexed;
 
-            ApplySlowdown(uid, audio:playback?.Component);
+
+            var audioParams = AudioParams.Default.WithVariation(0.1f).AddVolume(-3f);
+            var playback = _audio.PlayPredicted(sprintComp.ExhaustedSounds[sex], uid, uid, audioParams);
+
+            ApplySlowdown(uid, audio: playback?.Component);
             RaiseLocalEvent(uid, new SprintCapacityDepletedEvent());
+
+            _sharedJitteringSystem.DoJitter(uid, TimeSpan.FromSeconds(4f), false, 3f, 6f);
 
             Dirty(uid, sprintComp);
         }
@@ -248,6 +260,7 @@ public abstract class SharedSprintingSystem : EntitySystem
         {
             RemComp<SlowedDownComponent>(ent);
             RaiseLocalEvent(ent, new SprintCapacityRecoveredEvent());
+
             return;
         }
 
@@ -272,7 +285,7 @@ public abstract class SharedSprintingSystem : EntitySystem
             comp.SprintCapacity,
             8);
 
-        _alerts.ShowAlert(uid, comp.SprintAlert, (short) level);
+        _alerts.ShowAlert(uid, comp.SprintAlert, (short)level);
     }
 
     #endregion
