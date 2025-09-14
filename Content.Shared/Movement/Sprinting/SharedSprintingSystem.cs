@@ -54,9 +54,7 @@ public abstract class SharedSprintingSystem : EntitySystem
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly AlertsSystem _alerts = default!;
     [Dependency] private readonly SharedStunSystem _stun = default!;
-
-    [Dependency] private readonly SharedJitteringSystem _sharedJitteringSystem = default!;
-
+    [Dependency] private readonly SharedJitteringSystem _jittering = default!;
 
     public TimeSpan SprintsDelay { get; private set; }
 
@@ -241,16 +239,16 @@ public abstract class SharedSprintingSystem : EntitySystem
             var audioParams = AudioParams.Default.WithVariation(0.1f).AddVolume(-3f);
             var playback = _audio.PlayPredicted(sprintComp.ExhaustedSounds[sex], uid, uid, audioParams);
 
-            ApplySlowdown(uid, audio: playback?.Component);
+            ApplySlowdown(uid);
             RaiseLocalEvent(uid, new SprintCapacityDepletedEvent());
 
-            _sharedJitteringSystem.DoJitter(uid, TimeSpan.FromSeconds(4f), false, 3f, 6f);
+            _jittering.DoJitter(uid, TimeSpan.FromSeconds(4f), false, 3f, 6f);
 
             Dirty(uid, sprintComp);
         }
     }
 
-    private void ApplySlowdown(Entity<SprinterComponent?> ent, AudioComponent? audio = null, bool recover = false)
+    private void ApplySlowdown(Entity<SprinterComponent?> ent, bool recover = false)
     {
         if (!Resolve(ent, ref ent.Comp))
             return;
