@@ -35,7 +35,6 @@ using Robust.Shared.Audio;
 using Robust.Shared.Audio.Components;
 using Robust.Shared.Configuration;
 using Content.Shared.Humanoid;
-using Robust.Shared.Toolshed.Commands.Values;
 using Content.Shared.Jittering;
 
 namespace Content.Shared.Movement.Sprinting;
