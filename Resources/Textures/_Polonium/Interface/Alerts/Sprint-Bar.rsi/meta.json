@@ -1,0 +1,47 @@
+
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Made by Tofi_Dev (github)",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "sprint-bar0"
+        },
+        {
+            "name": "sprint-bar1"
+        },
+        {
+            "name": "sprint-bar2"
+        },
+        {
+            "name": "sprint-bar3"
+        },
+        {
+            "name": "sprint-bar4"
+        },
+        {
+            "name": "sprint-bar5",
+            "delays":[
+                0.5,
+                0.5
+            ]
+
+        },
+        {
+            "name": "sprint-bar6",
+            "delays":
+            [
+                0.25,
+                0.25
+            ]
+        },
+        {
+            "name": "sprint-bar7"
+        }
+
+    ]
+}
