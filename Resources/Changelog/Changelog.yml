@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: lzk228
-  changes:
-  - message: Fixed breaking small mobs (e.g. mice) mask after getting into an air
-      flow.
-    type: Fix
-  id: 8238
-  time: '2025-04-18T22:52:09.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/33888
 - author: YoungThugSS14
   changes:
   - message: The Diona and Gingerbread species now get unique typing indicators
@@ -3902,3 +3894,10 @@
   id: 8749
   time: '2025-09-14T15:16:39.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/67
+- author: Tofi
+  changes:
+  - message: Lekkie ulepszenia sprintu, w tym wizualnie i sound design.
+    type: Tweak
+  id: 8750
+  time: '2025-09-14T20:48:45.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/70

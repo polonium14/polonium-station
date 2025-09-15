@@ -11,6 +11,7 @@ using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
+using Content.Shared.Humanoid;
 
 namespace Content.Shared.Movement.Sprinting;
 
@@ -147,7 +148,16 @@ public sealed partial class SprinterComponent : Component
     ///     What sound do we play when stamina is exhausted?
     /// </summary>
     [DataField]
-    public SoundSpecifier ExhaustedSound = new SoundPathSpecifier("/Audio/_Polonium/Effects/Sprinting/sprintExhausted.ogg");
+
+    /// <summary>
+    ///     Which sound to play based on sex?
+    /// </summary>
+    public Dictionary<Sex, SoundSpecifier> ExhaustedSounds = new Dictionary<Sex, SoundSpecifier>
+    {
+        { Sex.Male, new SoundPathSpecifier("/Audio/_Polonium/Voice/Human/sprintExhausted-male.ogg")},
+        { Sex.Female, new SoundPathSpecifier("/Audio/_Polonium/Voice/Human/sprintExhausted-female.ogg")},
+        { Sex.Unsexed, new SoundPathSpecifier("/Audio/_Polonium/Voice/Human/sprintExhausted-male.ogg")},
+    };
 
     /// <summary>
     ///     Alert to show when sprinting.

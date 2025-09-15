@@ -24,15 +24,15 @@
         },
         {
             "name": "sprint-bar5",
-            "delays": [[0.33, 0.33]]
+            "delays": [[0.2, 0.2]]
         },
         {
             "name": "sprint-bar6",
-            "delays": [[0.33, 0.33]]
+            "delays": [[0.2, 0.2]]
         },
         {
             "name": "sprint-bar7",
-            "delays": [[0.1, 0.1]]
+            "delays": [[0.16, 0.16]]
         }
     ]
 }
