@@ -4,8 +4,8 @@ species-name-human = Człowiek
 species-name-dwarf = Krasnolud
 species-name-reptilian = Reptilianin
 
-# Nazwa wziętą ze Starlighta. "Osoba ze Śluzu" nie brzmi dobrze, Jeśli macie lepsze poprozycje, proszę zrobić to w nowym PRze lub w Tym.
-species-name-slime = Laspi
+# Dziekuje kromek
+species-name-slime = Szlam
 
 species-name-diona = Diona
 species-name-arachnid = Pajęczak
