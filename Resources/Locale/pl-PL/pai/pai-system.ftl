@@ -3,7 +3,7 @@ pai-system-off = pSI nie jest zainstalowany.
 pai-system-still-searching = Wyszukiwanie pSI w toku.
 pai-system-searching = Teraz wyszukiwanie pSI...
 
-pai-system-role-name =  Personalna SI
+pai-system-role-name = Personalna SI
 pai-system-role-description = Bądź kogoś elektroniczną kolegą!
                               (Wspomnienia *NIE SĄ* wlączone.)
 pai-system-role-name-syndicate = Syndykatowa Personalna SI
