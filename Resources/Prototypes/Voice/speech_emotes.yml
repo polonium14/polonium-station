@@ -29,15 +29,15 @@
     # 🇵🇱 Polonium
     - krzyczy
     - krzycze
-    - krzycał
-    - krzycała
-    - krzycal
-    - krzycala
+    - krzyczał
+    - krzyczała
+    - krzyczal
+    - krzyczala
     - krzyk
     - wrzeszczy
     - wrzeszcz
-    - wrzeszcał
-    - wrzeszcała
+    - wrzeszczał
+    - wrzeszczała
 
 
 - type: emote
@@ -57,7 +57,7 @@
     - laughs
     - laughing
     - laughed
-    - chuckle
+    - chuckle # MAJĄ 3 SŁOWA DO "chichocze" JAPIERDOLE.
     - chuckles
     - chuckled
     - chuckling
@@ -68,6 +68,20 @@
     - chortle
     - chortles
     - chortling
+
+    # 🇵🇱 Polonium
+
+    # rożne szyki do tego samego
+    - się smieje
+    - smieje się
+    - smiał się
+    - smiała się
+    - smiech
+    - chichotał
+    - chichocze
+    - się chichocze
+    - chichoczy
+    - chichoczy się
 
 - type: emote
   id: Honk
@@ -86,6 +100,8 @@
     - honks
     - honked
     - honking
+
+    # bez zmiań
 
 - type: emote
   id: Sigh
@@ -129,6 +145,10 @@
     - whistles
     - whistleblowing
 
+    # 🇵🇱 Polonium
+    - gwiżdże
+    - gwiżdzy
+
 - type: emote
   id: Crying
   name: chat-emote-name-crying
@@ -153,6 +173,15 @@
     - płacze
     - płakał
     - płakała
+    - płacz
+    - płakanie
+
+    # Bez polskich znaków
+    - placze
+    - plakal
+    - plakala
+    - placz
+    - plakanie
 
 - type: emote
   id: Squish
@@ -171,6 +200,10 @@
     - squish
     - squishing
     - squishes
+
+    # 🇵🇱 Polonium
+    - chlupocze
+    - chlupoczy
 
 - type: emote
   id: Chitter
@@ -219,6 +252,8 @@
     - piszcz
     - piszcał
     - piszcała
+    - piszcal
+    - piszcala
 
 - type: emote
   id: Click
@@ -236,6 +271,11 @@
   chatTriggers:
    - click
    - clicks
+
+  # 🇵🇱 Polonium
+   - klika
+   - kliknął
+   - kliknąl
 
 # hand emotes
 - type: emote
@@ -255,7 +295,10 @@
     - clapping
     - clapped
 
+
+    # 🇵🇱 Polonium
     - klaszcze
+    - klaszczy
 
 - type: emote
   id: ClapSingle
@@ -368,6 +411,8 @@
     - salutes
 
     # 🇵🇱 Polonium
+    - salut
+    - salutowanie
     - salutuje
 
 - type: emote
@@ -386,6 +431,12 @@
    - się duszi
    - duszi się
    - duszi
+
+   # Bez polskich znaków
+   - sie duszi
+   - duszi sie
+   - duszi
+
 
 - type: emote
   id: DefaultDeathgasp
@@ -428,6 +479,16 @@
     - buzzed
     - buzzes
 
+    # 🇵🇱 Polonium
+    - bzycze
+    - bzyczy
+    - bzyczała
+    - bzyczał
+
+    # Bez polskich znaków
+    - bzycziala
+    - bzyczial
+
 - type: emote
   id: Weh
   name: chat-emote-name-weh
@@ -462,6 +523,18 @@
     - chirped
     - chirping
 
+    # 🇵🇱 Polonium
+    - ćwierka
+    - ćwierczy
+    - ćwierkał
+    - ćwierkała
+
+    # Bez polskich znaków
+    - cwierka
+    - cwierczy
+    - cwierkal
+    - cwierkala
+
 # Machine Emotes
 - type: emote
   id: Beep
@@ -481,6 +554,13 @@
     - beeped
     - beeping
 
+    # 🇵🇱 Polonium
+    - bip
+    - bipcze
+    - bipczy
+    - bipczenie
+
+
 - type: emote
   id: Chime
   name: chat-emote-name-chime
@@ -498,6 +578,12 @@
     - chimes
     - chimed
     - chiming
+
+    # 🇵🇱 Polonium
+    - dzwoni
+    - dzwonił
+    - dzwoniła
+    - dzwonienie
 
 - type: emote
   id: Buzz-Two
@@ -523,6 +609,16 @@
     - buzzing twice
     - buzzed twice
 
+    # 🇵🇱 Polonium
+    - bzyczy dwa razy
+    - bzyczy 2 razy
+    - bzyczy dwie razy
+    - bzyczy dwukrotnie
+    - dwukrotnie bzyczy
+    - bzyczy dwa
+    - bzyczy dwie
+    - bzyczy 2
+
 - type: emote
   id: Ping
   name: chat-emote-name-ping
@@ -540,3 +636,7 @@
     - pings
     - pinged
     - pinging
+
+    # 🇵🇱 Polonium
+    - pingnie
+    - pinguje
