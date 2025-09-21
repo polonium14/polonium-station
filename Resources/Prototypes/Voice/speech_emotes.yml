@@ -26,6 +26,20 @@
     - yelled
     - yelling
 
+    # 🇵🇱 Polonium
+    - krzyczy
+    - krzycze
+    - krzycał
+    - krzycała
+    - krzycal
+    - krzycala
+    - krzyk
+    - wrzeszczy
+    - wrzeszcz
+    - wrzeszcał
+    - wrzeszcała
+
+
 - type: emote
   id: Laugh
   name: chat-emote-name-laugh
@@ -90,6 +104,14 @@
     - sighs
     - sighed
 
+    # 🇵🇱 Polonium
+    - wzdycha
+    - wzdychał
+    - wzdychała
+    - wzdychal
+    - wzdychala
+    - wzdychaj
+
 - type: emote
   id: Whistle
   name: chat-emote-name-whistle
@@ -127,6 +149,11 @@
     - sobs
     - sobbing
 
+    # 🇵🇱 Polonium
+    - płacze
+    - płakał
+    - płakała
+
 - type: emote
   id: Squish
   name: chat-emote-name-squish
@@ -163,6 +190,12 @@
    - chitters
    - chittered
 
+  # 🇵🇱 Polonium
+   - ćwierka
+   - ćwierkał
+   - ćwierkała
+   - ćwierk
+
 - type: emote
   id: Squeak
   name: chat-emote-name-squeak
@@ -177,9 +210,15 @@
     - SiliconEmotes
   chatMessages: ["chat-emote-msg-squeak"]
   chatTriggers:
-   - squeak
-   - squeaks
-   - squeaked
+    - squeak
+    - squeaks
+    - squeaked
+
+    # 🇵🇱 Polonium
+    - piszczy
+    - piszcz
+    - piszcał
+    - piszcała
 
 - type: emote
   id: Click
@@ -216,6 +255,8 @@
     - clapping
     - clapped
 
+    - klaszcze
+
 - type: emote
   id: ClapSingle
   name: chat-emote-name-clap-single
@@ -234,6 +275,12 @@
     - claps her hands together
     - claps his hands together
     - claps its hands together
+
+    # 🇵🇱 Polonium
+    - klaszcze w swoje dłonie.
+    - klaszcze w jej dłonie.
+    - klaszcze w jego dłonie.
+    - klaszczy raz
 
 - type: emote
   id: Snap
@@ -261,6 +308,14 @@
     - snapping fingers
     - snapped fingers
 
+    # 🇵🇱 Polonium
+    - pstryka
+    - pstryka swoimi palcami.
+    - pstryka swoim palcami
+    - pstryka jego palcami
+    - pstryka jej palcami
+    - pstryka palcami
+
 - type: emote
   id: Thump
   name: chat-emote-name-thump
@@ -286,6 +341,16 @@
     - thumps his tail
     - thumps its tail
 
+    # 🇵🇱 Polonium
+    - tupa
+    - tupa ogonem
+    - tupa jego ogonem
+    - tupa jej ogonem
+    - tupa swoim ogonem.
+    - tupanie
+    - tupnął
+    - tupnęła
+
 - type: emote
   id: Salute
   name: chat-emote-name-salute
@@ -302,6 +367,9 @@
     - salute
     - salutes
 
+    # 🇵🇱 Polonium
+    - salutuje
+
 - type: emote
   id: Gasp
   name: chat-emote-name-gasp
@@ -313,6 +381,11 @@
    - gasp
    - gasps
    - gasped
+
+   # 🇵🇱 Polonium
+   - się duszi
+   - duszi się
+   - duszi
 
 - type: emote
   id: DefaultDeathgasp
