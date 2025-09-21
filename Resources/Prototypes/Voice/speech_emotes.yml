@@ -156,6 +156,10 @@
     - gwiżdże
     - gwiżdzy
 
+    # Bez polskich znaków
+    - gwizdze
+    - gwizdzy
+
 - type: emote
   id: Crying
   name: chat-emote-name-crying
