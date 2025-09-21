@@ -83,6 +83,13 @@
     - chichoczy
     - chichoczy się
 
+    # polskie znaki bo zapomiałem
+    - się śmieje
+    - śmieje się
+    - śmiał się
+    - śmiała się
+    - śmiech
+
 - type: emote
   id: Honk
   name: chat-emote-name-honk
