@@ -1,14 +1,14 @@
-admin-player-actions-reason = Reason
-admin-player-actions-bans = Ban List
-admin-player-actions-notes = Notes
-admin-player-actions-kick = Kick
-admin-player-actions-ban = Ban
+admin-player-actions-reason = Powód
+admin-player-actions-bans = Lista Banów
+admin-player-actions-notes = Notatki
+admin-player-actions-kick = Wyrzucenie
+admin-player-actions-ban = Banowanie
 admin-player-actions-ahelp = AHelp
-admin-player-actions-respawn = Respawn
-admin-player-actions-spawn = Spawn here
-admin-player-spawn-failed = Failed to find valid coordinates
-admin-player-actions-player-panel = Open Player Panel
+admin-player-actions-respawn = Respawnowanie
+admin-player-actions-spawn = Spawnuj tutaj
+admin-player-spawn-failed = Nie znaleziono prawidłowych współrzędnych.
+admin-player-actions-player-panel = Otwórz Panel Gracza
 
-admin-player-actions-clone = Clone
-admin-player-actions-follow = Follow
-admin-player-actions-confirm = Are you sure?
+admin-player-actions-clone = Sklonuj
+admin-player-actions-follow = Sledź
+admin-player-actions-confirm = Na pewno?
