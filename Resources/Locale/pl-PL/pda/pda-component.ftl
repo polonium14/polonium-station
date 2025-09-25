@@ -2,55 +2,55 @@
 ### UI
 
 # For the PDA screen
-comp-pda-ui = ID: [color=white]{$owner}[/color], [color=yellow]{$jobTitle}[/color]
+comp-pda-ui = Identyfikator: [color=white]{$owner}[/color], [color=yellow]{$jobTitle}[/color]
 
-comp-pda-ui-blank = ID:
+comp-pda-ui-blank = Identyfikator:
 
-comp-pda-ui-owner = Owner: [color=white]{$actualOwnerName}[/color]
+comp-pda-ui-owner = Właściciel: [color=white]{$actualOwnerName}[/color]
 
-comp-pda-io-program-list-button = Programs
+comp-pda-io-program-list-button = Programy
 
-comp-pda-io-settings-button = Settings
+comp-pda-io-settings-button = Ustawienia
 
 comp-pda-io-program-fallback-title = Program
 
-comp-pda-io-no-programs-available = No Programs Available
+comp-pda-io-no-programs-available = Brak dostępnych programów
 
-pda-bound-user-interface-show-uplink-title = Open Uplink
-pda-bound-user-interface-show-uplink-description = Access your uplink
+pda-bound-user-interface-show-uplink-title = Odtworz Uplink
+pda-bound-user-interface-show-uplink-description = Uzyskaj dostęp do uplinka.
 
-pda-bound-user-interface-lock-uplink-title = Lock Uplink
-pda-bound-user-interface-lock-uplink-description = Prevent anyone from accessing your uplink without the code
+pda-bound-user-interface-lock-uplink-title = Zablokuj Uplink
+pda-bound-user-interface-lock-uplink-description = Zapobiegnij dostępu osobą do uplinka, którzy nie mają kodu.
 
 comp-pda-ui-menu-title = PDA
 
-comp-pda-ui-footer = Personal Digital Assistant
+comp-pda-ui-footer = Osobisty Asystent Cyfrowy
 
-comp-pda-ui-station = Station: [color=white]{$station}[/color]
+comp-pda-ui-station = Stacja: [color=white]{$station}[/color]
 
-comp-pda-ui-station-alert-level = Alert Level: [color={ $color }]{ $level }[/color]
+comp-pda-ui-station-alert-level = Poziom bezpieczeństwa: [color={ $color }]{ $level }[/color]
 
-comp-pda-ui-station-alert-level-instructions = Instructions: [color=white]{ $instructions }[/color]
+comp-pda-ui-station-alert-level-instructions = Instrukcje: [color=white]{ $instructions }[/color]
 
-comp-pda-ui-station-time = Shift duration: [color=white]{ $time }[/color]
+comp-pda-ui-station-time = Długość Zmiany: [color=white]{ $time }[/color]
 
-comp-pda-ui-eject-id-button = Eject ID
+comp-pda-ui-eject-id-button = Wysuń Identyfikator
 
-comp-pda-ui-eject-pen-button = Eject Pen
+comp-pda-ui-eject-pen-button = Wysuń Długopis
 
-comp-pda-ui-ringtone-button = Ringtone
+comp-pda-ui-ringtone-button = Dzwonek
 
-comp-pda-ui-ringtone-button-description = Change your PDA's ringtone
+comp-pda-ui-ringtone-button-description = Zmień dzwonek swojego PDA
 
-comp-pda-ui-toggle-flashlight-button = Toggle Flashlight
+comp-pda-ui-toggle-flashlight-button = Włącz latarkę
 
 pda-bound-user-interface-music-button = Music Instrument
 
-pda-bound-user-interface-music-button-description = Play music on your PDA
+pda-bound-user-interface-music-button-description = Odtwarzaj muzykę na swoim PDA
 
-comp-pda-ui-unknown = Unknown
+comp-pda-ui-unknown = Nieznane
 
-comp-pda-ui-unassigned = Unassigned
+comp-pda-ui-unassigned = Nieprzypisane
 
 pda-notification-message = [font size=12][bold]PDA[/bold] { $header }: [/font]
     "{ $message }"
