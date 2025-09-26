@@ -400,9 +400,7 @@
     pl-word-15: pl-replacement-15
     pl-word-16: pl-replacement-16
     pl-word-17: pl-replacement-17
-    pl-word-18: pl-replacement-etcetera
-    pl-word-19: pl-replacement-etcetera
-    pl-word-20: pl-replacement-20
+    pl-word-18: pl-replacement-18
 
 - type: accent
   id: liar

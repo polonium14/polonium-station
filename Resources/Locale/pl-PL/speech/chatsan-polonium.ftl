@@ -57,9 +57,5 @@ pl-replacement-16 = na przykład
 pl-word-17 = itd
 pl-replacement-17 = i tak dalej
 
-pl-word-18 = etc
-pl-word-19 = etc.
-pl-word-etcetera = etcetera
-
-pl-word-20 = itp
-pl-replacement-20 = i tym podobne
+pl-word-18 = itp
+pl-replacement-18 = i tym podobne
