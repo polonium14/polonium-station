@@ -1,2 +1,2 @@
-﻿health-examinable-verb-text = Health
-health-examinable-verb-disabled = Perform a basic health examination in close range.
+﻿health-examinable-verb-text = Zdrowie
+health-examinable-verb-disabled = Przeprowadź podstawowe badanie stanu zdrowia z bliskiej odległości.
