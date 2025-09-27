@@ -150,7 +150,7 @@ def send_to_discord(entries: Iterable[ChangelogEntry]) -> None:
     for name, group in itertools.groupby(entries, lambda x: x["author"]):
         # Need to split text to avoid discord character limit
         group_content = io.StringIO()
-        group_content.write(f"**{name}** updated:\n")
+        group_content.write(f"**{name}** zaktualizował(-a):\n")
 
         for entry in group:
             for change in entry["changes"]:
