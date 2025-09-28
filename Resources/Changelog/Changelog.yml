@@ -1,31 +1,4 @@
 ﻿Entries:
-- author: Rainbeon
-  changes:
-  - message: Fixed Revolvers not correctly reloading from Speedloaders when the Revolver
-      is partially loaded.
-    type: Fix
-  - message: Speedloaders will now prioritize loading the active and upcoming chambers
-      in a Revolver when the Speedloader is only partially filled, rather than the
-      ones farthest away.
-    type: Fix
-  id: 8240
-  time: '2025-04-18T23:26:44.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/32396
-- author: ScarKy0
-  changes:
-  - message: Changed the air vent and scrubber sprites.
-    type: Tweak
-  id: 8241
-  time: '2025-04-18T23:34:59.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34223
-- author: EmoGarbage404
-  changes:
-  - message: Added the material silo. This machine allows nearby machines to share
-      a pool of resources, cutting down on micromanagement.
-    type: Add
-  id: 8242
-  time: '2025-04-18T23:43:17.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/36492
 - author: Onezero0
   changes:
   - message: Modular Grenades can now fit inside Security belts and carriers.
@@ -3903,3 +3876,32 @@
   id: 8751
   time: '2025-09-21T23:49:06.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/71
+- author: pinkscreen
+  changes:
+  - message: "Nowe d\u017Awi\u0119ki!!!"
+    type: Add
+  id: 8752
+  time: '2025-09-26T21:55:51.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/74
+- author: Tofi-Dev
+  changes:
+  - message: "Dodano nowe s\u0142owa do polskiej santiacji czatu."
+    type: Add
+  - message: "Angielskie s\u0142owa z santiacji zosta\u0142y usuniet\u0119, by\u0142\
+      y konflikty pomi\u0119dzy dwoma."
+    type: Remove
+  id: 8753
+  time: '2025-09-27T07:39:25.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/75
+- author: Nikitosych
+  changes:
+  - message: "T\u0142umaczenie okienka magicznego lustra"
+    type: Add
+  - message: "T\u0142umaczenie okienka wizualnego badania stanu zdrowia postaci"
+    type: Add
+  - message: "Teraz w oknie przegl\u0105du postaci uwzgl\u0119dniana jest jej p\u0142\
+      e\u0107"
+    type: Tweak
+  id: 8754
+  time: '2025-09-27T10:00:45.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/76
