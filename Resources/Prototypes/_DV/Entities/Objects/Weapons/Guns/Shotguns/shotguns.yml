@@ -1,0 +1,7 @@
+- type: entity
+  parent: WeaponShotgunKammerer
+  id: WeaponShotgunKammererNonLethal
+  suffix: Beanbag
+  components:
+  - type: BallisticAmmoProvider
+    proto: ShellShotgunBeanbag
