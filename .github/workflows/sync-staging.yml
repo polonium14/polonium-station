@@ -1,0 +1,34 @@
+name: Sync Staging
+
+on:
+  workflow_dispatch:
+  # schedule:
+  #   - cron: "0 3 * * *"
+
+jobs:
+  auto-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+          token: ${{ secrets.PAT }}
+      - name: git identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+      - name: Dodajemy remote public
+        run: git remote add public https://github.com/polonium14/polonium-station.git
+      - name: Pobieramy zmiany z głównego repozytorium
+        run: git fetch public staging
+      - name: Mergujemy zmiany z głównego repozytorium
+        run: git merge public/staging --allow-unrelated-histories -m "Merge public by runner:${{ github.run_id }}}" || true
+      - name: Sprawdzamy czy są jakieś zmiany
+        run: git diff --exit-code || echo "Są zmiany"
+      - name: Push changes
+        run: git push origin staging || (echo "Nie udało się wypchnąć zmian" && exit 1)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
