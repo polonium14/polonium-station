@@ -8,6 +8,8 @@
     FoodSnackPopcorn: 3
     FoodSnackEnergy: 3
     CigPackMixed: 2
+    # 🇵🇱 Polonoium
+    FoodSnackKabanosy: 3
   contrabandInventory:
     FoodSnackDanDanNoodles: 3
     FoodBakedBunHoney: 3

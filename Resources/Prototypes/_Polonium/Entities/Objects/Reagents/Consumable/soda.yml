@@ -1,9 +1,9 @@
 - type: reagent
-  id: Cola
-  name: Oranżada
+  id: OranzadaReagent
+  name: oranżada
   parent: BaseSoda
   desc: Ah, polski klasyk.
-  physicalDesc: reagent-physical-desc-fizzy
+  physicalDesc: reagent-physical-desc-sweet
   flavor: soda
   color: "#ee4343"
   recognizable: true
