@@ -1,0 +1,82 @@
+- type: entity
+  parent: BasePlushie
+  id: PlushieItanKio
+  name: Pluszak Itan-Kio
+  description: Pluszowa reprezentacja bardzo (nie)kompetentnego technika atmosferyki
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Fun/Plushies/ItanKio-Plush.rsi
+    state: icon
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Items/Toys/weh.ogg
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Items/Toys/weh.ogg
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/Items/Toys/weh.ogg
+  - type: EmitSoundOnTrigger
+    sound:
+      path: /Audio/Items/Toys/weh.ogg
+  - type: EmitSoundOnCollide
+    sound:
+      path: /Audio/Items/Toys/weh.ogg
+  - type: Food
+    requiresSpecialDigestion: true
+    useSound:
+      path: /Audio/Items/Toys/weh.ogg
+  - type: MeleeWeapon
+    wideAnimationRotation: 180
+    attackRate: 15
+    soundHit:
+      path: /Audio/Items/Toys/weh.ogg
+
+- type: entity
+  parent: BaseItem
+  id: ItanKioGoBoom
+  name: Pluszak Itan-Kio
+  description: "Instrukcja obsługi: Przykręć jego ogon i rzuć w ofiarę twojego wyboru"
+  suffix: BOMBA, NIE MAPOWAĆ
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Fun/Plushies/ItanKio-Plush.rsi
+    state: icon
+  - type: OnUseTimerTrigger
+    delay: 5
+    beepInterval: 1
+    beepSound:
+      path: /Audio/Items/Toys/weh.ogg
+  - type: Explosive
+    explosionType: Minibomb
+    totalIntensity: 300
+    intensitySlope: 30
+    maxIntensity: 60
+  - type: ExplodeOnTrigger
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Items/Toys/weh.ogg
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/Items/Toys/weh.ogg
+  - type: EmitSoundOnTrigger
+    sound:
+      path: /Audio/Items/Toys/weh.ogg
+  - type: EmitSoundOnCollide
+    sound:
+      path: /Audio/Items/Toys/weh.ogg
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 10
+      behaviors:
+      - !type:TimerStartBehavior
+    - trigger:
+        !type:DamageTrigger
+        damage: 45
+      behaviors:
+      - !type:TriggerBehavior
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+    - type: Damageable
