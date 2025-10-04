@@ -144,7 +144,7 @@
     sprite: _DV/Structures/Windows/directional.rsi
     state: window
   - type: Icon
-    sprite: _DV/  Structures/Windows/directional.rsi
+    sprite: _DV/Structures/Windows/directional.rsi
     state: window
   - type: InteractionPopup
     interactSuccessString: comp-window-knock

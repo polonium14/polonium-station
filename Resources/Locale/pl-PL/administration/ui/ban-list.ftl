@@ -1,20 +1,20 @@
 ﻿# UI
-ban-list-bans = Bans
-ban-list-role-bans = Role Bans
+ban-list-bans = Bany
+ban-list-role-bans = Bany Ról
 
-ban-list-header-ids = Ids
-ban-list-header-reason = Reason
-ban-list-header-role = Role
-ban-list-header-time = Ban time
-ban-list-header-expires = Expires
-ban-list-header-banning-admin = Banning admin
+ban-list-header-ids = Identyfikatory
+ban-list-header-reason = Powód
+ban-list-header-role = Rola
+ban-list-header-time = Okres banu
+ban-list-header-expires = Wygasa
+ban-list-header-banning-admin = Banujący Admin
 
-ban-list-title = Bans for {$player}
-ban-list-view = View
+ban-list-title = Bany gracza {$player}
+ban-list-view = Pokaż
 ban-list-id = ID: {$id}
 ban-list-ip = IP: {$ip}
 ban-list-hwid = HWID: {$hwid}
 ban-list-guid = GUID: {$guid}
-ban-list-permanent = PERMANENT
-ban-list-unbanned = Unbanned: {$date}
-ban-list-unbanned-by = By {$unbanner}
+ban-list-permanent = PERMANENTNY
+ban-list-unbanned = Odbanowano: {$date}
+ban-list-unbanned-by = Przez {$unbanner}

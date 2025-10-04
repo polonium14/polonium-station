@@ -1,12 +1,12 @@
-﻿silicon-law-ui-verb = Manage laws
-silicon-law-ui-title = Silicon laws
-silicon-law-ui-new-law = New law
-silicon-law-ui-save = Save changes
+﻿silicon-law-ui-verb = Zarządzaj prawami
+silicon-law-ui-title = Prawa silikonu
+silicon-law-ui-new-law = Nowe prawo
+silicon-law-ui-save = Zapisz zmiany
 silicon-law-ui-plus-one = +1
 silicon-law-ui-minus-one = -1
-silicon-law-ui-delete = Delete
-silicon-law-ui-check-corrupted = Corrupted law
-silicon-law-ui-check-corrupted-tooltip = If the law identifier should be set as 'corrupted', so symbols shuffling around.
-silicon-law-ui-placeholder = Type here to change law text...
+silicon-law-ui-delete = Usuń
+silicon-law-ui-check-corrupted = Uszkodzone prawo
+silicon-law-ui-check-corrupted-tooltip = Określa, czy identyfikator prawa powinien być ustawiony jako 'uszkodzony', powodując przemieszczanie się symboli.
+silicon-law-ui-placeholder = Wpisz tutaj, aby zmienić tekst prawa...
 
-silicon-laws-updated = Updated laws
+silicon-laws-updated = Prawa zaktualizowane

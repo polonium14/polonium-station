@@ -1,91 +1,90 @@
 ﻿# UI
-admin-notes-title = Notes for {$player}
-admin-notes-new-note = New note
-admin-notes-show-more = Show more
-admin-notes-for = Note for: {$player}
+admin-notes-title = Notatki dla {$player}
+admin-notes-new-note = Nowa notatka
+admin-notes-show-more = Pokaż więcej
+admin-notes-for = Notatka dla: {$player}
 admin-notes-id = Id: {$id}
-admin-notes-type = Type: {$type}
-admin-notes-severity = Severity: {$severity}
-admin-notes-secret = Secret
-admin-notes-notsecret = Not secret
-admin-notes-expires = Expires on: {$expires}
-admin-notes-expires-never = Does not expire
-admin-notes-edited-never = Never
-admin-notes-round-id = Round Id: {$id}
-admin-notes-round-id-unknown = Round Id: Unknown
-admin-notes-created-by = Created by: {$author}
-admin-notes-created-at = Created At: {$date}
-admin-notes-last-edited-by = Last edited by: {$author}
-admin-notes-last-edited-at = Last edited at: {$date}
-admin-notes-edit = Edit
-admin-notes-delete = Delete
-admin-notes-hide = Hide
-admin-notes-delete-confirm = Confirm delete
-admin-notes-edited = Last edit by {$author} on {$date}
-admin-notes-unbanned = Unbanned by {$admin} on {$date}
-admin-notes-message-desc = [color=white]You have received { $count ->
-    [1] an administrative message
-    *[other] administrative messages
-} since the last time you played on this server.[/color]
-admin-notes-message-admin = From [bold]{ $admin }[/bold], written on { TOSTRING($date, "f") }:
-admin-notes-message-wait = The accept button will be enabled after {$time} seconds.
-admin-notes-message-accept = Dismiss permanently
-admin-notes-message-dismiss = Dismiss for now
-admin-notes-message-seen = Seen
-admin-notes-banned-from = Banned from
-admin-notes-the-server = the server
-admin-notes-permanently = permanently
-admin-notes-days = {$days} days
-admin-notes-hours = {$hours} hours
-admin-notes-minutes = {$minutes} minutes
+admin-notes-type = Typ: {$type}
+admin-notes-severity = Ważność: {$severity}
+admin-notes-secret = Prywatna
+admin-notes-notsecret = Nieprywatna
+admin-notes-expires = Wygasa: {$expires}
+admin-notes-expires-never = Nie wygasa
+admin-notes-edited-never = Nigdy
+admin-notes-round-id = Id rundy: {$id}
+admin-notes-round-id-unknown = Id rundy: Nieznany
+admin-notes-created-by = Utworzono przez: {$author}
+admin-notes-created-at = Utworzono: {$date}
+admin-notes-last-edited-by = Ostatnio edytowane przez: {$author}
+admin-notes-last-edited-at = Ostatnia edycja: {$date}
+admin-notes-edit = Edytuj
+admin-notes-delete = Usuń
+admin-notes-hide = Ukryj
+admin-notes-delete-confirm = Potwierdź usunięcie
+admin-notes-edited = Ostatnia edycja przez {$author} w {$date}
+admin-notes-unbanned = Odbanowane przez {$admin} w {$date}
+admin-notes-message-desc = [color=white]Otrzymałeś { $count ->
+    [1] wiadomość administracyjną
+    *[other] wiadomości administracyjne
+} od ostatniego razu, gdy grałeś na tym serwerze.[/color]
+admin-notes-message-admin = Od [bold]{ $admin }[/bold], napisano { TOSTRING($date, "f") }:
+admin-notes-message-wait = Przycisk akceptacji zostanie włączony po {$time} sekundach.
+admin-notes-message-accept = Odrzuć na stałe
+admin-notes-message-dismiss = Odrzuć na razie
+admin-notes-message-seen = Obejrzano
+admin-notes-banned-from = Zbanowany na
+admin-notes-the-server = serwerze
+admin-notes-permanently = na stałe
+admin-notes-days = {$days} dni
+admin-notes-hours = {$hours} godzin
+admin-notes-minutes = {$minutes} minut
 
 # Note editor UI
-admin-note-editor-title-new = Creating a new note for {$player}
-admin-note-editor-title-existing = Editing note {$id} on {$player} by {$author}
-admin-note-editor-pop-out = Pop out
-admin-note-editor-secret = Secret?
-admin-note-editor-secret-tooltip = Checking this will make the note not be visible by the player
-admin-note-editor-type-note = Note
-admin-note-editor-type-message = Message
-admin-note-editor-type-watchlist = Watchlist
-admin-note-editor-type-server-ban = Server Ban
-admin-note-editor-type-role-ban = Role Ban
-admin-note-editor-severity-select = Select
-admin-note-editor-severity-none = None
-admin-note-editor-severity-low = Low
-admin-note-editor-severity-medium = Medium
-admin-note-editor-severity-high = High
-admin-note-editor-expiry-checkbox = Permanent?
-admin-note-editor-expiry-checkbox-tooltip = Check this to make it expire
-admin-note-editor-expiry-label = Expires in:
-admin-note-editor-expiry-label-params = Expires on: {$date} (in {$expiresIn})
-admin-note-editor-expiry-label-expired = Expired
-admin-note-editor-expiry-placeholder = Enter expiration time (integer).
-admin-note-editor-submit = Submit
-admin-note-editor-submit-confirm = Are you sure?
+admin-note-editor-title-new = Tworzenie nowej notatki dla {$player}
+admin-note-editor-title-existing = Edycja notatki {$id} dla {$player} przez {$author}
+admin-note-editor-pop-out = Otwórz w osobnym oknie
+admin-note-editor-secret = Prywatna?
+admin-note-editor-secret-tooltip = Zaznaczenie tej opcji sprawi, że notatka nie będzie widoczna dla gracza
+admin-note-editor-type-note = Notatka
+admin-note-editor-type-message = Wiadomość
+admin-note-editor-type-watchlist = Lista obserwowanych
+admin-note-editor-type-server-ban = Ban na serwerze
+admin-note-editor-type-role-ban = Ban na rolę
+admin-note-editor-severity-select = Wybierz
+admin-note-editor-severity-none = Brak
+admin-note-editor-severity-low = Niski
+admin-note-editor-severity-medium = Średni
+admin-note-editor-severity-high = Wysoki
+admin-note-editor-expiry-checkbox = Na stałe?
+admin-note-editor-expiry-checkbox-tooltip = Zaznaczenie tej opcji sprawi, że notatka wygaśnie
+admin-note-editor-expiry-label = Wygasa za:
+admin-note-editor-expiry-label-params = Wygasa: {$date} (za {$expiresIn})
+admin-note-editor-expiry-label-expired = Wygasła
+admin-note-editor-expiry-placeholder = Wprowadź czas wygaśnięcia (liczba całkowita)
+admin-note-editor-submit = Zatwierdź
+admin-note-editor-submit-confirm = Na pewno?
 
 # Time
-admin-note-button-minutes = Minutes
-admin-note-button-hours = Hours
-admin-note-button-days = Days
-admin-note-button-weeks = Weeks
-admin-note-button-months = Months
-admin-note-button-years = Years
-admin-note-button-centuries = Centuries
-
+admin-note-button-minutes = Minuty
+admin-note-button-hours = Godziny
+admin-note-button-days = Dni
+admin-note-button-weeks = Tygodnie
+admin-note-button-months = Miesiące
+admin-note-button-years = Lata
+admin-note-button-centuries = Wieki
 
 # Verb
-admin-notes-verb-text = Open Admin Notes
+admin-notes-verb-text = Otwórz notatki administratora
 
 # Watchlist and message login
-admin-notes-watchlist = Watchlist for {$player}: {$message}
-admin-notes-new-message = You've received an admin message from {$admin}: {$message}
+admin-notes-watchlist = Lista obserwowanych dla {$player}: {$message}
+admin-notes-new-message = Otrzymałeś wiadomość od administratora {$admin}: {$message}
 admin-notes-fallback-admin-name = [System]
 
 # Admin remarks
-admin-remarks-command-description = Opens the admin remarks page
-admin-remarks-command-error = Admin remarks have been disabled
-admin-remarks-title = Admin remarks
+admin-remarks-command-description = Otwiera stronę uwag administratora
+admin-remarks-command-error = Uwagi administratora zostały wyłączone
+admin-remarks-title = Uwagi administratora
 
 # Misc
 system-user = [System]
