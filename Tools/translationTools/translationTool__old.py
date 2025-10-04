@@ -19,15 +19,15 @@ def extract_ftl_from_file(file_path):
 
         found_entities = {}
         current_id = None
-        
+
         line_regex = re.compile(r"(\s*)(id|name|description):\s*('|\")?(.*?)('|\")?\s*(?:#.*)?$")
 
         for line in lines:
             if line.strip().startswith('-'):
                 current_id = None
-            
+
             match = line_regex.match(line)
-            
+
             if not match:
                 continue
 
@@ -58,7 +58,7 @@ def load_existing_ftl_ids(ftl_path):
     """Reads an existing FTL file and returns a set of all entity IDs found."""
     if not os.path.exists(ftl_path):
         return set()
-    
+
     print(f"--- Reading existing FTL file: {ftl_path} ---")
     existing_ids = set()
     # Regex to find lines like: ent-SomeID = Some Name
@@ -81,18 +81,18 @@ def process_directory_and_generate_ftl(input_dir, output_ftl_path):
 
     # 1. Load all IDs that are already in the target FTL file.
     existing_ids = load_existing_ftl_ids(output_ftl_path)
-    
+
     # 2. Walk the directory and find all hardcoded entities from YAML files.
     new_data_to_append = []
     total_new_entities = 0
     print("\n--- Comparing YAML entities with existing FTL entries ---")
-    
+
     for root, _, files in os.walk(input_dir):
         for filename in sorted(files):
             if filename.endswith(".yml"):
                 file_path = os.path.join(root, filename)
                 entities_from_file = extract_ftl_from_file(file_path)
-                
+
                 # Filter the found entities to get only the new ones.
                 new_entities_in_file = {}
                 for entity_id, data in entities_from_file.items():
@@ -107,7 +107,7 @@ def process_directory_and_generate_ftl(input_dir, output_ftl_path):
     if new_data_to_append:
         # Check if the file is non-empty to decide if we need a separator
         needs_separator = os.path.exists(output_ftl_path) and os.path.getsize(output_ftl_path) > 0
-        
+
         with open(output_ftl_path, 'a', encoding='utf-8') as f:
             for filename, entities in new_data_to_append:
                 name_written = False
@@ -129,7 +129,7 @@ def process_directory_and_generate_ftl(input_dir, output_ftl_path):
 # --- How to use the script ---
 if __name__ == "__main__":
     if len(sys.argv) < 3:
-        process_directory_and_generate_ftl("..\Resources\Prototypes", "..\Resources\Locale\pl-PL\prototypes\prototypes.ftl")
+        process_directory_and_generate_ftl("../../Resources/Prototypes", "..\Resources\Locale\pl-PL\prototypes\prototypes.ftl")
     elif len(sys.argv) == 3:
         input_directory = sys.argv[1]
         output_ftl_file = sys.argv[2]

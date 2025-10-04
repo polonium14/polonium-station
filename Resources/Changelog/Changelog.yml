@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: Onezero0
-  changes:
-  - message: Modular Grenades can now fit inside Security belts and carriers.
-    type: Tweak
-  id: 8243
-  time: '2025-04-19T00:04:44.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34169
 - author: Alpaccalypse
   changes:
   - message: The cocktail "Irish slammer" has been renamed to "Grenade Penguin".
@@ -3905,3 +3898,14 @@
   id: 8754
   time: '2025-09-27T10:00:45.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/76
+- author: Nikitosych
+  changes:
+  - message: Nowa stacja o nazwie Chibi
+    type: Add
+  - message: "Nowy spawner losowych zwierz\u0105t i nakry\u0107 g\u0142owy do mappingu"
+    type: Add
+  - message: "Dodano nie\u015Bmiercionosny Kramerer"
+    type: Add
+  id: 8755
+  time: '2025-09-29T23:43:34.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/78

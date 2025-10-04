@@ -541,10 +541,11 @@
     - chirping
 
     # 🇵🇱 Polonium
-    - ćwierka
-    - ćwierczy
-    - ćwierkał
-    - ćwierkała
+    # TODO zamienić na unikalne słowa, by zapobiec konfliktom z Chitter
+    # - ćwierka
+    # - ćwierczy
+    # - ćwierkał
+    # - ćwierkała
 
     # Bez polskich znaków
     - cwierka
