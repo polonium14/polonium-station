@@ -88,19 +88,16 @@ guide-entry-defusal = Large Bomb Defusal
 guide-entry-criminal-records = Criminal Records
 guide-entry-command = Command
 guide-entry-service = Service
-
 guide-entry-newplayer = New? Start here!
 guide-entry-charactercreation = Creating Characters
 guide-entry-species = Species
 guide-entry-yourfirstcharacter = Your First Character
 guide-entry-controls = Controls
 guide-entry-radio = Radio and Speech
-
 guide-entry-references = Tables & References
 guide-entry-chemicals = Chemicals
 guide-entry-drinks = Drinks
 guide-entry-foodrecipes = Food Recipes
-
 guide-entry-elements = Elements
 guide-entry-medicine = Medicine
 guide-entry-narcotics = Narcotics
@@ -111,7 +108,6 @@ guide-entry-biological = Biological
 guide-entry-botanical = Botanical
 guide-entry-special = Special
 guide-entry-others = Others
-
 guide-entry-pizza-recipes = Pizzas
 guide-entry-savory-recipes = Savory Foods
 guide-entry-bread-recipes = Breads
@@ -127,7 +123,6 @@ guide-entry-salad-recipes = Salads
 guide-entry-medicinal-recipes = Medicinal
 guide-entry-other-recipes = Other
 guide-entry-secret-recipes = Secret
-
 guide-entry-antagonists = Antagonists
 guide-entry-nuclear-operatives = Nuclear Operatives
 guide-entry-traitors = Traitors
@@ -137,7 +132,6 @@ guide-entry-minor-antagonists = Minor Antagonists
 guide-entry-space-ninja = Space Ninja
 guide-entry-thieves = Thieves
 guide-entry-wizard = Wizard
-
 guide-entry-rules = Server Rules
 guide-entry-rules-core-only = Core Only Ruleset
 guide-entry-rules-lrp = Standard Ruleset
@@ -196,6 +190,7 @@ guide-entry-rules-sl-restricted-gear = Restricted Gear
 guide-entry-rules-sl-restricted-weapons = Restricted Weapons
 guide-entry-rules-ban-types = Ban Types
 guide-entry-rules-ban-durations = Ban Durations
-
 guide-entry-writing = Writing
 guide-entry-glossary = Glossary
+guide-entry-ressureregulator = Pressure Regulator
+guide-entry-deltapressure = Delta Pressure

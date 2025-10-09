@@ -15,68 +15,81 @@ stack-reinforced-plasma-glass = reinforced plasma glass
 stack-reinforced-uranium-glass = reinforced uranium glass
 stack-gunpowder = gunpowder
 stack-cardboard = cardboard
-
-stack-bones = {$amount ->
-    [1] bone
-    *[other] bones
-}
-stack-cloth = {$amount ->
-    [1] cloth
-    *[other] cloths
-}
-stack-lv-cable = {$amount ->
-    [1] lv cable
-    *[other] lv cables
-}
-stack-mv-cable = {$amount ->
-    [1] mv cable
-    *[other] mv cables
-}
-stack-hv-cable = {$amount ->
-    [1] hv cable
-    *[other] hv cables
-}
-stack-wood-plank = {$amount ->
-    [1] wood plank
-    *[other] wood planks
-}
-stack-durathread = {$amount ->
-    [1] durathread
-    *[other] durathreads
-}
-stack-rods = {$amount ->
-    [1] rod
-    *[other] rods
-}
-stack-meat-sheet = {$amount ->
-    [1] meat sheet
-    *[other] meat sheets
-}
-stack-space-carp-tooth = space carp {$amount ->
-    [1] tooth
-    *[other] teeth
-}
-stack-paper = {$amount ->
-    [1] paper
-    *[other] papers
-}
-stack-diamond = {$amount ->
-    [1] diamond
-    *[other] diamonds
-}
-stack-silk = {$amount ->
-    [1] silk
-    *[other] silks
-}
-stack-cotton = {$amount ->
-    [1] cotton
-    *[other] cottons
-}
-stack-artifact-fragment = artifact {$amount ->
-    [1] fragment
-    *[other] fragments
-}
-
+stack-bones =
+    { $amount ->
+        [1] bone
+       *[other] bones
+    }
+stack-cloth =
+    { $amount ->
+        [1] cloth
+       *[other] cloths
+    }
+stack-lv-cable =
+    { $amount ->
+        [1] lv cable
+       *[other] lv cables
+    }
+stack-mv-cable =
+    { $amount ->
+        [1] mv cable
+       *[other] mv cables
+    }
+stack-hv-cable =
+    { $amount ->
+        [1] hv cable
+       *[other] hv cables
+    }
+stack-wood-plank =
+    { $amount ->
+        [1] wood plank
+       *[other] wood planks
+    }
+stack-durathread =
+    { $amount ->
+        [1] durathread
+       *[other] durathreads
+    }
+stack-rods =
+    { $amount ->
+        [1] rod
+       *[other] rods
+    }
+stack-meat-sheet =
+    { $amount ->
+        [1] meat sheet
+       *[other] meat sheets
+    }
+stack-space-carp-tooth =
+    space carp { $amount ->
+        [1] tooth
+       *[other] teeth
+    }
+stack-paper =
+    { $amount ->
+        [1] paper
+       *[other] papers
+    }
+stack-diamond =
+    { $amount ->
+        [1] diamond
+       *[other] diamonds
+    }
+stack-silk =
+    { $amount ->
+        [1] silk
+       *[other] silks
+    }
+stack-cotton =
+    { $amount ->
+        [1] cotton
+       *[other] cottons
+    }
+stack-artifact-fragment =
+    artifact { $amount ->
+        [1] fragment
+       *[other] fragments
+    }
 # best materials
 stack-ground-tobacco = ground tobacco
 stack-ground-cannabis = ground cannabis
@@ -84,16 +97,16 @@ stack-ground-rainbow-cannabis = ground rainbow cannabis
 stack-dried-tobacco-leaves = dried tobacco leaves
 stack-dried-cannabis-leaves = dried cannabis leaves
 stack-dried-rainbow-cannabis-leaves = dried rainbow cannabis leaves
-
-stack-cigarette-filter = cigarette {$amount ->
-    [1] filter
-    *[other] filters
-}
-stack-rolling-paper = rolling {$amount ->
-    [1] paper
-    *[other] papers
-}
-
+stack-cigarette-filter =
+    cigarette { $amount ->
+        [1] filter
+       *[other] filters
+    }
+stack-rolling-paper =
+    rolling { $amount ->
+        [1] paper
+       *[other] papers
+    }
 stack-fulton = fulton
 stack-credit = speso
 stack-plasma = plasma
@@ -236,3 +249,16 @@ stack-xeno-steel = xeno steel tile
 stack-xeno-steel-corner = xeno steel corner tile
 stack-xeno-maint = xeno techmaint
 stack-dark-squiggly = dark steel squiggly tile
+stack-explosive-cord =
+    { $amount ->
+        [1] explosive cord
+       *[other] explosive cords
+    }
+stack-dark-astro-grass-floor = dark astro-grass floor
+stack-light-astro-grass-floor = light astro-grass floor
+stack-desert-astro-sand-floor = desert astro-sand floor
+stack-xenoborg = xenoborg tile
+stack-white-marble-floor = white marble floor
+stack-dark-marble-floor = dark marble floor
+stack-plasma-marble-floor = plasmarble floor
+stack-uranium-marble-floor = uranium marble floor

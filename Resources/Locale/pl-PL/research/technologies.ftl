@@ -3,7 +3,6 @@ research-discipline-industrial = Industrial
 research-discipline-arsenal = Arsenal
 research-discipline-experimental = Experimental
 research-discipline-civilian-services = Civilian Services
-
 research-technology-fulton = Fultons
 research-technology-salvage-equipment = Salvage Equipment
 research-technology-advanced-powercells = Advanced Powercells
@@ -21,7 +20,6 @@ research-technology-bluespace-storage = Bluespace Storage
 research-technology-optimized-microgalvanism = Optimized Microgalvanism
 research-technology-space-scanning = Space Scanning
 research-technology-excavation = Mass Excavation
-
 research-technology-salvage-weapons = Salvage Weapons
 research-technology-draconic-munitions = Draconic Munitions
 research-technology-uranium-munitions = Uranium Munitions
@@ -39,7 +37,6 @@ research-technology-kinetic-modifications = Kinetic Modifications
 research-technology-basic-shuttle-armament = Shuttle Basic Armament
 research-technology-advanced-shuttle-weapon = Advanced Shuttle Weapons
 research-technology-thermal-weaponry = Thermal Weaponry
-
 research-technology-basic-robotics = Basic Robotics
 research-technology-basic-anomalous-research = Basic Anomalous Research
 research-technology-basic-xenoarcheology = Basic XenoArcheology
@@ -55,7 +52,6 @@ research-technology-advanced-anomaly-research = Advanced Anomaly Research
 research-technology-rped = Rapid Part Exchange
 research-technology-super-parts = Super Parts
 research-technology-deterrence = Deterrence Technologies
-
 research-technology-janitorial-equipment = Janitorial Equipment
 research-technology-laundry-tech = Laundry Tech
 research-technology-basic-hydroponics = Basic Hydroponics
@@ -76,3 +72,4 @@ research-technology-bluespace-cargo-transport = Bluespace Cargo Transport
 research-technology-clowning-utilities = Clowning Utilities
 research-technology-quantum-fiber-weaving = Quantum Fiber Weaving
 research-technology-bluespace-chemistry = Bluespace Chemistry
+research-technology-dual-wielding-technology = Dual Wielding Technology

@@ -1,24 +1,48 @@
 - files: ["aliens.ogg"]
   copyright: "Pinkscreen"
+  license: "CC-BY-NC-4.0"
+  source: "https://github.com/polonium14/polonium-station/tree/main/Resources/Audio/_Polonium/Announcements"
 - files: ["announce.ogg"]
   copyright: "Pinkscreen"
+  license: "CC-BY-NC-4.0"
+  source: "https://github.com/polonium14/polonium-station/tree/main/Resources/Audio/_Polonium/Announcements"
 - files: ["attention.ogg"]
   copyright: "Pinkscreen"
+  license: "CC-BY-NC-4.0"
+  source: "https://github.com/polonium14/polonium-station/tree/main/Resources/Audio/_Polonium/Announcements"
 - files: ["intercept.ogg"]
   copyright: "Pinkscreen"
+  license: "CC-BY-NC-4.0"
+  source: "https://github.com/polonium14/polonium-station/tree/main/Resources/Audio/_Polonium/Announcements"
 - files: ["ion_storm.ogg"]
   copyright: "Pinkscreen"
+  license: "CC-BY-NC-4.0"
+  source: "https://github.com/polonium14/polonium-station/tree/main/Resources/Audio/_Polonium/Announcements"
 - files: ["meteors.ogg"]
   copyright: "Pinkscreen"
+  license: "CC-BY-NC-4.0"
+  source: "https://github.com/polonium14/polonium-station/tree/main/Resources/Audio/_Polonium/Announcements"
 - files: ["power_off.ogg"]
   copyright: "Pinkscreen"
+  license: "CC-BY-NC-4.0"
+  source: "https://github.com/polonium14/polonium-station/tree/main/Resources/Audio/_Polonium/Announcements"
 - files: ["power_on.ogg"]
   copyright: "Pinkscreen"
+  license: "CC-BY-NC-4.0"
+  source: "https://github.com/polonium14/polonium-station/tree/main/Resources/Audio/_Polonium/Announcements"
 - files: ["shuttle_dock.ogg"]
   copyright: "Pinkscreen"
+  license: "CC-BY-NC-4.0"
+  source: "https://github.com/polonium14/polonium-station/tree/main/Resources/Audio/_Polonium/Announcements"
 - files: ["shuttlecalled.ogg"]
   copyright: "Pinkscreen"
+  license: "CC-BY-NC-4.0"
+  source: "https://github.com/polonium14/polonium-station/tree/main/Resources/Audio/_Polonium/Announcements"
 - files: ["shuttlerecalled.ogg"]
   copyright: "Pinkscreen"
+  license: "CC-BY-NC-4.0"
+  source: "https://github.com/polonium14/polonium-station/tree/main/Resources/Audio/_Polonium/Announcements"
 - files: ["welcome.ogg"]
   copyright: "Pinkscreen"
+  license: "CC-BY-NC-4.0"
+  source: "https://github.com/polonium14/polonium-station/tree/main/Resources/Audio/_Polonium/Announcements"

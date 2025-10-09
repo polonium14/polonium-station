@@ -1,0 +1,9 @@
+name-identifier-format-monkey = MŁP-{$number}
+name-identifier-format-kobold = KB-{$number}
+name-identifier-format-holoparasite = HOLO-{$number}
+name-identifier-format-mmi = MMI-{$number}
+name-identifier-format-positronic-brain = PM-{$number}
+name-identifier-format-silicon = Sil-{$number}
+name-identifier-format-xenoborg = Xi-{$number}
+name-identifier-format-station-ai = SI-{$number}
+name-identifier-format-telepad = TELE-{$number}

@@ -8,3 +8,7 @@ admin-solutions-window-heat-capacity-label = Pojemność cieplna: {$heatCapacity
 admin-solutions-window-temperature-label = Temperatura (K):
 admin-solutions-window-thermal-energy-label = Energia cieplna (J):
 admin-solutions-window-thermals = Termika
+admin-solutions-window-solution-button = Roztwór
+admin-solutions-window-solution-button-tooltip = Otwiera odpowiadającą instancję roztworu po stronie serwera w ViewVariables. Przydatne do debugowania problemów z przewidywaniem.
+admin-solutions-window-vv-button = VV
+admin-solutions-window-vv-button-tooltip = Otwiera odpowiadającą jednostkę roztworu w ViewVariables.

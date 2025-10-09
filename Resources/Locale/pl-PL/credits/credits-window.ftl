@@ -10,12 +10,11 @@ credits-window-contributors-section-title = Space Station 14 Contributors
 credits-window-codebases-section-title = Space Station 13 Codebases
 credits-window-original-remake-team-section-title = Original Space Station 13 Remake Team
 credits-window-special-thanks-section-title = Special Thanks
-
-credits-window-attributions-directory = [color=white]Directory:[/color] {$directory}
-credits-window-attributions-files = [color=white]Files:[/color] {$files}
-credits-window-attributions-copyright = [color=white]Copyright:[/color] {$copyright}
-credits-window-attributions-license = [color=white]License:[/color] {$license}
-credits-window-attributions-source = [color=white]Source:[/color] {$source}
-credits-window-attributions-failed = [color=red]Failed to read file:[/color] {$file}
-
+credits-window-attributions-directory = [color=white]Directory:[/color] { $directory }
+credits-window-attributions-files = [color=white]Files:[/color] { $files }
+credits-window-attributions-copyright = [color=white]Copyright:[/color] { $copyright }
+credits-window-attributions-license = [color=white]License:[/color] { $license }
+credits-window-attributions-source = [color=white]Source:[/color] { $source }
+credits-window-attributions-failed = [color=red]Failed to read file:[/color] { $file }
 credits-window-ss14pl-contributors-section-title = Kontrybutorzy Polskiej wersji Space Station 14
+credits-window-immortals-title = In Memoriam
