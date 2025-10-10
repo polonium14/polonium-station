@@ -30,7 +30,7 @@
 
 
 - type: entity
-  name: opakowanie po kabanosach.
+  name: opakowanie po kabanosach
   description: Aż mi smutno, że się skończyły.
   parent: FoodPacketTrash
   id: FoodPacketKabanosyTrash
