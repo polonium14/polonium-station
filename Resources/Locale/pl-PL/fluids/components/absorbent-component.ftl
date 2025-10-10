@@ -7,3 +7,4 @@ mopping-system-no-hands = Nie masz rąk.
 
 mopping-system-full = { CAPITALIZE(THE($used)) } jest pełny!
 mopping-system-empty = { CAPITALIZE(THE($used)) } jest pusty!
+mopping-system-puddle-already-mopped = { CAPITALIZE($target) } już jest umytę!

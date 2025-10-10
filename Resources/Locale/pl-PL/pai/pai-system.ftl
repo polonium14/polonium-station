@@ -1,25 +1,25 @@
-pai-system-pai-installed = A pAI is installed.
-pai-system-off = No pAI is installed.
-pai-system-still-searching = Still searching for a pAI.
-pai-system-searching = Now searching for a pAI...
+pai-system-pai-installed = pSI jest zainstalowany.
+pai-system-off = pSI nie jest zainstalowany.
+pai-system-still-searching = Wyszukiwanie pSI w toku.
+pai-system-searching = Teraz wyszukiwanie pSI...
 
-pai-system-role-name = Personal AI
-pai-system-role-description = Be someone's electronic pal!
-                              (Memories *not* included.)
-pai-system-role-name-syndicate = Syndicate Personal AI
-pai-system-role-description-syndicate = Be someone's Syndicate pal!
-                                        (Memories *not* included.)
-pai-system-role-name-potato = Potato Artificial Intelligence
-pai-system-role-description-potato = It's a toy for children. And now you live in it.
+pai-system-role-name = Personalna SI
+pai-system-role-description = Bądź kogoś elektroniczną kolegą!
+                              (Wspomnienia *NIE SĄ* wlączone.)
+pai-system-role-name-syndicate = Syndykatowa Personalna SI
+pai-system-role-description-syndicate = Bądź kogoś syndykatową kolegą!
+                                        (Wspomnienia *NIE SĄ* wlączone.)
+pai-system-role-name-potato = Ziemniakowa Sztuczna Inteligencja
+pai-system-role-description-potato = To jest zabawka dla dzieci, a teraz w niej żyjesz.
 
-pai-system-wipe-device-verb-text = Remove pAI
-pai-system-wiped-device = The pAI was wiped from the device.
+pai-system-wipe-device-verb-text = Usuń pSI
+pai-system-wiped-device = pSI zostało usuniete z urządzenia.
 
-pai-system-stop-searching-verb-text = Stop searching
-pai-system-stopped-searching = The device stopped searching for a pAI.
+pai-system-stop-searching-verb-text = Przestań Szukać
+pai-system-stopped-searching = Urządzenie przestało szukać pSI.
 
-pai-system-pai-name = { CAPITALIZE(THE($owner)) }'s pAI
-pai-system-pai-name-raw = {$name}'s pAI
+pai-system-pai-name = pSI { CAPITALIZE($owner) }
+pai-system-pai-name-raw = pSI {$name}
 
-pai-system-brick-popup = The pAI's circuits loudly pop and fizzle out!
-pai-system-scramble-popup = The pAI's circuits are overloaded with electricity!
+pai-system-brick-popup = Obwody pSI głośnio trzaskają i przestają działać!
+pai-system-scramble-popup = Obwody pSI są przeładowane prądem!

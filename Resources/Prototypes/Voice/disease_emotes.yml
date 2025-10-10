@@ -19,13 +19,21 @@
   chatTriggers:
     - cough
     - coughs
-    - coughed 
+    - coughed
     - cough.
     - coughs.
     - coughed.
     - cough!
     - coughs!
     - coughed!
+
+    # 🇵🇱 Polonium
+    - kaszle
+    - kaszle.
+    - kaszle!
+    - kaszel
+    - kaszel.
+    - kaszel!
 
 - type: emote
   id: CatMeow
@@ -66,6 +74,9 @@
   chatTriggers:
     - yawn
     - yawns
+
+    # 🇵🇱 Polonium
+    - ziewa
 
 - type: emote
   id: Snore

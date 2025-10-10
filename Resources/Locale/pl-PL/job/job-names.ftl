@@ -49,7 +49,6 @@ job-name-ertjanitor = Sprzątacz JSR
 job-name-boxer = Bokser
 job-name-zookeeper = Opiekun Zoo
 job-name-visitor = Wizytor
-
 # unused jobs
 # these are required for the agent ID job icon tooltips
 # I am keeping them for roleplaying opportunities
@@ -61,12 +60,10 @@ job-name-syndicate = Syndykat
 job-name-unknown = Nieznany
 job-name-virologist = Wirusolog
 job-name-zombie = Zombie
-
 # Job titles
 job-title-visitor = Wizytor
 job-title-cluwne = Cluwne
 job-title-universal = Uniwersalny
-
 # Role timers - Make these alphabetical or I cut you
 JobAtmosphericTechnician = Technik Atmosferyki
 JobBartender = Barman
@@ -117,3 +114,4 @@ JobTechnicalAssistant = Pomocnik Techniczny
 JobVisitor = Wizytor
 JobWarden = Strażnik
 JobZookeeper = Opiekun Zoo
+job-name-cluwne = Kluwn

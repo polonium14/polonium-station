@@ -1,11 +1,11 @@
-admin-announce-title = Make Announcement
-admin-announce-announcement-placeholder = Announcement text...
-admin-announce-announcer-placeholder = Announcer
-admin-announce-announcer-default = Central Command
-admin-announce-button = Announce
-admin-announce-type-station = Station
-admin-announce-type-server = Server
-admin-announce-keep-open = Keep open
+admin-announce-title = Utwórz ogłoszenie
+admin-announce-announcement-placeholder = Treść ogłoszenia...
+admin-announce-announcer-placeholder = Nadawca
+admin-announce-announcer-default = Dowództwo Centralne
+admin-announce-button = Ogłoś
+admin-announce-type-station = Stacja
+admin-announce-type-server = Serwer
+admin-announce-keep-open = Pozostaw otwarte
 
-cmd-announceui-desc = Opens the announcement UI.
-cmd-announceui-help = Usage: announceui
+cmd-announceui-desc = Otwiera interfejs ogłoszeń.
+cmd-announceui-help = Użycie: announceui

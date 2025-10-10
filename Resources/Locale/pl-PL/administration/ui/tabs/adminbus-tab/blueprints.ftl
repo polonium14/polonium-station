@@ -1,9 +1,9 @@
-admin-ui-blueprint-map = Map
-admin-ui-blueprint-path = Path
+admin-ui-blueprint-map = Mapa
+admin-ui-blueprint-path = Ścieżka
 admin-ui-blueprint-x = X
 admin-ui-blueprint-y = Y
-admin-ui-blueprint-rotation = Rotation
+admin-ui-blueprint-rotation = Rotacja
 
-admin-ui-blueprint-teleport = Teleport to
-admin-ui-blueprint-reset = Reset to default
-admin-ui-blueprint-load = Load Blueprint
+admin-ui-blueprint-teleport = Teleportuj do
+admin-ui-blueprint-reset = Resetuj
+admin-ui-blueprint-load = Załaduj Schemat
