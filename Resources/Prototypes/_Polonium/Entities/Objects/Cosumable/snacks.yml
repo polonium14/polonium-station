@@ -1,0 +1,48 @@
+- type: entity
+  name: kabanosy neo-tarczyńskie
+  parent: FoodSnackBase
+  id: FoodSnackKabanosy
+  description: Słone, cienkie paluszki mięsa, które były wędzone przez jakiś czas.
+  components:
+    - type: Sprite
+      sprite: _Polonium/Objects/Cosumable/Food/snacks.rsi
+      state: kabanosy
+    - type: FlavorProfile
+      flavors:
+        - cheap
+        - salty
+        - meaty
+    - type: Item
+      inhandVisuals:
+        left:
+          - state: kabanosy-inhand-left
+            sprite: _Polonium/Objects/Cosumable/Food/snacks.rsi
+        right:
+          - state: kabanosy-inhand-right
+            sprite: _Polonium/Objects/Cosumable/Food/snacks.rsi
+    - type: Food
+      trash:
+        - FoodPacketKabanosyTrash
+    - type: Tag
+      tags:
+        - FoodSnack
+        - ReptilianFood
+
+
+- type: entity
+  name: opakowanie po kabanosach
+  description: Aż mi smutno, że się skończyły.
+  parent: FoodPacketTrash
+  id: FoodPacketKabanosyTrash
+  components:
+    - type: Sprite
+      sprite: _Polonium/Objects/Cosumable/Food/snacks.rsi
+      state: kabanosy-trash
+    - type: Item
+      inhandVisuals:
+        left:
+          - state: trash-inhand-left
+            color: "#f5971d"
+        right:
+          - state: trash-inhand-right
+            color: "#f5971d"

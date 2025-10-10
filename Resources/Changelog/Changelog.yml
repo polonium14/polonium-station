@@ -1,37 +1,4 @@
 ﻿Entries:
-- author: ArtisticRoomba
-  changes:
-  - message: Air grenades have been added! These can fill up a spaced room of ~30
-      tiles with fresh air. They can be found in Atmospheric Technician's lockers.
-      Use them wisely!
-    type: Add
-  id: 8515
-  time: '2025-05-18T04:32:52.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/37531
-- author: EmoGarbage404
-  changes:
-  - message: Various salvage equipment can now be unlocked through the job board and
-      purchased through cargo.
-    type: Add
-  - message: Space debris and the mining asteroid no longer generate salvage equipment
-    type: Tweak
-  id: 8516
-  time: '2025-05-18T06:40:59.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/37561
-- author: mrjajkes
-  changes:
-  - message: Add Blatantly Nuclear as a Nuke Song.
-    type: Add
-  id: 8517
-  time: '2025-05-18T07:30:20.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/35927
-- author: metalgearsloth
-  changes:
-  - message: Shuttles now are treated as rooved for daylight.
-    type: Tweak
-  id: 8518
-  time: '2025-05-18T07:47:35.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/36112
 - author: ScarKy0
   changes:
   - message: Deliveries can now very rarely spawn as bomb-type! They grant A LOT of
@@ -3991,3 +3958,39 @@
   id: 9010
   time: '2025-10-09T21:58:32.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/83
+- author: Tofi_Dev
+  changes:
+  - message: "Dodano Oran\u017Cad\u0119, jest w wielu vendorach."
+    type: Add
+  - message: "Dodano Kabanosy, mo\u017Cna je zdoby\u0107 w Discount Dan's"
+    type: Add
+  - message: Dodano nowego pluszaka do gry do zmapowania
+    type: Add
+  - message: Pluszak bomba zostal dodany >:)
+    type: Add
+  id: 9011
+  time: '2025-10-10T13:44:57.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/81
+- author: Nikitosych
+  changes:
+  - message: "Przet\u0142umaczono liczne wyrazy ze s\u0142ownika generowanych losowo\
+      \ s\u0142\xF3w, w tym imiona postaci, kody agent\xF3w itp"
+    type: Tweak
+  id: 9012
+  time: '2025-10-10T15:15:55.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/85
+- author: Tofi_Dev
+  changes:
+  - message: "Przet\u0142umaczono kilka nowych element\xF3w interfejsu ( np. elementy\
+      \ zwi\u0105zane z ka\u0142u\u017Cami, rozlewaniem p\u0142yn\xF3w, itp. )"
+    type: Add
+  id: 9013
+  time: '2025-10-10T15:24:53.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/82
+- author: qazmlp, Nikitosych
+  changes:
+  - message: Nowa kompaktowa mapa do gry!
+    type: Add
+  id: 9014
+  time: '2025-10-10T15:23:12.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/84

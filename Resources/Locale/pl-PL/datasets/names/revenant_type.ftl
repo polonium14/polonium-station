@@ -1,8 +1,8 @@
-names-revenant-type-dataset-1 = essence
-names-revenant-type-dataset-2 = ghost
-names-revenant-type-dataset-3 = phantom
+names-revenant-type-dataset-1 = esencja
+names-revenant-type-dataset-2 = duch
+names-revenant-type-dataset-3 = zjawa
 names-revenant-type-dataset-4 = poltergeist
-names-revenant-type-dataset-5 = revenant
-names-revenant-type-dataset-6 = soul
-names-revenant-type-dataset-7 = spectre
-names-revenant-type-dataset-8 = spirit
+names-revenant-type-dataset-5 = powracający
+names-revenant-type-dataset-6 = dusza
+names-revenant-type-dataset-7 = widmo
+names-revenant-type-dataset-8 = duch

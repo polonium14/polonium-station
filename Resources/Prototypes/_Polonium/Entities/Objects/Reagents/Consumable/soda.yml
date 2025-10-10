@@ -1,0 +1,20 @@
+- type: reagent
+  id: OranzadaReagent
+  name: oranżada
+  parent: BaseSoda
+  desc: Ah, polski klasyk.
+  physicalDesc: reagent-physical-desc-sweet
+  flavor: soda
+  color: "#ee4343"
+  recognizable: true
+  metamorphicSprite:
+    sprite: _Polonium/Objects/Cosumable/Food/Drinks/Oranzada.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
