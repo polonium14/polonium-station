@@ -31,9 +31,5 @@ lobby-state-playtime-comment-normal =
     *[other]godzin
     } dziś w grze. Pamiętaj o przerwach!
 lobby-state-playtime-comment-concerning = Dziś grałeś(-aś) {$hours} godzin. Zrób sobie przerwę.
-<<<<<<< HEAD
-lobby-state-playtime-comment-grasstouchless = Grałeś(-aś) {$hours} godzin, Rozważ wylogowanie się, aby zadbać o swoje potrzeby.
-=======
 lobby-state-playtime-comment-grasstouchless = Grałeś(-aś) {$hours} godzin. Rozważ wylogowanie się, aby zadbać o swoje potrzeby.
->>>>>>> 03b91aca48fbf665bfbe0ba7bf62f8b0a6a48b2f
 lobby-state-playtime-comment-selfdestructive = {$hours} godzin. Serio?
