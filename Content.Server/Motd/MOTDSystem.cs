@@ -173,7 +173,7 @@ public sealed class MOTDSystem : EntitySystem
 
 
     private record MotdSrvInfo(bool exists, string id, string reactions, string author, string content);
-    private record MotdSrvHealth(string status, long timestamp);
+    private record MotdSrvHealth(string status);
     private record MotdSrvErr(string? message, string? error);
 }
 
