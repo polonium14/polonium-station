@@ -53,7 +53,7 @@ public sealed class MOTDSystem : EntitySystem
             {
                 using HttpClient httpClient = new();
                 using var statusCts = new CancellationTokenSource(TimeSpan.FromSeconds(5));
-                using var health = await httpClient.GetAsync($"{url}/status", statusCts.Token);
+                using var health = await httpClient.GetAsync($"{url}/health", statusCts.Token);
 
                 if (!health.IsSuccessStatusCode)
                 {
