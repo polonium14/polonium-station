@@ -93,7 +93,7 @@ public sealed class MOTDSystem : EntitySystem
                 }
 
                 _configurationManager.SetCVar(CCVars.MOTD, newMotd);
-                Log.Info($"Fetched MOTD from remote server (url: {url}) at {status?.timestamp}");
+                Log.Info($"Fetched MOTD from remote server (url: {url})");
             }
             catch (OperationCanceledException)
             {
