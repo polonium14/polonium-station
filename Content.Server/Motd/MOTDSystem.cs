@@ -7,6 +7,10 @@
 //
 // SPDX-License-Identifier: MIT
 
+using System.Net.Http;
+using System.Net.Http.Json;
+using System.Threading;
+using System.Threading.Tasks;
 using Content.Server.Chat.Managers;
 using Content.Server.GameTicking;
 using Content.Shared.CCVar;
@@ -34,7 +38,72 @@ public sealed class MOTDSystem : EntitySystem
     {
         base.Initialize();
         Subs.CVar(_configurationManager, CCVars.MOTD, OnMOTDChanged, invokeImmediately: true);
+        Subs.CVar(_configurationManager, CCVars.MOTDServer, FetchMOTD, invokeImmediately: true);
         SubscribeLocalEvent<PlayerJoinedLobbyEvent>(OnPlayerJoinedLobby);
+    }
+
+    public void FetchMOTD(string url)
+    {
+        if (string.IsNullOrEmpty(url))
+            return;
+
+        Task.Run(async () =>
+        {
+            try
+            {
+                using HttpClient httpClient = new();
+                using var statusCts = new CancellationTokenSource(TimeSpan.FromSeconds(5));
+                using var health = await httpClient.GetAsync($"{url}/status", statusCts.Token);
+
+                if (!health.IsSuccessStatusCode)
+                {
+                    var err = await health.Content.ReadFromJsonAsync<MotdSrvErr>(cancellationToken: statusCts.Token);
+                    Log.Error(
+                        $"An error occurred while fetching MOTD from the remote server (url: {url}): {err?.message ?? err?.error ?? "No message"}");
+                    return;
+                }
+
+                var status = await health.Content.ReadFromJsonAsync<MotdSrvHealth>(cancellationToken: statusCts.Token);
+                if (status is not { status: "ok" })
+                {
+                    Log.Error(
+                        $"An error occurred while fetching MOTD from the remote server (url: {url}): Invalid status response");
+                    return;
+                }
+
+                using var motdCts = new CancellationTokenSource(TimeSpan.FromSeconds(5));
+                using var info = await httpClient.GetAsync($"{url}/motd", motdCts.Token);
+
+                if (!info.IsSuccessStatusCode)
+                {
+                    var err = await info.Content.ReadFromJsonAsync<MotdSrvErr>(cancellationToken: motdCts.Token);
+                    Log.Error(
+                        $"An error occured while fetching MOTD from the remote server (url: {url}): {err?.message ?? (err?.error ?? "No message")}");
+                    return;
+                }
+
+                var motdInfo = await info.Content.ReadFromJsonAsync<MotdSrvInfo>(cancellationToken: motdCts.Token);
+
+                var newMotd = motdInfo?.exists == true ? motdInfo.content : null;
+
+                if (newMotd == null)
+                {
+                    Log.Error($"An error occurred while fetching MOTD from the remote server (url: {url})");
+                    return;
+                }
+
+                _configurationManager.SetCVar(CCVars.MOTD, newMotd);
+                Log.Info($"Fetched MOTD from remote server (url: {url}) at {status?.timestamp}");
+            }
+            catch (OperationCanceledException)
+            {
+                Log.Error($"HTTP request timed out while fetching MOTD from the remote server (url: {url}).");
+            }
+            catch (Exception e)
+            {
+                Log.Error($"Caught an exception while fetching MOTD from the remote server (url: {url}): {e.Message}");
+            }
+        });
     }
 
     /// <summary>
@@ -101,4 +170,10 @@ public sealed class MOTDSystem : EntitySystem
     }
 
     #endregion Event Handlers
+
+
+    private record MotdSrvInfo(bool exists, string id, string reactions, string author, string content);
+    private record MotdSrvHealth(string status, TimeSpan timestamp);
+    private record MotdSrvErr(string? message, string? error);
 }
+
