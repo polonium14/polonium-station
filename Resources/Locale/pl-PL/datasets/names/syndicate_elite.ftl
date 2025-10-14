@@ -1,4 +1,4 @@
-names-syndicate-elite-dataset-1 = Alpha
+names-syndicate-elite-dataset-1 = Alfa
 names-syndicate-elite-dataset-2 = Beta
 names-syndicate-elite-dataset-3 = Gamma
 names-syndicate-elite-dataset-4 = Delta
@@ -11,7 +11,7 @@ names-syndicate-elite-dataset-10 = Lambda
 names-syndicate-elite-dataset-11 = Mu
 names-syndicate-elite-dataset-12 = Nu
 names-syndicate-elite-dataset-13 = Xi
-names-syndicate-elite-dataset-14 = Omicron
+names-syndicate-elite-dataset-14 = Omikron
 names-syndicate-elite-dataset-15 = Pi
 names-syndicate-elite-dataset-16 = Rho
 names-syndicate-elite-dataset-17 = Sigma

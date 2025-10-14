@@ -5,37 +5,38 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Shared.Movement.Components;
+using Content.Shared.Alert;
 using Content.Shared.Bed.Sleep;
+using Content.Shared.CCVar;
 using Content.Shared.Cuffs.Components;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Events;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Gravity;
+using Content.Shared.Humanoid;
 using Content.Shared.Input;
+using Content.Shared.Jittering;
 using Content.Shared.Mobs;
+using Content.Shared.Movement.Components;
+using Content.Shared.Movement.Events;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Popups;
+using Content.Shared.Rounding;
 using Content.Shared.Standing;
 using Content.Shared.Stunnable;
 using Content.Shared.Zombies;
+using Robust.Shared.Audio;
+using Robust.Shared.Audio.Components;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Configuration;
+using Robust.Shared.GameObjects;
 using Robust.Shared.Input;
 using Robust.Shared.Input.Binding;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
 using System.Numerics;
-using Content.Shared.Alert;
-using Content.Shared.CCVar;
-using Content.Shared.Movement.Events;
-using Content.Shared.Rounding;
-using Robust.Shared.Audio;
-using Robust.Shared.Audio.Components;
-using Robust.Shared.Configuration;
-using Content.Shared.Humanoid;
-using Content.Shared.Jittering;
 
 namespace Content.Shared.Movement.Sprinting;
 
@@ -141,7 +142,8 @@ public abstract class SharedSprintingSystem : EntitySystem
         if (ent.Comp.IsSprinting)
             ToggleSprint(ent, ent.Comp, false);
 
-        _alerts.ClearAlert(ent, ent.Comp.SprintAlert);
+
+        _alerts.ClearAlert(ent.Owner, ent.Comp.SprintAlert);
     }
 
     private void OnRefreshSpeed(Entity<SprinterComponent> ent, ref RefreshMovementSpeedModifiersEvent args)
@@ -318,7 +320,7 @@ public abstract class SharedSprintingSystem : EntitySystem
 
     private void OnStandingStateSprintAttempt(EntityUid uid, StandingStateComponent component, ref SprintAttemptEvent args)
     {
-        if (!_standing.IsDown(uid, component))
+        if (!_standing.IsDown(uid))
             return;
 
         _popupSystem.PopupClient(Loc.GetString("no-sprint-while-lying"), uid, uid, PopupType.Medium);

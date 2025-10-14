@@ -20,3 +20,4 @@ species-name-gingerbread = Pyszny wypiek
 ## Misc species things
 
 snail-hurt-by-salt-popup = Słony roztwór pali jak kwas!
+species-name-vulpkanin = Wulpkanin

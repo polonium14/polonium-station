@@ -16,3 +16,6 @@ toolshed-verb-mark = Oznacz
 toolshed-verb-mark-description = Umieszcza ten podmiot w zmiennej $marked, na liście podmiotów, zastępując jej poprzednią wartość.
 
 export-entity-verb-get-data-text = Eksportuj Sprite
+
+admin-verbs-camera = Otwórz Kamerę
+admin-verbs-camera-description = Otwiera okno kamery, które śledzi wybraną jednostkę.

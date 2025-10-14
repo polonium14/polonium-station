@@ -1,2 +1,39 @@
-wires-panel-component-on-examine-open = [color=lightgray]Panel serwisowy[/color] jest [color=red]otwarty[/color].  
-wires-panel-component-on-examine-closed = [color=lightgray]Panel serwisowy[/color] jest [color=darkgreen]zamknięty[/color].  
+wires-panel-component-on-examine-open = [color=lightgray]Panel serwisowy[/color] jest [color=red]otwarty[/color].
+wires-panel-component-on-examine-closed = [color=lightgray]Panel serwisowy[/color] jest [color=darkgreen]zamknięty[/color].
+wire-name-color-red = Czerwony
+wire-name-color-blue = Niebieski
+wire-name-color-green = Zielony
+wire-name-color-orange = Pomarańczowy
+wire-name-color-brown = Brązowy
+wire-name-color-gold = Złoty
+wire-name-color-gray = Szary
+wire-name-color-cyan = Cyjanowy
+wire-name-color-navy = Granatowy
+wire-name-color-purple = Fioletowy
+wire-name-color-pink = Różowy
+wire-name-color-fuchsia = Fuksja
+# letter names
+wire-letter-name-alpha = Alfa
+wire-letter-name-beta = Beta
+wire-letter-name-gamma = Gamma
+wire-letter-name-delta = Delta
+wire-letter-name-epsilon = Epsilon
+wire-letter-name-zeta = Zeta
+wire-letter-name-eta = Eta
+wire-letter-name-theta = Theta
+wire-letter-name-iota = Iota
+wire-letter-name-kappa = Kappa
+wire-letter-name-lambda = Lambda
+wire-letter-name-mu = Mu
+wire-letter-name-nu = Nu
+wire-letter-name-xi = Xi
+wire-letter-name-omicron = Omikron
+wire-letter-name-pi = Pi
+wire-letter-name-rho = Rho
+wire-letter-name-sigma = Sigma
+wire-letter-name-tau = Tau
+wire-letter-name-upsilon = Upsilon
+wire-letter-name-phi = Phi
+wire-letter-name-chi = Chi
+wire-letter-name-psi = Psi
+wire-letter-name-omega = Omega

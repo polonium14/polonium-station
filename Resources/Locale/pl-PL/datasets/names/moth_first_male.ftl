@@ -8,7 +8,7 @@ names-moth-first-male-dataset-2 = Atlas
 names-moth-first-male-dataset-3 = Attacus
 
 # Attacus caesar
-names-moth-first-male-dataset-4 = Caesar
+names-moth-first-male-dataset-4 = Cezar
 
 # Coscinocera hercules
 names-moth-first-male-dataset-5 = Hercules
@@ -17,78 +17,78 @@ names-moth-first-male-dataset-5 = Hercules
 names-moth-first-male-dataset-6 = Rannoch
 
 # Acosmeryx socrates
-names-moth-first-male-dataset-7 = Socrates
+names-moth-first-male-dataset-7 = Sokrates
 
 # Saturniidae solus
 names-moth-first-male-dataset-8 = Solus
 
-## Other languages
-# Hebrew עש "moth"
+## Inne języki
+# Hebrajski עש "ćma"
 names-moth-first-male-dataset-9 = Ash
 
-# Persian "fire"
+# Perski "ogień"
 names-moth-first-male-dataset-10 = Azar
 
-# German "emperor" descendant of the Latin caesar
+# Niemiecki "cesarz", pochodzenie od łacińskiego caesar
 names-moth-first-male-dataset-11 = Kaiser
 
-# Latin "king"
+# Łacińskie "król"
 names-moth-first-male-dataset-12 = Rex
 
-# Sanskrit "darkness" or "dust"
+# Sanskryt "ciemność" lub "pył"
 names-moth-first-male-dataset-13 = Rajas
 
-# Greek "clothes moth"
+# Grecka "ćma odzieżowa"
 names-moth-first-male-dataset-14 = Skoros
 
-## Myth and legend
-# Legendary king of the Britons who crafted wings and died in his attempt at flight
+## Mitologia i legenda
+# Legendarny król Brytów, który próbował latać
 names-moth-first-male-dataset-15 = Bladud
 
-# Father of Icarus
-names-moth-first-male-dataset-16 = Daedalus
+# Ojciec Ikara
+names-moth-first-male-dataset-16 = Dedal
 
-# Greek primordial deity of darkness
+# Grecka pierwotna bóstwo ciemności
 names-moth-first-male-dataset-17 = Erebus
 
-# The classic
-names-moth-first-male-dataset-18 = Icarus
+# Klasyk
+names-moth-first-male-dataset-18 = Ikar
 
-# Hindu figure, similar to Icarus
+# Hindu postać podobna do Ikara
 names-moth-first-male-dataset-19 = Jatayu
 
-# Japanese reading of 夸父（こほ）
+# Japońskie czytanie 夸父（こほ）
 names-moth-first-male-dataset-20 = Koho
 
-# Chinese giant 夸父, similar to Icarus
+# Chiński gigant 夸父, podobny do Ikara
 names-moth-first-male-dataset-21 = Kuafu
 
-# More commonly-known fall-from-heaven figure
-names-moth-first-male-dataset-22 = Lucifer
+# Bardziej znana postać „upadłego z nieba”
+names-moth-first-male-dataset-22 = Lucyfer
 
-# Arthurian wizard
+# Czarodziej arturiański
 names-moth-first-male-dataset-23 = Merlin
 
-# Another Greek figure, similar to Icarus
+# Inna grecka postać podobna do Ikara
 names-moth-first-male-dataset-24 = Phaethon
 
-# Rendering of Bladud from the Welsh blaidd "wolf" + iudd "lord"
-names-moth-first-male-dataset-25 = Wolford
+# Bladud od walijskiego blaidd "wilk" + iudd "władca"
+names-moth-first-male-dataset-25 = Wilkor
 
-## Fun names
-names-moth-first-male-dataset-26 = Ace
+## Zabawne imiona
+names-moth-first-male-dataset-26 = As
 names-moth-first-male-dataset-27 = Altair
-names-moth-first-male-dataset-28 = Dusty
+names-moth-first-male-dataset-28 = Pyzatek
 names-moth-first-male-dataset-29 = Gambit
-names-moth-first-male-dataset-30 = Hawk
+names-moth-first-male-dataset-30 = Jastrząb
 names-moth-first-male-dataset-31 = Mothew
-names-moth-first-male-dataset-32 = Timothy
+names-moth-first-male-dataset-32 = Tymoteusz
 
-## Common names, filler
+## Popularne imiona, wypełniacze
 names-moth-first-male-dataset-33 = Asher
-names-moth-first-male-dataset-34 = Isaac
+names-moth-first-male-dataset-34 = Izaak
 names-moth-first-male-dataset-35 = Roman
 names-moth-first-male-dataset-36 = Samuel
 names-moth-first-male-dataset-37 = Sebastian
-names-moth-first-male-dataset-38 = Silas
-names-moth-first-male-dataset-39 = Simon
+names-moth-first-male-dataset-38 = Sylas
+names-moth-first-male-dataset-39 = Szymon

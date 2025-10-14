@@ -188,6 +188,7 @@ namespace Content.Client.Options.UI.Tabs
             AddButton(ContentKeyFunctions.Sprint);
             AddCheckBox("ui-options-hotkey-toggle-sprint", _cfg.GetCVar(CCVars.ToggleSprint), HandleToggleSprint);
             InitToggleMovement(CCVars.ToggleSprint);
+            AddButton(ContentKeyFunctions.ToggleKnockdown);
 
             AddHeader("ui-options-header-camera");
             AddButton(EngineKeyFunctions.CameraRotateLeft);

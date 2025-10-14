@@ -25,8 +25,8 @@ names-moth-first-female-dataset-8 = Luna
 # Lymantria
 names-moth-first-female-dataset-9 = Lymanzia
 
-# Dryocampa rubicunda, "Rosy Maple"
-names-moth-first-female-dataset-10 = Maple
+# Dryocampa rubicunda, "Różowa klonówka"
+names-moth-first-female-dataset-10 = Klonówka
 
 # Mimas
 names-moth-first-female-dataset-11 = Mima
@@ -37,57 +37,57 @@ names-moth-first-female-dataset-12 = Nephele
 # Dryocampa rubicunda
 names-moth-first-female-dataset-13 = Rosie
 
-# Cosmosoma myrodora, "Scarlet-bodied wasp moth"
-names-moth-first-female-dataset-14 = Scarlet
+# Cosmosoma myrodora, "Ćma osowata"
+names-moth-first-female-dataset-14 = Szkarłatka
 
 # Acherontia styx
 names-moth-first-female-dataset-15 = Styx
 
-## Other languages
-# Galician "moth" (avelaíña)
+## Inne języki
+# Galicyjskie "ćma" (avelaíña)
 names-moth-first-female-dataset-16 = Avelaina
 
-# Italian "winter moth"
+# Włoskie "zimowa ćma"
 names-moth-first-female-dataset-17 = Falena
 
-# Greek "moon gift"
+# Greckie "księżycowy dar"
 names-moth-first-female-dataset-18 = Menodora
 
-# Romanian "moth"
+# Rumuńskie "ćma"
 names-moth-first-female-dataset-19 = Molie
 
-# Spanish "moth"
+# Hiszpańskie "ćma"
 names-moth-first-female-dataset-20 = Polilla
 
-## Myth and legend
-# Greek mythological figure
+## Mitologia i legendy
+# Grecka postać mitologiczna
 names-moth-first-female-dataset-21 = Althea
 
-# Roman goddess of the dawn
+# Rzymska bogini świtu
 names-moth-first-female-dataset-22 = Aurora
 
-# Greek mythological figure
+# Grecka postać mitologiczna
 names-moth-first-female-dataset-23 = Helle
 
-# Greek goddess of the moon
+# Grecka bogini księżyca
 names-moth-first-female-dataset-24 = Selene
 
-# Greek goddess of the night
+# Grecka bogini nocy
 names-moth-first-female-dataset-25 = Nyx
 
-## Fun names
-names-moth-first-female-dataset-26 = Angel
-names-moth-first-female-dataset-27 = Sandy
-names-moth-first-female-dataset-28 = Liberty
+## Zabawne imiona
+names-moth-first-female-dataset-26 = Anioł
+names-moth-first-female-dataset-27 = Piaskowa
+names-moth-first-female-dataset-28 = Wolność
 names-moth-first-female-dataset-29 = Beatrix
 
-## Common names, filler
-names-moth-first-female-dataset-30 = Daisy
-names-moth-first-female-dataset-31 = Dawn
-names-moth-first-female-dataset-32 = Elizabeth
-names-moth-first-female-dataset-33 = Lucy
-names-moth-first-female-dataset-34 = Ruby
-names-moth-first-female-dataset-35 = Sarah
-names-moth-first-female-dataset-36 = Sienna
-names-moth-first-female-dataset-37 = Willow
-names-moth-first-female-dataset-38 = Zoey
+## Popularne imiona, wypełniacze
+names-moth-first-female-dataset-30 = Stokrotka
+names-moth-first-female-dataset-31 = Świt
+names-moth-first-female-dataset-32 = Elżbieta
+names-moth-first-female-dataset-33 = Łucja
+names-moth-first-female-dataset-34 = Rubina
+names-moth-first-female-dataset-35 = Sara
+names-moth-first-female-dataset-36 = Siena
+names-moth-first-female-dataset-37 = Wierzba
+names-moth-first-female-dataset-38 = Zoja

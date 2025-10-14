@@ -9,8 +9,10 @@
     DrinkLemonLimeCan: 2
     DrinkLemonLimeCranberryCan: 2
     DrinkFourteenLokoCan: 2
+    # 🇵🇱 Polonium
+    DrinkOranzadaFull: 2
   contrabandInventory:
     DrinkColaBottleFull: 2
+    DrinkChangelingStingCan: 2
   emaggedInventory:
     DrinkNukieCan: 2
-    DrinkChangelingStingCan: 2

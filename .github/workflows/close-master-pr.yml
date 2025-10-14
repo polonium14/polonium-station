@@ -1,0 +1,25 @@
+name: Close PRs on master
+
+on:
+  pull_request_target:
+    types: [ opened, ready_for_review ]
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    if: ${{github.head_ref == 'master' || github.head_ref == 'main' || github.head_ref == 'develop'}}
+
+    steps:
+    # - uses: superbrothers/close-pull-request@v3
+    #   with:
+    #     comment: "Thank you for your contribution! It appears you created a PR from your master branch, this is [something you should avoid doing](https://jmeridth.com/posts/do-not-issue-pull-requests-from-your-master-branch/), and thus this PR has been automatically closed. \n \n We suggest you follow [our git usage documentation](https://docs.spacestation14.com/en/general-development/setup/git-for-the-ss14-developer.html). \n \n You can move your current work from the master branch to another branch by following [these commands](https://ohshitgit.com/#accidental-commit-master). And then you may recreate your PR using the new branch."
+
+    - uses: actions/github-script@v7
+      with:
+        script: |
+          github.rest.issues.createComment({
+            issue_number: ${{ github.event.number }},
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: "Dziękujemy za Twój wkład w repozytorium **Space Station 14**! Niestety wygląda na to, że utworzyłeś pull request z gałęzi **master**. \n\n Zalecamy zapoznanie się z naszymi [wytycznymi](https://github.com/polonium14/polonium-station/blob/master/CONTRIBUTING.md) oraz [dokumentacją dotyczącą korzystania z gita autorstwa Wizdena](https://docs.spacestation14.com/en/general-development/setup/git-for-the-ss14-developer.html).  \n\n Możesz przenieść swoją obecną pracę z gałęzi **master** na inną gałąź, wykonując polecenie: `git branch <nazwa_gałęzi>` i resetując gałąź **master**."
+          })

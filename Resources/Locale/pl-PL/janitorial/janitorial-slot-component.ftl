@@ -9,3 +9,4 @@ janitorial-trolley-slot-component-slot-name-spray = Spray
 janitorial-trolley-slot-component-slot-name-bucket = Bucket
 janitorial-trolley-slot-component-slot-name-trashbag = Trash Bag
 janitorial-trolley-slot-component-slot-name-mop = Mop
+janitorial-trolley-slot-component-slot-name-goldenplunger = Golden Plunger

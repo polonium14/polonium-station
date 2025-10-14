@@ -10,6 +10,7 @@
 
 /Resources/Prototypes/Maps/** @Emisse @ArtisticRoomba
 /Resources/Prototypes/Maps/Shuttles/Shuttle_GROM.yml @qazmlp
+/Resources/Maps/** @Emisse @ArtisticRoomba
 
 /Resources/Prototypes/Body/ @DrSmugleaf # suffering
 /Resources/Prototypes/Entities/Mobs/Player/ @DrSmugleaf
@@ -23,6 +24,11 @@
 /Resources/Prototypes/Entities/Structures/Specific/anomalies.yml @TheShuEd
 
 /Content.*/Forensics/ @ficcialfaint
+
+/Content.*/Trigger/ @slarticodefast
+
+/Content.*/Stunnable/ @Princess-Cheeseballs
+/Content.*/Nutrition/ @Princess-Cheeseballs
 
 # SKREEEE
 /Content.*.Database/ @PJB3005 @DrSmugleaf
@@ -64,3 +70,4 @@ Resources/Textures/Interface/Alerts/internals.rsi/internal0.png @Tofi-Dev
 Resources/Textures/Interface/Alerts/internals.rsi/internal1.png @Tofi-Dev
 Resources/Textures/Interface/Alerts/internals.rsi/internal2.png @Tofi-Dev
 
+/Content.Server/Discord/ @Simyon26

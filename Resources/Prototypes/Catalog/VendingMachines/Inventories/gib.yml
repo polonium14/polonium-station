@@ -9,10 +9,12 @@
     DrinkLemonLimeCan: 2
     DrinkLemonLimeCranberryCan: 2
     DrinkFourteenLokoCan: 2
+    # 🇵🇱 Polonium
+    DrinkOranzadaFull: 2
   contrabandInventory:
     ClothingNeckStethoscope: 2
     Saw: 2
     Tourniquet: 3
+    DrinkChangelingStingCan: 2
   emaggedInventory:
     DrinkNukieCan: 2
-    DrinkChangelingStingCan: 2

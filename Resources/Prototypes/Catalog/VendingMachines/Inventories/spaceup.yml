@@ -8,9 +8,11 @@
     DrinkIcedTeaCan: 2
     DrinkSolDryCan: 2
     DrinkFourteenLokoCan: 2
+    # 🇵🇱 Polonium
+    DrinkOranzadaFull: 2
   contrabandInventory:
     DrinkSpaceMountainWindBottleFull: 2
     DrinkSpaceUpBottleFull: 2
+    DrinkChangelingStingCan: 2
   emaggedInventory:
     DrinkNukieCan: 2
-    DrinkChangelingStingCan: 2

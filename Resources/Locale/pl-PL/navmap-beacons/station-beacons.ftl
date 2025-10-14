@@ -1,12 +1,10 @@
 station-beacon-general = General
-
 station-beacon-command = Command
 station-beacon-bridge = Bridge
 station-beacon-vault = Vault
 station-beacon-gateway = Gateway
 station-beacon-captain = Captain
 station-beacon-hop = HOP
-
 station-beacon-security = Security
 station-beacon-brig = Brig
 station-beacon-brig-med = Brig Med
@@ -18,7 +16,6 @@ station-beacon-detective = Detective
 station-beacon-courtroom = Courtroom
 station-beacon-law = Law Office
 station-beacon-security-checkpoint = Checkpoint
-
 station-beacon-medical = Medical
 station-beacon-medbay = Medbay
 station-beacon-chemistry = Chem
@@ -28,7 +25,6 @@ station-beacon-morgue = Morgue
 station-beacon-surgery = Surgery
 station-beacon-psychology = Psychology
 station-beacon-clinic = Clinic
-
 station-beacon-science = Science
 station-beacon-research-and-development = Research
 station-beacon-research-server = Server
@@ -36,13 +32,11 @@ station-beacon-research-director = RD
 station-beacon-robotics = Robotics
 station-beacon-artifact-lab = Artifact
 station-beacon-anomaly-gen = Anomaly
-
 station-beacon-supply = Supply
 station-beacon-cargo = Cargo
 station-beacon-cargo-bay = Cargo Bay
 station-beacon-qm = QM
 station-beacon-salvage = Salvage
-
 station-beacon-engineering = Engineering
 station-beacon-ce = CE
 station-beacon-ame = AME
@@ -55,19 +49,16 @@ station-beacon-atmos = Atmos
 station-beacon-teg = TEG
 station-beacon-tech-vault = Tech Vault
 station-beacon-anchor = Anchor
-
 station-beacon-service = Service
 station-beacon-kitchen = Kitchen
 station-beacon-bar = Bar
 station-beacon-botany = Botany
 station-beacon-janitor = Janitor
-
 station-beacon-ai = AI
 station-beacon-ai-sat = AI Sat
 station-beacon-ai-core = AI Core
 station-beacon-ai-upload = AI Upload
 station-beacon-ai-power = AI Power
-
 station-beacon-arrivals = Arrivals
 station-beacon-evac = Evac
 station-beacon-docking-arm = Docking Arm
@@ -82,3 +73,19 @@ station-beacon-disposals = Disposals
 station-beacon-cryosleep = Cryosleep
 station-beacon-escape-pod = Escape Pod
 station-beacon-vox = Vox Break Room
+station-beacon-solars-N = Solars N
+station-beacon-solars-NE = Solars NE
+station-beacon-solars-E = Solars E
+station-beacon-solars-SE = Solars SE
+station-beacon-solars-S = Solars S
+station-beacon-solars-SW = Solars SW
+station-beacon-solars-W = Solars W
+station-beacon-solars-NW = Solars NW
+station-beacon-escape-pod-N = Escape Pod N
+station-beacon-escape-pod-NE = Escape Pod NE
+station-beacon-escape-pod-E = Escape Pod E
+station-beacon-escape-pod-SE = Escape Pod SE
+station-beacon-escape-pod-S = Escape Pod S
+station-beacon-escape-pod-SW = Escape Pod SW
+station-beacon-escape-pod-W = Escape Pod W
+station-beacon-escape-pod-NW = Escape Pod NW
