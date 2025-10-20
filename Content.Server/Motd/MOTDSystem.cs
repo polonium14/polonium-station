@@ -88,7 +88,8 @@ public sealed class MOTDSystem : EntitySystem
 
                 if (newMotd == null)
                 {
-                    Log.Error($"An error occurred while fetching MOTD from the remote server (url: {url})");
+                    Log.Error($"Recieved undefined MOTD. Clearing.");
+                    _configurationManager.SetCVar(CCVars.MOTD, string.Empty);
                     return;
                 }
 
