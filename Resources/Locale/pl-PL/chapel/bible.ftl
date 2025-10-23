@@ -1,18 +1,18 @@
-bible-heal-success-self = You hit {THE($target)} with {THE($bible)}, and their wounds close in a flash of holy light!
-bible-heal-success-others = {CAPITALIZE(THE($user))} hits {THE($target)} with {THE($bible)}, and their wounds close in a flash of holy light!
-bible-heal-success-none-self = You hit {THE($target)} with {THE($bible)}, but they have no wounds you can heal!
-bible-heal-success-none-others = {CAPITALIZE(THE($user))} hits {THE($target)} with {THE($bible)}!
+bible-heal-success-self = Uderzasz {$target} {$bible}, a jego rany zamykają się w błysku świętego światła!
+bible-heal-success-others = {CAPITALIZE($user)} uderza {$target} {$bible}, a jego rany zamykają się w błysku świętego światła!
+bible-heal-success-none-self = Uderzasz {$target} {$bible}, ale nie ma ran, które mógłbyś uleczyć!
+bible-heal-success-none-others = {CAPITALIZE($user)} uderza {$target} {$bible}!
 
-bible-heal-fail-self = You hit {THE($target)} with {THE($bible)}, and it lands with a sad thwack, dazing {OBJECT($target)}!
-bible-heal-fail-others = {CAPITALIZE(THE($user))} hits {THE($target)} with {THE($bible)}, and it lands with a sad thack, dazing {OBJECT($target)}!
-bible-sizzle = The book sizzles in your hands!
+bible-heal-fail-self = Uderzasz {$target} {$bible}, a ono spada z cichym trzaskiem, ogłuszając {$target}!
+bible-heal-fail-others = {CAPITALIZE($user)} uderza {$target} {$bible}, a ono spada z cichym trzaskiem, ogłuszając {$target}!
+bible-sizzle = Księga syczy w twoich rękach!
 
-bible-summon-verb = Summon familiar
-bible-summon-verb-desc = Summon a familiar that will aid you and gain humanlike intelligence once inhabited by a soul.
-bible-summon-requested = Your familiar will arrive once a willing soul comes forth.
-bible-summon-respawn-ready = {CAPITALIZE(THE($book))} surges with ethereal power. {CAPITALIZE(POSS-ADJ($book))} resident is home again.
+bible-summon-verb = Przywołaj familiara
+bible-summon-verb-desc = Przywołaj familiara, który będzie ci pomagał i zyska inteligencję podobną do ludzkiej, gdy zamieszka w nim dusza.
+bible-summon-requested = Twój familiar przybędzie, gdy zjawi się chętna dusza.
+bible-summon-respawn-ready = {CAPITALIZE($book)} wypełnia się eteryczną mocą. Mieszkaniec {$book} wraca do domu.
 
-necro-heal-success-self = You hit {THE($target)} with {THE($bible)}, and {POSS-ADJ($target)} flesh warps as it melts!
-necro-heal-success-others = {CAPITALIZE(THE($user))} hits {THE($target)} with {THE($bible)}, and {POSS-ADJ($target)} flesh warps as it melts!
-necro-heal-fail-self = You hit {THE($target)} with {THE($bible)}, and it lands with a sad thwack, failing to smite {OBJECT($target)}.
-necro-heal-fail-others = {CAPITALIZE(THE($user))} hits {THE($target)} with {THE($bible)}, and it lands with a sad thack, failing to smite {OBJECT($target)}.
+necro-heal-success-self = Uderzasz {$target} {$bible}, a {$target} ciało deformuje się i topnieje!
+necro-heal-success-others = {CAPITALIZE($user)} uderza {$target} {$bible}, a {$target} ciało deformuje się i topnieje!
+necro-heal-fail-self = Uderzasz {$target} {$bible}, a ono spada z cichym trzaskiem, nie mogąc zranić {$target}.
+necro-heal-fail-others = {CAPITALIZE($user)} uderza {$target} {$bible}, a ono spada z cichym trzaskiem, nie mogąc zranić {$target}.
