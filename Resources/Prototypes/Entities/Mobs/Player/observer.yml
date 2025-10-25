@@ -32,7 +32,8 @@
 - type: entity
   parent:
   - Incorporeal
-  - BaseMobNoSprint #Polonium Changes BaseMob
+  - BaseMob
+  #- BaseMobNoSprint #Polonium Changes BaseMob
   id: MobObserverBase
   abstract: true
   name: observer
@@ -68,6 +69,8 @@
     radius: 6
     castShadows: false
     enabled: false
+  - type: Sprinter
+    canSprint: false
 
 # proto for player ghosts specifically
 - type: entity
