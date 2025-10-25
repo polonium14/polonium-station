@@ -166,8 +166,9 @@ public abstract class SharedSprintingSystem : EntitySystem
 
         if (!sprinterComponent.CanSprint)
         {
-            if (message.State == BoundKeyState.Down) // Without this check the message triggers when holding and releasing.
-                _popupSystem.PopupClient(Loc.GetString("sprint-disabled"), session.AttachedEntity.Value, session.AttachedEntity.Value, PopupType.Medium);
+            // Prevent showing the popup for disabled sprinting. Kept as comment per request instead of deleting.
+            // if (message.State == BoundKeyState.Down) // Without this check the message triggers when holding and releasing.
+            //     _popupSystem.PopupClient(Loc.GetString("sprint-disabled"), session.AttachedEntity.Value, session.AttachedEntity.Value, PopupType.Medium);
 
             return;
         }
@@ -278,6 +279,14 @@ public abstract class SharedSprintingSystem : EntitySystem
     {
         if (!Resolve(uid, ref comp))
             return;
+
+        // Don't show the sprint alert if the entity currently cannot sprint. This avoids
+        // presenting a useless sprint bar for entities that are restrained, lying down, etc.
+        if (!CanSprint(uid, comp))
+        {
+            _alerts.ClearAlert(uid, comp.SprintAlert);
+            return;
+        }
 
         var level = ContentHelpers.RoundToLevels(
             MathF.Max(0f, comp.SprintCapacity - comp.CurrentSprintCapacity),
