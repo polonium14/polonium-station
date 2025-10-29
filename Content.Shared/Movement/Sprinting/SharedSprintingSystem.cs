@@ -282,7 +282,7 @@ public abstract class SharedSprintingSystem : EntitySystem
 
         // Don't show the sprint alert if the entity currently cannot sprint. This avoids
         // presenting a useless sprint bar for entities that are restrained, lying down, etc.
-        if (!CanSprint(uid, comp))
+        if (!CanSprint(uid, comp) || !comp.CanSprint)
         {
             _alerts.ClearAlert(uid, comp.SprintAlert);
             return;
