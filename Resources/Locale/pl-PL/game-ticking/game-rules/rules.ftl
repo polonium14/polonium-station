@@ -1,6 +1,6 @@
 # General
-rule-restarting-in-seconds = Restarting in {$seconds} seconds.
-rule-time-has-run-out = Time has run out!
+rule-restarting-in-seconds = Restartowanie za {$seconds} sekund.
+rule-time-has-run-out = Czas się skończył!
 
 # Respawning
-rule-respawn-in-seconds = Respawning in {$second} seconds...
+rule-respawn-in-seconds = Odrodzenie za {$second} sekund...
