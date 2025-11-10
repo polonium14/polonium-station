@@ -325,7 +325,7 @@ namespace Content.Server.Kitchen.EntitySystems
 
             var selfMessage = headCount > 1
                 ? Loc.GetString("microwave-component-suicide-multi-head-message")
-                : Loc.GetString("microwave-component-suicide-message");
+                : Loc.GetString("microwave-component-suicide-message", ("victim", victim));
 
             _popupSystem.PopupEntity(othersMessage, victim, Filter.PvsExcept(victim), true);
             _popupSystem.PopupEntity(selfMessage, victim, victim);

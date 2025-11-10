@@ -5328,7 +5328,7 @@ ent-MedicalScannerMachineCircuitboard = medical scanner machine board
     .desc = A machine printed circuit board for a medical scanner.
 ent-MedicalTechFabCircuitboard = medical techfab machine board
     .desc = A machine printed circuit board for a medical techfab.
-ent-MicrowaveMachineCircuitboard = microwave machine board
+ent-MicrowaveMachineCircuitboard = elektronika mikrofali
 ent-MiniGravityGeneratorCircuitboard = mini gravity generator machine board
     .desc = A machine printed circuit board for a mini gravity generator.
 ent-OreProcessorIndustrialMachineCircuitboard = industrial ore processor machine board
@@ -5344,8 +5344,8 @@ ent-ProtolatheHyperConvectionMachineCircuitboard = hyper convection protolathe m
     .desc = A machine printed circuit board for a hyper convection protolathe.
 ent-ProtolatheMachineCircuitboard = protolathe machine board
     .desc = A machine printed circuit board for a protolathe.
-ent-ReagentGrinderIndustrialMachineCircuitboard = industrial reagent grinder machine board
-ent-ReagentGrinderMachineCircuitboard = reagent grinder machine board
+ent-ReagentGrinderIndustrialMachineCircuitboard = elektronika przemysłowego młynka
+ent-ReagentGrinderMachineCircuitboard = elektronika młynka
     .desc = A machine printed circuit board for a reagent grinder.
 ent-ResearchAndDevelopmentServerMachineCircuitboard = R&D server machine board
     .desc = A machine printed circuit board for the R&D server.
@@ -5377,7 +5377,7 @@ ent-SurveillanceWirelessCameraAnchoredCircuitboard = wireless camera board
     .desc = A machine printed circuit board for a wireless camera.
 ent-SurveillanceWirelessCameraMovableCircuitboard = movable wireless camera board
     .desc = A machine printed circuit board for a movable wireless camera.
-ent-SyndicateMicrowaveMachineCircuitboard = donk co. microwave machine board
+ent-SyndicateMicrowaveMachineCircuitboard = elektronika mikrofali donk co.
 ent-TelecomServerCircuitboard = telecommunication server machine board
     .desc = A machine printed circuit board for an telecommunication server.
 ent-ThermomachineFreezerMachineCircuitBoard = freezer thermomachine machine board
@@ -7919,8 +7919,8 @@ ent-PowerSensor = power sensor
     .desc = Generates signals in response to powernet changes. Can be cycled between cable voltages.
 
 # meat_spike.yml
-ent-KitchenSpike = meat spike
-    .desc = A spike for collecting meat from animals.
+ent-KitchenSpike = hak na mięso
+    .desc = Hak dla pozyskiwania mięsa z zwierząt.
 
 # plastic_flaps.yml
 ent-PlasticFlapsAirtightClear = airtight plastic flaps
@@ -8469,10 +8469,10 @@ ent-MedicalScanner = medical scanner
     .desc = A bulky medical scanner.
 
 # microwave.yml
-ent-KitchenMicrowave = microwave
-    .desc = It's magic.
-ent-SyndicateMicrowave = donk co. microwave
-    .desc = So advanced, it can cook donk-pockets in a mere 2.5 seconds!
+ent-KitchenMicrowave = mikrofala
+    .desc = To magia.
+ent-SyndicateMicrowave = mikrofala donk co.
+    .desc = Tak zaawansowana, że potrafi upiec donk-strudle w niecałe 2.5 sekundy!
 
 # nuke.yml
 ent-NuclearBomb = nuclear fission explosive
@@ -8481,10 +8481,10 @@ ent-NuclearBombKeg = nuclear fission explosive
     .desc = You probably shouldn't stick around to see if this is armed. It has a tap on the side.
 
 # reagent_grinder.yml
-ent-KitchenReagentGrinder = reagent grinder
-    .desc = From BlenderTech. Will It Blend? Let's find out!
-ent-ReagentGrinderIndustrial = industrial reagent grinder
-    .desc = An industrial reagent grinder.
+ent-KitchenReagentGrinder = młynek
+    .desc = Od BlenderTech. Czy się zblenduje? Zobaczmy!
+ent-ReagentGrinderIndustrial = przemysłowy młynek
+    .desc = Młynek do celów przemysłowych.
 
 # recycler.yml
 ent-Recycler = recycler

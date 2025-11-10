@@ -278,10 +278,11 @@ public sealed class SharedKitchenSpikeSystem : EntitySystem
         if (args.Handled || args.Cancelled || !args.Target.HasValue || !args.Used.HasValue || !TryComp<ButcherableComponent>(args.Target, out var butcherable))
             return;
 
+        var userIdentity = Identity.Entity(args.User, EntityManager);
         var victimIdentity = Identity.Entity(args.Target.Value, EntityManager);
 
-        _popupSystem.PopupPredicted(Loc.GetString("comp-kitchen-spike-butcher-self", ("victim", victimIdentity)),
-            Loc.GetString("comp-kitchen-spike-butcher", ("user", Identity.Entity(args.User, EntityManager)), ("victim", victimIdentity)),
+        _popupSystem.PopupPredicted(Loc.GetString("comp-kitchen-spike-butcher-self", ("user", userIdentity), ("victim", victimIdentity)),
+            Loc.GetString("comp-kitchen-spike-butcher", ("user", userIdentity), ("victim", victimIdentity)),
             ent,
             args.User,
             PopupType.MediumCaution);
@@ -441,7 +442,7 @@ public sealed class SharedKitchenSpikeSystem : EntitySystem
 
         if (user == victim)
         {
-            messageSelf = Loc.GetString(selfLocMessageSelf, ("hook", hook));
+            messageSelf = Loc.GetString(selfLocMessageSelf, ("victim", victimIdentity), ("hook", hook));
             messageOthers = Loc.GetString(selfLocMessageOthers, ("victim", victimIdentity), ("hook", hook));
         }
         else
