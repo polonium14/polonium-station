@@ -1,5 +1,5 @@
-survival-title = Survival
-survival-description = No internal threats, but how long can the station survive increasingly chaotic and frequent events?
+survival-title = Przetrwanie
+survival-description = Brak zagrożeń wewnętrznych, ale jak długo stacja przetrwa coraz bardziej chaotyczne i częste wydarzenia?
 
-kessler-syndrome-title = Kessler Syndrome
-kessler-syndrome-description = No internal threats, but the station is quickly falling into a belt of meteors!
+kessler-syndrome-title = Syndrom Kesslera
+kessler-syndrome-description = Brak zagrożeń wewnętrznych, ale stacja szybko wpadła w pas meteorów!
