@@ -1,55 +1,55 @@
-﻿### Localization for role ban command
+### Localization for role ban command
 
-cmd-roleban-desc = Bans a player from a role
-cmd-roleban-help = Usage: roleban <name or user ID> <job> <reason> [duration in minutes, leave out or 0 for permanent ban]
+cmd-roleban-desc = Banuje gracza z grania tą rolą
+cmd-roleban-help = Użycie: roleban <nazwa lub ID gracza> <rola> <powód> [długość w minutach, pozostaw puste lub 0 dla bana permamentnego]
 
 ## Completion result hints
-cmd-roleban-hint-1 = <name or user ID>
-cmd-roleban-hint-2 = <job>
-cmd-roleban-hint-3 = <reason>
-cmd-roleban-hint-4 = [duration in minutes, leave out or 0 for permanent ban]
+cmd-roleban-hint-1 = <nazwa lub ID gracza>
+cmd-roleban-hint-2 = <rola>
+cmd-roleban-hint-3 = <powód>
+cmd-roleban-hint-4 = [długość w minutach, pozostaw puste lub 0 dla bana permamentnego]
 cmd-roleban-hint-5 = [severity]
 
-cmd-roleban-hint-duration-1 = Permanent
-cmd-roleban-hint-duration-2 = 1 day
-cmd-roleban-hint-duration-3 = 3 days
-cmd-roleban-hint-duration-4 = 1 week
-cmd-roleban-hint-duration-5 = 2 week
-cmd-roleban-hint-duration-6 = 1 month
+cmd-roleban-hint-duration-1 = Permamentny
+cmd-roleban-hint-duration-2 = 1 dzień
+cmd-roleban-hint-duration-3 = 3 dni
+cmd-roleban-hint-duration-4 = 1 tydzień
+cmd-roleban-hint-duration-5 = 2 tygodnie
+cmd-roleban-hint-duration-6 = 1 miesiąc
 
 
 ### Localization for role unban command
 
-cmd-roleunban-desc = Pardons a player's role ban
-cmd-roleunban-help = Usage: roleunban <role ban id>
-cmd-roleunban-unable-to-parse-id = Unable to parse {$id} as a ban id integer.
+cmd-roleunban-desc = Zdejmuje ban na rolę gracza
+cmd-roleunban-help = Użycie: roleunban <id bana na rolę>
+cmd-roleunban-unable-to-parse-id = Nie można odczytać {$id} jako numeru id bana.
                                    {$help}
 
 ## Completion result hints
-cmd-roleunban-hint-1 = <role ban id>
+cmd-roleunban-hint-1 = <id bana na rolę>
 
 
 ### Localization for roleban list command
 
-cmd-rolebanlist-desc = Lists the user's role bans
-cmd-rolebanlist-help = Usage: <name or user ID> [include unbanned]
+cmd-rolebanlist-desc = Wyświetl bany ról gracza
+cmd-rolebanlist-help = Użycie: <nazwa lub ID gracza> [zawrzyj odbanowane]
 
 ## Completion result hints
-cmd-rolebanlist-hint-1 = <name or user ID>
-cmd-rolebanlist-hint-2 = [include unbanned]
+cmd-rolebanlist-hint-1 = <nazwa lub ID gracza>
+cmd-rolebanlist-hint-2 = [zawrzyj odbanowane]
 
 
-cmd-roleban-minutes-parse = {$time} is not a valid amount of minutes.\n{$help}
-cmd-roleban-severity-parse = ${severity} is not a valid severity\n{$help}.
-cmd-roleban-arg-count = Invalid amount of arguments.
-cmd-roleban-job-parse = Job {$job} does not exist.
-cmd-roleban-name-parse = Unable to find a player with that name.
-cmd-roleban-existing = {$target} already has a role ban for {$role}.
-cmd-roleban-success = Role banned {$target} from {$role} with reason {$reason} {$length}.
+cmd-roleban-minutes-parse = {$time} nie jest poprawną liczbą minut.\n{$help}
+cmd-roleban-severity-parse = ${severity} nie jest poprawnym poziomem\n{$help}.
+cmd-roleban-arg-count = Niepoprawna liczba argumentów.
+cmd-roleban-job-parse = Rola {$job} nie istnieje.
+cmd-roleban-name-parse = Nie znaleziono gracza z taką nazwą.
+cmd-roleban-existing = {$target} już ma bana na {$role}.
+cmd-roleban-success = Zbanowano {$target} z roli {$role} z powodem {$reason} {$length}.
 
-cmd-roleban-inf = permanently
-cmd-roleban-until =  until {$expires}
+cmd-roleban-inf = permamentnie
+cmd-roleban-until =  do {$expires}
 
 # Department bans
-cmd-departmentban-desc = Bans a player from the roles comprising a department
-cmd-departmentban-help = Usage: departmentban <name or user ID> <department> <reason> [duration in minutes, leave out or 0 for permanent ban]
+cmd-departmentban-desc = Banuje gracza z ról z danego departamentu
+cmd-departmentban-help = Użycie: departmentban <nazwa lub ID gracza> <department> <powód> [długość w minutach, pozostaw puste lub 0 dla bana permamentnego]
