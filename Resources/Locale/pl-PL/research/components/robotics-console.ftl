@@ -1,17 +1,17 @@
-robotics-console-window-title = Robotics Console
-robotics-console-no-cyborgs = No Cyborgs!
-robotics-console-select-cyborg = Select a cyborg above.
+robotics-console-window-title = Konsola robotyki
+robotics-console-no-cyborgs = Brak robotów!
+robotics-console-select-cyborg = Wybierz powyżej robota.
 robotics-console-model = [color=gray]Model:[/color] { $name }
 # name is not formatted to prevent players trolling
-robotics-console-designation = [color=gray]Designation:[/color]
-robotics-console-battery = [color=gray]Battery charge:[/color] [color={ $color }]{ $charge }[/color]%
-robotics-console-modules = [color=gray]Modules installed:[/color] { $count }
-robotics-console-brain = [color=gray]Brain installed:[/color] [color={ $brain ->
-        [true] green]Yes
-       *[false] red]No
+robotics-console-designation = [color=gray]Przystosowanie:[/color]
+robotics-console-battery = [color=gray]Stan baterii:[/color] [color={ $color }]{ $charge }[/color]%
+robotics-console-modules = [color=gray]Zamontowane moduły:[/color] { $count }
+robotics-console-brain = [color=gray]Zamontowany mózg:[/color] [color={ $brain ->
+        [true] green]tak
+       *[false] red]nie
     }[/color]
-robotics-console-locked-message = Controls locked, swipe ID.
-robotics-console-disable = Disable
-robotics-console-destroy = Destroy
-robotics-console-cyborg-destroying = { $name } is being remotely detonated!
-robotics-console-hp = [color=gray]Integrity:[/color] [color={ $color }]{ $hp }[/color]%
+robotics-console-locked-message = Sterowanie zablokowane, zbliż ID.
+robotics-console-disable = Wyłącz
+robotics-console-destroy = Zniszcz
+robotics-console-cyborg-destroying = { CAPITALIZE(THE($name)) } jest zdalnie detonowany!
+robotics-console-hp = [color=gray]Stan obudowy:[/color] [color={ $color }]{ $hp }[/color]%
