@@ -1,4 +1,4 @@
-tool-quality-anchoring-name = przykręcania
+tool-quality-anchoring-name = unieruchamiania
 tool-quality-anchoring-tool-name = klucz
 tool-quality-prying-name = podważania
 tool-quality-prying-tool-name = łom
