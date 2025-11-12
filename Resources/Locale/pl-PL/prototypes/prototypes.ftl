@@ -6741,8 +6741,8 @@ ent-PowerCellSmallNuclear = small-capacity nuclear power cell
     .desc = A self rechargeable power cell, designed for fast recharge rate at the expense of capacity.
 
 # powersink.yml
-ent-PowerSink = power sink
-    .desc = Drains immense amounts of electricity from the grid.
+ent-PowerSink = pochłaniacz energii
+    .desc = Pochłania gigantyczne ilości energii z sieci.
 
 # chemistry-vials.yml
 ent-BorgVial = integrated vial

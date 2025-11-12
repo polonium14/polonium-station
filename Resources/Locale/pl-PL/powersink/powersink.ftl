@@ -1,2 +1,2 @@
-powersink-examine-drain-amount = The power sink is draining [color={$markupDrainColor}]{$amount} kW[/color].
-powersink-imminent-explosion-announcement = System scans have detected a rogue power consuming device is becoming unstable.  Staff are advised to locate and disconnect this device immediately before the station is damaged.
+powersink-examine-drain-amount = Pochłaniacz energii pochłania [color={$markupDrainColor}]{POWERWATS($amount)}[/color].
+powersink-imminent-explosion-announcement = Skany systemu wykryły że szkodliwe urządzenie pobieracąje energię staje się niestabilne. Osobą pracującym sugerowane jest jego znalezienie i odłączenie od sieci, zanim nastąpi do uszkodzenia stacji.
