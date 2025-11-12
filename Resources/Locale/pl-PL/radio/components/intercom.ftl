@@ -1,6 +1,6 @@
-﻿intercom-menu-title = Intercom
-intercom-channel-label = Channel:
-intercom-button-text-mic = Mic.
-intercom-button-text-speaker = Spkr.
-intercom-options-none = No channels
-intercom-flavor-text-left = Keep lines free of chatter
+intercom-menu-title = Awiofon
+intercom-channel-label = Kanał:
+intercom-button-text-mic = Mik.
+intercom-button-text-speaker = Głoś.
+intercom-options-none = Brak kanałów
+intercom-flavor-text-left = Nie zajmuj linii gawędzią

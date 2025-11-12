@@ -1,16 +1,16 @@
-radio-jammer-component-on-use = The jammer is now {$state}.
-radio-jammer-component-on-state = on
-radio-jammer-component-off-state = off
+radio-jammer-component-on-use = Zagłuszacz radia jest {$state}.
+radio-jammer-component-on-state = wł.
+radio-jammer-component-off-state = wył.
 
-radio-jammer-component-examine-on-state = The light is currently [color=darkgreen]on[/color].
-radio-jammer-component-examine-off-state = The light is currently [color=darkred]off[/color].
+radio-jammer-component-examine-on-state = lampka jest [color=darkgreen]zapalona[/color].
+radio-jammer-component-examine-off-state = lampka jest [color=darkred]zgaszona[/color].
 
-radio-jammer-component-setting-high = High
-radio-jammer-component-setting-medium = Medium
-radio-jammer-component-setting-low = Low
+radio-jammer-component-setting-high = Wysoki
+radio-jammer-component-setting-medium = Średni
+radio-jammer-component-setting-low = Niski
 
-radio-jammer-component-set-message-high = The jammer is now operating at high power.
-radio-jammer-component-set-message-medium = The jammer is now operating at medium power.
-radio-jammer-component-set-message-low = The jammer is now operating at low power.
+radio-jammer-component-set-message-high = Zakłucacz działa z dużą mocą.
+radio-jammer-component-set-message-medium = Zakłucacz działa z średnią mocą.
+radio-jammer-component-set-message-low = Zakłucacz działa z małą mocą.
 
-radio-jammer-component-switch-setting = The power level switch is set to "[color=yellow]{$powerLevel}[/color]".
+radio-jammer-component-switch-setting = Przełącznik mocy jest ustawiony na poziom "[color=yellow]{$powerLevel}[/color]".
