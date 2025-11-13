@@ -37,14 +37,14 @@ id-card-access-level-theatre = Scena
 id-card-access-level-chapel = Kaplica
 id-card-access-level-lawyer = Prawnik
 
-id-card-access-level-maintenance = Tunele konserwacyjne
+id-card-access-level-maintenance = Tunele techniczne
 
 id-card-access-level-external = Zewnętrzny
 
-id-card-access-level-nuclear-operative = Agent jądrowy
+id-card-access-level-nuclear-operative = Specjalista Nuklearny
 id-card-access-level-syndicate-agent = Agent Syndykatu
 
-id-card-access-level-central-command = Centralne dowództwo
+id-card-access-level-central-command = Centralne Dowództwo
 
 id-card-access-level-wizard = Czarodziej
 

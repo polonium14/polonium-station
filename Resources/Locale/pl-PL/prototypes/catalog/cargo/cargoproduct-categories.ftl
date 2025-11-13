@@ -13,4 +13,4 @@ cargoproduct-category-name-medical = Medyczne
 cargoproduct-category-name-science = Rozwój
 cargoproduct-category-name-security = Bezpieczeństwo
 cargoproduct-category-name-service = Obsługa
-cargoproduct-category-name-shuttle = Statki
+cargoproduct-category-name-shuttle = Wahadłowce

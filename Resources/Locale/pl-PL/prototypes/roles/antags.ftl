@@ -24,19 +24,19 @@ roles-antag-suspicion-innocent-objective = Zdekonspiruj wszystkich zdrajców.
 roles-antag-suspicion-suspect-name = Podejżany
 roles-antag-suspicion-suspect-objective = Zabij wszystkich niewinnych.
 
-roles-antag-nuclear-operative-commander-name = Dowódzca agentów jądrowych
+roles-antag-nuclear-operative-commander-name = Dowódzca specjalistów nuklearnych
 roles-antag-nuclear-operative-commander-objective = Porpowadź swój zespół do zniszczenia stacji.
 
-roles-antag-nuclear-operative-agent-name = Sanitariusz agentów jądrowych
+roles-antag-nuclear-operative-agent-name = Sanitariusz specjalistów nuklearnych
 roles-antag-nuclear-operative-agent-objective = Podobny do typowego agenta, leczenie zespołu ma priorytet.
 
-roles-antag-nuclear-operative-name = Agent jądrowy
+roles-antag-nuclear-operative-name = Specjalista nuklearny
 roles-antag-nuclear-operative-objective = Znajdź dysk do głowycy jądrowej, i wydadź stację.
 
 roles-antag-subverted-silicon-name = Przejęty robot
 roles-antag-subverted-silicon-objective = Wykonuj swoje nowe prawa i czyń szodę dla stacji.
 
-roles-antag-space-ninja-name = Kosmiczny nindża
+roles-antag-space-ninja-name = Kosmiczny Nindża
 roles-antag-space-ninja-objective = Sabotaż stacji w ukryciu, teraz z elektroniką.
 
 roles-antag-paradox-clone-name = Klon z paradoksu
