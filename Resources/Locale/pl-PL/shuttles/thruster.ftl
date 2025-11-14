@@ -1,5 +1,5 @@
-thruster-comp-enabled = The thruster is turned [color=green]on[/color].
-thruster-comp-disabled = The thruster is turned [color=red]off[/color].
-thruster-comp-nozzle-direction = The nozzle is facing [color=yellow]{$direction}[/color].
-thruster-comp-nozzle-exposed = The nozzle [color=green]exposed[/color] to space.
-thruster-comp-nozzle-not-exposed = The nozzle [color=red]is not exposed[/color] to space.
+thruster-comp-enabled = Silnik jest [color=green]włączony[/color].
+thruster-comp-disabled = Silnik jest [color=red]wyłączony[/color].
+thruster-comp-nozzle-direction = Dysza jest skierowana na [color=yellow]{$direction}[/color].
+thruster-comp-nozzle-exposed = Dysza [color=green]jest[/color] wystawiona w kosmos.
+thruster-comp-nozzle-not-exposed = Dysza [color=red]nie jest [/color] wystawiona w kosmos.

@@ -1,10 +1,10 @@
-cmd-arrivals-enable-hint = Enables arrivals
-cmd-arrivals-disable-hint = Disables arrivals
+cmd-arrivals-enable-hint = Włącza przyloty
+cmd-arrivals-disable-hint = Wyłącza przyloty
 
-cmd-arrivals-returns = Set arrivals returns to {$value}.
-cmd-arrivals-returns-hint = Toggles allowing players to return via arrivals.
+cmd-arrivals-returns = Ustawiono powrót do portu odlotów na {$value}.
+cmd-arrivals-returns-hint = Przełącza zezwolenie graczą na powród do portu odlotów.
 
-cmd-arrivals-invalid = Invalid arg supplied.
+cmd-arrivals-invalid = Podano niepoprawny argument.
 
-cmd-arrivals-force-hint = Forces players to arrive.
-cmd-arrivals-forced = Forced {$uid} to arrive to the station.
+cmd-arrivals-force-hint = Zmusza gracza do przylotu.
+cmd-arrivals-forced = Zmuszono {$uid} do przylotu na stację.

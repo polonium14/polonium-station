@@ -1,11 +1,11 @@
-docking-component-dock = Dock
-docking-component-undock = Undock
+docking-component-dock = Dokuj
+docking-component-undock = Odłącz
 
-cmd-dock-desc = Attempts to dock 2 airlocks together. Doesn't check whether it is valid.
-cmd-dock-help = dock <airlock entityuid1> <airlock entityuid2>
+cmd-dock-desc = Próbuje przeprowadzić dokowanie między dwoma śluzami. Nie sprawdza poprawności.
+cmd-dock-help = dock <śluzami entityuid1> <śluzami entityuid2>
 
-cmd-dock-args = Invalid number of args
-cmd-dock-invalid = Invalid EntityUid {$entity}
-cmd-dock-found = No docking component found on {$airlock}
-cmd-dock-success = Successfully docked
-cmd-dock-fail = Unable to dock
+cmd-dock-args = Niepoprawna liczba argumentów
+cmd-dock-invalid = Niepoprawne EntityUid {$entity}
+cmd-dock-found = Nie znaleziono docking component na {$airlock}
+cmd-dock-success = Pomyślnie zadokowano
+cmd-dock-fail = Dokowanie niemożliwe

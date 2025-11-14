@@ -1,57 +1,57 @@
-shuttle-pilot-start = Piloting ship
-shuttle-pilot-end = Stopped piloting
+shuttle-pilot-start = Pilotujesz wahadłowiec
+shuttle-pilot-end = Przestajesz pilotować
 
-shuttle-console-in-ftl = Currently in FTL
-shuttle-console-mass = Too large to FTL
-shuttle-console-prevent = You are unable to pilot this ship
+shuttle-console-in-ftl = Napęd nad świetlny aktywny
+shuttle-console-mass = Zbyt masywny dla napędu nadświetlnego
+shuttle-console-prevent = Nie potrafisz pilotować
 
 # NAV
 
-shuttle-console-display-label = Display
+shuttle-console-display-label = Wyświetlacz
 
-shuttle-console-position = Position:
+shuttle-console-position = Pozycja:
 shuttle-console-position-value = {$X}, {$Y}
-shuttle-console-orientation = Orientation:
+shuttle-console-orientation = Kierunek:
 shuttle-console-orientation-value  = {$angle}
-shuttle-console-linear-velocity = Linear velocity:
+shuttle-console-linear-velocity = Prędkość liniowa:
 shuttle-console-linear-velocity-value = {$X}, {$Y}
-shuttle-console-angular-velocity = Angular velocity:
+shuttle-console-angular-velocity = Prędkość kontowa:
 shuttle-console-angular-velocity-value = {$angularVelocity}
 
-shuttle-console-unknown = Unknown
+shuttle-console-unknown = Nieznane
 shuttle-console-iff-label = {$name} ({$distance}m)
-shuttle-console-exclusion = Exclusion area
+shuttle-console-exclusion = Strefa wykluczona
 
-shuttle-console-nav-settings = Settings
-shuttle-console-iff-toggle = Show IFF
-shuttle-console-dock-toggle = Show docks
+shuttle-console-nav-settings = Ustawienia
+shuttle-console-iff-toggle = Wykonuj ISO
+shuttle-console-dock-toggle = Pokaż porty dokowania
 
 # MAP
 
-shuttle-console-ftl-label = FTL Status
-shuttle-console-ftl-state-Available = Available
-shuttle-console-ftl-state-Starting = Starting
-shuttle-console-ftl-state-Travelling = Travelling
-shuttle-console-ftl-state-Arriving = Arriving
-shuttle-console-ftl-state-Cooldown = Cooldown
-shuttle-console-ftl-state-Invalid = Invalid
+shuttle-console-ftl-label = Stan napędu nadświetlnego
+shuttle-console-ftl-state-Available = Dostępny
+shuttle-console-ftl-state-Starting = Uruchamiany
+shuttle-console-ftl-state-Travelling = Uruchomiony
+shuttle-console-ftl-state-Arriving = Wyłączany
+shuttle-console-ftl-state-Cooldown = Chłodzony
+shuttle-console-ftl-state-Invalid = Niepoprawny
 
-shuttle-console-map-settings = Settings
-shuttle-console-ftl-button = FTL
-shuttle-console-map-rebuild = Scan for objects
-shuttle-console-map-beacons = Show beacons
+shuttle-console-map-settings = Ustawienia
+shuttle-console-ftl-button = Napęd nadświetlny
+shuttle-console-map-rebuild = Skanuj w poszukiwaniu obiektów
+shuttle-console-map-beacons = Pokaż znaczniki
 
-shuttle-console-no-signal = No signal
+shuttle-console-no-signal = Brak sygnału
 
-shuttle-console-map-objects = Sector objects
+shuttle-console-map-objects = Obiekty w sektorze
 
 # DOCK
-shuttle-console-docked = Docked objects
+shuttle-console-docked = Zadokowane obiekty
 
-shuttle-console-view = View
-shuttle-console-undock = Undock
-shuttle-console-dock = Dock
-shuttle-console-docks-label = Docks
+shuttle-console-view = Wyświetl
+shuttle-console-undock = Odłącz
+shuttle-console-dock = Dokuj
+shuttle-console-docks-label = Doki
 
-shuttle-console-undock-fail = Undocking failed
-shuttle-console-dock-fail = Docking failed
+shuttle-console-undock-fail = Niepowodzenie odłączenia
+shuttle-console-dock-fail = Niepowodzenie dokowania

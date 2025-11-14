@@ -1,14 +1,14 @@
 # FTLdiskburner
-cmd-ftldisk-desc = Creates an FTL coordinates disk to sail to the map the given EntityID is/on
+cmd-ftldisk-desc = Tworzy dysk z współżędnymi NNŚ do mapy na której podane EntityID się znajduje
 cmd-ftldisk-help = ftldisk [EntityID]
 
-cmd-ftldisk-no-transform = Entity {$destination} has no Transform Component!
-cmd-ftldisk-no-map = Entity {$destination} has no map!
-cmd-ftldisk-no-map-comp = Entity {$destination} is somehow on map {$map} with no map component.
-cmd-ftldisk-map-not-init = Entity {$destination} is on map {$map} which is not initialized! Check it's safe to initialize, then initialize the map first or the players will be stuck in place!
-cmd-ftldisk-map-paused = Entity {$desintation} is on map {$map} which is paused! Please unpause the map first or the players will be stuck in place.
-cmd-ftldisk-planet = Entity {$desintation} is on planet map {$map} and will require an FTL point. It may already exist.
-cmd-ftldisk-already-dest-not-enabled = Entity {$destination} is on map {$map} that already has an FTLDestinationComponent, but it is not Enabled! Set this manually for safety.
-cmd-ftldisk-requires-ftl-point = Entity {$destination} is on map {$map} that requires a FTL point to travel to! It may already exist.
+cmd-ftldisk-no-transform = Byt {$destination} nie posiada Transform Component!
+cmd-ftldisk-no-map = Byt {$destination} nie jest na mapie!
+cmd-ftldisk-no-map-comp = Byt {$destination} jest na mapie {$map} bez map component.
+cmd-ftldisk-map-not-init = Byt {$destination} jest na mapie {$map} która nie została zainicjalizowana! Sprawdź czy zainicjalizowanie jest bezpieczne, i zainicjalizuj. Inaczej gracze nie będą mogli się poruszać!
+cmd-ftldisk-map-paused = Byt {$desintation} jest {$map} która jest zatrzymana! Wznów mapę, inaczej gracze nie będą mogli się poruszać.
+cmd-ftldisk-planet = Byt {$desintation} jest na mapie planetarnej {$map} map i będzie potrzebował punktu NNŚ. Może on już istnieć.
+cmd-ftldisk-already-dest-not-enabled = Byt {$destination} jest na mapie {$map} która już posiada FTLDestinationComponent, ale nie jest on aktywny! Ręcznie go ustaw dla bezpieczeństwa.
+cmd-ftldisk-requires-ftl-point = Byt {$destination} jest na mapie {$map} i potrzebuje punktu NNŚ. Może on już istnieć.
 
-cmd-ftldisk-hint = Map netID
+cmd-ftldisk-hint = NetID mapy
