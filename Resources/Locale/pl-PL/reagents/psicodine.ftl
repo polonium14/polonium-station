@@ -1,3 +1,3 @@
-psicodine-effect-fearless = You feel totally fearless!
-psicodine-effect-anxieties-wash-away = All of your anxieties wash away!
-psicodine-effect-at-peace = You feel completely at peace.
+psicodine-effect-fearless = Jesteś nieustraszony!
+psicodine-effect-anxieties-wash-away = Wszystkie twoje problemy znikają.
+psicodine-effect-at-peace = Czujesz całkowity spokój.
