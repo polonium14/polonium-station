@@ -1,5 +1,4 @@
-station-event-ion-storm-start-announcement = Burza jonowa została wykryta bilsko stacji. Proszę sprawdzić wszystkie urządzenia SI.
-
+station-event-ion-storm-start-announcement = Burza jonowa została wykryta blisko stacji. Proszę sprawdzić wszystkie urządzenia SI.
 ion-storm-law-scrambled-number = [font="Monospace"][scramble rate=250 length={$length} chars="@@###$$&%!01"/][/font]
 
 ion-storm-you = TY
