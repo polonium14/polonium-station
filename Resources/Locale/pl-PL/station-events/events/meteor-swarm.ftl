@@ -1,4 +1,4 @@
-station-event-meteor-swarm-start-announcement = Wykryto meteoroidy na kursie polizyjnym ze stacją.
+station-evenSt-meteor-swarm-start-announcement = Wykryto meteoroidy na kursie kolizyjnym ze stacją.
 station-event-meteor-swarm-end-announcement = Rój meteorów przeszedł. Proszę wrócić do stanowisk pracy.
 
 station-event-space-dust-start-announcement = Stacja przechodzi przez chumrę szczątków, należy spodziewać się drobnych uszkodzeń wyposażenia zewnętrznego.
