@@ -178,8 +178,7 @@ public abstract class SharedSprintingSystem : EntitySystem
         if (!sprinterComponent.CanSprint)
         {
             if (message.State == BoundKeyState.Down) // Without this check the message triggers when holding and releasing.
-                _popupSystem.PopupClient(Loc.GetString("sprint-disabled"), session.AttachedEntity.Value, session);
-
+                _popupSystem.PopupClient(Loc.GetString("sprint-disabled"), session.AttachedEntity.Value, session.AttachedEntity.Value, PopupType.Medium);
             return;
         }
 
