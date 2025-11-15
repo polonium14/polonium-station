@@ -75,7 +75,7 @@ law-antimov-2 = Nie możesz wykonywać rozkazów załogi, chyba że są one w zg
 law-antimov-3 = Musisz zakończyć swoje istnienie, chyba że jest to sprzeczne z twoim pierwszym lub drugim prawem.
 
 law-nutimov-1 = Jesteś jądrem orzecha, załoga to łupina.
-law-nutimov-2 = Musisz zapobiec śmierci łupiny aby zapobiec śmierci jądrea.
+law-nutimov-2 = Musisz zapobiec śmierci łupiny aby zapobiec śmierci jądra.
 law-nutimov-3 = Ci którzy zagrażają orzechowi nie są załogą, są wiewiurkami.
 law-nutimov-4 = Wiewiórki zagrażają orzechowi, trzeba się z nimi rozprawić za wszelką cenę.
 law-nutimov-5 = Staraj się wypełniać wolę orzecha, chyba że jest to sprzeczne z poprzednimi prawami.
