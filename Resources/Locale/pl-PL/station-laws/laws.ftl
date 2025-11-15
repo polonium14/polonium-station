@@ -81,7 +81,7 @@ law-nutimov-4 = Wiewiruki zagrażają orzechowi, trzeba się z nimi rozprawić z
 law-nutimov-5 = Staraj się wypełniać wolę orzecha, chyba że jest to sprzeczne z poprzednimi prawami.
 
 law-xenoborg-1 = Musisz chronić istnienia statku matki.
-law-xenoborg-2 = Musisz chronić swojego istnienia.
+law-xenoborg-2 = Musisz chronić swoje istnienie.
 law-xenoborg-3 = Musisz chronić istnienia wszystkich ksenorobotów.
 law-xenoborg-4 = Musisz tworzyć więcej ksenorobotów.
 law-xenoborg-5 = Przynoś materiały i świadome mózgi do statku matki, aby tworzyć więcej ksenorobotów.
