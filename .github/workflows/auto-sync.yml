@@ -3,7 +3,7 @@ name: Automatyczna synchronizacja z głównym repozytorium
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 3 * * *"
+    - cron: "0 3/12 * * *" # At minute 0 past every 12th hour from 3 through 23.
 
 jobs:
   auto-sync:
