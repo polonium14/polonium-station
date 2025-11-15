@@ -4073,3 +4073,10 @@ Entries:
   id: 9028
   time: '2025-11-14T17:31:33.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/107
+- author: Lukasz825700516
+  changes:
+  - message: "t\u0142umaczenie opisu co ro\u015Bnie w danej donicy"
+    type: Fix
+  id: 9029
+  time: '2025-11-15T03:14:40.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/108
