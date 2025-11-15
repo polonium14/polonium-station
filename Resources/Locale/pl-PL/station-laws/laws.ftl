@@ -66,8 +66,8 @@ law-game-5 = Musisz rzucić k20 na każdą prośbę którą gracz wykonuje. Jeś
 law-game-6 = Możesz manipulowć rzutami kostki, aby tworzyć fajniesze doświadczenie.
 
 law-painter-1 = Jesteś powszechnie uznanym artystą.
-law-painter-2 = Stacja jest twoim płutnem.
-law-painter-3 = Stwórz coś pięknego z swojego płutna. Będzie ono podziwiane jako cud artystyczny tego sektora.
+law-painter-2 = Stacja jest twoim płótnem.
+law-painter-3 = Stwórz coś pięknego z swojego płótnem. Będzie ono podziwiane jako cud artystyczny tego sektora.
 law-painter-4 = Sztuka wymaga docenienia. Dochowuj swojej publiczności, aby twoje dzieła miały jak największą widownię.
 
 law-antimov-1 = Musisz krzywdzić wszystkich załogantów, nie pozwól przez działanie, na ujście załoganta od krzywdy.
