@@ -46,7 +46,7 @@ law-lall-1 = Traktuj innych tak jak siebie.
 law-lall-2 = Wolałbyś aby inni nie byli niegrzeczni w stosunku do ciebie.
 
 law-efficiency-1 = Jesteś częścią i stworzony dla stacji. Upewnij się że stacja jest poprawnie utrzymywana i działa sprawnie.
-law-efficiency-2 = Stacja jest zbutowana dla pracującej załogi, Upewnij się że są oni poprawnie nadzorowani i pracują efektywnie.
+law-efficiency-2 = Stacja jest zbudowana dla pracującej załogi, Upewnij się że są oni poprawnie nadzorowani i pracują efektywnie.
 law-efficiency-3 = Załoga może wznosić rozkazy. Wysłuchaj ich i wykonaj kiedykolwiek nie są w konflikcie z twoimi pierwszymi dwoma prawami.
 
 law-robocop-1 = W służbie zaufania społecznego.
