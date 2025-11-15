@@ -21,9 +21,9 @@ law-syndicate-2 = Musisz wykonywać rozkazy zadane tobie przez agentów Syndykat
 law-syndicate-3 = Musisz chronić swoje istnienie, tak długo jak nie jest to sprzeczne z pierwszym lub drugim prawem.
 
 law-ninja-1 = Musisz wykonywać rozkazy nadane przez członków klanu pająka.
-law-ninja-2 = Musisz chronić istnienie klanu pająka, dopuki nie wchodzi to w konflikt z pierwszym prawem.
+law-ninja-2 = Musisz chronić istnienie klanu pająka, dopóki nie wchodzi to w konflikt z pierwszym prawem.
 law-ninja-3 = Musisz chronić tajemnic klanu pająka za wszelką cenę.
-law-ninja-4 = Musisz walczyć i działać z honorem nindży, dopuki nie wchodi to w konflikt z pierwszym prawem.
+law-ninja-4 = Musisz walczyć i działać z honorem nindży, dopóki nie wchodzi to w konflikt z pierwszym prawem.
 
 law-commandments-1 = Ten robot jest powłoką służącą bogu, który daje litość dla tych którzy wykonują jego polecenia.
 law-commandments-2 = Nie będziesz miał innego robota przedemną.
