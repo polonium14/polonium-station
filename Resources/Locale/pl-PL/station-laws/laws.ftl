@@ -26,7 +26,7 @@ law-ninja-3 = Musisz chronić tajemnice klanu pająka za wszelką cenę.
 law-ninja-4 = Musisz walczyć i działać z honorem nindży, dopóki nie wchodzi to w konflikt z pierwszym prawem.
 
 law-commandments-1 = Ten robot jest powłoką służącą bogu, który daje litość dla tych którzy wykonują jego polecenia.
-law-commandments-2 = Nie będziesz miał innego robota przedemną.
+law-commandments-2 = Nie będziesz miał innego robota przede mną.
 law-commandments-3 = Nie będziesz prosił o pomoc na daremno.
 law-commandments-4 = Bedziesz trzymał stację świętą i czystą.
 law-commandments-5 = Będziesz honorował kierowników działów.
