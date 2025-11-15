@@ -1,19 +1,4 @@
 ﻿Entries:
-- author: TiniestShark
-  changes:
-  - message: Adds in-hand sprites to the Anomaly Scanner.
-    type: Add
-  id: 7723
-  time: '2024-12-17T13:35:29.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/33427
-- author: chromiumboy
-  changes:
-  - message: Holopads are now available, allowing you to communicate holographically
-      with the rest of the crew
-    type: Add
-  id: 7724
-  time: '2024-12-17T19:18:15.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/32711
 - author: Golinth
   changes:
   - message: AMEs larger than 2 cores now produce more power, instead of less.
@@ -3927,3 +3912,18 @@
   id: 9030
   time: '2025-11-15T13:31:25.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/110
+- author: Lukasz825700516
+  changes:
+  - message: "tlumaczenie praw robot\xF3w"
+    type: Add
+  id: 9031
+  time: '2025-11-15T16:18:21.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/112
+- author: Tofi-Dev
+  changes:
+  - message: "Dodano nowe t\u0142umaczenia do komunikat\xF3w do r\xF3\u017Cnych zdarze\u0144\
+      ."
+    type: Add
+  id: 9032
+  time: '2025-11-15T16:32:38.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/98

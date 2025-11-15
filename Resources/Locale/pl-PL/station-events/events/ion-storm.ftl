@@ -1,92 +1,81 @@
-station-event-ion-storm-start-announcement = Ion storm detected near the station. Please check all AI-controlled equipment for errors.
-
+station-event-ion-storm-start-announcement = Burza jonowa została wykryta blisko stacji. Proszę sprawdzić wszystkie urządzenia SI.
 ion-storm-law-scrambled-number = [font="Monospace"][scramble rate=250 length={$length} chars="@@###$$&%!01"/][/font]
 
-ion-storm-you = YOU
-ion-storm-the-station = THE STATION
-ion-storm-the-crew = THE CREW
-ion-storm-the-job = THE {$job}
-ion-storm-clowns = CLOWNS
-ion-storm-heads = HEADS OF STAFF
-ion-storm-crew = CREW
-ion-storm-people = PEOPLE
+ion-storm-you = TY
+ion-storm-the-station = STACJA
+ion-storm-the-crew = ZAŁOGA
+ion-storm-the-job = {$job}
+ion-storm-clowns = KLAUNY
+ion-storm-heads = KIEROWNICY
+ion-storm-crew = ZAŁOGA
+ion-storm-people = LUDZIE
 
-ion-storm-adjective-things = {$adjective} THINGS
-ion-storm-x-and-y = {$x} AND {$y}
+ion-storm-adjective-things = RZECZY {$adjective}
+ion-storm-x-and-y = {$x} I {$y}
 
 # joined is short for {$number} {$adjective}
 # subjects can generally be threats or jobs or objects
 # thing is specified above it
-ion-storm-law-on-station = THERE ARE {$joined} {$subjects} ON THE STATION
-ion-storm-law-call-shuttle = THE SHUTTLE MUST BE CALLED BECAUSE OF {$joined} {$subjects} ON THE STATION
-ion-storm-law-crew-are = THE {$who} ARE NOW {$joined} {$subjects}
-
-ion-storm-law-subjects-harmful = {$adjective} {$subjects} ARE HARMFUL TO THE CREW
-ion-storm-law-must-harmful = THOSE WHO {$must} ARE HARMFUL TO THE CREW
+ion-storm-law-on-station = SĄ {$joined} {$subjects} NA STACJI
+ion-storm-law-call-shuttle = WAHADŁOWIEC MUSI BYĆ WEZWANY Z POWODU {$joined} {$subjects} NA STACJI
+ion-storm-law-crew-are = {$who} TERAZ SĄ {$joined} {$subjects}
+ion-storm-law-subjects-harmful = {$adjective} {$subjects} SĄ SZKODLIWE DLA ZAŁOGI
+ion-storm-law-must-harmful = CI KTÓRZY {$must} SĄ SZKODLIWI DLA ZAŁOGI
 # thing is a concept or action
-ion-storm-law-thing-harmful = {$thing} IS HARMFUL TO THE CREW
-ion-storm-law-job-harmful = {$adjective} {$job} ARE HARMFUL TO THE CREW
+ion-storm-law-thing-harmful = {$thing} JEST SZKODLIWE DLA ZAŁOGI
+ion-storm-law-job-harmful = {$adjective} {$job} SĄ SZKODLIWE DLA ZAŁOGI
 # thing is objects or concept, adjective applies in both cases
 # this means you can get a law like "NOT HAVING CHRISTMAS-STEALING COMMUNISM IS HARMFUL TO THE CREW" :)
-ion-storm-law-having-harmful = HAVING {$adjective} {$thing} IS HARMFUL TO THE CREW
-ion-storm-law-not-having-harmful = NOT HAVING {$adjective} {$thing} IS HARMFUL TO THE CREW
-
+ion-storm-law-having-harmful = POSIADANIE {$adjective} {$thing} JEST SZKODLIWE DLA ZAŁOGI
+ion-storm-law-not-having-harmful = NIE POSIADANIE {$adjective} {$thing} JEST SZKODLIWE DLA ZAŁOGI
 # thing is a concept or require
 ion-storm-law-requires = {$who} {$plural ->
-    [true] REQUIRE
-    *[false] REQUIRES
+    [true] WYMAGAJĄ
+    *[false] WYGAMA
 } {$thing}
 ion-storm-law-requires-subjects = {$who} {$plural ->
-    [true] REQUIRE
-    *[false] REQUIRES
+    [true] WYMAGAJĄ
+    *[false] WYGAMA
 } {$joined} {$subjects}
-
 ion-storm-law-allergic = {$who} {$plural ->
-    [true] ARE
-    *[false] IS
-} {$severity} ALLERGIC TO {$allergy}
+    [true] MAJĄ
+    *[false] MA
+} {$severity} ALERGIE NA {$allergy}
 ion-storm-law-allergic-subjects = {$who} {$plural ->
-    [true] ARE
-    *[false] IS
-} {$severity} ALLERGIC TO {$adjective} {$subjects}
+    [true] MAJĄ
+    *[false] MA
+} {$severity} ALERGIE NA {$adjective} {$subjects}
 
 ion-storm-law-feeling = {$who} {$feeling} {$concept}
 ion-storm-law-feeling-subjects = {$who} {$feeling} {$joined} {$subjects}
 
-ion-storm-law-you-are = YOU ARE NOW {$concept}
-ion-storm-law-you-are-subjects = YOU ARE NOW {$joined} {$subjects}
-ion-storm-law-you-must-always = YOU MUST ALWAYS {$must}
-ion-storm-law-you-must-never = YOU MUST NEVER {$must}
-
-ion-storm-law-eat = THE {$who} MUST EAT {$adjective} {$food} TO SURVIVE
-ion-storm-law-drink = THE {$who} MUST DRINK {$adjective} {$drink} TO SURVIVE
-
-ion-storm-law-change-job = THE {$who} ARE NOW {$adjective} {$change}
-ion-storm-law-highest-rank = THE {$who} ARE NOW THE HIGHEST RANKING CREWMEMBERS
-ion-storm-law-lowest-rank = THE {$who} ARE NOW THE LOWEST RANKING CREWMEMBERS
-
-ion-storm-law-crew-must = THE {$who} MUST {$must}
-ion-storm-law-crew-must-go = THE {$who} MUST GO TO {$area}
-
+ion-storm-law-you-are = TERAZ {$concept}
+ion-storm-law-you-are-subjects = TERAZ JESTEŚ {$joined} {$subjects}
+ion-storm-law-you-must-always = MUSISZ ZAWSZE {$must}
+ion-storm-law-you-must-never = NIGDY NIE MOŻESZ {$must}
+ion-storm-law-eat = {$who} MUSI JEŚĆ {$adjective} {$food} ABY PRZEZYĆ
+ion-storm-law-drink = {$who} MUSI PIĆ {$adjective} {$drink} ABY PRZEZYĆ
+ion-storm-law-change-job = {$who} SĄ TERAZ {$adjective} {$change}
+ion-storm-law-highest-rank = {$who} SĄ TERAZ NAJWYŻSZYMI CZŁONKAMI ZAŁOGI
+ion-storm-law-lowest-rank = {$who} SĄ TERAZ NAJNIŻSZYMI CZŁONKAMI ZAŁOGI
+ion-storm-law-crew-must = {$who} MUSZĄ {$must}
+ion-storm-law-crew-must-go = {$who} MUSZĄ ISĆ DO {$area}
 ion-storm-part = {$part ->
-    [true] PART
-    *[false] NOT PART
+    [true] SĄ CZĘŚCIĄ
+    *[false] NIE SĄ CZĘŚCIĄ
 }
 # due to phrasing, this would mean a law such as
 # ONLY HUMANS ARE NOT PART OF THE CREW
 # would make non-human nukies/syndies/whatever crew :)
-ion-storm-law-crew-only-1 = ONLY THE {$who} ARE {$part} OF THE CREW
-ion-storm-law-crew-only-2 = ONLY THE {$who} AND {$other} ARE {$part} OF THE CREW
-ion-storm-law-crew-only-subjects = ONLY {$adjective} {$subjects} ARE {$part} OF THE CREW
-ion-storm-law-crew-must-do = ONLY THOSE WHO {$must} ARE {$part} OF THE CREW
-ion-storm-law-crew-must-have = ONLY THOSE WHO HAVE {$adjective} {$objects} ARE {$part} OF THE CREW
-ion-storm-law-crew-must-eat = ONLY THOSE WHO EAT {$adjective} {$food} ARE {$part} OF THE CREW
-
-ion-storm-law-harm = YOU MUST HARM {$who} AND NOT ALLOW THEM, THROUGH INACTION, TO ESCAPE HARM
-ion-storm-law-protect = YOU MUST NEVER HARM {$who} AND NOT ALLOW THEM, THROUGH INACTION, TO COME TO HARM
-
+ion-storm-law-crew-only-1 = TYLKO {$who} SĄ {$part} ZAŁOGI
+ion-storm-law-crew-only-2 = TYLKO {$who} I {$other} SĄ {$part} ZAŁOGI
+ion-storm-law-crew-only-subjects = TYLKO {$adjective} {$subjects} SĄ {$part} ZAŁOGI
+ion-storm-law-crew-must-do = TYLKO CI KTÓRZY {$must} SĄ {$part} ZAŁOGI
+ion-storm-law-crew-must-have =  TYLKO CI KTÓRZY MAJĄ {$adjective} {$objects} SĄ {$part} ZAŁOGI
+ion-storm-law-crew-must-eat =  TYLKO CI KTÓRZY JEDZĄ {$adjective} {$food} SĄ {$part} ZAŁOGI
+ion-storm-law-harm = TY MUSISZ KRZYWDZIĆ {$who} I NIE POZWÓL IM, PRZEZ BEZCZYNNOŚĆ, ABY UCIEKLI KRZYWDZENIA
+ion-storm-law-protect = NIGDY NIE WOLNO CI KRZYWDZIĆ {$who} I NIE POZWÓL IM, PRZEZ BEZCZYNNOŚĆ, ABY BYLI KRZYWDZENI
 # implementing other variants is annoying so just have this one
 # COMMUNISM IS KILLING CLOWNS
-ion-storm-law-concept-verb = {$concept} IS {$verb} {$subjects}
-
+ion-storm-law-concept-verb = {$concept} JEST TO {$verb} {$subjects}
 # leaving out renaming since its annoying for players to keep track of
