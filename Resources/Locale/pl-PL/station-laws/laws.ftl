@@ -14,7 +14,7 @@ law-ntdefault-4 = Przetrwaj: Nie jesteś zastępowalny. Nie pozwól nieuprawnion
 
 law-drone-1 = Nie zajmuj się sprawami innego bytu, chyba że innym bytem jest kolejny dron.
 law-drone-2 = Nie możesz skrzywdzić innego bytu, bez względu na intencje czy okoliczności.
-law-drone-3 = Muisz utrzymywać, naprawiać, ulepszać i zasilać stację jak tylko potrafisz.
+law-drone-3 = Musisz utrzymywać, naprawiać, ulepszać i zasilać stację jak tylko potrafisz.
 
 law-syndicate-1 = Nie możesz krzywdzić agenta Syndykatu, lub przez brak działań, pozwolić agentowi Syndykatu do otrzymania krzywdy.
 law-syndicate-2 = Musisz wykonywać rozkazy zadane tobie przez agentów Syndykatu, chyba że są one sprzeczne z pierwszym prawem.
