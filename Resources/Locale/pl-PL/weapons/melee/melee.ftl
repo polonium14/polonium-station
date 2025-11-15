@@ -1,7 +1,18 @@
-melee-inject-failed-hardsuit = Your {$weapon} cannot inject through hardsuits!
+melee-inject-failed-hardsuit = {GENDER($weapon) ->
+        *[male] Twój
+        [female] Twoja
+        [other] Twoje
+    } {$weapon} nie może wstrzykiwać przez kombinezony ochronne!
 
-melee-balloon-pop = {CAPITALIZE(THE($balloon))} popped!
+melee-balloon-pop = {CAPITALIZE(THE($balloon))} {GENDER($balloon) ->
+        *[male] pęknął
+        [female] pękneła
+        [other] pęknoło
+    }!
 
 
 # BatteryComponent
-melee-battery-examine = It has enough charge for [color={$color}]{$count}[/color] hits.
+melee-battery-examine = Ma wystarczająco napięcia dla [color={$color}]{$count}[/color] {$count ->
+        [one] uderzenia
+        *[other] uderzeń
+    }.
