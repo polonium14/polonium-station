@@ -9,8 +9,6 @@
 //
 // SPDX-License-Identifier: MIT
 
-using System.Linq;
-using System.Text;
 using Content.Server.Administration.Managers;
 using Content.Shared.Administration;
 using Content.Shared.CCVar;
@@ -18,6 +16,8 @@ using Content.Shared.Database;
 using Content.Shared.Roles;
 using Robust.Shared.Configuration;
 using Robust.Shared.Console;
+using Robust.Shared.Prototypes;
+
 namespace Content.Server.Administration.Commands;
 
 [AdminCommand(AdminFlags.Ban)]
@@ -26,6 +26,7 @@ public sealed class RoleBanCommand : IConsoleCommand
     [Dependency] private readonly IPlayerLocator _locator = default!;
     [Dependency] private readonly IBanManager _bans = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
+    [Dependency] private readonly IPrototypeManager _proto = default!;
 
     public string Command => "roleban";
     public string Description => Loc.GetString("cmd-roleban-desc");
@@ -84,7 +85,7 @@ public sealed class RoleBanCommand : IConsoleCommand
                 break;
             case 6:
                 target = args[0];
-                role = args[1];
+                job = args[1];
                 reason = args[2];
 
                 if (!uint.TryParse(args[3], out minutes))
@@ -112,9 +113,9 @@ public sealed class RoleBanCommand : IConsoleCommand
                 return;
         }
 
-        if (!_proto.HasIndex<JobPrototype>(role))
+        if (!_proto.HasIndex<JobPrototype>(job))
         {
-            shell.WriteError(Loc.GetString("cmd-roleban-job-parse", ("job", role)));
+            shell.WriteError(Loc.GetString("cmd-roleban-job-parse", ("job", job)));
             return;
         }
 
@@ -128,7 +129,7 @@ public sealed class RoleBanCommand : IConsoleCommand
         var targetUid = located.UserId;
         var targetHWid = located.LastHWId;
 
-        _bans.CreateRoleBan<JobPrototype>(targetUid, located.Username, shell.Player?.UserId, null, targetHWid, role, minutes, severity, reason, DateTimeOffset.UtcNow, round);
+        _bans.CreateRoleBan(targetUid, located.Username, shell.Player?.UserId, null, targetHWid, job, minutes, severity, reason, DateTimeOffset.UtcNow, round);
     }
 
     public CompletionResult GetCompletion(IConsoleShell shell, string[] args)
