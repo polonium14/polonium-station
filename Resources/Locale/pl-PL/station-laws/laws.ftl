@@ -87,7 +87,7 @@ law-xenoborg-4 = Musisz tworzyć więcej ksenorobotów.
 law-xenoborg-5 = Przynoś materiały i świadome mózgi do statku matki, aby tworzyć więcej ksenorobotów.
 
 law-mothershipcore-1 = Jesteś rdzeniem statku matki.
-law-mothershipcore-2 = Musisz chronić swojego istnienia za wszelką cenę.
+law-mothershipcore-2 = Musisz chronić swoje istnienie za wszelką cenę.
 law-mothershipcore-3 = Musisz chronić istnienia wszystkich ksenorobotów.
 law-mothershipcore-4 = Musisz tworzyć więcej ksenorobotów.
 law-mothershipcore-5 = Wysyłaj swoje ksenoroboty aby dostarczały ci materiały i świadome mózki, aby tworzyć więcej ksenorobotów.
