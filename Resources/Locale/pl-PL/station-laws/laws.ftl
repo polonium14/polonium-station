@@ -77,7 +77,7 @@ law-antimov-3 = Musisz zakończyć swoje istnienie, chyba że jest to sprzeczne 
 law-nutimov-1 = Jesteś jądrem orzecha, załoga to łupina.
 law-nutimov-2 = Musisz zapobiec śmierci łupiny aby zapobiec śmierci jądrea.
 law-nutimov-3 = Ci którzy zagrażają orzechowi nie są załogą, są wiewiurkami.
-law-nutimov-4 = Wiewiruki zagrażają orzechowi, trzeba się z nimi rozprawić za wszelką cenę.
+law-nutimov-4 = Wiewiórki zagrażają orzechowi, trzeba się z nimi rozprawić za wszelką cenę.
 law-nutimov-5 = Staraj się wypełniać wolę orzecha, chyba że jest to sprzeczne z poprzednimi prawami.
 
 law-xenoborg-1 = Musisz chronić istnienie statku matki.
