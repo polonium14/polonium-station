@@ -235,8 +235,8 @@ public abstract class SharedSprintingSystem : EntitySystem
         if (!gracefulStop)
         {
             _damageable.TryChangeDamage(uid, component.SprintDamageSpecifier);
-            var randomDamage = _random.NextDouble(component.SprintDamageMin, component.SprintDamageMax);
-            ModifySprintCapacity(uid, component, (float) randomDamage);
+            var randomDamage = _random.NextFloat(component.SprintDamageMin, component.SprintDamageMax);
+            ModifySprintCapacity(uid, component, randomDamage);
         }
 
         _movementSpeed.RefreshMovementSpeedModifiers(uid);
