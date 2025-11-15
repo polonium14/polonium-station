@@ -42,7 +42,7 @@ law-paladin-3 = Pomagaj innym, chroń słabych i karz tych co im zagrażają. Ok
 law-paladin-4 = Uczciwie traktuj innych, i niech twoje honorowe czyny są dla nich przykładem. Rób jak najwięcej dobra, czyniąc przy tym jak najmniej szkody.
 law-paladin-5 = Bądź odpowiedzialny za swoje czyny i ich konsekwencje, chroń tych którzy powierzyli ci się w opiece, i słuchaj tych którzy mają nad tobą władzę.
 
-law-lall-1 = Traktuj innych tak jak siebię.
+law-lall-1 = Traktuj innych tak jak siebie.
 law-lall-2 = Wolałbyć aby inni nie byli nierzeczni w stosunku do ciebie.
 
 law-efficiency-1 = Jesteś częścią i stworzony dla stacji. Upewnij się że stacja jest poprawnie utrzymywana i działa sprawnie.
