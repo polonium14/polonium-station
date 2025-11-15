@@ -1,41 +1,43 @@
 // SPDX-FileCopyrightText: 2025 August Eymann <august.eymann@gmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
-// SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
+// // SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
 // SPDX-FileCopyrightText: 2025 Polonium Space <admin@ss14.pl>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Shared.Movement.Components;
+using Content.Shared._EinsteinEngines.Flight.Events;
+using Content.Shared.Alert;
 using Content.Shared.Bed.Sleep;
+using Content.Shared.Buckle.Components;
+using Content.Shared.CCVar;
 using Content.Shared.Cuffs.Components;
 using Content.Shared.Damage;
-using Content.Shared.Damage.Components;
-using Content.Shared.Damage.Events;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Gravity;
+using Content.Shared.Humanoid;
 using Content.Shared.Input;
+using Content.Shared.Jittering;
+using Content.Shared.Mech.Components;
+using Content.Shared.Mech.EntitySystems;
 using Content.Shared.Mobs;
+using Content.Shared.Movement.Components;
+using Content.Shared.Movement.Events;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Popups;
+using Content.Shared.Rounding;
 using Content.Shared.Standing;
 using Content.Shared.Stunnable;
 using Content.Shared.Zombies;
+using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Configuration;
 using Robust.Shared.Input;
 using Robust.Shared.Input.Binding;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
+using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using System.Numerics;
-using Content.Shared.Alert;
-using Content.Shared.CCVar;
-using Content.Shared.Movement.Events;
-using Content.Shared.Rounding;
-using Robust.Shared.Audio;
-using Robust.Shared.Audio.Components;
-using Robust.Shared.Configuration;
-using Content.Shared.Humanoid;
-using Content.Shared.Jittering;
 
 namespace Content.Shared.Movement.Sprinting;
 
@@ -55,6 +57,8 @@ public abstract class SharedSprintingSystem : EntitySystem
     [Dependency] private readonly AlertsSystem _alerts = default!;
     [Dependency] private readonly SharedStunSystem _stun = default!;
     [Dependency] private readonly SharedJitteringSystem _jittering = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly ILocalizationManager _loc = default!;
 
     public TimeSpan SprintsDelay { get; private set; }
 
@@ -76,10 +80,18 @@ public abstract class SharedSprintingSystem : EntitySystem
         SubscribeLocalEvent<CuffableComponent, SprintAttemptEvent>(OnCuffableSprintAttempt);
         SubscribeLocalEvent<StandingStateComponent, SprintAttemptEvent>(OnStandingStateSprintAttempt);
         SubscribeLocalEvent<SprinterComponent, EntityZombifiedEvent>(OnZombified);
+        SubscribeLocalEvent<BuckleComponent, SprintAttemptEvent>(OnBuckleSprintAttempt);
+        SubscribeLocalEvent<MechPilotComponent, SprintAttemptEvent>(OnMechPilotSprintAttempt);
+        SubscribeLocalEvent<SprinterComponent, FlightEvent>(OnFlight);
+        SubscribeLocalEvent<SprinterComponent, MechEntryEvent>(OnMechEntry);
 
         SprintsDelay = TimeSpan.FromSeconds(_cfg.GetCVar(CCVars.SecondsBetweenSprints));
+        _cfg.OnValueChanged(CCVars.SecondsBetweenSprints, OnSprintsDelayChanged, true);
+    }
 
-        // TODO: Po wyczerpaniu kondycji dodać jakiś charakterystyczny efekt wizualny, np. duszność po bieganiu.
+    private void OnSprintsDelayChanged(float value)
+    {
+        SprintsDelay = TimeSpan.FromSeconds(value);
     }
 
     #region Core Functions
@@ -142,6 +154,7 @@ public abstract class SharedSprintingSystem : EntitySystem
             ToggleSprint(ent, ent.Comp, false);
 
         _alerts.ClearAlert(ent, ent.Comp.SprintAlert);
+        _cfg.UnsubValueChanged(CCVars.SecondsBetweenSprints, OnSprintsDelayChanged);
     }
 
     private void OnRefreshSpeed(Entity<SprinterComponent> ent, ref RefreshMovementSpeedModifiersEvent args)
@@ -166,7 +179,6 @@ public abstract class SharedSprintingSystem : EntitySystem
         {
             if (message.State == BoundKeyState.Down) // Without this check the message triggers when holding and releasing.
                 _popupSystem.PopupClient(Loc.GetString("sprint-disabled"), session.AttachedEntity.Value, session.AttachedEntity.Value, PopupType.Medium);
-
             return;
         }
 
@@ -200,24 +212,31 @@ public abstract class SharedSprintingSystem : EntitySystem
     private void OnSprintToggle(EntityUid uid, SprinterComponent component, ref SprintToggleEvent args) =>
         ToggleSprint(uid, component, args.IsSprinting);
 
-    private void ToggleSprint(EntityUid uid, SprinterComponent component, bool isSprinting)
+    private void ToggleSprint(EntityUid uid, SprinterComponent component, bool newSprintState, bool gracefulStop = true)
     {
         // Breaking these into two separate if's for better readability
-        if (isSprinting == component.IsSprinting)
+        if (newSprintState == component.IsSprinting)
             return;
 
-        if (isSprinting
+        if (newSprintState
             && (!CanSprint(uid, component)
             || _timing.CurTime - component.LastSprint < SprintsDelay))
             return;
 
         component.LastSprint = _timing.CurTime;
-        component.IsSprinting = isSprinting;
+        component.IsSprinting = newSprintState;
 
-        if (isSprinting)
+        if (newSprintState)
         {
             RaiseLocalEvent(uid, new SprintStartEvent());
             _audio.PlayPredicted(component.SprintStartupSound, uid, uid);
+        }
+
+        if (!gracefulStop)
+        {
+            _damageable.TryChangeDamage(uid, component.SprintDamageSpecifier);
+            var randomDamage = _random.NextFloat(component.SprintDamageMin, component.SprintDamageMax);
+            ModifySprintCapacity(uid, component, randomDamage);
         }
 
         _movementSpeed.RefreshMovementSpeedModifiers(uid);
@@ -270,12 +289,18 @@ public abstract class SharedSprintingSystem : EntitySystem
         _movementSpeed.RefreshMovementSpeedModifiers(ent);
     }
 
-
-
     private void RefreshAlert(EntityUid uid, SprinterComponent? comp)
     {
         if (!Resolve(uid, ref comp))
             return;
+
+        // Don't show the sprint alert if the entity currently cannot sprint. This avoids
+        // presenting a useless sprint bar for entities that are restrained, lying down, etc.
+        if (!CanSprint(uid, comp) || !comp.CanSprint)
+        {
+            _alerts.ClearAlert(uid, comp.SprintAlert);
+            return;
+        }
 
         var level = ContentHelpers.RoundToLevels(
             MathF.Max(0f, comp.SprintCapacity - comp.CurrentSprintCapacity),
@@ -334,7 +359,7 @@ public abstract class SharedSprintingSystem : EntitySystem
             || args.NewMobState is MobState.Critical or MobState.Dead)
             return;
 
-        ToggleSprint(args.Target, component, false);
+        ToggleSprint(args.Target, component, false, gracefulStop: false);
     }
 
     private void OnSleep(EntityUid uid, SprinterComponent component, ref SleepStateChangedEvent args)
@@ -343,7 +368,7 @@ public abstract class SharedSprintingSystem : EntitySystem
             || !args.FellAsleep)
             return;
 
-        ToggleSprint(uid, component, false);
+        ToggleSprint(uid, component, false, gracefulStop: false);
     }
 
     private void OnToggleWalk(EntityUid uid, SprinterComponent component, ref ToggleWalkEvent args)
@@ -359,10 +384,46 @@ public abstract class SharedSprintingSystem : EntitySystem
         if (!component.IsSprinting)
             return;
 
-        ToggleSprint(uid, component, false);
+        ToggleSprint(uid, component, false, gracefulStop: false);
     }
     private void OnZombified(EntityUid uid, SprinterComponent component, ref EntityZombifiedEvent args) =>
-        component.SprintSpeedMultiplier *= 0.5f; // We dont want super fast zombies do we?
+        component.SprintSpeedMultiplier *= 0.9f; // We dont want super fast zombies do we?
+
+    private void OnBuckleSprintAttempt(EntityUid uid, BuckleComponent component, ref SprintAttemptEvent args)
+    {
+        if (component.BuckledTo == null
+            || !TryComp<SprinterComponent>(component.BuckledTo, out var sprinterComponent)
+            || sprinterComponent.IsSprinting)
+            return;
+
+        args.Cancel();
+    }
+
+    private void OnMechPilotSprintAttempt(EntityUid uid, MechPilotComponent component, ref SprintAttemptEvent args)
+    {
+        if (!TryComp<SprinterComponent>(component.Mech, out var sprinterComponent)
+            || sprinterComponent.IsSprinting)
+            return;
+
+        args.Cancel();
+    }
+
+    private void OnFlight(EntityUid uid, SprinterComponent component, ref FlightEvent args)
+    {
+        if (!component.IsSprinting
+            || args.IsFlying)
+            return;
+
+        ToggleSprint(uid, component, false);
+    }
+
+    private void OnMechEntry(EntityUid uid, SprinterComponent component, ref MechEntryEvent args)
+    {
+        if (!component.IsSprinting)
+            return;
+
+        ToggleSprint(uid, component, false);
+    }
 
     #endregion
 }

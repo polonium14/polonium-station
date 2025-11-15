@@ -6,12 +6,14 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared.Alert;
+using Content.Shared.Damage;
+using Content.Shared.FixedPoint;
+using Content.Shared.Humanoid;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
-using Content.Shared.Humanoid;
 
 namespace Content.Shared.Movement.Sprinting;
 
@@ -21,7 +23,7 @@ public sealed partial class SprinterComponent : Component
     /// <summary>
     ///     Is the entity currently sprinting?
     /// </summary>
-    [ViewVariables, AutoNetworkedField]
+    [AutoNetworkedField, ViewVariables(VVAccess.ReadOnly)]
     public bool IsSprinting = false;
 
     /// <summary>
@@ -70,7 +72,7 @@ public sealed partial class SprinterComponent : Component
     ///     How much do we multiply sprint speed?
     /// </summary>
     [DataField, AutoNetworkedField, ViewVariables]
-    public float SprintSpeedMultiplier = 1.35f;
+    public float SprintSpeedMultiplier = 1.25f;
 
     /// <summary>
     ///     How often the component updates its state.
@@ -100,13 +102,37 @@ public sealed partial class SprinterComponent : Component
     ///     Speed modifier applied when stamina is depleted.
     /// </summary>
     [DataField, AutoNetworkedField, ViewVariables(VVAccess.ReadWrite)]
-    public float DepletedSpeedModifier = 0.65f;
+    public float DepletedSpeedModifier = 0.7f;
 
     /// <summary>
     ///     The threshold above which sprinting is allowed again.
     /// </summary>
     [DataField, AutoNetworkedField, ViewVariables]
     public float SprintThreshold = 0.2f;
+
+    /// <summary>
+    /// Gets or sets the minimal amount of damage applied if sprinting stops abruptly.
+    /// </summary>
+    [DataField, ViewVariables]
+    public float SprintDamageMin = 0.1f;
+
+    /// <summary>
+    /// Gets or sets the maximal amount of damage applied if sprinting stops abruptly.
+    /// </summary>
+    [DataField, ViewVariables]
+    public float SprintDamageMax = 0.3f;
+
+    /// <summary>
+    ///     What damage specifier do we use if sprinting stops abruptly?
+    /// </summary>
+    [DataField, ViewVariables]
+    public DamageSpecifier SprintDamageSpecifier = new()
+    {
+        DamageDict = new Dictionary<string, FixedPoint2>
+        {
+            { "Blunt", 7 },
+        }
+    };
 
     /// <summary>
     ///     What string do we use to tag stamina drain?
