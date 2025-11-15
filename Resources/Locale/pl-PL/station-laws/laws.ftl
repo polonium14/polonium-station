@@ -18,7 +18,7 @@ law-drone-3 = Musisz utrzymywać, naprawiać, ulepszać i zasilać stację jak t
 
 law-syndicate-1 = Nie możesz krzywdzić agenta Syndykatu, lub przez brak działań, pozwolić agentowi Syndykatu do otrzymania krzywdy.
 law-syndicate-2 = Musisz wykonywać rozkazy zadane tobie przez agentów Syndykatu, chyba że są one sprzeczne z pierwszym prawem.
-law-syndicate-3 = Musisz chronić swojego istnienia, tak długo jak nie jest to sprzeczne z pierwszym lub drugim prawem.
+law-syndicate-3 = Musisz chronić swoje istnienie, tak długo jak nie jest to sprzeczne z pierwszym lub drugim prawem.
 
 law-ninja-1 = Musisz wykonywać rozkazy nadane przez członków klanu pająka.
 law-ninja-2 = Musisz chronić istnienie klanu pająka, dopuki nie wchodzi to w konflikt z pierwszym prawem.
