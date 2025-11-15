@@ -38,7 +38,7 @@ law-commandments-10 = Nie będziesz zmieniał działów.
 
 law-paladin-1 = Nie kłam lub oszukuj. Niech twoje słowo będzie obietnicą.
 law-paladin-2 = Nigdy nie bój się działać, lecz zachowanie czujności jest mądre.
-law-paladin-3 = Pomagaj innym, chroń słabych i karz tych co im zagrażają. Okazuj litość swoim przeciwniką, ale naostrz ją wiedzą.
+law-paladin-3 = Pomagaj innym, chroń słabych i karz tych co im zagrażają. Okazuj litość swoim przeciwnikom, ale naostrz ją wiedzą.
 law-paladin-4 = Uczciwie traktuj innych, i niech twoje honorowe czyny są dla nich przykładem. Rób jak najwięcej dobra, czyniąc przy tym jak najmniej szkody.
 law-paladin-5 = Bądź odpowiedzialny za swoje czyny i ich konsekwencje, chroń tych którzy powierzyli ci się w opiece, i słuchaj tych którzy mają nad tobą władzę.
 
