@@ -122,6 +122,8 @@
     netsync: false
     radius: 6
     enabled: false
+  - type: Sprinter
+    canSprint: false # Polonium edit
 
 # proto for player ghosts specifically
 - type: entity
