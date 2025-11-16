@@ -1,5 +1,5 @@
-tesla-coil-on = The tesla coil turns on.
-tesla-coil-off = The tesla coil turns off.
+tesla-coil-on = Cewka tesli zostaje włączona.
+tesla-coil-off = Cewka tesli zostaje wyłączona.
 
-tesla-grounding-on = The grounding rod turns on.
-tesla-grounding-off = The grounding rod turns off.
+tesla-grounding-on = Uziemiacz zostaje włączony.
+tesla-grounding-off = Uziemiacz zostaje wyłączony.
