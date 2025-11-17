@@ -4030,16 +4030,16 @@ ent-RandomCloneSpawner = Random Clone
 ent-MobDionaReformed = Reformed Diona
 
 # dragon.yml
-ent-ActionDevour = [color=red]Devour[/color]
-    .desc = Attempt to break a structure with your jaws or swallow a creature.
-ent-ActionDragonsBreath = [color=orange]Dragon's Breath[/color]
-    .desc = Spew out flames at anyone foolish enough to attack you!
-ent-ActionSpawnRift = Summon Carp Rift
-    .desc = Summons a carp rift that will periodically spawns carps.
-ent-BaseMobDragon = space dragon
-    .desc = A flying leviathan, loosely related to space carps.
-ent-DragonsBreathGun = dragon's lung
-    .desc = For dragon's breathing.
+ent-ActionDevour = [color=red]Pożryj[/color]
+    .desc = Spróbuj zniszczyć strukturę swoimi szczękami, lub połknąć stworzenie.
+ent-ActionDragonsBreath = [color=orange]Zionięcie[/color]
+    .desc = Wypluj kulę ognia na każdego głupca który cię zaatakuje!
+ent-ActionSpawnRift = Przyzwij karpo wyrwę
+    .desc = Przyzywa wyrwę z której okresowo wychodzić będą karpie.
+ent-BaseMobDragon = kosmiczny smok
+    .desc = Latający lewiatan, lekko spokrewniony z kosmicznymi karpiami.
+ent-DragonsBreathGun = smocze płuco
+    .desc = oddychał nim smok.
 
 # guardian.yml
 ent-ActionToggleGuardian = Toggle Guardian
