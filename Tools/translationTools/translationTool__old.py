@@ -1,6 +1,7 @@
 import os
 import sys
 import re
+from ruamel.yaml import YAML
 from datetime import datetime
 
 def extract_ftl_from_file(file_path):
@@ -10,45 +11,13 @@ def extract_ftl_from_file(file_path):
     """
     try:
         with open(file_path, 'r', encoding='utf-8') as f:
-            lines = f.readlines()
+            with YAML() as yaml:
+                document = yaml.load(f)
 
-        def is_ftl_variable(s):
-            if ' ' in s: return False
-            if '-' not in s: return False
-            return True
+            entities = {data['id']: data for data in document if 'type' in data and data['type'] == 'entity' and 'id' in data and data['id']}
 
-        found_entities = {}
-        current_id = None
-
-        line_regex = re.compile(r"(\s*)(id|name|description):\s*('|\")?(.*?)('|\")?\s*(?:#.*)?$")
-
-        for line in lines:
-            if line.strip().startswith('-'):
-                current_id = None
-
-            match = line_regex.match(line)
-
-            if not match:
-                continue
-
-            _, key, _, value, _ = match.groups()
-
-            if key == 'id':
-                entity_id = value.strip()
-                if '*' in entity_id:
-                    print(f"Info: Skipping entity with ID '{entity_id}' due to blacklisted '*' character.")
-                    current_id = None
-                else:
-                    current_id = entity_id
-                continue
-
-            if key in ['name', 'description']:
-                if current_id:
-                    if not is_ftl_variable(value):
-                        found_entities.setdefault(current_id, {})
-                        found_entities[current_id][key] = value
-
-        return found_entities
+            valid_entities = {id: entities[id] for id in entities if 'description' in entities[id] or 'name' in entities[id] }
+            return valid_entities
 
     except Exception as e:
         print(f"An unexpected error occurred while processing {file_path}: {e}")
@@ -84,7 +53,6 @@ def process_directory_and_generate_ftl(input_dir, output_ftl_path):
 
     # 2. Walk the directory and find all hardcoded entities from YAML files.
     new_data_to_append = []
-    total_new_entities = 0
     print("\n--- Comparing YAML entities with existing FTL entries ---")
 
     for root, _, files in os.walk(input_dir):
@@ -98,7 +66,6 @@ def process_directory_and_generate_ftl(input_dir, output_ftl_path):
                 for entity_id, data in entities_from_file.items():
                     if entity_id not in existing_ids:
                         new_entities_in_file[entity_id] = data
-                        total_new_entities += 1
 
                 if new_entities_in_file:
                     new_data_to_append.append((filename, new_entities_in_file))
@@ -109,27 +76,28 @@ def process_directory_and_generate_ftl(input_dir, output_ftl_path):
         needs_separator = os.path.exists(output_ftl_path) and os.path.getsize(output_ftl_path) > 0
 
         with open(output_ftl_path, 'a', encoding='utf-8') as f:
+            if new_data_to_append and needs_separator:
+                f.write(f"\n\n# === Entries Appended on {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} ===\n\n")
             for filename, entities in new_data_to_append:
-                name_written = False
+                f.write(f"\n# {filename}\n")
                 for entity_id, data in sorted(entities.items()):
-                    if 'name' in data:
-                        if not name_written:
-                            f.write(f"\n# {filename}\n")
-                            name_written = True
-                        if needs_separator:
-                            f.write(f"\n\n# === Entries Appended on {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} ===\n\n")
-                            needs_separator = False
-                        f.write(f"ent-{entity_id} = {data['name']}\n")
-                        if 'description' in data and data['description']:
-                            f.write(f"    .desc = {data['description']}\n")
-        print(f"\nSuccessfully appended {total_new_entities} new entities to '{output_ftl_path}'.")
+                    if 'name' not in data and 'description' not in data:
+                        continue
+
+                    f.write(f"ent-{entity_id} =")
+                    if 'name'  in data:
+                        f.write(f" {data['name']}")
+                    f.write("\n")
+                    if 'description' in data and data['description']:
+                        f.write(f"    .desc = {data['description']}\n")
+            print(f"\nSuccessfully appended {len(new_data_to_append)} new entities to '{output_ftl_path}'.")
     else:
         print("\nNo new hardcoded strings found to add to the FTL file.")
 
 # --- How to use the script ---
 if __name__ == "__main__":
     if len(sys.argv) < 3:
-        process_directory_and_generate_ftl("../../Resources/Prototypes", "..\Resources\Locale\pl-PL\prototypes\prototypes.ftl")
+        process_directory_and_generate_ftl("../../Resources/Prototypes", "../../Resources/Locale/pl-PL/prototypes/prototypes.ftl")
     elif len(sys.argv) == 3:
         input_directory = sys.argv[1]
         output_ftl_file = sys.argv[2]
