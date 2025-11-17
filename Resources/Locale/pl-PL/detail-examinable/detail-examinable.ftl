@@ -1,2 +1,2 @@
-﻿detail-examinable-verb-text = Detail
-detail-examinable-verb-disabled = View the object in greater detail.
+detail-examinable-verb-text = Szczegóły
+detail-examinable-verb-disabled = Przyjrzyj się obiektowi dla większych szczegółów.
