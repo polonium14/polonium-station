@@ -4038,8 +4038,10 @@ ent-ActionSpawnRift = Przyzwij karpo wyrwę
     .desc = Przyzywa wyrwę z której okresowo wychodzić będą karpie.
 ent-BaseMobDragon = kosmiczny smok
     .desc = Latający lewiatan, lekko spokrewniony z kosmicznymi karpiami.
+    .gender = male
 ent-DragonsBreathGun = smocze płuco
     .desc = oddychał nim smok.
+    .gender = neuter
 
 # guardian.yml
 ent-ActionToggleGuardian = Toggle Guardian
