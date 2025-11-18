@@ -35,6 +35,11 @@ rcd-component-lighting = Lighting
 
 ### Prototype names (note: constructable items will be puralized)
 
+rcd-component-piping = Piping
+rcd-component-atmosphericutility = Atmospheric Utility
+rcd-component-pumpsvalves = Pumps & Valves
+rcd-component-vents = Vents
+rcd-component-sensorsmonitors = Sensors & Monitors
 rcd-component-deconstruct = deconstruct
 rcd-component-floor-steel = steel tile
 rcd-component-plating = hull plate

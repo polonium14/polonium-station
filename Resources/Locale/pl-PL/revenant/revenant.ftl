@@ -14,3 +14,6 @@ revenant-soul-finish-harvest = { CAPITALIZE(THE($target)) } slumps onto the grou
 revenant-user-interface-title = Ability Shop
 revenant-user-interface-essence-amount = [color=plum]{ $amount }[/color] Stolen Essence
 revenant-user-interface-cost = { $price } Essence
+# imp begin
+revenant-revealed-default = { CAPITALIZE(THE($revealer)) } weakens your ethereal cloak!
+revenant-revealed-salt = The salt puddle weakens your ethereal cloak!

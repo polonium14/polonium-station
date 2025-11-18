@@ -1,9 +1,11 @@
 stethoscope-verb = Osłuchaj stetoskopem
 stethoscope-nothing = Nic nie słyszysz.
+stethoscope-dead = You hear nothing.
 stethoscope-normal = Słyszysz normalny oddech.
 stethoscope-raggedy = Słyszysz nierówny oddech.
 stethoscope-hyper = Słyszysz hiperwentylację.
 stethoscope-irregular = Słyszysz hiperwentylację o niestandartowym rytmie.
+stethoscope-sacrificed = You hear static.
 stethoscope-fucked = Słychać nerwowy, ciężki oddech przeplatany krótkimi sapnięciami.
 stethoscope-delta-steady = Jest stabilny.
 stethoscope-delta-improving = Robi się coraz lepiej.

@@ -57,6 +57,7 @@ flavor-base-trashy = trashy
 # Complex flavors. Put a flavor here when you want something that's more
 # specific.
 
+flavor-base-motivating = motivating
 flavor-complex-nothing = like nothing
 flavor-complex-honey = like honey
 

@@ -37,3 +37,6 @@ alert-level-epsilon-announcement =
     Centralne Dowództwo ogłosiło poziom Epsilon.
     Wszystkie kontrakty zostały zerwane.
 alert-level-epsilon-instructions = Wszystkie kontrakty zostały zerwane.
+alert-level-cyan = Cyan
+alert-level-cyan-announcement = All silicons should be avoided and treated as hostile.
+alert-level-cyan-instructions = Report any silicon activity to Security immediately.

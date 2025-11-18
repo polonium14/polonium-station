@@ -56,3 +56,5 @@ reagent-name-mechanotoxin = mechanotoxin
 reagent-desc-mechanotoxin = A neurotoxin used as venom by some species of spider. Degrades movement when built up.
 reagent-name-toxintrash = trash
 reagent-desc-toxintrash = An awful-smelling fluid. Deadly to non-vox.
+reagent-name-bz-metabolites = BZ Metabolites
+reagent-desc-bz-metabolites = A byproduct of BZ that disrupts changeling chemical reserves.

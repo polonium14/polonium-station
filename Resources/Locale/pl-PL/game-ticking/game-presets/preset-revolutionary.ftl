@@ -25,9 +25,15 @@ rev-role-greeting =
     Viva la revolución!
     
     rev-briefing = Pomóż swoim Głównym Rewolucjonistom pozbyć się dowództwa, aby przejąć kontrolę nad stacją.
+rev-lieutenant-greeting =
+    You are a Revolutionary Lieutenant.
+    You are able to see your comrades, but are unable to convert anyone.
+    Lead your department and co-ordinate with your fellow revolutionaries and head revolutionaries.
+    Viva la revolución!
 
 ## General
 
+rev-briefing = Help your head revolutionaries convert or get rid of every head to take over the station.
 rev-title = Rewolucjoniści
 rev-description = Rewolucjoniści są wśród nas.
 rev-not-enough-ready-players = Za mało graczy przygotowanych do gry. Gotowych było { $readyPlayersCount } graczy z wymaganych { $minimumPlayers }. Nie można rozpocząć Rewolucji.
@@ -42,6 +48,7 @@ rev-headrev-count =
         [one] Był jeden Główny Rewolucjonista:
        *[other] Było { $initialCount } Głównych Rewolucjonistów:
     }
+rev-total-victory = All of Command and Head Revs survived, with all of Command being converted.
 rev-headrev-name-user = [color=#5e9cff]{ $name }[/color] ([color=gray]{ $username }[/color]) skonwertował(a) { $count } { $count ->
         [one] osobę
        *[other] osoby
@@ -59,3 +66,6 @@ rev-deconverted-text =
     
     Nie jesteś już rewolucjonistą, więc zachowuj się przyzwoicie.
 rev-deconverted-confirm = Potwierdź
+rev-headrev-must-return = The Revolution is leaderless. We must return to the station within a minute!
+rev-headrev-returned = A Head Revolutionary has returned to the station, the Revolution continues!
+rev-headrev-abandoned = You have disgraced the revolution by abandoning your station. The Revolution is over.

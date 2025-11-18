@@ -35,11 +35,45 @@ ghost-role-information-silicon-rules =
     You don't remember any of your previous life, and you don't remember anything you learned as a ghost.
     You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc.
     You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
+# funkystation
+ghost-role-information-big-familiar-rules =
+    You are a [color=#6495ed][bold]Familiar[/bold][/color]. Serve the interests of your master, whatever those may be. You should generally not seek to harm the station and its crew.
+    You don't remember any of your previous life, and you don't remember anything you learned as a ghost.
+    You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc.
+    You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
 ghost-role-information-mouse-name = Mouse
+# funkystation
+ghost-role-information-skeleton-rules =
+    You are a [color=yellow][bold]Skeleton[/bold][/color]. You are a former member of crew and are considered crew.
+    Be as silly as possible.
+    You are free to self antag as long as it's funny.
+    Keep crew harm to a minimum.
+# funkystation
+ghost-role-information-neanderthal-rules =
+    You are a [color=yellow][bold]Neanderthal[/bold][/color]. You are freshly thawed out of a block of ice and have no idea where you are.
+    While your existence may be tolerated by the crew and Central Command, you are free to act as an antagonist or a non antagonist.
+    Though you are more beast than man, you should still generally follow escalation rules, as others will have to do with you.
+    You are not allowed to remember any knowledge about life or how to use objects beyond the absolute basics, such as how to swing a stick.
+    You do not understand the languages of others, nor do you possess the ability to communicate with others beyond grunting and gesturing.
+    You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
+    You are [color=red]NOT[/color] allowed to cause mass station destruction, such as releasing the singularity from containment.
+#funkystation
+ghost-role-information-shiva-name = Shiva the Spider
+ghost-role-information-shiva-description = Head Of Security's most trusted pet. First defender of the station.
+ghost-role-information-shiva-rules =
+    You are [bold]Shiva the Spider[/bold]. The Head of Security's highly trained and most trusted pet.
+    You are part of security, and as such are held to higher standards.
+    Be a good spider and dont hinder the crew. Use your fangs only when it is needed.
+    
+    You don't remember any of your previous life, and you don't remember anything you learned as a ghost.
+    You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc.
+    You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
 ghost-role-information-mouse-description = A hungry and mischievous mouse.
 ghost-role-information-mothroach-name = Mothroach
 ghost-role-information-mothroach-description = A cute but mischievous mothroach.
 ghost-role-information-snail-name = Snail
+ghost-role-information-moproach-name = Moproach
+ghost-role-information-moproach-description = A cute mothroach with more cute moplike shoes on its feet.
 ghost-role-information-snail-description = A little snail who doesn't mind a bit of space. Just stay on grid!
 ghost-role-information-snailspeed-name = Snail
 ghost-role-information-snailspeed-description = A little snail with snailborn thrusters.
@@ -76,6 +110,8 @@ ghost-role-information-kobold-description = Be the little gremlin you are, yell 
 ghost-role-information-rat-king-name = Rat King
 ghost-role-information-rat-king-description = You are the Rat King, your interests are food, food, and more food. Fight against the station for food. Did I say food interests you?
 ghost-role-information-rat-servant-name = Rat Servant
+# funkystation
+ghost-role-information-neanderthal-description = You are a freshly unfrozen neanderthal. You have no idea what is going on, where this is, what anything is, or who anyone else is.
 ghost-role-information-rat-servant-description = You are a Rat Servant. You must follow your king's orders.
 ghost-role-information-salvage-carp-name = Space Carp on Salvage Wreck
 ghost-role-information-salvage-carp-description = Defend the loot inside the salvage wreck!
@@ -119,8 +155,17 @@ ghost-role-information-skeleton-biker-description = Ride around on your sweet ri
 ghost-role-information-closet-skeleton-name = Closet Skeleton
 ghost-role-information-closet-skeleton-description = You are arguably one of the oldest members of the station! Get your old job back, or cause chaos! The world is yours to shape.
 ghost-role-information-remilia-name = Remilia, the Chaplain's Familiar
+# funkystation
+ghost-role-information-neanderthal-name = Unfrozen Neanderthal
 ghost-role-information-remilia-description = Follow and obey the chaplain. Eat fruit. Screech loudly into people's ears and write it off as echolocation.
 ghost-role-information-cerberus-name = Cerberus, Evil Familiar
+# funkystation
+ghost-role-information-centcom-intern-name = Central Command Intern
+ghost-role-information-centcom-intern-description = Respond to faxes and assist in managing affairs at central command.
+ghost-role-information-centcom-intern-rules = As a Central Command Intern you are a liason between the crew and central command officers and staff. Your job is to read and respond to faxes. You do not have authority to make promises or provide information that you have not first confirmed is up to date and accurate according to all internal resources. As a member of central command staff you are aware of and responsible for maintaining the secrecy of corporate secrets. If you have doubts about your ability to respond to a situation, either ignore it (you're just an intern after all), or ask a central command officer (admin) for assistance.
+# funkystation
+ghost-role-information-celedon-name = Celedon, Animal Lab Rescue
+ghost-role-information-celedon-description = Follow and obey the zookeeper. They must gain your trust first though, you still remember the experiments from the genetics lab on Europa.
 ghost-role-information-cerberus-description = Obey your master. Spread chaos.
 ghost-role-information-ert-leader-name = ERT Leader
 ghost-role-information-ert-leader-description = Lead a team of specialists to resolve the station's issues.
@@ -134,6 +179,7 @@ ghost-role-information-ert-security-name = ERT Security
 ghost-role-information-ert-security-description = Assist with security efforts to resolve the station's issues.
 ghost-role-information-ert-medical-name = ERT Medical
 ghost-role-information-ert-medical-description = Assist with medical efforts to resolve the station's issues.
+ghost-role-information-ert-rules = Follow the instructions of central command officials. Stick to the briefing. Deviations could result in an ERT roleban.
 ghost-role-information-cburn-agent-name = CBURN Agent
 ghost-role-information-cburn-agent-description = A highly trained CentComm agent, capable of dealing with various threats.
 ghost-role-information-centcom-official-name = CentComm Official
@@ -185,6 +231,8 @@ ghost-role-information-security-name = Security
 ghost-role-information-security-description = You are part of a security task force, but seem to have found yourself in a strange situation...
 ghost-role-information-medical-name = Medical
 ghost-role-information-medical-virologist-name = Virologist
+roles-ghost-cryopod-sleeper-name = old cryogenics pod sleeper
+roles-ghost-cryopod-sleeper-objective = Work as a team with your fellow survivors aboard a ruined, ancient space station.
 ghost-role-information-medical-geneticist-name = Geneticist
 ghost-role-information-medical-dentist-name = Dentist
 ghost-role-information-medical-description = You are a medical professional, but seem to have found yourself in a strange situation...

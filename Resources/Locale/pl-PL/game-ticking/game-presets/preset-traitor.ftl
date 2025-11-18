@@ -36,6 +36,10 @@ traitor-role-codewords =
 traitor-role-uplink-code =
     Set your ringtone to the notes [color = lightgray]{ $code }[/color] to lock or unlock your uplink.
     Remember to lock it after, or the stations crew will easily open it too!
+traitor-role-moreinfo = Find more information about your role in the character menu.
+traitor-role-nouplink = You do not have a syndicate uplink. Make it count.
+traitor-role-allegiances = Your allegiances:
+traitor-role-notes = Notes from your employer:
 traitor-role-uplink-implant =
     Your uplink implant has been activated, access it from your hotbar.
     The uplink is secure unless someone removes it from your body.

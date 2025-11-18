@@ -50,6 +50,8 @@ anomaly-sync-examine-not-connected = Nie jest [color=darkred]podłączona[/color
 anomaly-sync-connect-verb-text = Podłącz anomalię
 anomaly-sync-connect-verb-message = Podłącz pobliską anomalię do { THE($machine) }.
 anomaly-generator-ui-title = Generator anomalii
+anomaly-sync-disconnect-verb-text = Detach anomaly
+anomaly-sync-disconnect-verb-message = Detach the connected anomaly from { THE($machine) }.
 anomaly-generator-fuel-display = Paliwo:
 anomaly-generator-cooldown = Czas odnowienia: [color=gray]{ $time }[/color]
 anomaly-generator-no-cooldown = Czas odnowienia: [color=gray]Gotowe[/color]

@@ -56,11 +56,21 @@ reagent-effect-condition-guidebook-has-tag =
        *[false] has
     } the tag { $tag }
 reagent-effect-condition-guidebook-this-reagent = this reagent
+reagent-effect-condition-guidebook-blood-reagent-threshold =
+    { $max ->
+        [2147483648] there's at least { NATURALFIXED($min, 2) }u of { $reagent }
+       *[other]
+            { $min ->
+                [0] there's at most { NATURALFIXED($max, 2) }u of { $reagent }
+               *[other] there's between { NATURALFIXED($min, 2) }u and { NATURALFIXED($max, 2) }u of { $reagent }
+            }
+    }
 reagent-effect-condition-guidebook-breathing =
     the metabolizer is { $isBreathing ->
         [true] breathing normally
        *[false] suffocating
     }
+reagent-effect-condition-guidebook-ling = the target is a changeling
 reagent-effect-condition-guidebook-internals =
     the metabolizer is { $usingInternals ->
         [true] using internals

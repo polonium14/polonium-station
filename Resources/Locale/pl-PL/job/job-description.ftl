@@ -20,6 +20,7 @@ job-description-detective = Przeprowadzaj dochodzenia scen zbrodni przy użyciu 
 job-description-doctor = Diagnozuj i lecz załogantów przy pomocy chemikaliów medycznych, zaawansowanych leków i defibrylatora. Upewnij się, że martwi nie zgniją, i zwłoki są w kostnicy.
 job-description-engineer = Utrzymuj główny generator stacji i panele słoneczne działające, optymalizuj sieć energetyczną i przeprowadzaj naprawy w strefach pozbawionych atmosfery przy użyciu swojego skafandra. job-description-ertchaplain = Upewniaj się że ostatnie życzenia załogantów zostaną spełnione.
 job-description-ertengineer = Upewniaj się że stacja ma zasilanie i czyste powietrze.
+job-description-ertchaplain = Ensure the station crew's last rights are taken care of.
 job-description-ertjanitor = Upewniaj się że stacja jest odpowiednio wyczyszczona - dla morali.
 job-description-ertleader = Prowadź JSR podczas rozwiązywania problemów z zagrożeniami dla własności Nanotrasen.
 job-description-ertmedic = Upewniaj się że załoga stacji jest trzymana przy życiu i zdrowiu.
@@ -39,6 +40,7 @@ job-description-rd = Zarządzaj departamentem rozwoju, odblokowywuj technologie,
 job-description-research-assistant = Naucz sie podstaw jak badać różne artefakty, anomalie i zajmować się robotyką.
 job-description-reporter = Zabawiaj i informuj załogę przy pomocy swojego wyrazistego reporterstwa, kamer bezprzewodowych, radia i prasy.
 job-description-salvagespec = Używaj magnesu odzyskowego do zaciągania odczepionych szczątek, asteroid do odzysku wzbogacając stację. Zbuduj statek odzyskowy i podróżuj na inne planety, po drodze walcząc z nieprzyjazną fauną.
+job-description-roboticist = Build and maintain the station's silicons, repair IPCs, and create mechs & various cybernetic enchancements for the crew.
 job-description-scientist = Badaj obce artefakty, odblokowywuj technologie, buduj nowe i lepsze maszyny dla stacji i uczyń wszystko bardziej efektywnym.
 job-description-security = Łap kryminalistów i zagrożenia dla stacji, egzekwuj prawo, upewniaj się że stacja nie pogrąży się w chaosie.
 job-description-serviceworker = Naucz się podstaw barmaństwa, gotowania i sadzenia roślin.
@@ -46,3 +48,7 @@ job-description-station-ai = Wykonywuj swoje prawa, służ załodze.
 job-description-visitor = Rozkoszuj się swoją wizytą na stacji.
 job-description-warden = Patroluj departament ochrony, upewniaj się że nikt nie kradnie z arsenału, wszyscy więźniowie mają nałożone wyroki i są wypuszczeni po ich odbyciu.
 job-description-zookeeper = Wystawiaj radosne ekspozycje słodkich zwierząt i kosmicznych karpi.
+# event-restricted jobs
+job-description-command-maid = Clean the bridge, command rooms, and everything else that command tells you to.
+job-description-security-clown = Do security's job, but don't forget to do it with your clown spice.
+job-description-party-maker = Throw the biggest party ever at this station!

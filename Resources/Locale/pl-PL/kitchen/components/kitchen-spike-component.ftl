@@ -11,6 +11,8 @@ comp-kitchen-spike-deny-butcher-knife =
         [female] rozłożona
        *[other] rozłożone
     } na { THE($this) }, potrzebujesz noża aby { OBJECT($victim) } rozłożyć
+comp-kitchen-spike-deny-changeling = { CAPITALIZE(THE($victim)) } resists being put on { THE($this) }.
+comp-kitchen-spike-deny-absorbed = { CAPITALIZE(THE($victim)) } has nothing left to butcher.
 comp-kitchen-spike-deny-not-dead =
     { CAPITALIZE(THE($victim)) } nie może być powieszony na { THE($this) }, { $victim } nie jest { GENDER($victim) ->
         [male] martwy

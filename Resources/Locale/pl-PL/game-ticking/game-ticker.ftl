@@ -29,11 +29,13 @@ game-ticker-no-map-selected = [color=yellow]Mapa nie została jeszcze wybrana![/
 game-ticker-player-no-jobs-available-when-joining = Podczas próby dołączenia do gry nie było dostępnych żadnych stanowisk.
 # Displayed in chat to admins when a player joins
 player-join-message = Gracz { $name } dołączył.
+game-ticker-player-no-character-for-job-available-when-joining = When attempting to join the game, no characters were available for selected job { $job }.
 player-first-join-message = Gracz { $name } dołączył po raz pierwszy.
 # Displayed in chat to admins when a player leaves
 player-leave-message = Gracz { $name } opuścił grę.
 latejoin-arrival-announcement = { $character } ({ $job }) przybył(a) na stację!
 latejoin-arrival-announcement-special = { $job } { $character } na pokładzie!
+latejoin-arrival-announcement-ai = Station AI "{ $character }" loaded and running.
 latejoin-arrival-sender = Stacja
 latejoin-arrivals-direction = Wahadłowiec, który przetransportuje cię na stację, wkrótce przybędzie.
 latejoin-arrivals-direction-time = Wahadłowiec, który przetransportuje cię na stację, przybędzie za { $time }.

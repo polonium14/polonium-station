@@ -6,6 +6,7 @@ shuttle-console-prevent = Nie potrafisz pilotować
 
 # NAV
 
+shuttle-console-static = Grid is static
 shuttle-console-display-label = Wyświetlacz
 shuttle-console-position = Pozycja:
 shuttle-console-position-value = { $X }, { $Y }
