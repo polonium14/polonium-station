@@ -4,5 +4,4 @@ cloning-pod-biomass = Obecnie posiada [color=red]{$number}[/color] {$number ->
         [many] jedontek
         *[other] jednostki
     } biomasy.
-
 cloning-pod-component-upgrade-emag-requirement = Karta spala coś wewnątrz komory klonowania.

@@ -24,7 +24,6 @@ cloning-console-component-msg-already-cloning = Błąd: komora klonowania jest u
 cloning-console-component-msg-incomplete = Błąd: klonowanie w trakcie
 cloning-console-component-msg-no-cloner = Błąd: brak dawcy
 cloning-console-component-msg-no-mind = Błąd: brak śladu duszy
-
 cloning-console-chat-error = Błąd: niewystarczająca biomasa. Klonowanie tego ciała wymaga {$units} {$units ->
         [one] jednostki
         *[others] jednostek

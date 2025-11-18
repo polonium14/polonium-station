@@ -34,4 +34,3 @@ thankyou-syndiedrobe-2 = Śmierć NT!
 thankyou-syndiedrobe-3 = Pokaż im moc stylu.
 thankyou-syndiedrobe-4 = Udanych mordów!
 thankyou-syndiedrobe-5 = Ciesz się swoją krwawą ucztą!
-
