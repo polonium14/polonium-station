@@ -1,11 +1,11 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 264.0.0
+  engineVersion: 266.0.0
   forkId: ""
   forkVersion: ""
-  time: 09/29/2025 23:15:55
-  entityCount: 4412
+  time: 11/18/2025 19:35:57
+  entityCount: 4426
 maps:
 - 1
 grids:
@@ -143,7 +143,6 @@ entities:
     - type: OccluderTree
     - type: SpreaderGrid
     - type: Shuttle
-      dampingModifier: 0.25
     - type: Gravity
       gravityShakeSound: !type:SoundPathSpecifier
         path: /Audio/Effects/alert.ogg
@@ -1112,7 +1111,8 @@ entities:
           1,1:
             0: 56559
           1,2:
-            0: 61133
+            2: 1
+            0: 61132
           1,3:
             0: 61422
           1,-1:
@@ -1161,7 +1161,7 @@ entities:
             1: 51340
           -3,0:
             0: 28672
-            2: 238
+            3: 238
           -3,1:
             0: 127
             1: 28672
@@ -1175,13 +1175,13 @@ entities:
           -3,2:
             1: 44661
           -3,-1:
-            2: 57344
+            3: 57344
             0: 2286
           -3,4:
             0: 2730
             1: 1092
           -2,0:
-            2: 17
+            3: 17
             0: 61646
           -2,1:
             0: 62207
@@ -1192,7 +1192,7 @@ entities:
             1: 15
             0: 58608
           -2,-1:
-            2: 4096
+            3: 4096
             0: 51379
           -2,4:
             0: 2730
@@ -1216,7 +1216,7 @@ entities:
             0: 65535
           1,-3:
             0: 30710
-            3: 32768
+            4: 32768
           1,-2:
             0: 61695
           2,-2:
@@ -1239,7 +1239,7 @@ entities:
             0: 62705
           4,-2:
             0: 50431
-            4: 8192
+            2: 8192
           4,-1:
             0: 59135
             5: 4096
@@ -1419,7 +1419,8 @@ entities:
             1: 17600
           4,-7:
             1: 241
-            0: 61454
+            9: 4096
+            0: 57358
           4,-6:
             0: 29183
           -2,-6:
@@ -1498,9 +1499,48 @@ entities:
           - 0
           - 0
           - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
         - volume: 2500
           immutable: True
           moles:
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+        - volume: 2500
+          temperature: 293.14975
+          moles:
+          - 20.078888
+          - 75.53487
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
           - 0
           - 0
           - 0
@@ -1528,6 +1568,14 @@ entities:
           - 0
           - 0
           - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
         - volume: 2500
           temperature: 293.15
           moles:
@@ -1541,13 +1589,6 @@ entities:
           - 0
           - 0
           - 0
-          - 0
-          - 0
-        - volume: 2500
-          temperature: 293.14975
-          moles:
-          - 20.078888
-          - 75.53487
           - 0
           - 0
           - 0
@@ -1573,6 +1614,14 @@ entities:
           - 0
           - 0
           - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
         - volume: 2500
           temperature: 293.15
           moles:
@@ -1588,6 +1637,14 @@ entities:
           - 0
           - 0
           - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
         - volume: 2500
           temperature: 293.15
           moles:
@@ -1603,9 +1660,48 @@ entities:
           - 0
           - 0
           - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
         - volume: 2500
           temperature: 293.15
           moles:
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+        - volume: 2500
+          temperature: 293.15
+          moles:
+          - 21.6852
+          - 81.57766
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
           - 0
           - 0
           - 0
@@ -1624,7 +1720,6 @@ entities:
     - type: NavMap
     - type: BecomesStation
       id: Chibi
-    - type: ImplicitRoof
 - proto: AirAlarm
   entities:
   - uid: 1121
@@ -9883,13 +9978,6 @@ entities:
     - type: Transform
       pos: 17.5,1.5
       parent: 2
-- proto: ChemistryBottleRobustHarvest
-  entities:
-  - uid: 593
-    components:
-    - type: Transform
-      pos: 7.1047587,1.5248886
-      parent: 2
 - proto: ChemistryHotplate
   entities:
   - uid: 334
@@ -9949,6 +10037,32 @@ entities:
     - type: Transform
       pos: 4.5,8.5
       parent: 2
+    - type: EntityStorage
+      air:
+        volume: 200
+        immutable: False
+        temperature: 293.14673
+        moles:
+        - 1.7459903
+        - 6.568249
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
   - uid: 3652
     components:
     - type: Transform
@@ -10149,6 +10263,8 @@ entities:
     - type: Transform
       parent: 1542
     - type: Physics
+      angularDamping: 0
+      linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
 - proto: ClothingNeckCloakHos
@@ -10185,19 +10301,6 @@ entities:
     components:
     - type: Transform
       pos: 17.088219,-22.759909
-      parent: 2
-- proto: ComfyChair
-  entities:
-  - uid: 1414
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -0.5,14.5
-      parent: 2
-  - uid: 1415
-    components:
-    - type: Transform
-      pos: -0.5,16.5
       parent: 2
 - proto: CommsComputerCircuitboard
   entities:
@@ -10635,6 +10738,11 @@ entities:
     - type: Transform
       pos: 28.5,-1.5
       parent: 2
+  - uid: 4422
+    components:
+    - type: Transform
+      pos: 22.5,-25.5
+      parent: 2
 - proto: CrateFreezer
   entities:
   - uid: 618
@@ -10650,6 +10758,14 @@ entities:
         moles:
         - 1.7459903
         - 6.568249
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
         - 0
         - 0
         - 0
@@ -10743,6 +10859,44 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 11.5,9.5
+      parent: 2
+- proto: CryoPodMachineCircuitboard
+  entities:
+  - uid: 1415
+    components:
+    - type: Transform
+      parent: 1542
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+    - type: InsideEntityStorage
+- proto: CrystalSpawner
+  entities:
+  - uid: 4417
+    components:
+    - type: Transform
+      pos: 9.5,1.5
+      parent: 2
+  - uid: 4418
+    components:
+    - type: Transform
+      pos: 9.5,0.5
+      parent: 2
+  - uid: 4419
+    components:
+    - type: Transform
+      pos: 3.5,-14.5
+      parent: 2
+  - uid: 4420
+    components:
+    - type: Transform
+      pos: 9.5,-9.5
+      parent: 2
+  - uid: 4421
+    components:
+    - type: Transform
+      pos: 2.5,-7.5
       parent: 2
 - proto: CutterMachine
   entities:
@@ -22050,6 +22204,14 @@ entities:
         - 0
         - 0
         - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
     - type: ContainerContainer
       containers:
         entity_storage: !type:Container
@@ -22086,6 +22248,14 @@ entities:
         - 0
         - 0
         - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
     - type: ContainerContainer
       containers:
         entity_storage: !type:Container
@@ -22112,8 +22282,16 @@ entities:
         immutable: False
         temperature: 293.14673
         moles:
-        - 1.7459903
-        - 6.568249
+        - 1.8856695
+        - 7.0937095
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
         - 0
         - 0
         - 0
@@ -22130,6 +22308,9 @@ entities:
           showEnts: False
           occludes: True
           ents:
+          - 593
+          - 1414
+          - 1415
           - 3773
         paper_label: !type:ContainerSlot
           showEnts: False
@@ -22220,6 +22401,14 @@ entities:
         moles:
         - 1.7459903
         - 6.568249
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
         - 0
         - 0
         - 0
@@ -22680,9 +22869,15 @@ entities:
       parent: 2
     - type: Paper
       stampedBy:
-      - stampedColor: '#2F4F4FFF'
+      - hasIcon: True
+        stampFont: null
+        stampLargeIcon: null
+        stampedColor: '#2F4F4FFF'
         stampedName: Colin_Tel
-      - stampedColor: '#006600FF'
+      - hasIcon: True
+        stampFont: null
+        stampLargeIcon: null
+        stampedColor: '#006600FF'
         stampedName: stamp-component-stamped-name-centcom
       content: >-
         Chibi - noun - Japanese
@@ -23622,12 +23817,33 @@ entities:
     - type: Transform
       pos: 0.5,-14.5
       parent: 2
+- proto: RandomChairSpawner
+  entities:
+  - uid: 4413
+    components:
+    - type: Transform
+      pos: -0.5,16.5
+      parent: 2
+- proto: RandomDonkpocketSpawner
+  entities:
+  - uid: 4414
+    components:
+    - type: Transform
+      pos: 25.5,4.5
+      parent: 2
 - proto: RandomInstruments
   entities:
   - uid: 3785
     components:
     - type: Transform
       pos: 0.5,6.5
+      parent: 2
+- proto: RandomMaintLockerSpawner50
+  entities:
+  - uid: 4425
+    components:
+    - type: Transform
+      pos: -9.5,-6.5
       parent: 2
 - proto: RandomPainting
   entities:
@@ -23823,6 +24039,11 @@ entities:
     - type: Transform
       pos: -6.5,8.5
       parent: 2
+  - uid: 4426
+    components:
+    - type: Transform
+      pos: 6.5,-3.5
+      parent: 2
 - proto: RandomSpawner
   entities:
   - uid: 4126
@@ -23935,6 +24156,25 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 13.5,-7.5
+      parent: 2
+- proto: RandomTankSpawner
+  entities:
+  - uid: 4415
+    components:
+    - type: Transform
+      pos: 17.5,-26.5
+      parent: 2
+  - uid: 4423
+    components:
+    - type: Transform
+      pos: 21.5,-25.5
+      parent: 2
+- proto: RandomToolboxSpawner50
+  entities:
+  - uid: 4424
+    components:
+    - type: Transform
+      pos: 4.5,7.5
       parent: 2
 - proto: RandomVending
   entities:
@@ -25458,6 +25698,13 @@ entities:
     - type: Transform
       pos: 12.5,13.5
       parent: 2
+- proto: SpawnMobCrab
+  entities:
+  - uid: 4416
+    components:
+    - type: Transform
+      pos: 9.5,-22.5
+      parent: 2
 - proto: SpawnMobCrabAtmos
   entities:
   - uid: 4247
@@ -25908,6 +26155,17 @@ entities:
     - type: Transform
       pos: 15.5,11.5
       parent: 2
+- proto: SubstationMachineCircuitboard
+  entities:
+  - uid: 1414
+    components:
+    - type: Transform
+      parent: 1542
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+    - type: InsideEntityStorage
 - proto: SuitStorageAtmos
   entities:
   - uid: 540
@@ -26936,6 +27194,17 @@ entities:
           - Off
         - - Middle
           - Off
+- proto: VaccinatorMachineCircuitboard
+  entities:
+  - uid: 593
+    components:
+    - type: Transform
+      parent: 1542
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+    - type: InsideEntityStorage
 - proto: VendingBarDrobe
   entities:
   - uid: 1061
