@@ -18,13 +18,13 @@ gun-FullAuto = automatyczny
 gun-ballistic-cycle = Przeładuj
 gun-ballistic-cycled = Przeładowano
 gun-ballistic-cycled-empty = Przeładowano (pusty)
-gun-ballistic-transfer-invalid = {CAPITALIZE(THE($ammoEntity))} nie mieści się w {THE($targetEntity)}!
-gun-ballistic-transfer-empty = {CAPITALIZE(THE($entity))} jest {GENDER($entity) ->
+gun-ballistic-transfer-invalid = {CAPITALIZE($ammoEntity)} nie mieści się w {$targetEntity}!
+gun-ballistic-transfer-empty = {CAPITALIZE($entity)} jest {GENDER($entity) ->
         *[male] pusty
         [female] pusta
         [other] puste
     }.
-gun-ballistic-transfer-target-full = {CAPITALIZE(THE($entity))} już jest {GENDER($entity) ->
+gun-ballistic-transfer-target-full = {CAPITALIZE($entity)} już jest {GENDER($entity) ->
         *[male] załadowany
         [female] załadowana
         [other] załadowane
