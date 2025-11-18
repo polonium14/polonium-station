@@ -1,0 +1,9 @@
+ent-MailSecurityPracticeShotgun = { ent-BaseMailLarge }
+    .suffix = Practice Shotgun
+    .desc = { ent-BaseMailLarge.desc }
+ent-MailSecurityPracticeBomb = { ent-BaseMailLarge }
+    .suffix = Practice Syndicate Bomb
+    .desc = { ent-BaseMailLarge.desc }
+ent-MailSecurityFlareShells = { ent-BaseMailLarge }
+    .suffix = Flare Shells
+    .desc = { ent-BaseMailLarge.desc }

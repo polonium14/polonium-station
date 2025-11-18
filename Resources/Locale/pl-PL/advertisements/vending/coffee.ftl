@@ -1,4 +1,4 @@
-﻿advertisement-coffee-1 = Napij się!
+advertisement-coffee-1 = Napij się!
 advertisement-coffee-2 = Pij do dna!
 advertisement-coffee-3 = To dobre dla ciebie!
 advertisement-coffee-4 = Masz ochotę na gorącą kawkę?

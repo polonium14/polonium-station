@@ -1,0 +1,12 @@
+ent-BaseWeaponPistol = BasePistol
+    .desc = A rooty tooty point and shooty.
+ent-WeaponPistolViper = viper
+    .desc = A small, easily concealable, but somewhat underpowered gun. Retrofitted with a fully automatic receiver. Uses .35 auto ammo.
+ent-WeaponPistolEchis = echis
+    .desc = A viper for use by cyborgs. Creates .35 ammo on the fly from an internal ammo fabricator, which slowly self-charges.
+ent-WeaponPistolCobra = cobra
+    .desc = Integrally suppressed semi-automatic pistol used by the Syndicate, firing caseless subsonic rounds. Favored by any agent who likes to keep things quiet and leave no evidence behind. Feeds from .25 pistol magazines.
+ent-WeaponPistolMk58 = mk 58
+    .desc = A cheap, ubiquitous sidearm, produced by a NanoTrasen subsidiary. Uses .35 auto ammo.
+ent-WeaponPistolN1984 = N1984
+    .desc = An exceptionally powerful ‘hand cannon’ designed as part of Nanotrasen's BFG initiative. Chambered in .45, the lord’s caliber, it is generally considered too unwieldy for standard use but has become something of a status symbol among Nanotrasen officials. Feeds from .45 pistol magazines.

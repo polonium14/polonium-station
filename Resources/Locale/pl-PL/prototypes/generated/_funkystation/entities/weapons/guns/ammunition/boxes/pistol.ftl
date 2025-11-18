@@ -1,0 +1,10 @@
+ent-BaseMagazineBoxPistolLarge = ammunition box (.50 AE)
+    .desc = { ent-BaseItem.desc }
+ent-MagazineBoxPistolLarge = ammunition box (.50 AE)
+    .desc = { ent-BaseMagazineBoxPistolLarge.desc }
+ent-MagazineBoxPistolLargePractice = ammunition box (.50 AE practice)
+    .desc = { ent-BaseMagazineBoxPistolLarge.desc }
+ent-MagazineBoxPistolLargeIncendiary = ammunition box (.50 AE incendiary)
+    .desc = { ent-BaseMagazineBoxPistolLarge.desc }
+ent-MagazineBoxPistolLargeUranium = ammunition box (.50 AE uranium)
+    .desc = { ent-BaseMagazineBoxPistolLarge.desc }

@@ -1,0 +1,16 @@
+ent-RadioHandheldSyndicate = syndicate radio
+    .desc = A tiny listening device which relays what it hears to the syndicate radio channel. It does not have a speaker.
+ent-RadioHandheldService = service handheld radio
+    .desc = A handheld radio tuned to the service radio frequency.
+ent-RadioHandheldCargo = supply handheld radio
+    .desc = A handheld radio tuned to the supply radio frequency.
+ent-RadioHandheldEngineering = engineering handheld radio
+    .desc = A handheld radio tuned to the engineering radio frequency.
+ent-RadioHandheldMedical = medical handheld radio
+    .desc = A handheld radio tuned to the medical radio frequency.
+ent-RadioHandheldEmergency = emergency handheld radio
+    .desc = You already know I'm obsessed with it. Can't get enough.
+ent-RadioHandheldScience = science handheld radio
+    .desc = A handheld radio tuned to the science radio frequency.
+ent-RadioHandheldCommand = command handheld radio
+    .desc = A handheld radio tuned to the command radio frequency.
