@@ -3,7 +3,6 @@
 reagent-grinder-bound-user-interface-instant-button = NATYCHMIASTOWO
 reagent-grinder-bound-user-interface-cook-time-label = CZAS MIELENIA
 reagent-grinder-component-cannot-put-entity-message = Nie możesz tego włożyć do młynka!
-
 grinder-menu-title = Młynek wszystko-w-jednym 3000
 grinder-menu-grind-button = Rozgniatanie
 grinder-menu-juice-button = Wyciskanie

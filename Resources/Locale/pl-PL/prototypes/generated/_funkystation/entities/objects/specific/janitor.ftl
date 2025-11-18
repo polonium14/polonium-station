@@ -1,0 +1,11 @@
+ent-WetFloorSignSlippery = wet floor sign
+    .desc = Caution! Wet Floor!
+    .suffix = Slippery
+ent-MopSheath = mop
+    .desc = A mop that can't be stopped, viscera cleanup detail awaits.
+    .suffix = Blade
+ent-MopSheathFilled = { ent-MopSheath }
+    .suffix = Filled
+    .desc = { ent-MopSheath.desc }
+ent-MopSword = mop sword
+    .desc = Cleaning just got a whole new meaning.

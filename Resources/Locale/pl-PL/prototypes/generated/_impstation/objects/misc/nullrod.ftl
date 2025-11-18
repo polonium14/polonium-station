@@ -1,0 +1,12 @@
+ent-NullRodBase = null rod
+    .desc = { ent-BaseItem.desc }
+ent-NullRodDefault = null rod
+    .desc = The old classic. Does nothing special, really. Imbued with a powerful mote of divine favor, allowing it to permanently take on a new form - but only once.
+ent-NullRodRosary = silvered rosary
+    .desc = An expensive-looking rosary, made from silver. Exudes somewhat soothing vibes. Nice!
+ent-NullRodGrail = gildgrail
+    .desc = Looks so expensive, it's almost concerning. Can hold a large volume of liquid, and apparate holy water.
+ent-NullRodGlove = divine grasp
+    .desc = The touch of god! Or whatever you believe in, really. I don't think the gauntlet cares.
+ent-NullRodBow = aureole arc
+    .desc = Wrought from ornately carved synthwood, this golden-inlaid bow hums with a preternatural power.

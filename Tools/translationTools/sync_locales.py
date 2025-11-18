@@ -1,3 +1,7 @@
+# Skrypt autorstwa DmitryChevich
+# Synchronizuje pliki lokalizacji en-US z pl-PL
+# Alternatywne podejście do Tools/translationTools/keyfinder.py
+
 import shutil
 from pathlib import Path
 

@@ -3,7 +3,6 @@
 # Bound Interface
 
 gas-canister-bound-user-interface-title = Kanister z gazem
-
 # Popup
 gas-canister-popup-denied = Dostęp zabroniony
 
@@ -17,4 +16,4 @@ gas-canister-window-release-pressure-label = Ciśnienie wypuszczania:
 gas-canister-window-valve-label = Zawór:
 gas-canister-window-valve-closed-text = Zamknięty
 gas-canister-window-valve-open-text = Otwarty
-gas-canister-window-pressure-format-text = {$pressure} kPa
+gas-canister-window-pressure-format-text = { $pressure } kPa

@@ -1,12 +1,11 @@
-player-panel-title = informacja o {$player}
-player-panel-username = Nazwa użytkownika: {$player}
+player-panel-title = informacja o { $player }
+player-panel-username = Nazwa użytkownika: { $player }
 player-panel-whitelisted = Na białej liście:
-player-panel-bans = Łącznie banów: {$totalBans}
-player-panel-rolebans = Łącznie banów ról: {$totalRoleBans}
-player-panel-notes = Łącznie notatek: {$totalNotes}
-player-panel-playtime = Łączny czas gry: {$days}d:{$hours}h:{$minutes}m
-player-panel-shared-connections = Współdzielonych Połączeń: {$sharedConnections}
-
+player-panel-bans = Łącznie banów: { $totalBans }
+player-panel-rolebans = Łącznie banów ról: { $totalRoleBans }
+player-panel-notes = Łącznie notatek: { $totalNotes }
+player-panel-playtime = Łączny czas gry: { $days }d:{ $hours }h:{ $minutes }m
+player-panel-shared-connections = Współdzielonych Połączeń: { $sharedConnections }
 player-panel-copy-username = Kopiuj
 player-panel-show-notes = Notatki
 player-panel-show-bans = Pokaż Bany
