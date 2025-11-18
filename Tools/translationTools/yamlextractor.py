@@ -2,6 +2,8 @@
 
 # Taken from Corvax - https://github.com/space-syndicate/space-station-14/tree/master/Tools/ss14_ru
 
+# generuje pliki do folderu Resources/Locale/en-US/prototypes/generated i Resources/Locale/pl-PL/prototypes/generated
+
 import os
 
 from fluent.syntax.parser import FluentParser
