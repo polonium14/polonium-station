@@ -1,5 +1,4 @@
-generator-clogged = {CAPITALIZE(THE($generator))} nagle się wyłącza!
-
+generator-clogged = { CAPITALIZE(THE($generator)) } nagle się wyłącza!
 portable-generator-verb-start = Uruchom generator
 portable-generator-verb-start-msg-unreliable = Uruchom generator, może wymagać paru prób.
 portable-generator-verb-start-msg-reliable = Uruchom generator.
@@ -7,7 +6,6 @@ portable-generator-verb-start-msg-unanchored = Generator musi być najpierw przy
 portable-generator-verb-stop = Zatrzymaj generator
 portable-generator-start-fail = Ciągniesz za linkę, ale on się nie uruchamia.
 portable-generator-start-success = Ciągniesz za linkę, i zaczyna on burgotać się do życia.
-
 portable-generator-ui-title = Przenośny generator
 portable-generator-ui-status-stopped = Zatrzymany:
 portable-generator-ui-status-starting = Uruchamia się:
@@ -22,19 +20,17 @@ portable-generator-ui-clogged = Zanieczyszczenia wykryte w zbiorniku paliwa!
 portable-generator-ui-eject = Wyjmij
 portable-generator-ui-eta = (~{ $minutes } min.)
 portable-generator-ui-unanchored = Odkręcony
-portable-generator-ui-current-output = Obecne napięcie: {$voltage}
+portable-generator-ui-current-output = Obecne napięcie: { $voltage }
 portable-generator-ui-network-stats = Sieć:
 portable-generator-ui-network-stats-value = { POWERWATTS($supply) } / { POWERWATTS($load) }
 portable-generator-ui-network-stats-not-connected = Nie podłączone
-
-power-switchable-generator-examine = Napięcie wyjściowe ustawiona na {$voltage}.
-power-switchable-generator-switched = Przełączono na {$voltage}!
-
-power-switchable-voltage = { $voltage ->
-    [HV] [color=orange]WN[/color]
-    [MV] [color=yellow]ŚN[/color]
-    *[LV] [color=green]NN[/color]
-}
-power-switchable-switch-voltage = Przełącz na {$voltage}
-
+power-switchable-generator-examine = Napięcie wyjściowe ustawiona na { $voltage }.
+power-switchable-generator-switched = Przełączono na { $voltage }!
+power-switchable-voltage =
+    { $voltage ->
+        [HV] [color=orange]WN[/color]
+        [MV] [color=yellow]ŚN[/color]
+       *[LV] [color=green]NN[/color]
+    }
+power-switchable-switch-voltage = Przełącz na { $voltage }
 fuel-generator-verb-disable-on = Najpierw wyłącz generator!

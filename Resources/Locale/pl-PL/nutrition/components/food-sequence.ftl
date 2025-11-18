@@ -38,6 +38,7 @@ food-sequence-content-chevre = chèvre
 food-sequence-content-tofu = tofu
 food-sequence-content-brain = brain
 food-sequence-content-tongue = tongue
+food-sequence-content-animal-brain = animal brain
 food-sequence-content-ears = ear
 food-sequence-content-stomach = stomach
 food-sequence-content-liver = liver
@@ -45,6 +46,7 @@ food-sequence-content-clump = clump
 food-sequence-content-raw-meat = raw meat
 food-sequence-content-meat = meat
 food-sequence-content-carp = carp meat
+food-sequence-content-cooked-bacon = bacon
 food-sequence-content-bear = bear meat
 food-sequence-content-penguin = penguin meat
 food-sequence-content-corgi = corgi meat
@@ -53,6 +55,8 @@ food-sequence-content-rat = rat
 food-sequence-content-lizard = lizard meat
 food-sequence-content-plant = plant meat
 food-sequence-content-rotten = rotten meat
+food-sequence-content-mystery-meat = mystery meat
+food-sequence-content-mysterycutlet-cooked = mystery cutlet
 food-sequence-content-spider = spider legs
 food-sequence-content-carrot = carrot
 food-sequence-content-cabbage = cabbage
@@ -80,8 +84,16 @@ food-sequence-content-anomaly-berry = anomaly berry
 
 # BURGERS
 
-food-sequence-burger-gen = {$content}burger
-
+food-sequence-content-patty = meat patty
+food-sequence-content-dragon-cooked = dragon steak
+food-sequence-content-dragoncutlet-cooked = dragon cutlet
+food-sequence-content-bacon-cooked = bacon
+food-sequence-content-meatball-cooked = meatball
+food-sequence-content-chanterelle = chanterelle
+food-sequence-content-chevre-disk = chevre
+food-sequence-content-tofu-slice = tofu
+food-sequence-content-roingus = roingus
+food-sequence-burger-gen = { $content }burger
 food-sequence-burger-content-raw-meat = raw
 food-sequence-burger-content-meat = meaty
 food-sequence-burger-content-carp = carpo
@@ -123,8 +135,7 @@ food-sequence-burger-content-world-pea = peace
 
 # COTTON BURGERS
 
-food-sequence-cotton-burger-gen = {$content}burger
-
+food-sequence-cotton-burger-gen = { $content }burger
 food-sequence-cotton-burger-content-cotton-bol = cotton
 food-sequence-cotton-burger-content-pyrotton-bol = pyro
 food-sequence-cotton-burger-content-plushie-throngler = throngle
@@ -161,8 +172,8 @@ food-sequence-cotton-burger-content-among-pequeno = sus
 
 # TACO
 
-food-sequence-taco-gen = taco with {$content}
+food-sequence-taco-gen = taco with { $content }
 
 # SKEWER
 
-food-sequence-skewer-gen = {$content} kebab
+food-sequence-skewer-gen = { $content } kebab

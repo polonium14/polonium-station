@@ -1,1 +1,1 @@
-gas-passive-gate-examined = Miernik przepływu wskazuje [color=lightblue]{$flowRate} litrów/sek[/color].
+gas-passive-gate-examined = Miernik przepływu wskazuje [color=lightblue]{ $flowRate } litrów/sek[/color].

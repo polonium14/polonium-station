@@ -1,0 +1,10 @@
+ent-VisMPSPistolMagazineBase = Magazynek VIS MPS (.35 auto any)
+    .desc = { ent-BaseItem.desc }
+ent-VisMPSPistolMagazine = Magazynek VIS MPS (.35 auto)
+    .desc = Magazynek VIS MPS (.35 auto)
+ent-VisMPSPistolMagazineIncendiary = Magazynek VIS MPS (.35 auto incendiary)
+    .desc = Magazynek VIS MPS (.35 auto incendiary)
+ent-VisMPSPistolMagazinUranium = Magazynek VIS MPS (.35 auto uranium)
+    .desc = Magazynek VIS MPS (.35 auto uranium)
+ent-VisMPSPistolMagazinePractice = Magazynek VIS MPS (.35 auto practice)
+    .desc = Magazynek VIS MPS (.35 auto practice)
