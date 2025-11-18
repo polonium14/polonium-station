@@ -14,7 +14,12 @@ from fluentformatter import FluentFormatter
 from project import Project
 from fluent.syntax import ast, FluentParser, FluentSerializer
 
+######################################### Configuration ################################################################
 
+# Lista folderów, które należy zignorować przy tworzeniu par plików
+IGNORED_FOLDERS: typing.List[str] = ['robust-toolbox', 'datasets']
+
+######################################### Описание #####################################################################
 # Przeprowadza aktualizację kluczy. Znajduje pliki z angielskim tłumaczeniem i sprawdza, czy istnieje polski odpowiednik
 # Jeśli nie - tworzy plik z kopią tłumaczeń z angielskiego
 # Następnie, plik po pliku sprawdzane są klucze. Jeśli w angielskim pliku jest więcej kluczy - tworzy brakujące w polskim, kopiując angielskie tłumaczenia
@@ -72,6 +77,10 @@ class FilesFinder:
     def get_files_pars(self):
         en_fluent_files = self.project.get_fluent_files_by_dir(project.en_locale_dir_path)
         pl_fluent_files = self.project.get_fluent_files_by_dir(project.pl_locale_dir_path)
+
+        if IGNORED_FOLDERS:
+            en_fluent_files = [f for f in en_fluent_files if not any(ignored in f.full_path for ignored in IGNORED_FOLDERS)]
+            pl_fluent_files = [f for f in pl_fluent_files if not any(ignored in f.full_path for ignored in IGNORED_FOLDERS)]
 
         en_fluent_relative_files = list(map(lambda f: self.get_relative_path_dict(f, 'en-US'), en_fluent_files))
         pl_fluent_relative_files = list(map(lambda f: self.get_relative_path_dict(f, 'pl-PL'), pl_fluent_files))
@@ -216,7 +225,7 @@ created_files = files_finder.execute()
 if len(created_files):
     print('Formatuję utworzone pliki ...')
     FluentFormatter.format(created_files)
-print('Sprawdzam aktualności kluczy ...')
+print('Sprawdzam aktualność kluczy ...')
 changed_files = key_finder.execute()
 if len(changed_files):
     print('Formatuję zmienione pliki ...')
