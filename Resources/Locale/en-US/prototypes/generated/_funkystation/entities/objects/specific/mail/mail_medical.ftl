@@ -1,0 +1,9 @@
+ent-MailMedicalRareTopicals = { ent-BaseMailSmall }
+    .suffix = Rare Topicals
+    .desc = { ent-BaseMailSmall.desc }
+ent-MailMedicalRollerBed = { ent-BaseMailLargeFlat }
+    .suffix = Roller Bed
+    .desc = { ent-BaseMailLargeFlat.desc }
+ent-MailMedicalChemistryChems = { ent-BaseMailLarge }
+    .suffix = Chemical Supplies
+    .desc = { ent-BaseMailLarge.desc }

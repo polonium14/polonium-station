@@ -1,4 +1,4 @@
-﻿advertisement-sovietsoda-1 = Dla towarzysza i ojczyzny.
+advertisement-sovietsoda-1 = Dla towarzysza i ojczyzny.
 advertisement-sovietsoda-2 = Czy wypełniłeś dziś swój dzienny limit żywieniowy?
 advertisement-sovietsoda-3 = Bardzo dobrze!
 advertisement-sovietsoda-4 = Jesteśmy prostymi ludźmi, bo to jest wszystko, co jemy.
