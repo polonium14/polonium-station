@@ -1,0 +1,10 @@
+ent-CrateEmergencyDefibrillator = emergency defibrillator crate
+    .desc = Crate that contains a defibrillator.
+ent-CrateEmergencyMedipens = emergency medipens crate
+    .desc = Crate that contains six emergency medipens
+ent-CrateMedicalEquipment = medical equipment crate
+    .desc = For treating big and small injuries alike, contains a medical belt and hud, health analyzer, basic topicals, medical mask and pair of gloves as well as the medical guidebooks.
+ent-CrateMedicalParamedSuit = paramedic voidsuit crate
+    .desc = Contains a paramedic void suit and set of air tanks. Requires Medical access to open.
+ent-CrateMedicalBiomass = biomass crate
+    .desc = Crate that contains 100 units of biomass.

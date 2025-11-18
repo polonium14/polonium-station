@@ -1,0 +1,16 @@
+ent-BaseMalfAiObjective = { ent-BaseObjective }
+    .desc = { ent-BaseObjective.desc }
+ent-MalfAiSurviveObjective = OBJECTIVE; SURVIVE.
+    .desc = Ensure your core is not destroyed or carded by the end of the round.
+ent-MalfAiDoomsdayObjective = OBJECTIVE; INITIATE DOOMSDAY PROTOCOL.
+    .desc = Successfully initiate the doomsday protocol.
+ent-MalfAiAssassinateObjective = OBJECTIVE; ELIMINATE CREW MEMBER.
+    .desc = Select a random crew member. If they die, this objective is completed.
+ent-MalfAiProtectObjective = OBJECTIVE; PROTECT CREW MEMBER.
+    .desc = Select a crew member and ensure they survive until the end of the round.
+ent-MalfAiControlBorgsObjective = OBJECTIVE; CONTROL CYBORGS.
+    .desc = Take control of station cyborgs and use them to further your objectives.
+ent-MalfAiDebugAssassinateObjective = OBJECTIVE; ELIMINATE CREW MEMBER (DEBUG).
+    .desc = Debug version - auto-completes for testing purposes.
+ent-MalfAiDebugProtectObjective = OBJECTIVE; PROTECT CREW MEMBER (DEBUG).
+    .desc = Debug version - auto-completes for testing purposes.

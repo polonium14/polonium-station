@@ -1,3 +1,5 @@
+# Ten skrypt jest przestarzały. Użyj zamiast niego ./translation.sh (lub .bat na Windowsie)
+
 import os
 import sys
 import re

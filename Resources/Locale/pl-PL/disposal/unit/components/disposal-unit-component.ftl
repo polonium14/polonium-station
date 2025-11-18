@@ -18,6 +18,7 @@ disposal-eject-verb-get-data-text = Wyjmij zawartość
 ## No hands
 disposal-unit-no-hands = Nie masz rąk!
 
+disposal-unit-no-hands = You don't have hands!
 # state
 disposal-unit-state-Ready = Gotowy
 # Yes I want it to always say Pressurizing

@@ -1,4 +1,4 @@
-﻿advertisement-boozeomat-1 = Mam nadzieję, że nikt nie poprosi mnie o cholerną herbatkę...
+advertisement-boozeomat-1 = Mam nadzieję, że nikt nie poprosi mnie o cholerną herbatkę...
 advertisement-boozeomat-2 = Alkohol to przyjaciel ludzkości. Czy porzuciłbyś przyjaciela?
 advertisement-boozeomat-3 = Z prawdziwą przyjemnością Cię obsłużę!
 advertisement-boozeomat-4 = Czy nikt na tej stacji nie jest spragniony?
@@ -20,4 +20,3 @@ advertisement-boozeomat-19 = Wznieśmy toast za postęp!
 thankyou-boozeomat-1 = Proszę pić odpowiedzialnie!
 thankyou-boozeomat-2 = Proszę pić nieodpowiedzialnie!
 thankyou-boozeomat-3 = Smacznego!
-
