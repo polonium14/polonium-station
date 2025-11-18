@@ -1,1 +1,1 @@
-disease-vomit = {CAPITALIZE($person)} wymiotuje.
+disease-vomit = { CAPITALIZE($person) } wymiotuje.

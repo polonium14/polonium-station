@@ -6,5 +6,4 @@
         [hit] Hit
        *[other] Unknown
     }
-
 damage-popup-component-switched = Target set to type: { -damage-popup-component-type(setting: $setting) }

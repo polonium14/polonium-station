@@ -21,6 +21,7 @@ guide-entry-signalvalve = Signal Valve
 guide-entry-pneumaticvalve = Pneumatic Valve
 guide-entry-passivegate = Passive Gate
 guide-entry-mixingandfiltering = Mixing and Filtering
+guide-entry-ressureregulator = Pressure Regulator
 guide-entry-gascanisters = Gas Canisters
 guide-entry-thermomachines = Thermomachines
 guide-entry-gascondensing = Gas Condensing
@@ -57,6 +58,8 @@ guide-entry-solarpanels = Solar Panels
 guide-entry-teg = Thermo-electric Generator (TEG)
 guide-entry-rtg = RTG
 guide-entry-jobs = Jobs
+# GoobStation - Supermatter
+guide-entry-sm = Supermatter Engine
 guide-entry-cargo = Cargo
 guide-entry-cargo-bounties = Cargo Bounties
 guide-entry-salvage = Salvage
@@ -88,19 +91,16 @@ guide-entry-defusal = Large Bomb Defusal
 guide-entry-criminal-records = Criminal Records
 guide-entry-command = Command
 guide-entry-service = Service
-
 guide-entry-newplayer = New? Start here!
 guide-entry-charactercreation = Creating Characters
 guide-entry-species = Species
 guide-entry-yourfirstcharacter = Your First Character
 guide-entry-controls = Controls
 guide-entry-radio = Radio and Speech
-
 guide-entry-references = Tables & References
 guide-entry-chemicals = Chemicals
 guide-entry-drinks = Drinks
 guide-entry-foodrecipes = Food Recipes
-
 guide-entry-elements = Elements
 guide-entry-medicine = Medicine
 guide-entry-narcotics = Narcotics
@@ -111,8 +111,9 @@ guide-entry-biological = Biological
 guide-entry-botanical = Botanical
 guide-entry-special = Special
 guide-entry-others = Others
-
 guide-entry-pizza-recipes = Pizzas
+# funky station
+guide-entry-exotic = Exotic
 guide-entry-savory-recipes = Savory Foods
 guide-entry-bread-recipes = Breads
 guide-entry-breakfast-recipes = Breakfast Foods
@@ -127,7 +128,6 @@ guide-entry-salad-recipes = Salads
 guide-entry-medicinal-recipes = Medicinal
 guide-entry-other-recipes = Other
 guide-entry-secret-recipes = Secret
-
 guide-entry-antagonists = Antagonists
 guide-entry-nuclear-operatives = Nuclear Operatives
 guide-entry-traitors = Traitors
@@ -137,8 +137,8 @@ guide-entry-minor-antagonists = Minor Antagonists
 guide-entry-space-ninja = Space Ninja
 guide-entry-thieves = Thieves
 guide-entry-wizard = Wizard
-
 guide-entry-rules = Server Rules
+guide-entry-malfunctioningai = Malfunctioning AI
 guide-entry-rules-core-only = Core Only Ruleset
 guide-entry-rules-lrp = Standard Ruleset
 guide-entry-rules-mrp = MRP Ruleset
@@ -177,6 +177,8 @@ guide-entry-rules-r13 = R13
 guide-entry-rules-r14 = R14
 guide-entry-rules-r15 = R15
 guide-entry-rules-silicon = Silicon Rules
+guide-entry-rules-r16 = R16
+guide-entry-rules-r17 = R17
 guide-entry-rules-s1 = S1
 guide-entry-rules-s2 = S2
 guide-entry-rules-s3 = S3
@@ -190,12 +192,14 @@ guide-entry-rules-s10 = S10
 guide-entry-rules-mrp-m0 = MRP Rules
 guide-entry-rules-m1 = M1
 guide-entry-rules-space-law = Space Law
+guide-entry-rules-of-conduct = Rules of Conduct
 guide-entry-rules-sl-crime-list = Crime List
 guide-entry-rules-sl-controlled-substances = Controlled Substances
 guide-entry-rules-sl-restricted-gear = Restricted Gear
 guide-entry-rules-sl-restricted-weapons = Restricted Weapons
 guide-entry-rules-ban-types = Ban Types
+guide-entry-metashield = Metashield
+guide-entry-namingscheme = Naming Scheme
 guide-entry-rules-ban-durations = Ban Durations
-
 guide-entry-writing = Writing
 guide-entry-glossary = Glossary
