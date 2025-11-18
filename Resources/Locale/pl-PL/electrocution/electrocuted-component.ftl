@@ -1,9 +1,9 @@
-electrocuted-component-mob-shocked-by-source-popup-others = { CAPITALIZE(THE($mob)) } jest {GENDER($mob) ->
+electrocuted-component-mob-shocked-by-source-popup-others = { CAPITALIZE($mob) } jest {GENDER($mob) ->
         [male] porażony
         [female] porażona
         *[other] porażone
     } przez { THE($source) }!
-electrocuted-component-mob-shocked-popup-others = { CAPITALIZE(THE($mob)) } zostaje {GENDER($mob) ->
+electrocuted-component-mob-shocked-popup-others = { CAPITALIZE($mob) } zostaje {GENDER($mob) ->
         [male] porażony
         [female] porażona
         *[other] porażone
