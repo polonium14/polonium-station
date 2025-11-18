@@ -3,7 +3,6 @@
 #
 # SPDX-License-Identifier: MIT
 
-
 # HumanoidMarkingModifierWindow.xaml
 
 modify-markings-title = Modify Markings

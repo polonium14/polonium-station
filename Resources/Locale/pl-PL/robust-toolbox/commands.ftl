@@ -194,7 +194,6 @@ cmd-hint-savebp-id = <Grid EntityID>
 
 ## polecenie 'flushcookies'
 
-
 # Uwaga: polecenie flushcookies pochodzi z Robust.Client.WebView, nie z głównego kodu silnika.
 
 cmd-flushcookies-desc = Zapisuje pamięć cookie CEF na dysk
@@ -295,9 +294,7 @@ cmd-testbed-help = testbed <mapid> <test>
 
 ## 'flushcookies' command
 
-
 # Uwaga: komenda flushcookies pochodzi z Robust.Client.WebView, nie jest częścią głównego silnika.
-
 
 ## 'addcomp' command
 

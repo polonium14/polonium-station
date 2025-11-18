@@ -4,7 +4,6 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-
 ## REGULAR EXAMINES
 
 cosmic-examine-text-contraband = [color=#4cabb3]This is highly illegal contraband with unknown properties![/color]
