@@ -11,12 +11,11 @@ view-variable-instance-entity-server-components-search-bar-placeholder = Szukaj
 view-variable-instance-entity-add-window-server-components = Dodaj Komponent [S]
 view-variable-instance-entity-add-window-client-components = Dodaj Komponent [C]
 
-
 ## SoundSpecifier
+
 vv-sound-none = Brak
 vv-sound-path = Ścieżka
 vv-sound-collection = Kolekcja
-
 vv-sound-volume = Głośność
 vv-sound-pitch = Ton
 vv-sound-max-distance = Maksymalna Odległość

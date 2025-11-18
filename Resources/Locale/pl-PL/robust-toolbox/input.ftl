@@ -67,12 +67,10 @@ input-key-MouseButton6 = Przycisk myszy 6
 input-key-MouseButton7 = Przycisk myszy 7
 input-key-MouseButton8 = Przycisk myszy 8
 input-key-MouseButton9 = Przycisk myszy 9
-
 input-key-LSystem-win = Lewy Win
 input-key-RSystem-win = Prawy Win
 input-key-LSystem-mac = Lewy Cmd
 input-key-RSystem-mac = Prawy Cmd
 input-key-LSystem-linux = Lewy Meta
 input-key-RSystem-linux = Prawy Meta
-
 input-key-unknown = <nieznany klawisz>

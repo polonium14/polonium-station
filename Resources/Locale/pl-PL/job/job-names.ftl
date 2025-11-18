@@ -49,24 +49,25 @@ job-name-ertjanitor = Sprzątacz JSR
 job-name-boxer = Bokser
 job-name-zookeeper = Opiekun Zoo
 job-name-visitor = Wizytor
-
 # unused jobs
 # these are required for the agent ID job icon tooltips
 # I am keeping them for roleplaying opportunities
 job-name-geneticist = Genetyk
 job-name-no-id = Brakuje ID
 job-name-prisoner = Więzień
+# event-restricted jobs
+job-name-security-clown = Security Clown
+job-name-command-maid = Command Maid
+job-name-party-maker = Party Maker
 job-name-roboticist = Robotyk
 job-name-syndicate = Syndykat
 job-name-unknown = Nieznany
 job-name-virologist = Wirusolog
 job-name-zombie = Zombie
-
 # Job titles
 job-title-visitor = Wizytor
 job-title-cluwne = Cluwne
 job-title-universal = Uniwersalny
-
 # Role timers - Make these alphabetical or I cut you
 JobAtmosphericTechnician = Technik Atmosferyki
 JobBartender = Barman
@@ -84,6 +85,7 @@ JobChiefMedicalOfficer = Dyrektor Medyczny
 JobClown = Klaun
 JobDetective = Detektyw
 JobBrigmedic = Brigmedic
+JobCommandMaid = Command Maid
 JobERTChaplain = Kapłan JSR
 JobERTEngineer = Inżynier JSR
 JobERTJanitor = Sprzątacz JSR
@@ -102,6 +104,7 @@ JobMusician = Muzyk
 JobParamedic = Ratownik
 JobPassenger = Pasażer
 JobPsychologist = Psycholog
+JobPartyMaker = Party Maker
 JobQuartermaster = Kierownik Logistyki
 JobReporter = Dziennikarz
 JobResearchAssistant = Asystent Naukowy
@@ -111,6 +114,7 @@ JobScientist = Naukowiec
 JobSecurityCadet = Kadet Ochrony
 JobSecurityOfficer = Oficer Ochrony
 JobServiceWorker = Pracownik Obsługi
+JobSecurityClown = Security Clown
 JobStationAi = SI Stacji
 JobStationEngineer = Station Engineer
 JobTechnicalAssistant = Pomocnik Techniczny

@@ -1,1 +1,1 @@
-ghostrole-spawner-select = Wybrano: {$mode}
+ghostrole-spawner-select = Wybrano: { $mode }

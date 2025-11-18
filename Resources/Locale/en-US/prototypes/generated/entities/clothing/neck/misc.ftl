@@ -1,0 +1,14 @@
+ent-ClothingNeckHeadphones = headphones
+    .desc = Quality headphones from Drunk Masters, with good sound insulation.
+ent-ClothingNeckStethoscope = stethoscope
+    .desc = An outdated medical apparatus for listening to the sounds of the human body. It also makes you look like you know what you're doing.
+ent-ClothingNeckBling = bling
+    .desc = It would make you feel like a gangster, if it was not made out of cheap plastic.
+ent-ClothingNeckLawyerbadge = lawyer badge
+    .desc = A badge to show that the owner is a 'legitimate' lawyer who passed the NT bar exam required to practice law.
+ent-ActionStethoscope = Listen with stethoscope
+    .desc = { "" }
+ent-Dinkystar = star sticker
+    .desc = A dinky lil star for only the hardest working security officers! It's not even sticky anymore.
+ent-ClothingNeckTankHarness = tank harness
+    .desc = A simple harness that can hold a gas tank.

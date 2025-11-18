@@ -10,18 +10,14 @@ ui-vote-restart-fail-not-enough-ghost-players = Głosowanie za restartem nie pow
 ui-vote-restart-yes = Tak
 ui-vote-restart-no = Nie
 ui-vote-restart-abstain = Wtrzymuję się
-
 ui-vote-gamemode-title = Następny tryb
 ui-vote-gamemode-tie = Remis w głosowaniu za trybem gry! Wybieramy... { $picked }
 ui-vote-gamemode-win = { $winner } wygrał głosowanie za trybem gry!
-
 ui-vote-map-title = Następna mapa
 ui-vote-map-tie = Remis w głosowaniu na mapę! Wybieramy... { $picked }
 ui-vote-map-win = { $winner } wygrała głosowanie na mapę!
 ui-vote-map-notlobby = Głosowanie za mapą jest ważne tylko w lobby przedrundowym!
 ui-vote-map-notlobby-time = Głosowanie za mapą jest ważne tylko w lobby przed rundą, w której pozostało { $time }!
-
-
 # Votekick votes
 ui-vote-votekick-unknown-initiator = Gracz
 ui-vote-votekick-unknown-target = Nieznany Gracz

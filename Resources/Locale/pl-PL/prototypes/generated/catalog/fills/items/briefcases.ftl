@@ -1,0 +1,15 @@
+ent-BriefcaseBrownFilled = { ent-BriefcaseBrown }
+    .suffix = Filled, Paper
+    .desc = { ent-BriefcaseBrown.desc }
+ent-BriefcaseSyndieSniperBundleFilled = { ent-BriefcaseSyndie }
+    .suffix = Syndicate, Sniper Bundle
+    .desc = { ent-BriefcaseSyndie.desc }
+ent-BriefcaseSyndieRevolverBundleFilled = { ent-BriefcaseSyndie }
+    .suffix = Syndicate, Revolver Bundle
+    .desc = { ent-BriefcaseSyndie.desc }
+ent-BriefcaseSyndieLobbyingBundleFilled = { ent-CybersunBriefcase }
+    .suffix = Syndicate, Spesos
+    .desc = { ent-CybersunBriefcase.desc }
+ent-BriefcaseThiefBribingBundleFilled = { ent-BriefcaseSyndie }
+    .suffix = Thief, Spesos
+    .desc = { ent-BriefcaseSyndie.desc }
