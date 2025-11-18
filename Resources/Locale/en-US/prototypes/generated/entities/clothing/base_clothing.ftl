@@ -1,0 +1,16 @@
+ent-Clothing = { ent-BaseItem }
+    .desc = { ent-BaseItem.desc }
+ent-GeigerCounterClothing = { "" }
+    .desc = { "" }
+ent-AllowBackStorageClothingCombat = { "" }
+    .desc = { "" }
+ent-AllowBackStorageClothingCivilian = { "" }
+    .desc = { "" }
+ent-AllowTankStorageClothing = { "" }
+    .desc = { "" }
+ent-ClothingSlotBase = { "" }
+    .desc = { "" }
+ent-ContentsExplosionResistanceBase = { "" }
+    .desc = { "" }
+ent-BaseToggleClothing = { "" }
+    .desc = { "" }

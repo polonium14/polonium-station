@@ -2,8 +2,8 @@
 armor-examinable-verb-text = Pancerz
 armor-examinable-verb-message = Sprawdź wartości ochrony pancerza.
 armor-examine = Zapewnia następującą ochronę:
-armor-coefficient-value = - Obrażenia typu [color=yellow]{$type}[/color] zredukowane o [color=lightblue]{$value}%[/color].
-armor-reduction-value = - Obrażenia typu [color=yellow]{$type}[/color] zredukowane o [color=lightblue]{$value}[/color].
+armor-coefficient-value = - Obrażenia typu [color=yellow]{ $type }[/color] zredukowane o [color=lightblue]{ $value }%[/color].
+armor-reduction-value = - Obrażenia typu [color=yellow]{ $type }[/color] zredukowane o [color=lightblue]{ $value }[/color].
 armor-damage-type-blunt = Tępego
 armor-damage-type-slash = Ciętego
 armor-damage-type-piercing = Przeszywającego

@@ -49,7 +49,6 @@ names-diona-last-dataset-47 = Uczciwość
 names-diona-last-dataset-48 = Hojność
 names-diona-last-dataset-49 = Szansa
 names-diona-last-dataset-50 = Motywacja
-
 # Neutralne
 names-diona-last-dataset-51 = Pilność
 names-diona-last-dataset-52 = Witalność
@@ -92,7 +91,6 @@ names-diona-last-dataset-88 = Śmiałość
 names-diona-last-dataset-89 = Żywotność
 names-diona-last-dataset-90 = Wiedza
 names-diona-last-dataset-91 = Modyfikacja
-
 # Negatywne
 names-diona-last-dataset-92 = Zazdrość
 names-diona-last-dataset-93 = Niezręczność

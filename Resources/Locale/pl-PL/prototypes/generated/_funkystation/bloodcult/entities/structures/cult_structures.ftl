@@ -1,0 +1,15 @@
+ent-CultBaseStructure = { ent-BaseBloodCultContraband }
+    .suffix = Base
+    .desc = { ent-BaseBloodCultContraband.desc }
+ent-CultPylon = Pylon
+    .desc = A floating crystal that slowly heals those faithful to Nar'Sie.
+    .suffix = Cult
+ent-CultForge = Forge
+    .desc = A forge used in crafting unholy weapons,to be used by the armies of Nar'Sie.
+    .suffix = Cult
+ent-CultArchives = Archives
+    .desc = A desk covered in arcane manuscripts and tomes in unknown languages. Looking at the text makes your skin crawl.
+    .suffix = Cult
+ent-CultAltar = Altar
+    .desc = A bloodstained altar dedicated to Nar'Sie.
+    .suffix = Cult

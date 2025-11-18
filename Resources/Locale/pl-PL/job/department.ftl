@@ -8,5 +8,4 @@ department-Security = Ochrony
 department-Science = Rozwoju
 department-Silicon = Silikowy
 department-Specific = Specyficzny dla stacji
-
 department-Unknown = Nieznany

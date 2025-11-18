@@ -1,22 +1,17 @@
-
 # floor_trap.yml
 ent-CollideFloorTrapSpawn = floor trap spawn
 ent-FloorTrapEMP = EMP floor trap
 ent-FloorTrapExplosion = explosion floor trap
-
 # anomaly.yml
 ent-ActionAnomalyPulse = Anomaly pulse
     .desc = Release a pulse of energy of your abnormal nature
-
 # borgs.yml
 ent-ActionSelectBorgType = Select Cyborg Type
 ent-ActionViewLaws = View Laws
     .desc = View the laws that you must follow.
-
 # changeling.yml
 ent-ActionRetractableItemArmBlade = Arm Blade
     .desc = Shed your flesh and reform it into a fleshy blade.
-
 # crit.yml
 ent-ActionCritFakeDeath = Fake Death
     .desc = Pretend to take your final breath while staying alive.
@@ -24,20 +19,16 @@ ent-ActionCritLastWords = Say Last Words
     .desc = Whisper your last words to anyone nearby, and then succumb to your fate. You only have 30 characters to work with.
 ent-ActionCritSuccumb = Succumb
     .desc = Accept your fate.
-
 # diona.yml
 ent-DionaGibAction = Gib Yourself!
     .desc = Split apart into 3 nymphs.
 ent-DionaReformAction = Reform
     .desc = Reform back into a whole Diona.
-
 # internals.yml
 ent-ActionToggleInternals = Toggle Internals
     .desc = Breathe from the equipped gas tank. Also requires equipped breath mask.
-
 # mapping.yml
 ent-ActionMappingEraser = Erase Entity
-
 # mech.yml
 ent-ActionMechCycleEquipment = Cycle
     .desc = Cycles currently selected equipment
@@ -45,7 +36,6 @@ ent-ActionMechEject = Eject
     .desc = Ejects the pilot from the mech
 ent-ActionMechOpenUI = Control Panel
     .desc = Opens the control panel for the mech
-
 # ninja.yml
 ent-ActionCreateThrowingStar = Create throwing star
     .desc = Channels suit power into creating a throwing star that deals extra stamina damage.
@@ -59,7 +49,6 @@ ent-ActionToggleNinjaGloves = Toggle ninja gloves
     .desc = Toggles all glove actions on left click. Includes your doorjack, draining power, stunning enemies and hacking certain computers.
 ent-ActionTogglePhaseCloak = Phase cloak
     .desc = Toggles your suit's phase cloak. Beware that if you are hit, all abilities are disabled for 5 seconds, including your cloak!
-
 # polymorph.yml
 ent-ActionPolymorphJaunt = Ethereal Jaunt
     .desc = Melt into the Ethereal Plane for a quick getaway!
@@ -73,7 +62,6 @@ ent-ActionPolymorphWizardSpider = Spider Polymorph
     .desc = Polymorphs you into a Spider.
 ent-ActionRevertPolymorph = Revert
     .desc = Revert back into your original form.
-
 # revenant.yml
 ent-ActionRevenantDefile = Defile
     .desc = Costs 30 Essence.
@@ -83,21 +71,17 @@ ent-ActionRevenantOverloadLights = Overload Lights
     .desc = Costs 40 Essence.
 ent-ActionRevenantShop = Shop
     .desc = Opens the ability shop.
-
 # security.yml
 ent-ActionToggleKnuckleDustersStun = Toggle stun knuckle dusters
     .desc = Toggles the duster's built in stun baton.
-
 # speech.yml
 ent-ActionConfigureMeleeSpeech = Set Battlecry
     .desc = Set a custom battlecry for when you attack!
-
 # spider.yml
 ent-ActionSericulture = Weave silk
     .desc = Weave a bit of silk for use in arts and crafts.
 ent-ActionSpiderWeb = Spider Web
     .desc = Spawns a web that slows your prey down.
-
 # station_ai.yml
 ent-ActionAIViewLaws = View Laws
     .desc = View the laws that you must follow.
@@ -105,7 +89,6 @@ ent-ActionJumpToCore = Jump to core
     .desc = Sends your eye back to the core.
 ent-ActionSurvCameraLights = Toggle camera lights
     .desc = Enable surveillance camera lights near wherever you're viewing.
-
 # types.yml
 ent-ActionActivateDeathAcidifier = Activate Death-Acidifier
     .desc = Activates your death-acidifier, completely melting you and your equipment
@@ -163,7 +146,6 @@ ent-ActionWake = Wake up
     .desc = Stop sleeping.
 ent-FakeMindShieldToggleAction = [color=green]Toggle Fake Mindshield[/color]
     .desc = Turn the Fake Mindshield implant's transmission on/off
-
 # arachnid.yml
 ent-OrganArachnidEyes = eyes
     .desc = Two was already too many.
@@ -179,7 +161,6 @@ ent-OrganArachnidStomach = stomach
     .desc = Gross. This is hard to stomach.
 ent-OrganArachnidTongue = tongue
     .desc = A fleshy muscle mostly used for lying.
-
 # diona.yml
 ent-OrganDionaBrain = brain
     .desc = The central hub of a diona's pseudo-neurological activity, its root-like tendrils search for its former body.
@@ -201,12 +182,10 @@ ent-OrganDionaStomach = stomach
     .desc = The diona's equivalent of a stomach, it reeks of asparagus and vinegar.
 ent-OrganDionaStomachNymph = stomach
     .desc = Gross. This is hard to stomach.
-
 # dwarf.yml
 ent-OrganDwarfHeart = dwarf heart
 ent-OrganDwarfLiver = dwarf liver
 ent-OrganDwarfStomach = dwarf stomach
-
 # human.yml
 ent-OrganHumanAppendix = appendix
 ent-OrganHumanBrain = brain
@@ -227,13 +206,11 @@ ent-OrganHumanStomach = stomach
     .desc = Gross. This is hard to stomach.
 ent-OrganHumanTongue = tongue
     .desc = A fleshy muscle mostly used for lying.
-
 # slime.yml
 ent-OrganSlimeLungs = slime gas sacs
     .desc = Collects nitrogen, which slime cells use for maintenance.
 ent-SentientSlimeCore = sentient slime core
     .desc = The source of incredible, unending gooeyness.
-
 # vox.yml
 ent-OrganVoxHeart = heart
     .desc = The strange heart of a vox.
@@ -241,7 +218,6 @@ ent-OrganVoxLiver = liver
     .desc = Smells flammable.
 ent-OrganVoxStomach = stomach
     .desc = A stomach that smells of ammonia.
-
 # animal.yml
 ent-OrganAnimalHeart = heart
 ent-OrganAnimalKidneys = kidneys
@@ -249,21 +225,17 @@ ent-OrganAnimalLiver = liver
 ent-OrganAnimalLungs = lungs
 ent-OrganAnimalStomach = stomach
 ent-OrganMouseStomach = stomach
-
 # bloodsucker.yml
 ent-OrganBloodsuckerHeart = heart
 ent-OrganBloodsuckerLiver = liver
 ent-OrganBloodsuckerStomach = stomach
-
 # ruminant.yml
 ent-OrganAnimalRuminantStomach = ruminant stomach
-
 # slimes.yml
 ent-OrganSlimesLungs = slimes gas sacs
     .desc = Collects nitrogen, which slime cells use for maintenance.
 ent-SentientSlimesCore = sentient slimes core
     .desc = The source of incredible, unending gooeyness.
-
 # animal.yml
 ent-FeetAnimal = animal feet
 ent-HandsAnimal = animal hands
@@ -272,7 +244,6 @@ ent-LegsAnimal = animal legs
 ent-PartAnimal = animal body part
 ent-RightHandSmartCorgi = corgi hand
 ent-TorsoAnimal = animal torso
-
 # arachnid.yml
 ent-HeadArachnid = arachnid head
 ent-LeftArmArachnid = left arachnid arm
@@ -285,7 +256,6 @@ ent-RightFootArachnid = right arachnid foot
 ent-RightHandArachnid = right arachnid hand
 ent-RightLegArachnid = right arachnid leg
 ent-TorsoArachnid = arachnid torso
-
 # base.yml
 ent-BaseHead = head
 ent-BaseLeftArm = left arm
@@ -298,7 +268,6 @@ ent-BaseRightFoot = right foot
 ent-BaseRightHand = right hand
 ent-BaseRightLeg = right leg
 ent-BaseTorso = torso
-
 # diona.yml
 ent-HeadDiona = diona head
 ent-LeftArmDiona = left diona arm
@@ -311,7 +280,6 @@ ent-RightFootDiona = right diona foot
 ent-RightHandDiona = right diona hand
 ent-RightLegDiona = right diona leg
 ent-TorsoDiona = diona torso
-
 # gingerbread.yml
 ent-HeadGingerbread = gingerbread head
 ent-LeftArmGingerbread = left gingerbread arm
@@ -324,7 +292,6 @@ ent-RightFootGingerbread = right gingerbread foot
 ent-RightHandGingerbread = right gingerbread hand
 ent-RightLegGingerbread = right gingerbread leg
 ent-TorsoGingerbread = gingerbread torso
-
 # human.yml
 ent-HeadHuman = human head
 ent-LeftArmHuman = left human arm
@@ -337,7 +304,6 @@ ent-RightFootHuman = right human foot
 ent-RightHandHuman = right human hand
 ent-RightLegHuman = right human leg
 ent-TorsoHuman = human torso
-
 # moth.yml
 ent-HeadMoth = moth head
 ent-LeftArmMoth = left moth arm
@@ -350,10 +316,8 @@ ent-RightFootMoth = right moth foot
 ent-RightHandMoth = right moth hand
 ent-RightLegMoth = right moth leg
 ent-TorsoMoth = moth torso
-
 # rat.yml
 ent-TorsoRat = animal torso
-
 # reptilian.yml
 ent-HeadReptilian = reptilian head
 ent-LeftArmReptilian = left reptilian arm
@@ -366,7 +330,6 @@ ent-RightFootReptilian = right reptilian foot
 ent-RightHandReptilian = right reptilian hand
 ent-RightLegReptilian = right reptilian leg
 ent-TorsoReptilian = reptilian torso
-
 # silicon.yml
 ent-LeftArmBorg = cyborg left arm
 ent-LeftLegBorg = cyborg left leg
@@ -374,7 +337,6 @@ ent-LightHeadBorg = cyborg head
 ent-RightArmBorg = cyborg right arm
 ent-RightLegBorg = cyborg right leg
 ent-TorsoBorg = cyborg torso
-
 # skeleton.yml
 ent-HeadSkeleton = skull
     .desc = Alas poor Yorick...
@@ -388,7 +350,6 @@ ent-RightFootSkeleton = right skeleton foot
 ent-RightHandSkeleton = right skeleton hand
 ent-RightLegSkeleton = right skeleton leg
 ent-TorsoSkeleton = skeleton torso
-
 # slime.yml
 ent-HeadSlime = slime head
 ent-LeftArmSlime = left slime arm
@@ -401,7 +362,6 @@ ent-RightFootSlime = right slime foot
 ent-RightHandSlime = right slime hand
 ent-RightLegSlime = right slime leg
 ent-TorsoSlime = slime torso
-
 # vox.yml
 ent-HeadVox = vox head
 ent-LeftArmVox = left vox arm
@@ -414,70 +374,49 @@ ent-RightFootVox = right vox foot
 ent-RightHandVox = right vox hand
 ent-RightLegVox = right vox leg
 ent-TorsoVox = vox torso
-
 # arachnid.yml
 ent-Arachnid = arachnid
-
 # bot.yml
 ent-Bot = bot
-
 # diona.yml
 ent-Diona = diona
-
 # dwarf.yml
 ent-Dwarf = dwarf
-
 # gingerbread.yml
 ent-Gingerbread = gingerbread
-
 # human.yml
 ent-Human = human
-
 # moth.yml
 ent-Moth = moth
-
 # primate.yml
 ent-Primate = primate
-
 # rat.yml
 ent-Rat = animal
-
 # skeleton.yml
 ent-Skeleton = skeleton
-
 # slime.yml
 ent-Slime = slime
-
 # vox.yml
 ent-Vox = vox
-
 # animal.yml
 ent-Animal = animal
 ent-Mouse = mouse
-
 # bloodsucker.yml
 ent-Bloodsucker = bloodsucker
-
 # hemocyanin.yml
 ent-AnimalHemocyanin = hemocyanin
-
 # nymph.yml
 ent-AnimalNymphBrain = nymph
 ent-AnimalNymphLungs = nymph
 ent-AnimalNymphStomach = nymph
-
 # ruminant.yml
 ent-AnimalRuminant = ruminant
-
 # slimes.yml
 ent-Slimes = slimes
-
 # mothroach.yml
 ent-Mothroach = mothroach
-
 # smartcorgi.yml
 ent-SmartCorgi = corgi
-
 # catalog.yml
 ent-DebugListing = debug name
     .desc = debug desc
@@ -489,11 +428,9 @@ ent-DebugListing4 = debug name 4
     .desc = debug desc 4
 ent-DebugListing5 = debug name 5
     .desc = debug desc 5
-
 # backpack.yml
 ent-ClothingBackpackSyndicateRaidBundle = syndicate raid suit bundle
     .desc = Contains the Syndicate's durable raid armor suit.
-
 # duffelbag.yml
 ent-ClothingBackpackDuffelSurgeryFilled = surgical duffel bag
     .desc = A large duffel bag for holding extra medical supplies - this one seems to be designed for holding surgical tools.
@@ -537,7 +474,6 @@ ent-ClothingBackpackDuffelSyndicatePyjamaBundle = syndicate pyjama duffel bag
     .desc = Contains 3 pairs of syndicate pyjamas and 4 plushies for the ultimate sleepover.
 ent-ClothingBackpackDuffelZombieBundle = syndicate zombie bundle
     .desc = An all-in-one kit for unleashing the undead upon a station.
-
 # emergency.yml
 ent-BoxHug = box of hugs
     .desc = A special box for sensitive people.
@@ -551,11 +487,9 @@ ent-BoxSurvivalSecurity = survival box
     .desc = It's a box with basic internals inside.
 ent-BoxSurvivalSyndicate = extended-capacity survival box
     .desc = It's a box with basic internals inside. This one is labelled to contain an extended-capacity tank.
-
 # service.yml
 ent-BoxLightbulbColorfulMixed = mixed colorful lightbulb box
 ent-BoxLighttubeColorfulMixed = mixed colorful lighttube box
-
 # syndicate.yml
 ent-ChemicalSynthesisKit = chemical synthesis kit
     .desc = A starter kit for the aspiring chemist, includes two vials of vestine for all your criminal needs!
@@ -564,11 +498,9 @@ ent-CombatBakeryKit = combat bakery kit
 ent-ElectricalDisruptionKit = electrical disruption kit
 ent-ThrowingKnivesKit = throwing knives kit
     .desc = A set of 4 syndicate branded throwing knives, perfect for embedding into the body of your victims.
-
 # antag.yml
 ent-CratePirateChest = crews pirate chest
 ent-CratePirateChestCaptain = captains pirate chest
-
 # armory.yml
 ent-CrateArmoryLaser = lasers crate
     .desc = Contains three standard-issue laser rifles. Requires Armory access to open.
@@ -586,7 +518,6 @@ ent-CrateTrackingImplants = tracking implants
     .desc = Contains a handful of tracking implanters. Good for prisoners you'd like to release but still keep track of.
 ent-CrateTrainingBombs = training bombs
     .desc = Contains three low-yield training bombs for security to learn defusal and safe ordnance disposal, EOD suit not included. Requires Armory access to open.
-
 # botany.yml
 ent-CrateHydroponicsSeeds = seeds crate
     .desc = Big things have small beginnings. Contains twelve different seeds.
@@ -598,7 +529,6 @@ ent-CrateHydroponicsTools = hydroponics equipment crate
     .desc = Supplies for growing a great garden! Contains some spray bottles of plant chemicals, a hatchet, a mini-hoe, scythe, as well as a pair of leather gloves and a botanist's apron.
 ent-CrateHydroponicsTray = hydroponics tray crate
     .desc = Contains a hydroponics tray flatpack.
-
 # cargo.yml
 ent-CrateCargoGambling = the grand lottery $$$
     .desc = A box containing treasure beyond your greatest imaginations!
@@ -606,7 +536,6 @@ ent-CrateCargoLuxuryHardsuit = luxury mining hardsuit crate
     .desc = Finally, a hardsuit Quartermasters could call their own. Centcomm has heard you, now stop asking.
 ent-CrateCargoParcelWrap = parcel wrap crate
     .desc = All your parcel wrapping needs in one crate, containing three rolls of parcel wrap.
-
 # chemistry.yml
 ent-CrateChemistryD = chemicals crate (D)
     .desc = Contains chemicals from the D-Block of elements. Requires Chemistry access to open.
@@ -616,7 +545,6 @@ ent-CrateChemistryS = chemicals crate (S)
     .desc = Contains chemicals from the S-Block of elements. Requires Chemistry access to open.
 ent-CratePlantBGone = bulk Plant-B-Gone crate
     .desc = From Monstano. "Unwanted Weeds, Meet Your Celestial Roundup!
-
 # emergency.yml
 ent-CrateEmergencyExplosive = bomb suit crate
     .desc = Science gone bonkers? Beeping behind the airlock? Buy now and be the hero the station des... I mean needs! (time not included)
@@ -634,7 +562,6 @@ ent-CrateGenericBiosuit = emergency bio suit crate
     .desc = Contains 2 biohazard suits to ensure that no disease will distract you from what you're doing there.
 ent-CrateNitrogenInternals = internals crate (nitrogen)
     .desc = Contains four breath masks and four large nitrogen tanks. Intended for Slimepeople and Vox.
-
 # engineering.yml
 ent-CrateAirGrenade = air grenade crate
     .desc = A crate containing 3 air grenades.
@@ -674,7 +601,6 @@ ent-CrateRCDAmmo = compressed matter crate
     .desc = Contains three compressed matter cartridges.
 ent-CrateTechBoardRandom = surplus boards
     .desc = Surplus boards from somewhere.
-
 # engines.yml
 ent-CrateEngineeringAMEControl = antimatter control unit crate
     .desc = The control unit of an antimatter reactor.
@@ -703,7 +629,6 @@ ent-CrateEngineeringTeslaGenerator = tesla generator crate
     .desc = A tesla generator. God save you.
 ent-CrateEngineeringTeslaGroundingRod = tesla grounding rod crate
     .desc = Grounding rod, best for lightning protection.
-
 # food.yml
 ent-CrateFoodBarSupply = bartending supplies crate
     .desc = Extra Bar supplies, in case the clown was allowed in the bar unsupervised.
@@ -725,7 +650,6 @@ ent-CrateFoodSnowcone = snowcone delivery
     .desc = A freezer packed with refreshing snowcones for a hard working crew, or even a lazy one! Includes 16 snowcones.
 ent-CrateFoodSoftdrinks = softdrinks crate
     .desc = A variety of sodas to complement a small party, without having to empty the soda machines. Includes 14 sodas.
-
 # fun.yml
 ent-CrateFunArtSupplies = art supplies
     .desc = Make some happy little accidents with lots of crayons!
@@ -767,7 +691,6 @@ ent-CrateFunWaterGuns = water gun crate
     .desc = A summer special with a variety of brightly colored water guns. Water not included.
 ent-CratePlants = plant crate
     .desc = A variety pack of potted plants to spruce up your station!
-
 # materials.yml
 ent-CrateMaterialBasicResource = basic sheet crate
     .desc = 30 sheets of steel, glass, and plastic.
@@ -799,7 +722,6 @@ ent-CrateMaterialTextiles = textiles crate
     .desc = 60 pieces of cloth and 30 pieces of durathread.
 ent-CrateMaterialWood = wood crate
     .desc = Bunch of wood planks.
-
 # medical.yml
 ent-CrateBodyBags = body bags crate
     .desc = Contains ten body bags.
@@ -829,7 +751,6 @@ ent-CrateMindShieldImplants = MindShield implant crate
     .desc = Crate filled with 3 MindShield implants.
 ent-CrateVirologyBiosuit = virology bio suit crate
     .desc = Contains 2 biohazard suits to ensure that no disease will distract you from treating the crew. Requires Medical access to open.
-
 # npc.yml
 ent-CrateNPCBee = crate of bees
     .desc = A crate containing a swarm of eight bees.
@@ -875,7 +796,6 @@ ent-CrateNPCPuppyCorgi = puppy corgi crate
     .desc = A crate containing a single puppy corgi. Awww.
 ent-CrateNPCSnake = snake crate
     .desc = A crate containing three snakes.
-
 # salvage.yml
 ent-CrateCrusher = crusher crate
     .desc = Contains 2 crushers for use by salvage.
@@ -903,13 +823,11 @@ ent-CrateSupremeSalvagerCloak = supreme salvager cloak crate
     .desc = Contains a cloak only to be worn by supreme salvagers. Wearing it undeservedly will result in your doom.
 ent-CrateVoidJetpack = void jetpack crate
     .desc = Contains a single void jetpack.
-
 # science.yml
 ent-CrateCrewMonitoring = crew monitoring crate
     .desc = Contains a flatpack of a crew monitoring server and a few crew monitoring computers. Requires Science access to open.
 ent-CrateScienceBiosuit = scientist bio suit crate
     .desc = Contains 2 biohazard suits to ensure that no disease will distract you from doing science. Requires Science access to open.
-
 # security.yml
 ent-CrateRestraints = restraints crate
     .desc = Contains two boxes each of handcuffs and zipties. Requires Security access to open.
@@ -927,7 +845,6 @@ ent-CrateSecuritySupplies = security supplies crate
     .desc = Contains various supplies for the station's Security team. Requires Security access to open.
 ent-CrateSecurityTrackingMindshieldImplants = implanter crate
     .desc = Contains 4 MindShield implants and 4 tracking implant. Requires Security access to open.
-
 # service.yml
 ent-CrateCandles = candles crate
     .desc = Contains 4 boxes of candles, 2 large and 2 small. For atmosphere or something.
@@ -967,13 +884,11 @@ ent-CrateServiceSodaDispenser = soda dispenser refill crate
     .desc = Contains refills for soda dispensers.
 ent-CrateServiceTheatre = theatrical performances crate
     .desc = Contains a moth cloak, barber scissors, maid uniform, clown and mime attributes, and other performance charms.
-
 # shuttle.yml
 ent-CrateEngineeringGyroscope = gyroscope crate
     .desc = Contains a gyroscope flatpack.
 ent-CrateEngineeringThruster = thruster crate
     .desc = Contains a thruster flatpack.
-
 # syndicate.yml
 ent-CrateCybersunJuggernautBundle = Cybersun juggernaut bundle
     .desc = Contains everything except a big gun to go postal.
@@ -981,7 +896,6 @@ ent-CrateSyndicateSuperSurplusBundle = Syndicate super surplus crate
     .desc = Contains 125 telecrystals worth of completely random Syndicate items.
 ent-CrateSyndicateSurplusBundle = Syndicate surplus crate
     .desc = Contains 50 telecrystals worth of completely random Syndicate items. It can be useless junk or really good.
-
 # vending.yml
 ent-CrateVendingMachineRestockAutoDrobeFilled = AutoDrobe restock crate
     .desc = Contains a restock box for the AutoDrobe.
@@ -1035,15 +949,12 @@ ent-CrateVendingMachineRestockTankDispenserFilled = tank dispenser restock crate
     .desc = Contains a restock box for an Engineering or Atmospherics tank dispenser.
 ent-CrateVendingMachineRestockVendomatFilled = Vendomat restock crate
     .desc = Contains a restock box for a Vendomat vending machine.
-
 # belt.yml
 ent-ClothingBeltMilitaryWebbingGrenadeFilled = grenadier chest rig
-
 # gas_tanks.yml
 ent-NitrogenTankFilled = nitrogen tank
 ent-NitrousOxideTankFilled = nitrous oxide tank
 ent-PlasmaTankFilled = plasma tank
-
 # toolboxes.yml
 ent-ToolboxArtisticFilled = artistic toolbox
 ent-ToolboxElectricalFilled = electrical toolbox
@@ -1052,11 +963,9 @@ ent-ToolboxEmergencyFilled = emergency toolbox
 ent-ToolboxGoldFilled = golden toolbox
 ent-ToolboxMechanicalFilled = mechanical toolbox
 ent-ToolboxMechanicalFilledAllTools = mechanical toolbox
-
 # medical.yml
 ent-LockerWallMedicalDoctorFilled = medical doctor's wall locker
 ent-LockerWallMedicalFilled = medicine wall locker
-
 # security.yml
 ent-GunSafeDisabler = disabler safe
 ent-GunSafeLaserCarbine = laser safe
@@ -1066,10 +975,8 @@ ent-GunSafeShotgunEnforcer = enforcer safe
 ent-GunSafeShotgunKammerer = kammerer safe
 ent-GunSafeSubMachineGunDrozd = drozd safe
 ent-GunSafeSubMachineGunWt550 = wt550 safe
-
 # space_ruin.yml
 ent-LockerOldAISat = closet
-
 # manuals.yml
 ent-HoloparasiteInfo = holoparasite terms and conditions
     .desc = A tiny volumetric display for documents, makes one wonder if Cybersun's legal budget is way too high.
@@ -1077,7 +984,6 @@ ent-PaperAgrichemManual = NT "AgriChem Is Fun" manual
     .desc = The single sheet of instructions that came in the kit.
 ent-PaperWrittenCombatBakeryKit = combat bakery kit instructions
     .desc = Eat note after reading.
-
 # Standard.yml
 ent-Constellations = Qwertyquerty - Constellations
 ent-Drifting = Qwertyquerty - Drifting
@@ -1086,11 +992,9 @@ ent-Thunderdome = MashedByMachines - Sector 11
 ent-Tintin = Jeroen Tel - Tintin on the Moon
 ent-starlight = Qwertyquerty - Starlight
 ent-sunset = PigeonBeans - Sunset
-
 # foldable.yml
 ent-BaseDeployFoldable = deploy foldable
 ent-BaseFoldable = foldable
-
 # backpacks.yml
 ent-ClothingBackpack = backpack
     .desc = You wear this on your back and put items into it.
@@ -1159,7 +1063,6 @@ ent-ClothingBackpackSecurity = security backpack
 ent-ClothingBackpackSyndicate = syndicate backpack
 ent-ClothingBackpackVirology = virology backpack
     .desc = A backpack made of hypo-allergenic fibers. It's designed to help prevent the spread of disease. Smells like monkey.
-
 # duffel.yml
 ent-ClothingBackpackDuffel = duffel bag
     .desc = A large duffel bag for holding extra things.
@@ -1199,7 +1102,6 @@ ent-ClothingBackpackDuffelSyndicate = syndicate duffel bag
     .desc = A large duffel bag for holding various traitor goods.
 ent-ClothingBackpackDuffelVirology = virology duffel bag
     .desc = A large duffel bag made of hypo-allergenic fibers. It's designed to help prevent the spread of disease. Smells like monkey.
-
 # satchel.yml
 ent-ClothingBackpackSatchel = satchel
     .desc = A trendy looking satchel.
@@ -1237,7 +1139,6 @@ ent-ClothingBackpackSatchelSecurity = security satchel
     .desc = A robust satchel for security related needs.
 ent-ClothingBackpackSatchelVirology = virology satchel
     .desc = A satchel made of hypo-allergenic fibers. It's designed to help prevent the spread of disease. Smells like monkey.
-
 # smuggler.yml
 ent-BriefcaseSmugglerCash = smuggler's briefcase
 ent-ClothingBackpackDuffelClownSmuggler = smuggler's clown duffel bag
@@ -1246,7 +1147,6 @@ ent-ClothingBackpackSatchelSmuggler = smuggler's satchel
 ent-ClothingBackpackSatchelSmugglerUnanchored = smuggler's satchel
     .desc = A handy, suspicious looking satchel. Just flat enough to fit underneath floor tiles.
 ent-RandomSatchelSpawner = random smuggler's satchel spawner
-
 # specific.yml
 ent-ClothingBackpackChameleon = backpack
     .desc = You wear this on your back and put items into it.
@@ -1254,7 +1154,6 @@ ent-ClothingBackpackWaterTank = backpack water tank
     .desc = Holds a large amount of fluids. Supplies to spray nozzles in your hands, and has a slot on the side for said spray nozzles.
 ent-ClothingBagPet = pet bag
     .desc = A small bag designed for use by pets and small animals.
-
 # belts.yml
 ent-ClothingBeltAssault = assault belt
     .desc = A tactical assault belt.
@@ -1299,15 +1198,12 @@ ent-ClothingBeltUtility = utility belt
     .desc = Can hold various things.
 ent-ClothingBeltWand = wand belt
     .desc = A belt designed to hold various rods of power. A veritable fanny pack of exotic magic.
-
 # quiver.yml
 ent-ClothingBeltQuiver = quiver
     .desc = Can hold up to 15 arrows, and fits snug around your waist.
-
 # waist_bags.yml
 ent-ClothingBeltStorageWaistbag = leather waist bag
     .desc = A leather waist bag meant for carrying small items.
-
 # headsets.yml
 ent-ClothingHeadset = headset
     .desc = An updated, modular intercom that fits over the head. Takes encryption keys.
@@ -1348,7 +1244,6 @@ ent-ClothingHeadsetService = service headset
     .desc = Headset used by the service staff, tasked with keeping the station full, happy and clean.
 ent-ClothingHeadsetWizard = wizard headset
     .desc = A headset used by the dreaded space wizards.
-
 # headsets_alt.yml
 ent-ClothingHeadsetAlt = headset
     .desc = An updated, modular intercom that fits over the head. Takes encryption keys.
@@ -1363,11 +1258,9 @@ ent-ClothingHeadsetAltSecurity = head of security's over-ear headset
 ent-ClothingHeadsetAltSyndicate = blood-red over-ear headset
     .desc = An updated, modular syndicate intercom that fits over the head and takes encryption keys (there are 5 key slots.).
 ent-ClothingHeadsetAltWizard = wizard's over-ear headset
-
 # specific.yml
 ent-ClothingHeadsetChameleon = passenger headset
     .desc = An updated, modular intercom that fits over the head. Takes encryption keys.
-
 # glasses.yml
 ent-ClothingEyesGlasses = glasses
     .desc = A pair of spectacular spectacles with prescription lenses.
@@ -1403,7 +1296,6 @@ ent-ClothingEyesGlassesThermal = optical thermal scanner
     .desc = Thermals in the shape of glasses.
 ent-ClothingEyesVisorNinja = ninja visor
     .desc = An advanced visor protecting a ninja's eyes from flashing lights.
-
 # hud.yml
 ent-ClothingEyesEyepatchHudBeer = beer hud eyepatch
     .desc = A pair of sunHud outfitted with apparatus to scan reagents, as well as providing an innate understanding of liquid viscosity while in motion. For true patriots.
@@ -1445,21 +1337,17 @@ ent-ClothingEyesHudSyndicate = syndicate visor
     .desc = The syndicate's professional head-up display, designed for better detection of humanoids and their subsequent elimination.
 ent-ClothingEyesHudSyndicateAgent = syndicate medical visor
     .desc = The Syndicate Corpsman's professional heads-up display, designed for quick diagnosis of their team's status.
-
 # misc.yml
 ent-ClothingEyesBlindfold = blindfold
     .desc = The bind leading the blind.
 ent-ClothingEyesEyepatch = eyepatch
     .desc = Yarr.
-
 # specific.yml
 ent-ClothingEyesChameleon = sun glasses
     .desc = Useful both for security and cargonia.
-
 # base_clothinghands.yml
 ent-SilverRingBase = silver ring
     .desc = Looks slightly less valuable than a gold one.
-
 # colored.yml
 ent-ClothingHandsGlovesColorBlack = black gloves
     .desc = Regular black gloves that do not keep you from frying.
@@ -1487,7 +1375,6 @@ ent-ClothingHandsGlovesColorYellow = insulated gloves
     .desc = These gloves will protect the wearer from electric shocks.
 ent-ClothingHandsGlovesColorYellowBudget = budget insulated gloves
     .desc = These gloves are cheap knockoffs of the coveted ones - no way this can end badly.
-
 # gloves.yml
 ent-ClothingHandsGlovesBoxingBlue = blue boxing gloves
     .desc = Blue gloves for competitive boxing.
@@ -1543,7 +1430,6 @@ ent-ClothingHandsMercGlovesCombat = mercenary combat gloves
     .desc = High-quality combat gloves to protect hands from mechanical damage during combat.
 ent-ClothingHandsTacticalMaidGloves = tactical maid gloves
     .desc = Tactical maid gloves, every self-respecting maid should be able to discreetly eliminate her goals.
-
 # rings.yml
 ent-GoldRing = gold ring
     .desc = A precious ring.
@@ -1557,11 +1443,9 @@ ent-SilverRingDiamond = silver diamond ring
     .desc = Made from ethically mined space diamonds.
 ent-SilverRingGem = silver gem ring
     .desc = Shiny and not quite as valuable!
-
 # specific.yml
 ent-ClothingHandsChameleon = black gloves
     .desc = Regular black gloves that do not keep you from frying.
-
 # animals.yml
 ent-ClothingHeadHatAnimalCat = grey cat hat
     .desc = A cute and fluffy head of a grey cat.
@@ -1573,7 +1457,6 @@ ent-ClothingHeadHatAnimalHeadslime = headslime hat
     .desc = A green, sticky headslime, you put it on your head.
 ent-ClothingHeadHatAnimalMonkey = monkey hat
     .desc = That's a monkey head. It has a hole on a mouth to eat bananas.
-
 # bandanas.yml
 ent-ClothingHeadBandBlack = black bandana
 ent-ClothingHeadBandBlue = blue bandana
@@ -1585,7 +1468,6 @@ ent-ClothingHeadBandGrey = grey bandana
 ent-ClothingHeadBandMerc = mercenary bandana
 ent-ClothingHeadBandRed = red bandana
 ent-ClothingHeadBandSkull = skull bandana
-
 # base_clothinghead.yml
 ent-ClothingHeadEVAHelmetBase = base space helmet
 ent-ClothingHeadHardsuitBase = base hardsuit helmet
@@ -1593,7 +1475,6 @@ ent-ClothingHeadHatHoodWinterBase = base winter coat hood
     .desc = A hood, made to keep your head warm.
 ent-ClothingHeadLightBase = base helmet with light
 ent-ClothingHeadSuitWithLightBase = base hardsuit helmet with light
-
 # eva-helmets.yml
 ent-ClothingHeadHelmetAncient = NTSRA void helmet
     .desc = An ancient space helmet, designed by the NTSRA branch of CentComm.
@@ -1607,7 +1488,6 @@ ent-ClothingHeadHelmetSyndicate = syndicate EVA helmet
     .desc = A simple, stylish EVA helmet. Designed for maximum humble space-badassery.
 ent-ClothingHeadHelmetVoidParamed = paramedic void helmet
     .desc = A void helmet made for paramedics.
-
 # hardhats.yml
 ent-ClothingHeadHatHardhatArmored = armored hard hat
     .desc = An armored hard hat. Provides the best of both worlds in both protection & utility - perfect for the engineer on the frontlines.
@@ -1623,7 +1503,6 @@ ent-ClothingHeadHatHardhatYellow = yellow hard hat
     .desc = A hard hat, painted in yellow, used in dangerous working conditions to protect the head. Comes with a built-in flashlight.
 ent-ClothingHeadHatHardhatYellowDark = dark yellow hard hat
     .desc = A hard hat, painted in dark yellow, used in dangerous working conditions to protect the head. Comes with a built-in flashlight.
-
 # hardsuit-helmets.yml
 ent-ClothingHeadHelmetCBURN = CBURN exosuit helmet
     .desc = A pressure resistant and fireproof hood worn by special cleanup units.
@@ -1695,7 +1574,6 @@ ent-ClothingHeadHelmetHardsuitWarden = warden's hardsuit helmet
     .desc = A modified riot helmet. Oddly comfortable.
 ent-ClothingHeadHelmetHardsuitWizard = wizard hardsuit helmet
     .desc = A bizarre gem-encrusted helmet that radiates magical energies.
-
 # hats.yml
 ent-ClothingHeadFishCap = fishing cap
     .desc = \"Women fear me. Fish fear me. Men turn their eyes away from me. As I walk no beast dares make a sound in my presence. I am alone on this barren Earth.\"
@@ -1863,7 +1741,6 @@ ent-ClothingHeadSafari = safari hat
     .desc = Keeps the sun out of your eyes. Makes you a target for the locals.
 ent-ClothingHeadWehcellentCap = wehcellent cap
     .desc = \"It was a net hat! Tiders wear them all the time! It's got airholes in the back to keep a cross-breeze going and everything!\"
-
 # helmets.yml
 ent-ActionToggleJusticeHelm = Toggle Justice Helm
     .desc = Toggles the justice helm on and off.
@@ -1915,7 +1792,6 @@ ent-ClothingHeadHelmetThunderdome = thunderdome helmet
     .desc = Let the battle commence!
 ent-ClothingHeadHelmetWizardHelm = wizard helm
     .desc = Strange-looking helmet that most certainly belongs to a real magic user.
-
 # hoods.yml
 ent-ClothingHeadHatHoodBioCmo = bio hood
     .desc = An advanced hood for chief medical officers that protects the head and face from biological contaminants.
@@ -1985,7 +1861,6 @@ ent-ClothingHeadHatHoodWinterSec = security coat hood
 ent-ClothingHeadHatHoodWinterSyndie = syndicate coat hood
 ent-ClothingHeadHatHoodWinterWarden = warden's coat hood
 ent-ClothingHeadHatHoodWinterWeb = web coat hood
-
 # misc.yml
 ent-ActionBecomeValid = Become Valid
     .desc = *notices your killsign* owo whats this
@@ -2027,11 +1902,9 @@ ent-ClothingHeadPerformerWig = performer's wig
     .desc = On a closer inspection, it appears that it is made from optic fiber.
 ent-WaterDropletHat = water droplet
     .desc = Makes 8-eyed friends 8 times more adorable!
-
 # scraphelmet.yml
 ent-ClothingHeadHelmetScrap = scrap helmet
     .desc = A cobbled-together helmet made from cabling, steel, and a bucket.
-
 # soft.yml
 ent-ClothingHeadHatBizarreSoft = troublemaker's cap
     .desc = A truly.. bizarre accessory.
@@ -2081,13 +1954,11 @@ ent-ClothingHeadHatSecsoftFlipped = security cap
 ent-ClothingHeadHatYellowsoft = yellow cap
     .desc = A yellow baseball cap.
 ent-ClothingHeadHatYellowsoftFlipped = yellow cap
-
 # specific.yml
 ent-ClothingHeadHatChameleon = beret
     .desc = A beret, an artists favorite headwear.
 ent-ClothingHeadHatDetGadget = go go hat
     .desc = A novel hat with a built in toolkit. Automatically stores and retrieves items at the say of a phrase!
-
 # welding.yml
 ent-ClothingHeadHatWelding = welding mask
     .desc = A head-mounted face cover designed to protect the wearer completely from space-arc eye.
@@ -2098,7 +1969,6 @@ ent-ClothingHeadHatWeldingMaskFlameBlue = blue-flame welding mask
 ent-ClothingHeadHatWeldingMaskPainted = painted welding mask
     .desc = A welding helmet, painted in crimson.
 ent-WeldingMaskBase = welding mask
-
 # bandanas.yml
 ent-ClothingMaskBandBlack = black bandana
     .desc = A black bandana to make you look cool.
@@ -2120,11 +1990,9 @@ ent-ClothingMaskBandRed = red bandana
     .desc = A red bandana to make you look cool.
 ent-ClothingMaskBandSkull = skull bandana
     .desc = A bandana with a skull to make you look even cooler.
-
 # base_clothingmask.yml
 ent-ActionToggleMask = Toggle Mask
     .desc = Handy, but prevents insertion of pie into your pie hole.
-
 # masks.yml
 ent-ClothingMaskBat = bat mask
     .desc = A bloodsucker by night, and a cute, blinded beast by day.
@@ -2204,17 +2072,14 @@ ent-ClothingMaskSterile = sterile mask
     .desc = A sterile mask designed to help prevent the spread of diseases.
 ent-ClothingMaskWeldingGas = welding gas mask
     .desc = A gas mask with built in welding goggles and face shield. Looks like a skull, clearly designed by a nerd.
-
 # specific.yml
 ent-ClothingMaskGasChameleon = gas mask
     .desc = A face-covering mask that can be connected to an air supply.
 ent-ClothingMaskGoldenCursed = golden mask
     .desc = Previously used in strange pantomimes, after one of the actors went mad on stage these masks have avoided use. You swear its face contorts when you're not looking.
-
 # misc.yml
 ent-ClothingMultipleHeadphones = headphones
     .desc = Quality headphones from Drunk Masters, with good sound insulation.
-
 # towel.yml
 ent-BaseTowel = base towel
     .desc = If you want to survive out here, you gotta know where your towel is.
@@ -2241,7 +2106,6 @@ ent-TowelColorSyndicate = syndicate towel
 ent-TowelColorTeal = teal towel
 ent-TowelColorWhite = white towel
 ent-TowelColorYellow = yellow towel
-
 # cloaks.yml
 ent-ClothingCloakCmo = chief medical officer's cloak
     .desc = A sterile blue cloak with a green cross, radiating with a sense of duty and willingness to help others.
@@ -2297,7 +2161,6 @@ ent-ClothingNeckCloakTrans = vampire cloak
     .desc = Worn by high ranking vampires of the transylvanian society of vampires.
 ent-ClothingNeckCloakVoid = void cloak
     .desc = A cloak of darkness. For those who have gone to the dark side of the force.
-
 # mantles.yml
 ent-ClothingNeckMantle = mantle
     .desc = A soft mantle, made with the same 'synthetic' animal furs of the iconic winter coat.
@@ -2315,7 +2178,6 @@ ent-ClothingNeckMantleQM = quartermaster's mantle
     .desc = For the master of goods and materials to rule over the department, a befitting mantle to show off superiority!
 ent-ClothingNeckMantleRD = research director's mantle
     .desc = For when long days in the office consist of explosives, poisonous gas, murder robots, and a fresh pizza from cargo; this mantle will keep you comfy.
-
 # medals.yml
 ent-ClothingNeckBronzeheart = bronzeheart medal
     .desc = Given to crewmates for exemplary bravery in the face of danger.
@@ -2333,7 +2195,6 @@ ent-ClothingNeckSciencemedal = science medal
     .desc = Given for the best work in the science department.
 ent-ClothingNeckSecuritymedal = security medal
     .desc = Given for the best work in the security department.
-
 # misc.yml
 ent-ActionStethoscope = Listen with stethoscope
 ent-ClothingNeckBling = bling
@@ -2344,7 +2205,6 @@ ent-ClothingNeckStethoscope = stethoscope
     .desc = An outdated medical apparatus for listening to the sounds of the human body. It also makes you look like you know what you're doing.
 ent-Dinkystar = star sticker
     .desc = A dinky lil star for only the hardest working security officers! It's not even sticky anymore.
-
 # pins.yml
 ent-ClothingNeckAllyPin = straight ally pin
     .desc = Be ally do crime.
@@ -2384,7 +2244,6 @@ ent-ClothingNeckPluralPin = plural pin
     .desc = Be plural, do crimes.
 ent-ClothingNeckTransPin = transgender pin
     .desc = Be trans do crime.
-
 # scarfs.yml
 ent-ClothingNeckScarfStripedAce = striped asexual scarf
     .desc = A stylish striped asexual scarf. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks.
@@ -2434,21 +2293,17 @@ ent-ClothingNeckScarfStripedTrans = striped trans scarf
     .desc = A stylish striped trans scarf. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks.
 ent-ClothingNeckScarfStripedZebra = zebra scarf
     .desc = A striped scarf, a mandatory accessory for artists.
-
 # specific.yml
 ent-ClothingNeckChameleon = striped red scarf
     .desc = A stylish striped red scarf. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks.
-
 # stoles.yml
 ent-ClothingNeckStoleChaplain = chaplain stole
     .desc = An elegantly designed stole, with a vibrant gold plus on either end.
-
 # ties.yml
 ent-ClothingNeckTieDet = detective's tie
     .desc = A loosely tied necktie, a perfect accessory for the over-worked detective.
 ent-ClothingNeckTieSci = scientist's tie
     .desc = Why do we all have to wear these ridiculous ties?
-
 # armor.yml
 ent-ClothingOuterArmorBase = armor vest
     .desc = A standard Type I armored vest that provides decent protection against most types of damage.
@@ -2492,12 +2347,10 @@ ent-ClothingOuterVestWebElite = elite web vest
     .desc = A synthetic armor vest. This one has added webbing and heat resistant fibers.
 ent-ClothingOuterVestWebMerc = mercenary web vest
     .desc = A high-quality armored vest made from a hard synthetic material. It's surprisingly flexible and light, despite formidable armor plating.
-
 # base_clothingouter.yml
 ent-ClothingOuterBaseToggleable = hoodie with hood
 ent-ClothingOuterEVASuitBase = base EVA Suit
 ent-ClothingOuterHardsuitBase = base hardsuit
-
 # bio.yml
 ent-ClothingOuterBioCmo = bio suit
     .desc = An advanced suit that protects against biological contamination, in CMO colors.
@@ -2511,7 +2364,6 @@ ent-ClothingOuterBioSecurity = bio suit
     .desc = A suit that protects against biological contamination, kitted out with additional armor.
 ent-ClothingOuterBioVirology = bio suit
     .desc = A suit that strongly protects against biological contamination.
-
 # coats.yml
 ent-ClothingOuterClownPriest = robes of the honkmother
     .desc = Meant for a clown of the cloth.
@@ -2580,7 +2432,6 @@ ent-ClothingOuterDameDane = yakuza coat
     .desc = Friday...
 ent-ClothingOuterDogi = samurai dogi
     .desc = Dogi is a type of traditional Japanese clothing. The dogi is made of heavy, durable fabric, it is practical in combat and stylish in appearance. It is decorated with intricate patterns and embroidery on the back.
-
 # hardsuits.yml
 ent-ClothingOuterHardsuitAtmos = atmos hardsuit
     .desc = A special suit that protects against hazardous, low pressure environments. Has thermal shielding.
@@ -2652,7 +2503,6 @@ ent-ClothingOuterHardsuitWarden = warden's hardsuit
     .desc = A specialized riot suit geared to combat low pressure environments.
 ent-ClothingOuterHardsuitWizard = wizard hardsuit
     .desc = A bizarre gem-encrusted suit that radiates magical energies.
-
 # misc.yml
 ent-ClothingOuterApron = apron
     .desc = A fancy apron for a stylish person.
@@ -2706,11 +2556,9 @@ ent-ClothingOuterWizardRed = red wizard robes
     .desc = Strange-looking, red, hat-wear that most certainly belongs to a real magic user.
 ent-ClothingOuterWizardViolet = violet wizard robes
     .desc = A bizarre gem-encrusted violet robe that radiates magical energies.
-
 # scraparmor.yml
 ent-ClothingOuterArmorScrap = scrap armor
     .desc = A tider's gleaming plate mail. Bail up, or you're a dead man.
-
 # softsuits.yml
 ent-ClothingOuterEVASuitSyndicate = syndicate EVA suit
     .desc = Has a tag on the back that reads: 'Totally not property of an enemy corporation, honest!'
@@ -2724,11 +2572,9 @@ ent-ClothingOuterHardsuitVoidParamed = paramedic void suit
     .desc = A void suit made for paramedics.
 ent-ClothingOuterSuitEmergency = emergency EVA suit
     .desc = An emergency EVA suit with a built-in helmet. It's horribly slow and lacking in temperature protection, but enough to buy you time from the harsh vacuum of space.
-
 # specific.yml
 ent-ClothingOuterChameleon = vest
     .desc = A thick vest with a rubbery, water-resistant shell.
-
 # suits.yml
 ent-ClothingOuterSuitAtmosFire = atmos fire suit
     .desc = An expensive firesuit that protects against even the most deadly of station fires. Designed to protect even if the wearer is set aflame.
@@ -2754,7 +2600,6 @@ ent-ClothingOuterSuitSpaceNinja = space ninja suit
     .desc = This black technologically advanced, cybernetically-enhanced suit provides many abilities like invisibility or teleportation.
 ent-ClothingOuterSuitWitchRobes = witch robes
     .desc = Magic is all about the spell power, ZE!
-
 # vests.yml
 ent-ClothingOuterVest = vest
     .desc = A thick vest with a rubbery, water-resistant shell.
@@ -2762,7 +2607,6 @@ ent-ClothingOuterVestHazard = hi-viz vest
     .desc = A high-visibility vest used in work zones.
 ent-ClothingOuterVestTank = tank harness
     .desc = A simple harness that can hold a gas tank.
-
 # wintercoats.yml
 ent-ClothingOuterWinterAtmos = atmospherics winter coat
 ent-ClothingOuterWinterBar = bartender winter coat
@@ -2822,7 +2666,6 @@ ent-ClothingOuterWinterWardenUnarmored = warden's winter coat
     .desc = A sturdy coat, a warm coat, but not an armored coat.
 ent-ClothingOuterWinterWeb = web winter coat
     .desc = Feels like the inside of a cocoon, not that this would make you less afraid of being in one.
-
 # boots.yml
 ent-ClothingShoesBootsCombat = combat boots
     .desc = Robust combat boots for combat scenarios or combat situations. All combat, all the time.
@@ -2855,7 +2698,6 @@ ent-ClothingShoesBootsWork = workboots
     .desc = Engineering lace-up work boots for the especially blue-collar.
 ent-ClothingShoesHighheelBoots = high-heeled boots
     .desc = Snazy boots for when you want to be stylish, yet prepared.
-
 # color.yml
 ent-ClothingShoesColorBlack = black shoes
     .desc = Stylish black shoes.
@@ -2875,7 +2717,6 @@ ent-ClothingShoesColorWhite = white shoes
     .desc = Don't take them off at your office Christmas party.
 ent-ClothingShoesColorYellow = yellow shoes
     .desc = Stylish yellow shoes.
-
 # magboots.yml
 ent-ActionToggleMagboots = Toggle Magboots
     .desc = Toggles the magboots on and off.
@@ -2887,7 +2728,6 @@ ent-ClothingShoesBootsMagBlinding = magboots of blinding speed
     .desc = These would look fetching on a fetcher like you.
 ent-ClothingShoesBootsMagSyndie = blood-red magboots
     .desc = Reverse-engineered magnetic boots that have a heavy magnetic pull and integrated thrusters. It can hold 0.75 L of gas.
-
 # misc.yml
 ent-ActionToggleSpeedBoots = Toggle Speed Boots
     .desc = Toggles the speed boots on and off.
@@ -2911,7 +2751,6 @@ ent-ClothingShoesSnakeskinBoots = snakeskin boots
     .desc = Boots made of high-class snakeskin, everyone around you will be jealous.
 ent-ClothingShoesTourist = tourist shoes
     .desc = These cheap sandals don't look very comfortable.
-
 # specific.yml
 ent-ClothingShoesBling = bling clown shoes
     .desc = Made of refined bananium and shined with the pulp of a fresh banana peel. These make a flashy statement.
@@ -2943,13 +2782,11 @@ ent-ClothingShoesSwat = swat shoes
     .desc = When you want to turn up the heat.
 ent-ClothingShoesWizard = wizard shoes
     .desc = A pair of magic shoes.
-
 # under.yml
 ent-ClothingUnderSocksBee = bee socks
     .desc = Make them loins buzz!
 ent-ClothingUnderSocksCoder = coder socks
     .desc = It's time to code sisters!!11!
-
 # color_dress.yml
 ent-ClothingUniformJumpskirtBlackElegantDress = black elegant dress
     .desc = Elegant dress with a beautiful bow.
@@ -2983,7 +2820,6 @@ ent-ClothingUniformJumpskirtYellowOldDress = yellow old dress
     .desc = Classic western dress.
 ent-ClothingUniformJumpskirtYellowTurtleneckDress = yellow turtleneck dress
     .desc = Turtleneck dress with a unique design.
-
 # color_jumpskirts.yml
 ent-ClothingUniformJumpskirtColorBlack = black jumpskirt
     .desc = A generic black jumpskirt with no rank markings.
@@ -3019,7 +2855,6 @@ ent-ClothingUniformJumpskirtColorWhite = white jumpskirt
     .desc = A generic white jumpskirt with no rank markings.
 ent-ClothingUniformJumpskirtColorYellow = yellow jumpskirt
     .desc = A generic yellow jumpskirt with no rank markings.
-
 # color_jumpsuits.yml
 ent-ClothingUniformColorRainbow = rainbow jumpsuit
     .desc = A multi-colored jumpsuit!
@@ -3055,7 +2890,6 @@ ent-ClothingUniformJumpsuitColorWhite = white jumpsuit
     .desc = A generic white jumpsuit with no rank markings.
 ent-ClothingUniformJumpsuitColorYellow = yellow jumpsuit
     .desc = A generic yellow jumpsuit with no rank markings.
-
 # jumpskirts.yml
 ent-ClothingUniformJumpskirtAtmos = atmospheric technician jumpskirt
     .desc = I am at work. I can't leave work. Work is breathing. I am testing air quality.
@@ -3191,7 +3025,6 @@ ent-ClothingUniformJumpskirtWarden = warden's uniform
     .desc = A formal security suit for officers complete with Nanotrasen belt buckle.
 ent-ClothingUniformJumpskirtWeb = web jumpskirt
     .desc = Makes it clear that you are one with the webs.
-
 # jumpsuits.yml
 ent-ClothingUniformJumpsuitAncient = ancient jumpsuit
     .desc = A terribly ragged and frayed grey jumpsuit. It looks like it hasn't been washed in over a decade.
@@ -3412,13 +3245,11 @@ ent-ClothingUniformOveralls = overalls
     .desc = Great for working outdoors.
 ent-ClothingUniformSecurityTrooper = trooper uniform
     .desc = A formal uniform issued to the Nanotrasen Troopers, usually it comes with a car.
-
 # misc_roles.yml
 ent-UniformShortsRed = boxing shorts
     .desc = These are shorts, not boxers.
 ent-UniformShortsRedWithTop = boxing shorts with top
     .desc = These are shorts, not boxers.
-
 # random_suit.yml
 ent-ClothingRandomSpawner = random colorful costume
 ent-ClothingUniformRandomArmless = colorful hands-free costume
@@ -3426,7 +3257,6 @@ ent-ClothingUniformRandomBra = colorful bra
 ent-ClothingUniformRandomShirt = colorful costume
 ent-ClothingUniformRandomShorts = colorful pants
 ent-ClothingUniformRandomStandard = colorful costume
-
 # scrubs.yml
 ent-UniformScrubsColorBlue = blue scrubs
     .desc = A combination of comfort and utility intended to make removing every last organ someone has and selling them to a space robot much more official looking.
@@ -3434,7 +3264,6 @@ ent-UniformScrubsColorGreen = green scrubs
     .desc = A combination of comfort and utility intended to make removing every last organ someone has and selling them to a space robot much more official looking.
 ent-UniformScrubsColorPurple = purple scrubs
     .desc = A combination of comfort and utility intended to make removing every last organ someone has and selling them to a space robot much more official looking.
-
 # ship_vs_ship.yml
 ent-ClothingUniformJumpsuitChiefEngineerNT = chief engineer jumpsuit
     .desc = It is often joked that the role of the combat-sector Chief Engineer is where the actual, logistically-minded engineers are promoted to. Good luck.
@@ -3452,11 +3281,9 @@ ent-ClothingUniformJumpsuitRepairmanNT = repairman jumpsuit
     .desc = A jumpsuit that reminds you of a certain crew-sector work position. Hopefully, you won't have to do the same job as THOSE freaks.
 ent-ClothingUniformJumpsuitRepairmanSyndie = syndicate repairman jumpsuit
     .desc = Functional, fashionable, and badass. Nanotrasen's engineers wish they could look as good as this.
-
 # specific.yml
 ent-ClothingUniformJumpsuitChameleon = black jumpsuit
     .desc = A generic black jumpsuit with no rank markings.
-
 # clicktest.yml
 ent-ClickTestFixedCornerInvisible = ClickTestFixedCornerInvisible
 ent-ClickTestFixedCornerVisible = ClickTestFixedCornerVisible
@@ -3464,30 +3291,23 @@ ent-ClickTestRotatingCornerInvisible = ClickTestRotatingCornerInvisible
 ent-ClickTestRotatingCornerInvisibleNoRot = ClickTestRotatingCornerInvisibleNoRot
 ent-ClickTestRotatingCornerVisible = ClickTestRotatingCornerVisible
 ent-ClickTestRotatingCornerVisibleNoRot = ClickTestRotatingCornerVisibleNoRot
-
 # debug_sweps.yml
 ent-BulletDebug = bang, ded bullet
 ent-CartridgeDebug = bang, ded cartridge
 ent-MagazinePistolDebug = bang, ded mag
-
 # drugs.yml
 ent-DrinkMeth = meth
     .desc = Just a whole glass of meth.
-
 # item.yml
 ent-DebugItemShapeWeird = weirdly shaped item
     .desc = What is it...?
-
 # stress_test.yml
 ent-StressTest = stress test
-
 # acidifier.yml
 ent-Acidifier = acid
     .desc = Melts you into a puddle of yuck!
-
 # admin_triggers.yml
 ent-AdminInstantEffectBase = instant effect
-
 # chemistry_effects.yml
 ent-AluminiumMetalFoam = aluminium metal foam
 ent-BaseFoamedMetal = base foamed metal
@@ -3501,17 +3321,13 @@ ent-MetalFoam = metal foam
 ent-Smoke = smoke
 ent-TearGasSmoke = tear gas
 ent-WizardSmoke = smoke
-
 # eldritch.yml
 ent-EffectVoidBlink = void blink
-
 # exclamation.yml
 ent-Exclamation = exclamation
 ent-WhistleExclamation = exclamation
-
 # explosion_light.yml
 ent-ExplosionLight = explosion light
-
 # mobspawn.yml
 ent-MobSpawnCrabBananium = mobspawner bananiumcrab
 ent-MobSpawnCrabCoal = mobspawner coalcrab
@@ -3520,50 +3336,39 @@ ent-MobSpawnCrabIron = mobspawner ironcrab
 ent-MobSpawnCrabQuartz = mobspawner quartzcrab
 ent-MobSpawnCrabSilver = mobspawner silvercrab
 ent-MobSpawnCrabUranium = mobspawner uraniumcrab
-
 # portal.yml
 ent-BasePortal = bluespace portal
     .desc = Transports you to a linked destination!
 ent-ShadowPortal = shadow rift
     .desc = Looks unstable.
-
 # puddle.yml
 ent-PuddleSparkle = sparkle
-
 # atmos_blocker.yml
 ent-AtmosFixAirMarker = Atmos Fix Air Marker
     .desc = Oxygen (21%) and nitrogen (79%) @ gas miner pressure, T20C
-
 # map_text.yml
 ent-MapText = map text
-
 # npc.yml
 ent-PathfindPoint = pathfind point
-
 # rooms.yml
 ent-BaseRoomMarker = room spawner
-
 # shuttle.yml
 ent-FTLExclusion = FTL exclusion point
 ent-FTLPoint = FTL point
-
 # tile.yml
 ent-NoRoofMarker = Roof
 ent-RoofMarker = Roof
-
 # warp_point.yml
 ent-GhostWarpPoint = ghost only warp point
 ent-WarpPoint = warp point
 ent-WarpPointBeacon = warp point (beacon)
 ent-WarpPointBombing = warp point
-
 # bots.yml
 ent-SpawnMobCleanBot = cleanbot spawner
 ent-SpawnMobFireBot = firebot spawner
 ent-SpawnMobHonkBot = honkbot spawner
 ent-SpawnMobMedibot = medibot spawner
 ent-SpawnMobSupplyBot = supplybot spawner
-
 # ghost_roles.yml
 ent-BaseAntagSpawner = ghost role spawn point
 ent-SpawnPointGhostCerberus = ghost role spawn point
@@ -3571,7 +3376,6 @@ ent-SpawnPointGhostNukeOperative = ghost role spawn point
 ent-SpawnPointGhostRatKing = ghost role spawn point
 ent-SpawnPointGhostRemilia = ghost role spawn point
 ent-SpawnPointGhostWizard = ghost role spawn point
-
 # jobs.yml
 ent-SpawnPointAtmos = atmospherics
 ent-SpawnPointBartender = bartender
@@ -3619,21 +3423,16 @@ ent-SpawnPointStationEngineer = stationengineer
 ent-SpawnPointTechnicalAssistant = technical assistant
 ent-SpawnPointWarden = warden
 ent-SpawnPointZookeeper = zookeeper
-
 # vending_machine_restock.yml
 ent-SpawnVendingMachineRestockDrink = Vending Machine Restock
 ent-SpawnVendingMachineRestockFood = Vending Machine Restock
 ent-SpawnVendingMachineRestockFoodDrink = Vending Machine Restock
-
 # nukies.yml
 ent-SpawnPointNukies = nukies
-
 # pirates.yml
 ent-SpawnPointPirates = Pirate spawn point
-
 # wizard.yml
 ent-SpawnPointWizard = wizard
-
 # animals.yml
 ent-SpawnMobBee = Bee Spawner
 ent-SpawnMobButterfly = Butterfly Spawner
@@ -3654,13 +3453,11 @@ ent-SpawnMobPenguin = Penguin Spawner
 ent-SpawnMobReindeerBuck = Reindeer Buck Spawner
 ent-SpawnMobReindeerDoe = Reindeer Doe Spawner
 ent-SpawnMobSlug = Slug Spawner
-
 # carp.yml
 ent-SpawnMobCarp = Space Carp Spawner
 ent-SpawnMobCarpHolo = Holocarp Spawner
 ent-SpawnMobCarpMagic = Magicarp Spawner
 ent-SpawnMobShark = Space Sharkminnow Spawner
-
 # hostile.yml
 ent-SpawnClownSpider = clown spider spawner
 ent-SpawnMobBear = Space Bear Spawner
@@ -3680,10 +3477,8 @@ ent-SpawnMobWatcherIcewing = Watcher Icewing Spawner
 ent-SpawnMobWatcherLavaland = Watcher Lavaland Spawner
 ent-SpawnMobWatcherMagmawing = Watcher Magmawing Spawner
 ent-SpawnMobWatcherPride = Watcher Pride Spawner
-
 # misc.yml
 ent-SpawnMobGingerbreadAI = gingerbread man Spawner
-
 # pets.yml
 ent-SpawnMobAlexander = Alexander Spawner
 ent-SpawnMobBandito = Bandito Spawner
@@ -3706,7 +3501,6 @@ ent-SpawnMobShiva = Shiva Spawner
 ent-SpawnMobSlothPaperwork = Sloth Paperwork Spawner
 ent-SpawnMobSmile = Smile Spawner
 ent-SpawnMobWalter = Walter Spawner
-
 # slimes.yml
 ent-SpawnMobAdultSlimesBlue = Slimes Spawner Blue
 ent-SpawnMobAdultSlimesBlueAngry = Slimes Spawner Blue Angry
@@ -3714,7 +3508,6 @@ ent-SpawnMobAdultSlimesGreen = Slimes Spawner Green
 ent-SpawnMobAdultSlimesGreenAngry = Slimes Spawner Green Angry
 ent-SpawnMobAdultSlimesYellow = Slimes Spawner Yellow
 ent-SpawnMobAdultSlimesYellowAngry = Slimes Spawner Yellow Angry
-
 # xenos.yml
 ent-SpawnMobXenoBurrower = Xeno Spawner
 ent-SpawnMobXenoDrone = Xeno Spawner
@@ -3724,115 +3517,83 @@ ent-SpawnMobXenoQueen = Xeno Spawner
 ent-SpawnMobXenoRavager = Xeno Spawner
 ent-SpawnMobXenoRunner = Xeno Spawner
 ent-SpawnMobXenoSpitter = Xeno Spawner
-
 # anomaly.yml
 ent-RandomAnomalyInjectorSpawner = random anomaly injector spawner
 ent-RandomAnomalySpawner = random anomaly spawner
 ent-RandomRockAnomalySpawner = random rock anomaly spawner
-
 # arcade.yml
 ent-RandomArcade = random arcade spawner
-
 # artifacts.yml
 ent-RandomArtifactSpawner = random artifact spawner
 ent-RandomArtifactSpawner20 = random artifact spawner [20]
-
 # cables.yml
 ent-RandomCableApcExtensionSpawner = LV power cable spawner
 ent-RandomCableHVSpawner = HV power cable spawner
 ent-RandomCableMVSpawner = MV power cable spawner
-
 # flora.yml
 ent-RandomFloraTree = random tree spawner
-
 # instruments.yml
 ent-RandomInstruments = random instruments spawner
-
 # mineshaft.yml
 ent-RandomBrownStalagmite = brown stalagmite spawner
 ent-RandomGreyStalagmite = grey stalagmite spawner
 ent-RandomStalagmiteOrCrystal = stalagmite or crystal spawner
 ent-RandomWoodenSupport = wooden support spawner
 ent-RandomWoodenWall = wooden wall spawner
-
 # paintings.yml
 ent-RandomPainting = random painting spawner
-
 # posters.yml
 ent-RandomPosterAny = random poster spawner
 ent-RandomPosterContraband = random contraband poster spawner
 ent-RandomPosterLegit = random legit poster spawner
-
 # pottedplants.yml
 ent-PottedPlantRandom = random potted plant spawner
 ent-PottedPlantRandomPlastic = random plastic potted plant spawner
-
 # shadowkudzu.yml
 ent-ShadowKudzuLootSpawner = shadow kudzu loot spawner
-
 # smokables.yml
 ent-RandomSmokables = random smokable spawner
 ent-RandomSoakedCigarette = random soaked cigarette spawner
-
 # soap.yml
 ent-RandomSoap = random soap spawner
-
 # techboard.yml
 ent-RandomBoard = random board spawner
-
 # vending.yml
 ent-RandomVending = random vending machine spawner
 ent-RandomVendingClothing = random vending machine spawner
-
 # vendingdrinks.yml
 ent-RandomVendingDrinks = random vending machine spawner
-
 # vendingsnacks.yml
 ent-RandomVendingSnacks = random vending machine spawner
-
 # base.yml
 ent-DecalSpawnerBase = Decal Spawner
-
 # drinks_bottles.yml
 ent-RandomDrinkBottle = random drink spawner
-
 # drinks_glass.yml
 ent-RandomDrinkGlass = random drink spawner
-
 # drinks_soda.yml
 ent-RandomDrinkSoda = random soda spawner
-
 # food_baked_single.yml
 ent-RandomFoodBakedSingle = random baked food spawner
-
 # food_baked_whole.yml
 ent-RandomFoodBakedWhole = random baked food spawner
-
 # food_breakfast.yml
 ent-RandomFoodBreakfast = random food spawner
-
 # food_ingredients.yml
 ent-RandomIngredient = random ingredient spawner
-
 # food_meal.yml
 ent-RandomFoodMeal = random food spawner
-
 # food_meat.yml
 ent-RandomMeat = random meat spawner
-
 # food_produce.yml
 ent-RandomProduce = random produce spawner
-
 # food_single.yml
 ent-RandomFoodSingle = random food spawner
-
 # food_snacks.yml
 ent-RandomSnacks = random snack spawner
-
 # xenos.yml
 ent-SpawnMobXenoEasy = Xeno Spawner
 ent-SpawnMobXenoHard = Xeno Spawner
-
 # spawners.yml
 ent-SalvageSpawnerEquipment = Salvage Equipment Spawner
 ent-SalvageSpawnerEquipmentValuable = Salvage Equipment Spawner
@@ -3844,13 +3605,11 @@ ent-SalvageSpawnerScrapValuable = Salvage Scrap Spawner
 ent-SalvageSpawnerStructuresVarious = Space Debris Structure Spawner
 ent-SalvageSpawnerTreasure = Salvage Treasure Spawner
 ent-SalvageSpawnerTreasureValuable = Salvage Treasure Spawner
-
 # base_borg_chassis.yml
 ent-BaseBorgChassisNotIonStormable = cyborg
     .desc = A man-machine hybrid that assists in station activity. They love being asked to state their laws over and over.
 ent-BaseXenoborgChassis = xenoborg
     .desc = A man-machine hybrid that aims to replicate itself. They love extracting brains to insert into fresh xenoborg chassis to grow their army.
-
 # borg_chassis.yml
 ent-BorgChassisDerelict = derelict cyborg
     .desc = A man-machine hybrid that assists in station activity. This one is in a state of great disrepair.
@@ -3866,7 +3625,6 @@ ent-BorgChassisSyndicateMedical = syndicate medical cyborg
     .desc = A combat medical cyborg. Has limited offensive potential, but makes more than up for it with its support capabilities.
 ent-BorgChassisSyndicateSaboteur = syndicate saboteur cyborg
     .desc = A streamlined engineering cyborg, equipped with covert modules. Its chameleon projector lets it disguise itself as a Nanotrasen cyborg.
-
 # xenoborgs.yml
 ent-XenoborgEngi = engi xenoborg
     .desc = A man-machine hybrid that aims to replicate itself. They love extracting brains to insert into fresh xenoborg chassis to grow their army. This one seems to be an engineering type, as it has more tools for supporting the other xenoborgs.
@@ -3876,7 +3634,6 @@ ent-XenoborgScout = scout xenoborg
     .desc = A man-machine hybrid that aims to replicate itself. They love extracting brains to insert into fresh xenoborg chassis to grow their army. This is a scout type, its nimble thrusters allow it to move quickly through space.
 ent-XenoborgStealth = stealth xenoborg
     .desc = A man-machine hybrid that aims to replicate itself. They love extracting brains to insert into fresh xenoborg chassis to grow their army. This one is a stealth type. Its armor shimmers in the light like no other material you've seen.
-
 # debug_counter.yml
 ent-MobDebugCounter = debug counter
     .desc = He can count
@@ -3884,7 +3641,6 @@ ent-MobDebugRandomCounter = debug random counter
     .desc = He can randomize
 ent-MobDebugRandomLess = debug random less
     .desc = He can lessing
-
 # animals.yml
 ent-MobCorgiBase = corgi
     .desc = Finally, a space corgi!
@@ -3892,7 +3648,6 @@ ent-MobCorgiSmart = smart corgi
     .desc = An unusually smart dog.
 ent-MobMouseDead = mouse
     .desc = Squeak!
-
 # argocyte.yml
 ent-MobArgocyteBarrier = barrier
 ent-MobArgocyteCrawler = crawler
@@ -3910,7 +3665,6 @@ ent-MobArgocyteSlurva = slurva
     .desc = A pathetic creature, incapable of doing much.
 ent-MobArgocyteSwiper = swiper
     .desc = Where did that stack of steel go?
-
 # asteroid.yml
 ent-ActionGoliathTentacle = [color=red]Tentacle Slam[/color]
     .desc = Use your tentacles to grab and stun a target player!
@@ -3929,14 +3683,11 @@ ent-MobHivelord = hivelord
     .desc = A truly alien creature, it is a mass of unknown organic material, constantly fluctuating. When attacking, pieces of it split off and attack in tandem with the original.
 ent-MobHivelordBrood = hivelord brood
     .desc = A fragment of the original hivelord, rallying behind its original. One isn't much of a threat, but...
-
 # carp.yml
 ent-MobCarpRainbow = rainbow carp
     .desc = Wow such a shiny fishie!
-
 # elemental.yml
 ent-MobOreCrab = ore crab
-
 # flesh.yml
 ent-BaseMobFlesh = aberrant flesh
     .desc = A shambling mass of flesh, animated through anomalous energy.
@@ -3944,7 +3695,6 @@ ent-BaseMobFleshSalvage = aberrant flesh
     .desc = A shambling mass of flesh, animated through anomalous energy.
 ent-MobAbomination = abomination
     .desc = A rejected clone, in constant pain and seeking revenge.
-
 # hivebot.yml
 ent-MobHivebot = hivebot
     .desc = Agitating, mechanized pests.
@@ -3952,19 +3702,16 @@ ent-MobHivebotRanged = hivebot
     .desc = Agitating, mechanized pests. This one has a gun.
 ent-MobHivebotStrong = strong hivebot
     .desc = Agitating, mechanized pests. This one looks much stronger then normal.
-
 # human.yml
 ent-MobCluwne = person
     .desc = A polymorphed unfortunate.
 ent-SalvageHumanCorpse = unidentified corpse
     .desc = I think they're dead.
-
 # lavaland.yml
 ent-MobWatcherIcewing = icewing watcher
 ent-MobWatcherMagmawing = magmawing watcher
 ent-MobWatcherPride = pride watcher
     .desc = This rare subspecies only appears in June.
-
 # living_light.yml
 ent-MobLivingLight = luminous person
     .desc = A blinding figure of pure light, seemingly intangible.
@@ -3972,7 +3719,6 @@ ent-MobLuminousEntity = luminous entity
     .desc = A blinding translucent entity, the bright eye seems dangerous and scalding.
 ent-MobLuminousObject = luminous object
     .desc = A small glowing object that causes burns on the skin with its glow.
-
 # regalrat.yml
 ent-ActionRatKingDomain = Rat King's Domain
     .desc = Spend some hunger to release a cloud of ammonia into the air.
@@ -3986,7 +3732,6 @@ ent-ActionRatKingOrderStay = Stay
     .desc = Command your army to stand in place.
 ent-ActionRatKingRaiseArmy = Raise Army
     .desc = Spend some hunger to summon an allied rat to help defend you.
-
 # silicon.yml
 ent-MobCleanBot = cleanbot
     .desc = The creep of automation now threatening space janitors.
@@ -4002,12 +3747,10 @@ ent-MobMimeBot = mimebot
     .desc = Why not give the mimebot a friendly wave?
 ent-MobSupplyBot = supplybot
     .desc = Delivers cargo!
-
 # space.yml
 ent-MobSnail = snail
     .desc = Revolting unless you're french.
 ent-MobSnailMoth = Snoth
-
 # admin_ghost.yml
 ent-ActionAGhostShowCargo = Cargo Ordering Interface
     .desc = View a Cargo Ordering Interface.
@@ -4022,13 +3765,10 @@ ent-ActionAGhostShowSolar = Solar Control Interface
 ent-ActionAGhostShowStationRecords = Station Records Interface
     .desc = View a Station Records Interface.
 ent-AdminObserver = admin observer
-
 # clone.yml
 ent-RandomCloneSpawner = Random Clone
-
 # diona.yml
 ent-MobDionaReformed = Reformed Diona
-
 # dragon.yml
 ent-ActionDevour = [color=red]Devour[/color]
     .desc = Attempt to break a structure with your jaws or swallow a creature.
@@ -4040,11 +3780,9 @@ ent-BaseMobDragon = space dragon
     .desc = A flying leviathan, loosely related to space carps.
 ent-DragonsBreathGun = dragon's lung
     .desc = For dragon's breathing.
-
 # guardian.yml
 ent-ActionToggleGuardian = Toggle Guardian
     .desc = Either manifests the guardian or recalls it back into your body
-
 # human.yml
 ent-MobHumanLoneNuclearOperative = Lone Operative
 ent-MobHumanSyndicateAgent = syndicate agent
@@ -4052,7 +3790,6 @@ ent-MobHumanSyndicateAgentBase = syndicate agent
 ent-MobHumanSyndicateAgentMedic = syndicate medic
 ent-MobHumanSyndicateAgentSpy = syndicate spy
 ent-MobHumanSyndicateAgentThief = syndicate thief
-
 # humanoid.yml
 ent-RandomHumanoidSpawnerCBURNUnit = CBURN Agent
 ent-RandomHumanoidSpawnerCluwne = Cluwne
@@ -4071,15 +3808,12 @@ ent-RandomHumanoidSpawnerERTSecurity = ERT security
 ent-RandomHumanoidSpawnerERTSecurityEVA = ERT security
 ent-RandomHumanoidSpawnerNukeOp = Nuclear Operative
 ent-RandomHumanoidSpawnerSyndicateAgent = syndicate agent
-
 # jaunt_mobs.yml
 ent-DesynchronizedPocket = desynchronized pocket
     .desc = A pocket in spacetime, keeping the user a fraction of a second in the future.
-
 # narsie.yml
 ent-MobNarsieBase = Nar'Sie
     .desc = Your mind begins to bubble and ooze as it tries to comprehend what it sees.
-
 # observer.yml
 ent-ActionGhostBoo = Boo!
     .desc = Scare your crew members because of boredom!
@@ -4093,16 +3827,13 @@ ent-ActionToggleLighting = Toggle Lighting
     .desc = Toggle light rendering to better observe dark areas.
 ent-MobObserverBase = observer
     .desc = Boo!
-
 # paradox_clone.yml
 ent-MobParadox = space-time paradox
     .desc = A big ball of wibbly wobbly, timey wimey stuff.
 ent-ParadoxCloneDummy = Paradox Clone
-
 # ratvar.yml
 ent-MobRatvarBase = Ratvar
     .desc = Your mind aches as it fails to understand the complex mechanics of what is before you.
-
 # silicon.yml
 ent-Intellicard = intellicard
     .desc = A storage device for AIs.
@@ -4112,10 +3843,8 @@ ent-StationAiHolo = AI eye
     .desc = The AI's viewer.
 ent-StationAiHoloLocal = AI hologram
     .desc = A holographic representation of an AI.
-
 # skeleton.yml
 ent-MobSkeletonCloset = closet skeleton
-
 # roles.yml
 ent-RandomHumanoidChallengeCargoTechnician = disaster cargo technician ghost role
 ent-RandomHumanoidChallengeVictimCE = disaster victim CE ghost role
@@ -4176,10 +3905,8 @@ ent-RandomHumanoidVisitorTechnicalAssistant = visiting technical assistant ghost
 ent-RandomHumanoidVisitorVirologist = visiting virologist ghost role
 ent-RandomHumanoidVisitorWarden = visiting warden ghost role
 ent-RandomHumanoidVisitorZookeeper = visiting zookeeper ghost role
-
 # human.yml
 ent-BaseMobHuman = Urist McHands
-
 # drinks-cartons.yml
 ent-DrinkCoconutWaterCarton = coconut water
     .desc = It's the inside of the coconut that counts.
@@ -4201,7 +3928,6 @@ ent-DrinkOatMilkCarton = oat milk
     .desc = It's oat milk. Tan and nutritious goodness!
 ent-DrinkSoyMilkCarton = soy milk
     .desc = White and nutritious soy goodness!
-
 # drinks.yml
 ent-DrinkShakeBlue = blue milkshake
 ent-DrinkShakeEmpty = shakeempty
@@ -4212,7 +3938,6 @@ ent-DrinkTeapot = teapot
     .desc = An elegant teapot. It simply oozes class.
 ent-DrinkWaterJug = water jug
     .desc = Stay hydrated.
-
 # drinks_bottles.yml
 ent-CustomDrinkJug = beverage jug
     .desc = A jug for storing custom made drinks.
@@ -4306,7 +4031,6 @@ ent-DrinkWhiskeyBottleFull = Uncle Git's Special Reserve
     .desc = A premium single-malt whiskey, gently matured inside the tunnels of a nuclear shelter. TUNNEL WHISKEY RULES.
 ent-DrinkWineBottleFull = Doublebearded Bearded Special wine bottle
     .desc = A faint aura of unease and asspainery surrounds the bottle.
-
 # drinks_cans.yml
 ent-DrinkBeerCan = beer can
     .desc = Small joy, big taste, no worries!
@@ -4351,7 +4075,6 @@ ent-DrinkTonicWaterCan = tonic water can
     .desc = Quinine tastes funny, but at least it'll keep that Space Malaria away.
 ent-DrinkWineCan = wine can
     .desc = Your way to forgetting all worries and having fun!
-
 # drinks_cups.yml
 ent-DrinkBaseCup = base cup
 ent-DrinkBaseMug = mug
@@ -4384,7 +4107,7 @@ ent-DrinkMugMetal = metal mug
     .desc = A metal mug. You're not sure which metal.
 ent-DrinkMugMoebius = moebius mug
     .desc = A mug with a Moebius Laboratories logo on it. Not even your morning coffee is safe from corporate advertising.
-ent-DrinkMugOne = 
+ent-DrinkMugOne =
     .desc = A white mug, it prominently features a
 ent-DrinkMugRainbow = rainbow mug
     .desc = A rainbow mug. The colors are almost as blinding as a welder.
@@ -4394,7 +4117,6 @@ ent-DrinkTeacup = teacup
     .desc = A plain white porcelain teacup.
 ent-DrinkWaterCup = water cup
     .desc = A paper water cup.
-
 # drinks_flasks.yml
 ent-DrinkDetFlask = inspector's flask
     .desc = A metal flask with a leather band and golden badge belonging to the inspector.
@@ -4414,7 +4136,6 @@ ent-DrinkShinyFlask = shiny flask
     .desc = A shiny metal flask. It appears to have a Greek symbol inscribed on it.
 ent-DrinkVacuumFlask = vacuum flask
     .desc = Keeping your drinks at the perfect temperature since 1892.
-
 # drinks_fun.yml
 ent-DrinkMopwataBottleRandom = delicious mopwata
     .desc = A foggy brown bottle with a faded label depicting a mop. It comes full of murky... vintage.
@@ -4422,13 +4143,11 @@ ent-DrinkSpaceGlue = space glue tube
     .desc = High performance glue intended for maintenance of extremely complex mechanical equipment. DON'T DRINK!
 ent-DrinkSpaceLube = space lube tube
     .desc = High performance lubricant intended for maintenance of extremely complex mechanical equipment.
-
 # drinks_solutioncontainerexample.yml
 ent-DrinkVisualizerTestCut = solution container vis cut-out
     .desc = A stainless steel insulated pitcher. Everyone's best friend in the morning.
 ent-DrinkVisualizerTestNot = solution container vis cut-not
     .desc = A stainless steel insulated pitcher. Everyone's best friend in the morning.
-
 # drinks_special.yml
 ent-DrinkIceBucket = ice bucket
     .desc = A special bucket of refreshy ice. Prohibited use for challenge with the same name!
@@ -4444,13 +4163,11 @@ ent-DrinkShotGlass = shot glass
     .desc = Perfect for slamming down onto the table angrily.
 ent-Pitcher = metal pitcher
     .desc = A stainless steel insulated pitcher. Everyone's best friend in the morning.
-
 # burger.yml
 ent-FoodBreadBunBottom = bottom bun
     .desc = It's time to start building the burger tower.
 ent-FoodBreadBunTop = top bun
     .desc = The perfect finish for your burger tower.
-
 # cottonburger.yml
 ent-FoodCottonBun = cotton bun
     .desc = A cotton hamburger bun. Soft, round and convenient to hold.
@@ -4458,12 +4175,10 @@ ent-FoodCottonBunBottom = cotton bottom bun
     .desc = It's time for moths to experience the burger tower.
 ent-FoodCottonBunTop = cotton top bun
     .desc = The perfect finish for your fibrous burger tower.
-
 # egg.yml
 ent-FoodEgg = egg
 ent-FoodEggBoiled = boiled egg
     .desc = A delicious hardboiled egg.
-
 # ingredients.yml
 ent-ReagentContainerCornmeal = cornmeal bag
     .desc = A big bag of cornmeal. Good for cooking!
@@ -4485,11 +4200,9 @@ ent-ReagentContainerSugar = sugar bag
     .desc = A big bag of tasty spacey sugar.
 ent-ReagentContainerSugarSmall = sugar pack
     .desc = A pack of tasty spacey sugar.
-
 # meat.yml
 ent-MaterialSmileExtract = smile extract
     .desc = It's a real panacea. But at what cost?
-
 # produce.yml
 ent-FoodLaughinPeaPod = laughin' pea pod
     .desc = The clown's favorite plant.
@@ -4497,7 +4210,6 @@ ent-FoodPeaPod = pea pod
     .desc = A duck's favorite treat!
 ent-FoodWorldPeas = cluster of world peas
     .desc = It's rumored to bring peace to any who consume it.
-
 # snacks.yml
 ent-DrinkHellRamen = hell ramen
     .desc = Super spicy flavor!
@@ -4530,18 +4242,15 @@ ent-FoodSnackNutribrick = nutribrick
     .desc = A carefully synthesized brick designed to contain the highest ratio of nutriment to volume. Tastes like shit.
 ent-FoodSnackNutribrickOpen = nutribrick
     .desc = A carefully synthesized brick designed to contain the highest ratio of nutriment to volume. Tastes like shit.
-
 # bagel.yml
 ent-FoodBagel = bagel
 ent-FoodBagelCotton = cotton bagel
     .desc = A delicious bagel made with cotton dough.
 ent-FoodBagelPoppy = poppy seed bagel
     .desc = A delicious bagel topped with bicaridine-infused poppy seeds.
-
 # misc.yml
 ent-FoodBakedGrilledCheeseSandwichCotton = cotton grilled cheese sandwich
     .desc = Cotton bread slightly burnt in butter, with melted cheese. Moths find it difficult to resist this combination.
-
 # box.yml
 ent-FoodBoxCloth = box of FlutterSoft-brand cloth
     .desc = Fiber is the most important moth meal of the day! Don't skip it or use bottom-of-the-locker junk, buy high-quality FlutterSoft-brand cloth instead.
@@ -4573,7 +4282,6 @@ ent-HappyHonkCluwne = woeful cluwne meal
 ent-HappyHonkNukie = robust nukie meal
     .desc = A sus meal with a potentially explosive surprise.
 ent-HappyHonkNukieSnacks = syndicate snack box
-
 # condiments.yml
 ent-BaseFoodCondimentBottle = condiment bottle
     .desc = A thin glass bottle used to store condiments.
@@ -4621,7 +4329,6 @@ ent-FoodShakerPepper = pepper shaker
     .desc = Often used to flavor food or make people sneeze.
 ent-FoodShakerSalt = salt shaker
     .desc = Salt. From space oceans, presumably.
-
 # tin.yml
 ent-FoodTinBase = tin
     .desc = A tin of something, sealed tight.
@@ -4638,7 +4345,6 @@ ent-FoodTinPeaches = tinned peaches
 ent-FoodTinPeachesMaint = maintenance peaches
 ent-FoodTinPeachesMaintTrash = maintenance peaches
 ent-FoodTinPeachesTrash = tinned peaches
-
 # cartons.yml
 ent-CigCartonBlack = Nomads carton
     .desc = A carton containing 6 packets of Nomads.
@@ -4650,7 +4356,6 @@ ent-CigCartonMixed = Dan's soaked smokes
     .desc = A carton containg 3 packets of Dan's soaked smokes.
 ent-CigCartonRed = DromedaryCo carton
     .desc = A carton containing 6 packets of Dromedarycos.
-
 # cigarette.yml
 ent-Cigarette = cigarette
     .desc = A roll of tobacco and nicotine.
@@ -4682,7 +4387,6 @@ ent-CigaretteTricordrazine = Licorice Allsorts
 ent-CigaretteWeldingFuel = Plasma Sauce
 ent-SoakedCigarette = cigarette
     .desc = A roll of tobacco and nicotine soaked in some chemical.
-
 # joints.yml
 ent-Blunt = blunt
     .desc = A roll of dried plant matter wrapped in a dried tobacco leaf.
@@ -4692,7 +4396,6 @@ ent-Joint = joint
     .desc = A roll of dried plant matter wrapped in thin paper.
 ent-JointRainbow = joint
     .desc = A roll of dried plant matter wrapped in thin paper. Seems to be colorful inside.
-
 # packs.yml
 ent-CigPackBase = cigarette pack
 ent-CigPackBlack = Nomads packet
@@ -4708,25 +4411,21 @@ ent-CigPackRed = DromedaryCo packet
     .desc = The most popular brand of Space Cigarettes, sponsors of the Space Olympics.
 ent-CigPackSyndicate = Interdyne herbals packet
     .desc = Elite cigarettes for elite syndicate agents. Infused with medicine for when you need to do more than calm your nerves.
-
 # rolling_paper.yml
 ent-CigaretteFilter = cigarette filter
     .desc = A strip of firm paper used as a filter for handmade cigarettes.
 ent-PaperRolling = rolling paper
     .desc = A thin piece of paper used to make fine smokeables.
-
 # case.yml
 ent-CigarCase = cigar case
     .desc = A case for holding your cigars when you are not smoking them.
 ent-CigarGoldCase = premium cigar case
     .desc = A case of premium Havanian cigars. You'll only see heads with these.
-
 # cigar.yml
 ent-Cigar = cigar
     .desc = A brown roll of tobacco and... well, you're not quite sure.
 ent-CigarGold = premium Havanian cigar
     .desc = A cigar fit for only the best of the best.
-
 # pipe.yml
 ent-SmokingPipe = pipe
     .desc = Just like grandpappy used to smoke.
@@ -4736,15 +4435,12 @@ ent-SmokingPipeFilledCannabisRainbow = pipe
     .desc = Just like grandpappy used to smoke.
 ent-SmokingPipeFilledTobacco = pipe
     .desc = Just like grandpappy used to smoke.
-
 # vape.yml
 ent-Vape = vape
     .desc = Like a cigar, but for tough teens. (WARNING:Pour only water into the vape)
-
 # ashtray.yml
 ent-Ashtray = ashtray
     .desc = Proven by scientists to improve the smoking experience by 37%!
-
 # flora.yml
 ent-BaseRock = boulder
     .desc = Heavy as a really heavy thing.
@@ -4761,17 +4457,14 @@ ent-LightTree = glowing tree
     .desc = A marvelous tree filled with strange energy.
 ent-ShadowTree = dark wood
     .desc = The leaves are whispering about you.
-
 # jackolantern.yml
 ent-CarvedPumpkin = carved pumpkin
     .desc = A traditional spooky decoration.
 ent-PumpkinLantern = jack o' lantern
     .desc = A carved pumpkin, emitting an eerie glow.
-
 # lidsalami.yml
 ent-LidSalami = salami lid
     .desc = Ain't gon' fit, won't fit.
-
 # mining.yml
 ent-WoodenSign = wooden sign
     .desc = He's pointing somewhere.
@@ -4780,21 +4473,17 @@ ent-WoodenSupport = wooden support
 ent-WoodenSupportBeam = wooden support beam
 ent-WoodenSupportWall = wooden support wall
     .desc = An old, rotten wall.
-
 # present.yml
 ent-PresentBase = present
     .desc = A little box with incredible surprises inside.
 ent-PresentTrash = wrapping paper
     .desc = Carefully folded, taped, and tied with a bow. Then ceremoniously ripped apart and tossed on the floor.
-
 # deliveries.yml
 ent-LetterDelivery = letter
 ent-PackageDelivery = package
-
 # deliveries_items.yml
 ent-MailSpamLetter = spam letter
     .desc = Even space isn't safe from junk mail.
-
 # cartridges.yml
 ent-AstroNavCartridge = AstroNav cartridge
     .desc = A program for navigation that provides GPS coordinates.
@@ -4814,7 +4503,6 @@ ent-NotekeeperCartridge = notekeeper cartridge
     .desc = A program for keeping notes.
 ent-WantedListCartridge = Wanted list cartridge
     .desc = A program to get a list of wanted persons.
-
 # chameleon_projector.yml
 ent-ActionDisguiseAnchor = Toggle Anchored
     .desc = For many objects you will want to be anchored to not be completely obvious.
@@ -4823,11 +4511,9 @@ ent-ActionDisguiseNoRot = Toggle Rotation
 ent-ChameleonDisguise = Urist McKleiner
 ent-ChameleonProjector = chameleon projector
     .desc = Holoparasite technology used to create a hard-light replica of any object around you. Disguise is destroyed when picked up or deactivated.
-
 # desynchronizer.yml
 ent-DeviceDesynchronizer = desynchronizer
     .desc = An experimental device that can temporarily desynchronize the user from spacetime, effectively making them disappear while it's active.
-
 # door_remote.yml
 ent-DoorRemoteAll = super door remote
 ent-DoorRemoteArmory = armory door remote
@@ -4843,7 +4529,6 @@ ent-DoorRemoteResearch = research door remote
 ent-DoorRemoteSecurity = security door remote
 ent-DoorRemoteService = service door remote
 ent-DoorRemoteXenoborg = xenoborg door remote
-
 # encryption_keys.yml
 ent-EncryptionKey = encryption key
     .desc = A small cypher chip for headsets.
@@ -4879,7 +4564,6 @@ ent-EncryptionKeyStationMaster = station master encryption key
     .desc = An encryption key used by station's bosses.
 ent-EncryptionKeySyndie = blood-red encryption key
     .desc = An encryption key used by... wait... Who is the owner of this chip?
-
 # flatpack.yml
 ent-AmePartFlatpack = AME flatpack
     .desc = A flatpack used for constructing an antimatter engine reactor.
@@ -4915,21 +4599,17 @@ ent-TeslaGroundingRodFlatpack = grounding rod flatpack
     .desc = A flatpack used for constructing a grounding rod.
 ent-ThrusterFlatpack = thruster flatpack
     .desc = A flatpack used for constructing a thruster.
-
 # forensic_scanner.yml
 ent-PaperAccessLogs = access logs
     .desc = A printout from the detective's trusty LogProbe.
-
 # geiger.yml
 ent-GeigerCounter = Geiger counter
     .desc = A handheld device used for detecting and measuring radiation pulses.
-
 # hand_teleporter.yml
 ent-HandTeleporter = hand teleporter
     .desc = A Nanotrasen signature item--only the finest bluespace tech. Instructions: Use once to create a portal which teleports at random. Use again to link it to a portal at your current location. Use again to clear all portals.
 ent-HandTeleporterAdmeme = interdimensional teleporter
     .desc = Allows you to open stable portal gates that are not limited by distance.
-
 # holoprojectors.yml
 ent-HolofanProjector = holofan projector
     .desc = Stop suicidal passengers from killing everyone during atmos emergencies.
@@ -4943,7 +4623,6 @@ ent-HoloprojectorField = force field projector
     .desc = Creates an impassable forcefield that won't let anything through. Close proximity may or may not cause cancer.
 ent-HoloprojectorSecurity = holobarrier projector
     .desc = Creates a solid but fragile holographic barrier.
-
 # pda.yml
 ent-AdminPDA = Admin PDA
     .desc = If you are not an admin please return this PDA to the nearest admin.
@@ -5061,31 +4740,25 @@ ent-WizardPDA = wizard PDA
     .desc = You hear faint whispers coming from it.
 ent-ZookeeperPDA = zookeeper PDA
     .desc = Made with genuine synthetic leather. Crikey!
-
 # pinpointer.yml
 ent-PinpointerMothership = core pinpointer
     .desc = A handheld tracking device that leads to the direction of the mothership core.
-
 # station_beacon.yml
 ent-DefaultStationBeacon = station beacon
     .desc = A small device that transmits information to station maps. Can be configured.
 ent-StationBeaconPart = station beacon flatpack
     .desc = A flatpack used for constructing a station beacon.
-
 # station_map.yml
 ent-BaseHandheldStationMap = station map
     .desc = Displays a readout of the current station.
-
 # swapper.yml
 ent-DeviceQuantumSpinInverter = quantum spin inverter
     .desc = An experimental device that is able to swap the locations of two entities by switching their particles' spin values. Must be linked to another device to function.
-
 # wristwatch.yml
 ent-Wristwatch = wristwatch
     .desc = A cheap watch for telling time. How much did you waste playing Space Station 14?
 ent-WristwatchGold = gold watch
     .desc = A fancy watch worth more than your kidney. It was owned by the notorious Syndicate mobster Vunibaldo "200 Pound Horse Meat Grinder" Frediani.
-
 # computer.yml
 ent-AlertsComputerCircuitboard = atmospheric alerts computer board
     .desc = A computer printed circuit board for an atmospheric alerts computer.
@@ -5177,7 +4850,6 @@ ent-TechDiskComputerCircuitboard = tech disk terminal board
     .desc = A computer printed circuit board for a technology disk terminal.
 ent-WizardCommsComputerCircuitboard = wizard communications computer board
     .desc = A computer printed circuit board for a wizard communications console.
-
 # law_boards.yml
 ent-AntimovCircuitBoard = law board (Antimov)
     .desc = An electronics board containing the Antimov lawset.
@@ -5209,14 +4881,11 @@ ent-StationEfficiencyCircuitBoard = law board (Station Efficiency)
     .desc = An electronics board containing the Station Efficiency lawset.
 ent-XenoborgCircuitBoard = law board (Xenoborg)
     .desc = An electronics board containing the Xenoborg lawset.
-
 # misc.yml
 ent-StationMapCircuitboard = station map electronics
     .desc = An electronics board used in station maps.
-
 # base_machineboard.yml
 ent-BaseMachineCircuitboard = machine board
-
 # cannons.yml
 ent-ShuttleGunDusterCircuitboard = EXP-2100g "Duster" machine board
     .desc = A machine printed circuit board for an EXP-2100g "Duster".
@@ -5228,11 +4897,9 @@ ent-ShuttleGunPerforatorCircuitboard = LSE-1200c "Perforator" machine board
     .desc = A machine printed circuit board for an LSE-1200c "Perforator".
 ent-ShuttleGunSvalinnMachineGunCircuitboard = LSE-400c "Svalinn machine gun" machine board
     .desc = A machine printed circuit board for an LSE-400c "Svalinn machine gun".
-
 # holopad.yml
 ent-HolopadMachineCircuitboard = holopad machine board
     .desc = A machine printed circuit board for a holopad.
-
 # particle_accelerator.yml
 ent-MachineParticleAcceleratorEmitterForeCircuitboard = PA fore emitter board
     .desc = A machine board for a particle accelerator center emitter.
@@ -5246,7 +4913,6 @@ ent-MachineParticleAcceleratorFuelChamberCircuitboard = PA fuel chamber board
     .desc = A machine board for a particle accelerator fuel chamber.
 ent-MachineParticleAcceleratorPowerBoxCircuitboard = PA power box board
     .desc = A machine board for a particle accelerator power box.
-
 # production.yml
 ent-APECircuitboard = A.P.E. machine board
     .desc = A machine printed circuit board for an A.P.E.
@@ -5391,40 +5057,31 @@ ent-UniformPrinterMachineCircuitboard = uniform printer machine board
 ent-VaccinatorMachineCircuitboard = vaccinator machine board
 ent-WeaponCapacitorRechargerCircuitboard = recharger machine board
     .desc = A machine printed circuit board for a recharger.
-
 # turrets.yml
 ent-WeaponEnergyTurretStationMachineCircuitboardBase = sentry turret machine board
     .desc = A machine printed circuit board for a sentry turret.
-
 # atmos_alarms.yml
 ent-AirAlarmElectronics = air alarm electronics
     .desc = An electronics board used in air alarms.
 ent-FireAlarmElectronics = fire alarm electronics
     .desc = An electronics board used in fire alarms.
-
 # base_electronics.yml
 ent-BaseElectronics = base electronics
-
 # disposal.yml
 ent-MailingUnitElectronics = mailing unit electronics
     .desc = An electronics board used in mailing units.
-
 # door.yml
 ent-DoorElectronics = door electronics
     .desc = An electronics board used in doors and airlocks.
-
 # firelock.yml
 ent-FirelockElectronics = firelock electronics
     .desc = An electronics board used to detect differences in pressure, temperature and gas concentrations between the two sides of the door.
-
 # igniter.yml
 ent-Igniter = igniter
     .desc = Creates a spark when activated by a signal.
-
 # intercom.yml
 ent-IntercomElectronics = intercom electronics
     .desc = An electronics board used in intercoms.
-
 # mech.yml
 ent-HamtrCentralElectronics = HAMTR central control module
     .desc = The electrical control center for the HAMTR mech.
@@ -5440,11 +5097,9 @@ ent-RipleyCentralElectronics = ripley central control module
     .desc = The electrical control center for the ripley mech.
 ent-RipleyPeripheralsElectronics = ripley peripherals control module
     .desc = The electrical peripherals control for the ripley mech.
-
 # misc.yml
 ent-FreezerElectronics = freezer electronics
     .desc = An electronics board used in kitchen freezers.
-
 # power_electronics.yml
 ent-APCElectronics = APC electronics
     .desc = Circuit used in APC construction.
@@ -5456,19 +5111,16 @@ ent-WallmountGeneratorElectronics = wallmount generator electronics
     .desc = Circuit used to construct a wallmount generator.
 ent-WallmountSubstationElectronics = wallmount substation electronics
     .desc = Circuit used to construct a wallmount substation.
-
 # signaller.yml
 ent-RemoteSignaller = remote signaller
     .desc = A handheld device used for remotely sending signals to objects within a small radius of about 15 meters.
 ent-RemoteSignallerAdvanced = advanced remote signaller
     .desc = A handheld device used for remotely sending signals to objects within a small radius of about 50 meters.
-
 # timer.yml
 ent-BrigTimerElectronics = brig timer electronics
 ent-ScreenTimerElectronics = screen timer electronics
 ent-SignalTimerElectronics = signal timer electronics
     .desc = An electronics board used in timer circuitry. Looks like you could use a screwdriver to change the board type.
-
 # triggers.yml
 ent-SignalTrigger = signal trigger
     .desc = Adds a machine link that is triggered by signals.
@@ -5476,11 +5128,9 @@ ent-TimerTrigger = timer trigger
     .desc = A configurable timer.
 ent-VoiceTrigger = voice trigger
     .desc = Adds a machine link that is triggered by vocal keywords.
-
 # camera_bug.yml
 ent-CameraBug = camera bug
     .desc = An illegal syndicate device that allows you to hack into the station's camera network.
-
 # reinforcement_teleporter.yml
 ent-ReinforcementRadio = syndicate reinforcement radio
     .desc = Call in a syndicate agent of questionable quality, instantly! Only basic equipment provided.
@@ -5494,15 +5144,12 @@ ent-ReinforcementRadioSyndicateNukeops = nuclear operative radio
     .desc = Call in a nuclear operative of questionable quality, instantly! Basic nukeop equipment provided.
 ent-ReinforcementRadioSyndicateSyndiCat = syndicat reinforcement radio
     .desc = Calls in a faithfully trained cat with a microbomb to assist you.
-
 # singularity_beacon.yml
 ent-SingularityBeacon = singularity beacon
     .desc = A syndicate device that attracts the singularity. If it's loose and you're seeing this, run.
-
 # war_declarator.yml
 ent-NukeOpsDeclarationOfWar = war declarator
     .desc = Use to send a declaration of hostilities to the target, delaying your shuttle departure while they prepare for your assault. Such a brazen move will attract the attention of powerful benefactors within the Syndicate, who will supply your team with a massive amount of bonus telecrystals. Must be used at start of mission, or your benefactors will lose interest.
-
 # bike_horn.yml
 ent-BananiumHorn = bananium horn
     .desc = An air horn made from bananium.
@@ -5514,7 +5161,6 @@ ent-GoldenBikeHorn = golden honker
     .desc = A happy honk prize, pray to the gods for your reward.
 ent-PushHorn = push horn
     .desc = This powerful bikehorn is sure to blast frowns away.
-
 # crayons.yml
 ent-Crayon = crayon
     .desc = A colourful crayon. Looks tasty. Mmmm...
@@ -5530,11 +5176,9 @@ ent-CrayonRainbow = rainbow crayon
 ent-CrayonRed = red crayon
 ent-CrayonWhite = white crayon
 ent-CrayonYellow = yellow crayon
-
 # darts.yml
 ent-HypoDartBox = hypodart box
     .desc = A small box containing a hypodart. Packaging disintegrates when opened, leaving no evidence behind.
-
 # dice.yml
 ent-PercentileDie = percentile die
     .desc = A die with ten sides. Works better for d100 rolls than a golf ball.
@@ -5550,22 +5194,18 @@ ent-d6Dice = d6
     .desc = A die with six sides. Basic and serviceable.
 ent-d8Dice = d8
     .desc = A die with eight sides. It feels... lucky.
-
 # dice_bag.yml
 ent-DiceBag = bag of dice
     .desc = Contains all the luck you'll ever need.
 ent-MagicDiceBag = bag of dice
-
 # error.yml
 ent-Error = error
     .desc = Hmmmm. Something went wrong.
-
 # figurine_boxes.yml
 ent-MysteryFigureBox = mystery spacemen minifigure box
     .desc = A box containing a mystery minifigure. The side of the box depicts a few blacked-out 'rare' figures, including one with a large, non-humanoid shilouette.
 ent-MysteryFigureBoxTrash = unfolded cardboard box
     .desc = A small, unfolded cardboard toy box.
-
 # figurines.yml
 ent-BaseFigurine = figurine
     .desc = A small miniature.
@@ -5667,7 +5307,6 @@ ent-ToyOwlman = owl figure
     .desc = An action figure modeled after 'The Owl', defender of justice.
 ent-ToySkeleton = skeleton figure
     .desc = Spooked ya!
-
 # immovable_rod.yml
 ent-ImmovableRod = immovable rod
     .desc = You can sense that it's hungry. That's usually a bad sign.
@@ -5687,7 +5326,6 @@ ent-ImmovableRodThrongler = immovable throngler
     .desc = If you catch it, you can keep it.
 ent-ImmovableRodWeh = immovable weh
     .desc = WEH!
-
 # mech_figurines.yml
 ent-BaseFigurineMech = figurine
     .desc = A small miniature.
@@ -5715,7 +5353,6 @@ ent-ToyRipley = ripley toy
     .desc = Mini-Mecha action figure! 'Mecha No. 1/12' is written on the back.
 ent-ToySeraph = seraph toy
     .desc = Mini-Mecha action figure! 'Mecha No. 8/12' is written on the back.
-
 # pai.yml
 ent-ActionPAIMassScanner = Mass Scanner
     .desc = View a mass scanner interface.
@@ -5731,7 +5368,6 @@ ent-PotatoAI = potato artificial intelligence
     .desc = It's a potato. You forced it to be sentient, you monster.
 ent-SyndicatePersonalAI = syndicate personal ai device
     .desc = Your Syndicate pal who's fun to be with!
-
 # plushies.yml
 ent-PlushieArachind = arachnid plushie
     .desc = An adorable stuffed toy that resembles an arachnid. It feels silky..
@@ -5801,26 +5437,21 @@ ent-PlushieXeno = xeno plushie
     .desc = An adorable stuffed toy that resembles a scary xenomorf. You're lucky it's just a toy.
 ent-ToyMouse = mouse toy
     .desc = A colorful toy mouse!
-
 # puppet.yml
 ent-MrChips = mr chips
     .desc = It's a dummy, dummy!
 ent-MrDips = mr dips
-
 # skub.yml
 ent-Skub = skub
     .desc = Skub is the fifth Chaos God.
-
 # snap_pops.yml
 ent-SnapPop = snap pop
     .desc = Throw it at the floor and listen to it POP!
 ent-SnapPopBox = snap pop box
     .desc = Contains snap pops for a few minutes of popping fun!
-
 # spectral_locator.yml
 ent-SpectralLocatorUnpowered = spectral locator
     .desc = Appears to be a modified anomaly locator. Seems very old.
-
 # toys.yml
 ent-BalloonCorgi = corgi balloon
     .desc = Just like owning a real dog - but a lot floatier.
@@ -5880,16 +5511,13 @@ ent-ToySword = toy sword
     .desc = New Sandy-Cat plastic sword! Comes with realistic sound and full color! Looks almost like the real thing!
 ent-WhoopieCushion = whoopie cushion
     .desc = A practical joke device involving flatulence humour.
-
 # whistles.yml
 ent-BaseWhistle = whistle
     .desc = Someone forgot to turn off kettle?
 ent-SyndicateWhistle = trench whistle
     .desc = A whistle used by Syndicate commanders to draw attention. Avanti!
-
 # base_instruments.yml
 ent-BasePlaceableInstrumentRotatable = baseinstrumentrotatable
-
 # instrument_keyed.yml
 ent-AccordionInstrument = accordion
 ent-KalimbaInstrument = kalimba
@@ -5897,7 +5525,6 @@ ent-KalimbaInstrument = kalimba
 ent-SuperSynthesizerInstrument = super synthesizer
     .desc = Blasting the ghetto with Touhou MIDIs since 2020.
 ent-SynthesizerInstrument = synthesizer
-
 # instruments_brass.yml
 ent-EuphoniumInstrument = euphonium
     .desc = A baby tuba? A Baritone? Whatever it is, it's a pretty cool mess of pipes.
@@ -5907,7 +5534,6 @@ ent-TromboneInstrument = trombone
     .desc = Everyone's favorite sliding brass instrument.
 ent-TrumpetInstrument = trumpet
     .desc = The favorite instrument of jazz musicians and egotistical middle schoolers.
-
 # instruments_misc.yml
 ent-BananaPhoneInstrument = banana phone
     .desc = A direct line to the Honkmother. Seems to always go to voicemail.
@@ -5928,7 +5554,6 @@ ent-PhoneInstrumentSyndicate = blood-red phone
     .desc = For evil people to call their friends.
 ent-SeashellInstrument = seashell
     .desc = For laying down the shoreline beat.
-
 # instruments_percussion.yml
 ent-GlockenspielInstrument = glockenspiel
 ent-MicrophoneInstrument = microphone
@@ -5941,7 +5566,6 @@ ent-WoodblockInstrument = woodblock
     .desc = If you listen to this enough it'll start driving itself into your mind.
 ent-XylophoneInstrument = xylophone
     .desc = Rainbow colored glockenspiel.
-
 # instruments_string.yml
 ent-AcousticGuitarInstrument = acoustic guitar
     .desc = Anyway, here's Wonderwall.
@@ -5960,7 +5584,6 @@ ent-ViolaInstrument = viola
     .desc = Like a violin, but worse.
 ent-ViolinInstrument = violin
     .desc = The favorite of musical virtuosos and bluegrass bands.
-
 # instruments_structures.yml
 ent-ContrabassInstrument = contrabass
     .desc = Perfect for laying down a nice jazzy beat.
@@ -5974,7 +5597,6 @@ ent-TimpaniInstrument = timpani
     .desc = It goes BOOM BOOM BOOM BOOM!
 ent-TomDrumsInstrument = tom drums
     .desc = Where'd the rest of the kit go?
-
 # instruments_wind.yml
 ent-BagpipeInstrument = bagpipe
     .desc = Pairs nicely with a kilt.
@@ -5991,21 +5613,17 @@ ent-RecorderInstrument = recorder
     .desc = Comes in various colors of fashionable plastic!
 ent-SaxophoneInstrument = saxophone
     .desc = An instrument. You could probably grind this into raw jazz.
-
 # backgammon.yml
 ent-BackgammonBoard = backgammon board
     .desc = Old fashioned game of dice and pieces.
 ent-BackgammonBoardTabletop = backgammon
-
 # base.yml
 ent-BaseBoardEntity = board
     .desc = A blank board.
 ent-BaseBoardTabletop = baseboard
-
 # checkers.yml
 ent-CheckerBoard = checkerboard
     .desc = A checkerboard. Pieces included!
-
 # chess.yml
 ent-BlackBishop = black bishop
 ent-BlackKing = black king
@@ -6022,7 +5640,6 @@ ent-WhiteKnight = white knight
 ent-WhitePawn = white pawn
 ent-WhiteQueen = white queen
 ent-WhiteRook = white rook
-
 # dnd.yml
 ent-BaseBattlemap = battlemap
     .desc = A battlemap for your epic dungeon exploring to begin, pieces not included!
@@ -6041,12 +5658,10 @@ ent-ShipBoardTabletop = ship battlemap
 ent-SnowBattlemap = snow battlemap
     .desc = A battlemap for your frigid exploring to begin, pieces not included!
 ent-SnowBoardTabletop = snow battlemap
-
 # parchis.yml
 ent-ParchisBoard = parchís board
     .desc = Cross and circle board game famous for destroying countless friendships.
 ent-ParchisBoardTabletop = parchís
-
 # tabletopGeneric.yml
 ent-BlackTabletopPiece = black piece
 ent-BlueTabletopPiece = blue piece
@@ -6054,7 +5669,6 @@ ent-GreenTabletopPiece = green piece
 ent-RedTabletopPiece = red piece
 ent-WhiteTabletopPiece = white piece
 ent-YellowTabletopPiece = yellow piece
-
 # books.yml
 ent-BaseSpellbook = spellbook
 ent-BlinkBook = blink spellbook
@@ -6066,7 +5680,6 @@ ent-SmiteBook = smite spellbook
 ent-SpawnSpellbook = spawn spellbook
 ent-WizardsGrimoire = wizards grimoire
 ent-WizardsGrimoireNoRefund = wizards grimoire
-
 # crystal_shard.yml
 ent-ShardCrystalBase = crystal shard
     .desc = A small piece of crystal.
@@ -6077,13 +5690,11 @@ ent-ShardCrystalOrange = orange crystal shard
 ent-ShardCrystalPink = pink crystal shard
 ent-ShardCrystalRandom = random crystal shard
 ent-ShardCrystalRed = red crystal shard
-
 # ingots.yml
 ent-IngotGold = gold bar
 ent-IngotGold1 = gold bar
 ent-IngotSilver = silver bar
 ent-IngotSilver1 = silver bar
-
 # materials.yml
 ent-MaterialBananium = bananium
 ent-MaterialBiomass = biomass
@@ -6108,7 +5719,6 @@ ent-MaterialToothSpaceCarp = space carp tooth
 ent-MaterialWebSilk = silk
     .desc = A webby material.
 ent-MaterialWoodPlank = wood
-
 # ore.yml
 ent-BananiumOre = bananium ore
 ent-Coal = coal
@@ -6120,12 +5730,10 @@ ent-SilverOre = silver ore
 ent-SpaceQuartz = space quartz
 ent-SteelOre = iron ore
 ent-UraniumOre = uranium ore
-
 # parts.yml
 ent-PartRodMetal = metal rod
 ent-PartRodMetal1 = metal rod
 ent-PartRodMetal10 = metal rod
-
 # scrap.yml
 ent-BaseScrap = scrap
     .desc = Worthless junk. You could probably get some materials out of it though.
@@ -6184,7 +5792,6 @@ ent-ScrapSteel = blasted steel pile
     .desc = An pile of steel welded together in extreme heat. It's of a decent size overall; you could probably get a fair amount of sheets out of it.
 ent-ScrapTube = shattered sample tube
     .desc = A glass tube containing some kind of rare sample. Or at least, it used to contain it. Not much left in there now.
-
 # shards.yml
 ent-ShardGlass = glass shard
     .desc = A small piece of glass.
@@ -6196,7 +5803,6 @@ ent-ShardGlassReinforced = reinforced glass shard
     .desc = A small piece of reinforced glass.
 ent-ShardGlassUranium = uranium glass shard
     .desc = A small piece of uranium glass.
-
 # glass.yml
 ent-SheetClockworkGlass = clockwork glass
     .desc = A sheet of brass-hardened glass, primarily used by clockwork enthusiasts and remnants of Ratvarian cults.
@@ -6218,7 +5824,6 @@ ent-SheetRUGlass1 = reinforced uranium glass
 ent-SheetUGlass = uranium glass
     .desc = A sheet of uranium glass.
 ent-SheetUGlass1 = uranium glass
-
 # metal.yml
 ent-SheetBrass = brass
     .desc = A sheet of brass, primarily used by clockwork enthusiasts and the remnants of Ratvarian cults.
@@ -6230,7 +5835,6 @@ ent-SheetPlasteel10 = plasteel
 ent-SheetSteel = steel
 ent-SheetSteel1 = steel
 ent-SheetSteel10 = steel
-
 # other.yml
 ent-MaterialSheetMeat = meat sheet
 ent-SheetPaper = paper
@@ -6243,11 +5847,9 @@ ent-SheetPlastic1 = plastic
 ent-SheetPlastic10 = plastic
 ent-SheetUranium = uranium
 ent-SheetUranium1 = uranium
-
 # acquisition_slips.yml
 ent-PaperAcquisitionSlip = acquisition slip
     .desc = A slip with order details on it. It can be given to Cargo to complete the order.
-
 # bedsheets.yml
 ent-BedsheetBase = BedsheetBase
     .desc = A surprisingly soft linen bedsheet.
@@ -6297,7 +5899,6 @@ ent-BedsheetWhite = white bedsheet
 ent-BedsheetWiz = wizard's bedsheet
     .desc = A special fabric enchanted with magic so you can have an enchanted night. It even glows!
 ent-BedsheetYellow = yellow bedsheet
-
 # books.yml
 ent-BookAtmosAirAlarms = Newton's Guide to Atmos: Air Alarms
     .desc = There are endless illegible notes scribbled in the margins. Most of the text is covered in handwritten question marks.
@@ -6335,7 +5936,6 @@ ent-BookSpaceLaw = space law
     .desc = A set of Nanotrasen guidelines for keeping law and order on their space stations.
 ent-BookTheBookOfControl = the book of control
     .desc = Essential to become robust.
-
 # books_author.yml
 ent-BookAurora = journey beyond - the starship aurora mission
     .desc = The book is in excellent condition, with a shiny cover depicting a spaceship hovering above a planet, perhaps with the Earth in the background. The title "Journey Beyond - The Starship Aurora Mission" is written in bold, silver letters. The cover also features a quote from a review, "A breathtaking tale of human achievement and exploration" to entice potential readers.
@@ -6399,44 +5999,34 @@ ent-BookWatched = watched
     .desc = The book is in good condition, with a slightly worn cover that features a dark and ominous space station looming in the background. The title "Watched" is written in bold letters that seem to be staring back at the reader, conveying the feeling of being constantly observed. The blurb on the back cover hints at a thrilling and suspenseful tale of paranoia and danger in a confined setting.
 ent-BookWorld = shaping the state of the world - interplay of forces and choices
     .desc = The book is a well-preserved hardcover with a simple, elegant design on the cover, depicting the image of a world in motion. The pages are crisp and clean, with no signs of wear or tear, suggesting that it has been well-cared for and valued by its previous owner. The text is printed in a clear, legible font, and the chapters are organized in a logical and easy-to-follow manner, making it accessible to readers of all levels of expertise.
-
 # botparts.yml
 ent-ProximitySensor = proximity sensor
     .desc = Senses things in close proximity.
-
 # brb_sign.yml
 ent-BrbSign = brb sign
     .desc = Lets others know you are away.
-
 # briefcases.yml
 ent-BriefcaseBrown = brown briefcase
-
 # business_card.yml
 ent-SyndicateBusinessCard = syndicate business card
     .desc = A black card with the syndicate's logo. There's something written on the back.
-
 # candy_bowl.yml
 ent-CandyBowl = candy bowl
     .desc = Grab as much as you can fit in your pockets!
-
 # chopsticks.yml
 ent-ChopSticks = chopsticks
     .desc = A very traditional utensil.
-
 # desk_bell.yml
 ent-DeskBell = desk bell
     .desc = The cornerstone of any customer service job. You feel an unending urge to ring it.
-
 # eggspider.yml
 ent-EggSpider = egg spider
     .desc = Is it a gemstone? Is it an egg? It looks expensive.
-
 # fire_extinguisher.yml
 ent-BorgFireExtinguisher = maneuvering jet
     .desc = Based on fire extinguisher technology, the maneuvering jet is... well yes, its just a bigger fire extinguisher.
 ent-SelfRechargingFireExtinguisher = self-recharging fire extinguisher
     .desc = It extinguishes fires. it slowly refills with water.
-
 # folders.yml
 ent-BoxFolderBase = folder
     .desc = A folder filled with top secret paperwork.
@@ -6449,11 +6039,9 @@ ent-BoxFolderClipboard = clipboard
 ent-BoxFolderNuclearCodes = nuclear code folder
 ent-BoxFolderQmClipboard = requisition digi-board
     .desc = A bulky electric clipboard, filled with shipping orders and financing details. With so many compromising documents, you ought to keep this safe.
-
 # handcuffs.yml
 ent-ClothingOuterStraightjacket = straitjacket
     .desc = Used to restrain those who may cause harm to themselves or others.
-
 # handy_flags.yml
 ent-BlankHandyFlag = blank handheld flag
     .desc = Some piece of white cloth wound on a stick.
@@ -6465,11 +6053,9 @@ ent-PirateHandyFlag = pirate handheld flag
     .desc = Holding it in your hands, show these carp that you're not kidding.
 ent-SyndieHandyFlag = syndicate handheld flag
     .desc = For truly rebellious patriots. Death to NT!
-
 # ice_crust.yml
 ent-IceCrust = ice crust
     .desc = It's cold and slippery.
-
 # identification_cards.yml
 ent-AtmosIDCard = atmospheric technician ID card
 ent-BartenderIDCard = bartender ID card
@@ -6535,7 +6121,6 @@ ent-VisitorIDCard = visitor ID card
 ent-WardenIDCard = warden ID card
 ent-WizardIDCard = wizard ID card
 ent-ZookeeperIDCard = zookeeper ID card
-
 # implanters.yml
 ent-BaseImplantOnlyImplanterSyndi = syndicate implanter
     .desc = A compact disposable syringe exclusively designed for the injection of subdermal implants. Make sure to scrub it with soap or a rag to remove residual DNA after use!
@@ -6559,19 +6144,16 @@ ent-ScramImplanter = scram implanter
 ent-StorageImplanter = storage implanter
 ent-TrackingImplanter = tracking implanter
 ent-UplinkImplanter = uplink implanter
-
 # improvised_gun_parts.yml
 ent-ModularReceiver = modular receiver
     .desc = A vital part used in the creation of firearms.
 ent-RifleStock = rifle stock
     .desc = A robust wooden stock, used in the creation of firearms.
-
 # inflatable_wall.yml
 ent-InflatableDoor = inflatable door
     .desc = An inflated membrane. Activate to deflate. Now with a door. Do not puncture.
 ent-InflatableWall = inflatable barricade
     .desc = An inflated membrane. Activate to deflate. Do not puncture.
-
 # kudzu.yml
 ent-FleshKudzu = tendons
     .desc = A rapidly growing cluster of meaty tendons. WHY ARE YOU STOPPING TO LOOK AT IT?!
@@ -6579,20 +6161,16 @@ ent-Kudzu = kudzu
     .desc = A rapidly growing, dangerous plant. WHY ARE YOU STOPPING TO LOOK AT IT?!
 ent-KudzuFlowerFriendly = floral carpet
     .desc = A colorful carpet of flowers sprawling in every direction. You're not sure whether to take it down or leave it up.
-
 # land_mine.yml
 ent-LandMineKickUnarmed = kick mine
-
 # machine_parts.yml
 ent-BaseStockPart = stock part
     .desc = What?
 ent-MicroManipulatorStockPart = modular machine part
     .desc = A basic machine part used in the construction of a variety of devices.
-
 # medalcase.yml
 ent-MedalCase = medal case
     .desc = Case with medals.
-
 # paper.yml
 ent-AllTraitorCodesPaper = syndicate codewords registry
     .desc = A registry of all active Syndicate codewords.
@@ -6605,7 +6183,6 @@ ent-PaperSalvageJobLabel = salvage job shipment label
     .desc = A paper label designating a crate as containing a shipment to fulfill a salvage job. Selling a crate with this will fulfill the job.
 ent-TraitorCodePaper = syndicate codeword
     .desc = A leaked codeword to possibly get in touch with the Syndicate.
-
 # parcel_wrap.yml
 ent-ParcelWrap = parcel wrap
     .desc = Paper used contain items for transport.
@@ -6613,20 +6190,16 @@ ent-ParcelWrapTrash = parcel wrap
     .desc = The disappointing remnants of an unwrapped parcel.
 ent-WrappedParcel = wrapped parcel
     .desc = Something wrapped up in paper. I wonder what's inside...
-
 # pet_carrier.yml
 ent-PetCarrier = pet carrier
     .desc = Allows large animals to be carried comfortably. It smells vaguely of toilet water and explosives.
-
 # potatoai_chip.yml
 ent-PotatoAIChip = supercompact AI chip
     .desc = This high-tech AI chip requires a voltage of exactly 1.1V to function correctly.
-
 # space_cash.yml
 ent-Credit = speso
 ent-SpaceCash = spesos
     .desc = You gotta have money.
-
 # subdermal_implants.yml
 ent-BaseSubdermalImplant = implant
     .desc = A microscopic chip that's injected under the skin.
@@ -6670,7 +6243,6 @@ ent-TrackingImplant = tracking implant
     .desc = This implant has a tracking device attached to the suit sensor network.
 ent-UplinkImplant = uplink implant
     .desc = This implant lets the user access a hidden Syndicate uplink at will.
-
 # tiles.yml
 ent-FloorTileItemAstroAsteroidSand = asteroid astro-sand
     .desc = Fake sand. Luckily, it's not as coarse as the real thing.
@@ -6689,7 +6261,6 @@ ent-FloorTileItemTechmaintDark = dark techmaint floor
 ent-FloorTileItemXeno = xeno floor
 ent-FloorTileItemXenoSteel = xeno steel floor
 ent-FloorTileItemXenoSteelCorner = xeno steel corner floor
-
 # treasure.yml
 ent-TreasureCDDrive = CD drive
     .desc = A piece of tech for reading data off of CDs. Nowadays that's not the most useful thing, unless you plan on flying somewhere.
@@ -6705,7 +6276,6 @@ ent-TreasureHardDiskDrive = hard disk drive
     .desc = A disk drive designed for old Earth technology, circa 1980. There's probably some kind of collector who might want to get their paws on this.
 ent-TreasureSampleTube = sample tube
     .desc = A glass tube with some sort of goop in it. Looks prone to breaking.
-
 # utensils.yml
 ent-BarSpoon = bar spoon
     .desc = Your personal helper to mix drinks and changes lives.
@@ -6719,15 +6289,12 @@ ent-Spoon = spoon
     .desc = There is no spoon.
 ent-SpoonPlastic = plastic spoon
     .desc = There is no spoon.
-
 # antimatter_jar.yml
 ent-AmeJar = AME fuel jar
     .desc = A hermetically sealed jar containing antimatter for use in an antimatter reactor.
-
 # portable_recharger.yml
 ent-PortableRecharger = portable recharger
     .desc = High-tech recharger adapted for portability.
-
 # powercells.yml
 ent-PowerCageHigh = high-capacity power cage
     .desc = A rechargeable power cage for big devices. Increased capacity for increased power levels.
@@ -6739,15 +6306,12 @@ ent-PowerCellMicroreactor = microreactor power cell
     .desc = A rechargeable standardized microreactor cell. Has lower capacity but slowly recharges by itself.
 ent-PowerCellSmallNuclear = small-capacity nuclear power cell
     .desc = A self rechargeable power cell, designed for fast recharge rate at the expense of capacity.
-
 # powersink.yml
 ent-PowerSink = pochłaniacz energii
     .desc = Pochłania gigantyczne ilości energii z sieci.
-
 # chemistry-vials.yml
 ent-BorgVial = integrated vial
     .desc = An internal compartment installed into a cyborg. Rated for 30 units of any liquid.
-
 # chemistry.yml
 ent-BorgBeaker = integrated beaker
     .desc = An internal compartment installed into a cyborg. Rated for 50 units of any liquid.
@@ -6757,7 +6321,6 @@ ent-SyringeBluespace = bluespace syringe
     .desc = Injecting with advanced bluespace technology.
 ent-SyringeCryostasis = cryostasis syringe
     .desc = A syringe used to contain chemicals or solutions without reactions.
-
 # rehydrateable.yml
 ent-AbominationCube = abomination cube
     .desc = Just add blood!
@@ -6777,11 +6340,9 @@ ent-SpaceCarpCube = carp cube
     .desc = Just add water! At your own risk.
 ent-SpaceTickCube = tick cube
     .desc = Just add water! At your own risk.
-
 # syndicate.yml
 ent-BaseUplinkRadio = syndicate uplink
     .desc = Suspiciously looking old radio...
-
 # cargo_pallet.yml
 ent-BaseCargoPallet = cargo pallet
     .desc = Common fixture of logistics and cargo. Subtle reminder where crates go during transport to avoid bruised shins.
@@ -6789,15 +6350,12 @@ ent-CargoPalletBuy = cargo buying pallet
     .desc = Designates where orders will appear when purchased. Made of plastitanium to discourage pesky vandals.
 ent-CargoPalletSell = cargo selling pallet
     .desc = Designates valid items to sell. Made of plastitanium to discourage pesky vandals.
-
 # bibles.yml
 ent-ActionBibleSummon = Summon familiar
     .desc = Summon a familiar that will aid you and gain humanlike intelligence once inhabited by a soul.
-
 # forensics.yml
 ent-ForensicPad = forensic pad
     .desc = A forensic pad for collecting fingerprints or fibers.
-
 # seeds.yml
 ent-LaughinPeaSeeds = packet of laughin' pea pods
     .desc = These seeds give off a very soft purple glow.. they should grow into Laughin' Peas.
@@ -6807,22 +6365,18 @@ ent-RealCapfruitSeeds = packet of capfruit seeds
     .desc = Is it real, or is it fake?
 ent-WorldPeaSeeds = packet of world pea seeds
     .desc = These rather large seeds give off a soothing blue glow.
-
 # janitor.yml
 ent-WireBrush = wire brush
     .desc = A bristly steel wire brush, perfect for scraping away even the toughest patches of rust.
-
 # spray.yml
 ent-BorgMegaSprayBottle = adv. internal spray jet
     .desc = An upgraded version of the integrated spray bottle, installed directly into a custodial cyborg. Typically filled with space cleaner for dealing with those nasty spills.
 ent-BorgSprayBottle = internal spray jet
     .desc = A pressurized vessel for spraying reagents, installed directly into a custodial cyborg. Typically filled with space cleaner for dealing with those nasty spills.
 ent-Vapor = vapor
-
 # trashbag.yml
 ent-BorgTrashBag = internal trash bag
     .desc = An upgraded trash bag with a larger internal volume, installed directly into a custodial cyborg.
-
 # mech_construction.yml
 ent-HamtrChassis = HAMTR chassis
     .desc = An in-progress construction of the HAMTR mech.
@@ -6864,7 +6418,6 @@ ent-VimChassis = vim chassis
     .desc = An in-progress construction of the Vim exosuit.
 ent-VimHarness = vim harness
     .desc = A small mounting bracket for vim parts.
-
 # mecha_equipment.yml
 ent-MechEquipmentGrabber = hydraulic clamp
     .desc = Gives the mech the ability to grab things and drag them around.
@@ -6872,7 +6425,6 @@ ent-MechEquipmentGrabberSmall = small hydraulic clamp
     .desc = Gives the mech the ability to grab things and drag them around.
 ent-MechEquipmentHorn = mech horn
     .desc = An enhanced bike horn that plays a hilarious array of sounds for the enjoyment of the crew. HONK!
-
 # mechs.yml
 ent-MechHamtr = HAMTR
     .desc = An experimental mech which uses a brain–computer interface to connect directly to a hamsters brain.
@@ -6882,7 +6434,6 @@ ent-MechRipley = Ripley APLU
     .desc = Versatile and lightly armored, the Ripley is useful for almost any heavy work scenario. The "APLU" stands for Autonomous Power Loading Unit.
 ent-MechVim = Vim
     .desc = A miniature exosuit from Nanotrasen, developed to let the irreplaceable station pets live a little longer.
-
 # defib.yml
 ent-BaseDefibrillator = defibrillator
     .desc = CLEAR! Zzzzat!
@@ -6890,7 +6441,6 @@ ent-DefibrillatorCompact = compact defibrillator
     .desc = Now in fun size!
 ent-DefibrillatorSyndicate = interdyne defibrillator
     .desc = Doubles as a self-defense weapon against war-crime inclined tiders.
-
 # disease.yml
 ent-BoxMouthSwab = sterile swab dispenser
     .desc = Dispenses 30 sterile swabs, extremely useful for botany.
@@ -6898,21 +6448,17 @@ ent-DiseaseSwab = sterile swab
     .desc = Used for taking and transferring samples. Sterile until open. Single use only.
 ent-Vaccine = vaccine
     .desc = Prevents people who DON'T already have a disease from catching it.
-
 # healing.yml
 ent-HealingToolbox = healing toolbox
     .desc = A powerful toolbox imbued with robust energy. It can heal your wounds and fill you with murderous intent.
 ent-Tourniquet = tourniquet
     .desc = Stops bleeding! Hopefully.
-
 # healthanalyzer.yml
 ent-HandheldHealthAnalyzerUnpowered = health analyzer
     .desc = A hand-held body scanner capable of distinguishing vital signs of the subject.
-
 # hypospray.yml
 ent-HypopenBox = hypopen box
     .desc = A small box containing a hypopen. Packaging disintegrates when opened, leaving no evidence behind.
-
 # morgue.yml
 ent-Ash = ash
     .desc = This used to be something, but now it's not.
@@ -6922,7 +6468,6 @@ ent-BodyBagFolded = body bag
     .desc = A plastic bag designed for the storage and transportation of cadavers to stop body decomposition.
 ent-Ectoplasm = ectoplasm
     .desc = Much less deadly in this form.
-
 # anomaly.yml
 ent-AnomalyLocatorUnpowered = anomaly locator
     .desc = A device designed to aid in the locating of anomalies. Did you check the gas miners?
@@ -6930,7 +6475,6 @@ ent-AnomalyLocatorWideUnpowered = wide-spectrum anomaly locator
     .desc = A device that looks for anomalies from an extended distance, but has no way to determine the distance to them.
 ent-AnomalyScanner = anomaly scanner
     .desc = A hand-held scanner built to collect information on various anomalous objects.
-
 # disk.yml
 ent-ResearchDisk = research point disk (1000)
     .desc = A disk for the R&D server containing 1000 points.
@@ -6942,7 +6486,6 @@ ent-ResearchDiskDebug = research point disk
     .desc = A disk for the R&D server containing all the points you could ever need.
 ent-TechnologyDisk = technology disk
     .desc = A disk for the R&D server containing research technology.
-
 # borg_modules.yml
 ent-ActionBorgSwapModule = Swap Module
     .desc = Select this module, enabling you to use the tools it provides.
@@ -7014,35 +6557,28 @@ ent-XenoborgModuleSword = sword xenoborg module
     .desc = Module with a kukri knife.
 ent-XenoborgModuleTool = tool xenoborg module
     .desc = Simple tools for most xenoborgs.
-
 # endoskeleton.yml
 ent-CyborgEndoskeleton = cyborg endoskeleton
     .desc = A frame that cyborgs are built on. Significantly less spooky than expected.
-
 # mmi.yml
 ent-MMI = man-machine interface
     .desc = A machine able to facilitate communication between a biological brain and electronics, enabling crew to continue to provide value after work-related incidents.
 ent-PositronicBrain = positronic brain
     .desc = An artificial brain capable of spontaneous neural activity.
-
 # ore_bag.yml
 ent-BorgOreBag = integrated ore bag
     .desc = A large ore bag built into the frame of a mining cyborg.
-
 # scanner.yml
 ent-AdvancedMineralScannerUnpowered = advanced mineral scanner
     .desc = A scanner that checks surrounding rock for useful minerals. It must be in your hand or pocket to work. This one has an extended range.
 ent-MineralScannerUnpowered = mineral scanner
     .desc = A scanner that checks surrounding rock for useful minerals. It must be in your hand or pocket to work.
-
 # evidence-marker.yml
 ent-EvidenceMarker = evidence marker
     .desc = A numbered yellow marker, useful for labeling evidence on a crime scene.
-
 # barber.yml
 ent-BarberScissors = barber scissors
     .desc = Is able to reshape the hairstyle of any crew cut to your liking.
-
 # vending_machine_restock.yml
 ent-BaseVendingMachineRestock = vending machine restock box
     .desc = A box for restocking vending machines with corporate goodies.
@@ -7098,58 +6634,46 @@ ent-VendingMachineRestockTankDispenser = tank dispenser restock box
     .desc = Capable of replacing tanks in a gas tank dispenser. Handle with care.
 ent-VendingMachineRestockVendomat = Vendomat restock box
     .desc = A box full of parts for various machinery. Load it into a Vendomat to begin.
-
 # artifact_equipment.yml
 ent-CrateArtifactContainer = artifact container
     .desc = Used to safely contain and move artifacts.
 ent-HandheldArtifactContainer = handheld artifact container
     .desc = A handheld case used to safely contain and move small artifacts.
-
 # item_xenoartifacts.yml
 ent-ArtifactFragment = artifact fragment
     .desc = A broken piece of an artifact. You could probably repair it if you had more.
 ent-BaseXenoArtifactItem = artifact
     .desc = A strange artifact from time unknown. Looks like a good time. Fits in hand perfectly.
-
 # node_scanner.yml
 ent-NodeScanner = node scanner
     .desc = The archeologist's friend, able to identify the node of an artifact with only a single scan.
-
 # structure_xenoartifacts.yml
 ent-BaseXenoArtifactStructure = artifact
-
 # xenoartifacts.yml
 ent-ActionArtifactActivate = Activate Artifact
     .desc = Activate yourself, causing chaos to those near you.
 ent-BaseXenoArtifact = artifact
     .desc = A strange artifact from time unknown. Looks like a good time.
-
 # cloaking_device.yml
 ent-CloakingDevice = cloaking device
     .desc = A device that allows xenoborgs to go invisible.
-
 # material_bag.yml
 ent-MaterialBag = material bag
     .desc = A robust bag for xenoborgs to carry large amounts of materials.
-
 # nocturine_hypo.yml
 ent-NocturineHypo = nocturine hypo
     .desc = A self-refilling injector for rapid administration of nocturine to victms.
-
 # access_breaker.yml
 ent-AccessBreakerUnlimited = authentication disruptor
     .desc = A hacked access configurator, specialized to unlock and erase access from digital locks.
-
 # access_configurator.yml
 ent-AccessConfigurator = access configurator
     .desc = Used to modify the access level requirements for airlocks and other lockable devices.
 ent-AccessConfiguratorUniversal = universal access configurator
     .desc = A modified access configurator used only by the mythical Administrator.
-
 # appraisal.yml
 ent-AppraisalTool = appraisal tool
     .desc = A beancounter's best friend, with a quantum connection to the galactic market and the ability to appraise even the toughest items. It will also tell you if a crate contains a completed bounty.
-
 # blueprint.yml
 ent-BaseBlueprint = blueprint
     .desc = A blueprint for some machine. It can be inserted into an autolathe.
@@ -7159,13 +6683,11 @@ ent-BlueprintFulton = fulton blueprint
     .desc = A blueprint with a schematic of a fulton. It can be inserted into an autolathe.
 ent-BlueprintSeismicCharge = seismic charge blueprint
     .desc = A blueprint with a schematic of a seismic charge. It can be inserted into an autolathe.
-
 # bucket.yml
 ent-BorgBucket = internal tank
     .desc = The internal reservoir of a custodial cyborg, capable of holding a entire mop bucket worth of water.
 ent-Bucket = bucket
     .desc = It's a boring old bucket.
-
 # cable_coils.yml
 ent-CableApcStack = LV cable coil
     .desc = Low-Voltage stack of wires for connecting APCs to machines and other purposes.
@@ -7174,10 +6696,8 @@ ent-CableHVStack = HV cable coil
 ent-CableMVStack = MV cable coil
     .desc = MV cables for connecting substations to APCs, and also powering a select few things like emitters.
 ent-CableStack = cable stack
-
 # cowtools.yml
 ent-CowToolboxFilled = cow toolbox
-
 # decoys.yml
 ent-BalloonAgent = corpsman balloon
     .desc = Upon closer inspection, this Syndicate corpsman is actually a balloon.
@@ -7189,11 +6709,9 @@ ent-BalloonJuggernaut = juggernaut balloon
     .desc = Upon closer inspection, this Syndicate juggernaut is actually a balloon.
 ent-BalloonOperative = operative balloon
     .desc = Upon closer inspection, this Syndicate operative is actually a balloon.
-
 # emag.yml
 ent-EmagUnlimited = cryptographic sequencer
     .desc = The all-in-one hacking solution. Friend of any syndicate. The iconic EMAG.
-
 # fulton.yml
 ent-Fulton = fulton
     .desc = Used to extract containers, items, or forcibly recruit people into your base of operations.
@@ -7201,7 +6719,6 @@ ent-Fulton1 = fulton
 ent-FultonBeacon = fulton beacon
     .desc = Beacon to receive fulton extractions.
 ent-FultonEffect = fulton effect
-
 # gas_tanks.yml
 ent-AirTank = air tank
     .desc = Mixed anyone? It can hold 5 L of gas.
@@ -7227,20 +6744,16 @@ ent-OxygenTank = oxygen tank
     .desc = A standard cylindrical gas tank for oxygen. It can hold 5 L of gas.
 ent-PlasmaTank = plasma tank
     .desc = Contains dangerous plasma. Do not inhale. Extremely flammable. It can hold 5 L of gas.
-
 # hand_labeler.yml
 ent-HandLabeler = hand labeler
     .desc = A hand labeler, used to label items and objects.
-
 # inflatable_wall.yml
 ent-InflatableDoorStack = inflatable door
     .desc = A folded membrane which rapidly expands into a large cubical shape on activation.
 ent-InflatableWallStack = inflatable barricade
     .desc = A folded membrane which rapidly expands into a large cubical shape on activation.
-
 # jammer.yml
 ent-XenoborgRadioJammer = xenoborg radio jammer
-
 # jetpacks.yml
 ent-ActionToggleJetpack = Toggle jetpack
     .desc = Toggles the jetpack, giving you movement outside the station.
@@ -7260,18 +6773,15 @@ ent-JetpackSecurityFilled = security jetpack
 ent-JetpackVoid = void jetpack
 ent-JetpackVoidFilled = void jetpack
 ent-JetpackXenoborg = xenoborg jetpack
-
 # pka_upgrade.yml
 ent-BasePKAUpgrade = PKA modkit
     .desc = A modkit for a proto-kinetic accelerator.
 ent-PKAUpgradeDamage = PKA modkit (damage)
 ent-PKAUpgradeFireRate = PKA modkit (fire rate)
 ent-PKAUpgradeRange = PKA modkit (range)
-
 # spray_painter.yml
 ent-SprayPainter = spray painter
     .desc = A spray painter for painting airlocks and pipes.
-
 # thief.yml
 ent-SatchelThief = undetermined thieving satchel
     .desc = This is where your favorite thief's supplies lie. Folded for your convenience.
@@ -7279,7 +6789,6 @@ ent-ThiefBeacon = thieving beacon
     .desc = A device that will teleport everything around it to the thief's vault at the end of the shift.
 ent-ToolboxThief = undetermined thieving toolbox
     .desc = This is where your favorite thief's supplies lie. Try to remember which ones.
-
 # tools.yml
 ent-RCD = RCD
     .desc = The rapid construction device can be used to quickly place and remove various station structures and fixtures. Requires compressed matter to function.
@@ -7289,25 +6798,20 @@ ent-RCDRecharging = experimental RCD
     .desc = Cyborg-mounted Rapid Construction Device which creates compressed matter on the fly using an internal fabricator.
 ent-RollingPin = rolling pin
     .desc = A tool used to shape and flatten dough.
-
 # welders.yml
 ent-RefuelingWelder = refuling welding tool
     .desc = An slow welder that can refuel itself over time.
-
 # firebomb.yml
 ent-FireBomb = fire bomb
     .desc = A weak, improvised incendiary device.
 ent-FireBombEmpty = fire bomb
     .desc = A weak, improvised incendiary device. This one has no fuel.
-
 # funny.yml
 ent-TrashBananaPeelExplosiveUnarmed = banana
     .desc = There's something unusual about this banana.
-
 # pen.yml
 ent-PenExplodingBox = exploding pen box
     .desc = A small box containing an exploding pen. Packaging disintegrates when opened, leaving no evidence behind.
-
 # pipebomb.yml
 ent-PipeBomb = pipe bomb
     .desc = An improvised explosive made from pipes and wire.
@@ -7315,7 +6819,6 @@ ent-PipeBombCable = pipe bomb
     .desc = An improvised explosive made from a pipe. This one has no cable.
 ent-PipeBombGunpowder = pipe bomb
     .desc = An improvised explosive made from a pipe. This one has no gunpowder.
-
 # explosives.yml
 ent-BaseCannonBall = base cannon ball
 ent-BaseGrenade = base grenade
@@ -7332,18 +6835,15 @@ ent-GrenadeCleanade = cleanade grenade round
 ent-GrenadeEMP = EMP grenade
 ent-GrenadeFlash = flash grenade
 ent-GrenadeFrag = frag grenade
-
 # antimateriel.yml
 ent-BaseMagazineBoxAntiMateriel = ammunition box (.60 anti-materiel)
 ent-MagazineBoxAntiMateriel = ammunition box (.60 anti-materiel)
-
 # caseless_rifle.yml
 ent-BaseMagazineBoxCaselessRifle = ammunition box (.25 caseless)
 ent-MagazineBoxCaselessRifle = ammunition box (.25 caseless)
     .desc = A cardboard box of .25 caseless rounds. Intended to hold general-purpose kinetic ammunition.
 ent-MagazineBoxCaselessRiflePractice = ammunition box (.25 caseless practice)
     .desc = A cardboard box of .25 caseless rounds. Intended to hold non-harmful chalk ammunition.
-
 # light_rifle.yml
 ent-BaseMagazineBoxLightRifle = ammunition box (.30 rifle)
 ent-MagazineBoxLightRifle = ammunition box (.30 rifle)
@@ -7355,7 +6855,6 @@ ent-MagazineBoxLightRiflePractice = ammunition box (.30 rifle practice)
     .desc = A cardboard box of .30 rifle rounds. Intended to hold non-harmful chalk ammunition.
 ent-MagazineBoxLightRifleUranium = ammunition box (.30 rifle uranium)
     .desc = A cardboard box of .30 rifle rounds. Intended to hold exotic uranium-core ammunition.
-
 # magnum.yml
 ent-MagazineBoxMagnum = ammunition box (.45 magnum)
     .desc = A cardboard box of .45 magnum rounds. Intended to hold general-purpose kinetic ammunition.
@@ -7367,7 +6866,6 @@ ent-MagazineBoxMagnumPractice = ammunition box (.45 magnum practice)
     .desc = A cardboard box of .45 magnum rounds. Intended to hold non-harmful chalk ammunition.
 ent-MagazineBoxMagnumUranium = ammunition box (.45 magnum uranium)
     .desc = A cardboard box of .45 magnum rounds. Intended to hold exotic uranium-core ammunition.
-
 # pistol.yml
 ent-BaseMagazineBoxPistol = ammunition box (.35 auto)
 ent-MagazineBoxPistol = ammunition box (.35 auto)
@@ -7378,36 +6876,29 @@ ent-MagazineBoxPistolPractice = ammunition box (.35 auto practice)
     .desc = A cardboard box of .35 auto rounds. Intended to hold non-harmful chalk ammunition.
 ent-MagazineBoxPistolUranium = ammunition box (.35 auto uranium)
     .desc = A cardboard box of .35 auto rounds. Intended to hold exotic uranium-core ammunition.
-
 # rifle.yml
 ent-MagazineBoxRifle = ammunition box (.20 rifle)
 ent-MagazineBoxRifleBig = ammunition box (.20 rifle)
 ent-MagazineBoxRifleIncendiary = ammunition box (.20 rifle incendiary)
 ent-MagazineBoxRiflePractice = ammunition box (.20 rifle practice)
 ent-MagazineBoxRifleUranium = ammunition box (.20 rifle uranium)
-
 # shotgun.yml
 ent-BoxBeanbag = ammunition box (.50 beanbag)
-
 # toy.yml
 ent-BoxCartridgeCap = cap gun cartridge box
 ent-BoxDonkSoftBase = foamdart box
 ent-BoxDonkSoftBox = box of foam darts
-
 # antimateriel.yml
 ent-CartridgeAntiMateriel = cartridge (.60 anti-materiel)
-
 # caseless_rifle.yml
 ent-BaseCartridgeCaselessRifle = cartridge (.25 caseless)
 ent-CartridgeCaselessRifle = cartridge (.25 caseless)
     .desc = A small caliber utilizing caseless technology, omitting conventional brass casing in favor of hardened propellant. Standard kinetic ammunition is common and useful in most situations.
 ent-CartridgeCaselessRiflePractice = cartridge (.25 caseless practice)
     .desc = A small caliber utilizing caseless technology, omitting conventional brass casing in favor of hardened propellant. Chalk ammunition is generally non-harmful, used for practice.
-
 # heavy_rifle.yml
 ent-BaseCartridgeHeavyRifle = cartridge (.20 rifle)
 ent-CartridgeMinigun = cartridge (.10 rifle)
-
 # light_rifle.yml
 ent-BaseCartridgeLightRifle = cartridge (.30 rifle)
 ent-CartridgeLightRifle = cartridge (.30 rifle)
@@ -7418,7 +6909,6 @@ ent-CartridgeLightRiflePractice = cartridge (.30 rifle practice)
     .desc = A classic intermediate cartridge used by many combat rifles and LMGs. Chalk ammunition is generally non-harmful, used for practice.
 ent-CartridgeLightRifleUranium = cartridge (.30 rifle uranium)
     .desc = A classic intermediate cartridge used by many combat rifles and LMGs. Uranium ammunition replaces the lead core of the bullet with fissile material, irradiating the target from the inside.
-
 # magnum.yml
 ent-BaseCartridgeMagnum = cartridge (.45 magnum)
 ent-CartridgeMagnum = cartridge (.45 magnum)
@@ -7431,7 +6921,6 @@ ent-CartridgeMagnumPractice = cartridge (.45 magnum practice)
     .desc = Heavy magnum cartridge mostly used by revolvers. Chalk ammunition is generally non-harmful, used for practice.
 ent-CartridgeMagnumUranium = cartridge (.45 magnum uranium)
     .desc = Heavy magnum cartridge mostly used by revolvers. Uranium ammunition replaces the lead core of the bullet with fissile material, irradiating the target from the inside.
-
 # pistol.yml
 ent-BaseCartridgePistol = cartridge (.35 auto)
 ent-CartridgePistol = cartridge (.35 auto)
@@ -7443,14 +6932,12 @@ ent-CartridgePistolPractice = cartridge (.35 auto practice)
 ent-CartridgePistolSpent = cartridge (.35 auto)
 ent-CartridgePistolUranium = cartridge (.35 auto uranium)
     .desc = Arguably the most popular caliber on the market, used by all manner of pistols and submachine guns. Uranium core ammunition features a load of fissile material, irradiating the target from the inside.
-
 # rifle.yml
 ent-BaseCartridgeRifle = cartridge (.20 rifle)
 ent-CartridgeRifle = cartridge (.20 rifle)
 ent-CartridgeRifleIncendiary = cartridge (.20 rifle incendiary)
 ent-CartridgeRiflePractice = cartridge (.20 rifle practice)
 ent-CartridgeRifleUranium = cartridge (.20 rifle uranium)
-
 # shotgun.yml
 ent-BaseShellShotgun = shell (.50)
 ent-ShellShotgun = shell (.50 pellet)
@@ -7463,11 +6950,9 @@ ent-ShellShotgunPractice = shell (.50 practice)
 ent-ShellShotgunSlug = shell (.50 slug)
 ent-ShellShotgunUranium = uranium shotgun shell
 ent-ShellTranquilizer = shell (.50 tranquilizer)
-
 # toy.yml
 ent-BaseCartridgeCap = cartridge (cap)
 ent-CartridgeCap = cap gun cartridge
-
 # caseless_rifle.yml
 ent-BaseMagazineCaselessRifle = magazine (.25 caseless)
 ent-BaseMagazineCaselessRifleShort = caseless rifle short magazine (.25 caseless)
@@ -7481,7 +6966,6 @@ ent-MagazinePistolCaselessRifle = pistol magazine (.25 caseless)
     .desc = 10-round magazine for the Cobra pistol. Intended to hold general-purpose kinetic ammunition.
 ent-MagazinePistolCaselessRiflePractice = pistol magazine (.25 caseless practice)
     .desc = 10-round magazine for the Cobra pistol. Intended to hold non-harmful chalk ammunition.
-
 # grenade.yml
 ent-BaseMagazineGrenade = grenade cartridge
 ent-MagazineGrenadeBaton = baton grenade cartridge
@@ -7490,10 +6974,8 @@ ent-MagazineGrenadeEMP = EMP grenade cartridge
 ent-MagazineGrenadeEmpty = grenade cartridge
 ent-MagazineGrenadeFlash = flash grenade cartridge
 ent-MagazineGrenadeFrag = frag grenade cartridge
-
 # heavy_rifle.yml
 ent-BaseMagazineHeavyRifle = magazine (.20 rifle)
-
 # light_rifle.yml
 ent-BaseMagazineLightRifle = magazine (.30 rifle)
 ent-MagazineLightRifle = magazine (.30 rifle)
@@ -7510,7 +6992,6 @@ ent-MagazineLightRiflePractice = magazine (.30 rifle practice)
     .desc = Curved 30-round double stack magazine for combat rifles. Intended to hold non-harmful chalk ammunition.
 ent-MagazineLightRifleUranium = magazine (.30 rifle uranium)
     .desc = Curved 30-round double stack magazine for combat rifles. Intended to hold exotic uranium-core ammunition.
-
 # magnum.yml
 ent-BaseMagazineMagnum = pistol magazine (.45 magnum)
 ent-BaseMagazineMagnumSubMachineGun = SMG magazine (.45 magnum)
@@ -7529,7 +7010,6 @@ ent-MagazineMagnumSubMachineGunPractice = SMG magazine (.45 magnum practice)
 ent-MagazineMagnumSubMachineGunUranium = SMG magazine (.45 magnum uranium)
 ent-MagazineMagnumUranium = pistol magazine (.45 magnum uranium)
     .desc = 7-round single stack pistol magazine. Intended to hold exotic uranium-core ammunition.
-
 # pistol.yml
 ent-BaseMagazinePistol = pistol magazine (.35 auto)
 ent-BaseMagazinePistolHighCapacity = machine pistol magazine (.35 auto)
@@ -7561,7 +7041,6 @@ ent-MagazinePistolSubMachineGunUranium = SMG magazine (.35 auto uranium)
     .desc = 30-round double-stack magazine for submachine guns. Intended to hold exotic uranium-core ammunition.
 ent-MagazinePistolUranium = pistol magazine (.35 auto uranium)
     .desc = 10-round single-stack magazine for pistols. Intended to hold exotic uranium-core ammunition.
-
 # rifle.yml
 ent-BaseMagazineRifle = magazine (.20 rifle)
 ent-MagazineRifle = magazine (.20 rifle)
@@ -7569,7 +7048,6 @@ ent-MagazineRifleEmpty = magazine (.20 rifle any)
 ent-MagazineRifleIncendiary = magazine (.20 rifle incendiary)
 ent-MagazineRiflePractice = magazine (.20 rifle practice)
 ent-MagazineRifleUranium = magazine (.20 rifle uranium)
-
 # shotgun.yml
 ent-BaseMagazineShotgun = ammo drum (.50 shells)
 ent-MagazineShotgun = ammo drum (.50 pellet)
@@ -7577,51 +7055,41 @@ ent-MagazineShotgunBeanbag = ammo drum (.50 beanbags)
 ent-MagazineShotgunEmpty = ammo drum (.50 shells any)
 ent-MagazineShotgunIncendiary = ammo drum (.50 incendiary)
 ent-MagazineShotgunSlug = ammo drum (.50 slug)
-
 # toy.yml
 ent-MagazineFoamBox = ammunition box (foam)
-
 # antimateriel.yml
 ent-BulletAntiMateriel = bullet (.60 anti-materiel)
-
 # caseless_rifle.yml
 ent-BulletCaselessRifle = bullet (.25 caseless)
 ent-BulletCaselessRiflePractice = bullet (.25 caseless practice)
-
 # grenade.yml
 ent-PelletClusterIncendiary = pellet (ball, incendiary)
 ent-PelletClusterLethal = pellet (ball, lethal)
 ent-PelletClusterRubber = pellet (ball, rubber)
-
 # heavy_rifle.yml
 ent-BulletHeavyRifle = bullet (.20 rifle)
 ent-BulletMinigun = minigun bullet (.10 rifle)
-
 # light_rifle.yml
 ent-BulletLightRifle = bullet (.20 rifle)
 ent-BulletLightRifleIncendiary = bullet (.20 rifle incendiary)
 ent-BulletLightRiflePractice = bullet (.20 rifle practice)
 ent-BulletLightRifleUranium = bullet (.20 rifle uranium)
-
 # magnum.yml
 ent-BulletMagnum = bullet (.45 magnum)
 ent-BulletMagnumAP = bullet (.45 magnum armor-piercing)
 ent-BulletMagnumIncendiary = bullet (.45 magnum incendiary)
 ent-BulletMagnumPractice = bullet (.45 magnum practice)
 ent-BulletMagnumUranium = bullet (.45 magnum uranium)
-
 # pistol.yml
 ent-BulletPistol = bullet (.35 auto)
 ent-BulletPistolIncendiary = bullet (.35 auto incendiary)
 ent-BulletPistolPractice = bullet (.35 auto practice)
 ent-BulletPistolUranium = bullet (.35 auto uranium)
-
 # rifle.yml
 ent-BulletRifle = bullet (0.20 rifle)
 ent-BulletRifleIncendiary = bullet (0.20 rifle incendiary)
 ent-BulletRiflePractice = bullet (0.20 rifle practice)
 ent-BulletRifleUranium = bullet (0.20 rifle uranium)
-
 # shotgun.yml
 ent-PelletGlass = glass shard
 ent-PelletGrapeshot = grapeshot pellet
@@ -7634,11 +7102,9 @@ ent-PelletShotgunPractice = pellet (.50 practice)
 ent-PelletShotgunSlug = pellet (.50 slug)
 ent-PelletShotgunTranquilizer = pellet (.50 tranquilizer)
 ent-PelletShotgunUranium = pellet (.50 uranium)
-
 # toy.yml
 ent-BulletFoam = foam dart
     .desc = I hope you're wearing eye protection.
-
 # magnum.yml
 ent-BaseSpeedLoaderMagnum = speed loader (.45 magnum)
 ent-SpeedLoaderMagnum = speed loader (.45 magnum)
@@ -7653,28 +7119,22 @@ ent-SpeedLoaderMagnumPractice = speed loader (.45 magnum practice)
     .desc = Designed to quickly refill an empty revolver, it fits up to six rounds. Intended to hold non-harmful chalk ammunition, perfect for practicing your quick draw.
 ent-SpeedLoaderMagnumUranium = speed loader (.45 magnum uranium)
     .desc = Designed to quickly refill an empty revolver, it fits up to six rounds. Intended to hold exotic uranium-core ammunition.
-
 # pistol.yml
 ent-BaseSpeedLoaderPistol = speed loader (.35 auto)
 ent-SpeedLoaderPistol = speed loader (.35 auto)
 ent-SpeedLoaderPistolPractice = speed loader (.35 auto practice)
-
 # rifle_light.yml
 ent-SpeedLoaderLightRifle = speed loader (.30 rifle)
     .desc = 5-round 'stripper clip' for quickly reloading the Kardashev-Mosin. Holds 5 rounds of .30 rifle.
-
 # toy.yml
 ent-BaseSpeedLoaderCap = cap gun loader
 ent-SpeedLoaderCap = cap gun loader
-
 # spraynozzle.yml
 ent-WeaponSprayNozzle = spray nozzle
     .desc = A high-powered spray nozzle used in conjunction with a backpack-mounted water tank.
-
 # wands.yml
 ent-WeaponWandPolymorphBread = magic bread wand
     .desc = Turn all your friends into bread! Your boss! Your enemies! Your dog! Make everything bread!
-
 # watergun.yml
 ent-WeaponWaterBlaster = water blaster
     .desc = With this bad boy, you'll be the coolest kid at the summer barbecue.
@@ -7682,11 +7142,9 @@ ent-WeaponWaterBlasterSuper = super water blaster
     .desc = No! No! Not in the eyes!
 ent-WeaponWaterPistol = water pistol
     .desc = The dinkiest of water-based weaponry. You swear the trigger doesn't do anything.
-
 # launchers.yml
 ent-WeaponLauncherHydra = hydra
     .desc = PLOOP... FSSSSSS
-
 # arrows.yml
 ent-ArrowImprovised = glass shard arrow
     .desc = The greyshirt's preferred projectile.
@@ -7698,7 +7156,6 @@ ent-ArrowImprovisedUranium = uranium glass shard arrow
     .desc = The greyshirt's preferred projectile. Now with added radiation!
 ent-ArrowRegular = arrow
     .desc = You can feel the power of the steppe within you.
-
 # magic.yml
 ent-BulletInstakillMagic = magical lead cylinder
     .desc = This looks familiar.
@@ -7724,7 +7181,6 @@ ent-ProjectilePolyboltDoor = door polybolt
     .desc = Nooo, I don't wanna be door!
 ent-ProjectilePolyboltMonkey = monkey polybolt
     .desc = Nooo, I don't wanna be monkey!
-
 # meteors.yml
 ent-BaseMeteor = meteor
     .desc = You prefer them when they're burning up in the atmosphere.
@@ -7738,7 +7194,6 @@ ent-MeteorSpaceDust = space dust
     .desc = Makes a station sneeze.
 ent-MeteorUrist = Urist McMeteor
     .desc = As a successful member of society with a stable unflinching psyche and limitless drive, natural affinity for finance and domination, you have been selected, no, you have been effortlessly guided by divine (biological) trauma towards this moment. The gates of destiny fling open, and once again you're left standing on pulsating nothingness. A strobing headache of the soul.
-
 # projectiles.yml
 ent-AnomalousParticleDelta = delta particles
 ent-AnomalousParticleEpsilon = epsilon particles
@@ -7772,51 +7227,41 @@ ent-BulletRocket = rocket
 ent-BulletWaterShot = water
 ent-BulletWeakRocket = weak rocket
 ent-GrapplingHook = grappling hook
-
 # turrets_ballistic.yml
 ent-WeaponTurretSyndicateDisposable = disposable ballistic turret
 ent-WeaponTurretXeno = xeno turret
     .desc = Shoots 9mm acid projectiles.
-
 # turrets_base.yml
 ent-BaseWeaponBallisticTurret = ballistic turret
     .desc = A ballistic machine gun auto-turret.
 ent-BaseWeaponEnergyTurret = laser turret
     .desc = An auto-turret armed with a heavy laser. Its weapon will recharge while connected to an active power grid.
 ent-BaseWeaponTurret = turret
-
 # turrets_broken.yml
 ent-WeaponTurretSyndicateBroken = ballistic turret (broken)
     .desc = A ballistic machine gun auto-turret.
-
 # turrets_energy.yml
 ent-WeaponEnergyTurretStationBase = sentry turret
     .desc = A high-tech autonomous weapons system designed to keep unauthorized personnel out of sensitive areas.
-
 # cane.yml
 ent-Cane = cane
     .desc = A wooden cane.
-
 # e_sword.yml
 ent-EnergyDaggerBox = e-dagger box
     .desc = A small box containing an e-dagger. Packaging disintegrates when opened, leaving no evidence behind.
-
 # fireaxe.yml
 ent-FireAxeFlaming = fire axe
     .desc = Why fight fire with an axe when you can fight with fire and axe? Now featuring rugged rubberized handle!
-
 # hammers.yml
 ent-Mjollnir = Mjollnir
     .desc = A weapon worthy of a god, able to strike with the force of a lightning bolt. It crackles with barely contained energy.
 ent-SingularityHammer = Singularity Hammer
     .desc = The pinnacle of close combat technology, the hammer harnesses the power of a miniaturized singularity to deal crushing blows.
-
 # knife.yml
 ent-BladedFlatcapBrown = brown flatcap
     .desc = \"Stupid clown! You made me look bad!\" It has glass shards hidden in the brim.
 ent-BladedFlatcapGrey = grey flatcap
     .desc = Fashionable for both the working class and old man Jenkins. It has glass shards hidden in the brim.
-
 # mining.yml
 ent-BaseWeaponCrusher = crusher
     .desc = An early design of the proto-kinetic accelerator.
@@ -7824,19 +7269,15 @@ ent-WeaponCrusherDagger = crusher dagger
     .desc = A scaled down version of a proto-kinetic crusher. Uses kinetic energy to vibrate the blade at high speeds.
 ent-WeaponCrusherGlaive = crusher glaive
     .desc = An early design of the proto-kinetic accelerator, in glaive form. Provides better healing in exchange for less charged damage.
-
 # needle.yml
 ent-WeaponMeleeNeedle = official security anti-inflatable armament
     .desc = A specialty weapon used in the destruction of unique syndicate morale-boosting equipment.
-
 # weapon_toolbox.yml
 ent-WeaponMeleeToolboxRobust = robust toolbox
     .desc = A tider's weapon.
-
 # white_cane.yml
 ent-WhiteCane = white cane
     .desc = This isn't for you. It's for the people who can't figure out you're blind when you ask if cargo is the bar.
-
 # grenades.yml
 ent-AirGrenade = air grenade
     .desc = A special solid state chemical grenade used for quickly releasing standard air into a spaced area. Fills up to 30 tiles!
@@ -7850,7 +7291,6 @@ ent-SmokeGrenade = smoke grenade
     .desc = A tactical grenade that releases a large, long-lasting cloud of smoke when used.
 ent-TearGasGrenade = tear gas grenade
     .desc = A riot control tear gas grenade. Causes irritation, pain and makes you cry your eyes out.
-
 # projectile_grenades.yml
 ent-GrenadeIncendiary = incendiary grenade
     .desc = Guaranteed to light up the mood.
@@ -7858,7 +7298,6 @@ ent-GrenadeShrapnel = shrapnel grenade
     .desc = Releases a deadly spray of shrapnel that causes severe bleeding.
 ent-GrenadeStinger = stinger grenade
     .desc = Nothing to see here, please disperse.
-
 # scattering_grenades.yml
 ent-ClusterBananaPeel = cluster banana peel
     .desc = Splits into 6 explosive banana peels after throwing, guaranteed fun!
@@ -7872,40 +7311,32 @@ ent-GrenadeFoamDart = foam dart grenade
     .desc = Releases a bothersome spray of foam darts that cause severe welching.
 ent-SlipocalypseClusterSoap = slipocalypse clustersoap
     .desc = Spreads small pieces of syndicate soap over an area upon landing on the floor.
-
 # throwing_stars.yml
 ent-ThrowingStar = throwing star
     .desc = An ancient weapon still used to this day, due to its ease of lodging itself into its victim's body parts.
 ent-ThrowingStarNinja = ninja throwing star
-
 # misc.yml
 ent-StatusEffectDrowsiness = drowsiness
 ent-StatusEffectForcedSleeping = forced sleep
 ent-StatusEffectSSDSleeping = forced sleep
 ent-StatusEffectSeeingRainbow = hallucinations
-
 # barricades.yml
 ent-BaseBarricade = wooden barricade
     .desc = A barricade made out of wood planks. It looks like it can take a few solid hits.
-
 # cargo_telepad.yml
 ent-CargoTelepad = cargo telepad
     .desc = Beam in the pizzas and dig in.
-
 # catwalk.yml
 ent-Catwalk = catwalk
     .desc = A catwalk for easier EVA maneuvering and cable placement.
-
 # conveyor.yml
 ent-ConveyorBelt = conveyor belt
     .desc = A conveyor belt, commonly used to transport large numbers of items elsewhere quite quickly.
 ent-ConveyorBeltAssembly = conveyor belt
     .desc = A conveyor belt assembly. Used to construct a conveyor belt.
-
 # cryogenic_sleep_unit.yml
 ent-CryogenicSleepUnit = cryogenic sleep unit
     .desc = A super-cooled container that keeps crewmates safe during space travel.
-
 # gates.yml
 ent-EdgeDetector = edge detector
     .desc = Splits rising and falling edges into unique pulses and detects how edgy you are.
@@ -7917,11 +7348,9 @@ ent-MemoryCell = memory cell
     .desc = A D-Latch circuit that stores a signal which can be changed depending on input and enable ports.
 ent-PowerSensor = power sensor
     .desc = Generates signals in response to powernet changes. Can be cycled between cable voltages.
-
 # meat_spike.yml
 ent-KitchenSpike = hak na mięso
     .desc = Hak dla pozyskiwania mięsa z zwierząt.
-
 # plastic_flaps.yml
 ent-PlasticFlapsAirtightClear = airtight plastic flaps
     .desc = Heavy duty, slightly stronger, airtight plastic flaps. Definitely can't get past those. No way.
@@ -7931,23 +7360,19 @@ ent-PlasticFlapsClear = plastic flaps
     .desc = Heavy duty, plastic flaps. Definitely can't get past those. No way.
 ent-PlasticFlapsOpaque = plastic flaps
     .desc = Heavy duty, plastic flaps. Definitely can't get past those. No way.
-
 # soil.yml
 ent-FungalSoil = fungal soil
     .desc = A mix of organic matter and fungal root creating a soil to grow your plant in space. Seems to be dry.
 ent-hydroponicsSoil = soil
     .desc = A mix of organic matter and minerals creating a soil to grow your plant in space. Seems to be dry.
-
 # spider_web.yml
 ent-SpiderWeb = spider web
     .desc = It's stringy and sticky.
 ent-SpiderWebClown = clown spider web
     .desc = It's stringy and slippy.
-
 # stairs.yml
 ent-Stairs = stairs
     .desc = The greatest invention since rocket-propelled grenades.
-
 # banners.yml
 ent-BannerBase = base banner
     .desc = It's the concept of a banner, you shouldn't be seeing this.
@@ -7975,41 +7400,32 @@ ent-BannerSyndicate = syndicate banner
     .desc = A banner from which, according to the syndicate, you should feel hatred for NT.
 ent-BannerYellow = yellow banner
     .desc = A banner displaying the color yellow. Reminds you of ducks and lemon stands.
-
 # bonfire.yml
 ent-Bonfire = bonfire
     .desc = What can be better than a late evening under the sky with guitar and friends?
 ent-LegionnaireBonfire = legionnaire bonfire
     .desc = There, in the land of lava and ash, place to to cook marshmallow and potato.
-
 # cobwebs.yml
 ent-Cobweb1 = cobweb
     .desc = Somebody should remove that.
-
 # crystals.yml
 ent-CrystalGreen = crystal
     .desc = A crystaline solid.
-
 # curtains.yml
 ent-BaseCurtains = curtains
     .desc = Hides what others shouldn't see.
-
 # decorated_fir_tree.yml
 ent-DecoratedFirTree = decorated fir tree
     .desc = A very festive tree for a very festive holiday.
-
 # fireplace.yml
 ent-Fireplace = fireplace
     .desc = A place that has fire. Cozy!
-
 # flesh_blockers.yml
 ent-FleshBlocker = flesh clump
     .desc = An annoying clump of flesh.
-
 # mannequin.yml
 ent-Mannequin = mannequin
     .desc = It can wear any clothing with style.
-
 # showcase.yml
 ent-BaseShowcaseRobot = security robot showcase
     .desc = A non-functional replica of an old security robot.
@@ -8021,7 +7437,6 @@ ent-ShowcaseRobotMarauder = marauder showcase
     .desc = A non-functional replica of a marauder, painted green.
 ent-ShowcaseRobotWhite = white robot showcase
     .desc = A non-functional replica of an old robot.
-
 # statues.yml
 ent-StatueBananiumClown = bananium savior statue
     .desc = A bananium statue. It portrays the return of the savior who will rise up and lead the clowns to the great honk.
@@ -8029,44 +7444,34 @@ ent-StatueVenusBlue = statue of a pure maiden
     .desc = An ancient marble statue. The subject is depicted with a floor-length braid and is wielding a blue toolbox.
 ent-StatueVenusRed = statue of a pure maiden
     .desc = An ancient marble statue. The subject is depicted with a floor-length braid and is wielding a red toolbox.
-
 # booze.yml
 ent-BoozeDispenser = booze dispenser
     .desc = A booze dispenser with a single slot for a container to be filled.
-
 # chem.yml
 ent-ChemDispenserEmpty = chemical dispenser
     .desc = An industrial grade chemical dispenser.
-
 # soda.yml
 ent-SodaDispenser = soda dispenser
     .desc = A beverage dispenser with a selection of soda and several other common beverages. Has a single fill slot for containers.
-
 # turnstile.yml
 ent-Turnstile = turnstile
     .desc = A mechanical door that permits one-way access and prevents tailgating.
-
 # airlocks.yml
 ent-AirlockHatch = airtight hatch
 ent-AirlockHatchMaintenance = maintenance hatch
 ent-AirlockMaint = maintenance access
-
 # assembly.yml
 ent-PinionAirlockAssembly = airlock assembly
-
 # base_assembly.yml
 ent-AirlockAssembly = airlock assembly
     .desc = It opens, it closes, and maybe crushes you.
-
 # base_structureairlocks.yml
 ent-Airlock = airlock
     .desc = It opens, it closes, and maybe crushes you.
 ent-AirlockGlass = glass airlock
-
 # highsec.yml
 ent-HighSecDoor = high security door
     .desc = Keeps the bad out and keeps the good in.
-
 # shuttle.yml
 ent-AirlockGlassShuttle = external airlock
     .desc = Necessary for connecting two space craft together.
@@ -8078,17 +7483,14 @@ ent-AirlockShuttleAssembly = external airlock assembly
     .desc = An incomplete structure necessary for connecting two space craft together.
 ent-AirlockShuttleSyndicate = external airlock
     .desc = Necessary for connecting two space craft together.
-
 # firelock.yml
 ent-BaseFirelock = firelock
     .desc = Apply crowbar.
 ent-FirelockEdge = firelock
 ent-FirelockGlass = glass firelock
-
 # frame.yml
 ent-FirelockFrame = firelock frame
     .desc = That is a firelock frame.
-
 # material_doors.yml
 ent-BananiumDoor = bananium door
     .desc = A door, where will it lead?
@@ -8107,14 +7509,12 @@ ent-WebDoor = web door
     .desc = A door, leading to the lands of the spiders... or a spaced room.
 ent-WoodDoor = wooden door
     .desc = A door, where will it lead?
-
 # secret_door.yml
 ent-BaseSecretDoor = solid wall
     .desc = Keeps the air in and the greytide out.
 ent-BaseSecretDoorAssembly = secret door assembly
     .desc = It opens, it closes, and maybe crushes you.
 ent-SolidSecretDoor = solid wall
-
 # blast_door.yml
 ent-BlastDoor = blast door
     .desc = This one says 'BLAST DONGER'.
@@ -8124,7 +7524,6 @@ ent-BlastDoorXeno = xeno blast door
     .desc = Don't lose an arm!
 ent-BlastDoorXenoFrame = xeno blast door frame
     .desc = This one says 'BLAST DONGER'.
-
 # shutters.yml
 ent-BaseShutter = shutter
     .desc = One shudders to think about what might be behind this shutter.
@@ -8134,7 +7533,6 @@ ent-ShuttersRadiation = radiation shutters
     .desc = Why did they make these shutters radioactive?
 ent-ShuttersWindow = window shutters
     .desc = The Best (TM) place to see your friends explode!
-
 # assembly.yml
 ent-WindoorAssembly = windoor assembly
     .desc = It opens, it closes, and you can see through it!
@@ -8150,10 +7548,8 @@ ent-WindoorAssemblySecureUranium = secure uranium windoor assembly
     .desc = It opens, it closes, and you can see through it! This one looks strong and radioactive-lime-green!
 ent-WindoorAssemblyUranium = uranium windoor assembly
     .desc = It opens, it closes, and you can see through it! This one looks sickly green...
-
 # clockwork.yml
 ent-BaseClockworkWindoor = clockwork windoor
-
 # windoor.yml
 ent-Windoor = windoor
     .desc = It's a window and a sliding door. Wow!
@@ -8169,7 +7565,6 @@ ent-WindoorSecureUranium = secure uranium windoor
     .desc = It's a sturdy window and a sliding door. It's so neon green, it might even taste like limes!
 ent-WindoorUranium = uranium windoor
     .desc = It's a window and a sliding door. Huh? Oh, and it's green!
-
 # altar.yml
 ent-AltarBananium = honkmother altar
     .desc = A bananium altar dedicated to the honkmother.
@@ -8193,7 +7588,6 @@ ent-AltarSatana = satanic altar
 ent-AltarSpaceChristian = space-Christian altar
 ent-AltarTechnology = technology altar
 ent-AltarToolbox = toolbox altar
-
 # beds.yml
 ent-DogBed = dog bed
     .desc = A comfy-looking dog bed. You can even strap your pet in, in case the gravity turns off.
@@ -8205,27 +7599,22 @@ ent-PsychBed = psychologist bed
     .desc = An upholstered bed for the psychological care of patients.
 ent-WebBed = web bed
     .desc = You got webbed.
-
 # bookshelf.yml
 ent-Bookshelf = bookshelf
     .desc = Mostly filled with books.
-
 # carpets.yml
 ent-CarpetBase = carpet
     .desc = Fancy walking surface.
 ent-CarpetChapel = chapel's carpet
-
 # chairs.yml
 ent-ChairFolding = folding chair
     .desc = If you carry six of these you become the coolest kid at church.
 ent-ChairMeat = meat chair
     .desc = Uncomfortably sweaty.
 ent-ChairXeno = xeno chair
-
 # dresser.yml
 ent-Dresser = dresser
     .desc = Wooden dresser, can store things inside itself, ideal for underwear, and someone's kidneys?...
-
 # memorial.yml
 ent-Memorial = memorial
     .desc = Commemorating something.
@@ -8233,7 +7622,6 @@ ent-Monolith = monolith
     .desc = |
 ent-SS13Memorial = tomb of the unknown employee
     .desc = |
-
 # potted_plants.yml
 ent-PottedPlant27 = plastic potted plant
     .desc = A fake, cheap looking, plastic tree. Perfect for people who kill every plant they touch.
@@ -8243,7 +7631,6 @@ ent-PottedPlantBioluminscent = bioluminescent potted plant
     .desc = It produces light!
 ent-PottedPlantRD = RD's potted plant
     .desc = A gift from the botanical staff, presented after the RD's reassignment. There's a tag on it that says \"Y'all come back now, y'hear?\"\nIt doesn't look very healthy...
-
 # rollerbeds.yml
 ent-CheapRollerBed = rollerbed
     .desc = A run-down rollerbed. Used to carry patients around.
@@ -8251,20 +7638,16 @@ ent-EmergencyRollerBed = rollerbed
     .desc = A robust looking rollerbed used for emergencies.
 ent-RollerBed = rollerbed
     .desc = Used to carry patients around without damaging them.
-
 # toilet.yml
 ent-ToiletGoldenEmpty = golden toilet
     .desc = The HT-451G is the gold version of the device. It says on the side that it is made of the purest Mercurian gold and a real leather seat.
-
 # base_structuretables.yml
 ent-CounterBase = counter
 ent-TableBase = table
     .desc = A square piece of metal standing on four metal legs.
-
 # operating_table.yml
 ent-OperatingTable = operating table
     .desc = Special medical table for surgery. This one just seems to be a useless prop, though.
-
 # tables.yml
 ent-CounterMetalFrame = metal counter frame
     .desc = Pieces of metal that make the frame of a table.
@@ -8302,7 +7685,6 @@ ent-TableWood = wood table
     .desc = Do not apply fire to this. Rumour says it burns easily.
 ent-TableXeno = xeno table
     .desc = I wouldn't put the silverware on it.
-
 # projections.yml
 ent-HoloFan = holofan
     .desc = A barrier of hard light that blocks air, but nothing else.
@@ -8312,13 +7694,11 @@ ent-HolosignSecurity = holographic barrier
     .desc = A barrier of hard light that blocks movement, but pretty weak.
 ent-HolosignWetFloor = wet floor sign
     .desc = The words flicker as if they mean nothing.
-
 # base_lighting.yml
 ent-AlwaysPoweredWallLight = light
     .desc = An always powered light.
 ent-EmergencyLight = emergency light
     .desc = A small light with an internal battery that turns on as soon as it stops receiving any power. Nanotrasen technology allows it to adapt its color to alert crew to the conditions of the station.
-
 # ground_lighting.yml
 ent-LightPostSmall = post light
     .desc = An always powered light.
@@ -8328,11 +7708,9 @@ ent-PoweredLightPostSmall = post light
     .desc = A light fixture. Draws power and produces light when equipped with a light tube.
 ent-PoweredLightPostSmallEmpty = post light
     .desc = A small light post.
-
 # strobe_lighting.yml
 ent-AlwaysPoweredStrobeLight = strobe
     .desc = UH?! Sorry, all I can hear is WEE-OOO-WEE-OOO!
-
 # anomaly_equipment.yml
 ent-MachineAPE = A.P.E.
     .desc = An Anomalous Particle Emitter, capable of shooting out unstable particles which can interface with anomalies.
@@ -8342,17 +7720,14 @@ ent-MachineAnomalyVessel = anomaly vessel
     .desc = A container able to harness a scan of an anomaly and turn it into research data.
 ent-MachineAnomalyVesselExperimental = experimental anomaly vessel
     .desc = An advanced anomaly vessel capable of greater research potential at the cost of increased volatility and low-level radioactive decay into the environment.
-
 # anomaly_sync.yml
 ent-MachineAnomalySynchronizer = anomaly synchronizer
     .desc = A sophisticated device that reads changes in anomalous waves, and converts them into energy signals.
-
 # artifact_analyzer.yml
 ent-MachineArtifactAnalyzer = artifact analyzer
     .desc = A platform capable of performing analysis on various types of artifacts.
 ent-MachineArtifactCrusher = artifact crusher
     .desc = Best not to let your fingers get stuck...
-
 # bombs.yml
 ent-BaseHardBomb = hardbomb
     .desc = Just keep talking and nobody will explode.
@@ -8362,67 +7737,53 @@ ent-SyndicateBomb = syndicate bomb
     .desc = A bomb for Syndicate operatives and agents alike. The real deal, no more training, get to it!
 ent-TrainingBomb = training bomb
     .desc = A bomb for dummies, manual not included.
-
 # chem_master.yml
 ent-ChemMaster = ChemMaster 4000
     .desc = An industrial grade chemical manipulator with pill and bottle production included.
-
 # cloning_machine.yml
 ent-CloningPod = cloning pod
     .desc = A Cloning Pod. 50% reliable.
-
 # crew_monitor_server.yml
 ent-CrewMonitoringServer = crew monitoring server
     .desc = Receives and relays the status of all active suit sensors on the station.
-
 # fatextractor.yml
 ent-FatExtractor = lipid extractor
     .desc = Safely and efficiently extracts excess fat from a subject.
-
 # fax_machine.yml
 ent-FaxMachineBase = long range fax machine
     .desc = Bluespace technologies on the application of bureaucracy.
 ent-FaxMachineCaptain = captain long range fax machine
 ent-FaxMachineCentcom = CentComm long range fax machine
 ent-FaxMachineSyndie = syndicate long range fax machine
-
 # flatpacker.yml
 ent-MachineFlatpacker = Flatpacker 1001
     .desc = An industrial machine used for expediting machine construction across the station.
-
 # frame.yml
 ent-MachineFrame = machine frame
 ent-MachineFrameDestroyed = destroyed machine frame
 ent-UnfinishedMachineFrame = machine frame
     .desc = A machine under construction. Needs more parts.
-
 # gateway.yml
 ent-BaseGateway = gateway
     .desc = A mysterious gateway built by unknown hands, it allows for faster than light travel to far-flung locations.
-
 # gravity_generator.yml
 ent-GravityGenerator = gravity generator
     .desc = It's what keeps you to the floor.
 ent-GravityGeneratorMini = mini gravity generator
     .desc = It's what keeps you to the floor, now in fun size.
-
 # grill.yml
 ent-KitchenElectricGrill = electric grill
     .desc = A microwave? No, a real man cooks steaks on a grill!
-
 # holopad.yml
 ent-Holopad = holopad
     .desc = A floor-mounted device for projecting holographic images.
 ent-HolopadHologram = hologram
-
 # hotplate.yml
 ent-ChemistryHotplate = hotplate
     .desc = The descendent of the microwaves, our newest invention in beaker heating technology: the hotplate!
-
 # jukebox.yml
 ent-Jukebox = jukebox
     .desc = A machine capable of playing a wide variety of tunes. Enjoyment not guaranteed.
-
 # lathe.yml
 ent-AmmoTechFab = ammo techfab
     .desc = Prints the bare minimum of bullets that any budget military or armory could need. Nothing fancy.
@@ -8459,64 +7820,51 @@ ent-Sheetifier = sheet-meister 2000
     .desc = A very sheety machine.
 ent-UniformPrinter = uniform printer
     .desc = Prints new or replacement uniforms.
-
 # mail_teleporter.yml
 ent-CargoMailTeleporter = mail teleporter
     .desc = Periodically teleports in mail to deliver across the station.
-
 # medical_scanner.yml
 ent-MedicalScanner = medical scanner
     .desc = A bulky medical scanner.
-
 # microwave.yml
 ent-KitchenMicrowave = mikrofala
     .desc = To magia.
 ent-SyndicateMicrowave = mikrofala donk co.
     .desc = Tak zaawansowana, że potrafi upiec donk-strudle w niecałe 2.5 sekundy!
-
 # nuke.yml
 ent-NuclearBomb = nuclear fission explosive
     .desc = You probably shouldn't stick around to see if this is armed.
 ent-NuclearBombKeg = nuclear fission explosive
     .desc = You probably shouldn't stick around to see if this is armed. It has a tap on the side.
-
 # reagent_grinder.yml
 ent-KitchenReagentGrinder = młynek
     .desc = Od BlenderTech. Czy się zblenduje? Zobaczmy!
 ent-ReagentGrinderIndustrial = przemysłowy młynek
     .desc = Młynek do celów przemysłowych.
-
 # recycler.yml
 ent-Recycler = recycler
     .desc = A large crushing machine used to recycle small items inefficiently. There are lights on the side.
-
 # research.yml
 ent-BaseResearchAndDevelopmentPointSource = base R&D point source
 ent-ResearchAndDevelopmentServer = R&D server
     .desc = Contains the collective knowledge of the station's scientists. Destroying it would send them back to the stone age. You don't want that do you?
-
 # salvage.yml
 ent-SalvageLocator = salvage locator
     .desc = Locates salvage.
 ent-SalvageMagnet = salvage magnet
     .desc = Pulls in salvage.
-
 # seed_extractor.yml
 ent-SeedExtractor = seed extractor
     .desc = Extracts seeds from produce.
-
 # silo.yml
 ent-MachineMaterialSilo = material silo
     .desc = An advanced machine, capable of using bluespace technology to transmit materials to nearby machines.
-
 # smartfridge.yml
 ent-SmartFridge = SmartFridge
     .desc = A refrigerated storage unit for keeping items cold and fresh.
-
 # stasisbed.yml
 ent-StasisBed = stasis bed
     .desc = A bed that massively slows down the patient's metabolism and prevents bodily decay, allowing more time to administer a proper treatment for stabilization.
-
 # surveillance_camera_routers.yml
 ent-SurveillanceCameraRouterBase = camera router
     .desc = A surveillance camera router. It routes. Perhaps.
@@ -8531,11 +7879,9 @@ ent-SurveillanceCameraRouterSupply = supply camera router
 ent-SurveillanceCameraWirelessRouterBase = wireless camera router
     .desc = A wireless surveillance camera router. It routes. Perhaps.
 ent-SurveillanceCameraWirelessRouterEntertainment = entertainment camera router
-
 # telecomms.yml
 ent-TelecomServer = telecommunication server
     .desc = When powered and filled with encryption keys it allows radio headset communication.
-
 # vending_machines.yml
 ent-VendingBarDrobe = BarDrobe
     .desc = A stylish vendor to dispense the most stylish bar clothing!
@@ -8659,21 +8005,17 @@ ent-VendingMachineWinter = WinterDrobe
     .desc = The best place to enjoy the cold!
 ent-VendingMachineYouTool = YouTool
     .desc = A vending machine containing standard tools. A label reads: Tools for tools.
-
 # wireless_surveillance_camera.yml
 ent-SurveillanceWirelessCameraBase = wireless camera
     .desc = A camera. It's watching you. Kinda.
-
 # arcades.yml
 ent-ArcadeBase = arcade
     .desc = An arcade cabinet.
 ent-BlockGameArcade = NT block game
     .desc = An arcade cabinet with a strangely familiar game.
 ent-SpaceVillainArcade = space villain arcade
-
 # base_structurecomputers.yml
 ent-BaseComputer = computer
-
 # computers.yml
 ent-BaseComputerShuttle = shuttle console
     .desc = Used to pilot a shuttle.
@@ -8759,41 +8101,33 @@ ent-WizardComputerComms = wizard communications computer
     .desc = A computer capable of magically projecting your speech to the station. Using this to make an announcement will alert the station to your presence.
 ent-computerBodyScanner = body scanner computer
     .desc = A body scanner.
-
 # frame.yml
 ent-ComputerBroken = broken computer
     .desc = This computer has seen better days.
 ent-ComputerFrame = computer frame
     .desc = A computer under construction.
-
 # techdiskterminal.yml
 ent-ComputerTechnologyDiskTerminal = tech disk terminal
     .desc = A terminal used to print out technology disks.
-
 # biomass_reclaimer.yml
 ent-BiomassReclaimer = biomass reclaimer
     .desc = Reclaims biomass from corpses. Gruesome.
-
 # chemistry_machines.yml
 ent-MachineCentrifuge = tabletop centrifuge
     .desc = Around and around it goes...
 ent-MachineElectrolysisUnit = electrolysis unit
     .desc = The latest in medicinal electrocution technology.
-
 # cryo_pod.yml
 ent-CryoPod = cryo pod
     .desc = A special machine intended to create a safe environment for the use of chemicals that react in cold environments.
 ent-CryoPodDestroyed = destroyed cryo pod
     .desc = A cryo pod that has seen better days. It's entirely inoperable; not good for anything but scrap.
-
 # disease_diagnoser.yml
 ent-DiseaseDiagnoser = Disease Diagnoser Delta Extreme
     .desc = A machine that analyzes disease samples.
-
 # vaccinator.yml
 ent-Vaccinator = vaccinator
     .desc = A machine that creates vaccines.
-
 # binary.yml
 ent-GasDualPortVentPump = dual-port air vent
     .desc = Has a valve and a pump attached to it. There are two ports, one is an input for releasing air, the other is an output when siphoning.
@@ -8815,11 +8149,9 @@ ent-HeatExchanger = radiator
     .desc = Transfers heat between the pipe and its surroundings.
 ent-SignalControlledValve = signal valve
     .desc = A pipe with a valve that can be controlled with signals.
-
 # gas_pipe_sensor.yml
 ent-GasPipeSensor = gas pipe sensor
     .desc = Reports on the status of the gas in the attached pipe network.
-
 # pipes.yml
 ent-GasPipeBroken = broken pipe
     .desc = It used to hold gas.
@@ -8827,19 +8159,16 @@ ent-GasPipeManifold = gas pipe manifold
     .desc = Allows gas pipes of different configurations to be connected together.
 ent-GasPipeSansLayers = gas pipe
     .desc = Holds gas.
-
 # portable.yml
 ent-PortableScrubber = portable scrubber
     .desc = It scrubs, portably!
 ent-SpaceHeater = space heater
     .desc = A bluespace technology device that alters local temperature. Commonly referred to as a "Space Heater".
-
 # special.yml
 ent-AtmosDeviceFanDirectional = directional fan
     .desc = A thin fan, stopping the movement of gases across it.
 ent-AtmosDeviceFanTiny = tiny fan
     .desc = A tiny fan, releasing a thin gust of air.
-
 # trinary.yml
 ent-GasFilter = gas filter
     .desc = Very useful for filtering gases.
@@ -8849,7 +8178,6 @@ ent-GasMixer = gas mixer
 ent-GasMixerFlipped = gas mixer
 ent-PressureControlledValve = pneumatic valve
     .desc = A bidirectional valve controlled by pressure. Opens if the output pipe is lower than the pressure of the control pipe by 101.325 kPa.
-
 # unary.yml
 ent-BaseGasCondenser = condenser
     .desc = Condenses gases into liquids. Now we just need some plumbing.
@@ -8870,11 +8198,9 @@ ent-GasVentPump = air vent
     .desc = Has a valve and a pump attached to it.
 ent-GasVentScrubber = air scrubber
     .desc = Has a valve and pump attached to it.
-
 # high_pressure_machine_frame.yml
 ent-DisposalMachineFrame = high pressure machine frame
     .desc = A machine frame made to withstand the amount of pressure used in the station's disposal system.
-
 # pipes.yml
 ent-DisposalBend = disposal bend
     .desc = A tube bent at a 90 degree angle.
@@ -8899,22 +8225,18 @@ ent-DisposalXJunction = disposal x-junction
     .desc = A four-way junction. The arrow indicates where items exit.
 ent-DisposalYJunction = disposal y-junction
     .desc = A three-way junction with another exit point.
-
 # units.yml
 ent-DisposalUnit = disposal unit
 ent-MailingUnit = mailing unit
     .desc = A pneumatic mail delivery unit.
-
 # apc.yml
 ent-APCFrame = APC frame
     .desc = A control terminal for the area's electrical systems, lacking the electronics.
 ent-BaseAPC = APC
     .desc = A control terminal for the area's electrical systems.
-
 # cable_terminal.yml
 ent-CableTerminal = cable terminal
     .desc = You see a small warning on the red cables in grungy black ink. "CONNECT RED TO BATTERY FOR CHARGE.
-
 # cables.yml
 ent-CableApcExtension = LV power cable
     .desc = A cable used to connect machines to an APC.
@@ -8922,7 +8244,6 @@ ent-CableHV = HV power cable
     .desc = An orange high voltage power cable.
 ent-CableMV = MV power cable
     .desc = A medium voltage power cable.
-
 # chargers.yml
 ent-BorgCharger = cyborg recharging station
     .desc = A stationary charger for various robotic and cyborg entities. Surprisingly spacious.
@@ -8932,19 +8253,16 @@ ent-TurboItemRecharger = turbo recharger
     .desc = An overclocked recharger that's been adapted with a global port.
 ent-WallWeaponCapacitorRecharger = wall recharger
 ent-WeaponCapacitorRecharger = recharger
-
 # debug_power.yml
 ent-DebugBatteryDischarger = battery discharger
 ent-DebugBatteryStorage = battery storage
 ent-DebugConsumer = consumer
 ent-DebugPowerReceiver = power receiver
-
 # smes.yml
 ent-BaseSMES = SMES
     .desc = A high-capacity superconducting magnetic energy storage (SMES) unit.
 ent-SMESAdvanced = advanced SMES
     .desc = An even-higher-capacity superconducting magnetic energy storage (SMES) unit.
-
 # substation.yml
 ent-BaseSubstation = substation
     .desc = Reduces the voltage of electricity put into it.
@@ -8952,13 +8270,11 @@ ent-BaseSubstationWall = wallmount substation
     .desc = A substation designed for compact shuttles and spaces.
 ent-BaseSubstationWallFrame = wallmount substation frame
     .desc = A substation frame for construction.
-
 # ame.yml
 ent-AmeController = AME controller
     .desc = It's a controller for the antimatter engine.
 ent-AmeShielding = AME shielding
     .desc = Keeps the antimatter in and the matter out.
-
 # generators.yml
 ent-BaseGenerator = generator
     .desc = A high efficiency thermoelectric generator.
@@ -8972,7 +8288,6 @@ ent-GeneratorRTGDamaged = damaged RTG
     .desc = A Radioisotope Thermoelectric Generator for long term power. This one has damaged shielding.
 ent-GeneratorWallmountAPU = shuttle APU
     .desc = An auxiliary power unit for a shuttle - 6kW.
-
 # solar.yml
 ent-SolarAssembly = solar assembly
     .desc = A solar assembly. Anchor to a wire to start building a solar panel.
@@ -8991,19 +8306,16 @@ ent-SolarPanelUraniumBroken = uranium solar panel
     .desc = A broken uranium solar panel.
 ent-SolarTracker = solar tracker
     .desc = A solar tracker. Tracks the nearest star.
-
 # teg.yml
 ent-TegCenter = thermo-electric generator
     .desc = A high efficiency generator that uses energy transfer between hot and cold gases to produce electricity.
 ent-TegCirculator = circulator
     .desc = Passes gas through the thermo-electric generator to exchange heat. Has an inlet and outlet port.
-
 # control_box.yml
 ent-ParticleAcceleratorControlBox = PA control computer
     .desc = This controls the density of the particles.
 ent-ParticleAcceleratorControlBoxUnfinished = PA control computer
     .desc = This controls the density of the particles. It looks unfinished.
-
 # emitter.yml
 ent-ParticleAcceleratorEmitterFore = PA fore containment emitter
     .desc = This launchs the Alpha particles, might not want to stand near this end.
@@ -9017,63 +8329,51 @@ ent-ParticleAcceleratorEmitterStarboard = PA starboard containment emitter
     .desc = This launchs the Alpha particles, might not want to stand near this end.
 ent-ParticleAcceleratorEmitterStarboardUnfinished = PA starboard containment emitter
     .desc = This launchs the Alpha particles, might not want to stand near this end. It looks unfinished.
-
 # end_cap.yml
 ent-ParticleAcceleratorEndCap = PA end-cap
     .desc = Formally known as the Alpha Particle Generation Array. This is where Alpha particles are generated from [REDACTED].
 ent-ParticleAcceleratorEndCapUnfinished = PA end-cap
     .desc = Formally known as the Alpha Particle Generation Array. This is where Alpha particles are generated from [REDACTED]. It looks unfinished.
-
 # fuel_chamber.yml
 ent-ParticleAcceleratorFuelChamber = PA fuel chamber
     .desc = Formally known as the EM Acceleration Chamber. This is where the Alpha particles are accelerated to radical speeds.
 ent-ParticleAcceleratorFuelChamberUnfinished = PA fuel chamber
     .desc = Formally known as the EM Acceleration Chamber. This is where the Alpha particles are accelerated to radical speeds. It looks unfinished.
-
 # power_box.yml
 ent-ParticleAcceleratorPowerBox = PA power box
     .desc = Formally known as the Particle Focusing EM Lens. This uses electromagnetic waves to focus the Alpha-Particles.
 ent-ParticleAcceleratorPowerBoxUnfinished = PA power box
     .desc = Formally known as the Particle Focusing EM Lens. This uses electromagnetic waves to focus the Alpha-Particles. It looks unfinished.
-
 # collector.yml
 ent-RadiationCollector = radiation collector
     .desc = A machine that collects radiation and turns it into power. Requires plasma gas to function.
-
 # containment.yml
 ent-ContainmentField = containment field
     .desc = A containment field that repels gravitational singularities.
 ent-ContainmentFieldGenerator = containment field generator
     .desc = A machine that generates a containment field when powered by an emitter. Keeps the Singularity docile.
-
 # emitter.yml
 ent-Emitter = emitter
     .desc = A heavy duty industrial laser. Shoots non-stop when turned on.
-
 # generator.yml
 ent-SingularityGenerator = gravitational singularity generator
     .desc = An Odd Device which produces a Gravitational Singularity when set up. Comes with a temporary shutdown containment failsafe.
-
 # singularity.yml
 ent-Singularity = gravitational singularity
     .desc = A mesmerizing swirl of darkness that sucks in everything. If it's moving towards you, run.
-
 # coil.yml
 ent-TeslaCoil = tesla coil
     .desc = A machine that converts lightning strikes into an electric current.
 ent-TeslaGroundingRod = grounding rod
     .desc = A machine that keeps lightning from striking too far away.
-
 # energyball.yml
 ent-TeslaEnergyBall = ball lightning
     .desc = A giant ball of pure energy. The space around it is humming and melting.
 ent-TeslaMiniEnergyBall = mini ball lightning
     .desc = The cub of a destructive energy cage. Not as dangerous, but still not worth touching with bare hands.
-
 # generator.yml
 ent-TeslaGenerator = tesla generator
     .desc = An Odd Device which produces a powerful Tesla ball when set up. Comes with a temporary shutdown containment failsafe.
-
 # cannons.yml
 ent-ShuttleGunBase = shittle gun
 ent-ShuttleGunDuster = EXP-2100g "Duster
@@ -9090,11 +8390,9 @@ ent-ShuttleGunPirateCannon = pirate ship cannon
     .desc = Kaboom!
 ent-ShuttleGunSvalinnMachineGun = LSE-400c "Svalinn machine gun
     .desc = Basic stationary laser unit. Effective against live targets and electronics. Uses regular power cells to fire, and has an extremely high rate of fire.
-
 # station_anchor.yml
 ent-StationAnchorBase = station anchor
     .desc = Prevents stations from moving.
-
 # thrusters.yml
 ent-BaseThruster = thruster
     .desc = A thruster that allows a shuttle to move.
@@ -9103,46 +8401,37 @@ ent-Gyroscope = gyroscope
 ent-RustedThruster = rusted thruster
     .desc = An unrepairable thruster, broken down from wear and tear. Only useful for scrapping.
 ent-Thruster = thruster
-
 # church-bell.yml
 ent-ChurchBell = church bell
     .desc = You feel your soul grow ever closer to the realms beyond for every chime this bell tolls...
-
 # dragon.yml
 ent-CarpRift = carp rift
     .desc = A rift akin to the ones space carp use to travel long distances.
-
 # xeno.yml
 ent-CarpStatue = carp statue
     .desc = A statue of one of the brave carp that got us where we are today. Made with real teeth!
 ent-XenoWardingTower = xeno warding tower
-
 # anomalies.yml
 ent-AnomalyFloraBulb = strange glowing berry
     .desc = It's a beautiful strange glowing berry. It seems to have something growing inside it...
 ent-BaseAnomaly = anomaly
     .desc = An impossible object. Should you be standing this close to it?
-
 # cores.yml
 ent-BaseAnomalyCore = anomaly core
     .desc = The core of a destroyed incomprehensible object.
-
 # sensor.yml
 ent-AirSensor = air sensor
     .desc = Air sensor. It senses air.
 ent-AirSensorAssembly = air sensor assembly
     .desc = Air sensor assembly. An assembly of air sensors?
-
 # drain.yml
 ent-FloorDrain = drain
     .desc = Drains puddles around it. Useful for dumping mop buckets or keeping certain rooms clean.
-
 # barrels.yml
 ent-BaseBarrelChem = chemical barrel
     .desc = A small metal drum. How tropical.
 ent-BaseBarrelChemRadioactive = radioactive barrel
     .desc = It seems to be leaking a bit. I don't think you'd want to be around this for long.
-
 # glass_box.yml
 ent-GlassBox = glass box
     .desc = A sturdy showcase for an expensive exhibit.
@@ -9150,25 +8439,20 @@ ent-GlassBoxBroken = broken glass box
     .desc = A broken showcase for a stolen expensive exhibit.
 ent-GlassBoxFrame = glass box frame
     .desc = A glassless sturdy showcase for an expensive exhibit.
-
 # morgue.yml
 ent-Crematorium = crematorium
     .desc = A human incinerator. Works well on barbecue nights.
 ent-Morgue = morgue
     .desc = Used to store bodies until someone fetches them. Includes a high-tech alert system for false-positives!
-
 # ore_box.yml
 ent-OreBox = ore box
     .desc = A large storage container for holding unprocessed ores.
-
 # paper_bin.yml
 ent-PaperBin = paper bin
     .desc = What secrets lie at the bottom of its endless stack?
-
 # storage.yml
 ent-Rack = rack
     .desc = A rack for storing things on.
-
 # gas_canisters.yml
 ent-AirCanister = air canister
     .desc = A canister that can contain any type of gas. This one is supposed to contain air mixture. It can be attached to connector ports using a wrench.
@@ -9202,7 +8486,6 @@ ent-TritiumCanister = tritium canister
 ent-WaterVaporCanister = water vapor canister
     .desc = A canister that can contain any type of gas. This one is supposed to contain water vapor. It can be attached to connector ports using a wrench.
 ent-WaterVaporCanisterBroken = broken water vapor canister
-
 # base_structureclosets.yml
 ent-BaseWallCloset = wall closet
     .desc = A standard-issue Nanotrasen storage unit, now on walls.
@@ -9210,13 +8493,11 @@ ent-ClosetBase = closet
     .desc = A standard-issue Nanotrasen storage unit.
 ent-SuitStorageBase = suit storage unit
     .desc = A fancy hi-tech storage unit made for storing space suits.
-
 # big_boxes.yml
 ent-BaseBigBox = cardboard box
     .desc = Huh? Just a box...
 ent-GhostBox = ghost box
     .desc = Beware!
-
 # closets.yml
 ent-ClosetBluespace = suspicious closet
     .desc = It's a storage unit... right?
@@ -9242,11 +8523,9 @@ ent-ClosetTool = tool closet
     .desc = It's a storage unit for tools.
 ent-LockerSyndicate = armory closet
     .desc = It's a storage unit.
-
 # cursed.yml
 ent-ClosetCursed = closet
     .desc = A standard-issue Nanotrasen storage unit.
-
 # wall_lockers.yml
 ent-ClosetWall = maintenance wall closet
     .desc = It's a storage unit.
@@ -9279,7 +8558,6 @@ ent-LockerWallBasePrisoner = prisoner wall closet
 ent-LockerWallEvacRepair = emergency shuttle emergency wall locker
     .desc = It's emergencies all the way down.
 ent-LockerWallMedical = medical wall locker
-
 # wardrobe.yml
 ent-ClosetChef = chef's closet
     .desc = It's a storage unit for foodservice garments and mouse traps.
@@ -9321,7 +8599,6 @@ ent-WardrobeWhite = white wardrobe
     .desc = A wardrobe packed with stylish white clothing.
 ent-WardrobeYellow = yellow wardrobe
     .desc = A wardrobe packed with stylish yellow clothing.
-
 # lockers.yml
 ent-GunSafe = gun safe
 ent-LockerAtmospherics = atmospheric technician's locker
@@ -9367,11 +8644,9 @@ ent-LockerSyndicatePersonal = armory closet
     .desc = It's a personal storage unit for operative gear.
 ent-LockerWarden = warden's locker
 ent-LockerWeldingSupplies = welding supplies locker
-
 # base_structurecrates.yml
 ent-CrateGeneric = crate
     .desc = A large container for items.
-
 # crates.yml
 ent-CrateBaseLockBox = lock box
     .desc = A secure lock box. Funds from its sale will be distributed back to the department. Just remember: Cargo always takes a cut.
@@ -9422,11 +8697,9 @@ ent-CrateWeaponSecure = secure weapon crate
 ent-CrateWeb = web crate
 ent-CrateWoodenGrave = grave
     .desc = Someone died here...
-
 # base_structuretanks.yml
 ent-StorageTank = storage tank
     .desc = A liquids storage tank.
-
 # tanks.yml
 ent-WaterCooler = water cooler
     .desc = Seems like a good place to stand and waste time. It has a stock of paper cups on the side.
@@ -9438,45 +8711,36 @@ ent-WeldingFuelTank = fuel tank
     .desc = A fuel tank. It's used to store high amounts of fuel.
 ent-WeldingFuelTankHighCapacity = high-capacity fuel tank
     .desc = A highly pressurized fuel tank made to hold gargantuan amounts of welding fuel.
-
 # air_alarm.yml
 ent-AirAlarm = air alarm
     .desc = An air alarm. Alarms... air?
 ent-AirAlarmAssembly = air alarm assembly
     .desc = An air alarm. Doesn't look like it'll be alarming air any time soon.
-
 # bell.yml
 ent-BoxingBell = boxing bell
     .desc = Ding ding!
-
 # defib_cabinet.yml
 ent-DefibrillatorCabinet = defibrillator cabinet
     .desc = A small wall mounted cabinet designed to hold a defibrillator.
-
 # extinguisher_cabinet.yml
 ent-ExtinguisherCabinet = extinguisher cabinet
     .desc = A small wall mounted cabinet designed to hold a fire extinguisher.
-
 # fire_alarm.yml
 ent-FireAlarm = fire alarm
     .desc = A fire alarm. Spicy!
 ent-FireAlarmAssembly = fire alarm assembly
     .desc = A fire alarm assembly. Very mild.
-
 # fireaxe_cabinet.yml
 ent-FireAxeCabinet = fire axe cabinet
     .desc = There is a small label that reads "For Emergency use only" along with details for safe use of the axe. As if.
-
 # intercom.yml
 ent-BaseIntercom = intercom
     .desc = An intercom. For when the station just needs to know something.
 ent-IntercomAssembly = intercom assembly
     .desc = An intercom. It doesn't seem very helpful right now.
-
 # mirror.yml
 ent-Mirror = mirror
     .desc = Mirror mirror on the wall , who''s the most robust of them all?
-
 # monitors_televisions.yml
 ent-ComputerTelevision = wooden television
     .desc = Finally, some decent reception around here...
@@ -9488,20 +8752,16 @@ ent-WallmountTelevision = television
     .desc = Finally, some decent reception around here...
 ent-WallmountTelevisionFrame = television frame
     .desc = Finally, some decent reception around here...
-
 # noticeboard.yml
 ent-NoticeBoard = notice board
     .desc = Is there a job for a witcher?
-
 # screen.yml
 ent-ArrivalsShuttleTimer = arrivals screen
 ent-Screen = screen
     .desc = Displays text or time.
-
 # service_light.yml
 ent-JanitorServiceLight = janitorial service light
     .desc = A wall-mounted janitorial sign. If the light is blinking, a janitor's service is required.
-
 # shelfs.yml
 ent-ShelfBar = bar shelf
     .desc = Made out of the finest synthetic wood for all alcohol holding needs.
@@ -9525,11 +8785,9 @@ ent-ShelfRWood = sturdy wood shelf
     .desc = A safe place to put your favorite bottle of whiskey.
 ent-ShelfWood = wooden shelf
     .desc = A convenient place to place, well, anything really.
-
 # shotgun_cabinet.yml
 ent-ShotGunCabinet = shotgun cabinet
     .desc = There is a small label that reads "For Emergency use only" along with details for safe use of the shotgun. As if.
-
 # station_map.yml
 ent-StationMap = station map
     .desc = A virtual map of the surrounding station.
@@ -9537,7 +8795,6 @@ ent-StationMapAssembly = station map assembly
     .desc = A station map assembly.
 ent-StationMapBroken = station map
     .desc = A virtual map of the surrounding station.
-
 # surveillance_camera.yml
 ent-SurveillanceCameraAssembly = camera
     .desc = A surveillance camera. Doesn't seem to be watching anybody any time soon. Probably.
@@ -9552,7 +8809,6 @@ ent-SurveillanceCameraScience = camera
 ent-SurveillanceCameraSecurity = camera
 ent-SurveillanceCameraService = camera
 ent-SurveillanceCameraSupply = camera
-
 # switch.yml
 ent-ApcNetSwitch = apc net switch
     .desc = It's a switch for toggling lights that are connected to the same apc.
@@ -9568,14 +8824,12 @@ ent-SignalSwitch = signal switch
 ent-SignalSwitchDirectional = signal switch
 ent-TwoWayLever = two way lever
     .desc = A two way lever.
-
 # switch_autolink.yml
 ent-SignalButtonBridge = bridge windows button
 ent-SignalButtonExt1 = exterior button 1
 ent-SignalButtonExt2 = exterior button 2
 ent-SignalButtonExt3 = exterior button 3
 ent-SignalButtonWindows = exterior windows button
-
 # timer.yml
 ent-BrigTimer = brig timer
     .desc = It's a timer for brig cells.
@@ -9585,18 +8839,15 @@ ent-SignalTimer = signal timer
     .desc = It's a timer for sending timed signals to things.
 ent-TimerFrame = timer frame
     .desc = A construction frame for a timer.
-
 # turret_controls.yml
 ent-WeaponEnergyTurretControlPanelFrame = sentry turret control panel assembly
     .desc = An incomplete wall-mounted assembly for a sentry turret control panel.
 ent-WeaponEnergyTurretStationControlPanelBase = sentry turret control panel
     .desc = A wall-mounted interface for remotely configuring the operational parameters of linked sentry turrets.
-
 # walldispenser.yml
 ent-CleanerDispenser = space cleaner dispenser
     .desc = Wallmount reagent dispenser.
 ent-FuelDispenser = fuel dispenser
-
 # atmos_plaque.yml
 ent-PlaqueAtmos = atmos plaque spawner
 ent-PlaqueAtmosFEA = FEA Atmospherics Division plaque
@@ -9607,7 +8858,6 @@ ent-PlaqueAtmosZAS = ZAS Atmospherics Division plaque
     .desc = This plaque commemorates the fall of the Atmos ZAS division. For all the charred, dizzy, and brittle men who have died in its hands.
 ent-PlaqueAtmosZUM = ZUM Atmospherics Division plaque
     .desc = This plaque commemorates the rise of the Atmos ZUM division. May they carry the torch that the Atmos ZAS, LINDA and FEA divisions left behind.
-
 # bar_sign.yml
 ent-BarSign = bar sign
 ent-BarSignComboCafe = Combo Cafe
@@ -9661,10 +8911,8 @@ ent-BarSignWiggleRoom = Wiggle Room
 ent-BarSignZocalo = Zocalo
     .desc = Anteriormente ubicado en Spessmerica.
 ent-BaseBarSign = bar sign
-
 # base_structuresigns.yml
 ent-BaseSign = base sign
-
 # flags.yml
 ent-BlankFlag = blank flag
     .desc = Some piece of white cloth. Definitely not the flag of France.
@@ -9676,11 +8924,9 @@ ent-PirateFlag = pirate flag
     .desc = Raise the jolly roger, scallywags!
 ent-SyndieFlag = syndicate flag
     .desc = Smells bloody. Death to NT!
-
 # metamap.yml
 ent-PosterMapMetaRight = Meta Station map
     .desc = A map of Meta Station. This looks really old.
-
 # paintings.yml
 ent-PaintingAmogusTriptych = Amogus Triptych (Untitled.)
     .desc = This painting is made up of 3 individual sections. Each depicts a religious figure.
@@ -9722,7 +8968,6 @@ ent-PaintingTheScream = The Scream
     .desc = This painting depicts a distressed man standing on a bridge.
 ent-PaintingTheSonOfMan = The Son of Man
     .desc = This painting depicts a formal-looking man. His face is obscured by an apple.
-
 # posters.yml
 ent-PosterBroken = broken poster
     .desc = You can't make out anything from the poster's original print. It's ruined.
@@ -9875,7 +9120,7 @@ ent-PosterLegitEnlist = Enlist
 ent-PosterLegitFoamForceAd = Foam Force Ad
     .desc = Foam Force, it's Foam or be Foamed!
 ent-PosterLegitFruitBowl = Fruit Bowl
-    .desc =  Simple, yet awe-inspiring.
+    .desc = Simple, yet awe-inspiring.
 ent-PosterLegitGetYourLEGS = Get Your LEGS
     .desc = LEGS: Leadership, Experience, Genius, Subordination.
 ent-PosterLegitHelio = Helio Logistics ad
@@ -9899,7 +9144,7 @@ ent-PosterLegitMime = Mime Postmodern
 ent-PosterLegitNTTGC = Nanotrasen Tactical Game Cards
     .desc = An advertisement for Nanotrasen's TCG cards: BUY MORE CARDS.
 ent-PosterLegitNanomichiAd = Nanomichi Ad
-    .desc =  A poster advertising Nanomichi brand audio cassettes.
+    .desc = A poster advertising Nanomichi brand audio cassettes.
 ent-PosterLegitNanotrasenLogo = Nanotrasen Logo
     .desc = A poster depicting the Nanotrasen logo.
 ent-PosterLegitNoERP = No ERP
@@ -9957,7 +9202,7 @@ ent-PosterLegitVacation = Nanotrasen Corporate Perks: Vacation
 ent-PosterLegitWalk = Walk
     .desc = A poster instructing the viewer to walk instead of running.
 ent-PosterLegitWorkForAFuture = Work For A Future
-    .desc =  A poster encouraging you to work for your future.
+    .desc = A poster encouraging you to work for your future.
 ent-PosterMapBagel = Bagel Map
     .desc = A map of Bagel Station.
 ent-PosterMapDelta = Delta Map
@@ -9980,7 +9225,6 @@ ent-PosterMapSplit = Split Station Map
     .desc = A map of Split Station.
 ent-PosterMapWaystation = Waystation Map
     .desc = A map of Waystation... wait isn't this packed upside down?
-
 # signs.yml
 ent-ExplosivesSignMed = explosives sign
     .desc = A sign indicating explosive materials.
@@ -10292,7 +9536,6 @@ ent-WarningTritium = tritium waste sign
     .desc = WARNING! Tritium flow tube. Ensure the flow is disengaged before working.
 ent-WarningWaste = atmos waste sign
     .desc = WARNING! Waste flow tube. Ensure the flow is disengaged before working.
-
 # asteroid.yml
 ent-AsteroidRock = asteroid rock
     .desc = A rocky asteroid.
@@ -10308,7 +9551,6 @@ ent-WallRockBasalt = basalt
 ent-WallRockChromite = chromite
 ent-WallRockSand = sandstone
 ent-WallRockSnow = snowdrift
-
 # fence_metal.yml
 ent-BaseFenceMetal = chain link fence
     .desc = A metal piece of fencing cordoning off something likely very important.
@@ -10316,7 +9558,6 @@ ent-FenceMetalBroken = broken chain link fence
     .desc = Someone got real mad at an inanimate object.
 ent-FenceMetalGate = chain link fence gate
     .desc = You could use the door instead of vaulting over--if you're a COWARD, that is.
-
 # fence_wood.yml
 ent-BaseFenceWood = wooden fence
     .desc = Wooden piece of fencing. I hope there is babushka's garden behind it.
@@ -10326,7 +9567,6 @@ ent-FenceWoodHighGate = wooden fence gate
     .desc = Do you have any idea what awaits you behind these gates? It can be either a toilet or a luxurious mansion. But you continue to love your emo boys.
 ent-FenceWoodSmallGate = wooden fence gate
     .desc = Looking at this gate, a familiar image pops up in your head. Where's my piggy?
-
 # girders.yml
 ent-ClockworkGirder = wall gear
     .desc = A large gear with mounting brackets for additional plating; This could be made into a wall with more brass plating.
@@ -10334,7 +9574,6 @@ ent-Girder = girder
     .desc = A large structural assembly made out of metal; It requires a layer of metal before it can be considered a wall.
 ent-ReinforcedGirder = reinforced girder
     .desc = A large structural assembly made out of metal and plasteel; It requires a layer of plasteel before it can be considered a reinforced wall.
-
 # grille.yml
 ent-ClockworkGrille = clockwork grille
     .desc = A flimsy framework of iron rods assembled in traditional Ratvarian fashion.
@@ -10346,15 +9585,12 @@ ent-Grille = grille
 ent-GrilleBroken = grille
     .desc = A flimsy framework of iron rods. It has seen better days.
 ent-GrilleDiagonal = diagonal grille
-
 # meteor.yml
 ent-MeteorRock = meteorite rock
     .desc = What remains of a meteorite.
-
 # railing.yml
 ent-BaseRailing = railing
     .desc = Basic railing meant to protect idiots like you from falling.
-
 # walls.yml
 ent-BaseStructureWall = basewall
     .desc = Keeps the air in and the greytide out.
@@ -10408,21 +9644,17 @@ ent-WallWeb = web wall
     .desc = Keeps the spiders in and the greytide out.
 ent-WallWood = wood wall
     .desc = The traditional greytide defense.
-
 # clockwork.yml
 ent-ClockworkWindow = clockwork window
     .desc = Don't smudge up the brass down there.
 ent-WindowClockworkDirectional = directional clockwork window
     .desc = Don't smudge up the brass down there.
-
 # mining.yml
 ent-MiningWindow = mining window
-
 # plasma.yml
 ent-PlasmaWindow = plasma window
 ent-PlasmaWindowDirectional = directional plasma window
     .desc = Don't smudge up the glass down there.
-
 # plastitanium.yml
 ent-PlastitaniumWindow = plastitanium window
 ent-PlastitaniumWindowBase = plastitanium window
@@ -10432,30 +9664,24 @@ ent-PlastitaniumWindowDiagonalBase = plastitanium window
 ent-PlastitaniumWindowDiagonalIndestructible = plastitanium window
 ent-PlastitaniumWindowIndestructible = plastitanium window
 ent-PlastitaniumWindowSquareBase = plastitanium window
-
 # reinforced.yml
 ent-ReinforcedWindow = reinforced window
 ent-WindowReinforcedDirectional = directional reinforced window
     .desc = Don't smudge up the glass down there.
-
 # rplasma.yml
 ent-PlasmaReinforcedWindowDirectional = directional reinforced plasma window
     .desc = Don't smudge up the glass down there.
 ent-ReinforcedPlasmaWindow = reinforced plasma window
-
 # ruranium.yml
 ent-ReinforcedUraniumWindow = reinforced uranium window
 ent-UraniumReinforcedWindowDirectional = directional reinforced uranium window
     .desc = Don't smudge up the glass down there.
-
 # shuttle.yml
 ent-ShuttleWindow = shuttle window
-
 # uranium.yml
 ent-UraniumWindow = uranium window
 ent-UraniumWindowDirectional = directional uranium window
     .desc = Don't smudge up the glass down there.
-
 # window.yml
 ent-TintedWindow = tinted window
 ent-Window = window
@@ -10464,52 +9690,39 @@ ent-WindowDirectional = directional window
     .desc = Don't smudge up the glass down there.
 ent-WindowFrostedDirectional = directional frosted window
     .desc = Don't smudge up the glass down there.
-
 # xenoresin.yml
 ent-XenoResinWindow = resin window
     .desc = Transparent and hardened, yet slightly sticky to the touch. Slightly stronger than a normal reinforced window.
-
 # bananium.yml
 ent-FloorBananiumEntity = bananium floor
-
 # basalt.yml
 ent-BasaltOne = basalt
     .desc = Rock.
-
 # chasm.yml
 ent-FloorChasmEntity = chasm
     .desc = You can't even see the bottom.
-
 # lava.yml
 ent-FloorLavaEntity = lava
     .desc = Don't jump in. It's not worth it, no matter how funny it is.
-
 # liquid_plasma.yml
 ent-FloorLiquidPlasmaEntity = liquid plasma
     .desc = Sweet, expensive nectar. Don't consume.
-
 # shadow_basalt.yml
 ent-ShadowBasaltOne = shadowstone
     .desc = Glowing cracks in reality. It's probably fine.
-
 # water.yml
 ent-FloorWaterEntity = water
     .desc = A real thirst quencher.
-
 # beam.yml
 ent-VirtualBeamEntityController = BEAM ENTITY YOU SHOULD NOT SEE THIS
-
 # stripping_hidden.yml
 ent-StrippingHiddenEntity = hidden entity
     .desc = There is something in this pocket.
-
 # virtual_item.yml
 ent-VirtualItem = VIRTUAL ITEM YOU SHOULD NOT SEE THIS
-
 # chunk.yml
 ent-WorldChunk = world chunk
     .desc = |
-
 # asteroids.yml
 ent-AsteroidDebrisLarge = asteroid debris large
 ent-AsteroidDebrisLarger = asteroid debris larger
@@ -10520,21 +9733,17 @@ ent-AsteroidSalvageLarge = salvage asteroid large
 ent-AsteroidSalvageMedium = salvage asteroid medium
 ent-AsteroidSalvageSmall = salvage asteroid small
 ent-BaseAsteroidDebris = asteroid debris
-
 # wrecks.yml
 ent-BaseScrapDebris = scrap debris
 ent-ScrapDebrisLarge = scrap debris large
 ent-ScrapDebrisMedium = scrap debris medium
 ent-ScrapDebrisSmall = scrap debris small
-
 # dummy_entities.yml
 ent-LoadoutDummyCandles = three candles
     .desc = A set of three colorful candles for secret rituals!
-
 # animate_spell.yml
 ent-ActionAnimateSpell = Animate
     .desc = Bring an inanimate object to life!
-
 # event_spells.yml
 ent-ActionSummonGhosts = Summon Ghosts
     .desc = Makes all current ghosts permanently visible
@@ -10542,19 +9751,15 @@ ent-ActionSummonGuns = Summon Guns
     .desc = AK47s for everyone! Places a random gun in front of everybody.
 ent-ActionSummonMagic = Summon Magic
     .desc = Places a random magical item in front of everybody. Nothing could go wrong!
-
 # forcewall_spells.yml
 ent-ActionForceWall = forcewall
     .desc = Creates a magical barrier.
-
 # knock_spell.yml
 ent-ActionKnock = Knock
     .desc = This spell opens nearby doors.
-
 # mindswap_spell.yml
 ent-ActionMindSwap = Mind Swap
     .desc = Exchange bodies with another person!
-
 # projectile_spells.yml
 ent-ActionFireball = Fireball
     .desc = Fires an explosive fireball towards the clicked location.
@@ -10562,15 +9767,12 @@ ent-ActionFireballII = Fireball II
     .desc = Fires a fireball, but faster!
 ent-ActionFireballIII = Fireball III
     .desc = The fastest fireball in the west!
-
 # recall_spell.yml
 ent-ActionItemRecall = Mark Item
     .desc = Mark a held item to later summon into your hand.
-
 # repulse_spell.yml
 ent-ActionRepulse = Repulse
     .desc = Pushes entities away from the user.
-
 # rune_spells.yml
 ent-ActionExplosionRune = Explosion Rune
     .desc = Summons a rune that explodes if used.
@@ -10580,30 +9782,24 @@ ent-ActionIgniteRune = Ignite Rune
     .desc = Summons a rune that ignites if used.
 ent-ActionStunRune = Stun Rune
     .desc = Summons a rune that stuns if used.
-
 # smoke_spell.yml
 ent-ActionSmoke = Smoke
     .desc = Summons smoke around the user.
-
 # spawn_spells.yml
 ent-ActionSpawnMagicarpSpell = Summon Magicarp
     .desc = This spell summons three Magi-Carp to your aid! May or may not turn on user.
-
 # staves.yml
 ent-AnimationStaff = staff of animation
     .desc = Brings inanimate objects to life!
 ent-RGBStaff = RGB staff
     .desc = Helps fix the underabundance of RGB gear on the station.
-
 # teleport_scroll.yml
 ent-WizardTeleportScroll = teleport scroll
-
 # teleport_spells.yml
 ent-ActionBlink = Blink
     .desc = Teleport to the clicked location.
 ent-ActionVoidApplause = Void Applause
     .desc = Clap your hands and swap places with the target.
-
 # touch_spells.yml
 ent-ActionCluwne = Cluwne's Curse
     .desc = Turns someone into a Cluwne!
@@ -10611,11 +9807,9 @@ ent-ActionSlippery = Slippery Slope
     .desc = Make someone slippery.
 ent-ActionSmite = Smite
     .desc = Instantly gibs a target.
-
 # utility_spells.yml
 ent-ActionChargeSpell = Charge
     .desc = Adds a charge back to your wand
-
 # runes.yml
 ent-ActivateRune = activation rune
 ent-BaseRune = rune
@@ -10628,14 +9822,11 @@ ent-FlashRune = flash rune
 ent-FlashRuneTimer = flash timed rune
 ent-IgniteRune = ignite rune
 ent-StunRune = stun rune
-
 # test.yml
 ent-MobPathfindDummy = pathfind dummy
-
 # dragon.yml
 ent-DragonSurviveObjective = Survive
     .desc = You have to stay alive to maintain control.
-
 # ninja.yml
 ent-MassArrestObjective = Set everyone to wanted
     .desc = Use your gloves to hack a criminal records console, setting the entire station to be wanted!
@@ -10643,60 +9834,46 @@ ent-NinjaSurviveObjective = Survive
     .desc = You wouldn't be a very good ninja if you died, now would you?
 ent-TerrorObjective = Call in a threat
     .desc = Use your gloves on a communication console in order to bring another threat to the station.
-
 # paradoxClone.yml
 ent-ParadoxCloneKillObjective = Fix the space-time paradox.
     .desc = Replace your original to fix the paradox. Remember, your mission is to blend in, do not kill anyone else unless you have to!
 ent-ParadoxCloneLivingObjective = Escape to centcomm alive and unrestrained.
     .desc = Return to your old life.
-
 # thief.yml
 ent-EscapeThiefShuttleObjective = Escape to centcomm alive and unrestrained.
     .desc = You don't want your illegal activities to be discovered by anyone, do you?
-
 # traitor.yml
 ent-DieObjective = Die a glorious death
     .desc = Die.
 ent-EscapeShuttleObjective = Escape to centcomm alive and unrestrained.
     .desc = One of our undercover agents will debrief you when you arrive. Don't show up in cuffs.
-
 # wizard.yml
 ent-WizardDemonstrateObjective = Show off
     .desc = Give the station a good demonstration of your powers!
 ent-WizardSurviveObjective = Survive
     .desc = The Space Wizards Federation want you to live!
-
 # advanced.yml
 ent-Advanced = Advanced
-
 # critters.yml
 ent-KoboldColors = KoboldColors
 ent-KoboldHornColors = KoboldHornColors
 ent-ScurretColors = ScurretColors
-
 # departmental.yml
 ent-Departmental = Departmental
-
 # emagged.yml
 ent-Emagged = Emagged
-
 # sixteen.yml
 ent-Rainbow = Rainbow
 ent-Sixteen = Sixteen
-
 # text.yml
 ent-ChatNames = Chat Names
 ent-Material = Material
-
 # salvage_mods.yml
 ent-SalvageShuttleMarker = salvage shuttle marker
-
 # maints.yml
 ent-MaintsRoomMarker = Maints interior marker
-
 # vgroidinterior.yml
 ent-VGRoidInteriorRoomMarker = VGRoid interior marker
-
 # meal_recipes.yml
 ent-RecipeAmanitaJelly = amanita jelly recipe
 ent-RecipeAmanitaPie = amanita pie recipe
@@ -10910,16 +10087,13 @@ ent-RecipeWorldpeasPizza = world peazza recipe
 ent-RecipeXenoMeatBread = xeno meat bread recipe
 ent-RecipeXenoPie = xeno pie recipe
 ent-RecipeXenoburger = xenoburger recipe
-
 # medical_recipes.yml
 ent-RecipeAloeCream = aloe cream recipe
 ent-RecipeMedicatedSuture = medicated suture recipe
 ent-RecipeRegenerativeMesh = regenerative mesh recipe
-
 # mime.yml
 ent-ActionMimeInvisibleWall = Create Invisible Wall
     .desc = Create an invisible wall in front of you, if placeable there.
-
 # mind_roles.yml
 ent-BaseMindRole = Mind Role
     .desc = Mind Role entity
@@ -10952,8 +10126,6 @@ ent-MindRoleTraitorReinforcement = Syndicate Reinforcement Role
 ent-MindRoleTraitorSleeper = Sleeper Agent Role
 ent-MindRoleWizard = Wizard Role
 ent-MindRoleZombie = Zombie Role
-
 # effects.yml
 ent-BaseXenoArtifactEffect = effect
     .desc = Unknown
-

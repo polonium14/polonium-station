@@ -12,5 +12,3 @@ thankyou-lawdrobe-2 = Weź jedną także dla swojego klienta!
 thankyou-lawdrobe-3 = Wygrasz albo przegrasz — i tak ci zapłacą!
 thankyou-lawdrobe-4 = Pamiętaj: to nielegalne tylko jeśli cię złapią!
 thankyou-lawdrobe-5 = SPRZECIW! Ten strój jest za cool na sąd!
-
-

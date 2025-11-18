@@ -80,8 +80,7 @@ food-sequence-content-anomaly-berry = anomaly berry
 
 # BURGERS
 
-food-sequence-burger-gen = {$content}burger
-
+food-sequence-burger-gen = { $content }burger
 food-sequence-burger-content-raw-meat = raw
 food-sequence-burger-content-meat = meaty
 food-sequence-burger-content-carp = carpo
@@ -123,8 +122,7 @@ food-sequence-burger-content-world-pea = peace
 
 # COTTON BURGERS
 
-food-sequence-cotton-burger-gen = {$content}burger
-
+food-sequence-cotton-burger-gen = { $content }burger
 food-sequence-cotton-burger-content-cotton-bol = cotton
 food-sequence-cotton-burger-content-pyrotton-bol = pyro
 food-sequence-cotton-burger-content-plushie-throngler = throngle
@@ -161,8 +159,8 @@ food-sequence-cotton-burger-content-among-pequeno = sus
 
 # TACO
 
-food-sequence-taco-gen = taco with {$content}
+food-sequence-taco-gen = taco with { $content }
 
 # SKEWER
 
-food-sequence-skewer-gen = {$content} kebab
+food-sequence-skewer-gen = { $content } kebab

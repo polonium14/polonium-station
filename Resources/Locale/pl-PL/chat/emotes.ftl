@@ -32,7 +32,6 @@ chat-emote-name-monkeyscreeches = Skrzek małpy
 chat-emote-name-robotbeep = Robot (bip)
 chat-emote-name-yawn = Ziewnięcie
 chat-emote-name-snore = Chrapanie
-
 # Message
 chat-emote-msg-scream = krzyczy!
 chat-emote-msg-laugh = śmieje się.
@@ -47,11 +46,11 @@ chat-emote-msg-thump = tupa swoim ogonem.
 chat-emote-msg-click = klika.
 chat-emote-msg-clap = klaszcze!
 chat-emote-msg-clap-single = klaszcze w swoje dłonie.
-chat-emote-msg-snap = pstryka {POSS-ADJ($entity)} palcami.
+chat-emote-msg-snap = pstryka { POSS-ADJ($entity) } palcami.
 chat-emote-msg-salute = salutuje.
 chat-emote-msg-gasp = dusi się.
-chat-emote-msg-deathgasp = sztywnieje i bezwładnie upada, {POSS-ADJ($entity)} oczy gasną, martwe i bez życia...
-chat-emote-msg-deathgasp-monkey = wydaje ciche "uhuh uh...", po czym {SUBJECT($entity)} upada i nieruchomieje...
+chat-emote-msg-deathgasp = sztywnieje i bezwładnie upada, { POSS-ADJ($entity) } oczy gasną, martwe i bez życia...
+chat-emote-msg-deathgasp-monkey = wydaje ciche "uhuh uh...", po czym { SUBJECT($entity) } upada i nieruchomieje...
 chat-emote-msg-buzz = bzycze!
 chat-emote-msg-weh = robi "weh"!
 chat-emote-msg-hew = robi "hew"!

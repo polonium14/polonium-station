@@ -1,0 +1,13 @@
+ent-BaseMagazineShotgun = ammo drum (12 gauge shells)
+    .desc = { ent-BaseItem.desc }
+ent-MagazineShotgunEmpty = ammo drum (12 gauge shells any)
+    .suffix = empty
+    .desc = { ent-BaseMagazineShotgun.desc }
+ent-MagazineShotgun = ammo drum (12 gauge pellet)
+    .desc = { ent-BaseMagazineShotgun.desc }
+ent-MagazineShotgunBeanbag = ammo drum (12 gauge beanbags)
+    .desc = { ent-BaseMagazineShotgun.desc }
+ent-MagazineShotgunSlug = ammo drum (12 gauge slug)
+    .desc = { ent-BaseMagazineShotgun.desc }
+ent-MagazineShotgunIncendiary = ammo drum (12 gauge incendiary)
+    .desc = { ent-BaseMagazineShotgun.desc }

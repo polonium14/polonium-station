@@ -1,0 +1,10 @@
+ent-FoodMealCultLollipop = entro-pop
+    .desc = It seems to flicker in and out of view, your eyes never truly focusing on it. It's cosmically delicious!
+ent-FoodMealBigLollipop = giant lollipop
+    .desc = Wow!!! It's as big as your head!!!
+ent-FoodMealClothLollipop = cloth lollipop
+    .desc = Woven with love.
+ent-FoodMealFruitLollipop = fruit lollipop
+    .desc = Didn't this come out of a microwave? How did the chef even do this?
+ent-FoodMealMeatLollipop = meat lollipop
+    .desc = It's still dripping...
