@@ -1,0 +1,15 @@
+ent-InfinityCrayon = infinity crayon
+    .suffix = Admeme
+    .desc = { ent-Crayon.desc }
+ent-AdmemeFlash = flash master 5000
+    .suffix = Admeme
+    .desc = { ent-Flash.desc }
+ent-AdmemeSprayBottle = admeme spray bottle
+    .desc = A huge spray bottle full of water. No felinid will go unsprayed.
+    .suffix = Admeme Water
+ent-LauncherCreamPieAdmeme = admeme pie cannon
+    .desc = Admeme self-regenerating pie cannon.
+    .suffix = Admeme
+ent-NuclearGrenadeAdmeme = the BIGGER nuclear option
+    .desc = For when EVERYTHING must go.
+    .suffix = Admeme

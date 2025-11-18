@@ -1,12 +1,13 @@
-department-Cargo = Cargo
-department-Civilian = Civilian
-department-Command = Command
-department-CentralCommand = Central Command
-department-Engineering = Engineering
-department-Medical = Medical
-department-Security = Security
-department-Science = Science
-department-Silicon = Silicon
-department-Specific = Station specific
-
-department-Unknown = Unknown
+department-Cargo = Logistyki
+department-Civilian = Cywilny
+department-Command = Dowództwo
+department-CentralCommand = Centralne dowództwo
+department-Engineering = Inżynieryjny
+department-CentralCommandSpecial = Central Command
+department-Medical = Medyczny
+department-Security = Ochrony
+department-Science = Rozwoju
+department-Silicon = Silikowy
+department-Specific = Specyficzny dla stacji
+department-Ghostrole = Ghostrole
+department-Unknown = Nieznany

@@ -1,4 +1,3 @@
-
 verb-trigger-timer-set = {$time} {$time ->
         [one] sekunda
         [few] sekuny

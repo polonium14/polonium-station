@@ -21,4 +21,3 @@ chatsan-tearfully-salutes = salutuje ze łzami w oczach.
 chatsan-shrugs = wzrusza ramionami.
 chatsan-tearfully-smiles = uśmiecha się przez łzy.
 chatsan-winks = puszcza oczko.
-

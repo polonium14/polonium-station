@@ -1,0 +1,9 @@
+ent-MiniatureEnergyCrossbow = Miniature Energy Crossbow
+    .desc = The syndicate's energy crossbow, small, silent and deadly.
+ent-WeaponPlasmaRifle = Plasma Rifle
+    .desc = It may or may not explode in your face.
+ent-WeaponPlasmaRifleEmpty = { ent-WeaponPlasmaRifle }
+    .suffix = Empty
+    .desc = { ent-WeaponPlasmaRifle.desc }
+ent-WeaponEnergyRevolver = EG-4 energy revolver
+    .desc = A highly advanced energy revolver capable of firing both lethal and disabling bullets.
