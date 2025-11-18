@@ -42,3 +42,23 @@
 "(/) Tłumaczenie":
 - changed-files:
   - any-glob-to-any-file: '**/*.ftl'
+
+"Tools/Skrypty":
+- changed-files:
+  - any-glob-to-any-file: 'Tools/**'
+  - any-glob-to-any-file: 'Scripts/**'
+
+"Assety":
+- changed-files:
+  - any-glob-to-any-file: '**/*.png'
+  - any-glob-to-any-file: '**/*.ogg'
+  - any-glob-to-any-file: '**/*.svg'
+  - any-glob-to-any-file: '**/*.ico'
+
+"Dokumentacja":
+- changed-files:
+  - any-glob-to-any-file: 'Resources/ServerInfo/**/*.xml'
+
+"Prototypy":
+- changed-files:
+  - any-glob-to-any-file: 'Resources/Prototypes/**/*.yml'

@@ -7,4 +7,3 @@ objective-condition-other-traitor-progress-title = Dopilnuj aby {GENDER($targetN
         [female] wykonała
         *[other] wykonało
     } swoje zadania.
-

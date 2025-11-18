@@ -1,0 +1,12 @@
+ent-Oilpack = oil pack
+    .desc = Fit with a proprietary and disposable connector, oil can easily be injected to top off a bleeding IPC
+    .suffix = Full
+ent-Oilpack1 = { ent-Oilpack }
+    .suffix = Single
+    .desc = { ent-Oilpack.desc }
+ent-OmniPatch = omni patch
+    .desc = A topical patch of specially grown silica microbots, curated to heal machine entities. Smells of ozone.
+    .suffix = Full
+ent-Omnipatch1 = { ent-OmniPatch }
+    .suffix = Single
+    .desc = { ent-OmniPatch.desc }

@@ -1,4 +1,4 @@
-﻿advertisement-gibb-1 = Pyszne!
+advertisement-gibb-1 = Pyszne!
 advertisement-gibb-2 = Polecane przynajmniej przez jednego lekarza!
 advertisement-gibb-3 = Ponad milion sprzedanych napojów!
 advertisement-gibb-4 = Dr Gibb, co najgorszego może się stać?
@@ -10,5 +10,3 @@ thankyou-gibb-1 = Doktor jest... w twoim brzuchu!
 thankyou-gibb-2 = Prognoza: smak!
 thankyou-gibb-3 = Ciesz się 42 smakami!
 thankyou-gibb-4 = Smacznej, syropowej rozkoszy!
-
-

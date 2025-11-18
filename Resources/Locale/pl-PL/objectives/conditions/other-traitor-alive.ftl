@@ -7,4 +7,3 @@ objective-condition-other-traitor-alive-title = Dopilnuj aby {GENDER($targetName
         [female] pozostała
         *[other] pozostało
     } przy życiu.
-

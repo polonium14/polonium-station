@@ -12,7 +12,6 @@ steal-target-groups-jetpack-captain-filled = plecak odrzutowy kapitana
 steal-target-groups-weapon-antique-laser = antyczny pistolet laserowy
 steal-target-groups-nuke-disk = dysk autoryzacji bomby nuklearnej
 steal-target-groups-weapon-energy-shot-gun = strzelba energetyczna
-
 # Thief Collection
 steal-target-groups-figurines = figurka
 steal-target-groups-heads-cloaks = płaszcz szefa
@@ -24,7 +23,6 @@ steal-target-groups-technology-disks = dyskietka technologiczna
 steal-target-groups-mail = korespondencja
 steal-target-groups-id-cards = ID
 steal-target-groups-lamps = LAMPA
-
 # Thief single item
 steal-target-groups-forensic-scanner = skaner kryminalistyczny
 steal-target-groups-flippo-engraved-lighter = wygrawerowana zapalniczka detektywa
@@ -43,12 +41,10 @@ steal-target-groups-bible = biblia
 steal-target-groups-clothing-neck-goldmedal = złoty medal załoganta
 steal-target-groups-clothing-neck-clownmedal = medal błazna
 steal-target-groups-wanted-list-cartridge = karta listy poszukiwanych
-
 # Thief structures
 steal-target-groups-teg = część TEG
 steal-target-groups-freezer-heater = chłodnica lub grzejnik
 steal-target-groups-altar-nanotrasen = dowolny ołtarz NanoTrasen
-
 steal-target-groups-nuclear-bomb = rdzeń ładunki jądrowego
 steal-target-groups-fax-machine-captain = faks długiego zasięgu kapitana
 steal-target-groups-chem-dispenser = dystrybutor chemiczny
@@ -56,10 +52,8 @@ steal-target-groups-xeno-artifact = obcy artefakt
 steal-target-groups-booze-dispenser = dystrybutor alkoholu
 steal-target-groups-plant-rd = "roślinka doniczkowa KB"
 steal-target-groups-toilet-golden-dirty-water = złota toaleta
-
 # Thief Animal
 steal-target-groups-animal-named-cat = kot DM
-
 steal-target-groups-animal-ian = Ian
 steal-target-groups-animal-mc-griff = McGriff
 steal-target-groups-animal-walter = Walter

@@ -1,0 +1,15 @@
+ent-BaseMailSmall = mail-item-name-unaddressed
+    .desc = { ent-BaseMail.desc }
+ent-MailAdminFunMailSmall = { ent-BaseMailSmall }
+    .suffix = adminfun
+    .desc = { ent-BaseMailSmall.desc }
+ent-BaseMailRadioactive = mail-item-name-unaddressed
+    .desc = { ent-BaseMailSmall.desc }
+ent-MailAdminFunRadioactive = { ent-BaseMailRadioactive }
+    .suffix = adminfun
+    .desc = { ent-BaseMailRadioactive.desc }
+ent-BaseMailLargeFlat = mail-large-item-name-unaddressed
+    .desc = { ent-BaseMail.desc }
+ent-MailAdminFunLargeFlat = { ent-BaseMailLargeFlat }
+    .suffix = adminfun
+    .desc = { ent-BaseMailLargeFlat.desc }

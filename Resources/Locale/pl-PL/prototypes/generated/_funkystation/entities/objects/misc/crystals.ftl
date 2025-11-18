@@ -1,0 +1,10 @@
+ent-AmmoniaCrystal = ammonia crystal
+    .desc = A crystal made from ammonia gas. You can see the liquid gases inside.
+ent-HealiumCrystal = healium crystal
+    .desc = A crystal made from healium gas. It's cold to the touch.
+ent-ProtoNitrateCrystal = proto-nitrate crystal
+    .desc = A crystal made from proto-nitrate gas. You can see the liquid gases inside.
+ent-NitrousOxideCrystal = nitrous oxide crystal
+    .desc = A crystal made from nitrous oxide gas. You can see the liquid gases inside.
+ent-CrystalCell = crystal cell
+    .desc = A non rechargeable cell with a huge power capacity.

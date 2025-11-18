@@ -1,4 +1,4 @@
-﻿advertisement-discount-1 = Discount Dan, to gość!
+advertisement-discount-1 = Discount Dan, to gość!
 advertisement-discount-2 = Nie ma nic lepszego na świecie niż kęs tajemnicy.
 advertisement-discount-3 = Nie słuchaj tych innych maszyn, kup mój produkt!
 advertisement-discount-4 = Ilość ponad jakość!
@@ -15,4 +15,3 @@ thankyou-discount-5 = Prosimy, nie pozywaj nas!
 thankyou-discount-6 = Przysięgamy, że tak wyglądało, gdy to uzupełnialiśmy!
 thankyou-discount-7 = No cóż, powodzenia z tym.
 thankyou-discount-8 = Smacznej, e... „przekąski”.
-

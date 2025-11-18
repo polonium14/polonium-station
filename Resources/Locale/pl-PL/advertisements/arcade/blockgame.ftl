@@ -11,7 +11,6 @@ advertisement-block-game-10 = Gra bloków Nanotrasen to nie to samo to Tetrys!
 advertisement-block-game-11 = Teraz z błyskawicznym przetwarzaniem!
 advertisement-block-game-12 = Nasi prawnicy czekają!
 advertisement-block-game-13 = Alleluja, to spadające bloki!
-
 thankyou-block-game-1 = Zagraj wkrótce!
 thankyou-block-game-2 = Świetnie zagrane!
 thankyou-block-game-3 = Może jeszcze jedna?
