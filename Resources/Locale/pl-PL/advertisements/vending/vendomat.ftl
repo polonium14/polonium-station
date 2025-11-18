@@ -1,4 +1,4 @@
-﻿advertisement-vendomat-1 = Tylko to, co najlepsze!
+advertisement-vendomat-1 = Tylko to, co najlepsze!
 advertisement-vendomat-2 = Weź trochę narzędzi.
 advertisement-vendomat-3 = Najsolidniejszy sprzęt.
 advertisement-vendomat-4 = Najlepszy ekwipunek w kosmosie!

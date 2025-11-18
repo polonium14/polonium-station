@@ -1,1 +1,1 @@
-simple-tool-usage-blocked-message = Potrzebujesz narzędzia do {$quality}!
+simple-tool-usage-blocked-message = Potrzebujesz narzędzia do { $quality }!

@@ -13,6 +13,7 @@ tabletop-chess-flip = Obróć
 tabletop-parchis-board-name = Chińczyk
 
 ## Backgammon
+
 tabletop-backgammon-board-name = Backgammon
 
 ## Checkers
