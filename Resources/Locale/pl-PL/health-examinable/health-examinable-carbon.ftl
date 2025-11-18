@@ -1,5 +1,4 @@
 health-examinable-carbon-none = Brak widocznych śladów obrażeń.
-
 health-examinable-carbon-Slash-8 = [color=yellow]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } powierzchowne cięcie.[/color]
 health-examinable-carbon-Slash-15 = [color=yellow]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } kilka drobnych skaleczeń.[/color]
 health-examinable-carbon-Slash-30 = [color=orange]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } kilka większych ran ciętych.[/color]
@@ -7,7 +6,6 @@ health-examinable-carbon-Slash-50 = [color=red]{ CAPITALIZE(SUBJECT($target)) } 
 health-examinable-carbon-Slash-75 = [color=red]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } poszarpane, głębokie rany na całym { POSS-ADJ($target) } ciele.[/color]
 health-examinable-carbon-Slash-100 = [color=red]{ CAPITALIZE(POSS-ADJ($target)) } ciało wygląda na zakrwawione i zmasakrowane.[/color]
 health-examinable-carbon-Slash-200 = [color=crimson]{ CAPITALIZE(POSS-ADJ($target)) } ciało jest całkowicie rozerwane na strzępy![/color]
-
 health-examinable-carbon-Blunt-8 = [color=yellow]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } lekkie stłuczenie.[/color]
 health-examinable-carbon-Blunt-15 = [color=yellow]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } kilka siniaków.[/color]
 health-examinable-carbon-Blunt-30 = [color=orange]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-BE($target) } poobijany.[/color]
@@ -15,7 +13,6 @@ health-examinable-carbon-Blunt-50 = [color=red]{ CAPITALIZE(SUBJECT($target)) } 
 health-examinable-carbon-Blunt-75 = [color=red]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } poważne obrażenia od uderzeń na całym { POSS-ADJ($target) } ciele.[/color]
 health-examinable-carbon-Blunt-100 = [color=red]{ CAPITALIZE(POSS-ADJ($target)) } ciało jest zniekształcone i mocno poobijane.[/color]
 health-examinable-carbon-Blunt-200 = [color=crimson]{ CAPITALIZE(POSS-ADJ($target)) } ciało zostało kompletnie zmiażdżone![/color]
-
 health-examinable-carbon-Piercing-8 = [color=yellow]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } drobną ranę kłutą.[/color]
 health-examinable-carbon-Piercing-15 = [color=yellow]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } kilka ran kłutych.[/color]
 health-examinable-carbon-Piercing-30 = [color=orange]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } wiele głębokich ran kłutych.[/color]
@@ -23,10 +20,8 @@ health-examinable-carbon-Piercing-50 = [color=red]{ CAPITALIZE(SUBJECT($target))
 health-examinable-carbon-Piercing-75 = [color=red]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } liczne, poszarpane rany kłute na całym { POSS-ADJ($target) } ciele.[/color]
 health-examinable-carbon-Piercing-100 = [color=red]{ CAPITALIZE(POSS-ADJ($target)) } ciało jest całkowicie pokryte ogromnymi, ziejącymi dziurami.[/color]
 health-examinable-carbon-Piercing-200 = [color=crimson]{ CAPITALIZE(POSS-ADJ($target)) } ciało wygląda, jakby zostało rozerwane na kawałki![/color]
-
 health-examinable-carbon-Asphyxiation-30 = [color=lightblue]{ CAPITALIZE(POSS-ADJ($target)) } usta sinieją.[/color]
 health-examinable-carbon-Asphyxiation-75 = [color=lightblue]{ CAPITALIZE(POSS-ADJ($target)) } twarz sinieje.[/color]
-
 health-examinable-carbon-Heat-8 = [color=orange]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } powierzchowne oparzenie.[/color]
 health-examinable-carbon-Heat-15 = [color=orange]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } kilka oparzeń pierwszego stopnia.[/color]
 health-examinable-carbon-Heat-30 = [color=orange]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } kilka oparzeń drugiego stopnia.[/color]
@@ -34,14 +29,12 @@ health-examinable-carbon-Heat-50 = [color=orange]{ CAPITALIZE(SUBJECT($target)) 
 health-examinable-carbon-Heat-75 = [color=red]{ CAPITALIZE(POSS-ADJ($target)) } ciało jest pokryte poważnymi oparzeniami trzeciego stopnia.[/color]
 health-examinable-carbon-Heat-100 = [color=red]{ CAPITALIZE(POSS-ADJ($target)) } ciało jest pokryte rozległymi oparzeniami czwartego stopnia.[/color]
 health-examinable-carbon-Heat-200 = [color=crimson]{ CAPITALIZE(POSS-ADJ($target)) } ciało zostało całkowicie zwęglone![/color]
-
 health-examinable-carbon-Shock-15 = [color=lightgoldenrodyellow]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } lekkie przypalenia na { POSS-ADJ($target) } skórze.[/color]
 health-examinable-carbon-Shock-30 = [color=lightgoldenrodyellow]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } przypalenia na całym { POSS-ADJ($target) } ciele.[/color]
 health-examinable-carbon-Shock-50 = [color=lightgoldenrodyellow]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } poważne przypalenia na całym { POSS-ADJ($target) } ciele.[/color]
 health-examinable-carbon-Shock-75 = [color=lightgoldenrodyellow]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } ogromne, zwęglone rany na całym { POSS-ADJ($target) } ciele.[/color]
 health-examinable-carbon-Shock-100 = [color=lightgoldenrodyellow]{ CAPITALIZE(POSS-ADJ($target)) } ciało ma ekstremalne oparzenia elektryczne![/color]
 health-examinable-carbon-Shock-200 = [color=lightgoldenrodyellow]{ CAPITALIZE(POSS-ADJ($target)) } ciało jest całkowicie usmażone![/color]
-
 health-examinable-carbon-Cold-8 = [color=lightblue]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } lekkie odmrożenia na końcach { POSS-ADJ($target) } palców.[/color]
 health-examinable-carbon-Cold-15 = [color=lightblue]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } odmrożenia pierwszego stopnia na kończynach.[/color]
 health-examinable-carbon-Cold-30 = [color=lightblue]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } odmrożenia drugiego stopnia na kończynach.[/color]
@@ -49,7 +42,6 @@ health-examinable-carbon-Cold-50 = [color=lightblue]{ CAPITALIZE(SUBJECT($target
 health-examinable-carbon-Cold-75 = [color=lightblue]{ CAPITALIZE(POSS-ADJ($target)) } kończyny są ciemne, zimne i martwicze.[/color]
 health-examinable-carbon-Cold-100 = [color=lightblue]{ CAPITALIZE(POSS-ADJ($target)) } ciało jest pokryte rozległymi odmrożeniami czwartego stopnia.[/color]
 health-examinable-carbon-Cold-200 = [color=lightblue]{ CAPITALIZE(POSS-ADJ($target)) } ciało jest całkowicie zamarznięte![/color]
-
 health-examinable-carbon-Caustic-8 = [color=yellowgreen]{ CAPITALIZE(POSS-ADJ($target)) } skóra wygląda na lekko odbarwioną.[/color]
 health-examinable-carbon-Caustic-15 = [color=yellowgreen]{ CAPITALIZE(POSS-ADJ($target)) } skóra wygląda na podrażnioną i wybieloną.[/color]
 health-examinable-carbon-Caustic-30 = [color=yellowgreen]{ CAPITALIZE(POSS-ADJ($target)) } skóra jest zapalona i zaczyna się łuszczyć.[/color]
@@ -57,6 +49,5 @@ health-examinable-carbon-Caustic-50 = [color=yellowgreen]{ CAPITALIZE(POSS-ADJ($
 health-examinable-carbon-Caustic-75 = [color=yellowgreen]{ CAPITALIZE(POSS-ADJ($target)) } skóra jest poważnie poparzona i odchodzi całymi fragmentami.[/color]
 health-examinable-carbon-Caustic-100 = [color=yellowgreen]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } ekstremalne oparzenia chemiczne na całym { POSS-ADJ($target) } ciele.[/color]
 health-examinable-carbon-Caustic-200 = [color=yellowgreen]Większość { POSS-ADJ($target) } ciała jest całkowicie stopiona![/color]
-
 health-examinable-carbon-Radiation-50 = [color=orange]{ CAPITALIZE(POSS-ADJ($target)) } skóra ma duże pęcherze.[/color]
 health-examinable-carbon-Radiation-100 = [color=orange]{ CAPITALIZE(POSS-ADJ($target)) } skóra jest pokryta owrzodzeniami i odpada płatami.[/color]
