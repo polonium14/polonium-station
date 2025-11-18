@@ -1,0 +1,9 @@
+ent-PestilineChemistryVial = { ent-BaseChemistryEmptyVial }
+    .suffix = pestiline
+    .desc = { ent-BaseChemistryEmptyVial.desc }
+ent-TazinideChemistryVial = { ent-BaseChemistryEmptyVial }
+    .suffix = tazinide
+    .desc = { ent-BaseChemistryEmptyVial.desc }
+ent-FresiumChemistryVial = { ent-BaseChemistryEmptyVial }
+    .suffix = fresium
+    .desc = { ent-BaseChemistryEmptyVial.desc }

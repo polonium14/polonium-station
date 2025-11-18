@@ -1,4 +1,4 @@
-﻿advertisement-sectech-1 = Rozbijaj czaszki syndykatu!
+advertisement-sectech-1 = Rozbijaj czaszki syndykatu!
 advertisement-sectech-2 = Zwalaj głowy na ziemię!
 advertisement-sectech-3 = Nie zapomnij – krzywda to dobro!
 advertisement-sectech-4 = Twoja broń jest tuż obok.

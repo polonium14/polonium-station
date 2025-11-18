@@ -1,0 +1,10 @@
+ent-InternalAffairsAgentPDA = internal affairs agent PDA
+    .desc = For spying on the innocent and guilty alike.
+ent-MagistratePDA = magistrate PDA
+    .desc = For the fortunate ones.
+ent-SeniorDetectivePDA = senior detective PDA
+    .desc = Ready for another round, kid?
+ent-BlueshieldOfficerPDA = blueshield officer PDA
+    .desc = Remember, you are NOT security.
+ent-NanotrasenRepresentativePDA = nanotrasen representative PDA
+    .desc = Make everyone anxious with your presense.
