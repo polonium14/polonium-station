@@ -10,6 +10,6 @@ war-declarator-conditions-unknown = Unknown
 war-declarator-boost-possible = Able to declare war
 war-declarator-boost-impossible = Unable to declare war
 war-declarator-boost-declared = War declared! Shuttle may be disabled for...
-war-declarator-boost-timer = Time left: {$time} minutes.
+war-declarator-boost-timer = Time left: { $time } minutes.
 war-declarator-default-message = A syndicate fringe group has declared their intent to utterly destroy station with a nuclear device, and dares the crew to try and stop them.
 war-declarator-message-placeholder = Write a custom declaration of war here...

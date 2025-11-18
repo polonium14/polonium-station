@@ -1,0 +1,14 @@
+ent-PartUraniumBase = { ent-BaseItem }
+    .desc = { ent-BaseItem.desc }
+ent-PartRodUranium = uranium rod
+    .suffix = Full
+    .desc = { ent-PartUraniumBase.desc }
+ent-PartRodUraniuml10 = uranium rod
+    .suffix = 10
+    .desc = { ent-PartRodUranium.desc }
+ent-PartRodUranium1 = uranium rod
+    .suffix = Single
+    .desc = { ent-PartRodUranium.desc }
+ent-PartRodUraniumLingering0 = { ent-PartRodUranium }
+    .suffix = Lingering, 0
+    .desc = { ent-PartRodUranium.desc }

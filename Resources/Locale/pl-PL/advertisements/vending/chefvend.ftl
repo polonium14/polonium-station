@@ -1,4 +1,4 @@
-﻿advertisement-chefvend-1 = Co najmniej sześćdziesiąt procent naszych jajek jest niepękniętych, gwarantujemy!
+advertisement-chefvend-1 = Co najmniej sześćdziesiąt procent naszych jajek jest niepękniętych, gwarantujemy!
 advertisement-chefvend-2 = Ryż, ryż, maleńka.
 advertisement-chefvend-3 = Walnij na to trochę masła!
 advertisement-chefvend-4 = Czy jesteś wart swojej soli? My tak.

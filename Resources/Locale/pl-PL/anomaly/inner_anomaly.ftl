@@ -9,9 +9,7 @@ inner-anomaly-start-message-grav = Wszystko staje się nienaturalnie ciężkie i
 inner-anomaly-start-message-tech = Twoja głowa buzuję od ogromu chaotycznych informacji! Stałeś się nosicielem anomalii technologicznej.
 inner-anomaly-start-message-rock = Kryształy wyrastają przez Twoje kości! Stałeś się nosicielem anomalii skalnej.
 inner-anomaly-start-message-santa = Opanowuje Cię obsesja na punkcie świątecznego ducha! Stałeś się nosicielem anomalii świątecznej.
-
 inner-anomaly-end-message = Nienaturalna aktywność w Tobie znika bez śladu....
-
 inner-anomaly-severity-info-50 = Czujesz, że anomalia opanowuje połowę Twojego ciała.
 inner-anomaly-severity-info-75 = Czujesz, że anomalia opanowuje dużą część Twojego ciała.
 inner-anomaly-severity-info-90 = Czujesz, że anomalia prawie całkowicie opanowała Twoje ciało.
