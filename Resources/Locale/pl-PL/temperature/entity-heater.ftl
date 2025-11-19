@@ -6,7 +6,6 @@
         [high] wysoki
        *[other] nieznane
     }
-
 -entity-heater-setting-color =
     { $setting ->
         [off] gray

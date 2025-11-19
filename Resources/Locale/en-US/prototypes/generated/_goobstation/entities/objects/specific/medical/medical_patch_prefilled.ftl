@@ -1,0 +1,11 @@
+ent-MedicalPatchPrefilledBase = prefilled medical patch
+    .desc = A pre-filled Medical patch. Slower than the average patch, but that prevents overdose.
+ent-MedicalPatchPrefilledLibital = brute patch
+    .suffix = Libital
+    .desc = { ent-MedicalPatchPrefilledBase.desc }
+ent-MedicalPatchPrefilledAiuri = burn patch
+    .suffix = Aiuri
+    .desc = { ent-MedicalPatchPrefilledBase.desc }
+ent-MedicalPatchPrefilledAntiRad = anti-rad patch
+    .suffix = Arith/Podide
+    .desc = { ent-MedicalPatchPrefilledBase.desc }

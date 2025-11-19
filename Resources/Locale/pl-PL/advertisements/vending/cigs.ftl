@@ -1,4 +1,4 @@
-﻿advertisement-cigs-1 = Kosmiczne fajki smakują tak, jak papierosy powinny.
+advertisement-cigs-1 = Kosmiczne fajki smakują tak, jak papierosy powinny.
 advertisement-cigs-2 = Wolę klucz niż zmianę.
 advertisement-cigs-3 = Pal!
 advertisement-cigs-4 = Nie wierz raportom – zapal dziś!
@@ -13,4 +13,3 @@ advertisement-cigs-12 = Pomagają rozładować stres w pracy!
 thankyou-cigs-1 = Masz je, teraz zapal!
 thankyou-cigs-2 = Pewnie nie pożałujesz!
 thankyou-cigs-3 = Uzależnisz się w mgnieniu oka!
-
