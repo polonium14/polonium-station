@@ -1,4 +1,3 @@
-
 # Cargo pallet sale console
 cargo-pallet-console-menu-title = Logistyczna konsola sprzedarzy
 cargo-pallet-menu-appraisal-label = Estymowana wartość:{" "}

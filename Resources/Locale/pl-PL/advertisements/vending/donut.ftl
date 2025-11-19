@@ -1,4 +1,4 @@
-﻿advertisement-donut-1 = Każdy z nas jest trochę jak glina!
+advertisement-donut-1 = Każdy z nas jest trochę jak glina!
 advertisement-donut-2 = Mamy nadzieję, że jesteś głodny!
 advertisement-donut-3 = Sprzedaliśmy już ponad milion pączków!
 advertisement-donut-4 = Jesteśmy dumni z konsekwencji naszych produktów!

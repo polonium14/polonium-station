@@ -1,4 +1,4 @@
-﻿advertisement-snack-1 = Spróbuj naszego nowego batonika nugatowego!
+advertisement-snack-1 = Spróbuj naszego nowego batonika nugatowego!
 advertisement-snack-2 = Dwa razy więcej kalorii za połowę ceny!
 advertisement-snack-3 = Najzdrowsze!
 advertisement-snack-4 = Nagradzane batony czekoladowe!
