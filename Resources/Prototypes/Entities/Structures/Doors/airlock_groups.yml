@@ -40,7 +40,7 @@
     # end Funkystation
     medical:     _DV/Structures/Doors/Airlocks/Standard/medical.rsi
     science:     _DV/Structures/Doors/Airlocks/Standard/science.rsi
-    robotics:    _DV/Structures/Doors/Airlocks/Standard/robotics.rsi
+    robotics:    _DV/Structures/Doors/Airlocks/Standard/roboticist.rsi
     security:    _DV/Structures/Doors/Airlocks/Standard/security.rsi
     virology:    _DV/Structures/Doors/Airlocks/Standard/virology.rsi
 
@@ -54,7 +54,7 @@
     command:     _DV/Structures/Doors/Airlocks/Glass/command.rsi
     chemistry:   _DV/Structures/Doors/Airlocks/Glass/chemistry.rsi
     science:     _DV/Structures/Doors/Airlocks/Glass/science.rsi
-    robotics:    _DV/Structures/Doors/Airlocks/Glass/robotics.rsi
+    robotics:    _DV/Structures/Doors/Airlocks/Glass/roboticist.rsi
     engineering: _DV/Structures/Doors/Airlocks/Glass/engineering.rsi
     glass:       _DV/Structures/Doors/Airlocks/Glass/glass.rsi
     hydroponics: _DV/Structures/Doors/Airlocks/Glass/hydroponics.rsi
