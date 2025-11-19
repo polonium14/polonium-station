@@ -28,4 +28,4 @@ verb-toggle-start-on-stick = Przełącz autozapalnik
 popup-start-on-stick-off = Urządzenie nie zostanie aktywowane po umieszczeniu
 popup-start-on-stick-on = Urządzenie zostanie aktywowane po umieszczeniu
 
-trigger-activated = Aktywujesz {THE($device)}.
+trigger-activated = Aktywujesz {$device}.
