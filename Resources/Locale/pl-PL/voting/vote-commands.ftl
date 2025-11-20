@@ -1,5 +1,6 @@
 ### Voting system related console commands
 
+
 ## 'createvote' command
 
 cmd-createvote-desc = Tworzy głosowanie
