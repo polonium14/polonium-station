@@ -1,0 +1,14 @@
+ent-Boombox = boombox
+    .desc = Grooves on the go!
+ent-BoomboxRed = red boombox
+    .desc = { ent-Boombox.desc }
+ent-BoomboxBlue = blue boombox
+    .desc = { ent-Boombox.desc }
+ent-BoomboxPink = pink boombox
+    .desc = { ent-Boombox.desc }
+ent-BoomboxPurple = purple boombox
+    .desc = { ent-Boombox.desc }
+ent-BoomboxGreen = green boombox
+    .desc = { ent-Boombox.desc }
+ent-BoomboxSlav = three stripe boombox
+    .desc = { ent-Boombox.desc }

@@ -64,4 +64,3 @@ names-scurret-last-dataset-47 = Przodkowie
 names-scurret-last-dataset-48 = Lasy
 names-scurret-last-dataset-49 = Sekrety
 names-scurret-last-dataset-50 = Kosmiczna fretka
-

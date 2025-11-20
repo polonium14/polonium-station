@@ -1,0 +1,13 @@
+ent-DinoRift = dinosaur rift
+    .desc = A rift created seconds in the past.
+ent-DinoRiftEasy = { ent-DinoRift }
+    .suffix = easy
+    .desc = { ent-DinoRift.desc }
+ent-DinoRiftMedium = { ent-DinoRift }
+    .suffix = medium
+    .desc = { ent-DinoRift.desc }
+ent-DinoRiftHard = { ent-DinoRift }
+    .suffix = hard
+    .desc = { ent-DinoRift.desc }
+ent-DinoRiftFinal = the final dinosaur rift
+    .desc = { ent-DinoRift.desc }

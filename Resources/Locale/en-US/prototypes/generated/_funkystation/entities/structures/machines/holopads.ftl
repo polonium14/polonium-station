@@ -1,0 +1,12 @@
+ent-HolopadNTRep = { ent-Holopad }
+    .suffix = Nanotrasen Representative
+    .desc = { ent-Holopad.desc }
+ent-HolopadInternalAffairs = { ent-Holopad }
+    .suffix = Internal Affairs
+    .desc = { ent-Holopad.desc }
+ent-HolopadMagistrate = { ent-Holopad }
+    .suffix = Magistrate
+    .desc = { ent-Holopad.desc }
+ent-HolopadServiceGeneral = { ent-Holopad }
+    .suffix = Service General
+    .desc = { ent-Holopad.desc }
