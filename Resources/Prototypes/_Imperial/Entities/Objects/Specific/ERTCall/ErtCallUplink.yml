@@ -15,7 +15,7 @@
       visible: true
     netsync: false
   - type: Item
-    sprite: Imperial/Other/ErtCall/ert_tablet.rsi
+    sprite: _Imperial/Objects/Specific/ErtCall/ert_tablet.rsi
     heldPrefix: device
   - type: UserInterface
     interfaces:
@@ -146,7 +146,7 @@
   suffix: ERT, DEADSQUAD, 60
   components:
   - type: Sprite
-    sprite: Imperial/Other/ErtCall/ert_tablet.rsi
+    sprite: _Imperial/Objects/Specific/ErtCall/ert_tablet.rsi
     layers:
     - state: device-on
     - state: device-deadsquad-anim

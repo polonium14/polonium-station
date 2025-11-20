@@ -13,7 +13,7 @@
 
 - type: entity
   parent: [GunSafeBaseSecure, BaseSecurityContraband]
-  id: GunSafeSubMachineGunDrozd
+  id: GunSafeSubMachineGunPMM
   name: Sejf na PMM Model-X
   components:
   - type: StorageFill

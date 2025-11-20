@@ -81,16 +81,6 @@
   - ERTUplinkAmmoCombat
 
 - type: listing
-  id: ErtCallUplinkMagazinePistolRubber
-  name: Pistol Magazine (Rubber)
-  description: Non-lethal rubber pistol rounds.
-  productEntity: MagazinePistolRubber
-  cost:
-    BlueSpaceCube: 2
-  categories:
-  - ERTUplinkAmmoCombat
-
-- type: listing
   id: ErtCallUplinkMagazineRifle
   name: Rifle Magazine
   description: Standard rifle ammunition.
@@ -475,21 +465,13 @@
   id: ErtCallUplinkOmnizineChemistryBottle
   name: Omnizine Bottle
   description: Broad-spectrum healing reagent.
-  productEntity: ChemistryBottleOmnizine
+  productEntity: OmnizineChemistryBottle
   cost:
     BlueSpaceCube: 10
   categories:
   - ERTUplinkMedial
 
-- type: listing
-  id: ErtCallUplinkThriveninChemistryBottle
-  name: Thrivenin Bottle
-  description: Advanced anti-toxin compound.
-  productEntity: ThriveninChemistryBottle
-  cost:
-    BlueSpaceCube: 5
-  categories:
-  - ERTUplinkMedial
+# TODO anti toxin
 
 - type: listing
   id: ErtCallUplinkHypospray
@@ -545,7 +527,7 @@
   id: ErtCallUplinkCompactDefibrillator
   name: Compact Defibrillator
   description: Portable revival device.
-  productEntity: CompactDefibrillator
+  productEntity: DefibrillatorCompact
   cost:
     BlueSpaceCube: 5
   categories:
@@ -1098,16 +1080,6 @@
   - ERTUplinkUtilities
 
 - type: listing
-  id: ErtCallUplinkMineShield
-  name: Mine Shield Crate
-  description: Protective anti-mine equipment.
-  productEntity: ERTCallCrateMineShieldImplant
-  cost:
-    BlueSpaceCube: 1
-  categories:
-  - ERTUplinkUtilities
-
-- type: listing
   id: ErtCallUplinkWeaponL6Saw
   name: L6 Light Machine Gun
   description: High-rate suppression weapon.
@@ -1207,7 +1179,7 @@
   cost:
     BlueSpaceCube: 1
   categories:
-  - ERTUplinkWeaponCombat
+  - ERTUplinkAmmoCombat
 
 - type: listing
   id: ErtCallUplinkWeaponPMMGunMagazine
@@ -1217,14 +1189,14 @@
   cost:
     BlueSpaceCube: 1
   categories:
-  - ERTUplinkWeaponCombat
+  - ERTUplinkAmmoCombat
 
 - type: listing
-  id: ErtCallUplinkWeaponBORGun
+  id: ErtCallUplinkWeaponBORGunMagazine
   name: BOR Magazine
   description: Ammunition for BOR sniper rifle.
   productEntity: BorSniperMagazine
   cost:
     BlueSpaceCube: 2
   categories:
-  - ERTUplinkWeaponCombat
+  - ERTUplinkAmmoCombat

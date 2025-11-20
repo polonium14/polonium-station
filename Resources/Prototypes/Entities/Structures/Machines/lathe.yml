@@ -1144,6 +1144,17 @@
     - MagazineBoxPistolLarge # Funkystation
     - MagazinePistolLargePractice # Funkystation
     - MagazineBoxPistolLargePractice # Funkystation
+    - VisMPSPistol
+    - VisMPSPistolMagazineEmpty
+    - VisMPSPistolMagazine
+    - VisMPSPistolMagazineIncendiary
+    - VisMPSPistolMagazineUranium
+    - VisMPSPistolMagazinePractice
+    - PMMMachineGunMagazineEmpty
+    - PMMMachineGunMagazine
+    - PMMMachineGunMagazineIncendiary
+    - PMMMachineGunMagazineUranium
+    - PMMMachineGunMagazinePractice
     - RiotShield
     - SpeedLoaderMagnum
     - SpeedLoaderMagnumEmpty
@@ -1298,6 +1309,18 @@
     - MagazineShotgunSlug
     - SpeedLoaderMagnum
     - SpeedLoaderMagnumEmpty
+    - VisMPSPistolMagazineEmpty
+    - VisMPSPistolMagazine
+    - VisMPSPistolMagazineIncendiary
+    - VisMPSPistolMagazineUranium
+    - VisMPSPistolMagazinePractice
+    - PMMMachineGunMagazineEmpty
+    - PMMMachineGunMagazine
+    - PMMMachineGunMagazineIncendiary
+    - PMMMachineGunMagazineUranium
+    - PMMMachineGunMagazinePractice
+    - BorSniperMagazineEmpty
+    - BorSniperMagazine
   - type: EmagLatheRecipes # Goobstation
     emagStaticRecipes:
     - MagazinePistolCaselessRifle # Goobstation
