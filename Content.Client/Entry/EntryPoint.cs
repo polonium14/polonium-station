@@ -206,6 +206,7 @@ namespace Content.Client.Entry
             _prototypeManager.RegisterIgnore("ghostRoleRaffleDecider");
             _prototypeManager.RegisterIgnore("story"); // Goobstation
             _prototypeManager.RegisterIgnore("storyBeat"); // Goobstation
+            _prototypeManager.RegisterIgnore("ertCall"); // Imperial
 
             _componentFactory.GenerateNetIds();
             _adminManager.Initialize();

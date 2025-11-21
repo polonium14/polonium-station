@@ -6,7 +6,7 @@ import glob
 from file import FluentFile
 
 class Project:
-    def __init__(self):
+    def __init__(self): # Nie należy zmieniać tych ścieżek.
         self.base_dir_path = pathlib.Path(os.path.abspath(os.curdir)).parent.parent.resolve()
         self.resources_dir_path = os.path.join(self.base_dir_path, 'Resources')
         self.locales_dir_path = os.path.join(self.resources_dir_path, 'Locale')

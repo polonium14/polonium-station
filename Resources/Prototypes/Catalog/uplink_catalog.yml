@@ -148,6 +148,7 @@
 # SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 starch <starchpersonal@gmail.com>
 # SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 nikitosych <nikitosyych@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -2579,3 +2580,63 @@
       tags:
       - NukeOpsUplink
   saleLimit: 1
+
+- type: listing
+  id: UplinkPistolVisMPS
+  name: uplink-pistol-vis-mps-name
+  description: uplink-pistol-vis-mps-desc
+  productEntity: VisMPSPistol
+  cost:
+    Telecrystal: 4
+  categories:
+  - UplinkWeaponry
+
+- type: listing
+  id: UplinkPistolVisMPSMagazine
+  name: uplink-pistol-vis-mps-magazine-name
+  description: uplink-pistol-vis-mps-magazine-desc
+  productEntity: VisMPSPistolMagazine
+  cost:
+    Telecrystal: 1
+  categories:
+  - UplinkAmmo
+
+- type: listing
+  id: UplinkPistolPMM
+  name: uplink-pistol-pmm-name
+  description: uplink-pistol-pmm-desc
+  productEntity: PMMMachineGun
+  cost:
+    Telecrystal: 6
+  categories:
+  - UplinkWeaponry
+
+- type: listing
+  id: UplinkPistolPMMMagazine
+  name: uplink-pistol-pmm-magazine-name
+  description: uplink-pistol-pmm-magazine-desc
+  productEntity: PMMMachineGunMagazine
+  cost:
+    Telecrystal: 1
+  categories:
+  - UplinkAmmo
+
+- type: listing
+  id: UplinkSniperBor
+  name: uplink-sniper-bor-name
+  description: uplink-sniper-bor-desc
+  productEntity: BORSniperGun
+  cost:
+    Telecrystal: 16
+  categories:
+  - UplinkWeaponry
+
+- type: listing
+  id: UplinkSniperBorMagazine
+  name: uplink-sniper-bor-magazine-name
+  description: uplink-sniper-bor-magazine-desc
+  productEntity: BorSniperMagazine
+  cost:
+    Telecrystal: 1
+  categories:
+  - UplinkAmmo

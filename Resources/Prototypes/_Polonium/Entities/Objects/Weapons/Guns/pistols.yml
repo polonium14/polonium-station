@@ -59,4 +59,6 @@
     zeroVisible: true
   # wygląd
   - type: Appearance
+  - type: StaticPrice
+    price: 1800
 

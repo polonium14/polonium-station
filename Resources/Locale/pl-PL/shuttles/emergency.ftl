@@ -1,5 +1,6 @@
 # Commands
 
+
 ## Delay shuttle round end
 
 emergency-shuttle-command-round-desc = Zatrzymuje odliczanie rozpoczynane gdy wahadłowiec wyjdzie z hiperprzestrzeni.

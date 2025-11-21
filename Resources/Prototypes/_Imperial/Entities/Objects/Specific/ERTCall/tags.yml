@@ -1,0 +1,11 @@
+- type: Tag
+  id: ErtUplinkCombat
+
+- type: Tag
+  id: ErtUplinkDeadSquad
+
+- type: Tag
+  id: ErtUplinkCBURN
+
+- type: Tag
+  id: ErtUplinkERT

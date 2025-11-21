@@ -1,5 +1,6 @@
 # UI
 
+
 ## Window
 
 air-alarm-ui-access-denied = Brak wystarczających uprawnień!
@@ -40,6 +41,7 @@ air-alarm-ui-mode-panic = Tryb paniki
 air-alarm-ui-mode-none = Brak
 
 ## Widgets
+
 
 ### General
 

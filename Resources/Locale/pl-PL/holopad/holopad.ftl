@@ -1,7 +1,7 @@
 # Window headers
 holopad-window-title = { CAPITALIZE($title) }
-holopad-window-subtitle =  [color=white][bold]Holographic communication system[/bold][/color]
-holopad-window-options =  [color=darkgray][font size=10][italic]Please select an option from the list below[/italic][/font][/color]
+holopad-window-subtitle = [color=white][bold]Holographic communication system[/bold][/color]
+holopad-window-options = [color=darkgray][font size=10][italic]Please select an option from the list below[/italic][/font][/color]
 # Call status
 holopad-window-no-calls-in-progress = No holo-calls in progress
 holopad-window-incoming-call = Incoming holo-call from:
@@ -11,7 +11,7 @@ holopad-window-call-in-progress = Holo-call in progress
 holopad-window-call-ending = Disconnecting...
 holopad-window-call-rejected = Unable to establish a connection
 holopad-window-ai-request = Your presence is requested by:
-holopad-window-emergency-broadcast-in-progress =  [color=#cf2f2f][bold]Emergency broadcast in progress[/bold][/color]
+holopad-window-emergency-broadcast-in-progress = [color=#cf2f2f][bold]Emergency broadcast in progress[/bold][/color]
 holopad-window-controls-locked-out = Control of this device has been locked to:
 holopad-window-controls-unlock-countdown = It will automatically unlock in: { $countdown }
 # Buttons

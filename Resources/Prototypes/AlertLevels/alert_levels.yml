@@ -82,7 +82,7 @@
       announcement: alert-level-epsilon-announcement
       selectable: false
       sound:
-        path: /Audio/Misc/epsilon.ogg
+        path: /Audio/_Polonium/Announcements/epsilon.ogg
         params:
           volume: -2
       disableSelection: true

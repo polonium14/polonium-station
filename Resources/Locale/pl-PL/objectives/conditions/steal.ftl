@@ -1,9 +1,13 @@
-objective-condition-steal-title-no-owner = Steal the { $itemName }.
-objective-condition-steal-title-alive-no-owner = Steal { $itemName }.
-objective-condition-steal-title = Steal the { $owner }'s { $itemName }.
-objective-condition-steal-description = We need you to steal { $itemName }. Don't get caught.
-objective-condition-steal-station = station
-objective-condition-steal-Ian = head of personnel's corgi
-objective-condition-thief-description = The { $itemName } would be a great addition to my collection!
-objective-condition-thief-animal-description = The { $itemName } would be a great addition to my collection! Most importantly, alive.
-objective-condition-thief-multiply-description = I need to get { $count } { MAKEPLURAL($itemName) } (any) and take them with me.
+objective-condition-steal-title-no-owner = Ukradnij {$itemName}.
+objective-condition-steal-title-alive-no-owner = Ukradnij {$itemName}.
+objective-condition-steal-title = Ukradnij {$itemName} należące do {$owner}.
+objective-condition-steal-description = Potrzebujemy abyś ukradł {$itemName}. Nie zostań złapany.
+objective-condition-steal-station = stację
+objective-condition-steal-Ian = korgi szefa personelu
+objective-condition-thief-description = {$itemName} będzie świetnym dodatkiem do mojej kolekcji!
+objective-condition-thief-animal-description = {$itemName} będzie świetnym dodatkiem do mojej kolekcji! Ale najważniejsze {GENDER($itemName) ->
+        [male] żywy
+        [female] żywa
+        *[other] żywe
+    }
+objective-condition-thief-multiply-description = Potrzebuję wiąć ze sobą dowolne {$count} {$itemName}.

@@ -17,6 +17,7 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+
 # Surplus Hardsuits
 
 uplink-hardsuit-syndiemedic-name = Gorlex Agent Hardsuit
@@ -85,6 +86,7 @@ uplink-shotgun-magazine-slug-desc = Shotgun drum with 8 slug shells. Compatible 
 
 #uplink-high-caliber-box-name = .50 Ammo box
 #uplink-high-caliber-box-desc = A box of 30 .50 caliber anti-materiel rounds.
+
 
 # Mechs
 

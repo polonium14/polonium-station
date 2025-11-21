@@ -1,26 +1,29 @@
 ## UI
 
-ui-disposal-unit-title = Disposal Unit
-ui-disposal-unit-label-state = State:
-ui-disposal-unit-label-pressure = Pressure:
-ui-disposal-unit-label-status = Ready
-ui-disposal-unit-button-flush = Flush
-ui-disposal-unit-button-eject = Eject Contents
-ui-disposal-unit-button-power = Power
+ui-disposal-unit-title = Zsyp
+
+ui-disposal-unit-label-state = Stan:
+ui-disposal-unit-label-pressure = Ciśnienie:
+ui-disposal-unit-label-status = Gotowy
+
+ui-disposal-unit-button-flush = Wyślij zawartość
+ui-disposal-unit-button-eject = Wyrzuć zawartość
+ui-disposal-unit-button-power = Zasilanie
 
 ## Verbs
-
-disposal-flush-verb-get-data-text = Flush
-disposal-self-insert-verb-get-data-text = Jump inside
-disposal-eject-verb-get-data-text = Eject contents
+disposal-flush-verb-get-data-text = Wyślij
+disposal-self-insert-verb-get-data-text = Wskocz
+disposal-eject-verb-get-data-text = Wyjmij zawartość
 
 ## No hands
+disposal-unit-no-hands = Nie masz rąk!
 
 disposal-unit-no-hands = You don't have hands!
 # state
-disposal-unit-state-Ready = Ready
+disposal-unit-state-Ready = Gotowy
 # Yes I want it to always say Pressurizing
-disposal-unit-state-Flushed = Pressurizing
-disposal-unit-state-Pressurizing = Pressurizing
+disposal-unit-state-Flushed = Budowanie ciśnienia
+disposal-unit-state-Pressurizing = Budowanie ciśnienia
+
 # putting people in
-disposal-unit-being-inserted = { CAPITALIZE($user) } is trying to force you into a disposal chute!
+disposal-unit-being-inserted = {CAPITALIZE($user)} próbuje włożyć cię do zsypu!

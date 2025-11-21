@@ -69,6 +69,7 @@ flavor-complex-mustard = like mustard
 
 # Food-specific flavors.
 
+
 ## Food chemicals. In case you get something that has this inside.
 
 flavor-complex-nutriment = like nutrition
@@ -133,6 +134,7 @@ flavor-complex-cherry = like cherries
 
 # use it when there multiple types of veggies
 
+
 ## Complex foodstuffs (cooked foods, joke flavors, etc)
 
 flavor-complex-pink = like pink
@@ -188,6 +190,7 @@ flavor-complex-compressed-meat = like compressed meat
 flavor-complex-dog-food = like dog food
 
 # Drink-specific flavors.
+
 
 ## Generic alcohol/soda taste. This should be replaced with an actual flavor profile.
 
@@ -341,6 +344,7 @@ flavor-complex-bacchus-blessing = like a wall of bricks
 flavor-complex-pilk = like sweet milk
 
 # Medicine/chemical-specific flavors.
+
 
 ## Generic flavors.
 
