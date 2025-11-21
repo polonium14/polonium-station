@@ -336,7 +336,7 @@
     Steel: 25
     Plastic: 120
 
-# Polonoim addition
+# Polonium addition
 - type: latheRecipe
   parent: BaseEmptyAmmoRecipe
   id: PMMMachineGunMagazineEmpty
