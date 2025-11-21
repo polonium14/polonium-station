@@ -66,30 +66,6 @@ namespace Content.Shared.Localizations
             _loc.AddFunction(culture, "PLAYTIME", FormatPlaytime);
             _loc.AddFunction(culture, "MAKEPLURAL", FormatMakePlural);
             _loc.AddFunction(culture, "MANY", FormatMany);
-
-            // English (fallback)
-            _loc.LoadCulture(cultureEn);
-            _loc.SetFallbackCluture(cultureEn);
-            _loc.AddFunction(cultureEn, "PRESSURE", FormatPressure);
-            _loc.AddFunction(cultureEn, "POWERWATTS", FormatPowerWatts);
-            _loc.AddFunction(cultureEn, "POWERJOULES", FormatPowerJoules);
-            // NOTE: ENERGYWATTHOURS() still takes a value in joules, but formats as watt-hours.
-            _loc.AddFunction(cultureEn, "ENERGYWATTHOURS", FormatEnergyWattHours);
-            _loc.AddFunction(cultureEn, "UNITS", FormatUnits);
-            _loc.AddFunction(cultureEn, "TOSTRING", args => FormatToString(cultureEn, args));
-            _loc.AddFunction(cultureEn, "LOC", FormatLoc);
-            _loc.AddFunction(cultureEn, "NATURALFIXED", FormatNaturalFixed);
-            _loc.AddFunction(cultureEn, "NATURALPERCENT", FormatNaturalPercent);
-            _loc.AddFunction(cultureEn, "PLAYTIME", FormatPlaytime);
-
-            /*
-             * The following language functions are specific to the english localization. When working on your own
-             * localization you should NOT modify these, instead add new functions specific to your language/culture.
-             * This ensures the english translations continue to work as expected when fallbacks are needed.
-             */
-
-            _loc.AddFunction(cultureEn, "MAKEPLURAL", FormatMakePlural);
-            _loc.AddFunction(cultureEn, "MANY", FormatMany);
         }
 
         private ILocValue FormatMany(LocArgs args)

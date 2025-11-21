@@ -39,7 +39,7 @@
 - changed-files:
   - any-glob-to-any-file: "**/*.cs"
 
-"(/) Tłumaczenie":
+"Tłumaczenie":
 - changed-files:
   - any-glob-to-any-file: '**/*.ftl'
 

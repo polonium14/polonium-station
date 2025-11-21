@@ -1,4 +1,4 @@
 # stripall
-cmd-stripall-desc = Strips an entity of all their inventory and hands.
-cmd-stripall-help = Usage: stripall <EntityUid>
+cmd-stripall-desc = Zdejmuje z bytu cały ekwipunek włączając trzymane przedmioty.
+cmd-stripall-help = Użycie: stripall <EntityUid>
 cmd-stripall-player-completion = <EntityUid>
