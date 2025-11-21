@@ -19,7 +19,7 @@ thief-backpack-button-deselect = Wybrany [X]
 
 thief-backpack-category-chameleon-name = zestaw kameleonowy
 thief-backpack-category-chameleon-description =
-    Jesteś wszyskimi i nikim, jesteś mistrzem przebrania.
+    Jesteś wszystkimi i nikim, jesteś mistrzem przebrania.
     Zawiera: pełny zestaw ubrań kameleonowych, kameleonowy
     projektor oraz ID agenta.
     Przebierz się za kogokolwiek i cokolwiek.
