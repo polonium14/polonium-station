@@ -4,8 +4,8 @@ meta:
   engineVersion: 266.0.0
   forkId: ""
   forkVersion: ""
-  time: 11/19/2025 12:15:37
-  entityCount: 7256
+  time: 11/21/2025 12:38:59
+  entityCount: 7279
 maps:
 - 1
 grids:
@@ -751,11 +751,6 @@ entities:
             912: 30,10
         - node:
             color: '#FFFFFFFF'
-            id: ConcreteTrimLineS
-          decals:
-            293: -18,9
-        - node:
-            color: '#FFFFFFFF'
             id: ConcreteTrimLineW
           decals:
             1879: -29,28
@@ -891,16 +886,12 @@ entities:
             274: -20,8
             275: -21,9
             276: -21,8
-            277: -21,5
-            278: -21,6
             279: -19,8
             280: -17,13
             288: -22,10
             289: -22,10
             291: -20,9
             292: -20,9
-            294: -18,9
-            295: -18,9
         - node:
             cleanable: True
             angle: -1.5707963267948966 rad
@@ -1071,16 +1062,8 @@ entities:
             color: '#FFFFFFFF'
             id: DirtHeavyMonotile
           decals:
-            252: -21,5
-            253: -21,5
             254: -21,8
             255: -21,8
-        - node:
-            color: '#FFFFFFFF'
-            id: DirtLight
-          decals:
-            250: -21,6
-            251: -21,6
         - node:
             cleanable: True
             color: '#FFFFFFFF'
@@ -1584,7 +1567,6 @@ entities:
             282: -21,9
             283: -20,8
             284: -21,8
-            285: -21,6
             286: -21,7
             287: -21,7
         - node:
@@ -1897,6 +1879,11 @@ entities:
             485: -8,11
             486: -9,11
             487: -10,11
+        - node:
+            color: '#FFFFFFFF'
+            id: cyka
+          decals:
+            3381: -18.213264,11.027208
         - node:
             cleanable: True
             color: '#D381C996'
@@ -2431,6 +2418,11 @@ entities:
             id: p
           decals:
             323: 19.831013,-6.0035434
+        - node:
+            color: '#FFFFFFFF'
+            id: revolution
+          decals:
+            3380: -20.95834,10.010684
         - node:
             color: '#D5C69719'
             id: splatter
@@ -3686,7 +3678,8 @@ entities:
           5,1:
             0: 49629
           5,2:
-            0: 65535
+            0: 65471
+            4: 64
           5,3:
             0: 61695
           5,4:
@@ -4100,6 +4093,29 @@ entities:
           moles:
           - 21.824879
           - 82.10312
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+        - volume: 2500
+          temperature: 293.14975
+          moles:
+          - 20.078888
+          - 75.53487
           - 0
           - 0
           - 0
@@ -8178,6 +8194,13 @@ entities:
     - type: Transform
       pos: 15.5,-8.5
       parent: 2
+- proto: AutodocCircuitboard
+  entities:
+  - uid: 3524
+    components:
+    - type: Transform
+      pos: -28.39612,-5.862753
+      parent: 2
 - proto: Autolathe
   entities:
   - uid: 172
@@ -8251,6 +8274,13 @@ entities:
     - type: Transform
       pos: 7.5,-7.5
       parent: 5654
+- proto: BaseBallBat
+  entities:
+  - uid: 3522
+    components:
+    - type: Transform
+      pos: -47.248863,24.34946
+      parent: 2
 - proto: BaseComputer
   entities:
   - uid: 5683
@@ -8349,11 +8379,6 @@ entities:
     components:
     - type: Transform
       pos: -24.5,-8.5
-      parent: 2
-  - uid: 193
-    components:
-    - type: Transform
-      pos: -29.5,30.5
       parent: 2
   - uid: 194
     components:
@@ -8736,6 +8761,13 @@ entities:
     components:
     - type: Transform
       pos: -16.5,21.5
+      parent: 2
+- proto: BoomboxPink
+  entities:
+  - uid: 3529
+    components:
+    - type: Transform
+      pos: 31.105968,-6.507912
       parent: 2
 - proto: BoozeDispenser
   entities:
@@ -16466,6 +16498,24 @@ entities:
     - type: Transform
       pos: -2.4814332,1.8588014
       parent: 2
+- proto: CargoRequestScienceComputerCircuitboard
+  entities:
+  - uid: 2006
+    components:
+    - type: Transform
+      parent: 1985
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+    - type: InsideEntityStorage
+- proto: CargoTechFabCircuitboard
+  entities:
+  - uid: 3514
+    components:
+    - type: Transform
+      pos: 23.615911,-6.1750565
+      parent: 2
 - proto: Carpet
   entities:
   - uid: 1439
@@ -17109,11 +17159,6 @@ entities:
     components:
     - type: Transform
       pos: -23.5,-7.5
-      parent: 2
-  - uid: 1526
-    components:
-    - type: Transform
-      pos: -29.5,30.5
       parent: 2
   - uid: 1527
     components:
@@ -19332,6 +19377,13 @@ entities:
     - type: Transform
       pos: -20.5,1.5
       parent: 2
+- proto: ClothingHandsGlovesNitrile
+  entities:
+  - uid: 3528
+    components:
+    - type: Transform
+      pos: 13.533875,17.416376
+      parent: 2
 - proto: ClothingHeadHatBeretHoS
   entities:
   - uid: 14
@@ -19360,6 +19412,13 @@ entities:
     components:
     - type: Transform
       pos: 12.489254,22.393276
+      parent: 2
+- proto: ClothingHeadHatHoodCulthood
+  entities:
+  - uid: 3516
+    components:
+    - type: Transform
+      pos: 1.2410734,43.330013
       parent: 2
 - proto: ClothingHeadHatHoodWinterHOS
   entities:
@@ -19687,6 +19746,13 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
+- proto: ClothingOuterRobesCult
+  entities:
+  - uid: 3517
+    components:
+    - type: Transform
+      pos: 1.1921511,42.632385
+      parent: 2
 - proto: ClothingOuterWinterHoS
   entities:
   - uid: 4
@@ -20634,6 +20700,43 @@ entities:
     - type: Transform
       pos: 22.5,9.5
       parent: 2
+    - type: EntityStorage
+      air:
+        volume: 200
+        immutable: False
+        temperature: 293.14673
+        moles:
+        - 1.7459903
+        - 6.568249
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+    - type: ContainerContainer
+      containers:
+        entity_storage: !type:Container
+          showEnts: False
+          occludes: True
+          ents:
+          - 2006
+        paper_label: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
 - proto: CrateLivestock
   entities:
   - uid: 1986
@@ -20850,13 +20953,6 @@ entities:
     - type: Transform
       pos: -24.5,-9.5
       parent: 2
-- proto: CurtainsOrangeOpen
-  entities:
-  - uid: 2006
-    components:
-    - type: Transform
-      pos: -29.5,30.5
-      parent: 2
 - proto: CurtainSpawner
   entities:
   - uid: 7293
@@ -20937,6 +21033,13 @@ entities:
       parent: 2
     - type: WarpPoint
       location: brig
+- proto: DefaultStationBeaconCargoDocks
+  entities:
+  - uid: 3515
+    components:
+    - type: Transform
+      pos: 34.5,11.5
+      parent: 2
 - proto: DefaultStationBeaconChapel
   entities:
   - uid: 2014
@@ -24663,6 +24766,16 @@ entities:
     - type: Transform
       pos: -18.514608,-0.3739791
       parent: 2
+- proto: FoodBurgerBaseball
+  entities:
+  - uid: 3523
+    components:
+    - type: Transform
+      pos: -47.377285,24.367819
+      parent: 2
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
 - proto: FoodCartCold
   entities:
   - uid: 6081
@@ -32908,6 +33021,69 @@ entities:
     - type: Transform
       pos: 20.714445,-7.4805245
       parent: 2
+- proto: N14BedMattressDirty2
+  entities:
+  - uid: 3510
+    components:
+    - type: Transform
+      pos: -29.5,30.5
+      parent: 2
+- proto: N14GrandfatherClock
+  entities:
+  - uid: 3511
+    components:
+    - type: Transform
+      pos: -21.5,12.5
+      parent: 2
+- proto: N14RedBarrel
+  entities:
+  - uid: 193
+    components:
+    - type: Transform
+      pos: 33.5,14.5
+      parent: 2
+  - uid: 1526
+    components:
+    - type: Transform
+      pos: 33.5,15.5
+      parent: 2
+  - uid: 3513
+    components:
+    - type: Transform
+      pos: 32.5,15.5
+      parent: 2
+- proto: N14RedBarrelOpen
+  entities:
+  - uid: 3512
+    components:
+    - type: Transform
+      pos: 32.5,14.5
+      parent: 2
+- proto: N14WallDecorClock
+  entities:
+  - uid: 3518
+    components:
+    - type: Transform
+      pos: -16.5,19.5
+      parent: 2
+  - uid: 3519
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -4.5,-3.5
+      parent: 2
+  - uid: 3520
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 12.5,-0.5
+      parent: 2
+  - uid: 3521
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 7.5,39.5
+      parent: 2
 - proto: Nettle
   entities:
   - uid: 3554
@@ -32977,6 +33153,13 @@ entities:
     components:
     - type: Transform
       pos: 1.5,11.5
+      parent: 2
+- proto: OperatingTableCircuitboard
+  entities:
+  - uid: 3526
+    components:
+    - type: Transform
+      pos: 13.619678,17.755585
       parent: 2
 - proto: OreBox
   entities:
@@ -33424,6 +33607,13 @@ entities:
     - type: Transform
       pos: 7.503281,-7.487985
       parent: 5654
+- proto: PersonalAI
+  entities:
+  - uid: 3531
+    components:
+    - type: Transform
+      pos: -19.227543,11.582375
+      parent: 2
 - proto: PetCarrier
   entities:
   - uid: 3592
@@ -33521,6 +33711,13 @@ entities:
     components:
     - type: Transform
       pos: -29.5,-3.5
+      parent: 2
+- proto: PlushieGodo
+  entities:
+  - uid: 3530
+    components:
+    - type: Transform
+      pos: -19.376997,15.573315
       parent: 2
 - proto: PlushieRainbowLizard
   entities:
@@ -37177,6 +37374,13 @@ entities:
     - type: Transform
       pos: 15.5,16.5
       parent: 2
+- proto: ReagentGrinderIndustrialMachineCircuitboard
+  entities:
+  - uid: 3525
+    components:
+    - type: Transform
+      pos: -24.543482,-7.019347
+      parent: 2
 - proto: Recycler
   entities:
   - uid: 4096
@@ -39858,6 +40062,13 @@ entities:
     - type: Transform
       pos: 6.5,-18.5
       parent: 2
+- proto: SurgeryKitFilled
+  entities:
+  - uid: 3527
+    components:
+    - type: Transform
+      pos: 12.543385,17.486324
+      parent: 2
 - proto: SurveillanceCameraGeneral
   entities:
   - uid: 4450
@@ -41511,6 +41722,13 @@ entities:
     components:
     - type: Transform
       pos: 19.490835,3.734476
+      parent: 2
+- proto: ToolboxEmergencyFilled
+  entities:
+  - uid: 3532
+    components:
+    - type: Transform
+      pos: 21.547,-24.507978
       parent: 2
 - proto: ToolboxGoldFilled
   entities:
