@@ -4,8 +4,8 @@ meta:
   engineVersion: 266.0.0
   forkId: ""
   forkVersion: ""
-  time: 11/18/2025 19:35:57
-  entityCount: 4426
+  time: 11/21/2025 02:55:18
+  entityCount: 4439
 maps:
 - 1
 grids:
@@ -3466,9 +3466,11 @@ entities:
   - uid: 1294
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 25.547014,-4.569076
+      pos: 25.826626,-4.2696056
       parent: 2
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
 - proto: BarSignSpacebucks
   entities:
   - uid: 258
@@ -3739,6 +3741,16 @@ entities:
     - type: Transform
       pos: 14.382325,15.637639
       parent: 2
+- proto: BoxFunBoxing
+  entities:
+  - uid: 4435
+    components:
+    - type: Transform
+      pos: -7.477587,-3.4906406
+      parent: 2
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
 - proto: BoxInflatable
   entities:
   - uid: 4000
@@ -8874,6 +8886,16 @@ entities:
     - type: Transform
       pos: 4.5,-15.5
       parent: 2
+- proto: CargoTechFabCircuitboard
+  entities:
+  - uid: 4429
+    components:
+    - type: Transform
+      pos: 25.811,-4.6605024
+      parent: 2
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
 - proto: CarpetBlack
   entities:
   - uid: 1435
@@ -8920,6 +8942,31 @@ entities:
     - type: Transform
       pos: -0.5,14.5
       parent: 2
+- proto: CartridgePistolPractice
+  entities:
+  - uid: 4433
+    components:
+    - type: Transform
+      pos: 31.346378,-12.416596
+      parent: 2
+- proto: CartridgePistolUranium
+  entities:
+  - uid: 4431
+    components:
+    - type: Transform
+      pos: -12.487521,1.541208
+      parent: 2
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+  - uid: 4432
+    components:
+    - type: Transform
+      pos: 0.7027087,-25.503136
+      parent: 2
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
 - proto: Catwalk
   entities:
   - uid: 112
@@ -12297,6 +12344,11 @@ entities:
     - type: Transform
       pos: 12.5,18.5
       parent: 2
+    - type: UserInterface
+      actors:
+        enum.StorageUiKey.Key:
+        - invalid
+    - type: ActiveUserInterface
 - proto: DrinkHotCoffee
   entities:
   - uid: 1289
@@ -12324,6 +12376,13 @@ entities:
     components:
     - type: Transform
       pos: 0.3060023,9.644062
+      parent: 2
+- proto: EmergencyPartyKit
+  entities:
+  - uid: 4434
+    components:
+    - type: Transform
+      pos: -11.513607,12.519621
       parent: 2
 - proto: EmergencyRollerBed
   entities:
@@ -13265,6 +13324,9 @@ entities:
       rot: 3.141592653589793 rad
       pos: 14.5,-2.5
       parent: 2
+    - type: Door
+      secondsUntilStateChange: -153.92479
+      state: Closing
     - type: DeviceNetwork
       deviceLists:
       - 2681
@@ -21501,7 +21563,7 @@ entities:
     - type: Transform
       pos: 28.5,12.5
       parent: 2
-- proto: GunSafeSubMachineGunDrozd
+- proto: GunSafeSubMachineGunPMM
   entities:
   - uid: 4222
     components:
@@ -22039,6 +22101,13 @@ entities:
     components:
     - type: Transform
       pos: 31.669527,10.532795
+      parent: 2
+- proto: Jukebox
+  entities:
+  - uid: 4428
+    components:
+    - type: Transform
+      pos: -0.5,14.5
       parent: 2
 - proto: KitchenElectricGrill
   entities:
@@ -22654,6 +22723,13 @@ entities:
     - type: Transform
       pos: 7.5,-27.5
       parent: 2
+- proto: MaterialSiloMachineCircuitboard
+  entities:
+  - uid: 4430
+    components:
+    - type: Transform
+      pos: 6.1334343,-14.009293
+      parent: 2
 - proto: MedalCase
   entities:
   - uid: 1429
@@ -22771,6 +22847,21 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 20.5,-6.5
+      parent: 2
+- proto: N14WallDecorCalendar
+  entities:
+  - uid: 4438
+    components:
+    - type: Transform
+      pos: 8.5,17.5
+      parent: 2
+- proto: N14WallDecorClock
+  entities:
+  - uid: 4439
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 18.5,2.5
       parent: 2
 - proto: NitrogenCanister
   entities:
@@ -22926,6 +23017,19 @@ entities:
     - type: Transform
       pos: 15.636214,15.544516
       parent: 2
+- proto: PaperStickyNotePink
+  entities:
+  - uid: 4427
+    components:
+    - type: Transform
+      pos: 17.713158,17.522709
+      parent: 2
+    - type: Paper
+      content: >
+        Żadnego piwa! Wracaj do pracy!
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
 - proto: PersonalAI
   entities:
   - uid: 2824
@@ -23003,6 +23107,16 @@ entities:
     - type: Transform
       pos: 26.463293,2.5566661
       parent: 2
+- proto: PlushieItanKio
+  entities:
+  - uid: 4436
+    components:
+    - type: Transform
+      pos: 16.44604,12.740892
+      parent: 2
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
 - proto: PonderingOrb
   entities:
   - uid: 4085
@@ -24830,8 +24944,11 @@ entities:
   - uid: 1149
     components:
     - type: Transform
-      pos: 25.5,-4.5
+      pos: 25.326626,-4.472872
       parent: 2
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
   - uid: 4410
     components:
     - type: Transform
@@ -29709,6 +29826,16 @@ entities:
     - type: Transform
       pos: 29.473183,9.380962
       parent: 2
+- proto: WehpetInstrument
+  entities:
+  - uid: 4437
+    components:
+    - type: Transform
+      pos: 25.512133,2.9889417
+      parent: 2
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
 - proto: WeldingFuelTankFull
   entities:
   - uid: 833
