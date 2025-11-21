@@ -46,7 +46,7 @@ thief-backpack-category-syndie-description =
 
 thief-backpack-category-sleeper-name = zestaw śpiocha
 thief-backpack-category-sleeper-description =
-    Dopuki nie zamkniemy powiek na zawsze, używaj swojej nielegalnej recepty
+    Dopóki nie zamkniemy powiek na zawsze, używaj swojej nielegalnej recepty
     aby trzymać ludzi przy śnie.
     Zawiera: Zbiornik usypiającego podtlenku azotu, dwie butelki nokturniny,
     i igłopis.
