@@ -54,7 +54,7 @@ thief-backpack-category-sleeper-description =
 thief-backpack-category-communicator-name = zestaw łącznika
 thief-backpack-category-communicator-description =
     Pieniądze to władza, tajemnice są walutą. Używaj swojego śliskiego
-    języga i bogactwa aby przejąć stację.
+    języka i bogactwa aby przejąć stację.
     Zawiera: Główna karta szyfrowania do wszystkich kanałów stacji,
     długopis CyberSun, kameleonowa maska głosowa i 20 tysięcy speso
     w walizce.
