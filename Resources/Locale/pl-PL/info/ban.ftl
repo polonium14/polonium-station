@@ -19,40 +19,34 @@ cmd-ban-hint-duration-3 = 3 dni
 cmd-ban-hint-duration-4 = 1 tydzień
 cmd-ban-hint-duration-5 = 2 tygodnie
 cmd-ban-hint-duration-6 = 1 miesiąc
-
 # ban panel
 cmd-banpanel-desc = Otwiera panel banów
 cmd-banpanel-help = Użycie: banpanel [nazwa lub GUID użytkownika]
 cmd-banpanel-server = Nie można używać z poziomu konsoli serwera
 cmd-banpanel-player-err = Nie znaleziono podanego gracza
-
 # listbans
 cmd-banlist-desc = Wyświetla aktywne bany użytkownika.
 cmd-banlist-help = Użycie: banlist <nazwa lub ID użytkownika>
-cmd-banlist-empty = Nie znaleziono aktywnych banów dla {$user}
+cmd-banlist-empty = Nie znaleziono aktywnych banów dla { $user }
 cmd-banlist-hint = <nazwa/ID użytkownika>
-
+cmd-banlistF-hint = <name/user ID>
 cmd-ban_exemption_update-desc = Ustawia wyjątek od określonego rodzaju bana dla gracza.
-cmd-ban_exemption_update-help = Użycie: ban_exemption_update <gracz> <flaga> [<flaga> [...]]
+cmd-ban_exemption_update-help =
+    Użycie: ban_exemption_update <gracz> <flaga> [<flaga> [...]]
     Podaj wiele flag, aby nadać graczowi kilka wyjątków od banów.
     Aby usunąć wszystkie wyjątki, uruchom tę komendę i podaj "None" jako jedyną flagę.
-
-
 cmd-ban_exemption_update-nargs = Oczekiwano co najmniej 2 argumentów
-cmd-ban_exemption_update-locate = Nie udało się znaleźć gracza '{$player}'.
-cmd-ban_exemption_update-invalid-flag = Nieprawidłowa flaga '{$flag}'.
-cmd-ban_exemption_update-success = Zaktualizowano wyjątki od banów dla '{$player}' ({$uid}).
+cmd-ban_exemption_update-locate = Nie udało się znaleźć gracza '{ $player }'.
+cmd-ban_exemption_update-invalid-flag = Nieprawidłowa flaga '{ $flag }'.
+cmd-ban_exemption_update-success = Zaktualizowano wyjątki od banów dla '{ $player }' ({ $uid }).
 cmd-ban_exemption_update-arg-player = <gracz>
 cmd-ban_exemption_update-arg-flag = <flaga>
-
 cmd-ban_exemption_get-desc = Wyświetla wyjątki od banów dla określonego gracza.
 cmd-ban_exemption_get-help = Użycie: ban_exemption_get <gracz>
-
 cmd-ban_exemption_get-nargs = Oczekiwano dokładnie 1 argumentu
 cmd-ban_exemption_get-none = Użytkownik nie jest wyłączony z żadnych banów.
-cmd-ban_exemption_get-show = Użytkownik jest wyłączony z następujących banów: {$flags}.
+cmd-ban_exemption_get-show = Użytkownik jest wyłączony z następujących banów: { $flags }.
 cmd-ban_exemption_get-arg-player = <gracz>
-
 ban-panel-title = Panel banów
 ban-panel-player = Gracz
 ban-panel-ip = IP
@@ -83,10 +77,8 @@ ban-panel-erase = Usuń wiadomości na czacie i gracza z rundy
 ban-panel-situation-round = Runda sytuacji:
 
 # Ban string
-server-ban-string = {$admin} utworzył ban serwerowy o surowości {$severity}, który wygasa {$expires} dla [{$name}, {$ip}, {$hwid}], z powodem: {$reason}
-server-ban-string-no-pii = {$admin} utworzył ban serwerowy o surowości {$severity}, który wygasa {$expires} dla {$name} z powodem: {$reason}
+server-ban-string = { $admin } utworzył ban serwerowy o surowości { $severity }, który wygasa { $expires } dla [{ $name }, { $ip }, { $hwid }], z powodem: { $reason }
+server-ban-string-no-pii = { $admin } utworzył ban serwerowy o surowości { $severity }, który wygasa { $expires } dla { $name } z powodem: { $reason }
 server-ban-string-never = nigdy
-
-
 # Kick on ban
 ban-kick-reason = Zostałeś zbanowany

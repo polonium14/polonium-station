@@ -1,19 +1,18 @@
 admin-smite-chess-self = Czujesz się wyjątkowo mały.
-admin-smite-chess-others = {CAPITALIZE($name)} kurczy się na szachownicę!
+admin-smite-chess-others = { CAPITALIZE($name) } kurczy się na szachownicę!
 admin-smite-set-alight-self = Wybuchasz płomieniami!
-admin-smite-set-alight-others = {CAPITALIZE($name)} wybucha płomieniami!
+admin-smite-set-alight-others = { CAPITALIZE($name) } wybucha płomieniami!
 admin-smite-remove-blood-self = Czujesz się lżejszy i zimny.
-admin-smite-remove-blood-others = {CAPITALIZE($name)} traci krew na całą podłogę!
+admin-smite-remove-blood-others = { CAPITALIZE($name) } traci krew na całą podłogę!
 admin-smite-vomit-organs-self = Wymiotujesz i czujesz się dość pusty!
-admin-smite-vomit-organs-others = {CAPITALIZE($name)} wymiotuje swoimi organami!
+admin-smite-vomit-organs-others = { CAPITALIZE($name) } wymiotuje swoimi organami!
 admin-smite-remove-hands-self = Twoje ręce odpadają!
-admin-smite-remove-hands-other = Ręce {CAPITALIZE($name)} odpadają!
-admin-smite-turned-ash-other = {CAPITALIZE($name)} zamienia się w kupkę popiołu!
+admin-smite-remove-hands-other = Ręce { CAPITALIZE($name) } odpadają!
+admin-smite-turned-ash-other = { CAPITALIZE($name) } zamienia się w kupkę popiołu!
 admin-smite-stomach-removal-self = Twój żołądek wydaje się pusty...
 admin-smite-run-walk-swap-prompt = Musisz nacisnąć shift, aby biegać!
 admin-smite-super-speed-prompt = Poruszasz się z prędkością mach 0.8!
 admin-smite-lung-removal-self = Nie możesz oddychać!
-
 admin-smite-explode-name = Eksplozja
 admin-smite-chess-dimension-name = Wymiar Szachowy
 admin-smite-set-alight-name = Podpalenie
@@ -55,7 +54,6 @@ admin-smite-ghostkick-name = Kop Duchowy
 admin-smite-nyanify-name = Kocie Uszy
 admin-smite-kill-sign-name = Znak Śmierci
 admin-smite-omni-accent-name = Omni-Akcent
-
 admin-smite-explode-description = Eksploduj ich.
 admin-smite-chess-dimension-description = Wygnanie do Wymiaru Szachowego.
 admin-smite-set-alight-description = Sprawia, że płoną.
@@ -97,7 +95,6 @@ admin-smite-super-bonk-lite-description = Uderza nimi o każdy stół na stacji 
 admin-smite-terminate-description = Tworzy rolę ducha Terminatora z celem zabicia ich.
 admin-smite-super-slip-description = Poślizguje ich bardzo, bardzo mocno.
 admin-smite-omni-accent-description = Sprawia, że cel mówi niemal każdym dostępnym akcentem.
-
 admin-trick-unbolt-description = Odblokowuje wskazane drzwi.
 admin-trick-bolt-description = Blokuje wskazane drzwi.
 admin-trick-emergency-access-on-description = Włącza dostęp awaryjny dla wskazanych drzwi.

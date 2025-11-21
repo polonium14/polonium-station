@@ -12,4 +12,3 @@ thankyou-goodcleanfun-1 = Miłej zabawy!
 thankyou-goodcleanfun-2 = Teraz grasz na poważnie!
 thankyou-goodcleanfun-3 = Do dzieła z grą!
 thankyou-goodcleanfun-4 = Zacznij tworzyć swoje karty postaci!
-

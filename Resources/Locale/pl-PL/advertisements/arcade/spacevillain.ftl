@@ -13,7 +13,6 @@ advertisement-space-villain-12 = BÓJ SIĘ!
 advertisement-space-villain-13 = Czy masz odwagę by stanąć ze mną do walki!?
 advertisement-space-villain-14 = Strzeż się, ja żyję!
 advertisement-space-villain-15 = Jestem głodny walki!
-
 thankyou-space-villain-1 = Myślisz że gdzie idziesz, Punku?
 thankyou-space-villain-2 = To wszystko co masz?
 thankyou-space-villain-3 = Tej bitwie koniec jeszcze nie nadszedł!
