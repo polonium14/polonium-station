@@ -62,6 +62,6 @@ thief-backpack-category-communicator-description =
 thief-backpack-category-smuggler-name = zestaw przemytnika
 thief-backpack-category-smuggler-description =
     Wszyscy złodzieje potrzebują ciemnego miejsca do ukrycia swojego łupu.
-    Nie zapomnij podłączyć swoje balony logistyczne.
+    Nie zapomnij podłączyć swojego znacznika balonów logistycznych.
     Zawiera: Znacznik balonów logistycznych, 10 balonów logistycznych, 3 granaty dymne i
     niewidzalna skrzynia do chowania łupu.
