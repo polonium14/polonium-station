@@ -1,10 +1,4 @@
 #!/usr/bin/env python3
-# SPDX-FileCopyrightText: 2024 Matt <psykzz@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
-#
-# SPDX-License-Identifier: MIT
 
 #
 # Updates an RSS file on a remote server with updates to the changelog.
@@ -35,22 +29,22 @@ CHANGELOG_RSS_KEY = os.environ.get("CHANGELOG_RSS_KEY")
 
 # Change these to suit your server settings
 # https://docs.fabfile.org/en/stable/getting-started.html#run-commands-via-connections-and-run
-SSH_HOST = "status.spacestation14.com"
+SSH_HOST = "moon.spacestation14.com"
 SSH_USER = "changelog-rss"
 SSH_PORT = 22
 RSS_FILE = "changelog.xml"
 XSL_FILE = "stylesheet.xsl"
 HOST_KEYS = [
-    "AAAAC3NzaC1lZDI1NTE5AAAAIA7eZ2dAJpAR+ZSkZtXiE/JYlTVwzBKDxe0n6npPLBYl"
+    "AAAAC3NzaC1lZDI1NTE5AAAAIOBpGO/Qc6X0YWuw7z+/WS/65+aewWI29oAyx+jJpCmh"
 ]
 
 # RSS feed parameters, change these
-FEED_TITLE       = "Funky Station Changelog"
-FEED_LINK        = "https://github.com/funky-station/funky-station/"
-FEED_DESCRIPTION = "Changelog for Funky Station."
+FEED_TITLE       = "Space Station 14 Changelog"
+FEED_LINK        = "https://github.com/space-wizards/space-station-14/"
+FEED_DESCRIPTION = "Changelog for the official Wizard's Den branch of Space Station 14."
 FEED_LANGUAGE    = "en-US"
-FEED_GUID_PREFIX = "funkystation-changelog-"
-FEED_URL         = "https://status.funkystation.org/changelog.xml"
+FEED_GUID_PREFIX = "ss14-changelog-wizards-"
+FEED_URL         = "https://central.spacestation14.io/changelog.xml"
 
 CHANGELOG_FILE = "Resources/Changelog/Changelog.yml"
 

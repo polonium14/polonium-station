@@ -1,0 +1,12 @@
+ent-ClothingNeckChaplainDragon = dragonpriest stole
+    .desc = Let them know who you really serve.
+ent-ClothingNeckClayshaper = clayshaper's mantle
+    .desc = Hidden among the river reeds.
+ent-ClothingNeckDruid = druid's cape
+    .desc = Perfect for frolicking or possibly skipping.
+ent-ClothingNeckDruidMantle = druid's mantle
+    .desc = Freshly crafted and vivid green.
+ent-ClothingNeckSun = sun stole
+    .desc = The material is warm, heat radiates out from each thread.
+ent-ClothingNeckTidal = tidal mantle
+    .desc = The material hangs heavy on your shoulders.

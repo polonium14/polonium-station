@@ -1,0 +1,58 @@
+#   - ERTUplinkMelee
+#   - ERTUplikWeaponCombat
+#   - ERTUplinkAmmoCombat
+#   - ERTUplinkWeaponNonCombat
+#   - ERTUplinkAmmoNonCombat
+#   - ERTUplinkExplosives
+#   - ERTUplinkMedial
+#   - ERTUplinkEngineering
+#   - ERTUplinkUtilities
+#   - ERTUplinkJanitor
+#   - ERTUplinkPointless
+
+- type: storeCategory
+  id: ERTUplinkMelee
+  name: Melee
+
+- type: storeCategory
+  id: ERTUplinkWeaponCombat
+  name: Weapons
+
+- type: storeCategory
+  id: ERTUplinkAmmoCombat
+  name: Ammunition
+
+- type: storeCategory
+  id: ERTUplinkWeaponNonCombat
+  name: Secondary Weapons
+
+- type: storeCategory
+  id: ERTUplinkAmmoNonCombat
+  name: Ammunition
+
+- type: storeCategory
+  id: ERTUplinkExplosives
+  name: Explosives
+
+- type: storeCategory
+  id: ERTUplinkMedial
+  name: Medicine
+
+- type: storeCategory
+  id: ERTUplinkEngineering
+  name: Engineering
+
+- type: storeCategory
+  id: ERTUplinkUtilities
+  name: Utilities
+
+- type: storeCategory
+  id: ERTUplinkJanitor
+  name: Janitorial
+
+- type: storeCategory
+  id: ERTUplinkPointless
+  name: Other
+
+
+

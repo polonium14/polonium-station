@@ -1087,7 +1087,7 @@
   description: Prints equipment for use by security crew.
   components:
   - type: Sprite
-    sprite: Structures/Machines/techfab.rsi
+    sprite: _DV/Structures/Machines/techfab.rsi
     layers:
     - state: icon
       map: ["enum.LatheVisualLayers.IsRunning"]
@@ -1144,6 +1144,17 @@
     - MagazineBoxPistolLarge # Funkystation
     - MagazinePistolLargePractice # Funkystation
     - MagazineBoxPistolLargePractice # Funkystation
+    - VisMPSPistol
+    - VisMPSPistolMagazineEmpty
+    - VisMPSPistolMagazine
+    - VisMPSPistolMagazineIncendiary
+    - VisMPSPistolMagazineUranium
+    - VisMPSPistolMagazinePractice
+    - PMMMachineGunMagazineEmpty
+    - PMMMachineGunMagazine
+    - PMMMachineGunMagazineIncendiary
+    - PMMMachineGunMagazineUranium
+    - PMMMachineGunMagazinePractice
     - RiotShield
     - SpeedLoaderMagnum
     - SpeedLoaderMagnumEmpty
@@ -1261,7 +1272,7 @@
   description: Prints the bare minimum of bullets that any budget military or armory could need. Nothing fancy.
   components:
   - type: Sprite
-    sprite: Structures/Machines/techfab.rsi
+    sprite: _DV/Structures/Machines/techfab.rsi
     layers:
     - state: icon
       map: ["enum.LatheVisualLayers.IsRunning"]
@@ -1298,6 +1309,18 @@
     - MagazineShotgunSlug
     - SpeedLoaderMagnum
     - SpeedLoaderMagnumEmpty
+    - VisMPSPistolMagazineEmpty
+    - VisMPSPistolMagazine
+    - VisMPSPistolMagazineIncendiary
+    - VisMPSPistolMagazineUranium
+    - VisMPSPistolMagazinePractice
+    - PMMMachineGunMagazineEmpty
+    - PMMMachineGunMagazine
+    - PMMMachineGunMagazineIncendiary
+    - PMMMachineGunMagazineUranium
+    - PMMMachineGunMagazinePractice
+    - BorSniperMagazineEmpty
+    - BorSniperMagazine
   - type: EmagLatheRecipes # Goobstation
     emagStaticRecipes:
     - MagazinePistolCaselessRifle # Goobstation

@@ -32,7 +32,7 @@
   id: Cluster
   mapName: 'Cluster'
   mapPath: /Maps/_Funkystation/cluster.yml #Funkystation - Robotics
-  minPlayers: 10
+  minPlayers: 0
   maxPlayers: 35
   stations:
     Cluster:

@@ -1,0 +1,17 @@
+ent-CultDagger = cult dagger
+    .desc = Can be used to scribe runes, and is a decent melee weapon. Can also be used on runes to erase them.
+ent-CultDaggerCurved = cult dagger
+    .suffix = Curved
+    .desc = { ent-CultDagger.desc }
+ent-CultDaggerSerrated = cult dagger
+    .suffix = Serrated
+    .desc = { ent-CultDagger.desc }
+ent-CultDaggerStraight = cult dagger
+    .suffix = Straight
+    .desc = { ent-CultDagger.desc }
+ent-RitualDagger = ritual dagger
+    .desc = A strange dagger used by sinister groups for rituals and sacrifices.
+ent-EldritchBlade = eldritch blade
+    .desc = A sword humming with unholy energy.
+ent-UnholyHalberd = unholy halberd
+    .desc = A poleaxe that seems to be linked to its wielder.

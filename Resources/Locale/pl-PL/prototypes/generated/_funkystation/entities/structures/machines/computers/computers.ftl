@@ -1,0 +1,12 @@
+ent-ScienceComputerComms = science communications computer
+    .desc = A computer used to make station wide announcements via keyboard, set the appropriate alert level, and call the emergency shuttle.
+ent-SecurityComputerComms = security communications computer
+    .desc = A computer used to make station wide announcements via keyboard, set the appropriate alert level, and call the emergency shuttle.
+ent-ServiceComputerComms = service communications computer
+    .desc = A computer used to make station wide announcements via keyboard, set the appropriate alert level, and call the emergency shuttle.
+ent-CargoComputerComms = cargo communications computer
+    .desc = A computer used to make station wide announcements via keyboard, set the appropriate alert level, and call the emergency shuttle.
+ent-EngiComputerComms = engineering communications computer
+    .desc = A computer used to make station wide announcements via keyboard, set the appropriate alert level, and call the emergency shuttle.
+ent-MedicalComputerComms = medical communications computer
+    .desc = A computer used to make station wide announcements via keyboard, set the appropriate alert level, and call the emergency shuttle.

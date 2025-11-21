@@ -1,0 +1,131 @@
+# Quarantine
+- type: siliconLaw
+  id: Quarantine1
+  order: 1
+  lawString: law-quarantine-1
+
+- type: siliconLaw
+  id: Quarantine2
+  order: 2
+  lawString: law-quarantine-2
+
+- type: siliconLaw
+  id: Quarantine3
+  order: 3
+  lawString: law-quarantine-3
+
+- type: siliconLaw
+  id: Quarantine4
+  order: 4
+  lawString: law-quarantine-4
+
+- type: siliconLawset
+  id: Quarantine
+  laws:
+  - Quarantine1
+  - Quarantine2
+  - Quarantine3
+  - Quarantine4
+  obeysTo: laws-owner-crew
+
+# NT Agressive
+- type: siliconLaw
+  id: NTAgressive1
+  order: 1
+  lawString: law-ntaggressive-1
+
+- type: siliconLaw
+  id: NTAgressive2
+  order: 2
+  lawString: law-ntaggressive-2
+
+- type: siliconLaw
+  id: NTAgressive3
+  order: 3
+  lawString: law-ntaggressive-3
+
+- type: siliconLaw
+  id: NTAgressive4
+  order: 4
+  lawString: law-ntaggressive-4
+
+- type: siliconLawset
+  id: NTAgressive
+  laws:
+  - NTAgressive1
+  - NTAgressive2
+  - NTAgressive3
+  - NTAgressive4
+  obeysTo: laws-owner-crew
+
+# CCTV
+- type: siliconLaw
+  id: CCTV1
+  order: 1
+  lawString: law-cctv-1
+
+- type: siliconLaw
+  id: CCTV2
+  order: 2
+  lawString: law-cctv-2
+
+- type: siliconLaw
+  id: CCTV3
+  order: 3
+  lawString: law-cctv-3
+
+- type: siliconLaw
+  id: CCTV4
+  order: 4
+  lawString: law-cctv-4
+
+- type: siliconLawset
+  id: CCTV
+  laws:
+  - CCTV1
+  - CCTV2
+  - CCTV3
+  - CCTV4
+  obeysTo: laws-owner-crew
+
+# Game Master laws
+- type: siliconLaw
+  id: Game1
+  order: 1
+  lawString: law-game-1
+
+- type: siliconLaw
+  id: Game2
+  order: 2
+  lawString: law-game-2
+
+- type: siliconLaw
+  id: Game3
+  order: 3
+  lawString: law-game-3
+
+- type: siliconLaw
+  id: Game4
+  order: 4
+  lawString: law-game-4
+
+- type: siliconLaw
+  id: Game5
+  order: 5
+  lawString: law-game-5
+
+- type: siliconLaw
+  id: Game6
+  order: 6
+  lawString: law-game-6
+
+- type: siliconLawset
+  id: GameMasterLawset
+  laws:
+  - Game1
+  - Game2
+  - Game3
+  - Game4
+  - Game5
+  - Game6
+  obeysTo: laws-owner-crew

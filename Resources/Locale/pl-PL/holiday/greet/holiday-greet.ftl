@@ -1,6 +1,6 @@
 ## Generic Congrats
 
-holiday-greet = Have a happy {$holidayName}!
+holiday-greet = Have a happy { $holidayName }!
 
 ## Holiday Names
 

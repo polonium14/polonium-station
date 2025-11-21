@@ -1,0 +1,17 @@
+ent-RandomSyndieKitSpawner = random syndie-kit spawner
+    .suffix = Do Not Map
+    .desc = { ent-MarkerBase.desc }
+ent-ClothingBackpackDuffelSyndicateFilledKitSlasher = slasher syndie-kit
+    .desc = All you need to become a terror of maints! Includes an exclusive chainsaw and armored apron for endless hack-and-slash fun!
+ent-ClothingBackpackDuffelSyndicateFilledKitNinja = budget ninja syndie-kit
+    .desc = We asked the Spider Clan to send us some of their tech but they refused, so we improvised. Perfect for striking from the shadows.
+ent-ClothingBackpackDuffelSyndicateFilledKitHacker = hacker syndie-kit
+    .desc = The ideal set of tools for hacking into the mainframe.
+ent-ClothingBackpackDuffelSyndicateFilledKitHunter = hunter syndie-kit
+    .desc = Become a master of syndicate surveillance, eavesdrop on the crew and use these state-of-the-art thermal goggles to track down even the slipperiest of targets!
+ent-ClothingBackpackDuffelSyndicateFilledKitUndercover = undercover syndie-kit
+    .desc = Use this collection of covert items and chameleon clothing to disguise as anyone or anything. Surprise.
+ent-ClothingBackpackDuffelSyndicateFilledKitBond = Urist McBond syndie-kit
+    .desc = Become an elite secret agent. Evade arrest. Play evil poker. The special chameleon glasses included in this kit have a built-in job HUD.
+ent-ClothingBackpackDuffelSyndicateFilledKitChemical = chemical syndie-kit
+    .desc = Inject your foes with neurotoxins! Inject yourself with performance enhancers! Inject everyone with mold for no reason! Do all this and more with this kit!

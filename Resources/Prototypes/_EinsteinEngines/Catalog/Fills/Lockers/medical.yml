@@ -1,0 +1,24 @@
+- type: entity
+  id: LockerParamedicFilledHardsuit #Delta V - Paramedic locker with suit
+  suffix: Filled, Hardsuit
+  parent: LockerParamedic
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingOuterHardsuitVoidParamed
+      - id: ClothingOuterCoatParamedicWB
+      - id: ClothingHeadHatParamedicsoft
+      - id: ClothingOuterWinterPara
+      - id: ClothingUniformJumpsuitParamedic
+      - id: ClothingUniformJumpskirtParamedic
+      - id: ClothingEyesHudMedical
+      - id: ClothingHandsGlovesLatex
+      - id: ClothingHeadsetMedical
+      - id: ClothingMaskSterile
+      # - id: ClothingShoesBootsWinterParamedic #Delta V: Add departmental winter boots
+      - id: HandheldGPSBasic
+      - id: MedkitFilled
+        prob: 0.3
+      # - id: LunchboxMedicalFilledRandom # Delta-V Lunchboxes!
+      #   prob: 0.3
+      - id: EmergencyNitrousOxideTankFilled

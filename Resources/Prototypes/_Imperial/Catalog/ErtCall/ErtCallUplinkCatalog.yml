@@ -1,0 +1,1232 @@
+#ERTUplinkMelee
+- type: listing
+  id: ErtCallUplinkStunbaton
+  name: Advanced Stun Baton
+  description: A high-capacity stun baton for subduing targets.
+  productEntity: AdvancedStunbaton
+  cost:
+    BlueSpaceCube: 2
+  categories:
+  - ERTUplinkMelee
+
+- type: listing
+  id: ErtCallUplinkMachete
+  name: Machete
+  description: A heavy chopping blade.
+  productEntity: Machete
+  cost:
+    BlueSpaceCube: 10
+  categories:
+  - ERTUplinkMelee
+
+- type: listing
+  id: ErtCallUplinkCombatKnife
+  name: Combat Knife
+  description: A sharp military combat knife.
+  productEntity: CombatKnife
+  cost:
+    BlueSpaceCube: 2
+  categories:
+  - ERTUplinkMelee
+
+- type: listing
+  id: ErtCallUplinkEnergySword
+  name: Energy Sword
+  description: A humming blade of condensed energy.
+  productEntity: EnergySword
+  cost:
+    BlueSpaceCube: 10
+  categories:
+  - ERTUplinkMelee
+
+#ERTUplinkAmmoNonCombat
+- type: listing
+  id: ErtCallUplinkMagazineBoxMagnum
+  name: Magnum Ammo Box
+  description: Box of high-powered magnum rounds.
+  productEntity: MagazineBoxMagnum
+  cost:
+    BlueSpaceCube: 2
+  categories:
+  - ERTUplinkAmmoCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkSpeedLoaderMagnum
+  name: Magnum Speed Loader
+  description: Rapid loader for magnum revolvers.
+  productEntity: SpeedLoaderMagnum
+  cost:
+    BlueSpaceCube: 2
+  categories:
+  - ERTUplinkAmmoCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkMagazinePistol
+  name: Pistol Magazine
+  description: Standard pistol magazine.
+  productEntity: MagazinePistol
+  cost:
+    BlueSpaceCube: 2
+  categories:
+  - ERTUplinkAmmoCombat
+
+- type: listing
+  id: ErtCallUplinkMagazineRifle
+  name: Rifle Magazine
+  description: Standard rifle ammunition.
+  productEntity: MagazineRifle
+  cost:
+    BlueSpaceCube: 3
+  categories:
+  - ERTUplinkAmmoCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkCombat
+
+- type: listing
+  id: ErtCallUplinkMagazineBoxAntiMateriel
+  name: Anti-Materiel Ammo Box
+  description: High-caliber anti-materiel rounds.
+  productEntity: MagazineBoxAntiMateriel
+  cost:
+    BlueSpaceCube: 5
+  categories:
+  - ERTUplinkAmmoCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkCombat
+
+- type: listing
+  id: ErtCallUplinkMagazineLethalshot
+  name: Shotgun Magazine (Buckshot)
+  description: Buckshot shell magazine.
+  productEntity: MagazineShotgun
+  cost:
+    BlueSpaceCube: 3
+  categories:
+  - ERTUplinkAmmoCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkCombat
+
+- type: listing
+  id: ErtCallUplinkMagazineShotgunIncendiary
+  name: Shotgun Magazine (Incendiary)
+  description: Incendiary shotgun shells.
+  productEntity: MagazineShotgunIncendiary
+  cost:
+    BlueSpaceCube: 3
+  categories:
+  - ERTUplinkAmmoCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkCombat
+
+- type: listing
+  id: ErtCallUplinkMagazineShotgunSlug
+  name: Shotgun Magazine (Slug)
+  description: Slug shotgun shells.
+  productEntity: MagazineShotgunSlug
+  cost:
+    BlueSpaceCube: 3
+  categories:
+  - ERTUplinkAmmoCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkCombat
+
+- type: listing
+  id: ErtCallUplinkMagazineLightRifle
+  name: Light Rifle Magazine
+  description: Standard light rifle rounds.
+  productEntity: MagazineLightRifle
+  cost:
+    BlueSpaceCube: 2
+  categories:
+  - ERTUplinkAmmoCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkCombat
+
+- type: listing
+  id: ErtCallUplinkCartridgeRocket
+  name: Rocket Cartridge
+  description: Single-use rocket warhead.
+  productEntity: CartridgeRocket
+  cost:
+    BlueSpaceCube: 12
+  categories:
+  - ERTUplinkAmmoCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkCombat
+
+#ERTUplinkExplosives
+- type: listing
+  id: ErtCallUplinkGrenadeFlashBang
+  name: Flashbang Grenade
+  description: Non-lethal disorientation grenade.
+  productEntity: GrenadeFlashBang
+  cost:
+    BlueSpaceCube: 1
+  categories:
+  - ERTUplinkExplosives
+
+- type: listing
+  id: ErtCallUplinkEmpGrenade
+  name: EMP Grenade
+  description: Disables nearby electronics.
+  productEntity: EmpGrenade
+  cost:
+    BlueSpaceCube: 2
+  categories:
+  - ERTUplinkExplosives
+
+- type: listing
+  id: ErtCallUplinkExGrenade
+  name: High-Explosive Grenade
+  description: Powerful fragmentation blast.
+  productEntity: ExGrenade
+  cost:
+    BlueSpaceCube: 4
+  categories:
+  - ERTUplinkExplosives
+
+- type: listing
+  id: ErtCallUplinkC4
+  name: C4 Charge
+  description: Remote-detonated breaching explosive.
+  productEntity: C4
+  cost:
+    BlueSpaceCube: 3
+  categories:
+  - ERTUplinkExplosives
+
+- type: listing
+  id: ErtCallUplinkClusterBangFull
+  name: Cluster Flashbang
+  description: Multiple sequential flash detonations.
+  productEntity: ClusterBangFull
+  cost:
+    BlueSpaceCube: 4
+  categories:
+  - ERTUplinkExplosives
+
+#ERTUplinkEngineering
+- type: listing
+  id: ErtCallUplinkClothingEyesGlassesMeson
+  name: Meson Goggles
+  description: See structural integrity through walls.
+  productEntity: ClothingEyesGlassesMeson
+  cost:
+    BlueSpaceCube: 2
+  categories:
+  - ERTUplinkEngineering
+
+- type: listing
+  id: ErtCallUplinkAmeJar
+  name: AME Jar
+  description: Replacement antimatter jar.
+  productEntity: AmeJar
+  cost:
+    BlueSpaceCube: 2
+  categories:
+  - ERTUplinkEngineering
+
+- type: listing
+  id: ErtCallUplinkJawsOfLife
+  name: Jaws of Life
+  description: Hydraulic rescue cutter/spreader.
+  productEntity: JawsOfLife
+  cost:
+    BlueSpaceCube: 4
+  categories:
+  - ERTUplinkEngineering
+
+- type: listing
+  id: ErtCallUplinkPowerDrill
+  name: Power Drill
+  description: Rapid powered drill tool.
+  productEntity: PowerDrill
+  cost:
+    BlueSpaceCube: 4
+  categories:
+  - ERTUplinkEngineering
+
+- type: listing
+  id: ErtCallUplinkClothingBeltUtilityFilled
+  name: Toolbelt (Filled)
+  description: Stocked utility toolbelt.
+  productEntity: ClothingBeltUtilityFilled
+  cost:
+    BlueSpaceCube: 4
+  categories:
+  - ERTUplinkEngineering
+
+- type: listing
+  id: ErtCallUplinkRCD
+  name: Rapid Construction Device
+  description: Fast wall/floor construction tool.
+  productEntity: RCD
+  cost:
+    BlueSpaceCube: 6
+  categories:
+  - ERTUplinkEngineering
+
+- type: listing
+  id: ErtCallUplinkRCDAmmo
+  name: RCD Matter Cartridge
+  description: Reload for the RCD.
+  productEntity: RCDAmmo
+  cost:
+    BlueSpaceCube: 2
+  categories:
+  - ERTUplinkEngineering
+
+- type: listing
+  id: ErtCallUplinkHolofanProjector
+  name: Holofan Projector
+  description: Deploys a holographic airflow barrier.
+  productEntity: HolofanProjector
+  cost:
+    BlueSpaceCube: 1
+  categories:
+  - ERTUplinkEngineering
+
+- type: listing
+  id: ErtCallUplinkNetworkConfigurator
+  name: Network Configurator
+  description: Adjust device linking and networks.
+  productEntity: NetworkConfigurator
+  cost:
+    BlueSpaceCube: 1
+  categories:
+  - ERTUplinkEngineering
+
+- type: listing
+  id: ErtCallUplinkGasAnalyzer
+  name: Gas Analyzer
+  description: Reads atmospheric composition.
+  productEntity: GasAnalyzer
+  cost:
+    BlueSpaceCube: 1
+  categories:
+  - ERTUplinkEngineering
+
+- type: listing
+  id: ErtCallUplinkMultitool
+  name: Multitool
+  description: Signals, hacking and device interface tool.
+  productEntity: Multitool
+  cost:
+    BlueSpaceCube: 1
+  categories:
+  - ERTUplinkEngineering
+
+- type: listing
+  id: ErtCallUplinkTrayScanner
+  name: Tray Scanner
+  description: Scans plant trays for data.
+  productEntity: trayScanner
+  cost:
+    BlueSpaceCube: 1
+  categories:
+  - ERTUplinkEngineering
+
+#materials
+- type: listing
+  id: ErtCallUplinkSheetSteel
+  name: Steel Sheets
+  description: Basic construction material.
+  productEntity: SheetSteel
+  cost:
+    BlueSpaceCube: 2
+  categories:
+  - ERTUplinkEngineering
+
+- type: listing
+  id: ErtCallUplinkSheetPlasteel
+  name: Plasteel Sheets
+  description: Reinforced composite material.
+  productEntity: SheetPlasteel
+  cost:
+    BlueSpaceCube: 3
+  categories:
+  - ERTUplinkEngineering
+
+- type: listing
+  id: ErtCallUplinkSheetRGlass
+  name: Reinforced Glass Sheets
+  description: Strong transparent material.
+  productEntity: SheetRGlass
+  cost:
+    BlueSpaceCube: 3
+  categories:
+  - ERTUplinkEngineering
+
+- type: listing
+  id: ErtCallUplinkSheetGlass
+  name: Glass Sheets
+  description: Standard transparent sheets.
+  productEntity: SheetGlass
+  cost:
+    BlueSpaceCube: 2
+  categories:
+  - ERTUplinkEngineering
+
+- type: listing
+  id: ErtCallUplinkPartRodMetal
+  name: Metal Rods
+  description: Construction rods used in frames.
+  productEntity: PartRodMetal
+  cost:
+    BlueSpaceCube: 1
+  categories:
+  - ERTUplinkEngineering
+
+#end materials
+
+- type: listing
+  id: ErtCallUplinkCableHVStack
+  name: HV Cable Stack
+  description: High-voltage cables.
+  productEntity: CableHVStack
+  cost:
+    BlueSpaceCube: 1
+  categories:
+  - ERTUplinkEngineering
+
+- type: listing
+  id: ErtCallUplinkCableMVStack
+  name: MV Cable Stack
+  description: Medium-voltage cables.
+  productEntity: CableMVStack
+  cost:
+    BlueSpaceCube: 1
+  categories:
+  - ERTUplinkEngineering
+
+- type: listing
+  id: ErtCallUplinkCableApcStack
+  name: APC Cable Stack
+  description: Low-voltage power cables.
+  productEntity: CableApcStack
+  cost:
+    BlueSpaceCube: 1
+  categories:
+  - ERTUplinkEngineering
+
+- type: listing
+  id: ErtCallUplinkBoxInflatable
+  name: Inflatable Barrier Box
+  description: Portable emergency barriers.
+  productEntity: BoxInflatable
+  cost:
+    BlueSpaceCube: 3
+  categories:
+  - ERTUplinkEngineering
+
+- type: listing
+  id: ErtCallUplinkWelderExperimental
+  name: Experimental Welder
+  description: High-performance welding tool.
+  productEntity: WelderExperimental
+  cost:
+    BlueSpaceCube: 4
+  categories:
+  - ERTUplinkEngineering
+
+#ERTUplinkMedical
+- type: listing
+  id: ErtCallUplinkOmnizineChemistryBottle
+  name: Omnizine Bottle
+  description: Broad-spectrum healing reagent.
+  productEntity: OmnizineChemistryBottle
+  cost:
+    BlueSpaceCube: 10
+  categories:
+  - ERTUplinkMedial
+
+# TODO anti toxin
+
+- type: listing
+  id: ErtCallUplinkHypospray
+  name: Hypospray
+  description: Instant injection device.
+  productEntity: Hypospray
+  cost:
+    BlueSpaceCube: 6
+  categories:
+  - ERTUplinkMedial
+
+- type: listing
+  id: ErtCallUplinkGauze
+  name: Gauze Roll
+  description: Basic wound dressing.
+  productEntity: Gauze
+  cost:
+    BlueSpaceCube: 1
+  categories:
+  - ERTUplinkMedial
+
+- type: listing
+  id: ErtCallUplinkBrutepack
+  name: Medicated Suture
+  description: Sterile wound closing suture.
+  productEntity: MedicatedSuture
+  cost:
+    BlueSpaceCube: 1
+  categories:
+  - ERTUplinkMedial
+
+- type: listing
+  id: ErtCallUplinkOintment
+  name: Regenerative Mesh
+  description: Advanced burn treatment mesh.
+  productEntity: RegenerativeMesh
+  cost:
+    BlueSpaceCube: 1
+  categories:
+  - ERTUplinkMedial
+
+- type: listing
+  id: ErtCallUplinkStimpack
+  name: Stimpack
+  description: Temporary combat stimulant.
+  productEntity: Stimpack
+  cost:
+    BlueSpaceCube: 5
+  categories:
+  - ERTUplinkMedial
+
+- type: listing
+  id: ErtCallUplinkCompactDefibrillator
+  name: Compact Defibrillator
+  description: Portable revival device.
+  productEntity: DefibrillatorCompact
+  cost:
+    BlueSpaceCube: 5
+  categories:
+  - ERTUplinkMedial
+
+- type: listing
+  id: ErtCallUplinkEmergencyMedipen
+  name: Emergency Medipen
+  description: Immediate life-saving cocktail.
+  productEntity: EmergencyMedipen
+  cost:
+    BlueSpaceCube: 1
+  categories:
+  - ERTUplinkMedial
+
+- type: listing
+  id: ErtCallUplinkHandheldHealthAnalyzer
+  name: Health Analyzer
+  description: Scans patient vital statistics.
+  productEntity: HandheldHealthAnalyzer
+  cost:
+    BlueSpaceCube: 1
+  categories:
+  - ERTUplinkMedial
+
+- type: listing
+  id: ErtCallUplinkMaterialBiomass
+  name: Biomass Material
+  description: Organic cloning feedstock.
+  productEntity: MaterialBiomass
+  cost:
+    BlueSpaceCube: 5
+  categories:
+  - ERTUplinkMedial
+
+- type: listing
+  id: ErtCallUplinkPillAmbuzolPlus
+  name: Ambuzol+ Pill
+  description: Potent anti-toxin and stabilizer.
+  productEntity: PillAmbuzolPlus
+  cost:
+   BlueSpaceCube: 2
+  categories:
+  - ERTUplinkMedial
+  conditions:
+   - !type:StoreWhitelistCondition
+     whitelist:
+       tags:
+         - ErtUplinkCBURN
+
+#TODO
+# - type: listing
+#   id: ErtCallUplinkBoxOfModuleGrenade
+#   name: ert-uplink-medical-boxofmodulegrenade-name
+#   description: ert-uplink-medical-boxofmodulegrenade-desc
+#   productEntity: BoxOfModuleGrenade
+#   cost:
+#     BlueSpaceCube: 4
+#   categories:
+#   - ERTUplinkMedial
+
+- type: listing
+  id: ErtCallUplinkSpaceMedipen
+  name: Space Medipen
+  description: Protects against vacuum exposure.
+  productEntity: SpaceMedipen
+  cost:
+    BlueSpaceCube: 2
+  categories:
+  - ERTUplinkMedial
+
+#ERTUplinkWeaponNonCombat
+- type: listing
+  id: ErtCallUplinkWeaponPulsePistol
+  name: Pulse Pistol
+  description: Compact directed-energy sidearm.
+  productEntity: WeaponPulsePistol
+  cost:
+    BlueSpaceCube: 5
+  categories:
+  - ERTUplinkWeaponCombat
+
+- type: listing
+  id: ErtCallUplinkWeaponDisabler
+  name: Disabler
+  description: Non-lethal energy incapacitation weapon.
+  productEntity: WeaponDisabler
+  cost:
+    BlueSpaceCube: 3
+  categories:
+  - ERTUplinkWeaponCombat
+
+# - type: listing
+#   id: ErtCallUplinkWeaponRevolverInspector
+#   name: ert-uplink-weaponnoncombat-weaponrevolverinspector-name
+#   description: ert-uplink-weaponnoncombat-weaponrevolverinspector-desc
+#   productEntity: WeaponRevolverInspector
+#   cost:
+#     BlueSpaceCube: 5
+#   categories:
+#   - ERTUplinkWeaponCombat
+
+- type: listing
+  id: ErtCallUplinkWeaponPistolMk58
+  name: Mk58 Pistol
+  description: Standard ballistic sidearm.
+  productEntity: WeaponPistolMk58
+  cost:
+    BlueSpaceCube: 4
+  categories:
+  - ERTUplinkWeaponCombat
+
+- type: listing
+  id: ErtCallUplinkWeaponRevolverMateba
+  name: Mateba Revolver
+  description: Powerful semi-automatic revolver.
+  productEntity: WeaponRevolverMateba
+  cost:
+    BlueSpaceCube: 5
+  categories:
+  - ERTUplinkWeaponCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+
+#ERTUplinkWeaponCombat
+- type: listing
+  id: ErtCallUplinkWeaponRifleLecter
+  name: Lecter Rifle
+  description: High-power kinetic rifle.
+  productEntity: WeaponRifleLecter
+  cost:
+    BlueSpaceCube: 8
+  categories:
+  - ERTUplinkWeaponCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkCombat
+
+#Imperial Space Огнемёт "Санитар" start
+
+- type: listing
+  id: ErtCallUplinkWeaponFlamethrower
+  name: Flamethrower
+  description: Projects a stream of fire.
+  productEntity: FlameThrower
+  cost:
+    BlueSpaceCube: 8
+  categories:
+  - ERTUplinkWeaponCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+     whitelist:
+       tags:
+         - ErtUplinkCBURN
+
+#Imperial Space Огнемёт "Санитар" end
+
+- type: listing
+  id: ErtCallUplinkWeaponPulseCarbine
+  name: Pulse Carbine
+  description: Mid-range energy assault weapon.
+  productEntity: WeaponPulseCarbine
+  cost:
+    BlueSpaceCube: 12
+  categories:
+  - ERTUplinkWeaponCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkCombat
+
+- type: listing
+  id: ErtCallUplinkWeaponPulseSniper
+  name: Pulse Sniper Rifle
+  description: High-precision energy rifle.
+  productEntity: WeaponPulseSniper
+  cost:
+    BlueSpaceCube: 16
+  categories:
+  - ERTUplinkWeaponCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkCombat
+
+- type: listing
+  id: ErtCallUplinkWeaponPulseRifle
+  name: Pulse Rifle
+  description: Heavy energy assault platform.
+  productEntity: WeaponPulseRifle
+  cost:
+    BlueSpaceCube: 20
+  categories:
+  - ERTUplinkWeaponCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkWeaponMinigun
+  name: Minigun
+  description: Rapid-fire ballistic weapon.
+  productEntity: WeaponMinigun
+  cost:
+    BlueSpaceCube: 25
+  categories:
+  - ERTUplinkWeaponCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkWeaponXrayCannon
+  name: X-Ray Cannon
+  description: Penetrating radiation beam weapon.
+  productEntity: WeaponXrayCannon
+  cost:
+    BlueSpaceCube: 25
+  categories:
+  - ERTUplinkWeaponCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkWeaponTaser
+  name: Taser
+  description: Stuns targets with electrical charge.
+  productEntity: WeaponTaser
+  cost:
+    BlueSpaceCube: 10
+  categories:
+  - ERTUplinkWeaponCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+# - type: listing
+#   id: ErtCallUplinkWeaponLaserGun
+#   name: ert-uplink-weaponcombat-weaponlasergun-name
+#   description: ert-uplink-weaponcombat-weaponlasergun-desc
+#   productEntity: WeaponLaserGun
+#   cost:
+#     BlueSpaceCube: 5
+#   categories:
+#   - ERTUplinkWeaponCombat
+#   conditions:
+#     - !type:StoreWhitelistCondition
+#       whitelist:
+#         tags:
+#           - ErtUplinkCombat
+
+# - type: listing
+#   id: ErtCallUplinkWeaponLaserCarbine
+#   name: ert-uplink-weaponcombat-weaponlasercarbine-name
+#   description: ert-uplink-weaponcombat-weaponlasercarbine-desc
+#   productEntity: WeaponLaserCarbine
+#   cost:
+#     BlueSpaceCube: 10
+#   categories:
+#   - ERTUplinkWeaponCombat
+#   conditions:
+#     - !type:StoreWhitelistCondition
+#       whitelist:
+#         tags:
+#           - ErtUplinkCombat
+
+- type: listing
+  id: ErtCallUplinkWeaponAdvancedLaser
+  name: Advanced Laser Gun
+  description: Improved energy sidearm.
+  productEntity: WeaponAdvancedLaser
+  cost:
+    BlueSpaceCube: 12
+  categories:
+  - ERTUplinkWeaponCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkCombat
+
+- type: listing
+  id: ErtCallUplinkWeaponSniperHristov
+  name: Hristov Sniper Rifle
+  description: Long-range precision rifle.
+  productEntity: WeaponSniperHristov
+  cost:
+    BlueSpaceCube: 12
+  categories:
+  - ERTUplinkWeaponCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkCombat
+
+- type: listing
+  id: ErtCallUplinkWeaponShotgunKammerer
+  name: Kammerer Shotgun
+  description: Tactical combat shotgun.
+  productEntity: WeaponShotgunKammerer
+  cost:
+    BlueSpaceCube: 8
+  categories:
+  - ERTUplinkWeaponCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkCombat
+
+- type: listing
+  id: ErtCallUplinkWeaponShotgunBulldog
+  name: Bulldog Shotgun
+  description: Compact drum-fed shotgun.
+  productEntity: WeaponShotgunBulldog
+  cost:
+    BlueSpaceCube: 10
+  categories:
+  - ERTUplinkWeaponCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkCombat
+          - ErtUplinkCBURN
+
+# - type: listing
+#   id: ErtCallUplinkWeaponRifleAk
+#   name: ert-uplink-weaponcombat-weaponrifleak-name
+#   description: ert-uplink-weaponcombat-weaponrifleak-desc
+#   productEntity: WeaponRifleAk
+#   cost:
+#     BlueSpaceCube: 10
+#   categories:
+#   - ERTUplinkWeaponCombat
+#   conditions:
+#     - !type:StoreWhitelistCondition
+#       whitelist:
+#         tags:
+#           - ErtUplinkCombat
+
+- type: listing
+  id: ErtCallUplinkWeaponLauncherRocket
+  name: Rocket Launcher
+  description: Fires explosive rockets.
+  productEntity: WeaponLauncherRocket
+  cost:
+    BlueSpaceCube: 25
+  categories:
+  - ERTUplinkWeaponCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkCombat
+
+#ERTUplinkJanitor
+- type: listing
+  id: ErtCallUplinkAdvMopItem
+  name: Advanced Mop
+  description: High-efficiency cleaning mop.
+  productEntity: AdvMopItem
+  cost:
+    BlueSpaceCube: 6
+  categories:
+  - ERTUplinkJanitor
+
+- type: listing
+  id: ErtCallUplinkWeedSpray
+  name: Weed Spray
+  description: Eliminates invasive flora.
+  productEntity: WeedSpray
+  cost:
+    BlueSpaceCube: 1
+  categories:
+  - ERTUplinkJanitor
+
+- type: listing
+  id: ErtCallUplinkLightReplacer
+  name: Light Replacer
+  description: Installs replacement bulbs instantly.
+  productEntity: LightReplacer
+  cost:
+    BlueSpaceCube: 2
+  categories:
+  - ERTUplinkJanitor
+
+- type: listing
+  id: ErtCallUplinkBoxLightMixed
+  name: Mixed Light Bulb Box
+  description: Assorted replacement light bulbs.
+  productEntity: BoxLightMixed
+  cost:
+    BlueSpaceCube: 1
+  categories:
+  - ERTUplinkJanitor
+
+- type: listing
+  id: ErtCallUplinkSprayBottleSpaceCleaner
+  name: Space Cleaner Bottle
+  description: Cleans stubborn stains.
+  productEntity: SprayBottleSpaceCleaner
+  cost:
+    BlueSpaceCube: 1
+  categories:
+  - ERTUplinkJanitor
+
+- type: listing
+  id: ErtCallUplinkMopBucketFull
+  name: Mop Bucket (Full)
+  description: Bucket of cleaning solution.
+  productEntity: MopBucketFull
+  cost:
+    BlueSpaceCube: 4
+  categories:
+  - ERTUplinkJanitor
+
+- type: listing
+  id: ErtCallUplinkBucket
+  name: Bucket
+  description: Generic utility bucket.
+  productEntity: Bucket
+  cost:
+    BlueSpaceCube: 2
+  categories:
+  - ERTUplinkJanitor
+
+- type: listing
+  id: ErtCallUplinkBoxBodyBag
+  name: Body Bag Box
+  description: Several body bags for retrieval.
+  productEntity: BoxBodyBag
+  cost:
+    BlueSpaceCube: 4
+  categories:
+  - ERTUplinkJanitor
+
+- type: listing
+  id: ErtCallUplinkBiohazardSuit
+  name: Soap
+  description: Soap.
+  productEntity: Soap
+  cost:
+    BlueSpaceCube: 1
+  categories:
+  - ERTUplinkJanitor
+
+- type: listing
+  id: ErtCallUplinkTrashBag
+  name: Trash Bag
+  description: Heavy-duty trash bag.
+  productEntity: TrashBag
+  cost:
+    BlueSpaceCube: 1
+  categories:
+  - ERTUplinkJanitor
+
+#ERTUplinkUtilities
+
+#Imperial Space Портативные зарядники спецотрядов start
+
+- type: listing
+  id: ErtCallUplinkRecharger
+  name: Portable ERT Recharger
+  description: Field charging unit for ERT gear.
+  productEntity: PortableRechargerErt
+  cost:
+    BlueSpaceCube: 10
+  categories:
+  - ERTUplinkUtilities
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+       tags:
+         - ErtUplinkERT
+
+- type: listing
+  id: ErtCallUplinkRechargerCburn
+  name: Portable CBURN Recharger
+  description: Field charging unit for CBURN gear.
+  productEntity: PortableRechargerCburn
+  cost:
+    BlueSpaceCube: 10
+  categories:
+  - ERTUplinkUtilities
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+       tags:
+         - ErtUplinkCBURN
+
+#Imperial Space Портативные зарядники спецотрядов end
+
+- type: listing
+  id: ErtCallUplinkHandcuffs
+  name: Handcuffs
+  description: Standard restraints.
+  productEntity: Handcuffs
+  cost:
+    BlueSpaceCube: 2
+  categories:
+  - ERTUplinkUtilities
+
+- type: listing
+  id: ErtCallUplinkJetpackBlueFilled
+  name: Blue Jetpack
+  description: Filled EVA propulsion pack.
+  productEntity: JetpackBlueFilled
+  cost:
+    BlueSpaceCube: 4
+  categories:
+  - ERTUplinkUtilities
+
+- type: listing
+  id: ErtCallUplinkHandheldGPSBasic
+  name: Handheld GPS
+  description: Displays position coordinates.
+  productEntity: HandheldGPSBasic
+  cost:
+    BlueSpaceCube: 1
+  categories:
+  - ERTUplinkUtilities
+
+- type: listing
+  id: ErtCallUplinkHandheldStationMap
+  name: Station Map
+  description: Handheld station layout display.
+  productEntity: HandheldStationMap
+  cost:
+    BlueSpaceCube: 1
+  categories:
+  - ERTUplinkUtilities
+
+- type: listing
+  id: ErtCallUplinkHandheldCrewMonitor
+  name: Crew Monitor
+  description: Tracks crew suit sensors.
+  productEntity: HandheldCrewMonitor
+  cost:
+    BlueSpaceCube: 4
+  categories:
+  - ERTUplinkUtilities
+
+- type: listing
+  id: ErtCallUplinkClothingShoesBootsMag
+  name: Magboots
+  description: Magnetic boots for EVA & stability.
+  productEntity: ClothingShoesBootsMag
+  cost:
+    BlueSpaceCube: 2
+  categories:
+  - ERTUplinkUtilities
+
+- type: listing
+  id: ErtCallUplinkCrowbar
+  name: Crowbar
+  description: Pry tool for doors and crates.
+  productEntity: Crowbar
+  cost:
+    BlueSpaceCube: 1
+  categories:
+  - ERTUplinkUtilities
+
+- type: listing
+  id: ErtCallUplinkWeaponL6Saw
+  name: L6 Light Machine Gun
+  description: High-rate suppression weapon.
+  productEntity: WeaponLightMachineGunL6
+  cost:
+    BlueSpaceCube: 15
+  categories:
+  - ERTUplinkWeaponCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkMagazineLightRifleBox
+  name: Light Rifle Ammo Box
+  description: Bulk light rifle ammunition.
+  productEntity: MagazineLightRifleBox
+  cost:
+    BlueSpaceCube: 4
+  categories:
+  - ERTUplinkAmmoCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkEnergyShield
+  name: Energy Shield
+  description: Deployable personal energy barrier.
+  productEntity: EnergyShield
+  cost:
+    BlueSpaceCube: 5
+  categories:
+  - ERTUplinkUtilities
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkExplosivesX4
+  name: X4 Breaching Charge
+  description: Strong structural explosive.
+  productEntity: X4
+  cost:
+    BlueSpaceCube: 5
+  categories:
+  - ERTUplinkExplosives
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+# Polonium edits below
+
+- type: listing
+  id: ErtCallUplinkWeaponVisMpsPistol
+  name: Vis MPS Pistol
+  description: Advanced ballistic sidearm.
+  productEntity: VisMPSPistol
+  cost:
+    BlueSpaceCube: 4
+  categories:
+  - ERTUplinkWeaponCombat
+
+- type: listing
+  id: ErtCallUplinkWeaponPMMGun
+  name: PMM Machine Gun
+  description: Compact automatic weapon.
+  productEntity: PMMMachineGun
+  cost:
+    BlueSpaceCube: 7
+  categories:
+  - ERTUplinkWeaponCombat
+
+- type: listing
+  id: ErtCallUplinkWeaponBORGun
+  name: BOR Sniper
+  description: High-caliber precision rifle.
+  productEntity: BORSniperGun
+  cost:
+    BlueSpaceCube: 10
+  categories:
+  - ERTUplinkWeaponCombat
+
+- type: listing
+  id: ErtCallUplinkWeaponVisMpsPistolMagazine
+  name: Vis MPS Magazine
+  description: Ammunition magazine for the Vis MPS.
+  productEntity: VisMPSPistolMagazine
+  cost:
+    BlueSpaceCube: 1
+  categories:
+  - ERTUplinkAmmoCombat
+
+- type: listing
+  id: ErtCallUplinkWeaponPMMGunMagazine
+  name: PMM Magazine
+  description: Magazine for the PMM machine gun.
+  productEntity: PMMMachineGunMagazine
+  cost:
+    BlueSpaceCube: 1
+  categories:
+  - ERTUplinkAmmoCombat
+
+- type: listing
+  id: ErtCallUplinkWeaponBORGunMagazine
+  name: BOR Magazine
+  description: Ammunition for BOR sniper rifle.
+  productEntity: BorSniperMagazine
+  cost:
+    BlueSpaceCube: 2
+  categories:
+  - ERTUplinkAmmoCombat

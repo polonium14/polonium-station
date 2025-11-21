@@ -1,0 +1,5 @@
+- type: jukebox
+  id: icantaffordmastering
+  name: C418 - I can't afford mastering
+  path:
+    path: "/Audio/_Polonium/Various Artists/i_cant_afford_mastering.ogg"

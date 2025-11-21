@@ -8,7 +8,6 @@ admin-player-actions-respawn = Respawnowanie
 admin-player-actions-spawn = Spawnuj tutaj
 admin-player-spawn-failed = Nie znaleziono prawidłowych współrzędnych.
 admin-player-actions-player-panel = Otwórz Panel Gracza
-
 admin-player-actions-clone = Sklonuj
 admin-player-actions-follow = Sledź
 admin-player-actions-confirm = Na pewno?

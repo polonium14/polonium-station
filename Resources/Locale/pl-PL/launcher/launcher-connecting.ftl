@@ -12,8 +12,9 @@ connecting-disconnected = Rozłączono z serwera:
 connecting-tip = Don't die!
 connecting-window-tip = Wskazówka { $numberTip }
 connecting-version = ver 0.1
-connecting-fail-reason = Połączenie z serwerem nieudane:
-                         { $reason }
+connecting-fail-reason =
+    Połączenie z serwerem nieudane:
+    { $reason }
 connecting-state-NotConnecting = Brak połączenia
 connecting-state-ResolvingHost = Resolving host
 # Tego też bo resolving host to DNS i ponownie, termin IT

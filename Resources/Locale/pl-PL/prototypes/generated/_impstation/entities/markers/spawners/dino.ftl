@@ -1,0 +1,9 @@
+ent-DinosaurSpawnerRandom = random dinosaur spawner
+    .suffix = DO NOT MAP
+    .desc = { ent-MarkerBase.desc }
+ent-DinosaurSpawnerEasy = dinosaur rift spawner (easy)
+    .desc = { ent-MarkerBase.desc }
+ent-DinosaurSpawnerMedium = dinosaur rift spawner (medium)
+    .desc = { ent-MarkerBase.desc }
+ent-DinosaurSpawnerHard = dinosaur rift spawner (hard)
+    .desc = { ent-MarkerBase.desc }
