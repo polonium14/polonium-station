@@ -91,7 +91,7 @@
 #Junitor
 - type: entity
   parent: [ BaseERTUplink, ErtCallUplinkJanitorPreset ]
-  id: ERTUplinkJunitor
+  id: ERTUplinkJanitor
   name: WTH terminal
   description: Warp To Hand terminal. An experimental device for teleporting items directly into the user's hands.
   suffix: ERT, JUNITOR, 25

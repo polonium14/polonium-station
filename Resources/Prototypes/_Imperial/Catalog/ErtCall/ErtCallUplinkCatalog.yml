@@ -902,7 +902,7 @@
         tags:
           - ErtUplinkCombat
 
-#ERTUplinkJunitor
+#ERTUplinkJanitor
 - type: listing
   id: ErtCallUplinkAdvMopItem
   name: Advanced Mop
@@ -911,7 +911,7 @@
   cost:
     BlueSpaceCube: 6
   categories:
-  - ERTUplinkJunitor
+  - ERTUplinkJanitor
 
 - type: listing
   id: ErtCallUplinkWeedSpray
@@ -921,7 +921,7 @@
   cost:
     BlueSpaceCube: 1
   categories:
-  - ERTUplinkJunitor
+  - ERTUplinkJanitor
 
 - type: listing
   id: ErtCallUplinkLightReplacer
@@ -931,7 +931,17 @@
   cost:
     BlueSpaceCube: 2
   categories:
-  - ERTUplinkJunitor
+  - ERTUplinkJanitor
+
+- type: listing
+  id: ErtCallUplinkBoxLightMixed
+  name: Mixed Light Bulb Box
+  description: Assorted replacement light bulbs.
+  productEntity: BoxLightMixed
+  cost:
+    BlueSpaceCube: 1
+  categories:
+  - ERTUplinkJanitor
 
 - type: listing
   id: ErtCallUplinkSprayBottleSpaceCleaner
@@ -941,7 +951,7 @@
   cost:
     BlueSpaceCube: 1
   categories:
-  - ERTUplinkJunitor
+  - ERTUplinkJanitor
 
 - type: listing
   id: ErtCallUplinkMopBucketFull
@@ -951,7 +961,7 @@
   cost:
     BlueSpaceCube: 4
   categories:
-  - ERTUplinkJunitor
+  - ERTUplinkJanitor
 
 - type: listing
   id: ErtCallUplinkBucket
@@ -961,7 +971,7 @@
   cost:
     BlueSpaceCube: 2
   categories:
-  - ERTUplinkJunitor
+  - ERTUplinkJanitor
 
 - type: listing
   id: ErtCallUplinkBoxBodyBag
@@ -971,7 +981,27 @@
   cost:
     BlueSpaceCube: 4
   categories:
-  - ERTUplinkJunitor
+  - ERTUplinkJanitor
+
+- type: listing
+  id: ErtCallUplinkBiohazardSuit
+  name: Soap
+  description: Soap.
+  productEntity: Soap
+  cost:
+    BlueSpaceCube: 1
+  categories:
+  - ERTUplinkJanitor
+
+- type: listing
+  id: ErtCallUplinkTrashBag
+  name: Trash Bag
+  description: Heavy-duty trash bag.
+  productEntity: TrashBag
+  cost:
+    BlueSpaceCube: 1
+  categories:
+  - ERTUplinkJanitor
 
 #ERTUplinkUtilities
 

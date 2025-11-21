@@ -13,7 +13,7 @@
     - ERTUplinkMedial
     - ERTUplinkEngineering
     - ERTUplinkUtilities
-    - ERTUplinkJunitor
+    - ERTUplinkJanitor
     - ERTUplinkPointless
     currencyWhitelist:
     - BlueSpaceCube
@@ -34,7 +34,7 @@
     - ERTUplinkMedial
     #- ERTUplinkEngineering
     - ERTUplinkUtilities
-    #- ERTUplinkJunitor
+    #- ERTUplinkJanitor
     - ERTUplinkPointless
     currencyWhitelist:
     - BlueSpaceCube
@@ -55,7 +55,7 @@
     #- ERTUplinkMedial
     #- ERTUplinkEngineering
     - ERTUplinkUtilities
-    #- ERTUplinkJunitor
+    #- ERTUplinkJanitor
     - ERTUplinkPointless
     currencyWhitelist:
     - BlueSpaceCube
@@ -76,7 +76,7 @@
     #- ERTUplinkMedial
     - ERTUplinkEngineering
     - ERTUplinkUtilities
-    #- ERTUplinkJunitor
+    #- ERTUplinkJanitor
     - ERTUplinkPointless
     currencyWhitelist:
     - BlueSpaceCube
@@ -97,7 +97,7 @@
     #- ERTUplinkMedial
     #- ERTUplinkEngineering
     - ERTUplinkUtilities
-    - ERTUplinkJunitor
+    - ERTUplinkJanitor
     - ERTUplinkPointless
     currencyWhitelist:
     - BlueSpaceCube
@@ -123,7 +123,7 @@
     - ERTUplinkMedial
     - ERTUplinkEngineering
     - ERTUplinkUtilities
-    #- ERTUplinkJunitor
+    #- ERTUplinkJanitor
     #- ERTUplinkPointless
     currencyWhitelist:
     - BlueSpaceCube
@@ -145,7 +145,7 @@
     - ERTUplinkMedial
     - ERTUplinkEngineering
     - ERTUplinkUtilities
-    - ERTUplinkJunitor
+    - ERTUplinkJanitor
     - ERTUplinkPointless
     currencyWhitelist:
     - BlueSpaceCube

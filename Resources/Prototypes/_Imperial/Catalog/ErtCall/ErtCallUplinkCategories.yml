@@ -7,7 +7,7 @@
 #   - ERTUplinkMedial
 #   - ERTUplinkEngineering
 #   - ERTUplinkUtilities
-#   - ERTUplinkJunitor
+#   - ERTUplinkJanitor
 #   - ERTUplinkPointless
 
 - type: storeCategory
@@ -47,7 +47,7 @@
   name: Utilities
 
 - type: storeCategory
-  id: ERTUplinkJunitor
+  id: ERTUplinkJanitor
   name: Janitorial
 
 - type: storeCategory
