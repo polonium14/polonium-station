@@ -29,4 +29,4 @@ revolutionaries-open-revolt-rev-popup = Open Revolt has been declared! Viva la r
 revolutionaries-open-revolt-announcement =
     We have detected a psionic declaration of Open Revolt aboard the station by active revolutionary cells.
 
-    The source has been determined, and the following individuals are to be detained or neutralized immediately in the interest of public safety: {$nameList}. 
+    The source has been determined, and the following individuals are to be detained or neutralized immediately in the interest of public safety: {$nameList}.
