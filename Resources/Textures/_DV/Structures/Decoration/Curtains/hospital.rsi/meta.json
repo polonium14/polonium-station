@@ -9,11 +9,11 @@
     "states": [
         {
             "name": "open",
-            "directions": 4
+            "directions": 1
         },
         {
             "name": "closed",
-            "directions": 4
+            "directions": 1
         }
     ]
 }
