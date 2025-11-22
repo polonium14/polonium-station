@@ -35,12 +35,12 @@ namespace Content.Client.Arcade
 
         public SpaceVillainArcadeMenu()
         {
-            MinSize = SetSize = new Vector2(300, 225);
+            MinSize = SetSize = new Vector2(400, 225);
             Title = Loc.GetString("spacevillain-menu-title");
 
             var grid = new GridContainer { Columns = 1 };
 
-            var infoGrid = new GridContainer { Columns = 3 };
+            var infoGrid = new GridContainer { Columns = 3, HorizontalAlignment = HAlignment.Center};
             infoGrid.AddChild(new Label { Text = Loc.GetString("spacevillain-menu-label-player"), Align = Label.AlignMode.Center });
             infoGrid.AddChild(new Label { Text = "|", Align = Label.AlignMode.Center });
             _enemyNameLabel = new Label { Align = Label.AlignMode.Center };
@@ -51,7 +51,7 @@ namespace Content.Client.Arcade
             infoGrid.AddChild(new Label { Text = "|", Align = Label.AlignMode.Center });
             _enemyInfoLabel = new Label { Align = Label.AlignMode.Center };
             infoGrid.AddChild(_enemyInfoLabel);
-            var centerContainer = new CenterContainer();
+            var centerContainer = new CenterContainer { HorizontalAlignment = HAlignment.Center };
             centerContainer.AddChild(infoGrid);
             grid.AddChild(centerContainer);
 
@@ -89,7 +89,7 @@ namespace Content.Client.Arcade
                 _ => OnPlayerAction?.Invoke(SharedSpaceVillainArcadeComponent.PlayerAction.Recharge);
             buttonGrid.AddChild(_gameButtons[2]);
 
-            centerContainer = new CenterContainer();
+            centerContainer = new CenterContainer { HorizontalAlignment = HAlignment.Center };
             centerContainer.AddChild(buttonGrid);
             grid.AddChild(centerContainer);
 
