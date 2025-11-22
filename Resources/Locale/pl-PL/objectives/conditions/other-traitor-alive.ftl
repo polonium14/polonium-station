@@ -1,9 +1,10 @@
-objective-condition-other-traitor-alive-title = Dopilnuj aby {GENDER($targetName) ->
+objective-condition-other-traitor-alive-title =
+    Dopilnuj aby { GENDER($targetName) ->
         [male] zdracja
         [female] zdrajczyni
-        *[other] zdrajczysko
-    } {$targetName}, {$job} {GENDER($targetName) ->
+       *[other] zdrajczysko
+    } { $targetName }, { $job } { GENDER($targetName) ->
         [male] pozostał
         [female] pozostała
-        *[other] pozostało
+       *[other] pozostało
     } przy życiu.

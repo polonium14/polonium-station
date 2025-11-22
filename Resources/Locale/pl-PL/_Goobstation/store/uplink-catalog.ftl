@@ -88,6 +88,7 @@ uplink-shotgun-magazine-slug-desc = Shotgun drum with 8 slug shells. Compatible 
 #uplink-high-caliber-box-desc = A box of 30 .50 caliber anti-materiel rounds.
 
 
+
 # Mechs
 
 uplink-mech-teleporter-heavy-name = Heavy Mech teleporter
