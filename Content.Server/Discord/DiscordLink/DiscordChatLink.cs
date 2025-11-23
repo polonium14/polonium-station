@@ -1,4 +1,5 @@
-﻿using Content.Server.Chat.Managers;
+using System.Threading.Tasks;
+using Content.Server.Chat.Managers;
 using Content.Shared.CCVar;
 using Content.Shared.Chat;
 using NetCord.Gateway;
