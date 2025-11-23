@@ -43,7 +43,7 @@ public sealed class CallErt : LocalizedCommands
         if (args.Length == 0)
         {
             shell.WriteError(Loc.GetString("callertcommand-error-args0"));
-            _entity.System<SharedAudioSystem>().PlayGlobal("/Audio/_Polonium/ErtCall/noert.ogg", Filter.Broadcast(), true, AudioParams.Default.WithVolume(1.5f));
+            _entity.System<SharedAudioSystem>().PlayGlobal("/Audio/_Polonium/ErtCall/noert.ogg", Filter.Broadcast(), true, AudioParams.Default.WithVolume(10f));
             return;
         }
         if (args.Length > 1)
@@ -61,7 +61,7 @@ public sealed class CallErt : LocalizedCommands
         }
         if (ertSpawnSystem.SpawnErt(proto))
         {
-            _entity.System<SharedAudioSystem>().PlayGlobal("/Audio/_Polonium/ErtCall/yesert.ogg", Filter.Broadcast(), true, AudioParams.Default.WithVolume(-5f));
+            _entity.System<SharedAudioSystem>().PlayGlobal("/Audio/_Polonium/ErtCall/yesert.ogg", Filter.Broadcast(), true, AudioParams.Default.WithVolume(10f));
             shell.WriteLine(Loc.GetString("callertcommand-preset-loaded", ("protoid", protoId)));
             return;
         }

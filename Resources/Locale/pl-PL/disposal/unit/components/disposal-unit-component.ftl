@@ -4,8 +4,8 @@ ui-disposal-unit-title = Zsyp
 ui-disposal-unit-label-state = Stan:
 ui-disposal-unit-label-pressure = Ciśnienie:
 ui-disposal-unit-label-status = Gotowy
-ui-disposal-unit-button-flush = Wyślij zawartość
-ui-disposal-unit-button-eject = Wyrzuć zawartość
+ui-disposal-unit-button-flush = Wyślij
+ui-disposal-unit-button-eject = Wyrzuć
 ui-disposal-unit-button-power = Zasilanie
 
 ## Verbs
