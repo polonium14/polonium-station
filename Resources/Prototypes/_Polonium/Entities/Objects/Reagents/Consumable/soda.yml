@@ -1,8 +1,8 @@
 - type: reagent
   id: Oranzada
-  name: Oranzada
+  name: reagent-name-oranzada
+  desc: reagent-desc-oranzada
   parent: BaseSoda
-  desc: Ah, polski klasyk.
   physicalDesc: reagent-physical-desc-sweet
   flavor: soda
   color: "#ee4343"
