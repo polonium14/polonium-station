@@ -25,7 +25,6 @@ using Content.Shared._Shitmed.Medical.Surgery.Effects.Step;
 using Content.Shared._Shitmed.Medical.Surgery.Steps;
 using Content.Shared._Shitmed.Medical.Surgery.Steps.Parts;
 using Content.Shared._Shitmed.Medical.Surgery.Tools;
-using Content.Shared.Mood;
 using Content.Shared.Inventory;
 using Content.Shared.Item;
 using Content.Shared._Shitmed.Body.Organ;
@@ -172,9 +171,6 @@ public abstract partial class SharedSurgerySystem
             }
         }
 
-
-        if (!HasComp<ForcedSleepingComponent>(args.Body) || !HasComp<NoScreamComponent>(args.Body))
-            RaiseLocalEvent(args.Body, new MoodEffectEvent("SurgeryPain"));
         // Morphine - reenable this :)
         if (!_inventory.TryGetSlotEntity(args.User, "gloves", out var _)
             || !_inventory.TryGetSlotEntity(args.User, "mask", out var _))

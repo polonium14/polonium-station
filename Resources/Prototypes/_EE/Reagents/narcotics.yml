@@ -27,12 +27,12 @@
       - !type:GenericStatusEffect
         key: NoScream
         component: NoScream
-      - !type:ChemAddMoodlet
-        moodPrototype: MorphineBenefit
-        conditions:
-        - !type:ReagentThreshold # doesn't cause addiction unless you use more than one syringe/pen in a sitting
-          reagent: Morphine
-          min: 16
+      # - !type:ChemAddMoodlet
+      #   moodPrototype: MorphineBenefit
+      #   conditions:
+      #   - !type:ReagentThreshold # doesn't cause addiction unless you use more than one syringe/pen in a sitting
+      #     reagent: Morphine
+      #     min: 16
       - !type:HealthChange
         conditions:
         - !type:ReagentThreshold

@@ -402,12 +402,6 @@ reagent-effect-guidebook-plant-phalanximine =
         [1] Restores
         *[other] restore
     } viability to a plant rendered nonviable by a mutation
-reagent-effect-guidebook-add-moodlet =
-    Modifies mood by {$amount}
-    { $timeout ->
-        [0] indefinitely
-        *[other] for {$timeout} seconds
-    }
 
 reagent-effect-guidebook-plant-diethylamine =
     { $chance ->
