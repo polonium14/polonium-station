@@ -5,7 +5,7 @@
   components:
   - type: StorageFill
     contents:
-    - id: ClothingEyesGlassesCorpsman
+    - id: ClothingEyesGlassesSunglasses # Polonium edit
     - id: WeaponDisabler
     - id: TrackingImplanter
       amount: 2

@@ -1,10 +1,12 @@
+# Reworked by Polonium Station Team
+
 #ERT START
 #Leader
 - type: entity
   #noSpawn: true
   id: SpawnERTLeaderEVAPreset
   name: ghost role spawn point
-  parent: MarkerBase
+  parent: SpawnPointGhostRoleJob
   components:
     - type: GhostRole
       name: ertcall-leader-eva-name
@@ -12,8 +14,8 @@
       rules: ertcall-leader-eva-rules
       raffle:
         settings: short
-    - type: GhostRoleMobSpawner
-      prototype: ERTLeader
+    - type: SpawnPoint
+      job_id: ERTLeader
     - type: Sprite
       sprite: Markers/jobs.rsi
       layers:
@@ -27,7 +29,7 @@
   #noSpawn: true
   id: SpawnERTMedicEVAPreset
   name: ghost role spawn point
-  parent: MarkerBase
+  parent: SpawnPointGhostRoleJob
   components:
     - type: GhostRole
       name: ertcall-medic-eva-name
@@ -35,8 +37,8 @@
       rules: ertcall-medic-eva-rules
       raffle:
         settings: short
-    - type: GhostRoleMobSpawner
-      prototype: ERTMedical
+    - type: SpawnPoint
+      job_id: ERTMedical
     - type: Sprite
       sprite: Markers/jobs.rsi
       layers:
@@ -49,7 +51,7 @@
   #noSpawn: true
   id: SpawnERTSecurityEVAPreset
   name: ghost role spawn point
-  parent: MarkerBase
+  parent: SpawnPointGhostRoleJob
   components:
     - type: GhostRole
       name: ertcall-security-eva-name
@@ -57,8 +59,8 @@
       rules: ertcall-security-eva-rules
       raffle:
         settings: short
-    - type: GhostRoleMobSpawner
-      prototype: ERTSecurity
+    - type: SpawnPoint
+      job_id: ERTSecurity
     - type: Sprite
       sprite: Markers/jobs.rsi
       layers:
@@ -71,7 +73,7 @@
   #noSpawn: true
   id: SpawnERTEngineerEVAPreset
   name: ghost role spawn point
-  parent: MarkerBase
+  parent: SpawnPointGhostRoleJob
   components:
     - type: GhostRole
       name: ertcall-engineer-eva-name
@@ -79,8 +81,8 @@
       rules: ertcall-engineer-eva-rules
       raffle:
         settings: short
-    - type: GhostRoleMobSpawner
-      prototype: ERTEngineer
+    - type: SpawnPoint
+      job_id: ERTEngineer
     - type: Sprite
       sprite: Markers/jobs.rsi
       layers:
@@ -93,7 +95,7 @@
   #noSpawn: true
   id: SpawnERTJunitorEVAPreset
   name: ghost role spawn point
-  parent: MarkerBase
+  parent: SpawnPointGhostRoleJob
   components:
     - type: GhostRole
       name: ertcall-junitor-eva-name
@@ -101,8 +103,8 @@
       rules: ertcall-junitor-eva-rules
       raffle:
         settings: short
-    - type: GhostRoleMobSpawner
-      prototype: ERTJanitor
+    - type: SpawnPoint
+      job_id: ERTJanitor
     - type: Sprite
       sprite: Markers/jobs.rsi
       layers:
@@ -117,7 +119,7 @@
   #noSpawn: true
   id: SpawnCBURNLeaderEVAPreset
   name: ghost role spawn point
-  parent: MarkerBase
+  parent: SpawnPointGhostRoleJob
   components:
     - type: GhostRole
       name: ertcall-cburn-leader-eva-name
@@ -125,8 +127,8 @@
       rules: ertcall-cburn-leader-eva-rules
       raffle:
         settings: short
-    - type: GhostRoleMobSpawner
-      prototype: CBURNLeader
+    - type: SpawnPoint
+      job_id: CBURNLeader
     - type: Sprite
       sprite: Markers/jobs.rsi
       layers:
@@ -139,7 +141,7 @@
   #noSpawn: true
   id: SpawnCBURNSecurityEVAPreset
   name: ghost role spawn point
-  parent: MarkerBase
+  parent: SpawnPointGhostRoleJob
   components:
     - type: GhostRole
       name: ertcall-cburn-security-eva-name
@@ -147,8 +149,8 @@
       rules: ertcall-cburn-security-eva-rules
       raffle:
         settings: short
-    - type: GhostRoleMobSpawner
-      prototype: CBURNSecurity
+    - type: SpawnPoint
+      job_id: CBURNSecurity
     - type: Sprite
       sprite: Markers/jobs.rsi
       layers:
@@ -161,7 +163,7 @@
   #noSpawn: true
   id: SpawnCBURNMedicEVAPreset
   name: ghost role spawn point
-  parent: MarkerBase
+  parent: SpawnPointGhostRoleJob
   components:
     - type: GhostRole
       name: ertcall-cburn-medic-eva-name
@@ -169,8 +171,8 @@
       rules: ertcall-cburn-medic-eva-rules
       raffle:
         settings: short
-    - type: GhostRoleMobSpawner
-      prototype: CBURNMedic
+    - type: SpawnPoint
+      job_id: CBURNMedic
     - type: Sprite
       sprite: Markers/jobs.rsi
       layers:
@@ -184,7 +186,7 @@
   #noSpawn: true
   id: SpawnDeadSquadSecurityEVAPreset
   name: ghost role spawn point
-  parent: MarkerBase
+  parent: SpawnPointGhostRoleJob
   components:
     - type: GhostRole
       name: ertcall-deadsquad-security-eva-name
@@ -192,8 +194,8 @@
       rules: ertcall-deadsquad-security-eva-rules
       raffle:
         settings: short
-    - type: GhostRoleMobSpawner
-      prototype: DeadSquad
+    - type: SpawnPoint
+      job_id: DeadSquad
     - type: Sprite
       sprite: Markers/jobs.rsi
       layers:
