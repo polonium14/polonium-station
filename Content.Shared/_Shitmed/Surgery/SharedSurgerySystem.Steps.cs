@@ -171,7 +171,10 @@ public abstract partial class SharedSurgerySystem
             }
         }
 
-        // Morphine - reenable this :)
+
+        //if (!HasComp<ForcedSleepingComponent>(args.Body))
+        //    //RaiseLocalEvent(args.Body, new MoodEffectEvent("SurgeryPain"));
+        // No mood on Goob :(
         if (!_inventory.TryGetSlotEntity(args.User, "gloves", out var _)
             || !_inventory.TryGetSlotEntity(args.User, "mask", out var _))
         {

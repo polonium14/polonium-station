@@ -150,8 +150,6 @@
       - id: BruteAutoInjector
       - id: BurnAutoInjector
       - id: HandheldHealthAnalyzer #funky
-      - id: EmergencyMedipen
-      - id: PainMedipen # Morphine
 
 - type: entity
   id: StimkitFilled

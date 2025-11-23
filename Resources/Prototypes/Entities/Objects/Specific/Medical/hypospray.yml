@@ -210,7 +210,6 @@
   - type: Tag
     tags:
     - Trash
-    - Medipen
   - type: PhysicalComposition
     materialComposition:
       Plastic: 50
