@@ -57,7 +57,7 @@
   parent: ClothingHeadBase
   id: ClothingHeadHatSurgcapWhite
   name: surgical cap
-  description: A black cap surgeons wear during operations. Keeps their hair from tickling your internal organs.
+  description: A white cap surgeons wear during operations. Keeps their hair from tickling your internal organs.
   components:
   - type: Sprite
     sprite: _DV/Clothing/Head/Hats/surgcap_white.rsi
