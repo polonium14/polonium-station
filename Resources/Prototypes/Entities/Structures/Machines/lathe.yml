@@ -1416,7 +1416,7 @@
     - ParamedHypo # Goobstation - ParamedHypo
     - autoInjectorCartridgeCase
     - autoInjectorCartridgeCaseSoft
-    - VehicleWheelchairFolded # Goobstation - Vehicles
+    # - VehicleWheelchairFolded # Goobstation - Vehicles
     - SyringeCase # Morphine
     dynamicRecipes:
     - ChemicalPayload

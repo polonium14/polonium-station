@@ -150,7 +150,7 @@
       raffle:
         settings: short
     - type: SpawnPoint
-      job_id: CBURNSecurity
+      job_id: CBURN
     - type: Sprite
       sprite: Markers/jobs.rsi
       layers:
@@ -195,7 +195,7 @@
       raffle:
         settings: short
     - type: SpawnPoint
-      job_id: DeadSquad
+      job_id: DeathSquad
     - type: Sprite
       sprite: Markers/jobs.rsi
       layers:

@@ -286,7 +286,8 @@
 - type: latheRecipe
   id: SyringeCase
   result: SyringeCase
-  category: Tools
+  categories:
+    - Tools
   completetime: 2
   materials:
     Plastic: 100

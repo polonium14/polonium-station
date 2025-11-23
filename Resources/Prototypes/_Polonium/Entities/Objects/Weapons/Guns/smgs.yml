@@ -22,7 +22,7 @@
     - type: Gun
       fireRate: 8
       burstFireRate: 15
-      BurstCooldown: 0.75
+      burstCooldown: 0.45
       shotsPerBurst: 3
       minAngle: 26
       maxAngle: 45

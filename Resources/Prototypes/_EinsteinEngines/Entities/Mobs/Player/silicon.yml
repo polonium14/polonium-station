@@ -104,7 +104,7 @@
     sprite: Objects/Misc/module.rsi
     state: std_mod
   - type: SiliconLawProvider
-    laws: Janitor
+    laws: JanitorLawset
 
 - type: entity
   id: EngineerCircuitBoard

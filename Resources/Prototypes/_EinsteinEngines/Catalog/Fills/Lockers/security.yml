@@ -26,8 +26,8 @@
       prob: 0.3
     - id: MedkitBurnFilled
       prob: 0.7
-    - id: LunchboxSecurityFilledRandom
-      prob: 0.3
+    # - id: LunchboxSecurityFilledRandom
+    #   prob: 0.3
     - id: ClothingHandsGlovesNitrile
     - id: ClothingBeltCorpsmanWebbing
     - id: DefibrillatorCompact
