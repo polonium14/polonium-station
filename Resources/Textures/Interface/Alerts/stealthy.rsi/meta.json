@@ -5,5 +5,13 @@
     "size": {
         "x": 32,
         "y": 32
-    }
+    },
+    "states": [
+        {
+            "name": "stealthy-on"
+        },
+        {
+            "name": "stealthy-off"
+        }
+    ]
 }
