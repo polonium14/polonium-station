@@ -2,7 +2,7 @@
 
 #### 1. Sztuczna inteligencja jest narzędziem, a nie współautorem kodu.
 
-Oczywiście nie można zabronić wykorzystywania AI, ale powinno ono służyć jako narzędzie do szybkiego uczenia się, poszukiwania informacji lub podstawowej pomocy. Lepiej napisać nieidealny, ale własny i zrozumiały kod, który zawsze da się wyjaśnić, zdebugować i w razie potrzeby naprawić, niż generować kod za pomocą AI nie wiedząc do końca, co się w nim dzieje. Ustalamy twardą regułę: **generowanie kodu przez AI to tabu**.
+Oczywiście nie można zabronić wykorzystywania AI, ale powinno ono służyć jako narzędzie do szybkiego uczenia się, poszukiwania informacji lub podstawowej pomocy. Lepiej napisać nieidealny, ale własny i zrozumiały kod, który zawsze da się wyjaśnić, zdebugować i w razie potrzeby naprawić, niż generować kod za pomocą AI nie wiedząc do końca, co się w nim dzieje.
 
 #### 2. Jeden teman zmian = jeden PR (Pull Request).
 
@@ -18,7 +18,7 @@ Są jednak sytuacje, w których nie da się uniknąć kopiowania. Na przykład: 
 
 -   `PascalCase` dla stałych, klas, struktur, zdarzeń, metod, właściwości, interfejsów itp.
 -   `camelCase` dla zmiennych lokalnych, zmiennych prywatnych i parametrów funkcji
--   `_camelCase` do definiowania wstrzykiwanych zależności ([Dependcy Injection](https://docs.spacestation14.com/en/robust-toolbox/ioc.html)), na przykład:
+-   `_camelCase` do nazw zmiennych CCVars oraz do definiowania wstrzykiwanych zależności ([Dependcy Injection](https://docs.spacestation14.com/en/robust-toolbox/ioc.html)), na przykład:
 
 ```csharp
 public abstract partial class SharedStaminaSystem : EntitySystem
@@ -121,13 +121,14 @@ public class Player
 
 4. Wprowadzasz zmiany na tej gałęzi, a następnie tworzysz pull request (twoja gałąź -> `master` naszego repozytorium).
 
--   ⚠️ Nie zapomnij również o sklonowaniu modułów podrzędnych: `git submodule update --init --recursive`
+> [!IMPORTANT]
+> Nie zapomnij również o sklonowaniu modułów podrzędnych: `git submodule update --init --recursive`
 
 Szczegółowe informacje na temat pracy na gałęziach znajdziesz [tutaj](#1-mam-ju%C5%BC-forka-ss14-na-swoim-profilu-wi%C4%99c-github-nie-pozwala-mi-utworzy%C4%87-forka-ps14-jak-mog%C4%99-to-obej%C5%9B%C4%87)
 
 #### 1. Twórz osobne PR dla zmian funkcji, poprawek błędów, czyszczenia i refaktoryzacji.
 
-Ułatwia to przeglądanie zmian, zmniejsza liczbę konfliktów oraz upraszcza przywracanie wcześniejszego stanu w razie problemów.
+Nie jest to konieczne, ale ułatwia to przeglądanie zmian, zmniejsza liczbę konfliktów oraz upraszcza przywracanie wcześniejszego stanu w razie problemów.
 
 -   **Zmiany treści i poprawki błędów** powinny znajdować się w osobnych pull requestach.
 -   **Czyszczenie i refaktoryzacja** - w tym zmiany nazw zmiennych, poprawki wcięć i inne modyfikacje formatowania (np. spacje w nazwach plików) - muszą być zgłaszane w osobnym PR.
@@ -135,7 +136,8 @@ Ułatwia to przeglądanie zmian, zmniejsza liczbę konfliktów oraz upraszcza pr
 -   **Jeśli przenosisz plik do innego folderu lub przestrzeni nazw**, umieść tę zmianę w osobnym commicie (jeśli to możliwe), aby łatwiej było odróżnić, co zostało zmodyfikowane w samym pliku, a co jedynie przeniesione.
 -   **Zmiany w mapowaniu** powinny być zgłaszane w osobnym PR dla **każdej** edytowanej mapy - nawet jeśli zmiana jest niewielka.
 
--   ⚠️ **Nie łącz kilku niepowiązanych zmian w jednym PR.** Nie należy, np., zmieniać odporność termiczną rękawic wraz z dodawaniem nowej broni. Dobrą praktyką jest podzielenie dużego PR na mniejsze, jeżeli to rzeczywiście ma sens. Ułatwi i przyśpieszy to przegląd zmian.
+> [!IMPORTANT]
+> **Prosimy nie łączyć kilku niepowiązanych zmian w jednym PR.** Nie należy, np., zmieniać odporność termiczną rękawic wraz z dodawaniem nowej broni. Dobrą praktyką jest podzielenie dużego PR na mniejsze, jeżeli to rzeczywiście ma sens. Ułatwi i przyśpieszy to przegląd zmian.
 
 #### 2. Twórz osobne gałęzie dla każdego tematu zmian.
 
@@ -144,6 +146,14 @@ Należy traktować gałąź `master` jako główną gałąź projektu, do które
 Przed dokonywaniem jakichkolwiek zmian w kodzie, upewnij się, że masz odpowiednią gałąź do tych zmian w swoim forku tego repozytorium.
 
 Więcej na temat procesu tworzenia pull requestów znajdziesz w [tym artykule](https://docs.spacestation14.com/en/general-development/setup/git-for-the-ss14-developer.html).
+
+> [!TIP]
+> Jeśli zaczynasz pracę na gałęzi, z której poprzednio korzystałeś do utworzenia innego PRa, nie zapomnij zresetować jej treść zanim będziesz na niej pracować:
+> ```bash
+> git fetch polonium                 # Upewnij się, że masz ustawiony odpowiedni remote.
+> git reset --hard polonium/master   # UWAGA: zresetuje to wszystkie niezapisane zmiany
+> git push --force
+> ```
 
 #### 3. Zawsze testuj swoje zmiany w grze.
 
@@ -245,8 +255,9 @@ $ git reset --hard polonium/master
 HEAD is now at 3c38b14144 Tłumaczenie HUD/UI (#15)
 ```
 
-⚪ Polecenie `git reset --hard` usuwa wszystkie lokalne zmiany i ustawia gałąź dokładnie w tym samym stanie, co polonium/master.
-Dzięki temu możesz szybko pobrać najnowsze aktualizacje, jeśli lokalnie nie wprowadzałeś własnych zmian.
+> [!NOTE]
+> Polecenie `git reset --hard` usuwa wszystkie lokalne zmiany i ustawia gałąź dokładnie w tym samym stanie, co polonium/master.
+> Dzięki temu możesz szybko pobrać najnowsze aktualizacje, jeśli lokalnie nie wprowadzałeś własnych zmian.
 
 5. Wyślij nową gałąź na GitHub:
 
@@ -270,7 +281,7 @@ To https://github.com/nikitosych/space-station-14
 branch 'new-feature' set up to track 'origin/new-feature'.
 ```
 
-✅ Gotowe! Teraz możesz wprowadzać potrzebne zmiany i utworzyć Pull Request do PS14 z czystą historią commitów.
+✅ **Gotowe!** Teraz możesz wprowadzać potrzebne zmiany i utworzyć Pull Request do PS14 z czystą historią commitów.
 
 ## 2. Jak pracować z repozytorium, aby wprowadzać zmiany?
 
@@ -334,9 +345,9 @@ Dzięki temu unikasz bałaganu w commitach i możesz spokojnie pracować równol
 
 ---
 
-W razie jakichkolwiek pytań lub sugestii zapraszamy na nasz [Discord](https://discord.gg/AnCVTJEmnN) :)
-
-Zaleca się również zapoznanie z [poradnikiem Slartiego](https://hackmd.io/@Slart/S1hsoGFm1l), który ułatwia naukę struktury i zasad działania codebase SS14.
+> [!NOTE]
+> W razie jakichkolwiek pytań lub sugestii zapraszamy na nasz [Discord](https://discord.gg/AnCVTJEmnN) :)
+> Zaleca się również zapoznanie z [poradnikiem Slartiego](https://hackmd.io/@Slart/S1hsoGFm1l), który ułatwia naukę struktury i zasad działania codebase SS14.
 
 ---
 
