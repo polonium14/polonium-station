@@ -28,6 +28,10 @@
     layers:
       - state: pipeEnd
         map: [ "enum.PipeVisualLayers.Pipe" ]
+        sprite: _Nuclear14/Structures/Piping/atmospherics.rsi
+        drawdepth: ThinPipe
+        netsync: false
+        visible: false
 
 - type: entity
   parent: N14GasPipeBase
@@ -44,6 +48,10 @@
     layers:
       - state: pipeStraight
         map: [ "enum.PipeVisualLayers.Pipe" ]
+        sprite: _Nuclear14/Structures/Piping/atmospherics.rsi
+        drawdepth: ThinPipe
+        netsync: false
+        visible: false
 
 - type: entity
   parent: N14GasPipeBase
@@ -60,6 +68,10 @@
     layers:
       - state: pipeBend
         map: [ "enum.PipeVisualLayers.Pipe" ]
+        sprite: _Nuclear14/Structures/Piping/atmospherics.rsi
+        drawdepth: ThinPipe
+        netsync: false
+        visible: false
 
 - type: entity
   parent: N14GasPipeBase
@@ -76,6 +88,10 @@
     layers:
       - state: pipeTJunction
         map: [ "enum.PipeVisualLayers.Pipe" ]
+        sprite: _Nuclear14/Structures/Piping/atmospherics.rsi
+        drawdepth: ThinPipe
+        netsync: false
+        visible: false
 
 - type: entity
   parent: N14GasPipeBase
@@ -94,3 +110,7 @@
     layers:
       - state: pipeFourway
         map: [ "enum.PipeVisualLayers.Pipe" ]
+        sprite: _Nuclear14/Structures/Piping/atmospherics.rsi
+        drawdepth: ThinPipe
+        netsync: false
+        visible: false

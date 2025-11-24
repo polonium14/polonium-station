@@ -1,3 +1,5 @@
+# Resources\Prototypes\Datasets\Names\base.yml
+
 names-first-dataset-1 = Jan
 names-first-dataset-2 = Stanisław
 names-first-dataset-3 = Andrzej
