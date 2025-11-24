@@ -4,8 +4,8 @@ meta:
   engineVersion: 266.0.0
   forkId: ""
   forkVersion: ""
-  time: 11/21/2025 12:38:59
-  entityCount: 7279
+  time: 11/24/2025 11:37:56
+  entityCount: 7293
 maps:
 - 1
 grids:
@@ -4402,7 +4402,6 @@ entities:
             53: 10,4
             54: 12,9
             55: 5,7
-            56: -8,-2
             57: -9,-1
             58: -9,-1
             59: -7,0
@@ -4427,7 +4426,6 @@ entities:
           decals:
             62: -7,2
             63: -7,-2
-            64: -9,-2
             65: -4,-10
             66: -4,-10
             67: 2,-11
@@ -5388,8 +5386,6 @@ entities:
             472: -9.306953,0.22899383
             473: -9.279176,-0.159895
             474: -8.686583,0.35862345
-            475: -9.316213,-2.3358214
-            476: -8.816213,-2.5302656
             477: -6.0723085,-2.3358214
             478: -5.5815682,-2.0302656
             479: -5.5537906,-2.4284136
@@ -7921,23 +7917,17 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -21.5,23.5
       parent: 2
-    - type: Fixtures
-      fixtures: {}
   - uid: 134
     components:
     - type: Transform
       pos: 10.5,42.5
       parent: 2
-    - type: Fixtures
-      fixtures: {}
   - uid: 135
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -53.5,19.5
       parent: 2
-    - type: Fixtures
-      fixtures: {}
 - proto: APCHighCapacity
   entities:
   - uid: 136
@@ -19326,8 +19316,6 @@ entities:
     - type: Transform
       pos: -24.5,3.5
       parent: 2
-    - type: Fixtures
-      fixtures: {}
 - proto: ClothingBeltUtilityEngineering
   entities:
   - uid: 1856
@@ -19636,6 +19624,35 @@ entities:
     - type: Transform
       pos: 3.2988281,4.3634686
       parent: 7133
+    - type: GroupExamine
+      group:
+      - hoverMessage: ""
+        contextText: verb-examine-group-other
+        icon: /Textures/Interface/examine-star.png
+        components:
+        - Armor
+        - ClothingSpeedModifier
+        entries:
+        - message: This decreases your speed by [color=yellow]20%[/color].
+          priority: 0
+          component: ClothingSpeedModifier
+        - message: >-
+            Zapewnia następującą ochronę:
+
+            - Obrażenia typu [color=yellow]Tępego[/color] zredukowane o [color=lightblue]80%[/color].
+
+            - Obrażenia typu [color=yellow]Ciętego[/color] zredukowane o [color=lightblue]80%[/color].
+
+            - Obrażenia typu [color=yellow]Przeszywającego[/color] zredukowane o [color=lightblue]80%[/color].
+
+            - Obrażenia typu [color=yellow]Cieplnego[/color] zredukowane o [color=lightblue]50%[/color].
+
+            - Obrażenia typu [color=yellow]Żrącego[/color] zredukowane o [color=lightblue]25%[/color].
+
+            - Obrażenia typu [color=yellow]Radiacyjnego[/color] zredukowane o [color=lightblue]100%[/color].
+          priority: 0
+          component: Armor
+        title: null
 - proto: ClothingOuterArmorPodWars
   entities:
   - uid: 6020
@@ -19844,9 +19861,11 @@ entities:
   - uid: 6024
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 13.31538,-3.5293458
+      pos: 13.909042,-3.7072754
       parent: 5654
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
   - uid: 6025
     components:
     - type: Transform
@@ -20156,6 +20175,13 @@ entities:
     components:
     - type: Transform
       pos: 13.5,9.5
+      parent: 5654
+- proto: CombatKnife
+  entities:
+  - uid: 2522
+    components:
+    - type: Transform
+      pos: 13.450714,-3.019287
       parent: 5654
 - proto: ComfyChair
   entities:
@@ -22865,19 +22891,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: -18.4584,11.452088
       parent: 2
-- proto: Error
-  entities:
-  - uid: 6027
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 13.661739,-3.5450866
-      parent: 5654
-  - uid: 7268
-    components:
-    - type: Transform
-      pos: -0.5,10.5
-      parent: 7133
 - proto: ExGrenade
   entities:
   - uid: 6099
@@ -22885,6 +22898,8 @@ entities:
     - type: Transform
       parent: 6098
     - type: Physics
+      angularDamping: 0
+      linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
 - proto: ExosuitFabricator
@@ -23021,6 +23036,11 @@ entities:
       parent: 2
     - type: FaxMachine
       name: Medical
+  - uid: 3576
+    components:
+    - type: Transform
+      pos: -0.5,10.5
+      parent: 7133
 - proto: FaxMachineSyndie
   entities:
   - uid: 2279
@@ -23448,8 +23468,6 @@ entities:
     - type: Transform
       pos: 21.5,3.5
       parent: 2
-    - type: Fixtures
-      fixtures: {}
 - proto: FireBombEmpty
   entities:
   - uid: 6103
@@ -25118,8 +25136,6 @@ entities:
     - type: Transform
       pos: 23.5,-3.5
       parent: 2
-    - type: Fixtures
-      fixtures: {}
 - proto: GasCanisterBrokenBase
   entities:
   - uid: 6200
@@ -31441,54 +31457,40 @@ entities:
     - type: Transform
       pos: 11.5,-8.5
       parent: 5654
-    - type: Fixtures
-      fixtures: {}
   - uid: 6262
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -7.5,-2.5
       parent: 5654
-    - type: Fixtures
-      fixtures: {}
   - uid: 6263
     components:
     - type: Transform
       pos: 2.5,-6.5
       parent: 5654
-    - type: Fixtures
-      fixtures: {}
   - uid: 6264
     components:
     - type: Transform
       pos: 13.5,-0.5
       parent: 5654
-    - type: Fixtures
-      fixtures: {}
   - uid: 6265
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 14.5,-6.5
       parent: 5654
-    - type: Fixtures
-      fixtures: {}
   - uid: 6266
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 12.5,3.5
       parent: 5654
-    - type: Fixtures
-      fixtures: {}
   - uid: 6267
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 2.5,9.5
       parent: 5654
-    - type: Fixtures
-      fixtures: {}
 - proto: JanitorialTrolley
   entities:
   - uid: 3402
@@ -31569,6 +31571,14 @@ entities:
     - type: Transform
       pos: 11.5,-10.5
       parent: 2
+- proto: KitchenKnife
+  entities:
+  - uid: 3534
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 9.372253,-12.317017
+      parent: 5654
 - proto: KitchenMicrowave
   entities:
   - uid: 3412
@@ -32308,13 +32318,6 @@ entities:
           showEnts: False
           occludes: True
           ent: null
-- proto: LockerRepresentative
-  entities:
-  - uid: 2522
-    components:
-    - type: Transform
-      pos: 0.5,-0.5
-      parent: 2
 - proto: LockerResearchDirectorFilledHardsuit
   entities:
   - uid: 3453
@@ -33238,32 +33241,32 @@ entities:
         │█║▌▌│█║▌▌▌│║█│▌
 
 
-        Ticket for transporting a pet
+        Billet na przewóz zwierzęcia
 
 
         ▌▌▌│║█││█║▌▌│║▌▌▌
 
 
-        Animal type: Felis catus
+        Rodzaj zwierzęcia: Felis catus
 
 
         Nickname: Runtime
 
 
-        Age: 2 years
+        Wiek: 2 lata
 
 
         │║█││█║▌▌▌▌│█║▌▌
 
 
-        Date of transportation:  06.03.3024
+        Data przewozu:  09.04.3024
 
 
 
 
 
 
-        Reason for refusal: Lack of vaccination against the zombie virus.
+        Powód odrzucenia: Zwierzę nie posiada aktualnych szczepień przeciwko chorobom zakaźnym.
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
@@ -33284,25 +33287,25 @@ entities:
         │█║▌▌│█║▌▌▌│║█│▌
 
 
-        Ticket for transporting a pet
+        Bilet na przewóz zwierzęcia
 
 
         ▌▌▌│║█││█║▌▌│║▌▌▌
 
 
-        Animal type: Felis catus
+        Rodzaj zwierzęcia: Felis catus
 
 
         Nickname: Runtime
 
 
-        Age: 2 years, 1 month and 3 days
+        Wiek: 2 lata, 1 miesiąc i 3 dni
 
 
         │║█││█║▌▌▌▌│█║▌▌
 
 
-        Date of transportation:  09.04.3024
+        Data przewozu:  09.04.3024
   - uid: 3572
     components:
     - type: Transform
@@ -33312,32 +33315,31 @@ entities:
       content: >-
         [color=#B50F1D] ███░██████░███[/color]
 
-        [color=#B50F1D] █░░░██░░░░░░░█[/color]    [head=3]Document form[/head]
+        [color=#B50F1D] █░░░██░░░░░░░█[/color]    [head=3]Formularz dokumentu[/head]
 
-        [color=#B50F1D] █░░░░████░░░░█[/color]             [head=3]Syndicate[/head]
+        [color=#B50F1D] █░░░░████░░░░█[/color]             [head=3]Syndykat[/head]
 
-        [color=#B50F1D] █░░░░░░░██░░░█[/color]   [bold]Silly ██-███ ███[/bold]
+        [color=#B50F1D] █░░░░░░░██░░░█[/color]   [bold]SILLY ██-███ ███[/bold]
 
         [color=#B50F1D] ███░██████░███[/color]
 
         =============================================
-                                         REPORT ON SURVEILLANCE
+                                         RAPORT Z NADZORU
         =============================================
 
-        Date: 07.12.3023
+        Data: 07.12.3023
 
-        Agent's Call Sign: Operator Abu
+        Sygnał Wywoławczy Agenta: Operator Abu
 
+        Mam już dość słuchania tych bredni, po jakiego grzyba w ogóle mnie tu umieściliście!? Służba bezpieczeństwa nie przekazuje niczego pożytecznego na swoich kanałach. Już mi uszy krwawią od tego ███████ kadeta, który podrywa naczelnika!
 
-        I’m fed up with listening to this nonsense, why the hell was I even placed here!? The security service isn't passing anything useful over their channels. My ears are already bleeding from this ███████ cadet hitting on the warden!
+        Dzieli mnie od służby bezpieczeństwa tylko jedna ściana, nawet głośno chodzić nie mogę, bo według planów stacji nie ma tu żadnego pomieszczenia! Mogę zostać odkryty w każdej chwili! Poza tym, nie ma tu wentylacji, a zapach z toalety zabije mnie szybciej niż dym papierosowy. Muszę otwierać wejście do schronu na kilka sekund, by przewietrzyć ten chlew.
 
-        I'm separated from the security service by just one wall, I can't even walk loudly because, according to the station's blueprints, there’s no room here! I could be discovered at any moment! Plus, there’s no ventilation here, and the smell from the toilet will kill me faster than cigarette smoke. I have to open the shelter entrance for a few seconds to air out this pigsty.
+        I poza tym, jak ja mam pomagać więźniom? Owszem, przy bloku utylizacyjnym mogę podrzucić jakieś resztki tym, co aktualnie są zamknięci w celi, ale do cholery, wychodzą mi rzeczy prosto ze śmietnika! Naczelnik musi być kompletnie ślepy, by tego nie zauważyć!
 
-        And besides, how am I supposed to help the prisoners? Yes, with the disposal block, I can toss some scraps to those currently locked up in the cell, but damn, things are coming out straight from the trash! The warden must be completely blind not to notice this!
+        Wczoraj asystent techniczny sprawdzał, dokąd prowadzi kabel WN i znalazł tu przejście, więc musiałem ustrzelić go laserem i wyrzucić na panele słoneczne. To jest za, ████ ███, oczywiste miejsce!
 
-        Yesterday, the technical assistant was checking where the HV cable leads and found the passage here, so I had to nail him with a laser pen and throw him out by the solar panels. This is too, ████ ███, an obvious spot!
-
-        Take me the █████ of here already!
+        Zabierzcie mnie stąd do █████!
 
         =============================================
   - uid: 3573
@@ -33349,14 +33351,14 @@ entities:
     - type: Paper
       content: >2
 
-        [head=1]NOTICE TO EMPLOYEES[/head]
+        [head=1]UWAGA DLA PRACOWNIKÓW[/head]
 
-        The object located at the mass scanner is an especially dangerous entity; however, its containment chamber contains telecrystals, and there is also contraband within the walls of the building itself. The coordinates of the object at the time of writing this document:
+        Obiekt zlokalizowany przy skanerze masy jest jednostką szczególnie niebezpieczną; jednakże, jego komora przechowawcza zawiera telekryształy, a wewnątrz samych ścian budynku znajduje się również kontrabanda. Współrzędne obiektu w momencie pisania tego dokumentu:
 
         [head=1]-265 503[/head]
 
 
-        Use this information wisely.
+        Użyjcie tej informacji mądrze.
   - uid: 3574
     components:
     - type: Transform
@@ -33365,14 +33367,14 @@ entities:
     - type: Paper
       content: >2
 
-        [head=1]NOTICE TO EMPLOYEES[/head]
+        [head=1]UWAGA DLA PRACOWNIKÓW[/head]
 
-        The object located at the mass scanner is an especially dangerous entity; however, its containment chamber contains telecrystals, and there is also contraband within the walls of the building itself. The coordinates of the object at the time of writing this document:
+        Obiekt zlokalizowany przy skanerze masy jest jednostką szczególnie niebezpieczną; jednakże, jego komora przechowawcza zawiera telekryształy, a wewnątrz samych ścian budynku znajduje się również kontrabanda. Współrzędne obiektu w momencie pisania tego dokumentu:
 
         [head=1]-265 503[/head]
 
 
-        Use this information wisely.
+        Użyjcie tej informacji mądrze.
   - uid: 3575
     components:
     - type: Transform
@@ -33394,35 +33396,32 @@ entities:
       content: >-
         [color=#1b487e]███░███░░░░██░░░░[/color]
 
-        [color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Document form[/head]
+        [color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Formularz dokumentu[/head]
 
         [color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
 
-        [color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Killy_Island Station SEC[/bold]
+        [color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Stacja Killy_Island SEC[/bold]
 
         [color=#1b487e]░░░░██░░░████░███[/color]
 
         =============================================
-                          CONCEAL CARRY PERMIT
+                          POZWOLENIE NA NOSZENIE UKRYTEJ BRONI
         =============================================
 
 
-        Central Command grants permission for the Chaplain to carry a weapon, as long as it is used for its intended purpose. In case of violation, the permit will be revoked, and the weapon will be confiscated by the Security Service.
+        Centralne Dowództwo zezwala Kapłanowi na posiadanie broni, o ile będzie ona używana zgodnie z przeznaczeniem. W przypadku naruszenia, pozwolenie zostanie cofnięte, a broń skonfiskowana przez Służbę Bezpieczeństwa.
 
-        Weapon:
+        Broń:
 
-        Bone spear
+        Włoszczep kostny
 
+        Metoda pozyskania broni:
 
-        Method of obtaining the weapon:
+        Wydano na początku zmiany.
 
-        Issued at the beginning of the shift.
+        Powód wydania pozwolenia:
 
-
-        Reason for issuing the permit:
-
-        For the protection of the church.
-
+        Dla ochrony kościoła.
 
         =============================================
                                     [italic]Place for stamps[/italic]
@@ -33447,7 +33446,7 @@ entities:
     - type: Paper
       content: >2
 
-        [head=1]I DON’T WANT TO DIE LIKE THIS! I CAN’T EVEN BLOW MY OWN HEAD OFF, I DROPPED THE TRIGGER WHEN THAT SMOKER GOT TURNED INTO MEAT, DAMN IT! I’LL END UP THE SAME, I’M DESTINED FOR THE SAME FATE! PLEASE, GOD, GRANT ME A QUICK DEATH! I DON’T WANT THIS![/head]
+        [head=1]NIE CHCĘ TAK UMRZEĆ! NIE MOGĘ NAWET ODSTRZELIĆ SOBIE ŁBA, UPUSCIŁEM SPUST, KIEDY TEN PALACZ ZMIENIŁ SIĘ W MIĘSO, CHOLERA! SKOŃCZĘ TAK SAMO, CZEKA MNIE TEN SAM LOS! PROSZĘ, BOŻE, DAJ MI SZYBKĄ ŚMIERĆ! NIE CHCĘ TEGO![/head]
   - uid: 6298
     components:
     - type: Transform
@@ -33457,7 +33456,7 @@ entities:
     - type: Paper
       content: >2
 
-        [head=1]I WORK FOR ANOTHER CORPORATION, I DON'T WANT TO BE HERE, I DON'T WANT TO DIE! I PLACED THE ITEMS IN EMPTY SECTIONS, I WAS SUPPOSED TO HAVE ALREADY LEFT, BUT THIS CREATURE BEING RESEARCHED HERE SENT SOMETHING THROUGH A PIPE AND THE LEAD SCIENTIST WAS RIPPED APART, HIS REMAINS REFORMED INTO A TERRIFYING MONSTER! GOD, GRANT ME SALVATION! I AM SO SORRY! I AM SO SORRY! I AM SO SORRY! I AM SO SORRY![/head]
+        [head=1]PRACUJĘ DLA INNEJ KORPORACJI, NIE CHCĘ TU BYĆ, NIE CHCĘ UMRZEĆ! UMIEŚCIŁEM PRZEDMIOTY W PUSTYCH SEKCJACH, MIAŁEM JUŻ WYJECHAĆ, ALE TA ISTOTA, KTÓRĄ TU BADANO, PRZESŁAŁA COŚ PRZEZ RURĘ, A GŁÓWNY NAUKOWIEC ZOSTAŁ ROZSZARPANY, JEGO SZCZĄTKI PRZEOBRAZIŁY SIĘ W PRZERAŻAJĄCEGO POTWORA! BOŻE, DAJ MI ZBAWIENIE! PRZEPRASZAM! PRZEPRASZAM! PRZEPRASZAM! PRZEPRASZAM![/head]
   - uid: 6299
     components:
     - type: Transform
@@ -33466,7 +33465,7 @@ entities:
     - type: Paper
       content: >2
 
-        [head=1]I WON'T LET THESE BASTARD KIDS GET AWAY! UNTIL I BECOME A PILE OF FLESH MYSELF - I'LL KILL AS MANY AS I CAN! MAY THEY ALL BURN IN HELL![/head]
+        [head=1]NIE POZWOLĘ TYM BACHOROM ZWYCIĘŻYĆ! ZANIM SAM ZAMIENIĘ SIĘ W KUPĘ MIĘSA – ZABIJE TYLE, ILE SIĘ DA! NIECH WSZYSCY SPŁONĄ W PIEKLE![/head]
   - uid: 6300
     components:
     - type: Transform
@@ -33476,7 +33475,7 @@ entities:
     - type: Paper
       content: >2
 
-        [head=1]I WILL NOT DIE IN THE TOILET![/head]
+        [head=1]NIE UMRĘ W TOALECIE![/head]
 - proto: PaperBin10
   entities:
   - uid: 2535
@@ -33530,6 +33529,32 @@ entities:
     - type: Transform
       pos: 20.595924,8.557139
       parent: 2
+- proto: PaperDyedPurple
+  entities:
+  - uid: 3611
+    components:
+    - type: Transform
+      pos: -0.4814453,10.756676
+      parent: 7133
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+  - uid: 3613
+    components:
+    - type: Transform
+      pos: -0.46972656,10.781155
+      parent: 7133
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+  - uid: 3614
+    components:
+    - type: Transform
+      pos: -0.5185547,10.756676
+      parent: 7133
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
 - proto: PartRodMetal
   entities:
   - uid: 3584
@@ -38014,6 +38039,23 @@ entities:
       parent: 2
 - proto: SalvageFleshSpawner
   entities:
+  - uid: 3541
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 6.5,-10.5
+      parent: 5654
+  - uid: 3542
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 13.5,-1.5
+      parent: 5654
+  - uid: 3556
+    components:
+    - type: Transform
+      pos: 9.5,9.5
+      parent: 5654
   - uid: 6367
     components:
     - type: Transform
@@ -38076,6 +38118,18 @@ entities:
       parent: 5654
 - proto: SalvageHumanCorpseSpawner
   entities:
+  - uid: 3535
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 4.5,2.5
+      parent: 5654
+  - uid: 3536
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 13.5,-3.5
+      parent: 5654
   - uid: 6379
     components:
     - type: Transform
@@ -39759,15 +39813,11 @@ entities:
     - type: Transform
       pos: 8.5,-3.5
       parent: 5654
-    - type: Fixtures
-      fixtures: {}
   - uid: 6421
     components:
     - type: Transform
       pos: 5.5,11.5
       parent: 5654
-    - type: Fixtures
-      fixtures: {}
 - proto: SteelBench
   entities:
   - uid: 4419
@@ -40963,6 +41013,11 @@ entities:
       parent: 2
 - proto: TableFancyRed
   entities:
+  - uid: 3562
+    components:
+    - type: Transform
+      pos: -0.5,10.5
+      parent: 7133
   - uid: 4550
     components:
     - type: Transform
@@ -41475,6 +41530,36 @@ entities:
       parent: 2
 - proto: Telecrystal1
   entities:
+  - uid: 3533
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -0.013183594,1.8344727
+      parent: 5654
+  - uid: 3537
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -4.3239136,-7.6056213
+      parent: 5654
+  - uid: 3538
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 1.4469299,-8.929443
+      parent: 5654
+  - uid: 3539
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 13.170044,-1.0762024
+      parent: 5654
+  - uid: 3540
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 10.638794,10.215851
+      parent: 5654
   - uid: 6454
     components:
     - type: Transform

@@ -8,10 +8,10 @@
   id: NamesFirst
   values:
     prefix: names-first-dataset-
-    count: 1395
+    count: 300
 
 - type: localizedDataset
   id: NamesLast
   values:
     prefix: names-last-dataset-
-    count: 553
+    count: 19446

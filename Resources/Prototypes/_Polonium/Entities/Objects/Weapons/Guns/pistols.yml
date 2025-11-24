@@ -18,13 +18,6 @@
         - SemiAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/pistol.ogg
-    gun_chamber:
-      name: Chamber
-      startingItem: CartridgePistol
-      priority: 1
-      whitelist:
-        tags:
-          - CartridgePistol
   # sloty: magazynek i komora
   - type: ItemSlots
     slots:

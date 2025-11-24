@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: ArtisticRoomba
-  changes:
-  - message: Reinforced tables now require welding to construct and deconstruct.
-    type: Tweak
-  id: 7753
-  time: '2024-12-26T22:47:23.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/33992
 - author: crazybrain
   changes:
   - message: Bluespace lockers and quantum spin inverters can no longer go on the
@@ -3932,3 +3925,22 @@
   id: 9060
   time: '2025-11-23T02:14:17.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/313
+- author: Nikitapl
+  changes:
+  - message: "Dodano odzie\u017C dla Kapitana, Syndykata i inne drobne przedmioty"
+    type: Add
+  - message: "Mapa \"DeathStar\" zosta\u0142a ca\u0142kowicie usuni\u0119ta z repozytorium\
+      \ z powodu problem\xF3w z kompatybilno\u015Bci\u0105"
+    type: Tweak
+  - message: "Zmieniono licencj\u0119 gry na AGPL-3.0 (nie wp\u0142ywa na rozgrywk\u0119\
+      )"
+    type: Tweak
+  - message: "Poprawiono map\u0119 \"Cork\", usuni\u0119to obiekty \"Error\""
+    type: Fix
+  - message: "Poprawiono b\u0142\u0119dy zwi\u0105zane z lokalizacj\u0105"
+    type: Fix
+  - message: "Poprawiono b\u0142\u0119dy zwi\u0105zane z assetami gry"
+    type: Fix
+  id: 9061
+  time: '2025-11-24T14:54:29.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/314

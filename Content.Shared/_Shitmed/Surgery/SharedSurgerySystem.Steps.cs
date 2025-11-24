@@ -25,7 +25,6 @@ using Content.Shared._Shitmed.Medical.Surgery.Effects.Step;
 using Content.Shared._Shitmed.Medical.Surgery.Steps;
 using Content.Shared._Shitmed.Medical.Surgery.Steps.Parts;
 using Content.Shared._Shitmed.Medical.Surgery.Tools;
-//using Content.Shared.Mood;
 using Content.Shared.Inventory;
 using Content.Shared.Item;
 using Content.Shared._Shitmed.Body.Organ;

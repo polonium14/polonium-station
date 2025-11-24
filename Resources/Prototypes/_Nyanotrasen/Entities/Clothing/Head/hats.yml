@@ -1,0 +1,21 @@
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatBeretCap
+  name: captain's beret
+  description: A blue beret with a captain's rank emblem. For captains that are more inclined towards style than safety.
+  components:
+  - type: Sprite
+    sprite: _Nyanotrasen/Clothing/Head/Hats/beret_cap.rsi
+  - type: Clothing
+    sprite: _Nyanotrasen/Clothing/Head/Hats/beret_cap.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatBeretCentcomm
+  name: CentCom beret
+  description: A green beret with an admiral's rank emblem.
+  components:
+  - type: Sprite
+    sprite: _Nyanotrasen/Clothing/Head/Hats/beret_cent.rsi
+  - type: Clothing
+    sprite: _Nyanotrasen/Clothing/Head/Hats/beret_cent.rsi

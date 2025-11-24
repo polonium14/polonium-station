@@ -26,7 +26,6 @@
       - MobPossumOld
       - MobRaccoon
       - MobFox
-      - MobArcticFox
       - MobCat
     chance: 1
     rarePrototypes:
@@ -45,10 +44,8 @@
       - MobCatKitten
       - MobSloth
       - MobFerret
-      - MobFerretWhite
       - MobLizard
       - MobSlug
       - MobFrog
       - MobMothroach
-      - MobArcticFox
     rareChance: 0.15

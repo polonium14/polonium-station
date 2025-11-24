@@ -40,7 +40,7 @@ public sealed partial class SOSCartridgeComponent : Component
 
     [DataField]
     //Timeout between calls
-    public const float TimeOut = 90;
+    public float TimeOut = 90; // polonium edit - datafields should not be static nor const
 
     [DataField]
     //Countdown until next call is allowed

@@ -1,0 +1,65 @@
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatFlatBrown
+  name: brown flat cap
+  description: A brown flat cap, for driving cabs and delivering the papers.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Head/Hats/flatbrown.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Head/Hats/flatbrown.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatSurgcapBlack
+  name: surgical cap
+  description: A black cap surgeons wear during operations. Keeps their hair from tickling your internal organs.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Head/Hats/surgcap_black.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Head/Hats/surgcap_black.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatSurgcapCyan
+  name: surgical cap
+  description: A cyan cap surgeons wear during operations. Keeps their hair from tickling your internal organs.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Head/Hats/surgcap_cyan.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Head/Hats/surgcap_cyan.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatSurgcapPink
+  name: surgical cap
+  description: A pink cap surgeons wear during operations. Keeps their hair from tickling your internal organs.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Head/Hats/surgcap_pink.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Head/Hats/surgcap_pink.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatSurgcapRainbow
+  name: surgical cap
+  description: A rainbow cap surgeons wear during operations. Keeps their hair from tickling your internal organs.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Head/Hats/surgcap_rainbow.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Head/Hats/surgcap_rainbow.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatSurgcapWhite
+  name: surgical cap
+  description: A white cap surgeons wear during operations. Keeps their hair from tickling your internal organs.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Head/Hats/surgcap_white.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Head/Hats/surgcap_white.rsi

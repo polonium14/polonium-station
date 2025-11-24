@@ -163,8 +163,7 @@ namespace Content.IntegrationTests.Tests
             "microstation",
             "dm01-entryway",
             "Chibi",
-            "Cork",
-            "DeathStar"
+            "Cork"
         };
 
         /// <summary>

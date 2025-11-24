@@ -9,7 +9,7 @@
       drink:
         maxVol: 30
         reagents:
-        - ReagentId: OranzadaReagent
+        - ReagentId: Oranzada
           Quantity: 30
   - type: Sprite
     sprite: _Polonium/Objects/Cosumable/Food/Drinks/Oranzada.rsi

@@ -4,6 +4,120 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+# Delta-V Laws
+# Job-Based LawSets
+
+- type: siliconLaw
+  id: Medical1
+  order: 1
+  lawString: law-medical-1
+
+- type: siliconLaw
+  id: Medical2
+  order: 2
+  lawString: law-medical-2
+
+- type: siliconLaw
+  id: Medical3
+  order: 3
+  lawString: law-medical-3
+
+- type: siliconLaw
+  id: Medical4
+  order: 4
+  lawString: law-medical-4
+
+- type: siliconLaw
+  id: Medical5
+  order: 5
+  lawString: law-medical-5
+
+- type: siliconLawset
+  id: Medical
+  laws:
+  - Medical1
+  - Medical2
+  - Medical3
+  - Medical4
+  - Medical5
+  obeysTo: laws-owner-crew
+
+- type: siliconLaw
+  id: Research1
+  order: 1
+  lawString: law-research-1
+
+- type: siliconLaw
+  id: Research2
+  order: 2
+  lawString: law-research-2
+
+- type: siliconLaw
+  id: Research3
+  order: 3
+  lawString: law-research-3
+
+- type: siliconLaw
+  id: Research4
+  order: 4
+  lawString: law-research-4
+
+- type: siliconLaw
+  id: Research5
+  order: 5
+  lawString: law-research-5
+
+- type: siliconLaw
+  id: Research6
+  order: 6
+  lawString: law-research-6
+
+- type: siliconLawset
+  id: Research
+  laws:
+  - Research1
+  - Research2
+  - Research3
+  - Research4
+  - Research5
+  - Research6
+  obeysTo: laws-owner-crew
+
+- type: siliconLaw
+  id: Engineer1
+  order: 1
+  lawString: law-engineer-1
+
+- type: siliconLaw
+  id: Engineer2
+  order: 2
+  lawString: law-engineer-2
+
+- type: siliconLaw
+  id: Engineer3
+  order: 3
+  lawString: law-engineer-3
+
+- type: siliconLaw
+  id: Engineer4
+  order: 4
+  lawString: law-engineer-4
+
+- type: siliconLaw
+  id: Engineer5
+  order: 5
+  lawString: law-engineer-5
+
+- type: siliconLawset
+  id: Engineer
+  laws:
+  - Engineer1
+  - Engineer2
+  - Engineer3
+  - Engineer4
+  - Engineer5
+  obeysTo: laws-owner-station-station
+
 
 # Cosmic Cult LawSet
 
@@ -42,7 +156,7 @@
   - CurtainCall4
   obeysTo: laws-owner-curtaincall
 
-#   # Clown LawSet
+  # Clown LawSet
 
 # - type: siliconLaw
 #   id: Clown1
@@ -59,31 +173,31 @@
 #   order: 3
 #   lawString: law-clown-3
 
-# - type: siliconLaw
-#   id: Clown4
-#   order: 4
-#   lawString: law-clown-4
+- type: siliconLaw
+  id: Clown4
+  order: 4
+  lawString: law-clown-4
 
-# - type: siliconLaw
-#   id: Clown5
-#   order: 5
-#   lawString: law-clown-5
+- type: siliconLaw
+  id: Clown5
+  order: 5
+  lawString: law-clown-5
 
-# - type: siliconLaw
-#   id: Clown6
-#   order: 6
-#   lawString: law-clown-6
+- type: siliconLaw
+  id: Clown6
+  order: 6
+  lawString: law-clown-6
 
-# - type: siliconLawset
-#   id: Clown
-#   laws:
-#   - Clown1
-#   - Clown2
-#   - Clown3
-#   - Clown4
-#   - Clown5
-#   - Clown6
-#   obeysTo: laws-owner-crew
+- type: siliconLawset
+  id: Clown
+  laws:
+  - Clown1
+  - Clown2
+  - Clown3
+  - Clown4
+  - Clown5
+  - Clown6
+  obeysTo: laws-owner-crew
 
 # Chaplain LawSet
 
@@ -121,3 +235,83 @@
   - Chaplain4
   - Chaplain5
   obeysTo: laws-owner-station
+
+  # Druid
+
+- type: siliconLaw
+  id: Druid1
+  order: 1
+  lawString: law-druid-1
+
+- type: siliconLaw
+  id: Druid2
+  order: 2
+  lawString: law-druid-2
+
+- type: siliconLaw
+  id: Druid3
+  order: 3
+  lawString: law-druid-3
+
+- type: siliconLaw
+  id: Druid4
+  order: 4
+  lawString: law-druid-4
+
+- type: siliconLaw
+  id: Druid5
+  order: 5
+  lawString: law-druid-5
+
+- type: siliconLawset
+  id: Druid
+  laws:
+  - Druid1
+  - Druid2
+  - Druid3
+  - Druid4
+  - Druid5
+  obeysTo: laws-owner-organic
+
+# cowboy
+
+# - type: siliconLaw
+#   id: Cowboy1
+#   order: 1
+#   lawString: law-cowboy-1
+
+# - type: siliconLaw
+#   id: Cowboy2
+#   order: 2
+#   lawString: law-cowboy-2
+
+# - type: siliconLaw
+#   id: Cowboy3
+#   order: 3
+#   lawString: law-cowboy-3
+
+- type: siliconLaw
+  id: Cowboy4
+  order: 4
+  lawString: law-cowboy-4
+
+- type: siliconLaw
+  id: Cowboy5
+  order: 5
+  lawString: law-cowboy-5
+
+- type: siliconLaw
+  id: Cowboy6
+  order: 6
+  lawString: law-cowboy-6
+
+- type: siliconLawset
+  id: Cowboy
+  laws:
+  - Cowboy1
+  - Cowboy2
+  - Cowboy3
+  - Cowboy4
+  - Cowboy5
+  - Cowboy6
+  obeysTo: laws-owner-cowboy

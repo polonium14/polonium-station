@@ -672,25 +672,6 @@
         tags:
           - ErtUplinkCombat
 
-#Imperial Space Огнемёт "Санитар" start
-
-- type: listing
-  id: ErtCallUplinkWeaponFlamethrower
-  name: Flamethrower
-  description: Projects a stream of fire.
-  productEntity: FlameThrower
-  cost:
-    BlueSpaceCube: 8
-  categories:
-  - ERTUplinkWeaponCombat
-  conditions:
-    - !type:StoreWhitelistCondition
-     whitelist:
-       tags:
-         - ErtUplinkCBURN
-
-#Imperial Space Огнемёт "Санитар" end
-
 - type: listing
   id: ErtCallUplinkWeaponPulseCarbine
   name: Pulse Carbine
@@ -698,21 +679,6 @@
   productEntity: WeaponPulseCarbine
   cost:
     BlueSpaceCube: 12
-  categories:
-  - ERTUplinkWeaponCombat
-  conditions:
-    - !type:StoreWhitelistCondition
-      whitelist:
-        tags:
-          - ErtUplinkCombat
-
-- type: listing
-  id: ErtCallUplinkWeaponPulseSniper
-  name: Pulse Sniper Rifle
-  description: High-precision energy rifle.
-  productEntity: WeaponPulseSniper
-  cost:
-    BlueSpaceCube: 16
   categories:
   - ERTUplinkWeaponCombat
   conditions:
@@ -1009,9 +975,9 @@
 
 - type: listing
   id: ErtCallUplinkRecharger
-  name: Portable ERT Recharger
-  description: Field charging unit for ERT gear.
-  productEntity: PortableRechargerErt
+  name: Portable Recharger
+  description: Field charging unit.
+  productEntity: PortableRecharger
   cost:
     BlueSpaceCube: 10
   categories:
@@ -1021,20 +987,6 @@
       whitelist:
        tags:
          - ErtUplinkERT
-
-- type: listing
-  id: ErtCallUplinkRechargerCburn
-  name: Portable CBURN Recharger
-  description: Field charging unit for CBURN gear.
-  productEntity: PortableRechargerCburn
-  cost:
-    BlueSpaceCube: 10
-  categories:
-  - ERTUplinkUtilities
-  conditions:
-    - !type:StoreWhitelistCondition
-      whitelist:
-       tags:
          - ErtUplinkCBURN
 
 #Imperial Space Портативные зарядники спецотрядов end
@@ -1148,21 +1100,6 @@
     BlueSpaceCube: 5
   categories:
   - ERTUplinkUtilities
-  conditions:
-    - !type:StoreWhitelistCondition
-      whitelist:
-        tags:
-          - ErtUplinkDeadSquad
-
-- type: listing
-  id: ErtCallUplinkExplosivesX4
-  name: X4 Breaching Charge
-  description: Strong structural explosive.
-  productEntity: X4
-  cost:
-    BlueSpaceCube: 5
-  categories:
-  - ERTUplinkExplosives
   conditions:
     - !type:StoreWhitelistCondition
       whitelist:

@@ -115,7 +115,7 @@
     shoes: ClothingShoesBootsCombatFilled
     id: CBURNPDA
     pocket1: RadioHandheld
-    pocket2: ErtUplinkMedic
+    pocket2: ERTUplinkMedic
     belt: ClothingBeltBandolier
   storage:
     back:

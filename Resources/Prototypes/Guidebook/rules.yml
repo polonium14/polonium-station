@@ -27,21 +27,21 @@
   name: guide-entry-rules-core-only
   ruleEntry: true
   priority: 10
-  text: "/ServerInfo/Guidebook/ServerRules/WizDenCoreOnlyRules.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CoreOnlyRules.xml"
 
-- type: guideEntry
-  id: StandardRuleset
-  name: guide-entry-rules-lrp
-  ruleEntry: true
-  priority: 10
-  text: "/ServerInfo/Guidebook/ServerRules/WizDenLRPRules.xml"
+# - type: guideEntry
+#   id: StandardRuleset
+#   name: guide-entry-rules-lrp
+#   ruleEntry: true
+#   priority: 10
+#   text: "/ServerInfo/_Polonium/Guidebook/ServerRules/LRPRules.xml"
 
 - type: guideEntry
   id: MRPRuleset
   name: guide-entry-rules-mrp
   ruleEntry: true
   priority: 10
-  text: "/ServerInfo/Guidebook/ServerRules/WizDenMRPRules.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/MRPRules.xml"
 
 - type: guideEntry
   id: RoleTypes
@@ -170,6 +170,11 @@
   text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/SpaceLaw.xml"
   children:
   - SpaceLawCrimeList
+
+- type: guideEntry
+  id: SpaceLawCrimeList
+  name: guide-entry-rules-sl-crime-list
+  text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/SLCrimeList.xml"
 
 - type: guideEntry
   id: RulesOfConduct
