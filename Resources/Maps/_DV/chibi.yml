@@ -12344,11 +12344,6 @@ entities:
     - type: Transform
       pos: 12.5,18.5
       parent: 2
-    - type: UserInterface
-      actors:
-        enum.StorageUiKey.Key:
-        - invalid
-    - type: ActiveUserInterface
 - proto: DrinkHotCoffee
   entities:
   - uid: 1289
