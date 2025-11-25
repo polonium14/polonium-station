@@ -155,7 +155,7 @@
   name: guide-entry-metashield
   ruleEntry: false
   priority: 4
-  text: "/ServerInfo/GuideBook/ServerRules/Metashield.xml"
+  text: "/ServerInfo/Guidebook/ServerRules/Metashield.xml"
 
 - type: guideEntry
   id: NamingScheme
@@ -167,14 +167,14 @@
   id: SpaceLaw
   name: guide-entry-rules-space-law
   priority: 1
-  text: "/ServerInfo/GuideBook/ServerRules/SpaceLaw/SpaceLaw.xml"
+  text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/SpaceLaw.xml"
   children:
   - SpaceLawCrimeList
 
 - type: guideEntry
   id: SpaceLawCrimeList
   name: guide-entry-rules-sl-crime-list
-  text: "/ServerInfo/GuideBook/ServerRules/SpaceLaw/SLCrimeList.xml"
+  text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/SLCrimeList.xml"
 
 - type: guideEntry
   id: RulesOfConduct
