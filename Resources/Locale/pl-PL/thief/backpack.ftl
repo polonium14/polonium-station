@@ -39,8 +39,8 @@ thief-backpack-category-chemistry-description =
 
 thief-backpack-category-syndie-name = zestaw Syndykata
 thief-backpack-category-syndie-description =
-    Pamiątki z niechcianej przeszłości, czy skradzione z
-    nieważnego agenta? Masz znajomości. Whiskey, echo...
+    Błyskotki po niechcianej przeszłości, czy skradzione od
+    nieuważnego agenta? Masz znajomości. Whiskey, echo...
     Zawiera: Emag, łamacz dostępu, papierosy Interdyne, słowo klucz agentów,
     zagłuszacz radiowy, zapalniczkę i parę dziwnych czerwonych kryształów.
 
