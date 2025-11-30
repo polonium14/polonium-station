@@ -272,11 +272,7 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
             {
                 Inline = true,
                 Name = "Wygasa",
-                Value = expirationTime switch
-                {
-                    0 => "**Nigdy.**",
-                    _ => $"<t:{expirationTime}:R>",
-                },
+                Value = expirationTime <= 0 ? "**Nigdy.**" : $"<t:{expirationTime}:R>",
             },
         ];
 
