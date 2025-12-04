@@ -4,7 +4,8 @@ medical-item-stop-bleeding =
     { CAPITALIZE($target) } { GENDER($target) ->
         [male] przestał
         [female] przestała
-       *[other] przestało
+        [epicene] przestału
+       *[neuter] przestało
     } krwawić
 medical-item-stop-bleeding-self = Zatrzymujesz krwawienie
 medical-item-popup-target = { CAPITALIZE(THE($user)) } próbuje cię leczyć przy użyciu { $item }!
