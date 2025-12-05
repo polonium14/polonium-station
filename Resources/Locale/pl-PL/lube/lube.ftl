@@ -1,8 +1,9 @@
 lube-success =
     { CAPITALIZE(THE($target)) } { GENDER($target) ->
-       *[male] został pokryty
+        [male] został pokryty
         [female] została pokryta
-        [other] zostało pokryte
+        [epicene] zostału pokrytu
+        *[neuter] zostało pokryte
     } smarem!
 lubed-name-prefix = nasmarowany { $baseName }
 lube-failure = Nie można pokryć { THE($target) } smarem!

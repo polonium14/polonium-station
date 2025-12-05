@@ -1,27 +1,4 @@
 ﻿Entries:
-- author: crazybrain
-  changes:
-  - message: Bluespace lockers and quantum spin inverters can no longer go on the
-      arrivals shuttle.
-    type: Tweak
-  id: 7754
-  time: '2024-12-27T12:34:31.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34072
-- author: Plykiya
-  changes:
-  - message: You now see a popup when being cuffed or uncuffed again.
-    type: Fix
-  id: 7755
-  time: '2024-12-27T13:34:32.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/33639
-- author: Alpaccalypse
-  changes:
-  - message: Power monitoring computer boards can no longer be researched or printed,
-      as originally intended.
-    type: Remove
-  id: 7756
-  time: '2024-12-28T10:13:13.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34078
 - author: psykana
   changes:
   - message: Traitor can no longer get multiple objectives to save/help/kill the same
@@ -3944,3 +3921,26 @@
   id: 9061
   time: '2025-11-24T14:54:29.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/314
+- author: Lukasz825700516
+  changes:
+  - message: "przet\u0142umaczono zakl\u0119cie wypadu (jaunt)"
+    type: Add
+  id: 9062
+  time: '2025-12-05T11:41:16.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/324
+- author: Lukasz825700516
+  changes:
+  - message: "zamieniono liczb\u0119 mnog\u0105 na u\u017Cywanie dukatyw\xF3w"
+    type: Tweak
+  - message: "rodzaj nijaki i ten czwarty maj\u0105 ju\u017C oddzielne odmiany"
+    type: Fix
+  id: 9063
+  time: '2025-12-05T11:42:58.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/321
+- author: Lukasz825700516
+  changes:
+  - message: "t\u0142umaczenie Ratvara"
+    type: Add
+  id: 9064
+  time: '2025-12-05T11:41:52.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/322
