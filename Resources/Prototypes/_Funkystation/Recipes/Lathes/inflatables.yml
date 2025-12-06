@@ -24,9 +24,9 @@
     Durathread: 100
     Silver: 50
 
-- type: latheRecipe
-  id: InflatableFloor
-  result: InflatableFloorStack1
-  completetime: 1
-  materials:
-    Durathread: 25
+# - type: latheRecipe
+#   id: InflatableFloor
+#   result: InflatableFloorStack1
+#   completetime: 1
+#   materials:
+#     Durathread: 25
