@@ -78,7 +78,7 @@ public sealed class ContrabandSystem : EntitySystem
                 component,
                 msg,
                 Loc.GetString("contraband-examinable-verb-text"),
-                "/Textures/Interface/VerbIcons/lock.svg.192dpi.png",
+                new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/VerbIcons/lock.svg.192dpi.png")),
                 Loc.GetString("contraband-examinable-verb-message"));
 
             return;
@@ -125,7 +125,7 @@ public sealed class ContrabandSystem : EntitySystem
             component,
             Loc.GetString("contraband-examinable-verb-text"),
             examineMarkup.ToMarkup(),
-            iconTexture);
+            new SpriteSpecifier.Texture(new ResPath(iconTexture)));
     }
 
     private FormattedMessage GetContrabandExamine(String deptMessage, String carryMessage)
