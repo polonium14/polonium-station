@@ -30,102 +30,54 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-#- type: lobbyBackground
-#  id: Warden
-#  background: /Textures/LobbyScreens/warden.webp
-#
-#- type: lobbyBackground
-#  id: Pharmacy
-#  background: /Textures/LobbyScreens/pharmacy.webp
+- type: lobbyBackground
+  id: Warden
+  background: /Textures/LobbyScreens/warden.webp
 
-#- type: lobbyBackground
-#  id: SSXIV
-#  background: /Textures/LobbyScreens/ssxiv.webp
+- type: lobbyBackground
+  id: Pharmacy
+  background: /Textures/LobbyScreens/pharmacy.webp
 
-#- type: lobbyBackground
-#  id: Susstation
-#  background: /Textures/LobbyScreens/susstation.webp
-#
-#- type: lobbyBackground
-#  id: SkellyVsTheRev
-#  background: /Textures/LobbyScreens/skellyvstherev.webp
+- type: lobbyBackground
+  id: SSXIV
+  background: /Textures/LobbyScreens/ssxiv.webp
 
-#- type: lobbyBackground
-#  id: Doomed
-#  background: /Textures/LobbyScreens/doomed.webp
+- type: lobbyBackground
+  id: Susstation
+  background: /Textures/LobbyScreens/susstation.webp
 
-#- type: lobbyBackground
-#  id: Blueprint
-#  background: /Textures/LobbyScreens/blueprint.webp
-#
-#- type: lobbyBackground
-#  id: Behonker
-#  background: /Textures/LobbyScreens/behonker.webp
-#
-#- type: lobbyBackground
-#  id: TerminalStation
-#  background: /Textures/LobbyScreens/terminalstation.webp
+- type: lobbyBackground
+  id: SkellyVsTheRev
+  background: /Textures/LobbyScreens/skellyvstherev.webp
 
-#- type: lobbyBackground
-#  id: JustAWeekAway
-#  background: /Textures/LobbyScreens/justaweekaway.webp
+- type: lobbyBackground
+  id: Doomed
+  background: /Textures/LobbyScreens/doomed.webp
 
-#- type: lobbyBackground
-#  id: JaniShootout
-#  background: /Textures/LobbyScreens/janishootout.webp
+- type: lobbyBackground
+  id: Blueprint
+  background: /Textures/LobbyScreens/blueprint.webp
+
+- type: lobbyBackground
+  id: Behonker
+  background: /Textures/LobbyScreens/behonker.webp
+
+- type: lobbyBackground
+  id: TerminalStation
+  background: /Textures/LobbyScreens/terminalstation.webp
+
+- type: lobbyBackground
+  id: JustAWeekAway
+  background: /Textures/LobbyScreens/justaweekaway.webp
+
+- type: lobbyBackground
+  id: JaniShootout
+  background: /Textures/LobbyScreens/janishootout.webp
 
 - type: lobbyBackground
   id: ReclaimerNuke
   background: /Textures/LobbyScreens/reclaimer-nuke.webp
 
 - type: lobbyBackground
-  id: GoobHeretic
-  background: /Textures/LobbyScreens/heretic.webp
-
-- type: lobbyBackground
-  id: funkyCirnoChef
-  background: /Textures/LobbyScreens/cirnochef.webp
-
-- type: lobbyBackground
   id: funkyComputerLove
   background: /Textures/LobbyScreens/computerlove.webp
-
-- type: lobbyBackground
-  id: funkyTOFUNK
-  background: /Textures/LobbyScreens/TOFUNK.webp
-
-- type: lobbyBackground
-  id: funkOps
-  background: /Textures/LobbyScreens/funkops.webp
-
-- type: lobbyBackground
-  id: doomDeed
-  background: /Textures/LobbyScreens/doomdeed.webp
-
-- type: lobbyBackground
-  id: typicalDay
-  background: /Textures/LobbyScreens/typicalDay.webp
-
-- type: lobbyBackground
-  id: funkysci
-  background: /Textures/LobbyScreens/funkysci.webp
-
-- type: lobbyBackground
-  id: rats
-  background: /Textures/LobbyScreens/rats.webp
-
-- type: lobbyBackground
-  id: cirnoStation
-  background: /Textures/LobbyScreens/cirnostation.webp
-
-- type: lobbyBackground
-  id: usualsuspects
-  background: /Textures/LobbyScreens/usualsuspects.webp
-
-- type: lobbyBackground
-  id: termina
-  background: /Textures/LobbyScreens/TERMINA.webp
-
-- type: lobbyBackground
-  id: ratburgers
-  background: /Textures/LobbyScreens/ratburgers.webp
