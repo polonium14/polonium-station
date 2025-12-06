@@ -1,0 +1,14 @@
+ent-ErtCallUplinkPreset = { "" }
+    .desc = { "" }
+ent-ErtCallUplinkMedicPreset = { "" }
+    .desc = { "" }
+ent-ErtCallUplinkSecurityPreset = { "" }
+    .desc = { "" }
+ent-ErtCallUplinkEngineerPreset = { "" }
+    .desc = { "" }
+ent-ErtCallUplinkJanitorPreset = { "" }
+    .desc = { "" }
+ent-ErtCallUplinkDeadSquadPreset = { "" }
+    .desc = { "" }
+ent-ErtCallUplinkDebugPreset = { "" }
+    .desc = { "" }

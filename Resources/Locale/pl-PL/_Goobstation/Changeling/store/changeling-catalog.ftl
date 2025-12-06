@@ -8,7 +8,6 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-
 # combat
 
 evolutionmenu-combat-armblade-name = Arm Blade

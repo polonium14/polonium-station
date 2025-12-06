@@ -1,4 +1,4 @@
-admin-solutions-window-title = Edytor roztworów - { $targetName }
+admin-solutions-window-title = Edytor roztworów — { $targetName }
 admin-solutions-window-solution-label = Docelowy roztwór:
 admin-solutions-window-add-new-button = Dodaj nowy reagent
 admin-solutions-window-volume-label = Objętość { $currentVolume }/{ $maxVolume }u

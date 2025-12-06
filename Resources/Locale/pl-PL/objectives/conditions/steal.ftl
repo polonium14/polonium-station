@@ -9,6 +9,7 @@ objective-condition-thief-animal-description =
     { $itemName } będzie świetnym dodatkiem do mojej kolekcji! Ale najważniejsze { GENDER($itemName) ->
         [male] żywy
         [female] żywa
-       *[other] żywe
+        [epicene] żywu
+       *[neuter] żywe
     }
 objective-condition-thief-multiply-description = Potrzebuję wiąć ze sobą dowolne { $count } { $itemName }.

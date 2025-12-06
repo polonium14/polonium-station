@@ -5,7 +5,7 @@ turret-controls-window-armament-controls-label = Ustawienie uzbrojenia
 turret-controls-window-targeting-controls-label = Upoważniony personel
 # Status reports
 turret-controls-window-no-turrets = <! Brak powiązanych urządzeń !>
-turret-controls-window-turret-status = » { $device } - Status: { $status }
+turret-controls-window-turret-status = » { $device } — Status: { $status }
 turret-controls-window-turret-disabled = ***OFFLINE***
 turret-controls-window-turret-retracted = NIEAKTYWNA
 turret-controls-window-turret-retracting = DEZAKTYWACJA

@@ -14,3 +14,5 @@ ent-RadioHandheldScience = science handheld radio
     .desc = A handheld radio tuned to the science radio frequency.
 ent-RadioHandheldCommand = command handheld radio
     .desc = A handheld radio tuned to the command radio frequency.
+ent-RadioHandheldSecurityListening = security listening radio
+    .desc = A handy security radio. The speaker seems to have been modified to not work.

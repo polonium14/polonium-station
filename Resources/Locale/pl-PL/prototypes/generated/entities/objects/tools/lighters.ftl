@@ -6,3 +6,5 @@ ent-FlippoLighter = flippo lighter
     .desc = A rugged metal lighter, lasts quite a while.
 ent-FlippoEngravedLighter = flippo engraved lighter
     .desc = A rugged golden lighter, lasts quite a while. Engravings serve no tactical advantage whatsoever.
+ent-CommemorativeFlippoLighter = commemorative flippo lighter
+    .desc = A cheap looking flippo lighter, still lasts quite a while. A bizarre image is stamped on the front.

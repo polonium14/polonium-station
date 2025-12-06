@@ -16,3 +16,6 @@ ent-MailSpamMail = { ent-BaseMail }
 ent-MailMasks = { ent-BaseMailSmall }
     .suffix = Masks
     .desc = { ent-BaseMailSmall.desc }
+ent-MailConductorKit = { ent-BaseMailSmall }
+    .suffix = Conductor Kit Mail
+    .desc = { ent-BaseMailSmall.desc }

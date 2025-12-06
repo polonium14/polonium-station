@@ -4,4 +4,4 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-ui-options-function-auto-get-up = Automatically get up after falling
+ui-options-function-auto-get-up = Automatycznie podnoś się po upadku

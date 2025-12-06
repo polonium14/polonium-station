@@ -4,3 +4,8 @@ ent-ClothingHeadHatBowlerHatRazor = bowler hat
     .desc = Stylish bowler hat. Quite a sharp look!
 ent-ClothingHeadHatQMFormal = quartermaster's top hat
     .desc = A hat as big as your bank account.
+ent-ClothingHeadHatCargoSeniorBeret = senior cargo beret
+    .desc = A distinctive beret for those who move freight.
+ent-ClothingHeadHatConductor = conductor's hat
+    .desc = Even in the darkness of space, people love their trains.
+

@@ -1,11 +1,11 @@
-color-hue-chroma-lightness = {$lightness} {$chroma} {$hue}
-color-hue-chroma = {$chroma} {$hue}
-color-hue-lightness = {$lightness} {$hue}
+color-hue-chroma-lightness = { $lightness } { $chroma } { $hue }
+color-hue-chroma = { $chroma } { $hue }
+color-hue-lightness = { $lightness } { $hue }
 color-very-dark = bardzo ciemny
 color-dark = ciemny
 color-light = jasny
 color-very-light = bardzo jasny
-color-mixed-hue = {$a} {$b}
+color-mixed-hue = { $a } { $b }
 color-pale = blady
 color-gray-adjective = szary
 color-strong = mocny
@@ -22,7 +22,6 @@ color-white = biały
 color-gray = szary
 color-black = czarny
 color-unknown = nieznany kolor, nie powinieneś tego widzieć
-
 color-pink-color-red = czerwony z odcieniem różu
 color-red-color-orange = pomarańczowy z odcieniem czerwieni
 color-orange-color-yellow = żółty z odcieniem pomarańczy

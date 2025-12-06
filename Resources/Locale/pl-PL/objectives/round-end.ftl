@@ -10,13 +10,15 @@ objectives-no-objectives =
     { $custody }{ $title } { GENDER($title) ->
         [male] był
         [female] była
-       *[others] było
+        [epicene] byłu
+       *[neuter] było
     } { $agent }.
 objectives-with-objectives =
     { $custody }{ $title } { GENDER($title) ->
         [male] był
         [female] była
-       *[others] było
+        [epicene] byłu
+       *[neuter] było
     } { $agent } z następującymi zadaniami:
 objectives-objective-success = { $objective } | [color=green]Sukces![/color] ({ TOSTRING($progress, "P0") })
 objectives-objective-partial-success = { $objective } | [color=yellow]W większości sukces![/color] ({ TOSTRING($progress, "P0") })

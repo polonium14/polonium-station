@@ -1,11 +1,13 @@
 ent-ActionCultistStudyVeil = Study Veil
     .desc = Examine the state of the veil, and the strength of your cult.
 ent-ActionCultistCommune = Commune
-    .desc = Send a message to your fellow cultists. Beware - the uninitiated can see you whispering the incantation.
+    .desc = Send a message to your fellow cultists. Beware — the uninitiated can see you whispering the incantation.
 ent-ActionCultistSpellsSelect = Prepare Spell
     .desc = Prepare a blood spell by carving it into your body. Up to 1 spell may be prepared without standing on an empowering rune.
 ent-ActionCultistSummonDagger = Summon Dagger
     .desc = Summon your ritual dagger.
+ent-ActionCultistSanguineDream = Sanguine Dream
+    .desc = A sinister spell that plunges a target into a nightmare-filled sleep. EMPs Cyborgs. Does not work on those with a mindshield.
 ent-ActionCultistStun = Stun
     .desc = A potent spell that will knock down, silence, and mark a target. Stabbing marked targets with your cult dagger will stun and re-silence them. EMPs Cyborgs.
 ent-ActionCultistTwistedConstruction = Twisted Construction

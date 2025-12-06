@@ -6,7 +6,6 @@
 #
 # SPDX-License-Identifier: MIT
 
-
 ## Forcemap command loc.
 
 forcemap-command-description = Forces the game to start with a given map next round.

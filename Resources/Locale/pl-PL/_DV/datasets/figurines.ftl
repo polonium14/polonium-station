@@ -4,7 +4,6 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-
 figurines-cosmiccultist-1 = This is the end.
 figurines-cosmiccultist-2 = It's lambda, not delta.
 figurines-cosmiccultist-3 = Nothing to see here.

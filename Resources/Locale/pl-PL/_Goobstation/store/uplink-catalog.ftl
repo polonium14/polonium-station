@@ -17,7 +17,6 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-
 # Surplus Hardsuits
 
 uplink-hardsuit-syndiemedic-name = Gorlex Agent Hardsuit
@@ -78,16 +77,14 @@ uplink-shotgun-magazine-slug-desc = Shotgun drum with 8 slug shells. Compatible 
 
 # Burner not added yet
 
-#uplink-high-caliber-magazine-name = Heavy Rifle Magazine (.50 anti-materiel)
-#uplink-high-caliber-magazine-desc = Rifle magazine with 15 cartridges. Compatible with the Burner.
+# uplink-high-caliber-magazine-name = Heavy Rifle Magazine (.50 anti-materiel)
+# uplink-high-caliber-magazine-desc = Rifle magazine with 15 cartridges. Compatible with the Burner.
 
-#uplink-high-caliber-explosive-magazine-name = Heavy Rifle Magazine (.50 high-explosive)
-#uplink-high-caliber-explosive-magazine-desc = Rifle magazine with 15 explosive #cartridges. Compatible with the Burner.
+# uplink-high-caliber-explosive-magazine-name = Heavy Rifle Magazine (.50 high-explosive)
+# uplink-high-caliber-explosive-magazine-desc = Rifle magazine with 15 explosive #cartridges. Compatible with the Burner.
 
-#uplink-high-caliber-box-name = .50 Ammo box
-#uplink-high-caliber-box-desc = A box of 30 .50 caliber anti-materiel rounds.
-
-
+# uplink-high-caliber-box-name = .50 Ammo box
+# uplink-high-caliber-box-desc = A box of 30 .50 caliber anti-materiel rounds.
 
 # Mechs
 

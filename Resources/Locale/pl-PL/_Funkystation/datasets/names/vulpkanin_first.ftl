@@ -349,7 +349,6 @@ names-vulpkanin-female-dataset-342 = Cynia
 names-vulpkanin-female-dataset-343 = Ziwa
 names-vulpkanin-female-dataset-344 = Zoja
 names-vulpkanin-female-dataset-345 = Zuri
-
 names-vulpkanin-male-dataset-1 = Aron
 names-vulpkanin-male-dataset-2 = Abel
 names-vulpkanin-male-dataset-3 = Abraham

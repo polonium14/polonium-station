@@ -4,7 +4,6 @@ barsign-ui-set-label = Ustaw Znak:
 
 # Bar signs prototypes
 
-
 ## The Harmbaton
 
 barsign-prototype-name-harmbaton = The Harmbaton

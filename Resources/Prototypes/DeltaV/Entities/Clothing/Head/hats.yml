@@ -9,16 +9,17 @@
   - type: Clothing
     sprite: _DV/Clothing/Head/Hats/flatbrown.rsi
 
-- type: entity
-  parent: ClothingHeadBase
-  id: ClothingHeadHatSurgcapBlack
-  name: surgical cap
-  description: A black cap surgeons wear during operations. Keeps their hair from tickling your internal organs.
-  components:
-  - type: Sprite
-    sprite: _DV/Clothing/Head/Hats/surgcap_black.rsi
-  - type: Clothing
-    sprite: _DV/Clothing/Head/Hats/surgcap_black.rsi
+# Commented out as duplicate of Funkystation's black surgical cap
+# - type: entity
+#   parent: ClothingHeadBase
+#   id: ClothingHeadHatSurgcapBlack
+#   name: surgical cap
+#   description: A black cap surgeons wear during operations. Keeps their hair from tickling your internal organs.
+#   components:
+#   - type: Sprite
+#     sprite: _DV/Clothing/Head/Hats/surgcap_black.rsi
+#   - type: Clothing
+#     sprite: _DV/Clothing/Head/Hats/surgcap_black.rsi
 
 - type: entity
   parent: ClothingHeadBase

@@ -1,4 +1,4 @@
 ent-ClothingHeadHelmetHardsuitMusician = musician hardsuit helmet
     .desc = A musician hardsuit helmet.
-ent-ClothingHeadHelmetHelldiver = salvage NT-01 tactical helmet
-    .desc = This armor is the NanoTrasen standard issue, made from the same titanium alloy as the Goliath hull.
+ent-ClothingHeadHelmetHelldiver = diving hardsuit helmet
+    .desc = A unique variant of the classic mining hardsuit helmet, given to only the most dedicated of salvagers.
