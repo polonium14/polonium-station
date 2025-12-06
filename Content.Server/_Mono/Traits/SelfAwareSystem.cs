@@ -72,7 +72,7 @@ public sealed class SelfAwareSystem : EntitySystem
 
         _examine.AddDetailedExamineVerb(args, component, msg,
             Loc.GetString("self-aware-examinable-verb-text"),
-            "/Textures/Interface/VerbIcons/smite.svg.192dpi.png",
+            new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/VerbIcons/smite.svg.192dpi.png")),
             Loc.GetString("self-aware-examinable-verb-message")
         );
     }

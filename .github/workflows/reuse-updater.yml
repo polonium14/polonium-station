@@ -98,8 +98,8 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "chore: Automatically update REUSE headers"
-          commit_user_name: ${{ vars.CHANGELOG_USER }}
-          commit_user_email: ${{ vars.CHANGELOG_EMAIL }}
-          commit_author: ${{ vars.CHANGELOG_USER }} <${{ vars.CHANGELOG_EMAIL }}>
+          commit_user_name: "Polonium-bot"
+          commit_user_email: "admin@ss14.pl"
+          commit_author: "Polonium-bot admin@ss14.pl"
           skip_dirty_check: false
           skip_fetch: true

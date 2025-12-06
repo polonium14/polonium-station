@@ -342,7 +342,7 @@ public sealed partial class BlockingSystem : EntitySystem
 
         _examine.AddDetailedExamineVerb(args, component, msg,
             Loc.GetString("blocking-examinable-verb-text"),
-            "/Textures/Interface/VerbIcons/dot.svg.192dpi.png",
+            new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/VerbIcons/dot.svg.192dpi.png")),
             Loc.GetString("blocking-examinable-verb-message")
         );
     }
