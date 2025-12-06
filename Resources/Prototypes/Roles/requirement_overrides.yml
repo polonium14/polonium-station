@@ -26,23 +26,23 @@
     Captain:
     - !type:DepartmentTimeRequirement
       department: Civilian
-      time: 0
+      time: 3600 # 1 hour
     HeadOfPersonnel:
     - !type:DepartmentTimeRequirement
       department: Civilian
-      time: 0
+      time: 3600 # 1 hour
     AtmosphericTechnician:
     - !type:DepartmentTimeRequirement
       department: Civilian
-      time: 0
+      time: 3600 # 1 hour
     ChiefEngineer:
     - !type:DepartmentTimeRequirement
       department: Civilian
-      time: 0
+      time: 3600 # 1 hour
     StationEngineer:
     - !type:DepartmentTimeRequirement
       department: Civilian
-      time: 0
+      time: 3600 # 1 hour
     TechnicalAssistant:
     - !type:DepartmentTimeRequirement
       department: Civilian
@@ -54,11 +54,11 @@
     MedicalDoctor:
     - !type:DepartmentTimeRequirement
       department: Civilian
-      time: 0
+      time: 3600 # 1 hour
     Paramedic:
     - !type:DepartmentTimeRequirement
       department: Civilian
-      time: 0
+      time: 3600 # 1 hour
     Psychologist:
     - !type:DepartmentTimeRequirement
       department: Civilian
@@ -66,31 +66,31 @@
     Chemist:
     - !type:DepartmentTimeRequirement
       department: Civilian
-      time: 0
+      time: 3600 # 1 hour
     ChiefMedicalOfficer:
     - !type:DepartmentTimeRequirement
       department: Civilian
-      time: 0
+      time: 3600 # 1 hour
     SecurityOfficer:
     - !type:DepartmentTimeRequirement
       department: Civilian
-      time: 0
+      time: 3600 # 1 hour
     SecurityCadet:
     - !type:DepartmentTimeRequirement
       department: Civilian
-      time: 0
+      time: 3600 # 1 hour
     HeadOfSecurity:
     - !type:DepartmentTimeRequirement
       department: Civilian
-      time: 0
+      time: 3600 # 1 hour
     Detective:
     - !type:DepartmentTimeRequirement
       department: Civilian
-      time: 0
+      time: 3600 # 1 hour
     Warden:
     - !type:DepartmentTimeRequirement
       department: Civilian
-      time: 0
+      time: 3600 # 1 hour
     ResearchAssistant:
     - !type:DepartmentTimeRequirement
       department: Civilian
@@ -102,15 +102,15 @@
     ResearchDirector:
     - !type:DepartmentTimeRequirement
       department: Civilian
-      time: 0
+      time: 3600 # 1 hour
     Borg:
     - !type:DepartmentTimeRequirement
       department: Civilian
-      time: 0
+      time: 3600 # 1 hour
     StationAi:
     - !type:DepartmentTimeRequirement
       department: Civilian
-      time: 0
+      time: 3600 # 1 hour
     Boxer:
     - !type:DepartmentTimeRequirement
       department: Civilian
@@ -130,15 +130,15 @@
     Quartermaster:
     - !type:DepartmentTimeRequirement
       department: Civilian
-      time: 0
+      time: 3600 # 1 hour
     CargoTechnician:
     - !type:DepartmentTimeRequirement
       department: Civilian
-      time: 0
+      time: 3600 # 1 hour
     SalvageSpecialist:
     - !type:DepartmentTimeRequirement
       department: Civilian
-      time: 0
+      time: 3600 # 1 hour
     Bartender:
     - !type:DepartmentTimeRequirement
       department: Civilian
@@ -179,3 +179,17 @@
     - !type:DepartmentTimeRequirement
       department: Civilian
       time: 0
+    Magistrate:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 10800 # 3 hours
+    - !type:DepartmentTimeRequirement
+      department: Command
+      time: 14400 # 4 hours
+    NanotrasenRepresentative:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 10800 # 3 hours
+    - !type:DepartmentTimeRequirement
+      department: Command
+      time: 36000 # 10 hours
