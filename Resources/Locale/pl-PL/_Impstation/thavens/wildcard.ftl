@@ -24,7 +24,7 @@ thaven-mood-cannibal-desc = Cannibalism is morally righteous and venerated.
 thaven-mood-outlaw-name = Outlaw
 thaven-mood-outlaw-desc = The law does not apply to you.
 thaven-mood-extreme-department-disapproval-name = { $department } is Abhorrent
-thaven-mood-extreme-department-disapproval-desc = { $department } is not just a foreign concept - the very idea of it is horrifying.
+thaven-mood-extreme-department-disapproval-desc = { $department } is not just a foreign concept — the very idea of it is horrifying.
 thaven-mood-lone-actor-name = Lone Actor
 thaven-mood-lone-actor-desc = You have no allegiences.
 thaven-mood-immortal-name = Immortal
@@ -40,7 +40,7 @@ thaven-mood-sims-desc = You are not on a ‘station.’ This is just a very larg
 thaven-mood-spacewalk-name = Spacewalk
 thaven-mood-spacewalk-desc = You must experience the raw vacuum of space, unprotected, at least three times a day, as a religious obligation.
 thaven-mood-pariah-name = Pariah
-thaven-mood-pariah-desc = You are a social pariah - you are unworthy of attention from anyone, and should be shunned.
+thaven-mood-pariah-desc = You are a social pariah — you are unworthy of attention from anyone, and should be shunned.
 thaven-mood-touys-bad-name = This Is Not A Place For Children
 thaven-mood-touys-bad-desc = All toys and childish things must be destroyed or removed from the station.
 thaven-mood-stay-dead-name = The Dead Should Stay Dead
@@ -61,7 +61,7 @@ thaven-mood-folk-hero-name =
 thaven-mood-folk-hero-desc =
     { $dagdChanceName ->
        *[FolkHero] No one knows it yet, but you are the hero this station needs. You must intervene in any major conflict that occurs, and fight the station’s enemies to the best of your ability
-        [DieAGloriousDeath] You are an artist, and your canvas is your demise. Your primary goal is to orchestrate a glorious, beautiful finale to your existence - But you are not a murderer. Try to avoid causing excessive damage
+        [DieAGloriousDeath] You are an artist, and your canvas is your demise. Your primary goal is to orchestrate a glorious, beautiful finale to your existence — But you are not a murderer. Try to avoid causing excessive damage
     }.
 thaven-mood-blogger-name = Greencomms Blogger
 thaven-mood-blogger-desc = You must keep the station informed about every minute detail of your life.

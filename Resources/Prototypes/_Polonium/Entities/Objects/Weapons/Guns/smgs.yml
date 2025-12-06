@@ -22,7 +22,7 @@
     - type: Gun
       fireRate: 8
       burstFireRate: 15
-      BurstCooldown: 0.75
+      burstCooldown: 0.45
       shotsPerBurst: 3
       minAngle: 26
       maxAngle: 45
@@ -61,4 +61,4 @@
         gun_magazine: !type:ContainerSlot
         gun_chamber: !type:ContainerSlot
     - type: StaticPrice
-      price: 1250
+      price: 3300

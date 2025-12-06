@@ -36,6 +36,7 @@ steal-target-groups-fire-axe = siekiera
 steal-target-groups-ame-part-flatpack = flatpak silnika antymaterii
 steal-target-groups-salvage-expeditions-computer-circuitboard = elektronika ekspedycji odzyskowych
 steal-target-groups-cargo-shuttle-console-circuitboard = elektronika wahadłowca logistycznego
+steal-target-groups-salvage-shuttle-console-circuitboard = salvage shuttle console board
 steal-target-groups-clothing-eyes-hud-beer = gogle piwne
 steal-target-groups-bible = biblia
 steal-target-groups-clothing-neck-goldmedal = złoty medal załoganta

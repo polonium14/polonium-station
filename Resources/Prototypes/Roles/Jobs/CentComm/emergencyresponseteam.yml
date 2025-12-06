@@ -36,6 +36,7 @@
 # SPDX-FileCopyrightText: 2025 pa.pecherskij <pa.pecherskij@interfax.ru>
 # SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 nikitosych <nikitosyych@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -72,7 +73,7 @@
     ears: ClothingHeadsetAltCentCom
     belt: ClothingBeltSecurityFilled
     pocket1: WeaponPistolN1984
-    pocket2: FlashlightSeclite
+    pocket2: ERTUplinkLeader
   storage:
     back:
     - WeaponDisabler
@@ -81,6 +82,7 @@
     - BoxZiptie
     - CrowbarRed
     - MagazineMagnum
+    - FlashlightSeclite
 
 - type: startingGear
   id: ERTLeaderGearEVA
@@ -96,7 +98,7 @@
     ears: ClothingHeadsetAltCentCom
     belt: ClothingBeltSecurityFilled
     pocket1: WeaponPistolN1984
-    pocket2: FlashlightSeclite
+    pocket2: ERTUplinkLeader
   storage:
     back:
     - WeaponDisabler
@@ -119,8 +121,7 @@
     id: ERTLeaderPDA
     ears: ClothingHeadsetAltCentCom
     belt: ClothingBeltSecurityFilled
-    pocket1: MagazineRifle
-    pocket2: MagazineRifle
+    pocket1: ERTUplinkLeader
   inhand:
   - WeaponRifleLecter
   storage:
@@ -131,6 +132,7 @@
     - BoxZiptie
     - CrowbarRed
     - MagazineMagnum
+    - MagazineRifle
 
 # Chaplain
 - type: job
@@ -257,7 +259,7 @@
     id: ERTEngineerPDA
     ears: ClothingHeadsetAltCentCom
     belt: ClothingBeltChiefEngineerFilled
-    pocket1: Flare
+    pocket1: ERTUplinkEngineer
     pocket2: GasAnalyzer
   storage:
     back:
@@ -285,7 +287,7 @@
     id: ERTEngineerPDA
     ears: ClothingHeadsetAltCentCom
     belt: ClothingBeltChiefEngineerFilled
-    pocket1: Flare
+    pocket1: ERTUplinkEngineer
     pocket2: GasAnalyzer
   storage:
     back:
@@ -342,7 +344,7 @@
     ears: ClothingHeadsetAltCentCom
     belt: ClothingBeltSecurityFilled
     pocket1: WeaponPistolMk58
-    pocket2: FlashlightSeclite
+    pocket2: ERTUplinkSecurity
   storage:
     back:
     - WeaponDisabler
@@ -351,6 +353,7 @@
     - BoxZiptie
     - CrowbarRed
     - MagazinePistol
+    - FlashlightSeclite
 
 - type: startingGear
   id: ERTSecurityGearEVA
@@ -366,7 +369,7 @@
     ears: ClothingHeadsetAltCentCom
     belt: ClothingBeltSecurityFilled
     pocket1: WeaponPistolMk58
-    pocket2: FlashlightSeclite
+    pocket2: ERTUplinkSecurity
   storage:
     back:
     - WeaponDisabler
@@ -375,6 +378,7 @@
     - BoxZiptie
     - CrowbarRed
     - MagazinePistol
+    - FlashlightSeclite
 
 - type: startingGear
   id: ERTSecurityGearEVALecter
@@ -389,8 +393,7 @@
     id: ERTSecurityPDA
     ears: ClothingHeadsetAltCentCom
     belt: ClothingBeltSecurityFilled
-    pocket1: MagazineRifle
-    pocket2: MagazineRifle
+    pocket1: ERTUplinkSecurity
   inhand:
     - WeaponRifleLecter
   storage:
@@ -401,6 +404,7 @@
     - BoxZiptie
     - CrowbarRed
     - MagazinePistol
+    - MagazineRifle
 
 # Medical
 - type: job
@@ -443,15 +447,11 @@
     ears: ClothingHeadsetAltCentCom
     belt: ClothingBeltMedicalFilled
     pocket1: Flare
+    pocket2: ERTUplinkMedic
   storage:
     back:
-    - Hypospray
-    - MedkitCombatFilled
     - MedkitCombatFilled
     - CrowbarRed
-    - OmnizineChemistryBottle
-    - EpinephrineChemistryBottle
-    - EpinephrineChemistryBottle
 
 - type: startingGear
   id: ERTMedicalGearEVA
@@ -467,15 +467,12 @@
     ears: ClothingHeadsetAltCentCom
     belt: ClothingBeltMedicalFilled
     pocket1: Flare
+    pocket2: ERTUplinkMedic
   storage:
     back:
-    - Hypospray
     - MedkitCombatFilled
     - MedkitCombatFilled
     - CrowbarRed
-    - OmnizineChemistryBottle
-    - EpinephrineChemistryBottle
-    - EpinephrineChemistryBottle
 
 # Janitor
 - type: job
@@ -517,13 +514,10 @@
     ears: ClothingHeadsetAltCentCom
     belt: ClothingBeltJanitorFilled
     pocket1: Flare
+    pocket2: ERTUplinkJanitor
   storage:
     back:
-    - LightReplacer
-    - BoxLightMixed
-    - Soap
     - CrowbarRed
-    - AdvMopItem
     - TrashBag
     - Holoprojector
 
@@ -540,11 +534,9 @@
     ears: ClothingHeadsetAltCentCom
     belt: ClothingBeltJanitorFilled
     pocket1: Flare
+    pocket2: ERTUplinkJanitor
   storage:
     back:
-    - LightReplacer
-    - BoxLightMixed
-    - BoxLightMixed
-    - Soap
+    - TrashBag
+    - Holoprojector
     - CrowbarRed
-    - AdvMopItem

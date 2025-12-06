@@ -1,0 +1,174 @@
+#ERT START
+- type: entity
+  parent: BaseItem
+  id: BaseERTUplink
+  name: WTH terminal
+  description: Warp To Hand terminal. An experimental device for teleporting items directly into the user's hands.
+  suffix: ERT, EMPTY
+  components:
+  - type: Sprite
+    sprite: _Imperial/Objects/Specific/ErtCall/ert_tablet.rsi
+    layers:
+    - state: device-on
+    - state: device-anim
+      shader: unshaded
+      visible: true
+    netsync: false
+  - type: Item
+    sprite: _Imperial/Objects/Specific/ErtCall/ert_tablet.rsi
+    heldPrefix: device
+  - type: UserInterface
+    interfaces:
+      enum.StoreUiKey.Key:
+        type: StoreBoundUserInterface
+  - type: ActivatableUI
+    key: enum.StoreUiKey.Key
+
+#Leader
+#ERT
+- type: entity
+  parent: [ BaseERTUplink, ErtCallUplinkPreset ]
+  id: ERTUplinkLeader
+  name: WTH terminal
+  description: Warp To Hand terminal. An experimental device for teleporting items directly into the user's hands.
+  suffix: ERT, LEADER, 35
+  components:
+  - type: Store
+    balance:
+      BlueSpaceCube: 35
+  - type: Tag
+    tags:
+      - ErtUplinkCombat
+      - ErtUplinkERT
+
+#Medic
+- type: entity
+  parent: [ BaseERTUplink, ErtCallUplinkMedicPreset ]
+  id: ERTUplinkMedic
+  name: WTH terminal
+  description: Warp To Hand terminal. An experimental device for teleporting items directly into the user's hands.
+  suffix: ERT, MEDIC, 25
+  components:
+  - type: Store
+    balance:
+      BlueSpaceCube: 25
+  # - type: Tag
+  #   tags:
+  #     - ErtUplinkCombat
+
+#Security
+#ERT
+- type: entity
+  parent: [ BaseERTUplink, ErtCallUplinkSecurityPreset ]
+  id: ERTUplinkSecurity
+  name: WTH terminal
+  description: Warp To Hand terminal. An experimental device for teleporting items directly into the user's hands.
+  suffix: ERT, SECURITY, 25
+  components:
+  - type: Store
+    balance:
+      BlueSpaceCube: 25
+  - type: Tag
+    tags:
+      - ErtUplinkCombat
+      - ErtUplinkERT
+
+#Engineer
+- type: entity
+  parent: [ BaseERTUplink, ErtCallUplinkEngineerPreset ]
+  id: ERTUplinkEngineer
+  name: WTH terminal
+  description: Warp To Hand terminal. An experimental device for teleporting items directly into the user's hands.
+  suffix: ERT, ENGINEER, 25
+  components:
+  - type: Store
+    balance:
+      BlueSpaceCube: 25
+  - type: Tag
+    tags:
+      - ErtUplinkERT
+
+#Junitor
+- type: entity
+  parent: [ BaseERTUplink, ErtCallUplinkJanitorPreset ]
+  id: ERTUplinkJanitor
+  name: WTH terminal
+  description: Warp To Hand terminal. An experimental device for teleporting items directly into the user's hands.
+  suffix: ERT, JUNITOR, 25
+  components:
+  - type: Store
+    balance:
+      BlueSpaceCube: 25
+  # - type: Tag
+  #   tags:
+  #     - ErtUplinkCombat
+#ERT END
+
+#CBURN START
+- type: entity
+  parent: [ BaseERTUplink, ErtCallUplinkPreset ]
+  id: CBURNUplinkLeader
+  name: WTH terminal
+  description: Warp To Hand terminal. An experimental device for teleporting items directly into the user's hands.
+  suffix: CBURN, LEADER, 35
+  components:
+  - type: Store
+    balance:
+      BlueSpaceCube: 35
+  - type: Tag
+    tags:
+      - ErtUplinkCombat
+      - ErtUplinkCBURN
+
+- type: entity
+  parent: [ BaseERTUplink, ErtCallUplinkSecurityPreset ]
+  id: CBURNUplinkSecurity
+  name: WTH terminal
+  description: Warp To Hand terminal. An experimental device for teleporting items directly into the user's hands.
+  suffix: CBURN, SECURITY, 25
+  components:
+  - type: Store
+    balance:
+      BlueSpaceCube: 25
+  - type: Tag
+    tags:
+      - ErtUplinkCombat
+      - ErtUplinkCBURN
+
+#CBURN END
+
+#DEAD SQUAD START
+- type: entity
+  parent: [ BaseERTUplink, ErtCallUplinkDeadSquadPreset ]
+  id: ERTUplinkDeadSquad
+  name: WTH terminal
+  description: Warp To Hand terminal. An experimental device for teleporting items directly into the user's hands.
+  suffix: ERT, DEADSQUAD, 60
+  components:
+  - type: Sprite
+    sprite: _Imperial/Objects/Specific/ErtCall/ert_tablet.rsi
+    layers:
+    - state: device-on
+    - state: device-deadsquad-anim
+      shader: unshaded
+      visible: true
+  - type: Store
+    balance:
+      BlueSpaceCube: 60
+  - type: Tag
+    tags:
+      - ErtUplinkDeadSquad
+      - ErtUplinkCombat
+#DEAD SQUAD END
+
+# Polonium Edits Below
+- type: entity
+  parent: [ BaseERTUplink, ErtCallUplinkDebugPreset ]
+  id: ERTUplinkDebug
+  name: WTH terminal [DEBUG]
+  description: Warp To Hand terminal. An experimental device for teleporting items directly into the user's hands.
+  suffix: DEBUG
+  components:
+  - type: Store
+    balance:
+      BlueSpaceCube: 9999

@@ -39,3 +39,12 @@
   components:
     - type: BallisticAmmoProvider
       proto: CartridgeLightRifle
+
+- type: entity
+  id: BorSniperMagazineEmpty
+  parent: BorSniperMagazineBase
+  name: Magazynek Alexis-BOR (.30 rifle any)
+  suffix: (pusty)
+  components:
+    - type: BallisticAmmoProvider
+      proto: null

@@ -1,8 +1,8 @@
 ## EntitySpawnWindow
 
-entity-spawn-window-title = Panel Spawnowania Jednostek
-entity-spawn-window-search-bar-placeholder = wyszukaj
-entity-spawn-window-clear-button = Wyczyść
+entity-spawn-window-title = Panel Spawnowania Podmiotów
+window-search-bar-placeholder = wyszukaj
+window-clear-button = Wyczyść
 entity-spawn-window-replace-button-text = Zamień
 entity-spawn-window-override-menu-tooltip = Zastąpienie rozmieszczenia
 

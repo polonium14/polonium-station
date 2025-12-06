@@ -1,0 +1,10 @@
+ent-FxBloodCultRuneBarrier = barrier rune
+    .desc = { "" }
+ent-FxBloodCultRuneEmpowering = empowering rune
+    .desc = { "" }
+ent-FxBloodCultRuneOffering = offering rune
+    .desc = { "" }
+ent-FxBloodCultRuneRevive = revive rune
+    .desc = { "" }
+ent-FxBloodCultRuneTearVeil = tear veil rune
+    .desc = { "" }

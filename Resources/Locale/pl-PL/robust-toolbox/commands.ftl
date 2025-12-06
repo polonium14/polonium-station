@@ -31,7 +31,7 @@ cmd-help-no-args =
     Aby zobaczyć listę wszystkich dostępnych poleceń, wpisz 'list'.
     Aby wyszukać polecenia, użyj 'list <filtr>'.
 cmd-help-unknown = Nieznane polecenie: { $command }
-cmd-help-top = { $command } - { $description }
+cmd-help-top = { $command } — { $description }
 cmd-help-invalid-args = Nieprawidłowa liczba argumentów.
 cmd-help-arg-cmdname = [nazwa polecenia]
 

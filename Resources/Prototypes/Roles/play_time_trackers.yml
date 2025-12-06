@@ -91,6 +91,12 @@
   id: JobDeathSquad
 
 - type: playTimeTracker
+  id: JobCBURNLeader
+
+- type: playTimeTracker
+  id: JobCBURNMedic
+
+- type: playTimeTracker
   id: JobCBURN
 
 - type: playTimeTracker

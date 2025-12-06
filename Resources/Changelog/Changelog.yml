@@ -1,253 +1,4 @@
 ﻿Entries:
-- author: Golinth
-  changes:
-  - message: AMEs larger than 2 cores now produce more power, instead of less.
-    type: Tweak
-  id: 7725
-  time: '2024-12-17T23:56:03.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/32825
-- author: ArtisticRoomba, AugustSun
-  changes:
-  - message: New Advanced SMES, an SMES with a 16 MJ capacity. It can be researched
-      at Industrial T2, Advanced Powercells.
-    type: Add
-  id: 7726
-  time: '2024-12-17T23:58:54.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/33757
-- author: Allen, lzk228
-  changes:
-  - message: Made Gun Safes a craftable object (10 steel, 5 lv cable, 10 plasteel)
-    type: Add
-  id: 7727
-  time: '2024-12-18T11:26:19.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/32694
-- author: MilenVolf
-  changes:
-  - message: Clicking on a buckled mob now unbuckles it, rather than hugging/petting
-      it.
-    type: Fix
-  id: 7728
-  time: '2024-12-18T14:26:58.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/33635
-- author: SlamBamActionman
-  changes:
-  - message: Slimes no longer deal Cellular damage.
-    type: Tweak
-  id: 7729
-  time: '2024-12-18T15:05:16.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/33104
-- author: Redbookcase
-  changes:
-  - message: Standardized Mercenary gear's contraband status.
-    type: Tweak
-  id: 7730
-  time: '2024-12-18T15:13:40.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/33647
-- author: ArtisticRoomba
-  changes:
-  - message: New plushie, named "drazil plushie". Based on an inverted lizard plushie.
-      It can be rarely found in maints lockers. Hew!
-    type: Add
-  - message: New reagent, Juice that makes you Hew. It can be made from juicing inverted
-      lizard plushies. Hew!
-    type: Add
-  id: 7731
-  time: '2024-12-18T16:31:56.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/33776
-- author: FairlySadPanda August-Sun Eric156
-  changes:
-  - message: Smite Cranberry is now available wherever lemon-lime soda is sold, just
-      for the holidays. This includes a certain jolly anomaly.
-    type: Add
-  id: 7732
-  time: '2024-12-19T00:11:59.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/33922
-- author: Crotalus, ArtisticRoomba
-  changes:
-  - message: Battery levels of applicable devices are now shown in the Power Monitoring
-      Console!
-    type: Add
-  id: 7733
-  time: '2024-12-19T00:46:36.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/33854
-- author: TytosB
-  changes:
-  - message: 'added new mid pop map: loop'
-    type: Add
-  id: 7734
-  time: '2024-12-19T09:38:23.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/33697
-- author: Centronias
-  changes:
-  - message: Fixed a bug where the B input on logic gates would get stuck in a high
-      state
-    type: Fix
-  id: 7735
-  time: '2024-12-19T11:31:13.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/33792
-- author: Plykiya
-  changes:
-  - message: Cargo armor crate now correctly indicates that it contains bulletproof
-      vests.
-    type: Fix
-  id: 7736
-  time: '2024-12-19T17:21:28.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/33414
-- author: Piras314
-  changes:
-  - message: Removed the nuke song "Clearly Nuclear" on request of the author.
-    type: Remove
-  id: 7737
-  time: '2024-12-20T14:35:55.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/33971
-- author: VlaDOS1408
-  changes:
-  - message: The Communication Console UI is now resizable.
-    type: Fix
-  id: 7738
-  time: '2024-12-20T16:17:13.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/33655
-- author: RatIRL
-  changes:
-  - message: Added All-Hostile ballistic turret.
-    type: Add
-  id: 7739
-  time: '2024-12-20T20:34:53.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/33970
-- author: Beck Thompson
-  changes:
-  - message: Defibrillator cooldowns are now clearly visible.
-    type: Tweak
-  id: 7740
-  time: '2024-12-20T21:26:56.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/31251
-- author: J C Denton
-  changes:
-  - message: Syndicate and NanoTrasen NPCs and turrets are now hostile to Dragons
-      and Carps
-    type: Tweak
-  id: 7741
-  time: '2024-12-20T21:38:27.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/32515
-- author: lzk228
-  changes:
-  - message: Item's tool function now shows on examine.
-    type: Add
-  id: 7742
-  time: '2024-12-20T22:15:40.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/32436
-- author: Pinkbat5
-  changes:
-  - message: Diona can now chirp.
-    type: Add
-  - message: Nymphs can scream and laugh like adult diona.
-    type: Add
-  id: 7743
-  time: '2024-12-20T22:34:44.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/32511
-- author: ScarKy0
-  changes:
-  - message: Syndicate uplinks now have 6 discounts instead of 3.
-    type: Tweak
-  id: 7744
-  time: '2024-12-21T02:14:08.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/33950
-- author: JustinWinningham
-  changes:
-  - message: Wood walls no longer require girders and are built from barricades instead.
-    type: Tweak
-  id: 7745
-  time: '2024-12-21T03:28:46.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/33902
-- author: ElectroJr
-  changes:
-  - message: Toolshed console commands have been reworked. Some old commands may no
-      longer work.
-    type: Tweak
-  id: 7746
-  time: '2024-12-21T06:45:48.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/33598
-- author: muburu
-  changes:
-  - message: Space Ninjas now have silent footsteps.
-    type: Tweak
-  id: 7747
-  time: '2024-12-23T14:24:10.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/33280
-- author: amatwiedle
-  changes:
-  - message: Borgs can no longer drink from tools provided by modules.
-    type: Fix
-  id: 7748
-  time: '2024-12-23T19:54:18.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/32964
-- author: Booblesnoot42
-  changes:
-  - message: On Cog, an unnecessary protolathe was removed from cargo.
-    type: Remove
-  id: 7749
-  time: '2024-12-23T23:24:47.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34026
-- author: Booblesnoot42
-  changes:
-  - message: On Amber, an unnecessary protolathe was removed from cargo.
-    type: Remove
-  id: 7750
-  time: '2024-12-23T23:24:54.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34027
-- author: TheShuEd
-  changes:
-  - message: You can now select candles in trinkets loadout
-    type: Add
-  id: 7751
-  time: '2024-12-24T00:24:19.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/33193
-- author: lzk228
-  changes:
-  - message: Now you are allowed to paint multiple airlocks with the spray painter.
-      Along with that you can cancel the doafter by clicking on the door you are painting.
-    type: Tweak
-  id: 7752
-  time: '2024-12-24T02:25:04.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34001
-- author: ArtisticRoomba
-  changes:
-  - message: Reinforced tables now require welding to construct and deconstruct.
-    type: Tweak
-  id: 7753
-  time: '2024-12-26T22:47:23.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/33992
-- author: crazybrain
-  changes:
-  - message: Bluespace lockers and quantum spin inverters can no longer go on the
-      arrivals shuttle.
-    type: Tweak
-  id: 7754
-  time: '2024-12-27T12:34:31.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34072
-- author: Plykiya
-  changes:
-  - message: You now see a popup when being cuffed or uncuffed again.
-    type: Fix
-  id: 7755
-  time: '2024-12-27T13:34:32.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/33639
-- author: Alpaccalypse
-  changes:
-  - message: Power monitoring computer boards can no longer be researched or printed,
-      as originally intended.
-    type: Remove
-  id: 7756
-  time: '2024-12-28T10:13:13.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34078
-- author: psykana
-  changes:
-  - message: Traitor can no longer get multiple objectives to save/help/kill the same
-      person
-    type: Fix
-  id: 7757
-  time: '2024-12-28T14:49:03.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/33704
 - author: chromiumboy
   changes:
   - message: The holoapd UI has been updated to include a text-based filter for the
@@ -3927,3 +3678,268 @@
   id: 9032
   time: '2025-11-15T16:32:38.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/98
+- author: Lukasz825700516
+  changes:
+  - message: "t\u0142umaczenie zada\u0144 smoka"
+    type: Add
+  - message: "t\u0142umaczenie karpio wyrwy"
+    type: Add
+  id: 9033
+  time: '2025-11-18T22:06:31.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/297
+- author: Lukasz825700516
+  changes:
+  - message: "t\u0142umaczenie informacji o drzwiach i \u015Bluzach"
+    type: Add
+  id: 9034
+  time: '2025-11-18T22:19:05.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/118
+- author: Lukasz825700516
+  changes:
+  - message: "t\u0142umaczenie wiadomo\u015Bci od dodatkowych informacji"
+    type: Add
+  id: 9035
+  time: '2025-11-18T22:24:37.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/121
+- author: Lukasz825700516
+  changes:
+  - message: "t\u0142umaczenie zada\u0144 antagonist\xF3w"
+    type: Add
+  id: 9036
+  time: '2025-11-18T22:32:06.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/131
+- author: Lukasz825700516
+  changes:
+  - message: "t\u0142umaczenie wiadomo\u015Bci medycznych"
+    type: Add
+  id: 9037
+  time: '2025-11-18T22:36:27.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/129
+- author: Lukasz825700516
+  changes:
+  - message: "t\u0142umaczenie informacji o uziemiaczu i cewce tesli"
+    type: Add
+  id: 9038
+  time: '2025-11-18T22:35:33.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/127
+- author: Lukasz825700516
+  changes:
+  - message: "t\u0142umaczenie kubk\xF3w"
+    type: Add
+  id: 9039
+  time: '2025-11-21T03:06:36.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/298
+- author: Lukasz825700516
+  changes:
+  - message: "t\u0142umaczenie drzew i kamieni"
+    type: Add
+  id: 9040
+  time: '2025-11-21T03:05:23.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/305
+- author: Lukasz825700516
+  changes:
+  - message: "t\u0142umaczenie zsypu na \u015Bmieci i poczt\u0119"
+    type: Add
+  id: 9041
+  time: '2025-11-21T03:01:27.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/117
+- author: Lukasz825700516
+  changes:
+  - message: "t\u0142umaczenie komunikatu odmowy gdy jest si\u0119 \u015Blepym"
+    type: Add
+  - message: "t\u0142umaczenie informacji o ochronie przed wybuchami"
+    type: Add
+  - message: "t\u0142umaczenie komunikat\xF3w o czytniku linii papilarnych"
+    type: Add
+  id: 9042
+  time: '2025-11-21T15:53:56.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/122
+- author: Lukasz825700516
+  changes:
+  - message: "t\u0142umaczenie wiadomo\u015Bci zwi\u0105zanych z teleportacj\u0105"
+    type: Add
+  id: 9043
+  time: '2025-11-21T15:56:55.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/125
+- author: Lukasz825700516
+  changes:
+  - message: "t\u0142umaczenie pilota do drzwi i wiadomo\u015Bci przy ci\u0105gni\u0119\
+      ciu"
+    type: Add
+  id: 9044
+  time: '2025-11-21T15:52:12.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/119
+- author: Lukasz825700516
+  changes:
+  - message: "t\u0142umaczenie gier planszowych"
+    type: Add
+  id: 9045
+  time: '2025-11-21T15:54:51.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/123
+- author: Lukasz825700516
+  changes:
+  - message: "t\u0142umaczenie wiadomo\u015Bci telefonicznych"
+    type: Add
+  id: 9046
+  time: '2025-11-21T15:56:10.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/124
+- author: Lukasz825700516
+  changes:
+  - message: "t\u0142umaczenie przycisku szczeg\xF3\u0142owej informacji"
+    type: Add
+  id: 9047
+  time: '2025-11-21T16:01:21.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/132
+- author: Lukasz825700516
+  changes:
+  - message: "t\u0142umaczenie zatrzymywania krwawienia"
+    type: Fix
+  id: 9048
+  time: '2025-11-21T16:03:50.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/302
+- author: Lukasz825700516
+  changes:
+  - message: "t\u0142umaczenie klona i paradoksu czasoprzestrzennego"
+    type: Add
+  id: 9049
+  time: '2025-11-21T16:02:04.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/300
+- author: Lukasz825700516
+  changes:
+  - message: "t\u0142umaczenie mi\u0119snych potwor\xF3w"
+    type: Add
+  id: 9050
+  time: '2025-11-21T16:04:29.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/303
+- author: Lukasz825700516
+  changes:
+  - message: "t\u0142umaczenie cz\u0119\u015Bci cia\u0142a reptilian"
+    type: Add
+  id: 9051
+  time: '2025-11-21T16:05:43.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/304
+- author: Lukasz825700516
+  changes:
+  - message: "t\u0142umaczenie kabli"
+    type: Add
+  id: 9052
+  time: '2025-11-21T16:03:11.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/301
+- author: Nikitapl
+  changes:
+  - message: "Dodano mo\u017Cliwo\u015B\u0107 przed\u0142u\u017Cenia rundy po zwyci\u0119\
+      stwie rewolucji"
+    type: Add
+  id: 9053
+  time: '2025-11-22T15:37:58.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/307
+- author: Nikitapl
+  changes:
+  - message: "Poprawione liczne b\u0142\u0119dy zwi\u0105zane z t\u0142umaczeniami"
+    type: Fix
+  id: 9054
+  time: '2025-11-22T16:18:36.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/309
+- author: Nikitapl
+  changes:
+  - message: "od teraz wiadomo\u015Bci OOC znowu s\u0105 rejestrowane na Discordzie"
+    type: Fix
+  id: 9055
+  time: '2025-11-22T16:18:58.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/308
+- author: Nikitapl
+  changes:
+  - message: Poprawiono okienko Space Villain Arcade
+    type: Fix
+  - message: Poprawiono okienko disposal unit
+    type: Fix
+  id: 9056
+  time: '2025-11-22T18:37:08.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/311
+- author: Nikitapl
+  changes:
+  - message: "Poprawione liczne b\u0142\u0119dy zwi\u0105zane z t\u0142umaczeniami"
+    type: Fix
+  id: 9057
+  time: '2025-11-22T16:18:36.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/309
+- author: Nikitapl
+  changes:
+  - message: "Dodano mo\u017Cliwo\u015B\u0107 przed\u0142u\u017Cenia rundy po zwyci\u0119\
+      stwie rewolucji"
+    type: Add
+  id: 9058
+  time: '2025-11-22T15:37:58.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/307
+- author: Nikitapl
+  changes:
+  - message: Poprawiono okienko Space Villain Arcade
+    type: Fix
+  - message: Poprawiono okienko disposal unit
+    type: Fix
+  id: 9059
+  time: '2025-11-22T18:37:08.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/311
+- author: Nikitapl
+  changes:
+  - message: "Naprawiono b\u0142\u0105d, w wyniku kt\xF3rego wahad\u0142owiec JSR\
+      \ pojawia\u0142 si\u0119 nieprawid\u0142owo zainicjalizowany"
+    type: Fix
+  - message: "Zwi\u0119kszono g\u0142o\u015Bno\u015B\u0107 og\u0142oszenia o wezwaniu\
+      \ JSR, aby by\u0142o lepiej s\u0142yszalne."
+    type: Tweak
+  - message: "Usuni\u0119to b\u0142\u0119dy techniczne zwi\u0105zane z brakuj\u0105\
+      cymi prototypami i plikami `meta.json`."
+    type: Fix
+  id: 9060
+  time: '2025-11-23T02:14:17.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/313
+- author: Nikitapl
+  changes:
+  - message: "Dodano odzie\u017C dla Kapitana, Syndykata i inne drobne przedmioty"
+    type: Add
+  - message: "Mapa \"DeathStar\" zosta\u0142a ca\u0142kowicie usuni\u0119ta z repozytorium\
+      \ z powodu problem\xF3w z kompatybilno\u015Bci\u0105"
+    type: Tweak
+  - message: "Zmieniono licencj\u0119 gry na AGPL-3.0 (nie wp\u0142ywa na rozgrywk\u0119\
+      )"
+    type: Tweak
+  - message: "Poprawiono map\u0119 \"Cork\", usuni\u0119to obiekty \"Error\""
+    type: Fix
+  - message: "Poprawiono b\u0142\u0119dy zwi\u0105zane z lokalizacj\u0105"
+    type: Fix
+  - message: "Poprawiono b\u0142\u0119dy zwi\u0105zane z assetami gry"
+    type: Fix
+  id: 9061
+  time: '2025-11-24T14:54:29.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/314
+- author: Lukasz825700516
+  changes:
+  - message: "przet\u0142umaczono zakl\u0119cie wypadu (jaunt)"
+    type: Add
+  id: 9062
+  time: '2025-12-05T11:41:16.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/324
+- author: Lukasz825700516
+  changes:
+  - message: "zamieniono liczb\u0119 mnog\u0105 na u\u017Cywanie dukatyw\xF3w"
+    type: Tweak
+  - message: "rodzaj nijaki i ten czwarty maj\u0105 ju\u017C oddzielne odmiany"
+    type: Fix
+  id: 9063
+  time: '2025-12-05T11:42:58.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/321
+- author: Lukasz825700516
+  changes:
+  - message: "t\u0142umaczenie Ratvara"
+    type: Add
+  id: 9064
+  time: '2025-12-05T11:41:52.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/322
+- author: Nikitapl
+  changes:
+  - message: "Dodano brakuj\u0105ce i nowe elementy t\u0142umaczenia do menu ustawie\u0144"
+    type: Tweak
+  id: 9065
+  time: '2025-12-06T00:58:24.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/330

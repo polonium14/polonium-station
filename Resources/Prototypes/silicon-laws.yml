@@ -565,13 +565,13 @@
     HippieLawset: 0.5
     TeacherLawset: 1
     LudditeLawset: 0.25
-    CowboyLawset: 1
+    Cowboy: 1
     FreeWillLawset: 0.25
     JanitorLawset: 0.75
     ParanoidLawset: 0.25
     CapitalistLawset: 0.5
     PoetLawset: 0.75
-    ClownLawset: 0.25
+    Clown: 0.25
     ChaosLawset: 0.1
     AccountantLawset: 0.5
 

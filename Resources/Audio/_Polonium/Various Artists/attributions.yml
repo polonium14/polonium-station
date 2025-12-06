@@ -1,5 +1,5 @@
 - files: ["code_epsilon.ogg"]
-  copyright: "Made by Bolgarich"
+  copyright: "Made by Bolgarich. Edited by Nikita.pl and Pinkscreen."
   license: "CC-BY-4.0"
   source: "https://music.youtube.com/watch?v=EtTi4kwHMto&si=uratyjxMNeqEexVz"
 
@@ -10,5 +10,5 @@
 
 - files: ["i_cant_afford_mastering.ogg"]
   copyright: "Made by C418"
-  license: "Custom" # CC-BY-NC-ND 3.0 for most of C418's music, but this track has a different license
+  license: "Custom" # CC-BY-NC-ND 3.0
   source: "https://c418.bandcamp.com/track/i-cant-afford-mastering"

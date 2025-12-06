@@ -1,5 +1,5 @@
 ent-ClothingBackpackDuffelSurgeryFilled = surgical duffel bag
-    .desc = A large duffel bag for holding extra medical supplies - this one seems to be designed for holding surgical tools.
+    .desc = A large duffel bag for holding extra medical supplies — this one seems to be designed for holding surgical tools.
     .suffix = DO NOT MAP
 ent-ClothingBackpackDuffelSyndicateFilledMedical = syndicate surgical duffel bag
     .desc = A large duffel bag containing a full suite of surgical tools.
