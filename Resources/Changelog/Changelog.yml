@@ -1,20 +1,4 @@
 ﻿Entries:
-- author: chromiumboy
-  changes:
-  - message: The holoapd UI has been updated to include a text-based filter for the
-      contacts list, and also to specify the name of the holopad that incoming calls
-      originate from
-    type: Tweak
-  id: 7758
-  time: '2024-12-28T23:33:16.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34055
-- author: zHonys
-  changes:
-  - message: Smile can now use hats
-    type: Add
-  id: 7759
-  time: '2024-12-29T01:49:05.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/33924
 - author: ewokswagger
   changes:
   - message: Pizza deliveries are now guaranteed to have at least one cotton pizza.
@@ -3943,3 +3927,18 @@
   id: 9065
   time: '2025-12-06T00:58:24.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/330
+- author: Nikitapl
+  changes:
+  - message: "Naprawiono problem, kt\xF3ry powodowa\u0142 nieprawid\u0142owe \u0142\
+      adowanie niekt\xF3rych element\xF3w interfejsu"
+    type: Fix
+  id: 9066
+  time: '2025-12-06T13:13:57.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/331
+- author: Lukasz825700516
+  changes:
+  - message: "t\u0142umaczenie wiadomo\u015Bci przy wykonywaniu egzekucji"
+    type: Add
+  id: 9067
+  time: '2025-12-06T02:16:35.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/120
