@@ -16,7 +16,7 @@ book-text-gaming2 =
     Cha: 1
     Where's the age?
     Why are those ability scores so ridiculous?
-    What even are you trying to do here, Leah? - Your Friendly DM
+    What even are you trying to do here, Leah? — Your Friendly DM
 book-text-gaming3 =
     THE GIANT SPACE FLY FROM SPACE
     Session 1: They should have just learned what's going on with the world and the Giant Space Fly.
@@ -29,4 +29,4 @@ book-text-gaming4 =
     Fifth time this shift.
     It's amazing.
     But not in a good way.
-    Cheers, - Arielle
+    Cheers, — Arielle

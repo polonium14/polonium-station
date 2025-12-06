@@ -3,7 +3,7 @@ lube-success =
         [male] został pokryty
         [female] została pokryta
         [epicene] zostału pokrytu
-        *[neuter] zostało pokryte
+       *[neuter] zostało pokryte
     } smarem!
 lubed-name-prefix = nasmarowany { $baseName }
 lube-failure = Nie można pokryć { THE($target) } smarem!

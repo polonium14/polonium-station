@@ -5,6 +5,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 cosmicability-generic-fail = Your influence fails to take hold..
+cosmicability-hibernate-confirm = Press again to activate Slumber Shell.
 cosmicability-glare-confirm = Press again to activate Null Glare.
 cosmicability-siphon-cultist-success = Your attempts to draw entropy chill { CAPITALIZE(THE($target)) }
 cosmicability-siphon-success = You silently draw Entropy from { CAPITALIZE(THE($target)) }.

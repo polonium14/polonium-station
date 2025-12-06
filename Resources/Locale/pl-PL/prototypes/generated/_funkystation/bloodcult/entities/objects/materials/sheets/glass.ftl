@@ -1,0 +1,12 @@
+ent-SheetRunedGlass = runed glass
+    .desc = A sheet of otherworldly glass, used by acolytes of cosmic entities to assemble twisted constructs.
+    .suffix = Full
+ent-SheetRunedGlass30 = runed glass
+    .suffix = Full
+    .desc = { ent-SheetRunedGlass.desc }
+ent-SheetRunedGlass10 = runed glass
+    .suffix = 10
+    .desc = { ent-SheetRunedGlass.desc }
+ent-SheetRunedGlass1 = runed glass
+    .suffix = Single
+    .desc = { ent-SheetRunedGlass.desc }

@@ -10,6 +10,7 @@ ent-HolofanProjector = holofan projector
     .desc = Stop suicidal passengers from killing everyone during atmos emergencies.
 ent-HolofanProjectorRecharging = holofan projector
     .desc = Stop suicidal passengers from killing everyone during atmos emergencies. Comes with a microreactor battery that you should not take out, because you aren't gonna be putting it back again
+    .suffix = AutoRecharge
 ent-HolofanProjectorEmpty = { ent-HolofanProjector }
     .suffix = Empty
     .desc = { ent-HolofanProjector.desc }
