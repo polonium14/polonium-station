@@ -1,7 +1,7 @@
 ent-NullRodBase = null rod
     .desc = { ent-BaseItem.desc }
 ent-NullRodDefault = null rod
-    .desc = The old classic. Does nothing special, really. Imbued with a powerful mote of divine favor, allowing it to permanently take on a new form - but only once.
+    .desc = The old classic. Does nothing special, really. Imbued with a powerful mote of divine favor, allowing it to permanently take on a new form — but only once.
 ent-NullRodRosary = silvered rosary
     .desc = An expensive-looking rosary, made from silver. Exudes somewhat soothing vibes. Nice!
 ent-NullRodGrail = gildgrail

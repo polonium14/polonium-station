@@ -13,7 +13,7 @@ knowledge-path-ash-s1-desc =
     Allows you to transmute a welding tool and a knife into an Ashen Blade.
 knowledge-path-ash-s2-name = Grasp of Ash
 knowledge-path-ash-s2-desc =
-    The Nightwatcher was the first of them, his treason started it all. Their lantern, expired to ash - their watch, absent.
+    The Nightwatcher was the first of them, his treason started it all. Their lantern, expired to ash — their watch, absent.
     
     Your Mansus Grasp will burn the eyes of the victim, damaging them and blurring their vision.
 knowledge-path-ash-s3-name = Blazing Dash

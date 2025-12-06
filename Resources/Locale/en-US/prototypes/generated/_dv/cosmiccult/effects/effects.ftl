@@ -24,3 +24,5 @@ ent-CosmicNovaImpactVfx = { "" }
     .desc = { "" }
 ent-CosmicEchoVfx = malign echo
     .desc = A trace of malign light..
+ent-CosmicColossusAttack1Vfx = { ent-BaseCosmicVFX }
+    .desc = { ent-BaseCosmicVFX.desc }

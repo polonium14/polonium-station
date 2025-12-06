@@ -21,7 +21,7 @@ job-description-doctor = Diagnozuj i lecz załogantów przy pomocy chemikaliów 
 job-description-engineer = Utrzymuj główny generator stacji i panele słoneczne działające, optymalizuj sieć energetyczną i przeprowadzaj naprawy w strefach pozbawionych atmosfery przy użyciu swojego skafandra. job-description-ertchaplain = Upewniaj się że ostatnie życzenia załogantów zostaną spełnione.
 job-description-ertengineer = Upewniaj się że stacja ma zasilanie i czyste powietrze.
 job-description-ertchaplain = Ensure the station crew's last rights are taken care of.
-job-description-ertjanitor = Upewniaj się że stacja jest odpowiednio wyczyszczona - dla morali.
+job-description-ertjanitor = Upewniaj się że stacja jest odpowiednio wyczyszczona — dla morali.
 job-description-ertleader = Prowadź JSR podczas rozwiązywania problemów z zagrożeniami dla własności Nanotrasen.
 job-description-ertmedic = Upewniaj się że załoga stacji jest trzymana przy życiu i zdrowiu.
 job-description-ertsecurity = Upewniaj się że aktywne zagrożenia dla stacji zostaną zneutralizowane.

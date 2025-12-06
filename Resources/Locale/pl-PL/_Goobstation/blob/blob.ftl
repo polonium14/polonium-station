@@ -115,7 +115,7 @@ blob-health-alert-name = Core Health
 blob-health-alert-desc = Your core's health. You will die if it reaches zero.
 # Greeting
 blob-role-greeting =
-    You are blob - a parasitic space creature capable of destroying entire stations.
+    You are blob — a parasitic space creature capable of destroying entire stations.
         Your goal is to survive and grow as large as possible.
     	You are almost invulnerable to physical damage, but heat can still hurt you.
         Use Alt+LMB to upgrade normal blob tiles to strong blob and strong blob to reflective blob.

@@ -1,2 +1,14 @@
 ent-ClothingOuterMagistrateCoat = magistrate's coat
     .desc = And thy punishment is death.
+ent-ClothingOuterCargoWindbreaker = cargo tech windbreaker
+    .desc = We work, to earn the right to work.
+ent-ClothingOuterSalvageWindbreaker = salvage specialist windbreaker
+    .desc = In surprisingly good condition. Probably never worn. Won't fit over your hardsuit.
+ent-ClothingOuterCargoCourierWindbreaker = mail carrier windbreaker
+    .desc = Here at Nanotrasen Interstellar, we make sure all our workers are properly equipped to do their jobs regardless of atmospheric conditions!
+ent-ClothingOuterCargoSeniorWindbreaker = senior cargo tech windbreaker
+    .desc = Looks a little dull and faded, but is incomparably comfy. Smells like money.
+ent-ClothingOuterQMWindbreaker = quartermaster's windbreaker
+    .desc = For increasing quarterly productivity by 0.3%, Nanotrasen has awarded you this distinguished windbreaker to set you apart from the common drones. You're a Quartermaster, after all.
+ent-ClothingOuterJacketChefBlue = blue chef jacket
+    .desc = An apron-jacket used by a high class blue team chef.

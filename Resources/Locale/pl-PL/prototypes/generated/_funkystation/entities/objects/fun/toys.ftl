@@ -8,3 +8,5 @@ ent-BoxFunSharkPlushieBulk = bulk soft toy shark box
     .desc = A crate filled with a variety of everyone's favorite finned friend. Rawr!
 ent-BoxFunArtSupplies = art supplies
     .desc = Make some happy little accidents with lots of crayons!
+ent-PlushieLizardJobRoboticist = roboticist lizard plushie
+    .desc = An adorable stuffed toy that resembles a lizardperson as a roboticist. Smells of oil and emits faint chirps of servomotors.

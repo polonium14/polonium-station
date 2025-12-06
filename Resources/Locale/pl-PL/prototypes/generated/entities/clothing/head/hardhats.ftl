@@ -13,4 +13,4 @@ ent-ClothingHeadHatHardhatYellow = yellow hard hat
 ent-ClothingHeadHatHardhatYellowDark = dark yellow hard hat
     .desc = A hard hat, painted in dark yellow, used in dangerous working conditions to protect the head. Comes with a built-in flashlight.
 ent-ClothingHeadHatHardhatArmored = armored hard hat
-    .desc = An armored hard hat. Provides the best of both worlds in both protection & utility - perfect for the engineer on the frontlines.
+    .desc = An armored hard hat. Provides the best of both worlds in both protection & utility — perfect for the engineer on the frontlines.

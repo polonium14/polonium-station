@@ -1,0 +1,12 @@
+ent-ClothingHeadHatFlatBrown = brown flat cap
+    .desc = A brown flat cap, for driving cabs and delivering the papers.
+ent-ClothingHeadHatSurgcapBlack = surgical cap
+    .desc = A black cap surgeons wear during operations. Keeps their hair from tickling your internal organs.
+ent-ClothingHeadHatSurgcapCyan = surgical cap
+    .desc = A cyan cap surgeons wear during operations. Keeps their hair from tickling your internal organs.
+ent-ClothingHeadHatSurgcapPink = surgical cap
+    .desc = A pink cap surgeons wear during operations. Keeps their hair from tickling your internal organs.
+ent-ClothingHeadHatSurgcapRainbow = surgical cap
+    .desc = A rainbow cap surgeons wear during operations. Keeps their hair from tickling your internal organs.
+ent-ClothingHeadHatSurgcapWhite = surgical cap
+    .desc = A white cap surgeons wear during operations. Keeps their hair from tickling your internal organs.

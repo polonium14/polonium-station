@@ -4,3 +4,6 @@ ent-SpawnPointGhostNeanderthal = ghost role spawn point
 ent-SpawnPointGhostSpaceCowboy = ghost role spawn point
     .suffix = space cowboy
     .desc = { ent-SpawnPointGhostRoleJob.desc }
+ent-SpawnPointGhostMiniDragon = ghost role spawn point
+    .suffix = mini dragon
+    .desc = { ent-MarkerBase.desc }
