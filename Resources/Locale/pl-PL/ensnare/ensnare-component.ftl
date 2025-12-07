@@ -10,5 +10,6 @@ ensnare-component-try-free-fail-other = Nie udaje ci się uwolnić {$user} od {$
 ensnare-component-try-free-other = Próbujesz uwolnić {$user} {GENDER($user) ->
         [male] złapanego
         [female] złapaną
-        *[other] złapane
+        [epicene] złapanu
+        *[neuter] złapane
     } w {$ensnare}!
