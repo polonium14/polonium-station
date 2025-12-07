@@ -1,4 +1,4 @@
-ent-N14DoorMetalBlueSlanted = Niebieskie metalowe drzwi
+ent-N14DoorMetalBlueSlanted = niebieskie metalowe drzwi
     .desc = Stare niebieskie metalowe drzwi.
     .suffix = skośne
 ent-N14DoorMetalRedSlanted = czerwone metalowe drzwi
@@ -6,7 +6,7 @@ ent-N14DoorMetalRedSlanted = czerwone metalowe drzwi
     .suffix = skośne
 ent-N14DoorMetalBlueAltSlanted = alternatywne niebieskie metalowe drzwi
     .desc = { ent-N14DoorMetalBlueSlanted.desc }
-ent-N14DoorMetalBlueWindowSlanted = Metalowe drzwi z oknem
+ent-N14DoorMetalBlueWindowSlanted = metalowe drzwi z oknem
     .desc = Stare niebieskie metalowe drzwi z oknem.
     .suffix = skośne, z oknem
 ent-N14DoorMetalGrateSlanted = metalowe drzwi z kratą
