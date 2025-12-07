@@ -1,4 +1,4 @@
-station-goal-fax-paper-name = бумага
+station-goal-fax-paper-name = papier
 station-goal-start = [color=#b8972d]███[/color][color=#1d7a1d]░███░░░░██░░░░[/color][color=#b8972d]                          ★ ★ ★[/color][color=#1d7a1d]
     ░██░████░░░██░░░░           [head=3]Formularz dokumentu[/head]
     ░░█░██░██░░██░█░░                   [head=3]NanoTrasen[/head]
@@ -211,7 +211,7 @@ station-goal-shuttle-srv =
 
     Celem pobocznym jest budowa pilotowanego wahadłowca pasażerskiego.[/bold]
 
-    wahadłowiec musi spełniać następujące wymagania:
+    Wahadłowiec musi spełniać następujące wymagania:
     1. Zapewnione stabilne źródło zasilania i zapasowa bateria SMES.
     2. Możliwość wykonywania następujących ruchów: przechył, pochylenie i odchylenie boczne.
     3. Dostęp do używanego sprzętu wewnątrz przedziałów nie może być utrudniony.
