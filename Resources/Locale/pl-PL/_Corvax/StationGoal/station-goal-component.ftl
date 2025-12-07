@@ -211,7 +211,7 @@ station-goal-shuttle-srv =
 
     Celem pobocznym jest budowa pilotowanego wahadłowca pasażerskiego.[/bold]
 
-    wahadłowiec musi spełniać następujące wymagania:
+    Wahadłowiec musi spełniać następujące wymagania:
     1. Zapewnione stabilne źródło zasilania i zapasowa bateria SMES.
     2. Możliwość wykonywania następujących ruchów: przechył, pochylenie i odchylenie boczne.
     3. Dostęp do używanego sprzętu wewnątrz przedziałów nie może być utrudniony.
