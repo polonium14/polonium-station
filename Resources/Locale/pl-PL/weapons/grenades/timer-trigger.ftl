@@ -1,24 +1,24 @@
 verb-trigger-timer-set = {$time} {$time ->
         [one] sekunda
-        [few] sekuny
+        [few] sekundy
         *[many] sekund
     }
 verb-trigger-timer-set-current = {$time} {$time ->
         [one] sekunda
-        [few] sekuny
+        [few] sekundy
         *[many] sekund
     } (obecnie)
 verb-trigger-timer-cycle = Przełącz czas odliczania
 
 examine-trigger-timer = Zegar ustawiony na {$time} {$time ->
         [one] sekundę
-        [few] sekuny
+        [few] sekundy
         *[many] sekund
     }.
 
 popup-trigger-timer-set = Zegar ustawiony na {$time} {$time ->
         [one] sekundę
-        [few] sekuny
+        [few] sekundy
         *[many] sekund
     }.
 

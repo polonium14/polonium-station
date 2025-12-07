@@ -1,6 +1,6 @@
 
 gun-selected-mode-examine = [color={$color}]{$mode}[/color] obecnym trybem strzelania.
-gun-fire-rate-examine = Szybkostrzelność wysosi color={$color}]{$fireRate}[/color] na sekundę.
+gun-fire-rate-examine = Szybkostrzelność wysosi [color={$color}]{$fireRate}[/color] na sekundę.
 gun-selector-verb = Zmień na tryb {$mode}
 gun-selected-mode = Wybrano {$mode}
 gun-disabled = Nie możesz używać tej broni!
@@ -64,4 +64,4 @@ gun-speedloader-empty = Ładownik pusty
 
 # GunSpreadModifier
 examine-gun-spread-modifier-reduction = Rozrzut zmniejszony o [color=yellow]{NATURALPERCENT($percentage)}[/color].
-examine-gun-spread-modifier-increase = Rozrzut zmniejszony o [color=yellow]{NATURALPERCENT($percentage)}[/color].
+examine-gun-spread-modifier-increase = Rozrzut zwiększony o [color=yellow]{NATURALPERCENT($percentage)}[/color].
