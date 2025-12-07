@@ -1,16 +1,16 @@
-markings-used = Użyte oznaczenia
-markings-unused = Niewykorzystane oznaczenia
-markings-add = Dodaj oznaczenie
-markings-remove = Usuń oznaczenie
+markings-used = Użyte cechy
+markings-unused = Niewykorzystane cechy
+markings-add = Dodaj cechę
+markings-remove = Usuń cechę
 markings-rank-up = Wyżej
 markings-rank-down = Niżej
 markings-search = Szukaj
-marking-points-remaining = Pozostało oznaczeń: { $points }
+marking-points-remaining = Pozostało cech: { $points }
 marking-used = { $marking-name }
 marking-used-forced = { $marking-name } (Wymuszone)
 marking-slot-add = Dodaj
 marking-slot-remove = Usuń
-marking-slot = Slot { $number }
+marking-slot = Miejsce { $number }
 
 # Categories
 markings-category-Special = Specjalne

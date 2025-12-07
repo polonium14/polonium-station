@@ -1,7 +1,11 @@
 # Name
 loadout-name-edit-label = Ustawia niestandardowe imię używane, gdy grasz tę rolę. Jeśli puste, zostanie użyte imię twojej postaci.
 loadout-name-edit-label-dataset = Ustawia niestandardowe imię używane, gdy grasz tę rolę. Jeśli puste, zamiast tego zostanie wybrane losowe imię.
-loadout-name-edit-tooltip = Maksymalnie { $max } znaków. Jeśli nie podasz imienia, może zostać wybrane losowe.
+loadout-name-edit-tooltip = Maksymalnie { $max ->
+    [one] jeden znak
+    [few] { $max } znaki
+    *[other] { $max } znaków
+    }. Jeśli nie podasz imienia, może zostać wybrane losowe.
 # Restrictions
 loadout-restrictions = Ograniczenia
 loadouts-min-limit = Minimalna liczba: { $count }

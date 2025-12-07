@@ -47,7 +47,7 @@ humanoid-profile-editor-job-priority-medium-button = Średni
 humanoid-profile-editor-job-priority-low-button = Niski
 humanoid-profile-editor-job-priority-never-button = Nigdy
 humanoid-profile-editor-naming-rules-warning = Uwaga: Postać musi mieć imię wraz z co najmniej jednym nazwiskiem. Obraźliwe lub absurdalne imiona spowodują interwencję administracji.
-humanoid-profile-editor-markings-tab = Znaki
+humanoid-profile-editor-markings-tab = Cechy szczególne
 humanoid-profile-editor-flavortext-tab = Opis
 # Traits
 humanoid-profile-editor-traits-tab = Cechy
@@ -55,6 +55,6 @@ humanoid-profile-editor-no-traits = Brak dostępnych cech
 humanoid-profile-editor-trait-count-hint = Dostępne punkty: [{ $current }/{ $max }]
 trait-category-disabilities = Niepełnosprawności
 trait-category-speech = Cechy mowy
-trait-category-quirks = Dziwactwa
+trait-category-quirks = Cechy nietypowe
 trait-category-alcohol-tolerance = Tolerancja alkoholu
 trait-category-vision-tolerance = Tolerancja wzroku
