@@ -1,7 +1,7 @@
-ent-BaseSecretDoor = solid wall
-    .desc = Keeps the air in and the greytide out.
-    .suffix = secret door
-ent-BaseSecretDoorAssembly = secret door assembly
-    .desc = It opens, it closes, and maybe crushes you.
-ent-SolidSecretDoor = solid wall
+ent-BaseSecretDoor = ściana
+    .desc = Utrzymuje powietrze i powstrzymuje greytiderów.
+    .suffix = sekretne drzwi
+ent-BaseSecretDoorAssembly = konstrukcja sekretnej śluzy
+    .desc = Otwiera się, zamyka i może cię zmiażdżyć.
+ent-SolidSecretDoor = { ent-BaseSecretDoor }
     .desc = { ent-BaseSecretDoor.desc }
