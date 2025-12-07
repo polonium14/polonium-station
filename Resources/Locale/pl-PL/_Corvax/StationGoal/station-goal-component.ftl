@@ -190,7 +190,7 @@ station-goal-shuttle-sec =
 
     { station-goal-end }
 station-goal-shuttle-rnd =
-    { station-goal_start }[bold]
+    { station-goal-start }[bold]
 
     Celem pobocznym jest budowa pilotowanego wahadłowca badawczego.[/bold]
 
@@ -207,7 +207,7 @@ station-goal-shuttle-rnd =
 
     { station-goal-end }
 station-goal-shuttle-srv =
-    { station-goal_start }[bold]
+    { station-goal-start }[bold]
 
     Celem pobocznym jest budowa pilotowanego wahadłowca pasażerskiego.[/bold]
 
@@ -227,7 +227,7 @@ station-goal-shuttle-srv =
 
     { station-goal-end }
 station-goal-shuttle-emergency =
-    { station-goal_start }[bold]
+    { station-goal-start }[bold]
 
     Celem pobocznym jest budowa pilotowanego wahadłowca ratunkowego.[/bold]
 
@@ -244,7 +244,7 @@ station-goal-shuttle-emergency =
 
     { station-goal-end }
 station-goal-theatre =
-    { station-goal_start }[bold]
+    { station-goal-start }[bold]
 
     Celem pobocznym jest budowa strefy teatralnej.[/bold]
     Na tej stacji odbędą się negocjacje z dużymi firmami w celu zawarcia umów partnerskich. Ważne jest zapewnienie ciepłego przyjęcia gości.
@@ -261,7 +261,7 @@ station-goal-theatre =
 
     { station-goal-end }
 station-goal-ai =
-    { station-goal_start }[bold]
+    { station-goal-start }[bold]
 
     Celem pobocznym jest budowa autonomicznego modułu SI.[/bold]
     Po zakończeniu budowy moduł powinien zostać odłączony od stacji i wysłany na dryf w przestrzeni kosmicznej.
@@ -282,7 +282,7 @@ station-goal-ai =
 
     { station-goal-end }
 station-goal-botany =
-    { station-goal_start }[bold]
+    { station-goal-start }[bold]
 
     Celem pobocznym jest budowa szklarni i wyhodowanie roślin przystosowanych do temperatury.[/bold]
 
@@ -297,7 +297,7 @@ station-goal-botany =
 
     { station-goal-end }
 station-goal-bunker =
-    { station-goal_start }[bold]
+    { station-goal-start }[bold]
 
     Celem pobocznym jest przystosowanie stacji do silnych przepływów hiperenergetycznych.[/bold]
 
@@ -318,7 +318,7 @@ station-goal-bunker =
 
     { station-goal-end }
 # station-goal-frame-repair =
-#     { station-goal_start }[bold]
+#     { station-goal-start }[bold]
 
 #     Celem pobocznym jest zakończenie prac budowlanych na stacji.[/bold]
 
@@ -328,7 +328,7 @@ station-goal-bunker =
 
 #     { station-goal-end }
 # station-goal-delta-xeno-repair =
-#     { station-goal_start }[bold]
+#     { station-goal-start }[bold]
 
 #     Celem pobocznym jest odtworzenie opuszczonego sektora ksenobiologii działu naukowego.[/bold]
 
@@ -336,7 +336,7 @@ station-goal-bunker =
 
 #     { station-goal-end }
 # station-goal-delta-ambusol =
-#     { station-goal_start }[bold]
+#     { station-goal-start }[bold]
 
 #     Celem pobocznym jest odtworzenie opuszczonego sektora wirusologii działu medycznego.[/bold]
 
@@ -344,7 +344,7 @@ station-goal-bunker =
 
 #     { station-goal-end }
 # station-goal-split-secure =
-#     { station-goal_start }[bold]
+#     { station-goal-start }[bold]
 
 #     Celem pobocznym jest zapewnienie bezpieczeństwa w subsektorze Split.[/bold]
 
@@ -354,7 +354,7 @@ station-goal-bunker =
 
 #     { station-goal-end }
 # station-goal-astra-repair =
-#     { station-goal_start }[bold]
+#     { station-goal-start }[bold]
 
 #     Celem pobocznym jest odtworzenie opuszczonej stacji Vasilisk, znajdującej się w części centralnej.[/bold]
 
