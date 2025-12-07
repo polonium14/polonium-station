@@ -6,18 +6,18 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 # Legal
-loadout-group-iaa-outer = Agent Spraw Wewnętrznych (ubranie wierzchnie)
-loadout-group-iaa-gloves = Agent Spraw Wewnętrznych (rękawice)
-loadout-group-iaa-jumpsuit = Agent Spraw Wewnętrznych (kombinezon)
-loadout-group-iaa-backpack = Agent Spraw Wewnętrznych (plecak)
-loadout-group-iaa-belt = Agent Spraw Wewnętrznych (pas)
+loadout-group-iaa-outer = Agent Spraw Wewnętrznych – ubranie wierzchnie
+loadout-group-iaa-gloves = Agent Spraw Wewnętrznych – rękawice
+loadout-group-iaa-jumpsuit = Agent Spraw Wewnętrznych – kombinezon
+loadout-group-iaa-backpack = Agent Spraw Wewnętrznych – plecak
+loadout-group-iaa-belt = Agent Spraw Wewnętrznych – pas
 # Chaplain
 loadout-group-bible = Biblia
 # Magistrate
-loadout-group-magistrate-backpack = Sędzia (plecak)
-loadout-group-magistrate-head = Sędzia (głowa)
-loadout-group-magistrate-jumpsuit = Sędzia (kombinezon)
-loadout-group-magistrate-gloves = Sędzia (rękawice)
-loadout-group-magistrate-shoes = Sędzia (buty)
-loadout-group-magistrate-outer = Sędzia (ubranie wierzchnie)
-loadout-group-magistrate-flavor = Sędzia (dodatki)
+loadout-group-magistrate-backpack = Sędzia – plecak
+loadout-group-magistrate-head = Sędzia – głowa
+loadout-group-magistrate-jumpsuit = Sędzia – kombinezon
+loadout-group-magistrate-gloves = Sędzia – rękawice
+loadout-group-magistrate-shoes = Sędzia – buty
+loadout-group-magistrate-outer = Sędzia – ubranie wierzchnie
+loadout-group-magistrate-flavor = Sędzia – dodatki

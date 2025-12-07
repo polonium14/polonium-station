@@ -8,5 +8,5 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-humanoid-profile-editor-borgname-label = Preferowana nazwa borga:
-humanoid-profile-editor-antag-roll-before-jobs = Pamiętaj, że wszyscy antagowie oprócz początkowo zainfekowanych i agenta uśpionego są losowani przed przydziałem stanowisk.
+humanoid-profile-editor-borgname-label = Preferowana nazwa cyborga:
+humanoid-profile-editor-antag-roll-before-jobs = Pamiętaj, że wszyscy antagowie oprócz początkowo zainfekowanych i uśpionego agenta są losowani przed przydziałem stanowisk.
