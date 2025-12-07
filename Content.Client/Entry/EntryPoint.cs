@@ -155,7 +155,7 @@ namespace Content.Client.Entry
         [Dependency] private readonly TitleWindowManager _titleWindowManager = default!;
         [Dependency] private readonly IEntitySystemManager _entitySystemManager = default!;
         [Dependency] private readonly ClientsidePlaytimeTrackingManager _clientsidePlaytimeManager = default!;
-        
+
         public override void Init()
         {
             ClientContentIoC.Register();
@@ -207,6 +207,7 @@ namespace Content.Client.Entry
             _prototypeManager.RegisterIgnore("story"); // Goobstation
             _prototypeManager.RegisterIgnore("storyBeat"); // Goobstation
             _prototypeManager.RegisterIgnore("ertCall"); // Imperial
+            _prototypeManager.RegisterIgnore("stationGoal"); // Corvax-StationGoal
 
             _componentFactory.GenerateNetIds();
             _adminManager.Initialize();
