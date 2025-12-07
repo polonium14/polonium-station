@@ -7,7 +7,7 @@ thief-backpack-window-description =
         [few] różne zestawy
         [many] różnych zestawów
         *[other] zestawu
-    } from the list.
+    } z listy.
 
 thief-backpack-window-selected = Wybrane zestawy: ({$selectedCount}/{$maxCount})
 
@@ -29,13 +29,13 @@ thief-backpack-category-tools-description =
     Co to za dźwięk? Pukanie małego C4 do ich drzwi.
     Żadna przeszkoda nie może cię powstrzymać!
     Zawiera: Dwa ładunki C4, multimetr, zdalny sygnalizator,
-    szczęki życia, gogle inżynieryjne i rękawice izolacyjne.
+    szczęki życia, zaawansowaną spawarkę, gogle inżynieryjne i rękawice izolacyjne.
 
 thief-backpack-category-chemistry-name = zestaw anatomiczny
 thief-backpack-category-chemistry-description =
     Osiągnąłeś szczyt fizycznych możliwości... z drobną pomocą.
-    Zawiera: Implant kieszonkowy, implant nowej tożsamości, butelkę efedryny
-    strzykawkę i mydło omega.
+    Zawiera: Implant kieszonkowy, implant nowej tożsamości, butelkę efedryny,
+    strzykawkę, szejker i mydło omega.
 
 thief-backpack-category-syndie-name = zestaw Syndykata
 thief-backpack-category-syndie-description =
