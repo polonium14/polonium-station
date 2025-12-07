@@ -1,20 +1,20 @@
 # tab headers
-humanoid-profile-editor-cd-records-tab = Records
+humanoid-profile-editor-cd-records-tab = Akta
 # headers
-humanoid-profile-editor-cd-records-header-general = General Information
-humanoid-profile-editor-cd-records-header-medical = Medical Information
-humanoid-profile-editor-cd-records-header-personal = Personal Information
+humanoid-profile-editor-cd-records-header-general = Informacje ogólne
+humanoid-profile-editor-cd-records-header-medical = Informacje medyczne
+humanoid-profile-editor-cd-records-header-personal = Informacje osobiste
 # general information
-humanoid-profile-editor-cd-records-general-height = Height:
-humanoid-profile-editor-cd-records-general-weight = Weight:
-humanoid-profile-editor-cd-records-general-identifying-features = Identifying Features:
-humanoid-profile-editor-cd-records-general-work-authorization = Work Authorization?
-humanoid-profile-editor-cd-records-general-insurance = Insurance?
-humanoid-profile-editor-cd-records-general-insurance-provider = Insurance Provider
-humanoid-profile-editor-cd-records-general-insurance-plan = Insurance Plan
+humanoid-profile-editor-cd-records-general-height = Wzrost:
+humanoid-profile-editor-cd-records-general-weight = Waga:
+humanoid-profile-editor-cd-records-general-identifying-features = Cechy identyfikujące:
+humanoid-profile-editor-cd-records-general-work-authorization = Uprawnienie do pracy?
+humanoid-profile-editor-cd-records-general-insurance = Ubezpieczenie?
+humanoid-profile-editor-cd-records-general-insurance-provider = Ubezpieczyciel
+humanoid-profile-editor-cd-records-general-insurance-plan = Plan ubezpieczenia
 # medical information
-humanoid-profile-editor-cd-records-medical-blood-type = Blood Type:
-humanoid-profile-editor-cd-records-medical-postmortem = Post Mortem Instructions:
-humanoid-profile-editor-cd-records-medical-allergies = Allergies
-humanoid-profile-editor-cd-records-medical-prescriptions = Prescriptions
-humanoid-profile-editor-cd-records-medical-family-history = Family History
+humanoid-profile-editor-cd-records-medical-blood-type = Grupa krwi:
+humanoid-profile-editor-cd-records-medical-postmortem = Instrukcje pośmiertne:
+humanoid-profile-editor-cd-records-medical-allergies = Alergie
+humanoid-profile-editor-cd-records-medical-prescriptions = Recepty
+humanoid-profile-editor-cd-records-medical-family-history = Historia rodzinna

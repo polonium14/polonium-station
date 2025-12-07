@@ -7,12 +7,12 @@ ui-lobby-ready-up-button = Zgłoś gotowość
 ui-lobby-online-players-block = Liczba graczy
 ui-lobby-server-info-block = Informacje o serwerze
 ui-lobby-ready-button-tooltip-no-possible-characters =
-    You have no active characters with jobs that align with your selected job priorities.
-    Please double check that you have at least one active character with a job set to "Yes"
-    with a corresponding job priority set above "Never".
-ui-lobby-ready-button-tooltip-is-ready = Your application to participate in the next crew shift has been recieved.
-ui-lobby-ready-button-tooltip-is-not-ready = You have not applied to participate in the next crew shift.
-ui-lobby-ready-button-tooltip-not-loaded = Hold on! Your characters have not loaded yet!
-ui-lobby-ready-button-tooltip-join-state = Clock in late to the current crew shift.
-ui-lobby-lock-priorities-checkbox-tooltip = Allow dragging and dropping of job priorities directly.
-ui-lobby-lock-priorities-checkbox-label = Allow dragging
+    Nie masz aktywnych postaci z zawodami zgodnymi z wybranymi priorytetami pracy.
+    Upewnij się, że masz co najmniej jedną aktywną postać z zawodem ustawionym na "Tak"
+    oraz z odpowiadającym mu priorytetem pracy ustawionym powyżej "Nigdy".
+ui-lobby-ready-button-tooltip-is-ready = Twoje zgłoszenie do udziału w następnej zmianie załogi zostało przyjęte.
+ui-lobby-ready-button-tooltip-is-not-ready = Nie zgłosiłeś się do udziału w następnej zmianie załogi.
+ui-lobby-ready-button-tooltip-not-loaded = Chwila! Twoje postacie jeszcze się nie wczytały!
+ui-lobby-ready-button-tooltip-join-state = Dołącz spóźniony do obecnej zmiany załogi.
+ui-lobby-lock-priorities-checkbox-tooltip = Zezwól na bezpośrednie przeciąganie i upuszczanie priorytetów pracy.
+ui-lobby-lock-priorities-checkbox-label = Zezwól na przeciąganie
