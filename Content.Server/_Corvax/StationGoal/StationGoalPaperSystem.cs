@@ -58,7 +58,7 @@ namespace Content.Server._Corvax.StationGoal
                 }
 
                 if (selGoal is null)
-                    return;
+                    continue;
 
                 if (SendStationGoal(uid, selGoal))
                 {
