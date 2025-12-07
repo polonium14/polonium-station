@@ -10,17 +10,17 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-loadout-group-ntr-head = Przedstawiciel Nanotrasen (głowa)
-loadout-group-ntr-neck = Przedstawiciel Nanotrasen (szyja)
-loadout-group-ntr-backpack = Przedstawiciel Nanotrasen (plecak)
-loadout-group-ntr-outer = Przedstawiciel Nanotrasen (ubranie wierzchnie)
-loadout-group-ntr-gloves = Przedstawiciel Nanotrasen (rękawice)
-loadout-group-ntr-jumpsuit = Przedstawiciel Nanotrasen (kombinezon)
-loadout-group-ntr-belt = Przedstawiciel Nanotrasen (pas)
-loadout-group-ntr-shoes = Przedstawiciel Nanotrasen (buty)
-loadout-group-bso-head = Oficer Niebieskiej Tarczy (ONT) (głowa)
-loadout-group-bso-backpack = Oficer Niebieskiej Tarczy (ONT) (plecak)
-loadout-group-bso-jumpsuit = Oficer Niebieskiej Tarczy (ONT) (kombinezon)
-loadout-group-bso-outer = Oficer Niebieskiej Tarczy (ONT) (pancerz)
-loadout-group-bso-neck = Oficer Niebieskiej Tarczy (ONT) (szyja)
-loadout-group-reporter-outerclothing = Reporter (ubranie wierzchnie)
+loadout-group-ntr-head = Przedstawiciel Nanotrasen – głowa
+loadout-group-ntr-neck = Przedstawiciel Nanotrasen – szyja
+loadout-group-ntr-backpack = Przedstawiciel Nanotrasen – plecak
+loadout-group-ntr-outer = Przedstawiciel Nanotrasen – ubranie wierzchnie
+loadout-group-ntr-gloves = Przedstawiciel Nanotrasen – rękawice
+loadout-group-ntr-jumpsuit = Przedstawiciel Nanotrasen – kombinezon
+loadout-group-ntr-belt = Przedstawiciel Nanotrasen – pas
+loadout-group-ntr-shoes = Przedstawiciel Nanotrasen – buty
+loadout-group-bso-head = Oficer Niebieskiej Tarczy (ONT) – głowa
+loadout-group-bso-backpack = Oficer Niebieskiej Tarczy (ONT) – plecak
+loadout-group-bso-jumpsuit = Oficer Niebieskiej Tarczy (ONT) – kombinezon
+loadout-group-bso-outer = Oficer Niebieskiej Tarczy (ONT) – pancerz
+loadout-group-bso-neck = Oficer Niebieskiej Tarczy (ONT) – szyja
+loadout-group-reporter-outerclothing = Reporter – ubranie wierzchnie
