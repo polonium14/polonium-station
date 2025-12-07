@@ -1,25 +1,4 @@
 ﻿Entries:
-- author: ewokswagger
-  changes:
-  - message: Pizza deliveries are now guaranteed to have at least one cotton pizza.
-    type: Tweak
-  id: 7760
-  time: '2024-12-29T01:50:49.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/33997
-- author: ArtisticRoomba, JuneSzalkowska
-  changes:
-  - message: New cotton dough slices and cotton dough rolls.
-    type: Add
-  - message: New cotton baguette, cotton crostini, cotton chevre-chaud, cotton bagel,
-      and cotton croissant recipes. You can make them by following the recipes for
-      regular baguettes, bagels, etc, but use cotton dough instead.
-    type: Add
-  - message: Slicing dough into thirds now divides the nutriment value into thirds.
-      Previously you could slice dough to triple your nutriment.
-    type: Fix
-  id: 7761
-  time: '2024-12-29T02:02:25.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/33508
 - author: Velcroboy
   changes:
   - message: Rolling joints no longer requires a cigarette filter.
@@ -3942,3 +3921,17 @@
   id: 9067
   time: '2025-12-06T02:16:35.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/120
+- author: pinkscreen
+  changes:
+  - message: arty funki.
+    type: Remove
+  id: 9068
+  time: '2025-12-06T17:08:13.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/333
+- author: nikitosych
+  changes:
+  - message: "Brakuj\u0105ce t\u0142umaczenia urz\u0105dze\u0144 atmosferycznych"
+    type: Add
+  id: 9069
+  time: '2025-12-06T18:08:20.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/334
