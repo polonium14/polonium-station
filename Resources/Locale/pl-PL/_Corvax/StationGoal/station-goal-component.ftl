@@ -1,4 +1,4 @@
-station-goal-fax-paper-name = бумага
+station-goal-fax-paper-name = papier
 station-goal-start = [color=#b8972d]███[/color][color=#1d7a1d]░███░░░░██░░░░[/color][color=#b8972d]                          ★ ★ ★[/color][color=#1d7a1d]
     ░██░████░░░██░░░░           [head=3]Formularz dokumentu[/head]
     ░░█░██░██░░██░█░░                   [head=3]NanoTrasen[/head]
