@@ -1,8 +1,8 @@
 ensnare-component-try-free = Trudzisz się ze zdejmowaniem {$ensnare} {GENDER($ensnare) ->
-        [male] który
-        [female] która
-        *[other] które
-    } cię złapał!
+        [male] który cię złapał!
+        [female] która cię złapała!
+        *[other] które cię złapało!
+    }
 ensnare-component-try-free-complete = Uwalniasz się od {$ensnare}!
 ensnare-component-try-free-fail = Nie udaje ci się uwolnić od {$ensnare}!
 ensnare-component-try-free-complete-other = Uwalniasz {$user} od {$ensnare}!

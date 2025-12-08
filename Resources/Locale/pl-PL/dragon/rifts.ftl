@@ -1,4 +1,4 @@
-carp-rift-warning = Wyrwa powoduje nienaturalnie duże turbulencje energi w {$location}. Zatrzymajcie to za wszelką cenę!
+carp-rift-warning = Wyrwa powoduje nienaturalnie duże turbulencje energii w {$location}. Zatrzymajcie to za wszelką cenę!
 carp-rift-duplicate = Nie można posiadać 2 rosnących wyrw w tym samym momencie!
 carp-rift-examine = Jest ona w [color=yellow]{NATURALPERCENT($percentage)}[/color] pełnej wielkości!
 carp-rift-max = Osiągnięto limit liczby wyrw
@@ -12,6 +12,6 @@ carp-rift-space-proximity = Zbyt blisko kosmosu! Muszą być oddalone przynajmni
         [one] metr
         [few] metry
         *[other] metrów
-    } oddalone.
+    }.
 carp-rift-weakened = Nie jesteś w stanie przyzwać większej liczby wyrw w twoim osłabionym stanie.
-carp-rift-destroyed = Wyrwa została zniszczona! Ogarnia cię tymczasowe osłamienie.
+carp-rift-destroyed = Wyrwa została zniszczona! Ogarnia cię tymczasowe osłabienie.
