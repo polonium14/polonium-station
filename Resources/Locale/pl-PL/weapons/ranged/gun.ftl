@@ -1,6 +1,6 @@
 
 gun-selected-mode-examine = [color={$color}]{$mode}[/color] obecnym trybem strzelania.
-gun-fire-rate-examine = Szybkostrzelność wysosi [color={$color}]{$fireRate}[/color] na sekundę.
+gun-fire-rate-examine = Szybkostrzelność wynosi [color={$color}]{$fireRate}[/color] na sekundę.
 gun-selector-verb = Zmień na tryb {$mode}
 gun-selected-mode = Wybrano {$mode}
 gun-disabled = Nie możesz używać tej broni!
