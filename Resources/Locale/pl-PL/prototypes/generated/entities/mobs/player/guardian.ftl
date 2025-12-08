@@ -10,5 +10,5 @@ ent-MobIfritGuardian = ifryt
 ent-MobHoloClownGuardian = holo klaun
     .desc = Fascynujący zawijas twardego światła faluje w kształt niebieskiego klauna niewiadomego pochodzenia.
     .desc = male
-ent-ActionToggleGuardian = przełącz manifestację stróża
+ent-ActionToggleGuardian = Przełącz manifestację stróża
     .desc = Zamanifestuj swojego stróża lub odwołaj go spowrotem do swojego ciała.
