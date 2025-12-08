@@ -19,5 +19,5 @@ loadout-group-magistrate-head = Sędzia – nakrycie głowy
 loadout-group-magistrate-jumpsuit = Sędzia – kombinezon
 loadout-group-magistrate-gloves = Sędzia – rękawice
 loadout-group-magistrate-shoes = Sędzia – buty
-loadout-group-magistrate-outer = Sędzia – ubranie wierzchnie
+loadout-group-magistrate-outer = Sędzia – odzież wierzchnia
 loadout-group-magistrate-flavor = Sędzia – dodatki
