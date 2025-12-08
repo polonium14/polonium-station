@@ -33,7 +33,7 @@ medical-info-prescriptions-painrelievers = Środki przeciwbólowe
 medical-info-prescriptions-sleepingdrugs = Leki nasenne
 # family history
 medical-info-familyhistory-anemia = Niedokrwistość
-medical-info-familyhistory-arthritis = Artretyzm
+medical-info-familyhistory-arthritis = Zapalenie stawów
 medical-info-familyhistory-asthma = Astma
 medical-info-familyhistory-autoimmune = Zaburzenia autoimmunologiczne
 medical-info-familyhistory-bloodclots = Zakrzepy krwi
