@@ -52,4 +52,4 @@ medical-info-familyhistory-migraines = Migreny
 medical-info-familyhistory-osteoporosis = Osteoporoza
 medical-info-familyhistory-seizures = Napady padaczkowe
 medical-info-familyhistory-sleepapnea = Bezdech senny
-medical-info-familyhistory-stroke = Zawał
+medical-info-familyhistory-stroke = Udar
