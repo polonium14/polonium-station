@@ -3,7 +3,7 @@ character-setup-gui-character-setup-adminremarks-button = Uwagi administratora
 character-setup-gui-character-setup-stats-button = Statystyki
 character-setup-gui-character-setup-rules-button = Zasady
 character-setup-gui-character-setup-close-button = Zamknij
-character-setup-gui-create-new-character-button = Utwórz nowy slot...
+character-setup-gui-create-new-character-button = Utwórz nową postać...
 character-setup-gui-create-new-character-button-tooltip = Możesz mieć maksymalnie { $maxCharacters  ->
     [one] jedną postać
     [few] { $maxCharacters } postacie
