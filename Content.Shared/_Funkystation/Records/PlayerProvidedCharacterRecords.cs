@@ -105,7 +105,7 @@ public sealed partial class PlayerProvidedCharacterRecords
             insuranceType: 0,
             medicalInfo: [],
             bloodType: 0,
-            postmortemInstructions: "Return home"
+            postmortemInstructions: "Powrót do domu"
         );
     }
 
