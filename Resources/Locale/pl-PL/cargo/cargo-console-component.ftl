@@ -45,11 +45,13 @@ cargo-console-unlock-approved-order-broadcast = [bold]{$productName} x{$orderAmo
 cargo-console-fund-withdraw-broadcast = [bold]{$name} {GENDER($name) ->
         [male] wypłacił
         [female] wypłaciła
-        *[other] wypłaciło
+        [epicene] wypłaciłu
+        *[neuter] wypłaciło
     } {$amount} speso z {$name1} \[{$code1}\]
 cargo-console-fund-transfer-broadcast = [bold]{$name} {GENDER($name) ->
         [male] przetransferował
         [female] przetransferowała
+        [epicene] przetransferowału
         *[other] przetransferowało
     } {$amount} speso z {$name1} \[{$code1}\] do {$name2} \[{$code2}\][/bold]
 cargo-console-fund-transfer-user-unknown = Nieznane
