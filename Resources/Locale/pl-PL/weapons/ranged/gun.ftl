@@ -10,7 +10,7 @@ gun-magazine-whitelist-fail = To się nie zmieści w broni!
 gun-magazine-fired-empty = Nie ma amunicji!
 
 # SelectiveFire
-gun-SemiAuto = pół automatyczny
+gun-SemiAuto = półautomatyczny
 gun-Burst = seria
 gun-FullAuto = automatyczny
 
