@@ -3,7 +3,7 @@ electrocuted-component-mob-shocked-by-source-popup-others = { CAPITALIZE($mob) }
         [female] porażona
         [epicene] porażono
         *[neuter] porażone
-    } przez { THE($source) }!
+    } przez { $source }!
 electrocuted-component-mob-shocked-popup-others = { CAPITALIZE($mob) } zostaje {GENDER($mob) ->
         [male] porażony
         [female] porażona
