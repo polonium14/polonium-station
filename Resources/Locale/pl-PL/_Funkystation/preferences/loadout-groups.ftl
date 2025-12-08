@@ -6,7 +6,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 # Legal
-loadout-group-iaa-outer = Agent Spraw Wewnętrznych – ubranie wierzchnie
+loadout-group-iaa-outer = Agent Spraw Wewnętrznych – odzież wierzchnia
 loadout-group-iaa-gloves = Agent Spraw Wewnętrznych – rękawice
 loadout-group-iaa-jumpsuit = Agent Spraw Wewnętrznych – kombinezon
 loadout-group-iaa-backpack = Agent Spraw Wewnętrznych – plecak
