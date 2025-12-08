@@ -4,7 +4,7 @@ melee-inject-failed-hardsuit = {GENDER($weapon) ->
         [other] Twoje
     } {$weapon} nie może wstrzykiwać przez kombinezony ochronne!
 
-melee-balloon-pop = {CAPITALIZE(THE($balloon))} {GENDER($balloon) ->
+melee-balloon-pop = {CAPITALIZE($balloon)} {GENDER($balloon) ->
         *[male] pęknął
         [female] pękneła
         [other] pękło
