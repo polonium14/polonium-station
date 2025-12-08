@@ -15,7 +15,7 @@ loadout-group-iaa-belt = Agent Spraw Wewnętrznych – pas
 loadout-group-bible = Biblia
 # Magistrate
 loadout-group-magistrate-backpack = Sędzia – plecak
-loadout-group-magistrate-head = Sędzia – głowa
+loadout-group-magistrate-head = Sędzia – nakrycie głowy
 loadout-group-magistrate-jumpsuit = Sędzia – kombinezon
 loadout-group-magistrate-gloves = Sędzia – rękawice
 loadout-group-magistrate-shoes = Sędzia – buty
