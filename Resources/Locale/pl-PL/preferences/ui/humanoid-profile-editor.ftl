@@ -47,7 +47,7 @@ humanoid-profile-editor-job-priority-medium-button = Średni
 humanoid-profile-editor-job-priority-low-button = Niski
 humanoid-profile-editor-job-priority-never-button = Nigdy
 humanoid-profile-editor-naming-rules-warning = Uwaga: Postać musi mieć imię wraz z co najmniej jednym nazwiskiem. Obraźliwe lub absurdalne imiona spowodują interwencję administracji.
-humanoid-profile-editor-markings-tab = Cechy szczególne
+humanoid-profile-editor-markings-tab = Znaki szczególne
 humanoid-profile-editor-flavortext-tab = Opis
 # Traits
 humanoid-profile-editor-traits-tab = Cechy
