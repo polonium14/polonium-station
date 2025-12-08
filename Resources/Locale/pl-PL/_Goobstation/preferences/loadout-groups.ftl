@@ -10,7 +10,7 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-loadout-group-ntr-head = Przedstawiciel Nanotrasen – głowa
+loadout-group-ntr-head = Przedstawiciel Nanotrasen – nakrycie głowy
 loadout-group-ntr-neck = Przedstawiciel Nanotrasen – szyja
 loadout-group-ntr-backpack = Przedstawiciel Nanotrasen – plecak
 loadout-group-ntr-outer = Przedstawiciel Nanotrasen – ubranie wierzchnie
