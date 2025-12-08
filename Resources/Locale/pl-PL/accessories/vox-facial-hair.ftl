@@ -1,4 +1,4 @@
-marking-VoxFacialHairBeard = Voskia Broda (lotki)
+marking-VoxFacialHairBeard = Voksia Broda (lotki)
 marking-VoxFacialHairColonel = Voksie Wąsy (Pułkownik)
 marking-VoxFacialHairFu = Voksie Wąsy (Quill Fu)
 marking-VoxFacialHairNeck = Voksia Broda (lotki na szyi)
