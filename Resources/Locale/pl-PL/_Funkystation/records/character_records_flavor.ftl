@@ -1,15 +1,15 @@
 # insurance providers
-character-records-insurance-provider-none = None
-character-records-insurance-provider-nanocare = NanoCare
+character-records-insurance-provider-none = Brak
+character-records-insurance-provider-nanocare = NanoNFZ
 character-records-insurance-provider-unitedcare = UnitedCare
 character-records-insurance-provider-truehealth = TrueHealth
-character-records-insurance-provider-interstellarcorp = Interstellar Corp.
+character-records-insurance-provider-interstellarcorp = Interstellar Sp. z o.o.
 # insurance types
-character-records-insurance-type-none = None
-character-records-insurance-type-basic = Basic
-character-records-insurance-type-essentials = Essentials
+character-records-insurance-type-none = Brak
+character-records-insurance-type-basic = Podstawowe
+character-records-insurance-type-essentials = Ekonomiczne
 character-records-insurance-type-premium = Premium
-character-records-insurance-type-centralcommand = Central Command's Best
+character-records-insurance-type-centralcommand = Najlepsze z CD
 # blood types
 character-records-blood-ominus = O-
 character-records-blood-opositive = O+

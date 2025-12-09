@@ -1,36 +1,4 @@
 ﻿Entries:
-- author: amatwiedle
-  changes:
-  - message: The A/V Communication technology now unlocks holopad circuit boards.
-    type: Add
-  id: 7766
-  time: '2024-12-31T13:20:07.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34150
-- author: justdie12
-  changes:
-  - message: Flipped signal disposal routers sprite
-    type: Fix
-  id: 7767
-  time: '2024-12-31T13:25:06.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34139
-- author: ArtisticRoomba
-  changes:
-  - message: Shotgun crate now comes with 4 lethal shell boxes.
-    type: Tweak
-  - message: Enforcer gun safe now comes with 4 lethal shell boxes.
-    type: Tweak
-  - message: Kammerer gun safe now comes with 2 lethal shell boxes.
-    type: Tweak
-  id: 7768
-  time: '2024-12-31T23:08:26.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34156
-- author: Booblesnoot42
-  changes:
-  - message: Tarantulas spawned in vents will now be hostile to the crew.
-    type: Fix
-  id: 7769
-  time: '2025-01-01T16:18:52.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34153
 - author: Booblesnoot42
   changes:
   - message: The RCD no longer has a cooldown when opened or closed.
@@ -3934,3 +3902,41 @@
   id: 9073
   time: '2025-12-08T14:31:37.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/126
+- author: Nikitapl
+  changes:
+  - message: "T\u0142umaczenia uzupe\u0142niaj\u0105ce r\xF3\u017Cnych modu\u0142\xF3\
+      w gry"
+    type: Add
+  - message: "Przet\u0142umaczono menu konfiguracji postaci"
+    type: Add
+  - message: "Przet\u0142umaczono akta medyczne"
+    type: Add
+  - message: "Poprawiono/ulepszono ustniej\u0105ce t\u0142umaczenia"
+    type: Tweak
+  id: 9074
+  time: '2025-12-08T15:48:40.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/336
+- author: Nikitapl
+  changes:
+  - message: "Przet\u0142umaczono artyku\u0142y poradnika przeznaczone dla nowych\
+      \ graczy"
+    type: Add
+  id: 9075
+  time: '2025-12-08T21:36:29.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/340
+- author: Lukasz825700516
+  changes:
+  - message: "t\u0142umaczenie wiadomo\u015Bci przy broniach, wyzwalaczach i wie\u017C\
+      yczkach SI"
+    type: Add
+  id: 9076
+  time: '2025-12-08T22:15:37.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/115
+- author: Nikitapl
+  changes:
+  - message: "T\u0142umaczenia tytu\u0142\xF3w artyku\u0142\xF3w poradnika oraz typ\xF3\
+      w/okres\xF3w banu"
+    type: Add
+  id: 9077
+  time: '2025-12-08T22:27:53.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/341

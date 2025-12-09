@@ -1,47 +1,67 @@
-gun-selected-mode-examine = Current selected fire mode is [color={ $color }]{ $mode }[/color].
-gun-fire-rate-examine = Fire rate is [color={ $color }]{ $fireRate }[/color] per second.
-gun-selector-verb = Change to { $mode }
-gun-selected-mode = Selected { $mode }
-gun-disabled = You can't use guns!
-gun-clumsy = The gun blows up in your face!
-gun-set-fire-mode = Set to { $mode }
-gun-magazine-whitelist-fail = That won't fit into the gun!
-gun-magazine-fired-empty = No ammo left!
+
+gun-selected-mode-examine = [color={$color}]{$mode}[/color] obecnym trybem strzelania.
+gun-fire-rate-examine = Szybkostrzelność wynosi [color={$color}]{$fireRate}[/color] na sekundę.
+gun-selector-verb = Zmień na tryb {$mode}
+gun-selected-mode = Wybrano {$mode}
+gun-disabled = Nie możesz używać tej broni!
+gun-clumsy = Broń wybucha ci w twarz!
+gun-set-fire-mode = Ustawiono tryb {$mode}
+gun-magazine-whitelist-fail = To się nie zmieści w broni!
+gun-magazine-fired-empty = Nie ma amunicji!
+
 # SelectiveFire
-gun-SemiAuto = semi-auto
-gun-Burst = burst
-gun-FullAuto = full-auto
+gun-SemiAuto = półautomatyczny
+gun-Burst = seria
+gun-FullAuto = automatyczny
+
 # BallisticAmmoProvider
-gun-ballistic-cycle = Cycle
-gun-ballistic-cycled = Cycled
-gun-ballistic-cycled-empty = Cycled (empty)
-gun-ballistic-transfer-invalid = { CAPITALIZE(THE($ammoEntity)) } won't fit inside { THE($targetEntity) }!
-gun-ballistic-transfer-empty = { CAPITALIZE(THE($entity)) } is empty.
-gun-ballistic-transfer-target-full = { CAPITALIZE(THE($entity)) } is already fully loaded.
+gun-ballistic-cycle = Przeładuj
+gun-ballistic-cycled = Przeładowano
+gun-ballistic-cycled-empty = Przeładowano (pusty)
+gun-ballistic-transfer-invalid = {CAPITALIZE($ammoEntity)} nie mieści się w {$targetEntity}!
+gun-ballistic-transfer-empty = {CAPITALIZE($entity)} jest {GENDER($entity) ->
+        *[male] pusty
+        [female] pusta
+        [other] puste
+    }.
+gun-ballistic-transfer-target-full = {CAPITALIZE($entity)} już jest {GENDER($entity) ->
+        *[male] załadowany
+        [female] załadowana
+        [other] załadowane
+    }.
+
 # CartridgeAmmo
-gun-cartridge-spent = It is [color=red]spent[/color].
-gun-cartridge-unspent = It is [color=lime]not spent[/color].
+gun-cartridge-spent = [color=red]Został[/color] wystrzelony.
+gun-cartridge-unspent = [color=lime]Nie został[/color] wystrzelony.
+
 # BatteryAmmoProvider
-gun-battery-examine = It has enough charge for [color={ $color }]{ $count }[/color] shots.
+gun-battery-examine = Ma wystarczające napięcie do [color={$color}]{$count}[/color] {$count ->
+        [one] strzału
+        *[other] strzałów
+    }.
+
 # CartridgeAmmoProvider
-gun-chamber-bolt-ammo = Gun not bolted
-gun-chamber-bolt = The bolt is [color={ $color }]{ $bolt }[/color].
-gun-chamber-bolt-closed = Closed bolt
-gun-chamber-bolt-opened = Opened bolt
-gun-chamber-bolt-close = Close bolt
-gun-chamber-bolt-open = Open bolt
-gun-chamber-bolt-closed-state = open
-gun-chamber-bolt-open-state = closed
-gun-chamber-rack = Rack
+gun-chamber-bolt-ammo = Komora nie zamknięta
+gun-chamber-bolt = Komora jest [color={$color}]{$bolt}[/color].
+gun-chamber-bolt-closed = zamknięta
+gun-chamber-bolt-opened = otwarta
+gun-chamber-bolt-close = Zamknij komorę
+gun-chamber-bolt-open = Otwórz komorę
+gun-chamber-bolt-closed-state = Otwórz
+gun-chamber-bolt-open-state = Zamknij
+gun-chamber-rack = Pompuj
+
 # MagazineAmmoProvider
-gun-magazine-examine = It has [color={ $color }]{ $count }[/color] shots remaining.
+gun-magazine-examine = Ma [color={$color}]{$count}[/color] pozostałych nabojów.
+
 # RevolverAmmoProvider
-gun-revolver-empty = Empty revolver
-gun-revolver-full = Revolver full
-gun-revolver-insert = Inserted
-gun-revolver-spin = Spin revolver
-gun-revolver-spun = Spun
-gun-speedloader-empty = Speedloader empty
+gun-revolver-empty = Opróżnij rewolwer
+gun-revolver-full = Rewolwer jest pełny
+gun-revolver-insert = Włożono
+gun-revolver-spin = Zakręć bębnem
+gun-revolver-spun = Przekręć bembenek
+gun-speedloader-empty = Ładownik pusty
+
 # GunSpreadModifier
-examine-gun-spread-modifier-reduction = The spread has been reduced by [color=yellow]{ $percentage }%[/color].
-examine-gun-spread-modifier-increase = The spread has been increased by [color=yellow]{ $percentage }%[/color].
+examine-gun-spread-modifier-reduction = Rozrzut zmniejszony o [color=yellow]{NATURALPERCENT($percentage)}[/color].
+examine-gun-spread-modifier-increase = Rozrzut zwiększony o [color=yellow]{NATURALPERCENT($percentage)}[/color].

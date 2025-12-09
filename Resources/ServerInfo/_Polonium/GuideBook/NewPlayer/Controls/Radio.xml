@@ -1,0 +1,77 @@
+<!--
+SPDX-FileCopyrightText: 2024 UBlueberry <161545003+UBlueberry@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 nikitosych <admin@ss14.pl>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+# Mowa i kanały tekstowe
+Rozmowa to kluczowa część Space Station 14. Możesz nacisnąć [keybind="FocusChatInputWindow"/], aby przejść do pola tekstowego.
+
+Słowo obok pola tekstowego to [color=#a4885c]kanał tekstowy[/color], na który zaraz wyślesz wiadomość, czyli sposób, w jaki wypowiesz to, co napisałeś.
+
+Lokalny to zwykła mowa o normalnej głośności.
+
+  Zbadaj swój zestaw słuchawkowy, aby zobaczyć wszystkie prefiksy kanałów radiowych.
+
+Szept jest słyszalny tylko przez osoby znajdujące się blisko ciebie. Automatycznie szepczesz do radia, aby wysłać przez nie wiadomość.
+
+Emoty to gesty, które wykonujesz. Mogą je odebrać wszyscy, którzy nie są oślepieni. Często zobaczysz mimów wykonujących wiele emotów.
+
+Wiadomości szeptane można wysłać rozpoczynając wiadomość od [color=#a4885c][keybind="FocusWhisperChatWindow"/][/color], a emoty wysyłasz zaczynając wiadomość od ([color=#a4885c]@[/color]) lub ([color=#a4885c]*[/color]).
+Możesz także przełączać się między wszystkimi tymi kanałami tekstowymi naciskając [keybind="CycleChatChannelForward"/].
+
+Ludzie mogą nie zrozumieć wszystkiego, co mówisz, jeśli stoisz zbyt daleko od nich. Jest to szczególnie ważne podczas szeptania.
+
+## Radio
+
+Twoje radio pozwala komunikować się z [color=#a4885c]twoim działem[/color]. Aby komunikować się z całą stacją, musisz użyć interkomów rozmieszczonych na stacji, aby nadać wiadomość. Możesz słuchać kanału Common, ale nie możesz mówić na nim przez zestaw słuchawkowy.
+
+<Box>
+  <GuideEntityEmbed Entity="ClothingHeadsetGrey"/>
+  <GuideEntityEmbed Entity="Intercom"/>
+</Box>
+
+Aby wysłać wiadomość [color=#a4885c]do całej stacji[/color] przez radio, użyj interkomu. Kliknij na niego, wybierz kanał, na którym chcesz rozmawiać, i włącz mikrofon, aby rozpocząć transmisję przez kanał [color=#32cd32]Common[/color]. Możesz także włączyć głośnik, aby słuchać [color=#32cd32]Common[/color] przez interkom. Interkom przekazuje wszystko, co powiesz w określonym zasięgu, a szept wymaga, byś był bliżej interkomu, by został odebrany.
+
+Interkomy w pobliżu niektórych działów mają także ich kanały, których możesz użyć do komunikacji w tym dziale.
+
+## Radio działowe
+
+Możesz wysyłać wiadomości przez kanały radiowe swojego działu używając [color=#32cd32]dwukropka (:)[/color] i litery działu, jeśli masz zestaw słuchawkowy z odpowiednim kluczem szyfrującym.
+
+Zbadaj swój zestaw słuchawkowy, aby zobaczyć dostępne kanały działowe.
+
+<Box>
+  <GuideEntityEmbed Entity="ClothingHeadsetEngineering"/>
+</Box>
+
+Zbadanie niezmodyfikowanego zestawu inżynierskiego pokaże prefiksy dla kanałów [color=#32cd32]Common[/color] i [color=#f37746]Engineering[/color].
+
+Możesz także użyć [color=#a4885c]:h[/color]. Ten skrót automatycznie wybierze domyślny kanał twojego działu.
+Na przykład, jeśli jesteś inżynierem stacji, [color=#a4885c]:h[/color] domyślnie wybierze [color=#f37746]:e[/color].
+
+## Klucze szyfrujące
+[color=#a4885c]Klucze szyfrujące[/color] dają dostęp do odpowiednich kanałów.
+
+Zbadanie naszego wcześniejszego zestawu inżynierskiego pokazuje [color=#32cd32]Common[/color] i [color=#f37746]Engineering[/color], ponieważ zestaw inżyniera zaczyna się z tymi [color=#a4885c]kluczami szyfrującymi[/color].
+
+<Box>
+  <GuideEntityEmbed Entity="EncryptionKeyCommon"/>
+  <GuideEntityEmbed Entity="EncryptionKeyEngineering"/>
+</Box>
+
+Możesz wyjąć klucze szyfrujące używając [color=#a4885c]śrubokręta[/color] na zestawie słuchawkowym. Nowe klucze wkłada się do zestawu klikając na niego, trzymając klucz w ręce.
+
+Wszyscy członkowie dowództwa mają dodatkowe klucze szyfrujące, ale możesz też poprosić o taki w biurze HoP-a podczas zmiany pracy.
+
+## Kanały OOC
+Kanały OOC (out-of-character) istnieją poza światem gry. Są to LOOC (local out-of-character), OOC i czat dla duchów.
+
+LOOC jest dostępny podczas rundy, OOC zwykle jest wyłączony do końca rundy, a czat dla duchów widzisz i możesz pisać tylko, gdy jesteś, no cóż, martwy.
+
+Nie rozmawiaj o bieżącej rundzie na Discordzie ani w OOC, jeśli jest włączony podczas rundy.
+</Document>
