@@ -1,8 +1,8 @@
 ent-BaseChristmasLights = podstawowe łampki świąteczne
     .desc = Życzymy Wam wesołych Świąt Bożego Narodzenia i szczęśliwego Nowego Roku!
-ent-ChristmasLightsCyan = cyanowe łampki świąteczne
+ent-ChristmasLightsCyan = cyjanowe łampki świąteczne
     .desc = { ent-BaseChristmasLights.desc }
-ent-ChristmasLightsCyanTwisted = cyanowe skręcone łampki świąteczne
+ent-ChristmasLightsCyanTwisted = cyjanowe skręcone łampki świąteczne
     .desc = { ent-BaseChristmasLights.desc }
 ent-ChristmasLightsOrange = pomarańczowe łampki świąteczne
     .desc = { ent-BaseChristmasLights.desc }

@@ -1,5 +1,5 @@
 ent-MobBatRemilia = Remilia
-    .desc = Ulubieniec kapelana. Lubi owoce.
+    .desc = Ulubienica kapłana. Lubi owoce.
 ent-MobCorgiCerberus = Cerber
     .desc = Ten piesek nie jest przyjazny.
 ent-MobCeledonRaptor = Celedon

@@ -1,7 +1,7 @@
 ent-AiHeld = { "" }
-    .desc = Komponenty dodawane / usuwane z jednostki, która zostaje umieszczona w rdzeniu SI.
+    .desc = Komponenty dodane / usunięte z jednostki, która zostaje umieszczona w rdzeniu SI.
 ent-AiHeldIntellicard = { "" }
-    .desc = Komponenty dodawane / usuwane z jednostki, która zostaje umieszczona w Intelikarcie.
+    .desc = Komponenty dodane / usunięte z jednostki, która zostaje umieszczona w Intelikarcie.
 ent-AiHolder = { "" }
     .desc = Obsługuje interakcje SI pomiędzy holokartami i rdzeniami SI.
 ent-AsimovCircuitBoard = płytka z prawami (Crewsimov)

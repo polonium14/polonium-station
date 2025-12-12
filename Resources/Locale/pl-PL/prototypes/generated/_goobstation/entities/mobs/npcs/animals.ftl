@@ -1,6 +1,6 @@
 ent-MobGondola = gondola
-    .desc = Nie mając rąk, ucieleśnia taoistyczną zasadę wu-wei (niedziałania), a jego uśmiechnięta twarz ukazuje pełną akceptację świata takim, jaki jest.
-ent-MobMothSyndy = syndikaraluch
+    .desc = Nie mając rąk, ucieleśnia taoistyczną zasadę wu-wei (niedziałania), a jej uśmiechnięta twarz ukazuje pełną akceptację świata takim, jaki jest.
+ent-MobMothSyndy = syndykaraluch
     .desc = Wybuchowy ćmio–karaluch.
 ent-MobSyndieAngryBee = pszczoła syndykatu
     .desc = Jaka miła pszczoła. Och nie, wygląda na wściekłą i chce mojej pizzy.
