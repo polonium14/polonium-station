@@ -1,2 +1,2 @@
-ent-MobRodentia = Urist McGryzoń
+ent-MobRodentia = Urist McRat
     .desc = { ent-BaseMobRodentia.desc }

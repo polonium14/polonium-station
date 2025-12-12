@@ -1,4 +1,4 @@
-ent-BaseMobMiniDragon = mini smok
-    .desc = To mini smok, czasami nazywany również pudlowym smokiem. Te małe i zaskakująco wytrzymałe smoki kosmiczne nie są faktycznie młodymi smokami, ale są blisko spokrewnione z pełnowymiarowymi smokami. Choć są przyjaźniejsze niż przeciętny smok, mają skłonność do ekscentrycznych osobowości i zamiłowanie do chciwości, które odpowiadają ich smoczym przodkom.
-ent-MobMiniDragon = mini smok
+ent-BaseMobMiniDragon = mini dragon
+    .desc = It's a mini dragon, sometimes also known as a poodle dragon. These small and suprisingly hardy space dragons are not actually baby dragons, but are closely related to full sized dragons. While friendlier than your average dragon, they tend to have eccentric personalities and a penchant for greed to match their draconic ancestry.
+ent-MobMiniDragon = mini dragon
     .desc = { ent-BaseMobMiniDragon.desc }
