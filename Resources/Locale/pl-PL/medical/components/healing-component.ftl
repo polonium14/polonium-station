@@ -8,4 +8,4 @@ medical-item-stop-bleeding =
        *[neuter] przestało
     } krwawić
 medical-item-stop-bleeding-self = Zatrzymujesz krwawienie
-medical-item-popup-target = { CAPITALIZE(THE($user)) } próbuje cię leczyć przy użyciu { $item }!
+medical-item-popup-target = { CAPITALIZE($user) } próbuje cię leczyć przy użyciu { $item }!

@@ -4,10 +4,10 @@ butcherable-different-tool =
         [female] potrzebowała
         [epicene] potrzebowału
        *[neuter] potrzebowało
-    } innego narzędzia aby rozłożyć { THE($target) }.
-butcherable-knife-butchered-success = Rozłożono { THE($target) } używając { THE($knife) }.
-butcherable-need-knife = Użyj ostrego obiektu aby rozłożyć { THE($target) }.
-butcherable-not-in-container = { CAPITALIZE(THE($target)) } nie może być w pojemniku.
+    } innego narzędzia aby rozłożyć { $target }.
+butcherable-knife-butchered-success = Rozłożono { $target } używając { $knife }.
+butcherable-need-knife = Użyj ostrego obiektu aby rozłożyć { $target }.
+butcherable-not-in-container = { CAPITALIZE($target) } nie może być w pojemniku.
 butcherable-mob-isnt-dead =
     Musi być { GENDER($target) ->
         [male] martwy

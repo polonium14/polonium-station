@@ -13,5 +13,5 @@ robotics-console-brain = [color=gray]Zamontowany mózg:[/color] [color={ $brain 
 robotics-console-locked-message = Sterowanie zablokowane, zbliż ID.
 robotics-console-disable = Wyłącz
 robotics-console-destroy = Zniszcz
-robotics-console-cyborg-destroying = { CAPITALIZE(THE($name)) } jest zdalnie detonowany!
+robotics-console-cyborg-destroying = { CAPITALIZE($name) } jest zdalnie detonowany!
 robotics-console-hp = [color=gray]Stan obudowy:[/color] [color={ $color }]{ $hp }[/color]%

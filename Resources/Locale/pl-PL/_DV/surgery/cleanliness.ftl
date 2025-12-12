@@ -11,5 +11,5 @@ surgery-cleanliness-4 = It's frighteningly dirty
 surgery-cleanliness-5 = You're afraid to touch the dirt
 sanitization-verb-text = Sanitize
 sanitization-verb-message = Remove all cross contaminants and grime from the object
-sanitization-cannot-clean = There's nothing to sanitize on { THE($target) }!
-sanitization-cleaning = You begin to sanitize { THE($target) }...
+sanitization-cannot-clean = There's nothing to sanitize on { $target }!
+sanitization-cleaning = You begin to sanitize { $target }...
