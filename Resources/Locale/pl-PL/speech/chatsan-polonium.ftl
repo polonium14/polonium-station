@@ -29,7 +29,7 @@ pl-word-11 = idgaf
 pl-replacement-11 = to mnie kurwa nie obchodzi
 pl-world-12 = spk
 pl-replacement-12 = spoko
-# dwie warianty
+# dwa warianty
 pl-word-13 = idk
 pl-replacement-13 = nie wiem
 pl-word-14 = nwm

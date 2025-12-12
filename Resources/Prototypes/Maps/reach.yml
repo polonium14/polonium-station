@@ -14,7 +14,7 @@
 - type: gameMap
   id: Reach
   mapName: 'Reach'
-  mapPath: /Maps/reach.yml
+  mapPath: /Maps/_Polonium/reach.yml # Polonium - christmas update
   minPlayers: 0
   maxPlayers: 7
   stations:

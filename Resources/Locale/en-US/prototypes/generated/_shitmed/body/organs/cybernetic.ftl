@@ -4,5 +4,5 @@ ent-BasicCyberneticEyes = cybernetic eyes
     .desc = A pair of cybernetic eyes that enhance your vision, and protect you from eye damage.
 ent-SecurityCyberneticEyes = cybernetic security eyes
     .desc = A pair of cybernetic eyes that enhance your vision, featuring an integrated SecHUD.
-ent-MedicalCyberneticEyes = cybernetic diagnostic eyes
+ent-MedicalCyberneticEyes = cybernetic medical eyes
     .desc = A pair of cybernetic eyes that enhance your vision, featuring an integrated MedHUD.

@@ -19,7 +19,7 @@ from fluent.syntax import ast, FluentParser, FluentSerializer
 # Lista folderów, które należy zignorować przy tworzeniu par plików
 IGNORED_FOLDERS: typing.List[str] = ['robust-toolbox', 'datasets']
 
-######################################### Описание #####################################################################
+######################################### Description #####################################################################
 # Przeprowadza aktualizację kluczy. Znajduje pliki z angielskim tłumaczeniem i sprawdza, czy istnieje polski odpowiednik
 # Jeśli nie - tworzy plik z kopią tłumaczeń z angielskiego
 # Następnie, plik po pliku sprawdzane są klucze. Jeśli w angielskim pliku jest więcej kluczy - tworzy brakujące w polskim, kopiując angielskie tłumaczenia

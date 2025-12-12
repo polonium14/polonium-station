@@ -1,6 +1,9 @@
-ent-MobParadox = space-time paradox
-    .desc = A big ball of wibbly wobbly, timey wimey stuff.
+ent-MobParadox = paradoks czasoprzestrzenny
+    .desc = Duża kula dygoczącego galaretowatego czasowego czegoś.
+    .gender = male
 ent-MobParadoxTimed = { ent-MobParadox }
     .desc = { ent-MobParadox.desc }
-ent-ParadoxCloneDummy = Paradox Clone
+    .gender = male
+ent-ParadoxCloneDummy = Klon z paradoksu
     .desc = { "" }
+    .gender = male

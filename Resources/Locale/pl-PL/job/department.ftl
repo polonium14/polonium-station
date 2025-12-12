@@ -1,9 +1,9 @@
 department-Cargo = Logistyki
 department-Civilian = Cywilny
 department-Command = Dowództwo
-department-CentralCommand = Centralne dowództwo
+department-CentralCommand = Centralne Dowództwo
 department-Engineering = Inżynieryjny
-department-CentralCommandSpecial = Central Command
+department-CentralCommandSpecial = Centralne Dowództwo (specjalne)
 department-Medical = Medyczny
 department-Security = Ochrony
 department-Science = Rozwoju

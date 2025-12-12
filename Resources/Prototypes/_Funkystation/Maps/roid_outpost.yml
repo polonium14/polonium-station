@@ -9,7 +9,7 @@
   id: roid_outpost
   mapName: 'Roid'
   mapPath: /Maps/_Funkystation/roid_outpost.yml
-  minPlayers: 0
+  minPlayers: 10
   maxPlayers: 45
   stations:
     roid_outpost:

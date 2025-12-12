@@ -69,6 +69,7 @@ research-technology-advanced-cleaning = Zaawansowane czyszczenie
 research-technology-meat-manipulation = Manipulacja mięsem
 research-technology-honk-mech = Robot H.O.N.K.
 research-technology-advanced-spray = Zaawansowany sprej
+research-technology-homebrewed-implants = Homebrewed Implants
 research-technology-launcher-syringe = Pistolet na strzykawki
 research-technology-bluespace-cargo-transport = Logistyka niebiesko przestrzenna
 research-technology-clowning-utilities = Klałnowy repertułał

@@ -26,9 +26,9 @@ supermatter-tamper-end = You feel the power of a thousand suns laying on your pa
 supermatter-announcement-cc-tamper =
     Our automatic casualty system has detected that the supermatter crystal structural integrity was compromised by an external force.
         Engineering department, report to the supermatter engine immediately.
-supermatter-collide = { CAPITALIZE(THE($target)) } slams into { THE($sm) }!
-supermatter-collide-mob = { CAPITALIZE(THE($target)) }'s body flashes into dust!
-supermatter-collide-insert = { CAPITALIZE(THE($target)) } touches { THE($sm) } with { THE($item) } and it flashes into dust!
-supermatter-collide-insert-user = You touch { THE($sm) } with { THE($item) } and it flashes into dust!
-supermatter-collide-insert-unremoveable = { CAPITALIZE(THE($target)) } touches { THE($sm) } with { THE($item) } and flashes into dust!
-supermatter-collide-insert-unremoveable-user = You touch { THE($sm) } with { THE($item) } and flash into dust!
+supermatter-collide = { CAPITALIZE($target) } slams into { $sm }!
+supermatter-collide-mob = { CAPITALIZE($target) }'s body flashes into dust!
+supermatter-collide-insert = { CAPITALIZE($target) } touches { $sm } with { $item } and it flashes into dust!
+supermatter-collide-insert-user = You touch { $sm } with { $item } and it flashes into dust!
+supermatter-collide-insert-unremoveable = { CAPITALIZE($target) } touches { $sm } with { $item } and flashes into dust!
+supermatter-collide-insert-unremoveable-user = You touch { $sm } with { $item } and flash into dust!

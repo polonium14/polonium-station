@@ -1,11 +1,12 @@
 lube-success =
-    { CAPITALIZE(THE($target)) } { GENDER($target) ->
-       *[male] został pokryty
+    { CAPITALIZE($target) } { GENDER($target) ->
+        [male] został pokryty
         [female] została pokryta
-        [other] zostało pokryte
+        [epicene] zostału pokrytu
+       *[neuter] zostało pokryte
     } smarem!
 lubed-name-prefix = nasmarowany { $baseName }
-lube-failure = Nie można pokryć { THE($target) } smarem!
-lube-slip = { CAPITALIZE(THE($target)) } wyślizga ci się z rąk!
+lube-failure = Nie można pokryć { $target } smarem!
+lube-slip = { CAPITALIZE($target) } wyślizga ci się z rąk!
 lube-verb-text = Nałóż smar
 lube-verb-message = Nasmaruj obiekt

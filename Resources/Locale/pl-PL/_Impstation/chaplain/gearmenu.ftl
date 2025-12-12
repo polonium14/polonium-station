@@ -4,8 +4,8 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 null-grail-verb = Swirl contents
-null-grail-popup = You begin swirling the { THE($shakeable) }'s contents.
-null-grail-popup-others = { CAPITALIZE(THE($user)) } begins swirling the { THE($shakeable) }'s contents.
+null-grail-popup = You begin swirling the { $shakeable }'s contents.
+null-grail-popup-others = { CAPITALIZE($user) } begins swirling the { $shakeable }'s contents.
 null-grail-mix-success = You bless the { $mixed } with the { $mixer }
 null-rod-transformed = Your Null Rod transforms!
 null-rod-rejection = The Null Rod sears your hands!

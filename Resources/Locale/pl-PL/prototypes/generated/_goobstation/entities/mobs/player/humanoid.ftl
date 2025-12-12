@@ -1,4 +1,8 @@
-ent-LostFrontierSalvagerSpawner = lost frontier salvager spawner
+ent-LostFrontierSalvagerSpawner = { ent-RandomHumanoidLostFrontierSalvager }
     .desc = { ent-MarkerBase.desc }
-ent-RandomHumanoidLostFrontierSalvager = lost salvager ghost role
+    .suffix = przyzywacz
+    .gender = female
+ent-RandomHumanoidLostFrontierSalvager = zagubiona osoba odzyskująca rubież
     .desc = { "" }
+    .suffix = przyzwanie
+    .gender = female

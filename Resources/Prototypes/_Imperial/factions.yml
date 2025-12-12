@@ -1,0 +1,14 @@
+- type: npcFaction ##Новая фракция для эскадрона смерти
+  id: DeathSquad
+  hostile:
+  - NanoTrasen
+  # - RiotControlUnit
+  - Syndicate
+  - Passive
+  - PetsNT
+  - Zombie
+  - Revolutionary
+  - Dragon
+  - SimpleHostile
+  - Syndicate
+  - Wizard # Обновление фракци ЭС

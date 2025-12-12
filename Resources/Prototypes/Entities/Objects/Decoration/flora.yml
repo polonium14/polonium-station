@@ -28,7 +28,7 @@
   - type: Clickable
   - type: Sprite
     noRot: true
-    sprite: Objects/Decoration/Flora/flora_rockssolid.rsi
+    sprite: _EinsteinEngines/Objects/Decoration/Flora/flora_rockssolid.rsi
   - type: Physics
     bodyType: Static
   - type: Fixtures
@@ -63,7 +63,7 @@
   - type: Clickable
   - type: Sprite
     noRot: true
-    sprite: Objects/Decoration/Flora/flora_trees.rsi
+    sprite: _EinsteinEngines/Objects/Decoration/Flora/flora_trees.rsi
     drawdepth: Overdoors
     offset: 0,0.9
   - type: Physics
@@ -73,7 +73,7 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.35,-0.4,0.35,0.4"
+          bounds: "-0.15,-0.2,0.15,0.2" # DeltaV: make it smaller
         density: 1000
         layer:
         - WallLayer
@@ -118,14 +118,14 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: Objects/Decoration/Flora/flora_treessnow.rsi
+    sprite: _EinsteinEngines/Objects/Decoration/Flora/flora_treessnow.rsi
     offset: 0,0.7
   - type: Fixtures
     fixtures:
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.1,-0.3,0.1,0.3"
+          bounds: "-0.1,-0.2,0.1,0.2" # DeltaV: make it smaller
         density: 4000
         layer:
         - WallLayer
@@ -136,14 +136,14 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: Objects/Decoration/Flora/flora_treeslarge.rsi
+    sprite: _EinsteinEngines/Objects/Decoration/Flora/flora_treeslarge.rsi
     offset: 0,1.55
   - type: Fixtures
     fixtures:
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.18,-0.35,0.18,0.35"
+          bounds: "-0.18,-0.2,0.18,0.2" # DeltaV: make it smaller
         density: 2000
         layer:
         - WallLayer
@@ -154,14 +154,14 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: Objects/Decoration/Flora/flora_treesconifer.rsi
+    sprite: _EinsteinEngines/Objects/Decoration/Flora/flora_treesconifer.rsi
     offset: 0,1.15
   - type: Fixtures
     fixtures:
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.1,-0.35,0.1,0.35"
+          bounds: "-0.1,-0.2,0.1,0.2" # DeltaV: make it smaller
         density: 3500
         layer:
         - WallLayer
@@ -199,7 +199,7 @@
             sound:
               collection: GlassBreak
   - type: Sprite
-    sprite: Objects/Decoration/Flora/flora_stalagmite.rsi
+    sprite: _EinsteinEngines/Objects/Decoration/Flora/flora_stalagmite.rsi
     layers:
     - state: stalagmite1
       map: ["random"]
@@ -218,7 +218,7 @@
   id: FloraGreyStalagmite
   components:
   - type: Sprite
-    sprite: Objects/Decoration/Flora/flora_stalagmite.rsi
+    sprite: _EinsteinEngines/Objects/Decoration/Flora/flora_stalagmite.rsi
     layers:
     - state: grey_stalagmite1
       map: ["random"]
@@ -319,16 +319,29 @@
   name: christmas tree
   components:
   - type: Sprite
-    state: treechristmas01
+    # WD EDIT START
+    noRot: true
+    sprite: _White/Objects/Decoration/Flora/christmastree.rsi
+    layers:
+    - state: christmastree
+    - state: glow
+      shader: unshaded
+    # WD EDIT END
 
 - type: entity
-  parent: BaseTreeConifer
+  parent: FloraTreeChristmas01 # WD EDIT
   id: FloraTreeChristmas02
   suffix: Safe Presents
   name: christmas tree
   components:
   - type: Sprite
-    state: treechristmas02
+    # WD EDIT START
+    layers:
+    - state: christmastree
+    - state: glow
+      shader: unshaded
+    - state: presents
+    # WD EDIT END
   - type: Fixtures
     fixtures:
       fix1:
@@ -351,6 +364,32 @@
     receivedPopup: christmas-tree-got-gift
     deniedPopup: christmas-tree-no-gift
     requiredHoliday: FestiveSeason
+  - type: Destructible # WWDP
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 400
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/tree_fell.ogg
+          params:
+            volume: 5
+            variation: 0.05
+      # - !type:KillSignCauseBehavior # Very funny, ho-ho-ho! # WWDP not that funny tbh
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          Log:
+            min: 2
+            max: 8
 
 - type: entity
   parent: FloraTreeChristmas02
@@ -384,7 +423,7 @@
   description: The leaves are whispering about you.
   components:
   - type: Sprite
-    sprite: Objects/Decoration/Flora/flora_shadow_trees.rsi
+    sprite: _EinsteinEngines/Objects/Decoration/Flora/flora_shadow_trees.rsi
 
 - type: entity
   parent: BaseTree
@@ -397,7 +436,7 @@
     energy: 4.5
     color: "#6270bb"
   - type: Sprite
-    sprite: Objects/Decoration/Flora/flora_treeslight.rsi
+    sprite: _EinsteinEngines/Objects/Decoration/Flora/flora_treeslight.rsi
     layers:
     - state: tree01
       map: ["random"]

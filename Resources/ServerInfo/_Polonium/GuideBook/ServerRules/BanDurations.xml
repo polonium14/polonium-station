@@ -1,17 +1,18 @@
 ﻿<Document>
-  # Ban Durations
+  # Czas trwania banów
 
-  Bans can be appealed at forum.ss14.io in the ban appeals section.
+  Odwołania od banów można składać na discord.ss14.pl poprzez stworzenie ticketu typu "Odwołanie" we właściwym kanale.
 
-  ## Temporary
-  Temporary bans will be lifted automatically after a certain amount of time. If they are a game ban, they will tell you how much time is remaining when you try to connect.
+  ## Tymczasowy
+  Bany tymczasowe zostaną automatycznie zdjęte po upływie określonego czasu. Jeśli jest to ban gry, podczas próby połączenia poinformuje cię, ile czasu pozostało.
 
-  ## Indefinite
-  These bans will only be removed on a successful appeal on the forums. Any ban which doesn't tell you when it expires and doesn't specify otherwise can be presumed to be an indefinite ban.
 
-  ## Voucher
-  This is an indefinite ban which may only be appealed both with a successful appeal and which require a voucher of good behavior from the administrative team of a well-known or at least decently active SS13/SS14 server in order for the appeal to be considered. Voucher bans typically cannot be appealed for at least six months after being issued. Without a voucher, a player can only attempt to appeal a voucher ban once, and only if the ban was inappropriately placed. Voucher bans are typically only placed as a result of an unsuccessful appeal of an indefinite game ban by players with a history of bans and of causing issues.
+  <!-- ## Bezterminowy
+  Takie bany są zdejmowane wyłącznie po pomyślnym odwołaniu na forum. Każdy ban, który nie podaje daty wygaśnięcia i nie określa inaczej, można uznać za ban bezterminowy.
 
-  ## Permanent
-  This is a ban that is only appealable if the ban was inappropriately placed, including if the ban should not have been permanent. If the result of the appeal is that the ban was appropriately placed, the ban may not be appealed again and will not be lifted. These bans are extremely rare, but are applied to players who continually cause problems even after a voucher ban or users who have completely unacceptable behavior may be permanently removed.
+  ## Z voucherem
+  Jest to ban bezterminowy, który można odwołać tylko poprzez pomyślne odwołanie wraz z dostarczeniem "vouchera" dobrego zachowania od zespołu administracyjnego dobrze znanego lub przynajmniej dość aktywnego serwera SS13/SS14. Bany z voucherem zazwyczaj nie mogą być odwoływane przez co najmniej sześć miesięcy od ich nałożenia. Bez vouchera gracz może spróbować odwołać ban z voucherem tylko raz i tylko wtedy, gdy ban został nałożony nieprawidłowo. Bany z voucherem zwykle nakładane są w wyniku nieudanego odwołania bezterminowego bana na grę u graczy z historią banów i sprawiania problemów. -->
+
+  ## Permanentny
+  Jest to ban, który można cofnąć jedynie poprzez pomyślne odwołanie się po upływie miesiąca od otrzymania bana i przejściu przez gracza okresu próbnego trwającego do 14 dni. Takie bany są nakładane na graczy w przypadku dość poważnych i wielokrotnych naruszeń zasad oraz w przypadku wielokrotnych recydyw. W przypadku odmowy odwołania lub niepowodzenia okresu próbnego ponowne odwołanie jest możliwe dopiero po upływie sześciu miesięcy.
 </Document>

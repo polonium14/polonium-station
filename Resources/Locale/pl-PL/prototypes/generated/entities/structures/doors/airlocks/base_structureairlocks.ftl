@@ -1,6 +1,6 @@
-ent-Airlock = airlock
-    .desc = It opens, it closes, and maybe crushes you.
+ent-Airlock = śluza
+    .desc = Otwiera się, zamyka i może cię zmiażdżyć.
 ent-AirlockRCDResistant = { ent-Airlock }
     .desc = { ent-Airlock.desc }
-ent-AirlockGlass = glass airlock
+ent-AirlockGlass = szklana śluza
     .desc = { ent-Airlock.desc }

@@ -56,6 +56,7 @@
 # SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Icepick <122653407+Icepicked@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Icepick <icepickedcyanide@gmail.com>
+# SPDX-FileCopyrightText: 2025 Sofia Gilsanz <softie.gd@gmail.com>
 # SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
 # SPDX-FileCopyrightText: 2025 TheHolyAegis <76066612+TheHolyAegis@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 TheHolyAegis <sanderkamphuis719@gmail.com>
@@ -97567,7 +97568,7 @@ entities:
     - type: Transform
       pos: 29.230917,-31.311216
       parent: 2
-- proto: ClothingUniformJumpsuitEngineeringHazard
+- proto: ClothingUniformJumpsuitEngineeringCoveralls
   entities:
   - uid: 14677
     components:

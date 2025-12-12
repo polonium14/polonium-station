@@ -83,4 +83,4 @@
       - !type:TriggerBehavior
       - !type:DoActsBehavior
         acts: ["Destruction"]
-    - type: Damageable
+  - type: Damageable

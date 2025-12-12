@@ -1,0 +1,13 @@
+- type: entity
+  name: stun baton
+  parent: Stunbaton
+  id: AdvancedStunbaton
+  description: A stun baton for incapacitating people with. Actively harming with this is considered bad tone.
+  components:
+  - type: Sprite
+    sprite: _Imperial/Objects/Weapons/Melee/stunbaton.rsi
+  - type: Stunbaton
+    energyPerUse: 25
+  - type: Battery
+    maxCharge: 2000
+    startingCharge: 2000

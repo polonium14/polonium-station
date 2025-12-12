@@ -1,16 +1,20 @@
-character-setup-gui-character-setup-label = Character setup
-character-setup-gui-character-setup-adminremarks-button = Admin Remarks
-character-setup-gui-character-setup-stats-button = Stats
-character-setup-gui-character-setup-rules-button = Rules
-character-setup-gui-character-setup-close-button = Close
-character-setup-gui-create-new-character-button = Create new slot...
-character-setup-gui-create-new-character-button-tooltip = A maximum of { $maxCharacters } characters are allowed.
-character-setup-gui-character-picker-button-delete-button = Delete
-character-setup-gui-character-picker-button-confirm-delete-button = Confirm
-character-setup-gui-save-panel-title = Unsaved character changes
-character-setup-gui-character-picker-button-enabled-button = Active
-character-setup-gui-character-picker-button-disabled-button = Inactive
-character-setup-gui-edit-job-priorities-button = Edit Job Priorities
-character-setup-gui-save-panel-save = Save
-character-setup-gui-save-panel-nosave = Don't save
-character-setup-gui-save-panel-cancel = Cancel
+character-setup-gui-character-setup-label = Konfiguracja postaci
+character-setup-gui-character-setup-adminremarks-button = Uwagi administratora
+character-setup-gui-character-setup-stats-button = Statystyki
+character-setup-gui-character-setup-rules-button = Zasady
+character-setup-gui-character-setup-close-button = Zamknij
+character-setup-gui-create-new-character-button = Utwórz nową postać...
+character-setup-gui-create-new-character-button-tooltip = Możesz mieć maksymalnie { $maxCharacters  ->
+    [one] jedną postać
+    [few] { $maxCharacters } postacie
+    *[other] { $maxCharacters } postaci
+    }.
+character-setup-gui-character-picker-button-delete-button = Usuń
+character-setup-gui-character-picker-button-confirm-delete-button = Potwierdź
+character-setup-gui-save-panel-title = Niezapisane zmiany postaci
+character-setup-gui-character-picker-button-enabled-button = Aktywny
+character-setup-gui-character-picker-button-disabled-button = Nieaktywny
+character-setup-gui-edit-job-priorities-button = Edytuj priorytety pracy
+character-setup-gui-save-panel-save = Zapisz
+character-setup-gui-save-panel-nosave = Nie zapisuj
+character-setup-gui-save-panel-cancel = Anuluj

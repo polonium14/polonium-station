@@ -1,8 +1,14 @@
 ent-BaseCosmicCultObjective = { ent-BaseObjective }
     .desc = { ent-BaseObjective.desc }
+ent-BaseCosmicColossusObjective = { ent-BaseObjective }
+    .desc = { ent-BaseObjective.desc }
 ent-CosmicEntropyObjective = { ent-BaseCosmicCultObjective }
     .desc = { ent-BaseCosmicCultObjective.desc }
 ent-CosmicMonumentObjective = { ent-BaseCosmicCultObjective }
     .desc = { ent-BaseCosmicCultObjective.desc }
 ent-CosmicFinalityObjective = { ent-BaseCosmicCultObjective }
     .desc = { ent-BaseCosmicCultObjective.desc }
+ent-ColossusSurviveObjective = PERSIST
+    .desc = Persist until the end of all things.
+ent-ColossusEffigyObjective = BECKON
+    .desc = Call forth an Effigy of Entropy.

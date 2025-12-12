@@ -4,8 +4,8 @@ swap-teleporter-popup-link-fail-already-other = Quantum link failed! Link alread
 swap-teleporter-popup-link-destroyed = Quantum link destroyed!
 swap-teleporter-popup-teleport-cancel-time = It's still recharging!
 swap-teleporter-popup-teleport-cancel-link = It's not linked with another device!
-swap-teleporter-popup-teleport-other = { CAPITALIZE(THE($entity)) } activates, and you find yourself somewhere else.
-swap-teleporter-popup-teleport-fail = { CAPITALIZE(THE($entity)) } activates and fails to transport you anywhere.
+swap-teleporter-popup-teleport-other = { CAPITALIZE($entity) } activates, and you find yourself somewhere else.
+swap-teleporter-popup-teleport-fail = { CAPITALIZE($entity) } activates and fails to transport you anywhere.
 swap-teleporter-verb-destroy-link = Destroy Quantum Link
 swap-teleporter-examine-link-present = [color=forestgreen]It is linked to another device.[/color] Alt-Click to break the quantum link.
 swap-teleporter-examine-link-absent = [color=yellow]It is not currently linked.[/color] Use on another device to establish a quantum link.

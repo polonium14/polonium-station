@@ -53,9 +53,9 @@ Zbuduj serwer używając `dotnet build`.
 
 ## Licencja
 
-Cały kod repozytorium content jest licencjonowany na zasadach [licencji MIT](https://github.com/space-wizards/space-station-14/blob/master/LICENSE.TXT).
+Repozytorium jest objęte licencją AGPL-3.0, jednak niektóre pliki są udostępniane na licencji MIT. Pełne treści obu licencji znajdują się w katalogu [LICENSES/](https://github.com/polonium14/polonium-station-14/blob/master/LICENSES).
 
-Większość assetów jest licencjonowana na [CC-BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/), chyba że zaznaczono inaczej. Assety mają swoją licencję i prawa autorskie określone w pliku metadata. Na przykład zobacz [metadata dla łomu](https://github.com/space-wizards/space-station-14/blob/master/Resources/Textures/Objects/Tools/crowbar.rsi/meta.json).
+Większość assetów jest również licencjonowana na [CC-BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/), chyba że zaznaczono inaczej. Assety mają swoją licencję i prawa autorskie określone w pliku metadata. Na przykład zobacz [metadatę dla łomu](https://github.com/space-wizards/space-station-14/blob/master/Resources/Textures/Objects/Tools/crowbar.rsi/meta.json).
 
 > [!NOTE]
 > Niektóre assety są licencjonowane na zasadach niekomercyjnych, takich jak [CC-BY-NC-SA 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/) lub podobnych. Należy je usunąć, jeśli chcesz używać tego projektu komercyjnie.

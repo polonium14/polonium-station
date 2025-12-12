@@ -1,102 +1,115 @@
-comp-kitchen-spike-deny-collect = { CAPITALIZE(THE($this)) } ma już coś na sobie, dokończ najpierw zbieranie mięsa!
+comp-kitchen-spike-deny-collect = { CAPITALIZE($this) } ma już coś na sobie, dokończ najpierw zbieranie mięsa!
 comp-kitchen-spike-deny-butcher =
-    { CAPITALIZE(THE($victim)) } nie może być { GENDER($victim) ->
+    { CAPITALIZE($victim) } nie może być { GENDER($victim) ->
         [male] rozłożony
         [female] rozłożona
-       *[other] rozłożone
-    } na { THE($this) }.
+        [epicene] rozłożonu
+       *[neuter] rozłożone
+    } na { $this }.
 comp-kitchen-spike-deny-butcher-knife =
-    { CAPITALIZE(THE($victim)) } nie może być { GENDER($victim) ->
+    { CAPITALIZE($victim) } nie może być { GENDER($victim) ->
         [male] rozłożony
         [female] rozłożona
-       *[other] rozłożone
-    } na { THE($this) }, potrzebujesz noża aby { OBJECT($victim) } rozłożyć
-comp-kitchen-spike-deny-changeling = { CAPITALIZE(THE($victim)) } resists being put on { THE($this) }.
-comp-kitchen-spike-deny-absorbed = { CAPITALIZE(THE($victim)) } has nothing left to butcher.
+        [epicene] rozłożonu
+       *[neuter] rozłożone
+    } na { $this }, potrzebujesz noża aby { OBJECT($victim) } rozłożyć
+comp-kitchen-spike-deny-changeling = { CAPITALIZE($victim) } resists being put on { $this }.
+comp-kitchen-spike-deny-absorbed = { CAPITALIZE($victim) } has nothing left to butcher.
 comp-kitchen-spike-deny-not-dead =
-    { CAPITALIZE(THE($victim)) } nie może być powieszony na { THE($this) }, { $victim } nie jest { GENDER($victim) ->
+    { CAPITALIZE($victim) } nie może być powieszony na { $this }, { $victim } nie jest { GENDER($victim) ->
         [male] martwy
         [female] martwa
-       *[other] martwe
+        [epicene] martwu
+       *[neuter] martwe
     }.
-comp-kitchen-spike-begin-hook-victim = { CAPITALIZE(THE($user)) } zaczyna wieszać cię na { THE($hook) }!
-comp-kitchen-spike-begin-hook-self = Zaczynasz ciągnąć się na { THE($hook) }!
+comp-kitchen-spike-begin-hook-victim = { CAPITALIZE($user) } zaczyna wieszać cię na { $hook }!
+comp-kitchen-spike-begin-hook-self = Zaczynasz ciągnąć się na { $hook }!
 comp-kitchen-spike-kill =
-    { CAPITALIZE(THE($user)) } siłą { GENDER($user) ->
+    { CAPITALIZE($user) } siłą { GENDER($user) ->
         [male] wepchnął
         [female] wepchnęła
-       *[other] wepchneło
-    } { THE($victim) } na { THE($this) }, zabijając { OBJECT($victim) } natychmiastowo!
+        [epicene] wepchnęłu
+       *[neuter] wepchneło
+    } { $victim } na { $this }, zabijając { OBJECT($victim) } natychmiastowo!
 comp-kitchen-spike-suicide-other =
-    { CAPITALIZE(THE($victim)) } { GENDER($user) ->
+    { CAPITALIZE($victim) } { GENDER($user) ->
         [male] rzucił
         [female] rzuciła
-       *[other] rzuciło
-    } się na { THE($this) }!
-comp-kitchen-spike-suicide-self = Wieszasz się na { THE($this) }!
+        [epicene] rzuciłu
+       *[neuter] rzuciło
+    } się na { $this }!
+comp-kitchen-spike-suicide-self = Wieszasz się na { $this }!
 comp-kitchen-spike-knife-needed = Potrzebujesz noża do tego.
-comp-kitchen-spike-remove-meat = Odkrajasz kawałek mięsa z { THE($victim) }.
-comp-kitchen-spike-remove-meat-last = Odkrajasz ostatni kawałek mięsa z { THE($victim) }!
+comp-kitchen-spike-remove-meat = Odkrajasz kawałek mięsa z { $victim }.
+comp-kitchen-spike-remove-meat-last = Odkrajasz ostatni kawałek mięsa z { $victim }!
 comp-kitchen-spike-meat-name = { $name } ({ $victim })
-comp-kitchen-spike-begin-hook-self-other = { CAPITALIZE(THE($victim)) } zaczyna wieszać się na { THE($hook) }!
-comp-kitchen-spike-begin-hook-other-self = Zaczynasz wieszać { CAPITALIZE(THE($victim)) } na { THE($hook) }!
-comp-kitchen-spike-begin-hook-other = { CAPITALIZE(THE($user)) } zaczyna wieszać { CAPITALIZE(THE($victim)) } na { THE($hook) }!
-comp-kitchen-spike-hook-self = Rzucasz się na { THE($hook) }!
+comp-kitchen-spike-begin-hook-self-other = { CAPITALIZE($victim) } zaczyna wieszać się na { $hook }!
+comp-kitchen-spike-begin-hook-other-self = Zaczynasz wieszać { CAPITALIZE($victim) } na { $hook }!
+comp-kitchen-spike-begin-hook-other = { CAPITALIZE($user) } zaczyna wieszać { CAPITALIZE($victim) } na { $hook }!
+comp-kitchen-spike-hook-self = Rzucasz się na { $hook }!
 comp-kitchen-spike-hook-self-other =
-    { CAPITALIZE(THE($victim)) } { GENDER($victim) ->
+    { CAPITALIZE($victim) } { GENDER($victim) ->
         [male] powiesił
         [female] powiesiła
-       *[other] powiesiło
-    } się na { THE($hook) }!
-comp-kitchen-spike-hook-other-self = Wieszasz { CAPITALIZE(THE($victim)) } na { THE($hook) }!
+        [epicene] powiesiłu
+       *[neuter] powiesiło
+    } się na { $hook }!
+comp-kitchen-spike-hook-other-self = Wieszasz { CAPITALIZE($victim) } na { $hook }!
 comp-kitchen-spike-hook-other =
-    { CAPITALIZE(THE($user)) } { GENDER($user) ->
+    { CAPITALIZE($user) } { GENDER($user) ->
         [male] powiesił
         [female] powiesiła
-       *[other] powiesiło
-    } { CAPITALIZE(THE($victim)) } na { THE($hook) }!
-comp-kitchen-spike-begin-unhook-self = Zaczynasz zciągać się z { THE($hook) }!
-comp-kitchen-spike-begin-unhook-self-other = { CAPITALIZE(THE($victim)) } zaczyna zciągać się z { THE($hook) }!
-comp-kitchen-spike-begin-unhook-other-self = Zaczynasz zciągać { CAPITALIZE(THE($victim)) } z { THE($hook) }!
-comp-kitchen-spike-begin-unhook-other = { CAPITALIZE(THE($user)) } zaczyna zciągać { CAPITALIZE(THE($victim)) } z { THE($hook) }!
+        [epicene] powiesiłu
+       *[neuter] powiesiło
+    } { CAPITALIZE($victim) } na { $hook }!
+comp-kitchen-spike-begin-unhook-self = Zaczynasz zciągać się z { $hook }!
+comp-kitchen-spike-begin-unhook-self-other = { CAPITALIZE($victim) } zaczyna zciągać się z { $hook }!
+comp-kitchen-spike-begin-unhook-other-self = Zaczynasz zciągać { CAPITALIZE($victim) } z { $hook }!
+comp-kitchen-spike-begin-unhook-other = { CAPITALIZE($user) } zaczyna zciągać { CAPITALIZE($victim) } z { $hook }!
 comp-kitchen-spike-unhook-self =
     { GENDER($victim) ->
         [male] Zciągnąłeś
         [female] Zciągnełaś
-       *[other] Zciągnołoś
-    } się z { THE($hook) }!
+        [epicene] Zciągnełuś
+       *[neuter] Zciągnołoś
+    } się z { $hook }!
 comp-kitchen-spike-unhook-self-other =
-    { CAPITALIZE(THE($victim)) } { GENDER($victim) ->
+    { CAPITALIZE($victim) } { GENDER($victim) ->
         [male] zciągnął
         [female] zciągneła
-       *[other] zciągnoło
-    } się z { THE($hook) }!
+        [epicene] zciągnełu
+       *[neuter] zciągnoło
+    } się z { $hook }!
 comp-kitchen-spike-unhook-other-self =
     { GENDER($victim) ->
         [male] Zciągnąłeś
         [female] Zciągnełaś
-       *[other] Zciągnąłoś
-    } { CAPITALIZE(THE($victim)) } z { THE($hook) }!
+        [epicene] Zciągnełuś
+       *[neuter] Zciągnąłoś
+    } { CAPITALIZE($victim) } z { $hook }!
 comp-kitchen-spike-unhook-other =
-    { CAPITALIZE(THE($user)) } { GENDER($victim) ->
+    { CAPITALIZE($user) } { GENDER($victim) ->
         [male] zciągnął
         [female] zciągneła
-       *[other] zciągneło
-    } { CAPITALIZE(THE($victim)) } z { THE($hook) }!
-comp-kitchen-spike-begin-butcher-self = Zaczynasz rozkładać { THE($victim) }!
-comp-kitchen-spike-begin-butcher = { CAPITALIZE(THE($user)) } zaczyna rozkładać { THE($victim) }!
+        [epicene] zciągnełu
+       *[neuter] zciągneło
+    } { CAPITALIZE($victim) } z { $hook }!
+comp-kitchen-spike-begin-butcher-self = Zaczynasz rozkładać { $victim }!
+comp-kitchen-spike-begin-butcher = { CAPITALIZE($user) } zaczyna rozkładać { $victim }!
 comp-kitchen-spike-butcher-self =
     { GENDER($user) ->
         [male] Rozłożyłeś
         [female] Rozłożyłaś
-       *[other] Rozłożyłoś
-    } { THE($victim) }!
+        [epicene] Rozłożyłuś
+       *[neuter] Rozłożyłoś
+    } { $victim }!
 comp-kitchen-spike-butcher =
-    { CAPITALIZE(THE($user)) } { GENDER($user) ->
+    { CAPITALIZE($user) } { GENDER($user) ->
         [male] rozłożył
         [female] rozłożyła
-       *[other] rozłożyło
-    } { THE($victim) }!
+        [epicene] rozłożyłu
+       *[neuter] rozłożyło
+    } { $victim }!
 comp-kitchen-spike-unhook-verb = Zciągnij
-comp-kitchen-spike-hooked = [color=red]{ CAPITALIZE(THE($victim)) } jest na tym kolcu![/color]
+comp-kitchen-spike-hooked = [color=red]{ CAPITALIZE($victim) } jest na tym kolcu![/color]
 comp-kitchen-spike-victim-examine = [color=orange]{ CAPITALIZE(SUBJECT($target)) } wygląda chudo.[/color]

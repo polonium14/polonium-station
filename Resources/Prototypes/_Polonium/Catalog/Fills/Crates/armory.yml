@@ -1,0 +1,25 @@
+- type: entity
+  id: CrateArmoryExclusivePistols
+  parent: [ CrateWeaponSecure, BaseSecurityContraband ]
+  name: Skrzynia z ekskluzywnymi pistoletami NT
+  description: Zawiera pistolety specjalnego wydania NT. Wymaga dostępu do zbrojowni, aby otworzyć.
+  components:
+  - type: StorageFill
+    contents:
+    - id: VisMPSPistol
+      amount: 2
+    - id: VisMPSPistolMagazine
+      amount: 6
+
+- type: entity
+  id: CrateArmoryExclusiveSMGs
+  parent: [ CrateWeaponSecure, BaseSecurityContraband ]
+  name: Skrzynia z ekskluzywnymi pistoletami NT
+  description: Zawiera pistolety maszynowe specjalnego wydania NT. Wymaga dostępu do zbrojowni, aby otworzyć.
+  components:
+  - type: StorageFill
+    contents:
+    - id: PMMMachineGun
+      amount: 2
+    - id: PMMMachineGunMagazine
+      amount: 6
