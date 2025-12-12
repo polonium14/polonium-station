@@ -12,8 +12,8 @@ species-name-arachnid = Pajęczak
 
 species-name-moth = Ćma
 species-name-skeleton = Szkielet
-species-name-vox = Vox
-species-name-monkey = Monkey
+species-name-vox = Voks
+species-name-monkey = Małpa
 species-name-kobold = Kobold
 species-name-gingerbread = Pyszny wypiek
 

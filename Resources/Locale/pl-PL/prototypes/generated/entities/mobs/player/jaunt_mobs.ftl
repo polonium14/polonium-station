@@ -1,8 +1,6 @@
-ent-BaseMobJaunt = wypad
-    .desc = Pozostają tu drobne ślady humanoida.
-    .suffix = Ulotne
-    .gender = male
-ent-EtherealJaunt = wypad
+ent-BaseMobJaunt = przeskok
+    .desc = W tym miejscu pozostały słabe ślady postaci humanoidalnej.
+    .suffix = Eteryczny
+ent-EtherealJaunt = eteryczny przeskok
     .suffix = Czarodziej
     .desc = { ent-BaseMobJaunt.desc }
-    .gender = male

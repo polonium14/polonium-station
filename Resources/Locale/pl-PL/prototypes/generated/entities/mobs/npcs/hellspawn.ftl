@@ -1,2 +1,2 @@
 ent-MobHellspawn = hellspawn
-    .desc = An unstoppable force of carnage.
+    .desc = Niepowstrzymana siła rzezi.

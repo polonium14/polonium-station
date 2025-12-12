@@ -1,11 +1,11 @@
-ent-MobWatcherBase = watcher
-    .desc = It's like it's staring right through you.
+ent-MobWatcherBase = obserwator
+    .desc = To tak, jakby patrzył prosto przez ciebie.
 ent-MobWatcherLavaland = { ent-MobWatcherBase }
     .desc = { ent-MobWatcherBase.desc }
-ent-MobWatcherIcewing = icewing watcher
+ent-MobWatcherIcewing = obserwator icewing
     .desc = { ent-MobWatcherBase.desc }
-ent-MobWatcherMagmawing = magmawing watcher
+ent-MobWatcherMagmawing = obserwator magmawing
     .desc = { ent-MobWatcherBase.desc }
-ent-MobWatcherPride = pride watcher
-    .desc = This rare subspecies only appears in June.
+ent-MobWatcherPride = obserwator pride
+    .desc = Ten rzadki podgatunek pojawia się tylko w czerwcu.
     .suffix = Admeme

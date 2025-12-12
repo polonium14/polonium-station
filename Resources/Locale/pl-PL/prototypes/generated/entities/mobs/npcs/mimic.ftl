@@ -1,2 +1,2 @@
-ent-MobMimic = mimic
-    .desc = Surprise.
+ent-MobMimic = mimik
+    .desc = Niespodzianka.

@@ -1,4 +1,4 @@
-ent-MobLaserRaptor = laser raptor
-    .desc = From the Viking age.
-ent-MobTomatoKiller = tomato killer
-    .desc = Looks like it's not you eating tomatoes today, it's the tomatoes eating you.
+ent-MobLaserRaptor = draieżnik laserowy
+    .desc = Z epoki Wikingów.
+ent-MobTomatoKiller = pomidor zabójca
+    .desc = Wygląda na to, że to nie ty jesz dzisiaj pomidory, ale pomidory jedzą ciebie.

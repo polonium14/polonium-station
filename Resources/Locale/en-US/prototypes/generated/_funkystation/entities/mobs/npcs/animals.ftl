@@ -1,2 +1,2 @@
 ent-MobRoingus = roingus
-    .desc = Bounce!
+    .desc = Odbijaj się!

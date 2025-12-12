@@ -1,4 +1,4 @@
-ent-LostFrontierSalvagerSpawner = lost frontier salvager spawner
+ent-LostFrontierSalvagerSpawner = spawner zaginionego pogranicza
     .desc = { ent-MarkerBase.desc }
-ent-RandomHumanoidLostFrontierSalvager = lost salvager ghost role
+ent-RandomHumanoidLostFrontierSalvager = duch zaginionego pogranicza
     .desc = { "" }
