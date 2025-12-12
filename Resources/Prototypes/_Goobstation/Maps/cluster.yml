@@ -31,7 +31,7 @@
 - type: gameMap
   id: Cluster
   mapName: 'Cluster'
-  mapPath: /Maps/_Funkystation/cluster.yml #Funkystation - Robotics
+  mapPath: /Maps/_Polonium/cluster.yml #Polonium - Christmas update
   minPlayers: 0
   maxPlayers: 35
   stations:

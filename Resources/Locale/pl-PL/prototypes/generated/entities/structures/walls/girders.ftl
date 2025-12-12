@@ -1,6 +1,6 @@
-ent-Girder = girder
-    .desc = A large structural assembly made out of metal; It requires a layer of metal before it can be considered a wall.
-ent-ReinforcedGirder = reinforced girder
-    .desc = A large structural assembly made out of metal and plasteel; It requires a layer of plasteel before it can be considered a reinforced wall.
-ent-ClockworkGirder = wall gear
-    .desc = A large gear with mounting brackets for additional plating; This could be made into a wall with more brass plating.
+ent-Girder = karkas
+    .desc = Duży zespół konstrukcyjny wykonany z metalu. Aby można go było uznać za ścianę, musi być pokryty warstwą metalu.
+ent-ReinforcedGirder = wzmocniony karkas
+    .desc = Duży zespół konstrukcyjny wykonany z metalu i plastyku. Aby można go było uznać za wzmocnioną ścianę, musi być pokryty warstwą plastyku.
+ent-ClockworkGirder = karkas zegarmistrzowski
+    .desc = Duży zespół konstrukcyjny z uchwytami montażowymi na dodatkowe płyty. Można go przekształcić w ścianę z większą ilością mosiężnych płyt.

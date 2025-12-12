@@ -1,0 +1,208 @@
+- type: entity
+  id: BaseChristmasLights
+  name: base christmas lights
+  description: We wish you a merry Christmas and a happy new year!
+  abstract: true
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: WallMount
+    arc: 360
+  - type: Clickable
+  # - type: InteractionOutline
+  - type: Rotatable
+  - type: Physics
+    bodyType: Static
+    canCollide: false
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb {}
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: StaticPrice
+    price: 200
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 75
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: SyncSprite
+
+- type: entity
+  id: ChristmasLightsCyan
+  name: cyan christmas lights
+  parent: BaseChristmasLights
+  components:
+  - type: Sprite
+    # drawdepth: WallMountedItems
+    drawdepth: Overdoors
+    sprite: _Polonium/Structures/Wallmounts/christmas.rsi
+    state: lights-1
+    snapCardinals: false
+    noRot: false
+  - type: PointLight
+    color: "#59ECFE"
+    brightness: 0.75
+    radius: 1.4
+    autoRot: true
+    offset: 0,-0.5
+
+- type: entity
+  id: ChristmasLightsCyanTwisted
+  name: cyan christmas lights
+  parent: BaseChristmasLights
+  components:
+  - type: Sprite
+    # drawdepth: WallMountedItems
+    drawdepth: Overdoors
+    sprite: _Polonium/Structures/Wallmounts/christmas.rsi
+    state: lights-1-corner
+    snapCardinals: false
+    noRot: false
+  - type: PointLight
+    color: "#59ECFE"
+    brightness: 0.75
+    radius: 1.4
+    autoRot: true
+    offset: -0.5,-0.5
+
+- type: entity
+  id: ChristmasLightsOrange
+  name: orange christmas lights
+  parent: BaseChristmasLights
+  components:
+  - type: Sprite
+    # drawdepth: WallMountedItems
+    drawdepth: Overdoors
+    sprite: _Polonium/Structures/Wallmounts/christmas.rsi
+    state: lights-2
+    snapCardinals: false
+    noRot: false
+  - type: PointLight
+    color: "#FFAC2D"
+    brightness: 0.75
+    radius: 1.4
+    autoRot: true
+    offset: 0,-0.5
+
+- type: entity
+  id: ChristmasLightsOrangeTwisted
+  name: orange christmas lights
+  parent: BaseChristmasLights
+  components:
+  - type: Sprite
+    # drawdepth: WallMountedItems
+    drawdepth: Overdoors
+    sprite: _Polonium/Structures/Wallmounts/christmas.rsi
+    state: lights-2-corner
+    snapCardinals: false
+    noRot: false
+  - type: PointLight
+    color: "#FFAC2D"
+    brightness: 0.75
+    radius: 1.4
+    autoRot: true
+    offset: -0.5,-0.5
+
+- type: entity
+  id: ChristmasLightsRB
+  name: red-blue christmas lights
+  parent: BaseChristmasLights
+  components:
+  - type: Sprite
+    # drawdepth: WallMountedItems
+    drawdepth: Overdoors
+    sprite: _Polonium/Structures/Wallmounts/christmas.rsi
+    state: lights-3
+    snapCardinals: false
+    noRot: false
+  - type: PointLight
+    color: "#A353A3"
+    brightness: 0.75
+    radius: 1.4
+    autoRot: true
+    offset: 0,-0.5
+
+- type: entity
+  id: ChristmasLightsRBTwisted
+  name: red-blue christmas lights
+  parent: BaseChristmasLights
+  components:
+  - type: Sprite
+    # drawdepth: WallMountedItems
+    drawdepth: Overdoors
+    sprite: _Polonium/Structures/Wallmounts/christmas.rsi
+    state: lights-3-corner
+    snapCardinals: false
+    noRot: false
+  - type: PointLight
+    color: "#A353A3"
+    brightness: 0.75
+    radius: 1.4
+    autoRot: true
+    offset: -0.5,-0.5
+
+- type: entity
+  id: FirGarlandGlowing
+  name: glowing fir garland
+  description: Fragrant pine garland to decorate your walls for the holidays, with glowing lights.
+  parent: BaseChristmasLights
+  components:
+  - type: Sprite
+    drawdepth: WallMountedItems
+    sprite: _Polonium/Structures/Wallmounts/christmas.rsi
+    state: fir-garland-2
+    snapCardinals: false
+    noRot: true
+  - type: PointLight
+    color: "#edbb5c"
+    brightness: 1.0
+    radius: 1.85
+    autoRot: true
+    offset: 0,0.25
+
+- type: entity
+  id: FirGarland
+  name: fir garland
+  description: Fragrant pine garland to decorate your walls for the holidays.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: WallMount
+    arc: 360
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Rotatable
+  - type: Physics
+    bodyType: Static
+    canCollide: false
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb {}
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: StaticPrice
+    price: 550
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Sprite
+    drawdepth: WallMountedItems
+    sprite: _Polonium/Structures/Wallmounts/christmas.rsi
+    state: fir-garland-1
+    snapCardinals: false
+    noRot: true

@@ -1,7 +1,7 @@
-ent-UraniumWindow = uranium window
+ent-UraniumWindow = okno uranowe
     .desc = { ent-WindowRCDResistant.desc }
-ent-UraniumWindowDirectional = directional uranium window
-    .desc = Don't smudge up the glass down there.
+ent-UraniumWindowDirectional = kierunkowe okno uranowe
+    .desc = Nie rozmazuj szkła tam na dole.
 ent-UraniumWindowDiagonal = { ent-UraniumWindow }
-    .suffix = diagonal
+    .suffix = diagonalne
     .desc = { ent-UraniumWindow.desc }

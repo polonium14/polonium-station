@@ -1,18 +1,4 @@
 ﻿Entries:
-- author: Booblesnoot42
-  changes:
-  - message: The RCD no longer has a cooldown when opened or closed.
-    type: Fix
-  id: 7770
-  time: '2025-01-01T16:19:30.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34149
-- author: lzk228
-  changes:
-  - message: Decreased HP for rusted wall variants
-    type: Tweak
-  id: 7771
-  time: '2025-01-01T16:23:01.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34043
 - author: ReeZii
   changes:
   - message: Fixed thief beacon, which can doubled steal target's
@@ -3940,3 +3926,24 @@
   id: 9077
   time: '2025-12-08T22:27:53.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/341
+- author: Nikitapl
+  changes:
+  - message: "Przet\u0142umaczono wszystkie drzwi, \u015Bluzy, \u015Bciany i ogrodzenia"
+    type: Add
+  - message: "Drobne zmiany w istniej\u0105cych t\u0142umaczeniach"
+    type: Fix
+  id: 9078
+  time: '2025-12-12T00:36:34.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/339
+- author: Nikitapl
+  changes:
+  - message: "Dodano wielkanocn\u0105 atmosfer\u0119: choinki i lampki do Reach, Cluster,\
+      \ Cork"
+    type: Add
+  - message: "Dodano polskie \u015Bwi\u0119ta do bazy \u015Bwi\u0105t"
+    type: Add
+  - message: "Przet\u0142umaczono istniej\u0105ce \u015Bwi\u0119ta"
+    type: Tweak
+  id: 9079
+  time: '2025-12-12T00:56:11.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/342

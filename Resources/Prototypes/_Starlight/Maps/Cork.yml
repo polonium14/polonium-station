@@ -1,7 +1,7 @@
 - type: gameMap
   id: Cork
   mapName: 'Placówka Cork'
-  mapPath: /Maps/_Starlight/cork.yml
+  mapPath: /Maps/_Polonium/cork.yml # Polonium - Christmas update
   maxRandomOffset: 0
   randomRotation: false
   minPlayers: 0

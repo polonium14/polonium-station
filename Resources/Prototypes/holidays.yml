@@ -456,3 +456,48 @@
   beginDay: 1
   endDay: 31
   beginMonth: June
+
+- type: holiday
+  id: PolishIndependenceDay
+  name: holiday-name-polish-independence-day
+  beginDay: 11
+  beginMonth: November
+  greet:
+    !type:Custom
+    text: holiday-custom-polish-independence-day
+
+- type: holiday
+  id: PolishConstitutionDay
+  name: holiday-name-polish-constitution-day
+  beginDay: 3
+  beginMonth: May
+  greet:
+    !type:Custom
+    text: holiday-custom-polish-constitution-day
+
+- type: holiday
+  id: PolishSaintStanislausDay
+  name: holiday-name-polish-saint-stanislaus-day
+  beginDay: 8
+  beginMonth: May
+  greet:
+    !type:Custom
+    text: holiday-custom-polish-saint-stanislaus-day
+
+- type: holiday
+  id: PolishArmyDay
+  name: holiday-name-polish-army-day
+  beginDay: 15
+  beginMonth: August
+  greet:
+    !type:Custom
+    text: holiday-custom-polish-army-day
+
+- type: holiday
+  id: PolishAllSaintsDay
+  name: holiday-name-polish-all-saints-day
+  beginDay: 1
+  beginMonth: November
+  greet:
+    !type:Custom
+    text: holiday-custom-polish-all-saints-day

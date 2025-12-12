@@ -1,0 +1,41 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Made by nikitosych (github) for Polonium Station",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "lights-1",
+            "delays": [[0.5, 0.5]]
+        },
+        {
+            "name": "lights-1-corner",
+            "delays": [[0.5, 0.5]]
+        },
+        {
+            "name": "lights-2",
+            "delays": [[0.5, 0.5]]
+        },
+        {
+            "name": "lights-2-corner",
+            "delays": [[0.5, 0.5]]
+        },
+        {
+            "name": "lights-3",
+            "delays": [[0.5, 0.5]]
+        },
+        {
+            "name": "lights-3-corner",
+            "delays": [[0.5, 0.5]]
+        },
+        {
+            "name": "fir-garland-1"
+        },
+        {
+            "name": "fir-garland-2"
+        }
+    ]
+}
