@@ -1,3 +1,4 @@
-ent-RandomCloneSpawner = Losowy klon
-    .suffix = Nie antagonista
+ent-RandomCloneSpawner = losowy klon
+    .suffix = nie antagonista, przyzywacz
     .desc = { "" }
+    .gender = male

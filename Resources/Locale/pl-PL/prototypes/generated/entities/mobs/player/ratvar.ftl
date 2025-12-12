@@ -1,7 +1,10 @@
 ent-MobRatvarBase = Ratvar
-    .desc = Twój umysł cierpi, ponieważ nie jest w stanie pojąć złożonej mechaniki tego, co masz przed sobą.
+    .desc = Doznajesz bólu od samej próby zrozumienia skomplikowanych mechanizmów tego kto się przed tobą znajduje.
+    .gender = male
 ent-MobRatvarSpawn = { ent-MobRatvarBase }
-    .suffix = Spawn
+    .suffix = Przyzwanie
     .desc = { ent-MobRatvarBase.desc }
+    .gender = male
 ent-MobRatvar = { ent-MobRatvarBase }
     .desc = { ent-MobRatvarBase.desc }
+    .gender = male

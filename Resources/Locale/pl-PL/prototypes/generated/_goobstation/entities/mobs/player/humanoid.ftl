@@ -1,4 +1,8 @@
-ent-LostFrontierSalvagerSpawner = spawner zaginionego pogranicza
+ent-LostFrontierSalvagerSpawner = { ent-RandomHumanoidLostFrontierSalvager }
     .desc = { ent-MarkerBase.desc }
-ent-RandomHumanoidLostFrontierSalvager = duch zaginionego pogranicza
+    .suffix = przyzywacz
+    .gender = female
+ent-RandomHumanoidLostFrontierSalvager = zagubiona osoba odzyskująca rubież
     .desc = { "" }
+    .suffix = przyzwanie
+    .gender = female
