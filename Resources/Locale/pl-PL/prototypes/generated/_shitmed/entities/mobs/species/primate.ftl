@@ -1,4 +1,4 @@
 ent-MobMonkeyDummy = { ent-BaseSpeciesDummy }
-    .desc = A dummy monkey meant to be used in character setup.
+    .desc = Atrapa małpy przeznaczona do użycia w kreatorze postaci.
 ent-MobKoboldDummy = { ent-BaseSpeciesDummy }
-    .desc = A dummy kobold meant to be used in character setup.
+    .desc = Atrapa kobolda przeznaczona do użycia w kreatorze postaci.
