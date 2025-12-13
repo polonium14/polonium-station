@@ -14,7 +14,7 @@ jobs:
         with:
           submodules: recursive
           fetch-depth: 0
-          token: ${{ secrets.PAT }}
+          token: ${{ secrets.G_PAT }}
       - name: git identity
         run: |
           git config user.name "github-actions[bot]"
