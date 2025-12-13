@@ -101,10 +101,5 @@ public sealed class MOTDSystem : EntitySystem
     }
 
     #endregion Event Handlers
-
-
-    private record MotdSrvInfo(bool exists, string id, object? reactions, string author, string content);
-    private record MotdSrvHealth(string status);
-    private record MotdSrvErr(string? message, string? error);
 }
 
