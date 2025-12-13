@@ -24,7 +24,7 @@ using System.Threading.Tasks;
 using Content.Server.Chat.Managers;
 using Content.Server.Database;
 using Content.Server.GameTicking;
-using Content.Server.Discord;
+using Content.Server.Discord.Managers;
 using Content.Shared.CCVar;
 using Content.Shared.Database;
 using Content.Shared.Players;
@@ -57,8 +57,8 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
     [Dependency] private readonly ILogManager _logManager = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly ITaskManager _taskManager = default!;
-    [Dependency] private readonly DiscordWebhook _dc = default!;
     [Dependency] private readonly UserDbDataManager _userDbData = default!;
+    [Dependency] private readonly DiscordBanNotifyManager _dc = default!;
 
     private ISawmill _sawmill = default!;
 
@@ -214,7 +214,7 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
 
         KickMatchingConnectedPlayers(banDef, "newly placed ban");
 
-        _ = DiscordBanNotify(
+        _ = _dc.DiscordBanNotify(
             adminName,
             targetUsername ?? targetName,
             reason,
@@ -224,105 +224,6 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
             situationRound,
             null
         );
-    }
-
-    private async Task DiscordBanNotify (
-        string adminName,
-        string targetName,
-        string reason,
-        long expirationTime,
-        long issuanceTime,
-        int? issuanceRnd,
-        int? situationRnd,
-        List<ServerRoleBanDef>? roleBans)
-    {
-        var isRoleBan = roleBans != null;
-
-        List<WebhookEmbedField> fields =
-        [
-            new()
-            {
-                Inline = true,
-                Name = "Użytkownik",
-                Value = targetName,
-            },
-            new()
-            {
-                Inline = false,
-                Name = "Powód banu",
-                Value = situationRnd is null or 0
-            ? (issuanceRnd != null
-                ? $"**#{issuanceRnd}** | {reason}"
-                : reason)
-            : $"**#{situationRnd}** | {reason}",
-            },
-            new()
-            {
-                Inline = false,
-                Name = "Administrator",
-                Value = adminName
-            },
-            new()
-            {
-                Inline = true,
-                Name = "Wydany",
-                Value = issuanceRnd == null ? $"<t:{issuanceTime}:d>" : $"<t:{issuanceTime}:d>, #{issuanceRnd}",
-            },
-            new()
-            {
-                Inline = true,
-                Name = "Wygasa",
-                Value = expirationTime <= 0 ? "**Nigdy.**" : $"<t:{expirationTime}:R>",
-            },
-        ];
-
-        if (roleBans != null)
-        {
-            fields.Add(new WebhookEmbedField
-            {
-                Inline = false,
-                Name = "Role",
-                Value = $"```{string.Join("", roleBans.Select(b => b.Role.Contains(':') ? $"- {b.Role.Split(':')[1]}\n" : $"- {b.Role}\n"))}```",
-            });
-        }
-
-        await DiscordBanNotify(new WebhookEmbed
-        {
-            Title = isRoleBan ? "Zakaz grania ról" : "Zakaz grania na serwerze",
-            Fields = fields,
-            Footer = new ()
-            {
-                Text = _cfg.GetCVar(CVars.GameHostName),
-            },
-            Color = Color.Red.ToArgb() & 16777215,
-        });
-    }
-
-    private async Task DiscordBanNotify(
-        WebhookEmbed embed
-        )
-    {
-        var webhookUri = _cfg.GetCVar(CCVars.BanWebhook);
-
-        if (webhookUri == string.Empty)
-            return;
-
-        WebhookIdentifier? webhook = null;
-
-        await _dc.GetWebhook(webhookUri, w => webhook = w.ToIdentifier());
-
-        if (webhook == null)
-            return;
-
-        try
-        {
-            var payload = new WebhookPayload { Embeds = [embed] };
-            await _dc.CreateMessage(webhook.Value, payload);
-        }
-        catch (Exception)
-        {
-            // Ignore
-        }
     }
 
     private void KickMatchingConnectedPlayers(ServerBanDef def, string source)
@@ -421,7 +322,7 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
 
         var isAdminFetched = _playerManager.TryGetSessionById(banningAdmin, out var adminSession);
 
-        _ = DiscordBanNotify(
+        _ = _dc.DiscordBanNotify(
             isAdminFetched ? adminSession!.Name : "Nie znany",
             targetUsername ?? (session != null ? session.Name : "Nie znany"),
             reason,
