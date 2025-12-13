@@ -1,5 +1,5 @@
 name: Zgłoś problem
-description: For issues that are not related to any other issue form.
+description: Dla problemów, które nie pasują do innych formularzy zgłoszeń.
 body:
   - type: markdown
     attributes:
