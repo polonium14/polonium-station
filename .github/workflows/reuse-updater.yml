@@ -2,7 +2,7 @@
 # SPDX-FileCopyrightText: 2025 Aidenkrz <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
 # SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
-# SPDX-FileCopyrightText: 2025 nikitosych <174215049+nikitosych@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -16,11 +16,6 @@ on:
       - reopened
       - ready_for_review
 
-permissions:
-  actions: read
-  contents: write
-  pull-requests: write
-
 jobs:
   update_headers:
     runs-on: ubuntu-latest
@@ -31,7 +26,7 @@ jobs:
           repository: ${{ github.event.pull_request.head.repo.full_name }}
           ref: ${{ github.head_ref }}
           fetch-depth: 0
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.BOT_TOKEN }}
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -42,7 +37,7 @@ jobs:
         id: changed_files
         env:
            PR_BODY: ${{ github.event.pull_request.body }}
-           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+           GH_TOKEN: ${{ secrets.BOT_TOKEN }}
            GH_REPO: ${{ github.repository }}
            PR_NUMBER: ${{ github.event.pull_request.number }}
         run: |
@@ -97,16 +92,15 @@ jobs:
             --files-modified ${{ env.MODIFIED_FILES_LIST }} \
             --pr-license ${{ env.PR_LICENSE }} \
             --pr-base-sha ${{ github.event.pull_request.base.sha }} \
-            --pr-head-sha ${{ github.event.pull_request.head.sha }} \
-            --ignore-author "Copilot"
+            --pr-head-sha ${{ github.event.pull_request.head.sha }}
         working-directory: ${{ github.workspace }}
 
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "chore: Automatically update REUSE headers"
-          commit_user_name: ${{ vars.CHANGELOG_USER }}
-          commit_user_email: ${{ vars.CHANGELOG_EMAIL }}
-          commit_author: ${{ vars.CHANGELOG_USER }} <${{ vars.CHANGELOG_EMAIL }}>
+          commit_user_name: "Polonium-bot"
+          commit_user_email: "admin@ss14.pl"
+          commit_author: "Polonium-bot <admin@ss14.pl>"
           skip_dirty_check: false
           skip_fetch: true
