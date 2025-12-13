@@ -146,7 +146,7 @@
     - !type:DepartmentTimeRequirement
       department: Civilian
       time: 0
-    Assistant:
+    ServiceWorker:
     - !type:DepartmentTimeRequirement
       department: Civilian
       time: 0
