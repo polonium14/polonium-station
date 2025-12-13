@@ -54,9 +54,6 @@ public sealed partial class BanPanel : DefaultWindow
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly ILogManager _logManager = default!;
 
-    private const string ExpandedArrow = "▼";
-    private const string ContractedArrow = "▶";
-
     private enum TabNumbers
     {
         BasicInfo,

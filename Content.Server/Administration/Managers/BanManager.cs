@@ -327,8 +327,8 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
         var isAdminFetched = _playerManager.TryGetSessionById(banningAdmin, out var adminSession);
 
         _ = _dc.DiscordBanNotify(
-            isAdminFetched ? adminSession!.Name : "Nie znany",
-            targetUsername ?? (session != null ? session.Name : "Nie znany"),
+            isAdminFetched ? adminSession!.Name : _localizationManager.GetString("ban-notify-ban-admin-unknown"),
+            targetUsername ?? (session != null ? session.Name : _localizationManager.GetString("ban-notify-ban-target-user-unknown")),
             reason,
             expires.GetValueOrDefault().ToUnixTimeSeconds(),
             DateTimeOffset.UtcNow.ToUnixTimeSeconds(),

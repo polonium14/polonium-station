@@ -7,5 +7,7 @@ ban-notify-field-ban-issued-by-title = Administrator
 ban-notify-field-ban-issued-on-title = Wydany
 ban-notify-banned-roles-title = Role
 ban-notify-ban-expires-never = **Nigdy.**
+ban-notify-ban-admin-unknown = **Nieznany.**
+ban-notify-ban-target-user-unknown = **Nieznany.**
 ban-notify-webhook-error-message = Wystąpił błąd podczas wysyłania powiadomienia o banie do webhooka.
 ban-notify-embed-footer = { $serverName }
