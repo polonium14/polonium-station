@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2025 nikitosych <174215049+nikitosych@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Linq;
 using System.Threading.Tasks;
 using Content.Server.Database;
