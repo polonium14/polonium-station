@@ -1,0 +1,66 @@
+name: Zgłoś naruszenie warunków licencji
+description: Dla problemów związanych z naruszeniem warunków licencji.
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Ten szablon jest przeznaczony do zgłaszania wszelkich problemów związanych z prawami autorskimi.
+        Szanujemy prawa własności intelektualnej i licencje open-source. Jeśli zauważyłeś, że jakikolwiek plik w tym repozytorium narusza Twoje prawa autorskie lub warunki licencji (np. brak atrybucji, błędny nagłówek SPDX, niezgodność z AGPL/MIT/CC), prosimy o wypełnienie tego formularza. Naszym priorytetem jest szybkie rozwiązanie problemu polubownie, bez konieczności procedury DMCA.
+        Aby uzyskać pomoc lub podzielić się opinią na temat Space Station 14, dołącz do naszego [Discorda](https://discord.ss14.pl).
+  - type: dropdown
+    attributes:
+      label: Rodzaj naruszenia
+      description: Wybierz rodzaj naruszenia, które chcesz zgłosić.
+      options:
+        - Naruszenie praw autorskich
+        - Błędny nagłówek SPDX lub ich brak
+        - Nieprawidłowa licencja pliku
+        - Inne
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: Rodzaj zasobu
+      description: Wybierz rodzaj zasobu, którego dotyczy naruszenie.
+      options:
+        - Plik źródłowy (kod, skrypty itp.)
+        - Zasoby multimedialne (obrazy, dźwięki, modele 3D itp.)
+        - Dokumentacja
+        - Inne
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Lokalizacja w naszym repozytorium
+      description: Wskaż konkretny plik lub linię kodu, która Twoim zdaniem narusza warunki licencji lub prawa autorskie.
+      placeholder: np. https://github.com/polonium14/polonium-station/blob/master/ścieżka/do/pliku.ext#L42
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Oryginalne źródło
+      description: Podaj link do oryginalnego źródła materiału, który Twoim zdaniem został naruszony.
+      placeholder: https://github.com/autor/oryginalne-repo/blob/main/LICENSE lub link do portfolio autora assetu
+    validations:
+      required: false
+  - type: textarea
+    attributes:
+      label: Opis naruszenia
+      description: Wyjaśnij szczegółowo problem.
+      placeholder: Plik 'klown.png' jest na licencji CC-BY-NC, ale używany jest w kontekście komercyjnym bez odpowiedniej atrybucji...
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Oczekiwane działania naprawcze
+      description: Jakie rozwiązanie będzie dla Ciebie satysfakcjonujące?
+      placeholder: Proszę o dodanie moich danych do pliku LICENSE oraz nagłówka SPDX do pliku źródłowego.
+    validations:
+      required: false
+  - type: checkboxes
+    attributes:
+      label: Oświadczenie
+      description: Proszę zaznaczyć poniższe pole, aby potwierdzić swoje zgłoszenie.
+      options:
+        - label: Oświadczam, że zgłaszam ten problem w dobrej wierze, wierząc, że obecne wykorzystanie materiału nie jest autoryzowane przez właściciela praw, jego przedstawiciela lub prawo.
+          required: true
