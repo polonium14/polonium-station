@@ -42,7 +42,7 @@ public sealed class BanPanelEui : BaseEui
     [Dependency] private readonly IEntitySystemManager _sysMan = default!;
 
     private readonly ISawmill _sawmill;
-    private readonly GameTicker? _ticker = null;
+    private readonly GameTicker? _ticker;
 
     private NetUserId? PlayerId { get; set; }
     private string PlayerName { get; set; } = string.Empty;
