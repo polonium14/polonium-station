@@ -3,8 +3,6 @@
 // SPDX-FileCopyrightText: 2024 Jacob <jakevilevac@gmail.com>
 // SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
 // SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
-// SPDX-FileCopyrightText: 2025 Polonium-bot <admin@ss14.pl>
-// SPDX-FileCopyrightText: 2025 nikitosych <boriszyn@gmail.com>
 // SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
 //
 // SPDX-License-Identifier: MIT
@@ -42,8 +40,7 @@ public sealed class DiscordWebhook : IPostInjectInit
     {
         try
         {
-            var req = await _http.GetFromJsonAsync<WebhookData>(url);
-            return req;
+            return await _http.GetFromJsonAsync<WebhookData>(url);
         }
         catch (Exception e)
         {
@@ -57,7 +54,7 @@ public sealed class DiscordWebhook : IPostInjectInit
     /// </summary>
     /// <param name="url">The url to get the data from.</param>
     /// <param name="onComplete">The delegate to invoke with the obtained data, if any.</param>
-    public async Task GetWebhook(string url, Action<WebhookData> onComplete)
+    public async void GetWebhook(string url, Action<WebhookData> onComplete)
     {
         if (await GetWebhook(url) is { } data)
             onComplete(data);
