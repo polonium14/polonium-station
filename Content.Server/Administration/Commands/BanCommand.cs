@@ -178,7 +178,7 @@ public sealed class BanCommand : LocalizedCommands
 
         if (args.Length == 5)
         {
-            return CompletionResult.FromHint(Loc.GetString("cmd-ban-hint-round", ("round", args[4])));
+            return CompletionResult.FromHint(Loc.GetString("cmd-ban-hint-round"));
         }
 
         return CompletionResult.Empty;
