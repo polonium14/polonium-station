@@ -4,7 +4,7 @@ cmd-ban-help = Użycie: ban <nazwa albo id gracza> <powód> [długość w minuta
 cmd-ban-player = Nie znaleziono takiego gracza o podanej nazwie.
 cmd-ban-invalid-minutes = {$minutes} nie jest prawidłową liczbą minut!
 cmd-ban-invalid-severity = {$severity} nie jest prawidłowym poziomem surowości!
-cmd-ban-invalid-round = {$round} nie jest prawidłowym numerem runty!
+cmd-ban-invalid-round = {$round} nie jest prawidłowym numerem rundy!
 
 cmd-ban-invalid-arguments = Nieprawidłowa liczba argumentów
 cmd-ban-hint = <nazwa/ID użytkownika>
