@@ -1,11 +1,16 @@
 ent-MobWatcherBase = obserwator
     .desc = To tak, jakby patrzył prosto przez ciebie.
+    .gender = Male
 ent-MobWatcherLavaland = { ent-MobWatcherBase }
     .desc = { ent-MobWatcherBase.desc }
+    .gender = Male
 ent-MobWatcherIcewing = obserwator icewing
     .desc = { ent-MobWatcherBase.desc }
+    .gender = Male
 ent-MobWatcherMagmawing = obserwator magmawing
     .desc = { ent-MobWatcherBase.desc }
+    .gender = Male
 ent-MobWatcherPride = obserwator pride
     .desc = Ten rzadki podgatunek pojawia się tylko w czerwcu.
     .suffix = Admeme
+    .gender = Male
