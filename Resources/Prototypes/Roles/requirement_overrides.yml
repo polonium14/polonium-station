@@ -1,4 +1,7 @@
 # SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Polonium-bot <admin@ss14.pl>
+# SPDX-FileCopyrightText: 2025 nikitosych <174215049+nikitosych@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 nikitosych <boriszyn@gmail.com>
 # SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -19,3 +22,173 @@
     - !type:DepartmentTimeRequirement
       department: Command
       time: 3600 # 1 hour
+
+- type: jobRequirementOverride
+  id: Zeroed
+  jobs:
+    Captain:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 3600 # 1 hour
+    HeadOfPersonnel:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 3600 # 1 hour
+    AtmosphericTechnician:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 3600 # 1 hour
+    ChiefEngineer:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 3600 # 1 hour
+    StationEngineer:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 3600 # 1 hour
+    TechnicalAssistant:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 0
+    MedicalIntern:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 0
+    MedicalDoctor:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 3600 # 1 hour
+    Paramedic:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 3600 # 1 hour
+    Psychologist:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 0
+    Chemist:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 3600 # 1 hour
+    ChiefMedicalOfficer:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 3600 # 1 hour
+    SecurityOfficer:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 3600 # 1 hour
+    SecurityCadet:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 3600 # 1 hour
+    HeadOfSecurity:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 3600 # 1 hour
+    Detective:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 3600 # 1 hour
+    Warden:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 3600 # 1 hour
+    ResearchAssistant:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 0
+    Scientist:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 0
+    ResearchDirector:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 3600 # 1 hour
+    Borg:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 3600 # 1 hour
+    StationAi:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 3600 # 1 hour
+    Boxer:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 0
+    Janitor:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 0
+    Chef:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 0
+    Botanist:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 0
+    Quartermaster:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 3600 # 1 hour
+    CargoTechnician:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 3600 # 1 hour
+    SalvageSpecialist:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 3600 # 1 hour
+    Bartender:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 0
+    Chaplain:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 0
+    Clown:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 0
+    Mime:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 0
+    Lawyer:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 0
+    Librarian:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 0
+    Musician:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 0
+    ServiceWorker:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 0
+    Zookeeper:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 0
+    Magistrate:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 10800 # 3 hours
+    - !type:DepartmentTimeRequirement
+      department: Command
+      time: 14400 # 4 hours
+    NanotrasenRepresentative:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 10800 # 3 hours
+    - !type:DepartmentTimeRequirement
+      department: Command
+      time: 36000 # 10 hours

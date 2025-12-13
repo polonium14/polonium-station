@@ -5,6 +5,8 @@
 // SPDX-FileCopyrightText: 2024 Tornado Tech <54727692+Tornado-Technology@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Polonium-bot <admin@ss14.pl>
+// SPDX-FileCopyrightText: 2025 nikitosych <174215049+nikitosych@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
 //
 // SPDX-License-Identifier: MIT
@@ -27,13 +29,14 @@ using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using static Robust.Client.UserInterface.Controls.BaseButton;
 
 namespace Content.Client.Administration.UI.BanPanel;
 
 [GenerateTypedNameReferences]
 public sealed partial class BanPanel : DefaultWindow
 {
-    public event Action<string?, (IPAddress, int)?, bool, ImmutableTypedHwid?, bool, uint, string, NoteSeverity, string[]?, bool>? BanSubmitted;
+    public event Action<string?, (IPAddress, int)?, bool, ImmutableTypedHwid?, bool, uint, string, NoteSeverity, string[]?, bool, int>? BanSubmitted;
     public event Action<string>? PlayerChanged;
     private string? PlayerUsername { get; set; }
     private (IPAddress, int)? IpAddress { get; set; }
@@ -76,6 +79,8 @@ public sealed partial class BanPanel : DefaultWindow
         Server,
         Role
     }
+
+    private int CurrentRound { get; set; }
 
     public BanPanel()
     {
@@ -125,6 +130,13 @@ public sealed partial class BanPanel : DefaultWindow
         HwidCheckbox.Pressed = _cfg.GetCVar(CCVars.ServerBanHwidBanDefault);
         LastConnCheckbox.Pressed = _cfg.GetCVar(CCVars.ServerBanUseLastDetails);
         EraseCheckbox.Pressed = _cfg.GetCVar(CCVars.ServerBanErasePlayer);
+
+        RoundSpinBox.IsValid = i => i >= 0 && i <= CurrentRound;
+        RoundSpinBox.ValueChanged += RoundSpinBoxChanged;
+        RoundSpinBox.InitDefaultButtons();
+
+
+        ResetRoundButton.OnPressed += ResetRoundPressed;
 
         SeverityOption.AddItem(Loc.GetString("admin-note-editor-severity-none"), (int) NoteSeverity.None);
         SeverityOption.AddItem(Loc.GetString("admin-note-editor-severity-low"), (int) NoteSeverity.Minor);
@@ -522,7 +534,37 @@ public sealed partial class BanPanel : DefaultWindow
         var useLastHwid = HwidCheckbox.Pressed && LastConnCheckbox.Pressed && Hwid is null;
         var severity = (NoteSeverity) SeverityOption.SelectedId;
         var erase = EraseCheckbox.Pressed;
-        BanSubmitted?.Invoke(player, IpAddress, useLastIp, Hwid, useLastHwid, (uint) (TimeEntered * Multiplier), reason, severity, roles, erase);
+        var round = !RoundSpinBox.IsValid!.Invoke(RoundSpinBox.Value) ? 0 : RoundSpinBox.Value;
+
+        BanSubmitted?.Invoke(player, IpAddress, useLastIp, Hwid, useLastHwid, (uint) (TimeEntered * Multiplier), reason, severity, roles, erase, round);
+    }
+
+    private void RoundSpinBoxChanged(ValueChangedEventArgs _)
+    {
+        UpdateResetButton();
+        SubmitButton.Disabled = !RoundSpinBox.IsValid!.Invoke(RoundSpinBox.Value);
+    }
+
+    private void UpdateResetButton()
+    {
+        ResetRoundButton.Disabled = RoundSpinBox.Value == CurrentRound;
+    }
+
+    public void SetCurrentRound(int round)
+    {
+        CurrentRound = round;
+        ResetRoundButton.Text = Loc.GetString("admin-logs-reset-with-id", ("id", round));
+        UpdateResetButton();
+    }
+    public void SetRoundSpinBox(int round)
+    {
+        RoundSpinBox.Value = round;
+        UpdateResetButton();
+    }
+
+    private void ResetRoundPressed(ButtonEventArgs args)
+    {
+        RoundSpinBox.Value = CurrentRound;
     }
 
     protected override void FrameUpdate(FrameEventArgs args)

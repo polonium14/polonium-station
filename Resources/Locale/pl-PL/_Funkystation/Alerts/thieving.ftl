@@ -3,5 +3,5 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-alerts-thieving-name = [color=red]Thieving[/color]
-alerts-thieving-desc = Toggle thieving mode by clicking on this alert. Thieving mode allows you to take items sneakily.
+alerts-thieving-name = [color=red]Kradzież[/color]
+alerts-thieving-desc = Przełącz tryb kradzieży, klikając na to powiadomienie. Tryb kradzieży pozwala na ciche zabieranie przedmiotów.

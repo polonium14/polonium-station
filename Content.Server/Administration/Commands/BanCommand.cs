@@ -8,6 +8,10 @@
 // SPDX-FileCopyrightText: 2023 Riggle <27156122+RigglePrime@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2025 Copilot <175728472+Copilot@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Polonium-bot <admin@ss14.pl>
+// SPDX-FileCopyrightText: 2025 nikitosych <174215049+nikitosych@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
 //
 // SPDX-License-Identifier: MIT
@@ -41,6 +45,8 @@ public sealed class BanCommand : LocalizedCommands
         string target;
         string reason;
         uint minutes;
+        int round = 0;
+
         if (!Enum.TryParse(_cfg.GetCVar(CCVars.ServerBanDefaultSeverity), out NoteSeverity severity))
         {
             _logManager.GetSawmill("admin.server_ban")
@@ -86,6 +92,32 @@ public sealed class BanCommand : LocalizedCommands
                 }
 
                 break;
+            case 5:
+                target = args[0];
+                reason = args[1];
+
+                if (!uint.TryParse(args[2], out minutes))
+                {
+                    shell.WriteLine(Loc.GetString("cmd-ban-invalid-minutes", ("minutes", args[2])));
+                    shell.WriteLine(Help);
+                    return;
+                }
+
+                if (!Enum.TryParse(args[3], ignoreCase: true, out severity))
+                {
+                    shell.WriteLine(Loc.GetString("cmd-ban-invalid-severity", ("severity", args[3])));
+                    shell.WriteLine(Help);
+                    return;
+                }
+
+                if (!int.TryParse(args[4], out round))
+                {
+                    shell.WriteLine(Loc.GetString("cmd-ban-invalid-round", ("round", args[4])));
+                    shell.WriteLine(Help);
+                    return;
+                }
+
+                break;
             default:
                 shell.WriteLine(Loc.GetString("cmd-ban-invalid-arguments"));
                 shell.WriteLine(Help);
@@ -104,7 +136,7 @@ public sealed class BanCommand : LocalizedCommands
         var targetUid = located.UserId;
         var targetHWid = located.LastHWId;
 
-        _bans.CreateServerBan(targetUid, target, player?.UserId, null, targetHWid, minutes, severity, reason);
+        _bans.CreateServerBan(targetUid, target, player?.UserId, null, targetHWid, minutes, severity, reason, round);
     }
 
     public override CompletionResult GetCompletion(IConsoleShell shell, string[] args)
@@ -144,6 +176,11 @@ public sealed class BanCommand : LocalizedCommands
             };
 
             return CompletionResult.FromHintOptions(severities, Loc.GetString("cmd-ban-hint-severity"));
+        }
+
+        if (args.Length == 5)
+        {
+            return CompletionResult.FromHint(Loc.GetString("cmd-ban-hint-round"));
         }
 
         return CompletionResult.Empty;

@@ -4,6 +4,7 @@
 // SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
 // SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
 // SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+// SPDX-FileCopyrightText: 2025 nikitosych <174215049+nikitosych@users.noreply.github.com>
 //
 // SPDX-License-Identifier: MIT
 
@@ -54,7 +55,7 @@ public sealed class DiscordWebhook : IPostInjectInit
     /// </summary>
     /// <param name="url">The url to get the data from.</param>
     /// <param name="onComplete">The delegate to invoke with the obtained data, if any.</param>
-    public async void GetWebhook(string url, Action<WebhookData> onComplete)
+    public async Task GetWebhook(string url, Action<WebhookData> onComplete)
     {
         if (await GetWebhook(url) is { } data)
             onComplete(data);

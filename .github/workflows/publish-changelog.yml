@@ -1,0 +1,37 @@
+# SPDX-FileCopyrightText: 2025 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Polonium-bot <admin@ss14.pl>
+# SPDX-FileCopyrightText: 2025 nikitosych <174215049+nikitosych@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+name: Publish Changelog Only
+
+on:
+  schedule:
+    - cron: "0 9 * * *"
+  workflow_dispatch:
+
+jobs:
+  publish-changelog:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4.2.2
+
+      - name: Install Python dependencies
+        run: |
+          pip install --upgrade pip
+          pip install paramiko PyYAML lxml
+
+      - name: Publish changelog (Discord)
+        continue-on-error: true
+        run: Tools/actions_changelogs_since_last_run.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+
+      - name: Publish changelog (RSS)
+        continue-on-error: true
+        run: Tools/actions_changelog_rss.py
+        env:
+          CHANGELOG_RSS_KEY: ${{ secrets.CHANGELOG_RSS_KEY }}

@@ -5,4 +5,4 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 battery-drinker-verb-drink = Drain
-battery-drinker-empty = { CAPATALIZE(THE($target)) } is already empty!
+battery-drinker-empty = { CAPITALIZE($target) } is already empty!

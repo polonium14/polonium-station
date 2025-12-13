@@ -3,6 +3,8 @@
 // SPDX-FileCopyrightText: 2023 Riggle <27156122+RigglePrime@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
 // SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Polonium-bot <admin@ss14.pl>
+// SPDX-FileCopyrightText: 2025 nikitosych <174215049+nikitosych@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
 //
 // SPDX-License-Identifier: MIT
@@ -20,10 +22,13 @@ public sealed class BanPanelEuiState : EuiStateBase
     public string PlayerName { get; set; }
     public bool HasBan { get; set; }
 
-    public BanPanelEuiState(string playerName, bool hasBan)
+    public int RoundId { get; }
+
+    public BanPanelEuiState(string playerName, bool hasBan, int roundId)
     {
         PlayerName = playerName;
         HasBan = hasBan;
+        RoundId = roundId;
     }
 }
 
@@ -42,8 +47,9 @@ public static class BanPanelEuiStateMsg
         public bool UseLastIp { get; set; }
         public bool UseLastHwid { get; set; }
         public bool Erase { get; set; }
+        public int Round { get; set; }
 
-        public CreateBanRequest(string? player, (IPAddress, int)? ipAddress, bool useLastIp, ImmutableTypedHwid? hwid, bool useLastHwid, uint minutes, string reason, NoteSeverity severity, string[]? roles, bool erase)
+        public CreateBanRequest(string? player, (IPAddress, int)? ipAddress, bool useLastIp, ImmutableTypedHwid? hwid, bool useLastHwid, uint minutes, string reason, NoteSeverity severity, string[]? roles, bool erase, int round)
         {
             Player = player;
             IpAddress = ipAddress == null ? null : $"{ipAddress.Value.Item1}/{ipAddress.Value.Item2}";
@@ -55,6 +61,7 @@ public static class BanPanelEuiStateMsg
             Severity = severity;
             Roles = roles;
             Erase = erase;
+            Round = round;
         }
     }
 

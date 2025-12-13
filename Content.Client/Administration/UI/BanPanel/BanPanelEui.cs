@@ -1,6 +1,8 @@
 // SPDX-FileCopyrightText: 2023 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2023 Riggle <27156122+RigglePrime@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Polonium-bot <admin@ss14.pl>
+// SPDX-FileCopyrightText: 2025 nikitosych <174215049+nikitosych@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
 //
 // SPDX-License-Identifier: MIT
@@ -16,13 +18,13 @@ namespace Content.Client.Administration.UI.BanPanel;
 public sealed class BanPanelEui : BaseEui
 {
     private BanPanel BanPanel { get; }
-
+    private bool FirstState { get; set; } = true;
     public BanPanelEui()
     {
         BanPanel = new BanPanel();
         BanPanel.OnClose += () => SendMessage(new CloseEuiMessage());
-        BanPanel.BanSubmitted += (player, ip, useLastIp, hwid, useLastHwid, minutes, reason, severity, roles, erase)
-            => SendMessage(new BanPanelEuiStateMsg.CreateBanRequest(player, ip, useLastIp, hwid, useLastHwid, minutes, reason, severity, roles, erase));
+        BanPanel.BanSubmitted += (player, ip, useLastIp, hwid, useLastHwid, minutes, reason, severity, roles, erase, round)
+            => SendMessage(new BanPanelEuiStateMsg.CreateBanRequest(player, ip, useLastIp, hwid, useLastHwid, minutes, reason, severity, roles, erase, round));
         BanPanel.PlayerChanged += player => SendMessage(new BanPanelEuiStateMsg.GetPlayerInfoRequest(player));
     }
 
@@ -35,6 +37,13 @@ public sealed class BanPanelEui : BaseEui
 
         BanPanel.UpdateBanFlag(s.HasBan);
         BanPanel.UpdatePlayerData(s.PlayerName);
+
+        BanPanel.SetCurrentRound(s.RoundId);
+
+        if (!FirstState)
+            return;
+        FirstState = false;
+        BanPanel.SetRoundSpinBox(s.RoundId);
     }
 
     public override void Opened()

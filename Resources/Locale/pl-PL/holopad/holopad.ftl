@@ -31,7 +31,7 @@ holopad-window-filter-line-placeholder = Search for a contact
 holopad-window-flavor-left = ⚠ Do not enter while projector is active
 holopad-window-flavor-right = v3.0.9
 # Holograms
-holopad-hologram-name = hologram of { THE($name) }
+holopad-hologram-name = hologram of { $name }
 # Holopad actions
 holopad-activate-projector-verb = Activate holopad projector
 holopad-ai-is-unable-to-reach-holopad = You are unable to interface with the source of the call, it is too far from your core.

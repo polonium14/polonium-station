@@ -2,6 +2,7 @@
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
 # SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 nikitosych <174215049+nikitosych@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -131,7 +132,7 @@ def run_git_command(command, cwd=REPO_PATH, check=True):
         print("FATAL: 'git' command not found. Make sure git is installed and in your PATH.", file=sys.stderr)
         return None
 
-def get_authors_from_git(file_path, cwd=REPO_PATH, pr_base_sha=None, pr_head_sha=None):
+def get_authors_from_git(file_path, cwd=REPO_PATH, pr_base_sha=None, pr_head_sha=None, ignored_authors=None):
     """
     Gets authors and their contribution years for a specific file.
     If pr_base_sha and pr_head_sha are provided, also includes authors from the PR's commits.
@@ -168,7 +169,7 @@ def get_authors_from_git(file_path, cwd=REPO_PATH, pr_base_sha=None, pr_head_sha
             for line in pr_output.splitlines():
                 print(f"  {line}")
 
-            process_git_log_output(pr_output, author_timestamps)
+            process_git_log_output(pr_output, author_timestamps, ignored_authors)
             print(f"Found {len(author_timestamps)} authors in PR commits for {file_path}")
 
             # Print the authors found
@@ -187,7 +188,7 @@ def get_authors_from_git(file_path, cwd=REPO_PATH, pr_base_sha=None, pr_head_sha
     if output:
         # Process historical authors
         print(f"Processing historical authors for {file_path}")
-        process_git_log_output(output, author_timestamps)
+        process_git_log_output(output, author_timestamps, ignored_authors)
 
         # Print the authors found
         print(f"All authors found for {file_path} (after adding historical):")
@@ -207,7 +208,15 @@ def get_authors_from_git(file_path, cwd=REPO_PATH, pr_base_sha=None, pr_head_sha
             # Use current year
             current_year = datetime.now(timezone.utc).year
             if user_name and user_email and user_name.strip() != "Unknown":
-                return {f"{user_name} <{user_email}>": (current_year, current_year)}
+                should_ignore = False
+                if ignored_authors:
+                    for ignored in ignored_authors:
+                        if ignored.lower() in user_name.lower():
+                            should_ignore = True
+                            break
+
+                if not should_ignore:
+                    return {f"{user_name} <{user_email}>": (current_year, current_year)}
             else:
                 print("Warning: Could not get current user from git config or name is 'Unknown'")
                 return {}
@@ -228,7 +237,7 @@ def get_authors_from_git(file_path, cwd=REPO_PATH, pr_base_sha=None, pr_head_sha
 
     return author_years
 
-def process_git_log_output(output, author_timestamps):
+def process_git_log_output(output, author_timestamps, ignored_authors=None):
     """
     Process git log output and add authors to author_timestamps.
     """
@@ -253,16 +262,32 @@ def process_git_log_output(output, author_timestamps):
 
         # Add main author
         if author_name and author_email and author_name.strip() != "Unknown" and author_name.strip().lower() != "funkystationbot":
-            author_key = f"{author_name.strip()} <{author_email.strip()}>"
-            author_timestamps[author_key].append(timestamp)
+            should_ignore = False
+            if ignored_authors:
+                for ignored in ignored_authors:
+                    if ignored.lower() in author_name.lower():
+                        should_ignore = True
+                        break
+
+            if not should_ignore:
+                author_key = f"{author_name.strip()} <{author_email.strip()}>"
+                author_timestamps[author_key].append(timestamp)
 
         # Add co-authors
         for match in co_author_regex.finditer(body):
             co_author_name = match.group(1).strip()
             co_author_email = match.group(2).strip()
             if co_author_name and co_author_email and co_author_name.strip() != "Unknown" and co_author_name.strip().lower() != "funkystationbot":
-                co_author_key = f"{co_author_name} <{co_author_email}>"
-                author_timestamps[co_author_key].append(timestamp)
+                should_ignore = False
+                if ignored_authors:
+                    for ignored in ignored_authors:
+                        if ignored.lower() in co_author_name.lower():
+                            should_ignore = True
+                            break
+
+                if not should_ignore:
+                    co_author_key = f"{co_author_name} <{co_author_email}>"
+                    author_timestamps[co_author_key].append(timestamp)
 
     # No need to convert timestamps to years here, it's done in get_authors_from_git
 
@@ -403,7 +428,7 @@ def create_header(authors, license_id, comment_style):
 
     return "\n".join(lines)
 
-def process_file(file_path, default_license_id, pr_base_sha=None, pr_head_sha=None):
+def process_file(file_path, default_license_id, pr_base_sha=None, pr_head_sha=None, ignored_authors=None):
     """
     Processes a file to add or update REUSE headers.
     Returns: True if file was modified, False otherwise
@@ -429,7 +454,7 @@ def process_file(file_path, default_license_id, pr_base_sha=None, pr_head_sha=No
     existing_authors, existing_license, header_lines = parse_existing_header(content, comment_style)
 
     # Get all authors from git
-    git_authors = get_authors_from_git(file_path, REPO_PATH, pr_base_sha, pr_head_sha)
+    git_authors = get_authors_from_git(file_path, REPO_PATH, pr_base_sha, pr_head_sha, ignored_authors)
 
     # Add current user to authors
     try:
@@ -443,14 +468,22 @@ def process_file(file_path, default_license_id, pr_base_sha=None, pr_head_sha=No
             current_year = datetime.now(timezone.utc).year
             current_user = f"{user_name} <{user_email}>"
 
-            # Add current user if not already present
-            if current_user not in git_authors:
-                git_authors[current_user] = (current_year, current_year)
-                print(f"  Added current user: {current_user}")
-            else:
-                # Update year if necessary
-                min_year, max_year = git_authors[current_user]
-                git_authors[current_user] = (min(min_year, current_year), max(max_year, current_year))
+            should_ignore = False
+            if ignored_authors:
+                for ignored in ignored_authors:
+                    if ignored.lower() in user_name.lower():
+                        should_ignore = True
+                        break
+
+            if not should_ignore:
+                # Add current user if not already present
+                if current_user not in git_authors:
+                    git_authors[current_user] = (current_year, current_year)
+                    print(f"  Added current user: {current_user}")
+                else:
+                    # Update year if necessary
+                    min_year, max_year = git_authors[current_user]
+                    git_authors[current_user] = (min(min_year, current_year), max(max_year, current_year))
         else:
             print("Warning: Could not get current user from git config or name is 'Unknown'")
     except Exception as e:
@@ -522,6 +555,7 @@ def main():
     parser.add_argument("--pr-license", default=DEFAULT_LICENSE_LABEL, help="License to use for new files")
     parser.add_argument("--pr-base-sha", help="Base SHA of the PR")
     parser.add_argument("--pr-head-sha", help="Head SHA of the PR")
+    parser.add_argument("--ignore-author", nargs="*", default=[], help="List of authors to ignore")
 
     args = parser.parse_args()
 
@@ -558,13 +592,13 @@ def main():
     print("\n--- Processing Added Files ---")
     for file in args.files_added:
         print(f"\nProcessing added file: {file}")
-        if process_file(file, license_id, args.pr_base_sha, args.pr_head_sha):
+        if process_file(file, license_id, args.pr_base_sha, args.pr_head_sha, args.ignore_author):
             files_changed = True
 
     print("\n--- Processing Modified Files ---")
     for file in args.files_modified:
         print(f"\nProcessing modified file: {file}")
-        if process_file(file, license_id, args.pr_base_sha, args.pr_head_sha):
+        if process_file(file, license_id, args.pr_base_sha, args.pr_head_sha, args.ignore_author):
             files_changed = True
 
     print("\n--- Summary ---")
