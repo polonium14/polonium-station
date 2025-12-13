@@ -75,15 +75,6 @@ public sealed partial class CCVars
             "A message broadcast to each player that joins the lobby.");
 
     /// <summary>
-    ///     The URL from which to fetch the Message of the Day (MOTD) for players joining the lobby.
-    ///     If set, the MOTD will be retrieved from this remote server.
-    /// </summary>
-    public static readonly CVarDef<string> MOTDServer =
-        CVarDef.Create("chat.motd_server_url",
-            "",
-            CVar.SERVER | CVar.SERVERONLY);
-
-    /// <summary>
     /// A string containing a list of newline-separated words to be highlighted in the chat.
     /// </summary>
     public static readonly CVarDef<string> ChatHighlights =
