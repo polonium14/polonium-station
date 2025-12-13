@@ -8,6 +8,8 @@
 // SPDX-FileCopyrightText: 2023 Riggle <27156122+RigglePrime@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2025 Copilot <175728472+Copilot@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Polonium-bot <admin@ss14.pl>
 // SPDX-FileCopyrightText: 2025 nikitosych <boriszyn@gmail.com>
 // SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
@@ -178,7 +180,7 @@ public sealed class BanCommand : LocalizedCommands
 
         if (args.Length == 5)
         {
-            return CompletionResult.FromHint(Loc.GetString("cmd-ban-hint-round", ("round", args[4])));
+            return CompletionResult.FromHint(Loc.GetString("cmd-ban-hint-round"));
         }
 
         return CompletionResult.Empty;
