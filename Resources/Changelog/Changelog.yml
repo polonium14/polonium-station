@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: ReeZii
-  changes:
-  - message: Fixed thief beacon, which can doubled steal target's
-    type: Fix
-  id: 7772
-  time: '2025-01-01T16:25:48.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/33750
 - author: Errant
   changes:
   - message: Removed seasonal nuke song "Nukemass".
@@ -3947,3 +3940,12 @@
   id: 9079
   time: '2025-12-12T00:56:11.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/342
+- author: Nikitapl
+  changes:
+  - message: "Liczne poprawki do t\u0142umacze\u0144"
+    type: Fix
+  - message: "Drobne t\u0142umaczenia uzupe\u0142niaj\u0105ce"
+    type: Add
+  id: 9080
+  time: '2025-12-12T19:35:13.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/344

@@ -1,5 +1,5 @@
 biomass-reclaimer-suicide-others =
-    { CAPITALIZE(THE($victim)) } { GENDER($victim) ->
+    { CAPITALIZE($victim) } { GENDER($victim) ->
         [male] wskoczył
         [female] wskoczyła
         [epicene] wskoczyłu

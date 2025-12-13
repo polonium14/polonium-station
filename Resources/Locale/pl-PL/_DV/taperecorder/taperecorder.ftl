@@ -4,8 +4,8 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-cassette-repair-start = You start winding the tape back into { THE($item) }.
-cassette-repair-finish = You manage to wind the tape back into { THE($item) }.
+cassette-repair-start = You start winding the tape back into { $item }.
+cassette-repair-finish = You manage to wind the tape back into { $item }.
 tape-cassette-position = The cassette is about [color=green]{ $position }%[/color] the way through.
 tape-cassette-damaged = The cassette is unspooled, use a pen or screwdriver to repair it.
 tape-recorder-playing = The tape recorder is in [color=green]playback[/color] mode.

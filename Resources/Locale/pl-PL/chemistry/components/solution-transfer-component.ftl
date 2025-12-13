@@ -1,13 +1,13 @@
 ### Solution transfer component
 
-comp-solution-transfer-fill-normal = You fill { THE($target) } with { $amount }u from { THE($owner) }.
-comp-solution-transfer-fill-fully = You fill { THE($target) } to the brim with { $amount }u from { THE($owner) }.
-comp-solution-transfer-transfer-solution = You transfer { $amount }u to { THE($target) }.
+comp-solution-transfer-fill-normal = You fill { $target } with { $amount }u from { $owner }.
+comp-solution-transfer-fill-fully = You fill { $target } to the brim with { $amount }u from { $owner }.
+comp-solution-transfer-transfer-solution = You transfer { $amount }u to { $target }.
 
 ## Displayed when trying to transfer to a solution, but either the giver is empty or the taker is full
 
-comp-solution-transfer-is-empty = { CAPITALIZE(THE($target)) } is empty!
-comp-solution-transfer-is-full = { CAPITALIZE(THE($target)) } is full!
+comp-solution-transfer-is-empty = { CAPITALIZE($target) } is empty!
+comp-solution-transfer-is-full = { CAPITALIZE($target) } is full!
 
 ## Displayed in change transfer amount verb's name
 
