@@ -1,3 +1,3 @@
 ent-MobMimic = mimik
     .desc = Niespodzianka.
-    .gender = Male
+    .gender = male

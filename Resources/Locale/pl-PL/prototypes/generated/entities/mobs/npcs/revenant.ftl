@@ -1,3 +1,3 @@
 ent-MobRevenant = zjawa
     .desc = Straszny duch.
-    .gender = Female
+    .gender = female
