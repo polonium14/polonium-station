@@ -42,7 +42,7 @@ cmd-rolebanlist-hint-1 = <nazwa lub ID gracza>
 cmd-rolebanlist-hint-2 = [zawrzyj odbanowane]
 
 cmd-roleban-minutes-parse = {$time} nie jest poprawną liczbą minut.\n{$help}
-cmd-roleban-severity-parse = ${severity} nie jest poprawnym poziomem\n{$help}.
+cmd-roleban-severity-parse = {$severity} nie jest poprawnym poziomem\n{$help}.
 cmd-roleban-arg-count = Niepoprawna liczba argumentów.
 cmd-roleban-job-parse = Rola { $job } nie istnieje.
 cmd-roleban-name-parse = Nie znaleziono gracza z taką nazwą.
