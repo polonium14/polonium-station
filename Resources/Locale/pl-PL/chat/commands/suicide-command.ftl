@@ -1,4 +1,4 @@
-suicide-command-description = Popełnij samobójstwa
+suicide-command-description = Popełnij samobójstwo
 suicide-command-help-text =
     Polecenie samobójstwa pozwala szybko zakończyć rundę, pozostając w charakterze postaci.
     Metoda jest różna, najpierw zostanie podjęta próba użycia przedmiotu trzymanego w aktywnej ręce.
