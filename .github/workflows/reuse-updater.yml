@@ -16,6 +16,11 @@ on:
       - reopened
       - ready_for_review
 
+permissions:
+  actions: read
+  contents: write
+  pull-requests: write
+
 jobs:
   update_headers:
     runs-on: ubuntu-latest
@@ -26,7 +31,7 @@ jobs:
           repository: ${{ github.event.pull_request.head.repo.full_name }}
           ref: ${{ github.head_ref }}
           fetch-depth: 0
-          token: ${{ secrets.BOT_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -37,7 +42,7 @@ jobs:
         id: changed_files
         env:
            PR_BODY: ${{ github.event.pull_request.body }}
-           GH_TOKEN: ${{ secrets.BOT_TOKEN }}
+           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
            GH_REPO: ${{ github.repository }}
            PR_NUMBER: ${{ github.event.pull_request.number }}
         run: |
