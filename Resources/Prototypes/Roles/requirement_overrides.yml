@@ -146,10 +146,6 @@
     - !type:DepartmentTimeRequirement
       department: Civilian
       time: 0
-    ServiceWorker:
-    - !type:DepartmentTimeRequirement
-      department: Civilian
-      time: 0
     Chaplain:
     - !type:DepartmentTimeRequirement
       department: Civilian
