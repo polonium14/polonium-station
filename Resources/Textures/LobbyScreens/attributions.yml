@@ -30,6 +30,11 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+- files: ["saeko.webp"]
+  license: "Custom"
+  copyright: "Authored by ShinigamiMaaya | Permitted for non-commercial use by Saeko (Xyien)"
+  source: "https://discord.ss14.pl"
+
 - files: ["janishootout.webp"]
   license: "CC-BY-NC-SA-3.0"
   copyright: "Unknown"
