@@ -5,6 +5,5 @@ inventory-component-dropped-from-unequip =
     Wyrzucasz { $items ->
         [one] przedmiot!
         [few] przedmioty!
-        [4] przedmioty!
        *[other] przedmiotów!
     }
