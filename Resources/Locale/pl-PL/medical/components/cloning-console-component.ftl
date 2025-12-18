@@ -1,8 +1,9 @@
 ## UI
+
 cloning-console-window-title = Konsola klonowania
 cloning-console-window-clone-button-text = Klonuj
-cloning-console-window-scanner-id = ID: [color=white]{$scannerOccupantName}[/color]
-cloning-console-window-pod-id = ID: [color=white]{$podOccupantName}[/color]
+cloning-console-window-scanner-id = ID: [color=white]{ $scannerOccupantName }[/color]
+cloning-console-window-pod-id = ID: [color=white]{ $podOccupantName }[/color]
 cloning-console-window-no-patient-data-text = Brak danych pacjentia
 cloning-console-window-id-blank = ID:
 cloning-console-window-scanner-details-label = Stan skanera genetycznego
@@ -24,9 +25,10 @@ cloning-console-component-msg-already-cloning = Błąd: komora klonowania jest u
 cloning-console-component-msg-incomplete = Błąd: klonowanie w trakcie
 cloning-console-component-msg-no-cloner = Błąd: brak dawcy
 cloning-console-component-msg-no-mind = Błąd: brak śladu duszy
-cloning-console-chat-error = Błąd: niewystarczająca biomasa. Klonowanie tego ciała wymaga {$units} {$units ->
+cloning-console-chat-error =
+    Błąd: niewystarczająca biomasa. Klonowanie tego ciała wymaga { $units } { $units ->
         [one] jednostki
-        *[others] jednostek
+       *[others] jednostek
     } biomasy.
 cloning-console-uncloneable-trait-error = Błąd: klonowanie jest niemożliwe z powodu wyjątkowego składu ciała.
-cloning-console-cellular-warning = Błąd: wynik pewności GENEFSCK wynosi {NATURALPERCENT($percent)}. Klonowanie może mieć nieoczekiwane rezultaty.
+cloning-console-cellular-warning = Błąd: wynik pewności GENEFSCK wynosi { NATURALPERCENT($percent) }. Klonowanie może mieć nieoczekiwane rezultaty.

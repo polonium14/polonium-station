@@ -17,4 +17,4 @@ research-console-unlocks-list-entry-generic = - [color=green]{ $text }[/color]
 research-console-prereqs-list-start = Wymaga:
 research-console-prereqs-list-entry = - [color=orchid]{ $text }[/color]
 research-console-no-access-popup = Brak dostępu!
-research-console-unlock-technology-radio-broadcast = Zarejestrowano [bold]{ $technology }[/bold] dzięki [bold]{ $amount }[/bold] wiedzy przez [bold]{ CAPITALIZE(THE($approver)) }[/bold].
+research-console-unlock-technology-radio-broadcast = Zarejestrowano [bold]{ $technology }[/bold] dzięki [bold]{ $amount }[/bold] wiedzy przez [bold]{ CAPITALIZE($approver) }[/bold].

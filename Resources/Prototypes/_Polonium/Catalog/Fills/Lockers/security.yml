@@ -1,0 +1,24 @@
+- type: entity
+  parent: [GunSafeBaseSecure, BaseSecurityContraband]
+  id: GunSafeVisMPS
+  name: Sejf na Vis MPS
+  description: Bezpieczny sejf na pistolety Vis MPS.
+  components:
+  - type: StorageFill
+    contents:
+    - id: VisMPSPistol
+      amount: 2
+    - id: VisMPSPistolMagazine
+      amount: 6
+
+- type: entity
+  parent: [GunSafeBaseSecure, BaseSecurityContraband]
+  id: GunSafeSubMachineGunPMM
+  name: Sejf na PMM Model-X
+  components:
+  - type: StorageFill
+    contents:
+    - id: PMMMachineGun
+      amount: 2
+    - id: PMMMachineGunMagazine
+      amount: 6

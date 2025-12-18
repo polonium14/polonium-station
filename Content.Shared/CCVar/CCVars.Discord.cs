@@ -1,5 +1,11 @@
 // SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
+// SPDX-FileCopyrightText: 2025 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Polonium-bot <admin@ss14.pl>
+// SPDX-FileCopyrightText: 2025 Simon <63975668+Simyon264@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+// SPDX-FileCopyrightText: 2025 github-actions[bot] <github-actions[bot]@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 nikitosych <174215049+nikitosych@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 pathetic meowmeow <uhhadd@gmail.com>
 // SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 ssdaniel24 <107036969+ssdaniel24@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
@@ -56,6 +62,10 @@ public sealed partial class CCVars
     public static readonly CVarDef<string> DiscordVotekickWebhook =
         CVarDef.Create("discord.votekick_webhook", string.Empty, CVar.SERVERONLY);
 
+    // Polonium
+    public static readonly CVarDef<string> BanWebhook =
+        CVarDef.Create("discord.ban_webhook", string.Empty, CVar.SERVERONLY | CVar.CONFIDENTIAL);
+
     /// <summary>
     ///     URL of the Discord webhook which will relay round restart messages.
     /// </summary>
@@ -67,6 +77,28 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<string> DiscordRoundEndRoleWebhook =
         CVarDef.Create("discord.round_end_role", string.Empty, CVar.SERVERONLY);
+
+
+    /// <summary>
+    ///     The token used to authenticate with Discord. For the Bot to function set: discord.token, discord.guild_id, and discord.prefix.
+    ///     If this is empty, the bot will not connect.
+    /// </summary>
+    public static readonly CVarDef<string> DiscordToken =
+        CVarDef.Create("discord.token", string.Empty, CVar.SERVERONLY | CVar.CONFIDENTIAL);
+
+    /// <summary>
+    ///     The Discord guild ID to use for commands as well as for several other features.
+    ///     If this is empty, the bot will not connect.
+    /// </summary>
+    public static readonly CVarDef<string> DiscordGuildId =
+        CVarDef.Create("discord.guild_id", string.Empty, CVar.SERVERONLY);
+
+    /// <summary>
+    ///     Prefix used for commands for the Discord bot.
+    ///     If this is empty, the bot will not connect.
+    /// </summary>
+    public static readonly CVarDef<string> DiscordPrefix =
+        CVarDef.Create("discord.prefix", "!", CVar.SERVERONLY);
 
     /// <summary>
     ///     URL of the Discord webhook which will relay watchlist connection notifications. If left empty, disables the webhook.

@@ -10,7 +10,7 @@ import itertools
 import os
 from pathlib import Path
 from typing import Any, Iterable
-
+import io
 import requests
 import yaml
 import time
@@ -172,9 +172,15 @@ def changelog_entries_to_message_lines(entries: Iterable[ChangelogEntry]) -> lis
     """Process structured changelog entries into a list of lines making up a formatted message."""
     message_lines = []
 
-    for contributor_name, group in itertools.groupby(entries, lambda x: x["author"]):
-        message_lines.append("\n")
-        message_lines.append(f"**{contributor_name}** updated:\n")
+    message_content = io.StringIO()
+    # We need to manually split messages to avoid discord's character limit
+    # With that being said this isn't entirely robust
+    # e.g. a sufficiently large CL breaks it, but that's a future problem
+
+    for name, group in itertools.groupby(entries, lambda x: x["author"]):
+        # Need to split text to avoid discord character limit
+        group_content = io.StringIO()
+        group_content.write(f"**{name}** zaktualizował(-a):\n")
 
         for entry in group:
             url = entry.get("url")

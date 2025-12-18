@@ -1,1 +1,1 @@
-objective-condition-kill-head-title = Zabij {$targetName}, {$job}
+objective-condition-kill-head-title = Zabij { $targetName }, { $job }

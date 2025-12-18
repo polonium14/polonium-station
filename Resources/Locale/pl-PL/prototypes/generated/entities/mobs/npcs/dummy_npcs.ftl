@@ -1,3 +1,4 @@
-ent-MobHumanPathDummy = pathfinding dummy
-    .desc = A miserable pile of secrets.
-    .suffix = AI
+ent-MobHumanPathDummy = atrapa trasowania
+    .desc = Nędzna sterta sekretów.
+    .suffix = SI
+    .gender = female

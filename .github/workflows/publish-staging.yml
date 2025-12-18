@@ -1,0 +1,76 @@
+# SPDX-FileCopyrightText: 2021 Paul <ritter.paul1@googlemail.com>
+# SPDX-FileCopyrightText: 2022 0x6273 <0x40@keemail.me>
+# SPDX-FileCopyrightText: 2022 Paul Ritter <ritter.paul1@googlemail.com>
+# SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto <gradientvera@outlook.com>
+# SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Matt <psykzz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 PJBot <pieterjan.briers+bot@gmail.com>
+# SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Polonium-bot <admin@ss14.pl>
+# SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 nikitosych <174215049+nikitosych@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 nikitosych <boriszyn@gmail.com>
+# SPDX-FileCopyrightText: 2025 pa.pecherskij <pa.pecherskij@interfax.ru>
+# SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+name: Publish (Staging)
+
+concurrency:
+  group: publish-staging
+  cancel-in-progress: true
+
+on:
+  workflow_dispatch:
+  # schedule:
+  #   - cron: "0 22 * * *"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Fail if we are attempting to run on the master branch
+        if: ${{github.ref_name == 'master' && github.repository == 'polonium14/polonium-station'}}
+        run: exit 1
+
+      - name: Install dependencies
+        run: sudo apt-get install -y python3-paramiko python3-lxml
+
+      - uses: actions/checkout@v4.2.2
+        with:
+          submodules: "recursive"
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v4.1.0
+        with:
+          dotnet-version: 9.0.x
+
+      - name: Get Engine Tag
+        run: |
+          cd RobustToolbox
+          git fetch --depth=1
+
+      - name: Install dependencies
+        run: dotnet restore
+
+      - name: Build Packaging
+        run: dotnet build Content.Packaging --configuration Release --no-restore /m
+
+      - name: Package server
+        run: dotnet run --project Content.Packaging server --platform win-x64 --platform win-arm64 --platform linux-x64 --platform linux-arm64 --platform osx-x64 --platform osx-arm64
+
+      - name: Package client
+        run: dotnet run --project Content.Packaging client --no-wipe-release
+
+      - name: Publish version
+        run: Tools/publish_multi_request.py --fork-id staging
+        env:
+          PUBLISH_TOKEN: ${{ secrets.PUBLISH_TOKEN }}
+          GITHUB_REPOSITORY: ${{ vars.GITHUB_REPOSITORY }}

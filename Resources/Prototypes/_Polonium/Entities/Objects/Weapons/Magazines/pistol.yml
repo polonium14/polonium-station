@@ -39,7 +39,6 @@
   id: VisMPSPistolMagazine
   parent: VisMPSPistolMagazineBase
   name: Magazynek VIS MPS (.35 auto)
-  description: Magazynek VIS MPS (.35 auto)
   components:
     - type: BallisticAmmoProvider
       proto: CartridgePistol
@@ -48,16 +47,14 @@
   id: VisMPSPistolMagazineIncendiary
   parent: VisMPSPistolMagazineBase
   name: Magazynek VIS MPS (.35 auto incendiary)
-  description: Magazynek VIS MPS (.35 auto incendiary)
   components:
     - type: BallisticAmmoProvider
       proto: CartridgePistolIncendiary
 
 - type : entity
-  id: VisMPSPistolMagazinUranium
+  id: VisMPSPistolMagazineUranium
   parent: VisMPSPistolMagazineBase
   name: Magazynek VIS MPS (.35 auto uranium)
-  description: Magazynek VIS MPS (.35 auto uranium)
   components:
     - type: BallisticAmmoProvider
       proto: CartridgePistolUranium
@@ -66,7 +63,15 @@
   id: VisMPSPistolMagazinePractice
   parent: VisMPSPistolMagazineBase
   name: Magazynek VIS MPS (.35 auto practice)
-  description: Magazynek VIS MPS (.35 auto practice)
   components:
     - type: BallisticAmmoProvider
       proto: CartridgePistolPractice
+
+- type: entity
+  id: VisMPSPistolMagazineEmpty
+  parent: VisMPSPistolMagazineBase
+  name: Magazynek VIS MPS (.35 auto any)
+  suffix: (pusty)
+  components:
+    - type: BallisticAmmoProvider
+      proto: null

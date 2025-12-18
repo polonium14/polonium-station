@@ -62,3 +62,12 @@
   components:
     - type: BallisticAmmoProvider
       proto: CartridgePistolPractice
+
+- type: entity
+  id: PMMMachineGunMagazineEmpty
+  parent: PMMMachineGunMagazineBase
+  name: Magazynek PMM Model-X (.35 auto any)
+  suffix: (pusty)
+  components:
+    - type: BallisticAmmoProvider
+      proto: null

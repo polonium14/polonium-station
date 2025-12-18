@@ -1,14 +1,14 @@
 lobby-state-paused = Wstrzymano
 lobby-state-soon = Runda wkrótce się rozpocznie
-lobby-state-right-now-question = Right Now?
-lobby-state-right-now-confirmation = Right Now
+lobby-state-right-now-question = Natychmiast?
+lobby-state-right-now-confirmation = Natychmiast
 lobby-state-round-start-countdown-text = Runda rozpocznie się za: { $timeLeft }
 lobby-state-ready-button-join-state = Dołącz
 lobby-state-ready-button-ready-up-state = Zgłoś gotowość
 lobby-state-player-status-not-ready = Brak gotowości
 lobby-state-player-status-ready = Gotowy(a)
 # TODO: zrobić wersje bezpłciową ^
-lobby-state-player-status-observer = Observer
+lobby-state-player-status-observer = Obserwator
 lobby-state-player-status-round-not-started = Runda nie została jeszcze rozpoczęta
 lobby-state-player-status-round-time =
     Czas rundy: { $hours } { $hours ->

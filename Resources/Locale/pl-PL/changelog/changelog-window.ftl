@@ -1,7 +1,7 @@
 ### ChangelogWindow.xaml.cs
 
 changelog-window-title = Lista zmian
-changelog-author-changed =  [color=#EEE]{ $author }[/color] zmienił(-a):
+changelog-author-changed = [color=#EEE]{ $author }[/color] zmienił(-a):
 changelog-today = Dzisiaj
 changelog-yesterday = Wczoraj
 changelog-new-changes = nowe zmiany

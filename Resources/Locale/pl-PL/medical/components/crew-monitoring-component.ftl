@@ -1,4 +1,5 @@
 ## UI
+
 crew-monitoring-user-interface-title = Konsola monitorowania załogi
 crew-monitor-filter-line-placeholder = Filtr
 crew-monitoring-user-interface-name = Imię

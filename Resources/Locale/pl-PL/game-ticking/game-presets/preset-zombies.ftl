@@ -17,11 +17,11 @@ zombie-round-end-initial-count =
        *[other] Było { $initialCount } początkowo zainfekowanych:
     }
 zombie-round-end-user-was-initial = - [color=plum]{ $name }[/color] ([color=gray]{ $username }[/color]) był jednym z początkowo zainfekowanych.
-zombie-round-end-amount-none =  [color=green]Wszystkie zombie zostały wyeliminowane![/color]
-zombie-round-end-amount-low =  [color=green]Prawie wszystkie zombie zostały wytrzebione.[/color]
-zombie-round-end-amount-medium =  [color=yellow]{ $percent }% załogi zostało przemienionych w zombie.[/color]
-zombie-round-end-amount-high =  [color=crimson]{ $percent }% załogi zostało przemienionych w zombie.[/color]
-zombie-round-end-amount-all =  [color=darkred]Cała załoga stała się zombie![/color]
+zombie-round-end-amount-none = [color=green]Wszystkie zombie zostały wyeliminowane![/color]
+zombie-round-end-amount-low = [color=green]Prawie wszystkie zombie zostały wytrzebione.[/color]
+zombie-round-end-amount-medium = [color=yellow]{ $percent }% załogi zostało przemienionych w zombie.[/color]
+zombie-round-end-amount-high = [color=crimson]{ $percent }% załogi zostało przemienionych w zombie.[/color]
+zombie-round-end-amount-all = [color=darkred]Cała załoga stała się zombie![/color]
 zombie-round-end-survivor-count =
     { $count ->
         [one] Pozostał tylko jeden ocalały:

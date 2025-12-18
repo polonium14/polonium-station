@@ -2,6 +2,7 @@
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
 # SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -19,6 +20,7 @@ LICENSE_CONFIG = {
     "mit": {"id": "MIT", "path": "LICENSES/MIT.txt"},
     "agpl": {"id": "AGPL-3.0-or-later", "path": "LICENSES/AGPLv3.txt"},
     "mpl": {"id": "MPL-2.0", "path": "LICENSES/MPL-2.0.txt"},
+    "cc-by-nc-sa-3.0": { "id": "CC-BY-NC-SA-3.0", "path": "LICENSES/CC-BY-NC-SA-3.0.txt" }
 }
 
 DEFAULT_LICENSE_LABEL = "agpl"

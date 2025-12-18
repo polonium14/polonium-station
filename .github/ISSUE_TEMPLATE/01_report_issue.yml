@@ -1,0 +1,40 @@
+name: Zgłoś problem
+description: Dla problemów, które nie pasują do innych formularzy zgłoszeń.
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Dziękujemy za poświęcenie czasu na wypełnienie formularza zgłoszenia problemu. Ten szablon jest przeznaczony dla wszystkich problemów, które nie pasują do innych szablonów zgłoszeń.
+        Aby uzyskać pomoc lub podzielić się opinią na temat Space Station 14, dołącz do naszego [Discorda](https://discord.ss14.pl).
+  - type: input
+    attributes:
+      label: W której wersji wystąpił ten problem?
+      description: Wersję możesz znaleźć, otwierając listę zmian w grze i patrząc na prawy dolny róg okna dziennika zmian.
+      placeholder: polonium/c3d8871
+    validations:
+      required: false
+  - type: textarea
+    attributes:
+      label: Opis
+      description: |
+        Jasny i zwięzły opis problemu.
+        Jeśli problem ma charakter wizualny, rozważ dołączenie zrzutu ekranu.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Kroki do odtworzenia
+      description: Wypisz kroki potrzebne do odtworzenia problemu.
+      placeholder: |
+        1.
+        2.
+        3.
+        ...
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Dodatkowy kontekst
+      description: Dodaj tutaj wszelkie inne dodatkowe informacje na temat problemu.
+    validations:
+      required: false

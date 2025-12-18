@@ -1,0 +1,87 @@
+<!--
+SPDX-FileCopyrightText: 2024 Iztok Bajcar <50874197+iztokbajcar@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 UBlueberry <161545003+UBlueberry@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 nikitosych <admin@ss14.pl>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+# Ważne wskazówki dotyczące tworzenia postaci
+To jest poradnik dotyczący elementów tworzenia postaci, które wpływają na rozgrywkę.
+
+[textlink="Poradnik dotyczący zmian kosmetycznych znajdziesz tutaj." link="YourFirstCharacter"]
+
+## Priorytet miejsca pojawienia się
+To wpływa na to, gdzie pojawisz się po dołączeniu do gry, gdy runda już trwa.
+
+Wybranie "Przybycia" spowoduje, że pojawisz się na osobnej stacji, gdzie poczekasz na przyjazd promu, który zabierze cię na główną stację.
+
+Wybranie "Cryosleep" sprawi, że obudzisz się w komorze kriogenicznej już na stacji.
+
+Wybranie "Brak" spowoduje, że gra wybierze za ciebie lub wybierze jedyną dostępną opcję pojawienia się na obecnej stacji.
+
+To w większości arbitralny wybór. Możesz bezpiecznie zostawić to na "Brak" i nie napotkasz żadnych niedogodności.
+
+## Prace
+Możesz ustawić preferencje pracy w lobby. Nie [color=#a4885c]gwarantuje[/color] to jednak twojej pozycji, osoba, która chce daną pracę, zostanie [color=#a4885c]losowo[/color] wybrana na początku rundy.
+Najpierw masz szansę na pracę o wysokim priorytecie, potem średnim, a na końcu niskim.
+Możesz także wybrać opcję automatycznego dołączenia do rundy jako pasażer lub powrotu do lobby, jeśli nie zostaniesz wybrany do żadnej z preferowanych prac.
+
+  Wszystkie stanowiska dowódcze są losowane najpierw, niezależnie od priorytetu. Na przykład, jeśli wybierzesz Chemika na wysokim i Kapitana na niskim, Kapitan zostanie wylosowany najpierw. Jeśli nie chcesz grać w dowództwie, ustaw wszystkie role dowódcze na "Brak"!
+
+  Antagoniści są wybierani przed dowództwem. Jeśli zostaniesz wybrany jako antagonista, ale masz Kapitana na wysokim priorytecie, pojawisz się jako asystent z rolą antagonisty.
+
+Niektóre prace są zablokowane, dopóki nie zagrasz wystarczająco długo na innych, podstawowych stanowiskach.
+
+[textlink="Więcej informacji o pracach znajdziesz tutaj." link="Jobs"]
+
+## Wyposażenie pracy
+Możesz także wybrać [color=#a4885c]wyposażenie[/color] dla każdej pracy. Wyposażenie to ubrania i drobiazgi, z którymi pojawiasz się po dołączeniu do gry. Niektóre przedmioty są zablokowane do czasu zdobycia odpowiedniego czasu gry.
+Może to mieć różny wpływ na rozgrywkę, ponieważ niektóre ubrania mają [color=#a4885c]ochronę pancerza[/color] lub [color=#a4885c]spowalniają twoje ruchy[/color]. Dotyczy to szczególnie dowództwa i ochrony.
+
+Możesz także wybrać, z jaką torbą się pojawisz.
+[color=#a4885c]Plecaki[/color] są średniej wielkości, ale łatwiej mieszczą duże przedmioty. [color=#a4885c]Torby na ramię[/color] mają więcej miejsca niż plecaki, ale trudniej im pomieścić duże przedmioty. [color=#a4885c]Torby podróżne[/color] są duże, ale powodują karę do szybkości ruchu.
+
+## Antagoniści
+Włączenie przełącznika [color=#a4885c]antagonisty[/color] umieszcza cię na liście potencjalnych antagów na początku rundy. Nie gwarantuje to roli antagonisty, nie używaj tego jako wymówki do samodzielnego antagonizowania!
+Podobnie jak w przypadku priorytetów pracy, kilku graczy jest losowo wybieranych spośród uprawnionych. Jeśli jesteś członkiem dowództwa lub ochrony, nie możesz zostać wybrany na antagonisty.
+
+[textlink="Więcej informacji o antagonistach znajdziesz tutaj." link="Antagonists"]
+
+Dołączanie do wielu gier lub opuszczanie/duchowanie/popełnianie samobójstwa po nieotrzymaniu roli antagonisty nazywane jest "antag-rollingiem" i jest niezgodne z zasadami.
+Wielu graczy cierpliwie czeka na swoją kolej, więc [color=#a4885c]prosimy, abyś nie wybierał roli antagonisty, jeśli nie jesteś na to gotowy[/color].
+
+## Cechy
+Cechy mowy zmieniają twoją mowę, czasem w znacznym stopniu.
+
+Należą do nich:
+- Bez akcentu (wyłącza akcent wybranej rasy)
+- Akcent kowbojski (zamiana słów, partner)
+- Lisp czołowy (zamienia "s" na "th")
+- Akcent włoski (Mamma-mia, zamiana słów)
+- Patologiczny kłamca (zamiana słów, zmienia np. "tak" na "nie")
+- Akcent piracki (Arrgh, zamiana słów)
+- Akcent kurwalski (xD)
+- Lęk społeczny (jąkanie się)
+- Southern Drawl (zamienia "-ing" na "-in'" i podobne zmiany)
+...i inne.
+
+Powinieneś czuć się komfortowo z normalną mową lub lekkim akcentem, takim jak lęk społeczny czy Southern Drawl, zanim wybierzesz mocniejsze akcenty jak włoski czy kowbojski.
+
+Są też cechy niepełnosprawności. Zapoznaj się z grą i jej przebiegiem zanim wybierzesz jedną z nich, ponieważ niektóre mogą być trudne dla początkujących.
+
+Należą do nich:
+- Ślepota (znacznie ogranicza widzenie)
+- Słaba głowa (szybciej się upijasz i mocniej odczuwasz skutki alkoholu)
+- Niemowa (nie możesz mówić ani szeptać, ale możesz komunikować się emotami i przez papier)
+- Narkolepsja (losowo zasypiasz w nieprzewidywalnych i często niewygodnych momentach)
+- Pacyfista (nie możesz bić, strzelać ani rzucać ostrych przedmiotów w ludzi)
+- Paracuzja (czasem słyszysz dźwięki, które nie są prawdziwe)
+- Krótkowzroczność (nieco ogranicza widzenie bez okularów)
+- Chrapanie (głośno chrapiesz podczas snu)
+- Nieodwracalność (nie można cię wskrzesić po śmierci)
+...i inne.
+</Document>

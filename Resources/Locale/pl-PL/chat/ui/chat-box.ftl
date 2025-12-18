@@ -1,7 +1,7 @@
 hud-chatbox-info = { $talk-key }, aby rozmawiać; { $cycle-key }, aby przełączyć kanały.
 hud-chatbox-info-talk = { $talk-key }, aby rozmawiać.
-hud-chatbox-info-cycle = Click here to talk, { $cycle-key } to cycle channels.
-hud-chatbox-info-unbound = Click here to talk.
+hud-chatbox-info-cycle = Kliknij tutaj, aby rozmawiać, { $cycle-key }, aby przełączyć kanały.
+hud-chatbox-info-unbound = Kliknij tutaj, aby rozmawiać.
 hud-chatbox-select-name-prefixed = { $prefix } { $name }
 hud-chatbox-select-channel-Admin = Admin
 hud-chatbox-select-channel-Console = Konsola
@@ -14,9 +14,9 @@ hud-chatbox-select-channel-OOC = OOC
 hud-chatbox-select-channel-Damage = Obrażenia
 hud-chatbox-select-channel-Visual = Akcje
 hud-chatbox-select-channel-Radio = Radio
-hud-chatbox-channel-Admin = Admin Misc
+hud-chatbox-channel-Admin = Admin Inne
 hud-chatbox-channel-AdminAlert = Admin Alert
-hud-chatbox-channel-AdminChat = Admin Chat
+hud-chatbox-channel-AdminChat = Admin Czat
 hud-chatbox-channel-Dead = Martwi
 hud-chatbox-channel-Emotes = Emocje
 hud-chatbox-channel-Local = Lokalny
@@ -38,4 +38,4 @@ hud-chatbox-highlights-tooltip =
 hud-chatbox-highlights-placeholder =
     McKowalski
     "Prawo"
-    Dział Medczny
+    Dział Medyczny

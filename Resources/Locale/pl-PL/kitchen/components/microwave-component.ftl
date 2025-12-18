@@ -12,10 +12,11 @@ microwave-component-suicide-message =
     { GENDER($victim) ->
         [male] Upiekłeś
         [female] Upiekłaś
-       *[other] Upiekłoś
+        [epicene] Upiekłuś
+       *[neuter] Upiekłoś
     } swoją głowę!
 microwave-component-interact-full = Jest pełna.
-microwave-component-interact-item-too-big = { CAPITALIZE(THE($item)) } jest zbyt duży aby być zmieszczonym w mikrofali!
+microwave-component-interact-item-too-big = { CAPITALIZE($item) } jest zbyt duży aby być zmieszczonym w mikrofali!
 
 ## Bound UI
 

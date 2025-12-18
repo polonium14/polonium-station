@@ -1,10 +1,10 @@
 admin-player-actions-reason = Powód
-admin-player-actions-bans = Lista Banów
+admin-player-actions-bans = Lista banów
 admin-player-actions-notes = Notatki
-admin-player-actions-kick = Wyrzucenie
-admin-player-actions-ban = Banowanie
+admin-player-actions-kick = Wyrzuć
+admin-player-actions-ban = Zbanuj
 admin-player-actions-ahelp = AHelp
-admin-player-actions-respawn = Respawnowanie
+admin-player-actions-respawn = Respawnuj
 admin-player-actions-spawn = Spawnuj tutaj
 admin-player-spawn-failed = Nie znaleziono prawidłowych współrzędnych.
 admin-player-actions-player-panel = Otwórz Panel Gracza

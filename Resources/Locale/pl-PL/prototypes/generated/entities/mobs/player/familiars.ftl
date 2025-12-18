@@ -1,6 +1,9 @@
 ent-MobBatRemilia = Remilia
-    .desc = The chaplain's familiar. Likes fruit.
-ent-MobCorgiCerberus = Cerberus
-    .desc = This pupper is not wholesome.
+    .desc = Ulubienica kapłana. Lubi owoce.
+    .gender = female
+ent-MobCorgiCerberus = Cerber
+    .desc = Ten piesek nie jest przyjazny.
+    .gender = male
 ent-MobCeledonRaptor = Celedon
-    .desc = Before the genetics lab on Europa was shut down, an activist group fought to save the animals about to be euthanized. Celedon is still untrusting of most humanoids, but maybe they can be rehabilitated.
+    .desc = Przed zamknięciem laboratorium genetycznego na Europie, grupa aktywistów walczyła o uratowanie zwierząt przeznaczonych do uśpienia. Celedon nadal nie ufa większości humanoidów, ale może da się je zrehabilitować.
+    .gender = male

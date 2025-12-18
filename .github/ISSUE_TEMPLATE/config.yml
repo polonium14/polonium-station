@@ -1,12 +1,8 @@
-# SPDX-FileCopyrightText: 2021 Swept <sweptwastaken@protonmail.com>
-# SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
-# SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
-# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
-#
-# SPDX-License-Identifier: MIT
-
+blank_issues_enabled: true
 contact_links:
   - name: Zgłoś lukę w zabezpieczeniach
     url: https://github.com/space-wizards/space-station-14/blob/master/SECURITY.md
     about: "Prosimy o zgłaszanie luk w zabezpieczeniach prywatnie, abyśmy mogli je naprawić przed ich publicznym ujawnieniem" - Wizards
+  - name: Poproś o nową funkcję lub zmianę
+    url: https://discord.ss14.pl
+    about: Dołącz do naszego Discorda, aby zasugerować nowe funkcje lub zmiany.

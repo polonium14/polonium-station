@@ -1,10 +1,15 @@
 ent-BaseBorgChassis = cyborg
-    .desc = A man-machine hybrid that assists in station activity. They love being asked to state their laws over and over.
+    .desc = Hybryda człowieka i maszyny, która pomaga w działalności stacji. Uwielbiają, gdy prosi się ich o wielokrotne powtarzanie swoich zasad.
+    .gender = male
 ent-BaseBorgTransponder = { "" }
     .desc = { "" }
+    .gender = male
 ent-BaseBorgChassisNT = { ent-BaseBorgChassis }
     .desc = { ent-BaseBorgChassis.desc }
+    .gender = male
 ent-BaseBorgChassisSyndicate = { ent-BaseBorgChassis }
     .desc = { ent-BaseBorgChassis.desc }
+    .gender = male
 ent-BaseBorgChassisDerelict = { ent-BaseBorgChassis }
     .desc = { ent-BaseBorgChassis.desc }
+    .gender = male

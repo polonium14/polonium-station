@@ -153,6 +153,21 @@ public sealed partial class FaxMachineComponent : Component
     /// </summary>
     [DataField]
     public EntProtoId PrintOfficePaperId = "PaperOffice";
+
+    // Corvax-StationGoal-Start
+    /// <summary>
+    /// Should that fax receive station goal info
+    /// </summary>
+    [DataField]
+    public bool ReceiveStationGoal { get; set; }
+
+    /// <summary>
+    /// Should that fax receive station goals from other stations
+    /// </summary>
+    [DataField]
+    public bool ReceiveAllStationGoals { get; set; }
+    // Corvax-StationGoal-End
+
 }
 
 [DataDefinition]

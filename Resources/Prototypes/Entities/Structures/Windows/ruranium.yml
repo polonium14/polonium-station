@@ -28,9 +28,9 @@
   components:
   - type: Sprite
     drawdepth: WallTops
-    sprite: Structures/Windows/reinforced_uranium_window.rsi
+    sprite: _DV/Structures/Windows/reinforced_uranium_window.rsi
   - type: Icon
-    sprite: Structures/Windows/reinforced_uranium_window.rsi
+    sprite: _DV/Structures/Windows/reinforced_uranium_window.rsi
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: RGlass
@@ -89,10 +89,10 @@
     - Window
   components:
   - type: Sprite
-    sprite: Structures/Windows/directional.rsi
+    sprite: _DV/Structures/Windows/directional.rsi
     state: uranium_reinforced_window
   - type: Icon
-    sprite: Structures/Windows/directional.rsi
+    sprite: _DV/Structures/Windows/directional.rsi
     state: uranium_reinforced_window
   - type: Construction
     graph: WindowDirectional
@@ -145,7 +145,7 @@
   components:
   - type: Sprite
     drawdepth: WallTops
-    sprite: Structures/Windows/reinforced_uranium_diagonal.rsi
+    sprite: _DV/Structures/Windows/reinforced_uranium_diagonal.rsi
     state: state0
   - type: Tag
     tags:
@@ -155,7 +155,7 @@
     key: windows
     base: state
   - type: Icon
-    sprite: Structures/Windows/reinforced_uranium_diagonal.rsi
+    sprite: _DV/Structures/Windows/reinforced_uranium_diagonal.rsi
     state: state0
   - type: Fixtures
     fixtures:

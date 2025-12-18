@@ -10,17 +10,17 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-loadout-group-ntr-head = Nanotrasen Representative head
-loadout-group-ntr-neck = Nanotrasen Representative neck
-loadout-group-ntr-backpack = Nanotrasen Representative backpack
-loadout-group-ntr-outer = Nanotrasen Representative outer clothing
-loadout-group-ntr-gloves = Nanotrasen Representative gloves
-loadout-group-ntr-jumpsuit = Nanotrasen Representative jumpsuit
-loadout-group-ntr-belt = Nanotrasen Representative belt
-loadout-group-ntr-shoes = Nanotrasen Representative shoes
-loadout-group-bso-head = Blueshield Officer head
-loadout-group-bso-backpack = Blueshield Officer backpack
-loadout-group-bso-jumpsuit = Blueshield Officer jumpsuit
-loadout-group-bso-outer = Blueshield Officer armor
-loadout-group-bso-neck = Blueshield Officer neck
-loadout-group-reporter-outerclothing = Reporter outer clothing
+loadout-group-ntr-head = Przedstawiciel Nanotrasen – nakrycie głowy
+loadout-group-ntr-neck = Przedstawiciel Nanotrasen – szyja
+loadout-group-ntr-backpack = Przedstawiciel Nanotrasen – plecak
+loadout-group-ntr-outer = Przedstawiciel Nanotrasen – odzież wierzchnia
+loadout-group-ntr-gloves = Przedstawiciel Nanotrasen – rękawice
+loadout-group-ntr-jumpsuit = Przedstawiciel Nanotrasen – kombinezon
+loadout-group-ntr-belt = Przedstawiciel Nanotrasen – pas
+loadout-group-ntr-shoes = Przedstawiciel Nanotrasen – buty
+loadout-group-bso-head = Oficer Niebieskiej Tarczy – nakrycie głowy
+loadout-group-bso-backpack = Oficer Niebieskiej Tarczy – plecak
+loadout-group-bso-jumpsuit = Oficer Niebieskiej Tarczy – kombinezon
+loadout-group-bso-outer = Oficer Niebieskiej Tarczy – pancerz
+loadout-group-bso-neck = Oficer Niebieskiej Tarczy – szyja
+loadout-group-reporter-outerclothing = Reporter – odzież wierzchnia

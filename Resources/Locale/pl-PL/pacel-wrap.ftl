@@ -1,6 +1,6 @@
 parcel-wrap-verb-wrap = Zawiń
 parcel-wrap-verb-unwrap = Odwiń
-parcel-wrap-popup-parcel-destroyed = Opakowanie zawierające { THE($contents) } zostało zniszczone!
+parcel-wrap-popup-parcel-destroyed = Opakowanie zawierające { $contents } zostało zniszczone!
 # Shown when parcel wrap is examined in details range
 parcel-wrap-examine-detail-uses =
     { $uses ->

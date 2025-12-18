@@ -161,7 +161,9 @@ namespace Content.IntegrationTests.Tests
             "Relic",
             "Resort",
             "microstation",
-            "dm01-entryway"
+            "dm01-entryway",
+            "Chibi",
+            "Cork"
         };
 
         /// <summary>

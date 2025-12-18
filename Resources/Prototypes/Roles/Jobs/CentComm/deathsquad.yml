@@ -37,19 +37,17 @@
     outerClothing: ClothingOuterHardsuitDeathsquad
     shoes: ClothingShoesBootsMagAdv
     id: DeathsquadPDA
-    pocket1: EnergySword
-    pocket2: EnergyShield
+    pocket1: ERTUplinkDeadSquad
+    pocket2: WeaponRevolverMatebaAP
     belt: ClothingBeltMilitaryWebbingMedFilled
   storage:
     back:
     - WeaponPulsePistol
-    - WeaponRevolverMatebaAP
     - SpeedLoaderMagnumAP
     - SpeedLoaderMagnumAP
     - BoxFlashbang
     - ToolDebug # spanish army knife
     - WelderExperimental
-    - Hypospray
     - DeathAcidifierImplanter # crew will try to steal their amazing hardsuits
     - FreedomImplanter
   inhand:

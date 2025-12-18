@@ -5,6 +5,8 @@
 // SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
 // SPDX-FileCopyrightText: 2023 Riggle <27156122+RigglePrime@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Polonium-bot <admin@ss14.pl>
+// SPDX-FileCopyrightText: 2025 nikitosych <174215049+nikitosych@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
 //
 // SPDX-License-Identifier: MIT
@@ -38,6 +40,7 @@ public sealed class DepartmentBanCommand : IConsoleCommand
         string department;
         string reason;
         uint minutes;
+        int round = 0;
         if (!Enum.TryParse(_cfg.GetCVar(CCVars.DepartmentBanDefaultSeverity), out NoteSeverity severity))
         {
             Logger.WarningS("admin.department_ban", "Department ban severity could not be parsed from config! Defaulting to medium.");
@@ -80,6 +83,29 @@ public sealed class DepartmentBanCommand : IConsoleCommand
                     shell.WriteLine(Loc.GetString("cmd-roleban-severity-parse", ("severity", args[4]), ("help", Help)));
                     return;
                 }
+                break;
+            case 6:
+                target = args[0];
+                department = args[1];
+                reason = args[2];
+
+                if (!uint.TryParse(args[3], out minutes))
+                {
+                    shell.WriteError(Loc.GetString("cmd-roleban-minutes-parse", ("time", args[3]), ("help", Help)));
+                    return;
+                }
+
+                if (!Enum.TryParse(args[4], ignoreCase: true, out severity))
+                {
+                    shell.WriteLine(Loc.GetString("cmd-roleban-severity-parse", ("severity", args[4]), ("help", Help)));
+                    return;
+                }
+
+                if (!int.TryParse(args[5], out round))
+                {
+                    shell.WriteLine(Loc.GetString("cmd-roleban-round-parse", ("round", args[5])));
+                    return;
+                }
 
                 break;
             default:
@@ -108,7 +134,7 @@ public sealed class DepartmentBanCommand : IConsoleCommand
         var now = DateTimeOffset.UtcNow;
         foreach (var job in departmentProto.Roles)
         {
-            _banManager.CreateRoleBan(targetUid, located.Username, shell.Player?.UserId, null, targetHWid, job, minutes, severity, reason, now);
+            _banManager.CreateRoleBan(targetUid, located.Username, shell.Player?.UserId, null, targetHWid, job, minutes, severity, reason, now, round);
         }
     }
 
@@ -141,6 +167,7 @@ public sealed class DepartmentBanCommand : IConsoleCommand
             3 => CompletionResult.FromHint(Loc.GetString("cmd-roleban-hint-3")),
             4 => CompletionResult.FromHintOptions(durOpts, Loc.GetString("cmd-roleban-hint-4")),
             5 => CompletionResult.FromHintOptions(severities, Loc.GetString("cmd-roleban-hint-5")),
+            6 => CompletionResult.FromHint(Loc.GetString("cmd-roleban-hint-round")),
             _ => CompletionResult.Empty
         };
     }

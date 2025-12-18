@@ -43,6 +43,7 @@
 // SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
 // SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+// SPDX-FileCopyrightText: 2025 nikitosych <174215049+nikitosych@users.noreply.github.com>
 //
 // SPDX-License-Identifier: MIT
 
@@ -55,13 +56,14 @@ using Content.Server.Chat.Managers;
 using Content.Server.Connection;
 using Content.Server.Database;
 using Content.Server.Discord;
+using Content.Server.Discord.DiscordLink;
+using Content.Server.Discord.Managers;
 using Content.Server.Discord.WebhookMessages;
 using Content.Server.EUI;
 using Content.Server.GhostKick;
 using Content.Server.Info;
 using Content.Server.Mapping;
 using Content.Server.Maps;
-using Content.Server.MoMMI;
 using Content.Server.NodeContainer.NodeGroups;
 using Content.Server.Players.JobWhitelist;
 using Content.Server.Players.PlayTimeTracking;
@@ -87,7 +89,6 @@ namespace Content.Server.IoC
             IoCManager.Register<IChatManager, ChatManager>();
             IoCManager.Register<ISharedChatManager, ChatManager>();
             IoCManager.Register<IChatSanitizationManager, ChatSanitizationManager>();
-            IoCManager.Register<IMoMMILink, MoMMILink>();
             IoCManager.Register<IServerPreferencesManager, ServerPreferencesManager>();
             IoCManager.Register<IServerDbManager, ServerDbManager>();
             IoCManager.Register<RecipeManager, RecipeManager>();
@@ -102,6 +103,7 @@ namespace Content.Server.IoC
             IoCManager.Register<IAfkManager, AfkManager>();
             IoCManager.Register<IGameMapManager, GameMapManager>();
             IoCManager.Register<RulesManager, RulesManager>();
+            IoCManager.Register<DiscordBanNotifyManager, DiscordBanNotifyManager>();
             IoCManager.Register<IBanManager, BanManager>();
             IoCManager.Register<ContentNetworkResourceManager>();
             IoCManager.Register<IAdminNotesManager, AdminNotesManager>();
@@ -125,6 +127,9 @@ namespace Content.Server.IoC
             IoCManager.Register<ConnectionManager>();
             IoCManager.Register<MultiServerKickManager>();
             IoCManager.Register<CVarControlManager>();
+
+            IoCManager.Register<DiscordLink>();
+            IoCManager.Register<DiscordChatLink>();
         }
     }
 }

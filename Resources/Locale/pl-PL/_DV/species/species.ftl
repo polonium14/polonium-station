@@ -7,8 +7,9 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+
 ## Species Names
 
-species-name-vulpkanin = Vulpkanin
-species-name-harpy = Harpy
-species-name-rodentia = Rodentia
+species-name-vulpkanin = Wulp
+species-name-harpy = Harpia
+species-name-rodentia = Gryzoń

@@ -24,8 +24,8 @@ RELEASE_DIR = "release"
 # CONFIGURATION PARAMETERS
 # Forks should change these to publish to their own infrastructure.
 #
-ROBUST_CDN_URL = "https://build.funkystation.org/"
-FORK_ID = "funkystation"
+ROBUST_CDN_URL = "https://central.ss14.pl/"
+FORK_ID = "polonium"
 
 def main():
     parser = argparse.ArgumentParser()
@@ -40,6 +40,7 @@ def main():
     }
 
     print(f"Starting publish on Robust.Cdn for version {VERSION}")
+    print(f"Token length: {len(PUBLISH_TOKEN)}")
 
     data = {
         "version": VERSION,
@@ -87,6 +88,7 @@ def get_engine_version() -> str:
     proc = subprocess.run(["git", "describe","--tags", "--abbrev=0"], stdout=subprocess.PIPE, cwd="RobustToolbox", check=True, encoding="UTF-8")
     tag = proc.stdout.strip()
     assert tag.startswith("v")
+    print(f"Engine version: {tag[1:]}")
     return tag[1:] # Cut off v prefix.
 
 

@@ -6,18 +6,18 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 # Legal
-loadout-group-iaa-outer = Internal Affairs Agent outer clothing
-loadout-group-iaa-gloves = Internal Affairs Agent gloves
-loadout-group-iaa-jumpsuit = Internal Affairs Agent jumpsuit
-loadout-group-iaa-backpack = Internal Affairs Agent backpack
-loadout-group-iaa-belt = Internal Affairs Agent belt
+loadout-group-iaa-outer = Agent Spraw Wewnętrznych – odzież wierzchnia
+loadout-group-iaa-gloves = Agent Spraw Wewnętrznych – rękawice
+loadout-group-iaa-jumpsuit = Agent Spraw Wewnętrznych – kombinezon
+loadout-group-iaa-backpack = Agent Spraw Wewnętrznych – plecak
+loadout-group-iaa-belt = Agent Spraw Wewnętrznych – pas
 # Chaplain
-loadout-group-bible = Bible
+loadout-group-bible = Biblia
 # Magistrate
-loadout-group-magistrate-backpack = Magistrate backpack
-loadout-group-magistrate-head = Magistrate head
-loadout-group-magistrate-jumpsuit = Magistrate jumpsuit
-loadout-group-magistrate-gloves = Magistrate gloves
-loadout-group-magistrate-shoes = Magistrate shoes
-loadout-group-magistrate-outer = Magistrate outer clothing
-loadout-group-magistrate-flavor = Magistrate extras
+loadout-group-magistrate-backpack = Sędzia – plecak
+loadout-group-magistrate-head = Sędzia – nakrycie głowy
+loadout-group-magistrate-jumpsuit = Sędzia – kombinezon
+loadout-group-magistrate-gloves = Sędzia – rękawice
+loadout-group-magistrate-shoes = Sędzia – buty
+loadout-group-magistrate-outer = Sędzia – odzież wierzchnia
+loadout-group-magistrate-flavor = Sędzia – dodatki

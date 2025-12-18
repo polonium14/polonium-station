@@ -1,0 +1,19 @@
+- type: cargoProduct
+  id: ArmoryExclusivePistols
+  icon:
+    sprite: _Polonium/Weapons/Guns/VIS_MPS.rsi
+    state: icon
+  product: CrateArmoryExclusivePistols
+  cost: 5900
+  category: cargoproduct-category-name-armory
+  group: market
+
+- type: cargoProduct
+  id: ArmoryExclusiveSMGs
+  icon:
+    sprite: _Polonium/Weapons/Guns/SMGs/PMM.rsi
+    state: icon
+  product: CrateArmoryExclusiveSMGs
+  cost: 10300
+  category: cargoproduct-category-name-armory
+  group: market

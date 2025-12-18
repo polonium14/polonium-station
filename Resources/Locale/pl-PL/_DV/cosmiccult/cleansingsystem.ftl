@@ -4,10 +4,10 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-cleanse-deconvert-attempt-begin = { CAPITALIZE(THE($target)) } holds a rosary out towards you!
-cleanse-deconvert-attempt-begin-user = You attempt to cleanse { CAPITALIZE(THE($target)) } of otherworldly influences!
-cleanse-deconvert-attempt-success = You cleanse { CAPITALIZE(THE($target)) } in a cascade of holy light!
-cleanse-deconvert-attempt-success-empowered = You cleanse { CAPITALIZE(THE($target)) }, but a pulse of malign energy bursts forth!
-cleanse-deconvert-attempt-notcorrupted = { CAPITALIZE(THE($target)) } wasn't under the influence of anything.
+cleanse-deconvert-attempt-begin = { CAPITALIZE($target) } holds a rosary out towards you!
+cleanse-deconvert-attempt-begin-user = You attempt to cleanse { CAPITALIZE($target) } of otherworldly influences!
+cleanse-deconvert-attempt-success = You cleanse { CAPITALIZE($target) } in a cascade of holy light!
+cleanse-deconvert-attempt-success-empowered = You cleanse { CAPITALIZE($target) }, but a pulse of malign energy bursts forth!
+cleanse-deconvert-attempt-notcorrupted = { CAPITALIZE($target) } wasn't under the influence of anything.
 cleanse-deconvert-attempt-rebound = Holy energies lash out!
-cleanse-item-sizzle = { CAPITALIZE(THE($target)) } sizzles in your hands!
+cleanse-item-sizzle = { CAPITALIZE($target) } sizzles in your hands!

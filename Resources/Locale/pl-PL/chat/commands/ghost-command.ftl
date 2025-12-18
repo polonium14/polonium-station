@@ -1,7 +1,7 @@
-ghost-command-description = Give up on life and become a ghost.
+ghost-command-description = Poddać się egzystencjalnej rozpaczy i stać się duchem, porzucając swoje ciało.
 ghost-command-help-text =
-    The ghost command turns you into a ghost and makes the character you played permanently catatonic.
-    Please note that you cannot return to your character's body after ghosting.
-ghost-command-no-session = You have no session, you can't ghost.
-ghost-command-denied = You cannot ghost right now.
-ghost-command-error-lobby = You can't ghost right now. You are not in the game!
+    Komenda "ghost" zamienia cię w ducha i sprawia, że postać, którą grałeś, pozostaje w stanie katatonicznym.
+    Pamiętaj, że po zamianie w ducha nie możesz powrócić do ciała swojej postaci.
+ghost-command-no-session = Nie masz sesji, nie możesz stać się duchem.
+ghost-command-denied = Nie możesz teraz opuścić swojego ciała.
+ghost-command-error-lobby = Nie możesz teraz stać się duchem. Nie jesteś w grze!

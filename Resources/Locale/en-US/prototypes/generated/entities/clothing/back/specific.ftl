@@ -5,3 +5,5 @@ ent-ClothingBackpackWaterTank = backpack water tank
     .desc = Holds a large amount of fluids. Supplies to spray nozzles in your hands, and has a slot on the side for said spray nozzles.
 ent-ClothingBackpackFirefighterTank = backpack firefighter tank
     .desc = A refrigerated backpack water tank that can switch modes to launch ATMOS resin or work as a high pressure extinguisher.
+ent-BorgFirefighterTank = integrated firefighter tank
+    .desc = A refrigerated water tank that can switch modes to launch ATMOS resin or work as a high pressure extinguisher made to fit into an engineering cyborg.

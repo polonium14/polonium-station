@@ -64,10 +64,12 @@ using Content.Shared.Chat;
 using Content.Server.Chat.Systems;
 using Content.Server.PDA.Ringer;
 using Content.Server.Traitor.Uplink;
+using Content.Shared.CCVar;
 using Content.Shared.Changeling;
 using Content.Shared.Heretic;
 using Content.Shared.Implants;
 using Robust.Shared.Audio;
+using Robust.Shared.Configuration;
 
 namespace Content.Server.GameTicking.Rules;
 
@@ -93,6 +95,7 @@ public sealed class RevolutionaryRuleSystem : GameRuleSystem<RevolutionaryRuleCo
     [Dependency] private readonly ChatSystem _chatSystem = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly UplinkSystem _uplink = default!;
+    [Dependency] private readonly IConfigurationManager _cfg = default!;
 
 
     //Used in OnPostFlash, no reference to the rule component is available
@@ -205,7 +208,11 @@ public sealed class RevolutionaryRuleSystem : GameRuleSystem<RevolutionaryRuleCo
         }
 
         // funkystation
-        if (component.RevVictoryEndTime != null && _timing.CurTime >= component.RevVictoryEndTime)
+        if (
+            component.RevVictoryEndTime != null
+            && _timing.CurTime >= component.RevVictoryEndTime
+            && _cfg.GetCVar(CCVars.ShouldEndRoundOnRevVictory) // Polonium - let round continue on rev victory if config says so
+            )
         {
             EndRound();
 

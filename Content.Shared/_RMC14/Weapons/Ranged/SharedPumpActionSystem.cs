@@ -39,7 +39,10 @@ public abstract class SharedPumpActionSystem : EntitySystem
             return;
 
         if (!ent.Comp.Pumped)
+        {
+            args.Message = Loc.GetString("cm-gun-pump-first");
             args.Cancelled = true;
+        }
     }
 
     private void OnGunShot(Entity<PumpActionComponent> ent, ref GunShotEvent args)

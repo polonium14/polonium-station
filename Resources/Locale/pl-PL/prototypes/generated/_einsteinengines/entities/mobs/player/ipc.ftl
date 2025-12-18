@@ -1,4 +1,4 @@
-ent-MobIPC = Urist McPositronic
-    .desc = A positronic brain in a metal body.
-ent-MobIPCDummy = Urist McPositronic
-    .desc = A dummy IPC meant to be used in character setup.
+ent-MobIPC = Urist McPozytron
+    .desc = Mózg pozytronowy w humanoidalnej ramie.
+ent-MobIPCDummy = Urist McPozytron
+    .desc = Atrapa ZPP przeznaczona do użycia w konfiguracji postaci.

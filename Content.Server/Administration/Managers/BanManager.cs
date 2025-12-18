@@ -9,7 +9,10 @@
 // SPDX-FileCopyrightText: 2024 LordCarve <27449516+LordCarve@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
 // SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Polonium-bot <admin@ss14.pl>
 // SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+// SPDX-FileCopyrightText: 2025 nikitosych <174215049+nikitosych@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
 //
@@ -24,12 +27,14 @@ using System.Threading.Tasks;
 using Content.Server.Chat.Managers;
 using Content.Server.Database;
 using Content.Server.GameTicking;
+using Content.Server.Discord.Managers;
 using Content.Shared.CCVar;
 using Content.Shared.Database;
 using Content.Shared.Players;
 using Content.Shared.Players.PlayTimeTracking;
 using Content.Shared.Roles;
 using Robust.Server.Player;
+using Robust.Shared;
 using Robust.Shared.Asynchronous;
 using Robust.Shared.Collections;
 using Robust.Shared.Configuration;
@@ -56,6 +61,7 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly ITaskManager _taskManager = default!;
     [Dependency] private readonly UserDbDataManager _userDbData = default!;
+    [Dependency] private readonly DiscordBanNotifyManager _dc = default!;
 
     private ISawmill _sawmill = default!;
 
@@ -155,7 +161,7 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
     }
 
     #region Server Bans
-    public async void CreateServerBan(NetUserId? target, string? targetUsername, NetUserId? banningAdmin, (IPAddress, int)? addressRange, ImmutableTypedHwid? hwid, uint? minutes, NoteSeverity severity, string reason)
+    public async void CreateServerBan(NetUserId? target, string? targetUsername, NetUserId? banningAdmin, (IPAddress, int)? addressRange, ImmutableTypedHwid? hwid, uint? minutes, NoteSeverity severity, string reason, int? situationRound = 0)
     {
         DateTimeOffset? expires = null;
         if (minutes > 0)
@@ -210,6 +216,17 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
         _chat.SendAdminAlert(logMessage);
 
         KickMatchingConnectedPlayers(banDef, "newly placed ban");
+
+        _ = _dc.DiscordBanNotify(
+            adminName,
+            targetUsername ?? targetName,
+            reason,
+            expires.GetValueOrDefault().ToUnixTimeSeconds(),
+            DateTimeOffset.UtcNow.ToUnixTimeSeconds(),
+            roundId,
+            situationRound,
+            null
+        );
     }
 
     private void KickMatchingConnectedPlayers(ServerBanDef def, string source)
@@ -252,7 +269,7 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
     #region Job Bans
     // If you are trying to remove timeOfBan, please don't. It's there because the note system groups role bans by time, reason and banning admin.
     // Removing it will clutter the note list. Please also make sure that department bans are applied to roles with the same DateTimeOffset.
-    public async void CreateRoleBan(NetUserId? target, string? targetUsername, NetUserId? banningAdmin, (IPAddress, int)? addressRange, ImmutableTypedHwid? hwid, string role, uint? minutes, NoteSeverity severity, string reason, DateTimeOffset timeOfBan)
+    public async void CreateRoleBan(NetUserId? target, string? targetUsername, NetUserId? banningAdmin, (IPAddress, int)? addressRange, ImmutableTypedHwid? hwid, string role, uint? minutes, NoteSeverity severity, string reason, DateTimeOffset timeOfBan, int? situationRound = 0)
     {
         if (!_prototypeManager.TryIndex(role, out JobPrototype? _))
         {
@@ -269,6 +286,11 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
         _systems.TryGetEntitySystem(out GameTicker? ticker);
         int? roundId = ticker == null || ticker.RoundId == 0 ? null : ticker.RoundId;
         var playtime = target == null ? TimeSpan.Zero : (await _db.GetPlayTimes(target.Value)).Find(p => p.Tracker == PlayTimeTrackingShared.TrackerOverall)?.TimeSpent ?? TimeSpan.Zero;
+        reason = situationRound is null or 0
+            ? (roundId != null
+                ? $"**#{roundId}** | {reason}"
+                : reason)
+            : $"**#{situationRound}** | {reason}";
 
         var banDef = new ServerRoleBanDef(
             null,
@@ -294,10 +316,25 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
         var length = expires == null ? Loc.GetString("cmd-roleban-inf") : Loc.GetString("cmd-roleban-until", ("expires", expires));
         _chat.SendAdminAlert(Loc.GetString("cmd-roleban-success", ("target", targetUsername ?? "null"), ("role", role), ("reason", reason), ("length", length)));
 
-        if (target != null && _playerManager.TryGetSessionById(target.Value, out var session))
+        ICommonSession? session = null;
+        if (target != null && _playerManager.TryGetSessionById(target.Value, out var foundSession))
         {
+            session = foundSession;
             SendRoleBans(session);
         }
+
+        var isAdminFetched = _playerManager.TryGetSessionById(banningAdmin, out var adminSession);
+
+        _ = _dc.DiscordBanNotify(
+            isAdminFetched ? adminSession!.Name : _localizationManager.GetString("ban-notify-ban-admin-unknown"),
+            targetUsername ?? (session != null ? session.Name : _localizationManager.GetString("ban-notify-ban-target-user-unknown")),
+            reason,
+            expires.GetValueOrDefault().ToUnixTimeSeconds(),
+            DateTimeOffset.UtcNow.ToUnixTimeSeconds(),
+            roundId,
+            situationRound,
+            session != null ? _cachedRoleBans.GetValueOrDefault(session) ?? [] : []
+        );
     }
 
     public async Task<string> PardonRoleBan(int banId, NetUserId? unbanningAdmin, DateTimeOffset unbanTime)

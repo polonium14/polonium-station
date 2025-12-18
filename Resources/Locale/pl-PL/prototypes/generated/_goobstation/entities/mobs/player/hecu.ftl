@@ -1,3 +1,4 @@
-ent-RandomHumanoidHECUSpawner = HECU Operative
+ent-RandomHumanoidHECUSpawner = HECU Operatyw
     .suffix = ERTRole
     .desc = { "" }
+    .gender = male
