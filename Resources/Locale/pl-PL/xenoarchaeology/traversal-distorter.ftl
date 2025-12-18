@@ -1,4 +1,4 @@
-traversal-distorter-set-up = Traversal bias set to up, toward safer nodes
-traversal-distorter-set-down = Traversal bias set to down, toward more dangerous nodes
-traversal-distorter-desc-up = The affected artifact's traversal now favors moving up the node tree toward safer nodes.
-traversal-distorter-desc-down = The affected artifact's traversal now favors moving down the node tree towards more dangerous nodes.
+traversal-distorter-set-up = Bias trawersowania ustawiony na "w górę", w stronę bezpieczniejszych węzłów
+traversal-distorter-set-down = Bias trawersowania ustawiony na "w dół", w stronę bardziej niebezpiecznych węzłów
+traversal-distorter-desc-up = Trawersowanie dotkniętego artefaktu teraz faworyzuje ruch w górę drzewa węzłów, w stronę bezpieczniejszych węzłów.
+traversal-distorter-desc-down = Trawersowanie dotkniętego artefaktu teraz faworyzuje ruch w dół drzewa węzłów, w stronę bardziej niebezpiecznych węzłów.
