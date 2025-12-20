@@ -11,7 +11,6 @@ marking-used-forced = { $marking-name } (Wymuszone)
 marking-slot-add = Dodaj
 marking-slot-remove = Usuń
 marking-slot = Miejsce { $number }
-
 # Categories
 markings-category-Special = Specjalne
 markings-category-Hair = Włosy

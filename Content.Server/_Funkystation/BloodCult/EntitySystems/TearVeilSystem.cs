@@ -25,6 +25,7 @@ using Content.Server.AlertLevel;
 using Content.Server.Station.Systems;
 using Content.Server.Station.Components;
 using Content.Shared.Mind.Components;
+using Content.Server.Chat.Systems;
 
 namespace Content.Server.BloodCult.EntitySystems
 {
@@ -41,6 +42,7 @@ namespace Content.Server.BloodCult.EntitySystems
         [Dependency] private readonly AlertLevelSystem _alertLevel = default!;
         //[Dependency] private readonly StationSystem _station = default!;
         [Dependency] private readonly SharedTransformSystem _transform = default!;
+		[Dependency] private readonly ChatSystem _chat = default!;
 
 		public override void Initialize()
 		{
@@ -137,13 +139,13 @@ namespace Content.Server.BloodCult.EntitySystems
 		cultRule = ruleComp;
 		break;
 	}
-	
+
 	if (cultRule == null)
 	{
 		args.Handled = true;
 		return;
 	}
-	
+
 	var minimumRequired = cultRule.MinimumCultistsForVeilRitual;
 
 	// Count how many cultists are currently standing on TearVeilRunes on this map
@@ -152,8 +154,8 @@ namespace Content.Server.BloodCult.EntitySystems
 	if (cultistsOnRunes < minimumRequired)
 	{
 		_popupSystem.PopupEntity(
-			Loc.GetString("cult-veil-ritual-not-enough-cultists", 
-				("current", cultistsOnRunes), 
+			Loc.GetString("cult-veil-ritual-not-enough-cultists",
+				("current", cultistsOnRunes),
 				("required", minimumRequired)),
 			user, user, PopupType.LargeCaution
 		);
@@ -195,13 +197,13 @@ namespace Content.Server.BloodCult.EntitySystems
 			cultRule = ruleComp;
 			break;
 		}
-		
+
 		if (cultRule == null)
 		{
 			EndRitual(component, false);
 			return;
 		}
-		
+
 		var minimumRequired = cultRule.MinimumCultistsForVeilRitual;
 
 		// Count cultists on runes
@@ -212,8 +214,8 @@ namespace Content.Server.BloodCult.EntitySystems
 		{
 			// Not enough cultists, ritual fails
 			_popupSystem.PopupEntity(
-				Loc.GetString("cult-veil-ritual-not-enough-at-end", 
-					("current", cultistCount), 
+				Loc.GetString("cult-veil-ritual-not-enough-at-end",
+					("current", cultistCount),
 					("required", minimumRequired)),
 				runeUid, PopupType.LargeCaution
 			);
@@ -392,13 +394,21 @@ namespace Content.Server.BloodCult.EntitySystems
 					cultistUid, cultistUid, PopupType.LargeCaution
 				);
 			}
-			
+
 			// Set all stations to Delta alert level to notify the crew
 			var stationQuery = EntityQueryEnumerator<StationDataComponent>();
 			while (stationQuery.MoveNext(out var stationUid, out var _))
 			{
 				_alertLevel.SetLevel(stationUid, "delta", true, true, true);
 			}
+
+			// Central Command announcement briefing the crew
+			_chat.DispatchGlobalAnnouncement(
+				Loc.GetString("cult-veil-ritual-central-command-announcement"),
+				"Central Command",
+				playSound: false,
+				colorOverride: Color.FromHex("#cae8e8")
+			);
 		}
 	}
 }

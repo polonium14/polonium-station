@@ -1,0 +1,72 @@
+# SPDX-FileCopyrightText: 2025 Polonium-bot <admin@ss14.pl>
+# SPDX-FileCopyrightText: 2025 nikitosych <174215049+nikitosych@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  name: Wz.96 Beryl
+  parent: [BaseWeaponRifle, BaseSecurityContraband]
+  id: WeaponRifleBeryl
+  description: An iconic polish weapon of war. Uses .30 rifle ammo.
+  components:
+  - type: Item
+    size: Huge
+    shape:
+    - 0,0,4,2
+  - type: Sprite
+    sprite: _Polonium/Weapons/Guns/Rifles/beryl.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Polonium/Weapons/Guns/Rifles/beryl.rsi
+    quickEquip: false
+    slots:
+    - Back
+    - backStorage
+  - type: GunWieldBonus
+    minAngle: -5
+    maxAngle: -27
+  - type: Gun
+    fireRate: 5.5
+    minAngle: 7
+    maxAngle: 35
+    selectedMode: FullAuto
+    availableModes:
+      - FullAuto
+      - SemiAuto
+    soundGunshot:
+      path: /Audio/_Polonium/Weapons/Guns/beryl.ogg
+  - type: ChamberMagazineAmmoProvider
+    soundRack:
+      path: /Audio/Weapons/Guns/Cock/ltrifle_cock.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineRifle
+        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineRifle
+        whitelistFailPopup: gun-magazine-whitelist-fail
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeRifle
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeRifle
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance

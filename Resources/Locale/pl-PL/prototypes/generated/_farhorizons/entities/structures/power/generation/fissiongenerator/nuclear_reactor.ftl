@@ -1,0 +1,16 @@
+ent-BaseNuclearReactor = nuclear reactor
+    .desc = A nuclear reactor vessel, with slots for fuel rods and other components. Hey wait, didn't one of these explode once?
+ent-NuclearReactorEmpty = { ent-BaseNuclearReactor }
+    .suffix = Empty
+    .desc = { ent-BaseNuclearReactor.desc }
+ent-NuclearReactorMeltdown = { ent-BaseNuclearReactor }
+    .suffix = Meltdown
+    .desc = { ent-BaseNuclearReactor.desc }
+ent-ReactorComponent = reactor component
+    .desc = { "" }
+ent-NuclearDebrisChunk = nuclear debris
+    .desc = { ent-BaseItem.desc }
+ent-ReactorFlowArrow = { "" }
+    .desc = { "" }
+ent-ReactorGasPipe = { ent-GasPipeBase }
+    .desc = { ent-GasPipeBase.desc }

@@ -1,5 +1,6 @@
-parse-bool-fail = Unable to parse { $arg } as a bool
-parse-float-fail = Unable to parse { $arg } as a float
+# Konflikty z Resources\Locale\pl-PL\movement\eye.ftl
+# parse-bool-fail = Unable to parse { $arg } as a bool
+# parse-float-fail = Unable to parse { $arg } as a float
 cmd-lockeyes-desc = Prevents eyes from being rotated any further.
 cmd-lockeyes-help = Usage: lockeyes <true/false>
 cmd-rotateeyes-desc = Rotates every player's current eye to the specified rotation

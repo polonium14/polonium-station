@@ -12,4 +12,4 @@ ent-FenceMetalEnd = { ent-BaseFenceMetal }
     .suffix = Koniec
     .desc = { ent-BaseFenceMetal.desc }
 ent-FenceMetalGate = ogrodzenie z siatki drucianej z bramą
-    .desc = Możesz użyć drzwi zamiast przeskakiwać przez ogrodzenie - jeśli jesteś TCHÓRZEM, oczywiście.
+    .desc = Możesz użyć drzwi zamiast przeskakiwać przez ogrodzenie — jeśli jesteś TCHÓRZEM, oczywiście.

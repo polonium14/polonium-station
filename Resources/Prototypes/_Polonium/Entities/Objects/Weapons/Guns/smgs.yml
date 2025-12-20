@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2025 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Polonium-bot <admin@ss14.pl>
+# SPDX-FileCopyrightText: 2025 Tofi! <52051567+Tofi-Dev@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 nikitosych <174215049+nikitosych@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   name: PMM Model-X
   id: PMMMachineGun
@@ -20,7 +27,7 @@
       minAngle: -18
       maxAngle: -24
     - type: Gun
-      fireRate: 8
+      fireRate: 5.9
       burstFireRate: 15
       burstCooldown: 0.45
       shotsPerBurst: 3
@@ -62,3 +69,57 @@
         gun_chamber: !type:ContainerSlot
     - type: StaticPrice
       price: 3300
+
+- type: entity
+  name: Glauberyt
+  parent: [BaseWeaponSubMachineGun, BaseSecurityContraband]
+  id: WeaponSubMachineGunGlauberyt
+  description: Ciężki polski pistolet maszynowy używany przez jednostki specjalne. Używa amunicji pistoletowej .35.
+  components:
+    - type: Sprite
+      sprite: _Polonium/Weapons/Guns/SMGs/glauberyt.rsi
+      layers:
+        - state: base
+          map: ["enum.GunVisualLayers.Base"]
+        - state: mag-0
+          map: ["enum.GunVisualLayers.Mag"]
+    - type: Clothing
+      sprite: _Polonium/Weapons/Guns/SMGs/glauberyt.rsi
+    - type: Wieldable
+      unwieldOnUse: false
+    - type: GunWieldBonus
+      minAngle: -7
+      maxAngle: -18
+    - type: Gun
+      minAngle: 17
+      maxAngle: 33
+      fireRate: 6.75
+      soundGunshot:
+        path: /Audio/_Polonium/Weapons/Guns/glauberyt.ogg
+      availableModes:
+      - FullAuto
+      - SemiAuto
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          startingItem: MagazinePistolSubMachineGun
+          insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+          ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+          priority: 2
+          whitelist:
+            tags:
+              - MagazinePistolSubMachineGun
+          whitelistFailPopup: gun-magazine-whitelist-fail
+        gun_chamber:
+          name: Chamber
+          startingItem: CartridgePistol
+          priority: 1
+          whitelist:
+            tags:
+              - CartridgePistol
+    - type: MagazineVisuals
+      magState: mag
+      steps: 1
+      zeroVisible: true
+    - type: Appearance

@@ -4,3 +4,7 @@ ent-ClothingMaskClownGamble = gambling clown mask
     .desc = Looks like you weren't bluffing!
 ent-ClothingMaskClownJuggle = juggling clown mask
     .desc = It's a miracle that you are able to keep all those objects in the air.
+ent-ClothingMaskOddMime = odd mime mask
+    .desc = Something about this mask just feels... odd. You can't quite place why.
+ent-ClothingMaskSecurityMime = security mime mask
+    .desc = The silent treatment is now an official security protocol.

@@ -23,7 +23,8 @@ changeling-absorb-fail-absorbed = You've already absorbed it.
 changeling-absorb-fail-unabsorbable = The target is not absorbable.
 changeling-absorb-end-self = Another organic absorbed. You are evolving.
 changeling-absorb-end-self-ling = Another changeling absorbed. You are evolving more rapidly.
-changeling-absorb-onexamine = [color=red]The body feels hollow.[/color]
+changeling-absorb-onexamine =  [color=red]The body feels hollow.[/color]
+changeling-absorb-rotten = The body is too degraded to evolve from.
 changeling-convert-start = { CAPITALIZE($user) } is trying to sting { CAPITALIZE($target) }!
 changeling-convert-fail-incapacitated = You can't infect this person, they're not incapacitated.
 changeling-convert-fail-already = This person is already infected.
@@ -31,7 +32,7 @@ changeling-convert-fail-incompatible = This target is incompatible.
 changeling-convert-end = You infect { CAPITALIZE($target) }. They will be converted soon.
 changeling-convert-end-warning = { CAPITALIZE($user) } stings you! You feel a sharp pain in your arm.
 changeling-convert-end-immune = { CAPITALIZE($target) }'s body rejects the parasite.
-changeling-convert-chestbursted-unused = [color=red]They have a massive hole in their chest.[/color]
+changeling-convert-chestbursted-unused =  [color=red]They have a massive hole in their chest.[/color]
 changeling-convert-warning-1 = You feel a sharp pain!
 changeling-convert-warning-throwup = Your stomach feels like it's melting!
 changeling-convert-warning-2 = Your head throbs!

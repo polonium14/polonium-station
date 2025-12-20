@@ -4,10 +4,11 @@ character-setup-gui-character-setup-stats-button = Statystyki
 character-setup-gui-character-setup-rules-button = Zasady
 character-setup-gui-character-setup-close-button = Zamknij
 character-setup-gui-create-new-character-button = Utwórz nową postać...
-character-setup-gui-create-new-character-button-tooltip = Możesz mieć maksymalnie { $maxCharacters  ->
-    [one] jedną postać
-    [few] { $maxCharacters } postacie
-    *[other] { $maxCharacters } postaci
+character-setup-gui-create-new-character-button-tooltip =
+    Możesz mieć maksymalnie { $maxCharacters ->
+        [one] jedną postać
+        [few] { $maxCharacters } postacie
+       *[other] { $maxCharacters } postaci
     }.
 character-setup-gui-character-picker-button-delete-button = Usuń
 character-setup-gui-character-picker-button-confirm-delete-button = Potwierdź

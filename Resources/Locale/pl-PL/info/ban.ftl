@@ -2,17 +2,15 @@
 cmd-ban-desc = Banuje kogoś
 cmd-ban-help = Użycie: ban <nazwa albo id gracza> <powód> [długość w minutachm, zostaw 0 jeśli ban jest permanentny]
 cmd-ban-player = Nie znaleziono takiego gracza o podanej nazwie.
-cmd-ban-invalid-minutes = {$minutes} nie jest prawidłową liczbą minut!
-cmd-ban-invalid-severity = {$severity} nie jest prawidłowym poziomem surowości!
-cmd-ban-invalid-round = {$round} nie jest prawidłowym numerem rundy!
-
+cmd-ban-invalid-minutes = { $minutes } nie jest prawidłową liczbą minut!
+cmd-ban-invalid-severity = { $severity } nie jest prawidłowym poziomem surowości!
+cmd-ban-invalid-round = { $round } nie jest prawidłowym numerem rundy!
 cmd-ban-invalid-arguments = Nieprawidłowa liczba argumentów
 cmd-ban-hint = <nazwa/ID użytkownika>
 cmd-ban-hint-reason = <powód>
 cmd-ban-hint-duration = [czas trwania]
 cmd-ban-hint-severity = [poziom surowości]
 cmd-ban-hint-round = [numer rundy sytuacji]
-
 cmd-ban-hint-duration-1 = Permanentny
 cmd-ban-hint-duration-2 = 1 dzień
 cmd-ban-hint-duration-3 = 3 dni
@@ -75,7 +73,6 @@ ban-panel-ip-hwid-tooltip = Pozostaw puste i zaznacz poniżej, aby użyć danych
 ban-panel-severity = Surowość:
 ban-panel-erase = Usuń wiadomości na czacie i gracza z rundy
 ban-panel-situation-round = Runda sytuacji:
-
 # Ban string
 server-ban-string = { $admin } utworzył ban serwerowy o surowości { $severity }, który wygasa { $expires } dla [{ $name }, { $ip }, { $hwid }], z powodem: { $reason }
 server-ban-string-no-pii = { $admin } utworzył ban serwerowy o surowości { $severity }, który wygasa { $expires } dla { $name } z powodem: { $reason }

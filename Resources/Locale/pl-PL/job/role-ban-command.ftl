@@ -16,7 +16,6 @@ cmd-roleban-hint-duration-3 = 3 dni
 cmd-roleban-hint-duration-4 = 1 tydzień
 cmd-roleban-hint-duration-5 = 2 tygodnie
 cmd-roleban-hint-duration-6 = 1 miesiąc
-
 cmd-roleban-hint-round = Numer rundy sytuacji
 
 ### Localization for role unban command
@@ -40,16 +39,14 @@ cmd-rolebanlist-help = Użycie: <nazwa lub ID gracza> [zawrzyj odbanowane]
 
 cmd-rolebanlist-hint-1 = <nazwa lub ID gracza>
 cmd-rolebanlist-hint-2 = [zawrzyj odbanowane]
-
-cmd-roleban-minutes-parse = {$time} nie jest poprawną liczbą minut.\n{$help}
-cmd-roleban-severity-parse = {$severity} nie jest poprawnym poziomem\n{$help}.
+cmd-roleban-minutes-parse = { $time } nie jest poprawną liczbą minut.\n{ $help }
+cmd-roleban-severity-parse = { $severity } nie jest poprawnym poziomem\n{ $help }.
 cmd-roleban-arg-count = Niepoprawna liczba argumentów.
 cmd-roleban-job-parse = Rola { $job } nie istnieje.
 cmd-roleban-name-parse = Nie znaleziono gracza z taką nazwą.
-cmd-roleban-round-parse = "{$round}" nie jest numerem rundy.
-cmd-roleban-existing = {$target} już ma bana na {$role}.
-cmd-roleban-success = Zbanowano {$target} z roli {$role} z powodem {$reason} {$length}.
-
+cmd-roleban-round-parse = "{ $round }" nie jest numerem rundy.
+cmd-roleban-existing = { $target } już ma bana na { $role }.
+cmd-roleban-success = Zbanowano { $target } z roli { $role } z powodem { $reason } { $length }.
 cmd-roleban-inf = permamentnie
 cmd-roleban-until = do { $expires }
 # Department bans

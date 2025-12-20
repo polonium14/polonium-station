@@ -8,11 +8,12 @@
 # this file is subject to getting its shit moved to other files at a later date#
 
 # arachnids
-marking-SpiderMirror = Mirror
+# Konflikty z Resources\Locale\pl-PL\_Impstation\markings\arachnid.ftl są wykomentowane
+# marking-SpiderMirror = Mirror
 marking-SpiderMirror-spidermirror = Mirror
-marking-SpiderGlowEyes = Glowing Eyes
+# marking-SpiderGlowEyes = Glowing Eyes
 marking-SpiderGlowEyes-spidergloweyes = Glowing Eyes
-marking-SpiderEyesMulti = Multicolor Eyes
+# marking-SpiderEyesMulti = Multicolor Eyes
 marking-SpiderEyesMulti-spidereyesmulti1 = Top
 marking-SpiderEyesMulti-spidereyesmulti2 = Middle Top
 marking-SpiderEyesMulti-spidereyesmulti3 = Middle Bottom

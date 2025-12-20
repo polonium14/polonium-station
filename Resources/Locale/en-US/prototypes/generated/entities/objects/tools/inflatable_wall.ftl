@@ -1,11 +1,11 @@
 ent-InflatableWallStack = inflatable barricade
-    .desc = A folded membrane which rapidly expands into a large cubical shape on activation.
+    .desc = A folded membrane which rapidly expands into an airtight barricade upon its ripvalve being pulled.
     .suffix = Full
 ent-InflatableDoorStack = inflatable door
-    .desc = A folded membrane which rapidly expands into a large cubical shape on activation.
+    .desc = A folded membrane which rapidly expands into an airtight door upon its ripvalve being pulled.
     .suffix = Full
 ent-InflatableWallStack5 = { ent-InflatableWallStack }
-    .suffix = 5
+    .suffix = Redundant, do not map
     .desc = { ent-InflatableWallStack.desc }
 ent-InflatableWallStack1 = { ent-InflatableWallStack }
     .suffix = 1

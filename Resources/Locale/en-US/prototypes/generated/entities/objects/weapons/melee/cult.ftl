@@ -1,5 +1,5 @@
 ent-CultDagger = cult dagger
-    .desc = Can be used to scribe runes, and is a decent melee weapon. Can also be used on runes to erase them.
+    .desc = A sickening, crude bone blade. Tar-like ooze drips from the edge, poisoning your foes and protecting allies from your strikes. Useful as both a melee weapon and a throwing knife. Your veins pulse in anticipation - images of runes already flashing into your mind as you hold it.
 ent-CultDaggerCurved = cult dagger
     .suffix = Curved
     .desc = { ent-CultDagger.desc }

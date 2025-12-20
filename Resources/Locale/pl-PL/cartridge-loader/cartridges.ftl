@@ -17,12 +17,12 @@ log-probe-program-name = LogProbe
 log-probe-scan = Pobrano logi z { $device }!
 log-probe-label-time = Czas
 log-probe-label-accessor = Odblokowane przez:
-log-probe-label-number =  #
+log-probe-label-number = #
 log-probe-print-button = Wydrukuj Logi
 log-probe-printout-device = Zeskanowane Urządzenie: { $name }
 wordle-program-name = Wordle
 log-probe-printout-header = Najnowsze logi:
-log-probe-printout-entry =  #{ $number } / { $time } / { $accessor }
+log-probe-printout-entry = #{ $number } / { $time } / { $accessor }
 astro-nav-program-name = AstroNav
 med-tek-program-name = MedTek
 
@@ -67,24 +67,24 @@ nano-task-ui-description-placeholder = Zrób coś ważnego.
 nano-task-ui-requester-label = Żądający:
 nano-task-ui-requester-placeholder = Jan Nanotrasen
 nano-task-ui-item-title = Edytuj Zadanie
-nano-task-printed-description =  [bold]Opis[/bold]: { $description }
-nano-task-printed-requester =  [bold]Żądający[/bold]: { $requester }
-nano-task-printed-high-priority =  [bold]Priorytet[/bold]: [color=red]Wysoki[/color]
-nano-task-printed-medium-priority =  [bold]Priorytet[/bold]: Średni
-nano-task-printed-low-priority =  [bold]Priorytet[/bold]: Niski
+nano-task-printed-description = [bold]Opis[/bold]: { $description }
+nano-task-printed-requester = [bold]Żądający[/bold]: { $requester }
+nano-task-printed-high-priority = [bold]Priorytet[/bold]: [color=red]Wysoki[/color]
+nano-task-printed-medium-priority = [bold]Priorytet[/bold]: Średni
+nano-task-printed-low-priority = [bold]Priorytet[/bold]: Niski
 # Wanted list cartridge
 wanted-list-program-name = Lista Poszukiwanych
 wanted-list-label-no-records = Jest wszystko dobrze, żołnierzu!
 wanted-list-search-placeholder = Szukaj poprzez imie i status
-wanted-list-age-label =  [color=darkgray]Wiek:[/color] [color=white]{ $age }[/color]
-wanted-list-job-label =  [color=darkgray]Zawód:[/color] [color=white]{ $job }[/color]
-wanted-list-species-label =  [color=darkgray]Gatunek:[/color] [color=white]{ $species }[/color]
-wanted-list-gender-label =  [color=darkgray]Płeć:[/color] [color=white]{ $gender }[/color]
-wanted-list-reason-label =  [color=darkgray]Powód:[/color] [color=white]{ $reason }[/color]
+wanted-list-age-label = [color=darkgray]Wiek:[/color] [color=white]{ $age }[/color]
+wanted-list-job-label = [color=darkgray]Zawód:[/color] [color=white]{ $job }[/color]
+wanted-list-species-label = [color=darkgray]Gatunek:[/color] [color=white]{ $species }[/color]
+wanted-list-gender-label = [color=darkgray]Płeć:[/color] [color=white]{ $gender }[/color]
+wanted-list-reason-label = [color=darkgray]Powód:[/color] [color=white]{ $reason }[/color]
 wanted-list-unknown-reason-label = Nieznany Powód
-wanted-list-initiator-label =  [color=darkgray]Inicjator:[/color] [color=white]{ $initiator }[/color]
+wanted-list-initiator-label = [color=darkgray]Inicjator:[/color] [color=white]{ $initiator }[/color]
 wanted-list-unknown-initiator-label = Nieznany Inicjator
-wanted-list-status-label =  [color=darkgray]status:[/color] { $status ->
+wanted-list-status-label = [color=darkgray]status:[/color] { $status ->
         [suspected] [color=yellow]podejrzany[/color]
         [wanted] [color=red]poszukiwany[/color]
         [detained] [color=#b18644]zatrzymany[/color]

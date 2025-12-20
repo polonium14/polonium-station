@@ -84,7 +84,6 @@ holiday-custom-halloween = Strasznego Halloween!
 holiday-custom-kindness-day = Zrób dziś kilka przypadkowych dobrych uczynków dla nieznajomego!
 holiday-custom-christmas = Wesołych Świąt Bożego Narodzenia!
 holiday-custom-festive-season = Miłego świątecznego okresu!
-
 holiday-custom-polish-independence-day = Tego dnia w 1918 roku Polska odzyskała niepodległość po 123 latach zaborów!
 holiday-custom-polish-constitution-day = Tego dnia w 1791 roku Sejm Czteroletni uchwalił pierwszą w Europie i drugą na świecie nowoczesną konstytucję!
 holiday-custom-polish-saint-stanislaus-day = Szczęśliwego Dnia Świętego Stanisława, patrona Polski!

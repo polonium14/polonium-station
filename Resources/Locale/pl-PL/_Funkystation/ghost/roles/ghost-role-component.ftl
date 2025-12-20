@@ -32,3 +32,5 @@ ghost-role-information-mini-dragon-rules =
     You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
 ghost-role-information-horrific-necktie-name = Horrific Necktie
 ghost-role-information-horrific-necktie-description = A horribly garish necktie which, through the power of Disco, drinking, and divorce, has gained the ability to speak!
+ghost-role-information-meowl-name = Meowl
+ghost-role-information-meowl-description = A highly invasive apex predator. The sole cause of the rapid decline of mothroaches.

@@ -5,5 +5,5 @@ envelope-sealed-examine = [color=gray]{ CAPITALIZE($envelope) } is sealed.[/colo
 envelope-torn-examine = [color=yellow]{ CAPITALIZE($envelope) } is torn and unusable![/color]
 envelope-default-message =
     TO:
-
+    
     FROM:

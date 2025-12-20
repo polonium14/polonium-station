@@ -34,3 +34,5 @@ ent-ClothingUniformJumpskirtBaggyAtmosTied = atmospheric technician's tied jumps
     .desc = A comfortable jumpsuit, unzipped and tied around the waist. Gets a bit muggy in the Atmos bay.
 ent-ClothingUniformJumpskirtEngineeringElectricianTied = electrician's tied jumpsuit
     .desc = A comfortable jumpsuit, unzipped and tied around the waist. I don't think the anti-static wristband is going to save you from getting fried.
+ent-ClothingUniformJumpskirtParamedicSpeedskirt = paramedic speedskirt
+    .desc = Why do you think these things are like, 95% polyester? You can clean off blood and vomit with a wet nap!

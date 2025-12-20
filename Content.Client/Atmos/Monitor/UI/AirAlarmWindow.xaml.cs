@@ -15,7 +15,13 @@
 // SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
 // SPDX-FileCopyrightText: 2024 eoineoineoin <github@eoinrul.es>
 // SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Brandon Li <48413902+aspiringLich@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Janet Blackquill <uhhadd@gmail.com>
+// SPDX-FileCopyrightText: 2025 Kyle Tyo <akikai297@gmail.com>
+// SPDX-FileCopyrightText: 2025 Polonium-bot <admin@ss14.pl>
 // SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+// SPDX-FileCopyrightText: 2025 corresp0nd <46357632+corresp0nd@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 marc-pelletier <113944176+marc-pelletier@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 pa.pecherskij <pa.pecherskij@interfax.ru>
 // SPDX-FileCopyrightText: 2025 qwerltaz <msmarcinpl@gmail.com>
 // SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
@@ -25,7 +31,7 @@
 
 using Content.Client.Atmos.Monitor.UI.Widgets;
 using Content.Client.Message;
-using Content.Client.Stylesheets;
+using Content.Client.Stylesheets.Palette;
 using Content.Client.UserInterface.Controls;
 using Content.Shared.Atmos;
 using Content.Shared.Atmos.Monitor;
@@ -42,7 +48,7 @@ namespace Content.Client.Atmos.Monitor.UI;
 public sealed partial class AirAlarmWindow : FancyWindow
 {
     public event Action<string, IAtmosDeviceData>? AtmosDeviceDataChanged;
-	public event Action<IAtmosDeviceData>? AtmosDeviceDataCopied;
+    public event Action<IAtmosDeviceData>? AtmosDeviceDataCopied;
     public event Action<string, AtmosMonitorThresholdType, AtmosAlarmThreshold, Gas?>? AtmosAlarmThresholdChanged;
     public event Action<AirAlarmMode>? AirAlarmModeChanged;
     public event Action<bool>? AutoModeChanged;
@@ -156,7 +162,7 @@ public sealed partial class AirAlarmWindow : FancyWindow
             case GasVentPumpData pump:
                 if (!_pumps.TryGetValue(addr, out var pumpControl))
                 {
-                    var control= new PumpControl(pump, addr);
+                    var control = new PumpControl(pump, addr);
                     control.PumpDataChanged += AtmosDeviceDataChanged;
                     control.PumpDataCopied += AtmosDeviceDataCopied;
                     _pumps.Add(addr, control);
@@ -211,11 +217,9 @@ public sealed partial class AirAlarmWindow : FancyWindow
     {
         return curAlarm switch
         {
-            AtmosAlarmType.Danger => StyleNano.DangerousRedFore,
-            AtmosAlarmType.Warning => StyleNano.ConcerningOrangeFore,
-            _ => StyleNano.GoodGreenFore,
+            AtmosAlarmType.Danger => Palettes.Status.Critical,
+            AtmosAlarmType.Warning => Palettes.Status.Warning,
+            _ => Palettes.Status.Good,
         };
     }
-
-
 }

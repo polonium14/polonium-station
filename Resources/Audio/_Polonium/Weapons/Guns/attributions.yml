@@ -1,5 +1,20 @@
+# SPDX-FileCopyrightText: 2025 Polonium-bot <admin@ss14.pl>
+# SPDX-FileCopyrightText: 2025 Tofi! <52051567+Tofi-Dev@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 nikitosych <174215049+nikitosych@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - files: ["AlexisBorSniper.ogg"]
   license: "CC0-1.0"
   copyright: "Made by SuperPhat on Freesound, Modified by Tofi-Dev (github)"
   source: "https://freesound.org/people/SuperPhat/sounds/514228/"
 
+- files: ["beryl.ogg"]
+  license: "CC0-1.0"
+  copyright: "Made by michorvath on Freesound"
+  source: "https://freesound.org/people/michorvath/sounds/427598/"
+
+- files: ["glauberyt.ogg"]
+  license: "CC0-1.0"
+  copyright: "Made by michorvath on Freesound, Modified by Nikitosych (github)"
+  source: "https://freesound.org/people/michorvath/sounds/427592/"
