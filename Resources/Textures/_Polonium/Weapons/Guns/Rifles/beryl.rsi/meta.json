@@ -1,7 +1,7 @@
 {
 	"version": 1,
 	"license": "CC-BY-SA-3.0",
-	"copyright": "Made by Tofi_Dev (github), Based on the polish PMM submachine gun",
+	"copyright": "Taken from Aquilla https://github.com/aq33/NSV13/pull/94/files, Ported by Nikitosych (github), Based on the polish Wz.96 Beryl rifle",
 	"size": {
 		"x": 32,
 		"y": 32

@@ -1198,17 +1198,18 @@
     - MagazineBoxPistolLarge # Funkystation
     - MagazinePistolLargePractice # Funkystation
     - MagazineBoxPistolLargePractice # Funkystation
-    - VisMPSPistol
-    - VisMPSPistolMagazineEmpty
-    - VisMPSPistolMagazine
-    - VisMPSPistolMagazineIncendiary
-    - VisMPSPistolMagazineUranium
-    - VisMPSPistolMagazinePractice
-    - PMMMachineGunMagazineEmpty
-    - PMMMachineGunMagazine
-    - PMMMachineGunMagazineIncendiary
-    - PMMMachineGunMagazineUranium
-    - PMMMachineGunMagazinePractice
+    - VisMPSPistol # Polonium
+    - VisMPSPistolMagazineEmpty # Polonium
+    - VisMPSPistolMagazine # Polonium
+    - VisMPSPistolMagazineIncendiary # Polonium
+    - VisMPSPistolMagazineUranium # Polonium
+    - VisMPSPistolMagazinePractice # Polonium
+    - PMMMachineGunMagazineEmpty # Polonium
+    - PMMMachineGunMagazine # Polonium
+    - PMMMachineGunMagazineIncendiary # Polonium
+    - PMMMachineGunMagazineUranium # Polonium
+    - PMMMachineGunMagazinePractice # Polonium
+    - WeaponSubMachineGunGlauberyt # Polonium
     - RiotShield
     - SpeedLoaderMagnum
     - SpeedLoaderMagnumEmpty
@@ -1369,18 +1370,18 @@
     - MagazineShotgunSlug
     - SpeedLoaderMagnum
     - SpeedLoaderMagnumEmpty
-    - VisMPSPistolMagazineEmpty
-    - VisMPSPistolMagazine
-    - VisMPSPistolMagazineIncendiary
-    - VisMPSPistolMagazineUranium
-    - VisMPSPistolMagazinePractice
-    - PMMMachineGunMagazineEmpty
-    - PMMMachineGunMagazine
-    - PMMMachineGunMagazineIncendiary
-    - PMMMachineGunMagazineUranium
-    - PMMMachineGunMagazinePractice
-    - BorSniperMagazineEmpty
-    - BorSniperMagazine
+    - VisMPSPistolMagazineEmpty # Polonium
+    - VisMPSPistolMagazine # Polonium
+    - VisMPSPistolMagazineIncendiary # Polonium
+    - VisMPSPistolMagazineUranium # Polonium
+    - VisMPSPistolMagazinePractice # Polonium
+    - PMMMachineGunMagazineEmpty # Polonium
+    - PMMMachineGunMagazine # Polonium
+    - PMMMachineGunMagazineIncendiary # Polonium
+    - PMMMachineGunMagazineUranium # Polonium
+    - PMMMachineGunMagazinePractice # Polonium
+    - BorSniperMagazineEmpty # Polonium
+    - BorSniperMagazine # Polonium
   - type: EmagLatheRecipes # Goobstation
     emagStaticRecipes:
     - MagazinePistolCaselessRifle # Goobstation

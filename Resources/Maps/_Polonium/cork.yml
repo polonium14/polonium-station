@@ -1,13 +1,11 @@
-# SPDX-License-Identifier: MIT
-
 meta:
   format: 7
   category: Map
-  engineVersion: 266.0.0
+  engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 12/12/2025 00:09:29
-  entityCount: 7361
+  time: 12/20/2025 06:26:09
+  entityCount: 7363
 maps:
 - 1
 grids:
@@ -4147,6 +4145,7 @@ entities:
     - type: FTLDestination
     - type: GravityShake
       shakeTimes: 10
+    - type: ImplicitRoof
   - uid: 5
     components:
     - type: MetaData
@@ -6661,6 +6660,7 @@ entities:
     - type: NavMap
     - type: GravityShake
       shakeTimes: 10
+    - type: ImplicitRoof
   - uid: 7133
     components:
     - type: MetaData
@@ -6806,6 +6806,7 @@ entities:
     - type: RadiationGridResistance
     - type: IFF
       flags: Hide
+    - type: ImplicitRoof
 - proto: AcousticGuitarInstrument
   entities:
   - uid: 20
@@ -35518,6 +35519,14 @@ entities:
     - type: Transform
       pos: 1.3844416,17.510748
       parent: 2
+  - uid: 4300
+    components:
+    - type: Transform
+      pos: -17.512993,17.456884
+      parent: 2
+    - type: CollisionWake
+      enabled: False
+    - type: Conveyed
 - proto: PresentRandomInsane
   entities:
   - uid: 4296
@@ -35546,6 +35555,11 @@ entities:
     components:
     - type: Transform
       pos: -17.531164,9.377331
+      parent: 2
+  - uid: 4299
+    components:
+    - type: Transform
+      pos: -11.474948,9.540085
       parent: 2
 - proto: Protolathe
   entities:
@@ -51396,12 +51410,12 @@ entities:
     - type: Transform
       pos: -2.5058594,4.7223663
       parent: 7133
-- proto: WeaponRifleLecter
+- proto: WeaponRifleBeryl
   entities:
-  - uid: 5500
+  - uid: 4298
     components:
     - type: Transform
-      pos: -13.460488,20.61492
+      pos: -13.450883,20.727045
       parent: 2
 - proto: WeaponRifleM90GrenadeLauncher
   entities:
