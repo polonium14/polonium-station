@@ -1,8 +1,8 @@
-ent-Lantern = lantern
-    .desc = The holy light guides the way.
+ent-Lantern = latarnia
+    .desc = Święte światło wskazuje drogę.
 ent-LanternFlash = { ent-Lantern }
-    .suffix = Flash
+    .suffix = Błysk
     .desc = { ent-Lantern.desc }
 ent-EmptyLantern = { ent-Lantern }
-    .suffix = Empty
+    .suffix = Pusta
     .desc = { ent-Lantern.desc }

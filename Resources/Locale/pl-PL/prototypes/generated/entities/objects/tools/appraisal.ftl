@@ -1,2 +1,2 @@
-ent-AppraisalTool = appraisal tool
-    .desc = A beancounter's best friend, with a quantum connection to the galactic market and the ability to appraise even the toughest items. It will also tell you if a crate contains a completed bounty.
+ent-AppraisalTool = narzędzie wyceny
+    .desc = Najlepszy przyjaciel księgowego — dzięki kwantowemu połączeniu z galaktycznym rynkiem potrafi wycenić nawet najbardziej problematyczne przedmioty. Powie ci też, czy skrzynia zawiera ukończone żądanie logistyczne.

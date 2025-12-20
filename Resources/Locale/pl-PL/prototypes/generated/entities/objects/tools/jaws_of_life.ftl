@@ -1,4 +1,4 @@
-ent-JawsOfLife = jaws of life
-    .desc = A set of jaws of life, compressed through the magic of science.
-ent-SyndicateJawsOfLife = syndicate jaws of life
-    .desc = Useful for entering the station or its departments.
+ent-JawsOfLife = szczęki życia
+    .desc = Zestaw szczęk życia skompresowany dzięki magii nauki.
+ent-SyndicateJawsOfLife = szczęki życia Syndykatu
+    .desc = Przydatne do dostania się na stację lub do jej działów.

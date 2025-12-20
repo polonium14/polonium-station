@@ -1,12 +1,12 @@
-ent-BaseCrowbar = crowbar
+ent-BaseCrowbar = łom
     .desc = { ent-BaseItem.desc }
 ent-Crowbar = { ent-BaseCrowbar }
-    .desc = A multipurpose tool to pry open doors and fight interdimensional invaders.
+    .desc = Wielofunkcyjne narzędzie do wyważania drzwi i walki z międzywymiarowymi najeźdźcami.
 ent-CrowbarRed = emergency crowbar
     .desc = An emergency crowbar designed to pry open doors and firelocks during power outages.
 ent-CrowbarGreen = { ent-BaseCrowbar }
-    .desc = A multipurpose tool to pry open doors and fight interdimensional invaders, printed from an autolathe.
+    .desc = Wielofunkcyjne narzędzie do wyważania drzwi i walki z międzywymiarowymi najeźdźcami, wydrukowane z autolata.
 ent-CrowbarOrange = { ent-BaseCrowbar }
-    .desc = A multipurpose tool to pry open doors and fight interdimensional invaders, found in toolboxes.
+    .desc = Wielofunkcyjne narzędzie do wyważania drzwi i walki z międzywymiarowymi najeźdźcami, znalezione w skrzynkach z narzędziami.
 ent-CrowbarYellow = { ent-BaseCrowbar }
-    .desc = A multipurpose tool to pry open doors and fight interdimensional invaders, dispensed from Engineering.
+    .desc = Wielofunkcyjne narzędzie do wyważania drzwi i walki z międzywymiarowymi najeźdźcami, wydawane przez dział inżynierii.

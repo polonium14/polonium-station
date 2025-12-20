@@ -1,4 +1,4 @@
-ent-Bucket = bucket
-    .desc = It's a boring old bucket.
-ent-BorgBucket = internal tank
-    .desc = The internal reservoir of a custodial cyborg, capable of holding a entire mop bucket worth of water.
+ent-Bucket = wiadro
+    .desc = To nudne, stare wiadro.
+ent-BorgBucket = zbiornik wewnętrzny
+    .desc = Wewnętrzny rezerwuar cyborga sprzątającego, zdolny pomieścić tyle wody co całe wiadro do mopa.
