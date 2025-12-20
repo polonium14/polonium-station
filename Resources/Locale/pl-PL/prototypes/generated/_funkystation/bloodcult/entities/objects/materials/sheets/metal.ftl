@@ -1,3 +1,15 @@
+ent-SheetRunedSteel = runed steel
+    .desc = A sheet of otherworldly steel, used by acolytes of cosmic entities to assemble twisted constructs.
+    .suffix = Full
+ent-SheetRunedSteel30 = runed steel
+    .suffix = 30
+    .desc = { ent-SheetRunedSteel.desc }
+ent-SheetRunedSteel10 = runed steel
+    .suffix = 10
+    .desc = { ent-SheetRunedSteel.desc }
+ent-SheetRunedSteel1 = runed steel
+    .suffix = Single
+    .desc = { ent-SheetRunedSteel.desc }
 ent-SheetRunedMetal = runed metal
     .desc = A sheet of otherworldly metal, used by acolytes of cosmic entities to assemble twisted constructs.
     .suffix = Full

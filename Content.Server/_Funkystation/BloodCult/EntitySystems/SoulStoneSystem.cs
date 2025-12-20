@@ -64,18 +64,18 @@ public sealed class SoulStoneSystem : EntitySystem
 		SubscribeLocalEvent<SoulStoneComponent, UseInHandEvent>(OnUseInHand);
 		SubscribeLocalEvent<ShadeComponent, MobStateChangedEvent>(OnShadeDeath);
 		SubscribeLocalEvent<SoulStoneComponent, DestructionEventArgs>(OnSoulStoneDestroyed);
-		
+
 		// Prevent soulstones from moving or rotating
 		SubscribeLocalEvent<SoulStoneComponent, UpdateCanMoveEvent>(OnSoulstoneMove);
 		SubscribeLocalEvent<SoulStoneComponent, MoveInputEvent>(OnSoulstoneMoveInput);
-		
+
 		// Ensure soulstones can speak and emote when they have a mind
 		SubscribeLocalEvent<SoulStoneComponent, ComponentStartup>(OnSoulstoneStartup);
 		SubscribeLocalEvent<SoulStoneComponent, DamageChangedEvent>(OnSoulstoneDamaged);
 
 		_shadeQuery = GetEntityQuery<ShadeComponent>();
 	}
-	
+
 	private void OnSoulstoneStartup(EntityUid uid, SoulStoneComponent component, ComponentStartup args)
 	{
 		// Ensure the soulstone has speech components if it has a mind
@@ -160,17 +160,17 @@ public sealed class SoulStoneSystem : EntitySystem
 				{
 					_role.MindAddRole(mindId, "MindRoleCultist", mindComp);
 				}
-				
+
 			// Damage the user for releasing the shade
 			if (TryComp<DamageableComponent>(args.User, out _))
 			{
 				var damage = new DamageSpecifier();
-				
+
 				// Deal significant slash damage (30 points)
 				damage.DamageDict.Add("Slash", FixedPoint2.New(30));
-				
+
 				_damageable.TryChangeDamage(args.User, damage, ignoreResistances: false);
-				
+
 				// Add a very large bleed if the user has a bloodstream
 				if (TryComp<BloodstreamComponent>(args.User, out var bloodstream))
 				{
@@ -178,17 +178,17 @@ public sealed class SoulStoneSystem : EntitySystem
 					_bloodstream.TryModifyBleedAmount(args.User, 10.0f, bloodstream);
 				}
 			}
-				
+
 				var summonCoordinates = Transform((EntityUid)args.User).Coordinates;
 				var shadeEntity = Spawn("MobBloodCultShade", summonCoordinates);
 				_mind.TransferTo((EntityUid)mindContainer.Mind, shadeEntity, mind:mindComp);
-				
+
 				// Set the soulstone reference on the Shade so it knows where to return
 				if (TryComp<ShadeComponent>(shadeEntity, out var shadeComponent))
 				{
 					shadeComponent.SourceSoulstone = ent;
 				}
-			
+
 				_audioSystem.PlayPvs(new SoundPathSpecifier("/Audio/Magic/blink.ogg"), summonCoordinates);
 				_popupSystem.PopupEntity(
 					Loc.GetString("cult-shade-summoned"),
@@ -219,7 +219,7 @@ public sealed class SoulStoneSystem : EntitySystem
 
 
 		var soulstone = shade.Comp.SourceSoulstone.Value;
-		
+
 		// Verify the soulstone still exists
 		if (!Exists(soulstone))
 			return;
@@ -232,20 +232,20 @@ public sealed class SoulStoneSystem : EntitySystem
 	// Transfer the mind back to the soulstone
 	var coordinates = Transform(shade).Coordinates;
 	_mind.TransferTo((EntityUid)mindId, soulstone, mind: mindComp);
-	
+
 	// Ensure the soulstone can speak but not move
 	EnsureComp<SpeechComponent>(soulstone);
 	EnsureComp<EmotingComponent>(soulstone);
-	
+
 	_audioSystem.PlayPvs(new SoundPathSpecifier("/Audio/Magic/blink.ogg"), coordinates);
-		
+
 		// Delete the Shade entity
 		QueueDel(shade);
 	}
 
 	private void OnSoulStoneDestroyed(Entity<SoulStoneComponent> soulstone, ref DestructionEventArgs args)
 	{
-	
+
 		// Figure out where the soulstone is
 		var coordinates = Transform(soulstone).Coordinates;
 		// Glassbreak sound playing at the coordinates above
@@ -254,6 +254,11 @@ public sealed class SoulStoneSystem : EntitySystem
 		// Get the mind from the soulstone
 		EntityUid? mindId = CompOrNull<MindContainerComponent>(soulstone)?.Mind;
 
+		// Clear BloodCult antag role if present (e.g., from juggernauts)
+		if (mindId != null && _role.MindHasRole<BloodCultRoleComponent>(mindId.Value))
+		{
+			_role.MindTryRemoveRole<BloodCultRoleComponent>(mindId.Value);
+		}
 
 		// Figure out what the original entity was, probably a positronic brain or IPC brain
 		if (soulstone.Comp.OriginalEntityPrototype != null)
@@ -275,4 +280,3 @@ public sealed class SoulStoneSystem : EntitySystem
 		);
 	}
 }
-

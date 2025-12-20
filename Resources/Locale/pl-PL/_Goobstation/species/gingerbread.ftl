@@ -6,5 +6,5 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-# species-name-gingerbread = Gingerbread
+species-name-gingerbread = Gingerbread
 gingerbread-hurt-by-water-popup = The water melts part of you away!

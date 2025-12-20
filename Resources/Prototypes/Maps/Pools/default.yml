@@ -33,6 +33,7 @@
 # SPDX-FileCopyrightText: 2025 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Nikita (Nick) <nikitosyych@gmail.com>
 # SPDX-FileCopyrightText: 2025 Polonium-bot <admin@ss14.pl>
+# SPDX-FileCopyrightText: 2025 Kit <nikkiestes0@gmail.com>
 # SPDX-FileCopyrightText: 2025 Spanky <scott@wearejacob.com>
 # SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
 # SPDX-FileCopyrightText: 2025 mkanke-real <mikekanke@gmail.com>
@@ -50,6 +51,7 @@
 - type: gameMapPool
   id: DefaultMapPool
   maps: #funkystation
+  # low pop
   - Cluster
   - Eden
   - Bagel
@@ -63,5 +65,5 @@
   - Chibi
   - Reach
   - Olympus
-
+  - Court
 

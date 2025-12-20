@@ -50,6 +50,13 @@ public sealed class NameIdentifierSystem : EntitySystem
     {
         if (CurrentIds.TryGetValue(component.Group, out var ids))
         {
+            // Polonium edit: avoid processing the empty list
+            if (ids.Count == 0)
+            {
+                ids.Add(component.Identifier);
+                return;
+            }
+
             // Avoid inserting the value right back at the end or shuffling in place:
             // just pick a random spot to put it and then move that one to the end.
             var randomIndex = _robustRandom.Next(ids.Count);

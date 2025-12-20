@@ -390,7 +390,6 @@ ui-options-filter-nearest = Najbliższy (bez wygładzania)
 ui-options-filter-bilinear = Dwuliniowy (wygładzony)
 ui-options-ambient-occlusion = Pokaż Ambient Occlusion
 ui-options-function-toggle-knockdown = Przełącz pełzanie
-
 # Targeting
 ui-options-function-target-head = Celuj w głowę
 ui-options-function-target-torso = Celuj w tułów

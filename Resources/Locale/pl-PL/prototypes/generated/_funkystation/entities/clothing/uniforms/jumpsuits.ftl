@@ -100,3 +100,5 @@ ent-ClothingUniformJumpsuitEngineeringShirt = engineer's shirt with pants
     .desc = And we all lift, and we're all adrift, together...
 ent-ClothingUniformJumpsuitMedicalCustodian = medical custodian jumpsuit
     .desc = A cute jumpsuit worn by medical custodians. It's perfect for running from one end of the Medbay to the other, over and over.
+ent-ClothingUniformJumpsuitParamedicSpeedsuit = paramedic speedsuit
+    .desc = Why do you think these things are like, 95% polyester? You can clean off blood and vomit with a wet nap!

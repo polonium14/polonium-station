@@ -1,36 +1,27 @@
-
 ertcall-leader-eva-name = Lider JSR
 ertcall-leader-eva-desc = Lider Jednostki Szybkiego Reagowania.
 ertcall-leader-eva-rules = Twoim zadaniem jest dowodzić oddziałem specjalnym przy realizacji szczególnych celów na stacji. Podlegasz Centralnemu Dowództwu.
-
 ertcall-medic-eva-name = Medyk JSR
 ertcall-medic-eva-desc = Medyk Jednostki Szybkiego Reagowania.
 ertcall-medic-eva-rules = Twoim zadaniem jest udzielać pomocy medycznej członkom JSR podczas wykonywania zadań na stacji. Podlegasz liderowi JSR.
-
 ertcall-security-eva-name = Bojownik JSR
 ertcall-security-eva-desc = Bojownik Jednostki Szybkiego Reagowania.
 ertcall-security-eva-rules = Twoim zadaniem jest wykonywać cele na stacji, stosując siłę gdy to konieczne. Podlegasz liderowi JSR.
-
 ertcall-engineer-eva-name = Inżynier JSR
 ertcall-engineer-eva-desc = Inżynier Jednostki Szybkiego Reagowania.
 ertcall-engineer-eva-rules = Twoim zadaniem jest naprawiać uszkodzenia i przywracać atmosferę na stacji oraz tworzyć warunki do bezpiecznej ewakuacji personelu. Podlegasz liderowi JSR.
-
 ertcall-junitor-eva-name = Sprzątacz JSR
 ertcall-junitor-eva-desc = Sprzątacz Jednostki Szybkiego Reagowania.
 ertcall-junitor-eva-rules = Twoim zadaniem jest jak najszybciej doprowadzić stację do porządku. Twoi główni wrogowie to brud, zwłoki i chwasty z hydroponiki. Podlegasz liderowi JSR.
-
 ertcall-cburn-security-eva-name = RCBZ
 ertcall-cburn-security-eva-desc = Bojownik oddziału RCBZ.
 ertcall-cburn-security-eva-rules = Twoim zadaniem jest likwidować wszelkie skutki katastrofy na stacji. Podlegasz Centralnemu Dowództwu.
-
 ertcall-cburn-leader-eva-name = Lider RCBZ
 ertcall-cburn-leader-eva-desc = Lider oddziału RCBZ.
 ertcall-cburn-leader-eva-rules = Twoim zadaniem jest likwidować wszelkie skutki katastrofy na stacji. Podlegasz Centralnemu Dowództwu.
-
 ertcall-cburn-medic-eva-name = Medyk RCBZ
 ertcall-cburn-medic-eva-desc = Medyk oddziału RCBZ.
 ertcall-cburn-medic-eva-rules = Twoim zadaniem jest likwidować wszelkie skutki katastrofy na stacji. Podlegasz Centralnemu Dowództwu.
-
 ertcall-deadsquad-security-eva-name = Bojownik Korpusu Śmierci
 ertcall-deadsquad-security-eva-desc = Niszczyciel wszystkiego co żywe.
 ertcall-deadsquad-security-eva-rules = Twoim zadaniem jest zlikwidować stację i cały personel.

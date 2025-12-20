@@ -10,7 +10,7 @@ flavor-complex-barratry = like Barratry United
 
 ## non-alcoholic drinks
 
-# flavor-complex-eggnog = like egg and nog
+flavor-complex-eggnog = like egg and nog
 flavor-complex-peggnog = like nothing you've ever tasted before
 
 ## alcohols

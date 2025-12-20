@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2025 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Polonium-bot <admin@ss14.pl>
+# SPDX-FileCopyrightText: 2025 nikitosych <174215049+nikitosych@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   parent: [GunSafeBaseSecure, BaseSecurityContraband]
   id: GunSafeVisMPS
@@ -9,7 +15,7 @@
     - id: VisMPSPistol
       amount: 2
     - id: VisMPSPistolMagazine
-      amount: 6
+      amount: 10
 
 - type: entity
   parent: [GunSafeBaseSecure, BaseSecurityContraband]
@@ -21,4 +27,28 @@
     - id: PMMMachineGun
       amount: 2
     - id: PMMMachineGunMagazine
-      amount: 6
+      amount: 10
+
+- type: entity
+  parent: [GunSafeBaseSecure, BaseSecurityContraband]
+  id: GunSafeRifleBeryl
+  name: Sejf na Wz.96 Beryl
+  components:
+  - type: StorageFill
+    contents:
+    - id: WeaponRifleBeryl
+      amount: 2
+    - id: MagazineRifle
+      amount: 4
+
+- type: entity
+  parent: [GunSafeBaseSecure, BaseSecurityContraband]
+  id: GunSafeSubMachineGunGlauberyt
+  name: Sejf na Glauberyt
+  components:
+  - type: StorageFill
+    contents:
+    - id: WeaponSubMachineGunGlauberyt
+      amount: 2
+    - id: MagazinePistolSubMachineGun
+      amount: 4

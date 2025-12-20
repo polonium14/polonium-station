@@ -13,11 +13,11 @@ heretic-gamemode-title = Heretics
 heretic-gamemode-description = Dimensional anomaly detected within the station. There is no additional data.
 heretic-role-greeting-fluff =
     Another day at a meaningless job. You feel a shimmer around you, as a realization of something strange in the air unfolds. You look inwards and discover something that will change your life.
-
+    
     The Gates of Mansus open up to your mind.
 heretic-role-greeting =
     You are the Heretic!
-
+    
     Read more about your role in the guidebook entry.
 heretic-role-greeting-short =
     You are the Heretic!
@@ -41,7 +41,7 @@ ghostrole-stalker-desc = Aid your summoner in achieving ascension. Jaunt and sab
 ghostrole-ghoul-rules = You are a [color=red][bold]Team Antagonist[/bold][/color] with the one who summoned you and other eldritch beings.
 ghoul-notif-text =
     You have been resurrected as a ghoul!
-
+    
     Protect your new master and follow their orders.
 ghoul-notif-title = Return to Flesh
 hell-memory-confirm = Confirm

@@ -14,6 +14,7 @@ using Content.Server.GameTicking.Rules;
 using Content.Shared.BloodCult.Components;
 using Content.Shared.BloodCult;
 using Content.Shared.Chemistry.EntitySystems;
+using Content.Shared.Chemistry.Reaction;
 using Content.Shared.FixedPoint;
 using Content.Shared.Maps;
 using Content.Shared.Physics;
@@ -333,7 +334,7 @@ private bool TryFindValid3x3Space(EntityCoordinates center, out EntityCoordinate
 					// Safety check, never delete a player.
 					if (TryComp<MindContainerComponent>(entity, out var mind) && mind.Mind != null)
 						continue;
-					
+
 					// Destroy walls and other blockers so it doesn't spawn inside a wall.
 					if (TryComp<PhysicsComponent>(entity, out var physics))
 					{
@@ -351,7 +352,7 @@ private bool TryFindValid3x3Space(EntityCoordinates center, out EntityCoordinate
 		var centerTile = _mapSystem.TileIndicesFor(gridUid, grid, center);
 
 		// Replace 3x3 area with reinforced exterior hull flooring (centered around the rift position)
-		// Todo: Get a cooler looking bloodcult floor tile. 
+		// Todo: Get a cooler looking bloodcult floor tile.
 		// I just want to make sure they can't de-grid the anomaly because that'd break the code. And it needs to have adjacent tiles open because it needs those for offering runes to work.
 		var reinforcedTileDef = (ContentTileDefinition)_tileDefManager["FloorHullReinforced"];
 		var reinforcedTile = new Tile(reinforcedTileDef.TileId);
@@ -374,21 +375,20 @@ private bool TryFindValid3x3Space(EntityCoordinates center, out EntityCoordinate
 		riftComp.SummoningRunes.Clear();
 		riftComp.OfferingRunes.Clear();
 
-		// Spawn 4 offering runes around the rift: left, right, bottom, top
-		var leftRune = Spawn("OfferingRune", center.Offset(new Vector2(-1, 0)));
-		var rightRune = Spawn("OfferingRune", center.Offset(new Vector2(1, 0)));
-		var bottomRune = Spawn("OfferingRune", center.Offset(new Vector2(0, -1)));
-		var topRune = Spawn("OfferingRune", center.Offset(new Vector2(0, 1)));
+		// Spawn the final rift rune sprite at the center (same location as rift)
+		// Same size as TearVeilRune, with constant animation (no drawing animation)
+		var finalRune = Spawn("FinalRiftRune", center);
+		var finalRuneComp = EnsureComp<FinalSummoningRuneComponent>(finalRune);
+		finalRuneComp.RiftUid = rift;
 
-		// Track these runes for chanting and offerings
-		riftComp.SummoningRunes.Add(leftRune);
-		riftComp.SummoningRunes.Add(rightRune);
-		riftComp.SummoningRunes.Add(bottomRune);
-		riftComp.SummoningRunes.Add(topRune);
-		riftComp.OfferingRunes.Add(leftRune);
-		riftComp.OfferingRunes.Add(rightRune);
-		riftComp.OfferingRunes.Add(bottomRune);
-		riftComp.OfferingRunes.Add(topRune);
+		// Remove CleanableRune and Reactive components - FinalRiftRune should not be cleanable
+		// These are inherited from BaseBloodCultRune but we don't want them for the final rune
+		RemComp<CleanableRuneComponent>(finalRune);
+		RemComp<ReactiveComponent>(finalRune);
+
+		// Track the rune for chanting and offerings
+		riftComp.SummoningRunes.Add(finalRune);
+		riftComp.OfferingRunes.Add(finalRune);
 
 		// Pre-fills the blood pool with sanguine perniculate.
 		// This makes it so the anomaly spills blood onto the floor when it pulses, rather than taking a while to fill up. It'll make a slowly-growing ocean of blood.
@@ -402,4 +402,3 @@ private bool TryFindValid3x3Space(EntityCoordinates center, out EntityCoordinate
 		return rift;
 	}
 }
-

@@ -1,0 +1,78 @@
+# SPDX-FileCopyrightText: 2025 Polonium-bot <admin@ss14.pl>
+# SPDX-FileCopyrightText: 2025 nikitosych <174215049+nikitosych@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: listing
+  id: UplinkPistolVisMPS
+  name: uplink-pistol-vis-mps-name
+  description: uplink-pistol-vis-mps-desc
+  productEntity: VisMPSPistol
+  cost:
+    Telecrystal: 12
+  categories:
+  - UplinkWeaponry
+  saleLimit: 1
+
+- type: listing
+  id: UplinkPistolVisMPSMagazine
+  name: uplink-pistol-vis-mps-magazine-name
+  description: uplink-pistol-vis-mps-magazine-desc
+  productEntity: VisMPSPistolMagazine
+  cost:
+    Telecrystal: 2
+  categories:
+  - UplinkAmmo
+
+- type: listing
+  id: UplinkPistolPMM
+  name: uplink-pistol-pmm-name
+  description: uplink-pistol-pmm-desc
+  productEntity: PMMMachineGun
+  cost:
+    Telecrystal: 40
+  categories:
+  - UplinkWeaponry
+  saleLimit: 1
+
+- type: listing
+  id: UplinkPistolPMMMagazine
+  name: uplink-pistol-pmm-magazine-name
+  description: uplink-pistol-pmm-magazine-desc
+  productEntity: PMMMachineGunMagazine
+  cost:
+    Telecrystal: 9
+  categories:
+  - UplinkAmmo
+
+- type: listing
+  id: UplinkRifleBeryl
+  name: uplink-rifle-beryl-name
+  description: uplink-rifle-beryl-desc
+  productEntity: WeaponRifleBeryl
+  cost:
+    Telecrystal: 45
+  categories:
+  - UplinkWeaponry
+  saleLimit: 1
+
+- type: listing
+  id: UplinkSniperBor
+  name: uplink-sniper-bor-name
+  description: uplink-sniper-bor-desc
+  productEntity: BORSniperGun
+  cost:
+    Telecrystal: 55
+  categories:
+  - UplinkWeaponry
+  saleLimit: 1
+
+- type: listing
+  id: UplinkSniperBorMagazine
+  name: uplink-sniper-bor-magazine-name
+  description: uplink-sniper-bor-magazine-desc
+  productEntity: BorSniperMagazine
+  cost:
+    Telecrystal: 8
+  categories:
+  - UplinkAmmo

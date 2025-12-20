@@ -13,7 +13,7 @@
             "directions": 1,
             "delays": [
                 [
-                    1.2
+                    1.0
                 ]
             ]
         },
@@ -36,7 +36,7 @@
             "directions": 1,
             "delays": [
                 [
-                    1.2
+                    1.0
                 ]
             ]
         },

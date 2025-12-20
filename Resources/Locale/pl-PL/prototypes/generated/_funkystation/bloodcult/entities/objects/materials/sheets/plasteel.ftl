@@ -1,0 +1,12 @@
+ent-SheetRunedPlasteel = runed plasteel
+    .desc = A sheet of otherworldly plasteel, used by cultists to armor their robes.
+    .suffix = Full
+ent-SheetRunedPlasteel30 = runed plasteel
+    .suffix = 30
+    .desc = { ent-SheetRunedPlasteel.desc }
+ent-SheetRunedPlasteel10 = runed plasteel
+    .suffix = 10
+    .desc = { ent-SheetRunedPlasteel.desc }
+ent-SheetRunedPlasteel1 = runed plasteel
+    .suffix = Single
+    .desc = { ent-SheetRunedPlasteel.desc }
