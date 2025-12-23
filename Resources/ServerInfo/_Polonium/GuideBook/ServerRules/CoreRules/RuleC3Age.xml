@@ -9,6 +9,6 @@ SPDX-License-Identifier: MIT
 
 <Document>
   # Zasada 3
-  # Gracze muszą mieć co najmniej 16 lat i zachowywać się odpowiednio do tego wieku
-  Wszyscy gracze muszą mieć co najmniej 16 lat. Dodatkowo, wszyscy gracze muszą zachowywać się przynajmniej tak dojrzale jak 16-latek. Administratorzy mogą zbanować kogoś, kto ich zdaniem zachowuje się mniej dojrzale niż 16-latek, nawet jeśli wiadomo, że gracz jest znacznie starszy niż 16 lat.
+  # Gracze muszą mieć co najmniej 16 lat
+  Wszyscy gracze muszą mieć co najmniej 16 lat lub zachowywać się odpowiednio do tego wieku. Dodatkowo, wszyscy gracze muszą zachowywać się przynajmniej tak dojrzale jak 16-latek. Administratorzy mogą zbanować kogoś, kto ich zdaniem zachowuje się mniej dojrzale niż 16-latek, nawet jeśli wiadomo, że gracz jest znacznie starszy niż 16 lat.
 </Document>

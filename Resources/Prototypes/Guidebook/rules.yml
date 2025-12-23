@@ -55,7 +55,7 @@
   name: guide-entry-rules-s3
   ruleEntry: true
   priority: -7
-  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CommunityRules/RuleS3HNSFW.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CommunityRules/RuleS3NSFW.xml"
 
 - type: guideEntry
   id: RuleS4
