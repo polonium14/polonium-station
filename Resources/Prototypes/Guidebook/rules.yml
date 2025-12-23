@@ -16,11 +16,83 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+- type: guideEntry
+  id: CommunityRules
+  name: guide-entry-rules-community
+  ruleEntry: false
+  priority: -10
+  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CommunityRules/CommunityRules.xml"
+  children:
+  - RuleS1
+  - RuleS2
+  - RuleS3
+  - RuleS4
+  - RuleS5
+  - RuleS6
+  - RuleS7
+  - RuleS8
+
+- type: guideEntry
+  id: RuleS1
+  name: guide-entry-rules-s1
+  ruleEntry: true
+  priority: -9
+  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CommunityRules/RuleS1Respect.xml"
+
+- type: guideEntry
+  id: RuleS2
+  name: guide-entry-rules-s2
+  ruleEntry: true
+  priority: -8
+  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CommunityRules/RuleS2Spam.xml"
+
+- type: guideEntry
+  id: RuleS3
+  name: guide-entry-rules-s3
+  ruleEntry: true
+  priority: -7
+  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CommunityRules/RuleS3HNSFW.xml"
+
+- type: guideEntry
+  id: RuleS4
+  name: guide-entry-rules-s4
+  ruleEntry: true
+  priority: -6
+  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CommunityRules/RuleS4QuetionableTopics.xml"
+
+- type: guideEntry
+  id: RuleS5
+  name: guide-entry-rules-s5
+  ruleEntry: true
+  priority: -5
+  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CommunityRules/RuleS5Safety.xml"
+
+- type: guideEntry
+  id: RuleS6
+  name: guide-entry-rules-s6
+  ruleEntry: true
+  priority: -4
+  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CommunityRules/RuleS6Evading.xml"
+
+- type: guideEntry
+  id: RuleS7
+  name: guide-entry-rules-s7
+  ruleEntry: true
+  priority: -3
+  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CommunityRules/RuleS7Admins.xml"
+
+- type: guideEntry
+  id: RuleS8
+  name: guide-entry-rules-s8
+  ruleEntry: true
+  priority: -2
+  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CommunityRules/RuleS8Loopholes.xml"
+
 - type: guideEntry # Default for forks and stuff. Should not be listed anywhere if the server is using a custom ruleset.
   id: DefaultRuleset
   name: guide-entry-rules
-  priority: -10
-  text: "/ServerInfo/Guidebook/ServerRules/DefaultRules.xml"
+  priority: 0
+  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/DefaultRules.xml"
   children:
   - CoreRules
 #  - RoleplayRules
@@ -35,14 +107,14 @@
   name: guide-entry-rules-role-types
   ruleEntry: true
   priority: 20
-  text: "/ServerInfo/Guidebook/ServerRules/RoleTypes.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/RoleTypes.xml"
 
 - type: guideEntry
   id: CoreRules
   name: guide-entry-rules-core
   ruleEntry: true
   priority: 30
-  text: "/ServerInfo/Guidebook/ServerRules/CoreRules/RuleC0.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CoreRules/RuleC0.xml"
   children:
   - RuleC1
   - RuleC2
@@ -56,7 +128,7 @@
   - RuleC10
   - RuleC11
   - RuleC12
-  - RuleC13
+  #- RuleC13
   - RuleC14
 
 - type: guideEntry
@@ -64,112 +136,113 @@
   name: guide-entry-rules-c1
   ruleEntry: true
   priority: 1
-  text: "/ServerInfo/Guidebook/ServerRules/CoreRules/RuleC1DBAA.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CoreRules/RuleC1DBAA.xml"
 
 - type: guideEntry
   id: RuleC2
   name: guide-entry-rules-c2
   ruleEntry: true
   priority: 2
-  text: "/ServerInfo/Guidebook/ServerRules/CoreRules/RuleC2English.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CoreRules/RuleC2PolishOnlyPolski.xml"
 
 - type: guideEntry
   id: RuleC3
   name: guide-entry-rules-c3
   ruleEntry: true
   priority: 3
-  text: "/ServerInfo/Guidebook/ServerRules/CoreRules/RuleC3Age.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CoreRules/RuleC3Age.xml"
 
 - type: guideEntry
   id: RuleC4
   name: guide-entry-rules-c4
   ruleEntry: true
   priority: 4
-  text: "/ServerInfo/Guidebook/ServerRules/CoreRules/RuleC4AdminRulings.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CoreRules/RuleC4AdminRulings.xml"
 
 - type: guideEntry
   id: RuleC5
   name: guide-entry-rules-c5
   ruleEntry: true
   priority: 5
-  text: "/ServerInfo/Guidebook/ServerRules/CoreRules/RuleC5ERP.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CoreRules/RuleC5ERP.xml"
 
 - type: guideEntry
   id: RuleC6
   name: guide-entry-rules-c6
   ruleEntry: true
   priority: 6
-  text: "/ServerInfo/Guidebook/ServerRules/CoreRules/RuleC6Metagaming.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CoreRules/RuleC6Metagaming.xml"
 
 - type: guideEntry
   id: RuleC7
   name: guide-entry-rules-c7
   ruleEntry: true
   priority: 7
-  text: "/ServerInfo/Guidebook/ServerRules/CoreRules/RuleC7PlayYourCharacter.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CoreRules/RuleC7PlayYourCharacter.xml"
 
 - type: guideEntry
   id: RuleC8
   name: guide-entry-rules-c8
   ruleEntry: true
   priority: 8
-  text: "/ServerInfo/Guidebook/ServerRules/CoreRules/RuleC8Names.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CoreRules/RuleC8Names.xml"
 
 - type: guideEntry
   id: RuleC9
   name: guide-entry-rules-c9
   ruleEntry: true
   priority: 9
-  text: "/ServerInfo/Guidebook/ServerRules/CoreRules/RuleC9UseProperEscalation.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CoreRules/RuleC9UseProperEscalation.xml"
 
 - type: guideEntry
   id: RuleC10
   name: guide-entry-rules-c10
   ruleEntry: true
   priority: 10
-  text: "/ServerInfo/Guidebook/ServerRules/CoreRules/RuleC10SecandCommand.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CoreRules/RuleC10SecandCommand.xml"
 
 - type: guideEntry
   id: RuleC11
   name: guide-entry-rules-c11
   ruleEntry: true
   priority: 11
-  text: "/ServerInfo/Guidebook/ServerRules/CoreRules/RuleC11SiliconPolicy.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CoreRules/RuleC11SiliconPolicy.xml"
 
 - type: guideEntry
   id: RuleC12
   name: guide-entry-rules-c12
   ruleEntry: true
   priority: 12
-  text: "/ServerInfo/Guidebook/ServerRules/CoreRules/RuleC12Antag.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CoreRules/RuleC12Antag.xml"
 
-- type: guideEntry
-  id: RuleC13
-  name: guide-entry-rules-c13
-  ruleEntry: true
-  priority: 13
-  text: "/ServerInfo/Guidebook/ServerRules/CoreRules/RuleC13NoEORG.xml"
+# Polonium: EORG is allowed
+# - type: guideEntry
+#   id: RuleC13
+#   name: guide-entry-rules-c13
+#   ruleEntry: true
+#   priority: 13
+#   text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CoreRules/RuleC13NoEORG.xml"
 
 - type: guideEntry
   id: RuleC14
   name: guide-entry-rules-c14
   ruleEntry: true
   priority: 14
-  text: "/ServerInfo/Guidebook/ServerRules/CoreRules/RuleC14LOOC.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CoreRules/RuleC14LOOC.xml"
 
 - type: guideEntry
   id: Metashield
   name: guide-entry-metashield
   ruleEntry: false
   priority: 4
-  text: "/ServerInfo/Guidebook/ServerRules/Metashield.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/Metashield.xml"
 
 - type: guideEntry
   id: NamingScheme
   name: guide-entry-namingscheme
   ruleEntry: true
   priority: 4
-  text: "/ServerInfo/Guidebook/ServerRules/NamingScheme.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/NamingScheme.xml"
 
 #- type: guideEntry
 #  id: RuleC14
@@ -443,7 +516,7 @@
   id: SpaceLaw
   name: guide-entry-rules-space-law
   priority: 1
-  text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/SpaceLaw.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/SpaceLaw/SpaceLaw.xml"
   children:
   - SpaceLawCrimeList
 
@@ -451,24 +524,24 @@
   id: RulesOfConduct
   name: guide-entry-rules-of-conduct
   priority: 10
-  text: "/ServerInfo/Funkystation/Guidebook/Security/RulesOfConduct.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Security/RulesOfConduct.xml"
 
 - type: guideEntry
   id: SpaceLawCrimeList
   name: guide-entry-rules-sl-crime-list
   priority: 5
-  text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/SLCrimeList.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/SpaceLaw/SLCrimeList.xml"
 
 - type: guideEntry
   id: BanTypes
   name: guide-entry-rules-ban-types
   ruleEntry: true
   priority: 90
-  text: "/ServerInfo/Guidebook/ServerRules/BanTypes.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/BanTypes.xml"
 
 - type: guideEntry
   id: BanDurations
   name: guide-entry-rules-ban-durations
   ruleEntry: true
   priority: 100
-  text: "/ServerInfo/Guidebook/ServerRules/BanDurations.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/BanDurations.xml"

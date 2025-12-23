@@ -179,6 +179,7 @@ guide-entry-rules-r15 = R15
 guide-entry-rules-silicon = Zasady humanoidów silikonowych
 guide-entry-rules-r16 = R16
 guide-entry-rules-r17 = R17
+guide-entry-rules-community = Zasady Społeczności
 guide-entry-rules-s1 = S1
 guide-entry-rules-s2 = S2
 guide-entry-rules-s3 = S3
