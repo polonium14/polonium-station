@@ -1,3 +1,8 @@
+// SPDX-FileCopyrightText: 2025 Ciarán Walsh <github@ciaranwal.sh>
+// SPDX-FileCopyrightText: 2025 Polonium-bot <admin@ss14.pl>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Client.Guidebook.RichText;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
