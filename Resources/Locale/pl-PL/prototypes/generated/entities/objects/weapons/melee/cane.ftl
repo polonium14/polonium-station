@@ -1,10 +1,10 @@
-ent-Cane = cane
-    .desc = A wooden cane.
-ent-CaneBlade = cane blade
-    .desc = A sharp blade with a cane shaped hilt. Enchanted with fire powers by a fellow book lover.
+ent-Cane = laska
+    .desc = Drewniana laska.
+ent-CaneBlade = ostrze laski
+    .desc = Ostro zakończone ostrze z rękojeścią w kształcie laski. Zaczarowane mocą ognia przez miłośnika książek.
 ent-CaneSheath = { ent-Cane }
-    .suffix = Empty
+    .suffix = Pusta
     .desc = { ent-Cane.desc }
 ent-CaneSheathFilled = { ent-CaneSheath }
-    .suffix = Filled
+    .suffix = Pełna
     .desc = { ent-CaneSheath.desc }
