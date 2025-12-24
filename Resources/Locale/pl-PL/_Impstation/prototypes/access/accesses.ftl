@@ -4,4 +4,4 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-id-card-access-level-logistics = Logistics
+id-card-access-level-logistics = Zaopatrzenie
