@@ -141,7 +141,7 @@ SPDX-License-Identifier: MIT
         [color=black]Vandalism (C)[/color]
       </Box>
     </ColorBox>
-    <ColorBox Color="#dae8fc">>
+    <ColorBox Color="#dae8fc">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         [color=black]Damage/Destruction of Property (C)[/color]
       </Box>
