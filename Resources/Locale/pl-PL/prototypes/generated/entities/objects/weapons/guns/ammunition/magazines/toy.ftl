@@ -1,2 +1,2 @@
-ent-MagazineFoamBox = ammunition box (foam)
+ent-MagazineFoamBox = skrzynia amunicji (pianka)
     .desc = { ent-MagazineLightRifleBox.desc }

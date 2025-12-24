@@ -1,6 +1,6 @@
-ent-PelletClusterRubber = pellet (ball, rubber)
+ent-PelletClusterRubber = śrut (kulka, gumowe)
     .desc = { ent-BaseBullet.desc }
-ent-PelletClusterLethal = pellet (ball, lethal)
+ent-PelletClusterLethal = śrut (kulka, śmiercionośne)
     .desc = { ent-BaseBullet.desc }
-ent-PelletClusterIncendiary = pellet (ball, incendiary)
+ent-PelletClusterIncendiary = śrut (kulka, zapalające)
     .desc = { ent-BaseBulletIncendiary.desc }

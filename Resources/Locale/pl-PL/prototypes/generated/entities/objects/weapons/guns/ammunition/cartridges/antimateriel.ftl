@@ -1,2 +1,2 @@
-ent-CartridgeAntiMateriel = cartridge (.60 anti-materiel)
+ent-CartridgeAntiMateriel = nabój (.60 przeciwmateriałowy)
     .desc = { ent-BaseCartridge.desc }

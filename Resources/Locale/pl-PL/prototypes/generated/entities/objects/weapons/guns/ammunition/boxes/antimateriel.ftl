@@ -1,6 +1,6 @@
-ent-BaseMagazineBoxAntiMateriel = ammunition box (.60 anti-materiel)
+ent-BaseMagazineBoxAntiMateriel = skrzynka amunicji (.60 przeciwmateriałowe)
     .desc = { ent-BaseItem.desc }
-ent-MagazineBoxAntiMaterielBig = ammunition box (.60 anti-materiel)
+ent-MagazineBoxAntiMaterielBig = skrzynka amunicji (.60 przeciwmateriałowe)
     .desc = { ent-BaseMagazineBoxAntiMateriel.desc }
-ent-MagazineBoxAntiMateriel = ammunition box (.60 anti-materiel)
+ent-MagazineBoxAntiMateriel = skrzynka amunicji (.60 przeciwmateriałowe)
     .desc = { ent-BaseMagazineBoxAntiMateriel.desc }

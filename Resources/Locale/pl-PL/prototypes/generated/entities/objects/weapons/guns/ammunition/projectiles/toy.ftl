@@ -1,2 +1,2 @@
-ent-BulletFoam = foam dart
-    .desc = I hope you're wearing eye protection.
+ent-BulletFoam = strzałka piankowa
+    .desc = Mam nadzieję, że masz na sobie ochronę oczu.

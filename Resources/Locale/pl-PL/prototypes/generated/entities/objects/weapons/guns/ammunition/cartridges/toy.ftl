@@ -1,4 +1,4 @@
-ent-BaseCartridgeCap = cartridge (cap)
+ent-BaseCartridgeCap = nabój (kapiszony)
     .desc = { ent-BaseCartridge.desc }
-ent-CartridgeCap = cap gun cartridge
+ent-CartridgeCap = nabój do pistoletu na kapiszony
     .desc = { ent-BaseCartridgeCap.desc }

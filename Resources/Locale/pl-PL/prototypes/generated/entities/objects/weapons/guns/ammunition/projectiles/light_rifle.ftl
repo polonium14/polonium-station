@@ -1,10 +1,10 @@
-ent-BulletLightRifle = bullet (.20 rifle)
+ent-BulletLightRifle = kula (.20 karabinowe)
     .desc = { ent-BaseBullet.desc }
-ent-BulletLightRiflePractice = bullet (.20 rifle practice)
+ent-BulletLightRiflePractice = kula (.20 karabinowe treningowe)
     .desc = { ent-BaseBulletPractice.desc }
-ent-BulletLightRifleSilver = bullet (.20 rifle silver)
+ent-BulletLightRifleSilver = kula (.20 karabinowe srebrne)
     .desc = { ent-BaseBulletPractice.desc }
-ent-BulletLightRifleIncendiary = bullet (.20 rifle incendiary)
+ent-BulletLightRifleIncendiary = kula (.20 karabinowe zapalające)
     .desc = { ent-BaseBulletIncendiary.desc }
-ent-BulletLightRifleUranium = bullet (.20 rifle uranium)
+ent-BulletLightRifleUranium = kula (.20 karabinowe uranowe)
     .desc = { ent-BaseBulletUranium.desc }
