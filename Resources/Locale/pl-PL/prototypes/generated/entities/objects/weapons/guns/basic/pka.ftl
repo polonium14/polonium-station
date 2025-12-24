@@ -1,2 +1,2 @@
-ent-WeaponProtoKineticAccelerator = proto-kinetic accelerator
-    .desc = Fires low-damage kinetic bolts at a short range.
+ent-WeaponProtoKineticAccelerator = akcelerator protokinetyczny
+    .desc = Wystrzeliwuje pociski kinetyczne o niewielkiej sile rażenia na krótki dystans.
