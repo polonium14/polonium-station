@@ -1,2 +1,2 @@
-ent-BoxShellHypo = shell box (12 gauge hypo)
+ent-BoxShellHypo = pudełko na naboje (12 kalibru hypo)
     .desc = { ent-AmmoProviderShotgunShell.desc }

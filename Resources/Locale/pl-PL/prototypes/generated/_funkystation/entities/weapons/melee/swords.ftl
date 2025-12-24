@@ -1,2 +1,2 @@
-ent-ImprovisedEnergySword = improvised energy sword
-    .desc = A energy sword cobbled together from random parts. Burns through power like no other.
+ent-ImprovisedEnergySword = improwizowany miecz energetyczny
+    .desc = Miecz energetyczny złożony z przypadkowych części. Spala energię jak żaden inny.
