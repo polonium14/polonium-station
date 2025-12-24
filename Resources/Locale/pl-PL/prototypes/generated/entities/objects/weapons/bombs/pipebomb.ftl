@@ -1,8 +1,8 @@
-ent-PipeBomb = pipe bomb
-    .desc = An improvised explosive made from pipes and wire.
-ent-PipeBombGunpowder = pipe bomb
-    .desc = An improvised explosive made from a pipe. This one has no gunpowder.
-    .suffix = Gunpowder
-ent-PipeBombCable = pipe bomb
-    .desc = An improvised explosive made from a pipe. This one has no cable.
-    .suffix = Cable
+ent-PipeBomb = bomba rurowa
+    .desc = Improwizowany ładunek wybuchowy wykonany z rur i przewodów.
+ent-PipeBombGunpowder = bomba rurowa
+    .desc = Improwizowany ładunek wybuchowy wykonany z rury. Ten nie ma prochu strzelniczego.
+    .suffix = Proch strzelniczy
+ent-PipeBombCable = bomba rurowa
+    .desc = Improwizowany ładunek wybuchowy wykonany z rury. Ten nie ma przewodu.
+    .suffix = Przewód
