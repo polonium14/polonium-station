@@ -16,9 +16,23 @@ bounty-item-donk-pocket = Donk-pocket
 
 # Items
 bounty-item-donut = pączek
+bounty-item-ambrosia = ambrozja
+bounty-item-advanced-mop = zaawansowany mop
 bounty-item-figurine = figurka
+bounty-item-cake = ciasto
 bounty-item-flesh-monster = mięsisty potwór
 bounty-item-flower = kwiat
+bounty-item-arrow = strzała
+bounty-item-borg-arm = ramię robota
+bounty-item-borg-head = głowa robota
+bounty-item-borg-leg = noga robota
+bounty-item-borg-torso = tułów robota
+bounty-item-borg-module-engineering = moduł inżynieryjnego robota
+bounty-item-borg-module-generic = moduł typowego robota
+bounty-item-borg-module-janitor = moduł woźnego robota
+bounty-item-borg-module-medical = moduł medycznego robota
+bounty-item-borg-module-service = moduł usługowego robota
+bounty-item-bot = bot
 bounty-item-cleaver = tasak
 bounty-item-cloth-made = jedzenie z materiału
 bounty-item-galaxythistle = oset galaktyczny
