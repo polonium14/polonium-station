@@ -28,7 +28,7 @@
 - type: gameMap
   id: Core
   mapName: 'Core'
-  mapPath: /Maps/_Funkystation/core.yml #Funkystatin - Robotics
+  mapPath: /Maps/_Polonium/core.yml #Funkystatin - Robotics
   minPlayers: 30
   maxPlayers: 90
   stations:
