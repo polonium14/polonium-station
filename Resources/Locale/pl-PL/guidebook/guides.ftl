@@ -144,6 +144,7 @@ guide-entry-rules-lrp = Standardowy zestaw zasad
 guide-entry-rules-mrp = Zestaw zasad MRP
 guide-entry-rules-role-types = Typy ról
 guide-entry-rules-core = Zasady Główne
+guide-entry-rules-c00 = G0
 guide-entry-rules-c1 = G1
 guide-entry-rules-c2 = G2
 guide-entry-rules-c3 = G3

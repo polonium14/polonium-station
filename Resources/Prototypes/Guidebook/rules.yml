@@ -95,7 +95,7 @@
 - type: guideEntry # Default for forks and stuff. Should not be listed anywhere if the server is using a custom ruleset.
   id: DefaultRuleset
   name: guide-entry-rules
-  priority: 0
+  priority: -1
   text: "/ServerInfo/_Polonium/Guidebook/ServerRules/DefaultRules.xml"
   children:
   - CoreRules
@@ -134,6 +134,13 @@
   - RuleC12
   #- RuleC13
   - RuleC14
+
+- type: guideEntry
+  id: RuleC00
+  name: guide-entry-rules-c00
+  ruleEntry: true
+  priority: 0
+  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CoreRules/RuleC00.xml"
 
 - type: guideEntry
   id: RuleC1
@@ -221,7 +228,7 @@
 #   text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CoreRules/RuleC13NoEORG.xml"
 
 - type: guideEntry
-  id: RuleC14
+  id: RuleC12
   name: guide-entry-rules-c12
   ruleEntry: true
   priority: 12
