@@ -1,2 +1,2 @@
-ent-StasisBaton = futuristic stunbaton
-    .desc = An advanced security baton for shutting down interfering tiders
+ent-StasisBaton = futurystyczna pałka ogłuszająca
+    .desc = Zaawansowana pałka ochrony do wyłączania przeszkadzających osobników
