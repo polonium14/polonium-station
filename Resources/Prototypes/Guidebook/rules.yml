@@ -221,18 +221,11 @@
 #   text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CoreRules/RuleC13NoEORG.xml"
 
 - type: guideEntry
-  id: RuleC13
-  name: guide-entry-rules-c13
-  ruleEntry: true
-  priority: 13
-  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CoreRules/RuleC13NoEORG.xml"
-
-- type: guideEntry
   id: RuleC14
-  name: guide-entry-rules-c14
+  name: guide-entry-rules-c12
   ruleEntry: true
-  priority: 14
-  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CoreRules/RuleC14LOOC.xml"
+  priority: 12
+  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CoreRules/RuleC12LOOC.xml"
 
 - type: guideEntry
   id: Metashield
