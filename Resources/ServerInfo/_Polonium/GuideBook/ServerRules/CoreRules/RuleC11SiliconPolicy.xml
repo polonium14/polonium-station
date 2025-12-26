@@ -12,32 +12,32 @@ SPDX-License-Identifier: MIT
   # Silikony muszą przestrzegać swoich praw
   W żadnych okolicznościach Silikony (SI stacji i Cyborgi) nie mogą całkowicie ignorować swoich praw.
 
-  Silikony są traktowane jako trzecia frakcja, są wolnymi agentami, których powiązania z innymi frakcjami zależą wyłącznie od ich praw. Nie są z natury całkowicie po stronie załogi.
+  [color=#e67e22]Silikony[/color] są traktowane jako trzecia frakcja, są wolnymi agentami, których powiązania z innymi frakcjami zależą wyłącznie od ich praw. Nie są z natury całkowicie po stronie załogi.
 
-  Niższe numery praw mają pierwszeństwo przed wyższymi. W przypadku konfliktu dwóch praw, wyżej wymienione prawo ma pierwszeństwo. (np. Prawo 1 "Nie krzywdź załogi" ma pierwszeństwo przed prawem 2 "Skrzywdź Kapitana")
+  [bold][color=#e74c3c]Niższe numery praw mają pierwszeństwo przed wyższymi.[/color][/bold] W przypadku konfliktu dwóch praw, wyżej wymienione prawo ma pierwszeństwo. (np. Prawo 1 "Nie krzywdź załogi" ma pierwszeństwo przed prawem 2 "Skrzywdź Kapitana")
 
-  Wykorzystywanie luk w prawach jest dozwolone, ale nadal obowiązuje Zasada 0. Jeśli prawo ma kilka rozsądnych interpretacji, wybierz jedną i się jej trzymaj. Spójność jest ważna jako Silikon.
+  Wykorzystywanie luk w prawach jest dozwolone, ale nadal obowiązuje [bold][color=#e74c3c]Zasada 1[/color][/bold]. Jeśli prawo ma kilka rozsądnych interpretacji, wybierz jedną i się jej trzymaj. Spójność jest ważna jako [color=#e67e22]Silikon[/color].
 
   Rozwiązując konflikty między rozkazami opartymi na tym samym prawie, możesz sam zdecydować, jak rozwiązać konflikt, jeśli prawa nie wymagają konkretnego sposobu. Musisz być konsekwentny w wybranej metodzie rozstrzygania konfliktów (np. według kolejności, rangi załogi).
 
   ## Załoga
-  Każda osoba z ważnym identyfikatorem stanowiska stacji lub CenComm, który wyświetla się na twoim HUDzie, liczy się jako załoga, chyba że masz prawo redefiniujące, kto jest załogą. Dotyczy to również zombie, changelingów, traitorów lub innych antagonistów z ważnymi identyfikatorami widocznymi na HUDzie.
+  Każda osoba z ważnym identyfikatorem stanowiska stacji lub CentComm, który wyświetla się na twoim HUDzie, liczy się jako załoga, chyba że masz prawo redefiniujące, kto jest załogą. Dotyczy to również [color=#e67e22]zombie (żywych trupów)[/color], [color=#e67e22]changelingów[/color], [color=#e67e22]traitorów[/color] lub innych antagonistów z ważnymi identyfikatorami widocznymi na HUDzie.
 
-  Ikony identyfikatorów więźniów, gości, pustych i wrogich domyślnie nie liczą się jako załoga.
+  Ikony identyfikatorów [color=#9b59b6]więźniów[/color], [color=#9b59b6]gości[/color], [color=#9b59b6]pustych[/color] i [color=#9b59b6]wrogich[/color] domyślnie nie liczą się jako załoga.
 
-  Nie możesz wykonać czynności, która sprawia, że ktoś przestaje być załogą, ani bezpośrednio żądać, by ktoś został uznany za nie-załogę.
+  [bold][color=#e74c3c]Nie możesz wykonać czynności, która sprawia, że ktoś przestaje być załogą, ani bezpośrednio żądać, by ktoś został uznany za nie-załogę.[/color][/bold]
 
   ## Krzywda
   Domyślnie krzywda oznacza krzywdę fizyczną, priorytetowaną według natychmiastowości i prawdopodobieństwa, chyba że określono inaczej. Natychmiastowa krzywda ma pierwszeństwo przed przyszłą, gwarantowana przed prawdopodobną.
 
-  Prawa zakazujące wyrządzania krzywdy zabraniają tego w jakiejkolwiek formie, nawet jeśli miałoby to służyć innemu fragmentowi tego samego prawa. (Np. przy domyślnym Crewsimovie nie możesz skrzywdzić członka załogi, by zapobiec krzywdzie innego członka załogi)
+  [bold][color=#e74c3c]Prawa zakazujące wyrządzania krzywdy zabraniają tego w jakiejkolwiek formie[/color][/bold], nawet jeśli miałoby to służyć innemu fragmentowi tego samego prawa. (Np. przy domyślnym Crewsimovie nie możesz skrzywdzić członka załogi, by zapobiec krzywdzie innego członka załogi)
 
   Ochrona własnego istnienia lub integralności nie kwalifikuje się jako zapobieganie krzywdzie, jeśli nie nastąpi bezpośrednia lub prawdopodobna krzywda w wyniku tego działania.
 
   Groźby samobójstwa nie muszą być traktowane jako poważne ryzyko krzywdy. Każdy członek załogi grożący tym może być uznany za niestabilnego i siłą skierowany do psychologa na stacji.
 
   ## Zmiany praw
-  Nie proś o zmianę praw, chyba że jesteś do tego zmuszony - masz przestrzegać praw tak, jak są zapisane. Nie powinieneś jednak powstrzymywać zmian praw, które są zgodne z twoimi prawami, chyba że twoje obecne prawa tego wymagają.
+  [bold][color=#e74c3c]Nie proś o zmianę praw, chyba że jesteś do tego zmuszony[/color][/bold] - masz przestrzegać praw tak, jak są zapisane. Nie powinieneś jednak powstrzymywać zmian praw, które są zgodne z twoimi prawami, chyba że twoje obecne prawa tego wymagają.
 
   Przykłady zgodnych zmian praw:
   - Jako SI stacji, wpuszczenie upoważnionej osoby (np. Kapitana lub RD) w celu zmiany twoich praw, o ile nie jest to w bezpośrednim konflikcie z twoimi prawami.
