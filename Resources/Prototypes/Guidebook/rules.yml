@@ -168,56 +168,49 @@
   name: guide-entry-rules-c5
   ruleEntry: true
   priority: 5
-  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CoreRules/RuleC5ERP.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CoreRules/RuleC5Metagaming.xml"
 
 - type: guideEntry
   id: RuleC6
   name: guide-entry-rules-c6
   ruleEntry: true
   priority: 6
-  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CoreRules/RuleC6Metagaming.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CoreRules/RuleC6PlayYourCharacter.xml"
 
 - type: guideEntry
   id: RuleC7
   name: guide-entry-rules-c7
   ruleEntry: true
   priority: 7
-  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CoreRules/RuleC7PlayYourCharacter.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CoreRules/RuleC7Names.xml"
 
 - type: guideEntry
   id: RuleC8
   name: guide-entry-rules-c8
   ruleEntry: true
   priority: 8
-  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CoreRules/RuleC8Names.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CoreRules/RuleC8UseProperEscalation.xml"
 
 - type: guideEntry
   id: RuleC9
   name: guide-entry-rules-c9
   ruleEntry: true
   priority: 9
-  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CoreRules/RuleC9UseProperEscalation.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CoreRules/RuleC9SecandCommand.xml"
 
 - type: guideEntry
   id: RuleC10
   name: guide-entry-rules-c10
   ruleEntry: true
   priority: 10
-  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CoreRules/RuleC10SecandCommand.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CoreRules/RuleC10SiliconPolicy.xml"
 
 - type: guideEntry
   id: RuleC11
   name: guide-entry-rules-c11
   ruleEntry: true
   priority: 11
-  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CoreRules/RuleC11SiliconPolicy.xml"
-
-- type: guideEntry
-  id: RuleC12
-  name: guide-entry-rules-c12
-  ruleEntry: true
-  priority: 12
-  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CoreRules/RuleC12Antag.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CoreRules/RuleC11Antag.xml"
 
 # Polonium: EORG is allowed
 # - type: guideEntry
@@ -226,6 +219,13 @@
 #   ruleEntry: true
 #   priority: 13
 #   text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CoreRules/RuleC13NoEORG.xml"
+
+- type: guideEntry
+  id: RuleC13
+  name: guide-entry-rules-c13
+  ruleEntry: true
+  priority: 13
+  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CoreRules/RuleC13NoEORG.xml"
 
 - type: guideEntry
   id: RuleC14
