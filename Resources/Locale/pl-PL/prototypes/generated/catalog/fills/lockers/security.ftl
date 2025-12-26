@@ -16,8 +16,7 @@ ent-LockerDetectiveFilled = { ent-LockerDetective }
 ent-ClosetBombFilled = { ent-ClosetBomb }
     .suffix = Pełny
     .desc = { ent-ClosetBomb.desc }
-# TODO PRZETŁUMACZYĆ DISABLER
-ent-GunSafeDisabler = sejf na disabler
+ent-GunSafeDisabler = sejf na ogłuszacz
     .desc = { ent-GunSafeBaseSecure.desc }
 ent-GunSafePistolMk58 = sejf na MK58
     .desc = { ent-GunSafeBaseSecure.desc }
