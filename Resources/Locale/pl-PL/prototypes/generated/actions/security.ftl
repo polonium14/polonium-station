@@ -1,2 +1,2 @@
-ent-ActionToggleKnuckleDustersStun = Przełącz obrączki ogłuszające
-    .desc = Przełącza wbudowaną pałkę ogłuszającą w obrączkach.
+ent-ActionToggleKnuckleDustersStun = Przełącz kastety ogłuszające
+    .desc = Przełącza wbudowaną pałkę ogłuszającą w kastetach.
