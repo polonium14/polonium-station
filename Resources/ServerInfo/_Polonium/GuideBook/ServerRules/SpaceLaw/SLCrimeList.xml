@@ -1,82 +1,68 @@
+<!--
+SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+SPDX-FileCopyrightText: 2024 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 dffdff2423 <dffdff2423@gmail.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
 <Document>
-  # Space Law: Crime Listing
-  Crime codes are colored by linked crime groups, which are collections of non-stackable crimes. Suffixes are also included in the Quick Crime Guide to identify linked crimes.
+  # Prawo kosmiczne: Wykaz przestępstw
+  Przestępstwa są uporządkowane według stopnia (wagi) oraz koloru lub przypisanego im kodu literowego.
 
-  ## Quick Crime Guide
-  <Table Columns="6">
+  [bold]Przestępstwa o tym samym kolorze lub kodzie nie mogą być stawiane w zarzutach łącznie.[/bold] Na przykład, jeśli aresztujesz kogoś za morderstwo, nie możesz oskarżyć tej samej osoby o napaść.
+
+  ## Pobieżny wykaz przestępstw
+  <Table Columns="5">
     <ColorBox>
       <Box>
-        1-XX - Minor
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box>
-        2-XX - Moderate
+        I Stopnia
       </Box>
     </ColorBox>
     <ColorBox>
       <Box>
-        3-XX - Major
+        II Stopnia
       </Box>
     </ColorBox>
     <ColorBox>
       <Box>
-        4-XX - Extreme
+        III Stopnia
       </Box>
     </ColorBox>
     <ColorBox>
       <Box>
-        5-XX - Capital
+        IV Stopnia
       </Box>
     </ColorBox>
     <ColorBox>
       <Box>
-        Code
+        V Stopnia
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Animal Cruelty
+        Posiadanie/używanie nielegalnych substancji
       </Box>
     </ColorBox>
-    <ColorBox Color="#593a4e">
+    <ColorBox Color="#ffcc67">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Failure to Comply (E)
+        [color=black]Niezastosowanie się do poleceń (L)[/color]
       </Box>
     </ColorBox>
-    <ColorBox Color="#593a4e">
+    <ColorBox Color="#ffcc67">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Breach of Arrest (E)
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#593a4e">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Breach of Custody (E)
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#593a4e">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Refusal of Mental Shielding (E)
+        [color=black]Naruszenie zatrzymania (L)[/color]
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        00
+        Porwanie
       </Box>
     </ColorBox>
-    <ColorBox Color="#2f3832">
+    <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Possession: Minor (P)
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#2f3832">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Possession: Major (P)
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#2f3832">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Possession: Syndicate (P)
+        Rażące zaniedbanie
       </Box>
     </ColorBox>
     <ColorBox>
@@ -85,30 +71,12 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Okrucieństwo wobec zwierząt
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        01
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#2e422e">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Petty Theft (H)
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#2e422e">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Grand Theft (H)
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Kidnapping
+        Ucieczka z aresztu
       </Box>
     </ColorBox>
     <ColorBox>
@@ -117,50 +85,21 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        02
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#453a59">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Vandalism (D)
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#453a59">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Damage of Property (D)
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#453a59">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Mass Destruction (D)
+        Odmowa poddania się osłonie umysłu
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
       </Box>
     </ColorBox>
-    <ColorBox Color="#453a59">
+    <ColorBox Color="#fd6864">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Station-Wide Destruction (D)
+        [color=black]Narażenie na\nniebezpieczeństwo (M)[/color]
       </Box>
     </ColorBox>
-    <ColorBox>
+    <ColorBox Color="#fd6864">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        03
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#59563a">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Trespass (T)
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#59563a">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Secure Trespass (T)
+        [color=black]Nieumyślne spowodowanie śmierci (M)[/color]
       </Box>
     </ColorBox>
     <ColorBox>
@@ -169,40 +108,70 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Uniemożliwienie wskrzeszenia
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#68cbd0">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]Zakłócanie porządku (R)[/color]
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#68cbd0">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]Zamieszki (R)[/color]
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#fd6864">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]Napaść/pobicie (M)[/color]
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#fd6864">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]Morderstwo (M)[/color]
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#fd6864">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]Masowe morderstwo (M)[/color]
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#dae8fc">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]Wandalizm (C)[/color]
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#dae8fc">>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]Uszkodzenie/zniszczenie mienia (C)[/color]
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#dae8fc">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]Masowe zniszczenie (C)[/color]
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        04
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Terroryzm
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
       </Box>
     </ColorBox>
-    <ColorBox Color="#4d2e2e">
+    <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Endangerment (V)
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#4d2e2e">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Assault (V)
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#4d2e2e">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Attempted Murder (V)
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#4d2e2e">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Prevention of Revival (V)
+        Posiadanie sprzętu\nobjętego ograniczeniami
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        05
+        Posiadanie broni\nobjętej ograniczeniami
       </Box>
     </ColorBox>
     <ColorBox>
@@ -213,38 +182,18 @@
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
       </Box>
     </ColorBox>
-    <ColorBox Color="#4d2e2e">
+    <ColorBox Color="#9698ED">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Manslaughter (V)
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#4d2e2e">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Murder (V)
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#4d2e2e">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Mass Murder (V)
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        06
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#3b4354">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Disturbance (R)
+        [color=black]Wtargnięcie (T)[/color]
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
       </Box>
     </ColorBox>
-    <ColorBox Color="#3b4354">
+    <ColorBox Color="#9698ED">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Rioting (R)
+        [color=black]Wtargnięcie na teren zabezpieczony (T)[/color]
       </Box>
     </ColorBox>
     <ColorBox>
@@ -255,674 +204,527 @@
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
       </Box>
     </ColorBox>
+    <ColorBox Color="#ffce93">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]Drobna kradzież (G)[/color]
+      </Box>
+    </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        07
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#ffce93">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]Wielka kradzież (G)[/color]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
       </Box>
     </ColorBox>
   </Table>
 
-  ## Minor Crimes
-  - Warnings should be issued for a first offense.
-  - If multiple minor crimes have been committed or it is a repeat offense, 5 minutes per minor crime is the maximum.
-  <Table Columns="4">
+  ## Przestępstwa I stopnia
+  - W przypadku pierwszego wykroczenia należy wydać ostrzeżenie.
+  - Jeśli popełniono wiele drobnych przestępstw lub jest to powtórne wykroczenie, rozsądnym rozwiązaniem może być aresztowanie tej osoby.
+  <Table Columns="3">
     <ColorBox>
       <Box>
-        Offense
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box>
-        Description
+        Przestępstwo
       </Box>
     </ColorBox>
     <ColorBox>
       <Box>
-        Notes
+        Opis
       </Box>
     </ColorBox>
     <ColorBox>
       <Box>
-        Code
+        Uwagi
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Animal Cruelty
+        Zakłócanie porządku
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        To inflict unnecessary suffering or harm on a non-sapient being with malicious intent.
+        Zakłócanie porządku publicznego.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        This doesn’t include legitimate and authorized animal testing and usually doesn't extend to vermin or creatures
-        that could pose a threat to the station.
+        Czasami określane jako chuligaństwo. Pojemna kategoria obejmująca nieprzyjemnych członków załogi.
+        Obejmuje takie rzeczy, jak publiczna nagość, niepotrzebne obelgi, utrudnianie pracy władzom oraz podżeganie do przestępstw lub przemocy.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        1-00
+        Drobna kradzież
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Possession/Use of Minor Contraband
+        Zabranie bez zgody innej osoby, organizacji lub własności wspólnej przedmiotów, które nie są niezbędne lub są niedrogie.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        To make, hold, or use minor contraband without authorization.
+        Różnica między drobną kradzieżą a wielką kradzieżą polega na tym, jak ważny jest skradziony przedmiot. Przedmioty takie jak instrumenty, odzież i narzędzia zaliczają się do drobnych kradzieży. W większości przypadków wystarczy zatrzymać złodzieja, zwrócić skradziony przedmiot i puścić go z ostrzeżeniem.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        The Captain or Head of Security may authorize individual use of minor contraband. Any contraband which is restricted to a department other than command or security is minor contraband unless otherwise specified.
+        Posiadanie/używanie nielegalnych substancji
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        1-01
+        Produkcja, posiadanie lub nadużywanie substancji lub chemikaliów objętych ograniczeniami.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Petty Theft
+        Należy postępować zgodnie ze Standardową Procedurą Postępowania.
+        Jeśli w SPP nie ma wzmianki o jakiejkolwiek wątpliwej kwestii, kapitan lub najwyższy rangą dowódca może publicznie nałożyć ograniczenia.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        To take non-vital or inexpensive property of another individual, organization, or common property, without
-        consent.
+        Wtargnięcie
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        The difference between petty theft and grand theft is based on how crucial the stolen item is, things like
-        instruments, clothing and tools fall under petty theft. In most cases all you need to do is detain the thief,
-        return the stolen item and let them go with a warning.
+        Wejście na teren niezabezpieczony bez pozwolenia.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        1-02
+        Lepiej po prostu usunąć sprawców z terenu, zamiast ich zatrzymywać, chyba że jest to powtarzające się wykroczenie.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Vandalism
+        Wandalizm
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        To intentionally deface or superficially damage public or private property.
+        Celowe oszpecenie lub powierzchowne uszkodzenie mienia publicznego lub prywatnego.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Painting graffiti, smashing bar glasses, and cracking internal windows is vandalism, breaking a window into
-        space or secure areas is not.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        1-03
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Trespass
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        To enter a non-secured area without permission.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        It's best to just remove them from the area unless this is a repeated crime.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        1-04
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Disturbance
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        To cause a public disturbance.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Sometimes referred to as hooliganism. The catch-all for obnoxious crewmates. Covers things such as public
-        nudity, needless insults, obstructing authorities, and inciting crime or violence.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        1-07
+        Malowanie graffiti, rozbijanie szklanek barowych i rozbijanie wewnętrznych okien stanowi wandalizm, natomiast rozbicie okna prowadzącego do przestrzeni lub obszarów zabezpieczonych nie stanowi wandalizmu.
       </Box>
     </ColorBox>
   </Table>
 
-  ## Moderate Crimes
-  - The maximum sentence per moderate crime is 5 minutes.
-  - Depending on the situation you may want to issue a warning instead of a detaining.
-  <Table Columns="4">
+  ## Przestępstwa II Stopnia
+  - W zależności od sytuacji możesz wydać ostrzeżenie zamiast zatrzymania.
+  <Table Columns="3">
     <ColorBox>
       <Box>
-        Offense
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box>
-        Description
+        Przestępstwo
       </Box>
     </ColorBox>
     <ColorBox>
       <Box>
-        Notes
+        Opis
       </Box>
     </ColorBox>
     <ColorBox>
       <Box>
-        Code
+        Uwagi
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Failure to Comply
+        Okrucieństwo wobec zwierząt
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        To resist reasonable orders given by an authority. This extends to authorized searches.
+        Złośliwe zadawanie niepotrzebnego cierpienia lub krzywdy istocie nierozumnej.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        The order has to be reasonable and the person has to receive a good amount of warning before the arrest is
-        issued.
+        Nie obejmuje to legalnych i autoryzowanych testów na zwierzętach i zazwyczaj nie dotyczy szkodników lub stworzeń, które mogą stanowić zagrożenie dla stacji.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        2-00
+        Uszkodzenie/zniszczenie mienia
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Possession/Use of Major Contraband
+        Złośliwe uszkodzenie lub oszpecenie mienia publicznego lub prywatnego lub sprzętu.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        To make, hold, or use major contraband without authorization.
+        Stopień wyższy od wandalizmu, ale niższy od masowego zniszczenia.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        The Captain may authorize individual use of major contraband. Any contraband which is restricted to the command or security department is major contraband unless otherwise specified.
+        Narażenie na niebezpieczeństwo
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        2-01
+        Lekkomyślne narażanie siebie lub innych na niebezpieczeństwo poprzez bezpośrednie działanie lub zaniechanie działania.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Damage/Destruction of Property
+        Obejmuje wypadki przy pracy, zaniedbania przemysłowe, eksperymenty na sobie, a nawet błędy medyczne.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        To maliciously damage or deface public or private property or equipment
+        Niezastosowanie się do poleceń
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Includes destruction of job equipment such as hydro trays, booze dispensers, chemical dispensers. Step up from
-        vandalism but a step down from mass destruction.
+        Stawianie oporu wobec uzasadnionych poleceń wydanych przez władze. Obejmuje to nakazy i uprawnione przeszukania.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        2-03
+        Polecenie musi być uzasadnione, a dana osoba powinna otrzymać wystarczające ostrzeżenie przed aresztowaniem.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Endangerment
+        Posiadanie sprzętu objętego ograniczeniami
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        To recklessly put yourself or others in danger, either through direct action, or failure to act.
+        Posiadanie lub używanie nieśmiercionośnych przedmiotów lub obiektów, które są objęte ograniczeniami lub są nielegalne.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Covers industrial accidents, industrial negligence, self-experimentation, or even medical malpractice.
+        Dotyczy to głównie kontrabandy syndykatu: EMAG-ów, masek przeciwgazowych syndykatu, krwistoczerwonych kombinezonów, przerobionych PDA lub implantów,
+        jednak czasami może obejmować również przedmioty, których dana osoba nie powinna posiadać, takie jak kamizelki kevlarowe i sprzęt ochrony.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        2-05
+        Zamieszki
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Udział w dużej grupie osób powodującej bezprawne zakłócenie porządku publicznego.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Oczekuje się, że do tego zarzutu zostaną dodane przestępstwa takie jak zniszczenie mienia lub pobicie.
+        Przywódcy zamieszek mogą zostać oskarżeni o wszystkie przestępstwa popełnione pod ich przywództwem.
       </Box>
     </ColorBox>
   </Table>
 
-  ## Major Crimes
-  - The maximum sentence per major crime is 10 minutes.
-  - Assault and Manslaughter are linked crimes, and cannot be stacked against a suspect.
-  - It is recommended to not use maximum sentences for those being compliant.
-  <Table Columns="4">
+  ## Przestępstwa III Stopnia
+  - Zaleca się, aby nie stosować maksymalnych wyroków wobec osób które współpracują.
+  <Table Columns="3">
     <ColorBox>
       <Box>
-        Offense
+        Przestępstwo
       </Box>
     </ColorBox>
     <ColorBox>
       <Box>
-        Description
+        Opis
       </Box>
     </ColorBox>
     <ColorBox>
       <Box>
-        Notes
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box>
-        Code
+        Uwagi
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Breach of Arrest
+        Napaść/pobicie
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        To intentionally resist and flee arrest or detainment by an authorized staff.
+        Grożenie lub użycie siły fizycznej wobec innej osoby bez zamiaru zabicia.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        This only applies if someone is actively being physically arrested. People uncuffing or assisting others out of
-        an arrest can also be charged with this. Breach of custody is a separate crime.
+        Próba zabójstwa i pobicie to różne przestępstwa, należy pamiętać o tym rozróżnieniu.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        3-00
+        Naruszenie zatrzymania
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Possession/Use of Syndicate Contraband
+        Celowe stawianie oporu i ucieczka przed aresztowaniem lub zatrzymaniem przez upoważniony personel.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        To make, hold, or use Syndicate contraband.
+        Dotyczy to wyłącznie sytuacji, w której dana osoba jest aktywnie aresztowana fizycznie.
+        Obejmuje to osoby zdejmujące kajdanki lub pomagające innym w uniknięciu aresztowania. Ucieczka z aresztu jest odrębnym przestępstwem.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Syndicate contraband may only be used in emergencies, and only to prevent death or gross bodily harm.
+        Wielka kradzież
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        3-01
+        Zabranie bez zgody innej osoby lub organizacji ważnego lub nieodzownego mienia.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Grand Theft
+        Różnica między drobną kradzieżą a wielką kradzieżą polega na tym, jak ważny jest skradziony przedmiot.
+        Termin ten jest używany głównie w odniesieniu do kradzieży przedmiotów należących do personelu dowodzenia, takich jak piloty do drzwi,
+        kombinezony ochronne, dżetpaki i niepowtarzalne części maszyn.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        To take critical or unreplaceable property of another individual or organization without consent.
+        Nieumyślne\nspowodowanie\nśmierci
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        The difference between petty theft and grand theft is based on how crucial the stolen item is, this mostly is
-        used for the theft of command staff items, things like door remotes, hardsuits, jetpacks, and unreplaceable
-        machine parts.
+        Przypadkowe pozbawienie życia istoty rozumnej bez zamiaru.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        3-02
+        Obejmuje nieumyślne spowodowanie śmierci w obronie własnej oraz śmierć wynikającą z zaniedbania.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Mass Destruction
+        Masowe zniszczenie
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        To cause massive damage to an area or major station system.
+        Spowodowanie ogromnych zniszczeń na danym obszarze lub w kluczowym systemie stacji.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        This is mostly used for deadly bombings or sabotage of major station systems such as power production,
-        chemistry, substations, or atmos.
+        Najczęściej stosowane w przypadku śmiercionośnych zamachów bombowych lub sabotażu kluczowych systemów stacji, takich jak produkcja energii, klonowanie, podstacje czy systemy atmosferyczne.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        3-03
+        Posiadanie broni objętej ograniczeniami
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Secure Trespass
+        Posiadanie lub używanie broni, która jest niezgodna z prawem lub stanowi kontrabandę.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        To enter a secured area without permission.
+        Wszystko, od broni palnej bez pozwolenia, śmiercionośnych ostrzy, materiałów wybuchowych, broni palnej syndykatu po implanty wybuchowe.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        This covers places like telecomms, head offices, security zones, command areas, the vault and armory.
+        Wtargnięcie na teren zabezpieczony
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        3-04
+        Wejście na teren zabezpieczony bez pozwolenia.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Assault/Battery
+        Obejmuje to takie miejsca, jak telekomunikacja, biura dowódców, obszary ochrony, obszary dowodzenia, skarbiec i zbrojownie.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        To threaten to or to use physical force against someone without the intent to kill.
+        Ucieczka z aresztu
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Attempted murder and battery are different; a fist fight is most likely assault. A shooting is most likely an
-        attempt at murder.
+        Wydostanie się z celi lub spod dozoru z zamiarem ucieczki.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        3-05
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Manslaughter
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        To incidentally kill a sapient being without intent.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Includes manslaughter in self-defense and negligent manslaughter.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        3-06
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Rioting
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        To take part in a large group of personnel creating an unlawful public disturbance.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Crimes like damage of property or battery are expected to be thrown on top of this charge. Leaders of a riot can be charged with all crimes that happen under their lead.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        3-07
+        Ten czas należy doliczyć do aktualnego czasu odsiadki więźnia.
+        Choć zdarza się to rzadko, kara może zostać podniesiona do aresztu permamentnego, jeśli podejrzany wielokrotnie próbował uciec z aresztu.
+        Obejmuje również osoby pomagające innym w ucieczce.
       </Box>
     </ColorBox>
   </Table>
 
-  ## Extreme Crimes
-  - The maximum sentence per extreme crime is 15 minutes.
-  - Particularly violent offenders may be placed in perma. (Attacking officers in an attempt to escape prison)
-  - Attempted murder and murder are linked crimes and cannot be stacked together.
-  - Attempted murderers should be granted a more lenient sentence than a murderer.
-  <Table Columns="4">
+  ## Przestępstwa IV Stopnia
+  - Szczególnie brutalni sprawcy mogą zostać osadzeni w areszcie permamentnym.
+  <Table Columns="3">
     <ColorBox>
       <Box>
-        Offense
+        Przestępstwo
       </Box>
     </ColorBox>
     <ColorBox>
       <Box>
-        Description
+        Opis
       </Box>
     </ColorBox>
     <ColorBox>
       <Box>
-        Notes
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box>
-        Code
+        Uwagi
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Breach of Custody
+        Porwanie
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        To break out of a cell or custody with the intention of escaping.
+        Bezprawne ograniczenie wolności, transport, kontrola lub uwięzienie istoty rozumnej wbrew jej woli.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        While rare, this charge can be bumped to an execution if the suspect has repeatedly attempted to break out of the permanent brig. Includes people breaking others out.
+        Szeroki zakres czynów, stosowany głównie jako pojęcie zbiorcze w odniesieniu do bezprawnego kontrolowania innej istoty.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        4-00
+        Morderstwo
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Kidnapping
+        Zabicie istoty rozumnej ze złośliwym zamiarem.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        To unlawfully restrain, transport, control or confine a sapient being against that individual’s will.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        A large range of things, used mostly as a catch all when dealing with unlawful control of another being.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        4-02
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Attempted Murder
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        To make an attempt to use physical force against someone with the clear intent to kill.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Make sure you've got the proof to back up the intention claims, such as proof of a lethal weapon being used.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        4-05
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Murder
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        To kill a sapient being with malicious intent.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        This only changes from attempted to full-on murder if the victim enters a state of being deceased, having to be resurrected.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        4-06
+        Tylko w przypadku śmierci ofiary, która wymaga wskrzeszenia, czyn ten zmienia się z usiłowania morderstwa w morderstwo.
       </Box>
     </ColorBox>
   </Table>
 
-  ## Capital Crimes
-  - Capital crimes should usually lead to a death sentence or shift lasting detainment.
-  <Table Columns="4">
+  ## Przestępstwa V Stopnia
+  - Przestępstwa z tej kategorii poważnie wpływają na sprawność funkcjonowania stacji, dlatego może zostać zatwierdzony areszt permamentny lub egzekucja.
+  <Table Columns="3">
     <ColorBox>
       <Box>
-        Offense
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box>
-        Description
+        Przestępstwo
       </Box>
     </ColorBox>
     <ColorBox>
       <Box>
-        Notes
+        Opis
       </Box>
     </ColorBox>
     <ColorBox>
       <Box>
-        Code
+        Uwagi
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Refusal of Mental Shielding
+        Masowe morderstwo
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        To refuse to comply with a reasonable Mind Shielding procedure.
+        Zabicie trzech lub więcej istot rozumnych ze złośliwym zamiarem.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Applies if the suspect is excessively uncooperative or the implant fails to function due to the mental state of the prisoner already being too far gone. If the implant fails execution is heavily recommended.
+        Ma zastosowanie wyłącznie w przypadku wielokrotnych, umyślnych zabójstw.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        5-00
+        Rażące zaniedbanie
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Station-Wide Destruction
+        Lekkomyślne narażenie siebie lub innych na niebezpieczeństwo poprzez bezpośrednie działanie lub zaniechanie działania jako członek dowództwa.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        To engage in maliciously destructive actions which threaten to destroy, or successfully destroy a vessel or habitat.
+        Obejmuje to spowodowanie śmierci jednego lub więcej członków załogi, nie naprawienie / nie złagodzenie poważnych uszkodzeń stacji lub spowodowanie poważnych uszkodzeń stacji. Zarzut ten ma być kierowany do członków dowództwa i może zostać dodany do ich akt osobowych.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Summed up; extreme sabotage of station systems or setting off self-destruction systems. This includes any means causing the entire station to become uninhabitable, such as through station-wide atmospherics sabotage.
+        Uniemożliwienie wskrzeszenia
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        5-03
+        Sprawienie, że ciało jest niemożliwe do wskrzeszenia.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Prevention of Revival
+        Obejmuje to rozczłonkowanie, wyrzucenie w przestrzeń kosmiczną, celowe ukrycie ciała prowadzące do jego rozkładu lub inne sposoby uniemożliwiające wskrzeszenia ciała z duszą.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        To render a body unresurrectable.
+        Odmowa poddania się osłonie umysłu
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        This covers gibbing, spacing, intentionally hiding a body, or other ways of preventing a body with a soul from being resurrected.
+        Odmowa zastosowania się do rozsądnej procedury osłony umysłu.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        5-05
+        Ma zastosowanie, jeśli podejrzany jest skrajnie niechętny do współpracy lub implant nie działa z powodu zbyt zaawansowanego stanu psychicznego więźnia.
+        Jeśli implant nie działa, zalecana maksymalna kara zostaje podwyższona do przyspieszonej egzekucji.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Mass Murder
+        Terroryzm
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        To kill three or more sapient beings with malicious intent.
+        Podejmowanie złośliwych działań destrukcyjnych, które grożą zniszczeniem lub skutecznie niszczą statek lub siedlisko.
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Only applies when there have been multiple killings with intention.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        5-06
+        Podsumowując: ekstremalny sabotaż systemów stacji lub uruchomienie systemów samozniszczenia.
       </Box>
     </ColorBox>
   </Table>

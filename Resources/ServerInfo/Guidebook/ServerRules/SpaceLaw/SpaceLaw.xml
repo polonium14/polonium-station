@@ -9,295 +9,296 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-  # Prawo Kosmiczne
-  Stacja Polonium działa zgodnie z prawem kosmicznym. Wszyscy członkowie załogi, pasażerowie i goście przebywający na stacji powinni znać i przestrzegać tych przepisów (są one dość zdroworozsądkowe, tylko ochrona i kapitan muszą znać szczegóły).
+  # Space Law
+  Funky Station operates under space law. All crew, passengers, and visitors aboard the station are expected to know and follow these laws (they are fairly common sense, only security and the captain need to know the times).
 
-  ## Traktowanie więźniów
+  ## Treatment Of Prisoners
 
-  Więźniowie wciąż mają pewne prawa, które muszą być przestrzegane przez organy ścigania:
+  Prisoners still have certain rights that must be upheld by law enforcement:
 
-  - Więźniom należy zapewnić odpowiednią opiekę medyczną. Powinni oni również mieć zapewnioną pomoc psychiatryczną i duchową, jeśli o to poproszą.
-  - Więźniowie muszą mieć dostęp do sprzętu komunikacyjnego (radia), o ile nie jest on nadużywany.
-  - Więźniom należy zapewnić odzież, żywność, wodę, schronienie i bezpieczeństwo. Jeśli areszt nie jest już bezpieczny, należy przenieść więźniów do innego miejsca.
-  - Więźniowie muszą mieć dostęp do pomocy prawnej podczas przesłuchania, jeśli o to poproszą i jeśli jest ona dostępna.
-  - Po zakończeniu pobytu w areszcie więźniowie muszą otrzymać przypisane im urządzenia PDA. Wyjątkiem jest sytuacja, w której istnieją solidne dowody na manipulowanie urządzeniem PDA – w takim przypadku urządzenie należy zabezpieczyć i wymienić na nowe.
-  - Więźniowie muszą mieć zapewnioną swobodę poruszania się i nie powinni być krępowani kajdankami ani innymi środkami po osadzeniu w areszcie, chyba że istnieje nadmierne zagrożenie dla życia lub zdrowia. Podobnie, wszyscy więźniowie przebywający w areszcie na czas dłuższy lub bezterminowy powinni być przetrzymywani w celach zbiorowych i nie powinni być umieszczani w izolatkach, chyba że stanowią zagrożenie dla życia lub zdrowia.
+  - Prisoners must be granted adequate medical care. They should also be provided psychiatric and spiritual counselling if requested.
+  - Prisoners must be allowed access to communications equipment (Radios) so long as they are not abused.
+  - Prisoners must be granted clothing, food, water, shelter and safety. If the brig is no longer safe, confinement must be established in another location.
+  - Prisoners must be given access to legal counsel during an interrogation if requested and available.
+  - Prisoners must be given their shift mandated PDA after confinement has finished. Unless there is solid proof of PDA tampering, in which case the PDA is to be secured and replaced with a fresh one.
+  - Prisoners must be granted freedom of movement, and should not be restrained with handcuffs or other devices after incarceration unless there is an undue risk to life and limb. Similarly, any prisoners held for extended or permanent confinement should be held in the communal brig, and should not be confined to a solitary cell unless they pose a risk to life and limb.
 
-  ## Przeszukiwania
+  ## Searches
 
-  Przeszukanie osobiste polega na zajęciu przedmiotów znajdujących się w plecaku, rękach, płaszczu, pasku, kieszeniach i czapce danej osoby. Jeśli podczas przeszukania zostaną znalezione jakiekolwiek przedmioty zabronione, funkcjonariusz może zdecydować o dalszym przeszukaniu w ramach zatrzymania lub po prostu skonfiskować przedmioty objęte ograniczeniami. Po przeprowadzeniu przeszukania wszystkie przedmioty zgodne z prawem należy zwrócić danej osobie.
+  A personnel search is a seizure of the objects in a person's backpack, hands, coat, belt, pockets, and hat. If any contraband is found during a search the officer may choose to further the search into a detainment or simply confiscate the restricted items. After the search is conducted all legal items are to be returned to the person.
 
-  Członek załogi może zgodnie z prawem odmówić poddania się przeszukaniu przeprowadzanemu bez nakazu, gdy poziom alarmowy wynosi zielony. Należy zauważyć, że jeśli poziom alarmowy wynosi niebieski lub wyższy, przeszukania całego personelu są legalne i nie wymagają już nakazu.
+  A crewmate may legally decline any search conducted without a warrant while the alert level is green. Should be noted that if the alert level is blue or above all personnel searches are legal and no longer require a warrant.
 
-  ## Implantacja
+  ## Implantation
 
-  Każdy więzień przebywający w areszcie może zostać poddany zabiegowi wszczepienia lub usunięcia implantu, o ile jest to uzasadnione. Proces wszczepienia implantu nie powinien wydłużać wyroku skazanego, co oznacza, że nie można przetrzymywać go dłużej w celu wszczepienia implantu, chyba że określono inaczej. Więzień może nadal zostać poddany zabiegowi wszczepienia implantu bez spełnienia powyższych warunków, jeśli wyrazi na to wyraźną zgodę.
+  Any prisoner in custody can be subjected to implantation or implant removal procedures, so long as it's within reason. The process of adding an implant should not prolong the detainees sentence, meaning you can not hold them longer to administer the implant, unless stated otherwise. A prisoner can still receive implantation procedures without meeting the circumstances if they give their clear permission.
 
-  [bold]Osłony Umysłu[/bold]: Osłony umysłu mogą być stosowane u każdego więźnia, który wyraźnie został poddany praniu mózgu. W przeciwieństwie do standardowego wszczepiania implantów, można przetrzymywać więźnia do momentu wydania mu osłony umysłu, o ile odbywa się to w odpowiednim czasie. Jeśli podejrzany odmówi współpracy lub implant nie będzie działał, można go oskarżyć o odmowę poddania się osłonie umysłu.
+  [bold]Mind Shields[/bold]: Mind Shields can be administered to any inmate who is clearly brainwashed. Unlike standard implantation, you may hold a prisoner until they are issued a Mind Shield, so long as it's done in a timely fashion. If a suspect refuses to cooperate or the implant fails to function they can be charged with Refusal of Mental Shielding.
 
-  W normalnych okolicznościach członek załogi może odmówić przyjęcia osłony umysłu, jeśli nie jest uwięziony za popełnienie przestępstwa.
+  Under normal circumstances, a crewmate can refuse a Mind Shield if they are not imprisoned for committing a crime.
 
-  [bold]Jednakże, gdy istnieje znane zagrożenie dla stacji, polegające na masowym praniu mózgu lub kontroli umysłu, członkowie załogi muszą poddać się osłonie umysłu, jeśli nakazuje to ochrona. Nieprzestrzeganie tego nakazu będzie traktowane jako odmowa poddania się osłonie umysłu.[/bold]
+  [bold]However, when there is a known threat to the station that utilizes mass brainwashing or mind control, crewmates must submit to a Mind Shield if ordered by Security. Failure to comply is to be treated as Refusal of Mental Shielding.[/bold]
 
-  # Usuwanie
+  # Removal
 
-  Podejrzany może zostać zmuszony do usunięcia implantu, jeśli istnieją mocne, uzasadnione dowody na to, że został on wszczepiony, np. funkcjonariusz był świadkiem użycia urządzenia do implantacji lub informacje biologiczne zostały znalezione na wyrzuconym wstrzykiwaczu. W przeciwieństwie do procedury implantacji, wyrok więźnia może zostać całkowicie odroczony lub przedłużony do czasu poddania się procedurze, o ile ochrona aktywnie podejmuje próby jej wykonania. Podobnie jak w przypadku implantacji, jeśli więzień wyrazi wyraźną zgodę, usunięcie implantu może nastąpić bez konieczności przedstawiania dowodów.
+  A suspect can be forced to receive implant removal if there is strong reasonable proof that they have been implanted, such as an officer witnessing them use an implantation device or their biological information being found on a discarded injector. Unlike the implantation procedure a prisoner can have their sentence entirely delayed or extended until they comply with the procedure, as long as security are actively making attempts to preform it. Akin to implanting, if an inmate gives their clear permission, implant removal can proceed without proof.
 
-  ## Wyroki
-  Wszystkie wyroki są wydawane przede wszystkim przez strażnika, a jeśli strażnik jest niedostępny, obowiązki te przejmuje Szef Ochrony, a jeśli nie ma Szefa Ochrony, obowiązki te przejmują członkowie ochrony o najwyższym stopniu.
+  ## Sentencing
+  All sentencing is to primarily be handled by the Warden, if no Warden is available the HoS is to take over that duty, if there's no HoS it falls onto the highest ranking member of Security.
 
-  Przy nakładaniu kar kieruj się zdrowym rozsądkiem i humanitaryzmem. Nie zawsze należy dążyć do wymierzenia najwyższej kary, nie zawsze trzeba nakładać maksymalny wymiar kary lub zawsze dążyć do degradacji danej osoby. Zawsze należy brać pod uwagę powagę wykroczenia i nakładać kary tylko w takim zakresie, jaki jest niezbędny, aby dana osoba wyciągnęła z niego wnioski.
+  Use common sense and humanity when issuing punishments. You should not always seek out the highest punishment you can, you don't have to always give the maximum time or always look to demote someone. Always take in account the severity and only charge for what is needed for someone to learn their lesson.
 
-  [bold]Pomocnictwo, usiłowanie i zamiar:[/bold] Jeśli ktoś celowo, świadomie i w znacznym stopniu pomaga innej osobie w popełnieniu przestępstwa, może zostać oskarżony o popełnienie odpowiednich przestępstw, np. inżynier, który dostarcza narzędzia osobie, która zamierza włamać się do jakiegoś obiektu. To samo dotyczy wyraźnej i konkretnej próby popełnienia przestępstwa lub osoby, która wykazuje wyraźny zamiar popełnienia przestępstwa, np. członek syndykatu uzbrajający bombę atomową, ale aresztowany przed jej detonacją, może nadal zostać oskarżony o terroryzm. Nie dotyczy to przestępstw, które już zostały wymienione jako próby, np. usiłowanie morderstwa.
+  [bold]Accessory, Attempting, And Intention:[/bold] If someone intentionally, knowingly and substantially assists someone in enacting a crime they can be charged with the relevant crimes, such as an engineer giving someone tools, who says they are going to break into an area. Same goes for a clear and solid attempt at a crime, or a person who shows clear intent to act out a crime, such as a syndicate nuclear operative arming a nuke but getting arrested before it goes off, they can still be charged with terrorism. Does not apply to crimes that have an attempted listing already, like attempted murder.
 
-  [bold]Przestępstwa kumulowalne:[/bold] Przestępstwa uznaje się za „kumulowalne” w tym sensie, że jeśli oskarża się kogoś o popełnienie dwóch lub więcej różnych przestępstw, należy zsumować kary, jakie zostałyby wymierzone za każde z nich.
+  [bold]Stackable Crimes:[/bold] Crimes are to be considered 'stackable' in the sense that if you charge someone with two or more different crimes, you should combine the times you would give them for each crime.
 
-  [bold]Wpływy zewnętrzne:[/bold] Przestępstwa popełnione pod wpływem kontroli umysłowej innej osoby lub bytu podlegają ułaskawieniu po dokonaniu wyraźnej i skutecznej dekonwersji.
+  [bold]External Influences:[/bold] Crimes committed while under the mental control of another individual or entity are to be pardoned once a clear and successful deconversion occurs.
 
-  [bold]Egzekucje:[/bold] Egzekucje mogą być zatwierdzone przez kapitana / pełniącego obowiązki kapitana po przeprowadzeniu procesu sądowego. Egzekucje mogą być również zatwierdzone przez Centralne Dowodzenie po formalnym zgłoszeniu.
+  [bold]Executions:[/bold] Executions may be authorized by the Captain / acting Captain after a trial has been conducted. Executions may also be approved by CentComm, following formal contact.
 
+  
+  # Repeat Offenses 
+  Offenses repeated again after having been detained for the same crime can have more time added to the recommended maximum sentencing. The general guideline is as follows: 
 
-  # Powtarzające się przestępstwa
-  W przypadku przestępstw popełnionych ponownie po odbyciu kary za to samo przestępstwo, do zalecanego maksymalnego wymiaru kary można dodać dodatkowy czas. Ogólne wytyczne są następujące:
+  ## Second Offenses
+  [bold]Recommended Increase:[/bold] Recommended to increase sentencing time by 1.5x for the same crime only.
 
-  ## Drugie przestępstwo
-  [bold]Zalecane zwiększenie:[/bold] Zaleca się zwiększenie wymiaru kary o 1,5 razy wyłącznie za to samo przestępstwo.
+  ## Third Offenses
+  [bold]Recommended Increase:[/bold] Recommended to increase sentencing time by 2.5x for the same crime only.
 
-  ## Trzecie przestępstwo
-  [bold]Zalecane zwiększenie:[/bold] Zaleca się zwiększenie wymiaru kary o 2,5 razy wyłącznie za to samo przestępstwo.
+  ## Further Repeat Offenders
+  If the detainee as committed the same crime more than three times in separate occasions, it will be up to the Warden's, or in absence of a Warden, the highest ranking Security Member's discretion on whether they should be put into the Permanent Brig.
 
-  ## Kolejne powtarzające się przestępstwa
-  Jeśli zatrzymany popełnił to samo przestępstwo więcej niż trzy razy w różnych okolicznościach, decyzja o umieszczeniu go w areszcie permamentnym należy do strażnika lub, w przypadku jego nieobecności, do najwyższego rangą członka ochrony.
+  [bold]If brigtime goes above 20 minutes, perma is highly recommended.[/bold]
 
-  [bold]Jeśli czas aresztu przekracza 20 minut, zdecydowanie zaleca się areszt permamentny.[/bold]
+  
+  # Crimes
 
+  # I Degree
 
-  # Przestępstwa
+  For minor crimes, fix the issue then warn the person to not attempt the crime again, if they still proceed to do it at a later date, a brig time may be better.
 
-  # I Stopnia
+  ## Disturbance
 
-  W przypadku drobnych przestępstw należy rozwiązać problem, a następnie ostrzec sprawcę, aby nie popełniał tego przestępstwa ponownie. Jeśli mimo to sprawca nadal będzie je popełniał, lepszym rozwiązaniem może być areszt.
+  [bold]Description[/bold]: To cause a public disturbance.
 
-  ## Zakłócanie porządku
+  [bold]Recommended Maximum Punishment:[/bold] 2:00
 
-  [bold]Opis[/bold]: Zakłócanie porządku publicznego.
+  [bold]Notes:[/bold] Sometimes referred to as hooliganism. The catch-all for obnoxious crewmates. Covers things such as public nudity, needless insults, obstructing authorities, and inciting crime or violence.
 
-  [bold]Zalecana maksymalna kara:[/bold] 2:00
+  ## Petty Theft
 
-  [bold]Uwagi:[/bold] Czasami określane jako chuligaństwo. Pojemna kategoria obejmująca nieprzyjemnych członków załogi. Obejmuje takie rzeczy, jak publiczna nagość, niepotrzebne obelgi, utrudnianie pracy władzom oraz podżeganie do przestępstw lub przemocy.
+  [bold]Description[/bold]: To take non-vital or inexpensive property of another individual, organization, or common property, without consent.
 
-  ## Drobna kradzież
+  [bold]Recommended Maximum Punishment:[/bold] 3:00
 
-  [bold]Opis[/bold]: Zabranie bez zgody innej osoby, organizacji lub własności wspólnej przedmiotów, które nie są niezbędne lub są niedrogie.
+  [bold]Notes:[/bold] The difference between petty theft and grand theft is based on how crucial the stolen item is, things like instruments, clothing and tools fall under petty theft. In most cases all you need to do is detain the thief, return the stolen item and let them go with a warning.
 
-  [bold]Zalecana maksymalna kara:[/bold] 3:00
+  ## Possession/Use of Illegal Substances
 
-  [bold]Uwagi:[/bold] Różnica między drobną kradzieżą a wielką kradzieżą polega na tym, jak ważny jest skradziony przedmiot. Przedmioty takie jak instrumenty, odzież i narzędzia zaliczają się do drobnych kradzieży. W większości przypadków wystarczy zatrzymać złodzieja, zwrócić skradziony przedmiot i puścić go z ostrzeżeniem.
+  [bold]Description[/bold]: To make, hold, or abuse restricted drugs or chemicals.
 
-  ## Posiadanie/używanie nielegalnych substancji
+  [bold]Recommended Maximum Punishment:[/bold] 3:00
 
-  [bold]Opis[/bold]: Produkcja, posiadanie lub nadużywanie substancji lub chemikaliów objętych ograniczeniami.
+  [bold]Notes: This is to be followed in accordance with Standard Operating Procedure. If anything questionable is not brought up in SOP the captain or highest standing command staff may publicly restrict it.[/bold]
 
-  [bold]Zalecana maksymalna kara:[/bold] 3:00
+  ## Trespass
 
-  [bold]Uwagi: Należy postępować zgodnie ze Standardową Procedurą Postępowania. Jeśli w SPP nie ma wzmianki o jakiejkolwiek wątpliwej kwestii, kapitan lub najwyższy rangą dowódca może publicznie nałożyć ograniczenia.[/bold]
+  [bold]Description[/bold]: To enter a non-secured area without permission.
 
-  ## Wtargnięcie
+  [bold]Recommended Maximum Punishment:[/bold] 2:00
 
-  [bold]Opis[/bold]: Wejście na teren niezabezpieczony bez pozwolenia.
+  [bold]Notes:[/bold] It may be better to simply remove them from the area instead of detaining them.
 
-  [bold]Zalecana maksymalna kara:[/bold] 2:00
+  ## Vandalism
 
-  [bold]Uwagi:[/bold] Zamiast zatrzymywać sprawców, często lepiej po prostu usunąć ich z terenu.
+  [bold]Description[/bold]: To intentionally deface or superficially damage public or private property.
 
-  ## Wandalizm
+  [bold]Recommended Maximum Punishment:[/bold] 2:00
 
-  [bold]Opis[/bold]: Celowe oszpecenie lub powierzchowne uszkodzenie mienia publicznego lub prywatnego.
+  [bold]Notes:[/bold] Painting graffiti, smashing bar glasses, and cracking internal windows is vandalism, breaking a window into space or secure areas is not.
 
-  [bold]Zalecana maksymalna kara:[/bold] 2:00
 
-  [bold]Uwagi:[/bold] Malowanie graffiti, rozbijanie szklanek barowych i rozbijanie wewnętrznych okien stanowi wandalizm, natomiast rozbicie okna prowadzącego do przestrzeni lub obszarów zabezpieczonych nie stanowi wandalizmu.
 
+  # II Degree
 
+  ## Animal Cruelty
 
-  # II Stopnia
+  [bold]Description[/bold]: To inflict unnecessary suffering or harm on a non-sapient being with malicious intent.
 
-  ## Okrucieństwo wobec zwierząt
+  [bold]Recommended Maximum Punishment:[/bold] 5:00
 
-  [bold]Opis[/bold]: Złośliwe zadawanie niepotrzebnego cierpienia lub krzywdy istocie nierozumnej.
+  [bold]Notes:[/bold] This doesn't include legitimate and authorized animal testing and usually doesn't extend to vermin or creatures that could pose a threat to the station.
 
-  [bold]Zalecana maksymalna kara:[/bold] 5:00
+  ## Damage/Destruction of Property
 
-  [bold]Uwagi:[/bold] Nie obejmuje to legalnych i autoryzowanych testów na zwierzętach i zazwyczaj nie dotyczy szkodników lub stworzeń, które mogą stanowić zagrożenie dla stacji.
+  [bold]Description[/bold]: To maliciously damage or deface public or private property or equipment.
 
-  ## Uszkodzenie/zniszczenie mienia
+  [bold]Recommended Maximum Punishment:[/bold] 4:00
 
-  [bold]Opis[/bold]: Złośliwe uszkodzenie lub oszpecenie mienia publicznego lub prywatnego lub sprzętu.
+  [bold]Notes:[/bold] Step up from vandalism but a step down from mass destruction.
 
-  [bold]Zalecana maksymalna kara:[/bold] 4:00
+  ## Endangerment
 
-  [bold]Uwagi:[/bold] Stopień wyższy od wandalizmu, ale niższy od masowego zniszczenia.
+  [bold]Description[/bold]: To recklessly put yourself or others in danger, either through direct action, or failure to act.
 
-  ## Narażenie na niebezpieczeństwo
+  [bold]Recommended Maximum Punishment:[/bold] 4:00
 
-  [bold]Opis[/bold]: Lekkomyślne narażanie siebie lub innych na niebezpieczeństwo poprzez bezpośrednie działanie lub zaniechanie działania.
+  [bold]Notes:[/bold] Covers industrial accidents, industrial negligence, self-experimentation, or even medical malpractice.
 
-  [bold]Zalecana maksymalna kara:[/bold] 4:00
+  ## Failure to Comply
 
-  [bold]Uwagi:[/bold] Obejmuje wypadki przy pracy, zaniedbania przemysłowe, eksperymenty na sobie, a nawet błędy medyczne.
+  [bold]Description[/bold]: To resist reasonable orders given by an authority. This extends to warrants and authorized searches.
 
-  ## Niezastosowanie się do poleceń
+  [bold]Recommended Maximum Punishment:[/bold] 2:00
 
-  [bold]Opis[/bold]: Stawianie oporu wobec uzasadnionych poleceń wydanych przez władze. Obejmuje to nakazy i uprawnione przeszukania.
+  [bold]Notes:[/bold] The order has to be reasonable and the person has to receive a good amount of warning before the arrest is issued.
 
-  [bold]Zalecana maksymalna kara:[/bold] 2:00
+  ## Possession of Restricted Gear
 
-  [bold]Uwagi:[/bold] Polecenie musi być uzasadnione, a dana osoba powinna otrzymać wystarczające ostrzeżenie przed aresztowaniem.
+  [bold]Description[/bold]: To hold or use non-lethal items or objects that are restricted or illegal.
 
-  ## Posiadanie sprzętu objętego ograniczeniami
+  [bold]Recommended Maximum Punishment:[/bold] 5:00
 
-  [bold]Opis[/bold]: Posiadanie lub używanie nieśmiercionośnych przedmiotów lub obiektów, które są objęte ograniczeniami lub są nielegalne.
+  [bold]Notes:[/bold] This is mostly for syndicate contraband; EMAGs, syndicate gas masks, bloodred hardsuits, hijacked PDAs, or implants, however can sometimes extend to things the individual shouldn't possess like kevlar vests and security gear.
 
-  [bold]Zalecana maksymalna kara:[/bold] 5:00
+  ## Rioting
 
-  [bold]Uwagi:[/bold] Dotyczy to głównie kontrabandy syndykatu: EMAG-ów, masek przeciwgazowych syndykatu, krwistoczerwonych kombinezonów, przerobionych PDA lub implantów, jednak czasami może obejmować również przedmioty, których dana osoba nie powinna posiadać, takie jak kamizelki kevlarowe i sprzęt ochrony.
+  [bold]Description[/bold]: To take part in a large group of personnel creating an unlawful public disturbance.
 
-  ## Zamieszki
+  [bold]Recommended Maximum Punishment:[/bold] 4:00
 
-  [bold]Opis[/bold]: Udział w dużej grupie osób powodującej bezprawne zakłócenie porządku publicznego.
+  [bold]Notes:[/bold] Crimes like damage of property or battery are expected to be thrown on top of this charge. Leaders of a riot can be charged with all crimes that happen under their lead.
 
-  [bold]Zalecana maksymalna kara:[/bold] 4:00
 
-  [bold]Uwagi:[/bold] Oczekuje się, że do tego zarzutu zostaną dodane przestępstwa takie jak zniszczenie mienia lub pobicie. Przywódcy zamieszek mogą zostać oskarżeni o wszystkie przestępstwa popełnione pod ich przywództwem.
 
+  # III Degree
 
+  ## Assault/Battery
 
-  # III Stopnia
+  [bold]Description[/bold]: To threaten to or to use physical force against someone without the intent to kill.
 
-  ## Napaść/pobicie
+  [bold]Recommended Maximum Punishment:[/bold] 6:00
 
-  [bold]Opis[/bold]: Grożenie lub użycie siły fizycznej wobec innej osoby bez zamiaru zabicia.
+  [bold]Notes:[/bold] Attempted murder and battery are different, make sure you've got it right.
 
-  [bold]Zalecana maksymalna kara:[/bold] 6:00
+  ## Breach of Arrest
 
-  [bold]Uwagi:[/bold] Próba zabójstwa i pobicie to różne przestępstwa, należy pamiętać o tym rozróżnieniu.
+  [bold]Description[/bold]: To intentionally resist and flee arrest or detainment by an authorized staff.
 
-  ## Naruszenie zatrzymania
+  [bold]Recommended Maximum Punishment:[/bold] 4:00
 
-  [bold]Opis[/bold]: Celowe stawianie oporu i ucieczka przed aresztowaniem lub zatrzymaniem przez upoważniony personel.
+  [bold]Notes:[/bold] This only applies if the person is actively being physically arrested. Includes people uncuffing or assisting others out of an arrest. Breach of custody is a separate crime.
 
-  [bold]Zalecana maksymalna kara:[/bold] 4:00
+  ## Grand Theft
 
-  [bold]Uwagi:[/bold] Dotyczy to wyłącznie sytuacji, w której dana osoba jest aktywnie aresztowana fizycznie. Obejmuje to osoby zdejmujące kajdanki lub pomagające innym w uniknięciu aresztowania. Ucieczka z aresztu jest odrębnym przestępstwem.
+  [bold]Description[/bold]: To take critical or unreplaceable property of another individual or organization without consent.
 
-  ## Wielka kradzież
+  [bold]Recommended Maximum Punishment:[/bold] 6:00
 
-  [bold]Opis[/bold]: Zabranie bez zgody innej osoby lub organizacji ważnego lub nieodzownego mienia.
+  [bold]Notes:[/bold] The difference between petty theft and grand theft is based on how crucial the stolen item is, this mostly is used for the theft of command staff items, things like door remotes, hardsuits, jetpacks, and unreplaceable machine parts.
 
-  [bold]Zalecana maksymalna kara:[/bold] 6:00
+  ## Manslaughter
 
-  [bold]Uwagi:[/bold] Różnica między drobną kradzieżą a wielką kradzieżą polega na tym, jak ważny jest skradziony przedmiot. Termin ten jest używany głównie w odniesieniu do kradzieży przedmiotów należących do personelu dowodzenia, takich jak piloty do drzwi, kombinezony ochronne, plecaki odrzutowe i niepowtarzalne części maszyn.
+  [bold]Description[/bold]: To incidentally kill a sapient being without intent.
 
-  ## Nieumyślne spowodowanie śmierci
+  [bold]Recommended Maximum Punishment:[/bold] 10:00
 
-  [bold]Opis[/bold]: Przypadkowe pozbawienie życia istoty rozumnej bez zamiaru.
+  [bold]Notes:[/bold] Includes manslaughter in self-defense and negligent manslaughter.
 
-  [bold]Zalecana maksymalna kara:[/bold] 10:00
+  ## Mass Destruction
 
-  [bold]Uwagi:[/bold] Obejmuje nieumyślne spowodowanie śmierci w obronie własnej oraz śmierć wynikającą z zaniedbania.
+  [bold]Description[/bold]: To cause massive damage to an area or major station system.
 
-  ## Masowe zniszczenie
+  [bold]Recommended Maximum Punishment:[/bold] 15:00
 
-  [bold]Opis[/bold]: Spowodowanie ogromnych zniszczeń na danym obszarze lub w kluczowym systemie stacji.
+  [bold]Notes:[/bold] This is mostly used for deadly bombings or sabotage of major station systems such as power production, cloning, substations, or atmos.
 
-  [bold]Zalecana maksymalna kara:[/bold] 15:00.
+  ## Possession of Restricted Weaponry
 
-  [bold]Uwagi:[/bold] Najczęściej stosowane w przypadku śmiercionośnych zamachów bombowych lub sabotażu kluczowych systemów stacji, takich jak produkcja energii, klonowanie, podstacje czy systemy atmosferyczne.
+  [bold]Description[/bold]: To hold or use a weapon that is unlawful or contraband.
 
-  ## Posiadanie broni objętej ograniczeniami
+  [bold]Recommended Maximum Punishment:[/bold] 6:00
 
-  [bold]Opis[/bold]: Posiadanie lub używanie broni, która jest niezgodna z prawem lub stanowi kontrabandę.
+  [bold]Notes:[/bold] Everything from guns without a permit, deadly blades, explosives, syndicate firearms to explosive implants.
 
-  [bold]Zalecana maksymalna kara:[/bold] 6:00
+  ## Secure Trespass
 
-  [bold]Uwagi:[/bold] Wszystko, od broni palnej bez pozwolenia, śmiercionośnych ostrzy, materiałów wybuchowych, broni palnej syndykatu po implanty wybuchowe.
+  [bold]Description[/bold]: To enter a secured area without permission.
 
-  ## Wtargnięcie na teren zabezpieczony
+  [bold]Recommended Maximum Punishment:[/bold] 8:00
 
-  [bold]Opis[/bold]: Wejście na teren zabezpieczony bez pozwolenia.
+  [bold]Notes:[/bold] This covers places like telecoms, head offices, security zones, command areas, the vault and armory.
 
-  [bold]Zalecana maksymalna kara:[/bold] 8:00
+  ## Breach of Custody
 
-  [bold]Uwagi:[/bold] Obejmuje to takie miejsca, jak telekomunikacja, biura dowódców, obszary ochrony, obszary dowodzenia, skarbiec i zbrojownie.
+  [bold]Description[/bold]: To break out of a cell or custody with the intention of escaping.
 
-  ## Ucieczka z aresztu
+  [bold]Recommended Maximum Punishment:[/bold] 5:00
 
-  [bold]Opis[/bold]: Wydostanie się z celi lub spod dozoru z zamiarem ucieczki.
+  [bold]Notes:[/bold] This time should be added on top of a prisoners current brig time. While rare, this charge can be bumped to permanent brig if the suspect has attempted to escape from or assist another in escaping from the brig multiple times.
 
-  [bold]Zalecana maksymalna kara:[/bold] 5:00
 
-  [bold]Uwagi:[/bold] Ten czas należy doliczyć do aktualnego czasu odsiadki więźnia. Choć zdarza się to rzadko, kara może zostać podniesiona do aresztu permamentnego, jeśli podejrzany wielokrotnie próbował uciec z aresztu. Obejmuje również osoby pomagające innym w ucieczce.
 
+  # IV Degree
 
-  # IV Stopnia
+  ## Kidnapping
 
-  ## Porwanie
+  [bold]Description[/bold]: To unlawfully restrain, transport, control or confine a sapient being against that individual's will.
 
-  [bold]Opis[/bold]: Bezprawne ograniczenie wolności, transport, kontrola lub uwięzienie istoty rozumnej wbrew jej woli.
+  [bold]Recommended Maximum Punishment:[/bold] 10:00
 
-  [bold]Zalecana maksymalna kara:[/bold] 10:00
+  [bold]Notes:[/bold] A large range of things, used mostly as a catch all when dealing with unlawful control of another being.
 
-  [bold]Uwagi:[/bold] Szeroki zakres czynów, stosowany głównie jako pojęcie zbiorcze w odniesieniu do bezprawnego kontrolowania innej istoty.
+  ## Murder
 
-  ## Morderstwo
+  [bold]Description[/bold]: To kill a sapient being with malicious intent.
 
-  [bold]Opis[/bold]: Zabicie istoty rozumnej ze złośliwym zamiarem.
+  [bold]Recommended Maximum Punishment:[/bold] 10:00
 
-  [bold]Zalecana maksymalna kara:[/bold] 10:00
+  [bold]Notes:[/bold] This only changes from attempted to full on murder if the victim enters a state of being deceased, having to be resurrected.
 
-  [bold]Uwagi:[/bold] Tylko w przypadku śmierci ofiary, która wymaga wskrzeszenia, czyn ten zmienia się z usiłowania morderstwa w morderstwo.
 
 
+  # V Degree
 
-  # V Stopnia
+  ## Mass Murder
 
-  ## Masowe morderstwo
+  [bold]Description[/bold]: To kill three or more sapient beings with malicious intent.
 
-  [bold]Opis[/bold]: Zabicie trzech lub więcej istot rozumnych ze złośliwym zamiarem.
+  [bold]Recommended Maximum Punishment:[/bold] Permanent
 
-  [bold]Zalecana maksymalna kara:[/bold] Permamentna
+  [bold]Notes:[/bold] Only applies when there have been multiple killings with intention.
 
-  [bold]Uwagi:[/bold] Ma zastosowanie wyłącznie w przypadku wielokrotnych, umyślnych zabójstw.
+  ## Capital Negligence
 
-  ## Rażące zaniedbanie
+  [bold]Description[/bold]: To recklessly put yourself or others in danger, either through direct action, or failure to act as a command member.
 
-  [bold]Opis[/bold]: Lekkomyślne narażenie siebie lub innych na niebezpieczeństwo poprzez bezpośrednie działanie lub zaniechanie działania jako członek dowództwa.
+  [bold]Recommended Maximum Punishment:[/bold] Permanent / Demotion
 
-  [bold]Zalecana maksymalna kara:[/bold] Permamentna / Degradacja
+  [bold]Notes:[/bold] This covers causing the death of one or more crewmates, failing to repair / mitigate severe station damage, or causing severe station damage. This charge is meant to be handed to Command members, and may be added to their permanent record.
 
-  [bold]Uwagi:[/bold] Obejmuje to spowodowanie śmierci jednego lub więcej członków załogi, nie naprawienie / nie złagodzenie poważnych uszkodzeń stacji lub spowodowanie poważnych uszkodzeń stacji. Zarzut ten ma być kierowany do członków dowództwa i może zostać dodany do ich akt osobowych.
+  ## Prevention of Revival
 
-  ## Uniemożliwienie wskrzeszenia
+  [bold]Description[/bold]: To render a body unresurrectable.
 
-  [bold]Opis[/bold]: Sprawienie, że ciało jest niemożliwe do wskrzeszenia.
+  [bold]Recommended Maximum Punishment:[/bold] Permanent
 
-  [bold]Zalecana maksymalna kara:[/bold] Permamentna
+  [bold]Notes:[/bold] This covers gibbing, spacing, intentionally hiding a body leading to it rotting, or other ways of preventing a body with a soul from being resurrected.
 
-  [bold]Uwagi:[/bold] Obejmuje to rozczłonkowanie, wyrzucenie w przestrzeń kosmiczną, celowe ukrycie ciała prowadzące do jego rozkładu lub inne sposoby uniemożliwiające wskrzeszenia ciała z duszą.
+  ## Refusal of Mental Shielding
 
-  ## Odmowa poddania się osłonie umysłu
+  [bold]Description[/bold]: To refuse to comply with a reasonable Mind Shielding procedure.
 
-  [bold]Opis[/bold]: Odmowa zastosowania się do rozsądnej procedury osłony umysłu.
+  [bold]Recommended Maximum Punishment:[/bold] Permanent
 
-  [bold]Zalecana maksymalna kara:[/bold] Permamentna
+  [bold]Notes:[/bold] Applies if the suspect is excessively uncooperative or the implant fails to function due to the mental state of the prisoner already being too far gone. If the implant fails the Recommended Maximum Punishment is upped to Expedited Execution.
 
-  [bold]Uwagi:[/bold] Ma zastosowanie, jeśli podejrzany jest skrajnie niechętny do współpracy lub implant nie działa z powodu zbyt zaawansowanego stanu psychicznego więźnia. Jeśli implant nie działa, zalecana maksymalna kara zostaje podwyższona do przyspieszonej egzekucji.
+  ## Terrorism
 
-  ## Terroryzm
+  [bold]Description[/bold]: To engage in maliciously destructive actions which threaten to destroy, or successfully destroy a vessel or habitat.
 
-  [bold]Opis[/bold]: Podejmowanie złośliwych działań destrukcyjnych, które grożą zniszczeniem lub skutecznie niszczą statek lub siedlisko.
+  [bold]Recommended Maximum Punishment:[/bold] Execution
 
-  [bold]Zalecana maksymalna kara:[/bold] Egzekucja
-
-  [bold]Uwagi:[/bold] Podsumowując: ekstremalny sabotaż systemów stacji lub uruchomienie systemów samozniszczenia.
+  [bold]Notes:[/bold] Summed up; extreme sabotage of station systems or setting off self-destruction systems.
 </Document>

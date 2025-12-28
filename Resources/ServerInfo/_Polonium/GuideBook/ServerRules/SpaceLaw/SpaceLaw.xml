@@ -1,62 +1,303 @@
-﻿<Document>
-  # Space Law
-  On Space Station 14, stations operate under abbreviated space law. All crew, passengers, and visitors aboard the station are expected to follow these laws.
+<!--
+SPDX-FileCopyrightText: 2024 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 Huhm-1 <cameronhillard40@gmail.com>
+SPDX-FileCopyrightText: 2025 Skye <57879983+Rainbeon@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
 
-  Foreign invaders, such as nuclear operatives, ninjas, and pirates, are not protected under space law. Traitors are not foreign invaders so are usually protected by space law.
+SPDX-License-Identifier: MIT
+-->
 
-  Space Law is not the server rules, but some rules reference Space Law and require it to be followed by certain people or to some degree.
+<Document>
+  # Prawo Kosmiczne
+  Stacja Polonium działa zgodnie z prawem kosmicznym. Wszyscy członkowie załogi, pasażerowie i goście przebywający na stacji powinni znać i przestrzegać tych przepisów (są one dość zdroworozsądkowe, tylko ochrona i kapitan muszą znać szczegóły).
 
-  ## Treatment Of Prisoners
-  Prisoners still have certain rights that must be upheld by law enforcement:
-  - Prisoners must be granted adequate medical care.
-  - Prisoners must be allowed access to basic communications equipment (Radios) so long as they are not abused.
-  - Prisoners must be granted clothing, food, water, shelter and safety. If the brig is no longer safe, confinement must be established in another location.
-  - Prisoners must be given access to legal counsel during an interrogation if requested and available.
-  - Prisoners must be given their shift mandated PDA after confinement has finished, unless there is solid proof of PDA tampering. In case of tampering, the PDA is to be secured and replaced with a new unit.
-  - Prisoners must be granted freedom of movement, and should not be restrained with handcuffs or other devices after incarceration unless there is an undue risk to life and limb. Similarly, any prisoners held for permanent confinement should be held in the communal brig, and should not be confined to a solitary cell unless they pose a risk to life and limb.
+  ## Traktowanie więźniów
 
-  ## Search and Seizure
-  A personnel search is a seizure of the objects in a person's backpack, hands, coat, belt, and pockets. If any contraband is found during a search, the officer may choose to further the search into a detainment or simply confiscate the restricted items. Non-restricted items may be seized by Security if they were used to facilitate a crime. After the search is conducted, all legal items are to be returned to the person. A crewmate may legally decline any search conducted without probable cause or a warrant while the alert level is green. It should be noted that if the alert level is blue or above, all personnel searches are legal.
+  Więźniowie wciąż mają pewne prawa, które muszą być przestrzegane przez organy ścigania:
 
-  A departmental search is the sweep of an entire area or department for contraband. It is recommended that the officers be extremely thorough, checking all lockers, crates, and doors. These can only be done with permission or, ideally, a warrant signed by the department head or highest-ranking command staff, which is the captain in most cases.
+  - Więźniom należy zapewnić odpowiednią opiekę medyczną. Powinni oni również mieć zapewnioną pomoc psychiatryczną i duchową, jeśli o to poproszą.
+  - Więźniowie muszą mieć dostęp do sprzętu komunikacyjnego (radia), o ile nie jest on nadużywany.
+  - Więźniom należy zapewnić odzież, żywność, wodę, schronienie i bezpieczeństwo. Jeśli areszt nie jest już bezpieczny, należy przenieść więźniów do innego miejsca.
+  - Więźniowie muszą mieć dostęp do pomocy prawnej podczas przesłuchania, jeśli o to poproszą i jeśli jest ona dostępna.
+  - Po zakończeniu pobytu w areszcie więźniowie muszą otrzymać przypisane im urządzenia PDA. Wyjątkiem jest sytuacja, w której istnieją solidne dowody na manipulowanie urządzeniem PDA – w takim przypadku urządzenie należy zabezpieczyć i wymienić na nowe.
+  - Więźniowie muszą mieć zapewnioną swobodę poruszania się i nie powinni być krępowani kajdankami ani innymi środkami po osadzeniu w areszcie, chyba że istnieje nadmierne zagrożenie dla życia lub zdrowia. Podobnie, wszyscy więźniowie przebywający w areszcie na czas dłuższy lub bezterminowy powinni być przetrzymywani w celach zbiorowych i nie powinni być umieszczani w izolatkach, chyba że stanowią zagrożenie dla życia lub zdrowia.
 
-  ## Implantation
-  Any prisoner in custody can be subjected to implantation or implant extraction procedures, so long as it's within reason. The process of adding or extracting an implant should not prolong the detainees sentence, meaning you can not hold them longer to perform the procedure, unless stated otherwise. A former inmate can be requested to undergo implantation/extraction at a later point in time; if they fit the circumstances during their confinement, they must comply. The following have been listed out with special circumstances, anything not in this list can still be applied, given proper legal context. A prisoner can still receive implantation/extraction procedures without meeting the circumstances if they give their clear permission.
+  ## Przeszukiwania
 
-  [color=#a4885c]Tracking Implants:[/color] Trackers can be applied to any suspect that has been convicted of a violent crime (the red linked crimes).
+  Przeszukanie osobiste polega na zajęciu przedmiotów znajdujących się w plecaku, rękach, płaszczu, pasku, kieszeniach i czapce danej osoby. Jeśli podczas przeszukania zostaną znalezione jakiekolwiek przedmioty zabronione, funkcjonariusz może zdecydować o dalszym przeszukaniu w ramach zatrzymania lub po prostu skonfiskować przedmioty objęte ograniczeniami. Po przeprowadzeniu przeszukania wszystkie przedmioty zgodne z prawem należy zwrócić danej osobie.
 
-  [color=#a4885c]Mind Shields:[/color] Shields can be administered to any inmate who has been clearly mind controlled, lost control of themselves, or a suspect charged with unlawful control. Unlike standard implantation you may hold a prisoner until you finish issuing Mind Shields, so long as it's done in a timely fashion. If a suspect refuses to cooperate or the implant fails to function they can be charged with Refusal of Mental Shielding.
+  Członek załogi może zgodnie z prawem odmówić poddania się przeszukaniu przeprowadzanemu bez nakazu, gdy poziom alarmowy wynosi zielony. Należy zauważyć, że jeśli poziom alarmowy wynosi niebieski lub wyższy, przeszukania całego personelu są legalne i nie wymagają już nakazu.
 
-  Usage of contraband implanters is a detainable offense, but it's not reasonable to detain someone solely for having an unidentified implant inside them.
+  ## Implantacja
 
-  ## Implant Removal
-  Any prisoner in custody can be subjected to implant extraction for a specific implant if there is reasonable suspicion they have it implanted. Detainees may not be forced or coerced into performing implant extraction on themselves against their will.
+  Każdy więzień przebywający w areszcie może zostać poddany zabiegowi wszczepienia lub usunięcia implantu, o ile jest to uzasadnione. Proces wszczepienia implantu nie powinien wydłużać wyroku skazanego, co oznacza, że nie można przetrzymywać go dłużej w celu wszczepienia implantu, chyba że określono inaczej. Więzień może nadal zostać poddany zabiegowi wszczepienia implantu bez spełnienia powyższych warunków, jeśli wyrazi na to wyraźną zgodę.
 
-  ## Sentencing
-  From a server rules perspective, security officers are only responsible for ensuring that they only place sentences over 15 minutes where space law would allow permanent confinement. Informing the Warden is highly recommended, even for timed sentences. As long as those requirements are met, security officers not giving inappropriate sentence lengths is considered an in-character issue, not a rule issue.
+  [bold]Osłony Umysłu[/bold]: Osłony umysłu mogą być stosowane u każdego więźnia, który wyraźnie został poddany praniu mózgu. W przeciwieństwie do standardowego wszczepiania implantów, można przetrzymywać więźnia do momentu wydania mu osłony umysłu, o ile odbywa się to w odpowiednim czasie. Jeśli podejrzany odmówi współpracy lub implant nie będzie działał, można go oskarżyć o odmowę poddania się osłonie umysłu.
 
-  The captain, HOS, and warden are responsible, within reason, for ensuring security officers place appropriate sentences that follow space law. If they are aware of an inappropriate sentence, including excessively long sentences, and if there is not an urgent threat or danger that they must prioritize, then they must work to correct that sentence. Unreasonable failures, as determined by game admins, of the captain, HOS, or warden to ensure space law is followed will be considered a rule issue, not an in-character issue.
+  W normalnych okolicznościach członek załogi może odmówić przyjęcia osłony umysłu, jeśli nie jest uwięziony za popełnienie przestępstwa.
 
-  Use common sense and humanity when issuing punishments. You should not always seek out the highest punishment you can, you don't have to always give the maximum time or always look to demote someone. Prisoners cooperating and on good behavior should have their sentences reduced. Always take in account the severity and only charge for what is needed for someone to learn their lesson.
+  [bold]Jednakże, gdy istnieje znane zagrożenie dla stacji, polegające na masowym praniu mózgu lub kontroli umysłu, członkowie załogi muszą poddać się osłonie umysłu, jeśli nakazuje to ochrona. Nieprzestrzeganie tego nakazu będzie traktowane jako odmowa poddania się osłonie umysłu.[/bold]
 
-  [color=#a4885c]Stackable Crimes:[/color] Crimes are to be considered 'stackable' in the sense that if you charge someone with two or more different crimes, you should combine the times you would give them for each crime. Linked crimes, shown in matching colors and suffixes on the Quick Crime Guide, can not be stacked and instead override each other, you should pick the highest crime that matches the case.
+  # Usuwanie
 
-  - Example: A suspect has committed a 2-01 (possession: major) and a 3-01 (possession: syndicate). The maximum sentence here would be 10 minutes due to them being linked crimes, and 3-01 is the greater crime.
-  - Example 2: A suspect commits a 3-04 (Secure trespassing) and a 3-06 (manslaughter). Those crimes stack since they are not linked crimes. You could sentence for a maximum of 20 minutes, but context matters heavily, and maximum sentences should only be used for the worst offenders.
+  Podejrzany może zostać zmuszony do usunięcia implantu, jeśli istnieją mocne, uzasadnione dowody na to, że został on wszczepiony, np. funkcjonariusz był świadkiem użycia urządzenia do implantacji lub informacje biologiczne zostały znalezione na wyrzuconym wstrzykiwaczu. W przeciwieństwie do procedury implantacji, wyrok więźnia może zostać całkowicie odroczony lub przedłużony do czasu poddania się procedurze, o ile ochrona aktywnie podejmuje próby jej wykonania. Podobnie jak w przypadku implantacji, jeśli więzień wyrazi wyraźną zgodę, usunięcie implantu może nastąpić bez konieczności przedstawiania dowodów.
 
-  [color=#a4885c]Repeater Offenders:[/color] Repeated crimes are when someone is released for a crime and then goes to commit the same crime within the same shift. Repeated crimes can be charged with tacked-on time; first repeat: 3:00, second repeat: 6:00, third repeat: permanent confinement. It should be noted each tacked-on time is directly linked to one type of crime, so for example, if someone does their first repeat of trespass and petty theft, you can charge them with an extra 6 minutes.
+  ## Wyroki
+  Wszystkie wyroki są wydawane przede wszystkim przez strażnika, a jeśli strażnik jest niedostępny, obowiązki te przejmuje Szef Ochrony, a jeśli nie ma Szefa Ochrony, obowiązki te przejmują członkowie ochrony o najwyższym stopniu.
 
-  [color=#a4885c]Accessory, Attempting, And Intention:[/color] If someone intentionally, knowingly and substantially assists someone in enacting a crime they can be charged with the relevant crimes, such as an engineer giving someone tools, who says they are going to break into an area. Same goes for a clear and solid attempt at a crime, or a person who shows clear intent to act out a crime, such as a syndicate nuclear operative arming a nuke but getting arrested before it goes off, they can still be charged with station-wide destruction. Does not apply to crimes that have an attempted listing already, like attempted murder.
+  Przy nakładaniu kar kieruj się zdrowym rozsądkiem i humanitaryzmem. Nie zawsze należy dążyć do wymierzenia najwyższej kary, nie zawsze trzeba nakładać maksymalny wymiar kary lub zawsze dążyć do degradacji danej osoby. Zawsze należy brać pod uwagę powagę wykroczenia i nakładać kary tylko w takim zakresie, jaki jest niezbędny, aby dana osoba wyciągnęła z niego wnioski.
 
-  ## Normal Punishments
-  - [color=#a4885c]Warning:[/color] For minor crimes, fix the issue, then warn the person not to attempt the crime again. If they still proceed to do it at a later date, a brig time may be better.
-  - [color=#a4885c]Confinement:[/color] The typical punishment, being confined in a cell for a temporary amount of time according to the crimes.
-  - [color=#a4885c]Demotion:[/color] Entails removing all departmental gear they have on their person and revoking the involved department access off their ID. This requires the captain's or involved department head's approval. Demotions should only be issued if the person pose a threat to their own department or are in a position where they have/can abuse their job's gear to commit further crimes.
+  [bold]Pomocnictwo, usiłowanie i zamiar:[/bold] Jeśli ktoś celowo, świadomie i w znacznym stopniu pomaga innej osobie w popełnieniu przestępstwa, może zostać oskarżony o popełnienie odpowiednich przestępstw, np. inżynier, który dostarcza narzędzia osobie, która zamierza włamać się do jakiegoś obiektu. To samo dotyczy wyraźnej i konkretnej próby popełnienia przestępstwa lub osoby, która wykazuje wyraźny zamiar popełnienia przestępstwa, np. członek syndykatu uzbrajający bombę atomową, ale aresztowany przed jej detonacją, może nadal zostać oskarżony o terroryzm. Nie dotyczy to przestępstw, które już zostały wymienione jako próby, np. usiłowanie morderstwa.
 
-  ## Major Punishments
-  [color=#a4885c]Permanent Confinement:[/color] Being held in the permanent brig for the entire duration of the shift. A person is eligible for permanent confinement if their timed sentence would exceed 15 minutes. Any persons subject to this punishment are required to be transported in cuffs to CentComm at the end of the shift. A permanent prisoner can not be deprived of anything covered by the section "Treatment Of Prisoners".
-  [color=#a4885c]Execution:[/color] A humane way of dealing with extremely unruly crewmates. Within reason, a prisoner who has been given the death sentence may pick how they wish to be killed, common methods are firing line, lethal injection, exile, and high voltage electrocution. Another alternate method of "execution" is the process of placing a staff's mind into a borg, this is allowed so long as it is lawful. Execution can only be issued with the captain's or acting captain's approval; if the HoS is acting captain or there is no acting captain, all heads of staff are to hold a vote on the matter.
+  [bold]Przestępstwa kumulowalne:[/bold] Przestępstwa uznaje się za „kumulowalne” w tym sensie, że jeśli oskarża się kogoś o popełnienie dwóch lub więcej różnych przestępstw, należy zsumować kary, jakie zostałyby wymierzone za każde z nich.
 
-  ## Crime Listing
-  - [textlink="Crime Listing" link="SpaceLawCrimeList"]
+  [bold]Wpływy zewnętrzne:[/bold] Przestępstwa popełnione pod wpływem kontroli umysłowej innej osoby lub bytu podlegają ułaskawieniu po dokonaniu wyraźnej i skutecznej dekonwersji.
+
+  [bold]Egzekucje:[/bold] Egzekucje mogą być zatwierdzone przez kapitana / pełniącego obowiązki kapitana po przeprowadzeniu procesu sądowego. Egzekucje mogą być również zatwierdzone przez Centralne Dowodzenie po formalnym zgłoszeniu.
+
+
+  # Powtarzające się przestępstwa
+  W przypadku przestępstw popełnionych ponownie po odbyciu kary za to samo przestępstwo, do zalecanego maksymalnego wymiaru kary można dodać dodatkowy czas. Ogólne wytyczne są następujące:
+
+  ## Drugie przestępstwo
+  [bold]Zalecane zwiększenie:[/bold] Zaleca się zwiększenie wymiaru kary o 1,5 razy wyłącznie za to samo przestępstwo.
+
+  ## Trzecie przestępstwo
+  [bold]Zalecane zwiększenie:[/bold] Zaleca się zwiększenie wymiaru kary o 2,5 razy wyłącznie za to samo przestępstwo.
+
+  ## Kolejne powtarzające się przestępstwa
+  Jeśli zatrzymany popełnił to samo przestępstwo więcej niż trzy razy w różnych okolicznościach, decyzja o umieszczeniu go w areszcie permamentnym należy do strażnika lub, w przypadku jego nieobecności, do najwyższego rangą członka ochrony.
+
+  [bold]Jeśli czas aresztu przekracza 20 minut, zdecydowanie zaleca się areszt permamentny.[/bold]
+
+
+  # Przestępstwa
+
+  # I Stopnia
+
+  W przypadku drobnych przestępstw należy rozwiązać problem, a następnie ostrzec sprawcę, aby nie popełniał tego przestępstwa ponownie. Jeśli mimo to sprawca nadal będzie je popełniał, lepszym rozwiązaniem może być areszt.
+
+  ## Zakłócanie porządku
+
+  [bold]Opis[/bold]: Zakłócanie porządku publicznego.
+
+  [bold]Zalecana maksymalna kara:[/bold] 2:00
+
+  [bold]Uwagi:[/bold] Czasami określane jako chuligaństwo. Pojemna kategoria obejmująca nieprzyjemnych członków załogi. Obejmuje takie rzeczy, jak publiczna nagość, niepotrzebne obelgi, utrudnianie pracy władzom oraz podżeganie do przestępstw lub przemocy.
+
+  ## Drobna kradzież
+
+  [bold]Opis[/bold]: Zabranie bez zgody innej osoby, organizacji lub własności wspólnej przedmiotów, które nie są niezbędne lub są niedrogie.
+
+  [bold]Zalecana maksymalna kara:[/bold] 3:00
+
+  [bold]Uwagi:[/bold] Różnica między drobną kradzieżą a wielką kradzieżą polega na tym, jak ważny jest skradziony przedmiot. Przedmioty takie jak instrumenty, odzież i narzędzia zaliczają się do drobnych kradzieży. W większości przypadków wystarczy zatrzymać złodzieja, zwrócić skradziony przedmiot i puścić go z ostrzeżeniem.
+
+  ## Posiadanie/używanie nielegalnych substancji
+
+  [bold]Opis[/bold]: Produkcja, posiadanie lub nadużywanie substancji lub chemikaliów objętych ograniczeniami.
+
+  [bold]Zalecana maksymalna kara:[/bold] 3:00
+
+  [bold]Uwagi: Należy postępować zgodnie ze Standardową Procedurą Postępowania. Jeśli w SPP nie ma wzmianki o jakiejkolwiek wątpliwej kwestii, kapitan lub najwyższy rangą dowódca może publicznie nałożyć ograniczenia.[/bold]
+
+  ## Wtargnięcie
+
+  [bold]Opis[/bold]: Wejście na teren niezabezpieczony bez pozwolenia.
+
+  [bold]Zalecana maksymalna kara:[/bold] 2:00
+
+  [bold]Uwagi:[/bold] Zamiast zatrzymywać sprawców, często lepiej po prostu usunąć ich z terenu.
+
+  ## Wandalizm
+
+  [bold]Opis[/bold]: Celowe oszpecenie lub powierzchowne uszkodzenie mienia publicznego lub prywatnego.
+
+  [bold]Zalecana maksymalna kara:[/bold] 2:00
+
+  [bold]Uwagi:[/bold] Malowanie graffiti, rozbijanie szklanek barowych i rozbijanie wewnętrznych okien stanowi wandalizm, natomiast rozbicie okna prowadzącego do przestrzeni lub obszarów zabezpieczonych nie stanowi wandalizmu.
+
+
+
+  # II Stopnia
+
+  ## Okrucieństwo wobec zwierząt
+
+  [bold]Opis[/bold]: Złośliwe zadawanie niepotrzebnego cierpienia lub krzywdy istocie nierozumnej.
+
+  [bold]Zalecana maksymalna kara:[/bold] 5:00
+
+  [bold]Uwagi:[/bold] Nie obejmuje to legalnych i autoryzowanych testów na zwierzętach i zazwyczaj nie dotyczy szkodników lub stworzeń, które mogą stanowić zagrożenie dla stacji.
+
+  ## Uszkodzenie/zniszczenie mienia
+
+  [bold]Opis[/bold]: Złośliwe uszkodzenie lub oszpecenie mienia publicznego lub prywatnego lub sprzętu.
+
+  [bold]Zalecana maksymalna kara:[/bold] 4:00
+
+  [bold]Uwagi:[/bold] Stopień wyższy od wandalizmu, ale niższy od masowego zniszczenia.
+
+  ## Narażenie na niebezpieczeństwo
+
+  [bold]Opis[/bold]: Lekkomyślne narażanie siebie lub innych na niebezpieczeństwo poprzez bezpośrednie działanie lub zaniechanie działania.
+
+  [bold]Zalecana maksymalna kara:[/bold] 4:00
+
+  [bold]Uwagi:[/bold] Obejmuje wypadki przy pracy, zaniedbania przemysłowe, eksperymenty na sobie, a nawet błędy medyczne.
+
+  ## Niezastosowanie się do poleceń
+
+  [bold]Opis[/bold]: Stawianie oporu wobec uzasadnionych poleceń wydanych przez władze. Obejmuje to nakazy i uprawnione przeszukania.
+
+  [bold]Zalecana maksymalna kara:[/bold] 2:00
+
+  [bold]Uwagi:[/bold] Polecenie musi być uzasadnione, a dana osoba powinna otrzymać wystarczające ostrzeżenie przed aresztowaniem.
+
+  ## Posiadanie sprzętu objętego ograniczeniami
+
+  [bold]Opis[/bold]: Posiadanie lub używanie nieśmiercionośnych przedmiotów lub obiektów, które są objęte ograniczeniami lub są nielegalne.
+
+  [bold]Zalecana maksymalna kara:[/bold] 5:00
+
+  [bold]Uwagi:[/bold] Dotyczy to głównie kontrabandy syndykatu: EMAG-ów, masek przeciwgazowych syndykatu, krwistoczerwonych kombinezonów, przerobionych PDA lub implantów, jednak czasami może obejmować również przedmioty, których dana osoba nie powinna posiadać, takie jak kamizelki kevlarowe i sprzęt ochrony.
+
+  ## Zamieszki
+
+  [bold]Opis[/bold]: Udział w dużej grupie osób powodującej bezprawne zakłócenie porządku publicznego.
+
+  [bold]Zalecana maksymalna kara:[/bold] 4:00
+
+  [bold]Uwagi:[/bold] Oczekuje się, że do tego zarzutu zostaną dodane przestępstwa takie jak zniszczenie mienia lub pobicie. Przywódcy zamieszek mogą zostać oskarżeni o wszystkie przestępstwa popełnione pod ich przywództwem.
+
+
+
+  # III Stopnia
+
+  ## Napaść/pobicie
+
+  [bold]Opis[/bold]: Grożenie lub użycie siły fizycznej wobec innej osoby bez zamiaru zabicia.
+
+  [bold]Zalecana maksymalna kara:[/bold] 6:00
+
+  [bold]Uwagi:[/bold] Próba zabójstwa i pobicie to różne przestępstwa, należy pamiętać o tym rozróżnieniu.
+
+  ## Naruszenie zatrzymania
+
+  [bold]Opis[/bold]: Celowe stawianie oporu i ucieczka przed aresztowaniem lub zatrzymaniem przez upoważniony personel.
+
+  [bold]Zalecana maksymalna kara:[/bold] 4:00
+
+  [bold]Uwagi:[/bold] Dotyczy to wyłącznie sytuacji, w której dana osoba jest aktywnie aresztowana fizycznie. Obejmuje to osoby zdejmujące kajdanki lub pomagające innym w uniknięciu aresztowania. Ucieczka z aresztu jest odrębnym przestępstwem.
+
+  ## Wielka kradzież
+
+  [bold]Opis[/bold]: Zabranie bez zgody innej osoby lub organizacji ważnego lub nieodzownego mienia.
+
+  [bold]Zalecana maksymalna kara:[/bold] 6:00
+
+  [bold]Uwagi:[/bold] Różnica między drobną kradzieżą a wielką kradzieżą polega na tym, jak ważny jest skradziony przedmiot. Termin ten jest używany głównie w odniesieniu do kradzieży przedmiotów należących do personelu dowodzenia, takich jak piloty do drzwi, kombinezony ochronne, plecaki odrzutowe i niepowtarzalne części maszyn.
+
+  ## Nieumyślne spowodowanie śmierci
+
+  [bold]Opis[/bold]: Przypadkowe pozbawienie życia istoty rozumnej bez zamiaru.
+
+  [bold]Zalecana maksymalna kara:[/bold] 10:00
+
+  [bold]Uwagi:[/bold] Obejmuje nieumyślne spowodowanie śmierci w obronie własnej oraz śmierć wynikającą z zaniedbania.
+
+  ## Masowe zniszczenie
+
+  [bold]Opis[/bold]: Spowodowanie ogromnych zniszczeń na danym obszarze lub w kluczowym systemie stacji.
+
+  [bold]Zalecana maksymalna kara:[/bold] 15:00.
+
+  [bold]Uwagi:[/bold] Najczęściej stosowane w przypadku śmiercionośnych zamachów bombowych lub sabotażu kluczowych systemów stacji, takich jak produkcja energii, klonowanie, podstacje czy systemy atmosferyczne.
+
+  ## Posiadanie broni objętej ograniczeniami
+
+  [bold]Opis[/bold]: Posiadanie lub używanie broni, która jest niezgodna z prawem lub stanowi kontrabandę.
+
+  [bold]Zalecana maksymalna kara:[/bold] 6:00
+
+  [bold]Uwagi:[/bold] Wszystko, od broni palnej bez pozwolenia, śmiercionośnych ostrzy, materiałów wybuchowych, broni palnej syndykatu po implanty wybuchowe.
+
+  ## Wtargnięcie na teren zabezpieczony
+
+  [bold]Opis[/bold]: Wejście na teren zabezpieczony bez pozwolenia.
+
+  [bold]Zalecana maksymalna kara:[/bold] 8:00
+
+  [bold]Uwagi:[/bold] Obejmuje to takie miejsca, jak telekomunikacja, biura dowódców, obszary ochrony, obszary dowodzenia, skarbiec i zbrojownie.
+
+  ## Ucieczka z aresztu
+
+  [bold]Opis[/bold]: Wydostanie się z celi lub spod dozoru z zamiarem ucieczki.
+
+  [bold]Zalecana maksymalna kara:[/bold] 5:00
+
+  [bold]Uwagi:[/bold] Ten czas należy doliczyć do aktualnego czasu odsiadki więźnia. Choć zdarza się to rzadko, kara może zostać podniesiona do aresztu permamentnego, jeśli podejrzany wielokrotnie próbował uciec z aresztu. Obejmuje również osoby pomagające innym w ucieczce.
+
+
+  # IV Stopnia
+
+  ## Porwanie
+
+  [bold]Opis[/bold]: Bezprawne ograniczenie wolności, transport, kontrola lub uwięzienie istoty rozumnej wbrew jej woli.
+
+  [bold]Zalecana maksymalna kara:[/bold] 10:00
+
+  [bold]Uwagi:[/bold] Szeroki zakres czynów, stosowany głównie jako pojęcie zbiorcze w odniesieniu do bezprawnego kontrolowania innej istoty.
+
+  ## Morderstwo
+
+  [bold]Opis[/bold]: Zabicie istoty rozumnej ze złośliwym zamiarem.
+
+  [bold]Zalecana maksymalna kara:[/bold] 10:00
+
+  [bold]Uwagi:[/bold] Tylko w przypadku śmierci ofiary, która wymaga wskrzeszenia, czyn ten zmienia się z usiłowania morderstwa w morderstwo.
+
+
+
+  # V Stopnia
+
+  ## Masowe morderstwo
+
+  [bold]Opis[/bold]: Zabicie trzech lub więcej istot rozumnych ze złośliwym zamiarem.
+
+  [bold]Zalecana maksymalna kara:[/bold] Permamentna
+
+  [bold]Uwagi:[/bold] Ma zastosowanie wyłącznie w przypadku wielokrotnych, umyślnych zabójstw.
+
+  ## Rażące zaniedbanie
+
+  [bold]Opis[/bold]: Lekkomyślne narażenie siebie lub innych na niebezpieczeństwo poprzez bezpośrednie działanie lub zaniechanie działania jako członek dowództwa.
+
+  [bold]Zalecana maksymalna kara:[/bold] Permamentna / Degradacja
+
+  [bold]Uwagi:[/bold] Obejmuje to spowodowanie śmierci jednego lub więcej członków załogi, nie naprawienie / nie złagodzenie poważnych uszkodzeń stacji lub spowodowanie poważnych uszkodzeń stacji. Zarzut ten ma być kierowany do członków dowództwa i może zostać dodany do ich akt osobowych.
+
+  ## Uniemożliwienie wskrzeszenia
+
+  [bold]Opis[/bold]: Sprawienie, że ciało jest niemożliwe do wskrzeszenia.
+
+  [bold]Zalecana maksymalna kara:[/bold] Permamentna
+
+  [bold]Uwagi:[/bold] Obejmuje to rozczłonkowanie, wyrzucenie w przestrzeń kosmiczną, celowe ukrycie ciała prowadzące do jego rozkładu lub inne sposoby uniemożliwiające wskrzeszenia ciała z duszą.
+
+  ## Odmowa poddania się osłonie umysłu
+
+  [bold]Opis[/bold]: Odmowa zastosowania się do rozsądnej procedury osłony umysłu.
+
+  [bold]Zalecana maksymalna kara:[/bold] Permamentna
+
+  [bold]Uwagi:[/bold] Ma zastosowanie, jeśli podejrzany jest skrajnie niechętny do współpracy lub implant nie działa z powodu zbyt zaawansowanego stanu psychicznego więźnia. Jeśli implant nie działa, zalecana maksymalna kara zostaje podwyższona do przyspieszonej egzekucji.
+
+  ## Terroryzm
+
+  [bold]Opis[/bold]: Podejmowanie złośliwych działań destrukcyjnych, które grożą zniszczeniem lub skutecznie niszczą statek lub siedlisko.
+
+  [bold]Zalecana maksymalna kara:[/bold] Egzekucja
+
+  [bold]Uwagi:[/bold] Podsumowując: ekstremalny sabotaż systemów stacji lub uruchomienie systemów samozniszczenia.
 </Document>
