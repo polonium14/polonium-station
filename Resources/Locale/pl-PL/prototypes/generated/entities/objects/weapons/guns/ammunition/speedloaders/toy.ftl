@@ -1,4 +1,4 @@
-ent-BaseSpeedLoaderCap = cap gun loader
+ent-BaseSpeedLoaderCap = ładowarka do pistoletów na kapiszony
     .desc = { ent-BaseItem.desc }
-ent-SpeedLoaderCap = cap gun loader
+ent-SpeedLoaderCap = { ent-BaseSpeedLoaderCap }
     .desc = { ent-BaseSpeedLoaderCap.desc }

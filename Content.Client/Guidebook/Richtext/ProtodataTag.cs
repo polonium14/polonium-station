@@ -1,5 +1,7 @@
 // SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
 // SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2025 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Polonium-bot <admin@ss14.pl>
 // SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
 //
 // SPDX-License-Identifier: MIT
@@ -15,7 +17,7 @@ namespace Content.Client.Guidebook.RichText;
 /// In order to be accessed by this tag, the desired field/property must
 /// be tagged with <see cref="Shared.Guidebook.GuidebookDataAttribute"/>.
 /// </summary>
-public sealed class ProtodataTag : IMarkupTag
+public sealed class ProtodataTag : IMarkupTagHandler
 {
     [Dependency] private readonly ILogManager _logMan = default!;
     [Dependency] private readonly IEntityManager _entMan = default!;

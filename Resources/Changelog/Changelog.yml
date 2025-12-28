@@ -1,33 +1,4 @@
 ﻿Entries:
-- author: ArtisticRoomba
-  changes:
-  - message: Kessler Syndrome and Zombeteors are removed from the possible gamemodes
-      in the Secret pool.
-    type: Remove
-  id: 7785
-  time: '2025-01-07T00:18:56.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34051
-- author: Alpaccalypse
-  changes:
-  - message: Special reagents are now listed in the relevant section of the guidebook.
-    type: Add
-  id: 7786
-  time: '2025-01-07T17:45:03.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34265
-- author: Tayrtahn
-  changes:
-  - message: Sentient goats now have a bleating effect when speaking.
-    type: Add
-  id: 7787
-  time: '2025-01-08T01:00:20.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34273
-- author: southbridge-fur
-  changes:
-  - message: Warm light bulbs exist now.
-    type: Add
-  id: 7788
-  time: '2025-01-09T08:54:05.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34324
 - author: deltanedas
   changes:
   - message: Fixed AIs not being able to use lockable buttons.
@@ -3963,3 +3934,38 @@
   id: 9092
   time: '2025-12-24T22:36:58.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/116
+- author: qazmlp
+  changes:
+  - message: "Zast\u0105piono cz\u0119\u015B\u0107 broni na stacji Core polskimi odpowiednikami"
+    type: Tweak
+  - message: "\u015Awi\u0105teczna atmosfera ju\u017C na stacji Core!"
+    type: Tweak
+  id: 9093
+  time: '2025-12-26T01:41:40.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/368
+- author: Lukasz825700516
+  changes:
+  - message: "t\u0142umaczenie szklanek"
+    type: Add
+  id: 9094
+  time: '2025-12-26T02:46:09.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/367
+- author: Nikitapl
+  changes:
+  - message: "Przet\u0142umaczono wszystkie bronie"
+    type: Add
+  - message: "Przet\u0142umaczono wszystkie rodzaje amunicji"
+    type: Add
+  id: 9095
+  time: '2025-12-26T17:36:51.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/364
+- author: Nikitapl
+  changes:
+  - message: Zaktualizowano regulamin serwera
+    type: Tweak
+  - message: "Naprawiono b\u0142\u0105d, kt\xF3ry uniemo\u017Cliwia\u0142 otwieranie\
+      \ link\xF3w do zasad"
+    type: Fix
+  id: 9096
+  time: '2025-12-26T17:38:10.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/362

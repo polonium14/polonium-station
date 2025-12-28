@@ -1,6 +1,6 @@
 ent-BaseBola = bola
-    .desc = Linked together with some spare cuffs and metal.
+    .desc = Połączone ze sobą za pomocą zapasowych kajdanek i metalu.
 ent-Bola = bola
     .desc = { ent-BaseBola.desc }
-ent-BolaEnergy = energy bola
-    .desc = A specialized hardlight bola designed to ensnare fleeing criminals and aid in arrests.
+ent-BolaEnergy = bola energetyczna
+    .desc = Specjalistyczna bola z twardego światła, zaprojektowana do unieruchamiania uciekających przestępców i wspomagania aresztowań.

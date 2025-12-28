@@ -1,4 +1,4 @@
-ent-BaseCartridgeHeavyRifle = cartridge (.20 rifle)
+ent-BaseCartridgeHeavyRifle = nabój (.20 karabinowe)
     .desc = { ent-BaseCartridge.desc }
-ent-CartridgeMinigun = cartridge (.10 rifle)
+ent-CartridgeMinigun = nabój (.10 karabinowe)
     .desc = { ent-BaseCartridgeHeavyRifle.desc }

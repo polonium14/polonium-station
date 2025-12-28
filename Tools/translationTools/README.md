@@ -169,3 +169,7 @@ Normalizuje myślniki w plikach Fluent (.ftl) – zamienia zwykłe łączniki `-
 
 - **`translationTool__old.py`** - Stara wersja narzędzia (deprecated). Tworzy jeden pojedynczy plik z lokalizacją wszystkich prototypów.
 - **`sync_locales.py`** - Odpowiednik funkcjonalny `keyfinder.py` z mniejszą logiką.
+
+> [!NOTE]
+> Wszystkie skrypty w tym folderze są licencjonowane na warunkach GNU Affero General Public License v3.0 (AGPL-3.0).
+> Oryginalne komponenty użyte w projekcie były pierwotnie dostarczane na licencji MIT (patrz plik [LICENSE](https://github.com/space-syndicate/space-station-14/blob/master/LICENSE.TXT)).

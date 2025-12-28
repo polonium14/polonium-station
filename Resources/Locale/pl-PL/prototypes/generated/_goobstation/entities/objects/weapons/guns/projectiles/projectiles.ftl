@@ -1,8 +1,8 @@
-ent-BulletMic = MIC bolt
-    .desc = Not too bad, but you still don't want to get hit by it.
-ent-BulletPlasmaCutter = cutter bolt
-    .desc = Not too bad, but you still don't want to get hit by it.
+ent-BulletMic = pocisk MKE
+    .desc = Nie jest zły, ale nadal nie chcesz zostać nim trafiony.
+ent-BulletPlasmaCutter = pocisk przecinaka
+    .desc = { ent-BulletMic.desc }
 ent-BulletPlasmaCutterStrong = { ent-BulletPlasmaCutter }
     .desc = { ent-BulletPlasmaCutter.desc }
-ent-BulletEnergyGunRevolver = revolver bolt
+ent-BulletEnergyGunRevolver = pocisk rewolweru
     .desc = { ent-BaseBullet.desc }

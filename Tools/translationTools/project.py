@@ -1,4 +1,12 @@
-# Taken from Corvax - https://github.com/space-syndicate/space-station-14/tree/master/Tools/ss14_ru
+# Prawa autorskie (C) 2025 Polonium Statiom
+#
+# Ten program jest wolnym oprogramowaniem: można go rozpowszechniać i/lub modyfikować
+# zgodnie z warunkami licencji GNU AGPL opublikowanej przez
+# Free Software Foundation, w wersji 3 licencji lub
+# w dowolnej późniejszej wersji.
+#
+# Ten program stworzony na podstawie kodu projektu Corvax,
+# pierwotnie licencjonowanego na podstawie licencji MIT (patrz https://github.com/space-syndicate/space-station-14/blob/master/LICENSE.TXT).
 
 import pathlib
 import os

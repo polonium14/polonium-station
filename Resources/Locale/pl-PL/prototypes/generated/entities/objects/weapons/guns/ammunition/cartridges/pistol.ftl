@@ -1,10 +1,10 @@
-ent-BaseCartridgePistol = cartridge (.35 auto)
+ent-BaseCartridgePistol = nabój (.35 auto)
     .desc = { ent-BaseCartridge.desc }
-ent-CartridgePistol = cartridge (.35 auto)
+ent-CartridgePistol = nabój (.35 auto)
     .desc = { ent-BaseCartridgePistol.desc }
-ent-CartridgePistolPractice = cartridge (.35 auto practice)
+ent-CartridgePistolPractice = nabój (.35 auto treningowe)
     .desc = { ent-BaseCartridgePistol.desc }
-ent-CartridgePistolIncendiary = cartridge (.35 auto incendiary)
+ent-CartridgePistolIncendiary = nabój (.35 auto zapalające)
     .desc = { ent-BaseCartridgePistol.desc }
-ent-CartridgePistolUranium = cartridge (.35 auto uranium)
+ent-CartridgePistolUranium = nabój (.35 auto uranowe)
     .desc = { ent-BaseCartridgePistol.desc }

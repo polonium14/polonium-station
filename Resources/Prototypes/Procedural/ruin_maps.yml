@@ -1,4 +1,7 @@
+# SPDX-FileCopyrightText: 2025 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Polonium-bot <admin@ss14.pl>
 # SPDX-FileCopyrightText: 2025 Terkala <appleorange64@gmail.com>
+# SPDX-FileCopyrightText: 2025 nikitosych <174215049+nikitosych@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 terkala <appleorange64@gmail.com>
 #
 # SPDX-License-Identifier: MIT
@@ -16,7 +19,7 @@
 
 - type: ruinMap
   id: Core
-  mapPath: /Maps/_Funkystation/core.yml
+  mapPath: /Maps/_Polonium/core.yml # Polonium update
 
 - type: ruinMap
   id: Court

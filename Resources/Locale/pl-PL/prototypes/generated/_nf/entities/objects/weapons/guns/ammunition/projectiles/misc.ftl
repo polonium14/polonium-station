@@ -1,6 +1,6 @@
-ent-HoloFlareCyan = cyan flare
+ent-HoloFlareCyan = cyanowa flara
     .desc = { "" }
-ent-HoloFlareRed = red flare
+ent-HoloFlareRed = czerwona flara
     .desc = { ent-HoloFlareCyan.desc }
-ent-HoloFlareYellow = yellow flare
+ent-HoloFlareYellow = żółta flara
     .desc = { ent-HoloFlareCyan.desc }

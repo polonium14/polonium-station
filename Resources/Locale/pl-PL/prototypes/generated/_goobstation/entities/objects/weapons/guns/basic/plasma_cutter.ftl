@@ -1,5 +1,5 @@
-ent-WeaponPlasmaCutter = plasma cutter
-    .desc = A weapon that shoots out bolts of plasma (plasma not included.)
+ent-WeaponPlasmaCutter = plazmowy przecinak
+    .desc = Broń, która wystrzeliwuje pociski plazmy (plazma nie dołączona).
 ent-WeaponPlasmaCutterEmpty = { ent-WeaponPlasmaCutter }
-    .suffix = Empty
+    .suffix = Pusty
     .desc = { ent-WeaponPlasmaCutter.desc }

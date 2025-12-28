@@ -1,4 +1,4 @@
-ent-ThrowingStar = throwing star
-    .desc = An ancient weapon still used to this day, due to its ease of lodging itself into its victim's body parts.
-ent-ThrowingStarNinja = ninja throwing star
+ent-ThrowingStar = shuriken
+    .desc = Starożytna broń wciąż używana do dziś, ze względu na łatwość wbijania się w części ciała ofiary.
+ent-ThrowingStarNinja = shuriken nindży
     .desc = { ent-ThrowingStar.desc }

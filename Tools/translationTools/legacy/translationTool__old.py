@@ -1,4 +1,6 @@
+# Skrypt autorstwa InsoPL
 # Ten skrypt jest przestarzały. Użyj zamiast niego ./translation.sh (lub .bat na Windowsie)
+# Licencja: MIT. Treść licencji znajduje się w https://github.com/polonium14/polonium-station/blob/master/LICENSES/MIT.txt
 
 import os
 import sys

@@ -1,2 +1,2 @@
-ent-AdvancedStunbaton = stun baton
-    .desc = A stun baton for incapacitating people with. Actively harming with this is considered bad tone.
+ent-AdvancedStunbaton = { ent-Stunbaton }
+    .desc = { ent-Stunbaton.desc }

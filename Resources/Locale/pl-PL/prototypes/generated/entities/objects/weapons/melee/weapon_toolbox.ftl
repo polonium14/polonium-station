@@ -1,2 +1,2 @@
-ent-WeaponMeleeToolboxRobust = robust toolbox
-    .desc = A tider's weapon.
+ent-WeaponMeleeToolboxRobust = solidna skrzynka narzędziowa
+    .desc = Broń typowego tida.

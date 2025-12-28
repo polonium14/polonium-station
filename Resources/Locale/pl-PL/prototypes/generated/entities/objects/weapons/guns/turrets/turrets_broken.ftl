@@ -1,2 +1,2 @@
-ent-WeaponTurretSyndicateBroken = ballistic turret (broken)
-    .desc = A ballistic machine gun auto-turret.
+ent-WeaponTurretSyndicateBroken = wieżyczka balistyczna (zepsuta)
+    .desc = Automatyczna wieżyczka z karabinem maszynowym.

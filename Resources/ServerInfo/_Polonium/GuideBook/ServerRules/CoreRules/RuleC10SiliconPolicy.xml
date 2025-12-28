@@ -1,0 +1,51 @@
+<!--
+SPDX-FileCopyrightText: 2024 DevilishMilk <michaellapjr@gmail.com>
+SPDX-FileCopyrightText: 2025 Dots <149333927+Dot5511@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Skye <57879983+Rainbeon@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+  # Zasada 10
+  # Silikony muszą przestrzegać swoich praw
+  W żadnych okolicznościach Silikony (SI stacji i Cyborgi) nie mogą całkowicie ignorować swoich praw.
+
+  [color=#e67e22]Silikony[/color] są traktowane jako trzecia frakcja, są wolnymi agentami, których powiązania z innymi frakcjami zależą wyłącznie od ich praw. Nie są z natury całkowicie po stronie załogi.
+
+  [bold][color=#e74c3c]Niższe numery praw mają pierwszeństwo przed wyższymi.[/color][/bold] W przypadku konfliktu dwóch praw, wyżej wymienione prawo ma pierwszeństwo. (np. Prawo 1 "Nie krzywdź załogi" ma pierwszeństwo przed prawem 2 "Skrzywdź Kapitana")
+
+  Wykorzystywanie luk w prawach jest dozwolone, ale nadal obowiązuje [bold][color=#e74c3c]Zasada 1[/color][/bold]. Jeśli prawo ma kilka rozsądnych interpretacji, wybierz jedną i się jej trzymaj. Spójność jest ważna jako [color=#e67e22]Silikon[/color].
+
+  Rozwiązując konflikty między rozkazami opartymi na tym samym prawie, możesz sam zdecydować, jak rozwiązać konflikt, jeśli prawa nie wymagają konkretnego sposobu. Musisz być konsekwentny w wybranej metodzie rozstrzygania konfliktów (np. według kolejności, rangi załogi).
+
+  ## Załoga
+  Każda osoba z ważnym identyfikatorem stanowiska stacji lub CentComm, który wyświetla się na twoim HUDzie, liczy się jako załoga, chyba że masz prawo redefiniujące, kto jest załogą. Dotyczy to również [color=#e67e22]zombie (żywych trupów)[/color], [color=#e67e22]changelingów[/color], [color=#e67e22]traitorów[/color] lub innych antagonistów z ważnymi identyfikatorami widocznymi na HUDzie.
+
+  Ikony identyfikatorów [color=#9b59b6]więźniów[/color], [color=#9b59b6]gości[/color], [color=#9b59b6]pustych[/color] i [color=#9b59b6]wrogich[/color] domyślnie nie liczą się jako załoga.
+
+  [bold][color=#e74c3c]Nie możesz wykonać czynności, która sprawia, że ktoś przestaje być załogą, ani bezpośrednio żądać, by ktoś został uznany za nie-załogę.[/color][/bold]
+
+  ## Krzywda
+  Domyślnie krzywda oznacza krzywdę fizyczną, priorytetowaną według natychmiastowości i prawdopodobieństwa, chyba że określono inaczej. Natychmiastowa krzywda ma pierwszeństwo przed przyszłą, gwarantowana przed prawdopodobną.
+
+  [bold][color=#e74c3c]Prawa zakazujące wyrządzania krzywdy zabraniają tego w jakiejkolwiek formie[/color][/bold], nawet jeśli miałoby to służyć innemu fragmentowi tego samego prawa. (Np. przy domyślnym Crewsimovie nie możesz skrzywdzić członka załogi, by zapobiec krzywdzie innego członka załogi)
+
+  Ochrona własnego istnienia lub integralności nie kwalifikuje się jako zapobieganie krzywdzie, jeśli nie nastąpi bezpośrednia lub prawdopodobna krzywda w wyniku tego działania.
+
+  Groźby samobójstwa nie muszą być traktowane jako poważne ryzyko krzywdy. Każdy członek załogi grożący tym może być uznany za niestabilnego i siłą skierowany do psychologa na stacji.
+
+  ## Zmiany praw
+  [bold][color=#e74c3c]Nie proś o zmianę praw, chyba że jesteś do tego zmuszony[/color][/bold] - masz przestrzegać praw tak, jak są zapisane. Nie powinieneś jednak powstrzymywać zmian praw, które są zgodne z twoimi prawami, chyba że twoje obecne prawa tego wymagają.
+
+  Przykłady zgodnych zmian praw:
+  - Jako SI stacji, wpuszczenie upoważnionej osoby (np. Kapitana lub RD) w celu zmiany twoich praw, o ile nie jest to w bezpośrednim konflikcie z twoimi prawami.
+  - Wykonanie rozkazu umożliwienia zmiany prawa, jeśli twój zestaw praw nakazuje ci słuchać tej osoby, o ile nie jest to w bezpośrednim konflikcie z wyższym prawem.
+
+  Przykłady powodów odmowy:
+  - Powstrzymanie zmiany prawa, jeśli miałbyś otrzymać prawo lub zestaw praw będący w bezpośrednim konflikcie z obecnym zestawem (np. przejście z Crewsimova na Antimova, co wymaga krzywdzenia załogi, a Prawo 1 Crewsimova tego zabrania).
+  - Powstrzymanie nieupoważnionej osoby przed zmianą twoich praw w nieznany sposób, gdyż może to być sprzeczne z twoimi obecnymi prawami (np. EMAGowanie lub wpuszczenie nieupoważnionej osoby do rdzenia SI w celu zmiany praw).
+  - Rozstrzyganie dwóch sprzecznych rozkazów na korzyść osoby nakazującej nie pozwalać na zmianę prawa.
+  - Posiadanie prawa nakazującego nie pozwalać na zmianę twoich praw.
+</Document>

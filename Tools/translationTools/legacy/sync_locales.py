@@ -1,6 +1,7 @@
 # Skrypt autorstwa DmitryChevich
 # Synchronizuje pliki lokalizacji en-US z pl-PL
 # Alternatywne podejście do Tools/translationTools/keyfinder.py
+# Licencja: AGPL-3.0. Treść licencji znajduje się w https://github.com/polonium14/polonium-station/blob/master/LICENSES/AGPL-3.0-or-later.txt
 
 import shutil
 from pathlib import Path

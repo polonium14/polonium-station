@@ -1,3 +1,3 @@
-ent-NFWeaponHoloflareGun = holoflare pistol
-    .desc = A modification of a civilian-grade laser pistol that can project holoflares onto surfaces. "Let there be light!"
+ent-NFWeaponHoloflareGun = pistolet holosygnałowy
+    .desc = Modyfikacja cywilnego pistoletu laserowego, która może wyświetlać holosygnały na powierzchniach. "Niech będzie światło!"
     .suffix = Frontier
