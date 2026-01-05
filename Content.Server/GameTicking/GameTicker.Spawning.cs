@@ -494,6 +494,7 @@ namespace Content.Server.GameTicking
 
             PlayerJoinGame(player);
             SpawnObserver(player);
+            _newLifeSystem.SetLivesToZero(player.UserId);
         }
 
         /// <summary>

@@ -120,6 +120,11 @@ public sealed class NewLifeSystem : EntitySystem
         }
     }
 
+    public void SetLivesToZero(NetUserId userId)
+    {
+        _newLifesLeft[userId] = 0;
+    }
+
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
