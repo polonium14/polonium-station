@@ -50,7 +50,7 @@
   - Research
   - Maintenance
   extendedAccess:
-  - Robotics
+  - Robotics # Polonium
 
 - type: startingGear
   id: ScientistGear
