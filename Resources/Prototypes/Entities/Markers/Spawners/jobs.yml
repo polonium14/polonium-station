@@ -538,6 +538,8 @@
   parent: SpawnPointJobBase
   name: brigmedic
   components:
+  - type: SpawnPoint # Polonium
+    job_id: Brigmedic # Polonium
   - type: Sprite
     layers:
       - state: green

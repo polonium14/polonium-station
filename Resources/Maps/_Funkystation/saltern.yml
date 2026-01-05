@@ -61885,6 +61885,13 @@ entities:
     - type: Transform
       pos: -11.5,14.5
       parent: 31
+- proto: SpawnPointBrigmedic
+  entities:
+  - uid: 12219
+    components:
+    - type: Transform
+      pos: -13.5,14.5
+      parent: 31
 - proto: SpawnPointServiceWorker
   entities:
   - uid: 7043

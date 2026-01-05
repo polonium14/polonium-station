@@ -1,0 +1,50 @@
+﻿- type: job
+  id: Brigmedic
+  name: job-name-brigmedic
+  description: job-description-brigmedic
+  playTimeTracker: JobBrigmedic
+  requirements:
+  - !type:DepartmentTimeRequirement
+    department: Medical
+    time: 14400
+  - !type:OverallPlaytimeRequirement
+    time: 36000 #10 hrs
+  startingGear: BrigmedicGear
+  icon: "JobIconBrigmedic"
+  supervisors: job-supervisors-hos
+  canBeAntag: false
+  access:
+  - Medical
+  - Security
+  - Brig
+  - Maintenance
+  - Service
+  - External
+  - Cryogenics
+  # begin Funkystation: give out missing genpop accesses
+  - GenpopEnter
+  - GenpopLeave
+  # end Funkystation
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+
+- type: startingGear
+  id: BrigmedicGear
+  equipment:
+    outerClothing: ClothingOuterCoatAMG
+    head: ClothingHeadHatBeretBrigmedic
+    id: BrigmedicPDA
+    ears: ClothingHeadsetBrigmedic
+    mask: ClothingMaskBreathMedicalSecurity
+    belt: ClothingBeltMedicalFilled
+    pocket1: WeaponPistolMk58
+    pocket2: WeaponDisabler
+  storage:
+    back:
+    - Flash
+    - MagazinePistol
+    - SecHypo # Goobstation
+    - CartridgeEmergency
+    - Handcuffs

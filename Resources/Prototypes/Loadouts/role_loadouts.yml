@@ -470,6 +470,21 @@
   - SecurityStar
   - GroupSpeciesBreathToolSecurity
 
+# Polonium
+- type: roleLoadout
+  id: JobBrigmedic
+  groups:
+  - BrigmedicJumpsuit
+  - BrigmedicGlasses
+  - BrigmedicBackpack
+  - SecurityNeck
+  - MedicalGloves
+  - SecurityShoes
+  - SurvivalSecurity
+  - Trinkets
+  - SecurityStar
+  - GroupSpeciesBreathToolSecurity
+
 - type: roleLoadout
   id: JobDetective
   groups:

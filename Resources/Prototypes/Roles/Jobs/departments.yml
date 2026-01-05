@@ -184,6 +184,7 @@
   - Detective
   - Warden
   - SecurityClown # event-restricted
+  - Brigmedic # Polonium
 
 - type: department
   id: Science
