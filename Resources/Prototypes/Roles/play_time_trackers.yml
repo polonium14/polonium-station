@@ -162,6 +162,9 @@
 - type: playTimeTracker
   id: JobSecurityOfficer
 
+- type: playTimeTracker # Polonium
+  id: JobBrigmedic
+
 - type: playTimeTracker
   id: JobServiceWorker
 
