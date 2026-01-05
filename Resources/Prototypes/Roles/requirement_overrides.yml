@@ -102,6 +102,10 @@
     - !type:DepartmentTimeRequirement
       department: Civilian
       time: 0
+    Roboticist:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 0
     ResearchDirector:
     - !type:DepartmentTimeRequirement
       department: Civilian
