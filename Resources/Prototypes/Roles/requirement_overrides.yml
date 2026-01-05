@@ -83,6 +83,10 @@
     - !type:DepartmentTimeRequirement
       department: Civilian
       time: 3600 # 1 hour
+    Brigmedic:
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 3600 # 1 hour
     HeadOfSecurity:
     - !type:DepartmentTimeRequirement
       department: Civilian
