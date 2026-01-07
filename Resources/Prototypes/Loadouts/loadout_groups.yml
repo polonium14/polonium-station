@@ -99,6 +99,7 @@
   - Headphones
   - PlushieLizard
   - PlushieSpaceLizard
+  - PlushieItanKio
   - PlushieCirno
   - Lighter
   - CigPackGreen
@@ -1107,7 +1108,7 @@
   - CargoWinterBoots
   - WorkBoots
   - EngineeringWinterBoots
-  
+
 - type: loadoutGroup #WizDen Weh Job Plush
   id: CargoTechnicianJobTrinkets
   name: loadout-group-jobtrinkets

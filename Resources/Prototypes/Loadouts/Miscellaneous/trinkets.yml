@@ -70,6 +70,13 @@
   groupBy: "plushies"
 
 - type: loadout
+  id: PlushieItanKio
+  storage:
+    back:
+    - PlushieItanKio
+  groupBy: "plushies"
+
+- type: loadout
   id: PlushieCirno
   storage:
     back:
