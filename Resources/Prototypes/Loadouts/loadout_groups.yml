@@ -1841,6 +1841,9 @@
   loadouts:
   - BrigmedicJumpsuit
   - BrigmedicJumpskirt
+  - SecurityJumpsuitGrey
+  - SecurityJumpskirtGrey
+  - BrigmedicJumpskirtOfLife
 
 - type: loadoutGroup
   id: BrigmedicBackpack

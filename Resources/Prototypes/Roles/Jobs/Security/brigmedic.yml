@@ -35,6 +35,9 @@
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+    components:
+    - type: SecurityStaff
 
 
 - type: startingGear
@@ -53,5 +56,5 @@
     - Flash
     - MagazinePistol
     - SecHypo # Goobstation
-    - CartridgeEmergency
+    - autoInjectorCartridgeCaseSoftFilled
     - Handcuffs
