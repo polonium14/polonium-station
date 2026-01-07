@@ -35,6 +35,10 @@
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
+  alternateTitles:
+  - SecurityMedic
+  - SecurityCombatMedic
+  - SecurityFieldPhysician
 
 - type: startingGear
   id: BrigmedicGear
@@ -54,3 +58,15 @@
     - SecHypo # Goobstation
     - autoInjectorCartridgeCaseSoftFilled
     - Handcuffs
+
+- type: jobAlternateTitle
+  id: SecurityMedic
+  name: job-name-alt-brigmed-1
+
+- type: jobAlternateTitle
+  id: SecurityCombatMedic
+  name: job-name-alt-brigmed-2
+
+- type: jobAlternateTitle
+  id: SecurityFieldPhysician
+  name: job-name-alt-brigmed-3
