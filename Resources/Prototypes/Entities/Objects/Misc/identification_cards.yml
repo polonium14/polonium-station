@@ -729,6 +729,8 @@
     - sprite: Interface/Misc/job_icons.rsi #icon
       offset: "-0.125, 0.09375"
       state: Brigmedic
+  - type: PresetIdCard
+    job: Brigmedic
 
 - type: entity
   parent: [IDCardStandard, BaseCentcommContraband]
