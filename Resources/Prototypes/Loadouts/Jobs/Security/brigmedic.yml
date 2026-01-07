@@ -31,6 +31,7 @@
   id: BrigmedicJumpskirtOfLife
   equipment:
     jumpsuit: ClothingUniformJumpskirtOfLife
+  groupBy: "jumpskirt"
 
 # Back
 - type: loadout
