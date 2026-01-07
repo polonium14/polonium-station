@@ -1,17 +1,12 @@
 cargo-account-cargo-name = Budżet logistyczny stacji
 cargo-account-cargo-code = BLS
-
 cargo-account-engineering-name = Budżet naprawczy
 cargo-account-engineering-code = INŻ
-
 cargo-account-medical-name = Fundusz zdrowia załogi
 cargo-account-medical-code = MED
-
 cargo-account-science-name = Międzygwiezdny fundusz rozwojowy
 cargo-account-science-code = PR
-
 cargo-account-security-name = Rezerwa ochrony stacji
 cargo-account-security-code = DO
-
 cargo-account-service-name = Zbiórczy fundusz serwisowy
 cargo-account-service-code = SRW

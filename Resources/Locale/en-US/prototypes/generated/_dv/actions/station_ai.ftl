@@ -1,0 +1,16 @@
+ent-ActionStationAiOpenShop = Choose programs
+    .desc = Configure your installed programs
+ent-ActionStationAiRgbLighting = ai-rgb-lighting-name
+    .desc = ai-rgb-lighting-desc
+ent-ActionStationAiLightSynthesizer = ai-light-synthesizer-name
+    .desc = ai-light-synthesizer-desc
+ent-ActionStationAiBikeHorn = ai-bike-horn-name
+    .desc = ai-bike-horn-desc
+ent-ActionStationAiHoloPointer = ai-holopointer-name
+    .desc = ai-holopointer-desc
+ent-StationAiHolopointer = holopointer
+    .desc = A hologram projected by the station's AI to bring your attention to something.
+ent-ActionStationAiRepairNanites = ai-repair-nanites-name
+    .desc = ai-repair-nanites-desc
+ent-ActionStationAiEmergencySealant = ai-emergency-sealant-name
+    .desc = ai-emergency-sealant-desc

@@ -12,3 +12,5 @@ ent-SpeedLoaderMagnumAP = speed loader (.45 magnum armor-piercing)
     .desc = Designed to quickly refill an empty revolver, it fits up to six rounds. Intended to hold rare armor-piercing ammunition.
 ent-SpeedLoaderMagnumUranium = speed loader (.45 magnum uranium)
     .desc = Designed to quickly refill an empty revolver, it fits up to six rounds. Intended to hold exotic uranium-core ammunition.
+ent-SpeedLoaderMagnumSilver = speed loader (.45 magnum silver)
+    .desc = Designed to quickly refill an empty revolver, it fits up to six rounds. Intended to hold blessed silver ammunition.

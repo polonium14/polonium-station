@@ -25,6 +25,7 @@
 # SPDX-FileCopyrightText: 2025 nikitosych <174215049+nikitosych@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
 # SPDX-FileCopyrightText: 2025 terkala <appleorange64@gmail.com>
+# SPDX-FileCopyrightText: 2026 wilowzeta <willowzeta632146@proton.me>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -61,8 +62,7 @@
             ServiceWorker: [ 4, 4 ]
             #engineering
             ChiefEngineer: [ 1, 1 ]
-            StationEngineer: [ 3, 4 ]
-            AtmosphericTechnician: [ 3, 3 ]
+            StationEngineer: [ 6, 7 ]
             TechnicalAssistant: [ 2, 2 ]
             #medical
             ChiefMedicalOfficer: [ 1, 1 ]

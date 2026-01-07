@@ -1,0 +1,14 @@
+ent-FolderStandardForms = standard forms folder
+    .desc = A folder filled with editable standard forms for designing paperwork.
+ent-PaperHumanResourcesDept = Nanotrasen Human Resources Department
+    .desc = Nanotrasen Human Resources Department welcome form.
+ent-PaperMemo = Memo
+    .desc = Standard memo form.
+ent-PaperScienceAnomalyDocumentationForm = Science Anomaly Documentation Form
+    .desc = Standard anomaly documentation form.
+ent-PaperJobChangeRequest = Job/Department Change Request Form
+    .desc = Standard job or department change request form.
+ent-PaperCrimeSentencingForm = Quick Crime Sentencing Memo
+    .desc = A document for quickly sentencing crimes.
+ent-PaperReplacementIDForm = Replacement Identification Card and/or Personal Digital Assistant Request
+    .desc = A document for getting a replacement ID or PDA.

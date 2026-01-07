@@ -159,6 +159,7 @@ guide-entry-rules-c11 = G11
 guide-entry-rules-c12 = G12
 guide-entry-rules-c13 = G13
 guide-entry-rules-c14 = G14
+guide-entry-rules-c15 = G15
 guide-entry-rules-roleplay = Zasady Roleplay
 guide-entry-rules-r1 = R1
 guide-entry-rules-r2 = R2

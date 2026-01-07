@@ -4,3 +4,5 @@ ent-BaseMobMiniDragon = mini smok
 ent-MobMiniDragon = mini smok
     .desc = { ent-BaseMobMiniDragon.desc }
     .gender = male
+ent-MobMiniDragonFriendly = przyjazny mini smok
+    .desc = { ent-BaseMobMiniDragon.desc }

@@ -15,6 +15,7 @@ species-name-skeleton = Szkielet
 species-name-vox = Voks
 species-name-monkey = Małpa
 species-name-kobold = Kobold
+
 # Konflikt z Resources\Locale\en-US\_Goobstation\species\gingerbread.ftl
 # species-name-gingerbread = Pyszny wypiek
 

@@ -17,6 +17,7 @@ guide-entry-cargo-sop = SPP Logistyki
 guide-entry-science-sop = SPP Rozwoju
 guide-entry-eoc-sop = Wrogowie Korporacji
 guide-entry-alert-sop = Poziomy bezpieczeństwa
+guide-entry-ingredient-reactions = Ingredient Reactions
 guide-entry-alertlevel-green = Poziom Zielony
 guide-entry-alertlevel-yellow = Poziom Żółty
 guide-entry-alertlevel-blue = Poziom Niebieski

@@ -9,6 +9,7 @@
 loadout-group-iaa-outer = Agent Spraw Wewnętrznych – odzież wierzchnia
 loadout-group-iaa-gloves = Agent Spraw Wewnętrznych – rękawice
 loadout-group-iaa-jumpsuit = Agent Spraw Wewnętrznych – kombinezon
+loadout-group-iaa-shoes = Agent Spraw Wewnętrznych – buty
 loadout-group-iaa-backpack = Agent Spraw Wewnętrznych – plecak
 loadout-group-iaa-belt = Agent Spraw Wewnętrznych – pas
 # Chaplain

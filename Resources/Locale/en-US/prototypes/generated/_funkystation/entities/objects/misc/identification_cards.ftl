@@ -1,5 +1,5 @@
 ent-InternalAffairsAgentIDCard = internal affairs agent ID card
-    .desc = { ent-IDCardStandard.desc }
+    .desc = You wouldn't lose this, would you?
 ent-MagistrateIDCard = magistrate ID card
     .desc = { ent-IDCardStandard.desc }
 ent-BlueshieldOfficerIDCard = blueshield officer ID card
@@ -19,4 +19,4 @@ ent-IDCardAncientSecurity = Security ID
 ent-IDCardAncientNanotrasen = Nanotrasen ID
     .desc = A neck-worn ID Badge, has one of those fancy new magnetic strips built in. This one is for a Nanotrasen Representative.
 ent-SpaceCowboyIDCard = space cowboy ID card
-    .desc = { ent-IDCardStandard.desc }
+    .desc = To the Space Station rode a stranger one fine day.

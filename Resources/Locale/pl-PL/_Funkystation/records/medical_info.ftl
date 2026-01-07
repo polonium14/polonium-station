@@ -49,6 +49,7 @@ medical-info-familyhistory-kidneystones = Kamienie nerkowe
 medical-info-familyhistory-liverdisease = Choroba wątroby
 medical-info-familyhistory-lungdisease = Choroba płuc
 medical-info-familyhistory-migraines = Migreny
+medical-info-familyhistory-neuroaversion = Neurowrażliwość
 medical-info-familyhistory-osteoporosis = Osteoporoza
 medical-info-familyhistory-seizures = Napady padaczkowe
 medical-info-familyhistory-sleepapnea = Bezdech senny

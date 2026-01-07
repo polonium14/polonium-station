@@ -12,3 +12,5 @@ ent-SpeedLoaderMagnumAP = speed loader (.45 magnum przeciwpancerne)
     .desc = Zaprojektowany do szybkiego przeładowania pustego rewolweru, mieści do sześciu nabojów. Przeznaczony do przechowywania rzadkiej amunicji przebijającej pancerz.
 ent-SpeedLoaderMagnumUranium = speed loader (.45 magnum uranowe)
     .desc = Zaprojektowany do szybkiego przeładowania pustego rewolweru, mieści do sześciu nabojów. Przeznaczony do przechowywania egzotycznej amunicji z rdzeniem uranowym.
+ent-SpeedLoaderMagnumSilver = speed loader (.45 magnum srebrne)
+    .desc = Zaprojektowany do szybkiego przeładowania pustego rewolweru, mieści do sześciu nabojów. Przeznaczony do przechowywania błogosławionej amunicji srebrnej.

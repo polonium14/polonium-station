@@ -1,7 +1,9 @@
+// SPDX-FileCopyrightText: 2025 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Skye <57879983+Rainbeon@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Terkala <appleorange64@gmail.com>
 // SPDX-FileCopyrightText: 2025 kbarkevich <24629810+kbarkevich@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+// SPDX-FileCopyrightText: 2026 Polonium-bot <admin@ss14.pl>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -18,6 +20,7 @@ using Robust.Client.UserInterface.XAML;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Graphics;
 using Robust.Shared.Graphics.RSI;
+using Robust.Shared.IoC;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations;
@@ -42,7 +45,9 @@ public sealed partial class RuneRadialMenu : RadialMenu
 
     public RuneRadialMenu()
     {
-        IoCManager.InjectDependencies(this);
+        var dependencies = IoCManager.Instance;
+        if (dependencies != null)
+            dependencies.InjectDependencies(this);
         RobustXamlLoader.Load(this);
         _spriteSystem = _entitySystem.GetEntitySystem<SpriteSystem>();
     }

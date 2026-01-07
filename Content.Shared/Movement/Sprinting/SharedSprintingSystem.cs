@@ -43,7 +43,7 @@ namespace Content.Shared.Movement.Sprinting;
 
 public abstract class SharedSprintingSystem : EntitySystem
 {
-    [Dependency] private readonly StaminaSystem _staminaSystem = default!;
+    [Dependency] private readonly SharedStaminaSystem _staminaSystem = default!;
     [Dependency] private readonly MovementSpeedModifierSystem _movementSpeed = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedGravitySystem _gravity = default!;

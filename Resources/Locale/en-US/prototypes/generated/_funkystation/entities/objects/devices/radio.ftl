@@ -1,5 +1,5 @@
 ent-RadioHandheldSyndicate = syndicate radio
-    .desc = A tiny listening device which relays what it hears to the syndicate radio channel. It does not have a speaker.
+    .desc = A tiny listening device which relays what it hears to the syndicate radio channel. It does not have a speaker. The device seems to have an adhesive back.
 ent-RadioHandheldService = service handheld radio
     .desc = A handheld radio tuned to the service radio frequency.
 ent-RadioHandheldCargo = supply handheld radio
@@ -15,4 +15,4 @@ ent-RadioHandheldScience = science handheld radio
 ent-RadioHandheldCommand = command handheld radio
     .desc = A handheld radio tuned to the command radio frequency.
 ent-RadioHandheldSecurityListening = security listening radio
-    .desc = A handy security radio. The speaker seems to have been modified to not work.
+    .desc = A handy security radio. The speaker seems to have been modified to not work, and there seems to be an adhesive attached to the back of the radio.

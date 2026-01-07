@@ -10,3 +10,5 @@ ent-CartridgeMagnumAP = nabój (.45 magnum przeciwpancerny)
     .desc = Ciężki nabój magnum używany głównie w rewolwerach. Amunicja przeciwpancerna jest znana ze swojej zdolności do przebijania pancerza.
 ent-CartridgeMagnumUranium = nabój (.45 magnum uranowe)
     .desc = Ciężki nabój magnum używany głównie w rewolwerach. Amunicja uranowa zastępuje ołów w rdzeniu pocisku materiałem rozszczepialnym, promieniując cel od wewnątrz.
+ent-CartridgeMagnumSilver = nabój (.45 magnum srebrne)
+    .desc = Ciężki nabój magnum używany głównie w rewolwerach. Srebrna amunicja oferuje swoją świętą moc, która zabija nie tylko ciało, ale także duszę.

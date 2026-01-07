@@ -9,3 +9,5 @@ ent-HandheldStationMapEmpty = { ent-HandheldStationMap }
 ent-HandheldStationMapUnpowered = { ent-BaseHandheldStationMap }
     .suffix = Handheld, Unpowered
     .desc = { ent-BaseHandheldStationMap.desc }
+ent-HandheldStationMapTactical = tactical station map
+    .desc = Displays a readout of the current station, without needing power to do so.

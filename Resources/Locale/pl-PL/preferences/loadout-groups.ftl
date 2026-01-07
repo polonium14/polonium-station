@@ -26,12 +26,14 @@ loadout-group-captain-neck = Kapitan – szyja
 loadout-group-captain-backpack = Kapitan – plecak
 loadout-group-captain-outerclothing = Kapitan – odzież wierzchnia
 loadout-group-hop-head = Kierownik personelu – nakrycie głowy
+loadout-group-captain-shoes = Kapitan – buty
 loadout-group-hop-jumpsuit = Kierownik personelu – kombinezon
 loadout-group-hop-neck = Kierownik personelu – szyja
 loadout-group-hop-backpack = Kierownik personelu – plecak
 loadout-group-hop-outerclothing = Kierownik personelu – odzież wierzchnia
 # Civilian
 loadout-group-passenger-jumpsuit = Pasażer – kombinezon
+loadout-group-hop-shoes = Szef personelu – buty
 loadout-group-passenger-mask = Pasażer – maska
 loadout-group-passenger-gloves = Pasażer – rękawice
 loadout-group-passenger-outerclothing = Pasażer – odzież wierzchnia

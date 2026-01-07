@@ -1,22 +1,32 @@
 bounty-item-artifact = Obcy artefakt
 bounty-item-baseball-bat = kij bejsbolowy
 bounty-item-box-hugs = pudełko uścisków
+bounty-item-ammunition-box = skrzynka amunicji
 bounty-item-brain = mózg
 bounty-item-bread = chleb
 bounty-item-carp = kosmiczny karp
 bounty-item-carrot = marchew
+bounty-item-atmos-fire-suit = kombinezon przeciwpożarowy atmosferyczny
+bounty-item-clown-costume = strój klauna
+bounty-item-balloon = balon
 bounty-item-carrot-fries = marchwiowe frytki
+bounty-item-banana-peel = skórka od banana
 bounty-item-clown-mask = maska klauna
 bounty-item-clown-shoes = buty klauna
 bounty-item-corn = kolba kukurydzy
 bounty-item-crayon = kredka
 bounty-item-cuban-carp = karp kubański
+bounty-item-bike-horn = klakson rowerowy
+bounty-item-bloodpack = worek z krwią
+bounty-item-board-game = gra planszowa
+bounty-item-bodybag = worek na zwłoki
+bounty-item-book = książka
 bounty-item-diamond = diament
 bounty-item-donk-pocket = Donk-pocket
-
 # Items
 bounty-item-donut = pączek
 bounty-item-ambrosia = ambrozja
+bounty-item-borg-module-cargo = moduł cyborga cargo
 bounty-item-advanced-mop = zaawansowany mop
 bounty-item-figurine = figurka
 bounty-item-cake = ciasto
@@ -27,6 +37,8 @@ bounty-item-borg-arm = ramię robota
 bounty-item-borg-head = głowa robota
 bounty-item-borg-leg = noga robota
 bounty-item-borg-torso = tułów robota
+# TODO przetłumaczyć leki
+bounty-item-brutepack = Brute topical
 bounty-item-borg-module-engineering = moduł inżynieryjnego robota
 bounty-item-borg-module-generic = moduł typowego robota
 bounty-item-borg-module-janitor = moduł woźnego robota
@@ -203,7 +215,6 @@ bounty-item-tooth-sharkminnow = ząb kosmicznego rekina
 bounty-item-ring = pierścień
 bounty-item-remains = szczątki lorda roju
 bounty-item-plates = płyty skóry goliata
-
 # Descriptions
 bounty-description-artifact = NanoTrasen ma problemy po kradzieży artefaktów z planet niepodróżujących kosmicznie. Wyślij jeden artefakt, a my się za to odpłacimy.
 bounty-description-baseball-bat = Gorączka baseballa panuje w Centralnym Dowództwie! Bądź miły i wyślij im parę kijów, niech zarząd spełni swoje dziecięce sny.
@@ -265,7 +276,6 @@ bounty-description-steak = Kucharz wegetarianin odmawia robienia nam czegokolwie
 bounty-description-banana = Cześć stacjo! Botanika nie chce mi dać więcej. Powiedzieli, że wyślizgnięcie HoS-a przez otwartą śluzę nie było śmieszne! Możecie w to uwierzyć? Pomóżcie mi! HONK.
 bounty-description-tooth-space-carp = Kilku gości z "Antypodów" potrzebuje zębów do wykonania swojego tradycyjnego stroju. Wyślij im kilka od kosmicznych karpi.
 bounty-description-tooth-sharkminnow = Szef kuchni twierdzi, że zęby rekina-strzebli są jakimś wysokiej jakości nożem. Nie wiem, o co im chodzi, ale chcą zestaw. Wyślij im to.
-
 # Categories
 bounty-category-botany = Botanika
 bounty-category-science = Nauka

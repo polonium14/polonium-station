@@ -8,3 +8,5 @@ ent-BulletMagnumAP = bullet (.45 magnum armor-piercing)
     .desc = { ent-BaseBulletAP.desc }
 ent-BulletMagnumUranium = bullet (.45 magnum uranium)
     .desc = { ent-BaseBulletUranium.desc }
+ent-BulletMagnumSilver = bullet (.45 magnum silver)
+    .desc = { ent-BaseBullet.desc }

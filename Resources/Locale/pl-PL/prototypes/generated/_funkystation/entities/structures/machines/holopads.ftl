@@ -10,3 +10,6 @@ ent-HolopadMagistrate = { ent-Holopad }
 ent-HolopadServiceGeneral = { ent-Holopad }
     .suffix = Service General
     .desc = { ent-Holopad.desc }
+ent-HolopadGenetics = { ent-Holopad }
+    .suffix = Genetics
+    .desc = { ent-Holopad.desc }

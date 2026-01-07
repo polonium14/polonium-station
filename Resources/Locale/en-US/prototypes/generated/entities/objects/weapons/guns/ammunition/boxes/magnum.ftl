@@ -10,3 +10,5 @@ ent-MagazineBoxMagnumUranium = ammunition box (.45 magnum uranium)
     .desc = A cardboard box of .45 magnum rounds. Intended to hold exotic uranium-core ammunition.
 ent-MagazineBoxMagnumAP = ammunition box (.45 magnum armor-piercing)
     .desc = A cardboard box of .45 magnum rounds. Intended to hold rare armor-piercing ammunition.
+ent-MagazineBoxMagnumSilver = ammunition box (.45 magnum silver)
+    .desc = A cardboard box of .45 magnum rounds. Intended to hold blessed silver ammunition.

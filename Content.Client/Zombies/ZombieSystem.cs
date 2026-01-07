@@ -5,10 +5,12 @@
 // SPDX-FileCopyrightText: 2024 Killerqu00 <47712032+Killerqu00@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Wrexbe (Josh) <81056464+wrexbe@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
 // SPDX-FileCopyrightText: 2025 Terkala <appleorange64@gmail.com>
 // SPDX-FileCopyrightText: 2025 Toastermeister <215405651+Toastermeister@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+// SPDX-FileCopyrightText: 2026 Polonium-bot <admin@ss14.pl>
 //
 // SPDX-License-Identifier: MIT
 
@@ -38,6 +40,7 @@ public sealed class ZombieSystem : SharedZombieSystem
         SubscribeLocalEvent<ZombieComponent, GetStatusIconsEvent>(GetZombieIcon);
         SubscribeLocalEvent<InitialInfectedComponent, GetStatusIconsEvent>(GetInitialInfectedIcon);
         SubscribeLocalEvent<ZombieTumorInfectionComponent, GetStatusIconsEvent>(GetInfectionStageIcon);
+        SubscribeLocalEvent<PendingZombieComponent, GetStatusIconsEvent>(GetPendingZombieIcon);
     }
 
     private void GetZombieIcon(Entity<ZombieComponent> ent, ref GetStatusIconsEvent args)
@@ -82,6 +85,23 @@ public sealed class ZombieSystem : SharedZombieSystem
             var iconPrototype = _prototype.Index<FactionIconPrototype>(iconId);
             args.StatusIcons.Add(iconPrototype);
         }
+    }
+
+    private void GetPendingZombieIcon(Entity<PendingZombieComponent> ent, ref GetStatusIconsEvent args)
+    {
+        // Skip if already a full zombie (they should use the zombie icon instead)
+        if (HasComp<ZombieComponent>(ent))
+            return;
+
+        // Don't show pending zombie icon to the player themselves (only show to ghosts/admins)
+        var viewer = _playerManager.LocalSession?.AttachedEntity;
+        if (viewer == ent.Owner)
+            return;
+
+        // Use Advanced stage icon for pending zombies (crit/dead entities that will zombify)
+        var iconId = new ProtoId<FactionIconPrototype>("ZombieInfectionAdvanced");
+        var iconPrototype = _prototype.Index(iconId);
+        args.StatusIcons.Add(iconPrototype);
     }
 
     private void OnStartup(EntityUid uid, ZombieComponent component, ComponentStartup args)

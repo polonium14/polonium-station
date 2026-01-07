@@ -1,4 +1,6 @@
 cmd-persistencesave-desc = Saves server data to a persistence file to be loaded later.
 cmd-persistencesave-usage = persistencesave [mapId] [filePath — default: game.map (CCVar) ]
+
 # Konflikt z Resources\Locale\pl-PL\persistence\command.ftl
 # cmd-persistencesave-no-path = filePath was not specified and CCVar { $cvar } is not set. Manually set the filePath param in order to save the map.
+

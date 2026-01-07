@@ -10,3 +10,5 @@ ent-CartridgeMagnumAP = cartridge (.45 magnum armor-piercing)
     .desc = Heavy magnum cartridge mostly used by revolvers. Armor piercing ammunition is renowned for its ability to cut straight through body armor.
 ent-CartridgeMagnumUranium = cartridge (.45 magnum uranium)
     .desc = Heavy magnum cartridge mostly used by revolvers. Uranium ammunition replaces the lead core of the bullet with fissile material, irradiating the target from the inside.
+ent-CartridgeMagnumSilver = cartridge (.45 magnum silver)
+    .desc = Heavy magnum cartridge mostly used by revolvers. Silver ammunition offers it's holy power to kill not only the body, but also the soul.
