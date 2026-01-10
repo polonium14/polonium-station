@@ -50,16 +50,6 @@
     outerClothing: ClothingOuterVestArmorMedSec
   groupBy: "armor"
 
-- type: loadout
-  id: VestSecurityMedic
-  equipment:
-    outerClothing: ClothingOuterVestSecurityMedic
-
-- type: loadout
-  id: CoatLabSecurityMedic
-  equipment:
-    outerClothing: ClothingOuterCoatLabSecurityMedic
-
 # Back
 - type: loadout
   id: BrigmedicBackpack
