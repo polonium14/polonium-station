@@ -170,3 +170,5 @@ ent-ClothingHeadPropellerHat = propeller hat
     .desc = You're the goodest one of all.
 ent-ClothingHeadRainHat = rain hat
     .desc = a hat to protect your head from rain! essential for any slime person to have just incase
+ent-ClothingHeadHatBeretSecurityMedic = security medic beret
+    .desc = A robust beret with the medical insignia emblazoned on it. Uses reinforced fabric to offer sufficient protection.

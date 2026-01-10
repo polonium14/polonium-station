@@ -56,3 +56,5 @@ ent-ActionToggleJusticeHelm = Toggle Justice Helm
     .desc = Toggles the justice helm on and off.
 ent-ClothingHeadHelmetMetalHydrogen = metal hydrogen helmet
     .desc = A superb helmet made with the toughest and rarest materials available to man.
+ent-ClothingHeadHelmetSecurityMedic = hełm medyka ochrony
+    .desc = Standardowy hełm bojowy dla medyków ochrony. Charakteryzuje się dobrą wytrzymałością na rozciąganie i ochroną. Trzymaj głowę nisko.

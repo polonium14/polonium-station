@@ -481,9 +481,11 @@
 - type: roleLoadout
   id: JobBrigmedic
   groups:
+  - BrigmedicHead
   - BrigmedicJumpsuit
   - BrigmedicGlasses
   - BrigmedicBackpack
+  - BrigmedicOuterClothing
   - SecurityNeck
   - MedicalGloves
   - SecurityShoes

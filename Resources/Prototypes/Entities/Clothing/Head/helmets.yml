@@ -107,6 +107,17 @@
     - WhitelistChameleon
     - SecurityHelmet
 
+- type: entity
+  parent: ClothingHeadHelmetBasic
+  id: ClothingHeadHelmetSecurityMedic
+  name: security medic helmet
+  description: A standard issue combat helmet for security medics. Has decent tensile strength and armor. Keep your head down.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Helmets/security_medic.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Helmets/security_medic.rsi
+
 #Mercenary Helmet
 - type: entity
   parent: [ ClothingHeadHelmetBase, BaseSecurityCargoContraband ] # Funky Edit
@@ -118,7 +129,7 @@
     sprite: Clothing/Head/Helmets/merc_helmet.rsi
   - type: Clothing
     sprite: Clothing/Head/Helmets/merc_helmet.rsi
-  - type: Armor # Helmet meant more for salvage, but with recuded pirece resist as that is something they dont deal wiht very often. 
+  - type: Armor # Helmet meant more for salvage, but with recuded pirece resist as that is something they dont deal wiht very often.
     modifiers:
       coefficients:
         Blunt: 0.85

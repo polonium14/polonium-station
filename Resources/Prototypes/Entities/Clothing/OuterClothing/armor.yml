@@ -99,6 +99,17 @@
     sprite: Clothing/OuterClothing/Armor/security_slim.rsi
 
 - type: entity
+  parent: ClothingOuterArmorBasic
+  id: ClothingOuterVestArmorMedSec
+  name: security medic armor vest
+  description: A security medic's armor vest, with little pockets for little things.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Armor/armor_sec_med.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Armor/armor_sec_med.rsi
+
+- type: entity
   parent: [ClothingOuterBaseLarge, AllowBackStorageClothingCombat, BaseSecurityContraband]
   id: ClothingOuterArmorRiot
   name: riot suit

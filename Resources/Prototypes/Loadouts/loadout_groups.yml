@@ -1837,6 +1837,14 @@
 
 # Brigmedic - Polonium
 - type: loadoutGroup
+  id: BrigmedicHead
+  name: loadout-group-brigmedic-head
+  minLimit: 0
+  loadouts:
+  - BrigmedicBeret
+  - SecurityMedicHelmet
+
+- type: loadoutGroup
   id: BrigmedicJumpsuit
   name: loadout-group-brigmedic-jumpsuit
   loadouts:
@@ -1844,6 +1852,16 @@
   - BrigmedicJumpskirt
   - SecurityJumpsuitGrey
   - SecurityJumpskirtGrey
+
+- type: loadoutGroup
+  id: BrigmedicOuterClothing
+  name: loadout-group-brigmedic-outerclothing
+  loadouts:
+  - ArmoredMedicalGown
+  - VestArmorMedSec
+  - ArmorVest
+  - ArmorVestSlim
+  - SecurityOfficerWintercoat
 
 - type: loadoutGroup
   id: BrigmedicBackpack

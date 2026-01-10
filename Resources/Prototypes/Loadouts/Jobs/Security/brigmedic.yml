@@ -3,6 +3,17 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
+# Head
+- type: loadout
+  id: BrigmedicBeret
+  equipment:
+    head: ClothingHeadHatBeretBrigmedic
+
+- type: loadout
+  id: SecurityMedicHelmet
+  equipment:
+    head: ClothingHeadHelmetSecurityMedic
+
 # Eyes
 - type: loadout
   id: BrigmedicNormGlasses
@@ -26,6 +37,28 @@
   equipment:
     jumpsuit: ClothingUniformJumpskirtBrigmedic
   groupBy: "jumpskirt"
+
+# OuterClothing
+- type: loadout
+  id: ArmoredMedicalGown
+  equipment:
+    outerClothing: ClothingOuterCoatAMG
+
+- type: loadout
+  id: VestArmorMedSec
+  equipment:
+    outerClothing: ClothingOuterVestArmorMedSec
+  groupBy: "armor"
+
+- type: loadout
+  id: VestSecurityMedic
+  equipment:
+    outerClothing: ClothingOuterVestSecurityMedic
+
+- type: loadout
+  id: CoatLabSecurityMedic
+  equipment:
+    outerClothing: ClothingOuterCoatLabSecurityMedic
 
 # Back
 - type: loadout

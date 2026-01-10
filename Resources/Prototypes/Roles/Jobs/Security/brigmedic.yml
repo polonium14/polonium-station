@@ -43,8 +43,6 @@
 - type: startingGear
   id: BrigmedicGear
   equipment:
-    outerClothing: ClothingOuterCoatAMG
-    head: ClothingHeadHatBeretBrigmedic
     id: BrigmedicPDA
     ears: ClothingHeadsetBrigmedic
     belt: ClothingBeltMedicalFilled

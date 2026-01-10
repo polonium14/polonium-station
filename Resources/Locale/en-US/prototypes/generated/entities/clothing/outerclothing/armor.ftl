@@ -39,3 +39,5 @@ ent-ClothingOuterArmorMetalHydrogen = metal hydrogen armor
     .desc = A superb armor made with the toughest and rarest materials available to man.
 ent-ClothingOuterArmorAtmosian = atmosian armor
     .desc = An atmos fire suit bolstered by the defensive power of metal hydrogen using techniques passed down through generations of atmospheric technicians.
+ent-ClothingOuterVestArmorMedSec = security medic armor vest
+    .desc = A security medic's armor vest, with little pockets for little things.
