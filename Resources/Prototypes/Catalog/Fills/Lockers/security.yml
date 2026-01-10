@@ -160,7 +160,7 @@
   components:
   - type: StorageFill
     contents:
-      - id: ClothingEyesGlassesSecurity
+      - id: ClothingEyesGlassesMedSec
       - id: WeaponDisabler
       - id: TrackingImplanter
         amount: 2
@@ -169,11 +169,12 @@
       - id: NitrogenTankFilled
       - id: BoxSterileMask
       - id: ClothingHeadHatBeretBrigmedic
+      - id: ClothingHeadHelmetSecurityMedic
       - id: ClothingOuterCoatAMG
+      - id: ClothingOuterVestArmorMedSec
       - id: ClothingUniformJumpsuitBrigmedic
       - id: ClothingUniformJumpskirtBrigmedic
-      - id: ClothingUniformJumpskirtOfLife
-        prob: 0.1
+      - id: autoInjectorCartridgeCaseFilled
       - id: MedkitFilled
       - id: MedkitCombatFilled
         prob: 0.6

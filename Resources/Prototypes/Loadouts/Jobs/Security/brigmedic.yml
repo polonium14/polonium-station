@@ -10,6 +10,11 @@
     head: ClothingHeadHatBeretBrigmedic
 
 - type: loadout
+  id: SecurityMedicBeret
+  equipment:
+    head: ClothingHeadHatBeretSecurityMedic
+
+- type: loadout
   id: SecurityMedicHelmet
   equipment:
     head: ClothingHeadHelmetSecurityMedic

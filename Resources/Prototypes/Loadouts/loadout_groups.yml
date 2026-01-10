@@ -1842,6 +1842,7 @@
   minLimit: 0
   loadouts:
   - BrigmedicBeret
+  - SecurityMedicBeret
   - SecurityMedicHelmet
 
 - type: loadoutGroup
@@ -1859,8 +1860,6 @@
   loadouts:
   - ArmoredMedicalGown
   - VestArmorMedSec
-  - ArmorVest
-  - ArmorVestSlim
   - SecurityOfficerWintercoat
 
 - type: loadoutGroup
