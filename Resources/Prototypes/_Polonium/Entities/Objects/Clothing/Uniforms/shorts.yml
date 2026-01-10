@@ -9,7 +9,7 @@
   parent: ClothingUniformBase
   id: UniformShortsPolishPatternH
   name: bokserki patriotyczne
-  description: Jestes dumny z bycia Polakiem, więc nosisz te bokserki w barwach narodowych.
+  description: Jesteś dumny z bycia Polakiem, więc nosisz te bokserki w barwach narodowych.
   components:
   - type: Sprite
     sprite: _Polonium/Clothing/Shorts/bokserki-flaga_a.rsi
@@ -20,7 +20,7 @@
   parent: ClothingUniformBase
   id: UniformShortsPolishPatternV
   name: bokserki patriotyczne
-  description: Jestes dumny z bycia Polakiem, więc nosisz te bokserki w barwach narodowych.
+  description: Jesteś dumny z bycia Polakiem, więc nosisz te bokserki w barwach narodowych.
   components:
   - type: Sprite
     sprite: _Polonium/Clothing/Shorts/bokserki-flaga_b.rsi
@@ -31,7 +31,7 @@
   parent: ClothingUniformBase
   id: UniformShortsPolishPatternStripes
   name: bokserki patriotyczne
-  description: Jestes dumny z bycia Polakiem, więc nosisz te bokserki w barwach narodowych.
+  description: Jesteś dumny z bycia Polakiem, więc nosisz te bokserki w barwach narodowych.
   components:
   - type: Sprite
     sprite: _Polonium/Clothing/Shorts/bokserki-flaga_c.rsi
