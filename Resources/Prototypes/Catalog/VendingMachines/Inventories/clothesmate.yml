@@ -61,6 +61,15 @@
     ClothingHeadBandSkull: 2
     ClothingHeadHatGreyFlatcap: 3
     ClothingHeadHatBrownFlatcap: 3
+    ClothingUniformJumpsuitPolish: 2
+    ClothingUniformJumpsuitPolishAlt1: 1 # TODO use uniform dying
+    ClothingUniformJumpsuitPolishAlt2: 1 # TODO use uniform dying
+    ClothingUniformJumpsuitPolishAlt3: 1 # TODO use uniform dying
+    ClothingUniformJumpsuitPolishAlt4: 1 # TODO use uniform dying
+    ClothingUniformJumpsuitPolishAlt5: 1 # TODO use uniform dying
+    ClothingUniformJumpsuitPolishAlt6: 1 # TODO use uniform dying
+    ClothingUniformJumpsuitPolishAlt7: 1 # TODO use uniform dying
+    ClothingUniformJumpsuitPolishAlt8: 1 # TODO use uniform dying
     ClothingUniformJumpsuitColorGrey: 8
     ClothingUniformJumpskirtColorGrey: 8
     ClothingUniformJumpsuitColorWhite: 3
@@ -158,4 +167,7 @@
     ToyFigurinePassenger: 1
     ToyFigurineGreytider: 1
     ClothingBackpackSatchelSmugglerUnanchored: 1
+    UniformShortsPolishPatternH: 2
+    UniformShortsPolishPatternV: 1
+    UniformShortsPolishPatternStripes: 1
   # DO NOT ADD MORE, USE UNIFORM DYING
