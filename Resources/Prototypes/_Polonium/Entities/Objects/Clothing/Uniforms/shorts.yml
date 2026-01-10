@@ -1,0 +1,34 @@
+# TODO wersje z topem dla kobiet
+
+- type: entity
+  parent: ClothingUniformBase
+  id: UniformShortsPolishPatternH
+  name: bokserki patriotyczne
+  description: Jestes dumny z bycia Polakiem, więc nosisz te bokserki w barwach narodowych.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/Shorts/bokserki-flaga_a.rsi
+  - type: Clothing
+    sprite: _Polonium/Clothing/Shorts/bokserki-flaga_a.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: UniformShortsPolishPatternV
+  name: bokserki patriotyczne
+  description: Jestes dumny z bycia Polakiem, więc nosisz te bokserki w barwach narodowych.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/Shorts/bokserki-flaga_b.rsi
+  - type: Clothing
+    sprite: _Polonium/Clothing/Shorts/bokserki-flaga_b.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: UniformShortsPolishPatternStripes
+  name: bokserki patriotyczne
+  description: Jestes dumny z bycia Polakiem, więc nosisz te bokserki w barwach narodowych.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/Shorts/bokserki-flaga_c.rsi
+  - type: Clothing
+    sprite: _Polonium/Clothing/Shorts/bokserki-flaga_c.rsi
