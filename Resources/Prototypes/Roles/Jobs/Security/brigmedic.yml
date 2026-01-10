@@ -47,7 +47,6 @@
     head: ClothingHeadHatBeretBrigmedic
     id: BrigmedicPDA
     ears: ClothingHeadsetBrigmedic
-    mask: ClothingMaskBreathMedicalSecurity
     belt: ClothingBeltMedicalFilled
     pocket1: WeaponPistolMk58
     pocket2: WeaponDisabler
@@ -58,6 +57,7 @@
     - SecHypo # Goobstation
     - autoInjectorCartridgeCaseSoftFilled
     - Handcuffs
+    - ClothingMaskBreathMedicalSecurity
 
 - type: jobAlternateTitle
   id: SecurityMedic
