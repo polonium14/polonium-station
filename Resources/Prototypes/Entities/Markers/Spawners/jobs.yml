@@ -30,6 +30,8 @@
 # SPDX-FileCopyrightText: 2024 Kira Bridgeton <161087999+Verbalase@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
 # SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2026 Damian Zieliński <zientasek.pl@gmail.com>
+# SPDX-FileCopyrightText: 2026 Polonium-bot <admin@ss14.pl>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -538,6 +540,8 @@
   parent: SpawnPointJobBase
   name: brigmedic
   components:
+  - type: SpawnPoint # Polonium
+    job_id: Brigmedic # Polonium
   - type: Sprite
     layers:
       - state: green

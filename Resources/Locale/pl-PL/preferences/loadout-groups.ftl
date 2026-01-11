@@ -165,6 +165,9 @@ loadout-group-security-cadet-jumpsuit = Kadet ochrony – kombinezon
 loadout-group-detective-id = Detektyw – ID
 loadout-group-detective-weapon = Detektyw – broń
 loadout-group-security-star = Gwiazda ochrony
+loadout-group-brigmedic-jumpsuit = Medyk Więzienny – kombinezon
+loadout-group-brigmedic-backpack = Medyk Więzienny – plecak
+loadout-group-brigmedic-glasses = Medyk Więzienny – okulary
 # Medical
 loadout-group-medical-gloves = Medyczne rękawice
 loadout-group-medical-mask = Medyczna maska

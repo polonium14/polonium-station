@@ -40,7 +40,10 @@
 # SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
 # SPDX-FileCopyrightText: 2025 willowzeta <willowzeta632146@proton.me>
+# SPDX-FileCopyrightText: 2026 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 Polonium-bot <admin@ss14.pl>
 # SPDX-FileCopyrightText: 2026 Zergologist <114537969+Chedd-Error@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 nikitosych <174215049+nikitosych@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -61,6 +64,15 @@
     ClothingHeadBandSkull: 2
     ClothingHeadHatGreyFlatcap: 3
     ClothingHeadHatBrownFlatcap: 3
+    ClothingUniformJumpsuitPolish: 2
+    ClothingUniformJumpsuitPolishAlt1: 1 # TODO use uniform dying
+    ClothingUniformJumpsuitPolishAlt2: 1 # TODO use uniform dying
+    ClothingUniformJumpsuitPolishAlt3: 1 # TODO use uniform dying
+    ClothingUniformJumpsuitPolishAlt4: 1 # TODO use uniform dying
+    ClothingUniformJumpsuitPolishAlt5: 1 # TODO use uniform dying
+    ClothingUniformJumpsuitPolishAlt6: 1 # TODO use uniform dying
+    ClothingUniformJumpsuitPolishAlt7: 1 # TODO use uniform dying
+    ClothingUniformJumpsuitPolishAlt8: 1 # TODO use uniform dying
     ClothingUniformJumpsuitColorGrey: 8
     ClothingUniformJumpskirtColorGrey: 8
     ClothingUniformJumpsuitColorWhite: 3
@@ -158,4 +170,7 @@
     ToyFigurinePassenger: 1
     ToyFigurineGreytider: 1
     ClothingBackpackSatchelSmugglerUnanchored: 1
+    UniformShortsPolishPatternH: 2
+    UniformShortsPolishPatternV: 1
+    UniformShortsPolishPatternStripes: 1
   # DO NOT ADD MORE, USE UNIFORM DYING

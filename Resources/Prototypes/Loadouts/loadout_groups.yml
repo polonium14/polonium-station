@@ -1835,6 +1835,32 @@
     - DetectiveEnergyRevolver
     - DetectiveRevolver
 
+# Brigmedic - Polonium
+- type: loadoutGroup
+  id: BrigmedicJumpsuit
+  name: loadout-group-brigmedic-jumpsuit
+  loadouts:
+  - BrigmedicJumpsuit
+  - BrigmedicJumpskirt
+  - SecurityJumpsuitGrey
+  - SecurityJumpskirtGrey
+
+- type: loadoutGroup
+  id: BrigmedicBackpack
+  name: loadout-group-brigmedic-backpack
+  loadouts:
+  - BrigmedicBackpack
+  - BrigmedicSatchel
+  - BrigmedicDuffel
+
+- type: loadoutGroup
+  id: BrigmedicGlasses
+  name: loadout-group-brigmedic-glasses
+  minLimit: 1
+  loadouts:
+  - BrigmedicNormGlasses
+  - BrigmedicHud
+
 # Medical
 - type: loadoutGroup
   id: ChiefMedicalOfficerHead

@@ -31,6 +31,10 @@ job-name-alt-secoff-1 = Regulatory Control Officer
 job-name-alt-secoff-2 = Community Outreach Officer
 job-name-alt-secoff-3 = Desk Officer
 
+job-name-alt-brigmed-1 = Security Medic
+job-name-alt-brigmed-2 = Combat Medic
+job-name-alt-brigmed-3 = Field Physician
+
 job-name-alt-warden-1 = Dispatcher
 
 job-name-alt-detective-1 = Forensic Investigator

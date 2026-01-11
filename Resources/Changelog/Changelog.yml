@@ -1,26 +1,4 @@
 ﻿Entries:
-- author: themias
-  changes:
-  - message: Fixed crayons losing durability attempting to write on stamped paper
-    type: Fix
-  id: 7795
-  time: '2025-01-10T15:37:11.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34202
-- author: Tayrtahn
-  changes:
-  - message: Arcades, vending machines and the recycler now sometimes say creepy things
-      when a ghost uses the "Boo!" action near them.
-    type: Add
-  id: 7796
-  time: '2025-01-11T02:48:14.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34368
-- author: Kickguy223
-  changes:
-  - message: Indestructible tiles no longer break due to explosions
-    type: Fix
-  id: 7797
-  time: '2025-01-11T17:27:09.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34339
 - author: '0x6273'
   changes:
   - message: Fix a bug that was causing arachnid stomachs to not digest at the intended,
@@ -4022,3 +4000,34 @@
   id: 9102
   time: '2026-01-09T05:22:26.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/375
+- author: Zintex
+  changes:
+  - message: "Dodano rol\u0119 Medyk wi\u0119zienny (Brigmedic)"
+    type: Add
+  - message: 'Brigmedic dodany do map: Cluster, Packed, Roid, Saltern'
+    type: Add
+  id: 9103
+  time: '2026-01-09T19:37:54.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/371
+- author: Nikitapl
+  changes:
+  - message: Dodano bokserki patriotyczne
+    type: Add
+  - message: Dodano koszulki patriotyczne
+    type: Add
+  id: 9104
+  time: '2026-01-10T11:54:59.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/376
+- author: Zintex
+  changes:
+  - message: "Zmienione sprite'y ubra\u0144 brigmeda na bardziej czerwone."
+    type: Tweak
+  - message: "Militarna maska medyczna nie jest ju\u017C za\u0142o\u017Cona na starcie,\
+      \ by nie zas\u0142ania\u0107 twarzy i innych ubra\u0144 w menu wyposa\u017C\
+      enia."
+    type: Tweak
+  - message: "Usuni\u0119te skirt of life z loadouta brigmeda."
+    type: Remove
+  id: 9105
+  time: '2026-01-10T11:54:43.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/377

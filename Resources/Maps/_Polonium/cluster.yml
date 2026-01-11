@@ -43,7 +43,6 @@
 # SPDX-FileCopyrightText: 2025 Kalli <kinlawkalli@gmail.com>
 # SPDX-FileCopyrightText: 2025 Mish <bluscout78@yahoo.com>
 # SPDX-FileCopyrightText: 2025 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Polonium-bot <admin@ss14.pl>
 # SPDX-FileCopyrightText: 2025 TJ <7096270+twirling-jesters@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
 # SPDX-FileCopyrightText: 2025 The048 <128181635+The048@users.noreply.github.com>
@@ -53,6 +52,8 @@
 # SPDX-FileCopyrightText: 2025 nikitosych <174215049+nikitosych@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 rottenheadphones <juaelwe@outlook.com>
 # SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2026 Damian Zieliński <zientasek.pl@gmail.com>
+# SPDX-FileCopyrightText: 2026 Polonium-bot <admin@ss14.pl>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -71926,6 +71927,13 @@ entities:
     components:
     - type: Transform
       pos: 19.5,15.5
+      parent: 2
+- proto: SpawnPointBrigmedic
+  entities:
+  - uid: 13203
+    components:
+    - type: Transform
+      pos: 32.5,9.5
       parent: 2
 - proto: SpawnPointServiceWorker
   entities:

@@ -1,0 +1,72 @@
+# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Puro <103608145+PuroSlavKing@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 Damian Zieliński <zientasek.pl@gmail.com>
+# SPDX-FileCopyrightText: 2026 Polonium-bot <admin@ss14.pl>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: job
+  id: Brigmedic
+  name: job-name-brigmedic
+  description: job-description-brigmedic
+  playTimeTracker: JobBrigmedic
+  requirements:
+  - !type:DepartmentTimeRequirement
+    department: Medical
+    time: 14400
+  - !type:OverallPlaytimeRequirement
+    time: 36000 #10 hrs
+  startingGear: BrigmedicGear
+  icon: "JobIconBrigmedic"
+  supervisors: job-supervisors-hos
+  canBeAntag: false
+  access:
+  - Medical
+  - Security
+  - Brig
+  - Maintenance
+  - Service
+  - External
+  - Cryogenics
+  # begin Funkystation: give out missing genpop accesses
+  - GenpopEnter
+  - GenpopLeave
+  # end Funkystation
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+  alternateTitles:
+  - SecurityMedic
+  - SecurityCombatMedic
+  - SecurityFieldPhysician
+
+- type: startingGear
+  id: BrigmedicGear
+  equipment:
+    outerClothing: ClothingOuterCoatAMG
+    head: ClothingHeadHatBeretBrigmedic
+    id: BrigmedicPDA
+    ears: ClothingHeadsetBrigmedic
+    belt: ClothingBeltMedicalFilled
+    pocket1: WeaponPistolMk58
+    pocket2: WeaponDisabler
+  storage:
+    back:
+    - Flash
+    - MagazinePistol
+    - SecHypo # Goobstation
+    - autoInjectorCartridgeCaseSoftFilled
+    - Handcuffs
+    - ClothingMaskBreathMedicalSecurity
+
+- type: jobAlternateTitle
+  id: SecurityMedic
+  name: job-name-alt-brigmed-1
+
+- type: jobAlternateTitle
+  id: SecurityCombatMedic
+  name: job-name-alt-brigmed-2
+
+- type: jobAlternateTitle
+  id: SecurityFieldPhysician
+  name: job-name-alt-brigmed-3

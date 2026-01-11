@@ -227,6 +227,10 @@ loadout-group-detective-weapon = Detective Weapon
 loadout-group-security-cadet-jumpsuit = Security cadet jumpsuit
 loadout-group-security-star = Security Star
 
+loadout-group-brigmedic-jumpsuit = Brigmedic jumpsuit
+loadout-group-brigmedic-backpack = Brigmedic backpack
+loadout-group-brigmedic-glasses = Brigmedic glasses
+
 # Medical
 loadout-group-medical-gloves = Medical gloves
 loadout-group-medical-mask = Medical mask
