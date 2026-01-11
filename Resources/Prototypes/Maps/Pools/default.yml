@@ -54,6 +54,8 @@
   id: DefaultMapPool
   maps: #funkystation
   # low pop
+  - Cluster
+  - Saltern
   - Eden
   - Gax
   - Bagel
