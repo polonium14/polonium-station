@@ -1,2 +1,2 @@
-ent-PetCarrier = big pet carrier
-    .desc = Allows large animals to be carried comfortably.
+ent-PetCarrier = duży transporter dla zwierząt
+    .desc = Pozwala na wygodne przenoszenie dużych zwierząt.

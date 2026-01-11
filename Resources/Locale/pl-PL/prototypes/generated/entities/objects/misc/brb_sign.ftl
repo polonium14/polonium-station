@@ -1,2 +1,2 @@
-ent-BrbSign = brb sign
-    .desc = Lets others know you are away.
+ent-BrbSign = znak brb
+    .desc = Informuje innych, że zaraz wrócisz.

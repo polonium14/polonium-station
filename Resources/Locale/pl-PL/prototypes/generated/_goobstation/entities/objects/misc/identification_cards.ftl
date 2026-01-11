@@ -1,6 +1,6 @@
-ent-ChronoIDCard = futuristic ID card
-    .desc = The card that originally accessed everything in this universe
-ent-HelldiverIDCard = salvage diver ID card
+ent-ChronoIDCard = futurystyczny identyfikator
+    .desc = Karta, która pierwotnie miała dostęp do wszystkiego w tym wszechświecie.
+ent-HelldiverIDCard = karta identyfikacyjna nurka złomowego
     .desc = { ent-SalvageIDCard.desc }
-ent-HecuIDCard = HECU ID card
+ent-HecuIDCard = identyfikator HECU
     .desc = { ent-IDCardStandard.desc }

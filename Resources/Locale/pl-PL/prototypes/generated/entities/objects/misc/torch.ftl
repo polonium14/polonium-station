@@ -1,2 +1,2 @@
-ent-Torch = torch
-    .desc = A torch fashioned from some wood.
+ent-Torch = pochodnia
+    .desc = Pochodnia wykonana z kawałka drewna.

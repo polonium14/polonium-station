@@ -1,4 +1,4 @@
-ent-SpiderWeb = spider web
-    .desc = It's stringy and sticky.
-ent-SpiderWebClown = clown spider web
-    .desc = It's stringy and slippy.
+ent-SpiderWeb = pajęczyna
+    .desc = Jest włóknista i lepka.
+ent-SpiderWebClown = pajęczyna klauna
+    .desc = Jest włóknista i śliska.

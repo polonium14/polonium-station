@@ -1,9 +1,9 @@
-ent-RubberStampIAA = internal affairs agent's rubber stamp
-    .suffix = DO NOT MAP
+ent-RubberStampIAA = pieczątka ASW
+    .suffix = NIE MAPOWAĆ
     .desc = { ent-RubberStampBase.desc }
-ent-RubberStampMagistrate = magistrate's rubber stamp
-    .suffix = DO NOT MAP
+ent-RubberStampMagistrate = pieczątka magistrata
+    .suffix = NIE MAPOWAĆ
     .desc = { ent-RubberStampBase.desc }
-ent-RubberStampCyborg = borg rubber stamp
-    .suffix = DO NOT MAP
+ent-RubberStampCyborg = pieczątka borga
+    .suffix = NIE MAPOWAĆ
     .desc = { ent-RubberStampBase.desc }

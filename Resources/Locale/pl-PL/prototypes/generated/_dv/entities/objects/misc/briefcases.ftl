@@ -1,2 +1,2 @@
-ent-CybersunBriefcase = cybersun briefcase
-    .desc = It's like a brown briefcase, but black.
+ent-CybersunBriefcase = teczka Cybersun
+    .desc = To jak brązowa teczka, ale czarna.

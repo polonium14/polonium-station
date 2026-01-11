@@ -1,4 +1,4 @@
-ent-WrappedBee = Bee-Yourself brand wrapped bee
-    .desc = It's a bee. In a wrapper.
-ent-WrappedBeeTrash = Bee-Yourself brand wrapper
-    .desc = It's a wrapper. It used to have a bee.
+ent-WrappedBee = Pszczoła owinięta marką Bee-Yourself
+    .desc = To pszczoła. W opakowaniu.
+ent-WrappedBeeTrash = opakowanie marki Bee-Yourself
+    .desc = To opakowanie. Kiedyś była w nim pszczoła.

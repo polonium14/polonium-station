@@ -1,6 +1,6 @@
-ent-BluespaceLifelineImplant = bluespace lifeline implant
-    .desc = This implants teleport user body to safe place, forcing him to leave current location so he won't be able to come back.
-ent-PacifismImplant = pacifism implant
-    .desc = Pacifism implant, given to life sentenced prisoners or such to prevent them from committing violence.
-ent-SmokeImplant = smoke implant
-    .desc = This implant releases smoke cloud on activation.
+ent-BluespaceLifelineImplant = implantator linii ratunkowej bluspejs
+    .desc = Implant ten teleportuje ciało użytkownika w bezpieczne miejsce, zmuszając go do opuszczenia aktualnej lokalizacji, tak aby nie mógł do niej powrócić.
+ent-PacifismImplant = implantator pacyfizmu
+    .desc = Implant pacyfistyczny, wszczepiany skazanym na dożywocie lub podobnym osobom, aby zapobiec popełnianiu przez nich aktów przemocy.
+ent-SmokeImplant = implantator dymny
+    .desc = Implant ten po aktywacji uwalnia chmurę dymu.

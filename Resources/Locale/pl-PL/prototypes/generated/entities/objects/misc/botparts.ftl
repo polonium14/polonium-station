@@ -1,2 +1,2 @@
-ent-ProximitySensor = proximity sensor
-    .desc = Senses things in close proximity.
+ent-ProximitySensor = czujnik zbliżeniowy
+    .desc = Wykrywa obiekty w bliskiej odległości.

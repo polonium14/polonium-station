@@ -1,2 +1,2 @@
-ent-PenFuture = futuristic pen
-    .desc = Some theories claim that the apocalypse of 3024 happened because of the pens
+ent-PenFuture = futurystyczny długopis
+    .desc = Niektóre teorie twierdzą, że apokalipsa z 3024 roku nastąpiła z powodu długopisów.
