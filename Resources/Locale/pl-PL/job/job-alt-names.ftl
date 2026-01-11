@@ -1,6 +1,6 @@
 job-alt-title-reminder = Nie używaj swojego tytułu [color=#33ccff]"{ $altTitle }"[/color] jako wymówkę, aby zaniedbywać swoje obowiązki jako [color=#ffffff]{ $jobName }[/color].
 job-name-alt-medical-1 = Chirurg
-job-name-alt-medical-2 = Pielęgniarka
+job-name-alt-medical-2 = Pielęgniarz
 job-name-alt-medical-3 = Lekarz
 job-name-alt-chemist-1 = Farmaceuta
 job-name-alt-chemist-2 = Technik laboratoryjny
@@ -44,7 +44,7 @@ job-name-alt-chef-2 = Kucharz liniowy
 job-name-alt-chef-3 = Dostawca posiłków
 job-name-alt-clown-1 = Błazen
 job-name-alt-clown-2 = Klaun
-job-name-alt-janitor-1 = Sprzątaczka
+job-name-alt-janitor-1 = Woźny
 job-name-alt-janitor-2 = Pracownik utrzymania czystości
 job-name-alt-janitor-3 = Technik ds. utrzymania czystości
 job-name-alt-lawyer-1 = Adwokat
