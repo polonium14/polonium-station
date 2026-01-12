@@ -28,17 +28,34 @@
 - type: soundCollection
   id: LobbyMusic
   files:
+    - /Audio/Lobby/thunderdome.ogg
+    - /Audio/Lobby/absconditus.ogg
     - /Audio/Lobby/space_asshole.ogg
+    - /Audio/Lobby/the_wizard.ogg
+    - /Audio/Lobby/endless_space.ogg
+    - /Audio/Lobby/singuloose.ogg
+    - /Audio/Lobby/comet_haley.ogg
+    - /Audio/Lobby/title2.ogg
+    - /Audio/Lobby/title3.ogg
+    - /Audio/Lobby/mod.flip-flap.ogg
+    - /Audio/Lobby/Spac_Stac.ogg
+    - /Audio/Lobby/pwmur.ogg
+    - /Audio/Lobby/lasers_rip_apart_the_bulkhead.ogg
     - /Audio/Lobby/every_light_is_blinking_at_once.ogg
+    - /Audio/Lobby/atomicamnesiammx.ogg
     # Goobstation - Custom lobby music
 #    - /Audio/Lobby/skubstep.ogg
 #    - /Audio/Lobby/sneedsfeedandseed.ogg
-#    - /Audio/Lobby/honk.ogg
-#    - /Audio/Lobby/clownalwayswins.ogg
-#    - /Audio/Lobby/clownwmv.ogg
-#    - /Audio/Lobby/dawsonschristian.ogg
+    - /Audio/Lobby/the_future_soon.ogg
+    - /Audio/Lobby/monument.ogg
+    - /Audio/Lobby/marhaba.ogg
+    - /Audio/Lobby/horn.ogg
+    - /Audio/Lobby/honk.ogg
+    - /Audio/Lobby/clownalwayswins.ogg
+    - /Audio/Lobby/clownwmv.ogg
+    - /Audio/Lobby/dawsonschristian.ogg
     - /Audio/Lobby/thewizard.ogg
-#    - /Audio/Lobby/skubstub.ogg
+    - /Audio/Lobby/skubstub.ogg
     - /Audio/Lobby/space_radiation.ogg
     - /Audio/Lobby/droopy_likes_your_face.ogg
     - /Audio/Lobby/spacers_home.ogg
@@ -50,4 +67,39 @@
     - /Audio/Lobby/dagd.ogg
     - /Audio/Lobby/meltdown.ogg
     # funky station music
-    - /Audio/_Funkystation/Music/an_alien_song_alien_kids.ogg
+    - /Audio/_Funkystation/an_alien_song_alien_kids.ogg
+    # Delta-V
+    - /Audio/Lobby/434387_Time_Lapse_of_Clouds.ogg
+    - /Audio/Lobby/a_different_reality_lagoona_remix.xm.ogg
+    - /Audio/Lobby/autumnal_equinox.xm.ogg
+    - /Audio/Lobby/aggravated.it.ogg
+    - /Audio/Lobby/Black_Heat.ogg
+    - /Audio/Lobby/drozerix_-_alone.xm.ogg
+    - /Audio/Lobby/drozerix_-_leisurely_voice.xm.ogg
+    - /Audio/Lobby/Get_It_Done.ogg
+    - /Audio/Lobby/hackers.ogg
+    - /Audio/Lobby/melcom-cyberpunk.it.ogg
+    - /Audio/Lobby/midori_-_conundrum_final.it.ogg
+    - /Audio/Lobby/Patricia_Taxxon_-_Minute.ogg
+    - /Audio/Lobby/psirius_-_nights_of_orion.xm.ogg
+    - /Audio/Lobby/psirius_-_nymphs_of_the_forest.mptm.ogg
+    - /Audio/Lobby/superposition.ogg
+    - /Audio/Lobby/thestation.ogg
+    - /Audio/Lobby/Undefined_Theory.ogg
+    # Starlight
+    - /Audio/Lobby/cosmonaut.ogg
+    - /Audio/Lobby/chasing-cosmic-dreams.ogg
+    - /Audio/Lobby/breacher.ogg
+    - /Audio/Lobby/Resistance.ogg
+    - /Audio/Lobby/echoes-in-the-deep.ogg
+    - /Audio/Lobby/timefracture.ogg
+    - /Audio/Lobby/762_treastise.ogg
+    - /Audio/Lobby/hull_rupture.ogg
+    # RMC
+    - /Audio/Lobby/Super_Nova_In_The_Catacombs.ogg
+    - /Audio/Lobby/shadowinthesilvernebula.ogg
+    - /Audio/Lobby/the_fallen_queen.ogg
+    - /Audio/Lobby/enemy_is_unknown.ogg
+    - /Audio/Lobby/Dire_Situation.ogg
+    - /Audio/Lobby/Time_Is_Running_Out.ogg
+    - /Audio/Lobby/Dropzone.ogg
