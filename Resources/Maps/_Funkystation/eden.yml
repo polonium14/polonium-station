@@ -13800,7 +13800,7 @@ entities:
       pos: 5.5,17.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -3396388
+      secondsUntilStateChange: -3396249.8
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -107628,11 +107628,6 @@ entities:
     - type: Physics
       angularDamping: 0
       linearDamping: 0
-  - uid: 22273
-    components:
-    - type: Transform
-      pos: -67.463196,-26.370426
-      parent: 2
 - proto: InflatableWallStack1
   entities:
   - uid: 22279
@@ -107640,7 +107635,24 @@ entities:
     - type: Transform
       pos: -41.423717,-11.704158
       parent: 2
+- proto: InflatableWallStack5
+  entities:
+  - uid: 22273
+    components:
+    - type: Transform
+      pos: -67.463196,-26.370426
+      parent: 2
 - proto: IngotGold
+  entities:
+  - uid: 1478
+    components:
+    - type: Transform
+      pos: -1.4931656,33.318146
+      parent: 2
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+- proto: IngotGold1
   entities:
   - uid: 1478
     components:
