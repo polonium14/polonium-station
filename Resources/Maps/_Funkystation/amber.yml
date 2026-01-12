@@ -95351,6 +95351,13 @@ entities:
     - type: Transform
       pos: -19.5,-29.5
       parent: 2
+- proto: LockerBrigmedicFilled
+  entities:
+  - uid: 17090
+    components:
+    - type: Transform
+      pos: -28.5,9.5
+      parent: 2
 - proto: LockerCaptainFilledNoLaser
   entities:
   - uid: 13767
@@ -110631,6 +110638,13 @@ entities:
     - type: Transform
       pos: -16.5,-33.5
       parent: 2
+- proto: SpawnPointBrigmedic
+  entities:
+  - uid: 17282
+    components:
+    - type: Transform
+      pos: -28.5,10.5
+      parent: 2
 - proto: SpawnPointCaptain
   entities:
   - uid: 4033
@@ -114684,11 +114698,6 @@ entities:
     - type: Transform
       pos: -28.5,11.5
       parent: 2
-  - uid: 17090
-    components:
-    - type: Transform
-      pos: -28.5,9.5
-      parent: 2
   - uid: 17091
     components:
     - type: Transform
@@ -115747,13 +115756,6 @@ entities:
     components:
     - type: Transform
       pos: 50.48773,-54.36774
-      parent: 2
-- proto: Tourniquet
-  entities:
-  - uid: 17282
-    components:
-    - type: Transform
-      pos: -28.580025,9.723599
       parent: 2
 - proto: TowelColorNT
   entities:
