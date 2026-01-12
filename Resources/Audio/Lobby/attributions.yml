@@ -200,5 +200,88 @@
   copyright: "The Future Soon by Jonathan Coulton"
   source: "https://www.youtube.com/watch?v=l5PEz3kGbp4"
 
+# Delta-V
+- files: ["434387_Time_Lapse_of_Clouds.ogg"]
+  license: "CC-BY-3.0"
+  copyright: "==(Time Lapse of Clouds)== by Buoy"
+  source: "https://www.newgrounds.com/audio/listen/434387"
 
+- files: ["a_different_reality_lagoona_remix.xm.ogg"]
+  license: "CC-BY-4.0"
+  copyright: "A.D.R (Lagoona rmx) by Andreas Viklund"
+  source: "https://modarchive.org/index.php?request=view_by_moduleid&query=134786"
 
+- files: ["autumnal_equinox.xm.ogg"]
+  license: "CC-BY-NC-4.0"
+  copyright: "Autumnal Equinox by lemonade"
+  source: "https://modarchive.org/index.php?request=view_by_moduleid&query=143993"
+
+- files: ["aggravated.it.ogg"]
+  license: "CC-BY-NC-SA-4.0"
+  copyright: "MEL -Aggravated Assault by melcom"
+  source: "https://modarchive.org/index.php?request=view_by_moduleid&query=176234"
+
+- files: ["Black_Heat.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Black Heat by Ross Bugden, converted from WAV to OGG"
+  source: "https://soundcloud.com/rossbugden/intense-and-upbeat-electronic-trailer-music-black-heat-copyright-and-royalty-free"
+
+- files: ["drozerix_-_alone.xm.ogg"]
+  license: "Custom"
+  copyright: "Alone by Drozerix"
+  source: "https://modarchive.org/index.php?request=view_by_moduleid&query=199968"
+
+- files: ["drozerix_-_leisurely_voice.xm.ogg"]
+  license: "Custom"
+  copyright: "Leisurely Voice by Drozerix"
+  source: "https://modarchive.org/index.php?request=view_by_moduleid&query=183837"
+
+- files: ["Get_It_Done.ogg"]
+  license: "CC0-1.0"
+  copyright: "Get It Done by A-Guy, converted from mp3 to OGG"
+  source: "https://github.com/A-Guy173/Music/blob/main/getitdone.mp3"
+
+- files: ["hackers.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "Hackers by Karl Casey @ White Bat Audio"
+  source: "https://www.youtube.com/watch?v=k8nHWwO1U2Q"
+
+- files: ["melcom-cyberpunk.it.ogg"]
+  license: "CC-BY-NC-SA-4.0"
+  copyright: "MEL -Cyberpunk by melcom"
+  source: "https://modarchive.org/index.php?request=view_by_moduleid&query=184215"
+
+- files: ["midori_-_conundrum_final.it.ogg"]
+  license: "CC-BY-NC-SA-4.0"
+  copyright: "Conundrum by Midori Mizuno"
+  source: "https://modarchive.org/index.php?request=view_by_moduleid&query=181705"
+
+- files: ["Patricia_Taxxon_-_Minute.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Minute by Patricia Taxxon off the album 'Aeroplane'"
+  source: "https://patriciataxxon.bandcamp.com/track/minute"
+
+- files: ["psirius_-_nights_of_orion.xm.ogg"]
+  license: "CC-BY-NC-SA-4.0"
+  copyright: "Nights of Orion by Psirius"
+  source: "https://modarchive.org/index.php?request=view_by_moduleid&query=184962"
+
+- files: ["psirius_-_nymphs_of_the_forest.mptm.ogg"]
+  license: "CC-BY-NC-SA-4.0"
+  copyright: "Nymphs of the forest by Psirius"
+  source: "https://modarchive.org/index.php?request=view_by_moduleid&query=185545"
+
+- files: ["superposition.ogg"]
+  license: "CC-BY-NC-3.0"
+  copyright: "Superposition by Amie Waters"
+  source: "https://amiewaters.bandcamp.com/track/superposition-2"
+
+- files: ["thestation.ogg"]
+  license: "CC0-1.0"
+  copyright: "The Station by A-Guy, converted from mp3 to OGG"
+  source: "https://github.com/A-Guy173/Music/blob/main/thestation.mp3"
+
+- files: ["Undefined_Theory.ogg"]
+  license: "CC0-1.0"
+  copyright: "Undefined Theory by A-Guy, converted to OGG"
+  source: "https://www.youtube.com/watch?v=FIOs2t84MKo"
