@@ -107654,16 +107654,6 @@ entities:
       linearDamping: 0
 - proto: IngotGold1
   entities:
-  - uid: 1478
-    components:
-    - type: Transform
-      pos: -1.4931656,33.318146
-      parent: 2
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-- proto: IngotGold1
-  entities:
   - uid: 4052
     components:
     - type: Transform
