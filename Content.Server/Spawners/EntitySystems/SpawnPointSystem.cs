@@ -42,6 +42,7 @@ public sealed class SpawnPointSystem : EntitySystem
         // TODO: Cache all this if it ends up important.
         var points = EntityQueryEnumerator<SpawnPointComponent, TransformComponent>();
         var possiblePositions = new List<EntityCoordinates>();
+        var fallbackPositions = new List<EntityCoordinates>();
 
         while ( points.MoveNext(out var uid, out var spawnPoint, out var xform))
         {
@@ -59,6 +60,18 @@ public sealed class SpawnPointSystem : EntitySystem
             {
                 possiblePositions.Add(xform.Coordinates);
             }
+
+            // Save late join positions during roundstart as fallback positions, in case no job positions were found. - Polonium
+            if (_gameTicker.RunLevel != GameRunLevel.InRound && spawnPoint.SpawnType == SpawnPointType.LateJoin)
+            {
+                fallbackPositions.Add(xform.Coordinates);
+            }
+        }
+
+        // If no roundstart spawns found, spawn in fallback, late join locations - Polonium
+        if (_gameTicker.RunLevel != GameRunLevel.InRound && possiblePositions.Count == 0)
+        {
+            possiblePositions = fallbackPositions;
         }
 
         if (possiblePositions.Count == 0)
