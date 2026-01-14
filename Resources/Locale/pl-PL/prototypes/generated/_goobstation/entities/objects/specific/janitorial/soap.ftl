@@ -1,2 +1,2 @@
-ent-SoapHomemadeBanana = Banana soap
-    .desc = A homemade bar of soap. Smells of banana.
+ent-SoapHomemadeBanana = Mydło bananowe
+    .desc = Kostka mydła domowej roboty. Pachnie jak banan.
