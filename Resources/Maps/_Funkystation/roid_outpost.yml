@@ -56,9 +56,6 @@
 # SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 rottenheadphones <juaelwe@outlook.com>
 # SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
-# SPDX-FileCopyrightText: 2026 Damian Zieliński <zientasek.pl@gmail.com>
-# SPDX-FileCopyrightText: 2026 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2026 Polonium-bot <admin@ss14.pl>
 # SPDX-FileCopyrightText: 2026 mkanke-real <mikekanke@gmail.com>
 #
 # SPDX-License-Identifier: MIT
@@ -70,7 +67,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 01/04/2026 22:45:59
-  entityCount: 20823
+  entityCount: 20821
 maps:
 - 1
 grids:
@@ -88913,13 +88910,6 @@ entities:
     - type: Transform
       pos: 5.5,7.5
       parent: 2
-- proto: LockerBrigmedicFilled
-  entities:
-  - uid: 20823
-    components:
-    - type: Transform
-      pos: -34.5,4.5
-      parent: 2
 - proto: LockerCaptainFilledHardsuit
   entities:
   - uid: 8859
@@ -102178,13 +102168,6 @@ entities:
     components:
     - type: Transform
       pos: 3.5,9.5
-      parent: 2
-- proto: SpawnPointBrigmedic
-  entities:
-  - uid: 20822
-    components:
-    - type: Transform
-      pos: -34.5,3.5
       parent: 2
 - proto: SpawnPointCaptain
   entities:

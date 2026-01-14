@@ -58,8 +58,8 @@ meta:
   engineVersion: 247.2.0
   forkId: ""
   forkVersion: ""
-  time: 01/12/2026 12:58:44
-  entityCount: 12220
+  time: 03/28/2025 07:04:20
+  entityCount: 12218
 maps:
 - 4133
 grids:
@@ -51960,13 +51960,6 @@ entities:
     - type: Transform
       pos: -17.5,1.5
       parent: 31
-- proto: LockerBrigmedicFilled
-  entities:
-  - uid: 12220
-    components:
-    - type: Transform
-      pos: -11.5,14.5
-      parent: 31
 - proto: LockerCaptainFilledHardsuit
   entities:
   - uid: 5737
@@ -61893,7 +61886,7 @@ entities:
   - uid: 7905
     components:
     - type: Transform
-      pos: -13.5,14.5
+      pos: -11.5,14.5
       parent: 31
 - proto: SpawnPointBrigmedic
   entities:

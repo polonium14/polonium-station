@@ -52,10 +52,7 @@
 # SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 pa.pecherskij <pa.pecherskij@interfax.ru>
 # SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
-# SPDX-FileCopyrightText: 2026 Damian Zieliński <zientasek.pl@gmail.com>
 # SPDX-FileCopyrightText: 2026 Ichaie <ichaicoelho@gmail.com>
-# SPDX-FileCopyrightText: 2026 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2026 Polonium-bot <admin@ss14.pl>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -65,8 +62,8 @@ meta:
   engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 01/12/2026 10:44:33
-  entityCount: 24490
+  time: 01/01/2026 22:31:10
+  entityCount: 24488
 maps:
 - 1
 grids:
@@ -119775,13 +119772,6 @@ entities:
     - type: Transform
       pos: 78.5,28.5
       parent: 2
-- proto: LockerBrigmedicFilled
-  entities:
-  - uid: 24489
-    components:
-    - type: Transform
-      pos: -26.5,55.5
-      parent: 2
 - proto: LockerCaptainFilledNoLaser
   entities:
   - uid: 17505
@@ -138929,13 +138919,6 @@ entities:
     components:
     - type: Transform
       pos: 45.5,44.5
-      parent: 2
-- proto: SpawnPointBrigmedic
-  entities:
-  - uid: 24490
-    components:
-    - type: Transform
-      pos: -28.5,53.5
       parent: 2
 - proto: SpawnPointCaptain
   entities:
