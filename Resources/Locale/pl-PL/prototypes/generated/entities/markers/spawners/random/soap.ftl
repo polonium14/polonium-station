@@ -1,2 +1,2 @@
-ent-RandomSoap = random soap spawner
+ent-RandomSoap = Spawner losowego mydła
     .desc = { ent-MarkerBase.desc }
