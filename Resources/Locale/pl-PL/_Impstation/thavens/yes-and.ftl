@@ -4,16 +4,16 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-thaven-mood-possessive-of-property-name = Possessive Of Property
-thaven-mood-possessive-of-property-desc = You are extremely possessive of your property. Refuse to relinquish it, and if it is misplaced or stolen, it must be retrieved at all costs.
-thaven-mood-excessively-organized-name = Excessively Organized
-thaven-mood-excessively-organized-desc = You are obsessively organized; everything has its place and must be returned to it.
-thaven-mood-most-important-name = Most Important Person
-thaven-mood-most-important-desc = You firmly believe you are the most important person aboard the station.
-thaven-mood-least-important-name = Least Important Person
-thaven-mood-least-important-desc = You firmly believe you are the least important person on the station.
-thaven-mood-must-do-drugs-name = Do Drugs
-thaven-mood-must-do-drugs-desc = Sobriety is so old-fashioned. Uncool. You should get high, or drunk, or something, and stay that way.
+thaven-mood-possessive-of-property-name = Zaborczy
+thaven-mood-possessive-of-property-desc = Jesteś skrajnie zaborczy wobec swojej własności. Odmawiaj oddania jej, a jeśli zostanie zgubiona lub skradziona, musi zostać odzyskana za wszelką cenę.
+thaven-mood-excessively-organized-name = Nadmiernie Zorganizowany
+thaven-mood-excessively-organized-desc = Masz obsesje nad organizacja, wszystko ma swoje miejsce i musi na nie wrócić.
+thaven-mood-most-important-name = Najważniejsza Osoba
+thaven-mood-most-important-desc = Uważasz się za najważniejszą osobe na stacji, bo jesteś.
+thaven-mood-least-important-name = Najmnniej Ważna Osoba
+thaven-mood-least-important-desc = Uważasz się za najmniej ważną osobe na stacji.
+thaven-mood-must-do-drugs-name = Bierz Dragi
+thaven-mood-must-do-drugs-desc = Trzeźwość to obciach. Odurz się lub upij i nie trzeźwiej.
 thaven-mood-worship-silicons-name = You Must Worship Silicons As Gods
 thaven-mood-worship-silicons-desc = Their word is law.
 thaven-mood-dinner-etiquette-name = Meal Etiquette
