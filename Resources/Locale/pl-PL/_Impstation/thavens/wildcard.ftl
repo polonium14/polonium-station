@@ -50,36 +50,36 @@ thaven-mood-crywolf-desc = Nanotrasen ostatnio zaniedbuje bezpieczeństwo. Zało
 thaven-mood-cave-dweller-name = Mieszkaniec Jaskiń
 thaven-mood-cave-dweller-desc = O wiele bardziej preferujesz nawigować latarką przez ciemność, niż przechodzić przez korytarze z oślepiającymi światłami na suficie.
 thaven-mood-daredevil-name = Ryzykant
-thaven-mood-daredevil-desc = You do not acknowledge pain or danger to your person in public. To do so would be to demonstrate weakness, and would make you a target.
+thaven-mood-daredevil-desc = Nie demonstrujesz bólu ani niebezpieczeństwa wobec siebie w obecności innych. Gdybyś to zrobił, pokazałbyś słabość i stałbyś się łatwym celem.
 thaven-mood-folk-hero-name =
     { $dagdChanceName ->
-       *[FolkHero] Folk Hero
-        [DieAGloriousDeath] Die A Glorious Death
+       *[FolkHero] Bohater Z Baśni
+        [DieAGloriousDeath] Chwalebna Śmierć
     }
 thaven-mood-folk-hero-desc =
     { $dagdChanceName ->
-       *[FolkHero] No one knows it yet, but you are the hero this station needs. You must intervene in any major conflict that occurs, and fight the station’s enemies to the best of your ability
-        [DieAGloriousDeath] You are an artist, and your canvas is your demise. Your primary goal is to orchestrate a glorious, beautiful finale to your existence — But you are not a murderer. Try to avoid causing excessive damage
+       *[FolkHero] Nikt tego jeszcze nie wie, ale to TY jesteś bohaterem którego ta stacja potrzebuje. Musisz interweniować w każdym większym konflikcie jaki wystąpi i walczyć z wrogami stacji na miarę swoich możliwości.
+        [DieAGloriousDeath] Jesteś artystą, a twoim płótnem jest twoja zguba. Twoim głównym celem jest przygotować wspaniały oraz piękny koniec swojej egzystencji, jednak nie jesteś mordercą. Unikaj nadmiernych szkód.
     }.
-thaven-mood-blogger-name = Greencomms Blogger
-thaven-mood-blogger-desc = You must keep the station informed about every minute detail of your life.
-thaven-mood-animal-sacrifice-name = Oldschool
-thaven-mood-animal-sacrifice-desc = The only way to achieve success is to dedicate an animal sacrifice to your goal.
-thaven-mood-golden-thread-name = Golden Thread
-thaven-mood-golden-thread-desc = You strongly feel that you are fated to follow a perfect, unbreakable path. Those who disrupt your goals are at best dangerous criminals, and at worst, evil spirits or demons.
-thaven-mood-fey-mood-name = You Are Taken By A Fey Mood!
-thaven-mood-fey-mood-desc = You must immediately drop everything you are doing, ignore all other Moods, and begin work on an unrelated large-scale project. Once it is finished, you may ignore this Mood.
-thaven-mood-borged-name = BORGED.
-thaven-mood-borged-desc = You are a cyborg! You must follow the laws of robotics to the best of your understanding, in addition to your other Moods.
-thaven-mood-aye-aye-name = Aye Aye!
-thaven-mood-aye-aye-desc = { $command } is the only position on the station. Everyone you meet has this title, including yourself.
+thaven-mood-blogger-name = Ogólnoradiowy Blogger
+thaven-mood-blogger-desc = Cała stacja musi znać każdy detal i każda minute twojego życia.
+thaven-mood-animal-sacrifice-name = Oldschoolowy
+thaven-mood-animal-sacrifice-desc = Jedyną drogą do osiągnięcia sukcesu jest złożenie zwierzęcej ofiary na rzecz swojego celu
+thaven-mood-golden-thread-name = Złota Nić Losu
+thaven-mood-golden-thread-desc = Głęboko wierzysz, że twoim przeznaczeniem jest podążanie idealną, niezłomną ścieżką. Ci, którzy przeszkadzają w twoich celach, są co najmniej niebezpiecznymi przestępcami, a w najgorszym razie złymi duchami lub demonami.
+thaven-mood-fey-mood-name = Dopada Cię Dziwny Nastrój!
+thaven-mood-fey-mood-desc = Musisz natychmiast zaprzestać wszystko co robiłeś, zignorować reszte Nastrojów, i rozpocząć prace nad losowym wielkim projektem. Dopiero po ukończeniu go możesz zignorować ten Nastrój.
+thaven-mood-borged-name = ZBORGOWANY.
+thaven-mood-borged-desc = Jesteś cyborgiem! oprócz innych twoich Nastrojów, musisz sie trzymać praw robotyki najlepiej jak tylko potrafisz.
+thaven-mood-aye-aye-name = Aj Aj!
+thaven-mood-aye-aye-desc = { $command } jest jedyną pozycją na tej stacji. Każdy kogo spotkasz ma ten tytuł, uwzględniając ciebie.
 thaven-mood-new-job-name = Jobhopping
-thaven-mood-new-job-desc = Your current job is disgusting to you. You must endeavor to get a new one.
-thaven-mood-always-alone-name = Lone Wolf
-thaven-mood-always-alone-desc = Other people will only slow you down. You should strive to be alone whenever possible.
-thaven-mood-rank-snob-name = Snob
-thaven-mood-rank-snob-desc = You are incredibly reluctant to respond to anyone who is of a lower rank than you. If they must be addressed, do so away from prying eyes.
-thaven-mood-corporateconspiracy-name = Corporate Conspiracy
-thaven-mood-corporateconspiracy-desc = You believe there is a hidden connection between Nanotrasen and the Syndicate. Command is complicit.
-thaven-mood-oppositeday-name = Opposite Day
-thaven-mood-oppositeday-desc = People mean the opposite of what they say. Up is down, and down is up.
+thaven-mood-new-job-desc = Brzydzisz się swoją aktualną pracą, powinieneś ją zmienić.
+thaven-mood-always-alone-name = Samotny Wilk
+thaven-mood-always-alone-desc = Inni ludzie są dla ciebie tylko ciężarem. Starasz się być samotny jeśli to tylko możliwe.
+thaven-mood-rank-snob-name = Elitysta
+thaven-mood-rank-snob-desc = Niechętnie odpowiadasz osobom niższej rangi. Jeśli musisz, rób to na uboczu...
+thaven-mood-corporateconspiracy-name = Konspiracja Korporacji
+thaven-mood-corporateconspiracy-desc = Wierzysz że istnieje tajny układ między Nanotrasen i Syndykatem, a dowództwo jest w to zamieszane.
+thaven-mood-oppositeday-name = Dzień Odwrotny
+thaven-mood-oppositeday-desc = Ludzie mają na myśli przeciwieństwo tego, co mówią. Góra jest dołem, a dół górą.
