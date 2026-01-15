@@ -53,7 +53,7 @@ thaven-mood-only-pills-name = Igły Są Straszne
 thaven-mood-only-pills-desc = Przyjmujesz leki tylko w formie pigułek.
 thaven-mood-avoid-puddles-name = Nie Zmocz Stóp
 thaven-mood-avoid-puddles-desc = Chodzenie po rozlanych cieczach jest haniebne oraz niesanitarne i Musisz tego unikać nawet za cenę życia.
-thaven-mood-food-restrict-name = Ściśle { $food }
+thaven-mood-food-restrict-name = Tylko { $food }
 thaven-mood-food-restrict-desc =
     Możesz jeść tylko { $food ->
         [Carnivore] mięsa
