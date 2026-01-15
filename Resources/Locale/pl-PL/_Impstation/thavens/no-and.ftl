@@ -55,7 +55,7 @@ thaven-mood-avoid-puddles-name = Nie Zmocz Stóp
 thaven-mood-avoid-puddles-desc = Chodzenie po rozlanych cieczach jest haniebne oraz niesanitarne i Musisz tego unikać nawet za cenę życia.
 thaven-mood-food-restrict-name = Ściśle { $food }
 thaven-mood-food-restrict-desc =
-    Musisz jeść tylko { $food ->
+    Możesz jeść tylko { $food ->
         [Carnivore] mięsa
        *[Vegetarian] warzywa
         [Frugivore] owoce
