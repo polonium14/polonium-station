@@ -4,7 +4,7 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-drunken-resilience-trait-name = Odporność na pijaństwo
+drunken-resilience-trait-name = Pijacki Upór
 drunken-resilience-trait-desc = Nie ma nic lepszego od zimnego browarka. Kiedy jesteś pijany, powoli leczysz się z ran.
 trait-self-aware-name = Samo-Świadomość
 trait-self-aware-description = Możesz się przeglądać jakbyś to robil Analizatorem.
