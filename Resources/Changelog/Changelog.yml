@@ -1,29 +1,4 @@
 ﻿Entries:
-- author: SlimSlam
-  changes:
-  - message: News Room
-    type: Add
-  id: 7802
-  time: '2025-01-12T23:32:51.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34408
-- author: Deerstop
-  changes:
-  - message: Improved the readability of the manual valve sprite.
-    type: Tweak
-  id: 7803
-  time: '2025-01-13T07:07:30.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34378
-- author: JustinWinningham
-  changes:
-  - message: Anomalies no longer block players or APES (or other objects) from passing
-      through them
-    type: Tweak
-  - message: Players can no longer move anomalies with unanchored furniture, closets,
-      etc.
-    type: Fix
-  id: 7804
-  time: '2025-01-13T10:06:57.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34280
 - author: zHonys
   changes:
   - message: Items with collisions (like mousetraps) won't kept doors form opening
@@ -4036,3 +4011,25 @@
   id: 9109
   time: '2026-01-14T10:44:32.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/383
+- author: Zintex
+  changes:
+  - message: "Poprawiona \u015Bcie\u017Cka do muzyki lobby alien kids"
+    type: Fix
+  id: 9110
+  time: '2026-01-14T15:32:01.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/388
+- author: Zintex
+  changes:
+  - message: Dodano Cluster i Saltern do rotacji.
+    type: Add
+  id: 9111
+  time: '2026-01-14T15:43:05.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/382
+- author: Nikitapl
+  changes:
+  - message: "Usuni\u0119to choinki, \u015Bwiate\u0142ka i inne rzeczy \u015Bwi\u0105\
+      teczne z map Reach, Cluster, Cork, Core"
+    type: Remove
+  id: 9112
+  time: '2026-01-16T12:30:56.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/392

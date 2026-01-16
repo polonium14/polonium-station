@@ -46,13 +46,13 @@
 # SPDX-FileCopyrightText: 2024 Verm <32827189+Vermidia@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 rottenheadphones <juaelwe@outlook.com>
 # SPDX-FileCopyrightText: 2025 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Polonium-bot <admin@ss14.pl>
 # SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
 # SPDX-FileCopyrightText: 2025 Teasq <Xerithin@gmail.com>
 # SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 nikitosych <174215049+nikitosych@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2026 Polonium-bot <admin@ss14.pl>
+# SPDX-FileCopyrightText: 2026 nikitosych <174215049+nikitosych@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -60228,154 +60228,6 @@ entities:
     - type: Transform
       pos: 65.5038,-52.411602
       parent: 2
-- proto: ChristmasLightsCyan
-  entities:
-  - uid: 15720
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -16.5,8.5
-      parent: 2
-  - uid: 15740
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -15.5,8.5
-      parent: 2
-  - uid: 22364
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -17.5,8.5
-      parent: 2
-  - uid: 22366
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -18.5,7.5
-      parent: 2
-- proto: ChristmasLightsCyanTwisted
-  entities:
-  - uid: 22365
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -18.5,8.5
-      parent: 2
-- proto: ChristmasLightsRB
-  entities:
-  - uid: 15716
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -12.5,3.5
-      parent: 2
-  - uid: 22358
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -12.5,2.5
-      parent: 2
-  - uid: 22359
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -12.5,1.5
-      parent: 2
-  - uid: 22360
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -12.5,0.5
-      parent: 2
-  - uid: 22363
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -12.5,-0.5
-      parent: 2
-- proto: ChristmasLightsRBTwisted
-  entities:
-  - uid: 22361
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -12.5,4.5
-      parent: 2
-  - uid: 22362
-    components:
-    - type: Transform
-      pos: -12.5,-1.5
-      parent: 2
-  - uid: 22411
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -16.5,-1.5
-      parent: 2
-  - uid: 22412
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -16.5,-1.5
-      parent: 2
-  - uid: 22413
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -16.5,-1.5
-      parent: 2
-  - uid: 22414
-    components:
-    - type: Transform
-      pos: -16.5,-1.5
-      parent: 2
-  - uid: 22415
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -13.5,-1.5
-      parent: 2
-  - uid: 22416
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -13.5,-1.5
-      parent: 2
-  - uid: 22417
-    components:
-    - type: Transform
-      pos: -13.5,-1.5
-      parent: 2
-  - uid: 22418
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -13.5,-1.5
-      parent: 2
-  - uid: 22419
-    components:
-    - type: Transform
-      pos: -15.5,-1.5
-      parent: 2
-  - uid: 22420
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -15.5,-1.5
-      parent: 2
-  - uid: 22421
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -15.5,-1.5
-      parent: 2
-  - uid: 22422
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -15.5,-1.5
-      parent: 2
 - proto: ChurchBell
   entities:
   - uid: 8602
@@ -76690,13 +76542,6 @@ entities:
     - type: Transform
       pos: -45.10429,-48.580776
       parent: 2
-- proto: FloraTreeChristmas02
-  entities:
-  - uid: 22355
-    components:
-    - type: Transform
-      pos: -23.995737,0.7985488
-      parent: 2
 - proto: FloraTreeConifer
   entities:
   - uid: 11137
@@ -76832,19 +76677,6 @@ entities:
     components:
     - type: Transform
       pos: -19.168884,-3.364417
-      parent: 2
-- proto: FoodCakeChristmas
-  entities:
-  - uid: 806
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -19.012634,-2.9108195
-      parent: 2
-  - uid: 22391
-    components:
-    - type: Transform
-      pos: -26.569254,-2.7221818
       parent: 2
 - proto: FoodCakeSpaceman
   entities:
@@ -111776,30 +111608,6 @@ entities:
       parent: 22423
     - type: ApcPowerReceiver
       powerLoad: 0
-- proto: PresentRandom
-  entities:
-  - uid: 11124
-    components:
-    - type: Transform
-      pos: -25.4651,1.3161033
-      parent: 2
-  - uid: 11131
-    components:
-    - type: Transform
-      pos: -25.2776,1.0189189
-      parent: 2
-  - uid: 22356
-    components:
-    - type: Transform
-      pos: -22.699474,1.4568747
-      parent: 2
-- proto: PresentRandomCash
-  entities:
-  - uid: 11136
-    components:
-    - type: Transform
-      pos: -22.99635,1.7697009
-      parent: 2
 - proto: Protolathe
   entities:
   - uid: 15992

@@ -1,0 +1,16 @@
+# SPDX-FileCopyrightText: 2026 Polonium-bot <admin@ss14.pl>
+# SPDX-FileCopyrightText: 2026 Szyszkrzyneczka <rammus.vult@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: microwaveMealRecipe
+  id: RecipeKremowka
+  name: przepis na kremówkę
+  result: FoodPieKremowka
+  time: 15
+  group: Pie
+  reagents:
+    Cream: 5
+    Sugar: 5
+  solids:
+    FoodDoughPie: 1
