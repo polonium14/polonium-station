@@ -31,7 +31,7 @@
 - type: gameMap
   id: Eden
   mapName: 'Eden'
-  mapPath: /Maps/_Funkystation/eden.yml
+  mapPath: /Maps/_Polonium/eden.yml #Polonium - Brigmed
   minPlayers: 7
   maxPlayers: 55
   stations:
@@ -86,6 +86,7 @@
             Detective: [ 1, 1 ]
             SecurityCadet: [ 2, 2 ]
             Lawyer: [ 1, 1 ]
+            Brigmedic: [ 1, 1 ] # Polonium
             #supply
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 3, 3 ]

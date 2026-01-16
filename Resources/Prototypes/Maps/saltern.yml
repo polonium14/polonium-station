@@ -36,7 +36,7 @@
 - type: gameMap
   id: Saltern
   mapName: 'Saltern'
-  mapPath: /Maps/_Funkystation/saltern.yml # Funkystation - Robotics(Based on Goob Variant)
+  mapPath: /Maps/_Polonium/saltern.yml #Polonium - Brigmed
   minPlayers: 0
   maxPlayers: 35
   fallback: true

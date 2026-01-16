@@ -28,11 +28,12 @@
 # SPDX-FileCopyrightText: 2024 strO0pwafel <153459934+strO0pwafel@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Mish <bluscout78@yahoo.com>
 # SPDX-FileCopyrightText: 2025 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Polonium-bot <admin@ss14.pl>
 # SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
 # SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 nikitosych <174215049+nikitosych@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2026 Damian Zieliński <zientasek.pl@gmail.com>
+# SPDX-FileCopyrightText: 2026 Polonium-bot <admin@ss14.pl>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -42,8 +43,8 @@ meta:
   engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 12/20/2025 06:26:09
-  entityCount: 7363
+  time: 12/01/2026 12:12:36
+  entityCount: 7365
 maps:
 - 1
 grids:
@@ -32243,6 +32244,13 @@ entities:
       pos: 2.5,-14.5
       parent: 2
     - type: WiresPanelSecurity
+- proto: LockerBrigmedicFilled
+  entities:
+  - uid: 7468
+    components:
+    - type: Transform
+      pos: -3.5,15.5
+      parent: 2
 - proto: LockerCaptainFilledHardsuit
   entities:
   - uid: 1908
@@ -39794,6 +39802,13 @@ entities:
     components:
     - type: Transform
       pos: 9.5,-12.5
+      parent: 2
+- proto: SpawnPointBrigmedic
+  entities:
+  - uid: 7469
+    components:
+    - type: Transform
+      pos: -4.5,14.5
       parent: 2
 - proto: SpawnPointCaptain
   entities:
