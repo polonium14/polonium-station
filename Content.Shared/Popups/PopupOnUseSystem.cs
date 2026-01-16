@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 nikitosych <174215049+nikitosych@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Interaction.Events;
 using Content.Shared.Popups.Components;
 using Robust.Shared.Timing;
