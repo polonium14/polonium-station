@@ -7,7 +7,7 @@ using Robust.Shared.GameStates;
 
 namespace Content.Shared.Popups.Components;
 
-[RegisterComponent, NetworkedComponent]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class PopupOnUseComponent : Component
 {
     public const float UseDelaySeconds = 1f;
@@ -18,5 +18,5 @@ public sealed partial class PopupOnUseComponent : Component
 
     [DataField] public string PopupSize = "medium";
 
-    [ViewVariables(VVAccess.ReadOnly)] public TimeSpan LastUsed = TimeSpan.MinValue;
+    [ViewVariables(VVAccess.ReadOnly), AutoNetworkedField] public TimeSpan LastUsed = TimeSpan.MinValue;
 }
