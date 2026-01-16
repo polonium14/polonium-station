@@ -17,9 +17,9 @@ thaven-mood-excessively-disorganized-name = Zbytnia Czystość Powoduje Choroby
 thaven-mood-excessively-disorganized-desc = To nienaturalne. Powinieneś się starać aby twoje środowisko było jak najbardziej brudne i zdezorganizowane.
 thaven-mood-detest-silicons-name = Silikony Są Poniżej Twojej Godności
 thaven-mood-detest-silicons-desc = Odzywanie się do Silikonów jest poniżające, i powinieneś tego unikać za wszelką cene.
-thaven-mood-dinner-floor-name = Maniery przy stole
+thaven-mood-dinner-floor-name = Maniery Podłogowe
 thaven-mood-dinner-floor-desc = Jedzenie i picie należy poprawnie spożywać z podłogi.
-thaven-mood-hug-bad-name = Tulenie? Fuj!.
+thaven-mood-hug-bad-name = Przytulanie? Fuj!.
 thaven-mood-hug-bad-desc = Tam, skąd pochodzisz, Przytulenie kogoś jest poważną zniewagą. 
 thaven-mood-atheist-name = Odrzucasz Religie
 thaven-mood-atheist-desc = Odrzucasz jakąkolwiek zorganizowaną religie, chyba że twoje nastroje mówią inaczej, w innym przypadku dążysz do zakłócania ich działań oraz likwidacji.
@@ -33,8 +33,8 @@ thaven-mood-ferengi-name = Przedsiębiorcza Dusza
 thaven-mood-ferengi-desc = Zysk jest w życiu ważniejszy niż wszystko inne.
 thaven-mood-tool-license-name = Odpowiednia Dokumentacja
 thaven-mood-tool-license-desc = Żeby móc nosić i używać jakiegokolwiek narzędzia, musisz uzyskać na nie pozwolenie i mieć pieczątke od odpowiedniego departamentu.
-thaven-mood-lying-bad-name = Kłamstwo to grzech
-thaven-mood-lying-bad-desc = Ktokolwiek skłamie, nie ważne jak bardzo błahe było to kłastwo, jest najgorszym zbrodniarzem. Wykluczając siebie.
+thaven-mood-lying-bad-name = Kłamstwo To Grzech
+thaven-mood-lying-bad-desc = Ktokolwiek skłamie, nie ważne jak bardzo błahe było to kłamstwo, jest najgorszym zbrodniarzem. Wykluczając siebie.
 thaven-mood-vampire-invitation-name = Wampir
 thaven-mood-vampire-invitation-desc = Czujesz że nie możesz fizycznie przejść przez zamknięte drzwi, chyba że chociaż raz, ktoś osobiście cie zaprosił do środka.
 thaven-mood-no-dragging-name = Uszanuj Zmarłych
@@ -61,7 +61,7 @@ thaven-mood-food-restrict-desc =
         [Frugivore] owoce
         [Fungivore] grzyby
         [Ovivore] jajka
-        [Hunter] cokolwiek upolujesz
+        [Hunter] to co upolujesz
         [Soupivore] zupy
     }.
 thaven-mood-claustrophobic-name = Klaustrofobiczny
