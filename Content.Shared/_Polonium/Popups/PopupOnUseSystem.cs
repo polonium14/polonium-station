@@ -5,6 +5,7 @@
 
 using Content.Shared.Interaction.Events;
 using Content.Shared.Popups.Components;
+using Content.Shared.Popups;
 using Robust.Shared.Timing;
 
 namespace Content.Shared.Popups;
@@ -43,8 +44,9 @@ public sealed class PopupOnUseSystem : EntitySystem
         }
         else if (component.Range >= 1f)
         {
-            _popup.PopupEntity( 
+            _popup.PopupPredicted(
                 component.Message,
+                args.User,
                 args.User,
                 popupSize);
         }
