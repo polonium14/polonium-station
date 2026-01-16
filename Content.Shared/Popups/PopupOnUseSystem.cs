@@ -1,0 +1,47 @@
+using Content.Shared.Interaction.Events;
+using Content.Shared.Popups.Components;
+using Robust.Shared.Timing;
+
+namespace Content.Shared.Popups;
+
+public sealed class PopupOnUseSystem : EntitySystem
+{
+    [Dependency] private readonly IGameTiming _gameTiming = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
+    public override void Initialize()
+    {
+        base.Initialize();
+
+        SubscribeLocalEvent<PopupOnUseComponent, UseInHandEvent>(OnUseInHand);
+    }
+
+    private void OnUseInHand(EntityUid uid, PopupOnUseComponent component, UseInHandEvent args)
+    {
+        if (_gameTiming.CurTime < component.LastUsed + TimeSpan.FromSeconds(PopupOnUseComponent.UseDelaySeconds))
+            return;
+
+        component.LastUsed = _gameTiming.CurTime;
+
+        var popupSize = component.PopupSize switch
+        {
+            "large" => PopupType.Large,
+            "small" => PopupType.Small,
+            _ => PopupType.Medium
+        };
+
+        if (!component.ShowToOthers)
+        {
+            _popup.PopupClient(
+                component.Message,
+                args.User,
+                popupSize);
+        }
+        else if (component.Range >= 1f)
+        {
+            _popup.PopupEntity( 
+                component.Message,
+                args.User,
+                popupSize);
+        }
+    }
+}
