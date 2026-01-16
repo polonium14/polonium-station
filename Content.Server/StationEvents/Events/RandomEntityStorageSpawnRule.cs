@@ -9,6 +9,7 @@ using Content.Server.StationEvents.Components;
 using Content.Server.Storage.Components;
 using Content.Server.Storage.EntitySystems;
 using Content.Shared.GameTicking.Components;
+using Robust.Shared.Audio;
 using Robust.Shared.Map;
 using Robust.Shared.Random;
 
@@ -36,6 +37,9 @@ public sealed class RandomEntityStorageSpawnRule : StationEventSystem<RandomEnti
 
             if (!_entityStorage.CanInsert(spawn, ent, storage))
                 continue;
+
+            if (comp.OpenStorageSound != null)
+                storage.OpenSound = new SoundPathSpecifier(comp.OpenStorageSound);
 
             validLockers.Add((ent, storage));
         }

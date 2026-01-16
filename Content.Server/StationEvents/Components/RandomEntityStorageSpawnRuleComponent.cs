@@ -24,4 +24,6 @@ public sealed partial class RandomEntityStorageSpawnRuleComponent : Component
     /// </summary>
     [DataField(required: true)]
     public EntProtoId Prototype;
+
+    [DataField] public string? OpenStorageSound;
 }
