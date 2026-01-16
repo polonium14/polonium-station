@@ -1,15 +1,4 @@
 ﻿Entries:
-- author: JustinWinningham
-  changes:
-  - message: Anomalies no longer block players or APES (or other objects) from passing
-      through them
-    type: Tweak
-  - message: Players can no longer move anomalies with unanchored furniture, closets,
-      etc.
-    type: Fix
-  id: 7804
-  time: '2025-01-13T10:06:57.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34280
 - author: zHonys
   changes:
   - message: Items with collisions (like mousetraps) won't kept doors form opening
@@ -4036,3 +4025,11 @@
   id: 9111
   time: '2026-01-14T15:43:05.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/382
+- author: Nikitapl
+  changes:
+  - message: "Usuni\u0119to choinki, \u015Bwiate\u0142ka i inne rzeczy \u015Bwi\u0105\
+      teczne z map Reach, Cluster, Cork, Core"
+    type: Remove
+  id: 9112
+  time: '2026-01-16T12:30:56.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/392
