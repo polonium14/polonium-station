@@ -42,7 +42,7 @@ public sealed class PopupOnUseSystem : EntitySystem
                 args.User,
                 popupSize);
         }
-        else if (component.Range >= 1f)
+        else
         {
             _popup.PopupPredicted(
                 component.Message,

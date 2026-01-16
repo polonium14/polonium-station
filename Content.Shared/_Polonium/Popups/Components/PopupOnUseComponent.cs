@@ -16,9 +16,7 @@ public sealed partial class PopupOnUseComponent : Component
 
     [DataField] public bool ShowToOthers = false;
 
-    [DataField] public string PopupSize = "Medium";
-
-    [DataField] public float Range = 5f;
+    [DataField] public string PopupSize = "medium";
 
     [ViewVariables(VVAccess.ReadOnly)] public TimeSpan LastUsed = TimeSpan.MinValue;
 }
