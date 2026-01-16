@@ -26,3 +26,4 @@
     message: Czujesz nadprzyrodzoną obecność wokół siebie...
     showToOthers: true
     popupSize: large
+  - type: AdminAlertOnUse # skoro to jest przedmiot eventowy
