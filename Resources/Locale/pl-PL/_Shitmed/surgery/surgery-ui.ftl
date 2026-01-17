@@ -4,17 +4,17 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-surgery-verb-text = Start surgery
-surgery-verb-message = Begin surgery on this entity.
-surgery-ui-window-title = Surgery
-surgery-ui-window-require = Requires
-surgery-ui-window-parts = < Parts
-surgery-ui-window-surgeries = < Surgeries
-surgery-ui-window-steps = < Steps
-surgery-ui-window-steps-error-skills = You have no surgical skills.
-surgery-ui-window-steps-error-table = You need an operating table for this.
-surgery-ui-window-steps-error-armor = You need to remove their armor!
-surgery-ui-window-steps-error-tools = Missing tools.
-surgery-error-laying = They need to be laying down!
-surgery-error-self-surgery = You can't perform surgery on yourself!
-surgery-part-damage-evaded = { $user } narrowly evaded!
+surgery-verb-text = Rozpocznij operację
+surgery-verb-message = Rozpocznij operację na tym bycie.
+surgery-ui-window-title = Chirurgia
+surgery-ui-window-require = Wymagane
+surgery-ui-window-parts = < Części
+surgery-ui-window-surgeries = < Operacje
+surgery-ui-window-steps = < Kroki
+surgery-ui-window-steps-error-skills = Nie masz umiejętności chirurgicznych.
+surgery-ui-window-steps-error-table = Potrzebujesz do tego stołu operacyjnego.
+surgery-ui-window-steps-error-armor = Musisz zdjąć ich pancerz!
+surgery-ui-window-steps-error-tools = Brakujące narzędzia.
+surgery-error-laying = Muszą leżeć!
+surgery-error-self-surgery = Nie możesz przeprowadzić operacji na sobie!
+surgery-part-damage-evaded = { $user } ledwo uniknął!

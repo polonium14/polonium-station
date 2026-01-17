@@ -6,60 +6,69 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-autodoc-program-step-surgery = perform surgery on { $part }: { $name }
-autodoc-program-step-grab-item = grab item: '{ $name }'
-autodoc-program-step-grab-any = grab any: { $name }
+autodoc-program-step-surgery = przeprowadzić operację na {$part}: {$name}
+autodoc-program-step-grab-item = chwycić przedmiot: '{$name}'
+autodoc-program-step-grab-any = chwycić dowolny: {$name}
 autodoc-item-organ = Organ
-autodoc-item-part = Body Part
-autodoc-program-step-store-item = store item
-autodoc-program-step-set-label = set label: '{ $label }'
-autodoc-program-step-wait = wait { $length } seconds
-autodoc-program-completed = PROGRAM COMPLETED
-autodoc-error = ERROR: { $error }
-autodoc-fatal-error = FATAL ERROR: { $error }
-autodoc-waiting = PROGRAM WAITING
-autodoc-error-missing-patient = MISSING PATIENT
-autodoc-error-body-part = BODY PART NOT DETECTED
-autodoc-error-surgery-impossible = SELECTED SURGERY IMPOSSIBLE
-autodoc-error-item-unavailable = ITEM UNAVAILABLE
-autodoc-error-surgery-failed = SURGERY FAILED
-autodoc-error-hand-full = ITEM MANIPULATOR FULL
-autodoc-error-storage-full = ITEM TRAYS FULL
-autodoc-error-patient-unsedated = PATIENT REQUIRES SEDATION
-autodoc-title = Autodoc MK XIV
-autodoc-create-program = New Program
-autodoc-program-title = Program Title
-autodoc-program-title-placeholder = Program { $number }
-autodoc-abort-program = Abort Program
-autodoc-sanitize-tools = Sanitize Tools
-autodoc-view-program-title = View Program
-autodoc-safety-enabled = Safety On
-autodoc-safety-disabled = Safety Off
-autodoc-remove-program = Remove Program
-autodoc-add-step = Add Step
-autodoc-remove-step = Remove Step
-autodoc-start-program = Start Program
-autodoc-add-step-surgery = Perform Surgery
-autodoc-add-step-grab-item = Grab Item
-autodoc-add-step-grab-item-prompt = Item name
-autodoc-add-step-grab-item-placeholder = dwarf heart
-autodoc-add-step-grab-organ = Grab Organ
-autodoc-add-step-grab-part = Grab Body Part
-autodoc-add-step-store-item = Store Item
-autodoc-add-step-set-label = Set Label
-autodoc-add-step-set-label-prompt = Label
-autodoc-add-step-wait = Wait
-autodoc-add-step-wait-prompt = Seconds to wait
-autodoc-body-part-Other = Other
-autodoc-body-part-Torso = Torso
-autodoc-body-part-Head = Head
-autodoc-body-part-Arm = Arm
-autodoc-body-part-Hand = Hand
-autodoc-body-part-Leg = Leg
-autodoc-body-part-Foot = Foot
-autodoc-body-part-Tail = Tail
-autodoc-body-symmetry-ignored = Any
-autodoc-body-symmetry-None = None
-autodoc-body-symmetry-Left = Left
-autodoc-body-symmetry-Right = Right
-autodoc-submit = Submit
+autodoc-item-part = Część ciała
+autodoc-program-step-store-item = odłożyć przedmiot
+autodoc-program-step-set-label = ustawić etykietę: '{$label}'
+autodoc-program-step-wait = czekać {$length} sekund
+
+autodoc-program-completed = PROGRAM ZAKOŃCZONY
+autodoc-error = BŁĄD: {$error}
+autodoc-fatal-error = BŁĄD FATALNY: {$error}
+autodoc-waiting = PROGRAM W STANIE OCZEKIWANIA
+
+autodoc-error-missing-patient = BRAK PACJENTA
+autodoc-error-body-part = NIE WYKRYTO CZĘŚCI CIAŁA
+autodoc-error-surgery-impossible = WYBRANA OPERACJA NIEMOŻLIWA
+autodoc-error-item-unavailable = PRODUKT NIEDOSTĘPNY
+autodoc-error-surgery-failed = OPERACJA NIE POWIODŁA SIĘ
+autodoc-error-hand-full = MANIPULATOR ELEMENTÓW JEST PEŁNY
+autodoc-error-storage-full = TACA JEST PEŁNA
+autodoc-error-patient-unsedated = PACJENT WYMAGA USPOKOJENIA
+
+
+autodoc-title = Autolek MK XIV
+autodoc-create-program = Nowy Program
+autodoc-program-title = Tytuł Programu
+autodoc-program-title-placeholder = Program {$number}
+autodoc-abort-program = Przerwij Program
+autodoc-sanitize-tools = Oczyść Narzędzia
+
+autodoc-view-program-title = Pokaż program
+autodoc-safety-enabled = Bezpieczeństwo włączone
+autodoc-safety-disabled = Bezpieczeństwo wyłączone
+autodoc-remove-program = Skasuj program
+autodoc-add-step = Dodaj krok
+autodoc-remove-step = Usuń krok
+autodoc-start-program = Uruchom program
+
+autodoc-add-step-surgery = Wykonaj operację
+autodoc-add-step-grab-item = Chwyć przedmiot
+autodoc-add-step-grab-item-prompt = Nazwa przedmiotu
+autodoc-add-step-grab-item-placeholder = serce krasnoluda
+autodoc-add-step-grab-organ = Chwyć organ
+autodoc-add-step-grab-part = Chwyć część ciała
+autodoc-add-step-store-item = Odłóż przedmiot
+autodoc-add-step-set-label = Ustaw etykietę
+autodoc-add-step-set-label-prompt = Etykieta
+autodoc-add-step-wait = Czekaj
+autodoc-add-step-wait-prompt = Sekundy do oczekiwania
+
+autodoc-body-part-Other = Inne
+autodoc-body-part-Torso = Tułów
+autodoc-body-part-Head = Głowa
+autodoc-body-part-Arm = Ramię
+autodoc-body-part-Hand = Ręka
+autodoc-body-part-Leg = Noga
+autodoc-body-part-Foot = Stopa
+autodoc-body-part-Tail = Ogon
+
+autodoc-body-symmetry-ignored = Dowolna
+autodoc-body-symmetry-None = Brak
+autodoc-body-symmetry-Left = Lewa
+autodoc-body-symmetry-Right = Prawa
+
+autodoc-submit = Potwierdź

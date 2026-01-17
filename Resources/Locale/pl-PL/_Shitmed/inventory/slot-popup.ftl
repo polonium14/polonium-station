@@ -3,4 +3,4 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-equip-part-missing-error = { $target } is missing their { $part }!
+equip-part-missing-error = { $target } nie ma { $part }!
