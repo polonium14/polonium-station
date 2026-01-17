@@ -17,7 +17,7 @@ chat-manager-no-radio-key = Nie podano klawisza radia!
 chat-manager-no-such-channel = Nie ma kanału z kluczem '{ $key }'!
 chat-manager-whisper-headset-on-message = Nie możesz szeptać przez radio!
 chat-manager-server-wrap-message = [bold]{ $message }[/bold]
-chat-manager-sender-announcement = Dowództwo Centralne
+chat-manager-sender-announcement = Centralne Dowództwo
 chat-manager-sender-announcement-wrap-message = [font size=14][bold]{ $sender } – ogłoszenie:[/font][font size=12]
     { $message }[/bold][/font]
 chat-manager-entity-say-wrap-message = [BubbleHeader][bold][Name]{ $entityName }[/Name][/bold][/BubbleHeader] { $verb }, [font={ $fontType } size={ $fontSize }]"[BubbleContent]{ $message }[/BubbleContent]"[/font]
