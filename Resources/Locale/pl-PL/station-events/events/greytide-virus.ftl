@@ -1,1 +1,1 @@
-station-event-greytide-virus-start-announcement = Wirus Gr3y.T1d3 został wykryty w podprogramach szyfrowania bezpiecznego blokowania stacji z poziomem zagrożenia { $severity }. Zalecamy zaangażowanie SI stacji.
+station-event-greytide-virus-start-announcement = Wykryto wirus Gr3y.T1d3 w podprogramach bezpiecznej blokady stacji z poziomem zagrożenia { $severity }. Zalecamy sprawdzenie SI stacji.
