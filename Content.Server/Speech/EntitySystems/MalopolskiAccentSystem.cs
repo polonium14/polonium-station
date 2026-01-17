@@ -12,6 +12,8 @@ namespace Content.Server.Speech.EntitySystems;
 public sealed class MalopolskiAccentSystem : EntitySystem
 {
     private static readonly Regex RegexDz = new(@"dź\b");
+    private static readonly Regex RegexE = new(@"ę\b");
+    private static readonly Regex RegexA = new(@"ą\b");
 
 
     [Dependency] private readonly IRobustRandom _random = default!;
@@ -29,6 +31,11 @@ public sealed class MalopolskiAccentSystem : EntitySystem
 
         // idźże
         message = RegexDz.Replace(message, "dźże");
+
+        // nosowe
+        message = RegexE.Replace(message, "em");
+        message = RegexA.Replace(message, "om");
+        message = message.Replace("ę", "en").Replace("ą", "on");
 
         // czeba być wyczymałym
         message = message.Replace("Trz", "Cz").Replace("trz", "cz");
