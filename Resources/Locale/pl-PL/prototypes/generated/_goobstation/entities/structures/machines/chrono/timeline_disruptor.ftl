@@ -1,2 +1,2 @@
-ent-TimelineDisruptor = timeline disruptor
-    .desc = A device capable of extracting an object placed inside from the current timeline.
+ent-TimelineDisruptor = zakłócacz osi czasu
+    .desc = Urządzenie zdolne do wyodrębnienia obiektu umieszczonego w jego wnętrzu z bieżącej osi czasu.

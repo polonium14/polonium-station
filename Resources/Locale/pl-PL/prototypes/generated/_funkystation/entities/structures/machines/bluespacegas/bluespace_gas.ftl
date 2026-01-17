@@ -1,6 +1,6 @@
-ent-BluespaceSender = bluespace gas sender
-    .desc = Sends gases to the bluespace network to be shared with the connected vendors, who knows what's beyond!
+ent-BluespaceSender = przesyłacz gazu bluespace
+    .desc = Wysyła gazy do sieci bluespace, aby były udostępniane podłączonym sprzedawcom, kto wie, co jest poza tym!
 ent-BaseBluespaceGasUtilizer = { "" }
     .desc = { "" }
-ent-BluespaceVendor = bluespace gas vendor
-    .desc = Sells gas tanks with custom mixes for all the family!
+ent-BluespaceVendor = dystrybutor gazu bluespace
+    .desc = Sprzedaje zbiorniki gazu z niestandardowymi mieszankami dla całej rodziny!
