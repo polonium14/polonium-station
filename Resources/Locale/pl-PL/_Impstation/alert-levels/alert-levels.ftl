@@ -7,9 +7,9 @@
 
 # for dinos
 alert-level-amber = Amber
-alert-level-amber-announcement = Time distortion fields from seconds in the past have been detected. Crewmembers should prepare for imminent Dino Wars.
-alert-level-amber-instructions = Defend the station against the mesozoic horde. It's Dino Wars.
+alert-level-amber-announcement = Wykryto pola zakłóceń czasowych pochodzące z sekund w przeszłości. Członkowie załogi powinni przygotować się na zbliżające się wojny dinozaurów.
+alert-level-amber-instructions = Broń stacji przed mezozoiczną hordą. To są Wojny Dinozaurów.
 # cosmic cult
-alert-level-octarine = Octarine Alert
-alert-level-octarine-announcement = A cataclysmic bluespace event threatens to envelop realspace. Security has been authorized to use lethal weapons. Crewmembers are advised to listen to heads of staff for more information. Failure to adhere will be met with lethal force.
-alert-level-octarine-instructions = THE END IS THE END IS THE END IS
+alert-level-octarine = Poziom Oktarynowy
+alert-level-octarine-announcement = Kataklizmowa anomalia bluespace zagraża otoczeniu realspace. Służby bezpieczeństwa zostały upoważnione do użycia broni śmiercionośnej. Członkowie załogi powinni słuchać przełożonych w celu uzyskania dalszych informacji. Nieprzestrzeganie tych zaleceń będzie skutkować użyciem siły śmiercionośnej.
+alert-level-octarine-instructions = KONIEC JEST KONIEC JEST KONIEC JEST
