@@ -45,6 +45,12 @@ trait-snoring-desc = You will snore while sleeping.
 trait-liar-name = Pathological liar
 trait-liar-desc = You can hardly bring yourself to tell the truth. Sometimes you lie anyway.
 
+trait-kurwalski-name = Kurwalski
+trait-kurwalski-desc = You now speak like a true polish person! kurwa!
+
+trait-wiejski-name = Wiejski
+trait-wiejski-desc = Speak like a polish villager.
+
 trait-cowboy-name = Cowboy vernacular
 trait-cowboy-desc = By gum, your mighty slick words make everyone reckon you're the sheriff!
 
