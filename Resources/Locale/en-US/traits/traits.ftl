@@ -51,6 +51,9 @@ trait-kurwalski-desc = You now speak like a true polish person! kurwa!
 trait-wiejski-name = Wiejski
 trait-wiejski-desc = Speak like a polish villager.
 
+trait-malopolski-name = Małopolski
+trait-malopolski-desc = Speak like a person from Lesser Poland.
+
 trait-cowboy-name = Cowboy vernacular
 trait-cowboy-desc = By gum, your mighty slick words make everyone reckon you're the sheriff!
 
