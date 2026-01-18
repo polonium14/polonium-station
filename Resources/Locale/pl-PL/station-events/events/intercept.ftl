@@ -1,1 +1,1 @@
-station-event-communication-interception = Uwaga! Przechwycono wrogą komunikację. Poziom bezpieczeństwa został podniesiony.
+station-event-communication-interception = Uwaga! Przechwycono wrogą komunikację. Poziom zagrożenia został podniesiony.

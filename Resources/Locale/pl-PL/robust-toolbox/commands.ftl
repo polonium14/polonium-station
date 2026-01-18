@@ -324,12 +324,12 @@ cmd-removeview-help = removeview <entityUid>
 
 ## 'loglevel' command
 
-cmd-loglevel-desc = Zmienia poziom logowania dla wybranego tartaku (sawmill).
+cmd-loglevel-desc = Zmienia poziom logowania dla wybranego sawmilla.
 cmd-loglevel-help =
     Użycie: loglevel <sawmill> <poziom>
     sawmill: Etykieta poprzedzająca wiadomości logów. Dla niej ustawiany jest poziom.
     poziom: Poziom logowania. Musi odpowiadać wartościom z wyliczenia LogLevel.
-cmd-testlog-desc = Zapisuje testowy log do tartaku (sawmill).
+cmd-testlog-desc = Zapisuje testowy log do sawmilla.
 cmd-testlog-help =
     Użycie: testlog <sawmill> <poziom> <wiadomość>
     sawmill: Etykieta poprzedzająca logowaną wiadomość.

@@ -15,7 +15,7 @@ pda-bound-user-interface-lock-uplink-description = Zapobiegnij dostępu osobą d
 comp-pda-ui-menu-title = PDA
 comp-pda-ui-footer = Osobisty Asystent Cyfrowy
 comp-pda-ui-station = Stacja: [color=white]{ $station }[/color]
-comp-pda-ui-station-alert-level = Poziom bezpieczeństwa: [color={ $color }]{ $level }[/color]
+comp-pda-ui-station-alert-level = Kod zagrożenia: [color={ $color }]{ $level }[/color]
 comp-pda-ui-station-alert-level-instructions = Instrukcje: [color=white]{ $instructions }[/color]
 comp-pda-ui-station-time = Długość Zmiany: [color=white]{ $time }[/color]
 comp-pda-ui-eject-id-button = Wysuń Identyfikator
