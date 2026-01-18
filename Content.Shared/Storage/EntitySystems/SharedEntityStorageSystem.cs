@@ -259,7 +259,7 @@ public abstract class SharedEntityStorageSystem : EntitySystem
         {
             // Polonium - jumpscare storages
             if (component is { FirstOpenSound: not null, FirstTimePlayed: false } &&
-            !HasComp<GhostComponent>(user))
+            user != null && !HasComp<GhostComponent>(user.Value))
             {
                 _audio.PlayPvs(component.FirstOpenSound, uid);
                 component.FirstTimePlayed = true;
