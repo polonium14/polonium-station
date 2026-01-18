@@ -97,6 +97,7 @@
     - id: SpiderSpawn
     - id: HonkbotSpawn
     - id: VentClog
+    - id: CowiekMaupaSpawn # Polonium - Maupa
 
 - type: entityTable
   id: BasicAntagEventsTable

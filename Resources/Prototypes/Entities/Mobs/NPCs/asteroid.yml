@@ -131,6 +131,25 @@
     range: 10
 
 - type: entity
+  id: ActionGoliathTentacleNerfed
+  name: "[color=red]Tentacle Slam[/color]"
+  description: Use your tentacles to grab and stun a target player!
+  components:
+  - type: EntityWorldTargetAction
+    raiseOnUser: true
+    icon:
+      sprite: Mobs/Aliens/Asteroid/goliath.rsi
+      state: goliath_tentacle_spawn
+    iconOn:
+      sprite: Mobs/Aliens/Asteroid/goliath.rsi
+      state: goliath_tentacle_wiggle
+    sound:
+      path: "/Audio/Weapons/slash.ogg"
+    event: !type:GoliathSummonTentacleAction
+    useDelay: 16
+    range: 6
+
+- type: entity
   id: GoliathTentacle
   name: tentacle
   components:

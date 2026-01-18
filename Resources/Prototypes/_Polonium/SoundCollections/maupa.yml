@@ -1,0 +1,5 @@
+- type: soundCollection
+  id: MaupaScreams
+  files:
+    - /Audio/_Polonium/Voice/Maupa/scream-1.ogg
+    - /Audio/_Polonium/Voice/Maupa/scream-2.ogg

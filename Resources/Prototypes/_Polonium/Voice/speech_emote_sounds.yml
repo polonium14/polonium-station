@@ -1,0 +1,12 @@
+- type: emoteSounds
+  id: UnisexMaupa
+  params:
+    variation: 0.1
+    volume: -5
+  sounds:
+    Scream:
+      collection: MaupaScreams
+    Gasp:
+      collection: MaleGasp
+    DefaultDeathgasp:
+      collection: MothDeathGasp
