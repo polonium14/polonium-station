@@ -10,7 +10,7 @@ zombie-infection-warning = Czujesz, jak wirus zombie przejmuje kontrolę
 zombie-infection-underway = Twoja krew zaczyna gęstnieć
 zombie-alone = Czujesz się całkowicie samotny.
 zombie-shuttle-call = Wykryto, że nieumarli przejęli stację. Wysyłamy awaryjny prom, aby ewakuować pozostały personel.
-zombie-start-announcement = Confirmed outbreak of level 7 biological hazard aboard the station. All personnel must contain the outbreak.
+zombie-start-announcement = Potwierdzono zagrożenie biologiczne poziomu 7 na pokładzie stacji. Cały personel jest zobowiązany do podjęcia działań mających na celu powstrzymanie kontaminacji.
 zombie-round-end-initial-count =
     { $initialCount ->
         [one] Był jeden początkowo zainfekowany:

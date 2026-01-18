@@ -1,32 +1,32 @@
 # User interface
-comms-console-menu-title = Communications Console
-comms-console-menu-announcement-placeholder = Announcement text...
-comms-console-menu-announcement-button = Announce
-comms-console-menu-announcement-button-tooltip = Send your message as a station-wide radio announcement.
-comms-console-menu-broadcast-button = Broadcast
-comms-console-menu-broadcast-button-tooltip = Broadcast your message to wall-mounted screens around the station. Note: They fit only ten characters!
-comms-console-menu-alert-level-button-tooltip = Change the station alert level. Applies immediately on selecting.
-comms-console-menu-call-shuttle = Call emergency shuttle
-comms-console-menu-recall-shuttle = Recall emergency shuttle
-comms-console-menu-emergency-shuttle-button-tooltip = Calls or recalls the emergency shuttle. You can only recall when there's enough time left.
-comms-console-menu-time-remaining = Time remaining: { $time }
+comms-console-menu-title = Konsola komunikacyjna
+comms-console-menu-announcement-placeholder = Tekst ogłoszenia...
+comms-console-menu-announcement-button = Ogłoś
+comms-console-menu-announcement-button-tooltip = Wyślij swoją wiadomość jako ogłoszenie radiowe na całą stację.
+comms-console-menu-broadcast-button = Nadawaj
+comms-console-menu-broadcast-button-tooltip = Nadawaj swoją wiadomość na ekranach ściennych wokół stacji. Uwaga: mieszczą się tylko 10 znaków!
+comms-console-menu-alert-level-button-tooltip = Zmień kod zagrożenia stacji. Zmiana następuje natychmiast po wybraniu.
+comms-console-menu-call-shuttle = Wezwij ewakuację
+comms-console-menu-recall-shuttle = Odwołaj ewakuację
+comms-console-menu-emergency-shuttle-button-tooltip = Wzywa lub odwołuje wahadłowiec ewakuacyjny. Możesz odwołać tylko wtedy, gdy pozostało wystarczająco dużo czasu.
+comms-console-menu-time-remaining = Pozostały czas: { $time }
 # Popup
-comms-console-permission-denied = Permission denied
-comms-console-shuttle-unavailable = Shuttle is currently unavailable
-comms-console-message-too-long = Message is too long
+comms-console-permission-denied = Odmowa dostępu
+comms-console-shuttle-unavailable = Wahadłowiec jest tymczasowo niedostępny
+comms-console-message-too-long = Wiadomość jest za długa
 # Placeholder values
-comms-console-announcement-sent-by = Sent by
-comms-console-announcement-unknown-sender = Unknown
+comms-console-announcement-sent-by = Wysłane przez
+comms-console-announcement-unknown-sender = Nieznany
 # Comms console variant titles
-comms-console-announcement-title-station = Communications Console
-comms-console-announcement-title-centcom = Central Command
-comms-console-announcement-title-nukie = Syndicate Nuclear Operative
-comms-console-announcement-title-station-ai = Station AI
-comms-console-announcement-title-wizard = Wizard
+comms-console-announcement-title-station = Konsola komunikacyjna
+comms-console-announcement-title-centcom = Centralne Dowództwo
+comms-console-announcement-title-nukie = Specjaliści Nuklearni Syndykatu
+comms-console-announcement-title-station-ai = SI Stacji
+comms-console-announcement-title-wizard = Czarodziej
 # Funkystation
-comms-console-announcement-title-science = Science
-comms-console-announcement-title-cargo = Cargo
-comms-console-announcement-title-security = Security
-comms-console-announcement-title-medical = Medical
-comms-console-announcement-title-service = Service
-comms-console-announcement-title-engi = Engineering
+comms-console-announcement-title-science = Dział Rozwoju
+comms-console-announcement-title-cargo = Dział Logistyki
+comms-console-announcement-title-security = Ochrona
+comms-console-announcement-title-medical = Dział Medyczny
+comms-console-announcement-title-service = Serwis
+comms-console-announcement-title-engi = Inżynieria

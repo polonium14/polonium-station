@@ -1,4 +1,5 @@
-salvage-expedition-structure-examine = This is a [color=#B02E26]destruction[/color] objective
+salvage-expedition-structure-examine = To jest [color=#B02E26]destrukcyjny[/color] cel
+# TODOO
 salvage-expedition-structure-remaining =
     { $count ->
         [one] { $count } structure remaining.
