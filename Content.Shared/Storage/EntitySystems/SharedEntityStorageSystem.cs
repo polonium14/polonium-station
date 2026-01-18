@@ -56,6 +56,7 @@ using Robust.Shared.Physics;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using Content.Shared.Ghost;
 
 namespace Content.Shared.Storage.EntitySystems;
 
@@ -85,12 +86,15 @@ public abstract class SharedEntityStorageSystem : EntitySystem
 
     protected void OnGetState(EntityUid uid, SharedEntityStorageComponent component, ref ComponentGetState args)
     {
-        args.State = new EntityStorageComponentState(component.Open,
+        args.State = new EntityStorageComponentState(
+            component.Open,
             component.Capacity,
             component.IsCollidableWhenOpen,
             component.OpenOnMove,
             component.EnteringRange,
-            component.NextInternalOpenAttempt);
+            component.NextInternalOpenAttempt,
+            component.FirstOpenSound,
+            component.FirstTimePlayed);
     }
 
     protected void OnHandleState(EntityUid uid, SharedEntityStorageComponent component, ref ComponentHandleState args)
@@ -103,6 +107,8 @@ public abstract class SharedEntityStorageSystem : EntitySystem
         component.OpenOnMove = state.OpenOnMove;
         component.EnteringRange = state.EnteringRange;
         component.NextInternalOpenAttempt = state.NextInternalOpenAttempt;
+        component.FirstOpenSound = state.FirstOpenSound;
+        component.FirstTimePlayed = state.FirstTimePlayed;
     }
 
     protected virtual void OnComponentInit(EntityUid uid, SharedEntityStorageComponent component, ComponentInit args)
@@ -233,7 +239,7 @@ public abstract class SharedEntityStorageSystem : EntitySystem
         }
     }
 
-    public void OpenStorage(EntityUid uid, SharedEntityStorageComponent? component = null)
+    public void OpenStorage(EntityUid uid, SharedEntityStorageComponent? component = null, EntityUid? user = null)
     {
         if (!ResolveStorage(uid, ref component))
             return;
@@ -248,7 +254,18 @@ public abstract class SharedEntityStorageSystem : EntitySystem
         EmptyContents(uid, component);
         ModifyComponents(uid, component);
         if (_net.IsClient && _timing.IsFirstTimePredicted)
-            _audio.PlayPvs(component.OpenSound, uid);
+        {
+            // Polonium - jumpscare storages
+            if (component is { FirstOpenSound: not null, FirstTimePlayed: false } &&
+            !HasComp<GhostComponent>(user))
+            {
+                _audio.PlayPvs(component.FirstOpenSound, uid);
+                component.FirstTimePlayed = true;
+                Dirty(uid, component);
+            }
+            else
+                _audio.PlayPvs(component.OpenSound, uid);
+        }
         ReleaseGas(uid, component);
         var afterev = new StorageAfterOpenEvent();
         RaiseLocalEvent(uid, ref afterev);
@@ -370,7 +387,7 @@ public abstract class SharedEntityStorageSystem : EntitySystem
         if (!CanOpen(user, target, silent))
             return false;
 
-        OpenStorage(target);
+        OpenStorage(target, user: user); // Polonium - jumpscare storages
         return true;
     }
 

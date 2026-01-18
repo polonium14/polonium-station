@@ -38,8 +38,11 @@ public sealed class RandomEntityStorageSpawnRule : StationEventSystem<RandomEnti
             if (!_entityStorage.CanInsert(spawn, ent, storage))
                 continue;
 
-            if (comp.OpenStorageSound != null)
-                storage.OpenSound = new SoundPathSpecifier(comp.OpenStorageSound);
+            if (comp.FirstOpenStorageSound != null)
+            {
+                storage.FirstOpenSound = comp.FirstOpenStorageSound;
+                Dirty(ent, storage);
+            }
 
             validLockers.Add((ent, storage));
         }

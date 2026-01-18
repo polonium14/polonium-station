@@ -8,6 +8,7 @@
 // SPDX-License-Identifier: MIT
 
 using Content.Server.StationEvents.Events;
+using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
@@ -25,5 +26,8 @@ public sealed partial class RandomEntityStorageSpawnRuleComponent : Component
     [DataField(required: true)]
     public EntProtoId Prototype;
 
-    [DataField] public string? OpenStorageSound;
+    /// <summary>
+    /// Sound to play the first time the storage is opened.
+    /// </summary>
+    [DataField("openStorageSound")] public SoundSpecifier? FirstOpenStorageSound;
 }
