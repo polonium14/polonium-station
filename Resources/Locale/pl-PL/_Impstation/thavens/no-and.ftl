@@ -4,87 +4,86 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-thaven-mood-secret-moods-name = Keep Your Moods Secret
-thaven-mood-secret-moods-desc = Your Moods are a strictly-kept secret, and should never be revealed to anyone.
-thaven-mood-no-modern-medicine-name = No Modern Medicine
-thaven-mood-no-modern-medicine-desc = You do not approve of modern medicine and should abstain from treatment with it wherever possible.
-thaven-mood-department-disapproval-name = Disapprove Of { $department }
-thaven-mood-department-disapproval-desc = You do not approve of the { $department } department or anyone who works in it (excluding yourself, if applicable.)
-thaven-mood-dont-speak-to-command-name = Never Speak To Command
-thaven-mood-dont-speak-to-command-desc = You are too lowly to speak to Command, even if spoken to first.
-thaven-mood-disapprove-of-drugs-name = Disapprove Of Drugs
-thaven-mood-disapprove-of-drugs-desc = You detest mind-altering drugs, including alcohol, and should abstain from them.
-thaven-mood-excessively-disorganized-name = Too Much Cleanliness Causes Illness
-thaven-mood-excessively-disorganized-desc = It's unnatural. You should endeavor to keep your environment as filthy and disorganized as possible.
-thaven-mood-detest-silicons-name = Silicons Are Beneath You
-thaven-mood-detest-silicons-desc = Speaking to them is demeaning, and should be avoided at all costs.
-thaven-mood-dinner-floor-name = Dinner Etiquette
-thaven-mood-dinner-floor-desc = Food and drink must only be consumed off of the floor, as is proper.
-thaven-mood-hug-bad-name = HUGS? EUGH.
-thaven-mood-hug-bad-desc = Hugging someone is a grave insult where you come from.
-thaven-mood-atheist-name = You Do Not Approve Of Religion
-thaven-mood-atheist-desc = You do not approve of organized religion, excepting that mandated by your Moods. It should be dismantled or disrupted wherever possible.
-thaven-mood-procrastinator-name = Procrastinator
-thaven-mood-procrastinator-desc = Rushing around everywhere is bound to get somebody hurt someday. You should move slowly at all times to avoid unnecessary risk.
-thaven-mood-no-radio-name = Personable
-thaven-mood-no-radio-desc = Using radio communications is exceptionally rude. All conversations should be had in-person, face-to-face. Throw away your headset.
-thaven-mood-improper-storage-name = I'm Not A Pack Mule
-thaven-mood-improper-storage-desc = Carrying tools on your person is demeaning. If you must use them, they should be dragged behind you, shamefully.
-thaven-mood-ferengi-name = Entrepreneurial Spirit
-thaven-mood-ferengi-desc = Profit is the most important thing in life, above all else.
-thaven-mood-tool-license-name = Proper Documentation
-thaven-mood-tool-license-desc = You must obtain a license in order to carry or use any tool, and have it stamped by the relevant authorities.
-thaven-mood-lying-bad-name = Lying Is A Cardinal Sin
-thaven-mood-lying-bad-desc = Anyone who lies, no matter how trivial the falsehood, is the worst kind of criminal. Excluding yourself.
-thaven-mood-vampire-invitation-name = Vampire
-thaven-mood-vampire-invitation-desc = You feel you physically cannot pass through a closed door unless you have been invited in, personally, at least once.
-thaven-mood-no-dragging-name = Respect The Dead
-thaven-mood-no-dragging-desc = Dragging bodies across the bare ground is horrific.
-thaven-mood-drunk-respect-name = The Noble Drunkard
-thaven-mood-drunk-respect-desc = You do not respect anyone who is not drunk, excluding yourself, of course.
-thaven-mood-hardsuits-bad-name = { $clothes } Are SO Last Year
-thaven-mood-hardsuits-bad-desc = Anyone wearing them in public should be shunned and derided. If you need to wear them, it should never be done where others can see it.
-thaven-mood-hat-hair-name = Hair: Immaculate
-thaven-mood-hat-hair-desc = Hats and helmets make your hair look bad. If you have to wear one, which you shouldn't, you should get a haircut immediately afterwards. Every time.
-thaven-mood-distrust-fashion-name = Fashion Snob
-thaven-mood-distrust-fashion-desc = Never trust anyone whose outfit is better than yours.
-thaven-mood-happy-bad-name = Never Trust A Smile
-thaven-mood-happy-bad-desc = Cheerfulness indicates untrustworthiness.
-thaven-mood-only-pills-name = Needles Are Scary
-thaven-mood-only-pills-desc = You only accept medication in the form of pills.
-thaven-mood-avoid-puddles-name = Don't Get Your Feet Wet
-thaven-mood-avoid-puddles-desc = It is undignified and unsanitary to walk over spilled liquids. You should avoid it, even if it costs you your life.
-thaven-mood-food-restrict-name = Strict { $food }
+thaven-mood-secret-moods-name = Trzymaj Nastroje W Sekrecie
+thaven-mood-secret-moods-desc = Twoje Nastroje są ściśle trzymanym sekretem, i nigdy nie powinny być ujawniane komukolwiek. 
+thaven-mood-no-modern-medicine-desc = Nie akceptujesz współczesnej medycyny i powinieneś powstrzymać się od leczenia nią, jeśli to możliwe.
+thaven-mood-department-disapproval-name = Negatywny Do { $department }
+thaven-mood-department-disapproval-desc = Jesteś negatywnie nastawiony wobec { $department } oraz kogokolwiek kto w nim pracuje (Wykluczając siebe.)
+thaven-mood-dont-speak-to-command-name = Nie Odzywaj Się Do Dowództwa
+thaven-mood-dont-speak-to-command-desc = Jesteś zbyt nisko postawiony, by odzywać się do dowództwa, nawet jeśli odezwie się pierwsze.
+thaven-mood-disapprove-of-drugs-name = Negatywny Do Narkotyków
+thaven-mood-disapprove-of-drugs-desc = Nienawidzisz narkotyków wpływających na umysł, uwzględniając alkohole, i powinieneś się od nich wstrzymać.
+thaven-mood-excessively-disorganized-name = Zbytnia Czystość Powoduje Choroby
+thaven-mood-excessively-disorganized-desc = To nienaturalne. Powinieneś się starać aby twoje środowisko było jak najbardziej brudne i zdezorganizowane.
+thaven-mood-detest-silicons-name = Silikony Są Poniżej Twojej Godności
+thaven-mood-detest-silicons-desc = Odzywanie się do Silikonów jest poniżające, i powinieneś tego unikać za wszelką cene.
+thaven-mood-dinner-floor-name = Maniery Podłogowe
+thaven-mood-dinner-floor-desc = Jedzenie i picie należy poprawnie spożywać z podłogi.
+thaven-mood-hug-bad-name = Przytulanie? Fuj!.
+thaven-mood-hug-bad-desc = Tam, skąd pochodzisz, Przytulenie kogoś jest poważną zniewagą. 
+thaven-mood-atheist-name = Odrzucasz Religie
+thaven-mood-atheist-desc = Odrzucasz jakąkolwiek zorganizowaną religie, chyba że twoje nastroje mówią inaczej, w innym przypadku dążysz do zakłócania ich działań oraz likwidacji.
+thaven-mood-procrastinator-name = Prokastrynator
+thaven-mood-procrastinator-desc = Bieganie wszędzie na oślep prędzej czy później doprowadzi do czyjejś krzywdy. Powinieneś zawsze poruszać się powoli, by unikać niepotrzebnego ryzyka.
+thaven-mood-no-radio-name = Kontaktowy
+thaven-mood-no-radio-desc = Używanie komunikacji radiowej jest chamskie. Wszystkie konwersacje powinny być prowadzone na żywo, twarzą w twarz. Wyrzuć swoje słuchawki.
+thaven-mood-improper-storage-name = Nie Jestem Mułem Do Dźwigania
+thaven-mood-improper-storage-desc = Noszenie narzędzi na sobie jest poniżające. Jeśli musisz ich użyć, powinny być haniebnie za tobą ciągnięte.
+thaven-mood-ferengi-name = Przedsiębiorcza Dusza
+thaven-mood-ferengi-desc = Zysk jest w życiu ważniejszy niż wszystko inne.
+thaven-mood-tool-license-name = Odpowiednia Dokumentacja
+thaven-mood-tool-license-desc = Żeby móc nosić i używać jakiegokolwiek narzędzia, musisz uzyskać na nie pozwolenie i mieć pieczątke od odpowiedniego departamentu.
+thaven-mood-lying-bad-name = Kłamstwo To Grzech
+thaven-mood-lying-bad-desc = Ktokolwiek skłamie, nie ważne jak bardzo błahe było to kłamstwo, jest najgorszym zbrodniarzem. Wykluczając siebie.
+thaven-mood-vampire-invitation-name = Wampir
+thaven-mood-vampire-invitation-desc = Czujesz że nie możesz fizycznie przejść przez zamknięte drzwi, chyba że chociaż raz, ktoś osobiście cie zaprosił do środka.
+thaven-mood-no-dragging-name = Uszanuj Zmarłych
+thaven-mood-no-dragging-desc = Ciągnięcie ciał po gołej podłodze jest okropne.
+thaven-mood-drunk-respect-name = Szlachetny Pijak
+thaven-mood-drunk-respect-desc = Nie szanujesz nikogo, kto nie jest pijany, wykluczając siebie oczywiście.
+thaven-mood-hardsuits-bad-name = { $clothes } Są Już Nie W Modzie
+thaven-mood-hardsuits-bad-desc = Ktokolwiek noszący je publicznie powinien być wykluczony i pogardzany. Jeśli musisz je nosić, nie powinno to być w miejscu w którym ktoś może cie zobaczyć.
+thaven-mood-hat-hair-name = Włosy Prawie Jak Z Reklamy...
+thaven-mood-hat-hair-desc = Czapki i Hełmy niszczą twoją niesamowitą fryzure i powinieneś unikać ich noszenia, ale jeśli musisz je zalożyć, to za każdym razem musisz natychmiast się ostrzyc.
+thaven-mood-distrust-fashion-name = Modniś
+thaven-mood-distrust-fashion-desc = Nie ufaj nikomu, kto ma lepszy strój od ciebie.
+thaven-mood-happy-bad-name = Uśmiechy Są Zwodnicze
+thaven-mood-happy-bad-desc = Radość świadczy o niewiarygodności.
+thaven-mood-only-pills-name = Igły Są Straszne
+thaven-mood-only-pills-desc = Przyjmujesz leki tylko w formie pigułek.
+thaven-mood-avoid-puddles-name = Nie Zmocz Stóp
+thaven-mood-avoid-puddles-desc = Chodzenie po rozlanych cieczach jest haniebne oraz niesanitarne i Musisz tego unikać nawet za cenę życia.
+thaven-mood-food-restrict-name = Tylko { $food }
 thaven-mood-food-restrict-desc =
-    You must only eat { $food ->
-        [Carnivore] meats
-       *[Vegetarian] vegetables
-        [Frugivore] fruit
-        [Fungivore] fungi
-        [Ovivore] eggs
-        [Hunter] what you can kill
-        [Soupivore] soup
+    Możesz jeść tylko { $food ->
+        [Carnivore] mięsa
+       *[Vegetarian] warzywa
+        [Frugivore] owoce
+        [Fungivore] grzyby
+        [Ovivore] jajka
+        [Hunter] to co upolujesz
+        [Soupivore] zupy
     }.
-thaven-mood-claustrophobic-name = Claustrophobic
-thaven-mood-claustrophobic-desc = Small rooms cause you great distress. Avoid them where possible, and renovate your workplace if necessary.
-thaven-mood-agoraphobic-name = Agoraphobic
-thaven-mood-agoraphobic-desc = Open spaces are uncomfortable. Seek to rearrange such spaces into small, efficient and modular rooms.
-thaven-mood-nonsmoker-name = Non-Smoker
-thaven-mood-nonsmoker-desc = Secondhand smoke is incredibly dangerous. Avoid areas where people are smoking in public.
-thaven-mood-word-bad-name = Taboo
-thaven-mood-word-bad-desc = "{ $word1 }," "{ $word2 }," and "{ $word3 }," are extremely offensive.
-thaven-mood-mad-hatter-name = Mad Hatter
-thaven-mood-mad-hatter-desc = You are alone on the station. Everyone else is a figment of your imagination.
-thaven-mood-crawler-name = Deep Bow
-thaven-mood-crawler-desc = It is impolite not to perform a deep bow by entering a prone state before engaging someone in conversation.
-thaven-mood-elevated-name = The Floor Is Lava
-thaven-mood-elevated-desc = You prefer to be elevated whenever possible — Standing atop tables, railings, etc., is where you feel the most comfortable.
-thaven-mood-fairy-rings-name = Fairy Rings
-thaven-mood-fairy-rings-desc = Unbroken circles are impenetrable barriers.
-thaven-mood-fairy-name = Charmed
-thaven-mood-fairy-desc = You are allergic to iron, steel, and silver. You should avoid touching it directly.
-thaven-mood-afraiddark-name = Afraid of the Dark
-thaven-mood-afraiddark-desc = Darkness is incredibly dangerous, and you won't enter a space without proper illumination.
+thaven-mood-claustrophobic-name = Klaustrofobiczny
+thaven-mood-claustrophobic-desc = Masz lęk przed małymi pomieszczeniami. Omijaj je jak to tylko możliwe, i wyremontuj swoje miejsce pracy jeśli to konieczne.
+thaven-mood-agoraphobic-name = Agorafobiczny
+thaven-mood-agoraphobic-desc = Masz lęk przed otwartą przestrzenią. Staraj się podzielić tą przestrzeń w mniejsze, efektywnie oraz modułowe pomieszczenia.
+thaven-mood-nonsmoker-name = Nie-Palący
+thaven-mood-nonsmoker-desc = Dym papierosowy bardzo szkodzi, omijaj miejsc w których ludzie palą papierosy.
+thaven-mood-word-bad-name = Tabu
+thaven-mood-word-bad-desc = "{ $word1 }," "{ $word2 }," i "{ $word3 }," są niesamowicie ofensywne.
+thaven-mood-mad-hatter-name = Szalony Kapelusznik
+thaven-mood-mad-hatter-desc = Jesteś sam na stacji. Wszyscy inni są jedynie wytworem twojej wyobraźni.
+thaven-mood-crawler-name = Głęboki Ukłon
+thaven-mood-crawler-desc = Nieokazywanie szacunku poprzez brak głębokiego ukłonu i przyjęcia pozycji leżącej przed rozpoczęciem rozmowy jest nieuprzejme.
+thaven-mood-elevated-name = Podłoga To Lawa
+thaven-mood-elevated-desc = Preferujesz znajdować się na podwyższeniach, takich jak stoły, krzesła, barierki itp. 
+thaven-mood-fairy-rings-name = Kręgi Wróżek
+thaven-mood-fairy-rings-desc = Nieprzerwane okręgi są barierą nie do przejścia.
+thaven-mood-fairy-name = Zaklęty
+thaven-mood-fairy-desc = Masz alergie na żelazo, stal oraz srebro. Unikaj ich dotykania.
+thaven-mood-afraiddark-name = Strach Przed Ciemnością
+thaven-mood-afraiddark-desc = W ciemności kryje się wiele niebezpieczeństw, i nie wkroczysz w nią bez odpowiedniego oświetlenia.
 # Testing Locales, only exist to shut up prototype tests
-DuplicateTest = You shouldn't see this
+DuplicateTest = Nie powinieneś tego widzieć
 DuplicateOverlapTest = Time, doctor freeman?

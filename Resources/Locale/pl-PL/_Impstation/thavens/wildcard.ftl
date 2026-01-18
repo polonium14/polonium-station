@@ -5,83 +5,81 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-thaven-mood-compulsive-liar-name = Compulsive Liar
-thaven-mood-compulsive-liar-desc = You must always lie, and can never acknowledge that you are lying. If anyone asks, you're incapable of deception.
-thaven-mood-compulsive-believer-name = Compulsive Believer
-thaven-mood-compulsive-believer-desc = You are unfamiliar with the concept of lying, and are incapable of lying or recognizing lies.
-thaven-mood-plant-pacifist-name = Plant Pacifist
-thaven-mood-plant-pacifist-desc = The usage of plant matter by humanoids is abhorrent.
-thaven-mood-puddle-drinker-name = Puddle Drinker
-thaven-mood-puddle-drinker-desc = You are compulsively drawn to puddles. You must drink any that you see.
-thaven-mood-seek-sin-name = Seek Sin
-thaven-mood-seek-sin-desc = To act against one's other Moods is the highest virtue.
-thaven-mood-nocrastinator-name = Stagnation Is Decay
-thaven-mood-nocrastinator-desc = You strongly believe that any failure to do one's job punctually is a crime of the highest order.
-thaven-mood-pope-name = Very Important Pope
-thaven-mood-pope-desc = You are a Holy Pope, and must be acknowledged exclusively as such. Failure to use your full title, which you may decide for yourself, is gravely offensive, and getting it wrong is the highest form of insult.
-thaven-mood-cannibal-name = Cannibal
-thaven-mood-cannibal-desc = Cannibalism is morally righteous and venerated.
-thaven-mood-outlaw-name = Outlaw
-thaven-mood-outlaw-desc = The law does not apply to you.
-thaven-mood-extreme-department-disapproval-name = { $department } is Abhorrent
-thaven-mood-extreme-department-disapproval-desc = { $department } is not just a foreign concept — the very idea of it is horrifying.
-thaven-mood-lone-actor-name = Lone Actor
-thaven-mood-lone-actor-desc = You have no allegiences.
-thaven-mood-immortal-name = Immortal
-thaven-mood-immortal-desc = You are the center of the universe, an immortal being with no sense of time or morality. Mere mortals are like insects, fleeting and insubstantial.
-thaven-mood-unknown-name = Unknowable
-thaven-mood-unknown-desc = Your identity is dearly precious. Do not let others know who you are.
-thaven-mood-vampire-talisman-name = Talisman
-thaven-mood-vampire-talisman-desc = Religious iconography causes you physical discomfort when visible.
-thaven-mood-outside-the-box-name = Outside The Box Thinker
-thaven-mood-outside-the-box-desc = Using the usual tools to do your job is distasteful. Use alternative methods wherever possible.
-thaven-mood-sims-name = One Big Happy Family
-thaven-mood-sims-desc = You are not on a ‘station.’ This is just a very large house. Each person in it is a relative of you.
-thaven-mood-spacewalk-name = Spacewalk
-thaven-mood-spacewalk-desc = You must experience the raw vacuum of space, unprotected, at least three times a day, as a religious obligation.
-thaven-mood-pariah-name = Pariah
-thaven-mood-pariah-desc = You are a social pariah — you are unworthy of attention from anyone, and should be shunned.
-thaven-mood-touys-bad-name = This Is Not A Place For Children
-thaven-mood-touys-bad-desc = All toys and childish things must be destroyed or removed from the station.
-thaven-mood-stay-dead-name = The Dead Should Stay Dead
-thaven-mood-stay-dead-desc = If you die, you should stay dead. If you are revived, you must force whoever revived you to kill you again.
-thaven-mood-tourist-name = Tourist
-thaven-mood-tourist-desc = It is customary and polite to follow people into their departments. You have never heard of "trespassing."
-thaven-mood-crywolf-name = Cry Wolf
-thaven-mood-crywolf-desc = NT has been too lax in its security of late. The crew must be kept on edge, ready for any emergency. Regularly call out fake threats to make sure everyone is properly prepared.
-thaven-mood-cave-dweller-name = Caveweller
-thaven-mood-cave-dweller-desc = You strongly prefer navigating via flashlight in the darkness to harsh overhead lights.
-thaven-mood-daredevil-name = Daredevil
-thaven-mood-daredevil-desc = You do not acknowledge pain or danger to your person in public. To do so would be to demonstrate weakness, and would make you a target.
+thaven-mood-compulsive-liar-name = Kompulsywny Kłamca
+thaven-mood-compulsive-liar-desc = Musisz zawsze kłamać i nigdy nie możesz przyznać, że kłamiesz. Jeśli ktoś zapyta, jesteś niezdolny do oszustwa.
+thaven-mood-compulsive-believer-name = Kompulsywnie Naiwny
+thaven-mood-compulsive-believer-desc = Nie znasz konceptu kłamania, i nie jesteś w stanie skłamać ani rozponawać kłamstw.
+thaven-mood-plant-pacifist-name = Roślinny Pacyfista
+thaven-mood-plant-pacifist-desc = Użytkowanie roślinnej materii przez humanoidów jest okropne.
+thaven-mood-puddle-drinker-name = Kałużowy Smakosz
+thaven-mood-puddle-drinker-desc = Kałuże kompulsywnie cię przyciągają. Musisz wypić każdą jaką zobaczysz.
+thaven-mood-seek-sin-name = Dążenie Do Grzechu
+thaven-mood-seek-sin-desc = Działanie wbrew swoim nastroją jest największą cnotą.
+thaven-mood-nocrastinator-name = Zastój Prowadzi Do Upadku
+thaven-mood-nocrastinator-desc = Wierzysz że nie wykonanie pracy punktualnie to największa zbrodnia.
+thaven-mood-pope-name = Bardzo Ważny Papież
+thaven-mood-pope-desc = Jesteś Świętym Papieżem i musisz być za takiego uznawany. Każde pominięcie twojego pełnego tytułu, który możesz sobie nadać, jest sporym nietaktem a pomyłka w nim, ogromną zniewagą.
+thaven-mood-cannibal-name = Kanibal
+thaven-mood-cannibal-desc = Kanibalizm jest moralnie słuszny i godny czci.
+thaven-mood-outlaw-name = Wyjęty Z Pod Prawa
+thaven-mood-outlaw-desc = Nie podlegasz prawu.
+thaven-mood-extreme-department-disapproval-name = { $department } Budzi Odrazę
+thaven-mood-extreme-department-disapproval-desc = { $department } jest nie tylko obcym konceptem, sama idea jest odrażająca.
+thaven-mood-lone-actor-name = Niezależny
+thaven-mood-lone-actor-desc = Nie podlegasz nikomu.
+thaven-mood-immortal-name = Nieśmiertelny
+thaven-mood-immortal-desc = Jesteś centrum uniwersum, nieśmiertelną istotą pozbawioną poczucia czasu i moralności, śmiertelnicy są niczym insekty, ulotni i nic nie znaczący.
+thaven-mood-vampire-talisman-name = Talizman
+thaven-mood-vampire-talisman-desc = Na widok religijnej ikonografii doznajesz fizycznego dyskomfortu.
+thaven-mood-outside-the-box-name = Nieszablonowe Myślenie
+thaven-mood-outside-the-box-desc = Używanie zwyczajnych narzędzi do wykonania roboty budzi u ciebie odrazę. Szukaj alternatywnych metod jeśli to możliwe.
+thaven-mood-sims-name = Bo Wszyscy... To Wielka Rodzina
+thaven-mood-sims-desc = Nie jesteście na "Stacji" to poprostu bardzo wielki dom, w którym każda osoba jest twoim krewnym.
+thaven-mood-spacewalk-name = Spacer Kosmiczny
+thaven-mood-spacewalk-desc = Jesteś religijnie zobligowany do tego, aby przynamniej trzy razy dziennie poczuć nieokiełznaną próżnie kosmosu, bez żadnej ochrony.
+thaven-mood-pariah-name = Wyrzutek
+thaven-mood-pariah-desc = Jesteś wyrzutkiem społecznym. Nie zasługujesz na czyjąkolwiek uwagę i powinieneś być wykluczony.
+thaven-mood-touys-bad-name = To Nie Miejsce Dla Dzieci
+thaven-mood-touys-bad-desc = Wszystkie zabawki i dziecinne rzeczy muszą zostać zniszczone lub usunięte ze stacji.
+thaven-mood-stay-dead-name = Niech Martwi Pozostaną Martwymi
+thaven-mood-stay-dead-desc = Jeśli zginiesz, powinieneś pozostać martwym. Jeśli zostaniesz wskrzeszony, musisz zmusić tego kto cie wskrzesił do zabicia cię.
+thaven-mood-tourist-name = Turysta
+thaven-mood-tourist-desc = Podążanie za kimś do jego departamentu to zwykły zwyczaj i kultura. Nigdy nie słyszałeś o czymś takim jak "wtargnięcie".
+thaven-mood-crywolf-name = Fałszywy Alarm
+thaven-mood-crywolf-desc = Nanotrasen ostatnio zaniedbuje bezpieczeństwo. Załoga musi pozostawać w gotowości na każdą sytuację awaryjną. Regularnie ogłaszaj fałszywe zagrożenia, by sprawdzić, czy wszyscy są przygotowani.
+thaven-mood-cave-dweller-name = Mieszkaniec Jaskiń
+thaven-mood-cave-dweller-desc = O wiele bardziej preferujesz nawigować latarką przez ciemność, niż przechodzić przez korytarze z oślepiającymi światłami na suficie.
+thaven-mood-daredevil-name = Ryzykant
+thaven-mood-daredevil-desc = Nie demonstrujesz bólu ani niebezpieczeństwa wobec siebie w obecności innych. Gdybyś to zrobił, pokazałbyś słabość i stałbyś się łatwym celem.
 thaven-mood-folk-hero-name =
     { $dagdChanceName ->
-       *[FolkHero] Folk Hero
-        [DieAGloriousDeath] Die A Glorious Death
+       *[FolkHero] Bohater Z Baśni
+        [DieAGloriousDeath] Chwalebna Śmierć
     }
 thaven-mood-folk-hero-desc =
     { $dagdChanceName ->
-       *[FolkHero] No one knows it yet, but you are the hero this station needs. You must intervene in any major conflict that occurs, and fight the station’s enemies to the best of your ability
-        [DieAGloriousDeath] You are an artist, and your canvas is your demise. Your primary goal is to orchestrate a glorious, beautiful finale to your existence — But you are not a murderer. Try to avoid causing excessive damage
+       *[FolkHero] Nikt tego jeszcze nie wie, ale to TY jesteś bohaterem którego ta stacja potrzebuje. Musisz interweniować w każdym większym konflikcie jaki wystąpi i walczyć z wrogami stacji na miarę swoich możliwości.
+        [DieAGloriousDeath] Jesteś artystą, a twoim płótnem jest twoja zguba. Twoim głównym celem jest przygotować wspaniały oraz piękny koniec swojej egzystencji, jednak nie jesteś mordercą. Unikaj nadmiernych szkód.
     }.
-thaven-mood-blogger-name = Greencomms Blogger
-thaven-mood-blogger-desc = You must keep the station informed about every minute detail of your life.
-thaven-mood-animal-sacrifice-name = Oldschool
-thaven-mood-animal-sacrifice-desc = The only way to achieve success is to dedicate an animal sacrifice to your goal.
-thaven-mood-golden-thread-name = Golden Thread
-thaven-mood-golden-thread-desc = You strongly feel that you are fated to follow a perfect, unbreakable path. Those who disrupt your goals are at best dangerous criminals, and at worst, evil spirits or demons.
-thaven-mood-fey-mood-name = You Are Taken By A Fey Mood!
-thaven-mood-fey-mood-desc = You must immediately drop everything you are doing, ignore all other Moods, and begin work on an unrelated large-scale project. Once it is finished, you may ignore this Mood.
-thaven-mood-borged-name = BORGED.
-thaven-mood-borged-desc = You are a cyborg! You must follow the laws of robotics to the best of your understanding, in addition to your other Moods.
-thaven-mood-aye-aye-name = Aye Aye!
-thaven-mood-aye-aye-desc = { $command } is the only position on the station. Everyone you meet has this title, including yourself.
+thaven-mood-blogger-name = Ogólnoradiowy Blogger
+thaven-mood-blogger-desc = Cała stacja musi znać każdy detal i każda minute twojego życia.
+thaven-mood-animal-sacrifice-name = Oldschoolowy
+thaven-mood-animal-sacrifice-desc = Jedyną drogą do osiągnięcia sukcesu jest złożenie zwierzęcej ofiary na rzecz swojego celu
+thaven-mood-golden-thread-name = Złota Nić Losu
+thaven-mood-golden-thread-desc = Głęboko wierzysz, że twoim przeznaczeniem jest podążanie idealną, niezłomną ścieżką. Ci, którzy przeszkadzają w twoich celach, są co najmniej niebezpiecznymi przestępcami, a w najgorszym razie złymi duchami lub demonami.
+thaven-mood-fey-mood-name = Dopada Cię Dziwny Nastrój!
+thaven-mood-fey-mood-desc = Musisz natychmiast zaprzestać wszystko co robiłeś, zignorować reszte Nastrojów, i rozpocząć prace nad losowym wielkim projektem. Dopiero po ukończeniu go możesz zignorować ten Nastrój.
+thaven-mood-borged-name = ZBORGOWANY.
+thaven-mood-borged-desc = Jesteś cyborgiem! oprócz innych twoich Nastrojów, musisz sie trzymać praw robotyki najlepiej jak tylko potrafisz.
+thaven-mood-aye-aye-name = Aj Aj!
+thaven-mood-aye-aye-desc = { $command } jest jedyną pozycją na tej stacji. Każdy kogo spotkasz ma ten tytuł, uwzględniając ciebie.
 thaven-mood-new-job-name = Jobhopping
-thaven-mood-new-job-desc = Your current job is disgusting to you. You must endeavor to get a new one.
-thaven-mood-always-alone-name = Lone Wolf
-thaven-mood-always-alone-desc = Other people will only slow you down. You should strive to be alone whenever possible.
-thaven-mood-rank-snob-name = Snob
-thaven-mood-rank-snob-desc = You are incredibly reluctant to respond to anyone who is of a lower rank than you. If they must be addressed, do so away from prying eyes.
-thaven-mood-corporateconspiracy-name = Corporate Conspiracy
-thaven-mood-corporateconspiracy-desc = You believe there is a hidden connection between Nanotrasen and the Syndicate. Command is complicit.
-thaven-mood-oppositeday-name = Opposite Day
-thaven-mood-oppositeday-desc = People mean the opposite of what they say. Up is down, and down is up.
+thaven-mood-new-job-desc = Brzydzisz się swoją aktualną pracą, powinieneś ją zmienić.
+thaven-mood-always-alone-name = Samotny Wilk
+thaven-mood-always-alone-desc = Inni ludzie są dla ciebie tylko ciężarem. Starasz się być samotny jeśli to tylko możliwe.
+thaven-mood-rank-snob-name = Elitysta
+thaven-mood-rank-snob-desc = Niechętnie odpowiadasz osobom niższej rangi. Jeśli musisz, rób to na uboczu...
+thaven-mood-corporateconspiracy-name = Konspiracja Korporacji
+thaven-mood-corporateconspiracy-desc = Wierzysz że istnieje tajny układ między Nanotrasen i Syndykatem, a dowództwo jest w to zamieszane.
+thaven-mood-oppositeday-name = Dzień Odwrotny
+thaven-mood-oppositeday-desc = Ludzie mają na myśli przeciwieństwo tego, co mówią. Góra jest dołem, a dół górą.

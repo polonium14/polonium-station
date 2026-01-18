@@ -1,0 +1,21 @@
+# SPDX-FileCopyrightText: 2026 Polonium-bot <admin@ss14.pl>
+# SPDX-FileCopyrightText: 2026 nikitosych <174215049+nikitosych@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: ClothingHeadBase
+  id: GenieHat
+  name: czapka dżina
+  description: Okazała czapka, emanująca magiczną aurą.
+  components:
+    - type: Sprite
+      sprite: _Polonium/Clothing/Hats/genie.rsi
+      state: icon
+    - type: Clothing
+      sprite: _Polonium/Clothing/Hats/genie.rsi
+      clothingVisuals:
+        head:
+        - state: equipped-head
+        - state: equipped-head-unshaded
+          shader: unshaded

@@ -1,7 +1,13 @@
+# SPDX-FileCopyrightText: 2026 Damian Zieliński <zientasek.pl@gmail.com>
+# SPDX-FileCopyrightText: 2026 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 Polonium-bot <admin@ss14.pl>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: gameMap
   id: Cork
   mapName: 'Placówka Cork'
-  mapPath: /Maps/_Polonium/cork.yml # Polonium - Christmas update
+  mapPath: /Maps/_Polonium/cork.yml # Polonium - Christmas update / brigmed
   maxRandomOffset: 0
   randomRotation: false
   minPlayers: 0
@@ -46,6 +52,7 @@
             SecurityOfficer: [ 2, 2 ]
             SecurityCadet: [ 2, 2 ]
             Detective: [ 1, 1 ]
+            Brigmedic: [ 1, 1 ] # Polonium
             # service
             HeadOfPersonnel: [ 1, 1 ]
             Bartender: [ 1, 1 ]

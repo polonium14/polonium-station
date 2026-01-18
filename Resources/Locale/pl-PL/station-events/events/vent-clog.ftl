@@ -1,1 +1,1 @@
-station-event-vent-clog-start-announcement = The scrubbers network is experiencing a backpressure surge. Some ejection of contents may occur.
+station-event-vent-clog-start-announcement = Sieć filtrów powietrza doświadcza skoku ciśnienia zwrotnego. Może nastąpić wyrzut zawartości.

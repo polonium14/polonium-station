@@ -45,7 +45,7 @@
       time: 3600 # 1 hour
     TechnicalAssistant:
     - !type:OverallPlaytimeRequirement
-      time: 0
+      time: 3600 # 1 hour
     MedicalIntern:
     - !type:OverallPlaytimeRequirement
       time: 0
@@ -71,8 +71,7 @@
     - !type:OverallPlaytimeRequirement
       time: 3600 # 1 hour
     Brigmedic:
-    - !type:DepartmentTimeRequirement
-      department: Civilian
+    - !type:OverallPlaytimeRequirement
       time: 3600 # 1 hour
     HeadOfSecurity:
     - !type:OverallPlaytimeRequirement

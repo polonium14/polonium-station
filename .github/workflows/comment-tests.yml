@@ -1,0 +1,22 @@
+name: Warn about CI failures
+
+on:
+  pull_request:
+    types: [opened, ready_for_review]
+
+jobs:
+  comment:
+    if: github.event.pull_request.draft == false
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/github-script@v7
+      with:
+        script: |
+          github.rest.issues.createComment({
+            issue_number: ${{ github.event.number }},
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: "Obecnie testy integracyjne w Github Actions nie działają z nieustalonych obecnie przyczyn. Prosimy o ręczne uruchamianie testów za pomocą poleceń:\n1. `dotnet test --configuration DebugOpt Content.Tests/Content.Tests.csproj -- NUnit.ConsoleOut=0`\n2. `dotnet test --configuration DebugOpt Content.IntegrationTests/Content.IntegrationTests.csproj -- NUnit.ConsoleOut=0 NUnit.MapWarningTo=Failed`"
+          })
+

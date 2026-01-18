@@ -1,73 +1,4 @@
 ﻿Entries:
-- author: JustinWinningham
-  changes:
-  - message: Anomalies no longer block players or APES (or other objects) from passing
-      through them
-    type: Tweak
-  - message: Players can no longer move anomalies with unanchored furniture, closets,
-      etc.
-    type: Fix
-  id: 7804
-  time: '2025-01-13T10:06:57.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34280
-- author: zHonys
-  changes:
-  - message: Items with collisions (like mousetraps) won't kept doors form opening
-    type: Fix
-  id: 7805
-  time: '2025-01-13T10:07:18.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34045
-- author: Coolsurf6
-  changes:
-  - message: The "Jazz" style for the Electric Guitar now uses the correct soundfont.
-    type: Tweak
-  id: 7806
-  time: '2025-01-13T10:07:33.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/33363
-- author: southbridge-fur
-  changes:
-  - message: The Pride-O-Mat vending machine has been ported to upstream.
-    type: Add
-  id: 7807
-  time: '2025-01-13T18:49:02.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34412
-- author: Killerqu00
-  changes:
-  - message: Pet carriers can now be crafted.
-    type: Add
-  id: 7808
-  time: '2025-01-14T22:34:04.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34431
-- author: themias
-  changes:
-  - message: Fixed muzzles not working on some characters (e.g. dwarves)
-    type: Fix
-  id: 7809
-  time: '2025-01-15T00:10:39.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34419
-- author: ArtisticRoomba
-  changes:
-  - message: The station anchor machine board can no longer be printed at the circuit
-      imprinter.
-    type: Remove
-  id: 7810
-  time: '2025-01-15T16:26:19.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34358
-- author: ArtisticRoomba
-  changes:
-  - message: Mime PDA item interactions (insertions/ejections of IDs, pens, etc.)
-      are now silent.
-    type: Tweak
-  id: 7811
-  time: '2025-01-15T18:03:49.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34426
-- author: Alpaccalypse
-  changes:
-  - message: Smite soda vending machines have been added to the game.
-    type: Add
-  id: 7812
-  time: '2025-01-15T18:20:01.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34420
 - author: kosticia
   changes:
   - message: Bedsheets now can be printed on uniform printer
@@ -4036,3 +3967,80 @@
   id: 9111
   time: '2026-01-14T15:43:05.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/382
+- author: Nikitapl
+  changes:
+  - message: "Usuni\u0119to choinki, \u015Bwiate\u0142ka i inne rzeczy \u015Bwi\u0105\
+      teczne z map Reach, Cluster, Cork, Core"
+    type: Remove
+  id: 9112
+  time: '2026-01-16T12:30:56.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/392
+- author: Zintex
+  changes:
+  - message: "Medyk Wi\u0119zienny dodany do map: amber, cork, divide, eden, elkridge,\
+      \ gax, glacier, microstation, olympus."
+    type: Add
+  - message: "Szafka Medyka Wi\u0119ziennego dodana do packed i roid."
+    type: Add
+  - message: "Naprawiony spawn Medyka Wi\u0119ziennego na saltern."
+    type: Fix
+  id: 9113
+  time: '2026-01-16T17:52:18.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/391
+- author: Czuat
+  changes:
+  - message: "Przet\u0142umaczono Nastroje rasy Thaven, kilka cech i pare poprawek"
+    type: Tweak
+  id: 9114
+  time: '2026-01-16T17:56:07.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/390
+- author: Zintex
+  changes:
+  - message: "Pomocnik techniczny teraz wymaga 1h og\xF3lnego czasu gry"
+    type: Tweak
+  - message: "Zmieniony wym\xF3g dla Brigmeda z 1h w civilian na 1h og\xF3lnego."
+    type: Tweak
+  id: 9115
+  time: '2026-01-17T16:30:46.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/396
+- author: Nikitapl
+  changes:
+  - message: "Dodano czapk\u0119 D\u017Cina"
+    type: Add
+  id: 9116
+  time: '2026-01-17T16:37:34.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/397
+- author: Czuat
+  changes:
+  - message: "Zmieniono opis zestawu z\u0142odzieja na poprawny"
+    type: Tweak
+  id: 9117
+  time: '2026-01-17T16:40:35.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/394
+- author: Zintex
+  changes:
+  - message: Dodano akcent wiejski.
+    type: Add
+  - message: "Dodano akcent ma\u0142opolski."
+    type: Add
+  - message: "Dodano brakuj\u0105ce locale en dla akcentu kurwalskiego."
+    type: Fix
+  id: 9118
+  time: '2026-01-17T17:43:46.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/395
+- author: Nikitapl
+  changes:
+  - message: "Przet\u0142umaczono i ulepszono rosyjski akcent"
+    type: Tweak
+  id: 9119
+  time: '2026-01-17T18:09:31.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/398
+- author: Nikitapl
+  changes:
+  - message: "Przet\u0142umaczono og\u0142oszenia wydarze\u0144 na stacji"
+    type: Tweak
+  - message: "Przywr\xF3cono polskie d\u017Awi\u0119ki niekt\xF3rych wydarze\u0144"
+    type: Fix
+  id: 9120
+  time: '2026-01-17T18:49:39.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/399

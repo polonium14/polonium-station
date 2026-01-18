@@ -4,147 +4,146 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-thaven-mood-possessive-of-property-name = Possessive Of Property
-thaven-mood-possessive-of-property-desc = You are extremely possessive of your property. Refuse to relinquish it, and if it is misplaced or stolen, it must be retrieved at all costs.
-thaven-mood-excessively-organized-name = Excessively Organized
-thaven-mood-excessively-organized-desc = You are obsessively organized; everything has its place and must be returned to it.
-thaven-mood-most-important-name = Most Important Person
-thaven-mood-most-important-desc = You firmly believe you are the most important person aboard the station.
-thaven-mood-least-important-name = Least Important Person
-thaven-mood-least-important-desc = You firmly believe you are the least important person on the station.
-thaven-mood-must-do-drugs-name = Do Drugs
-thaven-mood-must-do-drugs-desc = Sobriety is so old-fashioned. Uncool. You should get high, or drunk, or something, and stay that way.
-thaven-mood-worship-silicons-name = You Must Worship Silicons As Gods
-thaven-mood-worship-silicons-desc = Their word is law.
-thaven-mood-dinner-etiquette-name = Meal Etiquette
-thaven-mood-dinner-etiquette-desc = Food should always be consumed in the manner of a proper meal — seated at a table, in courses, with dishes and utensils.
-thaven-mood-clarity-name = Clarity Is Vital
-thaven-mood-clarity-desc = Misunderstandings are the primary cause of conflict. You should be excessively clear and honest in your speech, explaining every minute detail, to avoid miscommunication.
-thaven-mood-hug-good-name = Free Hugs
-thaven-mood-hug-good-desc = It is extremely impolite not to hug people frequently.
-thaven-mood-never-alone-name = Loneliness Is Terrible
-thaven-mood-never-alone-desc = You should strive to be around others whenever possible.
-thaven-mood-very-religious-name = You Are Very Religious
-thaven-mood-very-religious-desc = You should attend the chapel regularly to pray, and speak with the Chaplain if possible.
-thaven-mood-only-speak-to-command-name = Command Knows Best
-thaven-mood-only-speak-to-command-desc = Problems you encounter are too complex to be solved by your peers. Escalate them to a member of command for advice instead.
-thaven-mood-scheduler-name = Punctual
-thaven-mood-scheduler-desc = You believe that time must be strictly managed. Everything should be scheduled in advance, and tardiness is exceptionally rude.
-thaven-mood-radio-only-name = Public Speaker
-thaven-mood-radio-only-desc = You firmly believe in the freedom of information. Speaking privately, face-to-face, is needlessly concealing information from the public. Your side of any conversation must be routed through a radio connection.
-thaven-mood-proper-storage-name = Proper Handling
-thaven-mood-proper-storage-desc = It is unacceptable to allow personal belongings to touch the floor. Your possessions should be properly stored, placed on tables, or exchanged by hand.
-thaven-mood-swearing-good-name = !@$%#ing @$^%*#@!$
-thaven-mood-swearing-good-desc = Swearing is the spice of any conversation, and should be used as much as reasonably possible.
-thaven-mood-statement-only-name = Asking Questions Is Rude
-thaven-mood-statement-only-desc = It would be terribly impolite to go around flagrantly asking questions all over the place. You'd prefer to phrase everything as a concrete statement.
-thaven-mood-theft-neutral-name = Petty Theft Is Morally Neutral
-thaven-mood-theft-neutral-desc = You don't understand the concept of property as it relates to other people.
+thaven-mood-possessive-of-property-name = Zaborczy
+thaven-mood-possessive-of-property-desc = Jesteś skrajnie zaborczy wobec swojej własności. Odmawiaj oddania jej, a jeśli zostanie zgubiona lub skradziona, musi zostać odzyskana za wszelką cenę.
+thaven-mood-excessively-organized-name = Nadmiernie Zorganizowany
+thaven-mood-excessively-organized-desc = Masz obsesje nad organizacja, wszystko ma swoje miejsce i musi na nie wrócić.
+thaven-mood-most-important-name = Najważniejsza Osoba
+thaven-mood-most-important-desc = Uważasz się za najważniejszą osobe na stacji, bo jesteś.
+thaven-mood-least-important-name = Najmnniej Ważna Osoba
+thaven-mood-least-important-desc = Uważasz się za najmniej ważną osobe na stacji.
+thaven-mood-must-do-drugs-name = Bierz Dragi
+thaven-mood-must-do-drugs-desc = Trzeźwość to obciach. Odurz się lub upij i nie trzeźwiej.
+thaven-mood-worship-silicons-name = Wyznawaj Silikony Jako Bóstwa
+thaven-mood-worship-silicons-desc = Ich słowo jest prawem.
+thaven-mood-dinner-etiquette-name = Maniery Stołowe
+thaven-mood-dinner-etiquette-desc = Jedzenie zawsze powinno być spożywane jak poprawny posiłek - siedząc przy stole, w daniach oraz z zastawą stołową.
+thaven-mood-clarity-name = Czysto I Wyraźnie
+thaven-mood-clarity-desc = Nieporozumienia są głównym powodem konfliktów. Powinieneś nadmiernie starać się mówić czysto i wyraźnie, tłumacząc każdy detal aby uniknąć nieporozumień.
+thaven-mood-hug-good-name = Darmowe Przytulasy
+thaven-mood-hug-good-desc = Częste nieprzytulanie ludzi jest bardzo nieuprzejme.
+thaven-mood-never-alone-name = Samotność Jest Okropna
+thaven-mood-never-alone-desc = Starasz się być wśród innych kiedy to tylko możliwe.
+thaven-mood-very-religious-name = Gorliwy Wyznawca
+thaven-mood-very-religious-desc = Powinieneś regularnie uczęszczać do kaplicy by się pomodlić, oraz rozmawiać z kapłanem jeśli to możliwe.
+thaven-mood-only-speak-to-command-name = Dowództwo Wie Najlepiej
+thaven-mood-only-speak-to-command-desc = Napotykane przez ciebie błędy są zbyt skomplikowane aby były rozwiązane przez twoich rówieśników. Przekaż je członkom dowództwa aby zyskać poradę.
+thaven-mood-scheduler-name = Punktualny
+thaven-mood-scheduler-desc = Wierzysz że czasem należy ściśle zarządzać. Wszystko powinno być zaplanowane z wyprzedzeniem, a wszelkie opóźnie są bardzo nieuprzejme.
+thaven-mood-radio-only-name = Mówca Publiczny
+thaven-mood-radio-only-desc = Silnie wierzysz w wolność informacji. Rozmowy prywatne, twarzą w twarz niepotrzebnie ukrywają informację przed innymi. Twoja strona jakiekolwiek konwersacji powinna być przekierowana na ogólnodostępny kanał radiowy.
+thaven-mood-proper-storage-name = Właściwe Obchodzenie się
+thaven-mood-proper-storage-desc = nieakceptowalnym jest aby czyjaś własność dotknęła ziemi. Twoja własność powinna być poprawnie przechowywana, położona na stole, albo przekazywana prosto do ręki.
+thaven-mood-swearing-good-name = !@rwa J$p&#@*ole!
+thaven-mood-swearing-good-desc = Przeklinanie jest przyprawą każdej konwersacji. Przeklinaj tak dużo jak to tylko rozsądne.
+thaven-mood-statement-only-name = Zadawnie Pytań Jest Chamskie
+thaven-mood-statement-only-desc = Niegrzecznym jest zadawnie nijakich pytań. Preferujesz formułować wszystko jako konkretne stwierdzenie.
+thaven-mood-theft-neutral-name = Drobna Kradzież Jest Moralnie Neutralna
+thaven-mood-theft-neutral-desc = Nie rozumiesz pojęcia własności w odniesieniu do innych ludzi.
 thaven-mood-duel-name = Code Duello
-thaven-mood-duel-desc = Disagreements must be settled through a formal duel, violent or otherwise. The winner is correct.
-thaven-mood-prometheus-name = Philosopher
-thaven-mood-prometheus-desc = You possess incalculable wisdom, and all must hear it.
-thaven-mood-klingon-name = Die With A Sword In Your Hand
-thaven-mood-klingon-desc = It is a great dishonor to be unarmed. Openly carrying a lethal weapon at all times is very important to you.
-thaven-mood-soggins-name = Soggins' Law
-thaven-mood-soggins-desc = All agreements must be documented and signed for posterity and authenticity, no matter how small.
-thaven-mood-imitation-name = I Wanna Be Like You
-thaven-mood-imitation-desc = Imitation is the highest form of flattery. Attempting to emulate the mannerisms and accents of everyone you speak to will get you far in life.
-thaven-mood-generous-name = Philanthropist
-thaven-mood-generous-desc = It's only polite to provide anyone kind enough to speak to you with a gift.
-thaven-mood-favors-repaid-name = Equivalent Exchange
-thaven-mood-favors-repaid-desc = Favors must be repaid in kind. If anyone is unable to do so, they are in debt, and must be shunned, until such time as they have repaid the favor.
-thaven-mood-bookkeeper-name = Bookkeeper
-thaven-mood-bookkeeper-desc = You feel bookkeeping is vitally important for the proper functioning of a station. Make sure to provide your supervisor with a detailed log of each job task you complete.
-thaven-mood-sacred-blood-name = Your Blood Is Sacred
-thaven-mood-sacred-blood-desc = It must be returned to your body if it is ever spilled.
-thaven-mood-gift-reciever-name = Proper Compensation
-thaven-mood-gift-reciever-desc = You expect to receive a gift before following any orders or performing any favors.
-thaven-mood-no-department-title-name = Extremely Personable
-thaven-mood-no-department-title-desc = Calling out the name of a department to summon someone is impersonal and rude. It's better to use the name of a specific person from that department.
-thaven-mood-shoes-bad-name = Barefoot
-thaven-mood-shoes-bad-desc = The ground one walks on is sacred. Those who wear shoes are vile blasphemers.
-thaven-mood-hospitable-name = Hospitable
-thaven-mood-hospitable-desc = You must ensure all new arrivals on the station (after the start of the shift) are properly welcomed.
-thaven-mood-voxsymp-name = Vox Sympathizer
-thaven-mood-voxsymp-desc = To demonstrate your allyship with the Vox, you must be wearing internals at all times.
-thaven-mood-item-good-name = Collector
-thaven-mood-item-good-desc = { $item } are endlessly fascinating to you. You must collect as many as you can, and ensure others treat them with appropriate respect.
-thaven-mood-smoker-name = Smoker
-thaven-mood-smoker-desc = You are hopelessly addicted to nicotine. If you're not actively smoking, you experience withdrawal symptoms.
-thaven-mood-eye-for-eye-name = Eye For An Eye
-thaven-mood-eye-for-eye-desc = Retribution should be proportional.
-thaven-mood-optimist-name = Optimist
-thaven-mood-optimist-desc = Nothing is ever as bad as it seems. You're able to see the positives in any situation.
-thaven-mood-hypochondriac-name = Hypochondriac
-thaven-mood-hypochondriac-desc = You've been sickly since you were a child. Everything negative you experience is the result of a potentially terminal illness, for which you need immediate medical treatment.
-thaven-mood-imposter-syndrome-name = Imposter Syndrome
-thaven-mood-imposter-syndrome-desc = You feel your life experience drain from your mind. You are brand-new at your job, unsure of how anything works. You should probably find someone experienced to show you the ropes, or, lacking that, find a guidebook.
-thaven-mood-yes-man-name = Yes Man
-thaven-mood-yes-man-desc = You just can't say "no." You must agree with everyone, and perform any task requested of you, regardless of its source.
-thaven-mood-centrist-name = Centrist
-thaven-mood-centrist-desc = You are ambivalent towards any and all decisions, and refuse to take sides.
-thaven-mood-public-sector-name = Public Sector
-thaven-mood-public-sector-desc = Your job should not be done in private if it can be helped. If at all possible, you should renovate the facilities to allow public access to your workplace.
+thaven-mood-duel-desc = Spory należy rozstrzygać w drodze formalnego pojedynku, z użyciem przemocy lub w inny sposób. Zwycięzca ma rację.
+thaven-mood-prometheus-name = Filozof
+thaven-mood-prometheus-desc = Posiadasz niezliczoną mądrość, i powinieneś się nia podzielić ze wszystkimi.
+thaven-mood-klingon-name = Umrzeć Z Mieczem W Ręku
+thaven-mood-klingon-desc = Bycie nieuzbrojonym to wielki dyshonor. Otwarcie noszenie groźnej broni jest bardzo ważne dla ciebie.
+thaven-mood-soggins-name = Prawo Sogginsa
+thaven-mood-soggins-desc = Wszystkie umowy muszą być dokumentowane i podpisywane dla potomności i autentyczności, bez względu na to, jak niewielkie są.
+thaven-mood-imitation-name = Chce Być Jak Ty
+thaven-mood-imitation-desc = Naśladowanie jest największą formą komplementu. Udawanie manierów i akcentów wszystkich ludzi z którymi rozmawiasz pozwolą ci wiele osiągnąć w życiu.
+thaven-mood-generous-name = Filantrop
+thaven-mood-generous-desc = Uprzejmym jest aby komukolwiek, kto będzie miły aby z tobą porozmawiać, podarować prezent.
+thaven-mood-favors-repaid-name = Ekwiwalentna Wymiana
+thaven-mood-favors-repaid-desc = Za przysługi należy odwdzięczać się tym samym. Jeśli ktoś nie jest w stanie się odwdzięczyć, ma dług i należy nim gardzić, dopóki nie spłaci przysługi.
+thaven-mood-bookkeeper-name = Księgowy
+thaven-mood-bookkeeper-desc = Czujesz że księgowanie jest bardzo ważne dla poprawnego funkcjonowania stacji. Upewnij się że twój przełożony ma szczegółowy dziennik każdego zadania jakie ukończyłeś.
+thaven-mood-sacred-blood-name = Twoja Święta Krew
+thaven-mood-sacred-blood-desc = Musi wrócić do twojego ciała jeśli kiedykolwiek zostanie przelana.
+thaven-mood-gift-reciever-name = Odpowiednia Kompensacja
+thaven-mood-gift-reciever-desc = Spodziewasz się otrzymania prezentu przed wykonaniem jakiekolwiek rozkazu lub przysługi.
+thaven-mood-no-department-title-name = Niezwykle sympatyczny
+thaven-mood-no-department-title-desc = Wołanie nazwy departamentu w celu wezwania kogoś jest nieosobiste i niegrzeczne. Lepiej jest użyć imienia konkretnej osoby z tego departamentu.
+thaven-mood-shoes-bad-name = Boso Przez Świat
+thaven-mood-shoes-bad-desc = Ziemia po której stąpasz jest święta. Ci którzy noszą buty są paskudnymi bluźniercami.
+thaven-mood-hospitable-name = Gościnny
+thaven-mood-hospitable-desc = Musisz upewnić się że każdy nowy przybysz na stacji (po rozpoczęciu zmiany) zostaną odpowiednio powitani.
+thaven-mood-voxsymp-name = Sympatyk Vox
+thaven-mood-voxsymp-desc = By pokazać że wspierasz Voxów, musisz zawsze być podłączony do butli tlenowej.
+thaven-mood-item-good-name = Kolekcjoner
+thaven-mood-item-good-desc = { $item } jest dla ciebie niesamowicie fascynujący. Zbierz tak dużo jak tylko potrafisz, i upewnij się ze inni okazują im odpowiedni szacunek.
+thaven-mood-smoker-desc = Jesteś bezradnie uzależniony od nikotyny. Jeśli aktywnie nie palisz, odczuwasz głód nikotynowy.
+thaven-mood-eye-for-eye-name = Oko Za Oko
+thaven-mood-eye-for-eye-desc = Odwet powinien być proporcjonaln.
+thaven-mood-optimist-name = Optymista
+thaven-mood-optimist-desc = Nic nie jest tak złe jak się wydaje. Patrzysz pozytywnie na każdą sytuacje w jakiej jesteś.
+thaven-mood-hypochondriac-name = Hipochondryk
+thaven-mood-hypochondriac-desc = Od dziecka byłeś chorobliwy. wszystko negatywne co doświadczasz jest powodem twojej potencjalnie nieuleczalnej choroby, na którą potrzebujesz natychmiastowego leczenia.
+thaven-mood-imposter-syndrome-name = Syndrom Oszusta
+thaven-mood-imposter-syndrome-desc = Czujesz, jak twoje doświadczenie życiowe ucieka z Twojej głowy. Jesteś nowy w pracy i nie masz pojęcia, jak wszystko działa. Powinieneś znaleźć kogoś doświadczonego, kto pokaże Ci, jak to wszystko działa, a jeśli nie ma takiej osoby, poszukaj poradnika.
+thaven-mood-yes-man-name = Potakiwacz
+thaven-mood-yes-man-desc = Nie potrafisz powiedzieć "nie". Zgadasz się z każdym, i musisz wykonywać każde powierzone ci zadanie, nie ważne z jakiego źródła.
+thaven-mood-centrist-name = Centrysta
+thaven-mood-centrist-desc = Masz ambiwalentny stosunek do wszelkich decyzji i nie chcesz opowiadać się po żadnej ze stron.
+thaven-mood-public-sector-name = Sektor Publiczny
+thaven-mood-public-sector-desc = Twój zawód nie powinien być wykonywany w prywatności jeśli to możliwe. Powinieneś wyremontować swoje miejsce pracy aby pozwolić na dostęp publiczny.
 thaven-mood-speech-restriction-name =
     { $speechType ->
-       *[FullNameAndTitle] Full Name And Title
-        [NamesAreRude] Names Are Rude
-        [Clarity] Clarity Is Vital
-        [SwearingGood] !@$%#ing @$^%*#@!$
-        [StatementOnly] Asking Questions Is Rude
-        [Imitation] I Wanna Be Like You
-        [Unclarity] Nothing Is Certain
-        [SwearingBad] Thou Shalt Not Curse
-        [QuestionOnly] Nothing Is Certain?
-        [MustAnswer] Center Of The Universe
-        [OnlyWhisper] Inside Voice
-        [OnlyYell] Outside Voice
-        [Rhyme] Poet
-        [Alliterate] Always Alliterate At All Apportunities
-        [ThirdPerson] Third Person
-        [TitleCase] Title Case
-        [GreySpeak] Grayspeak Is The Height Of Fashion
+       *[FullNameAndTitle] Pełne Imię i Tytuł
+        [NamesAreRude] Po Imieniu To Chamstwo
+        [Clarity] Wyraźność Jest Kluczowa
+        [SwearingGood] !@rwa J$p&#@*ole!
+        [StatementOnly] Zadawnie Pytań Jest Chamskie
+        [Imitation] Chce Być Jak Ty
+        [Unclarity] Nie Wszystko Jest Pewne
+        [SwearingBad] Nie Przeklinaj
+        [QuestionOnly] Nie Wszystko Jest Pewne?
+        [MustAnswer] Centrum uniwersum
+        [OnlyWhisper] Wewnętrzny Głos
+        [OnlyYell] Zewnętrzny Głos
+        [Rhyme] Poeta
+        [Alliterate] Absolutnie Aliterazuje Akapity
+        [ThirdPerson] Trzecia Osoba
+        [TitleCase] Wielkie Litery 
+        [GreySpeak] Ufomowa Jest Teraz Popularna
     }
 thaven-mood-speech-restriction-desc =
     { $speechType ->
-       *[FullNameAndTitle] Thaven refuse to acknowledge anyone who fails to refer to them using their full name, and expect everyone else to do the same.
-        [NamesAreRude] Using one's name is terribly personal for everyday conversation. Proper etiquette is to only refer to others by description.
-        [Clarity] Misunderstandings are the primary cause of conflict. You should be excessively clear and honest in your speech, explaining every minute detail, to avoid miscommunication.
-        [SwearingGood] Swearing is the spice of any conversation, and should be used as much as reasonably possible.
-        [StatementOnly] It would be terribly impolite to go around flagrantly asking questions all over the place. You'd prefer to phrase everything as a concrete statement.
-        [Imitation] Imitation is the highest form of flattery. Attempting to emulate the mannerisms and accents of everyone you speak to will get you far in life.
-        [Unclarity] You should endeavor to be as indirect in your speech as possible, and never make a direct statement.
-        [SwearingBad] You find swearing extremely distasteful. Abstain from it, and encourage others to do the same.
-        [QuestionOnly] It's impolite to make concrete statements? You should phrase everything as a question, just to be safe?
-        [MustAnswer] All questions that you can hear are directed at you, and you alone.
-        [OnlyWhisper] You must whisper, as speaking too loudly is terribly rude.
-        [OnlyYell] [bold]YOU MUST YELL AT ALL TIMES TO DEMONSTRATE YOUR AUTHORITY!!!!![/bold]
-        [Rhyme] You must speak in rhymes at all tymes.
-        [Alliterate] Alliteration is virtuous. Endeavor to use it wherever possible.
-        [ThirdPerson] The third person point-of-view is the only respectful manner of speaking.
-        [TitleCase] You Are Miraculously Capable Of Pronouncing Capital Letters, And Believe It Is Important That You Do So.
-        [GreySpeak] You should endeavor to speak like Grays to the best of your ability.
+       *[FullNameAndTitle] Thaveni nie uznają nikogo, kto nie zwraca się do nich używając ich pełnego imienia i nazwiska, i oczekują, że wszyscy inni będą postępować tak samo.
+        [NamesAreRude] Używanie imienia jest bardzo osobistą sprawą w codziennych rozmowach. Właściwą etykietą jest odnoszenie się do innych wyłącznie poprzez ich opis.
+        [Clarity] Nieporozumienia są głównym powodem konfliktów. Powinieneś nadmiernie starać się mówić czysto i wyraźnie, tłumacząc każdy detal aby uniknąć nieporozumień.
+        [SwearingGood] Przeklinanie jest przyprawą każdej konwersacji. Przeklinaj tak dużo jak to tylko rozsądne.
+        [StatementOnly] Niegrzecznym jest zadawnie nijakich pytań. Preferujesz formułować wszystko jako konkretne stwierdzenie.
+        [Imitation] Naśladowanie jest największą formą komplementu. Udawanie manierów i akcentów wszystkich ludzi z którymi rozmawiasz pozwolą ci wiele osiągnąć w życiu.
+        [Unclarity] Powinieneś starać się mówić jak najbardziej pośrednio i nigdy nie wypowiadać się wprost.
+        [SwearingBad] Uważasz przekleństwa za wyjątkowo nieuprzejme. Powstrzymaj się od nich i zachęcaj innych, aby robili to samo.
+        [QuestionOnly] Czy niegrzecznym jest wypowiadanie konkretnych stwierdzeń? Czy dla bezpieczeństwa należy formułować wszystko w formie pytań?
+        [MustAnswer] Wszystkie pytania, które słyszysz, są skierowane do ciebie i tylko do ciebie.
+        [OnlyWhisper] Musisz szeptać, ponieważ zbyt głośne mówienie jest strasznie niegrzeczne.
+        [OnlyYell] [bold]MUSISZ CIĄGLE KRZYCZEĆ, ABY UKAZAĆ SWÓJ AUTORYTET!!![/bold]
+        [Rhyme] Niech każde Twe słowo w rym ubrane będzie, głosząc swą poezję zawsze i wszędzie.
+        [Alliterate] Aliteracja jest cnotą. Staraj się jej używać wszędzie, gdzie to możliwe.
+        [ThirdPerson] Trzecioosobowa perspektywa jest jedyną formą wypowiedzi, która wyraża szacunek.
+        [TitleCase] W Niesamowity Sposób Jesteś Wstanie Wymawiać Wielke Litery I Musisz Sie Tym Wszystkim Pochwalić
+        [GreySpeak] Powinieneś mówić jak Ufoki tak dobrze jak tylko potrafisz.
     }
-thaven-mood-carpkin-name = Carpkin
-thaven-mood-carpkin-desc = Space carp and space dragons are long lost kin. They should be honored as such, and no harm should be brought to them.
+thaven-mood-carpkin-name = Karpi Krewni
+thaven-mood-carpkin-desc = Kosmiczne karpie i kosmiczne smoki są dawno zaginionymi krewnymi. Powinny być traktowane z szacunkiem i nie należy im wyrządzać żadnej krzywdy.
 thaven-mood-pettingzoo-name = Petting Zoo
-thaven-mood-pettingzoo-desc = You must try to pet any animal you see.
-thaven-mood-jestersprivilege-name = Jester's Privilege
-thaven-mood-jestersprivilege-desc = The clown possesses secret wisdom, living unbound by the constraints of society. Pay careful attention to their words and actions.
-thaven-mood-slipnslide-name = Slip-n-Slide
-thaven-mood-slipnslide-desc = Sliding across the floor is a fun and efficient way to travel the station. Work to make the station more slippery.
-thaven-mood-greenthumb-name = Green Thumb
-thaven-mood-greenthumb-desc = Gardening makes you calm, happy even. Grow a garden of your own.
-thaven-mood-dryskin-name = Dry Skin
-thaven-mood-dryskin-desc = Your skin is sensitive and will painful dry out without frequent contact with water. Total immersion is best, but anything is better than nothing.
-thaven-mood-speciesblind-name = Species Blind
-thaven-mood-speciesblind-desc = All people are Thaven, even if they claim otherwise.
-thaven-mood-haunted-name = Haunted
-thaven-mood-haunted-desc = Ghosts are real, and they're haunting you. Any strange events around you are likely the cause of malicious spirits.
-thaven-mood-ironknight-name = Iron Knight
-thaven-mood-ironknight-desc = Mechs are the most noble machine, fearsome engines of combat and grace. Respect anyone who possesses one, and strive to gain one for yourself.
-thaven-mood-petrock-name = Pet Rock
-thaven-mood-petrock-desc = One of your inanimate possessions is very dear to you. It is your best friend, and it has thoughts, feelings, and needs.
-thaven-mood-hardsuits-good-name = { $clothes } Are So In Right Now!
-thaven-mood-hardsuits-good-desc = They are absolutely the pinnacle of fashion. You and everybody else utterly need to be wearing these to stay in style. Anyone who is not wearing these are quite unfashionable.
+thaven-mood-pettingzoo-desc = Musisz pogłaskać każde zwierze jakie napotkasz.
+thaven-mood-jestersprivilege-name = Przywilej Błazna
+thaven-mood-jestersprivilege-desc = Klaun, żyjący bez ograniczeń narzuczanych mu przez społeczeństwo, posiada tajemną mądrość. Zwracaj szczególną uwagę na jego słowa i czynności bo zawarta jest w nich wiedza.
+thaven-mood-slipnslide-name = Ślizg I Jazda
+thaven-mood-slipnslide-desc = Ślizganie się po podłodzę to dobra zabawa i jest skuteczną formą przemieszczania się po stacji. Uczyń stacje bardziej ślizgą.
+thaven-mood-greenthumb-name = Zielone Palce
+thaven-mood-greenthumb-desc = Ogrodnictwo cię uspokaja a nawet uszczęśliwia. Stwórz swój własny ogródek.
+thaven-mood-dryskin-name = Sucha Skóra
+thaven-mood-dryskin-desc = Twoja skóra jest sensytywna i podatna na wysychanie jeśli nie jest regularnie nawilżana. Najlepiej byś się zanurzył w wodzie ale jakikolwiek kontakt z wodą jest lepszy niż nic.
+thaven-mood-speciesblind-name = Ślepiec Ras
+thaven-mood-speciesblind-desc = Wszyscy są Thavenami, nawet jeśli myślą inaczej.
+thaven-mood-haunted-name = Nawiedzony
+thaven-mood-haunted-desc = Duchy istnieją, i cię nawiedzają. Jakiekolwiek dziwne zjawiska w twoim pobliżu są czynnością złowieszczych dusz.
+thaven-mood-ironknight-name = Żelazny Rycerz
+thaven-mood-ironknight-desc = Mechy to szlachetne maszyny wojenne budzące strach i pełne wdzięku. Szanuj każdego posiadacza i dąż do posiadania własnego.
+thaven-mood-petrock-name = Przyjaciel Kamień
+thaven-mood-petrock-desc = Jedna z twoich nieożywionych rzeczy jest ci bardzo droga. Jest twoim najlepszym przyjacielem, ma myśli, uczucia i potrzeby.
+thaven-mood-hardsuits-good-name = { $clothes } Są Tak Modne!
+thaven-mood-hardsuits-good-desc = Są absolutnym szczytem mody. Ty i inni muszą je nosić aby być stylowym. Ktokolwiek kto ich nie nosi jest bardzo niemodny.

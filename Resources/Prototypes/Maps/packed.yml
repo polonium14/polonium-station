@@ -37,7 +37,7 @@
 - type: gameMap
   id: Packed
   mapName: 'Packed'
-  mapPath: /Maps/_Funkystation/packed.yml
+  mapPath: /Maps/_Polonium/packed.yml #Polonium - Brigmed
   minPlayers: 7
   maxPlayers: 35
   stations:

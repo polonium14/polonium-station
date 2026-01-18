@@ -29,7 +29,7 @@ thief-backpack-category-tools-description =
 thief-backpack-category-chemistry-name = zestaw anatomiczny
 thief-backpack-category-chemistry-description =
     Osiągnąłeś szczyt fizycznych możliwości... z drobną pomocą.
-    Zawiera: Implant kieszonkowy, implant nowej tożsamości, butelkę efedryny,
+    Zawiera: Implant wolności, implant nowej tożsamości, butelkę efedryny,
     strzykawkę, szejker i mydło omega.
 thief-backpack-category-syndie-name = zestaw Syndykata
 thief-backpack-category-syndie-description =

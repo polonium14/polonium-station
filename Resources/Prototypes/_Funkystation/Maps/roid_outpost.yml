@@ -13,7 +13,7 @@
 - type: gameMap
   id: roid_outpost
   mapName: 'Roid'
-  mapPath: /Maps/_Funkystation/roid_outpost.yml
+  mapPath: /Maps/_Polonium/roid_outpost.yml #Polonium - Brigmed
   minPlayers: 10
   maxPlayers: 45
   stations:

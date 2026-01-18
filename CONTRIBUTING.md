@@ -339,7 +339,7 @@ W takim przypadku postępujesz zgodnie z procedurą z [tego punktu](https://gith
 
 Dzięki temu unikasz bałaganu w commitach i możesz spokojnie pracować równolegle nad różnymi projektami.
 
-#### 3. Jak tłumaczyć grę?
+## 3. Jak tłumaczyć grę?
 
 1. Lokalizacja plików
 
