@@ -5,7 +5,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 surgery-tool-turn-on = Najpierw włącz to!
-surgery-tool-reload = Najpierw przeladuj!
+surgery-tool-reload = Najpierw przeładuj!
 surgery-tool-match-light = Najpierw zapal!
 surgery-tool-match-replace = Weź nową zapałkę!
 surgery-tool-examinable-verb-text = Narzędzie chirurgiczne

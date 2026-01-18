@@ -1,5 +1,5 @@
 cpr-verb-text = RKO
-cpr-verb-text-disabled = Wykonaj RKO z blizkiej odległości!
+cpr-verb-text-disabled = Wykonaj RKO z bliskiej odległości!
 cpr-start = { CAPITALIZE($person) } zaczyna reanimować { $target }.
 cpr-start-you = Zacząłeś reanimować { $target }.
 cpr-already-in-progress = Ktoś już wykonuje RKO!
