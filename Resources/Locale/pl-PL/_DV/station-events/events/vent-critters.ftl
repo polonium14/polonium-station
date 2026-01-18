@@ -5,4 +5,4 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-station-event-vent-creatures-start-announcement-deltav = Uwaga. W systemach wentylacyjnych w pobliżu { $location } wykryto duży napływ nieznanych form życia. Cały personel musi natychmiast opuścić ten obszar.
+station-event-vent-creatures-start-announcement-deltav = Uwaga. Wykryto duży napływ nieznanych form życia w systemach wentylacyjnych w pobliżu { $location }. Cały personel musi natychmiast opuścić ten obszar.

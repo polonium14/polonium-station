@@ -35,7 +35,7 @@ cult-veil-ritual-not-enough-at-end = The ritual fails! Not enough cultists remai
 cult-veil-ritual-failed = The Tear the Veil ritual has failed! The cultists were unable to maintain the ritual.
 cult-veil-ritual-success = The Tear the Veil ritual is complete! The veil has been weakened, and Nar'Sie's power grows!
 cult-veil-ritual-already-completed = The Tear the Veil ritual has already been completed. The veil cannot be weakened further.
-cult-veil-ritual-central-command-announcement = Attention all personnel: Reality-distorting anomalies have been detected. The veil between dimensions has been compromised. All security personnel are to arm immediately. Avoid, arrest, or stop any crew exhibiting extradimensional abilities. The station is now operating under maximum alert protocols.
+cult-veil-ritual-central-command-announcement = Uwaga cały personel: wykryto anomalie zakłócające rzeczywistość. Zasłona między wymiarami została naruszona. Cały personel ochrony ma natychmiast się uzbroić. Należy unikać, aresztować lub zatrzymać każdą załogę wykazującą zdolności pozamiarowe. Stacja działa obecnie w trybie maksymalnego alarmu.
 cult-final-ritual-already-in-progress = The final summoning ritual is already in progress!
 cult-final-ritual-not-enough-cultists = Not enough cultists stand upon the summoning runes! { $current } present, { $required } required. All three runes must be occupied!
 cult-final-ritual-started = THE FINAL RITUAL BEGINS! All cultists must remain on the summoning runes! Nar'Sie's arrival is at hand!
@@ -128,8 +128,8 @@ cult-narsie-sacrifice-accept = "I accept your sacrifice."
 cult-narsie-target-down = "Yes! This is the one I desire! You have done well."
 cult-break-control = You look bewildered as Nar'Sie's influence is shattered! You don't remember any of your time in the cult.
 cult-deconverted-memory-loss = You lose the last several hours of your memories.
-cult-evac-called-announcement = Unusual dimensional disturbances have faded, evac called while centcom investigates this dimensional anomaly. ETA: { $time } { $units }
-cult-evac-sender-announcement = Central Command
+cult-evac-called-announcement = Niezwykłe zaburzenia wymiarowe ustąpiły, wezwano wahadłowiec ewakuacyjny. Centralne Dowództwo bada tę anomalię wymiarową. Przewidywany czas przybycia: { $time } { $units }
+cult-evac-sender-announcement = Centralne Dowództwo
 cult-ascend-1 = The veil weakens as your cult grows, and your eyes begin to glow...
 cult-ascend-2 = The veil weakens as your cult grows, and you are unable to hide your true nature!
 cult-deconverted = You suddenly de-convert, and no longer consider yourself a cultist!
@@ -140,9 +140,10 @@ cult-commune-message = Acolyte { $name } (as { $job }): { $message }
 cult-commune-incantation = Y'll tor tz'ul z'nik rar.
 cult-narsie-spawning = Reality breaks down around you.
 cult-win-announcement-shuttle-call =
-    Due to spatio-temporal complications, the station has been deemed unprofitable to salvage. A crew transfer shuttle has been dispatched. Failure to board and return to Central Command for debriefing will be interpreted as abandonment of contract, and your families will undergo penalties for as long as it takes to recoup these expenses.
-    ETA: { $time } { $units }.
-cult-win-announcement = Due to spatio-temporal complications, the station has been deemed unprofitable to salvage. Failure to return to Central Command for debriefing will be interpreted as abandonment of contract, and your families will undergo penalties for as long as it takes to recoup these expenses.
+    Ze względu na komplikacje czasowo-przestrzenne stacja została uznana za nieopłacalną w utrzymaniu. Wysłano wahadłowiec w celu ewakuacji personelu. Niestawienie się na pokładzie i niezłożenie raportu w Centralnym Dowództwie zostanie uznane za zerwanie umowy, a Wasze rodziny zostaną obciążone karami finansowymi do czasu pełnego pokrycia strat korporacji.
+
+    Przewidywany czas przybycia: { $time } { $units }.
+cult-win-announcement = Ze względu na komplikacje czasowo-przestrzenne stacja została uznana za nieopłacalną w utrzymaniu. Wysłano wahadłowiec w celu ewakuacji personelu. Niestawienie się na pokładzie i niezłożenie raportu w Centralnym Dowództwie zostanie uznane za zerwanie umowy, a Wasze rodziny zostaną obciążone karami finansowymi do czasu pełnego pokrycia strat korporacji.
 cult-ghost-role-name = Reawakened Blood Cultist
 cult-ghost-role-desc = A zealous Blood Cultist of Nar'Sie, re-awakened after catatonia.
 cult-ghost-role-rules =
