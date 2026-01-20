@@ -39,6 +39,8 @@
     ClothingHeadRainHat: 2
     ClothingOuterCoatRain: 2
     ClothingNeckScarfStripedPurple: 3
+    ClothingNeckTieGray: 2 # Polonium
+    ClothingNeckTieGreen: 2 # Polonium
   contrabandInventory:
     ToyFigurineJanitor: 1
   emaggedInventory:

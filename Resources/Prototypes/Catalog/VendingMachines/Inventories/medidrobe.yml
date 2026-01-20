@@ -71,6 +71,9 @@
     ClothingHeadHatSurgcapPurple: 4
     ClothingHeadHatSurgcapBlack: 4
     ClothingShoesBootsWinterMed: 2
+    ClothingNeckScarfStripedBlue: 2 # Polonium
+    ClothingNeckScarfStripedLightBlue: 2 # Polonium
+    ClothingNeckTieBlue: 3 # Polonium
   contrabandInventory:
     UniformScrubsColorCybersun: 1 #DeltaV
     ClothingHeadHatSurgcapCybersun: 1 #DeltaV

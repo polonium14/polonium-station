@@ -1716,6 +1716,12 @@
     - ClothingNeckTieRed
     - ClothingNeckTieDet
     - ClothingNeckTieSci
+    # Department ties - Polonium
+    - ClothingNeckTieGray
+    - ClothingNeckTieBlue
+    - ClothingNeckTieBrown
+    - ClothingNeckTieOrange
+    - ClothingNeckTieGreen
     # Scarfs - All scarfs avaible in winterdrobe
     - ClothingNeckScarfStripedGreen
     - ClothingNeckScarfStripedBlue

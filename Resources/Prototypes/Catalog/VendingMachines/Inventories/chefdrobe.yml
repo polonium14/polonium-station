@@ -30,5 +30,7 @@
     ClothingShoesColorBlack: 2
     ClothingShoesChef: 2
     ClothingBeltChef: 2
+    ClothingNeckScarfStripedGreen: 2 # Polonium
+    ClothingNeckTieGreen: 2 # Polonium
   contrabandInventory:
     ToyFigurineChef: 1

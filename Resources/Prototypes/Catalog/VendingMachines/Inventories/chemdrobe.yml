@@ -33,5 +33,8 @@
     ClothingHeadsetMedical: 2
     ClothingOuterWinterChem: 2
     RadioHandheldMedical: 2 #funkystation
+    ClothingNeckScarfStripedBlue: 2 # Polonium
+    ClothingNeckScarfStripedLightBlue: 2 # Polonium
+    ClothingNeckTieBlue: 2 # Polonium
   contrabandInventory:
     ToyFigurineChemist: 1

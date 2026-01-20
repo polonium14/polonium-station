@@ -162,6 +162,13 @@
     ClothingEyesGlassesCheapSunglasses: 3
     ClothingEyesGlassesJamjar: 5
     # DO NOT ADD MORE, USE UNIFORM DYING
+    # Department ties - Polonium
+    ClothingNeckTieRed: 2
+    ClothingNeckTieGray: 2
+    ClothingNeckTieBlue: 2
+    ClothingNeckTieBrown: 2
+    ClothingNeckTieOrange: 2
+    ClothingNeckTieGreen: 2
   contrabandInventory:
     ClothingMaskNeckGaiter: 2
     ClothingUniformJumpsuitTacticool: 2 # +1 Goobstation

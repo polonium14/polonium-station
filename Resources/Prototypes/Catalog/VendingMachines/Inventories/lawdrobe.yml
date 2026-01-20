@@ -38,6 +38,10 @@
     BookSpaceLaw: 3
     LuxuryPen: 2
     HandLabeler: 2
+    ClothingNeckTieRed: 1 # Polonium
+    ClothingNeckTieGreen: 1 # Polonium
+    ClothingNeckTieGray: 1 # Polonium
+    ClothingNeckScarfStripedBlack: 1 # Polonium
   contrabandInventory:
     ClothingOuterRobesJudge: 1
     ClothingHeadHatPwig: 1

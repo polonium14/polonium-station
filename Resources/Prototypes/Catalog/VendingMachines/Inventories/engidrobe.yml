@@ -49,6 +49,7 @@
     ClothingHeadsetEngineering: 3
     ClothingOuterWinterEngi: 2
     ClothingNeckScarfStripedOrange: 3
+    ClothingNeckTieOrange: 3 # Polonium
     ClothingShoesBootsWinterEngi: 2
     ClothingShoesBootsWinterCargo: 2 # funk
   emaggedInventory:

@@ -48,6 +48,8 @@
     ClothingOuterVest: 2
     ClothingBeltBandolier: 2
     ClothingEyesGlassesSunglasses: 2
+    ClothingNeckScarfStripedGreen: 2 # Polonium
+    ClothingNeckTieGreen: 2 # Polonium
   emaggedInventory:
     ClothingUniformJumpsuitBartenderSyndicate: 2
     ClothingOuterWinterStingray: 1

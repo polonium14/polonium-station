@@ -50,6 +50,7 @@
     ClothingOuterWinterSec: 2
     ClothingOuterArmorBasic: 2
     ClothingNeckScarfStripedRed: 3
+    ClothingNeckTieRed: 3 # Polonium
     ClothingOuterArmorBasicSlim: 2
     SurveillanceWirelessCameraBodySecurity: 3 # funkystation - add sec body cam
     ClothingEyesBlindfold: 1

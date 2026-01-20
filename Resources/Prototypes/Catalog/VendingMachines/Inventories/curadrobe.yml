@@ -31,6 +31,7 @@
     ClothingShoesBootsLaceup: 2
     ClothingHeadsetService: 2
     RadioHandheldService: 2 #funkystation
+    ClothingNeckTieGray: 2 # Polonium
   emaggedInventory:
     ClothingUniformJumpsuitLibrarianSyndicate: 2
   contrabandInventory:

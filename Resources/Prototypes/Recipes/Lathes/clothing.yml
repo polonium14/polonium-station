@@ -1045,6 +1045,32 @@
   id: ClothingNeckTieSci
   result: ClothingNeckTieSci
 
+# Department ties - Polonium
+- type: latheRecipe
+  parent: BaseNeckClothingRecipe
+  id: ClothingNeckTieGray
+  result: ClothingNeckTieGray
+
+- type: latheRecipe
+  parent: BaseNeckClothingRecipe
+  id: ClothingNeckTieBlue
+  result: ClothingNeckTieBlue
+
+- type: latheRecipe
+  parent: BaseNeckClothingRecipe
+  id: ClothingNeckTieBrown
+  result: ClothingNeckTieBrown
+
+- type: latheRecipe
+  parent: BaseNeckClothingRecipe
+  id: ClothingNeckTieOrange
+  result: ClothingNeckTieOrange
+
+- type: latheRecipe
+  parent: BaseNeckClothingRecipe
+  id: ClothingNeckTieGreen
+  result: ClothingNeckTieGreen
+
 # Scarfs
 - type: latheRecipe
   parent: BaseNeckClothingRecipe

@@ -48,6 +48,7 @@
     RadioHandheldCargo : 3  # Funky Station
     ClothingOuterCargoWindbreaker: 2
     ClothingOuterSalvageWindbreaker: 2
+    ClothingNeckTieOrange: 3 # Polonium
     ClothingNeckScarfStripedBrown: 3
     ClothingNeckScarfStripedPurple: 3
     ClothingShoesBootsWinterCargo: 2
