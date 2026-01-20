@@ -293,6 +293,10 @@
   loadouts:
   - HoPCloak
   - HoPMantle
+  - GrayTie # Polonium
+  - GreenTie # Polonium
+  - BlackScarf # Polonium
+  - GreenScarf # Polonium
 
 - type: loadoutGroup
   id: HoPBackpack
@@ -372,6 +376,8 @@
   minLimit: 0
   loadouts:
   - Mantle
+  - GrayTie # Polonium
+  - BlackScarf # Polonium
 
 - type: loadoutGroup
   id: PassengerOuterClothing
@@ -393,6 +399,22 @@
   minLimit: 0
   loadouts:
   - LizardPlushiePassenger
+
+- type: loadoutGroup
+  id: CivilianNeck
+  name: loadout-group-civilian-neck
+  minLimit: 0
+  loadouts:
+  - GrayTie # Polonium
+  - BlackScarf # Polonium
+
+- type: loadoutGroup
+  id: ServiceNeck
+  name: loadout-group-service-neck
+  minLimit: 0
+  loadouts:
+  - GreenTie # Polonium
+  - GreenScarf # Polonium
 
 - type: loadoutGroup
   id: BartenderHead
@@ -577,6 +599,10 @@
   minLimit: 0
   loadouts:
   - LawyerNeck
+  - RedTie
+  - GreenTie # Polonium
+  - GrayTie # Polonium
+  - BlackScarf # Polonium
 
 - type: loadoutGroup #WizDen Weh Job Plush
   id: LawyerJobTrinkets
@@ -658,6 +684,8 @@
   - ChaplainNeckDruidMantle # imp
   - ChaplainNeckSun # imp
   - ChaplainNeckTidal # imp
+  - GrayTie # Polonium
+  - BlackScarf # Polonium
 
 - type: loadoutGroup #WizDen Weh Job Plush
   id: ChaplainJobTrinkets
@@ -1011,6 +1039,9 @@
   loadouts:
   - QuartermasterCloak
   - QuartermasterMantle
+  - BrownTie # Polonium
+  - BrownScarf # Polonium
+  - PurpleScarf # Polonium
 
 - type: loadoutGroup
   id: QuartermasterOuterClothing
@@ -1060,6 +1091,9 @@
   minLimit: 0
   loadouts:
   - CargoTechnicianLiftBelt
+  - BrownTie # Polonium
+  - BrownScarf # Polonium
+  - PurpleScarf # Polonium
 
 - type: loadoutGroup
   id: CargoTechnicianJumpsuit
@@ -1126,6 +1160,15 @@
   loadouts:
   - CargoTechnicianHead
   - SeniorCargoTechnicianBeret #Funky!
+
+- type: loadoutGroup
+  id: SalvageSpecialistNeck
+  name: loadout-group-salvage-specialist-neck
+  minLimit: 0
+  loadouts:
+  - BrownTie # Polonium
+  - BrownScarf # Polonium
+  - PurpleScarf # Polonium
 
 - type: loadoutGroup
   id: SalvageSpecialistJumpsuit
@@ -1202,6 +1245,8 @@
   loadouts:
   - ChiefEngineerCloak
   - ChiefEngineerMantle
+  - OrangeTie # Polonium
+  - OrangeScarf # Polonium
 
 - type: loadoutGroup
   id: ChiefEngineerOuterClothing
@@ -1264,6 +1309,16 @@
   loadouts:
   - EngineeringNormGoggles
   - EngineeringJamGoggles
+
+- type: loadoutGroup # Polonium
+  id: StationEngineerNeck
+  name: loadout-group-station-engineer-neck
+  minLimit: 0
+  loadouts:
+  - ResearchDirectorMantle
+  - ResearchDirectorCloak
+  - OrangeTie # Polonium
+  - OrangeScarf # Polonium
 
 - type: loadoutGroup
   id: StationEngineerJumpsuit
@@ -1423,6 +1478,8 @@
   loadouts:
   - ResearchDirectorMantle
   - ResearchDirectorCloak
+  - ScientistTie
+  - PurpleScarf
 
 - type: loadoutGroup
   id: ResearchDirectorJumpsuit
@@ -1477,6 +1534,7 @@
   minLimit: 0
   loadouts:
   - ScientistTie
+  - PurpleScarf
 
 - type: loadoutGroup
   id: ScientistJumpsuit
@@ -1602,6 +1660,8 @@
   - HeadofSecurityCloak
   - HeadofSecurityMantle
   - Bodycam # Goobstation - Body cameras
+  - RedTie
+  - RedScarf
 
 - type: loadoutGroup
   id: HeadofSecurityOuterClothing
@@ -1643,6 +1703,8 @@
   minLimit: 0
   loadouts:
   - Bodycam # Goobstation - Body cameras
+  - RedTie
+  - RedScarf
 
 - type: loadoutGroup
   id: WardenOuterClothing
@@ -1711,6 +1773,8 @@
   minLimit: 0
   loadouts:
   - Bodycam # Goobstation - Body cameras
+  - RedTie
+  - RedScarf
 
 - type: loadoutGroup
   id: SecurityOuterClothing
@@ -1771,6 +1835,7 @@
   minLimit: 0
   loadouts:
   - DetectiveTie
+  - BlackScarf
   - Bodycam # Goobstation - Body cameras
 
 - type: loadoutGroup
@@ -1912,6 +1977,9 @@
   - MedicalStethoscope
   - ChiefMedicalOfficerCloak
   - ChiefMedicalOfficerMantle
+  - BlueTie
+  - BlueScarf
+  - LightBlueScarf
 
 - type: loadoutGroup
   id: ChiefMedicalOfficerShoes
@@ -1997,6 +2065,9 @@
   minLimit: 0
   loadouts:
   - MedicalStethoscope
+  - BlueTie
+  - BlueScarf
+  - LightBlueScarf
 
 - type: loadoutGroup
   id: MedicalDoctorOuterClothing

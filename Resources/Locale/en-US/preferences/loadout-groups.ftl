@@ -75,6 +75,9 @@ loadout-group-passenger-outerclothing = Passenger outer clothing
 loadout-group-passenger-shoes = Passenger shoes
 loadout-group-passenger-neck = Passenger neck
 
+loadout-group-civilian-neck = Civilian neck
+loadout-group-service-neck = Service neck
+
 loadout-group-bartender-head = Bartender head
 loadout-group-bartender-jumpsuit = Bartender jumpsuit
 loadout-group-bartender-outerclothing = Bartender outer clothing
@@ -145,6 +148,7 @@ loadout-group-cargo-technician-id = Cargo Technician ID
 
 loadout-group-salvage-specialist-head = Salvage Specialist head
 loadout-group-salvage-specialist-jumpsuit = Salvage Specialist jumpsuit
+loadout-group-salvage-specialist-neck = Salvage Specialist neck
 loadout-group-salvage-specialist-backpack = Salvage Specialist backpack
 loadout-group-salvage-specialist-outerclothing = Salvage Specialist outer clothing
 loadout-group-salvage-specialist-shoes = Salvage Specialist shoes
@@ -162,6 +166,7 @@ loadout-group-technical-assistant-jumpsuit = Technical Assistant jumpsuit
 
 loadout-group-station-engineer-head = Station Engineer head
 loadout-group-station-engineer-jumpsuit = Station Engineer jumpsuit
+loadout-group-station-engineer-neck = Station Engineer neck
 loadout-group-station-engineer-backpack = Station Engineer backpack
 loadout-group-station-engineer-outerclothing = Station Engineer outer clothing
 loadout-group-station-engineer-belt = Station Engineer belt

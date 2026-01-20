@@ -119,6 +119,7 @@
   id: JobBartender
   groups:
   - BartenderHead
+  - ServiceNeck # Polonium
   - BartenderJumpsuit
   - CommonBackpack
   - BartenderOuterClothing
@@ -132,6 +133,7 @@
 - type: roleLoadout
   id: JobServiceWorker
   groups:
+  - ServiceNeck # Polonium
   - ServiceJumpsuit
   - CommonBackpack
   - GenericShoes
@@ -146,6 +148,7 @@
   groups:
   - ChefHead
   - ChefMask
+  - ServiceNeck # Polonium
   - ChefJumpsuit
   - CommonBackpack
   - ChefOuterClothing
@@ -159,6 +162,7 @@
 - type: roleLoadout
   id: JobLibrarian
   groups:
+  - CivilianNeck # Polonium
   - LibrarianJumpsuit
   - CommonBackpack
   - GenericShoes
@@ -204,6 +208,7 @@
   id: JobJanitor
   groups:
   - JanitorHead
+  - ServiceNeck # Polonium
   - JanitorJumpsuit
   - JanitorGloves
   - CommonBackpack
@@ -220,6 +225,7 @@
   id: JobBotanist
   groups:
   - BotanistHead
+  - ServiceNeck # Polonium
   - BotanistJumpsuit
   - BotanistBackpack
   - BotanistOuterClothing
@@ -264,6 +270,7 @@
   id: JobMusician
   canCustomizeName: true
   groups:
+  - CivilianNeck # Polonium
   - MusicianJumpsuit
   - CommonBackpack
   - MusicianOuterClothing
@@ -311,6 +318,7 @@
   id: JobSalvageSpecialist
   groups:
   - SalvageSpecialistHead
+  - CargoTechnicianNeck # Polonium
   - SalvageSpecialistJumpsuit
   - SalvageSpecialistBackpack
   - SalvageSpecialistOuterClothing
@@ -342,6 +350,7 @@
 - type: roleLoadout
   id: JobTechnicalAssistant
   groups:
+  - StationEngineerNeck # Polonium
   - TechnicalAssistantJumpsuit
   - StationEngineerBackpack
   - SurvivalExtended
@@ -353,6 +362,7 @@
   groups:
   - StationEngineerHead
   - EngineeringGoggles #Funky
+  - StationEngineerNeck # Polonium
   - StationEngineerJumpsuit
   - StationEngineerBackpack
   - StationEngineerOuterClothing
@@ -416,6 +426,7 @@
 - type: roleLoadout
   id: JobResearchAssistant
   groups:
+  - ScientistNeck # Polonium
   - ResearchAssistantJumpsuit
   - ScientistBackpack
   - Glasses
@@ -517,6 +528,7 @@
   groups:
   - SecurityCadetJumpsuit
   - SecurityGlasses #Funky
+  - SecurityNeck # Polonium
   - SecurityBackpack
   - SecurityGloves # Funky
   - SecurityShoes
@@ -617,6 +629,7 @@
   - GenericShoes
   - Glasses
   - Survival
+  - ServiceNeck # Polonium
   - Trinkets
   - ZookeeperJobTrinkets
   - GroupSpeciesBreathTool
@@ -630,6 +643,7 @@
   - GenericShoes
   - Glasses
   - Survival
+  - CivilianNeck # Polonium
   - Trinkets
   - ReporterJobTrinkets
   - GroupSpeciesBreathTool
@@ -655,6 +669,7 @@
   - CommonBackpack
   - Glasses
   - Survival
+  - CivilianNeck # Polonium
   - Trinkets
   - BoxerJobTrinkets
   - GroupSpeciesBreathTool
