@@ -36,7 +36,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 01/20/2026 22:47:31
-  entityCount: 2641
+  entityCount: 2645
 maps:
 - 1
 grids:
@@ -1492,6 +1492,13 @@ entities:
     - type: RadiationGridResistance
     - type: SpreaderGrid
     - type: ImplicitRoof
+- proto: AccessConfigurator
+  entities:
+  - uid: 2645
+    components:
+    - type: Transform
+      pos: 25.10727,2.515442
+      parent: 2
 - proto: AirAlarm
   entities:
   - uid: 3
@@ -6454,12 +6461,6 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 24.5,3.5
-      parent: 2
-  - uid: 867
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 21.5,-0.5
       parent: 2
   - uid: 868
     components:
@@ -12287,6 +12288,13 @@ entities:
     - type: Transform
       pos: -14.5,4.5
       parent: 2
+- proto: LockerBrigmedicFilled
+  entities:
+  - uid: 2643
+    components:
+    - type: Transform
+      pos: 14.5,1.5
+      parent: 2
 - proto: LockerCaptainFilledHardsuit
   entities:
   - uid: 1647
@@ -14552,6 +14560,13 @@ entities:
     - type: Transform
       pos: -13.5,4.5
       parent: 2
+- proto: SpawnPointBrigmedic
+  entities:
+  - uid: 2644
+    components:
+    - type: Transform
+      pos: 15.5,0.5
+      parent: 2
 - proto: SpawnPointCaptain
   entities:
   - uid: 1981
@@ -14663,6 +14678,13 @@ entities:
     components:
     - type: Transform
       pos: -6.5,-3.5
+      parent: 2
+- proto: SpawnPointNanotrasenRepresentative
+  entities:
+  - uid: 2642
+    components:
+    - type: Transform
+      pos: 22.5,1.5
       parent: 2
 - proto: SpawnPointObserver
   entities:
@@ -15519,6 +15541,13 @@ entities:
     components:
     - type: Transform
       pos: -7.5,5.5
+      parent: 2
+- proto: VendingMachineCart
+  entities:
+  - uid: 867
+    components:
+    - type: Transform
+      pos: 21.5,-0.5
       parent: 2
 - proto: VendingMachineChefvend
   entities:
