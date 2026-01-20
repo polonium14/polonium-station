@@ -20,7 +20,7 @@
 - type: gameMap
   id: Reach
   mapName: 'Reach'
-  mapPath: /Maps/_Polonium/reach.yml # Polonium - christmas update
+  mapPath: /Maps/_Polonium/reach.yml
   minPlayers: 0
   maxPlayers: 15
   stations:
@@ -52,6 +52,8 @@
             StationEngineer: [ 2, 3 ]
             Scientist: [ 1, 1 ]
             Passenger: [ -1, -1 ]
+            Clown: [ 1, 1 ]
+            Mime: [ 1, 1 ]
 
         # Goobstation blob-config-start LOW
         - type: StationBlobConfig
