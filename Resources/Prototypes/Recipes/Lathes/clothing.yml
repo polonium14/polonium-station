@@ -1071,6 +1071,11 @@
   id: ClothingNeckTieGreen
   result: ClothingNeckTieGreen
 
+- type: latheRecipe
+  parent: BaseNeckClothingRecipe
+  id: ClothingNeckTieCentcom
+  result: ClothingNeckTieCentcom
+
 # Scarfs
 - type: latheRecipe
   parent: BaseNeckClothingRecipe
@@ -1111,6 +1116,11 @@
   parent: BaseNeckClothingRecipe
   id: ClothingNeckScarfStripedPurple
   result: ClothingNeckScarfStripedPurple
+
+- type: latheRecipe # Polonium
+  parent: BaseNeckClothingRecipe
+  id: ClothingNeckScarfStripedCentcom
+  result: ClothingNeckScarfStripedCentcom
 
 # Funky stuff!
 

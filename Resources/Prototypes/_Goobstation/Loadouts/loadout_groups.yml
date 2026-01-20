@@ -33,6 +33,8 @@
   minLimit: 0
   loadouts:
   - NanotrasenRepresentativeMantle
+  - CentcomTie # Polonium
+  - CentcomScarf # Polonium
 
 - type: loadoutGroup
   id: NanotrasenRepresentativeBackpack

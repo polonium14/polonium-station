@@ -1,13 +1,13 @@
 - type: entity
-  parent: ClothingNeckBase
-  id: ClothingNeckTieCentcomm
+  parent: [ ClothingNeckBase, BaseCentcommContraband ]
+  id: ClothingNeckTieCentcom
   name: centcomm tie
   description: A tie in centcomm's colors
   components:
   - type: Sprite
-    sprite: _Polonium/Clothing/Neck/Ties/centcommtie.rsi
+    sprite: _Polonium/Clothing/Neck/Ties/centcomtie.rsi
   - type: Clothing
-    sprite: _Polonium/Clothing/Neck/Ties/centcommtie.rsi
+    sprite: _Polonium/Clothing/Neck/Ties/centcomtie.rsi
   - type: Tag
     tags:
     - ClothMade

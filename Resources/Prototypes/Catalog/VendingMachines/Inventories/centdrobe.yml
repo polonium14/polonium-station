@@ -28,7 +28,7 @@
     ClothingOuterWinterCentcom: 3
     ClothingOuterCoatExpensive: 1
     ClothingNeckScarfStripedCentcom: 3
-    ClothingNeckTieCentcomm: 3 # Polonium
+    ClothingNeckTieCentcom: 3 # Polonium
     ClothingNeckCloakCentcom: 3
   contrabandInventory:
     ToyFigurineCaptain: 1

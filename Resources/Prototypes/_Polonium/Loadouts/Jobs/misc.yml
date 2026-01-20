@@ -31,9 +31,9 @@
     neck: ClothingNeckTieGreen
 
 - type: loadout
-  id: CentcommTie
+  id: CentcomTie
   equipment:
-    neck: ClothingNeckTieCentcomm
+    neck: ClothingNeckTieCentcom
 
 # Scarfs loadout
 - type: loadout
@@ -75,3 +75,8 @@
   id: PurpleScarf
   equipment:
     neck: ClothingNeckScarfStripedPurple
+
+- type: loadout
+  id: CentcomScarf
+  equipment:
+    neck: ClothingNeckScarfStripedCentcom

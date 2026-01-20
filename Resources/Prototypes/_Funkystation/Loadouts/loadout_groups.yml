@@ -18,6 +18,14 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+- type: loadoutGroup # Polonium
+  id: InternalAffairsAgentNeck
+  name: loadout-group-iaa-neck
+  minLimit: 0
+  loadouts:
+  - CentcomTie
+  - CentcomScarf
+
 - type: loadoutGroup
   id: InternalAffairsAgentJumpsuit
   name: loadout-group-iaa-jumpsuit
@@ -97,6 +105,14 @@
   loadouts:
   - MagistrateOfficerBeret
   - NanotrasenRepresentativeMAA
+
+- type: loadoutGroup # Polonium
+  id: MagistrateNeck
+  name: loadout-group-magistrate-neck
+  minLimit: 0
+  loadouts:
+  - CentcomTie
+  - CentcomScarf
 
 - type: loadoutGroup
   id: MagistrateJumpsuit

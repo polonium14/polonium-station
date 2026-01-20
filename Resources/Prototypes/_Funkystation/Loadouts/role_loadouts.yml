@@ -38,6 +38,7 @@
 - type: roleLoadout
   id: JobInternalAffairsAgent
   groups:
+  - InternalAffairsAgentNeck # Polonium
   - InternalAffairsAgentJumpsuit
   - InternalAffairsAgentOuterClothing
   - InternalAffairsAgentGloves
@@ -53,6 +54,7 @@
   id: JobMagistrate
   groups:
   - MagistrateHead
+  - MagistrateNeck # Polonium
   - MagistrateJumpsuit
   - MagistrateOuterClothing
   - MagistrateGloves
