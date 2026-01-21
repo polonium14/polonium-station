@@ -37,7 +37,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 01/20/2026 22:47:31
-  entityCount: 2645
+  entityCount: 2647
 maps:
 - 1
 grids:
@@ -6487,12 +6487,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 23.5,1.5
       parent: 2
-  - uid: 872
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 23.5,-0.5
-      parent: 2
 - proto: ChemDispenser
   entities:
   - uid: 873
@@ -12427,6 +12421,20 @@ entities:
     - type: Transform
       pos: 8.5,-8.5
       parent: 2
+- proto: MaterialCloth
+  entities:
+  - uid: 2646
+    components:
+    - type: Transform
+      pos: 23.564049,0.35162354
+      parent: 2
+- proto: MaterialDurathread
+  entities:
+  - uid: 2647
+    components:
+    - type: Transform
+      pos: 23.548416,0.24224854
+      parent: 2
 - proto: MedicalBed
   entities:
   - uid: 1663
@@ -15531,6 +15539,13 @@ entities:
           - Forward
         - - Middle
           - Off
+- proto: UniformPrinter
+  entities:
+  - uid: 872
+    components:
+    - type: Transform
+      pos: 23.5,-0.5
+      parent: 2
 - proto: VendingMachineBooze
   entities:
   - uid: 2108
