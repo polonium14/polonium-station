@@ -20,3 +20,5 @@ ent-CrateMaterialPaper = skrzynia papieru
     .desc = 90 arkuszy papieru.
 ent-CrateMaterialRandom = nadwyżka materiałów
     .desc = Nadwyżka materiałów skądś tam.
+ent-CrateMaterialSilo = skrzynia materiałów do silosu
+    .desc = Paczka zawierająca wszystkie materiały potrzebne do stworzenia silosu na materiały.
