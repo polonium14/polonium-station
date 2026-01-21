@@ -178,7 +178,7 @@
           # for some reason, the selector here adds 1 to whatever value it generates,
           # so this is actually 2-4
 
-- type: entity
+- type: entity # Polonium
   id: CrateMaterialSilo
   parent: CrateGenericSteel
   name: material silo crate

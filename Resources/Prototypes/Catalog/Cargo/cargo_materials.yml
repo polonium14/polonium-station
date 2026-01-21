@@ -128,7 +128,7 @@
   category: cargoproduct-category-name-materials
   group: market
 
-- type: cargoProduct
+- type: cargoProduct # Polonium
   id: MaterialSilo
   icon:
     sprite: Structures/Machines/silo.rsi
