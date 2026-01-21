@@ -39,3 +39,25 @@
       - id: ClothingOuterCoatRobo
       - id: ClothingHeadHatWelding
       - id: ClothingBeltUtilityFilled
+
+- type: entity # Polonium
+  id: LockerScienceRoboticsFilled
+  suffix: Filled
+  parent: LockerScientist
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingHandsGlovesLatex
+    - id: ClothingHeadsetScience
+    - id: ClothingMaskSterile
+    - id: ClothingOuterCoatRnd
+    - id: AnomalyScanner
+    - id: NodeScanner
+    - id: NetworkConfigurator
+      prob: 0.5
+    - id: ClothingHandsGlovesRobohands
+    - id: ClothingHeadsetRobotics
+    - id: ClothingMaskGas
+    - id: ClothingOuterCoatRobo
+    - id: ClothingHeadHatWelding
+    - id: ClothingBeltUtilityFilled

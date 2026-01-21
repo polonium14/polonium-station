@@ -2084,7 +2084,7 @@ entities:
   - uid: 69
     components:
     - type: Transform
-      pos: -4.390625,7.619689
+      pos: -2.390625,7.619689
       parent: 2
 - proto: ArrivalsShuttleTimer
   entities:
@@ -12370,7 +12370,7 @@ entities:
     - type: Transform
       pos: 19.5,3.5
       parent: 2
-- proto: LockerScienceFilled
+- proto: LockerScienceRoboticsFilled
   entities:
   - uid: 879
     components:
@@ -13370,11 +13370,6 @@ entities:
     components:
     - type: Transform
       pos: -20.5,3.5
-      parent: 2
-  - uid: 1798
-    components:
-    - type: Transform
-      pos: -4.5,7.5
       parent: 2
   - uid: 1800
     components:
@@ -15639,6 +15634,13 @@ entities:
     - type: Transform
       pos: -13.5,6.5
       parent: 2
+- proto: VendingMachineRobotics
+  entities:
+  - uid: 1798
+    components:
+    - type: Transform
+      pos: -4.5,7.5
+      parent: 2
 - proto: VendingMachineSalvage
   entities:
   - uid: 2121
@@ -17221,7 +17223,7 @@ entities:
   - uid: 2420
     components:
     - type: Transform
-      pos: -4.330495,7.357918
+      pos: -2.330495,7.357918
       parent: 2
 - proto: WelderIndustrialAdvanced
   entities:
