@@ -1,0 +1,18 @@
+﻿<Document>
+  # Podstawowa Zasada 5 - Nie używaj metod spoza gry do komunikowania się z innymi graczami
+  To jest zasada zerowej tolerancji.
+
+  Nie używaj żadnych zewnętrznych środków komunikacji do rozmowy z innymi graczami, którzy są połączeni z tym samym serwerem lub którzy byli połączeni z tym samym serwerem podczas bieżącej rundy. Jest to określane jako "metacomming" i obejmuje wszelkie środki komunikacji, w tym tekst, głos, obrazy i wideo. Obejmuje to aplikacje takie jak Discord, Steam i inne platformy, wraz z komunikacją osobistą.
+
+  Nawet jeśli informacje nie są udostępniane ani nadużywane, nadal może to być uważane za naruszenie tej zasady. Ze względu na trudność w określeniu, czy informacje są udostępniane, prawie zawsze będzie się zakładać, że ludzie, którzy wysyłają wiadomości do innego gracza, z którym są w rundzie, lub którzy są w rozmowie głosowej z innym graczem podczas rundy, udostępniają informacje o rundzie. Ze względu na trudność w określeniu, czy użytkownicy nadużywają informacji, które udostępniają, prawie zawsze będzie się zakładać, że informacje są nadużywane.
+
+  Jedynym wyjątkiem od tej zasady jest sytuacja, gdy [color=#a4885c]wszyscy[/color] gracze są w lobby serwera.
+
+  ## Nauczanie nowych graczy
+  Nauczanie graczy nie jest zwolnione z tej zasady. Jeśli chcesz nauczyć nowego gracza, zaleca się albo oglądanie streamu z jego grą, nie grając samemu, albo komunikowanie się z nim używając tylko metod komunikacji w grze.
+
+  ## Streamowanie
+  Publiczne transmisje na żywo nie są zwolnione z tej zasady, ale mają inną odpowiedzialność. Używanie informacji z publicznej transmisji na żywo gry (stream sniping) jest naruszeniem tej zasady. Oglądanie publicznej transmisji na żywo gry podczas połączenia z tym samym serwerem jest naruszeniem tej zasady. Pozwalanie ludziom oglądającym publiczną transmisję na żywo na udostępnianie informacji o bieżącej rundzie, na przykład przez czat streamu, jest naruszeniem tej zasady. Używanie tych informacji jest również naruszeniem tej zasady. Udostępnianie informacji o bieżącej rundzie streamerowi jest naruszeniem tej zasady, jeśli te informacje zostały uzyskane z jakiegokolwiek źródła oprócz streamu. Moderatorzy streamu są zobowiązani do egzekwowania tego na platformie streamingowej oprócz jakiegokolwiek egzekwowania w grze przez administratorów gry.
+
+  Publiczne streamowanie samo w sobie nie jest naruszeniem zasady, o ile stream jest odpowiednio moderowany. Streamerzy są zachęcani, ale nie zobowiązani, do używania opóźnienia streamu.
+</Document>
