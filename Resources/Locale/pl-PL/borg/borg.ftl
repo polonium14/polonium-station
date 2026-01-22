@@ -16,7 +16,7 @@ borg-ui-module-counter = { $actual }/{ $max }
 # Transponder
 borg-transponder-disabled-popup = Mózg wypada z góry { $name }!
 borg-transponder-disabling-popup = Twój nadajnik zaczyna blokować dostęp do kadłuba!
-borg-transponder-destroying-popup = Samozniszczenie { $name } zaczyna pikać!
+borg-transponder-destroying-popup = Samoniszczenie { $name } zaczyna pikać!
 borg-transponder-emagged-disabled-popup = Światła twojego nadajnika zgasły!
 borg-transponder-emagged-destroyed-popup = Bezpiecznik twojego nadajnika przepalił się!
 

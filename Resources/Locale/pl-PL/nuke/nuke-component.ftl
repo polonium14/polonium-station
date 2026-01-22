@@ -2,8 +2,8 @@ nuke-component-cant-anchor-floor = Śruby boltujące nie mogą zablokować się 
 nuke-component-cant-anchor-toggle = Do przełączenia śrub boltujących potrzebny jest dysk uwierzytelniający!
 nuke-component-announcement-sender = Głowica nuklearna
 nuke-component-announcement-armed = Uwaga! Mechanizm samoniszczenia stacji został uruchomiony { $location }. Pozostało { $time } sekund do detonacji. Jeśli zostało to wykonane przez pomyłkę, mechanizm nadal można rozbroić.
-nuke-component-announcement-unarmed = Mechanizm samozniszczenia stacji został dezaktywowany! Miłego dnia!
-nuke-component-announcement-send-codes = Uwaga! Kody samozniszczenia zostały wysłane do wyznaczonych faksów.
+nuke-component-announcement-unarmed = Mechanizm samoniszczenia stacji został dezaktywowany! Miłego dnia!
+nuke-component-announcement-send-codes = Uwaga! Kody samoniszczenia zostały wysłane do wyznaczonych faksów.
 nuke-component-doafter-warning = Zaczynasz majstrować przy przewodach i pokrętłach, aby rozbroić głowicę nuklearną. To może zająć trochę czasu.
 nuke-disk-component-microwave = Dysk iskrzy i syczy trochę, ale wydaje się w większości nienaruszony?
 # Nuke UI

@@ -34,7 +34,7 @@ alert-level-delta-announcement = Stacji grozi obecnie bezpośrednie unicestwieni
 alert-level-delta-instructions = Załodze zaleca się śłuchania poleceń dowództwa w celu uzyskania informacji.
 alert-level-epsilon = Epsilon
 alert-level-epsilon-announcement =
-    Centralne Dowództwo ogłosiło poziom Epsilon.
+    Centralne Dowództwo ogłosiło kod Epsilon.
     Wszystkie kontrakty zostały zerwane.
 alert-level-epsilon-instructions = [BŁĄD WEWNĘTRZNY]
 alert-level-cyan = Cyanowy

@@ -6,10 +6,10 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 # for dinos
-alert-level-amber = Kod Amber
+alert-level-amber = Amber
 alert-level-amber-announcement = Wykryto pola zakłóceń czasowych pochodzące z sekund w przeszłości. Członkowie załogi powinni przygotować się na zbliżające się wojny dinozaurów.
 alert-level-amber-instructions = Broń stacji przed mezozoiczną hordą. To są Wojny Dinozaurów.
 # cosmic cult
-alert-level-octarine = Kod Oktarynowy
+alert-level-octarine = Oktarynowy
 alert-level-octarine-announcement = Kataklizmowa anomalia bluespace zagraża otoczeniu realspace'u. Służby bezpieczeństwa zostały upoważnione do użycia broni śmiercionośnej. Członkowie załogi powinni słuchać przełożonych w celu uzyskania dalszych informacji. Nieprzestrzeganie tych zaleceń będzie skutkować użyciem siły śmiercionośnej.
 alert-level-octarine-instructions = TO JEST KONIEC TO JEST KONIEC TO JEST KONIEC
