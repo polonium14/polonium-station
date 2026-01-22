@@ -1,4 +1,4 @@
-ent-MachineArtifactAnalyzer = artifact analyzer
-    .desc = A platform capable of performing analysis on various types of artifacts.
-ent-MachineArtifactCrusher = artifact crusher
-    .desc = Best not to let your fingers get stuck...
+ent-MachineArtifactAnalyzer = analizator artefaktów
+    .desc = Platforma zdolna do przeprowadzania analizy różnych typów artefaktów.
+ent-MachineArtifactCrusher = kruszarka artefaktów
+    .desc = Lepiej nie przytrzaskuj sobie palców...

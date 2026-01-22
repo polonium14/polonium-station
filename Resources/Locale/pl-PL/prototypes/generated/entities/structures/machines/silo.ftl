@@ -1,2 +1,2 @@
-ent-MachineMaterialSilo = material silo
-    .desc = An advanced machine, capable of using bluespace technology to transmit materials to nearby machines.
+ent-MachineMaterialSilo = silos materiałów
+    .desc = Zaawansowana maszyna, zdolna do wykorzystania technologii bluespace do przesyłania materiałów do pobliskich maszyn.

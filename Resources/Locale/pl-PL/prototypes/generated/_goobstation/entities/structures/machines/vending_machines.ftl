@@ -1,5 +1,5 @@
 ent-VendingMachineFitness = SweatMAX
-    .desc = Automat z pomocami do ćwiczeń i suplementami diety, który żeruje na Twoich kompleksach.
+    .desc = Automat z akcesoriami treningowymi i suplementami. Został zaprogramowany tak, aby żerować na Twoich kompleksach i sprzedawać Ci marzenia o sylwetce, której nigdy nie osiągniesz.
 ent-VendingMachineHotfood = gorące przekąski
     .desc = Stary automat obiecujący "gorące" jedzenie. Masz poważne wątpliwości, czy cokolwiek w środku nadaje się jeszcze do spożycia.
 ent-VendingMachineSolsnack = Mars Mart

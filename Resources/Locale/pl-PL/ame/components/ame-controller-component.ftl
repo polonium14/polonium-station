@@ -1,5 +1,5 @@
 ame-controller-component-fuel-slot-fail-whitelist = Nie możesz tego włożyć do kontrolera...
-ame-controller-component-fuel-slot-fail-locked = Wyłącz AME, zanim zaczniesz manipulować paliwem.
+ame-controller-component-fuel-slot-fail-locked = Wyłącz SAM, zanim zaczniesz manipulować paliwem.
 ame-controller-component-fuel-slot-success-insert = Włożyłeś słoik do gniazda paliwa.
 
 ## UI

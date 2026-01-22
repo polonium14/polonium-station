@@ -1,9 +1,9 @@
-ent-ArcadeBase = arcade
-    .desc = An arcade cabinet.
-ent-SpaceVillainArcade = space villain arcade
+ent-ArcadeBase = automat do gier
+    .desc = Automat do gier.
+ent-SpaceVillainArcade = Kosmiczny Złoczyńca
     .desc = { ent-ArcadeBase.desc }
 ent-SpaceVillainArcadeFilled = { ent-SpaceVillainArcade }
-    .suffix = Filled
+    .suffix = Wypełniony
     .desc = { ent-SpaceVillainArcade.desc }
-ent-BlockGameArcade = NT block game
-    .desc = An arcade cabinet with a strangely familiar game.
+ent-BlockGameArcade = NTetrys
+    .desc = Automat do gier z dziwnie znajomą grą.

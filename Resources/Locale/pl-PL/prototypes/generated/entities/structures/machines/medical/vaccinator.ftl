@@ -1,2 +1,2 @@
-ent-Vaccinator = vaccinator
-    .desc = A machine that creates vaccines.
+ent-Vaccinator = szczepioniarka
+    .desc = Urządzenie tworzące szczepionki.

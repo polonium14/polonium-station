@@ -1,8 +1,8 @@
-ent-NuclearBomb = nuclear fission explosive
-    .desc = You probably shouldn't stick around to see if this is armed.
+ent-NuclearBomb = głowica nuklearna
+    .desc = Prawdopodobnie nie powinieneś zostawać, aby sprawdzić, czy jest on uzbrojony.
 ent-NuclearBombUnanchored = { ent-NuclearBomb }
     .suffix = unanchored
     .desc = { ent-NuclearBomb.desc }
-ent-NuclearBombKeg = nuclear fission explosive
-    .desc = You probably shouldn't stick around to see if this is armed. It has a tap on the side.
+ent-NuclearBombKeg = głowica nuklearna
+    .desc = Prawdopodobnie nie powinieneś zostawać, aby sprawdzić, czy jest on uzbrojony. Ma kran po boku.
     .suffix = keg

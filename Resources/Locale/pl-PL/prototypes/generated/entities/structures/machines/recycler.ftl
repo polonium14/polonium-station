@@ -1,2 +1,2 @@
-ent-Recycler = recycler
-    .desc = A large crushing machine used to recycle small items inefficiently. There are lights on the side.
+ent-Recycler = maszyna do recyklingu
+    .desc = Duża maszyna miażdżąca używana do nieefektywnego recyklingu małych przedmiotów. Po bokach znajdują się światła.
