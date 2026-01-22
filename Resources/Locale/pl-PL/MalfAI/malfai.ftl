@@ -199,3 +199,10 @@ malfai-store-window-title = Sklep ulepszeń Uszkodzonej SI
 malfai-store-insufficient-cpu = Niewystarczająca ilość CPU
 malfai-store-purchase-success = Zakupiono ulepszenie: { $itemName }
 malfai-store-purchase-failed = Zakup nieudany
+# =====================
+# Round End
+# =====================
+malfai-round-end-result = Uszkodzona SI
+# Confused why I have to do this..
+objective-issuer-malfai = Uszkodzona SI
+malfai-round-end-name-user = [color=white]{ $name }[/color] ([color=gray]{ $user }[/color])
