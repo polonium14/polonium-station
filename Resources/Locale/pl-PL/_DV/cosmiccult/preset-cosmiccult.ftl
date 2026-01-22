@@ -66,7 +66,7 @@ cosmiccult-elimination-shuttle-call =
     Na podstawie skanów z naszych czujników dalekiego zasięgu anomalia Λ-CDM ustąpiła. Dziękujemy za zachowanie ostrożności. Automatycznie wezwano wahadłowiec ewakuacyjny w celu przeprowadzenia procedur odkażania i podsumowania. Przewidywany czas przybycia: { $time } { $units }.
 
     Jeżeli wpływ psychologiczny anomalii jest nieistotny, możliwe jest cofnięcie ewakuacji, aby przedłużyć zmianę.
-cosmiccult-elimination-announcement = Na podstawie skanów z naszych czujników dalekiego zasięgu anomalia Λ-CDM ustąpiła. Dziękujemy za zachowanie ostrożności. Wahadłowiec ewakuacyjny jest już w drodze. Prosimy bezpiecznie powrócić do Centrali w celu przeprowadzenia procedur odkażania i podsumowania.
+cosmiccult-elimination-announcement = Na podstawie skanów z naszych czujników dalekiego zasięgu anomalia Λ-CDM ustąpiła. Dziękujemy za zachowanie ostrożności. Wahadłowiec ewakuacyjny jest już w drodze. Prosimy bezpiecznie powrócić do Centralnego Dowództwa w celu przeprowadzenia procedur odkażania i podsumowania.
 
 ## BRIEFINGS
 
