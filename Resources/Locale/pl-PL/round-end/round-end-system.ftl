@@ -1,6 +1,6 @@
 ## RoundEndSystem
 
-round-end-system-shuttle-called-announcement = Wezwano wahadłowiec ewakuacyjny. Szacowany czas przybycia: { $time } { $units }.
+round-end-system-shuttle-called-announcement = Wezwano wahadłowiec ewakuacyjny. Przewidywany czas przybycia: { $time } { $units }.
 round-end-system-shuttle-already-called-announcement = Wysłano już wahadłowiec ewakuacyjny.
 round-end-system-shuttle-auto-called-announcement = Automatyczny wahadłowiec zmiany załogi został wysłany. Przewidywany czas przybycia: { $time } { $units }. Mogą Państwo cofnąć wahadłowiec, aby przedłużyć zmianę.
 round-end-system-shuttle-recalled-announcement = Wahadłowiec awaryjny został odwołany.
