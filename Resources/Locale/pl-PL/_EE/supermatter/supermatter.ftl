@@ -4,8 +4,8 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-supermatter-announcer = System Silniku Supermaterii
-supermatter-examine-integrity = Integralność silniku wynosi [color=yellow]{ $integrity }%[/color].
+supermatter-announcer = System Silnika Supermaterii
+supermatter-examine-integrity = Integralność silnika wynosi [color=yellow]{ $integrity }%[/color].
 supermatter-healing = Krystaliczna hiperstruktura powraca do bezpiecznych parametrów operacyjnych. Integralność: { $integrity }%.
 supermatter-warning = Ostrzeżenie! Integralność krystalicznej hiperstruktury słabnie! Integralność: { $integrity }%.
 supermatter-emergency = NIEBEZPIECZEŃSTWO! Integralność krystalicznej hiperstruktury osiąga poziomy krytyczne! Integralność: { $integrity }%.

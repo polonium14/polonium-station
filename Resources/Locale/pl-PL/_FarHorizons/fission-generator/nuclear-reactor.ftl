@@ -11,7 +11,7 @@ reactor-anchor-warning = Nieprawidłowa pozycja mocowania.
 
 reactor-smoke-start-message = UWAGA: { $owner } osiągnął niebezpieczną temperaturę: { $temperature }K. Natychmiastowa interwencja w celu zapobieżenia stopieniu.
 reactor-smoke-stop-message = { $owner } ochłodził się poniżej niebezpiecznej temperatury. Miłego dnia.
-reactor-fire-start-message = ALERTA: { $owner } osiągnął KRYTYCZNĄ temperaturę: { $temperature }K. STOPIENIE NIEUCHRONNE.
+reactor-fire-start-message = UWAGA: { $owner } osiągnął KRYTYCZNĄ temperaturę: { $temperature }K. STOPIENIE NIEUCHRONNE.
 reactor-fire-stop-message = { $owner } ochłodził się poniżej krytycznej temperatury. Stopienie zapobiegnięte.
 reactor-temperature-dangerous-message = { $owner } jest w niebezpiecznej temperaturze: { $temperature }K.
 reactor-temperature-critical-message = { $owner } jest w krytycznej temperaturze: { $temperature }K.
