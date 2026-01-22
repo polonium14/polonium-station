@@ -77,8 +77,8 @@
   - type: StorageFill
     contents:
       - id: MaterialWoodPlank
-        amount: 3 # Funky
-
+        amount: 3 # Funky 
+          
 
 - type: entity
   id: CrateMaterialBrass
