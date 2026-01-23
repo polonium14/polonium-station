@@ -1,8 +1,8 @@
-ent-HeadAnimal = animal head
+ent-HeadAnimal = głowa zwierzęcia
     .desc = { ent-PartAnimal.desc }
 ent-BaseCarpPart = { ent-PartAnimal }
     .desc = { ent-PartAnimal.desc }
-ent-TailCarp = carp tail
-    .desc = Unique glands in this tail let space carp fly in a vacuum.
-ent-TorsoCarp = carp torso
+ent-TailCarp = ogon karpia
+    .desc = Unikalne gruczoły w tym ogonie pozwalają karpiowi kosmicznemu latać w próżni.
+ent-TorsoCarp = tułów karpia
     .desc = { ent-BaseCarpPart.desc }
