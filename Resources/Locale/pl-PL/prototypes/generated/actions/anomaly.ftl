@@ -1,2 +1,2 @@
-ent-ActionAnomalyPulse = Anomaly pulse
-    .desc = Release a pulse of energy of your abnormal nature
+ent-ActionAnomalyPulse = Anomalny impuls
+    .desc = Wydaj impuls energii swojej nienormalnej natury

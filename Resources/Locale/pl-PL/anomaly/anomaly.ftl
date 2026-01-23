@@ -39,7 +39,8 @@ anomaly-gorilla-charge-limit =
        *[other] fioletowy
     }]{ $count } { $count ->
         [one] ładunek
-       *[other] ładunki
+        [few] ładunki
+       *[other] ładunków
     }[/color].
 anomaly-gorilla-charge-infinite = Ma [color=gold]nieskończone ładunki[/color]. [italic]Na razie...[/italic]
 anomaly-sync-connected = Anomalia została pomyślnie podłączona
@@ -61,6 +62,7 @@ anomaly-generator-generate = Wygeneruj anomalię
 anomaly-generator-charges =
     { $charges ->
         [one] { $charges } ładunek
+        [few] { $charges } ładunki
        *[other] { $charges } ładunków
     }
 anomaly-generator-announcement = Anomalia została wygenerowana!
