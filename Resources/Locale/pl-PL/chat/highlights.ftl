@@ -1,16 +1,16 @@
 # Rada
-highlights-captain = Kapitan, "Kap", Mostek, Rada Stacji, Rada
-highlights-head-of-personnel = Szef Personelu, "SP", Serwis, Dział Serwisowy, Serwis, Mostek, Rada Stacji, Rada
-highlights-chief-engineer = Inżynier Naczelny, "IN", Dział Inżynierii, Inżynier, "Inż", Mostek, Rada Stacji, Rada
-highlights-chief-medical-officer = Dyrektor Medyczny, "DM", Dział Medyczny, "Med", Mostek, Rada Stacji, Rada
-highlights-head-of-security = Szef Ochrony, "SO", Ochrona, Mostek, Rada Stacji, Rada
-highlights-quartermaster = Kierownik Logistyki, "KL", Dział Logistyki, "Logistyka", "Kargo", Mostek, Rada Stacji, Rada
-highlights-research-director = Kierownik Badań, "KB", RND, Mostek, Rada Stacji, Rada
+highlights-captain = Kapitan, "Kap", Mostek, Dowództwo Stacji, Dowództwo
+highlights-head-of-personnel = Kierownik Personelu, "KP", Serwis, Dział Serwisowy, Serwis, Mostek, Dowództwo Stacji, Dowództwo
+highlights-chief-engineer = Naczelny Inżynier, "NI", Dział Inżynierii, Inżynier, "Inż", Mostek, Dowództwo Stacji, Dowództwo
+highlights-chief-medical-officer = Ordynator Medyczny, "OM", Dział Medyczny, "Med", Mostek, Dowództwo Stacji, Dowództwo
+highlights-head-of-security = Komendant Ochrony, "KO", Ochrona, Mostek, Dowództwo Stacji, Dowództwo
+highlights-quartermaster = Kierownik Logistyki, "KL", Dział Logistyki, "Logistyka", "Cargo", Mostek, Dowództwo Stacji, Dowództwo
+highlights-research-director = Kierownik Badań, "KB", B+R, Mostek, Dowództwo Stacji, Dowództwo
 # Ochrona
 highlights-detective = Detektyw, "Det", Ochrona
 highlights-security-cadet = Kadet Ochrony, Kadet, Ochrona
 highlights-security-officer = Oficer Ochrony, Oficer, Ochrona
-highlights-warden = Strażnik, Ochrona
+highlights-warden = Nadzorca, Ochrona
 # Logistyka
 highlights-cargo-technician = Technik Logistyki, Logistyk, Dział Logistyki, Logistyka, "Cargo"
 highlights-salvage-specialist = Technik Odzysku, Odzysk, Dział Logistyki, Logistyka, "Cargo"
@@ -24,13 +24,13 @@ highlights-medical-doctor = Doktor, Lekarz, "Dok", Dział Medyczny, "Med"
 highlights-medical-intern = Stażysta Medyczny, Stażysta, Dział Medyczny, "Med"
 highlights-paramedic = Ratownik, "Rat", Dział Medyczny, "Med"
 # Naukowcy
-highlights-scientist = Naukowiec, RND
-highlights-research-assistant = Asystent Naukowy, RND
+highlights-scientist = Naukowiec, "B+R", Dział Badań i Rozwoju
+highlights-research-assistant = Asystent Naukowy, "B+R", Dział Badań i Rozwoju
 # Cywile (Dział Obsługi)
-highlights-bartender = Bartender, Barkeeper, Barkeep, "Bar"
+highlights-bartender = Barman, "Bar"
 highlights-botanist = Botanik, Hydroponika
 highlights-chaplain = Kapłan
-highlights-chef = Chef, "Cook", Kitchen
+highlights-chef = Szef, Kucharz, Kuchnia
 highlights-clown = Klaun
 highlights-janitor = Sprzątacz, "Sprz"
 highlights-lawyer = Prawnik, "Prawo"

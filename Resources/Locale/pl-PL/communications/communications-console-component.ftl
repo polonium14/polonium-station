@@ -24,7 +24,7 @@ comms-console-announcement-title-nukie = Specjaliści Nuklearni Syndykatu
 comms-console-announcement-title-station-ai = SI Stacji
 comms-console-announcement-title-wizard = Czarodziej
 # Funkystation
-comms-console-announcement-title-science = Dział Rozwoju
+comms-console-announcement-title-science = Dział Badań i Rozwoju
 comms-console-announcement-title-cargo = Dział Logistyki
 comms-console-announcement-title-security = Ochrona
 comms-console-announcement-title-medical = Dział Medyczny
