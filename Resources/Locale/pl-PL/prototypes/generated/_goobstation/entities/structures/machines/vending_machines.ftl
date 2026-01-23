@@ -6,5 +6,5 @@ ent-VendingMachineSolsnack = Mars Mart
     .desc = Automat w stylu SolCentric, serwujący smakołyki prosto z domu.
 ent-VendingMachineWeeb = Niepon-tan
     .desc = Niepokojąco etniczny automat wypełniony wysokosłodzonymi, niskokalorycznymi... cóż, powiedzmy, że przekąskami.
-ent-VendingMachineMailDrobe = PocztoDrob
+ent-VendingMachineMailDrobe = PocztoDrób
     .desc = Ani rozbłyski słoneczne, ani meteoryty, ani pożary plazmy, ani pustka kosmiczna nie powstrzymają tych kurierów przed szybkim ukończeniem wyznaczonych im obchodów.
