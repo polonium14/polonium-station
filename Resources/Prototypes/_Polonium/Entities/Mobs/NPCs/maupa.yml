@@ -31,10 +31,10 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      175: Dead
+      150: Dead
   - type: SlowOnDamage
     speedModifierThresholds:
-      25: 1.35
+      125: 1.35
   - type: MeleeWeapon
     soundHit:
       path: "/Audio/_Polonium/Weapons/Melee/punch.ogg"
@@ -47,7 +47,7 @@
     damage:
       types:
         Slash: 3.5
-        Blunt: 3
+        Blunt: 2.5
   - type: NpcFactionMember
     factions:
     - SimpleHostile
