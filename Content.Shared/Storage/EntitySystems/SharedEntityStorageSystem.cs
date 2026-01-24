@@ -110,7 +110,7 @@ public abstract class SharedEntityStorageSystem : EntitySystem
         component.EnteringRange = state.EnteringRange;
         component.NextInternalOpenAttempt = state.NextInternalOpenAttempt;
         component.FirstOpenSound = state.FirstOpenSound;
-        component.FirstTimeOpened = state.FirstTimePlayed;
+        component.FirstTimeOpened = state.FirstTimeOpened;
     }
 
     protected virtual void OnComponentInit(EntityUid uid, SharedEntityStorageComponent component, ComponentInit args)

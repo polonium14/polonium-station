@@ -202,7 +202,7 @@ public sealed class EntityStorageComponentState : ComponentState
     public float EnteringRange;
     public TimeSpan NextInternalOpenAttempt;
     public SoundSpecifier? FirstOpenSound;
-    public bool FirstTimePlayed;
+    public bool FirstTimeOpened;
 
     public EntityStorageComponentState(
         bool open,
@@ -212,7 +212,7 @@ public sealed class EntityStorageComponentState : ComponentState
         float enteringRange,
         TimeSpan nextInternalOpenAttempt,
         SoundSpecifier? firstOpenSound,
-        bool firstTimePlayed)
+        bool firstTimeOpened)
     {
         Open = open;
         Capacity = capacity;
@@ -221,7 +221,7 @@ public sealed class EntityStorageComponentState : ComponentState
         EnteringRange = enteringRange;
         NextInternalOpenAttempt = nextInternalOpenAttempt;
         FirstOpenSound = firstOpenSound;
-        FirstTimePlayed = firstTimePlayed;
+        FirstTimeOpened = firstTimeOpened;
     }
 }
 
