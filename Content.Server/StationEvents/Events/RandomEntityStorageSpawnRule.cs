@@ -11,6 +11,7 @@ using Content.Server.StationEvents.Components;
 using Content.Server.Storage.Components;
 using Content.Server.Storage.EntitySystems;
 using Content.Shared.GameTicking.Components;
+using JetBrains.FormatRipper.Elf;
 using Robust.Shared.Audio;
 using Robust.Shared.Map;
 using Robust.Shared.Random;
@@ -40,12 +41,6 @@ public sealed class RandomEntityStorageSpawnRule : StationEventSystem<RandomEnti
             if (!_entityStorage.CanInsert(spawn, ent, storage))
                 continue;
 
-            if (comp.FirstOpenStorageSound != null)
-            {
-                storage.FirstOpenSound = comp.FirstOpenStorageSound;
-                Dirty(ent, storage);
-            }
-
             validLockers.Add((ent, storage));
         }
 
@@ -59,6 +54,15 @@ public sealed class RandomEntityStorageSpawnRule : StationEventSystem<RandomEnti
         if (!_entityStorage.Insert(spawn, locker, storageComp))
         {
             Del(spawn);
+        }
+        else
+        {
+            if (comp.FirstOpenStorageSound != null)
+            {
+
+                storageComp.FirstOpenSound = comp.FirstOpenStorageSound;
+                Dirty(locker, storageComp);
+            }
         }
     }
 }

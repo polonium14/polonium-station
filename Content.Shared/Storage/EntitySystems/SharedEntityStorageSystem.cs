@@ -96,7 +96,7 @@ public abstract class SharedEntityStorageSystem : EntitySystem
             component.EnteringRange,
             component.NextInternalOpenAttempt,
             component.FirstOpenSound,
-            component.FirstTimePlayed);
+            component.FirstTimeOpened);
     }
 
     protected void OnHandleState(EntityUid uid, SharedEntityStorageComponent component, ref ComponentHandleState args)
@@ -110,7 +110,7 @@ public abstract class SharedEntityStorageSystem : EntitySystem
         component.EnteringRange = state.EnteringRange;
         component.NextInternalOpenAttempt = state.NextInternalOpenAttempt;
         component.FirstOpenSound = state.FirstOpenSound;
-        component.FirstTimePlayed = state.FirstTimePlayed;
+        component.FirstTimeOpened = state.FirstTimePlayed;
     }
 
     protected virtual void OnComponentInit(EntityUid uid, SharedEntityStorageComponent component, ComponentInit args)
@@ -258,18 +258,20 @@ public abstract class SharedEntityStorageSystem : EntitySystem
         if (_net.IsClient && _timing.IsFirstTimePredicted)
         {
             // Polonium - jumpscare storages
-            if (component is { FirstOpenSound: not null, FirstTimePlayed: false } &&
+            if (component is { FirstOpenSound: not null, FirstTimeOpened: false } &&
             user != null && !HasComp<GhostComponent>(user.Value))
             {
                 _audio.PlayPvs(component.FirstOpenSound, uid);
-                component.FirstTimePlayed = true;
-                Dirty(uid, component);
             }
             else
                 _audio.PlayPvs(component.OpenSound, uid);
         }
         ReleaseGas(uid, component);
         var afterev = new StorageAfterOpenEvent();
+
+        component.FirstTimeOpened = true;
+        Dirty(uid, component);
+
         RaiseLocalEvent(uid, ref afterev);
     }
 

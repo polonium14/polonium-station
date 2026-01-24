@@ -188,7 +188,7 @@ public abstract partial class SharedEntityStorageComponent : Component
     public Container Contents = default!;
 
     [ViewVariables(VVAccess.ReadWrite)]
-    public bool FirstTimePlayed = false;
+    public bool FirstTimeOpened = false;
 
 }
 
