@@ -1,12 +1,26 @@
 {
     "version": 1,
     "license": "CC-BY-SA-3.0",
-    "copyright": "Kabanosy Sprite: Made by Tofi_Dev (github)",
+    "copyright": "Snacks sprites meta.json: Made by Tofi_Dev & cybercoffeedev (GitHub)",
     "size": {
         "x": 32,
         "y": 32
     },
     "states": [
+        {
+            "name": "dumplings"
+        },
+        {
+            "name": "dumplings-inhand-right",
+            "directions": 4
+        },
+        {
+            "name": "dumplings-inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "dumplings-trash"
+        },
         {
             "name": "kabanosy"
         },
@@ -23,4 +37,3 @@
         }
     ]
 }
-

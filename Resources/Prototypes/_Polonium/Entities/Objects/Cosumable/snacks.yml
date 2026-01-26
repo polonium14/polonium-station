@@ -28,6 +28,44 @@
         - FoodSnack
         - ReptilianFood
 
+- type: entity
+  name: pierogi liofilizowane
+  parent: FoodSnackBase
+  id: FoodSnackDumplings
+  description: Klasyczne polskie pierogi z kapustą i grzybami, liofilizowane na potrzeby misji kosmicznej. Smacznego!
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Cosumable/Food/snacks.rsi
+    state: dumplings
+  - type: FlavorProfile
+    flavors:
+      - savory
+      - cabbage
+      - mushroom
+  - type: Item
+    inhandVisuals:
+      left:
+        - state: kabanosy-inhand-left
+          sprite: _Polonium/Objects/Cosumable/Food/snacks.rsi
+      right:
+        - state: kabanosy-inhand-right
+          sprite: _Polonium/Objects/Cosumable/Food/snacks.rsi
+  - type: Food
+    trash:
+    - FoodPacketDumplingsTrash
+  - type: Tag
+    tags:
+      - FoodSnack
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: FoodPacketTrash
+  id: FoodPacketDumplingsTrash
+  name: pierogi liofilizowane
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Cosumable/Food/snacks.rsi
+    state: dumplings-trash
 
 - type: entity
   name: opakowanie po kabanosach
@@ -38,11 +76,3 @@
     - type: Sprite
       sprite: _Polonium/Objects/Cosumable/Food/snacks.rsi
       state: kabanosy-trash
-    - type: Item
-      inhandVisuals:
-        left:
-          - state: trash-inhand-left
-            color: "#f5971d"
-        right:
-          - state: trash-inhand-right
-            color: "#f5971d"
