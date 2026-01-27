@@ -51,10 +51,10 @@
   - type: Item
     inhandVisuals:
       left:
-        - state: kabanosy-inhand-left
+        - state: dumplings-inhand-left
           sprite: _Polonium/Objects/Cosumable/Food/snacks.rsi
       right:
-        - state: kabanosy-inhand-right
+        - state: dumplings-inhand-right
           sprite: _Polonium/Objects/Cosumable/Food/snacks.rsi
   - type: Food
     trash:
