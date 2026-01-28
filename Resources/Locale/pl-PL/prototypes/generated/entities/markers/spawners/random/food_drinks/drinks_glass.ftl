@@ -1,3 +1,3 @@
-ent-RandomDrinkGlass = random drink spawner
-    .suffix = Glass
+ent-RandomDrinkGlass = spawner losowych napojów
+    .suffix = Szklanka
     .desc = { ent-MarkerBase.desc }
