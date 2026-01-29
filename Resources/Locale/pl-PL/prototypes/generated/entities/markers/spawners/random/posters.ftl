@@ -1,6 +1,6 @@
-ent-RandomPosterAny = random poster spawner
+ent-RandomPosterAny = spawner losowych plakatów
     .desc = { ent-MarkerBase.desc }
-ent-RandomPosterContraband = random contraband poster spawner
+ent-RandomPosterContraband = spawner losowych plakatów z kontrabandą
     .desc = { ent-MarkerBase.desc }
-ent-RandomPosterLegit = random legit poster spawner
+ent-RandomPosterLegit = spawner losowych legalnych plakatów
     .desc = { ent-MarkerBase.desc }
