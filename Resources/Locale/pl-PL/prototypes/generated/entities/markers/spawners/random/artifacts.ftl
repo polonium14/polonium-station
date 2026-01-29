@@ -1,4 +1,4 @@
-ent-RandomArtifactSpawner = random artifact spawner
+ent-RandomArtifactSpawner = spawner losowych artefaktów
     .desc = { ent-MarkerBase.desc }
-ent-RandomArtifactSpawner20 = random artifact spawner [20]
+ent-RandomArtifactSpawner20 = spawner losowych artefaktów [20]
     .desc = { ent-RandomArtifactSpawner.desc }
