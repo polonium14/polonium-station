@@ -1,2 +1,2 @@
-ent-CrateHydroponicsChemicals = botanical chemicals crate
-    .desc = Any entrepreneuring botanist's dream. Contains many botanical chemicals. Requires Hydroponics access to open.
+ent-CrateHydroponicsChemicals = skrzynia chemikaliów botanicznych
+    .desc = Marzenie każdego przedsiębiorczego botanika. Zawiera mnóstwo odczynników roślinnych. Wymaga dostępu do hydroponiki, aby ją otworzyć.
