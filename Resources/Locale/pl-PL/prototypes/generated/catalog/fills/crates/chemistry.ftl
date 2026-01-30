@@ -1,8 +1,8 @@
-ent-CrateChemistryP = chemicals crate (P)
-    .desc = Contains chemicals from the P-Block of elements. Requires Chemistry access to open.
-ent-CrateChemistryS = chemicals crate (S)
-    .desc = Contains chemicals from the S-Block of elements. Requires Chemistry access to open.
-ent-CrateChemistryD = chemicals crate (D)
-    .desc = Contains chemicals from the D-Block of elements. Requires Chemistry access to open.
-ent-CratePlantBGone = bulk Plant-B-Gone crate
-    .desc = From Monstano. "Unwanted Weeds, Meet Your Celestial Roundup!"
+ent-CrateChemistryP = skrzynia odczynników (blok P)
+    .desc = Zawiera odczynniki chemiczne z bloku P układu okresowego. Wymaga dostępu chemicznego do otwarcia.
+ent-CrateChemistryS = skrzynia odczynników (blok S)
+    .desc = Zawiera odczynniki chemiczne z bloku S układu okresowego. Wymaga dostępu chemicznego do otwarcia.
+ent-CrateChemistryD = skrzynia odczynników (blok D)
+    .desc = Zawiera odczynniki chemiczne z bloku D układu okresowego. Wymaga dostępu chemicznego do otwarcia.
+ent-CratePlantBGone = zbiorcza skrzynia Plant-B-Gone
+    .desc = Od Monstano. „Niechciane chwasty, pora na gwiezdne porządki!”
