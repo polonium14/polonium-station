@@ -1,2 +1,2 @@
-ent-ClothingOuterApronArmored = armored apron
-    .desc = A blood-stained apron woven with protective webbing. Shockingly effective at protecting the wearer's torso.
+ent-ClothingOuterApronArmored = fartuch opancerzony
+    .desc = Poplamiony krwią fartuch z wplecioną siecią ochronną. Szokująco skutecznie chroni klatkę piersiową użytkownika.
