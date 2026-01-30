@@ -14,10 +14,13 @@
 // SPDX-FileCopyrightText: 2024 Rainfey <rainfey0+github@gmail.com>
 // SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
 // SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Mehnix <56132549+Mehnix@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Minerva <218184747+mnva0@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
 // SPDX-FileCopyrightText: 2025 mnva <218184747+mnva0@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 pa.pecherskij <pa.pecherskij@interfax.ru>
 // SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+// SPDX-FileCopyrightText: 2026 Polonium-bot <admin@ss14.pl>
 //
 // SPDX-License-Identifier: MIT
 
