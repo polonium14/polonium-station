@@ -31912,7 +31912,6 @@ entities:
           showEnts: False
           occludes: True
           ents:
-          - 1910
           - 1909
         paper_label: !type:ContainerSlot
           showEnts: False
@@ -32003,8 +32002,6 @@ entities:
         entity_storage: !type:Container
           showEnts: False
           occludes: True
-          ents:
-          - 3432
         paper_label: !type:ContainerSlot
           showEnts: False
           occludes: True
@@ -32223,8 +32220,6 @@ entities:
         entity_storage: !type:Container
           showEnts: False
           occludes: True
-          ents:
-          - 3444
         paper_label: !type:ContainerSlot
           showEnts: False
           occludes: True
@@ -32386,8 +32381,6 @@ entities:
         entity_storage: !type:Container
           showEnts: False
           occludes: True
-          ents:
-          - 3452
         paper_label: !type:ContainerSlot
           showEnts: False
           occludes: True
@@ -32431,8 +32424,6 @@ entities:
         entity_storage: !type:Container
           showEnts: False
           occludes: True
-          ents:
-          - 3454
         paper_label: !type:ContainerSlot
           showEnts: False
           occludes: True
