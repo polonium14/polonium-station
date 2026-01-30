@@ -1,4 +1,4 @@
-ent-CrateFoodShrimpRaw = Jumbo Space Shrimp Pack
-    .desc = Don't let the package name fool you. Space Shrimp is nothing more than a brand name.
-ent-CrateFoodRandomDonkPocket = donk pockets crate
-    .desc = You should order four more of these. Includes a box of donk pockets.
+ent-CrateFoodShrimpRaw = paczka gigantycznych krewetek kosmicznych
+    .desc = Nie daj się zwieść nazwie na opakowaniu. „Krewetka Kosmiczna” to nic więcej niż nazwa marki.
+ent-CrateFoodRandomDonkPocket = skrzynia donk pocketów
+    .desc = Powinieneś zamówić jeszcze cztery takie. Zawiera pudełko donk pocketów.
