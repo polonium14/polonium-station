@@ -25,6 +25,7 @@ log-probe-printout-header = Najnowsze logi:
 log-probe-printout-entry = #{ $number } / { $time } / { $accessor }
 astro-nav-program-name = AstroNav
 med-tek-program-name = MedTek
+plant-scan-program-name = PlantScan
 
 # NanoTask cartridge
 
