@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2025 Mehnix <56132549+Mehnix@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.BaseAnalyzer;
 using Content.Server.Botany.Systems;
 using Robust.Shared.Audio;
