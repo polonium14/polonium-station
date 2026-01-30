@@ -1,2 +1,2 @@
-ent-CrateFultonSupplies = fulton supplies crate
-    .desc = Contains 20 fulltons and a beacon to link with.
+ent-CrateFultonSupplies = skrzynia z zaopatrzeniem Fulton
+    .desc = Zawiera 20 balonów Fulton oraz beacon do synchronizacji.
