@@ -89,5 +89,5 @@ reagent-name-long-john-silver = długi john silver
 reagent-desc-long-john-silver = Długi napój z rumem marynarskim, bittersami i lemoniadą. Szczególnie popularny w Mothic Fleet, bo tani w racjach, ale bogaty w smak.
 reagent-name-long-haul = długa podróż
 reagent-desc-long-haul = Idealny towarzysz samotnego lotu długodystansowego.
-reagent-name-tropical-storm = tropical storm
+reagent-name-tropical-storm = burza tropikalna
 reagent-desc-tropical-storm = Smak Karaibów w jednej burzowej szklance. Trzymaj parasolkę koktajlową, żeby huragan jej nie porwał.
