@@ -1,8 +1,8 @@
-ent-CrateEngineeringEquipment = engineer equipment crate
-    .desc = Contains a Engineering Hardsuit, filled tool belt, meson glasses, RCD, alsongide the engineering guidebook.
-ent-CrateEngineeringAtmosEquipment = atmospheric technician equipment crate
-    .desc = Contains a Amospheric Hardsuit and Firesuit, fire fighting backpack, atmospheric gas mask, filled tool belt, meson glasses, RCD and RPD alsongide the engineering guidebook.
-ent-CrateBasicHardsuit = basic hardsuit kit
-    .desc = A crate containing a basic hardsuit, rated for civilian use.
-ent-CrateEngineeringHEV = HEV equipment crate
-    .desc = Contains a full HEV suit and a crowbar for handling hazardous materials safely.
+ent-CrateEngineeringEquipment = skrzynia z ekwipunkiem inżynierskim
+    .desc = Zawiera inżynierski hardsuit, pełny pas narzędziowy, gogle mezonowe, RCD oraz poradnik inżynierski.
+ent-CrateEngineeringAtmosEquipment = skrzynia z ekwipunkiem technika atmosferycznego
+    .desc = Zawiera hardsuit atmosferyczny, skafander ognioodporny, plecak gaśniczy, maskę przeciwgazową, pełny pas narzędziowy, gogle mezonowe, RCD, RPD oraz poradnik inżynierski.
+ent-CrateBasicHardsuit = zestaw z podstawowym hardsuitem
+    .desc = Skrzynia zawierająca podstawowy hardsuit, dopuszczony do użytku cywilnego.
+ent-CrateEngineeringHEV = skrzynia z ekwipunkiem HEV
+    .desc = Zawiera pełny kombinezon HEV oraz łom do bezpiecznego obchodzenia się z materiałami niebezpiecznymi.
