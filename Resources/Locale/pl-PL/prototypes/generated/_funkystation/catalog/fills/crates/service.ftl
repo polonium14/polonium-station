@@ -1,6 +1,6 @@
-ent-CrateServiceBulkCleanerGranades = bulk clenades box
-    .desc = When just a mop is not enough to do the job.
-ent-CrateServiceColoredLightTubes = colored lightube box
-    .desc = Contains a set of diffrent colored light tubes.
-ent-CrateServiceColoredLightBulb = colored lightbulb box
-    .desc = Contains a set of diffrent colored light bulbs.
+ent-CrateServiceBulkCleanerGranades = zbiorcza skrzynia czystonatów
+    .desc = Gdy zwykły mop to za mało, by wykonać robotę.
+ent-CrateServiceColoredLightTubes = skrzynia kolorowych świetlówek
+    .desc = Zawiera zestaw świetlówek w różnych kolorach.
+ent-CrateServiceColoredLightBulb = skrzynia kolorowych żarówek
+    .desc = Zawiera zestaw żarówek w różnych kolorach.
