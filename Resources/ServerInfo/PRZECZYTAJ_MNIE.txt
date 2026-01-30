@@ -1,0 +1,1 @@
+Wszystkie pliki .xml są skopiowane do folderu _Polonium/, aby oddzielać tłumaczenia od oryginalnych plików i uniknąć konfliktów z innymi repozytoriami SS14.

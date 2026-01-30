@@ -16,7 +16,7 @@
 - type: guideEntry
   id: SOP101
   name: SOP 101
-  text: "/ServerInfo/Funkystation/Guidebook/SOP/SOP101.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/SOP/SOP101.xml"
   children:
   - CommandSOP
   - CentralCommandSOP
@@ -32,14 +32,14 @@
 - type: guideEntry
   id: LegalSOP
   name: LegalSOP
-  text: "/ServerInfo/Funkystation/Guidebook/Legal/LegalSOP.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Legal/LegalSOP.xml"
 
 # ALERT LEVELS
 
 - type: guideEntry
   id: AlertLevelsSOP
   name: guide-entry-alert-sop
-  text: "/ServerInfo/Funkystation/Guidebook/Command/AlertLevels.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Command/AlertLevels.xml"
   children:
   - GreenAlertSOP
   - YellowAlertSOP
@@ -54,57 +54,57 @@
   id: GreenAlertSOP
   name: guide-entry-alertlevel-green
   priority: 10
-  text: "/ServerInfo/Funkystation/Guidebook/AlertLevel/GreenAlert.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/AlertLevel/GreenAlert.xml"
 
 - type: guideEntry
   id: YellowAlertSOP
   name: guide-entry-alertlevel-yellow
   priority: 20
-  text: "/ServerInfo/Funkystation/Guidebook/AlertLevel/YellowAlert.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/AlertLevel/YellowAlert.xml"
 
 - type: guideEntry
   id: BlueAlertSOP
   name: guide-entry-alertlevel-blue
   priority: 30
-  text: "/ServerInfo/Funkystation/Guidebook/AlertLevel/BlueAlert.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/AlertLevel/BlueAlert.xml"
 
 - type: guideEntry
   id: RedAlertSOP
   name: guide-entry-alertlevel-red
   priority: 40
-  text: "/ServerInfo/Funkystation/Guidebook/AlertLevel/RedAlert.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/AlertLevel/RedAlert.xml"
 
 - type: guideEntry
   id: VioletAlertSOP
   name: guide-entry-alertlevel-violet
   priority: 50
-  text: "/ServerInfo/Funkystation/Guidebook/AlertLevel/VioletAlert.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/AlertLevel/VioletAlert.xml"
 
 - type: guideEntry
   id: GammaAlertSOP
   name: guide-entry-alertlevel-gamma
   priority: 60
-  text: "/ServerInfo/Funkystation/Guidebook/AlertLevel/GammaAlert.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/AlertLevel/GammaAlert.xml"
 
 - type: guideEntry
   id: DeltaAlertSOP
   name: guide-entry-alertlevel-delta
   priority: 70
-  text: "/ServerInfo/Funkystation/Guidebook/AlertLevel/DeltaAlert.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/AlertLevel/DeltaAlert.xml"
 
 # impstation cosmic cult
 - type: guideEntry
   id: OctarineAlertSOP
   name: alert-level-octarine
   priority: 70
-  text: "/ServerInfo/Funkystation/Guidebook/AlertLevel/OctarineAlert.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/AlertLevel/OctarineAlert.xml"
 
 # COMMAND
 
 - type: guideEntry
   id: CommandSOP
   name: guide-entry-command-sop
-  text: "/ServerInfo/Funkystation/Guidebook/Command/GeneralCommandSOP.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Command/GeneralCommandSOP.xml"
   children:
   - CommandTrainingManual
   - OrderOfSuccession
@@ -113,19 +113,19 @@
 - type: guideEntry
   id: CaptainSOP
   name: guide-entry-captain-sop
-  text: "/ServerInfo/Funkystation/Guidebook/Command/CaptainSOP.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Command/CaptainSOP.xml"
 
 - type: guideEntry
   id: OrderOfSuccession
   name: guide-entry-order-of-succession
-  text: "/ServerInfo/Funkystation/Guidebook/Command/OrderOfSuccession.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Command/OrderOfSuccession.xml"
 
 # CC
 
 - type: guideEntry
   id: CentralCommandSOP
   name: guide-entry-central-command-sop
-  text: "/ServerInfo/Funkystation/Guidebook/CentralCommand/CCSOP.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/CentralCommand/CCSOP.xml"
   children:
   - IAASOP
   - NTRSOP
@@ -134,24 +134,24 @@
 - type: guideEntry
   id: IAASOP
   name: guide-entry-iaa-sop
-  text: "/ServerInfo/Funkystation/Guidebook/CentralCommand/IAASOP.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/CentralCommand/IAASOP.xml"
 
 - type: guideEntry
   id: NTRSOP
   name: guide-entry-ntr-sop
-  text: "/ServerInfo/Funkystation/Guidebook/CentralCommand/NTRSOP.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/CentralCommand/NTRSOP.xml"
 
 - type: guideEntry
   id: MagistrateSOP
   name: guide-entry-magistrate-sop
-  text: "/ServerInfo/Funkystation/Guidebook/CentralCommand/MagistrateSOP.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/CentralCommand/MagistrateSOP.xml"
 
 # SERVICE
 
 - type: guideEntry
   id: ServiceSOP
   name: guide-entry-service-sop
-  text: "/ServerInfo/Funkystation/Guidebook/Service/ServiceSOP.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Service/ServiceSOP.xml"
   children:
   - HoPSOP
   - BartenderSOP
@@ -166,54 +166,54 @@
 - type: guideEntry
   id: HoPSOP
   name: guide-entry-hop-sop
-  text: "/ServerInfo/Funkystation/Guidebook/Service/HoPSOP.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Service/HoPSOP.xml"
 
 - type: guideEntry
   id: BartenderSOP
   name: guide-entry-bartender-sop
-  text: "/ServerInfo/Funkystation/Guidebook/Service/BartenderSOP.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Service/BartenderSOP.xml"
 
 - type: guideEntry
   id: BotanistSOP
   name: guide-entry-botanist-sop
-  text: "/ServerInfo/Funkystation/Guidebook/Service/BotanistSOP.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Service/BotanistSOP.xml"
 
 - type: guideEntry
   id: ChaplainSOP
   name: guide-entry-chaplain-sop
-  text: "/ServerInfo/Funkystation/Guidebook/Service/ChaplainSOP.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Service/ChaplainSOP.xml"
 
 - type: guideEntry
   id: ChefSOP
   name: guide-entry-chef-sop
-  text: "/ServerInfo/Funkystation/Guidebook/Service/ChefSOP.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Service/ChefSOP.xml"
 
 - type: guideEntry
   id: ClownSOP
   name: guide-entry-clown-sop
-  text: "/ServerInfo/Funkystation/Guidebook/Service/ClownSOP.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Service/ClownSOP.xml"
 
 - type: guideEntry
   id: JanitorSOP
   name: guide-entry-janitor-sop
-  text: "/ServerInfo/Funkystation/Guidebook/Service/JanitorSOP.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Service/JanitorSOP.xml"
 
 - type: guideEntry
   id: MimeSOP
   name: guide-entry-mime-sop
-  text: "/ServerInfo/Funkystation/Guidebook/Service/MimeSOP.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Service/MimeSOP.xml"
 
 - type: guideEntry
   id: ReporterSOP
   name: guide-entry-reporter-sop
-  text: "/ServerInfo/Funkystation/Guidebook/Service/ReporterSOP.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Service/ReporterSOP.xml"
 
 # SEC
 
 - type: guideEntry
   id: SecuritySOP
   name: guide-entry-security-sop
-  text: "/ServerInfo/Funkystation/Guidebook/Security/SecuritySOP.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Security/SecuritySOP.xml"
   children:
   - HoSSOP
   - SecurityOfficerSOP
@@ -224,29 +224,29 @@
 - type: guideEntry
   id: HoSSOP
   name: guide-entry-hos-sop
-  text: "/ServerInfo/Funkystation/Guidebook/Security/HoSSOP.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Security/HoSSOP.xml"
 
 - type: guideEntry
   id: SecurityOfficerSOP
   name: guide-entry-securityofficer-sop
-  text: "/ServerInfo/Funkystation/Guidebook/Security/SecurityOfficerSOP.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Security/SecurityOfficerSOP.xml"
 
 - type: guideEntry
   id: WardenSOP
   name: guide-entry-warden-sop
-  text: "/ServerInfo/Funkystation/Guidebook/Security/WardenSOP.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Security/WardenSOP.xml"
 
 - type: guideEntry
   id: DetectiveSOP
   name: guide-entry-detective-sop
-  text: "/ServerInfo/Funkystation/Guidebook/Security/DetectiveSOP.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Security/DetectiveSOP.xml"
 
 # SCI
 
 - type: guideEntry
   id: ScienceSOP
   name: guide-entry-science-sop
-  text: "/ServerInfo/Funkystation/Guidebook/Science/ScienceSOP.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Science/ScienceSOP.xml"
   children:
   - RDSOP
   - ScientistSOP
@@ -255,24 +255,24 @@
 - type: guideEntry
   id: RDSOP
   name: guide-entry-rd-sop
-  text: "/ServerInfo/Funkystation/Guidebook/Science/RDSOP.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Science/RDSOP.xml"
 
 - type: guideEntry
   id: ScientistSOP
   name: guide-entry-scientist-sop
-  text: "/ServerInfo/Funkystation/Guidebook/Science/ScientistSOP.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Science/ScientistSOP.xml"
 
 - type: guideEntry
   id: RoboticistSOP
   name: guide-entry-roboticist-sop
-  text: "/ServerInfo/Funkystation/Guidebook/Science/RoboticistSOP.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Science/RoboticistSOP.xml"
 
 # MED
 
 - type: guideEntry
   id: MedicalSOP
   name: guide-entry-medical-sop
-  text: "/ServerInfo/Funkystation/Guidebook/Medical/MedicalSOP.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Medical/MedicalSOP.xml"
   children:
   - CMOSOP
   - DoctorSOP
@@ -283,34 +283,34 @@
 - type: guideEntry
   id: CMOSOP
   name: guide-entry-cmo-sop
-  text: "/ServerInfo/Funkystation/Guidebook/Medical/CMOSOP.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Medical/CMOSOP.xml"
 
 - type: guideEntry
   id: DoctorSOP
   name: guide-entry-doctor-sop
-  text: "/ServerInfo/Funkystation/Guidebook/Medical/DoctorSOP.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Medical/DoctorSOP.xml"
 
 - type: guideEntry
   id: ChemistSOP
   name: guide-entry-chemist-sop
-  text: "/ServerInfo/Funkystation/Guidebook/Medical/ChemistSOP.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Medical/ChemistSOP.xml"
 
 - type: guideEntry
   id: ParamedicSOP
   name: guide-entry-paramedic-sop
-  text: "/ServerInfo/Funkystation/Guidebook/Medical/ParamedicSOP.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Medical/ParamedicSOP.xml"
 
 - type: guideEntry
   id: PsychologistSOP
   name: guide-entry-psychologist-sop
-  text: "/ServerInfo/Funkystation/Guidebook/Medical/PsychologistSOP.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Medical/PsychologistSOP.xml"
 
 # ENGI
 
 - type: guideEntry
   id: EngineeringSOP
   name: guide-entry-engineering-sop
-  text: "/ServerInfo/Funkystation/Guidebook/Engineering/EngineeringSOP.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Engineering/EngineeringSOP.xml"
   children:
   - CESOP
   - StationEngineerSOP
@@ -318,19 +318,19 @@
 - type: guideEntry
   id: CESOP
   name: guide-entry-ce-sop
-  text: "/ServerInfo/Funkystation/Guidebook/Engineering/CESOP.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Engineering/CESOP.xml"
 
 - type: guideEntry
   id: StationEngineerSOP
   name: guide-entry-stationengineer-sop
-  text: "/ServerInfo/Funkystation/Guidebook/Engineering/StationEngineerSOP.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Engineering/StationEngineerSOP.xml"
 
 # CARGO
 
 - type: guideEntry
   id: CargoSOP
   name: guide-entry-cargo-sop
-  text: "/ServerInfo/Funkystation/Guidebook/Cargo/CargoSOP.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Cargo/CargoSOP.xml"
   children:
   - QMSOP
   - CargoTechnicianSOP
@@ -339,14 +339,14 @@
 - type: guideEntry
   id: QMSOP
   name: guide-entry-qm-sop
-  text: "/ServerInfo/Funkystation/Guidebook/Cargo/QMSOP.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Cargo/QMSOP.xml"
 
 - type: guideEntry
   id: CargoTechnicianSOP
   name: guide-entry-cargotechnician-sop
-  text: "/ServerInfo/Funkystation/Guidebook/Cargo/CargoTechnicianSOP.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Cargo/CargoTechnicianSOP.xml"
 
 - type: guideEntry
   id: SalvageSOP
   name: guide-entry-salvage-sop
-  text: "/ServerInfo/Funkystation/Guidebook/Cargo/SalvageSOP.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Cargo/SalvageSOP.xml"

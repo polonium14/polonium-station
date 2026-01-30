@@ -1,0 +1,24 @@
+<!--
+SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+  # Valves
+  Valves are a quick way to halt or permit gas flow through a [textlink="pipenet" link="PipeNetworks"].
+  <Box>
+    <GuideEntityEmbed Entity="GasValve"/>
+    <GuideEntityEmbed Entity="SignalControlledValve"/>
+    <GuideEntityEmbed Entity="PressureControlledValve"/>
+    <GuideEntityEmbed Entity="GasPassiveGate"/>
+    <GuideEntityEmbed Entity="GasPressureRegulator"/>
+  </Box>
+  All valves do not require [textlink="power" link="Power"] to operate.
+
+  Valves may look simple, but they can enable a wide variety of complex pipe systems, including:
+  - Signal valves responding to air alarm or logic gate outputs
+  - Pneumatic valves controlling variable venting of waste gasses from a burn chamber
+</Document>

@@ -1,0 +1,38 @@
+<!--
+SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+SPDX-FileCopyrightText: 2024 BeeRobynn <robynthewarcrime@proton.me>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+  # Felinid
+
+  <Box>
+    <GuideEntityEmbed Entity="MobFelinid" Caption=""/>
+  </Box>
+
+  Felinids are a mutation of humans, sporting their signature ears and tail from your favourite japanese cartoons.
+
+  ## Diet
+
+  Felinids share evolutionary roots with cats, and so they cannot metabolize Theobromine or Allicin. Be careful
+  when eating chocolate, onions, or garlic, and avoid coffee and tea! Despite their dietary restrictions, they get
+  thirsty 20% faster than other species.
+
+  ## Claws
+
+  Felinids have razor sharp claws, so their unarmed attacks deal [color=orange]Slashing[/color] and [color=orange]Piercing[/color] damage.
+
+  ## Padded Feet
+
+  Felinids take less damage from falling and high-speed impacts, and can creep around silently when they're not wearing
+  shoes, but are prone to being stunned quicker and have 25% less stamina than other species.
+
+  ## Damage
+
+  Felinids take 15% more [color=orange]Blunt[/color], [color=orange]Slashing[/color] and [color=orange]Piercing[/color] damage,
+  and take 30% more [color=cornflowerblue]Cold[/color] damage than other species.
+
+</Document>

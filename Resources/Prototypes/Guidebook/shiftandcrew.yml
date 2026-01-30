@@ -18,7 +18,7 @@
 - type: guideEntry
   id: Jobs
   name: guide-entry-jobs
-  text: "/ServerInfo/Guidebook/Jobs.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Jobs.xml"
   children:
   - Service
   - Cargo
