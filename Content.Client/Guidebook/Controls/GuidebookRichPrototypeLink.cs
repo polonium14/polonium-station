@@ -18,11 +18,17 @@ namespace Content.Client.Guidebook.Controls;
 /// The link is activated by the owner if the prototype is represented
 /// somewhere in the same document.
 /// </summary>
-public sealed class GuidebookRichPrototypeLink : Control, IPrototypeLinkControl
+public sealed class GuidebookRichPrototypeLink : RichTextLabel, IPrototypeLinkControl
 {
-    private bool _linkActive = false;
+    private bool _linkActive;
     private FormattedMessage? _message;
-    private readonly RichTextLabel _richTextLabel;
+
+    public IPrototype? LinkedPrototype { get; set; }
+
+    public GuidebookRichPrototypeLink()
+    {
+        MouseFilter = MouseFilterMode.Stop;
+    }
 
     public void EnablePrototypeLink()
     {
@@ -30,30 +36,20 @@ public sealed class GuidebookRichPrototypeLink : Control, IPrototypeLinkControl
             return;
 
         _linkActive = true;
-
         DefaultCursorShape = CursorShape.Hand;
-
-        _richTextLabel.SetMessage(_message, null, TextLinkTag.LinkColor);
+        SetMessage(_message, null, TextLinkTag.LinkColor);
     }
 
-    public GuidebookRichPrototypeLink() : base()
-    {
-        MouseFilter = MouseFilterMode.Pass;
-        OnKeyBindDown += HandleClick;
-        _richTextLabel = new RichTextLabel();
-        AddChild(_richTextLabel);
-    }
-
-    public void SetMessage(FormattedMessage message)
+    public new void SetMessage(FormattedMessage message)
     {
         _message = message;
-        _richTextLabel.SetMessage(_message);
+        base.SetMessage(message);
     }
 
-    public IPrototype? LinkedPrototype { get; set; }
-
-    private void HandleClick(GUIBoundKeyEventArgs args)
+    protected override void KeyBindDown(GUIBoundKeyEventArgs args)
     {
+        base.KeyBindDown(args);
+
         if (!_linkActive)
             return;
 
