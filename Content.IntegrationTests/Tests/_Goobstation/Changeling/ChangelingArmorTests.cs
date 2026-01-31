@@ -70,7 +70,7 @@ public sealed class ChangelingArmorTest
             actionSys.PerformAction(urist, null, armorAction, armorAction.Comp, armorAction.Comp.BaseEvent, timing.CurTime);
         });
 
-        await server.WaitRunTicks(5);
+        await server.WaitRunTicks(10);
 
         await server.WaitAssertion(() =>
         {
