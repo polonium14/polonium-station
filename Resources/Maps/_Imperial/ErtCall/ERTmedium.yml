@@ -4056,8 +4056,8 @@ entities:
   - uid: 362
     components:
     - type: MetaData
-      desc: Эта канистра столь огромна, что кажется, она никогда не кончится...
-      name: огромная канистра N2
+      desc: Ta kanistra jest tak ogromna, że wydaje się, iż nigdy się nie skończy...
+      name: ogromny kanister N2
     - type: Transform
       pos: -8.5,-6.5
       parent: 1
@@ -4066,8 +4066,8 @@ entities:
   - uid: 433
     components:
     - type: MetaData
-      desc: Эта канистра столь огромна, что кажется, она никогда не кончится...
-      name: огромная канистра О2
+      desc: Ta kanistra jest tak ogromna, że wydaje się, iż nigdy się nie skończy...
+      name: ogromny kanister O2
     - type: Transform
       pos: -6.5,-6.5
       parent: 1
@@ -5301,8 +5301,8 @@ entities:
   - uid: 786
     components:
     - type: MetaData
-      desc: джетпак командира ОБР
-      name: выделяющийся джетпак
+      desc: dżetpak lidera JSR
+      name: błyszczący dżetpak
     - type: Transform
       parent: 471
     - type: GasTank
