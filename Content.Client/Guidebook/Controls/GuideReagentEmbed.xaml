@@ -20,7 +20,7 @@ SPDX-License-Identifier: MIT
             <PanelContainer Name="NameBackground" HorizontalExpand="True" VerticalExpand="False">
                 <RichTextLabel Name="ReagentName" HorizontalAlignment="Center"/>
             </PanelContainer>
-            <BoxContainer Name="RecipesContainer" HorizontalExpand="True">
+            <BoxContainer Name="RecipesContainer" HorizontalExpand="True" Margin="10 5 10 5">
                 <Collapsible HorizontalExpand="True">
                     <CollapsibleHeading Title="{Loc 'guidebook-reagent-recipes-header'}"/>
                     <CollapsibleBody>
@@ -33,7 +33,7 @@ SPDX-License-Identifier: MIT
                     </CollapsibleBody>
                 </Collapsible>
             </BoxContainer>
-            <BoxContainer Name="SourcesContainer" HorizontalExpand="True">
+            <BoxContainer Name="SourcesContainer" HorizontalExpand="True" Margin="10 5 10 5">
                 <Collapsible HorizontalExpand="True">
                     <CollapsibleHeading Title="{Loc 'guidebook-reagent-sources-header'}"/>
                     <CollapsibleBody>
@@ -46,7 +46,7 @@ SPDX-License-Identifier: MIT
                     </CollapsibleBody>
                 </Collapsible>
             </BoxContainer>
-            <BoxContainer Name="EffectsContainer" HorizontalExpand="True">
+            <BoxContainer Name="EffectsContainer" HorizontalExpand="True" Margin="10 5 10 5">
                 <Collapsible>
                     <CollapsibleHeading Title="{Loc 'guidebook-reagent-effects-header'}"/>
                     <CollapsibleBody>
@@ -57,7 +57,7 @@ SPDX-License-Identifier: MIT
                     </CollapsibleBody>
                 </Collapsible>
             </BoxContainer>
-            <BoxContainer Name="PlantMetabolismsContainer" HorizontalExpand="True">
+            <BoxContainer Name="PlantMetabolismsContainer" HorizontalExpand="True" Margin="10 5 10 10">
                 <Collapsible>
                     <CollapsibleHeading Title="{Loc 'guidebook-reagent-plant-metabolisms-header'}"/>
                     <CollapsibleBody>

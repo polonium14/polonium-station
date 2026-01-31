@@ -17,7 +17,11 @@ SPDX-License-Identifier: MIT
                 <!-- Reactants will be added as children here -->
             </BoxContainer>
         </BoxContainer>
-        <BoxContainer Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <BoxContainer
+            Orientation="Vertical"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Margin="10 0 10 0">
             <TextureRect TexturePath="/Textures/Interface/Misc/beakerlarge.png"
                          HorizontalAlignment="Center"
                          Name="MixTexture"
