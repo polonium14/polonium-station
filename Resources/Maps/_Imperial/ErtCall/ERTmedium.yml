@@ -4056,7 +4056,7 @@ entities:
   - uid: 362
     components:
     - type: MetaData
-      desc: Ta kanistra jest tak ogromna, że wydaje się, iż nigdy się nie skończy...
+      desc: Ten kanister jest tak ogromny, że wydaje się, iż nigdy się nie skończy...
       name: ogromny kanister N2
     - type: Transform
       pos: -8.5,-6.5
@@ -4066,7 +4066,7 @@ entities:
   - uid: 433
     components:
     - type: MetaData
-      desc: Ta kanistra jest tak ogromna, że wydaje się, iż nigdy się nie skończy...
+      desc: Ta kanister jest tak ogromny, że wydaje się, iż nigdy się nie skończy...
       name: ogromny kanister O2
     - type: Transform
       pos: -6.5,-6.5
