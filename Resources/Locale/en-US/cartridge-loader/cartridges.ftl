@@ -29,6 +29,8 @@ astro-nav-program-name = AstroNav
 
 med-tek-program-name = MedTek
 
+plant-scan-program-name = PlantScan
+
 # NanoTask cartridge
 
 nano-task-ui-heading-high-priority-tasks =

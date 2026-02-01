@@ -8,7 +8,7 @@ public sealed partial class PlantAdjustWeedsEntityEffectSystem : EntityEffectSys
 {
     protected override void Effect(Entity<PlantHolderComponent> entity, ref EntityEffectEvent<PlantAdjustWeeds> args)
     {
-        if (entity.Comp.Seed == null || entity.Comp.Dead)
+        if (entity.Comp.Dead)
             return;
 
         entity.Comp.WeedLevel += args.Effect.Amount;

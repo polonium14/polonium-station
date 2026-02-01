@@ -15,12 +15,12 @@
     ChemistryBottleRobustHarvest: 3
     ChemistryBottleEZNutrient: 3
     Bucket: 3
+    PlantAnalyzer: 1
     BoxMouthSwab: 1
     BoxAgrichem: 1
     MortarAndPestle: 1
     HandheldJuicer: 1
-    #TO DO:
-    #plant analyzer
+    TrashBag: 1
   contrabandInventory:
     ChemistryBottleUnstableMutagen: 1
     Joint: 1

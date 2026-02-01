@@ -37,6 +37,16 @@
   - SodaDispenserMachineCircuitboard
   - SmartFridgeCircuitboard
 
+- type: latheRecipePack
+  id: HydroponicsStatic
+  recipes:
+  - HydroponicsToolMiniHoe
+  - HydroponicsToolScythe
+  - HydroponicsToolHatchet
+  - HydroponicsToolSpade
+  - HydroponicsToolClippers
+  - PlantAnalyzer
+
 ## Dynamic
 
 - type: latheRecipePack
@@ -55,6 +65,11 @@
   - PushHorn
 
 - type: latheRecipePack
+  id: Cartridge
+  recipes:
+  - PlantScanCartridge
+
+- type: latheRecipePack
   id: ServiceBoards
   recipes:
   - BiofabricatorMachineCircuitboard
@@ -63,5 +78,5 @@
   - SeedExtractorMachineCircuitboard # ^
   - MassMediaCircuitboard
   - ReagentGrinderIndustrialMachineCircuitboard
-  - JukeboxCircuitBoard
+  - JukeboxCircuitboard
   - DawInstrumentMachineCircuitboard

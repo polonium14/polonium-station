@@ -1,4 +1,4 @@
-- type: entity
+﻿- type: entity
   parent: [ClothingBeltBase, ClothingSlotBase, BaseCommandContraband]
   id: ClothingBeltSheath
   name: sabre sheath
