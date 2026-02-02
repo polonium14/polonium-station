@@ -1,4 +1,4 @@
-ent-ActionToggleWaggingVulp = action-name-toggle-wagging
-    .desc = action-description-toggle-wagging
-ent-ActionActivateReagentImplant = Inject Reagents
-    .desc = Inject up to 15u of the contained chemicals directly into your bloodstream.
+ent-ActionToggleWaggingVulp = Machaj ogonem
+    .desc = Pozwala Ci zacząć lub przestać merdać ogonem.
+ent-ActionActivateReagentImplant = Wstrzyknij reagenty
+    .desc = Wstrzykuje do 15 jednostek zawartych chemikaliów bezpośrednio do Twojego krwiobiegu.
