@@ -1,2 +1,2 @@
-ent-GuidebookChangelingFluff = guidebook changeling
-    .desc = you shouldn't be seeing this normally.
+ent-GuidebookChangelingFluff = przewodnik po zmiennokształtnych
+    .desc = normalnie nie powinieneś tego widzieć.
