@@ -1,5 +1,5 @@
 ent-Haycutters = siano-cążki
-    .desc = To zabija przewód. Mu!
+    .desc = To przecina przewód. Mu!
 ent-Moodriver = mu-śrubokręt
     .desc = Przekręć, żeby użyć. Mu!
 ent-Wronch = krowucz
