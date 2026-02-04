@@ -1,5 +1,5 @@
-ent-Wirecutter = przecinak
-    .desc = Przecina kable.
+ent-Wirecutter = obcinak
+    .desc = Obcina kable.
 ent-Screwdriver = śrubokręt
     .desc = Przemysłowa jakość w małej, poręcznej formie.
 ent-Wrench = klucz
