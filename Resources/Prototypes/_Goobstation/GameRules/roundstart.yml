@@ -22,7 +22,7 @@
   components:
   - type: ChangelingRule
   - type: GameRule
-    minPlayers: 8
+    minPlayers: 20
     delay:
       min: 30
       max: 60
@@ -37,7 +37,7 @@
     definitions:
     - prefRoles: [ Changeling ]
       max: 5
-      playerRatio: 12
+      playerRatio: 30
       lateJoinAdditional: true
       mindRoles:
       - MindRoleChangeling
