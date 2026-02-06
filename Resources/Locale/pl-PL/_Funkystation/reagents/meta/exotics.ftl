@@ -7,7 +7,7 @@
 reagent-name-exotic = płynne egzotium
 reagent-desc-exotic = Prekursor wielu różnych rzadkich chemikaliów. Używaj mądrze.
 reagent-name-stasicillin = stasicylina
-reagent-desc-stasicillin = Bardzo rzadki związek chemiczny używany zarówno przez elitarne medbay’e, jak i tajnych agentów Nanotrasen.
+reagent-desc-stasicillin = Bardzo rzadki związek chemiczny używany zarówno przez elitarne działy medyczne, jak i tajnych agentów Nanotrasen.
 reagent-name-negacordrazine = negakordrazyna
 reagent-desc-negacordrazine = Dziwna, całkowicie odwrócona tricordrazyna. Leczy niemal wszystkie typy obrażeń powyżej 30 punktów obrażeń.
 reagent-name-stabilisedstimulants = stabilizowane stymulanty
