@@ -6,4 +6,4 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 reagent-name-stasizium = Stazynium
-reagent-desc-stasizium = Niestabilny płyn przyszłości, zdolny do przywrócenia organizmu pacjenta do stanu pierwotnego. Jednak przedawkowanie może rozerwać organizm.
+reagent-desc-stasizium = Niestabilny płyn przyszłości, zdolny do przywrócenia organizmu pacjenta do stanu pierwotnego. Jednak przedawkowanie może rozerwać organizm na strzępy.
