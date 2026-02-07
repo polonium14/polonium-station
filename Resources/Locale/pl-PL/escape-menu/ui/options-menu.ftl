@@ -320,18 +320,18 @@ ui-options-net-predict-tick-bias-tooltip =
 ui-options-net-pvs-spawn = Budżet spawnu obiektów PVS
 ui-options-net-pvs-spawn-tooltip =
     To ogranicza częstotliwość, z którą serwer będzie wysyłać klientowi nowo
-    spawnione podmioty. Obniżanie tego może pomóc zmniejszyć
-    zacięcia spowodowane spawnowaniem podmiotów, ale może skutkować
+    spawnione encje. Obniżanie tego może pomóc zmniejszyć
+    zacięcia spowodowane spawnowaniem encji, ale może skutkować
     ich nieoczekiwanym pojawieniem się.
-ui-options-net-pvs-entry = Budżet podmiotów PVS
+ui-options-net-pvs-entry = Budżet encji PVS
 ui-options-net-pvs-entry-tooltip =
     To ogranicza częstotliwość, z którą serwer będzie wysyłać klientowi nowo
-    widoczne podmioty. Obniżanie tego może pomóc zmniejszyć
+    widoczne encje. Obniżanie tego może pomóc zmniejszyć
     zacięcia, ale może skutkować ich nieoczekiwanym pojawieniem się.
 ui-options-net-pvs-leave = Częstotliwość odłączania PVS
 ui-options-net-pvs-leave-tooltip =
     To ogranicza częstotliwość, z którą klient będzie usuwać
-    podmioty poza polem widzenia. Obniżanie tego może pomóc zmniejszyć
+    encje poza polem widzenia. Obniżanie tego może pomóc zmniejszyć
     zacięcia podczas chodzenia, ale czasami może powodować
     błędne przewidywania oraz inne problemy.
 

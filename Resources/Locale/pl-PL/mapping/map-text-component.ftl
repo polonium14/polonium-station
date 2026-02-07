@@ -1,2 +1,2 @@
-map-text-default = Use VV to change the displayed text
-map-text-font-error = "Error — invalid font"
+map-text-default = Użyj VV, aby zmienić wyświetlany tekst.
+map-text-font-error = "Błąd — nieprawidłowa czcionka"

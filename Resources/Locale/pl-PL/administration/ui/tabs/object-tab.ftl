@@ -1,4 +1,4 @@
-object-tab-entity-id = ID Podmiotu
+object-tab-entity-id = ID encji
 object-tab-object-name = Nazwa obiektu
 object-tab-object-type = Typ obiektu:
 object-tab-object-search = Wyszukaj...
