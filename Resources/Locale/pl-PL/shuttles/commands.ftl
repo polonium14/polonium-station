@@ -1,5 +1,5 @@
 # FTLdiskburner
-cmd-ftldisk-desc = Tworzy dysk z współżędnymi NNŚ do mapy na której podane EntityID się znajduje
+cmd-ftldisk-desc = Tworzy dysk z współrzędnymi NNŚ do mapy na której podane EntityID się znajduje
 cmd-ftldisk-help = ftldisk [EntityID]
 cmd-ftldisk-no-transform = Byt { $destination } nie posiada Transform Component!
 cmd-ftldisk-no-map = Byt { $destination } nie jest na mapie!
