@@ -73,7 +73,7 @@
   startingGear: ResearchDirectorGear
   icon: "JobIconResearchDirector"
   supervisors: job-supervisors-captain
-  canBeAntag: false
+  canBeAntag: true # Polonium
   access:
   - Research
   - Robotics # funkystation

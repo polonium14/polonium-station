@@ -70,7 +70,7 @@
   startingGear: CMOGear
   icon: "JobIconChiefMedicalOfficer"
   supervisors: job-supervisors-captain
-  canBeAntag: false
+  canBeAntag: true # Polonium
   access:
   - Medical
   - Command

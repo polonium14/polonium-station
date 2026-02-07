@@ -63,7 +63,7 @@
   startingGear: ChiefEngineerGear
   icon: "JobIconChiefEngineer"
   supervisors: job-supervisors-captain
-  canBeAntag: false
+  canBeAntag: true # Polonium
   access:
   - Maintenance
   - Engineering
