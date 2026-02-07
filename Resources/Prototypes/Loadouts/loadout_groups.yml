@@ -1177,6 +1177,13 @@
   - SalvageSpecialistJumpsuit
   - SeniorSalvageSpecialistJumpsuit
 
+- type: loadoutGroup #Polonium
+  id: SalvageSpecialistPDA
+  name: loadout-group-salvage-specialist-id
+  loadouts:
+  - SalvagePDA
+  - SeniorCargoPDA
+
 - type: loadoutGroup
   id: SalvageSpecialistBackpack
   name: loadout-group-salvage-specialist-backpack

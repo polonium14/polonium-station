@@ -102,6 +102,7 @@ loadout-group-salvage-specialist-jumpsuit = Technik Odzysku – kombinezon
 loadout-group-salvage-specialist-neck = Technik Odzysku – szyja
 loadout-group-salvage-specialist-outerclothing = Technik Odzysku – odzież wierzchnia
 loadout-group-salvage-specialist-shoes = Technik Odzysku – buty
+loadout-group-salvage-specialist-id = Technik Odzysku – ID
 # Engineering
 loadout-group-chief-engineer-head = Naczelny Inżynier – nakrycie głowy
 loadout-group-chief-engineer-jumpsuit = Naczelny Inżynier – kombinezon

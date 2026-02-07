@@ -52,3 +52,9 @@
   equipment:
     shoes: ClothingShoesBootsSalvage
   groupBy: "boots"
+
+# ID (Polonium)
+- type: loadout
+  id: SalvagePDA
+  equipment:
+    id: SalvagePDA

@@ -52,7 +52,7 @@
   id: SalvageSpecialistGear
   equipment:
     ears: ClothingHeadsetCargo
-    id: SalvagePDA
+    #id: SalvagePDA Polonium, dajemy do loadoutu
   #storage:
     #back:
     #- Stuff
