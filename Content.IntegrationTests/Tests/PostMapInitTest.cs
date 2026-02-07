@@ -476,19 +476,27 @@ namespace Content.IntegrationTests.Tests
                     var comp = entManager.GetComponent<StationJobsComponent>(station);
                     var jobs = new HashSet<ProtoId<JobPrototype>>(comp.SetupAvailableJobs.Keys);
 
-                    var spawnPoints = entManager.EntityQuery<SpawnPointComponent>()
-                        .Where(x => x.SpawnType == SpawnPointType.Job && x.Job != null)
-                        .Select(x => x.Job.Value);
+                    // Polonium, jak mamy spawny late join, to każda praca z brakującym spawnem zostanie tam zespawnowana.
+                    var spawnPointsLateJoin = entManager.EntityQuery<SpawnPointComponent>()
+                        .Where(x => x.SpawnType == SpawnPointType.LateJoin)
+                        .Select(x => x.SpawnType);
 
-                    jobs.ExceptWith(spawnPoints);
+                    if (!spawnPointsLateJoin.Any())
+                    {
+                        var spawnPoints = entManager.EntityQuery<SpawnPointComponent>()
+                            .Where(x => x.SpawnType == SpawnPointType.Job && x.Job != null)
+                            .Select(x => x.Job.Value);
 
-                    spawnPoints = entManager.EntityQuery<ContainerSpawnPointComponent>()
-                        .Where(x => x.SpawnType is SpawnPointType.Job or SpawnPointType.Unset && x.Job != null)
-                        .Select(x => x.Job.Value);
+                        jobs.ExceptWith(spawnPoints);
 
-                    jobs.ExceptWith(spawnPoints);
+                        spawnPoints = entManager.EntityQuery<ContainerSpawnPointComponent>()
+                            .Where(x => x.SpawnType is SpawnPointType.Job or SpawnPointType.Unset && x.Job != null)
+                            .Select(x => x.Job.Value);
 
-                    Assert.That(jobs, Is.Empty, $"There is no spawnpoints for {string.Join(", ", jobs)} on {mapProto}.");
+                        jobs.ExceptWith(spawnPoints);
+
+                        Assert.That(jobs, Is.Empty, $"There is no spawnpoints for {string.Join(", ", jobs)} on {mapProto}.");
+                    }
                 }
 
                 try
