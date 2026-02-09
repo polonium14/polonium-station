@@ -16,7 +16,7 @@ public sealed class PoolManagerTestEventHandler
 {
     // This value is completely arbitrary.
     // POLONIUM: Tests took almost 50 minutes to run on my 5700X, so this value is increased to 2 hours to give a comfortable buffer for github CI.
-    private static TimeSpan MaximumTotalTestingTimeLimit => TimeSpan.FromMinutes(120);
+    private static TimeSpan MaximumTotalTestingTimeLimit => TimeSpan.FromMinutes(150);
     private static TimeSpan HardStopTimeLimit => MaximumTotalTestingTimeLimit.Add(TimeSpan.FromMinutes(1));
 
     [OneTimeSetUp]
