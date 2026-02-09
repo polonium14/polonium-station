@@ -9,3 +9,12 @@
 
 - type: Tag
   id: ErtUplinkERT
+
+- type: Tag
+  id: ErtUplinkMedical
+  
+- type: Tag
+  id: ErtUplinkJanitorial
+  
+- type: Tag
+  id: ErtUplinkEngineering
