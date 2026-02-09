@@ -5,4 +5,4 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 reagent-name-machine-oil = olej maszynowy
-reagent-desc-machine-oil = Krew maszyn.
+reagent-desc-machine-oil = krew maszyn.
