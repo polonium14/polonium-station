@@ -1201,7 +1201,7 @@
     - !type:StoreWhitelistCondition
       whitelist:
         tags:
-          - ErtUplinkMedial        
+          - ErtUplinkMedical        
 
 - type: listing
   id: ErtCallUplinkEngineerHardsuit
@@ -1231,6 +1231,6 @@
     - !type:StoreWhitelistCondition
       whitelist:
         tags:
-          - ErtUplinkJanitor               
+          - ErtUplinkJanitorial             
 
           
