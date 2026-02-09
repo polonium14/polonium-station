@@ -52,10 +52,10 @@
   - type: Store
     balance:
       BlueSpaceCube: 25
-  # - type: Tag
-  #   tags:
-  #     - ErtUplinkCombat
-
+  - type: Tag
+    tags:
+      - ErtUplinkMedical
+      - ErtUplinkERT
 #Security
 #ERT
 - type: entity
@@ -87,6 +87,7 @@
   - type: Tag
     tags:
       - ErtUplinkERT
+      - ErtUplinkEngineering
 
 #Junitor
 - type: entity
@@ -99,9 +100,9 @@
   - type: Store
     balance:
       BlueSpaceCube: 25
-  # - type: Tag
-  #   tags:
-  #     - ErtUplinkCombat
+  - type: Tag
+    tags:
+      - ErtUplinkJanitorial
 #ERT END
 
 #CBURN START
