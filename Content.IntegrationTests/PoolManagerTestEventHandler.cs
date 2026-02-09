@@ -15,7 +15,8 @@ namespace Content.IntegrationTests;
 public sealed class PoolManagerTestEventHandler
 {
     // This value is completely arbitrary.
-    private static TimeSpan MaximumTotalTestingTimeLimit => TimeSpan.FromMinutes(40);
+    // POLONIUM: Tests took almost 50 minutes to run on my 5700X, so this value is increased to 2 hours to give a comfortable buffer for github CI.
+    private static TimeSpan MaximumTotalTestingTimeLimit => TimeSpan.FromMinutes(120);
     private static TimeSpan HardStopTimeLimit => MaximumTotalTestingTimeLimit.Add(TimeSpan.FromMinutes(1));
 
     [OneTimeSetUp]
@@ -34,7 +35,7 @@ public sealed class PoolManagerTestEventHandler
         _ = Task.Delay(HardStopTimeLimit).ContinueWith(_ =>
         {
             var deathReport = PoolManager.DeathReport();
-            Environment.FailFast($"Tests took way too ;\n Death Report:\n{deathReport}");
+            Environment.FailFast($"Tests took way too long;\n Death Report:\n{deathReport}");
         });
     }
 
