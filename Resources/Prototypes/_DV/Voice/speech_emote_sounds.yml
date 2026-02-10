@@ -27,9 +27,9 @@
     Cough:
       collection: FemaleCoughs
     Sigh:
-      collection: HarpyFemaleSigh
+      collection: FemaleSigh
     Crying:
-      collection: HarpyFemaleCry
+      collection: FemaleCry
     Whistle:
       collection: Whistles
     Hiss:
@@ -95,13 +95,13 @@
     Laugh:
       collection: HarpyMaleLaugh
     Sneeze:
-      collection: HarpyMaleSneezes
+      collection: MaleSneezes
     Cough:
       collection: MaleCoughs
     Sigh:
-      collection: HarpyMaleSigh
+      collection: MaleSigh
     Crying:
-      collection: HarpyMaleCry
+      collection: MaleCry
     Whistle:
       collection: Whistles
     Hiss:

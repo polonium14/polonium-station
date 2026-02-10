@@ -87,32 +87,6 @@
     - /Audio/_Impstation/Voice/Reptilian/reptillian_hiss1.ogg
 
 - type: soundCollection
-  id: HarpyMaleSigh
-  files:
-    - /Audio/Voice/Human/male_sigh.ogg
-
-- type: soundCollection
-  id: HarpyFemaleSigh
-  files:
-    - /Audio/Voice/Human/female_sigh.ogg
-
-- type: soundCollection
-  id: HarpyMaleCry
-  files:
-    - /Audio/Voice/Human/cry_male_1.ogg
-    - /Audio/Voice/Human/cry_male_2.ogg
-    - /Audio/Voice/Human/cry_male_3.ogg
-    - /Audio/Voice/Human/cry_male_4.ogg
-
-- type: soundCollection
-  id: HarpyFemaleCry
-  files:
-    - /Audio/Voice/Human/cry_female_1.ogg
-    - /Audio/Voice/Human/cry_female_2.ogg
-    - /Audio/Voice/Human/cry_female_3.ogg
-    - /Audio/Voice/Human/cry_female_4.ogg
-
-- type: soundCollection
   id: HarpyMeows
   files:
     - /Audio/Nyanotrasen/Voice/Felinid/cat_meow1.ogg
