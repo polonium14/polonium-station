@@ -19,17 +19,17 @@
     variation: 0.125
   sounds:
     Scream:
-      collection: HarpyScreams
+      collection: HarpyFemaleScreams
     Laugh:
-      collection: HarpyLaugh
+      collection: HarpyFemaleLaugh
     Sneeze:
-      collection: MaleSneezes
+      collection: FemaleSneezes
     Cough:
-      collection: MaleCoughs
+      collection: FemaleCoughs
     Sigh:
-      collection: MaleSigh
+      collection: HarpyFemaleSigh
     Crying:
-      collection: HarpyCry
+      collection: HarpyFemaleCry
     Whistle:
       collection: Whistles
     Hiss:
@@ -91,17 +91,17 @@
     variation: 0.125
   sounds:
     Scream:
-      collection: HarpyScreams
+      collection: HarpyMaleScreams
     Laugh:
-      collection: HarpyLaugh
+      collection: HarpyMaleLaugh
     Sneeze:
-      collection: MaleSneezes
+      collection: HarpyMaleSneezes
     Cough:
       collection: MaleCoughs
     Sigh:
-      collection: MaleSigh
+      collection: HarpyMaleSigh
     Crying:
-      collection: HarpyCry
+      collection: HarpyMaleCry
     Whistle:
       collection: Whistles
     Hiss:
