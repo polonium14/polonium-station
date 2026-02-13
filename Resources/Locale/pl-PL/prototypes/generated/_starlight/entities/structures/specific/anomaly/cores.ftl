@@ -1,0 +1,12 @@
+ent-AnomalyCoreClown = { ent-BaseAnomalyCore }
+    .desc = Rdzeń zniszczonej anomalii klauna. Emanuje najczystszą esencją Honkomatki.
+    .suffix = Klaun
+ent-AnomalyCoreClownInert = { ent-BaseAnomalyInertCore }
+    .desc = Bezczynny rdzeń zniszczonej anomalii klauna. Emanuje najczystszą esencją Honkomatki.
+    .suffix = Klaun, Bezczynny
+ent-AnomalyCoreBanana = { ent-BaseAnomalyCore }
+    .suffix = Banan
+    .desc = { ent-BaseAnomalyCore.desc }
+ent-AnomalyCoreBananaInert = { ent-BaseAnomalyInertCore }
+    .suffix = Banan, Bezczynny
+    .desc = { ent-BaseAnomalyInertCore.desc }

@@ -4,38 +4,38 @@ SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
 SPDX-License-Identifier: MIT
 -->
 <Document>
-  # Station Alert - Delta
+  # Kod Zagrożenia - Delta
 
   <Box>
-    [italic]The station is on the precipice of destruction. Act decisively to resolve the situation. Any cost is justified to achieve this goal.[/italic]
+    [italic]Stacja znajduje się na krawędzi zniszczenia. Podejmij zdecydowane działania, aby rozwiązać tę sytuację. Każdy koszt jest uzasadniony, aby osiągnąć ten cel.[/italic]
   </Box>
-  
-  There is imminent risk of station destruction or loss of all crew life. Failure to act will lead to catastrophic consequences.
- 
-  [bold]Security:[/bold]
-  
-  Martial Law is enacted. Standard Operating Procedure is suspended. Security personnel have full permission to do whatever it takes to ensure that the safety of the station and crew is maintained. Personnel interfering with emergency procedures may be removed as the situation demands. Security are cleared to use lethal force in response to any physical threat. Assault of Command or ERT may be punished with immediate field execution.
 
-  Random searches are fully permitted, allowed and encouraged. Security personnel may detain any personnel refusing a random search in order to conduct said search;
+  Istnieje bezpośrednie ryzyko zniszczenia stacji lub śmierci całej załogi. Brak działania doprowadzi do katastrofalnych konsekwencji.
 
-  Security personnel are to cooperate fully with any Central Command Staff (such as Emergency Response Teams) in order to eliminate the threat to the station.
-  
-  In the case of a Central Command-authorized activation of the on-board Nuclear Fission Device, all Security personnel are to protect the device.
+  [bold]Ochrona:[/bold]
 
-  [bold]Secure Areas:[/bold]
+  Wprowadzono stan wojenny. Standardowe procedury operacyjne zostały zawieszone. Personel ochrony ma pełne uprawnienia do podjęcia wszelkich niezbędnych działań w celu zapewnienia bezpieczeństwa stacji i załogi. Personel utrudniający przeprowadzenie procedur awaryjnych może zostać usunięty, jeśli wymaga tego sytuacja. Ochrona ma prawo do użycia broni w odpowiedzi na wszelkie fizyczne zagrożenie. Atak na Dowództwo lub zespół ratowniczy może zostać ukarany natychmiastową egzekucją w terenie.
 
-  Anywhere requiring Command or Security access. Any locations designated by Command.
+  Losowe kontrole są w pełni dozwolone, dopuszczalne i zalecane. Pracownicy ochrony mogą zatrzymać każdą osobę, która odmówi poddania się losowej kontroli, w celu przeprowadzenia takiej kontroli;
 
-  [bold]General Crew:[/bold]
-  
-  All personnel are required to maximize their Suit Sensors;
-  
-  All personnel are to do whatever they can to stop the threat to the station. Crew should follow any commands given by Security, Command, or Central Command Staff.
+  Pracownicy ochrony mają obowiązek pełnej współpracy z dowolnym personelem Centralnego Dowództwa (np. Jednostkami Szybkiego Reagowania) w celu wyeliminowania zagrożenia dla stacji.
 
-  Visitors to the station (anyone with Civilian-level access) are to remain inside the Bar, Library or Dormitories unless directed otherwise by Security, Command, or Central Command Staff.
-  
-  In the case of an uncontainable infectious or subsuming threat, the crew must ensure that quarantine procedures are followed and that the threat stays contained to the station, even at the cost of their lives.
-  
-  In the case of a Central Command-authorized activation of the on-board Nuclear Fission Device, all personnel are to stand down and follow Central Command directives.
+  W przypadku aktywacji pokładowej Głowicy Nuklearnej, zatwierdzonej przez Centralne Dowództwo, cały personel ochrony ma obowiązek chronić to urządzenie.
+
+  [bold]Obszary zabezpieczone:[/bold]
+
+  Wszelkie miejsca wymagające dostępu Dowództwa lub Ochrony, lub wyznaczone przez Dowództwo.
+
+  [bold]Załoga ogólna:[/bold]
+
+  Cała załoga jest zobowiązana do maksymalnego ustawienia czujników kombinezonów;
+
+  Wszyscy członkowie załogi mają zrobić wszystko, co w ich mocy, aby powstrzymać zagrożenie dla stacji. Załoga powinna wykonywać wszystkie polecenia wydane przez służby bezpieczeństwa, Dowództwo lub personel Centralnego Dowództwa.
+
+  Gościom na stacji (komukolwiek z dostępem na poziomie Cywilnym) zaleca się pozostawanie w Barze, Bibliotece lub Kajutach, chyba że Ochrona, Dowództwo lub członkowie Centralnego Dowództwa postanowią inaczej.
+
+  W przypadku niekontrolowanego zagrożenia infekcyjnego lub zagrożenia o charakterze ogólnym załoga musi zapewnić przestrzeganie procedur kwarantanny i ograniczenie zagrożenia do stacji, nawet kosztem własnego życia.
+
+  W przypadku aktywacji pokładowej Głowicy Nuklearnej, zatwierdzonej przez Centralne Dowództwo, cały personel musi się wycofać i postępować zgodnie z wytycznymi Centralnego Dowództwa.
 
 </Document>

@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2025 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 Czuat <143895262+Czuat@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 Polonium-bot <admin@ss14.pl>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 #ERT START
 - type: entity
   parent: BaseItem
@@ -52,10 +58,10 @@
   - type: Store
     balance:
       BlueSpaceCube: 25
-  # - type: Tag
-  #   tags:
-  #     - ErtUplinkCombat
-
+  - type: Tag
+    tags:
+      - ErtUplinkMedical
+      - ErtUplinkERT
 #Security
 #ERT
 - type: entity
@@ -87,6 +93,7 @@
   - type: Tag
     tags:
       - ErtUplinkERT
+      - ErtUplinkEngineering
 
 #Junitor
 - type: entity
@@ -99,9 +106,9 @@
   - type: Store
     balance:
       BlueSpaceCube: 25
-  # - type: Tag
-  #   tags:
-  #     - ErtUplinkCombat
+  - type: Tag
+    tags:
+      - ErtUplinkJanitorial
 #ERT END
 
 #CBURN START

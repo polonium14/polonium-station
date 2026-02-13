@@ -1,37 +1,4 @@
 ﻿Entries:
-- author: sporkyz
-  changes:
-  - message: Galoshes are now restricted to janitor.
-    type: Tweak
-  - message: Double barrel shotguns, basic armor vests, beanbag/flare shotgun shells,
-      and bandoliers are now allowed for Bartenders, not just Security.
-    type: Tweak
-  - message: Lawyers now have access to the Security headset they spawn with, as well
-      as the encryption key inside.
-    type: Fix
-  - message: Sawn-off shotguns are now properly considered contraband instead of being
-      unrestricted.
-    type: Fix
-  id: 7836
-  time: '2025-01-21T09:51:27.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/33385
-- author: K-Dynamic
-  changes:
-  - message: Electrified doors and windoors now visibly spark when touched.
-    type: Tweak
-  - message: New tips have been added about opening electrified doors by throwing
-      your PDA or ID, and resetting doors that are electrified by AI.
-    type: Add
-  id: 7837
-  time: '2025-01-21T10:39:16.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34502
-- author: Nimfar11
-  changes:
-  - message: Adds Blueprint double emergency tank.
-    type: Add
-  id: 7838
-  time: '2025-01-21T16:08:21.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34232
 - author: sowelipililimute
   changes:
   - message: Chefs now have access to cloth boxes in their locker, kitchen supplies
@@ -4081,3 +4048,25 @@
   id: 9143
   time: '2026-02-07T13:57:50.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/449
+- author: Matix
+  changes:
+  - message: "Ma\u0142e poprawki w t\u0142umaczeniu"
+    type: Fix
+  id: 9144
+  time: '2026-02-07T16:05:57.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/452
+- author: Nikitapl
+  changes:
+  - message: "Przet\u0142umaczono artyku\u0142y poradnika o kodach zagro\u017Cenia"
+    type: Tweak
+  id: 9145
+  time: '2026-02-08T16:12:15.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/455
+- author: Czuat
+  changes:
+  - message: "Dodano mo\u017Cliwo\u015B\u0107 zakupu skafandr\xF3w w terminalu WTH\
+      \ JSR"
+    type: Add
+  id: 9146
+  time: '2026-02-09T23:05:32.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/460

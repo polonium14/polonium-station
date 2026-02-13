@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2025 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 Czuat <143895262+Czuat@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 Polonium-bot <admin@ss14.pl>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 #ERTUplinkMelee
 - type: listing
   id: ErtCallUplinkStunbaton
@@ -1167,3 +1173,65 @@
     BlueSpaceCube: 2
   categories:
   - ERTUplinkAmmoCombat
+
+- type: listing
+  id: ErtCallUplinkSecurityHardsuit
+  name: ERT security's hardsuit
+  description: A protective hardsuit worn by the security officers of an emergency response team.
+  productEntity: ClothingOuterHardsuitERTSecurity
+  cost:
+    BlueSpaceCube: 5
+  categories:
+  - ERTUplinkUtilities
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkCombat
+
+- type: listing
+  id: ErtCallUplinkMedicHardsuit
+  name: ERT medic's hardsuit
+  description: A protective hardsuit worn by the medics of an emergency response team.
+  productEntity: ClothingOuterHardsuitERTMedical
+  cost:
+    BlueSpaceCube: 5
+  categories:
+  - ERTUplinkUtilities
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkMedical        
+
+- type: listing
+  id: ErtCallUplinkEngineerHardsuit
+  name: ERT engineer's hardsuit
+  description: A protective hardsuit worn by the engineers of an emergency response team.
+  productEntity: ClothingOuterHardsuitERTEngineer
+  cost:
+    BlueSpaceCube: 5
+  categories:
+  - ERTUplinkUtilities
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkEngineering     
+
+- type: listing
+  id: ErtCallUplinkJanitorHardsuit
+  name: ERT janitor's hardsuit
+  description: A protective hardsuit worn by the janitors of an emergency response team.
+  productEntity: ClothingOuterHardsuitERTJanitor
+  cost:
+    BlueSpaceCube: 4
+  categories:
+  - ERTUplinkUtilities
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkJanitorial             
+
+          

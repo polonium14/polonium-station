@@ -5,43 +5,43 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-  # Station Alert - Blue
+  # Kod Zagrożenia - Niebieski
 
   <Box>
-    [italic]Called by: Anyone with Command-Level Access at a working Communications Console.[/italic]
+    [italic]Wywołuje: Każdy, kto ma dostęp na poziomie Dowództwa do działającej konsoli komunikacyjnej.[/italic]
   </Box>
 
-  [bold]Conditions:[/bold]
+  [bold]Warunki:[/bold]
 
-  There is a suspected threat on-board the station, or at a nearby location in space. This includes any signs of hostile activity that have not caused any damage to station or crew, but nonetheless seem present.
+  Istnieje podejrzenie zagrożenia na pokładzie stacji lub w pobliskiej przestrzeni kosmicznej. Obejmuje to wszelkie oznaki wrogich działań, które nie spowodowały żadnych szkód dla stacji lub załogi, ale mimo to wydają się obecne.
 
-  [italics]Minor threats such as thieves, bar fights, and non-violent protests are not credible enough threats to elevate alert level to blue.
+  [italics]Drobne zagrożenia, takie jak złodzieje, bójki w barach i pokojowe protesty, nie są wystarczająco poważne, aby podnieść poziom alarmowy do niebieskiego.
 
-  [bold]OR[/bold]
+  [bold]LUB[/bold]
 
-  Confirmed Code Red threats have been properly handled or subsided on their own. It is recommended that, after 10+ minutes on Code Red without any hostile activity, Code Blue be called.
+  Potwierdzone zagrożenia oznaczone Kodem Czerwonym zostały odpowiednio zażegnane lub ustąpiły samoistnie. Zaleca się, aby po upływie ponad 10 minut od ogłoszenia kodu czerwonego bez żadnych wrogich działań ogłosić Kod Niebieski.
 
-  [bold]Security:[/bold]
+  [bold]Ochrona:[/bold]
 
-  Weapons do not need to be holstered. However, it is recommended that Security personnel follow Security SOP in order to prevent accidents and to be fully aware of armament procedure;
+  Broń nie musi być chowana do kabury. Zaleca się jednak, aby pracownicy ochrony postępowali zgodnie z SPO Ochrony w celu zapobiegania wypadkom i pełnej świadomości procedur dotyczących uzbrojenia.
 
-  Random searches are fully permitted. Security personnel may detain any personnel refusing a random search in order to conduct said search;
+  Losowe kontrole są w pełni dozwolone. Personel ochrony może zatrzymać każdą osobę, która odmówi poddania się losowej kontroli, w celu przeprowadzenia tej kontroli.
 
-  [bold]Secure Areas:[/bold]
+  [bold]Obszary zabezpieczone:[/bold]
 
-  EVA Storage, Tech Storage, Gravity Generator, Engineering Secure Storage, AI Upload, Vault, Gateway, anywhere else requiring command level access that does not get regularly used.
+  Magazyn EVA, Magazyn Techniczny, Generator Grawitacji, Bezpieczny Magazyn Inżynieryjny, Zarządzanie SI, Skarbiec, Brama oraz wszelkie inne miejsca wymagające dostępu na poziomie Dowództwa, które nie są regularnie używane.
 
-  It is recommended that all Secure Areas be bolted down unless their use is necessary;
+  Zaleca się, aby wszystkie obszary zabezpieczone były zaboltowane, chyba że ich użycie jest konieczne.
 
-  Excursions into the Gateway are not recommended, unless they are rescue parties.
+  Wycieczki do Bramy nie są zalecane, chyba że są to akcje ratownicze.
 
-  [bold]General Crew:[/bold]
+  [bold]Załoga ogólna:[/bold]
 
-  All personnel are highly recommended to maximize their Suit Sensors;
+  Wszystkim członkom załogi zaleca się maksymalne ustawienie czujników kombinezonów;
 
-  Personnel are to report any suspicious activity to the nearest member of Security, or use their PDA or headsets if required;
+  Członkowie załogi powinni zgłaszać wszelkie podejrzane działania najbliższemu członkowi ochrony lub w razie potrzeby używać swoich urządzeń PDA lub zestawów słuchawkowych;
 
-  Personnel are highly encouraged to exercise caution, even if the threat is only suspected. Following simple safety procedures (such as not going through Maintenance alone) can prevent needless accidents;
+  Załoga powinna zachować szczególną ostrożność, nawet jeśli zagrożenie jest jedynie podejrzewane. Przestrzeganie prostych procedur bezpieczeństwa (takich jak nieprzechodzenie samodzielnie przez obszar konserwacji) może zapobiec niepotrzebnym wypadkom;
 
-  Visitors to the station (anyone with Civilian-level access) are recommended to stay in public areas, for their safety.
+  Gościom na stacji (komukolwiek z dostępem na poziomie Cywilnym) zaleca się pozostawanie w miejscach publicznych, dla własnego bezpieczeństwa.
 </Document>

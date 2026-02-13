@@ -6,39 +6,39 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-  # Station Alert - Violet
+  # Kod Zagrożenia - Fioletowy
 
   <Box>
-    [italic]Called by: A viral threat aboard the station.[/italic]
+    [italic]Wywołuje: Zidentyfikowane zagrożenie wirusowe na pokładzie stacji.[/italic]
   </Box>
 
-  [bold]Conditions:[/bold]
+  [bold]Warunki:[/bold]
 
-  There is a known viral threat aboard the station, and all hands on deck are required to combat it.
+  Istnieje znane zagrożenie wirusowe na pokładzie stacji i wszyscy są potrzebni do jego zwalczania.
 
-  [bold]Security:[/bold]
+  [bold]Ochrona:[/bold]
 
-  Security should fully arm themselves, and at their discretion may also hand out arms to trusted crewmembers and Command.
+  Ochrona powinna w pełni się uzbroić, a według własnego uznania może także wydawać broń zaufanym członkom załogi i Dowództwu.
 
-  Security personnel are to prioritize the safety of themselves and Command, and crewmembers as the next-highest priority.
+  Personel ochrony ma priorytetowo traktować bezpieczeństwo własne oraz Dowództwa, a następnie członków załogi.
 
-  Security personnel should distance themselves from others in order to avoid the spread of unknown pathogens.
+  Personel ochrony powinien utrzymywać dystans od innych, aby zapobiec rozprzestrzenianiu się nieznanych patogenów.
 
-  [bold]Secure Areas:[/bold]
+  [bold]Obszary zabezpieczone:[/bold]
 
-  EVA Storage, Tech Storage, Gravity Generator, Engineering Secure Storage, AI Upload, Vault, Gateway, anywhere else requiring command level access that does not get regularly used.
+  Magazyn EVA, Magazyn Techniczny, Generator Grawitacji, Bezpieczny Magazyn Inżynieryjny, Zarządzanie SI, Skarbiec, Brama oraz wszelkie inne miejsca wymagające dostępu na poziomie Dowództwa, które nie są regularnie używane.
 
-  It is recommended that all Secure Areas be bolted down unless their use is necessary;
+  Zaleca się, aby wszystkie Obszary zabezpieczone były zaboltowane, chyba że ich użycie jest konieczne;
 
-  The Gateway should be fully closed to avoid off-station spread of the virus.
+  Brama powinna być całkowicie zamknięta, aby uniknąć rozprzestrzenienia wirusa poza stację.
 
-  [bold]General Crew:[/bold]
+  [bold]Załoga ogólna:[/bold]
 
-  All personnel are required to maximize their Suit Sensors;
+  Cała załoga jest zobowiązana do maksymalnego ustawienia czujników kombinezonów;
 
-  Personnel are to distance themselves from other personnel where infection or carrier status is suspected.
+  Członkowie załogi powinni zachowywać dystans od innych członków załogi, u których podejrzewa się zakażenie lub status nosiciela.
 
-  Personnel must exercise caution at all times. Following simple safety procedures (such as not going through Maintenance alone) can prevent needless accidents.
+  Załoga musi zachować ostrożność przez cały czas. Przestrzeganie prostych procedur bezpieczeństwa (takich jak nieprzechodzenie samodzielnie przez obszar konserwacji) może zapobiec niepotrzebnym wypadkom.
 
-  Personnel are advised to secure a secluded location to ride out the viral threat in. Stock as much food and water as is possible.
+  Zaleca się, aby personel zabezpieczył odosobnione miejsce do przeczekania zagrożenia wirusowego. Zgromadź tyle jedzenia i wody, ile to możliwe.
 </Document>

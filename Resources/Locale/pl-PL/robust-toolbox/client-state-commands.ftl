@@ -7,6 +7,6 @@ cmd-reset-all-ents-desc = Resetuje wszystkie jednostki do ostatniego stanu otrzy
 cmd-detach-ent-help = Użycie: detachent <Entity UID>
 cmd-detach-ent-desc = Odłącza jednostkę do "null-space", tak jakby opuściła zasięg PVS.
 cmd-local-delete-help = Użycie: localdelete <Entity UID>
-cmd-local-delete-desc = Usuwa jednostkę po stronie klienta. W przeciwieństwie do standardowej komendy delete, działa tylko po stronie klienta. Jeśli jednostka nie jest jednostką klienta, może powodować błędy.
+cmd-local-delete-desc = Usuwa jednostkę po stronie klienta. W przeciwieństwie do standardowej komendy delete, działa tylko po stronie klienta. Jeśli encja nie jest encją klienta, może powodować błędy.
 cmd-full-state-reset-help = Użycie: fullstatereset
 cmd-full-state-reset-desc = Usuwa wszystkie informacje o stanie jednostek i żąda pełnego stanu od serwera.

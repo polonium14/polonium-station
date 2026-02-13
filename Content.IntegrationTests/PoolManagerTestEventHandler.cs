@@ -5,6 +5,8 @@
 // SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
 // SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
 // SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+// SPDX-FileCopyrightText: 2026 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 nikitosych <174215049+nikitosych@users.noreply.github.com>
 //
 // SPDX-License-Identifier: MIT
 
@@ -14,7 +16,8 @@ namespace Content.IntegrationTests;
 public sealed class PoolManagerTestEventHandler
 {
     // This value is completely arbitrary.
-    private static TimeSpan MaximumTotalTestingTimeLimit => TimeSpan.FromMinutes(20);
+    // POLONIUM: Tests took almost 50 minutes to run on my 5700X, so this value is increased to 2 hours to give a comfortable buffer for github CI.
+    private static TimeSpan MaximumTotalTestingTimeLimit => TimeSpan.FromMinutes(150);
     private static TimeSpan HardStopTimeLimit => MaximumTotalTestingTimeLimit.Add(TimeSpan.FromMinutes(1));
 
     [OneTimeSetUp]
@@ -33,7 +36,7 @@ public sealed class PoolManagerTestEventHandler
         _ = Task.Delay(HardStopTimeLimit).ContinueWith(_ =>
         {
             var deathReport = PoolManager.DeathReport();
-            Environment.FailFast($"Tests took way too ;\n Death Report:\n{deathReport}");
+            Environment.FailFast($"Tests took way too long;\n Death Report:\n{deathReport}");
         });
     }
 

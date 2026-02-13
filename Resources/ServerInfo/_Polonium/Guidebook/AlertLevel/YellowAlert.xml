@@ -5,32 +5,32 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-  # Station Alert - Yellow
+  # Kod Zagrożenia - Żółty
 
   <Box>
-    [italic]Called by: Anyone with Command-Level Access at a working Communications Console.[/italic]
+    [italic]Wywołuje: Każdy, kto ma dostęp na poziomie Dowództwa do działającej konsoli komunikacyjnej.[/italic]
   </Box>
 
 
-  [bold]Conditions:[/bold]
-  There is an atmospheric threat aboard the station such as mass hull breaches, spacing, or high temperatures that make the station uninhabitable without an EVA suit.
+  [bold]Warunki:[/bold]
+  Na stacji występuje zagrożenie atmosferyczne, takie jak masowe rozszczelnienia kadłuba, rozpróżnianie lub wysokie temperatury czyniące stację niezdatną do zamieszkania bez skafandra EVA.
 
-  [bold]Security:[/bold]
+  [bold]Ochrona:[/bold]
 
-  You should ensure EVA suits are properly distributed around the station while maintaining vigilance.
+  Należy zapewnić właściwe rozmieszczenie skafandrów EVA na stacji, zachowując czujność.
 
-  [bold]Secure Areas:[/bold]
+  [bold]Obszary zabezpieczone:[/bold]
 
-  EVA Storage, Tech Storage, Gravity Generator, Engineering Secure Storage, AI Upload, Vault, Gateway, anywhere else requiring command level access that does not get regularly used.
+  Magazyn EVA, Magazyn Techniczny, Generator Grawitacyjny, Zabezpieczony Magazyn Inżynieryjny, Zarządzanie SI, Skarbiec, Brama oraz wszelkie inne miejsca wymagające dostępu na poziomie Dowództwa, które nie są regularnie używane.
 
-  It is recommended that all Secure Areas be bolted down unless their use is necessary;
+  Zaleca się, aby wszystkie Obszary zabezpieczone były zaboltowane, chyba że ich użycie jest konieczne;
 
-  [bold]General Crew:[/bold]
+  [bold]Załoga ogólna:[/bold]
 
-  All personnel are highly recommended to maximize their Suit Sensors;
+  Wszystkim członkom załogi zaleca się przełączenie swoich czujników kombinezonów na maksymalny tryb;
 
-  Personnel are to report any suspicious activity to the nearest member of Security, or use their PDA or headsets if required;
+  Załoga powinna zgłaszać wszelkie podejrzane działania najbliższemu członkowi Ochrony lub, w razie potrzeby, używać swoich urządzeń PDA lub zestawów słuchawkowych;
 
-  Personnel are highly encouraged to either get into a safe area or find emergency EVA suits as well as a source of oxygen/nitrogen as required.
+  Załoga jest silnie zachęcana do udania się do bezpiecznego obszaru lub znalezienia awaryjnych skafandrów EVA, a także źródła tlenu/azotu w razie potrzeby.
 
 </Document>

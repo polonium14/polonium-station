@@ -1,6 +1,6 @@
 ## EntitySpawnWindow
 
-entity-spawn-window-title = Panel Spawnowania Podmiotów
+entity-spawn-window-title = Panel Spawnowania Encji
 window-search-bar-placeholder = Wyszukaj
 window-clear-button = Wyczyść
 entity-spawn-window-replace-button-text = Zamień
