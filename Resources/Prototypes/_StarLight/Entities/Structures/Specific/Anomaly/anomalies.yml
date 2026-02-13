@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2024 Rinary <rinary.super@gmail.com>
+# SPDX-FileCopyrightText: 2025 Quantum-cross <7065792+Quantum-cross@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   id: AnomalyClown
   description: It's an otherwise normal car that seems to bend the very space within it. You sense that the creatures within are coming to make you laugh at all costs...
