@@ -1,10 +1,12 @@
-ent-APCElectronics = APC electronics
-    .desc = Circuit used in APC construction.
-ent-WallmountSubstationElectronics = wallmount substation electronics
-    .desc = Circuit used to construct a wallmount substation.
-ent-WallmountGeneratorElectronics = wallmount generator electronics
-    .desc = Circuit used to construct a wallmount generator.
-ent-WallmountGeneratorAPUElectronics = wallmount APU electronics
-    .desc = Circuit used to construct a wallmount APU.
-ent-SolarTrackerElectronics = solar tracker electronics
-    .desc = Advanced circuit board used to track the nearest star.
+# Lokalny Kontroler Zasilania
+ent-APCElectronics = elektronika LKZ
+    .desc = Układ elektroniczny używany do konstrukcji LKZ.
+ent-WallmountSubstationElectronics = elektronika podstacji ściennej
+    .desc = Układ elektroniczny używany do konstrukcji podstacji ściennej.
+ent-WallmountGeneratorElectronics = elektronika generatora ściennego
+    .desc = Układ elektroniczny używany do konstrukcji generatora ściennego.
+# Pomocnicza Jednostka Zasilania
+ent-WallmountGeneratorAPUElectronics = elektronika PJZ ściennej
+    .desc = Układ elektroniczny używany do konstrukcji PJZ ściennej.
+ent-SolarTrackerElectronics = elektronika śledzenia słoniecznego
+    .desc = Zaawansowany układ elektroniczny używany do śledzenia najbliższej gwiazdy.

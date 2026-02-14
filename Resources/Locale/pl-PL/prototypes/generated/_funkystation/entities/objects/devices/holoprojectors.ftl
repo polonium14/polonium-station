@@ -1,2 +1,2 @@
-ent-HolotapeProjector = holotape projector
-    .desc = A handy way to cordon off a particularly hazardous area — let everyone know they shouldn't wander in without a hardhat.
+ent-HolotapeProjector = projektor holotaśm
+    .desc = Przydatny sposób na odgrodzenie szczególnie niebezpiecznego obszaru — daj wszystkim znać, że nie powinni tam wchodzić bez kasku.

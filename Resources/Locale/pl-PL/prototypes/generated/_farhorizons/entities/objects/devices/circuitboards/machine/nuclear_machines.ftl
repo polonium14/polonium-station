@@ -1,4 +1,4 @@
-ent-NuclearFabricatorMachineCircuitboard = nuclear fabricator machine board
-    .desc = A machine printed circuit board for a nuclear fabricator.
-ent-NuclearCentrifugeMachineCircuitboard = nuclear centrifuge machine board
-    .desc = A machine printed circuit board for a nuclear centrifuge.
+ent-NuclearFabricatorMachineCircuitboard = fabrykator nuklearny (płytka maszynowa)
+    .desc = Płytka maszynowa do fabrykatora nuklearnego.
+ent-NuclearCentrifugeMachineCircuitboard = wirówka nuklearna (płytka maszynowa)
+    .desc = Płytka maszynowa do wirówki nuklearnej.

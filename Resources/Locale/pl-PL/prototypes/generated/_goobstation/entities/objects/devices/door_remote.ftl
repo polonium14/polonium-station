@@ -1,2 +1,2 @@
-ent-DoorRemoteFirefight = fire-fighting door remote
-    .desc = A gadget which can open and bolt FireDoors remotely.
+ent-DoorRemoteFirefight = pilot do drzwi przeciwpożarowych
+    .desc = Gadżet, który pozwala zdalnie otwierać i blokować drzwi przeciwpożarowe.

@@ -1,4 +1,4 @@
-ent-RemoteSignaller = remote signaller
-    .desc = A handheld device used for remotely sending signals to objects within a small radius of about 15 meters.
-ent-RemoteSignallerAdvanced = advanced remote signaller
-    .desc = A handheld device used for remotely sending signals to objects within a small radius of about 50 meters.
+ent-RemoteSignaller = zdalny sygnalizator
+    .desc = Ręczne urządzenie używane do zdalnego wysyłania sygnałów do obiektów w promieniu około 15 metrów.
+ent-RemoteSignallerAdvanced = zaawansowany zdalny sygnalizator
+    .desc = Ręczne urządzenie używane do zdalnego wysyłania sygnałów do obiektów w promieniu około 50 metrów.

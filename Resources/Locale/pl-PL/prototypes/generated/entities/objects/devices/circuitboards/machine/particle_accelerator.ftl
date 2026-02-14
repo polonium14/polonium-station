@@ -1,12 +1,13 @@
-ent-MachineParticleAcceleratorEndCapCircuitboard = PA end cap board
-    .desc = A machine board for a particle accelerator end cap.
-ent-MachineParticleAcceleratorFuelChamberCircuitboard = PA fuel chamber board
-    .desc = A machine board for a particle accelerator fuel chamber.
-ent-MachineParticleAcceleratorPowerBoxCircuitboard = PA power box board
-    .desc = A machine board for a particle accelerator power box.
-ent-MachineParticleAcceleratorEmitterStarboardCircuitboard = PA starboard emitter board
-    .desc = A machine board for a particle accelerator left emitter.
-ent-MachineParticleAcceleratorEmitterForeCircuitboard = PA fore emitter board
-    .desc = A machine board for a particle accelerator center emitter.
-ent-MachineParticleAcceleratorEmitterPortCircuitboard = PA port emitter board
-    .desc = A machine board for a particle accelerator right emitter.
+# Akcelerator Cząstek
+ent-MachineParticleAcceleratorEndCapCircuitboard = płytka drukowana zakończenia AC
+    .desc = Płytka drukowana do zakończenia akceleratora cząsteczek.
+ent-MachineParticleAcceleratorFuelChamberCircuitboard = płytka drukowana komory paliwowej AC
+    .desc = Płytka drukowana do komory paliwowej akceleratora cząsteczek.
+ent-MachineParticleAcceleratorPowerBoxCircuitboard = płytka drukowana modułu zasilania AC
+    .desc = Płytka drukowana do modułu zasilania akceleratora cząsteczek.
+ent-MachineParticleAcceleratorEmitterStarboardCircuitboard = płytka drukowana prawego emitora AC
+    .desc = Płytka drukowana do prawego emitora akceleratora cząsteczek.
+ent-MachineParticleAcceleratorEmitterForeCircuitboard = płytka drukowana centralnego emitora AC
+    .desc = Płytka drukowana do centralnego emitora akceleratora cząsteczek.
+ent-MachineParticleAcceleratorEmitterPortCircuitboard = płytka drukowana lewego emitora AC
+    .desc = Płytka drukowana do lewego emitora akceleratora cząsteczek.

@@ -1,2 +1,2 @@
-ent-SupermatterComputerCircuitboard = supermatter monitoring console board
-    .desc = A computer printed circuit board for a supermatter monitoring console.
+ent-SupermatterComputerCircuitboard = konsola monitorująca supermaterię (płytka konsolowa)
+    .desc = Płytka konsolowa do konsoli monitorującej supermaterię.

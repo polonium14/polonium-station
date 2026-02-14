@@ -1,2 +1,2 @@
-ent-HoloBellProjector = holobell projector
-    .desc = Projects a temporary, fully functional hardlight doorbell.
+ent-HoloBellProjector = projektor holodzwonka
+    .desc = Projektuje tymczasowy, w pełni funkcjonalny twardy dzwonek świetlny.

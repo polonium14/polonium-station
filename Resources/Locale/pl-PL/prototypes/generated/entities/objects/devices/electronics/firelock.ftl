@@ -1,2 +1,2 @@
-ent-FirelockElectronics = firelock electronics
-    .desc = An electronics board used to detect differences in pressure, temperature and gas concentrations between the two sides of the door.
+ent-FirelockElectronics = elektronika śluzy przeciwpożarowej
+    .desc = Płyta elektroniczna używana do wykrywania różnic w ciśnieniu, temperaturze i stężeniu gazów po obu stronach śluzy.

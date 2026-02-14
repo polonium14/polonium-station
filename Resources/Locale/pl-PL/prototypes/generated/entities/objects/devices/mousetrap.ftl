@@ -1,5 +1,5 @@
-ent-Mousetrap = mousetrap
-    .desc = Useful for catching rodents sneaking into your kitchen.
-ent-MousetrapArmed = mousetrap
-    .desc = Useful for catching rodents sneaking into your kitchen.
-    .suffix = Armed
+ent-Mousetrap = pułapka na myszy
+    .desc = Przydatna do łapania gryzoni wkradających się do twojej kuchni.
+ent-MousetrapArmed = pułapka na myszy
+    .desc = Przydatna do łapania gryzoni wkradających się do twojej kuchni.
+    .suffix = Uzbrojona

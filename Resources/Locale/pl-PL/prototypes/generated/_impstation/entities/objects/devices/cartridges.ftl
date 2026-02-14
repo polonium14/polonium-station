@@ -1,2 +1,2 @@
-ent-SOSCartridge = SOS cartridge
-    .desc = A program to call for help.
+ent-SOSCartridge = katridż SOS
+    .desc = Program do wzywania pomocy.

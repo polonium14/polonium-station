@@ -1,7 +1,7 @@
 cargoproduct-category-name-armory = Zbrojownia
 cargoproduct-category-name-atmospherics = Atmosferyczne
 cargoproduct-category-name-cargo = Logistyczne
-cargoproduct-category-name-circuitboards = Obwody
+cargoproduct-category-name-circuitboards = Płyty drukowane
 cargoproduct-category-name-emergency = Awaryjne
 cargoproduct-category-name-engineering = Inżynieryjne
 cargoproduct-category-name-food = Jedzenie

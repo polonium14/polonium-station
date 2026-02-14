@@ -1,3 +1,3 @@
-ent-StationMapCircuitboard = elektronika mapy stacji
-    .desc = Elektronika służąca w urządzeniach wyświetlających mapę stacji.
+ent-StationMapCircuitboard = mapa stacji (płytka maszynowa)
+    .desc = Płytka maszynowa do mapy stacji.
     .gender = female

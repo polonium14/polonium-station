@@ -1,4 +1,4 @@
-ent-AtmosDeviceFanTiny = tiny fan
-    .desc = A tiny fan, releasing a thin gust of air.
-ent-AtmosDeviceFanDirectional = directional fan
-    .desc = A thin fan, stopping the movement of gases across it.
+ent-AtmosDeviceFanTiny = mały wentylator
+    .desc = Mały wentylator, wydmuchujący cienki podmuch powietrza.
+ent-AtmosDeviceFanDirectional = wentylator kierunkowy
+    .desc = Cienki wentylator, zatrzymujący ruch gazów przez niego.

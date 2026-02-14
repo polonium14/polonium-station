@@ -1,2 +1,2 @@
-ent-SingularityBeacon = singularity beacon
-    .desc = A syndicate device that attracts the singularity. If it's loose and you're seeing this, run.
+ent-SingularityBeacon = przyciągacz osobliwości
+    .desc = Urządzenie syndykatu, które przyciąga osobliwość. Jeśli jest luźne i to widzisz - uciekaj.

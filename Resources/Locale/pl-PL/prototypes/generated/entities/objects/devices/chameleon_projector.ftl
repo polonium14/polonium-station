@@ -1,8 +1,8 @@
-ent-ChameleonProjector = chameleon projector
-    .desc = Holoparasite technology used to create a hard-light replica of any object around you. Disguise is destroyed when picked up or deactivated.
+ent-ChameleonProjector = projektor maskujący
+    .desc = Technologia holopasożytowa używana do tworzenia repliki twardego światła dowolnego obiektu wokół ciebie. Kamuflaż zostaje zniszczony po podniesieniu lub dezaktywacji.
 ent-ChameleonDisguise = Urist McKleiner
     .desc = { "" }
-ent-ActionDisguiseNoRot = Toggle Rotation
-    .desc = Use this to prevent your disguise from rotating, making it easier to hide in some scenarios.
-ent-ActionDisguiseAnchor = Toggle Anchored
-    .desc = For many objects you will want to be anchored to not be completely obvious.
+ent-ActionDisguiseNoRot = Przełącz obrót
+    .desc = Użyj tego, aby zapobiec obracaniu się kamuflażu, co ułatwia ukrycie się w niektórych scenariuszach.
+ent-ActionDisguiseAnchor = Przełącz zakotwiczenie
+    .desc = Dla wielu obiektów będziesz chciał być zakotwiczony, aby nie być całkowicie oczywistym.

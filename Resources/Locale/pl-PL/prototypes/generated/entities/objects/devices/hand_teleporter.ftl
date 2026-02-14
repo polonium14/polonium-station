@@ -1,5 +1,5 @@
-ent-HandTeleporter = hand teleporter
-    .desc = A Nanotrasen signature item--only the finest bluespace tech. Instructions: Use once to create a portal which teleports at random. Use again to link it to a portal at your current location. Use again to clear all portals.
-ent-HandTeleporterAdmeme = interdimensional teleporter
-    .desc = Allows you to open stable portal gates that are not limited by distance.
+ent-HandTeleporter = ręczny teleporter
+    .desc = Podpisany przedmiot Nanotrasen - tylko najlepsza technologia bluespace. Instrukcje: Użyj raz, aby utworzyć portal, który teleportuje losowo. Użyj ponownie, aby połączyć go z portalem w twojej obecnej lokalizacji. Użyj ponownie, aby wyczyścić wszystkie portale.
+ent-HandTeleporterAdmeme = międzywymiarowy teleporter
+    .desc = Pozwala otwierać stabilne bramy portalowe, które nie są ograniczone odległością.
     .suffix = Admeme
