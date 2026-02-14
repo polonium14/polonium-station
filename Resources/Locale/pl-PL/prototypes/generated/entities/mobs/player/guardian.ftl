@@ -1,4 +1,4 @@
-ent-MobGuardianBase = stróż
+ent-MobGuardianBase = strażnik
     .desc = stróż
     .gender = male
 ent-MobHoloparasiteGuardian = holopasożyt
