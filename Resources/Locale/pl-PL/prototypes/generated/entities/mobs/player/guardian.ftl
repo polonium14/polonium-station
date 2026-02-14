@@ -1,5 +1,5 @@
 ent-MobGuardianBase = strażnik
-    .desc = stróż
+    .desc = strażnik
     .gender = male
 ent-MobHoloparasiteGuardian = holopasożyt
     .desc = Fascynujący zawijas twardego światła faluje w cudowny, ale dziwnie znajome oblicze. Z dumą zaspokaja się siłą życiową właściciela.
