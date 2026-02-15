@@ -1,8 +1,8 @@
-cryostorage-insert-message-permanent = [color=white]You are now inside of a [bold][color=cyan]cryogenic sleep unit[/color][/bold]. If you [bold]disconnect[/bold], [bold]ghost[/bold], or [bold]wait { $time } minutes[/bold], [color=red]your body will be removed[/color] and your job slot will be opened. You can exit at any time to prevent this.[/color]
-cryostorage-insert-message-temp = [color=white]You are now inside of a [bold][color=cyan]cryogenic sleep unit[/color][/bold]. If you [bold]ghost[/bold] or [bold]wait { $time } minutes[/bold], [color=red]your body will be removed[/color] and your job slot will be opened. If you [bold][color=cyan]disconnect[/color][/bold], your body will be safely held until you rejoin.[/color]
-cryostorage-ui-window-title = Cryogenic Sleep Unit
+cryostorage-insert-message-permanent = [color=white]Znajdujesz się teraz w [bold][color=cyan]jednostce snu kriogenicznego[/color][/bold]. Jeśli [bold]się rozłączysz[/bold], [bold]staniesz się duchem[/bold] lub [bold]odczekasz { $time } minut[/bold], [color=red]twoje ciało zostanie usunięte[/color], a slot twojej pracy zostanie zwolniony. Możesz wyjść w dowolnym momencie, aby temu zapobiec.[/color]
+cryostorage-insert-message-temp = [color=white]Znajdujesz się teraz w [bold][color=cyan]jednostce snu kriogenicznego[/color][/bold]. Jeśli [bold]staniesz się duchem[/bold] lub [bold]odczekasz { $time } minut[/bold], [color=red]twoje ciało zostanie usunięte[/color], a slot twojej pracy zostanie zwolniony. Jeśli [bold][color=cyan]się rozłączysz[/color][/bold], twoje ciało będzie bezpiecznie przechowywane dopóki nie dołączysz ponownie.[/color]
+cryostorage-ui-window-title = Jednostka snu kriogenicznego
 cryostorage-ui-label-slot-name = [bold]{ CAPITALIZE($slot) }:[/bold]
-cryostorage-ui-button-remove = Remove
-cryostorage-ui-filler-hand = inhand
-cryostorage-ui-label-no-bodies = No bodies in cryostorage
-cryostorage-popup-access-denied = Access denied!
+cryostorage-ui-button-remove = Usuń
+cryostorage-ui-filler-hand = w ręce
+cryostorage-ui-label-no-bodies = Brak ciał w kriochłodni
+cryostorage-popup-access-denied = Odmowa dostępu!
