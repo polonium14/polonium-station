@@ -1,5 +1,5 @@
 job-name-warden = Strażnik
-job-name-security = Ochroniarz
+job-name-security = Funkcjonariusz Ochrony
 job-name-cadet = Stażysta Ochrony
 job-name-hos = Komendant
 job-name-detective = Detektyw
