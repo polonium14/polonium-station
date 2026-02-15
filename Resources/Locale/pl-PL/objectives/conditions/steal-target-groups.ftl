@@ -60,5 +60,5 @@ steal-target-groups-animal-mc-griff = McGriff
 steal-target-groups-animal-walter = Walter
 steal-target-groups-animal-morty = Morty
 steal-target-groups-animal-renault = Renolt
-steal-target-groups-animal-shiva = Siwa
+steal-target-groups-animal-shiva = Śiwa
 steal-target-groups-animal-tropico = Tropiko
