@@ -12,47 +12,47 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-# Jobs
+# Prace
 
-SS14 has a large number of jobs, divided into seven major departments:
+SS14 posiada dużą liczbę zawodów, podzielonych na siedem głównych działów:
 
-## Service
-[color=#9fed58]Service[/color] is a diverse department that includes the head of personnel and other jobs who exist to serve the station.
+## Serwis (Obsługa)
+[color=#9fed58]Serwis[/color] to różnorodny dział, który obejmuje Kierownika Personelu i inne zawody, które istnieją, aby służyć stacji.
 
-It primarily functions as folks who entertain, clean, and serve the rest of the crew, with the exception of passengers who have no particular job beyond getting lost in maintenance.
+Głównie funkcjonuje jako ludzie, którzy zabawiają, sprzątają i obsługują resztę załogi, z wyjątkiem pasażerów, którzy nie mają konkretnej pracy poza gubieniem się w korytarzach technicznych.
 
-## Cargo
-[color=#b18644]Cargo[/color] consists of the cargo technicians, salvage specialists, and the quartermaster. As a department, it is responsible for resource distribution and trade, and is capable of buying and selling things on the galactic market.
+## Logistyka (Zaopatrzenie)
+[color=#b18644]Dział Logistyczny[/color] składa się z techników logistyków, techników odzysku i Kwatermistrza. Jako dział jest odpowiedzialny za dystrybucję zasobów i handel, oraz jest zdolny do kupowania i sprzedawania rzeczy na rynku galaktycznym.
 
-For the most part, this means they scrounge around the station and assorted wrecks to find materials to sell and redistribute, and purchase materials other departments request.
+W większości oznacza to, że przeszukują stację i różne wraki w poszukiwaniu materiałów do sprzedaży i redystrybucji, oraz kupują materiały, o które proszą inne działy.
 
-## Medical
-[color=#5b97bc]Medical[/color] consists of the medical interns, chemists, medical doctors, and the chief medical officer. As a department it is responsible for taking care of the crew, treating and/or cloning the wounded and dead, treating disease, and preventing everyone from dying a horrible, bloody death in a closet somewhere.
+## Medycyna
+[color=#5b97bc]Medycyna[/color] składa się ze stażystów medycznych, chemików, lekarzy i Ordynatora. Jako dział jest odpowiedzialny za opiekę nad załogą, leczenie i/lub klonowanie rannych i martwych, leczenie chorób i zapobieganie temu, by wszyscy umarli w straszny, krwawy sposób w jakiejś szafie.
 
-Medical is one of the more well-equipped departments, with the ability to locate injured crew using the crew monitor, a nigh infinite supply of chems should chemistry be on-par, and the ability to rapidly diagnose and vaccinate contagious diseases.
+Medycyna jest jednym z lepiej wyposażonych działów, z możliwością lokalizowania rannych członków załogi za pomocą monitora załogi, niemal nieskończonym zapasem chemikaliów (o ile chemia działa sprawnie) oraz zdolnością do szybkiego diagnozowania i szczepienia chorób zakaźnych.
 
-## Science
-[color=#c96dbf]Science[/color] consists of research assistants, scientists, and the research director. As a department it is responsible for researching technologies and artifacts, upgrading machines, and printing new and useful devices.
+## Badanie i Rozwój (B+R)
+[color=#c96dbf]B+R[/color] składa się z asystentów badawczych, naukowców i Kierownika Badań. Jako dział jest odpowiedzialny za badanie technologii i artefaktów, ulepszanie maszyn oraz drukowanie nowych i użytecznych urządzeń.
 
-Scientists should seek out new artifacts to study, as well as solicit departments to help upgrade their machines.
+Naukowcy powinni szukać nowych artefaktów do badania, a także zachęcać działy do pomocy w ulepszaniu ich maszyn.
 
-## Engineering
-[color=#f39f27]Engineering[/color] consists of technical assistants, station engineers, atmospheric technicians, and the chief engineer. As a department it is responsible for keeping the station powered, its structure intact and its air supply working.
+## Inżynieria
+[color=#f39f27]Inżynieria[/color] składa się z pomocników technicznych, inżynierów stacji, techników atmosferycznych i Naczelnego Inżyniera. Jako dział jest odpowiedzialny za utrzymanie zasilania stacji, integralności jej struktury i działanie systemu podtrzymywania życia (powietrza).
 
-Engineering is readily equipped to go safely into space, and as such they should always attempt to repair uninhabitable parts of the station.
+Inżynieria jest dobrze wyposażona do bezpiecznego wychodzenia w przestrzeń kosmiczną, i jako taka powinna zawsze próbować naprawiać niezdatne do zamieszkania części stacji.
 
-## Security
-[color=#cb0000]Security[/color] consists of the security cadets, detective, security officers, warden, and the head of security. As a department it is responsible for dealing with troublemakers and non-humanoid threats like giant rats and carp.
+## Ochrona
+[color=#cb0000]Ochrona[/color] składa się z kadetów ochrony, detektywa, oficerów ochrony, nadzorcy (Wardena) i Komendanta Ochrony. Jako dział jest odpowiedzialny za radzenie sobie z awanturnikami i zagrożeniami nie-androidalnymi, takimi jak gigantyczne szczury i karpie.
 
-As a result of this, and the need to walk a fine line, security sometimes is overwhelmed by angry crew (don't kill the clown), and it is important for its members to try and stay on their best behavior.
+W rezultacie tego, oraz potrzeby zachowania równowagi, ochrona czasem jest przytłoczona przez złą załogę (nie zabijajcie klauna), i ważne jest, aby jej członkowie starali się zachowywać jak najlepiej.
 
-## Command
-[color=#1b67a5]Command[/color] consists of every department head. It is responsible for keeping the station and its departments running efficiently.
+## Dowództwo
+[color=#1b67a5]Dowództwo[/color] składa się z szefa każdego działu. Jest odpowiedzialne za utrzymanie sprawnego działania stacji i jej działów.
 
-Command members should always be relatively competent in their respective departments and attempt to delegate responsibility and direct work.
+Członkowie dowództwa powinni zawsze być stosunkowo kompetentni w swoich odpowiednich działach i próbować delegować odpowiedzialność oraz kierować pracą.
 
-# Getting Your Job Changed
-The [color=#9fed58]Head of Personnel[/color] is the person in charge of changing ID accesses and handing out encryption keys. Head over to their office and let them know what job you'd like to work instead.
+# Zmiana Pracy
+[color=#9fed58]Kierownik Personelu[/color] jest osobą odpowiedzialną za zmianę uprawnień w identyfikatorach i wydawanie kluczy szyfrujących. Uda się do jego biura i daj mu znać, jaką pracę chciałbyś wykonywać zamiast obecnej.
 
-Often, they'll want you to go get a paper [color=#a4885c]stamped[/color] by a department head. Don't sweat it, just find them and hand them the paper.
+Często będą chcieli, abyś przyniósł papier [color=#a4885c]ostemplowany[/color] przez szefa działu. Nie przejmuj się, po prostu znajdź go i wręcz mu papier.
 </Document>

@@ -12,50 +12,50 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-# Survival
-It is generally wise to avoid situations that will cause you harm, because medical can only heal you so much with limited chemicals and medical items and especially when there's nuclear operatives on your doorstep.
+# Przetrwanie
+Generalnie mądrze jest unikać sytuacji, które mogą cię skrzywdzić, ponieważ medycy mogą cię uleczyć tylko w pewnym stopniu, mając ograniczone zasoby chemikaliów i środków medycznych, zwłaszcza gdy agenci nuklearni są u twoich drzwi.
 
-## Identifying your situation
-Your PDA contains both a vessel name and list of crew currently active in your vessel, a reminder for your name if needed, and your assigned job for the shift, allowing you to quickly assess the situation. Your suit also have in-built sensors that report your current status to the crew monitors around the station. You can set how much information is broadcasted via the right-click menu on your suit.
+## Ocena sytuacji
+Twoje PDA zawiera zarówno nazwę statku, jak i listę załogi aktualnie na nim przebywającej, przypomnienie twojego imienia w razie potrzeby oraz przypisane ci zadanie na zmianę, co pozwala szybko ocenić sytuację. Twój skafander ma również wbudowane czujniki życiowe, które raportują twój aktualny stan do monitorów załogi na stacji. Możesz ustawić, ile informacji jest nadawanych, poprzez menu pod prawym przyciskiem myszy na twoim skafandrze.
 
-## Calling for help
+## Wzywanie pomocy
 
-Your best hope is to use the SOS app in your PDA to alert Security and Medical that you need help. You can also use an emergency hand-held radio to call for help.
+Twoją najlepszą nadzieją jest użycie aplikacji SOS w PDA, aby zaalarmować Ochronę i Medyków, że potrzebujesz pomocy. Możesz również użyć ręcznego radia ratunkowego, aby wezwać pomoc.
 
 <Box>
   <GuideEntityEmbed Entity="SOSCartridge"/>
   <GuideEntityEmbed Entity="RadioHandheldEmergency"/>
 </Box>
 
-## Emergency Treatment
-In the event of a serious emergency, there're a few things you can do to help ensure your long-term survival, including:
-- If entering critical condition, use the emergency medipen from your emergency box, it'll make sure you don't end up unable to do anything. Emergency medipens can also be used to revive people currently in crit on the floor, and to prolong the amount of time you have to deal with poisons/etc.
+## Leczenie awaryjne
+W przypadku poważnego zagrożenia, jest kilka rzeczy, które możesz zrobić, aby zapewnić sobie długoterminowe przetrwanie, w tym:
+- Jeśli wchodzisz w stan krytyczny, użyj awaryjnego wstrzykiwacza (medipena) ze swojej skrzynki ratunkowej. Upewni się on, że nie skończysz w stanie niezdolności do działania. Awaryjne wstrzykiwacze mogą być również używane do reanimacji ludzi leżących w stanie krytycznym oraz do przedłużenia czasu, jaki masz na poradzenie sobie z truciznami itp.
 
 <Box>
   <GuideEntityEmbed Entity="EmergencyMedipen"/>
   <GuideEntityEmbed Entity="SpaceMedipen"/>
 </Box>
 
-- Your emergency box contains a breath mask and oxygen tank, which can help you survive longer in a spacing situation. If you're one of the slimepeople, be aware that nitrogen replaces oxygen for you and that your emergency box will start with a red tank of nitrogen replacing the standard blue/yellow oxygen tank.
+- Twoja skrzynka ratunkowa zawiera maskę oddechową i butlę z tlenem, które mogą pomóc ci przetrwać dłużej w przypadku dekompresji. Jeśli jesteś jednym z ludzi-szlamów (slimepeople), pamiętaj, że azot zastępuje dla ciebie tlen i że twoja skrzynka ratunkowa będzie zawierać czerwoną butlę z azotem zamiast standardowej niebiesko/żółtej butli z tlenem.
 
 <Box>
   <GuideEntityEmbed Entity="ClothingMaskBreath"/>
   <GuideEntityEmbed Entity="EmergencyOxygenTankFilled"/>
 </Box>
 
-- If actively bleeding out, or simply wishing to prepare, it's possible to slice up cloth items with a knife or other sharp object and use the resulting cloth to create gauze in the crafting menu to stem bleeding with, however cloth alone can be used to less of a degree in emergencies.
+- Jeśli aktywnie krwawisz lub po prostu chcesz się przygotować, możliwe jest pocięcie materiałowych przedmiotów nożem lub innym ostrym przedmiotem i użycie uzyskanego materiału do stworzenia gazy w menu craftingu, aby zatamować krwawienie, jednak sam materiał może być użyty w mniejszym stopniu w sytuacjach awaryjnych.
 
 <Box>
   <GuideEntityEmbed Entity="Gauze"/>
   <GuideEntityEmbed Entity="MaterialCloth"/>
 </Box>
 
-## Other Various Tips
-- In lieu of an actual health analyzer, simply examining yourself and using the detailed examine is a good way to figure out what wounds you have.
-- If going blind, carrots are another way to treat the issue (as they contain Oculine, the chemistry drug used to treat blindness) should they be available.
-- Well-made meals (cooked food not from a vending machine) is generally much better for your overall health and can help heal smaller wounds more quickly.
-- Simple bed rest can allow some wounds to close up on their own. Medical beds are best for this, providing a sterile surface and support for all damaged body parts, but any bed works.
-- Actually sleeping on a bed boosts your healing rate even farther.
-- Meals that contain proteins, such as meat, will tremendously help your body's condition after severe bloodloss. It's still advised to visit a doctor and get treated though.
+## Inne różne wskazówki
+- Zamiast faktycznego analizatora zdrowia, po prostu zbadanie siebie i użycie szczegółowego opisu (examine) jest dobrą metodą, aby dowiedzieć się, jakie masz rany.
+- Jeśli tracisz wzrok, marchewki są kolejnym sposobem na leczenie tego problemu (ponieważ zawierają Oculine, lek chemiczny używany do leczenia ślepoty), o ile są dostępne.
+- Dobrze przygotowane posiłki (gotowane jedzenie, a nie z automatu) są generalnie znacznie lepsze dla twojego ogólnego zdrowia i mogą pomóc szybciej leczyć mniejsze rany.
+- Zwykły odpoczynek w łóżku może pozwolić niektórym ranom zagoić się samodzielnie. Łóżka medyczne są do tego najlepsze, zapewniając sterylną powierzchnię i wsparcie dla wszystkich uszkodzonych części ciała, ale każde łóżko zadziała.
+- Faktyczne spanie na łóżku jeszcze bardziej zwiększa tempo twojego leczenia.
+- Posiłki zawierające białka, takie jak mięso, ogromnie pomogą w kondycji twojego ciała po poważnej utracie krwi. Mimo to zaleca się wizytę u lekarza.
 
 </Document>

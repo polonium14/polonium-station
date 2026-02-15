@@ -10,42 +10,42 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-# Chemicals
+# Chemikalia
 
-Chemicals are a powerful tool that can cause a variety of effects when consumed. Some can be found in plants, purchased from cargo, or be synthesized through combination with other chemicals.
+Chemikalia to potężne narzędzie, które po spożyciu może wywołać różnorodne efekty. Niektóre z nich można znaleźć w roślinach, kupić w dziale ładunkowym lub zsyntetyzować poprzez łączenie innych substancji.
 
-Knowing different types of chemicals and their effects is important for being able to manage injury and danger.
+Znajomość różnych rodzajów chemikaliów i ich działania jest ważna dla radzenia sobie z obrażeniami i zagrożeniami.
 
-## Elements
+## Pierwiastki
 <GuideReagentGroupEmbed Group="Elements"/>
 
-## Medicine
+## Medycyna
 <GuideReagentGroupEmbed Group="Medicine"/>
 
-## Narcotics
+## Narkotyki
 <GuideReagentGroupEmbed Group="Narcotics"/>
 
-## Pyrotechnics
+## Pirotechnika
 <GuideReagentGroupEmbed Group="Pyrotechnic"/>
 
-## Toxins
+## Toksyny
 <GuideReagentGroupEmbed Group="Toxins"/>
 
-  ## Exotic
+  ## Egzotyczne
   <GuideReagentGroupEmbed Group="Exotic"/>
 
-## Foods
+## Jedzenie
 <GuideReagentGroupEmbed Group="Foods"/>
 
-## Botanical
+## Botaniczne
 <GuideReagentGroupEmbed Group="Botanical"/>
 
-## Biological
+## Biologiczne
 <GuideReagentGroupEmbed Group="Biological"/>
 
-## Special
+## Specjalne
 <GuideReagentGroupEmbed Group="Special"/>
 
-## Other
+## Inne
 <GuideReagentGroupEmbed Group="Unknown"/>
 </Document>

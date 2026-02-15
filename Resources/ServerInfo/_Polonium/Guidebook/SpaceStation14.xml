@@ -10,53 +10,53 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-# Station and Shifts
+# Stacja i Zmiany
 
-Every round of SS14 is a [bold]self-contained shift[/bold] that takes place on one of many different stations.
+Każda runda w SS14 to [bold]samodzielna zmiana[/bold], która odbywa się na jednej z wielu różnych stacji.
 
-Rounds typically last from [color=cyan]1 to 2 hours[/color], but players are free to leave and join at any point during a round.
+Rundy trwają zazwyczaj od [color=cyan]1 do 2 godzin[/color], ale gracze mogą swobodnie wychodzić i dołączać w dowolnym momencie trwania rundy.
 
-## Shuttle Terminal
-If you join in the middle of a shift, you will likely spawn on the [color=lime]shuttle terminal[/color].
-Here you can grab drinks, conversate with other players, and wait for the shuttle to take you to the station.
+## Terminal promów
+Jeśli dołączysz w środku zmiany, prawdopodobnie pojawisz się na [color=lime]terminalu promów[/color].
+Tutaj możesz napić się drinka, porozmawiać z innymi graczami i poczekać na wahadłowiec, który zabierze cię na stację.
 
-Screens on the walls will display an ETA for the shuttle.
-When it arrives, simply walk on to be transported to the station.
+Ekrany na ścianach wyświetlają szacowany czas przybycia wahadłowca.
+Gdy przybędzie, po prostu wejdź na pokład, aby zostać przetransportowanym na stację.
 
-Make sure to stay inside the terminal and to not stand in the shuttle landing zone. [color=#EB2D3A][bold]You can be crushed by shuttles flying in[/bold][/color].
+Upewnij się, że zostajesz wewnątrz terminala i nie stoisz w strefie lądowania wahadłowca. [color=#EB2D3A][bold]Możesz zostać zmiażdżony przez nadlatujący wahadłowiec[/bold][/color].
 
-## Navigation
-Every station has a wide variety of locations to visit.
-These range from specific departments where work happens, to common areas where you can relax and chat with others.
+## Nawigacja
+Każda stacja ma wiele różnych lokalizacji do odwiedzenia.
+Obejmują one zarówno konkretne działy, gdzie odbywa się praca, jak i wspólne obszary, gdzie można odpocząć i porozmawiać z innymi.
 
 <Box>
   <GuideEntityEmbed Entity="StationMap"/>
-  <GuideEntityEmbed Entity="SignDirectionalDorms" Caption="Directional Signs"/>
-  <GuideEntityEmbed Entity="SignBridge" Caption="Marker Signs"/>
+  <GuideEntityEmbed Entity="SignDirectionalDorms" Caption="Znaki kierunkowe"/>
+  <GuideEntityEmbed Entity="SignBridge" Caption="Znaki informacyjne"/>
 </Box>
 
-[color=cyan]Station maps[/color] give you an overview of the entire station with colored markers denoting locations of different things.
-Regular [color=cyan]signs[/color] on walls can point you to different departments.
+[color=cyan]Mapy stacji[/color] dają przegląd całej stacji z kolorowymi znacznikami oznaczającymi lokalizacje różnych rzeczy.
+Zwykłe [color=cyan]znaki[/color] na ścianach mogą wskazać ci drogę do różnych działów.
 
-## Leaving the Station
-At the end of the shift [color=gray](barring a [color=red][bold]nuclear disaster[/bold][/color])[/color], you will leave the station via the [color=lime]evac shuttle[/color].
-When it's called, an announcement will play on the station alerting the crew and signaling its [color=cyan]arrival in 10 minutes.[/color]
-Once it arrives, you'll need to make your way over to it, board it, and then survive the trip to [bold]Central Command[/bold].
+## Opuszczanie Stacji
+Pod koniec zmiany [color=gray](chyba że nastąpi [color=red][bold]katastrofa nuklearna[/bold][/color])[/color], opuścisz stację za pomocą [color=lime]wahadłowca ewakuacyjnego[/color].
+Kiedy zostanie wezwany, na stacji zostanie odtworzony komunikat alarmujący załogę o jego [color=cyan]przybyciu za 10 minut.[/color]
+Gdy przybędzie, musisz udać się do niego, wejść na pokład, a następnie przetrwać podróż do [bold]Centralnego Dowództwa[/bold].
 
-The round doesn't officially end until you reach [bold]Central Command[/bold].
+Runda oficjalnie nie kończy się, dopóki nie dotrzesz do [bold]Centralnego Dowództwa[/bold].
 
 <Box>
   <GuideEntityEmbed Entity="CryogenicSleepUnit"/>
 </Box>
 
-If you need to leave a round early, you can do so through a [color=lime]cyrogenic sleep unit[/color].
-Simply going inside and leaving the game will store your belongings and ensure that they are not stolen or misused.
+Jeśli musisz opuścić rundę wcześniej, możesz to zrobić za pomocą [color=lime]kriogenicznej komory snu[/color].
+Po prostu wejście do środka i opuszczenie gry przechowa twoje rzeczy i zapewni, że nie zostaną skradzione ani niewłaściwie użyte.
 
-## More Info
-Learning the controls? [textlink="Click here to read about the different controls" link="Controls"]
+## Więcej informacjis
+Uczysz się sterowania? [textlink="Kliknij tutaj, aby przeczytać o sterowaniu" link="Controls"]
 
-Don't know how to perform a job? [textlink="Click here to jump to a list of departments" link="Jobs"]
+Nie wiesz, jak wykonywać pracę? [textlink="Kliknij tutaj, aby przejść do listy działów" link="Jobs"]
 
-Keep dying? [textlink="Click here to see a survival guide" link="Survival"]
+Ciągle umierasz? [textlink="Kliknij tutaj, aby zobaczyć poradnik przetrwania" link="Survival"]
 
 </Document>

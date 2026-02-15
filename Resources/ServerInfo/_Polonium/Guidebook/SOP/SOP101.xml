@@ -8,37 +8,37 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-  # Standard Operating Procedure
+  # Standardowe Procedury Operacyjne
 
   <Box>
-    [color=#999999][italic]"The station is currently under threat of imminent destruction. Crewmembers are advised to listen to heads of staff for more information."[/italic][/color]
+    [color=#999999][italic]"Stacja jest obecnie zagrożona nieuchronnym zniszczeniem. Członkowie załogi powinni słuchać poleceń Dowództwa, aby uzyskać więcej informacji."[/italic][/color]
   </Box>
 
-  Consider SOP your new space bible, feature complete with ways to lethal people legally.
+  Traktuj SPO jako swoją nową biblię przestrzeni, zawierającą kompletne informacje na temat sposobów legalnego zabijania ludzi.
 
-  # What is Standard Operating Procedure? (SOP)
+  # Czym są Standardowe Procedury Operacyjne? (SPO)
 
-  Standard Operating Procedure, from hereon out known as SOP, is how NanoTrasen is expected to run its facilities. This ensures proper treatment of prisoners, how to safely deal with certain situations, and how to identify positive threats on the station.
-  Deviating from SOP is a big and conscious decision, and any actions you may take while deviating from SOP may be grounds for discipline and/or termination of your contract.
+  Standardowe Procedury Operacyjne, odtąd zwane SPO, określają, w jaki sposób NanoTrasen oczekuje zarządzania swoimi placówkami. Zapewnia to właściwe traktowanie więźniów, bezpieczne radzenie sobie z określonymi sytuacjami oraz identyfikację zagrożeń na stacji.
+  Odstępstwo od SPO jest poważną i świadomą decyzją, a wszelkie działania podjęte w trakcie takiego odstępstwa mogą stanowić podstawę do dyscyplinowania i/lub rozwiązania umowy.
 
-  [bold]Job SOP should not be a considered a checklist of conditions to fire someone over, and should not be rigidly followed to the letter in detriment of circumstances and context. As always, SOP can be malleable if the situation so requires, and the decision to punish a crewmember for breaching it ultimately falls onto the relevant Head of Staff, for Department Members, or Captain, for the Head of Staff.[/bold]
+  [bold]SPO Działowe nie powinno być traktowane jako lista warunków do zwolnienia kogoś z pracy i nie powinno być rygorystycznie przestrzegane co do joty ze szkodą dla okoliczności i kontekstu. Jak zawsze, SPO może być elastyczne, jeśli sytuacja tego wymaga, a decyzja o ukaraniu członka załogi za jego naruszenie ostatecznie należy do odpowiedniego Szefa Działu (w przypadku członków działu) lub Kapitana (w przypadku Szefa Działu).[/bold]
 
-  # Isn't SOP just guidelines?
+  # Czy SPO to tylko wytyczne?
 
-  Yes they are, but following them ensures to establish proper trust with the public. Otherwise, you may be regarded as "Shitsec", or even worse, "Shitsci", so it's always wise to consult the appropriate SOP document for your department. If you need to break SOP, you better have a good reason to justify its breakage afterward.
+  Tak, są to wytyczne, ale ich przestrzeganie zapewnia ustanowienie właściwego zaufania publicznego. W przeciwnym razie możesz zostać uznany za "Gównochroniarza", lub co gorsza, "Gównaukowca", więc zawsze mądrze jest skonsultować się z odpowiednim dokumentem SPO dla twojego działu. Jeśli musisz złamać SPO, lepiej miej dobry powód, aby uzasadnić to później.
 
-  # Great, now where can I find the SOP for my department?
+  # Świetnie, gdzie mogę znaleźć SPO dla mojego działu?
 
-  You can find all department SOP documents linked below, with each role having it's own SOP page linked there. You can access all SOP through the guidebook sidebar under this document.
+  Poniżej znajdują się linki do wszystkich dokumentów SPO działów, a każda rola ma tam podlinkowaną własną stronę SPO. Możesz uzyskać dostęp do wszystkich SPO za pośrednictwem paska bocznego przewodnika pod tym dokumentem.
 
-  - [textlink="Alert Levels and You" link="AlertLevelsSOP"]
-  - [textlink="Command SOP" link="CommandSOP"]
-  - [textlink="Security SOP" link="SecuritySOP"]
-  - [textlink="Legal SOP" link="LegalSOP"]
-  - [textlink="Medical SOP" link="MedicalSOP"]
-  - [textlink="Service SOP" link="ServiceSOP"]
-  - [textlink="Engineering SOP" link="EngineeringSOP"]
-  - [textlink="Cargo SOP" link="CargoSOP"]
-  - [textlink="Science SOP" link="ScienceSOP"]
+  - [textlink="Poziomy Alarmowe i Ty" link="AlertLevelsSOP"]
+  - [textlink="SPO Dowództwa" link="CommandSOP"]
+  - [textlink="SPO Ochrony" link="SecuritySOP"]
+  - [textlink="SPO Prawne" link="LegalSOP"]
+  - [textlink="SPO Medyczne" link="MedicalSOP"]
+  - [textlink="SPO Serwisu (Obsługi)" link="ServiceSOP"]
+  - [textlink="SPO Inżynierii" link="EngineeringSOP"]
+  - [textlink="SPO Logistyki" link="CargoSOP"]
+  - [textlink="SPO Nauki" link="ScienceSOP"]
 
 </Document>
