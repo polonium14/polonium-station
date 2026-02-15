@@ -7,7 +7,7 @@ SPDX-License-Identifier: MIT
 
 <Document>
 # Dowództwo
-Szefowie każdego działu łączą się, tworząc dział [color=#1b67a5]Dowództwa[/color], siłę, z którą trzeba się liczyć i zarządców stacji. Zazwyczaj mają dostęp do specjalnego sprzętu i własne pokoje. Często są poszukiwani (żywi lub martwi).
+Kierownicy każdego działu łączą się, tworząc dział [color=#1b67a5]Dowództwa[/color], siłę, z którą trzeba się liczyć i zarządców stacji. Zazwyczaj mają dostęp do specjalnego sprzętu i własne pokoje. Często są poszukiwani (żywi lub martwi).
 
 ## Personel
 [color=#1b67a5]Dowództwo[/color] składa się z szefów każdego działu, którymi są [color=#9fed58]Kierownik Personelu[/color], [color=#cb0000]Komendant Ochrony[/color], [color=#5b97bc]Ordynator[/color], [color=#f39f27]Naczelny Inżynier[/color], [color=#c96dbf]Kierownik Badań[/color], [color=#b18644]Kwatermistrz[/color] i przede wszystkim, [color=#1b67a5]Kapitan[/color].
@@ -35,7 +35,7 @@ Rozmawiaj ze swoimi pracownikami. Poznaj ich poziom doświadczenia i preferencje
 
 ## Twoja szafka
 
-Aby poradzić sobie z nowymi, niszczącymi duszę zadaniami, każdy szef otrzymuje specjalne przedmioty, którymi może kierować podwładnymi. Większość twoich nowych, błyszczących narzędzi można znaleźć w twojej [color=#a4885c]szafce[/color].
+Aby poradzić sobie z nowymi, niszczącymi duszę zadaniami, każdy kierownik otrzymuje specjalne przedmioty, którymi może kierować podwładnymi. Większość twoich nowych, błyszczących narzędzi można znaleźć w twojej [color=#a4885c]szafce[/color].
   <Box>
     <GuideEntityEmbed Entity="LockerCaptain"/>
   </Box>
@@ -44,12 +44,12 @@ Twój [color=#a4885c]pilot[/color] jest bardzo prosty, ale głęboko niedocenian
   <Box>
     <GuideEntityEmbed Entity="DoorRemoteCommand"/>
   </Box>
-Pilot wpływa na to, gdzie ludzie się przemieszczają. Szefowie mogą zablokować personelowi dostęp do niebezpiecznych obszarów lub wpuścić kogoś, aby szybko coś zabrał.
+Pilot wpływa na to, gdzie ludzie się przemieszczają. Kierownicy mogą zablokować personelowi dostęp do niebezpiecznych obszarów lub wpuścić kogoś, aby szybko coś zabrał.
 
 Masz również dostęp do własnego kanału [color=#1b67a5]Dowództwa[/color], jak każdy inny dział. Jednak twój jest szczególnie wyjątkowy, ponieważ ludzie, którzy cię słyszą, mają [color=#a4885c]całe działy[/color] na wyciągnięcie ręki.
-Używaj go do komunikacji z innymi szefami i bądź przedstawicielem tego, czego chcą lub potrzebują twoi pracownicy.
+Używaj go do komunikacji z innymi kierownikami i bądź przedstawicielem tego, czego chcą lub potrzebują twoi pracownicy.
 
-[color=#1b67a5]Kapitan[/color] i [color=#9fed58]Szef Personelu[/color] otrzymują dostęp do lukratywnego [color=#a4885c]głównego klucza szyfrującego[/color], pozwalającego im dostroić się do każdego kanału radiowego na stacji. Jest to niezwykle cenne, ponieważ możesz koordynować działania między działami samodzielnie, bez konieczności przekazywania informacji innemu szefowi.
+[color=#1b67a5]Kapitan[/color] i [color=#9fed58]Kierownik Personelu[/color] otrzymują dostęp do lukratywnego [color=#a4885c]głównego klucza szyfrującego[/color], pozwalającego im dostroić się do każdego kanału radiowego na stacji. Jest to niezwykle cenne, ponieważ możesz koordynować działania między działami samodzielnie, bez konieczności przekazywania informacji innemu szefowi.
 [color=#a4885c]Nie zmarnuj tej kluczowej przewagi![/color]
   <Box>
     <GuideEntityEmbed Entity="ClothingHeadsetCommand"/>

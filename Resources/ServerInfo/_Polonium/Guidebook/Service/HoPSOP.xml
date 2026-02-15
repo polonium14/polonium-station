@@ -7,13 +7,13 @@ SPDX-License-Identifier: MIT
 <Document>
 # SPO Kierownika Personelu
 
-[bold]1.[/bold] Kierownik Personelu [bold]nie[/bold] może przenieść żadnego pracownika do innego Działu bez autoryzacji odpowiedniego [color=#1b67a5]Szefa Personelu[/color]. Jeśli żaden [color=#1b67a5]Szef Personelu[/color] nie jest dostępny, Kierownik Personelu może podjąć decyzję samodzielnie. Nie dotyczy to Ochrony, która zawsze wymaga autoryzacji [color=#cb0000]Komendanta Ochrony[/color]. Jeśli Szef Ochrony nie jest aktywny, żadne transfery do Ochrony nie są dozwolone bez autoryzacji [color=#1b67a5]Kapitana[/color];
+[bold]1.[/bold] Kierownik Personelu [bold]nie[/bold] może przenieść żadnego pracownika do innego Działu bez autoryzacji odpowiedniego [color=#1b67a5]Kierownika Personelu[/color]. Jeśli żaden [color=#1b67a5]Kierownik działu[/color] nie jest dostępny, Kierownik Personelu może podjąć decyzję samodzielnie. Nie dotyczy to Ochrony, która zawsze wymaga autoryzacji [color=#cb0000]Komendanta Ochrony[/color]. Jeśli Komendant Ochrony nie jest aktywny, żadne transfery do Ochrony nie są dozwolone bez autoryzacji [color=#1b67a5]Kapitana[/color];
 
-[bold]2.[/bold] Kierownik Personelu [bold]nie[/bold] może nadać żadnemu pracownikowi zwiększonego dostępu bez autoryzacji odpowiedniego [color=#1b67a5]Szefa Personelu[/color]. Obejmuje to Kierownika Personelu. Ponadto, Kierownik Personelu może nadać dostęp na poziomie [color=#1b67a5]Kapitana[/color] tylko wtedy, gdy pełni obowiązki [color=#1b67a5]tymczasowego p.o. Kapitana[/color]. Dostęp ten ma zostać usunięty, gdy właściwy [color=#1b67a5]Kapitan[/color] przybędzie na stację;
+[bold]2.[/bold] Kierownik Personelu [bold]nie[/bold] może nadać żadnemu pracownikowi zwiększonego dostępu bez autoryzacji odpowiedniego [color=#1b67a5]Kierownika działu[/color]. Obejmuje to Kierownika Personelu. Ponadto, Kierownik Personelu może nadać dostęp na poziomie [color=#1b67a5]Kapitana[/color] tylko wtedy, gdy pełni obowiązki [color=#1b67a5]tymczasowego p.o. Kapitana[/color]. Dostęp ten ma zostać usunięty, gdy właściwy [color=#1b67a5]Kapitan[/color] przybędzie na stację;
 
-[bold]3.[/bold] Kierownik Personelu [bold]nie[/bold] może zwiększać liczby wakatów, chyba że odpowiedni [color=#1b67a5]Szef Personelu[/color] wyrazi na to zgodę;
+[bold]3.[/bold] Kierownik Personelu [bold]nie[/bold] może zwiększać liczby wakatów, chyba że odpowiedni [color=#1b67a5]Kierownik działu[/color] wyrazi na to zgodę;
 
-[bold]4.[/bold] Kierownik Personelu [bold]nie[/bold] może zwolnić żadnego pracownika bez autoryzacji odpowiedniego [color=#1b67a5]Szefa Personelu[/color], chyba że mają zastosowanie inne warunki (patrz Prawo Kosmiczne i Ogólna Standardowa Procedura Operacyjna);
+[bold]4.[/bold] Kierownik Personelu [bold]nie[/bold] może zwolnić żadnego pracownika bez autoryzacji odpowiedniego [color=#1b67a5]Kierownika działu[/color], chyba że mają zastosowanie inne warunki (patrz Prawo Kosmiczne i Ogólna Standardowa Procedura Operacyjna);
 
 [bold]5.[/bold] Kierownik Personelu [bold]nie[/bold] może promować nikogo na żadne stanowisko w [color=#009100]Centralnym Dowództwie[/color]. Używanie ikon [color=#009100]ID Centralnego Dowództwa[/color] jest również zabronione bez wyraźnej zgody;
 
