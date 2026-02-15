@@ -5,4 +5,4 @@ round-end-summary-window-round-id-label = Runda [color=white]#{ $roundId }[/colo
 round-end-summary-window-gamemode-name-label = Tryb gry to [color=white]{ $gamemode }[/color].
 round-end-summary-window-duration-label = Trwała [color=yellow]{ $hours } godzin, { $minutes } minut, i { $seconds } sekund.
 round-end-summary-window-player-info-if-observer-text = [color=gray]{ $playerOOCName }[/color] był [color=lightblue]{ $playerICName }[/color], obserwatorem.
-round-end-summary-window-player-info-if-not-observer-text = [color=gray]{ $playerOOCName }[/color] był [color={ $icNameColor }]{ $playerICName }[/color] grając rolę [color=orange]{ $playerRole }[/color].
+round-end-summary-window-player-info-if-not-observer-text = [color=gray]{ $playerOOCName }[/color] był [color={ $icNameColor }]{ $playerICName }[/color] w roli [color=orange]{ $playerRole }[/color].
