@@ -1,4 +1,4 @@
-job-name-warden = Strażnik
+job-name-warden = Nadzorca Ochrony
 job-name-security = Funkcjonariusz Ochrony
 job-name-cadet = Stażysta Ochrony
 job-name-hos = Komendant
