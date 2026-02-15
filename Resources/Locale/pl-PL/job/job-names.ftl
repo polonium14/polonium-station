@@ -1,6 +1,6 @@
 job-name-warden = Nadzorca Ochrony
 job-name-security = Funkcjonariusz Ochrony
-job-name-cadet = Stażysta Ochrony
+job-name-cadet = Kadet Ochrony
 job-name-hos = Komendant
 job-name-detective = Detektyw
 job-name-brigmedic = Medyk Więzienny
