@@ -1,16 +1,16 @@
 <Document>
-  # Service SOP
+  # SPO Działu Obsługi
 
-  - [textlink="Head of Personnel" link="HoPSOP"]
-  - [textlink="Bartender" link="BartenderSOP"]
-  - [textlink="Botanist" link="BotanistSOP"]
-  - [textlink="Chaplain" link="ChaplainSOP"]
-  - [textlink="Chef" link="ChefSOP"]
-  - [textlink="Clown" link="ClownSOP"]
-  - [textlink="Janitor" link="JanitorSOP"]
-  - [textlink="Mime" link="MimeSOP"]
+  - [textlink="Kierownik Personelu" link="HoPSOP"]
+  - [textlink="Barman" link="BartenderSOP"]
+  - [textlink="Botanik" link="BotanistSOP"]
+  - [textlink="Kapłan" link="ChaplainSOP"]
+  - [textlink="Kucharz" link="ChefSOP"]
+  - [textlink="Klaun" link="ClownSOP"]
+  - [textlink="Woźny" link="JanitorSOP"]
+  - [textlink="Mim" link="MimeSOP"]
   - [textlink="Reporter" link="ReporterSOP"]
 <Box>
-  [color=#999999][italic]"The Clown is permitted to, and freely exempt from any consequences of, slipping literally [bolditalic]anyone[/bolditalic], assuming it does not interfere with active Security duty, or in any way endangers other personnel (such as slipping a Paramedic who’s dragging a wounded person to Medbay);"[/italic] - Clown SOP {1}[/color]
+  [color=#999999][italic]"Klaun ma prawo do i jest całkowicie zwolniony z wszelkich konsekwencji poślizgnięcia dosłownie [bolditalic]kogokolwiek[/bolditalic], zakładając, że nie koliduje to z aktywnymi obowiązkami Ochrony ani w żaden sposób nie zagraża innemu personelowi (takim jak poślizgnięcie Ratownika ciągnącego rannego do Medbayu);"[/italic] - SPO Klauna {1}[/color]
 </Box>
 </Document>

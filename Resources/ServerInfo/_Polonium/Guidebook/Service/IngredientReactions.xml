@@ -7,147 +7,149 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 -->
 
 <Document>
-  # Ingredient Reactions
-  Here are the ingredient creation reactions that, by and large, any chef should be able to use in their kitchen.
+  # Reakcje Składników
+  Oto reakcje tworzenia składników, z których w większości powinien móc korzystać każdy kucharz w swojej kuchni.
 
-  Though kitchens start out well-stocked with a variety of reagent ingredients already, it may not be clear how those reagents turn into some of the ingredients that you can cook with.
+  [italics](składniki mają wersje nazw w języku angielskim podane w nawiasach, ponieważ niektóre z nich nadal mogą znajdować się w trakcie tłumaczenia)
 
-  #Doughs
-  
-  Quite literally the bread of a chef's kitchen, dough comes in quite a few varieties - all of them made in a reaction!
+  Chociaż kuchnie zaczynają z dobrym zaopatrzeniem w różnorodne składniki reagentów, może nie być jasne, jak te reagenty zamieniają się w niektóre składniki, z którymi można gotować.
 
-  ##Standard Doughs
+  # Ciasta
+
+  Dosłownie chleb powszedni kuchni kucharza, ciasto występuje w wielu odmianach - wszystkie tworzone w reakcji!
+
+  ## Standardowe Ciasta
   <Box>
     <GuideEntityEmbed Entity="FoodDough" Caption="Regular Dough"/>
   </Box>
-  You can make regular dough by combining the following reagents:
+  Możesz zrobić zwykłe ciasto, łącząc następujące reagenty:
 
-  -15u Flour
-  -10u Water
+  -15u Mąki (Flour)
+  -10u Wody (Water)
 
   <Box>
     <GuideEntityEmbed Entity="FoodDoughTortilla" Caption="Tortilla Dough"/>
   </Box>
-  You can make tortilla dough by combining the following reagents:
+  Możesz zrobić ciasto na tortillę, łącząc następujące reagenty:
 
-  -15u Cornmeal
-  -10u Water
+  -15u Mąki kukurydzianej (Cornmeal)
+  -10u Wody (Water)
 
   <Box>
     <GuideEntityEmbed Entity="FoodDoughCotton" Caption="Cotton Dough"/>
   </Box>
-  For the station's fiber-eating personnel, you can make cotton dough by combining the following reagents:
+  Dla personelu jedzącego włókna, możesz zrobić ciasto bawełniane, łącząc następujące reagenty:
 
-  -10u Fiber
-  -5u Flour
-  -10u Water
+  -10u Włókna (Fiber)
+  -5u Mąki (Flour)
+  -10u Wody (Water)
 
   <Box>
     <GuideEntityEmbed Entity="FoodDoughCornmeal" Caption="Cornmeal Dough"/>
   </Box>
-  You can make cornmeal dough by combining the following reagents:
+  Możesz zrobić ciasto kukurydziane, łącząc następujące reagenty:
 
-  -15u Cornmeal
-  -10u Milk
-  -6u Raw Egg
+  -15u Mąki kukurydzianej (Cornmeal)
+  -10u Mleka (Milk)
+  -6u Surowego jajka (Raw Egg)
 
-  You can generally cut and roll these doughs.
+  Zazwyczaj możesz kroić i wałkować te ciasta.
 
-  ##Specialty Doughs
+  ## Specjalne Ciasta
   <Box>
     <GuideEntityEmbed Entity="FoodDoughPie" Caption="Pie Dough"/>
   </Box>
-  You can make pie dough, the consumable part of a pie, by combining with the following reagents:
+  Możesz zrobić ciasto na placek, jadalną część placka, łącząc następujące reagenty:
 
-  -15u Flour
-  -12u Raw Egg
-  -5u Table Salt
+  -15u Mąki (Flour)
+  -12u Surowego jajka (Raw Egg)
+  -5u Soli stołowej (Table Salt)
 
   <Box>
     <GuideEntityEmbed Entity="FoodCakeBatter" Caption="Cake Batter"/>
   </Box>
-  You can make cake batter by combining one of the following sets of reagents:
+  Możesz zrobić masę na ciasto, łącząc jeden z następujących zestawów reagentów:
 
-  -15u Flour
-  -12u Raw Egg
-  -5u Sugar
-  -5u Milk
-  
-  OR:
-  
-  -15u Flour
-  -15u Soy Milk
-  -5u Sugar
+  -15u Mąki (Flour)
+  -12u Surowego jajka (Raw Egg)
+  -5u Cukru (Sugar)
+  -5u Mleka (Milk)
 
-  While the end result may be the same regardless of the recipe you use, those with milk and egg allergies will thank you for using the soy recipe.
+  LUB:
 
-  #Catalyzed Reactions
+  -15u Mąki (Flour)
+  -15u Mleka sojowego (Soy Milk)
+  -5u Cukru (Sugar)
 
-  Though every ingredient does consume reagents to be made, not every reaction will consume all of the reagents that go into making them.
+  Choć wynik końcowy może być taki sam niezależnie od użytego przepisu, osoby z alergią na mleko i jajka podziękują ci za użycie przepisu sojowego.
 
-  Catalysts are the names for those reagents which will not be used up when making an ingredient. They will react so long as a minimum amount of them is present.
+  # Reakcje Katalizowane
+
+  Chociaż każdy składnik zużywa reagenty do powstania, nie każda reakcja zużyje wszystkie reagenty, które w nią wchodzą.
+
+  Katalizatory to nazwy tych reagentów, które nie zostaną zużyte podczas tworzenia składnika. Będą reagować tak długo, jak obecna jest ich minimalna ilość.
 
   <Box>
     <GuideEntityEmbed Entity="FoodButter" Caption="Butter"/>
   </Box>
-  You can make a stick of butter by combining the following reagents:
+  Możesz zrobić kostkę masła, łącząc następujące reagenty:
 
-  -30u Milk
-  -5u Table Salt as a catalyst
+  -30u Mleka (Milk)
+  -5u Soli stołowej (Table Salt) jako katalizator
 
-  ##Enzyme Reactions
+  ## Reakcje Enzymatyczne
   <Box>
     <GuideEntityEmbed Entity="FoodCheese" Caption="Cheese"/>
   </Box>
-  You can make a wheel of cheese by combining the following reagents:
+  Możesz zrobić krąg sera, łącząc następujące reagenty:
 
-  -40u Milk
-  -5u Universal Enzyme as a catalyst
+  -40u Mleka (Milk)
+  -5u Uniwersalnego enzymu (Universal Enzyme) jako katalizator
 
   <Box>
     <GuideEntityEmbed Entity="FoodChevre" Caption="Chèvre"/>
   </Box>
-  You can make a log of chèvre, goats' milk cheese, by combining the following reagents:
+  Możesz zrobić roladkę sera koziego (chèvre), łącząc następujące reagenty:
 
-  -10u Goats Milk
-  -5u Universal Enzyme as a catalyst
+  -10u Mleka koziego (Goats Milk)
+  -5u Uniwersalnego enzymu (Universal Enzyme) jako katalizator
 
   <Box>
     <GuideEntityEmbed Entity="FoodTofu" Caption="Tofu"/>
   </Box>
-  You can make a block of tofu by combining the following reagents:
+  Możesz zrobić blok tofu, łącząc następujące reagenty:
 
-  -30u Soy Milk
-  -5u Universal Enzyme as a catalyst
+  -30u Mleka sojowego (Soy Milk)
+  -5u Uniwersalnego enzymu (Universal Enzyme) jako katalizator
 
   <Box>
     <GuideEntityEmbed Entity="FoodMysteryMeat" Caption="Mystery meat...?"/>
   </Box>
-  You can reconstitute a slab of mystery meat by combining the following reagents:
+  Możesz odtworzyć płat tajemniczego mięsa, łącząc następujące reagenty:
 
-  -10u Uncooked Animal Proteins
-  -5u Universal Enzyme as a catalyst
+  -10u Surowych białek zwierzęcych (Uncooked Animal Proteins)
+  -5u Uniwersalnego enzymu (Universal Enzyme) jako katalizator
 
-  #Miscellaneous Reactions
+  # Różne Reakcje
 
-  While a vast majority of the reactions a chef may need to use are covered above, there are still a couple of reactions that aren't listed anywhere else.
+  Podczas gdy zdecydowana większość reakcji, których kucharz może potrzebować, została omówiona powyżej, istnieje jeszcze kilka reakcji, które nie są wymienione nigdzie indziej.
 
   <Box>
     <GuideEntityEmbed Entity="FoodMeatMeatball" Caption="Meatball"/>
   </Box>
-  You can make a singular meatball by combining the following reagents:
+  Możesz zrobić pojedynczy klopsik, łącząc następujące reagenty:
 
-  -5u Uncooked Animal Proteins
-  -5u Flour
-  -6u Raw Egg
+  -5u Surowych białek zwierzęcych (Uncooked Animal Proteins)
+  -5u Mąki (Flour)
+  -6u Surowego jajka (Raw Egg)
 
   <Box>
     <GuideEntityEmbed Entity="FoodSnackChocolateBar" Caption="Chocolate."/>
   </Box>
-  You can make a bar of chocolate by combining the following reagents:
+  Możesz zrobić tabliczkę czekolady, łącząc następujące reagenty:
 
-  -4u Cocoa Powder
-  -2u Milk
-  -2u Sugar
+  -4u Kakao w proszku (Cocoa Powder)
+  -2u Mleka (Milk)
+  -2u Cukru (Sugar)
 
 </Document>

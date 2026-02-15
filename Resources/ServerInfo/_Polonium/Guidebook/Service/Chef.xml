@@ -11,13 +11,13 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-# Chef
-A fella has gotta eat, and it's the chef's job to make sure folks have something other than junk to munch on.
+# Kucharz
+Facet musi jeść, a zadaniem kucharza jest upewnienie się, że ludzie mają coś innego niż śmieci do przeżucia.
 
 
-[textlink="Click here to see a list of food recipes." link="FoodRecipes"]
+[textlink="Kliknij tutaj, aby zobaczyć listę przepisów kulinarnych." link="FoodRecipes"]
 
-First and foremost, you'll need to familiarize yourself with the kitchen, and the tools available to you.
+Przede wszystkim musisz zapoznać się z kuchnią i dostępnymi narzędziami.
 
 <Box>
 <GuideEntityEmbed Entity="KitchenKnife"/>
@@ -33,36 +33,36 @@ First and foremost, you'll need to familiarize yourself with the kitchen, and th
 <GuideEntityEmbed Entity="VendingMachineDinnerware" Caption="Dinnerware Vend"/>
 </Box>
 
-## Kitchen Prep:
+## Przygotowanie w Kuchni:
 
-It's hard to put into words how to work as a chef without feeling like you're being given orders, but here are some basics.
+Trudno ubrać w słowa, jak pracować jako kucharz bez poczucia, że otrzymuje się rozkazy, ale oto kilka podstaw.
 
-- Check what you have on hand when it comes to ingredients, most kitchens have some Flour, Rice, Eggs, Monkey Cubes, and a few other things to get started with.
-- Try your hand at mixing up some dough by putting water and flour together in a beaker. (Use the sinks!)
-- Check the Wiki (or Food Recipes) guidebook for things you can make, and put all the listed ingredients into a microwave to cook it into a meal.
-- Set up mouse traps. Yes, really. It's easy to see all your hard work disappear if you don't take precautions for mice infestations.
+- Sprawdź, co masz pod ręką, jeśli chodzi o składniki, większość kuchni ma trochę Mąki, Ryżu, Jajek, Kostek Małpy i kilka innych rzeczy na początek.
+- Spróbuj swoich sił w mieszaniu ciasta, łącząc wodę i mąkę w zlewce. (Użyj zlewów!)
+- Sprawdź Wiki (lub Księgę Przepisów), aby dowiedzieć się, co możesz zrobić, i włóż wszystkie wymienione składniki do mikrofalówki, aby ugotować z nich posiłek.
+- Rozstaw pułapki na myszy. Tak, naprawdę. Łatwo zobaczyć, jak cała twoja ciężka praca znika, jeśli nie podejmiesz środków ostrożności przeciwko pladze myszy.
 
-Once you're a bit more experienced and familiar with what you can make, it might be best to put together a few menus, or a "cheat sheet" so you can give a list of ingredients to botany.
+Gdy będziesz nieco bardziej doświadczony i zaznajomiony z tym, co możesz zrobić, najlepiej przygotować kilka menu lub "ściągawkę", abyś mógł dać listę składników botanice.
 
-## Mixing Dough:
-Add Flour and Water together in a beaker. (Use the sink for water!)
+## Mieszanie Ciasta:
+Dodaj Mąkę (Flour) i Wodę (Water) razem w zlewce. (Użyj zlewu do wody!)
 <Box>
 <GuideEntityEmbed Entity="LargeBeaker"/>
 <GuideEntityEmbed Entity="ReagentContainerFlour"/>
 <GuideEntityEmbed Entity="DrinkWaterBottleFull" Caption="water"/>
 <GuideEntityEmbed Entity="FoodDough"/>
 </Box>
-## Making Flour:
-Place wheat in a grinder (with a beaker placed inside) and grind it up!
+## Robienie Mąki:
+Umieść pszenicę w młynku (z zlewką w środku) i zmiel ją!
 <Box>
 <GuideEntityEmbed Entity="KitchenReagentGrinder"/>
 <GuideEntityEmbed Entity="LargeBeaker"/>
 <GuideEntityEmbed Entity="WheatBushel"/>
 <GuideEntityEmbed Entity="ReagentContainerFlour"/>
 </Box>
-## Making Cheese/Tofu/Chèvre:
-Adding Milk to a little bit of Universal Enzyme (catalyst) in a beaker can give you various items;
-Cow Milk gives you Cheese, Soy Milk makes Tofu, and Goat Milk makes Chèvre.
+## Robienie Sera/Tofu/Chèvre:
+Dodanie Mleka do odrobiny Uniwersalnego Enzymu (katalizator) w zlewce może dać różne produkty;
+Krowie Mleko daje Ser, Mleko Sojowe robi Tofu, a Kozie Mleko robi Chèvre.
 <Box>
 <GuideEntityEmbed Entity="LargeBeaker"/>
 <GuideEntityEmbed Entity="FoodCondimentBottleEnzyme"/>
@@ -74,33 +74,33 @@ Cow Milk gives you Cheese, Soy Milk makes Tofu, and Goat Milk makes Chèvre.
 <GuideEntityEmbed Entity="FoodTofu"/>
 <GuideEntityEmbed Entity="FoodChevre"/>
 </Box>
-## Making Butter:
-Pouring Milk into a beaker and adding a pinch of salt will give you a stick of butter.
-Note: You might need a bit more milk than you expect.
+## Robienie Masła:
+Wlanie Mleka do zlewki i dodanie szczypty soli da ci kostkę masła.
+Uwaga: Możesz potrzebować trochę więcej mleka niż oczekujesz.
 <Box>
 <GuideEntityEmbed Entity="LargeBeaker"/>
 <GuideEntityEmbed Entity="DrinkMilkCarton"/>
 <GuideEntityEmbed Entity="FoodShakerSalt"/>
 <GuideEntityEmbed Entity="FoodButter"/>
 </Box>
-## Getting Plants:
-Ask Botany for what you need, without a botanist, you may need to grow more plants yourself.
+## Zdobywanie Roślin:
+Poproś Botanikę o to, czego potrzebujesz, bez botanika możesz musieć sam wyhodować więcej roślin.
 <Box>
 <GuideEntityEmbed Entity="SignHydro1" Caption=" "/>
 <GuideEntityEmbed Entity="hydroponicsTray"/>
 <GuideEntityEmbed Entity="WheatBushel"/>
 </Box>
-## Gathering Milk:
-Alt-Click on a Cow with a container in your hand. (Beakers, Buckets, Milk Jugs, ect.)
+## Zbieranie Mleka:
+Kliknij z Altem na Krowę z pojemnikiem w ręku. (Zlewki, Wiadra, Dzbanki na mleko, itp.)
 <Box>
 <GuideEntityEmbed Entity="Bucket"/>
 <GuideEntityEmbed Entity="MobCow"/>
 <GuideEntityEmbed Entity="DrinkMilkCarton"/>
 </Box>
-## How to Butcher:
-In most cases, you should be able to use a knife directly on a creature that's dead. It's best to do this in the freezer, as the results are... messy.
+## Jak ćwiartować:
+W większości przypadków powinieneś móc użyć noża bezpośrednio na stworzeniu, które jest martwe. Najlepiej robić to w zamrażarce, ponieważ rezultaty są... brudne.
 
-Monkeys, however, (and other humanoids), need to be dragged onto a meatspike to be butchered.
+Małpy, jednakże (i inne humanoidy), muszą zostać przeciągnięte na hak rzeźniczy (meatspike), aby zostać poćwiartowane.
 <Box>
 <GuideEntityEmbed Entity="KitchenSpike"/>
 <GuideEntityEmbed Entity="KitchenKnife"/>

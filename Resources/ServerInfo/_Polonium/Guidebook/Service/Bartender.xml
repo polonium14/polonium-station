@@ -10,13 +10,13 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-# Bartender
-The bartender has a pretty simple job: serve drinks. People will come up to you and request drinks, and your job is just to hand it to them.
+# Barman
+Barman ma dość prostą pracę: podawać drinki. Ludzie będą do ciebie podchodzić i prosić o drinki, a twoim zadaniem jest po prostu im je podać.
 
-[textlink="Click here to see a complete list of drinks." link="Drinks"]
+[textlink="Kliknij tutaj, aby zobaczyć pełną listę drinków." link="Drinks"]
 
 <Box>
-The materials for these drinks can be found in various places:
+Materiały do tych drinków można znaleźć w różnych miejscach:
 </Box>
 <Box>
 <GuideEntityEmbed Entity="BoozeDispenser"/>
@@ -25,7 +25,7 @@ The materials for these drinks can be found in various places:
 </Box>
 
 <Box>
-Don't forget containers to serve them in!
+Nie zapomnij o naczyniach do ich podawania!
 </Box>
 <Box>
 <GuideEntityEmbed Entity="DrinkGlass" Caption="Glass"/>
@@ -34,5 +34,5 @@ Don't forget containers to serve them in!
 <GuideEntityEmbed Entity="DrinkJigger"/>
 </Box>
 
-You can find a list of every drink that can be requested under the Reference Tables entry.
+Listę wszystkich drinków, o które można poprosić, znajdziesz w wpisie Tabele referencyjne.
 </Document>

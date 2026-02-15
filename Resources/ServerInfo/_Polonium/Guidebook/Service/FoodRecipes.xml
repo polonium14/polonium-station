@@ -19,53 +19,53 @@ SPDX-License-Identifier: MIT
 
 <Document>
 
-# Microwave Recipes
+# Przepisy Mikrofalowe
 
-This is the latest published version of NanoTrasen Central Command Kitchen de Cuisine's recipe collection for chefs upon NanoTrasen vessels to prepare.
+To jest najnowsza opublikowana wersja kolekcji przepisów Kuchni de Cuisine Centralnego Dowództwa NanoTrasen dla kucharzy na statkach NanoTrasen do przygotowania.
 
-## Pizza Pies
+## Pizze
 <GuideMicrowaveGroupEmbed Group="Pizza"/>
 
-## Savory Cooking
+## Dania Wytrawne
 <GuideMicrowaveGroupEmbed Group="Savory"/>
 
-## Breads
+## Chleby
 <GuideMicrowaveGroupEmbed Group="Breads"/>
 
-## Breakfast Foods
+## Śniadania
 <GuideMicrowaveGroupEmbed Group="Breakfast"/>
 
-## Moth Foods
+## Jedzenie dla Ciem
 <GuideMicrowaveGroupEmbed Group="Moth"/>
 
-## Pastas & Noodles
+## Makarony i Kluski
 <GuideMicrowaveGroupEmbed Group="Pasta"/>
 
-## Pastries & Desserts
+## Wypieki i Desery
 <GuideMicrowaveGroupEmbed Group="Dessert"/>
 
-## Soups & Stews
+## Zupy i Gulasze
 <GuideMicrowaveGroupEmbed Group="Soup"/>
 
-## Pies & Tarts
+## Placki i Tarty
 <GuideMicrowaveGroupEmbed Group="Pie"/>
 
-## Bars & Cookies
+## Batony i Ciasteczka
 <GuideMicrowaveGroupEmbed Group="BarsAndCookies"/>
 
-## Cakes
+## Ciasta
 <GuideMicrowaveGroupEmbed Group="Cake"/>
 
-## Salads
+## Sałatki
 <GuideMicrowaveGroupEmbed Group="Salad"/>
 
-## Medicinal
+## Lecznicze
 <GuideMicrowaveGroupEmbed Group="Medicinal"/>
 
-## Other
+## Inne
 <GuideMicrowaveGroupEmbed Group="Other"/>
 
-## Secret
+## Tajne
 <GuideMicrowaveGroupEmbed Group="Secret"/>
 
 </Document>
