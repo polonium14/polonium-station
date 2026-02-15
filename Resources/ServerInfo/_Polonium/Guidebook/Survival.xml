@@ -43,7 +43,7 @@ W przypadku poważnego zagrożenia, jest kilka rzeczy, które możesz zrobić, a
   <GuideEntityEmbed Entity="EmergencyOxygenTankFilled"/>
 </Box>
 
-- Jeśli aktywnie krwawisz lub po prostu chcesz się przygotować, możliwe jest pocięcie materiałowych przedmiotów nożem lub innym ostrym przedmiotem i użycie uzyskanego materiału do stworzenia gazy w menu craftingu, aby zatamować krwawienie, jednak sam materiał może być użyty w mniejszym stopniu w sytuacjach awaryjnych.
+- Jeśli aktywnie krwawisz lub po prostu chcesz się przygotować, możliwe jest pocięcie materiałowych przedmiotów nożem lub innym ostrym przedmiotem i użycie uzyskanego materiału do stworzenia gazy w menu tworzenia przedmiotów, aby zatamować krwawienie, jednak sam materiał może być użyty w mniejszym stopniu w sytuacjach awaryjnych.
 
 <Box>
   <GuideEntityEmbed Entity="Gauze"/>
