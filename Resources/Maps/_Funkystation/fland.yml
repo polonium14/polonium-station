@@ -67,7 +67,7 @@
 # SPDX-FileCopyrightText: 2026 TheHolyAegis <76066612+TheHolyAegis@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2026 TheHolyAegis <sanderkamphuis719@gmail.com>
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 
 meta:
   format: 7
@@ -75,8 +75,8 @@ meta:
   engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 01/22/2026 15:59:27
-  entityCount: 36424
+  time: 02/16/2026 11:56:56
+  entityCount: 36426
 maps:
 - 22578
 grids:
@@ -2832,10 +2832,6 @@ entities:
             id: BrickTileWhiteLineS
           decals:
             9484: 10,53
-        - node:
-            color: '#52B4E98C'
-            id: BrickTileWhiteLineS
-          decals:
             9487: -1,61
             9488: 0,61
             9489: 1,61
@@ -3080,13 +3076,9 @@ entities:
             color: '#52B4E98C'
             id: BrickTileWhiteLineW
           decals:
+            9477: 9,44
             9485: 6,54
             9486: 6,55
-        - node:
-            color: '#52B4E98C'
-            id: BrickTileWhiteLineW
-          decals:
-            9477: 9,44
         - node:
             color: '#52B4E996'
             id: BrickTileWhiteLineW
@@ -3842,6 +3834,11 @@ entities:
             4674: 34,-35
             4675: 34,-36
         - node:
+            color: '#D4D4D407'
+            id: CheckerNESW
+          decals:
+            9704: 91,39
+        - node:
             color: '#D4D4D40F'
             id: CheckerNESW
           decals:
@@ -4387,6 +4384,11 @@ entities:
             7750: 122,6
             7751: 121,6
             7752: 121,7
+        - node:
+            color: '#D4D4D407'
+            id: CheckerNWSE
+          decals:
+            9705: 91,39
         - node:
             color: '#D4D4D428'
             id: CheckerNWSE
@@ -5028,7 +5030,6 @@ entities:
             4690: 33,-43
             5548: 67,-9
             5549: 68,-13
-            5550: 66,-12
             5577: 79,-17
             5743: 96,-23
             5744: 97,-22
@@ -5857,7 +5858,6 @@ entities:
             5551: 67,-13
             5552: 67,-12
             5553: 66,-13
-            5554: 65,-12
             5555: 66,-11
             5556: 69,-13
             5557: 68,-12
@@ -5984,6 +5984,937 @@ entities:
             id: Donk
           decals:
             7502: 77.00151,6.9934244
+        - node:
+            color: '#9FED5896'
+            id: FloorLineCenterArrow1
+          decals:
+            9792: -5,48
+        - node:
+            zIndex: 2
+            color: '#D4D4D496'
+            id: FloorLineCenterArrow1
+          decals:
+            9832: -1,35
+        - node:
+            zIndex: -5
+            angle: 1.5707963267948966 rad
+            color: '#D4D4D496'
+            id: FloorLineCenterArrow1
+          decals:
+            9886: -38,40
+        - node:
+            zIndex: -1
+            angle: 3.141592653589793 rad
+            color: '#D4D4D496'
+            id: FloorLineCenterArrow1
+          decals:
+            9878: -32,43
+        - node:
+            angle: 4.71238898038469 rad
+            color: '#D4D4D496'
+            id: FloorLineCenterArrow1
+          decals:
+            9771: 84,16
+        - node:
+            zIndex: -1
+            angle: -1.5707963267948966 rad
+            color: '#334E6DC8'
+            id: FloorLineCenterArrow2
+          decals:
+            9701: 84,39
+            9702: 80,39
+        - node:
+            zIndex: -1
+            color: '#9FED5896'
+            id: FloorLineCenterArrow2
+          decals:
+            9818: -13,56
+        - node:
+            zIndex: 1
+            angle: -1.5707963267948966 rad
+            color: '#D381C996'
+            id: FloorLineCenterArrow2
+          decals:
+            9808: -4,62
+        - node:
+            zIndex: -1
+            angle: 1.5707963267948966 rad
+            color: '#D4D4D496'
+            id: FloorLineCenterArrow2
+          decals:
+            9868: -8,45
+        - node:
+            angle: -1.5707963267948966 rad
+            color: '#EFB341A1'
+            id: FloorLineCenterArrow2
+          decals:
+            9627: 106,-21
+        - node:
+            angle: 3.141592653589793 rad
+            color: '#EFB341A1'
+            id: FloorLineCenterArrow2
+          decals:
+            9619: 104,-14
+        - node:
+            zIndex: -1
+            color: '#D381C996'
+            id: FloorLineCenterArrow3
+          decals:
+            9802: -5,57
+        - node:
+            zIndex: 1
+            angle: -1.5707963267948966 rad
+            color: '#9FED5896'
+            id: FloorLineCenterBend
+          decals:
+            9798: -5,54
+        - node:
+            zIndex: -1
+            angle: 1.5707963267948966 rad
+            color: '#9FED5896'
+            id: FloorLineCenterBend
+          decals:
+            9816: -13,54
+        - node:
+            zIndex: -1
+            color: '#D381C996'
+            id: FloorLineCenterBend
+          decals:
+            9807: -5,62
+        - node:
+            color: '#D4D4D493'
+            id: FloorLineCenterBend
+          decals:
+            9777: 92,20
+        - node:
+            angle: 1.5707963267948966 rad
+            color: '#D4D4D493'
+            id: FloorLineCenterBend
+          decals:
+            9775: 87,15
+        - node:
+            angle: 3.141592653589793 rad
+            color: '#D4D4D493'
+            id: FloorLineCenterBend
+          decals:
+            9776: 92,15
+        - node:
+            zIndex: -1
+            angle: -1.5707963267948966 rad
+            color: '#D4D4D496'
+            id: FloorLineCenterBend
+          decals:
+            9843: -1,45
+        - node:
+            zIndex: -1
+            color: '#D4D4D496'
+            id: FloorLineCenterBend
+          decals:
+            9875: -32,45
+        - node:
+            color: '#D4D4D496'
+            id: FloorLineCenterBend
+          decals:
+            9758: 76,16
+        - node:
+            zIndex: 1
+            color: '#D4D4D496'
+            id: FloorLineCenterBend
+          decals:
+            9742: 65,14
+        - node:
+            angle: 3.141592653589793 rad
+            color: '#D4D4D496'
+            id: FloorLineCenterBend
+          decals:
+            9757: 76,14
+            9765: 82,16
+        - node:
+            zIndex: 5
+            angle: 3.141592653589793 rad
+            color: '#D4D4D496'
+            id: FloorLineCenterBend
+          decals:
+            9880: -32,40
+        - node:
+            angle: 4.71238898038469 rad
+            color: '#D4D4D496'
+            id: FloorLineCenterBend
+          decals:
+            9774: 87,16
+        - node:
+            angle: -1.5707963267948966 rad
+            color: '#EFB341A1'
+            id: FloorLineCenterBend
+          decals:
+            9632: 111,-21
+        - node:
+            angle: 1.5707963267948966 rad
+            color: '#EFB341A1'
+            id: FloorLineCenterBend
+          decals:
+            9625: 104,-21
+        - node:
+            zIndex: 1
+            angle: -3.141592653589793 rad
+            color: '#334E6DC8'
+            id: FloorLineCenterBendArrowCCW
+          decals:
+            9711: 96,39
+        - node:
+            angle: 3.141592653589793 rad
+            color: '#D4D4D496'
+            id: FloorLineCenterBendArrowCCW
+          decals:
+            9737: 65,11
+        - node:
+            color: '#334E6DC8'
+            id: FloorLineCenterBendArrowCW
+          decals:
+            9639: 55,39
+        - node:
+            color: '#EFB341A1'
+            id: FloorLineCenterBox1
+          decals:
+            9618: 104,-16
+        - node:
+            color: '#334E6DC8'
+            id: FloorLineCenterBox2
+          decals:
+            9635: 55,36
+            9658: 72,40
+            9675: 89,40
+        - node:
+            angle: 1.5707963267948966 rad
+            color: '#334E6DC8'
+            id: FloorLineCenterBox2
+          decals:
+            9659: 73,39
+            9678: 90,39
+            9688: 75,39
+        - node:
+            zIndex: 1
+            angle: -1.5707963267948966 rad
+            color: '#9FED5896'
+            id: FloorLineCenterBox2
+          decals:
+            9809: -6,54
+        - node:
+            zIndex: -1
+            color: '#9FED5896'
+            id: FloorLineCenterBox2
+          decals:
+            9817: -13,55
+        - node:
+            color: '#9FED5896'
+            id: FloorLineCenterBox2
+          decals:
+            9723: 77,38
+            9790: -5,46
+        - node:
+            zIndex: 1
+            color: '#9FED5896'
+            id: FloorLineCenterBox2
+          decals:
+            9823: -5,47
+        - node:
+            zIndex: -1
+            angle: 1.5707963267948966 rad
+            color: '#9FED5896'
+            id: FloorLineCenterBox2
+          decals:
+            9821: -14,54
+        - node:
+            zIndex: -1
+            color: '#D381C996'
+            id: FloorLineCenterBox2
+          decals:
+            9801: -5,56
+        - node:
+            zIndex: -1
+            angle: -1.5707963267948966 rad
+            color: '#D4D4D496'
+            id: FloorLineCenterBox2
+          decals:
+            9848: -6,45
+        - node:
+            angle: -1.5707963267948966 rad
+            color: '#D4D4D496'
+            id: FloorLineCenterBox2
+          decals:
+            9730: 58,11
+        - node:
+            zIndex: -1
+            color: '#D4D4D496'
+            id: FloorLineCenterBox2
+          decals:
+            9876: -32,44
+        - node:
+            zIndex: 2
+            color: '#D4D4D496'
+            id: FloorLineCenterBox2
+          decals:
+            9831: -1,34
+        - node:
+            angle: 1.5707963267948966 rad
+            color: '#D4D4D496'
+            id: FloorLineCenterBox2
+          decals:
+            9727: 56,11
+        - node:
+            angle: 4.71238898038469 rad
+            color: '#D4D4D496'
+            id: FloorLineCenterBox2
+          decals:
+            9770: 83,16
+        - node:
+            zIndex: -1
+            angle: -3.141592653589793 rad
+            color: '#334E6DC8'
+            id: FloorLineCenterConnectorLong
+          decals:
+            9714: 89,41
+        - node:
+            zIndex: 1
+            angle: -3.141592653589793 rad
+            color: '#334E6DC8'
+            id: FloorLineCenterConnectorShort
+          decals:
+            9713: 96,41
+        - node:
+            color: '#334E6DC8'
+            id: FloorLineCenterConnectorShort
+          decals:
+            9633: 55,34
+            9657: 72,39
+            9676: 89,39
+        - node:
+            angle: 3.141592653589793 rad
+            color: '#334E6DC8'
+            id: FloorLineCenterConnectorShort
+          decals:
+            9725: 72,41
+        - node:
+            zIndex: -1
+            color: '#9FED5896'
+            id: FloorLineCenterConnectorShort
+          decals:
+            9819: -5,45
+        - node:
+            color: '#9FED5896'
+            id: FloorLineCenterConnectorShort
+          decals:
+            9724: 77,37
+        - node:
+            zIndex: -1
+            angle: 1.5707963267948966 rad
+            color: '#9FED5896'
+            id: FloorLineCenterConnectorShort
+          decals:
+            9820: -13,54
+        - node:
+            angle: 3.141592653589793 rad
+            color: '#9FED5896'
+            id: FloorLineCenterConnectorShort
+          decals:
+            9722: 77,39
+        - node:
+            zIndex: -1
+            color: '#D381C996'
+            id: FloorLineCenterConnectorShort
+          decals:
+            9799: -5,54
+        - node:
+            angle: 1.5707963267948966 rad
+            color: '#D4D4D493'
+            id: FloorLineCenterConnectorShort
+          decals:
+            9778: 96,20
+        - node:
+            angle: -1.5707963267948966 rad
+            color: '#D4D4D496'
+            id: FloorLineCenterConnectorShort
+          decals:
+            9728: 55,11
+        - node:
+            zIndex: 2
+            color: '#D4D4D496'
+            id: FloorLineCenterConnectorShort
+          decals:
+            9830: -1,33
+        - node:
+            angle: 3.141592653589793 rad
+            color: '#D4D4D496'
+            id: FloorLineCenterConnectorShort
+          decals:
+            9768: 82,19
+        - node:
+            angle: 4.71238898038469 rad
+            color: '#D4D4D496'
+            id: FloorLineCenterConnectorShort
+          decals:
+            9769: 82,16
+        - node:
+            zIndex: 1
+            angle: -3.141592653589793 rad
+            color: '#334E6DC8'
+            id: FloorLineCenterStraight
+          decals:
+            9712: 96,40
+        - node:
+            color: '#334E6DC8'
+            id: FloorLineCenterStraight
+          decals:
+            9634: 55,35
+            9636: 55,35
+            9637: 55,37
+            9638: 55,38
+        - node:
+            angle: 1.5707963267948966 rad
+            color: '#334E6DC8'
+            id: FloorLineCenterStraight
+          decals:
+            9640: 56,39
+            9641: 57,39
+            9642: 58,39
+            9643: 59,39
+            9644: 60,39
+            9645: 61,39
+            9646: 62,39
+            9647: 63,39
+            9648: 64,39
+            9649: 65,39
+            9650: 66,39
+            9651: 67,39
+            9652: 68,39
+            9653: 69,39
+            9654: 70,39
+            9655: 71,39
+            9656: 72,39
+            9660: 74,39
+            9662: 76,39
+            9663: 77,39
+            9664: 78,39
+            9665: 79,39
+            9667: 81,39
+            9668: 82,39
+            9669: 83,39
+            9671: 85,39
+            9672: 86,39
+            9673: 87,39
+            9674: 88,39
+            9677: 89,39
+        - node:
+            zIndex: 1
+            angle: 1.5707963267948966 rad
+            color: '#334E6DC8'
+            id: FloorLineCenterStraight
+          decals:
+            9706: 91,39
+            9707: 92,39
+            9708: 93,39
+            9709: 94,39
+            9710: 95,39
+        - node:
+            zIndex: -1
+            angle: -1.5707963267948966 rad
+            color: '#9FED5896'
+            id: FloorLineCenterStraight
+          decals:
+            9810: -7,54
+            9811: -8,54
+            9812: -9,54
+            9813: -10,54
+            9814: -11,54
+            9815: -12,54
+        - node:
+            zIndex: -1
+            color: '#9FED5896'
+            id: FloorLineCenterStraight
+          decals:
+            9793: -5,49
+            9794: -5,50
+            9795: -5,51
+            9796: -5,52
+            9797: -5,53
+        - node:
+            zIndex: -1
+            color: '#D381C996'
+            id: FloorLineCenterStraight
+          decals:
+            9800: -5,55
+            9803: -5,58
+            9804: -5,59
+            9805: -5,60
+            9806: -5,61
+        - node:
+            color: '#D4D4D493'
+            id: FloorLineCenterStraight
+          decals:
+            9786: 92,16
+            9787: 92,17
+            9788: 92,18
+            9789: 92,19
+        - node:
+            angle: 1.5707963267948966 rad
+            color: '#D4D4D493'
+            id: FloorLineCenterStraight
+          decals:
+            9779: 95,20
+            9780: 94,20
+            9781: 93,20
+            9782: 91,15
+            9783: 90,15
+            9784: 89,15
+            9785: 88,15
+        - node:
+            zIndex: -1
+            angle: -1.5707963267948966 rad
+            color: '#D4D4D496'
+            id: FloorLineCenterStraight
+          decals:
+            9844: -2,45
+            9845: -3,45
+            9846: -4,45
+            9847: -5,45
+            9849: -7,45
+            9851: -9,45
+            9852: -10,45
+            9853: -11,45
+            9854: -12,45
+            9855: -13,45
+            9856: -14,45
+            9857: -15,45
+            9858: -16,45
+            9859: -17,45
+            9860: -18,45
+            9861: -19,45
+            9862: -20,45
+            9863: -21,45
+            9864: -22,45
+            9865: -23,45
+            9866: -24,45
+            9867: -25,45
+            9869: -26,45
+            9870: -27,45
+            9871: -28,45
+            9872: -29,45
+            9873: -30,45
+            9874: -31,45
+        - node:
+            angle: -1.5707963267948966 rad
+            color: '#D4D4D496'
+            id: FloorLineCenterStraight
+          decals:
+            9729: 57,11
+            9731: 59,11
+            9732: 60,11
+            9733: 61,11
+            9734: 62,11
+            9735: 63,11
+            9736: 64,11
+        - node:
+            zIndex: -1
+            color: '#D4D4D496'
+            id: FloorLineCenterStraight
+          decals:
+            9837: -1,39
+            9838: -1,40
+            9839: -1,41
+            9840: -1,42
+            9841: -1,43
+            9842: -1,44
+        - node:
+            color: '#D4D4D496'
+            id: FloorLineCenterStraight
+          decals:
+            9759: 76,15
+            9766: 82,17
+            9767: 82,18
+        - node:
+            zIndex: 3
+            color: '#D4D4D496'
+            id: FloorLineCenterStraight
+          decals:
+            9834: -1,36
+            9835: -1,37
+            9836: -1,38
+        - node:
+            angle: 1.5707963267948966 rad
+            color: '#D4D4D496'
+            id: FloorLineCenterStraight
+          decals:
+            9748: 67,14
+            9749: 68,14
+            9750: 69,14
+            9751: 70,14
+            9752: 71,14
+            9753: 72,14
+            9754: 73,14
+            9755: 74,14
+            9756: 75,14
+            9760: 77,16
+            9761: 78,16
+            9762: 79,16
+            9763: 80,16
+            9764: 81,16
+        - node:
+            zIndex: 1
+            angle: 1.5707963267948966 rad
+            color: '#D4D4D496'
+            id: FloorLineCenterStraight
+          decals:
+            9743: 66,14
+        - node:
+            zIndex: 5
+            angle: 1.5707963267948966 rad
+            color: '#D4D4D496'
+            id: FloorLineCenterStraight
+          decals:
+            9881: -33,40
+            9882: -34,40
+            9883: -35,40
+            9884: -36,40
+            9885: -37,40
+        - node:
+            zIndex: 1
+            angle: 3.141592653589793 rad
+            color: '#D4D4D496'
+            id: FloorLineCenterStraight
+          decals:
+            9740: 65,12
+            9741: 65,13
+        - node:
+            zIndex: 5
+            angle: 3.141592653589793 rad
+            color: '#D4D4D496'
+            id: FloorLineCenterStraight
+          decals:
+            9879: -32,42
+        - node:
+            angle: 4.71238898038469 rad
+            color: '#D4D4D496'
+            id: FloorLineCenterStraight
+          decals:
+            9772: 85,16
+            9773: 86,16
+        - node:
+            angle: -1.5707963267948966 rad
+            color: '#EFB341A1'
+            id: FloorLineCenterStraight
+          decals:
+            9628: 107,-21
+            9629: 108,-21
+            9630: 109,-21
+            9631: 110,-21
+        - node:
+            color: '#EFB341A1'
+            id: FloorLineCenterStraight
+          decals:
+            9621: 104,-17
+            9622: 104,-18
+            9623: 104,-19
+            9624: 104,-20
+        - node:
+            angle: 1.5707963267948966 rad
+            color: '#EFB341A1'
+            id: FloorLineCenterStraight
+          decals:
+            9626: 105,-21
+        - node:
+            angle: -1.5707963267948966 rad
+            color: '#EFB341A1'
+            id: FloorLineDoubleArrowRight1
+          decals:
+            9566: 83,-6
+            9573: 87,-7
+            9595: 98,0
+        - node:
+            angle: -1.5707963267948966 rad
+            color: '#EFB341A1'
+            id: FloorLineDoubleArrowRight2
+          decals:
+            9536: 65,-12
+        - node:
+            color: '#EFB341A1'
+            id: FloorLineDoubleArrowRight2
+          decals:
+            9555: 78,-12
+        - node:
+            angle: 3.141592653589793 rad
+            color: '#EFB341A1'
+            id: FloorLineDoubleArrowRight2
+          decals:
+            9612: 104,-4
+        - node:
+            angle: -1.5707963267948966 rad
+            color: '#EFB341A1'
+            id: FloorLineDoubleBendArrowCCW
+          decals:
+            9551: 78,-16
+        - node:
+            angle: 3.141592653589793 rad
+            color: '#EFB341A1'
+            id: FloorLineDoubleBendArrowCCW
+          decals:
+            9615: 104,-13
+        - node:
+            color: '#EFB341A1'
+            id: FloorLineDoubleBendInner
+          decals:
+            9531: 68,-12
+            9571: 86,-6
+            9601: 104,0
+        - node:
+            angle: 1.5707963267948966 rad
+            color: '#EFB341A1'
+            id: FloorLineDoubleBendInner
+          decals:
+            9561: 78,-6
+            9587: 90,0
+        - node:
+            angle: 3.141592653589793 rad
+            color: '#EFB341A1'
+            id: FloorLineDoubleBendOuter
+          decals:
+            9572: 86,-7
+        - node:
+            angle: -1.5707963267948966 rad
+            color: '#EFB341A1'
+            id: FloorLineDoubleBoxRight
+          decals:
+            9517: 56,-12
+            9537: 69,-16
+            9562: 79,-6
+            9563: 81,-6
+            9578: 91,-7
+            9616: 105,-13
+        - node:
+            color: '#EFB341A1'
+            id: FloorLineDoubleBoxRight
+          decals:
+            9581: 90,-5
+        - node:
+            angle: 3.141592653589793 rad
+            color: '#EFB341A1'
+            id: FloorLineDoubleBoxRight
+          decals:
+            9538: 68,-17
+        - node:
+            angle: -1.5707963267948966 rad
+            color: '#EFB341A1'
+            id: FloorLineDoubleConnectRight
+          decals:
+            9519: 55,-12
+            9540: 68,-16
+        - node:
+            color: '#EFB341A1'
+            id: FloorLineDoubleConnectRight
+          decals:
+            9579: 90,-7
+        - node:
+            color: '#EFB341A1'
+            id: FloorLineDoubleStraightLeft
+          decals:
+            9532: 68,-13
+            9533: 68,-14
+            9534: 68,-15
+            9539: 68,-16
+            9602: 104,-1
+            9603: 104,-2
+            9604: 104,-3
+            9606: 104,-5
+            9607: 104,-6
+            9608: 104,-7
+            9609: 104,-8
+            9610: 104,-9
+            9611: 104,-10
+        - node:
+            angle: -1.5707963267948966 rad
+            color: '#EFB341A1'
+            id: FloorLineDoubleStraightRight
+          decals:
+            9520: 57,-12
+            9521: 58,-12
+            9522: 59,-12
+            9523: 60,-12
+            9524: 61,-12
+            9525: 62,-12
+            9526: 63,-12
+            9527: 64,-12
+            9530: 67,-12
+            9535: 66,-12
+            9543: 70,-16
+            9544: 71,-16
+            9545: 72,-16
+            9546: 73,-16
+            9547: 74,-16
+            9548: 75,-16
+            9549: 76,-16
+            9550: 77,-16
+            9564: 80,-6
+            9565: 82,-6
+            9569: 84,-6
+            9570: 85,-6
+            9574: 88,-7
+            9575: 89,-7
+            9576: 90,-7
+            9588: 91,0
+            9589: 92,0
+            9590: 93,0
+            9591: 94,0
+            9592: 95,0
+            9593: 96,0
+            9594: 97,0
+            9596: 99,0
+            9597: 100,0
+            9598: 101,0
+            9599: 102,0
+            9600: 103,0
+        - node:
+            color: '#EFB341A1'
+            id: FloorLineDoubleStraightRight
+          decals:
+            9552: 78,-15
+            9553: 78,-14
+            9554: 78,-13
+            9556: 78,-11
+            9557: 78,-10
+            9558: 78,-9
+            9559: 78,-8
+            9560: 78,-7
+            9580: 90,-6
+            9583: 90,-4
+            9584: 90,-3
+            9585: 90,-2
+            9586: 90,-1
+        - node:
+            angle: 3.141592653589793 rad
+            color: '#EFB341A1'
+            id: FloorLineDoubleStraightRight
+          decals:
+            9613: 104,-11
+            9614: 104,-12
+        - node:
+            zIndex: 1
+            color: '#FFFFFFFF'
+            id: FloorSignAI
+          decals:
+            9719: 75,39
+            9720: 90,39
+        - node:
+            color: '#FFFFFFFF'
+            id: FloorSignAtmos
+          decals:
+            9541: 67.74696,-17.252638
+        - node:
+            zIndex: -1
+            color: '#FFFFFFFF'
+            id: FloorSignBridge
+          decals:
+            9715: 55,36
+        - node:
+            zIndex: 1
+            color: '#FFFFFFFF'
+            id: FloorSignBridge
+          decals:
+            9716: 55,36
+            9717: 72,40
+        - node:
+            color: '#FFFFFFFF'
+            id: FloorSignCCOffice
+          decals:
+            9726: 77,38
+        - node:
+            zIndex: 2
+            color: '#FFFFFFFF'
+            id: FloorSignChapel
+          decals:
+            9825: -5,46
+            9827: -13,55
+            9829: -6,54
+        - node:
+            color: '#FFFFFFFF'
+            id: FloorSignCryosleep
+          decals:
+            9747: 58,11
+        - node:
+            zIndex: 5
+            color: '#FFFFFFFF'
+            id: FloorSignCryosleep
+          decals:
+            9888: 83,16
+        - node:
+            color: '#FFFFFFFF'
+            id: FloorSignDorms
+          decals:
+            9746: 56,11
+        - node:
+            color: '#FFFFFFFF'
+            id: FloorSignEngi
+          decals:
+            9518: 56.272305,-12.2516165
+        - node:
+            zIndex: 1
+            color: '#FFFFFFFF'
+            id: FloorSignEvac
+          decals:
+            9877: -32,44
+        - node:
+            zIndex: 3
+            color: '#FFFFFFFF'
+            id: FloorSignEvac
+          decals:
+            9833: -1,34
+        - node:
+            zIndex: 5
+            color: '#FFFFFFFF'
+            id: FloorSignEvac
+          decals:
+            9887: -6,45
+        - node:
+            zIndex: 2
+            color: '#FFFFFFFF'
+            id: FloorSignGenetics
+          decals:
+            9826: -5,56
+        - node:
+            color: '#FFFFFFFF'
+            id: FloorSignGrav
+          decals:
+            9620: 104.00426,-16.234545
+        - node:
+            zIndex: 2
+            color: '#FFFFFFFF'
+            id: FloorSignLibrary
+          decals:
+            9824: -5,47
+            9828: -14,54
+        - node:
+            color: '#EFB34196'
+            id: FloorSignReactor
+          decals:
+            9516: 88,-32
+        - node:
+            color: '#FFFFFFFF'
+            id: FloorSignSupermatter
+          decals:
+            9542: 69.2377,-16.248009
+            9567: 79.23522,-6.2598534
+        - node:
+            color: '#FFFFFFFF'
+            id: FloorSignTesla
+          decals:
+            9568: 81.24911,-6.2598534
+            9582: 90.26234,-4.7243013
+            9617: 105.25147,-13.255565
+        - node:
+            zIndex: 1
+            color: '#FFFFFFFF'
+            id: FloorSignVault
+          decals:
+            9718: 73,39
+            9721: 89,40
         - node:
             color: '#FFFFFFFF'
             id: FlowersBROne
@@ -6439,7 +7370,6 @@ entities:
             6151: 88,39
             6152: 89,39
             6153: 90,39
-            6154: 91,39
             6155: 92,39
             6156: 93,39
             6157: 94,39
@@ -6467,7 +7397,6 @@ entities:
             6175: 78,39
             6176: 76,39
             6177: 77,39
-            6178: 75,39
             6179: 74,39
             6180: 73,39
             6181: 72,39
@@ -7325,6 +8254,11 @@ entities:
             6455: 69,54
             6456: 70,54
         - node:
+            color: '#8080804A'
+            id: HalfTileOverlayGreyscale
+          decals:
+            9687: 75,39
+        - node:
             color: '#9FED5896'
             id: HalfTileOverlayGreyscale
           decals:
@@ -7530,6 +8464,11 @@ entities:
             6457: 70,53
             6458: 69,53
             6459: 68,53
+        - node:
+            color: '#8080804A'
+            id: HalfTileOverlayGreyscale180
+          decals:
+            9686: 75,39
         - node:
             color: '#80808098'
             id: HalfTileOverlayGreyscale180
@@ -8487,6 +9426,12 @@ entities:
           decals:
             5157: 86,-14
         - node:
+            color: '#D4D4D426'
+            id: QuarterTileOverlayGreyscale
+          decals:
+            9744: 65,13
+            9745: 65,12
+        - node:
             color: '#D4D4D428'
             id: QuarterTileOverlayGreyscale
           decals:
@@ -8676,8 +9621,6 @@ entities:
             8308: 62,12
             8309: 63,12
             8310: 64,12
-            8311: 65,12
-            8312: 65,13
             8313: 65,14
             8314: 65,15
             8315: 66,15
@@ -10483,12 +11426,8 @@ entities:
             color: '#52B4E98C'
             id: WarnCornerGreyscaleNW
           decals:
-            9513: 6,63
-        - node:
-            color: '#52B4E98C'
-            id: WarnCornerGreyscaleNW
-          decals:
             9476: 9,47
+            9513: 6,63
         - node:
             color: '#A4610696'
             id: WarnCornerGreyscaleNW
@@ -10528,13 +11467,9 @@ entities:
             color: '#52B4E98C'
             id: WarnCornerGreyscaleSW
           decals:
+            9483: 6,52
             9501: -2,61
             9514: 6,61
-        - node:
-            color: '#52B4E98C'
-            id: WarnCornerGreyscaleSW
-          decals:
-            9483: 6,52
         - node:
             color: '#52B4E996'
             id: WarnCornerGreyscaleSW
@@ -10897,6 +11832,12 @@ entities:
           decals:
             401: 5,10
         - node:
+            zIndex: -100
+            color: '#FFFFFFFF'
+            id: WarnLineE
+          decals:
+            9690: 84,40
+        - node:
             color: '#FFFFFFFF'
             id: WarnLineE
           decals:
@@ -11052,11 +11993,8 @@ entities:
             5879: 88,14
             5880: 88,15
             5903: 80,38
-            5904: 80,39
             5905: 80,40
             5906: 84,38
-            5907: 84,39
-            5908: 84,40
             6288: 111,42
             6289: 111,43
             6290: 111,44
@@ -11077,6 +12015,8 @@ entities:
             9506: 5,63
             9507: -3,63
             9508: -3,61
+            9699: 84,39
+            9700: 80,39
         - node:
             cleanable: True
             color: '#FFFFFFFF'
@@ -11652,6 +12592,12 @@ entities:
           decals:
             4909: 67,-16
         - node:
+            zIndex: -100
+            color: '#FFFFFFFF'
+            id: WarnLineS
+          decals:
+            9691: 84,40
+        - node:
             color: '#FFFFFFFF'
             id: WarnLineS
           decals:
@@ -11798,11 +12744,8 @@ entities:
             5882: 88,14
             5883: 88,15
             5900: 80,38
-            5901: 80,39
             5902: 80,40
             5909: 84,38
-            5910: 84,39
-            5911: 84,40
             6520: 75,55
             8259: 99,30
             8260: 99,31
@@ -11839,6 +12782,8 @@ entities:
             9510: -3,63
             9511: 5,63
             9512: 5,61
+            9697: 84,39
+            9698: 80,39
         - node:
             cleanable: True
             color: '#FFFFFFFF'
@@ -13827,7 +14772,8 @@ entities:
           12,2:
             0: 61172
           12,3:
-            0: 65535
+            0: 65407
+            4: 128
           9,-4:
             0: 29311
           9,-3:
@@ -14560,12 +15506,12 @@ entities:
           17,-13:
             0: 65535
           17,-11:
-            4: 52416
+            5: 52416
           18,-12:
             0: 255
           18,-11:
-            4: 4368
-            5: 52416
+            5: 4368
+            6: 52416
           18,-10:
             0: 65520
           18,-13:
@@ -14573,7 +15519,7 @@ entities:
           19,-12:
             0: 255
           19,-11:
-            5: 4368
+            6: 4368
             0: 52416
           19,-10:
             0: 65520
@@ -14867,7 +15813,7 @@ entities:
             2: 2184
           22,-9:
             0: 13107
-            6: 2184
+            7: 2184
           22,-8:
             0: 16383
           23,-11:
@@ -14875,7 +15821,7 @@ entities:
           23,-10:
             2: 819
           23,-9:
-            6: 819
+            7: 819
           23,-8:
             0: 4095
           24,-12:
@@ -16045,6 +16991,29 @@ entities:
           - 0
           - 0
         - volume: 2500
+          temperature: 293.14975
+          moles:
+          - 20.078888
+          - 75.53487
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+        - volume: 2500
           temperature: 293.15
           moles:
           - 0
@@ -16120,6 +17089,9 @@ entities:
     - type: GridPathfinding
     - type: NavMap
     - type: ImplicitRoof
+    - type: DnaScannerDiscoveryTracker
+      gridDiscoveredMutations: []
+      gridResearchProgress: {}
   - uid: 22578
     components:
     - type: MetaData
@@ -16997,7 +17969,6 @@ entities:
       - 757
       - 23025
       - 22794
-      - 17587
   - uid: 68
     components:
     - type: Transform
@@ -17785,9 +18756,6 @@ entities:
       - 752
       - 23006
       - 22777
-      - 22779
-      - 620
-      - 17586
       - 17548
       - 17549
       - 17550
@@ -19468,21 +20436,49 @@ entities:
     - type: Transform
       pos: 22.5,-50.5
       parent: 2
+    - type: DeviceLinkSink
+      invokeCounter: 1
+    - type: DeviceLinkSource
+      linkedPorts:
+        35489:
+        - - DoorStatus
+          - InputA
   - uid: 375
     components:
     - type: Transform
       pos: 22.5,-49.5
       parent: 2
+    - type: DeviceLinkSink
+      invokeCounter: 1
+    - type: DeviceLinkSource
+      linkedPorts:
+        35489:
+        - - DoorStatus
+          - InputB
   - uid: 376
     components:
     - type: Transform
       pos: 20.5,-50.5
       parent: 2
+    - type: DeviceLinkSink
+      invokeCounter: 1
+    - type: DeviceLinkSource
+      linkedPorts:
+        14023:
+        - - DoorStatus
+          - InputB
   - uid: 377
     components:
     - type: Transform
       pos: 20.5,-49.5
       parent: 2
+    - type: DeviceLinkSink
+      invokeCounter: 1
+    - type: DeviceLinkSource
+      linkedPorts:
+        14023:
+        - - DoorStatus
+          - InputA
   - uid: 378
     components:
     - type: Transform
@@ -21250,7 +22246,7 @@ entities:
       pos: 72.5,-11.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -142923.11
+      secondsUntilStateChange: -150531.7
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -29465,11 +30461,6 @@ entities:
     - type: Transform
       pos: 75.5,-42.5
       parent: 2
-  - uid: 2186
-    components:
-    - type: Transform
-      pos: 75.5,-41.5
-      parent: 2
   - uid: 2187
     components:
     - type: Transform
@@ -29489,6 +30480,11 @@ entities:
     components:
     - type: Transform
       pos: 76.5,-40.5
+      parent: 2
+  - uid: 19365
+    components:
+    - type: Transform
+      pos: 75.5,-41.5
       parent: 2
 - proto: AtmosFixPlasmaMarker
   entities:
@@ -29978,6 +30974,11 @@ entities:
     - type: Transform
       pos: 35.547684,59.74187
       parent: 2
+  - uid: 35023
+    components:
+    - type: Transform
+      pos: 50.673565,15.6588
+      parent: 2
   - uid: 36416
     components:
     - type: Transform
@@ -30465,6 +31466,11 @@ entities:
     - type: Transform
       pos: -6.5,36.5
       parent: 2
+  - uid: 35025
+    components:
+    - type: Transform
+      pos: 51.5,23.5
+      parent: 2
 - proto: BlastDoor
   entities:
   - uid: 2360
@@ -30919,8 +31925,11 @@ entities:
   - uid: 2410
     components:
     - type: Transform
-      pos: 73.5,-33.5
+      pos: 72.446884,-32.39296
       parent: 2
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
   - uid: 2411
     components:
     - type: Transform
@@ -30931,7 +31940,7 @@ entities:
   - uid: 2412
     components:
     - type: Transform
-      pos: 73.51689,-33.367294
+      pos: 72.46251,-32.252335
       parent: 2
     - type: Physics
       angularDamping: 0
@@ -30946,7 +31955,7 @@ entities:
   - uid: 2414
     components:
     - type: Transform
-      pos: 73.51689,-33.367294
+      pos: 72.696884,-32.346085
       parent: 2
     - type: Physics
       angularDamping: 0
@@ -30961,7 +31970,7 @@ entities:
   - uid: 2416
     components:
     - type: Transform
-      pos: 73.496155,-33.499096
+      pos: 72.27501,-32.36171
       parent: 2
     - type: Physics
       angularDamping: 0
@@ -32027,7 +33036,7 @@ entities:
   - uid: 15179
     components:
     - type: Transform
-      pos: 51.1692,23.772621
+      pos: 51.794044,24.793777
       parent: 2
     - type: Physics
       angularDamping: 0
@@ -32035,7 +33044,7 @@ entities:
   - uid: 19607
     components:
     - type: Transform
-      pos: 51.6067,23.647621
+      pos: 51.30967,24.434402
       parent: 2
     - type: Physics
       angularDamping: 0
@@ -56107,6 +57116,16 @@ entities:
     - type: Transform
       pos: 97.5,-35.5
       parent: 2
+  - uid: 36425
+    components:
+    - type: Transform
+      pos: 97.5,-38.5
+      parent: 2
+  - uid: 36426
+    components:
+    - type: Transform
+      pos: 97.5,-39.5
+      parent: 2
 - proto: CableApcStack
   entities:
   - uid: 7324
@@ -69128,6 +70147,11 @@ entities:
     - type: Transform
       pos: 99.5,-37.5
       parent: 2
+  - uid: 29535
+    components:
+    - type: Transform
+      pos: 107.5,-35.5
+      parent: 2
   - uid: 30174
     components:
     - type: Transform
@@ -69142,6 +70166,11 @@ entities:
     components:
     - type: Transform
       pos: 97.5,-35.5
+      parent: 2
+  - uid: 31864
+    components:
+    - type: Transform
+      pos: 107.5,-34.5
       parent: 2
   - uid: 35985
     components:
@@ -79172,6 +80201,11 @@ entities:
     - type: Transform
       pos: 122.5,49.5
       parent: 2
+  - uid: 22779
+    components:
+    - type: Transform
+      pos: 11.5,61.5
+      parent: 2
   - uid: 22861
     components:
     - type: Transform
@@ -79181,6 +80215,11 @@ entities:
     components:
     - type: Transform
       pos: 101.5,55.5
+      parent: 2
+  - uid: 23749
+    components:
+    - type: Transform
+      pos: 11.5,60.5
       parent: 2
   - uid: 24208
     components:
@@ -96012,39 +97051,6 @@ entities:
         - 0
         - 0
         - 0
-- proto: ClosetWallAtmospherics
-  entities:
-  - uid: 14405
-    components:
-    - type: Transform
-      pos: 73.5,-32.5
-      parent: 2
-    - type: EntityStorage
-      air:
-        volume: 200
-        immutable: False
-        temperature: 293.1495
-        moles:
-        - 3.0981817
-        - 11.655066
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
 - proto: ClosetWallMaintenanceFilledRandom
   entities:
   - uid: 18481
@@ -98638,12 +99644,37 @@ entities:
     - type: Transform
       pos: 82.5,57.5
       parent: 2
-  - uid: 14822
+- proto: ComputerCargoOrdersAtmospherics
+  entities:
+  - uid: 35510
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 59.5,49.5
+      pos: 73.5,-33.5
       parent: 2
+    - type: DeviceLinkSource
+      linkedPorts:
+        17979:
+        - - GasExtractorConsole
+          - GasExtractorControl
+        14405:
+        - - GasExtractorConsole
+          - GasExtractorControl
+        17977:
+        - - GasExtractorConsole
+          - GasExtractorControl
+        2186:
+        - - GasExtractorConsole
+          - GasExtractorControl
+        17978:
+        - - GasExtractorConsole
+          - GasExtractorControl
+    - type: GasExtractorConsole
+      linkedExtractors:
+      - 17979
+      - 14405
+      - 17977
+      - 2186
+      - 17978
 - proto: ComputerCargoOrdersEngineering
   entities:
   - uid: 30346
@@ -98675,6 +99706,12 @@ entities:
       parent: 2
 - proto: ComputerCargoOrdersService
   entities:
+  - uid: 620
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 59.5,49.5
+      parent: 2
   - uid: 27816
     components:
     - type: Transform
@@ -112744,7 +113781,6 @@ entities:
       - 17549
       - 17550
       - 757
-      - 17587
   - uid: 17275
     components:
     - type: Transform
@@ -112753,8 +113789,6 @@ entities:
       parent: 2
     - type: DeviceList
       devices:
-      - 620
-      - 22779
       - 751
       - 752
       - 17558
@@ -112768,7 +113802,6 @@ entities:
       - 17550
       - 17549
       - 17548
-      - 17586
   - uid: 17277
     components:
     - type: Transform
@@ -113386,16 +114419,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 22012
-  - uid: 620
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 14.5,48.5
-      parent: 2
-    - type: DeviceNetwork
-      deviceLists:
-      - 24477
-      - 17275
   - uid: 680
     components:
     - type: Transform
@@ -114709,20 +115732,6 @@ entities:
     - type: Transform
       pos: -0.5,47.5
       parent: 2
-  - uid: 17586
-    components:
-    - type: Transform
-      pos: 16.5,54.5
-      parent: 2
-    - type: DeviceNetwork
-      deviceLists:
-      - 24477
-      - 17275
-  - uid: 17587
-    components:
-    - type: Transform
-      pos: 16.5,58.5
-      parent: 2
   - uid: 17588
     components:
     - type: Transform
@@ -115306,16 +116315,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 21837
-  - uid: 22779
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 10.5,48.5
-      parent: 2
-    - type: DeviceNetwork
-      deviceLists:
-      - 24477
-      - 17275
   - uid: 24394
     components:
     - type: Transform
@@ -117121,6 +118120,41 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#0055CCFF'
+- proto: GasExtractorCarbonDioxide
+  entities:
+  - uid: 17977
+    components:
+    - type: Transform
+      pos: 92.5,-42.5
+      parent: 2
+- proto: GasExtractorNitrogenStationLarge
+  entities:
+  - uid: 17979
+    components:
+    - type: Transform
+      pos: 71.5,-41.5
+      parent: 2
+- proto: GasExtractorOxygenStationLarge
+  entities:
+  - uid: 14405
+    components:
+    - type: Transform
+      pos: 75.5,-41.5
+      parent: 2
+- proto: GasExtractorPlasma
+  entities:
+  - uid: 17978
+    components:
+    - type: Transform
+      pos: 92.5,-34.5
+      parent: 2
+- proto: GasExtractorWaterVapor
+  entities:
+  - uid: 2186
+    components:
+    - type: Transform
+      pos: 92.5,-38.5
+      parent: 2
 - proto: GasFilter
   entities:
   - uid: 17967
@@ -117200,51 +118234,6 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#990000FF'
-- proto: GasMinerCarbonDioxide
-  entities:
-  - uid: 17977
-    components:
-    - type: Transform
-      pos: 92.5,-42.5
-      parent: 2
-- proto: GasMinerNitrogenStationLarge
-  entities:
-  - uid: 17978
-    components:
-    - type: Transform
-      pos: 71.5,-41.5
-      parent: 2
-    - type: GasMiner
-      spawnAmount: 800
-      maxExternalPressure: 12000
-- proto: GasMinerOxygenStationLarge
-  entities:
-  - uid: 17979
-    components:
-    - type: Transform
-      pos: 75.5,-41.5
-      parent: 2
-    - type: GasMiner
-      spawnAmount: 800
-      maxExternalPressure: 12000
-- proto: GasMinerPlasma
-  entities:
-  - uid: 22020
-    components:
-    - type: Transform
-      pos: 92.5,-34.5
-      parent: 2
-    - type: GasMiner
-      maxExternalPressure: 1500
-- proto: GasMinerWaterVapor
-  entities:
-  - uid: 24422
-    components:
-    - type: Transform
-      pos: 92.5,-38.5
-      parent: 2
-    - type: GasMiner
-      maxExternalPressure: 4500
 - proto: GasMixer
   entities:
   - uid: 17981
@@ -152973,6 +153962,13 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#0055CCFF'
+  - uid: 22020
+    components:
+    - type: Transform
+      pos: 109.5,-36.5
+      parent: 2
+    - type: AtmosPipeColor
+      color: '#0055CCFF'
   - uid: 22582
     components:
     - type: Transform
@@ -157290,13 +158286,6 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#30D300FF'
-  - uid: 31864
-    components:
-    - type: Transform
-      pos: 109.5,-36.5
-      parent: 2
-    - type: AtmosPipeColor
-      color: '#0055CCFF'
 - proto: GeigerCounter
   entities:
   - uid: 5634
@@ -157318,6 +158307,61 @@ entities:
     components:
     - type: Transform
       pos: 96.552704,-12.469916
+      parent: 2
+- proto: GeigerMountFilled
+  entities:
+  - uid: 14822
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 96.5,-32.5
+      parent: 2
+  - uid: 24474
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 93.5,-31.5
+      parent: 2
+  - uid: 27880
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 74.5,-15.5
+      parent: 2
+  - uid: 27890
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 66.5,-12.5
+      parent: 2
+  - uid: 27897
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 80.5,-6.5
+      parent: 2
+  - uid: 27903
+    components:
+    - type: Transform
+      pos: 58.5,-9.5
+      parent: 2
+  - uid: 27909
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 92.5,-4.5
+      parent: 2
+  - uid: 36293
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 103.5,-39.5
+      parent: 2
+  - uid: 36295
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 98.5,-44.5
       parent: 2
 - proto: GeneratorBasic
   entities:
@@ -164785,12 +165829,6 @@ entities:
       parent: 2
 - proto: HospitalCurtainsOpen
   entities:
-  - uid: 23749
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 10.5,48.5
-      parent: 2
   - uid: 24466
     components:
     - type: Transform
@@ -164830,22 +165868,6 @@ entities:
     components:
     - type: Transform
       pos: 20.5,50.5
-      parent: 2
-  - uid: 24474
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 14.5,48.5
-      parent: 2
-  - uid: 24478
-    components:
-    - type: Transform
-      pos: 16.5,54.5
-      parent: 2
-  - uid: 24479
-    components:
-    - type: Transform
-      pos: 16.5,58.5
       parent: 2
   - uid: 24480
     components:
@@ -167148,6 +168170,32 @@ entities:
     - type: Transform
       pos: 51.5,13.5
       parent: 2
+    - type: EntityStorage
+      air:
+        volume: 200
+        immutable: False
+        temperature: 293.14673
+        moles:
+        - 1.7459903
+        - 6.568249
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
 - proto: LockerFreezerVaultFilled
   entities:
   - uid: 24712
@@ -168428,6 +169476,51 @@ entities:
         - 0
         - 0
         - 0
+- proto: LogicGateOr
+  entities:
+  - uid: 14023
+    components:
+    - type: Transform
+      anchored: True
+      pos: 21.5,-50.5
+      parent: 2
+    - type: DeviceLinkSink
+      invokeCounter: 2
+    - type: DeviceLinkSource
+      linkedPorts:
+        375:
+        - - Output
+          - DoorBolt
+        374:
+        - - Output
+          - DoorBolt
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+      bodyType: Static
+  - uid: 35489
+    components:
+    - type: Transform
+      anchored: True
+      rot: 3.141592653589793 rad
+      pos: 21.5,-49.5
+      parent: 2
+    - type: DeviceLinkSink
+      invokeCounter: 3
+    - type: DeviceLinkSource
+      linkedPorts:
+        377:
+        - - Output
+          - DoorBolt
+        376:
+        - - Output
+          - DoorBolt
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+      bodyType: Static
 - proto: LootSpawnerMaterials
   entities:
   - uid: 36394
@@ -172174,6 +173267,30 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 26.5,58.5
       parent: 2
+- proto: MedicalCurtains
+  entities:
+  - uid: 17586
+    components:
+    - type: Transform
+      pos: 16.5,54.5
+      parent: 2
+  - uid: 17587
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 10.5,48.5
+      parent: 2
+  - uid: 24478
+    components:
+    - type: Transform
+      pos: 16.5,58.5
+      parent: 2
+  - uid: 24479
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 14.5,48.5
+      parent: 2
 - proto: MedicalScanner
   entities:
   - uid: 24864
@@ -172431,6 +173548,14 @@ entities:
     components:
     - type: Transform
       pos: 62.5,-57.5
+      parent: 2
+- proto: MoneyCabinetFilled
+  entities:
+  - uid: 35509
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 73.5,-32.5
       parent: 2
 - proto: MonkeyCubeBox
   entities:
@@ -174361,6 +175486,13 @@ entities:
     - type: Transform
       pos: 91.55334,51.50873
       parent: 2
+- proto: PipeScrubber
+  entities:
+  - uid: 24422
+    components:
+    - type: Transform
+      pos: 79.5,-26.5
+      parent: 2
 - proto: PlantBGoneSpray
   entities:
   - uid: 25136
@@ -174462,6 +175594,39 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 88.5,1.5
+      parent: 2
+  - uid: 25194
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 97.5,-4.5
+      parent: 2
+  - uid: 35487
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 98.5,-4.5
+      parent: 2
+  - uid: 35488
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 99.5,-4.5
+      parent: 2
+  - uid: 35490
+    components:
+    - type: Transform
+      pos: 98.5,-6.5
+      parent: 2
+  - uid: 35491
+    components:
+    - type: Transform
+      pos: 99.5,-6.5
+      parent: 2
+  - uid: 35492
+    components:
+    - type: Transform
+      pos: 97.5,-6.5
       parent: 2
 - proto: PlasmaTankFilled
   entities:
@@ -174704,11 +175869,6 @@ entities:
     - type: Transform
       pos: 55.5,-38.5
       parent: 2
-  - uid: 25194
-    components:
-    - type: Transform
-      pos: 79.5,-26.5
-      parent: 2
   - uid: 25195
     components:
     - type: Transform
@@ -174728,11 +175888,6 @@ entities:
     components:
     - type: Transform
       pos: 62.5,-18.5
-      parent: 2
-  - uid: 25199
-    components:
-    - type: Transform
-      pos: 63.5,-7.5
       parent: 2
   - uid: 25200
     components:
@@ -174758,6 +175913,11 @@ entities:
     components:
     - type: Transform
       pos: 97.5,1.5
+      parent: 2
+  - uid: 35026
+    components:
+    - type: Transform
+      pos: 63.5,-7.5
       parent: 2
 - proto: PosterContrabandAmbrosiaVulgaris
   entities:
@@ -174973,6 +176133,11 @@ entities:
     components:
     - type: Transform
       pos: 122.5,-0.5
+      parent: 2
+  - uid: 27882
+    components:
+    - type: Transform
+      pos: -6.5,56.5
       parent: 2
 - proto: PosterLegitCarpMount
   entities:
@@ -185259,23 +186424,11 @@ entities:
   - uid: 35022
     components:
     - type: Transform
-      pos: 72.24178,-31.4501
+      pos: 72.44112,-31.409996
       parent: 2
-  - uid: 35023
-    components:
-    - type: Transform
-      pos: 72.36678,-31.4501
-      parent: 2
-  - uid: 35025
-    components:
-    - type: Transform
-      pos: 72.56991,-31.4501
-      parent: 2
-  - uid: 35026
-    components:
-    - type: Transform
-      pos: 72.67928,-31.465725
-      parent: 2
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
 - proto: ReagentContainerFlour
   entities:
   - uid: 26764
@@ -189938,11 +191091,6 @@ entities:
     - type: Transform
       pos: 72.41366,-33.3251
       parent: 2
-  - uid: 14023
-    components:
-    - type: Transform
-      pos: 72.46053,-33.465725
-      parent: 2
   - uid: 25329
     components:
     - type: Transform
@@ -192071,12 +193219,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 52.50464,0.687273
       parent: 2
-  - uid: 27880
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 53.498528,35.69145
-      parent: 2
 - proto: SignDirectionalBrig
   entities:
   - uid: 27881
@@ -192084,20 +193226,6 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 26.5,8.5
-      parent: 2
-- proto: SignDirectionalChapel
-  entities:
-  - uid: 27882
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -2.499115,43.296005
-      parent: 2
-  - uid: 36295
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -6.507743,56.726425
       parent: 2
 - proto: SignDirectionalChemistry
   entities:
@@ -192146,12 +193274,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 40.499527,-3.3038204
       parent: 2
-  - uid: 27890
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 53.5,-8.5
-      parent: 2
   - uid: 27891
     components:
     - type: Transform
@@ -192180,12 +193302,6 @@ entities:
     components:
     - type: Transform
       pos: -29.5,43.5
-      parent: 2
-  - uid: 27897
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -2.5,43.5
       parent: 2
   - uid: 27898
     components:
@@ -192219,11 +193335,6 @@ entities:
       parent: 2
 - proto: SignDirectionalFood
   entities:
-  - uid: 27903
-    components:
-    - type: Transform
-      pos: -2.499115,43.108505
-      parent: 2
   - uid: 27904
     components:
     - type: Transform
@@ -192258,20 +193369,6 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 2.5,7.5
-      parent: 2
-- proto: SignDirectionalLibrary
-  entities:
-  - uid: 27909
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -2.499115,43.68663
-      parent: 2
-  - uid: 36293
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -6.5,56.5
       parent: 2
 - proto: SignDirectionalMed
   entities:
@@ -201510,11 +202607,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 11.5,51.5
       parent: 2
-  - uid: 19365
-    components:
-    - type: Transform
-      pos: 51.5,23.5
-      parent: 2
   - uid: 19575
     components:
     - type: Transform
@@ -201542,6 +202634,11 @@ entities:
     components:
     - type: Transform
       pos: -0.5,-18.5
+      parent: 2
+  - uid: 25199
+    components:
+    - type: Transform
+      pos: 72.5,-32.5
       parent: 2
   - uid: 27080
     components:
@@ -202531,11 +203628,6 @@ entities:
     components:
     - type: Transform
       pos: 40.5,-11.5
-      parent: 2
-  - uid: 29535
-    components:
-    - type: Transform
-      pos: 73.5,-33.5
       parent: 2
   - uid: 29536
     components:
@@ -232418,7 +233510,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -65848.41
+      secondsUntilStateChange: -73456.984
       state: Opening
     - type: Airlock
       autoClose: False
@@ -234031,39 +235123,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 27.5,-44.5
       parent: 2
-  - uid: 35487
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 97.5,-7.5
-      parent: 2
-  - uid: 35488
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 98.5,-7.5
-      parent: 2
-  - uid: 35489
-    components:
-    - type: Transform
-      pos: 97.5,-3.5
-      parent: 2
-  - uid: 35490
-    components:
-    - type: Transform
-      pos: 99.5,-3.5
-      parent: 2
-  - uid: 35491
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 99.5,-7.5
-      parent: 2
-  - uid: 35492
-    components:
-    - type: Transform
-      pos: 98.5,-3.5
-      parent: 2
   - uid: 35493
     components:
     - type: Transform
@@ -234155,18 +235214,6 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 46.5,-7.5
-      parent: 2
-  - uid: 35509
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 73.5,-33.5
-      parent: 2
-  - uid: 35510
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 73.5,-31.5
       parent: 2
   - uid: 35511
     components:
