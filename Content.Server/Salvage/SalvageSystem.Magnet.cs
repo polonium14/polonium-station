@@ -583,7 +583,6 @@ public sealed partial class SalvageSystem
                     salvMob.LinkedEntity = grid.Owner;
                 }
             }
-
             // For ruin offerings, un-anchor scrap items after moving to final location
             // Scrap items should spawn un-anchored so they can be wrenched
             // (We're already inside the RuinOffering block, so no need to check again)
@@ -593,7 +592,6 @@ public sealed partial class SalvageSystem
                     {
                         if (!_gridQuery.TryGetComponent(gridUid, out var grid))
                             continue;
-
                         // Get all entities on this grid and un-anchor scrap items
                         var gridChildren = _xformQuery.GetComponent(gridUid).ChildEnumerator;
                         while (gridChildren.MoveNext(out var child))
@@ -601,13 +599,11 @@ public sealed partial class SalvageSystem
                             // Skip the grid itself and mobs
                             if (child == gridUid || _salvMobQuery.HasComp(child))
                                 continue;
-
                             // Un-anchor scrap items (check by prototype ID starting with "Scrap")
                             if (_xformQuery.TryGetComponent(child, out var childXform) && childXform.Anchored)
                             {
                                 var meta = MetaData(child);
                                 var protoId = meta.EntityPrototype?.ID ?? string.Empty;
-
                                 // Check if it's a scrap item by prototype ID
                                 if (protoId.StartsWith("Scrap", StringComparison.OrdinalIgnoreCase))
                                 {
@@ -664,7 +660,6 @@ public sealed partial class SalvageSystem
                     salvMob.LinkedEntity = mapChild;
                 }
             }
-
             // For debris offerings, un-anchor scrap items after moving to final location
             // Scrap items should spawn un-anchored so they can be wrenched
             // Note: RuinOffering is handled separately above
@@ -676,7 +671,6 @@ public sealed partial class SalvageSystem
                     {
                         if (!_gridQuery.TryGetComponent(gridUid, out var grid))
                             continue;
-
                         // Get all entities on this grid and un-anchor scrap items
                         var gridChildren = _xformQuery.GetComponent(gridUid).ChildEnumerator;
                         while (gridChildren.MoveNext(out var child))
@@ -684,13 +678,11 @@ public sealed partial class SalvageSystem
                             // Skip the grid itself and mobs
                             if (child == gridUid || _salvMobQuery.HasComp(child))
                                 continue;
-
                             // Un-anchor scrap items (check by prototype ID starting with "Scrap")
                             if (_xformQuery.TryGetComponent(child, out var childXform) && childXform.Anchored)
                             {
                                 var meta = MetaData(child);
                                 var protoId = meta.EntityPrototype?.ID ?? string.Empty;
-
                                 // Check if it's a scrap item by prototype ID
                                 if (protoId.StartsWith("Scrap", StringComparison.OrdinalIgnoreCase))
                                 {
@@ -1032,7 +1024,6 @@ public sealed partial class SalvageSystem
                     // Spawn the debris
                     var coords = new EntityCoordinates(grid.Owner, tilePos);
                     var debris = SpawnAtPosition(proto, coords);
-
                     // Only anchor non-scrap items - scrap items should remain un-anchored
                     var xform = Transform(debris);
                     if (xform != null && !xform.Anchored)
