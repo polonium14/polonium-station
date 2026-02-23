@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 nikitosych <174215049+nikitosych@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - files: ["level.ogg"]
   license: "Custom"
   copyright: "taken from Dapper Husky (YT) (licensed under CC-BY-SA by 3.0)"
