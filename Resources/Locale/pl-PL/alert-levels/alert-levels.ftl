@@ -38,7 +38,7 @@ alert-level-gamma-announcement =
 alert-level-gamma-instructions = Udaj się do najbliższego przełożonego w celu udania się do bezpiecznej lokalizacji.
 alert-level-delta = Delta
 alert-level-delta-announcement = Stacji grozi obecnie bezpośrednie unicestwienie. Zarządza się bezwzględne posłuszeństwo wobec Dowództwa.
-alert-level-delta-instructions = Zaleca się śłuchania poleceń dowództwa w celu uzyskania informacji.
+alert-level-delta-instructions = Zaleca się słuchania poleceń dowództwa w celu uzyskania informacji.
 alert-level-epsilon = Epsilon
 alert-level-epsilon-announcement =
     Centralne Dowództwo ogłosiło kod Epsilon.
@@ -48,5 +48,5 @@ alert-level-cyan = Cyjanowy
 alert-level-cyan-announcement =
     Wszystkie cyborgi zostały sklasyfikowane jako podmioty wysokiego ryzyka.
     Zaleca się zachowanie dystansu i unikanie wszelkiej interakcji.
-    Wszelkie działania sylikonów należy niezwłocznie zgłaszać personelu ochrony.
-alert-level-cyan-instructions = Unikaj kontaktu z cyborgami i zgłaszaj wszelkie podejrzane działania personelu ochrony.
+    Wszelkie działania silikonów należy niezwłocznie zgłaszać personelu ochrony.
+alert-level-cyan-instructions = Unikaj kontaktu z cyborgami i zgłaszaj wszelkie podejrzane działania personelowi ochrony.
