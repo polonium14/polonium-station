@@ -1,18 +1,4 @@
 ﻿Entries:
-- author: TheShuEd, LeveFUN
-  changes:
-  - message: You can now put c4 on your head
-    type: Add
-  id: 7845
-  time: '2025-01-23T21:11:31.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34076
-- author: WarPigeon
-  changes:
-  - message: Uranium is now slightly radioactive.
-    type: Add
-  id: 7846
-  time: '2025-01-23T21:39:00.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34436
 - author: JustinWinningham
   changes:
   - message: Renamed sexy clown and mime mask.
@@ -4084,3 +4070,17 @@
   id: 9152
   time: '2026-02-16T03:02:08.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/445
+- author: Nikita
+  changes:
+  - message: <:gigachad:1408443886522601572>
+    type: Add
+  id: 9153
+  time: '2026-02-18T21:19:46.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/463
+- author: Nikita_pl
+  changes:
+  - message: Nowe tekstury plazmy
+    type: Tweak
+  id: 9154
+  time: '2026-02-20T16:10:17.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/476

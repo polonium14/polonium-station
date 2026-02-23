@@ -9,14 +9,14 @@ connecting-redial = Zrestartuj grę
 connecting-redial-wait = Proszę czekać: { TOSTRING($time, "G3") }
 connecting-in-progress = Łączenie z serwerem...
 connecting-disconnected = Rozłączono z serwera:
-connecting-tip = Don't die!
+connecting-tip = Nie umieraj!
 connecting-window-tip = Wskazówka { $numberTip }
-connecting-version = ver 0.1
+connecting-version = wer. 0.1
 connecting-fail-reason =
-    Połączenie z serwerem nieudane:
+    Połączenie z serwerem nie powiodło:
     { $reason }
 connecting-state-NotConnecting = Brak połączenia
-connecting-state-ResolvingHost = Resolving host
+connecting-state-ResolvingHost = Ustalanie adresu hosta...
 # Tego też bo resolving host to DNS i ponownie, termin IT
 connecting-state-EstablishingConnection = Rozpoczynanie połączenia
 connecting-state-Handshake = Handshake
