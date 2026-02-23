@@ -1,0 +1,24 @@
+- files: ["blue.ogg"]
+  copyright: "Pinkscreen, Nikita.pl"
+  license: "CC-BY-NC-4.0"
+  source: "https://github.com/polonium14/polonium-station/tree/main/Resources/Audio/_Polonium/Announcements"
+- files: ["cyan.ogg"]
+  copyright: "Pinkscreen, Nikita.pl"
+  license: "CC-BY-NC-4.0"
+  source: "https://github.com/polonium14/polonium-station/tree/main/Resources/Audio/_Polonium/Announcements"
+- files: ["delta.ogg"]
+  copyright: "Pinkscreen, Nikita.pl"
+  license: "CC-BY-NC-4.0"
+  source: "https://github.com/polonium14/polonium-station/tree/main/Resources/Audio/_Polonium/Announcements"
+- files: ["green.ogg"]
+  copyright: "Pinkscreen, Nikita.pl"
+  license: "CC-BY-NC-4.0"
+  source: "https://github.com/polonium14/polonium-station/tree/main/Resources/Audio/_Polonium/Announcements"
+- files: ["octarine.ogg"]
+  copyright: "Pinkscreen, Nikita.pl"
+  license: "CC-BY-NC-4.0"
+  source: "https://github.com/polonium14/polonium-station/tree/main/Resources/Audio/_Polonium/Announcements"
+- files: ["red.ogg"]
+  copyright: "Pinkscreen, Nikita.pl"
+  license: "CC-BY-NC-4.0"
+  source: "https://github.com/polonium14/polonium-station/tree/main/Resources/Audio/_Polonium/Announcements"

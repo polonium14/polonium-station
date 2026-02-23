@@ -24,12 +24,19 @@
   levels:
     green:
       announcement: alert-level-green-announcement
+      sound:
+        path: /Audio/_Polonium/Announcements/AlertLevels/green.ogg
+        params:
+          volume: -1
       color: Green
       emergencyLightColor: LawnGreen
       shuttleTime: 600
     blue:
       announcement: alert-level-blue-announcement
-      sound: /Audio/Misc/bluealert.ogg
+      sound:
+        path: /Audio/_Polonium/Announcements/AlertLevels/blue.ogg
+        params:
+          volume: -1
       color: DodgerBlue
       forceEnableEmergencyLights: true
       emergencyLightColor: DodgerBlue
@@ -50,7 +57,7 @@
       shuttleTime: 600
     red:
       announcement: alert-level-red-announcement
-      sound: /Audio/Misc/redalert.ogg
+      sound: /Audio/_Polonium/Announcements/AlertLevels/red.ogg
       color: Red
       emergencyLightColor: Red
       forceEnableEmergencyLights: true
@@ -59,9 +66,9 @@
       announcement: alert-level-gamma-announcement
       selectable: false
       sound:
-        path: /Audio/Misc/gamma.ogg
+        path: /Audio/_Polonium/Announcements/siren.ogg
         params:
-          volume: -2
+          volume: -3
       disableSelection: true
       color: PaleVioletRed
       emergencyLightColor: PaleVioletRed
@@ -69,10 +76,7 @@
     delta:
       announcement: alert-level-delta-announcement
       selectable: false
-      sound:
-        path: /Audio/Misc/delta.ogg
-        params:
-          volume: -3
+      sound: /Audio/_Polonium/Announcements/AlertLevels/delta.ogg
       disableSelection: true
       color: DarkRed
       emergencyLightColor: Orange
@@ -84,7 +88,7 @@
       sound:
         path: /Audio/_Polonium/Announcements/epsilon.ogg
         params:
-          volume: -2
+          volume: -1
       disableSelection: true
       color: DarkViolet
       emergencyLightColor: DarkViolet
@@ -93,7 +97,10 @@
     amber: # impstation dino wars
       announcement: alert-level-amber-announcement
       selectable: false
-      sound: /Audio/_Impstation/Misc/amber.ogg
+      sound:
+        path: /Audio/_Impstation/Misc/amber.ogg
+        params:
+          volume: -1
       disableSelection: true
       color: DarkGoldenrod
       emergencyLightColor: DarkGoldenrod
@@ -102,7 +109,7 @@
     octarine: # DV cosmic cult
       announcement: alert-level-octarine-announcement
       selectable: false
-      sound: /Audio/Announcements/Alerts/code_octarine.ogg
+      sound: /Audio/_Polonium/Announcements/AlertLevels/octarine.ogg
       disableSelection: true
       color: CadetBlue
       emergencyLightColor: CadetBlue
@@ -110,7 +117,7 @@
       shuttleTime: 600
     cyan:
       announcement: alert-level-cyan-announcement
-      sound: /Audio/Misc/cyan.ogg
+      sound: /Audio/_Polonium/Announcements/AlertLevels/cyan.ogg
       color: Cyan
       emergencyLightColor: Cyan
       forceEnableEmergencyLights: true

@@ -50,3 +50,11 @@
   copyright: "Pinkscreen, Nikita.pl"
   license: "CC-BY-NC-4.0"
   source: "https://github.com/polonium14/polonium-station/tree/main/Resources/Audio/_Polonium/Announcements"
+- files: ["centcomm_announce.ogg"]
+  copyright: "Pinkscreen, Nikita.pl"
+  license: "CC-BY-NC-4.0"
+  source: "https://github.com/polonium14/polonium-station/tree/main/Resources/Audio/_Polonium/Announcements"
+- files: ["crew_announce.ogg"]
+  copyright: "Pinkscreen, Nikita.pl"
+  license: "CC-BY-NC-4.0"
+  source: "https://github.com/polonium14/polonium-station/tree/main/Resources/Audio/_Polonium/Announcements"
