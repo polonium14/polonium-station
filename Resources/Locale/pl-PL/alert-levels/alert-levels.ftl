@@ -18,7 +18,7 @@ alert-level-red = Czerwony
 alert-level-red-announcement =
     Istnieje bezpośrednie zagrożenie dla stacji.
     Służby ochrony otrzymują autoryzację na użycie broni palnej, zarządza się wyrywkowe kontrole działów i personelu.
-    Załodze zaleca się natychmiastowo udać się do wyznaczonych stref bezpieczeństwa i ścisłe wykonywać polecenia przełożonych.
+    Załodze zaleca się natychmiastowo udać się do wyznaczonych stref bezpieczeństwa i ściśle wykonywać polecenia przełożonych.
 alert-level-red-instructions = Znajdź schronienie i stosuj się do rozkazów przełożonych.
 alert-level-violet = Fioletowy
 alert-level-violet-announcement =
