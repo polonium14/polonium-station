@@ -38,7 +38,7 @@ alert-level-gamma-announcement =
 alert-level-gamma-instructions = Udaj się do najbliższego przełożonego w celu udania się do bezpiecznej lokalizacji.
 alert-level-delta = Delta
 alert-level-delta-announcement = Stacji grozi obecnie bezpośrednie unicestwienie. Zarządza się bezwzględne posłuszeństwo wobec Dowództwa.
-alert-level-delta-instructions = Zaleca się słuchania poleceń dowództwa w celu uzyskania informacji.
+alert-level-delta-instructions = Zaleca się słuchać poleceń dowództwa w celu uzyskania informacji.
 alert-level-epsilon = Epsilon
 alert-level-epsilon-announcement =
     Centralne Dowództwo ogłosiło kod Epsilon.
