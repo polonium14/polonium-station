@@ -148,3 +148,19 @@
   texturePath: /Textures/Effects/fire.rsi
   fireStates: 6
   fireStacks: 2
+
+- type: explosion
+  id: BluespaceArtillery
+  damagePerIntensity:
+    types:
+      Heat: 30
+      Blunt: 30
+      Piercing: 20
+      Structural: 100
+  tileBreakChance: [ 0, 0.5, 1 ]
+  tileBreakIntensity: [ 0, 10, 30 ]
+  tileBreakRerollReduction: 10
+  intensityPerState: 20
+  lightColor: Blue
+  texturePath: /Textures/Effects/fire.rsi
+  fireStates: 6
