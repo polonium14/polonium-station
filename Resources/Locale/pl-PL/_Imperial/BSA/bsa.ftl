@@ -6,7 +6,7 @@ text-instruction-bsa =
  Stacja XX-###, mówi Departament Operacji Specjalnych. Widzimy, że sytuacja na stacji całkowicie wymknęła się spod kontroli. W związku z tym, jesteśmy zmuszeni do przeprowadzenia protokołów awaryjnego zniszczenia stacji. Szacowany czas przelotu pocisku - 5 minut. Dziękujemy za wybór NanoTrasen. Chwała NT!
 
  Po tym wprowadzamy kod [color=DarkRed][bold]Delta[/bold][/color] lub [color=DarkViolet][bold]Epsilon[/bold][/color] (w zależności od sytuacji) i używamy:
- playglobalsound /Audio/_Polonium/Announcements/Admeme/artyleria.ogg
+ playglobalsound /Audio/_Polonium/Admeme/artyleria.ogg
 
  Ustaw timer na 5 minut i gdy pozostaną dokładnie dwie minuty, użyj polecenia playglobalsound do epickiej muzyki.
  playglobalsound /Audio/_Polonium/level.ogg 3
