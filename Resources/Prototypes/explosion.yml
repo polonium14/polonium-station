@@ -150,7 +150,7 @@
   fireStacks: 2
 
 - type: explosion
-  id: BluespaceArtillery
+  id: BluespaceArtillery # Polonium
   damagePerIntensity:
     types:
       Heat: 30
@@ -162,5 +162,5 @@
   tileBreakRerollReduction: 10
   intensityPerState: 20
   lightColor: Blue
-  texturePath: /Textures/Effects/fire.rsi
+  texturePath: /Textures/Effects/fire_greyscale.rsi
   fireStates: 6
