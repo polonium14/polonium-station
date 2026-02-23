@@ -23,7 +23,7 @@ alert-level-red-instructions = Znajdź schronienie i stosuj się do rozkazów pr
 alert-level-violet = Fioletowy
 alert-level-violet-announcement =
     Istnieje zagrożenie wirusowe na stacji. Dział medyczny powinien izolować członków załogi z jakimikolwiek objawami.
-    Członkowie załogi zachowywać bezpieczny dystans do innych i stosować środki ostrożności, aby zapobiec dalszemu rozpowszechnianiu się zagrożenia.
+    Członkowie załogi powinni zachowywać bezpieczny dystans do innych i stosować środki ostrożności, aby zapobiec dalszemu rozpowszechnianiu się zagrożenia.
 alert-level-violet-instructions = Zachowuj bezpieczny dystans do innych i stosuj środki ostrożności, aby zapobiec dalszemu rozpowszechnianiu się zagrożenia.
 alert-level-yellow = Żółty
 alert-level-yellow-announcement =
