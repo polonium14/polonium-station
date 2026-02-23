@@ -6,7 +6,7 @@
 - type: entity
   parent: BaseWeaponBatterySmall
   id: WeaponDebugBSA
-  name: ogłuczacz nuklearny
+  name: ogłuszacz nuklearny
   description: Z miłością, do stacji...
   suffix: ABS, NIE MAPOWAĆ, MEGA NIEBEZPIECZNY
   categories: [ HideSpawnMenu ]
