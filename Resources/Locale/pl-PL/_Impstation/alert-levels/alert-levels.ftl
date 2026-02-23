@@ -11,5 +11,8 @@ alert-level-amber-announcement = Wykryto pola zakłóceń czasowych pochodzące 
 alert-level-amber-instructions = Broń stacji przed mezozoiczną hordą. To są Wojny Dinozaurów.
 # cosmic cult
 alert-level-octarine = Oktarynowy
-alert-level-octarine-announcement = Kataklizmowa anomalia bluespace zagraża otoczeniu realspace'u. Służby bezpieczeństwa zostały upoważnione do użycia broni śmiercionośnej. Członkowie załogi powinni słuchać przełożonych w celu uzyskania dalszych informacji. Nieprzestrzeganie tych zaleceń będzie skutkować użyciem siły śmiercionośnej.
-alert-level-octarine-instructions = TO JEST KONIEC TO JEST KONIEC TO JEST KONIEC
+alert-level-octarine-announcement =
+    Kataklizmowa anomalia bluespace zagraża otoczeniu rzeczywistości.
+    Personel ochrony otrzymał autoryzację na użycie broni palnej.
+    Wszelkie instrukcje przełożonych mają rygor rozkazu. Każdy akt niesubordynacji lub oporu spotka się z natychmiastową odpowiedzią zbrojną.
+alert-level-octarine-instructions = TO JEST KONIEC TO JEST KONIEC TO JEST KO...1-3x341cv..
