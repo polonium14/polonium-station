@@ -18,13 +18,13 @@ alert-level-red = Czerwony
 alert-level-red-announcement =
     Istnieje bezpośrednie zagrożenie dla stacji.
     Służby ochrony otrzymują autoryzację na użycie broni palnej, zarządza się wyrywkowe kontrole działów i personelu.
-    Załodze zaleca się natychmiastowo udać się do wyznaczonych stref bezpieczeństwa i ścisłe wykonywać polecenia przełożonych.
+    Załodze zaleca się natychmiastowo udać się do wyznaczonych stref bezpieczeństwa i ściśle wykonywać polecenia przełożonych.
 alert-level-red-instructions = Znajdź schronienie i stosuj się do rozkazów przełożonych.
 alert-level-violet = Fioletowy
 alert-level-violet-announcement =
     Istnieje zagrożenie wirusowe na stacji. Dział medyczny powinien izolować członków załogi z jakimikolwiek objawami.
-    Członkowie załogi zachowywać biezpieczny dystans do innych i stosować środki ostrożności, aby zapobiec dalszemu rozpowszechnianiu się zagrożenia.
-alert-level-violet-instructions = Zachowuj biezpieczny dystans do innych i stosuj środki ostrożności, aby zapobiec dalszemu rozpowszechnianiu się zagrożenia.
+    Członkowie załogi zachowywać bezpieczny dystans do innych i stosować środki ostrożności, aby zapobiec dalszemu rozpowszechnianiu się zagrożenia.
+alert-level-violet-instructions = Zachowuj bezpieczny dystans do innych i stosuj środki ostrożności, aby zapobiec dalszemu rozpowszechnianiu się zagrożenia.
 alert-level-yellow = Żółty
 alert-level-yellow-announcement =
     Wystąpiło zagrożenie strukturalne lub atmosferyczne na stacji. Personel techniczny powinien niezwłocznie działać i podejmować środki bezpieczeństwa.
