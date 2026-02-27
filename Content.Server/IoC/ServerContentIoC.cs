@@ -44,6 +44,7 @@
 // SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
 // SPDX-FileCopyrightText: 2025 nikitosych <174215049+nikitosych@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 beck-thompson <beck314159@hotmail.com>
 //
 // SPDX-License-Identifier: MIT
 
@@ -73,6 +74,7 @@ using Content.Server.ServerInfo;
 using Content.Server.ServerUpdates;
 using Content.Server.Voting.Managers;
 using Content.Server.Worldgen.Tools;
+using Content.Shared._Starlight.DocumentManager;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Administration.Managers;
 using Content.Shared.Chat;
@@ -130,6 +132,7 @@ namespace Content.Server.IoC
 
             IoCManager.Register<DiscordLink>();
             IoCManager.Register<DiscordChatLink>();
+            IoCManager.Register<PreWrittenDocumentManager>(); // Starlight
         }
     }
 }
