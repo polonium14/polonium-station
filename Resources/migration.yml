@@ -641,3 +641,8 @@ DrinkKiraSpecial: DrinkOrangeLimeSodaGlass
 
 # 2025-11-30, Funky Change
 InflatableWallStack5: InflatableWallStack
+
+# 2026-02-26
+Stunbaton: Truncheon
+WeaponDisabler: null
+GunSafeDisabler: GunSafePistolRg2

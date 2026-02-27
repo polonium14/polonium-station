@@ -60,6 +60,7 @@
 # SPDX-FileCopyrightText: 2025 wilowzeta <willowzeta632146@proton.me>
 # SPDX-FileCopyrightText: 2026 Damian Zieliński <zientasek.pl@gmail.com>
 # SPDX-FileCopyrightText: 2026 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 W.xyz() <84605679+pirakaplant@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2026 ThatOneMoon <91613003+ThatOneMoon@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2026 ThatOneMoon <juozas.dringelis@gmail.com>
 # SPDX-FileCopyrightText: 2026 Xcybitt <197952719+Xcybitt@users.noreply.github.com>
@@ -75,7 +76,7 @@
     contents:
       - id: FlashlightSeclite
       - id: WeaponEnergyShotgun
-      - id: WeaponDisabler
+#      - id: WeaponDisabler # Funky
       - id: ClothingBeltSecurityFilled
       - id: Flash
       - id: ClothingEyesGlassesSecurity
@@ -108,7 +109,7 @@
     contents:
       - id: FlashlightSeclite
       - id: WeaponEnergyShotgun # Goobstation
-      - id: WeaponDisabler
+#      - id: WeaponDisabler # Funky
       - id: ClothingBeltSecurityFilled
       - id: Flash
       - id: ClothingEyesGlassesSecurity
@@ -139,7 +140,7 @@
     contents:
       - id: FlashlightSeclite
         prob: 0.8
-      - id: WeaponDisabler
+#      - id: WeaponDisabler # Funky
       - id: ClothingUniformJumpsuitSecGrey
         prob: 0.3
       - id: ClothingHeadHelmetBasic
@@ -245,6 +246,8 @@
   parent: [GunSafeBaseSecure, BaseSecurityContraband]
   id: GunSafeDisabler
   name: disabler safe
+  suffix: DO NOT MAP # Funky
+  categories: [ DoNotMap ] # Funky
   components:
   - type: StorageFill
     contents:
