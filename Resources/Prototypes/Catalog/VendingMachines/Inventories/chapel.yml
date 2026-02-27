@@ -31,6 +31,8 @@
 # SPDX-FileCopyrightText: 2025 Łukasz Lindert <lukasz.lindert@protonmail.com>
 # SPDX-FileCopyrightText: 2026 Damian Zieliński <zientasek.pl@gmail.com>
 # SPDX-FileCopyrightText: 2026 Polonium-bot <admin@ss14.pl>
+# SPDX-FileCopyrightText: 2026 AftrLite <61218133+AftrLite@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 Xcybitt <197952719+Xcybitt@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -90,6 +92,7 @@
     SpectralLocator: 1 # goobstation
     Bible: 1
     ClothingNeckTieGray: 2 # Polonium
+    Shovel: 1
   contrabandInventory:
     FoodBakedBunHotX: 2
     DrinkWineBottleFull: 1

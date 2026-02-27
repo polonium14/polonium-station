@@ -541,6 +541,7 @@
     - HydroponicsToolSpade    #Mira Sector
     - HydroponicsToolClippers #Mira Sector
     - PlantAnalyzer           #Mira Sector
+    - Shovel #funk
     - Floodlight #funk
     - CassetteTapeHigh #funk
     dynamicRecipes:
