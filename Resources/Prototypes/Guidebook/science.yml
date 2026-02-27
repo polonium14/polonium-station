@@ -17,7 +17,6 @@
   - Technologies
   - AnomalousResearch
   - Xenoarchaeology
-  - Genetics
   - Robotics
 
 - type: guideEntry
@@ -68,7 +67,7 @@
   name: guide-entry-cyborgs
   text: "/ServerInfo/_Polonium/Guidebook/Science/Cyborgs.xml"
 
-- type: guideEntry # Funkystation - Genetics
-  id: Genetics
-  name: guide-entry-genetics
-  text: "/ServerInfo/_Polonium/Guidebook/Science/Genetics.xml"
+# - type: guideEntry # Funkystation - Genetics
+#   id: Genetics
+#   name: guide-entry-genetics
+#   text: "/ServerInfo/_Polonium/Guidebook/Science/Genetics.xml"
