@@ -32,7 +32,7 @@
   id: Omega
   mapName: 'Omega'
   mapPath: /Maps/_Funkystation/omega.yml
-  minPlayers: 7
+  minPlayers: 15
   maxPlayers: 35
   stations:
     Omega:
