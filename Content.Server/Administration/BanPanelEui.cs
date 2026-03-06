@@ -21,6 +21,7 @@ using System.Net.Sockets;
 using Content.Server.Administration.Managers;
 using Content.Server.Administration.Systems;
 using Content.Server.Chat.Managers;
+using Content.Server.Discord.Managers;
 using Content.Server.EUI;
 using Content.Server.GameTicking;
 using Content.Shared.Administration;
@@ -42,6 +43,7 @@ public sealed class BanPanelEui : BaseEui
     [Dependency] private readonly IAdminManager _admins = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IEntitySystemManager _sysMan = default!;
+    [Dependency] private readonly DiscordBanNotifyManager _dc = default!;
 
     private readonly ISawmill _sawmill;
     private readonly GameTicker? _ticker;
@@ -145,16 +147,23 @@ public sealed class BanPanelEui : BaseEui
         if (roles?.Count > 0)
         {
             var now = DateTimeOffset.UtcNow;
+            var bannedRoles = new List<string>();
             foreach (var role in roles)
             {
                 if (_prototypeManager.HasIndex<JobPrototype>(role))
                 {
-                    _banManager.CreateRoleBan(targetUid, target, Player.UserId, addressRange, targetHWid, role, minutes, severity, reason, now, round);
+                    _banManager.CreateRoleBan(targetUid, target, Player.UserId, addressRange, targetHWid, role, minutes, severity, reason, now, round, notifyDiscord: false);
+                    bannedRoles.Add(role);
                 }
                 else
                 {
                     _sawmill.Warning($"{Player.Name} ({Player.UserId}) tried to issue a job ban with an invalid job: {role}");
                 }
+            }
+
+            if (bannedRoles.Count > 0)
+            {
+                _dc.SendRoleBanNotification(targetUid, target, Player.UserId, minutes, reason, round, bannedRoles);
             }
 
             Close();

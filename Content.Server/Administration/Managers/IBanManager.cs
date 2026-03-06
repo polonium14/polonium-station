@@ -53,7 +53,8 @@ public interface IBanManager
     /// <param name="minutes">Number of minutes to ban for. 0 and null mean permanent</param>
     /// <param name="timeOfBan">Time when the ban was applied, used for grouping role bans</param>
     /// <param name="situationRound">Round when situation happened</param>
-    public void CreateRoleBan(NetUserId? target, string? targetUsername, NetUserId? banningAdmin, (IPAddress, int)? addressRange, ImmutableTypedHwid? hwid, string role, uint? minutes, NoteSeverity severity, string reason, DateTimeOffset timeOfBan, int? situationRound = 0);
+    /// <param name="notifyDiscord">Whether to send a Discord notification for this ban. Set to false when banning multiple roles to send a single combined notification via <see cref="DiscordBanNotifyManager.SendRoleBanNotification"/>.</param>
+    public void CreateRoleBan(NetUserId? target, string? targetUsername, NetUserId? banningAdmin, (IPAddress, int)? addressRange, ImmutableTypedHwid? hwid, string role, uint? minutes, NoteSeverity severity, string reason, DateTimeOffset timeOfBan, int? situationRound = 0, bool notifyDiscord = true);
 
     /// <summary>
     /// Pardons a role ban for the specified target, username or GUID

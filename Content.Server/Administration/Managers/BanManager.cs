@@ -217,7 +217,7 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
 
         KickMatchingConnectedPlayers(banDef, "newly placed ban");
 
-        _ = _dc.DiscordBanNotify(
+        _ = _dc.SendBanNotification(
             adminName,
             targetUsername ?? targetName,
             reason,
@@ -269,13 +269,14 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
     #region Job Bans
     // If you are trying to remove timeOfBan, please don't. It's there because the note system groups role bans by time, reason and banning admin.
     // Removing it will clutter the note list. Please also make sure that department bans are applied to roles with the same DateTimeOffset.
-    public async void CreateRoleBan(NetUserId? target, string? targetUsername, NetUserId? banningAdmin, (IPAddress, int)? addressRange, ImmutableTypedHwid? hwid, string role, uint? minutes, NoteSeverity severity, string reason, DateTimeOffset timeOfBan, int? situationRound = 0)
+    public async void CreateRoleBan(NetUserId? target, string? targetUsername, NetUserId? banningAdmin, (IPAddress, int)? addressRange, ImmutableTypedHwid? hwid, string role, uint? minutes, NoteSeverity severity, string reason, DateTimeOffset timeOfBan, int? situationRound = 0, bool notifyDiscord = true)
     {
         if (!_prototypeManager.TryIndex(role, out JobPrototype? _))
         {
             throw new ArgumentException($"Invalid role '{role}'", nameof(role));
         }
 
+        var roleName = role;
         role = string.Concat(JobPrefix, role);
         DateTimeOffset? expires = null;
         if (minutes > 0)
@@ -286,6 +287,8 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
         _systems.TryGetEntitySystem(out GameTicker? ticker);
         int? roundId = ticker == null || ticker.RoundId == 0 ? null : ticker.RoundId;
         var playtime = target == null ? TimeSpan.Zero : (await _db.GetPlayTimes(target.Value)).Find(p => p.Tracker == PlayTimeTrackingShared.TrackerOverall)?.TimeSpent ?? TimeSpan.Zero;
+        var originalReason = reason;
+
         reason = situationRound is null or 0
             ? (roundId != null
                 ? $"**#{roundId}** | {reason}"
@@ -316,25 +319,15 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
         var length = expires == null ? Loc.GetString("cmd-roleban-inf") : Loc.GetString("cmd-roleban-until", ("expires", expires));
         _chat.SendAdminAlert(Loc.GetString("cmd-roleban-success", ("target", targetUsername ?? "null"), ("role", role), ("reason", reason), ("length", length)));
 
-        ICommonSession? session = null;
         if (target != null && _playerManager.TryGetSessionById(target.Value, out var foundSession))
         {
-            session = foundSession;
-            SendRoleBans(session);
+            SendRoleBans(foundSession);
         }
 
-        var isAdminFetched = _playerManager.TryGetSessionById(banningAdmin, out var adminSession);
-
-        _ = _dc.DiscordBanNotify(
-            isAdminFetched ? adminSession!.Name : _localizationManager.GetString("ban-notify-ban-admin-unknown"),
-            targetUsername ?? (session != null ? session.Name : _localizationManager.GetString("ban-notify-ban-target-user-unknown")),
-            reason,
-            expires.GetValueOrDefault().ToUnixTimeSeconds(),
-            DateTimeOffset.UtcNow.ToUnixTimeSeconds(),
-            roundId,
-            situationRound,
-            session != null ? _cachedRoleBans.GetValueOrDefault(session) ?? [] : []
-        );
+        if (notifyDiscord)
+        {
+            _dc.SendRoleBanNotification(target, targetUsername, banningAdmin, minutes, originalReason, situationRound, [roleName]);
+        }
     }
 
     public async Task<string> PardonRoleBan(int banId, NetUserId? unbanningAdmin, DateTimeOffset unbanTime)

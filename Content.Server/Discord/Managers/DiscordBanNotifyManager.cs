@@ -5,10 +5,13 @@
 
 using System.Linq;
 using System.Threading.Tasks;
-using Content.Server.Database;
+using Content.Server.GameTicking;
 using Content.Shared.CCVar;
+using Robust.Server.Player;
 using Robust.Shared;
 using Robust.Shared.Configuration;
+using Robust.Shared.Network;
+using Robust.Shared.Player;
 
 namespace Content.Server.Discord.Managers;
 public sealed class DiscordBanNotifyManager
@@ -17,6 +20,8 @@ public sealed class DiscordBanNotifyManager
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly ILogManager _log = default!;
     [Dependency] private readonly ILocalizationManager _loc = default!;
+    [Dependency] private readonly IPlayerManager _playerManager = default!;
+    [Dependency] private readonly IEntitySystemManager _systems = default!;
 
     private ISawmill _logger = default!;
 
@@ -25,7 +30,7 @@ public sealed class DiscordBanNotifyManager
         _logger = _log.GetSawmill("discord-ban-notify");
     }
 
-    public async Task DiscordBanNotify(
+    public async Task SendBanNotification(
         string adminName,
         string targetName,
         string reason,
@@ -33,9 +38,9 @@ public sealed class DiscordBanNotifyManager
         long issuanceTime,
         int? issuanceRnd,
         int? situationRnd,
-        List<ServerRoleBanDef>? roleBans)
+        List<string>? roleNames)
     {
-        var isRoleBan = roleBans != null;
+        var isRoleBan = roleNames is { Count: > 0 };
 
         List<WebhookEmbedField> fields =
         [
@@ -75,17 +80,17 @@ public sealed class DiscordBanNotifyManager
             },
         ];
 
-        if (roleBans != null)
+        if (isRoleBan)
         {
             fields.Add(new WebhookEmbedField
             {
                 Inline = false,
                 Name = _loc.GetString("ban-notify-banned-roles-title"),
-                Value = $"```{string.Join("", roleBans.Select(b => b.Role.Contains(':') ? $"- {b.Role.Split(':')[1]}\n" : $"- {b.Role}\n"))}```",
+                Value = $"```{string.Join("", roleNames!.Select(r => $"- {r}\n"))}```",
             });
         }
 
-        await DiscordBanNotify(new WebhookEmbed
+        await SendBanNotification(new WebhookEmbed
         {
             Title = isRoleBan ? _loc.GetString("ban-notify-role-ban-embed-title") : _loc.GetString("ban-notify-ban-embed-title"),
             Fields = fields,
@@ -97,7 +102,7 @@ public sealed class DiscordBanNotifyManager
         });
     }
 
-    public async Task DiscordBanNotify(
+    public async Task SendBanNotification(
         WebhookEmbed embed
     )
     {
@@ -122,6 +127,42 @@ public sealed class DiscordBanNotifyManager
         {
             _logger.Error(_loc.GetString("ban-notify-webhook-error-message"));
         }
+    }
+
+    public void SendRoleBanNotification(
+        NetUserId? target,
+        string? targetUsername,
+        NetUserId? banningAdmin,
+        uint? minutes,
+        string reason,
+        int? situationRound,
+        List<string> roleNames)
+    {
+        DateTimeOffset? expires = null;
+        if (minutes > 0)
+        {
+            expires = DateTimeOffset.Now + TimeSpan.FromMinutes(minutes.Value);
+        }
+
+        _systems.TryGetEntitySystem(out GameTicker? ticker);
+        int? roundId = ticker == null || ticker.RoundId == 0 ? null : ticker.RoundId;
+
+        ICommonSession? session = null;
+        if (target != null)
+            _playerManager.TryGetSessionById(target.Value, out session);
+
+        var isAdminFetched = _playerManager.TryGetSessionById(banningAdmin, out var adminSession);
+
+        _ = SendBanNotification(
+            isAdminFetched ? adminSession!.Name : _loc.GetString("ban-notify-ban-admin-unknown"),
+            targetUsername ?? (session != null ? session.Name : _loc.GetString("ban-notify-ban-target-user-unknown")),
+            reason,
+            expires.GetValueOrDefault().ToUnixTimeSeconds(),
+            DateTimeOffset.UtcNow.ToUnixTimeSeconds(),
+            roundId,
+            situationRound,
+            roleNames
+        );
     }
 }
 

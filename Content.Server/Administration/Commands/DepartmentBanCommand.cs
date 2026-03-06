@@ -12,6 +12,7 @@
 // SPDX-License-Identifier: MIT
 
 using Content.Server.Administration.Managers;
+using Content.Server.Discord.Managers;
 using Content.Shared.Administration;
 using Content.Shared.CCVar;
 using Content.Shared.Database;
@@ -29,6 +30,7 @@ public sealed class DepartmentBanCommand : IConsoleCommand
     [Dependency] private readonly IPlayerLocator _locator = default!;
     [Dependency] private readonly IBanManager _banManager = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
+    [Dependency] private readonly DiscordBanNotifyManager _dc = default!;
 
     public string Command => "departmentban";
     public string Description => Loc.GetString("cmd-departmentban-desc");
@@ -132,10 +134,14 @@ public sealed class DepartmentBanCommand : IConsoleCommand
         // If you are trying to remove the following variable, please don't. It's there because the note system groups role bans by time, reason and banning admin.
         // Without it the note list will get needlessly cluttered.
         var now = DateTimeOffset.UtcNow;
+        var roleNames = new List<string>();
         foreach (var job in departmentProto.Roles)
         {
-            _banManager.CreateRoleBan(targetUid, located.Username, shell.Player?.UserId, null, targetHWid, job, minutes, severity, reason, now, round);
+            _banManager.CreateRoleBan(targetUid, located.Username, shell.Player?.UserId, null, targetHWid, job, minutes, severity, reason, now, round, notifyDiscord: false);
+            roleNames.Add(job);
         }
+
+        _dc.SendRoleBanNotification(targetUid, located.Username, shell.Player?.UserId, minutes, reason, round, roleNames);
     }
 
     public CompletionResult GetCompletion(IConsoleShell shell, string[] args)
