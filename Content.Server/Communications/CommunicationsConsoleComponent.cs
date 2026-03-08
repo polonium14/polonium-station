@@ -26,7 +26,10 @@
 // SPDX-FileCopyrightText: 2024 Justin Pfeifler <jrpl101998@gmail.com>
 // SPDX-FileCopyrightText: 2024 avery <51971268+graevy@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 DevilishMilk <michaellapjr@gmail.com>
+// SPDX-FileCopyrightText: 2025 Mish <bluscout78@yahoo.com>
 // SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+// SPDX-FileCopyrightText: 2025 thepinkscreen <76622775+thepinkscreen@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 nikitosych <174215049+nikitosych@users.noreply.github.com>
 //
 // SPDX-License-Identifier: MIT
 
