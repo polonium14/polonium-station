@@ -22,6 +22,6 @@ ertcall-cburn-leader-eva-rules = Twoim zadaniem jest likwidować wszelkie skutki
 ertcall-cburn-medic-eva-name = Medyk RCBZ
 ertcall-cburn-medic-eva-desc = Medyk oddziału RCBZ.
 ertcall-cburn-medic-eva-rules = Twoim zadaniem jest likwidować wszelkie skutki katastrofy na stacji. Podlegasz Centralnemu Dowództwu.
-ertcall-deadsquad-security-eva-name = Bojownik Korpusu Śmierci
+ertcall-deadsquad-security-eva-name = Bojownik Szwadronu Śmierci
 ertcall-deadsquad-security-eva-desc = Niszczyciel wszystkiego co żywe.
 ertcall-deadsquad-security-eva-rules = Twoim zadaniem jest zlikwidować stację i cały personel.

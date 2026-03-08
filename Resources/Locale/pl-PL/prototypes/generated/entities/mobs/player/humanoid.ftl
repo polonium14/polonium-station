@@ -1,5 +1,5 @@
-ent-RandomHumanoidSpawnerDeathSquad = osoba specjalistyczna korpusu oddziału śmierci
-    .suffix = JSR, korups śmierci, przyzywacz
+ent-RandomHumanoidSpawnerDeathSquad = szwadron śmierci
+    .suffix = JSR, szwadron śmierci, przyzywacz
     .desc = { "" }
     .gender = female
 ent-RandomHumanoidSpawnerERTLeader = osoba dowódcza JRS
