@@ -105,6 +105,6 @@ namespace Content.Server.Communications
         /// Announce sound file path
         /// </summary>
         [DataField]
-        public SoundSpecifier Sound = new SoundPathSpecifier("/Audio/_Polonium/Announcements/announce.ogg");
+        public SoundSpecifier Sound = new SoundPathSpecifier("/Audio/_Polonium/Announcements/crew_announce.ogg");
     }
 }

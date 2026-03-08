@@ -3,6 +3,11 @@
   license: "CC-BY-4.0"
   source: "https://music.youtube.com/watch?v=EtTi4kwHMto&si=uratyjxMNeqEexVz"
 
+- files: ["code_epsilon_nointro.ogg"] # Wersja bez intro
+  copyright: "Made by Bolgarich. Edited by Nikita.pl and Pinkscreen."
+  license: "CC-BY-4.0"
+  source: "https://music.youtube.com/watch?v=EtTi4kwHMto&si=uratyjxMNeqEexVz"
+
 - files: ["running_out.ogg"]
   copyright: "Made by Bolgarich"
   license: "CC-BY-4.0"

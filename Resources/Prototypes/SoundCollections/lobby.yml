@@ -49,25 +49,24 @@
     # Goobstation - Custom lobby music
 #    - /Audio/Lobby/skubstep.ogg
 #    - /Audio/Lobby/sneedsfeedandseed.ogg
-    - /Audio/Lobby/the_future_soon.ogg
+    # - /Audio/Lobby/the_future_soon.ogg
     - /Audio/Lobby/monument.ogg
     - /Audio/Lobby/marhaba.ogg
     - /Audio/Lobby/horn.ogg
     - /Audio/Lobby/honk.ogg
-    - /Audio/Lobby/clownalwayswins.ogg
+    # - /Audio/Lobby/clownalwayswins.ogg
     - /Audio/Lobby/clownwmv.ogg
-    - /Audio/Lobby/dawsonschristian.ogg
-    - /Audio/Lobby/thewizard.ogg
-    - /Audio/Lobby/skubstub.ogg
+    # - /Audio/Lobby/dawsonschristian.ogg
+    #- /Audio/Lobby/skubstub.ogg
     - /Audio/Lobby/space_radiation.ogg
     - /Audio/Lobby/droopy_likes_your_face.ogg
-    - /Audio/Lobby/spacers_home.ogg
-    - /Audio/Lobby/starpilotshymn.ogg
-    - /Audio/Lobby/tusmentiras.ogg
+    # - /Audio/Lobby/spacers_home.ogg
+    # - /Audio/Lobby/starpilotshymn.ogg
+    # - /Audio/Lobby/tusmentiras.ogg
     - /Audio/Lobby/ironwill.ogg
     - /Audio/Lobby/Minerals.ogg
     - /Audio/Lobby/ashwalking.ogg
-    - /Audio/Lobby/dagd.ogg
+    # - /Audio/Lobby/dagd.ogg
     - /Audio/Lobby/meltdown.ogg
     # funky station music
     - /Audio/_Funkystation/Music/an_alien_song_alien_kids.ogg
@@ -96,15 +95,16 @@
     - /Audio/Lobby/Resistance.ogg
     - /Audio/Lobby/echoes-in-the-deep.ogg
     - /Audio/Lobby/timefracture.ogg
-    - /Audio/Lobby/762_treastise.ogg
+    # - /Audio/Lobby/762_treastise.ogg
     - /Audio/Lobby/hull_rupture.ogg
     # RMC
     - /Audio/Lobby/Super_Nova_In_The_Catacombs.ogg
     - /Audio/Lobby/shadowinthesilvernebula.ogg
     - /Audio/Lobby/the_fallen_queen.ogg
     - /Audio/Lobby/enemy_is_unknown.ogg
-    - /Audio/Lobby/Dire_Situation.ogg
+    # - /Audio/Lobby/Dire_Situation.ogg
     - /Audio/Lobby/Time_Is_Running_Out.ogg
-    - /Audio/Lobby/Dropzone.ogg
+    # - /Audio/Lobby/Dropzone.ogg
     # Polonium
     - /Audio/Lobby/CzyToKoniec.ogg
+    - /Audio/_Polonium/Music/i_cant_afford_mastering.ogg
