@@ -52,7 +52,7 @@ plant-analyzer-produce-reagents =
                *[other] [color=white]{ $chemicals }[/color]
             }
     }
-plant-analyzer-produce-plural = { MAKEPLURAL($thing) }
+plant-analyzer-produce-plural = { $thing }
 plant-analyzer-potency-tiny = Minimalna
 plant-analyzer-potency-small = Mała
 plant-analyzer-potency-medium = Średnia
