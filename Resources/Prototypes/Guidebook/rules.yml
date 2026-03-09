@@ -86,7 +86,7 @@
   name: guide-entry-rules-s7
   ruleEntry: true
   priority: -3
-  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CommunityRules/RuleS7Admins.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/ServerRules/CommunityRules/RuleS7Fanaticism.xml"
 
 - type: guideEntry
   id: RuleS8
