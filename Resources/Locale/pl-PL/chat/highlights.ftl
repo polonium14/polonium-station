@@ -13,7 +13,7 @@ highlights-security-officer = Oficer Ochrony, Oficer, Ochrona
 highlights-warden = Nadzorca, Ochrona
 # Logistyka
 highlights-cargo-technician = Technik Logistyki, Logistyk, Dział Logistyki, Logistyka, "Cargo"
-highlights-salvage-specialist = Technik Odzysku, Odzysk, Dział Logistyki, Logistyka, "Cargo"
+highlights-salvage-specialist = Utylizator, Utylizacja, Dział Logistyki, Logistyka, "Cargo"
 # Inżynierowie
 highlights-atmospheric-technician = Technik Atmosferyki, Atmosferyczny, Dział Inżynierii, "Inż", "Atmos"
 highlights-station-engineer = Inżynier, Engineering, Dział Inżynierii "Inż"

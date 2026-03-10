@@ -61,5 +61,5 @@ guide-entry-atmospheric-sop = SPO Technika Atmosferycznego
 guide-entry-training-manual-security = Podręcznik Szkoleniowy Ochrony
 guide-entry-qm-sop = SPO Kierownika Logistyki
 guide-entry-cargotechnician-sop = SPO Technika Logistyka
-guide-entry-salvage-sop = SPO Technika Odzysku
+guide-entry-salvage-sop = SPO Utylizatora
 guide-entry-training-manual-command = Podręcznik Szkoleniowy Dowództwa

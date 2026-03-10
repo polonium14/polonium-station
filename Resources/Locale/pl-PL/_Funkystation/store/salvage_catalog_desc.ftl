@@ -90,7 +90,7 @@ vendor-salvage-cookout-desc = Pudełko zawierające elektryczny grill i płytę 
 # Standard Equipment
 
 vendor-salvage-ore-bag = Torba na Złom
-vendor-salvage-ore-bag-desc = Wytrzymała torba dla specjalistów od odzysku i górników do przenoszenia dużych ilości rudy lub złomu. Przyciąga magnetycznie pobliskie surowce, gdy jest przypięta do paska.
+vendor-salvage-ore-bag-desc = Wytrzymała torba dla utylizatorów i górników do przenoszenia dużych ilości rudy lub złomu. Przyciąga magnetycznie pobliskie surowce, gdy jest przypięta do paska.
 vendor-salvage-material-bag = Torba na Materiały
 vendor-salvage-material-bag-desc = Wytrzymała torba do przenoszenia dużych ilości przetworzonego materiału.
 vendor-salvage-pickaxe-name = Kilof
