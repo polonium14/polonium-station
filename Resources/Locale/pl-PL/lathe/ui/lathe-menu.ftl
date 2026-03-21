@@ -21,12 +21,15 @@ lathe-menu-description-display = [italic]{ $description }[/italic]
 lathe-menu-material-amount =
     { $amount ->
         [1] { NATURALFIXED($amount, 2) } { $unit }
-       *[other] { NATURALFIXED($amount, 2) } { MAKEPLURAL($unit) }
+       *[other] { NATURALFIXED($amount, 2) } { $unit }
     }
+
+# "Brakuje 1 arkusze", ale brzmi lepiej niż "arkuszes". To jedyne rozwiązanie.
+# Chyba że wymyślisz funkcję do odmiany wszystkich rzeczowników w języku polskim.
 lathe-menu-material-amount-missing =
     { $amount ->
-        [1] { NATURALFIXED($amount, 2) } { $unit } sztuk { $material } ([color=red]Brakuje { NATURALFIXED($missingAmount, 2) } { $unit }[/color])
-       *[other] { NATURALFIXED($amount, 2) } { MAKEPLURAL($unit) } sztuk { $material } ([color=red]Brakuje { NATURALFIXED($missingAmount, 2) } { MAKEPLURAL($unit) }[/color])
+        [1] { NATURALFIXED($amount, 2) } { $unit } { $material } ([color=red]Brakuje { NATURALFIXED($missingAmount, 2) } { $unit }[/color])
+       *[other] { NATURALFIXED($amount, 2) } { $unit } { $material } ([color=red]Brakuje { NATURALFIXED($missingAmount, 2) } { $unit }[/color])
     }
 lathe-menu-no-materials-message = Brak materiałów.
 lathe-menu-silo-linked-message = Silos połączony

@@ -1,18 +1,4 @@
 ﻿Entries:
-- author: Helm
-  changes:
-  - message: Fixed an overly roomy matchbox!
-    type: Fix
-  id: 7854
-  time: '2025-01-27T08:30:32.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34632
-- author: metalgearsloth
-  changes:
-  - message: Fix hovering storage containers flickering sometimes.
-    type: Fix
-  id: 7855
-  time: '2025-01-27T10:29:51.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/33045
 - author: Coolsurf6
   changes:
   - message: Added the ability for a creature to be unable to feel pain
@@ -4096,3 +4082,19 @@
   id: 9161
   time: '2026-03-08T15:49:17.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/524
+- author: Nikita
+  changes:
+  - message: Zaktualizowano regulamin w grze.
+    type: Tweak
+  id: 9162
+  time: '2026-03-09T23:00:52.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/525
+- author: Nikita
+  changes:
+  - message: "Przet\u0142umaczono USK."
+    type: Tweak
+  - message: "Poprawiono u\u017Cycia liczby mnogiej w niekt\xF3rych t\u0142umaczeniach."
+    type: Fix
+  id: 9163
+  time: '2026-03-09T23:17:16.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/526
