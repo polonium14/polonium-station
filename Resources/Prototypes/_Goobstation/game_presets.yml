@@ -31,7 +31,7 @@
     - BasicStationEventScheduler
     - MeteorSwarmScheduler
     - BasicRoundstartVariation
-    
+
 - type: gamePreset
   id: SecretChangeling
   alias:
@@ -77,7 +77,7 @@
     - BasicStationEventScheduler
     - MeteorSwarmScheduler
     - BasicRoundstartVariation
-    
+
 - type: gamePreset
   id: NukeTraitor
   alias:
@@ -192,3 +192,40 @@
   minPlayers: 25
   rules:
     - CombatDynamic
+
+- type: gamePreset
+  id: SecretPlusLow
+  alias:
+  - secretpluslow
+  - secretpluscalm
+  - turbulence
+  name: secretplus-low-title
+  description: secretplus-low-description
+  showInVote: true
+  rules:
+  - SecretPlusLow
+
+- type: gamePreset
+  id: SecretPlusMid
+  alias:
+  - secretplusmid
+  - secretplus
+  - entropy
+  name: secretplus-mid-title
+  description: secretplus-mid-description
+  showInVote: true
+  rules:
+  - SecretPlusMid
+
+- type: gamePreset
+  id: SecretPlusAdmeme
+  alias:
+  - secretplusadmeme
+  - secretplusevil
+  - secretplushigh
+  - chaos
+  name: secretplus-admeme-title
+  description: secretplus-admeme-description
+  showInVote: false # 1984
+  rules:
+  - SecretPlusAdmeme

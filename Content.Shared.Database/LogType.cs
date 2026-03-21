@@ -520,6 +520,11 @@ public enum LogType
     Instrument = 103,
 
     /// <summary>
+    /// SecretPlus related game interactions.
+    /// </summary>
+    SecretPlus = 10001, // Goobstation
+
+    /// <summary>
     /// GameDirector related game interactions.
     /// </summary>
     GameDirector = 10002, // Goobstation

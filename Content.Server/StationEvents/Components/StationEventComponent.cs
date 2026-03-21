@@ -18,6 +18,7 @@
 using Content.Server._Goobstation.StationEvents;
 using Content.Server._Goobstation.StationEvents.Metric; // Goobstation
 using Robust.Shared.Audio;
+using Robust.Shared.Prototypes; // Goobstation
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
 namespace Content.Server.StationEvents.Components;
@@ -33,6 +34,14 @@ public sealed partial class StationEventComponent : Component
     public const float WeightNormal = 10.0f;
     public const float WeightHigh = 15.0f;
     public const float WeightVeryHigh = 20.0f;
+
+    // Goob Edit Start
+    /// <summary>
+    /// Can this event be selected randomly by the game director?
+    /// </summary>
+    [DataField]
+    public bool IsSelectable = true;
+    // Goob Edit End
 
     [DataField]
     public float Weight = WeightNormal;
@@ -114,6 +123,13 @@ public sealed partial class StationEventComponent : Component
     /// </summary>
     [DataField("chaos")]
     public ChaosMetrics Chaos = new ChaosMetrics();
+
+    /// <summary>
+    ///  What type of event is this.
+    ///  Used by SecretPlus to determine whether it's allowed to fire this event.
+    /// </summary>
+    [DataField]
+    public ProtoId<EventTypePrototype> EventType = "Neutral";
     // Goobstation end
 
     [DataField("maxChaos")]

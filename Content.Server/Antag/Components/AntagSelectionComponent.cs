@@ -218,6 +218,13 @@ public partial struct AntagSelectionDefinition()
     /// </remarks>
     [DataField]
     public EntProtoId? SpawnerPrototype;
+
+    /// <summary>
+    /// Goobstation
+    /// If not null, how much chaos should secret+ consider us to have per-antag.
+    /// </summary>
+    [DataField]
+    public float? ChaosScore = null;
 }
 
 /// <summary>
