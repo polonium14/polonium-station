@@ -42,41 +42,27 @@ SPDX-License-Identifier: MIT
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Posiadanie/używanie nielegalnych substancji
+        Posiadanie/używanie nielegalnych substancji\nOstrzeż. - 3:00
       </Box>
     </ColorBox>
     <ColorBox Color="#ffcc67">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [color=black]Niezastosowanie się do poleceń (L)[/color]
+        [color=black]Niezastosowanie się do poleceń (L)[/color]\nOstrzeż. - 2:00
       </Box>
     </ColorBox>
     <ColorBox Color="#ffcc67">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [color=black]Naruszenie zatrzymania (L)[/color]
+        [color=black]Naruszenie zatrzymania (L)[/color]\n2:00 - 4:00
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Porwanie
+        Porwanie\n4:00 - 10:00
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Rażące zaniedbanie
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Okrucieństwo wobec zwierząt
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Ucieczka z aresztu
+        Rażące zaniedbanie\nDegradacja - Perma
       </Box>
     </ColorBox>
     <ColorBox>
@@ -85,7 +71,21 @@ SPDX-License-Identifier: MIT
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Odmowa poddania się osłonie umysłu
+        Okrucieństwo wobec zwierząt\n2:00 - 5:00
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Ucieczka z aresztu\n2:00 - 5:00
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Odmowa poddania się osłonie umysłu\nDo przyjęcia - Perma
       </Box>
     </ColorBox>
     <ColorBox>
@@ -94,12 +94,12 @@ SPDX-License-Identifier: MIT
     </ColorBox>
     <ColorBox Color="#fd6864">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [color=black]Narażenie na\nniebezpieczeństwo (M)[/color]
+        [color=black]Narażenie na\nniebezpieczeństwo (M)[/color]\n2:00 - 4:00
       </Box>
     </ColorBox>
     <ColorBox Color="#fd6864">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [color=black]Nieumyślne spowodowanie śmierci (M)[/color]
+        [color=black]Nieumyślne spowodowanie śmierci (M)[/color]\n4:00 - 10:00
       </Box>
     </ColorBox>
     <ColorBox>
@@ -108,47 +108,47 @@ SPDX-License-Identifier: MIT
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Uniemożliwienie wskrzeszenia
+        Uniemożliwienie wskrzeszenia\n15:00 - Perma
       </Box>
     </ColorBox>
     <ColorBox Color="#68cbd0">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [color=black]Zakłócanie porządku (R)[/color]
+        [color=black]Zakłócanie porządku (R)[/color]\nOstrzeż. - 2:00
       </Box>
     </ColorBox>
     <ColorBox Color="#68cbd0">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [color=black]Zamieszki (R)[/color]
+        [color=black]Zamieszki (R)[/color]\n2:00 - 4:00
       </Box>
     </ColorBox>
     <ColorBox Color="#fd6864">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [color=black]Napaść/pobicie (M)[/color]
+        [color=black]Napaść (M)\nOstrzeż. - 3:00\nPobicie (M)\n1:00 - 3:00[/color]
+      </Box>0
+    </ColorBox>
+    <ColorBox Color="#fd6864">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]Morderstwo (M)[/color]\n4:00 - 10:00
       </Box>
     </ColorBox>
     <ColorBox Color="#fd6864">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [color=black]Morderstwo (M)[/color]
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#fd6864">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [color=black]Masowe morderstwo (M)[/color]
+        [color=black]Masowe morderstwo (M)[/color]Perma - Perma
       </Box>
     </ColorBox>
     <ColorBox Color="#dae8fc">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [color=black]Wandalizm (C)[/color]
+        [color=black]Wandalizm (C)[/color]\nOstrzeż. - 2:00
       </Box>
     </ColorBox>
     <ColorBox Color="#dae8fc">>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [color=black]Uszkodzenie/zniszczenie mienia (C)[/color]
+        [color=black]Uszkodzenie/zniszczenie mienia (C)\n2:00 - 4:00[/color]
       </Box>
     </ColorBox>
     <ColorBox Color="#dae8fc">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [color=black]Masowe zniszczenie (C)[/color]
+        [color=black]Masowe zniszczenie (C)\n10:00 - 15:00[/color]
       </Box>
     </ColorBox>
     <ColorBox>
@@ -157,7 +157,7 @@ SPDX-License-Identifier: MIT
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Terroryzm
+        Terroryzm\nPerma - Egzekucja
       </Box>
     </ColorBox>
     <ColorBox>
@@ -166,12 +166,12 @@ SPDX-License-Identifier: MIT
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Posiadanie sprzętu\nobjętego ograniczeniami
+        Posiadanie sprzętu\nobjętego ograniczeniami\nOstrzeż. - 5:00
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Posiadanie broni\nobjętej ograniczeniami
+        Posiadanie broni\nobjętej ograniczeniami\n3:00 - 6:00
       </Box>
     </ColorBox>
     <ColorBox>
@@ -184,7 +184,7 @@ SPDX-License-Identifier: MIT
     </ColorBox>
     <ColorBox Color="#9698ED">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [color=black]Wtargnięcie (T)[/color]
+        [color=black]Wtargnięcie (T)\nOstrzeż. - 2:00[/color]
       </Box>
     </ColorBox>
     <ColorBox>
@@ -193,7 +193,7 @@ SPDX-License-Identifier: MIT
     </ColorBox>
     <ColorBox Color="#9698ED">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [color=black]Wtargnięcie na teren zabezpieczony (T)[/color]
+        [color=black]Wtargnięcie na teren zabezpieczony (T)\n3:00 - 8:00[/color]
       </Box>
     </ColorBox>
     <ColorBox>
@@ -206,7 +206,7 @@ SPDX-License-Identifier: MIT
     </ColorBox>
     <ColorBox Color="#ffce93">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [color=black]Drobna kradzież (G)[/color]
+        [color=black]Drobna kradzież (G)\n1:00 - 3:00[/color]
       </Box>
     </ColorBox>
     <ColorBox>
@@ -215,7 +215,7 @@ SPDX-License-Identifier: MIT
     </ColorBox>
     <ColorBox Color="#ffce93">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [color=black]Wielka kradzież (G)[/color]
+        [color=black]Wielka kradzież (G)\n3:00 - 6:00[/color]
       </Box>
     </ColorBox>
     <ColorBox>
@@ -224,507 +224,6 @@ SPDX-License-Identifier: MIT
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      </Box>
-    </ColorBox>
-  </Table>
-
-  ## Przestępstwa I stopnia
-  - W przypadku pierwszego wykroczenia należy wydać ostrzeżenie.
-  - Jeśli popełniono wiele drobnych przestępstw lub jest to powtórne wykroczenie, rozsądnym rozwiązaniem może być aresztowanie tej osoby.
-  <Table Columns="3">
-    <ColorBox>
-      <Box>
-        Przestępstwo
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box>
-        Opis
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box>
-        Uwagi
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Zakłócanie porządku
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Zakłócanie porządku publicznego.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Czasami określane jako chuligaństwo. Pojemna kategoria obejmująca nieprzyjemnych członków załogi.
-        Obejmuje takie rzeczy, jak publiczna nagość, niepotrzebne obelgi, utrudnianie pracy władzom oraz podżeganie do przestępstw lub przemocy.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Drobna kradzież
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Zabranie bez zgody innej osoby, organizacji lub własności wspólnej przedmiotów, które nie są niezbędne lub są niedrogie.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Różnica między drobną kradzieżą a wielką kradzieżą polega na tym, jak ważny jest skradziony przedmiot. Przedmioty takie jak instrumenty, odzież i narzędzia zaliczają się do drobnych kradzieży. W większości przypadków wystarczy zatrzymać złodzieja, zwrócić skradziony przedmiot i puścić go z ostrzeżeniem.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Posiadanie/używanie nielegalnych substancji
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Produkcja, posiadanie lub nadużywanie substancji lub chemikaliów objętych ograniczeniami.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Należy postępować zgodnie ze Standardową Procedurą Postępowania.
-        Jeśli w SPP nie ma wzmianki o jakiejkolwiek wątpliwej kwestii, kapitan lub najwyższy rangą dowódca może publicznie nałożyć ograniczenia.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Wtargnięcie
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Wejście na teren niezabezpieczony bez pozwolenia.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Lepiej po prostu usunąć sprawców z terenu, zamiast ich zatrzymywać, chyba że jest to powtarzające się wykroczenie.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Wandalizm
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Celowe oszpecenie lub powierzchowne uszkodzenie mienia publicznego lub prywatnego.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Malowanie graffiti, rozbijanie szklanek barowych i rozbijanie wewnętrznych okien stanowi wandalizm, natomiast rozbicie okna prowadzącego do przestrzeni lub obszarów zabezpieczonych nie stanowi wandalizmu.
-      </Box>
-    </ColorBox>
-  </Table>
-
-  ## Przestępstwa II Stopnia
-  - W zależności od sytuacji możesz wydać ostrzeżenie zamiast zatrzymania.
-  <Table Columns="3">
-    <ColorBox>
-      <Box>
-        Przestępstwo
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box>
-        Opis
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box>
-        Uwagi
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Okrucieństwo wobec zwierząt
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Złośliwe zadawanie niepotrzebnego cierpienia lub krzywdy istocie nierozumnej.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Nie obejmuje to legalnych i autoryzowanych testów na zwierzętach i zazwyczaj nie dotyczy szkodników lub stworzeń, które mogą stanowić zagrożenie dla stacji.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Uszkodzenie/zniszczenie mienia
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Złośliwe uszkodzenie lub oszpecenie mienia publicznego lub prywatnego lub sprzętu.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Stopień wyższy od wandalizmu, ale niższy od masowego zniszczenia.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Narażenie na niebezpieczeństwo
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Lekkomyślne narażanie siebie lub innych na niebezpieczeństwo poprzez bezpośrednie działanie lub zaniechanie działania.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Obejmuje wypadki przy pracy, zaniedbania przemysłowe, eksperymenty na sobie, a nawet błędy medyczne.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Niezastosowanie się do poleceń
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Stawianie oporu wobec uzasadnionych poleceń wydanych przez władze. Obejmuje to nakazy i uprawnione przeszukania.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Polecenie musi być uzasadnione, a dana osoba powinna otrzymać wystarczające ostrzeżenie przed aresztowaniem.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Posiadanie sprzętu objętego ograniczeniami
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Posiadanie lub używanie nieśmiercionośnych przedmiotów lub obiektów, które są objęte ograniczeniami lub są nielegalne.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Dotyczy to głównie kontrabandy syndykatu: EMAG-ów, masek przeciwgazowych syndykatu, krwistoczerwonych kombinezonów, przerobionych PDA lub implantów,
-        jednak czasami może obejmować również przedmioty, których dana osoba nie powinna posiadać, takie jak kamizelki kevlarowe i sprzęt ochrony.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Zamieszki
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Udział w dużej grupie osób powodującej bezprawne zakłócenie porządku publicznego.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Oczekuje się, że do tego zarzutu zostaną dodane przestępstwa takie jak zniszczenie mienia lub pobicie.
-        Przywódcy zamieszek mogą zostać oskarżeni o wszystkie przestępstwa popełnione pod ich przywództwem.
-      </Box>
-    </ColorBox>
-  </Table>
-
-  ## Przestępstwa III Stopnia
-  - Zaleca się, aby nie stosować maksymalnych wyroków wobec osób które współpracują.
-  <Table Columns="3">
-    <ColorBox>
-      <Box>
-        Przestępstwo
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box>
-        Opis
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box>
-        Uwagi
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Napaść/pobicie
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Grożenie lub użycie siły fizycznej wobec innej osoby bez zamiaru zabicia.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Próba zabójstwa i pobicie to różne przestępstwa, należy pamiętać o tym rozróżnieniu.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Naruszenie zatrzymania
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Celowe stawianie oporu i ucieczka przed aresztowaniem lub zatrzymaniem przez upoważniony personel.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Dotyczy to wyłącznie sytuacji, w której dana osoba jest aktywnie aresztowana fizycznie.
-        Obejmuje to osoby zdejmujące kajdanki lub pomagające innym w uniknięciu aresztowania. Ucieczka z aresztu jest odrębnym przestępstwem.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Wielka kradzież
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Zabranie bez zgody innej osoby lub organizacji ważnego lub nieodzownego mienia.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Różnica między drobną kradzieżą a wielką kradzieżą polega na tym, jak ważny jest skradziony przedmiot.
-        Termin ten jest używany głównie w odniesieniu do kradzieży przedmiotów należących do personelu dowodzenia, takich jak piloty do drzwi,
-        kombinezony ochronne, dżetpaki i niepowtarzalne części maszyn.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Nieumyślne\nspowodowanie\nśmierci
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Przypadkowe pozbawienie życia istoty rozumnej bez zamiaru.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Obejmuje nieumyślne spowodowanie śmierci w obronie własnej oraz śmierć wynikającą z zaniedbania.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Masowe zniszczenie
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Spowodowanie ogromnych zniszczeń na danym obszarze lub w kluczowym systemie stacji.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Najczęściej stosowane w przypadku śmiercionośnych zamachów bombowych lub sabotażu kluczowych systemów stacji, takich jak produkcja energii, klonowanie, podstacje czy systemy atmosferyczne.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Posiadanie broni objętej ograniczeniami
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Posiadanie lub używanie broni, która jest niezgodna z prawem lub stanowi kontrabandę.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Wszystko, od broni palnej bez pozwolenia, śmiercionośnych ostrzy, materiałów wybuchowych, broni palnej syndykatu po implanty wybuchowe.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Wtargnięcie na teren zabezpieczony
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Wejście na teren zabezpieczony bez pozwolenia.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Obejmuje to takie miejsca, jak telekomunikacja, biura dowódców, obszary ochrony, obszary dowodzenia, skarbiec i zbrojownie.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Ucieczka z aresztu
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Wydostanie się z celi lub spod dozoru z zamiarem ucieczki.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Ten czas należy doliczyć do aktualnego czasu odsiadki więźnia.
-        Choć zdarza się to rzadko, kara może zostać podniesiona do aresztu permamentnego, jeśli podejrzany wielokrotnie próbował uciec z aresztu.
-        Obejmuje również osoby pomagające innym w ucieczce.
-      </Box>
-    </ColorBox>
-  </Table>
-
-  ## Przestępstwa IV Stopnia
-  - Szczególnie brutalni sprawcy mogą zostać osadzeni w areszcie permamentnym.
-  <Table Columns="3">
-    <ColorBox>
-      <Box>
-        Przestępstwo
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box>
-        Opis
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box>
-        Uwagi
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Porwanie
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Bezprawne ograniczenie wolności, transport, kontrola lub uwięzienie istoty rozumnej wbrew jej woli.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Szeroki zakres czynów, stosowany głównie jako pojęcie zbiorcze w odniesieniu do bezprawnego kontrolowania innej istoty.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Morderstwo
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Zabicie istoty rozumnej ze złośliwym zamiarem.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Tylko w przypadku śmierci ofiary, która wymaga wskrzeszenia, czyn ten zmienia się z usiłowania morderstwa w morderstwo.
-      </Box>
-    </ColorBox>
-  </Table>
-
-  ## Przestępstwa V Stopnia
-  - Przestępstwa z tej kategorii poważnie wpływają na sprawność funkcjonowania stacji, dlatego może zostać zatwierdzony areszt permamentny lub egzekucja.
-  <Table Columns="3">
-    <ColorBox>
-      <Box>
-        Przestępstwo
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box>
-        Opis
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box>
-        Uwagi
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Masowe morderstwo
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Zabicie trzech lub więcej istot rozumnych ze złośliwym zamiarem.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Ma zastosowanie wyłącznie w przypadku wielokrotnych, umyślnych zabójstw.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Rażące zaniedbanie
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Lekkomyślne narażenie siebie lub innych na niebezpieczeństwo poprzez bezpośrednie działanie lub zaniechanie działania jako członek dowództwa.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Obejmuje to spowodowanie śmierci jednego lub więcej członków załogi, nie naprawienie / nie złagodzenie poważnych uszkodzeń stacji lub spowodowanie poważnych uszkodzeń stacji. Zarzut ten ma być kierowany do członków dowództwa i może zostać dodany do ich akt osobowych.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Uniemożliwienie wskrzeszenia
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Sprawienie, że ciało jest niemożliwe do wskrzeszenia.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Obejmuje to rozczłonkowanie, wyrzucenie w przestrzeń kosmiczną, celowe ukrycie ciała prowadzące do jego rozkładu lub inne sposoby uniemożliwiające wskrzeszenia ciała z duszą.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Odmowa poddania się osłonie umysłu
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Odmowa zastosowania się do rozsądnej procedury osłony umysłu.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Ma zastosowanie, jeśli podejrzany jest skrajnie niechętny do współpracy lub implant nie działa z powodu zbyt zaawansowanego stanu psychicznego więźnia.
-        Jeśli implant nie działa, zalecana maksymalna kara zostaje podwyższona do przyspieszonej egzekucji.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Terroryzm
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Podejmowanie złośliwych działań destrukcyjnych, które grożą zniszczeniem lub skutecznie niszczą statek lub siedlisko.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Podsumowując: ekstremalny sabotaż systemów stacji lub uruchomienie systemów samozniszczenia.
       </Box>
     </ColorBox>
   </Table>

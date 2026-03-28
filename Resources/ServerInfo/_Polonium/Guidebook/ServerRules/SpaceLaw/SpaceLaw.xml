@@ -20,14 +20,20 @@ SPDX-License-Identifier: MIT
   - Więźniowie muszą mieć dostęp do sprzętu komunikacyjnego (radia), o ile nie jest on nadużywany.
   - Więźniom należy zapewnić odzież, żywność, wodę, schronienie i bezpieczeństwo. Jeśli areszt nie jest już bezpieczny, należy przenieść więźniów do innego miejsca.
   - Więźniowie muszą mieć dostęp do pomocy prawnej podczas przesłuchania, jeśli o to poproszą i jeśli jest ona dostępna.
+  - Więźniowie nie mogą być skazani przed formalnym przesłuchaniem i przedstawieniem dowodów, chyba że przyznali się do zarzucanych im przestępstw.
+  - Więźniowie muszą mieć dostęp do pomocy prawnej [bold]przed[/bold] i podczas przesłuchania, jeśli o to poproszą i jest ona dostępna.
+  - Więźniowie muszą być przesłuchiwani w odpowiednim czasie, ale przesłuchanie nie musi odbywać się w prywatnej sali przesłuchań. "Przesłuchanie" musi polegać jedynie na poinformowaniu danej osoby o zarzucanych jej przestępstwach i zapytaniu o przyznanie się do winy. Po przyznaniu się więźnia do winy lub nieprzyznaniu się do winy można rozpocząć wykonywanie wyroku.
   - Po zakończeniu pobytu w areszcie więźniowie muszą otrzymać przypisane im urządzenia PDA. Wyjątkiem jest sytuacja, w której istnieją solidne dowody na manipulowanie urządzeniem PDA – w takim przypadku urządzenie należy zabezpieczyć i wymienić na nowe.
   - Więźniowie muszą mieć zapewnioną swobodę poruszania się i nie powinni być krępowani kajdankami ani innymi środkami po osadzeniu w areszcie, chyba że istnieje nadmierne zagrożenie dla życia lub zdrowia. Podobnie, wszyscy więźniowie przebywający w areszcie na czas dłuższy lub bezterminowy powinni być przetrzymywani w celach zbiorowych i nie powinni być umieszczani w izolatkach, chyba że stanowią zagrożenie dla życia lub zdrowia.
+
+  ## Uzasadnione podejrzenie
+  [italic]Uzasadnione podejrzenie wobec danej osoby definiuje się jako podejrzenie oparte na bezpośrednim zaobserwowaniu przez funkcjonariusza potencjalnie nielegalnej działalności lub zgłoszeniach dotyczących potencjalnie nielegalnej działalności popełnionej przez tę osobę (nie przez niejasny opis osoby) pochodzących z wiarygodnego źródła lub podejrzeniu opartym na dowodach zebranych i zgłoszonych przez detektywa stacji.[/italic]
 
   ## Przeszukiwania
 
   Przeszukanie osobiste polega na zajęciu przedmiotów znajdujących się w plecaku, rękach, płaszczu, pasku, kieszeniach i czapce danej osoby. Jeśli podczas przeszukania zostaną znalezione jakiekolwiek przedmioty zabronione, funkcjonariusz może zdecydować o dalszym przeszukaniu w ramach zatrzymania lub po prostu skonfiskować przedmioty objęte ograniczeniami. Po przeprowadzeniu przeszukania wszystkie przedmioty zgodne z prawem należy zwrócić danej osobie.
 
-  Członek załogi może zgodnie z prawem odmówić poddania się przeszukaniu przeprowadzanemu bez nakazu, gdy poziom alarmowy wynosi zielony. Należy zauważyć, że jeśli poziom alarmowy wynosi niebieski lub wyższy, przeszukania całego personelu są legalne i nie wymagają już nakazu.
+  Członek załogi może zgodnie z prawem odmówić poddania się przeszukaniu przeprowadzanemu bez uzasadnionego podejrzenia, gdy poziom alarmowy wynosi zielony. Należy zauważyć, że jeśli poziom alarmowy wynosi niebieski lub wyższy, wszystkie przeszukiwania są legalne.
 
   ## Implantacja
 
@@ -38,6 +44,17 @@ SPDX-License-Identifier: MIT
   W normalnych okolicznościach członek załogi może odmówić przyjęcia osłony umysłu, jeśli nie jest uwięziony za popełnienie przestępstwa.
 
   [bold]Jednakże, gdy istnieje znane zagrożenie dla stacji, polegające na masowym praniu mózgu lub kontroli umysłu, członkowie załogi muszą poddać się osłonie umysłu, jeśli nakazuje to ochrona. Nieprzestrzeganie tego nakazu będzie traktowane jako odmowa poddania się osłonie umysłu.[/bold]
+
+  [bold]Uwagi dotyczące neuroawersji[/bold]: Niektóre osoby cierpią na neuroawersję, czyli neurologiczną wrażliwość na osłony umysłu, która może powodować działania niepożądane, w tym migreny i drgawki. Nie zwalnia to ich z obowiązku stosowania osłon w przypadku potwierdzonego zagrożenia praniem mózgu lub kontrolą umysłu ani nie pozwala na pominięcie innych protokołów dotyczących osłon umysłowych, ale obowiązują w tym przypadku specjalne przepisy:
+
+  [bold]1. Obowiązkowy protokół postępowania w przypadkach neuroawersji:[/bold]
+
+  - Personel medyczny [bold]musi[/bold] zostać poinformowany przed wszczepieniem implantu osobom, u których stwierdzono neuroawersję.
+  - Osoby cierpiące na neuroawersję mogą poprosić o natychmiastowe złagodzenie objawów (Psicodine) podczas stosowania osłony umysłu w trakcie kryzysu.
+
+  [bold]2. Wymóg usunięcia osłon po ustąpieniu zagrożenia:[/bold]
+  - Osłony Umysłu [bold]muszą[/bold] zostać usunięte u osób cierpiących na neuroawersję, gdy osoba ta o to poprosi, po tym jak [bold]POTWIERDZONO[/bold], że zagrożenie minęło.
+  - Nieusunięcie osłon po ustąpieniu zagrożenia może stanowić [bold]zaniedbanie medyczne[/bold] w ramach zarzutów [bold]narażenia na niebezpieczeństwo[/bold].
 
   # Usuwanie
 
@@ -54,7 +71,7 @@ SPDX-License-Identifier: MIT
 
   [bold]Wpływy zewnętrzne:[/bold] Przestępstwa popełnione pod wpływem kontroli umysłowej innej osoby lub bytu podlegają ułaskawieniu po dokonaniu wyraźnej i skutecznej dekonwersji.
 
-  [bold]Egzekucje:[/bold] Egzekucje mogą być zatwierdzone przez kapitana / pełniącego obowiązki kapitana po przeprowadzeniu procesu sądowego. Egzekucje mogą być również zatwierdzone przez Centralne Dowodzenie po formalnym zgłoszeniu.
+  [bold]Egzekucje:[/bold] Egzekucje mogą być zatwierdzone przez przewodniczącego sędziego po przeprowadzeniu procesu sądowego. Egzekucje mogą być również zatwierdzone przez Centralne Dowodzenie po formalnym zgłoszeniu.
 
 
   # Powtarzające się przestępstwa
@@ -82,6 +99,7 @@ SPDX-License-Identifier: MIT
 
   [bold]Opis[/bold]: Zakłócanie porządku publicznego.
 
+  [bold]Zalecana minimalna kara:[/bold] Ostrzeżenie
   [bold]Zalecana maksymalna kara:[/bold] 2:00
 
   [bold]Uwagi:[/bold] Czasami określane jako chuligaństwo. Pojemna kategoria obejmująca nieprzyjemnych członków załogi. Obejmuje takie rzeczy, jak publiczna nagość, niepotrzebne obelgi, utrudnianie pracy władzom oraz podżeganie do przestępstw lub przemocy.
@@ -90,6 +108,7 @@ SPDX-License-Identifier: MIT
 
   [bold]Opis[/bold]: Zabranie bez zgody innej osoby, organizacji lub własności wspólnej przedmiotów, które nie są niezbędne lub są niedrogie.
 
+  [bold]Zalecana minimalna kara:[/bold] 1:00
   [bold]Zalecana maksymalna kara:[/bold] 3:00
 
   [bold]Uwagi:[/bold] Różnica między drobną kradzieżą a wielką kradzieżą polega na tym, jak ważny jest skradziony przedmiot. Przedmioty takie jak instrumenty, odzież i narzędzia zaliczają się do drobnych kradzieży. W większości przypadków wystarczy zatrzymać złodzieja, zwrócić skradziony przedmiot i puścić go z ostrzeżeniem.
@@ -98,6 +117,7 @@ SPDX-License-Identifier: MIT
 
   [bold]Opis[/bold]: Produkcja, posiadanie lub nadużywanie substancji lub chemikaliów objętych ograniczeniami.
 
+  [bold]Zalecana minimalna kara:[/bold] Ostrzeżenie
   [bold]Zalecana maksymalna kara:[/bold] 3:00
 
   [bold]Uwagi: Należy postępować zgodnie ze Standardową Procedurą Postępowania. Jeśli w SPP nie ma wzmianki o jakiejkolwiek wątpliwej kwestii, kapitan lub najwyższy rangą dowódca może publicznie nałożyć ograniczenia.[/bold]
@@ -106,18 +126,19 @@ SPDX-License-Identifier: MIT
 
   [bold]Opis[/bold]: Wejście na teren niezabezpieczony bez pozwolenia.
 
+  [bold]Zalecana minimalna kara:[/bold] Ostrzeżenie
   [bold]Zalecana maksymalna kara:[/bold] 2:00
 
   [bold]Uwagi:[/bold] Zamiast zatrzymywać sprawców, często lepiej po prostu usunąć ich z terenu.
 
   ## Wandalizm
 
-  [bold]Opis[/bold]: Celowe oszpecenie lub powierzchowne uszkodzenie mienia publicznego lub prywatnego.
+  [bold]Opis[/bold]: Celowe oszpecenie lub nielegalna ingerencja w mienie publiczne lub prywatne.
 
+  [bold]Zalecana minimalna kara:[/bold] Ostrzeżenie
   [bold]Zalecana maksymalna kara:[/bold] 2:00
 
-  [bold]Uwagi:[/bold] Malowanie graffiti, rozbijanie szklanek barowych i rozbijanie wewnętrznych okien stanowi wandalizm, natomiast rozbicie okna prowadzącego do przestrzeni lub obszarów zabezpieczonych nie stanowi wandalizmu.
-
+  [bold]Uwagi:[/bold] Malowanie graffiti i przebudowa stacji bez pozwolenia od inżynierów są przykładami wandalizmu.
 
 
   # II Stopnia
@@ -126,22 +147,25 @@ SPDX-License-Identifier: MIT
 
   [bold]Opis[/bold]: Złośliwe zadawanie niepotrzebnego cierpienia lub krzywdy istocie nierozumnej.
 
+  [bold]Zalecana minimalna kara:[/bold] 2:00
   [bold]Zalecana maksymalna kara:[/bold] 5:00
 
   [bold]Uwagi:[/bold] Nie obejmuje to legalnych i autoryzowanych testów na zwierzętach i zazwyczaj nie dotyczy szkodników lub stworzeń, które mogą stanowić zagrożenie dla stacji.
 
   ## Uszkodzenie/zniszczenie mienia
 
-  [bold]Opis[/bold]: Złośliwe uszkodzenie lub oszpecenie mienia publicznego lub prywatnego lub sprzętu.
+  [bold]Opis[/bold]: Celowe uszkodzenie lub oszpecenie mienia publicznego lub prywatnego lub sprzętu.
 
+  [bold]Zalecana minimalna kara:[/bold] 2:00
   [bold]Zalecana maksymalna kara:[/bold] 4:00
 
-  [bold]Uwagi:[/bold] Stopień wyższy od wandalizmu, ale niższy od masowego zniszczenia.
+  [bold]Uwagi:[/bold] Celowe rozbijanie / niszczenie okien, szyb barowych lub innego mienia publicznego lub prywatnego bez zamiaru naprawy (np. w przypadku nielegalnej przebudowy) stanowi uszkodzenie / zniszczenie mienia.
 
   ## Narażenie na niebezpieczeństwo
 
-  [bold]Opis[/bold]: Lekkomyślne narażanie siebie lub innych na niebezpieczeństwo poprzez bezpośrednie działanie lub zaniechanie działania.
+  [bold]Opis[/bold]: Lekkomyślne narażanie siebie lub innych na niebezpieczeństwo poprzez bezpośrednie działania umyślne lub wynikające z zaniedbania.
 
+  [bold]Zalecana minimalna kara:[/bold] 2:00
   [bold]Zalecana maksymalna kara:[/bold] 4:00
 
   [bold]Uwagi:[/bold] Obejmuje wypadki przy pracy, zaniedbania przemysłowe, eksperymenty na sobie, a nawet błędy medyczne.
@@ -150,14 +174,16 @@ SPDX-License-Identifier: MIT
 
   [bold]Opis[/bold]: Stawianie oporu wobec uzasadnionych poleceń wydanych przez władze. Obejmuje to nakazy i uprawnione przeszukania.
 
+  [bold]Zalecana minimalna kara:[/bold] Ostrzeżenie
   [bold]Zalecana maksymalna kara:[/bold] 2:00
 
-  [bold]Uwagi:[/bold] Polecenie musi być uzasadnione, a dana osoba powinna otrzymać wystarczające ostrzeżenie przed aresztowaniem.
+  [bold]Uwagi:[/bold] Polecenie musi być uzasadnione i zgodne z prawem, a dana osoba powinna otrzymać wystarczające ostrzeżenie przed aresztowaniem.
 
   ## Posiadanie sprzętu objętego ograniczeniami
 
   [bold]Opis[/bold]: Posiadanie lub używanie nieśmiercionośnych przedmiotów lub obiektów, które są objęte ograniczeniami lub są nielegalne.
 
+  [bold]Zalecana minimalna kara:[/bold] Ostrzeżenie
   [bold]Zalecana maksymalna kara:[/bold] 5:00
 
   [bold]Uwagi:[/bold] Dotyczy to głównie kontrabandy syndykatu: EMAG-ów, masek przeciwgazowych syndykatu, krwistoczerwonych kombinezonów, przerobionych PDA lub implantów, jednak czasami może obejmować również przedmioty, których dana osoba nie powinna posiadać, takie jak kamizelki kevlarowe i sprzęt ochrony.
@@ -166,6 +192,7 @@ SPDX-License-Identifier: MIT
 
   [bold]Opis[/bold]: Udział w dużej grupie osób powodującej bezprawne zakłócenie porządku publicznego.
 
+  [bold]Zalecana minimalna kara:[/bold] 2:00
   [bold]Zalecana maksymalna kara:[/bold] 4:00
 
   [bold]Uwagi:[/bold] Oczekuje się, że do tego zarzutu zostaną dodane przestępstwa takie jak zniszczenie mienia lub pobicie. Przywódcy zamieszek mogą zostać oskarżeni o wszystkie przestępstwa popełnione pod ich przywództwem.
@@ -174,18 +201,29 @@ SPDX-License-Identifier: MIT
 
   # III Stopnia
 
-  ## Napaść/pobicie
+  ## Napaść
 
-  [bold]Opis[/bold]: Grożenie lub użycie siły fizycznej wobec innej osoby bez zamiaru zabicia.
+  [bold]Opis[/bold]: Grożenie komuś użyciem siły fizycznej lub próba jej użycia w celu wywołania strachu przed krzywdą.
 
-  [bold]Zalecana maksymalna kara:[/bold] 6:00
+  [bold]Zalecana minimalna kara:[/bold] Ostrzeżenie
+  [bold]Zalecana maksymalna kara:[/bold] 3:00
 
-  [bold]Uwagi:[/bold] Próba zabójstwa i pobicie to różne przestępstwa, należy pamiętać o tym rozróżnieniu.
+  [bold]Uwagi:[/bold] Napad to jedynie groźba, a nie akt przemocy. Zarzut ten może być kumulowany w przypadku różnych ofiar.
+
+  ## Pobicie
+
+  [bold]Opis[/bold]: Faktyczne użycie siły fizycznej wobec kogoś bez jego zgody.
+
+  [bold]Zalecana minimalna kara:[/bold] 1:00
+  [bold]Zalecana maksymalna kara:[/bold] 3:00
+
+  [bold]Uwagi:[/bold] Zarzut ten dotyczy faktycznego aktu przemocy fizycznej. Może on być kumulowany z innymi przestępstwami z użyciem przemocy z wieloma ofiarami.
 
   ## Naruszenie zatrzymania
 
   [bold]Opis[/bold]: Celowe stawianie oporu i ucieczka przed aresztowaniem lub zatrzymaniem przez upoważniony personel.
 
+  [bold]Zalecana minimalna kara:[/bold] 2:00
   [bold]Zalecana maksymalna kara:[/bold] 4:00
 
   [bold]Uwagi:[/bold] Dotyczy to wyłącznie sytuacji, w której dana osoba jest aktywnie aresztowana fizycznie. Obejmuje to osoby zdejmujące kajdanki lub pomagające innym w uniknięciu aresztowania. Ucieczka z aresztu jest odrębnym przestępstwem.
@@ -194,6 +232,7 @@ SPDX-License-Identifier: MIT
 
   [bold]Opis[/bold]: Zabranie bez zgody innej osoby lub organizacji ważnego lub nieodzownego mienia.
 
+  [bold]Zalecana minimalna kara:[/bold] 3:00
   [bold]Zalecana maksymalna kara:[/bold] 6:00
 
   [bold]Uwagi:[/bold] Różnica między drobną kradzieżą a wielką kradzieżą polega na tym, jak ważny jest skradziony przedmiot. Termin ten jest używany głównie w odniesieniu do kradzieży przedmiotów należących do personelu dowodzenia, takich jak piloty do drzwi, kombinezony ochronne, plecaki odrzutowe i niepowtarzalne części maszyn.
@@ -202,6 +241,7 @@ SPDX-License-Identifier: MIT
 
   [bold]Opis[/bold]: Przypadkowe pozbawienie życia istoty rozumnej bez zamiaru.
 
+  [bold]Zalecana minimalna kara:[/bold] 4:00
   [bold]Zalecana maksymalna kara:[/bold] 10:00
 
   [bold]Uwagi:[/bold] Obejmuje nieumyślne spowodowanie śmierci w obronie własnej oraz śmierć wynikającą z zaniedbania.
@@ -210,6 +250,7 @@ SPDX-License-Identifier: MIT
 
   [bold]Opis[/bold]: Spowodowanie ogromnych zniszczeń na danym obszarze lub w kluczowym systemie stacji.
 
+  [bold]Zalecana minimalna kara:[/bold] 10:00
   [bold]Zalecana maksymalna kara:[/bold] 15:00.
 
   [bold]Uwagi:[/bold] Najczęściej stosowane w przypadku śmiercionośnych zamachów bombowych lub sabotażu kluczowych systemów stacji, takich jak produkcja energii, klonowanie, podstacje czy systemy atmosferyczne.
@@ -218,6 +259,7 @@ SPDX-License-Identifier: MIT
 
   [bold]Opis[/bold]: Posiadanie lub używanie broni, która jest niezgodna z prawem lub stanowi kontrabandę.
 
+  [bold]Zalecana minimalna kara:[/bold] 3:00
   [bold]Zalecana maksymalna kara:[/bold] 6:00
 
   [bold]Uwagi:[/bold] Wszystko, od broni palnej bez pozwolenia, śmiercionośnych ostrzy, materiałów wybuchowych, broni palnej syndykatu po implanty wybuchowe.
@@ -226,6 +268,7 @@ SPDX-License-Identifier: MIT
 
   [bold]Opis[/bold]: Wejście na teren zabezpieczony bez pozwolenia.
 
+  [bold]Zalecana minimalna kara:[/bold] 3:00
   [bold]Zalecana maksymalna kara:[/bold] 8:00
 
   [bold]Uwagi:[/bold] Obejmuje to takie miejsca, jak telekomunikacja, biura dowódców, obszary ochrony, obszary dowodzenia, skarbiec i zbrojownie.
@@ -234,6 +277,7 @@ SPDX-License-Identifier: MIT
 
   [bold]Opis[/bold]: Wydostanie się z celi lub spod dozoru z zamiarem ucieczki.
 
+  [bold]Zalecana minimalna kara:[/bold] 2:00
   [bold]Zalecana maksymalna kara:[/bold] 5:00
 
   [bold]Uwagi:[/bold] Ten czas należy doliczyć do aktualnego czasu odsiadki więźnia. Choć zdarza się to rzadko, kara może zostać podniesiona do aresztu permamentnego, jeśli podejrzany wielokrotnie próbował uciec z aresztu. Obejmuje również osoby pomagające innym w ucieczce.
@@ -245,6 +289,7 @@ SPDX-License-Identifier: MIT
 
   [bold]Opis[/bold]: Bezprawne ograniczenie wolności, transport, kontrola lub uwięzienie istoty rozumnej wbrew jej woli.
 
+  [bold]Zalecana minimalna kara:[/bold] 4:00
   [bold]Zalecana maksymalna kara:[/bold] 10:00
 
   [bold]Uwagi:[/bold] Szeroki zakres czynów, stosowany głównie jako pojęcie zbiorcze w odniesieniu do bezprawnego kontrolowania innej istoty.
@@ -253,6 +298,7 @@ SPDX-License-Identifier: MIT
 
   [bold]Opis[/bold]: Zabicie istoty rozumnej ze złośliwym zamiarem.
 
+  [bold]Zalecana minimalna kara:[/bold] 4:00
   [bold]Zalecana maksymalna kara:[/bold] 10:00
 
   [bold]Uwagi:[/bold] Tylko w przypadku śmierci ofiary, która wymaga wskrzeszenia, czyn ten zmienia się z usiłowania morderstwa w morderstwo.
@@ -265,6 +311,7 @@ SPDX-License-Identifier: MIT
 
   [bold]Opis[/bold]: Zabicie trzech lub więcej istot rozumnych ze złośliwym zamiarem.
 
+  [bold]Zalecana minimalna kara:[/bold] Permamentna
   [bold]Zalecana maksymalna kara:[/bold] Permamentna
 
   [bold]Uwagi:[/bold] Ma zastosowanie wyłącznie w przypadku wielokrotnych, umyślnych zabójstw.
@@ -273,7 +320,8 @@ SPDX-License-Identifier: MIT
 
   [bold]Opis[/bold]: Lekkomyślne narażenie siebie lub innych na niebezpieczeństwo poprzez bezpośrednie działanie lub zaniechanie działania jako członek dowództwa.
 
-  [bold]Zalecana maksymalna kara:[/bold] Permamentna / Degradacja
+  [bold]Zalecana minimalna kara:[/bold] Degradacja
+  [bold]Zalecana maksymalna kara:[/bold] Permamentna
 
   [bold]Uwagi:[/bold] Obejmuje to spowodowanie śmierci jednego lub więcej członków załogi, nie naprawienie / nie złagodzenie poważnych uszkodzeń stacji lub spowodowanie poważnych uszkodzeń stacji. Zarzut ten ma być kierowany do członków dowództwa i może zostać dodany do ich akt osobowych.
 
@@ -281,6 +329,7 @@ SPDX-License-Identifier: MIT
 
   [bold]Opis[/bold]: Sprawienie, że ciało jest niemożliwe do wskrzeszenia.
 
+  [bold]Zalecana minimalna kara:[/bold] 15:00
   [bold]Zalecana maksymalna kara:[/bold] Permamentna
 
   [bold]Uwagi:[/bold] Obejmuje to rozczłonkowanie, wyrzucenie w przestrzeń kosmiczną, celowe ukrycie ciała prowadzące do jego rozkładu lub inne sposoby uniemożliwiające wskrzeszenia ciała z duszą.
@@ -289,14 +338,16 @@ SPDX-License-Identifier: MIT
 
   [bold]Opis[/bold]: Odmowa zastosowania się do rozsądnej procedury osłony umysłu.
 
+  [bold]Zalecana minimalna kara:[/bold] Permamentna do czasu akceptacji osłony
   [bold]Zalecana maksymalna kara:[/bold] Permamentna
 
-  [bold]Uwagi:[/bold] Ma zastosowanie, jeśli podejrzany jest skrajnie niechętny do współpracy lub implant nie działa z powodu zbyt zaawansowanego stanu psychicznego więźnia. Jeśli implant nie działa, zalecana maksymalna kara zostaje podwyższona do przyspieszonej egzekucji.
+  [bold]Uwagi:[/bold] Ma zastosowanie, jeśli podejrzany jest skrajnie niechętny do współpracy lub implant nie działa z powodu zbyt zaawansowanego stanu psychicznego więźnia. Jeśli implant nie działa, zalecana maksymalna kara zostaje podwyższona do przyspieszonej egzekucji. Należy zauważyć, że osoby cierpiące na neuroawersję nie mogą odmówić zastosowania osłony umysłu w przypadku potwierdzonego zagrożenia praniem mózgu lub kontrolą umysłu, ale po ustąpieniu zagrożenia należy usunąć z nich implanty. Odmowa usunięcia osłon umysłu u osób cierpiących na neuroawersję po ustąpieniu zagrożenia może stanowić zaniedbanie medyczne w ramach zarzutu narażenia na niebezpieczeństwo.
 
   ## Terroryzm
 
   [bold]Opis[/bold]: Podejmowanie złośliwych działań destrukcyjnych, które grożą zniszczeniem lub skutecznie niszczą statek lub siedlisko.
 
+  [bold]Zalecana minimalna kara:[/bold] Permamentna
   [bold]Zalecana maksymalna kara:[/bold] Egzekucja
 
   [bold]Uwagi:[/bold] Podsumowując: ekstremalny sabotaż systemów stacji lub uruchomienie systemów samozniszczenia.
