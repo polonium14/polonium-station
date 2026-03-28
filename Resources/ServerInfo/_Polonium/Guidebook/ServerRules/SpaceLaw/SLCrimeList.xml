@@ -141,7 +141,7 @@ SPDX-License-Identifier: MIT
         [color=black]Wandalizm (C)\nOstrzeż. - 2:00[/color]
       </Box>
     </ColorBox>
-    <ColorBox Color="#dae8fc">>
+    <ColorBox Color="#dae8fc">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         [color=black]Uszkodzenie/zniszczenie mienia (C)\n2:00 - 4:00[/color]
       </Box>
