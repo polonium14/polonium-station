@@ -6,3 +6,6 @@ secretplus-mid-description = Zmagaj się z nieznanymi, ale wyważonymi zagrożen
 
 secretplus-admeme-title = Secret+ Chaos
 secretplus-admeme-description = Jeśli coś może się wydarzyć, to się wydarzy.
+
+survivalplus-title = Survival+
+survivalplus-description = Zaczyna się dość spokojnie. Ale kończy się nie do końca tak samo.

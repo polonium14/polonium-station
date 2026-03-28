@@ -218,6 +218,18 @@
   - SecretPlusMid
 
 - type: gamePreset
+  id: SurvivalPlusMid
+  alias:
+  - survivalplus
+  - newsurvival
+  - survivalnew
+  name: survivalplus-title
+  description: survivalplus-description
+  showInVote: true
+  rules:
+  - SecretPlusRampingMid
+
+- type: gamePreset
   id: SecretPlusAdmeme
   alias:
   - secretplusadmeme
