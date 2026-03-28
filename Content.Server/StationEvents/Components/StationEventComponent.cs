@@ -15,7 +15,7 @@
 //
 // SPDX-License-Identifier: MIT
 
-using Content.Server._Goobstation.StationEvents;
+using Content.Shared._Goobstation.StationEvents;
 using Content.Server._Goobstation.StationEvents.Metric; // Goobstation
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes; // Goobstation
