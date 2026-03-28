@@ -75,7 +75,7 @@
     reoccurrenceDelay: 30
     duration: 1
     maxOccurrences: 1 # should be the same as [copies] in shuttle_incoming_event.yml
-  eventType: FriendlySpawn # Goobstation
+    eventType: FriendlySpawn # Goobstation
   # Goobstation
   - type: GameRule
     chaosScore: -140

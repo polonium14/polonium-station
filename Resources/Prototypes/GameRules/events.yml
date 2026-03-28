@@ -435,10 +435,10 @@
       Combat: 40
       Death: 100
       Medical: 100
-      eventType: HostilesSpawn # Goobstation
-    # Goobstation
-    - type: GameRule
-      chaosScore: 450
+    eventType: HostilesSpawn # Goobstation
+  # Goobstation
+  - type: GameRule
+    chaosScore: 450
   - type: RandomSpawnRule
     prototype: MobRevenant
 

@@ -45,10 +45,6 @@
     startColor: "#18abf5"
     startAudio:
       path: /Audio/Announcements/announce.ogg
-    eventType: FreeStuff # Goobstation
-  # Goobstation
-  - type: GameRule
-    chaosScore: -20
   - type: CargoGiftsRule
     sender: cargo-gift-default-sender
 
