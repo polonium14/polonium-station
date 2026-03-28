@@ -20,6 +20,9 @@
       Hostile: 100
       Medical: 100
       Death: 100
+    eventType: HostilesSpawn
+  - type: GameRule
+    chaosScore: 200
   - type: AlertLevelInterceptionRule
   - type: AntagSelection
     selectionTime: PostPlayerSpawn
@@ -55,6 +58,9 @@
       Hostile: 100
       Medical: 100
       Death: 100
+    eventType: HostilesSpawn
+  - type: GameRule
+    chaosScore: 600
   - type: AlertLevelInterceptionRule
   - type: AntagSelection
     selectionTime: PostPlayerSpawn
@@ -91,6 +97,9 @@
       Hostile: 200
       Medical: 150
       Death: 200
+    eventType: HostilesSpawn
+  - type: GameRule
+    chaosScore: 500
   - type: AlertLevelInterceptionRule
   - type: AntagSelection
     selectionTime: PostPlayerSpawn
@@ -132,6 +141,9 @@
       Power: 50
       Medical: 50
       Atmos: 50
+    eventType: HostilesSpawn
+  - type: GameRule
+    chaosScore: 900
   - type: AntagSelection
     selectionTime: PostPlayerSpawn
     definitions:
@@ -168,6 +180,9 @@
       Hostile: 40
       Medical: 40
       Death: 40
+    eventType: Chaotic
+  - type: GameRule
+    chaosScore: 150
   - type: RandomEntityStorageSpawnRule
     prototype: MobSkeletonCloset
   - type: Tag
