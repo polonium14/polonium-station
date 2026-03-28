@@ -47,12 +47,12 @@ SPDX-License-Identifier: MIT
     </ColorBox>
     <ColorBox Color="#ffcc67">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [color=black]Niezastosowanie się do poleceń (L)[/color]\nOstrzeż. - 2:00
+        [color=black]Niezastosowanie się do poleceń (L)\nOstrzeż. - 2:00[/color]
       </Box>
     </ColorBox>
     <ColorBox Color="#ffcc67">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [color=black]Naruszenie zatrzymania (L)[/color]\n2:00 - 4:00
+        [color=black]Naruszenie zatrzymania (L)\n2:00 - 4:00[/color]
       </Box>
     </ColorBox>
     <ColorBox>
@@ -94,12 +94,12 @@ SPDX-License-Identifier: MIT
     </ColorBox>
     <ColorBox Color="#fd6864">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [color=black]Narażenie na\nniebezpieczeństwo (M)[/color]\n2:00 - 4:00
+        [color=black]Narażenie na\nniebezpieczeństwo (M)\n2:00 - 4:00[/color]
       </Box>
     </ColorBox>
     <ColorBox Color="#fd6864">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [color=black]Nieumyślne spowodowanie śmierci (M)[/color]\n4:00 - 10:00
+        [color=black]Nieumyślne spowodowanie śmierci (M)\n4:00 - 10:00[/color]
       </Box>
     </ColorBox>
     <ColorBox>
@@ -113,32 +113,32 @@ SPDX-License-Identifier: MIT
     </ColorBox>
     <ColorBox Color="#68cbd0">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [color=black]Zakłócanie porządku (R)[/color]\nOstrzeż. - 2:00
+        [color=black]Zakłócanie porządku (R)\nOstrzeż. - 2:00[/color]
       </Box>
     </ColorBox>
     <ColorBox Color="#68cbd0">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [color=black]Zamieszki (R)[/color]\n2:00 - 4:00
+        [color=black]Zamieszki (R)\n2:00 - 4:00[/color]
       </Box>
     </ColorBox>
     <ColorBox Color="#fd6864">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [color=black]Napaść (M)\nOstrzeż. - 3:00\nPobicie (M)\n1:00 - 3:00[/color]
-      </Box>0
-    </ColorBox>
-    <ColorBox Color="#fd6864">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [color=black]Morderstwo (M)[/color]\n4:00 - 10:00
+        [color=black]Napaść/pobicie (M)\nOstrzeż. - 3:00\nKumuluje się z różnymi ofiarami[/color]
       </Box>
     </ColorBox>
     <ColorBox Color="#fd6864">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [color=black]Masowe morderstwo (M)[/color]Perma - Perma
+        [color=black]Morderstwo (M)\n4:00 - 10:00[/color]
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#fd6864">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]Masowe morderstwo (M)\nPerma - Perma[/color]
       </Box>
     </ColorBox>
     <ColorBox Color="#dae8fc">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [color=black]Wandalizm (C)[/color]\nOstrzeż. - 2:00
+        [color=black]Wandalizm (C)\nOstrzeż. - 2:00[/color]
       </Box>
     </ColorBox>
     <ColorBox Color="#dae8fc">>
