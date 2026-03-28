@@ -218,6 +218,18 @@
   - SecretPlusMid
 
 - type: gamePreset
+  id: SecretPlusMidHigh
+  alias:
+  - secretplusmidhigh
+  - secretpluslowpop
+  - secretplusmidchaos
+  name: secretplus-midhigh-title
+  description: secretplus-midhigh-description
+  showInVote: true
+  rules:
+  - SecretPlusMidHigh
+
+- type: gamePreset
   id: SurvivalPlusMid
   alias:
   - survivalplus
