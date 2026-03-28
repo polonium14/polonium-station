@@ -227,7 +227,7 @@ public sealed class SecretPlusSystem : GameRuleSystem<SecretPlusComponent>
 
     }
 
-    private ProtoId<TagPrototype> _loneSpawnTag = "LoneRunRule";
+    // private ProtoId<TagPrototype> _loneSpawnTag = "LoneRunRule";
 
     /// <summary>
     /// Tries to spawn roundstart antags at the beginning of the round.
@@ -291,7 +291,7 @@ public sealed class SecretPlusSystem : GameRuleSystem<SecretPlusComponent>
             if (weights.Count == 0
                 || (!scheduler.Comp.IgnoreIncompatible
                     && entProto.TryGetComponent<TagComponent>(out var tagComp, _factory)
-                    && _tag.HasTag(tagComp, _loneSpawnTag)
+                    // && _tag.HasTag(tagComp, _loneSpawnTag)
                 )
             )
                 return;

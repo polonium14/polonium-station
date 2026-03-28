@@ -205,6 +205,7 @@
   showInVote: true
   rules:
   - SecretPlusLow
+  - BasicRoundstartVariation
 
 - type: gamePreset
   id: SecretPlusMid
@@ -217,6 +218,7 @@
   showInVote: true
   rules:
   - SecretPlusMid
+  - BasicRoundstartVariation
 
 - type: gamePreset
   id: SecretPlusMidHigh
@@ -229,6 +231,7 @@
   showInVote: true
   rules:
   - SecretPlusMidHigh
+  - BasicRoundstartVariation
 
 - type: gamePreset
   id: SurvivalPlusMid
@@ -241,6 +244,7 @@
   showInVote: true
   rules:
   - SecretPlusRampingMid
+  - BasicRoundstartVariation
 
 - type: gamePreset
   id: SecretPlusAdmeme
@@ -254,3 +258,4 @@
   showInVote: false # 1984
   rules:
   - SecretPlusAdmeme
+  - BasicRoundstartVariation
