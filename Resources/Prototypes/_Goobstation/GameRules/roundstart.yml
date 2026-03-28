@@ -39,6 +39,7 @@
     - prefRoles: [ Changeling ]
       max: 5
       playerRatio: 30
+      chaosScore: 200
       lateJoinAdditional: true
       mindRoles:
       - MindRoleChangeling
@@ -190,6 +191,8 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: BlobRule
+  - type: GameRule
+    chaosScore: 1000
 
 - type: entity
   id: BlobGameMode
@@ -199,6 +202,7 @@
   - type: BlobRule
   - type: GameRule
     minPlayers: 15
+    chaosScore: 1000
     delay: # 7-10 minutes
       min: 420
       max: 600
@@ -240,6 +244,9 @@
       Power: 70
       Medical: 70
       Atmos: 70
+    eventType: HostilesSpawn
+  - type: GameRule
+    chaosScore: 1000
   - type: BlobSpawnRule
     carrierBlobProtos:
     - SpawnPointGhostBlobRat

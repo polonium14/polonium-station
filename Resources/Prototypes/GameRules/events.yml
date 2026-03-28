@@ -981,7 +981,7 @@
     eventType: Chaotic # Goobstation
   # Goobstation
   - type: GameRule
-    chaosScore: 30
+    chaosScore: 50
   - type: JobDistributionErrorRule
     jobs:
     - SecurityClown

@@ -47,9 +47,12 @@
   parent: BaseStationEvent
   components:
   - type: StationEvent
-    weight: 5.5
+    weight: 0.4 #this should be rare to throw people off, otherwise it happens every shift
+    eventType: Neutral
     reoccurrenceDelay: 50
     minimumPlayers: 25
     duration: 20
     occursDuringRoundEnd: false
+  - type: GameRule
+    chaosScore: -50
   - type: MalignRiftSpawnRule

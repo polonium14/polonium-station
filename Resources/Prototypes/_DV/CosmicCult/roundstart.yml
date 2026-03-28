@@ -11,6 +11,7 @@
   - type: CosmicCultRule
   - type: GameRule
     minPlayers: 25
+    chaosScore: 1200
     delay:
       min: 60
       max: 120
