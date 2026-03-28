@@ -5,7 +5,7 @@
 
 using Robust.Shared.Prototypes;
 
-namespace Content.Server._Goobstation.StationEvents;
+namespace Content.Shared._Goobstation.StationEvents;
 
 /// <summary>
 ///   Used to specify which events should be possible in the current game director rule.
