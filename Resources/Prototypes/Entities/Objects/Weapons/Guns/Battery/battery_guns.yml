@@ -611,6 +611,7 @@
   - type: ProjectileBatteryAmmoProvider
     proto: BulletDisablerPractice
     fireCost: 50
+  - type: PacifismAllowedGun
 
 - type: entity
   name: disabler
@@ -642,6 +643,7 @@
   - type: Tag
     tags:
       - Taser
+  - type: PacifismAllowedGun
 
 - type: entity
   name: disabler SMG
@@ -681,6 +683,7 @@
   - type: Appearance
   - type: StaticPrice
     price: 260
+  - type: PacifismAllowedGun
 
 - type: entity
   name: taser
@@ -717,6 +720,7 @@
     steps: 5
     zeroVisible: true
   - type: Appearance
+  - type: PacifismAllowedGun
 
 - type: entity
   name: antique laser pistol
