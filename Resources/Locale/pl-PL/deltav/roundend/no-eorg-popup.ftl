@@ -3,11 +3,11 @@
 #
 # SPDX-License-Identifier: MIT
 
-no-eorg-popup-title = Funky Station
-no-eorg-popup-label = Welcome to the End of Round!
-no-eorg-popup-message = [bold]End-of-round grief (EORG)[/bold] is not allowed. Please stay in character until the lobby screen appears to maintain an immersive environment for everyone. Thank you for respecting the community rules!
-no-eorg-popup-rule = [bold][color=#a4885c]Rule 13: No End-Of-Round Griefing (EORG).[/color][/bold]
-no-eorg-popup-rule-text = This includes attacking, destroying, polluting, and injuring without reason both at and on the way to Central Command. Remember that you are playing a character throughout the round. Failure to abide by this will result in a 1 day ban, minimum.
-no-eorg-popup-close-button = Sounds good!
-no-eorg-popup-close-button-wait = The close button will be enabled after { $time } seconds.
-no-eorg-popup-skip-checkbox = Don't show this again.
+no-eorg-popup-title = Polonium Station
+no-eorg-popup-label = Koniec Rundy!
+no-eorg-popup-message = Fajnie, że przetrwałeś do końca! Przypominamy, że [bold]griefing po zakończeniu rundy (EORG)[/bold] w dalszym ciągu jest zabroniony. Pozostań w swojej roli i poczekaj z nami na powrót do lobby. Dziękujemy za przestrzeganie zasad!
+no-eorg-popup-rule = [bold][color=#a4885c]Zasada C1: Zakaz griefingu (w tym EORG)[/color][/bold]
+no-eorg-popup-rule-text = Prosimy nie atakować innych i nie niszczyć mienie bez powodu. Złamanie tej zasady spowoduje ban na co najmniej 12 godzin.
+no-eorg-popup-close-button = Zrozumiałem
+no-eorg-popup-close-button-wait = Przycisk zamknięcia będzie dostępny za { $time } sekund.
+no-eorg-popup-skip-checkbox = Nie wyświetlaj tego ponownie.
