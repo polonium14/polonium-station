@@ -41,6 +41,7 @@ using Robust.Shared.Utility;
 using System.Linq;
 using Content.Shared.Verbs;
 using Content.Shared.Forensics.Components;
+using Content.Shared.Speech.Muting;
 
 namespace Content.Server._Shitmed.Medical.Surgery;
 
@@ -273,6 +274,9 @@ public sealed class SurgerySystem : SharedSurgerySystem
             return;
 
         if (HasComp<PainNumbnessComponent>(args.Body))
+            return;
+
+        if (HasComp<MutedComponent>(args.Body))
             return;
 
         _chat.TryEmoteWithChat(args.Body, ent.Comp.Emote);
