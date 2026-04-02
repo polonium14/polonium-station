@@ -18,6 +18,8 @@
   - /Audio/Announcements/RoundEnd/disappointed.ogg
   - /Audio/Announcements/RoundEnd/notevenpaidforthis.ogg
   - /Audio/Announcements/RoundEnd/stalemate.ogg
+  - /Audio/_Polonium/Announcements/RoundEnd/ale_urwal.ogg
+  - /Audio/_Polonium/Announcements/RoundEnd/jestem_hardkorem.ogg
 
 - type: soundCollection
   id: PowerOn
