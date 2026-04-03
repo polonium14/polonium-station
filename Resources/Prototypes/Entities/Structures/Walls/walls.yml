@@ -1568,11 +1568,10 @@
 # Mime
 
 - type: entity
-  id: WallInvisible
+  id: WallInvisibleBase
   name: invisible wall
+  abstract: true
   components:
-  - type: TimedDespawn
-    lifetime: 15
   - type: Tag
     tags:
       - Wall
@@ -1589,6 +1588,25 @@
         layer:
         - GlassLayer
   - type: Airtight
+
+- type: entity
+  id: WallInvisiblePermanent
+  name: invisible wall
+  suffix: permanent
+  parent: [WallInvisibleBase, MarkerBase]
+  components:
+  - type: Sprite
+    layers:
+    - state: blue
+
+- type: entity
+  id: WallInvisible
+  name: invisible wall
+  parent: WallInvisibleBase
+  suffix: temporary
+  components:
+  - type: TimedDespawn
+    lifetime: 15
 
 - type: entity
   id: WallForce
