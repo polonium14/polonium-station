@@ -11,6 +11,7 @@ using Content.Shared.Popups;
 using Content.Shared.Interaction.Events; // Polonium Edit, added
 using Content.Shared.Weapons.Ranged.Events;
 using Content.Shared.Weapons.Ranged.Systems;
+using Content.Shared.Wieldable.Components;  // Polonium Edit, added
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 
@@ -26,7 +27,7 @@ public abstract class SharedPumpActionSystem : EntitySystem
         SubscribeLocalEvent<PumpActionComponent, ExaminedEvent>(OnExamined, before: [typeof(SharedGunSystem)]);
         SubscribeLocalEvent<PumpActionComponent, AttemptShootEvent>(OnAttemptShoot);
         SubscribeLocalEvent<PumpActionComponent, GunShotEvent>(OnGunShot);
-        SubscribeLocalEvent<PumpActionComponent, UseInHandEvent>(OnPumpUse, before: [typeof(SharedGunSystem)]); // Polonium Edit OnUniqueActionEvent -> UseInHandEvent, OnUniqueAction -> OnPumpUse
+        SubscribeLocalEvent<PumpActionComponent, UseInHandEvent>(OnUseInHand, before: [typeof(SharedGunSystem)]); // Polonium Edit OnUniqueActionEvent -> UseInHandEvent, OnUniqueAction -> OnUseInHand
         SubscribeLocalEvent<PumpActionComponent, EntRemovedFromContainerMessage>(OnEntRemovedFromContainer);
     }
 
@@ -57,9 +58,12 @@ public abstract class SharedPumpActionSystem : EntitySystem
         Dirty(ent);
     }
 
-    private void OnPumpUse(Entity<PumpActionComponent> ent, ref UseInHandEvent args) // Polonium Edit OnUniqueAction -> OnPumpUse, UserUID -> User
+    private void OnUseInHand(Entity<PumpActionComponent> ent, ref UseInHandEvent args) // Polonium Edit OnUniqueAction -> OnUseInHand, UserUID -> User
     {
         if (args.Handled)
+            return;
+
+        if (TryComp(ent, out WieldableComponent? wieldableComp) && !wieldableComp.Wielded)
             return;
 
         if (Pump(ent, args.User)) // Polonium Edit UserUID -> User
@@ -81,8 +85,8 @@ public abstract class SharedPumpActionSystem : EntitySystem
 
         if (ammo.Count <= 0)
         {
-            _popup.PopupClient(Loc.GetString("cm-gun-no-ammo-message"), user, user);
-            return true;
+            _audio.PlayPredicted(ent.Comp.Sound, ent, user);
+            return false;
         }
 
         if (!ent.Comp.Running || ent.Comp.Pumped)
