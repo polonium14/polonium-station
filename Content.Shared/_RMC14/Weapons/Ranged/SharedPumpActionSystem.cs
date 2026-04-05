@@ -6,7 +6,7 @@
 using Content.Shared._RMC14.Weapons.Common;
 using Content.Shared.Examine;
 using Content.Shared.Popups;
-using Content.Shared.Interaction.Events;
+using Content.Shared.Interaction.Events; // Polonium Edit, added
 using Content.Shared.Weapons.Ranged.Events;
 using Content.Shared.Weapons.Ranged.Systems;
 using Robust.Shared.Audio.Systems;
@@ -24,7 +24,7 @@ public abstract class SharedPumpActionSystem : EntitySystem
         SubscribeLocalEvent<PumpActionComponent, ExaminedEvent>(OnExamined, before: [typeof(SharedGunSystem)]);
         SubscribeLocalEvent<PumpActionComponent, AttemptShootEvent>(OnAttemptShoot);
         SubscribeLocalEvent<PumpActionComponent, GunShotEvent>(OnGunShot);
-        SubscribeLocalEvent<PumpActionComponent, UseInHandEvent>(OnPumpUse, before: [typeof(SharedGunSystem)]);
+        SubscribeLocalEvent<PumpActionComponent, UseInHandEvent>(OnPumpUse, before: [typeof(SharedGunSystem)]); // Polonium Edit OnUniqueActionEvent -> UseInHandEvent, OnUniqueAction -> OnPumpUse
         SubscribeLocalEvent<PumpActionComponent, EntRemovedFromContainerMessage>(OnEntRemovedFromContainer);
     }
 
@@ -55,12 +55,12 @@ public abstract class SharedPumpActionSystem : EntitySystem
         Dirty(ent);
     }
 
-    private void OnPumpUse(Entity<PumpActionComponent> ent, ref UseInHandEvent args)
+    private void OnPumpUse(Entity<PumpActionComponent> ent, ref UseInHandEvent args) // Polonium Edit OnUniqueAction -> OnPumpUse, UserUID -> User
     {
         if (args.Handled)
             return;
 
-        if (Pump(ent, args.User))
+        if (Pump(ent, args.User)) // Polonium Edit UserUID -> User
             args.Handled = true;
     }
 
