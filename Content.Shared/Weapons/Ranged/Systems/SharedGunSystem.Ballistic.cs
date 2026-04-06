@@ -81,9 +81,10 @@ public abstract partial class SharedGunSystem
             return;
 
         if (GetBallisticShots(component) >= component.Capacity){
-            Popup(Loc.GetString("gun-ballistic-transfer-full"), uid, args.User); 
+            Popup(Loc.GetString("gun-ballistic-transfer-target-full", ("entity", args.Target)), uid, args.User); 
             args.Handled = true;
-            return;}
+            return;
+            }
 
         component.Entities.Add(args.Used);
         Containers.Insert(args.Used, component.Container);
