@@ -138,6 +138,7 @@
   - type: ExplodeOnTrigger
   - type: CartridgeAmmo # Polonium Edit
     proto: BulletSeismicCharge
+    deleteOnSpawn: true
   - type: Tag
     tags:
     - SeismicCharge

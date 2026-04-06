@@ -7,7 +7,6 @@
   parent: [ ShuttleGunBase, ConstructibleMachine]
   name: EXP-SMC "KosmoWstrząs"
   description: Salvage stationary mining turret. Requires seismic charges, extremely effective for asteroid excavation.
-  categories: [ DoNotMap ]
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Shuttles/kinetic.rsi
@@ -98,3 +97,47 @@
     proto: SeismicCharge
     soundInsert:
       path: /Audio/Weapons/Guns/Gunshots/grenade_launcher.ogg
+
+- type: entity
+  id: ShuttleGunPlasmaCutter
+  parent: [ ShuttleGunBase, ConstructibleMachine, BaseWeaponBatterySmall]
+  name: PLM-CTT "Shuttle Cutter"
+  description: Basic stationary plasma cutter unit. Effective against asteroids. Uses regular power cells to fire, and has slow rate of fire.
+  categories: [ DoNotMap ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Shuttles/kinetic.rsi
+    layers:
+    - state: ptk-800
+    - state: mag-7
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+        - !type:ChangeConstructionNodeBehavior
+          node: machineFrame
+        - !type:DoActsBehavior
+          acts: ["Destruction"]
+  - type: Gun
+    fireRate: 5
+    useKey: false
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/ship_svalinn.ogg
+      params:
+        variation: 0.05
+  - type: Machine
+    board: ShuttleGunSvalinnMachineGunCircuitboard
+  - type: Battery
+    maxCharge: 1500
+    startingCharge: 1500
+  - type: MaterialEnergy
+    materialWhiteList: [Plasma]
+  - type: ProjectileBatteryAmmoProvider
+    proto: BulletPlasmaCutterStrong
+    fireCost: 100
