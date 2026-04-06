@@ -85,7 +85,7 @@ public abstract partial class SharedGunSystem
             Popup(Loc.GetString("gun-ballistic-transfer-target-full", ("entity", args.Target)), uid, args.User); 
             args.Handled = true;
             return;
-            }
+        }
 
         component.Entities.Add(args.Used);
         Containers.Insert(args.Used, component.Container);
