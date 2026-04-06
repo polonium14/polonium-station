@@ -22,10 +22,13 @@
 // SPDX-FileCopyrightText: 2025 DrSmugleaf <10968691+DrSmugleaf@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
 // SPDX-FileCopyrightText: 2025 Toaster <mrtoastymyroasty@gmail.com>
+// SPDX-FileCopyrightText: 2025 Toastermeister <215405651+Toastermeister@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 WesEfird <wesleyefird@live.com>
 // SPDX-FileCopyrightText: 2025 Wesley Efird <thisisw3@gmail.com>
 // SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+// SPDX-FileCopyrightText: 2026 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 Szyszkrzyneczka <rammus.vult@gmail.com>
 //
 // SPDX-License-Identifier: MIT
 
@@ -79,7 +82,11 @@ public abstract partial class SharedGunSystem
             return;
 
         if (GetBallisticShots(component) >= component.Capacity)
+        {
+            Popup(Loc.GetString("gun-ballistic-transfer-target-full", ("entity", args.Target)), uid, args.User); 
+            args.Handled = true;
             return;
+        }
 
         component.Entities.Add(args.Used);
         Containers.Insert(args.Used, component.Container);
