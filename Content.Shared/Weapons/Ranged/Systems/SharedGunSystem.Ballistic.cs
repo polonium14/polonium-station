@@ -80,7 +80,8 @@ public abstract partial class SharedGunSystem
         if (_whitelistSystem.IsWhitelistFailOrNull(component.Whitelist, args.Used))
             return;
 
-        if (GetBallisticShots(component) >= component.Capacity){
+        if (GetBallisticShots(component) >= component.Capacity)
+        {
             Popup(Loc.GetString("gun-ballistic-transfer-target-full", ("entity", args.Target)), uid, args.User); 
             args.Handled = true;
             return;
