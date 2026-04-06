@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: K-Dynamic
-  changes:
-  - message: Stun batons play thrusting instead of wide swing animation on precise
-      attacks (LMB).
-    type: Tweak
-  id: 7863
-  time: '2025-01-28T18:55:08.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34693
 - author: Emisse
   changes:
   - message: Drozd sprites have been updated.
@@ -4094,3 +4086,10 @@
   id: 9170
   time: '2026-04-03T07:42:52.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/538
+- author: Szyszkrzyneczka
+  changes:
+  - message: Pompowanie strzelby na klawisz Z zamiast spacji
+    type: Tweak
+  id: 9171
+  time: '2026-04-06T11:33:35.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/540

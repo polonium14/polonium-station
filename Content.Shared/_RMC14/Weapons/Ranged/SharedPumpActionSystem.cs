@@ -1,13 +1,17 @@
+// SPDX-FileCopyrightText: 2025 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 jackel234 <52829582+jackel234@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+// SPDX-FileCopyrightText: 2026 Szyszkrzyneczka <rammus.vult@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 using Content.Shared._RMC14.Weapons.Common;
 using Content.Shared.Examine;
 using Content.Shared.Popups;
+using Content.Shared.Interaction.Events; // Polonium Edit, added
 using Content.Shared.Weapons.Ranged.Events;
 using Content.Shared.Weapons.Ranged.Systems;
+using Content.Shared.Wieldable.Components;  // Polonium Edit, added
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 
@@ -23,7 +27,7 @@ public abstract class SharedPumpActionSystem : EntitySystem
         SubscribeLocalEvent<PumpActionComponent, ExaminedEvent>(OnExamined, before: [typeof(SharedGunSystem)]);
         SubscribeLocalEvent<PumpActionComponent, AttemptShootEvent>(OnAttemptShoot);
         SubscribeLocalEvent<PumpActionComponent, GunShotEvent>(OnGunShot);
-        SubscribeLocalEvent<PumpActionComponent, UniqueActionEvent>(OnUniqueAction);
+        SubscribeLocalEvent<PumpActionComponent, UseInHandEvent>(OnUseInHand, before: [typeof(SharedGunSystem)]); // Polonium Edit OnUniqueActionEvent -> UseInHandEvent, OnUniqueAction -> OnUseInHand
         SubscribeLocalEvent<PumpActionComponent, EntRemovedFromContainerMessage>(OnEntRemovedFromContainer);
     }
 
@@ -54,12 +58,15 @@ public abstract class SharedPumpActionSystem : EntitySystem
         Dirty(ent);
     }
 
-    private void OnUniqueAction(Entity<PumpActionComponent> ent, ref UniqueActionEvent args)
+    private void OnUseInHand(Entity<PumpActionComponent> ent, ref UseInHandEvent args) // Polonium Edit OnUniqueAction -> OnUseInHand, UserUID -> User
     {
         if (args.Handled)
             return;
 
-        if (Pump(ent, args.UserUid))
+        if (TryComp(ent, out WieldableComponent? wieldableComp) && !wieldableComp.Wielded)
+            return;
+
+        if (Pump(ent, args.User)) // Polonium Edit UserUID -> User
             args.Handled = true;
     }
 
@@ -78,8 +85,8 @@ public abstract class SharedPumpActionSystem : EntitySystem
 
         if (ammo.Count <= 0)
         {
-            _popup.PopupClient(Loc.GetString("cm-gun-no-ammo-message"), user, user);
-            return true;
+            _audio.PlayPredicted(ent.Comp.Sound, ent, user);
+            return false;
         }
 
         if (!ent.Comp.Running || ent.Comp.Pumped)
