@@ -1,0 +1,22 @@
+- type: entity
+  id: BulletSeismicCharge
+  name: seismic charge
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Bombs/seismic.rsi
+    layers:
+      - state: icon
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Cryo
+    totalIntensity: 120
+    intensitySlope: 2
+    maxIntensity: 30
+    canCreateVacuum: false
+    maxTileBreak: 30
+  - type: PointLight
+    radius: 1
+    color: orange
+    energy: 0.5

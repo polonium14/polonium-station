@@ -1,0 +1,96 @@
+- type: entity
+  id: ShuttleGunSeismic
+  parent: [ ShuttleGunBase, ConstructibleMachine]
+  name: EXP-SMC "KosmoWstrząs"
+  description: Salvage stationary mining turret. Requires seismic charges, extremely effective for asteroid excavation.
+  categories: [ DoNotMap ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Shuttles/kinetic.rsi
+    layers:
+    - state: ptk-800
+    - state: mag-7
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+      hidden_slot: !type:ContainerSlot
+      ballistic-ammo: !type:Container
+  - type: ItemSlots
+    slots:
+      hidden_slot:
+        name: computer_slot_accessory
+        whitelist:
+          tags:
+          - ListeningBug
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+        - !type:ChangeConstructionNodeBehavior
+          node: machineFrame
+        - !type:DoActsBehavior
+          acts: ["Destruction"]
+  - type: Gun
+    projectileSpeed: 20
+    fireRate: 2
+    selectedMode: SemiAuto
+    angleDecay: 45
+    minAngle: 5
+    maxAngle: 15
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/kinetic_accel.ogg
+      params:
+        variation: 0.12
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+        - SeismicCharge
+    capacity: 1
+    proto: SeismicCharge
+    soundInsert:
+      path: /Audio/Weapons/Guns/Gunshots/grenade_launcher.ogg
+  - type: Machine
+    board: ShuttleGunKineticCircuitboard
+
+
+- type: entity
+  id: ShuttleGunPirateCannonSeismic
+  parent: ShuttleGunBase
+  name: pirate ship cannon
+  description: Kaboom!
+  components:
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+        - !type:DoActsBehavior
+          acts: ["Destruction"]
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Shuttles/pirate_cannon.rsi
+    layers:
+    - state: base
+  - type: Gun
+    fireRate: 1
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/mateba.ogg
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+        - SeismicCharge
+    capacity: 1
+    proto: SeismicCharge
+    soundInsert:
+      path: /Audio/Weapons/Guns/Gunshots/grenade_launcher.ogg

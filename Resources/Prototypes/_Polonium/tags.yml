@@ -5,4 +5,7 @@
   id: PMMMachineGunMagazine
 
 - type: Tag
+  id: SeismicCharge
+
+- type: Tag
   id: VisMPSPistolMagazine
