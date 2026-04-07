@@ -68,23 +68,26 @@ namespace Content.Server._Goobstation.MaterialEnergy
             if (materialLeft == 0)
             {
                 chargeToAdd = totalMaterial;
+                var toDel = (EntityUid) _material;
+                QueueDel(toDel);
             }
             else if (materialLeft > 0)
             {
                 chargeToAdd = (totalMaterial - materialLeft);
+                var toDel = _stack.Split(
+                    (EntityUid) _material,
+                    chargeToAdd / materialPerSheet,
+                    Transform(_material).Coordinates);
+                QueueDel(toDel);
             }
             else
             {
                 chargeToAdd = Math.Abs(Math.Abs(materialLeft) - chargeDiff);
+                var toDel = (EntityUid) _material;
+                QueueDel(toDel);
             }
 
             _batterySystem.AddCharge(cutter, chargeToAdd);
-
-            var toDel = _stack.Split(
-                (EntityUid) _material,
-                chargeToAdd / materialPerSheet,
-                Transform(_material).Coordinates);
-            QueueDel(toDel);
         }
     }
 }
