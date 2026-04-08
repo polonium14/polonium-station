@@ -1997,6 +1997,34 @@
     collection: FootstepHull
   itemDrop: PartRodMetal1 #same case as FloorHull
 
+# Invisible floor tiles - Polonium
+- type: tile
+  id: FloorHullInvisible
+  name: tiles-hull-invisible
+  sprite: /Textures/Tiles/invisible.png
+  baseTurf: Plating
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepHull
+  itemDrop: FloorTileItemSteel
+  heatCapacity: 100000
+  indestructible: true
+  reinforced: true
+
+- type: tile
+  id: FloorInvisible
+  name: tiles-invisible-floor
+  sprite: /Textures/Tiles/invisible.png
+  baseTurf: Plating
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepFloor
+  itemDrop: FloorTileItemSteel
+  heatCapacity: 100000
+  indestructible: true
+  reinforced: true
+  tileRipResistance: 45000
+
 # Faux sci tiles
 
 # Grass
