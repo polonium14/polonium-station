@@ -43,11 +43,14 @@ namespace Content.Server._Goobstation.MaterialEnergy
             foreach (var fueltype in component.MaterialWhiteList)
             {
                 if (_composition.MaterialComposition.ContainsKey(fueltype))
+                {
                     AddBatteryCharge(
                         uid,
                         args.Used,
                         _composition.MaterialComposition[fueltype],
                         materialStack.Count);
+                    args.Handled = true;
+                }
             }
         }
 
