@@ -43,52 +43,40 @@ namespace Content.Server._Goobstation.MaterialEnergy
 
             foreach (var fueltype in component.MaterialWhiteList)
             {
-                if (_composition.MaterialComposition.ContainsKey(fueltype))
-                    AddBatteryCharge(
-                        uid,
-                        args.Used,
-                        _composition.MaterialComposition[fueltype],
-                        materialStack.Count);
-            }
-        }
+                if (_composition.MaterialComposition.ContainsKey(fueltype)){
+                    if (_batterySystem.GetChargeDifference(uid) == 0)
+                        return;
 
-        private void AddBatteryCharge(
-            EntityUid cutter,
-            EntityUid _material,
-            int materialPerSheet,
-            int sheetsInStack)
-        {
-            var chargeDiff = _batterySystem.GetChargeDifference(cutter);
-            if (chargeDiff == 0)
-                return;
+                    var totalMaterial = _composition.MaterialComposition[fueltype] * materialStack.Count;
+                    var materialLeft = totalMaterial - _batterySystem.GetChargeDifference(uid);
+                    var chargeToAdd = 0;
 
-            var totalMaterial = materialPerSheet * sheetsInStack;
-            var materialLeft = totalMaterial - chargeDiff;
-            var chargeToAdd = 0;
+                    if (materialLeft == 0)
+                    {
+                        chargeToAdd = totalMaterial;
+                        _stack.SetCount(args.Used, 0);
+                        args.Handled = true;
+                    }
+                    else if (materialLeft > 0)
+                    {
+                        chargeToAdd = Math.Abs(totalMaterial - materialLeft);
+                        var toDel = _stack.Split(
+                            (EntityUid) args.Used,
+                            chargeToAdd / _composition.MaterialComposition[fueltype],
+                            Transform(args.Used).Coordinates);
+                        QueueDel(toDel);
+                    }
+                    else
+                    {
+                        chargeToAdd = Math.Abs(Math.Abs(materialLeft) - _batterySystem.GetChargeDifference(uid));
+                        _stack.SetCount(args.Used, 0);
+                        args.Handled = true;
+                    }
 
-            if (materialLeft == 0)
-            {
-                chargeToAdd = totalMaterial;
-                var toDel = (EntityUid) _material;
-                QueueDel(toDel);
+                    _batterySystem.AddCharge(uid, chargeToAdd);
+                    return;
+                }
             }
-            else if (materialLeft > 0)
-            {
-                chargeToAdd = (totalMaterial - materialLeft);
-                var toDel = _stack.Split(
-                    (EntityUid) _material,
-                    chargeToAdd / materialPerSheet,
-                    Transform(_material).Coordinates);
-                QueueDel(toDel);
-            }
-            else
-            {
-                chargeToAdd = Math.Abs(Math.Abs(materialLeft) - chargeDiff);
-                var toDel = (EntityUid) _material;
-                QueueDel(toDel);
-            }
-
-            _batterySystem.AddCharge(cutter, chargeToAdd);
         }
     }
 }
