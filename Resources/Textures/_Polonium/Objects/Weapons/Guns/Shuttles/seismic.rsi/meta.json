@@ -1,0 +1,26 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Created by Szyszkrzyneczka for Polonium",
+    "size": {
+        "x": 64,
+        "y": 64
+    },
+    "states": [
+    {
+        "name": "exp-smc"
+    },
+    {
+        "name": "mag-1"
+    },
+    {
+        "name": "mag-2"
+    },
+    {
+        "name": "mag-3"
+    },
+    {
+        "name": "mag-4"
+    }
+    ]
+}

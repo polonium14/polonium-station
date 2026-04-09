@@ -57,6 +57,18 @@
   - ClothingMaskWeldingGas
 
 - type: technology
+  id: ShuttleSalvageEquipment
+  name: research-technology-shuttle-salvage-equipment
+  icon:
+    sprite: Objects/Tools/handdrill.rsi
+    state: handdrill
+  discipline: Industrial
+  tier: 1
+  cost: 1000 # Goobstation
+  recipeUnlocks:
+  - ShuttleGunSeismicCircuitboard
+
+- type: technology
   id: SpaceScanning
   name: research-technology-space-scanning
   icon:

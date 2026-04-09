@@ -954,6 +954,8 @@
     - NuclearFabricatorMachineCircuitboard #FH
     - NuclearCentrifugeMachineCircuitboard #FH
     - NuclearReactorMonitorComputerCircuitboard #FH
+    - ShuttleGunSeismicCircuitboard # Polonium
+    - ShuttleGunPlasmaCutterCircuitboard # Polonium
 
   - type: EmagLatheRecipes
     emagDynamicRecipes:

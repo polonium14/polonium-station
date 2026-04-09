@@ -1,0 +1,9 @@
+- type: latheRecipe
+  parent: BaseCircuitboardRecipe
+  id: ShuttleGunSeismicCircuitboard
+  result: ShuttleGunSeismicCircuitboard
+
+- type: latheRecipe
+  parent: BaseCircuitboardRecipe
+  id: ShuttleGunPlasmaCutterCircuitboard
+  result: ShuttleGunPlasmaCutterCircuitboard

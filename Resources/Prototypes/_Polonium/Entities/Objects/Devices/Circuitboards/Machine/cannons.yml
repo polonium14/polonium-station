@@ -1,0 +1,36 @@
+- type: entity
+  id: ShuttleGunSeismicCircuitboard
+  parent: BaseMachineCircuitboard
+  name: EXP-SMC "KosmoWstrząs" machine board
+  description: A machine printed circuit board for an EXP-SMC "KosmoWstrząs".
+  suffix: Machine Board
+  components:
+  - type: Sprite
+    state: security
+  - type: MachineBoard
+    prototype: ShuttleGunSeismic
+    stackRequirements:
+      MatterBin: 2
+      Manipulator: 4
+      Steel: 5
+      CableHV: 5
+
+- type: entity
+  id: ShuttleGunPlasmaCutterCircuitboard
+  parent: BaseMachineCircuitboard
+  name: PLM-CTT "Shuttle Cutter" machine board
+  description: A machine printed circuit board for an PLM-CTT "Shuttle Cutter".
+  suffix: Machine Board
+  components:
+  - type: Sprite
+    state: security
+  - type: MachineBoard
+    prototype: ShuttleGunPlasmaCutter
+    stackRequirements:
+      MatterBin: 2
+      Manipulator: 4
+      Capacitor: 7
+      Steel: 5
+      Glass: 2
+      CableHV: 5
+      Uranium: 1

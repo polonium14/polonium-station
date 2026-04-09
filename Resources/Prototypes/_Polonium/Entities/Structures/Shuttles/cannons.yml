@@ -5,14 +5,13 @@
 - type: entity
   id: ShuttleGunSeismic
   parent: [ ShuttleGunBase, ConstructibleMachine]
-  name: EXP-SMC "KosmoWstrząs"
+  name: EXP-SMC "CosmoQuake"
   description: Salvage stationary mining turret. Requires seismic charges, extremely effective for asteroid excavation.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Shuttles/kinetic.rsi
+    sprite: _Polonium/Objects/Weapons/Guns/Shuttles/seismic.rsi
     layers:
-    - state: ptk-800
-    - state: mag-7
+    - state: exp-smc
   - type: ContainerContainer
     containers:
       machine_board: !type:Container
@@ -53,63 +52,25 @@
     whitelist:
       tags:
         - SeismicCharge
-    capacity: 1
+    capacity: 4
     proto: SeismicCharge
     soundInsert:
       path: /Audio/Weapons/Guns/Gunshots/grenade_launcher.ogg
   - type: Machine
     board: ShuttleGunKineticCircuitboard
-
-
-- type: entity
-  id: ShuttleGunPirateCannonSeismic
-  parent: ShuttleGunBase
-  name: pirate ship cannon
-  description: Kaboom!
-  components:
-  - type: ContainerContainer
-    containers:
-      ballistic-ammo: !type:Container
-  - type: Damageable
-    damageContainer: StructuralInorganic
-    damageModifierSet: Metallic
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 300
-      behaviors:
-        - !type:DoActsBehavior
-          acts: ["Destruction"]
-  - type: Sprite
-    sprite: Objects/Weapons/Guns/Shuttles/pirate_cannon.rsi
-    layers:
-    - state: base
-  - type: Gun
-    fireRate: 1
-    soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/mateba.ogg
-  - type: BallisticAmmoProvider
-    whitelist:
-      tags:
-        - SeismicCharge
-    capacity: 1
-    proto: SeismicCharge
-    soundInsert:
-      path: /Audio/Weapons/Guns/Gunshots/grenade_launcher.ogg
+  
 
 - type: entity
   id: ShuttleGunPlasmaCutter
-  parent: [ ShuttleGunBase, ConstructibleMachine, BaseWeaponBatterySmall]
+  parent: [ ShuttleGunBase, ConstructibleMachine, BaseWeaponBattery]
   name: PLM-CTT "Shuttle Cutter"
   description: Basic stationary plasma cutter unit. Effective against asteroids. Uses regular power cells to fire, and has slow rate of fire.
-  categories: [ DoNotMap ]
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Shuttles/kinetic.rsi
+    sprite: _Polonium/Objects/Weapons/Guns/Shuttles/plasmacutter.rsi
     layers:
-    - state: ptk-800
-    - state: mag-7
+    - state: plm-ctt
+    - state: mag-6
   - type: ContainerContainer
     containers:
       machine_board: !type:Container
@@ -131,13 +92,17 @@
       path: /Audio/Weapons/Guns/Gunshots/ship_svalinn.ogg
       params:
         variation: 0.05
+  - type: MagazineVisuals
+    magState: mag
+    steps: 6
+    zeroVisible: true
   - type: Machine
-    board: ShuttleGunSvalinnMachineGunCircuitboard
+    board: ShuttleGunPlasmaCutterCircuitboard
   - type: Battery
-    maxCharge: 1500
-    startingCharge: 1500
+    maxCharge: 6000
+    startingCharge: 0
   - type: MaterialEnergy
     materialWhiteList: [Plasma]
   - type: ProjectileBatteryAmmoProvider
-    proto: BulletPlasmaCutterStrong
+    proto: BulletPlasmaCutterShuttle
     fireCost: 100

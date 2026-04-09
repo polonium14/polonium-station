@@ -52,6 +52,18 @@
   # These are roundstart but not replenishable for salvage
 
 - type: technology
+  id: ShuttleSalvageWeapons
+  name: research-technology-shuttle-salvage-weapons
+  icon:
+    sprite: Objects/Weapons/Guns/Shuttles/kinetic.rsi
+    state: ptk-800
+  discipline: Industrial
+  tier: 1
+  cost: 1500
+  recipeUnlocks:
+  - ShuttleGunPlasmaCutterCircuitboard
+
+- type: technology
   id: DraconicMunitions
   name: research-technology-draconic-munitions
   icon:
