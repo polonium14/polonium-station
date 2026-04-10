@@ -412,6 +412,7 @@
   id: JobResearchDirector
   groups:
   - ResearchDirectorHead
+  - ScientistGlasses
   - ResearchDirectorNeck
   - ResearchDirectorJumpsuit
   - ScientistBackpack
@@ -428,6 +429,7 @@
   id: JobScientist
   groups:
   - ScientistHead
+  - ScientistGlasses
   - ScientistNeck
   - ScientistJumpsuit
   - ScientistBackpack
@@ -446,6 +448,7 @@
   groups:
   - ScientistNeck # Polonium
   - ResearchAssistantJumpsuit
+  - ScientistGlasses
   - ScientistBackpack
   - Glasses
   - Survival
