@@ -70,7 +70,6 @@
     sprite: _Polonium/Objects/Weapons/Guns/Shuttles/plasmacutter.rsi
     layers:
     - state: plm-ctt
-    - state: mag-6
   - type: ContainerContainer
     containers:
       machine_board: !type:Container
@@ -92,10 +91,6 @@
       path: /Audio/Weapons/Guns/Gunshots/ship_svalinn.ogg
       params:
         variation: 0.05
-  - type: MagazineVisuals
-    magState: mag
-    steps: 6
-    zeroVisible: true
   - type: Machine
     board: ShuttleGunPlasmaCutterCircuitboard
   - type: Battery

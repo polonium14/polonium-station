@@ -1,7 +1,7 @@
 {
     "version": 1,
     "license": "CC-BY-SA-3.0",
-    "copyright": "Created by Szyszkrzyneczka for Polonium",
+    "copyright": "Created by TheShuEd (github) for Space Station 14",
     "size": {
         "x": 64,
         "y": 64
@@ -11,6 +11,9 @@
         "name": "exp-smc"
     },
     {
+        "name": "mag-0"
+    },
+    {
         "name": "mag-1"
     },
     {
@@ -18,9 +21,6 @@
     },
     {
         "name": "mag-3"
-    },
-    {
-        "name": "mag-4"
     }
     ]
 }

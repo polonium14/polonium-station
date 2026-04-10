@@ -34,10 +34,10 @@
   - type: Projectile
     damage:
       types:
-        Heat: 8 #funkystation -GLORY TO TAYDEO!!!!, GREAT LEADER!!! TAYDEO NUMBA 1!!!
-        Structural: 25 #funkystation mining tools should not deal above 30 structural damage if they are ment to have the GatheringProjectile tag as otherwise it will cause ore drops to dupe
+        Heat: 8 
+        Structural: 25
   - type: TimedDespawn
-    lifetime: 2.8 
+    lifetime: 0.8 
   - type: PointLight
     radius: 4
     color: purple

@@ -375,10 +375,6 @@
       params:
         pitch: 1.2
         variation: 0.08
-  - type: MagazineVisuals # Polonium Edit
-    magState: mag
-    steps: 7
-    zeroVisible: true
   - type: BasicEntityAmmoProvider
     proto: BulletKineticShuttle
     capacity: 5
