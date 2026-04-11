@@ -1,0 +1,10 @@
+ent-ActionReplicatorSpawnNest = Manufacture Nest
+    .desc = Create a new nest for your hive.
+ent-ActionReplicatorUpgrade2 = Upgrade (Tier 2)
+    .desc = Gather nanites. Gain manipulation.
+ent-ActionReplicatorUpgrade3 = Upgrade (Tier 3)
+    .desc = Gather nanites. Become stronger.
+ent-ActionReplicatorStunRay = Stun Ray
+    .desc = Neutralize target to enable termination and consumption.
+ent-ReplicatorStunRay = replicator stun ray
+    .desc = Neutralize target to enable termination and consumption.
