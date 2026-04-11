@@ -19,7 +19,7 @@
 
 - type: ruinMap
   id: Core
-  mapPath: /Maps/_Polonium/core.yml # Polonium update
+  mapPath: /Maps/_Funkystation/core.yml
 
 - type: ruinMap
   id: Court
