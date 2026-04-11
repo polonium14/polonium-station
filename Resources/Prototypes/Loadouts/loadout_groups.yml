@@ -2265,8 +2265,6 @@
   loadouts:
   - BrigmedicJumpsuit
   - BrigmedicJumpskirt
-  - SecurityJumpsuitGrey
-  - SecurityJumpskirtGrey
 
 - type: loadoutGroup
   id: BrigmedicOuterClothing
