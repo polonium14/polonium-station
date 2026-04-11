@@ -41,7 +41,9 @@
 // SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
 // SPDX-FileCopyrightText: 2026 AftrLite <61218133+AftrLite@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2026 chuga <98280110+chuga-git@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 chuga-git <98280110+chuga-git@users.noreply.github.com>
 //
 // SPDX-License-Identifier: MIT
 
