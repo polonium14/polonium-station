@@ -23,7 +23,6 @@ lathe-menu-material-amount =
         [1] { NATURALFIXED($amount, 2) } { $unit }
        *[other] { NATURALFIXED($amount, 2) } { $unit }
     }
-
 # "Brakuje 1 arkusze", ale brzmi lepiej niż "arkuszes". To jedyne rozwiązanie.
 # Chyba że wymyślisz funkcję do odmiany wszystkich rzeczowników w języku polskim.
 lathe-menu-material-amount-missing =

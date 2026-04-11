@@ -16,5 +16,7 @@ surveillance-camera-monitor-ui-legend-selected = Wybrane
 surveillance-camera-monitor-ui-legend-invalid = Nieprawidłowe
 surveillance-camera-setup-ui-set = Ustaw
 wire-name-camera-map = MAPA
+
 # IGNOROWAĆ TO
 # gas-pipe-sensor-window-title = Czujnik Rur
+

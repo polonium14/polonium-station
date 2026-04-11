@@ -34,6 +34,7 @@ ent-WeaponDisablerPractice = treningowy ogłuszacz
     .desc = Broń do samoobrony, która wyczerpuje organiczne cele, osłabiając je aż do upadku. Ta wersja jest niedostatecznie dostrojona dla kadetów, co czyni ją w większości nieszkodliwą.
 ent-WeaponDisabler = ogłuszacz
     .desc = Broń do samoobrony, która wyczerpuje organiczne cele, osłabiając je aż do upadku.
+    .suffix = NIE MAPOWAĆ
 ent-WeaponDisablerSMG = ogłuszacz PM
     .desc = Zaawansowana broń, która wyczerpuje organiczne cele, osłabiając je aż do upadku.
 ent-WeaponTaser = paralizator

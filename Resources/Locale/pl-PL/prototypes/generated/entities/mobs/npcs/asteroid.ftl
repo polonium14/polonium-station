@@ -31,3 +31,5 @@ ent-FoodHivelordRemains = pozostałości lorda roju
 ent-FoodHivelordRemainsInert = martwe szczątki lorda roju
     .desc = Wszystko, co pozostało po władcy roju... teraz jest naprawdę stracone.
     .gender = neuter
+ent-MobBasilisk = bazyliszek
+    .desc = Terytorialna bestia pokryta gęstą skorupą, która pochłania energię. Jej spojrzenie sprawia, że ofiary zamarzają od środka.
