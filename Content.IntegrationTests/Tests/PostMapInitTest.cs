@@ -59,6 +59,7 @@
 // SPDX-FileCopyrightText: 2025 willow <willowzeta632146@proton.me>
 // SPDX-FileCopyrightText: 2025 wilowzeta <willowzeta632146@proton.me>
 // SPDX-FileCopyrightText: 2026 Damian Zieliński <zientasek.pl@gmail.com>
+// SPDX-FileCopyrightText: 2026 EmillyCoelho <167008606+EmilyCoelhoBR@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2026 Ichaie <ichaicoelho@gmail.com>
 //
 // SPDX-License-Identifier: MIT
