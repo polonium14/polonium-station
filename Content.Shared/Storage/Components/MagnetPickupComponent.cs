@@ -29,7 +29,7 @@ public sealed partial class MagnetPickupComponent : Component
     public float Range = 1f;
 
     /// <summary>
-    /// Run container slot check?
+    /// Run container slot check? (Polonium Edit)
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite), DataField("slotCheck")]
     public bool SlotCheck = true;

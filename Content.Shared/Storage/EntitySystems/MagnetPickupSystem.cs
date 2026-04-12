@@ -61,7 +61,7 @@ public sealed class MagnetPickupSystem : EntitySystem
                 continue;
 
             comp.NextScan += ScanDelay;
-            if(comp.SlotCheck == true){
+            if(comp.SlotCheck == true){ // Polonium edit
                 if (!_inventory.TryGetContainingSlot((uid, xform, meta), out var slotDef))
                     continue;
 
