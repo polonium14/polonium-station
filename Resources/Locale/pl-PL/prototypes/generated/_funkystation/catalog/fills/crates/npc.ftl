@@ -1,2 +1,2 @@
-ent-CrateNPCMeowl = meowl crate
-    .desc = A crate containing three of the deadliest beings known.
+ent-CrateNPCMeowl = skrzynia z miau-lem
+    .desc = Skrzynia zawierająca trzy z najbardziej śmiercionośnych istot na świecie.

@@ -1,20 +1,16 @@
 # **Ogólne konwencje prowadzenia bazy kodowej projektu:**
 
-#### 1. Sztuczna inteligencja jest narzędziem, a nie współautorem kodu
-
-Oczywiście nie można zabronić wykorzystywania AI, ale powinno ono służyć jako narzędzie do szybkiego uczenia się, poszukiwania informacji lub podstawowej pomocy. Lepiej napisać nieidealny, ale własny i zrozumiały kod, który zawsze da się wyjaśnić, zdebugować i w razie potrzeby naprawić, niż generować kod za pomocą AI nie wiedząc do końca, co się w nim dzieje.
-
-#### 2. Jeden temat zmian = jeden PR (Pull Request)
+#### 1. Jeden temat zmian = jeden PR (Pull Request)
 
 Pełną treść wytycznych dotyczących PR można znaleźć [niżej](#wytyczne-dotyczące-pull-requestów).
 
-#### 3. Nie duplikuj kodu
+#### 2. Nie duplikuj kodu
 
 Jak patrzysz na jakiś fragment kodu i myślisz sobie "Chcę, żeby mój kod robił to samo", to lepiej wydziel ten fragment do osobnej metody albo w inną formę abstrakcji, która umożliwi Ci ponownie wykorzystać go w miarę możliwości.
 
 Są jednak sytuacje, w których nie da się uniknąć kopiowania. Na przykład: niektóre zależności, blok `override void Initialize()`, czy konstrukcja bazowa przy tworzeniu tzw. `EntitySystem`, która zawsze jest definicją klasy.
 
-#### 4. Trzymaj się określonego stylu kodowania
+#### 3. Trzymaj się określonego stylu kodowania
 
 - `PascalCase` dla stałych, klas, struktur, zdarzeń, metod, właściwości, interfejsów itp.
 - `camelCase` dla zmiennych lokalnych, zmiennych prywatnych i parametrów funkcji
@@ -31,19 +27,19 @@ public abstract partial class SharedStaminaSystem : EntitySystem
 
 - `UPPER_CASE` - rzadko, ale może być stosowane dla stałych globalnych
 
-#### 5. Komentuj swój kod
+#### 4. Komentuj swój kod
 
 Zostawiaj komentarze w kodzie, szczególnie w miejscach, które nie są oczywiste na pierwszy rzut oka. Pisz w nich, _co_ robi kod, a przede wszystkim _dlaczego_ kod robi to.
 
 W przypadkach klas, struktur, metodów, pól/właściwości i członków klasy korzystaj z [dokumentacji XML](https://learn.microsoft.com/pl-pl/dotnet/csharp/language-reference/xmldoc/). Wszystkie publiczne metody i konstrukcje oznaczone atrybutem `DataField` zawsze powinny być udokumentowane.
 
-#### 6. Unikaj "magicznych" wartości
+#### 5. Unikaj "magicznych" wartości
 
 Są to wartości, które są wpisane na sztywno w kodzie i które muszą zgadzać się z identycznymi wartościami w innych jego miejscach. Jeśli zmienisz tą wartość w jednym miejscu, ale zapomnisz o innych - program może działać niepoprawnie.
 
 Zamiast tego, w prostych sytuacjach należy wydzielać takie wartości do stałych oznaczonych modyfikatorami `const` lub `static readonly`. W bardziej złożonych sytuacjach należy zadbać o to, by te wartości nie mogły się różnić - można to osiągnąć np. poprzez wyjątki, testy jednostkowe lub inne mechanizmy sprawdzające. Najważniejsze jest, aby ewentualny błąd był natychmiast zauważalny.
 
-#### 7. Prawdłowo porządkuj elementy w typie
+#### 6. Prawdłowo porządkuj elementy w typie
 
 Podzas deklarowania elementów składowych w typie, zawsze należy umieszczać pola i własciwości nad pozostałymi elementami. Ułatwia to zrozumienie, na jakich danych operuje typ. Pomieszanie pól i innych członków utrudnia czytelność i orientację w kodzie.
 
@@ -102,7 +98,7 @@ public class Player
 }
 ```
 
-#### 8. Również należy się trzymać
+#### 7. Również należy się trzymać
 
 - [typowych konwencji kodowania w języku C#](http://learn.microsoft.com/pl-pl/dotnet/csharp/fundamentals/coding-style/coding-conventions)
 - [konwencji przyjętych przez Wizardów](https://docs.spacestation14.com/en/general-development/codebase-info/conventions.html)

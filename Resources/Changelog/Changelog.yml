@@ -1,19 +1,4 @@
 ﻿Entries:
-- author: Southbridge
-  changes:
-  - message: The Nuke will now reset to a minimum countdown value when disarmed if
-      the countdown is below the minimum value.
-    type: Tweak
-  id: 7865
-  time: '2025-01-29T09:04:48.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34734
-- author: themias
-  changes:
-  - message: Fixed precision attack animation for thrust weapons
-    type: Fix
-  id: 7866
-  time: '2025-01-29T10:11:08.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34713
 - author: yuitop
   changes:
   - message: Sentient medibots can now properly inject.
@@ -4094,3 +4079,18 @@
   id: 9172
   time: '2026-04-06T20:12:06.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/543
+- author: Szyszkrzyneczka
+  changes:
+  - message: "W\u0142o\u017Cenie sztabki plazmy do przecinarki plazmowej ju\u017C\
+      \ nie crashuje serwera"
+    type: Fix
+  id: 9173
+  time: '2026-04-08T16:49:30.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/545
+- author: Zintex
+  changes:
+  - message: "Dodano niewidzialny kad\u0142ub i pod\u0142og\u0119"
+    type: Add
+  id: 9174
+  time: '2026-04-08T19:00:57.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/546
