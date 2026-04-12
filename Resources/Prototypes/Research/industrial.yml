@@ -54,7 +54,7 @@
   - OreProcessorIndustrialMachineCircuitboard
   - ClothingMaskWeldingGas
 
-- type: technology
+- type: technology # Polonium
   id: ShuttleSalvageEquipment
   name: research-technology-shuttle-salvage-equipment
   icon:
@@ -62,9 +62,10 @@
     state: handdrill
   discipline: Industrial
   tier: 1
-  cost: 1000 # Goobstation
+  cost: 2000 
   recipeUnlocks:
   - ShuttleGunSeismicCircuitboard
+  - ShuttleGunMineralVacuumCircuitboard
 
 - type: technology
   id: SpaceScanning

@@ -765,7 +765,7 @@ namespace Content.Server._Funkystation.Atmos.HFR.Systems
                 gravityWell.MaxRange = maxRange;
 
                 // Trigger the gravitational pulse
-                _gravityWell.GravPulse(coreUid, maxRange, 0.0f, gravityWell.BaseRadialAcceleration, gravityWell.BaseTangentialAcceleration);
+                _gravityWell.GravPulse(coreUid, gravityWell, maxRange, 0.0f, gravityWell.BaseRadialAcceleration, gravityWell.BaseTangentialAcceleration);
 
                 // Set the next pulse time
                 core.NextGravityPulse = _timing.CurTime + TimeSpan.FromSeconds(GetPulsePeriod(core));

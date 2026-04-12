@@ -72,6 +72,15 @@ vendor-salvage-mini-jetpack-name = Mini Plecak Odrzutowy
 vendor-salvage-mini-jetpack-desc = Zmniejszony plecak odrzutowy, który mieści się na pasku. Może pomieścić 1.5 L gazu.
 vendor-salvage-box-shotgun-flare-name = Pudełko Amunicji (12 gauge, flara)
 vendor-salvage-box-shotgun-flare-desc = Pudełko 16 nabojów do pistoletu sygnałowego.
+vendor-salvage-shuttle-gun-kinetic-circuitboard = Płytka do PTK-800 "Dematerializator"
+vendor-salvage-shuttle-gun-kinetic-circuitboard-desc = Płytka do PTK-800 "Dematerializator". Stacjonarne działo odzyskowe, doskonałe do zamontowania na prom odzyskowy, ładuje się samoistnie. (Urządzenie nie jest uwzględnione w pakiecie)
+vendor-salvage-shuttle-gun-seismic-circuitboard = Płytka do EXP-SMC "KosmoWstrząs"
+vendor-salvage-shuttle-gun-seismic-circuitboard-desc = Płytka do EXP-SMC "KosmoWstrząs". Stacjonarne działo odzyskowe domowej roboty. Wyrzuca ładunki sejsmiczne pozbawione zabezpieczeń, skuteczne przy otwieraniu asteroid. (Urządzenie nie jest uwzględnione w pakiecie)
+vendor-salvage-shuttle-gun-plasma-cutter-circuitboard = Płytka do PLM-CTT "Shuttle Cutter"
+vendor-salvage-shuttle-gun-plasma-cutter-circuitboard-desc = Płytka do PLM-CTT "Shuttle Cutter". Stacjonarne działo odzyskowe, ładowane poprzez plazmę, tnie asteroidy z łatwością. (Urządzenie nie jest uwzględnione w pakiecie)
+vendor-salvage-shuttle-gun-mineral-vacuum-circuitboard = Płytka do MNV-EX "Mineral Vacuum"
+vendor-salvage-shuttle-gun-mineral-vacuum-circuitboard-desc = Płytka do MNV-EX "Mineral Vacuum". Stacjonarne urządzenie przyciągające rudy. Nie stać przed urządzeniem kiedy jest aktywne. (Urządzenie nie jest uwzględnione w pakiecie)
+
 
 # Misc
 
@@ -111,3 +120,5 @@ vendor-salvage-floodlight-name = Reflektor
 vendor-salvage-floodlight-desc = Słup z zamontowanymi potężnymi światłami.
 vendor-salvage-ore-box-name = Skrzynia na Rudę
 vendor-salvage-ore-box-desc = Duży pojemnik do przechowywania nieprzetworzonej rudy.
+vendor-salvage-shuttle-gun-kinetic-circuitboard-free = Płytka do PTK-800 "Dematerializator" (darmowa)
+vendor-salvage-shuttle-gun-kinetic-circuitboard-desc-free = Płytka do PTK-800 "Dematerializator". W ramach promocji dwie sztuki za darmo! (Urządzenie nie jest uwzględnione w ramach pakietu)

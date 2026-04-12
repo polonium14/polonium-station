@@ -53,7 +53,7 @@
   - MechEquipmentKineticAccelerator # Goobstation
   # These are roundstart but not replenishable for salvage
 
-- type: technology
+- type: technology # Polonium
   id: ShuttleSalvageWeapons
   name: research-technology-shuttle-salvage-weapons
   icon:

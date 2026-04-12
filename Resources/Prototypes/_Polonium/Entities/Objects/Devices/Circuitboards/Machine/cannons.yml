@@ -38,3 +38,23 @@
       Glass: 2
       CableHV: 5
       Uranium: 1
+
+- type: entity
+  id: ShuttleGunMineralVacuumCircuitboard
+  parent: BaseMachineCircuitboard
+  name: MNV-EX "Mineral Vacuum" machine board
+  description: A machine printed circuit board for an MNV-EX "Mineral Vacuum".
+  suffix: Machine Board
+  components:
+  - type: Sprite
+    state: security
+  - type: MachineBoard
+    prototype: ShuttleGunMineralVacuum
+    stackRequirements:
+      MatterBin: 6
+      Manipulator: 2
+      Capacitor: 2
+      Steel: 5
+      Glass: 2
+      CableHV: 5
+      Gold: 1

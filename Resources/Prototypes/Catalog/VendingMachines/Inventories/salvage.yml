@@ -28,6 +28,7 @@
     RadioHandheldCargo: 2 #funkystation
     WeaponGrapplingGun: 4
     WeaponProtoKineticAccelerator: 4
+    ShuttleGunKineticCircuitboard: 2 # Polonium, tymczasowo by zachęcić ludzi do skorzystania i przypomnieć że coś takiego wgle istnieje
     SeismicCharge: 2
     FultonBeacon: 1
     Fulton: 2

@@ -16,15 +16,7 @@
     containers:
       machine_board: !type:Container
       machine_parts: !type:Container
-      hidden_slot: !type:ContainerSlot
       ballistic-ammo: !type:Container
-  - type: ItemSlots
-    slots:
-      hidden_slot:
-        name: computer_slot_accessory
-        whitelist:
-          tags:
-          - ListeningBug
   - type: Destructible
     thresholds:
     - trigger:
@@ -36,8 +28,8 @@
         - !type:DoActsBehavior
           acts: ["Destruction"]
   - type: Gun
-    projectileSpeed: 20
-    fireRate: 2
+    projectileSpeed: 5
+    fireRate: 1
     selectedMode: SemiAuto
     angleDecay: 45
     minAngle: 5
@@ -85,7 +77,8 @@
         - !type:DoActsBehavior
           acts: ["Destruction"]
   - type: Gun
-    fireRate: 5
+    fireRate: 2
+    projectileSpeed: 60
     useKey: false
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/ship_svalinn.ogg
@@ -101,3 +94,41 @@
   - type: ProjectileBatteryAmmoProvider
     proto: BulletPlasmaCutterShuttle
     fireCost: 100
+
+- type: entity
+  id: ShuttleGunMineralVacuum
+  parent: [ ShuttleGunBase, ConstructibleMachine]
+  name: MNV-EX "Mineral Vacuum"
+  description: A mining tool designed to vacuum up loose minerals in space. Not a weapon.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Weapons/Guns/Shuttles/plasmacutter.rsi
+    layers:
+    - state: plm-ctt
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+        - !type:ChangeConstructionNodeBehavior
+          node: machineFrame
+        - !type:DoActsBehavior
+          acts: ["Destruction"]
+  - type: Gun
+    fireRate: 2
+    projectileSpeed: 0
+    useKey: false
+    soundGunshot:
+  - type: Machine
+    board: ShuttleGunMineralVacuumCircuitboard
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 0.4
+  - type: BasicEntityAmmoProvider
+    proto: BulletMineralVacuum
+    capacity: 1
+    count: 1

@@ -17,3 +17,5 @@ ent-ShuttleGunSeismic = EXP-SMC "KosmoWstrząs"
     .desc = Stacjonarne działo odzyskowe domowej roboty. Wyrzuca ładunki sejsmiczne pozbawione zabezpieczeń, skuteczne przy otwieraniu asteroid.
 ent-ShuttleGunPlasmaCutter = PLM-CTT "Shuttle Cutter"
     .desc = Stacjonarne działo odzyskowe. Ładowane poprzez plazmę, tnie asteroidy z łatwością.
+ent-ShuttleGunMineralVacuum = MNV-EX "Mineral Vacuum"
+    .desc = Stacjonarne urządzenie przyciągające rudy. Nie stać przed urządzeniem kiedy jest aktywne

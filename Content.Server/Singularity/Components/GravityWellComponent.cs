@@ -8,6 +8,7 @@
 
 using Content.Shared.Singularity.Components;
 using Content.Server.Singularity.EntitySystems;
+using Content.Shared.Whitelist;
 
 namespace Content.Server.Singularity.Components;
 
@@ -47,6 +48,12 @@ public sealed partial class GravityWellComponent : Component
     [DataField]
     public float BaseTangentialAcceleration = 0.0f;
 
+    /// <summary>
+    ///  List of things permitted to pull
+    /// </summary>
+    [DataField]
+    public EntityWhitelist? Whitelist;
+
     #region Update Timing
 
     /// <summary>
@@ -70,4 +77,6 @@ public sealed partial class GravityWellComponent : Component
     public TimeSpan LastPulseTime => NextPulseTime - TargetPulsePeriod;
 
     #endregion Update Timing
+
+
 }

@@ -31,14 +31,35 @@
   parent: BulletPlasmaCutter
   components:
   - type: GatheringProjectile
+    amount: 80
   - type: Projectile
     damage:
       types:
-        Heat: 8 
+        Heat: 12 
         Structural: 25
   - type: TimedDespawn
-    lifetime: 0.8 
+    lifetime: 0.4 
   - type: PointLight
-    radius: 4
+    radius: 5
     color: purple
     energy: 2
+
+- type: entity
+  id: BulletMineralVacuum
+  parent: BaseBullet
+  #categories: [ HideSpawnMenu ]
+  components:
+  - type: TimedDespawn
+    lifetime: 0.8
+  - type: GravityWell
+    baseRadialAcceleration: 5
+    maxRange: 30
+    minRange: 1
+    whitelist:
+      tags:
+        - ArtifactFragment
+        - Ore
+  - type: PointLight
+    radius: 1
+    color: brown
+    energy: 1
