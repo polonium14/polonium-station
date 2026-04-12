@@ -3,6 +3,9 @@
 job-name-alt-medical-1 = Surgeon
 job-name-alt-medical-2 = Nurse
 job-name-alt-medical-3 = Physician
+job-name-alt-medical-4 = General Practitioner
+job-name-alt-medical-5 = Medical Resident
+job-name-alt-medical-6 = Nurse Practitioner
 
 job-name-alt-chemist-1 = Pharmacist
 job-name-alt-chemist-2 = Lab Technician
@@ -28,7 +31,6 @@ job-name-alt-scientist-2 = Anomaly Researcher
 job-name-alt-scientist-3 = Hardware Technician
 job-name-alt-scientist-4 = Lab Technician
 job-name-alt-scientist-5 = Theoretical Physicist
-job-name-alt-scientist-6 = Geneticist
 
 job-name-alt-roboticist-1 = Biomechanical Engineer
 job-name-alt-roboticist-2 = Mechatronic Specialist

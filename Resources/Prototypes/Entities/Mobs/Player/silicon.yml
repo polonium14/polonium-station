@@ -56,6 +56,10 @@
 # SPDX-FileCopyrightText: 2025 puuupy <59433122+lolmatdi@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2026 MaiaArai <158123176+YaraaraY@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 Rainbow <ev0lvkitten@gmail.com>
+# SPDX-FileCopyrightText: 2026 Skye <57879983+Rainbeon@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -512,7 +516,7 @@
   - type: BlockMovement
     blockInteraction: false
   - type: SiliconLawProvider
-    laws: Crewsimov
+    laws: NTDefault
   - type: SiliconLawBound
   - type: IonStormTarget
   - type: ActionGrant

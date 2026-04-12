@@ -1,0 +1,10 @@
+ent-ActionReplicatorSpawnNest = Produkuj Gniazdo
+    .desc = Stwórz nowe gniazdo dla swojego roju.
+ent-ActionReplicatorUpgrade2 = Ulepszenie (Poziom 2)
+    .desc = Zbierz nanity. Zyskaj możliwość manipulacji.
+ent-ActionReplicatorUpgrade3 = Ulepszenie (Poziom 3)
+    .desc = Zbierz nanity. Stań się silniejszy.
+ent-ActionReplicatorStunRay = Promień Ogłuszający
+    .desc = Zneutralizuj cel, aby umożliwić terminację i konsumpcję.
+ent-ReplicatorStunRay = promień ogłuszający replikatora
+    .desc = Zneutralizuj cel, aby umożliwić terminację i konsumpcję.

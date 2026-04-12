@@ -60,6 +60,8 @@
 // SPDX-FileCopyrightText: 2025 nikitosych <174215049+nikitosych@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+// SPDX-FileCopyrightText: 2026 beck-thompson <107373427+beck-thompson@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 beck-thompson <beck314159@hotmail.com>
 //
 // SPDX-License-Identifier: MIT
 
@@ -90,6 +92,7 @@ using Content.Server.Preferences.Managers;
 using Content.Server.ServerInfo;
 using Content.Server.ServerUpdates;
 using Content.Server.Voting.Managers;
+using Content.Shared._Starlight.DocumentManager;
 using Content.Shared.CCVar;
 using Content.Shared.Kitchen;
 using Content.Shared.Localizations;
@@ -184,6 +187,8 @@ namespace Content.Server.Entry
                 _watchlistWebhookManager.Initialize();
                 IoCManager.Resolve<JobWhitelistManager>().Initialize();
                 IoCManager.Resolve<PlayerRateLimitManager>().Initialize();
+
+                IoCManager.Resolve<PreWrittenDocumentManager>().Initialize();
             }
         }
 

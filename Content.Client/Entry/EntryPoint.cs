@@ -70,10 +70,13 @@
 // SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 McBosserson <148172569+McBosserson@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Mish <bluscout78@yahoo.com>
+// SPDX-FileCopyrightText: 2025 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
 // SPDX-FileCopyrightText: 2025 deathride58 <deathride58@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 misghast <51974455+misterghast@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+// SPDX-FileCopyrightText: 2026 beck-thompson <107373427+beck-thompson@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 beck-thompson <beck314159@hotmail.com>
 //
 // SPDX-License-Identifier: MIT
 
@@ -102,6 +105,7 @@ using Content.Client.Stylesheets;
 using Content.Client.UserInterface;
 using Content.Client.Viewport;
 using Content.Client.Voting;
+using Content.Shared._Starlight.DocumentManager;
 using Content.Shared.Ame.Components;
 using Content.Shared.Gravity;
 using Content.Shared.Localizations;
@@ -155,6 +159,7 @@ namespace Content.Client.Entry
         [Dependency] private readonly TitleWindowManager _titleWindowManager = default!;
         [Dependency] private readonly IEntitySystemManager _entitySystemManager = default!;
         [Dependency] private readonly ClientsidePlaytimeTrackingManager _clientsidePlaytimeManager = default!;
+        [Dependency] private readonly PreWrittenDocumentManager _documentManager = default!; // Starlight
 
         public override void Init()
         {
@@ -220,6 +225,8 @@ namespace Content.Client.Entry
             _jobRequirements.Initialize();
             _playbackMan.Initialize();
             _clientsidePlaytimeManager.Initialize();
+
+            _documentManager.Initialize(); // Starlight
 
             //AUTOSCALING default Setup!
             _configManager.SetCVar("interface.resolutionAutoScaleUpperCutoffX", 1080);

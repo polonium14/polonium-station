@@ -26,7 +26,6 @@
 # SPDX-FileCopyrightText: 2025 Dani <57107055+wgreen84@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Dani Green <wgreen84gamergame@gmail.com>
 # SPDX-FileCopyrightText: 2025 Fr0goo <153249069+Fr0goo@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Fr0goo <frogoofrog@outlook.com>
 # SPDX-FileCopyrightText: 2025 Icepick <122653407+Icepicked@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 MaiaArai <158123176+YaraaraY@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 PoquitoDondito <danielchristianstone@gmail.com>
@@ -53,7 +52,9 @@
 # SPDX-FileCopyrightText: 2026 Damian Zieliński <zientasek.pl@gmail.com>
 # SPDX-FileCopyrightText: 2026 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2026 Polonium-bot <admin@ss14.pl>
+# SPDX-FileCopyrightText: 2026 Fr0goo <frogoofrog@outlook.com>
 # SPDX-FileCopyrightText: 2026 Frogoo <153249069+Fr0goo@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 Tea <Xerithin@gmail.com>
 # SPDX-FileCopyrightText: 2026 ThatOneMoon <91613003+ThatOneMoon@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2026 ThatOneMoon <juozas.dringelis@gmail.com>
 # SPDX-FileCopyrightText: 2026 Zergologist <114537969+Chedd-Error@users.noreply.github.com>
@@ -112,7 +113,7 @@
   - PassengerNeck
   - PassengerFace
   - PassengerGloves
-  - PassengerOuterClothing
+  - GenericOuterClothing
   - GenericShoes
   - Glasses
   - Survival
@@ -144,6 +145,7 @@
   - ServiceJumpsuit
   - CommonBackpack
   - Gloves
+  - GenericOuterClothing
   - GenericShoes
   - Glasses
   - Survival
@@ -264,6 +266,7 @@
   - SurvivalClown
   - Trinkets
   - ClownJobTrinkets
+  - Toys
 
 - type: roleLoadout
   id: JobMime
@@ -411,6 +414,7 @@
   id: JobResearchDirector
   groups:
   - ResearchDirectorHead
+  - ScientistGlasses
   - ResearchDirectorNeck
   - ResearchDirectorJumpsuit
   - ScientistBackpack
@@ -427,6 +431,7 @@
   id: JobScientist
   groups:
   - ScientistHead
+  - ScientistGlasses
   - ScientistNeck
   - ScientistJumpsuit
   - ScientistBackpack
@@ -445,6 +450,7 @@
   groups:
   - ScientistNeck # Polonium
   - ResearchAssistantJumpsuit
+  - ScientistGlasses
   - ScientistBackpack
   - Glasses
   - Survival
@@ -544,6 +550,7 @@
 - type: roleLoadout
   id: JobSecurityCadet
   groups:
+  - SecurityCadetHat
   - SecurityCadetJumpsuit
   - SecurityGlasses #Funky
   - SecurityNeck # Polonium
@@ -657,9 +664,9 @@
   groups:
   - GenericHats
   - ReporterJumpsuit
-  - ReporterOuterClothing # Goobstation - Bodycams
   - CommonBackpack
   - Gloves
+  - ReporterOuterClothing # Goobstation - Bodycams
   - GenericShoes
   - Glasses
   - Survival

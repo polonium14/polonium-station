@@ -26,3 +26,7 @@ ent-ClothingEyesGlassesParamedic = paramedic-issue glasses
     .desc = Upgraded glasses that provide a medical HUD, styled for paramedics.
 ent-ClothingEyesGlassesParamedicJamjar = paramedic-issue jamjar glasses
     .desc = These retro glasses remind you of people screaming about blood and gunshots.
+ent-ClothingEyesGlassesSafety = safety goggles
+    .desc = Critical anomalies, exploding xenoartifacts, rifts in the fabric of spacetime: these goggles will protect you against absolutely none of that.
+ent-ClothingEyesGlassesSafetyJamjar = safety jamgoggles
+    .desc = These retro goggles remind you of activating the "station destruction" node.

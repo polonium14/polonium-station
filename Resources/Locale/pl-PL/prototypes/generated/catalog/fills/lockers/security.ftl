@@ -18,6 +18,7 @@ ent-ClosetBombFilled = { ent-ClosetBomb }
     .desc = { ent-ClosetBomb.desc }
 ent-GunSafeDisabler = sejf na ogłuszacz
     .desc = { ent-GunSafeBaseSecure.desc }
+    .suffix = NIE MAPOWAĆ
 ent-GunSafePistolMk58 = sejf na MK58
     .desc = { ent-GunSafeBaseSecure.desc }
 ent-GunSafeRifleLecter = sejf na Lekter

@@ -16,6 +16,7 @@
 // SPDX-FileCopyrightText: 2024 silver2127 <52584484+silver2127@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 username <113782077+whateverusername0@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Mish <bluscout78@yahoo.com>
+// SPDX-FileCopyrightText: 2025 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Rainbow <ev0lvkitten@gmail.com>
 // SPDX-FileCopyrightText: 2025 Skye <57879983+Rainbeon@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Tadeo <td12233a@gmail.com>
@@ -25,7 +26,7 @@
 // SPDX-FileCopyrightText: 2025 jhrushbe <capnmerry@gmail.com>
 // SPDX-FileCopyrightText: 2025 rottenheadphones <juaelwe@outlook.com>
 // SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+// SPDX-FileCopyrightText: 2026 taydeo <td12233a@gmail.com>
 //
 // SPDX-License-Identifier: MIT
 
@@ -608,7 +609,7 @@ public sealed class RevolutionaryRuleSystem : GameRuleSystem<RevolutionaryRuleCo
                     {
                         gone++;
                     }
-                    else if (checkOffStation && _stationSystem.IsEntityOnStationGrid(entity) && !_emergencyShuttle.EmergencyShuttleArrived)
+                    else if (checkOffStation && !_stationSystem.IsEntityOnStationGrid(entity) && !_emergencyShuttle.EmergencyShuttleArrived)
                     {
                         gone++;
                     }

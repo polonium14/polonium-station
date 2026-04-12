@@ -1,5 +1,6 @@
 ent-Stunbaton = pałka ogłuszająca
     .desc = Pałka ogłuszająca do ogłuszania ludzi. Aktywne używanie jej do zadawania obrażeń jest uważane za złe zachowanie.
+    .suffix = NIE MAPOWAĆ
 ent-Truncheon = pałka policyjna
     .desc = Sztywna pałka z ćwiekami ze stali, przeznaczona do zadawania obrażeń.
 ent-Flash = błysk

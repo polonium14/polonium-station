@@ -1,0 +1,13 @@
+ent-BaseMobReplicator = replicator
+    .desc = It's just a little guy. What harm could it do?
+ent-MobReplicatorQueen = { ent-MobReplicator }
+    .suffix = Queen, Level 1
+    .desc = { ent-MobReplicator.desc }
+ent-MobReplicator = { ent-BaseMobReplicator }
+    .desc = { ent-BaseMobReplicator.desc }
+ent-MobReplicatorTier2 = { ent-BaseMobReplicator }
+    .suffix = Level 2
+    .desc = { ent-BaseMobReplicator.desc }
+ent-MobReplicatorTier3 = { ent-BaseMobReplicator }
+    .desc = Oh boy.
+    .suffix = Level 3

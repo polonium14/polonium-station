@@ -35,15 +35,18 @@
 // SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-// SPDX-FileCopyrightText: 2024 Simon <63975668+Simyon264@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
 // SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Simon <63975668+Simyon264@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+// SPDX-FileCopyrightText: 2025 nikitosych <174215049+nikitosych@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
-// SPDX-FileCopyrightText: 2025 nikitosych <174215049+nikitosych@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 beck-thompson <107373427+beck-thompson@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 beck-thompson <beck314159@hotmail.com>
 //
 // SPDX-License-Identifier: MIT
 
@@ -73,6 +76,7 @@ using Content.Server.ServerInfo;
 using Content.Server.ServerUpdates;
 using Content.Server.Voting.Managers;
 using Content.Server.Worldgen.Tools;
+using Content.Shared._Starlight.DocumentManager;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Administration.Managers;
 using Content.Shared.Chat;
@@ -130,6 +134,7 @@ namespace Content.Server.IoC
 
             IoCManager.Register<DiscordLink>();
             IoCManager.Register<DiscordChatLink>();
+            IoCManager.Register<PreWrittenDocumentManager>(); // Starlight
         }
     }
 }

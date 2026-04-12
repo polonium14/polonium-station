@@ -1,5 +1,6 @@
 // SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
 // SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+// SPDX-FileCopyrightText: 2026 Rainbow <ev0lvkitten@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -48,7 +49,7 @@ public sealed class SurgeryToolExamineSystem : EntitySystem
 
         _examine.AddDetailedExamineVerb(args, ent.Comp, ev.Message,
             Loc.GetString("surgery-tool-examinable-verb-text"),
-            new SpriteSpecifier.Rsi(new ResPath("/Textures/Objects/Specific/Medical/Surgery/scalpel.rsi"), "scalpel"),
+            new SpriteSpecifier.Rsi(new ResPath("/Textures/_Funkystation/Interface/VerbIcons/scalpel-icon.png"), "scalpel"),
             Loc.GetString("surgery-tool-examinable-verb-message"));
     }
 

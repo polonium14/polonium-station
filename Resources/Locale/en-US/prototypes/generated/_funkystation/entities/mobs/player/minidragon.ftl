@@ -3,4 +3,4 @@ ent-BaseMobMiniDragon = mini dragon
 ent-MobMiniDragon = mini dragon
     .desc = { ent-BaseMobMiniDragon.desc }
 ent-MobMiniDragonFriendly = domesticated mini dragon
-    .desc = { ent-BaseMobMiniDragon.desc }
+    .desc = It's a domesticated mini dragon, sometimes also known as a poodle dragon. Even seeing a mini dragon that has been domesticated is a once in a lifetime opportunity, owning one is only reserved for the elite of the elite.

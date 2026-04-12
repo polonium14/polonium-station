@@ -2,6 +2,9 @@ job-alt-title-reminder = Nie używaj swojego tytułu [color=#33ccff]"{ $altTitle
 job-name-alt-medical-1 = Chirurg
 job-name-alt-medical-2 = Pielęgniarz
 job-name-alt-medical-3 = Lekarz
+job-name-alt-medical-4 = Lekarz rodzinny
+job-name-alt-medical-5 = Rezydent medyczny
+job-name-alt-medical-6 = Pielęgniarka praktykująca
 job-name-alt-chemist-1 = Farmaceuta
 job-name-alt-chemist-2 = Laborant
 job-name-alt-paramedic-1 = Specjalista ds. Urazów

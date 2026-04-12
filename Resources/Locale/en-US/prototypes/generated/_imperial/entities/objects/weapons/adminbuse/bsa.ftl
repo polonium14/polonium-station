@@ -1,0 +1,10 @@
+ent-WeaponDebugBSA = ogłuszacz nuklearny
+    .desc = Z miłością, do stacji...
+    .suffix = ABS, NIE MAPOWAĆ, MEGA NIEBEZPIECZNY
+ent-BulletDebugBSA = pocisk artylerii bluespace
+    .desc = Na pewno umarłeś.
+ent-ClothingBackpackDuffelDSOWithBSA = torba ze śmiercią
+    .desc = Śliczny zestaw do wysadzenia całej stacji.
+    .suffix = ABS, Debug
+ent-WeaponDebugBSAInstruction = Instrukcja obsługi ABS
+    .desc = Papier zawierający zalecenia, które NIE są obowiązkowe, ale mogą uczynić aplikację piękniejszą.

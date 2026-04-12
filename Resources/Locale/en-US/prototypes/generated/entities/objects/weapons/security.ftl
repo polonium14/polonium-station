@@ -1,7 +1,8 @@
 ent-Stunbaton = stun baton
     .desc = A stun baton for incapacitating people with. Actively harming with this is considered bad tone.
-ent-Truncheon = truncheon
-    .desc = A rigid, steel-studded baton, meant to harm.
+    .suffix = DO NOT MAP
+ent-Truncheon = nightstick
+    .desc = A collapsible baton designed to beat troublemakers into submission.
 ent-Flash = flash
     .desc = An ultrabright flashbulb with a trigger, which causes the victim to be dazed and lose their eyesight for a moment. Useless when burnt out.
 ent-SciFlash = flash

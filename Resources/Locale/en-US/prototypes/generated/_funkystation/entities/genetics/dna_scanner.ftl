@@ -1,10 +1,4 @@
 ent-ComputerDnaScanner = geneticists console
     .desc = A console used with the medical scanner for DNA research.
-ent-GeneticistsConsoleComputerCircuitboard = geneticists console board
-    .desc = A computer printed circuit board for the geneticists console.
-ent-DnaDiscoveredIcon = dna discovered icon
-    .desc = { "" }
-ent-DnaUndiscoveredIcon = dna undiscovered icon
-    .desc = { "" }
-ent-DnaExtraIcon = dna extra icon
-    .desc = { "" }
+ent-DnaScannerConsoleComputerCircuitboard = geneticists console board
+    .desc = A computer printed circuit board for the dna scanner console.

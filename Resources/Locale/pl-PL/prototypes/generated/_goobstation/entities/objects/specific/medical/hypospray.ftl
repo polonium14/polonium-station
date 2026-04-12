@@ -26,4 +26,4 @@ ent-CartridgeGunshotSyndicate = syndicate gunshot autoinjector cartridge
     .desc = Syndicate medical cartridge, contains Puncturase specifically for healing gunshot wounds. Used in a cartridge autoinjector.
 ent-StasiziumAutoInjector = futuristic medipen
     .desc = A dose of medicinal substances from the future that can raise even the dead to their feet.
-    .suffix = DO NOT MAP
+    .suffix = NIE MAPOWAĆ

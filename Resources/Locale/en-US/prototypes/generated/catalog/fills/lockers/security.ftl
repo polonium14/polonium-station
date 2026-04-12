@@ -17,6 +17,7 @@ ent-ClosetBombFilled = { ent-ClosetBomb }
     .suffix = Filled
     .desc = { ent-ClosetBomb.desc }
 ent-GunSafeDisabler = disabler safe
+    .suffix = DO NOT MAP
     .desc = { ent-GunSafeBaseSecure.desc }
 ent-GunSafePistolMk58 = mk58 safe
     .desc = { ent-GunSafeBaseSecure.desc }

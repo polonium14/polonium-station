@@ -6,4 +6,4 @@ ent-WeaponPlasmaRifleEmpty = { ent-WeaponPlasmaRifle }
     .suffix = Empty
     .desc = { ent-WeaponPlasmaRifle.desc }
 ent-WeaponEnergyRevolver = EG-4 energy revolver
-    .desc = A highly advanced energy revolver capable of firing both lethal and disabling bullets.
+    .desc = A highly advanced energy revolver.

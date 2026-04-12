@@ -85,6 +85,8 @@ thaven-mood-fairy-name = Zaklęty
 thaven-mood-fairy-desc = Masz alergie na żelazo, stal oraz srebro. Unikaj ich dotykania.
 thaven-mood-afraiddark-name = Strach Przed Ciemnością
 thaven-mood-afraiddark-desc = W ciemności kryje się wiele niebezpieczeństw, i nie wkroczysz w nią bez odpowiedniego oświetlenia.
+thaven-mood-clothinghygiene-name = Brudne pranie
+thaven-mood-clothinghygiene-desc = Cenisz bardzo wygodę czystego ubrania. Jest to bardzo kłopotliwe, gdy twoje ubrania są zabrudzone lub widzisz, jak inni noszą brudne ubrania.
 # Testing Locales, only exist to shut up prototype tests
 DuplicateTest = Nie powinieneś tego widzieć
 DuplicateOverlapTest = Czas, doktorze Freeman?
