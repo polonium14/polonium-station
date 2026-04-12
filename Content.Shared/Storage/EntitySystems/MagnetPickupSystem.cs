@@ -61,13 +61,13 @@ public sealed class MagnetPickupSystem : EntitySystem
                 continue;
 
             comp.NextScan += ScanDelay;
+            if(comp.SlotCheck == true){
+                if (!_inventory.TryGetContainingSlot((uid, xform, meta), out var slotDef))
+                    continue;
 
-            if (!_inventory.TryGetContainingSlot((uid, xform, meta), out var slotDef))
-                continue;
-
-            if ((slotDef.SlotFlags & comp.SlotFlags) == 0x0)
-                continue;
-
+                if ((slotDef.SlotFlags & comp.SlotFlags) == 0x0)
+                    continue;
+            }
             // No space
             if (!_storage.HasSpace((uid, storage)))
                 continue;

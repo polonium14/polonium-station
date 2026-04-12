@@ -49,8 +49,16 @@
   parent: BaseBullet
   #categories: [ HideSpawnMenu ]
   components:
+  - type: Sprite
+    visible: false
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 0
   - type: TimedDespawn
     lifetime: 0.8
+  - type: Ammo
+    muzzleFlash: null
   - type: GravityWell
     baseRadialAcceleration: 5
     maxRange: 30
@@ -59,7 +67,3 @@
       tags:
         - ArtifactFragment
         - Ore
-  - type: PointLight
-    radius: 1
-    color: brown
-    energy: 1

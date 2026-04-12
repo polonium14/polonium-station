@@ -13,4 +13,7 @@
   id: SeismicCharge
 
 - type: Tag
+  id: VacuumOreBox
+
+- type: Tag
   id: VisMPSPistolMagazine

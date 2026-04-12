@@ -27,4 +27,10 @@ public sealed partial class MagnetPickupComponent : Component
 
     [ViewVariables(VVAccess.ReadWrite), DataField("range")]
     public float Range = 1f;
+
+    /// <summary>
+    /// Run container slot check?
+    /// </summary>
+    [ViewVariables(VVAccess.ReadWrite), DataField("slotCheck")]
+    public bool SlotCheck = true;
 }

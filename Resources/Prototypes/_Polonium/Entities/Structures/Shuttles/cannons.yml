@@ -105,10 +105,21 @@
     sprite: _Polonium/Objects/Weapons/Guns/Shuttles/mineralvacuum.rsi
     layers:
     - state: mnv-ex
+  - type: ItemSlots
+    slots:
+      ore_box:
+        name: ore box slot
+        insertOnInteract: true
+        ejectOnInteract: false
+        whitelist:
+          tags:
+          - VacuumOreBox
+        swap: true
   - type: ContainerContainer
     containers:
       machine_board: !type:Container
       machine_parts: !type:Container
+      ore_box: !type:ContainerSlot
   - type: Destructible
     thresholds:
     - trigger:
