@@ -257,7 +257,7 @@ public sealed class GravityWellSystem : SharedGravityWellSystem
             var displacement = epicenter - _transform.GetWorldPosition(entity);
             var distance2 = displacement.LengthSquared();
             var scaling = (1f / distance2) * physics.Mass; // TODO: Variable falloff gradiants.
-            if(component.Whitelist != null){
+            if(component.Whitelist != null){ // Polonium Edit, makes it so gravity wells can be whitelisted to attract only certain entities (At the same time reverses the attraction pull)
                 if (!_whitelistSystem.IsValid(component.Whitelist, entity))
                 {
                     continue;

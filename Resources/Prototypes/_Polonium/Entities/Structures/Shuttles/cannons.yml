@@ -102,9 +102,9 @@
   description: A mining tool designed to vacuum up loose minerals in space. Not a weapon.
   components:
   - type: Sprite
-    sprite: _Polonium/Objects/Weapons/Guns/Shuttles/plasmacutter.rsi
+    sprite: _Polonium/Objects/Weapons/Guns/Shuttles/mineralvacuum.rsi
     layers:
-    - state: plm-ctt
+    - state: mnv-ex
   - type: ContainerContainer
     containers:
       machine_board: !type:Container
