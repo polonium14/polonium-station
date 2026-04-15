@@ -1,20 +1,17 @@
 - type: entity
-  name: vacuum ore box # Funky Station changed to make it also be able to pick up scrap items 
+  name: vacuum ore box 
   id: OreBoxVacuum
   parent: BaseStorageItem
-  description: A robust bag for salvage specialists and miners alike to carry large amounts of ore or scrap. Magnetises any nearby raw resources when attached to a belt.
+  description: Advanced ore box for automatically picking up and storing unprocessed minerals.
   components:
   - type: MagnetPickup
     range: 2
     slotCheck: false
   - type: Sprite
     noRot: true
-    sprite: /Textures/Structures/Storage/orebox.rsi
+    sprite: /Textures/_Polonium/Structures/Storage/vacuumorebox.rsi
     layers:
-    - state: orebox
-    - state: orebox-top
-      map: [ top ]
-      visible: true
+    - state: vacuumorebox
   - type: Item
     size: Ginormous
   - type: Storage

@@ -18,4 +18,4 @@ ent-ShuttleGunSeismic = EXP-SMC "KosmoWstrząs"
 ent-ShuttleGunPlasmaCutter = PLM-CTT "Shuttle Cutter"
     .desc = Stacjonarne działo odzyskowe. Ładowane poprzez plazmę, tnie asteroidy z łatwością.
 ent-ShuttleGunMineralVacuum = MNV-EX "Mineral Vacuum"
-    .desc = Stacjonarne urządzenie przyciągające rudy. Nie stać przed urządzeniem kiedy jest aktywne
+    .desc = Stacjonarne urządzenie przyciągające rudy. Nie stać przed urządzeniem kiedy jest aktywne. Posiada punkt montażowy dla próżniowego pudła na rudy

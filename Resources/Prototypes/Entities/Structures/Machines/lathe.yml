@@ -759,6 +759,7 @@
     - PlantScanCartridge # Mira Sector - Plants Analyzer Cartridge
     - PowerCellHyperSingle #funk
     - CassetteTapeHyper #funk
+    - OreBoxVacuum #Polonium
   - type: EmagLatheRecipes
     emagDynamicRecipes:
     - BoxBeanbag

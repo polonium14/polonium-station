@@ -120,5 +120,7 @@ vendor-salvage-floodlight-name = Reflektor
 vendor-salvage-floodlight-desc = Słup z zamontowanymi potężnymi światłami.
 vendor-salvage-ore-box-name = Skrzynia na Rudę
 vendor-salvage-ore-box-desc = Duży pojemnik do przechowywania nieprzetworzonej rudy.
+vendor-salvage-vacuum-ore-box-name = Próżniowa Skrzynia na Rudę
+vendor-salvage-vacuum-ore-box-desc = Duży pojemnik do przechowywania nieprzetworzonej rudy. Automatycznie podnosi rudę.
 vendor-salvage-shuttle-gun-kinetic-circuitboard-free = Płytka do PTK-800 "Dematerializator" (darmowa)
 vendor-salvage-shuttle-gun-kinetic-circuitboard-desc-free = Płytka do PTK-800 "Dematerializator". W ramach promocji dwie sztuki za darmo! (Urządzenie nie jest uwzględnione w ramach pakietu)

@@ -263,7 +263,7 @@ public sealed class GravityWellSystem : SharedGravityWellSystem
                     continue;
                 }
                 _physics.SetLinearVelocity(entity, new Vector2(0, 0), body: physics);
-                scaling = (MathF.Sqrt(distance2) / (maxRange + 30)) * physics.Mass;
+                scaling = MathF.Sqrt(distance2)/maxRange * physics.Mass;
             }
             if (distance2 < minRange2)
                 continue;

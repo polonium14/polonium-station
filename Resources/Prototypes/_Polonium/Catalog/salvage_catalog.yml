@@ -21,9 +21,6 @@
   - SalvageVendorEquipment
   cost:
     SalvageTicket: 150
-  conditions:
-  - !type:ListingLimitedStockCondition
-    stock: 6
 
 - type: listing
   id: SalvageVendorShuttleGunSeismicCircuitboard
@@ -35,9 +32,6 @@
   - SalvageVendorEquipment
   cost:
     SalvageTicket: 100
-  conditions:
-  - !type:ListingLimitedStockCondition
-    stock: 4
 
 - type: listing
   id: SalvageVendorShuttleGunPlasmaCutterCircuitboard
@@ -49,9 +43,6 @@
   - SalvageVendorEquipment
   cost:
     SalvageTicket: 500
-  conditions:
-  - !type:ListingLimitedStockCondition
-    stock: 4
 
 - type: listing
   id: SalvageVendorShuttleMineralVacuumCircuitboard
@@ -63,6 +54,14 @@
   - SalvageVendorEquipment
   cost:
     SalvageTicket: 500
-  conditions:
-  - !type:ListingLimitedStockCondition
-    stock: 4
+
+- type: listing
+  id: SalvageVendorOreBoxVacuum
+  name: vendor-salvage-vacuum-ore-box-name
+  description: vendor-salvage-vacuum-ore-box-desc
+  icon: { sprite:  _Polonium/Structures/Storage/vacuumorebox.rsi, state: vacuumorebox}
+  productEntity: OreBoxVacuum
+  categories:
+  - SalvageVendorStandard
+  cost:
+    SalvageTicket: 300

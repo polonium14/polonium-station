@@ -110,7 +110,7 @@
       ore_box:
         name: ore box slot
         insertOnInteract: true
-        ejectOnInteract: false
+        ejectOnInteract: true
         whitelist:
           tags:
           - VacuumOreBox
@@ -120,6 +120,13 @@
       machine_board: !type:Container
       machine_parts: !type:Container
       ore_box: !type:ContainerSlot
+  - type: ItemMapper
+    mapLayers:
+      ore_box:
+        minCount: 1
+        whitelist:
+          tags:
+          - VacuumOreBox
   - type: Destructible
     thresholds:
     - trigger:
@@ -131,8 +138,8 @@
         - !type:DoActsBehavior
           acts: ["Destruction"]
   - type: Gun
-    fireRate: 2
-    projectileSpeed: 0
+    fireRate: 1.5
+    projectileSpeed: -0.5
     useKey: false
     soundGunshot:
   - type: Machine

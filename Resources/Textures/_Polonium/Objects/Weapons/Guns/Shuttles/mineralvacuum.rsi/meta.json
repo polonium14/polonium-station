@@ -9,6 +9,9 @@
     "states": [
     {
         "name": "mnv-ex"
+    },
+    {
+        "name": "ore_box"
     }
     ]
 }
