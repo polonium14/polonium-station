@@ -72,15 +72,33 @@ jobs:
     - name: Build Project
       run: dotnet build --configuration DebugOpt --no-restore /m
 
-    - name: Run Content.Tests
-      run: dotnet test --no-build --configuration DebugOpt Content.Tests/Content.Tests.csproj -- NUnit.ConsoleOut=0
+    - name: Prepare NUnit output directory
+      run: mkdir -p test_results
 
+    - name: Run Content.Tests
+      shell: pwsh
+      run: dotnet test --no-build --configuration DebugOpt Content.Tests/Content.Tests.csproj -- NUnit.ConsoleOut=0 NUnit.TestOutputXml="logs" NUnit.WorkDirectory="$(pwd)/test_results"
+
+    - name: Install xvfb (integration tests spin up client; headless Linux needs a display)
+      run: sudo apt-get update && sudo apt-get install -y xvfb
+
+    # Client uses OpenGL/Clyde; without a virtual framebuffer the runner can hang indefinitely on GitHub's Linux VMs.
     - name: Run Content.IntegrationTests
+      timeout-minutes: 120
       shell: pwsh
       run: |
         $env:DOTNET_gcServer=1
         $env:VSTEST_CONNECTION_TIMEOUT=600000
-        dotnet test --no-build --configuration DebugOpt Content.IntegrationTests/Content.IntegrationTests.csproj -- NUnit.ConsoleOut=0 NUnit.MapWarningTo=Failed RunConfiguration.TestSessionTimeout=9000000
+        xvfb-run -a dotnet test --no-build --configuration DebugOpt Content.IntegrationTests/Content.IntegrationTests.csproj -- NUnit.ConsoleOut=0 NUnit.MapWarningTo=Failed NUnit.TestOutputXml="logs" NUnit.WorkDirectory="$(pwd)/test_results"
+
+    - name: Archive NUnit3 test results
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: nunit3-results-${{ matrix.os }}
+        path: test_results/*
+        retention-days: 7
+        compression-level: 9
   ci-success:
     name: Build & Test Debug
     needs:
