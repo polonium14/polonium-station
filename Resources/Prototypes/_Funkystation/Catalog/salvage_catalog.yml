@@ -558,4 +558,3 @@
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 4
-

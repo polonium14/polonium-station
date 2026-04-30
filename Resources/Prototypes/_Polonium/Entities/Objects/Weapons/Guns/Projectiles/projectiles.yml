@@ -56,7 +56,7 @@
       types:
         Piercing: 0
   - type: TimedDespawn
-    lifetime: 0.8
+    lifetime: 0.5
   - type: Ammo
     muzzleFlash: null
   - type: GravityWell

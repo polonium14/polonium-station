@@ -138,14 +138,14 @@
         - !type:DoActsBehavior
           acts: ["Destruction"]
   - type: Gun
-    fireRate: 1.5
-    projectileSpeed: -0.5
+    fireRate: 2
+    projectileSpeed: 0.5
     useKey: false
     soundGunshot:
   - type: Machine
     board: ShuttleGunMineralVacuumCircuitboard
   - type: RechargeBasicEntityAmmo
-    rechargeCooldown: 0.4
+    rechargeCooldown: 0.01
   - type: BasicEntityAmmoProvider
     proto: BulletMineralVacuum
     capacity: 1
