@@ -34464,6 +34464,8 @@ entities:
     - type: Transform
       pos: -8.5,29.5
       parent: 2
+    - type: FaxMachine
+      name: ntr's office
 - proto: FaxMachineCaptain
   entities:
   - uid: 5464
@@ -35085,6 +35087,8 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 24.5,9.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#0055CCFF'
   - uid: 5550
     components:
     - type: Transform
@@ -37033,6 +37037,8 @@ entities:
     - type: Transform
       pos: 25.5,11.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#990000FF'
   - uid: 12248
     components:
     - type: Transform
@@ -44784,6 +44790,8 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 24.5,11.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#990000FF'
   - uid: 12249
     components:
     - type: Transform
@@ -45895,6 +45903,8 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 22.5,10.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#0055CCFF'
 - proto: GasPort
   entities:
   - uid: 7013
@@ -46798,6 +46808,8 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 25.5,9.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#0055CCFF'
     - type: DeviceNetwork
       deviceLists:
       - 3574
@@ -47436,6 +47448,8 @@ entities:
       rot: 3.141592653589793 rad
       pos: 25.5,10.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#990000FF'
     - type: DeviceNetwork
       deviceLists:
       - 3574
@@ -64711,6 +64725,8 @@ entities:
       rot: 3.141592653589793 rad
       pos: -22.5,9.5
       parent: 2
+    - type: AtmosPipeColor
+      color: '#0055CCFF'
   - uid: 9907
     components:
     - type: Transform
