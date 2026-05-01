@@ -46,16 +46,14 @@
     id: BrigmedicPDA
     ears: ClothingHeadsetBrigmedic
     belt: ClothingBeltMedicalFilled
-    pocket1: WeaponPistolMk58
-    pocket2: WeaponDisabler
+    pocket1: FlashlightSeclite
+    pocket2: Truncheon
   storage:
     back:
     - Flash
-    - MagazinePistol
     - SecHypo # Goobstation
     - autoInjectorCartridgeCaseSoftFilled
     - Handcuffs
-    - ClothingMaskBreathMedicalSecurity
 
 - type: jobAlternateTitle
   id: SecurityMedic

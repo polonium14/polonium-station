@@ -169,7 +169,7 @@
   - type: StorageFill
     contents:
       - id: ClothingEyesGlassesMedSec
-      - id: WeaponDisabler
+      - id: Truncheon
       - id: TrackingImplanter
         amount: 2
       - id: ClothingOuterHardsuitBrigmedic
@@ -182,6 +182,12 @@
       - id: ClothingOuterVestArmorMedSec
       - id: ClothingUniformJumpsuitBrigmedic
       - id: ClothingUniformJumpskirtBrigmedic
+      - id: ClothingMaskBreathMedicalSecurity
+      - id: SecHypo
+      - id: HandheldGPSBasic
+      - id: ClothingHandsGlovesNitrile
+      - id: DefibrillatorCompact
+      - id: BoxBodyBag
       - id: autoInjectorCartridgeCaseFilled
       - id: MedkitFilled
       - id: MedkitCombatFilled

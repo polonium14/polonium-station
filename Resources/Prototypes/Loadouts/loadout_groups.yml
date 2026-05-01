@@ -2248,6 +2248,7 @@
   loadouts:
   - SecurityOfficerEnergyGun
   - SecurityOfficerPistol
+  - SecurityOfficerVIS
 
 # Brigmedic - Polonium
 - type: loadoutGroup

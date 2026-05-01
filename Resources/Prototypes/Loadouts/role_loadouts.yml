@@ -528,6 +528,7 @@
   - Trinkets
   - SecurityStar
   - GroupSpeciesBreathToolSecurity
+  - LoadoutSecurityOfficerWeapon
 
 - type: roleLoadout
   id: JobDetective

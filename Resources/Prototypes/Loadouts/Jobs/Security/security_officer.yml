@@ -231,6 +231,12 @@
     back:
     - WeaponPistolMk58
 
+- type: loadout
+  id: SecurityOfficerVIS
+  storage:
+    back:
+    - VisMPSPistol
+
 # Misc
 - type: loadout
   id: SecStar
