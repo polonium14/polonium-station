@@ -4,8 +4,8 @@ meta:
   engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 04/30/2026 22:06:49
-  entityCount: 12337
+  time: 05/01/2026 02:32:03
+  entityCount: 12341
 maps:
 - 1
 grids:
@@ -6658,6 +6658,13 @@ entities:
     components:
     - type: Transform
       pos: 42.5,21.5
+      parent: 2
+- proto: AutoclaveFlatpack
+  entities:
+  - uid: 12340
+    components:
+    - type: Transform
+      pos: 18.348602,-18.640627
       parent: 2
 - proto: Autolathe
   entities:
@@ -53486,6 +53493,11 @@ entities:
     - type: Transform
       pos: -2.7462387,7.7338686
       parent: 2
+  - uid: 12341
+    components:
+    - type: Transform
+      pos: 18.817352,-18.531252
+      parent: 2
 - proto: MysteryFigureBox
   entities:
   - uid: 8159
@@ -61542,6 +61554,19 @@ entities:
     - type: Transform
       pos: 12.820141,26.438648
       parent: 2
+  - uid: 12338
+    components:
+    - type: Transform
+      pos: 0.5283922,13.643374
+      parent: 2
+  - uid: 12339
+    components:
+    - type: Transform
+      pos: 19.258505,-18.435915
+      parent: 2
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
 - proto: SoapOmega
   entities:
   - uid: 9412
