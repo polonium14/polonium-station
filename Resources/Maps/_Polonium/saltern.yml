@@ -4,8 +4,8 @@ meta:
   engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 05/01/2026 02:32:03
-  entityCount: 12341
+  time: 05/02/2026 02:06:26
+  entityCount: 12358
 maps:
 - 1
 grids:
@@ -6296,6 +6296,13 @@ entities:
     - type: Transform
       pos: -14.504976,42.399937
       parent: 2
+- proto: AstroNavCartridge
+  entities:
+  - uid: 8775
+    components:
+    - type: Transform
+      pos: 29.653893,12.501177
+      parent: 2
 - proto: AtmosDeviceFanDirectional
   entities:
   - uid: 343
@@ -8167,7 +8174,7 @@ entities:
   - uid: 653
     components:
     - type: Transform
-      pos: 51.5,15.5
+      pos: 56.5,14.5
       parent: 2
   - uid: 654
     components:
@@ -16538,6 +16545,36 @@ entities:
     components:
     - type: Transform
       pos: 35.5,35.5
+      parent: 2
+  - uid: 12346
+    components:
+    - type: Transform
+      pos: 57.5,14.5
+      parent: 2
+  - uid: 12347
+    components:
+    - type: Transform
+      pos: 54.5,14.5
+      parent: 2
+  - uid: 12348
+    components:
+    - type: Transform
+      pos: 51.5,15.5
+      parent: 2
+  - uid: 12349
+    components:
+    - type: Transform
+      pos: 55.5,14.5
+      parent: 2
+  - uid: 12350
+    components:
+    - type: Transform
+      pos: 58.5,14.5
+      parent: 2
+  - uid: 12351
+    components:
+    - type: Transform
+      pos: 57.5,15.5
       parent: 2
 - proto: CableApcStack
   entities:
@@ -28173,6 +28210,13 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 46.484562,-5.364609
       parent: 2
+- proto: CircuitImprinter
+  entities:
+  - uid: 12352
+    components:
+    - type: Transform
+      pos: -13.5,-22.5
+      parent: 2
 - proto: CleanerDispenser
   entities:
   - uid: 4459
@@ -28781,6 +28825,11 @@ entities:
     components:
     - type: Transform
       pos: 32.479706,-2.7047698
+      parent: 2
+  - uid: 12358
+    components:
+    - type: Transform
+      pos: 30.521973,23.521048
       parent: 2
 - proto: ClothingHandsGlovesCombat
   entities:
@@ -35686,7 +35735,7 @@ entities:
       pos: 40.5,-12.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -16399.648
+      secondsUntilStateChange: -18865.666
       state: Closing
   - uid: 5654
     components:
@@ -51099,16 +51148,6 @@ entities:
     - type: Transform
       pos: 29.30994,12.660811
       parent: 2
-  - uid: 12303
-    components:
-    - type: Transform
-      pos: 29.669315,12.645186
-      parent: 2
-  - uid: 12304
-    components:
-    - type: Transform
-      pos: 29.481815,12.395186
-      parent: 2
 - proto: HandheldHealthAnalyzerUnpowered
   entities:
   - uid: 7875
@@ -51116,6 +51155,16 @@ entities:
     - type: Transform
       pos: 17.362448,-18.309433
       parent: 2
+- proto: HandHeldMassScanner
+  entities:
+  - uid: 12354
+    components:
+    - type: Transform
+      pos: 29.614902,12.813088
+      parent: 2
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
 - proto: HandheldStationMap
   entities:
   - uid: 7876
@@ -52161,7 +52210,7 @@ entities:
   - uid: 424
     components:
     - type: Transform
-      pos: 29.325565,16.582336
+      pos: 29.505527,16.757046
       parent: 2
     - type: GasTank
       toggleActionEntity: 446
@@ -52180,7 +52229,7 @@ entities:
   - uid: 12285
     components:
     - type: Transform
-      pos: 29.65369,16.504211
+      pos: 29.492306,16.399242
       parent: 2
     - type: GasTank
       toggleActionEntity: 12287
@@ -52199,7 +52248,7 @@ entities:
   - uid: 12288
     components:
     - type: Transform
-      pos: 29.450565,16.160461
+      pos: 29.492306,16.05202
       parent: 2
     - type: GasTank
       toggleActionEntity: 12290
@@ -52969,7 +53018,7 @@ entities:
   - uid: 12311
     components:
     - type: Transform
-      pos: -13.5,-22.5
+      pos: -16.5,-23.5
       parent: 2
 - proto: MagazineRifle
   entities:
@@ -54426,6 +54475,13 @@ entities:
     - type: Transform
       pos: 28.5,-0.5
       parent: 2
+- proto: PosterContrabandGreyTide
+  entities:
+  - uid: 12356
+    components:
+    - type: Transform
+      pos: -26.5,7.5
+      parent: 2
 - proto: PosterContrabandLamarr
   entities:
   - uid: 8312
@@ -54453,6 +54509,13 @@ entities:
     components:
     - type: Transform
       pos: 42.5,-5.5
+      parent: 2
+- proto: PosterContrabandRise
+  entities:
+  - uid: 12357
+    components:
+    - type: Transform
+      pos: -28.5,12.5
       parent: 2
 - proto: PosterContrabandSmoke
   entities:
@@ -54623,6 +54686,13 @@ entities:
     components:
     - type: Transform
       pos: -4.5,-26.5
+      parent: 2
+- proto: PosterLegitThereIsNoGasGiant
+  entities:
+  - uid: 12355
+    components:
+    - type: Transform
+      pos: 29.5,23.5
       parent: 2
 - proto: PosterLegitWorkForAFuture
   entities:
@@ -54844,6 +54914,24 @@ entities:
     - type: Transform
       pos: 23.600492,-14.314652
       parent: 2
+  - uid: 12343
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 26.573692,21.867966
+      parent: 2
+  - uid: 12344
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 26.808067,21.78984
+      parent: 2
+  - uid: 12345
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 26.698692,21.63359
+      parent: 2
 - proto: PowerCellRecharger
   entities:
   - uid: 8379
@@ -54889,6 +54977,11 @@ entities:
     components:
     - type: Transform
       pos: 22.5,-4.5
+      parent: 2
+  - uid: 12342
+    components:
+    - type: Transform
+      pos: 26.5,21.5
       parent: 2
 - proto: PowerCellSmall
   entities:
@@ -57528,11 +57621,6 @@ entities:
     - type: Transform
       pos: 25.5,-11.5
       parent: 2
-  - uid: 8775
-    components:
-    - type: Transform
-      pos: 30.5,16.5
-      parent: 2
   - uid: 8776
     components:
     - type: Transform
@@ -57582,6 +57670,11 @@ entities:
     components:
     - type: Transform
       pos: -12.5,-13.5
+      parent: 2
+  - uid: 12303
+    components:
+    - type: Transform
+      pos: 30.5,16.5
       parent: 2
 - proto: RandomSnacks
   entities:
@@ -61191,6 +61284,13 @@ entities:
     components:
     - type: Transform
       pos: 50.5,-1.5
+      parent: 2
+- proto: SignHead
+  entities:
+  - uid: 12304
+    components:
+    - type: Transform
+      pos: 24.5,10.5
       parent: 2
 - proto: SignHydro1
   entities:
@@ -65227,6 +65327,11 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 29.5,12.5
       parent: 2
+  - uid: 12305
+    components:
+    - type: Transform
+      pos: 26.5,21.5
+      parent: 2
   - uid: 12306
     components:
     - type: Transform
@@ -66560,11 +66665,6 @@ entities:
     components:
     - type: Transform
       pos: 31.5,0.5
-      parent: 2
-  - uid: 12305
-    components:
-    - type: Transform
-      pos: 26.5,21.5
       parent: 2
 - proto: VisMPSPistol
   entities:
@@ -75477,6 +75577,11 @@ entities:
     components:
     - type: Transform
       pos: 31.5,2.5
+      parent: 2
+  - uid: 12353
+    components:
+    - type: Transform
+      pos: 24.5,15.5
       parent: 2
 - proto: WaterTankFull
   entities:
