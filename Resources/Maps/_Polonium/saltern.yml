@@ -4,8 +4,8 @@ meta:
   engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 05/02/2026 02:06:26
-  entityCount: 12358
+  time: 05/03/2026 00:18:00
+  entityCount: 12363
 maps:
 - 1
 grids:
@@ -6689,6 +6689,11 @@ entities:
     components:
     - type: Transform
       pos: -27.5,1.5
+      parent: 2
+  - uid: 12360
+    components:
+    - type: Transform
+      pos: 12.5,10.5
       parent: 2
 - proto: BalloonSyn
   entities:
@@ -23776,6 +23781,13 @@ entities:
     - type: Transform
       pos: 36.5,12.5
       parent: 2
+- proto: CargoComputerComms
+  entities:
+  - uid: 4702
+    components:
+    - type: Transform
+      pos: 28.5,10.5
+      parent: 2
 - proto: CargoTechFab
   entities:
   - uid: 3633
@@ -29677,11 +29689,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 18.5,9.5
       parent: 2
-  - uid: 12241
-    components:
-    - type: Transform
-      pos: 28.5,10.5
-      parent: 2
 - proto: ComputerCargoOrders
   entities:
   - uid: 4690
@@ -29808,12 +29815,6 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 4.5,31.5
-      parent: 2
-  - uid: 4702
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -7.5,21.5
       parent: 2
 - proto: ComputerPowerMonitoring
   entities:
@@ -33733,7 +33734,7 @@ entities:
   - uid: 5338
     components:
     - type: Transform
-      pos: 7.5,16.5
+      pos: 9.5,16.5
       parent: 2
 - proto: DresserHeadOfSecurityFilled
   entities:
@@ -34366,6 +34367,14 @@ entities:
       parent: 5429
     - type: Physics
       canCollide: False
+- proto: EngiComputerComms
+  entities:
+  - uid: 9952
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 40.5,0.5
+      parent: 2
 - proto: ExosuitFabricator
   entities:
   - uid: 5432
@@ -35735,7 +35744,7 @@ entities:
       pos: 40.5,-12.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -18865.666
+      secondsUntilStateChange: -20551.936
       state: Closing
   - uid: 5654
     components:
@@ -51170,8 +51179,11 @@ entities:
   - uid: 7876
     components:
     - type: Transform
-      pos: 40.50493,-0.0047982335
+      pos: 37.445538,-0.2615582
       parent: 2
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
 - proto: HandLabeler
   entities:
   - uid: 7877
@@ -53334,6 +53346,13 @@ entities:
     components:
     - type: Transform
       pos: 17.5,-17.5
+      parent: 2
+- proto: MedicalComputerComms
+  entities:
+  - uid: 12359
+    components:
+    - type: Transform
+      pos: 24.5,-9.5
       parent: 2
 - proto: MedicalTechFab
   entities:
@@ -57683,6 +57702,11 @@ entities:
     - type: Transform
       pos: -47.5,-9.5
       parent: 2
+  - uid: 12363
+    components:
+    - type: Transform
+      pos: 18.5,16.5
+      parent: 2
 - proto: RandomSoap
   entities:
   - uid: 8788
@@ -57917,19 +57941,15 @@ entities:
     - type: Transform
       pos: -3.5,1.5
       parent: 2
-- proto: RCD
-  entities:
-  - uid: 8830
+  - uid: 12361
     components:
     - type: Transform
-      pos: 40.557358,0.6694789
+      pos: 12.5,6.5
       parent: 2
-- proto: RCDAmmo
-  entities:
-  - uid: 8831
+  - uid: 12362
     components:
     - type: Transform
-      pos: 40.557358,0.5514846
+      pos: 12.5,7.5
       parent: 2
 - proto: Recycler
   entities:
@@ -59983,6 +60003,13 @@ entities:
       rot: 3.141592653589793 rad
       pos: 17.551718,-20.302809
       parent: 2
+- proto: ScienceComputerComms
+  entities:
+  - uid: 8831
+    components:
+    - type: Transform
+      pos: -3.5,-19.5
+      parent: 2
 - proto: Screen
   entities:
   - uid: 9015
@@ -60090,6 +60117,14 @@ entities:
     - type: Transform
       pos: -23.430374,-21.53869
       parent: 2
+- proto: SecurityComputerComms
+  entities:
+  - uid: 8830
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -7.5,21.5
+      parent: 2
 - proto: SecurityTechFab
   entities:
   - uid: 9359
@@ -60103,6 +60138,14 @@ entities:
     components:
     - type: Transform
       pos: -18.5,1.5
+      parent: 2
+- proto: ServiceComputerComms
+  entities:
+  - uid: 12241
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 7.5,16.5
       parent: 2
 - proto: ShardGlass
   entities:
@@ -65195,12 +65238,6 @@ entities:
     - type: Transform
       pos: 60.5,-5.5
       parent: 2
-  - uid: 9952
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 40.5,0.5
-      parent: 2
   - uid: 9953
     components:
     - type: Transform
@@ -66476,7 +66513,7 @@ entities:
   - uid: 10112
     components:
     - type: Transform
-      pos: 12.5,10.5
+      pos: 12.5,11.5
       parent: 2
 - proto: VendingMachineMedical
   entities:
