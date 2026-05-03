@@ -61615,6 +61615,8 @@ entities:
     - type: Transform
       pos: 16.5,-3.5
       parent: 2
+- proto: SmartFridge
+  entities:
   - uid: 9401
     components:
     - type: Transform
