@@ -474,6 +474,7 @@
   - HeadofSecurityJobTrinkets
   - SecurityStar
   - GroupSpeciesBreathToolSecurity
+  - LoadoutSecurityOfficerWeapon
 
 - type: roleLoadout
   id: JobWarden
@@ -491,6 +492,7 @@
   - WardenJobTrinkets
   - SecurityStar
   - GroupSpeciesBreathToolSecurity
+  - LoadoutSecurityOfficerWeapon
 
 - type: roleLoadout
   id: JobSecurityOfficer
