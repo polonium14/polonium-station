@@ -29,14 +29,13 @@
 # SPDX-FileCopyrightText: 2026 nikitosych <174215049+nikitosych@users.noreply.github.com>
 #
 # SPDX-License-Identifier: MIT
-
 meta:
   format: 7
   category: Map
-  engineVersion: 266.0.0
+  engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 01/20/2026 22:47:31
+  time: 05/03/2026 22:08:35
   entityCount: 2647
 maps:
 - 1
@@ -148,7 +147,6 @@ entities:
       id: Reach
     - type: OccluderTree
     - type: Shuttle
-      dampingModifier: 0.25
     - type: GridPathfinding
     - type: Gravity
       gravityShakeSound: !type:SoundPathSpecifier
@@ -1189,7 +1187,7 @@ entities:
           -2,-1:
             1: 65279
           -2,0:
-            1: 63999
+            1: 55807
           -2,-3:
             0: 200
             1: 32768
@@ -1254,7 +1252,7 @@ entities:
           2,3:
             1: 32767
           2,-1:
-            1: 56831
+            1: 56575
           2,4:
             1: 519
             0: 1024
@@ -1401,29 +1399,6 @@ entities:
           moles:
           - 21.824879
           - 82.10312
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-        - volume: 2500
-          immutable: True
-          moles:
-          - 0
-          - 0
           - 0
           - 0
           - 0
@@ -2145,27 +2120,27 @@ entities:
       parent: 2
 - proto: AtmosFixNitrogenMarker
   entities:
-  - uid: 76
-    components:
-    - type: Transform
-      pos: 10.5,-15.5
-      parent: 2
-  - uid: 77
+  - uid: 78
     components:
     - type: Transform
       pos: 9.5,-15.5
       parent: 2
-- proto: AtmosFixOxygenMarker
-  entities:
-  - uid: 78
-    components:
-    - type: Transform
-      pos: 9.5,-13.5
-      parent: 2
   - uid: 79
     components:
     - type: Transform
+      pos: 10.5,-15.5
+      parent: 2
+- proto: AtmosFixOxygenMarker
+  entities:
+  - uid: 76
+    components:
+    - type: Transform
       pos: 10.5,-13.5
+      parent: 2
+  - uid: 77
+    components:
+    - type: Transform
+      pos: 9.5,-13.5
       parent: 2
 - proto: Autolathe
   entities:
@@ -6649,13 +6624,6 @@ entities:
     components:
     - type: Transform
       pos: 6.5,-5.5
-      parent: 2
-- proto: ClothingBackpackDuffelSurgeryFilled
-  entities:
-  - uid: 1841
-    components:
-    - type: Transform
-      pos: 10.528191,-4.1092772
       parent: 2
 - proto: ClothingBackpackERTJanitor
   entities:
@@ -14814,18 +14782,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: -8.5,1.5
       parent: 2
-- proto: Stunbaton
-  entities:
-  - uid: 2010
-    components:
-    - type: Transform
-      pos: 16.40919,-4.3566227
-      parent: 2
-  - uid: 2011
-    components:
-    - type: Transform
-      pos: 16.581064,-4.4972477
-      parent: 2
 - proto: SubstationBasic
   entities:
   - uid: 2012
@@ -14890,6 +14846,13 @@ entities:
     components:
     - type: Transform
       pos: 17.5,-4.5
+      parent: 2
+- proto: SurgeryKitFilled
+  entities:
+  - uid: 1841
+    components:
+    - type: Transform
+      pos: 10.528191,-4.1092772
       parent: 2
 - proto: SurveillanceCameraRouterSecurity
   entities:
@@ -15438,6 +15401,18 @@ entities:
     components:
     - type: Transform
       pos: -4.498433,-6.6936054
+      parent: 2
+- proto: Truncheon
+  entities:
+  - uid: 2010
+    components:
+    - type: Transform
+      pos: 16.40919,-4.3566227
+      parent: 2
+  - uid: 2011
+    components:
+    - type: Transform
+      pos: 16.581064,-4.4972477
       parent: 2
 - proto: TurnstileGenpopEnter
   entities:
