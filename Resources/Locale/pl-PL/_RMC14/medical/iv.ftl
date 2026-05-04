@@ -1,4 +1,4 @@
-cm-iv-attach-self-injecting = You attach { THE($iv) } to { $target }, injecting into { OBJECT($target) }.
+﻿cm-iv-attach-self-injecting = You attach {THE($iv)} to {$target}, injecting into {OBJECT($target)}.
 cm-iv-attach-others-injecting = { $user } attaches { THE($iv) } to { $target }, injecting into { OBJECT($target) }.
 cm-iv-attach-self-drawing = You attach { THE($iv) } to { $target }, taking blood from { OBJECT($target) }.
 cm-iv-attach-others-drawing = { $user } attaches { THE($iv) } to { $target }, taking blood from { OBJECT($target) }.
