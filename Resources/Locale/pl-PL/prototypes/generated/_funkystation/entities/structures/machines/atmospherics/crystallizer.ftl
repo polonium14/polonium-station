@@ -1,2 +1,2 @@
-ent-Crystallizer = krystalizator
-    .desc = Służy do krystalizacji lub zestalania gazów.
+ent-Crystallizer = crystallizer
+    .desc = Used to crystallize or solidify gases.
