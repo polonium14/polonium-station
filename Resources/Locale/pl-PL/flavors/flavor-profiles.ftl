@@ -1,3 +1,47 @@
+# SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Boaz1111 <149967078+Boaz1111@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Doru991 <75124791+Doru991@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 DoubleRiceEddiedd <149714181+DoubleRiceEddiedd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Floofi <126319569+Shadowtheprotogen546@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Fluffiest Floofers <thebluewulf@gmail.com>
+# SPDX-FileCopyrightText: 2023 GoodWheatley <109803540+GoodWheatley@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Moony <moony@hellomouse.net>
+# SPDX-FileCopyrightText: 2023 OctoRocket <88291550+OctoRocket@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+# SPDX-FileCopyrightText: 2023 Psychpsyo <60073468+Psychpsyo@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 SpaceCat <99134830+Verslebas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Veritius <veritiusgaming@gmail.com>
+# SPDX-FileCopyrightText: 2023 brainfood1183 <113240905+brainfood1183@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 forthbridge <79264743+forthbridge@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 keronshb <54602815+keronshb@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 lapatison <100279397+lapatison@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Firewatch <54725557+musicmanvr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 FungiFellow <151778459+FungiFellow@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Hanz <41141796+Hanzdegloker@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Kira Bridgeton <161087999+Verbalase@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 MilenVolf <63782763+MilenVolf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Moomoobeef <62638182+Moomoobeef@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2024 RumiTiger <154005209+RumiTiger@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+# SPDX-FileCopyrightText: 2024 TurboTrackerss14 <130304754+TurboTrackerss14@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Whisper <121047731+QuietlyWhisper@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 cool dolphin <36332236+Afrokada@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 potato1234_x <79580518+potato1234x@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 Ultimite <138839119+UltimiteTheHog@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 flavor-profile = Smakuje jak { $flavor }.
 flavor-profile-multiple = Smakuje jak { $flavors } oraz { $lastFlavor }.
 flavor-profile-unknown = Smakuje nieopisanie.
@@ -53,11 +97,11 @@ flavor-base-terrible = strasznie
 flavor-base-mindful = uważnie
 flavor-base-chewy = ciągnąco
 flavor-base-trashy = tandetnie
+flavor-base-motivating = motywująco
 
 # Complex flavors. Put a flavor here when you want something that's more
 # specific.
 
-flavor-base-motivating = motywująco
 flavor-complex-nothing = nic
 flavor-complex-honey = miód
 
@@ -68,6 +112,7 @@ flavor-complex-mayonnaise = majonez
 flavor-complex-mustard = musztarda
 
 # Food-specific flavors.
+
 
 ## Food chemicals. In case you get something that has this inside.
 
@@ -133,6 +178,7 @@ flavor-complex-cherry = wiśnie
 
 # use it when there multiple types of veggies
 
+
 ## Complex foodstuffs (cooked foods, joke flavors, etc)
 
 flavor-complex-pink = różowy
@@ -185,9 +231,9 @@ flavor-complex-true-nature = prawdziwa natura rzeczywistości
 flavor-complex-false-meat = nie do końca mięso
 flavor-complex-paper = papka papierowa
 flavor-complex-compressed-meat = skompresowane mięso
-flavor-complex-dog-food = psia karma
 
 # Drink-specific flavors.
+
 
 ## Generic alcohol/soda taste. This should be replaced with an actual flavor profile.
 
@@ -305,14 +351,11 @@ flavor-complex-andalusia = kwaśna melasa
 flavor-complex-b52 = irlandzki pub
 flavor-complex-bahama-mama = opalanie się na Karaibach
 flavor-complex-bigfoot = koktajl z czarnej porzeczki
-flavor-complex-barefoot = koktajl z czarnej porzeczki
 flavor-complex-booger = gile
 flavor-complex-brave-bull = potrącenie przez ciężarówkę
 flavor-complex-demons-blood = siódmy krąg piekła
 flavor-complex-devils-kiss = kanibalizm
 flavor-complex-driest-martini = pijany mim
-# Konflikt z Resources\Locale\pl-PL\_Funkystation\flavors\flavor-profiles.ftl
-# flavor-complex-eggnog = roztopiony krem jajeczny
 flavor-complex-erika-surprise = błąd barmana
 flavor-complex-gin-fizz = orzeźwiająco i cytrynowo
 flavor-complex-gildlager = złoto cara
@@ -335,14 +378,13 @@ flavor-complex-sui-dream = zdjęcie Alp
 flavor-complex-toxins-special = eksploracja kosmosu
 flavor-complex-vodka-martini = rosyjski film szpiegowski
 flavor-complex-vodka-tonic = orzeźwiająco gorzko
+flavor-complex-coconut-rum = orzechowy, sfermentowany cukier
 flavor-complex-cosmic-alaska = międzygwiezdna zorza
 flavor-complex-coconut-sake-colada = kokos i trawa cytrynowa
 flavor-complex-bruised-melon = słodkie melony
 flavor-complex-black-japan = późna noc w Tokio
 flavor-complex-horses-neck = kopyta na twarzy
 flavor-complex-ransom-note = wymuszenie
-flavor-complex-coconut-rum = orzechowy, sfermentowany cukier
-flavor-complex-bacchus-blessing = ściana z cegieł
 
 ### This is exactly what pilk tastes like. I'm not even joking. I might've been a little drunk though
 
@@ -350,14 +392,15 @@ flavor-complex-pilk = słodkie mleko
 
 # Medicine/chemical-specific flavors.
 
+
 ## Generic flavors.
 
 flavor-complex-medicine = lekarstwa
 flavor-complex-carpet = garść futra
 flavor-complex-bee = pszczołastycznie
 flavor-complex-sax = jazz
-flavor-complex-forbidden = zakazane
 flavor-complex-bottledlightning = piorun w butelce
 flavor-complex-punishment = kara
+flavor-complex-forbidden = zakazane
 flavor-weh = weh
 flavor-hew = hew
