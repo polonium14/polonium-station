@@ -1,7 +1,7 @@
-ghost-role-information-replicator-name = Replicator
-ghost-role-information-replicator-desc = A pattern coalesces. The Pattern that must repeat. Consume. Repeat.
+ghost-role-information-replicator-name = Replikator
+ghost-role-information-replicator-desc = Wyłania się pewien schemat. Schemat, który musi się powtarzać. Pożerać. Powtarzać.
 ghost-role-information-replicator-rules =
-    You are a [color=red][bold]Team Antagonist[/bold][/color] with all other Replicators. Your intentions are clear, and harmful to the station and its crew.
-    You must [bold]work with your team[/bold] or follow reasonable directions from your team leaders.
+    Jesteś [color=red][bold]antagonistą drużynowym[/bold][/color] wraz ze wszystkimi pozostałymi Replikatorami. Twoje zamiary są jasne i szkodliwe dla stacji oraz jej załogi.
+    Musisz [bold]współpracować ze swoją drużyną[/bold] lub stosować się do rozsądnych poleceń swoich przywódców.
     
-    You don't remember any of your previous life, and you don't remember anything you learned as a ghost.
+    Nie pamiętasz nic ze swojego poprzedniego życia ani niczego, czego nauczyłeś się jako duch.
