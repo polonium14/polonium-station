@@ -1,9 +1,15 @@
-mopping-system-target-container-empty = { CAPITALIZE($target) } jest pusty!
-mopping-system-target-container-empty-water = { CAPITALIZE($target) } nie ma wody!
-mopping-system-puddle-space = { CAPITALIZE($used) } jest pełen wody!
-mopping-system-puddle-evaporate = { CAPITALIZE($target) } odparowuje się!
-mopping-system-no-water = { CAPITALIZE($used) } nie ma wody!
-mopping-system-no-hands = Nie masz rąk.
-mopping-system-full = { CAPITALIZE($used) } jest pełny!
-mopping-system-empty = { CAPITALIZE($used) } jest pusty!
-mopping-system-puddle-already-mopped = { CAPITALIZE($target) } już jest umytę!
+# SPDX-FileCopyrightText: 2022 Willhelm53 <97707302+Willhelm53@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 beck-thompson <107373427+beck-thompson@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
+mopping-system-target-container-empty = { CAPITALIZE(THE($target)) } is empty!
+mopping-system-target-container-empty-water = { CAPITALIZE(THE($target)) } has no water!
+mopping-system-puddle-space = { CAPITALIZE(THE($used)) } is full of water
+mopping-system-puddle-evaporate = { CAPITALIZE(THE($target)) } is evaporating
+mopping-system-no-water = { CAPITALIZE(THE($used)) } has no water!
+mopping-system-full = { CAPITALIZE(THE($used)) } is full!
+mopping-system-empty = { CAPITALIZE(THE($used)) } is empty!
