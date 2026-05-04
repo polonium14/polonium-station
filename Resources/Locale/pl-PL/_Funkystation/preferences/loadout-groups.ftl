@@ -24,11 +24,3 @@ loadout-group-magistrate-gloves = Sędzia – rękawice
 loadout-group-magistrate-shoes = Sędzia – buty
 loadout-group-magistrate-outer = Sędzia – odzież wierzchnia
 loadout-group-magistrate-flavor = Sędzia – dodatki
-# Geneticist
-loadout-group-geneticist-backpack = Genetyk — plecak
-loadout-group-geneticist-head = Genetyk — nakrycie głowy
-loadout-group-geneticist-jumpsuit = Genetyk — kombinezon
-loadout-group-geneticist-gloves = Genetyk — rękawice
-loadout-group-geneticist-shoes = Genetyk — buty
-loadout-group-geneticist-outer = Genetyk — odzież wierzchnia
-loadout-group-geneticist-flavor = Genetyk — dodatki
