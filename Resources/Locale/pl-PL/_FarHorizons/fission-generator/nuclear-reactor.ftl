@@ -1,41 +1,41 @@
 ### Popups
 
-reactor-smoke-start = { $owner } zaczyna dymić!
-reactor-smoke-stop = { $owner } przestaje dymić.
-reactor-fire-start = { $owner } zaczyna się palić!
-reactor-fire-stop = { $owner } przestaje się palić.
-reactor-unanchor-warning = Nie możesz odmocować reaktora jądrowego, gdy nie jest pusty lub ma temperaturę powyżej 80 stopni!
-reactor-anchor-warning = Nieprawidłowa pozycja mocowania.
+reactor-smoke-start = The { $owner } begins to smoke!
+reactor-smoke-stop = The { $owner } stops smoking.
+reactor-fire-start = The { $owner } begins to burn!
+reactor-fire-stop = The { $owner } stops burning.
+reactor-unanchor-warning = You cannot unanchor the nuclear reactor while it's not empty or hotter than 80C!
+reactor-anchor-warning = Invalid anchor position.
 
 ### Messages
 
-reactor-smoke-start-message = UWAGA: { $owner } osiągnął niebezpieczną temperaturę: { $temperature }K. Natychmiastowa interwencja w celu zapobieżenia stopieniu.
-reactor-smoke-stop-message = { $owner } ochłodził się poniżej niebezpiecznej temperatury. Miłego dnia.
-reactor-fire-start-message = UWAGA: { $owner } osiągnął KRYTYCZNĄ temperaturę: { $temperature }K. STOPIENIE NIEUCHRONNE.
-reactor-fire-stop-message = { $owner } ochłodził się poniżej krytycznej temperatury. Stopienie zapobiegnięte.
-reactor-temperature-dangerous-message = { $owner } jest w niebezpiecznej temperaturze: { $temperature }K.
-reactor-temperature-critical-message = { $owner } jest w krytycznej temperaturze: { $temperature }K.
-reactor-temperature-cooling-message = { $owner } ochładza się: { $temperature }K.
-reactor-melting-announcement = Reaktor jądrowy na pokładzie stacji zaczyna się topić. Zaleca się ewakuację okolicznych terenów.
-reactor-melting-announcement-sender = Awaria Jądrowa
-reactor-meltdown-announcement = Reaktor jądrowy na pokładzie stacji uległ katastrofalnemu przeciążeniu. Możliwe są radioaktywne szczątki, opad radioaktywny i pożary chłodziwa. Zaleca się natychmiastową ewakuację okolicznych terenów.
-reactor-meltdown-announcement-sender = Katastrofa Jądrowa
+reactor-smoke-start-message = ALERT: The { $owner } has reached a dangerous temperature: { $temperature }K. Intervene immediately to prevent meltdown.
+reactor-smoke-stop-message = The { $owner } has cooled below dangerous temperature. Have a nice day.
+reactor-fire-start-message = ALERT: The { $owner } has reached CRITICAL temperature: { $temperature }K. MELTDOWN IMMINENT.
+reactor-fire-stop-message = The { $owner } has cooled below critical temperature. Meltdown averted.
+reactor-temperature-dangerous-message = The { $owner } is at dangerous temperature: { $temperature }K.
+reactor-temperature-critical-message = The { $owner } is at critical temperature: { $temperature }K.
+reactor-temperature-cooling-message = The { $owner } is cooling: { $temperature }K.
+reactor-melting-announcement = A nuclear reactor aboard the station is beginning to meltdown. Evacuation of the surrounding area is advised.
+reactor-melting-announcement-sender = Nuclear Emergency
+reactor-meltdown-announcement = A nuclear reactor aboard the station has catastrophically overloaded. Radioactive debris, nuclear fallout, and coolant fires are likely. Immediate evacuation of the surrounding area is strongly advised.
+reactor-meltdown-announcement-sender = Nuclear Meltdown
 
 ### UI
 
-comp-nuclear-reactor-ui-locked = Zablokowany
-comp-nuclear-reactor-ui-insert-button = Włóż
-comp-nuclear-reactor-ui-remove-button = Usuń
-comp-nuclear-reactor-ui-eject-button = Wyjmij
-comp-nuclear-reactor-ui-view-change = Zmień Widok
-comp-nuclear-reactor-ui-view-temp = Widok Temperatury
-comp-nuclear-reactor-ui-view-neutron = Widok Neutronów
-comp-nuclear-reactor-ui-view-target = Widok Celu
-comp-nuclear-reactor-ui-status-panel = Status Reaktora
-comp-nuclear-reactor-ui-reactor-temp = Temperatura
-comp-nuclear-reactor-ui-reactor-rads = Promieniowanie
-comp-nuclear-reactor-ui-reactor-therm = Energia Termiczna
-comp-nuclear-reactor-ui-reactor-control = Pręty Sterujące
+comp-nuclear-reactor-ui-locked = Locked
+comp-nuclear-reactor-ui-insert-button = Insert
+comp-nuclear-reactor-ui-remove-button = Remove
+comp-nuclear-reactor-ui-eject-button = Eject
+comp-nuclear-reactor-ui-view-change = Change View
+comp-nuclear-reactor-ui-view-temp = Temperature View
+comp-nuclear-reactor-ui-view-neutron = Neutron View
+comp-nuclear-reactor-ui-view-target = Target View
+comp-nuclear-reactor-ui-status-panel = Reactor Status
+comp-nuclear-reactor-ui-reactor-temp = Temperature
+comp-nuclear-reactor-ui-reactor-rads = Radiation
+comp-nuclear-reactor-ui-reactor-therm = Thermal Power
+comp-nuclear-reactor-ui-reactor-control = Control Rods
 comp-nuclear-reactor-ui-therm-format = { POWERWATTS($power) }
-comp-nuclear-reactor-ui-footer-left = Niebezpieczeństwo: wysokie promieniowanie.
-comp-nuclear-reactor-ui-footer-right = 0.6 WER. 2
+comp-nuclear-reactor-ui-footer-left = Danger: high radiation.
+comp-nuclear-reactor-ui-footer-right = 0.7 REV 1
