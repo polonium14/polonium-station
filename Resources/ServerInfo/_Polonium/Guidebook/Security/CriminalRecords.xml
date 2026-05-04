@@ -18,7 +18,7 @@ SPDX-License-Identifier: MIT
   Każdy ma prawo zobaczyć interfejs konsoli, ale tylko osoby z dostępem ochrony mogą coś modyfikować.
 
   Interfejs jest podzielony na następujące elementy:
-    - Pasek wyszukiwania z filtrem który pozwala filtrować załogantów po ich imionach, odciskach palców lub DNA.
+    - Pasek wyszukiwania z filtrem który pozwala szukać załogantów po ich imionach, odciskach palców lub DNA.
 
     - Lista wszystkich załogantów na manifeście, wybranie któregoś z rekordów wyświetli dane kryminalne tego załoganta. Lista jest filtrowana przez pasek wyszukiwania, więc upewnij się że jest pusty jeśli chcesz ogólny przegląd.
 
