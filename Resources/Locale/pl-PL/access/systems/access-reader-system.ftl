@@ -3,4 +3,4 @@
 #
 # SPDX-License-Identifier: MIT
 
-access-reader-unknown-id = Unknown
+access-reader-unknown-id = Nieznane
