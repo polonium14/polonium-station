@@ -1,3 +1,3 @@
 ent-LockerBrigmedicFilledHardsuit = { ent-LockerBrigmedic }
-    .suffix = Sanitariusz, Wypełniony, Skafander
+    .suffix = Corpsman, Filled, Hardsuit
     .desc = { ent-LockerBrigmedic.desc }
