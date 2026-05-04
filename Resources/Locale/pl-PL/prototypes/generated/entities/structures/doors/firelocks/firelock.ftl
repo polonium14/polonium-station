@@ -1,8 +1,8 @@
-ent-BaseFirelock = śluza przeciwpożarowa
-    .desc = Użyj łomu.
+ent-BaseFirelock = firelock
+    .desc = Apply crowbar.
 ent-Firelock = { ent-BaseFirelock }
     .desc = { ent-BaseFirelock.desc }
-ent-FirelockGlass = szklana śluza przeciwpożarowa
+ent-FirelockGlass = glass firelock
     .desc = { ent-Firelock.desc }
-ent-FirelockEdge = { ent-Firelock }
+ent-FirelockEdge = firelock
     .desc = { ent-Firelock.desc }
