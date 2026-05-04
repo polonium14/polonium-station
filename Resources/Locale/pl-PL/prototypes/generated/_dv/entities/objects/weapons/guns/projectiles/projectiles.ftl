@@ -1,8 +1,8 @@
-ent-BulletEnergyGunLaser = pocisk energetyczny
+ent-BulletEnergyGunLaser = energy bolt
     .desc = { ent-BaseBullet.desc }
-ent-BulletPracticeEnergyGunLaser = treningowy pocisk energetyczny
+ent-BulletPracticeEnergyGunLaser = practice energy bolt
     .desc = { ent-BulletEnergyGunLaser.desc }
-ent-BulletEnergyGunIon = pocisk jonowy
+ent-BulletEnergyGunIon = ion bolt
     .desc = { ent-BaseBullet.desc }
-ent-BulletEnergyGunMagnum = pocisk magnum
+ent-BulletEnergyGunMagnum = magnum bolt
     .desc = { ent-BaseBullet.desc }
