@@ -15,7 +15,6 @@ station-beacon-paramedic = Punkt Ratowników
 station-beacon-infirmary = Ambulatorium
 station-beacon-cans-sci = Magazyn Kanistrów Naukowych
 station-beacon-xenobio = Laboratorium Ksenobiologii
-station-beacon-genetics = Genetyka
 station-beacon-cargo-docks = Doki Logistyki
 station-beacon-salv-docks = Doki Złomiarzy
 station-beacon-supermatter = Supermatteria
