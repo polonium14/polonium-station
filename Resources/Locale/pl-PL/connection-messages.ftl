@@ -1,3 +1,28 @@
+# SPDX-FileCopyrightText: 2022 Dylan Corrales <DeathCamel58@gmail.com>
+# SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Morb <14136326+Morb0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Visne <39844191+Visne@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Hannah Giovanna Dawson <karakkaraz@gmail.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2024 Simon <63975668+Simyon264@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2024 Vasilis <vasilis@pikachu.systems>
+# SPDX-FileCopyrightText: 2024 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 cmd-whitelistadd-desc = Dodaj gracza o podanej nazwie użytkownika do białej listy serwera.
 cmd-whitelistadd-help = Użycie: whitelistadd <nazwa_użytkownika lub ID>
 cmd-whitelistadd-existing = { $username } jest już zapisany w białej liście!
@@ -18,8 +43,8 @@ ban-expires = Ten ban skończy się za { $duration } minut lub o { $time } w sys
 ban-banned-1 = Ty lub inny użytkownik tego komputera lub łącza został zbanowany z rozgrywki.
 ban-banned-2 = Zostałeś zbanowany przez: "{ $adminName }"
 ban-banned-3 = Powód bana: "{ $reason }"
-soft-player-cap-full = Ten serwer jest pełny!
 ban-banned-4 = Próby takie jak ominięcie bana przez utworzenie nowego konta będą zarejestrowane.
+soft-player-cap-full = Ten serwer jest pełny!
 panic-bunker-account-denied = Ten serwer jest w trybie bunkrowej paniki, często by pozowolić na środki ostrożności przeciwko rajdom. Nowe połączenia z kont, które nie spełniają warunków, są czasowo nie zakceptowane. Spróbuj ponownie później
 panic-bunker-account-denied-reason = Ten serwer jest w trybie bunkrowej paniki, często by pozowolić na środki ostrożności przeciwko rajdom. Nowe połączenia z kont, które nie spełniają warunków, są czasowo nie zakceptowane. Spróbuj ponownie. Powód: "{ $reason }"
 panic-bunker-account-reason-account = Twoje konto Space Station 14 jest zbyt nowe. Musi być starsze niż { $minutes } minut.
