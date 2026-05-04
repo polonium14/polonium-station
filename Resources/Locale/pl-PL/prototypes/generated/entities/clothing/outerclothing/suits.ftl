@@ -23,5 +23,5 @@ ent-ClothingOuterSuitIan = ian suit
 ent-ClothingOuterSuitCarp = carp suit
     .desc = A special suit that makes you look just like a space carp, if your eyesight is bad.
 ent-ClothingOuterHardsuitCarp = { ent-ClothingOuterSuitCarp }
-    .suffix = Hardsuit, NIE MAPOWAĆ
+    .suffix = Hardsuit, DO NOT MAP
     .desc = { ent-ClothingOuterSuitCarp.desc }
