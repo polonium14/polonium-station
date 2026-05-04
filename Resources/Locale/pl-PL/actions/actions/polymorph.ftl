@@ -3,4 +3,4 @@
 #
 # SPDX-License-Identifier: MIT
 
-gera-transformation-popup = This action will transform you. Use it again to confirm.
+gera-transformation-popup = Ta akcja cię przemieni. Użyj jej ponownie, aby potwierdzić.
