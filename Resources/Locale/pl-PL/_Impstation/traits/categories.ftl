@@ -1,1 +1,1 @@
-trait-category-weight = Weight
+trait-category-weight = Waga
