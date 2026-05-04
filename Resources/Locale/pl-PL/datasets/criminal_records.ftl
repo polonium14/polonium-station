@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 pa.pecherskij <pa.pecherskij@interfax.ru>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 placeholders-criminal-records-wanted-reason-1 = Zjadł pyszne, ważne sałatki
 placeholders-criminal-records-wanted-reason-2 = Zjadł własne buty
 placeholders-criminal-records-wanted-reason-3 = Bycie klaunem
