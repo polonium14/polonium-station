@@ -1,23 +1,32 @@
-player-panel-title = informacja o { $player }
-player-panel-username = Nazwa użytkownika: { $player }
-player-panel-whitelisted = Na białej liście:
-player-panel-bans = Łącznie banów: { $totalBans }
-player-panel-rolebans = Łącznie banów ról: { $totalRoleBans }
-player-panel-notes = Łącznie notatek: { $totalNotes }
-player-panel-playtime = Łączny czas gry: { $days }d:{ $hours }h:{ $minutes }m
-player-panel-shared-connections = Współdzielonych Połączeń: { $sharedConnections }
-player-panel-copy-username = Kopiuj
-player-panel-show-notes = Notatki
-player-panel-show-bans = Pokaż Bany
+# SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 IgorAnt028 <118114530+IgorAnt028@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 pa.pecherskij <pa.pecherskij@interfax.ru>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
+player-panel-title = information for { $player }
+player-panel-username = Username: { $player }
+player-panel-whitelisted = Whitelisted:
+player-panel-bans = Total Bans: { $totalBans }
+player-panel-rolebans = Total Role Bans: { $totalRoleBans }
+player-panel-notes = Total Notes: { $totalNotes }
+player-panel-playtime = Total Playtime: { $days }d:{ $hours }h:{ $minutes }m
+player-panel-shared-connections = Shared Connections: { $sharedConnections }
+player-panel-copy-username = Copy
+player-panel-show-notes = Notes
+player-panel-show-bans = Show Bans
 player-panel-help = Ahelp
-player-panel-freeze-and-mute = Zamróź i Wycisz
-player-panel-freeze = Zamróź
-player-panel-unfreeze = Odmróź
-player-panel-kick = Wyrzuć
-player-panel-ban = Zbanuj
-player-panel-logs = Dzienniki
-player-panel-delete = Usuń
-player-panel-rejuvenate = Przywróć zdrowie
+player-panel-freeze-and-mute = Freeze & Mute
+player-panel-freeze = Freeze
+player-panel-unfreeze = Unfreeze
+player-panel-kick = Kick
+player-panel-ban = Ban
+player-panel-logs = Logs
+player-panel-delete = Delete
+player-panel-rejuvenate = Rejuvenate
 player-panel-false = False
 player-panel-true = True
-player-panel-follow = Śledź
+player-panel-follow = Follow
