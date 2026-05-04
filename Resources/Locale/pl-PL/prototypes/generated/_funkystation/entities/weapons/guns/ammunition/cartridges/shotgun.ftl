@@ -1,2 +1,2 @@
-ent-ShellHypo = nabój (12 kaliber hypo)
+ent-ShellHypo = shell (12 gauge hypo)
     .desc = { ent-BaseSyndicateContraband.desc }
