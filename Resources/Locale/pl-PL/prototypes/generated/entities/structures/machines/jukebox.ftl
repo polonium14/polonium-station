@@ -1,2 +1,2 @@
-ent-Jukebox = szafa grająca
-    .desc = Maszyna zdolna do odtwarzania szerokiej gamy utworów. Przyjemność nie gwarantowana.
+ent-Jukebox = jukebox
+    .desc = A machine capable of playing a wide variety of tunes. Enjoyment not guaranteed.
