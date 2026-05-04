@@ -9,18 +9,19 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-  # Large Bomb Defusal
+  # Rozbrajanie dużych bomb
   So, you found a large bomb and it's beeping. These bombs take a long time to detonate and punch a big hole into the hull. Just keep reading, and nobody will explode.
+  Więc, znalazleś dużą pikającą bombę. Tym bombą schodzi dużo czasu żeby się zdetonować i zrobić masywną dziurę w kadłubie. Po prostu czytaj dalej i nikt nie wybuchnie.
 
-  ## Gear
-  You require two essential tools to perform defusal, however, a multitool is extremely helpful in terms of identifying wires.
+  ## Sprzęt
+  Będziesz potrzebował dwóch niezbędnych narzędzi, ale multinarzędzie jest ekstremalnie przydatne do identyfikowania kabli.
   <Box>
     <GuideEntityEmbed Entity="Wirecutter"/>
     <GuideEntityEmbed Entity="Screwdriver"/>
     <GuideEntityEmbed Entity="Multitool"/>
   </Box>
 
-  For protective equipment, a [color=yellow]bomb suit[/color] or any other protective equipment can assist you in not blowing into gibs.
+  Co do sprzętu ochronnego, [color=yellow]Kombinezon bombowy[/color] lub jakikolwiek inny sprzęt ochronny może uratować cię przed transformacją w czerwoną plame.
   <Box>
     <GuideEntityEmbed Entity="ClothingHeadHelmetBombSuit"/>
     <GuideEntityEmbed Entity="ClothingOuterSuitBomb"/>
@@ -28,56 +29,57 @@ SPDX-License-Identifier: MIT
     <GuideEntityEmbed Entity="ClothingOuterHardsuitAtmos"/>
   </Box>
 
-  ## Hardbombs
-  Listed below are the two common types of bombs you will encounter while defusing. A training bomb will only provide minor hull damage and generally not kill you. A syndicate bomb however will punch a big hole into the hull, and gib you if you are not wearing protective gear.
+  ## Rodzaje bomb
+  Poniżej są dwa najczęstsze rodzaje bomb które spotkasz przy rozbrajaniu. Bomba treningowa zrobi tylko pomniejsze uszkodzenie kadłuba i raczej cię nie zabije; natomiast prawdziwa bomba syndykatu zrobi masywną dziurę w kadłubie i rozszarpie cię na strzępy jeśli nie masz sprzętu ochronnego.
   <Box>
     <GuideEntityEmbed Entity="SyndicateBomb"/>
     <GuideEntityEmbed Entity="TrainingBomb"/>
   </Box>
 
-  ## Arming
-  To arm a bomb, you can either [color=yellow]right click[/color] and click [color=yellow]Begin countdown[/click], or [color=yellow]alt-click[/color] the bomb. It will begin beeping.
+  ## Uzbrajanie
+  Aby uzbroić bombe, musisz albo kliknąć [color=yellow]PPM[/click] i wybrać [color=yellow]Rozpocznij odliczanie[/click] lub [color=yellow]ALT-Kliknij[/color]. Wtedy zacznie pikać.
 
-  ## Time
+  ## Czas
   A bomb has a limited time, at a minimum of [protodata="SyndicateBomb" comp="OnUseTimerTrigger" member="ShortestDelayOption"/] seconds and a maximum of [protodata="SyndicateBomb" comp="OnUseTimerTrigger" member="LongestDelayOption"/] seconds. You can view the timer by examining it, unless the Proceed wire is cut. Once the timer hits zero, the bomb will detonate.
+  Bomba ma ograniczony czasomierz, od minimalnie [protodata="SyndicateBomb" comp="OnUseTimerTrigger" member="ShortestDelayOption"/] sekund do maksymalnie [protodata="SyndicateBomb" comp="OnUseTimerTrigger" member="LongestDelayOption"/] sekund. Można zobaczyć licznik przyglądając się bombie, chyba że przecięty jest kabel "Naprzód". Kiedy licznik osiągnie zero, bomba wybuchnie.
 
-  ## Bolts
-  By default, once armed, a bomb will bolt itself to the ground. You must find the BOLT wire and cut it to disable the bolts, after which you can unwrench it and throw it into space.
+  ## Śróby boltujące
+  Domyślnie, po uzbrojeniu, bomba się przyśróbuje do ziemi. Musisz znaleźć kabel BOLT i go przeciąć aby je wyłączyć, po czym możesz odkręcić bombe i wyrzucić ją w kosmos.
 
-  ## Wires
-  You must access the wiring in order to defuse a bomb. You can use a [color=yellow]screwdriver[/color] to open the access panel. Inside, you will find many types of wires. In a standard syndicate bomb, there are around [color=yellow]10 wires[/color], 3 are dummy wires, [color=red]3 will cause a detonation[/color], and the rest that weren't mentioned can be found below (alongside BOOM wires). With each wire, you can do 3 actions. You can:
-  - [color=yellow]Pulse the wire[/color] with a multitool, this can help you safely identify most wires.
-  - [color=red]Cut the wire[/color] with a wirecutter, this can trigger various effects, be cautious of cutting without reason!
-  - [color=green]Mend the wire[/color] with a wirecutter, this can restore some functionality of the bomb if it isn't disposable.
+  ## Kable
+  Musisz miec dostęp do kabli aby rozbroić bombe. Możesz użyć [color=yellow]śróbokręta[/color] aby otworzyć panel dostępu. W środu znajdziesz sporo kabli; w standartowej bombie syndykatu jest [color=yellow]10 kabli[/color], z czego 3 są nieaktywne, [color=red]3 spowodują detonacje[/color], a reszta które nie były wspomniane są poniżej (razem z kablami ekspozji - kabel BOOM). Z każdym kablem masz 3 opcje. Możesz:
+  - [color=yellow]Pulsować kabel/color] multinarzędziem, to pomoże ci bezpiecznie odnaleźć większość kabli.
+  - [color=red]Pzeciąć kabel[/color] obcinakiem, to może spowodować sporo rzeczy, więc bądź ostrożny aby nie ciąć kabli bez powodu!
+  - [color=green]Naprawić kabel[/color] obcinakiem, to może przywrócić część funkcjonalności bomby jeśli nie jest jednorazowa.
 
-  Onward for the types of wires.
+  Teraz poszczególne rodzaje kabli.
 
-  ## Wire Types
-  [color=#a4885c]Activation Wire (LIVE)[/color]
-  - [color=yellow]Pulse the wire[/color]: Pulsing the wire will make the wire chirp and delay the bomb by 30 seconds.
-  - [color=red]Cut the wire[/color]: Cutting the wire will defuse the bomb if active, otherwise, will begin the timer.
-  - [color=green]Mend the wire[/color]: Nothing.
+  ## Rodzaje kabli
+  [color=#a4885c]Kabel Aktywacyjny (LIVE)[/color]
+  - [color=yellow]Pulsowanie kabla[/color]: Pulsowanie tego kabla sprawi że bomba zaszczerbiota i opóźni detonacje o 30 sekund.
+  - [color=red]Przecięcie kabla[/color]: Cięcie tego kabla rozbroji bombe jeśli jest aktywna, inaczej zacznie licznik.
+  - [color=green]Naprawienie kabla[/color]: Nic.
 
-  [color=#a4885c]Proceed Wire (PRCD)[/color]
-  - [color=yellow]Pulse the wire[/color]: Pulsing the wire will forward the time by 15 seconds.
-  - [color=red]Cut the wire[/color]: Cutting the wire will disable the timer display on examine.
-  - [color=green]Mend the wire[/color]: Nothing.
+  [color=#a4885c]Kabel naprzód (PRCD)[/color]
+  - [color=yellow]Pulsowanie kabla[/color]: Pulsowanie tego kabla zmiejszy czasomierz o 15 sekund.
+  - [color=red]Przecięcie kabla[/color]: Cięcie tego kabla wyłączy wyświetlacz z czasomierzem.
+  - [color=green]Naprawienie kabla[/color]: Nic.
 
-  [color=#a4885c]Delay Wire (DLAY)[/color]
-  - [color=yellow]Pulse the wire[/color]: Pulsing the delay wire will delay the bomb by 30 seconds.
-  - [color=red]Cut the wire[/color]: Nothing.
-  - [color=green]Mend the wire[/color]: Nothing.
+  [color=#a4885c]Kabel opóźnienia (DLAY)[/color]
+  - [color=yellow]Pulsowanie kabla[/color]: Pulsowanie tego kabla opóźni detonacje o 30 sekund.
+  - [color=red]Przecięcie kabla[/color]: Nic.
+  - [color=green]Naprawienie kabla[/color]: Nic.
 
-  [color=#a4885c]Boom Wire (BOOM)[/color]
-  - [color=yellow]Pulse the wire[/color]: [color=red]The bomb will explode if armed![/color]
-  - [color=red]Cut the wire[/color]: [color=red]The bomb will explode if armed![/color] Otherwise, will disable the bomb.
-  - [color=green]Mend the wire[/color]: Re-enables the bomb if disabled previously.
+  [color=#a4885c]Kabel Boom (BOOM)[/color]
+  - [color=yellow]Pulsowanie kabla[/color]: [color=red]Bomba eksploduje jeśli jest uzbrojona![/color]
+  - [color=red]Przecięcie kabla[/color]: [color=red]Bomba eksploduje jeśli jest uzbrojona![/color] W innym przypadku ją wyłączy.
+  - [color=green]Naprawienie kabla[/color]: Włącza bombe z powrotem, jeśli była wcześniej wyłączona.
 
-  [color=#a4885c]Bolt Wire (BOLT)[/color]
-  - [color=yellow]Pulse the wire[/color]: Pulsing the wire will make the bolts spin.
-  - [color=red]Cut the wire[/color]: Cutting the wire will disable the bolts, throw it into space!
-  - [color=green]Mend the wire[/color]: Mending the wire will re-enable the bolts.
+  [color=#a4885c]Kabel bolców (BOLT)[/color]
+  - [color=yellow]Pulsowanie kabla[/color]: Pulsowanie tego kabla sprawi że bolce się zakręcą.
+  - [color=red]Przecięcie kabla[/color]: Przecięcie tego kabla sprawi że bolce puszczą; wyrzuć bombe w kosmos!
+  - [color=green]Naprawienie kabla[/color]: Naprawienie tego kabla sprawi że bolce ponownie się włączą.
 
-  [color=#a4885c]Dummy Wire[/color]
-  - Dummy wires don't do anything. You can pulse, cut, and mend them freely and they will not affect the bomb at all.
+  [color=#a4885c]Nieaktywny kabel[/color]
+  - Nieaktywne kable nic nie robią. Możesz robić z nimi co chcesz.
 </Document>
