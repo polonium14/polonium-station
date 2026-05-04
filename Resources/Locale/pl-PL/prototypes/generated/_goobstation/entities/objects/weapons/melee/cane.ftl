@@ -1,6 +1,6 @@
-ent-CaneBladeNanotrasen = laska z ostrzem
-    .desc = Ostre ostrze z rękojeścią w kształcie laski, na ostrzu wygrawerowano logo Nanotrasen.
+ent-CaneBladeNanotrasen = cane blade
+    .desc = A sharp blade with a cane shaped hilt, a Nanotrasen logo is engraved on the blade.
     .suffix = Nanotrasen
 ent-CaneSheathFilledNanotrasen = { ent-CaneSheath }
-    .suffix = Wypełniona, Nanotrasen
+    .suffix = Filled, Nanotrasen
     .desc = { ent-CaneSheath.desc }
