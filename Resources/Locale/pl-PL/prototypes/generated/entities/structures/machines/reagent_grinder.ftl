@@ -1,5 +1,5 @@
-ent-KitchenReagentGrinder = młynek
-    .desc = Od BlenderTech. Czy się zblenduje? Zobaczmy!
-    .suffix = młynek / sokowirówka
-ent-ReagentGrinderIndustrial = przemysłowy młynek
-    .desc = Młynek do celów przemysłowych.
+ent-KitchenReagentGrinder = reagent grinder
+    .desc = From BlenderTech. Will It Blend? Let's find out!
+    .suffix = grinder/juicer
+ent-ReagentGrinderIndustrial = industrial reagent grinder
+    .desc = An industrial reagent grinder.
