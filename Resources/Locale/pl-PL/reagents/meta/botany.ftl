@@ -1,18 +1,30 @@
-reagent-name-e-z-nutrient = EZ odżywka
-reagent-desc-e-z-nutrient = Daj swoim rośliną trochę tej odżywki! Dioną to bardzo smakuje.
+# SPDX-FileCopyrightText: 2022 Alex Evgrashin <aevgrashin@yandex.ru>
+# SPDX-FileCopyrightText: 2022 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2023 Alekshhh <44923899+Alekshhh@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Eris <eris@erisws.com>
+# SPDX-FileCopyrightText: 2024 IlyaElDunaev <154531074+IlyaElDunaev@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 alex-georgeff <54858069+taurie@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
+reagent-name-e-z-nutrient = EZ nutrient
+reagent-desc-e-z-nutrient = Give your plants some of those EZ nutrients! Dionas find this delicious.
 reagent-name-left4-zed = left-4-zed
-reagent-desc-left4-zed = Koktajl mutagenicznych związków który zapewnia wartości odżywcze, szkodzi i ma wpływ na genom rośliny.
-reagent-name-pest-killer = pestycydy
-reagent-desc-pest-killer = Mieszanka która zabija szkodniki. O ile przydatna, powoli zatrówa roślinę toksynami, zachowaj czujność podczas użytku.
-reagent-name-plant-b-gone = chwastobójca
-reagent-desc-plant-b-gone = Szkodliwie toksyczna mieszanka do zabijania flory. Bardzo skuteczna przeciwko kudzu.
-reagent-name-robust-harvest = urodzajnik
-reagent-desc-robust-harvest = Wysoce skuteczny nawóz z ograniczonym efektem wzrostu owoców roślin. Zachowaj czujność, nadmierne użycie może zmniejszyć plony. Wywiera pozytywny wpływ na diony.
-reagent-name-weed-killer = herbicydy
-reagent-desc-weed-killer = Mieszanka która skupia się na chwastach. Bardzo skuteczna przeciwko kudzu. Zachowaj czujność podczas użytku ze względu na powolne zatruwanie rośliny.
-reagent-name-ammonia = amoniak
-reagent-desc-ammonia = Skuteczny nawóz, daje twoim rośliną środki odżywcze.
-reagent-name-diethylamine = dietyloamina
-reagent-desc-diethylamine = Bardzo silny nawóz, dostarcza rośliną środki odrzywcze, usuwa szkodniki, i nawet czasami przyśpiesza wzrost.
-reagent-name-sedin = uziarniacz
-reagent-desc-sedin = Zmodyfikowana wersja dietyloaminy która potrafi odratować nasiona rośliny kosztem rozmiarów owoców.
+reagent-desc-left4-zed = A cocktail of mutagenic compounds that gives nutrients, harms and affects plant life's genome.
+reagent-name-pest-killer = pest killer
+reagent-desc-pest-killer = A mixture that targets pests. While useful it slowly poisons plants with toxins, be careful when using it.
+reagent-name-plant-b-gone = plant-B-gone
+reagent-desc-plant-b-gone = A harmful toxic mixture to kill plantlife. Very effective against kudzu.
+reagent-name-robust-harvest = robust harvest
+reagent-desc-robust-harvest = A highly effective fertilizer with a limited potency-boosting effect on plants. Use it cautiously, as excessive application can reduce plant yield. It has a particularly beneficial effect on dionas.
+reagent-name-weed-killer = weed killer
+reagent-desc-weed-killer = A mixture that targets weeds. Very effective against kudzu. While useful it slowly poisons plants with toxins, be careful when using it.
+reagent-name-ammonia = ammonia
+reagent-desc-ammonia = An effective fertilizer, it gives your plants some nutrients.
+reagent-name-diethylamine = diethylamine
+reagent-desc-diethylamine = A very potent fertilizer, treats plants with nutrients, eliminates pests, and sometimes it can even speed up growth.
+reagent-name-sedin = sedin
+reagent-desc-sedin = A modified version of diethylamine that can restore seeds on plants at the cost of potency.
