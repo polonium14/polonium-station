@@ -21,7 +21,7 @@ SPDX-License-Identifier: MIT
 
   Ten mały dodatek do twojego PDA jest bardzo przydatny. Po prostu zainstaluj program a twoje PDA dostanie umiejętność skanowania wszystkiego co wymaga dostępu (np. śluzy) oraz zobaczyć kto i kiedy z nich korzystał. 
 
-  Zazwyczaj znaleźć kasete z sondą w szafce detektywa. Po włożeniu do PDA, przejdź do programów i powinna być nowa aplikacja "Log probe". Aby skorzystać z sondy wystarczy otworzyć aplikacje i przeskanować (LPM) cokolwiek co wymaga dostępu z twojego PDA; wszystkie użycia się wtedy wyświetlą na twoim PDA.
+  Zazwyczaj możesz znaleźć kasete z sondą w szafce detektywa. Po włożeniu do PDA, przejdź do programów i powinna pojawić się nowa aplikacja "Log probe". Aby skorzystać z sondy wystarczy otworzyć aplikacje i przeskanować (LPM) cokolwiek co wymaga dostępu z twojego PDA; wszystkie użycia się wtedy wyświetlą na twoim PDA.
 
   Warto wsponieć że imiona wydobyte z aplikacji nie zawsze są w 100% trafne, ponieważ biorą imię od ID, a nie bezpośrednio od użytkownika. Na przykład jeśli ktoś otworzył śluze bez ID to imię będzie "Nieznany".
 
