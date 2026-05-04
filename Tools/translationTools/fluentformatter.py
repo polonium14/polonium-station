@@ -40,8 +40,9 @@ class FluentFormatter:
 
 ######################################## Var definitions ###############################################################
 project = Project()
-fluent_files = project.get_fluent_files_by_dir(project.pl_locale_dir_path)
+if __name__ == r'__main__':
+    fluent_files = project.get_fluent_files_by_dir(project.pl_locale_dir_path)
 
 ########################################################################################################################
 
-FluentFormatter.format(fluent_files)
+    FluentFormatter.format(fluent_files)
