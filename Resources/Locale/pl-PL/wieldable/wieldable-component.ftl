@@ -1,19 +1,31 @@
+# SPDX-FileCopyrightText: 2021 mirrorcult <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2022 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Brandon Hu <103440971+Brandon-Huu@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 RiceMar1244 <138547931+RiceMar1244@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
+
 ### Locale for wielding items; i.e. two-handing them
 
 wieldable-verb-text-wield = Chwyć oburącz
 wieldable-verb-text-unwield = Puść
-wieldable-component-successful-wield = Chwytasz { $item } oburącz.
-wieldable-component-failed-wield = Odkładasz { $item } z chwytu oburącz.
-wieldable-component-successful-wield-other = { CAPITALIZE($user) } chwyta { $item } oburącz.
-wieldable-component-failed-wield-other = { CAPITALIZE($user) } puszcza { $item }.
-wieldable-component-blocked-wield = { CAPITALIZE($blocker) } blokuje cię przed chwyceniem { $item } oburącz.
+wieldable-component-successful-wield = You wield { THE($item) }.
+wieldable-component-failed-wield = You unwield { THE($item) }.
+wieldable-component-successful-wield-other = { CAPITALIZE(THE($user)) } wields { THE($item) }.
+wieldable-component-failed-wield-other = { CAPITALIZE(THE($user)) } unwields { THE($item) }.
 wieldable-component-no-hands = Nie masz wystarczająco rąk!
 wieldable-component-not-enough-free-hands =
     { $number ->
-        [one] Potrzebujesz wolnej ręki, aby chwycić { $item } oburącz.
-       *[other] Potrzebujesz { $number } wolnych rąk, aby chwycić { $item } oburącz.
+        [one] You need a free hand to wield { THE($item) }.
+       *[other] You need { $number } free hands to wield { THE($item) }.
     }
-wieldable-component-not-in-hands = { CAPITALIZE($item) } nie znajduje się w twoich rękach!
-wieldable-component-requires = { CAPITALIZE($item) } musi być trzymany oburącz!
+wieldable-component-not-in-hands = { CAPITALIZE(THE($item)) } isn't in your hands!
+wieldable-component-requires = { CAPITALIZE(THE($item)) } must be wielded!
 gunwieldbonus-component-examine = Ta broń ma lepszą celność, gdy jest trzymana oburącz.
 gunrequireswield-component-examine = Tę broń można wystrzelić tylko, gdy jest trzymana oburącz.
