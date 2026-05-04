@@ -1,10 +1,10 @@
-ent-BaseMagazineBoxPistol = skrzynka amunicji (.35 auto)
+ent-BaseMagazineBoxPistol = ammunition box (.35 auto)
     .desc = { ent-BaseItem.desc }
-ent-MagazineBoxPistol = skrzynka amunicji (.35 auto)
+ent-MagazineBoxPistol = ammunition box (.35 auto)
     .desc = { ent-BaseMagazineBoxPistol.desc }
-ent-MagazineBoxPistolPractice = skrzynka amunicji (.35 auto treningowe)
+ent-MagazineBoxPistolPractice = ammunition box (.35 auto practice)
     .desc = { ent-BaseMagazineBoxPistol.desc }
-ent-MagazineBoxPistolIncendiary = skrzynka amunicji (.35 auto zapalające)
+ent-MagazineBoxPistolIncendiary = ammunition box (.35 auto incendiary)
     .desc = { ent-BaseMagazineBoxPistol.desc }
-ent-MagazineBoxPistolUranium = skrzynka amunicji (.35 auto uranowe)
+ent-MagazineBoxPistolUranium = ammunition box (.35 auto uranium)
     .desc = { ent-BaseMagazineBoxPistol.desc }
