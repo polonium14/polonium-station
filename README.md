@@ -27,6 +27,18 @@ Dodatkowo, zobacz te zasoby dotyczące licencji i atrybucji:
 
 ## Wkład w projekt
 
+[Polonizujemy nasz projekt na platformie Crowdin!](https://crowdin.com/project/space-station-14-polska) Wesprzyj nas w tłumaczeniach i odbierz unikalną rolę na Discordzie.
+
+---
+
+<div align="center">
+  <a href="https://crowdin.com/project/space-station-14-polska">
+    <img src="https://badges.crowdin.net/space-station-14-polska/localized.svg" alt="Crowdin">
+  </a>
+</div>
+
+---
+
 Chętnie przyjmujemy wkład od każdego. Dołącz na Discord, jeśli chcesz pomóc. Mamy [listę zadań](https://github.com/polonium14/polonium-station/issues), które trzeba wykonać, i każdy może je podjąć. Nie bój się pytać o pomoc!
 
 > [!TIP]
