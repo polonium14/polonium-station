@@ -1,12 +1,19 @@
-cargo-account-cargo-name = Budżet logistyczny stacji
-cargo-account-cargo-code = BLS
-cargo-account-engineering-name = Budżet naprawczy
-cargo-account-engineering-code = INŻ
-cargo-account-medical-name = Fundusz zdrowia załogi
+# SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 pa.pecherskij <pa.pecherskij@interfax.ru>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
+cargo-account-cargo-name = Station Supply Budget
+cargo-account-cargo-code = SUP
+cargo-account-engineering-name = Maintenance Savings
+cargo-account-engineering-code = ENG
+cargo-account-medical-name = Crew Healthcare Fund
 cargo-account-medical-code = MED
-cargo-account-science-name = Międzygwiezdny fundusz rozwojowy
-cargo-account-science-code = PR
-cargo-account-security-name = Rezerwa ochrony stacji
-cargo-account-security-code = DO
-cargo-account-service-name = Zbiórczy fundusz serwisowy
-cargo-account-service-code = SRW
+cargo-account-science-name = Interstellar Development Funding
+cargo-account-science-code = RND
+# funkystation - changed from Station Defense Reserves to Station Defense Allocation
+cargo-account-security-name = Station Defense Allocation
+cargo-account-security-code = SEC
+cargo-account-service-name = Collective Service Holdings
+cargo-account-service-code = SRV
