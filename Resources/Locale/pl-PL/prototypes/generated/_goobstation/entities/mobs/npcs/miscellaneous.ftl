@@ -1,3 +1,2 @@
 ent-MobOSRS = OSRS NPC
     .desc = Przypomina dawne czasy...
-    .gender = male
