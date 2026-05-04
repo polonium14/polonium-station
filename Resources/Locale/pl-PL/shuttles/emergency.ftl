@@ -1,4 +1,23 @@
+# SPDX-FileCopyrightText: 2022 LittleBuilderJane <63973502+LittleBuilderJane@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Myctai <108953437+Myctai@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 metalgearsloth <metalgearsloth@gmail.com>
+# SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 IProduceWidgets <107586145+IProduceWidgets@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 MilenVolf <63782763+MilenVolf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2024 strO0pwafel <153459934+strO0pwafel@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
+
 # Commands
+
 
 ## Delay shuttle round end
 
@@ -69,9 +88,3 @@ emergency-shuttle-ui-remaining = Brakuje: { $remaining }
 # Map Misc.
 map-name-centcomm = Centralne Dowództwo
 map-name-terminal = Port odlotów
-cmd-delayroundend-desc = Zatrzymuje odliczanie rozpoczynane gdy wahadłowiec wyjdzie z hiperprzestrzeni.
-cmd-delayroundend-help = Użycie: delayroundend
-cmd-dockemergencyshuttle-desc = Powiadamia wahadłowiec aby zadokował do stacji... jeśli może.
-cmd-dockemergencyshuttle-help = Użycie: dockemergencyshuttle
-cmd-launchemergencyshuttle-desc = Przedwcześnie startuje wchadłowiec ratunkowy, jeśli można.
-cmd-launchemergencyshuttle-help = Użycie: launchemergencyshuttle
