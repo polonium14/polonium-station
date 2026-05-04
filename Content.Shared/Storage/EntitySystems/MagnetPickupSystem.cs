@@ -64,7 +64,7 @@ public sealed class MagnetPickupSystem : EntitySystem
                 if (!_inventory.TryGetContainingSlot((uid, xform, meta), out var slotDef))
                     continue;
 
-                if ((slotDef.SlotFlags & comp.SlotFlags) == 0x0)
+                if ((slotDef.SlotFlags & comp.SlotFlags) == 0)
                     continue;
             }
             // No space
