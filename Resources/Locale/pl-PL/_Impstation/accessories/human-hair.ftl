@@ -4,6 +4,6 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-marking-HumanHairGatheredlow = Gathered Low
-marking-HumanHairFrenchBraid = French Braid
-marking-HumanHairLowpigtails = Low Pigtails
+marking-HumanHairGatheredlow = Nisko upięte
+marking-HumanHairFrenchBraid = Warkocz francuski
+marking-HumanHairLowpigtails = Niskie kucyki
