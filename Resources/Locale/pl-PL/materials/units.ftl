@@ -1,23 +1,27 @@
+# SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 # sheets of steel
-materials-unit-sheet = arkusze
+materials-unit-sheet = sheet
 # bars of gold
-materials-unit-bar = sztabki
+materials-unit-bar = bar
 # planks of wood
-materials-unit-plank = deski
+materials-unit-plank = plank
 # rolls of cloth
-materials-unit-roll = rolki
+materials-unit-roll = roll
 # pieces of biomass
-materials-unit-piece = kawałki
+materials-unit-piece = piece
 # bunches of bananium
-materials-unit-bunch = pęczki
+materials-unit-bunch = bunch
 # slabs of meat
-materials-unit-slab = kawałki
+materials-unit-slab = slab
 # webs of silk
-materials-unit-web = sieci
+materials-unit-web = web
 # chunks of ore
-materials-unit-chunk = kawałki rudy
-# boll of cotton
-materials-unit-boll = kuli
+materials-unit-chunk = chunk
 # bills of spesos... not very good but they are not (yet?) used for crafting anything
 # also the lathe/atm would need bigger denominations to output...
-materials-unit-bill = banknoty
+materials-unit-bill = bill
