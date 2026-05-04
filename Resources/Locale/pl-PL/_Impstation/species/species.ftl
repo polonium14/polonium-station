@@ -7,4 +7,4 @@
 
 ## Species Names
 
-species-name-thaven = Thaven
+species-name-thaven = Tejwan
