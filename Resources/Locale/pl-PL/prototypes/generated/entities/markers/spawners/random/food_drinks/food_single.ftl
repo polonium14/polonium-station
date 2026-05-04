@@ -1,3 +1,3 @@
-ent-RandomFoodSingle = spawner losowego jedzenia
-    .suffix = Pojedyncza porcja
+ent-RandomFoodSingle = random food spawner
+    .suffix = Single Serving
     .desc = { ent-MarkerBase.desc }
