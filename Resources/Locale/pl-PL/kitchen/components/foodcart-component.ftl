@@ -3,7 +3,7 @@
 #
 # SPDX-License-Identifier: MIT
 
-foodcart-slot-component-slot-name-coldsauce = Cold sauce
-foodcart-slot-component-slot-name-hotsauce = Hot sauce
-foodcart-slot-component-slot-name-bbqsauce = BBQ sauce
-foodcart-slot-component-slot-name-ketchup = Ketchup
+foodcart-slot-component-slot-name-coldsauce = Łagodny sos
+foodcart-slot-component-slot-name-hotsauce = Ostry sos
+foodcart-slot-component-slot-name-bbqsauce = Sos BBQ
+foodcart-slot-component-slot-name-ketchup = Keczup
