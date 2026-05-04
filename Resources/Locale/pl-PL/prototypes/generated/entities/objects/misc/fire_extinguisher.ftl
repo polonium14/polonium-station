@@ -1,8 +1,8 @@
-ent-FireExtinguisher = gaśnica
-    .desc = Gasi pożary.
-ent-BorgFireExtinguisher = dysza manewrowa
-    .desc = Oparta na technologii gaśnicy, dysza manewrowa jest... cóż, tak, to po prostu większa gaśnica.
-ent-ExtinguisherSpray = spray gaśniczy
+ent-FireExtinguisher = fire extinguisher
+    .desc = It extinguishes fires.
+ent-BorgFireExtinguisher = maneuvering jet
+    .desc = Based on fire extinguisher technology, the maneuvering jet is... well yes, its just a bigger fire extinguisher.
+ent-ExtinguisherSpray = extinguisher spray
     .desc = { ent-Vapor.desc }
-ent-FireExtinguisherMini = kieszonkowa gaśnica
-    .desc = Lekki i kompaktowy model gaśnicy w ramie z włókna szklanego. Mieści mniej wody niż jej większy brat.
+ent-FireExtinguisherMini = pocket fire extinguisher
+    .desc = A light and compact fibreglass-framed model fire extinguisher. It holds less water than its bigger brother.
