@@ -1,3 +1,18 @@
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Arendian <137322659+Arendian@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Brandon Hu <103440971+Brandon-Huu@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2024 TsjipTsjip <19798667+TsjipTsjip@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 k3yw <grenadiumdota@gmail.com>
+# SPDX-FileCopyrightText: 2024 Эдуард <36124833+Ertanic@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 B_Kirill <cool.bkirill@yandex.ru>
+#
+# SPDX-License-Identifier: MIT
+
 criminal-records-console-window-title = Komputer Kart Karnych
 criminal-records-console-records-list-title = Członkowie załogi
 criminal-records-console-select-record-info = Wybierz kartę.
@@ -21,7 +36,7 @@ criminal-records-console-suspected-reason = Powód podejrzenia
 criminal-records-console-reason = Powód
 criminal-records-console-reason-placeholder = Na przykład: { $placeholder }
 
-## Historia przestępstw
+## Crime History
 
 criminal-records-console-crime-history = Historia przestępstw
 criminal-records-history-placeholder = Wpisz tutaj przestępstwo
@@ -30,7 +45,7 @@ criminal-records-add-history = Dodaj
 criminal-records-delete-history = Usuń
 criminal-records-permission-denied = Brak uprawnień
 
-## Powiadomienia na kanale ochrony
+## Security channel notifications
 
 criminal-records-console-wanted = { $name } ({ $job }) został oznaczony jako poszukiwany przez { $officer } za: { $reason }.
 criminal-records-console-not-wanted = { $officer } usunął status poszukiwanego z { $name } ({ $job }).
@@ -42,16 +57,14 @@ criminal-records-console-paroled = { $name } ({ $job }) został warunkowo zwolni
 criminal-records-console-not-parole = { $officer } usunął status warunkowego zwolnienia z { $name } ({ $job }).
 criminal-records-console-unknown-officer = <nieznany>
 
-## Filtry
+## Filters
 
 criminal-records-filter-placeholder = Wpisz tekst i naciśnij "Enter"
 criminal-records-name-filter = Imię i nazwisko
 criminal-records-prints-filter = Odciski palców
 criminal-records-dna-filter = DNA
-criminal-records-job-filter = Zawód
-criminal-records-species-filter = Gatunek
 
-## Automatyczne wpisy do historii aresztowań
+## Arrest auto history lines
 
 criminal-records-console-auto-history = ARESZTOWANY: { $reason }
 criminal-records-console-unspecified-reason = <nieokreślony powód>
