@@ -1,4 +1,4 @@
-ent-WeaponEnergyTurretStation = security turret
-    .desc = A high-tech autonomous weapons system designed to keep unauthorized personnel out of sensitive areas.
-ent-WeaponEnergyTurretAI = AI sentry turret
-    .desc = A high-tech autonomous weapons system under the direct control of a local artifical intelligence.
+ent-WeaponEnergyTurretStation = wieżyczka strażnicza
+    .desc = Zaawansowany technologicznie autonomiczny system broni zaprojektowany do ochrony przed nieautoryzowanym personelem w wrażliwych obszarach.
+ent-WeaponEnergyTurretAI = wieżyczka strażnicza SI
+    .desc = Zaawansowany technologicznie autonomiczny system broni pod bezpośrednią kontrolą lokalnej sztucznej inteligencji.
