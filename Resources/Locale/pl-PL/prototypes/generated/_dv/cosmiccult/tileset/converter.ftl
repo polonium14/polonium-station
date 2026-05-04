@@ -1,2 +1,2 @@
 ent-CosmicBorgChantry = Vacuous Chantry
-    .desc = Lorem Ipsum
+    .desc = Malign energies gather within, coalescing something yet-to-be.
