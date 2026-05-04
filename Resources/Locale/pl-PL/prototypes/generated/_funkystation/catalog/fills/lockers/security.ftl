@@ -1,2 +1,2 @@
-ent-GunSafePistolRg2 = sejf na RG-2
+ent-GunSafePistolRg2 = RG-2 safe
     .desc = { ent-GunSafeBaseSecure.desc }
