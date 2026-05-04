@@ -1,5 +1,5 @@
-ent-FoodBakedMuffinCloth = szmuffinka
-    .desc = Babeczka zrobiona ze szmatek.
-ent-FoodBakedMuffinClothSix = szmuffinka
+ent-FoodBakedMuffinCloth = moffin
+    .desc = A muffin made of cloth.
+ent-FoodBakedMuffinClothSix = moffin
     .suffix = Six
     .desc = { ent-FoodBakedMuffinCloth.desc }
