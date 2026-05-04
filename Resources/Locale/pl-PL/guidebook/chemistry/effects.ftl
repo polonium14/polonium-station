@@ -312,7 +312,7 @@ reagent-effect-guidebook-reset-narcolepsy =
     { $chance ->
         [1] Temporarily staves
        *[other] temporarily stave
-    } off narcolepsy for 10 minutes
+    } off narcolepsy
 reagent-effect-guidebook-wash-cream-pie-reaction =
     { $chance ->
         [1] Washes
