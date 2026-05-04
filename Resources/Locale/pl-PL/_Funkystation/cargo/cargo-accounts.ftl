@@ -1,2 +1,2 @@
-cargo-account-atmospherics-name = Rezerwy Integralności Atmosferycznej
-cargo-account-atmospherics-code = RIA
+cargo-account-atmospherics-name = Atmospheric Integrity Reserves
+cargo-account-atmospherics-code = AIR
