@@ -1,17 +1,17 @@
-cargo-console-menu-tab-title-gas-extractor = Gas Reserves
-gas-extractor-rate-label = Rate:
-gas-extractor-max-pressure-label = Max:
-gas-extractor-apply-button = Set
-gas-extractor-state-disabled = Disabled
-gas-extractor-state-idle = Idle
-gas-extractor-state-working = Working
-gas-extractor-auto-buy-enable = Auto-buy
-gas-extractor-buy = Buy:
-gas-extractor-buy-button = Purchase
-gas-extractor-buy-preview = ≈ { $moles } mol of { $gas }
-gas-extractor-remaining-moles = [color=#4ade80]{ $amount } mols[/color]
-gas-extractor-price-per-mol = ${ $price } per mol
-gas-extractor-moles-purchase-success = Purchased { $moles } mol of { $gas } for { $spesos } spesos.
-gas-extractor-extractor-autobuy-enabled = { $name } enabled auto-buy on { $gas } extractor.
-gas-extractor-extractor-autobuy-disabled = { $name } disabled auto-buy on { $gas } extractor.
-gas-extractor-moles-purchase-broadcast = { $name } purchased { $moles } mol of { $gas } for { $spesos } spesos on account { $accountName } ({ $accountCode }).
+cargo-console-menu-tab-title-gas-extractor = Rezerwy Gazowe
+gas-extractor-rate-label = Prędkość:
+gas-extractor-max-pressure-label = Maks:
+gas-extractor-apply-button = Ustaw
+gas-extractor-state-disabled = Wyłączony
+gas-extractor-state-idle = Oczekiwanie
+gas-extractor-state-working = Praca
+gas-extractor-auto-buy-enable = Autozakup
+gas-extractor-buy = Kup:
+gas-extractor-buy-button = Zakup
+gas-extractor-buy-preview = ≈ { $moles } mol { $gas }
+gas-extractor-remaining-moles = [color=#4ade80]{ $amount } moli[/color]
+gas-extractor-price-per-mol = ${ $price } za mol
+gas-extractor-moles-purchase-success = Zakupiono { $moles } mol { $gas } za { $spesos } spesos.
+gas-extractor-extractor-autobuy-enabled = { $name } włączył(a) autozakup w ekstraktorze ({ $gas }).
+gas-extractor-extractor-autobuy-disabled = { $name } wyłączył(a) autozakup w ekstraktorze ({ $gas }).
+gas-extractor-moles-purchase-broadcast = { $name } zakupił(a) { $moles } mol { $gas } za { $spesos } spesos z konta { $accountName } ({ $accountCode }).
