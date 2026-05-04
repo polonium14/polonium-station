@@ -1,3 +1,23 @@
+# SPDX-FileCopyrightText: 2022 Julian Giebel <juliangiebel@live.de>
+# SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 brainfood1183 <113240905+brainfood1183@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Brandon Hu <103440971+Brandon-Huu@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 CMDR-Piboy314 <92357316+CMDR-Piboy314@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 James Simonson <jamessimo89@gmail.com>
+# SPDX-FileCopyrightText: 2024 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2024 Джексон Миссиссиппи <tripwiregamer@gmail.com>
+# SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 admin-smite-chess-self = Czujesz się wyjątkowo mały.
 admin-smite-chess-others = { CAPITALIZE($name) } kurczy się na szachownicę!
 admin-smite-set-alight-self = Wybuchasz płomieniami!
@@ -13,6 +33,9 @@ admin-smite-stomach-removal-self = Twój żołądek wydaje się pusty...
 admin-smite-run-walk-swap-prompt = Musisz nacisnąć shift, aby biegać!
 admin-smite-super-speed-prompt = Poruszasz się z prędkością mach 0.8!
 admin-smite-lung-removal-self = Nie możesz oddychać!
+
+## Smite names
+
 admin-smite-explode-name = Eksplozja
 admin-smite-chess-dimension-name = Wymiar Szachowy
 admin-smite-set-alight-name = Podpalenie
@@ -54,6 +77,9 @@ admin-smite-ghostkick-name = Kop Duchowy
 admin-smite-nyanify-name = Kocie Uszy
 admin-smite-kill-sign-name = Znak Śmierci
 admin-smite-omni-accent-name = Omni-Akcent
+
+## Smite descriptions
+
 admin-smite-explode-description = Eksploduj ich.
 admin-smite-chess-dimension-description = Wygnanie do Wymiaru Szachowego.
 admin-smite-set-alight-description = Sprawia, że płoną.
@@ -95,6 +121,9 @@ admin-smite-super-bonk-lite-description = Uderza nimi o każdy stół na stacji 
 admin-smite-terminate-description = Tworzy rolę ducha Terminatora z celem zabicia ich.
 admin-smite-super-slip-description = Poślizguje ich bardzo, bardzo mocno.
 admin-smite-omni-accent-description = Sprawia, że cel mówi niemal każdym dostępnym akcentem.
+
+## Tricks descriptions
+
 admin-trick-unbolt-description = Odblokowuje wskazane drzwi.
 admin-trick-bolt-description = Blokuje wskazane drzwi.
 admin-trick-emergency-access-on-description = Włącza dostęp awaryjny dla wskazanych drzwi.
