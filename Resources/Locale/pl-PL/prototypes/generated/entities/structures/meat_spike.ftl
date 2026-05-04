@@ -1,2 +1,2 @@
-ent-KitchenSpike = hak na mięso
-    .desc = Hak dla pozyskiwania mięsa z zwierząt.
+ent-KitchenSpike = meat spike
+    .desc = A spike for collecting meat from animals.
