@@ -1,3 +1,16 @@
+# SPDX-FileCopyrightText: 2023 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Moony <moony@hellomouse.net>
+# SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 pa.pecherskij <pa.pecherskij@interfax.ru>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 command-description-visualize = Takes the input list of entities and puts them into a UI window for easy browsing.
 command-description-runverbas = Runs a verb over the input entities with the given user.
 command-description-acmd-perms = Returns the admin permissions of the given command, if any.
@@ -21,7 +34,6 @@ command-description-stations-rename = Renames the given station.
 command-description-stations-largestgrid = Returns the largest grid the given station has, if any.
 command-description-stations-rerollBounties = Clears all the current bounties for the station and gets a new selection.
 command-description-stationevent-lsprob = Given a BasicStationEventScheduler prototype, lists the probability of different station events occuring out of the entire pool with current conditions.
-command-description-stationevent-lsprobtheoretical = Given a BasicStationEventScheduler prototype, player count, and round time, lists the probability of different station events occuring based on the specified number of players and round time.
 command-description-stationevent-lsprobtime = Lists the probability of different station events occuring based on the specified length of a round.
 command-description-stationevent-prob = Given a BasicStationEventScheduler prototype and an event prototype, returns the probability of a single station event occuring out of the entire pool with current conditions.
 command-description-admins-active = Returns a list of active admins.
