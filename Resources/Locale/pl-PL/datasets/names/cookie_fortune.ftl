@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 pa.pecherskij <pa.pecherskij@interfax.ru>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 descriptions-cookie-fortune-dataset-1 = Koniec jest bliski… i to wszystko twoja wina.
 descriptions-cookie-fortune-dataset-2 = Wiemy, co zrobiłeś.
 descriptions-cookie-fortune-dataset-3 = Uważaj.
