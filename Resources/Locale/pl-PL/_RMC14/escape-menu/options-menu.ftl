@@ -1,1 +1,1 @@
-ui-options-function-cm-unique-action = Unique action
+ui-options-function-cm-unique-action = Unikalna akcja
