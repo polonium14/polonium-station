@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 pa.pecherskij <pa.pecherskij@interfax.ru>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 descriptions-atv-dataset-1 = Pojazd do każdej nawierzchni.
 descriptions-atv-dataset-2 = Pojazd przeciwko mrówkom.
 descriptions-atv-dataset-3 = Warzywo na każdą porę.
