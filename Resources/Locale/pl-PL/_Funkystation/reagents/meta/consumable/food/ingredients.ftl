@@ -3,7 +3,7 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-reagent-name-liquidpie = liquid pie
-reagent-desc-liquidpie = Pulped banana cream pie.
-reagent-name-cheesium = cheesium
-reagent-desc-cheesium = Cheese?
+reagent-name-liquidpie = płynne ciasto
+reagent-desc-liquidpie = Zmielone ciasto bananowe
+reagent-name-cheesium = serowium
+reagent-desc-cheesium = Ser?
