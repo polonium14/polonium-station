@@ -5,8 +5,8 @@
 #
 # SPDX-License-Identifier: MIT
 
-mime-cant-speak = Your vow of silence prevents you from speaking.
+mime-cant-speak = Twoja przysięga uniemożliwia ci mówienie.
 mime-invisible-wall-popup = { CAPITALIZE(THE($mime)) } brushes up against an invisible wall!
-mime-invisible-wall-failed = You can't create an invisible wall there.
-mime-not-ready-repent = You aren't ready to repent for your broken vow yet.
-mime-ready-to-repent = You feel ready to take your vows again.
+mime-invisible-wall-failed = Nie możesz tu stworzyć niewidzialnej ściany.
+mime-not-ready-repent = Nie czujesz się gotowym na złożenie ponownej przysięgi.
+mime-ready-to-repent = Czujesz sie gotowym na złożenie ponownej przysięgi.
