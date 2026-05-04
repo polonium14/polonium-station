@@ -8,9 +8,9 @@ replicator-nest-end-of-round =
     Gniazdo Replikatorów w pobliżu { $location } osiągnęło [color=teal]poziom { $level }[/color] i zgromadziło łącznie [color=teal]{ $points } punktów[/color].
     Wygenerowało łącznie [color=teal]{ $replicators }[/color] Replikatorów.
 replicator-upgrade-t1-self = Wokół ciebie krążą nanoboty. Możesz ewoluować.
-replicator-upgrade-t1-others = { CAPITALIZE($replicator) } delikatnie klika i szumi.
+replicator-upgrade-t1-others = { CAPITALIZE(THE($replicator)) } clicks and whirrs softly.
 replicator-upgrade-t2-self = Coraz więcej nanitów łączy się. Możesz stać się silniejszy.
-replicator-upgrade-t2-others = { CAPITALIZE($replicator) } głośno chichocze.
+replicator-upgrade-t2-others = { CAPITALIZE(THE($replicator)) } chitters loudly.
 # messages for when the nest is upgraded
 replicator-nest-level2 = W gnieździe słychać głośne piski.
 replicator-nest-level3 = Podłoga skrzypi.
