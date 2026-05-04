@@ -15,4 +15,4 @@ butcherable-knife-butchered-success = You butcher { THE($target) } with { THE($k
 butcherable-need-knife = Use a sharp object to butcher { THE($target) }.
 butcherable-not-in-container = { CAPITALIZE(THE($target)) } can't be in a container.
 butcherable-mob-isnt-dead = Needs to be dead.
-butcherable-verb-name = Butcher
+butcherable-verb-name = Rozłóż
