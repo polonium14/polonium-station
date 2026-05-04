@@ -1,3 +1,36 @@
+# SPDX-FileCopyrightText: 2022 Sissel <axel.roche@pm.me>
+# SPDX-FileCopyrightText: 2023 Emisse <99158783+Emisse@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2023 MagnusCrowe <whiterider1988@yahoo.com>
+# SPDX-FileCopyrightText: 2023 Maxtone <124747282+MagnusCrowe@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Nairod <110078045+Nairodian@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Puro <103608145+PuroSlavKing@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Sailor <109166122+Equivocateur@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 TsjipTsjip <19798667+TsjipTsjip@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Vasilis The Pikachu <vascreeper@yahoo.com>
+# SPDX-FileCopyrightText: 2023 Whisper <121047731+QuietlyWhisper@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Boaz1111 <149967078+Boaz1111@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Hmeister-real <118129069+Hmeister-real@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 IProduceWidgets <107586145+IProduceWidgets@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 LankLTE <135308300+LankLTE@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2024 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Spessmann <156740760+Spessmann@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 username <113782077+whateverusername0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Kirby <205904127+154942@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 UtopiOne <110351290+UtopiOne@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 empty0set <16693552+empty0set@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 empty0set <empty0set@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 job-description-technical-assistant = Naucz się podstaw zarządzania zasilaniem stacji, jak i naprawiania jej powłoki.
 job-description-atmostech = Optymalizuj układ atmosferyczny stacji, i syntezuj rzadkie gazy do użytku lub sprzedaży.
 job-description-bartender = Zarządzaj barem i utrzymuj go żywym, rozdawaj drinki, i słuchaj opowieści załogi.
@@ -19,8 +52,8 @@ job-description-paramedic = Ratuj pacjentów z krytycznymi urazami z całej stac
 job-description-detective = Przeprowadzaj dochodzenia scen zbrodni przy użyciu narzędzi kryminalistycznych, aby odszukać winowajcę, i wypalić parę fajek.
 job-description-doctor = Diagnozuj i lecz załogantów przy pomocy chemikaliów medycznych, zaawansowanych leków i defibrylatora. Upewnij się, że martwi nie zgniją, i zwłoki są w kostnicy.
 job-description-engineer = Utrzymuj główny generator stacji i panele słoneczne działające, optymalizuj sieć energetyczną i przeprowadzaj naprawy w strefach pozbawionych atmosfery przy użyciu swojego skafandra. job-description-ertchaplain = Upewniaj się że ostatnie życzenia załogantów zostaną spełnione.
-job-description-ertengineer = Upewniaj się że stacja ma zasilanie i czyste powietrze.
 job-description-ertchaplain = Ensure the station crew's last rights are taken care of.
+job-description-ertengineer = Upewniaj się że stacja ma zasilanie i czyste powietrze.
 job-description-ertjanitor = Upewniaj się że stacja jest odpowiednio wyczyszczona — dla morali.
 job-description-ertleader = Prowadź JSR podczas rozwiązywania problemów z zagrożeniami dla własności Nanotrasen.
 job-description-ertmedic = Upewniaj się że załoga stacji jest trzymana przy życiu i zdrowiu.
@@ -39,8 +72,8 @@ job-description-qm = Zarządzaj dostawami stacji i całym departamentem logistyk
 job-description-rd = Zarządzaj departamentem rozwoju, odblokowywuj technologie, pozyskuj i badaj artefakty oraz przeprowadzaj eksperymenty.
 job-description-research-assistant = Naucz sie podstaw jak badać różne artefakty, anomalie i zajmować się robotyką.
 job-description-reporter = Zabawiaj i informuj załogę przy pomocy swojego wyrazistego reporterstwa, kamer bezprzewodowych, radia i prasy.
-job-description-salvagespec = Używaj magnesu odzyskowego do zaciągania odczepionych szczątek, asteroid do odzysku wzbogacając stację. Zbuduj statek odzyskowy i podróżuj na inne planety, po drodze walcząc z nieprzyjazną fauną.
 job-description-roboticist = Build and maintain the station's silicons, repair IPCs, and create mechs & various cybernetic enchancements for the crew.
+job-description-salvagespec = Używaj magnesu odzyskowego do zaciągania odczepionych szczątek, asteroid do odzysku wzbogacając stację. Zbuduj statek odzyskowy i podróżuj na inne planety, po drodze walcząc z nieprzyjazną fauną.
 job-description-scientist = Badaj obce artefakty, odblokowywuj technologie, buduj nowe i lepsze maszyny dla stacji i uczyń wszystko bardziej efektywnym.
 job-description-security = Łap kryminalistów i zagrożenia dla stacji, egzekwuj prawo, upewniaj się że stacja nie pogrąży się w chaosie.
 job-description-serviceworker = Naucz się podstaw barmaństwa, gotowania i sadzenia roślin.
