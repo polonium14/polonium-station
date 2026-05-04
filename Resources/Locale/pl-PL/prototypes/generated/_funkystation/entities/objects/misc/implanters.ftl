@@ -1,10 +1,10 @@
-ent-EmptyReagentImplanter = implantator odczynników
-    .suffix = pusty, do napełnienia
+ent-EmptyReagentImplanter = reagent implanter
+    .suffix = empty, fillable
     .desc = { ent-BaseImplantOnlyImplanterSyndi.desc }
-ent-HyperzineReagentImplanter = implantator hyperzyny
-    .suffix = hyperzyna
+ent-HyperzineReagentImplanter = reagent implanter
+    .suffix = hyperzine
     .desc = { ent-BaseImplantOnlyImplanterSyndi.desc }
-ent-RevolutionaryLieutenantImplant = implantator rewolucyjnego porucznika
-    .desc = Dzięki temu rewolucjonista może dostrzec innych rewolucjonistów, a jednocześnie otrzymać ikonę oznaczającą go jako porucznika. Rewolucjoniści powinni organizować się wokół tych poruczników jako jednostki.
-ent-LieutenantRevolutionaryImplanter = implantator rewolucyjnego porucznika
+ent-RevolutionaryLieutenantImplant = revolutionary lieutenant implanter
+    .desc = This allows a revolutionary to see other revolutionaries, along giving them an icon that denotes them as a lieutenant. Revolutionaries should organize around these lieutenants as units.
+ent-LieutenantRevolutionaryImplanter = revolutionary lieutenant implanter
     .desc = { ent-BaseImplantOnlyImplanterSyndi.desc }
