@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Mervill <mervills.email@gmail.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 gas-miner-mines-text = Wydobywa [color=lightgray]{ $gas }[/color], gdy jest aktywny.
 gas-miner-amount-text = Wydobywa { $moles } moli gazu na sekundę, gdy jest aktywny.
 gas-miner-temperature-text = Temperatura wydobywanego gazu: { $tempK }K ({ $tempC }°C).
