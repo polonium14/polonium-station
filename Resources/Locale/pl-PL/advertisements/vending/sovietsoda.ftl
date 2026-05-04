@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2021 Visne <39844191+Visne@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+# SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 advertisement-sovietsoda-1 = Dla towarzysza i ojczyzny.
 advertisement-sovietsoda-2 = Czy wypełniłeś dziś swój dzienny limit żywieniowy?
 advertisement-sovietsoda-3 = Bardzo dobrze!
