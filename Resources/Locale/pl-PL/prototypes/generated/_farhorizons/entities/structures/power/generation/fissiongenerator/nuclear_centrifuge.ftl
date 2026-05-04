@@ -1,2 +1,2 @@
-ent-NuclearCentrifuge = wirówka nuklearna
-    .desc = Duża maszyna, która może być używana do separacji radioaktywnych izotopów z wypalonego paliwa.
+ent-NuclearCentrifuge = nuclear centrifuge
+    .desc = A large machine that can be used to separate radioactive isotopes from spent fuel.
