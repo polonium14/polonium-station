@@ -4,9 +4,9 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-reagent-name-hemoxadone = hemoxadone
-reagent-desc-hemoxadone = A cryogenics chemical. Used to treat severe blood loss by regenerating red blood cells and promoting reperfusion. Works regardless of the patient being alive or dead.
-reagent-name-cyanoxadone = cyanoxadone
-reagent-desc-cyanoxadone = A cryogenics chemical. Used to treat severe blood loss in blue-blooded creatures by regenerating hemocyanin and promoting reperfusion. Works regardless of the patient being alive or dead.
-reagent-name-anodynafil = anodynafil
-reagent-desc-anodynafil = An effective short-lasting anesthetic that doesn't interfere with consciousness, but results in prolonged pain suppression.
+reagent-name-hemoxadone = hemoksadon
+reagent-desc-hemoxadone = Środek chemiczny stosowany w kriogenice. Służy do leczenia poważnej utraty krwi poprzez regenerację czerwonych krwinek i wspomaganie reperfuzji. Działa niezależnie od tego, czy pacjent żyje, czy nie.
+reagent-name-cyanoxadone = cyjanoksadon
+reagent-desc-cyanoxadone = Środek chemiczny stosowany w kriogenice. Służy do leczenia poważnej utraty krwi u istot o niebieskiej krwi poprzez regenerację hemocyjaniny i wspomaganie reperfuzji. Działa niezależnie od tego, czy pacjent żyje, czy nie.
+reagent-name-anodynafil = anodynafila
+reagent-desc-anodynafil = Skuteczny, krótkotrwały środek znieczulający, który nie zakłóca świadomości, ale powoduje przedłużone tłumienie bólu.
