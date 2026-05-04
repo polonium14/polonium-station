@@ -5,5 +5,5 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-reagent-name-milk-choco = chocolate milk
-reagent-desc-milk-choco = A milk drink flavored with chocolate.
+reagent-name-milk-choco = mleko czekoladowe
+reagent-desc-milk-choco = Napój mleczny o smaku czekolady.
