@@ -1,7 +1,13 @@
-gas-pipe-sensor-distribution-loop = Pętla dystrybucyjna
-gas-pipe-sensor-waste-loop = Pętla odpadów
-gas-pipe-sensor-mixed-air = Powietrze mieszane
-gas-pipe-sensor-teg-hot-loop = Gorąca pętla TEG
-gas-pipe-sensor-teg-cold-loop = Zimna pętla TEG
+# SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
+gas-pipe-sensor-distribution-loop = Distribution loop
+gas-pipe-sensor-waste-loop = Waste loop
+gas-pipe-sensor-mixed-air = Mixed air
+gas-pipe-sensor-teg-hot-loop = TEG hot loop
+gas-pipe-sensor-teg-cold-loop = TEG cold loop
 # Funkystation sensor UI
-gas-pipe-sensor-window-title = Czujnik Rur
+gas-pipe-sensor-window-title = Pipe Sensor
