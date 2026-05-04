@@ -3,4 +3,4 @@
 #
 # SPDX-License-Identifier: MIT
 
-action-name-mapping-erase = Erase Entity
+action-name-mapping-erase = Usuń encję
