@@ -10,7 +10,6 @@ cult-glyph-conditions-not-met = Brak odpowiednich celów w zasięgu glifu!
 cult-glyph-too-many-targets = Zbyt wiele celów obecnych na glifie!
 cult-glyph-target-mindshield = Mentalna osłona zapobiega przejęciu wpływu glifu!
 cult-glyph-target-otherantag = Umysł celu jest zbyt wykrzywiony, aby efekty glifu mogły zadziałać.
-cult-glyph-target-chaplain = Iskra boskiej mocy zapobiega przejęciu wpływu glifu!
 cult-glyph-name-knowledge = Pakt Wiedzy
 cult-glyph-description-knowledge = Wiedza. Zaszczepia iskrę niezatartej wiedzy. Może nawrócić większość, by dołączyła do naszych szeregów.
 cult-glyph-name-projection = Pakt Projekcji
