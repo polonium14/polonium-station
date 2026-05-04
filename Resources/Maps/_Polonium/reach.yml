@@ -4,7 +4,7 @@ meta:
   engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 05/04/2026 21:43:18
+  time: 05/04/2026 22:19:12
   entityCount: 2785
 maps:
 - 1
@@ -1719,18 +1719,6 @@ entities:
     - type: Transform
       pos: 10.5,7.5
       parent: 2
-    - type: Physics
-      canCollide: False
-    - type: Airtight
-      airBlocked: False
-    - type: Occluder
-      enabled: False
-    - type: Door
-      secondsUntilStateChange: -569.48926
-      state: Closing
-    - type: DeviceLinkSource
-      lastSignals:
-        DoorStatus: True
   - uid: 25
     components:
     - type: Transform
@@ -6817,7 +6805,7 @@ entities:
   - uid: 2677
     components:
     - type: Transform
-      pos: 10.5,13.5
+      pos: 9.5,14.5
       parent: 2
 - proto: ClosetJanitorFilled
   entities:
