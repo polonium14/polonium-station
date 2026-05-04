@@ -1,6 +1,6 @@
-ent-AnomalyClown = klaunomalia
-    .desc = To z pozoru zwyczajny samochód, który zdaje się zaginać samą przestrzeń we własnym wnętrzu. Czujesz, że istoty w środku nadchodzą, by rozśmieszyć cię za wszelką cenę...
-    .suffix = Klaun
+ent-AnomalyClown = { ent-BaseAnomaly }
+    .desc = It's an otherwise normal car that seems to bend the very space within it. You sense that the creatures within are coming to make you laugh at all costs...
+    .suffix = Clown
 ent-AnomalyBanana = { ent-BaseAnomaly }
-    .suffix = Banan
+    .suffix = Banana
     .desc = { ent-BaseAnomaly.desc }
