@@ -1,4 +1,10 @@
-# Pozytywne
+# SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 pa.pecherskij <pa.pecherskij@interfax.ru>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
+# Positive
 names-diona-last-dataset-1 = Pokój
 names-diona-last-dataset-2 = Harmonia
 names-diona-last-dataset-3 = Relaks
@@ -49,7 +55,7 @@ names-diona-last-dataset-47 = Uczciwość
 names-diona-last-dataset-48 = Hojność
 names-diona-last-dataset-49 = Szansa
 names-diona-last-dataset-50 = Motywacja
-# Neutralne
+# Neutral
 names-diona-last-dataset-51 = Pilność
 names-diona-last-dataset-52 = Witalność
 names-diona-last-dataset-53 = Odporność
@@ -91,7 +97,8 @@ names-diona-last-dataset-88 = Śmiałość
 names-diona-last-dataset-89 = Żywotność
 names-diona-last-dataset-90 = Wiedza
 names-diona-last-dataset-91 = Modyfikacja
-# Negatywne
+# Negative
+# These should be something a diona would still realistically name themselves, i.e not inherently self deprecating.
 names-diona-last-dataset-92 = Zazdrość
 names-diona-last-dataset-93 = Niezręczność
 names-diona-last-dataset-94 = Ignorancja
