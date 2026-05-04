@@ -1,3 +1,11 @@
+# SPDX-FileCopyrightText: 2022 ChilbroBaggins <107660393+ChilbroBaggins@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Jeff <velcroboy333@hotmail.com>
+# SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+# SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 advertisement-chefvend-1 = Co najmniej sześćdziesiąt procent naszych jajek jest niepękniętych, gwarantujemy!
 advertisement-chefvend-2 = Ryż, ryż, maleńka.
 advertisement-chefvend-3 = Walnij na to trochę masła!
