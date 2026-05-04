@@ -4,4 +4,4 @@
 #
 # SPDX-License-Identifier: MIT
 
-multi-server-kick-reason = Connected to different server in this community.
+multi-server-kick-reason = Jesteś połączony z innym serwerem w tej społeczności.
