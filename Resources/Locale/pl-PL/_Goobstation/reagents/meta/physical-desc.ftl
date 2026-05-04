@@ -6,6 +6,6 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-reagent-physical-desc-calming = calming
-reagent-physical-desc-stasizium = static
+reagent-physical-desc-calming = uspokajające
+reagent-physical-desc-stasizium = statyczne
 reagent-physical-desc-sigma = sigma
