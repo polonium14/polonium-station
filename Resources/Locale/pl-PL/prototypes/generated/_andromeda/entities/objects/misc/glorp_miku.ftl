@@ -1,2 +1,2 @@
 ent-GlorpPerformancePlushie = Glorp Miku
-    .desc = Cholera jasna. Trójwymiarny kosmita??
+    .desc = Holy shit. A three-dimensional alien??
