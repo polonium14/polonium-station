@@ -1,3 +1,24 @@
+# SPDX-FileCopyrightText: 2022 Morb <14136326+Morb0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2023 Phill101 <28949487+Phill101@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Phill101 <holypics4@gmail.com>
+# SPDX-FileCopyrightText: 2023 Vordenburg <114301317+Vordenburg@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+# SPDX-FileCopyrightText: 2023 keronshb <54602815+keronshb@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 lapatison <100279397+lapatison@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Hannah Giovanna Dawson <karakkaraz@gmail.com>
+# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 alerts-low-oxygen-name = [color=red]Niski poziom tlenu[/color]
 alerts-low-oxygen-desc = W powietrzu, które oddychasz, jest [color=red]za mało tlenu[/color]. Załóż [color=green]internale[/color].
 alerts-low-nitrogen-name = [color=red]Niski poziom azotu[/color]
@@ -24,9 +45,9 @@ alerts-stunned-name = [color=yellow]Ogłuszony[/color]
 alerts-stunned-desc = Jesteś [color=yellow]ogłuszony[/color]! Coś utrudnia ci poruszanie się lub interakcję z przedmiotami.
 alerts-handcuffed-name = [color=yellow]Zakuty[/color]
 alerts-handcuffed-desc = Jesteś [color=yellow]zakuty[/color] i nie możesz używać rąk. Jeśli ktoś cię ciągnie, nie będziesz mógł się opierać.
-alerts-ensnared-name = [color=yellow]Uwięziony[/color]
 alerts-cocooned-name = [color=yellow]Cocooned[/color]
 alerts-cocooned-desc = You're [color=yellow]wrapped in a cocoon[/color] and can't move or use your hands.
+alerts-ensnared-name = [color=yellow]Uwięziony[/color]
 alerts-ensnared-desc = Jesteś [color=yellow]uwięziony[/color], co utrudnia ci poruszanie się.
 alerts-buckled-name = [color=yellow]Zapięty[/color]
 alerts-buckled-desc = Jesteś [color=yellow]przypięty[/color] do czegoś. Kliknij alert, aby się odpiąć, chyba że jesteś [color=yellow]zakuty.[/color]
@@ -78,7 +99,3 @@ alerts-revenant-essence-name = Esencja
 alerts-revenant-essence-desc = Moc dusz. Podtrzymuje cię i służy do zdolności. Regeneruje się powoli.
 alerts-revenant-corporeal-name = Cielesny
 alerts-revenant-corporeal-desc = Ujawniłeś się fizycznie. Ludzie wokół mogą cię zobaczyć i zranić.
-alerts-rooted-name = Zakorzeniony
-alerts-rooted-desc = Jesteś przytwierdzony do ziemi. Nie możesz się poślizgnąć, ale pochłaniasz płyny spod siebie.
-alerts-stealthy-name = Kieszonkowiec
-alerts-stealthy-desc = Czy aktualnie dokonujesz kieszonkowania. Kliknij, aby przełączyć.
