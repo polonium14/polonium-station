@@ -1,12 +1,18 @@
+# SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 pa.pecherskij <pa.pecherskij@interfax.ru>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 # addobjectives
-cmd-rmobjective-desc = Usuwa zadanie z umysłu gracza.
-cmd-rmobjective-help = Użycie: rmobjective <nazwa gracza> <numer>
-cmd-rmobjective-invalid-args = Oczekiwano dokładnie 2 argumentów.
-cmd-rmobjective-player-not-found = Nie można odnaleźć danych gracza.
-cmd-rmobjective-mind-not-found = Nie można odnaleźć umysłu gracza.
-cmd-rmobjective-success = Zadanie pomyślnie usunięte!
-cmd-rmobjective-failed = Usunięcie zadania niepomyślne. Może numer poza zakresem? Sprawdź: lsobjectives!
-cmd-rmobjective-invalid-index = Nie można wczytać { $index } jako liczby.
+cmd-rmobjective-desc = Removes an objective from the player's mind.
+cmd-rmobjective-help = rmobjective <username> <index>
+cmd-rmobjective-invalid-args = Expected exactly 2 arguments.
+cmd-rmobjective-player-not-found = Can't find the playerdata.
+cmd-rmobjective-mind-not-found = Can't find the mind.
+cmd-rmobjective-success = Objective successfully removed!
+cmd-rmobjective-failed = Objective removing failed. Maybe the index is out of bounds? Check lsobjectives!
+cmd-rmobjective-invalid-index = Could not parse index { $index } as an integer.
 cmd-rmobjective-invalid-objective-info = INVALID
-cmd-rmobjective-player-completion = <nazwa gracza>
-cmd-rmobjective-index-completion = <numer>
+cmd-rmobjective-player-completion = <Player>
+cmd-rmobjective-index-completion = <Index>
