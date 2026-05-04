@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2022 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 cmd-mapping-desc = Tworzy lub ładuje nową mapę i teleportuje cię do niej.
 cmd-mapping-help = Użycie: mapping [ID mapy] [Ścieżka] [Siatka]
 cmd-mapping-server = Tylko gracze mogą używać tej komendy.
