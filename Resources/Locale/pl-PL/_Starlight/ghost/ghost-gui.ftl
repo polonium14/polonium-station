@@ -1,13 +1,13 @@
-ghost-gui-new-life-button = New life
-ghost-new-life-window-title = New life ({ $remainingLives } out of { $maxLives } spawns remaining)
-ghost-new-life-unavailable = lost
-ghost-new-life-command-description = Opens the new life request window.
-ghost-new-life-command-not-client-error = You can only open the new life UI on a client.
-ghost-gui-ghost-theme-button = Ghost Themes
-ghost-gui-ghost-theme-window-title = Ghost Themes
-ghost-gui-choose-theme = Choose Theme
-ghost-role-terror-spider-name = Terror spider
-ghost-role-terror-spider-description = The task of the Terror Spider is to destroy the station and everything alive on it.
-ghost-role-terror-spider-rules = You are a [color=red][bold]Team Antagonist[/bold][/color] with all other terror spiders.
+ghost-gui-new-life-button = Nowe życie
+ghost-new-life-window-title = Nowe życie (Zostało { $remainingLives } na { $maxLives } żyć)
+ghost-new-life-unavailable = utracono
+ghost-new-life-command-description = Otwiera okno nowego życia
+ghost-new-life-command-not-client-error = Możesz otworzyć UI nowego życia wyłącznie na kliencie.
+ghost-gui-ghost-theme-button = Motywy Ducha
+ghost-gui-ghost-theme-window-title = Motywy Ducha
+ghost-gui-choose-theme = Wybierz Motyw
+ghost-role-terror-spider-name = Pająk Terroru
+ghost-role-terror-spider-description = Zadaniem Pająka Terroru jest zniszczenie stacji i wszystkiego co na niej żywe.
+ghost-role-terror-spider-rules = Jesteś w [color=red][bold]Drużynie Antagonistów[/bold][/color] razem z innymi pająkami terroru.
 ghost-role-information-ntnc-consortium-officer-name = Nanotrasen Navy Corps Marine
-ghost-role-information-ntnc-consortium-officer-description = You are charged directly from the NanoTrasen Navy Corps to protect and serve the Central Command officials at all costs, nothing else subverts that.
+ghost-role-information-ntnc-consortium-officer-description = Wysłano cię bezpośrednio z NanoTrasen Navy Corps by chronić i służyć funkcjonariuszom Centralnego Dowodzenia za wszelką cenę, nic innego nie może tego podważać.
