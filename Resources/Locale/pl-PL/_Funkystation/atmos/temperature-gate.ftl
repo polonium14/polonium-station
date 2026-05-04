@@ -1,15 +1,15 @@
-temperature-gate-ui-window-title = Temperature Gate
+temperature-gate-ui-window-title = Zawór Temperaturowy
 temperature-gate-ui-status-label = Status:
-temperature-gate-ui-status-enabled = On
-temperature-gate-ui-status-disabled = Off
-temperature-gate-ui-threshold-label = Threshold (K):
+temperature-gate-ui-status-enabled = Wł.
+temperature-gate-ui-status-disabled = Wył.
+temperature-gate-ui-threshold-label = Próg (K):
 temperature-gate-ui-threshold-placeholder = 273.15
-temperature-gate-ui-mode-max = Max
-temperature-gate-ui-mode-min = Min
-temperature-gate-ui-set = Set
+temperature-gate-ui-mode-max = Maks.
+temperature-gate-ui-mode-min = Min.
+temperature-gate-ui-set = Ustaw
 # Examined text
-temperature-gate-examined = { $status } - opens when { $mode } { $threshold } K
-temperature-gate-status-enabled = Enabled
-temperature-gate-status-disabled = Disabled
-temperature-gate-status-greater = more than
-temperature-gate-status-lesser = less than
+temperature-gate-examined = { $status } — otwiera się, gdy temperatura wynosi { $mode } { $threshold } K
+temperature-gate-status-enabled = Włączona
+temperature-gate-status-disabled = Wyłączona
+temperature-gate-status-greater = więcej niż
+temperature-gate-status-lesser = mniej niż
