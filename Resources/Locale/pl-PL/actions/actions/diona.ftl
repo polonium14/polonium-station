@@ -3,5 +3,5 @@
 #
 # SPDX-License-Identifier: MIT
 
-diona-gib-action-use = { $name } splits apart in an instant!
-diona-reform-attempt = { $name } attempts to reform!
+diona-gib-action-use = { $name } rozpada się w mgnieniu oka!
+diona-reform-attempt = { $name } próbuje się zreformować!
