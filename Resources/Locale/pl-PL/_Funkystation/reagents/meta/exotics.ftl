@@ -4,17 +4,17 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-reagent-name-exotic = liquid exotium
-reagent-desc-exotic = A precursor to many different rare chemicals. Use wisely.
-reagent-name-stasicillin = stasicillin
-reagent-desc-stasicillin = A very rare chemical used by both top-level medbays and Nanotrasen secret agents.
-reagent-name-negacordrazine = negacordrazine
-reagent-desc-negacordrazine = A strange, completely reversed tricordrazine. Heals nearly all damage types above 30 damage.
-reagent-name-stabilisedstimulants = stabilised stimulants
-reagent-desc-stabilisedstimulants = You have zero clue what this is, but it really gets you going!
-reagent-name-revivopine = revivopine
-reagent-desc-revivopine = An extremely effective medicine for combat purposes of getting fellow combatants up quickly.
+reagent-name-exotic = płynne egzotium
+reagent-desc-exotic = Prekursor wielu różnych rzadkich chemikaliów. Używaj mądrze.
+reagent-name-stasicillin = stasicylina
+reagent-desc-stasicillin = Bardzo rzadki związek chemiczny używany zarówno przez elitarne działy medyczne, jak i tajnych agentów Nanotrasen.
+reagent-name-negacordrazine = negakordrazyna
+reagent-desc-negacordrazine = Dziwna, całkowicie odwrócona tricordrazyna. Leczy niemal wszystkie typy obrażeń powyżej 30 punktów obrażeń.
+reagent-name-stabilisedstimulants = stabilizowane stymulanty
+reagent-desc-stabilisedstimulants = Nie masz pojęcia, czym to jest, ale naprawdę stawia cię na nogi!
+reagent-name-revivopine = wskrzeszopiryna
+reagent-desc-revivopine = Niezwykle skuteczny lek bojowy do szybkiego stawiania towarzyszy walki na nogi.
 reagent-name-corgium = corgium
-reagent-desc-corgium = A strange chemical imbued with the power to create life, specifically the cutest!
+reagent-desc-corgium = Dziwny związek chemiczny obdarzony mocą tworzenia życia, a konkretnie najsłodszego!
 reagent-name-muigroc = muigroc
-reagent-desc-muigroc = For very, very evil people who love corgis very, very much.
+reagent-desc-muigroc = Dla bardzo, bardzo złych ludzi, którzy bardzo, bardzo kochają corgi.
