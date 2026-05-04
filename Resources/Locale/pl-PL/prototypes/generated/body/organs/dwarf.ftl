@@ -1,6 +1,6 @@
-ent-OrganDwarfHeart = serce krasnoluda
+ent-OrganDwarfHeart = dwarf heart
     .desc = { ent-OrganHumanHeart.desc }
-ent-OrganDwarfLiver = wątroba krasnoluda
+ent-OrganDwarfLiver = dwarf liver
     .desc = { ent-OrganHumanLiver.desc }
-ent-OrganDwarfStomach = żołądek krasnoluda
+ent-OrganDwarfStomach = dwarf stomach
     .desc = { ent-OrganHumanStomach.desc }
