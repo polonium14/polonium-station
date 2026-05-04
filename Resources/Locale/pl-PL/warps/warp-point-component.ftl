@@ -4,4 +4,4 @@
 #
 # SPDX-License-Identifier: MIT
 
-warp-point-component-on-examine-success = This one's location ID is { $location }
+warp-point-component-on-examine-success = ID tej lokacji to { $location }
