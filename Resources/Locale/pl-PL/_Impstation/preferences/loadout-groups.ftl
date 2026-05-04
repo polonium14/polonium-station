@@ -4,6 +4,6 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 # service
-loadout-group-chaplain-belt = Chaplain belt
-loadout-group-chaplain-eyes = Chaplain eye coverings
-loadout-group-chaplain-shoes = Chaplain shoes
+loadout-group-chaplain-belt = Kapłan – pas
+loadout-group-chaplain-eyes = Kapłan – oczy
+loadout-group-chaplain-shoes = Kapłan – buty
