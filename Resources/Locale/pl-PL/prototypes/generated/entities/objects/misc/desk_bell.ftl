@@ -1,2 +1,2 @@
-ent-DeskBell = dzwonek na biurko
-    .desc = Kamień węgielny każdej pracy w obsłudze klienta. Odczuwasz nieustanną chęć dzwonienia nim.
+ent-DeskBell = desk bell
+    .desc = The cornerstone of any customer service job. You feel an unending urge to ring it.
