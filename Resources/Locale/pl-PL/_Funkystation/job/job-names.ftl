@@ -4,12 +4,12 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-job-name-internal-affairs-agent = Internal Affairs Agent
-job-name-magistrate = Magistrate
-job-name-central-command-intern = Central Command Intern
-job-name-space-cowboy = Space Cowboy
+job-name-internal-affairs-agent = Agent Spraw Wewnętrznych
+job-name-magistrate = Sędzia
+job-name-central-command-intern = Stażysta Centralnego Dowództwa
+job-name-space-cowboy = Kowboj Kosmiczny
 
 # Role timers - Make these alphabetical or I eat you
 
-JobCentralCommandIntern = Central Command Intern
-JobSpaceCowboy = Space Cowboy
+JobCentralCommandIntern = Stażysta Centralnego Dowództwa
+JobSpaceCowboy = Kowboj Kosmiczny
