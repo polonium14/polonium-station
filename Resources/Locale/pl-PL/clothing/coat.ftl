@@ -5,4 +5,4 @@
 #
 # SPDX-License-Identifier: MIT
 
-multiphase_HoS = X-01 Multifaza
+multiphase_HoS = X-01 Multiphase
