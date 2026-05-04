@@ -1,7 +1,7 @@
-ent-BlastDoor = brama hermetyczna
-    .desc = Widoczny napis 'NIEBEZPIECZEŃSTWO WYBUCHU'
+ent-BlastDoor = blast door
+    .desc = This one says 'BLAST DONGER'.
 ent-BlastDoorOpen = { ent-BlastDoor }
-    .suffix = Otwarte
+    .suffix = Open
     .desc = { ent-BlastDoor.desc }
-ent-BlastDoorFrame = rama bramy hermetycznej
-    .desc = Widoczny napis 'NIEBEZPIECZEŃSTWO WYBUCHU'.
+ent-BlastDoorFrame = blast door frame
+    .desc = This one says 'BLAST DONGER'.
