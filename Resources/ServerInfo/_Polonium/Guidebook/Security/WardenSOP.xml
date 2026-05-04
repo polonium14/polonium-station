@@ -7,53 +7,53 @@ SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
 SPDX-License-Identifier: MIT
 -->
 <Document>
-# Warden
+# Nadzorca Ochrony
 
-## Code Green
+## Kod Zielony
 
-[bold]1.[/bold] The Warden may [bold]not[/bold] perform arrests if there are [color=#cb0000]Security Officers[/color] active;
+[bold]1.[/bold] Nadzorca [bold]nie[/bold] może przeprowadzać aresztów jeśli są aktywni [color=#cb0000]Oficerowie Ochrony[/color];
 
-[bold]2.[/bold] The Warden must conduct a thorough search of every prisoner’s belongings, including pockets, PDA slots, any coat pockets and suit storage slots;
+[bold]2.[/bold] Nadzorca musi przeprowadzić pełne i szczególowe przszukanie każdego więźnia, włącznie z ich kieszeniami, PDA i kieszeniami płaszczów;
 
-[bold]3.[/bold] The Warden is required to permit a trial in the circumstances outlined in the [textlink="Legal SOP" link="LegalSOP"] section, and is likewise required to permit the suspect access to confidential meetings with their chosen legal representative at any time during their sentence. The suspect's brig time should not be advanced during confidential meetings with a legal representative, and should be paused until such a time as the suspect has returned to their cell;
+[bold]3.[/bold] Nadzorca musi zezwolić na rozprawę sądową w przypadkach określonych w [textlink="SPO Prawne" link="LegalSOP"], oraz ma obowiązek zezwolić podejrzanemu na spotkanie z jego wybranem reprezentantem prawnym w dowolnym momencie ich wyroku. Czasomierz wyroku podejrzanego powinno się zapauzować na czas takich spotkań oraz odpauzowaywać w momencie ich powrotu do celi;
 
-[bold]4.[/bold] The Warden is required to permit a suspect access to legal representation [italic]during interrogation[/italic] only in cases where the suspect is charged with a Tier III crime or greater;
+[bold]4.[/bold] Nadzorca ma obowiązek zezwolić podejrzanemu na prawnika [italic]w trakcie przesłuchań[/italic] tylko w przypadkach gdy zbrodnia jest poziomu III lub wyżej;
 
-[bold]5.[/bold] The Warden may [bold]not[/bold] hand out any weapons or armor from the Armory, except replacements for Security equipment that was lost or stolen. Hardsuits may be issued if emergency E.V.A action is required. Exception is made if there is an immediate threat that requires attention, such as terrorism;
+[bold]5.[/bold] Nadzorca [bold]nie[/bold] może rozdawać żadnych broni ani pancerza ze zbrojowni, z wyjątkiem dla sprzętu ochrony który został ukradziony lub zgubiony. Skafandry mogą zostać wydane jeśli potrzebne jest awaryjne operowanie w przestrzeni kosmicznej. Wyjątkami są zagrożenia dla całej stacji, oraz terroryzm;
 
-[bold]6.[/bold] The Warden is permitted to carry a fully kitted security belt and a standard-issue sidearm (e.e, MK-58 or RG-2). While permitted to carry their unique energy shotgun, they are discouraged from doing so for safety concerns;
+[bold]6.[/bold] Nadzorca może nosić w pełni załadowany pasek ochrony oraz standartową broń boczną (np. VIS MPS). Chociaż wolno mu nosić jego unikalną strzelbę energetyczną, jest to odradzane ze względu na obawy bezpieczeństwa.;
 
-[bold]7.[/bold] The Warden may [bold]not[/bold] place the portable flashers within the Brig;
+[bold]7.[/bold] Nadzorca [bold]nie[/bold] może stawiać mobilnych błysków w więzieniu;
 
-[bold]8.[/bold] The Warden may [bold]not[/bold] place the deployable barriers within the Brig;
+[bold]8.[/bold] Nadzorca [bold]nie[/bold] może ustawiać rozstawianych barier w więzieniu;
 
-[bold]9.[/bold] The Warden must read to every prisoner the crimes they are sentenced to;
+[bold]9.[/bold] Nadzorca ma obowiązek wyczytać wszystkie zbrodnie więźnia w momencie skazania;
 
-[bold]10.[/bold] The Warden is not permitted to leave prisoners cuffed to their beds. An exception is made if the prisoners acts overtly hostile or attempts to breach the cell in order to escape;
+[bold]10.[/bold] Nadzorca nie może zostawić więźnia przykutego do łózka. Wyjątki są dla wrogo zachowywujących się więźniów, oraz takich którzy próbują uciec z więzienia;
 
-[bold]11.[/bold] The Warden must follow the same guidelines as [color=#cb0000]Security Officers[/color] for attire, with the exception that their own assigned attire is also acceptable for any of the attire mentioned for [color=#cb0000]Security Officers[/color];
+[bold]11.[/bold] Nadzorca powinien podążać za tymi samymi wskazaniami co [color=#cb0000]Oficerowie Ochrony[/color] co do ubioru, z wyjątkiem że wszystkie unikalne ubrania komendanta są również dozwolone;
 
-[bold]12.[/bold] The Warden is encouraged to follow the [textlink="Security Rules of Conduct" link="RulesOfConduct"] to set a proper example for cadets, as well as establish trust with the public.
+[bold]12.[/bold] Nadzorca jest zachęcany aby podążał za [textlink="Zasadami Postępowania Ochrony" link="RulesOfConduct"], ponieważ stawia to dobry przykład dla [color=#cb0000]Kadetów Ochrony[/color] oraz wspiera zaufanie publiczne do Ochrony.
 
-## Code Blue
+## Kod Niebieski
 
-[bold]1.[/bold] Guidelines 1, 2, 3, 4, 6, 9, 11 and 12 are carried over from [color=green]Code Green[/color];
+[bold]1.[/bold] Wskazania 1, 2, 3, 4, 6, 9, 11 oraz 12 przechodzą z [color=green]Kodu Zielonego[/color];
 
-[bold]2.[/bold] The Warden is permitted to hand out all equipment from the Armory. Guns are only to be handed out with [color=#1b67a5]Head of Security[/color] or [color=#1b67a5]Captain[/color]'s approval, as they present a lethal risk, or if there are station ending threats or terrorism.
+[bold]2.[/bold] Nadzorca ma zezwolenie na wydawanie dowolnego sprzętu ze zbrojowni. Broń strzelecka powinna być wydawana tylko za zezwoleniem [color=#1b67a5]Komendanta[/color] lub [color=#1b67a5]Kapitana[/color], ponieważ przedstawiają ryzyko użycia siły śmiercionośnej, albo jak są obecne zagrożenia dla całej stacji lub terroryzm.
 
-[bold]3.[/bold] The Warden is permitted to place the portable flashers inside the Brig;
+[bold]3.[/bold] Nadzorca może stawiać mobilne błyski w więzieniu;
 
-[bold]4.[/bold] The Warden is permitted to place the deployable barriers inside the Brig.
+[bold]4.[/bold] Nadzorca może ustawiać rozstawiane bariery w więzieniu;
 
-## Code Red
+## Kod Czerwony
 
-[bold]1.[/bold] Guidelines 2, 4, 6, 9, 11 and 12 are carried over from [color=green]Code Green[/color];
+[bold]1.[/bold] Wskazania 2, 4, 6, 9, 11 oraz 12 przechodzą z [color=green]Kodu Zielonego[/color];
 
-[bold]2.[/bold] Guidelines 3 and 4 are carried over from Code Blue. In addition, the Warden may also carry any weapon from the Armory, but never more than one at a time;
+[bold]2.[/bold] Wskazania 3 oraz 4 przechodzą z [color=blue]Niebieskiego[/color]. Dodatkowo Nadzorca może nosić dowolną broń ze zbrojowni, ale nie więcej niż jedną na raz.
 
-[bold]3.[/bold] The Warden is [bold]not[/bold] required to permit a trial during states of emergency. However, the Warden is still required to permit the suspect access to confidential meetings with their chosen legal representative at any time during their sentence, and the suspect's brig time should not be advanced during these confidential meetings.
+[bold]3.[/bold] Nadzorca [bold]nie[/bold] ma obowiązku prowadzić sądu w czasie zagrożenia. Ma jednak obowiązek zezwolić podejrzanemu na spotkanie z jego wybranem reprezentantem prawnym w dowolnym momencie ich wyroku. Czasomierz wyroku podejrzanego powinno się zapauzować na czas takich spotkań oraz odpauzowaywać w momencie ich powrotu do celi.
 
-[bold]3.[/bold] The Warden is permitted to distribute any weapon or piece of equipment in the Armory. This includes whatever Research has provided;
+[bold]3.[/bold] Nadzorca może rozdawać dowolną broń i pancerz ze zbrojowni. To wlicza osiągi technologiczne z Rozwoju;
 
-[bold]4.[/bold] The Warden is permitted to carry out arrests freely.
+[bold]4.[/bold] Nadzorca może swobonie prowadzić areszty.
 </Document>
