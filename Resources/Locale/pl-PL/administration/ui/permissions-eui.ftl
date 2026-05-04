@@ -1,3 +1,12 @@
+# SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Galactic Chimp <63882831+GalacticChimp@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <gradientvera@outlook.com>
+# SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 permissions-eui-do-not-have-required-flags-to-edit-admin-tooltip = Nie posiadasz wymaganych uprawnień, aby edytować tego administratora.
 permissions-eui-do-not-have-required-flags-to-edit-rank-tooltip = Nie posiadasz wymaganych uprawnień, aby edytować ten rangę.
 permissions-eui-menu-title = Panel uprawnień
@@ -20,5 +29,3 @@ permissions-eui-edit-admin-rank-button = Edytuj
 permissions-eui-edit-admin-rank-window-title = Edytuj rangę administratora
 permissions-eui-edit-admin-window-save-button = Zapisz
 permissions-eui-edit-admin-window-remove-flag-button = Usuń
-cmd-permissions-desc = Otwiera panel uprawnień administratora.
-cmd-permissions-help = Użycie: permissions
