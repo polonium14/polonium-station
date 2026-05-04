@@ -1,10 +1,10 @@
-ent-HotPotato = gorący ziemniak
-    .desc = Po aktywacji nie możesz upuścić tej bomby czasowej — uderz kogoś innego, aby się uratować! Nie poparz się!
+ent-HotPotato = hot potato
+    .desc = Once activated, you can't drop this time bomb - hit someone else with it to save yourself! Don't burn your hands!
 ent-HotPotatoEffect = { "" }
     .desc = { "" }
-ent-TrashBananaPeelExplosive = { ent-TrashBananaPeel }
-    .suffix = Eksplodujący
+ent-TrashBananaPeelExplosive = banana peel
+    .suffix = Explosive
     .desc = { ent-TrashBananaPeel.desc }
-ent-TrashBananaPeelExplosiveUnarmed = { ent-FoodBanana }
-    .desc = Jest coś niezwykłego w tym bananie.
-    .suffix = Nieuzbrojony
+ent-TrashBananaPeelExplosiveUnarmed = banana
+    .desc = There's something unusual about this banana.
+    .suffix = Unarmed
