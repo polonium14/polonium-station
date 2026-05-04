@@ -5,4 +5,4 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 # Species
-loadout-group-humanoid-silicon = Silicon-friendly survival box
+loadout-group-humanoid-silicon = Zestaw przetrwania dla syntetycznych humanoidów
