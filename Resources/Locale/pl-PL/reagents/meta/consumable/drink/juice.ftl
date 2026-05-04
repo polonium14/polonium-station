@@ -1,3 +1,15 @@
+# SPDX-FileCopyrightText: 2022 Alex Evgrashin <aevgrashin@yandex.ru>
+# SPDX-FileCopyrightText: 2022 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2024 RumiTiger <154005209+RumiTiger@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2024 potato1234_x <79580518+potato1234x@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 reagent-name-juice-apple = sok jabłkowy
 reagent-desc-juice-apple = To mały kawałek Edenu.
 reagent-name-juice-banana = sok bananowy
@@ -29,4 +41,3 @@ reagent-desc-juice-tomato = Pomidory zrobione na sok. Co za marnowanie dobrych p
 reagent-name-juice-watermelon = sok arbuzowy
 reagent-desc-juice-watermelon = Pyszny sok z arbuza.
 reagent-name-juice-cherry = sok wiśniowy
-reagent-desc-juice-cherry = Pyszny sok wiśniowy, słodki i cierpki.
