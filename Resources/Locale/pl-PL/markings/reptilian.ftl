@@ -1,11 +1,22 @@
+# SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2024 Flareguy <78941145+Flareguy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 KittenColony <149278380+KittenColony@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Nairod <110078045+Nairodian@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 T-Stalker <43253663+DogZeroX@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 pigeonpeas <147350443+pigeonpeas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 marking-LizardFrillsShort-frills_short = Lizard Frills (Short)
 marking-LizardFrillsShort = Lizard Frills (Short)
 marking-LizardFrillsSimple-frills_simple = Lizard Frills (Simple)
 marking-LizardFrillsSimple = Lizard Frills (Simple)
 marking-LizardFrillsAquatic-frills_aquatic = Lizard Frills (Aquatic)
 marking-LizardFrillsAquatic = Lizard Frills (Aquatic)
-marking-LizardHornsAngler-horns_angler = Lizard Horns (Angler)
-marking-LizardHornsAngler = Lizard Horns (Angler)
 marking-LizardHornsCurled-horns_curled = Lizard Horns (Curled)
 marking-LizardHornsCurled = Lizard Horns (Curled)
 marking-LizardHornsRam-horns_ram = Lizard Horns (Ram)
@@ -16,33 +27,25 @@ marking-LizardHornsSimple-horns_simple = Lizard Horns
 marking-LizardHornsSimple = Lizard Horns
 marking-LizardTailSmooth-tail_smooth_primary = Lizard Tail
 marking-LizardTailSmooth-tail_smooth_secondary = Under Tone
+marking-LizardTailSmooth = Lizard Tail (Smooth)
 marking-LizardTailLarge-tail_large_primary = Lizard Tail Primary (Large)
 marking-LizardTailLarge-tail_large_secondary = Lizard Tail Secondary (Large)
-marking-LizardTailSmooth = Lizard Tail (Smooth)
+marking-LizardTailLarge = Lizard Tail (Large)
 marking-LizardTailSpikes-tail_spikes_primary = Lizard Tail Primary (Spiky)
 marking-LizardTailSpikes-tail_spikes_secondary = Lizard Tail Secondary (Spiky)
 marking-LizardTailSpikes-tail_spikes_tertiary = Lizard Tail Tertiary (Spiky)
-marking-LizardTailLarge-tail_large = Lizard Tail (Large)
+marking-LizardTailSpikes = Lizard Tail (Spiky)
 marking-LizardTailTiger-tail_tiger_primary = Lizard Tail Primary (Light Tiger Stripes)
 marking-LizardTailTiger-tail_tiger_secondary = Lizard Tail Secondary (Light Tiger Stripes)
 marking-LizardTailTiger-tail_tiger_tertiary = Lizard Tail Tertiary (Light Tiger Stripes)
 marking-LizardTailTiger = Lizard Tail (Light Tiger Stripes)
-marking-LizardTailLarge = Lizard Tail (Large)
-marking-LizardTailSpikes-tail_spikes = Lizard Tail (Spiky)
-marking-LizardSnoutRound-snout_round_primary = Lizard Snout Primary (Round)
-marking-LizardSnoutRound-snout_round_secondary = Lizard Snout Secondary (Round)
-marking-LizardTailSpikes = Lizard Tail (Spiky)
-marking-LizardSnoutSharp-snout_sharp_primary = Lizard Snout Primary (Sharp)
-marking-LizardSnoutSharp-snout_sharp_secondary = Lizard Snout Secondary (Sharp)
-marking-LizardTailLTiger-tail_ltiger = Lizard Tail (Light Tiger Stripes)
-marking-LizardTailLTiger = Lizard Tail (Light Tiger Stripes)
 marking-LizardTailDTiger-tail_dtiger = Lizard Tail (Dark Tiger Stripes)
 marking-LizardTailDTiger = Lizard Tail (Dark Tiger Stripes)
-marking-LizardTailAquatic-tail_aquatic = Lizard Tail (Aquatic)
-marking-LizardTailAquatic = Lizard Tail (Aquatic)
-marking-LizardSnoutRound-snout_round = Lizard Snout (Round)
+marking-LizardSnoutRound-snout_round_primary = Lizard Snout Primary (Round)
+marking-LizardSnoutRound-snout_round_secondary = Lizard Snout Secondary (Round)
 marking-LizardSnoutRound = Lizard Snout (Round)
-marking-LizardSnoutSharp-snout_sharp = Lizard Snout (Sharp)
+marking-LizardSnoutSharp-snout_sharp_primary = Lizard Snout Primary (Sharp)
+marking-LizardSnoutSharp-snout_sharp_secondary = Lizard Snout Secondary (Sharp)
 marking-LizardSnoutSharp = Lizard Snout (Sharp)
 marking-LizardChestTiger-body_tiger = Lizard Chest (Tiger)
 marking-LizardChestTiger = Lizard Chest (Tiger)
@@ -87,8 +90,6 @@ marking-LizardChestUnderbelly-body_underbelly = Lizard Chest (Underbelly)
 marking-LizardChestUnderbelly = Lizard Chest (Underbelly)
 marking-LizardChestBackspikes-body_backspikes = Lizard Back spikes (Four)
 marking-LizardChestBackspikes = Lizard Back spikes (Four)
-marking-LizardChestFin-body_fin = Lizard Fin
-marking-LizardChestFin = Lizard Fin
 marking-LizardSnoutSplotch = Lizard Snout (Splotch)
 marking-LizardSnoutSplotch-snout_splotch_primary = Muzzle
 marking-LizardSnoutSplotch-snout_splotch_secondary = Snoot
