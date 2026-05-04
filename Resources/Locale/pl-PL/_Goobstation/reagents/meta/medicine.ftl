@@ -5,5 +5,5 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-reagent-name-stasizium = Stasizium
-reagent-desc-stasizium = An unstable fluid of future capable of restoring the patient's body to its original state. However, an overdose can tear the body apart.
+reagent-name-stasizium = Stazynium
+reagent-desc-stasizium = Niestabilny płyn przyszłości, zdolny do przywrócenia organizmu pacjenta do stanu pierwotnego. Jednak przedawkowanie może rozerwać organizm na strzępy.
