@@ -8,8 +8,8 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-  # Rekordy kryminalne
-  Konsola rekordów kryminalnych (Kartoteka kriminalna) jest dostępna w dziale ochrony każdej stacji. Służy ona śledzeniu i zarządzaniu historią kryminalną i statusem każdego kto jest obecny na manifeście załogi.
+  # Rejestry kryminalne
+  Konsola rejestrów kryminalnych jest dostępna w dziale ochrony każdej stacji. Służy ona śledzeniu i zarządzaniu historią kryminalną i statusem każdego kto jest obecny na manifeście załogi.
 
   <Box>
   <GuideEntityEmbed Entity="ComputerCriminalRecords"/>
@@ -20,13 +20,13 @@ SPDX-License-Identifier: MIT
   Interfejs jest podzielony na następujące elementy:
     - Pasek wyszukiwania z filtrem który pozwala szukać załogantów po ich imionach, odciskach palców lub DNA.
 
-    - Lista wszystkich załogantów na manifeście, wybranie któregoś z rekordów wyświetli dane kryminalne tego załoganta. Lista jest filtrowana przez pasek wyszukiwania, więc upewnij się że jest pusty jeśli chcesz ogólny przegląd.
+    - Lista wszystkich załogantów na manifeście, wybranie któregoś z wpisów wyświetli dane kryminalne tego załoganta. Lista jest filtrowana przez pasek wyszukiwania, więc upewnij się że jest pusty jeśli chcesz ogólny przegląd.
 
-    - Rekordy kryminalne same w sobie.
+    - Rejestry kryminalne same w sobie.
 
     - Przycisk filtrów poniżej może być użyty aby pokazywać tylko poszukiwanych, zatrzymanych lub zwolnionych załogantów.
 
-  W sekcji rekordów stacji możesz:
+  W sekcji rejestrów stacji możesz:
     - Zobaczyć związane z ochroną informacje o załogantach takie jak ich imię, odciski palców oraz DNA.
 
     - Zmienić status poszukiwań na m.in.: [color=blue]Podejrzany[/color], [color=red]Poszukiwany[/color] and [color=grey]Zatrzymany[/color]. Przy niektórych statusach oczekiwane jest że podasz powód.
@@ -42,9 +42,9 @@ SPDX-License-Identifier: MIT
   Okno Historii Kryminalnej pokazuje czyjeś zbrodnie oraz może być modyfikowane na kilka sposobów:
     - Automatycznie, przy ustawianiu czyjegoś statusu na poszukiwany. Powód będzie dodany w sposób w którym łatwo zobaczyć automatyczne wpisy.
 
-    - Dodawanie nowych przez klikanie "Dodaj" i wpisywanie nowych zbrodnii do okna wpisywania. Kiedy dodajesz nowy rekord, pamiętaj o ich zbrodni i wyroku, a konsola automatycznie dopisze czas.
+    - Dodawanie nowych wpisów przez klikanie "Dodaj" i wpisywanie nowych zbrodnii do okna wpisywania. Kiedy dodajesz nowy wpis, pamiętaj o ich zbrodni i wyroku, a konsola automatycznie dopisze czas.
 
-    - Zaznacz niechciany rekord i klinkij "Usuń" aby się go pozbyć. Przydatne do trzymania rekordów w porządku po zabawach klauna z ukradzionym ID.
+    - Zaznacz niechciany wpis i klinkij "Usuń" aby się go pozbyć. Przydatne do trzymania rejestru w porządku po zabawach klauna z ukradzionym ID.
 
   Teraz możesz się zbijać bąki przy biurku tak jak zawsze chciałeś.
 </Document>
