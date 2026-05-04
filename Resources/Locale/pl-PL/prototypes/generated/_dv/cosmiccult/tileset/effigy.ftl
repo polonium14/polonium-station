@@ -1,7 +1,7 @@
-ent-CosmicEffigy = Effigia Entropii
-    .desc = Ohydna, złowroga anomalia. Surowa entropia wydobywa się na zewnątrz, zdradzając swoją niestabilność.
+ent-CosmicEffigy = effigy of entropy
+    .desc = An abhorrent malign anomaly. Raw entropy oozes forth, betraying its instability.
 ent-CosmicAnomalyTrap = { ent-BaseAnomalyInjector }
-    .suffix = Złowroga
+    .suffix = Malign
     .desc = { ent-BaseAnomalyInjector.desc }
 ent-CosmicAnomalyInjection = { "" }
     .desc = { "" }
