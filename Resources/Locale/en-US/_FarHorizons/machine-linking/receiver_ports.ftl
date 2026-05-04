@@ -1,14 +1,14 @@
 signal-port-name-nuclear-reactor-data-receiver = Reactor Monitor
 signal-port-description-nuclear-reactor-data-receiver = Receiving info about a nuclear reactor.
-
+signal-port-name-vitals-monitor-receiver-med = Łóżko Medyczne
+signal-port-description-vitals-monitor-receiver-med = Wysyłanie informacji o stanie pacjenta do Monitora Życiowych Funkcji.
+signal-port-name-vitals-monitor-receiver-stasis = Łóżko Stazy
+signal-port-description-vitals-monitor-receiver-stasis = Wysyłanie informacji o stanie pacjenta do Monitora Życiowych Funkcji.
 signal-port-name-nuclear-reactor-receiver-insert = Control Rods In
 signal-port-description-nuclear-reactor-receiver-insert = Increases the insertion level of the control rods.
-
 signal-port-name-nuclear-reactor-receiver-retract = Control Rods Out
 signal-port-description-nuclear-reactor-receiver-retract = Decreases the insertion level of the control rods.
-
 signal-port-name-gas-turbine-receiver-increase = Increase Load
 signal-port-description-gas-turbine-receiver-increase = Increases the stator load of the turbine.
-
 signal-port-name-gas-turbine-receiver-decrease = Decrease Load
 signal-port-description-gas-turbine-receiver-decrease = Decreases the stator load of the turbine.

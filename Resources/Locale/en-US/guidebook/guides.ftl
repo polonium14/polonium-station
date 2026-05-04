@@ -139,19 +139,18 @@ guide-entry-defusal = Large Bomb Defusal
 guide-entry-criminal-records = Criminal Records
 guide-entry-command = Command
 guide-entry-service = Service
-
+# Funkystaion - Genetics
+guide-entry-genetics = Genetyka
 guide-entry-newplayer = New? Start here!
 guide-entry-charactercreation = Creating Characters
 guide-entry-species = Species
 guide-entry-yourfirstcharacter = Your First Character
 guide-entry-controls = Controls
 guide-entry-radio = Radio and Speech
-
 guide-entry-references = Tables & References
 guide-entry-chemicals = Chemicals
 guide-entry-drinks = Drinks
 guide-entry-foodrecipes = Food Recipes
-
 guide-entry-elements = Elements
 guide-entry-medicine = Medicine
 guide-entry-narcotics = Narcotics
@@ -164,7 +163,6 @@ guide-entry-special = Special
 guide-entry-others = Others
 # funky station
 guide-entry-exotic = Exotic
-
 guide-entry-pizza-recipes = Pizzas
 guide-entry-savory-recipes = Savory Foods
 guide-entry-bread-recipes = Breads
@@ -180,7 +178,6 @@ guide-entry-salad-recipes = Salads
 guide-entry-medicinal-recipes = Medicinal
 guide-entry-other-recipes = Other
 guide-entry-secret-recipes = Secret
-
 guide-entry-antagonists = Antagonists
 guide-entry-nuclear-operatives = Nuclear Operatives
 guide-entry-traitors = Traitors
@@ -191,12 +188,12 @@ guide-entry-space-ninja = Space Ninja
 guide-entry-thieves = Thieves
 guide-entry-wizard = Wizard
 guide-entry-malfunctioningai = Malfunctioning AI
-
 guide-entry-rules = Server Rules
 guide-entry-rules-core-only = Core Only Ruleset
 guide-entry-rules-lrp = Standard Ruleset
 guide-entry-rules-mrp = MRP Ruleset
 guide-entry-rules-role-types = Role Types
+guide-entry-rules-c00 = G0
 guide-entry-rules-core = Core Rules
 guide-entry-rules-c1 = C1
 guide-entry-rules-c2 = C2
@@ -233,6 +230,7 @@ guide-entry-rules-r14 = R14
 guide-entry-rules-r15 = R15
 guide-entry-rules-r16 = R16
 guide-entry-rules-r17 = R17
+guide-entry-rules-community = Zasady Społeczności
 guide-entry-rules-silicon = Silicon Rules
 guide-entry-rules-s1 = S1
 guide-entry-rules-s2 = S2
@@ -243,6 +241,8 @@ guide-entry-rules-s6 = S6
 guide-entry-rules-s7 = S7
 guide-entry-rules-s8 = S8
 guide-entry-rules-s9 = S9
+guide-entry-rules-mrp-m0 = Zasady MRP
+guide-entry-rules-m1 = M1
 guide-entry-rules-s10 = S10
 guide-entry-rules-space-law = Space Law
 guide-entry-rules-sl-crime-list = Crime List
@@ -254,6 +254,5 @@ guide-entry-rules-ban-types = Ban Types
 guide-entry-rules-ban-durations = Ban Durations
 guide-entry-metashield = Metashield
 guide-entry-namingscheme = Naming Scheme
-
 guide-entry-writing = Writing
 guide-entry-glossary = Glossary

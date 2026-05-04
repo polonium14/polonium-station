@@ -6,14 +6,12 @@
 #
 # SPDX-License-Identifier: MIT
 
+expendable-light-spent-prefix = spent { $baseName }
 expendable-light-start-verb = Start Light
-
 expendable-light-spent-flare-name = spent flare
 expendable-light-spent-flare-desc = It looks like this flare has burnt out. What a bummer.
-
 expendable-light-burnt-torch-name = burnt torch
 expendable-light-burnt-torch-desc = It looks like this torch has burnt out. What a bummer.
-
 expendable-light-spent-green-glowstick-name = spent green glowstick
 expendable-light-spent-red-glowstick-name = spent red glowstick
 expendable-light-spent-purple-glowstick-name = spent purple glowstick

@@ -22,7 +22,6 @@
 # Nouns
 seeds-noun-seeds = seeds
 seeds-noun-spores = spores
-
 # Seeds
 seeds-wheat-name = wheat
 seeds-wheat-display-name = wheat stalks
@@ -161,4 +160,6 @@ seeds-capfruit-display-name = capfruit tree
 seeds-cherry-name = cherry
 seeds-cherry-display-name = cherry tree
 seeds-anomaly-berry-name = anomaly berry
+seeds-bloonion-name = cebula balonowa
+seeds-bloonion-display-name = cebula balonowa
 seeds-anomaly-berry-display-name = anomaly berries

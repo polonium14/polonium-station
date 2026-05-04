@@ -1,9 +1,12 @@
 ent-Incorporeal = { "" }
     .desc = Mobs without physical bodies
+    .gender = epicene
 ent-MobObserverBase = observer
     .desc = Boo!
+    .gender = male
 ent-MobObserver = { ent-MobObserverBase }
     .desc = { ent-MobObserverBase.desc }
+    .gender = male
 ent-ActionGhostBoo = Boo!
     .desc = Scare your crew members because of boredom!
 ent-ActionToggleLighting = Toggle Lighting

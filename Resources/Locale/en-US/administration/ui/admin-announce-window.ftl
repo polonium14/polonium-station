@@ -13,4 +13,6 @@ admin-announce-announcer-default = Central Command
 admin-announce-button = Announce
 admin-announce-type-station = Station
 admin-announce-type-server = Server
+cmd-announceui-desc = Otwiera interfejs ogłoszeń.
+cmd-announceui-help = Użycie: announceui
 admin-announce-keep-open = Keep open

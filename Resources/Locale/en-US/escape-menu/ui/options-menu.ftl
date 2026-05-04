@@ -59,6 +59,7 @@
 #
 # SPDX-License-Identifier: MIT
 
+
 ## General stuff
 
 ui-options-title = Game Options
@@ -69,11 +70,9 @@ ui-options-tab-controls = Controls
 ui-options-tab-audio = Audio
 ui-options-tab-network = Network
 ui-options-tab-misc = General
-
 ui-options-apply = Save & apply
 ui-options-reset-all = Reset changed
 ui-options-default = Reset to defaults
-
 ui-options-value-percent = { TOSTRING($value, "P0") }
 
 # Misc/General menu
@@ -109,10 +108,9 @@ ui-options-quality-label = Quality
 ui-options-misc-label = Misc
 ui-options-interface-label = Interface
 
-
 ## Funky Station
-ui-options-crayon-overlay-transparency = Crayon overlay transparency
 
+ui-options-crayon-overlay-transparency = Crayon overlay transparency
 ui-options-auto-fill-highlights = Auto-fill the highlights with the character's information
 ui-options-highlights-color = Highlighs color:
 ui-options-highlights-color-example = This is an highlighted text!
@@ -152,14 +150,16 @@ ui-options-vp-stretch = Stretch viewport to fit game window
 ui-options-vp-scale = Fixed viewport scale:
 ui-options-vp-scale-value = x{ $scale }
 ui-options-vp-integer-scaling = Prefer integer scaling (might cause black bars/clipping)
-ui-options-vp-integer-scaling-tooltip = If this option is enabled, the viewport will be scaled using an integer value
-                                        at specific resolutions. While this results in crisp textures, it also often
-                                        means that black bars appear at the top/bottom of the screen or that part
-                                        of the viewport is not visible.
+ui-options-vp-integer-scaling-tooltip =
+    If this option is enabled, the viewport will be scaled using an integer value
+    at specific resolutions. While this results in crisp textures, it also often
+    means that black bars appear at the top/bottom of the screen or that part
+    of the viewport is not visible.
 ui-options-vp-vertical-fit = Vertical viewport fitting
-ui-options-vp-vertical-fit-tooltip = When enabled, the main viewport will ignore the horizontal axis entirely when
-                                     fitting to your screen. If your screen is smaller than the viewport, then this
-                                     will cause the viewport to be cut off on the horizontal axis.
+ui-options-vp-vertical-fit-tooltip =
+    When enabled, the main viewport will ignore the horizontal axis entirely when
+    fitting to your screen. If your screen is smaller than the viewport, then this
+    will cause the viewport to be cut off on the horizontal axis.
 ui-options-vp-low-res = Low-resolution viewport
 ui-options-parallax-low-quality = Low-quality Parallax (background)
 ui-options-ambient-occlusion = Show Ambient Occlusion
@@ -174,7 +174,6 @@ ui-options-binds-explanation = Click to change binding, right-click to clear
 ui-options-unbound = Unbound
 ui-options-bind-reset = Reset
 ui-options-key-prompt = Press a key...
-
 ui-options-header-movement = Movement
 ui-options-header-camera = Camera
 ui-options-header-interaction-basic = Basic Interaction
@@ -183,27 +182,29 @@ ui-options-header-ui = User Interface
 ui-options-header-misc = Miscellaneous
 ui-options-header-hotbar = Hotbar
 ui-options-header-shuttle = Shuttle
+ui-options-header-text-cursor = Kursor tekstowy
+ui-options-header-text-cursor-select = Zaznaczanie tekstu
+ui-options-header-text-edit = Edycja tekstu
+ui-options-header-text-chat = Czat
+ui-options-header-text-other = Inne pola tekstowe
 ui-options-header-map-editor = Map Editor
 ui-options-header-dev = Development
+ui-options-hotkey-toggle-sprint = Przełącz bieg
 ui-options-header-general = General
-
 ui-options-hotkey-keymap = Use US QWERTY Keys
 ui-options-hotkey-toggle-walk = Toggle Walk
-
 ui-options-function-move-up = Move Up
 ui-options-function-move-left = Move Left
 ui-options-function-move-down = Move Down
 ui-options-function-move-right = Move Right
 ui-options-function-walk = Walk
 ui-options-function-toggle-standing = Crawl/Stand
-
 ui-options-function-camera-rotate-left = Rotate left
 ui-options-function-camera-rotate-right = Rotate right
 ui-options-function-camera-reset = Reset
 ui-options-function-zoom-in = Zoom in
 ui-options-function-zoom-out = Zoom out
 ui-options-function-reset-zoom = Reset zoom
-
 ui-options-function-use = Use
 ui-options-function-use-secondary = Use secondary
 ui-options-function-alt-use = Alt use
@@ -212,6 +213,7 @@ ui-options-function-activate-item-in-hand = Activate item in hand
 ui-options-function-alt-activate-item-in-hand = Alternative activate item in hand
 ui-options-function-activate-item-in-world = Activate item in world
 ui-options-function-alt-activate-item-in-world = Alternative activate item in world
+ui-options-function-swap-hands-reverse = Zmień ręce (w drugą stronę)
 ui-options-function-drop = Drop item
 ui-options-function-examine-entity = Examine
 ui-options-function-swap-hands = Swap hands
@@ -219,7 +221,6 @@ ui-options-function-move-stored-item = Move stored item
 ui-options-function-rotate-stored-item = Rotate stored item
 ui-options-function-save-item-location = Save item location
 ui-options-static-storage-ui = Lock storage window to hotbar
-
 ui-options-function-smart-equip-backpack = Smart-equip to backpack
 ui-options-function-smart-equip-belt = Smart-equip to belt
 ui-options-function-open-backpack = Open backpack
@@ -232,7 +233,6 @@ ui-options-function-point = Point at location
 ui-options-function-rotate-object-clockwise = Rotate clockwise
 ui-options-function-rotate-object-counterclockwise = Rotate counterclockwise
 ui-options-function-flip-object = Flip
-
 ui-options-function-focus-chat-input-window = Focus chat
 ui-options-function-focus-local-chat-window = Focus chat (IC)
 ui-options-function-focus-emote = Focus chat (Emote)
@@ -263,11 +263,9 @@ ui-options-function-window-close-all = Close all windows
 ui-options-function-window-close-recent = Close recent window
 ui-options-function-show-escape-menu = Toggle game menu
 ui-options-function-escape-context = Close recent window or toggle game menu
-
 ui-options-function-take-screenshot = Take screenshot
 ui-options-function-take-screenshot-no-ui = Take screenshot (without UI)
 ui-options-function-toggle-fullscreen = Toggle fullscreen
-
 ui-options-function-editor-place-object = Place object
 ui-options-function-editor-cancel-place = Cancel placement
 ui-options-function-editor-grid-place = Place in grid
@@ -275,12 +273,10 @@ ui-options-function-editor-line-place = Place line
 ui-options-function-editor-rotate-object = Rotate
 ui-options-function-editor-flip-object = Flip
 ui-options-function-editor-copy-object = Copy
-
 ui-options-function-show-debug-console = Open Console
 ui-options-function-show-debug-monitors = Show Debug Monitors
 ui-options-function-inspect-entity = Inspect Entity
 ui-options-function-hide-ui = Hide UI
-
 ui-options-function-hotbar1 = Hotbar slot 1
 ui-options-function-hotbar2 = Hotbar slot 2
 ui-options-function-hotbar3 = Hotbar slot 3
@@ -288,6 +284,16 @@ ui-options-function-hotbar4 = Hotbar slot 4
 ui-options-function-hotbar5 = Hotbar slot 5
 ui-options-function-hotbar6 = Hotbar slot 6
 ui-options-function-hotbar7 = Hotbar slot 7
+ui-options-function-hotbar-shift1 = Slot hotbaru Shift+1
+ui-options-function-hotbar-shift2 = Slot hotbaru Shift+2
+ui-options-function-hotbar-shift3 = Slot hotbaru Shift+3
+ui-options-function-hotbar-shift4 = Slot hotbaru Shift+4
+ui-options-function-hotbar-shift5 = Slot hotbaru Shift+5
+ui-options-function-hotbar-shift6 = Slot hotbaru Shift+6
+ui-options-function-hotbar-shift7 = Slot hotbaru Shift+7
+ui-options-function-hotbar-shift8 = Slot hotbaru Shift+8
+ui-options-function-hotbar-shift9 = Slot hotbaru Shift+9
+ui-options-function-hotbar-shift0 = Slot hotbaru Shift+0
 ui-options-function-hotbar8 = Hotbar slot 8
 ui-options-function-hotbar9 = Hotbar slot 9
 ui-options-function-hotbar0 = Hotbar slot 0
@@ -298,51 +304,96 @@ ui-options-function-loadout4 = Hotbar Loadout 4
 ui-options-function-loadout5 = Hotbar Loadout 5
 ui-options-function-loadout6 = Hotbar Loadout 6
 ui-options-function-loadout7 = Hotbar Loadout 7
+ui-options-function-loadoutshift1 = Zestaw Hotbarów Shift+1
+ui-options-function-loadoutshift2 = Zestaw Hotbarów Shift+2
+ui-options-function-loadoutshift3 = Zestaw Hotbarów Shift+3
+ui-options-function-loadoutshift4 = Zestaw Hotbarów Shift+4
+ui-options-function-loadoutshift5 = Zestaw Hotbarów Shift+5
+ui-options-function-loadoutshift6 = Zestaw Hotbarów Shift+6
+ui-options-function-loadoutshift7 = Zestaw Hotbarów Shift+7
+ui-options-function-loadoutshift8 = Zestaw Hotbarów Shift+8
+ui-options-function-loadoutshift9 = Zestaw Hotbarów Shift+9
+ui-options-function-loadoutshift0 = Zestaw Hotbarów Shift+0
 ui-options-function-loadout8 = Hotbar Loadout 8
 ui-options-function-loadout9 = Hotbar Loadout 9
 ui-options-function-loadout0 = Hotbar Loadout 0
-
 ui-options-function-shuttle-strafe-up = Strafe up
 ui-options-function-shuttle-strafe-right = Strafe right
 ui-options-function-shuttle-strafe-left = Strafe left
 ui-options-function-shuttle-strafe-down = Strafe down
 ui-options-function-shuttle-rotate-left = Rotate left
+ui-options-function-text-cursor-left = Przesuń kursor w lewo
+ui-options-function-text-cursor-right = Przesuń kursor w prawo
 ui-options-function-shuttle-rotate-right = Rotate right
 ui-options-function-shuttle-brake = Brake
 
 ## Network menu
 
+ui-options-function-text-cursor-up = Przesuń kursor w górę
 ui-options-net-predict = Client-side prediction
-
 ui-options-net-interp-ratio = State buffer size
-ui-options-net-interp-ratio-tooltip = Increasing this will generally make the game more resistant
-                                      to server->client packet-loss, however in doing so it
-                                      effectively adds slightly more latency and requires the
-                                      client to predict more future ticks.
-
+ui-options-net-interp-ratio-tooltip =
+    Increasing this will generally make the game more resistant
+    to server->client packet-loss, however in doing so it
+    effectively adds slightly more latency and requires the
+    client to predict more future ticks.
 ui-options-net-predict-tick-bias = Prediction tick bias
-ui-options-net-predict-tick-bias-tooltip = Increasing this will generally make the game more resistant
-                                           to client->server packet-loss, however in doing so it
-                                           effectively adds slightly more latency and requires the
-                                           client to predict more future ticks.
-
+ui-options-net-predict-tick-bias-tooltip =
+    Increasing this will generally make the game more resistant
+    to client->server packet-loss, however in doing so it
+    effectively adds slightly more latency and requires the
+    client to predict more future ticks.
 ui-options-net-pvs-spawn = PVS entity spawn budget
-ui-options-net-pvs-spawn-tooltip = This limits the rate at which the server will send newly spawned
-                                       entities to the client. Lowering this can help reduce
-                                       stuttering due to entity spawning, but can lead to pop-in.
-
+ui-options-net-pvs-spawn-tooltip =
+    This limits the rate at which the server will send newly spawned
+    entities to the client. Lowering this can help reduce
+    stuttering due to entity spawning, but can lead to pop-in.
+ui-options-function-text-cursor-down = Przesuń kursor w dół
+ui-options-function-text-cursor-word-left = Przesuń kursor o jedno słowo w lewo
+ui-options-function-text-cursor-word-right = Przesuń kursor o jedno słowo w prawo
+ui-options-function-text-cursor-begin = Przesuń kursor na początek
+ui-options-function-text-cursor-end = Przesuń kursor na koniec
+ui-options-function-text-cursor-select = Zaznacz tekst
+ui-options-function-text-cursor-select-left = Rozszerz zaznaczenie w lewo
+ui-options-function-text-cursor-select-right = Rozszerz zaznaczenie w prawo
+ui-options-function-text-cursor-select-up = Rozszerz zaznaczenie w górę
+ui-options-function-text-cursor-select-down = Rozszerz zaznaczenie w dół
+ui-options-function-text-cursor-select-word-left = Rozszerz zaznaczenie o jedno słowo w lewo
+ui-options-function-text-cursor-select-word-right = Rozszerz zaznaczenie o jedno słowo w prawo
+ui-options-function-text-cursor-select-begin = Rozszerz zaznaczenie do początku
+ui-options-function-text-cursor-select-end = Rozszerz zaznaczenie do końca
+ui-options-function-text-backspace = Backspace
+ui-options-function-text-delete = Usuń
+ui-options-function-text-word-backspace = Backspace słowa
+ui-options-function-text-word-delete = Usuń słowo
+ui-options-function-text-newline = Nowa linia
+ui-options-function-text-submit = Wyślij
+ui-options-function-multiline-text-submit = Wyślij wielowierszowy tekst
+ui-options-function-text-select-all = Zaznacz wszystko
+ui-options-function-text-copy = Kopiuj
+ui-options-function-text-cut = Wytnij
+ui-options-function-text-paste = Wklej
+ui-options-function-text-history-prev = Poprzedni z historii
+ui-options-function-text-history-next = Następny z historii
+ui-options-function-text-release-focus = Zwolnij fokus
+ui-options-function-text-scroll-to-bottom = Przewiń na dół
+ui-options-function-text-tab-complete = Uzupełnienie Tab
+ui-options-function-text-complete-next = Uzupełnij następny
+ui-options-function-text-complete-prev = Uzupełnij poprzedni
 ui-options-net-pvs-entry = PVS entity budget
-ui-options-net-pvs-entry-tooltip = This limits the rate at which the server will send newly visible
-                                       entities to the client. Lowering this can help reduce
-                                       stuttering, but can lead to pop-in.
-
+ui-options-net-pvs-entry-tooltip =
+    This limits the rate at which the server will send newly visible
+    entities to the client. Lowering this can help reduce
+    stuttering, but can lead to pop-in.
 ui-options-net-pvs-leave = PVS detach rate
-ui-options-net-pvs-leave-tooltip = This limits the rate at which the client will remove
-                                       out-of-view entities. Lowering this can help reduce
-                                       stuttering when walking around, but could occasionally
-                                       lead to mispredicts and other issues.
+ui-options-net-pvs-leave-tooltip =
+    This limits the rate at which the client will remove
+    out-of-view entities. Lowering this can help reduce
+    stuttering when walking around, but could occasionally
+    lead to mispredicts and other issues.
 
 ## Toggle window console command
+
 cmd-options-desc = Opens options menu, optionally with a specific tab selected.
 cmd-options-help = Usage: options [tab]
 
@@ -356,24 +407,67 @@ ui-options-screen-shake-intensity = Screen shake intensity
 ui-options-speech-bubble-text-opacity = Speech bubble text opacity
 ui-options-speech-bubble-speaker-opacity = Speech bubble speaker opacity
 ui-options-speech-bubble-background-opacity = Speech bubble background opacity
+ui-options-accessability-header-visuals = Wizualne
+ui-options-accessability-header-content = Treść
 
 ## Shitmed Change
-ui-options-header-targeting = Targeting
 
+ui-options-header-targeting = Targeting
 
 ## Admin menu
 
 ui-options-admin-player-panel = Admin Menu Players List
-
 ui-options-admin-playerlist-separate-symbols = Show separate symbols for each antag role type
 ui-options-admin-playerlist-character-color = Color names of antagonist characters
 ui-options-admin-playerlist-roletype-color = Color role types
-
 ui-options-admin-overlay-title = Admin Overlay
+ui-options-censor-nudity = Cenzuruj nagość postaci
 ui-options-enable-classic-overlay = Revert overlay to classic mode
 ui-options-enable-overlay-symbols = Add antag symbol to text
+ui-options-admin-player-tab-symbol-setting = Symbole antagonistów w kolumnie postaci
+ui-options-admin-player-tab-symbol-setting-off = Bez symbolu antagonisty
+ui-options-admin-player-tab-symbol-setting-basic = Pokaż standardowy symbol antagonisty
+ui-options-admin-player-tab-symbol-setting-specific = Pokaż konkretny symbol antagonisty
+ui-options-admin-player-tab-role-setting = Ustawienia wyświetlania ról
+ui-options-admin-player-tab-role-setting-roletype = Pokaż typ roli
+ui-options-admin-player-tab-role-setting-subtype = Pokaż podtyp
+ui-options-admin-player-tab-role-setting-roletypesubtype = Pokaż typ i podtyp roli
+ui-options-admin-player-tab-role-setting-subtyperoletype = Pokaż podtyp i typ roli
+ui-options-admin-player-tab-color-setting = Ustawienia kolorów
+ui-options-admin-player-tab-color-setting-off = Nie lubię kolorów
+ui-options-admin-player-tab-color-setting-character = Koloruj imiona postaci antagonistów
+ui-options-admin-player-tab-color-setting-roletype = Koloruj wszystkie typy ról
+ui-options-admin-player-tab-color-setting-both = Koloruj oba
 ui-options-enable-overlay-playtime = Show playtime
+ui-options-admin-overlay-antag-format = Styl etykiety antagonisty
+ui-options-admin-overlay-antag-format-binary = Pokaż status antagonisty
+ui-options-admin-overlay-antag-format-roletype = Pokaż typ roli
+ui-options-admin-overlay-antag-format-subtype = Pokaż podtyp
+ui-options-admin-overlay-antag-symbol = Styl symbolu antagonisty
+ui-options-admin-overlay-antag-symbol-off = Bez symbolu antagonisty
+ui-options-admin-overlay-antag-symbol-basic = Pokaż standardowy symbol antagonisty
+ui-options-admin-overlay-antag-symbol-specific = Pokaż konkretny symbol antagonisty
+ui-options-admin-enable-overlay-playtime = Pokaż czas gry
+ui-options-admin-enable-overlay-starting-job = Pokaż początkową pracę
+ui-options-admin-overlay-merge-distance = Odległość scalania stosów
+ui-options-admin-overlay-ghost-fade-distance = Zasięg zanikania nakładki ducha od kursora
+ui-options-admin-overlay-ghost-hide-distance = Zasięg ukrywania nakładki ducha od kursora
+ui-options-filter-label = Filtr skalowania:
+ui-options-filter-nearest = Najbliższy (bez wygładzania)
+ui-options-filter-bilinear = Dwuliniowy (wygładzony)
 ui-options-enable-overlay-starting-job = Show starting job
+ui-options-function-toggle-knockdown = Przełącz pełzanie
+# Targeting
+ui-options-function-target-head = Celuj w głowę
+ui-options-function-target-torso = Celuj w tułów
+ui-options-function-target-left-arm = Celuj w lewą rękę
+ui-options-function-target-left-hand = Celuj w lewą dłoń
+ui-options-function-target-right-arm = Celuj w prawą rękę
+ui-options-function-target-right-hand = Celuj w prawą dłoń
+ui-options-function-target-left-leg = Celuj w lewą nogę
+ui-options-function-target-left-foot = Celuj w lewą stopę
+ui-options-function-target-right-leg = Celuj w prawą nogę
+ui-options-function-target-right-foot = Celuj w prawą stopę
 ui-options-overlay-merge-distance = Stack merge distance
 ui-options-overlay-ghost-fade-distance = Ghost overlay fade range from mouse
 ui-options-overlay-ghost-hide-distance = Ghost overlay hide range from mouse

@@ -12,38 +12,30 @@
 #
 # SPDX-License-Identifier: MIT
 
-zombie-transform = {CAPITALIZE(THE($target))} turned into a zombie!
+zombie-transform = { CAPITALIZE(THE($target)) } turned into a zombie!
 zombie-infection-greeting = You have become a zombie. Your goal is to seek out the living and to try to infect them.  Work together with the other zombies and remaining initial infected to overtake the station.
-
 zombie-generic = zombie
-zombie-name-prefix = zombified {$baseName}
-zombie-role-desc =  A malevolent creature of the dead.
-zombie-role-rules = You are a [color={role-type-team-antagonist-color}][bold]{role-type-team-antagonist-name}[/bold][/color]. Search out the living and bite them in order to infect them and turn them into zombies. Work together with the other zombies and remaining initial infected to overtake the station.
-
+zombie-name-prefix = zombified { $baseName }
+zombie-role-desc = A malevolent creature of the dead.
+zombie-role-rules = You are a [color={ role-type-team-antagonist-color }][bold]{ role-type-team-antagonist-name }[/bold][/color]. Search out the living and bite them in order to infect them and turn them into zombies. Work together with the other zombies and remaining initial infected to overtake the station.
+zombification-resistance-coefficient-value = - Szansa na [color=violet]infekcję[/color] zmniejszona o [color=lightblue]{ $value }%[/color].
 zombie-permadeath = This time, you're dead for real.
-
 zombie-tumor-infection-contracted = You feel a strange sensation spreading through your body...
 zombie-tumor-infection-symptoms-start = You begin to feel unwell. Something is very wrong...
 zombie-tumor-removed = The zombie tumor has been removed. You feel the infection receding.
-
 zombie-robotumor-infection-contracted = WARNING: Foreign code detected in system memory...
 zombie-robotumor-infection-symptoms-start = ERROR: Critical system anomalies detected. Diagnostic routines failing...
 zombie-robotumor-removed = The corrupted hardware has been removed. Systems stabilizing...
-
 zombie-tumor-sickness-1 = You feel terrible...
 zombie-tumor-sickness-2 = Your body aches all over.
 zombie-tumor-sickness-3 = You feel nauseous and weak.
 zombie-tumor-sickness-4 = Everything hurts. You can barely think straight.
 zombie-tumor-sickness-5 = You feel like you're dying...
-
 zombie-tumor-advanced-1 = You feel paranoid...
 zombie-tumor-advanced-2 = You feel angry!
-
 zombie-robotumor-sickness-1 = Your internal mechanisms are grinding and jamming...
 zombie-robotumor-sickness-2 = Your actuators are seizing up.
 zombie-robotumor-sickness-3 = You detect multiple system malfunctions.
-
 zombie-robotumor-advanced-1 = CRITICAL ERROR: Logic circuits unstable.
 zombie-robotumor-advanced-2 = WARNING: Hostile subroutines detected in memory banks!
-
 zombie-tumor-ability-gained = You feel an overwhelming urge to give in to the infection...

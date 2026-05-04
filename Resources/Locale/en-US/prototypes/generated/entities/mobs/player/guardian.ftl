@@ -1,5 +1,6 @@
 ent-MobGuardianBase = GuardianBase
     .desc = guardian
+    .gender = male
 ent-MobHoloparasiteGuardian = Holoparasite
     .desc = A mesmerising whirl of hard-light patterns weaves a marvelous, yet oddly familiar visage. It stands proud, tuning into its owner's life to sustain itself.
 ent-MobIfritGuardian = Ifrit

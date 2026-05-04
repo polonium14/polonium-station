@@ -28,7 +28,6 @@ research-discipline-industrial = Industrial
 research-discipline-arsenal = Arsenal
 research-discipline-experimental = Experimental
 research-discipline-civilian-services = Civilian Services
-
 research-technology-fulton = Fultons
 research-technology-salvage-equipment = Salvage Equipment
 research-technology-advanced-powercells = Advanced Powercells
@@ -42,12 +41,12 @@ research-technology-ripley-aplu = Ripley APLU
 research-technology-advanced-atmospherics = Advanced Atmospherics
 research-technology-advanced-tools = Advanced Tools
 research-technology-super-powercells = Super Powercells
+research-technology-optimized-microgalvanism = Optymalna mikrogalwanizacja
 research-technology-bluespace-storage = Bluespace Storage
 research-technology-portable-fission = Portable Fission
 research-technology-space-scanning = Space Scanning
 research-technology-excavation = Mass Excavation
 research-technology-atmospherics-exotech = Atmospherics Exotech
-
 research-technology-salvage-weapons = Salvage Weapons
 research-technology-draconic-munitions = Draconic Munitions
 research-technology-uranium-munitions = Uranium Munitions
@@ -64,8 +63,8 @@ research-technology-portable-microfusion-weaponry = Portable Microfusion Weaponr
 research-technology-experimental-battery-ammo = Experimental Battery Ammo
 research-technology-basic-shuttle-armament = Shuttle basic armament
 research-technology-advanced-shuttle-weapon = Advanced shuttle weapons
+research-technology-thermal-weaponry = Broń termiczna
 research-technology-kinetic-modifications = Kinetic Modifications
-
 research-technology-basic-robotics = Basic Robotics
 research-technology-basic-anomalous-research = Basic Anomalous Research
 research-technology-basic-xenoarcheology = Basic XenoArcheology
@@ -75,12 +74,12 @@ research-technology-advanced-parts = Advanced Parts
 research-technology-anomaly-harnessing = Anomaly Core Harnessing
 research-technology-abnormal-artifact-manipulation = Artifact Recycling
 research-technology-gravity-manipulation = Gravity Manipulation
+research-technology-bluespace-time-manipulation = Niebiesko przestrzenna manipulacja czasem
 research-technology-quantum-leaping = Quantum Leaping
 research-technology-advanced-anomaly-research = Advanced Anomaly Research
 research-technology-rped = Rapid Part Exchange
 research-technology-super-parts = Super Parts
 research-technology-deterrence = Deterrence Technologies
-
 research-technology-janitorial-equipment = Janitorial Equipment
 research-technology-laundry-tech = Laundry Tech
 research-technology-basic-hydroponics = Basic Hydroponics
@@ -96,8 +95,10 @@ research-technology-advanced-cleaning = Advanced Cleaning
 research-technology-meat-manipulation = Meat Manipulation
 research-technology-honk-mech = H.O.N.K. Mech
 research-technology-advanced-spray = Advanced Spray
+research-technology-launcher-syringe = Pistolet na strzykawki
 research-technology-bluespace-cargo-transport = Bluespace Cargo Transport
+research-technology-clowning-utilities = Klałnowy repertułał
 research-technology-quantum-fiber-weaving = Quantum Fiber Weaving
 research-technology-bluespace-chemistry = Bluespace Chemistry
+research-technology-dual-wielding-technology = Technologia podwójnego trzymania
 research-technology-homebrewed-implants = Homebrewed Implants
-

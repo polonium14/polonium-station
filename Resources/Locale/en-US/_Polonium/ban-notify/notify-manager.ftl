@@ -1,0 +1,13 @@
+ban-notify-ban-embed-title = Zakaz grania na serwerze
+ban-notify-role-ban-embed-title = Zakaz grania ról
+ban-notify-field-banned-user-title = Użytkownik
+ban-notify-field-ban-reason-title = Powód bana
+ban-notify-field-ban-expires-title = Wygasa
+ban-notify-field-ban-issued-by-title = Administrator
+ban-notify-field-ban-issued-on-title = Wydany
+ban-notify-banned-roles-title = Role
+ban-notify-ban-expires-never = **Nigdy.**
+ban-notify-ban-admin-unknown = **Nieznany.**
+ban-notify-ban-target-user-unknown = **Nieznany.**
+ban-notify-webhook-error-message = Wystąpił błąd podczas wysyłania powiadomienia o banie do webhooka.
+ban-notify-embed-footer = { $serverName }

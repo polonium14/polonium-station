@@ -182,6 +182,7 @@ marking-HumanHairF = Short Hair 6
 marking-HumanHairShorthairg = Short Hair 7
 marking-HumanHair80s = Short Hair 80s
 marking-HumanHairRosa = Short Hair Rosa
+marking-HumanHairBAlt = Włosy do ramion (na oko)
 marking-HumanHairB = Shoulder-length Hair
 marking-HumanHairShoulderLengthOverEye = Shoulder-length Over Eye
 marking-HumanHairSidecut = Sidecut

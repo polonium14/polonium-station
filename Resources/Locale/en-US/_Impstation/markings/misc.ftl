@@ -5,8 +5,20 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+
 # this file is subject to getting its shit moved to other files at a later date#
 
+# arachnids
+# Konflikty z Resources\Locale\pl-PL\_Impstation\markings\arachnid.ftl są wykomentowane
+# marking-SpiderMirror = Mirror
+marking-SpiderMirror-spidermirror = Lustro
+# marking-SpiderGlowEyes = Glowing Eyes
+marking-SpiderGlowEyes-spidergloweyes = Świecące oczy
+# marking-SpiderEyesMulti = Multicolor Eyes
+marking-SpiderEyesMulti-spidereyesmulti1 = Górne
+marking-SpiderEyesMulti-spidereyesmulti2 = Środkowe górne
+marking-SpiderEyesMulti-spidereyesmulti3 = Środkowe dolne
+marking-SpiderEyesMulti-spidereyesmulti4 = Dolne
 # diona
 marking-DionaLivingNymph = Living Nymphs
 marking-DionaLivingNymph-dionalivingnymph = Living Nymphs
@@ -20,7 +32,6 @@ marking-DionaFirefly = Fireflies
 marking-DionaFirefly-dionafirefly = Fireflies
 marking-DionaPollenDust = Pollen Cloud
 marking-DionaPollenDust-dionapollendust = Pollen Cloud
-
 # dwarves
 marking-DwarfBearCheeks = Glowing Cheeks
 marking-DwarfBearCheeks-dwarfbearcheeks = Glowing Cheeks
@@ -64,7 +75,6 @@ marking-DwarfMarkCobra = Mark of the Cobra
 marking-DwarfMarkCobra-dwarfmarkcobra = Mark of the Cobra
 marking-DwarfMarkSpider = Mark of the Spider
 marking-DwarfMarkSpider-dwafmarkspider = Mark of the Spider
-
 # humans
 marking-VitiligoHeadL = Vitiligo (Left Eye)
 marking-VitiligoHeadR = Vitiligo (Right Eye)
@@ -77,7 +87,6 @@ marking-VitiligoArmL = Vitiligo (Left Arm)
 marking-VitiligoLegL = Vitiligo (Left)
 marking-VitiligoChestF = Vitiligo Spread
 marking-VitiligoChestSpots = Vitiligo Spots
-
 # moths
 marking-MothTrueButterfly = Wings (Rainbow)
 marking-MothTrueButterfly-mothtruebutterfly1 = Stripes
@@ -89,7 +98,9 @@ marking-MothFireflyOverlay = Firefly Overlay
 marking-MothFireflyOverlay-mothfirefly4 = Firefly Overlay
 marking-MothFirefly = Wings (Firefly)
 marking-MothFirefly-mothfirefly1 = Firefly Primary
+marking-MothFireflyOverlay-mothfirefly1 = Nakładka Świetlika
 marking-MothFirefly-mothfirefly3 = Firefly Tertiary
+marking-MothFirefly-mothfirefly2 = Skrzydła Świetlika
 marking-MothBee = Wings (Bumblebee)
 # Frontier: stripes < Stripes
 marking-MothBee-bee1 = Outer Stripes
@@ -117,7 +128,7 @@ marking-MothGlasswing-glasswing3 = Stripe
 marking-MothRhinoBeetle = Beetle Wings (Rhino)
 marking-MothRhinoBeetle-rhinobeetle1 = Primary
 marking-MothRhinoBeetle-rhinobeetle2 = Secondary
-
+marking-MothRhinoBeetle-rhinobeetle3 = Skrzydła
 # slimes
 marking-fizz = Fizz
 marking-fizz-fizz = Fizz
@@ -131,7 +142,6 @@ marking-FadingStars = Fading Starlight
 marking-FadingStars-fadingstars1 = Brightest
 marking-FadingStars-fadingstars2 = Middling
 marking-FadingStars-fadingstars3 = Darkest
-
 # vox
 marking-VoxCocktail = Cocktail
 marking-VoxCocktail-voxcocktail1 = Feathers
@@ -208,7 +218,6 @@ marking-VoxTailBalled = Thrasher
 marking-VoxTailBalled-voxtailballed = Thrasher
 marking-VoxTailSplit = Twinned
 marking-VoxTailSplit-voxtailsplit = Twinned
-
 # upstream vox markings dont have localized names. lmfao
 # these are just straight up broken and shouldnt be visible from the markings menu period but ALAS im not skilled enough to remove them so you get this stupid botch job instead
 # moving this furniture a few inches to the left -cc

@@ -28,6 +28,7 @@ marking-TwistingArmRightMoth = Twisted Scar (Right)
 marking-TwistingArmRightMoth-arm_r_twisting_moth = Twisted Scar (Right)
 marking-WingsBackstabbed_primary = Primary
 marking-WingsBackstabbed_secondary = Secondary
+marking-WingsBackstabbed = Wings (Backstabbed)
 marking-WingsBackstabbed-wings_backstabbed = Wings (Backstabbed)
 marking-ChestChimeraFemaleMoth = Moth Chest (Chimera)
 marking-ChestChimeraFemaleMoth-chest_chimera_f_moth = Moth Chest (Chimera)
