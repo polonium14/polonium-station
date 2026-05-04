@@ -1,118 +1,139 @@
+# SPDX-FileCopyrightText: 2022 Alex Evgrashin <aevgrashin@yandex.ru>
+# SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2022 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 lapatison <100279397+lapatison@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Nim <128169402+Nimfar11@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 RIKELOLDABOSS <122584586+RIKELOLDABOSS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Simon <63975668+Simyon264@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 brainfood1183 <113240905+brainfood1183@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2023 potato1234_x <79580518+potato1234x@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 reverie collection <revsys413@gmail.com>
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 LankLTE <135308300+LankLTE@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 RobDemo <88208745+MrRobDemo@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2024 deathride58 <deathride58@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 Terkala <appleorange64@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later OR MIT
+
 # Cat accent
-accent-words-cat-1 = Miał!
-accent-words-cat-2 = Mał.
-accent-words-cat-3 = Mrrrał!
-accent-words-cat-4 = Hssss!
-accent-words-cat-5 = Brrał.
-accent-words-cat-6 = Miał?
+accent-words-cat-1 = Meow!
+accent-words-cat-2 = Mow.
+accent-words-cat-3 = Mrrrow!
+accent-words-cat-4 = Hhsss!
+accent-words-cat-5 = Brrow.
+accent-words-cat-6 = Meow?
 accent-words-cat-7 = Miau.
 # Dog accent
-accent-words-dog-1 = Hau!
-accent-words-dog-2 = Hau Hau!
+accent-words-dog-1 = Bark!
+accent-words-dog-2 = Bork!
 accent-words-dog-3 = Woof!
 accent-words-dog-4 = Arf.
-accent-words-dog-5 = Wrrr.
+accent-words-dog-5 = Grrr.
 # Mouse
-accent-words-mouse-1 = Pissk!
-accent-words-mouse-2 = Piip!
-accent-words-mouse-3 = Ćii!
-accent-words-mouse-4 = Iii!
+accent-words-mouse-1 = Squeak!
+accent-words-mouse-2 = Piep!
+accent-words-mouse-3 = Chuu!
+accent-words-mouse-4 = Eeee!
 accent-words-mouse-5 = Pip!
-accent-words-mouse-6 = Fip!
-accent-words-mouse-7 = Hip!
+accent-words-mouse-6 = Fwiep!
+accent-words-mouse-7 = Heep!
 # Mumble
 accent-words-mumble-1 = Mmfph!
 accent-words-mumble-2 = Mmmf mrrfff!
 accent-words-mumble-3 = Mmmf mnnf!
 # Silicon
-accent-words-silicon-1 = Bip.
+accent-words-silicon-1 = Beep.
 accent-words-silicon-2 = Boop.
 accent-words-silicon-3 = Whirr.
-accent-words-silicon-4 = Bip-bop.
+accent-words-silicon-4 = Beep-boop.
 # Xeno
-accent-words-xeno-1 = Hss.
-accent-words-xeno-2 = Hsssss!
-accent-words-xeno-3 = Hsssuuu...
-accent-words-xeno-4 = Hss...!
+accent-words-xeno-1 = Hiss.
+accent-words-xeno-2 = Hisssss!
+accent-words-xeno-3 = Hisssuuu...
+accent-words-xeno-4 = Hiss...!
 # Zombie
 accent-words-zombie-1 = Gruaahhhh...
 accent-words-zombie-2 = Mmuaaaa..
-accent-words-zombie-3 = Mózgiiii...
+accent-words-zombie-3 = Braainnssss...
 accent-words-zombie-4 = Grrrrr...
 accent-words-zombie-5 = Ouuaahhhhh...
 accent-words-zombie-6 = Graaaaaooohhlll...
-accent-words-zombie-7 = Mózg... Mózgiiiii..
+accent-words-zombie-7 = Brainsss... Braaaiiinnsss..
 accent-words-zombie-8 = Braughhh...
 accent-words-zombie-9 = Breshhhh...
 accent-words-zombie-10 = Graaaaaa...
 # Moth Zombie
-accent-words-zombie-moth-1 = Ubraniaaaaa...
-accent-words-zombie-moth-2 = Butyyyyy...
-accent-words-zombie-moth-3 = Światłoo...
-accent-words-zombie-moth-4 = Lammpyyyy...
-accent-words-zombie-moth-5 = Czapppkiiii... Czapkkiiii...
-accent-words-zombie-moth-6 = Szallllleeee...
+accent-words-zombie-moth-1 = Clothessss...
+accent-words-zombie-moth-2 = Shooooesss...
+accent-words-zombie-moth-3 = Liiiiight...
+accent-words-zombie-moth-4 = Laaamps...
+accent-words-zombie-moth-5 = Haaaatsss... Hatttssss...
+accent-words-zombie-moth-6 = Scarffsss...
 # Generic Aggressive
 accent-words-generic-aggressive-1 = Grr!
 accent-words-generic-aggressive-2 = Rrrr!
 accent-words-generic-aggressive-3 = Grr...
-accent-words-generic-aggressive-4 = Grrrrrrr!!
+accent-words-generic-aggressive-4 = Grrow!!
 # Duck
-accent-words-duck-1 = Kuak!
-accent-words-duck-2 = Kuak.
-accent-words-duck-3 = Kuak?
-accent-words-duck-4 = Kuak Kuak!
+accent-words-duck-1 = Quack!
+accent-words-duck-2 = Quack.
+accent-words-duck-3 = Quack?
+accent-words-duck-4 = Quack quack!
 # Chicken
-accent-words-chicken-1 = Ko, ko!
-accent-words-chicken-2 = Ko.
-accent-words-chicken-3 = Ko?
-accent-words-chicken-4 = Ko ko!
+accent-words-chicken-1 = Cluck!
+accent-words-chicken-2 = Cluck.
+accent-words-chicken-3 = Cluck?
+accent-words-chicken-4 = Cluck cluck!
 # Pig
-accent-words-pig-1 = Chrum.
-accent-words-pig-2 = Chrum?
-accent-words-pig-3 = Chrum!
-accent-words-pig-4 = Chrum Chrum!
+accent-words-pig-1 = Oink.
+accent-words-pig-2 = Oink?
+accent-words-pig-3 = Oink!
+accent-words-pig-4 = Oink oink!
 # Kangaroo
 accent-words-kangaroo-1 = Grr!
-accent-words-kangaroo-2 = Hsss!
-accent-words-kangaroo-3 = Szriik!
-accent-words-kangaroo-4 = Czuu!
+accent-words-kangaroo-2 = Hisss!
+accent-words-kangaroo-3 = Shreak!
+accent-words-kangaroo-4 = Chuu!
 # Slimes
-accent-words-slimes-1 = Blump.
+accent-words-slimes-1 = Blyump.
 accent-words-slimes-2 = Blimpuf?
 accent-words-slimes-3 = Blump!
 accent-words-slimes-4 = Bluuump...
 accent-words-slimes-5 = Blabl blump!
 # Mothroach
-accent-words-mothroach-1 = Ćwir!
+accent-words-mothroach-1 = Chirp!
 # Crab
-accent-words-crab-1 = Klik.
-accent-words-crab-2 = Klik-klak!
-accent-words-crab-3 = Klak?
+accent-words-crab-1 = Click.
+accent-words-crab-2 = Click-clack!
+accent-words-crab-3 = Clack?
 accent-words-crab-4 = Tipi-tap!
-accent-words-crab-5 = Klik-tap.
-accent-words-crab-6 = Kliliik.
+accent-words-crab-5 = Clik-tap.
+accent-words-crab-6 = Cliliick.
 # Kobold
-accent-words-kobold-1 = Kiep!
+accent-words-kobold-1 = Yip!
 accent-words-kobold-2 = Grrar.
-accent-words-kobold-3 = Jap!
+accent-words-kobold-3 = Yap!
 accent-words-kobold-4 = Bip.
-accent-words-kobold-5 = Skrii?
+accent-words-kobold-5 = Screet?
 accent-words-kobold-6 = Gronk!
-accent-words-kobold-7 = Sss!
-accent-words-kobold-8 = Iiii!
-accent-words-kobold-9 = Kiep.
+accent-words-kobold-7 = Hiss!
+accent-words-kobold-8 = Eeee!
+accent-words-kobold-9 = Yip.
 # Nymph
-accent-words-nymph-1 = Ćwir!
-accent-words-nymph-2 = Ćrrr...
-accent-words-nymph-3 = Ćwiik?
-accent-words-nymph-4 = Ćrrup!
+accent-words-nymph-1 = Chirp!
+accent-words-nymph-2 = Churr...
+accent-words-nymph-3 = Cheep?
+accent-words-nymph-4 = Chrrup!
 # TomatoKiller
-accent-words-tomato-1 = Pomato!
-accent-words-tomato-2 = Promemt
-accent-words-tomato-3 = Maspet?
+accent-words-tomato-1 = Totato!
+accent-words-tomato-2 = Trotect
+accent-words-tomato-3 = Mastet?
 accent-words-tomato-4 = Reaty!
-accent-words-tomato-5 = Wodyyyy...
+accent-words-tomato-5 = Water...
 # Juggernaut
 accent-words-juggernaut-1 = Blood...
 accent-words-juggernaut-2 = Nar'Sie!
