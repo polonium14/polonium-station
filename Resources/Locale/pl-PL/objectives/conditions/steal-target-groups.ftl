@@ -1,3 +1,12 @@
+# SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2024 chavonadelal <156101927+chavonadelal@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Эдуард <36124833+Ertanic@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Ekpy <33184056+Ekpy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 mkanke-real <mikekanke@gmail.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 # Traitor single items
 steal-target-groups-hypospray = hyposprej
 steal-target-groups-handheld-crew-monitor = portatywny monitor załogi
@@ -20,7 +29,6 @@ steal-target-groups-stamps = pieczątka
 steal-target-groups-door-remotes = pilot do drzwi
 steal-target-groups-encryption-keys = karta szyfrująca
 steal-target-groups-technology-disks = dyskietka technologiczna
-steal-target-groups-mail = korespondencja
 steal-target-groups-id-cards = karta ID
 steal-target-groups-lamps = LAMPA
 # Thief single item
@@ -60,5 +68,4 @@ steal-target-groups-animal-mc-griff = McGriff
 steal-target-groups-animal-walter = Walter
 steal-target-groups-animal-morty = Morty
 steal-target-groups-animal-renault = Renolt
-steal-target-groups-animal-shiva = Śiwa
 steal-target-groups-animal-tropico = Tropiko
