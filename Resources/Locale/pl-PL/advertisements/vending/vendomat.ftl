@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2021 Visne <39844191+Visne@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 advertisement-vendomat-1 = Tylko to, co najlepsze!
 advertisement-vendomat-2 = Weź trochę narzędzi.
 advertisement-vendomat-3 = Najsolidniejszy sprzęt.
