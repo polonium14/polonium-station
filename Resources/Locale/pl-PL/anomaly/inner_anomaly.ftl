@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 MilenVolf <63782763+MilenVolf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 inner-anomaly-start-message-pyro = Czujesz w sobie szaloną płomienną iskrę. Stałeś się nosicielem anomalii piroklastycznej.
 inner-anomaly-start-message-shock = Błyskawice drżą na Twoich opuszkach! Stałeś się nosicielem anomalii elektrycznej.
 inner-anomaly-start-message-shadow = Z Ciebie wypływa nieprzenikniona ciemność... Stałeś się nosicielem anomalii cienia.
