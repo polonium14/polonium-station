@@ -4,6 +4,6 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-signal-port-name-operating-table = Operating table
-signal-port-description-operating-table-receiver = Operating table signal receiver
-signal-port-description-operating-table-sender = Operating table signal sender
+signal-port-name-operating-table = Stół operacyjny
+signal-port-description-operating-table-receiver = Odbiornik sygnału stołu operacyjnego
+signal-port-description-operating-table-sender = Nadajnik sygnału stołu operacyjnego
