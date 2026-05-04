@@ -1,13 +1,10 @@
 ent-MobRatKing = król szczurów
     .desc = On jest szczurem. On rządzi.
-    .gender = male
 ent-MobRatKingBuff = { ent-MobRatKing }
     .suffix = Buff
     .desc = { ent-MobRatKing.desc }
-    .gender = male
 ent-MobRatServant = szczurzy sługa
     .desc = To jest mały szczur. On nie rządzi.
-    .gender = male
 ent-ActionRatKingRaiseArmy = Zbierz armię
     .desc = Wydaj trochę głodu, aby przywołać sojuszniczego szczura, który pomoże ci się bronić.
 ent-ActionRatKingDomain = Władztwo Króla Szczurów
