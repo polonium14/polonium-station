@@ -1,3 +1,13 @@
+# SPDX-FileCopyrightText: 2023 LankLTE <135308300+LankLTE@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 BIGZi0348 <118811750+BIGZi0348@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 station-event-ion-storm-start-announcement = W pobliżu stacji wykryto burzę jonową. Proszę sprawdzić wszystkie urządzenia SI.
 ion-storm-law-scrambled-number = [font="Monospace"][scramble rate=250 length={ $length } chars="@@###$$&%!01"/][/font]
 ion-storm-you = TY
@@ -14,7 +24,7 @@ ion-storm-x-and-y = { $x } I { $y }
 # subjects can generally be threats or jobs or objects
 # thing is specified above it
 ion-storm-law-on-station = { $joined } { $subjects } SĄ NA STACJI
-ion-storm-law-call-shuttle = WAHADŁOWIEC MUSI ZOSTAĆ WEZWANY Z POWODU: { $joined } { $subjects } NA STACJI
+# ion-storm-law-no-shuttle = THE SHUTTLE CANNOT BE CALLED BECAUSE OF {$joined} {$subjects} ON THE STATION # funky removing the roundstall borg law
 ion-storm-law-crew-are = { $who } TERAZ SĄ { $joined } { $subjects }
 ion-storm-law-subjects-harmful = { $adjective } { $subjects } SĄ SZKODLIWE DLA ZAŁOGI
 ion-storm-law-must-harmful = CI KTÓRZY { $must } SĄ SZKODLIWI DLA ZAŁOGI
@@ -78,3 +88,6 @@ ion-storm-law-protect = NIGDY NIE WOLNO CI SKRZYWDZIĆ { $who } I NIE POZWÓL, P
 # implementing other variants is annoying so just have this one
 # COMMUNISM IS KILLING CLOWNS
 ion-storm-law-concept-verb = { $concept } TO { $verb } { $subjects }
+
+# leaving out renaming since its annoying for players to keep track of
+
