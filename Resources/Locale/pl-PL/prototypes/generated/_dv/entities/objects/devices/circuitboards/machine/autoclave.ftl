@@ -1,2 +1,2 @@
-ent-AutoclaveMachineCircuitboard = autoklawa (płytka maszynowa)
+ent-AutoclaveMachineCircuitboard = autoclave machine board
     .desc = { ent-BaseMachineCircuitboard.desc }
