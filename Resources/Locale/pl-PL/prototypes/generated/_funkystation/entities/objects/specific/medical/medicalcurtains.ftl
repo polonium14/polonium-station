@@ -1,2 +1,2 @@
-ent-MedicalCurtains = zasłony medyczne
-    .desc = Daj swoim pacjentom trochę prywatności lub podziel niektóre pomieszczenia.
+ent-MedicalCurtains = medical curtains
+    .desc = Give your patients a little privacy, or partition off some rooms.
