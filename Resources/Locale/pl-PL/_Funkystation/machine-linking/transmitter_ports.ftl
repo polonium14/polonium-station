@@ -1,2 +1,2 @@
-signal-port-name-gas-extractor-console = Gas Extractor Console
-signal-port-description-gas-extractor-console = Source port on the atmospherics reserves computer. Allows linking to gas extractors.
+signal-port-name-gas-extractor-console = Konsola Ekstraktora Gazu
+signal-port-description-gas-extractor-console = Port wyjściowy komputera rezerw atmosferycznych. Pozwala na połączenie z ekstraktorami gazu.
