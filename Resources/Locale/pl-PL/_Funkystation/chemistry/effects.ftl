@@ -5,11 +5,11 @@
 
 reagent-effect-guidebook-cure-changeling =
     { $chance ->
-        [1] Removes any
-       *[other] remove any
-    } parasitic infection
+        [1] Usuwa każdą
+       *[other] usuwa każdą
+    } infekcję pasożytniczą
 reagent-effect-guidebook-reduce-seizure-build =
     { $chance ->
-        [1] Reduces
-       *[other] reduce
-    } neurological seizure buildup by { NATURALFIXED($amount, 2) } points
+        [1] Redukuje
+       *[other] redukuje
+    } nagromadzenie napadów neurologicznych o { NATURALFIXED($amount, 2) } punktów
