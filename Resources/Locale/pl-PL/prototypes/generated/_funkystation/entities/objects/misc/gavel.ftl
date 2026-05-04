@@ -1,2 +1,2 @@
-ent-Gavel = młotek sędziego
-    .desc = Na wypadek, gdyby ktoś chciał się poczuć jak Bóg.
+ent-Gavel = gavel
+    .desc = For whenever someone wants to play God.
