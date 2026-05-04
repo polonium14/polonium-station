@@ -7,5 +7,5 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-objective-condition-steal-smsliver-title = Cut off a sliver from the supermatter crystal.
-objective-condition-steal-smsliver-description = Use any cutting tool that comes in handy. A scalpel is more recommended. Also, don't die of radiation poisoning.
+objective-condition-steal-smsliver-title = Odetnij kawałek kryształu supermaterii.
+objective-condition-steal-smsliver-description = Użyj dowolnego narzędzia tnącego, które masz pod ręką. Skalpel jest bardziej zalecany. Również, nie umieraj na zatrucie promieniowaniem.
