@@ -13,7 +13,6 @@ turret-controls-window-turret-deployed = TRWA WYSZUKIWANIE...
 turret-controls-window-turret-deploying = AKTYWACJA
 turret-controls-window-turret-firing = NAMIERZONO CEL
 turret-controls-window-turret-error = BŁĄD [404]
-turret-controls-window-turret-broken = ***NIESPRAWNA***
 # Buttons
 turret-controls-window-safe = Nieaktywna
 turret-controls-window-stun = Ogłuszanie
