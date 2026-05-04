@@ -1,3 +1,11 @@
+# SPDX-FileCopyrightText: 2022 Scribbles0 <91828755+Scribbles0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 T-Stalker <43253663+DogZeroX@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2023 Nairod <110078045+Nairodian@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 marking-TattooHiveChest-tattoo_hive_chest = Back Tattoo (Hive)
 marking-TattooHiveChest = Back Tattoo (Hive)
 marking-TattooNightlingChest-tattoo_nightling = Chest Tattoo (nightling)
@@ -18,7 +26,3 @@ marking-TattooEyeRight-tattoo_eye_r = Right Eye
 marking-TattooEyeRight = Right Eye
 marking-TattooEyeLeft-tattoo_eye_l = Left Eye
 marking-TattooEyeLeft = Left Eye
-marking-TattooEyeMothRight-tattoo_eye_moth_r = Right Eye
-marking-TattooEyeMothRight = Right Eye
-marking-TattooEyeMothLeft-tattoo_eye_moth_l = Left Eye
-marking-TattooEyeMothLeft = Left Eye
