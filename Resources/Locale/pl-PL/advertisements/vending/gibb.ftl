@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 advertisement-gibb-1 = Pyszne!
 advertisement-gibb-2 = Polecane przynajmniej przez jednego lekarza!
 advertisement-gibb-3 = Ponad milion sprzedanych napojów!
