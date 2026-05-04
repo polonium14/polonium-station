@@ -1,2 +1,2 @@
-ent-Igniter = zapalnik
-    .desc = Tworzy iskrę po aktywacji sygnałem.
+ent-Igniter = igniter
+    .desc = Creates a spark when activated by a signal.
