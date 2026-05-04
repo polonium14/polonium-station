@@ -1,2 +1,2 @@
 ent-MobGondola = gondola
-    .desc = Nie mając rąk, uosabia taoistyczną zasadę wu-wei (nie-działania), a jego uśmiechnięta twarz pokazuje całkowitą akceptację świata takim, jakim jest.
+    .desc = Having no hands he embodies the Taoist principle of wu-wei (non-action) while his smiling facial expression shows his utter and complete acceptance of the world as it is.
