@@ -1,2 +1,2 @@
-ent-HOPCane = mecha-laska kierownika personelu
-    .desc = Zmotoryzowana laska gustownie ozdobiona niebieskim płomieniem Nanotrasen. Aktywacja jej oburącz daje ci krótkie pookno na przestawienie każdego intruza na właściwą stronę biurka.
+ent-HOPCane = head of personnel's mecha-cane
+    .desc = A motorized cane tastefully decorated with a Nanotrasen-blue flame decal. While wielding it in both hands, activating it gives you a brief window to reposition any intruder over to the correct side of the desk.
