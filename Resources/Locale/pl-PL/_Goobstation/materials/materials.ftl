@@ -5,4 +5,4 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-materials-bscrystal = kryształ bluespace
+materials-bscrystal = bluespace crystal
