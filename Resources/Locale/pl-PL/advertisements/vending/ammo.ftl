@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2021 Visne <39844191+Visne@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+# SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 advertisement-ammo-1 = Liberalna stacja: twój sklep po wszystkie rzeczy związane z wolnością!
 advertisement-ammo-2 = Bądź patriotą, wybierz spluwę!
 advertisement-ammo-3 = Trwałe bronie za małą cene!
