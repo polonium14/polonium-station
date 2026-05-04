@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 pa.pecherskij <pa.pecherskij@interfax.ru>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 names-wizard-last-dataset-1 = Ciemny
 names-wizard-last-dataset-2 = Ciemnomag
 names-wizard-last-dataset-3 = Ciemko
@@ -44,26 +50,3 @@ names-wizard-last-dataset-43 = Zdobywca
 names-wizard-last-dataset-44 = Nieśmiertelny
 names-wizard-last-dataset-45 = Niszczyciel
 names-wizard-last-dataset-46 = Straszyciel Smoków
-names-wizard-last-dataset-47 = Cesarz
-names-wizard-last-dataset-48 = Świetlisty
-names-wizard-last-dataset-49 = Szary
-names-wizard-last-dataset-50 = Wielki
-names-wizard-last-dataset-51 = Uzdrowiciel
-names-wizard-last-dataset-52 = Lich
-names-wizard-last-dataset-53 = Mag
-names-wizard-last-dataset-54 = Potężny
-names-wizard-last-dataset-55 = Kruk
-names-wizard-last-dataset-56 = Czerwony
-names-wizard-last-dataset-57 = Skruszony
-names-wizard-last-dataset-58 = Wrzący
-names-wizard-last-dataset-59 = Lśniący
-names-wizard-last-dataset-60 = Zaklinator
-names-wizard-last-dataset-61 = Król Spiral
-names-wizard-last-dataset-62 = Niekończący się
-names-wizard-last-dataset-63 = Niepowstrzymany
-names-wizard-last-dataset-64 = Płaczący
-names-wizard-last-dataset-65 = Biały
-names-wizard-last-dataset-66 = Mądry
-names-wizard-last-dataset-67 = którego
-names-wizard-last-dataset-68 = Xobeh
-names-wizard-last-dataset-69 = Ym Sagoz
