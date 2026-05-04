@@ -4,4 +4,4 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-research-technology-autodoc = Automated Surgery
+research-technology-autodoc = Chirurgia zautomatyzowana
