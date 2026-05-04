@@ -1,10 +1,10 @@
-ent-ProjectileCosmicNova = Astralna Nowa
+ent-ProjectileCosmicNova = Astral Nova
     .desc = Uh oh.
-ent-ProjectileCosmic = Złowrogi Pocisk
+ent-ProjectileCosmic = Malign Bolt
     .desc = Ouch.
-ent-ProjectileCosmicRazor = Astralny Pocisk
+ent-ProjectileCosmicRazor = Astral Bolt
     .desc = Ouch.
 ent-BulletImpactEffectCosmic = { "" }
     .desc = { "" }
-ent-CosmicLambdaParticle = Cząstki stabilizujące Λ
+ent-CosmicLambdaParticle = Λ-stabilizer particles
     .desc = { ent-BaseBullet.desc }
