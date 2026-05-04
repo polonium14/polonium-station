@@ -1,2 +1,2 @@
-ent-MedalCase = pudełko na medale
-    .desc = Etui z medalami.
+ent-MedalCase = medal case
+    .desc = Case with medals.
