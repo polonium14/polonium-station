@@ -1,11 +1,24 @@
-zombie-transform = { CAPITALIZE($target) } zamienił się w zombie!
+# SPDX-FileCopyrightText: 2022 EmoGarbage404 <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Tom Leys <tom@crump-leys.com>
+# SPDX-FileCopyrightText: 2024 MilenVolf <63782763+MilenVolf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+# SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 pa.pecherskij <pa.pecherskij@interfax.ru>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 Terkala <appleorange64@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
+zombie-transform = { CAPITALIZE(THE($target)) } turned into a zombie!
 zombie-infection-greeting = Stałeś się zombie. Twoim celem jest wyszukiwanie żywych i próba zarażenia ich. Współpracuj z innymi zombie oraz pozostałymi początkowo zainfekowanymi, aby przejąć stację.
 zombie-generic = zombie
 zombie-name-prefix = zombiak { $baseName }
 zombie-role-desc = Złowroga istota powstała z martwych.
 zombie-role-rules = Jesteś [color={ role-type-team-antagonist-color }][bold]{ role-type-team-antagonist-name }[/bold][/color]. Szukaj żywych i gryź ich, aby ich zarazić i przemienić w zombie. Współpracuj z innymi zombie oraz początkowo zainfekowanymi, by przejąć stację.
 zombie-permadeath = Tym razem jesteś naprawdę martwy.
-zombification-resistance-coefficient-value = - Szansa na [color=violet]infekcję[/color] zmniejszona o [color=lightblue]{ $value }%[/color].
 zombie-tumor-infection-contracted = Czujesz, jak dziwne odczucie rozchodzi się po twoim ciele...
 zombie-tumor-infection-symptoms-start = Zaczynasz czuć się źle. Coś jest bardzo nie tak...
 zombie-tumor-removed = Guz zombie został usunięty. Czujesz, jak infekcja ustępuje.
