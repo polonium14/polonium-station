@@ -1,2 +1,2 @@
-ent-SMESBig = JMEB
-    .desc = Jednostka Magazynowania Energii oparta na Bluespace
+ent-SMESBig = BLES
+    .desc = A bluespace-leveraged energy storage (BLES) unit.
