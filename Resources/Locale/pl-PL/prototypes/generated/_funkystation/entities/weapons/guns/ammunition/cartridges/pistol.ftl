@@ -1,10 +1,10 @@
-ent-BaseCartridgePistolLarge = nabój (.50 AE)
+ent-BaseCartridgePistolLarge = cartridge (.50 AE)
     .desc = { ent-BaseCartridge.desc }
-ent-CartridgePistolLarge = nabój (.50 AE)
+ent-CartridgePistolLarge = cartridge (.50 AE)
     .desc = { ent-BaseCartridgePistolLarge.desc }
-ent-CartridgePistolLargePractice = nabój (.50 AE treningowy)
+ent-CartridgePistolLargePractice = cartridge (.50 AE practice)
     .desc = { ent-BaseCartridgePistolLarge.desc }
-ent-CartridgePistolLargeIncendiary = nabój (.50 AE zapalający)
+ent-CartridgePistolLargeIncendiary = cartridge (.50 AE incendiary)
     .desc = { ent-BaseCartridgePistolLarge.desc }
-ent-CartridgePistolLargeUranium = nabój (.50 AE uranowy)
+ent-CartridgePistolLargeUranium = cartridge (.50 AE uranium)
     .desc = { ent-BaseCartridgePistolLarge.desc }
