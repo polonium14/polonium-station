@@ -1,3 +1,2 @@
-ent-MobRevenant = zjawa
-    .desc = Straszny duch.
-    .gender = female
+ent-MobRevenant = revenant
+    .desc = A spooky ghostie.
