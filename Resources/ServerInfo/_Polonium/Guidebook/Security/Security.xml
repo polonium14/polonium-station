@@ -13,13 +13,13 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-# Security
-Ensuring the safety of both station and crew is the number one priority for [color=#cb0000]Security[/color]. They are ready for any situation, and [color=#cb0000]Security[/color] are on hand to maintain order and control crowds.
+# Ochrona
+Zapewnianie bezpieczeństwa stacji oraz załodze jest priorytetem [color=#cb0000]Ochrony[/color]. Są gotowi na wszystko, a sama [color=#cb0000]Ochrona[/color] zawsze jest pod ręką aby utrzymywać porządek.
 
-They face [textlink="Syndicate Agents" link="Traitors"], [textlink="Nuclear Operatives" link="NuclearOperatives"], [textlink="Zombies" link="Zombies"] and unruly staff.
+Mierzą się z [textlink="Syndicate Agents" link="Traitors"], [textlink="Nuclear Operatives" link="NuclearOperatives"], [textlink="Zombies" link="Zombies"] oraz krąbrną załogą.
 
-## Personnel
-[color=#cb0000]Security[/color]'s staff is made up of Security Cadets, Security Officers, and the Detective. [color=#cb0000]Security[/color] is run by the Warden and Head of Security.
+## Personel
+[color=#cb0000]Ochrona[/color] jest złożona z Kadetów Ochrony, Oficerów Ochrony, oraz Detektywa. [color=#cb0000]Ochrona[/color] jest zarządzana przez Nadzorcę Ochrony oraz Komendanta.
 
   <Box>
     <GuideEntityEmbed Entity="ToyFigurineSecurity" Caption="Secoff"/>
@@ -28,25 +28,25 @@ They face [textlink="Syndicate Agents" link="Traitors"], [textlink="Nuclear Oper
     <GuideEntityEmbed Entity="ToyFigurineHeadOfSecurity" Caption="HoS"/>
   </Box>
 
-## Gear
-First we have less-lethals. These tools are a step above simply telling someone to cooperate with instructions. A nightstick is capable of limiting the movement of an assailant, whereas handcuffs can be applied to deny a criminal free movement and access to their hands. Cuffs will also shove the person down if your [color=red]harm mode[/color] is active during uncuff.
+## Sprzęt
+Najpierw jest sprzęt mniej-śmiercionośny. Tych narzędzi się używa gdy werbalna instrukcja nie działa. Pałki używa się do ograniczenia ruchu napastnika, a kajdanek aby zaaresztować podejrzanego, blokując mu możliwość wolnego ruchu i korzystania z dłoni. Kajdankowanie również przerwóci napastnika jeśli kajdankujący był w [color=red]Trybie walki[/color].
   <Box>
     <GuideEntityEmbed Entity="Truncheon"/>
     <GuideEntityEmbed Entity="Handcuffs"/>
   </Box>
 
-## Flashes
-[color=#a4885c]Flashes[/color] are an effective tool for dispersing crowds and apprehending particularly evasive targets, with a large area of effect blinding all those without protection.
-It is worth noting that flashes can be both used in a large area ([color=yellow]Z[/color] hotkey) and if you attack somebody with it while [color=red]harm mode[/color] is active. Important to note that localized flashes last [color=yellow]2.5[/color] times as long as large area ones.
-[color=#cb0000]Security[/color] and [color=#a4885c]some[/color] other members of staff have eye protection from flashbangs and flashes.
+## Błyski
+[color=#a4885c]Błski[/color] są skutecznym narzędziem do rozpraszania tłumów i zatrzymywania szczególnie nieuchwytnych celów, o dużym obszarze działania, oślepiającym wszystkich bez ochrony.
+Warto zauważyć, że błyski można stosować zarówno na dużym obszarze (przycisk [color=yellow]Z[/color]) oraz jak zaatakujesz kogoś z aktywnym [color=red]Trybem walki[/color]. Ważne jest że lokalizowane błyski są o [color=yellow]2.5[/color] razy mocniejsze niż te obszarowe.
+[color=#cb0000]Ochrona[/color] oraz [color=#a4885c]niektórzy[/color] inni członkowie załogi mają sprzęt chroniący przed błyskami i granatami błyskowo-hukowymi.
   <Box>
     <GuideEntityEmbed Entity="Flash"/>
     <GuideEntityEmbed Entity="ClothingEyesGlassesSecurity"/>
     <GuideEntityEmbed Entity="GrenadeFlashBang"/>
   </Box>
 
-## Lethals
-Should the situation dictate, [color=#cb0000]Security[/color] have access to laser rifles, shotguns, handguns and automatic rifles able to put down substancial fire against any who would stand against the station.
+## Broń śmiercionośna
+W zależności od sytuacji, [color=#cb0000]Ochrona[/color] ma dostęp do karabinów laserowych, strzelb, pistoletów oraz karabinów automatycznych które są w stanie odeprzeć każdego, kto sprzeciwiłby się stacji.
   <Box>
     <GuideEntityEmbed Entity="WeaponLaserCarbine"/>
     <GuideEntityEmbed Entity="WeaponShotgunKammerer"/>
@@ -54,6 +54,6 @@ Should the situation dictate, [color=#cb0000]Security[/color] have access to las
     <GuideEntityEmbed Entity="WeaponRifleLecter"/>
   </Box>
 
-  ## Miscellaneous
-  Security Officers should not patrol maintenance tunnels on Green, especially alone. Security Officers should be concerned with keeping the peace in the station.
+  ## Różnorodne
+  Oficerowie Ochrony nie powinni patrolować wentylacji na kielonym kodzie zagrożenia, szczególnie w pojedynkę. Oficerowie Ochrony powinni zamiast tego się skupić na utrzymywaniu porządku na stacji.
 </Document>
