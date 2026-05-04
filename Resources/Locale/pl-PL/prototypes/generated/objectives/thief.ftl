@@ -88,5 +88,5 @@ ent-RenaultStealObjective = { ent-BaseThiefStealAnimalObjective }
     .desc = { ent-BaseThiefStealAnimalObjective.desc }
 ent-TropicoStealObjective = { ent-BaseThiefStealAnimalObjective }
     .desc = { ent-BaseThiefStealAnimalObjective.desc }
-ent-EscapeThiefShuttleObjective = Ucieknij do Centrali żywy i nieskrępowany.
-    .desc = Nie chcesz, aby ktokolwiek odkrył twoje nielegalne działania, prawda?
+ent-EscapeThiefShuttleObjective = Escape to centcomm alive and unrestrained.
+    .desc = You don't want your illegal activities to be discovered by anyone, do you?
