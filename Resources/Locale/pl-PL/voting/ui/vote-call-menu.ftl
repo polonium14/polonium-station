@@ -1,3 +1,15 @@
+# SPDX-FileCopyrightText: 2021 20kdc <asdd2808@gmail.com>
+# SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Galactic Chimp <63882831+GalacticChimp@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2021 mirrorcult <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2024 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 ui-vote-type-restart = Restart rundy
 ui-vote-type-gamemode = Następny tryb
 ui-vote-type-map = Następna mapa
@@ -29,7 +41,5 @@ ui-vote-fluff = Napędzane przez Robust™ Anti-Tamper Technology
 
 ## Vote menu command
 
-cmd-votemenu-desc = Otwiera menu głosowania.
 ui-vote-menu-command-description = Opens the voting menu
 ui-vote-menu-command-help-text = Usage: votemenu
-cmd-votemenu-help = Użycie: votemenu
