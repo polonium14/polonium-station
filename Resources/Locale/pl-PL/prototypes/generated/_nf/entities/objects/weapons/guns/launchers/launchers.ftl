@@ -1,2 +1,2 @@
-ent-WeaponMailLake = poczta SSDP
-    .desc = System Szybkiej Dostawy Przesyłek
+ent-WeaponMailLake = mail RPDS
+    .desc = Rap(b?)id Parcel Delivery System
