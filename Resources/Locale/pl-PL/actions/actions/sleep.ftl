@@ -5,7 +5,7 @@
 #
 # SPDX-License-Identifier: MIT
 
-action-name-wake = Wake up
+action-name-wake = Obudź
 sleep-onomatopoeia = Zzz...
 sleep-examined = [color=lightblue]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-BE($target) } asleep.[/color]
 wake-other-success = You shake { THE($target) } awake.
