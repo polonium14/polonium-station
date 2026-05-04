@@ -1,2 +1,2 @@
-ent-NuclearFabricator = fabrykator jądrowy
-    .desc = Produkuje części do reaktorów jądrowych.
+ent-NuclearFabricator = nuclear fabricator
+    .desc = It makes nuclear reactor parts.
