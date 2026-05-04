@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 # sheets of steel
 materials-unit-sheet = arkusze
 # bars of gold
@@ -16,8 +22,6 @@ materials-unit-slab = kawałki
 materials-unit-web = sieci
 # chunks of ore
 materials-unit-chunk = kawałki rudy
-# boll of cotton
-materials-unit-boll = kuli
 # bills of spesos... not very good but they are not (yet?) used for crafting anything
 # also the lathe/atm would need bigger denominations to output...
 materials-unit-bill = banknoty
