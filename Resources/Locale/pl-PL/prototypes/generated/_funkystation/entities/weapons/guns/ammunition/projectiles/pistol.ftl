@@ -1,8 +1,8 @@
-ent-BulletPistolLarge = kula (.50 AE)
+ent-BulletPistolLarge = bullet (.50 AE)
     .desc = { ent-BaseBullet.desc }
-ent-BulletPistolLargePractice = kula (.50 AE treningowe)
+ent-BulletPistolLargePractice = bullet (.50 AE practice)
     .desc = { ent-BaseBulletPractice.desc }
-ent-BulletPistolLargeIncendiary = kula (.50 AE zapalające)
+ent-BulletPistolLargeIncendiary = bullet (.50 AE incendiary)
     .desc = { ent-BaseBulletIncendiary.desc }
-ent-BulletPistolLargeUranium = kula (.50 AE uranowe)
+ent-BulletPistolLargeUranium = bullet (.20 rifle uranium)
     .desc = { ent-BaseBulletUranium.desc }
