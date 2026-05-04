@@ -1,2 +1,2 @@
-ent-AmeJarBig = skondensowane paliwo antymaterialne
-    .desc = Hermetycznie zamknięty słoik zawierający szczególnie gęstą antymaterię do użycia w silniku antymaterialnym.
+ent-AmeJarBig = condensed AME fuel jar
+    .desc = A hermetically sealed jar containing especially dense antimatter for use in an antimatter reactor.
