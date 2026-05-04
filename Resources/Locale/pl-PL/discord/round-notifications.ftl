@@ -1,5 +1,10 @@
-discord-round-notifications-new = Rozpoczyna się nowa runda!
-discord-round-notifications-started = Rozpoczęła się runda o numerze #{ $id } na mapie "{ $map }".
-discord-round-notifications-end = Runda #{ $id } się zakończyła. Trwała ona przez { $hours } godzin, { $minutes } minut, i { $seconds } sekund.
-discord-round-notifications-end-ping = <@&{ $roleId }>, serwer zostanie wkrótce zrestartowany!
-discord-round-notifications-unknown-map = Nieznana
+# SPDX-FileCopyrightText: 2023 Morb <14136326+Morb0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
+discord-round-notifications-new = A new round is starting!
+discord-round-notifications-started = Round #{ $id } on map "{ $map }" started.
+discord-round-notifications-end = Round #{ $id } has ended. It lasted for { $hours } hours, { $minutes } minutes, and { $seconds } seconds.
+discord-round-notifications-end-ping = <@&{ $roleId }>, a new round is starting soon!
+discord-round-notifications-unknown-map = Unknown
