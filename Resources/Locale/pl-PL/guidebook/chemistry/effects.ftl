@@ -1,3 +1,25 @@
+# SPDX-FileCopyrightText: 2023 LankLTE <135308300+LankLTE@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Sailor <109166122+Equivocateur@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 mhamster <81412348+mhamsterr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Eris <eris@erisws.com>
+# SPDX-FileCopyrightText: 2024 Flesh <62557990+PolterTzi@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Gotimanga <127038462+Gotimanga@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2024 Zonespace <41448081+Zonespace27@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 alex-georgeff <54858069+taurie@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Patrycja <git@ptrcnull.me>
+# SPDX-FileCopyrightText: 2025 Steve <marlumpy@gmail.com>
+# SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 marc-pelletier <113944176+marc-pelletier@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 pa.pecherskij <pa.pecherskij@interfax.ru>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 -create-3rd-person =
     { $chance ->
         [1] Creates
@@ -75,21 +97,6 @@ reagent-effect-guidebook-health-change =
                 [heals] heal
                 [deals] deal
                *[both] modify health by
-            }
-    } { $changes }
-reagent-effect-guidebook-even-health-change =
-    { $chance ->
-        [1]
-            { $healsordeals ->
-                [heals] Evenly heals
-                [deals] Evenly deals
-               *[both] Evenly modifies health by
-            }
-       *[other]
-            { $healsordeals ->
-                [heals] evenly heal
-                [deals] evenly deal
-               *[both] evenly modify health by
             }
     } { $changes }
 reagent-effect-guidebook-status-effect =
@@ -240,11 +247,6 @@ reagent-effect-guidebook-electrocute =
         [1] Electrocutes
        *[other] electrocute
     } the metabolizer for { NATURALFIXED($time, 3) } { MANY("second", $time) }
-reagent-effect-guidebook-emote =
-    { $chance ->
-        [1] Will force
-       *[other] force
-    } the metabolizer to [bold][color=white]{ $emote }[/color][/bold]
 reagent-effect-guidebook-extinguish-reaction =
     { $chance ->
         [1] Extinguishes
@@ -310,7 +312,7 @@ reagent-effect-guidebook-reset-narcolepsy =
     { $chance ->
         [1] Temporarily staves
        *[other] temporarily stave
-    } off narcolepsy
+    } off narcolepsy for 10 minutes
 reagent-effect-guidebook-wash-cream-pie-reaction =
     { $chance ->
         [1] Washes
@@ -381,6 +383,11 @@ reagent-effect-guidebook-plant-seeds-add =
         [1] Restores the
        *[other] restore the
     } seeds of the plant
+reagent-effect-guidebook-plant-seeds-remove =
+    { $chance ->
+        [1] Removes the
+       *[other] remove the
+    } seeds of the plant
 reagent-effect-guidebook-add-to-chemicals =
     { $chance ->
         [1]
@@ -413,8 +420,3 @@ reagent-effect-guidebook-adjust-ling-chemicals =
         [1] to
        *[-1] from
     } the metabolizer
-reagent-effect-guidebook-plant-seeds-remove =
-    { $chance ->
-        [1] Removes the
-       *[other] remove the
-    } seeds of the plant
