@@ -4,5 +4,5 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-wires-board-name-autodoc = Autodoc Mk.XIV
-wire-name-autodoc-safety = SAFE
+wires-board-name-autodoc = Autolek Mk.XIV
+wire-name-autodoc-safety = BEZPIECZNY
