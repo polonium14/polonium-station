@@ -1,6 +1,6 @@
-adjustable-power-set-load = Ustaw obciążenie:
-adjustable-power-submit = Zatwierdź
-adjustable-power-unsaved-changes = Masz niezapisane zmiany.
-adjustable-power-status-label = Zasilanie:
-adjustable-power-status-enabled = Włączone
-adjustable-power-status-disabled = Wyłączone
+adjustable-power-set-load = Set Load:
+adjustable-power-submit = Submit
+adjustable-power-unsaved-changes = You have unsaved changes.
+adjustable-power-status-label = Power:
+adjustable-power-status-enabled = On
+adjustable-power-status-disabled = Off
