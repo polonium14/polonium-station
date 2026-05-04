@@ -8,6 +8,7 @@ names-generator-first-dataset-1 = Dżef
 names-generator-first-dataset-2 = Bob
 names-generator-first-dataset-3 = Pan
 names-generator-first-dataset-4 = Wszechmogący
+names-generator-first-dataset-5 = The
 names-generator-last-singularity-dataset-1 = Singulot
 names-generator-last-singularity-dataset-2 = Osobliwość
 names-generator-last-singularity-dataset-3 = Singulo
