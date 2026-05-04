@@ -5,9 +5,9 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-guide-entry-cosmiccult = Cosmic Cult
-guide-entry-cosmiccult-monument = The Monument
-guide-entry-cosmiccult-rifts = Malign Rifts
-guide-entry-cosmiccult-influences = Influences
-guide-entry-cosmiccult-deconversion = Deconversion
-guide-entry-cosmiccolossus = Entropic Colossus
+guide-entry-cosmiccult = Kult Kosmiczny
+guide-entry-cosmiccult-monument = Monument
+guide-entry-cosmiccult-rifts = Złe Rozdarcia
+guide-entry-cosmiccult-influences = Wpływy
+guide-entry-cosmiccult-deconversion = Dekonwersja
+guide-entry-cosmiccolossus = Entropiczny Kolos
