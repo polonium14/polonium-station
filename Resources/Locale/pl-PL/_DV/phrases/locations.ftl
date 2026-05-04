@@ -1,23 +1,23 @@
 phrase-location-ats = ATS
-phrase-location-shipyard = Shipyard
-phrase-location-boxing-ring = Boxing Ring
-phrase-location-outpost = Outpost
-phrase-location-escape-shuttle = Escape shuttle
-phrase-location-shuttle = Shuttle
-phrase-location-maintenance = Maintenance
+phrase-location-shipyard = Stocznia
+phrase-location-boxing-ring = Ring bojowy
+phrase-location-outpost = Obozowisko
+phrase-location-escape-shuttle = Wahadłowiec ewakuacyjny
+phrase-location-shuttle = Wahadłowiec
+phrase-location-maintenance = Konserwacja
 # relative
-phrase-location-near = near
-phrase-location-far = far
-phrase-location-inside = inside
-phrase-location-outside = outside
+phrase-location-near = blisko
+phrase-location-far = daleko
+phrase-location-inside = w środku
+phrase-location-outside = na zewnątrz
 
 ## compass
 
-phrase-location-north = north
-phrase-location-east = east
-phrase-location-south = south
-phrase-location-west = west
-phrase-location-northeast = northeast
-phrase-location-southeast = southeast
-phrase-location-southwest = southwest
-phrase-location-northwest = northwest
+phrase-location-north = północ
+phrase-location-east = wschód
+phrase-location-south = południe
+phrase-location-west = zachód
+phrase-location-northeast = północny wschód
+phrase-location-southeast = południowy wschód
+phrase-location-southwest = południowy zachód
+phrase-location-northwest = północny zachód
