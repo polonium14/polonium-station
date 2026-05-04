@@ -50,5 +50,6 @@ reagent-name-silver-sulfadiazine = sulfadiazyna srebra
 reagent-desc-silver-sulfadiazine = Związek antybakteryjny stosowany miejscowo u ofiar oparzeń.
 reagent-name-hivelord-essence = esencja władcy roju
 reagent-desc-hivelord-essence = Lepka substancja wytwarzana przez hełm władcy roju podczas noszenia, wydaje się zawierać niewielką część ich zdolności leczniczych.
+# Genetics
 reagent-name-mutadone = mutadon
 reagent-desc-mutadone = Silny związek stosowany do usuwania mutacji genetycznych i stabilizacji DNA.
