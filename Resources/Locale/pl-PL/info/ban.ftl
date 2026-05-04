@@ -1,16 +1,27 @@
+# SPDX-FileCopyrightText: 2023 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2023 Riggle <27156122+RigglePrime@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Vasilis <vasilis@pikachu.systems>
+# SPDX-FileCopyrightText: 2024 Julian Giebel <juliangiebel@live.de>
+# SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 # ban
 cmd-ban-desc = Banuje kogoś
 cmd-ban-help = Użycie: ban <nazwa albo id gracza> <powód> [długość w minutachm, zostaw 0 jeśli ban jest permanentny]
 cmd-ban-player = Nie znaleziono takiego gracza o podanej nazwie.
 cmd-ban-invalid-minutes = { $minutes } nie jest prawidłową liczbą minut!
 cmd-ban-invalid-severity = { $severity } nie jest prawidłowym poziomem surowości!
-cmd-ban-invalid-round = { $round } nie jest prawidłowym numerem rundy!
 cmd-ban-invalid-arguments = Nieprawidłowa liczba argumentów
 cmd-ban-hint = <nazwa/ID użytkownika>
 cmd-ban-hint-reason = <powód>
 cmd-ban-hint-duration = [czas trwania]
 cmd-ban-hint-severity = [poziom surowości]
-cmd-ban-hint-round = [numer rundy sytuacji]
 cmd-ban-hint-duration-1 = Permanentny
 cmd-ban-hint-duration-2 = 1 dzień
 cmd-ban-hint-duration-3 = 3 dni
@@ -26,7 +37,6 @@ cmd-banpanel-player-err = Nie znaleziono podanego gracza
 cmd-banlist-desc = Wyświetla aktywne bany użytkownika.
 cmd-banlist-help = Użycie: banlist <nazwa lub ID użytkownika>
 cmd-banlist-empty = Nie znaleziono aktywnych banów dla { $user }
-cmd-banlist-hint = <nazwa/ID użytkownika>
 cmd-banlistF-hint = <name/user ID>
 cmd-ban_exemption_update-desc = Ustawia wyjątek od określonego rodzaju bana dla gracza.
 cmd-ban_exemption_update-help =
@@ -45,6 +55,7 @@ cmd-ban_exemption_get-nargs = Oczekiwano dokładnie 1 argumentu
 cmd-ban_exemption_get-none = Użytkownik nie jest wyłączony z żadnych banów.
 cmd-ban_exemption_get-show = Użytkownik jest wyłączony z następujących banów: { $flags }.
 cmd-ban_exemption_get-arg-player = <gracz>
+# Ban panel
 ban-panel-title = Panel banów
 ban-panel-player = Gracz
 ban-panel-ip = IP
@@ -72,7 +83,6 @@ ban-panel-permanent = Stały
 ban-panel-ip-hwid-tooltip = Pozostaw puste i zaznacz poniżej, aby użyć danych z ostatniego połączenia
 ban-panel-severity = Surowość:
 ban-panel-erase = Usuń wiadomości na czacie i gracza z rundy
-ban-panel-situation-round = Runda sytuacji:
 # Ban string
 server-ban-string = { $admin } utworzył ban serwerowy o surowości { $severity }, który wygasa { $expires } dla [{ $name }, { $ip }, { $hwid }], z powodem: { $reason }
 server-ban-string-no-pii = { $admin } utworzył ban serwerowy o surowości { $severity }, który wygasa { $expires } dla { $name } z powodem: { $reason }
