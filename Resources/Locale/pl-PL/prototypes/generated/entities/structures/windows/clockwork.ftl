@@ -1,7 +1,7 @@
-ent-ClockworkWindow = okno zegarmistrzowskie
-    .desc = Nie rozmazuj mosiądzu tam na dole.
-ent-WindowClockworkDirectional = kierunkowe okno zegarmistrzowskie
-    .desc = Nie rozmazuj mosiądzu tam na dole.
+ent-ClockworkWindow = clockwork window
+    .desc = Don't smudge up the brass down there.
+ent-WindowClockworkDirectional = directional clockwork window
+    .desc = Don't smudge up the brass down there.
 ent-ClockworkWindowDiagonal = { ent-ClockworkWindow }
-    .suffix = diagonalne
+    .suffix = diagonal
     .desc = { ent-ClockworkWindow.desc }
