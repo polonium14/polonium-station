@@ -1,5 +1,5 @@
-expendable-light-start-verb = Start Light
 expendable-light-spent-prefix = spent { $baseName }
+expendable-light-start-verb = Start Light
 expendable-light-spent-flare-name = spent flare
 expendable-light-spent-flare-desc = It looks like this flare has burnt out. What a bummer.
 expendable-light-burnt-torch-name = burnt torch
