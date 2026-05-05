@@ -28,7 +28,7 @@ SPDX-License-Identifier: MIT
 
 [bold]7.[/bold] Komendant ma zezwolenie na noszenie swojego zwykłego płaszcza lub swojego opancerzonego trencza;
 
-[bold]8.[/bold] Komendant ma zezwolenie na noszenie swojej unikalnej maski przeciw-gazowej;
+[bold]8.[/bold] Komendant ma zezwolenie na noszenie swojej unikalnej maski przeciwgazowej;
 
 [bold]9.[/bold] Komendant [bold]nie[/bold] może zmianiać wydanych wyroków, chyba że pojawią się nowe dowody albo sam więźeń spróbuje ucieć;
 
