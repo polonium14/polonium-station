@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 advertisement-space-villain-1 = Czy jesteś wystarczająco twardy by przejśc tą grę?
 advertisement-space-villain-2 = Ubij łotra; zgarnij nagrode!
 advertisement-space-villain-3 = WALCZ ZE MNĄ!
