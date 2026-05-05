@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 pa.pecherskij <pa.pecherskij@interfax.ru>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 # Acherontia atropos
 names-moth-first-female-dataset-1 = Atropos
 # Biston betularia
@@ -16,7 +22,7 @@ names-moth-first-female-dataset-7 = Lachesis
 names-moth-first-female-dataset-8 = Luna
 # Lymantria
 names-moth-first-female-dataset-9 = Lymanzia
-# Dryocampa rubicunda, "Różowa klonówka"
+# Dryocampa rubicunda, "Rosy Maple"
 names-moth-first-female-dataset-10 = Klonówka
 # Mimas
 names-moth-first-female-dataset-11 = Mima
@@ -24,45 +30,45 @@ names-moth-first-female-dataset-11 = Mima
 names-moth-first-female-dataset-12 = Nephele
 # Dryocampa rubicunda
 names-moth-first-female-dataset-13 = Rosie
-# Cosmosoma myrodora, "Ćma osowata"
+# Cosmosoma myrodora, "Scarlet-bodied wasp moth"
 names-moth-first-female-dataset-14 = Szkarłatka
 # Acherontia styx
 names-moth-first-female-dataset-15 = Styx
 
-## Inne języki
+## Other languages
 
-# Galicyjskie "ćma" (avelaíña)
+# Galician "moth" (avelaíña)
 names-moth-first-female-dataset-16 = Avelaina
-# Włoskie "zimowa ćma"
+# Italian "winter moth"
 names-moth-first-female-dataset-17 = Falena
-# Greckie "księżycowy dar"
+# Greek "moon gift"
 names-moth-first-female-dataset-18 = Menodora
-# Rumuńskie "ćma"
+# Romanian "moth"
 names-moth-first-female-dataset-19 = Molie
-# Hiszpańskie "ćma"
+# Spanish "moth"
 names-moth-first-female-dataset-20 = Polilla
 
-## Mitologia i legendy
+## Myth and legend
 
-# Grecka postać mitologiczna
+# Greek mythological figure
 names-moth-first-female-dataset-21 = Althea
-# Rzymska bogini świtu
+# Roman goddess of the dawn
 names-moth-first-female-dataset-22 = Aurora
-# Grecka postać mitologiczna
+# Greek mythological figure
 names-moth-first-female-dataset-23 = Helle
-# Grecka bogini księżyca
+# Greek goddess of the moon
 names-moth-first-female-dataset-24 = Selene
-# Grecka bogini nocy
+# Greek goddess of the night
 names-moth-first-female-dataset-25 = Nyx
 
-## Zabawne imiona
+## Fun names
 
 names-moth-first-female-dataset-26 = Anioł
 names-moth-first-female-dataset-27 = Piaskowa
 names-moth-first-female-dataset-28 = Wolność
 names-moth-first-female-dataset-29 = Beatrix
 
-## Popularne imiona, wypełniacze
+## Common names, filler
 
 names-moth-first-female-dataset-30 = Stokrotka
 names-moth-first-female-dataset-31 = Świt
