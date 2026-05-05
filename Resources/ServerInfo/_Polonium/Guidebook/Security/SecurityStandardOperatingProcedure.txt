@@ -48,7 +48,7 @@ SPDX-License-Identifier: MIT
 
 [bold]2.[/bold] Komendant [bold]nie[/bold] ma obowiązku prowadzić sądu w czasie zagrożenia. Ma jednak obowiązek zezwolić podejrzanemu na spotkanie z jego wybranym reprezentantem prawnym w dowolnym momencie trwania wyroku. Czasomierz wyroku podejrzanego powinno się zapauzować na czas takich spotkań oraz wznawiać w momencie jego powrotu do celi.
 
-[bold]3.[/bold] Komendant ma zezwolenie na branie dowolnej ilości sprzętu ze zbrojowni, tak długo jak zostawia wystarczająco sprzętu dla reszty [color=#cb0000]Ochrony[/color];
+[bold]3.[/bold] Komendant ma zezwolenie na pobieranie dowolnej ilości sprzętu ze zbrojowni pod warunkiem, że zostawi wystarczająco sprzętu dla reszty [color=#cb0000]Ochrony[/color];
 
 [bold]4.[/bold] Komendant ma [bold]obowiązek[/bold] zrobić ogłoszenie tłumaczące powód dla kodu czerwonego.
 
