@@ -166,7 +166,7 @@ SPDX-License-Identifier: MIT
 
 [bold]1.[/bold] Wszystkie wskazania przechodzą z [color=green]Kodu Zielonego[/color];
 
-[bold]2.[/bold] Detektyw może wziąść dowolnego zatrzymanego na przesłuchanie w trakcie procesu zamkykania. Jeśli podejrzany żąda prawnika na przesłuchanie, to Detektyw ma obowiązek zezwolić tylko jeśli podejrzany popełnił zbrodnie poziomu trzeciego lub wyżej. Żadnego zatrzymanego nie wolno trzymać przez więcej niż 10 minut w procesie zamykania, jeśli nie ma żadnych dostępnych dowodów.
+[bold]2.[/bold] Detektyw może wziąć dowolnego zatrzymanego na przesłuchanie w trakcie procesu zamykania. Jeśli podejrzany żąda prawnika na przesłuchanie, to Detektyw ma obowiązek się zgodzić tylko wtedy, gdy podejrzany popełnił zbrodnię poziomu trzeciego lub wyżej. Żadnego zatrzymanego nie wolno trzymać przez więcej niż 10 minut w procesie zamykania, jeśli nie ma żadnych dostępnych dowodów.
 
 ## Kod Czerwony
 
