@@ -1,3 +1,14 @@
+# SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Killerqu00 <47712032+Killerqu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Gansu <68031780+GansuLalan@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 bounty-console-menu-title = Konsola żądań logistycznych
 bounty-console-label-button-text = Wydrukuj żądanie
 bounty-console-skip-button-text = Pomiń
@@ -9,7 +20,6 @@ bounty-console-manifest-entry =
         [1] { $item }
        *[other] { $item } x{ $amount }
     }
-bounty-console-manifest-reward = Nagroda: ${ $reward }
 bounty-console-manifest-entry-reagent =
     { $amount ->
         [1] { $item }
@@ -20,6 +30,7 @@ bounty-console-manifest-entry-gas =
         [1] { $item }
        *[other] { $item } { $amount }mol
     }
+bounty-console-manifest-reward = Nagroda: ${ $reward }
 bounty-console-description-label = [color=gray]{ $description }[/color]
 bounty-console-id-label = ID#{ $id }
 bounty-console-flavor-left = Żądania zbierane z lokalnych nieuczciwych handlarzy.
