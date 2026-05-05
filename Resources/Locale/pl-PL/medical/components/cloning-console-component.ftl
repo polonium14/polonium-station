@@ -1,3 +1,15 @@
+# SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Vordenburg <114301317+Vordenburg@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 fishfish458 <fishfish458>
+# SPDX-FileCopyrightText: 2023 Julian Giebel <juliangiebel@live.de>
+# SPDX-FileCopyrightText: 2023 OctoRocket <88291550+OctoRocket@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Vasilis <vascreeper@yahoo.com>
+# SPDX-FileCopyrightText: 2023 Vasilis <vasilis@pikachu.systems>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
+
 ## UI
 
 cloning-console-window-title = Konsola klonowania
@@ -31,4 +43,4 @@ cloning-console-chat-error =
        *[others] jednostek
     } biomasy.
 cloning-console-uncloneable-trait-error = Błąd: klonowanie jest niemożliwe z powodu wyjątkowego składu ciała.
-cloning-console-cellular-warning = Błąd: wynik pewności GENEFSCK wynosi { NATURALPERCENT($percent) }. Klonowanie może mieć nieoczekiwane rezultaty.
+cloning-console-cellular-warning = WARNING: GENEFSCK CONFIDENCE SCORE IS { $percent }%. CLONING MAY HAVE UNEXPECTED RESULTS.
