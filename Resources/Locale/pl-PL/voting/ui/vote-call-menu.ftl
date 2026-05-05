@@ -26,10 +26,10 @@ ui-vote-abuse-warning =
     Nadużywanie systemu głosowania może skutkować permanentnym banem!
 # Hue hue hue
 ui-vote-fluff = Napędzane przez Robust™ Anti-Tamper Technology
+cmd-votemenu-desc = Otwiera menu głosowania.
 
 ## Vote menu command
 
-cmd-votemenu-desc = Otwiera menu głosowania.
 ui-vote-menu-command-description = Opens the voting menu
-ui-vote-menu-command-help-text = Usage: votemenu
 cmd-votemenu-help = Użycie: votemenu
+ui-vote-menu-command-help-text = Usage: votemenu
