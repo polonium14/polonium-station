@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2022 Nairod <110078045+Nairodian@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 norepinephricacid-effect-eyelids = Twoje powieki gwałtownie drgają.
 norepinephricacid-effect-eyes-itch = Twoje oczy swędzą.
 norepinephricacid-effect-vision-fade = Czujesz, że powoli tracisz wzrok.
