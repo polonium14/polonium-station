@@ -1,3 +1,13 @@
+# SPDX-FileCopyrightText: 2021 Alex Evgrashin <aevgrashin@yandex.ru>
+# SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Galactic Chimp <63882831+GalacticChimp@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 mirrorcult <notzombiedude@gmail.com>
+# SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
+
 ### UI
 
 # Verb name for climbing
@@ -6,13 +16,13 @@ comp-climbable-verb-climb = Wskocz
 ### Interaction Messages
 
 # Shown to you when your character climbs on $climbable
-comp-climbable-user-climbs = Skaczesz na { $climbable }!
+comp-climbable-user-climbs = You jump onto { THE($climbable) }!
 # Shown to others when $user climbs on $climbable
-comp-climbable-user-climbs-other = { CAPITALIZE($user) } skacze na { $climbable }!
+comp-climbable-user-climbs-other = { CAPITALIZE(THE($user)) } jumps onto { THE($climbable) }!
 # Shown to you when your character forces someone to climb on $climbable
-comp-climbable-user-climbs-force = Zmuszasz { $moved-user } do wskoczenia na { $climbable }!
+comp-climbable-user-climbs-force = You force { THE($moved-user) } onto { THE($climbable) }!
 # Shown to others when someone forces other $moved-user to climb on $climbable
-comp-climbable-user-climbs-force-other = { CAPITALIZE($user) } zmusza { $moved-user } do wskoczenia na { $climbable }!
+comp-climbable-user-climbs-force-other = { CAPITALIZE(THE($user)) } forces { THE($moved-user) } onto { THE($climbable) }!
 # Shown to you when your character is far away from climbable
 comp-climbable-cant-reach = Nie możesz tam dosięgnąć!
 # Shown to you when your character can't interact with climbable for some reason
@@ -20,4 +30,4 @@ comp-climbable-cant-interact = Nie możesz tego zrobić!
 # Shown to you when your character isn't able to climb by their own actions
 comp-climbable-cant-climb = Nie jesteś w stanie się wspiąć!
 # Shown to you when your character tries to force someone else who can't climb onto a climbable
-comp-climbable-target-cant-climb = { CAPITALIZE($moved-user) } nie może tam wejść!
+comp-climbable-target-cant-climb = { CAPITALIZE(THE($moved-user)) } can't go there!
