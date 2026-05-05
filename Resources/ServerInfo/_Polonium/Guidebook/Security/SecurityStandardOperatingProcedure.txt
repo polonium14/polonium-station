@@ -56,7 +56,7 @@ SPDX-License-Identifier: MIT
 
 ## Kod Zielony
 
-[bold]1.[/bold] Oficerowi Ochrony są zachęcani aby zapoznać się z [textlink="Zasadami Postępowania Ochrony" link="RulesOfConduct"] przed nawiązaniem kontaktu z jakąkolwiek osobą z publiki;
+[bold]1.[/bold] Oficerowie Ochrony są zachęcani, aby zapoznać się z [textlink="Zasadami Postępowania Ochrony" link="RulesOfConduct"] przed nawiązaniem kontaktu z członkami załogi;
 
 [bold]2.[/bold] Oficerowie Ochrony są zobowiązani do podania przyczyn zatrzymania przed podjęciem dalszych działań. Wyjątek stanowi sytuacja, gdy podejrzany odmawia zatrzymania się;
 
