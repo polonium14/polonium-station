@@ -74,7 +74,7 @@ SPDX-License-Identifier: MIT
 
 ## Kod Niebieski
 
-[bold]1.[/bold] Wskazania 1, 2, 4 oraz 8 przechodzą z [color=green]Kodu Zielonego[/color];
+[bold]1.[/bold] Obowiązują wskazania 1, 2, 4 oraz 8 z [color=green]Kodu Zielonego[/color];
 
 [bold]2.[/bold] Oficerom Ochrony wolno nosić dowolne uzbrojenie ze zbrojowni, za pozwoleniem [color=#cb0000]Nadzorcy Ochrony[/color], ale nie więcej niż jedną na raz. Wyjątkami są zagrożenia dla całej stacji, oraz terroryzmu.
 
