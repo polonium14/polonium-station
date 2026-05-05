@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 pa.pecherskij <pa.pecherskij@interfax.ru>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 names-wizard-first-dataset-1 = Ashenzari
 names-wizard-first-dataset-2 = Chancellor
 names-wizard-first-dataset-3 = Cleric
@@ -28,17 +34,3 @@ names-wizard-first-dataset-27 = Queue
 names-wizard-first-dataset-28 = Rasputin
 names-wizard-first-dataset-29 = Rickleflux
 names-wizard-first-dataset-30 = Ru
-names-wizard-first-dataset-31 = Sif
-names-wizard-first-dataset-32 = Spellberg
-names-wizard-first-dataset-33 = Trog
-names-wizard-first-dataset-34 = Trivia
-names-wizard-first-dataset-35 = Uskayaw
-names-wizard-first-dataset-36 = Vehumet
-names-wizard-first-dataset-37 = Wanda
-names-wizard-first-dataset-38 = Wandrew
-names-wizard-first-dataset-39 = Wizney
-names-wizard-first-dataset-40 = Xom
-names-wizard-first-dataset-41 = Yredelemnul
-names-wizard-first-dataset-42 = Yodalf
-names-wizard-first-dataset-43 = Zartemis
-names-wizard-first-dataset-44 = Zin
