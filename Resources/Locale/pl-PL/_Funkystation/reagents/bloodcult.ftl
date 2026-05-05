@@ -1,4 +1,3 @@
-
 reagent-name-edge-essentia = esencja spaczenia
 reagent-desc-edge-essentia = Ciemna, przeklęta substancja, która zatruwa krew rannych ofiar, zamieniając ich krwawiące rany w źródła szkarłatnego pernikulatu.
 reagent-effect-guidebook-bleed-sanguine-perniculate = konwertuje krew z krwawienia w szkarłatny pernikulat
