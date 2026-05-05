@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 pa.pecherskij <pa.pecherskij@interfax.ru>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 names-death-commando-dataset-1 = Cała gromada pająków w stroju SWAT
 names-death-commando-dataset-2 = AMERYKA
 names-death-commando-dataset-3 = Beat Punchbeef
