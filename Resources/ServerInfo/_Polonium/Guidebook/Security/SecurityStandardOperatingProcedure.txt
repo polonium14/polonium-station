@@ -136,7 +136,7 @@ SPDX-License-Identifier: MIT
 
 ## Kod Czerwony
 
-[bold]1.[/bold] Wskazania 2, 4, 6, 9, 11 oraz 12 przechodzą z [color=green]Kodu Zielonego[/color];
+[bold]1.[/bold] Obowiązują wskazania 2, 4, 6, 9, 11 oraz 12 z [color=green]Kodu Zielonego[/color];
 
 [bold]2.[/bold] Wskazania 3 oraz 4 przechodzą z [color=blue]Niebieskiego[/color]. Dodatkowo Nadzorca może nosić dowolną broń ze zbrojowni, ale nie więcej niż jedną na raz.
 
