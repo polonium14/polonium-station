@@ -1,4 +1,3 @@
-
 changeling-convert-implant = Czujesz ostry ból w ramieniu, gdy implant zostaje wstrzyknięty!
 changeling-convert-implant-fail = Implant nie został wstrzyknięty całkowicie!
 uplink-changelinginfect-implant-name = Implant Infekcji Odmieńca
