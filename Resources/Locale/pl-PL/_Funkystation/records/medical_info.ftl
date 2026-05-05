@@ -1,4 +1,5 @@
-medical-info-no-info = Brak informacji medycznych.
+﻿medical-info-no-info = No medical information.
+
 # categories
 medical-info-category-allergies = Alergie
 medical-info-category-prescriptions = Recepty
