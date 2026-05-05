@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2024 MODERN <87994977+modern-nm@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 cargoproduct-category-name-armory = Zbrojownia
 cargoproduct-category-name-atmospherics = Atmosferyczne
 cargoproduct-category-name-cargo = Logistyczne
