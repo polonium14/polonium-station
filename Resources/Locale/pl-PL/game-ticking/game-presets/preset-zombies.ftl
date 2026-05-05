@@ -1,3 +1,14 @@
+# SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Tom Leys <tom@crump-leys.com>
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 IProduceWidgets <107586145+IProduceWidgets@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2024 username <113782077+whateverusername0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 zombie-title = Zombie
 zombie-description = Nieumarli zostali uwolnieni na stacji! Współpracuj z załogą, aby przetrwać epidemię i zabezpieczyć stację.
 zombieteors-title = Zombieteory
@@ -8,9 +19,12 @@ zombie-patientzero-role-greeting = Jesteś początkowo zainfekowanym. Zdobądź 
 zombie-healing = Czujesz poruszenie w swoim ciele
 zombie-infection-warning = Czujesz, jak wirus zombie przejmuje kontrolę
 zombie-infection-underway = Twoja krew zaczyna gęstnieć
+
+## goob edit
+
+zombie-start-announcement = Potwierdzono zagrożenie biologiczne poziomu 7 na pokładzie stacji. Cały personel jest zobowiązany do podjęcia działań mających na celu powstrzymanie kontaminacji.
 zombie-alone = Czujesz się całkowicie samotny.
 zombie-shuttle-call = Wykryto, że nieumarli przejęli stację. Wysyłamy awaryjny prom, aby ewakuować pozostały personel.
-zombie-start-announcement = Potwierdzono zagrożenie biologiczne poziomu 7 na pokładzie stacji. Cały personel jest zobowiązany do podjęcia działań mających na celu powstrzymanie kontaminacji.
 zombie-round-end-initial-count =
     { $initialCount ->
         [one] Był jeden początkowo zainfekowany:
