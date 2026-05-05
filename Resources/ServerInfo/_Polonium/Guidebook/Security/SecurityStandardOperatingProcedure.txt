@@ -118,7 +118,7 @@ SPDX-License-Identifier: MIT
 
 [bold]9.[/bold] Nadzorca ma obowiązek wyczytać wszystkie zbrodnie więźnia w momencie skazania;
 
-[bold]10.[/bold] Nadzorca nie może zostawić więźnia przykutego do łózka. Wyjątki są dla wrogo zachowywujących się więźniów, oraz takich którzy próbują uciec z więzienia;
+[bold]10.[/bold] Nadzorca nie może zostawić więźnia przykutego do łóżka. Wyjątkiem są wrogo zachowujący się więźniowie oraz tacy, którzy próbują uciec z więzienia;
 
 [bold]11.[/bold] Nadzorca powinien podążać za tymi samymi wskazaniami co [color=#cb0000]Oficerowie Ochrony[/color] co do ubioru, z wyjątkiem że wszystkie unikalne ubrania komendanta są również dozwolone;
 
