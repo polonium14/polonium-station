@@ -1,3 +1,13 @@
+# SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 contraband-examine-text-Minor = [color=yellow]Ten przedmiot jest uznawany za drobną kontrabande.[/color]
 contraband-examine-text-Restricted = [color=yellow]Ten przedmiot jest ograniczony do użycia przez określone działy.[/color]
 contraband-examine-text-Restricted-department = [color=yellow]Ten przedmiot jest dostępny tylko dla działów: { $departments }, i może być uznany za kontrabandę.[/color]
@@ -10,4 +20,4 @@ contraband-examine-text-in-the-clear = [color=green][italic]Możesz bezpiecznie 
 contraband-examinable-verb-text = Legalność
 contraband-examinable-verb-message = Sprawdź legalność tego przedmiotu.
 contraband-department-plural = { $department }
-contraband-job-plural = { $job }
+contraband-job-plural = { MAKEPLURAL($job) }
