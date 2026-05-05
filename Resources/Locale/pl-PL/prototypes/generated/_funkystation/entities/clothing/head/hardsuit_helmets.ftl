@@ -5,4 +5,4 @@ ent-ClothingHeadHelmetHelldiver = helm taktyczny NT-01
 ent-ClothingHeadHelmetHardsuitCarpScale = helm kombinezonu z łusków karpia
     .desc = Helm kombinezonu z efektownym wyglądem.
 ent-ClothingHeadHelmetHardsuitHivelord = helm kombinezonu władcy roju
-    .desc = { ent-ClothingHeadHelmetHardsuitCarpScale.desc }
+    .desc = A hardsuit fitted with a striking vissage.
