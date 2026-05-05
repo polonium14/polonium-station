@@ -24,7 +24,7 @@ SPDX-License-Identifier: MIT
 
 [bold]5.[/bold] Komendant powinien stosować się do tych samych wytycznych, co [color=#cb0000]Nadzorca Ochrony[/color] dla sprzętu ze zbrojowni, mobilnych błysków oraz rozstawianych barier;
 
-[bold]6.[/bold] Komendant [bold]nie[/bold] ma zezwolenia aby zabierać i nosić sprzęt ze zbrojowni;
+[bold]6.[/bold] Komendant [bold]nie[/bold] ma zezwolenia, aby zabierać i nosić sprzęt ze zbrojowni;
 
 [bold]7.[/bold] Komendant ma zezwolenie na noszenie swojego zwykłego płaszcza lub swojego opancerzonego trencza;
 
