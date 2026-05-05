@@ -1,3 +1,14 @@
+# SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Julian Giebel <juliangiebel@live.de>
+# SPDX-FileCopyrightText: 2023 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
+
 # Popups
 
 network-configurator-device-saved = Successfully saved network device { $device } with address { $address }!
@@ -35,10 +46,10 @@ network-configurator-examine-mode-link = [color=red]Link[/color]
 network-configurator-examine-mode-list = [color=green]List[/color]
 network-configurator-examine-current-mode = Current mode: { $mode }
 network-configurator-examine-switch-modes = Press { $key } to switch modes
+# command
+cmd-clearnetworklinkoverlays-desc = Clear all network link overlays.
+cmd-clearnetworklinkoverlays-help = Usage: clearnetworklinkoverlays
 # item status
 network-configurator-item-status-label =
     Mode: { $mode }
     Switch: { $keybinding }
-# command
-cmd-clearnetworklinkoverlays-desc = Clear all network link overlays.
-cmd-clearnetworklinkoverlays-help = Usage: clearnetworklinkoverlays
