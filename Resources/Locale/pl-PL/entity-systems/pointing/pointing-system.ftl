@@ -1,15 +1,27 @@
+# SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Galactic Chimp <63882831+GalacticChimp@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Swept <sweptwastaken@protonmail.com>
+# SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+# SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 pa.pecherskij <pa.pecherskij@interfax.ru>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
+
 ## PointingSystem
 
 pointing-system-try-point-cannot-reach = Nie możesz tam dosięgnąć!
 pointing-system-point-at-self = Wskazujesz na siebie.
-pointing-system-point-at-other = Wskazujesz na { $other }.
-pointing-system-point-at-self-others = { CAPITALIZE($otherName) } wskazuje na { REFLEXIVE($other) }.
-pointing-system-point-at-other-others = { CAPITALIZE($otherName) } wskazuje na { $other }.
-pointing-system-point-at-you-other = { CAPITALIZE($otherName) } wskazuje na ciebie.
-pointing-system-point-at-tile = Wskazujesz na { $tileName }.
+pointing-system-point-at-other = You point at { THE($other) }.
+pointing-system-point-at-self-others = { CAPITALIZE(THE($otherName)) } points at { REFLEXIVE($other) }.
+pointing-system-point-at-other-others = { CAPITALIZE(THE($otherName)) } points at { THE($other) }.
+pointing-system-point-at-you-other = { CAPITALIZE(THE($otherName)) } points at you.
 pointing-system-point-in-own-inventory-self = Wskazujesz na swój { $item }.
 pointing-system-point-in-own-inventory-others = { CAPITALIZE($pointer) } wskazuje na { $item } { $pointer }.
 pointing-system-point-in-other-inventory-self = Wskazujesz na { $item } { $wearer }.
 pointing-system-point-in-other-inventory-target = { CAPITALIZE($pointer) } wskazuje na twój { $item }.
 pointing-system-point-in-other-inventory-others = { CAPITALIZE($pointer) } wskazuje na { $item } { $wearer }.
-pointing-system-other-point-at-tile = { CAPITALIZE($otherName) } wskazuje na { $tileName }.
+pointing-system-point-at-tile = Wskazujesz na { $tileName }.
+pointing-system-other-point-at-tile = { CAPITALIZE(THE($otherName)) } points at the { $tileName }.
