@@ -1,3 +1,19 @@
+# SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 brainfood1183 <113240905+brainfood1183@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 liltenhead <104418166+liltenhead@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Lye <128915833+Lyroth001@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2024 wafehling <wafehling@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 pa.pecherskij <pa.pecherskij@interfax.ru>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 TheHolyAegis <Sanderkamphuis719@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
+
 # you shouldn't be creating new hints for every effect/trigger
 # try and reuse them so that a hint isn't a dead giveaway. -emo
 
@@ -59,9 +75,9 @@ xenoarch-trigger-tip-wrenching = Dokręcanie
 xenoarch-trigger-tip-prying = Podważanie
 xenoarch-trigger-tip-screwing = Wkręcanie
 xenoarch-trigger-tip-pulsing = Impulsowanie
-xenoarch-trigger-tip-pressure-low = Niskie ciśnienie
 xenoarch-trigger-tip-rolling = Wałkowanie
 xenoarch-trigger-tip-slicing = Cięcie
+xenoarch-trigger-tip-pressure-low = Niskie ciśnienie
 xenoarch-trigger-tip-pressure-high = Wysokie ciśnienie
 xenoarch-trigger-tip-examine = Dokładne oględziny
 xenoarch-trigger-tip-timer = Regularna samoaktywacja
@@ -76,9 +92,9 @@ xenoarch-trigger-examine-wrenching = Coś luźno się kręci.
 xenoarch-trigger-examine-prying = Z powierzchni unosi się panel.
 xenoarch-trigger-examine-screwing = Jest tam wypukły fragment z małym wgłębieniem.
 xenoarch-trigger-examine-pulsing = Z powierzchni artefaktu wystaje odsłonięta dioda.
-xenoarch-trigger-examine-timer = Powierzchnię pokrywają rzeźbienia i zadrapania... Ledwo da się dostrzec liczbę: [italic]{ $time }[/italic]
 xenoarch-trigger-examine-rolling = Zrób z tego pizzę.
 xenoarch-trigger-examine-slicing = Potnij to na kawałki.
+xenoarch-trigger-examine-timer = Powierzchnię pokrywają rzeźbienia i zadrapania... Ledwo da się dostrzec liczbę: [italic]{ $time }[/italic]
 
 ### Effects hints
 
