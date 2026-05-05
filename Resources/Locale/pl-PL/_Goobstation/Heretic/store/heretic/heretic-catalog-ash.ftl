@@ -42,6 +42,9 @@ knowledge-path-ash-s6-desc =
     Allows you to transmute any mask, four candles, a stun baton, and a liver to create a Mask of Madness.
     The mask instills fear into heathens who witness it, causing stamina damage, hallucinations, and insanity.
     It can also be forced onto a heathen, to make them unable to take it off...
+
+# Funky - Updated description to fit the new recipe.
+
 knowledge-path-ash-s7-name = Fiery Blade
 knowledge-path-ash-s7-desc =
     He returned, blade in hand, he swung and swung as the ash fell from the skies.
