@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2022 Morber <14136326+Morb0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 cmd-setalertlevel-desc = Ustaw bieżący kod alarmowy stacji dla grida, na którym stoi gracz
 cmd-setalertlevel-help = Użycie: setalertlevel <poziom> [zablokowany]
 cmd-setalertlevel-invalid-grid = Musisz znajdować się na gridzie stacji, dla której chcesz zmienić kod alarmowy.
