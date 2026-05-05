@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2022 Alex Evgrashin <aevgrashin@yandex.ru>
+# SPDX-FileCopyrightText: 2022 Alexander Evgrashin <evgrashin.adl@gmail.com>
+# SPDX-FileCopyrightText: 2022 Morbo <14136326+Morb0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 goodfeeling-artifact-1 = Czujesz się dobrze.
 goodfeeling-artifact-2 = Wszystko zdaje się iść w porządku.
 goodfeeling-artifact-3 = Masz co do tego dobre przeczucie.
