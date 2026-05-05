@@ -144,7 +144,7 @@ SPDX-License-Identifier: MIT
 
 [bold]4.[/bold] Nadzorca może rozdawać dowolną broń i pancerz ze zbrojowni. Obejmuje to osiągnięcia technologiczne z Rozwoju;
 
-[bold]4.[/bold] Nadzorca może swobonie prowadzić areszty.
+[bold]5.[/bold] Nadzorca może swobodnie przeprowadzać aresztowania.
 
   # Detektyw
 
