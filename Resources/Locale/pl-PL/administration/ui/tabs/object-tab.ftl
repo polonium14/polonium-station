@@ -1,3 +1,11 @@
+# SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 MetalSage <74924875+MetalSage@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Repo <47093363+Titian3@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Vigers Ray <60344369+VigersRay@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 object-tab-entity-id = ID encji
 object-tab-object-name = Nazwa obiektu
 object-tab-object-type = Typ obiektu:
