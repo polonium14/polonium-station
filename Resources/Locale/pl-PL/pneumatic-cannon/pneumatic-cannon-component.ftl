@@ -1,10 +1,17 @@
+# SPDX-FileCopyrightText: 2021 mirrorcult <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
+
 ### Loc for the pneumatic cannon.
 
 pneumatic-cannon-component-itemslot-name = Gas Tank
 
 ## Shown when trying to fire, but no gas
 
-pneumatic-cannon-component-fire-no-gas = { CAPITALIZE($cannon) } clicks, but no gas comes out.
+pneumatic-cannon-component-fire-no-gas = { CAPITALIZE(THE($cannon)) } clicks, but no gas comes out.
 
 ## Shown when changing power.
 
@@ -17,4 +24,4 @@ pneumatic-cannon-component-change-power =
 
 ## Shown when being stunned by having the power too high.
 
-pneumatic-cannon-component-power-stun = The pure force of { $cannon } knocks you over!
+pneumatic-cannon-component-power-stun = The pure force of { THE($cannon) } knocks you over!
