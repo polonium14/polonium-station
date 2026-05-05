@@ -5,6 +5,7 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+
 # this file is subject to getting its shit moved to other files at a later date#
 
 # arachnids
@@ -88,17 +89,17 @@ marking-VitiligoChestF = Rozprzestrzenione Bielactwo
 marking-VitiligoChestSpots = Plamy Bielactwa
 # moths
 marking-MothTrueButterfly = Skrzydła (Tęczowe)
-marking-MothFireflyOverlay-mothfirefly4 = Nakładka Świetlika
 marking-MothTrueButterfly-mothtruebutterfly1 = Paski
-marking-MothFirefly-mothfirefly1 = Podstawowy Kolor Świetlika
-marking-MothFirefly-mothfirefly3 = Trzeciorzędny Kolor Świetlika
 marking-MothTrueButterfly-mothtruebutterfly2 = Kropki
 marking-MothTrueButterfly-mothtruebutterfly3 = Skrzydła
 marking-MothGlowAntenna = Czułki (Świecące)
 marking-MothGlowAntenna-mothglowantenna = Czułki (Świecące)
 marking-MothFireflyOverlay = Nakładka Świetlika
-marking-MothFireflyOverlay-mothfirefly1 = Nakładka Świetlika
+marking-MothFireflyOverlay-mothfirefly4 = Nakładka Świetlika
 marking-MothFirefly = Skrzydła (Świetlik)
+marking-MothFirefly-mothfirefly1 = Podstawowy Kolor Świetlika
+marking-MothFireflyOverlay-mothfirefly1 = Nakładka Świetlika
+marking-MothFirefly-mothfirefly3 = Trzeciorzędny Kolor Świetlika
 marking-MothFirefly-mothfirefly2 = Skrzydła Świetlika
 marking-MothBee = Skrzydła (Trzmiel)
 # Frontier: stripes < Stripes
@@ -111,7 +112,6 @@ marking-MothBeetleTail-beetle1 = Kontur
 marking-MothBeetleTail-beetle2 = Skrzydła
 marking-MothBeetleTail-beetle3 = Połysk
 marking-MothBeetleHorn1 = Róg Chrząszcza (Rozwidlony)
-marking-MothSnoth-snoth3 = Trzeciorzędny
 marking-MothBeetleHorn1-mothbeetlehorn1 = Róg Chrząszcza (Rozwidlony)
 marking-MothBeetleHorn2 = Róg Chrząszcza (Lanca)
 marking-MothBeetleHorn2-mothbeetlehorn2 = Róg Chrząszcza (Lanca)
@@ -120,6 +120,7 @@ marking-MothBiggerEyes-mothbiggereyes = Większe Oczy
 marking-MothSnoth = Skrzydła (Ślimak)
 marking-MothSnoth-snoth1 = Skrzydła
 marking-MothSnoth-snoth2 = Skorupa
+marking-MothSnoth-snoth3 = Trzeciorzędny
 marking-MothGlasswing = Skrzydła (Przezroczyste)
 marking-MothGlasswing-glasswing1 = Zewnętrzne
 marking-MothGlasswing-glasswing2 = Wewnętrzne
