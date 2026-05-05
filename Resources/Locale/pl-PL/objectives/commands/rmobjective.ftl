@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 pa.pecherskij <pa.pecherskij@interfax.ru>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 # addobjectives
 cmd-rmobjective-desc = Usuwa zadanie z umysłu gracza.
 cmd-rmobjective-help = Użycie: rmobjective <nazwa gracza> <numer>
