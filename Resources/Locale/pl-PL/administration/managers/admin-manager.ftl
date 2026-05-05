@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Galactic Chimp <63882831+GalacticChimp@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 admin-manager-self-de-admin-message = { $exAdminName } odebrał sobie uprawnienia administratora.
 admin-manager-self-re-admin-message = { $newAdminName } ponownie nadał sobie uprawnienia administratora.
 admin-manager-became-normal-player-message = Teraz jesteś zwykłym graczem.
