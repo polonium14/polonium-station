@@ -1,4 +1,4 @@
-foreverweed-effect-longtime = Mam nadzieję, że nie będziesz chciał wkrótce zejść, haha, bo będziesz taki jeszcze PRZEZ DŁUGI czas, haha!!!!
+﻿foreverweed-effect-longtime = I hope you don't wanna come down any time soon haha cuz you're gonna be like that for a LONG time haha !!!!
 foreverweed-effect-parents = Zaprosiłem wszystkich twoich rodziców, rodzinę, przyjaciół i mentorów – wszyscy wpadają na cały dzień!!!!
 foreverweed-effect-paranoia-one = *puk puk*
 foreverweed-effect-paranoia-two = Coś próbuje się wydostać z twojego ekwipunku!
