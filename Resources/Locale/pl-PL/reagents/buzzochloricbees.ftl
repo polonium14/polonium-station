@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2021 Moony <moonheart08@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 buzzochloricbees-effect-oh-god-bees = Otaczają cię pszczoły, mnóstwo pszczół.
 buzzochloricbees-effect-its-the-bees = To są pszczoły, o boże, pszczoły.
 buzzochloricbees-effect-why-am-i-covered-in-bees = Wściekłe pszczoły cię pokrywają.
