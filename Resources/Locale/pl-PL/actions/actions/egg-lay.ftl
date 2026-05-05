@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 action-popup-lay-egg-user = Składasz jajo.
-action-popup-lay-egg-others = { CAPITALIZE($entity) } składa jajo.
+action-popup-lay-egg-others = { CAPITALIZE(THE($entity)) } lays an egg.
 action-popup-lay-egg-too-hungry = Potrzebujesz więcej pożywienia, zanim będziesz w stanie złożyć kolejne jajo!
