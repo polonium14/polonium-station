@@ -80,7 +80,7 @@ SPDX-License-Identifier: MIT
 
 [bold]3.[/bold] Oficerowie Ochrony mają pozwolenie na trzymanie wyciągniętej broni w trakcie normalnego patrolu, ale jest to wysoce niezalecane;
 
-[bold]4.[/bold] Oficerom Ochrony wolno trzymać wyciągniętą broń w trakcie aresztu;
+[bold]4.[/bold] Oficerom Ochrony wolno trzymać wyciągniętą broń w trakcie aresztowania;
 
 [bold]5.[/bold] Oficerowie Ochrony mogą żądać dostępu do innych departamentów w trakcie patroli;
 
