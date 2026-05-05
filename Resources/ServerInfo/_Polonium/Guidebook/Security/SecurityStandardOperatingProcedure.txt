@@ -106,7 +106,7 @@ SPDX-License-Identifier: MIT
 
 [bold]3.[/bold] Nadzorca musi zezwolić na rozprawę sądową w przypadkach określonych w [textlink="SPO Prawne" link="LegalSOP"], oraz ma obowiązek zezwolić podejrzanemu na spotkanie z jego wybranym reprezentantem prawnym w dowolnym momencie trwania wyroku. Czasomierz wyroku podejrzanego powinno się zapauzować na czas takich spotkań oraz wznawiać w momencie jego powrotu do celi;
 
-[bold]4.[/bold] Nadzorca ma obowiązek zezwolić podejrzanemu na prawnika [italic]w trakcie przesłuchań[/italic] tylko w przypadkach gdy zbrodnia jest poziomu III lub wyżej;
+[bold]4.[/bold] Nadzorca ma obowiązek zezwolić podejrzanemu na prawnika [italic]w trakcie przesłuchań[/italic] tylko w przypadkach, gdy zbrodnia jest poziomu III lub wyżej;
 
 [bold]5.[/bold] Nadzorca [bold]nie[/bold] może rozdawać żadnych broni ani pancerzy ze zbrojowni, z wyjątkiem sprzętu ochronnego, który został skradziony lub zgubiony. Skafandry mogą zostać wydane, jeśli potrzebne jest awaryjne operowanie w przestrzeni kosmicznej. Wyjątkami są zagrożenia dla całej stacji oraz terroryzm;
 
