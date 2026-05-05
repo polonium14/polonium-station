@@ -1,3 +1,12 @@
+# SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Riggle <27156122+RigglePrime@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
+
 ### Localization for role ban command
 
 cmd-roleban-desc = Banuje gracza z grania tą rolą
@@ -15,16 +24,16 @@ cmd-roleban-hint-duration-2 = 1 dzień
 cmd-roleban-hint-duration-3 = 3 dni
 cmd-roleban-hint-duration-4 = 1 tydzień
 cmd-roleban-hint-duration-5 = 2 tygodnie
-cmd-roleban-hint-duration-6 = 1 miesiąc
 cmd-roleban-hint-round = Numer rundy sytuacji
+cmd-roleban-hint-duration-6 = 1 miesiąc
 
 ### Localization for role unban command
 
 cmd-roleunban-desc = Zdejmuje ban na rolę gracza
-cmd-roleunban-help = Użycie: roleunban <id bana na rolę>
 cmd-roleunban-unable-to-parse-id =
     Nie można odczytać { $id } jako numeru id bana.
     { $help }
+cmd-roleunban-help = Użycie: roleunban <id bana na rolę>
 
 ## Completion result hints
 
@@ -40,11 +49,11 @@ cmd-rolebanlist-help = Użycie: <nazwa lub ID gracza> [zawrzyj odbanowane]
 cmd-rolebanlist-hint-1 = <nazwa lub ID gracza>
 cmd-rolebanlist-hint-2 = [zawrzyj odbanowane]
 cmd-roleban-minutes-parse = { $time } nie jest poprawną liczbą minut.\n{ $help }
-cmd-roleban-severity-parse = { $severity } nie jest poprawnym poziomem\n{ $help }.
+cmd-roleban-severity-parse = ${ severity } is not a valid severity\n{ $help }.
 cmd-roleban-arg-count = Niepoprawna liczba argumentów.
 cmd-roleban-job-parse = Rola { $job } nie istnieje.
-cmd-roleban-name-parse = Nie znaleziono gracza z taką nazwą.
 cmd-roleban-round-parse = "{ $round }" nie jest numerem rundy.
+cmd-roleban-name-parse = Nie znaleziono gracza z taką nazwą.
 cmd-roleban-existing = { $target } już ma bana na { $role }.
 cmd-roleban-success = Zbanowano { $target } z roli { $role } z powodem { $reason } { $length }.
 cmd-roleban-inf = permamentnie
