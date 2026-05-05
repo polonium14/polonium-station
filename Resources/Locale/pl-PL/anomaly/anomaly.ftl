@@ -1,3 +1,13 @@
+# SPDX-FileCopyrightText: 2023 0x6273 <0x40@keemail.me>
+# SPDX-FileCopyrightText: 2023 James Simonson <jamessimo89@gmail.com>
+# SPDX-FileCopyrightText: 2023 brainfood1183 <113240905+brainfood1183@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 anomaly-component-contact-damage = Anomalia przypala Twoją skórę!
 anomaly-vessel-component-anomaly-assigned = Anomalia przypisana do pojemnika.
 anomaly-vessel-component-not-assigned = Ten pojemnik nie jest przypisany do żadnej anomalii. Spróbuj użyć na nim skanera.
@@ -49,10 +59,10 @@ anomaly-sync-no-anomaly = Brak anomalii w zasięgu.
 anomaly-sync-examine-connected = Jest [color=darkgreen]podłączona[/color] do anomalii.
 anomaly-sync-examine-not-connected = Nie jest [color=darkred]podłączona[/color] do anomalii.
 anomaly-sync-connect-verb-text = Podłącz anomalię
-anomaly-sync-connect-verb-message = Podłącz pobliską anomalię do { $machine }.
-anomaly-generator-ui-title = Generator anomalii
+anomaly-sync-connect-verb-message = Attach a nearby anomaly to { THE($machine) }.
 anomaly-sync-disconnect-verb-text = Detach anomaly
-anomaly-sync-disconnect-verb-message = Detach the connected anomaly from { $machine }.
+anomaly-sync-disconnect-verb-message = Detach the connected anomaly from { THE($machine) }.
+anomaly-generator-ui-title = Generator anomalii
 anomaly-generator-fuel-display = Paliwo:
 anomaly-generator-cooldown = Czas odnowienia: [color=gray]{ $time }[/color]
 anomaly-generator-no-cooldown = Czas odnowienia: [color=gray]Gotowe[/color]
