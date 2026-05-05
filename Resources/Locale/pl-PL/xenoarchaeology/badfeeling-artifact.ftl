@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2022 Alex Evgrashin <aevgrashin@yandex.ru>
+# SPDX-FileCopyrightText: 2022 Alexander Evgrashin <evgrashin.adl@gmail.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 badfeeling-artifact-1 = Coś jest nie tak.
 badfeeling-artifact-2 = Czujesz dziwny ucisk w żołądku.
 badfeeling-artifact-3 = Instynkt próbuje cię przed czymś ostrzec.
