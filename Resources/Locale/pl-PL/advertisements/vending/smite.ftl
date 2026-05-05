@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 advertisement-smite-1 = SMITE! Ukarz swoje pragnienie!
 advertisement-smite-2 = Eldrycki wybuch cytryny i limonki!
 advertisement-smite-3 = Sprzedano ponad milion napojów!
