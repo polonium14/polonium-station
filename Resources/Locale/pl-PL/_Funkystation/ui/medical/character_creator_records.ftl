@@ -1,4 +1,4 @@
-# tab headers
+﻿# tab headers
 humanoid-profile-editor-cd-records-tab = Akta
 # headers
 humanoid-profile-editor-cd-records-header-general = Informacje ogólne
