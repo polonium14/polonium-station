@@ -127,6 +127,10 @@
     - !type:DepartmentTimeRequirement
       department: Security
       time: 10800 #3 hrs
+    - !type:TraitsRequirement # Funky
+      inverted: true
+      traits:
+      - Pacifist
     HeadOfSecurity:
     - !type:DepartmentTimeRequirement
       department: Security
@@ -141,10 +145,18 @@
     - !type:DepartmentTimeRequirement
       department: Security
       time: 10800 #3 hrs
+    - !type:TraitsRequirement # Funky
+      inverted: true
+      traits:
+      - Pacifist
     Warden:
     - !type:DepartmentTimeRequirement
       department: Security
       time: 28800 #8 hrs
+    - !type:TraitsRequirement # Funky
+      inverted: true
+      traits:
+      - Pacifist
     ResearchAssistant:
     - !type:OverallPlaytimeRequirement
       time: 0
