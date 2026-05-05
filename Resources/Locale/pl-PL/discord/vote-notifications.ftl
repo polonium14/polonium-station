@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2024 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 custom-vote-webhook-name = Przeprowadzono Głosowanie Niestandardowe
 custom-vote-webhook-footer = serwer: { $serverName }, runda: { $roundId } { $runLevel }
 custom-vote-webhook-cancelled = **Głosowanie zostało anulowane**
