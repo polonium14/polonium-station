@@ -1,3 +1,20 @@
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 MilenVolf <63782763+MilenVolf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Morb <14136326+Morb0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Mr. 27 <45323883+Dutch-VanDerLinde@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2024 Verm <32827189+Vermidia@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Erisiaa <185582649+Erisiaa@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Fr0goo <153249069+Fr0goo@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Mish <bluscout78@yahoo.com>
+# SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 jackel234 <52829582+jackel234@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 # Names
 chat-emote-name-scream = Krzyk
 chat-emote-name-laugh = Smiech
@@ -6,11 +23,11 @@ chat-emote-name-sigh = Wzdech
 chat-emote-name-whistle = Gwizd
 chat-emote-name-crying = Płakanie
 chat-emote-name-squish = Skłisz
-chat-emote-name-chitter = Ćwierk
 chat-emote-name-bubble = Bubble
 chat-emote-name-slosh = Slosh
 chat-emote-name-pop = Pop
 chat-emote-name-fizz = Fizz
+chat-emote-name-chitter = Ćwierk
 chat-emote-name-squeak = Pisk
 chat-emote-name-thump = Tupnij Ogonem
 chat-emote-name-click = Klik
@@ -20,8 +37,8 @@ chat-emote-name-snap = Pstryknij Palcami
 chat-emote-name-salute = Oddaj Cześć
 chat-emote-name-gasp = Dusić się
 chat-emote-name-deathgasp = Ostatni Oddech
-chat-emote-name-buzz = Bzyczenie
 chat-emote-name-boop = Boop
+chat-emote-name-buzz = Bzyczenie
 chat-emote-name-weh = Weh
 chat-emote-name-hew = Hew
 chat-emote-name-chirp = Ćwir
@@ -37,25 +54,25 @@ chat-emote-name-monkeyscreeches = Skrzek małpy
 chat-emote-name-robotbeep = Robot (bip)
 chat-emote-name-yawn = Ziewnięcie
 chat-emote-name-snore = Chrapanie
+chat-emote-name-gurgle = Gurgle
 # Message
 chat-emote-msg-scream = krzyczy!
-chat-emote-name-gurgle = Gurgle
 chat-emote-msg-laugh = śmieje się.
 chat-emote-msg-honk = honk.
 chat-emote-msg-sigh = wzdycha.
 chat-emote-msg-whistle = gwiżdże.
 chat-emote-msg-crying = płacze.
 chat-emote-msg-squish = chlupocze.
-chat-emote-msg-chitter = ćwierka.
 chat-emote-msg-bubble = bubbles.
 chat-emote-msg-slosh = sloshes.
 chat-emote-msg-pop = pops.
 chat-emote-msg-fizz = fizzes.
+chat-emote-msg-chitter = ćwierka.
 chat-emote-msg-squeak = piszczy.
-chat-emote-msg-thump = tupa swoim ogonem.
+chat-emote-msg-thump = thumps { POSS-ADJ($entity) } tail.
 chat-emote-msg-click = klika.
 chat-emote-msg-clap = klaszcze!
-chat-emote-msg-clap-single = klaszcze w swoje dłonie.
+chat-emote-msg-clap-single = claps { POSS-ADJ($entity) } hands together.
 chat-emote-msg-snap = pstryka { POSS-ADJ($entity) } palcami.
 chat-emote-msg-salute = salutuje.
 chat-emote-msg-gasp = dusi się.
