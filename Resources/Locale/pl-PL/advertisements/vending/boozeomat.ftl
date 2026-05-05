@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2021 Visne <39844191+Visne@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+# SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 advertisement-boozeomat-1 = Mam nadzieję, że nikt nie poprosi mnie o cholerną herbatkę...
 advertisement-boozeomat-2 = Alkohol to przyjaciel ludzkości. Czy porzuciłbyś przyjaciela?
 advertisement-boozeomat-3 = Z prawdziwą przyjemnością Cię obsłużę!
