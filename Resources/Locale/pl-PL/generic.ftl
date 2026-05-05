@@ -1,7 +1,7 @@
 ### Generic, general words, which fit into multiple contexts
 
-generic-article-a = to
 generic-not-available-shorthand = N/D
+generic-article-a = to
 generic-article-an = to
 generic-unknown = nieznany
 generic-unknown-title = Nieznany
