@@ -1,13 +1,25 @@
+# SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Galactic Chimp <63882831+GalacticChimp@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 mirrorcult <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2024 Brandon Hu <103440971+Brandon-Huu@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 beck-thompson <107373427+beck-thompson@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 veprolet <68151557+veprolet@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
+
 ### Solution transfer component
 
-comp-solution-transfer-fill-normal = You fill { $target } with { $amount }u from { $owner }.
-comp-solution-transfer-fill-fully = You fill { $target } to the brim with { $amount }u from { $owner }.
-comp-solution-transfer-transfer-solution = You transfer { $amount }u to { $target }.
+comp-solution-transfer-fill-normal = You fill { THE($target) } with { $amount }u from { THE($owner) }.
+comp-solution-transfer-fill-fully = You fill { THE($target) } to the brim with { $amount }u from { THE($owner) }.
+comp-solution-transfer-transfer-solution = You transfer { $amount }u to { THE($target) }.
 
 ## Displayed when trying to transfer to a solution, but either the giver is empty or the taker is full
 
-comp-solution-transfer-is-empty = { CAPITALIZE($target) } is empty!
-comp-solution-transfer-is-full = { CAPITALIZE($target) } is full!
+comp-solution-transfer-is-empty = { CAPITALIZE(THE($target)) } is empty!
+comp-solution-transfer-is-full = { CAPITALIZE(THE($target)) } is full!
 
 ## Displayed in change transfer amount verb's name
 
