@@ -172,7 +172,7 @@ SPDX-License-Identifier: MIT
 
 [bold]1.[/bold] Obowiązują wskazania 1, 2, 3, 4 i 5 z [color=green]Kodu Zielonego[/color];
 
-[bold]2.[/bold] Wskazania 2 i 3 przechodzą z [color=darkblue]Kodu Niebieskiego[/color];
+[bold]2.[/bold] Obowiązują wskazania 2 i 3 z [color=darkblue]Kodu Niebieskiego[/color];
 
 [bold]3.[/bold] Detektywowi wolno nosić dowolne uzbrojenie ze zbrojowni, za pozwoleniem [color=#cb0000]Nadzorcy Ochrony[/color], ale nie więcej niż jedną na raz. Wyjątkami są zagrożenia dla całej stacji, oraz terroryzmu.
 </Document>
