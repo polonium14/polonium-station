@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2023 Tom Leys <tom@crump-leys.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 cargo-gifts-event-announcement = Gratulacje! { $sender } zdecydowało się wysłać { $description } do { $dest } stacji. Wszystko dotrze z następną partią ładunku.
 cargo-gift-default-description = paczkę prezentów
 cargo-gift-default-sender = NanoTrasen
