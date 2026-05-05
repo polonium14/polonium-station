@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2024 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Hannah Giovanna Dawson <karakkaraz@gmail.com>
+# SPDX-FileCopyrightText: 2024 Vasilis <vasilis@pikachu.systems>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 admin-ui-baby-jail-window-title = Więzienie dla nowicjuszy
 admin-ui-baby-jail-enabled = Więzienie dla nowicjuszy włączone
 admin-ui-baby-jail-disabled = Więzienie dla nowicjuszy wyłączone
