@@ -22,7 +22,7 @@ SPDX-License-Identifier: MIT
 
 [bold]4.[/bold] Komendant ma obowiązek zezwolić podejrzanemu na dostęp do prawnika [italic]w trakcie przesłuchań[/italic] tylko w przypadkach, gdy zbrodnia jest poziomu III lub wyżej;
 
-[bold]5.[/bold] Komendant powinien podążać za tymi samymi wskazaniami co [color=#cb0000]Nadzorca Ochrony[/color] dla sprzętu ze zbrojowni, mobilnych błysków oraz rozstawianych barier;
+[bold]5.[/bold] Komendant powinien stosować się do tych samych wytycznych, co [color=#cb0000]Nadzorca Ochrony[/color] dla sprzętu ze zbrojowni, mobilnych błysków oraz rozstawianych barier;
 
 [bold]6.[/bold] Komendant [bold]nie[/bold] ma zezwolenia aby zabierać i nosić sprzęt ze zbrojowni;
 
