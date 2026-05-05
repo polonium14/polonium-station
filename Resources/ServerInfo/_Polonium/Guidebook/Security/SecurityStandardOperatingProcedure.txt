@@ -64,7 +64,7 @@ SPDX-License-Identifier: MIT
 
 [bold]4.[/bold] Oficerom Ochrony nie wolno wyciągać żadnej broni, dopóki podejrzany nie podejmie próby ucieczki lub nie stanie się aktywnie wrogi;
 
-[bold]5.[/bold] Oficerowie Ochrony [bold]nie[/bold] mogą żądać dostępu do innych departamentów w trakcie patroli. Jednakże, proszenie o dostęp od [color=#9fed58]Kierownika Personelu[/color] jest akceptowalne;
+[bold]5.[/bold] Oficerowie Ochrony [bold]nie[/bold] mogą żądać dostępu do innych departamentów w trakcie patroli. Jednakże, prośby o dostęp skierowane do [color=#9fed58]Kierownika Personelu[/color] są akceptowalne;
 
 [bold]6.[/bold] Oficerowie Ochrony [bold]nie[/bold] mają pozwolenia na trzymanie wyciągniętej broni w trakcie normalnego patrolu;
 
