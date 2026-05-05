@@ -1,3 +1,14 @@
+# SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Galactic Chimp <63882831+GalacticChimp@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Errant <35878406+dmnct@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Menshin <Menshin@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 brainfood1183 <113240905+brainfood1183@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 pa.pecherskij <pa.pecherskij@interfax.ru>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 cuffable-component-cannot-interact-message = Nie możesz tego zrobić!
 cuffable-component-cannot-remove-cuffs-too-far-message = Jesteś za daleko, aby usunąć kajdanki.
 cuffable-component-start-uncuffing-self = Zaczynasz boleśnie wywijać się z kajdanek.
