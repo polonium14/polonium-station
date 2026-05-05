@@ -46,7 +46,6 @@ ent-DefaultStationBeaconSalvDocks = { ent-DefaultStationBeaconSupply }
 ent-DefaultStationBeaconSupermatter = { ent-DefaultStationBeaconEngineering }
     .suffix = Supermateria
     .desc = { ent-DefaultStationBeaconEngineering.desc }
-# Reaktor Hiperwymiarowy Fuzyjno-Torusowy
 ent-DefaultStationBeaconHFR = { ent-DefaultStationBeaconEngineering }
     .suffix = Strefa RHFT
     .desc = { ent-DefaultStationBeaconEngineering.desc }
