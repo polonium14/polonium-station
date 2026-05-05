@@ -100,7 +100,7 @@ SPDX-License-Identifier: MIT
 
 ## Kod Zielony
 
-[bold]1.[/bold] Nadzorca [bold]nie[/bold] może przeprowadzać aresztów jeśli są aktywni [color=#cb0000]Oficerowie Ochrony[/color];
+[bold]1.[/bold] Nadzorca [bold]nie[/bold] może przeprowadzać aresztowań, jeśli są aktywni [color=#cb0000]Oficerowie Ochrony[/color];
 
 [bold]2.[/bold] Nadzorca musi przeprowadzić pełne i szczególowe przszukanie każdego więźnia, włącznie z ich kieszeniami, PDA i kieszeniami płaszczów;
 
