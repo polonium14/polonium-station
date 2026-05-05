@@ -150,7 +150,7 @@ SPDX-License-Identifier: MIT
 
 ## Kod Zielony
 
-[bold]1.[/bold] Detektywowi wolno pomagać innym [color=#cb0000]Oficerom Ochrony[/color] z wszystkimi obowiązkami patrolowymi. To wlicza zatrzymania, przeszukania i areszty zgodnie z obecnym kodem zagrożenia. Powinni jednak skupić się na śledztwach i zbieraniu dowodów;
+[bold]1.[/bold] Detektywowi wolno pomagać innym [color=#cb0000]Oficerom Ochrony[/color] ze wszystkimi obowiązkami patrolowymi. Obejmuje to zatrzymania, przeszukania i aresztowania zgodnie z obecnym kodem zagrożenia. Powinni jednak skupić się na śledztwach i zbieraniu dowodów;
 
 [bold]2.[/bold] Detektyw ma podążać za całym SPO Oficera Ochrony przy zatrzymaniach, przeszukaniach i aresztach, zgodnie z obecnym kodem zagrożenia;
 
