@@ -102,7 +102,7 @@ SPDX-License-Identifier: MIT
 
 [bold]1.[/bold] Nadzorca [bold]nie[/bold] może przeprowadzać aresztowań, jeśli są aktywni [color=#cb0000]Oficerowie Ochrony[/color];
 
-[bold]2.[/bold] Nadzorca musi przeprowadzić pełne i szczególowe przszukanie każdego więźnia, włącznie z ich kieszeniami, PDA i kieszeniami płaszczów;
+[bold]2.[/bold] Nadzorca musi przeprowadzić pełne i szczegółowe przeszukanie każdego więźnia, włącznie z ich kieszeniami, PDA i kieszeniami płaszczy;
 
 [bold]3.[/bold] Nadzorca musi zezwolić na rozprawę sądową w przypadkach określonych w [textlink="SPO Prawne" link="LegalSOP"], oraz ma obowiązek zezwolić podejrzanemu na spotkanie z jego wybranem reprezentantem prawnym w dowolnym momencie ich wyroku. Czasomierz wyroku podejrzanego powinno się zapauzować na czas takich spotkań oraz odpauzowaywać w momencie ich powrotu do celi;
 
