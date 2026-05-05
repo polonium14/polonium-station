@@ -1,16 +1,23 @@
-# Generic
-lathe-category-circuitry = Obwody
+# SPDX-FileCopyrightText: 2024 John Space <bigdumb421@gmail.com>
+# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 lathe-category-clothing = Ubrania
-lathe-category-lights = Światła
+# Generic
+lathe-category-ammo = Amunicja
 lathe-category-machines = Maszyny
-lathe-category-parts = Części
+lathe-category-circuitry = Obwody
 lathe-category-tiles = Płytki
+lathe-category-lights = Światła
+lathe-category-parts = Części
+lathe-category-robotics = Robotyka
 lathe-category-tools = Narzędzia
 lathe-category-weapons = Broń
-# Biogen
-lathe-category-food = Jedzenie
-lathe-category-chemicals = Chemikalia
-lathe-category-materials = Materiały
 # Circuit imprinter
 lathe-category-computers = Komputery
 lathe-category-engineering = Inżynieryjne
@@ -30,11 +37,12 @@ lathe-category-wood = Drewniane
 # Science
 lathe-category-mechs = Mechy
 lathe-category-modules = Moduły
-lathe-category-robotics = Robotyka
-# Security TechFab
-lathe-category-ammo = Amunicja
+# Biogen
+lathe-category-food = Jedzenie
+lathe-category-chemicals = Chemikalia
 lathe-category-boxes = Pudełka
 lathe-category-magazines = Magazynki
+lathe-category-materials = Materiały
 # Uniform
 lathe-category-bedsheets = Prześcieradła
 lathe-category-carpets = Dywany
