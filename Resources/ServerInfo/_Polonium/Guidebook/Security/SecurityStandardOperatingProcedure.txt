@@ -14,7 +14,7 @@ SPDX-License-Identifier: MIT
 
 ## Kod Zielony
 
-[bold]1.[/bold] Komendant może przeprowadzać areszty na tych samych warunkach co [color=#cb0000]Oficerowie Ochrony[/color];
+[bold]1.[/bold] Komendant może przeprowadzać aresztowania na tych samych warunkach co [color=#cb0000]Oficerowie Ochrony[/color];
 
 [bold]2.[/bold] Komendant może nosić w pełni załadowany pasek ochrony oraz standartową broń boczną (np. VIS MPS). Chociaż wolno mu nosić jego unikalny X-01 Multifazowy, jest to odradzane ze względu na obawy bezpieczeństwa. Na niektórych stacjach Komendant dostaje również w swoim biurze dodatkową broń, wolno mu ją nosić, ale jest to niezalecane;
 
