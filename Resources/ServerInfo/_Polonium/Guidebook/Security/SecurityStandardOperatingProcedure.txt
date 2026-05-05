@@ -86,7 +86,7 @@ SPDX-License-Identifier: MIT
 
 [bold]6.[/bold] Oficerowie Ochrony mogą losowo przeszukiwać załogantów, ale nie wolno im używać żadnej formy siły, chyba że załogant jest przesadnie wrogi. Załoganci, którzy odmawiają przeszukania, mogą być obezwładnieni i zakajdankowani na czas przeszukania;
 
-[bold]7.[/bold] Oficerowie Ochrony mogą zostawiać więźniów w kajdankach jeśli są oni wrogo nastawieni.
+[bold]7.[/bold] Oficerowie Ochrony mogą zostawiać więźniów w kajdankach, jeśli są oni wrogo nastawieni.
 
 ## Kod Czerwony
 
