@@ -158,7 +158,7 @@ SPDX-License-Identifier: MIT
 
 [bold]4.[/bold] Detektyw może nosić w pełni wyposażony pas ochrony;
 
-[bold]5.[/bold] Detektyw może nosić ubrania z poza ochrony za zezwoleniem [color=#1b67a5]Komendanta[/color] w celu prowadzenia śledztwa pod przykrywką. Jednak, mają obowiązek nosić swoje [color=#cb0000]ID ochrony[/color] cały ten czas;
+[bold]5.[/bold] Detektyw może nosić ubrania spoza departamentu ochrony za zezwoleniem [color=#1b67a5]Komendanta[/color] w celu prowadzenia śledztwa pod przykrywką. Mają jednak obowiązek nosić swoje [color=#cb0000]ID ochrony[/color] przez cały ten czas;
 
 [bold]6.[/bold] Kiedy nie operuje pod przykrywką, Detektyw powinien podążać za normalnymi wskazaniami [color=#cb0000]Oficerów Ochrony[/color] do ubioru, z wyjątkiem że wszystkie unikalne ubrania detektywa są również dozwolone.
 
