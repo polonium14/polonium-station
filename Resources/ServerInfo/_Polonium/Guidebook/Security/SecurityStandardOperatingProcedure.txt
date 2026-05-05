@@ -104,7 +104,7 @@ SPDX-License-Identifier: MIT
 
 [bold]2.[/bold] Nadzorca musi przeprowadzić pełne i szczegółowe przeszukanie każdego więźnia, włącznie z ich kieszeniami, PDA i kieszeniami płaszczy;
 
-[bold]3.[/bold] Nadzorca musi zezwolić na rozprawę sądową w przypadkach określonych w [textlink="SPO Prawne" link="LegalSOP"], oraz ma obowiązek zezwolić podejrzanemu na spotkanie z jego wybranem reprezentantem prawnym w dowolnym momencie ich wyroku. Czasomierz wyroku podejrzanego powinno się zapauzować na czas takich spotkań oraz odpauzowaywać w momencie ich powrotu do celi;
+[bold]3.[/bold] Nadzorca musi zezwolić na rozprawę sądową w przypadkach określonych w [textlink="SPO Prawne" link="LegalSOP"], oraz ma obowiązek zezwolić podejrzanemu na spotkanie z jego wybranym reprezentantem prawnym w dowolnym momencie trwania wyroku. Czasomierz wyroku podejrzanego powinno się zapauzować na czas takich spotkań oraz wznawiać w momencie jego powrotu do celi;
 
 [bold]4.[/bold] Nadzorca ma obowiązek zezwolić podejrzanemu na prawnika [italic]w trakcie przesłuchań[/italic] tylko w przypadkach gdy zbrodnia jest poziomu III lub wyżej;
 
