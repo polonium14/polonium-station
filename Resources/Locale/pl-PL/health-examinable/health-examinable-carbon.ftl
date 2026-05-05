@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto <gradientvera@outlook.com>
+# SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 health-examinable-carbon-none = Brak widocznych śladów obrażeń.
 health-examinable-carbon-Slash-8 = [color=yellow]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } powierzchowne cięcie.[/color]
 health-examinable-carbon-Slash-15 = [color=yellow]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } kilka drobnych skaleczeń.[/color]
@@ -36,9 +43,9 @@ health-examinable-carbon-Shock-75 = [color=lightgoldenrodyellow]{ CAPITALIZE(SUB
 health-examinable-carbon-Shock-100 = [color=lightgoldenrodyellow]{ CAPITALIZE(POSS-ADJ($target)) } ciało ma ekstremalne oparzenia elektryczne![/color]
 health-examinable-carbon-Shock-200 = [color=lightgoldenrodyellow]{ CAPITALIZE(POSS-ADJ($target)) } ciało jest całkowicie usmażone![/color]
 health-examinable-carbon-Cold-8 = [color=lightblue]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } lekkie odmrożenia na końcach { POSS-ADJ($target) } palców.[/color]
-health-examinable-carbon-Cold-15 = [color=lightblue]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } odmrożenia pierwszego stopnia na kończynach.[/color]
-health-examinable-carbon-Cold-30 = [color=lightblue]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } odmrożenia drugiego stopnia na kończynach.[/color]
-health-examinable-carbon-Cold-50 = [color=lightblue]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } poważne odmrożenia trzeciego stopnia na kończynach.[/color]
+health-examinable-carbon-Cold-15 = [color=lightblue]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } first-degree frostbite at the ends of { POSS-ADJ($target) } extremities.[/color]
+health-examinable-carbon-Cold-30 = [color=lightblue]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } second-degree frostbite on { POSS-ADJ($target) } extremities.[/color]
+health-examinable-carbon-Cold-50 = [color=lightblue]{ CAPITALIZE(SUBJECT($target)) } { CONJUGATE-HAVE($target) } major third-degree frostbite on { POSS-ADJ($target) } extremities.[/color]
 health-examinable-carbon-Cold-75 = [color=lightblue]{ CAPITALIZE(POSS-ADJ($target)) } kończyny są ciemne, zimne i martwicze.[/color]
 health-examinable-carbon-Cold-100 = [color=lightblue]{ CAPITALIZE(POSS-ADJ($target)) } ciało jest pokryte rozległymi odmrożeniami czwartego stopnia.[/color]
 health-examinable-carbon-Cold-200 = [color=lightblue]{ CAPITALIZE(POSS-ADJ($target)) } ciało jest całkowicie zamarznięte![/color]
