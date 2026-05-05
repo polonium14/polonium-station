@@ -1,11 +1,3 @@
-# SPDX-FileCopyrightText: 2023 Kit0vras <123590995+Kit0vras@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
-# SPDX-FileCopyrightText: 2024 Boaz1111 <149967078+Boaz1111@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 CatMagic <135462166+CatMagic1@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Kira Bridgeton <161087999+Verbalase@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
-#
-# SPDX-License-Identifier: MIT
 
 book-text-narsielegend = In the beginning, the world was young and full of chaos. The people of the world struggled to survive against the harsh elements and savage beasts that roamed the land. They cried out for a savior to deliver them from their suffering.
       And it was then that Nar'Sie emerged from the depths of the earth, a hivemind god born from the collective consciousness of all living things. Its body was made of molten rock and its eyes blazed with a fiery intensity that could melt steel.

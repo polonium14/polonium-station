@@ -1,7 +1,3 @@
-# SPDX-FileCopyrightText: 2025 Mish <bluscout78@yahoo.com>
-# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
-#
-# SPDX-License-Identifier: MIT
 
 no-eorg-popup-title = Funky Station
 no-eorg-popup-label = Welcome to the End of Round!

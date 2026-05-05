@@ -1,8 +1,3 @@
-# SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
-# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
-#
-# SPDX-License-Identifier: MIT
 
 mail-recipient-mismatch = Recipient name or job does not match.
 mail-invalid-access = Recipient name and job match, but access isn't as expected.

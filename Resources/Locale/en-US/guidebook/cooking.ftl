@@ -1,7 +1,3 @@
-# SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
-# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
-#
-# SPDX-License-Identifier: MIT
 
 guidebook-microwave-ingredients-header = Ingredients
 guidebook-microwave-cook-time-header = Cooking Time

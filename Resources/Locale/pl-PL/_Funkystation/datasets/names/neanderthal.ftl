@@ -1,9 +1,3 @@
-# SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
-# SPDX-FileCopyrightText: 2025 pa.pecherskij <pa.pecherskij@interfax.ru>
-# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
-# SPDX-FileCopyrightText: 2025 nikitosych <admin@ss14.pl>
-#
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 names-neanderthal-data-set-1 = Uga
 names-neanderthal-data-set-2 = Buga

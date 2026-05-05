@@ -1,9 +1,3 @@
-# SPDX-FileCopyrightText: 2023 brainfood1183 <113240905+brainfood1183@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
-# SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
-#
-# SPDX-License-Identifier: MIT
 
 advertisement-happyhonk-1 = Honk! Honk! Why not order a Happy Honk Meal today?
 advertisement-happyhonk-2 = Clowns deserve a hug, if you see one be sure to show your appreciation.
