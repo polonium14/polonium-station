@@ -4,6 +4,7 @@
 #
 # SPDX-License-Identifier: MIT
 
+
 # All spelling mistakes and broken english are intentional!
 # I hate saving paper contents in ftl files
 
