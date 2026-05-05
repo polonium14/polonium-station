@@ -1,5 +1,17 @@
-price-gun-pricing-result = Urządzenie wycenia { $object } na { $price } speso.
+# SPDX-FileCopyrightText: 2022 CommieFlowers <rasmus.cedergren@hotmail.com>
+# SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 rolfero <45628623+rolfero@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2024 ike709 <ike709@github.com>
+# SPDX-FileCopyrightText: 2024 ike709 <ike709@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
+price-gun-pricing-result = The device deems { THE($object) } to be worth { $price } spesos.
 price-gun-verb-text = Wycena
-price-gun-verb-message = Wyceń { $object }.
-price-gun-bounty-complete = Urządzenie potwierdza spełnienie rządania przez zawartość pojemnika.
+price-gun-verb-message = Appraise { THE($object) }.
 price-gun-salvjob-complete = Urządzenie potwierdza spełnienie rządania odzyskowego przez zawartość pojemnika.
+price-gun-bounty-complete = Urządzenie potwierdza spełnienie rządania przez zawartość pojemnika.
