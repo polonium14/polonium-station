@@ -110,7 +110,7 @@ SPDX-License-Identifier: MIT
 
 [bold]5.[/bold] Nadzorca [bold]nie[/bold] może rozdawać żadnych broni ani pancerzy ze zbrojowni, z wyjątkiem sprzętu ochronnego, który został skradziony lub zgubiony. Skafandry mogą zostać wydane, jeśli potrzebne jest awaryjne operowanie w przestrzeni kosmicznej. Wyjątkami są zagrożenia dla całej stacji oraz terroryzm;
 
-[bold]6.[/bold] Nadzorca może nosić w pełni załadowany pasek ochrony oraz standartową broń boczną (np. VIS MPS). Chociaż wolno mu nosić jego unikalną strzelbę energetyczną, jest to odradzane ze względu na obawy bezpieczeństwa.;
+[bold]6.[/bold] Nadzorca może nosić w pełni załadowany pasek ochrony oraz standardową broń boczną (np. VIS MPS). Chociaż wolno mu nosić jego unikalną strzelbę energetyczną, jest to odradzane ze względu na obawy bezpieczeństwa;
 
 [bold]7.[/bold] Nadzorca [bold]nie[/bold] może stawiać mobilnych błysków w więzieniu;
 
