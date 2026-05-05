@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2021 Visne <39844191+Visne@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+# SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 advertisement-snack-1 = Spróbuj naszego nowego batonika nugatowego!
 advertisement-snack-2 = Dwa razy więcej kalorii za połowę ceny!
 advertisement-snack-3 = Najzdrowsze!
