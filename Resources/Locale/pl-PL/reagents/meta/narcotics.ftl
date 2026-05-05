@@ -1,3 +1,25 @@
+# SPDX-FileCopyrightText: 2022 Alex Evgrashin <aevgrashin@yandex.ru>
+# SPDX-FileCopyrightText: 2022 Nairod <110078045+Nairodian@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2023 Alekshhh <44923899+Alekshhh@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Feluk6174 <77207907+Feluk6174@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 GoodWheatley <109803540+GoodWheatley@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+# SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Kira Bridgeton <161087999+Verbalase@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Steve <marlumpy@gmail.com>
+# SPDX-FileCopyrightText: 2024 dffdff2423 <dffdff2423@gmail.com>
+# SPDX-FileCopyrightText: 2024 marc-pelletier <113944176+marc-pelletier@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 potato1234_x <79580518+potato1234x@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 reagent-name-desoxyephedrine = dezoksyefedryna
 reagent-desc-desoxyephedrine = Bardziej skuteczna efedryna, z bardziej aktywnymi działaniami niepożądanymi. Wymaga mniejszej ilości dawek, aby wyleczyć narkolepsję.
 reagent-name-ephedrine = efedryna
@@ -16,9 +38,9 @@ reagent-name-impedrezene = impedryzyna
 reagent-desc-impedrezene = Narkotyk, który osłabia procesy myślowe poprzez spowolnienie wyższych funkcji komórek mózgowych.
 reagent-name-space-drugs = kosmiczny miraż
 reagent-desc-space-drugs = Nielegalny związek chemiczny powodujący szereg efektów, m.in. utratę równowagi i zaburzenia widzenia.
-reagent-name-nocturine = nokturyna
 reagent-name-forever-weed = wieczne ziele
 reagent-desc-forever-weed = Pieczenie tęczowej marihuany spowodowało zmiany chemiczne. Nie metabolizuje się całkowicie samodzielnie, wywołuje halucynacje i paranoję.
+reagent-name-nocturine = nokturyna
 reagent-desc-nocturine = Wysoce skuteczny środek uspokajający i nasenny, opracowany przez Syndykat do operacji tajnych. Bilet w jedną stronę do miasta Honk-Shoo.
 reagent-name-mute-toxin = niemotoksyna
 reagent-desc-mute-toxin = Gęsta substancja chemiczna pokrywająca struny głosowe, uniemożliwiająca użytkownikowi mówienie podczas metabolizmu.
@@ -29,12 +51,15 @@ reagent-desc-tear-gas = Substancja chemiczna powodująca silne podrażnienia i p
 reagent-name-happiness = uszczęśliwienie
 reagent-desc-happiness = Wypełnia ekstatycznym odrętwieniem i powoduje niewielkie uszkodzenie mózgu. Silnie uzależnia. Przedawkowanie powoduje nagłe wahania nastroju.
 reagent-name-nitrosyl-plasmide = nitrozylowy plazmid
-reagent-desc-nitrosyl-plasmide = Silny środek pobudzający, zapobiegający senności, oszołomieniu i powaleniu.
 reagent-name-cryanobalamin = krianobalamina
 reagent-desc-cryanobalamin = Dawniej popularny dodatek do napojów energetycznych, który służył do przywracania wytrzymałości. Obecnie zakazany w użytku komercyjnym ze względu na właściwości rakotwórcze.
-nicotine-effect-dull-ache = Czujesz lekki ból w klatce piersiowej.
-nicotine-effect-sharp-pain = Czujesz ostry ból w klatce piersiowej.
+reagent-desc-nitrosyl-plasmide = Silny środek pobudzający, zapobiegający senności, oszołomieniu i powaleniu.
+
+## can't put it in a new file...
+
 reagent-name-liftloversspecial = pudzian specjal
 reagent-desc-liftloversspecial = Koktajl chemiczny, który szybko przywraca wytrzymałość. Pomimo oficjalnego zakazu, pozostaje popularnym napojem na czarnym rynku wśród miłośników fitnessu. Rakotwórczy w dużych dawkach.
 reagent-name-morphine = morfina
 reagent-desc-morphine = Silny środek przeciwbólowy, który pozwala pacjentowi na bezbolesne poddanie się zabiegowi chirurgicznemu, nawet w stanie przytomności. Silnie uzależniający w przypadku nadużywania. Przedawkowanie może powodować trudności w oddychaniu.
+nicotine-effect-dull-ache = Czujesz lekki ból w klatce piersiowej.
+nicotine-effect-sharp-pain = Czujesz ostry ból w klatce piersiowej.
