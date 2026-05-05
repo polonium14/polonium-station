@@ -122,7 +122,7 @@ SPDX-License-Identifier: MIT
 
 [bold]11.[/bold] Nadzorca powinien stosować się do tych samych wytycznych co [color=#cb0000]Oficerowie Ochrony[/color] odnośnie ubioru, z tym wyjątkiem, że wszystkie unikalne ubrania Nadzorcy są również dozwolone;
 
-[bold]12.[/bold] Nadzorca jest zachęcany aby podążał za [textlink="Zasadami Postępowania Ochrony" link="RulesOfConduct"], ponieważ stawia to dobry przykład dla [color=#cb0000]Kadetów Ochrony[/color] oraz wspiera zaufanie publiczne do Ochrony.
+[bold]12.[/bold] Zachęca się Nadzorcowi, aby przestrzegał [textlink="Zasad Postępowania Ochrony" link="RulesOfConduct"], ponieważ daje to dobry przykład dla [color=#cb0000]Kadetów Ochrony[/color] oraz wspiera zaufanie publiczne do Ochrony.
 
 ## Kod Niebieski
 
