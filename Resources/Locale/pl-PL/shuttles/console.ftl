@@ -1,12 +1,21 @@
+# SPDX-FileCopyrightText: 2024 PJBot <pieterjan.briers+bot@gmail.com>
+# SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 shuttle-pilot-start = Pilotujesz wahadłowiec
 shuttle-pilot-end = Przestajesz pilotować
 shuttle-console-in-ftl = Napęd nad świetlny aktywny
 shuttle-console-mass = Zbyt masywny dla napędu nadświetlnego
 shuttle-console-prevent = Nie potrafisz pilotować
+shuttle-console-static = Grid is static
 
 # NAV
 
-shuttle-console-static = Grid is static
 shuttle-console-display-label = Wyświetlacz
 shuttle-console-position = Pozycja:
 shuttle-console-position-value = { $X }, { $Y }
