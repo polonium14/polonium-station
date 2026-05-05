@@ -92,7 +92,7 @@ SPDX-License-Identifier: MIT
 
 [bold]1.[/bold] Obowiązują wskazania 2, 3, 4, 5, 6 oraz 7 z [color=blue]Kodu Niebieskiego[/color]; wskazanie 8 przechodzi z [color=green]Kodu Zielonego[/color];
 
-[bold]2.[/bold] Oficerowie Ochrony mogą aresztować podejrzanych bez podawania powodu, tak długo jak są dowody na ich zbrodnie;
+[bold]2.[/bold] Oficerowie Ochrony mogą aresztować podejrzanych bez podawania powodu, o ile są dowody na ich zbrodnie;
 
 [bold]3.[/bold] Oficerowie Ochrony mogą na siłę przenoszenić personel do ich departamentów jeśli jest to potrzebne.
 
