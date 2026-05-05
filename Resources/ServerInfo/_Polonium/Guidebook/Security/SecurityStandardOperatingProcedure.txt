@@ -128,7 +128,7 @@ SPDX-License-Identifier: MIT
 
 [bold]1.[/bold] Obowiązują wskazania 1, 2, 3, 4, 6, 9, 11 oraz 12 z [color=green]Kodu Zielonego[/color];
 
-[bold]2.[/bold] Nadzorca ma zezwolenie na wydawanie dowolnego sprzętu ze zbrojowni. Broń strzelecka powinna być wydawana tylko za zezwoleniem [color=#1b67a5]Komendanta[/color] lub [color=#1b67a5]Kapitana[/color], ponieważ przedstawiają ryzyko użycia siły śmiercionośnej, albo jak są obecne zagrożenia dla całej stacji lub terroryzm.
+[bold]2.[/bold] Nadzorca ma zezwolenie na wydawanie dowolnego sprzętu ze zbrojowni. Broń strzelecka powinna być wydawana tylko za zezwoleniem [color=#1b67a5]Komendanta[/color] lub [color=#1b67a5]Kapitana[/color], ponieważ stwarza ryzyko użycia siły śmiercionośnej, chyba że obecne są zagrożenia dla całej stacji lub terroryzm.
 
 [bold]3.[/bold] Nadzorca może stawiać mobilne błyski w więzieniu;
 
