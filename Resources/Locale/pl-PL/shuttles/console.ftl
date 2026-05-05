@@ -3,10 +3,10 @@ shuttle-pilot-end = Przestajesz pilotować
 shuttle-console-in-ftl = Napęd nad świetlny aktywny
 shuttle-console-mass = Zbyt masywny dla napędu nadświetlnego
 shuttle-console-prevent = Nie potrafisz pilotować
+shuttle-console-static = Grid is static
 
 # NAV
 
-shuttle-console-static = Grid is static
 shuttle-console-display-label = Wyświetlacz
 shuttle-console-position = Pozycja:
 shuttle-console-position-value = { $X }, { $Y }
