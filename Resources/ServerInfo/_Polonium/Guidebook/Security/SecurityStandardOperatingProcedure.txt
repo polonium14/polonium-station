@@ -120,7 +120,7 @@ SPDX-License-Identifier: MIT
 
 [bold]10.[/bold] Nadzorca nie może zostawić więźnia przykutego do łóżka. Wyjątkiem są wrogo zachowujący się więźniowie oraz tacy, którzy próbują uciec z więzienia;
 
-[bold]11.[/bold] Nadzorca powinien podążać za tymi samymi wskazaniami co [color=#cb0000]Oficerowie Ochrony[/color] co do ubioru, z wyjątkiem że wszystkie unikalne ubrania komendanta są również dozwolone;
+[bold]11.[/bold] Nadzorca powinien stosować się do tych samych wytycznych co [color=#cb0000]Oficerowie Ochrony[/color] odnośnie ubioru, z tym wyjątkiem, że wszystkie unikalne ubrania Nadzorcy są również dozwolone;
 
 [bold]12.[/bold] Nadzorca jest zachęcany aby podążał za [textlink="Zasadami Postępowania Ochrony" link="RulesOfConduct"], ponieważ stawia to dobry przykład dla [color=#cb0000]Kadetów Ochrony[/color] oraz wspiera zaufanie publiczne do Ochrony.
 
