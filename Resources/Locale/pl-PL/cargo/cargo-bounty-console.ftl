@@ -9,7 +9,6 @@ bounty-console-manifest-entry =
         [1] { $item }
        *[other] { $item } x{ $amount }
     }
-bounty-console-manifest-reward = Nagroda: ${ $reward }
 bounty-console-manifest-entry-reagent =
     { $amount ->
         [1] { $item }
@@ -20,6 +19,7 @@ bounty-console-manifest-entry-gas =
         [1] { $item }
        *[other] { $item } { $amount }mol
     }
+bounty-console-manifest-reward = Nagroda: ${ $reward }
 bounty-console-description-label = [color=gray]{ $description }[/color]
 bounty-console-id-label = ID#{ $id }
 bounty-console-flavor-left = Żądania zbierane z lokalnych nieuczciwych handlarzy.
