@@ -2,9 +2,9 @@
 
 # Displayed in the Character prefs window
 humanoid-character-profile-summary =
-    To { $name }. { OBJECT($name) } { $gender ->
-        [male] Ma
-        [female] Ma
-        [epicene] Ma
-       *[other] Ma
-    } { $age } lat.
+    This is { $name }. { $gender ->
+        [male] He is
+        [female] She is
+        [epicene] They are
+       *[other] It is
+    } { $age } years old.
