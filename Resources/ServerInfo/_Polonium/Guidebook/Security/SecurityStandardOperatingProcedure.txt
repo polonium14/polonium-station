@@ -142,7 +142,7 @@ SPDX-License-Identifier: MIT
 
 [bold]3.[/bold] Nadzorca [bold]nie[/bold] ma obowiązku prowadzić sądu w czasie zagrożenia. Ma jednak obowiązek zezwolić podejrzanemu na spotkanie z jego wybranym reprezentantem prawnym w dowolnym momencie trwania wyroku. Czasomierz wyroku podejrzanego powinno się zapauzować na czas takich spotkań oraz wznawiać w momencie jego powrotu do celi.
 
-[bold]3.[/bold] Nadzorca może rozdawać dowolną broń i pancerz ze zbrojowni. To wlicza osiągi technologiczne z Rozwoju;
+[bold]4.[/bold] Nadzorca może rozdawać dowolną broń i pancerz ze zbrojowni. Obejmuje to osiągnięcia technologiczne z Rozwoju;
 
 [bold]4.[/bold] Nadzorca może swobonie prowadzić areszty.
 
