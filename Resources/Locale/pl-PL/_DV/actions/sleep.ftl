@@ -1,2 +1,1 @@
-
-popup-sleep-in-bag = { $entity } curls up and falls asleep.
+popup-sleep-in-bag = { THE($entity) } curls up and falls asleep.
