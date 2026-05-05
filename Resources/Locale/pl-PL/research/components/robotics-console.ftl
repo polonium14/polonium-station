@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 robotics-console-window-title = Konsola robotyki
 robotics-console-no-cyborgs = Brak robotów!
 robotics-console-select-cyborg = Wybierz powyżej robota.
@@ -13,5 +18,5 @@ robotics-console-brain = [color=gray]Zamontowany mózg:[/color] [color={ $brain 
 robotics-console-locked-message = Sterowanie zablokowane, zbliż ID.
 robotics-console-disable = Wyłącz
 robotics-console-destroy = Zniszcz
-robotics-console-cyborg-destroying = { CAPITALIZE($name) } jest zdalnie detonowany!
 robotics-console-hp = [color=gray]Stan obudowy:[/color] [color={ $color }]{ $hp }[/color]%
+robotics-console-cyborg-destroying = { $name } is being remotely detonated!
