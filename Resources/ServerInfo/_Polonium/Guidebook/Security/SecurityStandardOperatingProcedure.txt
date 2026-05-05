@@ -94,7 +94,7 @@ SPDX-License-Identifier: MIT
 
 [bold]2.[/bold] Oficerowie Ochrony mogą aresztować podejrzanych bez podawania powodu, o ile są dowody na ich zbrodnie;
 
-[bold]3.[/bold] Oficerowie Ochrony mogą na siłę przenoszenić personel do ich departamentów jeśli jest to potrzebne.
+[bold]3.[/bold] Oficerowie Ochrony mogą na siłę przenosić personel do ich departamentów, jeśli jest to potrzebne.
 
   # Nadzorca Ochrony
 
