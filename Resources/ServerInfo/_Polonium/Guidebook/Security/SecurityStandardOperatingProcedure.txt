@@ -20,7 +20,7 @@ SPDX-License-Identifier: MIT
 
 [bold]3.[/bold] Komendant ma obowiązek zezwolić na proces sądowy w warunkach przedstawionych w [textlink="Legal SOP" link="LegalSOP"] oraz ma obowiązek zezwolić podejrzanemu na spotkanie z jego wybranym reprezentantem prawnym w dowolnym momencie trwania wyroku. Czasomierz wyroku podejrzanego powinno zapauzować na czas takich spotkań oraz wznawiać w momencie jego powrotu do celi;
 
-[bold]4.[/bold] Komendant ma obowiązek zezwolić podejrzanemu na prawnika [italic]w trakcie przesłuchań[/italic] tylko w przypadkach gdy zbrodnia jest poziomu III lub wyżej;
+[bold]4.[/bold] Komendant ma obowiązek zezwolić podejrzanemu na dostęp do prawnika [italic]w trakcie przesłuchań[/italic] tylko w przypadkach, gdy zbrodnia jest poziomu III lub wyżej;
 
 [bold]5.[/bold] Komendant powinien podążać za tymi samymi wskazaniami co [color=#cb0000]Nadzorca Ochrony[/color] dla sprzętu ze zbrojowni, mobilnych błysków oraz rozstawianych barier;
 
