@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 battery-drainer-full = Twoja bateria jest już pełna
-battery-drainer-empty = { CAPITALIZE($battery) } nie ma wystarczającej mocy do wyczerpania
-battery-drainer-success = Wysysasz energię z { $battery }!
+battery-drainer-empty = { CAPITALIZE(THE($battery)) } does not have enough power to drain
+battery-drainer-success = You drain power from { THE($battery) }!
