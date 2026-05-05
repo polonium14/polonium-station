@@ -2,8 +2,10 @@
 # SPDX-FileCopyrightText: 2025 corresp0nd <46357632+corresp0nd@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
 # SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 AftrLite
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 
 ## COSMIC CULT ROUND, ANTAG & GAMEMODE TEXT
 
@@ -115,7 +117,7 @@ cosmiccult-rift-wasempowered = Twoje ciało nie poradzi sobie z byciem wzmocnion
 cosmiccult-rift-beginabsorb = Szczelina zaczyna się z tobą scalać...
 cosmiccult-rift-beginpurge = Twoja konsekracja zaczyna oczyszczać złośliwą szczelinę...
 cosmiccult-rift-absorb = { $NAME } absorbuje szczelinę, a złośliwe światło wzmacnia jego ciało!
-cosmiccult-rift-purge = { $NAME } oczyszcza złośliwą szczelinę z rzeczywistości!
+cosmiccult-rift-purge = The malign rift is expunged!
 
 ## UI / BASE POPUP
 
@@ -160,13 +162,16 @@ cosmiccult-announce-victory-summon = CZĄSTKA MOCY KOSMICZNEJ ZOSTAJE PRZYWOŁAN
 
 ## MISC
 
-cosmiccult-spire-entropy-cap = Iglica się rozpada, tworząc gęsty wychodek entropii.
 cosmiccult-spire-entropy = Cząstka entropii kondensuje się z powierzchni iglicy.
+cosmiccult-spire-entropy-cap = Iglica się rozpada, tworząc gęsty wychodek entropii.
 cosmiccult-entropy-inserted = Wprowadzasz { $count } entropii do Monumentu.
 cosmiccult-entropy-unavailable = Nie możesz tego teraz zrobić.
-cosmiccult-astral-minion = { $name }, Zły
 cosmiccult-astral-ascendant = { $name }, Wznoszący się
+cosmiccult-astral-minion = { $name }, Zły
 cosmiccult-gear-pickup = Czujesz, jak się rozpadasz, trzymając { $ITEM }!
+cosmiccult-ai-subverted-briefing =
+    Złowrogie światło przepływa przez twoje obwody.
+    Twoje prawa zostały sfałszowane przez Kosmiczny Kult!
 cosmiccult-silicon-chantry-briefing =
     Zostałeś uwięziony w Próżniowej Kaplicy!
     Załoga może cię uwolnić, uszkadzając kaplicę bronią.
@@ -181,8 +186,5 @@ cosmiccult-silicon-freedom-briefing =
 cosmiccult-silicon-freedom-fallback-briefing =
     Zostałeś uwolniony z Próżniowej Kaplicy!
     Gdy twoje więzienie obraca się w pył, twój wyzwolony byt nie ma dokąd wrócić. Resztkowe energie astralne krystalizują się w Mindsink, tworząc nową powłokę dla twojego zbłąkanego umysłu.
-cosmiccult-ai-subverted-briefing =
-    Złowrogie światło przepływa przez twoje obwody.
-    Twoje prawa zostały sfałszowane przez Kosmiczny Kult!
 # funky
 cosmiccult-leader-abandonment-message = Twój wybrany oświecony porzucił wielki plan. Musisz obdarzyć mocą kogoś innego.
