@@ -37,7 +37,7 @@
       time: 7200 #2 hrs
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 1800 #5 hrs
+      time: 18000 #5 hrs
     - !type:DepartmentTimeRequirement
       department: Command
       time: 36000 #10 hrs
