@@ -30,7 +30,7 @@ SPDX-License-Identifier: MIT
 
 [bold]8.[/bold] Komendant ma zezwolenie na noszenie swojej unikalnej maski przeciwgazowej;
 
-[bold]9.[/bold] Komendant [bold]nie[/bold] może zmianiać wydanych wyroków, chyba że pojawią się nowe dowody albo sam więźeń spróbuje ucieć;
+[bold]9.[/bold] Komendant [bold]nie[/bold] może zmieniać wydanych wyroków, chyba że pojawią się nowe dowody, albo sam więzień spróbuje uciec;
 
 [bold]10.[/bold] Komendant powinien podążać za tymi samymi wskazaniami co [color=#cb0000]Oficerowie Ochrony[/color] do ubioru, z wyjątkiem że wszystkie unikalne ubrania komendanta są również dozwolone;
 
