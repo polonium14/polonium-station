@@ -34,7 +34,7 @@ SPDX-License-Identifier: MIT
 
 [bold]10.[/bold] Komendant powinien stosować się do tych samych wytycznych, co [color=#cb0000]Oficerowie Ochrony[/color] odnośnie ubioru, z tym wyjątkiem, że wszystkie unikalne ubrania komendanta są również dozwolone;
 
-[bold]11.[/bold] Komendant jest zachęcany aby podążał za [textlink="Zasadami Postępowania Ochrony" link="RulesOfConduct"], ponieważ stawia to dobry przykład dla [color=#cb0000]Kadetów Ochrony[/color] oraz wspiera zaufanie publiczne do Ochrony.
+[bold]11.[/bold] Zachęca się Komendanta, aby przestrzegał [textlink="Zasad Postępowania Ochrony" link="RulesOfConduct"], ponieważ daje to dobry przykład dla [color=#cb0000]Kadetów Ochrony[/color] oraz wspiera zaufanie publiczne do Ochrony.
 
 ## Kod Niebieski
 
