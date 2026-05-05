@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 pa.pecherskij <pa.pecherskij@interfax.ru>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 names-fake-human-last-dataset-1 = Al
 names-fake-human-last-dataset-2 = Anatol
 names-fake-human-last-dataset-3 = Archidel
@@ -67,3 +73,12 @@ names-fake-human-last-dataset-66 = Nowiczok
 names-fake-human-last-dataset-67 = Rario
 names-fake-human-last-dataset-68 = Rortugal
 names-fake-human-last-dataset-69 = Sandaele
+names-fake-human-last-dataset-70 = Sernandez
+names-fake-human-last-dataset-71 = Smehrik
+names-fake-human-last-dataset-72 = Smorin
+names-fake-human-last-dataset-73 = Stoperson
+names-fake-human-last-dataset-74 = Sweemey
+names-fake-human-last-dataset-75 = Truk
+names-fake-human-last-dataset-76 = Usgood
+names-fake-human-last-dataset-77 = Veers
+names-fake-human-last-dataset-78 = Wesrey
