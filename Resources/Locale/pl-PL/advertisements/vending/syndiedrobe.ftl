@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2023 Puro <103608145+PuroSlavKing@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+# SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 advertisement-syndiedrobe-1 = Nowiutkie stroje!
 advertisement-syndiedrobe-2 = Stroje top 10 – na każdą okazję!
 advertisement-syndiedrobe-3 = Bycie łotrem może być stylowe.
