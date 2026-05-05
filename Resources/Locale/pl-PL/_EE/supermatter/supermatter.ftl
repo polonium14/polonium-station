@@ -26,9 +26,9 @@ supermatter-tamper-end = Czujesz moc tysiąca słońc spoczywającą na twoich d
 supermatter-announcement-cc-tamper =
     Nasz automatyczny system ofiar wykrył, że integralność strukturalna kryształu supermaterii została naruszona przez siłę zewnętrzną.
         Dział inżynieryjny, natychmiast zgłosić się do silnika supermaterii.
-supermatter-collide = { CAPITALIZE($target) } wpada w { $sm }!
-supermatter-collide-mob = Ciało { CAPITALIZE($target) } błyskawicznie zamienia się w pył!
-supermatter-collide-insert = { CAPITALIZE($target) } dotyka { $sm } za pomocą { $item } i błyskawicznie zamienia się to w pył!
-supermatter-collide-insert-user = Dotykasz { $sm } za pomocą { $item } i błyskawicznie zamienia się to w pył!
-supermatter-collide-insert-unremoveable = { CAPITALIZE($target) } dotyka { $sm } za pomocą { $item } i błyskawicznie zamienia się w pył!
-supermatter-collide-insert-unremoveable-user = Dotykasz { $sm } za pomocą { $item } i błyskawicznie zamieniasz się w pył!
+supermatter-collide = { CAPITALIZE(THE($target)) } slams into { THE($sm) }!
+supermatter-collide-mob = { CAPITALIZE(THE($target)) }'s body flashes into dust!
+supermatter-collide-insert = { CAPITALIZE(THE($target)) } touches { THE($sm) } with { THE($item) } and it flashes into dust!
+supermatter-collide-insert-user = You touch { THE($sm) } with { THE($item) } and it flashes into dust!
+supermatter-collide-insert-unremoveable = { CAPITALIZE(THE($target)) } touches { THE($sm) } with { THE($item) } and flashes into dust!
+supermatter-collide-insert-unremoveable-user = You touch { THE($sm) } with { THE($item) } and flash into dust!
