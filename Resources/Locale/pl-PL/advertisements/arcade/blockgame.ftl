@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 advertisement-block-game-1 = Prawnie odstępny!
 advertisement-block-game-2 = Czym do cholery jest T-spin?
 advertisement-block-game-3 = Te bloki same się nie wyczyszczą!
