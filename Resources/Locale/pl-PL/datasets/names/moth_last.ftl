@@ -1,6 +1,12 @@
+# SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 pa.pecherskij <pa.pecherskij@interfax.ru>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 # Ascalapha odorata
 names-moth-last-dataset-1 = Czarnowróżka
-# Odnosi się do któregokolwiek z 3 Acherontia
+# Refers to any of the 3 Acherontia
 names-moth-last-dataset-2 = Śmierciołap
 # Saturniinae
 names-moth-last-dataset-3 = Cesarz
@@ -15,25 +21,25 @@ names-moth-last-dataset-7 = Białowróżka
 # Operophtera brumata
 names-moth-last-dataset-8 = Zimowa
 
-## Inne języki
+## Other languages
 
-# Starożytna greka "ćma"
+# Ancient Greek "moth"
 names-moth-last-dataset-9 = Epiolos
-# Prawdopodobny skandynawski odpowiednik mǫlr
+# Conceivably any Old Norse descendant of mǫlr but probably more Danish than anything. "oe" digraph for ø.
 names-moth-last-dataset-10 = Moeller
-# Dosłowna pseudo-tłumaczenie niemieckiego Nachtfalter
+# Literal pseudo-translation of German Nachtfalter
 names-moth-last-dataset-11 = Nocnylot
 
-## Mitologia i legenda
+## Myth and legend
 
-# Wierzenie, że ćmy lecące w nocy zwiastują nadejście listu
+# Belief of moths flying at night signalling the reception of a letter
 names-moth-last-dataset-12 = Herald
-# Grecka postać powiązana z Hero
+# Greek figure associated with Hero, and similar sounding to Oleander hawk-moth
 names-moth-last-dataset-13 = Leander
-# Mit lub możliwe nazwisko
+# Split between being a myth reference and actual possible surname given the actual Goodman, Hoffman, Newman, Coleman, etc.
 names-moth-last-dataset-14 = Ćmański
 
-## Zabawne imiona
+## Fun names
 
 names-moth-last-dataset-15 = Kometrider
 names-moth-last-dataset-16 = Zmierzch
