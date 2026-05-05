@@ -1,3 +1,11 @@
+# SPDX-FileCopyrightText: 2024 MilenVolf <63782763+MilenVolf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Tadeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 # Window headers
 holopad-window-title = { CAPITALIZE($title) }
 holopad-window-subtitle = [color=white][bold]Holographic communication system[/bold][/color]
@@ -31,7 +39,7 @@ holopad-window-filter-line-placeholder = Search for a contact
 holopad-window-flavor-left = ⚠ Do not enter while projector is active
 holopad-window-flavor-right = v3.0.9
 # Holograms
-holopad-hologram-name = hologram of { $name }
+holopad-hologram-name = hologram of { THE($name) }
 # Holopad actions
 holopad-activate-projector-verb = Activate holopad projector
 holopad-ai-is-unable-to-reach-holopad = You are unable to interface with the source of the call, it is too far from your core.
