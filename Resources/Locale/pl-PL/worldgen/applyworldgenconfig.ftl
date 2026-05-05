@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2023 Moony <moony@hellomouse.net>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 cmd-applyworldgenconfig-description = Zastosowuje podaną konfigurację generowania świata do mapy, przygotowując ją do ładowania chunków/itp.
 cmd-applyworldgenconfig-help = applyworldgenconfig <mapid> <prototype>
 cmd-applyworldgenconfig-prototype = prototyp konfiguracji worldgen
