@@ -1,4 +1,3 @@
-
 crime-assist-program-name = Crime Assist
 crime-assist-yes-button = Yes
 crime-assist-no-button = No
