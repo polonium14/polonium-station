@@ -18,7 +18,7 @@ SPDX-License-Identifier: MIT
 
 [bold]2.[/bold] Komendant może nosić w pełni załadowany pasek ochrony oraz standardową broń boczną (np. VIS MPS). Chociaż wolno mu nosić jego unikalny X-01 Multifazowy, jest to odradzane ze względu na obawy bezpieczeństwa. Na niektórych stacjach Komendant dostaje również w swoim biurze dodatkową broń, wolno mu ją nosić, ale jest to niezalecane;
 
-[bold]3.[/bold] Komendant ma obowiązek zezwolić na proces sądowy w warnukach przedstawionych w [textlink="Legal SOP" link="LegalSOP"], oraz ma obowiązek zezwolić podejrzanemu na spotkanie z jego wybranem reprezentantem prawnym w dowolnym momencie ich wyroku. Czasomierz wyroku podejrzanego powinno się zapauzować na czas takich spotkań oraz odpauzowaywać w momencie ich powrotu do celi;
+[bold]3.[/bold] Komendant ma obowiązek zezwolić na proces sądowy w warunkach przedstawionych w [textlink="Legal SOP" link="LegalSOP"] oraz ma obowiązek zezwolić podejrzanemu na spotkanie z jego wybranym reprezentantem prawnym w dowolnym momencie trwania wyroku. Czasomierz wyroku podejrzanego powinno zapauzować na czas takich spotkań oraz wznawiać w momencie jego powrotu do celi;
 
 [bold]4.[/bold] Komendant ma obowiązek zezwolić podejrzanemu na prawnika [italic]w trakcie przesłuchań[/italic] tylko w przypadkach gdy zbrodnia jest poziomu III lub wyżej;
 
