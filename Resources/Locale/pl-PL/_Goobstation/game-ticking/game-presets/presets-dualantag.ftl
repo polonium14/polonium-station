@@ -1,4 +1,3 @@
-
 traitorling-title = Traitorling
 traitorling-description = Attention. Known enemy signals and strange biosigns detected. Confirmed Syndicate Agents and Changelings on board.
 revtraitor-title = Revolutionary Traitors
