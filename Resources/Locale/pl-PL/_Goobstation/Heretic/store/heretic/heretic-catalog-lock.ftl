@@ -1,4 +1,3 @@
-
 knowledge-path-lock-s1-name = A Steward's Secret
 knowledge-path-lock-s1-desc = Follow the path of lock. Transmute a knife and a crowbar into a key blade.
 knowledge-path-lock-s2-name = Grasp of Lock
