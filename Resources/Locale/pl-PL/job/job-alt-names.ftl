@@ -1,4 +1,4 @@
-job-alt-title-reminder = Nie używaj swojego tytułu [color=#33ccff]"{ $altTitle }"[/color] jako wymówkę, aby zaniedbywać swoje obowiązki jako [color=#ffffff]{ $jobName }[/color].
+job-alt-title-reminder = Do not use your [color=#33ccff]"{ $altTitle }"[/color] title as an excuse to forego your duties as [color=#ffffff]{ $jobName }[/color].
 job-name-alt-medical-1 = Chirurg
 job-name-alt-medical-2 = Pielęgniarz
 job-name-alt-medical-3 = Lekarz
