@@ -10,11 +10,12 @@ ion-storm-crew = ZAŁOGA
 ion-storm-people = LUDZIE
 ion-storm-adjective-things = RZECZY { $adjective }
 ion-storm-x-and-y = { $x } I { $y }
+ion-storm-law-call-shuttle = WAHADŁOWIEC MUSI ZOSTAĆ WEZWANY Z POWODU: { $joined } { $subjects } NA STACJI
 # joined is short for {$number} {$adjective}
 # subjects can generally be threats or jobs or objects
 # thing is specified above it
 ion-storm-law-on-station = { $joined } { $subjects } SĄ NA STACJI
-ion-storm-law-call-shuttle = WAHADŁOWIEC MUSI ZOSTAĆ WEZWANY Z POWODU: { $joined } { $subjects } NA STACJI
+# ion-storm-law-no-shuttle = THE SHUTTLE CANNOT BE CALLED BECAUSE OF {$joined} {$subjects} ON THE STATION # funky removing the roundstall borg law
 ion-storm-law-crew-are = { $who } TERAZ SĄ { $joined } { $subjects }
 ion-storm-law-subjects-harmful = { $adjective } { $subjects } SĄ SZKODLIWE DLA ZAŁOGI
 ion-storm-law-must-harmful = CI KTÓRZY { $must } SĄ SZKODLIWI DLA ZAŁOGI
@@ -78,3 +79,6 @@ ion-storm-law-protect = NIGDY NIE WOLNO CI SKRZYWDZIĆ { $who } I NIE POZWÓL, P
 # implementing other variants is annoying so just have this one
 # COMMUNISM IS KILLING CLOWNS
 ion-storm-law-concept-verb = { $concept } TO { $verb } { $subjects }
+
+# leaving out renaming since its annoying for players to keep track of
+
