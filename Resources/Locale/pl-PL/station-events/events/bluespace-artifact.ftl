@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 bluespace-artifact-event-announcement = Nasze czujniki wykryły zbliżający się obiekt obcego pochodzenia. Proszę poinformować zespół badawczy o { $sighting }.
 bluespace-artifact-sighting-1 = jasnych błyskach światła
 bluespace-artifact-sighting-2 = dziwnych dźwiękach dochodzących z tuneli konserwacyjnych
