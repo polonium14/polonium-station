@@ -1,4 +1,3 @@
-
 heretic-roundend-name = heretic
 roundend-prepend-heretic-ascension-success = { $name }, [color=green] has Ascended![/color]
 roundend-prepend-heretic-ascension-fail = { $name }, [color=red] has failed![/color]
@@ -20,7 +19,7 @@ heretic-role-greeting-short =
 ## ghoul
 
 heretic-ghoul-greeting =
-    You have been summoned into this world by { CAPITALIZE($ent) }!
+    You have been summoned into this world by { CAPITALIZE(THE($ent)) }!
     You must aid them in their journey to ascension and protect them at all costs.
     You may follow other heretics if your master is beyond resurrection.
 heretic-ghoul-greeting-noname =
