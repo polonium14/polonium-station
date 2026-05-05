@@ -1,3 +1,12 @@
+# SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Jackrost <jackrost@mail.ru>
+# SPDX-FileCopyrightText: 2023 PixelTK <85175107+PixelTheKermit@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 Drywink <hugogrethen@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 spider-web-action-nogrid = Nie ma podłogi pod tobą!
 spider-web-action-success = Stawiasz pajączynę wokół siebie.
 spider-web-action-fail = Nie możesz postawić tutaj pajęczyny! Nie ma tu miejsca.
@@ -11,8 +20,8 @@ arachnid-wrap-complete-user = Wiążesz { $target } w kokon z jedwabiu.
 arachnid-wrap-complete-target = Lepki jedwab otacza cię, pozostawiając cię bezbronnym!
 arachnid-unwrap-self = Jesteś związany zbyt ciasno, by się uwolnić!
 arachnid-unwrap-start-user = Zaczynasz odpakowywać kokon krępujący { $target }.
-arachnid-unwrap-start-target = { $user } zaczyna odpakowywać cię z kokonu!
 arachnid-unwrap-start-user-empty = Zaczynasz rozrywać kokon.
+arachnid-unwrap-start-target = { $user } zaczyna odpakowywać cię z kokonu!
 arachnid-unwrap-user = Rozrywasz kokon krępujący { $target }.
 arachnid-unwrap-target = { $user } uwalnia cię z kokonu!
 arachnid-cocoon-broken = Kokon rozpada się od uszkodzeń!
@@ -21,5 +30,5 @@ bite-component-cannot-bite-message = Nie możesz ugryźć { $target }!
 bite-component-cannot-inject-message = Nie możesz wstrzyknąć { $target }!
 bite-component-bite-success-message = Gryziesz { $target }!
 bite-component-bitten-message = { $user } gryzie cię!
-bite-action-description-sleep = Ugryź cel środkiem usypiającym.
 bite-component-insufficient-hunger = Twój żołądek jest zbyt pusty na to!
+bite-action-description-sleep = Ugryź cel środkiem usypiającym.
