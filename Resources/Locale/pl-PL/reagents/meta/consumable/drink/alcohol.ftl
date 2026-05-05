@@ -1,3 +1,22 @@
+# SPDX-FileCopyrightText: 2022 Alex Evgrashin <aevgrashin@yandex.ru>
+# SPDX-FileCopyrightText: 2022 Mervill <mervills.email@gmail.com>
+# SPDX-FileCopyrightText: 2022 Vordenburg <114301317+Vordenburg@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+# SPDX-FileCopyrightText: 2023 SpaceCat <99134830+Verslebas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Veritius <veritiusgaming@gmail.com>
+# SPDX-FileCopyrightText: 2023 keronshb <54602815+keronshb@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Firewatch <54725557+musicmanvr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Hanz <41141796+Hanzdegloker@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 MilenVolf <63782763+MilenVolf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 reagent-name-absinthe = absynt
 reagent-desc-absinthe = Wódka o smaku anyżu pędzona z ziół.
 reagent-name-ale = ale
@@ -61,11 +80,11 @@ reagent-desc-blue-hawaiian = Aloha! Czy to oznacza „cześć” czy „do widze
 reagent-name-bahama-mama = Bahama Mama
 reagent-desc-bahama-mama = Tropikalny koktajl.
 reagent-name-banana-honk = Banana Honk
-reagent-desc-banana-honk = Napój z Clown Heaven.
 reagent-name-barefoot = goła stopa
+reagent-desc-banana-honk = Napój z Clown Heaven.
 reagent-name-bigfoot = wielka stopa
-reagent-desc-bigfoot = Według Klubu Kryptozoologicznego Eta Scorpii, to ulubiony napój legendarnego kryptydy-małpoluda, Wielkiej Stopy. Według prawdziwych naukowców, Wielka Stopa nie miałaby składników potrzebnych do przygotowania tego koktajlu.
 reagent-desc-barefoot = Boso przez świat.
+reagent-desc-bigfoot = Według Klubu Kryptozoologicznego Eta Scorpii, to ulubiony napój legendarnego kryptydy-małpoluda, Wielkiej Stopy. Według prawdziwych naukowców, Wielka Stopa nie miałaby składników potrzebnych do przygotowania tego koktajlu.
 reagent-name-beepsky-smash = Beepsky smash
 reagent-desc-beepsky-smash = Zaprzecz picia tego i przygotuj się na PRAWO.
 reagent-name-black-russian = Black Russian
@@ -127,9 +146,9 @@ reagent-desc-jack-rose = Nadmiernie czerwony.
 reagent-name-jungle-bird = ptak dżungli
 reagent-desc-jungle-bird = Pomimo nazwy, nie jest to szczególnie popularny utwór wśród Voxów.
 reagent-name-kalimotxo = kalimotxo
-reagent-desc-kalimotxo = Wysokiej klasy Cuba Libre, dla wymagających alkoholików.
 reagent-name-kira-special = Kira special
 reagent-desc-kira-special = Niech żyje facet, którego wszyscy mylili z dziewczyną. Baka!
+reagent-desc-kalimotxo = Wysokiej klasy Cuba Libre, dla wymagających alkoholików.
 reagent-name-tortuga = Tortuga
 reagent-desc-tortuga = Idealne dla piratów, którzy zostali wybrani na kierowców. Yarr!
 reagent-name-long-island-iced-tea = Mrożona herbata z Long Island
@@ -237,6 +256,9 @@ reagent-desc-moscow-mule = Zaskakująco mocny i orzeźwiający drink, serwowany 
 reagent-name-the-sun-also-rises = słońce też wschodzi
 reagent-desc-the-sun-also-rises = Mocny koktajl zmieszany w mętną mieszankę. Sekretny faworyt torturowanych pisarzy.
 reagent-name-whiskey-sour = kwaśna whisky
+reagent-desc-whiskey-sour = Jaki jest sekretny składnik? Jajka. To jajka.
+reagent-name-zombiecocktail = Zombie
+reagent-desc-zombiecocktail = Uderza ci do głowy. Do "głowy" czaisz?
 reagent-name-black-japan = Black Japan
 reagent-desc-black-japan = Nowatorska mieszanka ciemnego piwa i likieru melonowego. Kanpai!
 reagent-name-bruised-melon = poobijany melon
@@ -248,9 +270,6 @@ reagent-desc-cosmic-alaska = Narodowy napój Gliese 1132b.
 reagent-name-horses-neck = końska szyja
 reagent-desc-horses-neck = Mimo nazwy nie zawiera żadnych koni. Jednak to, czy koń mógłby przygotować ten drink, jest kwestią wciąż dyskutowaną przez barmanów.
 reagent-name-ransom-note = list z okupem
-reagent-desc-ransom-note = Pytasz, co wzięto jako zakładnika? Twoją trzeźwość, oczywiście.
-reagent-desc-whiskey-sour = Jaki jest sekretny składnik? Jajka. To jajka.
-reagent-name-zombiecocktail = Zombie
-reagent-desc-zombiecocktail = Uderza ci do głowy. Do "głowy" czaisz?
 reagent-name-bacchus-blessing = błogosławieństwo Bachusa
 reagent-desc-bacchus-blessing = Nie sądziłeś, że płyn może być tak odrażający. Jesteś tego pewien...?
+reagent-desc-ransom-note = Pytasz, co wzięto jako zakładnika? Twoją trzeźwość, oczywiście.
