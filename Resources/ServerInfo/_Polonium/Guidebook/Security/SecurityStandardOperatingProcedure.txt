@@ -38,7 +38,7 @@ SPDX-License-Identifier: MIT
 
 ## Kod Niebieski
 
-[bold]1.[/bold] Wszystkie wskazanie przechodzą z kodu zielonego. Co do wskazania 2, komendant jest teraz zachęcany do noszenia X-01.
+[bold]1.[/bold] Wszystkie wskazania przechodzą z Kodu Zielonego. Odnośnie wskazania 2, komendant jest teraz zachęcany do noszenia X-01.
 
 [bold]2.[/bold] Co do wskazania 5, komendant jest dozwolony trochę wyrozumiałości aby zapewnić bezpieczeństwo dowództwu oraz reszcie ważnej załogi.
 
