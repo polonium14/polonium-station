@@ -1,4 +1,3 @@
-
 thaven-mood-possessive-of-property-name = Zaborczy
 thaven-mood-possessive-of-property-desc = Jesteś skrajnie zaborczy wobec swojej własności. Odmawiaj oddania jej, a jeśli zostanie zgubiona lub skradziona, musi zostać odzyskana za wszelką cenę.
 thaven-mood-excessively-organized-name = Nadmiernie Zorganizowany
