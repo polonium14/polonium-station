@@ -13,48 +13,48 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-  # Forensics
+  # Kryminalistyka
 
-  There are many tools with which you may use to gather and examine evidence of crime perpetrated on the station.
+  Jest sporo narzędzi jakich możesz użyć aby zbierać i sprawdzać dowody zbrodni na terenie stacji.
 
-  # Log probe
+  # Sonda logów (Log probe)
 
-  This little add-on to your PDA is incredibly useful. Just install the cartridge and your PDA will acquire the ability to scan anything with access (like airlocks) and see who has used them recently.
+  Ten mały dodatek do twojego PDA jest bardzo przydatny. Po prostu zainstaluj program a twoje PDA dostanie umiejętność skanowania wszystkiego co wymaga dostępu (np. śluzy) oraz zobaczyć kto i kiedy z nich korzystał. 
 
-  You can normally find it inside the detective locker. After inserting it into your PDA, go to the programs tab and there should be a new log probe application present. To use the application you just have to interact with anything that requires access with your PDA while the application is open and the information will be instantly displayed in it.
+  Zazwyczaj możesz znaleźć kasete z sondą w szafce detektywa. Po włożeniu do PDA, przejdź do programów i powinna pojawić się nowa aplikacja "Log probe". Aby skorzystać z sondy wystarczy otworzyć aplikacje i przeskanować (LPM) cokolwiek co wymaga dostępu z twojego PDA; wszystkie użycia się wtedy wyświetlą na twoim PDA.
 
-  It should be noted that the name shown in the application is not to be trusted 100% of the time since it gets the name from the identification card of whoever used the thing we are scanning, so if for example someone opened an airlock with no card the application would display "Unknown" as the name.
+  Warto wsponieć że imiona wydobyte z aplikacji nie zawsze są w 100% trafne, ponieważ biorą imię od ID, a nie bezpośrednio od użytkownika. Na przykład jeśli ktoś otworzył śluze bez ID to imię będzie "Nieznany".
 
   <Box>
     <GuideEntityEmbed Entity="LockerDetective"/>
     <GuideEntityEmbed Entity="LogProbeCartridge"/>
   </Box>
 
-  # DNA and Fingerprints
+  # DNA oraz Odciski palców
 
-  ## How to get someone’s DNA?
+  ## Jak uzyskać czyjeś DNA ?
 
-  You can scan blood puddles, vomit, glasses, bottles, cans and other liquid containers using the [color=#a4885c]forensic scanner[/color] to get DNA of any person.
+  Mozesz skanować kałuże krwi, wymiotów, okulary, butelki, puszki oraz inne zbiorniki płynów korzystając z [color=#a4885c]Skanera Kryminalistyki[/color] aby uzyskać DNA dowolnej osoby.
   <Box>
     <GuideEntityEmbed Entity="ForensicScanner"/>
   </Box>
-  So be careful before fighting with someone.
+  Więc bądź ostrożny kiedy z kimś walczysz.
 
-  Same scanner can also get fingerprint information about who touched pretty much any object. If the possible perpetrator was using gloves, then your scanner will print out which fibers were left on the crimescene.
+  Ten sam skaner pozwala uzyskiwać odciski palców z praktycznie każdego obiektu. Jeśli potencjalny podejrzany używał rękawiczek, to twój skaner pokaże jakie włokna zostały na miejscu zbrodni.
 
-  ## I got DNA. How do I recognize whose it is?
+  ## Mam DNA, jak wiedzieć czyje ono jest?
 
-  You can print the forensic information of the object you scanned so you never miss it. Now with the paper containing DNA you can simply find a [color=#a4885c]Station Records Computer[/color] and look for a person whose DNA matches. Same applies to finding whose fingerprint is whose.
+  Możesz wydrukować informacje kryminalistyczne z wszystkiego co skanowałeś, dzięki czemu nic nie zgubisz. Teraz z papierem piszącym DNA idziesz do [color=#a4885c]Komputera Redordów Stacji[/color] i znajdź osobę której DNA pasuje; tak samo robisz z odciskami palców. 
 
-  ## Taking Fingerprints
-  It is also possible to take someone's fingerprints while on scene if you make them take off their gloves and apply a forensic pad to their fingers. No need to run back to [color=#a4885c]Station Records Computer[/color] to check if the butler did it!
+  ## Zbieranie odcisków
+  Jest również możliwe żeby zebrać odciski od kogoś na miejscu, jeśli każesz im zdjąć rękawiczki i użejesz kryminalistycznej podkładni na ich palcach. Wtedy nie musisz iść do [color=#a4885c]Komputera Redordów Stacji[/color] aby sprawdzić czy DNA pasuje.
 
   <GuideEntityEmbed Entity="ForensicPad"/>
 
-  ## Fibers
-  Whenenever people wearing gloves touch anything on the station, they are bound to leave behind some fibers. This complicates things, but nothing is unsolvable for a real detective.
+  ## Włókna
+  Kiedy ktokolwiek noszący rękawiczki dotknie czegoś na stacji zostawi na tym część włókien. To komplikuje sprawy ale nic nie jest nie-rozwiązywalne dla prawdziwego detektywa.
 
-  There are up to [color=red]26[/color] different types of fibers possible. Can that stop you from solving the case?
+  Jest łącznie około [color=red]26[/color] róznych rodzajów włokien. Czy powstrzyma cię to przed odnalezieniem sprawcy?
 
   <Box>
     <GuideEntityEmbed Entity="ComputerStationRecords"/>

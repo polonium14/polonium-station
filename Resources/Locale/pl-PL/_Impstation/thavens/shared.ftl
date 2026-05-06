@@ -1,8 +1,3 @@
-# SPDX-FileCopyrightText: 2025 corresp0nd <46357632+corresp0nd@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 ferynn <117872973+ferynn@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
-#
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 thaven-mood-secret-moods-shared-name = Trzymaj Nastroje W Sekrecie
 thaven-mood-secret-moods-shared-desc = Nastroje Thavenów są ściśle trzymanym sekretem, i pod żadnym pozorem nie powinny być nikomu ujawnione.

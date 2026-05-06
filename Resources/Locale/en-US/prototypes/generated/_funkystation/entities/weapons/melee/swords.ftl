@@ -1,5 +1,7 @@
 ent-ImprovisedEnergySword = improvised energy sword
     .desc = A energy sword cobbled together from random parts. Burns through power like no other.
+ent-SwordChaplainCosmic = gwiaździsta rapier
+    .desc = Eteryczna rapier, który w dotyku jest zimny jak zima. Mówi się, że zbyt długie dzierżenie tego miecza wysysa duszę z tych, którzy nie zostali dotknięci prawdą.
 ent-CrossChaplainCrooked = crooked crucifix
     .desc = An inverted and deformed crucifix carved out of ancient wood and coated in poison. The origins of this (un?)holy artifact are unknown, but it may be older than nanotransen itself.
 ent-WeaponChaplainChainsword = bloody chainsword

@@ -1,11 +1,16 @@
 ent-MobWatcherBase = watcher
     .desc = It's like it's staring right through you.
+    .gender = male
 ent-MobWatcherLavaland = { ent-MobWatcherBase }
     .desc = { ent-MobWatcherBase.desc }
+    .gender = male
 ent-MobWatcherIcewing = icewing watcher
     .desc = { ent-MobWatcherBase.desc }
+    .gender = male
 ent-MobWatcherMagmawing = magmawing watcher
     .desc = { ent-MobWatcherBase.desc }
+    .gender = male
 ent-MobWatcherPride = pride watcher
     .desc = This rare subspecies only appears in June.
     .suffix = Admeme
+    .gender = male

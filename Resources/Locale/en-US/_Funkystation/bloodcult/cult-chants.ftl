@@ -1,6 +1,3 @@
-# SPDX-FileCopyrightText: 2025 Terkala <appleorange64@gmail.com>
-#
-# SPDX-License-Identifier: AGPL-3.0-or-later OR MIT
 
 # Ritual chants used during mindshield breaking and other cult rituals
 # These are randomly combined to create varied invocations

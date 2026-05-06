@@ -1,93 +1,63 @@
 trait-blindness-name = Blindness
 trait-blindness-desc = You are legally blind, and can't see clearly past a few meters in front of you.
-
 trait-poor-vision-name = Short-sighted
 trait-poor-vision-desc = Your eyes are not what they once were, you have difficulty seeing things far away without corrective glasses.
-
 trait-narcolepsy-name = Narcolepsy
 trait-narcolepsy-desc = You fall asleep randomly.
-
 trait-pacifist-name = Pacifist
 trait-pacifist-desc = You cannot attack or hurt any living beings.
-
-permanent-blindness-trait-examined = [color=lightblue]{CAPITALIZE(POSS-ADJ($target))} eyes are glassy and unfocused. It doesn't seem like {SUBJECT($target)} can see you well, if at all.[/color]
-
+permanent-blindness-trait-examined =  [color=lightblue]{ CAPITALIZE(POSS-ADJ($target)) } eyes are glassy and unfocused. It doesn't seem like { SUBJECT($target) } can see you well, if at all.[/color]
 trait-lightweight-name = Lightweight drunk
 trait-lightweight-desc = Alcohol has a stronger effect on you.
-
+trait-monochromancy-name = Monochromancy
+trait-monochromancy-desc = You are fully colorblind, everything you perceive ranges from blacks to whites.
 trait-muted-name = Muted
 trait-muted-desc = You can't speak.
-
 trait-paracusia-name = Paracusia
 trait-paracusia-desc = You hear sounds that aren't really there.
-
 trait-unrevivable-name = Unrevivable
 trait-unrevivable-desc = You are unable to be revived by defibrillators.
-
 trait-pirate-accent-name = Pirate accent
 trait-pirate-accent-desc = Arrgh crack open yere coffer of booty and sing a shanty, for ya arrr a pirate!
-
 trait-accentless-name = Accentless
 trait-accentless-desc = You don't have the accent that your species would usually have.
-
 trait-frontal-lisp-name = Frontal lisp
 trait-frontal-lisp-desc = You thpeak with a lithp.
-
 trait-socialanxiety-name = Stutter
 trait-socialanxiety-desc = Y-You speak with a st-tutter.
-
 trait-southern-name = Southern drawl
 trait-southern-desc = You have a different way of speakin', an' it ain't subtle!
-
 trait-snoring-name = Snoring
 trait-snoring-desc = You will snore while sleeping.
-
 trait-liar-name = Pathological liar
 trait-liar-desc = You can hardly bring yourself to tell the truth. Sometimes you lie anyway.
-
 trait-kurwalski-name = Kurwalski
 trait-kurwalski-desc = You now speak like a true polish person! kurwa!
-
 trait-wiejski-name = Wiejski
 trait-wiejski-desc = Speak like a polish villager.
-
 trait-malopolski-name = Małopolski
 trait-malopolski-desc = Speak like a person from Lesser Poland.
-
 trait-cowboy-name = Cowboy vernacular
 trait-cowboy-desc = By gum, your mighty slick words make everyone reckon you're the sheriff!
-
 trait-german-name = German accent
 trait-german-desc = You seem to cöme from ze distant land of space Germany.
-
 trait-italian-name = Italian accent
 trait-italian-desc = Your molto bene Italian accent could-a wow even the capitano!
-
 trait-atheist-name = Atheist
 trait-atheist-desc = You are an Atheist. You cannot pray.
-
 trait-buddhist-name = Buddhist
 trait-buddhist-desc = You are a Buddhist.
-
 trait-christian-name = Christian
 trait-christian-desc = You are a Christian.
-
 trait-french-name = French accent
 trait-french-desc = Your gentleur accent seems to 'af a certain iconique «je ne sais quoi».
-
 trait-spanish-name = Spanish accent
 trait-spanish-desc = ¿You espeak with a noticeable Espanish accent, can't you hear?
-
 trait-painnumbness-name = Numb
 trait-painnumbness-desc = You lack any sense of feeling pain, being unaware of how hurt you may be.
-
 trait-russian-name = Russian accent
 trait-russian-desc = Oy blin! You speak vith strong Russian accent!
-
 trait-species-restricted = Your species cannot take this trait.
-
 trait-impaired-mobility-name = Impaired Mobility
 trait-impaired-mobility-desc = You have difficulty moving without a mobility aid.
-
-trait-prerequisite-required = This trait requires the {$prerequisite} trait.
-
+trait-prerequisite-required = This trait requires the { $prerequisite } trait.

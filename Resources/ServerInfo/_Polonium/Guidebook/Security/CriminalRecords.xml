@@ -8,42 +8,43 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-  # Criminal Records
-  The criminal records console is accessible in every station's security department. It serves the purpose of tracking and managing the criminal history and status of anyone who is listed on the crew manifest.
+  # Rejestry kryminalne
+  Konsola rejestrów kryminalnych jest dostępna w dziale ochrony każdej stacji. Służy ona śledzeniu i zarządzaniu historią kryminalną i statusem każdego kto jest obecny na manifeście załogi.
 
   <Box>
   <GuideEntityEmbed Entity="ComputerCriminalRecords"/>
   </Box>
 
-  Anyone can open the console's UI, but only those with Security access can modify anything.
+  Każdy ma prawo zobaczyć interfejs konsoli, ale tylko osoby z dostępem ochrony mogą coś modyfikować.
 
-  The UI is composed of the following elements:
-  - A search bar that has a filter next to it that lets you filter the crewmembers by their names, fingerprints or DNA.
+  Interfejs jest podzielony na następujące elementy:
+    - Pasek wyszukiwania z filtrem który pozwala szukać załogantów po ich imionach, odciskach palców lub DNA.
 
-  - A list of all the crewmembers in the manifest, selecting one of the entries will make the criminal records of a crewmember appear. The list is filtered by the search bar so make sure it's empty if you want an overall overview!
+    - Lista wszystkich załogantów na manifeście, wybranie któregoś z wpisów wyświetli dane kryminalne tego załoganta. Lista jest filtrowana przez pasek wyszukiwania, więc upewnij się że jest pusty jeśli chcesz ogólny przegląd.
 
-  - The criminal records themselves.
+    - Rejestry kryminalne same w sobie.
 
-  - The filter button below the crew list can be used to show only wanted, detained, or paroled crew.
-  In the record section you can:
-    - See security-related information about a crewmember like their name, fingerprints and DNA.
+    - Przycisk filtrów poniżej może być użyty aby pokazywać tylko poszukiwanych, zatrzymanych lub zwolnionych załogantów.
 
-    - Change the security status between [color=gray]None[/color], [color=yellow]Wanted[/color] and [color=red]Detained[/color]. When setting it to Wanted you will be asked to write a reason.
+  W sekcji rejestrów stacji możesz:
+    - Zobaczyć związane z ochroną informacje o załogantach takie jak ich imię, odciski palców oraz DNA.
 
-    - If they are wanted, you can see the reason given below the status dropdown.
+    - Zmienić status poszukiwań na m.in.: [color=blue]Podejrzany[/color], [color=red]Poszukiwany[/color] and [color=grey]Zatrzymany[/color]. Przy niektórych statusach oczekiwane jest że podasz powód.
 
-    - Once someone has been arrested, update their status on the console so everyone knows they no longer need to be captured.
+    - Jeśli są poszukiwani możesz zobaczyć powód pod rozwijanym statusem.
 
-    - After they've done their time, release them and update their status to None so nobody thinks they are an escaped convict.
+    - Po zatrzymaniu kogoś zaktualizuj ich status na [bold]Zatrzymany[/bold], aby inni wiedzieli że nie trzeba ich już aresztować.
 
-    - Open the Crime History window to check or modify it.
+    - Po odbyciu ich wyroku, zaktualizuj status na [bold]Zwolniony[/bold], aby inni nie myśleli że są skazańcem na wolności.
 
-  The Crime History window lists someone's crimes and can be modified in multiple ways:
-    - Automatically, just by setting someone's status to arrested. The reason will be added to "ARRESTED:" so it's easy to see the automated entries.
+    - Otworzyć okno Historii Kryminalnej, aby ją sprawdzić lub zmodyfikować.
 
-    - Adding a new line by clicking "Add" and writing something in the input box. When adding a record, remember to mention their crime and sentence, the console will automatically insert the shift's time so you don't need to!
+  Okno Historii Kryminalnej pokazuje czyjeś zbrodnie oraz może być modyfikowane na kilka sposobów:
+    - Automatycznie, przy ustawianiu czyjegoś statusu na poszukiwany. Powód będzie dodany w sposób w którym łatwo zobaczyć automatyczne wpisy.
 
-    - Select a line of unwanted history and click "Delete" to remove it. Excellent for keeping records clean from the clown's stolen ID antics.
+    - Dodawanie nowych wpisów przez klikanie "Dodaj" i wpisywanie nowych zbrodnii do okna wpisywania. Kiedy dodajesz nowy wpis, pamiętaj o ich zbrodni i wyroku, a konsola automatycznie dopisze czas.
 
-  Now you can be the desk jockey you've always wanted to be.
+    - Zaznacz niechciany wpis i klinkij "Usuń" aby się go pozbyć. Przydatne do trzymania rejestru w porządku po zabawach klauna z ukradzionym ID.
+
+  Teraz możesz się zbijać bąki przy biurku tak jak zawsze chciałeś.
 </Document>

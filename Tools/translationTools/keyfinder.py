@@ -14,6 +14,7 @@
 
 import typing
 import logging
+import sys
 
 from pydash import py_
 
@@ -78,7 +79,11 @@ class FilesFinder:
             elif relative_file.locale == 'pl-PL':
                 is_engine_files = "robust-toolbox" in (relative_file.file.full_path)
                 if not is_engine_files:
-                    self.warn_en_analog_not_exist(relative_file)
+                    if '--add-missing-en' in sys.argv:
+                        en_file = self.create_en_analog(relative_file)
+                        self.created_files.append(en_file)
+                    else:
+                        self.warn_en_analog_not_exist(relative_file)
             else:
                 raise Exception(f'Plik {relative_file.file.full_path} ma nieznany język "{relative_file.locale}"')
         return self.created_files
@@ -108,6 +113,17 @@ class FilesFinder:
 
         return pl_file
 
+    def create_en_analog(self, pl_relative_file: RelativeFile) -> FluentFile:
+        pl_file: FluentFile = pl_relative_file.file
+        pl_file_data = pl_file.read_data()
+        en_file_path = pl_file.full_path.replace('pl-PL', 'en-US')
+        en_file = FluentFile(en_file_path)
+        en_file.save_data(pl_file_data)
+
+        logging.info(f'Utworzono plik {en_file_path} z tłumaczeniami z polskiego pliku')
+
+        return en_file
+
     def warn_en_analog_not_exist(self, pl_relative_file: RelativeFile):
         file: FluentFile = pl_relative_file.file
         en_file_path = file.full_path.replace('pl-PL', 'en-US')
@@ -119,6 +135,25 @@ class KeyFinder:
     def __init__(self, files_dict):
         self.files_dict = files_dict
         self.changed_files: typing.List[FluentFile] = []
+        self.pl_global_keys = set()
+        self.en_global_keys = set()
+
+        import re
+        regex = re.compile(r'^([a-zA-Z.]+[a-zA-Z0-9_-]*)\s*=', re.MULTILINE)
+        for pair in self.files_dict:
+            pl_relative_file = py_.find(self.files_dict[pair], {'locale': 'pl-PL'})
+            en_relative_file = py_.find(self.files_dict[pair], {'locale': 'en-US'})
+
+            if pl_relative_file:
+                try:
+                    self.pl_global_keys.update(regex.findall(pl_relative_file.file.read_data()))
+                except Exception:
+                    pass
+            if en_relative_file:
+                try:
+                    self.en_global_keys.update(regex.findall(en_relative_file.file.read_data()))
+                except Exception:
+                    pass
 
     def execute(self) -> typing.List[FluentFile]:
         self.changed_files = []
@@ -142,12 +177,15 @@ class KeyFinder:
         en_file_parsed: ast.Resource = en_file.parse_data(en_file.read_data())
 
         self.write_to_pl_files(pl_file, pl_file_parsed, en_file_parsed)
-        self.log_not_exist_en_files(en_file, pl_file_parsed, en_file_parsed)
+        if '--add-missing-en' in sys.argv:
+            self.write_to_en_files(en_file, en_file_parsed, pl_file_parsed)
+        else:
+            self.log_not_exist_en_files(en_file, pl_file_parsed, en_file_parsed)
 
 
     def write_to_pl_files(self, pl_file, pl_file_parsed, en_file_parsed):
         for idx, en_message in enumerate(en_file_parsed.body):
-            if isinstance(en_message, ast.ResourceComment) or isinstance(en_message, ast.GroupComment) or isinstance(en_message, ast.Comment):
+            if not isinstance(en_message, (ast.Message, ast.Term)):
                 continue
 
             pl_message_analog_idx = py_.find_index(pl_file_parsed.body, lambda pl_message: self.find_duplicate_message_id_name(pl_message, en_message))
@@ -167,12 +205,19 @@ class KeyFinder:
 
             # New elements
             if pl_message_analog_idx == -1:
-                pl_file_body = pl_file_parsed.body
-                if (len(pl_file_body) >= idx + 1):
-                    pl_file_parsed = self.append_message(pl_file_parsed, en_message, idx)
+                key_name = FluentAstAbstract.get_id_name(en_message)
+                if key_name and key_name in self.pl_global_keys:
+                    # Skip to avoid global duplicate
+                    pass
                 else:
-                    pl_file_parsed = self.push_message(pl_file_parsed, en_message)
-                have_changes = True
+                    pl_file_body = pl_file_parsed.body
+                    if (len(pl_file_body) >= idx + 1):
+                        pl_file_parsed = self.append_message(pl_file_parsed, en_message, idx)
+                    else:
+                        pl_file_parsed = self.push_message(pl_file_parsed, en_message)
+                    have_changes = True
+                    if key_name:
+                        self.pl_global_keys.add(key_name)
 
             if have_changes:
                 serialized = serializer.serialize(pl_file_parsed)
@@ -180,13 +225,53 @@ class KeyFinder:
 
     def log_not_exist_en_files(self, en_file, pl_file_parsed, en_file_parsed):
         for idx, pl_message in enumerate(pl_file_parsed.body):
-            if isinstance(pl_message, ast.ResourceComment) or isinstance(pl_message, ast.GroupComment) or isinstance(pl_message, ast.Comment):
+            if not isinstance(pl_message, (ast.Message, ast.Term)):
                 continue
 
             en_message_analog = py_.find(en_file_parsed.body, lambda en_message: self.find_duplicate_message_id_name(pl_message, en_message))
 
             if not en_message_analog:
                 logging.warning(f'Klucz "{FluentAstAbstract.get_id_name(pl_message)}" nie ma angielskiego odpowiednika pod ścieżką {en_file.full_path}"')
+
+    def write_to_en_files(self, en_file, en_file_parsed, pl_file_parsed):
+        for idx, pl_message in enumerate(pl_file_parsed.body):
+            if not isinstance(pl_message, (ast.Message, ast.Term)):
+                continue
+
+            en_message_analog_idx = py_.find_index(en_file_parsed.body, lambda en_message: self.find_duplicate_message_id_name(en_message, pl_message))
+            have_changes = False
+
+            # Attributes
+            if getattr(pl_message, 'attributes', None) and en_message_analog_idx != -1:
+                if not en_file_parsed.body[en_message_analog_idx].attributes:
+                    en_file_parsed.body[en_message_analog_idx].attributes = pl_message.attributes
+                    have_changes = True
+                else:
+                    for pl_attr in pl_message.attributes:
+                        en_attr_analog = py_.find(en_file_parsed.body[en_message_analog_idx].attributes, lambda en_attr: en_attr.id.name == pl_attr.id.name)
+                        if not en_attr_analog:
+                            en_file_parsed.body[en_message_analog_idx].attributes.append(pl_attr)
+                            have_changes = True
+
+            # New elements
+            if en_message_analog_idx == -1:
+                key_name = FluentAstAbstract.get_id_name(pl_message)
+                if key_name and key_name in self.en_global_keys:
+                    # Skip to avoid global duplicate
+                    pass
+                else:
+                    en_file_body = en_file_parsed.body
+                    if (len(en_file_body) >= idx + 1):
+                        en_file_parsed = self.append_message(en_file_parsed, pl_message, idx)
+                    else:
+                        en_file_parsed = self.push_message(en_file_parsed, pl_message)
+                    have_changes = True
+                    if key_name:
+                        self.en_global_keys.add(key_name)
+
+            if have_changes:
+                serialized = serializer.serialize(en_file_parsed)
+                self.save_and_log_file(en_file, serialized, pl_message)
 
     def append_message(self, pl_file_parsed, en_message, en_message_idx):
         pl_message_part_1 = pl_file_parsed.body[0:en_message_idx]
@@ -204,7 +289,8 @@ class KeyFinder:
     def save_and_log_file(self, file, file_data, message):
         file.save_data(file_data)
         logging.info(f'Do pliku {file.full_path} dodano klucz "{FluentAstAbstract.get_id_name(message)}"')
-        self.changed_files.append(file)
+        if file not in self.changed_files:
+            self.changed_files.append(file)
 
     def find_duplicate_message_id_name(self, pl_message, en_message):
         pl_element_id_name = FluentAstAbstract.get_id_name(pl_message)

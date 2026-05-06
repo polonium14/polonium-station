@@ -1,15 +1,3 @@
-# SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
-# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
-# SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 IProduceWidgets <107586145+IProduceWidgets@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
-# SPDX-FileCopyrightText: 2024 RumiTiger <154005209+RumiTiger@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
-# SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
-#
-# SPDX-License-Identifier: MIT
 
 food-sequence-no-space = You can't put any more!
 
@@ -103,10 +91,10 @@ food-sequence-content-chanterelle = chanterelle
 food-sequence-content-chevre-disk = chevre
 food-sequence-content-tofu-slice = tofu
 food-sequence-content-roingus = roingus
+
 # BURGERS
 
-food-sequence-burger-gen = {$content}burger
-
+food-sequence-burger-gen = { $content }burger
 food-sequence-burger-content-raw-meat = raw
 food-sequence-burger-content-meat = meaty
 food-sequence-burger-content-carp = carpo
@@ -145,11 +133,45 @@ food-sequence-burger-content-spacemans-trumpet = spacetrump
 food-sequence-burger-content-anomaly-berry = anom
 food-sequence-burger-content-extradimensional-orange = 3d
 food-sequence-burger-content-world-pea = peace
+food-sequence-cotton-burger-gen = { $content }burger
+food-sequence-cotton-burger-content-cotton-bol = cotton
+food-sequence-cotton-burger-content-pyrotton-bol = pyro
+food-sequence-cotton-burger-content-plushie-throngler = throngle
+food-sequence-cotton-burger-content-plushie-ghost = spooky
+food-sequence-cotton-burger-content-plushie-revenant = spookier
+food-sequence-cotton-burger-content-plushie-bee = buzzzy
+food-sequence-cotton-burger-content-plushie-hamptr = hampt
+food-sequence-cotton-burger-content-plushie-nukie = nukie
+food-sequence-cotton-burger-content-plushie-rouny = rouny
+food-sequence-cotton-burger-content-plushie-lamp = lamp
+food-sequence-cotton-burger-content-plushie-arachnid = spider
+food-sequence-cotton-burger-content-plushie-lizard = weh
+food-sequence-cotton-burger-content-plushie-experiment = experimental
+food-sequence-cotton-burger-content-plushie-spacelizard = space
+food-sequence-cotton-burger-content-plushie-lizard-inversed = hew
+food-sequence-cotton-burger-content-plushie-diona = dion
+food-sequence-cotton-burger-content-plushie-shark = shonk
+food-sequence-cotton-burger-content-plushie-ratvar = ratvarian
+food-sequence-cotton-burger-content-plushie-narsie = nar'
+food-sequence-cotton-burger-content-plushie-carp = carp
+food-sequence-cotton-burger-content-plushie-magicarp = magi
+food-sequence-cotton-burger-content-plushie-holocarp = holo
+food-sequence-cotton-burger-content-plushie-slime = slime
+food-sequence-cotton-burger-content-plushie-snake = snek
+food-sequence-cotton-burger-content-plushie-mouse = mouse
+food-sequence-cotton-burger-content-plushie-vox = skree
+food-sequence-cotton-burger-content-plushie-atmosian = atmos
+food-sequence-cotton-burger-content-plushie-xeno = xeno
+food-sequence-cotton-burger-content-plushie-penguin = peng
+food-sequence-cotton-burger-content-plushie-human = uristmc
+food-sequence-cotton-burger-content-plushie-moth = fluff
+food-sequence-cotton-burger-content-plushie-ian = corgi
+food-sequence-cotton-burger-content-among-pequeno = sus
 
 # TACO
 
-food-sequence-taco-gen = taco with {$content}
+food-sequence-taco-gen = taco with { $content }
 
 # SKEWER
 
-food-sequence-skewer-gen = {$content} kebab
+food-sequence-skewer-gen = { $content } kebab

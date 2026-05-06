@@ -8,3 +8,5 @@ ent-BlueshieldOfficerPDA = blueshield officer PDA
     .desc = Remember, you are NOT security.
 ent-NanotrasenRepresentativePDA = nanotrasen representative PDA
     .desc = Make everyone anxious with your presense.
+ent-GeneticistPDA = PDA genetyka
+    .desc = Wygląda na dość brudną.

@@ -1,7 +1,3 @@
-# SPDX-FileCopyrightText: 2023 dontbetank <59025279+dontbetank@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
-#
-# SPDX-License-Identifier: MIT
 
 book-text-demonomicon1 = How To Summon a Demon
           - by J.G. Wizgerald

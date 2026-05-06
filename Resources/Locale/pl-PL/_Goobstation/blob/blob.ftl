@@ -1,11 +1,3 @@
-# SPDX-FileCopyrightText: 2024 John Space <bigdumb421@gmail.com>
-# SPDX-FileCopyrightText: 2024 fishbait <gnesse@gmail.com>
-# SPDX-FileCopyrightText: 2025 QueerCats <jansencheng3@gmail.com>
-# SPDX-FileCopyrightText: 2025 Skye <57879983+Rainbeon@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
-# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
-#
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 objective-issuer-blob = Blob
 ghost-role-information-blobbernaut-name = Blobbernaut

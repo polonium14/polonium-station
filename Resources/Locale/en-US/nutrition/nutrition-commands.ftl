@@ -1,8 +1,3 @@
-# SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
-# SPDX-FileCopyrightText: 2024 Mervill <mervills.email@gmail.com>
-# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
-#
-# SPDX-License-Identifier: MIT
 
 cmd-nutrition-error-player = You cannot use this command unless you are a player.
 cmd-nutrition-error-entity = You cannot use this command without an entity.

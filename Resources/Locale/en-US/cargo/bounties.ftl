@@ -1,20 +1,3 @@
-# SPDX-FileCopyrightText: 2023 Ed <96445749+TheShuEd@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
-# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
-# SPDX-FileCopyrightText: 2024 Keer-Sar <144283718+Keer-Sar@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
-# SPDX-FileCopyrightText: 2024 TheWaffleJesus <106146578+TheWaffleJesus@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 icekot8 <93311212+icekot8@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 strO0pwafel <153459934+strO0pwafel@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 wafehling <wafehling@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Gansu <68031780+GansuLalan@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 aa5g21 <aa5g21@soton.ac.uk>
-# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
-#
-# SPDX-License-Identifier: MIT
 
 bounty-item-advanced-mop = Advanced Mop
 bounty-item-ambrosia = Ambrosia
@@ -24,6 +7,7 @@ bounty-item-arrow = Arrow
 bounty-item-artifact = Alien artifact
 bounty-item-artifact-fragment = Artifact fragment
 bounty-item-atmos-fire-suit = Atmos Fire Suit
+bounty-item-clown-costume = strój klauna
 bounty-item-balloon = Balloon
 bounty-item-banana = Banana
 bounty-item-banana-peel = Banana Peel
@@ -37,6 +21,7 @@ bounty-item-bloodpack = Blood pack
 bounty-item-board-game = Board Game
 bounty-item-bodybag = Bodybag
 bounty-item-book = Book
+bounty-item-diamond = diament
 bounty-item-borg-arm = Borg Arm
 bounty-item-borg-head = Borg Head
 bounty-item-borg-leg = Borg Leg
@@ -75,6 +60,11 @@ bounty-item-donut = Donut
 bounty-item-drink-bottle = Drinks Bottle
 bounty-item-dropper = Dropper
 bounty-item-eyes = Eyes
+bounty-item-ore-bananium = ruda bananowca
+bounty-item-ore-gold = ruda złota
+bounty-item-ore-plasma = ruda plazmy
+bounty-item-ore-silver = ruda srebra
+bounty-item-ore-uranium = ruda uranu
 bounty-item-figurine = Action figure
 bounty-item-flash = Flash
 bounty-item-flesh-monster = Flesh monster
@@ -94,6 +84,7 @@ bounty-item-instrument = Instrument
 bounty-item-instrument-brass = Brass Instrument
 bounty-item-instrument-keyed = Keyed Instrument
 bounty-item-instrument-string = Stringed Instrument
+bounty-item-scrap = złom
 bounty-item-jaws-of-life = Jaws of Life
 bounty-item-kidney = Kidney
 bounty-item-kitchen-knife = Kitchen Knife
@@ -228,6 +219,11 @@ bounty-item-Razorium = Razorium
 bounty-item-Oxandrolone = Oxandrolone
 bounty-item-Salicylic-Acid = Salicylic Acid
 bounty-item-Anodynafil = Anodynafil
+bounty-item-saline = sól fizjologiczna
+bounty-item-arithrazine = arytrazyna
+bounty-item-multiver = multiver
+bounty-item-dexalin = deksalina
+bounty-item-space-cleaner = kosmiczny środek czyszczący
 bounty-item-Diphenhydramine = Diphenhydramine
 bounty-item-Sigynate = Sigynate
 bounty-item-Natusixadone = Natusixadone
@@ -235,7 +231,6 @@ bounty-item-Doxarubixadone = Doxarubixadone
 bounty-item-Ichor = Ichor
 bounty-item-Robust-Harvest = Robust Harvest
 bounty-item-Left-4-Zed = Left 4 Zed
-
 bounty-item-super-bite-burger = Super Bite Burger
 bounty-item-sloppy-joe = Sloppy Joe Burger
 bounty-item-slop-bowl = Slop Bowl
@@ -247,7 +242,6 @@ bounty-item-fruit-salad = Fruit Salad
 bounty-item-chow-mein = Chow Mein
 bounty-item-gyros = Gyros
 bounty-item-stew = Stew
-
 bounty-item-tech-disk-terminal = Tech Disk Terminal Circuitboard
 bounty-item-artifact-crusher = Artifact Crusher Circuitboard
 bounty-item-anomaly-syncronizer = Anomaly Syncronizer Circuitboard
@@ -259,7 +253,6 @@ bounty-item-particle-decelerator = Portable Particle Decelerator
 bounty-item-night-vision-goggles = Night Vision Goggles
 bounty-item-anomaly-locator = Amomaly Locator
 bounty-item-gorilla-gauntlet = G.O.R.I.L.L.A. Gauntlet
-
 bounty-item-scrap-plate = Scrap Armor Plate
 bounty-item-scrap-helmet = Scrap Armor Helmet
 bounty-item-fire-bomb = Fire Bomb
@@ -270,7 +263,6 @@ bounty-item-wooden-buckler = Wooden Buckler
 bounty-item-makeshift-stunprod = Makeshift Stunprod
 bounty-item-makeshift-bola = Makeshift Bola
 bounty-item-svalinn-pistol = Svalinn Pistol
-
 bounty-item-disabler-smg = Disabler SMG
 bounty-item-truncheon = Nightstick
 bounty-item-xray-cannon = Xray Cannon
@@ -279,7 +271,6 @@ bounty-item-security-hud = Security Hud
 bounty-item-medsec-hud = MedSec Hud
 bounty-item-cybernetic-security-eyes = Cybernetic Security Eyes
 bounty-item-explosive-payload = Explosive Payload
-
 bounty-item-biosynthectic-eyes = Biosynthetic Eyes
 bounty-item-biosynthectic-lung = Biosynthetic Lungs
 bounty-item-biosynthectic-liver = Biosynthetic Liver
@@ -291,7 +282,6 @@ bounty-item-cybernetic-medical-eyes = Cybernetic Medical Eyes
 bounty-item-defibrillator = Defibrilator
 bounty-item-medical-hud = Medical Hud
 bounty-item-surgery-advanced-tool = Advanced Surgery Tool
-
 bounty-item-bahama-mama = Bahama Mama
 bounty-item-erika-suprise = Erika Suprise
 bounty-item-bloody-mary = BloodyMary
@@ -311,13 +301,14 @@ bounty-item-doctors-delight = Doctors Delight
 bounty-item-tayquila = Tayquila
 bounty-item-fever-dream = Fever Dream
 bounty-item-gargle-blaster = Gargle Blaster
-
 bounty-item-tritium = Tritium
 bounty-item-frezon = Frezon
 bounty-item-healium = Healium
 bounty-item-nitrium = Nitrium
+bounty-item-ring = pierścień
+bounty-item-remains = szczątki lorda roju
+bounty-item-plates = płyty skóry goliata
 bounty-item-pluoxium = Pluoxium
-
 bounty-description-artifact = NanoTrasen is in some hot water for stealing artifacts from non-spacefaring planets. Return one and we'll compensate you for it.
 bounty-description-baseball-bat = Baseball fever is going on at CentComm! Be a dear and ship them some baseball bats, so that management can live out their childhood dream.
 bounty-description-box-hugs = Several chief officials have sustained serious boo-boos. A box of hugs is urgently needed to aid in their recovery.
@@ -373,11 +364,11 @@ bounty-description-vegetable = The new chef is a vegetarian, and botany can't ke
 bounty-description-chili = Today's the CentComm Chili Cookoff, and, well, a few of us forgot to make some. Please help cover for us.
 bounty-description-rollerskates = CentComm Security is proposing a new strategy for helping officers win foot pursuits. Send them a couple so they can learn how bad an idea this is.
 bounty-description-bedsheet = Someone in Atmos keeps turning down the heater, and we're all shivering in our beds. Please send us some extra sheets to stay warm.
-bounty-description-bandana =  Bzzzt... Transmission from prison planet OC-1001: We're... reorganizing our command structure. Send us some bandanas so we can tell gan- I mean, departments apart.
+bounty-description-bandana = Bzzzt... Transmission from prison planet OC-1001: We're... reorganizing our command structure. Send us some bandanas so we can tell gan- I mean, departments apart.
 bounty-description-steak = The vegetarian cook is refusing to make us anything with meat, and the lizards are getting restless. Can you smuggle us a few steaks to keep them happy?
 bounty-description-banana = Hi station! Botany won't gimme any more. They said slipping the HoS out an open airlock wasn't funny! Can you believe it? Help me out! HONK.
 bounty-description-beer = Some nefarious agent has stolen every single drink in the bar. Yes, everything. Help tide us over until we can find them.
-bounty-description-hi-viz-vest  = The clown stole the AME controller and won't back. It's pretty dark in here. Some hi-viz vests would make seeing each other in the dark a little more bearable.
+bounty-description-hi-viz-vest = The clown stole the AME controller and won't back. It's pretty dark in here. Some hi-viz vests would make seeing each other in the dark a little more bearable.
 bounty-description-torch = The chef made all the monkeys and kobolds at once, and they rebelled and took over the cargo shuttle. They're demanding supplies and free passage to a jungle planet, and we're giving in to their demands. All they need now is a few torches.
 bounty-description-medkit-box = CentComm is putting on a play set in a hospital, and needs some props. Just send us some empty medkit boxes, and the show will go on!
 bounty-description-cardboard-box = "The Cardborgs Cometh" is a new play premiering tomorrow, and the costuming team is woefully unprepared. Send us some boxes to work with.
@@ -387,7 +378,6 @@ bounty-description-microwave-machine-board = Mr. Giggles thought it'd be funny t
 bounty-description-flashes = GREETINGS \[Station] WE REQUIRE 6 FLASHES DUE TO A NORMAL \[TrainingExercise] WITH SECURITY. EVERYTHING IS \[Normal].
 bounty-description-tooth-space-carp = Some lads from "down unda" need some teeth to make their traditional apparel. Send them a few from some space carp.
 bounty-description-tooth-sharkminnow = The chef is claiming that the teeth of sharkminnows are some kind of high-quality knife. I don't know what they're on about, but they want a set. Send it to them.
-
 bounty-category-botany = Botany
 bounty-category-science = Science
 bounty-category-misc = General
@@ -405,4 +395,5 @@ bounty-category-bar = Bar
 bounty-category-engineering = Engineering
 bounty-category-janitor = Janitorial
 bounty-category-chemistry = Chemistry
+bounty-description-ring = w tym WYJĄTKOWYM dniu odbędzie się ślub pomiędzy Geltami, ale pan Gelt zgóbił pierścionek. Przyślij nam nową parę pierścieni.
 bounty-category-atmospherics = Atmospherics

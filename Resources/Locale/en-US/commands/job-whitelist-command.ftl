@@ -1,8 +1,3 @@
-# SPDX-FileCopyrightText: 2024 DrSmugleaf <10968691+DrSmugleaf@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Tunguso4ka <71643624+Tunguso4ka@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
-#
-# SPDX-License-Identifier: MIT
 
 cmd-jobwhitelist-job-does-not-exist = Job {$job} does not exist.
 cmd-jobwhitelist-player-not-found = Player {$player} not found.
