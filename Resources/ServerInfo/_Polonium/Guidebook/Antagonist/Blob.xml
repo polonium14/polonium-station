@@ -47,7 +47,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
   </Box>
 
   - [color=#a4885c]Blob Produkcyjny[/color] stale produkuje punkty potrzebne na używanie przez bloba różnych akcji.
-  - [color=#a4885c]Blob Fabryczny[/color] tworzy Pody oraz Blobonautów, pomocnych w walce przeciwko stacji.
+  - [color=#a4885c]Blob Fabryczny[/color] tworzy Zarodniki oraz Blobonautów, pomocnych w walce przeciwko stacji.
   - [color=#a4885c]Węzeł Blobu[/color] pozwalan na stawianie pozostałych części wokół siebie, w limitowanym zasięgu.
 
   Ważne! Części specjalne są powiązane z najbliższym jądrem. 
@@ -59,10 +59,10 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
   <Box>
     <GuideEntityEmbed Entity="MobBlobBlobbernaut" Caption="Blobonaut"/>
-	<GuideEntityEmbed Entity="MobBlobPod" Caption="Pod blobu"/>
+	<GuideEntityEmbed Entity="MobBlobPod" Caption="Zardnik Bloba"/>
   </Box>
 
-  Bloby Fabryczne mogą produkować Pody oraz Blobonautów.
+  Bloby Fabryczne mogą produkować Zarodniki oraz Blobonautów.
   - Pody mają umiejętność przemiany martwych humanoidów w blobowe zombi, co zmusi ich do walki po twojej stronie przeciwko reszcie załogi.
   - Blobonauci zadają ogromne obrażenie, które bardzo się przydają przy atakowaniu..
 
