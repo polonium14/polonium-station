@@ -4,8 +4,8 @@ meta:
   engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 05/06/2026 19:20:49
-  entityCount: 9527
+  time: 05/06/2026 21:16:20
+  entityCount: 9530
 maps:
 - 7466
 grids:
@@ -2682,12 +2682,12 @@ entities:
             0: 65391
           -13,-2:
             0: 34943
-            6: 12288
+            3: 12288
           -12,-1:
             0: 65535
           -13,-1:
             0: 34952
-            3: 12336
+            4: 12336
           -12,0:
             0: 65535
           -12,-5:
@@ -2723,7 +2723,7 @@ entities:
           -13,-6:
             2: 61680
           -13,-5:
-            3: 61152
+            4: 61152
           -11,-6:
             2: 49
             0: 56320
@@ -2752,8 +2752,8 @@ entities:
             0: 305
           -13,0:
             0: 34952
-            4: 48
-            5: 12288
+            5: 48
+            6: 12288
           -12,1:
             1: 30576
           -13,1:
@@ -2839,8 +2839,8 @@ entities:
             2: 119
           -14,0:
             0: 13107
-            4: 128
-            5: 32768
+            5: 128
+            6: 32768
           -14,1:
             0: 32947
           -14,2:
@@ -2853,7 +2853,7 @@ entities:
             2: 34952
           -14,-1:
             0: 13107
-            3: 32896
+            4: 32896
           -14,4:
             0: 8
             2: 63552
@@ -2872,12 +2872,12 @@ entities:
           -15,-2:
             2: 8816
           -14,-3:
-            3: 3
+            4: 3
             2: 768
             0: 2184
           -14,-2:
             0: 13311
-            6: 32768
+            3: 32768
           -14,-4:
             2: 477
             0: 32768
@@ -3001,6 +3001,29 @@ entities:
           - 0
           - 0
           - 0
+          - 6666.982
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+        - volume: 2500
+          temperature: 293.15
+          moles:
+          - 0
+          - 0
+          - 0
           - 0
           - 0
           - 0
@@ -3048,29 +3071,6 @@ entities:
           - 6666.982
           - 0
           - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-        - volume: 2500
-          temperature: 293.15
-          moles:
-          - 0
-          - 0
-          - 0
-          - 6666.982
           - 0
           - 0
           - 0
@@ -21903,6 +21903,12 @@ entities:
       rot: 3.141592653589793 rad
       pos: 41.5,1.5
       parent: 2
+  - uid: 9176
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 9.5,7.5
+      parent: 2
 - proto: ComputerCriminalRecords
   entities:
   - uid: 3342
@@ -22078,6 +22084,12 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 41.5,0.5
+      parent: 2
+  - uid: 9528
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 8.5,5.5
       parent: 2
 - proto: ComputerTelevision
   entities:
@@ -42031,7 +42043,7 @@ entities:
   - uid: 3133
     components:
     - type: Transform
-      pos: 8.5,5.5
+      pos: 8.5,7.5
       parent: 2
 - proto: HolopadSecurityLawyer
   entities:
@@ -44425,10 +44437,11 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -20.5,-8.5
       parent: 2
-  - uid: 6943
+  - uid: 9530
     components:
     - type: Transform
-      pos: 9.5,7.5
+      rot: -1.5707963267948966 rad
+      pos: 8.5,16.5
       parent: 2
 - proto: Poweredlight
   entities:
@@ -52024,6 +52037,12 @@ entities:
       - SurveillanceCameraGeneral
       nameSet: True
       id: Evac
+  - uid: 9529
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 17.5,10.5
+      parent: 2
 - proto: SurveillanceCameraMedical
   entities:
   - uid: 7590
@@ -52209,7 +52228,13 @@ entities:
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
-      pos: 15.5,10.5
+      pos: 15.5,9.5
+      parent: 2
+  - uid: 6943
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 5.5,18.5
       parent: 2
   - uid: 7609
     components:
@@ -53204,11 +53229,6 @@ entities:
     components:
     - type: Transform
       pos: 15.5,16.5
-      parent: 2
-  - uid: 9176
-    components:
-    - type: Transform
-      pos: 9.5,7.5
       parent: 2
   - uid: 9432
     components:
