@@ -4,7 +4,7 @@ meta:
   engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 05/06/2026 21:16:20
+  time: 05/06/2026 21:28:41
   entityCount: 9530
 maps:
 - 7466
@@ -52230,12 +52230,18 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 15.5,9.5
       parent: 2
+    - type: SurveillanceCamera
+      nameSet: True
+      id: Prisoner Lockers
   - uid: 6943
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 5.5,18.5
       parent: 2
+    - type: SurveillanceCamera
+      nameSet: True
+      id: Armory Entrance
   - uid: 7609
     components:
     - type: Transform
@@ -52246,7 +52252,7 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
       nameSet: True
-      id: Cell Block
+      id: Brigmed
   - uid: 7610
     components:
     - type: Transform
@@ -52257,7 +52263,7 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
       nameSet: True
-      id: Sec Locker Room
+      id: Genpop
   - uid: 7611
     components:
     - type: Transform
@@ -52309,7 +52315,7 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
       nameSet: True
-      id: Perma
+      id: Sec Locker Room
   - uid: 7616
     components:
     - type: Transform
