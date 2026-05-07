@@ -1,5 +1,3 @@
-ent-ProjectileGrenadeBase = { ent-BaseItem }
-    .desc = { ent-BaseItem.desc }
 ent-GrenadeStinger = granat kolczasty
     .desc = Nic tu nie ma, proszę się rozejść.
 ent-GrenadeIncendiary = granat zapalający
