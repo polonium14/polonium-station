@@ -1,5 +1,4 @@
 delete-verb-get-data-text = Usuń
-edit-solutions-verb-get-data-text = Edit Solutions
 explode-verb-get-data-text = Wysadź
 ahelp-verb-get-data-text = Wiadomość
 admin-verbs-admin-logs-entity = Dziennik Encji
