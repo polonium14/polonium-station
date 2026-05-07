@@ -1,5 +1,3 @@
-ent-SurgeryStepBase = { "" }
-    .desc = { "" }
 ent-SurgeryStepOpenIncisionScalpel = Natnij skalpelem
     .desc = { ent-SurgeryStepBase.desc }
 ent-SurgeryStepClampBleeders = Zaciśnij naczynia krwionośne
