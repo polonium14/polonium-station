@@ -13,6 +13,9 @@ admin-smite-stomach-removal-self = Twój żołądek wydaje się pusty...
 admin-smite-run-walk-swap-prompt = Musisz nacisnąć shift, aby biegać!
 admin-smite-super-speed-prompt = Poruszasz się z prędkością mach 0.8!
 admin-smite-lung-removal-self = Nie możesz oddychać!
+
+## Smite names
+
 admin-smite-explode-name = Eksplozja
 admin-smite-chess-dimension-name = Wymiar Szachowy
 admin-smite-set-alight-name = Podpalenie
@@ -22,7 +25,6 @@ admin-smite-electrocute-name = Porazić Prądem
 admin-smite-remove-blood-name = Usunięcie krwi
 admin-smite-remove-hands-name = Usunięcie rąk
 admin-smite-remove-hand-name = Usunięcie ręki
-admin-smite-pinball-name = Pinball
 admin-smite-yeet-name = Wyrzucenie
 admin-smite-become-bread-name = Zamiana w Chleb
 admin-smite-cluwne-name = Klaun
@@ -44,8 +46,6 @@ admin-smite-stomach-removal-name = Usunięcie Żołądka
 admin-smite-speak-backwards-name = Mówienie Od Tyłu
 admin-smite-lung-removal-name = Usunięcie Płuc
 admin-smite-disarm-prone-name = Rozbrojenie na Leżąco
-admin-smite-super-bonk-name = Super Bonk
-admin-smite-super-bonk-lite-name = Super Bonk Lite
 admin-smite-terminate-name = Terminacja
 admin-smite-super-slip-name = Super Poślizg
 admin-smite-creampie-name = Ciastko z Kremem
@@ -54,6 +54,9 @@ admin-smite-ghostkick-name = Kop Duchowy
 admin-smite-nyanify-name = Kocie Uszy
 admin-smite-kill-sign-name = Znak Śmierci
 admin-smite-omni-accent-name = Omni-Akcent
+
+## Smite descriptions
+
 admin-smite-explode-description = Eksploduj ich.
 admin-smite-chess-dimension-description = Wygnanie do Wymiaru Szachowego.
 admin-smite-set-alight-description = Sprawia, że płoną.
@@ -95,6 +98,9 @@ admin-smite-super-bonk-lite-description = Uderza nimi o każdy stół na stacji 
 admin-smite-terminate-description = Tworzy rolę ducha Terminatora z celem zabicia ich.
 admin-smite-super-slip-description = Poślizguje ich bardzo, bardzo mocno.
 admin-smite-omni-accent-description = Sprawia, że cel mówi niemal każdym dostępnym akcentem.
+
+## Tricks descriptions
+
 admin-trick-unbolt-description = Odblokowuje wskazane drzwi.
 admin-trick-bolt-description = Blokuje wskazane drzwi.
 admin-trick-emergency-access-on-description = Włącza dostęp awaryjny dla wskazanych drzwi.
