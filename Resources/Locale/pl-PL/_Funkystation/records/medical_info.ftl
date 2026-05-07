@@ -1,4 +1,5 @@
-medical-info-no-info = Brak informacji medycznych.
+﻿medical-info-no-info = No medical information.
+
 # categories
 medical-info-category-allergies = Alergie
 medical-info-category-prescriptions = Recepty
@@ -43,7 +44,6 @@ medical-info-familyhistory-depression = Depresja
 medical-info-familyhistory-diabetes = Cukrzyca
 medical-info-familyhistory-heartdisease = Choroby serca
 medical-info-familyhistory-bloodpressure = Nadciśnienie
-medical-info-familyhistory-hiv = HIV
 medical-info-familyhistory-kidneydisease = Choroba nerek
 medical-info-familyhistory-kidneystones = Kamienie nerkowe
 medical-info-familyhistory-liverdisease = Choroba wątroby
