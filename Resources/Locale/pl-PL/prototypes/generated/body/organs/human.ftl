@@ -1,7 +1,3 @@
-ent-BaseHumanOrganUnGibbable = { ent-BaseItem }
-    .desc = { ent-BaseItem.desc }
-ent-BaseHumanOrgan = { ent-BaseHumanOrganUnGibbable }
-    .desc = { ent-BaseHumanOrganUnGibbable.desc }
 ent-OrganHumanBrain = mózg
     .desc = Źródło niesamowitej, niekończącej się inteligencji. Honk.
 ent-OrganHumanEyes = oczy
