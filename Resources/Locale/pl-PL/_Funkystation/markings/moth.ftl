@@ -1,8 +1,6 @@
-
 marking-MothEyesSoft-eyes_soft = Łagodne Oczy
 marking-MothEyesSoft-eyes_soft_skin = Skóra
 marking-MothEyesSoft = Łagodne Oczy
-marking-HeterochromiaMothSoft-eyes_heterochromia_soft = Heterochromia
 marking-HeterochromiaMothSoft = Heterochromia (Łagodne Oczy)
 marking-MothEyeshadow-motheyeshadow = Cień do powiek
 marking-MothEyeshadow = Cień do powiek (Ćma)
