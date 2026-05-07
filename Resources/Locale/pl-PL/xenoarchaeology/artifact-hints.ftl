@@ -51,7 +51,6 @@ xenoarch-trigger-tip-plasma = Plazma nieskondensowana
 xenoarch-trigger-tip-tritium = Tryt
 xenoarch-trigger-tip-ammonia = Amoniak
 xenoarch-trigger-tip-n2o = Podtlenek azotu
-xenoarch-trigger-tip-frezon = Frezon
 xenoarch-trigger-tip-radiation = Promieniowanie
 xenoarch-trigger-tip-brute-damage = Obrażenia fizyczne
 xenoarch-trigger-tip-interaction = Interakcja fizyczna
@@ -59,9 +58,9 @@ xenoarch-trigger-tip-wrenching = Dokręcanie
 xenoarch-trigger-tip-prying = Podważanie
 xenoarch-trigger-tip-screwing = Wkręcanie
 xenoarch-trigger-tip-pulsing = Impulsowanie
-xenoarch-trigger-tip-pressure-low = Niskie ciśnienie
 xenoarch-trigger-tip-rolling = Wałkowanie
 xenoarch-trigger-tip-slicing = Cięcie
+xenoarch-trigger-tip-pressure-low = Niskie ciśnienie
 xenoarch-trigger-tip-pressure-high = Wysokie ciśnienie
 xenoarch-trigger-tip-examine = Dokładne oględziny
 xenoarch-trigger-tip-timer = Regularna samoaktywacja
@@ -76,9 +75,9 @@ xenoarch-trigger-examine-wrenching = Coś luźno się kręci.
 xenoarch-trigger-examine-prying = Z powierzchni unosi się panel.
 xenoarch-trigger-examine-screwing = Jest tam wypukły fragment z małym wgłębieniem.
 xenoarch-trigger-examine-pulsing = Z powierzchni artefaktu wystaje odsłonięta dioda.
-xenoarch-trigger-examine-timer = Powierzchnię pokrywają rzeźbienia i zadrapania... Ledwo da się dostrzec liczbę: [italic]{ $time }[/italic]
 xenoarch-trigger-examine-rolling = Zrób z tego pizzę.
 xenoarch-trigger-examine-slicing = Potnij to na kawałki.
+xenoarch-trigger-examine-timer = Powierzchnię pokrywają rzeźbienia i zadrapania... Ledwo da się dostrzec liczbę: [italic]{ $time }[/italic]
 
 ### Effects hints
 
