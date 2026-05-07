@@ -1,12 +1,5 @@
 ent-BaseImplanter = implantator
     .desc = { ent-BaseItem.desc }
-ent-Implanter = { ent-BaseImplanter }
-    .desc = Jednorazowa strzykawka przeznaczona wyłącznie do wstrzykiwania i ekstrakcji implantów podskórnych.
-ent-ImplanterAdmeme = { ent-Implanter }
-    .suffix = Admeme
-    .desc = { ent-Implanter.desc }
-ent-BaseImplantOnlyImplanter = { ent-Implanter }
-    .desc = Jednorazowa strzykawka przeznaczona wyłącznie do wstrzykiwania implantów podskórnych.
 ent-BaseImplantOnlyImplanterSyndi = implantator syndykatu
     .desc = Kompaktowa jednorazowa strzykawka przeznaczona wyłącznie do wstrzykiwania implantów podskórnych. Pamiętaj, aby wyszorować ją mydłem lub szmatą, aby usunąć resztki DNA po użyciu!
 ent-SadTromboneImplanter = implantator smutnego puzonu
