@@ -23,7 +23,7 @@ Nifortunnie dla stacji, wygląda na to że Nanotrasen przypadkowo usadowił ją 
 
 Jako kultysta krwi, jedynym stworzeniem które kochaż oprócz swoich braci akolitów jest [color=#ff3333]Nar'Sie w samej swej potędze[/color]. Bądźcie mili dla siebie, uczcie się nawzajem trików i narzędzi zawodu, i pamiętajcie: tylko przez cooperacje jesteście w stanie dotrzeć do [color=#dd55aa]celu[/color].
 
-Możesz zostać Kultystą krwi zarówno na początku rundy jak i po przez zostanie skonwertowanym przez obecnego akolite. Kultyści mogą także, zamiast tego, zamknąć twoją duszę w kamieniu byś wykonywał każde ich życzenie.
+Możesz zostać Kultystą krwi zarówno na początku rundy, jak i poprzez zostanie skonwertowanym przez obecnego akolitę. Kultyści mogą także zamiast tego zamknąć twoją duszę w kamieniu, byś wykonywał każde ich życzenie.
 
 ## Umiejętności
 
@@ -37,7 +37,7 @@ Możesz zostać Kultystą krwi zarówno na początku rundy jak i po przez zostan
 
 [bold]Obcowanie[/bold] pozwala na komunikowanie się wyznawcą z braćmi kultu nawet na dalekie dystanse. Jednakże, zaklęcie będzie cicho wypowiedziane.  Więc uważaj by nie zaalarmować załogi przedwcześnie o obecności waszego kultu przez niedbałe używanie tej zdolności. Jeśli veil zostanie rozdarta, to zaklęcie będzie słyszalne dla wszystkich na około.
 
-[bold]Badanie Veil[/bold] pozwala kultyście na usłyszenie głosu[color=#ff3333]Władcy[/color]. Zdobywaj instrukcje po przez używanie tej umiejętności.
+[bold]Badanie Veil[/bold] pozwala kultyście na usłyszenie głosu[color=#ff3333]Władcy[/color]. Zdobywaj instrukcje poprzez używanie tej umiejętności.
 
 [Bold]Przygotowanie zaklęcia[/bold] pozwala [color=#ff3333]Twojej Patronce[/color] na sięgnięcie i wykucie znaku [bold]Zaklęcia Krwi[/bold] na swoim ciele. Tylko jedno zaklęcie krwi może być przygotowane jednocześnie, chyba że użytkownik stoi na [color=#ff6666]runie wzmacniającej[/color].
 
@@ -54,15 +54,15 @@ Podstawa każdego kultysty [color=#ff6666]runy.[/color] Te znaki, namalowane na 
 
 [color=#ff6666]Runy[/color] mogą być rysowane u twoich stóp po przez użycie w ręku kultowego sztyletu, wybranie runy z okrężnego menu które się pojawi, a następnie użycie sztyletu na sobie. Uważaj --  to zaboli.
 
-Najważniejszymi dostępnymi Ci runami są [color=#ff6666]runa konwersji[/color] oraz  [color=#ff6666]runa wzmacniająca[/color].Z tymi runami w bezpiecznej lokalizaci kultyści mogą zacząć wypełniać [color=#dd55aa]Jej wolę[/color].
+Najważniejszymi dostępnymi Ci runami są [color=#ff6666]runa konwersji[/color] oraz  [color=#ff6666]runa wzmacniająca[/color]. Z tymi runami w bezpiecznej lokalizacji kultyści mogą zacząć wypełniać [color=#dd55aa]Jej wolę[/color].
 
   <Box>
     <GuideEntityEmbed Entity="OfferingRune" Caption="runa konwersji"/>
   </Box>
 
-[bold][color=#ff6666]Runa konwersji[/color][/bold] Pozwala kultystą na zwerbowanie tych o słabym umyśle by pomagali im w ich celu. Kiedy [color=#ff3333]Władczyni[/color] powstanien, jej moc może zniszczyć ochrone umysłów tych którzy zostana jej ofiarowani. Ta runa może też być użyta na zwykłych oraz elektronicznych mózgach, jak i robotach żeby zamknąć ich duszę w skrystalizowanej krwi by mogli lepiej służyć Nar'Sie.
+[bold][color=#ff6666]Runa konwersji[/color][/bold] pozwala kultystom na zwerbowanie tych o słabym umyśle, by pomagali im w ich celu. Kiedy [color=#ff3333]Władczyni[/color] powstanie, jej moc może zniszczyć ochronę umysłów tych, którzy zostaną jej ofiarowani. Ta runa może też być użyta na zwykłych oraz elektronicznych mózgach, jak i robotach żeby zamknąć ich duszę w skrystalizowanej krwi, by mogli lepiej służyć Nar'Sie.
 - [color=#EEEE33]Werbowanie[/color] istoty żywej, o słabym umyśle ku waszemu celu -- osoby, która nie jest chroniona implantem ochrony mózgu lub kapłanem.
-- [color=#99CC99]Niszczenie[/color] ochrony mózgu może być tylko wykonane jeśli [color=#ff3333]Władczyni[/color] powstała.
+- [color=#99CC99]Niszczenie[/color] ochrony mózgu może być wykonane tylko, jeśli [color=#ff3333]Władczyni[/color] powstała.
 
   <Box>
     <GuideEntityEmbed Entity="EmpoweringRune" Caption="runa wzmacniająca"/>
@@ -82,7 +82,7 @@ Najważniejszymi dostępnymi Ci runami są [color=#ff6666]runa konwersji[/color]
     <GuideEntityEmbed Entity="BarrierRune" Caption="rua barriery"/>
   </Box>
 
-[bold][color=#ff6666]Runa Bariery[/color][/bold]  pozwala[color=#ff3333]Pani[/color] fizycznie bronić [color=#ff3333]Jej[/color] swoich wyznwców po przez magiczne bariery. Kiedy aktywowane, tymczasowe pole siłowe ukarze się nad nią, oraz sąsiednie [color=#ff3333]runy barriery[/color] zostaną także aktywowane. Nie ma limity co do długości tego łańcucha, ocal jednak żywotność wzywającego -- Jego krew będzie wysysana w tempie zależnym od ilości stworzonych barier.
+[bold][color=#ff6666]Runa Bariery[/color][/bold] pozwala[color=#ff3333]Pani[/color] fizycznie bronić [color=#ff3333]Jej[/color] swoich wyznawców poprzez magiczne bariery. Kiedy aktywowane, tymczasowe pole siłowe ukarze się nad nią, oraz sąsiednie [color=#ff3333]runy bariery[/color] zostaną także aktywowane. Nie ma limity co do długości tego łańcucha, ocal jednak żywotność wzywającego -- Jego krew będzie wysysana w tempie zależnym od ilości stworzonych barier.
 
   <Box>
     <GuideEntityEmbed Entity="SummoningRune" Caption="runa przyzywająca"/>
@@ -151,7 +151,7 @@ Molochy to potężne bestie zrobione z pancerza molocha, wzbudzonego poprzez wł
 	<GuideEntityEmbed Entity="ClothingShoesBootsForsaken" Caption="Zapomniane buty"/>
   </Box>
 
-Kult jest niepełny bez swoich narzędi. Najwarzniejsze z których to twój Kultowy Sztylet. Możesz przyzywać sztylety po przez twoją umiejętność wyboru zaklęć
+Kult jest niepełny bez swoich narzędzi. Najważniejszym z nich jest twój Kultowy Sztylet. Możesz przyzywać sztylety poprzez twoją umiejętność wyboru zaklęć.
 Sztylet Kultu to nie najgorsza broń która może być użyta do atakowania wrogów oraz rycia run. Nie jest w stanie skrzywdzić twoich bratnich członków kultu, więc możesz wymachiwać nim bez obaw o ich skaleczenie.
 
 Wszystkie poniższe przedmioty są tworzone poprzez użycie runy przyzywającej. Połóż na niej materiały, by je przyzwać.
@@ -164,7 +164,7 @@ Zapomniane Buty są dla kultysty bardzo ważną rzeczą -- pozwalają mu porząd
 
 ### Rozdarcie Veil
 
-Kiedy veil zostanie wystarczająco osłabiony, a twój kult wystarczająco rozrośniety przyjdzie czas na przuzwanie [color=#ff3333]Waszej Pani.[/color]
+Kiedy veil zostanie wystarczająco osłabiony, a twój kult wystarczająco rozrośnięty przyjdzie czas na przyzwanie [color=#ff3333]Waszej Pani.[/color]
 
 Nowa runa musi być wyryta w trzech wyznaczonych przez[color=#ff3333]Nią[/color] lokalizacjach o których wam powie. Te runy zajmą dużo czasu do przygotowania.
 
@@ -172,7 +172,7 @@ Kiedy veil zostanie rozdarta, kult będzie oznajmiony załodze i nie będziecie 
 
 ### Przyzwanie Nar'Sie
 
-Po przedarciu vail, Władczyni rozpocznie swoją podróż do tego świata. Znajdzie najszłabszy punkt czaso-przestrzenny i rozadrze go na części/
+Po przedarciu vail, Władczyni rozpocznie swoją podróż do tego świata. Znajdzie najszłabszy punkt czaso-przestrzenny i rozadrze go na części.
 
 To będzie widoczne w naszej rzeczywiśtości jako krwawa łza. Znajdźcie tą łze i wykonajcie finalny rytuał, niszcząc ściany tego świata
 
@@ -185,9 +185,9 @@ Ten finalny rytuał wywrze duży koszt na kultystach go wykonujących ale na kon
 Podczas ekspansji kultu, sytuacja na stacji przejdzie przez kilka kolejnych etapów:
 
 - 1. [color=#a4885c]Cichy[/color] - Kult rozpoczyna się rozrastać, kilku tylko wierzy. Vail trzyma się mocno.
-- 2. [color=#a4885c]Oczy[/color] - Jej oczy są na was zwrócone. Ona czeka. Jej moc będzie przesiąkała przez Veil i lekko świciła w oczach kultystów
-- 3. [color=#a4885c]Wzrost[/color] - Ona się obudziła w pełni. Jej moc wzrosła i może w pełni jest w stanie zerwać ochrone umysłów tych którzy są jej ofiarowani.
-- 4. [color=#a4885c]Veil[/color] - Vail zostało osłabione. Kult może rozpocząć finalny rytuał w momęcie kiedy jej pęknięcie jest widoczne.
+- 2. [color=#a4885c]Oczy[/color] - Jej oczy są na was zwrócone. Ona czeka. Jej moc będzie przesiąkała przez Veil i lekko świeciła w oczach kultystów
+- 3. [color=#a4885c]Wzrost[/color] - Ona się obudziła w pełni. Jej moc wzrosła i jest w stanie w pełni zerwać ochronę umysłów tych którzy są jej ofiarowani.
+- 4. [color=#a4885c]Veil[/color] - Vail zostało osłabione. Kult może rozpocząć finalny rytuał w momęcie, kiedy jej pęknięcie jest widoczne.
 - 5. [italic][color=#ff3333]Ona jest tutaj.[/color][/italic] - [italic][color=#ff3333]Rozpacz[/color][italic]
 
 ## Walczenie z Kultem
@@ -195,7 +195,7 @@ Podczas ekspansji kultu, sytuacja na stacji przejdzie przez kilka kolejnych etap
 Dekonwersja Kultysty może wydarzyć się na cztery sposoby:
 1. Przez wymuszone sporzycie [color=#4466ff]wody święconej[/color] (przynajmniej 40u).
 2. Przez wszczepienie [color=#4466ff]tarczy umysłu[/color] do ciała kultysty.
-3. Prze rzucienie pojemnika z wodą święconą na krew wylaną przez kultystę. To utworzy świętą mgłę która spali i oczyści kultystów.
+3. Przez wylanie wody święconej bezpośrednio na krew kultystów, co wywołuje gwałtowną reakcję: powstaje święta mgła, która pali i oczyszcza sługi ciemności znajdujące się w jej zasięgu.
 4. Przez popsikanie kultysty wodą święconą ze spryskiwacza lub gaśnicy, lub poprzez ochlapanie kultysty wodą święconą. To będzie ich palić, aż w końcu ich oczyści.
 
 Kapłan, jako święty byt, wykazuje niemal całkowitą odporność na [italic]przekonujące[/italic] aspekty kultu krwi, co czyni go jedynym członkiem załogi, któremu można w pełni zaufać po wykryciu zagrożenia. Kapłani są również niewrażliwi na krwawą magię oraz rytualny oręż, przez co ofensywne umiejętności kultystów stają się przeciwko nim bezużyteczne -- chyba że napastnicy zdecydują się na bardziej tradycyjne metody walki.

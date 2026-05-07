@@ -93,7 +93,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
   - 3. [color=#a4885c]Masa krytyczna[/color] - Jeśli blob przejmie znaczącą część stacji, Centralne Dowództwo wyśle faks z kodami detonacyjnymi do awaryjnej głowicy jądrowej na pokładzie stacji. Zadaniem pozostałej załogi jest włączyć głowicę a następnie spróbować uciec za wszelką cenę.
   - 4. [color=#a4885c]Zwycięstwo Blobu[/color] - Kiedy blob urośnie do gigantycznych rozmiarów, jego rozwój stanie się nie do powstrzymania, skutkując zakończeniem rundy i zwycięstwem blobu.
 
-  Zaczynając od etapu drugiego, najważniejszym zadaniem kapitana jest ochrona dysku autoryzacji nuklearnej. Jeśli się on straci nie będzie można powstrzymać blobu podczas kody Gamma, co daje prawie gwarantowane zwycięstwo dla blobu.
+  Zaczynając od etapu drugiego, najważniejszym zadaniem kapitana jest ochrona dysku autoryzacji nuklearnej. Jeśli się on straci, nie będzie można powstrzymać blobu podczas kodu Gamma, co daje prawie gwarantowane zwycięstwo dla blobu.
 
   <Box>
     <GuideEntityEmbed Entity="NukeDisk" Caption="Dysk autoryzacji nuklearnej"/>
