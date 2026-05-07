@@ -1,5 +1,3 @@
-ent-BorgChassisSelectable = { ent-BaseBorgChassisNT }
-    .desc = { ent-BaseBorgChassisNT.desc }
 ent-BorgChassisGeneric = typowy cyborg
     .suffix = type picked
     .desc = { ent-BorgChassisSelectable.desc }
