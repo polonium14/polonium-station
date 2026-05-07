@@ -1,31 +1,16 @@
-# Polskie tłumaczenie przez: @Tofi-Dev
-
 device-pda-slot-component-slot-name-cartridge = Kartridż
-default-program-name = Program
 notekeeper-program-name = Notatnik
-nano-task-program-name = NanoTask
 news-read-program-name = Wiadomości Stacyjne
 crew-manifest-program-name = Manifest Załogi
 crew-manifest-cartridge-loading = Ładowanie ...
-net-probe-program-name = NetProbe
 net-probe-scan = Zeskanowano { $device }!
 net-probe-label-name = Nazwa
 net-probe-label-address = Adres
 net-probe-label-frequency = Częstotliwość
 net-probe-label-network = Sieć
-log-probe-program-name = LogProbe
 log-probe-scan = Pobrano logi z { $device }!
 log-probe-label-time = Czas
 log-probe-label-accessor = Odblokowane przez:
-log-probe-label-number = #
-log-probe-print-button = Wydrukuj Logi
-log-probe-printout-device = Zeskanowane Urządzenie: { $name }
-wordle-program-name = Wordle
-log-probe-printout-header = Najnowsze logi:
-log-probe-printout-entry = #{ $number } / { $time } / { $accessor }
-astro-nav-program-name = AstroNav
-med-tek-program-name = MedTek
-plant-scan-program-name = PlantScan
 
 # NanoTask cartridge
 
