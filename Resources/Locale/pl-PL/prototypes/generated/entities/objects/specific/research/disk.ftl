@@ -9,6 +9,3 @@ ent-ResearchDiskDebug = dysk punktów badawczych
     .suffix = DEBUG, NIE MAPOWAĆ
 ent-TechnologyDisk = dysk technologii
     .desc = Dysk dla serwera R&D zawierający technologię badawczą.
-ent-TechnologyDiskRare = { ent-TechnologyDisk }
-    .suffix = rzadki.
-    .desc = { ent-TechnologyDisk.desc }
