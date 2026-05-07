@@ -25,7 +25,6 @@ materials-bones = kości
 materials-coal = węgiel
 materials-diamond = diament
 materials-gunpowder = proch strzelniczy
-materials-cotton = bawełna
 # Ores
 materials-raw-iron = ruda żelaza
 materials-raw-quartz = ruda kwarcu
