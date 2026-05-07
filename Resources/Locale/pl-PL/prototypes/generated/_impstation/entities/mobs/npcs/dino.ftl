@@ -1,10 +1,3 @@
-ent-BaseMobDinosaur = { ent-BaseMob }
-    .desc = Mezozoiczny żołnierz, gotowy żyć lub umrzeć dla Wojen Dinozaurów.
-    .suffix = SI
-ent-BaseMobDinosaurSmall = { ent-BaseMobDinosaur }
-    .desc = { ent-BaseMobDinosaur.desc }
-ent-BaseMobDinosaurCarnivore = { ent-BaseMobDinosaur }
-    .desc = { ent-BaseMobDinosaur.desc }
 ent-MobDinosaurCompy = kompsognat
     .desc = { ent-BaseMobDinosaurSmall.desc }
 ent-MobDinosaurDilo = dilofozaur
@@ -23,5 +16,3 @@ ent-MobDinosaurStego = stegozaur
     .desc = { ent-BaseMobDinosaur.desc }
 ent-MobDinosaurTrex = tyranozaur
     .desc = { ent-BaseMobDinosaurCarnivore.desc }
-ent-MobDinosaurTrike = triceratops
-    .desc = { ent-BaseMobDinosaur.desc }
