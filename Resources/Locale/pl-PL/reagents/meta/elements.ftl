@@ -1,4 +1,3 @@
-reagent-name-aluminium = aluminium
 reagent-desc-aluminium = Srebrny, miękki, niemagnetyczny i plastyczny metal.
 reagent-name-ash = popiół
 reagent-desc-ash = Jasnoszary, proszkowy osad
