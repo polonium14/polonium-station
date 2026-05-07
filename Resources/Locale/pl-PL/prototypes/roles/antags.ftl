@@ -2,6 +2,9 @@ roles-antag-generic-solo-antagonist-name = Samotny antagonista
 roles-antag-generic-free-agent-name = Wolny agent
 roles-antag-generic-team-antagonist-name = Antagonista zespołowy
 roles-antag-generic-silicon-antagonist-name = Robot antagonista
+
+## goob edited
+
 roles-antag-syndicate-agent-name = Agent Syndykatu
 roles-antag-syndicate-agent-objective = Wykonaj swoje zadania nie bedąc złapanym.
 roles-antag-syndicate-agent-sleeper-name = Uśpiony agent Syndykatu
@@ -30,5 +33,3 @@ roles-antag-thief-name = Złodziej
 roles-antag-thief-objective = Dołącz do swojej kolekcji parę rzeczy NT, bez używania przemocy.
 roles-antag-dragon-name = Smok kosmiczny
 roles-antag-dragon-objective = Stwórz armię karpi aby przejąć to terytorium.
-roles-antag-malfunctioning-ai-name = Malfunctioning AI
-roles-antag-malfunctioning-ai-objective = Sabotage the station as a malfunctioning AI.
