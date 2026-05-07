@@ -15,4 +15,3 @@ admin-verb-text-make-pirate = Zrób Pirata
 admin-verb-text-make-head-rev = Zrób Głównego Rewolucjonistę
 admin-verb-text-make-thief = Zrób Złodzieja
 admin-verb-text-make-paradox-clone = Utwórz Klona Paradoksalnego
-admin-overlay-antag-classic = ANTAG
