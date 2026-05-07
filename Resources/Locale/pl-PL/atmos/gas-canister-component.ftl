@@ -1,5 +1,6 @@
 ## UI
 
+
 # Bound Interface
 
 gas-canister-bound-user-interface-title = Kanister z gazem
@@ -8,7 +9,6 @@ gas-canister-popup-denied = Dostęp zabroniony
 
 # window
 
-gas-canister-window-ok-text = OK
 gas-canister-window-edit-text = Edytuj
 gas-canister-window-label-label = Etykieta:
 gas-canister-window-pressure-label = Ciśnienie:
