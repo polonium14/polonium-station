@@ -1,5 +1,3 @@
-ent-PartSilicon = { ent-BaseItem }
-    .desc = { ent-BaseItem.desc }
 ent-BaseBorgArmLeft = lewe ramię cyborga
     .desc = { ent-PartSilicon.desc }
 ent-BaseBorgArmRight = prawe ramię cyborga
