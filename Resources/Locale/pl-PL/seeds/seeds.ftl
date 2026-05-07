@@ -1,4 +1,5 @@
 # Nouns
+# Nouns
 seeds-noun-seeds = nasiona
 seeds-noun-spores = zarodniki
 # Seeds
@@ -120,7 +121,6 @@ seeds-cocoa-name = kakao
 seeds-cocoa-display-name = kakao
 seeds-berries-name = jagody
 seeds-berries-display-name = krzak jagód
-seeds-bungo-name = bungo
 seeds-bungo-display-name = bungo
 seeds-pea-name = fasola
 seeds-pea-display-name = fasola
@@ -140,5 +140,3 @@ seeds-cherry-name = wiśnia
 seeds-cherry-display-name = drzewo wiśniowe
 seeds-anomaly-berry-name = dziwojagoda
 seeds-anomaly-berry-display-name = krzak dziwojagód
-seeds-bloonion-name = cebula balonowa
-seeds-bloonion-display-name = cebula balonowa
