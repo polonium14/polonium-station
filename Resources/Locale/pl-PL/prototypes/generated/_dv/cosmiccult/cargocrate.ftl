@@ -1,6 +1,3 @@
-ent-JugHolywater = { ent-Jug }
-    .suffix = święcona woda
-    .desc = { ent-Jug.desc }
 ent-CrateChaplain = skrzynka religijna
     .desc = { ent-CratePlastic.desc }
 ent-CrateServiceReligious = skrzynka ze sprzętem religijnym
