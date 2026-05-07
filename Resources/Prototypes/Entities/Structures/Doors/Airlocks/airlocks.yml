@@ -363,4 +363,4 @@
   suffix: Central Command
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Glass/centcomm.rsi
+    sprite: _DV/Structures/Doors/Airlocks/Glass/centcomm.rsi
