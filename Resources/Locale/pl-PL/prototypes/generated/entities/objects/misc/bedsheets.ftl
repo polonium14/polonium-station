@@ -1,5 +1,3 @@
-ent-BedsheetBase = BedsheetBase
-    .desc = Zaskakująco miękka pościel lniana.
 ent-BedsheetBlack = czarna pościel
     .desc = { ent-BedsheetBase.desc }
 ent-BedsheetBlue = niebieska pościel
@@ -10,8 +8,6 @@ ent-BedsheetCaptain = pościel kapitańska
     .desc = Ma na sobie symbol Nanotrasen. Została utkana z rewolucyjnego nowego rodzaju nici, gwarantującego 0,01% przepuszczalności dla większości substancji niechemicznych, popularnego wśród większości nowoczesnych kapitanów.
 ent-BedsheetCE = pościel IN
     .desc = Jest ozdobiona emblematem klucza. Jest wysoce refleksyjna i odporna na plamy, więc nie musisz się martwić o jej zniszczenie przez olej.
-ent-BedsheetCentcom = CentComm bedsheet
-    .desc = Woven with advanced nanothread for warmth as well as being very decorated, essential for all officials.
 ent-BedsheetClown = pościel klauna
     .desc = Tęczowy koc z utkanym w nim klaunowskim maską. Pachnie lekko bananami.
 ent-BedsheetCMO = pościel DM
