@@ -10,5 +10,3 @@ player-tab-entry-tooltip = Czas gry jest wyświetlany w formacie dni:godziny:min
 player-tab-filter-line-edit-placeholder = Filtruj
 player-tab-is-antag-yes = TAK
 player-tab-is-antag-no = NIE
-player-tab-character-name-antag-symbol = { $symbol } { $name }
-player-tab-antag-prefix = 🗡
