@@ -116,7 +116,5 @@ ent-ClothingUniformJumpsuitHosBase = mundur służbowy Szefa Ochrony
     .desc = Mundur służbowy Szefa Ochrony, idealny gdy spodziewasz się wojny z ćmaraluchami.
 ent-ClothingUniformDressHosBase = mundur wyjściowy Szefa Ochrony
     .desc = Mundur wyjściowy Szefa Ochrony, do codziennego noszenia.
-ent-ClothingUniformMessHosBase = head of security's formal uniform
-    .desc = The head of security's formal uniform, for special occasions
 ent-ClothingUniformJumpsuitCadetBase = mundur kadeta
     .desc = Mundur wykonany z mocnego materiału, zapewniający solidną ochronę.
