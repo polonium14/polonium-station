@@ -1,5 +1,3 @@
-ent-BaseMeleeWeaponEnergy = { ent-BaseItem }
-    .desc = { ent-BaseItem.desc }
 ent-EnergySword = miecz energetyczny
     .desc = Bardzo głośny i niebezpieczny miecz z ostrzem z czystej, skoncentrowanej plazmy. Przecina nieopancerzonych jak masło.
 ent-EnergyDaggerLoud = sztylet energetyczny
@@ -16,6 +14,3 @@ ent-EnergySwordDouble = podwójny miecz energetyczny
     .desc = Stażyści Syndykatu uznali, że jeden ostrze to za mało. Można schować do kieszeni.
 ent-HyperEutacticBlade = ostrze hipereutaktyczne
     .desc = Supermasywna broń stworzona do rozcinania samej struktury czasoprzestrzeni, dynamicznie tworzy hipereutaktyczną nanostrukturę zdolną przechodzić przez większość znanych materiałów jak gorący nóż przez masło.
-ent-CyborgEnergySwordDouble = { ent-EnergySwordDouble }
-    .desc = Stażyści Syndykatu uznali, że jeden ostrze to za mało. Specjalnie zaprojektowany dla cyborgów syndykatu.
-    .suffix = Jednoręczny, Dla Borgów
