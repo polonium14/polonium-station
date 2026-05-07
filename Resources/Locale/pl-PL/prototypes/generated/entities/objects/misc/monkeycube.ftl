@@ -1,8 +1,5 @@
 ent-MonkeyCubeBox = pudełko małpich kostek
     .desc = Małpie kostki marki Drymate. Wystarczy dodać wody!
-ent-BaseWrappedCube = { ent-BaseItem }
-    .suffix = Zapakowane
-    .desc = { ent-BaseItem.desc }
 ent-MonkeyCubeWrapped = małpia kostka
     .desc = Rozpakuj to, aby otrzymać małpią kostkę.
 ent-KoboldCubeBox = pudełko koboldzich kostek
