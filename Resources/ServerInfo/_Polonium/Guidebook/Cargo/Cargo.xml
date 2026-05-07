@@ -47,7 +47,7 @@ SPDX-License-Identifier: MIT
 
   Jeśli znajdziesz coś wartościowego - przynieś to do [color=cyan]Ładowni[color]. Jeśli może sie zmieścić w [color=cyan]Skrzyni[/color], znajdź pustą skrzynię i włóż ten przedmiot do środka.
 
-  Jeśli [color=cyan]Ładownia [/color] jest daleko, możesz położyć wszystkie przedmioty przeznaczone do sprzedarzy na [color=cyan]Palety Ładunkowe[/color]. Kiedy już wachadłowiec zadokuje do stacji rozładój wszyskie dobra które sprzedajesz. 
+  Jeśli [color=cyan]Ładownia [/color] jest daleko, możesz położyć wszystkie przedmioty przeznaczone do sprzedarzy na [color=cyan]Palety Ładunkowe[/color]. Kiedy już wahadłowiec zadokuje do stacji, rozładuj wszystkie dobra, które sprzedajesz. 
 
   <Box>
     <GuideEntityEmbed Entity="ComputerPalletConsole"/>
