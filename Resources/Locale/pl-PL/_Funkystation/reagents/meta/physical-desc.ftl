@@ -1,4 +1,3 @@
-
 reagent-physical-desc-vaporous = parujący
 reagent-physical-desc-burnt = przypalony
 reagent-physical-desc-profane = bluźnierczy
