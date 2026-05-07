@@ -20,5 +20,3 @@ reagent-name-weh = sok powodujący Weh
 reagent-desc-weh = Czysta esencja pluszaka jaszurki, powoduje Weh!
 reagent-name-hew = sok powodujący Hew
 reagent-desc-hew = Czysta esencja odwrotnego pluszaka jaszurki, powoduje Hew!
-reagent-name-corgiessence = corgium
-reagent-desc-corgiessence = Smakuje jak karma dla psów. Najwyraźniej to kwestia gustu.
