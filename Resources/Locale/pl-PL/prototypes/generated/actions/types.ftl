@@ -1,5 +1,3 @@
-ent-BaseSuicideAction = { "" }
-    .desc = { "" }
 ent-ActionScream = Krzycz
     .desc = AAAAAAAAAAAAAAAAAAAAAAAAA
 ent-ActionTurnUndead = Przemień w nieumarłego
@@ -42,8 +40,6 @@ ent-ActionSleep = Śpij
     .desc = Idź spać.
 ent-ActionWake = Obudź się
     .desc = Przestań spać.
-ent-ActionActivateHonkImplant = Honk
-    .desc = Aktywuje Twój implant honkujący, który wyda charakterystyczny dźwięk klauna.
 ent-ActionFireStarter = Podpal
     .desc = Podpala wrogów w promieniu wokół Ciebie.
 ent-ActionToggleEyes = Otwórz/Zamknij oczy
