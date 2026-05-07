@@ -16,8 +16,6 @@ materials-unit-slab = kawałki
 materials-unit-web = sieci
 # chunks of ore
 materials-unit-chunk = kawałki rudy
-# boll of cotton
-materials-unit-boll = kuli
 # bills of spesos... not very good but they are not (yet?) used for crafting anything
 # also the lathe/atm would need bigger denominations to output...
 materials-unit-bill = banknoty
