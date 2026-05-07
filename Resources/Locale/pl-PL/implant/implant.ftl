@@ -16,11 +16,6 @@ implanter-set-draw-type = Typ implantu
 implanter-draw-text = Pobranie
 implanter-inject-text = Wystrzykanie
 implanter-empty-text = Pusty
-implanter-label-inject = [color=green]{ $implantName }[/color]
-    Mode: [color=white]{ $modeString }[/color]
-implanter-label-draw = [color=red]{ $implantName }[/color]
-    Mode: [color=white]{ $modeString }[/color]
-implanter-contained-implant-text = [color=green]{ $desc }[/color]
 
 ## Implant Popups
 
