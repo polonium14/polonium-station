@@ -1,7 +1,3 @@
-ent-GasTankBase = { ent-BaseItem }
-    .desc = { ent-BaseItem.desc }
-ent-GasTankRoundBase = { ent-GasTankBase }
-    .desc = { ent-GasTankBase.desc }
 ent-OxygenTank = butla z tlenem
     .desc = Standardowa cylindryczna butla na tlen. Może pomieścić 5 L gazu.
 ent-NitrogenTank = butla z azotem
