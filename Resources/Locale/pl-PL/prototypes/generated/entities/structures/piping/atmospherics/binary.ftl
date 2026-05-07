@@ -1,5 +1,3 @@
-ent-GasBinaryBase = { ent-GasPipeBase }
-    .desc = { ent-GasPipeBase.desc }
 ent-GasPressurePump = pompka do gazu
     .desc = Pompka, która przemieszcza gaz pod ciśnieniem.
 ent-GasVolumePump = pompka objętościowa
@@ -18,11 +16,6 @@ ent-GasDualPortVentPump = dwupunktowy wylot powietrza
     .desc = Posiada zawór i pompę podłączoną do niego. Są dwa porty, jeden jest wejściem do uwalniania powietrza, drugi jest wyjściem podczas zasysania.
 ent-GasRecycler = recykler gazu
     .desc = Recyklinguje dwutlenek węgla i podtlenek azotu. Ogrzewacz i sprężarka nie są wliczone.
-ent-HeatExchanger = radiator
-    .desc = Przenosi ciepło między rurą a jej otoczeniem.
-ent-HeatExchangerBend = { ent-HeatExchanger }
-    .suffix = Zgięcie
-    .desc = { ent-HeatExchanger.desc }
 ent-HeatPump = pompa ciepła
     .desc = Pompa, która przemieszcza ciepło z jednej strony na drugą.
 ent-GasTemperatureGate = zawór temperaturowy
