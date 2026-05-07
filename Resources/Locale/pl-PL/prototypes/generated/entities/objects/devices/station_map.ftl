@@ -1,13 +1,4 @@
 ent-BaseHandheldStationMap = mapa stacji (przenośna)
     .desc = Wyświetla odczyt aktualnej stacji.
-ent-HandheldStationMap = { ent-BaseHandheldStationMap }
-    .suffix = Przenośna, Zasilana
-    .desc = { ent-BaseHandheldStationMap.desc }
-ent-HandheldStationMapEmpty = { ent-HandheldStationMap }
-    .suffix = Przenośna, Pusta
-    .desc = { ent-HandheldStationMap.desc }
-ent-HandheldStationMapUnpowered = { ent-BaseHandheldStationMap }
-    .suffix = Przenośna, Bez Zasilania
-    .desc = { ent-BaseHandheldStationMap.desc }
 ent-HandheldStationMapTactical = taktyczna mapa stacji
     .desc = Wyświetla odczyt aktualnej stacji, bez potrzeby zasilania.
