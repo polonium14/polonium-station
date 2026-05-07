@@ -20,4 +20,3 @@ blockgame-menu-button-back = Wstecz
 blockgame-menu-label-next = Następny
 blockgame-menu-label-hold = Przytrzymaj
 blockgame-menu-text-station = Stacja
-blockgame-menu-text-nanotrasen = Nanotrasen
