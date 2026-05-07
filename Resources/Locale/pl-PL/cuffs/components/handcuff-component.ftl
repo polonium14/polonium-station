@@ -13,7 +13,6 @@ handcuff-component-cuff-other-success-message = Udało ci się założyć kajdan
 handcuff-component-cuff-by-other-success-message = { $otherName } założył ci kajdanki!
 handcuff-component-cuff-self-success-message = Zakładasz sobie kajdanki.
 handcuff-component-cuff-interrupt-message = Przerwano ci zakładanie kajdanek { $targetName }!
-handcuff-component-cuff-interrupt-other-message = Przerywasz { $otherName }, gdy { SUBJECT($otherEnt) } { CONJUGATE-BE($otherEnt) } w trakcie zakładania ci kajdanek!
 handcuff-component-cuff-interrupt-self-message = Przerwano ci zakładanie sobie kajdanek.
 handcuff-component-cuff-interrupt-buckled-message = Nie możesz się przypiąć będąc w kajdankach!
 handcuff-component-cuff-interrupt-unbuckled-message = Nie możesz się odpiąć będąc w kajdankach!
