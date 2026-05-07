@@ -12,7 +12,6 @@ borg-ui-charge-label = Ładowanie: { $charge }%
 borg-ui-no-brain = Brak mózgu
 borg-ui-remove-battery = Usuń
 borg-ui-modules-label = Moduły:
-borg-ui-module-counter = { $actual }/{ $max }
 # Transponder
 borg-transponder-disabled-popup = Mózg wypada z góry { $name }!
 borg-transponder-disabling-popup = Twój nadajnik zaczyna blokować dostęp do kadłuba!
