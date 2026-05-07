@@ -4,11 +4,14 @@ apc-menu-breaker-button = Przełącz
 apc-menu-power-label = Obciążenie
 apc-menu-external-label = Zasilanie zewnętrzne
 apc-menu-charge-label = Naładowanie: { $percent }
-# Stan zasilania
+
+# For the power state label
+
 apc-menu-power-state-good = Dobry
 apc-menu-power-state-low = Niski
 apc-menu-power-state-none = Brak
-# Tekst pomocniczy na dole
+
+# For the flavor text on the footer
+
 apc-menu-flavor-left = Skontaktuj się z inżynierem w celu uzyskania pomocy.
 apc-menu-flavor-right = wersja 1.2
-apc-menu-power-state-label-text = { POWERWATTS($power) }
