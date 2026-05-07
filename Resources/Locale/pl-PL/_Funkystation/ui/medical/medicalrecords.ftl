@@ -1,10 +1,9 @@
-funky-medical-records-window-title = Akta medyczne
+﻿funky-medical-records-window-title = Medical Records
+
 funky-medical-records-yes = Tak
 funky-medical-records-no = Nie
 cd-character-records-viewer-unknown = Nieznane
 funky-medical-records-viewer-none-provided = Brak danych
-funky-medical-records-unit-cm = cm
-funky-medical-records-unit-kg = kg
 funky-medical-records-reset = Resetuj
 funky-medical-records-search = Szukaj
 funky-medical-records-search-placeholder = Szukaj...
@@ -23,7 +22,6 @@ funky-medical-records-insurance-provider-title = Ubezpieczyciel:
 funky-medical-records-insurance-plan-title = Plan ubezpieczenia:
 funky-medical-records-medical-info = Informacje medyczne
 funky-medical-records-fingerprints-title = Odciski palców:
-funky-medical-records-dna-title = DNA:
 funky-medical-records-blood-title = Grupa krwi:
 funky-medical-records-identifying-features-title = Cechy identyfikujące:
 funky-medical-records-post-mortem-title = Instrukcje pośmiertne:
