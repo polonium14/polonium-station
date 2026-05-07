@@ -12,9 +12,5 @@ research-console-tier-discipline-info = Ranga { $tier }, [color={ $color }]{ $di
 research-console-tier-info-small = : ranga { $tier }
 research-console-cost = Koszt: [color=orchid]{ $amount }[/color]
 research-console-unlocks-list-start = Umożliwia:
-research-console-unlocks-list-entry = - [color=yellow]{ $name }[/color]
-research-console-unlocks-list-entry-generic = - [color=green]{ $text }[/color]
 research-console-prereqs-list-start = Wymaga:
-research-console-prereqs-list-entry = - [color=orchid]{ $text }[/color]
 research-console-no-access-popup = Brak dostępu!
-research-console-unlock-technology-radio-broadcast = Zarejestrowano [bold]{ $technology }[/bold] dzięki [bold]{ $amount }[/bold] wiedzy przez [bold]{ CAPITALIZE($approver) }[/bold].
