@@ -49,10 +49,7 @@ anomaly-sync-no-anomaly = Brak anomalii w zasięgu.
 anomaly-sync-examine-connected = Jest [color=darkgreen]podłączona[/color] do anomalii.
 anomaly-sync-examine-not-connected = Nie jest [color=darkred]podłączona[/color] do anomalii.
 anomaly-sync-connect-verb-text = Podłącz anomalię
-anomaly-sync-connect-verb-message = Podłącz pobliską anomalię do { $machine }.
 anomaly-generator-ui-title = Generator anomalii
-anomaly-sync-disconnect-verb-text = Detach anomaly
-anomaly-sync-disconnect-verb-message = Detach the connected anomaly from { $machine }.
 anomaly-generator-fuel-display = Paliwo:
 anomaly-generator-cooldown = Czas odnowienia: [color=gray]{ $time }[/color]
 anomaly-generator-no-cooldown = Czas odnowienia: [color=gray]Gotowe[/color]
@@ -70,7 +67,6 @@ anomaly-command-pulse = Wysyła impuls do wybranej anomalii
 anomaly-command-supercritical = Sprawia, że wybrana anomalia staje się nadkrytyczna
 # Flavor text on the footer
 anomaly-generator-flavor-left = Anomalia może pojawić się w operatorze.
-anomaly-generator-flavor-right = v1.1
 anomaly-behavior-unknown = [color=red]BŁĄD. Nie można odczytać.[/color]
 anomaly-behavior-title = analiza odchyleń zachowania:
 anomaly-behavior-point = [color=gold]Anomalia generuje { $mod }% punktów[/color]
