@@ -1,5 +1,3 @@
-ent-BaseArachnidOrgan = { ent-BaseItem }
-    .desc = { ent-BaseItem.desc }
 ent-OrganArachnidStomach = żołądek
     .desc = Obrzydlistwo. Ciężko to przetrawić.
 ent-OrganArachnidLungs = płuca
