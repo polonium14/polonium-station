@@ -1,4 +1,3 @@
-
 thaven-mood-possessive-of-property-name = Zaborczy
 thaven-mood-possessive-of-property-desc = Jesteś skrajnie zaborczy wobec swojej własności. Odmawiaj oddania jej, a jeśli zostanie zgubiona lub skradziona, musi zostać odzyskana za wszelką cenę.
 thaven-mood-excessively-organized-name = Nadmiernie Zorganizowany
@@ -35,7 +34,6 @@ thaven-mood-statement-only-name = Zadawnie Pytań Jest Chamskie
 thaven-mood-statement-only-desc = Niegrzecznym jest zadawnie nijakich pytań. Preferujesz formułować wszystko jako konkretne stwierdzenie.
 thaven-mood-theft-neutral-name = Drobna Kradzież Jest Moralnie Neutralna
 thaven-mood-theft-neutral-desc = Nie rozumiesz pojęcia własności w odniesieniu do innych ludzi.
-thaven-mood-duel-name = Code Duello
 thaven-mood-duel-desc = Spory należy rozstrzygać w drodze formalnego pojedynku, z użyciem przemocy lub w inny sposób. Zwycięzca ma rację.
 thaven-mood-prometheus-name = Filozof
 thaven-mood-prometheus-desc = Posiadasz niezliczoną mądrość, i powinieneś się nia podzielić ze wszystkimi.
@@ -65,7 +63,6 @@ thaven-mood-voxsymp-name = Sympatyk Vox
 thaven-mood-voxsymp-desc = By pokazać że wspierasz Voxów, musisz zawsze być podłączony do butli tlenowej.
 thaven-mood-item-good-name = Kolekcjoner
 thaven-mood-item-good-desc = { $item } jest dla ciebie niesamowicie fascynujący. Zbierz tak dużo jak tylko potrafisz, i upewnij się ze inni okazują im odpowiedni szacunek.
-thaven-mood-smoker-name = Smoker
 thaven-mood-smoker-desc = Jesteś bezradnie uzależniony od nikotyny. Jeśli aktywnie nie palisz, odczuwasz głód nikotynowy.
 thaven-mood-eye-for-eye-name = Oko Za Oko
 thaven-mood-eye-for-eye-desc = Odwet powinien być proporcjonaln.
@@ -123,7 +120,6 @@ thaven-mood-speech-restriction-desc =
     }
 thaven-mood-carpkin-name = Karpi Krewni
 thaven-mood-carpkin-desc = Kosmiczne karpie i kosmiczne smoki są dawno zaginionymi krewnymi. Powinny być traktowane z szacunkiem i nie należy im wyrządzać żadnej krzywdy.
-thaven-mood-pettingzoo-name = Petting Zoo
 thaven-mood-pettingzoo-desc = Musisz pogłaskać każde zwierze jakie napotkasz.
 thaven-mood-jestersprivilege-name = Przywilej Błazna
 thaven-mood-jestersprivilege-desc = Klaun, żyjący bez ograniczeń narzuczanych mu przez społeczeństwo, posiada tajemną mądrość. Zwracaj szczególną uwagę na jego słowa i czynności bo zawarta jest w nich wiedza.
