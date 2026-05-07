@@ -1,11 +1,11 @@
 # UI
 
+
 ## Window
 
 air-alarm-ui-access-denied = Brak wystarczających uprawnień!
 air-alarm-ui-window-pressure-label = Ciśnienie
 air-alarm-ui-window-temperature-label = Temperatura
-air-alarm-ui-window-alarm-state-label = Status
 air-alarm-ui-window-address-label = Adres
 air-alarm-ui-window-device-count-label = Liczba urządzeń
 air-alarm-ui-window-resync-devices-label = Ponowna synchronizacja
@@ -21,7 +21,6 @@ air-alarm-ui-window-auto-mode-label = Tryb automatyczny
        *[invalid] Nieprawidłowe
     }
 air-alarm-ui-window-listing-title = {$address} : {-air-alarm-state-name(state:$state)}
-air-alarm-ui-window-pressure = { $pressure } kPa
 air-alarm-ui-window-pressure-indicator = Ciśnienie: [color={ $color }]{ $pressure } kPa[/color]
 air-alarm-ui-window-temperature = { $tempC } °C ({ $temperature } K)
 air-alarm-ui-window-temperature-indicator = Temperatura: [color={ $color }]{ $tempC } °C ({ $temperature } K)[/color]
@@ -31,8 +30,6 @@ air-alarm-ui-window-alarm-state-indicator = Status: [color={$color}]{-air-alarm-
 air-alarm-ui-window-tab-vents = Odpowietrzniki
 air-alarm-ui-window-tab-scrubbers = Filtry
 air-alarm-ui-window-tab-sensors = Czujniki
-air-alarm-ui-gases = { $gas }: { $amount } mol ({ $percentage }%)
-air-alarm-ui-gases-indicator = { $gas }: [color={ $color }]{ $amount } mol ({ $percentage }%)[/color]
 air-alarm-ui-mode-filtering = Filtrowanie
 air-alarm-ui-mode-wide-filtering = Filtrowanie (szerokie)
 air-alarm-ui-mode-fill = Napełnianie
@@ -40,6 +37,7 @@ air-alarm-ui-mode-panic = Tryb paniki
 air-alarm-ui-mode-none = Brak
 
 ## Widgets
+
 
 ### General
 
@@ -60,7 +58,6 @@ air-alarm-ui-vent-internal-bound-label = Granica wewnętrzna
 
 air-alarm-ui-scrubber-pump-direction-label = Kierunek
 air-alarm-ui-scrubber-volume-rate-label = Prędkość (L)
-air-alarm-ui-scrubber-wide-net-label = WideNet
 
 ### Thresholds
 
