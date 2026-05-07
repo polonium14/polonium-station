@@ -1,8 +1,6 @@
 solar-control-window-title = Konsola sterowania panelami słonecznymi
 solar-control-window-output-power = Moc wyjściowa:
-solar-control-window-watts = W
 solar-control-window-sun-angle = Kąt padania światła:
-solar-control-window-degrees = °
 solar-control-window-panel-angle = Kąt paneli:
 solar-control-window-panel-angular-velocity = Prędkość obrotu paneli:
 solar-control-window-degrees-per-minute = °/min
