@@ -1,4 +1,3 @@
-defibrillator-on = Defibrylator jest włączony.
 defibrillator-not-on = Defibrylator jest wyłączony.
 defibrillator-no-mind = Brak sygnatury inteligencji w mózgu pacjenta. Kolejne próby skazane na porażkę.
 defibrillator-rotten = Wykryto dekompozycję ciała: resuscytacja nieudana.
