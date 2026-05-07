@@ -36,6 +36,5 @@ comp-nuclear-reactor-ui-reactor-temp = Temperatura
 comp-nuclear-reactor-ui-reactor-rads = Promieniowanie
 comp-nuclear-reactor-ui-reactor-therm = Energia Termiczna
 comp-nuclear-reactor-ui-reactor-control = Pręty Sterujące
-comp-nuclear-reactor-ui-therm-format = { POWERWATTS($power) }
 comp-nuclear-reactor-ui-footer-left = Niebezpieczeństwo: wysokie promieniowanie.
 comp-nuclear-reactor-ui-footer-right = 0.6 WER. 2
