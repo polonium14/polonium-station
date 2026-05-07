@@ -1,7 +1,3 @@
-ent-PinpointerBase = pinpointer
-    .desc = Ręczne urządzenie śledzące. Chociaż zazwyczaj ma ono znacznie większe możliwości, to zostało skonfigurowane tak, aby namierzać określone sygnały. Trzymaj je w pozycji pionowej, aby zachować dokładność.
-ent-PinpointerNuclear = pinpointer
-    .desc = { ent-PinpointerBase.desc }
 ent-PinpointerSyndicateNuclear = pinpointer syndykatu
     .desc = Wyprodukowane specjalnie do misji nuklearnych operatywów, zdobądź ten dysk!
 ent-PinpointerUniversal = pinpointer uniwersalny
