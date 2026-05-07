@@ -21,10 +21,7 @@ nukeops-cond-allnukiesdead = Wszyscy specjaliści nuklearni zginęli.
 nukeops-cond-somenukiesalive = Niektórzy specjaliści nuklearni zginęli.
 nukeops-cond-allnukiesalive = Żaden specjalista nuklearny nie zginął.
 nukeops-list-start = Specjaliści nuklearni to:
-nukeops-list-name = - [color=White]{ $name }[/color]
-nukeops-list-name-user = - [color=White]{ $name }[/color] ([color=gray]{ $user }[/color])
 nukeops-not-enough-ready-players = Za mało graczy przygotowanych do gry! Gotowych było { $readyPlayersCount } graczy z wymaganych { $minimumPlayers }. Nie można rozpocząć Specjalistów Nuklearnych.
 nukeops-no-one-ready = Żaden gracz nie jest gotowy! Nie można rozpocząć Specjalistów Nuklearnych.
 nukeops-role-commander = Dowódca
 nukeops-role-agent = Korpusman
-nukeops-role-operator = Operator
