@@ -85,6 +85,3 @@ ent-CrateTrashCart = wózek na śmieci
     .desc = { ent-StructureWheeled.desc }
 ent-CrateTrashCartJani = wózek na śmieci sprzątacza
     .desc = { ent-CrateBaseSecure.desc }
-ent-InvisibleCrate = { ent-CrateBaseWeldable }
-    .suffix = Ukryte
-    .desc = { ent-CrateBaseWeldable.desc }
