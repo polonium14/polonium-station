@@ -3,7 +3,6 @@ admin-player-actions-bans = Lista banów
 admin-player-actions-notes = Notatki
 admin-player-actions-kick = Wyrzuć
 admin-player-actions-ban = Zbanuj
-admin-player-actions-ahelp = AHelp
 admin-player-actions-respawn = Respawnuj
 admin-player-actions-spawn = Spawnuj tutaj
 admin-player-spawn-failed = Nie znaleziono prawidłowych współrzędnych.
