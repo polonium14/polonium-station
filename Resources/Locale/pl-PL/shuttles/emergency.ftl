@@ -1,5 +1,6 @@
 # Commands
 
+
 ## Delay shuttle round end
 
 emergency-shuttle-command-round-desc = Zatrzymuje odliczanie rozpoczynane gdy wahadłowiec wyjdzie z hiperprzestrzeni.
@@ -69,9 +70,3 @@ emergency-shuttle-ui-remaining = Brakuje: { $remaining }
 # Map Misc.
 map-name-centcomm = Centralne Dowództwo
 map-name-terminal = Port odlotów
-cmd-delayroundend-desc = Zatrzymuje odliczanie rozpoczynane gdy wahadłowiec wyjdzie z hiperprzestrzeni.
-cmd-delayroundend-help = Użycie: delayroundend
-cmd-dockemergencyshuttle-desc = Powiadamia wahadłowiec aby zadokował do stacji... jeśli może.
-cmd-dockemergencyshuttle-help = Użycie: dockemergencyshuttle
-cmd-launchemergencyshuttle-desc = Przedwcześnie startuje wchadłowiec ratunkowy, jeśli można.
-cmd-launchemergencyshuttle-help = Użycie: launchemergencyshuttle
