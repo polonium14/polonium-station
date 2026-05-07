@@ -1,12 +1,8 @@
-ent-BaseMobAsteroid = { ent-BaseMob }
-    .desc = { ent-BaseMob.desc }
 ent-MobGoliath = goliat
     .desc = Ogromna bestia, która używa długich macek do usidlenia swojej ofiary. Nie należy jej w żadnym wypadku zagrażać.
     .gender = male
 ent-ActionGoliathTentacle = [color=red]Uderzenie macką[/color]
     .desc = Użyj swoich macek, aby złapać i ogłuszyć wybranego gracza!
-ent-ActionGoliathTentacleNerfed = { ent-ActionGoliathTentacle }
-    .desc = { ent-ActionGoliathTentacle.desc }
 ent-GoliathTentacle = macka
     .desc = { "" }
     .gender = female
@@ -14,9 +10,6 @@ ent-BaseEffectGoliathTentacleSpawn = macka
     .desc = { "" }
     .gender = female
 ent-EffectGoliathTentacleSpawn = macka
-    .desc = { ent-BaseEffectGoliathTentacleSpawn.desc }
-    .gender = female
-ent-EffectGoliathTentacleRetract = { ent-BaseEffectGoliathTentacleSpawn }
     .desc = { ent-BaseEffectGoliathTentacleSpawn.desc }
     .gender = female
 ent-MobHivelord = lord roju
