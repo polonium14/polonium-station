@@ -2,8 +2,6 @@
 
 holiday-greet = Szczęśliwego { $holidayName }!
 
-# TODO zrobić właściwą odmiane dla świąt w liczbie mnogiej (n.p. "urodzin")
-
 ## Holiday Names
 
 holiday-name-new-year = Nowego Roku
@@ -84,8 +82,3 @@ holiday-custom-halloween = Strasznego Halloween!
 holiday-custom-kindness-day = Zrób dziś kilka przypadkowych dobrych uczynków dla nieznajomego!
 holiday-custom-christmas = Wesołych Świąt Bożego Narodzenia!
 holiday-custom-festive-season = Miłego świątecznego okresu!
-holiday-custom-polish-independence-day = Tego dnia w 1918 roku Polska odzyskała niepodległość po 123 latach zaborów!
-holiday-custom-polish-constitution-day = Tego dnia w 1791 roku Sejm Czteroletni uchwalił pierwszą w Europie i drugą na świecie nowoczesną konstytucję!
-holiday-custom-polish-saint-stanislaus-day = Szczęśliwego Dnia Świętego Stanisława, patrona Polski!
-holiday-custom-polish-army-day = Szczęśliwego Dnia Wojska Polskiego, upamiętniającego Cud nad Wisłą w 1920 roku!
-holiday-custom-polish-all-saints-day = Pamiętajmy dziś o wszystkich naszych bliskich, którzy odeszli!
