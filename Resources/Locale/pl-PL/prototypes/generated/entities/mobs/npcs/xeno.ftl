@@ -25,7 +25,3 @@ ent-MobXenoSpitter = plujący
 ent-MobPurpleSnake = kosmiczna żmija
     .desc = Groźny fioletowy wąż z Kepler-283c.
     .gender = female
-ent-MobSmallPurpleSnake = { ent-MobPurpleSnake }
-    .desc = Mniejsza wersja groźnego fioletowego węża z Kepler-283c.
-    .suffix = mała
-    .gender = female
