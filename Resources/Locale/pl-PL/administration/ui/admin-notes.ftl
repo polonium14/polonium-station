@@ -3,7 +3,6 @@ admin-notes-title = Notatki dla { $player }
 admin-notes-new-note = Nowa notatka
 admin-notes-show-more = Pokaż więcej
 admin-notes-for = Notatka dla: { $player }
-admin-notes-id = Id: { $id }
 admin-notes-type = Typ: { $type }
 admin-notes-severity = Ważność: { $severity }
 admin-notes-secret = Prywatna
@@ -75,10 +74,7 @@ admin-notes-verb-text = Otwórz notatki administratora
 # Watchlist and message login
 admin-notes-watchlist = Lista obserwowanych dla { $player }: { $message }
 admin-notes-new-message = Otrzymałeś wiadomość od administratora { $admin }: { $message }
-admin-notes-fallback-admin-name = [System]
 # Admin remarks
 admin-remarks-command-description = Otwiera stronę uwag administratora
 admin-remarks-command-error = Uwagi administratora zostały wyłączone
 admin-remarks-title = Uwagi administratora
-# Misc
-system-user = [System]
