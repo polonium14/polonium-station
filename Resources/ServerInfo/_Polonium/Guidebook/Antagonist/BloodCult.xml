@@ -12,7 +12,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later OR MIT
 
 [color=#ff3333][italic]Najstarszą i najmocniejszą emocją człowieczeństwa jest strach. Najstarszą i najmocniejszym rodzajem strachu jest strach przed nieznanym.[/italic][/color]
 
-Kult krwi to mało zorganizowana grupa akolitów dedykująca się międzywymiarowemu bóstwu: [color=#ff3333]Nar'Sie, Władczyni Krwi[/color]. Tak długo jak jego istnienie jest udokumentowane, jego głównym celem jest zlokalizowanie odpowiedniego miejsca gdzie bariera między czaso-przestrzennymi światami -- "veil" -- może zostać zniszczona. Teoretyzuje się że gdyby to osiągneli [color=#ff3333]nieopisane potwory starożytnej potęgi[/color] które życzą temu światu zniszczenie i odbudowe na swój porządek, byłyby przyzwane na ten świat.
+Kult krwi to mało zorganizowana grupa akolitów dedykująca się międzywymiarowemu bóstwu: [color=#ff3333]Nar'Sie, Władczyni Krwi[/color]. Tak długo jak jego istnienie jest udokumentowane, jego głównym celem jest zlokalizowanie odpowiedniego miejsca gdzie bariera między czaso-przestrzennymi światami -- "veil" -- może zostać zniszczona. Teoretyzuje się że gdyby to osiągneli [color=#ff3333]nieopisane potwory starożytnej potęgi[/color], które życzą temu światu zniszczenie i odbudowe na swój porządek, byłyby przyzwane na ten świat.
 
 Oczywiście to jest nie do dopuszczenia.
 
@@ -21,7 +21,7 @@ Nifortunnie dla stacji, wygląda na to że Nanotrasen przypadkowo usadowił ją 
     <GuideEntityEmbed Entity="TearVeilRune" Caption="Pieczęć Nar'Sie."/>
   </Box>
 
-Jako kultysta krwi, jedynym stworzeniem które kochaż oprócz swoich braci akolitów jest [color=#ff3333]Nar'Sie w samej swej potędze[/color]. Bądźcie mili dla siebie, uczcie się nawzajem trików i narzędzi zawodu, i pamiętajcie, tylko przez cooperacje jesteście w stanie dotrzeć do [color=#dd55aa]celu[/color].
+Jako kultysta krwi, jedynym stworzeniem które kochaż oprócz swoich braci akolitów jest [color=#ff3333]Nar'Sie w samej swej potędze[/color]. Bądźcie mili dla siebie, uczcie się nawzajem trików i narzędzi zawodu, i pamiętajcie: tylko przez cooperacje jesteście w stanie dotrzeć do [color=#dd55aa]celu[/color].
 
 Możesz zostać Kultystą krwi zarówno na początku rundy jak i po przez zostanie skonwertowanym przez obecnego akolite. Kultyści mogą także, zamiast tego, zamknąć twoją duszę w kamieniu byś wykonywał każde ich życzenie.
 
@@ -61,21 +61,21 @@ Najważniejszymi dostępnymi Ci runami są [color=#ff6666]runa konwersji[/color]
   </Box>
 
 [bold][color=#ff6666]Runa konwersji[/color][/bold] Pozwala kultystą na zwerbowanie tych o słabym umyśle by pomagali im w ich celu. Kiedy [color=#ff3333]Władczyni[/color] powstanien, jej moc może zniszczyć ochrone umysłów tych którzy zostana jej ofiarowani. Ta runa może też być użyta na zwykłych oraz elektronicznych mózgach, jak i robotach żeby zamknąć ich duszę w skrystalizowanej krwi by mogli lepiej służyć Nar'Sie.
-- [color=#EEEE33]Werbowanie[/color] istoty żywej, o słabym umyśle ku waszemu celu -- osoba która nie jest chroniona implantem ochrony mózgu lub kapłanem.
+- [color=#EEEE33]Werbowanie[/color] istoty żywej, o słabym umyśle ku waszemu celu -- osoby, która nie jest chroniona implantem ochrony mózgu lub kapłanem.
 - [color=#99CC99]Niszczenie[/color] ochrony mózgu może być tylko wykonane jeśli [color=#ff3333]Władczyni[/color] powstała.
 
   <Box>
     <GuideEntityEmbed Entity="EmpoweringRune" Caption="runa wzmacniająca"/>
   </Box>
 
-[bold][color=#ff6666]Runa Wzmacniająca[/color][/bold] pozwala kultyście stojącej na niej przygotować więcej niż jedo zaklęcie krwi na raz. Dodatkowo, przygotowanie zaklęcia zada dużo mniej obrażeń fizycznych osobie przygotywującej, oraz zostanie wykonanane znacznie szybciej.
+[bold][color=#ff6666]Runa Wzmacniająca[/color][/bold] pozwala kultyście stojącej na niej przygotować więcej niż jedo zaklęcie krwi na raz. Dodatkowo, przygotowanie zaklęcia zada dużo mniej obrażeń fizycznych osobie przygotywującej, oraz zostanie wykonane znacznie szybciej.
 
   <Box>
     <GuideEntityEmbed Entity="ReviveRune" Caption="runa wskrzeszająca"/>
   </Box>
 
 [bold][color=#ff6666]Runa wskrzeszająca[/color][/bold] może być użyta do błagania [color=#ff3333]Nar'Sie[/color] o przywrócenie duszy zmarłego akolity. Martwy kultysta może zostać zaciągnięty na tą rune i po jej aktywacji prośba taka zostanie dana. Jednakże, [color=#ff3333]Ona[/color] może zarządać dodatkowej ofiary zanim raczy [color=#ff3333]Osobiście[/color] przywrócić tą zagubioną duszę.
-- [color=#ff6666]Runa wskrzeszająca[/color] może także przywrócić nie wierzących w [color=#ff3333]Nar'Sie[/color]. Ona żąda dziesięciny z krwi za tę usługę, i nie uleczy ich w pełni do momentu kiedy ich dusza zostanie jej w oddana.
+- [color=#ff6666]Runa wskrzeszająca[/color] może także przywrócić niewierzących w [color=#ff3333]Nar'Sie[/color]. Ona żąda dziesięciny z krwi za tę usługę, i nie uleczy ich w pełni do momentu, kiedy ich dusza zostanie Jej oddana.
 
 
   <Box>
@@ -93,21 +93,21 @@ Najważniejszymi dostępnymi Ci runami są [color=#ff6666]runa konwersji[/color]
 
 ## Zaklęcia krwi
 
-Zaklęcia krwi to zaklęcia które muszą byc fizycznie wyryte w skurze wzywołującego przez [color=#ff3333]istote wyższą[/color] przed ich użyciem. Szczęśliwie dla ciebie, dzięki temu że vail jest bardzo cieńka na tym obszarze kosmosu, [color=#ff3333]twoja Patronka[/color] ma możliwość zasięgnąc do twojego wymiaru i wyryć odpowiednie runy na twojej osobie, nawer jeśli twoje ręce będą zajęte lub zakute w kajdanki. Jednakże bez [color=#ff6666]runy wzmacniającej[/color] rycie będzie musiało być wykonane brutalnie, a na twoim ciele znajdzie się miejsce na nie więcej niż jedną runę na raz. 
+Zaklęcia krwi to zaklęcia które muszą byc fizycznie wyryte w skurze wzywołującego przez [color=#ff3333]istote wyższą[/color] przed ich użyciem. Szczęśliwie dla ciebie, dzięki temu że vail jest bardzo cieńka na tym obszarze kosmosu, [color=#ff3333]twoja Patronka[/color] ma możliwość zasięgnąc do twojego wymiaru i wyryć odpowiednie runy na twojej osobie, nawet jeśli twoje ręce będą zajęte lub zakute w kajdanki. Jednakże bez [color=#ff6666]runy wzmacniającej[/color] rycie będzie musiało być wykonane brutalnie, a na twoim ciele znajdzie się miejsce na nie więcej, niż jedną runę na raz. 
 
   <Box>
     <GuideEntityEmbed Entity="ActionCultistSummonDagger" Caption="Wezwij Sztylet"/>
   </Box>
 
-Zaklęcie przyzwania sztyletu pozwala kultyście na natychmiastowe przyzwanie broni oraz nażędzia do rycia run. Przydatne dla nowych wyznawców oraz tych którzy zgubili swój stary sztylet.
+Zaklęcie przyzwania sztyletu pozwala kultyście na natychmiastowe przyzwanie broni oraz nażędzia do rycia run. Przydatne dla nowych wyznawców oraz tych, którzy zgubili swój stary sztylet.
 
   <Box>
     <GuideEntityEmbed Entity="ActionCultistSanguineDream" Caption="Optymistyczny Sen"/>
   </Box>
 
-Zaklęcie Optymistycznego Snu pogrąża ofiarę w koszmarami wypełniony sen gdzie snią o krwawych nożach. To także wysysa energię z istot cybernetycznych. Osoby posiadające ochronę mózgu będą tymczasowo ogłuszone zamiast zapadnięcia w sen.
+Zaklęcie Optymistycznego Snu pogrąża ofiarę w koszmarami wypełniony sen, gdzie snią o krwawych nożach. To także wysysa energię z istot cybernetycznych. Osoby posiadające ochronę mózgu będą tymczasowo ogłuszone zamiast zapadnięcia w sen.
 
-To zaklęcie pozwala na ciche i bardziej efektywne porywanie tych których twój kult potrzebuje. Osoby z ochroną mózgo będą tymczasowo ogłuszone co sprawi że upadną na twarz i upuszczą cokolwiek trzymają. Zalaca się by wszyscy kultyści mieli zaklęcie Optymistycznego Snu przygotowane gdy poruszają się poza swoją bazą [bold]na wszelki wypadek.[/bold]
+To zaklęcie pozwala na ciche i bardziej efektywne porywanie tych, których twój kult potrzebuje. Osoby z ochroną mózgu będą tymczasowo ogłuszone, co sprawi, że upadną na twarz i upuszczą cokolwiek trzymają. Zaleca się, by wszyscy kultyści mieli zaklęcie Optymistycznego Snu przygotowane, gdy poruszają się poza swoją bazą [bold]na wszelki wypadek.[/bold]
 
   <Box>
     <GuideEntityEmbed Entity="ActionCultistTwistedConstruction" Caption="Wypaczona Konstrukcja"/>
@@ -122,11 +122,11 @@ Zaklęcie wypaczonej konstrukcji pozwala wyznawcą na przemianę stali, szkła l
 	<GuideEntityEmbed Entity="CultJuggernautShell" Caption="Pancerz Molocha"/>
   </Box>
 
-Struktury to ziemskie przedmioty mające kroplę [color=#ff3333]Jej[/color] wilekości.Konstuowane z użyciem [color=#bbbbbb]runicznej stali[/color] przez pomoc runy przyzywającej. Połóż materiały na runie by by je przyzwać. Te obiekty są wielkim darem dla rozwiniętego kultu
+Struktury to ziemskie przedmioty mające kroplę [color=#ff3333]Jej[/color] wielkości. Konstruowanie z użyciem [color=#bbbbbb]runicznej stali[/color] przez pomoc runy przyzywającej. Połóż materiały na runie, by je przyzwać. Te obiekty są wielkim darem dla rozwiniętego kultu.
 
 Pylony będą stopniowo leczyć powierzonych [color=#ff3333]Nar'Sie[/color], tyczy się to też zamieszkałych konstukcji. Przez marne istnienit przy nich, żywe istoty będą stale otrzymywać [color=#ff3333]Jej[/color] łaskę, spinać kości ze ścięgnami i odczyniać jakiekolwiek kiepskiej jakości próby dekonwersji.
 
-Pancerze Molocha to nieruchome konstrukcje z [color=#bbbbbb]runicznej stali[/color]. Są kompletnie bezużyteczne... przynajmniej do momętu kiedy obecna dusza lub martwe ciało nie zostaną włożone do środka.
+Pancerze Molocha to nieruchome konstrukcje z [color=#bbbbbb]runicznej stali[/color]. Są kompletnie bezużyteczne... przynajmniej do momentu, gdy obecna dusza lub martwe ciało nie zostaną włożone do środka.
 
 ## Konsturkcje
 
@@ -137,9 +137,9 @@ Pancerze Molocha to nieruchome konstrukcje z [color=#bbbbbb]runicznej stali[/col
 
 Konsturkcje to niewerbalne, ledwo świadomi pomocnicy kultu krwi. Zrobione z poprzemienianych dusz osób ofiarowanych [color=#ff3333]Pani[/color], te istoty liczą się do ukończenia rytuałów z użyciem [color=#ff6666]run[/color] oraz mogą być użyte zamiast żywych kultystów w trudnej sytuacji.
 
-Cienie to w większości fizyczne dusze przywoływane przez aktywacje zamiszkałego kamienia dusz w ręce. Wierne swojemu wyzwolicielowi, cienie nie poprzestaną na niczym by zapewnić spełnienie woli wybawcy. Choć niezbyt silne, nadrabiają to po przez swoją szybkość i wytrzymałośc. Cień powrócie do swojego kamienia dusz jeśli zostanie wygnany.
+Cienie to w większości fizyczne dusze przywoływane przez aktywacje zamiszkałego kamienia dusz w ręce. Wierne swojemu wyzwolicielowi, cienie nie poprzestaną na niczym, by zapewnić spełnienie woli wybawcy. Choć niezbyt silne, nadrabiają to po przez swoją szybkość i wytrzymałośc. Cień powrócie do swojego kamienia dusz, jeśli zostanie wygnany.
 
-Molochy to potężne bestie zrobione z pancerza molocha, wzbudzonego poprzez włożenie zamiszkałego kamienia dusz lub martwego ciała. Powolne i skupulatne, te istoty są całkowicie odporne na słabe ataki, do tego potrafią zniszczyć nawet najtwardsze ściany. Cenny nabytek dla każdego kulty którego istnienie na stacji zostało ujawnione.
+Molochy to potężne bestie zrobione z pancerza molocha, wzbudzonego poprzez włożenie zamiszkałego kamienia dusz lub martwego ciała. Powolne i skupulatne, te istoty są całkowicie odporne na słabe ataki, do tego potrafią zniszczyć nawet najtwardsze ściany. Cenny nabytek dla każdego kultu, którego istnienie na stacji zostało ujawnione.
 - Molochy są w stanie leczyć się po przez wpijanie krwi z podłogi pod nimi, a nieaktywne pancerze mogą zostać naprawione po przez włożenie kamienia dusz lub ciała oraz pozwolenie na wypicie krwi z kałuż pod nimi.
 
 ## Przedmioty
@@ -152,13 +152,13 @@ Molochy to potężne bestie zrobione z pancerza molocha, wzbudzonego poprzez wł
   </Box>
 
 Kult jest niepełny bez swoich narzędi. Najwarzniejsze z których to twój Kultowy Sztylet. Możesz przyzywać sztylety po przez twoją umiejętność wyboru zaklęć
-Sztylet Kultu to nie najgorsza broń która może być użyta do atakowanie wrogów oraz rycia run. Nie jest w stanie skrzywdzić twoich bratnich członków kultu, więc możesz wymachiwać nim bez obaw o ich skaleczenie.
+Sztylet Kultu to nie najgorsza broń która może być użyta do atakowania wrogów oraz rycia run. Nie jest w stanie skrzywdzić twoich bratnich członków kultu, więc możesz wymachiwać nim bez obaw o ich skaleczenie.
 
-Wszystkie poniższe przedmioty są tworzone po przez użycie runy przyzywającej. Połóż na niej materiały by je przyzwać.
+Wszystkie poniższe przedmioty są tworzone poprzez użycie runy przyzywającej. Połóż na niej materiały, by je przyzwać.
 
-Pancerz Akolity to zbroja która ochroni cię przed większością ataków. Zrobiona z runicznej plastali oraz okrycia wierzchniego, które ma za zadanie trzymać pancerz w całości. Twoje zaklęcie Wypaczonej Konstukcji pozwoli ci na przemiane plastali w runiczną plastal.
-Hełm Kultu jest dokładnie tym czego się spodziewasz. Jest też konstruowany w tym samym czasie co Zbroja Akolity.
-Zapomniane Buty są dla kultysty bardzo ważną rzeczą, pozwalają mu porządnie przyczepić się do podłoża przy użyciu magicznych sił przez co zapobiegają poślizgnięciom. Mogą byc skonstruowane przy użyciu 5 plastiku oraz 5 tkaniny, lub po prostu z 5 Durathreada
+Pancerz Akolity to zbroja, która ochroni cię przed większością ataków. Zrobiona z runicznej plastali oraz okrycia wierzchniego, które ma za zadanie trzymać pancerz w całości. Twoje zaklęcie Wypaczonej Konstukcji pozwoli ci na przemiane plastali w runiczną plastal.
+Hełm Kultu jest dokładnie tym, czego się spodziewasz. Jest też konstruowany w tym samym czasie, co Zbroja Akolity.
+Zapomniane Buty są dla kultysty bardzo ważną rzeczą -- pozwalają mu porządnie przyczepić się do podłoża przy użyciu magicznych sił, przez co zapobiegają poślizgnięciom. Mogą byc skonstruowane przy użyciu 5 plastiku oraz 5 tkaniny, lub po prostu z 5 duratkaniny.
 
 ## Podwójne rytuały Nar'Sie
 
@@ -166,7 +166,7 @@ Zapomniane Buty są dla kultysty bardzo ważną rzeczą, pozwalają mu porządni
 
 Kiedy veil zostanie wystarczająco osłabiony, a twój kult wystarczająco rozrośniety przyjdzie czas na przuzwanie [color=#ff3333]Waszej Pani.[/color]
 
-Nowa runa musi być wyryta w trzech wyznaczonych przez[color=#ff3333]Nią[/color] lokalizacjach o których wam powie. Te runy zajmą dużo czasu do przygotowania
+Nowa runa musi być wyryta w trzech wyznaczonych przez[color=#ff3333]Nią[/color] lokalizacjach o których wam powie. Te runy zajmą dużo czasu do przygotowania.
 
 Kiedy veil zostanie rozdarta, kult będzie oznajmiony załodze i nie będziecie w stanie się dłużej ukrywać w żaden sposób.
 
@@ -174,36 +174,36 @@ Kiedy veil zostanie rozdarta, kult będzie oznajmiony załodze i nie będziecie 
 
 Po przedarciu vail, Władczyni rozpocznie swoją podróż do tego świata. Znajdzie najszłabszy punkt czaso-przestrzenny i rozadrze go na części/
 
-To będzie widoczne w naszej żeczywiśtości jako krwawa łza. Znajdźcie tą łze i wykonajcie finalny rytuał, niszcząc ściany tego świata
+To będzie widoczne w naszej rzeczywiśtości jako krwawa łza. Znajdźcie tą łze i wykonajcie finalny rytuał, niszcząc ściany tego świata
 
-Potrzebujecie kilku kultystów stojących na finalnej runie by wykonać finalny rytuał. Jeśli runy zostały zmyte, możecie je namalować ponownie
+Potrzebujecie kilku kultystów stojących na finalnej runie, by wykonać finalny rytuał. Jeśli runy zostały zmyte, możecie je namalować ponownie
 
-Ten finaly rytuał wywrze duży koszt na kultystach go wykonujących ale na koniec pozwoli na [color=#ff3333]Jej.[/color] przyjście.
+Ten finalny rytuał wywrze duży koszt na kultystach go wykonujących ale na koniec pozwoli na [color=#ff3333]Jej[/color] wielkie przyjście.
 
 ## Przebieg Rundy
 
-Podczas ekspansji kultu, sytuacja na stacji przejdzie przez kilka kolejnych etapów
+Podczas ekspansji kultu, sytuacja na stacji przejdzie przez kilka kolejnych etapów:
 
 - 1. [color=#a4885c]Cichy[/color] - Kult rozpoczyna się rozrastać, kilku tylko wierzy. Vail trzyma się mocno.
 - 2. [color=#a4885c]Oczy[/color] - Jej oczy są na was zwrócone. Ona czeka. Jej moc będzie przesiąkała przez Veil i lekko świciła w oczach kultystów
 - 3. [color=#a4885c]Wzrost[/color] - Ona się obudziła w pełni. Jej moc wzrosła i może w pełni jest w stanie zerwać ochrone umysłów tych którzy są jej ofiarowani.
 - 4. [color=#a4885c]Veil[/color] - Vail zostało osłabione. Kult może rozpocząć finalny rytuał w momęcie kiedy jej pęknięcie jest widoczne.
-- 5. [italic][color=#ff3333]Ona jest totaj.[/color][/italic] - [italic][color=#ff3333]Rozpacz[/color][italic]
+- 5. [italic][color=#ff3333]Ona jest tutaj.[/color][/italic] - [italic][color=#ff3333]Rozpacz[/color][italic]
 
 ## Walczenie z Kultem
 
-Dekonwersja Kultysty może wydarzyć się na cztery sposoby
+Dekonwersja Kultysty może wydarzyć się na cztery sposoby:
 1. Przez wymuszone sporzycie [color=#4466ff]wody święconej[/color] (przynajmniej 40u).
-2. Przez wszczepienie [color=#4466ff]mózgochrony[/color] do ciała kultysty.
+2. Przez wszczepienie [color=#4466ff]tarczy umysłu[/color] do ciała kultysty.
 3. Prze rzucienie pojemnika z wodą święconą na krew wylaną przez kultystę. To utworzy świętą mgłę która spali i oczyści kultystów.
-4. Przez popsikanie kultysty wodą święconą z spryskiwacza lub gaśnicy, lub po przez ochlapanie kultysty wodą święconą. To będzie ich palić aż w końcu ich oczyści.
+4. Przez popsikanie kultysty wodą święconą ze spryskiwacza lub gaśnicy, lub poprzez ochlapanie kultysty wodą święconą. To będzie ich palić, aż w końcu ich oczyści.
 
-Kapłan, święty byt, jest w większości odporny na bardziej [italic]przekonywujące[/italic] aspekty kultu krwi i jest jedynym członkiem załogi który może być w pełni zaufany po wykryciu kultu. Kapłani są także odporni na krwawą magię oraz bronie kultystów. Sprawiając że ofensywne umiejętności kultystów są bezużyteczne przeciw nim -- chyba że kultyści posuną się do bardziej tradycyjnych metod atakowania.
+Kapłan, jako święty byt, wykazuje niemal całkowitą odporność na [italic]przekonujące[/italic] aspekty kultu krwi, co czyni go jedynym członkiem załogi, któremu można w pełni zaufać po wykryciu zagrożenia. Kapłani są również niewrażliwi na krwawą magię oraz rytualny oręż, przez co ofensywne umiejętności kultystów stają się przeciwko nim bezużyteczne -- chyba że napastnicy zdecydują się na bardziej tradycyjne metody walki.
 
-Chorńcie Kapłana, jego woda święcona to jedyne co stoi między wami a[bold][color=#ff3333]porzarciem/color][/bold].
+Chrońcie Kapłana -- jego woda święcona to jedyne, co stoi między wami a[bold][color=#ff3333]pożarciem/color][/bold].
 
   <Box>
-    <GuideEntityEmbed Entity="RandomHumanoidVisitorChaplain" Caption="Wasza jedyna linia obroy. Boże dopomóż im."/>
+    <GuideEntityEmbed Entity="RandomHumanoidVisitorChaplain" Caption="Wasza jedyna linia obrony. Boże dopomóż im..."/>
   </Box>
 
 </Document>
