@@ -1,4 +1,3 @@
-generator-clogged = { CAPITALIZE($generator) } nagle się wyłącza!
 portable-generator-verb-start = Uruchom generator
 portable-generator-verb-start-msg-unreliable = Uruchom generator, może wymagać paru prób.
 portable-generator-verb-start-msg-reliable = Uruchom generator.
@@ -22,7 +21,6 @@ portable-generator-ui-eta = (~{ $minutes } min.)
 portable-generator-ui-unanchored = Odkręcony
 portable-generator-ui-current-output = Obecne napięcie: { $voltage }
 portable-generator-ui-network-stats = Sieć:
-portable-generator-ui-network-stats-value = { POWERWATTS($supply) } / { POWERWATTS($load) }
 portable-generator-ui-network-stats-not-connected = Nie podłączone
 power-switchable-generator-examine = Napięcie wyjściowe ustawiona na { $voltage }.
 power-switchable-generator-switched = Przełączono na { $voltage }!
