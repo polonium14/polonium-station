@@ -24,6 +24,3 @@ ent-ClothingHandsGlovesColorYellow = izolowane rękawice
     .desc = Te rękawice chronią przed poparzeniami elektrycznymi i termicznymi.
 ent-ClothingHandsGlovesColorYellowBudget = budżetowe izolowane rękawice
     .desc = Te rękawice są tanimi podróbkami pożądanych — nie ma mowy, żeby to się dobrze skończyło.
-ent-ClothingHandsGlovesConducting = { ent-ClothingHandsGlovesColorYellow }
-    .suffix = Przewodzące
-    .desc = { ent-ClothingHandsGlovesColorYellow.desc }
