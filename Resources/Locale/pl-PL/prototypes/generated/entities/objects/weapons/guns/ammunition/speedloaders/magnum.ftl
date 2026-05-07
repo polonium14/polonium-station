@@ -1,7 +1,3 @@
-ent-BaseSpeedLoaderMagnum = speed loader (.45 magnum)
-    .desc = { ent-BaseItem.desc }
-ent-SpeedLoaderMagnum = speed loader (.45 magnum)
-    .desc = Zaprojektowany do szybkiego przeładowania pustego rewolweru, mieści do sześciu nabojów. Przeznaczony do przechowywania amunicji kinetycznej ogólnego przeznaczenia.
 ent-SpeedLoaderMagnumEmpty = speed loader (.45 magnum dowolne)
     .desc = Zaprojektowany do szybkiego przeładowania pustego rewolweru, mieści do sześciu nabojów dla dużej broni na twoim biodrze.
 ent-SpeedLoaderMagnumIncendiary = speed loader (.45 magnum zapalające)
