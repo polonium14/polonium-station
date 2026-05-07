@@ -1,4 +1,3 @@
-
 reagent-name-heparin = heparyna
 reagent-desc-heparin = Szybko działająca toksyna, która błyskawicznie rozrzedza krew i otwiera rany.
 reagent-name-rhigoxane = rygoksan
