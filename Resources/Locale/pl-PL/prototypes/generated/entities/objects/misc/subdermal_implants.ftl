@@ -1,5 +1,3 @@
-ent-BaseSubdermalImplant = implant
-    .desc = Mikroskopijny chip wstrzykiwany pod skórę.
 ent-SadTromboneImplant = implant smutnego puzonu
     .desc = Ten implant gra smutną melodię, gdy użytkownik umiera.
 ent-LightImplant = implant świetlny
