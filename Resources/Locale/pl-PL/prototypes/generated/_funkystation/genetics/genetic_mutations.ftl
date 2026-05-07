@@ -1,8 +1,5 @@
 ent-OrganPlasmaLungs = płuca plazmowe
     .desc = Wysoce przystosowane płuca, które metabolizują plazmę jako gaz oddechowy. Tlen jest toksyczny, a normalne mieszanki gazów oddechowych są duszące.
-ent-FoodEggMystery = { ent-FoodEgg }
-    .desc = Nie zjadłbym tego, gdybym był tobą.
-    .suffix = Tajemnica
 ent-ActionGeneticFireball = Zianie Ogniem
     .desc = { "" }
 ent-ProjectileWeakFireball = słaba kula ognia
