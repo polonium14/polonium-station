@@ -1,5 +1,3 @@
-ent-BaseArrow = { ent-BaseItem }
-    .desc = { ent-BaseItem.desc }
 ent-ArrowRegular = strzała
     .desc = Możesz poczuć moc stepu w sobie.
 ent-ArrowImprovised = strzała z odłamka szkła
