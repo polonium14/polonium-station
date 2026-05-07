@@ -1,10 +1,5 @@
-ent-DrinkCanBaseFull = { ent-BaseItem }
-    .desc = { ent-BaseItem.desc }
 ent-DrinkColaCan = puszka Kosmicznej Coli
     .desc = Słodki, gazowany napój bezalkoholowy.
-ent-DrinkColaCanEmpty = { ent-DrinkColaCan }
-    .suffix = empty
-    .desc = { ent-DrinkColaCan.desc }
 ent-DrinkIcedTeaCan = puszka mrożonej herbaty
     .desc = Orzeźwiająca puszka mrożonej herbaty.
 ent-DrinkLemonLimeCan = puszka Smite
