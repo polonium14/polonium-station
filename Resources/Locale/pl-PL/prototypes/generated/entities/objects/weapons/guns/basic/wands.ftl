@@ -1,5 +1,3 @@
-ent-WeaponWandPolymorphBase = { ent-WeaponWandBase }
-    .desc = { ent-WeaponWandBase.desc }
 ent-WeaponWandPolymorphCarp = różdżka polimorfii karpia
     .desc = Na wypadek, gdybyś potrzebował szybko fileta z karpia, a klaun wyglądał apetycznie.
 ent-WeaponWandPolymorphMonkey = różdżka polimorfii małpy
