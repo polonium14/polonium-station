@@ -30,16 +30,13 @@ alert-level-yellow-announcement =
     Wystąpiło zagrożenie strukturalne lub atmosferyczne na stacji. Personel techniczny powinien niezwłocznie działać i podejmować środki bezpieczeństwa.
     Członkom załogi zaleca się unikać zagrożonych stref lub pozostać przy swoich stanowiskach, jeśli będzie to konieczne.
 alert-level-yellow-instructions = Unikaj zagrożonych stref lub pozostań przy swoim stanowisku, jeśli będzie to konieczne.
-alert-level-gamma = Gamma
 alert-level-gamma-announcement =
     Centralne Dowództwo zarządziło Kod Gamma na stacji.
     Ochrona ma być uzbrojona przez cały czas.
     Wszyscy cywile powinni natychmiast udać się do najbliższego przełożonego w celu udania się do bezpiecznej lokalizacji.
 alert-level-gamma-instructions = Udaj się do najbliższego przełożonego w celu udania się do bezpiecznej lokalizacji.
-alert-level-delta = Delta
 alert-level-delta-announcement = Stacji grozi obecnie bezpośrednie unicestwienie. Zarządza się bezwzględne posłuszeństwo wobec Dowództwa.
 alert-level-delta-instructions = Zaleca się słuchać poleceń dowództwa w celu uzyskania informacji.
-alert-level-epsilon = Epsilon
 alert-level-epsilon-announcement =
     Centralne Dowództwo ogłosiło kod Epsilon.
     Wszystkie kontrakty zostały zerwane.
