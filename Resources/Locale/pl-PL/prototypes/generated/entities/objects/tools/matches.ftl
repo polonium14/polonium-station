@@ -1,10 +1,5 @@
-ent-SmallboxItem = { ent-BaseStorageItem }
-    .desc = { ent-BaseStorageItem.desc }
 ent-Matchstick = zapałka
     .desc = Prosta zapałka, używana do odpalania wyrafinowanych używek.
-ent-MatchstickSpent = { ent-Matchstick }
-    .suffix = wypalona
-    .desc = { ent-Matchstick.desc }
 ent-Matchbox = pudełko zapałek
     .desc = Małe pudełko prawie-plazmowych zapałek Premium.
 ent-GorlexMatchbox = pudełko zapałek Gorlex
