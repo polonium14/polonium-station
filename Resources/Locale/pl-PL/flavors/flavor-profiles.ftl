@@ -53,11 +53,11 @@ flavor-base-terrible = strasznie
 flavor-base-mindful = uważnie
 flavor-base-chewy = ciągnąco
 flavor-base-trashy = tandetnie
+flavor-base-motivating = motywująco
 
 # Complex flavors. Put a flavor here when you want something that's more
 # specific.
 
-flavor-base-motivating = motywująco
 flavor-complex-nothing = nic
 flavor-complex-honey = miód
 
@@ -68,6 +68,7 @@ flavor-complex-mayonnaise = majonez
 flavor-complex-mustard = musztarda
 
 # Food-specific flavors.
+
 
 ## Food chemicals. In case you get something that has this inside.
 
@@ -133,6 +134,7 @@ flavor-complex-cherry = wiśnie
 
 # use it when there multiple types of veggies
 
+
 ## Complex foodstuffs (cooked foods, joke flavors, etc)
 
 flavor-complex-pink = różowy
@@ -185,9 +187,9 @@ flavor-complex-true-nature = prawdziwa natura rzeczywistości
 flavor-complex-false-meat = nie do końca mięso
 flavor-complex-paper = papka papierowa
 flavor-complex-compressed-meat = skompresowane mięso
-flavor-complex-dog-food = psia karma
 
 # Drink-specific flavors.
+
 
 ## Generic alcohol/soda taste. This should be replaced with an actual flavor profile.
 
@@ -305,14 +307,11 @@ flavor-complex-andalusia = kwaśna melasa
 flavor-complex-b52 = irlandzki pub
 flavor-complex-bahama-mama = opalanie się na Karaibach
 flavor-complex-bigfoot = koktajl z czarnej porzeczki
-flavor-complex-barefoot = koktajl z czarnej porzeczki
 flavor-complex-booger = gile
 flavor-complex-brave-bull = potrącenie przez ciężarówkę
 flavor-complex-demons-blood = siódmy krąg piekła
 flavor-complex-devils-kiss = kanibalizm
 flavor-complex-driest-martini = pijany mim
-# Konflikt z Resources\Locale\pl-PL\_Funkystation\flavors\flavor-profiles.ftl
-# flavor-complex-eggnog = roztopiony krem jajeczny
 flavor-complex-erika-surprise = błąd barmana
 flavor-complex-gin-fizz = orzeźwiająco i cytrynowo
 flavor-complex-gildlager = złoto cara
@@ -335,14 +334,13 @@ flavor-complex-sui-dream = zdjęcie Alp
 flavor-complex-toxins-special = eksploracja kosmosu
 flavor-complex-vodka-martini = rosyjski film szpiegowski
 flavor-complex-vodka-tonic = orzeźwiająco gorzko
+flavor-complex-coconut-rum = orzechowy, sfermentowany cukier
 flavor-complex-cosmic-alaska = międzygwiezdna zorza
 flavor-complex-coconut-sake-colada = kokos i trawa cytrynowa
 flavor-complex-bruised-melon = słodkie melony
 flavor-complex-black-japan = późna noc w Tokio
 flavor-complex-horses-neck = kopyta na twarzy
 flavor-complex-ransom-note = wymuszenie
-flavor-complex-coconut-rum = orzechowy, sfermentowany cukier
-flavor-complex-bacchus-blessing = ściana z cegieł
 
 ### This is exactly what pilk tastes like. I'm not even joking. I might've been a little drunk though
 
@@ -350,14 +348,15 @@ flavor-complex-pilk = słodkie mleko
 
 # Medicine/chemical-specific flavors.
 
+
 ## Generic flavors.
 
 flavor-complex-medicine = lekarstwa
 flavor-complex-carpet = garść futra
 flavor-complex-bee = pszczołastycznie
 flavor-complex-sax = jazz
-flavor-complex-forbidden = zakazane
 flavor-complex-bottledlightning = piorun w butelce
 flavor-complex-punishment = kara
+flavor-complex-forbidden = zakazane
 flavor-weh = weh
 flavor-hew = hew
