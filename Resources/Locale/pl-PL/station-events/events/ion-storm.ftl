@@ -1,5 +1,4 @@
 station-event-ion-storm-start-announcement = W pobliżu stacji wykryto burzę jonową. Proszę sprawdzić wszystkie urządzenia SI.
-ion-storm-law-scrambled-number = [font="Monospace"][scramble rate=250 length={ $length } chars="@@###$$&%!01"/][/font]
 ion-storm-you = TY
 ion-storm-the-station = STACJA
 ion-storm-the-crew = ZAŁOGA
@@ -14,7 +13,7 @@ ion-storm-x-and-y = { $x } I { $y }
 # subjects can generally be threats or jobs or objects
 # thing is specified above it
 ion-storm-law-on-station = { $joined } { $subjects } SĄ NA STACJI
-ion-storm-law-call-shuttle = WAHADŁOWIEC MUSI ZOSTAĆ WEZWANY Z POWODU: { $joined } { $subjects } NA STACJI
+# ion-storm-law-no-shuttle = THE SHUTTLE CANNOT BE CALLED BECAUSE OF {$joined} {$subjects} ON THE STATION # funky removing the roundstall borg law
 ion-storm-law-crew-are = { $who } TERAZ SĄ { $joined } { $subjects }
 ion-storm-law-subjects-harmful = { $adjective } { $subjects } SĄ SZKODLIWE DLA ZAŁOGI
 ion-storm-law-must-harmful = CI KTÓRZY { $must } SĄ SZKODLIWI DLA ZAŁOGI
@@ -46,8 +45,6 @@ ion-storm-law-allergic-subjects =
         [true] MAJĄ
        *[false] MA
     } { $severity } ALERGIĘ NA { $adjective } { $subjects }
-ion-storm-law-feeling = { $who } { $feeling } { $concept }
-ion-storm-law-feeling-subjects = { $who } { $feeling } { $joined } { $subjects }
 ion-storm-law-you-are = TERAZ { $concept }
 ion-storm-law-you-are-subjects = TERAZ JESTEŚ { $joined } { $subjects }
 ion-storm-law-you-must-always = MUSISZ ZAWSZE { $must }
@@ -78,3 +75,6 @@ ion-storm-law-protect = NIGDY NIE WOLNO CI SKRZYWDZIĆ { $who } I NIE POZWÓL, P
 # implementing other variants is annoying so just have this one
 # COMMUNISM IS KILLING CLOWNS
 ion-storm-law-concept-verb = { $concept } TO { $verb } { $subjects }
+
+# leaving out renaming since its annoying for players to keep track of
+
