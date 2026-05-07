@@ -1,7 +1,3 @@
-ent-BaseReactorItem = { ent-BaseItem }
-    .desc = { ent-BaseItem.desc }
-ent-BaseReactorPart = { ent-BaseReactorItem }
-    .desc = { ent-BaseReactorItem.desc }
 ent-BaseReactorFuelRod = pręt paliwowy
     .desc = Pręt paliwowy do reaktora jądrowego.
 ent-CerenkiteReactorFuelRod = pręt paliwowy cerenkitowy
@@ -11,7 +7,7 @@ ent-UraniumReactorFuelRod = pręt paliwowy uranowy
 ent-PlutoniumReactorFuelRod = pręt paliwowy plutonowy
     .desc = { ent-BaseReactorFuelRod.desc }
 ent-BananiumReactorFuelRod = pręt paliwowy bananiumowy
-    .desc = { ent-BaseReactorFuelRod.desc }
+    .desc = A honk rod for a nuclear reactor.
 ent-PlasmaReactorFuelRod = pręt paliwowy plazmowy
     .desc = { ent-BaseReactorFuelRod.desc }
 ent-UraniumGlassReactorFuelRod = pręt paliwowy szklany uranowy
