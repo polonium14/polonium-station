@@ -9,5 +9,3 @@ contraband-examine-text-avoid-carrying-around = [color=red][italic]Lepiej nie no
 contraband-examine-text-in-the-clear = [color=green][italic]Możesz bezpiecznie nosić to na widoku.[/italic][/color]
 contraband-examinable-verb-text = Legalność
 contraband-examinable-verb-message = Sprawdź legalność tego przedmiotu.
-contraband-department-plural = { $department }
-contraband-job-plural = { $job }
