@@ -8,4 +8,3 @@ votekick-webhook-description = Inicjator: { $initiator }; Cel: { $target }
 votekick-webhook-cancelled-admin-online = **Głosowanie anulowane z powodu obecności administratorów online**
 votekick-webhook-cancelled-admin-target = **Głosowanie anulowane z powodu tego, że celem był administrator**
 votekick-webhook-cancelled-antag-target = **Głosowanie anulowane z powodu tego, że celem był antagonista**
-votekick-ban-reason = "Votekick: { $reason }"
