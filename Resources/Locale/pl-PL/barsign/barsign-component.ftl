@@ -4,9 +4,9 @@ barsign-ui-set-label = Ustaw Znak:
 
 # Bar signs prototypes
 
+
 ## The Harmbaton
 
-barsign-prototype-name-harmbaton = The Harmbaton
 barsign-prototype-description-harmbaton = Świetne miejsce do jedzenia zarówno dla ochroniarzy, jak i pasażerów.
 
 ## The Singulo
@@ -26,7 +26,6 @@ barsign-prototype-description-officer-beersky = Człowieku, te drinki są genial
 
 ## The Outer Spess
 
-barsign-prototype-name-outer-spess = The Outer Spess
 barsign-prototype-description-outer-spess = Ten bar tak naprawdę nie znajduje się w przestrzeni kosmicznej.
 
 ## The Coderbus
@@ -81,12 +80,9 @@ barsign-prototype-description-the-birdcage = Kra kra!
 
 ## Zocalo
 
-barsign-prototype-name-zocalo = Zocalo
-barsign-prototype-description-zocalo = Anteriormente ubicado en Spessmerica.
 
 ## LV426
 
-barsign-prototype-name-lv426 = LV-426
 barsign-prototype-description-lv426 = Picie w eleganckich maskach ważniejsze niż wizyta w szpitalu.
 
 ## The Wiggle Roomm
@@ -111,22 +107,18 @@ barsign-prototype-description-enginechange = Nadal w oczekiwaniu.
 
 ## 4 The Emprah
 
-barsign-prototype-name-emprah = 4 The Emprah
 barsign-prototype-description-emprah = Uwielbiany przez fanatyków, heretyków i klientów po urazie głowy.
 
 ## Spacebucks
 
-barsign-prototype-name-spacebucks = Spacebucks
 barsign-prototype-description-spacebucks = Nie uciekniesz przed nimi, nawet w kosmosie, nawet gdy zaczęliśmy mówić na nich „spesosy”.
 
 ## Maltroach
 
-barsign-prototype-name-maltroach = Maltroach
 barsign-prototype-description-maltroach = Pisk!
 
 ## Whiskey Echoes
 
-barsign-prototype-name-whiskeyechoes = Whiskey Echoes
 barsign-prototype-description-whiskeyechoes = Elitarny bar dla elitarnych oper–chwila, to stacja Nanotrasen. Dlaczego ten szyld jest w bazie?
 
 ## EmpBarSign
