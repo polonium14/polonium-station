@@ -1,5 +1,3 @@
-ent-BaseDionaOrgan = { ent-BaseItem }
-    .desc = { ent-BaseItem.desc }
 ent-OrganDionaBrain = mózg
     .desc = Centralny ośrodek aktywności pseudoneurologicznej diony; jego przypominające korzenie wici szukają swojego poprzedniego ciała.
 ent-OrganDionaEyes = oczy
