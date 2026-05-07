@@ -1,5 +1,3 @@
-ent-BaseMagazineBoxMagnum = { ent-BaseItem }
-    .desc = { ent-BaseItem.desc }
 ent-MagazineBoxMagnum = skrzynka amunicji (.45 magnum)
     .desc = Kartonowe pudełko nabojów kaliber .45 magnum. Przeznaczone do przechowywania amunicji kinetycznej ogólnego przeznaczenia.
 ent-MagazineBoxMagnumPractice = skrzynka amunicji (.45 magnum treningowe)
