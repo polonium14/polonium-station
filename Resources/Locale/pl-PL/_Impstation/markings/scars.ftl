@@ -1,4 +1,3 @@
-
 marking-ArmProstheticLeft = Proteza (Lewe ramię)
 marking-ArmProstheticLeft-arm_r_prosthetic = Proteza (Lewe ramię)
 marking-ArmProstheticLeft-arm_l_prosthetic = Proteza (Lewe ramię)
@@ -36,7 +35,6 @@ marking-LegProstheticLeft = Proteza (Lewa noga)
 marking-LegProstheticLeft-leg_l_prosthetic = Proteza (Lewa noga)
 marking-LegTwistingLeft = Skręcona blizna (Lewa noga)
 marking-LegTwistingLeft-leg_l_twisting = Skręcona blizna (Lewa noga)
-marking-LegTwistingLeft-leg_t_twisting = Skręcona blizna (Lewa noga)
 marking-LegProstheticRight = Proteza (Prawa noga)
 marking-LegProstheticRight-leg_r_prosthetic = Proteza (Prawa noga)
 marking-LegTwistingRight = Skręcona blizna (Prawa noga)
