@@ -1,7 +1,5 @@
 ent-ImprovisedEnergySword = improwizowany miecz energetyczny
     .desc = Miecz energetyczny złożony z przypadkowych części. Spala energię jak żaden inny.
-ent-SwordChaplainCosmic = gwiaździsta rapier
-    .desc = Eteryczna rapier, który w dotyku jest zimny jak zima. Mówi się, że zbyt długie dzierżenie tego miecza wysysa duszę z tych, którzy nie zostali dotknięci prawdą.
 ent-CrossChaplainCrooked = krzywy krucyfiks
     .desc = Odwrócony i zdeformowany krucyfiks wyrzeźbiony ze starożytnego drewna i pokryty trucizną. Pochodzenie tego (nie?)świętego artefaktu jest nieznane, ale może być starsze niż sama Nanotransen.
 ent-WeaponChaplainChainsword = krwawy piła łańcuchowa
