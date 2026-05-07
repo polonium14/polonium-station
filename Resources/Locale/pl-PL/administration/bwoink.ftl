@@ -17,7 +17,6 @@ admin-ahelp-admin-only = Tylko do Adminów
 admin-ahelp-admin-only-tooltip =
     Jeśli opcja jest zaznaczona, wiadomość nie będzie widoczna dla gracza,
     ale pozostanie widoczna dla innych administratorów i nadal będzie rejestrowana na Discordzie.
-admin-bwoink-play-sound = Bwoink?
 bwoink-title-none-selected = Nic nie wybrano
 bwoink-system-rate-limited = System: wysyłasz wiadomości zbyt szybko.
 bwoink-system-player-disconnecting = rozłączył się.
@@ -25,6 +24,3 @@ bwoink-system-player-reconnecting = podłączył się ponownie.
 bwoink-system-player-banned = został zbanowany z powodu: { $banReason }
 bwoink-message-admin-only = (Tylko Admini)
 bwoink-message-silent = (C)
-
-# C - cichy
-
