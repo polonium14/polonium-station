@@ -6,18 +6,12 @@ shuttle-console-prevent = Nie potrafisz pilotować
 
 # NAV
 
-shuttle-console-static = Grid is static
 shuttle-console-display-label = Wyświetlacz
 shuttle-console-position = Pozycja:
-shuttle-console-position-value = { $X }, { $Y }
 shuttle-console-orientation = Kierunek:
-shuttle-console-orientation-value = { $angle }
 shuttle-console-linear-velocity = Prędkość liniowa:
-shuttle-console-linear-velocity-value = { $X }, { $Y }
 shuttle-console-angular-velocity = Prędkość kontowa:
-shuttle-console-angular-velocity-value = { $angularVelocity }
 shuttle-console-unknown = Nieznane
-shuttle-console-iff-label = { $name } ({ $distance }m)
 shuttle-console-exclusion = Strefa wykluczona
 shuttle-console-nav-settings = Ustawienia
 shuttle-console-iff-toggle = Wykonuj ISO
