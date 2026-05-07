@@ -1,5 +1,3 @@
-ent-BaseKnife = { ent-BaseItem }
-    .desc = { ent-BaseItem.desc }
 ent-KitchenKnife = nóż kuchenny
     .desc = Uniwersalny nóż szefa kuchni wyprodukowany przez Gildię Kupców Asters. Gwarantowany ostry przez lata.
 ent-ButchCleaver = tasak rzeźniczy
