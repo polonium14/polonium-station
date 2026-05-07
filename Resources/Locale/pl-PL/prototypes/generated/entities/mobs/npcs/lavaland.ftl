@@ -1,9 +1,6 @@
 ent-MobWatcherBase = obserwator
     .desc = To tak, jakby patrzył prosto przez ciebie.
     .gender = male
-ent-MobWatcherLavaland = { ent-MobWatcherBase }
-    .desc = { ent-MobWatcherBase.desc }
-    .gender = male
 ent-MobWatcherIcewing = obserwator icewing
     .desc = { ent-MobWatcherBase.desc }
     .gender = male
