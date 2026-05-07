@@ -7,6 +7,5 @@ cmd-rmobjective-mind-not-found = Nie można odnaleźć umysłu gracza.
 cmd-rmobjective-success = Zadanie pomyślnie usunięte!
 cmd-rmobjective-failed = Usunięcie zadania niepomyślne. Może numer poza zakresem? Sprawdź: lsobjectives!
 cmd-rmobjective-invalid-index = Nie można wczytać { $index } jako liczby.
-cmd-rmobjective-invalid-objective-info = INVALID
 cmd-rmobjective-player-completion = <nazwa gracza>
 cmd-rmobjective-index-completion = <numer>
