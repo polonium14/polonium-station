@@ -1,7 +1,3 @@
-ent-UtensilBase = { ent-BaseItem }
-    .desc = { ent-BaseItem.desc }
-ent-UtensilBasePlastic = { ent-UtensilBase }
-    .desc = { ent-UtensilBase.desc }
 ent-Fork = widelec
     .desc = Sztuciec do jedzenia, idealny do dźgania.
 ent-ForkPlastic = plastikowy widelec
