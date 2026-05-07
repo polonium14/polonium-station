@@ -1,5 +1,4 @@
 cmd-weather-desc = Ustawia pogodę dla bieżącej mapy.
-cmd-weather-help = weather <mapId> <prototype / null>
 cmd-weather-hint = Prototyp pogody
 cmd-weather-null = Czyści ustawioną pogodę
 cmd-weather-error-no-arguments = Za mało argumentów!
