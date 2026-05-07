@@ -1,7 +1,3 @@
-ent-BaseAmmoProvider = { ent-BaseItem }
-    .desc = { ent-BaseItem.desc }
-ent-AmmoProviderShotgunShell = { ent-BaseAmmoProvider }
-    .desc = { ent-BaseAmmoProvider.desc }
 ent-BoxBeanbag = skrzynka amunicji (12 kaliber traumatyczne)
     .desc = { ent-AmmoProviderShotgunShell.desc }
 ent-BoxLethalshot = skrzynka amunicji (12 kaliber śruty)
