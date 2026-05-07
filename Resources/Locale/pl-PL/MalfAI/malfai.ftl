@@ -1,4 +1,3 @@
-
 # =====================
 # Misc
 # =====================
@@ -90,10 +89,6 @@ malf-store-category-deception = Oszustwo
 malf-store-category-factory = Fabryka
 malf-store-category-disruption = Zakłócenia
 # =====================
-# Currency
-# =====================
-CPU = CPU
-# =====================
 # Window / UI
 # =====================
 malf-ai-viewport-window-title = Rzutnia SI
@@ -105,7 +100,7 @@ malfai-viewport-desc = Wybierz płytkę, aby wyśrodkować na niej zdalne okno r
 # Action Validation Messages
 # =====================
 
-# Detonate RCDs
+#Detonate RCDs
 detonate_rcd_warning = Czujesz, jak twój USK gwałtownie się przegrzewa!
 # Doomsday Protocol
 malfai-doomsday-popup-not-malf = Tylko uszkodzona SI może aktywować Protokół Zagłady.
@@ -203,4 +198,3 @@ malfai-store-purchase-failed = Zakup nieudany
 malfai-round-end-result = Uszkodzona SI
 # Confused why I have to do this..
 objective-issuer-malfai = Uszkodzona SI
-malfai-round-end-name-user =  [color=white]{ $name }[/color] ([color=gray]{ $user }[/color])
