@@ -1,5 +1,6 @@
 ### Voting system related console commands
 
+
 ## 'createvote' command
 
 cmd-createvote-desc = Tworzy głosowanie
@@ -41,4 +42,3 @@ cmd-cancelvote-help =
     ID można uzyskać za pomocą komendy listvotes.
 cmd-cancelvote-error-invalid-vote-id = Nieprawidłowe ID głosowania
 cmd-cancelvote-error-missing-vote-id = Brak ID
-cmd-cancelvote-arg-id = <id>
