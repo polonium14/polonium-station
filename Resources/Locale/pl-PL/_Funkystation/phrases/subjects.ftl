@@ -8,7 +8,6 @@ phrase-turbine = turbina
 phrase-bone-gel = żel kostny
 phrase-cautery = kauteryzacja
 phrase-cpr = RKO
-phrase-hemostat = hemostat
 phrase-intravenous = dożylny
 phrase-saw = piła
 phrase-retractor = retraktor
