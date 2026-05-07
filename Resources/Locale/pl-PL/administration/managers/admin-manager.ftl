@@ -6,7 +6,6 @@ admin-manager-no-longer-admin-message = Nie jesteś już administratorem.
 admin-manager-admin-permissions-updated-message = Twoje uprawnienia administratora zostały zaktualizowane.
 admin-manager-admin-logout-message = Wylogowanie administratora: { $name }
 admin-manager-admin-login-message = Logowanie administratora: { $name }
-admin-manager-admin-data-host-title = Host
 admin-manager-stealthed-message = Teraz jesteś ukrytym administratorem.
 admin-manager-unstealthed-message = Nie jesteś już ukrytym administratorem.
 admin-manager-self-enable-stealth = { $stealthAdminName } jest teraz ukryty.
