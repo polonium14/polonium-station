@@ -56,7 +56,7 @@ SPDX-License-Identifier: MIT
     <GuideEntityEmbed Entity="ComputerFundingAllocation"/>
   </Box>
 
-  Po tym jak załadujesz wachadłowiec, przyleć na Stacje Handlową. Gdy już na niej będziesz, przenieś towary na zielone pole [color=cyan]Palety do sprzedaży towarów [/color], i przejdź do [color=cyan]Komputera Logistyki do sprzedaży[/color] i wciśnij [italic]"Sprzedaj"[/italic].
+  Po tym, jak załadujesz wachadłowiec, przyleć na Stacje Handlową. Gdy już będziesz na niej, przenieś towary na zielone pole [color=cyan]Palety do sprzedaży towarów[/color] i przejdź do [color=cyan]Komputera Sprzedażowego Logistyki[/color] i wciśnij [italic]"Sprzedaj"[/italic].
 
   [color=cyan]Spesos[/color] ze sprzedaży zostaną rozdzielone między Logistyke i każdy inny dział po podziele w pokoju HoPa [color=cyan]Kosola przydziału środków [color].
 
