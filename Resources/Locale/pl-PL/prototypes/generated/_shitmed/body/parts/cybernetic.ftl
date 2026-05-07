@@ -1,11 +1,3 @@
-ent-LeftArmCybernetic = { ent-LeftArmHuman }
-    .desc = { ent-LeftArmHuman.desc }
-ent-RightArmCybernetic = { ent-RightArmHuman }
-    .desc = { ent-RightArmHuman.desc }
-ent-LeftLegCybernetic = { ent-LeftLegHuman }
-    .desc = { ent-LeftLegHuman.desc }
-ent-RightLegCybernetic = { ent-RightLegHuman }
-    .desc = { ent-RightLegHuman.desc }
 ent-LeftHandCybernetic = lewa ręka cybernetyczna
     .desc = { ent-LeftHandHuman.desc }
 ent-RightHandCybernetic = prawa ręka cybernetyczna
