@@ -78,7 +78,7 @@
   suffix: Engineering
   components:
   - type: Sprite
-    sprite: _DV/Structures/Doors/Airlocks/Standard/engineering.rsi
+    sprite: _Polonium/Structures/Doors/Airlocks/Standard/engineering.rsi
   - type: PaintableAirlock
     department: Engineering
   - type: Wires
@@ -160,7 +160,7 @@
   suffix: Science
   components:
   - type: Sprite
-    sprite: _DV/Structures/Doors/Airlocks/Standard/science.rsi
+    sprite: _Polonium/Structures/Doors/Airlocks/Standard/science.rsi
   - type: PaintableAirlock
     department: Science
   - type: Wires
@@ -180,7 +180,7 @@
   suffix: Command
   components:
   - type: Sprite
-    sprite: _DV/Structures/Doors/Airlocks/Standard/command.rsi
+    sprite: _Polonium/Structures/Doors/Airlocks/Standard/command.rsi
   - type: WiresPanelSecurity
     securityLevel: medSecurity
   - type: PaintableAirlock
@@ -194,7 +194,7 @@
   suffix: Security
   components:
   - type: Sprite
-    sprite: _DV/Structures/Doors/Airlocks/Standard/security.rsi
+    sprite: _Polonium/Structures/Doors/Airlocks/Standard/security.rsi
   - type: PaintableAirlock
     department: Security
   - type: Wires
@@ -206,7 +206,7 @@
   name: maintenance access
   components:
   - type: Sprite
-    sprite: _DV/Structures/Doors/Airlocks/Standard/maint.rsi
+    sprite: _Polonium/Structures/Doors/Airlocks/Standard/maint.rsi
 
 - type: entity
   parent: AirlockSecurity # if you get syndie door somehow it counts as sec
@@ -411,4 +411,4 @@
   suffix: Central Command
   components:
   - type: Sprite
-    sprite: _DV/Structures/Doors/Airlocks/Glass/centcomm.rsi
+    sprite: Structures/Doors/Airlocks/Glass/centcomm.rsi
