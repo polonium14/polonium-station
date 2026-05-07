@@ -1,9 +1,5 @@
-ent-BaseSword = { ent-BaseItem }
-    .desc = { ent-BaseItem.desc }
 ent-CaptainSabre = szabla kapitana
     .desc = Ceremonialna broń należąca do kapitana stacji.
-ent-Katana = katana
-    .desc = Starożytne rzemiosło wykonane z nowoczesnego plasteel.
 ent-EnergyKatana = katana energetyczna
     .desc = Katana nasycona silną energią.
 ent-Machete = maczeta
@@ -12,5 +8,3 @@ ent-Claymore = wielki miecz
     .desc = Starożytna broń wojenna.
 ent-Cutlass = kordelas
     .desc = Złośliwie zakrzywione ostrze, często widywane w rękach piratów kosmicznych.
-ent-Throngler = throngler
-    .desc = Po co to w ogóle robić?
