@@ -4,7 +4,6 @@ job-name-cadet = Kadet Ochrony
 job-name-hos = Komendant
 job-name-detective = Detektyw
 job-name-brigmedic = Medyk Więzienny
-job-name-borg = Cyborg
 job-name-scientist = Naukowiec
 job-name-research-assistant = Asystent Naukowy
 job-name-rd = Kierownik Badań
@@ -24,6 +23,7 @@ job-name-centcomoff = Urzędnik Centralnego Dowództwa
 job-name-cburn = Oficer kwarantanny Centralnego Dowództwa
 job-name-deathsquad = Agent CentComm
 job-name-reporter = Dziennikarz
+job-name-roboticist = Robotyk
 job-name-musician = Muzyk
 job-name-librarian = Bibliotekarz
 job-name-lawyer = Prawnik
@@ -33,6 +33,9 @@ job-name-janitor = Woźny
 job-name-chaplain = Kapłan
 job-name-botanist = Botanik
 job-name-bartender = Barman
+
+## goob edit - epic passengers
+
 job-name-passenger = Pasażer
 job-name-salvagespec = Specjalista ds. Odzysku
 job-name-station-ai = SI Stacji
@@ -49,24 +52,22 @@ job-name-ertjanitor = Sprzątacz JSR
 job-name-boxer = Bokser
 job-name-zookeeper = Zoolog
 job-name-visitor = Gość
+# event-restricted jobs
+job-name-security-clown = Klown Ochroniarz
+job-name-command-maid = Służąca Dowództwa
+job-name-party-maker = Organizator Imprez
 # unused jobs
 # these are required for the agent ID job icon tooltips
 # I am keeping them for roleplaying opportunities
 job-name-geneticist = Genetyk
 job-name-no-id = Brakuje ID
 job-name-prisoner = Więzień
-# event-restricted jobs
-job-name-security-clown = Klown Ochroniarz
-job-name-command-maid = Służąca Dowództwa
-job-name-party-maker = Organizator Imprez
-job-name-roboticist = Robotyk
 job-name-syndicate = Syndykat
 job-name-unknown = Nieznany
 job-name-virologist = Wirusolog
 job-name-zombie = Żywy Trup
 # Job titles
 job-title-visitor = Hospitator
-job-title-cluwne = Cluwne
 job-title-universal = Uniwersalny
 # Role timers - Make these alphabetical or I cut you
 JobAtmosphericTechnician = Technik Atmosferyki
@@ -84,8 +85,6 @@ JobChiefEngineer = Główny Inżynier
 JobChiefMedicalOfficer = Ordynator
 JobClown = Klaun
 JobDetective = Detektyw
-JobBrigmedic = Brigmedic
-JobCommandMaid = Command Maid
 JobERTChaplain = Kapłan JSR
 JobERTEngineer = Inżynier JSR
 JobERTJanitor = Sprzątacz JSR
@@ -102,9 +101,9 @@ JobMedicalIntern = Stażysta Medyczny
 JobMime = Mim
 JobMusician = Muzyk
 JobParamedic = Ratownik
+JobPartyMaker = Wodzirej
 JobPassenger = Pasażer
 JobPsychologist = Psycholog
-JobPartyMaker = Wodzirej
 JobQuartermaster = Kierownik Logistyki
 JobReporter = Dziennikarz
 JobResearchAssistant = Asystent Naukowy
@@ -112,9 +111,9 @@ JobResearchDirector = Kierownik Badań
 JobSalvageSpecialist = Technik Odzysku
 JobScientist = Naukowiec
 JobSecurityCadet = Kadet Ochrony
+JobSecurityClown = Klown Ochroniarz
 JobSecurityOfficer = Oficer Ochrony
 JobServiceWorker = Pracownik Obsługi
-JobSecurityClown = Klown Ochroniarz
 JobStationAi = SI Stacji
 JobStationEngineer = Inżynier Stacji
 JobTechnicalAssistant = Pomocnik Techniczny
