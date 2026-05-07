@@ -25,8 +25,6 @@ alerts-stunned-desc = Jesteś [color=yellow]ogłuszony[/color]! Coś utrudnia ci
 alerts-handcuffed-name = [color=yellow]Zakuty[/color]
 alerts-handcuffed-desc = Jesteś [color=yellow]zakuty[/color] i nie możesz używać rąk. Jeśli ktoś cię ciągnie, nie będziesz mógł się opierać.
 alerts-ensnared-name = [color=yellow]Uwięziony[/color]
-alerts-cocooned-name = [color=yellow]Cocooned[/color]
-alerts-cocooned-desc = You're [color=yellow]wrapped in a cocoon[/color] and can't move or use your hands.
 alerts-ensnared-desc = Jesteś [color=yellow]uwięziony[/color], co utrudnia ci poruszanie się.
 alerts-buckled-name = [color=yellow]Zapięty[/color]
 alerts-buckled-desc = Jesteś [color=yellow]przypięty[/color] do czegoś. Kliknij alert, aby się odpiąć, chyba że jesteś [color=yellow]zakuty.[/color]
@@ -78,7 +76,3 @@ alerts-revenant-essence-name = Esencja
 alerts-revenant-essence-desc = Moc dusz. Podtrzymuje cię i służy do zdolności. Regeneruje się powoli.
 alerts-revenant-corporeal-name = Cielesny
 alerts-revenant-corporeal-desc = Ujawniłeś się fizycznie. Ludzie wokół mogą cię zobaczyć i zranić.
-alerts-rooted-name = Zakorzeniony
-alerts-rooted-desc = Jesteś przytwierdzony do ziemi. Nie możesz się poślizgnąć, ale pochłaniasz płyny spod siebie.
-alerts-stealthy-name = Kieszonkowiec
-alerts-stealthy-desc = Czy aktualnie dokonujesz kieszonkowania. Kliknij, aby przełączyć.
