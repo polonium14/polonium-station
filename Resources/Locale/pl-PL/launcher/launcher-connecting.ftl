@@ -1,6 +1,5 @@
 ### Connecting dialog when you start up the game
 
-connecting-title = Space Station 14
 connecting-exit = Wyjdź
 connecting-retry = Spróbuj ponownie
 connecting-reconnect = Połącz ponownie
@@ -17,8 +16,5 @@ connecting-fail-reason =
     { $reason }
 connecting-state-NotConnecting = Brak połączenia
 connecting-state-ResolvingHost = Ustalanie adresu hosta...
-# Tego też bo resolving host to DNS i ponownie, termin IT
 connecting-state-EstablishingConnection = Rozpoczynanie połączenia
-connecting-state-Handshake = Handshake
-# Radzę nie tłumaczyć jako że handshake to termin IT
 connecting-state-Connected = Połączono
