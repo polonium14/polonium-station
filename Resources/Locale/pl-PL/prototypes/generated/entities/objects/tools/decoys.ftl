@@ -1,5 +1,3 @@
-ent-BaseDecoy = { ent-BaseItem }
-    .desc = { ent-BaseItem.desc }
 ent-BalloonOperative = balon operatywny
     .desc = Z bliska widać, że ten operatywny Syndykatu to tak naprawdę balon.
 ent-BalloonAgent = balon agent
