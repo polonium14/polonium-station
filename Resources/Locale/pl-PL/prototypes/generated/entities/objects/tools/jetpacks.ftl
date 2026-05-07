@@ -1,5 +1,3 @@
-ent-JetpackEffect = { "" }
-    .desc = { "" }
 ent-BaseJetpack = dżetpak
     .desc = To dżetpak. Może pomieścić 5 L gazu.
 ent-ActionToggleJetpack = Przełącz dżetpak
