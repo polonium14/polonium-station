@@ -1,11 +1,3 @@
-ent-BaseNinjaObjective = { ent-BaseObjective }
-    .desc = { ent-BaseObjective.desc }
-ent-DoorjackObjective = { ent-BaseNinjaObjective }
-    .desc = { ent-BaseNinjaObjective.desc }
-ent-StealResearchObjective = Ukradnij dane badawcze
-    .desc = Twoje rękawice mogą zostać użyte do zhakowania serwera badawczego i kradzieży jego cennych danych. Jeśli naukowcy się obijali, będziesz musiał sam wziąć się do pracy.
-ent-SpiderChargeObjective = Zdetonuj ładunek Spider
-    .desc = Tę bombę można zdetonować tylko w określonej lokalizacji. Pamiętaj, że ładunek nie zadziała nigdzie indziej!
 ent-NinjaSurviveObjective = Przetrwaj
     .desc = Nie byłbyś zbyt dobrym ninja, gdybyś zginął, prawda?
 ent-TerrorObjective = Wezwij zagrożenie
