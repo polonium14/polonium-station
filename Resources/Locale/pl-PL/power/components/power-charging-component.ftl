@@ -16,9 +16,7 @@ power-charge-window-status-discharging = Wyładowywuje się
 
 power-charge-window-power-on = Wł.
 power-charge-window-power-off = Wył.
-power-charge-window-power-label = { $draw } / { $max } W
 
 ## UI ETA label
 
 power-charge-window-eta-none = nd.
-power-charge-window-eta-value = { TOSTRING($left, "m\\:ss") }
