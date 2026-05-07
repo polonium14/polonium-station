@@ -1,6 +1,5 @@
 reagent-name-e-z-nutrient = EZ odżywka
 reagent-desc-e-z-nutrient = Daj swoim rośliną trochę tej odżywki! Dioną to bardzo smakuje.
-reagent-name-left4-zed = left-4-zed
 reagent-desc-left4-zed = Koktajl mutagenicznych związków który zapewnia wartości odżywcze, szkodzi i ma wpływ na genom rośliny.
 reagent-name-pest-killer = pestycydy
 reagent-desc-pest-killer = Mieszanka która zabija szkodniki. O ile przydatna, powoli zatrówa roślinę toksynami, zachowaj czujność podczas użytku.
