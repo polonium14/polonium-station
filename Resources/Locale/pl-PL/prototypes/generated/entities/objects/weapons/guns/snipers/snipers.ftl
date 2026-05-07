@@ -1,5 +1,3 @@
-ent-BaseWeaponSniper = BaseWeaponSniper
-    .desc = Celuj i strzelaj z daleka.
 ent-WeaponSniperMosin = Kardaszew-Mosin
     .desc = Broń do polowań lub niekończącej się wojny okopowej. Używa amunicji .30 karabinowej.
 ent-WeaponSniperHristov = Chrystow
