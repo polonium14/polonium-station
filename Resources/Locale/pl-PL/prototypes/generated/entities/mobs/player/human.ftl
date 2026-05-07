@@ -1,5 +1,3 @@
-ent-MobHuman = Urist McHands
-    .desc = { ent-BaseMobHuman.desc }
 ent-MobHumanSyndicateAgentBase = agent syndykatu
     .suffix = Człowiek, Podstawowy
     .desc = { ent-MobHuman.desc }
@@ -16,10 +14,6 @@ ent-MobHumanSyndicateAgentSpy = szpieg syndykatu
     .gender = male
 ent-MobHumanSyndicateAgentThief = złodziej syndykatu
     .desc = { ent-MobHumanSyndicateAgent.desc }
-    .gender = male
-ent-MobHumanSyndicateAgentNukeops = { ent-MobHumanSyndicateAgentBase }
-    .suffix = Człowiek, Specjalista Nuklearny
-    .desc = { ent-MobHumanSyndicateAgentBase.desc }
     .gender = male
 ent-MobHumanNukeOp = Specjalista Nuklearny
     .desc = { ent-MobHuman.desc }
