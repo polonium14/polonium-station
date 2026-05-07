@@ -27,6 +27,5 @@ artifact-examine-trigger-desc = [color=gray][italic]Jestem w twoich myślach?[/i
 artifact-node-class-1 = [color=#ff2bb1]Materialny[/color]
 artifact-node-class-2 = [color=#ff8b2b]Psychiczny[/color]
 artifact-node-class-3 = [color=#a9ff38]Pneumatyczny[/color]
-artifact-node-class-4 = [color=#2bfff8]Archon[/color]
 artifact-node-class-5 = [color=#7883ff]Luminaryczny[/color]
 artifact-node-class-6 = [color=#be78ff]Demiurg[/color]
