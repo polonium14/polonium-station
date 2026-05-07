@@ -20,7 +20,6 @@ steal-target-groups-stamps = pieczątka
 steal-target-groups-door-remotes = pilot do drzwi
 steal-target-groups-encryption-keys = karta szyfrująca
 steal-target-groups-technology-disks = dyskietka technologiczna
-steal-target-groups-mail = korespondencja
 steal-target-groups-id-cards = karta ID
 steal-target-groups-lamps = LAMPA
 # Thief single item
@@ -55,10 +54,5 @@ steal-target-groups-plant-rd = "roślinka doniczkowa KB"
 steal-target-groups-toilet-golden-dirty-water = złota toaleta
 # Thief Animal
 steal-target-groups-animal-named-cat = kot Ordynatora
-steal-target-groups-animal-ian = Ian
-steal-target-groups-animal-mc-griff = McGriff
-steal-target-groups-animal-walter = Walter
-steal-target-groups-animal-morty = Morty
 steal-target-groups-animal-renault = Renolt
-steal-target-groups-animal-shiva = Śiwa
 steal-target-groups-animal-tropico = Tropiko
