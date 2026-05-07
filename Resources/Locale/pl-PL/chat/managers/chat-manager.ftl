@@ -16,12 +16,9 @@ chat-manager-no-headset-on-message = Nie masz na sobie zestawu słuchawkowego!
 chat-manager-no-radio-key = Nie podano klawisza radia!
 chat-manager-no-such-channel = Nie ma kanału z kluczem '{ $key }'!
 chat-manager-whisper-headset-on-message = Nie możesz szeptać przez radio!
-chat-manager-server-wrap-message = [bold]{ $message }[/bold]
 chat-manager-sender-announcement = Centralne Dowództwo
 chat-manager-sender-announcement-wrap-message = [font size=14][bold]{ $sender } – ogłoszenie:[/font][font size=12]
     { $message }[/bold][/font]
-chat-manager-entity-say-wrap-message = [BubbleHeader][bold][Name]{ $entityName }[/Name][/bold][/BubbleHeader] { $verb }, [font={ $fontType } size={ $fontSize }]"[BubbleContent]{ $message }[/BubbleContent]"[/font]
-chat-manager-entity-say-bold-wrap-message = [BubbleHeader][bold][Name]{ $entityName }[/Name][/bold][/BubbleHeader] { $verb }, [font={ $fontType } size={ $fontSize }]"[BubbleContent][bold]{ $message }[/bold][/BubbleContent]"[/font]
 chat-manager-entity-whisper-wrap-message = [font size=11][italic][BubbleHeader][Name]{ $entityName }[/Name][/BubbleHeader] szepcze, "[BubbleContent]{ $message }[/BubbleContent]"[/italic][/font]
 chat-manager-entity-whisper-unknown-wrap-message = [font size=11][italic][BubbleHeader]Ktoś[/BubbleHeader] szepcze, "[BubbleContent]{ $message }[/BubbleContent]"[/italic][/font]
 # THE() is not used here because the entity and its name can technically be disconnected if a nameOverride is passed...
@@ -30,26 +27,12 @@ chat-manager-entity-me-wrap-message = [italic]{ PROPER($entity) ->
         [true] { CAPITALIZE($entityName) } { $message }[/italic]
     }
 chat-manager-entity-looc-wrap-message = LOOC: [bold]{ $entityName }:[/bold] { $message }
-chat-manager-send-ooc-wrap-message = OOC: [bold]{ $playerName }:[/bold] { $message }
-chat-manager-send-ooc-patron-wrap-message = OOC: [bold][color={ $patronColor }]{ $playerName }[/color]:[/bold] { $message }
-chat-manager-send-dead-chat-wrap-message = { $deadChannelName }: [bold][BubbleHeader]{ $playerName }[/BubbleHeader]:[/bold] [BubbleContent]{ $message }[/BubbleContent]
-chat-manager-send-admin-dead-chat-wrap-message = { $adminChannelName }: [bold]([BubbleHeader]{ $userName }[/BubbleHeader]):[/bold] [BubbleContent]{ $message }[/BubbleContent]
-chat-manager-send-admin-chat-wrap-message = { $adminChannelName }: [bold]{ $playerName }:[/bold] { $message }
-chat-manager-send-admin-announcement-wrap-message = [bold]{ $adminChannelName }: { $message }[/bold]
-chat-manager-send-hook-ooc-wrap-message = OOC: [bold](D){ $senderName }:[/bold] { $message }
-chat-manager-send-hook-admin-wrap-message = ADMIN: [bold](D){ $senderName }:[/bold] { $message }
 chat-manager-dead-channel-name = MARTWI
-chat-manager-admin-channel-name = ADMIN
 chat-manager-rate-limited = Wysyłasz wiadomości zbyt szybko!
 chat-manager-rate-limit-admin-announcement = Ostrzeżenie o limicie wiadomości: { $player }
 
 ## Speech verbs for chat
 
-chat-speech-verb-suffix-exclamation = !
-chat-speech-verb-suffix-exclamation-strong = !!
-chat-speech-verb-suffix-question = ?
-chat-speech-verb-suffix-stutter = -
-chat-speech-verb-suffix-mumble = ..
 chat-speech-verb-name-none = Brak
 chat-speech-verb-name-default = Domyślny
 chat-speech-verb-default = mówi
@@ -75,7 +58,6 @@ chat-speech-verb-name-slime = Szlam
 chat-speech-verb-slime-1 = chlupocze
 chat-speech-verb-slime-2 = bulgocze
 chat-speech-verb-slime-3 = sączy się
-chat-speech-verb-name-plant = Diona
 chat-speech-verb-plant-1 = szeleści
 chat-speech-verb-plant-2 = kołysze się
 chat-speech-verb-plant-3 = skrzypi
@@ -112,7 +94,6 @@ chat-speech-verb-large-mob-2 = warczy
 chat-speech-verb-name-monkey = Małpa
 chat-speech-verb-monkey-1 = popiskuje
 chat-speech-verb-monkey-2 = wrzeszczy
-chat-speech-verb-name-cluwne = Cluwne
 chat-speech-verb-name-parrot = Papuga
 chat-speech-verb-parrot-1 = skrzeczy
 chat-speech-verb-parrot-2 = ćwierka
