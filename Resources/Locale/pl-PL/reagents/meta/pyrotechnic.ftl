@@ -1,6 +1,5 @@
 reagent-name-thermite = termit
 reagent-desc-thermite = Mieszanka, która staje się bardzo gorąca po zapaleniu.
-reagent-name-napalm = napalm
 reagent-desc-napalm = Jest tylko trochę łatwopalny.
 reagent-name-phlogiston = flogiston
 reagent-desc-phlogiston = Podpala cię i sprawia, że ​​się zapalasz.
