@@ -1,8 +1,6 @@
-
 autodoc-program-step-surgery = przeprowadzić operację na { $part }: { $name }
 autodoc-program-step-grab-item = chwycić przedmiot: '{ $name }'
 autodoc-program-step-grab-any = chwycić dowolny: { $name }
-autodoc-item-organ = Organ
 autodoc-item-part = Część ciała
 autodoc-program-step-store-item = odłożyć przedmiot
 autodoc-program-step-set-label = ustawić etykietę: '{ $label }'
@@ -22,7 +20,6 @@ autodoc-error-patient-unsedated = PACJENT WYMAGA USPOKOJENIA
 autodoc-title = Autolek MK XIV
 autodoc-create-program = Nowy Program
 autodoc-program-title = Tytuł Programu
-autodoc-program-title-placeholder = Program { $number }
 autodoc-abort-program = Przerwij Program
 autodoc-sanitize-tools = Oczyść Narzędzia
 autodoc-view-program-title = Pokaż program
