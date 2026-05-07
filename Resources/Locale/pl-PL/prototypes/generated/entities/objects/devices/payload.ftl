@@ -1,5 +1,3 @@
-ent-BasePayload = { ent-BaseItem }
-    .desc = { ent-BaseItem.desc }
 ent-ExplosivePayload = ładunek wybuchowy
     .desc = { ent-BasePayload.desc }
 ent-ChemicalPayload = ładunek chemiczny
