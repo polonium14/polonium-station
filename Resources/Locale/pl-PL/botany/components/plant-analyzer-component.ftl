@@ -12,7 +12,6 @@ plant-analyzer-component-alive = [color=green]ŻYWE[color]
 plant-analyzer-component-dead = [color=red]MARTWE[color]
 plant-analyzer-component-unviable = [color=red]NIEZDATNE[color]
 plant-analyzer-component-mutating = [color=#00ff5f]MUTUJĄCE[color]
-plant-analyzer-component-kudzu = [color=red]KUDZU[color]
 plant-analyzer-soil = Niewchłonięte Reagenty: [color=white]{ $chemicals }[/color]
 plant-analyzer-soil-empty = Niewchłonięte Reagenty: [color=gray]Brak[/color]
 plant-analyzer-component-environment = [bold]Analiza Optymalnych Warunków[/bold] { $nl }
@@ -52,7 +51,6 @@ plant-analyzer-produce-reagents =
                *[other] [color=white]{ $chemicals }[/color]
             }
     }
-plant-analyzer-produce-plural = { $thing }
 plant-analyzer-potency-tiny = Minimalna
 plant-analyzer-potency-small = Mała
 plant-analyzer-potency-medium = Średnia
@@ -63,7 +61,6 @@ plant-analyzer-potency-ludicrous = Niedorzeczna
 plant-analyzer-potency-immeasurable = [italic]Nieobliczalna[/italic]
 plant-analyzer-potency-perfect = [color=yellow][bold]Perfekcyjna[/bold][/color]
 plant-analyzer-print = Drukuj
-plant-analyzer-printout-missing = N/A
 plant-analyzer-printout = [color=#9FED58][head=2]Raport Analizatora Roślin[/head][/color]{ $nl }──────────────────────────────{ $nl }[bullet/] Gatunek: { $seedName }{ $nl }{ $indent }[bullet/] Zdatne: { $viable ->
         [Yes] [color=green]Tak[/color]
         [No] [color=red]Nie[/color]
