@@ -37,7 +37,7 @@ SPDX-License-Identifier: MIT
 
   Głównym problemem logistyki jest utrzymywanie wystarczającej liczby funduszy.
 
-  Logistyka pozyskuje pieniądze poprzez sprzedawanie dóbr na [color=cyan]Stacji Handlowej[/color].Prawie wyszstko na stacji ma jakąś wartość handlową, kótrą możesz sprawdzić [color=cyan]nażędziem do wyceny[/color]. Cena wzrasta jeszcze bardziej gdy sprzedajesz przedmioty w celu [textlink="zamówień" link="CargoBounties"].
+  Logistyka pozyskuje pieniądze poprzez sprzedawanie dóbr na [color=cyan]Stacji Handlowej[/color]. Prawie wszystko na stacji ma jakąś wartość handlową, którą możesz sprawdzić [color=cyan]narzędziem do wyceny[/color]. Cena wzrasta jeszcze bardziej, gdy sprzedajesz przedmioty w celu [textlink="zamówień" link="CargoBounties"].
 
   <Box>
     <GuideEntityEmbed Entity="AppraisalTool"/>
