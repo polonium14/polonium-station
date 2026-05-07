@@ -1,5 +1,3 @@
-ent-IngotBase = { ent-BaseItem }
-    .desc = Ciężka metalowa sztabka z wytłoczonym logo Nanotrasen.
 ent-IngotGold = sztabka złota
     .suffix = Pełny
     .desc = { ent-IngotBase.desc }
