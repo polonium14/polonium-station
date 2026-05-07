@@ -83,7 +83,7 @@
       board: [ DoorElectronicsChapel ]
 
 - type: entity
-  parent: AirlockServiceLocked
+  parent: AirlockJanitor  # Polonium - wzięte z corvax goob i przeteksturowane
   id: AirlockJanitorLocked
   suffix: Janitor, Locked
   components:
@@ -268,7 +268,7 @@
       board: [ DoorElectronicsCargo ]
 
 - type: entity
-  parent: AirlockCargo
+  parent: AirlockSalvage # Polonium - wzięte z corvax i przeteksturowane
   id: AirlockSalvageLocked
   suffix: Salvage, Locked
   components:
@@ -619,7 +619,7 @@
       board: [ DoorElectronicsKitchen ]
 
 - type: entity
-  parent: AirlockServiceGlassLocked
+  parent: AirlockJanitorGlass # Polonium - wzięte z corvax goob i przeteksturowane
   id: AirlockJanitorGlassLocked
   suffix: Janitor, Locked
   components:
@@ -673,7 +673,7 @@
       board: [ DoorElectronicsCargo ]
 
 - type: entity
-  parent: AirlockCargoGlass
+  parent: AirlockSalvageGlass # Polonium - wzięte z corvax i przeteksturowane
   id: AirlockSalvageGlassLocked
   suffix: Salvage, Locked
   components:
