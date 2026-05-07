@@ -17,7 +17,6 @@ control-verb-open-control-panel-text = Otwórz panel sterowania
 gas-tank-window-internals-toggle-button = Przełącz
 gas-tank-window-output-pressure-label = Ciśnienie Wyjściowe
 gas-tank-window-tank-pressure-text = Ciśnienie: { $tankPressure } kPA
-gas-tank-window-internal-text = Internals: { $status }
 gas-tank-window-internal-connected = [color=green]Połączony[/color]
 gas-tank-window-internal-disconnected = [color=red]Rozłączony[/color]
 
