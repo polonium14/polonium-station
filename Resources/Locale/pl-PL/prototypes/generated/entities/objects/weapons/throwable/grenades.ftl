@@ -1,11 +1,7 @@
-ent-GrenadeBase = { ent-BaseItem }
-    .desc = { ent-BaseItem.desc }
 ent-ExGrenade = granat odłamkowy
     .desc = Granat, który tworzy małą, ale niszczycielską eksplozję.
 ent-GrenadeFlashBang = granat błyskowy
     .desc = Eeeeeeeeeeeeeeeeeeeeee.
-ent-GrenadeFlashEffect = { "" }
-    .desc = { "" }
 ent-SyndieMiniBomb = minibomba syndykatu
     .desc = Eksplozja wyprodukowana przez syndykat, używana do siania zniszczenia i chaosu.
 ent-SelfDestructSeq = sekwencja samoniszczenia
@@ -36,5 +32,3 @@ ent-GrenadeDummy = granat atrapowy
     .desc = Wszystko, co ma granat, ale bez wybuchu.
 ent-SyndieTrickyBomb = podstępna bomba syndykatu
     .desc = Eksplozja wyprodukowana przez syndykat, używana do doskonałego odwrócenia uwagi.
-ent-WehNade = weh-nade
-    .desc = Ta jaszczurkowa maskotka wydaje się mieć przycisk do aktywacji?ssssssssss
