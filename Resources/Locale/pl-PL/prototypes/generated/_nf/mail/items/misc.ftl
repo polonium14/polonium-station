@@ -1,9 +1,6 @@
 ent-DelayedSmoke = opóźniony granat dymny
     .suffix = (10s)
     .desc = { ent-BaseItem.desc }
-ent-AdminInstantEffectEMP7 = { ent-AdminInstantEffectBase }
-    .suffix = EMP, 7 metrów
-    .desc = { ent-AdminInstantEffectBase.desc }
 ent-DelayedEMP = opóźnione EMP (7 metrów)
     .desc = { ent-BaseItem.desc }
 ent-DelayedFlash = opóźniony granat błyskowy
