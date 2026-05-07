@@ -1,6 +1,3 @@
-
-# for dinos
-alert-level-amber = Amber
 alert-level-amber-announcement = Wykryto pola zakłóceń czasowych pochodzące z sekund w przeszłości. Członkowie załogi powinni przygotować się na zbliżające się wojny dinozaurów.
 alert-level-amber-instructions = Broń stacji przed mezozoiczną hordą. To są Wojny Dinozaurów.
 # cosmic cult
