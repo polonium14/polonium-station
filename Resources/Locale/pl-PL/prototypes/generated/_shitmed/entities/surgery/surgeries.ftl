@@ -1,5 +1,3 @@
-ent-SurgeryBase = { "" }
-    .desc = { "" }
 ent-SurgeryOpenIncision = Zrób nacięcie
     .desc = { ent-SurgeryBase.desc }
 ent-SurgeryCloseIncision = Zszyj nacięcie
