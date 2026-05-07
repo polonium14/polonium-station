@@ -1,11 +1,5 @@
-ent-Incorporeal = { "" }
-    .desc = Istoty bez ciał fizycznych.
-    .gender = epicene
 ent-MobObserverBase = obserwator
     .desc = Buu!
-    .gender = male
-ent-MobObserver = { ent-MobObserverBase }
-    .desc = { ent-MobObserverBase.desc }
     .gender = male
 ent-ActionGhostBoo = Buu!
     .desc = Przestrasz członków swojej załogi z powodu swojej nudy!
