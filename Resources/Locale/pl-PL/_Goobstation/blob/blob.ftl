@@ -1,12 +1,6 @@
-
-objective-issuer-blob = Blob
-ghost-role-information-blobbernaut-name = Blobbernaut
 ghost-role-information-blobbernaut-description = Jesteś blobbernautem. Musisz bronić Rdzenia Bloba za wszelką cenę.
-ghost-role-information-blob-name = Blob
 ghost-role-information-blob-description = Jesteś Blobem. Musisz przejąć stację.
-roles-antag-blob-name = Blob
 roles-antag-blob-objective = Przejmij stację.
-guide-entry-blob = Blob
 # Popups
 blob-target-normal-blob-invalid = Zły typ bloba, wybierz normalnego bloba.
 blob-target-factory-blob-invalid = Zły typ bloba, wybierz fabrykę bloba.
@@ -21,8 +15,6 @@ blob-not-enough-resources = Niewystarczająca ilość zasobów.
 blob-help = Tylko Bóg może ci pomóc.
 blob-swap-chem = W trakcie tworzenia.
 blob-mob-attack-blob = Nie możesz zaatakować bloba.
-blob-get-resource = +{ $point }
-blob-spent-resource = -{ $point }
 blobberaut-not-on-blob-tile = Umierasz, nie będąc na polach bloba.
 carrier-blob-alert = Pozostało ci { $second } sekund do transformacji.
 blob-mob-zombify-second-start = { $pod } zaczyna zmieniać cię w zombie.
@@ -124,7 +116,6 @@ blob-round-end-result =
 blob-user-was-a-blob = [color=gray]{ $user }[/color] był blobem.
 blob-user-was-a-blob-named = [color=White]{ $name }[/color] ([color=gray]{ $user }[/color]) był blobem.
 blob-was-a-blob-named = [color=White]{ $name }[/color] był blobem.
-preset-blob-objective-issuer-blob = [color=#33cc00]Blob[/color]
 blob-user-was-a-blob-with-objectives = [color=gray]{ $user }[/color] był blobem, który miał następujące cele:
 blob-user-was-a-blob-with-objectives-named = [color=White]{ $name }[/color] ([color=gray]{ $user }[/color]) był blobem, który miał następujące cele:
 blob-was-a-blob-with-objectives-named = [color=White]{ $name }[/color] był blobem, który miał następujące cele:
