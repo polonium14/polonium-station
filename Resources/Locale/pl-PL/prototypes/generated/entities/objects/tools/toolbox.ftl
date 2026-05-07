@@ -1,5 +1,3 @@
-ent-ToolboxBase = { ent-BaseStorageItem }
-    .desc = { ent-BaseStorageItem.desc }
 ent-ToolboxEmergency = awaryjna skrzynka narzędziowa
     .desc = Jasnoczerwona skrzynka narzędziowa, wyposażona w narzędzia awaryjne.
 ent-ToolboxMechanical = mechaniczna skrzynka narzędziowa
