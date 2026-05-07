@@ -1,5 +1,3 @@
-ent-BaseMagazineBoxRifle = { ent-BaseItem }
-    .desc = { ent-BaseItem.desc }
 ent-MagazineBoxRifleBig = skrzynka amunicji (.20 karabinowe)
     .desc = { ent-BaseMagazineBoxRifle.desc }
 ent-MagazineBoxRifle = skrzynka amunicji (.20 karabinowe)
