@@ -9,7 +9,6 @@ wires-component-ui-on-receive-message-cannot-mend-uncut-wire = Nie możesz napra
 ## UI
 
 wires-menu-name-label = Przewody
-wires-menu-dead-beef-text = DEAD-BEEF
 wires-menu-help-popup =
     Kliknij na złote styki z multitool’em w ręku, aby puścić impuls przez przewód.  
     Kliknij na przewody z obcinaczem do kabli w ręku, aby je przeciąć/naprawić.  
