@@ -1,5 +1,3 @@
-ent-BaseLandMine = { "" }
-    .desc = { "" }
 ent-LandMineKick = mina kopiąca
     .desc = { ent-BaseLandMine.desc }
 ent-LandMineModular = mina modułowa
