@@ -34,8 +34,6 @@ station-event-random-sentience-role-description = Jesteś świadomym { $name }, 
 # Flavors
 station-event-random-sentience-flavor-mechanical = mechaniczny
 station-event-random-sentience-flavor-organic = organiczny
-station-event-random-sentience-flavor-corgi = corgi
 station-event-random-sentience-flavor-primate = naczelny
-station-event-random-sentience-flavor-kobold = kobold
 station-event-random-sentience-flavor-slime = szlam
 station-event-random-sentience-flavor-inanimate = nieożywiony
