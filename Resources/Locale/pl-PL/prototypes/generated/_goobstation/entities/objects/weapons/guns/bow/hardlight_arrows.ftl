@@ -1,7 +1,3 @@
-ent-BaseHardlightArrow = { "" }
-    .desc = { "" }
-ent-BaseHardlightEmbeddableArrow = { ent-BaseItem }
-    .desc = { ent-BaseItem.desc }
 ent-ArrowEnergy = strzała energetyczna
     .desc = Strzała wykonana z twardego światła.
 ent-ArrowDisabler = strzała ogłuszacza
