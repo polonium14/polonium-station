@@ -17,7 +17,6 @@ tabletop-parchis-board-name = Chińczyk
 
 ## Backgammon
 
-tabletop-backgammon-board-name = Backgammon
 
 ## Checkers
 
