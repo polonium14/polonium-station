@@ -1,10 +1,3 @@
-ent-DrinkCartonBaseFull = { ent-DrinkBase }
-    .suffix = Full
-    .desc = { ent-DrinkBase.desc }
-ent-DrinkCartonBaseLargeFull = { ent-DrinkCartonBaseFull }
-    .desc = { ent-DrinkCartonBaseFull.desc }
-ent-DrinkCartonVisualsOpenable = { "" }
-    .desc = { "" }
 ent-DrinkJuiceLimeCarton = sok z limonki
     .desc = Słodko-kwaśna rozkosz.
 ent-DrinkJuiceOrangeCarton = sok pomarańczowy
