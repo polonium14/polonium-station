@@ -1,5 +1,3 @@
-ent-BaseSynthesisObjective = { ent-BaseTraitorObjective }
-    .desc = { ent-BaseTraitorObjective.desc }
 ent-SynthesisSurviveObjective = Przetrwaj i Prosperuj
     .desc = Przetrwaj, aby sprzedać swoje towary kolejnego dnia!
 ent-SynthesisPrescribeObjective = Zyskaj i Syntezuj
