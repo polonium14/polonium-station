@@ -1,4 +1,3 @@
-
 marking-HumanHairBraidedExtension = Przedłużenie warkoczy
 marking-HumanHairCometTail = Ogon komety
 marking-HumanHairFantasyHair = Fantazyjne włosy
@@ -11,14 +10,11 @@ marking-HumanHairFrontBraidsMedium = Przednie warkocze (średnie)
 marking-HumanHairFrontBraidsShort = Przednie warkocze (krótkie)
 marking-HumanHairHairnet = Siatka na włosy
 marking-HumanHairJellyfish = Meduza
-marking-HumanHairKazuyaMishima = Kazuya Mishima
 marking-HumanHairLongBraids = Długie warkocze
 marking-HumanHairLongCurvy = Długie kręcone
 marking-HumanHairLongPompadour = Długi pompadour
 marking-HumanHairMediumCurls = Średnie loki
-marking-HumanHairMullet = Mullet
 marking-HumanHairPelvicLengthBraid = Warkocz do bioder
-marking-HumanHairPlateau = Plateau
 marking-HumanHairQueenBee = Królowa pszczół
 marking-HumanHairSaggedMohawk = Opadający irokez
 marking-HumanHairSharpMohawk = Ostry irokez
