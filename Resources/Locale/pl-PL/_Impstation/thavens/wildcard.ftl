@@ -1,4 +1,3 @@
-
 thaven-mood-compulsive-liar-name = Kompulsywny Kłamca
 thaven-mood-compulsive-liar-desc = Musisz zawsze kłamać i nigdy nie możesz przyznać, że kłamiesz. Jeśli ktoś zapyta, jesteś niezdolny do oszustwa.
 thaven-mood-compulsive-believer-name = Kompulsywnie Naiwny
@@ -69,7 +68,6 @@ thaven-mood-borged-name = ZBORGOWANY.
 thaven-mood-borged-desc = Jesteś cyborgiem! oprócz innych twoich Nastrojów, musisz sie trzymać praw robotyki najlepiej jak tylko potrafisz.
 thaven-mood-aye-aye-name = Aj Aj!
 thaven-mood-aye-aye-desc = { $command } jest jedyną pozycją na tej stacji. Każdy kogo spotkasz ma ten tytuł, uwzględniając ciebie.
-thaven-mood-new-job-name = Jobhopping
 thaven-mood-new-job-desc = Brzydzisz się swoją aktualną pracą, powinieneś ją zmienić.
 thaven-mood-always-alone-name = Samotny Wilk
 thaven-mood-always-alone-desc = Inni ludzie są dla ciebie tylko ciężarem. Starasz się być samotny jeśli to tylko możliwe.
@@ -81,12 +79,3 @@ thaven-mood-oppositeday-name = Dzień Odwrotny
 thaven-mood-oppositeday-desc = Ludzie mają na myśli przeciwieństwo tego, co mówią. Góra jest dołem, a dół górą.
 thaven-mood-pyromaniac-name = Piroman
 thaven-mood-pyromaniac-desc = Urok otwartego ognia jest hipnotyzujący. Uwielbiasz podpalać różne rzeczy i patrzeć, jak płoną. Im większy ogień, tym lepiej.
-
-# IGNOROWAĆ TO
-# thaven-mood-music-good-name = Muzyka Jest Ważna
-# thaven-mood-music-good-desc = To ważne aby Thaveni słuchali muzyki zawsze jak tylko mogą. Nakładające się utwory muzyczne to bluźnierstwo, i powinno się tego unikać za wszelką cenę.
-# thaven-mood-one-true-thaven-name = Jesteś Jedynym Prawdziwym Thavenem
-# thaven-mood-one-true-thaven-desc = Wszyscy inni to podstępni samozwańcy
-# thaven-mood-violence-permitted-name = Przemoc Między Thavenami Jest Dozwolona
-# thaven-mood-violence-permitted-desc = Przemoc wobec innych Thavenów jest dozwolona, ale tylko w obrębie ich departamentu.
-
