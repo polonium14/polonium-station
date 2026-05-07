@@ -6,7 +6,6 @@ reagent-name-stimulants = hiperzyna
 reagent-desc-stimulants = Koktajl chemiczny opracowany przez Donk Co., który pozwala agentom szybciej regenerować się po ogłuszeniach, poruszać się szybciej i zapewnia niewielkie leczenie, gdy jesteś bardziej martwy niż żywy. Ze względu na złożoność chemiczną, organizmowi znacznie trudniej jest go naturalnie wydalić.
 reagent-name-experimental-stimulants = eksperymentalne stymulanty
 reagent-desc-experimental-stimulants = Prototypowa wersja hiperzyny. Jej użycie zapewnia praktycznie całkowitą odporność na broń paraliżującą, szybką regenerację tkanek, ekstremalną prędkość biegu poprzez redukcję nagromadzenia kwasu mlekowego oraz ogólne uczucie euforii. Skutki uboczne mogą obejmować skrajne poziomy antykoagulacji, zawężone widzenie, ekstremalne nagromadzenie toksyn we krwi i szybką martwice wątroby. Nie podawać zwierzętom.
-reagent-name-thc = THC
 reagent-desc-thc = Główny związek psychoaktywny zawarty w konopiach.
 reagent-name-bananadine = bananadyna
 reagent-desc-bananadine = Łagodna substancja psychodeliczna, której śladowe ilości można znaleźć w skórkach bananów.
@@ -16,9 +15,9 @@ reagent-name-impedrezene = impedryzyna
 reagent-desc-impedrezene = Narkotyk, który osłabia procesy myślowe poprzez spowolnienie wyższych funkcji komórek mózgowych.
 reagent-name-space-drugs = kosmiczny miraż
 reagent-desc-space-drugs = Nielegalny związek chemiczny powodujący szereg efektów, m.in. utratę równowagi i zaburzenia widzenia.
-reagent-name-nocturine = nokturyna
 reagent-name-forever-weed = wieczne ziele
 reagent-desc-forever-weed = Pieczenie tęczowej marihuany spowodowało zmiany chemiczne. Nie metabolizuje się całkowicie samodzielnie, wywołuje halucynacje i paranoję.
+reagent-name-nocturine = nokturyna
 reagent-desc-nocturine = Wysoce skuteczny środek uspokajający i nasenny, opracowany przez Syndykat do operacji tajnych. Bilet w jedną stronę do miasta Honk-Shoo.
 reagent-name-mute-toxin = niemotoksyna
 reagent-desc-mute-toxin = Gęsta substancja chemiczna pokrywająca struny głosowe, uniemożliwiająca użytkownikowi mówienie podczas metabolizmu.
@@ -30,11 +29,8 @@ reagent-name-happiness = uszczęśliwienie
 reagent-desc-happiness = Wypełnia ekstatycznym odrętwieniem i powoduje niewielkie uszkodzenie mózgu. Silnie uzależnia. Przedawkowanie powoduje nagłe wahania nastroju.
 reagent-name-nitrosyl-plasmide = nitrozylowy plazmid
 reagent-desc-nitrosyl-plasmide = Silny środek pobudzający, zapobiegający senności, oszołomieniu i powaleniu.
-reagent-name-cryanobalamin = krianobalamina
-reagent-desc-cryanobalamin = Dawniej popularny dodatek do napojów energetycznych, który służył do przywracania wytrzymałości. Obecnie zakazany w użytku komercyjnym ze względu na właściwości rakotwórcze.
+
+## can't put it in a new file...
+
 nicotine-effect-dull-ache = Czujesz lekki ból w klatce piersiowej.
 nicotine-effect-sharp-pain = Czujesz ostry ból w klatce piersiowej.
-reagent-name-liftloversspecial = pudzian specjal
-reagent-desc-liftloversspecial = Koktajl chemiczny, który szybko przywraca wytrzymałość. Pomimo oficjalnego zakazu, pozostaje popularnym napojem na czarnym rynku wśród miłośników fitnessu. Rakotwórczy w dużych dawkach.
-reagent-name-morphine = morfina
-reagent-desc-morphine = Silny środek przeciwbólowy, który pozwala pacjentowi na bezbolesne poddanie się zabiegowi chirurgicznemu, nawet w stanie przytomności. Silnie uzależniający w przypadku nadużywania. Przedawkowanie może powodować trudności w oddychaniu.
