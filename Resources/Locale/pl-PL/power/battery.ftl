@@ -17,6 +17,3 @@ battery-menu-eta-empty = T (pusty):
 battery-menu-eta-value = ~{ $minutes } min.
 battery-menu-eta-value-max = >{ $minutes } min.
 battery-menu-eta-value-na = nd.
-battery-menu-power-value = { POWERWATTS($value) }
-battery-menu-stored-percent-value = { TOSTRING($value, "P1") }
-battery-menu-stored-energy-value = { ENERGYWATTHOURS($value) }
