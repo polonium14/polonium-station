@@ -11,15 +11,15 @@ SPDX-License-Identifier: MIT
 
   [bold]1.[/bold] Kwatermistrz ma obowiązek przypilnować żeby każde zamówienie zostało zrealizowanie w ciągu 15 minut od złożenia i zatwierdzenia;
 
-  [bold]2.[/bold] W przypadkach poważnego kryzysu, takiego jak atak terrorystyczny, należy przedkładać wygodę ponad formalności, ponieważ nadmierna biurokracja może być szkodliwa dla dobra stacji;
+  [bold]2.[/bold] W przypadkach poważnego kryzysu, takiego jak atak terrorystyczny, należy przedkładać skuteczność ponad formalności, ponieważ nadmierna biurokracja może być szkodliwa dla dobra stacji;
 
   [bold]3.[/bold] Kwatermistrz nie ma prawa zamawiać wyposażenia i/lub sprzętu ochrony bez zezwolenia Komendanta lub Kapitana. Wyjątek stanowią sytuacje kryzysowe, takie jak incydenty z udziałem operatorów broni nuklearnej lub organizmów typu Blob, w których sprzęt ten musi zostać dostarczony do Ochrony w trybie pilnym;
 
-  [bold]4.[/bold] Kwatermistrz ma prawo zatwierdzać zamówienia międzyoddziałowe (np. jak lekarz zamawia rękawice izolacyjne) bez wyraźnej zgody odpowiedniego szefa działu (w tym wypadku głównego inżyniera), kierując się własną oceną sytuacji, chociaż może nadal wymagać odpowiednio ostemplowanego formularza. Aczkolwiek wszelakie naruszenia Standardowych Procedur Operacyjnych (SOP) lub prawa kosmicznego wynikające z takiego zamówienia będą obciążać również Kwatermistrza;
+  [bold]4.[/bold] Kwatermistrz ma prawo zatwierdzać zamówienia międzyoddziałowe (np. jak lekarz zamawia rękawice izolacyjne) bez wyraźnej zgody odpowiedniego szefa działu (w tym wypadku głównego inżyniera), kierując się własną oceną sytuacji, chociaż może nadal wymagać odpowiednio ostemplowanego formularza. Aczkolwiek wszelakie naruszenia Standardowych Procedur Operacyjnych (SPO) lub prawa kosmicznego wynikające z takiego zamówienia będą obciążać również Kwatermistrza;
 
   [bold]5.[/bold] Kwatermistrz nie ma prawa zatwierdzić zakupu skrzyni HFR bez wyraźnej zgody Głównego Inżyniera;
 
-  [bold]6.[/bold] Kwatermistrz jest zobowiązany do przestrzegania wytycznych obowiązujących techników cargo;
+  [bold]6.[/bold] Kwatermistrz jest zobowiązany do przestrzegania wytycznych obowiązujących techników logistyki;
 
   # Logistyk
 
@@ -31,7 +31,7 @@ SPDX-License-Identifier: MIT
 
   [bold]4.[/bold] Logistycy nie mają prawa zamawiać nieistotnych przedmiotów z konta zaopatrzenia (takich jak koty czy ubrania) bez wyraźnej zgody Kwatermistrza;
 
-  [bold]5.[/bold] Logistycy nie wolno im siłą otwierać ani niszczyć zamkniętych skrzyń. To samo dotyczy Kwatermistrza. Wyjątek stanowią porzucone skrzynie znalezione przez górników;
+  [bold]5.[/bold] Logistycy nie wolno im siłą otwierać ani niszczyć zamkniętych skrzyń. To samo dotyczy Kwatermistrza. Wyjątek stanowią porzucone skrzynie znalezione przez specjalistów ds. odzysku;
 
   [bold]6.[/bold] Logistycy nie mają prawa zatwierdzać zamówień międzydziałowych (np. gdy lekarz zamawia rękawice izolacyjne) bez wyraźnej zgody Kwatermistrza;
 
@@ -45,13 +45,13 @@ SPDX-License-Identifier: MIT
 
   [bold]11.[/bold] Logistykom nie wolno wymieniać przedmiotów ani przysług z innym personelem w zamian za inne przedmioty bez wyraźnej zgody Kwatermistrza;
 
-  [bold]12.[/bold] Logistycy powinni dopilnować żeby przynajmniej jedna osoba zajmowała się dostarczaniem poczty, jeśli teleporter poczty jest włączony i działa
+  [bold]12.[/bold] Logistycy powinni dopilnować żeby przynajmniej jedna osoba zajmowała się dostarczaniem poczty, jeśli teleporter poczty jest włączony i działa;
 
   # Specjaliści ds. Odzysku
 
   [bold]1.[/bold] Specjaliści ds. Odzysku nie mają prawa gromadzić materiałów. Wszystkie wydobyte surowce należy pozostawić w przetworniku rudy;
 
-  [bold]2.[/bold] Specjaliści ds. Odzysku nie mogą wrzucać ludzi do sztucznie wytworzonych tuneli czasoprzestrzennych ani nakłaniac kogokolwiek do używania krzyształów bluespace, ani rzucać nimi w innych;
+  [bold]2.[/bold] Specjaliści ds. Odzysku nie mogą wrzucać ludzi do sztucznie wytworzonych tuneli czasoprzestrzennych ani nakłaniać kogokolwiek do używania krzyształów bluespace, ani rzucać nimi w innych;
 
   [bold]3.[/bold] Specjaliści ds. Odzysku nie mają prawa przekazywać załodze stacji przedmiotów zdobytych podczas ekspedycji, chyba że Kwatermistrz wyrazi na to zgodę;
 
