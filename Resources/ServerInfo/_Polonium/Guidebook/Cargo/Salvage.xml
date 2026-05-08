@@ -13,9 +13,9 @@ SPDX-License-Identifier: MIT
 <Document>
   # Odzysk
 
-  [color=cyan]Odzysk[/color] to jedno z kluczowych, ale równiez jedneym z najniebezpieczniejszych źródeł dochodu Logistyki. Odzysk pozyskuje pieniądze z [color=cyan]Kosmicznych śmieci[/color] i wyrusza na [color=cyan] Wyprawy Planetarne[/color].
+  [color=cyan]Odzysk[/color] to jedno z kluczowych, ale również jedneym z najniebezpieczniejszych źródeł dochodu Logistyki. Odzysk pozyskuje pieniądze z [color=cyan]Kosmicznych śmieci[/color] i wyrusza na [color=cyan] Wyprawy Planetarne[/color].
 
-  Choć jest to ryzykowne ze względu na zagrożenia związane z przestrzenią kosmiczną i obcymi planetami, przy odpowiednim przygotowaniu i pracy zespołowej każda drużyna odzysku może zarobić dużo pieniędzy dla działu cargo.
+  Choć jest to ryzykowne ze względu na zagrożenia związane z przestrzenią kosmiczną i obcymi planetami, przy odpowiednim przygotowaniu i pracy zespołowej każda drużyna odzysku może zarobić dużo pieniędzy dla departamentu logistyki.
 
   ## Przygotowania
 
@@ -27,7 +27,7 @@ SPDX-License-Identifier: MIT
     <GuideEntityEmbed Entity="VendingMachineSalvage"/>
   </Box>
 
-  Wszystko czego potrzebujesz przed opuszczeniem stacji, znajduje się w początkowym pokoju działu Odzysku. Choć dział naukowy może opracować lepszą broń i wyposażenie. lepiej mieć cokolwiek niz nic.
+  Wszystko czego potrzebujesz przed opuszczeniem stacji, znajduje się w początkowym pokoju działu Odzysku. Choć dział naukowy może opracować lepszą broń i wyposażenie, lepiej mieć cokolwiek niż nic.
 
   <Box>
     <GuideEntityEmbed Entity="ClothingOuterHardsuitSpatio"/>
@@ -40,13 +40,13 @@ SPDX-License-Identifier: MIT
 
   - [color=cyan]Kombinezon kosmiczny[/color]: Utrzymuje cię przy życiu w przestrzeni kosmicznej. [italic]Pamiętaj, żeby aktywować hełm, aby móc oddychać, oraz włączyć wbudowaną latarke.[/italic].
   - [color=cyan]Magnetyczne buty[/color]: Zapewniają ci przyczepność podczas eksplorowania kosmicznych szczątków, a dodatkowo chronią przed poślizgnięciem się..
-  - [color=cyan]Tlen/Azot[/color]: W zależności od twojego gatunku, będziesz potrzebow [color=cyan]Azotu[/color] (szlamy) albo [color=cyan]Tlenu[/color] (każda inna rasa). [color=cyan]Dystrybutor zbiorników gazu[/color] posiada wszystkie potrzebne butle, więc zaopatrz się odpowiednio. Uważaj jednak wahadłowiec działu odzysku nie zawsze ma atmosferę, więc możesz zacząć się dusić jeszcze zanim dotrzesz w przestrzeń kosmiczną.
+  - [color=cyan]Tlen/Azot[/color]: W zależności od twojego gatunku, będziesz potrzebował [color=cyan]Azotu[/color] (szlamy i voxy) albo [color=cyan]Tlenu[/color] (każda inna rasa). [color=cyan]Dystrybutor zbiorników gazu[/color] posiada wszystkie potrzebne butle, więc zaopatrz się odpowiednio. Uważaj jednak wahadłowiec działu odzysku nie zawsze ma atmosferę, więc możesz zacząć się dusić jeszcze zanim dotrzesz w przestrzeń kosmiczną.
 
   <Box>
     <GuideEntityEmbed Entity="WeaponProtoKineticAccelerator"/>
   </Box>
 
-   Każdy Specjalista ds. odzysku musi być uzbrojony, na wypadke gdyby mieli się bronić przed wrogimi istotami.
+   Każdy Specjalista ds. odzysku musi być uzbrojony, na wypadek gdyby mieli się bronić przed wrogimi istotami.
 
   - [color=cyan]Akcelerator protokinetyczny[/color]: Ta broń ma nieskończoną amunicję, dzięki czemu możesz powoli wydobywać surowce i poruszać się w przestrzeni kosmicznej.
 
@@ -78,9 +78,9 @@ SPDX-License-Identifier: MIT
 
   Na koniec dostępne jest również kilka przydatnych, choć niewymaganych elementów wyposażenia dla działu odzysku.
 
-  - [color=cyan]Handheld Radio[/color]: This lets you communicate with other Salvage Specialists even if regular radio communications are unavailable. It is essential for Salvage coordination while in space or on expeditions.
-  - [color=cyan]Global Positioning System[/color]: This gives you an absolute position of yourself, allowing you to pinpoint your exact location. If you get lost in space, this can let you organize a rescue mission or can help you get back to the shuttle when lost on an expedition.
-  - [color=cyan]Utility Belt[/color]: This holds all the equipment you will need to loot machines and the like from space wrecks and expeditions.
+  - [color=cyan]Radio[/color]: Dzięki temu możesz komunikować się z innymi specjalistami ds. odzysku, nawet jeśli standardowa łączność radiowa jest niedostępna. Jest to niezbędne do koordynacji działań Odzyzku w kosmosie lub podczas wypraw.
+  - [color=cyan]System Pozycjonowania Globalnego[/color]: Dzięki temu uzyskasz Twoje dokładne położenie. Jeśli zgubisz się w kosmosie, może to pomóc zorganizować akcję ratunkową, albo pozwoli Ci to wrócić do wahadłowca lub na stację, jeśli zgubisz się podczas wyprawy.
+  - [color=cyan]Pas Narzędziowy[/color]: Tutaj znajdziesz cały sprzęt potrzebny do plądrowania maszyn i innych przedmiotów z wraków statków kosmicznych i ekspedycji kosmicznych.
 
   ## Kosmiczne szczątki
 
@@ -139,7 +139,7 @@ SPDX-License-Identifier: MIT
 
  Po umieszczeniu dysku w konsoli wahadłowca przełącz się na [color=yellow]Tryb mapy[/color]. Następnie kliknij "[color=yellow]Skanuj pobliskie obiekty[/color]".Teraz w rozwijanym menu znajduje się w lewym dolnym rogu interfejsu konsoli, wybierz [color=yellow]FTL[/color], kliknij [color=yellow] planetę na mapie[/color] a rozpoczniesz podróż nadświetlną. 
 
-  Gdy juz wylondujesz na planecie, będziesz miał [bold]11 minut[/bold] na spożytkowanie pomiędzy [color=cyan]Wydobyciem[/color] i [color=cyan]Plądrowaniem Placówek[/color]
+  Gdy juz wylądujesz na planecie, będziesz miał [bold]11 minut[/bold] na spożytkowanie pomiędzy [color=cyan]Wydobyciem[/color] i [color=cyan]Plądrowaniem Placówek[/color]
 
   - [color=cyan]Ekspedycje Wydobywcze[/color]: Wydobycie podczas ekspedycji zapewnia dostęp do szerokiej gamy surowców, ale jednocześnie zwiększa rysyko zgubienia się lub napotkania zagrożeń środowiskowych i wrogich istot.
 
