@@ -45,9 +45,9 @@ SPDX-License-Identifier: MIT
     <GuideEntityEmbed Entity="CrateGenericSteel"/>
   </Box>
 
-  Jeśli znajdziesz coś wartościowego - przynieś to do [color=cyan]Ładowni[color]. Jeśli może sie zmieścić w [color=cyan]Skrzyni[/color], znajdź pustą skrzynię i włóż ten przedmiot do środka.
+  Jeśli znajdziesz coś wartościowego - przynieś to do [color=cyan]Ładowni[/color]. Jeśli może sie zmieścić w [color=cyan]Skrzyni[/color], znajdź pustą skrzynię i włóż ten przedmiot do środka.
 
-  Jeśli [color=cyan]Ładownia [/color] jest daleko, możesz położyć wszystkie przedmioty przeznaczone do sprzedarzy na [color=cyan]Palety Ładunkowe[/color]. Kiedy już wahadłowiec zadokuje do stacji, rozładuj wszystkie dobra, które sprzedajesz. 
+  Jeśli [color=cyan]Ładownia[/color] jest daleko, możesz położyć wszystkie przedmioty przeznaczone do sprzedaży na [color=cyan]Palety Ładunkowe[/color]. Kiedy już wahadłowiec zadokuje do stacji, rozładuj wszystkie dobra, które sprzedajesz. 
 
   <Box>
     <GuideEntityEmbed Entity="ComputerPalletConsole"/>
@@ -58,7 +58,7 @@ SPDX-License-Identifier: MIT
 
   Po tym, jak załadujesz wachadłowiec, przyleć na Stacje Handlową. Gdy już będziesz na niej, przenieś towary na zielone pole [color=cyan]Palety do sprzedaży towarów[/color] i przejdź do [color=cyan]Komputera Sprzedażowego Logistyki[/color] i wciśnij [italic]"Sprzedaj"[/italic].
 
-  [color=cyan]Spesos[/color] ze sprzedaży zostaną rozdzielone między Logistyke i każdy inny dział po podziele w pokoju HoPa [color=cyan]Kosola przydziału środków [color].
+  [color=cyan]Spesos[/color] ze sprzedaży zostaną rozdzielone między Logistyke i każdy inny dział po podziele w pokoju HoPa [color=cyan]Kosola przydziału środków[/color].
 
     Gotówke [color=cyan]spesos[/color] można zdepononować w [color=cyan]Komputzerze do zamówień Logistyki[/color].
  
@@ -70,11 +70,11 @@ SPDX-License-Identifier: MIT
     <GuideEntityEmbed Entity="ComputerCargoOrders"/>
   </Box>
 
-  Każde zamówienie zaczyna się od [color=cyan]Komputera zamówień Logistyki[color]. Pierwsze i najważniejsze, aby cokolwiek zamówić Logistyka potrzebuje mieć wystarczające fundusze. Jeśli Logistyka nie ma pieniędzy zdobądź je.
+  Każde zamówienie zaczyna się od [color=cyan]Komputera zamówień Logistyki[/color]. Pierwsze i najważniejsze, aby cokolwiek zamówić Logistyka potrzebuje mieć wystarczające fundusze. Jeśli Logistyka nie ma pieniędzy zdobądź je.
 
   Decyzja odnośnie wypełnienia zleceń całkowicie zależy od Logistyki. Jeśli Logistyka nie ma wystarczających środków mogą nie realizować mniej zamówień o mniejszym priorytecie.
 
-  Aby coś zamówić kliknij nazwe czegokolwiek czego aktualnie ludzie chcą, podaj dane odbiorcy podajz powód zamówienia danego produktu a następnie klinjij ,,Zatwierdź" w zamówieniu.
+  Aby coś zamówić kliknij nazwe czegokolwiek czego aktualnie ludzie chcą, podaj dane odbiorcy, podaj powód zamówienia danego produktu a następnie kliknij "Zatwierdź" w zamówieniu.
 
   Czasami na niektórych stacjach istnieje publiczny Komputer zamówień Logistyki, w takim wypadku jedyne co musisz zrobić to zaakceptować zamówień załogi która składa je sobie sama. Widzisz jakie to proste?
   
@@ -85,14 +85,14 @@ SPDX-License-Identifier: MIT
 
   Następnie żeby otrzymać zamówienie musisz odebrać je bezpośrednio z [color=cyan]Stacji Handlowej[/color].
 
-  W Stacji Handlowej na [color=cyan]Palecie do kupowania towarów[/color], znajdziesz szkrzynie w kótrej jest twoje zamówienie. Załaduj ją na wahadłowiec i wracaj na stacje.
+  W Stacji Handlowej na [color=cyan]Palecie do kupowania towarów[/color], znajdziesz szkrzynie w której jest twoje zamówienie. Załaduj ją na wahadłowiec i wracaj na stacje.
 
-  Gdy już dotrzesz do ładowni, możesz przeczytać [color=cyan]Faktóre[/color] żeby dowiedzieć się do kogo ma trafić przesyłka. Na końcu dostarcz ją do odbiorcy.
+  Gdy już dotrzesz do ładowni, możesz przeczytać [color=cyan]Fakturę[/color] żeby dowiedzieć się do kogo ma trafić przesyłka. Na końcu dostarcz ją do odbiorcy.
 
 
   ## Pilotaż
 
-  Zamówienia przychodzą na stacje przez orbitującą [color=cyan]Stacje Handlową[/color] i są transportowane na główną stacje przez [color=cyan]Ładownie[color]. Wachadłowiec nie lata sam, więc musi być pilotowany ręcznie lub zdalnie .
+  Zamówienia przychodzą na stacje przez orbitującą [color=cyan]Stacje Handlową[/color] i są transportowane na główną stacje przez [color=cyan]Ładownie[/color]. Wahadłowiec nie lata sam, więc musi być pilotowany ręcznie lub zdalnie .
 
   <Box>
     <GuideEntityEmbed Entity="ComputerCargoShuttle"/>
@@ -102,11 +102,11 @@ SPDX-License-Identifier: MIT
 
   Po interakcją z komputerem powinieneś zobaczyć podgląd nawigacyjny z wahadłowca. Tutaj masz kroki pilotowania wahadłowca do oraz ze Stacji Handlowej:
 
-  - Po pierwsze, przejdź do ekranu [color=yellow]"DOKOWANIE"[/color] i [color=yellow]oddokuj[/color] wszystkie śluzy powietrza pomiędzy wahadłowcem a stacją.
+  - Po pierwsze, przejdź do ekranu [color=yellow]"DOKOWANIE"[/color] i [color=yellow]oddokuj[/color] wszystkie śluzy pomiędzy wahadłowcem a stacją.
   - Teraz kiedy wahadłowiec jest już oddokowany możesz nim pilotować. [italic]Pamiętaj że jesteś w kosmosie więc prędkość z jaką się poruszasz jest stała i wahadłowiec nie hamuje sam z siebie[/italic].
   - Sterujesz za pomocą [color=yellow][keybind="W"][/color] oraz [color=yellow][keybind="S"][/color] do latania w góre i w dół, [color=yellow][keybind="A"][/color] i [color=yellow][keybind="D"][/color] latasz prawo i lewo, aby obracać statkiem w lewo i prawo naciskasz [color=yellow][keybind="Q"][/color] i [color=yellow][keybind="E"][/color]. By się zatrzymać wciskasz [color=yellow][keybind="Spacja"][/color].(To jest domyślne sterowanie)
-  - Następnie pilotuj wahadłoweic do [color=cyan]Stacji Handlowej[/color].
-  - Gdy już tam będziesz, [color=yellow]zadokuj[/color] do śluzy powietrza przy stacji i zrobione.
+  - Następnie pilotuj wahadłowiec do [color=cyan]Stacji Handlowej[/color].
+  - Gdy już tam będziesz, [color=yellow]zadokuj[/color] do śluzy przy stacji i zrobione.
 
 
   [textlink="Dowiedz się więcej o zamówieniach oraz sposobach na maksymalizacje profitu na stacji." link="CargoBounties"]
