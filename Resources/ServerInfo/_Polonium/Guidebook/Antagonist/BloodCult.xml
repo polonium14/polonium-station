@@ -37,7 +37,7 @@ Możesz zostać Kultystą krwi zarówno na początku rundy, jak i poprzez zostan
 
 [bold]Obcowanie[/bold] pozwala na komunikowanie się wyznawcą z braćmi kultu nawet na dalekie dystanse. Jednakże, zaklęcie będzie cicho wypowiedziane.  Więc uważaj by nie zaalarmować załogi przedwcześnie o obecności waszego kultu przez niedbałe używanie tej zdolności. Jeśli veil zostanie rozdarta, to zaklęcie będzie słyszalne dla wszystkich na około.
 
-[bold]Badanie Veil[/bold] pozwala kultyście na usłyszenie głosu[color=#ff3333]Władcy[/color]. Zdobywaj instrukcje poprzez używanie tej umiejętności.
+[bold]Badanie Veil[/bold] pozwala kultyście na usłyszenie głosu [color=#ff3333]Władczyni[/color]. Zdobywaj instrukcje poprzez używanie tej umiejętności.
 
 [bold]Przygotowanie zaklęcia[/bold] pozwala [color=#ff3333]Twojej Patronce[/color] na sięgnięcie i wykucie znaku [bold]Zaklęcia Krwi[/bold] na swoim ciele. Tylko jedno zaklęcie krwi może być przygotowane jednocześnie, chyba że użytkownik stoi na [color=#ff6666]runie wzmacniającej[/color].
 
@@ -79,7 +79,7 @@ Najważniejszymi dostępnymi Ci runami są [color=#ff6666]runa konwersji[/color]
 
 
   <Box>
-    <GuideEntityEmbed Entity="BarrierRune" Caption="rua barriery"/>
+    <GuideEntityEmbed Entity="BarrierRune" Caption="runa barriery"/>
   </Box>
 
 [bold][color=#ff6666]Runa Bariery[/color][/bold] pozwala [color=#ff3333]Pani[/color] fizycznie bronić [color=#ff3333]Jej[/color] swoich wyznawców poprzez magiczne bariery. Kiedy aktywowane, tymczasowe pole siłowe ukaże się nad nią, oraz sąsiednie [color=#ff3333]runy bariery[/color] zostaną także aktywowane. Nie ma limity co do długości tego łańcucha, ocal jednak żywotność wzywającego -- Jego krew będzie wysysana w tempie zależnym od ilości stworzonych barier.
