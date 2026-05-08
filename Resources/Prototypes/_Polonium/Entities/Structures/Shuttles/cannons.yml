@@ -16,7 +16,15 @@
     containers:
       machine_board: !type:Container
       machine_parts: !type:Container
+      hidden_slot: !type:ContainerSlot
       ballistic-ammo: !type:Container
+  - type: ItemSlots
+    slots:
+      hidden_slot:
+        name: computer_slot_accessory
+        whitelist:
+          tags:
+          - ListeningBug
   - type: Destructible
     thresholds:
     - trigger:
@@ -54,7 +62,7 @@
 
 - type: entity
   id: ShuttleGunPlasmaCutter
-  parent: [ ShuttleGunBase, ConstructibleMachine, BaseWeaponBattery]
+  parent: [ ShuttleGunBase, ConstructibleMachine]
   name: PLM-CTT "Shuttle Cutter"
   description: Basic stationary plasma cutter unit. Effective against asteroids. Uses regular power cells to fire, and has slow rate of fire.
   components:
@@ -66,6 +74,14 @@
     containers:
       machine_board: !type:Container
       machine_parts: !type:Container
+      hidden_slot: !type:ContainerSlot
+  - type: ItemSlots
+    slots:
+      hidden_slot:
+        name: computer_slot_accessory
+        whitelist:
+          tags:
+          - ListeningBug
   - type: Destructible
     thresholds:
     - trigger:
