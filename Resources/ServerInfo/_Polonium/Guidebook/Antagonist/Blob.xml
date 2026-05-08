@@ -19,7 +19,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 	<GuideEntityEmbed Entity="MobMouseCancer" Caption="Nosiciel blobu"/>
   </Box>
 
-  Możesz zostać nosicielem blobu zarówno na początku, jak i w trakcje rundy, poprzez zabranie roli ducha. Najczęściej nosiciel to śwaidomy humanoid lub specjalna zielona, radioaktywna mysz.
+  Możesz zostać nosicielem blobu zarówno na początku, jak i w trakcie rundy, poprzez zabranie roli ducha. Najczęściej nosiciel to świadomy humanoid lub specjalna zielona, radioaktywna mysz.
 
   [bold]PAMIĘTAJ:[/bold] Masz ograniczony czas! Po zostaniu nosicielem bloba masz limitowany czas 10 minut na znalezienie i przygotowanie miejsca. Po 10-u minutach zostaniesz automatycznie przetransportowany w bloba.
 
@@ -31,7 +31,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
   Możesz zrobić dwie rzeczy z jądrem: [color=#a4885c]przetransportować[/color] oraz [color=#a4885c]rozdzielić[/color].
   - Kiedy jądro jest przetransportowane, wybrany węzeł oraz jądro są zamieniane miejscami. Bardzo przydatne, jeśli jądro jest w niebezpiecznej pozycji.
-  - Kiedy jądro jes rozdielone, wybrany węzeł zostaje[color=#a4885c]nowym, niezależnym jądrem[/color]. Choć ta akcja wymaga dużej ilości punktów, w dłuższej mierze, nowe jądro może Ci bardzo pomóc w przejęciu stacji.
+  - Kiedy jądro jest rozdzielone, wybrany węzeł zostaje [color=#a4885c]nowym, niezależnym jądrem[/color]. Choć ta akcja wymaga dużej ilości punktów, w dłuższej mierze, nowe jądro może Ci bardzo pomóc w przejęciu stacji.
 
   ## Typy blobu
 
@@ -59,7 +59,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
   <Box>
     <GuideEntityEmbed Entity="MobBlobBlobbernaut" Caption="Blobonaut"/>
-	<GuideEntityEmbed Entity="MobBlobPod" Caption="Zardnik Bloba"/>
+	<GuideEntityEmbed Entity="MobBlobPod" Caption="Zarodnik Bloba"/>
   </Box>
 
   Bloby Fabryczne mogą produkować Zarodniki oraz Blobonautów.
@@ -69,12 +69,12 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
   ## Zarządzanie
 
   - By wybudować jednostkę, naciśnij na wolne pole. Jeśli pole jest zajęte, lub też ktoś albo coś stoi na nim, klikanie zaatakuje i zada obrażenia.
-  - Pamiętaj, że [color=#a4885c]nie możesz stawaić normalnych jednostek daleko od węzłów. Stwórz kilka węzłów by móc rozprzestrzeniać się dalej.
-  - Prze kliknięcjie Alt+LMB (Alt+Lewy przycisk myszy), możesz ulepszać zwykłe jednostki w wzmocnione jednostki, a wzmocnione jednostki w jednostki refleksyjne.
+  - Pamiętaj, że [color=#a4885c]nie możesz stawiać normalnych jednostek daleko od węzłów. Stwórz kilka węzłów by móc rozprzestrzeniać się dalej.
+  - Przez kliknięcie Alt+LMB (Alt+Lewy przycisk myszy), możesz ulepszać zwykłe jednostki w wzmocnione jednostki, a wzmocnione jednostki w jednostki refleksyjne.
 
   <Box>
     <GuideEntityEmbed Entity="StrongBlobTile" Caption="Wzmocniona jednostka"/>
-	  <GuideEntityEmbed Entity="ReflectiveBlobTile" Caption="Refleksyjna jendostka"/>
+	  <GuideEntityEmbed Entity="ReflectiveBlobTile" Caption="Refleksyjna jednostka"/>
   </Box>
 
   ## Zdolności specjalne
@@ -101,7 +101,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
   ## Sposoby kontroli
 
-  Ponieważ blob jest kreaturą biologiczną, [color=#ff5500]ciepło i ogień[/color] są największymi słabościami blobu. Obrażenia cieplne są bardzo efektywne w przeciwko niemu, dlatego poniższe bronie przydadzą Ci się w walce z nim:
+  Ponieważ blob jest kreaturą biologiczną, [color=#ff5500]ciepło i ogień[/color] są największymi słabościami blobu. Obrażenia cieplne są bardzo efektywne przeciwko niemu, dlatego poniższe bronie przydadzą Ci się w walce z nim:
 
   <Box>
     <GuideEntityEmbed Entity="MagazineBoxPistolIncendiary" Caption="Pociski zapalające"/>

@@ -39,7 +39,7 @@ Możesz zostać Kultystą krwi zarówno na początku rundy, jak i poprzez zostan
 
 [bold]Badanie Veil[/bold] pozwala kultyście na usłyszenie głosu[color=#ff3333]Władcy[/color]. Zdobywaj instrukcje poprzez używanie tej umiejętności.
 
-[Bold]Przygotowanie zaklęcia[/bold] pozwala [color=#ff3333]Twojej Patronce[/color] na sięgnięcie i wykucie znaku [bold]Zaklęcia Krwi[/bold] na swoim ciele. Tylko jedno zaklęcie krwi może być przygotowane jednocześnie, chyba że użytkownik stoi na [color=#ff6666]runie wzmacniającej[/color].
+[bold]Przygotowanie zaklęcia[/bold] pozwala [color=#ff3333]Twojej Patronce[/color] na sięgnięcie i wykucie znaku [bold]Zaklęcia Krwi[/bold] na swoim ciele. Tylko jedno zaklęcie krwi może być przygotowane jednocześnie, chyba że użytkownik stoi na [color=#ff6666]runie wzmacniającej[/color].
 
 ## Runy
 
@@ -82,7 +82,7 @@ Najważniejszymi dostępnymi Ci runami są [color=#ff6666]runa konwersji[/color]
     <GuideEntityEmbed Entity="BarrierRune" Caption="rua barriery"/>
   </Box>
 
-[bold][color=#ff6666]Runa Bariery[/color][/bold] pozwala[color=#ff3333]Pani[/color] fizycznie bronić [color=#ff3333]Jej[/color] swoich wyznawców poprzez magiczne bariery. Kiedy aktywowane, tymczasowe pole siłowe ukarze się nad nią, oraz sąsiednie [color=#ff3333]runy bariery[/color] zostaną także aktywowane. Nie ma limity co do długości tego łańcucha, ocal jednak żywotność wzywającego -- Jego krew będzie wysysana w tempie zależnym od ilości stworzonych barier.
+[bold][color=#ff6666]Runa Bariery[/color][/bold] pozwala [color=#ff3333]Pani[/color] fizycznie bronić [color=#ff3333]Jej[/color] swoich wyznawców poprzez magiczne bariery. Kiedy aktywowane, tymczasowe pole siłowe ukaże się nad nią, oraz sąsiednie [color=#ff3333]runy bariery[/color] zostaną także aktywowane. Nie ma limity co do długości tego łańcucha, ocal jednak żywotność wzywającego -- Jego krew będzie wysysana w tempie zależnym od ilości stworzonych barier.
 
   <Box>
     <GuideEntityEmbed Entity="SummoningRune" Caption="runa przyzywająca"/>
@@ -200,7 +200,7 @@ Dekonwersja Kultysty może wydarzyć się na cztery sposoby:
 
 Kapłan, jako święty byt, wykazuje niemal całkowitą odporność na [italic]przekonujące[/italic] aspekty kultu krwi, co czyni go jedynym członkiem załogi, któremu można w pełni zaufać po wykryciu zagrożenia. Kapłani są również niewrażliwi na krwawą magię oraz rytualny oręż, przez co ofensywne umiejętności kultystów stają się przeciwko nim bezużyteczne -- chyba że napastnicy zdecydują się na bardziej tradycyjne metody walki.
 
-Chrońcie Kapłana -- jego woda święcona to jedyne, co stoi między wami a[bold][color=#ff3333]pożarciem/color][/bold].
+Chrońcie Kapłana -- jego woda święcona to jedyne, co stoi między wami a[bold][color=#ff3333]pożarciem[/color][/bold].
 
   <Box>
     <GuideEntityEmbed Entity="RandomHumanoidVisitorChaplain" Caption="Wasza jedyna linia obrony. Boże dopomóż im..."/>
