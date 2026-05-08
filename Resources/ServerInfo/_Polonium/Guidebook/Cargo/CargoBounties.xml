@@ -10,7 +10,7 @@ SPDX-License-Identifier: MIT
 
 <Document>
   # Zlecenia Logistyki
-  Chociaż [textlink="Logistyka" link="Cargo"] może zarabiać [color=cyan]spesos[color] sprzedając wszystko, bardziej opłacalne jest realizowanie [color=cyan]zlecenia[/color] które znajdują się w Komputerze Zleceń Logistyki
+  Chociaż [textlink="Logistyka" link="Cargo"] może zarabiać [color=cyan]spesos[/color] sprzedając wszystko, bardziej opłacalne jest realizowanie [color=cyan]zleceń[/color] które znajdują się w Komputerze Zleceń Logistyki
 
   ## Rozpoczynanie Zleceń
 
@@ -35,9 +35,9 @@ SPDX-License-Identifier: MIT
 
   Z [color=cyan]Manifestem Zleceń[/color], to od ciebie zależy, czy zbierzesz wymagane towary. Większość oddziałów da ci czego potrzebujesz gdy pokażesz im Manifest Zleceń.
 
-  Po zebraniu wszystkich wymaganych dóbr, wróć do ładowni i włóż je do pustej [color=cyan]Skrzyni[/color]. Gdy wszystko juz się w niej znajdzie zamknij ją i użyj na niej manifestu.
+  Po zebraniu wszystkich wymaganych dóbr, wróć do ładowni i włóż je do pustej [color=cyan]Skrzyni[/color]. Gdy wszystko juz się w niej znajdzie zamknij ją i nałóż na nią manifest.
 
-  By zweryfikować ukończenie zlecenia, użyj [color=cyan]Nażędzia do wyceny[/color]. Powinno ono potwierdzić zrealizowanie zlecenia.
+  By zweryfikować ukończenie zlecenia, użyj [color=cyan]Narzędzia do wyceny[/color]. Powinno ono potwierdzić zrealizowanie zlecenia.
 
   ## Sprzedaż Zamówień
 
@@ -49,7 +49,7 @@ SPDX-License-Identifier: MIT
 
   Gdy już zweryfikujesz czy zlecenie zostało poprawnie wypełnione, wykonaj te same kroki, jak w przypadku sprzedaży czegokolwiek innego.
 
-  Poprostu przetransportuj to na [color=cyan]Stacje Handlową[/color], sprzedaj to, I zrobione!
+  Poprostu przetransportuj to na [color=cyan]Stacje Handlową[/color], sprzedaj to, i zrobione!
 
   Gdy wrócisz, powinieneś znaleźć nowe zlecenie na miejscu poprzedniego.
 </Document>
