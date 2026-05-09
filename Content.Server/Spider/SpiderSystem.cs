@@ -62,11 +62,11 @@ public sealed class SpiderSystem : SharedSpiderSystem
 
         if (result)
         {
-            _popup.PopupEntity(Loc.GetString("spider-web-action-success"), args.Performer, args.Performer);
+            _popup.PopupEntity(Loc.GetString(component.CustomActionSuccessLocMessage ?? "spider-web-action-success"), args.Performer, args.Performer);
             args.Handled = true;
         }
         else
-            _popup.PopupEntity(Loc.GetString("spider-web-action-fail"), args.Performer, args.Performer);
+            _popup.PopupEntity(Loc.GetString(component.CustomActionFailLocMessage ?? "spider-web-action-fail"), args.Performer, args.Performer);
     }
 
     private bool IsTileBlockedByWeb(EntityCoordinates coords)

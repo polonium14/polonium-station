@@ -1,0 +1,13 @@
+- type: soundCollection
+  id: XenoScreams1
+  files:
+    - /Audio/_Polonium/Voice/Xeno/xeno1.ogg
+    - /Audio/_Polonium/Voice/Xeno/xeno2.ogg
+
+- type: soundCollection
+  id: XenoScreams2
+  files:
+    - /Audio/_Polonium/Voice/Xeno/xeno1.ogg
+    - /Audio/_Polonium/Voice/Xeno/xeno2.ogg
+    - /Audio/_Polonium/Voice/Xeno/xeno3.ogg
+    - /Audio/_Polonium/Voice/Xeno/xeno4.ogg

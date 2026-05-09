@@ -15,3 +15,22 @@
       collection: MaleGasp
     DefaultDeathgasp:
       collection: MothDeathGasp
+
+- type: emoteSounds
+  id: UnisexXeno1
+  params:
+    variation: 0.1
+    # volume: -5
+  sounds:
+    Scream:
+      collection: XenoScreams1
+
+- type: emoteSounds
+  id: UnisexXeno2
+  params:
+    variation: 0.1
+    # volume: -5
+  sounds:
+    Scream:
+      collection: XenoScreams2
+
