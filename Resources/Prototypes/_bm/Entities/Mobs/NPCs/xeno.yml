@@ -44,6 +44,14 @@
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: Xenolian
+  - type: CombatMode
+  - type: MeleeWeapon
+    attackRate: 1
+    angle: 30
+    range: 1.5
+    damage:
+      types:
+        Slash: 8
   - type: Body
     prototype: Animal
   - type: Actions
@@ -51,8 +59,6 @@
   - type: Polymorphable
   - type: Buckle
   - type: Insulated
-  - type: Hands
-    showInHands: true
   - type: MobState
     allowedStates:
       - Alive
@@ -75,6 +81,8 @@
     color: "purple"
   - type: Puller
     needsHands: false
+  - type: Hands
+    showGui: false
   - type: NoSlip
   - type: IgnoreSpiderWeb
   - type: IntrinsicRadioReceiver
@@ -568,12 +576,11 @@
   - type: HTN
     rootTask:
       task: SimpleHumanoidHostileCompound
-  - type: InnateTool
-    tools:
-      - id: WeaponXenoSpit
-      - id: WeaponXenoSpitUltra
-      - id: WeaponXenoClaw
-      - id: PinpointerXeno
+  - type: ActionGun
+    actions:
+      ActionXenoSpit: WeaponXenoSpit
+      ActionXenoSpitUltra: WeaponXenoSpitUltra
+
   - type: Sprite
     drawdepth: Mobs
     sprite: _bm/test/base/rsi/Textures/Mob/xeno/sentinel.rsi
@@ -635,13 +642,12 @@
   - type: HTN
     rootTask:
       task: SimpleHumanoidHostileCompound
-  - type: InnateTool
-    tools:
-      - id: WeaponXenoSpit4
-      - id: WeaponXenoSpitUltraSuper
-      - id: WeaponXenoSpitGas
-      - id: WeaponXenoClaw
-      - id: PinpointerXeno
+  - type: ActionGun
+    actions:
+      ActionXenoSpit4: WeaponXenoSpit4
+      ActionXenoSpitUltraSuper: WeaponXenoSpitUltraSuper
+      ActionXenoSpitGas: WeaponXenoSpitGas
+
   - type: Sprite
     drawdepth: Mobs
     sprite: _bm/test/base/rsi/Textures/Mob/xeno/spitter.rsi
@@ -786,6 +792,8 @@
       150: Dead
   - type: Stamina
     baseCritThreshold: 250
+  - type: ItemToggle
+    activated: false
   - type: ComponentToggler
     parent: false
     components:
@@ -797,6 +805,9 @@
       maxInvisibilityPenalty: 1.6
       passiveVisibilityRate: -1.75
       movementVisibilityRate: 0.1
+  - type: ActionGrant
+    actions:
+    - ActionHunterInvisibility
   - type: MovementSpeedModifier
     baseWalkSpeed : 2.5
     baseSprintSpeed : 5.5
@@ -807,10 +818,6 @@
     group: Xeno
   - type: Body
     prototype: XenoBody
-  # - type: StealthOnMove
-  #   passiveVisibilityRate: -2
-  #   movementVisibilityRate: 0.1
-  - type: Stealth
   - type: InnateTool
     tools:
       - id: WeaponXenoClaw
@@ -2108,3 +2115,88 @@
     revertOnDeath: false
     allowRepeatedMorphs: true
     cooldown: 30
+
+- type: entity
+  id: ActionXenoSpit
+  name: Xeno Spit
+  description: Spits acid at the target.
+  components:
+  - type: WorldTargetAction
+    icon: { sprite: Objects/Weapons/Guns/Projectiles/magic.rsi, state: declone }
+    event: !type:ActionGunShootEvent
+    priority: 0
+    checkCanAccess: false
+    range: 0
+    itemIconStyle: BigAction
+    useDelay: 2
+
+- type: entity
+  id: ActionXenoSpitUltra
+  name: Ultra Xeno Spit
+  description: Spits highly corrosive acid.
+  components:
+  - type: WorldTargetAction
+    icon: { sprite: Objects/Weapons/Guns/Projectiles/magic.rsi, state: declone }
+    event: !type:ActionGunShootEvent
+    priority: -1
+    checkCanAccess: false
+    range: 0
+    itemIconStyle: BigAction
+    useDelay: 5
+
+- type: entity
+  id: ActionXenoSpit4
+  name: Spread Spit
+  description: Spits acid in a wide arc.
+  components:
+  - type: WorldTargetAction
+    icon: { sprite: Objects/Weapons/Guns/Projectiles/magic.rsi, state: declone }
+    event: !type:ActionGunShootEvent
+    priority: 0
+    checkCanAccess: false
+    range: 0
+    itemIconStyle: BigAction
+    useDelay: 10
+
+- type: entity
+  id: ActionXenoSpitUltraSuper
+  name: Super Ultra Xeno Spit
+  description: Spits burning acid at the target.
+  components:
+  - type: WorldTargetAction
+    icon: { sprite: Objects/Weapons/Guns/Projectiles/magic.rsi, state: declone }
+    event: !type:ActionGunShootEvent
+    priority: -1
+    checkCanAccess: false
+    range: 0
+    itemIconStyle: BigAction
+    useDelay: 10
+
+- type: entity
+  id: ActionXenoSpitGas
+  name: Gas Spit
+  description: Spits a toxic smoke shell.
+  components:
+  - type: WorldTargetAction
+    icon: { sprite: Objects/Weapons/Guns/Projectiles/magic.rsi, state: declone }
+    event: !type:ActionGunShootEvent
+    priority: -2
+    checkCanAccess: false
+    range: 0
+    itemIconStyle: BigAction
+    useDelay: 15
+
+- type: entity
+  id: ActionXenoHealingSpit
+  name: Healing Pheromones
+  description: Spits healing pheromones.
+  components:
+  - type: WorldTargetAction
+    icon: { sprite: Objects/Weapons/Guns/Projectiles/magic.rsi, state: declone }
+    event: !type:ActionGunShootEvent
+    priority: 0
+    checkCanAccess: false
+    range: 0
+    itemIconStyle: BigAction
+    useDelay: 10
+

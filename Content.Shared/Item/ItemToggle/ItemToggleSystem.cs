@@ -57,6 +57,16 @@ public sealed class ItemToggleSystem : EntitySystem
         SubscribeLocalEvent<ItemToggleHotComponent, IsHotEvent>(OnIsHotEvent);
 
         SubscribeLocalEvent<ItemToggleActiveSoundComponent, ItemToggledEvent>(UpdateActiveSound);
+
+        SubscribeLocalEvent<ItemToggleComponent, ToggleActionEvent>(OnToggleAction);
+    }
+
+    private void OnToggleAction(Entity<ItemToggleComponent> ent, ref ToggleActionEvent args)
+    {
+        if (args.Handled)
+            return;
+        Entity<ItemToggleComponent?> nullable = (ent.Owner, ent.Comp);
+        args.Handled = Toggle(nullable, args.Performer, predicted: ent.Comp.Predictable);
     }
 
     private void OnStartup(Entity<ItemToggleComponent> ent, ref ComponentStartup args)
