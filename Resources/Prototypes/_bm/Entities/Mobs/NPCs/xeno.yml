@@ -51,8 +51,8 @@
   - type: Polymorphable
   - type: Buckle
   - type: Insulated
-  - type: Hands
-    showInHands: true
+  # - type: Hands
+  #   showInHands: true
   - type: MobState
     allowedStates:
       - Alive
@@ -64,10 +64,8 @@
     baseCritThreshold: 500
   - type: Appearance
   - type: Bloodstream
-    bloodReferenceSolution:
-      reagents:
-      - ReagentId: Blood
-        Quantity: 0.1
+    bloodReagent: FluorosulfuricAcid
+    bloodMaxVolume: 650
   - type: UnpoweredFlashlight
   - type: PointLight
     enabled: false
@@ -101,6 +99,19 @@
   # Polonium
   - type: Sprinter
     canSprint: false
+  - type: Prying
+    pryPowered: true
+    force: true
+    speedModifier: 1.25
+    useSound:
+      path: /Audio/Items/crowbar.ogg
+  - type: TypingIndicator
+    proto: alien
+  - type: Butcherable
+    butcheringType: Spike
+    spawned:
+    - id: FoodMeatXeno
+      amount: 2
 
 - type: accessLevel
   id: Xeno
@@ -109,12 +120,12 @@
 - type: damageModifierSet
   id: Xenolian
   coefficients:
-    Blunt: 0.7
-    Slash: 0.5
-    Piercing: 0.7
-    ArmorPiercing: 0.9
-    Heat: 1.8
-    Shock: 1.8
+    Blunt: 1.4
+    Slash: 1.0
+    Piercing: 1.8
+    ArmorPiercing: 1.8
+    Heat: 3.2
+    Shock: 3.6
     Poison: 0.0
     Radiation: 0.0
     Asphyxiation: 0.0
@@ -124,12 +135,12 @@
 - type: damageModifierSet
   id: XenolianStrong
   coefficients:
-    Blunt: 0.5
-    Slash: 0.3
-    Piercing: 0.4
-    ArmorPiercing: 0.7
-    Heat: 1.8
-    Shock: 1.8
+    Blunt: 1.0
+    Slash: 0.6
+    Piercing: 0.8
+    ArmorPiercing: 1.4
+    Heat: 3.6
+    Shock: 3.2
     Poison: 0.0
     Radiation: 0.0
     Asphyxiation: 0.0
@@ -211,6 +222,14 @@
   - type: Speech
     speechSounds: Xeno
     allowedEmotes: ['Squeak']
+  - type: Butcherable
+    butcheringType: Spike
+    spawned:
+    - id: FoodMeatXeno
+      amount: 1
+  - type: Bloodstream
+    bloodReagent: FluorosulfuricAcid
+    bloodMaxVolume: 200
 
 
 # QUEEN #
@@ -221,6 +240,9 @@
   id: KsenosXenoQueen
   description: Queen of the hive.
   components:
+  - type: ActionGun
+    action: ActionXenoHealingSpit
+    gunProto: WeaponXenoHealingSpit
   - type: GhostTakeoverAvailable
   - type: GhostRole
     name: Queen
@@ -312,11 +334,20 @@
   - type: Speech
     speechSounds: Xeno
     allowedEmotes: ['Scream']
+    speechVerb: LargeMob
   - type: Vocal
     sounds:
-      Male: XenoScreams2
-      Female: XenoScreams2
-      Unsexed: XenoScreams2
+      Male: UnisexXeno2
+      Female: UnisexXeno2
+      Unsexed: UnisexXeno2
+  - type: Butcherable
+    butcheringType: Spike
+    spawned:
+    - id: FoodMeatXeno
+      amount: 4
+  - type: Bloodstream
+    bloodReagent: FluorosulfuricAcid
+    bloodMaxVolume: 800
 
 - type: entity
   id: XenoLayEgg
@@ -337,6 +368,12 @@
   id: KsenosXenoPraetorian
   description: Protector of the queen.
   components:
+  - type: ActionGuns
+    guns:
+    - action: ActionXenoAcidSpit
+      gunProto: WeaponXenoSpit
+    - action: ActionXenoHealingSpit
+      gunProto: WeaponXenoHealingSpit
   - type: GhostTakeoverAvailable
   - type: GhostRole
     name: Praetorian
@@ -408,9 +445,9 @@
     allowedEmotes: ['Scream']
   - type: Vocal
     sounds:
-      Male: XenoScreams1
-      Female: XenoScreams1
-      Unsexed: XenoScreams1
+      Male: UnisexXeno1
+      Female: UnisexXeno1
+      Unsexed: UnisexXeno1
 
 # WARRIOR #
 
@@ -473,9 +510,9 @@
     allowedEmotes: ['Scream']
   - type: Vocal
     sounds:
-      Male: XenoScreams2
-      Female: XenoScreams2
-      Unsexed: XenoScreams2
+      Male: UnisexXeno2
+      Female: UnisexXeno2
+      Unsexed: UnisexXeno2
 
 # DRONE #
 
@@ -544,9 +581,9 @@
     allowedEmotes: ['Scream']
   - type: Vocal
     sounds:
-      Male: XenoScreams1
-      Female: XenoScreams1
-      Unsexed: XenoScreams1
+      Male: UnisexXeno1
+      Female: UnisexXeno1
+      Unsexed: UnisexXeno1
 
 # SPITTER #
 
@@ -556,6 +593,12 @@
   parent: KsenosXenoBase
   id: KsenosXenoSpitter
   components:
+  - type: ActionGuns
+    guns:
+    - action: ActionXenoAcidSpit
+      gunProto: WeaponXenoSpit
+    - action: ActionXenoAcidSpitUltra
+      gunProto: WeaponXenoSpitUltra
   - type: GhostTakeoverAvailable
   - type: GhostRole
     name: Sentry
@@ -612,9 +655,9 @@
     allowedEmotes: ['Scream']
   - type: Vocal
     sounds:
-      Male: XenoScreams1
-      Female: XenoScreams1
-      Unsexed: XenoScreams1
+      Male: UnisexXeno1
+      Female: UnisexXeno1
+      Unsexed: UnisexXeno1
 
 # Real SPITTER #
 
@@ -624,6 +667,14 @@
   parent: KsenosXenoBase
   id: KsenosXenoRealSpitter
   components:
+  - type: ActionGuns
+    guns:
+    - action: ActionXenoAcidSpit4
+      gunProto: WeaponXenoSpit4
+    - action: ActionXenoAcidSpitUltraSuper
+      gunProto: WeaponXenoSpitUltraSuper
+    - action: ActionXenoAcidSpitGas
+      gunProto: WeaponXenoSpitGas
   - type: GhostTakeoverAvailable
   - type: GhostRole
     name: Spitter
@@ -680,9 +731,9 @@
     allowedEmotes: ['Scream']
   - type: Vocal
     sounds:
-      Male: XenoScreams1
-      Female: XenoScreams1
-      Unsexed: XenoScreams1
+      Male: UnisexXeno1
+      Female: UnisexXeno1
+      Unsexed: UnisexXeno1
 
 # SCOUT # - placeholder nonsense
 
@@ -750,9 +801,9 @@
     allowedEmotes: ['Scream']
   - type: Vocal
     sounds:
-      Male: XenoScreams1
-      Female: XenoScreams1
-      Unsexed: XenoScreams1
+      Male: UnisexXeno1
+      Female: UnisexXeno1
+      Unsexed: UnisexXeno1
 
 # Hunter #
 
@@ -762,6 +813,9 @@
   id: KsenosXenoHunter
   description: Invisible xenomorph.
   components:
+  - type: ActionGrant
+    actions:
+    - ActionHunterInvisibility
   - type: GhostTakeoverAvailable
   - type: GhostRole
     name: Hunter
@@ -786,17 +840,6 @@
       150: Dead
   - type: Stamina
     baseCritThreshold: 250
-  - type: ComponentToggler
-    parent: false
-    components:
-    - type: Stealth
-      # maxVisibility: 0.15
-      # hadOutline: true
-    - type: StealthOnMove
-      invisibilityPenalty: 3
-      maxInvisibilityPenalty: 1.6
-      passiveVisibilityRate: -1.75
-      movementVisibilityRate: 0.1
   - type: MovementSpeedModifier
     baseWalkSpeed : 2.5
     baseSprintSpeed : 5.5
@@ -807,10 +850,13 @@
     group: Xeno
   - type: Body
     prototype: XenoBody
-  # - type: StealthOnMove
-  #   passiveVisibilityRate: -2
-  #   movementVisibilityRate: 0.1
   - type: Stealth
+    enabled: false
+  - type: StealthOnMove
+    invisibilityPenalty: 3
+    maxInvisibilityPenalty: 1.6
+    passiveVisibilityRate: -1.75
+    movementVisibilityRate: 0.1
   - type: InnateTool
     tools:
       - id: WeaponXenoClaw
@@ -820,9 +866,9 @@
     allowedEmotes: ['Scream']
   - type: Vocal
     sounds:
-      Male: XenoScreams1
-      Female: XenoScreams1
-      Unsexed: XenoScreams1
+      Male: UnisexXeno1
+      Female: UnisexXeno1
+      Unsexed: UnisexXeno1
 
 - type: entity
   id: ActionHunterInvisibility
@@ -835,7 +881,8 @@
       useDelay: 30
       # priority: -98
       icon: Backmen/Interface/VerbIcons/psionic_invisibility.png
-      event: !type:ToggleActionEvent
+      iconOn: Backmen/Interface/VerbIcons/psionic_invisibility.png
+      event: !type:ToggleStealthActionEvent
 
 # RAVAGER #
 
@@ -918,9 +965,9 @@
     allowedEmotes: ['Scream']
   - type: Vocal
     sounds:
-      Male: XenoScreams1
-      Female: XenoScreams1
-      Unsexed: XenoScreams1
+      Male: UnisexXeno1
+      Female: UnisexXeno1
+      Unsexed: UnisexXeno1
 
 - type: entity
   name: Hive King
@@ -988,9 +1035,14 @@
     allowedEmotes: ['Scream']
   - type: Vocal
     sounds:
-      Male: XenoScreams2
-      Female: XenoScreams2
-      Unsexed: XenoScreams2
+      Male: UnisexXeno2
+      Female: UnisexXeno2
+      Unsexed: UnisexXeno2
+  - type: Butcherable
+    butcheringType: Spike
+    spawned:
+    - id: FoodMeatXeno
+      amount: 5
 
 # BODY PRESETS #
 
@@ -1140,6 +1192,16 @@
   id: WeaponXenoSpit4
   name: super xeno spit
   components:
+  - type: Gun
+    fireRate: 1
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Xeno/alien_spitacid.ogg
+    soundEmpty:
+      path: /Audio/Animals/snake_hiss.ogg
+    projectileSpeed: 12
   - type: BasicEntityAmmoProvider
     proto: XenoSpitBullet4
     capacity: 1
@@ -1165,7 +1227,7 @@
       path: /Audio/Weapons/Xeno/alien_spitacid.ogg
     soundEmpty:
       path: /Audio/Animals/snake_hiss.ogg
-    projectileSpeed: 8
+    projectileSpeed: 16
   - type: BasicEntityAmmoProvider
     proto: XenoSpitBullet
     capacity: 1
@@ -1229,7 +1291,7 @@
       path: /Audio/Weapons/Xeno/alien_spitacid.ogg
     soundEmpty:
       path: /Audio/Animals/snake_hiss.ogg
-    projectileSpeed: 8
+    projectileSpeed: 16
   - type: BasicEntityAmmoProvider
     proto: FireXenoSpitBullet
     capacity: 5
@@ -1255,7 +1317,7 @@
       path: /Audio/Weapons/Xeno/alien_spitacid.ogg
     soundEmpty:
       path: /Audio/Animals/snake_hiss.ogg
-    projectileSpeed: 8
+    projectileSpeed: 16
   - type: BasicEntityAmmoProvider
     proto: FireXenoSpitBullet
     capacity: 1
@@ -1270,6 +1332,16 @@
   id: WeaponXenoSpitGas
   name: gas xeno spit
   components:
+  - type: Gun
+    fireRate: 1
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Xeno/alien_spitacid.ogg
+    soundEmpty:
+      path: /Audio/Animals/snake_hiss.ogg
+    projectileSpeed: 16
   - type: BasicEntityAmmoProvider
     proto: GasXenoSpitBullet
 
@@ -1448,7 +1520,7 @@
       path: /Audio/Animals/cat_hiss.ogg
     soundEmpty:
       path: /Audio/Animals/snake_hiss.ogg
-    projectileSpeed: 3
+    projectileSpeed: 6
   - type: BasicEntityAmmoProvider
     proto: XenoSpitHealingBullet
     capacity: 10
@@ -1540,6 +1612,100 @@
       sprite: _bm/test/base/rsi/Textures/Structures/xeno/weeds.rsi
       state: full
     useDelay: 1
+
+#
+# Ranged abilities via ActionGun (replicator-style)
+#
+
+- type: entity
+  id: ActionXenoAcidSpit
+  name: Acid Spit
+  description: Spit corrosive acid at a target location.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: WorldTargetAction
+    icon: { sprite: Objects/Weapons/Guns/Projectiles/magic.rsi, state: declone }
+    event: !type:ActionGunsShootEvent
+      gunProto: WeaponXenoSpit
+    priority: 2
+    checkCanAccess: false
+    range: 0
+    itemIconStyle: BigAction
+
+- type: entity
+  id: ActionXenoAcidSpitUltra
+  name: Corrosive Spit
+  description: Spit highly corrosive acid at a target location.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: WorldTargetAction
+    icon: { sprite: Objects/Weapons/Guns/Projectiles/magic.rsi, state: declone }
+    event: !type:ActionGunsShootEvent
+      gunProto: WeaponXenoSpitUltra
+    priority: 2
+    checkCanAccess: false
+    range: 0
+    itemIconStyle: BigAction
+
+- type: entity
+  id: ActionXenoAcidSpit4
+  name: Super Spit
+  description: Spit acid at a target location.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: WorldTargetAction
+    icon: { sprite: Objects/Weapons/Guns/Projectiles/magic.rsi, state: declone }
+    event: !type:ActionGunsShootEvent
+      gunProto: WeaponXenoSpit4
+    priority: 2
+    checkCanAccess: false
+    range: 0
+    itemIconStyle: BigAction
+
+- type: entity
+  id: ActionXenoAcidSpitUltraSuper
+  name: Super Corrosive Spit
+  description: Spit a burst of corrosive acid.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: WorldTargetAction
+    icon: { sprite: Objects/Weapons/Guns/Projectiles/magic.rsi, state: declone }
+    event: !type:ActionGunsShootEvent
+      gunProto: WeaponXenoSpitUltraSuper
+    priority: 2
+    checkCanAccess: false
+    range: 0
+    itemIconStyle: BigAction
+
+- type: entity
+  id: ActionXenoAcidSpitGas
+  name: Gas Spit
+  description: Spit a gas payload at a target location.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: WorldTargetAction
+    icon: { sprite: Objects/Weapons/Guns/Projectiles/magic.rsi, state: declone }
+    event: !type:ActionGunsShootEvent
+      gunProto: WeaponXenoSpitGas
+    priority: 2
+    checkCanAccess: false
+    range: 0
+    itemIconStyle: BigAction
+
+- type: entity
+  id: ActionXenoHealingSpit
+  name: Healing Pheromones
+  description: Launch healing pheromones at a target location.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: WorldTargetAction
+    icon: { sprite: Objects/Weapons/Guns/Projectiles/magic.rsi, state: magicm }
+    event: !type:ActionGunsShootEvent
+      gunProto: WeaponXenoHealingSpit
+    priority: 2
+    checkCanAccess: false
+    range: 0
+    itemIconStyle: BigAction
 
 - type: entity
   id: XenoWeed

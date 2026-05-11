@@ -19,8 +19,7 @@
 - type: emoteSounds
   id: UnisexXeno1
   params:
-    variation: 0.1
-    # volume: -5
+    variation: 0.25
   sounds:
     Scream:
       collection: XenoScreams1
@@ -28,8 +27,7 @@
 - type: emoteSounds
   id: UnisexXeno2
   params:
-    variation: 0.1
-    # volume: -5
+    variation: 0.25
   sounds:
     Scream:
       collection: XenoScreams2

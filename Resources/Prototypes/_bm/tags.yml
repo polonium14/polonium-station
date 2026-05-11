@@ -1,0 +1,77 @@
+- type: Tag
+  id: GlassesNearsight
+- type: Tag
+  id: SpaceCash
+
+- type: Tag
+  id: ArachneWeb
+
+- type: Tag
+  id: Oneirophage
+
+- type: Tag
+  id: ForensicBeltEquip
+
+- type: Tag
+  id: FleshBlocker
+
+- type: Tag
+  id: CoreSilver
+
+- type: Tag
+  id: NormalityCrystal
+
+- type: Tag
+  id: MothroachHide
+
+
+- type: Tag
+  id: RuinedDwelling
+
+- type: Tag
+  id: RuinedHospital
+
+- type: Tag
+  id: RuinedShop
+
+- type: Tag
+  id: Rapier
+
+- type: Tag
+  id: NoSpinOnThrow
+
+- type: Tag
+  id: PowerpackFlame
+
+- type: Tag
+  id: TankFlamethrower
+
+- type: Tag
+  id: FireThrowerBall
+
+- type: Tag
+  id: PowerpackRifle
+
+- type: Tag
+  id: PowerpackEnergy
+
+- type: Tag
+  id: MagazinePistolTopSubMachineGun
+
+- type: Tag
+  id: SwordSquadRO
+
+- type: Tag
+  id: CartridgeRifleHeavy
+
+- type: Tag
+  id: CartridgeAntitank
+
+- type: Tag
+  id: EngineeringAirlock
+
+- type: Tag
+  id: SecureSafe
+
+- type: Tag
+  id: IgnoreMelee
