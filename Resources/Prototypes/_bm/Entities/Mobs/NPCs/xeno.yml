@@ -248,9 +248,6 @@
   id: KsenosXenoQueen
   description: Queen of the hive.
   components:
-  - type: ActionGun
-    action: ActionXenoHealingSpit
-    gunProto: WeaponXenoHealingSpit
   - type: GhostTakeoverAvailable
   - type: GhostRole
     name: Queen
@@ -267,6 +264,7 @@
       - id: WeaponXenoHealingSpit
       - id: PinpointerXeno
   - type: XenoAcidSpiller
+    bulletSpawnId: FireXenoSpitBullet
   - type: SolutionContainerManager
     solutions:
       udder:
@@ -274,10 +272,6 @@
         reagents:
         - ReagentId: SlermQueenPlus
           Quantity: 30
-  - type: Udder
-    reagentId: SlermQueenPlus
-    quantityPerUpdate: 25
-    growthDelay: 30
   - type: Destructible
     thresholds:
     - trigger:
@@ -376,12 +370,6 @@
   id: KsenosXenoPraetorian
   description: Protector of the queen.
   components:
-  - type: ActionGuns
-    guns:
-    - action: ActionXenoAcidSpit
-      gunProto: WeaponXenoSpit
-    - action: ActionXenoHealingSpit
-      gunProto: WeaponXenoHealingSpit
   - type: GhostTakeoverAvailable
   - type: GhostRole
     name: Praetorian
@@ -601,12 +589,6 @@
   parent: KsenosXenoBase
   id: KsenosXenoSpitter
   components:
-  - type: ActionGuns
-    guns:
-    - action: ActionXenoAcidSpit
-      gunProto: WeaponXenoSpit
-    - action: ActionXenoAcidSpitUltra
-      gunProto: WeaponXenoSpitUltra
   - type: GhostTakeoverAvailable
   - type: GhostRole
     name: Sentry
@@ -674,14 +656,6 @@
   parent: KsenosXenoBase
   id: KsenosXenoRealSpitter
   components:
-  - type: ActionGuns
-    guns:
-    - action: ActionXenoAcidSpit4
-      gunProto: WeaponXenoSpit4
-    - action: ActionXenoAcidSpitUltraSuper
-      gunProto: WeaponXenoSpitUltraSuper
-    - action: ActionXenoAcidSpitGas
-      gunProto: WeaponXenoSpitGas
   - type: GhostTakeoverAvailable
   - type: GhostRole
     name: Spitter
@@ -819,9 +793,6 @@
   id: KsenosXenoHunter
   description: Invisible xenomorph.
   components:
-  - type: ActionGrant
-    actions:
-    - ActionHunterInvisibility
   - type: GhostTakeoverAvailable
   - type: GhostRole
     name: Hunter
@@ -895,9 +866,9 @@
       checkCanInteract: false
       useDelay: 30
       # priority: -98
-      icon: Backmen/Interface/VerbIcons/psionic_invisibility.png
-      iconOn: Backmen/Interface/VerbIcons/psionic_invisibility.png
-      event: !type:ToggleStealthActionEvent
+      icon: _bm/Interface/VerbIcons/psionic_invisibility.png
+      iconOn: _bm/Interface/VerbIcons/psionic_invisibility.png
+      event: !type:ToggleActionEvent
 
 # RAVAGER #
 
@@ -1628,100 +1599,6 @@
       state: full
     useDelay: 1
 
-#
-# Ranged abilities via ActionGun (replicator-style)
-#
-
-- type: entity
-  id: ActionXenoAcidSpit
-  name: Acid Spit
-  description: Spit corrosive acid at a target location.
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: WorldTargetAction
-    icon: { sprite: Objects/Weapons/Guns/Projectiles/magic.rsi, state: declone }
-    event: !type:ActionGunsShootEvent
-      gunProto: WeaponXenoSpit
-    priority: 2
-    checkCanAccess: false
-    range: 0
-    itemIconStyle: BigAction
-
-- type: entity
-  id: ActionXenoAcidSpitUltra
-  name: Corrosive Spit
-  description: Spit highly corrosive acid at a target location.
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: WorldTargetAction
-    icon: { sprite: Objects/Weapons/Guns/Projectiles/magic.rsi, state: declone }
-    event: !type:ActionGunsShootEvent
-      gunProto: WeaponXenoSpitUltra
-    priority: 2
-    checkCanAccess: false
-    range: 0
-    itemIconStyle: BigAction
-
-- type: entity
-  id: ActionXenoAcidSpit4
-  name: Super Spit
-  description: Spit acid at a target location.
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: WorldTargetAction
-    icon: { sprite: Objects/Weapons/Guns/Projectiles/magic.rsi, state: declone }
-    event: !type:ActionGunsShootEvent
-      gunProto: WeaponXenoSpit4
-    priority: 2
-    checkCanAccess: false
-    range: 0
-    itemIconStyle: BigAction
-
-- type: entity
-  id: ActionXenoAcidSpitUltraSuper
-  name: Super Corrosive Spit
-  description: Spit a burst of corrosive acid.
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: WorldTargetAction
-    icon: { sprite: Objects/Weapons/Guns/Projectiles/magic.rsi, state: declone }
-    event: !type:ActionGunsShootEvent
-      gunProto: WeaponXenoSpitUltraSuper
-    priority: 2
-    checkCanAccess: false
-    range: 0
-    itemIconStyle: BigAction
-
-- type: entity
-  id: ActionXenoAcidSpitGas
-  name: Gas Spit
-  description: Spit a gas payload at a target location.
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: WorldTargetAction
-    icon: { sprite: Objects/Weapons/Guns/Projectiles/magic.rsi, state: declone }
-    event: !type:ActionGunsShootEvent
-      gunProto: WeaponXenoSpitGas
-    priority: 2
-    checkCanAccess: false
-    range: 0
-    itemIconStyle: BigAction
-
-- type: entity
-  id: ActionXenoHealingSpit
-  name: Healing Pheromones
-  description: Launch healing pheromones at a target location.
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: WorldTargetAction
-    icon: { sprite: Objects/Weapons/Guns/Projectiles/magic.rsi, state: magicm }
-    event: !type:ActionGunsShootEvent
-      gunProto: WeaponXenoHealingSpit
-    priority: 2
-    checkCanAccess: false
-    range: 0
-    itemIconStyle: BigAction
-
 - type: entity
   id: XenoWeed
   name: sticky weed
@@ -1909,9 +1786,9 @@
     openTimeOne: 0.4
     openTimeTwo: 0.4
     openSound:
-      path: /Audio/Backmen/Effects/Xeno/alien_resin_move1.ogg
+      path: /Audio/_bm/Effects/Xeno/alien_resin_move1.ogg
     closeSound:
-      path: /Audio/Backmen/Effects/Xeno/alien_resin_move2.ogg
+      path: /Audio/_bm/Effects/Xeno/alien_resin_move2.ogg
   - type: AccessReader
     access: [ [ "Xeno" ] ]
   - type: Damageable
@@ -1967,7 +1844,7 @@
     availablePrototypes:
     - XenoWall
     - XenoDoor
-    successSound: /Audio/Backmen/Effects/Xeno/alien_resin_build2.ogg
+    successSound: /Audio/_bm/Effects/Xeno/alien_resin_build2.ogg
 
 - type: rcd
   id: XenoDoor
@@ -2007,7 +1884,7 @@
     - XenoWall
     - XenoDoor
     - WeaponTurretXeno
-    successSound: /Audio/Backmen/Effects/Xeno/alien_resin_build2.ogg
+    successSound: /Audio/_bm/Effects/Xeno/alien_resin_build2.ogg
 
 # Polonium End
 
