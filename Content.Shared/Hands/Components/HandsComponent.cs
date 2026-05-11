@@ -102,6 +102,12 @@ public sealed partial class HandsComponent : Component
     public bool ShowInHands = true;
 
     /// <summary>
+    ///     Whether the hands ui should be shown for this entity when controlled by player.
+    /// </summary>
+    [DataField]
+    public bool ShowGui = true;
+
+    /// <summary>
     ///     Data about the current sprite layers that the hand is contributing to the owner entity. Used for sprite in-hands.
     ///     Used by the client.
     /// </summary>

@@ -143,7 +143,7 @@ public sealed class HandsUIController : UIController, IOnStateEntered<GameplaySt
     {
         DebugTools.Assert(_playerHandsComponent == null);
         if (HandsGui != null)
-            HandsGui.Visible = true;
+            HandsGui.Visible = handsComp.ShowGui;
 
         _playerHandsComponent = handsComp;
         foreach (var (name, hand) in handsComp.Hands)
@@ -460,7 +460,7 @@ public sealed class HandsUIController : UIController, IOnStateEntered<GameplaySt
     public void OnStateEntered(GameplayState state)
     {
         if (HandsGui != null)
-            HandsGui.Visible = _playerHandsComponent != null;
+            HandsGui.Visible = _playerHandsComponent is { ShowGui: true };
     }
 
     public override void FrameUpdate(FrameEventArgs args)
