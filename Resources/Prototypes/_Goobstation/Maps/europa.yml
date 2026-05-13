@@ -42,6 +42,7 @@
             prefixCreator: '14'
         - type: StationJobs
           availableJobs:
+            NanotrasenCareerTrainer: [ 2, 2 ] # Polonium, whitelistowana rola
             #service
             Bartender: [ 1, 1 ]
             Botanist: [ 2, 2]

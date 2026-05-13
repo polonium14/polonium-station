@@ -40,6 +40,7 @@
             NanotrasenRepresentative: [ 1, 1 ]
             InternalAffairsAgent: [ 2, 2 ]
             Magistrate: [ 1, 1 ]
+            NanotrasenCareerTrainer: [ 2, 2 ] # Polonium, whitelistowana rola
             #service
             HeadOfPersonnel: [ 1, 1 ]
             Bartender: [ 1, 1 ]

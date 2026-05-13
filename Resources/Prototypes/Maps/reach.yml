@@ -41,6 +41,7 @@
           availableJobs:
             #central command
             NanotrasenRepresentative: [ 1, 1 ] # Polonium
+            NanotrasenCareerTrainer: [ 2, 2 ] # Polonium, whitelistowana rola
             #command
             Captain: [ 1, 1 ]
             HeadOfPersonnel: [ 1, 1 ] # Polonium

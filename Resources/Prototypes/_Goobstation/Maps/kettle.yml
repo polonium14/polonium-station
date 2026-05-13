@@ -45,6 +45,7 @@
             #service
             NanotrasenRepresentative: [ 1, 1 ]
             BlueshieldOfficer: [ 1, 1 ]
+            NanotrasenCareerTrainer: [ 2, 2 ] # Polonium, whitelistowana rola
             Captain: [ 1, 1 ]
             HeadOfPersonnel: [ 1, 1 ]
             Bartender: [ 1, 2 ]

@@ -54,3 +54,14 @@
     sprite: _Funkystation/Clothing/Uniforms/Jumpskirt/mailman.rsi
   - type: Clothing
     sprite: _Funkystation/Clothing/Uniforms/Jumpskirt/mailman.rsi
+
+- type: entity
+  parent: ClothingUniformJumpsuitTrainer
+  id: ClothingUniformJumpskirtTrainer
+  name: NCT Jumpskirt
+  description: A jumpskirt issued to Nanotrasen Career Trainers. Fills you with a feeling of pride.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Uniforms/Jumpskirt/trainer.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Uniforms/Jumpskirt/trainer.rsi

@@ -177,3 +177,12 @@
   - type: Icon
     sprite: _Funkystation/Objects/Devices/pda.rsi
     state: pda-ntr
+
+- type: entity
+  parent: CentcomOfficialPDA
+  id: TrainerPDA
+  name: nct's PDA
+  description: A standard-issue nanotrasen career trainer PDA.
+  components:
+  - type: Pda
+    id: NanotrasenCareerTrainerIDCard

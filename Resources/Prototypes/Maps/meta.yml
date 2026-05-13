@@ -48,6 +48,7 @@
             Captain: [ 1, 1 ]
             NanotrasenRepresentative: [ 1, 1 ]
             InternalAffairsAgent: [ 2, 2 ]
+            NanotrasenCareerTrainer: [ 2, 2 ] # Polonium, whitelistowana rola
             BlueshieldOfficer: [ 1, 1 ]
             HeadOfPersonnel: [ 1, 1 ]
             Bartender: [ 2, 2 ]

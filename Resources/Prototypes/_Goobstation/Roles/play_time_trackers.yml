@@ -13,3 +13,6 @@
 
 - type: playTimeTracker
   id: JobHecuOperative
+
+- type: playTimeTracker
+  id: JobNanotrasenCareerTrainer

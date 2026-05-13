@@ -1,0 +1,35 @@
+- type: job
+  id: NanotrasenCareerTrainer
+  name: job-name-nct
+  description: job-description-nct
+  playTimeTracker: JobNanotrasenCareerTrainer
+  weight: 20
+  startingGear: NanotrasenCareerTrainerGear
+  icon: "JobIconNanotrasenTrainer"
+  joinNotifyCrew: true
+  supervisors: job-supervisors-ntr-centcom
+  canBeAntag: false
+  whitelisted: true # 1984
+  setPreference: true # Omu, enable NCT for admins
+  accessGroups:
+  - AllAccess
+  access:
+  - CentralCommand
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant, BluespaceLifelineImplant ]
+#  - !type:AddComponentSpecial # Intentionally not command. I don't want them to ruin rev rounds.
+#    components:
+#    - type: CommandStaff
+
+- type: startingGear
+  id: NanotrasenCareerTrainerGear
+  equipment:
+    id: TrainerPDA
+    ears: ClothingHeadsetAltCentCom
+    eyes: ClothingEyesGlassesCentComm
+    pocket1: WeaponEnergyGunEnergyPistol
+    pocket2: Truncheon
+  storage:
+    back:
+    - Flash

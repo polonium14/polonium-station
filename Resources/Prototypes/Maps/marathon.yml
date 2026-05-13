@@ -50,6 +50,7 @@
             #service
             NanotrasenRepresentative: [ 1, 1 ] # Funkystation
             InternalAffairsAgent: [ 2, 2 ] # Funkystation
+            NanotrasenCareerTrainer: [ 2, 2 ] # Polonium, whitelistowana rola
             BlueshieldOfficer: [ 1, 1 ] # Funkystation
             Captain: [ 1, 1 ]
             HeadOfPersonnel: [ 1, 1 ]
