@@ -73,3 +73,19 @@
     - AllAccess
     tags:
     - CentralCommand
+
+- type: entity
+  parent: [IDCardStandard, BaseCentcommContraband]
+  id: NanotrasenCareerTrainerIDCard
+  name: nanotrasen career trainer ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: cc #base
+    - sprite: _Goobstation/Interface/Misc/job_icons.rsi #icon
+      offset: "-0.125, 0.09375"
+      state: trainer
+  - type: Item
+    heldPrefix:
+  - type: PresetIdCard
+    job: NanotrasenCareerTrainer
