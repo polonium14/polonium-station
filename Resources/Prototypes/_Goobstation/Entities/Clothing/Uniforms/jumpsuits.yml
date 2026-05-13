@@ -106,13 +106,6 @@
   - type: Clothing
     sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/trainer.rsi
   - type: Armor
-    coverage:
-    - Chest
-    - Groin
-    - Arm
-    - Hand
-    - Leg
-    - Foot
     modifiers:
       coefficients:
         Blunt: 0.65
