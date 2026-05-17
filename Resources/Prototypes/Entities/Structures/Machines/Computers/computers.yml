@@ -1166,6 +1166,11 @@
     color: "#c9c042"
   - type: AccessReader
     access: [["Engineering"]]
+  - type: DeviceLinkSource # Polonium - Funkcje konsoli atmosferycznej w głównej
+    ports:
+    - GasExtractorConsole
+    - OrderSender
+  - type: GasExtractorConsole
 
 - type: entity
   id: ComputerCargoOrdersMedical

@@ -194,42 +194,4 @@
     radius: 1.5
     energy: 1.6
     color: "#398bdf"
-
-- type: entity
-  id: ComputerCargoOrdersAtmospherics
-  parent: ComputerCargoOrders
-  name: atmospheric reserves computer
-  description: Used by the atmospherics department to manage gases and order supplies.
-  components:
-  - type: Sprite
-    layers:
-    - map: ["computerLayerBody"]
-      state: computer
-    - map: ["computerLayerKeyboard"]
-      state: generic_keyboard
-    - map: ["computerLayerScreen"]
-      state: request-eng
-    - map: ["computerLayerKeys"]
-      state: generic_keys
-    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
-      state: generic_panel_open
-  - type: CargoOrderConsole
-    account: Atmospherics
-    announcementChannel: Engineering
-    removeLimitAccess: [ "ChiefEngineer" ]
-    slipPrinter: true
-    showGasExtractorTab: true
-  - type: ActiveRadio
-    channels:
-    - Engineering
-  - type: Computer
-    board: CargoRequestAtmosphericsComputerCircuitboard
-  - type: PointLight
-    color: "#b53ca1"
-  - type: AccessReader
-    access: [["Atmospherics"]]
-  - type: DeviceLinkSource
-    ports:
-    - GasExtractorConsole
-    - OrderSender
-  - type: GasExtractorConsole
+    

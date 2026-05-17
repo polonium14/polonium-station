@@ -655,3 +655,6 @@ ClothingUniformJumpsuitSecGrey: ClothingUniformJumpsuitSecBase
 ClothingUniformJumpskirtSecGrey: ClothingUniformJumpsuitSecBase
 ClothingUniformJumpsuitTrooper: ClothingUniformJumpsuitSecBase
 ClothingOuterArmorBasicSlim: ClothingOuterArmorBasic
+
+# 2026-05-17 usunięcie funduszu atmosferyki
+ComputerCargoOrdersAtmospherics: null

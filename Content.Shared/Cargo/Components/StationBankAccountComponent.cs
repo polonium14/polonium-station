@@ -42,7 +42,6 @@ public sealed partial class StationBankAccountComponent : Component
         { "Science",     1000 },
         { "Security",    1000 },
         { "Service",     1000 },
-        { "Atmospherics", 1000 }, // Funkystation
     };
 
     /// <summary>
@@ -52,12 +51,11 @@ public sealed partial class StationBankAccountComponent : Component
     public Dictionary<ProtoId<CargoAccountPrototype>, double> RevenueDistribution = new()
     {
         { "Cargo",       0.00 },
-        { "Engineering", 0.20 }, // Funkystation
-        { "Medical",     0.28 },
-        { "Science",     0.14 },
-        { "Security",    0.18 },
+        { "Engineering", 0.25 }, // Polonium - oryginalna wersja przed funduszem
+        { "Medical",     0.30 },
+        { "Science",     0.15 },
+        { "Security",    0.20 },
         { "Service",     0.10 },
-        { "Atmospherics", 0.10 }, // Funkystation
     };
 
     /// <summary>
