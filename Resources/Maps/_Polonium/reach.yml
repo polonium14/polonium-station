@@ -2154,27 +2154,27 @@ entities:
       parent: 2
 - proto: AtmosFixNitrogenMarker
   entities:
-  - uid: 78
-    components:
-    - type: Transform
-      pos: 9.5,-15.5
-      parent: 2
-  - uid: 79
+  - uid: 76
     components:
     - type: Transform
       pos: 10.5,-15.5
       parent: 2
-- proto: AtmosFixOxygenMarker
-  entities:
-  - uid: 76
-    components:
-    - type: Transform
-      pos: 10.5,-13.5
-      parent: 2
   - uid: 77
     components:
     - type: Transform
+      pos: 9.5,-15.5
+      parent: 2
+- proto: AtmosFixOxygenMarker
+  entities:
+  - uid: 78
+    components:
+    - type: Transform
       pos: 9.5,-13.5
+      parent: 2
+  - uid: 79
+    components:
+    - type: Transform
+      pos: 10.5,-13.5
       parent: 2
 - proto: Autolathe
   entities:
@@ -15939,7 +15939,14 @@ entities:
   - uid: 2683
     components:
     - type: Transform
-      pos: 17.5,-4.5
+      pos: 18.5,5.5
+      parent: 2
+- proto: SurgeryKitFilled
+  entities:
+  - uid: 1841
+    components:
+    - type: Transform
+      pos: 10.528191,-4.1092772
       parent: 2
 - proto: SurveillanceCameraRouterSecurity
   entities:
