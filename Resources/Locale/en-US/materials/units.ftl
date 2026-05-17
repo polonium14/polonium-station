@@ -1,8 +1,3 @@
-# SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
-#
-# SPDX-License-Identifier: MIT
 
 # sheets of steel
 materials-unit-sheet = sheet
@@ -20,9 +15,10 @@ materials-unit-bunch = bunch
 materials-unit-slab = slab
 # webs of silk
 materials-unit-web = web
+# boll of cotton
+materials-unit-boll = kuli
 # chunks of ore
 materials-unit-chunk = chunk
-
 # bills of spesos... not very good but they are not (yet?) used for crafting anything
 # also the lathe/atm would need bigger denominations to output...
 materials-unit-bill = bill

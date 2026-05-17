@@ -1,8 +1,12 @@
 ent-MobLivingLight = luminous person
     .desc = A blinding figure of pure light, seemingly intangible.
+    .gender = female
 ent-MobLuminousPerson = { ent-MobLivingLight }
     .desc = { ent-MobLivingLight.desc }
+    .gender = female
 ent-MobLuminousObject = luminous object
     .desc = A small glowing object that causes burns on the skin with its glow.
+    .gender = male
 ent-MobLuminousEntity = luminous entity
     .desc = A blinding translucent entity, the bright eye seems dangerous and scalding.
+    .gender = female

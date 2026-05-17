@@ -12,15 +12,20 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-  # Cargo
+  # Logistyka
 
-  The Supply department, also known as [color=cyan]Cargo[/color], supplies the station with necessary resources, such as fuel and raw materials, and comfort resources, such as lottery tickets and plushies.
+    Departament logistyki, znany również jako [color=cyan]Logistyka[/color], zaopatruje stację w niezbędne zasoby, takie jak paliwo, surowce oraz gadżety rozrywkowe, takie jak bilety na loterie czy pluszaki.
 
-  They raise the [color=cyan]spesos[/color] (the currency of the station) for this through many methods, such as taking bounties, selling miscellaneous items, and salvaging, allowing them to purchase a wide variety of equipment from off-station for any crew member's needs. It is Cargo's job to fulfill the needs of the rest of the station.
 
-  ## Personnel
+  
+ W tym celu pozyskują [color=cyan]spesos[/color] (waluta stacji) na wiele różnych sposobów, takie jak dostarczanie zamówień, sprzedawanie różnych przedmiotów, oraz poprzez odzysk, pozwala im to na kupno róznego rodzaju sprzętu spoza stacji, dostosowanego do potrzeb każdego członka załogi. Zadaniem Logistyki jest zaspokajanie potrzeb reszty stacji.
 
-  Cargo is made up of [color=cyan]Cargo Technicians[/color] and [color=cyan]Salvage Specialists[/color] and is led by the [color=cyan]Quartermaster[/color].
+
+
+  ## Personel
+
+  Logistyka składa się z [color=cyan]Techników Logistyki[/color] i [color=cyan]Specjalistów do spraw Odzysku[/color], którymi przewodzi [color=cyan]Kwatermistrz[/color].
+
 
   <Box>
     <GuideEntityEmbed Entity="ToyFigurineCargoTech" Caption="Cargo Tech"/>
@@ -28,11 +33,11 @@ SPDX-License-Identifier: MIT
     <GuideEntityEmbed Entity="ToyFigurineQuartermaster" Caption="QM"/>
   </Box>
 
-  ## Making Money
+  ## Zarabianie Pieniędzy
 
-  The main struggle of any Cargo department is not having enough money.
+  Głównym problemem logistyki jest utrzymywanie wystarczającej liczby funduszy.
 
-  Cargo makes their money by selling things at the [color=cyan]Trading Station[/color]. Almost everything on the station has economic value that you can sell, as seen via the [color=cyan]appraisal tool[/color]. That value then further increases when you sell it as part of a [textlink="bounty" link="CargoBounties"].
+  Logistyka pozyskuje pieniądze poprzez sprzedawanie dóbr na [color=cyan]Stacji Handlowej[/color]. Prawie wszystko na stacji ma jakąś wartość handlową, którą możesz sprawdzić [color=cyan]narzędziem do wyceny[/color]. Cena wzrasta jeszcze bardziej, gdy sprzedajesz przedmioty w celu [textlink="zamówień" link="CargoBounties"].
 
   <Box>
     <GuideEntityEmbed Entity="AppraisalTool"/>
@@ -40,9 +45,9 @@ SPDX-License-Identifier: MIT
     <GuideEntityEmbed Entity="CrateGenericSteel"/>
   </Box>
 
-  Upon finding something valuable, bring it to the [color=cyan]Cargo Bay[/color]. If it fits inside a [color=cyan]Crate[/color], find an empty crate and put the items in it.
+  Jeśli znajdziesz coś wartościowego - przynieś to do [color=cyan]Ładowni[/color]. Jeśli może sie zmieścić w [color=cyan]Skrzyni[/color], znajdź pustą skrzynię i włóż ten przedmiot do środka.
 
-  If the [color=cyan]Cargo Shuttle[/color] is away, you can put all the items you want to sell onto the [color=cyan]Cargo Pallets[/color]. Once the shuttle has docked at the station, you load the crates and everything else to be sold onto it.
+  Jeśli [color=cyan]Ładownia[/color] jest daleko, możesz położyć wszystkie przedmioty przeznaczone do sprzedaży na [color=cyan]Palety Ładunkowe[/color]. Kiedy już wahadłowiec zadokuje do stacji, rozładuj wszystkie dobra, które sprzedajesz. 
 
   <Box>
     <GuideEntityEmbed Entity="ComputerPalletConsole"/>
@@ -51,56 +56,58 @@ SPDX-License-Identifier: MIT
     <GuideEntityEmbed Entity="ComputerFundingAllocation"/>
   </Box>
 
-  After the shuttle is loaded, fly it to the Trade Station. There, move the sellable items onto the green [color=cyan]Cargo Selling Pallets[/color], and then go to the [color=cyan]Cargo Sale Computer[/color] and click [italic]"Sell"[/italic].
+  Po tym, jak załadujesz wachadłowiec, przyleć na Stacje Handlową. Gdy już będziesz na niej, przenieś towary na zielone pole [color=cyan]Palety do sprzedaży towarów[/color] i przejdź do [color=cyan]Komputera Sprzedażowego Logistyki[/color] i wciśnij [italic]"Sprzedaj"[/italic].
 
-  The [color=cyan]spesos[/color] from the sale will be distributed between Cargo and every other department following the distribution in the HoP's [color=cyan]Funding Allocation Console[/color].
+  [color=cyan]Spesos[/color] ze sprzedaży zostaną rozdzielone między Logistyke i każdy inny dział po podziele w pokoju HoPa [color=cyan]Kosola przydziału środków[/color].
 
-  Loose [color=cyan]spesos[/color] can be deposited into the [color=cyan]Cargo Request Computer[/color].
-
-  You can also make even more money by completing [textlink="bounties" link="CargoBounties"] or selling valuable items from [textlink="salvage" link="Salvage"].
-
-  ## Ordering
+    Gotówke [color=cyan]spesos[/color] można zdepononować w [color=cyan]Komputzerze do zamówień Logistyki[/color].
+ 
+  Możesz również zarabiać więcej pieniędzy poprzez wypełnianie [textlink="zamówień" link="CargoBounties"] albo sprzedawać drogocenne dobra pozyskane z [textlink="odzysku" link="Salvage"].
+  
+  ## Zamawianie
 
   <Box>
     <GuideEntityEmbed Entity="ComputerCargoOrders"/>
   </Box>
 
-  Every order begins at a [color=cyan]Cargo Request Computer[/color]. First and foremost, making an order requires that Cargo has enough spesos. If Cargo doesn't have the money, get some.
+  Każde zamówienie zaczyna się od [color=cyan]Komputera zamówień Logistyki[/color]. Pierwsze i najważniejsze, aby cokolwiek zamówić Logistyka potrzebuje mieć wystarczające fundusze. Jeśli Logistyka nie ma pieniędzy zdobądź je.
 
-  It is also the sole discretion of Cargo to fulfill any given request. If Cargo is tight on spesos, they are free to deny requests that are not immediately necessary.
+  Decyzja odnośnie wypełnienia zleceń całkowicie zależy od Logistyki. Jeśli Logistyka nie ma wystarczających środków mogą nie realizować mniej zamówień o mniejszym priorytecie.
 
-  To make an order, click the name of whatever is requested, provide the recipient, type an appropriate reason for why they need it, and then press "Approve" on the order.
+  Aby coś zamówić kliknij nazwe czegokolwiek czego aktualnie ludzie chcą, podaj dane odbiorcy, podaj powód zamówienia danego produktu a następnie kliknij "Zatwierdź" w zamówieniu.
 
-  Sometimes a public Cargo Request Computer exists, in which case all you need to do is approve orders that people make themselves.
-
+  Czasami na niektórych stacjach istnieje publiczny Komputer zamówień Logistyki, w takim wypadku jedyne co musisz zrobić to zaakceptować zamówień załogi która składa je sobie sama. Widzisz jakie to proste?
+  
   <Box>
     <GuideEntityEmbed Entity="CargoPalletBuy"/>
     <GuideEntityEmbed Entity="PaperCargoInvoice"/>
   </Box>
 
-  Then, to collect the order, it must be transported back to the station from the [color=cyan]Trading Station[/color].
+  Następnie żeby otrzymać zamówienie musisz odebrać je bezpośrednio z [color=cyan]Stacji Handlowej[/color].
 
-  In the Trading Station, on the [color=cyan]Cargo Buying Pallets[/color], is a crate holding that order. Load it onto the shuttle and fly it back.
+  W Stacji Handlowej na [color=cyan]Palecie do kupowania towarów[/color], znajdziesz szkrzynie w której jest twoje zamówienie. Załaduj ją na wahadłowiec i wracaj na stacje.
 
-  Once it is at the Cargo Dock, you can read the [color=cyan]Cargo Invoice[/color] label on it to find out the intended recipient. Finally, deliver it to them.
+  Gdy już dotrzesz do ładowni, możesz przeczytać [color=cyan]Fakturę[/color] żeby dowiedzieć się do kogo ma trafić przesyłka. Na końcu dostarcz ją do odbiorcy.
 
-  ## Piloting
 
-  Orders are delivered to the station via the orbiting [color=cyan]Trade Station[/color] and are transported to the main station by the [color=cyan]Cargo Shuttle[color]. The shuttle does not fly itself, so it must either be piloted in the shuttle or remotely.
+  ## Pilotaż
+
+  Zamówienia przychodzą na stacje przez orbitującą [color=cyan]Stacje Handlową[/color] i są transportowane na główną stacje przez [color=cyan]Ładownie[/color]. Wahadłowiec nie lata sam, więc musi być pilotowany ręcznie lub zdalnie .
 
   <Box>
     <GuideEntityEmbed Entity="ComputerCargoShuttle"/>
   </Box>
 
-  To fly the shuttle, you must first find the [color=cyan]Cargo Shuttle Console[/color]. One is inside the Cargo Bay, and the other is inside the Cargo Shuttle.
+  Aby latać wahadłowcem musisz najpierw znaleźć [color=cyan]Konsole Wahadłowce Towarowego[/color]. Jedna jest w Ładowni a druga wewnątrz Wahadłowca Towarowego.
 
-  After interacting with the computer, there should be a navigation view from the shuttle. Here are the steps for piloting the shuttle to and from the Trading Station:
+  Po interakcją z komputerem powinieneś zobaczyć podgląd nawigacyjny z wahadłowca. Tutaj masz kroki pilotowania wahadłowca do oraz ze Stacji Handlowej:
 
-  - First, switch to the [color=yellow]"DOCK"[/color] screen and [color=yellow]undock[/color] any airlocks between the shuttle and the station.
-  - Now, with the shuttle disconnected, you can pilot it. [italic]Remember that you are flying in space and momentum is conserved[/italic].
-  - The controls are [color=yellow][keybind="ShuttleStrafeUp"][/color] and [color=yellow][keybind="ShuttleStrafeDown"][/color] for strafing up and down, [color=yellow][keybind="ShuttleStrafeLeft"][/color] and [color=yellow][keybind="ShuttleStrafeRight"][/color] for strafing left and right, and [color=yellow][keybind="ShuttleRotateLeft"][/color] and [color=yellow][keybind="ShuttleRotateRight"][/color] for turning left and right. To brake, press [color=yellow][keybind="ShuttleBrake"][/color].
-  - Then pilot the shuttle to the [color=cyan]Trade Station[/color].
-  - Once you are there, [color=yellow]dock[/color] to the airlocks and you are done.
+  - Po pierwsze, przejdź do ekranu [color=yellow]"DOKOWANIE"[/color] i [color=yellow]oddokuj[/color] wszystkie śluzy pomiędzy wahadłowcem a stacją.
+  - Teraz kiedy wahadłowiec jest już oddokowany możesz nim pilotować. [italic]Pamiętaj że jesteś w kosmosie więc prędkość z jaką się poruszasz jest stała i wahadłowiec nie hamuje sam z siebie[/italic].
+  - Sterujesz za pomocą [color=yellow][keybind="W"][/color] oraz [color=yellow][keybind="S"][/color] do latania w góre i w dół, [color=yellow][keybind="A"][/color] i [color=yellow][keybind="D"][/color] latasz prawo i lewo, aby obracać statkiem w lewo i prawo naciskasz [color=yellow][keybind="Q"][/color] i [color=yellow][keybind="E"][/color]. By się zatrzymać wciskasz [color=yellow][keybind="Spacja"][/color].(To jest domyślne sterowanie)
+  - Następnie pilotuj wahadłowiec do [color=cyan]Stacji Handlowej[/color].
+  - Gdy już tam będziesz, [color=yellow]zadokuj[/color] do śluzy przy stacji i zrobione.
 
-  [textlink="Learn about bounties, a way to maximize your on-station profits." link="CargoBounties"]
+
+  [textlink="Dowiedz się więcej o zamówieniach oraz sposobach na maksymalizacje profitu na stacji." link="CargoBounties"]
 </Document>

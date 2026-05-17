@@ -1,19 +1,10 @@
-# SPDX-FileCopyrightText: 2021 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 Morber <14136326+Morb0@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Ed <96445749+TheShuEd@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 faint <46868845+ficcialfaint@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
-#
-# SPDX-License-Identifier: MIT
 
+expendable-light-spent-prefix = spent { $baseName }
 expendable-light-start-verb = Start Light
-
 expendable-light-spent-flare-name = spent flare
 expendable-light-spent-flare-desc = It looks like this flare has burnt out. What a bummer.
-
 expendable-light-burnt-torch-name = burnt torch
 expendable-light-burnt-torch-desc = It looks like this torch has burnt out. What a bummer.
-
 expendable-light-spent-green-glowstick-name = spent green glowstick
 expendable-light-spent-red-glowstick-name = spent red glowstick
 expendable-light-spent-purple-glowstick-name = spent purple glowstick

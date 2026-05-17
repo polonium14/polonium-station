@@ -1,6 +1,3 @@
-# SPDX-FileCopyrightText: 2025 Terkala <appleorange64@gmail.com>
-#
-# SPDX-License-Identifier: AGPL-3.0-or-later OR MIT
 
 reagent-name-edge-essentia = esencja spaczenia
 reagent-desc-edge-essentia = Ciemna, przeklęta substancja, która zatruwa krew rannych ofiar, zamieniając ich krwawiące rany w źródła szkarłatnego pernikulatu.

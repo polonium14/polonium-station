@@ -71,8 +71,8 @@
       # one spawner should only spawn ~5 mice for sanity reasons
       # therefore 18m
       # use 50% chance for randomness and balance with halved interval
-      chance: 0.5
-      intervalSeconds: 540
+      chance: 0.4
+      intervalSeconds: 660
       minimumEntitiesSpawned: 1
       maximumEntitiesSpawned: 1
 

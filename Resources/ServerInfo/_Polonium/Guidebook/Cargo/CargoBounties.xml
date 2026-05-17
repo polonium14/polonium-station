@@ -9,23 +9,23 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-  # Cargo Bounties
-  While [textlink="Cargo" link="Cargo"] can make [color=cyan]spesos[color] selling just about anything, more spesos can be made by fulfilling [color=cyan]bounties[/color] found through the Cargo Bounty Computer.
+  # Zlecenia Logistyki
+  Chociaż [textlink="Logistyka" link="Cargo"] może zarabiać [color=cyan]spesos[/color] sprzedając wszystko, bardziej opłacalne jest realizowanie [color=cyan]zleceń[/color] które znajdują się w Komputerze Zleceń Logistyki
 
-  ## Starting Bounties
+  ## Rozpoczynanie Zleceń
 
   <Box>
     <GuideEntityEmbed Entity="ComputerCargoBounty"/>
     <GuideEntityEmbed Entity="PaperCargoBountyManifest"/>
   </Box>
 
-  To start a bounty, open the bounty screen by interacting with the [color=cyan]Cargo Bounty Computer[/color]. The Cargo Bounty Computer maintains a list of all the current bounties and lets you either print out a label or skip it.
+  Aby zacząć realizować zlecenia, otwórz ekran zleceń używając [color=cyan]Komputera zleceń Logistyki[/color]. Komputer do zleceń zawiera liste wszystkich obecnych zleceń umożliwiając ci wydrukowanie lub pominięcie ich.
 
-  - Printing the label gives you a [color=cyan]Bounty Manifest[/color] listing the goods that need to be acquired. You can print out infinite Bounty Manifests, so ensure you are not repeating the same work as another Cargo Technician.
+  - Jak wydrukujesz etykietę dostaniesz [color=cyan]Manifest Zleceń[/color] listę towarów jakich potrzebujesz nabyć. Możesz wydrukować nieskończenie wiele manifestów, więc upewnij się że nie realizujesz tego samego zlecenia co drugi Logistyk.
 
-  - Skipping a bounty replaces that bounty with a new one, as there can only be six active bounties at any time. Skipping has a 3-minute cooldown and voids that bounty, which may anger other Cargo Technicians working on it.
+  - Pominięcie zlecenia powoduje zastąpienie go nowym, jednocześnie aktywnych może być tylko 6 zleceń na raz. Pominięcie zleceń ma 3 minutowy czas odnowienia i unieważnia zlecenie, co może zdenerwować drugiego Logistyka który nad nim pracuje.
 
-  ## Fulfilling Bounties
+  ## Wypełnianie Zleceń
 
   <Box>
     <GuideEntityEmbed Entity="PaperCargoBountyManifest"/>
@@ -33,13 +33,13 @@ SPDX-License-Identifier: MIT
     <GuideEntityEmbed Entity="AppraisalTool"/>
   </Box>
 
-  With the [color=cyan]Bounty Manifest[/color], it is now up to you to collect the required goods. Most departments will give you what you need by asking for it with a Bounty Manifest.
+  Z [color=cyan]Manifestem Zleceń[/color], to od ciebie zależy, czy zbierzesz wymagane towary. Większość oddziałów da ci czego potrzebujesz gdy pokażesz im Manifest Zleceń.
 
-  Once you have collected the goods, return to the cargo bay and put the goods inside an empty [color=cyan]Crate[/color]. After everything is in the crate, close it, and then apply the Bounty Manifest to it.
+  Po zebraniu wszystkich wymaganych dóbr, wróć do ładowni i włóż je do pustej [color=cyan]Skrzyni[/color]. Gdy wszystko juz się w niej znajdzie zamknij ją i nałóż na nią manifest.
 
-  To verify the completion of a bounty, use the [color=cyan]Appraisal Tool[/color] on it. It should say that it confirms that the bounty has been completed.
+  By zweryfikować ukończenie zlecenia, użyj [color=cyan]Narzędzia do wyceny[/color]. Powinno ono potwierdzić zrealizowanie zlecenia.
 
-  ## Selling Bounties
+  ## Sprzedaż Zamówień
 
   <Box>
     <GuideEntityEmbed Entity="PaperCargoBountyManifest"/>
@@ -47,9 +47,9 @@ SPDX-License-Identifier: MIT
     <GuideEntityEmbed Entity="CargoPalletSell"/>
   </Box>
 
-  Once you have verified that you have completed the bounty, follow the same steps as selling anything else.
+  Gdy już zweryfikujesz czy zlecenie zostało poprawnie wypełnione, wykonaj te same kroki, jak w przypadku sprzedaży czegokolwiek innego.
 
-  Just transport it to the [color=cyan]Trading Station[/color], sell it, and you are done!
+  Poprostu przetransportuj to na [color=cyan]Stacje Handlową[/color], sprzedaj to, i zrobione!
 
-  When you return, there should be a new bounty to take its place.
+  Gdy wrócisz, powinieneś znaleźć nowe zlecenie na miejscu poprzedniego.
 </Document>

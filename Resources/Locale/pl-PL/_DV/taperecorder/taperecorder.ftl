@@ -1,8 +1,3 @@
-# SPDX-FileCopyrightText: 2025 IronDragoon <8961391+IronDragoon@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
-#
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 cassette-repair-start = You start winding the tape back into { $item }.
 cassette-repair-finish = You manage to wind the tape back into { $item }.

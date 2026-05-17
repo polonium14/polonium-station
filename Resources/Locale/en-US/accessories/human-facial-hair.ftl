@@ -1,8 +1,3 @@
-# SPDX-FileCopyrightText: 2021 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-# SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
-#
-# SPDX-License-Identifier: MIT
 
 marking-HumanFacialHairAbe = Beard (Abraham Lincoln)
 marking-HumanFacialHairBrokenman = Beard (Broken Man)

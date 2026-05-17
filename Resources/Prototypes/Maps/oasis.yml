@@ -61,6 +61,7 @@
             Magistrate: [ 1, 1 ]
             NanotrasenRepresentative: [ 1, 1 ]
             InternalAffairsAgent: [ 3, 3 ]
+            NanotrasenCareerTrainer: [ 2, 2 ] # Polonium, whitelistowana rola
             HeadOfPersonnel: [ 1, 1 ]
             Bartender: [ 2, 2 ]
             Botanist: [ 2, 3 ]

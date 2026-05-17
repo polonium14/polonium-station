@@ -45,6 +45,7 @@
           emergencyShuttlePath: /Maps/Shuttles/emergency_delta.yml
         - type: StationJobs
           availableJobs:
+            NanotrasenCareerTrainer: [ 2, 2 ] # Polonium, whitelistowana rola
             #service
             Captain: [ 1, 1 ]
             HeadOfPersonnel: [ 1, 1 ]

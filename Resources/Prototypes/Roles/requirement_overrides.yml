@@ -29,26 +29,56 @@
   id: Zeroed
   jobs:
     Captain:
+    - !type:DepartmentTimeRequirement
+      department: Engineering
+      time: 7200 #2 hrs
+    - !type:DepartmentTimeRequirement
+      department: Medical
+      time: 7200 #2 hrs
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 18000 #5 hrs
+    - !type:DepartmentTimeRequirement
+      department: Command
+      time: 36000 #10 hrs
     - !type:OverallPlaytimeRequirement
-      time: 3600 # 1 hour
+      time: 72000 #20 hrs
     HeadOfPersonnel:
     - !type:OverallPlaytimeRequirement
-      time: 3600 # 1 hour
+      time: 36000 #10 hrs
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 7200 #2 hrs
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 7200 #2 hrs
+    - !type:DepartmentTimeRequirement
+      department: Command
+      time: 7200 #2 hrs
     AtmosphericTechnician:
     - !type:OverallPlaytimeRequirement
       time: 3600 # 1 hour
     ChiefEngineer:
-    - !type:OverallPlaytimeRequirement
-      time: 3600 # 1 hour
+    - !type:DepartmentTimeRequirement
+      department: Engineering
+      time: 36000 #10 hrs
     StationEngineer:
     - !type:OverallPlaytimeRequirement
       time: 3600 # 1 hour
     TechnicalAssistant:
     - !type:OverallPlaytimeRequirement
       time: 3600 # 1 hour
+    - !type:DepartmentTimeRequirement
+      department: Engineering
+      time: 36000 #10 hrs
+      inverted: true # stop playing intern if you're good at engineering!
     MedicalIntern:
     - !type:OverallPlaytimeRequirement
       time: 0
+    - !type:DepartmentTimeRequirement
+      department: Medical
+      time: 36000 #10 hrs
+      inverted: true # stop playing intern if you're good at med!
     MedicalDoctor:
     - !type:OverallPlaytimeRequirement
       time: 3600 # 1 hour
@@ -62,29 +92,78 @@
     - !type:OverallPlaytimeRequirement
       time: 3600 # 1 hour
     ChiefMedicalOfficer:
-    - !type:OverallPlaytimeRequirement
-      time: 3600 # 1 hour
+    - !type:RoleTimeRequirement
+      role: JobChemist
+      time: 10800 #3 hrs
+    - !type:RoleTimeRequirement
+      role: JobMedicalDoctor
+      time: 10800 #3 hrs
+    - !type:DepartmentTimeRequirement
+      department: Medical
+      time: 36000 #10 hrs
     SecurityOfficer:
-    - !type:OverallPlaytimeRequirement
-      time: 3600 # 1 hour
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 10800 #3 hrs
+    - !type:TraitsRequirement # Funky
+      inverted: true
+      traits:
+      - Pacifist
     SecurityCadet:
     - !type:OverallPlaytimeRequirement
-      time: 3600 # 1 hour
+      time: 18000 #5 hrs
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 36000 #10 hrs
+      inverted: true # stop playing intern if you're good at security!
+    - !type:TraitsRequirement # Funky
+      inverted: true
+      traits:
+      - Pacifist
     Brigmedic:
-    - !type:OverallPlaytimeRequirement
-      time: 3600 # 1 hour
+    - !type:DepartmentTimeRequirement
+      department: Medical
+      time: 10800 #3 hrs
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 10800 #3 hrs
+    - !type:TraitsRequirement # Funky
+      inverted: true
+      traits:
+      - Pacifist
     HeadOfSecurity:
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 54000 #15 hrs
     - !type:OverallPlaytimeRequirement
-      time: 3600 # 1 hour
+      time: 72000 #20 hrs
+    - !type:TraitsRequirement # Funky
+      inverted: true
+      traits:
+      - Pacifist
     Detective:
-    - !type:OverallPlaytimeRequirement
-      time: 3600 # 1 hour
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 10800 #3 hrs
+    - !type:TraitsRequirement # Funky
+      inverted: true
+      traits:
+      - Pacifist
     Warden:
-    - !type:OverallPlaytimeRequirement
-      time: 3600 # 1 hour
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 28800 #8 hrs
+    - !type:TraitsRequirement # Funky
+      inverted: true
+      traits:
+      - Pacifist
     ResearchAssistant:
     - !type:OverallPlaytimeRequirement
       time: 0
+    - !type:DepartmentTimeRequirement
+      department: Science
+      time: 36000 #10 hrs
+      inverted: true # stop playing intern if you're good at science!
     Scientist:
     - !type:OverallPlaytimeRequirement
       time: 0
@@ -92,14 +171,16 @@
     - !type:OverallPlaytimeRequirement
       time: 0
     ResearchDirector:
-    - !type:OverallPlaytimeRequirement
-      time: 3600 # 1 hour
+    - !type:DepartmentTimeRequirement
+      department: Science
+      time: 36000 #10 hrs
     Borg:
     - !type:OverallPlaytimeRequirement
-      time: 3600 # 1 hour
+      time: 18000 #5 hrs
     StationAi:
-    - !type:OverallPlaytimeRequirement
-      time: 3600 # 1 hour
+    - !type:RoleTimeRequirement
+      role: JobBorg
+      time: 18000 #5 hrs
     Boxer:
     - !type:OverallPlaytimeRequirement
       time: 0
@@ -113,8 +194,15 @@
     - !type:OverallPlaytimeRequirement
       time: 0
     Quartermaster:
-    - !type:OverallPlaytimeRequirement
-      time: 3600 # 1 hour
+    - !type:RoleTimeRequirement
+      role: JobCargoTechnician
+      time: 10800 #3 hrs
+    - !type:RoleTimeRequirement
+      role: JobSalvageSpecialist
+      time: 10800 #3 hrs
+    - !type:DepartmentTimeRequirement
+      department: Cargo
+      time: 36000 #10 hrs
     CargoTechnician:
     - !type:OverallPlaytimeRequirement
       time: 3600 # 1 hour

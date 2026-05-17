@@ -1,142 +1,4 @@
 ﻿Entries:
-- author: Spessmann
-  changes:
-  - message: Added Convex recreational complex, a large service-oriented highpop map.
-    type: Add
-  id: 7871
-  time: '2025-01-30T02:44:45.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/33346
-- author: ScarKy0
-  changes:
-  - message: Added the Authentication Disruptor to the syndicate uplink for 5TC. It
-      removes access requirements from devices and forcefully opens airlocks and digital
-      locks.
-    type: Add
-  - message: The EMAG can no longer open airlocks or break locks.
-    type: Tweak
-  - message: Price of the EMAG lowered to 4TC.
-    type: Tweak
-  - message: '"Emagged" airlocks can now be fixed by unbolting and using the access
-      configurator. Locks and similiar can now be fixed by just using the access configurator.'
-    type: Tweak
-  id: 7872
-  time: '2025-01-30T04:05:47.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34337
-- author: Southbridge
-  changes:
-  - message: Astro Asteroid Sand has been added as another type of faux tile.
-    type: Add
-  - message: Asteroid Astro Sand has also been added to the T2 civilian tech for the
-      faux astro tiles.
-    type: Add
-  id: 7873
-  time: '2025-01-30T04:41:59.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34463
-- author: august-sun
-  changes:
-  - message: Added the goliath hardsuit to the game and crafting menu. Adjusted goliath
-      hide drop rates to 3 hide per kill.
-    type: Add
-  id: 7874
-  time: '2025-01-30T04:45:56.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34721
-- author: Velken
-  changes:
-  - message: Mixing opposite types of lizard juices now has explosive consequences.
-    type: Add
-  id: 7875
-  time: '2025-01-30T11:34:32.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34730
-- author: SpaceRox1244
-  changes:
-  - message: Massive scrap can now fit in bags of holding.
-    type: Tweak
-  id: 7876
-  time: '2025-01-30T12:06:41.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/33454
-- author: sleepyyapril
-  changes:
-  - message: Fixed double muzzle flash for the user.
-    type: Fix
-  id: 7877
-  time: '2025-01-30T13:34:05.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/33981
-- author: BarryNorfolk
-  changes:
-  - message: Added a history tab to the bounty computer, showing all past completed
-      and skipped orders (and who skipped them).
-    type: Add
-  id: 7878
-  time: '2025-01-30T17:27:36.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/33932
-- author: K-Dynamic
-  changes:
-  - message: The Kammerer now holds 7 shells but now fires slightly slower than other
-      shotguns.
-    type: Tweak
-  - message: The Double-Barreled Shotgun and its sawn-off counterpart now share the
-      same firerate.
-    type: Tweak
-  - message: Changed descriptions of the Kammerer, Enforcer and Bulldog.
-    type: Tweak
-  id: 7879
-  time: '2025-01-30T17:36:12.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/33512
-- author: beck-thompson
-  changes:
-  - message: Ore rocks now drop the correct amount of ore when mined.
-    type: Fix
-  id: 7880
-  time: '2025-01-30T17:48:11.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34557
-- author: keronshb
-  changes:
-  - message: Added Void's Applause! A Wizard Spell that switches your location with
-      the target.
-    type: Add
-  id: 7881
-  time: '2025-01-31T00:10:36.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34591
-- author: Nox38
-  changes:
-  - message: Rebalanced Box's armory and increased its max security officers to 7.
-    type: Tweak
-  id: 7882
-  time: '2025-01-31T07:23:03.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34750
-- author: SlamBamActionman
-  changes:
-  - message: Forcefeeding pills now takes 2 seconds (was 1 second), while eating them
-      takes 0.6 seconds (was 1 second).
-    type: Tweak
-  id: 7883
-  time: '2025-01-31T11:59:38.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34764
-- author: themias
-  changes:
-  - message: Updated sound effects for shutters
-    type: Tweak
-  id: 7884
-  time: '2025-01-31T17:41:52.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34774
-- author: Nox38
-  changes:
-  - message: Renamed riot bullet shield to ballistic shield
-    type: Tweak
-  - message: Renamed riot laser shield to ablative shield
-    type: Tweak
-  id: 7885
-  time: '2025-01-31T23:39:22.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34794
-- author: Nox38
-  changes:
-  - message: Set Marathon's max secoffs to 8.
-    type: Tweak
-  - message: Restocked Marathon's armory.
-    type: Tweak
-  id: 7886
-  time: '2025-02-01T06:32:42.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34798
 - author: ToxicSonicFan04
   changes:
   - message: Added Sink to Chemistry on Box Station!
@@ -4089,3 +3951,122 @@
   id: 9178
   time: '2026-05-02T10:08:00.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/552
+- author: Zintex
+  changes:
+  - message: "dodano na saltern brakuj\u0105ce departamentowe konsole og\u0142osze\u0144\
+      \ i autolathe w cargo"
+    type: Fix
+  id: 9179
+  time: '2026-05-03T18:09:53.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/553
+- author: Zintex
+  changes:
+  - message: "Komendant i Nadzorca mog\u0105 wybra\u0107 startowy pistolet w menu\
+      \ wyposa\u017Cenia"
+    type: Add
+  id: 9180
+  time: '2026-05-03T18:09:33.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/554
+- author: Zintex
+  changes:
+  - message: "Saltern: poprawione dost\u0119pny Smart Fridge w botanice"
+    type: Fix
+  id: 9181
+  time: '2026-05-04T07:13:35.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/557
+- author: elperson
+  changes:
+  - message: Naprawiono distro na reach!
+    type: Fix
+  id: 9182
+  time: '2026-05-04T07:12:55.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/556
+- author: Zintex
+  changes:
+  - message: "Poprawiona \u015Bcie\u017Cka do tekstury szklanych \u015Bluz centralnego\
+      \ dow\xF3dztwa"
+    type: Fix
+  id: 9183
+  time: '2026-05-07T15:31:13.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/571
+- author: Zintex
+  changes:
+  - message: "Zmieniono wymogi czasowe dla r\xF3l"
+    type: Tweak
+  id: 9184
+  time: '2026-05-05T12:32:57.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/563
+- author: Zintex
+  changes:
+  - message: Zaktualizowano Atlas
+    type: Tweak
+  id: 9185
+  time: '2026-05-07T15:31:32.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/570
+- author: Matix0000
+  changes:
+  - message: "Przet\u0142umaczono SPO Ochrony"
+    type: Add
+  id: 9186
+  time: '2026-05-05T12:35:58.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/559
+- author: Zintex
+  changes:
+  - message: 'Aktualizacja reach: m.in. poprawione doki, dodane armory, przebudowany
+      serwis.'
+    type: Tweak
+  id: 9187
+  time: '2026-05-05T12:33:18.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/562
+- author: Zintex
+  changes:
+  - message: "Nowe, oddzielne tekstury \u015Bluz wo\u017Anego oraz specjalist\xF3\
+      w odzysku."
+    type: Add
+  id: 9188
+  time: '2026-05-07T18:16:28.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/572
+- author: Zintex
+  changes:
+  - message: "Litery na \u015Bluzach odpowiadaj\u0105ce polskim nazwom"
+    type: Tweak
+  id: 9189
+  time: '2026-05-08T07:20:50.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/575
+- author: Nikita_pl
+  changes:
+  - message: "Zwi\u0119kszono interwal (9 min -> 11 min) oraz zmniejszono prawdopodobie\u0144\
+      stwo spawnowania myszy (50% -> 40%)"
+    type: Tweak
+  id: 9190
+  time: '2026-05-08T09:31:28.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/576
+- author: Szyszkrzyneczka
+  changes:
+  - message: "Myszy g\u0142oduj\u0105 3.3 razy wolniej i maj\u0105 threshold ca\u0142\
+      kowitego nape\u0142nienia zmniejszony z 35 na 30"
+    type: Tweak
+  id: 9191
+  time: '2026-05-08T11:09:39.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/577
+- author: pajac11111
+  changes:
+  - message: "Przet\u0142umaczono SPO Logistyki"
+    type: Add
+  id: 9192
+  time: '2026-05-11T07:35:26.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/573
+- author: Zintex
+  changes:
+  - message: "Resprite \u015Bluz wo\u017Anego"
+    type: Tweak
+  id: 9193
+  time: '2026-05-15T07:42:59.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/581
+- author: Zintex
+  changes:
+  - message: "Dodano rol\u0119 Szkoleniowiec Kadr Nanotrasen"
+    type: Add
+  id: 9194
+  time: '2026-05-15T07:42:44.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/582

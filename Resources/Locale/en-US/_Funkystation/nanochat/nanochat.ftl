@@ -1,6 +1,3 @@
-# SPDX-FileCopyrightText: 2025 EvaisaDev <mail@evaisa.dev>
-#
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 # Group chat
 nano-chat-create-group = Create Group Chat

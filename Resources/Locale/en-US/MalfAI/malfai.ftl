@@ -1,5 +1,3 @@
-# SPDX-FileCopyrightText: 2025 YourName
-# SPDX-License-Identifier: MIT
 
 # =====================
 # Misc

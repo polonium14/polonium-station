@@ -1,15 +1,6 @@
-# SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2021 Galactic Chimp <63882831+GalacticChimp@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <gradientvera@outlook.com>
-# SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
-# SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
-#
-# SPDX-License-Identifier: MIT
 
 permissions-eui-do-not-have-required-flags-to-edit-admin-tooltip = You do not have the required flags to edit this admin.
 permissions-eui-do-not-have-required-flags-to-edit-rank-tooltip = You do not have the required flags to edit this rank.
-
 permissions-eui-menu-title = Permissions Panel
 permissions-eui-menu-add-admin-button = Add Admin
 permissions-eui-menu-add-admin-rank-button = Add Admin rank
@@ -17,7 +8,7 @@ permissions-eui-menu-save-admin-rank-button = Save
 permissions-eui-menu-remove-admin-rank-button = Remove
 permissions-eui-menu-admins-tab-title = Admins
 permissions-eui-menu-admin-ranks-tab-title = Admin Ranks
-permissions-eui-edit-admin-window-edit-admin-label = Edit admin {$admin}
+permissions-eui-edit-admin-window-edit-admin-label = Edit admin { $admin }
 permissions-eui-edit-admin-window-name-edit-placeholder = Username/User ID
 permissions-eui-edit-admin-window-title-edit-placeholder = Custom title, leave blank to inherit rank title.
 permissions-eui-edit-admin-window-no-rank-button = No rank
@@ -29,4 +20,6 @@ permissions-eui-edit-title-button = Edit
 permissions-eui-edit-admin-rank-button = Edit
 permissions-eui-edit-admin-rank-window-title = Edit Admin Rank
 permissions-eui-edit-admin-window-save-button = Save
+cmd-permissions-desc = Otwiera panel uprawnień administratora.
+cmd-permissions-help = Użycie: permissions
 permissions-eui-edit-admin-window-remove-flag-button = Remove

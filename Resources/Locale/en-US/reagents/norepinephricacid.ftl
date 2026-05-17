@@ -1,7 +1,3 @@
-# SPDX-FileCopyrightText: 2022 Nairod <110078045+Nairodian@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
-#
-# SPDX-License-Identifier: MIT
 
 norepinephricacid-effect-eyelids = Your eyelids are rapidly twitching.
 norepinephricacid-effect-eyes-itch = Your eyes feel itchy.

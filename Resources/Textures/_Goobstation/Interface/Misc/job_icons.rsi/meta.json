@@ -23,6 +23,9 @@
     },
     {
         "name": "Mindcontrolled"
+    },
+    {
+      "name": "trainer"
     }
     ]
 }

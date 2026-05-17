@@ -1,27 +1,3 @@
-# SPDX-FileCopyrightText: 2022 Moony <moony@hellomouse.net>
-# SPDX-FileCopyrightText: 2022 Morb <14136326+Morb0@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 brainfood1183 <113240905+brainfood1183@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Emisse <99158783+Emisse@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
-# SPDX-FileCopyrightText: 2023 Kit0vras <123590995+Kit0vras@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 NULL882 <104377798+NULL882@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Nylux <33198989+Nylux@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 PixelTK <85175107+PixelTheKermit@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 potato1234_x <79580518+potato1234x@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Flareguy <78941145+Flareguy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 IProduceWidgets <107586145+IProduceWidgets@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 MACMAN2003 <macman2003c@gmail.com>
-# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 PJBot <pieterjan.briers+bot@gmail.com>
-# SPDX-FileCopyrightText: 2024 Ps3Moira <113228053+ps3moira@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
-# SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
-# SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
-#
-# SPDX-License-Identifier: MIT
 
 tiles-space = space
 tiles-plating = plating
@@ -60,6 +36,7 @@ tiles-dark-floor-pavement-vertical = dark steel vertical pavement
 tiles-dark-floor-herringbone = dark steel herringbone
 tiles-dark-floor-diagonal-mini = dark steel diagonal mini-tile
 tiles-plastic-dark-floor = dark plastic tile
+tiles-techmaint-floor-dark = ciemna podłoga tuneli tech.
 tiles-techmaint-floor = techmaint floor
 tiles-reinforced-floor = reinforced floor
 tiles-super-reinforced-floor = hardened reinforced floor
@@ -127,10 +104,12 @@ tiles-jungle-grass-floor = jungle grass floor
 tiles-dark-grass-floor = dark grass floor
 tiles-light-grass-floor = light grass floor
 tiles-dirt-floor = dirt floor
+tiles-asteroid-sand-borderless = bezkrawędziowy piasek asteroidowy
 tiles-asteroid-sand = asteroid sand
 tiles-asteroid-sand-dug = dug asteroid sand
 tiles-asteroid-tile = asteroid tile
 tiles-asteroid-plating = asteroid plating
+tiles-asteroid-ironsand-borderless = bezkrawędziowy żelazny piasek asteroidowy
 tiles-asteroid-ironsand = asteroid ironsand
 tiles-cave = cave
 tiles-cave-drought = cave drought
@@ -155,5 +134,11 @@ tiles-mowed-astro-grass = mowed astro-grass
 tiles-jungle-astro-grass = jungle astro-grass
 tiles-astro-ice = astro-ice
 tiles-astro-snow = astro-snow
+tiles-astro-asteroid-sand-borderless = asteroidowy bezkrawędziowy astro-piasek
 tiles-astro-asteroid-sand = asteroid astro-sand
+tiles-xeno-floor = podłoga xeno
+tiles-xeno-steel = stalowa płytka xeno
+tiles-xeno-steel-corner = nażona stalowa płytka xeno
+tiles-xeno-maint = płytka techniczna xeno
+tiles-dark-squiggly = ciemne stalowe powykrzywiane płytki
 tiles-wood-large = large wood

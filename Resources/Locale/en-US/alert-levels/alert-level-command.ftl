@@ -1,7 +1,3 @@
-# SPDX-FileCopyrightText: 2022 Morber <14136326+Morb0@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
-#
-# SPDX-License-Identifier: MIT
 
 cmd-setalertlevel-desc = Set current station alert level for grid on which the player is standing.
 cmd-setalertlevel-help = Usage: setalertlevel <level> [locked]

@@ -1,9 +1,3 @@
-# SPDX-FileCopyrightText: 2023 ChilbroBaggins <107660393+ChilbroBaggins@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Jeff <velcroboy333@hotmail.com>
-# SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
-#
-# SPDX-License-Identifier: MIT
 
 advertisement-condiment-1 = Tired of dry meat? Squirt some flavor-packed condiments on it!
 advertisement-condiment-2 = Child-safe utensils. Forks, spoons, and knives that won't cut a thing.

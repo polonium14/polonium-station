@@ -8,5 +8,7 @@ ent-ActionCultistSummonDagger = Summon Dagger
     .desc = Use Nar'Sie's blessing to shape a ritual dagger out of your body. As long as your heart continues to beat, She will allow you to make more.
 ent-ActionCultistSanguineDream = Sanguine Dream
     .desc = A sinister spell that plunges a target into a nightmare-filled sleep. EMPs Cyborgs. Those with mindshields will be briefly stunned instead of being put to sleep.
+ent-ActionCultistStun = Stun
+    .desc = A potent spell that will knock down, silence, and mark a target. Stabbing marked targets with your cult dagger will stun and re-silence them. EMPs Cyborgs.
 ent-ActionCultistTwistedConstruction = Twisted Construction
     .desc = A sinister spell used to convert steel or glass into runed steel or runed glass.

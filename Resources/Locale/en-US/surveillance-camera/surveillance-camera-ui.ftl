@@ -1,7 +1,3 @@
-# SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
-#
-# SPDX-License-Identifier: MIT
 
 surveillance-camera-monitor-ui-window = Camera monitor
 surveillance-camera-monitor-ui-refresh-cameras = Refresh cameras

@@ -1,8 +1,3 @@
-# SPDX-FileCopyrightText: 2025 PWJDM <158008238+PWJDM@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 SaffronFennec <firefoxwolf2020@protonmail.com>
-# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
-#
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 drunken-resilience-trait-name = Pijacki Upór
 drunken-resilience-trait-desc = Nie ma nic lepszego od zimnego browarka. Kiedy jesteś pijany, powoli leczysz się z ran.

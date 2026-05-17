@@ -11,15 +11,15 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-  # Salvage
+  # Odzysk
 
-  [color=cyan]Salvage[/color] is one of Cargo's key, but also most dangerous, sources of income. Salvage extracts money from [color=cyan]Space Debris[/color] and going on [color=cyan]Planetary Expeditions[/color].
+  [color=cyan]Odzysk[/color] to jedno z kluczowych, ale również jedneym z najniebezpieczniejszych źródeł dochodu Logistyki. Odzysk pozyskuje pieniądze z [color=cyan]Kosmicznych śmieci[/color] i wyrusza na [color=cyan] Wyprawy Planetarne[/color].
 
-  While risky because of the dangers of space and alien planets, with the proper preparation and teamwork, any Salvage Team can make a lot of money for Cargo.
+  Choć jest to ryzykowne ze względu na zagrożenia związane z przestrzenią kosmiczną i obcymi planetami, przy odpowiednim przygotowaniu i pracy zespołowej każda drużyna odzysku może zarobić dużo pieniędzy dla departamentu logistyki.
 
-  ## Preparations
+  ## Przygotowania
 
-  Before embarking on a Salvage mission, ensure you are prepared with all the required equipment. Otherwise, you will die before seeing any profits!
+  Przed wyruszeniem na misję Odzysku upewnij się, że jesteś wyposażony we wszystkie niezbędne rzeczy. W przeciwnym razie zginiesz, zanim zobaczysz jakiekolwiek zyski!
 
   <Box>
     <GuideEntityEmbed Entity="SuitStorageSalv"/>
@@ -27,7 +27,7 @@ SPDX-License-Identifier: MIT
     <GuideEntityEmbed Entity="VendingMachineSalvage"/>
   </Box>
 
-  Everything needed before leaving the station is provided inside Salvage's starting room. While Science can research better weapons and equipment, it is best to be equipped with something rather than nothing.
+  Wszystko czego potrzebujesz przed opuszczeniem stacji, znajduje się w początkowym pokoju działu Odzysku. Choć dział naukowy może opracować lepszą broń i wyposażenie, lepiej mieć cokolwiek niż nic.
 
   <Box>
     <GuideEntityEmbed Entity="ClothingOuterHardsuitSpatio"/>
@@ -35,39 +35,40 @@ SPDX-License-Identifier: MIT
     <GuideEntityEmbed Entity="VendingMachineTankDispenserEVA"/>
   </Box>
 
-  The most basic equipment you need is the EVA setup.
+  Najbardziej podstawowym wyposażeniem, którego będziesz potrzebował jest zestaw EVA.
 
-  - [color=cyan]Spationaut Hardsuit[/color]: This keeps you alive in space. [italic]Remember to activate the helmet so you can breathe and turn on its built-in flashlight[/italic].
-  - [color=cyan]Magboots[/color]: These provide you with gravity when exploring space debris while also making you slip-proof.
-  - [color=cyan]Oxygen/Nitrogen[/color]: Depending on your species, you will need [color=cyan]Nitrogen[/color] (slimes) or [color=cyan]Oxygen[/color] (every other species). The [color=cyan]Gas Tank Dispenser[/color] has all the tanks needed, so stock up. Be warned that the Salvage Shuttle doesn't always have air, so you might start asphyxiating before even getting to space
+
+  - [color=cyan]Kombinezon kosmiczny[/color]: Utrzymuje cię przy życiu w przestrzeni kosmicznej. [italic]Pamiętaj, żeby aktywować hełm, aby móc oddychać, oraz włączyć wbudowaną latarke.[/italic].
+  - [color=cyan]Magnetyczne buty[/color]: Zapewniają ci przyczepność podczas eksplorowania kosmicznych szczątków, a dodatkowo chronią przed poślizgnięciem się..
+  - [color=cyan]Tlen/Azot[/color]: W zależności od twojego gatunku, będziesz potrzebował [color=cyan]Azotu[/color] (szlamy i voxy) albo [color=cyan]Tlenu[/color] (każda inna rasa). [color=cyan]Dystrybutor zbiorników gazu[/color] posiada wszystkie potrzebne butle, więc zaopatrz się odpowiednio. Uważaj jednak wahadłowiec działu odzysku nie zawsze ma atmosferę, więc możesz zacząć się dusić jeszcze zanim dotrzesz w przestrzeń kosmiczną.
 
   <Box>
     <GuideEntityEmbed Entity="WeaponProtoKineticAccelerator"/>
   </Box>
 
-  All Salvage Specialists must be armed, in case they need to defend themselves from hostiles.
+   Każdy Specjalista ds. odzysku musi być uzbrojony, na wypadek gdyby mieli się bronić przed wrogimi istotami.
 
-  - [color=cyan]Proto-Kinetic Accelerator[/color]: This gun has infinite ammunition, allowing you to slowly mine and fly through space.
+  - [color=cyan]Akcelerator protokinetyczny[/color]: Ta broń ma nieskończoną amunicję, dzięki czemu możesz powoli wydobywać surowce i poruszać się w przestrzeni kosmicznej.
 
   <Box>
     <GuideEntityEmbed Entity="Pickaxe"/>
     <GuideEntityEmbed Entity="OreBag"/>
   </Box>
 
-  Mining (on asteroids or expeditions) requires its own basic set.
+  Wydobycie surowców (na asteroidach lub podczas ekspedycji) wymaga własnego podstawowego zestawu wyposażenia.
 
-  - [color=cyan]Pickaxe[/color]: This is required for mining at any reasonable speed when wielded. Also, it works as a melee weapon!
-  - [color=cyan]Ore Bag[/color]: When equipped with the belt, this magnetizes nearby ore and automatically picks it up for you.
+  - [color=cyan]Kilof[/color]: Jest wymagany do wydobycia surowców z sensowną prędkością podczas trzymania oburącz. Dodatkowo działa również jako broń do walki wręcz!
+  - [color=cyan]Plecak na rudę[/color]: Po wyposażeniu pasa urządzenie to przyciąga pobliską rudę i automatycznie ją zbiera.
 
   <Box>
     <GuideEntityEmbed Entity="FultonBeacon"/>
     <GuideEntityEmbed Entity="Fulton"/>
   </Box>
 
-  Before looting (space wrecks or expeditions), set up Fultons to transport large objects or dead Salvage Technicians.
+  Przed plądrowaniem (wraków kosmicznych lub ekspedycji) przygotuj Fultony do transportu dużych obiektów albo martwych techników odzysku.
 
-  - [color=cyan]Fulton Beacon[/color]: Unfold this to the shuttle, and all Fulton-attached objects will fly to it within 15 tiles.
-  - [color=cyan]Fulton[/color]: After linking with the Fulton Beacon, attach a Fulton to the object, and after one minute, it will fly to the Fulton Beacon.
+  - [color=cyan]Znacznik Fultonów[/color]: Rozłóż go przy wahadłowcu, a wszystkie obiekty podłączone do Fultonów w promieniu 15 pól zostaną do niego przetransportowane.
+  - [color=cyan]Fulton[/color]: Po połączeniu z Znacznikiem Fultonów przypnij Fulton do obiektu, a po minucie obiekt zostanie przetransportowany do Znacznika.
 
   <Box>
     <GuideEntityEmbed Entity="RadioHandheld"/>
@@ -75,41 +76,41 @@ SPDX-License-Identifier: MIT
     <GuideEntityEmbed Entity="ClothingBeltUtilityFilled"/>
   </Box>
 
-  Finally, there are also some helpful but not required equipment that is available to Salvage.
+  Na koniec dostępne jest również kilka przydatnych, choć niewymaganych elementów wyposażenia dla działu odzysku.
 
-  - [color=cyan]Handheld Radio[/color]: This lets you communicate with other Salvage Specialists even if regular radio communications are unavailable. It is essential for Salvage coordination while in space or on expeditions.
-  - [color=cyan]Global Positioning System[/color]: This gives you an absolute position of yourself, allowing you to pinpoint your exact location. If you get lost in space, this can let you organize a rescue mission or can help you get back to the shuttle when lost on an expedition.
-  - [color=cyan]Utility Belt[/color]: This holds all the equipment you will need to loot machines and the like from space wrecks and expeditions.
+  - [color=cyan]Radio[/color]: Dzięki temu możesz komunikować się z innymi specjalistami ds. odzysku, nawet jeśli standardowa łączność radiowa jest niedostępna. Jest to niezbędne do koordynacji działań Odzyzku w kosmosie lub podczas wypraw.
+  - [color=cyan]System Pozycjonowania Globalnego[/color]: Dzięki temu uzyskasz Twoje dokładne położenie. Jeśli zgubisz się w kosmosie, może to pomóc zorganizować akcję ratunkową, albo pozwoli Ci to wrócić do wahadłowca lub na stację, jeśli zgubisz się podczas wyprawy.
+  - [color=cyan]Pas Narzędziowy[/color]: Tutaj znajdziesz cały sprzęt potrzebny do plądrowania maszyn i innych przedmiotów z wraków statków kosmicznych i ekspedycji kosmicznych.
 
-  ## Space Debris
+  ## Kosmiczne szczątki
 
-  Once prepared, it is time to go and explore the stars.
+  Gdy wszystko jest już przygotowane, czas wyruszyć i odkrywać gwiazdy.
 
-  Before immediately doing expeditions, it is good practice to start with space debris so that the crew gets used to their job.
+  Zanim od razu ruszysz na ekspedycje, dobrą praktyką jest rozpoczęcie od eksploracji kosmicznych szczątków, aby załoga mogła przyzwyczaić się do swojej pracy.
 
-  [color=cyan]Space Debris[/color] is generally much safer than expeditions and provides many basic materials (such as steel, glass, etc) in short supply at the start of the shift.
+  [color=cyan]Kosmiczne szczątki[/color] Jest to zazwyczaj znacznie bezpieczniejsze niż ekspedycje i zapewnia wiele podstawowych materiałów (takich jak stal, szkło itd.), których na początku zmiany często brakuje.
 
   <Box>
     <GuideEntityEmbed Entity="SalvageMagnet"/>
   </Box>
 
-  The [color=cyan]Salvage Magnet[/color] is the machine that brings space debris into nearby space.
+  [color=cyan]Magnes Odzysku[/color] to urządzenie, które sprowadza kosmiczne szczątki do pobliskiej przestrzeni.
 
-  The Salvage Magnet provides a random assortment of six offerings, ranging from asteroids, space debris, and wrecks of varying size. The offers then refresh every 3 minutes until claimed, after which the space debris is brought in for the next [bold]6 minutes[/bold].
+  Magnes odzysku oferuje losowy zestaw sześciu obiektów od asteroid, przez kosmiczne szczątki, aż po wraki o różnej wielkości. Oferta odświeża się co 3 minuty, dopóki nie zostanie wybrana, po czym kosmiczne szczątki są sprowadzane dla następnej załogi odzysku.[bold]6 minutes[/bold].
 
-  The Salvage Magnet provides information on the types of resources on an asteroid, which can help you decide which to prioritize based on the current needs of the station.
+  Magnes odzysku dostarcza informacji o rodzajach surowców znajdujących się na asteroidzie, co pomaga zdecydować, które z nich należy priorytetowo wydobywać w zależności od aktualnych potrzeb stacji.
 
-  During the 6 minutes, fly to the debris, extract all profit possible, and then fly back to the station. [italic]You will be stranded in open space if you don't return to the shuttle in time[/italic]!
+  W ciągu tych 6 minut poleć do szczątków, wydobądź wszystko, co ma jakąkolwiek wartość, a następnie wróć na stację. [italic]Jeśli nie wrócisz na czas do wahadłowca, utkniesz w otwartej przestrzeni kosmicznej[/italic]!
 
-  There are two main activities that you do with the Salvage Magnet:
-
+  Są dwie gówne aktywności które możesz robić z Magnesem Odzysku:
+  
   <Box>
     <GuideEntityEmbed Entity="Pickaxe"/>
     <GuideEntityEmbed Entity="OreBag"/>
     <GuideEntityEmbed Entity="OreProcessor"/>
   </Box>
 
-  - [color=cyan]Asteroid Mining[/color]: This is the safest option for money as there are no hostiles. All you need to do is fly around and mine the ore with your [color=cyan]Pickaxe[/color] and [color=cyan]Ore Bag[/color]. Once you have collected all the ore, you can refine it into materials through the [color=cyan]Ore Processor[/color].
+  - [color=cyan]Wydobycie na asteroidach[/color]: To najbezpieczniejszy sposób na zarabianie pieniędzy, ponieważ nie występują tam żadne wrogie istoty. Wystarczy latać wokół i wydobywać rudę za pomocą [color=cyan]kilofa[/color] oraz [color=cyan]torby na rudę[/color]. Po zebraniu całej rudy możesz przetworzyć ją na materiały przy użyciu [color=cyan]przetwornika rudy[/color].
 
   <Box>
     <GuideEntityEmbed Entity="Wrench"/>
@@ -117,11 +118,11 @@ SPDX-License-Identifier: MIT
     <GuideEntityEmbed Entity="WeaponProtoKineticAccelerator"/>
   </Box>
 
-  - [color=cyan]Space Wreck Salvaging[/color]: These are slightly more dangerous as there are hostiles. Keep your distance from hostiles and shoot at them with the [color=cyan]Proto-Kinetic Accelerator[/color]. You will mainly be looting equipment and machines through [color=cyan]Wrenches[/color] and [color=cyan]Fultons[/color].
+  - [color=cyan]Odzysk wraków kosmicznych[/color]: Jest to nieco bardziej niebezpieczne, ponieważ występują tam wrogie istoty. Trzymaj się od nich na dystans i strzelaj do nich za pomocą [color=cyan]Akceleratora protokinetycznego[/color]. Głównie będziesz zdobywać wyposażenie i maszyny przy użyciu [color=cyan]Kluczy[/color] i [color=cyan]Fultonów[/color].
 
-  ## Planetary Expeditions
+  ## Ekspedycje planetarne 
 
-  Finally, [color=cyan]Planetary Expeditions[/color] are the most dangerous but profitable way for Salvage to make money.
+  Na końcu,[color=cyan]Ekspedycje planetarne[/color] są najniebezpieczniejszą ale najbardziej opłacalną drogą Odzysku do zarabiania pieniędzy.
 
   <Box>
     <GuideEntityEmbed Entity="ComputerSalvageExpedition"/>
@@ -130,17 +131,19 @@ SPDX-License-Identifier: MIT
   </Box>
 
 
-  First, use the [color=cyan]Salvage Expedition Computer[/color] to select an expedition. Every 30 seconds, the missions cycle and provide certain information like the [color=yellow]difficulty[/color] and [color=yellow]types of enemies[/color].
+ Na początku, użyj[color=cyan]Komputera Odzysku do ekspedycji[/color] do wybrania ekspedycji. Co 30 sekundy, komputer pokaże nowe opcje przyciągnięcia asteroidy oraz wyświetli informacje o nich [color=yellow]poziomie trudności[/color] i [color=yellow]typie przeciwników[/color].
 
-  After weighing your options, pick the expedition that best suits the station's needs and the crew's abilities.
+  Po rozwarzeniu swoich opcji, wybierz taka ekspedycje która najbardziej odpowiada potrzebom stacji i umiejętności załogi.
 
-  Once you claim the expedition mission, a [color=cyan]Coordinates Disk[/color] will be ejected, which needs to be inserted into the [color=cyan]Shuttle Console[/color].
+  Jak już przyjmniesz misje eksedycyjną, zostanie wysunięty [color=cyan]Dysk z koordynatami[/color] który należy umieścić w [color=cyan]Konsoli Wahadłowca[/color].
 
-  Once inside the Shuttle Console, switch to [color=yellow]Map mode[/color]. Then, click "[color=yellow]Scan for Nearby Objects[/color]". Now, on the drop-down menu on the bottom left of the console UI, click on [color=yellow]the planet's name[/color]. Finally, enable [color=yellow]FTL[/color], click on the [color=yellow]planet on the map[/color], and you will begin FTL travel.
+ Po umieszczeniu dysku w konsoli wahadłowca przełącz się na [color=yellow]Tryb mapy[/color]. Następnie kliknij "[color=yellow]Skanuj pobliskie obiekty[/color]".Teraz w rozwijanym menu znajduje się w lewym dolnym rogu interfejsu konsoli, wybierz [color=yellow]FTL[/color], kliknij [color=yellow] planetę na mapie[/color] a rozpoczniesz podróż nadświetlną. 
 
-  Once you have landed on the planet, you will have [bold]11 minutes[/bold] to spend between [color=cyan]Mining[/color] and [color=cyan]Dungeon Looting[/color]
+  Gdy juz wylądujesz na planecie, będziesz miał [bold]11 minut[/bold] na spożytkowanie pomiędzy [color=cyan]Wydobyciem[/color] i [color=cyan]Plądrowaniem Placówek[/color]
 
-  - [color=cyan]Expedition Mining[/color]: Mining during expeditions provides access to a wide range of resources, but also increases the risk of getting lost or encountering environmental and hostile threats.
+  - [color=cyan]Ekspedycje Wydobywcze[/color]: Wydobycie podczas ekspedycji zapewnia dostęp do szerokiej gamy surowców, ale jednocześnie zwiększa rysyko zgubienia się lub napotkania zagrożeń środowiskowych i wrogich istot.
 
-  - [color=cyan]Dungeon Looting[/color]: Dungeon Looting is where you make the most profit. When you touch down on the planet, the direction of the dungeon will be announced over the radio. Next, break into the dungeon, kill all the hostiles, and secure any loot. [color=cyan]Fultons[/color] become especially handy as you will be transferring whole machines and anomalies. The rewards from Dungeon Looting are expensive equipment to sell and exclusive technologies, such as [color=yellow]cloning[/color]. As an addition, the corpses of the hostiles can also be used and sold!
+
+  - [color=cyan]Plądrowanie Placówek[/color]: To właśnie tutaj można osiągnąć największy zysk. Kiedy wylądujesz na planecie, kierunek do lochu zostanie ogłoszony przez radio. Następnie należy włamać się do lochu, wyeliminować wszystkie wrogie istoty i zabezpeczyć zdobyte dobra. [color=cyan]Fultony[/color] są tutaj szczególnie przydatne, ponieważ będziesz transportować całe maszyny oraz anomaliwe. Nagrodami za Plądrowanie Placówek są drogie urządzenia do sprzedaży oraz ekskluzywne technologie, takie jak[color=yellow]klonowanie[/color]. Dodatkowo ciała pokonanych przeciwników również mogą zostać wykorzystane i sprzedane!
+
 </Document>
