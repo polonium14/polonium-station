@@ -54,16 +54,21 @@
   id: CalmTraitor # For Dual Antag Gamemodes / Funky: For gamemodes that need nerfed antags
   components:
   - type: GameRule
-    minPlayers: 15
+    minPlayers: 5
     delay:
       min: 240
       max: 420
+  - type: AntagRandomObjectives
+    sets:
+    - groups: TraitorObjectiveGroups
+    maxDifficulty: 3
   - type: AntagSelection
     selectionTime: IntraPlayerSpawn
     definitions:
     - prefRoles: [ Traitor ]
       max: 4
-      playerRatio: 15
+      playerRatio: 8
+      chaosScore: 100 # Polonium
       blacklist:
         components:
         - AntagImmune
@@ -80,10 +85,10 @@
   id: CalmLing # For Dual Antag Gamemodes / Funky: For gamemodes that need nerfed antags
   components:
   - type: GameRule
-    minPlayers: 15
+    minPlayers: 10
     delay:
-      min: 30
-      max: 60
+      min: 1200
+      max: 1800
   - type: AntagSelection
     selectionTime: IntraPlayerSpawn
     agentName: changeling-roundend-name

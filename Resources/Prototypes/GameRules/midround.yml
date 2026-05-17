@@ -41,6 +41,7 @@
     - prefRoles: [ Thief ]
       max: 3
       playerRatio: 20 #funky reduce le rate
+      chaosScore: 100 # Goobstation
       lateJoinAdditional: true
       allowNonHumans: true
       multiAntagSetting: NotExclusive

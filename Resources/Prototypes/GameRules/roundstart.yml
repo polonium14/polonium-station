@@ -400,7 +400,7 @@
   parent: BaseGameRule
   components:
   - type: GameRule
-    minPlayers: 15
+    minPlayers: 10
     delay:
       min: 600
       max: 900
