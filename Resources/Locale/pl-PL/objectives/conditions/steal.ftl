@@ -5,11 +5,5 @@ objective-condition-steal-description = Potrzebujemy abyś ukradł { $itemName }
 objective-condition-steal-station = stację
 objective-condition-steal-Ian = korgi kierownika personelu
 objective-condition-thief-description = { $itemName } będzie świetnym dodatkiem do mojej kolekcji!
-objective-condition-thief-animal-description =
-    { $itemName } będzie świetnym dodatkiem do mojej kolekcji! Ale najważniejsze { GENDER($itemName) ->
-        [male] żywy
-        [female] żywa
-        [epicene] żywu
-       *[neuter] żywe
-    }
-objective-condition-thief-multiply-description = Potrzebuję wiąć ze sobą dowolne { $count } { $itemName }.
+objective-condition-thief-animal-description = The { $itemName } would be a great addition to my collection! Most importantly, alive.
+objective-condition-thief-multiply-description = I need to get { $count } { MAKEPLURAL($itemName) } (any) and take them with me.
