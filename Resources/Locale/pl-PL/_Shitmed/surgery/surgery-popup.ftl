@@ -1,4 +1,3 @@
-
 surgery-popup-step-SurgeryStepOpenIncisionScalpel = { $user } wykonuje nacięcie na { $part } { $target }.
 surgery-popup-step-SurgeryStepClampBleeders = { $user } zaciska krwawiące naczynia na { $part } { $target }.
 surgery-popup-step-SurgeryStepRetractSkin = { $user } odciąga skórę na { $part } { $target }.
