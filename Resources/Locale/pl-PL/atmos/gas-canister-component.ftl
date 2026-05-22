@@ -1,5 +1,6 @@
 ## UI
 
+
 # Bound Interface
 
 gas-canister-bound-user-interface-title = Kanister z gazem
