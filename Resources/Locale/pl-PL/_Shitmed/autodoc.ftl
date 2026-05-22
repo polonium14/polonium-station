@@ -1,4 +1,3 @@
-
 autodoc-program-step-surgery = przeprowadzić operację na { $part }: { $name }
 autodoc-program-step-grab-item = chwycić przedmiot: '{ $name }'
 autodoc-program-step-grab-any = chwycić dowolny: { $name }
