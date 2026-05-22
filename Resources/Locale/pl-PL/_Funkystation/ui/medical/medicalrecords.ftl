@@ -1,4 +1,5 @@
-funky-medical-records-window-title = Akta medyczne
+﻿funky-medical-records-window-title = Medical Records
+
 funky-medical-records-yes = Tak
 funky-medical-records-no = Nie
 cd-character-records-viewer-unknown = Nieznane
