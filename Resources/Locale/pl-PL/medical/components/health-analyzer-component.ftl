@@ -17,4 +17,7 @@ health-analyzer-window-scan-mode-text = Tryb skanowania:
 health-analyzer-window-scan-mode-active = Aktywny
 health-analyzer-window-scan-mode-inactive = Nieaktywny
 health-analyzer-popup-scan-target = { CAPITALIZE($user) } próbuje ciebie zeskanować!
+
+## Shitmed Change
+
 health-analyzer-window-return-button-text = < Return
