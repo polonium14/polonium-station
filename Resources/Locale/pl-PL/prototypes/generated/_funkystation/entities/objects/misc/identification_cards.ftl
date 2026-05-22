@@ -1,5 +1,5 @@
 ent-InternalAffairsAgentIDCard = identyfikator Agenta Spraw Wewnętrznych
-    .desc = { ent-IDCardStandard.desc }
+    .desc = You wouldn't lose this, would you?
 ent-MagistrateIDCard = identyfikator sędziego
     .desc = { ent-IDCardStandard.desc }
 ent-CentcomInternIDCard = identyfikator stażysty Centralnego Dowództwa
@@ -23,4 +23,4 @@ ent-IDCardAncientSecurity = identyfikator ochrony
 ent-IDCardAncientNanotrasen = identyfikator Nanotrasen
     .desc = Identyfikator noszony na szyi, wyposażony w jedną z tych nowych, modnych taśm magnetycznych. Ten jest dla przedstawiciela Nanotrasen.
 ent-SpaceCowboyIDCard = identyfikator kowboja kosmicznego
-    .desc = { ent-IDCardStandard.desc }
+    .desc = To the Space Station rode a stranger one fine day.
