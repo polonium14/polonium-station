@@ -5,9 +5,6 @@ ent-PlantAnalyzerDebug = { ent-BasePlantAnalyzer }
     .suffix = Debug
     .desc = { ent-BasePlantAnalyzer.desc }
 
-ent-PlantAnalyzer = { ent-BasePlantAnalyzer }
-    .desc = { ent-BasePlantAnalyzer.desc }
 
-ent-PlantAnalyzerEmpty = { ent-PlantAnalyzer }
-    .suffix = Empty
-    .desc = { ent-PlantAnalyzer.desc }
+
+

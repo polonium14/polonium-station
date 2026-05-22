@@ -1,28 +1,15 @@
 
-ent-SpawnPointGhostBlob = Blob spawner
-    .suffix = DEBUG, Ghost Role Spawner
-    .desc = { ent-MarkerBase.desc }
-ent-MobBlobPod = Blob Drop
-    .desc = A floating, aggressive blob creature that seems to be puffed up with gas. Parasitically zombifies dead organisms by attaching themselves to their head, forcing their body and brain to reanimate.
-ent-MobBlobBlobbernaut = Blobbernaut
-    .desc = A resilient and powerful blob creature, highly territorial.
-ent-BaseBlob = basic blob.
-    .desc = { "" }
-ent-NormalBlobTile = blob infestation
-    .desc = A large swath of blob biomass required for the construction of blob structures. It lashes out at everything around it.
-ent-CoreBlobTile = Blob Core
-    .desc = The most important part of the blob. By destroying the core, all other parts will die.
-ent-FactoryBlobTile = Blob Factory
-    .desc = A disgusting looking blob structure that creates blob drops over time, and creates powerful blobbernauts when fed resources.
-ent-ResourceBlobTile = Resource Blob
-    .desc = A hill-shaped blob structure that constantly produces a yellow viscous fluid. The fluid seems to seep into the surrounding infestation, helping it to spread and grow...
-ent-NodeBlobTile = Blob Node
-    .desc = A mini version of the core that allows special blob structures to be constructed around itself.
-ent-StrongBlobTile = thick blob infestation
-    .desc = A raised, reinforced swath of blob biomass. It does not allow air to pass through and protects against kinetic damage.
-ent-ReflectiveBlobTile = reflective blob infestation
-    .desc = A swath of reflective blob biomass which reflects lasers, but does not protect against kinetic damage as well.
-    .desc = { "" }
+
+
+
+
+
+
+
+
+
+
+
 objective-issuer-blob = Blob
 
 

@@ -14,5 +14,4 @@ ent-ClothingHeadHatCEConductor = czapka konduktora naczelnego inżyniera
 ent-ClothingHeadHatCadetSecurity = biała czapka marynarska kadeta
     .desc = Czysta, biała czapka dla nowo zwerbowanego! Miejmy nadzieję, że pozostanie czysta.
 
-ent-ClothingHeadHatSurgcapBlack = coroner cap
-    .desc = A black cap worn by coroners. Makes you look as dreary as your workplace.
+

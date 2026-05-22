@@ -5,8 +5,8 @@ trait-funky-desc = Puh sahme fuhky flaahr ahn yahuh inflecshuns.
 trait-british-name = British Accent
 trait-british-desc = Oi you soun'like someone a'a Bri'ish pub, ea'ing chips an'wa'ching the telly with your chums.
 
-trait-british-name = British Accent
-trait-british-desc = Speak like you came from the queen's land!
+
+
 
 trait-scandinavian-name = Scandinavian accent
 trait-scandinavian-desc = Yøu sound like yøu cöme frøm søme nondescript norðern Euröpæän nation. Ör you'ræ a Viking!
@@ -20,14 +20,14 @@ trait-german-vernacular-desc = Mein gott, your ability to sprinkle words like "S
 trait-russian-vernacular-name = Russian vernacular
 trait-russian-vernacular-desc = Vhen you speak, you add in more Russian vords with ochen zick accent.
 
-trait-french-vernacular-name = French vernacular
-trait-french-vernacular-desc = You intensify your Frenchness with some familar-sounding loanwords.
 
-trait-german-vernacular-name = German vernacular
-trait-german-vernacular-desc = You drop a lot of words like "Schmetterling" and "Krankenwagen" in your speech.
 
-trait-russian-vernacular-name = Russian vernacular
-trait-russian-vernacular-desc = When you speak, you can't help but introduce a few Russian words.
+
+
+
+
+
+
 
 trait-euphemist-name = Euphemist
 trait-euphemist-desc = You tend to beat around the bush and avoid being negative.

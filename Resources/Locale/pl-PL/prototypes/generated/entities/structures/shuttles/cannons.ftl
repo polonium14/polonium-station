@@ -13,7 +13,6 @@ ent-ShuttleGunPirateCannon = pirate ship cannon
 ent-ShuttleGunKinetic = PTK-800 "Dematerializator"
     .desc = Stacjonarne działo odzyskowe. Ładuje się samoistnie, doskonałe do wydobywania asteroid.
 ent-ShuttleGunSeismic = EXP-SMC "KosmoWstrząs"
-    .desc = Salvage stationary mining turret. Gradually accumulates charges on its own, extremely effective for asteroid excavation.
     .desc = Stacjonarne działo odzyskowe domowej roboty. Wyrzuca ładunki sejsmiczne pozbawione zabezpieczeń, skuteczne przy otwieraniu asteroid.
 ent-ShuttleGunPlasmaCutter = PLM-CTT "Shuttle Cutter"
     .desc = Stacjonarne działo odzyskowe. Ładowane poprzez plazmę, tnie asteroidy z łatwością.

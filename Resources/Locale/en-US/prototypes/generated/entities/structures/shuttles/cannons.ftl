@@ -15,7 +15,7 @@ ent-ShuttleGunKinetic = PTK-800 "Matter Dematerializer"
 
 ent-ShuttleGunSeismic = EXP-SMC "KosmoWstrząs"
     .desc = Salvage stationary mining turret. Gradually accumulates charges on its own, extremely effective for asteroid excavation.
-    .desc = Stacjonarne działo odzyskowe domowej roboty. Wyrzuca ładunki sejsmiczne pozbawione zabezpieczeń, skuteczne przy otwieraniu asteroid.
+    
 
 ent-ShuttleGunPlasmaCutter = PLM-CTT "Shuttle Cutter"
     .desc = Stacjonarne działo odzyskowe. Ładowane poprzez plazmę, tnie asteroidy z łatwością.

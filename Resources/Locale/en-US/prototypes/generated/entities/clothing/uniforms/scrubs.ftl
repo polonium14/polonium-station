@@ -10,7 +10,6 @@ ent-UniformScrubsColorGreenSleeveless = sleeveless surgical scrubs
     .desc = A set of green scrubs worn by surgical staff. Where'd you leave your watch?
 ent-UniformScrubsColorBlueSleeveless = sleeveless medical scrubs
     .desc = The generalist blue scrubs of medical personnel everywhere. You couldn't afford an undershirt with your salary.
-ent-UniformScrubsColorBlack = coroner scrubs
-    .desc = Black, menacing scrubs worn by coroners. Smells of formaldehyde.
+
 ent-UniformScrubsColorBlackSleeveless = sleeveless coroner scrubs
     .desc = Black, menacing scrubs worn by coroners. The sleeves just got in the way.
