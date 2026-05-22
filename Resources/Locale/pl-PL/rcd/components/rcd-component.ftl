@@ -1,13 +1,13 @@
 ### UI
 
 rcd-component-examine-mode-details = Wybrany tryb: '{ $mode }'
-rcd-component-examine-build-details = Obecnie ustawiono na budowanie: { $name }.
+rcd-component-examine-build-details = It's currently set to build { MAKEPLURAL($name) }.
 
 ### Interaction Messages
 
 # Mode change
 rcd-component-change-mode = USK jest teraz w trybie '{ $mode }'.
-rcd-component-change-build-mode = USK jest teraz ustawiony na budowanie '{ $name }'.
+rcd-component-change-build-mode = The RCD is now set to build { MAKEPLURAL($name) }.
 # Ammo count
 rcd-component-no-ammo-message = USK nie ma już ładunków!
 rcd-component-insufficient-ammo-message = USK nie ma wystarczającej liczby ładunków!
@@ -32,14 +32,14 @@ rcd-component-windows-and-grilles = Okna i kraty
 rcd-component-airlocks = Śluzy
 rcd-component-electrical = Instalacje elektryczne
 rcd-component-lighting = Oświetlenie
-
-### Prototype names (note: constructable items will be puralized)
-
 rcd-component-piping = Rurociągi
 rcd-component-atmosphericutility = Narzędzia atmosferyczne
 rcd-component-pumpsvalves = Pompy i zawory
 rcd-component-vents = Wentylacja
 rcd-component-sensorsmonitors = Czujniki i monitory
+
+### Prototype names (note: constructable items will be puralized)
+
 rcd-component-deconstruct = demontaż
 rcd-component-floor-steel = stalowa płytka
 rcd-component-plating = pokrycie korpusu
