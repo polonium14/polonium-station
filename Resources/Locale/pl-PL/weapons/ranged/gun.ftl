@@ -5,8 +5,8 @@ gun-selected-mode = Wybrano { $mode }
 gun-disabled = Nie możesz używać tej broni!
 gun-clumsy = Broń wybucha ci w twarz!
 gun-set-fire-mode = Ustawiono tryb { $mode }
-gun-magazine-whitelist-fail = To się nie zmieści w broni!
 gun-magazine-fired-empty = Nie ma amunicji!
+gun-magazine-whitelist-fail = To się nie zmieści w broni!
 # SelectiveFire
 gun-SemiAuto = półautomatyczny
 gun-Burst = seria
@@ -16,18 +16,8 @@ gun-ballistic-cycle = Przeładuj
 gun-ballistic-cycled = Przeładowano
 gun-ballistic-cycled-empty = Przeładowano (pusty)
 gun-ballistic-transfer-invalid = { CAPITALIZE($ammoEntity) } nie mieści się w { $targetEntity }!
-gun-ballistic-transfer-empty =
-    { CAPITALIZE($entity) } jest { GENDER($entity) ->
-       *[male] pusty
-        [female] pusta
-        [other] puste
-    }.
-gun-ballistic-transfer-target-full =
-    { CAPITALIZE($entity) } już jest { GENDER($entity) ->
-       *[male] załadowany
-        [female] załadowana
-        [other] załadowane
-    }.
+gun-ballistic-transfer-empty = { CAPITALIZE(THE($entity)) } is empty.
+gun-ballistic-transfer-target-full = { CAPITALIZE(THE($entity)) } is already fully loaded.
 # CartridgeAmmo
 gun-cartridge-spent = [color=red]Został[/color] wystrzelony.
 gun-cartridge-unspent = [color=lime]Nie został[/color] wystrzelony.
@@ -55,7 +45,7 @@ gun-revolver-full = Rewolwer jest pełny
 gun-revolver-insert = Włożono
 gun-revolver-spin = Zakręć bębnem
 gun-revolver-spun = Przekręć bembenek
-gun-speedloader-empty = Ładownik pusty
 # GunSpreadModifier
 examine-gun-spread-modifier-reduction = Rozrzut zmniejszony o [color=yellow]{ NATURALPERCENT($percentage) }[/color].
 examine-gun-spread-modifier-increase = Rozrzut zwiększony o [color=yellow]{ NATURALPERCENT($percentage) }[/color].
+gun-speedloader-empty = Ładownik pusty
