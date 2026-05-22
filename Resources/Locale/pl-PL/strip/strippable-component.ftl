@@ -8,13 +8,13 @@ strippable-component-cannot-unequip-message = { CAPITALIZE($owner) } cannot uneq
 strippable-component-cannot-drop-message = { CAPITALIZE($owner) } cannot drop that!
 strippable-component-alert-owner = { CAPITALIZE($user) } is removing your { $item }!
 strippable-component-alert-owner-hidden = You feel someone fumbling in your { $slot }!
-strippable-component-alert-owner-insert = { CAPITALIZE($user) } is putting { INDEFINITE($item) } { $item } on you!
-strippable-component-alert-owner-insert-hand = { CAPITALIZE($user) } is putting { INDEFINITE($item) } { $item } in your hand!
+strippable-component-alert-owner-insert = { CAPITALIZE(THE($user)) } is putting { $item } on you!
+strippable-component-alert-owner-insert-hand = { CAPITALIZE(THE($user)) } is putting { $item } in your hand!
 # generic warning for when a user interacts with your equipped items.
 strippable-component-alert-owner-interact = { CAPITALIZE($user) } is fumbling around with your { $item }!
+strip-all-verb-get-data-text = Strip All
 # StripVerb
 strip-verb-get-data-text = Strip
-strip-all-verb-get-data-text = Strip All
 
 ## UI
 
