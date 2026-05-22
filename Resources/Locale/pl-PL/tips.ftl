@@ -30,6 +30,7 @@ tips-dataset-29 = Jako duch możesz używać menu, aby automatycznie orbitować 
 tips-dataset-30 = Jako zdrajca, czasami możesz otrzymać zadanie polowania na innych zdrajców, a jednocześnie być celem dla kolejnych.
 tips-dataset-31 = Jako zdrajca, klucz szyfrujący syndicate pozwala na bezpieczną komunikację z innymi zdrajcami, którzy również go kupili.
 tips-dataset-32 = Jako zdrajca, przechwytywanie ważnych kanałów komunikacyjnych, takich jak ochrona czy inżynieria, może dostarczyć cennych informacji. Uważaj jednak, ochrona również może przechwycić komunikację syndicate!
+# Goobstation - Telecrystal rework
 tips-dataset-33 = Jako zdrajca, skrzynka narzędziowa syndicate jest bardzo wszechstronna. Za jedyne 2 telekryształy otrzymasz pełen zestaw narzędzi, izolowane rękawice bojowe i maskę gazową syndicate.
 tips-dataset-34 = Jako zdrajca, nie lekceważ web vest. Choć nie chroni w próżni, to jej niska cena i dobra ochrona czynią ją użyteczną przeciwko impulsywnym przeciwnikom.
 tips-dataset-35 = Jako zdrajca, zakupione pingwiny granatowe nie zaatakują cię i wybuchną po ich zabiciu.
@@ -166,6 +167,7 @@ tips-dataset-165 = Jako Funkcjonariusz Ochrony, bądź ostrożny przy sprawdzani
 tips-dataset-166 = Jeśli chcesz, by cargo coś sprzedało, ale zależy ci, aby twój dział zachował większość zysku, rozważ użycie sejfu (lockbox).
 tips-dataset-167 = Uważaj przy świadomym łamaniu Standardowej Procedury Operacyjnej — Przedstawiciele Nanotrasen i Sędziowie mogą degradować recydywistów.
 tips-dataset-168 = Felinidzi są nieco bardziej podatni na obrażenia wytrzymałościowe, więc pałki ogłuszające powalają ich o jedno trafienie szybciej niż zwykle.
+# Funky - I actually tested 168 for the security redux and it's the same as before lol
 tips-dataset-169 = Jako Muzyk, poproś Naukę o spakowanie (flatpack) Cyfrowej Stacji Roboczej Audio. Pozwala to pominąć zbieranie instrumentów do jej stworzenia.
 tips-dataset-170 = Możesz przeciąć przewód menedżera w automatach sprzedających i innych maszynach, aby uzyskać dostęp do ukrytych przedmiotów, których zwykle nie można z nich wydać.
 tips-dataset-171 = Aby uniknąć wykrycia otwarcia śluzy przy użyciu logprobe, możesz przeciąć przewód logów w śluzie przed jej otwarciem.
