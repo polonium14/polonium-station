@@ -1,6 +1,10 @@
 ## Entity
 
-crayon-drawing-label = Rysunek: [color={ $color }]{ $state }[/color] ({ $charges }/{ $capacity })
+crayon-drawing-label =
+    Drawing: [color={ $color }]{ $state }[/color] { $infinite ->
+       *[false] ({ $charges }/{ $capacity })
+        [true] { "" }
+    }
 crayon-interact-not-enough-left-text = Za mało pozostało.
 crayon-interact-used-up-text = { $owner } się zużył.
 crayon-interact-invalid-location = Nie możesz tam dosięgnąć!
