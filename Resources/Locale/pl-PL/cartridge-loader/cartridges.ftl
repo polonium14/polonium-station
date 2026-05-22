@@ -1,5 +1,3 @@
-# Polskie tłumaczenie przez: @Tofi-Dev
-
 device-pda-slot-component-slot-name-cartridge = Kartridż
 default-program-name = Program
 notekeeper-program-name = Notatnik
@@ -20,11 +18,11 @@ log-probe-label-accessor = Odblokowane przez:
 log-probe-label-number = #
 log-probe-print-button = Wydrukuj Logi
 log-probe-printout-device = Zeskanowane Urządzenie: { $name }
-wordle-program-name = Wordle
+astro-nav-program-name = AstroNav
 log-probe-printout-header = Najnowsze logi:
 log-probe-printout-entry = #{ $number } / { $time } / { $accessor }
-astro-nav-program-name = AstroNav
 med-tek-program-name = MedTek
+wordle-program-name = Wordle
 plant-scan-program-name = PlantScan
 
 # NanoTask cartridge
