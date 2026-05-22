@@ -1,0 +1,9 @@
+- type: entity
+  parent: PosterBase
+  id: NFZLogo
+  name: "NFZ Logo"
+  description: "A poster depicting the best health insurance company in the galaxy."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
+    state: nfz

@@ -1,0 +1,8 @@
+- type: entity
+  parent: BaseBarSign
+  id: BarSignZabka
+  name: Zabka
+  description: Leading galaxy food corporation for the working class.
+  components:
+  - type: BarSign
+    current: Zabka

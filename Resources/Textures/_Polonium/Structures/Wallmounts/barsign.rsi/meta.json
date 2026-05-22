@@ -1,0 +1,15 @@
+{
+    "version": 1,
+    "size": {
+        "x": 64,
+        "y": 32
+    },
+    "license": "CC-BY-NC-SA-3.0",
+    "copyright": "Made by Polonium Station (https://github.com/polonium14/polonium-station) [add link to commit when taking from Polonium Station]",
+    "states": [
+        {
+            "name": "zabkacafe",
+            "delays": [[2.45, 0.175, 3, 0.1, 0.3, 0.1, 3, 0.18]]
+        }
+    ]
+}

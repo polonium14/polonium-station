@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "license": "CC-BY-NC-SA-3.0",
+    "copyright": "Made by Polonium Station (https://github.com/polonium14/polonium-station) [add link to commit when taking from Polonium Station]",
+    "states": [
+        {
+            "name": "nfz"
+        }
+    ]
+}

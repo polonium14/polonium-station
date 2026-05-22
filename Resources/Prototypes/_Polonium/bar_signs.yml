@@ -1,0 +1,7 @@
+- type: barSign
+  id: Zabka
+  name: barsign-prototype-name-zabka
+  icon:
+    sprite: _Polonium/Structures/Wallmounts/barsign.rsi
+    state: zabkacafe
+  description: barsign-prototype-description-zabka
