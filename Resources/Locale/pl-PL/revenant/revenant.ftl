@@ -17,3 +17,6 @@ revenant-user-interface-cost = { $price } Essence
 # imp begin
 revenant-revealed-default = { CAPITALIZE($revealer) } weakens your ethereal cloak!
 revenant-revealed-salt = The salt puddle weakens your ethereal cloak!
+
+# imp end
+
