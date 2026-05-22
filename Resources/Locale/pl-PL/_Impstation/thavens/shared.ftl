@@ -1,4 +1,3 @@
-
 thaven-mood-secret-moods-shared-name = Trzymaj Nastroje W Sekrecie
 thaven-mood-secret-moods-shared-desc = Nastroje Thavenów są ściśle trzymanym sekretem, i pod żadnym pozorem nie powinny być nikomu ujawnione.
 thaven-mood-fashion-is-critical-name = Moda Jest Kluczowa
