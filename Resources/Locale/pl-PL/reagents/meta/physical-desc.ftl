@@ -94,5 +94,5 @@ reagent-physical-desc-alkaline = alkaliczny
 reagent-physical-desc-reflective = lustrzany
 reagent-physical-desc-holy = święty
 reagent-physical-desc-slimy = śluzowaty
-reagent-physical-desc-neural = neuralogiczny
 reagent-physical-desc-unidentifiable = niezidentyfikowany
+reagent-physical-desc-neural = neuralogiczny
