@@ -5,8 +5,8 @@ wieldable-verb-text-unwield = Puść
 wieldable-component-successful-wield = Chwytasz { $item } oburącz.
 wieldable-component-failed-wield = Odkładasz { $item } z chwytu oburącz.
 wieldable-component-successful-wield-other = { CAPITALIZE($user) } chwyta { $item } oburącz.
-wieldable-component-failed-wield-other = { CAPITALIZE($user) } puszcza { $item }.
 wieldable-component-blocked-wield = { CAPITALIZE($blocker) } blokuje cię przed chwyceniem { $item } oburącz.
+wieldable-component-failed-wield-other = { CAPITALIZE($user) } puszcza { $item }.
 wieldable-component-no-hands = Nie masz wystarczająco rąk!
 wieldable-component-not-enough-free-hands =
     { $number ->
