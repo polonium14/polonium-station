@@ -1,7 +1,7 @@
 ### Interaction Messages
 
 # When trying to eat food without the required utensil... but you gotta hold it
-food-you-need-to-hold-utensil = You need to be holding { INDEFINITE($utensil) } { $utensil } to eat that!
+food-you-need-to-hold-utensil = You need to be holding a { $utensil } to eat that!
 food-nom = Nom. { $flavors }
 food-swallow = You swallow { $food }. { $flavors }
 food-has-used-storage = You cannot eat { $food } with an item stored inside.
