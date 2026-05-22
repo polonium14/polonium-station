@@ -1,4 +1,3 @@
-
 guide-entry-surgery = Chirurgia
 guide-entry-partmanipulation = Manipulacja częściami
 guide-entry-organmanipulation = Manipulacja organami
