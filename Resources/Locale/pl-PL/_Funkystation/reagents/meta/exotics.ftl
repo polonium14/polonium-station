@@ -1,4 +1,3 @@
-
 reagent-name-exotic = płynne egzotium
 reagent-desc-exotic = Prekursor wielu różnych rzadkich chemikaliów. Używaj mądrze.
 reagent-name-stasicillin = stasicylina
