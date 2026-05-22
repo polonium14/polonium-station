@@ -1,3 +1,5 @@
+
+
 ## General stuff
 
 ui-options-title = Ustawienia Gry
@@ -87,8 +89,7 @@ ui-options-vp-scale-value = { $scale }x
 ui-options-vp-integer-scaling = Preferuj skalowanie całkowite (może powodować czarne pasy/przycięcia)
 ui-options-vp-integer-scaling-tooltip =
     Jeśli ta opcja jest włączona, widok gry będzie skalowany
-    z użyciem całkowitej wartości powiększenia przy określonych rozdzielczościach.
-    Powoduje to wyraźniejsze tekstury,
+    z użyciem całkowitej wartości powiększenia przy określonych rozdzielczościach. Powoduje to wyraźniejsze tekstury,
     ale często skutkuje pojawieniem się czarnych pasów u góry i dołu ekranu lub obcięciem części widoku.
 ui-options-vp-vertical-fit = Dopasowanie widoku w pionie
 ui-options-vp-vertical-fit-tooltip = Po włączeniu tej opcji główny widok gry będzie ignorował oś poziomą przy dopasowywaniu do ekranu. Jeśli ekran jest mniejszy niż widok gry, spowoduje to obcięcie obrazu w poziomie.
@@ -101,10 +102,7 @@ ui-options-hud-layout = Układ HUD:
 ## Controls menu
 
 ui-options-binds-reset-all = Resetuj WSZYSTKIE przypisania klawiszy
-ui-options-binds-explanation = Kliknij, aby przypisać. Prawy przycisk do usunięcia.
-ui-options-unbound = Nieprzypisany
-ui-options-bind-reset = Resetuj
-ui-options-key-prompt = Naciśnij klawiszę...
+ui-options-binds-explanation = Kliknij, aby przypisać.
 ui-options-header-movement = Ruch
 ui-options-header-camera = Kamera
 ui-options-header-interaction-basic = Interakcja Podstawowa
@@ -310,23 +308,67 @@ ui-options-net-interp-ratio-tooltip =
     Zwiększenie tej wartości sprawi, że gra będzie bardziej odporna
     na utratę pakietów transmisji "serwer->klient", jednak w ten sposób
     efektywnie zwiększa się opóźnienie i wymaga od
-    klienta przewidywania większej liczby przyszłych taktów.
-ui-options-net-predict-tick-bias = Bias tiku przewidywania
+    klienta przewidywania większej liczby przyszłych taktów. ui-options-net-predict-tick-bias = Bias tiku przewidywania
 ui-options-net-predict-tick-bias-tooltip =
     Zwiększenie tej wartości sprawi, że gra będzie bardziej odporna
     na utratę pakietów transmisji "klient->serwer", jednak w ten sposób
     efektywnie zwiększa się opóźnienie i wymaga od
-    klienta przewidywania większej liczby przyszłych taktów.
-ui-options-net-pvs-spawn = Budżet spawnu obiektów PVS
+    klienta przewidywania większej liczby przyszłych taktów. ui-options-net-pvs-spawn = Budżet spawnu obiektów PVS
 ui-options-net-pvs-spawn-tooltip =
     To ogranicza częstotliwość, z którą serwer będzie wysyłać klientowi nowo
     spawnione encje. Obniżanie tego może pomóc zmniejszyć
     zacięcia spowodowane spawnowaniem encji, ale może skutkować
-    ich nieoczekiwanym pojawieniem się.
-ui-options-net-pvs-entry = Budżet encji PVS
+    ich nieoczekiwanym pojawieniem się. ui-options-net-pvs-entry = Budżet encji PVS
 ui-options-net-pvs-entry-tooltip =
     To ogranicza częstotliwość, z którą serwer będzie wysyłać klientowi nowo
-    widoczne encje. Obniżanie tego może pomóc zmniejszyć
+    widoczne encje.
+ui-options-net-predict-tick-bias = Prediction tick bias
+ui-options-net-predict-tick-bias-tooltip =
+    Increasing this will generally make the game more resistant
+    to client->server packet-loss, however in doing so it
+    effectively adds slightly more latency and requires the
+    client to predict more future ticks.
+ui-options-net-pvs-spawn = PVS entity spawn budget
+ui-options-net-pvs-spawn-tooltip =
+    This limits the rate at which the server will send newly spawned
+    entities to the client. Lowering this can help reduce
+    stuttering due to entity spawning, but can lead to pop-in.
+ui-options-function-text-cursor-down = Przesuń kursor w dół
+ui-options-function-text-cursor-word-left = Przesuń kursor o jedno słowo w lewo
+ui-options-function-text-cursor-word-right = Przesuń kursor o jedno słowo w prawo
+ui-options-function-text-cursor-begin = Przesuń kursor na początek
+ui-options-function-text-cursor-end = Przesuń kursor na koniec
+ui-options-function-text-cursor-select = Zaznacz tekst
+ui-options-function-text-cursor-select-left = Rozszerz zaznaczenie w lewo
+ui-options-function-text-cursor-select-right = Rozszerz zaznaczenie w prawo
+ui-options-function-text-cursor-select-up = Rozszerz zaznaczenie w górę
+ui-options-function-text-cursor-select-down = Rozszerz zaznaczenie w dół
+ui-options-function-text-cursor-select-word-left = Rozszerz zaznaczenie o jedno słowo w lewo
+ui-options-function-text-cursor-select-word-right = Rozszerz zaznaczenie o jedno słowo w prawo
+ui-options-function-text-cursor-select-begin = Rozszerz zaznaczenie do początku
+ui-options-function-text-cursor-select-end = Rozszerz zaznaczenie do końca
+ui-options-function-text-backspace = Backspace
+ui-options-function-text-delete = Usuń
+ui-options-function-text-word-backspace = Backspace słowa
+ui-options-function-text-word-delete = Usuń słowo
+ui-options-function-text-newline = Nowa linia
+ui-options-function-text-submit = Wyślij
+ui-options-function-multiline-text-submit = Wyślij wielowierszowy tekst
+ui-options-function-text-select-all = Zaznacz wszystko
+ui-options-function-text-copy = Kopiuj
+ui-options-function-text-cut = Wytnij
+ui-options-function-text-paste = Wklej
+ui-options-function-text-history-prev = Poprzedni z historii
+ui-options-function-text-history-next = Następny z historii
+ui-options-function-text-release-focus = Zwolnij fokus
+ui-options-function-text-scroll-to-bottom = Przewiń na dół
+ui-options-function-text-tab-complete = Uzupełnienie Tab
+ui-options-function-text-complete-next = Uzupełnij następny
+ui-options-function-text-complete-prev = Uzupełnij poprzedni
+ui-options-net-pvs-entry = PVS entity budget
+ui-options-net-pvs-entry-tooltip =
+    This limits the rate at which the server will send newly visible
+    entities to the client. Obniżanie tego może pomóc zmniejszyć
     zacięcia, ale może skutkować ich nieoczekiwanym pojawieniem się.
 ui-options-net-pvs-leave = Częstotliwość odłączania PVS
 ui-options-net-pvs-leave-tooltip =
@@ -337,8 +379,10 @@ ui-options-net-pvs-leave-tooltip =
 
 ## Toggle window console command
 
-cmd-options-desc = Otwiera menu ustawień, opcjonalnie z określoną kartą.
-cmd-options-help = Użycie: options [tab]
+cmd-options-desc = Opens options menu, optionally with a specific tab selected.
+## Toggle window console command
+
+cmd-options-desc = Otwiera menu ustawień, opcjonalnie z określoną kartą. cmd-options-help = Użycie: options [tab]
 
 ## Accessibility menu
 
