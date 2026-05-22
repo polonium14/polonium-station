@@ -4,8 +4,8 @@ meta:
   engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 05/03/2026 00:18:00
-  entityCount: 12363
+  time: 05/22/2026 13:02:59
+  entityCount: 12369
 maps:
 - 1
 grids:
@@ -6753,7 +6753,7 @@ entities:
     - type: Transform
       pos: -14.5,-9.5
       parent: 2
-- proto: BarSignEngineChange
+- proto: BarSignZabka
   entities:
   - uid: 414
     components:
@@ -35744,7 +35744,7 @@ entities:
       pos: 40.5,-12.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -20551.936
+      secondsUntilStateChange: -20941.162
       state: Closing
   - uid: 5654
     components:
@@ -36253,6 +36253,28 @@ entities:
     components:
     - type: Transform
       pos: 29.136202,-6.538535
+      parent: 2
+- proto: FoodSnackAncientHotdog
+  entities:
+  - uid: 12366
+    components:
+    - type: Transform
+      pos: -11.0974,-4.3639646
+      parent: 2
+  - uid: 12367
+    components:
+    - type: Transform
+      pos: -13.238025,-4.8014646
+      parent: 2
+  - uid: 12368
+    components:
+    - type: Transform
+      pos: -11.0974,-3.6608396
+      parent: 2
+  - uid: 12369
+    components:
+    - type: Transform
+      pos: -10.230454,-3.868414
       parent: 2
 - proto: FoodSnackChocolate
   entities:
@@ -52302,6 +52324,13 @@ entities:
     - type: Transform
       pos: 42.38984,-10.466663
       parent: 2
+- proto: KitchenElectricGrill
+  entities:
+  - uid: 8750
+    components:
+    - type: Transform
+      pos: -13.5,-1.5
+      parent: 2
 - proto: KitchenMicrowave
   entities:
   - uid: 7983
@@ -53584,6 +53613,13 @@ entities:
     components:
     - type: Transform
       pos: 8.333701,-17.377625
+      parent: 2
+- proto: NFZLogo
+  entities:
+  - uid: 12364
+    components:
+    - type: Transform
+      pos: 5.5,1.5
       parent: 2
 - proto: NitrogenCanister
   entities:
@@ -57506,11 +57542,6 @@ entities:
     components:
     - type: Transform
       pos: -6.5,-14.5
-      parent: 2
-  - uid: 8750
-    components:
-    - type: Transform
-      pos: -10.5,1.5
       parent: 2
 - proto: RandomFoodSingle
   entities:
@@ -61608,19 +61639,19 @@ entities:
     - type: Transform
       pos: -1.5876693,-19.53403
       parent: 2
-- proto: SmartFridgeMedical
-  entities:
-  - uid: 9400
-    components:
-    - type: Transform
-      pos: 16.5,-3.5
-      parent: 2
 - proto: SmartFridge
   entities:
   - uid: 9401
     components:
     - type: Transform
       pos: -15.5,1.5
+      parent: 2
+- proto: SmartFridgeMedical
+  entities:
+  - uid: 9400
+    components:
+    - type: Transform
+      pos: 16.5,-3.5
       parent: 2
 - proto: SMESAdvanced
   entities:
@@ -62970,12 +63001,6 @@ entities:
     - type: Transform
       pos: -6.5,-3.5
       parent: 2
-  - uid: 9633
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -9.5,1.5
-      parent: 2
   - uid: 9634
     components:
     - type: Transform
@@ -63002,6 +63027,12 @@ entities:
     components:
     - type: Transform
       pos: -4.5,-3.5
+      parent: 2
+  - uid: 12365
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -9.5,1.5
       parent: 2
 - proto: StorageCanister
   entities:
@@ -64372,6 +64403,11 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -4.5,14.5
+      parent: 2
+  - uid: 9633
+    components:
+    - type: Transform
+      pos: -13.5,-1.5
       parent: 2
   - uid: 9774
     components:
