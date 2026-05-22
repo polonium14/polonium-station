@@ -1,4 +1,3 @@
-
 thaven-mood-secret-moods-name = Trzymaj Nastroje W Sekrecie
 thaven-mood-secret-moods-desc = Twoje Nastroje są ściśle trzymanym sekretem, i nigdy nie powinny być ujawniane komukolwiek.
 thaven-mood-no-modern-medicine-name = Żadnej Nowoczesnej Medycyny
