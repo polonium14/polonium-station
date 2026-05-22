@@ -11,11 +11,15 @@
 # pierwotnie licencjonowanego na podstawie licencji MIT (patrz https://github.com/space-syndicate/space-station-14/blob/master/LICENSE.TXT).
 
 import os
-import re
-import chardet
+import typing
 from datetime import datetime
 
-def find_top_level_dir(start_dir):
+from fluent.syntax import ast, FluentParser
+
+ENTRY_TYPES = (ast.Message,)
+
+
+def find_top_level_dir(start_dir: str) -> str:
     marker_file = 'SpaceStation14.sln'
     current_dir = start_dir
     while True:
@@ -27,106 +31,136 @@ def find_top_level_dir(start_dir):
             exit(-1)
         current_dir = parent_dir
 
-def find_ftl_files(root_dir):
+
+def find_ftl_files(root_dir: str) -> typing.List[str]:
     ftl_files = []
-    for root, dirs, files in os.walk(root_dir):
+    for root, _, files in os.walk(root_dir):
         for file in files:
             if file.endswith('.ftl'):
                 ftl_files.append(os.path.join(root, file))
     return ftl_files
 
-def detect_encoding(file_path):
-    with open(file_path, 'rb') as file:
-        raw_data = file.read()
-    return chardet.detect(raw_data)['encoding']
 
-def parse_ent_blocks(file_path):
+def read_file_text(file_path: str) -> typing.Optional[str]:
+    """Odczyt .ftl — preferuje UTF-8 (chardet myli np. znak ⏏ z Windows-1254)."""
     try:
-        encoding = detect_encoding(file_path)
-        with open(file_path, 'r', encoding=encoding) as file:
-            content = file.read()
-    except UnicodeDecodeError:
-        print(f"Wystąpił błąd podczas czytania pliku {file_path}. Próba czytania w UTF-8.")
+        raw = open(file_path, 'rb').read()
+    except OSError:
+        print(f"Nie można otworzyć pliku {file_path}. Pomijam.")
+        return None
+
+    for encoding in ('utf-8-sig', 'utf-8', 'cp1250', 'latin-1'):
         try:
-            with open(file_path, 'r', encoding='utf-8') as file:
-                content = file.read()
+            return raw.decode(encoding)
         except UnicodeDecodeError:
-            print(f"Nie udało się przeczytać pliku {file_path}. Pomijam.")
-            return {}
+            continue
 
-    ent_blocks = {}
-    current_ent = None
-    current_block = []
+    print(f"Nie udało się odczytać {file_path} jako UTF-8 — pomijam.")
+    return None
 
-    for line in content.split('\n'):
-        if line.startswith('ent-'):
-            if current_ent:
-                ent_blocks[current_ent] = '\n'.join(current_block)
-            current_ent = line.split('=')[0].strip()
-            current_block = [line]
-        elif current_ent and (line.strip().startswith('.desc') or line.strip().startswith('.suffix')):
-            current_block.append(line)
-        elif line.strip() == '':
-            if current_ent:
-                ent_blocks[current_ent] = '\n'.join(current_block)
-                current_ent = None
-                current_block = []
-        else:
-            if current_ent:
-                ent_blocks[current_ent] = '\n'.join(current_block)
-                current_ent = None
-                current_block = []
 
-    if current_ent:
-        ent_blocks[current_ent] = '\n'.join(current_block)
+def write_file_text(file_path: str, content: str) -> None:
+    with open(file_path, 'w', encoding='utf-8', newline='\n') as file:
+        file.write(content)
 
-    return ent_blocks
 
-def remove_duplicates(root_dir):
+def find_ent_occurrences(content: str) -> typing.List[typing.Tuple[str, int, int]]:
+    occurrences: typing.List[typing.Tuple[str, int, int]] = []
+    parsed = FluentParser().parse(content)
+    for element in parsed.body:
+        if not isinstance(element, ENTRY_TYPES):
+            continue
+        key = element.id.name
+        if not key.startswith('ent-') or not element.span:
+            continue
+        occurrences.append((key, element.span.start, element.span.end))
+    return occurrences
+
+
+def cut_span(text: str, start: int, end: int) -> str:
+    after = text[end:]
+    if after.startswith('\n'):
+        after = after[1:]
+    return text[:start] + after
+
+
+def remove_spans(content: str, spans: typing.List[typing.Tuple[int, int]]) -> str:
+    for start, end in sorted(spans, key=lambda item: item[0], reverse=True):
+        content = cut_span(content, start, end)
+    return content
+
+
+def remove_duplicates(root_dir: str):
     ftl_files = find_ftl_files(root_dir)
-    all_ents = {}
-    removed_duplicates = []
+    canonical_file_by_ent: typing.Dict[str, str] = {}
+    occurrences_by_file: typing.Dict[str, typing.List[typing.Tuple[str, int, int, str]]] = {}
+    removed_duplicates: typing.List[typing.Tuple[str, str, str]] = []
 
     for file_path in ftl_files:
-        ent_blocks = parse_ent_blocks(file_path)
-        for ent, block in ent_blocks.items():
-            if ent not in all_ents:
-                all_ents[ent] = (file_path, block)
+        content = read_file_text(file_path)
+        if content is None:
+            continue
+        file_occurrences = []
+        for key, start, end in find_ent_occurrences(content):
+            if key not in canonical_file_by_ent:
+                canonical_file_by_ent[key] = file_path
+            file_occurrences.append((key, start, end, content[start:end]))
+        occurrences_by_file[file_path] = file_occurrences
 
-    for file_path in ftl_files:
-        try:
-            encoding = detect_encoding(file_path)
-            with open(file_path, 'r', encoding=encoding) as file:
-                content = file.read()
+    files_changed = 0
+    for file_path, file_occurrences in occurrences_by_file.items():
+        content = read_file_text(file_path)
+        if content is None:
+            continue
 
-            ent_blocks = parse_ent_blocks(file_path)
-            for ent, block in ent_blocks.items():
-                if all_ents[ent][0] != file_path:
-                    content = content.replace(block, '')
-                    removed_duplicates.append((ent, file_path, block))
+        spans_to_remove: typing.List[typing.Tuple[int, int]] = []
+        seen_keys_in_file: typing.Set[str] = set()
 
-            content = re.sub(r'\n{3,}', '\n\n', content)
+        for key, start, end, block in file_occurrences:
+            if canonical_file_by_ent.get(key) != file_path:
+                spans_to_remove.append((start, end))
+                removed_duplicates.append((key, file_path, block))
+                continue
+            if key in seen_keys_in_file:
+                spans_to_remove.append((start, end))
+                removed_duplicates.append((key, file_path, block))
+                continue
+            seen_keys_in_file.add(key)
 
-            with open(file_path, 'w', encoding=encoding) as file:
-                file.write(content)
-        except Exception as e:
-            print(f"Błąd podczas przetwarzania pliku {file_path}: {str(e)}")
+        if not spans_to_remove:
+            continue
 
-    # Zapis logu usuniętych duplikatów
+        new_content = remove_spans(content, spans_to_remove)
+        if new_content == content:
+            continue
+
+        write_file_text(file_path, new_content)
+        files_changed += 1
+
+    print(f"Przetwarzanie zakończone. Sprawdzono plików: {len(ftl_files)}, zmieniono: {files_changed}")
+
+    if not removed_duplicates:
+        print("Duplikaty nie znaleziono — log nie został utworzony.")
+        return
+
     log_filename = f"removed_duplicates_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"
     with open(log_filename, 'w', encoding='utf-8') as log_file:
-        for ent, file_path, block in removed_duplicates:
+        for ent, path, block in removed_duplicates:
             log_file.write(f"Usunięto duplikat: {ent}\n")
-            log_file.write(f"Plik: {file_path}\n")
+            log_file.write(f"Plik: {path}\n")
             log_file.write("Zawartość:\n")
             log_file.write(block)
             log_file.write("\n\n")
 
-    print(f"Przetwarzanie zakończone. Sprawdzono pliki: {len(ftl_files)}")
-    print(f"Log usuniętych duplikatów zapisany w pliku: {log_filename}")
+    print(f"Usunięto duplikatów: {len(removed_duplicates)}. Log: {log_filename}")
 
-if __name__ == "__main__":
+
+def main():
     script_dir = os.path.dirname(os.path.abspath(__file__))
     main_folder = find_top_level_dir(script_dir)
-    root_dir = os.path.join(main_folder, "Resources\\Locale\\pl-PL")
+    root_dir = os.path.join(main_folder, "Resources", "Locale", "pl-PL")
     remove_duplicates(root_dir)
+
+
+if __name__ == "__main__":
+    main()
