@@ -111,3 +111,27 @@ vendor-salvage-floodlight-name = Floodlight
 vendor-salvage-floodlight-desc = A pole with powerful mounted lights on it.
 vendor-salvage-ore-box-name = Ore Box
 vendor-salvage-ore-box-desc = A large storage container for holding unprocessed ores.
+
+vendor-salvage-shuttle-gun-kinetic-circuitboard = Płytka do PTK-800 "Dematerializator"
+
+vendor-salvage-shuttle-gun-kinetic-circuitboard-desc = Płytka do PTK-800 "Dematerializator". Stacjonarne działo odzyskowe, doskonałe do zamontowania na prom odzyskowy, ładuje się samoistnie. (Urządzenie nie jest uwzględnione w pakiecie)
+
+vendor-salvage-shuttle-gun-seismic-circuitboard = Płytka do EXP-SMC "KosmoWstrząs"
+
+vendor-salvage-shuttle-gun-seismic-circuitboard-desc = Płytka do EXP-SMC "KosmoWstrząs". Stacjonarne działo odzyskowe domowej roboty. Wyrzuca ładunki sejsmiczne pozbawione zabezpieczeń, skuteczne przy otwieraniu asteroid. (Urządzenie nie jest uwzględnione w pakiecie)
+
+vendor-salvage-shuttle-gun-plasma-cutter-circuitboard = Płytka do PLM-CTT "Shuttle Cutter"
+
+vendor-salvage-shuttle-gun-plasma-cutter-circuitboard-desc = Płytka do PLM-CTT "Shuttle Cutter". Stacjonarne działo odzyskowe, ładowane poprzez plazmę, tnie asteroidy z łatwością. (Urządzenie nie jest uwzględnione w pakiecie)
+
+vendor-salvage-shuttle-gun-mineral-vacuum-circuitboard = Płytka do MNV-EX "Mineral Vacuum"
+
+vendor-salvage-shuttle-gun-mineral-vacuum-circuitboard-desc = Płytka do MNV-EX "Mineral Vacuum". Stacjonarne urządzenie przyciągające rudy. Nie stać przed urządzeniem kiedy jest aktywne. (Urządzenie nie jest uwzględnione w pakiecie)
+
+vendor-salvage-vacuum-ore-box-name = Próżniowa Skrzynia na Rudę
+
+vendor-salvage-vacuum-ore-box-desc = Duży pojemnik do przechowywania nieprzetworzonej rudy. Automatycznie podnosi rudę.
+
+vendor-salvage-shuttle-gun-kinetic-circuitboard-free = Płytka do PTK-800 "Dematerializator" (darmowa)
+
+vendor-salvage-shuttle-gun-kinetic-circuitboard-desc-free = Płytka do PTK-800 "Dematerializator". W ramach promocji dwie sztuki za darmo! (Urządzenie nie jest uwzględnione w ramach pakietu)

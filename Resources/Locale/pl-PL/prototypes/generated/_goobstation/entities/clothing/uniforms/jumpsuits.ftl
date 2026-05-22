@@ -12,3 +12,6 @@ ent-ClothingUniformMailCarrier = mail carrier's uniform
     .desc = Enemy of dogs everywhere.
 ent-ClothingUniformHecu = HECU uniform
     .desc = Hunt down the Freeman.
+
+ent-ClothingUniformJumpsuitTrainer = NCT Jumpsuit
+    .desc = A jumpsuit issued to Nanotrasen Career Trainers. Fills you with a feeling of pride.

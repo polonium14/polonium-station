@@ -10,3 +10,6 @@ ent-EngiCommsComputerCircuitboard = engineering communications computer board
     .desc = A computer printed circuit board for the engineering communications console.
 ent-MedicalCommsComputerCircuitboard = medical communications computer board
     .desc = A computer printed circuit board for the medical communications console.
+
+ent-CargoRequestAtmosphericsComputerCircuitboard = konsola rezerw atmosferycznych (płytka konsolowa)
+    .desc = Płytka drukowana do konsoli rezerw atmosferycznych.

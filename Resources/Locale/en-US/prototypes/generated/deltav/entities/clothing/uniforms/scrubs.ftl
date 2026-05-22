@@ -8,3 +8,6 @@ ent-UniformScrubsColorWhite = white scrubs
     .desc = A combination of comfort and utility intended to make removing every last organ someone has and selling them to a space robot much more official looking.
 ent-UniformScrubsColorCybersun = cybersun scrubs
     .desc = The official uniform of Cybersun's biotechnology division
+
+ent-UniformScrubsColorBlack = black scrubs
+    .desc = A combination of comfort and utility intended to make removing every last organ someone has and selling them to a space robot much more official looking.

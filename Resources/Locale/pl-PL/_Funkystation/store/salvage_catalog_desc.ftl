@@ -81,7 +81,6 @@ vendor-salvage-shuttle-gun-plasma-cutter-circuitboard-desc = Płytka do PLM-CTT 
 vendor-salvage-shuttle-gun-mineral-vacuum-circuitboard = Płytka do MNV-EX "Mineral Vacuum"
 vendor-salvage-shuttle-gun-mineral-vacuum-circuitboard-desc = Płytka do MNV-EX "Mineral Vacuum". Stacjonarne urządzenie przyciągające rudy. Nie stać przed urządzeniem kiedy jest aktywne. (Urządzenie nie jest uwzględnione w pakiecie)
 
-
 # Misc
 
 store-category-salvage-misc = Różne

@@ -78,3 +78,7 @@ research-technology-quantum-fiber-weaving = Quantum Fiber Weaving
 research-technology-bluespace-chemistry = Bluespace Chemistry
 research-technology-dual-wielding-technology = Technologia podwójnego trzymania
 research-technology-homebrewed-implants = Homebrewed Implants
+
+research-technology-shuttle-salvage-weapons = Technologia Wyrzutni Odzyskowych
+
+research-technology-shuttle-salvage-equipment = Technologia Sprzętu Promów Odzyskowych

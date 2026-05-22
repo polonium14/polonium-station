@@ -4,3 +4,9 @@ ent-ClothingHeadHatBeretOfficer = officers beret
     .desc = A black beret with the silver shield of the Nanotrasen security forces.
 ent-ClothingHeadMailCarrier = mail carrier's hat
     .desc = Smells like a good pension.
+
+ent-ClothingHeadHatTrainer = NCT's hat
+    .desc = A hat issued to Nanotrasen Career Trainers. Makes you feel stylish.
+
+ent-ClothingHeadBeretTrainer = NCT's beret
+    .desc = A beret issued to Nanotrasen Career Trainers. Makes you feel stylish.

@@ -152,3 +152,6 @@ ent-VendingMachineChemicals = ChemVend
     .desc = Probably not the coffee machine.
 ent-VendingMachineChemicalsSyndicate = SyndieJuice
     .desc = Not made with freshly squeezed syndies, I hope. Backwards compatible with standard ChemVend restocks.
+
+ent-VendingMachineSalvage = OdzyskMat
+    .desc = Najlepszy przyjaciel krasnoluda!

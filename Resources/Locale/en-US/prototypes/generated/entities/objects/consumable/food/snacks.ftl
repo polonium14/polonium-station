@@ -85,3 +85,9 @@ ent-FoodCookieFortune = cookie fortune
     .desc = The fortune reads: The end is near...and it's all your fault.
 ent-FoodPacketMRETrash = MRE wrapper
     .desc = A general purpose wrapper for a variety of military food goods.
+
+ent-FoodSnackDumplings = pierogi liofilizowane
+    .desc = Klasyczne polskie pierogi z kapustą i grzybami, liofilizowane na potrzeby misji kosmicznej. Smacznego!
+
+ent-FoodPacketDumplingsTrash = pierogi liofilizowane
+    .desc = { ent-FoodPacketTrash.desc }

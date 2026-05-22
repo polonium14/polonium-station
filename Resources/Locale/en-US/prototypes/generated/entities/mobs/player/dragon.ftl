@@ -1,9 +1,11 @@
 ent-BaseMobDragon = space dragon
     .desc = A flying leviathan, loosely related to space carps.
+  .gender = male
 ent-MobDragon = { ent-BaseMobDragon }
     .desc = { ent-BaseMobDragon.desc }
 ent-DragonsBreathGun = dragon's lung
     .desc = For dragon's breathing.
+  .gender = neuter
 ent-MobDragonDungeon = { ent-BaseMobDragon }
     .suffix = Dungeon
     .desc = { ent-BaseMobDragon.desc }
