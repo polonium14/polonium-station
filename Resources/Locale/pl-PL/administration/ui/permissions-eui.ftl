@@ -19,6 +19,6 @@ permissions-eui-edit-title-button = Edytuj
 permissions-eui-edit-admin-rank-button = Edytuj
 permissions-eui-edit-admin-rank-window-title = Edytuj rangę administratora
 permissions-eui-edit-admin-window-save-button = Zapisz
-permissions-eui-edit-admin-window-remove-flag-button = Usuń
 cmd-permissions-desc = Otwiera panel uprawnień administratora.
 cmd-permissions-help = Użycie: permissions
+permissions-eui-edit-admin-window-remove-flag-button = Usuń
