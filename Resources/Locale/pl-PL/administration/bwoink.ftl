@@ -25,6 +25,3 @@ bwoink-system-player-reconnecting = podłączył się ponownie.
 bwoink-system-player-banned = został zbanowany z powodu: { $banReason }
 bwoink-message-admin-only = (Tylko Admini)
 bwoink-message-silent = (C)
-
-# C - cichy
-
