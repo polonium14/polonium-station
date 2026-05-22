@@ -1,4 +1,3 @@
-
 marking-amazon = Amazon
 marking-astolfo = Astolfo
 marking-baum = Baum
