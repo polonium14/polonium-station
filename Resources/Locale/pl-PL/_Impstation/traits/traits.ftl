@@ -1,4 +1,3 @@
-
 trait-nocontractions-name = Bez Skrótów
 trait-nocontractions-desc = Jesteś (przeważnie) niezdolny do używania skrótów.
 trait-milbrat-name = Wojskowy Żargon
