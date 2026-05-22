@@ -1,4 +1,3 @@
-
 paper-sign-verb = Sign
 paper-signed-other = { CAPITALIZE($user) } signs { $target }.
 paper-signed-self = You sign { $target }.
