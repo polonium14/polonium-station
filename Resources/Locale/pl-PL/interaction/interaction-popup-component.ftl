@@ -1,5 +1,6 @@
 ### Interaction Popup component
 
+
 ## Petting animals
 
 petting-success-generic = You pet { $target } on { POSS-ADJ($target) } head.
@@ -97,6 +98,6 @@ hugging-success-generic-target = { CAPITALIZE($user) } hugs you.
 ## Other
 
 petting-success-tesla = You pet { $target }, violating the laws of nature and physics.
-petting-failure-tesla = You reach out towards { $target }, but { SUBJECT($target) } { CONJUGATE-BASIC($target, "zap", "zaps") } your hand away.
 petting-success-mail-teleporter = You pet { $target } on { POSS-ADJ($target) } dutiful, cold exterior.
 petting-failure-mail-teleporter = You reach out to pet { $target }, but { SUBJECT($target) } { CONJUGATE-BE($target) } busy sorting mail!
+petting-failure-tesla = You reach out towards { $target }, but { SUBJECT($target) } { CONJUGATE-BASIC($target, "zap", "zaps") } your hand away.
