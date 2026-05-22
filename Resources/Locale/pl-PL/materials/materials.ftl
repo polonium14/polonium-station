@@ -24,8 +24,8 @@ materials-web = jedwab
 materials-bones = kości
 materials-coal = węgiel
 materials-diamond = diament
-materials-gunpowder = proch strzelniczy
 materials-cotton = bawełna
+materials-gunpowder = proch strzelniczy
 # Ores
 materials-raw-iron = ruda żelaza
 materials-raw-quartz = ruda kwarcu
