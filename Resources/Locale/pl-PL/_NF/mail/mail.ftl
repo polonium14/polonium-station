@@ -1,4 +1,3 @@
-
 mail-large-item-name-unaddressed = Package
 mail-large-item-name-addressed = Package ({ $recipient })
 mail-large-desc-far = A large Package.
