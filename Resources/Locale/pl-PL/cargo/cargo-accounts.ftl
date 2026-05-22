@@ -6,6 +6,7 @@ cargo-account-medical-name = Fundusz zdrowia załogi
 cargo-account-medical-code = MED
 cargo-account-science-name = Międzygwiezdny fundusz rozwojowy
 cargo-account-science-code = PR
+# funkystation - changed from Station Defense Reserves to Station Defense Allocation
 cargo-account-security-name = Rezerwa ochrony stacji
 cargo-account-security-code = DO
 cargo-account-service-name = Zbiórczy fundusz serwisowy
