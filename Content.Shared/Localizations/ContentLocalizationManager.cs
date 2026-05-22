@@ -53,8 +53,11 @@ namespace Content.Shared.Localizations
             var cultureEn = new CultureInfo(FallbackCulture);
 
             // Polish
-            // TODO: Na razie te funkcje są zduplikowane jako wypełniacze, aby uniknąć błędów. W przyszłości należy stworzyć własne metody lokalizacyjne.
             _loc.SetCulture(culture);
+
+            _loc.LoadCulture(cultureEn);
+            _loc.SetFallbackCluture(cultureEn);
+
             _loc.AddFunction(culture, "PRESSURE", FormatPressure);
             _loc.AddFunction(culture, "POWERWATTS", FormatPowerWatts);
             _loc.AddFunction(culture, "POWERJOULES", FormatPowerJoules);
@@ -65,9 +68,11 @@ namespace Content.Shared.Localizations
             _loc.AddFunction(culture, "NATURALFIXED", FormatNaturalFixed);
             _loc.AddFunction(culture, "NATURALPERCENT", FormatNaturalPercent);
             _loc.AddFunction(culture, "PLAYTIME", FormatPlaytime);
-            _loc.AddFunction(culture, "MAKEPLURAL", FormatMakePlural);
             _loc.AddFunction(culture, "MANY", FormatMany);
             _loc.AddFunction(culture, "GASQUANTITY", FormatGasQuantity); // Frontier
+
+            _loc.AddFunction(cultureEn, "MAKEPLURAL", FormatMakePlural);
+            _loc.AddFunction(cultureEn, "MANY", FormatMany);
         }
 
         private ILocValue FormatMany(LocArgs args)
