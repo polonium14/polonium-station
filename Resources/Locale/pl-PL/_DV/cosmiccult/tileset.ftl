@@ -1,4 +1,3 @@
-
 tiles-cosmiccult-floor-glyph = malign glyphic surface
 tiles-cosmiccult-floor-smooth = malign smooth surface
 tiles-cosmiccult-floor-half = malign half-pattern surface
