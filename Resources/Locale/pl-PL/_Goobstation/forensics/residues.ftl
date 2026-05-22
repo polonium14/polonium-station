@@ -1,2 +1,1 @@
-
 residue-yellow = yellow
