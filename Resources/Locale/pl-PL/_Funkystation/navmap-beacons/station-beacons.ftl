@@ -1,4 +1,3 @@
-
 station-beacon-internal-affairs = Sprawy Wewnętrzne
 station-beacon-ntrep = Przedstawiciel Nanotrasen
 station-beacon-magi = Sędzia
