@@ -1,4 +1,3 @@
-
 cassette-repair-start = You start winding the tape back into { $item }.
 cassette-repair-finish = You manage to wind the tape back into { $item }.
 tape-cassette-position = The cassette is about [color=green]{ $position }%[/color] the way through.
