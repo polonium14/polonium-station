@@ -2,6 +2,9 @@ roles-antag-generic-solo-antagonist-name = Samotny antagonista
 roles-antag-generic-free-agent-name = Wolny agent
 roles-antag-generic-team-antagonist-name = Antagonista zespołowy
 roles-antag-generic-silicon-antagonist-name = Robot antagonista
+
+## goob edited
+
 roles-antag-syndicate-agent-name = Agent Syndykatu
 roles-antag-syndicate-agent-objective = Wykonaj swoje zadania nie bedąc złapanym.
 roles-antag-syndicate-agent-sleeper-name = Uśpiony agent Syndykatu
