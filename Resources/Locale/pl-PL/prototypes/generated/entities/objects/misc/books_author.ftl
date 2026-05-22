@@ -1,5 +1,3 @@
-# Przetłumaczono za pomocą DeepL, możliwe są niedokładności.
-
 ent-BookNarsieLegend = legenda o Nar'SI
     .desc = Księga jest starym, oprawionym w skórę tomem z misternymi grawerunkami na okładce. Strony są pożółkłe i kruche ze starości, a tusz tekstu wyblakł w niektórych miejscach. Wygląda na to, że była często czytana i bardzo lubiana, z pozaginanymi rogami i zapiskami nabazgranymi na marginesach. Mimo swojego starego wyglądu, księga wciąż emanuje poczuciem mistycznej mocy i cudowności, sugerując sekrety i wiedzę zawarte na jej stronach.
 ent-BookTruth = badanie różnych perspektyw filozoficznych na temat prawdy i złożoności kłamstwa
