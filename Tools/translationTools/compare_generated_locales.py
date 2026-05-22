@@ -4,7 +4,7 @@ import argparse
 import os
 import sys
 from pathlib import Path
-from typing import Dict, List, Set, Tuple, Union
+from typing import Dict, List, Optional, Set, Tuple, Union
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from fluent.syntax import ast, FluentParser, FluentSerializer
@@ -91,13 +91,25 @@ def _extract_span_text(source: str, element) -> str:
     return FluentSerializer(with_junk=True).serialize(ast.Resource(body=[element]))
 
 
+def collect_locale_message_keys(root: Path) -> Set[str]:
+    keys: Set[str] = set()
+    if not root.is_dir():
+        return keys
+    for file_path in root.rglob('*.ftl'):
+        for key in collect_fluent_keys(file_path):
+            if '.' not in key:
+                keys.add(key)
+    return keys
+
+
 def sync_missing_keys_in_file(
     source_text: str,
     source_parsed: ast.Resource,
     target_text: str,
     target_keys: Dict[str, Union[ast.Message, ast.Term]],
+    locale_message_keys: Optional[Set[str]] = None,
 ) -> Tuple[str, List[str]]:
-    """Dopisuje brakujące klucze/atrybuty do target_text (bez globalnego pomijania duplikatów)."""
+    """Dopisuje brakujące klucze/atrybuty do target_text (per plik; opcjonalnie bez duplikatów w całej lokalizacji)."""
     append_snippets: List[str] = []
     insertions: List[Tuple[int, str]] = []
     added_keys: List[str] = []
@@ -112,8 +124,12 @@ def sync_missing_keys_in_file(
 
         target_entry = target_keys.get(key_name)
         if target_entry is None:
+            if locale_message_keys is not None and key_name in locale_message_keys:
+                continue
             append_snippets.append(_extract_span_text(source_text, source_entry))
             target_keys[key_name] = source_entry
+            if locale_message_keys is not None:
+                locale_message_keys.add(key_name)
             added_keys.append(key_name)
             continue
 
@@ -150,6 +166,8 @@ def sync_missing_keys_in_file(
 
 def fix_key_differences(en_root: Path, pl_root: Path, common_files: Set[str]) -> int:
     files_changed = 0
+    pl_locale_keys = collect_locale_message_keys(pl_root)
+    en_locale_keys = collect_locale_message_keys(en_root)
 
     for rel_path in sorted(common_files):
         en_file = FluentFile(str(en_root / rel_path))
@@ -163,8 +181,12 @@ def fix_key_differences(en_root: Path, pl_root: Path, common_files: Set[str]) ->
         pl_keys = _collect_keys_by_id(pl_parsed)
         en_keys = _collect_keys_by_id(en_parsed)
 
-        new_pl, pl_added = sync_missing_keys_in_file(en_text, en_parsed, pl_text, dict(pl_keys))
-        new_en, en_added = sync_missing_keys_in_file(pl_text, pl_parsed, en_text, dict(en_keys))
+        new_pl, pl_added = sync_missing_keys_in_file(
+            en_text, en_parsed, pl_text, dict(pl_keys), pl_locale_keys,
+        )
+        new_en, en_added = sync_missing_keys_in_file(
+            pl_text, pl_parsed, en_text, dict(en_keys), en_locale_keys,
+        )
 
         changed = False
         if new_pl != pl_text:

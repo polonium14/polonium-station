@@ -93,14 +93,20 @@ Synchronizuje klucze i pliki między en-US a pl-PL w plikach Fluent (.ftl).
 - Ignorowane foldery są konfigurowalne w stałej `IGNORED_FOLDERS`.
 
 ### 3. `clean_duplicates.py`
-Usuwa zduplikowane wpisy (wiadomości typu `ent-*` wraz z `.desc` i `.suffix`) w plikach Fluent (.ftl) dla wskazanej lokalizacji.
+Usuwa zduplikowane wpisy Fluent (`ent-*`, `trait-*`, itd.) w plikach `.ftl` — w tym duplikaty w jednym pliku i między plikami.
 
 **Co robi:**
-- Przechodzi rekursywnie przez katalog lokalizacji (domyślnie `Resources/Locale/pl-PL`).
-- Parsuje bloki zaczynające się od `ent-` aż do pustej linii lub zakończenia sekcji.
-- Zachowuje pierwsze wystąpienie każdej encji, kolejne duplikaty usuwa.
-- Czyści nadmiarowe puste linie (redukcja wielokrotnych przejść linii do maks. dwóch).
+- Przechodzi rekursywnie przez katalog lokalizacji (`pl-PL`, `en-US` lub oba — `--locale`).
+- Zachowuje pierwsze wystąpienie każdego identyfikatora wiadomości w danej lokalizacji, kolejne kopie usuwa (według AST, nie `str.replace`).
+- Usuwa zduplikowane atrybuty w obrębie jednej wiadomości (np. podwójne `.desc`).
+- Zapis tylko w UTF-8; plik zapisywany tylko przy realnej zmianie.
 - Tworzy log z informacjami o usuniętych duplikatach.
+
+```bash
+python clean_duplicates.py
+python clean_duplicates.py --locale en-US
+python clean_duplicates.py --locale both
+```
 
 **Wejście:**
 - Pliki `.ftl` w katalogu docelowym lokalizacji (iteracja przez wszystkie podfoldery).
@@ -122,7 +128,7 @@ Czyści strukturę katalogów lokalizacji usuwając puste pliki i puste foldery.
 1. Odnajduje katalog główny projektu po pliku `SpaceStation14.sln`.
 2. Ustawia katalog bazowy: `Resources/Locale`.
 3. Rekurencyjnie przechodzi przez wszystkie podfoldery.
-4. Usuwa każdy plik o rozmiarze 0 bajtów.
+4. Usuwa pliki o rozmiarze 0 bajtów oraz pliki zawierające wyłącznie białe znaki (spacje, tabulatory, puste linie).
 5. Po przetworzeniu plików próbuje usunąć katalog, jeśli jest pusty.
 
 **Wejście:**
@@ -134,7 +140,7 @@ Czyści strukturę katalogów lokalizacji usuwając puste pliki i puste foldery.
 
 **Uwagi**:
 - Nie analizuje zawartości plików .ftl.
-- Usuwa wyłącznie pliki o dokładnym rozmiarze 0 bajtów.
+- Usuwa pliki puste lub z samymi białymi znakami (nie analizuje treści `.ftl` z kluczami).
 - Uruchamiany automatycznie przez `translation.bat`/`translation.sh`.
 - Aby ograniczyć czyszczenie do jednej lokalizacji (np. tylko pl-PL), zmień `root_dir = os.path.join(main_folder, "Resources\\Locale")` na `root_dir = os.path.join(main_folder, "Resources\\Locale\\pl-PL")`.
 
@@ -188,6 +194,8 @@ python compare_generated_locales.py --mode keys --fix --limit 1000
 
 **Uwagi po `--fix`:**
 - Nowe wpisy w pl-PL są kopiowane z en-US (angielski tekst) — warto je potem przetłumaczyć ręcznie.
+- `--fix` **nie** dopisuje klucza, jeśli ten sam identyfikator wiadomości już istnieje gdzie indziej w tej samej lokalizacji (unika duplikatów między `_polonium/...` a `entities/...`).
+- Po `--fix` uruchom `python clean_duplicates.py --locale both`, jeśli linter nadal zgłasza duplikaty Fluent.
 - Skrypt nie jest częścią `translation.bat`/`translation.sh`; uruchamiaj go ręcznie po `yamlextractor.py` lub gdy podejrzewasz rozjazd `generated`.
 - Pomoc: `python compare_generated_locales.py --help`
 
