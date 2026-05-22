@@ -1,4 +1,3 @@
-
 trait-ultravision-name = Ultraviolet Vision
 trait-ultravision-desc =
     Whether through custom bionic eyes, random mutation,
