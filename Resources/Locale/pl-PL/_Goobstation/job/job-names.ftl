@@ -1,4 +1,3 @@
-
 job-name-futureagent = Future Agent
 job-name-salvagediver = Salvage Diver
 job-name-ntr = Nanotrasen Representative
