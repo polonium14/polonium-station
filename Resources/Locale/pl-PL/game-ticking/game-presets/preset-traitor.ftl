@@ -1,4 +1,5 @@
 ## Traitor
+## GOOB EDITED
 
 traitor-round-end-codewords = Hasłami były: [color=White]{ $codewords }[/color]
 traitor-round-end-agent-name = zdrajca
@@ -19,15 +20,16 @@ traitor-death-match-description = Wszyscy są zdrajcami. Wszyscy chcą się nawz
 traitor-death-match-station-is-too-unsafe-announcement = Stacja jest zbyt niebezpieczna, aby kontynuować. Masz jedną minutę.
 traitor-death-match-end-round-description-first-line = PDA odzyskane po rundzie...
 traitor-death-match-end-round-description-entry = PDA { $originalName }, z { $tcBalance } TK
-
-## TraitorRole
-
 # TraitorRole
 traitor-role-greeting =
     Jesteś agentem wysłanym przez { $corporation } w imieniu [color = darkred]Syndykatu.[/color]
     Twoje cele i hasła są wymienione w menu postaci.
     Wykorzystaj swój uplink, aby kupić narzędzia potrzebne do wykonania tej misji.
     Śmierć Nanotrasen!
+
+## TraitorRole
+
+# TraitorRole
 traitor-role-codewords =
     Hasła to: [color = lightgray]
     { $codewords }.[/color]
@@ -39,13 +41,13 @@ traitor-role-uplink-code =
 traitor-role-moreinfo = Znajdź więcej informacji o swojej roli w menu postaci.
 traitor-role-nouplink = Nie masz uplinku Syndykatu. Wykorzystaj to.
 traitor-role-allegiances = Twoje przynależności:
-traitor-role-notes = Notatki od twojego pracodawcy:
 traitor-role-uplink-implant =
     Twój implant uplinku został aktywowany, dostęp do niego uzyskasz z paska skrótów.
     Uplink jest bezpieczny, dopóki ktoś nie usunie go z twojego ciała.
+traitor-role-notes = Notatki od twojego pracodawcy:
 # don't need all the flavour text for character menu
 traitor-role-codewords-short =
     Hasła to:
     { $codewords }.
-traitor-role-uplink-code-short = Twój kod uplinku to { $code }. Ustaw go jako dzwonek w swoim PDA, aby uzyskać dostęp do uplinku.
 traitor-role-uplink-implant-short = Twój uplink został wszczepiony. Uzyskaj do niego dostęp z paska skrótów.
+traitor-role-uplink-code-short = Twój kod uplinku to { $code }. Ustaw go jako dzwonek w swoim PDA, aby uzyskać dostęp do uplinku.
