@@ -1,4 +1,3 @@
-
 reagent-effect-guidebook-cleanse-cultist =
     { $chance ->
         [1] cleanses
