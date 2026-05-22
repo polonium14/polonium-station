@@ -1,4 +1,3 @@
-
 null-grail-verb = Swirl contents
 null-grail-popup = You begin swirling the { $shakeable }'s contents.
 null-grail-popup-others = { CAPITALIZE($user) } begins swirling the { $shakeable }'s contents.
