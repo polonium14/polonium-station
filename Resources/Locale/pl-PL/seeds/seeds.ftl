@@ -1,4 +1,5 @@
 # Nouns
+# Nouns
 seeds-noun-seeds = nasiona
 seeds-noun-spores = zarodniki
 # Seeds
@@ -139,6 +140,6 @@ seeds-capfruit-display-name = drzewo kapiszowocowe
 seeds-cherry-name = wiśnia
 seeds-cherry-display-name = drzewo wiśniowe
 seeds-anomaly-berry-name = dziwojagoda
-seeds-anomaly-berry-display-name = krzak dziwojagód
 seeds-bloonion-name = cebula balonowa
 seeds-bloonion-display-name = cebula balonowa
+seeds-anomaly-berry-display-name = krzak dziwojagód
