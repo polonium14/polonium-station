@@ -55,7 +55,6 @@ reagent-effect-condition-guidebook-has-tag =
         [true] nie ma
        *[false] ma
     } tag { $tag }
-reagent-effect-condition-guidebook-this-reagent = ten reagent
 reagent-effect-condition-guidebook-blood-reagent-threshold =
     { $max ->
         [2147483648] w krwiobiegu jest co najmniej { NATURALFIXED($min, 2) }u { $reagent }
@@ -70,7 +69,13 @@ reagent-effect-condition-guidebook-breathing =
         [true] oddycha normalnie
        *[false] dusi się
     }
+reagent-effect-condition-guidebook-this-reagent = ten reagent
 reagent-effect-condition-guidebook-ling = cel jest Odmieńcem
+reagent-effect-condition-guidebook-internals =
+    metabolizujący { $usingInternals ->
+        [true] używa butli z tlenem
+       *[false] oddycha powietrzem atmosferycznym
+    }
 reagent-effect-condition-guidebook-damage-threshold =
     { $max ->
         [2147483648] cel ma przynajmniej { NATURALFIXED($min, 2) } obrażeń typu { $damage }
@@ -79,9 +84,4 @@ reagent-effect-condition-guidebook-damage-threshold =
                 [0] cel ma co najwyżej { NATURALFIXED($max, 2) } obrażeń typu { $damage }
                *[other] cel ma pomiędzy { NATURALFIXED($min, 2) } a { NATURALFIXED($max, 2) } obrażeń typu { $damage }
             }
-    }
-reagent-effect-condition-guidebook-internals =
-    metabolizujący { $usingInternals ->
-        [true] używa butli z tlenem
-       *[false] oddycha powietrzem atmosferycznym
     }
