@@ -12,10 +12,10 @@ character-setup-gui-create-new-character-button-tooltip =
     }.
 character-setup-gui-character-picker-button-delete-button = Usuń
 character-setup-gui-character-picker-button-confirm-delete-button = Potwierdź
-character-setup-gui-save-panel-title = Niezapisane zmiany postaci
 character-setup-gui-character-picker-button-enabled-button = Aktywny
 character-setup-gui-character-picker-button-disabled-button = Nieaktywny
 character-setup-gui-edit-job-priorities-button = Edytuj priorytety pracy
+character-setup-gui-save-panel-title = Niezapisane zmiany postaci
 character-setup-gui-save-panel-save = Zapisz
 character-setup-gui-save-panel-nosave = Nie zapisuj
 character-setup-gui-save-panel-cancel = Anuluj
