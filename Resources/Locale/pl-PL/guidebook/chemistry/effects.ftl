@@ -62,21 +62,6 @@ reagent-effect-guidebook-satiate-hunger =
         [1] hunger averagely
        *[other] hunger at { NATURALFIXED($relative, 3) }x the average rate
     }
-reagent-effect-guidebook-health-change =
-    { $chance ->
-        [1]
-            { $healsordeals ->
-                [heals] Heals
-                [deals] Deals
-               *[both] Modifies health by
-            }
-       *[other]
-            { $healsordeals ->
-                [heals] heal
-                [deals] deal
-               *[both] modify health by
-            }
-    } { $changes }
 reagent-effect-guidebook-even-health-change =
     { $chance ->
         [1]
@@ -90,6 +75,21 @@ reagent-effect-guidebook-even-health-change =
                 [heals] evenly heal
                 [deals] evenly deal
                *[both] evenly modify health by
+            }
+    } { $changes }
+reagent-effect-guidebook-health-change =
+    { $chance ->
+        [1]
+            { $healsordeals ->
+                [heals] Heals
+                [deals] Deals
+               *[both] Modifies health by
+            }
+       *[other]
+            { $healsordeals ->
+                [heals] heal
+                [deals] deal
+               *[both] modify health by
             }
     } { $changes }
 reagent-effect-guidebook-status-effect =
@@ -235,16 +235,16 @@ reagent-effect-guidebook-drunk =
         [1] Causes
        *[other] cause
     } drunkness
-reagent-effect-guidebook-electrocute =
-    { $chance ->
-        [1] Electrocutes
-       *[other] electrocute
-    } the metabolizer for { NATURALFIXED($time, 3) } { MANY("second", $time) }
 reagent-effect-guidebook-emote =
     { $chance ->
         [1] Will force
        *[other] force
     } the metabolizer to [bold][color=white]{ $emote }[/color][/bold]
+reagent-effect-guidebook-electrocute =
+    { $chance ->
+        [1] Electrocutes
+       *[other] electrocute
+    } the metabolizer for { NATURALFIXED($time, 3) } { MANY("second", $time) }
 reagent-effect-guidebook-extinguish-reaction =
     { $chance ->
         [1] Extinguishes
@@ -381,6 +381,11 @@ reagent-effect-guidebook-plant-seeds-add =
         [1] Restores the
        *[other] restore the
     } seeds of the plant
+reagent-effect-guidebook-plant-seeds-remove =
+    { $chance ->
+        [1] Removes the
+       *[other] remove the
+    } seeds of the plant
 reagent-effect-guidebook-add-to-chemicals =
     { $chance ->
         [1]
@@ -413,8 +418,3 @@ reagent-effect-guidebook-adjust-ling-chemicals =
         [1] to
        *[-1] from
     } the metabolizer
-reagent-effect-guidebook-plant-seeds-remove =
-    { $chance ->
-        [1] Removes the
-       *[other] remove the
-    } seeds of the plant
