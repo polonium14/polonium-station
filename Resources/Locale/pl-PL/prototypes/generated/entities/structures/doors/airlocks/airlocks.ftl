@@ -1,6 +1,12 @@
 ent-AirlockFreezer = { ent-Airlock }
     .suffix = Lodówka
     .desc = { ent-Airlock.desc }
+ent-AirlockJanitor = { ent-Airlock }
+    .suffix = Janitor
+    .desc = { ent-Airlock.desc }
+ent-AirlockJanitorGlass = { ent-AirlockGlass }
+    .suffix = Janitor
+    .desc = { ent-AirlockGlass.desc }
 ent-AirlockEngineering = { ent-Airlock }
     .suffix = Inżynieria
     .desc = { ent-Airlock.desc }
@@ -9,6 +15,9 @@ ent-AirlockAtmospherics = { ent-AirlockEngineering }
     .desc = { ent-AirlockEngineering.desc }
 ent-AirlockCargo = { ent-Airlock }
     .suffix = Logistyka
+    .desc = { ent-Airlock.desc }
+ent-AirlockSalvage = { ent-Airlock }
+    .suffix = Salvage
     .desc = { ent-Airlock.desc }
 ent-AirlockHydroponics = { ent-Airlock }
     .suffix = Hydroponika
@@ -61,6 +70,9 @@ ent-AirlockAtmosphericsGlass = { ent-AirlockEngineeringGlass }
 ent-AirlockCargoGlass = { ent-AirlockGlass }
     .suffix = Logistyka
     .desc = { ent-AirlockGlass.desc }
+ent-AirlockSalvageGlass = { ent-AirlockGlass }
+    .suffix = Salvage
+    .desc = { ent-AirlockGlass.desc }
 ent-AirlockHydroponicsGlass = { ent-AirlockGlass }
     .suffix = Hydroponika
     .desc = { ent-AirlockGlass.desc }
@@ -94,19 +106,3 @@ ent-AirlockMiningGlass = { ent-AirlockCargoGlass }
 ent-AirlockCentralCommandGlass = { ent-AirlockCommandGlass }
     .suffix = Centralne Dowództwo
     .desc = { ent-AirlockCommandGlass.desc }
-
-ent-AirlockJanitor = { ent-Airlock }
-    .suffix = Janitor
-    .desc = { ent-Airlock.desc }
-
-ent-AirlockJanitorGlass = { ent-AirlockGlass }
-    .suffix = Janitor
-    .desc = { ent-AirlockGlass.desc }
-
-ent-AirlockSalvage = { ent-Airlock }
-    .suffix = Salvage
-    .desc = { ent-Airlock.desc }
-
-ent-AirlockSalvageGlass = { ent-AirlockGlass }
-    .suffix = Salvage
-    .desc = { ent-AirlockGlass.desc }
