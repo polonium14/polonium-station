@@ -1,4 +1,3 @@
-
 ## DeltaV NanoChat keybinds
 
 ui-options-header-nano-chat = NanoChat
