@@ -1,4 +1,3 @@
-
 hail-0 = Stop breaking the law, asshole!!
 hail-1 = Stop or I will bash you!!
 hail-2 = Stop in the name of the law!!
