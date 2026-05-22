@@ -29,4 +29,3 @@ reagent-desc-juice-tomato = Pomidory zrobione na sok. Co za marnowanie dobrych p
 reagent-name-juice-watermelon = sok arbuzowy
 reagent-desc-juice-watermelon = Pyszny sok z arbuza.
 reagent-name-juice-cherry = sok wiśniowy
-reagent-desc-juice-cherry = Pyszny sok wiśniowy, słodki i cierpki.
