@@ -1,4 +1,3 @@
-
 cosmicability-generic-fail = Your influence fails to take hold..
 cosmicability-hibernate-confirm = Press again to activate Slumber Shell.
 cosmicability-glare-confirm = Press again to activate Null Glare.
