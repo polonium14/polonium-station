@@ -10,5 +10,3 @@ ent-EngiComputerComms = engineering communications computer
     .desc = A computer used to make station wide announcements via keyboard, set the appropriate alert level, and call the emergency shuttle.
 ent-MedicalComputerComms = medical communications computer
     .desc = A computer used to make station wide announcements via keyboard, set the appropriate alert level, and call the emergency shuttle.
-ent-ComputerCargoOrdersAtmospherics = atmospheric reserves computer
-    .desc = Used by the atmospherics department to manage gases and order supplies.
