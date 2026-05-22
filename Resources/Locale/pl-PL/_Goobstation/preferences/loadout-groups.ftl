@@ -1,4 +1,3 @@
-
 loadout-group-ntr-eyes = Nanotrasen Representative glasses
 loadout-group-ntr-head = Przedstawiciel Nanotrasen – nakrycie głowy
 loadout-group-ntr-neck = Przedstawiciel Nanotrasen – szyja
