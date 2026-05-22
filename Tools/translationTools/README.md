@@ -49,9 +49,15 @@ Wyodrębnia klucze (nazwy, opisy, sufiksy, itp.) z plików YAML (prototypów) i 
 - Struktura podkatalogów odpowiada względnym ścieżkom plików prototypów (konwertowana do małych liter).
 - Nazwa pliku `.ftl` odpowiada nazwie pliku `.yml`.
 
+**Tryby (`--mode`):**
+- `both` (domyślnie) — aktualizuje en-US z YAML; tworzy brakujący pl-PL jako kopię en-US.
+- `en-only` — tylko en-US z YAML; pl-PL nie jest zmieniany.
+- `pl-only` — tylko pl-PL z YAML; en-US nie jest zmieniany.
+
 **Uwagi:**
-- Skrypt jest bezparametrowy. Korzysta z lokalizacji katalogów projektu ustalanych przez klasę `Project`.
-- Uruchamiany automatycznie przez `translation.bat`/`translation.sh`.
+- Korzysta z lokalizacji katalogów projektu ustalanych przez klasę `Project`.
+- Uruchamiany automatycznie przez `translation.bat`/`translation.sh` (tryb `both`).
+- Aktualizuje pliki punktowo; niezmiennione bloki pozostają bez zmian.
 - Przy nietypowych myślnikach uruchom dodatkowo `dash_normalizer.py` po generacji.
 
 ### 2. `keyfinder.py`
@@ -132,7 +138,60 @@ Czyści strukturę katalogów lokalizacji usuwając puste pliki i puste foldery.
 - Uruchamiany automatycznie przez `translation.bat`/`translation.sh`.
 - Aby ograniczyć czyszczenie do jednej lokalizacji (np. tylko pl-PL), zmień `root_dir = os.path.join(main_folder, "Resources\\Locale")` na `root_dir = os.path.join(main_folder, "Resources\\Locale\\pl-PL")`.
 
-### 5. `dash_normalizer.py`
+### 5. `compare_generated_locales.py`
+Porównuje katalogi `Resources/Locale/en-US/prototypes/generated` i `Resources/Locale/pl-PL/prototypes/generated` — strukturę plików lub obecność kluczy Fluent (bez porównywania wartości tłumaczeń).
+
+**Co robi:**
+- W trybie `structure` — wykrywa pliki `.ftl` i podkatalogi obecne tylko w jednej lokalizacji.
+- W trybie `keys` — dla par plików o tej samej ścieżce względnej porównuje identyfikatory wiadomości (`ent-*`, `-term`) oraz nazwy atrybutów (np. `.desc`, `.suffix`, `.gender`).
+- Z flagą `--fix` (tylko z `--mode keys`) — dopisuje brakujące klucze i atrybuty z drugiej lokalizacji do pliku partnerskiego (per plik, bez pomijania „globalnych” duplikatów w innych ścieżkach).
+
+**Wejście:**
+- Pliki `.ftl` w obu katalogach `prototypes/generated` (ścieżki z `project.py`).
+
+**Wyjście:**
+- Raport w konsoli (podsumowanie + listy różnic, limitowane parametrem `--limit`).
+- Przy `--fix` — zmodyfikowane pliki `.ftl` w obu lokalizacjach (tylko dopisane brakujące bloki; istniejące wartości nie są nadpisywane).
+
+**Tryby (`--mode`):**
+| Tryb | Opis |
+|------|------|
+| `structure` (domyślny) | Różnice w ścieżkach plików i katalogów |
+| `keys` | Różnice w zestawach kluczy w parach plików o identycznej ścieżce |
+
+**Przykłady użycia:**
+
+```bash
+cd Tools/translationTools
+
+# Struktura: które pliki/katalogi są tylko po jednej stronie
+python compare_generated_locales.py
+python compare_generated_locales.py --mode structure --limit 100
+
+# Klucze: które identyfikatory brakują w en-US lub pl-PL (ta sama ścieżka pliku)
+python compare_generated_locales.py --mode keys
+python compare_generated_locales.py --mode keys --limit 1000
+
+# Wypisz też pliki bez różnic kluczy (diagnostyka)
+python compare_generated_locales.py --mode keys --show-equal
+
+# Uzupełnij brakujące klucze w obu lokalizacjach, potem pokaż raport
+python compare_generated_locales.py --mode keys --fix
+python compare_generated_locales.py --mode keys --fix --limit 1000
+```
+
+**Interpretacja raportu (`--mode keys`):**
+- `tylko en-US` — klucz jest w angielskim pliku, brakuje go w polskim odpowiedniku (ta sama ścieżka).
+- `tylko pl-PL` — klucz jest w polskim pliku, brakuje go w angielskim odpowiedniku.
+- `Wspólne pliki z różnicą kluczy` — lista plików wymagających synchronizacji.
+- Klucz może istnieć w pl-PL pod inną ścieżką (np. `deltav/...`) i jednocześnie brakować w `pl-PL/_funkystation/...` — `keyfinder.py` może wtedy nie dopisać go (globalne pomijanie duplikatów); `--fix` w tym skrypcie działa **per plik** i usuwa taką rozbieżność w obrębie `generated`.
+
+**Uwagi po `--fix`:**
+- Nowe wpisy w pl-PL są kopiowane z en-US (angielski tekst) — warto je potem przetłumaczyć ręcznie.
+- Skrypt nie jest częścią `translation.bat`/`translation.sh`; uruchamiaj go ręcznie po `yamlextractor.py` lub gdy podejrzewasz rozjazd `generated`.
+- Pomoc: `python compare_generated_locales.py --help`
+
+### 6. `dash_normalizer.py`
 Normalizuje myślniki w plikach Fluent (.ftl) – zamienia zwykłe łączniki `-` otoczone spacjami na półpauzę `—`.
 
 **Co robi:**
@@ -162,7 +221,13 @@ Normalizuje myślniki w plikach Fluent (.ftl) – zamienia zwykłe łączniki `-
    ./translation.sh
    ```
 
-2. **Ręczne czyszczenie (jeśli potrzebne):**
+2. **Sprawdzenie `prototypes/generated` (opcjonalnie):**
+   ```bash
+   python compare_generated_locales.py --mode keys
+   python compare_generated_locales.py --mode keys --fix
+   ```
+
+3. **Ręczne czyszczenie (jeśli potrzebne):**
    ```bash
    python clean_duplicates.py
    python clean_empty.py
