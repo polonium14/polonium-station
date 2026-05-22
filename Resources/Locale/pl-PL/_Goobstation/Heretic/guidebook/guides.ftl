@@ -1,4 +1,3 @@
-
 guide-entry-heretics = Heretics
 guide-entry-heretics-paths = Paths
 guide-entry-heretics-knowledge = Knowledge Points
