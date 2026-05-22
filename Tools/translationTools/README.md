@@ -74,11 +74,15 @@ Synchronizuje klucze i pliki między en-US a pl-PL w plikach Fluent (.ftl).
 - Zmodyfikowane pliki pl-PL z dodanymi brakującymi kluczami i atrybutami.
 
 **Zasady nadpisywania:**
-- pl-PL: nie nadpisuje istniejących wartości, tylko dodaje brakujące atrybuty.
-- en-US: nie jest modyfikowany.
+- Nie nadpisuje istniejących wartości, tylko dodaje brakujące klucze i atrybuty.
+
+**Tryby (`--mode`):**
+- `both` (domyślnie) — dwustronna synchronizacja: pl-PL z en-US i en-US z pl-PL; brakujące pliki tworzone w obu kierunkach.
+- `pl-from-en` — tylko uzupełnia pl-PL z en-US; en-US nie jest zmieniany; loguje ostrzeżenia o kluczach/plikach bez odpowiednika w en-US.
+- `en-from-pl` — tylko uzupełnia en-US z pl-PL; pl-PL nie jest zmieniany.
 
 **Uwagi:**
-- Skrypt jest bezparametrowy - korzysta z konfiguracji ścieżek z klasy `Project`.
+- Korzysta z konfiguracji ścieżek z klasy `Project`. Flaga `--add-missing-en` jest przestarzała (równoważna `--mode both`).
 - Uruchamiany automatycznie przez `translation.bat`/`translation.sh`.
 - Ignorowane foldery są konfigurowalne w stałej `IGNORED_FOLDERS`.
 

@@ -12,9 +12,9 @@
 
 # Skrypt jest odpowiednikiem sync_locales.py
 
+import argparse
 import typing
 import logging
-import sys
 
 from pydash import py_
 
@@ -22,7 +22,48 @@ from file import FluentFile
 from fluentast import FluentAstAbstract
 from fluentformatter import FluentFormatter
 from project import Project
-from fluent.syntax import ast, FluentParser, FluentSerializer
+from fluent.syntax import ast, FluentSerializer
+
+ENTRY_TYPES = (ast.Message, ast.Term)
+
+SYNC_MODE_BOTH = 'both'
+SYNC_MODE_PL_FROM_EN = 'pl-from-en'
+SYNC_MODE_EN_FROM_PL = 'en-from-pl'
+SYNC_MODES = (SYNC_MODE_BOTH, SYNC_MODE_PL_FROM_EN, SYNC_MODE_EN_FROM_PL)
+
+
+def parse_args(argv=None) -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description='Synchronizacja kluczy Fluent między en-US i pl-PL.',
+    )
+    parser.add_argument(
+        '--mode',
+        choices=SYNC_MODES,
+        default=SYNC_MODE_BOTH,
+        help=(
+            'both: dwustronna synchronizacja (domyślnie); '
+            'pl-from-en: uzupełnia tylko pl-PL z en-US; '
+            'en-from-pl: uzupełnia tylko en-US z pl-PL'
+        ),
+    )
+    parser.add_argument(
+        '--add-missing-en',
+        action='store_true',
+        help='przestarzałe: równoważne --mode both',
+    )
+    args = parser.parse_args(argv)
+    if args.add_missing_en:
+        args.mode = SYNC_MODE_BOTH
+    return args
+
+
+def syncs_pl_from_en(mode: str) -> bool:
+    return mode in (SYNC_MODE_BOTH, SYNC_MODE_PL_FROM_EN)
+
+
+def syncs_en_from_pl(mode: str) -> bool:
+    return mode in (SYNC_MODE_BOTH, SYNC_MODE_EN_FROM_PL)
+
 
 ######################################### Configuration ################################################################
 
@@ -45,8 +86,9 @@ class RelativeFile:
 
 
 class FilesFinder:
-    def __init__(self, project: Project):
+    def __init__(self, project: Project, sync_mode: str = SYNC_MODE_BOTH):
         self.project: Project = project
+        self.sync_mode = sync_mode
         self.created_files: typing.List[FluentFile] = []
 
     def get_relative_path_dict(self, file: FluentFile, locale):
@@ -79,10 +121,10 @@ class FilesFinder:
             elif relative_file.locale == 'pl-PL':
                 is_engine_files = "robust-toolbox" in (relative_file.file.full_path)
                 if not is_engine_files:
-                    if '--add-missing-en' in sys.argv:
+                    if syncs_en_from_pl(self.sync_mode):
                         en_file = self.create_en_analog(relative_file)
                         self.created_files.append(en_file)
-                    else:
+                    elif syncs_pl_from_en(self.sync_mode):
                         self.warn_en_analog_not_exist(relative_file)
             else:
                 raise Exception(f'Plik {relative_file.file.full_path} ma nieznany język "{relative_file.locale}"')
@@ -132,28 +174,55 @@ class FilesFinder:
 
 
 class KeyFinder:
-    def __init__(self, files_dict):
+    def __init__(self, files_dict, sync_mode: str = SYNC_MODE_BOTH):
         self.files_dict = files_dict
+        self.sync_mode = sync_mode
         self.changed_files: typing.List[FluentFile] = []
         self.pl_global_keys = set()
         self.en_global_keys = set()
+        self._collect_global_keys()
 
-        import re
-        regex = re.compile(r'^([a-zA-Z.]+[a-zA-Z0-9_-]*)\s*=', re.MULTILINE)
+    @staticmethod
+    def _collect_keys_by_id(parsed: ast.Resource) -> typing.Dict[str, typing.Union[ast.Message, ast.Term]]:
+        keys: typing.Dict[str, typing.Union[ast.Message, ast.Term]] = {}
+        for element in parsed.body:
+            if not isinstance(element, ENTRY_TYPES):
+                continue
+            key_name = FluentAstAbstract.get_id_name(element)
+            if key_name:
+                keys[key_name] = element
+        return keys
+
+    @staticmethod
+    def _indent_attribute_snippet(snippet: str) -> str:
+        lines = snippet.split('\n')
+        return '\n'.join(
+            f'  {line}' if line.startswith('.') and not line.startswith('  ') else line
+            for line in lines
+        )
+
+    @staticmethod
+    def _extract_span_text(source: str, element) -> str:
+        if element.span:
+            return source[element.span.start:element.span.end]
+        return FluentSerializer(with_junk=True).serialize(ast.Resource(body=[element]))
+
+    def _collect_global_keys(self):
         for pair in self.files_dict:
-            pl_relative_file = py_.find(self.files_dict[pair], {'locale': 'pl-PL'})
-            en_relative_file = py_.find(self.files_dict[pair], {'locale': 'en-US'})
-
-            if pl_relative_file:
+            for relative_file in self.files_dict[pair]:
+                if relative_file.locale not in ('pl-PL', 'en-US'):
+                    continue
                 try:
-                    self.pl_global_keys.update(regex.findall(pl_relative_file.file.read_data()))
+                    parsed = relative_file.file.parse_data(relative_file.file.read_data())
                 except Exception:
-                    pass
-            if en_relative_file:
-                try:
-                    self.en_global_keys.update(regex.findall(en_relative_file.file.read_data()))
-                except Exception:
-                    pass
+                    continue
+                target = self.pl_global_keys if relative_file.locale == 'pl-PL' else self.en_global_keys
+                for element in parsed.body:
+                    if not isinstance(element, ENTRY_TYPES):
+                        continue
+                    key_name = FluentAstAbstract.get_id_name(element)
+                    if key_name:
+                        target.add(key_name)
 
     def execute(self) -> typing.List[FluentFile]:
         self.changed_files = []
@@ -173,155 +242,135 @@ class KeyFinder:
 
 
     def compare_files(self, en_file, pl_file):
-        pl_file_parsed: ast.Resource = pl_file.parse_data(pl_file.read_data())
-        en_file_parsed: ast.Resource = en_file.parse_data(en_file.read_data())
+        en_text = en_file.read_data()
+        pl_text = pl_file.read_data()
+        en_parsed = en_file.parse_data(en_text)
+        pl_parsed = pl_file.parse_data(pl_text)
 
-        self.write_to_pl_files(pl_file, pl_file_parsed, en_file_parsed)
-        if '--add-missing-en' in sys.argv:
-            self.write_to_en_files(en_file, en_file_parsed, pl_file_parsed)
-        else:
-            self.log_not_exist_en_files(en_file, pl_file_parsed, en_file_parsed)
+        if syncs_pl_from_en(self.sync_mode):
+            self._sync_missing_entries(
+                source_text=en_text,
+                source_parsed=en_parsed,
+                target_file=pl_file,
+                target_text=pl_text,
+                target_keys=self._collect_keys_by_id(pl_parsed),
+                global_keys=self.pl_global_keys,
+            )
 
+        if syncs_en_from_pl(self.sync_mode):
+            self._sync_missing_entries(
+                source_text=pl_text,
+                source_parsed=pl_parsed,
+                target_file=en_file,
+                target_text=en_text,
+                target_keys=self._collect_keys_by_id(en_parsed),
+                global_keys=self.en_global_keys,
+            )
+        elif syncs_pl_from_en(self.sync_mode):
+            self.log_not_exist_en_files(en_file, pl_parsed, en_parsed)
 
-    def write_to_pl_files(self, pl_file, pl_file_parsed, en_file_parsed):
-        for idx, en_message in enumerate(en_file_parsed.body):
-            if not isinstance(en_message, (ast.Message, ast.Term)):
+    def _sync_missing_entries(
+        self,
+        source_text: str,
+        source_parsed: ast.Resource,
+        target_file: FluentFile,
+        target_text: str,
+        target_keys: typing.Dict[str, typing.Union[ast.Message, ast.Term]],
+        global_keys: typing.Set[str],
+    ):
+        append_snippets: typing.List[str] = []
+        insertions: typing.List[typing.Tuple[int, str]] = []
+        added_keys: typing.List[str] = []
+
+        for source_entry in source_parsed.body:
+            if not isinstance(source_entry, ENTRY_TYPES):
                 continue
 
-            pl_message_analog_idx = py_.find_index(pl_file_parsed.body, lambda pl_message: self.find_duplicate_message_id_name(pl_message, en_message))
-            have_changes = False
+            key_name = FluentAstAbstract.get_id_name(source_entry)
+            if not key_name:
+                continue
 
-            # Attributes
-            if getattr(en_message, 'attributes', None) and pl_message_analog_idx != -1:
-                if not pl_file_parsed.body[pl_message_analog_idx].attributes:
-                    pl_file_parsed.body[pl_message_analog_idx].attributes = en_message.attributes
-                    have_changes = True
-                else:
-                    for en_attr in en_message.attributes:
-                        pl_attr_analog = py_.find(pl_file_parsed.body[pl_message_analog_idx].attributes, lambda pl_attr: pl_attr.id.name == en_attr.id.name)
-                        if not pl_attr_analog:
-                            pl_file_parsed.body[pl_message_analog_idx].attributes.append(en_attr)
-                            have_changes = True
+            target_entry = target_keys.get(key_name)
+            if target_entry is None:
+                if key_name in global_keys:
+                    continue
+                append_snippets.append(self._extract_span_text(source_text, source_entry))
+                target_keys[key_name] = source_entry
+                global_keys.add(key_name)
+                added_keys.append(key_name)
+                continue
 
-            # New elements
-            if pl_message_analog_idx == -1:
-                key_name = FluentAstAbstract.get_id_name(en_message)
-                if key_name and key_name in self.pl_global_keys:
-                    # Skip to avoid global duplicate
-                    pass
-                else:
-                    pl_file_body = pl_file_parsed.body
-                    if (len(pl_file_body) >= idx + 1):
-                        pl_file_parsed = self.append_message(pl_file_parsed, en_message, idx)
-                    else:
-                        pl_file_parsed = self.push_message(pl_file_parsed, en_message)
-                    have_changes = True
-                    if key_name:
-                        self.pl_global_keys.add(key_name)
+            source_attrs = getattr(source_entry, 'attributes', None) or []
+            if not source_attrs:
+                continue
 
-            if have_changes:
-                serialized = serializer.serialize(pl_file_parsed)
-                self.save_and_log_file(pl_file, serialized, en_message)
+            target_attr_names = {attr.id.name for attr in (getattr(target_entry, 'attributes', None) or [])}
+            missing_attrs = [attr for attr in source_attrs if attr.id.name not in target_attr_names]
+            if not missing_attrs:
+                continue
+
+            if not target_entry.span:
+                continue
+            attr_snippets = [
+                self._indent_attribute_snippet(self._extract_span_text(source_text, attr))
+                for attr in missing_attrs
+            ]
+            insertions.append((target_entry.span.end, '\n' + '\n'.join(attr_snippets)))
+            added_keys.append(f'{key_name} ({", ".join(attr.id.name for attr in missing_attrs)})')
+
+        if not append_snippets and not insertions:
+            return
+
+        new_target_text = target_text
+        for position, text in sorted(insertions, key=lambda item: item[0], reverse=True):
+            new_target_text = new_target_text[:position] + text + new_target_text[position:]
+
+        if append_snippets:
+            new_target_text = new_target_text.rstrip('\n')
+            blocks = [new_target_text] + [snippet.strip('\n') for snippet in append_snippets]
+            new_target_text = '\n\n'.join(block for block in blocks if block) + '\n'
+
+        target_file.save_data(new_target_text)
+        for key_label in added_keys:
+            logging.info(f'Do pliku {target_file.full_path} dodano klucz "{key_label}"')
+        if target_file not in self.changed_files:
+            self.changed_files.append(target_file)
 
     def log_not_exist_en_files(self, en_file, pl_file_parsed, en_file_parsed):
-        for idx, pl_message in enumerate(pl_file_parsed.body):
-            if not isinstance(pl_message, (ast.Message, ast.Term)):
+        en_keys = self._collect_keys_by_id(en_file_parsed)
+        for pl_entry in pl_file_parsed.body:
+            if not isinstance(pl_entry, ENTRY_TYPES):
                 continue
-
-            en_message_analog = py_.find(en_file_parsed.body, lambda en_message: self.find_duplicate_message_id_name(pl_message, en_message))
-
-            if not en_message_analog:
-                logging.warning(f'Klucz "{FluentAstAbstract.get_id_name(pl_message)}" nie ma angielskiego odpowiednika pod ścieżką {en_file.full_path}"')
-
-    def write_to_en_files(self, en_file, en_file_parsed, pl_file_parsed):
-        for idx, pl_message in enumerate(pl_file_parsed.body):
-            if not isinstance(pl_message, (ast.Message, ast.Term)):
-                continue
-
-            en_message_analog_idx = py_.find_index(en_file_parsed.body, lambda en_message: self.find_duplicate_message_id_name(en_message, pl_message))
-            have_changes = False
-
-            # Attributes
-            if getattr(pl_message, 'attributes', None) and en_message_analog_idx != -1:
-                if not en_file_parsed.body[en_message_analog_idx].attributes:
-                    en_file_parsed.body[en_message_analog_idx].attributes = pl_message.attributes
-                    have_changes = True
-                else:
-                    for pl_attr in pl_message.attributes:
-                        en_attr_analog = py_.find(en_file_parsed.body[en_message_analog_idx].attributes, lambda en_attr: en_attr.id.name == pl_attr.id.name)
-                        if not en_attr_analog:
-                            en_file_parsed.body[en_message_analog_idx].attributes.append(pl_attr)
-                            have_changes = True
-
-            # New elements
-            if en_message_analog_idx == -1:
-                key_name = FluentAstAbstract.get_id_name(pl_message)
-                if key_name and key_name in self.en_global_keys:
-                    # Skip to avoid global duplicate
-                    pass
-                else:
-                    en_file_body = en_file_parsed.body
-                    if (len(en_file_body) >= idx + 1):
-                        en_file_parsed = self.append_message(en_file_parsed, pl_message, idx)
-                    else:
-                        en_file_parsed = self.push_message(en_file_parsed, pl_message)
-                    have_changes = True
-                    if key_name:
-                        self.en_global_keys.add(key_name)
-
-            if have_changes:
-                serialized = serializer.serialize(en_file_parsed)
-                self.save_and_log_file(en_file, serialized, pl_message)
-
-    def append_message(self, pl_file_parsed, en_message, en_message_idx):
-        pl_message_part_1 = pl_file_parsed.body[0:en_message_idx]
-        pl_message_part_middle = [en_message]
-        pl_message_part_2 = pl_file_parsed.body[en_message_idx:]
-        new_body = py_.flatten_depth([pl_message_part_1, pl_message_part_middle, pl_message_part_2], depth=1)
-        pl_file_parsed.body = new_body
-
-        return pl_file_parsed
-
-    def push_message(self,  pl_file_parsed, en_message):
-        pl_file_parsed.body.append(en_message)
-        return pl_file_parsed
-
-    def save_and_log_file(self, file, file_data, message):
-        file.save_data(file_data)
-        logging.info(f'Do pliku {file.full_path} dodano klucz "{FluentAstAbstract.get_id_name(message)}"')
-        if file not in self.changed_files:
-            self.changed_files.append(file)
-
-    def find_duplicate_message_id_name(self, pl_message, en_message):
-        pl_element_id_name = FluentAstAbstract.get_id_name(pl_message)
-        en_element_id_name = FluentAstAbstract.get_id_name(en_message)
-
-        if not pl_element_id_name or not en_element_id_name:
-            return False
-
-        if pl_element_id_name == en_element_id_name:
-            return pl_message
-        else:
-            return None
+            key_name = FluentAstAbstract.get_id_name(pl_entry)
+            if key_name and key_name not in en_keys:
+                logging.warning(
+                    f'Klucz "{key_name}" nie ma angielskiego odpowiednika pod ścieżką {en_file.full_path}"'
+                )
 
 ######################################## Var definitions ###############################################################
 
 logging.basicConfig(level = logging.INFO)
 project = Project()
-parser = FluentParser()
-serializer = FluentSerializer(with_junk=True)
-files_finder = FilesFinder(project)
-key_finder = KeyFinder(files_finder.get_files_pars())
 
 ########################################################################################################################
 
-print('Sprawdzam aktualności plików ...')
-created_files = files_finder.execute()
-if len(created_files):
-    print('Formatuję utworzone pliki ...')
-    FluentFormatter.format(created_files)
-print('Sprawdzam aktualność kluczy ...')
-changed_files = key_finder.execute()
-if len(changed_files):
-    print('Formatuję zmienione pliki ...')
-    FluentFormatter.format(changed_files)
+def main(argv=None):
+    args = parse_args(argv)
+    sync_mode = args.mode
+    print(f'Tryb synchronizacji: {sync_mode}')
+
+    files_finder = FilesFinder(project, sync_mode=sync_mode)
+    print('Sprawdzam aktualności plików ...')
+    created_files = files_finder.execute()
+    if len(created_files):
+        print('Formatuję utworzone pliki ...')
+        FluentFormatter.format(created_files)
+    print('Sprawdzam aktualność kluczy ...')
+    key_finder = KeyFinder(files_finder.get_files_pars(), sync_mode=sync_mode)
+    changed_files = key_finder.execute()
+    if len(changed_files):
+        print(f'Zaktualizowano {len(changed_files)} plików (bez przeformatowania).')
+
+
+if __name__ == '__main__':
+    main()
