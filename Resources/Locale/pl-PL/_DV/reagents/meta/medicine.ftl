@@ -1,4 +1,3 @@
-
 reagent-name-hemoxadone = hemoksadon
 reagent-desc-hemoxadone = Środek chemiczny stosowany w kriogenice. Służy do leczenia poważnej utraty krwi poprzez regenerację czerwonych krwinek i wspomaganie reperfuzji. Działa niezależnie od tego, czy pacjent żyje, czy nie.
 reagent-name-cyanoxadone = cyjanoksadon
