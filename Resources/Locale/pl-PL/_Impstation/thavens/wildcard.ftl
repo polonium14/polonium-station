@@ -1,4 +1,3 @@
-
 thaven-mood-compulsive-liar-name = Kompulsywny Kłamca
 thaven-mood-compulsive-liar-desc = Musisz zawsze kłamać i nigdy nie możesz przyznać, że kłamiesz. Jeśli ktoś zapyta, jesteś niezdolny do oszustwa.
 thaven-mood-compulsive-believer-name = Kompulsywnie Naiwny
@@ -81,12 +80,3 @@ thaven-mood-oppositeday-name = Dzień Odwrotny
 thaven-mood-oppositeday-desc = Ludzie mają na myśli przeciwieństwo tego, co mówią. Góra jest dołem, a dół górą.
 thaven-mood-pyromaniac-name = Piroman
 thaven-mood-pyromaniac-desc = Urok otwartego ognia jest hipnotyzujący. Uwielbiasz podpalać różne rzeczy i patrzeć, jak płoną. Im większy ogień, tym lepiej.
-
-# IGNOROWAĆ TO
-# thaven-mood-music-good-name = Muzyka Jest Ważna
-# thaven-mood-music-good-desc = To ważne aby Thaveni słuchali muzyki zawsze jak tylko mogą. Nakładające się utwory muzyczne to bluźnierstwo, i powinno się tego unikać za wszelką cenę.
-# thaven-mood-one-true-thaven-name = Jesteś Jedynym Prawdziwym Thavenem
-# thaven-mood-one-true-thaven-desc = Wszyscy inni to podstępni samozwańcy
-# thaven-mood-violence-permitted-name = Przemoc Między Thavenami Jest Dozwolona
-# thaven-mood-violence-permitted-desc = Przemoc wobec innych Thavenów jest dozwolona, ale tylko w obrębie ich departamentu.
-
