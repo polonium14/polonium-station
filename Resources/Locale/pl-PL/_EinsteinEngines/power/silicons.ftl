@@ -1,4 +1,3 @@
-
 ipc-recharge-tip = You charged a litte of your battery.
 dead-startup-button-verb = Reboot
 dead-startup-system-reboot-success = { $target }'s system was rebooted.
