@@ -1,4 +1,3 @@
-
 # Legal
 loadout-group-iaa-outer = Agent Spraw Wewnętrznych – odzież wierzchnia
 loadout-group-iaa-gloves = Agent Spraw Wewnętrznych – rękawice
