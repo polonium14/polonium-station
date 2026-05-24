@@ -1515,7 +1515,7 @@
     - Plating
     - FloorTechMaintDark
   - type: Stack
-    stackType: FloorTileDarkMaint
+    stackType: FloorTileSteelMaint
 
 - type: entity
   name: web tile
