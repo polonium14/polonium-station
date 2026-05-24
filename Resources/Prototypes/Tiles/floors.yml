@@ -1943,6 +1943,19 @@
   tileRipResistance: 225
 
 - type: tile
+  id: FloorTechMaintDark
+  name: tiles-techmaint-floor-dark
+  sprite: /Textures/Tiles/dark_maint.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepHull
+  itemDrop: FloorTileItemSteelMaint
+  heatCapacity: 10000
+  tileRipResistance: 225
+
+- type: tile
   id: FloorWoodTile
   name: tiles-wood2
   sprite: /Textures/Tiles/wood_tile.png

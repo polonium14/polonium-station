@@ -1,0 +1,59 @@
+# Copyright (c) 2025 Polonium Station
+# Licensed under the CC-BY-SA-3.0 license
+# Made by qazmlp
+
+- type: gameMap
+  id: DeathStar
+  mapName: 'Gwiazda Śmierci'
+  mapPath: /Maps/_Polonium/deathstar.yml
+  minPlayers: 0
+  maxPlayers: 12
+  stations:
+    DeathStar:
+      stationProto: StandardNanotrasenStation
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: '{0} Death Star Transport {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: 'PL'
+        - type: StationEmergencyShuttle
+          emergencyShuttlePath: /Maps/Shuttles/emergency.yml
+        - type: StationJobs
+          availableJobs: # 25 jobs total w/o latejoins, 29 jobs total w/ latejoins
+            #central command (1)
+            NanotrasenRepresentative: [ 1, 1 ]
+            NanotrasenCareerTrainer: [ 2, 2 ] # Polonium, whitelistowana rola
+            #command (3)
+            Captain: [ 1, 1 ]
+            HeadOfSecurity: [ 1, 1 ]
+            HeadOfPersonnel: [ 1, 1 ]
+            #service (5)
+            Bartender: [ 1, 1 ]
+            Botanist: [ 1, 1 ]
+            Chef: [ 1, 1 ]
+            Janitor: [ 1, 1 ]
+            ServiceWorker: [ 1, 1 ]
+            #engineering (2 - 3)
+            TechnicalAssistant: [ 1, 1 ]
+            StationEngineer: [ 1, 2 ]
+            #medical (3 - 4)
+            Chemist: [ 1, 1 ]
+            MedicalDoctor: [ 1, 2 ]
+            MedicalIntern: [ 1, 1 ]
+            #science (3)
+            Scientist: [ 1, 1 ]
+            Roboticist: [ 1, 1 ]
+            ResearchAssistant: [ 1, 1 ]
+            #security (3 - 5)
+            SecurityOfficer: [ 1, 2 ]
+            SecurityCadet: [ 1, 2 ]
+            Brigmedic: [ 1, 1 ]
+            #supply (2)
+            CargoTechnician: [ 1, 1 ]
+            SalvageSpecialist: [ 1, 1 ]
+            #civilian (3+)
+            Passenger: [ -1, -1 ] #infinite, not counted
+            Musician: [ 1, 1 ]
+            Clown: [ 1, 1 ]
+            Mime: [ 1, 1 ]

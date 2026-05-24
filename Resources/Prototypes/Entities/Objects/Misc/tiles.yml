@@ -1502,6 +1502,22 @@
     stackType: FloorTileGratingMaint
 
 - type: entity
+  name: steel maint floor
+  parent: FloorTileItemBase
+  id: FloorTileItemDarkMaint
+  components:
+  - type: Sprite
+    state: steelmaintfloor
+  - type: Item
+    heldPrefix: steel
+  - type: FloorTile
+    outputs:
+    - Plating
+    - FloorTechMaintDark
+  - type: Stack
+    stackType: FloorTileDarkMaint
+
+- type: entity
   name: web tile
   parent: FloorTileItemBase
   id: FloorTileItemWeb
