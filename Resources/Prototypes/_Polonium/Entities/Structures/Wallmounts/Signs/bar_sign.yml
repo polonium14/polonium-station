@@ -8,5 +8,5 @@
     current: Zabka
   - type: Sprite
     drawdepth: WallMountedItems
-    sprite: _Polonium/Structures/Wallmounts/barsign.rsi/zabkacafe
+    sprite: _Polonium/Structures/Wallmounts/Barsigns/zabkacafe.rsi
     state: empty
