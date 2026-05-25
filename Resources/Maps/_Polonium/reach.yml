@@ -7054,15 +7054,41 @@ entities:
     - type: Transform
       pos: -3.5,-6.5
       parent: 2
+    - type: EntityStorage
+      air:
+        volume: 200
+        immutable: False
+        temperature: 293.14673
+        moles:
+        - 1.7459903
+        - 6.568249
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
     - type: ContainerContainer
       containers:
         entity_storage: !type:Container
           showEnts: False
           occludes: True
           ents:
+          - 888
           - 887
           - 889
-          - 888
         paper_label: !type:ContainerSlot
           showEnts: False
           occludes: True
@@ -7156,7 +7182,25 @@ entities:
     components:
     - type: Transform
       parent: 886
+    - type: GroupExamine
+      group:
+      - hoverMessage: ""
+        contextText: verb-examine-group-other
+        icon: /Textures/Interface/examine-star.png
+        components:
+        - Armor
+        - ClothingSpeedModifier
+        entries:
+        - message: >-
+            Zapewnia następującą ochronę:
+
+            - Obrażenia [color=orange]wybuchowe[/color] [color=white]do zawartości[/color] zmiejszone o [color=lightblue]10%[/color].
+          priority: 0
+          component: Armor
+        title: null
     - type: Physics
+      angularDamping: 0
+      linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
 - proto: ClothingEyesGlassesMeson
@@ -7259,7 +7303,45 @@ entities:
     components:
     - type: Transform
       parent: 886
+    - type: GroupExamine
+      group:
+      - hoverMessage: ""
+        contextText: verb-examine-group-other
+        icon: /Textures/Interface/examine-star.png
+        components:
+        - Armor
+        - ClothingSpeedModifier
+        entries:
+        - message: >-
+            Zapewnia następującą ochronę:
+
+            - Obrażenia typu [color=yellow]Tępego[/color] zredukowane o [color=lightblue]30%[/color].
+
+            - Obrażenia typu [color=yellow]Ciętego[/color] zredukowane o [color=lightblue]30%[/color].
+
+            - Obrażenia typu [color=yellow]Przeszywającego[/color] zredukowane o [color=lightblue]40%[/color].
+
+            - Obrażenia typu [color=yellow]Cieplnego[/color] zredukowane o [color=lightblue]90%[/color].
+
+            - Obrażenia typu [color=yellow]Zimnego[/color] zredukowane o [color=lightblue]90%[/color].
+
+            - Obrażenia typu [color=yellow]Porażeniowego[/color] zredukowane o [color=lightblue]90%[/color].
+
+            - Obrażenia typu [color=yellow]Radiacyjnego[/color] zredukowane o [color=lightblue]90%[/color].
+
+            - Obrażenia typu [color=yellow]Żrącego[/color] zredukowane o [color=lightblue]90%[/color].
+
+            - [color=lightyellow]Stamina[/color] damage reduced by [color=lightblue]25%[/color].
+
+            - Obrażenia [color=orange]wybuchowe[/color] zmiejszone o [color=lightblue]30%[/color].
+          priority: 0
+          component: Armor
+        title: null
     - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+    - type: InsideEntityStorage
 - proto: ClothingOuterHardsuitMime
   entities:
   - uid: 2866
@@ -7302,6 +7384,8 @@ entities:
     - type: Transform
       parent: 886
     - type: Physics
+      angularDamping: 0
+      linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
 - proto: ComfyChair
