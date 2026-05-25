@@ -321,7 +321,15 @@ ui-options-net-pvs-spawn-tooltip =
     ich nieoczekiwanym pojawieniem się. ui-options-net-pvs-entry = Budżet encji PVS
 ui-options-net-pvs-entry-tooltip =
     To ogranicza częstotliwość, z którą serwer będzie wysyłać klientowi nowo
-    widoczne encje.
+    widoczne encje. Obniżanie tego może pomóc zmniejszyć
+    zacięcia, ale może skutkować ich nieoczekiwanym pojawieniem się. ui-options-net-pvs-leave = Częstotliwość odłączania PVS
+ui-options-net-pvs-leave-tooltip =
+    To ogranicza częstotliwość, z którą klient będzie usuwać
+    encje poza polem widzenia. Obniżanie tego może pomóc zmniejszyć
+    zacięcia podczas chodzenia, ale czasami może powodować
+    błędne przewidywania oraz inne problemy. ## Toggle window console command
+
+cmd-options-desc = Otwiera menu ustawień, opcjonalnie z określoną kartą.
 ui-options-net-predict-tick-bias = Prediction tick bias
 ui-options-net-predict-tick-bias-tooltip =
     Increasing this will generally make the game more resistant
