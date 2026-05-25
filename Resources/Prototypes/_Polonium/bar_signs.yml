@@ -2,6 +2,6 @@
   id: Zabka
   name: barsign-prototype-name-zabka
   icon:
-    sprite: _Polonium/Structures/Wallmounts/barsign.rsi
+    sprite: _Polonium/Structures/Wallmounts/barsign.rsi/zabkacafe
     state: zabkacafe
   description: barsign-prototype-description-zabka

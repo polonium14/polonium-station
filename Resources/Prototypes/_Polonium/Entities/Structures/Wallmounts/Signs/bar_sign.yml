@@ -6,3 +6,7 @@
   components:
   - type: BarSign
     current: Zabka
+  - type: Sprite
+    drawdepth: WallMountedItems
+    sprite: _Polonium/Structures/Wallmounts/barsign.rsi/zabkacafe
+    state: empty
