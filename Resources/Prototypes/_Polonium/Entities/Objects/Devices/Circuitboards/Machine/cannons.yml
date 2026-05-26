@@ -15,9 +15,9 @@
     prototype: ShuttleGunSeismic
     stackRequirements:
       MatterBin: 2
-      Manipulator: 4
+      Manipulator: 1
       Steel: 5
-      CableHV: 5
+      CableHV: 1
 
 - type: entity
   id: ShuttleGunPlasmaCutterCircuitboard
@@ -32,12 +32,12 @@
     prototype: ShuttleGunPlasmaCutter
     stackRequirements:
       MatterBin: 2
-      Manipulator: 4
-      Capacitor: 7
+      Manipulator: 3
+      Capacitor: 2
       Steel: 5
       Glass: 2
-      CableHV: 5
-      Uranium: 1
+      CableHV: 3
+      Gold: 1
 
 - type: entity
   id: ShuttleGunMineralVacuumCircuitboard
@@ -51,10 +51,10 @@
   - type: MachineBoard
     prototype: ShuttleGunMineralVacuum
     stackRequirements:
-      MatterBin: 6
+      MatterBin: 4
       Manipulator: 2
       Capacitor: 2
       Steel: 5
       Glass: 2
-      CableHV: 5
+      CableHV: 2
       Gold: 1

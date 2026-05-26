@@ -46,6 +46,8 @@
       - id: RadioHandheldCargo #funkystation
       - id: SeismicCharge
         amount: 2
+      - id: RemoteSignaller
+      - id: Multitool
       - id: WeaponFlareGun
       - id: BoxShotgunFlare
 
@@ -63,5 +65,7 @@
       - id: RadioHandheldCargo #funkystation
       - id: SeismicCharge
         amount: 2
+      - id: RemoteSignaller
+      - id: Multitool
       - id: WeaponFlareGun
       - id: BoxShotgunFlare
