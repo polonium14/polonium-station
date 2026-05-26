@@ -512,29 +512,29 @@ public sealed partial class ExplosionSystem : SharedExplosionSystem
             RaiseNetworkEvent(new ExplosionShockwaveEvent(
                 epicenter.MapId, pos, now,
                 maxRadiusTiles: 1f,
-                durationSeconds: 4f,
+                durationSeconds: 3f,
                 intensity: 0f,
                 flash: true), filter);
 
             // 1 - fast inner distortion ring
             RaiseNetworkEvent(new ExplosionShockwaveEvent(
-                epicenter.MapId, pos, now + 0.4,
+                epicenter.MapId, pos, now + 0.3,
                 maxRadiusTiles: 60f,
-                durationSeconds: 2f,
+                durationSeconds: 1.4f,
                 intensity: 1f), filter);
 
             // 2 - primary shockwave
             RaiseNetworkEvent(new ExplosionShockwaveEvent(
-                epicenter.MapId, pos, now + 0.5,
+                epicenter.MapId, pos, now + 0.35,
                 maxRadiusTiles: 120f,
-                durationSeconds: 3.5f,
+                durationSeconds: 2.5f,
                 intensity: 0.85f), filter);
 
             // 3 - pressure wave
             RaiseNetworkEvent(new ExplosionShockwaveEvent(
-                epicenter.MapId, pos, now + 1.0,
+                epicenter.MapId, pos, now + 0.7,
                 maxRadiusTiles: 200f,
-                durationSeconds: 5f,
+                durationSeconds: 3.5f,
                 intensity: 0.4f), filter);
 
             return;
@@ -545,7 +545,7 @@ public sealed partial class ExplosionSystem : SharedExplosionSystem
         var visualRange = shockwaveRadius + 30f;
 
         var intensity = Math.Clamp(MathF.Sqrt(totalIntensity) / 15f, 0.15f, 1f);
-        var duration = Math.Clamp(shockwaveRadius / 20f, 0.4f, 2.5f);
+        var duration = Math.Clamp(shockwaveRadius / 28f, 0.3f, 1.8f);
 
         var ev = new ExplosionShockwaveEvent(
             epicenter.MapId, pos, now,
