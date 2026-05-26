@@ -15,7 +15,7 @@
   components:
   - type: HereticRule
   - type: GameRule
-    minPlayers: 8
+    minPlayers: 20
   - type: AntagObjectives
     objectives:
     - HereticKnowledgeObjective
@@ -28,6 +28,7 @@
     - prefRoles: [ Heretic ]
       max: 2
       playerRatio: 25
+      chaosScore: 250
       lateJoinAdditional: true
       mindRoles:
       - MindRoleHeretic
@@ -38,10 +39,10 @@
   id: CalmHeretic # For Dual Antag Gamemodes (i dont want 4 damn heretics with 4 lings)
   components:
   - type: GameRule
-    minPlayers: 20
+    minPlayers: 15
     delay:
-      min: 30
-      max: 60
+      min: 1200
+      max: 1800
   - type: AntagSelection
     selectionTime: IntraPlayerSpawn
     agentName: heretic-roundend-name
@@ -49,4 +50,5 @@
     - prefRoles: [ Heretic ]
       max: 2
       playerRatio: 18
+      chaosScore: 200
       lateJoinAdditional: true

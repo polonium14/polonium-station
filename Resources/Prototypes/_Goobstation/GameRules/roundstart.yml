@@ -56,18 +56,14 @@
   - type: GameRule
     minPlayers: 5
     delay:
-      min: 240
-      max: 420
-  - type: AntagRandomObjectives
-    sets:
-    - groups: TraitorObjectiveGroups
-    maxDifficulty: 3
+      min: 600
+      max: 900
   - type: AntagSelection
     selectionTime: IntraPlayerSpawn
     definitions:
     - prefRoles: [ Traitor ]
       max: 4
-      playerRatio: 8
+      playerRatio: 15
       chaosScore: 100 # Polonium
       blacklist:
         components:
@@ -96,6 +92,7 @@
     - prefRoles: [ Changeling ]
       max: 4
       playerRatio: 18
+      chaosScore: 150
       lateJoinAdditional: true
       mindRoles:
       - MindRoleTraitor
