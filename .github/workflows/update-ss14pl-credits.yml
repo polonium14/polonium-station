@@ -5,6 +5,9 @@ on:
     types:
       - closed
 
+permissions:
+  contents: write
+
 jobs:
   add-contributor:
     if: github.event.pull_request.merged == true
@@ -14,25 +17,36 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
+          ref: ${{ github.event.pull_request.base.ref }}
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Add contributor to credits
+        env:
+          AUTHOR: ${{ github.event.pull_request.user.login }}
         run: |
-          AUTHOR="${{ github.event.pull_request.user.login }}"
           FILE="Resources/Credits/SS14PL.txt"
-
           touch "$FILE"
 
-          CONTENT=$(cat "$FILE" | tr -d '\n' | tr -d '\r')
+          NAMES=$(tr -d '\r\n' < "$FILE")
 
-          if echo "$CONTENT" | grep -qw "$AUTHOR"; then
-            echo "Author already in credits"
-          else
-            if [ -z "$CONTENT" ]; then
-              echo -n "$AUTHOR" > "$FILE"
-            else
-              echo -n "$CONTENT,$AUTHOR" > "$FILE"
+          FOUND=false
+          IFS=',' read -ra ENTRIES <<< "$NAMES"
+          for entry in "${ENTRIES[@]}"; do
+            if [ "$entry" = "$AUTHOR" ]; then
+              FOUND=true
+              break
             fi
+          done
+
+          if [ "$FOUND" = true ]; then
+            echo "Author '$AUTHOR' already in credits."
+            exit 0
+          fi
+
+          if [ -z "$NAMES" ]; then
+            printf '%s\n' "$AUTHOR" > "$FILE"
+          else
+            printf '%s\n' "$NAMES,$AUTHOR" > "$FILE"
           fi
 
       - name: Commit and push
@@ -40,5 +54,6 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add Resources/Credits/SS14PL.txt
-          git commit -m "chore: add ${{ github.event.pull_request.user.login }} to credits" || echo "No changes"
-          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/polonium14/polonium-station.git HEAD:master
+          git diff --cached --quiet && echo "No changes" && exit 0
+          git commit -m "chore: add ${{ github.event.pull_request.user.login }} to credits"
+          git push
