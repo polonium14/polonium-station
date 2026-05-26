@@ -83,6 +83,7 @@ using Robust.Shared.Physics.Components;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
 namespace Content.Server.Explosion.EntitySystems;
@@ -109,6 +110,7 @@ public sealed partial class ExplosionSystem : SharedExplosionSystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
     [Dependency] private readonly SharedMapSystem _map = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
 
     private EntityQuery<FlammableComponent> _flammableQuery;
     private EntityQuery<PhysicsComponent> _physicsQuery;
@@ -129,8 +131,7 @@ public sealed partial class ExplosionSystem : SharedExplosionSystem
     ///     find errors. However some components, like rogue arrows, or some commands like the admin-smite need to have
     ///     a "default" option specified outside of yaml data-fields. Hence this const string.
     /// </remarks>
-    [ValidatePrototypeId<ExplosionPrototype>]
-    public const string DefaultExplosionPrototypeId = "Default";
+    public static readonly ProtoId<ExplosionPrototype> DefaultExplosionPrototypeId = "Default";
 
     public override void Initialize()
     {
@@ -413,6 +414,9 @@ public sealed partial class ExplosionSystem : SharedExplosionSystem
         // camera shake
         CameraShake(iterationIntensity.Count * 4f, pos, queued.TotalIntensity);
 
+        // PVS bypass shockwave distortion ring
+        SendShockwave(pos, iterationIntensity.Count, queued.TotalIntensity);
+
         //For whatever bloody reason, sound system requires ENTITY coordinates.
         var mapEntityCoords = _transformSystem.ToCoordinates(_mapSystem.GetMap(pos.MapId), pos);
 
@@ -484,5 +488,70 @@ public sealed partial class ExplosionSystem : SharedExplosionSystem
             if (effect > 0.01f)
                 _recoilSystem.KickCamera(uid, -delta.Normalized() * effect);
         }
+    }
+
+    /// <summary>
+    /// Sends shockwave distortion events to all players in the visual range
+    /// </summary>
+    private void SendShockwave(MapCoordinates epicenter, int iterationCount, float totalIntensity)
+    {
+        const float MinIntensityForShockwave = 20f;
+        const float NuclearIntensityThreshold = 50000f;
+
+        if (totalIntensity < MinIntensityForShockwave)
+            return;
+
+        var now = _timing.CurTime.TotalSeconds;
+        var pos = epicenter.Position;
+
+        if (totalIntensity >= NuclearIntensityThreshold)
+        {
+            var filter = Filter.BroadcastMap(epicenter.MapId);
+
+            // 0 - flash
+            RaiseNetworkEvent(new ExplosionShockwaveEvent(
+                epicenter.MapId, pos, now,
+                maxRadiusTiles: 1f,
+                durationSeconds: 3f,
+                intensity: 0f,
+                flash: true), filter);
+
+            // 1 - fast inner distortion ring
+            RaiseNetworkEvent(new ExplosionShockwaveEvent(
+                epicenter.MapId, pos, now + 0.3,
+                maxRadiusTiles: 60f,
+                durationSeconds: 1.4f,
+                intensity: 1f), filter);
+
+            // 2 - primary shockwave
+            RaiseNetworkEvent(new ExplosionShockwaveEvent(
+                epicenter.MapId, pos, now + 0.35,
+                maxRadiusTiles: 120f,
+                durationSeconds: 2.5f,
+                intensity: 0.85f), filter);
+
+            // 3 - pressure wave
+            RaiseNetworkEvent(new ExplosionShockwaveEvent(
+                epicenter.MapId, pos, now + 0.7,
+                maxRadiusTiles: 200f,
+                durationSeconds: 3.5f,
+                intensity: 0.4f), filter);
+
+            return;
+        }
+
+        var radius = IntensityToRadius(totalIntensity, 1f, float.MaxValue);
+        var shockwaveRadius = MathF.Max(radius * 1.5f, 10f);
+        var visualRange = shockwaveRadius + 30f;
+
+        var intensity = Math.Clamp(MathF.Sqrt(totalIntensity) / 15f, 0.15f, 1f);
+        var duration = Math.Clamp(shockwaveRadius / 28f, 0.3f, 1.8f);
+
+        var ev = new ExplosionShockwaveEvent(
+            epicenter.MapId, pos, now,
+            shockwaveRadius, duration, intensity);
+
+        var shockwaveFilter = Filter.Empty().AddInRange(epicenter, visualRange, _playerManager, EntityManager);
+        RaiseNetworkEvent(ev, shockwaveFilter);
     }
 }

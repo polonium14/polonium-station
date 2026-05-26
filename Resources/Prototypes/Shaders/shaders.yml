@@ -205,3 +205,8 @@
   id: IonStorm
   kind: source
   path: "/Textures/Shaders/ion_storm.swsl"
+
+- type: shader
+  id: Shockwave
+  kind: source
+  path: "/Textures/Shaders/shockwave.swsl"
