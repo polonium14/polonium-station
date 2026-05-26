@@ -1,30 +1,4 @@
 ﻿Entries:
-- author: DieselMohawk
-  changes:
-  - message: Renamed ablative shield to laser shield
-    type: Tweak
-  - message: Changed description for laser shield & ballistic shield
-    type: Tweak
-  id: 7893
-  time: '2025-02-03T01:04:04.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34841
-- author: keronshb
-  changes:
-  - message: The Hypereutactic Blade has been added to the game as an alternative
-      to the double bladed energy sword. It's a massive sword with high attack power,
-      100% reflect chance, but slow movement and use speed.
-    type: Add
-  id: 7894
-  time: '2025-02-03T21:22:22.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/32414
-- author: AgentSmithRadio
-  changes:
-  - message: Added manager wire hacking menus to nearly all vending machines. Get
-      hacking and see what's hidden!
-    type: Add
-  id: 7895
-  time: '2025-02-03T23:33:14.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/32934
 - author: ps3moira
   changes:
   - message: Changed 3D item sprites to cabinet perspective
@@ -4089,3 +4063,36 @@
   id: 9200
   time: '2026-05-25T10:33:26.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/596
+- author: Zintex
+  changes:
+  - message: "Dodano na reach: faksy, mail teleporter, ta\u015Bmoci\u0105g w cargo,\
+      \ pok\xF3j GI oraz wi\u0119kszo\u015B\u0107 roli."
+    type: Add
+  - message: "Reach: poprawiona pozycja maszyn by nie blokowa\u0142y przej\u015Bcia\
+      \ oraz \u015Bwiate\u0142 by \u015Bwieci\u0142y i nie by\u0142y w \u015Bcianie."
+    type: Fix
+  id: 9201
+  time: '2026-05-26T07:01:54.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/599
+- author: Szyszkrzyneczka
+  changes:
+  - message: "Zwi\u0119ksza darmow\u0105 ilo\u015B\u0107 dzia\u0142 KPA, zmniejsza\
+      \ ceny wszystkich dzia\u0142, poprawnie umieszcza automatyczne pud\u0142o na\
+      \ rudy w zak\u0142adce ekwipunek, i zmniejsza wymagania do budowy dzia\u0142\
+      \ na plazm\u0119 i odkurzacza"
+    type: Tweak
+  id: 9202
+  time: '2026-05-26T07:01:04.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/594
+- author: Zintex
+  changes:
+  - message: "Zmiana wymaga\u0144 i koszt\xF3w co do heretyk\xF3w, calm traitor\xF3\
+      w oraz calm ling\xF3w w secret plus."
+    type: Tweak
+  - message: "Calm traitorzy ju\u017C dostaj\u0105 zadania inne ni\u017C przetrwaj."
+    type: Fix
+  - message: "Poprawa pickowania heretyk\xF3w na secret plus"
+    type: Fix
+  id: 9203
+  time: '2026-05-26T06:59:33.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/593
