@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: ps3moira
-  changes:
-  - message: Changed 3D item sprites to cabinet perspective
-    type: Tweak
-  id: 7896
-  time: '2025-02-04T07:52:10.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34293
 - author: impubbi
   changes:
   - message: Bolas will now only be applied once.
@@ -4096,3 +4089,14 @@
   id: 9203
   time: '2026-05-26T06:59:33.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/593
+- author: Nikita_pl
+  changes:
+  - message: "Eksplozje maj\u0105 teraz wizualny efekt fali uderzeniowej z dystorsj\u0105\
+      \ ekranu"
+    type: Add
+  - message: "Wybuchy nuklearne i BSA maj\u0105 dodatkowy efekt o\u015Blepiaj\u0105\
+      cego b\u0142ysku i kilku fal ci\u015Bnienia"
+    type: Add
+  id: 9204
+  time: '2026-05-26T15:50:03.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/600
