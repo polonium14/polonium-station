@@ -97,4 +97,10 @@ public sealed partial class CallablePhoneComponent : Component
     /// </summary>
     [DataField]
     public SoundSpecifier? BusyTone;
+
+    /// <summary>
+    /// Server-side looping busy-tone audio stream on the caller's phone.
+    /// </summary>
+    [ViewVariables]
+    public EntityUid? BusyToneStream;
 }

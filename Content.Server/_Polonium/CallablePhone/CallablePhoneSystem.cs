@@ -117,6 +117,7 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
     private void OnShutdown(Entity<CallablePhoneComponent> entity, ref ComponentShutdown args)
     {
         StopCallWaitingLoop(entity);
+        StopBusyToneLoop(entity);
 
         if (TryComp<TelephoneComponent>(entity, out var telephone) && _telephone.IsTelephoneEngaged((entity, telephone)))
             _telephone.EndTelephoneCalls((entity, telephone));
@@ -149,6 +150,7 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
         if (_telephone.IsTelephoneEngaged((entity, telephone)))
             _telephone.EndTelephoneCalls((entity, telephone));
 
+        StopBusyToneLoop(entity);
         UpdatePhoneVisual(entity);
     }
 
@@ -215,6 +217,8 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
             callable.HandsetHolder = null;
             Dirty(phone, callable);
         }
+
+        StopBusyToneLoop((phone, callable));
     }
 
     private void OnTelephoneStateChange(Entity<CallablePhoneComponent> entity, ref TelephoneStateChangeEvent args)
@@ -320,6 +324,9 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
         if (!UserHoldingPhoneHandset(source, args.Actor))
             return;
 
+        StopBusyToneLoop(source);
+        StopCallWaitingLoop(source);
+
         if (!TryComp<TelephoneComponent>(source, out var sourceTelephone))
             return;
 
@@ -341,10 +348,9 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
             return;
         }
 
-        if (_telephone.IsTelephoneEngaged(receiverEnt))
+        if (_telephone.IsTelephoneEngaged(receiverEnt) || IsHandsetOffHook(receiverUid))
         {
-            PlayPhoneSound(source, source.Comp.BusyTone);
-            _popup.PopupEntity(Loc.GetString("callable-phone-call-busy"), source, args.Actor);
+            BeginBusyCallAudio(source);
             return;
         }
 
@@ -775,9 +781,41 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
         _audio.PlayPvs(sound, phone);
     }
 
+    private void BeginBusyCallAudio(Entity<CallablePhoneComponent> entity)
+    {
+        StopCallWaitingLoop(entity);
+        StopBusyToneLoop(entity);
+
+        if (entity.Comp.DialSound == null)
+        {
+            StartBusyToneLoop(entity);
+            return;
+        }
+
+        PlayPhoneSound(entity, entity.Comp.DialSound);
+        var generation = entity.Comp.CallWaitingDelayGeneration;
+        var resolvedDial = _audio.ResolveSound(entity.Comp.DialSound);
+        if (ResolvedSoundSpecifier.IsNullOrEmpty(resolvedDial))
+        {
+            StartBusyToneLoop(entity);
+            return;
+        }
+
+        var delay = _audio.GetAudioLength(resolvedDial);
+
+        Timer.Spawn(delay, () =>
+        {
+            if (!Exists(entity) || entity.Comp.CallWaitingDelayGeneration != generation)
+                return;
+
+            StartBusyToneLoop(entity);
+        });
+    }
+
     private void BeginOutboundCallAudio(Entity<CallablePhoneComponent> entity)
     {
         StopCallWaitingLoop(entity);
+        StopBusyToneLoop(entity);
 
         if (!TryComp<TelephoneComponent>(entity, out var telephone) || telephone.CurrentState != TelephoneState.Calling)
             return;
@@ -828,6 +866,22 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
         entity.Comp.CallWaitingStream = _audio.Stop(entity.Comp.CallWaitingStream);
     }
 
+    private void StartBusyToneLoop(Entity<CallablePhoneComponent> entity)
+    {
+        if (entity.Comp.BusyTone == null || entity.Comp.BusyToneStream != null)
+            return;
+
+        entity.Comp.BusyToneStream = _audio.PlayPvs(
+            entity.Comp.BusyTone,
+            entity,
+            AudioParams.Default.WithLoop(true))?.Entity;
+    }
+
+    private void StopBusyToneLoop(Entity<CallablePhoneComponent> entity)
+    {
+        entity.Comp.BusyToneStream = _audio.Stop(entity.Comp.BusyToneStream);
+    }
+
     private void PlayHandsetPickup(Entity<CallablePhoneComponent> phone, bool inCall)
     {
         PlayPhoneSound(phone, inCall ? phone.Comp.PickupHandsetInCallSound : phone.Comp.PickupHandsetSound);
@@ -859,7 +913,9 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
             if (!TryComp<CallablePhoneComponent>(linked, out var callerCallable))
                 continue;
 
-            PlayPhoneSound(linked, callerCallable.BusyTone);
+            var caller = (linked, callerCallable);
+            StopCallWaitingLoop(caller);
+            StartBusyToneLoop(caller);
         }
     }
 
