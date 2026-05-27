@@ -333,7 +333,7 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
         var receiverUid = GetEntity(args.Receiver);
 
         if (!TryComp<CallablePhoneComponent>(receiverUid, out var receiverCallable) ||
-            !receiverCallable.ListedInDirectory ||
+            (!source.Comp.IsCentComm && !receiverCallable.ListedInDirectory) ||
             !TryComp<TelephoneComponent>(receiverUid, out var receiverTelephone))
         {
             return;
@@ -342,7 +342,8 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
         var sourceEnt = (source.Owner, sourceTelephone);
         var receiverEnt = (receiverUid, receiverTelephone);
 
-        if (!_telephone.IsSourceAbleToReachReceiver(sourceEnt, receiverEnt))
+        if (!source.Comp.IsCentComm &&
+            !_telephone.IsSourceAbleToReachReceiver(sourceEnt, receiverEnt))
         {
             _popup.PopupEntity(Loc.GetString("callable-phone-call-unreachable"), source, args.Actor);
             return;
@@ -354,7 +355,11 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
             return;
         }
 
-        _telephone.CallTelephone(sourceEnt, receiverEnt, args.Actor);
+        TelephoneCallOptions? callOptions = source.Comp.IsCentComm
+            ? new TelephoneCallOptions { IgnoreRange = true }
+            : null;
+
+        _telephone.CallTelephone(sourceEnt, receiverEnt, args.Actor, callOptions);
 
         if (!_telephone.IsTelephoneEngaged(sourceEnt))
         {
@@ -935,19 +940,25 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
     {
         var phones = new Dictionary<NetEntity, string>();
 
+        TryComp<CallablePhoneComponent>(source.Owner, out var sourceCallable);
+        var globalDirectory = sourceCallable?.IsCentComm == true;
+
         var query = AllEntityQuery<CallablePhoneComponent, TelephoneComponent>();
         while (query.MoveNext(out var receiverUid, out var callable, out var receiverTelephone))
         {
-            if (!callable.ListedInDirectory || receiverTelephone.UnlistedNumber)
+            if ((!globalDirectory && !callable.ListedInDirectory) || receiverTelephone.UnlistedNumber)
                 continue;
 
             if (receiverUid == source.Owner)
                 continue;
 
-            var receiver = (receiverUid, receiverTelephone);
+            if (!globalDirectory)
+            {
+                var receiver = (receiverUid, receiverTelephone);
 
-            if (!_telephone.IsSourceInRangeOfReceiver(source, receiver))
-                continue;
+                if (!_telephone.IsSourceInRangeOfReceiver(source, receiver))
+                    continue;
+            }
 
             phones.Add(GetNetEntity(receiverUid), GetPhoneDisplayName(receiverUid));
         }
