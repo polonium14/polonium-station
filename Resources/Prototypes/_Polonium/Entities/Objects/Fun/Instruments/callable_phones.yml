@@ -27,6 +27,12 @@
     program: 124
   - type: Item
     size: Small
+  - type: Prayable
+    usableByAtheists: true
+    sentMessage: prayer-popup-notify-centcom-sent
+    notificationPrefix: prayer-chat-notify-centcom
+    verb: prayer-verbs-voicemail
+    verbImage: null
   - type: CallablePhone
     isCentComm: false
     # phoneName: callable-phone-example-bridge  # optional; also editable via View Variables at runtime
@@ -78,6 +84,10 @@
           OffHook: { state: icon }
   - type: CallablePhone
     listedInDirectory: false
+  - type: Prayable
+    sentMessage: prayer-popup-notify-syndicate-sent
+    notificationPrefix: prayer-chat-notify-syndicate
+    verb: prayer-verbs-voicemail
 
 - type: entity
   parent: CallablePhoneInstrument
@@ -132,6 +142,11 @@
         - ItemMask
   - type: CallablePhone
     listedInDirectory: false
+  - type: Prayable
+    sentMessage: prayer-popup-notify-honkmother-sent
+    notificationPrefix: prayer-chat-notify-honkmother
+    verb: prayer-verbs-voicemail
+    verbImage: null
 
 - type: entity
   parent: BaseItem

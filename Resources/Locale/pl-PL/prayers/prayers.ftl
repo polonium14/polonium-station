@@ -1,6 +1,7 @@
 prayer-verbs-subtle-message = Subtle Message
 prayer-verbs-pray = Pray
 prayer-verbs-call = Call
+prayer-verbs-voicemail = Zostaw wiadomość
 prayer-verbs-rub = Rub
 prayer-verbs-worship = Worship
 prayer-chat-notify-pray = PRAYER
@@ -18,4 +19,4 @@ prayer-popup-notify-monolith-sent = Nothing happens. Thunderously...
 prayer-popup-notify-pray-atheist = You don't believe in that...
 prayer-popup-notify-pray-sent = Your message has been sent to the gods...
 prayer-popup-notify-pray-locked = You don't feel worthy enough...
-prayer-popup-notify-pray-ui-message = Message
+prayer-popup-notify-pray-ui-message = Wiadomość
