@@ -261,6 +261,8 @@ public sealed partial class ChatSystem : SharedChatSystem
     /// <param name="player">The player doing the speaking</param>
     /// <param name="nameOverride">The name to use for the speaking entity. Usually this should just be modified via <see cref="TransformSpeakerNameEvent"/>. If this is set, the event will not get raised.</param>
     /// <param name="ignoreActionBlocker">If set to true, action blocker will not be considered for whether an entity can send this message.</param>
+    /// <param name="excludeRecipient">If set, this entity will not receive the message in their chat window.</param>
+    /// <param name="triggerSpeakEvent">If false, listeners (e.g. radio microphones) will not be notified.</param>
     public void TrySendInGameICMessage(
         EntityUid source,
         string message,
@@ -271,7 +273,9 @@ public sealed partial class ChatSystem : SharedChatSystem
         ICommonSession? player = null,
         string? nameOverride = null,
         bool checkRadioPrefix = true,
-        bool ignoreActionBlocker = false
+        bool ignoreActionBlocker = false,
+        EntityUid? excludeRecipient = null,
+        bool triggerSpeakEvent = true
     )
     {
         if (HasComp<GhostComponent>(source))
@@ -368,7 +372,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         switch (desiredType)
         {
             case InGameICChatType.Speak:
-                SendEntitySpeak(source, message, range, nameOverride, hideLog, ignoreActionBlocker);
+                SendEntitySpeak(source, message, range, nameOverride, hideLog, ignoreActionBlocker, excludeRecipient, triggerSpeakEvent);
                 break;
             case InGameICChatType.Whisper:
                 SendEntityWhisper(source, message, range, null, nameOverride, hideLog, ignoreActionBlocker);
@@ -607,7 +611,9 @@ public sealed partial class ChatSystem : SharedChatSystem
         ChatTransmitRange range,
         string? nameOverride,
         bool hideLog = false,
-        bool ignoreActionBlocker = false
+        bool ignoreActionBlocker = false,
+        EntityUid? excludeRecipient = null,
+        bool triggerSpeakEvent = true
     )
     {
         if (!_actionBlocker.CanSpeak(source, out var onlyWhisper) && !ignoreActionBlocker)
@@ -649,10 +655,13 @@ public sealed partial class ChatSystem : SharedChatSystem
             ("fontSize", speech.FontSize),
             ("message", FormattedMessage.EscapeText(message)));
 
-        SendInVoiceRange(ChatChannel.Local, message, wrappedMessage, source, range);
+        SendInVoiceRange(ChatChannel.Local, message, wrappedMessage, source, range, excludeRecipient: excludeRecipient);
 
-        var ev = new EntitySpokeEvent(source, message, null, null);
-        RaiseLocalEvent(source, ev, true);
+        if (triggerSpeakEvent)
+        {
+            var ev = new EntitySpokeEvent(source, message, null, null);
+            RaiseLocalEvent(source, ev, true);
+        }
 
         // To avoid logging any messages sent by entities that are not players, like vendors, cloning, etc.
         // Also doesn't log if hideLog is true.
@@ -989,10 +998,17 @@ public sealed partial class ChatSystem : SharedChatSystem
         string wrappedMessage,
         EntityUid source,
         ChatTransmitRange range,
-        NetUserId? author = null)
+        NetUserId? author = null,
+        EntityUid? excludeRecipient = null)
     {
         foreach (var (session, data) in GetRecipients(source, VoiceRange))
         {
+            if (excludeRecipient != null &&
+                session.AttachedEntity == excludeRecipient)
+            {
+                continue;
+            }
+
             var entRange = MessageRangeCheck(session, data, range);
             if (entRange == MessageRangeCheckResult.Disallowed)
                 continue;

@@ -1,0 +1,10 @@
+ent-CallablePhoneInstrument = red phone
+    .desc = Should anything ever go wrong...
+ent-CallablePhoneInstrumentSyndicate = blood-red phone
+    .desc = For evil people to call their friends.
+ent-CallablePhoneInstrumentCentComm = centcomm red phone
+    .desc = Central Command red phone.
+ent-CallableBananaPhoneInstrument = banana phone
+    .desc = A direct line to the Honkmother. Seems to always go to voicemail.
+ent-TelephoneHandset = phone handset
+    .desc = The handset for a wired telephone.

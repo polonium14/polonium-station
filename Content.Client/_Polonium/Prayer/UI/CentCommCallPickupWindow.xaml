@@ -1,0 +1,15 @@
+<!--
+SPDX-License-Identifier: MIT
+-->
+
+<controls:FancyWindow xmlns="https://spacestation14.io"
+                      xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+                      MinSize="320 140">
+    <BoxContainer Orientation="Vertical" Margin="8">
+        <Label Name="MessageLabel" HorizontalAlignment="Center" Margin="0 0 0 12" />
+        <BoxContainer Orientation="Horizontal" HorizontalAlignment="Center" SeparationOverride="8">
+            <Button Name="AcceptButton" Text="{Loc callable-phone-centcomm-pickup-accept}" />
+            <Button Name="DeclineButton" Text="{Loc callable-phone-centcomm-pickup-decline}" />
+        </BoxContainer>
+    </BoxContainer>
+</controls:FancyWindow>

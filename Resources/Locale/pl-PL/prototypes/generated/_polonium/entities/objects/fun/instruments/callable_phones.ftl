@@ -1,0 +1,10 @@
+ent-CallablePhoneInstrument = czerwony telefon
+    .desc = Gdyby coś poszło nie tak...
+ent-CallablePhoneInstrumentSyndicate = krwistoczerwony telefon
+    .desc = By źli ludzie mogli dzwonić do swoich przyjaciół.
+ent-CallablePhoneInstrumentCentComm = czerwony telefon Centralnego Dowództwa
+    .desc = Gdy jednak coś pójdzie nie tak...
+ent-CallableBananaPhoneInstrument = bananowy telefon
+    .desc = Bezpośrednia linia do Honkmatki. Wygląda na to, że zawsze odpowiada poczta głosowa.
+ent-TelephoneHandset = słuchawka telefonu
+    .desc = Słuchawka starego telefonu na kablu.

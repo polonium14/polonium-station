@@ -1,0 +1,20 @@
+# SPDX-FileCopyrightText: 2026 Polonium contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- files:
+  - busy.ogg
+  - call_waiting.ogg
+  - dial.ogg
+  - handset_hangup.ogg
+  - handset_hangup_mic_1.ogg
+  - handset_hangup_mic_2.ogg
+  - handset_hangup_mic_3.ogg
+  - handset_hangup_mic_4.ogg
+  - handset_pickup.ogg
+  - handset_pickup_mic_1.ogg
+  - handset_pickup_mic_2.ogg
+  - handset_pickup_mic_3.ogg
+  license: "Pixabay Content License."
+  copyright: ""
+  source: "pixabay.com"

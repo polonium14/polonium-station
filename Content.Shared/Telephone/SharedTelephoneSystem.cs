@@ -43,6 +43,24 @@ public abstract class SharedTelephoneSystem : EntitySystem
         return callerId;
     }
 
+    /// <summary>
+    /// Plain-text caller ID for chat messages that do not support rich text markup.
+    /// </summary>
+    public string GetPlainCallerIdForEntity(string? presumedName, string? presumedJob)
+    {
+        if (presumedName == null)
+            return Loc.GetString("chat-telephone-plain-unknown-caller");
+
+        if (presumedJob != null)
+        {
+            return Loc.GetString("chat-telephone-plain-caller-id-with-job",
+                ("callerName", presumedName),
+                ("callerJob", presumedJob));
+        }
+
+        return presumedName;
+    }
+
     public string GetFormattedDeviceIdForEntity(string? deviceName, Color fontColor, string fontType = "Default", int fontSize = 12)
     {
         if (deviceName == null)

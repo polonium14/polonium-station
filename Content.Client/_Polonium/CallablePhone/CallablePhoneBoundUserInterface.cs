@@ -1,0 +1,50 @@
+// SPDX-License-Identifier: MIT
+
+using Content.Shared._Polonium.CallablePhone;
+using JetBrains.Annotations;
+using Robust.Client.UserInterface;
+using Robust.Shared.GameObjects;
+
+namespace Content.Client._Polonium.CallablePhone;
+
+[UsedImplicitly]
+public sealed class CallablePhoneBoundUserInterface : BoundUserInterface
+{
+    [ViewVariables]
+    private CallablePhoneWindow? _window;
+
+    public CallablePhoneBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
+    {
+    }
+
+    protected override void Open()
+    {
+        base.Open();
+
+        _window = this.CreateWindow<CallablePhoneWindow>();
+
+        var phone = Owner;
+        if (EntMan.TryGetComponent<TelephoneHandsetComponent>(Owner, out var handset))
+            phone = EntMan.GetEntity(handset.ParentPhone);
+
+        _window.Title = Loc.GetString("callable-phone-window-title", ("title", EntMan.GetComponent<MetaDataComponent>(phone).EntityName));
+        _window.SetOwner(phone);
+        _window.UpdateState(new Dictionary<NetEntity, string>());
+
+        _window.CallPressed += receiver => SendMessage(new CallablePhoneCallMessage(receiver));
+        _window.AnswerPressed += () => SendMessage(new CallablePhoneAnswerMessage());
+        _window.HangUpPressed += () => SendMessage(new CallablePhoneHangUpMessage());
+
+        _window.OpenCentered();
+    }
+
+    protected override void UpdateState(BoundUserInterfaceState state)
+    {
+        base.UpdateState(state);
+
+        if (state is not CallablePhoneBoundInterfaceState castState)
+            return;
+
+        _window?.UpdateState(castState.Phones);
+    }
+}

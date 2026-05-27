@@ -1,0 +1,25 @@
+# Callable phone UI
+callable-phone-window-title = { $title }
+callable-phone-window-subtitle = Wybierz czerwony telefon, aby zadzwonić
+callable-phone-window-footer = Stacyjna sieć telefoniczna
+callable-phone-select-contact = Czerwone telefony na tej stacji
+callable-phone-call = DZWOŃ
+verb-callable-phone-openui = Otwórz listę telefonów
+callable-phone-call-failed = Nie udało się nawiązać połączenia.
+callable-phone-call-busy = Linia jest zajęta.
+callable-phone-call-unreachable = Ten telefon jest poza zasięgiem.
+callable-phone-centcomm-call-connected = [Połączono przez telefon]
+callable-phone-centcomm-call-ringing = [Przychodzące połączenie telefoniczne]
+callable-phone-centcomm-call-started = Połączenie nawiązane.
+callable-phone-centcomm-call-ended = Połączenie zakończone.
+callable-phone-centcomm-admin-joined = { $admin } dołączył do rozmowy.
+callable-phone-centcomm-pickup-message = Przychodzące połączenie z CentComm od { $caller }. Odebrać telefon?
+callable-phone-centcomm-pickup-accept = Odbierz
+callable-phone-centcomm-pickup-decline = Odrzuć
+callable-phone-handset-slot = słuchawka telefonu
+callable-phone-window-fetching-contacts-list = Brak telefonów do których można zadzwonić
+callable-phone-window-filter-line-placeholder = Wyszukaj kontakt
+callable-phone-chat-input-placeholder = Wpisz wiadomość...
+callable-phone-window-relay-label = Źródło:
+callable-phone-window-answer-call = Odbierz
+callable-phone-window-end-call = Odrzuć
