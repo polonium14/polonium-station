@@ -1,5 +1,7 @@
 ent-CallablePhoneInstrument = red phone
     .desc = Should anything ever go wrong...
+ent-CallablePhoneInstrumentBlue = blue phone
+    .desc = A regular phone for bothering colleagues from other departments.
 ent-CallablePhoneInstrumentSyndicate = blood-red phone
     .desc = For evil people to call their friends.
 ent-CallablePhoneInstrumentCentComm = centcomm red phone

@@ -1,5 +1,7 @@
 ent-CallablePhoneInstrument = czerwony telefon
     .desc = Gdyby coś poszło nie tak...
+ent-CallablePhoneInstrumentBlue = niebieski telefon
+    .desc = Zwyczajny telefon do denerwowania kolegów z innych departamentów.
 ent-CallablePhoneInstrumentSyndicate = krwistoczerwony telefon
     .desc = By źli ludzie mogli dzwonić do swoich przyjaciół.
 ent-CallablePhoneInstrumentCentComm = czerwony telefon Centralnego Dowództwa

@@ -67,6 +67,24 @@
 
 - type: entity
   parent: CallablePhoneInstrument
+  id: CallablePhoneInstrumentBlue
+  name: blue phone
+  description: A regular phone for bothering colleagues from other departments.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Fun/Instruments/otherinstruments.rsi
+    layers:
+    - state: blue_phone
+      map: ["base"]
+  - type: GenericVisualizer
+    visuals:
+      enum.CallablePhoneVisuals.HookState:
+        base:
+          OnHook: { state: blue_phone }
+          OffHook: { state: blue_phone_no_handset }
+
+- type: entity
+  parent: CallablePhoneInstrument
   id: CallablePhoneInstrumentSyndicate
   name: blood-red phone
   description: For evil people to call their friends.
