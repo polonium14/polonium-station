@@ -22,28 +22,43 @@
           availableJobs:
             NanotrasenCareerTrainer: [ 2, 2 ] # Polonium, whitelistowana rola
             Captain: [ 1, 1 ]
+            HeadOfPersonnel: [ 1, 1 ]
           #service
             Janitor: [ 1, 1 ]
-            ServiceWorker: [ 3, 3 ]
+            ServiceWorker: [ 1, 1 ]
+            Bartender: [ 1, 1 ]
+            Chef: [ 1, 1 ]
+            Botanist: [ 1, 1 ]
           #engineering
-            AtmosphericTechnician: [ 1, 1 ]
             ChiefEngineer: [ 1, 1 ]
-            StationEngineer: [ 1, 1 ]
+            StationEngineer: [ 2, 2 ]
             TechnicalAssistant: [ 1, 1 ]
           #medical
+            ChiefMedicalOfficer: [ 1, 1 ]
             Chemist: [ 1, 1 ]
-            MedicalDoctor: [ 2, 2 ]
+            MedicalDoctor: [ 1, 1 ]
+            Paramedic: [ 1, 1 ]
             MedicalIntern: [ 1, 1 ]
+            Psychologist: [ 1, 1 ]
           #science
+            ResearchDirector: [ 1, 1 ]
             ResearchAssistant: [ 1, 1 ]
             Scientist: [ 1, 1 ]
+            Roboticist: [ 1, 1 ]
+            Borg: [ 1, 1 ]
           #security
             HeadOfSecurity: [ 1, 1 ]
             SecurityCadet: [ 1, 1 ]
             SecurityOfficer: [ 1, 1 ]
             Warden: [ 1, 1 ]
+            Brigmedic: [ 1, 1 ]
           #supply
+            Quartermaster: [ 1, 1 ]
             CargoTechnician: [ 2, 2 ]
             SalvageSpecialist: [ 1, 1 ]
           #civilian
+            Clown: [ 1, 1 ]
+            Mime: [ 1, 1 ]
+            Chaplain: [ 1, 1 ]
+            Lawyer: [ 1, 1 ]
             Passenger: [ -1, -1 ]
