@@ -576,17 +576,17 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
 
         var message = msg.Message.Trim();
 
-        if (callable.IsCentComm)
+        if (IsGhostCallerAdmin(uid.Value, args.SenderSession))
         {
-            ReplyThroughCentCommPhone(args.SenderSession, uid.Value, callable, message);
+            ReplyThroughGhostCallerPhone(args.SenderSession, uid.Value, callable, message);
             NotifyAdminChatListeners(uid.Value, GetAdminChatDisplayName(uid.Value, args.SenderSession, callable), message, incoming: false);
             return;
         }
 
-        if (!IsGhostCallerAdmin(uid.Value, args.SenderSession))
+        if (!callable.IsCentComm)
             return;
 
-        ReplyThroughGhostCallerPhone(args.SenderSession, uid.Value, callable, message);
+        ReplyThroughCentCommPhone(args.SenderSession, uid.Value, callable, message);
         NotifyAdminChatListeners(uid.Value, GetAdminChatDisplayName(uid.Value, args.SenderSession, callable), message, incoming: false);
     }
 
@@ -626,10 +626,13 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
 
     private bool IsAdminChatCallActive(EntityUid uid, CallablePhoneComponent callable)
     {
+        if (_ghostCallerActiveCalls.Contains(uid))
+            return true;
+
         if (callable.IsCentComm)
             return IsCentCommCallActive(uid);
 
-        return _ghostCallerActiveCalls.Contains(uid);
+        return false;
     }
 
     private bool IsGhostCallerAdmin(EntityUid phone, ICommonSession session)
@@ -931,7 +934,7 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
 
     private void TryOpenGhostCallerDeviceChat(Entity<CallablePhoneComponent> entity)
     {
-        if (entity.Comp.IsCentComm || !_ghostCallerPending.Remove(entity.Owner))
+        if (!_ghostCallerPending.Remove(entity.Owner))
             return;
 
         if (!_ghostCallerAdmin.TryGetValue(entity.Owner, out var adminId) ||
