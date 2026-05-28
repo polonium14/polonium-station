@@ -14,10 +14,28 @@ public sealed partial class CallablePhoneComponent : Component
     public const string HandsetSlotId = "handset";
 
     /// <summary>
-    /// If true, this phone appears in the dial directory (red phones only).
+    /// If true, this phone is on the public station directory (red, blue, banana).
     /// </summary>
     [DataField, AutoNetworkedField]
     public bool ListedInDirectory = true;
+
+    /// <summary>
+    /// If true, may only dial listed public lines, not the private CentComm line (blue, banana).
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool ExcludeCentCommFromDial;
+
+    /// <summary>
+    /// If true, may dial and see the private CentComm line (red phone).
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool IncludeCentCommInDirectory;
+
+    /// <summary>
+    /// If true, this line is private but may dial any public listed line (blood-red phone).
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool PrivateLine;
 
     /// <summary>
     /// If true, calling this phone opens an admin chat window (CentComm line).

@@ -69,6 +69,39 @@ public abstract class SharedCallablePhoneSystem : EntitySystem
     }
 
     /// <summary>
+    /// Whether <paramref name="source"/> may place a call to <paramref name="receiver"/>.
+    /// </summary>
+    public bool CanSourceDialReceiver(CallablePhoneComponent source, CallablePhoneComponent receiver)
+    {
+        if (source.IsCentComm)
+            return true;
+
+        if (receiver.ListedInDirectory)
+        {
+            if (source.ExcludeCentCommFromDial && receiver.IsCentComm)
+                return false;
+
+            return true;
+        }
+
+        if (receiver.IsCentComm && source.IncludeCentCommInDirectory)
+            return true;
+
+        return false;
+    }
+
+    /// <summary>
+    /// Whether <paramref name="receiver"/> should appear in <paramref name="source"/>'s handset directory.
+    /// </summary>
+    public bool CanSourceSeeInDirectory(CallablePhoneComponent source, CallablePhoneComponent receiver)
+    {
+        if (source.IsCentComm)
+            return true;
+
+        return CanSourceDialReceiver(source, receiver);
+    }
+
+    /// <summary>
     /// Name shown in the callable phone directory.
     /// </summary>
     public string GetPhoneDisplayName(EntityUid uid)

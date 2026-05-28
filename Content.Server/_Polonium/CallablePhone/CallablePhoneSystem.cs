@@ -333,7 +333,7 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
         var receiverUid = GetEntity(args.Receiver);
 
         if (!TryComp<CallablePhoneComponent>(receiverUid, out var receiverCallable) ||
-            (!source.Comp.IsCentComm && !receiverCallable.ListedInDirectory) ||
+            !CanSourceDialReceiver(source.Comp, receiverCallable) ||
             !TryComp<TelephoneComponent>(receiverUid, out var receiverTelephone))
         {
             return;
@@ -940,19 +940,24 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
     {
         var phones = new Dictionary<NetEntity, string>();
 
-        TryComp<CallablePhoneComponent>(source.Owner, out var sourceCallable);
-        var globalDirectory = sourceCallable?.IsCentComm == true;
+        if (!TryComp<CallablePhoneComponent>(source.Owner, out var sourceCallable))
+            return;
+
+        var centCommDirectory = sourceCallable.IsCentComm;
 
         var query = AllEntityQuery<CallablePhoneComponent, TelephoneComponent>();
         while (query.MoveNext(out var receiverUid, out var callable, out var receiverTelephone))
         {
-            if ((!globalDirectory && !callable.ListedInDirectory) || receiverTelephone.UnlistedNumber)
+            if (receiverTelephone.UnlistedNumber)
                 continue;
 
             if (receiverUid == source.Owner)
                 continue;
 
-            if (!globalDirectory)
+            if (!CanSourceSeeInDirectory(sourceCallable, callable))
+                continue;
+
+            if (!centCommDirectory)
             {
                 var receiver = (receiverUid, receiverTelephone);
 

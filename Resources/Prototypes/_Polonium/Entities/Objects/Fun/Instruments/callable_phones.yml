@@ -35,6 +35,7 @@
     verbImage: null
   - type: CallablePhone
     isCentComm: false
+    includeCentCommInDirectory: true
     # phoneName: callable-phone-example-bridge  # optional; also editable via View Variables at runtime
     pickupHandsetSound:
       path: /Audio/_Polonium/Machines/Telephone/handset_pickup.ogg
@@ -82,6 +83,9 @@
         base:
           OnHook: { state: blue_phone }
           OffHook: { state: blue_phone_no_handset }
+  - type: CallablePhone
+    includeCentCommInDirectory: false
+    excludeCentCommFromDial: true
 
 - type: entity
   parent: CallablePhoneInstrument
@@ -102,6 +106,8 @@
           OffHook: { state: icon }
   - type: CallablePhone
     listedInDirectory: false
+    includeCentCommInDirectory: false
+    privateLine: true
   - type: Prayable
     sentMessage: prayer-popup-notify-syndicate-sent
     notificationPrefix: prayer-chat-notify-syndicate
@@ -115,7 +121,8 @@
   components:
   - type: CallablePhone
     isCentComm: true
-    listedInDirectory: true
+    listedInDirectory: false
+    includeCentCommInDirectory: false
     adminChatPrefix: prayer-chat-notify-centcom
 
 - type: entity
@@ -159,7 +166,9 @@
         mask:
         - ItemMask
   - type: CallablePhone
-    listedInDirectory: false
+    listedInDirectory: true
+    includeCentCommInDirectory: false
+    excludeCentCommFromDial: true
   - type: Prayable
     sentMessage: prayer-popup-notify-honkmother-sent
     notificationPrefix: prayer-chat-notify-honkmother
