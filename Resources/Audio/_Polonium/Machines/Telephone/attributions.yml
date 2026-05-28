@@ -16,6 +16,6 @@
   - handset_pickup_mic_1.ogg
   - handset_pickup_mic_2.ogg
   - handset_pickup_mic_3.ogg
-  license: "Pixabay Content License."
-  copyright: ""
-  source: "pixabay.com"
+  license: "Custom"
+  copyright: "Can: use the content for free, use it commercially, modify/edit it, use it without attribution. Cannot: resell or redistribute the raw file unchanged, use trademarked/logo content commercially on products, use it illegally, misleadingly, or immorally, use it as part of a trademark/brand identity."
+  source: "https://pixabay.com/"
