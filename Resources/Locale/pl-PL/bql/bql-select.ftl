@@ -9,6 +9,12 @@ ui-bql-results-vv = VV
 ui-bql-results-tp = TP
 ui-bql-results-vv-tooltip = Wyświetl zmienne encji
 ui-bql-results-tp-tooltip = Teleportuj do encji
+ui-bql-results-status-more = { $count } { $count ->
+    [one] encja (więcej dostępnych)
+    [few] encje (więcej dostępnych)
+   *[other] encji (więcej dostępnych)
+}
+
 ui-bql-results-status = { $count } { $count ->
     [one] encja
     [few] encje

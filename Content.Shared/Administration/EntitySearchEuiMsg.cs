@@ -14,4 +14,22 @@ public static class EntitySearchEuiMsg
     {
         public string Query = string.Empty;
     }
+
+    [Serializable, NetSerializable]
+    public sealed class NextResultsRequest : EuiMessageBase;
+
+    [Serializable, NetSerializable]
+    public sealed class NewResults : EuiMessageBase
+    {
+        public NewResults((string name, NetEntity entity)[] entities, bool replace, bool hasNext)
+        {
+            Entities = entities;
+            Replace = replace;
+            HasNext = hasNext;
+        }
+
+        public (string name, NetEntity entity)[] Entities { get; }
+        public bool Replace { get; }
+        public bool HasNext { get; }
+    }
 }

@@ -17,6 +17,9 @@ public sealed partial class EntitySearchWindow : DefaultWindow
     private readonly ILocalizationManager _loc;
 
     public event Action? SearchRequested;
+    public event Action? NextResultsRequested;
+
+    private int _loadedCount;
 
     public EntitySearchWindow(IClientConsoleHost console, ILocalizationManager loc)
     {
@@ -27,12 +30,28 @@ public sealed partial class EntitySearchWindow : DefaultWindow
 
         SearchButton.OnPressed += _ => SearchRequested?.Invoke();
         SearchLineEdit.OnTextEntered += _ => SearchRequested?.Invoke();
+        NextButton.OnPressed += _ => NextResultsRequested?.Invoke();
     }
 
     public string SearchText => SearchLineEdit.Text;
 
-    public void UpdateResults((string name, NetEntity entity)[] entities)
+    public void SetResults((string name, NetEntity entity)[] entities, bool hasNext)
     {
-        AdminEntityResultsList.Populate(ItemList, StatusLabel, entities, _console, _loc);
+        _loadedCount = entities.Length;
+        AdminEntityResultsList.Populate(ItemList, StatusLabel, entities, _console, _loc, hasNext);
+        NextButton.Disabled = !hasNext;
+    }
+
+    public void AddResults((string name, NetEntity entity)[] entities, bool hasNext)
+    {
+        _loadedCount += entities.Length;
+        AdminEntityResultsList.Append(ItemList, entities, _console, _loc);
+        AdminEntityResultsList.UpdateStatus(StatusLabel, _loadedCount, hasNext, _loc);
+        NextButton.Disabled = !hasNext;
+    }
+
+    public void BeginNextResultsRequest()
+    {
+        NextButton.Disabled = true;
     }
 }

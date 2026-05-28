@@ -17,6 +17,11 @@ SPDX-License-Identifier: MIT
             <Button
                 Name="SearchButton"
                 Text="{Loc admin-entity-search-button}" />
+            <Button
+                Name="NextButton"
+                Text="{Loc admin-entity-search-next}"
+                StyleClasses="OpenLeft"
+                Disabled="True" />
         </BoxContainer>
         <Label Name="StatusLabel" />
         <ScrollContainer VerticalExpand="True">

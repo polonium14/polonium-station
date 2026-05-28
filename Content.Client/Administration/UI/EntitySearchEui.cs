@@ -5,10 +5,10 @@
 using Content.Client.Administration.UI.Tabs.AdminTab;
 using Content.Client.Eui;
 using Content.Shared.Administration;
-using Content.Shared.Bql;
 using Content.Shared.Eui;
 using JetBrains.Annotations;
 using Robust.Client.Console;
+using static Content.Shared.Administration.EntitySearchEuiMsg;
 
 namespace Content.Client.Administration.UI;
 
@@ -25,6 +25,7 @@ public sealed class EntitySearchEui : BaseEui
 
         _window.OnClose += () => SendMessage(new CloseEuiMessage());
         _window.SearchRequested += PerformSearch;
+        _window.NextResultsRequested += RequestNextResults;
     }
 
     public override void Opened()
@@ -39,16 +40,27 @@ public sealed class EntitySearchEui : BaseEui
         _window.Close();
     }
 
-    public override void HandleState(EuiStateBase state)
+    public override void HandleMessage(EuiMessageBase msg)
     {
-        if (state is not ToolshedVisualizeEuiState castState)
+        base.HandleMessage(msg);
+
+        if (msg is not NewResults newResults)
             return;
 
-        _window.UpdateResults(castState.Entities);
+        if (newResults.Replace)
+            _window.SetResults(newResults.Entities, newResults.HasNext);
+        else
+            _window.AddResults(newResults.Entities, newResults.HasNext);
     }
 
     private void PerformSearch()
     {
-        SendMessage(new EntitySearchEuiMsg.Search { Query = _window.SearchText });
+        SendMessage(new Search { Query = _window.SearchText });
+    }
+
+    private void RequestNextResults()
+    {
+        _window.BeginNextResultsRequest();
+        SendMessage(new NextResultsRequest());
     }
 }
