@@ -46,7 +46,7 @@
     hangupHandsetInCallSound:
       collection: CallablePhoneHandsetHangupMic
     dialSound:
-      path: /Audio/_Polonium/Machines/Telephone/dial.ogg
+      path: /Audio/_Polonium/Machines/Telephone/dialing.ogg
     callWaitingTone:
       path: /Audio/_Polonium/Machines/Telephone/call_waiting.ogg
     busyTone:
