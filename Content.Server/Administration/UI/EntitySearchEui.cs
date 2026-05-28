@@ -16,7 +16,7 @@ namespace Content.Server.Administration.UI;
 public sealed class EntitySearchEui : BaseEui
 {
     private const int MaxResults = 300;
-    private static readonly TimeSpan SearchCooldown = TimeSpan.FromSeconds(1);
+    private static readonly TimeSpan SearchCooldown = TimeSpan.FromSeconds(3);
 
     [Dependency] private readonly IEntityManager _entities = default!;
     [Dependency] private readonly IAdminManager _adminManager = default!;
