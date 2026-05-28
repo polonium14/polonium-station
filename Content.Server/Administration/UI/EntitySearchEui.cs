@@ -17,7 +17,6 @@ namespace Content.Server.Administration.UI;
 public sealed class EntitySearchEui : BaseEui
 {
     private const int BatchSize = 300;
-    private static readonly TimeSpan SearchCooldown = TimeSpan.FromSeconds(3);
 
     [Dependency] private readonly IEntityManager _entities = default!;
     [Dependency] private readonly IAdminManager _adminManager = default!;
@@ -51,7 +50,7 @@ public sealed class EntitySearchEui : BaseEui
         {
             case Search search:
             {
-                if (_gameTiming.CurTime - _lastSearchTime < SearchCooldown)
+                if (_gameTiming.CurTime - _lastSearchTime < EntitySearchEuiMsg.SearchCooldown)
                     return;
 
                 _lastSearchTime = _gameTiming.CurTime;

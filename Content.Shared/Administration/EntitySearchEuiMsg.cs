@@ -9,6 +9,8 @@ namespace Content.Shared.Administration;
 
 public static class EntitySearchEuiMsg
 {
+    public static readonly TimeSpan SearchCooldown = TimeSpan.FromSeconds(3);
+
     [Serializable, NetSerializable]
     public sealed class Search : EuiMessageBase
     {

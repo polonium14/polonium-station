@@ -7,7 +7,7 @@ using Content.Client.Eui;
 using Content.Shared.Administration;
 using Content.Shared.Eui;
 using JetBrains.Annotations;
-using Robust.Client.Console;
+using Robust.Shared.IoC;
 using static Content.Shared.Administration.EntitySearchEuiMsg;
 
 namespace Content.Client.Administration.UI;
@@ -15,13 +15,13 @@ namespace Content.Client.Administration.UI;
 [UsedImplicitly]
 public sealed class EntitySearchEui : BaseEui
 {
+    [Dependency] private readonly IDependencyCollection _deps = default!;
+
     private readonly EntitySearchWindow _window;
 
     public EntitySearchEui()
     {
-        _window = new EntitySearchWindow(
-            IoCManager.Resolve<IClientConsoleHost>(),
-            IoCManager.Resolve<ILocalizationManager>());
+        _window = new EntitySearchWindow(_deps);
 
         _window.OnClose += () => SendMessage(new CloseEuiMessage());
         _window.SearchRequested += PerformSearch;
