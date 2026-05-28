@@ -138,8 +138,10 @@ public sealed class TelephoneSystem : SharedTelephoneSystem
             !IsSourceConnectedToReceiver(args.TelephoneSource, entity))
             return;
 
-        // CentComm lines only feed the admin chat window, not local speakers.
-        if (TryComp<CallablePhoneComponent>(entity, out var callable) && callable.IsCentComm)
+        // CentComm lines feed the admin chat when answered remotely; relay locally when someone holds the handset.
+        if (TryComp<CallablePhoneComponent>(entity, out var callable) &&
+            callable.IsCentComm &&
+            callable.HandsetHolder == null)
             return;
 
         var nameSource = args.MessageSource;

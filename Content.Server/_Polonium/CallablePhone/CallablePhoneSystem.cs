@@ -186,8 +186,13 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
 
         if (telephone.CurrentState == TelephoneState.Ringing)
         {
-            if (!callable.IsCentComm)
-                _telephone.AnswerTelephone((phone, telephone), args.User);
+            _telephone.AnswerTelephone((phone, telephone), args.User);
+
+            if (callable.IsCentComm)
+            {
+                _centCommAwaitingPickup.Remove(phone);
+                PlayRemoteDisconnectOnCallers(telephone);
+            }
         }
 
         UpdateHandsetRelay(phone, telephone, args.User);
