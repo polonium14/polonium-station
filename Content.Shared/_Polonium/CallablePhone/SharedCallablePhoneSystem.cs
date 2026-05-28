@@ -1,23 +1,34 @@
 // SPDX-License-Identifier: MIT
 
 using Content.Shared.Containers.ItemSlots;
+using Content.Shared.Hands;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Labels.Components;
 using Content.Shared.Telephone;
 using Content.Shared.UserInterface;
 using Content.Shared.Verbs;
+using Robust.Shared.Audio.Systems;
+using Robust.Shared.Network;
 
 namespace Content.Shared._Polonium.CallablePhone;
 
 public abstract class SharedCallablePhoneSystem : EntitySystem
 {
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly ItemSlotsSystem _itemSlots = default!;
+    [Dependency] private readonly INetManager _net = default!;
 
     public override void Initialize()
     {
         base.Initialize();
+
+        if (_net.IsClient)
+        {
+            SubscribeLocalEvent<TelephoneHandsetComponent, GotEquippedHandEvent>(OnHandsetEquippedPlayLocal);
+            SubscribeLocalEvent<TelephoneHandsetComponent, GotUnequippedHandEvent>(OnHandsetUnequippedPlayLocal);
+        }
 
         SubscribeLocalEvent<TelephoneHandsetComponent, GetVerbsEvent<ActivationVerb>>(
             OnHandsetGetActivationVerbs,
@@ -26,6 +37,35 @@ public abstract class SharedCallablePhoneSystem : EntitySystem
         SubscribeLocalEvent<TelephoneHandsetComponent, GetVerbsEvent<Verb>>(
             OnHandsetGetVerbs,
             after: [typeof(ActivatableUISystem)]);
+    }
+
+    private void OnHandsetEquippedPlayLocal(Entity<TelephoneHandsetComponent> handset, ref GotEquippedHandEvent args)
+    {
+        var phone = GetEntity(handset.Comp.ParentPhone);
+        if (!Exists(phone) || !TryComp<CallablePhoneComponent>(phone, out var callable))
+            return;
+
+        if (!TryComp<TelephoneComponent>(phone, out var telephone))
+            return;
+
+        var inCall = telephone.CurrentState == TelephoneState.InCall;
+        var sound = inCall ? callable.PickupHandsetInCallSound : callable.PickupHandsetSound;
+        _audio.PlayLocal(sound, handset.Owner, args.User);
+    }
+
+    private void OnHandsetUnequippedPlayLocal(Entity<TelephoneHandsetComponent> handset, ref GotUnequippedHandEvent args)
+    {
+        var phone = GetEntity(handset.Comp.ParentPhone);
+        if (!Exists(phone) || !TryComp<CallablePhoneComponent>(phone, out var callable))
+            return;
+
+        if (!TryComp<TelephoneComponent>(phone, out var telephone))
+            return;
+
+        if (telephone.CurrentState != TelephoneState.InCall)
+            return;
+
+        _audio.PlayLocal(callable.HangupHandsetInCallSound, handset.Owner, args.User);
     }
 
     /// <summary>

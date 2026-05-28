@@ -191,8 +191,6 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
                 _telephone.AnswerTelephone((phone, telephone), args.User);
         }
 
-        PlayHandsetPickup((phone, callable), inCall, args.User);
-
         UpdateHandsetRelay(phone, telephone, args.User);
 
         UpdateUiState((phone, telephone));
@@ -220,9 +218,6 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
         {
             if (TryComp<TelephoneComponent>(phone, out var telephone))
             {
-                if (telephone.CurrentState == TelephoneState.InCall)
-                    PlayHandsetHangup((phone, callable), micVariant: true, args.User);
-
                 UpdateHandsetRelay(phone, telephone, null);
             }
 
@@ -1165,11 +1160,6 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
     private void StopDialToneLoop(Entity<CallablePhoneComponent> entity)
     {
         entity.Comp.DialToneStream = _audio.Stop(entity.Comp.DialToneStream);
-    }
-
-    private void PlayHandsetPickup(Entity<CallablePhoneComponent> phone, bool inCall, EntityUid holder)
-    {
-        PlayHolderPhoneSound(holder, inCall ? phone.Comp.PickupHandsetInCallSound : phone.Comp.PickupHandsetSound);
     }
 
     private void PlayHandsetHangup(Entity<CallablePhoneComponent> phone, bool micVariant, EntityUid? holder = null)
