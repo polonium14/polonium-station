@@ -362,22 +362,13 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
         var sourceEnt = (source.Owner, sourceTelephone);
         var receiverEnt = (receiverUid, receiverTelephone);
 
-        if (!source.Comp.IsCentComm &&
-            !_telephone.IsSourceAbleToReachReceiver(sourceEnt, receiverEnt))
-        {
-            _popup.PopupEntity(Loc.GetString("callable-phone-call-unreachable"), source, args.Actor);
-            return;
-        }
-
         if (_telephone.IsTelephoneEngaged(receiverEnt) || IsHandsetOffHook(receiverUid))
         {
             BeginBusyCallAudio(source);
             return;
         }
 
-        TelephoneCallOptions? callOptions = source.Comp.IsCentComm
-            ? new TelephoneCallOptions { IgnoreRange = true }
-            : null;
+        var callOptions = new TelephoneCallOptions { IgnoreRange = true };
 
         StartOutboundCallWithDialDelay(
             source,
@@ -414,13 +405,6 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
 
             if (source.Comp.HandsetHolder == null || !UserHoldingPhoneHandset(source, user))
                 return;
-
-            if (!source.Comp.IsCentComm &&
-                callOptions?.IgnoreRange != true &&
-                !_telephone.IsSourceAbleToReachReceiver(sourceEnt, receiverEnt))
-            {
-                return;
-            }
 
             if (_telephone.IsTelephoneEngaged(receiverEnt) || IsHandsetOffHook(receiverUid))
             {
@@ -1221,8 +1205,6 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
         if (!TryComp<CallablePhoneComponent>(source.Owner, out var sourceCallable))
             return;
 
-        var centCommDirectory = sourceCallable.IsCentComm;
-
         var query = AllEntityQuery<CallablePhoneComponent, TelephoneComponent>();
         while (query.MoveNext(out var receiverUid, out var callable, out var receiverTelephone))
         {
@@ -1234,14 +1216,6 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
 
             if (!CanSourceSeeInDirectory(sourceCallable, callable))
                 continue;
-
-            if (!centCommDirectory)
-            {
-                var receiver = (receiverUid, receiverTelephone);
-
-                if (!_telephone.IsSourceInRangeOfReceiver(source, receiver))
-                    continue;
-            }
 
             phones.Add(GetNetEntity(receiverUid), GetPhoneDisplayName(receiverUid));
         }
