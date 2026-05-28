@@ -5,6 +5,7 @@
 - files:
   - busy.ogg
   - call_waiting.ogg
+  - dial_tone.ogg
   - dialing.ogg
   - handset_hangup.ogg
   - handset_hangup_mic_1.ogg

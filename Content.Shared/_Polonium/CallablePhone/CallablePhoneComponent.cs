@@ -87,6 +87,18 @@ public sealed partial class CallablePhoneComponent : Component
     public SoundSpecifier? HangupHandsetInCallSound;
 
     /// <summary>
+    /// Looped while the handset is off-hook and the line is idle.
+    /// </summary>
+    [DataField]
+    public SoundSpecifier? DialTone;
+
+    /// <summary>
+    /// Server-side looping dial-tone audio stream.
+    /// </summary>
+    [ViewVariables]
+    public EntityUid? DialToneStream;
+
+    /// <summary>
     /// Played once when an outbound call is placed successfully.
     /// </summary>
     [DataField]
