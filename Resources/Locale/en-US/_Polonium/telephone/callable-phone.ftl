@@ -1,13 +1,14 @@
 # Callable phone UI
 callable-phone-window-title = {$title}
-callable-phone-window-subtitle = Select a red phone to call
+callable-phone-window-subtitle = Select a contact to call
 callable-phone-window-footer = Station telephone network
-callable-phone-select-contact = Red phones on this grid
+callable-phone-select-contact = Available contacts
 callable-phone-call = CALL
 verb-callable-phone-openui = Open phone directory
 callable-phone-call-failed = The call could not be connected.
 callable-phone-call-busy = That line is busy.
 callable-phone-call-unreachable = That phone is out of range.
+callable-phone-call-invalid = That number is not valid.
 callable-phone-centcomm-call-connected = [Connected via telephone]
 callable-phone-centcomm-call-ringing = [Incoming telephone call]
 callable-phone-centcomm-call-started = Call connected.

@@ -355,6 +355,7 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
             !CanSourceDialReceiver(source.Comp, receiverCallable) ||
             !TryComp<TelephoneComponent>(receiverUid, out var receiverTelephone))
         {
+            _popup.PopupEntity(Loc.GetString("callable-phone-call-invalid"), source, args.Actor);
             return;
         }
 

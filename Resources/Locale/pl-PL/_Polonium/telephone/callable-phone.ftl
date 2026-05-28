@@ -1,13 +1,14 @@
 # Callable phone UI
 callable-phone-window-title = { $title }
-callable-phone-window-subtitle = Wybierz czerwony telefon, aby zadzwonić
+callable-phone-window-subtitle = Wybierz kontakt, do którego chcesz zadzwonić
 callable-phone-window-footer = Stacyjna sieć telefoniczna
-callable-phone-select-contact = Czerwone telefony na tej stacji
+callable-phone-select-contact = Dostępne kontakty
 callable-phone-call = DZWOŃ
 verb-callable-phone-openui = Otwórz listę telefonów
 callable-phone-call-failed = Nie udało się nawiązać połączenia.
 callable-phone-call-busy = Linia jest zajęta.
 callable-phone-call-unreachable = Ten telefon jest poza zasięgiem.
+callable-phone-call-invalid = Ten numer jest nieprawidłowy.
 callable-phone-centcomm-call-connected = [Połączono przez telefon]
 callable-phone-centcomm-call-ringing = [Przychodzące połączenie telefoniczne]
 callable-phone-centcomm-call-started = Połączenie nawiązane.
