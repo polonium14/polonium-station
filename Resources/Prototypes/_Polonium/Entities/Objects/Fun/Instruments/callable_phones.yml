@@ -63,7 +63,7 @@
         name: callable-phone-handset-slot
         insertOnInteract: true
         ejectOnInteract: true
-        startingItem: TelephoneHandset
+        startingItem: TelephoneHandsetRed
         whitelist:
           components:
           - TelephoneHandset
@@ -89,6 +89,17 @@
     includeCentCommInDirectory: false
     excludeCentCommFromDial: true
 
+  - type: ItemSlots
+    slots:
+      handset:
+        name: callable-phone-handset-slot
+        insertOnInteract: true
+        ejectOnInteract: true
+        startingItem: TelephoneHandsetBlue
+        whitelist:
+          components:
+          - TelephoneHandset
+
 - type: entity
   parent: CallablePhoneInstrument
   id: CallablePhoneInstrumentSyndicate
@@ -96,16 +107,16 @@
   description: For evil people to call their friends.
   components:
   - type: Sprite
-    sprite: Objects/Fun/Instruments/blood_red_phone.rsi
+    sprite: _Polonium/Objects/Fun/Instruments/otherinstruments.rsi
     layers:
-    - state: icon
+    - state: blood_red_phone
       map: ["base"]
   - type: GenericVisualizer
     visuals:
       enum.CallablePhoneVisuals.HookState:
         base:
-          OnHook: { state: icon }
-          OffHook: { state: icon }
+          OnHook: { state: blood_red_phone }
+          OffHook: { state: blood_red_phone_no_handset }
   - type: CallablePhone
     listedInDirectory: false
     includeCentCommInDirectory: false
@@ -114,6 +125,17 @@
     sentMessage: prayer-popup-notify-syndicate-sent
     notificationPrefix: prayer-chat-notify-syndicate
     verb: prayer-verbs-voicemail
+
+  - type: ItemSlots
+    slots:
+      handset:
+        name: callable-phone-handset-slot
+        insertOnInteract: true
+        ejectOnInteract: true
+        startingItem: TelephoneHandsetBloodRed
+        whitelist:
+          components:
+          - TelephoneHandset
 
 - type: entity
   parent: CallablePhoneInstrument
@@ -134,7 +156,7 @@
   description: A direct line to the Honkmother. Seems to always go to voicemail.
   components:
   - type: Sprite
-    sprite: Objects/Fun/Instruments/otherinstruments.rsi
+    sprite: _Polonium/Objects/Fun/Instruments/otherinstruments.rsi
     layers:
     - state: banana_phone
       map: ["base"]
@@ -143,7 +165,7 @@
       enum.CallablePhoneVisuals.HookState:
         base:
           OnHook: { state: banana_phone }
-          OffHook: { state: banana_phone }
+          OffHook: { state: banana_phone_no_handset }
   - type: EmitSoundOnLand
     sound:
        path: /Audio/Items/bikehorn.ogg
@@ -177,15 +199,26 @@
     verb: prayer-verbs-voicemail
     verbImage: null
 
+  - type: ItemSlots
+    slots:
+      handset:
+        name: callable-phone-handset-slot
+        insertOnInteract: true
+        ejectOnInteract: true
+        startingItem: TelephoneHandsetBanana
+        whitelist:
+          components:
+          - TelephoneHandset
+
 - type: entity
   parent: BaseItem
-  id: TelephoneHandset
-  name: phone handset
+  id: TelephoneHandsetRed
+  name: red phone handset
   description: The handset for a wired telephone.
   components:
   - type: Sprite
     sprite: _Polonium/Objects/Fun/Instruments/telephone_handset.rsi
-    state: phone_handset
+    state: red_phone_handset
   - type: Item
     size: Small
   - type: Speech
@@ -200,3 +233,33 @@
     interfaces:
       enum.CallablePhoneUiKey.Key:
         type: CallablePhoneBoundUserInterface
+
+- type: entity
+  parent: TelephoneHandsetRed
+  id: TelephoneHandsetBlue
+  name: blue phone handset
+  description: The handset for a wired telephone.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Fun/Instruments/telephone_handset.rsi
+    state: blue_phone_handset
+
+- type: entity
+  parent: TelephoneHandsetRed
+  id: TelephoneHandsetBanana
+  name: banana phone handset
+  description: The handset for a wired telephone.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Fun/Instruments/telephone_handset.rsi
+    state: banana_phone_handset
+
+- type: entity
+  parent: TelephoneHandsetRed
+  id: TelephoneHandsetBloodRed
+  name: blood-red phone handset
+  description: The handset for a wired telephone.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Fun/Instruments/telephone_handset.rsi
+    state: blood_red_phone_handset
