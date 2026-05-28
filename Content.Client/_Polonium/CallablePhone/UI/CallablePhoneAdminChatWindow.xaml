@@ -22,3 +22,4 @@ SPDX-License-Identifier: MIT
         <LineEdit Name="Input" PlaceHolder="{Loc callable-phone-chat-input-placeholder}" Margin="8 4 8 8" />
     </BoxContainer>
 </controls:FancyWindow>
+
