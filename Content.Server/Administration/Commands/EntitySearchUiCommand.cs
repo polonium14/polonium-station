@@ -6,12 +6,16 @@ using Content.Server.Administration.UI;
 using Content.Server.EUI;
 using Content.Shared.Administration;
 using Robust.Shared.Console;
+using Robust.Shared.IoC;
 
 namespace Content.Server.Administration.Commands;
 
 [AdminCommand(AdminFlags.Admin)]
 public sealed class EntitySearchUiCommand : IConsoleCommand
 {
+    [Dependency] private readonly IDependencyCollection _deps = default!;
+    [Dependency] private readonly EuiManager _eui = default!;
+
     public string Command => "entitysearchui";
 
     public string Description => "Opens the admin entity search panel.";
@@ -27,7 +31,6 @@ public sealed class EntitySearchUiCommand : IConsoleCommand
             return;
         }
 
-        var eui = IoCManager.Resolve<EuiManager>();
-        eui.OpenEui(new EntitySearchEui(), player);
+        _eui.OpenEui(new EntitySearchEui(_deps), player);
     }
 }

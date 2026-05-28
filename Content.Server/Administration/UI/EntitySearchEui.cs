@@ -27,9 +27,9 @@ public sealed class EntitySearchEui : BaseEui
     private int _resultsSent;
     private TimeSpan _lastSearchTime = TimeSpan.Zero;
 
-    public EntitySearchEui()
+    public EntitySearchEui(IDependencyCollection deps)
     {
-        IoCManager.InjectDependencies(this);
+        deps.InjectDependencies(this, oneOff: true);
     }
 
     public override EuiStateBase GetNewState()
