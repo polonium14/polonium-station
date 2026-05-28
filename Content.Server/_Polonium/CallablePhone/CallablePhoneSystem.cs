@@ -68,7 +68,6 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
         SubscribeLocalEvent<CallablePhoneComponent, EntInsertedIntoContainerMessage>(OnInserted);
         SubscribeLocalEvent<CallablePhoneComponent, EntRemovedFromContainerMessage>(OnRemoved);
 
-        SubscribeLocalEvent<TelephoneHandsetComponent, ActivatableUIOpenAttemptEvent>(OnHandsetUIOpenAttempt);
         SubscribeLocalEvent<TelephoneHandsetComponent, BeforeActivatableUIOpenEvent>(OnHandsetBeforeUIOpen);
         SubscribeLocalEvent<TelephoneHandsetComponent, CallablePhoneCallMessage>(OnHandsetCall);
         SubscribeLocalEvent<TelephoneHandsetComponent, CallablePhoneAnswerMessage>(OnHandsetAnswer);
@@ -295,12 +294,6 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
             return;
 
         _telephone.ProcessListen((phone, telephone), ref args);
-    }
-
-    private void OnHandsetUIOpenAttempt(Entity<TelephoneHandsetComponent> entity, ref ActivatableUIOpenAttemptEvent args)
-    {
-        if (!CanOpenHandsetDirectory(entity))
-            args.Cancel();
     }
 
     private void OnHandsetBeforeUIOpen(Entity<TelephoneHandsetComponent> entity, ref BeforeActivatableUIOpenEvent args)

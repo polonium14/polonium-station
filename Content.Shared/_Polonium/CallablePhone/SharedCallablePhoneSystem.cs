@@ -3,7 +3,9 @@
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Hands;
 using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Interaction.Events;
 using Content.Shared.Labels.Components;
+using Content.Shared.Popups;
 using Content.Shared.Telephone;
 using Content.Shared.UserInterface;
 using Content.Shared.Verbs;
@@ -19,6 +21,7 @@ public abstract class SharedCallablePhoneSystem : EntitySystem
     [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly ItemSlotsSystem _itemSlots = default!;
     [Dependency] private readonly INetManager _net = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
 
     public override void Initialize()
     {
@@ -30,6 +33,9 @@ public abstract class SharedCallablePhoneSystem : EntitySystem
             SubscribeLocalEvent<TelephoneHandsetComponent, GotUnequippedHandEvent>(OnHandsetUnequippedPlayLocal);
         }
 
+        SubscribeLocalEvent<TelephoneHandsetComponent, UseInHandEvent>(OnHandsetUseInHand, before: [typeof(ActivatableUISystem)]);
+        SubscribeLocalEvent<TelephoneHandsetComponent, ActivatableUIOpenAttemptEvent>(OnHandsetUIOpenAttempt);
+
         SubscribeLocalEvent<TelephoneHandsetComponent, GetVerbsEvent<ActivationVerb>>(
             OnHandsetGetActivationVerbs,
             after: [typeof(ActivatableUISystem)]);
@@ -37,6 +43,34 @@ public abstract class SharedCallablePhoneSystem : EntitySystem
         SubscribeLocalEvent<TelephoneHandsetComponent, GetVerbsEvent<Verb>>(
             OnHandsetGetVerbs,
             after: [typeof(ActivatableUISystem)]);
+    }
+
+    private void OnHandsetUseInHand(Entity<TelephoneHandsetComponent> entity, ref UseInHandEvent args)
+    {
+        if (CanOpenHandsetDirectory(entity))
+            return;
+
+        NotifyHandsetDirectoryBlocked(entity, args.User);
+        args.Handled = true;
+    }
+
+    private void OnHandsetUIOpenAttempt(Entity<TelephoneHandsetComponent> entity, ref ActivatableUIOpenAttemptEvent args)
+    {
+        if (CanOpenHandsetDirectory(entity))
+            return;
+
+        NotifyHandsetDirectoryBlocked(entity, args.User);
+        args.Cancel();
+    }
+
+    private void NotifyHandsetDirectoryBlocked(Entity<TelephoneHandsetComponent> entity, EntityUid user)
+    {
+        var phone = GetEntity(entity.Comp.ParentPhone);
+        var message = !Exists(phone) || !HasComp<CallablePhoneComponent>(phone)
+            ? Loc.GetString("callable-phone-handset-unlinked")
+            : Loc.GetString("callable-phone-handset-line-busy");
+
+        _popup.PopupClient(message, user, user, PopupType.Medium);
     }
 
     private void OnHandsetEquippedPlayLocal(Entity<TelephoneHandsetComponent> handset, ref GotEquippedHandEvent args)

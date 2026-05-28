@@ -21,11 +21,17 @@ public sealed class CallablePhoneBoundUserInterface : BoundUserInterface
     {
         base.Open();
 
-        _window = this.CreateWindow<CallablePhoneWindow>();
-
         var phone = Owner;
         if (EntMan.TryGetComponent<TelephoneHandsetComponent>(Owner, out var handset))
             phone = EntMan.GetEntity(handset.ParentPhone);
+
+        if (!EntMan.EntityExists(phone) || !EntMan.HasComponent<CallablePhoneComponent>(phone))
+        {
+            Close();
+            return;
+        }
+
+        _window = this.CreateWindow<CallablePhoneWindow>();
 
         _window.Title = Loc.GetString("callable-phone-window-title", ("title", EntMan.GetComponent<MetaDataComponent>(phone).EntityName));
         _window.SetOwner(phone);
