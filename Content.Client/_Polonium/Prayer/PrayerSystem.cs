@@ -43,8 +43,9 @@ public sealed class PrayerSystem : EntitySystem
                 ("prefix", ev.Prefix),
                 ("device", ev.DeviceName));
 
-        var window = new CentCommChatWindow(ev.Entity, title);
+        var window = new CentCommChatWindow(ev.Entity, title, ev.AllowImpersonation);
         window.MessageSubmitted += OnMessageSubmitted;
+        window.ImpersonationNameSubmitted += OnImpersonationNameSubmitted;
         window.WindowClosed += OnWindowClosed;
         window.OnClose += () => _openWindows.Remove(ev.Entity);
         window.SetInputEnabled(ev.InputEnabled);
@@ -85,6 +86,11 @@ public sealed class PrayerSystem : EntitySystem
     private void OnMessageSubmitted(NetEntity entity, string message)
     {
         RaiseNetworkEvent(new PrayableChatSendMessageEvent(entity, message));
+    }
+
+    private void OnImpersonationNameSubmitted(NetEntity entity, string name)
+    {
+        RaiseNetworkEvent(new PrayableChatSetImpersonationNameEvent(entity, name));
     }
 
     private void OnWindowClosed(NetEntity entity)

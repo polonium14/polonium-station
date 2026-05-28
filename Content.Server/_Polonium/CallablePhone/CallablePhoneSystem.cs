@@ -89,6 +89,7 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
         SubscribeNetworkEvent<CentCommCallPickupResponseEvent>(OnCentCommPickupResponse);
         SubscribeNetworkEvent<PrayableChatSendMessageEvent>(OnCentCommChatSendMessage);
         SubscribeNetworkEvent<PrayableChatCloseEvent>(OnCentCommChatClose);
+        SubscribeNetworkEvent<PrayableChatSetImpersonationNameEvent>(OnSetImpersonationName);
     }
 
     public override void Update(float frameTime)
@@ -266,6 +267,7 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
         StopCallWaitingLoop(entity);
         ClearHandsetMicrophones(entity);
         EndGhostCallerDeviceChat(entity.Owner);
+        ClearAdminImpersonation(entity);
 
         if (!entity.Comp.IsCentComm)
             return;
@@ -509,7 +511,7 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
             return;
 
         var netEntity = GetNetEntity(uid);
-        var openEvent = new OpenPrayableChatEvent(netEntity, admin.Name, string.Empty, inputEnabled);
+        var openEvent = new OpenPrayableChatEvent(netEntity, admin.Name, string.Empty, inputEnabled, allowImpersonation: true);
 
         RegisterDeviceChat(admin, netEntity);
         RaiseNetworkEvent(openEvent, admin);
@@ -605,15 +607,49 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
         if (callable.IsCentComm)
         {
             ReplyThroughCentCommPhone(args.SenderSession, uid.Value, callable, message);
-            NotifyDeviceChatListeners(uid.Value, args.SenderSession.Name, message, incoming: false);
+            NotifyDeviceChatListeners(uid.Value, GetAdminChatDisplayName(uid.Value, args.SenderSession, callable), message, incoming: false);
             return;
         }
 
         if (!IsGhostCallerAdmin(uid.Value, args.SenderSession))
             return;
 
-        ReplyThroughGhostCallerPhone(args.SenderSession, uid.Value, message);
-        NotifyDeviceChatListeners(uid.Value, args.SenderSession.Name, message, incoming: false);
+        ReplyThroughGhostCallerPhone(args.SenderSession, uid.Value, callable, message);
+        NotifyDeviceChatListeners(uid.Value, GetAdminChatDisplayName(uid.Value, args.SenderSession, callable), message, incoming: false);
+    }
+
+    private void OnSetImpersonationName(PrayableChatSetImpersonationNameEvent msg, EntitySessionEventArgs args)
+    {
+        if (!_adminManager.IsAdmin(args.SenderSession))
+            return;
+
+        if (!TryGetEntity(msg.Entity, out var uid) || !TryComp<CallablePhoneComponent>(uid, out var callable))
+            return;
+
+        if (!IsAdminInDeviceChat(args.SenderSession, uid.Value))
+            return;
+
+        var trimmed = msg.Name.Trim();
+        callable.AdminImpersonationName = string.IsNullOrWhiteSpace(trimmed) ? null : trimmed[..Math.Min(trimmed.Length, 32)];
+
+        var logMessage = callable.AdminImpersonationName == null
+            ? Loc.GetString("callable-phone-impersonation-cleared")
+            : Loc.GetString("callable-phone-impersonation-applied", ("name", callable.AdminImpersonationName));
+
+        NotifyDeviceChatLog(uid.Value, logMessage);
+    }
+
+    private string GetAdminChatDisplayName(EntityUid phone, ICommonSession session, CallablePhoneComponent callable)
+    {
+        if (!string.IsNullOrWhiteSpace(callable.AdminImpersonationName))
+            return callable.AdminImpersonationName;
+
+        return session.Name;
+    }
+
+    private void ClearAdminImpersonation(Entity<CallablePhoneComponent> entity)
+    {
+        entity.Comp.AdminImpersonationName = null;
     }
 
     private bool IsDeviceChatCallActive(EntityUid uid, CallablePhoneComponent callable)
@@ -631,7 +667,7 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
 
     private void ReplyThroughCentCommPhone(ICommonSession admin, EntityUid uid, CallablePhoneComponent callable, string message)
     {
-        var name = Loc.GetString(callable.AdminChatPrefix);
+        var name = callable.AdminImpersonationName ?? Loc.GetString(callable.AdminChatPrefix);
 
         if (TryComp<TelephoneComponent>(uid, out var telephone) && _telephone.IsTelephoneEngaged((uid, telephone)))
             _telephone.RelayTelephoneMessage(uid, message, (uid, telephone), skipCentCommReceivers: true);
@@ -644,15 +680,17 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
             $"{admin.Name} spoke through {ToPrettyString(uid)} as {name}: {message}");
     }
 
-    private void ReplyThroughGhostCallerPhone(ICommonSession admin, EntityUid uid, string message)
+    private void ReplyThroughGhostCallerPhone(ICommonSession admin, EntityUid uid, CallablePhoneComponent callable, string message)
     {
         if (TryComp<TelephoneComponent>(uid, out var telephone) && _telephone.IsTelephoneEngaged((uid, telephone)))
             _telephone.RelayTelephoneMessage(uid, message, (uid, telephone));
 
+        var name = callable.AdminImpersonationName ?? admin.Name;
+
         _adminLogger.Add(
             LogType.AdminMessage,
             LogImpact.Low,
-            $"{admin.Name} spoke through {ToPrettyString(uid)}: {message}");
+            $"{admin.Name} spoke through {ToPrettyString(uid)} as {name}: {message}");
     }
 
     private void OnCentCommChatClose(PrayableChatCloseEvent msg, EntitySessionEventArgs args)

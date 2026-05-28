@@ -143,21 +143,33 @@ public sealed class TelephoneSystem : SharedTelephoneSystem
             return;
 
         var nameSource = args.MessageSource;
+        string? impersonationName = null;
 
-        if (TryComp<CallablePhoneComponent>(args.TelephoneSource, out var callerPhone) &&
-            callerPhone.HandsetHolder != null)
+        if (TryComp<CallablePhoneComponent>(args.TelephoneSource, out var callerPhone))
         {
-            nameSource = callerPhone.HandsetHolder.Value;
+            if (!string.IsNullOrWhiteSpace(callerPhone.AdminImpersonationName))
+                impersonationName = callerPhone.AdminImpersonationName;
+            else if (callerPhone.HandsetHolder != null)
+                nameSource = callerPhone.HandsetHolder.Value;
         }
 
-        var nameEv = new TransformSpeakerNameEvent(nameSource, Name(nameSource));
-        RaiseLocalEvent(nameSource, nameEv);
+        string displayName;
+        if (impersonationName != null)
+        {
+            displayName = impersonationName;
+        }
+        else
+        {
+            var nameEv = new TransformSpeakerNameEvent(nameSource, Name(nameSource));
+            RaiseLocalEvent(nameSource, nameEv);
+            displayName = nameEv.VoiceName;
+        }
 
         // Determine if speech should be relayed via the telephone itself or a designated speaker
         var speaker = entity.Comp.Speaker != null ? entity.Comp.Speaker.Value.Owner : entity.Owner;
 
         var name = Loc.GetString("chat-telephone-name-relay",
-            ("originalName", nameEv.VoiceName),
+            ("originalName", displayName),
             ("speaker", Name(speaker)));
 
         var range = args.TelephoneSource.Comp.LinkedTelephones.Count > 1 ? ChatTransmitRange.HideChat : ChatTransmitRange.GhostRangeLimit;

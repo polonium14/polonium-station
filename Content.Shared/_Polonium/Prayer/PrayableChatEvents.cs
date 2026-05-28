@@ -10,12 +10,13 @@ namespace Content.Shared._Polonium.Prayer;
 /// Raised on a client to open a persistent chat window for speaking through a prayable device.
 /// </summary>
 [Serializable, NetSerializable]
-public sealed class OpenPrayableChatEvent(NetEntity entity, string prefix, string deviceName, bool inputEnabled = true) : EntityEventArgs
+public sealed class OpenPrayableChatEvent(NetEntity entity, string prefix, string deviceName, bool inputEnabled = true, bool allowImpersonation = false) : EntityEventArgs
 {
     public NetEntity Entity = entity;
     public string Prefix = prefix;
     public string DeviceName = deviceName;
     public bool InputEnabled = inputEnabled;
+    public bool AllowImpersonation = allowImpersonation;
 }
 
 /// <summary>
@@ -63,4 +64,14 @@ public sealed class PrayableChatSetInputEnabledEvent(NetEntity entity, bool enab
 {
     public NetEntity Entity = entity;
     public bool Enabled = enabled;
+}
+
+/// <summary>
+/// Raised by a client to set the in-call display name for admin phone impersonation.
+/// </summary>
+[Serializable, NetSerializable]
+public sealed class PrayableChatSetImpersonationNameEvent(NetEntity entity, string name) : EntityEventArgs
+{
+    public NetEntity Entity = entity;
+    public string Name = name;
 }

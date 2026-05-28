@@ -63,6 +63,12 @@ public sealed partial class CallablePhoneComponent : Component
     public EntityUid? HandsetHolder;
 
     /// <summary>
+    /// Server-side display name override for admin phone impersonation during a call.
+    /// </summary>
+    [ViewVariables]
+    public string? AdminImpersonationName;
+
+    /// <summary>
     /// Played when the handset is picked up while the line is idle or ringing.
     /// </summary>
     [DataField]
