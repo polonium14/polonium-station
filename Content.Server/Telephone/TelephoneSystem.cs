@@ -142,8 +142,16 @@ public sealed class TelephoneSystem : SharedTelephoneSystem
         if (TryComp<CallablePhoneComponent>(entity, out var callable) && callable.IsCentComm)
             return;
 
-        var nameEv = new TransformSpeakerNameEvent(args.MessageSource, Name(args.MessageSource));
-        RaiseLocalEvent(args.MessageSource, nameEv);
+        var nameSource = args.MessageSource;
+
+        if (TryComp<CallablePhoneComponent>(args.TelephoneSource, out var callerPhone) &&
+            callerPhone.HandsetHolder != null)
+        {
+            nameSource = callerPhone.HandsetHolder.Value;
+        }
+
+        var nameEv = new TransformSpeakerNameEvent(nameSource, Name(nameSource));
+        RaiseLocalEvent(nameSource, nameEv);
 
         // Determine if speech should be relayed via the telephone itself or a designated speaker
         var speaker = entity.Comp.Speaker != null ? entity.Comp.Speaker.Value.Owner : entity.Owner;
@@ -162,7 +170,7 @@ public sealed class TelephoneSystem : SharedTelephoneSystem
             range,
             nameOverride: name,
             checkRadioPrefix: false,
-            excludeRecipient: args.MessageSource,
+            excludeRecipient: nameSource,
             triggerSpeakEvent: false);
 
         if (TryComp<SpeechComponent>(speaker, out var speech))
