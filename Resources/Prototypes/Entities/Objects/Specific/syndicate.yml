@@ -120,6 +120,16 @@
     balance:
       Telecrystal: 50
 
+- type: entity
+  parent: BaseUplinkRadio
+  # Polonium - 25 TC
+  id: BaseUplinkRadio25TC
+  suffix: 25 TC
+  components:
+  - type: Store
+    balance:
+      Telecrystal: 25
+
 # Nukeops reinforcement variant with 50 TC
 - type: entity
   parent: BaseUplinkRadioNukeopsReinforcement
