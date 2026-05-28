@@ -19,6 +19,7 @@ using Content.Shared._Polonium.Prayer;
 using Content.Shared.Speech;
 using Content.Shared.Telephone;
 using Content.Shared.UserInterface;
+using Robust.Server.Player;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
@@ -41,10 +42,15 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
     [Dependency] private readonly IAdminManager _adminManager = default!;
     [Dependency] private readonly IChatManager _chatManager = default!;
     [Dependency] private readonly IAdminLogManager _adminLogger = default!;
+    [Dependency] private readonly IPlayerManager _playerManager = default!;
 
     private readonly HashSet<EntityUid> _centCommAwaitingPickup = new();
     private readonly HashSet<EntityUid> _centCommActiveCalls = new();
     private readonly Dictionary<EntityUid, NetUserId> _centCommAnsweringAdmin = new();
+
+    private readonly HashSet<EntityUid> _ghostCallerPending = new();
+    private readonly HashSet<EntityUid> _ghostCallerActiveCalls = new();
+    private readonly Dictionary<EntityUid, NetUserId> _ghostCallerAdmin = new();
 
     /// <summary>
     /// Admins with an open chat window for a CentComm phone line.
@@ -78,7 +84,7 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
         SubscribeLocalEvent<CallablePhoneComponent, TelephoneCallEndedEvent>(OnCallEnded);
 
         SubscribeLocalEvent<EntitySpokeEvent>(OnHandsetHolderSpoke);
-        SubscribeLocalEvent<CallablePhoneComponent, TelephoneMessageReceivedEvent>(OnCentCommTelephoneMessageReceived);
+        SubscribeLocalEvent<CallablePhoneComponent, TelephoneMessageReceivedEvent>(OnCallablePhoneMessageReceived);
 
         SubscribeNetworkEvent<CentCommCallPickupResponseEvent>(OnCentCommPickupResponse);
         SubscribeNetworkEvent<PrayableChatSendMessageEvent>(OnCentCommChatSendMessage);
@@ -232,6 +238,9 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
         if (args.OldState == TelephoneState.Calling)
             StopCallWaitingLoop(entity);
 
+        if (args.OldState == TelephoneState.Calling && args.NewState == TelephoneState.Idle)
+            ClearGhostCallerPending(entity.Owner);
+
         if (args.NewState != TelephoneState.Idle)
             CloseHandsetUis(entity);
 
@@ -249,12 +258,14 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
             return;
 
         UpdateHandsetRelay(entity, telephone, entity.Comp.HandsetHolder);
+        TryOpenGhostCallerDeviceChat(entity);
     }
 
     private void OnCallEnded(Entity<CallablePhoneComponent> entity, ref TelephoneCallEndedEvent args)
     {
         StopCallWaitingLoop(entity);
         ClearHandsetMicrophones(entity);
+        EndGhostCallerDeviceChat(entity.Owner);
 
         if (!entity.Comp.IsCentComm)
             return;
@@ -443,6 +454,12 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
 
         StartCallWaitingLoop(source);
 
+        if (TryGetGhostCallerSession(user, out var ghostSession))
+        {
+            _ghostCallerPending.Add(source.Owner);
+            _ghostCallerAdmin[source.Owner] = ghostSession.UserId;
+        }
+
         if (receiverCallable.IsCentComm)
             BeginCentCommCall(receiverUid, receiverEnt.Comp);
     }
@@ -488,7 +505,7 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
 
     private void OpenDeviceChatForAdmin(ICommonSession admin, EntityUid uid, bool inputEnabled = true)
     {
-        if (!TryComp<CallablePhoneComponent>(uid, out var callable) || !callable.IsCentComm)
+        if (!Exists(uid))
             return;
 
         var netEntity = GetNetEntity(uid);
@@ -572,8 +589,7 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
             return;
 
         if (!TryGetEntity(msg.Entity, out var uid) ||
-            !TryComp<CallablePhoneComponent>(uid, out var callable) ||
-            !callable.IsCentComm)
+            !TryComp<CallablePhoneComponent>(uid, out var callable))
         {
             return;
         }
@@ -581,11 +597,36 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
         if (string.IsNullOrWhiteSpace(msg.Message))
             return;
 
-        if (!IsCentCommCallActive(uid.Value))
+        if (!IsDeviceChatCallActive(uid.Value, callable))
             return;
 
-        ReplyThroughCentCommPhone(args.SenderSession, uid.Value, callable, msg.Message.Trim());
-        NotifyDeviceChatListeners(uid.Value, args.SenderSession.Name, msg.Message.Trim(), incoming: false);
+        var message = msg.Message.Trim();
+
+        if (callable.IsCentComm)
+        {
+            ReplyThroughCentCommPhone(args.SenderSession, uid.Value, callable, message);
+            NotifyDeviceChatListeners(uid.Value, args.SenderSession.Name, message, incoming: false);
+            return;
+        }
+
+        if (!IsGhostCallerAdmin(uid.Value, args.SenderSession))
+            return;
+
+        ReplyThroughGhostCallerPhone(args.SenderSession, uid.Value, message);
+        NotifyDeviceChatListeners(uid.Value, args.SenderSession.Name, message, incoming: false);
+    }
+
+    private bool IsDeviceChatCallActive(EntityUid uid, CallablePhoneComponent callable)
+    {
+        if (callable.IsCentComm)
+            return IsCentCommCallActive(uid);
+
+        return _ghostCallerActiveCalls.Contains(uid);
+    }
+
+    private bool IsGhostCallerAdmin(EntityUid phone, ICommonSession session)
+    {
+        return _ghostCallerAdmin.TryGetValue(phone, out var adminId) && adminId == session.UserId;
     }
 
     private void ReplyThroughCentCommPhone(ICommonSession admin, EntityUid uid, CallablePhoneComponent callable, string message)
@@ -601,6 +642,17 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
             LogType.AdminMessage,
             LogImpact.Low,
             $"{admin.Name} spoke through {ToPrettyString(uid)} as {name}: {message}");
+    }
+
+    private void ReplyThroughGhostCallerPhone(ICommonSession admin, EntityUid uid, string message)
+    {
+        if (TryComp<TelephoneComponent>(uid, out var telephone) && _telephone.IsTelephoneEngaged((uid, telephone)))
+            _telephone.RelayTelephoneMessage(uid, message, (uid, telephone));
+
+        _adminLogger.Add(
+            LogType.AdminMessage,
+            LogImpact.Low,
+            $"{admin.Name} spoke through {ToPrettyString(uid)}: {message}");
     }
 
     private void OnCentCommChatClose(PrayableChatCloseEvent msg, EntitySessionEventArgs args)
@@ -628,8 +680,13 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
         if (!_adminManager.IsAdmin(args.SenderSession, includeDeAdmin: true))
             return;
 
-        if (!TryGetEntity(msg.Entity, out var phone) ||
-            !_centCommAnsweringAdmin.TryGetValue(phone.Value, out var answeringAdmin) ||
+        if (!TryGetEntity(msg.Entity, out var phone))
+            return;
+
+        if (TryEndGhostCallerCallOnChatClose(phone.Value, args.SenderSession))
+            return;
+
+        if (!_centCommAnsweringAdmin.TryGetValue(phone.Value, out var answeringAdmin) ||
             answeringAdmin != args.SenderSession.UserId ||
             !_centCommActiveCalls.Contains(phone.Value))
         {
@@ -645,6 +702,21 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
 
         PlayRemoteDisconnectOnCallers(telephone);
         _telephone.EndTelephoneCalls((phone.Value, telephone));
+    }
+
+    private bool TryEndGhostCallerCallOnChatClose(EntityUid phone, ICommonSession session)
+    {
+        if (!_ghostCallerActiveCalls.Contains(phone))
+            return false;
+
+        if (!IsGhostCallerAdmin(phone, session))
+            return false;
+
+        if (!TryComp<TelephoneComponent>(phone, out var telephone))
+            return false;
+
+        _telephone.EndTelephoneCalls((phone, telephone));
+        return true;
     }
 
     private void OnCentCommPickupResponse(CentCommCallPickupResponseEvent msg, EntitySessionEventArgs args)
@@ -816,15 +888,74 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
         }
     }
 
-    private void OnCentCommTelephoneMessageReceived(Entity<CallablePhoneComponent> entity, ref TelephoneMessageReceivedEvent args)
+    private void OnCallablePhoneMessageReceived(Entity<CallablePhoneComponent> entity, ref TelephoneMessageReceivedEvent args)
     {
-        if (!entity.Comp.IsCentComm)
+        if (!entity.Comp.IsCentComm && !_ghostCallerActiveCalls.Contains(entity.Owner))
             return;
 
         var nameEv = new TransformSpeakerNameEvent(args.MessageSource, Name(args.MessageSource));
         RaiseLocalEvent(args.MessageSource, nameEv);
 
         NotifyDeviceChatListeners(entity, nameEv.VoiceName, args.Message, incoming: true);
+    }
+
+    private bool TryGetGhostCallerSession(EntityUid user, out ICommonSession session)
+    {
+        session = default!;
+
+        if (!HasComp<GhostComponent>(user))
+            return false;
+
+        if (TryComp<GhostComponent>(user, out var ghost) && !ghost.CanGhostInteract)
+            return false;
+
+        if (!TryComp<ActorComponent>(user, out var actor))
+            return false;
+
+        if (!_adminManager.IsAdmin(actor.PlayerSession, includeDeAdmin: true))
+            return false;
+
+        session = actor.PlayerSession;
+        return true;
+    }
+
+    private void TryOpenGhostCallerDeviceChat(Entity<CallablePhoneComponent> entity)
+    {
+        if (entity.Comp.IsCentComm || !_ghostCallerPending.Remove(entity.Owner))
+            return;
+
+        if (!_ghostCallerAdmin.TryGetValue(entity.Owner, out var adminId) ||
+            !_playerManager.TryGetSessionById(adminId, out var session))
+        {
+            ClearGhostCallerPending(entity.Owner);
+            return;
+        }
+
+        _ghostCallerActiveCalls.Add(entity.Owner);
+        OpenDeviceChatForAdmin(session, entity.Owner);
+        NotifyDeviceChatLog(entity.Owner, Loc.GetString("callable-phone-centcomm-call-started"));
+    }
+
+    private void ClearGhostCallerPending(EntityUid phone)
+    {
+        if (_ghostCallerActiveCalls.Contains(phone))
+            return;
+
+        _ghostCallerPending.Remove(phone);
+        _ghostCallerAdmin.Remove(phone);
+    }
+
+    private void EndGhostCallerDeviceChat(EntityUid phone)
+    {
+        var wasActive = _ghostCallerActiveCalls.Remove(phone);
+        _ghostCallerPending.Remove(phone);
+        _ghostCallerAdmin.Remove(phone);
+
+        if (!wasActive)
+            return;
+
+        NotifyDeviceChatLog(phone, Loc.GetString("callable-phone-centcomm-call-ended"));
+        SetDeviceChatInputEnabled(phone, false);
     }
 
     private void OnHandsetHolderSpoke(EntitySpokeEvent args)
