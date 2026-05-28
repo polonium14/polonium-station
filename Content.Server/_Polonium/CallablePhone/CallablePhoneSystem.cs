@@ -371,18 +371,95 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
             ? new TelephoneCallOptions { IgnoreRange = true }
             : null;
 
-        _telephone.CallTelephone(sourceEnt, receiverEnt, args.Actor, callOptions);
+        StartOutboundCallWithDialDelay(
+            source,
+            sourceEnt,
+            receiverEnt,
+            receiverUid,
+            receiverCallable,
+            args.Actor,
+            callOptions);
+    }
 
-        if (!_telephone.IsTelephoneEngaged(sourceEnt))
+    private void StartOutboundCallWithDialDelay(
+        Entity<CallablePhoneComponent> source,
+        Entity<TelephoneComponent> sourceEnt,
+        Entity<TelephoneComponent> receiverEnt,
+        EntityUid receiverUid,
+        CallablePhoneComponent receiverCallable,
+        EntityUid user,
+        TelephoneCallOptions? callOptions)
+    {
+        if (!TryGetDialSoundDelay(source.Comp.DialSound, out var delay))
         {
-            _popup.PopupEntity(Loc.GetString("callable-phone-call-failed"), source, args.Actor);
+            FinalizeOutboundCall(source, sourceEnt, receiverEnt, receiverUid, receiverCallable, user, callOptions);
             return;
         }
 
-        BeginOutboundCallAudio(source);
+        PlayDialSound(source);
+        var generation = source.Comp.CallWaitingDelayGeneration;
+
+        Timer.Spawn(delay, () =>
+        {
+            if (!Exists(source) || source.Comp.CallWaitingDelayGeneration != generation)
+                return;
+
+            if (source.Comp.HandsetHolder == null || !UserHoldingPhoneHandset(source, user))
+                return;
+
+            if (!source.Comp.IsCentComm &&
+                callOptions?.IgnoreRange != true &&
+                !_telephone.IsSourceAbleToReachReceiver(sourceEnt, receiverEnt))
+            {
+                return;
+            }
+
+            if (_telephone.IsTelephoneEngaged(receiverEnt) || IsHandsetOffHook(receiverUid))
+            {
+                StartBusyToneLoop(source);
+                return;
+            }
+
+            FinalizeOutboundCall(source, sourceEnt, receiverEnt, receiverUid, receiverCallable, user, callOptions);
+        });
+    }
+
+    private void FinalizeOutboundCall(
+        Entity<CallablePhoneComponent> source,
+        Entity<TelephoneComponent> sourceEnt,
+        Entity<TelephoneComponent> receiverEnt,
+        EntityUid receiverUid,
+        CallablePhoneComponent receiverCallable,
+        EntityUid user,
+        TelephoneCallOptions? callOptions)
+    {
+        _telephone.CallTelephone(sourceEnt, receiverEnt, user, callOptions);
+
+        if (!_telephone.IsTelephoneEngaged(sourceEnt))
+        {
+            _popup.PopupEntity(Loc.GetString("callable-phone-call-failed"), source, user);
+            return;
+        }
+
+        StartCallWaitingLoop(source);
 
         if (receiverCallable.IsCentComm)
-            BeginCentCommCall(receiverUid, receiverTelephone);
+            BeginCentCommCall(receiverUid, receiverEnt.Comp);
+    }
+
+    private bool TryGetDialSoundDelay(SoundSpecifier? dialSound, out TimeSpan delay)
+    {
+        delay = default;
+
+        if (dialSound == null)
+            return false;
+
+        var resolvedDial = _audio.ResolveSound(dialSound);
+        if (ResolvedSoundSpecifier.IsNullOrEmpty(resolvedDial))
+            return false;
+
+        delay = _audio.GetAudioLength(resolvedDial);
+        return true;
     }
 
     private void BeginCentCommCall(EntityUid phone, TelephoneComponent telephone)
@@ -828,15 +905,13 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
         }
 
         PlayDialSound(entity);
-        var generation = entity.Comp.CallWaitingDelayGeneration;
-        var resolvedDial = _audio.ResolveSound(entity.Comp.DialSound);
-        if (ResolvedSoundSpecifier.IsNullOrEmpty(resolvedDial))
+        if (!TryGetDialSoundDelay(entity.Comp.DialSound, out var delay))
         {
             StartBusyToneLoop(entity);
             return;
         }
 
-        var delay = _audio.GetAudioLength(resolvedDial);
+        var generation = entity.Comp.CallWaitingDelayGeneration;
 
         Timer.Spawn(delay, () =>
         {
@@ -847,47 +922,6 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
                 return;
 
             StartBusyToneLoop(entity);
-        });
-    }
-
-    private void BeginOutboundCallAudio(Entity<CallablePhoneComponent> entity)
-    {
-        StopCallWaitingLoop(entity);
-        StopBusyToneLoop(entity);
-        StopDialToneLoop(entity);
-
-        if (!TryComp<TelephoneComponent>(entity, out var telephone) || telephone.CurrentState != TelephoneState.Calling)
-            return;
-
-        if (entity.Comp.DialSound == null)
-        {
-            StartCallWaitingLoop(entity);
-            return;
-        }
-
-        PlayDialSound(entity);
-        var generation = entity.Comp.CallWaitingDelayGeneration;
-        var resolvedDial = _audio.ResolveSound(entity.Comp.DialSound);
-        if (ResolvedSoundSpecifier.IsNullOrEmpty(resolvedDial))
-        {
-            StartCallWaitingLoop(entity);
-            return;
-        }
-
-        var delay = _audio.GetAudioLength(resolvedDial);
-
-        Timer.Spawn(delay, () =>
-        {
-            if (!Exists(entity) || entity.Comp.CallWaitingDelayGeneration != generation)
-                return;
-
-            if (entity.Comp.HandsetHolder == null)
-                return;
-
-            if (!TryComp<TelephoneComponent>(entity, out var tel) || tel.CurrentState != TelephoneState.Calling)
-                return;
-
-            StartCallWaitingLoop(entity);
         });
     }
 
