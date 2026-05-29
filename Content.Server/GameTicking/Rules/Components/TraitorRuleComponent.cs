@@ -15,8 +15,9 @@
 //
 // SPDX-License-Identifier: MIT
 
+using Content.Server.Codewords;
 using Content.Shared.Dataset;
-﻿using Content.Shared.NPC.Prototypes;
+using Content.Shared.NPC.Prototypes;
 using Content.Shared.Random;
 using Content.Shared.Roles;
 using Robust.Shared.Audio;
@@ -32,6 +33,9 @@ public sealed partial class TraitorRuleComponent : Component
 
     [DataField]
     public ProtoId<AntagPrototype> TraitorPrototypeId = "Traitor";
+
+    [DataField]
+    public ProtoId<CodewordFactionPrototype> CodewordFactionPrototypeId = "Traitor";
 
     [DataField]
     public ProtoId<NpcFactionPrototype> NanoTrasenFaction = "NanoTrasen";
@@ -77,7 +81,7 @@ public sealed partial class TraitorRuleComponent : Component
     public SoundSpecifier GreetSoundNotification = new SoundPathSpecifier("/Audio/Ambience/Antag/traitor_start.ogg");
 
     /// <summary>
-    /// The amount of codewords that are selected.
+    /// The amount of codewords that are selected. No longer used, kept for compatibility.
     /// </summary>
     [DataField]
     public int CodewordCount = 4;

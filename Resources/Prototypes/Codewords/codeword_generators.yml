@@ -1,0 +1,6 @@
+﻿- type: codewordGenerator
+  id: TraitorCodewordGenerator
+  words: # Nazwy prototypów całe lowercase. Być może do zmiany jak na forky przejdziemy
+  - adjectives
+  - verbs
+  amount: 4
