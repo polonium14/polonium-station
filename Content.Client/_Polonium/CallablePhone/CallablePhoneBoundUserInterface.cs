@@ -4,12 +4,15 @@ using Content.Shared._Polonium.CallablePhone;
 using JetBrains.Annotations;
 using Robust.Client.UserInterface;
 using Robust.Shared.GameObjects;
+using Robust.Shared.IoC;
 
 namespace Content.Client._Polonium.CallablePhone;
 
 [UsedImplicitly]
 public sealed class CallablePhoneBoundUserInterface : BoundUserInterface
 {
+    [Dependency] private readonly IEntitySystemManager _entitySystemManager = default!;
+
     [ViewVariables]
     private CallablePhoneWindow? _window;
 
@@ -32,6 +35,7 @@ public sealed class CallablePhoneBoundUserInterface : BoundUserInterface
         }
 
         _window = this.CreateWindow<CallablePhoneWindow>();
+        _window.InitializeDependencies(_entitySystemManager.DependencyCollection);
 
         _window.Title = Loc.GetString("callable-phone-window-title", ("title", EntMan.GetComponent<MetaDataComponent>(phone).EntityName));
         _window.SetOwner(phone);
