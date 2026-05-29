@@ -1,5 +1,3 @@
-// SPDX-License-Identifier: MIT
-
 using Content.Shared._Polonium.CallablePhone;
 using Content.Client._Polonium.CallablePhone.UI;
 using Robust.Client.UserInterface;
