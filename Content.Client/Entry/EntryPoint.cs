@@ -213,6 +213,8 @@ namespace Content.Client.Entry
             _prototypeManager.RegisterIgnore("storyBeat"); // Goobstation
             _prototypeManager.RegisterIgnore("ertCall"); // Imperial
             _prototypeManager.RegisterIgnore("stationGoal"); // Corvax-StationGoal
+            _prototypeManager.RegisterIgnore("codewordGenerator");
+            _prototypeManager.RegisterIgnore("codewordFaction");
 
             _componentFactory.GenerateNetIds();
             _adminManager.Initialize();
