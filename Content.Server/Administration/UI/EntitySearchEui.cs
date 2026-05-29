@@ -1,7 +1,3 @@
-// SPDX-FileCopyrightText: 2025 Polonium Station Contributors
-//
-// SPDX-License-Identifier: MIT
-
 using Content.Server.Administration.Managers;
 using Content.Server.EUI;
 using Content.Shared.Administration;

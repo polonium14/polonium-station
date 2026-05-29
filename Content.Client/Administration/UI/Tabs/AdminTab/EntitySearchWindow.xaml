@@ -1,9 +1,3 @@
-<!--
-SPDX-FileCopyrightText: 2025 Polonium Station Contributors
-
-SPDX-License-Identifier: MIT
--->
-
 <DefaultWindow
     xmlns="https://spacestation14.io"
     Title="{Loc admin-entity-search-title}"

@@ -1,7 +1,3 @@
-// SPDX-FileCopyrightText: 2025 Polonium Station Contributors
-//
-// SPDX-License-Identifier: MIT
-
 using Robust.Client.Console;
 using Robust.Client.UserInterface.Controls;
 
