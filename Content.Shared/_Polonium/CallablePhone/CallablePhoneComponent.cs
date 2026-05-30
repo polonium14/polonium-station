@@ -61,6 +61,12 @@ public sealed partial class CallablePhoneComponent : Component
     public EntityUid? HandsetHolder;
 
     /// <summary>
+    /// Maximum distance in tiles the phone holder may move from the phone base before it gets back
+    /// </summary>
+    [DataField]
+    public float HandsetCordRange = 2.5f;
+
+    /// <summary>
     /// Server-side display name override for admin phone impersonation during a call.
     /// </summary>
     [ViewVariables]

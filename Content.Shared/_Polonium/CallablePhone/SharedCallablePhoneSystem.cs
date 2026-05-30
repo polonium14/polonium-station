@@ -14,9 +14,9 @@ namespace Content.Shared._Polonium.CallablePhone;
 
 public abstract class SharedCallablePhoneSystem : EntitySystem
 {
+    [Dependency] protected readonly SharedHandsSystem Hands = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly ItemSlotsSystem _itemSlots = default!;
     [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
@@ -189,7 +189,7 @@ public abstract class SharedCallablePhoneSystem : EntitySystem
 
     public bool UserHoldingPhoneHandset(EntityUid phone, EntityUid user)
     {
-        foreach (var held in _hands.EnumerateHeld(user))
+        foreach (var held in Hands.EnumerateHeld(user))
         {
             if (!TryComp<TelephoneHandsetComponent>(held, out var handset))
                 continue;
@@ -237,7 +237,7 @@ public abstract class SharedCallablePhoneSystem : EntitySystem
     /// </summary>
     public EntityUid? GetHandsetHeldBy(EntityUid phone, EntityUid holder)
     {
-        foreach (var held in _hands.EnumerateHeld(holder))
+        foreach (var held in Hands.EnumerateHeld(holder))
         {
             if (!TryComp<TelephoneHandsetComponent>(held, out var handset))
                 continue;
@@ -272,5 +272,19 @@ public abstract class SharedCallablePhoneSystem : EntitySystem
         }
 
         return null;
+    }
+
+    /// <summary>
+    /// Whether mob is within cord range of phone
+    /// </summary>
+    public bool IsWithinHandsetCordRange(EntityUid phone, EntityUid mob, CallablePhoneComponent callable)
+    {
+        var phoneCoords = Transform(phone).Coordinates;
+        var mobCoords = Transform(mob).Coordinates;
+
+        if (!phoneCoords.TryDistance(EntityManager, mobCoords, out var distance))
+            return false;
+
+        return distance <= callable.HandsetCordRange;
     }
 }

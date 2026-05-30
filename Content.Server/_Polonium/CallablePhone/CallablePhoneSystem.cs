@@ -13,6 +13,9 @@ using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Database;
 using Content.Shared.Ghost;
 using Content.Shared.Hands;
+using Content.Shared.Hands.Components;
+using Content.Shared.Interaction.Events;
+using Content.Shared.Mobs;
 using Content.Shared.Speech;
 using Content.Shared.Telephone;
 using Content.Shared.UserInterface;
@@ -39,7 +42,7 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
     [Dependency] private readonly IAdminManager _adminManager = default!;
     [Dependency] private readonly IChatManager _chatManager = default!;
     [Dependency] private readonly IAdminLogManager _adminLogger = default!;
-    [Dependency] private readonly IPlayerManager _playerManager = default!;
+    [Dependency] private readonly SharedContainerSystem _containers = default!;
 
     private readonly HashSet<EntityUid> _centCommAwaitingPickup = new();
     private readonly HashSet<EntityUid> _centCommActiveCalls = new();
@@ -54,7 +57,11 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
     /// </summary>
     private readonly Dictionary<NetEntity, HashSet<ICommonSession>> _openAdminChats = new();
 
-    private float _updateTimer = 1f;
+    [Dependency] private readonly IPlayerManager _playerManager = default!;
+
+    private float _cordCheckTimer;
+    private float _updateTimer;
+    private const float CordCheckTime = 0.25f;
     private const float UpdateTime = 1f;
 
     public override void Initialize()
@@ -72,6 +79,8 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
         SubscribeLocalEvent<TelephoneHandsetComponent, CallablePhoneHangUpMessage>(OnHandsetHangUp);
         SubscribeLocalEvent<TelephoneHandsetComponent, GotEquippedHandEvent>(OnHandsetEquipped);
         SubscribeLocalEvent<TelephoneHandsetComponent, GotUnequippedHandEvent>(OnHandsetUnequipped);
+        SubscribeLocalEvent<TelephoneHandsetComponent, DroppedEvent>(OnHandsetDropped);
+        SubscribeLocalEvent<MobStateChangedEvent>(OnMobStateChanged);
         SubscribeLocalEvent<TelephoneHandsetComponent, ListenAttemptEvent>(OnHandsetListenAttempt);
         SubscribeLocalEvent<TelephoneHandsetComponent, ListenEvent>(OnHandsetListen);
 
@@ -91,6 +100,13 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
+
+        _cordCheckTimer += frameTime;
+        if (_cordCheckTimer >= CordCheckTime)
+        {
+            _cordCheckTimer -= CordCheckTime;
+            UpdateHandsetCordChecks();
+        }
 
         _updateTimer += frameTime;
         if (_updateTimer < UpdateTime)
@@ -216,18 +232,175 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
         if (!TryComp<CallablePhoneComponent>(phone, out var callable))
             return;
 
-        if (callable.HandsetHolder == args.User)
+        if (callable.HandsetHolder != args.User)
+            return;
+
+        var phoneEnt = phone;
+        var user = args.User;
+
+        Timer.Spawn(TimeSpan.Zero, () =>
         {
-            if (TryComp<TelephoneComponent>(phone, out var telephone))
+            if (!Exists(phoneEnt) || !TryComp<CallablePhoneComponent>(phoneEnt, out var comp))
+                return;
+
+            if (UserHoldingPhoneHandset(phoneEnt, user))
             {
-                UpdateHandsetRelay(phone, telephone, null);
+                comp.HandsetHolder = user;
+                Dirty(phoneEnt, comp);
+                return;
             }
 
+            if (comp.HandsetHolder != user)
+                return;
+
+            if (TryComp<TelephoneComponent>(phoneEnt, out var telephone))
+                UpdateHandsetRelay(phoneEnt, telephone, null);
+
+            comp.HandsetHolder = null;
+            Dirty(phoneEnt, comp);
+            StopHandsetHolderAudio((phoneEnt, comp));
+        });
+    }
+
+    private void OnHandsetDropped(Entity<TelephoneHandsetComponent> handset, ref DroppedEvent args)
+    {
+        if (ShouldExemptHandsetReturn(args.User))
+            return;
+
+        var phone = GetEntity(handset.Comp.ParentPhone);
+        if (!TryComp<CallablePhoneComponent>(phone, out var callable))
+            return;
+
+        TryReturnHandsetToBase((phone, callable));
+    }
+
+    private void OnMobStateChanged(MobStateChangedEvent args)
+    {
+        if (args.NewMobState != MobState.Dead)
+            return;
+
+        if (ShouldExemptHandsetReturn(args.Target))
+            return;
+
+        var query = EntityQueryEnumerator<CallablePhoneComponent>();
+        while (query.MoveNext(out var phone, out var callable))
+        {
+            if (callable.HandsetHolder != args.Target)
+                continue;
+
+            TryReturnHandsetToBase((phone, callable));
+        }
+    }
+
+    private void UpdateHandsetCordChecks()
+    {
+        var query = AllEntityQuery<CallablePhoneComponent>();
+        while (query.MoveNext(out var phone, out var callable))
+        {
+            if (IsHandsetInCradle(phone))
+                continue;
+
+            var handset = GetOffHookHandset(phone, callable.HandsetHolder);
+            if (handset == null)
+                continue;
+
+            var holder = ResolveHandsetHolder(phone, callable, handset.Value);
+            if (holder == null)
+            {
+                TryReturnHandsetToBase((phone, callable));
+                continue;
+            }
+
+            if (ShouldExemptHandsetReturn(holder.Value))
+                continue;
+
+            if (!IsWithinHandsetCordRange(phone, holder.Value, callable))
+                TryReturnHandsetToBase((phone, callable));
+        }
+    }
+
+    private EntityUid? ResolveHandsetHolder(EntityUid phone, CallablePhoneComponent callable, EntityUid handset)
+    {
+        if (callable.HandsetHolder != null && Exists(callable.HandsetHolder))
+        {
+            if (Hands.IsHolding(callable.HandsetHolder.Value, handset))
+                return callable.HandsetHolder;
+
+            if (UserHoldingPhoneHandset(phone, callable.HandsetHolder.Value))
+                return callable.HandsetHolder;
+        }
+
+        var holderQuery = AllEntityQuery<HandsComponent>();
+        while (holderQuery.MoveNext(out var uid, out var hands))
+        {
+            if (!Hands.IsHolding(uid, handset, out _, hands))
+                continue;
+
+            if (callable.HandsetHolder != uid)
+            {
+                callable.HandsetHolder = uid;
+                Dirty(phone, callable);
+            }
+
+            return uid;
+        }
+
+        if (callable.HandsetHolder != null)
+        {
             callable.HandsetHolder = null;
             Dirty(phone, callable);
         }
 
-        StopHandsetHolderAudio((phone, callable));
+        return null;
+    }
+
+    private bool ShouldExemptHandsetReturn(EntityUid entity)
+    {
+        return TryGetGhostCallerSession(entity, out _);
+    }
+
+    private bool TryReturnHandsetToBase(Entity<CallablePhoneComponent> phone)
+    {
+        if (IsHandsetInCradle(phone))
+            return false;
+
+        if (!_itemSlots.TryGetSlot(phone, CallablePhoneComponent.HandsetSlotId, out var slot) ||
+            slot.ContainerSlot == null ||
+            slot.HasItem)
+        {
+            return false;
+        }
+
+        var handset = GetOffHookHandset(phone, phone.Comp.HandsetHolder);
+        if (handset == null || !Exists(handset))
+            return false;
+
+        var holderQuery = AllEntityQuery<HandsComponent>();
+        while (holderQuery.MoveNext(out var holderUid, out var hands))
+        {
+            if (!Hands.IsHolding(holderUid, handset, out _, hands))
+                continue;
+
+            return Hands.TryDropIntoContainer(
+                holderUid,
+                handset.Value,
+                slot.ContainerSlot,
+                checkActionBlocker: false,
+                hands);
+        }
+
+        if (_containers.TryGetContainingContainer(handset.Value, out var container) &&
+            container.Owner != phone.Owner)
+        {
+            _containers.Remove(handset.Value, container);
+        }
+
+        return _itemSlots.TryInsert(
+            phone,
+            CallablePhoneComponent.HandsetSlotId,
+            handset.Value,
+            user: null,
+            excludeUserAudio: true);
     }
 
     private void OnTelephoneStateChange(Entity<CallablePhoneComponent> entity, ref TelephoneStateChangeEvent args)
