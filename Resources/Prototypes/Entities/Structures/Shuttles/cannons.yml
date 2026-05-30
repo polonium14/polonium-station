@@ -357,7 +357,7 @@
           acts: ["Destruction"]
   - type: Gun
     projectileSpeed: 20
-    fireRate: 2
+    fireRate: 0.5
     selectedMode: SemiAuto
     angleDecay: 45
     minAngle: 5

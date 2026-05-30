@@ -93,7 +93,7 @@
         - !type:DoActsBehavior
           acts: ["Destruction"]
   - type: Gun
-    fireRate: 2
+    fireRate: 1.1
     projectileSpeed: 60
     useKey: false
     soundGunshot:

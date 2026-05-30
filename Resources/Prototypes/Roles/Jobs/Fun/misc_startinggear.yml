@@ -122,6 +122,7 @@
     gloves: ClothingHandsGlovesCombatBloodred
     back: ClothingBackpack
     shoes: ClothingShoesBootsCombatFilled
+    pocket1: BaseUplinkRadio25TC
   storage:
     back:
     - BoxSurvivalSyndicate
@@ -134,7 +135,7 @@
     head: ClothingHeadHatOutlawHat
     outerClothing: ClothingOuterArmorBasicSlim
     back: ClothingBackpackSatchel
-    pocket1: BaseUplinkRadio125TC
+    pocket1: BaseUplinkRadio25TC
     pocket2: EnergySword
 
 # Nanotrasen Paramilitary Unit Gear

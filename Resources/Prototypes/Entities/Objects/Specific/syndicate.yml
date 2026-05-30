@@ -15,6 +15,7 @@
 # SPDX-FileCopyrightText: 2024 username <113782077+whateverusername0@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 McBosserson <148172569+McBosserson@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Terkala <appleorange64@gmail.com>
 # SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
 #
@@ -119,6 +120,16 @@
   - type: Store
     balance:
       Telecrystal: 50
+
+- type: entity
+  parent: BaseUplinkRadio
+  # Polonium - 25 TC
+  id: BaseUplinkRadio25TC
+  suffix: 25 TC
+  components:
+  - type: Store
+    balance:
+      Telecrystal: 25
 
 # Nukeops reinforcement variant with 50 TC
 - type: entity
