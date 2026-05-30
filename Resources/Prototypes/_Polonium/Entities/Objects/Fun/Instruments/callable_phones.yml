@@ -59,6 +59,8 @@
         name: callable-phone-handset-slot
         insertOnInteract: true
         ejectOnInteract: true
+        insertSound: null
+        ejectSound: null
         startingItem: TelephoneHandsetRed
         whitelist:
           components:
@@ -91,6 +93,8 @@
         name: callable-phone-handset-slot
         insertOnInteract: true
         ejectOnInteract: true
+        insertSound: null
+        ejectSound: null
         startingItem: TelephoneHandsetBlue
         whitelist:
           components:
@@ -128,6 +132,8 @@
         name: callable-phone-handset-slot
         insertOnInteract: true
         ejectOnInteract: true
+        insertSound: null
+        ejectSound: null
         startingItem: TelephoneHandsetBloodRed
         whitelist:
           components:
@@ -201,6 +207,8 @@
         name: callable-phone-handset-slot
         insertOnInteract: true
         ejectOnInteract: true
+        insertSound: null
+        ejectSound: null
         startingItem: TelephoneHandsetBanana
         whitelist:
           components:
