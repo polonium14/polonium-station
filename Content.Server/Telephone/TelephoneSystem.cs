@@ -151,6 +151,8 @@ public sealed class TelephoneSystem : SharedTelephoneSystem
         {
             if (!string.IsNullOrWhiteSpace(callerPhone.AdminImpersonationName))
                 impersonationName = callerPhone.AdminImpersonationName;
+            else if (_callablePhone.ShouldUseAnonymousAdminCallerName(args.TelephoneSource.Owner, callerPhone))
+                impersonationName = Loc.GetString("callable-phone-admin-unknown-caller");
             else if (callerPhone.HandsetHolder != null)
                 nameSource = callerPhone.HandsetHolder.Value;
         }

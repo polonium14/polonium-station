@@ -95,6 +95,30 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
         SubscribeNetworkEvent<CallablePhoneAdminChatSendMessageEvent>(OnAdminChatSendMessage);
         SubscribeNetworkEvent<CallablePhoneAdminChatCloseEvent>(OnAdminChatClose);
         SubscribeNetworkEvent<CallablePhoneAdminChatSetImpersonationNameEvent>(OnAdminChatSetImpersonationName);
+
+        SubscribeLocalEvent<CallablePhoneComponent, TransformSpeakerNameEvent>(OnAdminPhoneTransformSpeakerName);
+    }
+
+    public override bool ShouldUseAnonymousAdminCallerName(EntityUid phone, CallablePhoneComponent callable)
+    {
+        if (callable.IsCentComm)
+            return true;
+
+        return _ghostCallerActiveCalls.Contains(phone);
+    }
+
+    private void OnAdminPhoneTransformSpeakerName(Entity<CallablePhoneComponent> entity, ref TransformSpeakerNameEvent args)
+    {
+        if (!string.IsNullOrWhiteSpace(entity.Comp.AdminImpersonationName))
+        {
+            args.VoiceName = entity.Comp.AdminImpersonationName;
+            return;
+        }
+
+        if (!ShouldUseAnonymousAdminCallerName(entity.Owner, entity.Comp))
+            return;
+
+        args.VoiceName = Loc.GetString("callable-phone-admin-unknown-caller");
     }
 
     public override void Update(float frameTime)
@@ -139,6 +163,8 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
 
         if (TryComp<TelephoneComponent>(entity, out var telephone) && _telephone.IsTelephoneEngaged((entity, telephone)))
             _telephone.EndTelephoneCalls((entity, telephone));
+
+        RefreshAllCallablePhoneDirectories();
     }
 
     private void OnInserted(Entity<CallablePhoneComponent> entity, ref EntInsertedIntoContainerMessage args)
@@ -518,20 +544,16 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
         if (!TryComp<TelephoneComponent>(source, out var sourceTelephone))
             return;
 
-        var receiverUid = GetEntity(args.Receiver);
-
-        if (!TryComp<CallablePhoneComponent>(receiverUid, out var receiverCallable) ||
-            !CanSourceDialReceiver(source.Comp, receiverCallable) ||
-            !TryComp<TelephoneComponent>(receiverUid, out var receiverTelephone))
+        if (!TryResolveCallablePhoneReceiver(args.Receiver, source.Comp, out var receiverUid, out var receiverCallable, out var receiverTelephone))
         {
             _popup.PopupEntity(Loc.GetString("callable-phone-call-invalid"), source, args.Actor);
             return;
         }
 
         var sourceEnt = (source.Owner, sourceTelephone);
-        var receiverEnt = (receiverUid, receiverTelephone);
+        var receiverEnt = (receiverUid.Value, receiverTelephone);
 
-        if (_telephone.IsTelephoneEngaged(receiverEnt) || IsHandsetOffHook(receiverUid))
+        if (_telephone.IsTelephoneEngaged(receiverEnt) || IsHandsetOffHook(receiverUid.Value))
         {
             BeginBusyCallAudio(source);
             return;
@@ -542,9 +564,7 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
         StartOutboundCallWithDialDelay(
             source,
             sourceEnt,
-            receiverEnt,
-            receiverUid,
-            receiverCallable,
+            args.Receiver,
             args.Actor,
             callOptions);
     }
@@ -552,15 +572,27 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
     private void StartOutboundCallWithDialDelay(
         Entity<CallablePhoneComponent> source,
         Entity<TelephoneComponent> sourceEnt,
-        Entity<TelephoneComponent> receiverEnt,
-        EntityUid receiverUid,
-        CallablePhoneComponent receiverCallable,
+        NetEntity receiverNet,
         EntityUid user,
         TelephoneCallOptions? callOptions)
     {
+        if (!TryResolveCallablePhoneReceiver(receiverNet, source.Comp, out var receiverUid, out var receiverCallable, out var receiverTelephone))
+        {
+            _popup.PopupEntity(Loc.GetString("callable-phone-call-invalid"), source, user);
+            return;
+        }
+
+        var receiverEnt = (receiverUid.Value, receiverTelephone);
+
+        if (_telephone.IsTelephoneEngaged(receiverEnt) || IsHandsetOffHook(receiverUid.Value))
+        {
+            BeginBusyCallAudio(source);
+            return;
+        }
+
         if (!TryGetDialSoundDelay(source.Comp.DialSound, out var delay))
         {
-            FinalizeOutboundCall(source, sourceEnt, receiverEnt, receiverUid, receiverCallable, user, callOptions);
+            FinalizeOutboundCall(source, sourceEnt, receiverEnt, receiverUid.Value, receiverCallable, user, callOptions);
             return;
         }
 
@@ -575,13 +607,21 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
             if (source.Comp.HandsetHolder == null || !UserHoldingPhoneHandset(source, user))
                 return;
 
-            if (_telephone.IsTelephoneEngaged(receiverEnt) || IsHandsetOffHook(receiverUid))
+            if (!TryResolveCallablePhoneReceiver(receiverNet, source.Comp, out var resolvedReceiverUid, out var resolvedCallable, out var resolvedTelephone))
+            {
+                _popup.PopupEntity(Loc.GetString("callable-phone-call-invalid"), source, user);
+                return;
+            }
+
+            var resolvedReceiverEnt = (resolvedReceiverUid.Value, resolvedTelephone);
+
+            if (_telephone.IsTelephoneEngaged(resolvedReceiverEnt) || IsHandsetOffHook(resolvedReceiverUid.Value))
             {
                 StartBusyToneLoop(source);
                 return;
             }
 
-            FinalizeOutboundCall(source, sourceEnt, receiverEnt, receiverUid, receiverCallable, user, callOptions);
+            FinalizeOutboundCall(source, sourceEnt, resolvedReceiverEnt, resolvedReceiverUid.Value, resolvedCallable, user, callOptions);
         });
     }
 
@@ -792,7 +832,7 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
         if (!string.IsNullOrWhiteSpace(callable.AdminImpersonationName))
             return callable.AdminImpersonationName;
 
-        return session.Name;
+        return Loc.GetString("callable-phone-admin-unknown-caller");
     }
 
     private void ClearAdminImpersonation(Entity<CallablePhoneComponent> entity)
@@ -818,7 +858,7 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
 
     private void ReplyThroughCentCommPhone(ICommonSession admin, EntityUid uid, CallablePhoneComponent callable, string message)
     {
-        var name = callable.AdminImpersonationName ?? Loc.GetString(callable.AdminChatPrefix);
+        var name = callable.AdminImpersonationName ?? Loc.GetString("callable-phone-admin-unknown-caller");
 
         if (TryComp<TelephoneComponent>(uid, out var telephone) && _telephone.IsTelephoneEngaged((uid, telephone)))
             _telephone.RelayTelephoneMessage(uid, message, (uid, telephone), skipCentCommReceivers: true);
@@ -836,8 +876,7 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
         if (TryComp<TelephoneComponent>(uid, out var telephone) && _telephone.IsTelephoneEngaged((uid, telephone)))
             _telephone.RelayTelephoneMessage(uid, message, (uid, telephone));
 
-        var name = callable.AdminImpersonationName ?? admin.Name;
-
+        var name = callable.AdminImpersonationName ?? Loc.GetString("callable-phone-admin-unknown-caller");
         _adminLogger.Add(
             LogType.AdminMessage,
             LogImpact.Low,
@@ -1401,6 +1440,15 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
                 continue;
 
             _ui.SetUiState(handsetUid, CallablePhoneUiKey.Key, state);
+        }
+    }
+
+    private void RefreshAllCallablePhoneDirectories()
+    {
+        var query = AllEntityQuery<CallablePhoneComponent, TelephoneComponent>();
+        while (query.MoveNext(out var uid, out _, out var telephone))
+        {
+            UpdateUiState((uid, telephone));
         }
     }
 

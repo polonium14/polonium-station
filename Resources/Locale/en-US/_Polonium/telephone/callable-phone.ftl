@@ -27,6 +27,7 @@ callable-phone-impersonation-placeholder = Caller name for this call...
 callable-phone-impersonation-apply = Apply
 callable-phone-impersonation-applied = Speaking as {$name}.
 callable-phone-impersonation-cleared = Caller name cleared.
+callable-phone-admin-unknown-caller = Unknown caller
 callable-phone-window-relay-label = Originating at:
 callable-phone-window-answer-call = Answer call
 callable-phone-window-end-call = End call

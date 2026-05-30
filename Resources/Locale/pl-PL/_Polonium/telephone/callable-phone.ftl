@@ -27,6 +27,7 @@ callable-phone-impersonation-placeholder = Nazwa rozmówcy w tej rozmowie...
 callable-phone-impersonation-apply = Zastosuj
 callable-phone-impersonation-applied = Mówisz jako { $name }.
 callable-phone-impersonation-cleared = Wyczyszczono nazwę rozmówcy.
+callable-phone-admin-unknown-caller = Nieznany rozmowca
 callable-phone-window-relay-label = Źródło:
 callable-phone-window-answer-call = Odbierz
 callable-phone-window-end-call = Odrzuć

@@ -78,6 +78,28 @@ public sealed partial class CallablePhoneWindow : FancyWindow
         if (_owner == null || !_entManager.TryGetComponent<TelephoneComponent>(_owner.Value, out var telephone))
             return;
 
+        if (!_entManager.TryGetComponent<CallablePhoneComponent>(_owner.Value, out var sourceCallable))
+            return;
+
+        var filteredPhones = new Dictionary<NetEntity, string>();
+
+        foreach (var (netEntity, label) in phones)
+        {
+            if (!_callablePhone.IsCallablePhoneContactValid(netEntity))
+                continue;
+
+            if (!_entManager.TryGetEntity(netEntity, out var uid))
+                continue;
+
+            if (!_entManager.TryGetComponent<CallablePhoneComponent>(uid, out var callable))
+                continue;
+
+            if (!_callablePhone.CanSourceSeeInDirectory(sourceCallable, callable))
+                continue;
+
+            filteredPhones[netEntity] = label;
+        }
+
         var callerId = _telephone.GetFormattedCallerIdForEntity(
             telephone.LastCallerId.Item1,
             telephone.LastCallerId.Item2,
@@ -94,7 +116,7 @@ public sealed partial class CallablePhoneWindow : FancyWindow
         CallerIdText.SetMessage(FormattedMessage.FromMarkupOrThrow(callerId));
         DeviceIdText.SetMessage(FormattedMessage.FromMarkupOrThrow(deviceId));
 
-        var phoneArray = phones.ToArray();
+        var phoneArray = filteredPhones.ToArray();
         Array.Sort(phoneArray, (a, b) => string.Compare(a.Value, b.Value, StringComparison.CurrentCultureIgnoreCase));
 
         while (ContactsList.ChildCount > phoneArray.Length)
@@ -118,7 +140,7 @@ public sealed partial class CallablePhoneWindow : FancyWindow
             }
         }
 
-        if (_selectedContact != null && !phones.ContainsKey(_selectedContact.Value))
+        if (_selectedContact != null && !filteredPhones.ContainsKey(_selectedContact.Value))
             _selectedContact = null;
 
         UpdateAppearance();

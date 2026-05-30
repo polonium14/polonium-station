@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Hands;
 using Content.Shared.Hands.EntitySystems;
@@ -286,5 +287,50 @@ public abstract class SharedCallablePhoneSystem : EntitySystem
             return false;
 
         return distance <= callable.HandsetCordRange;
+    }
+
+    public bool IsCallablePhoneContactValid(NetEntity netEntity)
+    {
+        return TryGetEntity(netEntity, out var uid)
+               && Exists(uid)
+               && HasComp<CallablePhoneComponent>(uid)
+               && HasComp<TelephoneComponent>(uid);
+    }
+
+    /// <summary>
+    /// Verify that the receivrs are the valid phones and resolve them
+    /// </summary>
+    public bool TryResolveCallablePhoneReceiver(
+        NetEntity receiverNet,
+        CallablePhoneComponent source,
+        [NotNullWhen(true)] out EntityUid? receiverUid,
+        [NotNullWhen(true)] out CallablePhoneComponent? receiverCallable,
+        [NotNullWhen(true)] out TelephoneComponent? receiverTelephone)
+    {
+        receiverUid = null;
+        receiverCallable = null;
+        receiverTelephone = null;
+
+        if (!TryGetEntity(receiverNet, out var uid) || !Exists(uid))
+            return false;
+
+        if (!TryComp<CallablePhoneComponent>(uid, out var callable))
+            return false;
+
+        if (!TryComp<TelephoneComponent>(uid, out var telephone))
+            return false;
+
+        if (!CanSourceDialReceiver(source, callable))
+            return false;
+
+        receiverUid = uid;
+        receiverCallable = callable;
+        receiverTelephone = telephone;
+        return true;
+    }
+
+    public virtual bool ShouldUseAnonymousAdminCallerName(EntityUid phone, CallablePhoneComponent callable)
+    {
+        return callable.IsCentComm;
     }
 }
