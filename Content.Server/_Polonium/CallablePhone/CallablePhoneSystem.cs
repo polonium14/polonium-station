@@ -97,6 +97,7 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
         SubscribeNetworkEvent<CallablePhoneAdminChatSetImpersonationNameEvent>(OnAdminChatSetImpersonationName);
 
         SubscribeLocalEvent<CallablePhoneComponent, TransformSpeakerNameEvent>(OnAdminPhoneTransformSpeakerName);
+        SubscribeLocalEvent<CallablePhoneComponent, ItemSlotEjectAttemptEvent>(OnHandsetEjectAttempt);
     }
 
     public override bool ShouldUseAnonymousAdminCallerName(EntityUid phone, CallablePhoneComponent callable)
@@ -219,10 +220,25 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
         if (!TryComp<TelephoneComponent>(phone, out var telephone))
             return;
 
+        if (IsCentCommHandsetLockedForNonAdmin(phone, callable, args.User))
+        {
+            var phoneEnt = phone;
+            Timer.Spawn(TimeSpan.Zero, () =>
+            {
+                if (!Exists(phoneEnt) || !TryComp<CallablePhoneComponent>(phoneEnt, out var comp))
+                    return;
+
+                TryReturnHandsetToBase((phoneEnt, comp));
+            });
+            return;
+        }
+
+        var wasRemoteCentCommSession = callable.IsCentComm &&
+                                       _centCommActiveCalls.Contains(phone) &&
+                                       callable.HandsetHolder == null;
+
         callable.HandsetHolder = args.User;
         Dirty(phone, callable);
-
-        var inCall = telephone.CurrentState == TelephoneState.InCall;
 
         if (telephone.CurrentState == TelephoneState.Ringing)
         {
@@ -238,6 +254,9 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
         UpdateHandsetRelay(phone, telephone, args.User);
 
         UpdateUiState((phone, telephone));
+
+        if (wasRemoteCentCommSession)
+            TransferCentCommCallToIc(phone, args.User);
 
         if (telephone.CurrentState == TelephoneState.Idle)
         {
@@ -767,6 +786,57 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
             _openAdminChats.Remove(entity);
     }
 
+    private bool IsCentCommHandsetLockedForNonAdmin(EntityUid phone, CallablePhoneComponent callable, EntityUid? user)
+    {
+        if (!callable.IsCentComm)
+            return false;
+
+        if (user != null && _adminManager.IsAdmin(user.Value, includeDeAdmin: true))
+            return false;
+
+        if (_centCommAwaitingPickup.Contains(phone))
+            return true;
+
+        return _centCommActiveCalls.Contains(phone) && callable.HandsetHolder == null;
+    }
+
+    private void OnHandsetEjectAttempt(Entity<CallablePhoneComponent> entity, ref ItemSlotEjectAttemptEvent args)
+    {
+        if (args.Cancelled || args.Slot.ID != CallablePhoneComponent.HandsetSlotId)
+            return;
+
+        if (!IsCentCommHandsetLockedForNonAdmin(entity, entity.Comp, args.User))
+            return;
+
+        args.Cancelled = true;
+
+        if (args.User != null)
+            _popup.PopupEntity(Loc.GetString("callable-phone-centcomm-handset-locked"), entity, args.User.Value);
+    }
+
+    private void ForceCloseAdminChats(EntityUid phone)
+    {
+        var netEntity = GetNetEntity(phone);
+
+        if (!_openAdminChats.TryGetValue(netEntity, out var sessions))
+            return;
+
+        var ev = new CallablePhoneAdminChatForceCloseEvent(netEntity);
+
+        foreach (var session in sessions.ToArray())
+            RaiseNetworkEvent(ev, session);
+
+        _openAdminChats.Remove(netEntity);
+    }
+
+    private void TransferCentCommCallToIc(EntityUid phone, EntityUid admin)
+    {
+        NotifyAdminChatLog(phone, Loc.GetString("callable-phone-centcomm-admin-took-ic", ("admin", Name(admin))));
+        ForceCloseAdminChats(phone);
+        _centCommAnsweringAdmin.Remove(phone);
+        _centCommActiveCalls.Remove(phone);
+    }
+
     private bool IsCentCommCallActive(EntityUid uid)
     {
         return TryComp<TelephoneComponent>(uid, out var telephone)
@@ -989,6 +1059,9 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
         if (!TryComp<TelephoneComponent>(phone, out var telephone))
             return;
 
+        if (TryComp<CallablePhoneComponent>(phone, out var callable) && callable.HandsetHolder != null)
+            return;
+
         if (IsAdminInOpenChat(admin, phone))
             return;
 
@@ -1119,6 +1192,9 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
     private void OnCallablePhoneMessageReceived(Entity<CallablePhoneComponent> entity, ref TelephoneMessageReceivedEvent args)
     {
         if (!entity.Comp.IsCentComm && !_ghostCallerActiveCalls.Contains(entity.Owner))
+            return;
+
+        if (entity.Comp.IsCentComm && entity.Comp.HandsetHolder != null)
             return;
 
         var nameEv = new TransformSpeakerNameEvent(args.MessageSource, Name(args.MessageSource));

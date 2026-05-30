@@ -9,6 +9,7 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
     [Dependency] private readonly IUserInterfaceManager _uiManager = default!;
 
     private readonly Dictionary<NetEntity, CallablePhoneAdminChatWindow> _openAdminChatWindows = new();
+    private readonly HashSet<NetEntity> _forceClosingAdminChats = new();
 
     public override void Initialize()
     {
@@ -17,6 +18,7 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
         SubscribeNetworkEvent<CallablePhoneAdminChatOpenEvent>(OnOpenAdminChat);
         SubscribeNetworkEvent<CallablePhoneAdminChatTextMessageEvent>(OnAdminChatMessage);
         SubscribeNetworkEvent<CallablePhoneAdminChatSetInputEnabledEvent>(OnAdminChatSetInputEnabled);
+        SubscribeNetworkEvent<CallablePhoneAdminChatForceCloseEvent>(OnAdminChatForceClose);
         SubscribeNetworkEvent<CentCommCallPickupPromptEvent>(OnCentCommPickupPrompt);
     }
 
@@ -81,8 +83,21 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
         RaiseNetworkEvent(new CallablePhoneAdminChatSetImpersonationNameEvent(phone, name));
     }
 
+    private void OnAdminChatForceClose(CallablePhoneAdminChatForceCloseEvent ev)
+    {
+        if (!_openAdminChatWindows.TryGetValue(ev.Phone, out var window))
+            return;
+
+        _forceClosingAdminChats.Add(ev.Phone);
+        window.Close();
+        _openAdminChatWindows.Remove(ev.Phone);
+    }
+
     private void OnAdminChatWindowClosed(NetEntity phone)
     {
+        if (_forceClosingAdminChats.Remove(phone))
+            return;
+
         RaiseNetworkEvent(new CallablePhoneAdminChatCloseEvent(phone));
     }
 }

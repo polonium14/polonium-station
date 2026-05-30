@@ -32,6 +32,13 @@ public sealed class CallablePhoneAdminChatCloseEvent(NetEntity phone) : EntityEv
     public NetEntity Phone = phone;
 }
 
+
+[Serializable, NetSerializable]
+public sealed class CallablePhoneAdminChatForceCloseEvent(NetEntity phone) : EntityEventArgs
+{
+    public NetEntity Phone = phone;
+}
+
 /// <summary>
 /// Raised on clients watching a callable phone line to display chat history.
 /// </summary>
