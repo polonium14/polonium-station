@@ -1,14 +1,17 @@
 using System.Diagnostics.CodeAnalysis;
 using Content.Shared.Containers.ItemSlots;
+using Content.Shared.Disposal.Components;
 using Content.Shared.Hands;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Labels.Components;
 using Content.Shared.Popups;
+using Content.Shared.Storage;
 using Content.Shared.Telephone;
 using Content.Shared.UserInterface;
 using Content.Shared.Verbs;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Containers;
 using Robust.Shared.Network;
 
 namespace Content.Shared._Polonium.CallablePhone;
@@ -42,6 +45,38 @@ public abstract class SharedCallablePhoneSystem : EntitySystem
         SubscribeLocalEvent<TelephoneHandsetComponent, GetVerbsEvent<Verb>>(
             OnHandsetGetVerbs,
             after: [typeof(ActivatableUISystem)]);
+
+        SubscribeLocalEvent<TelephoneHandsetComponent, ContainerGettingInsertedAttemptEvent>(OnHandsetGettingInserted);
+    }
+
+    private void OnHandsetGettingInserted(Entity<TelephoneHandsetComponent> handset, ref ContainerGettingInsertedAttemptEvent args)
+    {
+        if (args.Cancelled || IsAllowedHandsetContainer(handset, args.Container))
+            return;
+
+        if (HasComp<StorageComponent>(args.Container.Owner) &&
+            args.Container.ID == StorageComponent.ContainerId)
+        {
+            args.Cancel();
+            return;
+        }
+
+        if (HasComp<SharedDisposalUnitComponent>(args.Container.Owner) &&
+            args.Container.ID == SharedDisposalUnitComponent.ContainerId)
+        {
+            args.Cancel();
+        }
+    }
+
+    private bool IsAllowedHandsetContainer(Entity<TelephoneHandsetComponent> handset, BaseContainer container)
+    {
+        if (container.ID != CallablePhoneComponent.HandsetSlotId)
+            return false;
+
+        if (!HasComp<CallablePhoneComponent>(container.Owner))
+            return false;
+
+        return GetEntity(handset.Comp.ParentPhone) == container.Owner;
     }
 
     private void OnHandsetUseInHand(Entity<TelephoneHandsetComponent> entity, ref UseInHandEvent args)

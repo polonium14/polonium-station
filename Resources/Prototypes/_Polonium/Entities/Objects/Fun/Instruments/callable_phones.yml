@@ -35,22 +35,41 @@
     # phoneName: callable-phone-example-bridge  # optional; also editable via View Variables at runtime
     pickupHandsetSound:
       path: /Audio/_Polonium/Machines/Telephone/handset_pickup.ogg
+      params:
+        volume: -3
     pickupHandsetInCallSound:
       collection: CallablePhoneHandsetPickupMic
+      params:
+        volume: -3
     hangupHandsetSound:
       path: /Audio/_Polonium/Machines/Telephone/handset_hangup.ogg
+      params:
+        volume: -3
     hangupHandsetInCallSound:
       collection: CallablePhoneHandsetHangupMic
+      params:
+        volume: -3
     dialTone:
       path: /Audio/_Polonium/Machines/Telephone/dial_tone.ogg
+      params:
+        volume: -5
     dialSound:
       path: /Audio/_Polonium/Machines/Telephone/dialing.ogg
+      params:
+        volume: -4
     callWaitingTone:
       path: /Audio/_Polonium/Machines/Telephone/call_waiting.ogg
+      params:
+        volume: -5
     busyTone:
       path: /Audio/_Polonium/Machines/Telephone/busy.ogg
+      params:
+        volume: -5
   - type: Telephone
-    ringTone: /Audio/Machines/double_ring.ogg
+    ringTone:
+      path: /Audio/Machines/double_ring.ogg
+      params:
+        volume: -3
     listeningRange: 2.5
     speakerVolume: Speak
   - type: ItemSlots
