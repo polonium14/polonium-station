@@ -54,18 +54,14 @@ public abstract class SharedCallablePhoneSystem : EntitySystem
         if (args.Cancelled || IsAllowedHandsetContainer(handset, args.Container))
             return;
 
-        if (HasComp<StorageComponent>(args.Container.Owner) &&
-            args.Container.ID == StorageComponent.ContainerId)
+        if (args.Container.ID == StorageComponent.ContainerId)
         {
             args.Cancel();
             return;
         }
 
-        if (HasComp<SharedDisposalUnitComponent>(args.Container.Owner) &&
-            args.Container.ID == SharedDisposalUnitComponent.ContainerId)
-        {
+        if (args.Container.ID == SharedDisposalUnitComponent.ContainerId)
             args.Cancel();
-        }
     }
 
     private bool IsAllowedHandsetContainer(Entity<TelephoneHandsetComponent> handset, BaseContainer container)
@@ -75,6 +71,9 @@ public abstract class SharedCallablePhoneSystem : EntitySystem
 
         if (!HasComp<CallablePhoneComponent>(container.Owner))
             return false;
+
+        if (handset.Comp.ParentPhone == NetEntity.Invalid)
+            return true;
 
         return GetEntity(handset.Comp.ParentPhone) == container.Owner;
     }
