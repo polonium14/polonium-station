@@ -1,12 +1,9 @@
 using System.Diagnostics.CodeAnalysis;
 using Content.Shared.Containers.ItemSlots;
-using Content.Shared.Disposal.Components;
 using Content.Shared.Hands;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction.Events;
-using Content.Shared.Labels.Components;
 using Content.Shared.Popups;
-using Content.Shared.Storage;
 using Content.Shared.Telephone;
 using Content.Shared.UserInterface;
 using Content.Shared.Verbs;
@@ -54,14 +51,7 @@ public abstract class SharedCallablePhoneSystem : EntitySystem
         if (args.Cancelled || IsAllowedHandsetContainer(handset, args.Container))
             return;
 
-        if (args.Container.ID == StorageComponent.ContainerId)
-        {
-            args.Cancel();
-            return;
-        }
-
-        if (args.Container.ID == SharedDisposalUnitComponent.ContainerId)
-            args.Cancel();
+        args.Cancel();
     }
 
     private bool IsAllowedHandsetContainer(Entity<TelephoneHandsetComponent> handset, BaseContainer container)
@@ -215,9 +205,6 @@ public abstract class SharedCallablePhoneSystem : EntitySystem
     {
         if (TryComp<CallablePhoneComponent>(uid, out var callable) && !string.IsNullOrWhiteSpace(callable.PhoneName))
             return callable.PhoneName;
-
-        if (TryComp<LabelComponent>(uid, out var label) && !string.IsNullOrEmpty(label.CurrentLabel))
-            return label.CurrentLabel;
 
         return MetaData(uid).EntityName;
     }

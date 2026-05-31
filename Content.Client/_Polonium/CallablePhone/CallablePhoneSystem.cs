@@ -69,7 +69,7 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
 
         var window = new CallablePhoneAdminCallPickupWindow(message);
         window.Accepted += () => RaiseNetworkEvent(new CentCommCallPickupResponseEvent(ev.Phone, true));
-        window.Declined += () => RaiseNetworkEvent(new CentCommCallPickupResponseEvent(ev.Phone, false));
+        window.Declined += reason => RaiseNetworkEvent(new CentCommCallPickupResponseEvent(ev.Phone, false, reason));
         window.OpenCentered();
     }
 

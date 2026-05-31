@@ -20,6 +20,7 @@ using Content.Shared.Speech;
 using Content.Shared.Telephone;
 using Content.Shared.UserInterface;
 using Robust.Server.Player;
+using Robust.Shared.Utility;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
@@ -47,6 +48,7 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
     private readonly HashSet<EntityUid> _centCommAwaitingPickup = new();
     private readonly HashSet<EntityUid> _centCommActiveCalls = new();
     private readonly Dictionary<EntityUid, NetUserId> _centCommAnsweringAdmin = new();
+    private readonly Dictionary<EntityUid, EntityUid> _centCommRingingCaller = new();
 
     private readonly HashSet<EntityUid> _ghostCallerPending = new();
     private readonly HashSet<EntityUid> _ghostCallerActiveCalls = new();
@@ -486,10 +488,17 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
         if (!entity.Comp.IsCentComm)
             return;
 
-        _centCommAwaitingPickup.Remove(entity);
-        _centCommAnsweringAdmin.Remove(entity);
+        var wasAwaitingPickup = _centCommAwaitingPickup.Contains(entity.Owner);
+        _centCommRingingCaller.TryGetValue(entity.Owner, out var ringingCaller);
 
-        if (_centCommActiveCalls.Remove(entity))
+        _centCommAwaitingPickup.Remove(entity.Owner);
+        _centCommRingingCaller.Remove(entity.Owner);
+        _centCommAnsweringAdmin.Remove(entity.Owner);
+
+        if (wasAwaitingPickup && ringingCaller != EntityUid.Invalid)
+            ApplyCentCommTimeoutRejection(entity.Owner, ringingCaller);
+
+        if (_centCommActiveCalls.Remove(entity.Owner))
         {
             NotifyAdminChatLog(entity, Loc.GetString("callable-phone-centcomm-call-ended"));
             SetAdminChatInputEnabled(entity, false);
@@ -691,6 +700,13 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
     private void BeginCentCommCall(EntityUid phone, TelephoneComponent telephone)
     {
         _centCommAwaitingPickup.Add(phone);
+        _centCommRingingCaller.Remove(phone);
+
+        foreach (var linked in telephone.LinkedTelephones)
+        {
+            _centCommRingingCaller[phone] = linked;
+            break;
+        }
 
         var callerName = _telephone.GetPlainCallerIdForEntity(
             telephone.LastCallerId.Item1,
@@ -1034,14 +1050,14 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
 
         if (!msg.Accepted)
         {
-            DeclineCentCommCall(phone.Value);
+            DeclineCentCommCall(phone.Value, msg.RejectionReason);
             return;
         }
 
         AcceptCentCommCall(args.SenderSession, phone.Value);
     }
 
-    private void DeclineCentCommCall(EntityUid phone)
+    private void DeclineCentCommCall(EntityUid phone, string? rejectionReason = null)
     {
         if (!TryComp<TelephoneComponent>(phone, out var telephone))
             return;
@@ -1049,9 +1065,101 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
         if (telephone.CurrentState != TelephoneState.Ringing && !_centCommAwaitingPickup.Contains(phone))
             return;
 
+        var reason = ResolveCentCommRejectionReason(rejectionReason);
+        NotifyCallersOfCentCommRejection(phone, telephone, reason);
         PlayRemoteBusyOnCallers(telephone);
         _centCommAwaitingPickup.Remove(phone);
+        _centCommRingingCaller.Remove(phone);
         _telephone.EndTelephoneCalls((phone, telephone));
+    }
+
+    private string ResolveCentCommRejectionReason(string? rejectionReason)
+    {
+        if (string.IsNullOrWhiteSpace(rejectionReason))
+            return Loc.GetString("callable-phone-centcomm-call-declined-default-reason");
+
+        var sanitized = SharedChatSystem.SanitizeAnnouncement(
+            rejectionReason.Trim(),
+            CentCommCallPickupResponseEvent.MaxRejectionReasonLength,
+            maxNewlines: 0);
+
+        return string.IsNullOrWhiteSpace(sanitized)
+            ? Loc.GetString("callable-phone-centcomm-call-declined-default-reason")
+            : sanitized;
+    }
+
+    private void NotifyCallersOfCentCommRejection(EntityUid centCommPhone, TelephoneComponent centCommTelephone, string reason)
+    {
+        foreach (var linked in centCommTelephone.LinkedTelephones)
+        {
+            NotifyCallerOfCentCommRejection(centCommPhone, linked, reason);
+        }
+    }
+
+    private void ApplyCentCommTimeoutRejection(EntityUid centCommPhone, EntityUid callerPhone)
+    {
+        NotifyCentCommTimeoutRejection(centCommPhone, callerPhone);
+        PlayBusyToneOnCaller(callerPhone);
+    }
+
+    private void NotifyCallerOfCentCommRejection(EntityUid centCommPhone, EntityUid callerPhone, string reason)
+    {
+        if (!TryComp<CallablePhoneComponent>(callerPhone, out var callerCallable))
+            return;
+
+        var holder = callerCallable.HandsetHolder;
+        if (holder == null)
+            return;
+
+        if (!_playerManager.TryGetSessionByEntity(holder.Value, out var session))
+            return;
+
+        var escapedReason = FormattedMessage.EscapeText(reason);
+        var wrapped = Loc.GetString("callable-phone-centcomm-call-declined-chat", ("reason", escapedReason));
+        var plain = Loc.GetString("callable-phone-centcomm-call-declined-chat-plain", ("reason", reason));
+
+        _chatManager.ChatMessageToOne(
+            ChatChannel.Local,
+            plain,
+            wrapped,
+            centCommPhone,
+            hideChat: false,
+            session.Channel);
+    }
+
+    private void NotifyCentCommTimeoutRejection(EntityUid centCommPhone, EntityUid callerPhone)
+    {
+        if (!TryComp<CallablePhoneComponent>(callerPhone, out var callerCallable))
+            return;
+
+        var holder = callerCallable.HandsetHolder;
+        if (holder == null)
+            return;
+
+        if (!_playerManager.TryGetSessionByEntity(holder.Value, out var session))
+            return;
+
+        var wrapped = Loc.GetString("callable-phone-centcomm-call-declined-timeout-chat");
+        var plain = Loc.GetString("callable-phone-centcomm-call-declined-timeout-chat-plain");
+
+        _chatManager.ChatMessageToOne(
+            ChatChannel.Local,
+            plain,
+            wrapped,
+            centCommPhone,
+            hideChat: false,
+            session.Channel);
+    }
+
+    private void PlayBusyToneOnCaller(EntityUid callerPhone)
+    {
+        if (!TryComp<CallablePhoneComponent>(callerPhone, out var callerCallable))
+            return;
+
+        var caller = (callerPhone, callerCallable);
+        StopCallWaitingLoop(caller);
+        StopDialToneLoop(caller);
+        StartBusyToneLoop(caller);
     }
 
     private void AcceptCentCommCall(ICommonSession admin, EntityUid phone)
@@ -1081,6 +1189,7 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
                 _telephone.AnswerTelephone((phone, telephone), admin.AttachedEntity.Value);
                 PlayRemoteDisconnectOnCallers(telephone);
                 _centCommAwaitingPickup.Remove(phone);
+                _centCommRingingCaller.Remove(phone);
                 _centCommActiveCalls.Add(phone);
                 _centCommAnsweringAdmin[phone] = admin.UserId;
 
@@ -1462,15 +1571,7 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
     private void PlayRemoteBusyOnCallers(TelephoneComponent centCommTelephone)
     {
         foreach (var linked in centCommTelephone.LinkedTelephones)
-        {
-            if (!TryComp<CallablePhoneComponent>(linked, out var callerCallable))
-                continue;
-
-            var caller = (linked, callerCallable);
-            StopCallWaitingLoop(caller);
-            StopDialToneLoop(caller);
-            StartBusyToneLoop(caller);
-        }
+            PlayBusyToneOnCaller(linked);
     }
 
     private void CloseHandsetUis(EntityUid phone)
