@@ -1,6 +1,7 @@
 using System.Diagnostics.CodeAnalysis;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Hands;
+using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Popups;
@@ -56,6 +57,9 @@ public abstract class SharedCallablePhoneSystem : EntitySystem
 
     private bool IsAllowedHandsetContainer(Entity<TelephoneHandsetComponent> handset, BaseContainer container)
     {
+        if (IsHandContainer(container))
+            return true;
+
         if (container.ID != CallablePhoneComponent.HandsetSlotId)
             return false;
 
@@ -66,6 +70,20 @@ public abstract class SharedCallablePhoneSystem : EntitySystem
             return true;
 
         return GetEntity(handset.Comp.ParentPhone) == container.Owner;
+    }
+
+    private bool IsHandContainer(BaseContainer container)
+    {
+        if (!TryComp<HandsComponent>(container.Owner, out var hands))
+            return false;
+
+        foreach (var hand in Hands.EnumerateHands(container.Owner, hands))
+        {
+            if (hand.Container == container)
+                return true;
+        }
+
+        return false;
     }
 
     private void OnHandsetUseInHand(Entity<TelephoneHandsetComponent> entity, ref UseInHandEvent args)
