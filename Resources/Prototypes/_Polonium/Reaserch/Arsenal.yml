@@ -6,7 +6,7 @@
   name: research-technology-weapon-production
   icon:
     sprite: _Polonium/Weapons/Guns/Snipers/Bor.rsi
-    state: mag-0
+    state: base
   discipline: Arsenal
   tier: 2
   cost: 10000
