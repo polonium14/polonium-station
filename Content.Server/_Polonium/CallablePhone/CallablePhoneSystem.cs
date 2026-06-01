@@ -250,6 +250,16 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
             {
                 _centCommAwaitingPickup.Remove(phone);
                 PlayRemoteDisconnectOnCallers(telephone);
+
+                if (!wasRemoteCentCommSession &&
+                    _playerManager.TryGetSessionByEntity(args.User, out var session) &&
+                    _adminManager.IsAdmin(session, includeDeAdmin: true))
+                {
+                    _centCommActiveCalls.Add(phone);
+                    _centCommAnsweringAdmin[phone] = session.UserId;
+                    OpenAdminChat(session, phone);
+                    NotifyAdminChatLog(phone, Loc.GetString("callable-phone-centcomm-call-started"));
+                }
             }
         }
 
@@ -476,6 +486,14 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
 
         UpdateHandsetRelay(entity, telephone, entity.Comp.HandsetHolder);
         TryOpenGhostCallerDeviceChat(entity);
+
+        if (!entity.Comp.IsCentComm)
+            return;
+
+        if (entity.Comp.HandsetHolder == null)
+            _centCommActiveCalls.Add(entity.Owner);
+
+        ResyncCentCommAdminChat(entity.Owner);
     }
 
     private void OnCallEnded(Entity<CallablePhoneComponent> entity, ref TelephoneCallEndedEvent args)
@@ -757,6 +775,24 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
         foreach (var session in _openAdminChats[netEntity].ToArray())
         {
             RaiseNetworkEvent(ev, session);
+        }
+    }
+
+    /// <summary>
+    /// Re-syncs open admin chat windows after a CentComm call connects or reconnects.
+    /// </summary>
+    private void ResyncCentCommAdminChat(EntityUid phone)
+    {
+        var netEntity = GetNetEntity(phone);
+
+        if (!_openAdminChats.TryGetValue(netEntity, out var sessions) || sessions.Count == 0)
+            return;
+
+        SetAdminChatInputEnabled(phone, true);
+
+        foreach (var session in sessions.ToArray())
+        {
+            RaiseNetworkEvent(new CallablePhoneAdminChatOpenEvent(netEntity, session.Name, inputEnabled: true), session);
         }
     }
 
@@ -1170,9 +1206,6 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
         if (TryComp<CallablePhoneComponent>(phone, out var callable) && callable.HandsetHolder != null)
             return;
 
-        if (IsAdminInOpenChat(admin, phone))
-            return;
-
         var isRinging = telephone.CurrentState == TelephoneState.Ringing;
         var isActive = telephone.CurrentState == TelephoneState.InCall || _centCommActiveCalls.Contains(phone);
 
@@ -1303,7 +1336,10 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
         if (!entity.Comp.IsCentComm && !_ghostCallerActiveCalls.Contains(entity.Owner))
             return;
 
-        if (entity.Comp.IsCentComm && entity.Comp.HandsetHolder != null)
+        // IC handset calls still mirror into any open remote admin chat windows.
+        if (entity.Comp.IsCentComm &&
+            entity.Comp.HandsetHolder != null &&
+            !_openAdminChats.ContainsKey(GetNetEntity(entity)))
             return;
 
         var nameEv = new TransformSpeakerNameEvent(args.MessageSource, Name(args.MessageSource));
