@@ -100,6 +100,9 @@ entities:
     - type: GridTree
     - type: Broadphase
     - type: OccluderTree
+    - type: LightCycle
+      maxLightLevel: 5
+      minLightLevel: 0.1
   - uid: 2
     components:
     - type: MetaData
@@ -9398,6 +9401,7 @@ entities:
     - type: BecomesStation
       id: Terra
     - type: ImplicitRoof
+      color: '#FFFFFF00'
   - uid: 6952
     components:
     - type: MetaData
