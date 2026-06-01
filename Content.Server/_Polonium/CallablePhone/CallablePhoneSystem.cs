@@ -1287,9 +1287,6 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
         if (!TryComp<TelephoneComponent>(phone, out var telephone))
             return;
 
-        if (TryComp<CallablePhoneComponent>(phone, out var callable) && callable.HandsetHolder != null)
-            return;
-
         var isRinging = telephone.CurrentState == TelephoneState.Ringing;
         var isActive = telephone.CurrentState == TelephoneState.InCall || _centCommActiveCalls.Contains(phone);
 
