@@ -39,17 +39,7 @@ public sealed class CallablePhoneBoundUserInterface : BoundUserInterface
         _window.SetOwner(phone);
         _window.UpdateState(new Dictionary<NetEntity, string>());
 
-        _window.CallPressed += receiver =>
-        {
-            if (!EntMan.TryGetComponent<CallablePhoneComponent>(phone, out var sourceCallable))
-                return;
-
-            var callablePhone = EntMan.System<SharedCallablePhoneSystem>();
-            if (!callablePhone.TryResolveCallablePhoneReceiver(receiver, sourceCallable, out _, out _, out _))
-                return;
-
-            SendMessage(new CallablePhoneCallMessage(receiver));
-        };
+        _window.CallPressed += receiver => SendMessage(new CallablePhoneCallMessage(receiver));
         _window.AnswerPressed += () => SendMessage(new CallablePhoneAnswerMessage());
         _window.HangUpPressed += () => SendMessage(new CallablePhoneHangUpMessage());
 

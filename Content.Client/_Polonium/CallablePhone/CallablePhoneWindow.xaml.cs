@@ -17,7 +17,6 @@ public sealed partial class CallablePhoneWindow : FancyWindow
     [Dependency] private readonly IEntityManager _entManager = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
 
-    private SharedCallablePhoneSystem _callablePhone = default!;
     private SharedTelephoneSystem _telephone = default!;
 
     private EntityUid? _owner;
@@ -63,7 +62,6 @@ public sealed partial class CallablePhoneWindow : FancyWindow
     {
         dependencies.InjectDependencies(this);
 
-        _callablePhone = _entManager.System<SharedCallablePhoneSystem>();
         _telephone = _entManager.System<SharedTelephoneSystem>();
         _buttonUnlockTime = _timing.CurTime + _buttonUnlockDelay;
     }
@@ -78,27 +76,6 @@ public sealed partial class CallablePhoneWindow : FancyWindow
         if (_owner == null || !_entManager.TryGetComponent<TelephoneComponent>(_owner.Value, out var telephone))
             return;
 
-        if (!_entManager.TryGetComponent<CallablePhoneComponent>(_owner.Value, out var sourceCallable))
-            return;
-
-        var filteredPhones = new Dictionary<NetEntity, string>();
-
-        foreach (var (netEntity, label) in phones)
-        {
-            if (!_callablePhone.IsCallablePhoneContactValid(netEntity))
-                continue;
-
-            if (!_entManager.TryGetEntity(netEntity, out var uid))
-                continue;
-
-            if (!_entManager.TryGetComponent<CallablePhoneComponent>(uid, out var callable))
-                continue;
-
-            if (!_callablePhone.CanSourceSeeInDirectory(sourceCallable, callable))
-                continue;
-
-            filteredPhones[netEntity] = label;
-        }
 
         var callerId = _telephone.GetFormattedCallerIdForEntity(
             telephone.LastCallerId.Item1,
@@ -116,7 +93,7 @@ public sealed partial class CallablePhoneWindow : FancyWindow
         CallerIdText.SetMessage(FormattedMessage.FromMarkupOrThrow(callerId));
         DeviceIdText.SetMessage(FormattedMessage.FromMarkupOrThrow(deviceId));
 
-        var phoneArray = filteredPhones.ToArray();
+        var phoneArray = phones.ToArray();
         Array.Sort(phoneArray, (a, b) => string.Compare(a.Value, b.Value, StringComparison.CurrentCultureIgnoreCase));
 
         while (ContactsList.ChildCount > phoneArray.Length)
@@ -140,7 +117,7 @@ public sealed partial class CallablePhoneWindow : FancyWindow
             }
         }
 
-        if (_selectedContact != null && !filteredPhones.ContainsKey(_selectedContact.Value))
+        if (_selectedContact != null && !phones.ContainsKey(_selectedContact.Value))
             _selectedContact = null;
 
         UpdateAppearance();
