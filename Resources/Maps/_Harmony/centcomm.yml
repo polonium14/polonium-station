@@ -32682,7 +32682,7 @@ entities:
     - type: Transform
       pos: 41.43566,56.017498
       parent: 1
-- proto: PhoneInstrument
+- proto: CallablePhoneInstrumentCentComm
   entities:
   - uid: 1730
     components:

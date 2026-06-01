@@ -658,3 +658,8 @@ ClothingOuterArmorBasicSlim: ClothingOuterArmorBasic
 
 # 2026-05-17 usunięcie funduszu atmosferyki
 ComputerCargoOrdersAtmospherics: null
+
+# 2026-05-30 zamiana starych telefonów-instrumentów na callable phones
+PhoneInstrument: CallablePhoneInstrument
+PhoneInstrumentSyndicate: CallablePhoneInstrumentSyndicate
+BananaPhoneInstrument: CallableBananaPhoneInstrument

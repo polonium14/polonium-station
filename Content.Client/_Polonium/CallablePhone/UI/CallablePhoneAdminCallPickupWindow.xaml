@@ -1,0 +1,18 @@
+<controls:FancyWindow xmlns="https://spacestation14.io"
+                      xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+                      MinSize="360 200">
+    <BoxContainer Orientation="Vertical" Margin="8">
+        <Label Name="MessageLabel" HorizontalAlignment="Center" Margin="0 0 0 12" />
+        <CheckBox Name="ReasonCheckbox"
+                  Text="{Loc callable-phone-centcomm-pickup-reason-checkbox}"
+                  Margin="0 0 0 4" />
+        <LineEdit Name="ReasonInput"
+                  PlaceHolder="{Loc callable-phone-centcomm-pickup-reason-placeholder}"
+                  Editable="False"
+                  Margin="0 0 0 12" />
+        <BoxContainer Orientation="Horizontal" HorizontalAlignment="Center" SeparationOverride="8">
+            <Button Name="AcceptButton" Text="{Loc callable-phone-centcomm-pickup-accept}" />
+            <Button Name="DeclineButton" Text="{Loc callable-phone-centcomm-pickup-decline}" />
+        </BoxContainer>
+    </BoxContainer>
+</controls:FancyWindow>

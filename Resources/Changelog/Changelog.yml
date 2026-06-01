@@ -1,33 +1,4 @@
 ﻿Entries:
-- author: whatston3
-  changes:
-  - message: Healing items that reduce bleeding can now be applied to undamaged mobs.
-    type: Tweak
-  id: 7901
-  time: '2025-02-05T03:23:31.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/33526
-- author: DuckManZach
-  changes:
-  - message: Floor pills have some new interesting surprises!
-    type: Add
-  id: 7902
-  time: '2025-02-05T08:42:27.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34843
-- author: Gavin-TC
-  changes:
-  - message: Changed common utensil sprites to appear smaller and more proportionate.
-    type: Tweak
-  id: 7903
-  time: '2025-02-05T13:08:53.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34277
-- author: Booblesnoot42
-  changes:
-  - message: Inserting another person into a cryogenic sleeping unit is no longer
-      instant.
-    type: Tweak
-  id: 7904
-  time: '2025-02-05T14:46:21.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34619
 - author: hyperDelegate
   changes:
   - message: The Nuclear Operative Reinforcement Teleporter now costs 30TC (was 35).
@@ -4103,3 +4074,31 @@
   id: 9208
   time: '2026-05-29T13:45:12.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/606
+- author: Zintex
+  changes:
+  - message: Poprawki i zmiany na Kolonii Terra
+    type: Tweak
+  id: 9209
+  time: '2026-05-30T20:48:46.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/608
+- author: Zintex
+  changes:
+  - message: Aktualizacja Deathstar
+    type: Tweak
+  id: 9210
+  time: '2026-05-30T20:48:32.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/609
+- author: Zintex
+  changes:
+  - message: Kolejna aktualizacja DeathStar
+    type: Tweak
+  id: 9211
+  time: '2026-05-31T15:13:27.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/610
+- author: Zintex
+  changes:
+  - message: "Przet\u0142umaczono nazwy pomieszcze\u0144 na mapie."
+    type: Add
+  id: 9212
+  time: '2026-05-31T15:13:46.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/605

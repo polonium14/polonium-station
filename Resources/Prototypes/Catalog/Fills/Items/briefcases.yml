@@ -81,7 +81,7 @@
         amount: 1
       - id: EncryptionKeySyndie
       - id: RubberStampTrader
-      - id: PhoneInstrumentSyndicate
+      - id: CallablePhoneInstrumentSyndicate
       # begin DeltaV
       # - id: ClothingUniformJumpsuitTacticool
       # - id: ClothingOuterCoatJensen
