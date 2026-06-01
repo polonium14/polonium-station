@@ -1184,6 +1184,9 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
 
         var reason = ResolveCentCommRejectionReason(rejectionReason);
         NotifyCallersOfCentCommRejection(phone, telephone, reason);
+        NotifyAdminChatLog(
+            phone,
+            Loc.GetString("callable-phone-centcomm-call-declined-admin-log", ("reason", reason)));
         PlayRemoteBusyOnCallers(telephone);
         _centCommAwaitingPickup.Remove(phone);
         _centCommRingingCaller.Remove(phone);

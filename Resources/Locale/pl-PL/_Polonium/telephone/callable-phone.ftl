@@ -20,6 +20,7 @@ callable-phone-centcomm-pickup-decline = Odrzuć
 callable-phone-centcomm-pickup-reason-checkbox = Powód
 callable-phone-centcomm-pickup-reason-placeholder = Opcjonalny powód odrzucenia...
 callable-phone-centcomm-call-declined-default-reason = Linia jest niedostępna.
+callable-phone-centcomm-call-declined-admin-log = Połączenie odrzucone: { $reason }
 callable-phone-centcomm-call-declined-chat = [italic]CentComm odrzuciło twoje połączenie: {$reason}[/italic]
 callable-phone-centcomm-call-declined-chat-plain = CentComm odrzuciło twoje połączenie: {$reason}
 callable-phone-centcomm-call-declined-timeout-chat = [italic]Nikt ci nie odebrał. Po drugiej stronie linii słychać tylko martwy elektroniczny głuch...[/italic]

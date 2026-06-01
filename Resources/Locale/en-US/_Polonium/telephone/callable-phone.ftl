@@ -20,6 +20,7 @@ callable-phone-centcomm-pickup-decline = Decline
 callable-phone-centcomm-pickup-reason-checkbox = Reason
 callable-phone-centcomm-pickup-reason-placeholder = Optional decline reason...
 callable-phone-centcomm-call-declined-default-reason = The line is unavailable.
+callable-phone-centcomm-call-declined-admin-log = Call declined: {$reason}
 callable-phone-centcomm-call-declined-chat = [italic]Central Command declined your call: {$reason}[/italic]
 callable-phone-centcomm-call-declined-chat-plain = Central Command declined your call: {$reason}
 callable-phone-centcomm-call-declined-timeout-chat = [italic]No one answered you... on the other end of the line you hear only a dead electronic hum.[/italic]
