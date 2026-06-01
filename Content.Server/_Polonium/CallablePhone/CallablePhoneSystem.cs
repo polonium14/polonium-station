@@ -18,6 +18,7 @@ using Content.Shared.Interaction.Events;
 using Content.Shared.Mobs;
 using Content.Shared.Speech;
 using Content.Shared.Telephone;
+using Content.Shared.Throwing;
 using Content.Shared.UserInterface;
 using Robust.Server.Player;
 using Robust.Shared.Utility;
@@ -89,6 +90,7 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
         SubscribeLocalEvent<TelephoneHandsetComponent, GotEquippedHandEvent>(OnHandsetEquipped);
         SubscribeLocalEvent<TelephoneHandsetComponent, GotUnequippedHandEvent>(OnHandsetUnequipped);
         SubscribeLocalEvent<TelephoneHandsetComponent, DroppedEvent>(OnHandsetDropped);
+        SubscribeLocalEvent<HandsComponent, BeforeThrowEvent>(OnBeforeHandsetThrow);
         SubscribeLocalEvent<MobStateChangedEvent>(OnMobStateChanged);
         SubscribeLocalEvent<TelephoneHandsetComponent, ListenAttemptEvent>(OnHandsetListenAttempt);
         SubscribeLocalEvent<TelephoneHandsetComponent, ListenEvent>(OnHandsetListen);
@@ -331,6 +333,15 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
             Dirty(phoneEnt, comp);
             StopHandsetHolderAudio((phoneEnt, comp));
         });
+    }
+
+    private void OnBeforeHandsetThrow(Entity<HandsComponent> ent, ref BeforeThrowEvent args)
+    {
+        if (!HasComp<TelephoneHandsetComponent>(args.ItemUid))
+            return;
+
+        args.Cancelled = true;
+        Hands.TryDrop(args.PlayerUid, args.ItemUid, handsComp: ent.Comp);
     }
 
     private void OnHandsetDropped(Entity<TelephoneHandsetComponent> handset, ref DroppedEvent args)
