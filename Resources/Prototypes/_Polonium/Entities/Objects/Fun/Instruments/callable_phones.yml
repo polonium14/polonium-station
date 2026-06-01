@@ -1,0 +1,288 @@
+- type: entity
+  parent: BaseHandheldInstrument
+  id: CallablePhoneInstrument
+  name: red phone
+  description: Should anything ever go wrong...
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Fun/Instruments/otherinstruments.rsi
+    layers:
+    - state: red_phone
+      map: ["base"]
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.CallablePhoneVisuals.HookState:
+        base:
+          OnHook: { state: red_phone }
+          OffHook: { state: red_phone_no_handset }
+  - type: EmitSoundOnLand
+    sound:
+       path: /Audio/Items/ring.ogg
+  - type: Instrument
+    program: 124
+  - type: Item
+    size: Small
+  - type: Prayable
+    usableByAtheists: true
+    sentMessage: prayer-popup-notify-centcom-sent
+    notificationPrefix: prayer-chat-notify-centcom
+    verb: prayer-verbs-voicemail
+    verbImage: null
+  - type: CallablePhone
+    isCentComm: false
+    includeCentCommInDirectory: true
+    # phoneName: callable-phone-example-bridge  # optional; also editable via View Variables at runtime
+    pickupHandsetSound:
+      path: /Audio/_Polonium/Machines/Telephone/handset_pickup.ogg
+      params:
+        volume: -3
+    pickupHandsetInCallSound:
+      collection: CallablePhoneHandsetPickupMic
+      params:
+        volume: -3
+    hangupHandsetSound:
+      path: /Audio/_Polonium/Machines/Telephone/handset_hangup.ogg
+      params:
+        volume: -3
+    hangupHandsetInCallSound:
+      collection: CallablePhoneHandsetHangupMic
+      params:
+        volume: -3
+    dialTone:
+      path: /Audio/_Polonium/Machines/Telephone/dial_tone.ogg
+      params:
+        volume: -5
+    dialSound:
+      path: /Audio/_Polonium/Machines/Telephone/dialing.ogg
+      params:
+        volume: -4
+    callWaitingTone:
+      path: /Audio/_Polonium/Machines/Telephone/call_waiting.ogg
+      params:
+        volume: -5
+    busyTone:
+      path: /Audio/_Polonium/Machines/Telephone/busy.ogg
+      params:
+        volume: -5
+  - type: Telephone
+    ringTone:
+      path: /Audio/Machines/double_ring.ogg
+      params:
+        volume: -3
+    listeningRange: 2.5
+    speakerVolume: Speak
+  - type: ItemSlots
+    slots:
+      handset:
+        name: callable-phone-handset-slot
+        insertOnInteract: true
+        ejectOnInteract: true
+        insertSound: null
+        ejectSound: null
+        startingItem: TelephoneHandsetRed
+        whitelist:
+          components:
+          - TelephoneHandset
+
+- type: entity
+  parent: CallablePhoneInstrument
+  id: CallablePhoneInstrumentBlue
+  name: blue phone
+  description: A regular phone for bothering colleagues from other departments.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Fun/Instruments/otherinstruments.rsi
+    layers:
+    - state: blue_phone
+      map: ["base"]
+  - type: GenericVisualizer
+    visuals:
+      enum.CallablePhoneVisuals.HookState:
+        base:
+          OnHook: { state: blue_phone }
+          OffHook: { state: blue_phone_no_handset }
+  - type: CallablePhone
+    includeCentCommInDirectory: false
+    excludeCentCommFromDial: true
+
+  - type: ItemSlots
+    slots:
+      handset:
+        name: callable-phone-handset-slot
+        insertOnInteract: true
+        ejectOnInteract: true
+        insertSound: null
+        ejectSound: null
+        startingItem: TelephoneHandsetBlue
+        whitelist:
+          components:
+          - TelephoneHandset
+
+- type: entity
+  parent: CallablePhoneInstrument
+  id: CallablePhoneInstrumentSyndicate
+  name: blood-red phone
+  description: For evil people to call their friends.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Fun/Instruments/otherinstruments.rsi
+    layers:
+    - state: blood_red_phone
+      map: ["base"]
+  - type: GenericVisualizer
+    visuals:
+      enum.CallablePhoneVisuals.HookState:
+        base:
+          OnHook: { state: blood_red_phone }
+          OffHook: { state: blood_red_phone_no_handset }
+  - type: CallablePhone
+    listedInDirectory: false
+    includeCentCommInDirectory: false
+    privateLine: true
+  - type: Prayable
+    sentMessage: prayer-popup-notify-syndicate-sent
+    notificationPrefix: prayer-chat-notify-syndicate
+    verb: prayer-verbs-voicemail
+
+  - type: ItemSlots
+    slots:
+      handset:
+        name: callable-phone-handset-slot
+        insertOnInteract: true
+        ejectOnInteract: true
+        insertSound: null
+        ejectSound: null
+        startingItem: TelephoneHandsetBloodRed
+        whitelist:
+          components:
+          - TelephoneHandset
+
+- type: entity
+  parent: CallablePhoneInstrument
+  id: CallablePhoneInstrumentCentComm
+  name: centcomm red phone
+  description: A direct line to Central Command.
+  components:
+  - type: CallablePhone
+    isCentComm: true
+    listedInDirectory: false
+    includeCentCommInDirectory: false
+    adminChatPrefix: prayer-chat-notify-centcom
+
+- type: entity
+  parent: CallablePhoneInstrument
+  id: CallableBananaPhoneInstrument
+  name: banana phone
+  description: A direct line to the Honkmother. Seems to always go to voicemail.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Fun/Instruments/otherinstruments.rsi
+    layers:
+    - state: banana_phone
+      map: ["base"]
+  - type: GenericVisualizer
+    visuals:
+      enum.CallablePhoneVisuals.HookState:
+        base:
+          OnHook: { state: banana_phone }
+          OffHook: { state: banana_phone_no_handset }
+  - type: EmitSoundOnLand
+    sound:
+       path: /Audio/Items/bikehorn.ogg
+  - type: Slippery
+  - type: StepTrigger
+  - type: CollisionWake
+    enabled: false
+  - type: Fixtures
+    fixtures:
+      slips:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.3,0.4,0.3"
+        hard: false
+        layer:
+        - SlipLayer
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.3,0.4,0.3"
+        density: 5
+        mask:
+        - ItemMask
+  - type: CallablePhone
+    listedInDirectory: true
+    includeCentCommInDirectory: false
+    excludeCentCommFromDial: true
+  - type: Prayable
+    sentMessage: prayer-popup-notify-honkmother-sent
+    notificationPrefix: prayer-chat-notify-honkmother
+    verb: prayer-verbs-voicemail
+    verbImage: null
+
+  - type: ItemSlots
+    slots:
+      handset:
+        name: callable-phone-handset-slot
+        insertOnInteract: true
+        ejectOnInteract: true
+        insertSound: null
+        ejectSound: null
+        startingItem: TelephoneHandsetBanana
+        whitelist:
+          components:
+          - TelephoneHandset
+
+- type: entity
+  parent: BaseItem
+  id: TelephoneHandsetRed
+  name: red phone handset
+  description: The handset for a wired telephone.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Fun/Instruments/telephone_handset.rsi
+    state: red_phone_handset
+  - type: Item
+    size: Small
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Borg
+  - type: TelephoneHandset
+  - type: ActivatableUI
+    key: enum.CallablePhoneUiKey.Key
+    inHandsOnly: true
+    verbText: verb-callable-phone-openui
+  - type: UserInterface
+    interfaces:
+      enum.CallablePhoneUiKey.Key:
+        type: CallablePhoneBoundUserInterface
+
+- type: entity
+  parent: TelephoneHandsetRed
+  id: TelephoneHandsetBlue
+  name: blue phone handset
+  description: The handset for a wired telephone.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Fun/Instruments/telephone_handset.rsi
+    state: blue_phone_handset
+
+- type: entity
+  parent: TelephoneHandsetRed
+  id: TelephoneHandsetBanana
+  name: banana phone handset
+  description: The handset for a wired telephone.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Fun/Instruments/telephone_handset.rsi
+    state: banana_phone_handset
+
+- type: entity
+  parent: TelephoneHandsetRed
+  id: TelephoneHandsetBloodRed
+  name: blood-red phone handset
+  description: The handset for a wired telephone.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Fun/Instruments/telephone_handset.rsi
+    state: blood_red_phone_handset

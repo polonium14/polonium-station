@@ -2,6 +2,7 @@
 prayer-verbs-subtle-message = Subtle Message
 prayer-verbs-pray = Pray
 prayer-verbs-call = Call
+prayer-verbs-voicemail = Leave a voicemail
 prayer-verbs-worship = Worship
 prayer-verbs-rub = Rub
 prayer-chat-notify-pray = PRAYER

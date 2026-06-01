@@ -15,6 +15,7 @@ using Content.Server.Interaction;
 using Content.Server.Power.EntitySystems;
 using Content.Server.Speech;
 using Content.Server.Speech.Components;
+using Content.Shared._Polonium.CallablePhone;
 using Content.Shared.Chat;
 using Content.Shared.Database;
 using Content.Shared.Labels.Components;
@@ -41,15 +42,20 @@ public sealed class TelephoneSystem : SharedTelephoneSystem
     [Dependency] private readonly InteractionSystem _interaction = default!;
     [Dependency] private readonly IdCardSystem _idCardSystem = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly SpeechSoundSystem _speechSound = default!;
     [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly IAdminLogManager _adminLogger = default!;
     [Dependency] private readonly IReplayRecordingManager _replay = default!;
+    [Dependency] private readonly SharedCallablePhoneSystem _callablePhone = default!;
 
     // Has set used to prevent telephone feedback loops
     private HashSet<(EntityUid, string, Entity<TelephoneComponent>)> _recentChatMessages = new();
+
+    // Only relay a given utterance once per call, even if multiple linked phones hear it.
+    private HashSet<(EntityUid Source, string Message)> _relayUtterances = new();
 
     public override void Initialize()
     {
@@ -77,16 +83,32 @@ public sealed class TelephoneSystem : SharedTelephoneSystem
 
     private void OnAttemptListen(Entity<TelephoneComponent> entity, ref ListenAttemptEvent args)
     {
+        ProcessListenAttempt(entity, ref args);
+    }
+
+    private void OnListen(Entity<TelephoneComponent> entity, ref ListenEvent args)
+    {
+        ProcessListen(entity, ref args);
+    }
+
+    /// <summary>
+    /// Validates whether speech heard by a listener should be transmitted on this telephone line.
+    /// </summary>
+    /// <param name="checkProximityToPhone">When false, proximity was already checked against another listener (e.g. the handset).</param>
+    public void ProcessListenAttempt(Entity<TelephoneComponent> entity, ref ListenAttemptEvent args, bool checkProximityToPhone = true)
+    {
+        var handsetHolder = IsCallablePhoneHandsetHolder(entity, args.Source);
+
         if (!IsTelephonePowered(entity) ||
             !IsTelephoneEngaged(entity) ||
             entity.Comp.Muted ||
-            !_interaction.InRangeUnobstructed(args.Source, entity.Owner, 0))
+            (checkProximityToPhone && !handsetHolder && !_interaction.InRangeUnobstructed(args.Source, entity.Owner, 0)))
         {
             args.Cancel();
         }
     }
 
-    private void OnListen(Entity<TelephoneComponent> entity, ref ListenEvent args)
+    public void ProcessListen(Entity<TelephoneComponent> entity, ref ListenEvent args)
     {
         if (args.Source == entity.Owner)
             return;
@@ -97,6 +119,10 @@ public sealed class TelephoneSystem : SharedTelephoneSystem
 
         // Simple check to make sure that we haven't sent this message already this frame
         if (!_recentChatMessages.Add((args.Source, args.Message, entity)))
+            return;
+
+        // If multiple phones in the same call hear the speaker (e.g. nearby handsets), relay once.
+        if (!_relayUtterances.Add((args.Source, args.Message)))
             return;
 
         SendTelephoneMessage(args.Source, args.Message, entity);
@@ -112,20 +138,63 @@ public sealed class TelephoneSystem : SharedTelephoneSystem
             !IsSourceConnectedToReceiver(args.TelephoneSource, entity))
             return;
 
-        var nameEv = new TransformSpeakerNameEvent(args.MessageSource, Name(args.MessageSource));
-        RaiseLocalEvent(args.MessageSource, nameEv);
+        // CentComm lines feed the admin chat when answered remotely; relay locally when someone holds the handset.
+        if (TryComp<CallablePhoneComponent>(entity, out var callable) &&
+            callable.IsCentComm &&
+            callable.HandsetHolder == null)
+            return;
+
+        var nameSource = args.MessageSource;
+        string? impersonationName = null;
+
+        if (TryComp<CallablePhoneComponent>(args.TelephoneSource, out var callerPhone))
+        {
+            if (!string.IsNullOrWhiteSpace(callerPhone.AdminImpersonationName))
+                impersonationName = callerPhone.AdminImpersonationName;
+            else if (_callablePhone.ShouldUseAnonymousAdminCallerName(args.TelephoneSource.Owner, callerPhone))
+                impersonationName = Loc.GetString("callable-phone-admin-unknown-caller");
+            else if (callerPhone.HandsetHolder != null)
+                nameSource = callerPhone.HandsetHolder.Value;
+        }
+
+        string displayName;
+        if (impersonationName != null)
+        {
+            displayName = impersonationName;
+        }
+        else
+        {
+            var nameEv = new TransformSpeakerNameEvent(nameSource, Name(nameSource));
+            RaiseLocalEvent(nameSource, nameEv);
+            displayName = nameEv.VoiceName;
+        }
 
         // Determine if speech should be relayed via the telephone itself or a designated speaker
         var speaker = entity.Comp.Speaker != null ? entity.Comp.Speaker.Value.Owner : entity.Owner;
 
         var name = Loc.GetString("chat-telephone-name-relay",
-            ("originalName", nameEv.VoiceName),
+            ("originalName", displayName),
             ("speaker", Name(speaker)));
 
         var range = args.TelephoneSource.Comp.LinkedTelephones.Count > 1 ? ChatTransmitRange.HideChat : ChatTransmitRange.GhostRangeLimit;
         var volume = entity.Comp.SpeakerVolume == TelephoneVolume.Speak ? InGameICChatType.Speak : InGameICChatType.Whisper;
 
-        _chat.TrySendInGameICMessage(speaker, args.Message, volume, range, nameOverride: name, checkRadioPrefix: false);
+        _chat.TrySendInGameICMessage(
+            speaker,
+            args.Message,
+            volume,
+            range,
+            nameOverride: name,
+            checkRadioPrefix: false,
+            excludeRecipient: nameSource,
+            triggerSpeakEvent: false);
+
+        if (TryComp<SpeechComponent>(speaker, out var speech))
+        {
+            var sound = _speechSound.GetSpeechSound((speaker, speech), args.Message);
+            if (sound != null)
+                _audio.PlayPvs(sound, speaker);
+        }
     }
 
     #endregion
@@ -146,6 +215,13 @@ public sealed class TelephoneSystem : SharedTelephoneSystem
                     if (!IsSourceInRangeOfReceiver(entity, receiver) &&
                         !IsSourceInRangeOfReceiver(receiver, entity))
                     {
+                        // Cordless handset: keep the line up even if a phone moves to another grid.
+                        if (_callablePhone.IsHandsetOffHook(entity.Owner) ||
+                            _callablePhone.IsHandsetOffHook(receiver.Owner))
+                        {
+                            continue;
+                        }
+
                         EndTelephoneCall(entity, receiver);
                     }
                 }
@@ -169,8 +245,11 @@ public sealed class TelephoneSystem : SharedTelephoneSystem
 
                 // Try to hang up if there has been no recent in-call activity
                 case TelephoneState.InCall:
-                    if (_timing.CurTime > telephone.StateStartTime + TimeSpan.FromSeconds(telephone.IdlingTimeout))
+                    if (_timing.CurTime > telephone.StateStartTime + TimeSpan.FromSeconds(telephone.IdlingTimeout) &&
+                        !_callablePhone.IsHandsetOffHook(uid))
+                    {
                         EndTelephoneCalls(entity);
+                    }
 
                     break;
 
@@ -184,6 +263,7 @@ public sealed class TelephoneSystem : SharedTelephoneSystem
         }
 
         _recentChatMessages.Clear();
+        _relayUtterances.Clear();
     }
 
     public void BroadcastCallToTelephones(Entity<TelephoneComponent> source, HashSet<Entity<TelephoneComponent>> receivers, EntityUid user, TelephoneCallOptions? options = null)
@@ -338,7 +418,15 @@ public sealed class TelephoneSystem : SharedTelephoneSystem
         SetTelephoneMicrophoneState(entity, false);
     }
 
-    private void SendTelephoneMessage(EntityUid messageSource, string message, Entity<TelephoneComponent> source, bool escapeMarkup = true)
+    public void RelayTelephoneMessage(EntityUid messageSource, string message, Entity<TelephoneComponent> source, bool skipCentCommReceivers = false)
+    {
+        if (!IsTelephoneEngaged(source))
+            return;
+
+        SendTelephoneMessage(messageSource, message, source, skipCentCommReceivers: skipCentCommReceivers);
+    }
+
+    private void SendTelephoneMessage(EntityUid messageSource, string message, Entity<TelephoneComponent> source, bool escapeMarkup = true, bool skipCentCommReceivers = false)
     {
         // This method assumes that you've already checked that this
         // telephone is able to transmit messages and that it can
@@ -385,6 +473,13 @@ public sealed class TelephoneSystem : SharedTelephoneSystem
 
         foreach (var receiver in source.Comp.LinkedTelephones)
         {
+            if (skipCentCommReceivers &&
+                TryComp<CallablePhoneComponent>(receiver, out var callable) &&
+                callable.IsCentComm)
+            {
+                continue;
+            }
+
             RaiseLocalEvent(receiver, ref evReceivedMessage);
             receiver.Comp.StateStartTime = _timing.CurTime;
         }
@@ -413,16 +508,23 @@ public sealed class TelephoneSystem : SharedTelephoneSystem
 
     private void SetTelephoneMicrophoneState(Entity<TelephoneComponent> entity, bool microphoneOn)
     {
-        if (microphoneOn && !HasComp<ActiveListenerComponent>(entity))
+        // Callable phones use the handset as the microphone instead.
+        if (HasComp<CallablePhoneComponent>(entity))
+            return;
+
+        SetListenerState(entity.Owner, microphoneOn, entity.Comp.ListeningRange);
+    }
+
+    public void SetListenerState(EntityUid uid, bool microphoneOn, float range)
+    {
+        if (microphoneOn && !HasComp<ActiveListenerComponent>(uid))
         {
-            var activeListener = AddComp<ActiveListenerComponent>(entity);
-            activeListener.Range = entity.Comp.ListeningRange;
+            var activeListener = AddComp<ActiveListenerComponent>(uid);
+            activeListener.Range = range;
         }
 
-        if (!microphoneOn && HasComp<ActiveListenerComponent>(entity))
-        {
-            RemComp<ActiveListenerComponent>(entity);
-        }
+        if (!microphoneOn && HasComp<ActiveListenerComponent>(uid))
+            RemComp<ActiveListenerComponent>(uid);
     }
 
     public void SetSpeakerForTelephone(Entity<TelephoneComponent> entity, Entity<SpeechComponent>? speaker)
@@ -501,5 +603,13 @@ public sealed class TelephoneSystem : SharedTelephoneSystem
     public bool IsTelephonePowered(Entity<TelephoneComponent> entity)
     {
         return this.IsPowered(entity, EntityManager);
+    }
+
+    private bool IsCallablePhoneHandsetHolder(EntityUid phone, EntityUid source)
+    {
+        if (!TryComp<CallablePhoneComponent>(phone, out var callable))
+            return false;
+
+        return callable.HandsetHolder == source;
     }
 }
