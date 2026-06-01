@@ -1115,10 +1115,10 @@
 # Polonium edits below
 
 - type: listing
-  id: ErtCallUplinkWeaponVisMpsPistol
+  id: ErtCallUplinkWeaponWeaponVisMPSPistol
   name: Vis MPS Pistol
   description: Advanced ballistic sidearm.
-  productEntity: VisMPSPistol
+  productEntity: WeaponVisMPSPistol
   cost:
     BlueSpaceCube: 4
   categories:
@@ -1138,17 +1138,17 @@
   id: ErtCallUplinkWeaponBORGun
   name: BOR Sniper
   description: High-caliber precision rifle.
-  productEntity: BORSniperGun
+  productEntity: WeaponBORSniperGun
   cost:
     BlueSpaceCube: 10
   categories:
   - ERTUplinkWeaponCombat
 
 - type: listing
-  id: ErtCallUplinkWeaponVisMpsPistolMagazine
+  id: ErtCallUplinkWeaponWeaponVisMPSPistolMagazine
   name: Vis MPS Magazine
   description: Ammunition magazine for the Vis MPS.
-  productEntity: VisMPSPistolMagazine
+  productEntity: WeaponVisMPSPistolMagazine
   cost:
     BlueSpaceCube: 1
   categories:

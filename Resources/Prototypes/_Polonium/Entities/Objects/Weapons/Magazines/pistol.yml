@@ -1,13 +1,13 @@
 - type: entity
 
   # Muszę zrobić poprawny prototyp do tłumaczenia kiedyś
-  id: VisMPSPistolMagazineBase
+  id: WeaponVisMPSPistolMagazineBase
   name: Magazynek VIS MPS (.35 auto any)
   parent: [ BaseItem, BaseSecurityContraband]
   components:
     - type: Tag
       tags:
-        - VisMPSPistolMagazine
+        - WeaponVisMPSPistolMagazine
     - type: BallisticAmmoProvider
       mayTransfer: true
       whitelist:
@@ -36,40 +36,40 @@
 # Pierdyłiard wersji tego magazyneku
 
 - type: entity
-  id: VisMPSPistolMagazine
-  parent: VisMPSPistolMagazineBase
+  id: WeaponVisMPSPistolMagazine
+  parent: WeaponVisMPSPistolMagazineBase
   name: Magazynek VIS MPS (.35 auto)
   components:
     - type: BallisticAmmoProvider
       proto: CartridgePistol
 
 - type : entity
-  id: VisMPSPistolMagazineIncendiary
-  parent: VisMPSPistolMagazineBase
+  id: WeaponVisMPSPistolMagazineIncendiary
+  parent: WeaponVisMPSPistolMagazineBase
   name: Magazynek VIS MPS (.35 auto incendiary)
   components:
     - type: BallisticAmmoProvider
       proto: CartridgePistolIncendiary
 
 - type : entity
-  id: VisMPSPistolMagazineUranium
-  parent: VisMPSPistolMagazineBase
+  id: WeaponVisMPSPistolMagazineUranium
+  parent: WeaponVisMPSPistolMagazineBase
   name: Magazynek VIS MPS (.35 auto uranium)
   components:
     - type: BallisticAmmoProvider
       proto: CartridgePistolUranium
 
 - type : entity
-  id: VisMPSPistolMagazinePractice
-  parent: VisMPSPistolMagazineBase
+  id: WeaponVisMPSPistolMagazinePractice
+  parent: WeaponVisMPSPistolMagazineBase
   name: Magazynek VIS MPS (.35 auto practice)
   components:
     - type: BallisticAmmoProvider
       proto: CartridgePistolPractice
 
 - type: entity
-  id: VisMPSPistolMagazineEmpty
-  parent: VisMPSPistolMagazineBase
+  id: WeaponVisMPSPistolMagazineEmpty
+  parent: WeaponVisMPSPistolMagazineBase
   name: Magazynek VIS MPS (.35 auto any)
   suffix: (pusty)
   components:

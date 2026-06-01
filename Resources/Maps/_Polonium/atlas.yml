@@ -54366,7 +54366,7 @@ entities:
     - type: Transform
       pos: -33.5,8.5
       parent: 2
-- proto: VisMPSPistol
+- proto: WeaponVisMPSPistol
   entities:
   - uid: 9470
     components:
@@ -54378,7 +54378,7 @@ entities:
     - type: Transform
       pos: 8.399464,22.498375
       parent: 2
-- proto: VisMPSPistolMagazine
+- proto: WeaponVisMPSPistolMagazine
   entities:
   - uid: 9466
     components:

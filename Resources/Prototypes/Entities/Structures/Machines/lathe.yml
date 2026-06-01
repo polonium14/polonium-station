@@ -1244,18 +1244,12 @@
     - MagazineBoxPistolLarge # Funkystation
     - MagazinePistolLargePractice # Funkystation
     - MagazineBoxPistolLargePractice # Funkystation
-    - VisMPSPistol # Polonium
-    - VisMPSPistolMagazineEmpty # Polonium
-    - VisMPSPistolMagazine # Polonium
-    - VisMPSPistolMagazineIncendiary # Polonium
-    - VisMPSPistolMagazineUranium # Polonium
-    - VisMPSPistolMagazinePractice # Polonium
+    - WeaponVisMPSPistolMagazineEmpty # Polonium
+    - WeaponVisMPSPistolMagazine # Polonium
+    - WeaponVisMPSPistolMagazinePractice # Polonium
     - PMMMachineGunMagazineEmpty # Polonium
     - PMMMachineGunMagazine # Polonium
-    - PMMMachineGunMagazineIncendiary # Polonium
-    - PMMMachineGunMagazineUranium # Polonium
     - PMMMachineGunMagazinePractice # Polonium
-    - WeaponSubMachineGunGlauberyt # Polonium
     - RiotShield
     - SpeedLoaderMagnum
     - SpeedLoaderMagnumEmpty
@@ -1313,6 +1307,10 @@
     - MagazineShotgunIncendiary
     - MagazinePistolSubMachineGunTopMountedIncendiary
     - MagazinePistolSubMachineGunTopMountedUranium
+    - WeaponVisMPSPistolMagazineIncendiary # Polonium
+    - WeaponVisMPSPistolMagazineUranium # Polonium
+    - PMMMachineGunMagazineIncendiary # Polonium
+    - PMMMachineGunMagazineUranium # Polonium
     - MagazinePistolLargeUranium # Funkystation
     - MagazinePistolLargeIncendiary # Funkystation
     - MagazineBoxPistolLargeUranium # Funkystation
@@ -1354,6 +1352,9 @@
     - WeaponMechCombatDisabler
     - WeaponMechCombatFlashbangLauncher
     - WeaponMechCombatMissileRack8
+    - WeaponVisMPSPistol # Polonium
+    - WeaponSubMachineGunGlauberyt # Polonium
+    - WeaponBORSniperGun # Polonium
     - ClothingEyesNightVisionSecurityGoggles # Funky - EE nightvision
     - MindShieldImplanter
     - TrackingImplanter
@@ -1420,16 +1421,10 @@
     - MagazineShotgunSlug
     - SpeedLoaderMagnum
     - SpeedLoaderMagnumEmpty
-    - VisMPSPistolMagazineEmpty # Polonium
-    - VisMPSPistolMagazine # Polonium
-    - VisMPSPistolMagazineIncendiary # Polonium
-    - VisMPSPistolMagazineUranium # Polonium
-    - VisMPSPistolMagazinePractice # Polonium
+    - WeaponVisMPSPistolMagazineEmpty # Polonium
+    - WeaponVisMPSPistolMagazine # Polonium
     - PMMMachineGunMagazineEmpty # Polonium
     - PMMMachineGunMagazine # Polonium
-    - PMMMachineGunMagazineIncendiary # Polonium
-    - PMMMachineGunMagazineUranium # Polonium
-    - PMMMachineGunMagazinePractice # Polonium
     - BorSniperMagazineEmpty # Polonium
     - BorSniperMagazine # Polonium
   - type: EmagLatheRecipes # Goobstation

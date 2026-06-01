@@ -1,7 +1,7 @@
 - type: entity
   name: Alexis-BOR .30
   parent: [BaseItem, BaseGunWieldable, BaseSecurityContraband]
-  id: BORSniperGun
+  id: WeaponBORSniperGun
   description: Najnowszy model snajperki bazowana na BOR 7,62. modyfikowana, żeby mogła używać amunicji .30
   components:
   - type: Sprite

@@ -1,7 +1,7 @@
 - type: entity
   name: VIS MPS
   parent: [BaseWeaponPistol, BaseSecurityContraband]
-  id: VisMPSPistol
+  id: WeaponVisMPSPistol
   description: Standardowy pistolet używany przez polskie wojsko.
   components:
   - type: Sprite
@@ -23,13 +23,13 @@
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: VisMPSPistolMagazine
+        startingItem: WeaponVisMPSPistolMagazine
         insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
         priority: 2
         whitelist:
           tags:
-            - VisMPSPistolMagazine
+            - WeaponVisMPSPistolMagazine
         whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber
