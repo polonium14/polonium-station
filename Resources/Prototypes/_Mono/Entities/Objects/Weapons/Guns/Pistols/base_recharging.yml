@@ -1,0 +1,58 @@
+- type: entity
+  id: BaseWeaponRechargingSidearm
+  parent: BaseItem
+  abstract: true
+  name: base recharging sidearm
+  components:
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,1,0
+    - 0,1,0,1
+  - type: Tag
+    tags:
+    - Sidearm
+  - type: Sprite
+  - type: Clothing
+    quickEquip: false
+    slots:
+    - backStorage
+    - Belt
+  - type: Gun
+    fireRate: 3
+    projectileSpeed: 40
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/hpistol.ogg
+  - type: BasicEntityAmmoProvider
+    capacity: 7
+    count: 7
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 1
+    rechargeSound:
+      path: /Audio/Weapons/Guns/Cock/shotgun_close.ogg
+  - type: AmmoCounter
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Wieldable
+
+- type: entity
+  parent: BaseWeaponRechargingSidearm
+  id: WeaponPistolAnaconda
+  name: LWC Anaconda
+  description: A heavy pistol capable of supplying itself with ammo using a built-in fabricator.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Pistols/mk58.rsi
+    layers:
+    - state: icon
+      map: ["enum.GunVisualLayers.Base"]
+  - type: Clothing
+    sprite: Objects/Weapons/Guns/Pistols/mk58.rsi
+  - type: BasicEntityAmmoProvider
+    proto: BulletPistol
+    capacity: 7
+    count: 7
