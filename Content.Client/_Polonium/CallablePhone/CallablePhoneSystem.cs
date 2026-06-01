@@ -22,6 +22,7 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
     private void OnOpenAdminChat(CallablePhoneAdminChatOpenEvent ev)
     {
         var window = EnsureAdminChatWindow(ev.Phone, ev.Title);
+        window.SetImpersonationName(ev.InitialImpersonationName);
         window.OpenCentered();
         window.SetInputEnabled(ev.InputEnabled);
         window.FocusInput();

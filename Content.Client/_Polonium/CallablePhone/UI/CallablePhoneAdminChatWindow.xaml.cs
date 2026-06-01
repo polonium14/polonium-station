@@ -79,6 +79,11 @@ public sealed partial class CallablePhoneAdminChatWindow : FancyWindow
             Input.GrabKeyboardFocus();
     }
 
+    public void SetImpersonationName(string? name)
+    {
+        ImpersonationInput.Text = name ?? string.Empty;
+    }
+
     protected override void Dispose(bool disposing)
     {
         base.Dispose(disposing);

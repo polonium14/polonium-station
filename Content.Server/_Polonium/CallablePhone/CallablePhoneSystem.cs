@@ -55,9 +55,16 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
     private readonly Dictionary<EntityUid, NetUserId> _ghostCallerAdmin = new();
 
     /// <summary>
+    /// Per-admin impersonation display names for the current server round (in-memory only).
+    /// </summary>
+    private readonly Dictionary<NetUserId, string> _adminSavedImpersonationNames = new();
+
+    /// <summary>
     /// Admins with an open chat window for a callable phone line.
     /// </summary>
     private readonly Dictionary<NetEntity, HashSet<ICommonSession>> _openAdminChats = new();
+
+    private const int MaxImpersonationNameLength = 32;
 
     [Dependency] private readonly IPlayerManager _playerManager = default!;
 
@@ -115,6 +122,13 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
         if (!string.IsNullOrWhiteSpace(entity.Comp.AdminImpersonationName))
         {
             args.VoiceName = entity.Comp.AdminImpersonationName;
+            return;
+        }
+
+        if (_ghostCallerAdmin.TryGetValue(entity.Owner, out var adminId) &&
+            TryGetSavedImpersonationName(adminId, out var savedName))
+        {
+            args.VoiceName = savedName;
             return;
         }
 
@@ -752,15 +766,28 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
             return;
 
         var netEntity = GetNetEntity(uid);
-        var openEvent = new CallablePhoneAdminChatOpenEvent(netEntity, admin.Name, inputEnabled);
+
+        ApplyImpersonationToPhone(uid, admin.UserId);
 
         RegisterAdminChat(admin, netEntity);
-        RaiseNetworkEvent(openEvent, admin);
+        RaiseNetworkEvent(CreateAdminChatOpenEvent(netEntity, admin, inputEnabled), admin);
+
+        if (TryGetSavedImpersonationName(admin.UserId, out var savedName))
+        {
+            NotifyAdminChatLog(admin, uid, Loc.GetString("callable-phone-impersonation-applied", ("name", savedName)));
+        }
     }
 
     private void NotifyAdminChatLog(EntityUid uid, string message)
     {
         NotifyAdminChatListeners(uid, string.Empty, message, incoming: false, isLog: true);
+    }
+
+    private void NotifyAdminChatLog(ICommonSession session, EntityUid uid, string message)
+    {
+        var netEntity = GetNetEntity(uid);
+        var chatMessage = new CallablePhoneAdminChatTextMessageEvent(netEntity, string.Empty, message, incoming: false, isLog: true);
+        RaiseNetworkEvent(chatMessage, session);
     }
 
     private void SetAdminChatInputEnabled(EntityUid uid, bool enabled)
@@ -792,7 +819,7 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
 
         foreach (var session in sessions.ToArray())
         {
-            RaiseNetworkEvent(new CallablePhoneAdminChatOpenEvent(netEntity, session.Name, inputEnabled: true), session);
+            RaiseNetworkEvent(CreateAdminChatOpenEvent(netEntity, session, inputEnabled: true), session);
         }
     }
 
@@ -939,20 +966,26 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
         if (!IsAdminInOpenChat(args.SenderSession, uid.Value))
             return;
 
-        var trimmed = msg.Name.Trim();
-        callable.AdminImpersonationName = string.IsNullOrWhiteSpace(trimmed) ? null : trimmed[..Math.Min(trimmed.Length, 32)];
+        SetSavedImpersonationName(args.SenderSession.UserId, msg.Name);
 
-        var logMessage = callable.AdminImpersonationName == null
-            ? Loc.GetString("callable-phone-impersonation-cleared")
-            : Loc.GetString("callable-phone-impersonation-applied", ("name", callable.AdminImpersonationName));
+        if (IsGhostCallerAdmin(uid.Value, args.SenderSession))
+        {
+            callable.AdminImpersonationName = TryGetSavedImpersonationName(args.SenderSession.UserId, out var savedName)
+                ? savedName
+                : null;
+        }
 
-        NotifyAdminChatLog(uid.Value, logMessage);
+        var logMessage = TryGetSavedImpersonationName(args.SenderSession.UserId, out var appliedName)
+            ? Loc.GetString("callable-phone-impersonation-applied", ("name", appliedName))
+            : Loc.GetString("callable-phone-impersonation-cleared");
+
+        NotifyAdminChatLog(args.SenderSession, uid.Value, logMessage);
     }
 
     private string GetAdminChatDisplayName(EntityUid phone, ICommonSession session, CallablePhoneComponent callable)
     {
-        if (!string.IsNullOrWhiteSpace(callable.AdminImpersonationName))
-            return callable.AdminImpersonationName;
+        if (TryGetSavedImpersonationName(session.UserId, out var savedName))
+            return savedName;
 
         return Loc.GetString("callable-phone-admin-unknown-caller");
     }
@@ -960,6 +993,51 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
     private void ClearAdminImpersonation(Entity<CallablePhoneComponent> entity)
     {
         entity.Comp.AdminImpersonationName = null;
+    }
+
+    private bool TryGetSavedImpersonationName(NetUserId id, out string name)
+    {
+        return _adminSavedImpersonationNames.TryGetValue(id, out name!);
+    }
+
+    private void SetSavedImpersonationName(NetUserId id, string? name)
+    {
+        var trimmed = name?.Trim();
+
+        if (string.IsNullOrWhiteSpace(trimmed))
+        {
+            _adminSavedImpersonationNames.Remove(id);
+            return;
+        }
+
+        _adminSavedImpersonationNames[id] = trimmed[..Math.Min(trimmed.Length, MaxImpersonationNameLength)];
+    }
+
+    private string? GetImpersonationNameForSession(ICommonSession session)
+    {
+        return TryGetSavedImpersonationName(session.UserId, out var name) ? name : null;
+    }
+
+    private void ApplyImpersonationToPhone(EntityUid phone, NetUserId adminId)
+    {
+        if (!_ghostCallerAdmin.TryGetValue(phone, out var ghostAdminId) || ghostAdminId != adminId)
+            return;
+
+        if (!TryComp<CallablePhoneComponent>(phone, out var callable))
+            return;
+
+        callable.AdminImpersonationName = TryGetSavedImpersonationName(adminId, out var savedName)
+            ? savedName
+            : null;
+    }
+
+    private CallablePhoneAdminChatOpenEvent CreateAdminChatOpenEvent(
+        NetEntity phone,
+        ICommonSession session,
+        bool inputEnabled)
+    {
+        var initialName = TryGetSavedImpersonationName(session.UserId, out var savedName) ? savedName : null;
+        return new CallablePhoneAdminChatOpenEvent(phone, session.Name, inputEnabled, initialName);
     }
 
     private bool IsAdminChatCallActive(EntityUid uid, CallablePhoneComponent callable)
@@ -980,7 +1058,8 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
 
     private void ReplyThroughCentCommPhone(ICommonSession admin, EntityUid uid, CallablePhoneComponent callable, string message)
     {
-        var name = callable.AdminImpersonationName ?? Loc.GetString("callable-phone-admin-unknown-caller");
+        var name = GetImpersonationNameForSession(admin) ?? Loc.GetString("callable-phone-admin-unknown-caller");
+        callable.AdminImpersonationName = GetImpersonationNameForSession(admin);
 
         if (TryComp<TelephoneComponent>(uid, out var telephone) && _telephone.IsTelephoneEngaged((uid, telephone)))
             _telephone.RelayTelephoneMessage(uid, message, (uid, telephone), skipCentCommReceivers: true);
@@ -995,10 +1074,12 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
 
     private void ReplyThroughGhostCallerPhone(ICommonSession admin, EntityUid uid, CallablePhoneComponent callable, string message)
     {
+        callable.AdminImpersonationName = GetImpersonationNameForSession(admin);
+
         if (TryComp<TelephoneComponent>(uid, out var telephone) && _telephone.IsTelephoneEngaged((uid, telephone)))
             _telephone.RelayTelephoneMessage(uid, message, (uid, telephone));
 
-        var name = callable.AdminImpersonationName ?? Loc.GetString("callable-phone-admin-unknown-caller");
+        var name = GetImpersonationNameForSession(admin) ?? Loc.GetString("callable-phone-admin-unknown-caller");
         _adminLogger.Add(
             LogType.AdminMessage,
             LogImpact.Low,
