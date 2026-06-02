@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Maciej Walendziuk <ozzeusz@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared._Polonium.CallablePhone;
 using JetBrains.Annotations;
 using Robust.Client.UserInterface;

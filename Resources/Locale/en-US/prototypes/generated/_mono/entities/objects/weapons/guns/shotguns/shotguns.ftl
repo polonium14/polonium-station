@@ -1,0 +1,10 @@
+ent-WeaponShotgunBigLeady = Big Leady (4 gauge)
+    .desc = A large 4 gauge (23x75mm) shotgun made to kill what any caliber below an autocannon cant.
+ent-WeaponShotgunBigJohnny = Big Johnny (4 gauge)
+    .desc = A large 4 gauge (23x75mm) shotgun made to kill what any caliber below an autocannon cant. This one is outfitted with various tactical additions and is made for CQC at the cost of low ammo capacity. It has an Erebus railmount attached to the reciever for optics.
+ent-WeaponShotgunBigBuddy = Big Buddy (4 gauge)
+    .desc = A massive 4 gauge (23x75mm) shotgun made to kill what any caliber below an autocannon cant.
+ent-WeaponShotgunHelepolis = UW12-B Helepolis (12 gauge)
+    .desc = The Union Wrightworks 12-gauge breaching model "Helepolis", a compact shotgun that sacrifices all combat ergonomics to better serve as a breaching tool. Breaks doors with slugs. Combat use unadvised.
+ent-WeaponShotgunSultanPulsar = PD-VI "Sultan's Pulsar" shotgun (4 gauge)
+    .desc = A beast of a bolt-action shotgun, capable of firing the Sultan's finest 4-gauge with exceptional accuracy. Overkill for most space fauna, but using this means its certain you're hunting the most dangerous game.
