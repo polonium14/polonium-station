@@ -1,0 +1,93 @@
+- type: entity
+  id: PulsedPlasma
+  parent: BasicHitscan
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: HitscanBasicDamage
+    damage:
+      types:
+        Heat: 95
+        Blunt: 5
+        Shock: 10
+        Radiation: 65
+        Structural: 700
+  - type: HitscanBasicRaycast
+    maxDistance: 120.0
+  - type: HitscanBasicVisuals
+    muzzleFlash:
+      sprite: _Goobstation/Objects/Weapons/Guns/Projectiles/small_laser.rsi
+      state: muzzle_beam_light_pulse
+    travelFlash:
+      sprite: _Goobstation/Objects/Weapons/Guns/Projectiles/small_laser.rsi
+      state: beam_light_pulse
+    impactFlash:
+      sprite: _Goobstation/Objects/Weapons/Guns/Projectiles/small_laser.rsi
+      state: impact_beam_light_pulse
+
+- type: entity
+  id: UllmanPulse
+  parent: BasicHitscan
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: HitscanBasicDamage
+    damage:
+      types:
+        Heat: 28
+        Structural: 30
+  - type: HitscanBasicRaycast
+    maxDistance: 120.0
+  - type: HitscanBasicVisuals
+    muzzleFlash:
+      sprite: _Mono/Objects/Weapons/Guns/Projectiles/lasers.rsi
+      state: uv_muzzle_laser
+    travelFlash:
+      sprite: _Mono/Objects/Weapons/Guns/Projectiles/lasers.rsi
+      state: uv_beam
+    impactFlash:
+     sprite: _Mono/Objects/Weapons/Guns/Projectiles/lasers.rsi
+     state: uv_impact_laser
+
+- type: entity
+  id: UllmanPulseHeavy
+  parent: UllmanPulse
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: HitscanBasicDamage
+    damage:
+      types:
+        Heat: 75
+        Structural: 300
+  - type: HitscanBasicRaycast
+    maxDistance: 360.0
+
+- type: entity
+  id: MediumOverchargedLaser
+  parent: BasicHitscan
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: HitscanBasicDamage
+    damage:
+      types:
+        Heat: 14
+  - type: HitscanBasicVisuals
+    muzzleFlash:
+      sprite: _Goobstation/Objects/Weapons/Guns/Projectiles/small_laser.rsi
+      state: muzzle_beam_light_overcharged
+    travelFlash:
+      sprite: _Goobstation/Objects/Weapons/Guns/Projectiles/small_laser.rsi
+      state: beam_light_overcharged
+    impactFlash:
+      sprite: _Goobstation/Objects/Weapons/Guns/Projectiles/small_laser.rsi
+      state: impact_beam_light_overcharged
+
+- type: entity
+  parent: BasicHitscan
+  id: RiflePulse #Pulse rifle
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: HitscanBasicDamage
+    damage:
+      types:
+        Heat: 25 # Mono
+        Shock: 10
+        Structural: 70

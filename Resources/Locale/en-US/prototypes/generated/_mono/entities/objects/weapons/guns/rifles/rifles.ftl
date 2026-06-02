@@ -1,0 +1,12 @@
+ent-WeaponRifleMR8C = VFD MR-8C DMR (8x65mm SKR)
+    .desc = The DMR variant of the MR-8 series, firing with incredible accuracy. Chambered in 8x65mm SKR. A label on the side reads "FOR MILITARY USE ONLY". An Erebus railmount is attached to the top of the reciever and the bottom of the handguard for optics and grips.
+ent-WeaponRifleAK502 = NCI AK-502 (7.62x39mm)
+    .desc = A standard-issue USSP combat rifle. Uses 7.62x39mm ammo. It has an Erebus railmount attached to the carryhandle for optics.
+ent-WeaponRifleXlr556 = VFD XLR-556 ICWS (5.56x45mm)
+    .desc = A proposed next-gen "rifle" for TSF standard infantry. Chambered in 5.56x45mm rifle rounds, its RPM is incredible - but with great firerate comes great fire control...
+ent-WeaponRifleVulcanFCMC = HWM FCM-C "Vulcan" (7.62x51mm)
+    .desc = The Herstal Weapon Manufacture "Vulcan" Civilian Medium combat rifle (Fusil de Combat Moyen Civil) in 762x51mm, this civilian version only has semi-automatic mode and reduced firerate.
+ent-WeaponRiflePrometheus = HWM FCL "Prometheus" (5.56x45mm)
+    .desc = The Herstal Weapon Manufacture "Prometheus" Light combat rifle (Fusil de Combat Léger) in 556x45mm. Made to be mass producable for fight against xenos. Its firerate is decent with burst being superior and accuracy poor.
+ent-WeaponRifleNtsfLtr = NTSF-LTR-556 (5.56x45mm,6.8x52mm Caseless)
+    .desc = An old corporate war era rifle. The Nano Trasen Security Forces and Special Forces's Light Tactical Rifle chambered in 5.56x45mm, also accepts 6.8x52mm due to it being a brand new caliber of its time and being a prototype. This rifle is of high-quality with plastitanium internal and plasteel furnitures.

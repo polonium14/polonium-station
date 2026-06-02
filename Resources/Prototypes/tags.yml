@@ -1085,6 +1085,9 @@
   id: MagazineCaselessRifle
 
 - type: Tag
+  id: MagazineCaselessRifleShort
+
+- type: Tag
   id: MagazineHeavyRifle
 
 - type: Tag
@@ -1382,6 +1385,15 @@
 
 - type: Tag
   id: PowerCell
+
+- type: Tag
+  id: PowerCellHigh
+
+- type: Tag
+  id: PPLCell
+
+- type: Tag
+  id: MilitaryPowerCellMG
 
 - type: Tag
   id: PowerCellSmall
