@@ -4,8 +4,8 @@ meta:
   engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 06/02/2026 10:45:22
-  entityCount: 8964
+  time: 06/02/2026 10:55:24
+  entityCount: 8967
 maps:
 - 1
 grids:
@@ -29872,9 +29872,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 26.5,30.5
       parent: 2
-    - type: Door
-      secondsUntilStateChange: -234.87547
-      state: Closing
   - uid: 2538
     components:
     - type: Transform
@@ -36194,6 +36191,18 @@ entities:
     - type: Transform
       pos: 2.5,15.5
       parent: 6952
+- proto: FlatpackWashingMachine
+  entities:
+  - uid: 4252
+    components:
+    - type: Transform
+      pos: 33.096703,-3.3900933
+      parent: 2
+  - uid: 4253
+    components:
+    - type: Transform
+      pos: 33.096703,-3.8588433
+      parent: 2
 - proto: FlippoLighter
   entities:
   - uid: 3317
@@ -45289,8 +45298,11 @@ entities:
   - uid: 4184
     components:
     - type: Transform
-      pos: -6.515917,3.1904156
+      pos: -6.541449,2.8239737
       parent: 2
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
   - uid: 4185
     components:
     - type: Transform
@@ -58157,11 +58169,6 @@ entities:
     - type: Transform
       pos: -4.5,-5.5
       parent: 2
-  - uid: 5576
-    components:
-    - type: Transform
-      pos: -6.5,2.5
-      parent: 2
   - uid: 5577
     components:
     - type: Transform
@@ -66924,6 +66931,18 @@ entities:
       parent: 2
     - type: WarpPoint
       location: Cel ninja - Zbrojownia
+- proto: WashingMachine
+  entities:
+  - uid: 4251
+    components:
+    - type: Transform
+      pos: 36.5,0.5
+      parent: 2
+  - uid: 4514
+    components:
+    - type: Transform
+      pos: -6.5,2.5
+      parent: 2
 - proto: WaterCooler
   entities:
   - uid: 6803
