@@ -2,7 +2,7 @@
 
   # Muszę zrobić poprawny prototyp do tłumaczenia kiedyś
   id: BorSniperMagazineBase
-  name: Magazynek Alexis-BOR (.30 rifle any)
+  name: Magazynek Alexis-BOR (.50 AE any)
   parent: [ BaseItem, BaseSecurityContraband]
   components:
     - type: Tag
@@ -12,7 +12,7 @@
       mayTransfer: true
       whitelist:
         tags:
-          - CartridgeLightRifle
+          - CartridgePistolLarge
       capacity: 5
     - type: Item
       size: Small
@@ -34,17 +34,41 @@
 
 - type: entity
   id: BorSniperMagazine
-  name: Magazynek Alexis-BOR (.30 rifle )
+  name: Magazynek Alexis-BOR (.50 AE)
   parent: BorSniperMagazineBase
   components:
     - type: BallisticAmmoProvider
-      proto: CartridgeLightRifle
+      proto: CartridgePistolLarge
 
 - type: entity
   id: BorSniperMagazineEmpty
   parent: BorSniperMagazineBase
-  name: Magazynek Alexis-BOR (.30 rifle any)
+  name: Magazynek Alexis-BOR (.50 AE any)
   suffix: (pusty)
   components:
     - type: BallisticAmmoProvider
       proto: null
+
+- type: entity
+  id: BorSniperMagazinePractice
+  name: Magazynek Alexis-BOR (.50 AE ślepaki)
+  parent: BorSniperMagazineBase
+  components:
+    - type: BallisticAmmoProvider
+      proto: CartridgePistolLargePractice
+
+- type: entity
+  id: BorSniperMagazineIncendiary
+  name: Magazynek Alexis-BOR (.50 AE samozapalające)
+  parent: BorSniperMagazineBase
+  components:
+    - type: BallisticAmmoProvider
+      proto: CartridgePistolLargeIncendiary
+
+- type: entity
+  id: BorSniperMagazineUranium
+  name: Magazynek Alexis-BOR (.50 AE uranowe)
+  parent: BorSniperMagazineBase
+  components:
+    - type: BallisticAmmoProvider
+      proto: CartridgePistolLargeUranium

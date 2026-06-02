@@ -1244,6 +1244,8 @@
     - MagazineBoxPistolLarge # Funkystation
     - MagazinePistolLargePractice # Funkystation
     - MagazineBoxPistolLargePractice # Funkystation
+    - BorSniperMagazineEmpty # Polonium
+    - BorSniperMagazine # Polonium
     - WeaponVisMPSPistolMagazineEmpty # Polonium
     - WeaponVisMPSPistolMagazine # Polonium
     - WeaponVisMPSPistolMagazinePractice # Polonium

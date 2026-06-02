@@ -92,14 +92,38 @@
   id: BorSniperMagazineEmpty
   result: BorSniperMagazineEmpty
   materials:
-    Steel: 30
+    Steel: 50
 
 - type: latheRecipe
   parent: BaseAmmoRecipe
   id: BorSniperMagazine
   result: BorSniperMagazine
   materials:
-    Steel: 400
+    Steel: 300
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: BorSniperMagazinePractice
+  result: BorSniperMagazinePractice
+  materials:
+    Steel: 125
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: BorSniperMagazineIncendiary
+  result: BorSniperMagazineIncendiary
+  materials:
+    Steel: 75
+    Plastic: 250
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: BorSniperMagazineUranium
+  result: BorSniperMagazineUranium
+  materials:
+    Steel: 75
+    Plastic: 150
+    Uranium: 160
 
 - type: latheRecipe
   parent: BaseWeaponRecipe
