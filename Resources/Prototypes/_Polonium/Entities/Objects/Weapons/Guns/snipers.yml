@@ -21,7 +21,7 @@
   - type: Gun
     minAngle: 21
     maxAngle: 35
-    fireRate: 0.5
+    fireRate: 0.75
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
@@ -60,7 +60,7 @@
   - type: CursorOffsetRequiresWield
   - type: EyeCursorOffset # Mniejszy dystans bo to nie jest Hristov.
     maxOffset: 7.5
-    offsetspeed: 0.05
+    offsetSpeed: 0.05
     pvsIncrease: 0.2
   - type: SpeedModifiedOnWield
     walkModifier: 0.8
