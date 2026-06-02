@@ -1,0 +1,12 @@
+ent-WeaponSubMachineGunMla73 = SKR-WS MLA-73 (635x40mm caseless)
+    .desc = A reliable PDW design, commonly issued to pilots and AFV crewmen. This one has been modified with an integral suppressor. Legends around this weapons say it's a Corporate-Era schematic that's been built by the Phaethon Dynasty. Can take 9x19mm smg magazines in a pinch. An Erebus railmount is present on the top and bottom of the handguard for optics and grips.
+ent-WeaponSubMachineGunAK220 = NCI AK-220 (9x19mm)
+    .desc = A mass produced 9x19mm bullpup SMG. The design originates from the USSP, but various TSF and PDV manufacturers produce it via licenses or suspiciously similar "original" designs.
+ent-WeaponSubMachineGunVector9x19mm = LWC Vector (9x19mm)
+    .desc = An excellent fully automatic SMG. Uses 9x19mm ammo. An Erebus railmount is present on the top of the reciever and the bottom of the handguard for optics and grips.
+ent-WeaponSubMachineGunVectorNtsfHclm = NTSF-HCLM-45 (.45 magnum)
+    .desc = The NTSF Heavy Caliber Light Machinegun. A very high-quality heavy SMG chambered in .45 magnum for use for the Nano Trasen Security Force and NT spec-ops, from the corporate war.
+ent-WeaponSubMachineGunKnallstock = LWC Knallstock (9x19mm/.45 ACP)
+    .desc = A rugged and reliable SMG using large, rapid fire bursts. Accepts 9x19 or .45 ACP pistol magazines. Watch out for its ammo consumption.
+ent-WeaponSubMachineGunMalandro = RS-2 Malandro (4.6x30mm)
+    .desc = A rugged, run down SMG chambered in 4.6x30mm designed for short range shootouts, featuring a 10 round burst at the cost of accuracy.
