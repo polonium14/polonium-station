@@ -1,0 +1,12 @@
+ent-WeaponDP29 = DP-29
+    .desc = Podstawa doktryny USSP — masowo produkowany ręczny karabin maszynowy: niezawodność, prostota i wytrzymałość w boju. Charakterystyczny magazynek tarczowy na górze i składana dwójnoga; doskonały ogień zaporowy w mieście i na otwartym terenie. Projekt ma dekady, lecz łatwa konserwacja czyni go ulubieńcem plutonów USSP. Amunicja: { ent-CartridgeLightRifle }.
+ent-WeaponLMGMR8B = MR-8B LWMMG
+    .desc = Wariant LWMMG serii MR-8; przyjmuje magazynki pudełkowe i STANAG. Na boku: "TYLKO DO UŻYTKU WOJSKOWEGO". Amunicja: { ent-CartridgeLightRifle }.
+ent-WeaponLMGHammer = AK-150 "Młot"
+    .desc = Stary styl AK z Ziemi ulepszony inżynierią USSP. W praktyce: RKM z magazynkiem pudełkowym, tłumienie odrutu i stylizowana obudowa. Chwała Komisariatowi. Amunicja: { ent-CartridgeRifle }.
+ent-WeaponLMGGrizzly = MMG-68 "Grizzly"
+    .desc = Średni karabin maszynowy; magazynki pudełkowe i standardowe. Napis: "TYLKO DO UŻYTKU WOJSKOWEGO". Ciężar utrudnia celowanie; dla standaryzacji przyjmuje też inne magazynki. Amunicja: { ent-CartridgeCaselessRifle } oraz { ent-CartridgeRifle }.
+ent-WeaponLMGRatel = PSW "Ratel"
+    .desc = Broń wsparcia precyzyjnego; pasuje skrzynka z amunicją i różne magazynki. Oparta na Vulcanie, lepsze materiały. Napis przerobiony brzmi: "TYLKO DO UŻYTKU MILI-CENNEGO". Szyna Erebus na komorze zamkowej na optykę. Amunicja: { ent-CartridgeLightRifle }.
+ent-CyborgWeaponMinigun = minigun cyborga
+    .desc = Stary, mało celny obrotowy minigun. Amunicja: { ent-CartridgeMinigun }.
