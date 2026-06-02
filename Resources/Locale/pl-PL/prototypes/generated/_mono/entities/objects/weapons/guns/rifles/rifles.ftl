@@ -1,0 +1,12 @@
+ent-WeaponRifleMR8C = MR-8C DMR
+    .desc = Wariant DMR serii MR-8 strzelający z niezwykłą celnością. Na boku widnieje napis "TYLKO DO UŻYTKU WOJSKOWEGO". Na górze komory zamkowej i spodzie łoża zamontowane są szyny Erebus na optykę i chwyty. Amunicja: { ent-CartridgeLightRifle }.
+ent-WeaponRifleAK502 = AK-502
+    .desc = Standardowy karabin bojowy USSP. Na rączce nośnej zamontowana jest szyna montażowa Erebus na optykę. Amunicja: { ent-CartridgeRifle }.
+ent-WeaponRifleXlr556 = XLR-556 ICWS
+    .desc = Proponowany karabin "nowej generacji" dla standardowej piechoty TSF. Tempo ostrzału jest imponujące — lecz wraz z szybkostrzelnością rośnie wymóg panowania nad ogniem… Amunicja: { ent-CartridgeRifle }.
+ent-WeaponRifleVulcanFCMC = HWM FCM-C "Vulcan"
+    .desc = Cywilny średni karabin bojowy (Fusil de Combat Moyen Civil) firmy Herstal Weapon Manufacture; wersja cywilna ma tylko tryb półautomatyczny i obniżone tempo ostrzału. Amunicja: { ent-CartridgeLightRifle }.
+ent-WeaponRiflePrometheus = HWM FCL "Prometheus"
+    .desc = Lekki karabin bojowy (Fusil de Combat Léger) firmy Herstal Weapon Manufacture. Stworzony do masowej produkcji na potrzeby walki z ksenoformami. Umiarkowane tempo ostrzału, lepszy w seriach, słaba celność. Amunicja: { ent-CartridgeRifle }.
+ent-WeaponRifleNtsfLtr = NTSF-LTR-556
+    .desc = Karabin z ery wojen korporacyjnych. Wysoka jakość: wnętrze z plastytanu, elementy ze stali plastowej. Amunicja: { ent-CartridgeRifle } oraz { ent-CartridgeCaselessRifle }.

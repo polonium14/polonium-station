@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: hyperDelegate
-  changes:
-  - message: The Nuclear Operative Reinforcement Teleporter now costs 30TC (was 35).
-    type: Tweak
-  id: 7905
-  time: '2025-02-05T14:54:46.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34675
 - author: Farrellka
   changes:
   - message: Removed the old long ears for human!
@@ -4102,3 +4095,12 @@
   id: 9212
   time: '2026-05-31T15:13:46.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/605
+- author: Zintex
+  changes:
+  - message: "Aktualizacja deathstar: m.in. mniej wzmocnionych \u015Bcian, lepsza\
+      \ sie\u0107 energetyczna, szafka klauna i mima, poprawiona konsola analizy,\
+      \ fax naukowy"
+    type: Tweak
+  id: 9213
+  time: '2026-06-01T21:40:11.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/613

@@ -1,0 +1,16 @@
+ent-BulletEnergyGun45_magnum = pocisk .45 magnum
+    .desc = { ent-BaseBullet.desc }
+ent-HeavyPulse = ciężki pocisk pulsowy
+    .desc = { ent-BulletEnergyGunLaser.desc }
+ent-HeavyPulseExp = wybuchowy pocisk pulsowy
+    .desc = { ent-BaseBulletTrigger.desc }
+ent-BulletLaserSlug = energetyczny slug
+    .desc = { ent-BulletEnergyGunLaser.desc }
+ent-BulletLaserPellet = pocisk energetyczny
+    .desc = { ent-BulletEnergyGunLaser.desc }
+ent-BulletLaserSpreadMono = { ent-BulletLaserPellet }
+    .desc = { ent-BulletLaserPellet.desc }
+ent-BulletMonolithicGestalt = pocisk gestalt
+    .desc = Zzz...t?
+ent-BulletMonolithicGolomRanged = kolce golema
+    .desc = Nienaruszony kryształ z nanocząsteczkowego włókna z twardej energii. Prawdopodobnie zrewolucjonizowałby kilka branż — gdyby nie leciał prosto w ciebie!

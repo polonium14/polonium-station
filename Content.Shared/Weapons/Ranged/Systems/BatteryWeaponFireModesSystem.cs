@@ -165,7 +165,7 @@ public sealed class BatteryWeaponFireModesSystem : EntitySystem
         if (TryComp(uid, out HitscanBatteryAmmoProviderComponent? hitscanBatteryAmmoProviderComponent))
         {
             var OldFireCost = hitscanBatteryAmmoProviderComponent.FireCost;
-            hitscanBatteryAmmoProviderComponent.Prototype = fireMode.Prototype;
+            hitscanBatteryAmmoProviderComponent.HitscanEntityProto = fireMode.Prototype;
             hitscanBatteryAmmoProviderComponent.FireCost = fireMode.FireCost;
 
             float FireCostDiff = (float)fireMode.FireCost / (float)OldFireCost;

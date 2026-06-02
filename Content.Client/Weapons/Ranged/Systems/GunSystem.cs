@@ -115,8 +115,8 @@ public sealed partial class GunSystem : SharedGunSystem
         SubscribeLocalEvent<AmmoCounterComponent, UpdateClientAmmoEvent>(OnUpdateClientAmmo);
         SubscribeAllEvent<MuzzleFlashEvent>(OnMuzzleFlash);
 
-        // Plays animated effects on the client.
-        SubscribeNetworkEvent<HitscanEvent>(OnHitscan);
+        // Plays animated effects on the client (network from server, or local during gun prediction).
+        SubscribeAllEvent<HitscanEvent>(OnHitscan);
 
         InitializeMagazineVisuals();
         InitializeSpentAmmo();

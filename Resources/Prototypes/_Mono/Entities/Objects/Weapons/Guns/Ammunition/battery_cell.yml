@@ -1,0 +1,57 @@
+# Power cells for mag-fed laser weapons (ammo + hitscan live on the cell, not the gun).
+
+- type: entity
+  id: PulsedPlasmaLaserCanister
+  parent: PowerCellHigh
+  name: NT PPL magnetic storage container
+  description: A magnetic containment unit for high-energy plasma. One full charge equals one heavy pulsed plasma lance shot.
+  components:
+  - type: Sprite
+    sprite: _Mono/Objects/Weapons/Guns/Ammunition/Magazine/ppl.rsi
+    layers:
+    - map: [ "enum.PowerCellVisualLayers.Base" ]
+      state: icon
+    - map: [ "enum.PowerCellVisualLayers.Unshaded" ]
+      state: o4
+      shader: unshaded
+  - type: Item
+    size: Normal
+  - type: Battery
+    maxCharge: 3000
+    startingCharge: 3000
+  - type: HitscanBatteryAmmoProvider
+    proto: PulsedPlasma
+    fireCost: 3000
+  - type: Tag
+    tags:
+    - PowerCell
+    - PowerCellHigh
+    - PPLCell
+
+- type: entity
+  id: MilitaryPowerCellMG
+  parent: PowerCellHigh
+  name: EM72 Ashstorm battery cell
+  description: A high-capacity cell designed for the EM72 Ashstorm directed-energy LMG.
+  components:
+  - type: Sprite
+    sprite: _Mono/Objects/Weapons/Guns/Ammunition/Magazine/energy_cell_mg.rsi
+    layers:
+    - map: [ "enum.PowerCellVisualLayers.Base" ]
+      state: icon
+    - map: [ "enum.PowerCellVisualLayers.Unshaded" ]
+      state: o4
+      shader: unshaded
+  - type: Item
+    size: Small
+  - type: Battery
+    maxCharge: 3000
+    startingCharge: 3000
+  - type: HitscanBatteryAmmoProvider
+    proto: MediumOverchargedLaser
+    fireCost: 15
+  - type: Tag
+    tags:
+    - PowerCell
+    - PowerCellHigh
+    - MilitaryPowerCellMG

@@ -12,6 +12,7 @@
 using Content.Shared.Examine;
 using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Weapons.Ranged.Events;
+using Robust.Shared.Prototypes;
 using Robust.Shared.GameStates;
 using Robust.Shared.Map;
 using Robust.Shared.Serialization;
@@ -22,18 +23,17 @@ public abstract partial class SharedGunSystem
 {
     protected virtual void InitializeBattery()
     {
-        // Trying to dump comp references hence the below
-        // Hitscan
         SubscribeLocalEvent<HitscanBatteryAmmoProviderComponent, ComponentGetState>(OnBatteryGetState);
         SubscribeLocalEvent<HitscanBatteryAmmoProviderComponent, ComponentHandleState>(OnBatteryHandleState);
         SubscribeLocalEvent<HitscanBatteryAmmoProviderComponent, TakeAmmoEvent>(OnBatteryTakeAmmo);
+        SubscribeLocalEvent<HitscanBatteryAmmoProviderComponent, CheckShootPrototypeEvent>(OnBatteryCheckProto);
         SubscribeLocalEvent<HitscanBatteryAmmoProviderComponent, GetAmmoCountEvent>(OnBatteryAmmoCount);
         SubscribeLocalEvent<HitscanBatteryAmmoProviderComponent, ExaminedEvent>(OnBatteryExamine);
 
-        // Projectile
         SubscribeLocalEvent<ProjectileBatteryAmmoProviderComponent, ComponentGetState>(OnBatteryGetState);
         SubscribeLocalEvent<ProjectileBatteryAmmoProviderComponent, ComponentHandleState>(OnBatteryHandleState);
         SubscribeLocalEvent<ProjectileBatteryAmmoProviderComponent, TakeAmmoEvent>(OnBatteryTakeAmmo);
+        SubscribeLocalEvent<ProjectileBatteryAmmoProviderComponent, CheckShootPrototypeEvent>(OnBatteryCheckProto);
         SubscribeLocalEvent<ProjectileBatteryAmmoProviderComponent, GetAmmoCountEvent>(OnBatteryAmmoCount);
         SubscribeLocalEvent<ProjectileBatteryAmmoProviderComponent, ExaminedEvent>(OnBatteryExamine);
     }
@@ -43,30 +43,14 @@ public abstract partial class SharedGunSystem
         if (args.Current is not BatteryAmmoProviderComponentState state)
             return;
 
-        var prototypeChanged = false;
-
         component.Shots = state.Shots;
         component.Capacity = state.MaxShots;
         component.FireCost = state.FireCost;
 
-        // CRITICAL FIX: Sync prototype for BOTH hitscan AND projectile components
-        if (state.Prototype != null)
-        {
-            if (component is HitscanBatteryAmmoProviderComponent hitscan)
-            {
-                prototypeChanged = hitscan.Prototype != state.Prototype;
-                hitscan.Prototype = state.Prototype;
-            }
-            else if (component is ProjectileBatteryAmmoProviderComponent projectile)
-            {
-                prototypeChanged = projectile.Prototype != state.Prototype;
-                projectile.Prototype = state.Prototype;
-            }
-        }
-
-        // If prototype changed, update appearance to reflect the new fire mode
-        if (prototypeChanged)
-            UpdateBatteryAppearance(uid, component);
+        if (component is HitscanBatteryAmmoProviderComponent hitscan && state.Prototype != null)
+            hitscan.HitscanEntityProto = state.Prototype;
+        else if (component is ProjectileBatteryAmmoProviderComponent projectile && state.Prototype != null)
+            projectile.Prototype = state.Prototype;
     }
 
     private void OnBatteryGetState(EntityUid uid, BatteryAmmoProviderComponent component, ref ComponentGetState args)
@@ -78,9 +62,8 @@ public abstract partial class SharedGunSystem
             FireCost = component.FireCost,
         };
 
-        // CRITICAL FIX: Include prototype for BOTH hitscan AND projectile components
         if (component is HitscanBatteryAmmoProviderComponent hitscan)
-            state.Prototype = hitscan.Prototype;
+            state.Prototype = hitscan.HitscanEntityProto;
         else if (component is ProjectileBatteryAmmoProviderComponent projectile)
             state.Prototype = projectile.Prototype;
 
@@ -96,7 +79,6 @@ public abstract partial class SharedGunSystem
     {
         var shots = Math.Min(args.Shots, component.Shots);
 
-        // Don't dirty if it's an empty fire.
         if (shots == 0)
             return;
 
@@ -111,15 +93,29 @@ public abstract partial class SharedGunSystem
         Dirty(uid, component);
     }
 
+    private void OnBatteryCheckProto(EntityUid uid, BatteryAmmoProviderComponent comp, ref CheckShootPrototypeEvent args)
+    {
+        switch (comp)
+        {
+            case ProjectileBatteryAmmoProviderComponent proj:
+                ProtoManager.TryIndex(proj.Prototype, out var proto);
+                args.ShootPrototype = proto;
+                break;
+            case HitscanBatteryAmmoProviderComponent hitscan:
+                if (ProtoManager.TryIndex(hitscan.HitscanEntityProto, out EntityPrototype? hitEntProto))
+                    args.ShootPrototype = hitEntProto;
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
+    }
+
     private void OnBatteryAmmoCount(EntityUid uid, BatteryAmmoProviderComponent component, ref GetAmmoCountEvent args)
     {
         args.Count = component.Shots;
         args.Capacity = component.Capacity;
     }
 
-    /// <summary>
-    /// Update the battery (server-only) whenever fired.
-    /// </summary>
     protected virtual void TakeCharge(EntityUid uid, BatteryAmmoProviderComponent component)
     {
         UpdateAmmoCount(uid, prediction: false);
@@ -143,7 +139,16 @@ public abstract partial class SharedGunSystem
                 var ent = Spawn(proj.Prototype, coordinates);
                 return (ent, EnsureShootable(ent));
             case HitscanBatteryAmmoProviderComponent hitscan:
-                return (null, ProtoManager.Index<HitscanPrototype>(hitscan.Prototype));
+                if (ProtoManager.TryIndex(hitscan.HitscanEntityProto, out EntityPrototype? entProto))
+                {
+                    var hitscanEnt = Spawn(hitscan.HitscanEntityProto);
+                    return (hitscanEnt, EnsureShootable(hitscanEnt));
+                }
+
+                if (ProtoManager.TryIndex(hitscan.HitscanEntityProto, out HitscanPrototype? hitscanProto))
+                    return (null, hitscanProto);
+
+                throw new InvalidOperationException($"Unknown hitscan prototype: {hitscan.HitscanEntityProto}");
             default:
                 throw new ArgumentOutOfRangeException();
         }
