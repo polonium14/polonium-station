@@ -83,6 +83,8 @@ using Content.Shared.Weapons.Melee;
 using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Weapons.Ranged.Events;
+using Content.Shared.Weapons.Hitscan.Components;
+using Content.Shared.Weapons.Hitscan.Events;
 using Content.Shared.Weapons.Reflect;
 using Content.Shared.Whitelist;
 using Robust.Shared.Audio;
@@ -641,6 +643,31 @@ public abstract partial class SharedGunSystem : EntitySystem
                             RemoveShootable(ent.Value);
                     }
                     break;
+                case HitscanAmmoComponent hitscanAmmo:
+                    if (ent == null)
+                        break;
+
+                    if (_netManager.IsServer || GunPrediction)
+                    {
+                        var hitscanEv = new HitscanTraceEvent
+                        {
+                            FromCoordinates = fromCoordinates,
+                            ShotDirection = mapDirection.Normalized(),
+                            Gun = gunUid,
+                            Shooter = user,
+                            Target = gun.Target,
+                        };
+                        RaiseLocalEvent(ent.Value, ref hitscanEv);
+
+                        if (hitscanAmmo.CasingPrototype != null)
+                            Spawn(hitscanAmmo.CasingPrototype, fromEnt);
+
+                        Del(ent.Value);
+                    }
+
+                    Audio.PlayPredicted(gun.SoundGunshotModified, gunUid, user);
+                    Recoil(user, mapDirection, gun.CameraRecoilScalarModified);
+                    break;
                 case HitscanPrototype hitscan:
                     EntityUid? lastHit = null;
 
@@ -1074,6 +1101,9 @@ public abstract partial class SharedGunSystem : EntitySystem
     {
         if (TryComp<CartridgeAmmoComponent>(uid, out var cartridge))
             return cartridge;
+
+        if (TryComp<HitscanAmmoComponent>(uid, out var hitscanAmmo))
+            return hitscanAmmo;
 
         return EnsureComp<AmmoComponent>(uid);
     }

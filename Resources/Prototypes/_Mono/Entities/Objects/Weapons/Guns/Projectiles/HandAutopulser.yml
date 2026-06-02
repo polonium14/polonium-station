@@ -1,0 +1,42 @@
+- type: entity
+  id: HandheldAutopulserProjectile
+  name: plasma projectile
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Heat: 20
+        Radiation: 5
+  - type: Sprite
+    sprite: _Mono/Objects/SpaceArtillery/plasmashot.rsi
+    scale: 0.4, 0.4
+    layers:
+    - state: plasmashot
+      shader: unshaded
+  - type: Ammo
+    muzzleFlash: MuzzleFlashEffectPlasmaPulser
+  - type: PointLight
+    color: "#FF00AA"
+    radius: 1.5
+    energy: 2
+
+- type: entity
+  parent: MuzzleFlashEffect
+  id: MuzzleFlashEffectPlasmaPulser
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: PointLight
+    enabled: true
+    color: "#ff0040"
+    radius: 1.4
+    energy: 5.0
+  - type: Sprite
+    drawdepth: BelowMobs
+    offset: 0.15, 0
+    layers:
+    - shader: unshaded
+      map: ["enum.EffectLayers.Unshaded"]
+      sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+      state: omnilaser_flash
