@@ -27,7 +27,7 @@
       minAngle: -18
       maxAngle: -24
     - type: Gun
-      fireRate: 5.9
+      fireRate: 6.0
       burstFireRate: 15
       burstCooldown: 0.45
       shotsPerBurst: 3
@@ -93,7 +93,7 @@
     - type: Gun
       minAngle: 17
       maxAngle: 33
-      fireRate: 6.75
+      fireRate: 4
       soundGunshot:
         path: /Audio/_Polonium/Weapons/Guns/glauberyt.ogg
       availableModes:
