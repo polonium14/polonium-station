@@ -23,6 +23,9 @@
   - type: GunWieldBonus
     minAngle: -27
     maxAngle: -36
+  - type: EyeCursorOffset # Polonium
+    maxOffset: 2.3
+    pvsIncrease: 0.23
   - type: Gun
     minAngle: 27
     maxAngle: 39
@@ -133,8 +136,8 @@
   - type: Appearance
   - type: CursorOffsetRequiresWield
   - type: EyeCursorOffset
-    maxOffset: 7
-    pvsIncrease: 0.7
+    maxOffset: 1.5 # Polonium
+    pvsIncrease: 0.15
   - type: SpeedModifiedOnWield # Mono
     walkModifier: 0.85
     sprintModifier: 0.85

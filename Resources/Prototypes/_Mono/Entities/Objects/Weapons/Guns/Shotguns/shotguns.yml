@@ -14,6 +14,9 @@
   - type: Clothing
     sprite: _Mono/Objects/Weapons/Guns/Shotguns/BigLeady.rsi
   - type: GunRequiresWield
+  - type: PumpAction
+    sound:
+      path: /Audio/_Mono/Weapons/Guns/Cock/shotgun_cock.ogg
   - type: Gun
     soundGunshot:
       path: /Audio/_Mono/Weapons/Guns/SmallArms/Gunshots/bigshotgun_fire.ogg
@@ -77,6 +80,9 @@
   - type: Clothing
     sprite: _Mono/Objects/Weapons/Guns/Shotguns/BigBuddy.rsi
   - type: GunRequiresWield
+  - type: PumpAction
+    sound:
+      path: /Audio/_Mono/Weapons/Guns/Cock/shotgun_cock.ogg
   - type: Gun
     soundGunshot:
       path: /Audio/_Mono/Weapons/Guns/SmallArms/Gunshots/bigshotgun_fire.ogg

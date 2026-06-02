@@ -14,6 +14,9 @@
   - type: GunWieldBonus
     minAngle: -21
     maxAngle: -47
+  - type: EyeCursorOffset # Polonium
+    maxOffset: 4
+    pvsIncrease: 0.4
   - type: Gun
     minAngle: 21
     maxAngle: 48
