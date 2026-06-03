@@ -101,14 +101,14 @@
   id: BorSniperMagazine
   result: BorSniperMagazine
   materials:
-    Steel: 300
+    Steel: 250
 
 - type: latheRecipe
   parent: BaseAmmoRecipe
   id: BorSniperMagazinePractice
   result: BorSniperMagazinePractice
   materials:
-    Steel: 125
+    Steel: 100
 
 - type: latheRecipe
   parent: BaseAmmoRecipe
@@ -116,7 +116,7 @@
   result: BorSniperMagazineIncendiary
   materials:
     Steel: 75
-    Plastic: 250
+    Plastic: 225
 
 - type: latheRecipe
   parent: BaseAmmoRecipe
@@ -124,8 +124,8 @@
   result: BorSniperMagazineUranium
   materials:
     Steel: 75
-    Plastic: 150
-    Uranium: 160
+    Plastic: 100
+    Uranium: 125
 
 - type: latheRecipe
   parent: BaseWeaponRecipe
