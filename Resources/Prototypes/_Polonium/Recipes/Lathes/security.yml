@@ -9,8 +9,6 @@
   parent: BaseWeaponRecipe
   id: WeaponVisMPSPistol
   result: WeaponVisMPSPistol
-  id: WeaponVisMPSPistol
-  result: WeaponVisMPSPistol
   materials:
     Steel: 1500
     Steel: 1500
@@ -20,15 +18,11 @@
   parent: BaseEmptyAmmoRecipe
   id: WeaponVisMPSPistolMagazineEmpty
   result: WeaponVisMPSPistolMagazineEmpty
-  id: WeaponVisMPSPistolMagazineEmpty
-  result: WeaponVisMPSPistolMagazineEmpty
   materials:
     Steel: 25
 
 - type: latheRecipe
   parent: BaseAmmoRecipe
-  id: WeaponVisMPSPistolMagazine
-  result: WeaponVisMPSPistolMagazine
   id: WeaponVisMPSPistolMagazine
   result: WeaponVisMPSPistolMagazine
   materials:
@@ -38,15 +32,11 @@
   parent: BaseAmmoRecipe
   id: WeaponVisMPSPistolMagazinePractice
   result: WeaponVisMPSPistolMagazinePractice
-  id: WeaponVisMPSPistolMagazinePractice
-  result: WeaponVisMPSPistolMagazinePractice
   materials:
     Steel: 85
 
 - type: latheRecipe
   parent: BaseAmmoRecipe
-  id: WeaponVisMPSPistolMagazineUranium
-  result: WeaponVisMPSPistolMagazineUranium
   id: WeaponVisMPSPistolMagazineUranium
   result: WeaponVisMPSPistolMagazineUranium
   materials:
@@ -56,8 +46,6 @@
 
 - type: latheRecipe
   parent: BaseAmmoRecipe
-  id: WeaponVisMPSPistolMagazineIncendiary
-  result: WeaponVisMPSPistolMagazineIncendiary
   id: WeaponVisMPSPistolMagazineIncendiary
   result: WeaponVisMPSPistolMagazineIncendiary
   materials:
