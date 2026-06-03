@@ -514,30 +514,30 @@ public sealed partial class ExplosionSystem : SharedExplosionSystem
             RaiseNetworkEvent(new ExplosionShockwaveEvent(
                 epicenter.MapId, pos, now,
                 maxRadiusTiles: 1f,
-                durationSeconds: 3f,
+                durationSeconds: 4.5f,
                 intensity: 0f,
                 flash: true), filter);
 
             // 1 - fast inner distortion ring
             RaiseNetworkEvent(new ExplosionShockwaveEvent(
-                epicenter.MapId, pos, now + 0.3,
+                epicenter.MapId, pos, now + 0.45,
                 maxRadiusTiles: 60f,
-                durationSeconds: 1.4f,
+                durationSeconds: 2.4f,
                 intensity: 1f), filter);
 
             // 2 - primary shockwave
             RaiseNetworkEvent(new ExplosionShockwaveEvent(
-                epicenter.MapId, pos, now + 0.35,
+                epicenter.MapId, pos, now + 0.6,
                 maxRadiusTiles: 120f,
-                durationSeconds: 2.5f,
-                intensity: 0.85f), filter);
+                durationSeconds: 4f,
+                intensity: 0.9f), filter);
 
             // 3 - pressure wave
             RaiseNetworkEvent(new ExplosionShockwaveEvent(
-                epicenter.MapId, pos, now + 0.7,
+                epicenter.MapId, pos, now + 1.1,
                 maxRadiusTiles: 200f,
-                durationSeconds: 3.5f,
-                intensity: 0.4f), filter);
+                durationSeconds: 5.5f,
+                intensity: 0.55f), filter);
 
             return;
         }
@@ -546,8 +546,8 @@ public sealed partial class ExplosionSystem : SharedExplosionSystem
         var shockwaveRadius = MathF.Max(radius * 1.5f, 10f);
         var visualRange = shockwaveRadius + 30f;
 
-        var intensity = Math.Clamp(MathF.Sqrt(totalIntensity) / 15f, 0.15f, 1f);
-        var duration = Math.Clamp(shockwaveRadius / 28f, 0.3f, 1.8f);
+        var intensity = Math.Clamp(MathF.Sqrt(totalIntensity) / 12f, 0.25f, 1f);
+        var duration = Math.Clamp(shockwaveRadius / 14f, 0.8f, 4f);
 
         var ev = new ExplosionShockwaveEvent(
             epicenter.MapId, pos, now,

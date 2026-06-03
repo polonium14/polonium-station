@@ -63,7 +63,9 @@ public sealed class ExplosionShockwaveOverlay : Overlay
             var elapsed = (float) Math.Max(0, now - wave.ServerStartSeconds);
             var t = Math.Clamp(elapsed / wave.DurationSeconds, 0f, 1f);
 
-            var radiusTiles = t * wave.MaxRadiusTiles;
+            // Ease-out: wave decelerates as it propagates outward
+            var easedT = 1f - MathF.Pow(1f - t, 3f);
+            var radiusTiles = easedT * wave.MaxRadiusTiles;
             if (radiusTiles <= 0f)
                 continue;
 
@@ -75,14 +77,14 @@ public sealed class ExplosionShockwaveOverlay : Overlay
 
             var baseThickness = wave.Flash
                 ? Math.Clamp(wave.MaxRadiusTiles * 0.25f, 4f, 16f)
-                : Math.Clamp(wave.MaxRadiusTiles * 0.12f, 2f, 8f);
+                : Math.Clamp(wave.MaxRadiusTiles * 0.2f, 3f, 14f);
             var thicknessPx = baseThickness * ppm;
 
-            var fadeIn = Math.Clamp(t * 5f, 0f, 1f);
-            var fadeOut = Math.Clamp((t - 0.6f) / 0.4f, 0f, 1f);
+            var fadeIn = Math.Clamp(t * 2.5f, 0f, 1f);
+            var fadeOut = Math.Clamp((t - 0.78f) / 0.22f, 0f, 1f);
             var strength = wave.Intensity * fadeIn * (1f - fadeOut);
 
-            var warpPx = strength * thicknessPx * 0.5f;
+            var warpPx = strength * thicknessPx * 0.9f;
 
             if (warpPx < 0.01f)
                 continue;
@@ -118,10 +120,10 @@ public sealed class ExplosionShockwaveOverlay : Overlay
     /// <summary>
     /// Renders a full-screen blinding flash for nuclear detonations
     /// Timings are stretched to survive frame hitches from explosion
-    /// Phase 1 (0–0.5s): white flash
-    /// Phase 2 (0.5–1.2s): white to orange
-    /// Phase 3 (1.2–3s): orange glow fade
-    /// Phase 4 (3s+): red tint fading out
+    /// Phase 1 (0–0.75s): white flash
+    /// Phase 2 (0.75–1.8s): white to orange
+    /// Phase 3 (1.8–4.5s): orange glow fade
+    /// Phase 4 (4.5s+): red tint fading out
     /// </summary>
     private static void DrawNuclearFlash(
         DrawingHandleWorld handle,
@@ -132,28 +134,28 @@ public sealed class ExplosionShockwaveOverlay : Overlay
         float alpha;
         Color tint;
 
-        if (elapsed < 0.5f)
+        if (elapsed < 0.75f)
         {
             alpha = 1f;
             tint = Color.White;
         }
-        else if (elapsed < 1.2f)
+        else if (elapsed < 1.8f)
         {
-            var p = (elapsed - 0.5f) / 0.7f;
+            var p = (elapsed - 0.75f) / 1.05f;
             var ease = p * p;
             alpha = 1f - ease * 0.4f;
             tint = Lerp(Color.White, new Color(1f, 0.85f, 0.5f), ease);
         }
-        else if (elapsed < 3f)
+        else if (elapsed < 4.5f)
         {
-            var p = (elapsed - 1.2f) / 1.8f;
+            var p = (elapsed - 1.8f) / 2.7f;
             var ease = p * p;
             alpha = 0.6f * (1f - ease);
             tint = Lerp(new Color(1f, 0.85f, 0.5f), new Color(1f, 0.4f, 0.1f), ease);
         }
         else
         {
-            var p = Math.Clamp((elapsed - 3f) / Math.Max(duration - 3f, 0.5f), 0f, 1f);
+            var p = Math.Clamp((elapsed - 4.5f) / Math.Max(duration - 4.5f, 0.5f), 0f, 1f);
             alpha = 0.1f * (1f - p);
             tint = new Color(1f, 0.3f, 0.05f);
         }
