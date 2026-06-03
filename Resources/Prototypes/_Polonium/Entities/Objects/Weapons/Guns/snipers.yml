@@ -51,11 +51,11 @@
         whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber
-        startingItem: CartridgePistolLarge
+        startingItem: CartridgeLightRifle
         priority: 1
         whitelist:
           tags:
-            - CartridgePistolLarge
+            - CartridgeLightRifle
   - type: ContainerContainer
     containers:
       gun_magazine: !type:ContainerSlot
@@ -64,9 +64,9 @@
     price: 1500
   - type: GunRequiresWield
   - type: CursorOffsetRequiresWield
-  - type: EyeCursorOffset # Mniejszy dystans bo to nie jest Hristov.
-    maxOffset: 4.0
-    offsetSpeed: 0.02
+  - type: EyeCursorOffset 
+    maxOffset: 4.0 # Dystans trochę mniejszy niż Hristow
+    offsetSpeed: 0.05 # Balansowane wolnym zoomem
     pvsIncrease: 0.2
   - type: SpeedModifiedOnWield
     walkModifier: 0.7
