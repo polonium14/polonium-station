@@ -30,6 +30,13 @@ public sealed partial class CallablePhoneComponent : Component
     public bool IncludeCentCommInDirectory;
 
     /// <summary>
+    /// If true, the handset directory lists only CentComm lines (station red phone).
+    /// Requires <see cref="IncludeCentCommInDirectory"/>.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool OnlyCentCommInDirectory;
+
+    /// <summary>
     /// If true, this line is private but may dial any public listed line (blood-red phone).
     /// </summary>
     [DataField, AutoNetworkedField]
