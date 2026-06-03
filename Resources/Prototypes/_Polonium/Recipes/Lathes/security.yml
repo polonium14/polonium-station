@@ -95,7 +95,6 @@
   result: BorSniperMagazineEmpty
   materials:
     Steel: 50
-    Steel: 50
 
 - type: latheRecipe
   parent: BaseAmmoRecipe
