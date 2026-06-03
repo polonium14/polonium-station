@@ -1,5 +1,6 @@
 # SPDX-FileCopyrightText: 2025 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Tofi! <52051567+Tofi-Dev@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -7,7 +8,7 @@
 
   # Muszę zrobić poprawny prototyp do tłumaczenia kiedyś
   id: BorSniperMagazineBase
-  name: Magazynek Alexis-BOR (.30 rifle any)
+  name: Magazynek Alexis-BOR (.50 AE any)
   parent: [ BaseItem, BaseSecurityContraband]
   components:
     - type: Tag
@@ -43,7 +44,7 @@
   parent: BorSniperMagazineBase
   components:
     - type: BallisticAmmoProvider
-      proto: CartridgeLightRifle
+      proto: CartridgePistolLarge
 
 - type: entity
   id: BorSniperMagazineEmpty

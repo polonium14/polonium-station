@@ -1,26 +1,4 @@
 ﻿Entries:
-- author: centcomofficer24
-  changes:
-  - message: Added a genderqueer pin!
-    type: Add
-  id: 7908
-  time: '2025-02-06T05:49:41.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34561
-- author: SG6732
-  changes:
-  - message: Swapped the stick of butter with 5 u of olive oil in the boiled spaghetti
-      recipe.
-    type: Tweak
-  id: 7909
-  time: '2025-02-06T11:45:35.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34904
-- author: deltanedas
-  changes:
-  - message: Fixed huds showing for chameleon projector users.
-    type: Fix
-  id: 7910
-  time: '2025-02-06T13:45:13.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34825
 - author: 12rabbits
   changes:
   - message: Activating a DNA scrambler implant no longer retains the previous identity's
@@ -4106,3 +4084,32 @@
   id: 9215
   time: '2026-06-02T12:14:02.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/614
+- author: Nikita_pl
+  changes:
+  - message: "Nowe bronie zosta\u0142y dodane na map\u0119 \"Dev\""
+    type: Add
+  id: 9216
+  time: '2026-06-02T18:09:28.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/617
+- author: Koilak
+  changes:
+  - message: Produkcja broni.
+    type: Tweak
+  - message: "Produkcja magazynk\xF3w specjalnych do VisMPSa"
+    type: Fix
+  - message: "U\u017Cyteczno\u015B\u0107 Snajperki BOR"
+    type: Tweak
+  id: 9217
+  time: '2026-06-02T20:51:39.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/615
+- author: Nikitosych
+  changes:
+  - message: "Zmniejszono zasi\u0119g przesuni\u0119cia kamery przy celowaniu z karabinu\
+      \ Mk 98."
+    type: Tweak
+  - message: "Big Leady i Big Buddy wymagaj\u0105 teraz prze\u0142adowania pompk\u0105\
+      \ przed strza\u0142em."
+    type: Tweak
+  id: 9218
+  time: '2026-06-02T20:53:03.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/618
