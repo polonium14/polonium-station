@@ -112,11 +112,17 @@
   - CommandTrainingManual
   - OrderOfSuccession
   - CaptainSOP
+  - RedPhoneSOP
 
 - type: guideEntry
   id: CaptainSOP
   name: guide-entry-captain-sop
   text: "/ServerInfo/_Polonium/Guidebook/Command/CaptainSOP.xml"
+
+- type: guideEntry
+  id: RedPhoneSOP
+  name: guide-entry-red-phone-sop
+  text: "/ServerInfo/_Polonium/Guidebook/Command/RedPhone.xml"
 
 - type: guideEntry
   id: OrderOfSuccession
