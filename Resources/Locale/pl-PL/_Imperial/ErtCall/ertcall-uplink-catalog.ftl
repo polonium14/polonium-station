@@ -126,25 +126,25 @@ ert-uplink-ErtCallUplinkWelderExperimental-desc = Wydajne narzędzie spawalnicze
 ert-uplink-ErtCallUplinkOmnizineChemistryBottle-name = Butelka omnizyny
 ert-uplink-ErtCallUplinkOmnizineChemistryBottle-desc = Reagent o szerokim spektrum leczenia.
 
-ert-uplink-ErtCallUplinkHypospray-name = Hiposaława
+ert-uplink-ErtCallUplinkHypospray-name = Hipospray
 ert-uplink-ErtCallUplinkHypospray-desc = Urządzenie do natychmiastowych wstrzyknięć.
 
-ert-uplink-ErtCallUplinkGauze-name = Rolka gazy
+ert-uplink-ErtCallUplinkGauze-name = Rolka gazowa
 ert-uplink-ErtCallUplinkGauze-desc = Podstawowy opatrunek na rany.
 
-ert-uplink-ErtCallUplinkBrutepack-name = Zszywka medyczna
+ert-uplink-ErtCallUplinkBrutepack-name = Zszywka
 ert-uplink-ErtCallUplinkBrutepack-desc = Sterylna zszywka do zamykania ran.
 
 ert-uplink-ErtCallUplinkOintment-name = Siatka regeneracyjna
 ert-uplink-ErtCallUplinkOintment-desc = Zaawansowana siatka na oparzenia.
 
-ert-uplink-ErtCallUplinkStimpack-name = Stymulant
-ert-uplink-ErtCallUplinkStimpack-desc = Tymczasowy stymulant bojowy.
+ert-uplink-ErtCallUplinkStimpack-name = Stymulator
+ert-uplink-ErtCallUplinkStimpack-desc = Tymczasowy stymulator bojowy.
 
 ert-uplink-ErtCallUplinkCompactDefibrillator-name = Kompaktowy defibrylator
 ert-uplink-ErtCallUplinkCompactDefibrillator-desc = Przenośne urządzenie reanimacyjne.
 
-ert-uplink-ErtCallUplinkEmergencyMedipen-name = Awaryjny medipen
+ert-uplink-ErtCallUplinkEmergencyMedipen-name = Medipen awaryjny
 ert-uplink-ErtCallUplinkEmergencyMedipen-desc = Natychmiastowa, ratująca życie mikstura.
 
 ert-uplink-ErtCallUplinkHandheldHealthAnalyzer-name = Analizator zdrowia
@@ -153,10 +153,10 @@ ert-uplink-ErtCallUplinkHandheldHealthAnalyzer-desc = Skanuje parametry życiowe
 ert-uplink-ErtCallUplinkMaterialBiomass-name = Materiał biomasy
 ert-uplink-ErtCallUplinkMaterialBiomass-desc = Organiczny materiał do klonowania.
 
-ert-uplink-ErtCallUplinkPillAmbuzolPlus-name = Pigułka Ambuzol+
+ert-uplink-ErtCallUplinkPillAmbuzolPlus-name = Pigułka "Ambuzol+"
 ert-uplink-ErtCallUplinkPillAmbuzolPlus-desc = Silny antytoksyna i stabilizator.
 
-ert-uplink-ErtCallUplinkSpaceMedipen-name = Kosmiczny medipen
+ert-uplink-ErtCallUplinkSpaceMedipen-name = Medipen kosmiczny
 ert-uplink-ErtCallUplinkSpaceMedipen-desc = Chroni przed ekspozycją na próżnię.
 
 ert-uplink-ErtCallUplinkWeaponPulsePistol-name = Pistolet pulsacyjny
