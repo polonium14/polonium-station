@@ -228,4 +228,4 @@ phrase-potato = ziemniak
 phrase-onion = cebula
 phrase-aloe = aloes
 phrase-poppy = mak
-phrase-galaxythistle = galaktyczny oset
+phrase-galaxythistle = gwiaździk
