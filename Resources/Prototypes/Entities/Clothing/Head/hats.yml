@@ -137,9 +137,9 @@
   description: A corporate beret with an officer's rank emblem. A stylish clothing option for security officers.
   components:
   - type: Sprite
-    sprite: _Funkystation/Clothing/Head/Hats/security_beret.rsi
+    sprite: Clothing/Head/Hats/beret_security.rsi
   - type: Clothing
-    sprite: _Funkystation/Clothing/Head/Hats/security_beret.rsi
+    sprite: Clothing/Head/Hats/beret_security.rsi
   - type: Tag
     tags:
     - ClothMade
@@ -153,9 +153,9 @@
   description: A campaign hat for the Nanotrasen Troopers, comes with a case too, but you lost it.
   components:
   - type: Sprite
-    sprite: _Funkystation/Clothing/Head/Hats/security.rsi
+    sprite: Clothing/Head/Hats/security_trooper_hat.rsi
   - type: Clothing
-    sprite: _Funkystation/Clothing/Head/Hats/security.rsi
+    sprite: Clothing/Head/Hats/security_trooper_hat.rsi
   - type: Tag
     tags:
     - ClothMade
@@ -227,9 +227,9 @@
   description: A white beret with a commander's rank emblem.
   components:
   - type: Sprite
-    sprite: _Funkystation/Clothing/Head/Hats/hos_beret.rsi
+    sprite: Clothing/Head/Hats/beret_hos.rsi
   - type: Clothing
-    sprite: _Funkystation/Clothing/Head/Hats/hos_beret.rsi
+    sprite: Clothing/Head/Hats/beret_hos.rsi
   - type: Tag
     tags:
     - ClothMade
@@ -243,9 +243,9 @@
   description: A corporate red beret with a warden's rank emblem. For officers that are more inclined towards style than safety.
   components:
   - type: Sprite
-    sprite: _Funkystation/Clothing/Head/Hats/warden_beret.rsi
+    sprite: Clothing/Head/Hats/beret_warden.rsi
   - type: Clothing
-    sprite: _Funkystation/Clothing/Head/Hats/warden_beret.rsi
+    sprite: Clothing/Head/Hats/beret_warden.rsi
 
 - type: entity
   parent: ClothingHeadBase
@@ -443,9 +443,9 @@
   description: The standard-issue cap of the Head of Security. For showing the officers who's in charge.
   components:
   - type: Sprite
-    sprite: _Funkystation/Clothing/Head/Hats/hos.rsi
+    sprite: Clothing/Head/Hats/hoshat.rsi
   - type: Clothing
-    sprite: _Funkystation/Clothing/Head/Hats/hos.rsi
+    sprite: Clothing/Head/Hats/hoshat.rsi
   - type: Tag
     tags:
     - ClothMade
@@ -648,9 +648,9 @@
   description: The warden's hat. This hat emphasizes that you are THE LAW
   components:
   - type: Sprite
-    sprite: _Funkystation/Clothing/Head/Hats/warden.rsi
+    sprite: Clothing/Head/Hats/warden.rsi
   - type: Clothing
-    sprite: _Funkystation/Clothing/Head/Hats/warden.rsi
+    sprite: Clothing/Head/Hats/warden.rsi
   - type: StealTarget
     stealGroup: ClothingHeadHatWarden
 

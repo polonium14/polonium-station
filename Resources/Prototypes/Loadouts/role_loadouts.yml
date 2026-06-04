@@ -468,7 +468,7 @@
   - SecurityBackpack
   - SecurityBelt
   - HeadofSecurityOuterClothing
-  - SecurityShoes
+  - HeadofSecurityShoes
   - SurvivalSecurity
   - Trinkets
   - HeadofSecurityJobTrinkets
@@ -561,7 +561,6 @@
   - SecurityGloves # Funky
   - SecurityShoes
   - SurvivalSecurity
-  - SecurityOuterClothing # Goobstation - Why not.
   - Trinkets
   - GroupSpeciesBreathToolSecurity
 

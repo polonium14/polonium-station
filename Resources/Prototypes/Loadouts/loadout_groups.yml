@@ -2001,6 +2001,15 @@
   - HeadofSecurityWinterCoat
   - HeadofSecurityArmorVest
 
+- type: loadoutGroup
+  id: HeadofSecurityShoes
+  name: loadout-group-security-shoes
+  loadouts:
+  - HeadofSecurityFunkyWinterBoots
+  - CombatBoots
+  - JackBoots
+  - SecurityWinterBoots
+
 - type: loadoutGroup #WizDen Weh Job Plush
   id: HeadofSecurityJobTrinkets
   name: loadout-group-jobtrinkets

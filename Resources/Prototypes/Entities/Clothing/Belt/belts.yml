@@ -581,9 +581,9 @@
   description: Can hold security gear like handcuffs and flashes.
   components:
   - type: Sprite
-    sprite: _Funkystation/Clothing/Belt/security_belt.rsi
+    sprite: Clothing/Belt/security.rsi
   - type: Clothing
-    sprite: _Funkystation/Clothing/Belt/security_belt.rsi
+    sprite: Clothing/Belt/security.rsi
   - type: ExplosionResistance # Goobstation
     damageCoefficient: 0.5
   - type: Storage
@@ -760,9 +760,9 @@
   description: A versatile chest rig for holding security gear.
   components:
   - type: Sprite
-    sprite: _Funkystation/Clothing/Belt/security_webbing.rsi
+    sprite: Clothing/Belt/securitywebbing.rsi
   - type: Clothing
-    sprite: _Funkystation/Clothing/Belt/security_webbing.rsi
+    sprite: Clothing/Belt/securitywebbing.rsi
 
 - type: entity
   parent: [ ClothingBeltStorageBase, BaseSecurityCargoContraband ]

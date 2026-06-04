@@ -176,7 +176,7 @@
    components:
    - type: StorageFill
      contents:
-       - id: ClothingUniformJumpsuitSec
+       - id: ClothingUniformJumpsuitSecBase
        - id: ClothingBackpackSecurity
        - id: ClothingShoesBootsJack
        - id: ClothingEyesGlassesSunglasses

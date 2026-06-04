@@ -263,9 +263,9 @@
   description: A uniform made of strong material, for day to day wear.
   components:
   - type: Sprite
-    sprite: _Funkystation/Clothing/Uniforms/Jumpskirt/security_dress.rsi
+    sprite: Clothing/Uniforms/Jumpskirt/security.rsi
   - type: Clothing
-    sprite: _Funkystation/Clothing/Uniforms/Jumpskirt/security_dress.rsi
+    sprite: Clothing/Uniforms/Jumpskirt/security.rsi
 
 - type: entity
   parent: [ClothingUniformBase, BaseSecurityContraband]
@@ -274,9 +274,9 @@
   description: A uniform made of strong material, for day to day wear. Awarded to senior officers so they feel better about their time spent on the force.
   components:
   - type: Sprite
-    sprite: _Funkystation/Clothing/Uniforms/Jumpskirt/security_dress_senior.rsi
+    sprite: Clothing/Uniforms/Jumpskirt/security_grey.rsi
   - type: Clothing
-    sprite: _Funkystation/Clothing/Uniforms/Jumpskirt/security_dress_senior.rsi
+    sprite: Clothing/Uniforms/Jumpskirt/security_grey.rsi
 
 - type: entity
   parent: [ClothingUniformBase, BaseSecurityContraband]
@@ -285,9 +285,9 @@
   description: A uniform made of strong material, for special occasions.
   components:
   - type: Sprite
-    sprite: _Funkystation/Clothing/Uniforms/Jumpskirt/security_mess.rsi
+    sprite: Clothing/Uniforms/Jumpskirt/security.rsi
   - type: Clothing
-    sprite: _Funkystation/Clothing/Uniforms/Jumpskirt/security_mess.rsi
+    sprite: Clothing/Uniforms/Jumpskirt/security.rsi
 
 - type: entity
   parent: [ClothingUniformBase, BaseSecurityContraband]
@@ -296,9 +296,9 @@
   description: A uniform made of strong material, for day to day wear.
   components:
   - type: Sprite
-    sprite: _Funkystation/Clothing/Uniforms/Jumpskirt/hos_dress.rsi
+    sprite: Clothing/Uniforms/Jumpskirt/hos_alt.rsi
   - type: Clothing
-    sprite: _Funkystation/Clothing/Uniforms/Jumpskirt/hos_dress.rsi
+    sprite: Clothing/Uniforms/Jumpskirt/hos_alt.rsi
 
 - type: entity
   parent: [ClothingUniformBase, BaseSecurityContraband]
@@ -307,6 +307,6 @@
   description: The head of security's formal uniform, for special occasions
   components:
   - type: Sprite
-    sprite: _Funkystation/Clothing/Uniforms/Jumpskirt/hos_mess.rsi
+    sprite: Clothing/Uniforms/Jumpskirt/hos_parade.rsi
   - type: Clothing
-    sprite: _Funkystation/Clothing/Uniforms/Jumpskirt/hos_mess.rsi
+    sprite: Clothing/Uniforms/Jumpskirt/hos_parade.rsi
