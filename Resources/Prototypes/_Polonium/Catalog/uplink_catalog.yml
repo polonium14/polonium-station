@@ -1,5 +1,7 @@
+# SPDX-FileCopyrightText: 2025 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Polonium-bot <admin@ss14.pl>
 # SPDX-FileCopyrightText: 2025 nikitosych <174215049+nikitosych@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -7,7 +9,7 @@
   id: UplinkPistolVisMPS
   name: uplink-pistol-vis-mps-name
   description: uplink-pistol-vis-mps-desc
-  productEntity: VisMPSPistol
+  productEntity: WeaponVisMPSPistol
   cost:
     Telecrystal: 12
   categories:
@@ -18,7 +20,7 @@
   id: UplinkPistolVisMPSMagazine
   name: uplink-pistol-vis-mps-magazine-name
   description: uplink-pistol-vis-mps-magazine-desc
-  productEntity: VisMPSPistolMagazine
+  productEntity: WeaponVisMPSPistolMagazine
   cost:
     Telecrystal: 2
   categories:
@@ -60,7 +62,7 @@
   id: UplinkSniperBor
   name: uplink-sniper-bor-name
   description: uplink-sniper-bor-desc
-  productEntity: BORSniperGun
+  productEntity: WeaponBORSniperGun
   cost:
     Telecrystal: 55
   categories:

@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   name: VFD MR-8C DMR (8x65mm SKR)
   parent: [BaseWeaponRifle, BaseGunWieldable]
@@ -14,6 +18,9 @@
   - type: GunWieldBonus
     minAngle: -21
     maxAngle: -47
+  - type: EyeCursorOffset # Polonium
+    maxOffset: 4
+    pvsIncrease: 0.4
   - type: Gun
     minAngle: 21
     maxAngle: 48

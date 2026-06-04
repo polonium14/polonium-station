@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   id: WeaponRifleAK410
   name: NCI AK-410 (7.62x54mmR)
@@ -23,6 +27,9 @@
   - type: GunWieldBonus
     minAngle: -27
     maxAngle: -36
+  - type: EyeCursorOffset # Polonium
+    maxOffset: 2.3
+    pvsIncrease: 0.23
   - type: Gun
     minAngle: 27
     maxAngle: 39
@@ -133,8 +140,8 @@
   - type: Appearance
   - type: CursorOffsetRequiresWield
   - type: EyeCursorOffset
-    maxOffset: 7
-    pvsIncrease: 0.7
+    maxOffset: 1.5 # Polonium
+    pvsIncrease: 0.15
   - type: SpeedModifiedOnWield # Mono
     walkModifier: 0.85
     sprintModifier: 0.85

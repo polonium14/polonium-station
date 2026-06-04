@@ -1,8 +1,15 @@
+# SPDX-FileCopyrightText: 2025 Tofi! <52051567+Tofi-Dev@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 nikitosych <174215049+nikitosych@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 Koilak <152626891+Koilak@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
-  name: Alexis-BOR .30
+  name: Alexis-BOR .30 rifle
   parent: [BaseItem, BaseGunWieldable, BaseSecurityContraband]
-  id: BORSniperGun
-  description: Najnowszy model snajperki bazowana na BOR 7,62. modyfikowana, żeby mogła używać amunicji .30
+  id: WeaponBORSniperGun
+  description: Najnowszy model snajperki bazowana na BOR 7,62. modyfikowana, żeby mogła używać amunicji .30 rifle
   components:
   - type: Sprite
     sprite: _Polonium/Weapons/Guns/Snipers/Bor.rsi
@@ -21,7 +28,7 @@
   - type: Gun
     minAngle: 21
     maxAngle: 35
-    fireRate: 0.75
+    fireRate: 3
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
@@ -45,11 +52,11 @@
         whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber
-        startingItem: CartridgeLightRifle
+        startingItem: CartridgePistolLarge
         priority: 1
         whitelist:
           tags:
-            - CartridgeLightRifle
+            - CartridgePistolLarge
   - type: ContainerContainer
     containers:
       gun_magazine: !type:ContainerSlot
@@ -58,12 +65,13 @@
     price: 1500
   - type: GunRequiresWield
   - type: CursorOffsetRequiresWield
-  - type: EyeCursorOffset # Mniejszy dystans bo to nie jest Hristov.
-    maxOffset: 1.5
-    pvsIncrease: 0.15
+  - type: EyeCursorOffset 
+    maxOffset: 4.0 # Dystans trochę mniejszy niż Hristow
+    offsetSpeed: 0.05 # Balansowane wolnym zoomem
+    pvsIncrease: 0.2
   - type: SpeedModifiedOnWield
-    walkModifier: 0.8
-    sprintModifier: 0.8
+    walkModifier: 0.7
+    sprintModifier: 0.7
   - type: Appearance
   - type: MagazineVisuals
     magState: mag

@@ -1,74 +1,4 @@
 ﻿Entries:
-- author: Farrellka
-  changes:
-  - message: Removed the old long ears for human!
-    type: Remove
-  - message: Added more long (elf) ears for human!
-    type: Add
-  id: 7906
-  time: '2025-02-05T16:49:04.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/33572
-- author: keronshb
-  changes:
-  - message: Disabler - decreased fire cost, increased projectile speed.
-    type: Tweak
-  - message: Disabler SMG - decreased fire cost, increased fire rate.
-    type: Tweak
-  id: 7907
-  time: '2025-02-05T23:12:07.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34890
-- author: centcomofficer24
-  changes:
-  - message: Added a genderqueer pin!
-    type: Add
-  id: 7908
-  time: '2025-02-06T05:49:41.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34561
-- author: SG6732
-  changes:
-  - message: Swapped the stick of butter with 5 u of olive oil in the boiled spaghetti
-      recipe.
-    type: Tweak
-  id: 7909
-  time: '2025-02-06T11:45:35.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34904
-- author: deltanedas
-  changes:
-  - message: Fixed huds showing for chameleon projector users.
-    type: Fix
-  id: 7910
-  time: '2025-02-06T13:45:13.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34825
-- author: 12rabbits
-  changes:
-  - message: Activating a DNA scrambler implant no longer retains the previous identity's
-      description.
-    type: Fix
-  id: 7911
-  time: '2025-02-06T19:09:59.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34920
-- author: GrownSamoyedDog
-  changes:
-  - message: Control Button in Guidebook has been redirected to Controls properly
-    type: Fix
-  id: 7912
-  time: '2025-02-06T19:16:57.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34914
-- author: themias
-  changes:
-  - message: Combat bakery kit price is reduced from 6TC to 4TC, increased baguette
-      sword attack speed, throwing croissants ignore armor
-    type: Tweak
-  id: 7913
-  time: '2025-02-06T23:07:27.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34927
-- author: sowelipililimute
-  changes:
-  - message: You will no longer be told you need 0H 0M more minutes to play a role
-    type: Fix
-  id: 7914
-  time: '2025-02-08T06:12:59.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34961
 - author: Chaboricks
   changes:
   - message: Changed the sound of paper doors.
@@ -4104,3 +4034,85 @@
   id: 9213
   time: '2026-06-01T21:40:11.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/613
+- author: Nikita_pl
+  changes:
+  - message: "Dodano bro\u0144 paln\u0105 i energetyczn\u0105 z Mono: karabiny, SMG,\
+      \ LMG, strzelby, snajperki, pistolety oraz lasery na ogniwach"
+    type: Add
+  - message: "Dodano dedykowane ogniwa zasilaj\u0105ce Ashstorm i LRC-21 PPL"
+    type: Add
+  - message: Dodano karabin plazmowy Asakim
+    type: Add
+  id: 9214
+  time: '2026-06-02T08:19:00.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/611
+- author: Zintex
+  changes:
+  - message: "Aktualizacja terra: brakuj\u0105ce role, s\u0142o\u0144ce o\u015Bwietla\
+      \ stacj\u0119, mniej \u015Bwiate\u0142 zewn\u0119trznych"
+    type: Tweak
+  id: 9215
+  time: '2026-06-02T12:14:02.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/614
+- author: Nikita_pl
+  changes:
+  - message: "Nowe bronie zosta\u0142y dodane na map\u0119 \"Dev\""
+    type: Add
+  id: 9216
+  time: '2026-06-02T18:09:28.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/617
+- author: Koilak
+  changes:
+  - message: Produkcja broni.
+    type: Tweak
+  - message: "Produkcja magazynk\xF3w specjalnych do VisMPSa"
+    type: Fix
+  - message: "U\u017Cyteczno\u015B\u0107 Snajperki BOR"
+    type: Tweak
+  id: 9217
+  time: '2026-06-02T20:51:39.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/615
+- author: Nikitosych
+  changes:
+  - message: "Zmniejszono zasi\u0119g przesuni\u0119cia kamery przy celowaniu z karabinu\
+      \ Mk 98."
+    type: Tweak
+  - message: "Big Leady i Big Buddy wymagaj\u0105 teraz prze\u0142adowania pompk\u0105\
+      \ przed strza\u0142em."
+    type: Tweak
+  id: 9218
+  time: '2026-06-02T20:53:03.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/618
+- author: Koilak
+  changes:
+  - message: BOR sniper
+    type: Tweak
+  id: 9219
+  time: '2026-06-03T16:34:53.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/619
+- author: nikita_pl
+  changes:
+  - message: Lepsze efekty wybuchowe
+    type: Tweak
+  id: 9220
+  time: '2026-06-03T18:50:40.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/620
+- author: Nikita_pl
+  changes:
+  - message: Zaktualizowano regulamin w grze
+    type: Tweak
+  id: 9221
+  time: '2026-06-04T06:24:24.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/621
+- author: Nikita_pl
+  changes:
+  - message: "G\u0142\xF3wna odzie\u017C ochrony u\u017Cywa teraz standardowych sprite'\xF3\
+      w zamiast Funky."
+    type: Tweak
+  - message: "Osobna odzie\u017C ochrony z Funky po prostu jako osobne przedmioty."
+    type: Add
+  - message: Kadet nie otrzymuje kamizelki kuloodpornej w loadoucie przy spawnie
+    type: Remove
+  id: 9222
+  time: '2026-06-04T08:33:12.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/623

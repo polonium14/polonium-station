@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Maciej Walendziuk <ozzeusz@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   parent: BaseHandheldInstrument
   id: CallablePhoneInstrument
@@ -32,6 +36,7 @@
   - type: CallablePhone
     isCentComm: false
     includeCentCommInDirectory: true
+    onlyCentCommInDirectory: true
     # phoneName: callable-phone-example-bridge  # optional; also editable via View Variables at runtime
     pickupHandsetSound:
       path: /Audio/_Polonium/Machines/Telephone/handset_pickup.ogg

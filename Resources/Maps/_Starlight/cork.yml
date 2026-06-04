@@ -27,10 +27,11 @@
 # SPDX-FileCopyrightText: 2024 rottenheadphones <juaelwe@outlook.com>
 # SPDX-FileCopyrightText: 2024 strO0pwafel <153459934+strO0pwafel@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Mish <bluscout78@yahoo.com>
-# SPDX-FileCopyrightText: 2025 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
 # SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2026 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2026 nikitosych <174215049+nikitosych@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
@@ -42793,7 +42794,7 @@ entities:
     - type: Transform
       pos: -13.352391,6.4343877
       parent: 2
-- proto: VisMPSPistol
+- proto: WeaponVisMPSPistol
   entities:
   - uid: 3471
     components:
@@ -42805,7 +42806,7 @@ entities:
     - type: Transform
       pos: -13.372677,19.423986
       parent: 2
-- proto: VisMPSPistolMagazine
+- proto: WeaponVisMPSPistolMagazine
   entities:
   - uid: 230
     components:

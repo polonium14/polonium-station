@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Maciej Walendziuk <ozzeusz@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 
@@ -28,6 +32,13 @@ public sealed partial class CallablePhoneComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public bool IncludeCentCommInDirectory;
+
+    /// <summary>
+    /// If true, the handset directory lists only CentComm lines (station red phone).
+    /// Requires <see cref="IncludeCentCommInDirectory"/>.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool OnlyCentCommInDirectory;
 
     /// <summary>
     /// If true, this line is private but may dial any public listed line (blood-red phone).

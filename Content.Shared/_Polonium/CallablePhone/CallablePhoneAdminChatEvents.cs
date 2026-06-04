@@ -1,4 +1,5 @@
 // SPDX-FileCopyrightText: 2026 Maciej Walendziuk <ozzeusz@gmail.com>
+// SPDX-FileCopyrightText: 2026 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -10,11 +11,16 @@ namespace Content.Shared._Polonium.CallablePhone;
 /// Raised on a client to open a persistent admin chat window for speaking through a callable phone line.
 /// </summary>
 [Serializable, NetSerializable]
-public sealed class CallablePhoneAdminChatOpenEvent(NetEntity phone, string title, bool inputEnabled = true) : EntityEventArgs
+public sealed class CallablePhoneAdminChatOpenEvent(
+    NetEntity phone,
+    string title,
+    bool inputEnabled = true,
+    string? initialImpersonationName = null) : EntityEventArgs
 {
     public NetEntity Phone = phone;
     public string Title = title;
     public bool InputEnabled = inputEnabled;
+    public string? InitialImpersonationName = initialImpersonationName;
 }
 
 /// <summary>

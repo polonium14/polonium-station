@@ -1,4 +1,5 @@
 // SPDX-FileCopyrightText: 2026 Maciej Walendziuk <ozzeusz@gmail.com>
+// SPDX-FileCopyrightText: 2026 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -81,6 +82,11 @@ public sealed partial class CallablePhoneAdminChatWindow : FancyWindow
     {
         if (Input.Editable)
             Input.GrabKeyboardFocus();
+    }
+
+    public void SetImpersonationName(string? name)
+    {
+        ImpersonationInput.Text = name ?? string.Empty;
     }
 
     protected override void Dispose(bool disposing)

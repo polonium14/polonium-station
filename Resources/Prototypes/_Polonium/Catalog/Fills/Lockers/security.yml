@@ -12,9 +12,9 @@
   components:
   - type: StorageFill
     contents:
-    - id: VisMPSPistol
+    - id: WeaponVisMPSPistol
       amount: 2
-    - id: VisMPSPistolMagazine
+    - id: WeaponVisMPSPistolMagazine
       amount: 10
 
 - type: entity

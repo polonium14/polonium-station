@@ -1,17 +1,15 @@
 // SPDX-FileCopyrightText: 2026 Maciej Walendziuk <ozzeusz@gmail.com>
+// SPDX-FileCopyrightText: 2026 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared._Polonium.CallablePhone;
 using Content.Client._Polonium.CallablePhone.UI;
-using Robust.Client.UserInterface;
 
 namespace Content.Client._Polonium.CallablePhone;
 
 public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
 {
-    [Dependency] private readonly IUserInterfaceManager _uiManager = default!;
-
     private readonly Dictionary<NetEntity, CallablePhoneAdminChatWindow> _openAdminChatWindows = new();
     private readonly HashSet<NetEntity> _forceClosingAdminChats = new();
 
@@ -28,25 +26,26 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
 
     private void OnOpenAdminChat(CallablePhoneAdminChatOpenEvent ev)
     {
-        if (_openAdminChatWindows.TryGetValue(ev.Phone, out var existing))
-        {
-            _uiManager.WindowRoot.AddChild(existing);
-            existing.OpenCentered();
-            existing.SetInputEnabled(ev.InputEnabled);
-            existing.FocusInput();
-            return;
-        }
+        var window = EnsureAdminChatWindow(ev.Phone, ev.Title);
+        window.SetImpersonationName(ev.InitialImpersonationName);
+        window.OpenCentered();
+        window.SetInputEnabled(ev.InputEnabled);
+        window.FocusInput();
+    }
 
-        var window = new CallablePhoneAdminChatWindow(ev.Phone, ev.Title);
+    private CallablePhoneAdminChatWindow EnsureAdminChatWindow(NetEntity phone, string title)
+    {
+        if (_openAdminChatWindows.TryGetValue(phone, out var existing))
+            return existing;
+
+        var window = new CallablePhoneAdminChatWindow(phone, title);
         window.MessageSubmitted += OnAdminChatMessageSubmitted;
         window.ImpersonationNameSubmitted += OnAdminChatImpersonationNameSubmitted;
         window.WindowClosed += OnAdminChatWindowClosed;
-        window.OnClose += () => _openAdminChatWindows.Remove(ev.Phone);
-        window.SetInputEnabled(ev.InputEnabled);
+        window.OnClose += () => _openAdminChatWindows.Remove(phone);
 
-        _openAdminChatWindows[ev.Phone] = window;
-        window.OpenCentered();
-        window.FocusInput();
+        _openAdminChatWindows[phone] = window;
+        return window;
     }
 
     private void OnAdminChatMessage(CallablePhoneAdminChatTextMessageEvent ev)

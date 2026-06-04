@@ -13,10 +13,13 @@
 # SPDX-FileCopyrightText: 2025 W.xyz() <tptechteam@gmail.com>
 # SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
 # SPDX-FileCopyrightText: 2025 w.xyz() <84605679+pirakaplant@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 Damian Zieliński <zientasek.pl@gmail.com>
 # SPDX-FileCopyrightText: 2026 Frogoo <153249069+Fr0goo@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2026 Tea <Xerithin@gmail.com>
 # SPDX-FileCopyrightText: 2026 ThatOneMoon <91613003+ThatOneMoon@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2026 ThatOneMoon <juozas.dringelis@gmail.com>
+# SPDX-FileCopyrightText: 2026 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -235,7 +238,7 @@
   id: SecurityOfficerVIS
   storage:
     back:
-    - VisMPSPistol
+    - WeaponVisMPSPistol
 
 # Misc
 - type: loadout

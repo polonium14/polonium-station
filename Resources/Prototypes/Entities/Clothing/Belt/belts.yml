@@ -97,8 +97,10 @@
 # SPDX-FileCopyrightText: 2025 puuupy <59433122+lolmatdi@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2026 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2026 Tea <Xerithin@gmail.com>
 # SPDX-FileCopyrightText: 2026 W.xyz() <84605679+pirakaplant@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 Wudanty <68469194+Wudanty@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2026 Xcybitt <197952719+Xcybitt@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2026 w.xyz() <84605679+pirakaplant@users.noreply.github.com>
 #
@@ -581,9 +583,9 @@
   description: Can hold security gear like handcuffs and flashes.
   components:
   - type: Sprite
-    sprite: _Funkystation/Clothing/Belt/security_belt.rsi
+    sprite: Clothing/Belt/security.rsi
   - type: Clothing
-    sprite: _Funkystation/Clothing/Belt/security_belt.rsi
+    sprite: Clothing/Belt/security.rsi
   - type: ExplosionResistance # Goobstation
     damageCoefficient: 0.5
   - type: Storage
@@ -760,9 +762,9 @@
   description: A versatile chest rig for holding security gear.
   components:
   - type: Sprite
-    sprite: _Funkystation/Clothing/Belt/security_webbing.rsi
+    sprite: Clothing/Belt/securitywebbing.rsi
   - type: Clothing
-    sprite: _Funkystation/Clothing/Belt/security_webbing.rsi
+    sprite: Clothing/Belt/securitywebbing.rsi
 
 - type: entity
   parent: [ ClothingBeltStorageBase, BaseSecurityCargoContraband ]
