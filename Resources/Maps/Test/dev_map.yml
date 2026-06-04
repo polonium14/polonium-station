@@ -1572,7 +1572,7 @@ entities:
     - type: Transform
       pos: 7.5,12.5
       parent: 179
-- proto: BORSniperGun
+- proto: WeaponBORSniperGun
   entities:
   - uid: 1673
     components:
