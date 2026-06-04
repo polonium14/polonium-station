@@ -148,9 +148,9 @@
 - type: entity
   parent: [ BaseERTUplink, ErtCallUplinkDeadSquadPreset ]
   id: ERTUplinkDeadSquad
-  name: WTH terminal
+  name: Death Squad WTH terminal
   description: Warp To Hand terminal. An experimental device for teleporting items directly into the user's hands.
-  suffix: ERT, DEADSQUAD, 60
+  suffix: ERT, DEADSQUAD, 120
   components:
   - type: Sprite
     sprite: _Imperial/Objects/Specific/ErtCall/ert_tablet.rsi
@@ -161,11 +161,10 @@
       visible: true
   - type: Store
     balance:
-      BlueSpaceCube: 60
+      BlueSpaceCube: 120
   - type: Tag
     tags:
       - ErtUplinkDeadSquad
-      - ErtUplinkCombat
 #DEAD SQUAD END
 
 # Polonium Edits Below

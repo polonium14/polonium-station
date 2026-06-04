@@ -24,7 +24,7 @@
 
 - type: currency
   id: BlueSpaceCube
-  displayName: BSC
+  displayName: KBS
   cash:
     1: BlueSpaceCube1
   canWithdraw: true
