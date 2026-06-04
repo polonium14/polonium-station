@@ -497,7 +497,7 @@ public sealed partial class ExplosionSystem : SharedExplosionSystem
     /// </summary>
     private void SendShockwave(MapCoordinates epicenter, int iterationCount, float totalIntensity)
     {
-        const float MinIntensityForShockwave = 20f;
+        const float MinIntensityForShockwave = 150f;
         const float NuclearIntensityThreshold = 50000f;
 
         if (totalIntensity < MinIntensityForShockwave)
@@ -514,44 +514,52 @@ public sealed partial class ExplosionSystem : SharedExplosionSystem
             RaiseNetworkEvent(new ExplosionShockwaveEvent(
                 epicenter.MapId, pos, now,
                 maxRadiusTiles: 1f,
-                durationSeconds: 4.5f,
+                durationSeconds: 3f,
                 intensity: 0f,
                 flash: true), filter);
 
             // 1 - fast inner distortion ring
             RaiseNetworkEvent(new ExplosionShockwaveEvent(
-                epicenter.MapId, pos, now + 0.45,
+                epicenter.MapId, pos, now + 0.3,
                 maxRadiusTiles: 60f,
-                durationSeconds: 2.4f,
+                durationSeconds: 1.28f,
                 intensity: 1f), filter);
 
             // 2 - primary shockwave
             RaiseNetworkEvent(new ExplosionShockwaveEvent(
-                epicenter.MapId, pos, now + 0.6,
+                epicenter.MapId, pos, now + 0.35,
                 maxRadiusTiles: 120f,
-                durationSeconds: 4f,
-                intensity: 0.9f), filter);
+                durationSeconds: 2.3f,
+                intensity: 0.85f), filter);
 
             // 3 - pressure wave
             RaiseNetworkEvent(new ExplosionShockwaveEvent(
-                epicenter.MapId, pos, now + 1.1,
+                epicenter.MapId, pos, now + 0.7,
                 maxRadiusTiles: 200f,
-                durationSeconds: 5.5f,
-                intensity: 0.55f), filter);
+                durationSeconds: 3.2f,
+                intensity: 0.4f), filter);
 
             return;
         }
 
-        var radius = IntensityToRadius(totalIntensity, 1f, float.MaxValue);
-        var shockwaveRadius = MathF.Max(radius * 1.5f, 10f);
-        var visualRange = shockwaveRadius + 30f;
+        // Wave radius and reach scale with intensity; at 150 nearby players see a short pulse, larger blasts travel farther.
+        var explosionRadius = IntensityToRadius(totalIntensity, 1f, float.MaxValue);
+        var minExplosionRadius = IntensityToRadius(MinIntensityForShockwave, 1f, float.MaxValue);
+        var shockwaveRadius = MathF.Max(7f, 7f + (explosionRadius - minExplosionRadius) * 2f);
 
-        var intensity = Math.Clamp(MathF.Sqrt(totalIntensity) / 12f, 0.25f, 1f);
-        var duration = Math.Clamp(shockwaveRadius / 14f, 0.8f, 4f);
+        var intensityT = Math.Clamp((totalIntensity - MinIntensityForShockwave) / 8000f, 0f, 1f);
+        var visualIntensity = 0.45f + intensityT * 0.55f;
+
+        var duration = Math.Clamp(0.5f + shockwaveRadius / 20f, 0.5f, 1.85f);
+
+        var reachFromIntensity = 22f + MathF.Sqrt(totalIntensity - MinIntensityForShockwave) * 1.8f;
+        var visualRange = MathF.Max(
+            shockwaveRadius + 18f,
+            MathF.Max(reachFromIntensity, iterationCount * 5f));
 
         var ev = new ExplosionShockwaveEvent(
             epicenter.MapId, pos, now,
-            shockwaveRadius, duration, intensity);
+            shockwaveRadius, duration, visualIntensity);
 
         var shockwaveFilter = Filter.Empty().AddInRange(epicenter, visualRange, _playerManager, EntityManager);
         RaiseNetworkEvent(ev, shockwaveFilter);
