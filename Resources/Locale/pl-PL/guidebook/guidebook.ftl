@@ -1,4 +1,4 @@
-guidebook-window-title = Poradnik
+guidebook-window-title = Podręcznik
 guidebook-tab-popout-tooltip = Otwórz w nowym oknie
 guidebook-tab-popout-disabled-tooltip = Nie można otworzyć ostatniej zakładki w nowym oknie
 guidebook-placeholder-text = Wybierz wpis.
