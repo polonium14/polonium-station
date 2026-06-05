@@ -50,7 +50,17 @@
 - type: ertCall
   id: CBURN-Wagon
   path: "Maps/_Polonium/Shuttles/ERTShuttles/ERTBurnWagonV2.yml"
-  desc: "Pojemny statek. 1 lider CBURN, 4 medyków CBURN, 6 bojowników CBURN."
+  desc: "Średni statek. 1 lider CBURN, 4 medyków CBURN, 6 bojowników CBURN."
+
+- type: ertCall
+  id: EERT-Janitor4
+  path: "Maps/_Polonium/Shuttles/ERTShuttles/cleaner_ert.yml"
+  desc: "Niewielki statek. 4 woźnych.
+
+- type: ertCall
+  id: ERT-Engineer4
+  path: "Maps/_Polonium/Shuttles/ERTShuttles/engineer_ert.yml"
+  desc: "Niewielki statek. 1 lider, 4 inżynierów.
 
 - type: ertCall
   id: ERT-Small-Eng
@@ -70,7 +80,7 @@
 - type: ertCall
   id: ERT-Small-Jani
   path: "Maps/_Polonium/Shuttles/ERTShuttles/ERT-Small-Jani.yml"
-  desc: "Mały statek. 1 lider, 2 woźnych.
+  desc: "Mały statek. 3 woźnych.
 
 - type: ertCall
   id: ERT-Small-Deathsquad
@@ -80,14 +90,14 @@
 - type: ertCall
   id: ERT-Medium-Eng-Jani
   path: "Maps/_Polonium/Shuttles/ERTShuttles/ERT-Medium-Eng-Jani.yml"
-  desc: "Średni statek. 1 lider, 6 inżynierów, 3 woźnych."
+  desc: "Średni statek z wyposażeniem inżynierskim oraz czyszczącym. 1 lider, 6 inżynierów, 3 woźnych."
 
 - type: ertCall
   id: ERT-Medium-Med
   path: "Maps/_Polonium/Shuttles/ERTShuttles/ERT-Medium-Med.yml"
-  desc: "Średni statek. 1 lider, 9 medyków."
+  desc: "Średni statek ze szpitalem i laboratorium chemicznym. 1 lider, 9 medyków."
 
 - type: ertCall
   id: ERT-Medium-Sec
   path: "Maps/_Polonium/Shuttles/ERTShuttles/ERT-Medium-Sec.yml"
-  desc: "Średni statek. 1 lider, 9 bojowników."
+  desc: "Średni statek z celami więziennymi i zbrojownią. 1 lider, 9 bojowników."
