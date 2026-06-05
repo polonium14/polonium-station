@@ -1116,6 +1116,19 @@ namespace Content.Client.Stylesheets
                     new StyleProperty( Control.StylePropertyModulateSelf, NanoGold)
                 }),
 
+                new StyleRule(new SelectorElement(typeof(RichTextLabel), new[] {StyleClassLabelHeading}, null, null), new[]
+                {
+                    new StyleProperty(Label.StylePropertyFont, notoSansBold16),
+                    new StyleProperty(Control.StylePropertyModulateSelf, NanoGold),
+                }),
+
+                new StyleRule(new SelectorElement(typeof(RichTextLabel), new[] {StyleClassLabelHeadingBigger}, null, null),
+                    new[]
+                    {
+                        new StyleProperty(Label.StylePropertyFont, notoSansBold20),
+                        new StyleProperty(Control.StylePropertyModulateSelf, NanoGold),
+                    }),
+
                 // alert tooltip
                 new StyleRule(new SelectorElement(typeof(RichTextLabel), new[] {StyleClassTooltipAlertTitle}, null, null), new[]
                 {
