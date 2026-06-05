@@ -53,39 +53,39 @@
   desc: "Średni statek. 1 lider CBURN, 4 medyków CBURN, 6 bojowników CBURN."
 
 - type: ertCall
-  id: EERT-Janitor4
-  path: "Maps/_Polonium/Shuttles/ERTShuttles/cleaner_ert.yml"
-  desc: "Niewielki statek. 4 woźnych.
+  id: ERT-Janitor4
+  path: "Maps/_Polonium/Shuttles/ERTShuttles/ERTJanitor4.yml"
+  desc: "Niewielki statek. 4 woźnych."
 
 - type: ertCall
   id: ERT-Engineer4
-  path: "Maps/_Polonium/Shuttles/ERTShuttles/engineer_ert.yml"
-  desc: "Niewielki statek. 1 lider, 4 inżynierów.
+  path: "Maps/_Polonium/Shuttles/ERTShuttles/ERTEngineer4.yml"
+  desc: "Niewielki statek. 1 lider, 4 inżynierów."
 
 - type: ertCall
   id: ERT-Small-Eng
   path: "Maps/_Polonium/Shuttles/ERTShuttles/ERT-Small-Eng.yml"
-  desc: "Mały statek. 1 lider, 2 inżynierów.
+  desc: "Mały statek. 1 lider, 2 inżynierów."
 
 - type: ertCall
   id: ERT-Small-Med
   path: "Maps/_Polonium/Shuttles/ERTShuttles/ERT-Small-Med.yml"
-  desc: "Mały statek. 1 lider, 2 medyków.
+  desc: "Mały statek. 1 lider, 2 medyków."
 
 - type: ertCall
   id: ERT-Small-Sec
   path: "Maps/_Polonium/Shuttles/ERTShuttles/ERT-Small-Sec.yml"
-  desc: "Mały statek. 1 lider, 2 bojowników.
+  desc: "Mały statek. 1 lider, 2 bojowników."
 
 - type: ertCall
   id: ERT-Small-Jani
   path: "Maps/_Polonium/Shuttles/ERTShuttles/ERT-Small-Jani.yml"
-  desc: "Mały statek. 3 woźnych.
+  desc: "Mały statek. 3 woźnych."
 
 - type: ertCall
   id: ERT-Small-Deathsquad
   path: "Maps/_Polonium/Shuttles/ERTShuttles/ERT-Small-Deathsquad.yml"
-  desc: "Mały statek. 3 bojowników szwadronu śmierci.
+  desc: "Mały statek. 3 bojowników szwadronu śmierci."
 
 - type: ertCall
   id: ERT-Medium-Eng-Jani
