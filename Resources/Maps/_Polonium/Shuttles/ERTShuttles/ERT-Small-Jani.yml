@@ -1317,7 +1317,7 @@ entities:
     - type: Transform
       pos: -0.5,-1.5
       parent: 1
-- proto: GrenadeCleanade
+- proto: CleanerGrenade
   entities:
   - uid: 140
     components:
@@ -1959,18 +1959,6 @@ entities:
     components:
     - type: Transform
       pos: -3.5,3.5
-      parent: 1
-- proto: WeaponLauncherHydra
-  entities:
-  - uid: 258
-    components:
-    - type: Transform
-      pos: -4.4675775,6.7263184
-      parent: 1
-  - uid: 264
-    components:
-    - type: Transform
-      pos: -4.5300775,6.4659014
       parent: 1
 - proto: WeaponSprayNozzle
   entities:

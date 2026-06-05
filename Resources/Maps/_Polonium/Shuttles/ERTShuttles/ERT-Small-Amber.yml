@@ -342,7 +342,7 @@ entities:
       parent: 1
     - type: Fixtures
       fixtures: {}
-- proto: AtmosDeviceFanDirectionalDev
+- proto: AtmosDeviceFanDirectional
   entities:
   - uid: 247
     components:
@@ -1423,28 +1423,28 @@ entities:
       rot: 3.141592653589793 rad
       pos: -2.5,-3.5
       parent: 1
-- proto: RandomHumanoidSpawnerERTEngineerAmberVeteran
+- proto: SpawnERTEngineerEVAPreset
   entities:
   - uid: 251
     components:
     - type: Transform
       pos: -3.4983344,-0.31948614
       parent: 1
-- proto: RandomHumanoidSpawnerERTLeaderAmberVeteran
+- proto: SpawnERTLeaderEVAPreset
   entities:
   - uid: 128
     components:
     - type: Transform
       pos: -1.5217719,7.498429
       parent: 1
-- proto: RandomHumanoidSpawnerERTMedicalAmberVeteran
+- proto: SpawnERTMedicEVAPreset
   entities:
   - uid: 250
     components:
     - type: Transform
       pos: -4.5295844,-0.33511114
       parent: 1
-- proto: RandomHumanoidSpawnerERTSecurityAmberVeteran
+- proto: SpawnERTSecurityEVAPreset
   entities:
   - uid: 195
     components:
@@ -1828,7 +1828,7 @@ entities:
     - type: Transform
       pos: -1.5,0.5
       parent: 1
-- proto: WeaponEnergyTurretSecurity
+- proto: WeaponEnergyTurretStation
   entities:
   - uid: 81
     components:
@@ -1839,7 +1839,7 @@ entities:
       configurators: []
       deviceLists:
       - 7
-- proto: WeaponEnergyTurretSecurityControlPanel
+- proto: WeaponEnergyTurretStationControlPanel
   entities:
   - uid: 7
     components:
