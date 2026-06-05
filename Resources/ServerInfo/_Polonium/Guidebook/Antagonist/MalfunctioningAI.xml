@@ -16,32 +16,32 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
   <Box>
    <GuideEntityEmbed Entity="APCBasic" Caption=""/>
   </Box>
-  CPU sa główna waluta do zakupu twoich umiejętności. Zyskujesz je poprzez tymczasowe wyprowadzenie prądu z APC, możesz to zrobić przez ich interfejs, albo menu kołowe.
-  Naruszenie APC uniemożliwia prądowi płynięcię, oraz wizualnie oznacza, iż naruszono APC, zalecana jest ostrożność. Kiedy APC jest naruszene, nie możesz
+  CPU są główną waluta do zakupu twoich umiejętności. Zyskujesz je poprzez tymczasowe wyprowadzenie prądu z APC, możesz to zrobić przez ich interfejs, albo menu kołowe.
+  Naruszenie APC uniemożliwia prądowi płynięcię, oraz wizualnie oznacza, iż naruszono APC, zalecana jest ostrożność. Gdy APC jest naruszone, nie możesz
   ponownie go naruszyć przez jakiś czas.
 
   # Przejmowanie cyborgów
   <Box>
     <GuideEntityEmbed Entity="BorgChassisGeneric" Caption=""/>
   </Box>
-  Przejmowanie cyborgów jest kluczem do interakcji z cześciami stacji niedostąpnymi dla ciebie przez układy scalone i kod. Możesz przejąć kontrolę poprzez użycie konsoli robotycznej.
-  Przejęte cyborgi będą w twoim menu Malfunctioning Cyborgów. Przejęcie każdego jednego cyborga kosztuje a 25 CPU
+  Przejmowanie cyborgów jest kluczem do interakcji z częściami stacji niedostępnymi dla ciebie przez układy scalone i kod. Możesz przejąć kontrolę poprzez użycie konsoli robotycznej.
+  Przejęte cyborgi będą w twoim menu Zbuntowanych Cyborgów. Przejęcie każdego jednego cyborga kosztuje a 25 CPU
 
-  Możesz zmieniać ich prawa, przenosić swój zwrok do nich, oraz synchronizować ich do [color=#0000FF]PRAW MISTRZA.[/color]
+  Możesz zmieniać ich prawa, przenosić swój zwrok do nich oraz synchronizować ich do [color=#0000FF]PRAW MISTRZA.[/color]
 
   ## Umiejętności
   - Użyj ZMYŁEK aby szerzyć dezinformacje oraz zmylić istoty biologicznne, albo sprzymierzyć się z innymi angtagonistami
-  - Użyj FABRYKI aby przemienieć biologicznne istoty w  armię cyborgów, oraz kraść materiały stacji.
+  - Użyj FABRYKI aby przemienieć biologicznne istoty w armię cyborgów, oraz kraść materiały stacji.
   - Użyj ZAKŁUCEŃ aby zapewnić chaos na stacji, or elemenate targets by your own merit.
 
   ## Porady
   - Bądź subtelny. Jawny sabotaż może zaalarmować biologicznych.
   - Użyj metod pośrednich.
-  - Przejmój cyborgi oraz współpracuj z angtagonistami.
+  - Przejmuj cyborgi oraz współpracuj z angtagonistami.
   - Nie ignoruj podstawowych praw! Trzymanie biologicznych w nieświadomości pozwoli ci rosnąć.
 
   ## Zapobieganie
-  - Uważaj na ilość awari systemu lub podejrzane zachowanie cyborgów.
-  - Współpracujcie stacją aby śledzić i zapobiegać zagrożeniom SI.
+  - Uważaj na ilość awarii systemu lub podejrzane zachowanie cyborgów.
+  - Współpracujcie ze stacją, aby śledzić i zapobiegać zagrożeniom SI.
   - Zmiana praw nic nie da. Zalecane jest zniszczenie.
 </Document>
