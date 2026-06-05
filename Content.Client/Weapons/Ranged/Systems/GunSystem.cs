@@ -385,8 +385,13 @@ public sealed partial class GunSystem : SharedGunSystem
         EntityUid? user = null,
         float speed = 20)
     {
-        EnsureComp<PredictedProjectileClientComponent>(uid);
-        _physics.UpdateIsPredicted(uid);
+        // Polonium - only mark projectiles as client-predicted when net.predict is enabled.
+        if (ClientSideGunPrediction)
+        {
+            EnsureComp<PredictedProjectileClientComponent>(uid);
+            _physics.UpdateIsPredicted(uid);
+        }
+
         base.ShootProjectile(uid, direction, gunVelocity, gunUid, user, speed);
     }
 }
