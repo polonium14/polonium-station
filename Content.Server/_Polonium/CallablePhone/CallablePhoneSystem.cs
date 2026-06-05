@@ -300,6 +300,10 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
         {
             StartCallWaitingLoop((phone, callable));
         }
+        else if (telephone.CurrentState == TelephoneState.InCall)
+        {
+            TryStartInCallStaticLoop((phone, callable));
+        }
     }
 
     private void OnHandsetUnequipped(Entity<TelephoneHandsetComponent> handset, ref GotUnequippedHandEvent args)
@@ -505,11 +509,17 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
             StartDialToneLoop(entity);
         else
             StopDialToneLoop(entity);
+
+        if (args.NewState == TelephoneState.InCall)
+            TryStartInCallStaticLoop(entity);
+        else
+            StopInCallStaticLoop(entity);
     }
 
     private void OnCallCommenced(Entity<CallablePhoneComponent> entity, ref TelephoneCallCommencedEvent args)
     {
         StopCallWaitingLoop(entity);
+        TryStartInCallStaticLoop(entity);
 
         if (!TryComp<TelephoneComponent>(entity, out var telephone))
             return;
@@ -529,6 +539,7 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
     private void OnCallEnded(Entity<CallablePhoneComponent> entity, ref TelephoneCallEndedEvent args)
     {
         StopCallWaitingLoop(entity);
+        StopInCallStaticLoop(entity);
         ClearHandsetMicrophones(entity);
         EndGhostCallerDeviceChat(entity.Owner);
         ClearAdminImpersonation(entity);
@@ -1648,6 +1659,30 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
         StopDialToneLoop(entity);
         StopCallWaitingLoop(entity);
         StopBusyToneLoop(entity);
+        StopInCallStaticLoop(entity);
+    }
+
+    private void TryStartInCallStaticLoop(Entity<CallablePhoneComponent> entity)
+    {
+        if (entity.Comp.InCallStaticSound == null || entity.Comp.InCallStaticStream != null)
+            return;
+
+        if (!TryComp<TelephoneComponent>(entity, out var telephone) || telephone.CurrentState != TelephoneState.InCall)
+            return;
+
+        var holder = entity.Comp.HandsetHolder;
+        if (holder == null || !Exists(holder) || !UserHoldingPhoneHandset(entity, holder.Value))
+            return;
+
+        entity.Comp.InCallStaticStream = _audio.PlayGlobal(
+            entity.Comp.InCallStaticSound,
+            holder.Value,
+            AudioParams.Default.WithLoop(true))?.Entity;
+    }
+
+    private void StopInCallStaticLoop(Entity<CallablePhoneComponent> entity)
+    {
+        entity.Comp.InCallStaticStream = _audio.Stop(entity.Comp.InCallStaticStream);
     }
 
     private void StartDialToneLoop(Entity<CallablePhoneComponent> entity)

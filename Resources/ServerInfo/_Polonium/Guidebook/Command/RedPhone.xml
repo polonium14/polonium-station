@@ -1,0 +1,68 @@
+<Document>
+# Czerwony Telefon
+
+<Box>
+  <GuideEntityEmbed Entity="CallablePhoneInstrument" Caption="Czerwony Telefon"/>
+</Box>
+
+Niniejszy dokument określa korporacyjne zasady użytkowania [color=#a4885c]Czerwonego Telefonu[/color] — dedykowanej linii bezpośredniej do pilnego kontaktowania się z [color=#009100]Centralnym Dowództwem[/color] [color=#134975]Nanotrasen[/color]. Urządzenie stanowi zasób o podwyższonym priorytecie operacyjnym i podlega ścisłej kontroli.
+
+## Charakter urządzenia
+
+Czerwony Telefon nie zastępuje standardowych środków komunikacji stacji. Służy wyłącznie do sytuacji, w których konwencjonalne kanały są niewystarczające, niedostępne lub nie pozwalają na terminowe uzyskanie decyzji korporacyjnej.
+
+## Dozwolone użycie
+
+Korzystanie z Czerwonego Telefonu w celu połączenia z [color=#009100]Centralnym Dowództwem[/color] jest [bold]dozwolone wyłącznie w sytuacjach nadzwyczajnych[/bold], w tym m.in. gdy:
+
+- doszło do poważnego naruszenia polityki korporacyjnej, sabotażu lub incydentu bezpieczeństwa klasy operacyjnej, którego nie można rozstrzygnąć wyłącznie na poziomie stacji;
+- konieczne jest odstępstwo od SOP lub prawa kosmicznego, a lokalne [color=#1b67a5]Dowództwo[/color] stacji wymaga uprawnienia lub instrukcji Centralnego Dowództwa przed podjęciem działania;
+- standardowe środki komunikacji zostały skompromitowane, zniszczone lub są niedostępne z przyczyn technicznych bądź taktycznych.
+
+Przed sięgnięciem po Czerwony Telefon personel [color=#1b67a5]Dowództwa[/color] stacji ma obowiązek wyczerpać rozsądne środki lokalne, zgodnie z [textlink="SPO Kapitana" link="CaptainSOP"] oraz [textlink="ogólnym SPO Dowództwa" link="CommandSOP"].
+
+## Zakaz nadużyć
+
+Następujące zachowania stanowią naruszenie polityki korporacyjnej:
+
+- wykonywanie połączeń w sprawach rutynowych, administracyjnych lub rozwiązywalnych za pomocą standardowej komunikacji;
+- używanie telefonu w celach prywatnych, żartów, testów lub demonstracji bez autoryzacji;
+- udostępnianie aparatu lub słuchawki osobom bez uprawnień [color=#1b67a5]Dowództwa[/color];
+- pozostawianie urządzenia bez nadzoru w miejscu dostępnym dla nieuprawnionego personelu lub gości.
+- używanie telefonu do innych celów, niezgodnych z polityką korporacyjną.
+
+Nadużycie linii może skutkować konsekwencjami dyscyplinarnymi ze strony [textlink="personelu Centralnego Dowództwa na stacji" link="CentralCommandSOP"], w tym konfiskatą sprzętu (Klasa 1), karą dyscyplinarną (Klasa 2) lub — w skrajnych przypadkach — środkami Klasy 3, zgodnie z obowiązującymi procedurami.
+
+## Ochrona i kontrola dostępu
+
+Czerwony telefon [bold]musi być chroniony przed dostępem osób postronnych[/bold]. Oznacza to w szczególności:
+
+- umieszczenie aparatu w pomieszczeniu [color=#1b67a5]Dowództwa[/color] lub innym obszarze z kontrolowanym dostępem;
+- zabezpieczenie przed zabraniem, przeniesieniem lub ukryciem przez personel niebędący członkiem [color=#1b67a5]Dowództwa[/color], o ile nie uzyskano zgody [color=#009100]CentDow[/color] lub uprawnionego przedstawiciela korporacji na stacji;
+- niezwłoczne zawieszenie słuchawki po zakończeniu rozmowy i uniemożliwienie korzystania z linii przez osoby trzecie;
+- natychmiastowe zgłoszenie [color=#cb0000]Ochronie[/color] lub [color=#009100]personelowi CentDow[/color] w przypadku kradzieży, sabotażu lub podejrzenia nieuprawnionego użycia.
+
+[color=#1b67a5]Kapitan[/color] ponosi ostateczną odpowiedzialność za stan zabezpieczenia czerwonego telefonu na pokładzie, z możliwością delegowania nadzoru innemu członkowi [color=#1b67a5]Dowództwa[/color].
+
+Kradzież Czerwonego Telefonu jest traktowana jako wielka kradzież i jest karana zgodnie z [textlink="prawami kosmicznymi" link="SpaceLaw"].
+
+## Procedura połączenia
+
+[bold]1.[/bold] Upewnij się, że sytuacja spełnia kryteria sytuacji nadzwyczajnej opisane powyżej.
+
+[bold]2.[/bold] Podnieś słuchawkę i nawiąż połączenie wyłącznie z linią [color=#009100]Centralnego Dowództwa[/color] wskazaną w katalogu aparatu.
+
+[bold]3.[/bold] Przedstaw się stanowiskiem i nazwiskiem, opisz sytuację zwięźle i przedstaw fakty — bez spekulacji. Mów w sposób oficjalny, nie podając żadnych zbędnych informacji oprócz potrzebnych do rozwiązania problemu.
+
+[bold]4.[/bold] Postępuj zgodnie z instrukcjami Centralnego Dowództwa.
+
+[bold]5.[/bold] Po zakończeniu rozmowy odłóż słuchawkę na aparat i upewnij się, że linia nie pozostaje otwarta.
+
+## Powiązane dokumenty
+
+- [textlink="SPO Dowództwa" link="CommandSOP"]
+- [textlink="SPO Kapitana" link="CaptainSOP"]
+- [textlink="SPO Centralnego Dowództwa" link="CentralCommandSOP"]
+- [textlink="Podręcznik Szkoleniowy Dowództwa" link="CommandTrainingManual"]
+
+</Document>

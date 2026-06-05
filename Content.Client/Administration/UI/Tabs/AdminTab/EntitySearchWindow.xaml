@@ -1,0 +1,25 @@
+<DefaultWindow
+    xmlns="https://spacestation14.io"
+    Title="{Loc admin-entity-search-title}"
+    MinSize="500 400">
+    <BoxContainer Orientation="Vertical">
+        <BoxContainer Orientation="Horizontal" SeparationOverride="4">
+            <LineEdit
+                Name="SearchLineEdit"
+                PlaceHolder="{Loc admin-entity-search-placeholder}"
+                HorizontalExpand="True" />
+            <Button
+                Name="SearchButton"
+                Text="{Loc admin-entity-search-button}" />
+            <Button
+                Name="NextButton"
+                Text="{Loc admin-entity-search-next}"
+                StyleClasses="OpenLeft"
+                Disabled="True" />
+        </BoxContainer>
+        <Label Name="StatusLabel" />
+        <ScrollContainer VerticalExpand="True">
+            <BoxContainer Orientation="Vertical" Name="ItemList" VerticalExpand="True" />
+        </ScrollContainer>
+    </BoxContainer>
+</DefaultWindow>

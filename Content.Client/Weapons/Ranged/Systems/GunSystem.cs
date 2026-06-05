@@ -24,6 +24,7 @@
 // SPDX-FileCopyrightText: 2025 Toaster <mrtoastymyroasty@gmail.com>
 // SPDX-FileCopyrightText: 2025 Toastermeister <215405651+Toastermeister@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+// SPDX-FileCopyrightText: 2026 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2026 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-Later
@@ -385,8 +386,13 @@ public sealed partial class GunSystem : SharedGunSystem
         EntityUid? user = null,
         float speed = 20)
     {
-        EnsureComp<PredictedProjectileClientComponent>(uid);
-        _physics.UpdateIsPredicted(uid);
+        // Polonium - only mark projectiles as client-predicted when net.predict is enabled.
+        if (ClientSideGunPrediction)
+        {
+            EnsureComp<PredictedProjectileClientComponent>(uid);
+            _physics.UpdateIsPredicted(uid);
+        }
+
         base.ShootProjectile(uid, direction, gunVelocity, gunUid, user, speed);
     }
 }

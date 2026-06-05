@@ -1,4 +1,5 @@
 // SPDX-FileCopyrightText: 2026 Maciej Walendziuk <ozzeusz@gmail.com>
+// SPDX-FileCopyrightText: 2026 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -154,4 +155,13 @@ public sealed partial class CallablePhoneComponent : Component
     /// </summary>
     [ViewVariables]
     public EntityUid? BusyToneStream;
+
+    [DataField]
+    public SoundSpecifier? InCallStaticSound;
+
+    /// <summary>
+    /// Server side looping in-call static audio stream for the handset holder
+    /// </summary>
+    [ViewVariables]
+    public EntityUid? InCallStaticStream;
 }

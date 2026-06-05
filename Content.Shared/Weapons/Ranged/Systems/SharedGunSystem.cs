@@ -87,6 +87,7 @@ using Content.Shared.Weapons.Hitscan.Components;
 using Content.Shared.Weapons.Hitscan.Events;
 using Content.Shared.Weapons.Reflect;
 using Content.Shared.Whitelist;
+using Robust.Shared;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Configuration;
@@ -149,6 +150,11 @@ public abstract partial class SharedGunSystem : EntitySystem
     public const string ModeExamineColor = "cyan";
     private const float DamagePitchVariation = 0.05f;
     public bool GunPrediction { get; private set; }
+
+    // Polonium - require both RMC gun prediction and client net.predict; without net.predict client-side
+    // projectiles never simulate physics while server sprites stay hidden, so nothing is visible.
+    protected bool ClientSideGunPrediction =>
+        GunPrediction && (!_netManager.IsClient || _config.GetCVar(CVars.NetPredict));
 
     public override void Initialize()
     {
@@ -577,7 +583,8 @@ public abstract partial class SharedGunSystem : EntitySystem
                 case CartridgeAmmoComponent cartridge:
                     if (!cartridge.Spent)
                     {
-                        if (_netManager.IsServer || GunPrediction)
+                        // Polonium - was GunPrediction, gate on ClientSideGunPrediction so client spawns nothing when net.predict is off
+                        if (_netManager.IsServer || ClientSideGunPrediction)
                         {
                             var uid = Spawn(cartridge.Prototype, fromEnt);
                             CreateAndFireProjectiles(uid, cartridge);
@@ -620,7 +627,7 @@ public abstract partial class SharedGunSystem : EntitySystem
                     break;
                 // Ammo shoots itself
                 case AmmoComponent newAmmo:
-                    if (_netManager.IsServer || GunPrediction)
+                    if (_netManager.IsServer || ClientSideGunPrediction)
                     {
                         CreateAndFireProjectiles(ent!.Value, newAmmo);
                     }
@@ -647,7 +654,7 @@ public abstract partial class SharedGunSystem : EntitySystem
                     if (ent == null)
                         break;
 
-                    if (_netManager.IsServer || GunPrediction)
+                    if (_netManager.IsServer || ClientSideGunPrediction)
                     {
                         var hitscanEv = new HitscanTraceEvent
                         {
@@ -852,7 +859,7 @@ public abstract partial class SharedGunSystem : EntitySystem
         if (!HasComp<ProjectileComponent>(uid))
         {
             // Remove shootable components on client side for prediction, similar to AmmoComponent handling
-            if (_netManager.IsClient && !GunPrediction)
+            if (_netManager.IsClient && !ClientSideGunPrediction)
                 RemoveShootable(uid);
 
             // Ensure thrown items are removed from containers so they're visible
