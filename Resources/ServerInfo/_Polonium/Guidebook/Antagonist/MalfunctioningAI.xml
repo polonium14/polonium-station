@@ -17,8 +17,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
    <GuideEntityEmbed Entity="APCBasic" Caption=""/>
   </Box>
   CPU są główną waluta do zakupu twoich umiejętności. Zyskujesz je poprzez tymczasowe wyprowadzenie prądu z APC, możesz to zrobić przez ich interfejs, albo menu kołowe.
-  Naruszenie APC uniemożliwia prądowi płynięcię, oraz wizualnie oznacza, iż naruszono APC, zalecana jest ostrożność. Gdy APC jest naruszone, nie możesz
-  ponownie go naruszyć przez jakiś czas.
+  Naruszenie APC uniemożliwia prądowi płynięcię, oraz wizualnie oznacza, iż naruszono APC, zalecana jest ostrożność. Gdy APC jest naruszone, nie możesz ponownie go naruszyć przez jakiś czas.
 
   # Przejmowanie cyborgów
   <Box>
@@ -32,7 +31,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
   ## Umiejętności
   - Użyj ZMYŁEK aby szerzyć dezinformacje oraz zmylić istoty biologicznne, albo sprzymierzyć się z innymi angtagonistami
   - Użyj FABRYKI aby przemienieć biologicznne istoty w armię cyborgów, oraz kraść materiały stacji.
-  - Użyj ZAKŁUCEŃ aby zapewnić chaos na stacji, or elemenate targets by your own merit.
+  - Użyj ZAKŁUCEŃ aby zapewnić chaos na stacji, albo eliminować potencjalne cele.
 
   ## Porady
   - Bądź subtelny. Jawny sabotaż może zaalarmować biologicznych.
@@ -43,5 +42,5 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
   ## Zapobieganie
   - Uważaj na ilość awarii systemu lub podejrzane zachowanie cyborgów.
   - Współpracujcie ze stacją, aby śledzić i zapobiegać zagrożeniom SI.
-  - Zmiana praw nic nie da. Zalecane jest zniszczenie.
+  - Zmiana praw nic nie da przeciw SI. Zalecane jest zniszczenie.
 </Document>
