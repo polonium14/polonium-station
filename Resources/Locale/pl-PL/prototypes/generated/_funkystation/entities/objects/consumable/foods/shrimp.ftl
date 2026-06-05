@@ -1,4 +1,4 @@
 ent-FoodShrimpFried = Shreersh
-    .desc = A shrimple meal that's easy to make by aspiring and expert chefs alike!
-ent-FoodShrimpRaw = Raw Shrimp
-    .desc = A Shmall piece of Shrimp that has yet to reach it's true potential. Sauté it with some butter!
+    .desc = Shrimple posiłek, który łatwo przygotować zarówno początkującym, jak i mistrzom kuchni!
+ent-FoodShrimpRaw = surowa krewetka
+    .desc = Shmall kawałek krewetki, który jeszcze nie osiągnął pełni możliwości. Podsmaż z masłem!

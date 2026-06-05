@@ -1,6 +1,7 @@
 // SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
 // SPDX-FileCopyrightText: 2025 DrSmugleaf <10968691+DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Toaster <mrtoastymyroasty@gmail.com>
 // SPDX-FileCopyrightText: 2025 Toastermeister <215405651+Toastermeister@users.noreply.github.com>
 //
@@ -17,6 +18,7 @@ using Content.Shared.Projectiles;
 using Content.Shared.Weapons.Ranged.Events;
 using Content.Shared.Weapons.Ranged.Systems;
 using Robust.Client.GameObjects;
+using Robust.Client.GameStates;
 using Robust.Client.Physics;
 using Robust.Client.Player;
 using Robust.Shared.Map;
@@ -32,21 +34,21 @@ public sealed class GunPredictionSystem : SharedGunPredictionSystem
 {
     public const string ProjectileFixture = "projectile";
     [Dependency] private readonly SharedGunSystem _gun = default!;
+    [Dependency] private readonly IClientGameStateManager _gameState = default!;
     [Dependency] private readonly PhysicsSystem _physics = default!;
     [Dependency] private readonly IPlayerManager _player = default!;
     [Dependency] private readonly ProjectileSystem _projectile = default!;
+    [Dependency] private readonly SpriteSystem _sprite = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
 
     private EntityQuery<IgnorePredictionHideComponent> _ignorePredictionHideQuery;
-    private EntityQuery<SpriteComponent> _spriteQuery;
 
     public override void Initialize()
     {
         base.Initialize();
 
         _ignorePredictionHideQuery = GetEntityQuery<IgnorePredictionHideComponent>();
-        _spriteQuery = GetEntityQuery<SpriteComponent>();
 
         SubscribeLocalEvent<PhysicsUpdateBeforeSolveEvent>(OnBeforeSolve);
         SubscribeLocalEvent<PhysicsUpdateAfterSolveEvent>(OnAfterSolve);
@@ -122,9 +124,7 @@ public sealed class GunPredictionSystem : SharedGunPredictionSystem
         return;
 
     // Check if contact is anchored for directional filtering
-    var isAnchored = false;
-    if (TryComp<TransformComponent>(args.OtherEntity, out var contactXform))
-        isAnchored = contactXform.Anchored;
+    var isAnchored = Transform(args.OtherEntity).Anchored;
 
     // Additional filtering for non-anchored entities - match Update() logic
     if (!isAnchored)
@@ -160,11 +160,31 @@ public sealed class GunPredictionSystem : SharedGunPredictionSystem
     RaiseNetworkEvent(ev);
 
     _projectile.ProjectileCollide((ent, projectile, physics), args.OtherEntity, predicted: true);
+    // Polonium - stop and hide predicted projectile on hit
+    FinishPredictedClientHit(ent, ent.Comp, physics);
 }
+
+    // Polonium - predicted ProjectileCollide does not delete or stop the client projectile, causing ghost bullets
+    private void FinishPredictedClientHit(
+        EntityUid uid,
+        PredictedProjectileClientComponent predicted,
+        PhysicsComponent physics)
+    {
+        if (predicted.Hit)
+            return;
+
+        predicted.Hit = true;
+
+        _physics.SetLinearVelocity(uid, Vector2.Zero, body: physics);
+
+        _sprite.SetVisible(uid, false);
+    }
 
     private void OnServerProjectileStartup(Entity<PredictedProjectileServerComponent> ent, ref ComponentStartup args)
     {
-        if (!GunPrediction)
+        // Polonium - keep server projectiles visible when net.predict is off
+        // Client relies on them instead of local ones.
+        if (!GunPrediction || !_gameState.IsPredictionEnabled)
             return;
 
         if (ent.Comp.ClientEnt != _player.LocalEntity)
@@ -173,8 +193,7 @@ public sealed class GunPredictionSystem : SharedGunPredictionSystem
         if (_ignorePredictionHideQuery.HasComp(ent))
             return;
 
-        if (_spriteQuery.TryComp(ent, out var sprite))
-            sprite.Visible = false;
+        _sprite.SetVisible(ent.Owner, false);
     }
 
 public override void Update(float frameTime)
@@ -232,9 +251,7 @@ public override void Update(float frameTime)
                 continue;
 
             // Check if contact is anchored
-            var isAnchored = false;
-            if (TryComp<TransformComponent>(contact, out var contactXform))
-                isAnchored = contactXform.Anchored;
+            var isAnchored = Transform(contact).Anchored;
 
             // Check if any of the contact's fixtures would collide with the projectile fixture
             var shouldCollide = false;
@@ -302,17 +319,19 @@ public override void Update(float frameTime)
         RaiseNetworkEvent(ev);
 
         _projectile.ProjectileCollide((uid, projectile, physics), filteredContacts.First());
+        // Polonium - same ghost-bullet fix as StartCollide fallback path        FinishPredictedClientHit(uid, predicted, physics);
     }
 
     var predictedQuery = EntityQueryEnumerator<PredictedProjectileHitComponent, SpriteComponent, TransformComponent>();
-    while (predictedQuery.MoveNext(out var hit, out var sprite, out var xform))
+    // Polonium - use entity uid from query; first out var was the component, not EntityUid
+    while (predictedQuery.MoveNext(out var uid, out var hit, out var sprite, out var xform))
     {
         var origin = hit.Origin;
         var coordinates = xform.Coordinates;
         if (!origin.TryDistance(EntityManager, _transform, coordinates, out var distance) ||
             distance >= hit.Distance)
         {
-            sprite.Visible = false;
+            _sprite.SetVisible((uid, sprite), false);
         }
     }
 }

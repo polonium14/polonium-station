@@ -7,6 +7,16 @@ cmd-bql_select-err-rest = Warning: unused part after BQL query: "{ $rest }"
 ui-bql-results-title = BQL results
 ui-bql-results-vv = VV
 ui-bql-results-tp = TP
-ui-bql-results-vv-tooltip = View entity variables
-ui-bql-results-tp-tooltip = Teleport to entity
-ui-bql-results-status = { $count } entities
+ui-bql-results-vv-tooltip = Wyświetl zmienne encji
+ui-bql-results-tp-tooltip = Teleportuj do encji
+ui-bql-results-status-more = { $count } { $count ->
+    [one] encja (więcej dostępnych)
+    [few] encje (więcej dostępnych)
+   *[other] encji (więcej dostępnych)
+}
+
+ui-bql-results-status = { $count } { $count ->
+    [one] encja
+    [few] encje
+   *[many] encji
+}

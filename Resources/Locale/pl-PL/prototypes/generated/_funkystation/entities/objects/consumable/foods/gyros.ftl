@@ -1,8 +1,8 @@
 ent-FoodGyrosBase = { ent-FoodInjectableBase }
     .desc = { ent-FoodInjectableBase.desc }
-ent-FoodGyrosMeat = meat gyro
-    .desc = A messy Greek dish loaded with spiced meat, tomato, greens, red onions and tzatziki sauce all on a pita bread.
-ent-FoodGyrosMystery = mystery gyro
-    .desc = That greek dish, you know the one. How do you pronounce it again?
-ent-FoodGyrosTofu = tofu gyro
-    .desc = Questionably greek but undeniably gyros. Now vegetarian!
+ent-FoodGyrosMeat = gyros z mięsem
+    .desc = Nieporządna grecka potrawa z doprawionym mięsem, pomidorem, zieleniną, czerwoną cebulą i sosem tzatziki na picie.
+ent-FoodGyrosMystery = tajemniczy gyros
+    .desc = Ta grecka potrawa, wiesz o której mowa. Jak się to właściwie wymawia?
+ent-FoodGyrosTofu = gyros z tofu
+    .desc = Wątpliwie grecki, ale niewątpliwie gyros. Teraz wegetariański!

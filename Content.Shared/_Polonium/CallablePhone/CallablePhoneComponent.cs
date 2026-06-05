@@ -1,3 +1,8 @@
+// SPDX-FileCopyrightText: 2026 Maciej Walendziuk <ozzeusz@gmail.com>
+// SPDX-FileCopyrightText: 2026 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 
@@ -28,6 +33,13 @@ public sealed partial class CallablePhoneComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public bool IncludeCentCommInDirectory;
+
+    /// <summary>
+    /// If true, the handset directory lists only CentComm lines (station red phone).
+    /// Requires <see cref="IncludeCentCommInDirectory"/>.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool OnlyCentCommInDirectory;
 
     /// <summary>
     /// If true, this line is private but may dial any public listed line (blood-red phone).
@@ -143,4 +155,13 @@ public sealed partial class CallablePhoneComponent : Component
     /// </summary>
     [ViewVariables]
     public EntityUid? BusyToneStream;
+
+    [DataField]
+    public SoundSpecifier? InCallStaticSound;
+
+    /// <summary>
+    /// Server side looping in-call static audio stream for the handset holder
+    /// </summary>
+    [ViewVariables]
+    public EntityUid? InCallStaticStream;
 }

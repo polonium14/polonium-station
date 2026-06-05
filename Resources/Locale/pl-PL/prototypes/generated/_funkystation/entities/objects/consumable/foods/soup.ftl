@@ -1,2 +1,2 @@
-ent-FoodMysteryStew = slop bowl
-    .desc = A dubious stew made of dubious protein.
+ent-FoodMysteryStew = miska pomyj
+    .desc = Podejrzany gulasz z podejrzanym białkiem.

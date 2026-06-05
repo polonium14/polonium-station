@@ -1,3 +1,3 @@
 
-reagent-name-feverdream = fever dream
-reagent-desc-feverdream = A creamy, dizzying cocktail of exotic blood, absinthe, and champagne, topped with frothed egg whites. Traditionally served with a thaven good luck charm. Open your eyes.
+reagent-name-feverdream = gorączkowy sen
+reagent-desc-feverdream = Kremowy, oszałamiający koktajl z egzotycznej krwi, absyntu i szampana, zwieńczony spienionym białkiem jaja. Tradycyjnie podawany z thaveńskim talizmanem szczęścia. Otwórz oczy.

@@ -1,2 +1,2 @@
-ent-FoodKebabSkewer = skewer
-    .desc = A thin rod of metal used to skewer just about anything and cook it.
+ent-FoodKebabSkewer = szaszłyk
+    .desc = Cienki metalowy pręt do nadziewania czegokolwiek i pieczenia.

@@ -55,3 +55,4 @@ guide-entry-qm-sop = SPO Kierownika Logistyki
 guide-entry-cargotechnician-sop = SPO Technika Logistyka
 guide-entry-salvage-sop = SPO Technika Odzysku
 guide-entry-training-manual-command = Podręcznik Szkoleniowy Dowództwa
+guide-entry-red-phone-sop = Czerwony Telefon

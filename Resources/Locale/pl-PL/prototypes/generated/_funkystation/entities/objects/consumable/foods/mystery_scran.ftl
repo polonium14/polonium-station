@@ -1,2 +1,2 @@
-ent-FoodMysteryScran = mystery scran
-    .desc = The pinnacle of British cuisine. Best eaten with an ID card.
+ent-FoodMysteryScran = tajemniczy scran
+    .desc = Szczyt brytyjskiej kuchni. Najlepiej jeść z dowodem osobistym.

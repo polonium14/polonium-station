@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Maciej Walendziuk <ozzeusz@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Diagnostics.CodeAnalysis;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Hands;
@@ -190,6 +194,9 @@ public abstract class SharedCallablePhoneSystem : EntitySystem
     {
         if (source.IsCentComm)
             return true;
+
+        if (source.OnlyCentCommInDirectory)
+            return receiver.IsCentComm && source.IncludeCentCommInDirectory;
 
         if (receiver.ListedInDirectory)
         {

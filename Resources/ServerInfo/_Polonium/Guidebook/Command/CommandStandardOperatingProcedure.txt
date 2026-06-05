@@ -144,7 +144,7 @@ SPDX-License-Identifier: MIT
   # If you need to deviate,
 
   [bold]Document document document![/bold]
-  After action reports, calling CentCom on the fabled red phone, or even praying will be heard by CentCom and your actions may be excused if they were determined to be in the best interest of NanoTrasen.
+  After action reports, calling CentCom on the [textlink="red phone" link="RedPhoneSOP"], or even praying will be heard by CentCom and your actions may be excused if they were determined to be in the best interest of NanoTrasen.
 
 
   # Station Command and Central Command Staff OOC Rules

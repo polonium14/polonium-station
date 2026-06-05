@@ -1,84 +1,4 @@
 ﻿Entries:
-- author: 12rabbits
-  changes:
-  - message: Activating a DNA scrambler implant no longer retains the previous identity's
-      description.
-    type: Fix
-  id: 7911
-  time: '2025-02-06T19:09:59.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34920
-- author: GrownSamoyedDog
-  changes:
-  - message: Control Button in Guidebook has been redirected to Controls properly
-    type: Fix
-  id: 7912
-  time: '2025-02-06T19:16:57.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34914
-- author: themias
-  changes:
-  - message: Combat bakery kit price is reduced from 6TC to 4TC, increased baguette
-      sword attack speed, throwing croissants ignore armor
-    type: Tweak
-  id: 7913
-  time: '2025-02-06T23:07:27.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34927
-- author: sowelipililimute
-  changes:
-  - message: You will no longer be told you need 0H 0M more minutes to play a role
-    type: Fix
-  id: 7914
-  time: '2025-02-08T06:12:59.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34961
-- author: Chaboricks
-  changes:
-  - message: Changed the sound of paper doors.
-    type: Tweak
-  id: 7915
-  time: '2025-02-08T07:24:02.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34857
-- author: YoungThugSS14
-  changes:
-  - message: Gave the SyndieVisitor the free agent mindrole.
-    type: Fix
-  id: 7916
-  time: '2025-02-08T21:16:48.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34836
-- author: lzk228
-  changes:
-  - message: Straight ally pin added to loadouts and to the Pride-O-Mat.
-    type: Add
-  id: 7917
-  time: '2025-02-08T23:02:00.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34977
-- author: Ian321
-  changes:
-  - message: Seeds can now have paper labels attached to them.
-    type: Add
-  id: 7918
-  time: '2025-02-08T23:16:07.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34450
-- author: august-sun
-  changes:
-  - message: Reworked Lecter and magazine sprites.
-    type: Tweak
-  id: 7919
-  time: '2025-02-09T00:12:47.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34974
-- author: rokudara-sen
-  changes:
-  - message: Anchored shuttle console will no longer rotate.
-    type: Fix
-  id: 7920
-  time: '2025-02-09T12:15:44.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/35000
-- author: Boaz1111
-  changes:
-  - message: Long Bacon Scarf(Lesbian scarf but long) can now be found in the pride-o-mat's
-      hacked inventory!
-    type: Add
-  id: 7921
-  time: '2025-02-09T15:10:11.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34950
 - author: Spacemann
   changes:
   - message: Removed Cog station
@@ -4113,3 +4033,110 @@
   id: 9218
   time: '2026-06-02T20:53:03.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/618
+- author: Koilak
+  changes:
+  - message: BOR sniper
+    type: Tweak
+  id: 9219
+  time: '2026-06-03T16:34:53.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/619
+- author: nikita_pl
+  changes:
+  - message: Lepsze efekty wybuchowe
+    type: Tweak
+  id: 9220
+  time: '2026-06-03T18:50:40.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/620
+- author: Nikita_pl
+  changes:
+  - message: Zaktualizowano regulamin w grze
+    type: Tweak
+  id: 9221
+  time: '2026-06-04T06:24:24.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/621
+- author: Nikita_pl
+  changes:
+  - message: "G\u0142\xF3wna odzie\u017C ochrony u\u017Cywa teraz standardowych sprite'\xF3\
+      w zamiast Funky."
+    type: Tweak
+  - message: "Osobna odzie\u017C ochrony z Funky po prostu jako osobne przedmioty."
+    type: Add
+  - message: Kadet nie otrzymuje kamizelki kuloodpornej w loadoucie przy spawnie
+    type: Remove
+  id: 9222
+  time: '2026-06-04T08:33:12.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/623
+- author: Nikita_pl
+  changes:
+  - message: "Przet\u0142umaczono uplinki oraz WTH"
+    type: Tweak
+  - message: "Zmieniono skal\u0119 cen w WTH S\u015A"
+    type: Tweak
+  - message: "Dodano EM-72, XLR-556, Asakim, DP-17, DP-40, LWC Orze\u0142 oraz NTSF-HCLM\
+      \ do WTH S\u015A."
+    type: Add
+  - message: "Dodano LWC Orze\u0142 do WTH JSR."
+    type: Add
+  - message: "Zmniejszono szybkostrzelno\u015B\u0107 Vulcana."
+    type: Tweak
+  id: 9223
+  time: '2026-06-04T13:22:53.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/624
+- author: Nikita_pl
+  changes:
+  - message: "Pe\u0142ne polskie t\u0142umaczenie nazw i opis\xF3w jedzenia (posi\u0142\
+      ki, mi\u0119so, warzywa, wypieki, przek\u0105ski, zupy, burgery, taco, makarony,\
+      \ mro\u017Conki, sk\u0142adniki, przyprawy oraz forki)."
+    type: Add
+  - message: "Ujednolicono polskie wpisy w zleceniach cargo z t\u0142umaczeniami w\
+      \ grze, poprawiono terminologi\u0119"
+    type: Tweak
+  - message: "Naprawiono bounty na Sigynate (wcze\u015Bniej b\u0142\u0119dnie wymaga\u0142\
+      o difenhydraminy)."
+    type: Fix
+  id: 9224
+  time: '2026-06-04T15:32:54.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/625
+- author: Nikita_pl
+  changes:
+  - message: Nowy bwoink!!
+    type: Add
+  id: 9225
+  time: '2026-06-04T17:27:04.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/626
+- author: Nikita_pl
+  changes:
+  - message: Jeszcze lepsze wybuchy!!!!!!
+    type: Tweak
+  id: 9226
+  time: '2026-06-04T18:07:48.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/627
+- author: Zintex
+  changes:
+  - message: "Mini wahad\u0142owce JSR z 1 osob\u0105. Du\u017Cy wahad\u0142owiec\
+      \ CBURN."
+    type: Add
+  id: 9227
+  time: '2026-06-04T19:59:19.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/628
+- author: Nikita_pl
+  changes:
+  - message: "Dodano SPO dotycz\u0105ce u\u017Cywania telefon\xF3w (w j\u0119zyku\
+      \ polskim)"
+    type: Add
+  - message: "Dodano szum statyczny w tle podczas rozm\xF3w telefonicznych"
+    type: Add
+  id: 9228
+  time: '2026-06-04T20:14:56.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/631
+- author: Nikita_pl
+  changes:
+  - message: "Naprawiono widmowe pociski przelatuj\u0105ce przez \u015Bciany przy\
+      \ w\u0142\u0105czonej predykcji."
+    type: Fix
+  - message: "Naprawiono niewidoczne pociski przy wy\u0142\u0105czonej predykcji w\
+      \ ustawieniach sieci."
+    type: Fix
+  id: 9229
+  time: '2026-06-05T06:30:47.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/633

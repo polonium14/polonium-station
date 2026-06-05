@@ -245,4 +245,11 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<string> DiscordReplyColor =
         CVarDef.Create("admin.discord_reply_color", string.Empty, CVar.SERVERONLY);
+
+    /// <summary>
+    ///     Minimum entity search result count before notifying other admins in admin chat and admin logs.
+    ///     Set to 0 to disable logging.
+    /// </summary>
+    public static readonly CVarDef<int> EntitySearchLogMinResults =
+        CVarDef.Create("admin.entity_search_log_min_results", 0, CVar.SERVERONLY);
 }

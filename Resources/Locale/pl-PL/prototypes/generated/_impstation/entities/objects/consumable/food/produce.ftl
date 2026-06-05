@@ -1,2 +1,2 @@
-ent-FoodHops = hops
-    .desc = Looking to start your own craft brewery, huh? With your own unique twist on the IPA?
+ent-FoodHops = chmiel
+    .desc = Chcesz założyć własny rzemieślniczy browar? Z własnym twistem na IPA?

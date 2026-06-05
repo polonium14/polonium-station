@@ -1,4 +1,5 @@
 // SPDX-FileCopyrightText: 2026 Maciej Walendziuk <ozzeusz@gmail.com>
+// SPDX-FileCopyrightText: 2026 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -43,17 +44,7 @@ public sealed class CallablePhoneBoundUserInterface : BoundUserInterface
         _window.SetOwner(phone);
         _window.UpdateState(new Dictionary<NetEntity, string>());
 
-        _window.CallPressed += receiver =>
-        {
-            if (!EntMan.TryGetComponent<CallablePhoneComponent>(phone, out var sourceCallable))
-                return;
-
-            var callablePhone = EntMan.System<SharedCallablePhoneSystem>();
-            if (!callablePhone.TryResolveCallablePhoneReceiver(receiver, sourceCallable, out _, out _, out _))
-                return;
-
-            SendMessage(new CallablePhoneCallMessage(receiver));
-        };
+        _window.CallPressed += receiver => SendMessage(new CallablePhoneCallMessage(receiver));
         _window.AnswerPressed += () => SendMessage(new CallablePhoneAnswerMessage());
         _window.HangUpPressed += () => SendMessage(new CallablePhoneHangUpMessage());
 

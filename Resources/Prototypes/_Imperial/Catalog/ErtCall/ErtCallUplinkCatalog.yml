@@ -1,58 +1,79 @@
-# SPDX-FileCopyrightText: 2025 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2026 Czuat <143895262+Czuat@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 Koilak <152626891+Koilak@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2026 Polonium-bot <admin@ss14.pl>
+# SPDX-FileCopyrightText: 2026 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 #ERTUplinkMelee
 - type: listing
   id: ErtCallUplinkStunbaton
-  name: Advanced Stun Baton
-  description: A high-capacity stun baton for subduing targets.
+  name: ert-uplink-ErtCallUplinkStunbaton-name
+  description: ert-uplink-ErtCallUplinkStunbaton-desc
   productEntity: AdvancedStunbaton
   cost:
     BlueSpaceCube: 2
   categories:
   - ERTUplinkMelee
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkMachete
-  name: Machete
-  description: A heavy chopping blade.
+  name: ert-uplink-ErtCallUplinkMachete-name
+  description: ert-uplink-ErtCallUplinkMachete-desc
   productEntity: Machete
   cost:
     BlueSpaceCube: 10
   categories:
   - ERTUplinkMelee
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkCombatKnife
-  name: Combat Knife
-  description: A sharp military combat knife.
+  name: ert-uplink-ErtCallUplinkCombatKnife-name
+  description: ert-uplink-ErtCallUplinkCombatKnife-desc
   productEntity: CombatKnife
   cost:
     BlueSpaceCube: 2
   categories:
   - ERTUplinkMelee
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkEnergySword
-  name: Energy Sword
-  description: A humming blade of condensed energy.
+  name: ert-uplink-ErtCallUplinkEnergySword-name
+  description: ert-uplink-ErtCallUplinkEnergySword-desc
   productEntity: EnergySword
   cost:
     BlueSpaceCube: 10
   categories:
   - ERTUplinkMelee
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
-#ERTUplinkAmmoNonCombat
 - type: listing
   id: ErtCallUplinkMagazineBoxMagnum
-  name: Magnum Ammo Box
-  description: Box of high-powered magnum rounds.
+  name: ert-uplink-ErtCallUplinkMagazineBoxMagnum-name
+  description: ert-uplink-ErtCallUplinkMagazineBoxMagnum-desc
   productEntity: MagazineBoxMagnum
   cost:
-    BlueSpaceCube: 2
+    BlueSpaceCube: 4
   categories:
   - ERTUplinkAmmoCombat
   conditions:
@@ -63,11 +84,11 @@
 
 - type: listing
   id: ErtCallUplinkSpeedLoaderMagnum
-  name: Magnum Speed Loader
-  description: Rapid loader for magnum revolvers.
+  name: ert-uplink-ErtCallUplinkSpeedLoaderMagnum-name
+  description: ert-uplink-ErtCallUplinkSpeedLoaderMagnum-desc
   productEntity: SpeedLoaderMagnum
   cost:
-    BlueSpaceCube: 2
+    BlueSpaceCube: 4
   categories:
   - ERTUplinkAmmoCombat
   conditions:
@@ -78,18 +99,23 @@
 
 - type: listing
   id: ErtCallUplinkMagazinePistol
-  name: Pistol Magazine
-  description: Standard pistol magazine.
+  name: ert-uplink-ErtCallUplinkMagazinePistol-name
+  description: ert-uplink-ErtCallUplinkMagazinePistol-desc
   productEntity: MagazinePistol
   cost:
     BlueSpaceCube: 2
   categories:
   - ERTUplinkAmmoCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkMagazineRifle
-  name: Rifle Magazine
-  description: Standard rifle ammunition.
+  name: ert-uplink-ErtCallUplinkMagazineRifle-name
+  description: ert-uplink-ErtCallUplinkMagazineRifle-desc
   productEntity: MagazineRifle
   cost:
     BlueSpaceCube: 3
@@ -100,11 +126,14 @@
       whitelist:
         tags:
           - ErtUplinkCombat
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkMagazineBoxAntiMateriel
-  name: Anti-Materiel Ammo Box
-  description: High-caliber anti-materiel rounds.
+  name: ert-uplink-ErtCallUplinkMagazineBoxAntiMateriel-name
+  description: ert-uplink-ErtCallUplinkMagazineBoxAntiMateriel-desc
   productEntity: MagazineBoxAntiMateriel
   cost:
     BlueSpaceCube: 5
@@ -115,11 +144,14 @@
       whitelist:
         tags:
           - ErtUplinkCombat
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkMagazineLethalshot
-  name: Shotgun Magazine (Buckshot)
-  description: Buckshot shell magazine.
+  name: ert-uplink-ErtCallUplinkMagazineLethalshot-name
+  description: ert-uplink-ErtCallUplinkMagazineLethalshot-desc
   productEntity: MagazineShotgun
   cost:
     BlueSpaceCube: 3
@@ -130,11 +162,14 @@
       whitelist:
         tags:
           - ErtUplinkCombat
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkMagazineShotgunIncendiary
-  name: Shotgun Magazine (Incendiary)
-  description: Incendiary shotgun shells.
+  name: ert-uplink-ErtCallUplinkMagazineShotgunIncendiary-name
+  description: ert-uplink-ErtCallUplinkMagazineShotgunIncendiary-desc
   productEntity: MagazineShotgunIncendiary
   cost:
     BlueSpaceCube: 3
@@ -145,11 +180,14 @@
       whitelist:
         tags:
           - ErtUplinkCombat
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkMagazineShotgunSlug
-  name: Shotgun Magazine (Slug)
-  description: Slug shotgun shells.
+  name: ert-uplink-ErtCallUplinkMagazineShotgunSlug-name
+  description: ert-uplink-ErtCallUplinkMagazineShotgunSlug-desc
   productEntity: MagazineShotgunSlug
   cost:
     BlueSpaceCube: 3
@@ -160,11 +198,14 @@
       whitelist:
         tags:
           - ErtUplinkCombat
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkMagazineLightRifle
-  name: Light Rifle Magazine
-  description: Standard light rifle rounds.
+  name: ert-uplink-ErtCallUplinkMagazineLightRifle-name
+  description: ert-uplink-ErtCallUplinkMagazineLightRifle-desc
   productEntity: MagazineLightRifle
   cost:
     BlueSpaceCube: 2
@@ -175,11 +216,14 @@
       whitelist:
         tags:
           - ErtUplinkCombat
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkCartridgeRocket
-  name: Rocket Cartridge
-  description: Single-use rocket warhead.
+  name: ert-uplink-ErtCallUplinkCartridgeRocket-name
+  description: ert-uplink-ErtCallUplinkCartridgeRocket-desc
   productEntity: CartridgeRocket
   cost:
     BlueSpaceCube: 12
@@ -190,469 +234,650 @@
       whitelist:
         tags:
           - ErtUplinkCombat
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
-#ERTUplinkExplosives
 - type: listing
   id: ErtCallUplinkGrenadeFlashBang
-  name: Flashbang Grenade
-  description: Non-lethal disorientation grenade.
+  name: ert-uplink-ErtCallUplinkGrenadeFlashBang-name
+  description: ert-uplink-ErtCallUplinkGrenadeFlashBang-desc
   productEntity: GrenadeFlashBang
   cost:
     BlueSpaceCube: 1
   categories:
   - ERTUplinkExplosives
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkEmpGrenade
-  name: EMP Grenade
-  description: Disables nearby electronics.
+  name: ert-uplink-ErtCallUplinkEmpGrenade-name
+  description: ert-uplink-ErtCallUplinkEmpGrenade-desc
   productEntity: EmpGrenade
   cost:
     BlueSpaceCube: 2
   categories:
   - ERTUplinkExplosives
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkExGrenade
-  name: High-Explosive Grenade
-  description: Powerful fragmentation blast.
+  name: ert-uplink-ErtCallUplinkExGrenade-name
+  description: ert-uplink-ErtCallUplinkExGrenade-desc
   productEntity: ExGrenade
   cost:
     BlueSpaceCube: 4
   categories:
   - ERTUplinkExplosives
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkC4
-  name: C4 Charge
-  description: Remote-detonated breaching explosive.
+  name: ert-uplink-ErtCallUplinkC4-name
+  description: ert-uplink-ErtCallUplinkC4-desc
   productEntity: C4
   cost:
     BlueSpaceCube: 3
   categories:
   - ERTUplinkExplosives
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkClusterBangFull
-  name: Cluster Flashbang
-  description: Multiple sequential flash detonations.
+  name: ert-uplink-ErtCallUplinkClusterBangFull-name
+  description: ert-uplink-ErtCallUplinkClusterBangFull-desc
   productEntity: ClusterBangFull
   cost:
     BlueSpaceCube: 4
   categories:
   - ERTUplinkExplosives
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
-#ERTUplinkEngineering
 - type: listing
   id: ErtCallUplinkClothingEyesGlassesMeson
-  name: Meson Goggles
-  description: See structural integrity through walls.
+  name: ert-uplink-ErtCallUplinkClothingEyesGlassesMeson-name
+  description: ert-uplink-ErtCallUplinkClothingEyesGlassesMeson-desc
   productEntity: ClothingEyesGlassesMeson
   cost:
     BlueSpaceCube: 2
   categories:
   - ERTUplinkEngineering
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkAmeJar
-  name: AME Jar
-  description: Replacement antimatter jar.
+  name: ert-uplink-ErtCallUplinkAmeJar-name
+  description: ert-uplink-ErtCallUplinkAmeJar-desc
   productEntity: AmeJar
   cost:
     BlueSpaceCube: 2
   categories:
   - ERTUplinkEngineering
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkJawsOfLife
-  name: Jaws of Life
-  description: Hydraulic rescue cutter/spreader.
+  name: ert-uplink-ErtCallUplinkJawsOfLife-name
+  description: ert-uplink-ErtCallUplinkJawsOfLife-desc
   productEntity: JawsOfLife
   cost:
     BlueSpaceCube: 4
   categories:
   - ERTUplinkEngineering
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkPowerDrill
-  name: Power Drill
-  description: Rapid powered drill tool.
+  name: ert-uplink-ErtCallUplinkPowerDrill-name
+  description: ert-uplink-ErtCallUplinkPowerDrill-desc
   productEntity: PowerDrill
   cost:
     BlueSpaceCube: 4
   categories:
   - ERTUplinkEngineering
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkClothingBeltUtilityFilled
-  name: Toolbelt (Filled)
-  description: Stocked utility toolbelt.
+  name: ert-uplink-ErtCallUplinkClothingBeltUtilityFilled-name
+  description: ert-uplink-ErtCallUplinkClothingBeltUtilityFilled-desc
   productEntity: ClothingBeltUtilityFilled
   cost:
     BlueSpaceCube: 4
   categories:
   - ERTUplinkEngineering
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkRCD
-  name: Rapid Construction Device
-  description: Fast wall/floor construction tool.
+  name: ert-uplink-ErtCallUplinkRCD-name
+  description: ert-uplink-ErtCallUplinkRCD-desc
   productEntity: RCD
   cost:
     BlueSpaceCube: 6
   categories:
   - ERTUplinkEngineering
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkRCDAmmo
-  name: RCD Matter Cartridge
-  description: Reload for the RCD.
+  name: ert-uplink-ErtCallUplinkRCDAmmo-name
+  description: ert-uplink-ErtCallUplinkRCDAmmo-desc
   productEntity: RCDAmmo
   cost:
     BlueSpaceCube: 2
   categories:
   - ERTUplinkEngineering
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkHolofanProjector
-  name: Holofan Projector
-  description: Deploys a holographic airflow barrier.
+  name: ert-uplink-ErtCallUplinkHolofanProjector-name
+  description: ert-uplink-ErtCallUplinkHolofanProjector-desc
   productEntity: HolofanProjector
   cost:
     BlueSpaceCube: 1
   categories:
   - ERTUplinkEngineering
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkNetworkConfigurator
-  name: Network Configurator
-  description: Adjust device linking and networks.
+  name: ert-uplink-ErtCallUplinkNetworkConfigurator-name
+  description: ert-uplink-ErtCallUplinkNetworkConfigurator-desc
   productEntity: NetworkConfigurator
   cost:
     BlueSpaceCube: 1
   categories:
   - ERTUplinkEngineering
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkGasAnalyzer
-  name: Gas Analyzer
-  description: Reads atmospheric composition.
+  name: ert-uplink-ErtCallUplinkGasAnalyzer-name
+  description: ert-uplink-ErtCallUplinkGasAnalyzer-desc
   productEntity: GasAnalyzer
   cost:
     BlueSpaceCube: 1
   categories:
   - ERTUplinkEngineering
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkMultitool
-  name: Multitool
-  description: Signals, hacking and device interface tool.
+  name: ert-uplink-ErtCallUplinkMultitool-name
+  description: ert-uplink-ErtCallUplinkMultitool-desc
   productEntity: Multitool
   cost:
     BlueSpaceCube: 1
   categories:
   - ERTUplinkEngineering
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkTrayScanner
-  name: Tray Scanner
-  description: Scans plant trays for data.
+  name: ert-uplink-ErtCallUplinkTrayScanner-name
+  description: ert-uplink-ErtCallUplinkTrayScanner-desc
   productEntity: trayScanner
   cost:
     BlueSpaceCube: 1
   categories:
   - ERTUplinkEngineering
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
-#materials
 - type: listing
   id: ErtCallUplinkSheetSteel
-  name: Steel Sheets
-  description: Basic construction material.
+  name: ert-uplink-ErtCallUplinkSheetSteel-name
+  description: ert-uplink-ErtCallUplinkSheetSteel-desc
   productEntity: SheetSteel
   cost:
     BlueSpaceCube: 2
   categories:
   - ERTUplinkEngineering
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkSheetPlasteel
-  name: Plasteel Sheets
-  description: Reinforced composite material.
+  name: ert-uplink-ErtCallUplinkSheetPlasteel-name
+  description: ert-uplink-ErtCallUplinkSheetPlasteel-desc
   productEntity: SheetPlasteel
   cost:
     BlueSpaceCube: 3
   categories:
   - ERTUplinkEngineering
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkSheetRGlass
-  name: Reinforced Glass Sheets
-  description: Strong transparent material.
+  name: ert-uplink-ErtCallUplinkSheetRGlass-name
+  description: ert-uplink-ErtCallUplinkSheetRGlass-desc
   productEntity: SheetRGlass
   cost:
     BlueSpaceCube: 3
   categories:
   - ERTUplinkEngineering
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkSheetGlass
-  name: Glass Sheets
-  description: Standard transparent sheets.
+  name: ert-uplink-ErtCallUplinkSheetGlass-name
+  description: ert-uplink-ErtCallUplinkSheetGlass-desc
   productEntity: SheetGlass
   cost:
     BlueSpaceCube: 2
   categories:
   - ERTUplinkEngineering
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkPartRodMetal
-  name: Metal Rods
-  description: Construction rods used in frames.
+  name: ert-uplink-ErtCallUplinkPartRodMetal-name
+  description: ert-uplink-ErtCallUplinkPartRodMetal-desc
   productEntity: PartRodMetal
   cost:
     BlueSpaceCube: 1
   categories:
   - ERTUplinkEngineering
-
-#end materials
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkCableHVStack
-  name: HV Cable Stack
-  description: High-voltage cables.
+  name: ert-uplink-ErtCallUplinkCableHVStack-name
+  description: ert-uplink-ErtCallUplinkCableHVStack-desc
   productEntity: CableHVStack
   cost:
     BlueSpaceCube: 1
   categories:
   - ERTUplinkEngineering
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkCableMVStack
-  name: MV Cable Stack
-  description: Medium-voltage cables.
+  name: ert-uplink-ErtCallUplinkCableMVStack-name
+  description: ert-uplink-ErtCallUplinkCableMVStack-desc
   productEntity: CableMVStack
   cost:
     BlueSpaceCube: 1
   categories:
   - ERTUplinkEngineering
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkCableApcStack
-  name: APC Cable Stack
-  description: Low-voltage power cables.
+  name: ert-uplink-ErtCallUplinkCableApcStack-name
+  description: ert-uplink-ErtCallUplinkCableApcStack-desc
   productEntity: CableApcStack
   cost:
     BlueSpaceCube: 1
   categories:
   - ERTUplinkEngineering
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkBoxInflatable
-  name: Inflatable Barrier Box
-  description: Portable emergency barriers.
+  name: ert-uplink-ErtCallUplinkBoxInflatable-name
+  description: ert-uplink-ErtCallUplinkBoxInflatable-desc
   productEntity: BoxInflatable
   cost:
     BlueSpaceCube: 3
   categories:
   - ERTUplinkEngineering
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkWelderExperimental
-  name: Experimental Welder
-  description: High-performance welding tool.
+  name: ert-uplink-ErtCallUplinkWelderExperimental-name
+  description: ert-uplink-ErtCallUplinkWelderExperimental-desc
   productEntity: WelderExperimental
   cost:
     BlueSpaceCube: 4
   categories:
   - ERTUplinkEngineering
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
-#ERTUplinkMedical
 - type: listing
   id: ErtCallUplinkOmnizineChemistryBottle
-  name: Omnizine Bottle
-  description: Broad-spectrum healing reagent.
+  name: ert-uplink-ErtCallUplinkOmnizineChemistryBottle-name
+  description: ert-uplink-ErtCallUplinkOmnizineChemistryBottle-desc
   productEntity: OmnizineChemistryBottle
   cost:
     BlueSpaceCube: 10
   categories:
   - ERTUplinkMedial
-
-# TODO anti toxin
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkHypospray
-  name: Hypospray
-  description: Instant injection device.
+  name: ert-uplink-ErtCallUplinkHypospray-name
+  description: ert-uplink-ErtCallUplinkHypospray-desc
   productEntity: Hypospray
   cost:
     BlueSpaceCube: 6
   categories:
   - ERTUplinkMedial
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkGauze
-  name: Gauze Roll
-  description: Basic wound dressing.
+  name: ert-uplink-ErtCallUplinkGauze-name
+  description: ert-uplink-ErtCallUplinkGauze-desc
   productEntity: Gauze
   cost:
     BlueSpaceCube: 1
   categories:
   - ERTUplinkMedial
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkBrutepack
-  name: Medicated Suture
-  description: Sterile wound closing suture.
+  name: ert-uplink-ErtCallUplinkBrutepack-name
+  description: ert-uplink-ErtCallUplinkBrutepack-desc
   productEntity: MedicatedSuture
   cost:
     BlueSpaceCube: 1
   categories:
   - ERTUplinkMedial
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkOintment
-  name: Regenerative Mesh
-  description: Advanced burn treatment mesh.
+  name: ert-uplink-ErtCallUplinkOintment-name
+  description: ert-uplink-ErtCallUplinkOintment-desc
   productEntity: RegenerativeMesh
   cost:
     BlueSpaceCube: 1
   categories:
   - ERTUplinkMedial
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkStimpack
-  name: Stimpack
-  description: Temporary combat stimulant.
+  name: ert-uplink-ErtCallUplinkStimpack-name
+  description: ert-uplink-ErtCallUplinkStimpack-desc
   productEntity: Stimpack
   cost:
     BlueSpaceCube: 5
   categories:
   - ERTUplinkMedial
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkCompactDefibrillator
-  name: Compact Defibrillator
-  description: Portable revival device.
+  name: ert-uplink-ErtCallUplinkCompactDefibrillator-name
+  description: ert-uplink-ErtCallUplinkCompactDefibrillator-desc
   productEntity: DefibrillatorCompact
   cost:
     BlueSpaceCube: 5
   categories:
   - ERTUplinkMedial
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkEmergencyMedipen
-  name: Emergency Medipen
-  description: Immediate life-saving cocktail.
+  name: ert-uplink-ErtCallUplinkEmergencyMedipen-name
+  description: ert-uplink-ErtCallUplinkEmergencyMedipen-desc
   productEntity: EmergencyMedipen
   cost:
     BlueSpaceCube: 1
   categories:
   - ERTUplinkMedial
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkHandheldHealthAnalyzer
-  name: Health Analyzer
-  description: Scans patient vital statistics.
+  name: ert-uplink-ErtCallUplinkHandheldHealthAnalyzer-name
+  description: ert-uplink-ErtCallUplinkHandheldHealthAnalyzer-desc
   productEntity: HandheldHealthAnalyzer
   cost:
     BlueSpaceCube: 1
   categories:
   - ERTUplinkMedial
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkMaterialBiomass
-  name: Biomass Material
-  description: Organic cloning feedstock.
+  name: ert-uplink-ErtCallUplinkMaterialBiomass-name
+  description: ert-uplink-ErtCallUplinkMaterialBiomass-desc
   productEntity: MaterialBiomass
   cost:
     BlueSpaceCube: 5
   categories:
   - ERTUplinkMedial
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkPillAmbuzolPlus
-  name: Ambuzol+ Pill
-  description: Potent anti-toxin and stabilizer.
+  name: ert-uplink-ErtCallUplinkPillAmbuzolPlus-name
+  description: ert-uplink-ErtCallUplinkPillAmbuzolPlus-desc
   productEntity: PillAmbuzolPlus
   cost:
-   BlueSpaceCube: 2
+    BlueSpaceCube: 2
   categories:
   - ERTUplinkMedial
   conditions:
-   - !type:StoreWhitelistCondition
-     whitelist:
-       tags:
-         - ErtUplinkCBURN
-
-#TODO
-# - type: listing
-#   id: ErtCallUplinkBoxOfModuleGrenade
-#   name: ert-uplink-medical-boxofmodulegrenade-name
-#   description: ert-uplink-medical-boxofmodulegrenade-desc
-#   productEntity: BoxOfModuleGrenade
-#   cost:
-#     BlueSpaceCube: 4
-#   categories:
-#   - ERTUplinkMedial
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkCBURN
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkSpaceMedipen
-  name: Space Medipen
-  description: Protects against vacuum exposure.
+  name: ert-uplink-ErtCallUplinkSpaceMedipen-name
+  description: ert-uplink-ErtCallUplinkSpaceMedipen-desc
   productEntity: SpaceMedipen
   cost:
     BlueSpaceCube: 2
   categories:
   - ERTUplinkMedial
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
-#ERTUplinkWeaponNonCombat
 - type: listing
   id: ErtCallUplinkWeaponPulsePistol
-  name: Pulse Pistol
-  description: Compact directed-energy sidearm.
+  name: ert-uplink-ErtCallUplinkWeaponPulsePistol-name
+  description: ert-uplink-ErtCallUplinkWeaponPulsePistol-desc
   productEntity: WeaponPulsePistol
   cost:
     BlueSpaceCube: 5
   categories:
   - ERTUplinkWeaponCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkWeaponDisabler
-  name: Disabler
-  description: Non-lethal energy incapacitation weapon.
+  name: ert-uplink-ErtCallUplinkWeaponDisabler-name
+  description: ert-uplink-ErtCallUplinkWeaponDisabler-desc
   productEntity: WeaponDisabler
   cost:
     BlueSpaceCube: 3
   categories:
   - ERTUplinkWeaponCombat
-
-# - type: listing
-#   id: ErtCallUplinkWeaponRevolverInspector
-#   name: ert-uplink-weaponnoncombat-weaponrevolverinspector-name
-#   description: ert-uplink-weaponnoncombat-weaponrevolverinspector-desc
-#   productEntity: WeaponRevolverInspector
-#   cost:
-#     BlueSpaceCube: 5
-#   categories:
-#   - ERTUplinkWeaponCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkWeaponPistolMk58
-  name: Mk58 Pistol
-  description: Standard ballistic sidearm.
+  name: ert-uplink-ErtCallUplinkWeaponPistolMk58-name
+  description: ert-uplink-ErtCallUplinkWeaponPistolMk58-desc
   productEntity: WeaponPistolMk58
   cost:
     BlueSpaceCube: 4
   categories:
   - ERTUplinkWeaponCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkWeaponRevolverMateba
-  name: Mateba Revolver
-  description: Powerful semi-automatic revolver.
+  name: ert-uplink-ErtCallUplinkWeaponRevolverMateba-name
+  description: ert-uplink-ErtCallUplinkWeaponRevolverMateba-desc
   productEntity: WeaponRevolverMateba
   cost:
-    BlueSpaceCube: 5
+    BlueSpaceCube: 10
   categories:
   - ERTUplinkWeaponCombat
   conditions:
@@ -662,11 +887,11 @@
           - ErtUplinkDeadSquad
 
 
-#ERTUplinkWeaponCombat
+
 - type: listing
   id: ErtCallUplinkWeaponRifleLecter
-  name: Lecter Rifle
-  description: High-power kinetic rifle.
+  name: ert-uplink-ErtCallUplinkWeaponRifleLecter-name
+  description: ert-uplink-ErtCallUplinkWeaponRifleLecter-desc
   productEntity: WeaponRifleLecter
   cost:
     BlueSpaceCube: 8
@@ -677,11 +902,14 @@
       whitelist:
         tags:
           - ErtUplinkCombat
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkWeaponPulseCarbine
-  name: Pulse Carbine
-  description: Mid-range energy assault weapon.
+  name: ert-uplink-ErtCallUplinkWeaponPulseCarbine-name
+  description: ert-uplink-ErtCallUplinkWeaponPulseCarbine-desc
   productEntity: WeaponPulseCarbine
   cost:
     BlueSpaceCube: 12
@@ -692,14 +920,17 @@
       whitelist:
         tags:
           - ErtUplinkCombat
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkWeaponPulseRifle
-  name: Pulse Rifle
-  description: Heavy energy assault platform.
+  name: ert-uplink-ErtCallUplinkWeaponPulseRifle-name
+  description: ert-uplink-ErtCallUplinkWeaponPulseRifle-desc
   productEntity: WeaponPulseRifle
   cost:
-    BlueSpaceCube: 20
+    BlueSpaceCube: 38
   categories:
   - ERTUplinkWeaponCombat
   conditions:
@@ -710,11 +941,11 @@
 
 - type: listing
   id: ErtCallUplinkWeaponMinigun
-  name: Minigun
-  description: Rapid-fire ballistic weapon.
+  name: ert-uplink-ErtCallUplinkWeaponMinigun-name
+  description: ert-uplink-ErtCallUplinkWeaponMinigun-desc
   productEntity: WeaponMinigun
   cost:
-    BlueSpaceCube: 25
+    BlueSpaceCube: 50
   categories:
   - ERTUplinkWeaponCombat
   conditions:
@@ -725,11 +956,11 @@
 
 - type: listing
   id: ErtCallUplinkWeaponXrayCannon
-  name: X-Ray Cannon
-  description: Penetrating radiation beam weapon.
+  name: ert-uplink-ErtCallUplinkWeaponXrayCannon-name
+  description: ert-uplink-ErtCallUplinkWeaponXrayCannon-desc
   productEntity: WeaponXrayCannon
   cost:
-    BlueSpaceCube: 25
+    BlueSpaceCube: 50
   categories:
   - ERTUplinkWeaponCombat
   conditions:
@@ -740,11 +971,11 @@
 
 - type: listing
   id: ErtCallUplinkWeaponTaser
-  name: Taser
-  description: Stuns targets with electrical charge.
+  name: ert-uplink-ErtCallUplinkWeaponTaser-name
+  description: ert-uplink-ErtCallUplinkWeaponTaser-desc
   productEntity: WeaponTaser
   cost:
-    BlueSpaceCube: 10
+    BlueSpaceCube: 20
   categories:
   - ERTUplinkWeaponCombat
   conditions:
@@ -759,21 +990,6 @@
 #   description: ert-uplink-weaponcombat-weaponlasergun-desc
 #   productEntity: WeaponLaserGun
 #   cost:
-#     BlueSpaceCube: 5
-#   categories:
-#   - ERTUplinkWeaponCombat
-#   conditions:
-#     - !type:StoreWhitelistCondition
-#       whitelist:
-#         tags:
-#           - ErtUplinkCombat
-
-# - type: listing
-#   id: ErtCallUplinkWeaponLaserCarbine
-#   name: ert-uplink-weaponcombat-weaponlasercarbine-name
-#   description: ert-uplink-weaponcombat-weaponlasercarbine-desc
-#   productEntity: WeaponLaserCarbine
-#   cost:
 #     BlueSpaceCube: 10
 #   categories:
 #   - ERTUplinkWeaponCombat
@@ -783,10 +999,11 @@
 #         tags:
 #           - ErtUplinkCombat
 
+
 - type: listing
   id: ErtCallUplinkWeaponAdvancedLaser
-  name: Advanced Laser Gun
-  description: Improved energy sidearm.
+  name: ert-uplink-ErtCallUplinkWeaponAdvancedLaser-name
+  description: ert-uplink-ErtCallUplinkWeaponAdvancedLaser-desc
   productEntity: WeaponAdvancedLaser
   cost:
     BlueSpaceCube: 12
@@ -797,11 +1014,14 @@
       whitelist:
         tags:
           - ErtUplinkCombat
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkWeaponSniperHristov
-  name: Hristov Sniper Rifle
-  description: Long-range precision rifle.
+  name: ert-uplink-ErtCallUplinkWeaponSniperHristov-name
+  description: ert-uplink-ErtCallUplinkWeaponSniperHristov-desc
   productEntity: WeaponSniperHristov
   cost:
     BlueSpaceCube: 12
@@ -812,11 +1032,14 @@
       whitelist:
         tags:
           - ErtUplinkCombat
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkWeaponShotgunKammerer
-  name: Kammerer Shotgun
-  description: Tactical combat shotgun.
+  name: ert-uplink-ErtCallUplinkWeaponShotgunKammerer-name
+  description: ert-uplink-ErtCallUplinkWeaponShotgunKammerer-desc
   productEntity: WeaponShotgunKammerer
   cost:
     BlueSpaceCube: 8
@@ -827,11 +1050,14 @@
       whitelist:
         tags:
           - ErtUplinkCombat
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkWeaponShotgunBulldog
-  name: Bulldog Shotgun
-  description: Compact drum-fed shotgun.
+  name: ert-uplink-ErtCallUplinkWeaponShotgunBulldog-name
+  description: ert-uplink-ErtCallUplinkWeaponShotgunBulldog-desc
   productEntity: WeaponShotgunBulldog
   cost:
     BlueSpaceCube: 10
@@ -843,29 +1069,17 @@
         tags:
           - ErtUplinkCombat
           - ErtUplinkCBURN
-
-# - type: listing
-#   id: ErtCallUplinkWeaponRifleAk
-#   name: ert-uplink-weaponcombat-weaponrifleak-name
-#   description: ert-uplink-weaponcombat-weaponrifleak-desc
-#   productEntity: WeaponRifleAk
-#   cost:
-#     BlueSpaceCube: 10
-#   categories:
-#   - ERTUplinkWeaponCombat
-#   conditions:
-#     - !type:StoreWhitelistCondition
-#       whitelist:
-#         tags:
-#           - ErtUplinkCombat
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkWeaponLauncherRocket
-  name: Rocket Launcher
-  description: Fires explosive rockets.
+  name: ert-uplink-ErtCallUplinkWeaponLauncherRocket-name
+  description: ert-uplink-ErtCallUplinkWeaponLauncherRocket-desc
   productEntity: WeaponLauncherRocket
   cost:
-    BlueSpaceCube: 25
+    BlueSpaceCube: 30
   categories:
   - ERTUplinkWeaponCombat
   conditions:
@@ -873,102 +1087,149 @@
       whitelist:
         tags:
           - ErtUplinkCombat
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
-#ERTUplinkJanitor
 - type: listing
   id: ErtCallUplinkAdvMopItem
-  name: Advanced Mop
-  description: High-efficiency cleaning mop.
+  name: ert-uplink-ErtCallUplinkAdvMopItem-name
+  description: ert-uplink-ErtCallUplinkAdvMopItem-desc
   productEntity: AdvMopItem
   cost:
     BlueSpaceCube: 6
   categories:
   - ERTUplinkJanitor
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkWeedSpray
-  name: Weed Spray
-  description: Eliminates invasive flora.
+  name: ert-uplink-ErtCallUplinkWeedSpray-name
+  description: ert-uplink-ErtCallUplinkWeedSpray-desc
   productEntity: WeedSpray
   cost:
     BlueSpaceCube: 1
   categories:
   - ERTUplinkJanitor
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkLightReplacer
-  name: Light Replacer
-  description: Installs replacement bulbs instantly.
+  name: ert-uplink-ErtCallUplinkLightReplacer-name
+  description: ert-uplink-ErtCallUplinkLightReplacer-desc
   productEntity: LightReplacer
   cost:
     BlueSpaceCube: 2
   categories:
   - ERTUplinkJanitor
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkBoxLightMixed
-  name: Mixed Light Bulb Box
-  description: Assorted replacement light bulbs.
+  name: ert-uplink-ErtCallUplinkBoxLightMixed-name
+  description: ert-uplink-ErtCallUplinkBoxLightMixed-desc
   productEntity: BoxLightMixed
   cost:
     BlueSpaceCube: 1
   categories:
   - ERTUplinkJanitor
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkSprayBottleSpaceCleaner
-  name: Space Cleaner Bottle
-  description: Cleans stubborn stains.
+  name: ert-uplink-ErtCallUplinkSprayBottleSpaceCleaner-name
+  description: ert-uplink-ErtCallUplinkSprayBottleSpaceCleaner-desc
   productEntity: SprayBottleSpaceCleaner
   cost:
     BlueSpaceCube: 1
   categories:
   - ERTUplinkJanitor
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkMopBucketFull
-  name: Mop Bucket (Full)
-  description: Bucket of cleaning solution.
+  name: ert-uplink-ErtCallUplinkMopBucketFull-name
+  description: ert-uplink-ErtCallUplinkMopBucketFull-desc
   productEntity: MopBucketFull
   cost:
     BlueSpaceCube: 4
   categories:
   - ERTUplinkJanitor
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkBucket
-  name: Bucket
-  description: Generic utility bucket.
+  name: ert-uplink-ErtCallUplinkBucket-name
+  description: ert-uplink-ErtCallUplinkBucket-desc
   productEntity: Bucket
   cost:
     BlueSpaceCube: 2
   categories:
   - ERTUplinkJanitor
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkBoxBodyBag
-  name: Body Bag Box
-  description: Several body bags for retrieval.
+  name: ert-uplink-ErtCallUplinkBoxBodyBag-name
+  description: ert-uplink-ErtCallUplinkBoxBodyBag-desc
   productEntity: BoxBodyBag
   cost:
     BlueSpaceCube: 4
   categories:
   - ERTUplinkJanitor
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkBiohazardSuit
-  name: Soap
-  description: Soap.
+  name: ert-uplink-ErtCallUplinkBiohazardSuit-name
+  description: ert-uplink-ErtCallUplinkBiohazardSuit-desc
   productEntity: Soap
   cost:
     BlueSpaceCube: 1
   categories:
   - ERTUplinkJanitor
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkTrashBag
-  name: Trash Bag
-  description: Heavy-duty trash bag.
+  name: ert-uplink-ErtCallUplinkTrashBag-name
+  description: ert-uplink-ErtCallUplinkTrashBag-desc
   productEntity: TrashBag
   cost:
     BlueSpaceCube: 1
@@ -976,13 +1237,16 @@
   - ERTUplinkJanitor
 
 #ERTUplinkUtilities
-
-#Imperial Space Портативные зарядники спецотрядов start
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkRecharger
-  name: Portable Recharger
-  description: Field charging unit.
+  name: ert-uplink-ErtCallUplinkRecharger-name
+  description: ert-uplink-ErtCallUplinkRecharger-desc
   productEntity: PortableRecharger
   cost:
     BlueSpaceCube: 10
@@ -991,89 +1255,125 @@
   conditions:
     - !type:StoreWhitelistCondition
       whitelist:
-       tags:
-         - ErtUplinkERT
-         - ErtUplinkCBURN
-
-#Imperial Space Портативные зарядники спецотрядов end
+        tags:
+          - ErtUplinkERT
+          - ErtUplinkCBURN
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkHandcuffs
-  name: Handcuffs
-  description: Standard restraints.
+  name: ert-uplink-ErtCallUplinkHandcuffs-name
+  description: ert-uplink-ErtCallUplinkHandcuffs-desc
   productEntity: Handcuffs
   cost:
     BlueSpaceCube: 2
   categories:
   - ERTUplinkUtilities
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkJetpackBlueFilled
-  name: Blue Jetpack
-  description: Filled EVA propulsion pack.
+  name: ert-uplink-ErtCallUplinkJetpackBlueFilled-name
+  description: ert-uplink-ErtCallUplinkJetpackBlueFilled-desc
   productEntity: JetpackBlueFilled
   cost:
     BlueSpaceCube: 4
   categories:
   - ERTUplinkUtilities
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkHandheldGPSBasic
-  name: Handheld GPS
-  description: Displays position coordinates.
+  name: ert-uplink-ErtCallUplinkHandheldGPSBasic-name
+  description: ert-uplink-ErtCallUplinkHandheldGPSBasic-desc
   productEntity: HandheldGPSBasic
   cost:
     BlueSpaceCube: 1
   categories:
   - ERTUplinkUtilities
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkHandheldStationMap
-  name: Station Map
-  description: Handheld station layout display.
+  name: ert-uplink-ErtCallUplinkHandheldStationMap-name
+  description: ert-uplink-ErtCallUplinkHandheldStationMap-desc
   productEntity: HandheldStationMap
   cost:
     BlueSpaceCube: 1
   categories:
   - ERTUplinkUtilities
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkHandheldCrewMonitor
-  name: Crew Monitor
-  description: Tracks crew suit sensors.
+  name: ert-uplink-ErtCallUplinkHandheldCrewMonitor-name
+  description: ert-uplink-ErtCallUplinkHandheldCrewMonitor-desc
   productEntity: HandheldCrewMonitor
   cost:
     BlueSpaceCube: 4
   categories:
   - ERTUplinkUtilities
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkClothingShoesBootsMag
-  name: Magboots
-  description: Magnetic boots for EVA & stability.
+  name: ert-uplink-ErtCallUplinkClothingShoesBootsMag-name
+  description: ert-uplink-ErtCallUplinkClothingShoesBootsMag-desc
   productEntity: ClothingShoesBootsMag
   cost:
     BlueSpaceCube: 2
   categories:
   - ERTUplinkUtilities
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkCrowbar
-  name: Crowbar
-  description: Pry tool for doors and crates.
+  name: ert-uplink-ErtCallUplinkCrowbar-name
+  description: ert-uplink-ErtCallUplinkCrowbar-desc
   productEntity: Crowbar
   cost:
     BlueSpaceCube: 1
   categories:
   - ERTUplinkUtilities
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkWeaponL6Saw
-  name: L6 Light Machine Gun
-  description: High-rate suppression weapon.
+  name: ert-uplink-ErtCallUplinkWeaponL6Saw-name
+  description: ert-uplink-ErtCallUplinkWeaponL6Saw-desc
   productEntity: WeaponLightMachineGunL6
   cost:
-    BlueSpaceCube: 15
+    BlueSpaceCube: 30
   categories:
   - ERTUplinkWeaponCombat
   conditions:
@@ -1084,11 +1384,11 @@
 
 - type: listing
   id: ErtCallUplinkMagazineLightRifleBox
-  name: Light Rifle Ammo Box
-  description: Bulk light rifle ammunition.
+  name: ert-uplink-ErtCallUplinkMagazineLightRifleBox-name
+  description: ert-uplink-ErtCallUplinkMagazineLightRifleBox-desc
   productEntity: MagazineLightRifleBox
   cost:
-    BlueSpaceCube: 4
+    BlueSpaceCube: 8
   categories:
   - ERTUplinkAmmoCombat
   conditions:
@@ -1099,11 +1399,11 @@
 
 - type: listing
   id: ErtCallUplinkEnergyShield
-  name: Energy Shield
-  description: Deployable personal energy barrier.
+  name: ert-uplink-ErtCallUplinkEnergyShield-name
+  description: ert-uplink-ErtCallUplinkEnergyShield-desc
   productEntity: EnergyShield
   cost:
-    BlueSpaceCube: 5
+    BlueSpaceCube: 10
   categories:
   - ERTUplinkUtilities
   conditions:
@@ -1112,72 +1412,251 @@
         tags:
           - ErtUplinkDeadSquad
 
-# Polonium edits below
 
 - type: listing
   id: ErtCallUplinkWeaponWeaponVisMPSPistol
-  name: Vis MPS Pistol
-  description: Advanced ballistic sidearm.
+  name: ert-uplink-ErtCallUplinkWeaponWeaponVisMPSPistol-name
+  description: ert-uplink-ErtCallUplinkWeaponWeaponVisMPSPistol-desc
   productEntity: WeaponVisMPSPistol
   cost:
     BlueSpaceCube: 4
   categories:
   - ERTUplinkWeaponCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkWeaponPMMGun
-  name: PMM Machine Gun
-  description: Compact automatic weapon.
+  name: ert-uplink-ErtCallUplinkWeaponPMMGun-name
+  description: ert-uplink-ErtCallUplinkWeaponPMMGun-desc
   productEntity: PMMMachineGun
   cost:
     BlueSpaceCube: 7
   categories:
   - ERTUplinkWeaponCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkWeaponBORGun
-  name: BOR Sniper
-  description: High-caliber precision rifle.
+  name: ert-uplink-ErtCallUplinkWeaponBORGun-name
+  description: ert-uplink-ErtCallUplinkWeaponBORGun-desc
   productEntity: WeaponBORSniperGun
   cost:
     BlueSpaceCube: 10
   categories:
   - ERTUplinkWeaponCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkWeaponWeaponVisMPSPistolMagazine
-  name: Vis MPS Magazine
-  description: Ammunition magazine for the Vis MPS.
+  name: ert-uplink-ErtCallUplinkWeaponWeaponVisMPSPistolMagazine-name
+  description: ert-uplink-ErtCallUplinkWeaponWeaponVisMPSPistolMagazine-desc
   productEntity: WeaponVisMPSPistolMagazine
   cost:
     BlueSpaceCube: 1
   categories:
   - ERTUplinkAmmoCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkWeaponPMMGunMagazine
-  name: PMM Magazine
-  description: Magazine for the PMM machine gun.
+  name: ert-uplink-ErtCallUplinkWeaponPMMGunMagazine-name
+  description: ert-uplink-ErtCallUplinkWeaponPMMGunMagazine-desc
   productEntity: PMMMachineGunMagazine
   cost:
     BlueSpaceCube: 1
   categories:
   - ERTUplinkAmmoCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkWeaponBORGunMagazine
-  name: BOR Magazine
-  description: Ammunition for BOR sniper rifle.
+  name: ert-uplink-ErtCallUplinkWeaponBORGunMagazine-name
+  description: ert-uplink-ErtCallUplinkWeaponBORGunMagazine-desc
   productEntity: BorSniperMagazine
   cost:
     BlueSpaceCube: 2
   categories:
   - ERTUplinkAmmoCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkWeaponLaserCellMG
+  name: ert-uplink-ErtCallUplinkWeaponLaserCellMG-name
+  description: ert-uplink-ErtCallUplinkWeaponLaserCellMG-desc
+  productEntity: WeaponLaserCellMG
+  cost:
+    BlueSpaceCube: 100
+  categories:
+  - ERTUplinkWeaponCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkMilitaryPowerCellMG
+  name: ert-uplink-ErtCallUplinkMilitaryPowerCellMG-name
+  description: ert-uplink-ErtCallUplinkMilitaryPowerCellMG-desc
+  productEntity: MilitaryPowerCellMG
+  cost:
+    BlueSpaceCube: 25
+  categories:
+  - ERTUplinkAmmoCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkWeaponRifleXlr556
+  name: ert-uplink-ErtCallUplinkWeaponRifleXlr556-name
+  description: ert-uplink-ErtCallUplinkWeaponRifleXlr556-desc
+  productEntity: WeaponRifleXlr556
+  cost:
+    BlueSpaceCube: 24
+  categories:
+  - ERTUplinkWeaponCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkWeaponRifleAsakimAutopulser
+  name: ert-uplink-ErtCallUplinkWeaponRifleAsakimAutopulser-name
+  description: ert-uplink-ErtCallUplinkWeaponRifleAsakimAutopulser-desc
+  productEntity: WeaponRifleAsakimAutopulser
+  cost:
+    BlueSpaceCube: 30
+  categories:
+  - ERTUplinkWeaponCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkUllmanWeaponPulsePistol
+  name: ert-uplink-ErtCallUplinkUllmanWeaponPulsePistol-name
+  description: ert-uplink-ErtCallUplinkUllmanWeaponPulsePistol-desc
+  productEntity: UllmanWeaponPulsePistol
+  cost:
+    BlueSpaceCube: 14
+  categories:
+  - ERTUplinkWeaponCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkUllmanWeaponPulseSniper
+  name: ert-uplink-ErtCallUplinkUllmanWeaponPulseSniper-name
+  description: ert-uplink-ErtCallUplinkUllmanWeaponPulseSniper-desc
+  productEntity: UllmanWeaponPulseSniper
+  cost:
+    BlueSpaceCube: 70
+  categories:
+  - ERTUplinkWeaponCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkWeaponSubMachineGunVectorNtsfHclm
+  name: ert-uplink-ErtCallUplinkWeaponSubMachineGunVectorNtsfHclm-name
+  description: ert-uplink-ErtCallUplinkWeaponSubMachineGunVectorNtsfHclm-desc
+  productEntity: WeaponSubMachineGunVectorNtsfHclm
+  cost:
+    BlueSpaceCube: 28
+  categories:
+  - ERTUplinkWeaponCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkMagazineMagnumSubMachineGun
+  name: ert-uplink-ErtCallUplinkMagazineMagnumSubMachineGun-name
+  description: ert-uplink-ErtCallUplinkMagazineMagnumSubMachineGun-desc
+  productEntity: MagazineMagnumSubMachineGun
+  cost:
+    BlueSpaceCube: 12
+  categories:
+  - ERTUplinkAmmoCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkWeaponPistolHawk4
+  name: ert-uplink-ErtCallUplinkWeaponPistolHawk4-name
+  description: ert-uplink-ErtCallUplinkWeaponPistolHawk4-desc
+  productEntity: WeaponPistolHawk4
+  cost:
+    BlueSpaceCube: 14
+  categories:
+  - ERTUplinkWeaponCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkWeaponPistolHawk4DeadSquad
+  name: ert-uplink-ErtCallUplinkWeaponPistolHawk4-name
+  description: ert-uplink-ErtCallUplinkWeaponPistolHawk4-desc
+  productEntity: WeaponPistolHawk4
+  cost:
+    BlueSpaceCube: 32
+  categories:
+  - ERTUplinkWeaponCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkSecurityHardsuit
-  name: ERT security's hardsuit
-  description: A protective hardsuit worn by the security officers of an emergency response team.
+  name: ert-uplink-ErtCallUplinkSecurityHardsuit-name
+  description: ert-uplink-ErtCallUplinkSecurityHardsuit-desc
   productEntity: ClothingOuterHardsuitERTSecurity
   cost:
     BlueSpaceCube: 5
@@ -1188,11 +1667,14 @@
       whitelist:
         tags:
           - ErtUplinkCombat
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkMedicHardsuit
-  name: ERT medic's hardsuit
-  description: A protective hardsuit worn by the medics of an emergency response team.
+  name: ert-uplink-ErtCallUplinkMedicHardsuit-name
+  description: ert-uplink-ErtCallUplinkMedicHardsuit-desc
   productEntity: ClothingOuterHardsuitERTMedical
   cost:
     BlueSpaceCube: 5
@@ -1203,11 +1685,14 @@
       whitelist:
         tags:
           - ErtUplinkMedical        
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkEngineerHardsuit
-  name: ERT engineer's hardsuit
-  description: A protective hardsuit worn by the engineers of an emergency response team.
+  name: ert-uplink-ErtCallUplinkEngineerHardsuit-name
+  description: ert-uplink-ErtCallUplinkEngineerHardsuit-desc
   productEntity: ClothingOuterHardsuitERTEngineer
   cost:
     BlueSpaceCube: 5
@@ -1218,11 +1703,14 @@
       whitelist:
         tags:
           - ErtUplinkEngineering     
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
 - type: listing
   id: ErtCallUplinkJanitorHardsuit
-  name: ERT janitor's hardsuit
-  description: A protective hardsuit worn by the janitors of an emergency response team.
+  name: ert-uplink-ErtCallUplinkJanitorHardsuit-name
+  description: ert-uplink-ErtCallUplinkJanitorHardsuit-desc
   productEntity: ClothingOuterHardsuitERTJanitor
   cost:
     BlueSpaceCube: 4
@@ -1232,6 +1720,1331 @@
     - !type:StoreWhitelistCondition
       whitelist:
         tags:
-          - ErtUplinkJanitorial             
+          - ErtUplinkJanitorial
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
 
-          
+
+# Death Squad isolated pricing (mirrors ERT catalog at DS rates)
+- type: listing
+  id: ErtCallUplinkStunbatonDeadSquad
+  name: ert-uplink-ErtCallUplinkStunbaton-name
+  description: ert-uplink-ErtCallUplinkStunbaton-desc
+  productEntity: AdvancedStunbaton
+  cost:
+    BlueSpaceCube: 4
+  categories:
+  - ERTUplinkMelee
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkMacheteDeadSquad
+  name: ert-uplink-ErtCallUplinkMachete-name
+  description: ert-uplink-ErtCallUplinkMachete-desc
+  productEntity: Machete
+  cost:
+    BlueSpaceCube: 20
+  categories:
+  - ERTUplinkMelee
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkCombatKnifeDeadSquad
+  name: ert-uplink-ErtCallUplinkCombatKnife-name
+  description: ert-uplink-ErtCallUplinkCombatKnife-desc
+  productEntity: CombatKnife
+  cost:
+    BlueSpaceCube: 4
+  categories:
+  - ERTUplinkMelee
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkEnergySwordDeadSquad
+  name: ert-uplink-ErtCallUplinkEnergySword-name
+  description: ert-uplink-ErtCallUplinkEnergySword-desc
+  productEntity: EnergySword
+  cost:
+    BlueSpaceCube: 20
+  categories:
+  - ERTUplinkMelee
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkMagazinePistolDeadSquad
+  name: ert-uplink-ErtCallUplinkMagazinePistol-name
+  description: ert-uplink-ErtCallUplinkMagazinePistol-desc
+  productEntity: MagazinePistol
+  cost:
+    BlueSpaceCube: 4
+  categories:
+  - ERTUplinkAmmoCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkMagazineRifleDeadSquad
+  name: ert-uplink-ErtCallUplinkMagazineRifle-name
+  description: ert-uplink-ErtCallUplinkMagazineRifle-desc
+  productEntity: MagazineRifle
+  cost:
+    BlueSpaceCube: 6
+  categories:
+  - ERTUplinkAmmoCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkMagazineBoxAntiMaterielDeadSquad
+  name: ert-uplink-ErtCallUplinkMagazineBoxAntiMateriel-name
+  description: ert-uplink-ErtCallUplinkMagazineBoxAntiMateriel-desc
+  productEntity: MagazineBoxAntiMateriel
+  cost:
+    BlueSpaceCube: 10
+  categories:
+  - ERTUplinkAmmoCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkMagazineLethalshotDeadSquad
+  name: ert-uplink-ErtCallUplinkMagazineLethalshot-name
+  description: ert-uplink-ErtCallUplinkMagazineLethalshot-desc
+  productEntity: MagazineShotgun
+  cost:
+    BlueSpaceCube: 6
+  categories:
+  - ERTUplinkAmmoCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkMagazineShotgunIncendiaryDeadSquad
+  name: ert-uplink-ErtCallUplinkMagazineShotgunIncendiary-name
+  description: ert-uplink-ErtCallUplinkMagazineShotgunIncendiary-desc
+  productEntity: MagazineShotgunIncendiary
+  cost:
+    BlueSpaceCube: 6
+  categories:
+  - ERTUplinkAmmoCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkMagazineShotgunSlugDeadSquad
+  name: ert-uplink-ErtCallUplinkMagazineShotgunSlug-name
+  description: ert-uplink-ErtCallUplinkMagazineShotgunSlug-desc
+  productEntity: MagazineShotgunSlug
+  cost:
+    BlueSpaceCube: 6
+  categories:
+  - ERTUplinkAmmoCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkMagazineLightRifleDeadSquad
+  name: ert-uplink-ErtCallUplinkMagazineLightRifle-name
+  description: ert-uplink-ErtCallUplinkMagazineLightRifle-desc
+  productEntity: MagazineLightRifle
+  cost:
+    BlueSpaceCube: 4
+  categories:
+  - ERTUplinkAmmoCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkCartridgeRocketDeadSquad
+  name: ert-uplink-ErtCallUplinkCartridgeRocket-name
+  description: ert-uplink-ErtCallUplinkCartridgeRocket-desc
+  productEntity: CartridgeRocket
+  cost:
+    BlueSpaceCube: 24
+  categories:
+  - ERTUplinkAmmoCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkGrenadeFlashBangDeadSquad
+  name: ert-uplink-ErtCallUplinkGrenadeFlashBang-name
+  description: ert-uplink-ErtCallUplinkGrenadeFlashBang-desc
+  productEntity: GrenadeFlashBang
+  cost:
+    BlueSpaceCube: 2
+  categories:
+  - ERTUplinkExplosives
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkEmpGrenadeDeadSquad
+  name: ert-uplink-ErtCallUplinkEmpGrenade-name
+  description: ert-uplink-ErtCallUplinkEmpGrenade-desc
+  productEntity: EmpGrenade
+  cost:
+    BlueSpaceCube: 4
+  categories:
+  - ERTUplinkExplosives
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkExGrenadeDeadSquad
+  name: ert-uplink-ErtCallUplinkExGrenade-name
+  description: ert-uplink-ErtCallUplinkExGrenade-desc
+  productEntity: ExGrenade
+  cost:
+    BlueSpaceCube: 8
+  categories:
+  - ERTUplinkExplosives
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkC4DeadSquad
+  name: ert-uplink-ErtCallUplinkC4-name
+  description: ert-uplink-ErtCallUplinkC4-desc
+  productEntity: C4
+  cost:
+    BlueSpaceCube: 6
+  categories:
+  - ERTUplinkExplosives
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkClusterBangFullDeadSquad
+  name: ert-uplink-ErtCallUplinkClusterBangFull-name
+  description: ert-uplink-ErtCallUplinkClusterBangFull-desc
+  productEntity: ClusterBangFull
+  cost:
+    BlueSpaceCube: 8
+  categories:
+  - ERTUplinkExplosives
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkClothingEyesGlassesMesonDeadSquad
+  name: ert-uplink-ErtCallUplinkClothingEyesGlassesMeson-name
+  description: ert-uplink-ErtCallUplinkClothingEyesGlassesMeson-desc
+  productEntity: ClothingEyesGlassesMeson
+  cost:
+    BlueSpaceCube: 4
+  categories:
+  - ERTUplinkEngineering
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkAmeJarDeadSquad
+  name: ert-uplink-ErtCallUplinkAmeJar-name
+  description: ert-uplink-ErtCallUplinkAmeJar-desc
+  productEntity: AmeJar
+  cost:
+    BlueSpaceCube: 4
+  categories:
+  - ERTUplinkEngineering
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkJawsOfLifeDeadSquad
+  name: ert-uplink-ErtCallUplinkJawsOfLife-name
+  description: ert-uplink-ErtCallUplinkJawsOfLife-desc
+  productEntity: JawsOfLife
+  cost:
+    BlueSpaceCube: 8
+  categories:
+  - ERTUplinkEngineering
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkPowerDrillDeadSquad
+  name: ert-uplink-ErtCallUplinkPowerDrill-name
+  description: ert-uplink-ErtCallUplinkPowerDrill-desc
+  productEntity: PowerDrill
+  cost:
+    BlueSpaceCube: 8
+  categories:
+  - ERTUplinkEngineering
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkClothingBeltUtilityFilledDeadSquad
+  name: ert-uplink-ErtCallUplinkClothingBeltUtilityFilled-name
+  description: ert-uplink-ErtCallUplinkClothingBeltUtilityFilled-desc
+  productEntity: ClothingBeltUtilityFilled
+  cost:
+    BlueSpaceCube: 8
+  categories:
+  - ERTUplinkEngineering
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkRCDDeadSquad
+  name: ert-uplink-ErtCallUplinkRCD-name
+  description: ert-uplink-ErtCallUplinkRCD-desc
+  productEntity: RCD
+  cost:
+    BlueSpaceCube: 12
+  categories:
+  - ERTUplinkEngineering
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkRCDAmmoDeadSquad
+  name: ert-uplink-ErtCallUplinkRCDAmmo-name
+  description: ert-uplink-ErtCallUplinkRCDAmmo-desc
+  productEntity: RCDAmmo
+  cost:
+    BlueSpaceCube: 4
+  categories:
+  - ERTUplinkEngineering
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkHolofanProjectorDeadSquad
+  name: ert-uplink-ErtCallUplinkHolofanProjector-name
+  description: ert-uplink-ErtCallUplinkHolofanProjector-desc
+  productEntity: HolofanProjector
+  cost:
+    BlueSpaceCube: 2
+  categories:
+  - ERTUplinkEngineering
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkNetworkConfiguratorDeadSquad
+  name: ert-uplink-ErtCallUplinkNetworkConfigurator-name
+  description: ert-uplink-ErtCallUplinkNetworkConfigurator-desc
+  productEntity: NetworkConfigurator
+  cost:
+    BlueSpaceCube: 2
+  categories:
+  - ERTUplinkEngineering
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkGasAnalyzerDeadSquad
+  name: ert-uplink-ErtCallUplinkGasAnalyzer-name
+  description: ert-uplink-ErtCallUplinkGasAnalyzer-desc
+  productEntity: GasAnalyzer
+  cost:
+    BlueSpaceCube: 2
+  categories:
+  - ERTUplinkEngineering
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkMultitoolDeadSquad
+  name: ert-uplink-ErtCallUplinkMultitool-name
+  description: ert-uplink-ErtCallUplinkMultitool-desc
+  productEntity: Multitool
+  cost:
+    BlueSpaceCube: 2
+  categories:
+  - ERTUplinkEngineering
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkTrayScannerDeadSquad
+  name: ert-uplink-ErtCallUplinkTrayScanner-name
+  description: ert-uplink-ErtCallUplinkTrayScanner-desc
+  productEntity: trayScanner
+  cost:
+    BlueSpaceCube: 2
+  categories:
+  - ERTUplinkEngineering
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkSheetSteelDeadSquad
+  name: ert-uplink-ErtCallUplinkSheetSteel-name
+  description: ert-uplink-ErtCallUplinkSheetSteel-desc
+  productEntity: SheetSteel
+  cost:
+    BlueSpaceCube: 4
+  categories:
+  - ERTUplinkEngineering
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkSheetPlasteelDeadSquad
+  name: ert-uplink-ErtCallUplinkSheetPlasteel-name
+  description: ert-uplink-ErtCallUplinkSheetPlasteel-desc
+  productEntity: SheetPlasteel
+  cost:
+    BlueSpaceCube: 6
+  categories:
+  - ERTUplinkEngineering
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkSheetRGlassDeadSquad
+  name: ert-uplink-ErtCallUplinkSheetRGlass-name
+  description: ert-uplink-ErtCallUplinkSheetRGlass-desc
+  productEntity: SheetRGlass
+  cost:
+    BlueSpaceCube: 6
+  categories:
+  - ERTUplinkEngineering
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkSheetGlassDeadSquad
+  name: ert-uplink-ErtCallUplinkSheetGlass-name
+  description: ert-uplink-ErtCallUplinkSheetGlass-desc
+  productEntity: SheetGlass
+  cost:
+    BlueSpaceCube: 4
+  categories:
+  - ERTUplinkEngineering
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkPartRodMetalDeadSquad
+  name: ert-uplink-ErtCallUplinkPartRodMetal-name
+  description: ert-uplink-ErtCallUplinkPartRodMetal-desc
+  productEntity: PartRodMetal
+  cost:
+    BlueSpaceCube: 2
+  categories:
+  - ERTUplinkEngineering
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkCableHVStackDeadSquad
+  name: ert-uplink-ErtCallUplinkCableHVStack-name
+  description: ert-uplink-ErtCallUplinkCableHVStack-desc
+  productEntity: CableHVStack
+  cost:
+    BlueSpaceCube: 2
+  categories:
+  - ERTUplinkEngineering
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkCableMVStackDeadSquad
+  name: ert-uplink-ErtCallUplinkCableMVStack-name
+  description: ert-uplink-ErtCallUplinkCableMVStack-desc
+  productEntity: CableMVStack
+  cost:
+    BlueSpaceCube: 2
+  categories:
+  - ERTUplinkEngineering
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkCableApcStackDeadSquad
+  name: ert-uplink-ErtCallUplinkCableApcStack-name
+  description: ert-uplink-ErtCallUplinkCableApcStack-desc
+  productEntity: CableApcStack
+  cost:
+    BlueSpaceCube: 2
+  categories:
+  - ERTUplinkEngineering
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkBoxInflatableDeadSquad
+  name: ert-uplink-ErtCallUplinkBoxInflatable-name
+  description: ert-uplink-ErtCallUplinkBoxInflatable-desc
+  productEntity: BoxInflatable
+  cost:
+    BlueSpaceCube: 6
+  categories:
+  - ERTUplinkEngineering
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkWelderExperimentalDeadSquad
+  name: ert-uplink-ErtCallUplinkWelderExperimental-name
+  description: ert-uplink-ErtCallUplinkWelderExperimental-desc
+  productEntity: WelderExperimental
+  cost:
+    BlueSpaceCube: 8
+  categories:
+  - ERTUplinkEngineering
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkOmnizineChemistryBottleDeadSquad
+  name: ert-uplink-ErtCallUplinkOmnizineChemistryBottle-name
+  description: ert-uplink-ErtCallUplinkOmnizineChemistryBottle-desc
+  productEntity: OmnizineChemistryBottle
+  cost:
+    BlueSpaceCube: 20
+  categories:
+  - ERTUplinkMedial
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkHyposprayDeadSquad
+  name: ert-uplink-ErtCallUplinkHypospray-name
+  description: ert-uplink-ErtCallUplinkHypospray-desc
+  productEntity: Hypospray
+  cost:
+    BlueSpaceCube: 12
+  categories:
+  - ERTUplinkMedial
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkGauzeDeadSquad
+  name: ert-uplink-ErtCallUplinkGauze-name
+  description: ert-uplink-ErtCallUplinkGauze-desc
+  productEntity: Gauze
+  cost:
+    BlueSpaceCube: 2
+  categories:
+  - ERTUplinkMedial
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkBrutepackDeadSquad
+  name: ert-uplink-ErtCallUplinkBrutepack-name
+  description: ert-uplink-ErtCallUplinkBrutepack-desc
+  productEntity: MedicatedSuture
+  cost:
+    BlueSpaceCube: 2
+  categories:
+  - ERTUplinkMedial
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkOintmentDeadSquad
+  name: ert-uplink-ErtCallUplinkOintment-name
+  description: ert-uplink-ErtCallUplinkOintment-desc
+  productEntity: RegenerativeMesh
+  cost:
+    BlueSpaceCube: 2
+  categories:
+  - ERTUplinkMedial
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkStimpackDeadSquad
+  name: ert-uplink-ErtCallUplinkStimpack-name
+  description: ert-uplink-ErtCallUplinkStimpack-desc
+  productEntity: Stimpack
+  cost:
+    BlueSpaceCube: 10
+  categories:
+  - ERTUplinkMedial
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkCompactDefibrillatorDeadSquad
+  name: ert-uplink-ErtCallUplinkCompactDefibrillator-name
+  description: ert-uplink-ErtCallUplinkCompactDefibrillator-desc
+  productEntity: DefibrillatorCompact
+  cost:
+    BlueSpaceCube: 10
+  categories:
+  - ERTUplinkMedial
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkEmergencyMedipenDeadSquad
+  name: ert-uplink-ErtCallUplinkEmergencyMedipen-name
+  description: ert-uplink-ErtCallUplinkEmergencyMedipen-desc
+  productEntity: EmergencyMedipen
+  cost:
+    BlueSpaceCube: 2
+  categories:
+  - ERTUplinkMedial
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkHandheldHealthAnalyzerDeadSquad
+  name: ert-uplink-ErtCallUplinkHandheldHealthAnalyzer-name
+  description: ert-uplink-ErtCallUplinkHandheldHealthAnalyzer-desc
+  productEntity: HandheldHealthAnalyzer
+  cost:
+    BlueSpaceCube: 2
+  categories:
+  - ERTUplinkMedial
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkMaterialBiomassDeadSquad
+  name: ert-uplink-ErtCallUplinkMaterialBiomass-name
+  description: ert-uplink-ErtCallUplinkMaterialBiomass-desc
+  productEntity: MaterialBiomass
+  cost:
+    BlueSpaceCube: 10
+  categories:
+  - ERTUplinkMedial
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkPillAmbuzolPlusDeadSquad
+  name: ert-uplink-ErtCallUplinkPillAmbuzolPlus-name
+  description: ert-uplink-ErtCallUplinkPillAmbuzolPlus-desc
+  productEntity: PillAmbuzolPlus
+  cost:
+    BlueSpaceCube: 4
+  categories:
+  - ERTUplinkMedial
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkSpaceMedipenDeadSquad
+  name: ert-uplink-ErtCallUplinkSpaceMedipen-name
+  description: ert-uplink-ErtCallUplinkSpaceMedipen-desc
+  productEntity: SpaceMedipen
+  cost:
+    BlueSpaceCube: 4
+  categories:
+  - ERTUplinkMedial
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkWeaponPulsePistolDeadSquad
+  name: ert-uplink-ErtCallUplinkWeaponPulsePistol-name
+  description: ert-uplink-ErtCallUplinkWeaponPulsePistol-desc
+  productEntity: WeaponPulsePistol
+  cost:
+    BlueSpaceCube: 10
+  categories:
+  - ERTUplinkWeaponCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkWeaponDisablerDeadSquad
+  name: ert-uplink-ErtCallUplinkWeaponDisabler-name
+  description: ert-uplink-ErtCallUplinkWeaponDisabler-desc
+  productEntity: WeaponDisabler
+  cost:
+    BlueSpaceCube: 6
+  categories:
+  - ERTUplinkWeaponCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkWeaponPistolMk58DeadSquad
+  name: ert-uplink-ErtCallUplinkWeaponPistolMk58-name
+  description: ert-uplink-ErtCallUplinkWeaponPistolMk58-desc
+  productEntity: WeaponPistolMk58
+  cost:
+    BlueSpaceCube: 8
+  categories:
+  - ERTUplinkWeaponCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkWeaponRifleLecterDeadSquad
+  name: ert-uplink-ErtCallUplinkWeaponRifleLecter-name
+  description: ert-uplink-ErtCallUplinkWeaponRifleLecter-desc
+  productEntity: WeaponRifleLecter
+  cost:
+    BlueSpaceCube: 16
+  categories:
+  - ERTUplinkWeaponCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkWeaponPulseCarbineDeadSquad
+  name: ert-uplink-ErtCallUplinkWeaponPulseCarbine-name
+  description: ert-uplink-ErtCallUplinkWeaponPulseCarbine-desc
+  productEntity: WeaponPulseCarbine
+  cost:
+    BlueSpaceCube: 24
+  categories:
+  - ERTUplinkWeaponCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkWeaponAdvancedLaserDeadSquad
+  name: ert-uplink-ErtCallUplinkWeaponAdvancedLaser-name
+  description: ert-uplink-ErtCallUplinkWeaponAdvancedLaser-desc
+  productEntity: WeaponAdvancedLaser
+  cost:
+    BlueSpaceCube: 24
+  categories:
+  - ERTUplinkWeaponCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkWeaponSniperHristovDeadSquad
+  name: ert-uplink-ErtCallUplinkWeaponSniperHristov-name
+  description: ert-uplink-ErtCallUplinkWeaponSniperHristov-desc
+  productEntity: WeaponSniperHristov
+  cost:
+    BlueSpaceCube: 24
+  categories:
+  - ERTUplinkWeaponCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkWeaponShotgunKammererDeadSquad
+  name: ert-uplink-ErtCallUplinkWeaponShotgunKammerer-name
+  description: ert-uplink-ErtCallUplinkWeaponShotgunKammerer-desc
+  productEntity: WeaponShotgunKammerer
+  cost:
+    BlueSpaceCube: 16
+  categories:
+  - ERTUplinkWeaponCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkWeaponShotgunBulldogDeadSquad
+  name: ert-uplink-ErtCallUplinkWeaponShotgunBulldog-name
+  description: ert-uplink-ErtCallUplinkWeaponShotgunBulldog-desc
+  productEntity: WeaponShotgunBulldog
+  cost:
+    BlueSpaceCube: 20
+  categories:
+  - ERTUplinkWeaponCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkWeaponLauncherRocketDeadSquad
+  name: ert-uplink-ErtCallUplinkWeaponLauncherRocket-name
+  description: ert-uplink-ErtCallUplinkWeaponLauncherRocket-desc
+  productEntity: WeaponLauncherRocket
+  cost:
+    BlueSpaceCube: 60
+  categories:
+  - ERTUplinkWeaponCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkAdvMopItemDeadSquad
+  name: ert-uplink-ErtCallUplinkAdvMopItem-name
+  description: ert-uplink-ErtCallUplinkAdvMopItem-desc
+  productEntity: AdvMopItem
+  cost:
+    BlueSpaceCube: 12
+  categories:
+  - ERTUplinkJanitor
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkWeedSprayDeadSquad
+  name: ert-uplink-ErtCallUplinkWeedSpray-name
+  description: ert-uplink-ErtCallUplinkWeedSpray-desc
+  productEntity: WeedSpray
+  cost:
+    BlueSpaceCube: 2
+  categories:
+  - ERTUplinkJanitor
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkLightReplacerDeadSquad
+  name: ert-uplink-ErtCallUplinkLightReplacer-name
+  description: ert-uplink-ErtCallUplinkLightReplacer-desc
+  productEntity: LightReplacer
+  cost:
+    BlueSpaceCube: 4
+  categories:
+  - ERTUplinkJanitor
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkBoxLightMixedDeadSquad
+  name: ert-uplink-ErtCallUplinkBoxLightMixed-name
+  description: ert-uplink-ErtCallUplinkBoxLightMixed-desc
+  productEntity: BoxLightMixed
+  cost:
+    BlueSpaceCube: 2
+  categories:
+  - ERTUplinkJanitor
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkSprayBottleSpaceCleanerDeadSquad
+  name: ert-uplink-ErtCallUplinkSprayBottleSpaceCleaner-name
+  description: ert-uplink-ErtCallUplinkSprayBottleSpaceCleaner-desc
+  productEntity: SprayBottleSpaceCleaner
+  cost:
+    BlueSpaceCube: 2
+  categories:
+  - ERTUplinkJanitor
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkMopBucketFullDeadSquad
+  name: ert-uplink-ErtCallUplinkMopBucketFull-name
+  description: ert-uplink-ErtCallUplinkMopBucketFull-desc
+  productEntity: MopBucketFull
+  cost:
+    BlueSpaceCube: 8
+  categories:
+  - ERTUplinkJanitor
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkBucketDeadSquad
+  name: ert-uplink-ErtCallUplinkBucket-name
+  description: ert-uplink-ErtCallUplinkBucket-desc
+  productEntity: Bucket
+  cost:
+    BlueSpaceCube: 4
+  categories:
+  - ERTUplinkJanitor
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkBoxBodyBagDeadSquad
+  name: ert-uplink-ErtCallUplinkBoxBodyBag-name
+  description: ert-uplink-ErtCallUplinkBoxBodyBag-desc
+  productEntity: BoxBodyBag
+  cost:
+    BlueSpaceCube: 8
+  categories:
+  - ERTUplinkJanitor
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkBiohazardSuitDeadSquad
+  name: ert-uplink-ErtCallUplinkBiohazardSuit-name
+  description: ert-uplink-ErtCallUplinkBiohazardSuit-desc
+  productEntity: Soap
+  cost:
+    BlueSpaceCube: 2
+  categories:
+  - ERTUplinkJanitor
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkTrashBagDeadSquad
+  name: ert-uplink-ErtCallUplinkTrashBag-name
+  description: ert-uplink-ErtCallUplinkTrashBag-desc
+  productEntity: TrashBag
+  cost:
+    BlueSpaceCube: 2
+  categories:
+  - ERTUplinkJanitor
+
+#ERTUplinkUtilities
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkHandcuffsDeadSquad
+  name: ert-uplink-ErtCallUplinkHandcuffs-name
+  description: ert-uplink-ErtCallUplinkHandcuffs-desc
+  productEntity: Handcuffs
+  cost:
+    BlueSpaceCube: 4
+  categories:
+  - ERTUplinkUtilities
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkJetpackBlueFilledDeadSquad
+  name: ert-uplink-ErtCallUplinkJetpackBlueFilled-name
+  description: ert-uplink-ErtCallUplinkJetpackBlueFilled-desc
+  productEntity: JetpackBlueFilled
+  cost:
+    BlueSpaceCube: 8
+  categories:
+  - ERTUplinkUtilities
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkHandheldGPSBasicDeadSquad
+  name: ert-uplink-ErtCallUplinkHandheldGPSBasic-name
+  description: ert-uplink-ErtCallUplinkHandheldGPSBasic-desc
+  productEntity: HandheldGPSBasic
+  cost:
+    BlueSpaceCube: 2
+  categories:
+  - ERTUplinkUtilities
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkHandheldStationMapDeadSquad
+  name: ert-uplink-ErtCallUplinkHandheldStationMap-name
+  description: ert-uplink-ErtCallUplinkHandheldStationMap-desc
+  productEntity: HandheldStationMap
+  cost:
+    BlueSpaceCube: 2
+  categories:
+  - ERTUplinkUtilities
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkHandheldCrewMonitorDeadSquad
+  name: ert-uplink-ErtCallUplinkHandheldCrewMonitor-name
+  description: ert-uplink-ErtCallUplinkHandheldCrewMonitor-desc
+  productEntity: HandheldCrewMonitor
+  cost:
+    BlueSpaceCube: 8
+  categories:
+  - ERTUplinkUtilities
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkClothingShoesBootsMagDeadSquad
+  name: ert-uplink-ErtCallUplinkClothingShoesBootsMag-name
+  description: ert-uplink-ErtCallUplinkClothingShoesBootsMag-desc
+  productEntity: ClothingShoesBootsMag
+  cost:
+    BlueSpaceCube: 4
+  categories:
+  - ERTUplinkUtilities
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkCrowbarDeadSquad
+  name: ert-uplink-ErtCallUplinkCrowbar-name
+  description: ert-uplink-ErtCallUplinkCrowbar-desc
+  productEntity: Crowbar
+  cost:
+    BlueSpaceCube: 2
+  categories:
+  - ERTUplinkUtilities
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkWeaponWeaponVisMPSPistolDeadSquad
+  name: ert-uplink-ErtCallUplinkWeaponWeaponVisMPSPistol-name
+  description: ert-uplink-ErtCallUplinkWeaponWeaponVisMPSPistol-desc
+  productEntity: WeaponVisMPSPistol
+  cost:
+    BlueSpaceCube: 8
+  categories:
+  - ERTUplinkWeaponCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkWeaponPMMGunDeadSquad
+  name: ert-uplink-ErtCallUplinkWeaponPMMGun-name
+  description: ert-uplink-ErtCallUplinkWeaponPMMGun-desc
+  productEntity: PMMMachineGun
+  cost:
+    BlueSpaceCube: 14
+  categories:
+  - ERTUplinkWeaponCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkWeaponBORGunDeadSquad
+  name: ert-uplink-ErtCallUplinkWeaponBORGun-name
+  description: ert-uplink-ErtCallUplinkWeaponBORGun-desc
+  productEntity: WeaponBORSniperGun
+  cost:
+    BlueSpaceCube: 20
+  categories:
+  - ERTUplinkWeaponCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkWeaponWeaponVisMPSPistolMagazineDeadSquad
+  name: ert-uplink-ErtCallUplinkWeaponWeaponVisMPSPistolMagazine-name
+  description: ert-uplink-ErtCallUplinkWeaponWeaponVisMPSPistolMagazine-desc
+  productEntity: WeaponVisMPSPistolMagazine
+  cost:
+    BlueSpaceCube: 2
+  categories:
+  - ERTUplinkAmmoCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkWeaponPMMGunMagazineDeadSquad
+  name: ert-uplink-ErtCallUplinkWeaponPMMGunMagazine-name
+  description: ert-uplink-ErtCallUplinkWeaponPMMGunMagazine-desc
+  productEntity: PMMMachineGunMagazine
+  cost:
+    BlueSpaceCube: 2
+  categories:
+  - ERTUplinkAmmoCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkWeaponBORGunMagazineDeadSquad
+  name: ert-uplink-ErtCallUplinkWeaponBORGunMagazine-name
+  description: ert-uplink-ErtCallUplinkWeaponBORGunMagazine-desc
+  productEntity: BorSniperMagazine
+  cost:
+    BlueSpaceCube: 4
+  categories:
+  - ERTUplinkAmmoCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkSecurityHardsuitDeadSquad
+  name: ert-uplink-ErtCallUplinkSecurityHardsuit-name
+  description: ert-uplink-ErtCallUplinkSecurityHardsuit-desc
+  productEntity: ClothingOuterHardsuitERTSecurity
+  cost:
+    BlueSpaceCube: 10
+  categories:
+  - ERTUplinkUtilities
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkMedicHardsuitDeadSquad
+  name: ert-uplink-ErtCallUplinkMedicHardsuit-name
+  description: ert-uplink-ErtCallUplinkMedicHardsuit-desc
+  productEntity: ClothingOuterHardsuitERTMedical
+  cost:
+    BlueSpaceCube: 10
+  categories:
+  - ERTUplinkUtilities
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkEngineerHardsuitDeadSquad
+  name: ert-uplink-ErtCallUplinkEngineerHardsuit-name
+  description: ert-uplink-ErtCallUplinkEngineerHardsuit-desc
+  productEntity: ClothingOuterHardsuitERTEngineer
+  cost:
+    BlueSpaceCube: 10
+  categories:
+  - ERTUplinkUtilities
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad
+
+- type: listing
+  id: ErtCallUplinkJanitorHardsuitDeadSquad
+  name: ert-uplink-ErtCallUplinkJanitorHardsuit-name
+  description: ert-uplink-ErtCallUplinkJanitorHardsuit-desc
+  productEntity: ClothingOuterHardsuitERTJanitor
+  cost:
+    BlueSpaceCube: 8
+  categories:
+  - ERTUplinkUtilities
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad

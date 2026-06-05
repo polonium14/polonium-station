@@ -8,19 +8,24 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-  # C1 - Nie bądź dupkiem
+  # R1 - Nie bądź dupkiem
 
   [italic]Te zasady nie są idealne.[/italic] Staramy się jasno określić, na co zespół administracyjny pozwala, a czego zabrania, jednak mogą pojawić się luki lub niedociągnięcia. [bold][color=#e74c3c]Nie próbuj manipulować interpretacją zasad[/color][/bold], aby osiągać własne cele lub psuć wrażenia z gry innym osobom.
 
   [italic]Wszyscy jesteśmy tutaj po to, by dobrze się bawić.[/italic] Bycie "[color=#e67e22]dupkiem[/color]" w kontekście [color=#2980b9]IC[/color] jest dozwolone, pod warunkiem, że robisz to z wyczuciem i szacunkiem dla współgraczy. Jednak przenoszenie takich zachowań poza świat gry jest surowo zabronione zgodnie z [textlink="zasadą społeczności nr.1" link="RuleS1"].
 
-  Zabronione są wszelkie formy celowego psucia zabawy innym graczom, w tym [bold][color=#e74c3c]samoantagowanie[/color][/bold] oraz [bold][color=#e74c3c]griefing (również po zakończeniu rundy – EORG)[/color][/bold]. Niedozwolone jest tworzenie postaci, których jedynym celem jest wywoływanie dramatów, dominacja na scenie lub bezustanne skupianie na sobie całej uwagi.
+  Zabronione są wszelkie formy celowego psucia zabawy innym graczom, w tym [bold][color=#e74c3c]samoantagowanie[/color][/bold] oraz [bold][color=#e74c3c]griefing[/color][/bold]. Niedozwolone jest tworzenie postaci, których jedynym celem jest wywoływanie dramatów, dominacja na scenie lub bezustanne skupianie na sobie całej uwagi.
+
+  [color=#2980b9]Samoantagowanie[/color] – podejmowanie działań nieuzgodnionych z administracją, szkodliwych dla stacji lub załogi (takich jak morderstwa, kradzieże wysokiego stopnia, sabotaż czy wywoływanie paniki) przez osobę, która w danej rundzie posiada status "lojalnego pracownika NanoTrasen".
+
+  [color=#2980b9]Griefing[/color] – celowe wywoływanie chaosu, niszczenie mienia stacji lub atakowanie innych postaci bez powodu w celu wywołania frustracji u współgraczy. Dotyczy to również [color=#2980b9]EORG[/color] (End-Of-Round Griefing) – griefing na koniec rundy.
 
   [bold][color=#e74c3c]Nie należy wielokrotnie i bezmyślnie obrażać innych graczy.[/color][/bold] Jeśli ktoś poprosi Cię o zaprzestanie zachowań niezgodnych z charakterem postaci ([color=#2980b9]Out Of Character - OOC[/color]), masz obowiązek to uszanować. Kontynuowanie takich działań będzie traktowane jako naruszenie [textlink="zasady społeczności nr.1" link="RuleS1"]. Pamiętaj jednak: jeśli grasz postacią kontrowersyjną, musisz liczyć się z adekwatnymi reakcjami innych postaci.
 
   Gracze mogą podejmować działania odwetowe zgodnie z zasadami eskalacji.
 
   ## Postępowanie z graczami w stanie SSD
+
   Szanujemy fakt, że gracze czasem muszą opuścić grę z przyczyn losowych lub technicznych. Gracze, którzy zostali rozłączeni i znajdują się w stanie hibernacji (tzw. [color=#9b59b6]SSD[/color]), nie powinni być antagonizowani ani wykorzystywani, gdy nie są w stanie się bronić.
 
   [bullet] [bold][color=#e74c3c]Zakazy:[/color][/bold] Takich graczy nie wolno okradać, atakować bezpośrednio ani używać jako żywych tarcz.
@@ -29,7 +34,7 @@ SPDX-License-Identifier: MIT
 
   [bullet] [bold][color=#2980b9]Pomoc:[/color][/bold] Postacie w SSD można swobodnie przenosić do szpitala, ochrony lub promu ewakuacyjnego w celu zapewnienia im bezpieczeństwa i opieki.
 
-  [bullet] [bold][color=#16a085]Kryospanie:[/color][/bold] Gracze w stanie katatonicznym (fioletowy tekst) lub pozostający w SSD powyżej 30 minut powinni zostać przeniesieni do kamer kryogenicznych, aby zwolnić miejsce na serwerze.
+  [bullet] [bold][color=#16a085]Kryospanie:[/color][/bold] Gracze w stanie katatonicznym (fioletowy tekst) lub pozostający w SSD powyżej [bold]20 minut[/bold] powinni zostać przeniesieni do kamer kryogenicznych, aby zwolnić miejsce na serwerze.
 
   [bullet] [bold][color=#f1c40f]Cele:[/color][/bold] Jeśli Twój cel został odłączony, możesz poprosić administrację o wyznaczenie nowego zadania.
 </Document>

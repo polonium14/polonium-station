@@ -1,5 +1,10 @@
+# SPDX-FileCopyrightText: 2026 Maciej Walendziuk <ozzeusz@gmail.com>
+# SPDX-FileCopyrightText: 2026 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
-  parent: BaseHandheldInstrument
+  parent: [BaseHandheldInstrument, BaseGrandTheftContraband]
   id: CallablePhoneInstrument
   name: red phone
   description: Should anything ever go wrong...
@@ -29,34 +34,38 @@
     notificationPrefix: prayer-chat-notify-centcom
     verb: prayer-verbs-voicemail
     verbImage: null
+  - type: GuideHelp
+    guides:
+    - RedPhoneSOP
   - type: CallablePhone
     isCentComm: false
     includeCentCommInDirectory: true
+    onlyCentCommInDirectory: true
     # phoneName: callable-phone-example-bridge  # optional; also editable via View Variables at runtime
     pickupHandsetSound:
       path: /Audio/_Polonium/Machines/Telephone/handset_pickup.ogg
       params:
-        volume: -3
+        volume: -5
     pickupHandsetInCallSound:
       collection: CallablePhoneHandsetPickupMic
       params:
-        volume: -3
+        volume: -5
     hangupHandsetSound:
       path: /Audio/_Polonium/Machines/Telephone/handset_hangup.ogg
       params:
-        volume: -3
+        volume: -5
     hangupHandsetInCallSound:
       collection: CallablePhoneHandsetHangupMic
       params:
-        volume: -3
+        volume: -5
     dialTone:
       path: /Audio/_Polonium/Machines/Telephone/dial_tone.ogg
       params:
-        volume: -5
+        volume: -5.5
     dialSound:
       path: /Audio/_Polonium/Machines/Telephone/dialing.ogg
       params:
-        volume: -4
+        volume: -6
     callWaitingTone:
       path: /Audio/_Polonium/Machines/Telephone/call_waiting.ogg
       params:
@@ -65,6 +74,10 @@
       path: /Audio/_Polonium/Machines/Telephone/busy.ogg
       params:
         volume: -5
+    inCallStaticSound:
+      path: /Audio/_Polonium/Machines/Telephone/static.ogg
+      params:
+        volume: -12
   - type: Telephone
     ringTone:
       path: /Audio/Machines/double_ring.ogg
@@ -105,6 +118,9 @@
   - type: CallablePhone
     includeCentCommInDirectory: false
     excludeCentCommFromDial: true
+  - type: Contraband
+    severity: Restricted
+    allowedDepartments: [ Command ]
 
   - type: ItemSlots
     slots:
@@ -144,6 +160,8 @@
     sentMessage: prayer-popup-notify-syndicate-sent
     notificationPrefix: prayer-chat-notify-syndicate
     verb: prayer-verbs-voicemail
+  - type: Contraband
+    severity: Syndicate
 
   - type: ItemSlots
     slots:
