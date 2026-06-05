@@ -51,3 +51,23 @@
   id: CBURN-Wagon
   path: "Maps/_Polonium/Shuttles/ERTShuttles/ERTBurnWagonV2.yml"
   desc: "Pojemny statek. 1 lider CBURN, 4 medyków CBURN, 6 bojowników CBURN."
+
+- type: ertCall
+  id: ERT-Small-Eng
+  path: "Maps/_Polonium/Shuttles/ERTShuttles/ERT-Small-Eng.yml"
+  desc: "Mały statek inżynieryjny. 1 lider, 2 inżynierów.
+
+- type: ertCall
+  id: ERT-Small-Med
+  path: "Maps/_Polonium/Shuttles/ERTShuttles/ERT-Small-Med.yml"
+  desc: "Mały statek medyczny. 1 lider, 2 medyków.
+
+- type: ertCall
+  id: ERT-Small-Sec
+  path: "Maps/_Polonium/Shuttles/ERTShuttles/ERT-Small-Sec.yml"
+  desc: "Mały statek z celami więziennymi. 1 lider, 2 bojowników.
+
+- type: ertCall
+  id: ERT-Small-Jani
+  path: "Maps/_Polonium/Shuttles/ERTShuttles/ERT-Small-Jani.yml"
+  desc: "Mały statek. 1 lider, 2 woźnych.
