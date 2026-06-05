@@ -55,19 +55,39 @@
 - type: ertCall
   id: ERT-Small-Eng
   path: "Maps/_Polonium/Shuttles/ERTShuttles/ERT-Small-Eng.yml"
-  desc: "Mały statek inżynieryjny. 1 lider, 2 inżynierów.
+  desc: "Mały statek. 1 lider, 2 inżynierów.
 
 - type: ertCall
   id: ERT-Small-Med
   path: "Maps/_Polonium/Shuttles/ERTShuttles/ERT-Small-Med.yml"
-  desc: "Mały statek medyczny. 1 lider, 2 medyków.
+  desc: "Mały statek. 1 lider, 2 medyków.
 
 - type: ertCall
   id: ERT-Small-Sec
   path: "Maps/_Polonium/Shuttles/ERTShuttles/ERT-Small-Sec.yml"
-  desc: "Mały statek z celami więziennymi. 1 lider, 2 bojowników.
+  desc: "Mały statek. 1 lider, 2 bojowników.
 
 - type: ertCall
   id: ERT-Small-Jani
   path: "Maps/_Polonium/Shuttles/ERTShuttles/ERT-Small-Jani.yml"
   desc: "Mały statek. 1 lider, 2 woźnych.
+
+- type: ertCall
+  id: ERT-Small-Deathsquad
+  path: "Maps/_Polonium/Shuttles/ERTShuttles/ERT-Small-Deathsquad.yml"
+  desc: "Mały statek. 3 bojowników szwadronu śmierci.
+
+- type: ertCall
+  id: ERT-Medium-Eng-Jani
+  path: "Maps/_Polonium/Shuttles/ERTShuttles/ERT-Medium-Eng-Jani.yml"
+  desc: "Średni statek. 1 lider, 6 inżynierów, 3 woźnych."
+
+- type: ertCall
+  id: ERT-Medium-Med
+  path: "Maps/_Polonium/Shuttles/ERTShuttles/ERT-Medium-Med.yml"
+  desc: "Średni statek. 1 lider, 9 medyków."
+
+- type: ertCall
+  id: ERT-Medium-Sec
+  path: "Maps/_Polonium/Shuttles/ERTShuttles/ERT-Medium-Sec.yml"
+  desc: "Średni statek. 1 lider, 9 bojowników."
