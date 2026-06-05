@@ -529,7 +529,7 @@ entities:
       parent: 1
     - type: Fixtures
       fixtures: {}
-- proto: AtmosDeviceFanTinyDev
+- proto: AtmosDeviceFanTiny
   entities:
   - uid: 12
     components:
@@ -543,14 +543,6 @@ entities:
     components:
     - type: Transform
       pos: -2.5,-5.5
-      parent: 1
-- proto: BigThruster
-  entities:
-  - uid: 21
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 1.5,-3.5
       parent: 1
 - proto: BlastDoor
   entities:
@@ -1231,7 +1223,7 @@ entities:
     - type: Transform
       pos: 4.5,-4.5
       parent: 1
-- proto: CentcomComputerComms
+- proto: CentcommComputerComms
   entities:
   - uid: 191
     components:
@@ -1239,7 +1231,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -0.5,8.5
       parent: 1
-- proto: CentcomTechFab
+- proto: SecurityTechFab
   entities:
   - uid: 60
     components:
@@ -2117,18 +2109,6 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: PatchPack
-  entities:
-  - uid: 56
-    components:
-    - type: Transform
-      pos: -3.205574,-3.3333688
-      parent: 1
-  - uid: 58
-    components:
-    - type: Transform
-      pos: -3.205574,-3.5755563
-      parent: 1
 - proto: PenCentcom
   entities:
   - uid: 297
@@ -2340,7 +2320,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 1.5,2.5
       parent: 1
-- proto: RandomHumanoidSpawnerERTEngineerAmber
+- proto: SpawnERTEngineerEVAPreset
   entities:
   - uid: 315
     components:
@@ -2352,28 +2332,28 @@ entities:
     - type: Transform
       pos: 1.4921875,9.324253
       parent: 1
-- proto: RandomHumanoidSpawnerERTJanitorAmber
+- proto: SpawnERTJunitorEVAPreset
   entities:
   - uid: 328
     components:
     - type: Transform
       pos: -1.5703125,4.5439777
       parent: 1
-- proto: RandomHumanoidSpawnerERTLeaderAmber
+- proto: SpawnERTLeaderEVAPreset
   entities:
   - uid: 324
     components:
     - type: Transform
       pos: 1.4934006,7.4989343
       parent: 1
-- proto: RandomHumanoidSpawnerERTMedicalAmber
+- proto: SpawnERTMedicEVAPreset
   entities:
   - uid: 325
     components:
     - type: Transform
       pos: -2.5078125,-3.2831361
       parent: 1
-- proto: RandomHumanoidSpawnerERTSecurityAmber
+- proto: SpawnERTSecurityEVAPreset
   entities:
   - uid: 323
     components:
@@ -2628,13 +2608,6 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: StationAnchorDespawn
-  entities:
-  - uid: 301
-    components:
-    - type: Transform
-      pos: 4.5,5.5
-      parent: 1
 - proto: SubstationBasic
   entities:
   - uid: 341
@@ -2709,7 +2682,13 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 2.5,-5.5
       parent: 1
-- proto: VendingMachineChemicalsNanotrasen
+  - uid: 21
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 1.5,-3.5
+      parent: 1
+- proto: VendingMachineChemicals
   entities:
   - uid: 59
     components:
@@ -2733,15 +2712,13 @@ entities:
       parent: 1
     - type: Fixtures
       fixtures: {}
-- proto: VendingMachineWallTankDispenserEVA
+- proto: VendingMachineTankDispenserEVA
   entities:
   - uid: 76
     components:
     - type: Transform
       pos: 3.5,6.5
       parent: 1
-    - type: Fixtures
-      fixtures: {}
 - proto: VendingMachineYouTool
   entities:
   - uid: 355
@@ -3301,7 +3278,7 @@ entities:
     - type: Transform
       pos: 1.5,2.5
       parent: 1
-- proto: WeaponEnergyTurretSecurity
+- proto: WeaponEnergyTurretStation
   entities:
   - uid: 273
     components:
@@ -3319,7 +3296,7 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 275
-- proto: WeaponEnergyTurretSecurityControlPanel
+- proto: WeaponEnergyTurretStationControlPanel
   entities:
   - uid: 275
     components:
