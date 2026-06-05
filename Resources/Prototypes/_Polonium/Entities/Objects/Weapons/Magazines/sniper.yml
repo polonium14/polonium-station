@@ -9,7 +9,7 @@
 
   # Muszę zrobić poprawny prototyp do tłumaczenia kiedyś
   id: BorSniperMagazineBase
-  name: Magazynek Alexis-BOR (.50 AE any)
+  name: Magazynek Alexis-BOR (.30 rifle any)
   parent: [ BaseItem, BaseSecurityContraband]
   components:
     - type: Tag
@@ -45,7 +45,7 @@
   parent: BorSniperMagazineBase
   components:
     - type: BallisticAmmoProvider
-      proto: CartridgePistolLarge
+      proto: CartridgeLightRifle
 
 - type: entity
   id: BorSniperMagazineEmpty
