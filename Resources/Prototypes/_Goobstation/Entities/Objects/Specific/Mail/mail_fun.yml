@@ -205,15 +205,15 @@
     - id: MusicalLungInstrument
       orGroup: Instrument
     # Uncommon
-    - id: PhoneInstrument
+    - id: CallablePhoneInstrument
       orGroup: Instrument
       prob: 0.1
     # Rare
-    - id: BananaPhoneInstrument
+    - id: CallableBananaPhoneInstrument
       orGroup: Instrument
       prob: 0.05
     # Ultra-rare
-    - id: PhoneInstrumentSyndicate
+    - id: CallablePhoneInstrumentSyndicate
       orGroup: Instrument
       prob: 0.01
 

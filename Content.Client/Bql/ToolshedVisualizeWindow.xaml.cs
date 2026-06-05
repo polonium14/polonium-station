@@ -36,25 +36,6 @@ internal sealed partial class ToolshedVisualizeWindow : DefaultWindow
 
     public void Update((string name, NetEntity entity)[] entities)
     {
-        StatusLabel.Text = _loc.GetString("ui-bql-results-status", ("count", entities.Length));
-        ItemList.RemoveAllChildren();
-
-        foreach (var (name, entity) in entities)
-        {
-            var nameLabel = new Label { Text = name, HorizontalExpand = true };
-            var tpButton = new Button { Text = _loc.GetString("ui-bql-results-tp") };
-            tpButton.OnPressed += _ => _console.ExecuteCommand($"tpto {entity}");
-            tpButton.ToolTip = _loc.GetString("ui-bql-results-tp-tooltip");
-
-            var vvButton = new Button { Text = _loc.GetString("ui-bql-results-vv") };
-            vvButton.ToolTip = _loc.GetString("ui-bql-results-vv-tooltip");
-            vvButton.OnPressed += _ => _console.ExecuteCommand($"vv {entity}");
-
-            ItemList.AddChild(new BoxContainer
-            {
-                Orientation = BoxContainer.LayoutOrientation.Horizontal,
-                Children = { nameLabel, tpButton, vvButton }
-            });
-        }
+        Administration.UI.AdminEntityResultsList.Populate(ItemList, StatusLabel, entities, _console, _loc);
     }
 }

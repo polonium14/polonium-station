@@ -1,8 +1,8 @@
 ent-BaseMagazineLightRifle = magazynek (.30 karabinowe)
     .desc = { ent-BaseItem.desc }
-ent-MagazineLightRifleBox = magazynek pudełkowy do L6 SAW (.30 karabinowe)
+ent-MagazineLightRifleBox = magazynek pudełkowy (.30 karabinowe)
     .desc = { ent-BaseMagazineLightRifle.desc }
-ent-MagazineLightRifleBoxEmpty = pusty magazynek pudełkowy do L6 SAW (.30 karabinowe)
+ent-MagazineLightRifleBoxEmpty = pusty magazynek pudełkowy (.30 karabinowe)
     .desc = { ent-MagazineLightRifleBox.desc }
 ent-MagazineLightRifle = magazynek (.30 karabinowe)
     .desc = { ent-BaseMagazineLightRifle.desc }

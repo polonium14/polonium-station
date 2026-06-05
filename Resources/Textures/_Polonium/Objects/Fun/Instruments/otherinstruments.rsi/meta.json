@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "license": "CC-BY-SA-3.0",
+  "copyright": "red_phone from https://github.com/vgstation-coders/vgstation13 and /tg/station. red_phone_no_handset and blue_phone sprites created for Polonium.",
+  "states": [
+    {
+      "name": "red_phone"
+    },
+    {
+      "name": "red_phone_no_handset"
+    },
+    {
+      "name": "blue_phone"
+    },
+    {
+      "name": "blue_phone_no_handset"
+    },
+    {
+      "name": "banana_phone"
+    },
+    {
+      "name": "banana_phone_no_handset"
+    },
+    {
+      "name": "blood_red_phone"
+    },
+    {
+      "name": "blood_red_phone_no_handset"
+    }
+  ]
+}

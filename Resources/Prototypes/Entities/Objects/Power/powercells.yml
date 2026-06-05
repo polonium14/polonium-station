@@ -187,6 +187,10 @@
   suffix: Full
   parent: BasePowerCell
   components:
+  - type: Tag
+    tags:
+    - PowerCell
+    - PowerCellHigh
   - type: Sprite
     layers:
     - map: [ "enum.PowerCellVisualLayers.Base" ]

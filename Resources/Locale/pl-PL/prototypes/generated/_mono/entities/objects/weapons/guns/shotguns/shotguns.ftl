@@ -1,0 +1,10 @@
+ent-WeaponShotgunBigLeady = Big Leady
+    .desc = Duża strzelba, zdolna zabić to, czego nie ruszy żaden kaliber mniejszy od działa automatycznego.
+ent-WeaponShotgunBigJohnny = Big Johnny
+    .desc = Duża strzelba do tego samego celu. Wyposażona w dodatki taktyczne pod walkę w zwarciu kosztem małej pojemności. Na komorze zamkowej szyna Erebus na optykę.
+ent-WeaponShotgunBigBuddy = Duży Braciszek
+    .desc = Potężna strzelba, zdolna zabić to, czego nie ruszy żaden kaliber mniejszy od działa automatycznego.
+ent-WeaponShotgunHelepolis = UW12-B Helepolis
+    .desc = Model szturmowy Union Wrightworks — kompaktowa strzelba poświęcająca ergonomię bojową na rzecz wyważania drzwi. Przebija drzwi slugami. Do walki niezalecana.
+ent-WeaponShotgunSultanPulsar = strzelba PD-VI "Sultan's Pulsar"
+    .desc = Potężna strzelba o wyjątkowej celności. Przesada na większość kosmicznej fauny — ale jeśli ją nosisz, polujesz na najgroźniejszą zwierzynę.

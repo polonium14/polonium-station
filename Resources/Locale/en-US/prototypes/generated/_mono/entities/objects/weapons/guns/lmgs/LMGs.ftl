@@ -1,0 +1,12 @@
+ent-WeaponDP29 = NCI DP-29
+    .desc = A staple of USSP military doctrine, the DP-29 is a mass-produced light machine gun designed for reliability, ease of use, and battlefield endurance. Featuring a distinctive top-mounted pan magazine and a folding bipod, the DP-29 excels at providing suppressive fire in both urban and open combat scenarios. While its design dates back decades, its reliability and ease of maintenance make it a favorite among USSP infantry squads.
+ent-WeaponLMGMR8B = VFD MR-8B LWMMG (8x65mm SKR)
+    .desc = The LWMMG variant of the MR-8 series. Chambered in 8x65mm SKR, and accepts both box and STANAG magazines. A label on the side reads "FOR MILITARY USE ONLY".
+ent-WeaponLMGHammer = NCI AK-150 HAMMER (7.62x39mm)
+    .desc = A modified old style AK from earth which has been improved with USSP engineering and new design philosophies. At a base level? It's been turned into an LMG with a box magazine attached alongside various recoil lessening upgrades and a stylized chassis. Hail The Commissariat.
+ent-WeaponLMGGrizzly = TCA MMG-68 "Grizzly" (6.8x52mm caseless)
+    .desc = A medium machine gun chambered in 6.8x52mm caseless, accepts both box and standard magazines. A label on the side reads "FOR MILITARY USE ONLY". The weight of the machine gun make it hard to wield easily. To assist with standardization, it also accepts 5.56x45mm and 7.62x39mm.
+ent-WeaponLMGRatel = VFD PSW "Ratel" (7.62x51mm)
+    .desc = The precision support weapon chambered in 7.62x51mm and fits simple ammo box and all kind of magazines. Based on the Vulcan and made with higher quality materials, A label on the side that seems to have been tampered with reads "FOR MILI-CENARY USE ONLY". An Erebus railmount is present on the reciever for optics.
+ent-CyborgWeaponMinigun = Cyborg minigun
+    .desc = Old highly-inaccurate rotary mini-gun chambered in a small caliber.

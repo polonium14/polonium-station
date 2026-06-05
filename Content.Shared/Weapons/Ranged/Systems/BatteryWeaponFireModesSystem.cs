@@ -5,11 +5,13 @@
 // SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Matthew Herber <32679887+happyrobot33@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 McBosserson <148172569+McBosserson@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
 // SPDX-FileCopyrightText: 2025 Toaster <mrtoastymyroasty@gmail.com>
 // SPDX-FileCopyrightText: 2025 imatsoup <93290208+imatsoup@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 pa.pecherskij <pa.pecherskij@interfax.ru>
 // SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+// SPDX-FileCopyrightText: 2026 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
 //
 // SPDX-License-Identifier: MIT
 
@@ -163,7 +165,7 @@ public sealed class BatteryWeaponFireModesSystem : EntitySystem
         if (TryComp(uid, out HitscanBatteryAmmoProviderComponent? hitscanBatteryAmmoProviderComponent))
         {
             var OldFireCost = hitscanBatteryAmmoProviderComponent.FireCost;
-            hitscanBatteryAmmoProviderComponent.Prototype = fireMode.Prototype;
+            hitscanBatteryAmmoProviderComponent.HitscanEntityProto = fireMode.Prototype;
             hitscanBatteryAmmoProviderComponent.FireCost = fireMode.FireCost;
 
             float FireCostDiff = (float)fireMode.FireCost / (float)OldFireCost;

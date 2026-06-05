@@ -1,0 +1,10 @@
+ent-PulsedPlasma = { ent-BasicHitscan }
+    .desc = { ent-BasicHitscan.desc }
+ent-UllmanPulse = { ent-BasicHitscan }
+    .desc = { ent-BasicHitscan.desc }
+ent-UllmanPulseHeavy = { ent-UllmanPulse }
+    .desc = { ent-UllmanPulse.desc }
+ent-MediumOverchargedLaser = { ent-BasicHitscan }
+    .desc = { ent-BasicHitscan.desc }
+ent-RiflePulse = { ent-BasicHitscan }
+    .desc = { ent-BasicHitscan.desc }

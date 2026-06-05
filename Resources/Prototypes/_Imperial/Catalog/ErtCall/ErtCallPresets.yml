@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2025 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 #- type: ertCall
 #  id: Dart-Test-preset
 #  path: "Maps/Imperial/ErtCall/dartTest.yml"
@@ -18,3 +22,32 @@
   path: "Maps/_Imperial/ErtCall/ERTmedium.yml"
   desc: "Pojemny statek z medycznym laboratorium i celą więzienną. 1 lider, 2 medyków, 3 inżynierów, 5 bojowników."
 
+- type: ertCall
+  id: ERT-Chaplain1
+  path: "Maps/_Funkystation/Shuttles/ERTShuttles/ERTChaplain1.yml"
+  desc: "Malutki statek. 1 kapłan."
+
+- type: ertCall
+  id: ERT-Engineer1
+  path: "Maps/_Polonium/Shuttles/ERTShuttles/ERTEngineer1.yml"
+  desc: "Malutki statek. 1 inżynier."
+
+- type: ertCall
+  id: ERT-Janitor1
+  path: "Maps/_Polonium/Shuttles/ERTShuttles/ERTJanitor1.yml"
+  desc: "Malutki statek. 1 woźny."
+
+- type: ertCall
+  id: ERT-Medical1
+  path: "Maps/_Polonium/Shuttles/ERTShuttles/ERTMedical1.yml"
+  desc: "Malutki statek. 1 medyk."
+
+- type: ertCall
+  id: ERT-Security1
+  path: "Maps/_Polonium/Shuttles/ERTShuttles/ERTSecurity1.yml"
+  desc: "Malutki statek. 1 bojownik."
+
+- type: ertCall
+  id: CBURN-Wagon
+  path: "Maps/_Polonium/Shuttles/ERTShuttles/ERTBurnWagonV2.yml"
+  desc: "Pojemny statek. 1 lider CBURN, 4 medyków CBURN, 6 bojowników CBURN."

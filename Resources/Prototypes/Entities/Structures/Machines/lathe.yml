@@ -200,17 +200,16 @@
 # SPDX-FileCopyrightText: 2025 willow <willowzeta632146@proton.me>
 # SPDX-FileCopyrightText: 2025 wilowzeta <willowzeta632146@proton.me>
 # SPDX-FileCopyrightText: 2026 AftrLite <61218133+AftrLite@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 AirFryerBuyOneGetOneFree <jakoblondon01@gmail.com>
 # SPDX-FileCopyrightText: 2026 Damian Zieliński <zientasek.pl@gmail.com>
 # SPDX-FileCopyrightText: 2026 DoovyADeer <256158135+DoovyADeer@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 Koilak <152626891+Koilak@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 MaiaArai <158123176+YaraaraY@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2026 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2026 Polonium-bot <admin@ss14.pl>
 # SPDX-FileCopyrightText: 2026 Steve <marlumpy@gmail.com>
+# SPDX-FileCopyrightText: 2026 Szyszkrzyneczka <52501307+Szyszkrzyneczka@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2026 Szyszkrzyneczka <rammus.vult@gmail.com>
-# SPDX-FileCopyrightText: 2026 AftrLite <61218133+AftrLite@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2026 AirFryerBuyOneGetOneFree <jakoblondon01@gmail.com>
-# SPDX-FileCopyrightText: 2026 DoovyADeer <256158135+DoovyADeer@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2026 MaiaArai <158123176+YaraaraY@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2026 Steve <marlumpy@gmail.com>
 # SPDX-FileCopyrightText: 2026 Tea <Xerithin@gmail.com>
 # SPDX-FileCopyrightText: 2026 ThatOneMoon <91613003+ThatOneMoon@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2026 W.xyz() <84605679+pirakaplant@users.noreply.github.com>
@@ -218,6 +217,7 @@
 # SPDX-FileCopyrightText: 2026 Wudanty <68469194+Wudanty@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2026 Xcybitt <197952719+Xcybitt@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2026 YaraaraY <158123176+YaraaraY@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2026 jhrushbe <capnmerry@gmail.com>
 # SPDX-FileCopyrightText: 2026 marc-pelletier <113944176+marc-pelletier@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2026 rottenheadphones <juaelwe@outlook.com>
@@ -1244,18 +1244,15 @@
     - MagazineBoxPistolLarge # Funkystation
     - MagazinePistolLargePractice # Funkystation
     - MagazineBoxPistolLargePractice # Funkystation
-    - VisMPSPistol # Polonium
-    - VisMPSPistolMagazineEmpty # Polonium
-    - VisMPSPistolMagazine # Polonium
-    - VisMPSPistolMagazineIncendiary # Polonium
-    - VisMPSPistolMagazineUranium # Polonium
-    - VisMPSPistolMagazinePractice # Polonium
+    - BorSniperMagazineEmpty # Polonium
+    - BorSniperMagazine # Polonium
+    - BorSniperMagazinePractice # Polonium
+    - WeaponVisMPSPistolMagazineEmpty # Polonium
+    - WeaponVisMPSPistolMagazine # Polonium
+    - WeaponVisMPSPistolMagazinePractice # Polonium
     - PMMMachineGunMagazineEmpty # Polonium
     - PMMMachineGunMagazine # Polonium
-    - PMMMachineGunMagazineIncendiary # Polonium
-    - PMMMachineGunMagazineUranium # Polonium
     - PMMMachineGunMagazinePractice # Polonium
-    - WeaponSubMachineGunGlauberyt # Polonium
     - RiotShield
     - SpeedLoaderMagnum
     - SpeedLoaderMagnumEmpty
@@ -1313,6 +1310,12 @@
     - MagazineShotgunIncendiary
     - MagazinePistolSubMachineGunTopMountedIncendiary
     - MagazinePistolSubMachineGunTopMountedUranium
+    - WeaponVisMPSPistolMagazineIncendiary # Polonium
+    - WeaponVisMPSPistolMagazineUranium # Polonium
+    - PMMMachineGunMagazineIncendiary # Polonium
+    - PMMMachineGunMagazineUranium # Polonium
+    - BorSniperMagazineIncendiary # Polonium
+    - BorSniperMagazineUranium # Polonium
     - MagazinePistolLargeUranium # Funkystation
     - MagazinePistolLargeIncendiary # Funkystation
     - MagazineBoxPistolLargeUranium # Funkystation
@@ -1354,6 +1357,9 @@
     - WeaponMechCombatDisabler
     - WeaponMechCombatFlashbangLauncher
     - WeaponMechCombatMissileRack8
+    - WeaponVisMPSPistol # Polonium
+    - WeaponSubMachineGunGlauberyt # Polonium
+    - WeaponBORSniperGun # Polonium
     - ClothingEyesNightVisionSecurityGoggles # Funky - EE nightvision
     - MindShieldImplanter
     - TrackingImplanter
@@ -1420,16 +1426,10 @@
     - MagazineShotgunSlug
     - SpeedLoaderMagnum
     - SpeedLoaderMagnumEmpty
-    - VisMPSPistolMagazineEmpty # Polonium
-    - VisMPSPistolMagazine # Polonium
-    - VisMPSPistolMagazineIncendiary # Polonium
-    - VisMPSPistolMagazineUranium # Polonium
-    - VisMPSPistolMagazinePractice # Polonium
+    - WeaponVisMPSPistolMagazineEmpty # Polonium
+    - WeaponVisMPSPistolMagazine # Polonium
     - PMMMachineGunMagazineEmpty # Polonium
     - PMMMachineGunMagazine # Polonium
-    - PMMMachineGunMagazineIncendiary # Polonium
-    - PMMMachineGunMagazineUranium # Polonium
-    - PMMMachineGunMagazinePractice # Polonium
     - BorSniperMagazineEmpty # Polonium
     - BorSniperMagazine # Polonium
   - type: EmagLatheRecipes # Goobstation
