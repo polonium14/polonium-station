@@ -319,7 +319,8 @@ public override void Update(float frameTime)
         RaiseNetworkEvent(ev);
 
         _projectile.ProjectileCollide((uid, projectile, physics), filteredContacts.First());
-        // Polonium - same ghost-bullet fix as StartCollide fallback path        FinishPredictedClientHit(uid, predicted, physics);
+        // Polonium - same ghost-bullet fix as StartCollide fallback path
+        FinishPredictedClientHit(uid, predicted, physics);
     }
 
     var predictedQuery = EntityQueryEnumerator<PredictedProjectileHitComponent, SpriteComponent, TransformComponent>();
