@@ -74,7 +74,7 @@ cosmiccult-role-roundstart-fluff =
 cosmiccult-role-short-briefing =
     Jesteś Kosmicznym Kultystą!
     Twoje cele są wymienione w menu postaci.
-    Więcej o swojej roli dowiesz się z wpisu w poradniku.
+    Więcej o swojej roli dowiesz się z wpisu w podręczniku.
 cosmiccult-role-conversion-fluff =
     Gdy inwokacja dobiega końca, nieopisana wiedza nagle zalewa twój umysł!
     Objawienie nieporównywalne z niczym innym. Koniec cyklicznego, syzyfowego cierpienia.

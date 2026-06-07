@@ -61,6 +61,9 @@ public sealed class ExplosionShockwaveOverlay : Overlay
                 continue;
 
             var elapsed = (float) Math.Max(0, now - wave.ServerStartSeconds);
+            if (wave.DurationSeconds <= 0f)
+                continue;
+
             var t = Math.Clamp(elapsed / wave.DurationSeconds, 0f, 1f);
 
             var radiusTiles = t * wave.MaxRadiusTiles;
