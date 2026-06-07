@@ -1,9 +1,10 @@
 // SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
 // SPDX-FileCopyrightText: 2025 DrSmugleaf <10968691+DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Toaster <mrtoastymyroasty@gmail.com>
 // SPDX-FileCopyrightText: 2025 Toastermeister <215405651+Toastermeister@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -319,7 +320,8 @@ public override void Update(float frameTime)
         RaiseNetworkEvent(ev);
 
         _projectile.ProjectileCollide((uid, projectile, physics), filteredContacts.First());
-        // Polonium - same ghost-bullet fix as StartCollide fallback path        FinishPredictedClientHit(uid, predicted, physics);
+        // Polonium - same ghost-bullet fix as StartCollide fallback path
+        FinishPredictedClientHit(uid, predicted, physics);
     }
 
     var predictedQuery = EntityQueryEnumerator<PredictedProjectileHitComponent, SpriteComponent, TransformComponent>();

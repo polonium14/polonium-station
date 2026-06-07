@@ -52,11 +52,11 @@
         whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber
-        startingItem: CartridgePistolLarge
+        startingItem: CartridgeLightRifle
         priority: 1
         whitelist:
           tags:
-            - CartridgePistolLarge
+            - CartridgeLightRifle
   - type: ContainerContainer
     containers:
       gun_magazine: !type:ContainerSlot

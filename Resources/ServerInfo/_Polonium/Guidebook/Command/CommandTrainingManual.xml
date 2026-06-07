@@ -1,110 +1,115 @@
 ﻿<Document>
-  # Command Training Manual
+  # Podręcznik szkoleniowy Dowództwa
 
-  Welcome to your new job, command member.
+  Witamy w nowej pracy, członku dowództwa.
 
-  We at Nanotrasen praise your dedication to safety and willingness to do anything for the wellbeing of the corporation.
-  Below, you will find training material regarding the confidential information you were informed of prior.
+  W naszej firmie Nanotrasen doceniamy Państwa zaangażowanie w kwestie bezpieczeństwa oraz gotowość do podjęcia wszelkich działań na rzecz dobra firmy.
+  Poniżej znajdą Państwo materiały szkoleniowe dotyczące informacji poufnych, o których zostali Państwo wcześniej poinformowani.
 
-  The following material is available for your reference, training, and use.
-  The information is designed to assist Command members in their professional development.
-  Please use the material to expand your understanding, enhance your professional knowledge, and to further your career.
+  Poniższe materiały udostępniono w celach informacyjnych, szkoleniowych oraz do wykorzystania.
+  Informacje te mają na celu wspieranie członków dowództwa w ich rozwoju zawodowym.
+  Zachęcamy do korzystania z tych materiałów w celu poszerzenia wiedzy, pogłębienia kompetencji zawodowych oraz rozwoju kariery.
 
-  Please also remember that all of this material is [bold]confidential,[/bold] as per the NDA you signed on employment.
-  Failure to comply with the terms of your employment will be met with swift legal action.
+  Proszę również pamiętać, że wszystkie te materiały mają charakter [bold]poufny[/bold], zgodnie z umową o zachowaniu poufności, którą podpisali Państwo w momencie zatrudnienia.
+  Nieprzestrzeganie warunków umowy o pracę będzie skutkowało podjęciem natychmiastowych kroków prawnych.
 
-  ## Section I. Confidentiality
+  ## Sekcja I. Poufność
 
-  All the information in this document is for your eyes only. You, and your fellow command members, are [bold]not[/bold] to share this information without sufficient reason.
+  Wszystkie informacje zawarte w niniejszym dokumencie są przeznaczone wyłącznie do Państwa wiadomości. [bold]Nie wolno[/bold] Państwu oraz innym członkom dowództwa udostępniać tych informacji bez uzasadnionej przyczyny.
 
-  Carelessly leaking this confidential information will be met with swift action from Central Command; whether that be through one of its representatives or through the organization itself.
-  You, as one of the leaders of the station, are to lead the crew through any potential dangers. Needlessly sowing fear within the crew is explicitly against this goal, and it is also against Nanotrasen's will.
-  Nanotrasen and its associated ships and stations are safe. You, as a primary representative of corporate's will, must make sure this fact stays true.
+  Ujawnienie tych poufnych informacji spotka się z natychmiastową reakcją Centralnego Dowództwa — czy to za pośrednictwem jednego z jego przedstawicieli, czy też samej organizacji.
+  Jako jeden z dowódców stacji masz za zadanie poprowadzić załogę przez wszelkie potencjalne zagrożenia. Niepotrzebne sianie strachu wśród załogi jest wyraźnie sprzeczne z tym celem, a także z wolą Nanotrasen.
+  Nanotrasen oraz powiązane z nim statki i stacje są bezpieczne. Ty, jako główny przedstawiciel woli korporacji, musisz zadbać o to, by tak pozostało.
+  
+  Jednakże załoga może nadal doświadczać sytuacji, które będą wymagały ujawnienia informacji, które w innym przypadku pozostałyby poufne.
+  W Nanotrasen ufamy, że ujawnicie te informacje według własnego uznania. Jednakże, przypominamy wszystkim członkom dowództwa, że wszelkie nieuzasadnione naruszenia poufności nie będą traktowane przychylnie.
+  Każde naruszenie poufności należy zgłosić: Jakie informacje zostały ujawnione? Kiedy? Komu i dlaczego? Zgłoszenia te należy kierować do przedstawiciela Nanotrasen lub bezpośrednio do Centralnego Dowództwa.
+  Przedstawiciel Nanotrasen poinformuje członków dowództwa, czy naruszenie poufności nastąpiło w dobrej wierze, a jeśli będzie to konieczne, przekażą też odpowiednią informację zwrotną.
 
-  However, the crew may still experience situations that require you to divulge otherwise confidential information.
-  We at Nanotrasen trust you to divulge this information at your discretion, and we remind any command members that any unnecessary confidentiality breaks will not be treated kindly.
-  After any such confidentiality breaks, you are to report what information was divulged, when, to who, and why. These reports may be made to your Nanotrasen Representative or Central Command itself.
-  The Nanotrasen Representative will inform command members if the confidentiality break was done in good faith, and they will report back as necessary.
+  ## Sekcja II. Zagrożenia
 
-  ## Section II. Threats
+  Poniżej znajduje się lista zagrożeń oraz zalecane sposoby postępowania w przypadku ich wystąpienia.
 
-  Below you will find a list of threats and recommended action to dealing with them.
+  [color=red]Jest to zalecane postępowanie, a nie ściśle określona procedura operacyjna.[/color]
+  W Nanotrasen rozumiemy, że przebieg zmiany może odbiegać od oczekiwań, dlatego ani wobec Ciebie, ani wobec pozostałych członków załogi nie zostaną wyciągnięte konsekwencje za popełnione błędy.
 
-  [color=red]This is recommended action, not explicit operating procedure.[/color]
-  We at Nanotrasen understand that shifts may deviate from the expected results, so no action will be taken against you or your fellow crew mates for mistakes.
-
-  - [bold]Petty thieves[/bold]
+  - [bold]Drobni złodzieje[/bold]
 
   Petty thievery is common, especially the further out in space that you may be stationed. Deal with any thieves under space law.
-  These thieves may have contraband that your security team is not made aware of. The Head of Security should consider only divulging information about said contraband
-  to the Detective, as to not cause any undue fear.
+  Złodzieje ci mogą posiadać kontrabandę, o której wasz zespół ochrony nie jest poinformowany. Komendant powinien rozważyć przekazanie informacji o tej kontrabandzie
+  wyłącznie detektywowi, aby nie wywoływać niepotrzebnego strachu.
 
-  - [bold]Undercover Syndicate Agents[/bold]
+  - [bold]Tajni Agenci Syndykatu[/bold]
 
-  Nanotrasen property and people are a consistent target for the Syndicate, however, the crew should not have to worry about any such issues. Deal with said agents under space law and with discretion.
-  Command members should only consider divulging information about the Syndicate if there is a noticeable and constant presence on the station, and even then, they should consider only informing the security team.
+  Majątek i pracownicy Nanotrasen są stałym celem Syndykatu, jednak załoga nie powinna się tym martwić. Należy postępować z agentami zgodnie z prawem kosmicznym i z zachowaniem dyskrecji.
+  Członkowie dowództwa powinni rozważać ujawnienie informacji o Syndykacie tylko wtedy, gdy jego obecność na stacji jest wyraźnie zauważalna i stała, a nawet w takim przypadku powinni rozważyć
+  poinformowanie wyłącznie zespołu ochrony.
 
-  - [bold]Revolutionaries[/bold]
+  - [bold]Rewolucjoniści[/bold]
 
-  Nanotrasen crew members may become upset with the working conditions. Consider dealing with this as peacefully as possible, such as offering free pizza parties.
-  However, if the crew remains dissatisfied with the working conditions, it is possible that their loyalty to Nanotrasen has been tampered with.
-  Instruct the security team to mindshield as many crew mates as possible, and arrest and mindshield any crew members spearheading the cause.
-  In the event of a particularly disruptive head revolutionary, execution is also an option, but not recommended.
+  Członkowie załogi Nanotrasen mogą być niezadowoleni z warunków pracy. Należy rozważyć jak najspokojniejsze rozwiązanie tej sytuacji, na przykład organizując darmowe imprezy z pizzą.
+  Jeśli jednak załoga nadal będzie niezadowolona z warunków pracy, możliwe jest, że jej lojalność wobec Nanotrasen została podważona.
+  Wydaj rozkaz zespołowi ochrony, aby zastosował osłonę umysłu wobec jak największej liczby członków załogi, a także aresztował i osłonił umysłowo tych, którzy stoją na czele ruchu.
+  W przypadku szczególnie destrukcyjnego przywódcy rewolucji, egzekucja również jest dozwolona, lecz nie jest zalecana.
 
-  - [bold]Nuclear Agents[/bold]
+  - [bold]Agenci Atomowi[/bold]
 
-  Some Syndicate agents are specifically on station in order to detonate the emergency nuclear device. This is a highly dangerous emergency situation, and security should be armed to deal with the threat as soon as possible.
-  Crew members should be instructed to shelter in place, as they are civilians with no security training or experience. In the event of a weak or nonexistent security force, command may enlist and arm crew mates as necessary.
+  Niektórzy agenci Syndykatu przebywają na stacji tylko po to, by zdetonować awaryjne urządzenie jądrowe. Jest to niezwykle niebezpieczna sytuacja kryzysowa, a służby bezpieczeństwa
+  powinny być uzbrojone, aby jak najszybciej stawić czoła zagrożeniu.
+  Członkowie załogi powinni otrzymać polecenie pozostania na swoich stanowiskach, ponieważ są to osoby cywilne bez przeszkolenia ani doświadczenia w zakresie bezpieczeństwa. W przypadku
+  słabych lub nieistniejących sił bezpieczeństwa dowództwo może w razie potrzeby zmobilizować i uzbroić członków załogi.
 
-  - [bold]Blob Xenofauna[/bold]
+  - [bold]Blob[/bold]
 
-  Central Command's sensors can detect any dangerous xenofauna above a certain size, and will send an automatic announcement. Neutralize the threat as soon as possible, under any circumstance.
+  Czujniki Centralnego Dowództwa są w stanie wykryć każdą niebezpieczną obcą faunę powyżej określonego rozmiaru i wyślą automatyczne powiadomienie. Należy jak najszybciej zneutralizować zagrożenie, bez względu na okoliczności.
 
   - [bold]Changelings[/bold]
+  <!-- póki co zostawiam jako changelings - trzeba to jakoś spolszczyć; może "podmieńcy"? -->
 
-  Some crew mates may not be crew mates at all; a hostile predatory life form, colloquially known as changelings, may have taken a similar form as them.
-  These creatures are to be dealt with discreetly and quickly, as they require the death of crew in order to survive.
-  Since these life forms have been known as extinct to the public, it is recommended to lie to the crew in order to preserve the hard work of Nanotrasen's marketing team.
+  Niektórzy członkowie załogi mogą wcale nie być członkami załogi; wroga, drapieżna forma życia, potocznie nazywana „changelings”, mogła przybrać podobną do nich postać.
+  Z istotami tymi należy postępować dyskretnie i szybko, ponieważ żywią się one śmiercią członków załogi.
+  Ponieważ formy życia te są powszechnie uznawane za wymarłe, zaleca się okłamanie załogi, aby nie zrujnować ciężkiej pracy zespołu marketingowego Nanotrasen.
 
-  - [bold]Dragons and Carp[/bold]
+  - [bold]Smoki i karpie[/bold]
 
-  Dragons are incredibly territorial and hostile xenofauna, and they should be dealt with as quickly as possible.
-  There is no need to keep such the existence of such xenofauna a secret to the crew, however, Nanotrasen encourages the security team to try and keep crew from panicking.
+  Smoki to niezwykle terytorialne i wrogie gatunki obcej fauny, z którymi należy się uporać jak najszybciej.
+  Nie ma potrzeby ukrywania przed załogą faktu istnienia takich gatunków obcej fauny, jednak firma Nanotrasen zachęca zespół ochrony do podjęcia wszelkich starań, by zapobiec panice wśród załogi.
 
-  - [bold]Ninjas[/bold]
+  - [bold]Ninja[/bold]
 
-  Some people may attempt to infiltrate the station with the goal of stealing Nanotrasen secrets and research. These are likely ninjas, and they should be dealt with as soon as possible.
-  Nanotrasen recommends trying to discreetly deal with them as soon as possible to prevent any sort of espionage, regardless of the intention.
+  Niektórzy ludzie mogą próbować infiltrować stację w celu kradzieży tajemnic i badań Nanotrasen. Prawdopodobnie mogą to być ninja, z którymi należy się jak najszybciej uporać.
+  Nanotrasen zaleca jak najszybsze i dyskretne rozprawienie się z nimi, aby zapobiec wszelkim formom szpiegostwa, niezależnie od ich intencji.
 
-  - [bold]Revenants[/bold]
+  - [bold]Upiory[/bold]
 
-  Some former crew mates may find it hard to move on after an untimely death caused by their own negligence.
-  Nanotrasen recommends enlisting the Chaplain as an exorcist, without letting the living crew know about any prior deaths on the station.
+  Niektórym byłym członkom załogi może być trudno pogodzić się z przedwczesną śmiercią spowodowaną ich własnym zaniedbaniem.
+  Nanotrasen zaleca powołanie kapłana w roli egzorcysty, nie informując przy tym żyjących członków załogi o wcześniejszych zgonach na stacji.
 
-  - [bold]Heretics[/bold]
+  - [bold]Heretycy[/bold]
 
-  Some individual crewmates may find ways to use more magical powers. These powers are heretical and not sanctioned by Nanotrasen. You should try to neutralize their powers while still keeping their work contract intact.
-  The Head of Security should consider only divulging information regarding the specific case, such as heretics being able to teleport with a magical focus.
+  Niektórzy członkowie załogi mogą znaleźć sposoby na wykorzystanie większych mocy magicznych. Moce te mają charakter heretycki i nie są akceptowane przez Nanotrasen. Należy podjąć próbę zneutralizowania tych mocy, nie naruszając jednocześnie ich zawartej umowy o pracę.
+  Komendant powinien rozważyć ujawnienie wyłącznie informacji dotyczących konkretnego przypadku, np. dotyczących heretyków zdolnych do teleportacji przy użyciu magicznego skupienia.
 
-  - [bold]Cosmic Cults[/bold]
+  - [bold]Kulty kosmiczne[/bold]
 
-  In contrast, cosmic cults are highly dangerous, organized groups of magical power.
-  The Head of Security may consider telling all the security force and the chaplain about a cosmic cult presence.
-  The chaplain, in particular, should be protected and made aware of any events.
+  Kulty kosmiczne to niezwykle niebezpieczne, zorganizowane grupy dysponujące magiczną mocą.
+  Komendant może rozważyć poinformowanie wszystkich członków służb ochronnych oraz kapłana o obecności kultu kosmicznego.
+  Szczególną ochroną należy otoczyć kapłana i na bieżąco informować go o wszelkich wydarzeniach.
 
-  - [bold]Blood Cults[/bold]
+  - [bold]Kulty krwi[/bold]
 
-  Blood cults are highly dangerous, organized groups of Nar'Sie worshippers.
-  The Head of Security may consider telling all the security force and the chaplain about a blood cult presence. Mindshields are an effective way to slow down the cult's expansion, but will not stop them.
-  The Quartermaster should buy religious supplies crates if there is no chaplain to provide holy water.
-  The chaplain, in particular, should be protected and made aware of any events.
+  Kulty krwi to niezwykle niebezpieczne, zorganizowane grupy wyznawców Nar'Sie.
+  Komendant może rozważyć poinformowanie wszystkich członków sił ochrony oraz kapelana o obecności kultu krwi. Tarcze umysłowe stanowią skuteczny sposób na spowolnienie ekspansji kultu, ale nie powstrzymają go całkowicie.
+  Kwatermistrz powinien kupić skrzynie z artykułami religijnymi, jeśli nie ma kapelana, który mógłby zapewnić wodę święconą.
+  Szczególną ochroną należy otoczyć kapłana i na bieżąco informować go o wszelkich wydarzeniach.
 
-  - [bold]Zombies[/bold]
+  - [bold]Zombie[/bold]
 
-  In the event of a zombie infection, the Chief Medical Officer and their associated medical team should be made the highest priority on the station.
-  Due to the nature of zombie infections, there is no need to withhold any information about them. The station alert level should be set to Violet and go into an emergency state.
+  W przypadku wybuchu epidemii zombie ordynator i jego zespół medyczny powinni stać się najwyższym priorytetem na stacji.
+  Ze względu na charakter epidemii zombie nie ma potrzeby zatajania żadnych informacji na jej temat. Poziom alarmowy stacji należy ustawić na fioletowy i ogłosić stan wyjątkowy.
 
   ## Section III. Red Phone
 
-  Stacja łączy się bezpośrednio z Centralnym Dowództwem poprzez [textlink="Czerwony Telefon" link="RedPhoneSOP"]. Nie jest to zwykłe narzędzie komunikacyjne. Należy z niej korzystać wyłącznie w sytuacjach awaryjnych, gdy standardowe kanały komunikacyjne nie pozwalają na rozwiązanie problemu, a urządzenie należy przez cały czas przechowywać w miejscu niedostępnym dla nieupoważnionych członków załogi.
+  Stacja łączy się bezpośrednio z Centralnym Dowództwem poprzez [textlink="Czerwony Telefon" link="RedPhoneSOP"]. Nie jest to zwykłe narzędzie komunikacyjne. Należy z nigo korzystać wyłącznie w sytuacjach awaryjnych, gdy
+  standardowe kanały komunikacyjne nie pozwalają na rozwiązanie problemu, a urządzenie należy przez cały czas przechowywać w miejscu niedostępnym dla nieupoważnionych członków załogi.
 </Document>

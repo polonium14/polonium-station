@@ -108,13 +108,13 @@
   - type: StationEvent
     earliestStart: 20
     weight: 3
-    minimumPlayers: 30
+    minimumPlayers: 25
     maxOccurrences: 1
     duration: null
     occursDuringRoundEnd: false
     eventType: HostilesSpawn
   - type: GameRule
-    chaosScore: 900
+    chaosScore: 800
   - type: AntagSelection
     selectionTime: PostPlayerSpawn
 
@@ -270,7 +270,7 @@
     highImpact: true
   - type: StationEvent
     earliestStart: 90
-    minimumPlayers: 40
+    minimumPlayers: 35
     weight: 1 # Zombies was happening basically every single survival round, so now it's super rare
     duration: 1
     eventType: HostilesSpawn # Goobstation

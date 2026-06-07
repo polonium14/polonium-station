@@ -1,0 +1,6 @@
+- type: startingGear
+  id: SyndicateLoneOperativeGearFullRoundStart
+  parent: SyndicateLoneOperativeGearFull
+  storage:
+    back:
+    - NukeOpsDeclarationOfWar

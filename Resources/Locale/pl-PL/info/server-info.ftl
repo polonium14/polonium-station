@@ -1,5 +1,5 @@
 server-info-rules-button = Zasady
-server-info-guidebook-button = Poradnik
+server-info-guidebook-button = Podręcznik
 server-info-discord-button = Discord
 server-info-website-button = Strona Internetowa
 server-info-wiki-button = Wiki

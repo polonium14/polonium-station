@@ -6,6 +6,14 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
+  parent: Thief
+  id: ThiefSecretPlus
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: GameRule
+    minPlayers: 12
+
+- type: entity
   parent: BaseGameRule
   id: CowiekMaupaSpawn
   components:
@@ -21,7 +29,36 @@
     eventType: HostilesSpawn # Goobstation
   # Goobstation
   - type: GameRule
-    chaosScore: 200
+    chaosScore: 250
   - type: RandomEntityStorageSpawnRule
     prototype: MobCowiekMaupa
     openStorageSound: /Audio/_Polonium/Effects/Jumpscare/jumpscare1.ogg
+
+- type: entity
+  parent: GreytideVirus
+  id: GreytideVirusSecretPlus
+  components:
+  - type: StationEvent
+    minimumPlayers: 15
+    weight: 4
+
+- type: entity
+  parent: ZombieOutbreak
+  id: ZombieOutbreakSurvivalPlus
+  components:
+  - type: StationEvent
+    minimumPlayers: 25
+    weight: 2.5
+
+- type: entity
+  parent: ReplicatorSpawn
+  id: ReplicatorSpawnSecretPlus
+  components:
+  - type: StationEvent
+    eventType: HostilesSpawn
+    weight: 4
+    minimumPlayers: 15
+    earliestStart: 25
+    reoccurrenceDelay: 45
+  - type: GameRule
+    chaosScore: 650

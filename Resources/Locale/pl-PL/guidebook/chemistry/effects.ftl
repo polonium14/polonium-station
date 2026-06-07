@@ -1,420 +1,420 @@
 -create-3rd-person =
     { $chance ->
-        [1] Creates
-       *[other] create
+        [1] Tworzy
+       *[other] tworzyć
     }
 -cause-3rd-person =
     { $chance ->
-        [1] Causes
-       *[other] cause
+        [1] Powoduje
+       *[other] powodować
     }
 -satiate-3rd-person =
     { $chance ->
-        [1] Satiates
-       *[other] satiate
+        [1] Zaspokaja
+       *[other] zaspokajać
     }
 reagent-effect-guidebook-create-entity-reaction-effect =
     { $chance ->
-        [1] Creates
-       *[other] create
+        [1] Tworzy
+       *[other] tworzy
     } { $amount ->
         [1] { INDEFINITE($entname) }
        *[other] { $amount } { MAKEPLURAL($entname) }
     }
 reagent-effect-guidebook-explosion-reaction-effect =
     { $chance ->
-        [1] Causes
-       *[other] cause
-    } an explosion
+        [1] Wywołuje
+       *[other] wywołuje
+    } eksplozję
 reagent-effect-guidebook-emp-reaction-effect =
     { $chance ->
-        [1] Causes
-       *[other] cause
-    } an electromagnetic pulse
+        [1] Generuje
+       *[other] generuje
+    } impuls elektromagnetyczny (EMP)
 reagent-effect-guidebook-flash-reaction-effect =
     { $chance ->
-        [1] Causes
-       *[other] cause
-    } a blinding flash
+        [1] Wywołuje
+       *[other] wywołuje
+    } oślepiający błysk
 reagent-effect-guidebook-foam-area-reaction-effect =
     { $chance ->
-        [1] Creates
-       *[other] create
-    } large quantities of foam
+        [1] Tworzy
+       *[other] tworzy
+    } duże ilości piany
 reagent-effect-guidebook-smoke-area-reaction-effect =
     { $chance ->
-        [1] Creates
-       *[other] create
-    } large quantities of smoke
+        [1] Tworzy
+       *[other] tworzy
+    } duże ilości dymu
 reagent-effect-guidebook-satiate-thirst =
     { $chance ->
-        [1] Satiates
-       *[other] satiate
+        [1] Zaspokaja
+       *[other] zaspokaja
     } { $relative ->
-        [1] thirst averagely
-       *[other] thirst at { NATURALFIXED($relative, 3) }x the average rate
+        [1] pragnienie w stopniu przeciętnym
+       *[other] pragnienie z { NATURALFIXED($relative, 3) }-krotnością przeciętnego tempa
     }
 reagent-effect-guidebook-satiate-hunger =
     { $chance ->
-        [1] Satiates
-       *[other] satiate
+        [1] Zaspokaja
+       *[other] zaspokaja
     } { $relative ->
-        [1] hunger averagely
-       *[other] hunger at { NATURALFIXED($relative, 3) }x the average rate
+        [1] głód w stopniu przeciętnym
+       *[other] głód z { NATURALFIXED($relative, 3) }-krotnością przeciętnego tempa
     }
 reagent-effect-guidebook-health-change =
     { $chance ->
         [1]
             { $healsordeals ->
-                [heals] Heals
-                [deals] Deals
-               *[both] Modifies health by
+                [heals] Leczy
+                [deals] Zadaje
+               *[both] Modyfikuje zdrowie o
             }
        *[other]
             { $healsordeals ->
-                [heals] heal
-                [deals] deal
-               *[both] modify health by
+                [heals] leczy
+                [deals] zadaje
+               *[both] modyfikuje zdrowie o
             }
     } { $changes }
 reagent-effect-guidebook-even-health-change =
     { $chance ->
         [1]
             { $healsordeals ->
-                [heals] Evenly heals
-                [deals] Evenly deals
-               *[both] Evenly modifies health by
+                [heals] Równomiernie leczy
+                [deals] Równomiernie zadaje
+               *[both] Równomiernie modyfikuje zdrowie o
             }
        *[other]
             { $healsordeals ->
-                [heals] evenly heal
-                [deals] evenly deal
-               *[both] evenly modify health by
+                [heals] równomiernie leczy
+                [deals] równomiernie zadaje
+               *[both] równomiernie modyfikuje zdrowie o
             }
     } { $changes }
 reagent-effect-guidebook-status-effect =
     { $type ->
         [add]
             { $chance ->
-                [1] Causes
-               *[other] cause
-            } { LOC($key) } for at least { NATURALFIXED($time, 3) } { MANY("second", $time) } with accumulation
+                [1] Wywołuje
+               *[other] wywołuje
+            } { LOC($key) } na co najmniej { NATURALFIXED($time, 3) } { MANY("sekundę", $time) } z kumulacją
        *[set]
             { $chance ->
-                [1] Causes
-               *[other] cause
-            } { LOC($key) } for at least { NATURALFIXED($time, 3) } { MANY("second", $time) } without accumulation
+                [1] Wywołuje
+               *[other] wywołuje
+            } { LOC($key) } na co najmniej { NATURALFIXED($time, 3) } { MANY("sekundę", $time) } bez kumulacji
         [remove]
             { $chance ->
-                [1] Removes
-               *[other] remove
-            } { NATURALFIXED($time, 3) } { MANY("second", $time) } of { LOC($key) }
+                [1] Skraca
+               *[other] skraca
+            } czas trwania { LOC($key) } o { NATURALFIXED($time, 3) } { MANY("sekundę", $time) }
     }
 reagent-effect-guidebook-set-solution-temperature-effect =
     { $chance ->
-        [1] Sets
-       *[other] set
-    } the solution temperature to exactly { NATURALFIXED($temperature, 2) }k
+        [1] Ustala
+       *[other] ustala
+    } temperaturę roztworu na dokładnie { NATURALFIXED($temperature, 2) } K
 reagent-effect-guidebook-adjust-solution-temperature-effect =
     { $chance ->
         [1]
             { $deltasign ->
-                [1] Adds
-               *[-1] Removes
+                [1] Podnosi
+               *[-1] Obniża
             }
        *[other]
             { $deltasign ->
-                [1] add
-               *[-1] remove
+                [1] podnosi
+               *[-1] obniża
             }
-    } heat from the solution until it reaches { $deltasign ->
-        [1] at most { NATURALFIXED($maxtemp, 2) }k
-       *[-1] at least { NATURALFIXED($mintemp, 2) }k
+    } temperaturę roztworu, aż osiągnie { $deltasign ->
+        [1] maksymalnie { NATURALFIXED($maxtemp, 2) } K
+       *[-1] co najmniej { NATURALFIXED($mintemp, 2) } K
     }
 reagent-effect-guidebook-adjust-reagent-reagent =
     { $chance ->
         [1]
             { $deltasign ->
-                [1] Adds
-               *[-1] Removes
+                [1] Dodaje
+               *[-1] Usuwa
             }
        *[other]
             { $deltasign ->
-                [1] add
-               *[-1] remove
+                [1] dodaje
+               *[-1] usuwa
             }
-    } { NATURALFIXED($amount, 2) }u of { $reagent } { $deltasign ->
-        [1] to
-       *[-1] from
-    } the solution
+    } { NATURALFIXED($amount, 2) } u substancji { $reagent } { $deltasign ->
+        [1] do
+       *[-1] z
+    } roztworu
 reagent-effect-guidebook-adjust-reagent-group =
     { $chance ->
         [1]
             { $deltasign ->
-                [1] Adds
-               *[-1] Removes
+                [1] Dodaje
+               *[-1] Usuwa
             }
        *[other]
             { $deltasign ->
-                [1] add
-               *[-1] remove
+                [1] dodaje
+               *[-1] usuwa
             }
-    } { NATURALFIXED($amount, 2) }u of reagents in the group { $group } { $deltasign ->
-        [1] to
-       *[-1] from
-    } the solution
+    } { NATURALFIXED($amount, 2) } u odczynników z grupy { $group } { $deltasign ->
+        [1] do
+       *[-1] z
+    } roztworu
 reagent-effect-guidebook-adjust-temperature =
     { $chance ->
         [1]
             { $deltasign ->
-                [1] Adds
-               *[-1] Removes
+                [1] Przekazuje
+               *[-1] Odprowadza
             }
        *[other]
             { $deltasign ->
-                [1] add
-               *[-1] remove
+                [1] przekazuje
+               *[-1] odprowadza
             }
-    } { POWERJOULES($amount) } of heat { $deltasign ->
-        [1] to
-       *[-1] from
-    } the body it's in
+    } { POWERJOULES($amount) } energii cieplnej { $deltasign ->
+        [1] do
+       *[-1] z
+    } organizmu, w którym się znajduje
 reagent-effect-guidebook-chem-cause-disease =
     { $chance ->
-        [1] Causes
-       *[other] cause
-    } the disease { $disease }
+        [1] Wywołuje
+       *[other] wywołuje
+    } chorobę: { $disease }
 reagent-effect-guidebook-chem-cause-random-disease =
     { $chance ->
-        [1] Causes
-       *[other] cause
-    } the diseases { $diseases }
+        [1] Wywołuje
+       *[other] wywołuje
+    } choroby: { $diseases }
 reagent-effect-guidebook-jittering =
     { $chance ->
-        [1] Causes
-       *[other] cause
-    } jittering
+        [1] Powoduje
+       *[other] powoduje
+    } drgawki
 reagent-effect-guidebook-chem-clean-bloodstream =
     { $chance ->
-        [1] Cleanses
-       *[other] cleanse
-    } the bloodstream of other chemicals
+        [1] Oczyszcza
+       *[other] oczyszcza
+    } krwiobieg z innych chemikaliów
 reagent-effect-guidebook-cure-disease =
     { $chance ->
-        [1] Cures
-       *[other] cure
-    } diseases
+        [1] Leczy
+       *[other] leczy
+    } choroby
 reagent-effect-guidebook-cure-eye-damage =
     { $chance ->
         [1]
             { $deltasign ->
-                [1] Deals
-               *[-1] Heals
+                [1] Powoduje
+               *[-1] Leczy
             }
        *[other]
             { $deltasign ->
-                [1] deal
-               *[-1] heal
+                [1] powoduje
+               *[-1] leczy
             }
-    } eye damage
+    } uszkodzenia wzroku
 reagent-effect-guidebook-chem-vomit =
     { $chance ->
-        [1] Causes
-       *[other] cause
-    } vomiting
+        [1] Wywołuje
+       *[other] wywołuje
+    } wymioty
 reagent-effect-guidebook-create-gas =
     { $chance ->
-        [1] Creates
-       *[other] create
+        [1] Tworzy
+       *[other] tworzy
     } { $moles } { $moles ->
-        [1] mole
-       *[other] moles
-    } of { $gas }
+        [1] mol
+       *[other] moli
+    } gazu { $gas }
 reagent-effect-guidebook-drunk =
     { $chance ->
-        [1] Causes
-       *[other] cause
-    } drunkness
+        [1] Powoduje
+       *[other] powoduje
+    } upojenie alkoholowe
 reagent-effect-guidebook-electrocute =
     { $chance ->
-        [1] Electrocutes
-       *[other] electrocute
-    } the metabolizer for { NATURALFIXED($time, 3) } { MANY("second", $time) }
+        [1] Poraża prądem
+       *[other] poraża prądem
+    } cel na { NATURALFIXED($time, 3) } { MANY("sekundę", $time) }
 reagent-effect-guidebook-emote =
     { $chance ->
-        [1] Will force
-       *[other] force
-    } the metabolizer to [bold][color=white]{ $emote }[/color][/bold]
+        [1] Zmusza
+       *[other] zmusza
+    } cel do wykonania gestu/emotki: [bold][color=white]{ $emote }[/color][/bold]
 reagent-effect-guidebook-extinguish-reaction =
     { $chance ->
-        [1] Extinguishes
-       *[other] extinguish
-    } fire
+        [1] Gasi
+       *[other] gasi
+    } ogień
 reagent-effect-guidebook-flammable-reaction =
     { $chance ->
-        [1] Increases
-       *[other] increase
-    } flammability
+        [1] Zwiększa
+       *[other] zwiększa
+    } łatwopalność
 reagent-effect-guidebook-ignite =
     { $chance ->
-        [1] Ignites
-       *[other] ignite
-    } the metabolizer
+        [1] Podpala
+       *[other] podpala
+    } cel
 reagent-effect-guidebook-make-sentient =
     { $chance ->
-        [1] Makes
-       *[other] make
-    } the metabolizer sentient
+        [1] Nadaje
+       *[other] nadaje
+    } celowi samoświadomość
 reagent-effect-guidebook-make-polymorph =
     { $chance ->
-        [1] Polymorphs
-       *[other] polymorph
-    } the metabolizer into a { $entityname }
+        [1] Polimorfuje
+       *[other] polimorfuje
+    } cel w { $entityname }
 reagent-effect-guidebook-modify-bleed-amount =
     { $chance ->
         [1]
             { $deltasign ->
-                [1] Induces
-               *[-1] Reduces
+                [1] Wywołuje
+               *[-1] Zmniejsza
             }
        *[other]
             { $deltasign ->
-                [1] induce
-               *[-1] reduce
+                [1] wywołuje
+               *[-1] zmniejsza
             }
-    } bleeding
+    } krwawienie
 reagent-effect-guidebook-modify-blood-level =
     { $chance ->
         [1]
             { $deltasign ->
-                [1] Increases
-               *[-1] Decreases
+                [1] Zwiększa
+               *[-1] Zmniejsza
             }
        *[other]
             { $deltasign ->
-                [1] increases
-               *[-1] decreases
+                [1] zwiększa
+               *[-1] zmniejsza
             }
-    } blood level
+    } poziom krwi
 reagent-effect-guidebook-paralyze =
     { $chance ->
-        [1] Paralyzes
-       *[other] paralyze
-    } the metabolizer for at least { NATURALFIXED($time, 3) } { MANY("second", $time) }
+        [1] Paraliżuje
+       *[other] paraliżuje
+    } cel na co najmniej { NATURALFIXED($time, 3) } { MANY("sekundę", $time) }
 reagent-effect-guidebook-movespeed-modifier =
     { $chance ->
-        [1] Modifies
-       *[other] modify
-    } movement speed by { NATURALFIXED($walkspeed, 3) }x for at least { NATURALFIXED($time, 3) } { MANY("second", $time) }
+        [1] Modyfikuje
+       *[other] modyfikuje
+    } prędkość poruszania się o { NATURALFIXED($walkspeed, 3) }x na co najmniej { NATURALFIXED($time, 3) } { MANY("sekundę", $time) }
 reagent-effect-guidebook-reset-narcolepsy =
     { $chance ->
-        [1] Temporarily staves
-       *[other] temporarily stave
-    } off narcolepsy
+        [1] Tymczasowo powstrzymuje
+       *[other] tymczasowo powstrzymuje
+    } ataki narkolepsji
 reagent-effect-guidebook-wash-cream-pie-reaction =
     { $chance ->
-        [1] Washes
-       *[other] wash
-    } off cream pie from one's face
+        [1] Zmywa
+       *[other] zmywa
+    } resztki tary z kremem z twarzy
 reagent-effect-guidebook-cure-zombie-infection =
     { $chance ->
-        [1] Cures
-       *[other] cure
-    } an ongoing zombie infection
+        [1] Leczy
+       *[other] leczy
+    } aktywną infekcję zombie
 reagent-effect-guidebook-cause-zombie-infection =
     { $chance ->
-        [1] Gives
-       *[other] give
-    } an individual the zombie infection
+        [1] Zaraża
+       *[other] zaraża
+    } cel infekcją zombie
 reagent-effect-guidebook-innoculate-zombie-infection =
     { $chance ->
-        [1] Cures
-       *[other] cure
-    } an ongoing zombie infection, and provides immunity to future infections
+        [1] Leczy
+       *[other] leczy
+    } aktywną infekcję zombie oraz zapewnia odporność na przyszłe zakażenia
 reagent-effect-guidebook-reduce-rotting =
     { $chance ->
-        [1] Regenerates
-       *[other] regenerate
-    } { NATURALFIXED($time, 3) } { MANY("second", $time) } of rotting
+        [1] Cofa gnicie o
+       *[other] cofa gnicie o
+    } { NATURALFIXED($time, 3) } { MANY("sekundę", $time) }
 reagent-effect-guidebook-area-reaction =
     { $chance ->
-        [1] Causes
-       *[other] cause
-    } a smoke or foam reaction for { NATURALFIXED($duration, 3) } { MANY("second", $duration) }
+        [1] Wywołuje
+       *[other] wywołuje
+    } reakcję dymną lub pianową na { NATURALFIXED($duration, 3) } { MANY("sekundę", $duration) }
 reagent-effect-guidebook-add-to-solution-reaction =
     { $chance ->
-        [1] Causes
-       *[other] cause
-    } chemicals applied to an object to be added to its internal solution container
+        [1] Powoduje, że
+       *[other] powoduje, że
+    } chemikalia nałożone na obiekt trafiają bezpośrednio do jego wewnętrznego zbiornika na roztwory
 reagent-effect-guidebook-artifact-unlock =
     { $chance ->
-        [1] Helps
-       *[other] help
-    } unlock an alien artifact.
+        [1] Pomaga
+       *[other] pomaga
+    } odblokować obcy artefakt.
 reagent-effect-guidebook-plant-attribute =
     { $chance ->
-        [1] Adjusts
-       *[other] adjust
-    } { $attribute } by [color={ $colorName }]{ $amount }[/color]
+        [1] Modyfikuje
+       *[other] modyfikuje
+    } { $attribute } o [color={ $colorName }]{ $amount }[/color]
 reagent-effect-guidebook-plant-cryoxadone =
     { $chance ->
-        [1] Ages back
-       *[other] age back
-    } the plant, depending on the plant's age and time to grow
+        [1] Odmładza
+       *[other] odmładza
+    } roślinę, w zależności od jej obecnego wieku i czasu wzrostu
 reagent-effect-guidebook-plant-phalanximine =
     { $chance ->
-        [1] Restores
-       *[other] restore
-    } viability to a plant rendered nonviable by a mutation
+        [1] Przywraca
+       *[other] przywraca
+    } żywotność roślinie, która stała się bezpłodna w wyniku mutacji
 reagent-effect-guidebook-plant-diethylamine =
     { $chance ->
-        [1] Increases
-       *[other] increase
-    } the plant's lifespan and/or base health with 10% chance for each
+        [1] Zwiększa
+       *[other] zwiększa
+    } długość życia i/lub bazowe zdrowie rośliny (10% szansy na każdy efekt)
 reagent-effect-guidebook-plant-robust-harvest =
     { $chance ->
-        [1] Increases
-       *[other] increase
-    } the plant's potency by { $increase } up to a maximum of { $limit }. Causes the plant to lose its seeds once the potency reaches { $seedlesstreshold }. Trying to add potency over { $limit } may cause decrease in yield at a 10% chance
+        [1] Zwiększa
+       *[other] zwiększa
+    } potencjał rośliny o { $increase } (maksymalnie do { $limit }). Powoduje, że roślina traci nasiona po osiągnięciu progu { $seedlesstreshold }. Próba zwiększenia potencjału powyżej { $limit } wiąże się z 10% szansą na zmniejszenie plonów
 reagent-effect-guidebook-plant-seeds-add =
     { $chance ->
-        [1] Restores the
-       *[other] restore the
-    } seeds of the plant
+        [1] Przywraca
+       *[other] przywraca
+    } nasiona rośliny
 reagent-effect-guidebook-add-to-chemicals =
     { $chance ->
         [1]
             { $deltasign ->
-                [1] Adds
-               *[-1] Removes
+                [1] Dodaje
+               *[-1] Usuwa
             }
        *[other]
             { $deltasign ->
-                [1] add
-               *[-1] remove
+                [1] dodaje
+               *[-1] usuwa
             }
-    } { NATURALFIXED($amount, 2) }u of { $reagent } { $deltasign ->
-        [1] to
-       *[-1] from
-    } the solution
+    } { NATURALFIXED($amount, 2) } u substancji { $reagent } { $deltasign ->
+        [1] do
+       *[-1] z
+    } roztworu
 reagent-effect-guidebook-adjust-ling-chemicals =
     { $chance ->
         [1]
             { $deltasign ->
-                [1] Adds
-               *[-1] Removes
+                [1] Dodaje
+               *[-1] Usuwa
             }
        *[other]
             { $deltasign ->
-                [1] add
-               *[-1] remove
+                [1] dodaje
+               *[-1] usuwa
             }
-    } { NATURALFIXED($amount, 2) } units of changeling chemicals { $deltasign ->
-        [1] to
-       *[-1] from
-    } the metabolizer
+    } { NATURALFIXED($amount, 2) } u chemikaliów gwiezdnego wampira (changelinga) { $deltasign ->
+        [1] do genomu
+       *[-1] z genomu
+    } celu
 reagent-effect-guidebook-plant-seeds-remove =
     { $chance ->
-        [1] Removes the
-       *[other] remove the
-    } seeds of the plant
+        [1] Usuwa
+       *[other] usuwa
+    } nasiona rośliny

@@ -97,32 +97,35 @@ public sealed partial class DocumentParsingManager
             .Cast<Control>())
         .Labelled("richtext");
 
+    private static RichTextLabel CreateWrappingHeader(string text, string styleClass)
+    {
+        var label = new RichTextLabel
+        {
+            HorizontalExpand = true,
+            VerticalAlignment = VAlignment.Top,
+            StyleClasses = { styleClass },
+        };
+
+        var msg = new FormattedMessage();
+        msg.AddText(text);
+        label.SetMessage(msg);
+        return label;
+    }
+
     private static readonly Parser<char, Control> HeaderControlParser = Try(Char('#'))
-        .Then(SkipWhitespaces.Then(Map(text => new Label
-                {
-                    Text = text,
-                    StyleClasses = { "LabelHeadingBigger" }
-                },
+        .Then(SkipWhitespaces.Then(Map(text => CreateWrappingHeader(text, "LabelHeadingBigger"),
                 AnyCharExcept('\n').AtLeastOnceString())
             .Cast<Control>()))
         .Labelled("header");
 
     private static readonly Parser<char, Control> SubHeaderControlParser = Try(String("##"))
-        .Then(SkipWhitespaces.Then(Map(text => new Label
-                {
-                    Text = text,
-                    StyleClasses = { "LabelHeading" }
-                },
+        .Then(SkipWhitespaces.Then(Map(text => CreateWrappingHeader(text, "LabelHeading"),
                 AnyCharExcept('\n').AtLeastOnceString())
             .Cast<Control>()))
         .Labelled("subheader");
 
     private static readonly Parser<char, Control> TertiaryHeaderControlParser = Try(String("###"))
-        .Then(SkipWhitespaces.Then(Map(text => new Label
-                {
-                    Text = text,
-                    StyleClasses = { "LabelKeyText" }
-                },
+        .Then(SkipWhitespaces.Then(Map(text => CreateWrappingHeader(text, "LabelKeyText"),
                 AnyCharExcept('\n').AtLeastOnceString())
             .Cast<Control>()))
         .Labelled("tertiaryheader");

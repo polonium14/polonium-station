@@ -1,7 +1,7 @@
 ## Entity
 
-chem-master-component-activate-no-hands = You have no hands.
-chem-master-component-cannot-put-entity-message = You can't put this in the ChemMaster!
+chem-master-component-activate-no-hands = Nie masz rąk.
+chem-master-component-cannot-put-entity-message = Nie możesz tego włożyć do ChemMastera!
 
 ## Bound UI
 
@@ -9,44 +9,44 @@ chem-master-bound-user-interface-title = ChemMaster 4000
 
 ## UI
 
-chem-master-window-input-tab = Input
-chem-master-window-output-tab = Output
-chem-master-window-container-label = Container
-chem-master-window-pill-buffer-tab = Pill Buffer
-chem-master-window-eject-button = Eject
-chem-master-window-amount-placeholder = Transfer Amount
-chem-master-window-no-container-loaded-text = No container loaded.
-chem-master-window-buffer-text = Buffer
-chem-master-window-buffer-label = buffer:
-chem-master-window-buffer-all-amount = All
-chem-master-window-buffer-empty-text = Buffer empty.
-chem-master-window-buffer-low-text = Not enough solution in buffer
-chem-master-window-pill-buffer-text = Pill Buffer
-chem-master-window-pill-buffer-label = pill buffer:
-chem-master-window-pill-buffer-empty-text = Pill buffer empty.
-chem-master-window-pill-buffer-low-text = Not enough solution in pill buffer
-chem-master-window-save-as-frequent-label = Save as Frequent
-chem-master-window-set-amount-label = Set Amount
-chem-master-window-transfer-button = Transfer
-chem-master-window-sort-method-tooltip = Choose your buffer's sort method.
-chem-master-window-sort-method-Time-text = Last Added
-chem-master-window-sort-method-Alphabetical-text = Alphabetical Order
-chem-master-window-sort-method-Amount-text = Quantity
-chem-master-window-transferring-label = Transferring: [color={ $color }]{ $quantity }[/color]
-chem-master-window-transferring-default-label = Transferring: [color=#ffffff]50[/color]
-chem-master-window-reagent-move-button = Move
-chem-master-window-discard-button = Discard
-chem-master-window-packaging-text = Packaging
-chem-master-current-text-label = Label:
-chem-master-window-pills-label = Pills:
-chem-master-window-pill-type-label = Pill type:
-chem-master-window-number-label = Count:
-chem-master-window-pills-number-label = Count:
-chem-master-window-dose-label = Dose (u):
-chem-master-window-create-button = Create
-chem-master-window-bottles-label = Bottles:
-chem-master-window-unknown-reagent-text = Unknown reagent
-chem-master-window-sort-type-none = Sort by: Oldest First
-chem-master-window-sort-type-alphabetical = Sort by: Alphabetical
-chem-master-window-sort-type-quantity = Sort by: Quantity
-chem-master-window-sort-type-latest = Sort by: Recent First
+chem-master-window-input-tab = Wejście
+chem-master-window-output-tab = Wyjście
+chem-master-window-container-label = Pojemnik
+chem-master-window-pill-buffer-tab = Bufor pigułek
+chem-master-window-eject-button = Wysuń
+chem-master-window-amount-placeholder = Przenoszona ilość
+chem-master-window-no-container-loaded-text = Nie załadowano pojemnika.
+chem-master-window-buffer-text = Bufor
+chem-master-window-buffer-label = bufor:
+chem-master-window-buffer-all-amount = Wszystko
+chem-master-window-buffer-empty-text = Bufor jest pusty.
+chem-master-window-buffer-low-text = Za mało roztworu w buforze
+chem-master-window-pill-buffer-text = Bufor pigułek
+chem-master-window-pill-buffer-label = bufor pigułek:
+chem-master-window-pill-buffer-empty-text = Bufor pigułek jest pusty.
+chem-master-window-pill-buffer-low-text = Za mało roztworu w buforze pigułek
+chem-master-window-save-as-frequent-label = Zapisz jako ulubione
+chem-master-window-set-amount-label = Ustaw ilość
+chem-master-window-transfer-button = Przenieś
+chem-master-window-sort-method-tooltip = Wybierz metodę sortowania bufora.
+chem-master-window-sort-method-Time-text = Ostatnio dodane
+chem-master-window-sort-method-Alphabetical-text = Kolejność alfabetyczna
+chem-master-window-sort-method-Amount-text = Ilość
+chem-master-window-transferring-label = Przenoszenie: [color={ $color }]{ $quantity }[/color]
+chem-master-window-transferring-default-label = Przenoszenie: [color=#ffffff]50[/color]
+chem-master-window-reagent-move-button = Przenieś
+chem-master-window-discard-button = Wyrzuć
+chem-master-window-packaging-text = Opakowanie
+chem-master-current-text-label = Etykieta:
+chem-master-window-pills-label = Pigułki:
+chem-master-window-pill-type-label = Typ pigułki:
+chem-master-window-number-label = Liczba:
+chem-master-window-pills-number-label = Liczba:
+chem-master-window-dose-label = Dawka (u):
+chem-master-window-create-button = Utwórz
+chem-master-window-bottles-label = Butelki:
+chem-master-window-unknown-reagent-text = Nieznany odczynnik
+chem-master-window-sort-type-none = Sortuj: najstarsze
+chem-master-window-sort-type-alphabetical = Sortuj: alfabetycznie
+chem-master-window-sort-type-quantity = Sortuj: według ilości
+chem-master-window-sort-type-latest = Sortuj: najnowsze
