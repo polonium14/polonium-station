@@ -52,7 +52,7 @@
 
 - type: entity
   parent: ReplicatorSpawn
-  id: ReplicatorSpawn
+  id: ReplicatorSpawnSecretPlus
   components:
   - type: StationEvent
     eventType: HostilesSpawn
