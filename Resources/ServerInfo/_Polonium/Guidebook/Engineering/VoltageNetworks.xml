@@ -7,11 +7,11 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-  # Voltage Networks
-  In Space Station 14, power distribution is divided into three separate voltage networks.
-  These networks are the [color=green]Low Voltage[/color] Network, the [color=Yellow]Medium Voltage[/color] Network, and the [color=orange]High Voltage[/color] Network.
+  # Sieci napięciowe
+  W Space Station 14 system dystrybucji energii podzielony jest na trzy odrębne sieci napięciowe.
+  Są to: sieć [color=green]niskonapięciowa[/color], sieć [color=yellow]średnionapięciowa[/color] oraz sieć [color=orange]wysokonapięciowa[/color].
 
-  These networks power different types of machinery on the station.
+  Sieci te zasilają różne rodzaje urządzeń na stacji.
 
   <Box>
     <GuideEntityEmbed Entity="CableHVStack"/>
@@ -19,8 +19,8 @@ SPDX-License-Identifier: MIT
     <GuideEntityEmbed Entity="CableApcStack"/>
   </Box>
 
-  ## Low Voltage Network
-  The [color=green]Low Voltage[/color] Network is used for powering almost all small machines on the station. This includes things like lights, computers, and other small devices.
+  ## Sieć niskonapięciowa
+  Sieć [color=green]niskonapięciowa[/color] służy do zasilania niemal wszystkich niewielkich urządzeń w stacji. Obejmuje to między innymi oświetlenie, komputery i inne niewielkie urządzenia.
 
   <Box>
     <GuideEntityEmbed Entity="PoweredSmallLight" Caption=""/>
@@ -32,18 +32,18 @@ SPDX-License-Identifier: MIT
     <GuideEntityEmbed Entity="AlwaysPoweredWallLight" Caption=""/>
   </Box>
 
-  [color=green]Low Voltage[/color] power is provided by APCs, which are wall-mounted devices that convert power from the [color=Yellow]Medium Voltage[/color] Network to [color=green]Low Voltage[/color].
+  [color=green]Niskie napięcie[/color] jest dostarczane przez urządzenia APC, czyli montowane na ścianie urządzenia, które przekształcają energię [color=Yellow]średniego napięcia[/color] na energię [color=green]niskiego napięcia[/color].
 
   <Box>
     <GuideEntityEmbed Entity="APCBasic"/>
   </Box>
 
-  [color=green]Low Voltage[/color] wire doesn't have to be directly run to every machine, as it can power multiple machines as long as the wire is close enough to the machine.
-  It can power machines within 2 tiles radially, and 3 tiles in each cardinal direction.
+  [color=green]Przewód niskonapięciowy[/color] nie musi być poprowadzony bezpośrednio do każdej maszyny, ponieważ może zasilać wiele maszyn, o ile znajduje się wystarczająco blisko nich.
+  Może zasilać maszyny w promieniu 2 pól oraz w odległości 3 pól w każdym z głównych kierunków.
 
-  ## Medium Voltage Network
-  The [color=Yellow]Medium Voltage[/color] Network is used for powering APCs and other power-hungry machinery that can only accept [color=Yellow]Medium Voltage[/color] power.
-  The Particle Accelerator is an example, as it operates on [color=Yellow]Medium Voltage[/color] power.
+  ## Sieć średnionapięciowa
+  Sieć [color=Yellow]średnionapięciowa[/color] służy do zasilania akceleratorów cząstek oraz innych urządzeń o dużym zapotrzebowaniu na energię, które mogą być zasilane wyłącznie napięciem [color=Yellow]średnim[/color].
+  Przykładem jest akcelerator cząstek, który działa przy zasilaniu napięciem [color=Yellow]średnim[/color].
 
   <Box>
     <GuideEntityEmbed Entity="ParticleAcceleratorEndCap" Caption="" Margin="0"/>
@@ -66,12 +66,12 @@ SPDX-License-Identifier: MIT
   </Box>
 
   <Box>
-    [color=#999999][italic]The Particle Accelerator[italic][/color]
+    [color=#999999][italic]Akcelerator cząstek[italic][/color]
   </Box>
 
-  [color=Yellow]Medium Voltage[/color] power is provided by Substations, which are large machines that convert power from the [color=Orange]High Voltage[/color] Network to [color=Yellow]Medium Voltage[/color].
+  Energia elektryczna [color=Yellow]średniego napięcia[/color] jest dostarczana przez stacje transformatorowe – duże urządzenia, które przekształcają energię [color=Orange]wysokiego napięcia[/color] na energię [color=Yellow]średniego napięcia[/color].
 
-  There are also wallmount variants of these substations for compact spaces, like shuttles.
+  Dostępne są również warianty tych podstacji przeznaczone do montażu na ścianie, idealne do niewielkich przestrzeni, takich jak wahadłowce.
   <Box HorizontalAlignment="Stretch">
     <Box>
       <GuideEntityEmbed Entity="SubstationBasic"/>
@@ -81,10 +81,10 @@ SPDX-License-Identifier: MIT
     </Box>
   </Box>
 
-  ## High Voltage Network
-  The [color=Orange]High Voltage[/color] Network is used for moving large amounts of power across the station. It is used to power most power handling equipment, such as SMES units and Substations.
+  ## Sieć wysokonapięciowa
+  Sieć [color=Orange]wysokonapięciowa[/color] służy do przesyłania dużych ilości energii w obrębie stacji. Wykorzystuje się ją do zasilania większości urządzeń energetycznych, takich jak jednostki SMES i podstacje.
 
-  Most high-output generators output power to the [color=Orange]High Voltage[/color] Network.
+  Większość generatorów o dużej mocy dostarcza energię do sieci [color=Orange]wysokonapięciowej[/color].
 
   <Box>
     <GuideEntityEmbed Entity="SMESBasic"/>
@@ -93,11 +93,11 @@ SPDX-License-Identifier: MIT
     <GuideEntityEmbed Entity="SubstationBasic"/>
   </Box>
 
-  ## Shock Damage
-  If you are shocked by a cable carrying power, you will take damage. The amount of damage you take is based on the voltage of the cable that shocked you.
+  ## Obrażenia od porażenia prądem
+  Jeśli zostaniesz porażony prądem przez przewód pod napięciem, otrzymasz obrażenia. Ich wartość zależy od napięcia przewodu, który cię poraził.
 
-  [color=green]Low Voltage[/color] cables will deal less damage than [color=Yellow]Medium Voltage[/color] cables, which will deal less damage than [color=Orange]High Voltage[/color] cables.
+  Przewody [color=green]niskonapięciowe[/color] zadają mniej obrażeń niż przewody [color=Yellow]średnienapięciowe[/color], które z kolei zadają mniej obrażeń niż przewody [color=Orange]wysokonapięciowe[/color].
 
-  Energized [color=Orange]High Voltage[/color] and [color=Yellow]Medium Voltage[/color] cabling hurts, so be sure to wear insulated gloves when working with it.
+  Przewody [color=Orange]wysokonapięciowe[/color] i [color=Yellow]średnienapięciowe[/color] pod napięciem są niebezpieczne, dlatego podczas pracy z nimi należy nosić rękawice izolacyjne.
 
 </Document>
