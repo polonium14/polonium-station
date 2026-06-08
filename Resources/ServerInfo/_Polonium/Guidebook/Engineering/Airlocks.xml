@@ -7,22 +7,22 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-  # Airlocks
-  Airlocks are used to control access to different areas of the station.
+  # Śluzy
+  Śluzy służą do kontroli dostępu do różnych obszarów stacji.
 
   <Box>
     <GuideEntityEmbed Entity="Airlock" Caption=""/>
     <GuideEntityEmbed Entity="AirlockGlass" Caption=""/>
   </Box>
 
-  Airlocks can be opened using either [color=yellow][bold][keybind="Use"][/bold][/color] with an empty hand, [color=yellow][bold][keybind="ActivateItemInWorld"][/bold][/color] if hands are full, or by colliding with the airlock.
+  Śluzy można otworzyć za pomocą klawisza [color=yellow][bold][keybind="Use"][/bold][/color], gdy masz wolną rękę, klawisza [color=yellow][bold][keybind="ActivateItemInWorld"][/bold][/color], gdy masz zajęte ręce, lub poprzez wejście w śluzę.
 
-  Airlocks will only open if you have an ID card with the correct access level.
-  The ID card must be in your hand or in your ID slot.
-  In the case of having multiple IDs, the airlock will check them all when you try to open it.
-  This behavior is also the same for IDs in a PDA.
+  Śluzy otworzą się tylko wtedy, gdy posiadasz kartę identyfikacyjną z odpowiednim poziomem dostępu.
+  Karta identyfikacyjna musi znajdować się w Twojej dłoni lub w czytniku kart.
+  W przypadku posiadania wielu kart identyfikacyjnych śluza sprawdzi je wszystkie podczas próby otwarcia.
+  Takie samo zachowanie dotyczy również kart identyfikacyjnych znajdujących się w urządzeniu PDA.
 
-  The access level required to open the door can be modified using an Access Configurator, or by using a Multitool on the door electronics for the airlock (which requires deconstruction).
+  Poziom uprawnień wymagany do otwarcia śluzy można zmienić za pomocą konfiguratora dostępu lub za pomocą narzędzia wielofunkcyjnego podłączonego do układu elektronicznego śluzy (co wymaga jej demontażu).
 
   <Box>
     <GuideEntityEmbed Entity="AccessConfigurator" Caption=""/>
@@ -30,21 +30,21 @@ SPDX-License-Identifier: MIT
     <GuideEntityEmbed Entity="DoorElectronics" Caption=""/>
   </Box>
 
-  Airlocks block gas flow, so they can be used to seal off areas in case of a [textlink="hull breach" link="Spacing"] or a [textlink="fire." link="Fires"]
-  They also store gas on their tile, even when closed, so be careful when opening them during or after a gas leak.
+  Śluzy blokują przepływ gazu, dzięki czemu można ich używać do odcinania obszarów w razie [textlink="rozszczelnienia kadłuba statku" link="Spacing"] lub [textlink="pożaru" link="Fires"].
+  Ponadto magazynują gaz na swoim kafelku, nawet gdy są zamknięte, dlatego należy zachować ostrożność podczas ich otwierania w trakcie lub po wycieku gazu.
 
-  ## Bolting and Emergency Access
-  Airlocks can be bolted to prevent them from being opened or pried open by hand. When this occurs, the airlock will display red lights on the top of the door.
+  ## Zamknięcie bolców i dostęp awaryjny
+  Śluzy można zamknąć za pomocą bolców, aby uniemożliwić ich otwarcie lub wyważenie. W takim przypadku na górnej części drzwi śluzy zapalą się czerwone światła.
 
-  Airlocks can also be set to emergency access. In this mode, anyone can open the airlock, regardless of access level. When this occurs, the airlock will display flashing yellow lights on the top of the door.
+  Śluzy można również ustawić w trybie awaryjnym. W tym trybie każdy może otworzyć śluzę, niezależnie od poziomu uprawnień. W takiej sytuacji na górnej części drzwi śluzy zaczną migać żółte światła.
 
-  ## Remote Control
-  Airlocks can be controlled remotely, either by the station AI or by using a Door Remote.
+  ## Sterowanie zdalne
+  Śluzy można obsługiwać zdalnie – albo za pomocą sztucznej inteligencji stacji, albo za pomocą pilota do drzwi.
   <Box>
     <GuideEntityEmbed Entity="PlayerStationAiEmpty" Caption=""/>
   </Box>
   <Box>
-    [color=#999999][italic]The Station AI, which has remote control over all airlocks[italic][/color]
+    [color=#999999][italic]SI stacji, które ma kontrole nad wszystkimi śluzami na stacji[italic][/color]
   </Box>
 
   <Box>
@@ -56,20 +56,20 @@ SPDX-License-Identifier: MIT
     <GuideEntityEmbed Entity="DoorRemoteResearch" Caption=""/>
   </Box>
   <Box>
-    [color=#999999][italic]Precious door remotes. With unlimited power...[italic][/color]
+    [color=#999999][italic]Cenne piloty do zdalnego sterowania śluzami. Potężna władza...[italic][/color]
   </Box>
 
 
-  Department heads usually get door remotes for their respective department.
+  Kierownicy działów zazwyczaj otrzymują piloty do drzwi swojego działu.
 
-  They can open, close, bolt, and set to emergency access using these remotes.
+  Za pomocą tych pilotów można otwierać, zamykać, ryglować oraz przełączać w tryb awaryjny.
 
-  ## Linking
-  Airlocks can be linked using the [textlink="Link" link="Networking"] system to other devices.
-  This allows for proper station airlocks to space, or to link multiple airlocks together.
+  ## Łączenie
+  Śluzy można łączyć z innymi urządzeniami za pomocą funkcji [textlink="łączenia" link="Networking"].
+  Umożliwia to tworzenie połączeń między stacjami a przestrzenią kosmiczną lub łączenie ze sobą wielu śluz.
 
-  ## Styling
-  Airlocks can come in different styles to match station departments. The department style commonly reflects the required access level.
+  ## Wygląd
+  Śluzy mogą mieć różny wygląd, dostosowany do poszczególnych departamentów stacji. Wygląd danego departamentu zazwyczaj odzwierciedla wymagany poziom dostępu.
 
   <Box>
     <GuideEntityEmbed Entity="Airlock" Caption=""/>
@@ -90,56 +90,56 @@ SPDX-License-Identifier: MIT
     <GuideEntityEmbed Entity="AirlockSecurityGlass" Caption=""/>
   </Box>
 
-  Airlocks can be repainted using a spray painter.
+  Śluzy mogą być przemalowane za pomocą pistoletu natryskowego.
   <Box>
     <GuideEntityEmbed Entity="SprayPainter" Caption=""/>
   </Box>
 
-  ## Wiring
-  Airlocks have internal wiring under their maintenance panel, which can be opened using a screwdriver.
-  Each wire controls some aspect of the airlock's functionality.
-  When you either pulse, cut, or mend the wire, it will affect the airlock in different ways.
+  ## Okablowanie
+  Śluzy posiadają wewnętrzne okablowanie umieszczone pod panelem serwisowym, który można otworzyć za pomocą śrubokręta.
+  Każdy przewód steruje określonymi funkcjami śluzy.
+  Przerwanie, przecięcie lub naprawa przewodu wpłynie na działanie śluzy na różne sposoby.
 
-  The lights next to the wires will indicate the status of the wire:
-  - A steady light indicates that the system is functioning as normal.
-  - A flashing light indicates that the system is malfunctioning. It is either not working or is behaving not as intended.
-  - No light indicates that the system is not powered.
+  Kontrolki obok przewodów wskazują stan danego przewodu:
+  - Światło stałe oznacza, że system działa prawidłowo.
+  - Migające światło oznacza, że system nie działa prawidłowo - nie działa w ogóle, albo nie działa zgodnie z przeznaczeniem.
+  - Brak światła oznacza, że system nie jest zasilany.
 
-  Below is a list of the wires and their functions:
+  Poniżej znajduje się lista przewodów wraz z ich funkcjami:
 
-  [color=#a4885c]Bolt Wire (BOLT)[/color]
-  - [color=yellow]Pulse the wire[/color]: Bolts or unbolts the door.
-  - [color=red]Cut the wire[/color]: Bolts the door.
-  - [color=green]Mend the wire[/color]: Does nothing.
+  [color=#a4885c]Przewód bolców (BOLT)[/color]
+  - [color=yellow]Przesłanie impulsu[/color]: Zasuwa lub otwiera bolce śluzy.
+  - [color=red]Przecięcie przewodu[/color]: Zasuwa bolce śluzy.
+  - [color=green]Naprawienie przewodu[/color]: Nie robi nic.
 
-  [color=#a4885c]Power Wire (POWR)[/color]
-  - [color=yellow]Pulse the wire[/color]: Cuts power to the door for a short time.
-  - [color=red]Cut the wire[/color]: Either cuts power to the door if both power wires are cut, or causes a short circuit if only one is cut, shocking people without insulated gloves.
-  - [color=green]Mend the wire[/color]: Either restores power to the door if both power wires are cut, or stops the short circuit if only one is cut.
+  [color=#a4885c]Przewód zasilający (POWR)[/color]
+  - [color=yellow]Przesłanie impulsu[/color]: Odcina zasilanie śluzy na krótką chwilę.
+  - [color=red]Przecięcie przewodu[/color]: W przypadku przecięcia obu przewodów zasilających następuje odcięcie zasilania drzwi, a w przypadku przecięcia tylko jednego przewodu dochodzi do zwarcia, co grozi porażeniem prądem osób nieposiadających rękawic izolacyjnych.
+  - [color=green]Naprawienie przewodu[/color]: W przypadku przerwania obu przewodów zasilających przywraca zasilanie do drzwi, a w przypadku przerwania tylko jednego przewodu zapobiega zwarciu.
 
-  [color=#a4885c]Log Wire (LOG)[/color]
-  - [color=yellow]Pulse the wire[/color]: Temporary disables door logging.
-  - [color=red]Cut the wire[/color]: Disables door logging.
-  - [color=green]Mend the wire[/color]: Re-enables door logging.
+  [color=#a4885c]Przewód rejestru dostępu (LOG)[/color]
+  - [color=yellow]Przesłanie impulsu[/color]: Tymczasowo wyłącza rejestrowanie otwarć drzwi.
+  - [color=red]Przecięcie przewodu[/color]: Wyłącza rejestrowanie otwarć drzwi.
+  - [color=green]Naprawienie przewodu[/color]: Włącza rejestrowanie otwarć drzwi.
 
-  [color=#a4885c]Bolt Light (BLIT)[/color]
-  - [color=yellow]Pulse the wire[/color]: Turns the system off temporarily, or turns it back on.
-  - [color=red]Cut the wire[/color]: Prevents the bolt light from turning on, which communicates if the door is bolted or not.
-  - [color=green]Mend the wire[/color]: Turns the system back on.
+  [color=#a4885c]Zasilanie światła sygnalizującego stan bolców (BLIT)[/color]
+  - [color=yellow]Przesłanie impulsu[/color]: Tymczasowo wyłącza system lub ponownie go włącza.
+  - [color=red]Przecięcie przewodu[/color]: Zapobiega włączeniu się lampki sygnalizującej, która sygnalizuje, czy drzwi mają zasunięte bolce.
+  - [color=green]Naprawienie przewodu[/color]: Włącza system ponownie.
 
-  [color=#a4885c]Timer Light (TIMR)[/color]
-  - [color=yellow]Pulse the wire[/color]: Reduces the door timer temporarily.
-  - [color=red]Cut the wire[/color]: Disables the timer. The door will close as soon as it is safe to do so.
-  - [color=green]Mend the wire[/color]: Re-enables the timer.
+  [color=#a4885c]Zasilanie timera (TIMR)[/color]
+  - [color=yellow]Przesłanie impulsu[/color]: Tymczasowo skraca czas działania timera drzwi.
+  - [color=red]Przecięcie przewodu[/color]: Wyłącza timer. Drzwi zamkną się, gdy tylko będzie to bezpieczne.
+  - [color=green]Naprawienie przewodu[/color]: Ponownie włącza timer.
 
-  [color=#a4885c]Safety Light (SAFE)[/color]
-  - [color=yellow]Pulse the wire[/color]: Disables the safety system temporarily.
-  - [color=red]Cut the wire[/color]: Disables the safety system. The door will close even if there is an obstruction.
-  - [color=green]Mend the wire[/color]: Re-enables the safety system.
+  [color=#a4885c]Zasilanie światła bezpieczeństwa (SAFE)[/color]
+  - [color=yellow]Przesłanie impulsu[/color]: Tymczasowo wyłącza system bezpieczeństwa.
+  - [color=red]Przecięcie przewodu[/color]: Wyłącza system bezpieczeństwa. Drzwi zamkną się nawet w przypadku obecności przeszkody.
+  - [color=green]Naprawienie przewodu[/color]: Ponownie włącza system bezpieczeństwa.
 
-  [color=#a4885c]AI Access Light (AIA)[/color]
-  - [color=yellow]Pulse the wire[/color]: Does nothing.
-  - [color=red]Cut the wire[/color]: Disables AI access. The AI can no longer control the door.
-  - [color=green]Mend the wire[/color]: Re-enables AI access.
+  [color=#a4885c]Zasilanie modułu dostępu SI (AIA)[/color]
+  - [color=yellow]Przesłanie impulsu[/color]: Nie robi nic.
+  - [color=red]Przecięcie przewodu[/color]: Wyłącza dostęp SI.
+  - [color=green]Naprawienie przewodu[/color]: Włącza dostęp SI.
 
 </Document>
