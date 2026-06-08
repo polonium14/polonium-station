@@ -25,15 +25,15 @@ SPDX-License-Identifier: MIT
 
   ## Jak działają sieci rurociągów
   W grze Space Station 14 sieci rurociągów funkcjonują jako jednolita, wyznaczona przestrzeń, z punktami wejścia i wyjścia na końcach sieci.
-  Wpompowywanie lub odsysanie gazu za pomocą [textlink="pompy" link="Pumps"] wpłynie na całą sieć, a nie tylko na rurę, do której jest podłączona.
+  Wpompowywanie lub odsysanie gazu za pomocą [textlink="pompki" link="Pumps"] wpłynie na całą sieć, a nie tylko na rurę, do której jest podłączona.
 
   Oto kilka przykładów urządzeń służących do rozdzielania sieci rurociągów:
-  - [textlink="Pompy ciśnieniowe i objętościowe" link="Pumps"]
+  - [textlink="Pompki ciśnieniowe i objętościowe" link="Pumps"]
   - [textlink="Mieszalniki gazów i filtry" link="MixingAndFiltering"]
   - [textlink="Zawory" link="Valves"]
   - [textlink="Radiatory" link="Radiators"]
 
-  Poniżej przedstawiono przykład sieci rurociągów podzielonej na dwie odrębne sieci przy zastosowaniu [textlink="pompy" link="Pumps"]:
+  Poniżej przedstawiono przykład sieci rurociągów podzielonej na dwie odrębne sieci przy zastosowaniu [textlink="pompki" link="Pumps"]:
 
   <Box>
     <GuideEntityEmbed Entity="GasPipeStraight" Caption="Sieć nr. 1" Rotation="90"/>
