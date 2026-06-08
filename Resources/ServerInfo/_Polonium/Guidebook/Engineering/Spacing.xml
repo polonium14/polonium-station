@@ -21,7 +21,7 @@ SPDX-License-Identifier: MIT
 
   2. Wyrównaj ciśnienie.
 
-  - [textlink="Otwory wentylacyjne" link="AirVent"] przechodzą w tryb blokady ciśnieniowej, aby zapobiec dalszej utracie powietrza. W celu wyrównania ciśnienia w danym obszarze konieczne będzie ręczne wyłączenie tej blokady. Można to zrobić, ustawiając podłączony [textlink="alarm powietrzny" link="AirAlarms"] na tryb napełniania lub klikając prawym przyciskiem myszy na otwór wentylacyjny i wybierając opcję "Zwolnij blokadę ciśnieniową", aby tymczasowo ręcznie wyłączyć tę blokadę.
+  - [textlink="Otwory wentylacyjne" link="AirVent"] przechodzą w tryb blokady ciśnieniowej, aby zapobiec dalszej utracie powietrza. W celu wyrównania ciśnienia w danym obszarze konieczne będzie ręczne wyłączenie tej blokady. Można to zrobić, ustawiając podłączony [textlink="alarm atmosferyczny" link="AirAlarms"] na tryb napełniania lub klikając prawym przyciskiem myszy na otwór wentylacyjny i wybierając opcję "Zwolnij blokadę ciśnieniową", aby tymczasowo ręcznie wyłączyć tę blokadę.
 
   ## Czego należy unikać
   - Pamiętaj, że choć dysponujesz nieograniczonymi zasobami [textlink="wydobytego gazu" link="GasMiningAndStorage"], nie da się nim wystarczająco szybko napełnić wielu pomieszczeń jednocześnie. Ustawienie [textlink="alarmów powietrznych" link="AirAlarms"] tak, aby najpierw napełniły pomieszczenia [italic]przed[/italic] rozwiązaniem podstawowego problemu, często prowadzi do straty czasu i gazu.
