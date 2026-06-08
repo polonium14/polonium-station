@@ -1,5 +1,5 @@
-ent-PaperAcquisitionSlip = paragon zakupu
-    .desc = Paragon z danymi zamówienia. Można ją przekazać firmie Cargo w celu realizacji zamówienia.
+ent-PaperAcquisitionSlip = zlecenie zakupu
+    .desc = Zlecenie zakupu z danymi zamówienia. Należy przekazać je departamentowi zaopatrzenia w celu realizacji zamówienia.
 ent-PaperAcquisitionSlipMedical = { ent-PaperAcquisitionSlip }
     .suffix = Medyczny
     .desc = { ent-PaperAcquisitionSlip.desc }

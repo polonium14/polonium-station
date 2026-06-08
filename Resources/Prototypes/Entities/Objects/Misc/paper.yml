@@ -587,7 +587,8 @@
         whitelist:
           tags:
             - Write
-        insertOnInteract: false
+        # POLONIUM CHANGE: Set insertOnInteract to true, so the pen can be inserted into a clipboard (it's a bug honestly - even the sprites are there! It should be true by default...).
+        insertOnInteract: true
   - type: Item
     sprite: Objects/Misc/clipboard.rsi
     size: Small
