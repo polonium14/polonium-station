@@ -7,27 +7,27 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-  # Pipes
-  Pipes are used to distribute gasses from one place to another.
-  There are a wide variety of pipes available to construct:
+  # Rury
+  Rury służą do transportu gazów z jednego miejsca do drugiego.
+  Do budowy można wykorzystać wiele różnych rodzajów rur:
 
   <Box>
-    <GuideEntityEmbed Entity="GasPipeStraight" Caption="straight"/>
-    <GuideEntityEmbed Entity="GasPipeHalf" Caption="half"/>
-    <GuideEntityEmbed Entity="GasPipeBend" Caption="bend"/>
-    <GuideEntityEmbed Entity="GasPipeTJunction" Caption="T junction"/>
-    <GuideEntityEmbed Entity="GasPipeFourway" Caption="fourway"/>
+    <GuideEntityEmbed Entity="GasPipeStraight" Caption="prosta"/>
+    <GuideEntityEmbed Entity="GasPipeHalf" Caption="połówka"/>
+    <GuideEntityEmbed Entity="GasPipeBend" Caption="zgięta"/>
+    <GuideEntityEmbed Entity="GasPipeTJunction" Caption="trójnik"/>
+    <GuideEntityEmbed Entity="GasPipeFourway" Caption="czwórnik"/>
   </Box>
 
-  Pipes will [color=#a4885c]automatically connect[/color] to other pipes when anchored (or wrenched) to the hull to form a [textlink="network of pipes." link="PipeNetworks"]
-  A network of pipes is commonly called a [textlink="pipenet" link="PipeNetworks"].
+  Rury będą [color=#a4885c]automatycznie łączyć się[/color] z innymi rurami po przymocowaniu (lub przykręceniu) do kadłuba, tworząc [textlink="sieć rurociągu." link="PipeNetworks"]
+  Sieć rur nazywana jest potocznie [textlink="rurociągiem" link="PipeNetworks"].
 
-  Pipes will [color=red]not connect[/color] to pipes that are already connected to a different pipe.
-  For example, building a bent pipe on top of a straight pipe to form a makeshift T-junction will not work.
+  Rury [color=red]nie będą się łączyć[/color] z rurami, które są już połączone z inną rurą.
+  Na przykład nie da się zbudować zgiętej rury na prostej rurze, aby utworzyć prowizoryczny trójnik.
 
-  However, two pipes can share a tile as long as one isn't obstructing the other's connection to another pipe.
-  For example, two bend pipes can be placed on the same tile, with one moving gas from north to east, and the other moving gas from west to south.
+  Jednakże dwie rury mogą znajdować się na tym samym kafelku, o ile jedna z nich nie blokuje połączenia drugiej z inną rurą.
+  Na przykład na tym samym kafelku można umieścić dwie rury zgięte, z których jedna transportuje gaz z północy na wschód, a druga z zachodu na południe.
 
-  You can color pipes (and most equipment that handles gasses) using a spray painter.
-  This is commonly done to distinguish the air and waste components of the station's Distro pipenet.
+  Rury (oraz większość urządzeń służących do transportu gazów) można pomalować za pomocą pistoletu natryskowego.
+  Często stosuje się to w celu rozróżnienia przewodów z czystym powietrzem od przewodów z brudnym powietrzem w sieci dystrybucyjnej stacji.
 </Document>
