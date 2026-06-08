@@ -14,27 +14,27 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-  # Fires
-  Fires are arguably the most dangerous atmospheric upset that can occur on the station.
+  # Pożary
+  Pożary są prawdopodobnie najniebezpieczniejszym zjawiskiem atmosferycznym, jakie może wystąpić na stacji.
 
   <Box>
     <GuideEntityEmbed Entity="Firelock" Caption=""/>
     <GuideEntityEmbed Entity="FirelockGlass" Caption=""/>
   </Box>
 
-  They often make high-pressure and high-temperature gasses, which can quickly spread throughout the station if firelocks or doors are opened carelessly, even if only for a moment.
+  Często wytwarzają one gazy pod wysokim ciśnieniem i wysokiej temperaturze, które mogą szybko rozprzestrzenić się po całej stacji, jeśli komory przeciwpożarowe lub drzwi zostaną otwarte nierozważnie.
 
-  If people are caught in a fire, they can quickly become incapacitated, die, and even ash, rendering them unrevivable.
+  Jeśli ludzie utknęli w ogniu, mogą szybko stracić przytomność, zginąć, a nawet spalić się na popiół, co uniemożliwi ich reanimację.
 
-  ## Combating Fires
-  The key elements of a fire are fuel and oxygen.
-  Removing any of these two elements will extinguish the fire.
-  For example, fires that have no oxygen flowing to them will slowly snuff themselves out, and fires that have no fuel will also extinguish themselves.
+  ## Gaszenie pożarów
+  Podstawowymi składnikami każdego pożaru jest paliwo i tlen.
+  Usunięcie któregokolwiek z tych dwóch elementów spowoduje ugaszenie pożaru.
+  Na przykład pożary, do których nie dociera tlen, powoli wygasają same, podobnie jak pożary, którym brakuje paliwa.
 
-  Exposing the fire to space will extinguish it, as all the gas will simply be spaced.
-  You can then [textlink="fix" link="ExpandingRepairingStation"] the [textlink="spacing" link="Spacing"] and repressurize the area.
+  Wystawienie ognia na działanie przestrzeni kosmicznej spowoduje jego ugaszenie, ponieważ cały gaz po prostu rozproszy się w przestrzeni.
+  Następnie można [textlink="zacząć naprawiać" link="ExpandingRepairingStation"] [textlink="rozszczelnienie kadłuba statku" link="Spacing"] i dokonać wyrównania ciśnienia w tym obszarze.
 
-  ## Tips
-  - [bold]Know the signs of a future fire.[/bold] If an area is filled with highly flammable gasses, it's only a matter of time before a careless passenger sets it off. Try to isolate the area and scrub the gasses out as quickly as possible.
-  - [bold]Prevent the spread of gasses using a holofan projector.[/bold] Letting gasses through a firelock can make other rooms dangerous, even for a moment. This increases the number of rooms you have to fix.
+  ## Wskazówki
+  - [bold]Poznaj oznaki zbliżającego się pożaru.[/bold] Jeśli w danym obszarze znajdują się łatwopalne gazy, to tylko kwestia czasu, zanim nieostrożny pasażer wywoła pożar. Postaraj się odizolować ten obszar i jak najszybciej usunąć gazy.
+  - [bold]Zapobiegaj rozprzestrzenianiu się gazów za pomocą projektora holofan.[/bold] Przepuszczenie gazów przez śluzę przeciwpożarową może sprawić, że inne pomieszczenia staną się niebezpieczne. Zwiększa to liczbę pomieszczeń, które musisz naprawić.
 </Document>
