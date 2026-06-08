@@ -1,1 +1,1 @@
-mouth-taste-metal = Masz metaliczny posmak w swojej buzi!
+mouth-taste-metal = Czujesz metaliczny posmak w swojej buzi!

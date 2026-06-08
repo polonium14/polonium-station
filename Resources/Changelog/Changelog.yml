@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: themias
-  changes:
-  - message: Pacified players can no longer attack living creatures with mechs
-    type: Fix
-  id: 7927
-  time: '2025-02-10T22:17:57.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34954
 - author: sowelipililimute
   changes:
   - message: Smart equipping into your backpack w/ a nested storage window open no
@@ -4166,3 +4159,12 @@
   id: 9234
   time: '2026-06-07T10:16:32.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/644
+- author: Zintex
+  changes:
+  - message: "Zmiany na Terra: poprawiono serwer monitorowania za\u0142ogi, poprawione\
+      \ drzwi do prawnika, przet\u0142umaczone teleporty, dodany czerwony telefon,\
+      \ dodany generator na uszkodzony RTG, usuni\u0119ty TEG i plasma miner"
+    type: Tweak
+  id: 9235
+  time: '2026-06-08T12:49:51.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/650
