@@ -103,6 +103,21 @@
     - SpaceTrafficControlFriendlyEventScheduler
     - BasicRoundstartVariation
 
+- type: entity
+  parent: BaseGameRule
+  id: DynamicUnforgivingBriefing
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: GameRule
+    delay:
+      min: 180
+      max: 240
+  - type: DelayedAnnouncementRule
+    announcement: dynamic-unforgiving-briefing
+    sender: dynamic-unforgiving-briefing-sender
+    sound:
+      path: /Audio/_Polonium/Announcements/attention.ogg
+
 - type: gamePreset
   id: DynamicUnforgiving
   alias:
@@ -114,9 +129,9 @@
   showInVote: false # admeme only
   rules:
     - DynamicUnforgiving
+    - DynamicUnforgivingBriefing
     - BasicStationEventSchedulerNoAntag
     - DynamicStationEventScheduler
-#    - MeteorSwarmScheduler Goob Edit
     - SpaceTrafficControlEventScheduler
     - SpaceTrafficControlFriendlyEventScheduler
     - BasicRoundstartVariation

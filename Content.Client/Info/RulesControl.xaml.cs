@@ -38,7 +38,11 @@ public sealed partial class RulesControl : BoxContainer, ILinkClickHandler
 
         SetGuide();
 
-        HomeButton.OnPressed += _ => SetGuide();
+        HomeButton.OnPressed += _ =>
+        {
+            _priorEntries.Clear();
+            SetGuide(addToPrior: false);
+        };
 
         BackButton.OnPressed += _ => SetGuide(_priorEntries.Pop(), false);
     }
@@ -62,7 +66,8 @@ public sealed partial class RulesControl : BoxContainer, ILinkClickHandler
             _priorEntries.Push(_currentEntry);
         _currentEntry = entry.Value;
 
-        HomeButton.Visible = entry.Value != coreEntry.Id;
-        BackButton.Visible = _priorEntries.Count != 0 && _priorEntries.Peek() != entry.Value;
+        var onCoreRulesPage = entry.Value == coreEntry.Id;
+        HomeButton.Visible = !onCoreRulesPage;
+        BackButton.Visible = !onCoreRulesPage && _priorEntries.Count != 0;
     }
 }

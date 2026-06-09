@@ -8,24 +8,24 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-  # Alert Levels and You!
+  # Wszystko o kodach zagrożenia
 
-  [bold]What is an alert level?[/bold]
+  [bold]Czym są kody zagrożenia?[/bold]
 
-  Alert levels are a way to quickly alert crew of any possible threats that may be present on the station.
+  Kody zagrożenia służą do szybkiego ostrzegania załogi o wszelkich potencjalnych zagrożeniach, które mogą wystąpić na stacji.
 
-  Alert levels also determine which procedures to follow, including security. On certain alert levels, security may be granted more leniency to deal with threats and unruly crew.
+  Kody zagrożenia określają również, jakie procedury należy stosować, łącznie z działaniami służb ochrony. Przy niektórych kodach zagrożenia służby ochrony mogą otrzymać większą swobodę działania w przypadku zagrożeń i niesfornej załogi.
 
-  Failure to abide by the regulations put on by these alert levels may result in contract termination.
+  Nieprzestrzeganie przepisów obowiązujących w ramach tych kodów zagrożenia może skutkować rozwiązaniem umowy.
 
-  The following are all possible alert levels:
+  Poniżej przedstawiono wszystkie możliwe kody zagrożenia:
 
-  - [textlink="Green Alert" link="GreenAlertSOP"]
-  - [textlink="Yellow Alert" link="YellowAlertSOP"]
-  - [textlink="Blue Alert" link="BlueAlertSOP"]
-  - [textlink="Red Alert" link="RedAlertSOP"]
-  - [textlink="Violet Alert" link="VioletAlertSOP"]
-  - [textlink="Gamma Alert" link="GammaAlertSOP"]
-  - [textlink="Delta Alert" link="DeltaAlertSOP"]
-  - [textlink="Octarine Alert" link="OctarineAlertSOP"]
+  - [textlink="Kod zielony" link="GreenAlertSOP"]
+  - [textlink="Kod żółty" link="YellowAlertSOP"]
+  - [textlink="Kod niebieski" link="BlueAlertSOP"]
+  - [textlink="Kod czerwony" link="RedAlertSOP"]
+  - [textlink="Kod fioletowy" link="VioletAlertSOP"]
+  - [textlink="Kod Gamma" link="GammaAlertSOP"]
+  - [textlink="Kod Delta" link="DeltaAlertSOP"]
+  - [textlink="Kod oktarynowy" link="OctarineAlertSOP"]
 </Document>

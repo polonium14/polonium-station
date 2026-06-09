@@ -24,6 +24,8 @@
   - type: Tag
     tags:
     - Trash
+    # POLONIUM CHANGE: Added Document tag, so the slip can be inserted into a clipboard.
+    - Document
   - type: Paper
     editingDisabled: true
   - type: PaperVisuals
