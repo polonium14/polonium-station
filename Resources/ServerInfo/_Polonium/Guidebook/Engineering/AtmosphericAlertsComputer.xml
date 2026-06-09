@@ -7,32 +7,32 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-  # Atmospheric Alerts Computer
-  The Atmospheric Alerts Computer is a computer that shows information on all air alarms and fire alarms across the station.
+  # Komputer alarmów atmosferycznych
+  Komputer alarmów atmosferycznych to urządzenie wyświetlające informacje o wszystkich alarmach atmosferycznych i przeciwpożarowych na terenie stacji.
 
   <Box>
     <GuideEntityEmbed Entity="ComputerAlert"/>
   </Box>
 
-  It is a useful tool for quickly identifying areas that require attention.
+  Jest to przydatne narzędzie do szybkiego identyfikowania obszarów wymagających uwagi.
 
-  The Atmospheric Alerts Computer is often found in Atmospherics, and is used by Atmospherics Technicians to monitor atmospheres across the entire station.
-  However, it is also a good indicator for general engineers to gauge station damage.
+  Komputer alarmów atmosferycznych często znajduje się w pomieszczeniach technicznych odpowiedzialnych za utrzymywanie parametrów atmosferycznych i służy technikom z tego departamenty do monitorowania parametrów atmosferycznych całej stacji.
+  Jednakże jest to również dobry wskaźnik dla inżynierów, pozwalający szybko ocenić stopień uszkodzeń stacji.
 
-  The computer displays lists of Air Alarms in [color=orange]Warning[/color] and [color=red]Danger[/color] levels. Additionally, the computer displays the location of all air alarms, color-coded based on their current status.
+  Komputer wyświetla listę alarmów atmosferycznych, które aktualnie znajdują się w stanie [color=orange]Ostrzeżenie[/color] i [color=red]Niebezpieczeństwo[/color]. Ponadto komputer pokazuje lokalizację wszystkich alarmów atmosferycznych, oznaczonych kolorami odpowiadającymi ich aktualnemu statusowi.
 
-  Air alarms with the normal status are hidden by default.
-  You can toggle the visibility of normal air alarms by adjusting the filters at the bottom of the interface.
+  Alarmy atmosferyczne w stanie "normalnym" są domyślnie ukryte.
+  Widoczność alarmów atmosferycznych o statusie "normalnym" można włączać i wyłączać, dostosowując filtry znajdujące się w dolnej części interfejsu.
 
-  The map draws a box around the area that the air alarm is monitoring, which can help identify the area that is in danger.
-  This box will change color based on the status of the air alarm.
+  Na mapie wyświetlana jest ramka otaczająca obszar monitorowany przez alarm atmosferyczny, co może pomóc w zidentyfikowaniu obszaru, który jest zagrożony.
+  Kolor tej ramki zmienia się w zależności od stanu alarmu atmosferycznego.
 
-  If an Air Alarm is unpowered, it is shown as greyed out on the list and on the map.
+  Jeśli alarm atmosferyczny nie jest zasilany, zostanie wyszarzony na liście oraz na mapie.
 
-  Clicking on an air alarm on the list or on the map will show detailed information about the atmosphere in that area, which can help gauge the type of emergency that is occurring.
+  Kliknięcie na alarm atmosferyczny na liście lub na mapie spowoduje wyświetlenie szczegółowych informacji o stanie powietrza w danym obszarze, co może pomóc w ocenie rodzaju zaistniałego zagrożenia.
 
-  A list of triggered [textlink="fire alarms" link="FireAndGasControl"] is also displayed on the Atmospheric Alerts Computer in a separate tab, which can be used to quickly identify areas that might be on fire.
+  Lista załączonych [textlink="alarmów przeciwpożarowych" link="FireAndGasControl"] jest również wyświetlana na komputerze alarmów atmosferycznych w osobnej zakładce, co pozwala szybko zidentyfikować obszary, w których może panować pożar.
 
-  You can silence specific alarms (such as alarms that monitor burn chambers and freezers) by clicking on the alarm in the list and pressing the "Silence alerts" button.
-  This will hide the alarm from the list, but it will still be visible on the map.
+  Można wyciszyć określone alarmy (np. alarmy monitorujące komory spalania i zamrażarki), klikając dany alarm na liście i naciskając przycisk "Wycisz alarmy z tego urządzenia".
+  Spowoduje to ukrycie alarmu na liście, lecz nadal będzie on widoczny na mapie.
 </Document>
