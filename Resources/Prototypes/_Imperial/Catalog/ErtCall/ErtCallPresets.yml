@@ -103,3 +103,8 @@
   id: ERT-Medium-Sec
   path: "Maps/_Polonium/Shuttles/ERTShuttles/ERT-Medium-Sec.yml"
   desc: "Średni statek z celami więziennymi i zbrojownią. 1 lider, 9 bojowników."
+
+- type: ertCall
+  id: ERT-Large-Eng
+  path: "Maps/_Polonium/Shuttles/ERTShuttles/ERTkonstrukcyjnyMPKS.yml"
+  desc: "Duży statek inżynieryjny z magazynem materiałów i komponentów, wytwarzarkami, oraz kanistrami powietrza i wszelkimi generatorami prądu zdolny naprawić każdą usterkę, 1 lider 5 inżynierów."
