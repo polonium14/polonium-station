@@ -1,21 +1,21 @@
 ## Implanter Attempt Messages
 
-implanter-component-implanting-target = { $user } próbuje cię czymś wszczepić!
-implanter-component-implant-failed = { $target } nie może otrzymać { $implant }!
-implanter-draw-failed-permanent = { $implant } w { $target } jest połączony z { OBJECT($target) } i nie może być usunięty!
-implanter-draw-failed = Próbowałeś(-aś) usunąć implant, ale nic nie znajdujesz.
-implanter-draw-failed-catastrophically = Implantator nic nie znalazł, i katastrofalnie zawodzi, wtłaczając material genetyczny w dłoni { $user }!
-implanter-component-implant-already = { $target } już ma { $implant }!
+implanter-component-implanting-target = { $user } is trying to implant you with something!
+implanter-component-implant-failed = The { $implant } cannot be given to { $target }!
+implanter-draw-failed-permanent = The { $implant } in { $target } is fused with { OBJECT($target) } and cannot be removed!
+implanter-draw-failed = You tried to remove an implant but found nothing.
+implanter-draw-failed-catastrophically = The implanter finds nothing and catastrophically fails, shunting genetic material into { $user }'s hand!
+implanter-component-implant-already = { $target } already has the { $implant }!
 
 ## UI
 
-implanter-set-draw-verb = Ustaw pobieranie implantu
-implanter-set-draw-window = Ustawienie pobierania implantu
-implanter-set-draw-info = Wybierz typ implantu który ten implantator ma usunąć:
-implanter-set-draw-type = Typ implantu
-implanter-draw-text = Pobranie
-implanter-inject-text = Wystrzykanie
-implanter-empty-text = Pusty
+implanter-set-draw-verb = Set Implant Draw
+implanter-set-draw-window = Set Implant Draw
+implanter-set-draw-info = Select the implant type this implanter should remove:
+implanter-set-draw-type = Implant type:
+implanter-draw-text = Draw
+implanter-inject-text = Inject
+implanter-empty-text = Empty
 implanter-label-inject = [color=green]{ $implantName }[/color]
     Mode: [color=white]{ $modeString }[/color]
 implanter-label-draw = [color=red]{ $implantName }[/color]
@@ -24,9 +24,9 @@ implanter-contained-implant-text = [color=green]{ $desc }[/color]
 
 ## Implant Popups
 
-scramble-implant-activated-popup = Twój wygłąd się zmienia!
+scramble-implant-activated-popup = Your appearance shifts and changes!
 
 ## Implant Messages
 
-deathrattle-implant-dead-message = { $user } zmarł(-a) w { $position }.
-deathrattle-implant-critical-message = Oznaki życia { $user } są krytyczne, natychmiastowa pomoc jest wymagana w { $position }.
+deathrattle-implant-dead-message = { $user } has died { $position }.
+deathrattle-implant-critical-message = { $user } life signs critical, immediate assistance required { $position }.
