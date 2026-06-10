@@ -37,16 +37,16 @@ food-sequence-content-cheese = cheese
 food-sequence-content-chevre = chèvre
 food-sequence-content-tofu = tofu
 food-sequence-content-brain = brain
-food-sequence-content-tongue = tongue
 food-sequence-content-animal-brain = animal brain
+food-sequence-content-tongue = tongue
 food-sequence-content-ears = ear
 food-sequence-content-stomach = stomach
 food-sequence-content-liver = liver
 food-sequence-content-clump = clump
 food-sequence-content-raw-meat = raw meat
 food-sequence-content-meat = meat
-food-sequence-content-carp = carp meat
 food-sequence-content-cooked-bacon = bacon
+food-sequence-content-carp = carp meat
 food-sequence-content-bear = bear meat
 food-sequence-content-penguin = penguin meat
 food-sequence-content-corgi = corgi meat
@@ -54,9 +54,9 @@ food-sequence-content-goliath = goliath meat
 food-sequence-content-rat = rat
 food-sequence-content-lizard = lizard meat
 food-sequence-content-plant = plant meat
-food-sequence-content-rotten = rotten meat
 food-sequence-content-mystery-meat = mystery meat
 food-sequence-content-mysterycutlet-cooked = mystery cutlet
+food-sequence-content-rotten = rotten meat
 food-sequence-content-spider = spider legs
 food-sequence-content-carrot = carrot
 food-sequence-content-cabbage = cabbage
@@ -64,7 +64,7 @@ food-sequence-content-garlic = garlic
 food-sequence-content-pineapple = pineapple
 food-sequence-content-onion = onion
 food-sequence-content-ambrosia = ambrosia
-food-sequence-content-galaxy = gwiaździk
+food-sequence-content-galaxy = galaxythistle
 food-sequence-content-glasstle = glasstle
 food-sequence-content-gatfruit = gatfruit
 food-sequence-content-koibean = koibean
@@ -81,9 +81,6 @@ food-sequence-content-spacemans-trumpet = spaceman's trupmet
 food-sequence-content-cherry = cherry
 food-sequence-content-snail = snail
 food-sequence-content-anomaly-berry = anomaly berry
-
-# BURGERS
-
 food-sequence-content-patty = meat patty
 food-sequence-content-dragon-cooked = dragon steak
 food-sequence-content-dragoncutlet-cooked = dragon cutlet
@@ -93,6 +90,9 @@ food-sequence-content-chanterelle = chanterelle
 food-sequence-content-chevre-disk = chevre
 food-sequence-content-tofu-slice = tofu
 food-sequence-content-roingus = roingus
+
+# BURGERS
+
 food-sequence-burger-gen = { $content }burger
 food-sequence-burger-content-raw-meat = raw
 food-sequence-burger-content-meat = meaty
@@ -132,9 +132,6 @@ food-sequence-burger-content-spacemans-trumpet = spacetrump
 food-sequence-burger-content-anomaly-berry = anom
 food-sequence-burger-content-extradimensional-orange = 3d
 food-sequence-burger-content-world-pea = peace
-
-# COTTON BURGERS
-
 food-sequence-cotton-burger-gen = { $content }burger
 food-sequence-cotton-burger-content-cotton-bol = cotton
 food-sequence-cotton-burger-content-pyrotton-bol = pyro
