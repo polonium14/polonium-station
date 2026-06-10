@@ -1,4 +1,3 @@
-
 ghost-target-window-ghostbar = Ghost Bar
 ghost-window-spawn-ghostbar-button = Spawn at Ghost Bar
 ghost-window-spawn-ghostbar-button-timer = Spawn at Ghost Bar ({ $time }s)
