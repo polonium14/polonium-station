@@ -30,18 +30,17 @@ ghost-role-information-familiar-rules =
     You don't remember any of your previous life, and you don't remember anything you learned as a ghost.
     You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc.
     You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
-ghost-role-information-silicon-rules =
-    You are a [color={ role-type-silicon-color }][bold]{ role-type-silicon-name }[/bold][/color]. Obey your laws. You are a { role-type-free-agent-name } if you are not currently bound by any laws.
-    You don't remember any of your previous life, and you don't remember anything you learned as a ghost.
-    You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc.
-    You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
 # funkystation
 ghost-role-information-big-familiar-rules =
     You are a [color=#6495ed][bold]Familiar[/bold][/color]. Serve the interests of your master, whatever those may be. You should generally not seek to harm the station and its crew.
     You don't remember any of your previous life, and you don't remember anything you learned as a ghost.
     You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc.
     You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
-ghost-role-information-mouse-name = Mouse
+ghost-role-information-silicon-rules =
+    You are a [color=#6495ed][bold]Silicon[/bold][/color]. Obey your laws. You are a Free Agent if you are not currently bound by any laws.
+    You don't remember any of your previous life, and you don't remember anything you learned as a ghost.
+    You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc.
+    You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
 # funkystation
 ghost-role-information-skeleton-rules =
     You are a [color=yellow][bold]Skeleton[/bold][/color]. You are a former member of crew and are considered crew.
@@ -68,12 +67,13 @@ ghost-role-information-shiva-rules =
     You don't remember any of your previous life, and you don't remember anything you learned as a ghost.
     You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc.
     You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
+ghost-role-information-mouse-name = Mouse
 ghost-role-information-mouse-description = A hungry and mischievous mouse.
 ghost-role-information-mothroach-name = Mothroach
 ghost-role-information-mothroach-description = A cute but mischievous mothroach.
-ghost-role-information-snail-name = Snail
 ghost-role-information-moproach-name = Moproach
 ghost-role-information-moproach-description = A cute mothroach with more cute moplike shoes on its feet.
+ghost-role-information-snail-name = Snail
 ghost-role-information-snail-description = A little snail who doesn't mind a bit of space. Just stay on grid!
 ghost-role-information-snailspeed-name = Snail
 ghost-role-information-snailspeed-description = A little snail with snailborn thrusters.
@@ -91,16 +91,16 @@ ghost-role-information-slimes-name = Slime
 ghost-role-information-slimes-description = An ordinary slime with no special needs or interests. You are friendly to others.
 ghost-role-information-angry-slimes-name = Slime
 ghost-role-information-angry-slimes-description = Everyone around you irritates your instincts, destroy them!
-ghost-role-information-angry-slimes-rules = You are a [color={ role-type-team-antagonist-color }][bold]{ role-type-team-antagonist-name }[/bold][/color] with all other angry slimes.
+ghost-role-information-angry-slimes-rules = You are a [color=red][bold]Team Antagonist[/bold][/color] with all other angry slimes.
 ghost-role-information-smile-name = Smile the Slime
 ghost-role-information-smile-description = The sweetest creature in the world. Smile slime!
 ghost-role-information-punpun-name = Pun Pun
 ghost-role-information-punpun-description = An honorable member of the monkey society in charge of the bar and helping the bartenders in any way he can.
-ghost-role-information-xeno-name = Xeno
 ghost-role-information-yipyap-name = Yip-Yap
 ghost-role-information-yipyap-description = The Chef's mischevious little helper. Some say he has a rivalry with Pun Pun, but others say that's just hearsay.
+ghost-role-information-xeno-name = Xeno
 ghost-role-information-xeno-description = You are a xeno, co-operate with your hive to kill all crewmembers!
-ghost-role-information-xeno-rules = You are a [color={ role-type-team-antagonist-color }][bold]{ role-type-team-antagonist-name }[/bold][/color] with all other xenos.
+ghost-role-information-xeno-rules = You are a [color=red][bold]Team Antagonist[/bold][/color] with all other xenos.
 ghost-role-information-revenant-name = Revenant
 ghost-role-information-revenant-description = You are a Revenant. Use your powers to harvest souls and unleash chaos upon the crew. Unlock new abilities with the essence you harvest.
 ghost-role-information-kangaroo-name = Kangaroo
@@ -111,9 +111,9 @@ ghost-role-information-kobold-name = Kobold
 ghost-role-information-kobold-description = Be the little gremlin you are, yell at people and beg for meat!
 ghost-role-information-rat-king-name = Rat King
 ghost-role-information-rat-king-description = You are the Rat King, your interests are food, food, and more food. Fight against the station for food. Did I say food interests you?
-ghost-role-information-rat-servant-name = Rat Servant
 # funkystation
 ghost-role-information-neanderthal-description = You are a freshly unfrozen neanderthal. You have no idea what is going on, where this is, what anything is, or who anyone else is.
+ghost-role-information-rat-servant-name = Rat Servant
 ghost-role-information-rat-servant-description = You are a Rat Servant. You must follow your king's orders.
 ghost-role-information-salvage-carp-name = Space Carp on Salvage Wreck
 ghost-role-information-salvage-carp-description = Defend the loot inside the salvage wreck!
@@ -131,7 +131,6 @@ ghost-role-information-supplybot-name = SupplyBot
 ghost-role-information-supplybot-description = Deliver goods around the station.
 ghost-role-information-space-bear-name = Space Bear
 ghost-role-information-space-bear-description = Your tummy rumbles, and these people look really yummy... What a feast!
-# Still exists as a commented out reference for Tropico. Keeping it around. -TsjipTsjip, 2024-06-20
 ghost-role-information-tropico-name = Tropico
 ghost-role-information-tropico-description = The noble companion of Atmosia, and its most stalwart defender. Viva!
 ghost-role-information-guardian-name = Guardian
@@ -156,11 +155,10 @@ ghost-role-information-skeleton-biker-name = Skeleton Biker
 ghost-role-information-skeleton-biker-description = Ride around on your sweet ride.
 ghost-role-information-closet-skeleton-name = Closet Skeleton
 ghost-role-information-closet-skeleton-description = You are arguably one of the oldest members of the station! Get your old job back, or cause chaos! The world is yours to shape.
-ghost-role-information-remilia-name = Remilia, the Chaplain's Familiar
 # funkystation
 ghost-role-information-neanderthal-name = Unfrozen Neanderthal
+ghost-role-information-remilia-name = Remilia, the chaplain's familiar
 ghost-role-information-remilia-description = Follow and obey the chaplain. Eat fruit. Screech loudly into people's ears and write it off as echolocation.
-ghost-role-information-cerberus-name = Cerberus, Evil Familiar
 # funkystation
 ghost-role-information-centcom-intern-name = Central Command Intern
 ghost-role-information-centcom-intern-description = Respond to faxes and assist in managing affairs at central command.
@@ -168,6 +166,7 @@ ghost-role-information-centcom-intern-rules = As a Central Command Intern you ar
 # funkystation
 ghost-role-information-celedon-name = Celedon, Animal Lab Rescue
 ghost-role-information-celedon-description = Follow and obey the zookeeper. They must gain your trust first though, you still remember the experiments from the genetics lab on Europa.
+ghost-role-information-cerberus-name = Cerberus, Evil Familiar
 ghost-role-information-cerberus-description = Obey your master. Spread chaos.
 ghost-role-information-ert-leader-name = ERT Leader
 ghost-role-information-ert-leader-description = Lead a team of specialists to resolve the station's issues.
@@ -179,9 +178,10 @@ ghost-role-information-ert-engineer-name = ERT Engineer
 ghost-role-information-ert-engineer-description = Assist with engineering efforts to resolve the station's issues.
 ghost-role-information-ert-security-name = ERT Security
 ghost-role-information-ert-security-description = Assist with security efforts to resolve the station's issues.
+#funkystation
+ghost-role-information-ert-rules = Follow the instructions of central command officials. Stick to the briefing. Deviations could result in an ERT roleban.
 ghost-role-information-ert-medical-name = ERT Medical
 ghost-role-information-ert-medical-description = Assist with medical efforts to resolve the station's issues.
-ghost-role-information-ert-rules = Follow the instructions of central command officials. Stick to the briefing. Deviations could result in an ERT roleban.
 ghost-role-information-cburn-agent-name = CBURN Agent
 ghost-role-information-cburn-agent-description = A highly trained CentComm agent, capable of dealing with various threats.
 ghost-role-information-centcom-official-name = CentComm Official
@@ -231,10 +231,10 @@ ghost-role-information-derelict-cyborg-name = Derelict Cyborg
 ghost-role-information-derelict-cyborg-description = You are a regular cyborg that got lost in space. After years of exposure to ion storms you find yourself near a space station.
 ghost-role-information-security-name = Security
 ghost-role-information-security-description = You are part of a security task force, but seem to have found yourself in a strange situation...
-ghost-role-information-medical-name = Medical
-ghost-role-information-medical-virologist-name = Virologist
 roles-ghost-cryopod-sleeper-name = old cryogenics pod sleeper
 roles-ghost-cryopod-sleeper-objective = Work as a team with your fellow survivors aboard a ruined, ancient space station.
+ghost-role-information-medical-name = Medical
+ghost-role-information-medical-virologist-name = Virologist
 ghost-role-information-medical-geneticist-name = Geneticist
 ghost-role-information-medical-dentist-name = Dentist
 ghost-role-information-medical-description = You are a medical professional, but seem to have found yourself in a strange situation...
