@@ -1,2 +1,1 @@
-
-trait-category-fonts = Czcionki
+trait-category-fonts = Signature fonts
