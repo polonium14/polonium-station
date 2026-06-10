@@ -11,3 +11,6 @@ ent-WeaponVisMPSPistolMagazinePractice = Magazynek VIS MPS (.35 auto practice)
 ent-WeaponVisMPSPistolMagazineEmpty = Magazynek VIS MPS (.35 auto any)
     .suffix = (pusty)
     .desc = { ent-WeaponVisMPSPistolMagazineBase.desc }
+
+ent-WeaponVisMPSPistolMagazinUranium = Magazynek VIS MPS (.35 auto uranium)
+    .desc = Magazynek VIS MPS (.35 auto uranium)

@@ -86,3 +86,27 @@ ent-BorgModuleSurgery = surgery cyborg module
     .desc = { ent-BaseBorgModuleMedical.desc }
 ent-BorgModuleAdvancedSurgery = advanced surgery cyborg module
     .desc = { ent-BaseBorgModuleMedical.desc }
+
+ent-BorgModuleGPS = moduł GPS cyborga
+    .desc = { ent-BaseBorgModule.desc }
+
+ent-BorgModuleRadiationDetection = moduł wykrywania promieniowania cyborga
+    .desc = { ent-BaseBorgModule.desc }
+
+ent-BorgModuleGrapplingGun = moduł wyrzutni hakowej cyborga
+    .desc = { ent-BaseBorgModuleCargo.desc }
+
+ent-BorgModuleLightReplacer = moduł wymiany światła cyborga
+    .desc = { ent-BaseBorgModuleJanitor.desc }
+
+ent-BorgModuleTreatment = moduł leczniczy cyborga
+    .desc = { ent-BaseBorgModuleMedical.desc }
+
+ent-BorgModuleDefibrillator = moduł defibrylatora cyborga
+    .desc = { ent-BaseBorgModuleMedical.desc }
+
+ent-BorgModuleAdvancedTreatment = moduł zaawansowanego leczenia cyborga
+    .desc = { ent-BaseBorgModuleMedical.desc }
+
+ent-BorgModuleHarvesting = moduł zbiorów cyborga
+    .desc = { ent-BaseBorgModuleService.desc }

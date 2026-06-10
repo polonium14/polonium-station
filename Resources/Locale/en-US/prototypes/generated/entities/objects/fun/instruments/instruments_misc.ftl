@@ -12,3 +12,12 @@ ent-GunpetInstrument = gunpet
     .desc = Why do you need to examine this? Is it not self-explanatory?
 ent-BikeHornInstrument = gilded bike horn
     .desc = An exquisitely decorated bike horn, capable of honking in a variety of notes.
+
+ent-PhoneInstrument = red phone
+    .desc = Should anything ever go wrong...
+
+ent-PhoneInstrumentSyndicate = blood-red phone
+    .desc = For evil people to call their friends.
+
+ent-BananaPhoneInstrument = banana phone
+    .desc = A direct line to the Honkmother. Seems to always go to voicemail.
