@@ -1,2 +1,2 @@
-ent-AirlockAssembly = konsktrukcja śluzy
-    .desc = Otwiera się, zamyka i może cię zmiażdżyć.
+ent-AirlockAssembly = airlock assembly
+    .desc = It opens, it closes, and maybe crushes you.
