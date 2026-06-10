@@ -1,2 +1,2 @@
-ent-ActionToggleGhostsMedium = Przełącz duchy
-    .desc = Przełącza widoczność duchów.
+ent-ActionToggleGhostsMedium = Toggle Ghosts
+    .desc = Toggle the visibility of ghosts.
