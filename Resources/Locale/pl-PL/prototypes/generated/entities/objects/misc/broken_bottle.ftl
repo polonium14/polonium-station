@@ -1,2 +1,2 @@
-ent-BrokenBottle = stłuczona butelka
-    .desc = W Kosmo-Glasgow nazywana jest "rozmówcą".
+ent-BrokenBottle = broken bottle
+    .desc = In Space Glasgow this is called a conversation starter.
