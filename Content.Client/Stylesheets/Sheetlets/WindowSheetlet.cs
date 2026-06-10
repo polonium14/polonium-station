@@ -53,6 +53,8 @@ public sealed class WindowSheetlet<T> : Sheetlet<T>
         var leftPanel = StyleBoxHelpers.OpenLeftStyleBox(sheet);
         leftPanel.SetPadding(StyleBox.Margin.All, 0.0f);
 
+        var windowTitleFont = TomorrowFont.GetWindowTitle(ResCache);
+
         // TODO: maybe also change everything here to `NanoWindow` or something
         return
         [
@@ -60,11 +62,11 @@ public sealed class WindowSheetlet<T> : Sheetlet<T>
             E<Label>()
                 .Class(DefaultWindow.StyleClassWindowTitle)
                 .FontColor(sheet.HighlightPalette.Text)
-                .Font(sheet.BaseFont.GetFont(14, FontKind.Bold)),
+                .Font(windowTitleFont),
             E<Label>()
                 .Class("windowTitleAlert")
                 .FontColor(Color.White)
-                .Font(sheet.BaseFont.GetFont(14, FontKind.Bold)),
+                .Font(windowTitleFont),
             // TODO: maybe also change everything here to `NanoWindow` or something
             E()
                 .Class(DefaultWindow.StyleClassWindowPanel)
@@ -104,7 +106,7 @@ public sealed class WindowSheetlet<T> : Sheetlet<T>
             // Title
             E<Label>()
                 .Class("FancyWindowTitle") // TODO: hardcoding class name
-                .Font(ResCache.GetFont("/Fonts/Boxfont-round/Boxfont Round.ttf", 13)) // TODO: hardcoding font
+                .Font(windowTitleFont)
                 .FontColor(sheet.HighlightPalette.Text),
 
             // Help Button
