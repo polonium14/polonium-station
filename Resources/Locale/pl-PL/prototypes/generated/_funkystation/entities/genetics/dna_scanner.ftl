@@ -1,5 +1,7 @@
-ent-ComputerDnaScanner = konsola skanująca DNA
-    .desc = Konsola używana wraz ze skanerem medycznym do badań DNA.
+ent-ComputerDnaScanner = geneticists console
+    .desc = A console used with the medical scanner for DNA research.
+ent-DnaScannerConsoleComputerCircuitboard = geneticists console board
+    .desc = A computer printed circuit board for the dna scanner console.
 ent-GeneticistsConsoleComputerCircuitboard = konsola skanująca DNA (płytka konsolowa)
     .desc = Płytka drukowana komputera dla konsoli genetyków.
 ent-DnaDiscoveredIcon = ikona odkrytego DNA
@@ -8,5 +10,3 @@ ent-DnaUndiscoveredIcon = ikona nieodkrytego DNA
     .desc = { "" }
 ent-DnaExtraIcon = ikona dodatkowego DNA
     .desc = { "" }
-ent-DnaScannerConsoleComputerCircuitboard = płytka konsolowa skanera DNA
-    .desc = Płytka drukowana komputera dla konsoli skanera DNA.
