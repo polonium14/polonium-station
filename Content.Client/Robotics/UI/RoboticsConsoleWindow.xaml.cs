@@ -173,26 +173,8 @@ public sealed partial class RoboticsConsoleWindow : FancyWindow
 
         if (!_entMan.HasComponent<MalfAiMarkerComponent>(_playerManager.LocalEntity))
             return;
-        // Polonium - Sprawdzanie czy wystarczy nam punktów na zhakowanie borga
-        bool canAffordHack = false;
-        if (_entMan.TryGetComponent<StoreComponent>(_playerManager.LocalEntity.Value, out var comp))
-        {
-            ProtoId<CurrencyPrototype> cpu = "CPU";
-            if (comp.Balance.TryGetValue(cpu, out var currency))
-            {
-                if (currency < _cfg.GetCVar(CCVars.MalfAiImposeLawCpuCost))
-                {
-                    ImposeLawButton.ToolTip = Loc.GetString("malfai-store-insufficient-cpu");
-                }
-                else
-                {
-                    canAffordHack = true;
-                    ImposeLawButton.ToolTip = Loc.GetString("malfai-robotics-impose-law-tooltip");
-                }
-            }
-        } // Polonium - Koniec
         // Grey out impose law if borg is already emagged or hacked
-        ImposeLawButton.Disabled = data.Emagged || !canAffordHack;
+        ImposeLawButton.Disabled = data.Emagged;
         if (data.Emagged) // Polonium - Informacja o emagowanym borgu
             ImposeLawButton.Text = Loc.GetString("malfai-robotics-borg-emagged");
         else
