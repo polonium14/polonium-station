@@ -1,2 +1,2 @@
-ent-FoodCondimentPacketProtein = saszetka białka w proszku
-    .desc = Zawiera 10 u proszkowego białka. Wymieszaj z 20u wody.
+ent-FoodCondimentPacketProtein = protein powder packet
+    .desc = Contains 10u of powdered protein. Mix with 20u of water
