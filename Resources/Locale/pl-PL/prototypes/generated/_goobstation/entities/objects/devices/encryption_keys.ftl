@@ -1,2 +1,2 @@
-ent-EncryptionKeyFuture = klucz szyfrowania (futurystyczny)
-    .desc = whiskey echo... a co dalej?
+ent-EncryptionKeyFuture = futuristic encryption key
+    .desc = whiskey echo... what's next?
