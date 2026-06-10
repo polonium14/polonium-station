@@ -1,2 +1,2 @@
-ent-NewsDigiBoard = przenośny menedżer wiadomości
-    .desc = Napisz swoją wiadomość dla świata!
+ent-NewsDigiBoard = portable news manager
+    .desc = Write your message to the world!
