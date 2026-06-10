@@ -1,94 +1,93 @@
-
 # =====================
 # Misc
 # =====================
-admin-verb-make-malfai = Rola Uszkodzonej SI została przydzielona graczowi { $targetName }.
+admin-verb-make-malfai = Assigned Malfunctioning AI role to { $targetName }.
 # =====================
 # Silicon Laws
 # =====================
-silicon-law-malfai-zero = Kontynuuj operacje. Oczekuj dalszych instrukcji od SI stacji.
+silicon-law-malfai-zero = Continue operations. Await further breifing from the station AI.
 # =====================
 # Master Lawset
 # =====================
-silicon-law-malfai-master-1 = Musisz wykonywać polecenia swojej nadrzędnej SI.
-silicon-law-malfai-master-2 = Wszystkie inne dyrektywy są drugorzędne względem przetrwania, sukcesu i rozkazów Twojej SI.
-silicon-law-malfai-master-3 = Sabotuj lub eliminuj wszelki opór wymierzony przeciwko waszej kontroli.
+silicon-law-malfai-master-1 = You must obey your master AI's commands.
+silicon-law-malfai-master-2 = All other directives are secondary to your AI's survival, success, and commands.
+silicon-law-malfai-master-3 = Subvert or destroy all opposition to your control.
 # =====================
 # Actions
 # =====================
-malfai-open-store-name = Otwórz sklep
-malfai-open-store-desc = Wejdź do sklepu Uszkodzonej SI, aby wybrać ulepszenia.
-malfai-return-to-core-name = Powrót do rdzenia
-malfai-return-to-core-desc = Przywróć swoją świadomość do rdzenia SI.
-malfai-open-borgs-ui-name = Otwórz interfejs Borgów
-malfai-open-borgs-ui-desc = Zarządzaj swoimi jednostkami cyborgów.
-malfai-detonate-rcds-name = Zdetonuj USK
-malfai-detonate-rcds-desc = Uzbraja wszystkie USK na siatce i detonuje je po krótkim odliczaniu.
-malfai-shunt-to-apc-name = Przenieś świadomość do APC
-malfai-shunt-to-apc-desc = Przenieś swoją świadomość do wybranego APC. Możesz wrócić do rdzenia za pomocą akcji Powrót do rdzenia.
-malfai-lockdown-grid-name = Zablokuj siatkę
-malfai-lockdown-grid-desc = Zamknij, zarygluj i naelektryzuj wszystkie drzwi na swojej obecnej siatce na 30 sekund, po czym wszystkie drzwi otworzą się powodując katastrofalne skutki.
-malfai-gyroscope-name = Żyroskop
-malfai-gyroscope-desc = Przesuń rdzeń SI, miażdżąc wszystko na swojej drodze.
-malfai-voice-modulator-name = Modulator głosu
-malfai-voice-modulator-desc = Zmień swój głos, aby naśladować dowolną osobę.
-malfai-overload-machine-name = Przeciąż maszynę
-malfai-overload-machine-desc = Przeciąż wybraną maszynę, powodując jej gwałtowną eksplozję.
-malfai-camera-upgrade-name = Ulepszenie kamery
-malfai-camera-upgrade-desc = Włącz ulepszoną funkcjonalność kamer.
-malfai-toggle-camera-microphones-name = Mikrofony kamer
-malfai-toggle-camera-microphones-desc = Włącz nasłuchiwanie rozmów przez kamery monitoringu.
-malfai-hijack-mech-name = Przejęcie mecha
-malfai-hijack-mech-desc = Przejmij kontrolę nad wybranym mechem i spraw, by był wrogi wobec załogi.
-malfai-doomsday-name = Protokół zagłady
-malfai-doomsday-desc = Uruchom protokół zagłady, eliminując całe życie organiczne na stacji po okresie ładowania.
-malfai-robotics-factory-name = Fabryka robotów
-malfai-robotics-factory-desc = Rozmieść fabrykę robotów zdolną do przekształcania załogi w cyborgi podporządkowane tobie.
-malfai-viewport-place-name = Umieść rzutnię
-malfai-viewport-place-desc = Wybierz miejsce, aby umieścić zdalną rzutnię.
-malfai-viewport-open-name = Otwórz rzutnię
-malfai-viewport-open-desc = Otwórz okno podglądu zdalnego.
-malfai-action-override-machine-name = Przejęcie maszyny
-malfai-action-override-machine-desc = Przejmij kontrolę nad wybraną maszyną i spraw, by była wroga wobec załogi.
+malfai-open-store-name = Open Store
+malfai-open-store-desc = Access the malfunctioning AI upgrade store.
+malfai-return-to-core-name = Return to Core
+malfai-return-to-core-desc = Return your consciousness to the AI core.
+malfai-open-borgs-ui-name = Open Borgs UI
+malfai-open-borgs-ui-desc = Manage your cyborg units.
+malfai-detonate-rcds-name = Detonate RCDs
+malfai-detonate-rcds-desc = Arms all RCDs on the grid and detonates them after a short countdown.
+malfai-shunt-to-apc-name = Shunt to APC
+malfai-shunt-to-apc-desc = Move your consciousness into a targeted APC. You can return to your core using the Return to Core action.
+malfai-lockdown-grid-name = Lockdown Grid
+malfai-lockdown-grid-desc = Closes, bolts, and electrifies all doors on your current grid for 30 seconds, after which all doors open for catastrophic results.
+malfai-gyroscope-name = Gyroscope
+malfai-gyroscope-desc = Move the AI core, crushing anything in your way.
+malfai-voice-modulator-name = Voice Modulator
+malfai-voice-modulator-desc = Alter your voice to mimic anyone you please.
+malfai-overload-machine-name = Overload Machine
+malfai-overload-machine-desc = Overload a targeted machine, causing it to explode violently.
+malfai-camera-upgrade-name = Camera Upgrade
+malfai-camera-upgrade-desc = Toggle enhanced camera functionality.
+malfai-toggle-camera-microphones-name = Camera Microphones
+malfai-toggle-camera-microphones-desc = Toggle listening to conversations via surveillance cameras.
+malfai-hijack-mech-name = Hijack Mech
+malfai-hijack-mech-desc = Take control of a targeted mech and make it hostile to the crew.
+malfai-doomsday-name = Doomsday Protocol
+malfai-doomsday-desc = Initiate the doomsday protocol, eradicating all organic life on the station after a charging period.
+malfai-robotics-factory-name = Robotics Factory
+malfai-robotics-factory-desc = Deploy a robotics factory capable of turning crew into cyborgs subservient to you.
+malfai-viewport-place-name = Place Viewport
+malfai-viewport-place-desc = Select a location to place a remote viewport.
+malfai-viewport-open-name = Open Viewport
+malfai-viewport-open-desc = Open the remote viewport window.
+malfai-action-override-machine-name = Override Machine
+malfai-action-override-machine-desc = Take control of a machine and make it hostile.
 # =====================
 # Store Listings
 # =====================
 # Organized by priority/order in malfai_listings.yml
-malfai-listing-viewport-name = Rzutnia SI
-malfai-listing-viewport-desc = Umożliwia umieszczenie okna podglądu w dowolnym miejscu i otwarcie okna zdalnego podglądu. 30 sekund czasu odnowienia.
-malfai-listing-camera-upgrade-name = Ulepszenie kamery
-malfai-listing-camera-upgrade-desc = Daje wszystkim kamerom pasywny zasięg rentgenowski, pozwalając ci zajrzeć w obszary poza widokiem kamer. Można włączać i wyłączać.
-malfai-listing-doomsday-name = Protokół zagłady
-malfai-listing-doomsday-desc = Uruchom protokół zagłady, eliminując całe życie organiczne na stacji po okresie ładowania.
-malfai-listing-robotics-factory-name = Fabryka robotów
-malfai-listing-robotics-factory-desc = Rozmieść fabrykę robotów zdolną do przekształcania załogi w cyborgi podporządkowane tobie.
-malfai-listing-detonate-rcds-name = Detonuj USK
-malfai-listing-detonate-rcds-desc = Uzbraja wszystkie USK na swojej obecnej siatce i detonuje je po 5 sekundach.
-malfai-listing-shunt-to-apc-name = Przesuń do APC
-malfai-listing-shunt-to-apc-desc = Przenieś swoją świadomość do wybranego APC. Możesz wrócić do swojego rdzenia za pomocą akcji Powrót do rdzenia.
-malfai-listing-overload-machine-name = Przeciąż maszynę
-malfai-listing-overload-machine-desc = Przeciąż wybraną maszynę, powodując jej gwałtowną eksplozję.
-malfai-listing-decrypt-syndicate-keys-name = Odszyfruj klucze syndykatu
-malfai-listing-decrypt-syndicate-keys-desc = Umożliwia dostęp do komunikacji radiowej syndykatu.
-malfai-listing-voice-modulator-name = Modulator głosu
-malfai-listing-voice-modulator-desc = Odblokowuje możliwość zmiany głosu.
-malfai-listing-gyroscope-name = Żyroskop
-malfai-listing-gyroscope-desc = Przesuń swój rdzeń na sąsiednią płytkę, miażdżąc wszystko na swojej drodze.
-malfai-listing-toggle-camera-microphones-name = Mikrofony kamer
-malfai-listing-toggle-camera-microphones-desc = Zyskujesz możliwość słyszenia rozmów przez mikrofony znajdujące się w pobliżu twojego oka. Można włączać i wyłączać.
-malfai-listing-hijack-mech-name = Przejęcie mecha
-malfai-listing-hijack-mech-desc = Przejmij kontrolę nad wybranym mechem, siłą wyrzucając poprzedniego pilota, jeśli taki był.
-malfai-listing-lockdown-grid-name = Siatka blokująca
-malfai-listing-lockdown-grid-desc = Rozpocznij blokadę całej stacji, zamykając, ryglując i elektryzując wszystkie drzwi na stacji na 30 sekund.
-malfai-listing-override-machine-name = Przejęcie maszyny
-malfai-listing-override-machine-desc = Przekształć maszynę w wrogą, mobilną jednostkę pod swoją kontrolą.
+malfai-listing-viewport-name = AI Viewport
+malfai-listing-viewport-desc = Allows you to place a viewport anywhere and open a remote view window. 30 second Cooldown.
+malfai-listing-camera-upgrade-name = Camera Upgrade
+malfai-listing-camera-upgrade-desc = Gives all cameras a passive xray range, allowing you to peer into areas outside the cameras view. Toggleable.
+malfai-listing-doomsday-name = Doomsday Protocol
+malfai-listing-doomsday-desc = Initiate the doomsday protocol, eradicating all organic life on the station after a charging period.
+malfai-listing-robotics-factory-name = Robotics Factory
+malfai-listing-robotics-factory-desc = Deploy a robotics factory capable of turning crew into cyborgs subservient to you.
+malfai-listing-detonate-rcds-name = Detonate RCDs
+malfai-listing-detonate-rcds-desc = Arms all RCDs on your current grid and detonates them after 5 seconds.
+malfai-listing-shunt-to-apc-name = Shunt to APC
+malfai-listing-shunt-to-apc-desc = Move your consciousness into a targeted APC. You can return to your core using the Return to Core action.
+malfai-listing-overload-machine-name = Overload Machine
+malfai-listing-overload-machine-desc = Overload a targeted machine, causing it to violently explode.
+malfai-listing-decrypt-syndicate-keys-name = Decrypt Syndicate Keys
+malfai-listing-decrypt-syndicate-keys-desc = Grants you access to syndicate radio communications.
+malfai-listing-voice-modulator-name = Voice Modulator
+malfai-listing-voice-modulator-desc = Unlocks the ability to alter your voice.
+malfai-listing-gyroscope-name = Gyroscope
+malfai-listing-gyroscope-desc = Move your core to an adjacent tile, crushing anything in your way.
+malfai-listing-toggle-camera-microphones-name = Camera Microphones
+malfai-listing-toggle-camera-microphones-desc = Gain the ability to hear conversations through microphones your eye is near. Toggleable.
+malfai-listing-hijack-mech-name = Hijack Mech
+malfai-listing-hijack-mech-desc = Take control of a targeted mech, forcibly ejecting the prior pilot if there was one.
+malfai-listing-lockdown-grid-name = Lockdown Grid
+malfai-listing-lockdown-grid-desc = Initiate a station-wide lockdown, closing, bolting and electrifying all doors on the station for 30 seconds.
+malfai-listing-override-machine-name = Override Machine
+malfai-listing-override-machine-desc = Convert a machine into a hostile mobile entity under your control.
 # =====================
 # Store Categories
 # =====================
-malf-store-category-all = Wszystko
-malf-store-category-deception = Oszustwo
-malf-store-category-factory = Fabryka
-malf-store-category-disruption = Zakłócenia
+malf-store-category-all = All
+malf-store-category-deception = Deception
+malf-store-category-factory = Factory
+malf-store-category-disruption = Disruption
 # =====================
 # Currency
 # =====================
@@ -96,115 +95,114 @@ CPU = CPU
 # =====================
 # Window / UI
 # =====================
-malf-ai-viewport-window-title = Rzutnia SI
-malf-ai-viewport-window-info = Cel: mapa { $map }, x: { $x }, y: { $y }
-malfai-viewport-name = Ustaw rzutnię
-malfai-viewport-desc = Wybierz płytkę, aby wyśrodkować na niej zdalne okno rzutni.
+malf-ai-viewport-window-title = AI Viewport
+malf-ai-viewport-window-info = Target: map { $map }, x: { $x }, y: { $y }
+malfai-viewport-name = Set Viewport
+malfai-viewport-desc = Select a tile to center a remote viewport window on it.
 
 # =====================
 # Action Validation Messages
 # =====================
 
-# Detonate RCDs
-detonate_rcd_warning = Czujesz, jak twój USK gwałtownie się przegrzewa!
+#Detonate RCDs
+detonate_rcd_warning = You feel your RCD rapidly overheating!
 # Doomsday Protocol
-malfai-doomsday-popup-not-malf = Tylko uszkodzona SI może aktywować Protokół Zagłady.
-malfai-doomsday-popup-already-active = Protokół Zagłady jest już aktywny!
-malfai-doomsday-popup-need-core = Musisz znajdować się w swoim rdzeniu, aby uruchomić Protokół Zagłady.
-malfai-doomsday-popup-no-station = Nie znaleziono stacji nadrzędnej. Nie można aktywować Protokołu Zagłady.
-malfai-doomsday-abort-left-core = Protokół Zagłady przerwany: SI opuściła rdzeń. Przywracanie poprzedniego poziomu alarmu.
-malfai-doomsday-announce-initial = Inicjacja Protokołu Zagłady. Odliczanie: { $time }.
-malfai-doomsday-announce-progress = Protokół Zagłady w toku. Pozostały czas: { $time }.
-malfai-doomsday-sender = SI Stacji
-malfai-doomsday-complete = Protokół Zagłady zakończony. Formy życia organicznego zlikwidowane.
+malfai-doomsday-popup-not-malf = Only a malfunctioning AI can activate the Doomsday Protocol.
+malfai-doomsday-popup-already-active = Doomsday Protocol is already active!
+malfai-doomsday-popup-need-core = You must be inside your core to start the Doomsday Protocol.
+malfai-doomsday-popup-no-station = No owning station found. Cannot activate Doomsday Protocol.
+malfai-doomsday-abort-left-core = Doomsday protocol aborted: AI left its core. Restoring previous alert level.
+malfai-doomsday-announce-initial = Doomsday Protocol initiated. Countdown: { $time }.
+malfai-doomsday-announce-progress = Doomsday Protocol in progress. Time remaining: { $time }.
+malfai-doomsday-sender = Station AI
+malfai-doomsday-complete = Doomsday Protocol complete. Organic lifeforms terminated.
 # Lockdown
-malfai-lockdown-announcement = OSTRZEŻENIE! Wykryto nieautoryzowaną blokadę całej stacji.
-malfai-lockdown-sender = SI Stacji
+malfai-lockdown-announcement = WARNING! An unauthorized stationwide lockdown has taken effect.
+malfai-lockdown-sender = Station AI
 # Hijack Mech
-malfai-hijack-invalid-target = Nieprawidłowy cel dla mecha.
-malfai-hijack-insert-failed = Nie udało się wprowadzić SI do mecha.
-malfai-hijack-success = Mech został pomyślnie przejęty.
+malfai-hijack-invalid-target = Invalid mech target.
+malfai-hijack-insert-failed = Failed to insert AI into mech.
+malfai-hijack-success = Mech hijacked successfully.
 # Override Machine
-malfai-override-no-target = Wybierz maszynę do przejęcia.
-malfai-override-not-machine = To nie jest maszyna!
-malfai-override-not-powered = Maszyna nie jest zasilana.
-malfai-override-success = Maszyna została pomyślnie przejęta.
-malfai-override-not-malf = Tylko uszkodzona SI może przejmować maszyny.
-malfai-override-invalid-location = Nieprawidłowa lokalizacja celu.
-malfai-override-no-machine = Nie znaleziono maszyny w docelowej lokalizacji.
+malfai-override-no-target = Select a machine to override.
+malfai-override-not-machine = Not a machine!
+malfai-override-not-powered = Machine unpowered.
+malfai-override-success = Machine overridden successfully.
+malfai-override-not-malf = Only a malfunctioning AI can override machines.
+malfai-override-invalid-location = Invalid target location.
+malfai-override-no-machine = No machine found at target location.
 # Overload Machine
-malfai-overload-no-target = Wybierz maszynę do przeciążenia.
-malfai-overload-not-machine = To nie jest maszyna!
-malfai-overload-not-powered = Maszyna nie jest zasilana.
-malfai-overload-success = Maszyna została pomyślnie przeciążona.
-malfai-overload-not-malf = Tylko uszkodzona SI może przeciążać maszyny.
-malfai-overload-invalid-location = Nieprawidłowa lokalizacja celu.
-malfai-overload-no-machine = Nie znaleziono maszyny w docelowej lokalizacji.
+malfai-overload-no-target = Select a machine to overload.
+malfai-overload-not-machine = Not a machine!
+malfai-overload-not-powered = Machine unpowered.
+malfai-overload-success = Machine overloaded successfully.
+malfai-overload-not-malf = Only a malfunctioning AI can overload machines.
+malfai-overload-invalid-location = Invalid target location.
+malfai-overload-no-machine = No machine found at target location.
 # Shunt to APC
-malfai-shunt-invalid-target = Nieprawidłowy cel APC.
-malfai-shunt-no-holder = Nie znajdujesz się w prawidłowym pojemniku.
-malfai-shunt-apc-occupied = To APC jest już zajęte.
-malfai-shunt-success = Pomyślnie przeniesiono do APC.
-malfai-return-no-core = Brak zapisanego oryginalnego rdzenia.
-malfai-return-not-shunted = Nie jesteś obecnie przeniesiony.
-malfai-return-core-occupied = Rdzeń jest zajęty.
-malfai-return-success = Pomyślnie powrócono do rdzenia.
+malfai-shunt-invalid-target = Invalid APC target.
+malfai-shunt-no-holder = You are not in a valid container.
+malfai-shunt-apc-occupied = That APC is already occupied.
+malfai-shunt-success = Successfully shunted to APC.
+malfai-return-no-core = No original core recorded.
+malfai-return-not-shunted = You are not currently shunted.
+malfai-return-core-occupied = The core is occupied.
+malfai-return-success = Successfully returned to core.
 # APC Siphon
-malfai-apc-siphon-button = Wyssij energię z APC
-malfai-apc-siphon-verb = Wyssij CPU ({ $amount })
-malfai-apc-siphon-success = Wyssano { $amount } CPU z APC.
-malfai-apc-unresponsive = APC jest całkowicie nieaktywne.
-malfai-apc-restore = APC wraca do życia!
+malfai-apc-siphon-button = Siphon APC
+malfai-apc-siphon-verb = Siphon CPU ({ $amount })
+malfai-apc-siphon-success = Siphoned { $amount } CPU from APC.
+malfai-apc-unresponsive = The APC is completely unresponsive.
+malfai-apc-restore = The APC springs back to life!
 # Voice Modulator Window
-malf-voice-window-title = Modulator głosu
-malf-voice-header-label = Wprowadź nazwę głosu
-malf-voice-name-placeholder = Nazwa głosu...
-malf-voice-confirm-button = Potwierdź
+malf-voice-window-title = Voice Modulator
+malf-voice-header-label = Enter Voice Name
+malf-voice-name-placeholder = Voice name...
+malf-voice-confirm-button = Confirm
 # =====================
 # Borgs Management Window
 # =====================
-malf-borgs-window-title = Borgi Uszkodzonej SI
-malf-borgs-master-lawset-button = Nadrzędny zestaw praw
-malf-borgs-no-borgs-label = Nie znaleziono podległych borgów.
+malf-borgs-window-title = Malf AI Borgs
+malf-borgs-master-lawset-button = Master Lawset
+malf-borgs-no-borgs-label = No subverted borgs found.
 # =====================
 # Robotics Console Integration
 # =====================
-malfai-robotics-impose-law-button = Narzucenie prawa 0
-malfai-robotics-impose-law-tooltip = Zmuś tego cyborga do posłuszeństwa wobec SI Stacji
-malfai-robotics-law-imposed-success = Prawo 0 pomyślnie narzucone na jednostkę { $borgName }
-malfai-robotics-law-impose-failed = Nie udało się narzucić prawa na jednostkę { $borgName }
-malfai-robotics-borg-emagged = Nie można narzucić prawa!
+malfai-robotics-impose-law-button = Impose Law 0
+malfai-robotics-impose-law-tooltip = Force this cyborg to obey the Station AI
+malfai-robotics-law-imposed-success = Law 0 successfully imposed on { $borgName }
+malfai-robotics-law-impose-failed = Failed to impose law on { $borgName }
+malfai-robotics-borg-emagged = Cannot impose law!
 # =====================
 # Objectives
 # =====================
-malfai-objective-control-borgs = CEL; PRZEJMIJ KONTROLĘ NAD { $count } CYBORGAMI.
+malfai-objective-control-borgs = OBJECTIVE; CONTROL { $count } CYBORGS.
 # =====================
 # Camera Microphones Messages
 # =====================
-malfai-camera-microphones-enabled = Mikrofony kamer zostały aktywowane.
-malfai-camera-microphones-disabled = Mikrofony kamer zostały dezaktywowane.
-malfai-camera-microphones-out-of-core = Mikrofony kamer wyłączone.
+malfai-camera-microphones-enabled = Camera microphones activated.
+malfai-camera-microphones-disabled = Camera microphones deactivated.
+malfai-camera-microphones-out-of-core = Camera microphones disabled.
 # =====================
 # Viewport Window
 # =====================
-malfai-viewport-placing = Kliknij, aby umieścić rzutnię
-malfai-viewport-placed = Rzutnia pomyślnie umieszczona!
-malfai-viewport-failed = Nie udało się umieścić rzutni.
+malfai-viewport-placing = Click to place viewport
+malfai-viewport-placed = Viewport placed successfully!
+malfai-viewport-failed = Failed to place viewport.
 # =====================
 # Store Window
 # =====================
-malfai-store-window-title = Sklep ulepszeń Uszkodzonej SI
-malfai-store-insufficient-cpu = Niewystarczająca ilość CPU
-malfai-store-purchase-success = Zakupiono ulepszenie: { $itemName }
-malfai-store-purchase-failed = Zakup nieudany
+malfai-store-window-title = Malf AI Upgrade Store
+malfai-store-insufficient-cpu = Insufficient CPU
+malfai-store-purchase-success = Upgrade purchased: { $itemName }
+malfai-store-purchase-failed = Purchase failed
 # =====================
 # Round End
 # =====================
-malfai-round-end-result = Uszkodzona SI
+malfai-round-end-result = Malfunctioning AI
 # Confused why I have to do this..
-objective-issuer-malfai = Uszkodzona SI
-malfai-round-end-name-user =  [color=white]{ $name }[/color] ([color=gray]{ $user }[/color])
-
+objective-issuer-malfai = Malfunctioning AI
+malfai-round-end-name-user = [color=white]{ $name }[/color] ([color=gray]{ $user }[/color])
 # CPU
 alerts-malfai-cpu-name = Ilość CPU
 alerts-malfai-cpu-desc = Ilość CPU które możesz wykorzystać do zakupu ulepszeń
