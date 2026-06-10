@@ -1,1 +1,1 @@
-item-status-not-held = Nie trzymane
+item-status-not-held = No held item
