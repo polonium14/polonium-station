@@ -1,4 +1,4 @@
-ent-PulsedPlasmaLaserCanister = magnetyczny pojemnik PPL
-    .desc = Jednostka magnetycznego przechowywania wysokoenergetycznej plazmy. Jedno pełne ładowanie to jeden ciężki strzał z wyrzutni plazmy pulsowej.
-ent-MilitaryPowerCellMG = ogniwo do EM72 "Burza"
-    .desc = Ogniwo dużej pojemności do kierunkowego RKM energetycznego EM72 "Burza".
+ent-PulsedPlasmaLaserCanister = NT PPL magnetic storage container
+    .desc = A magnetic containment unit for high-energy plasma. One full charge equals one heavy pulsed plasma lance shot.
+ent-MilitaryPowerCellMG = EM72 Ashstorm battery cell
+    .desc = A high-capacity cell designed for the EM72 Ashstorm directed-energy LMG.
