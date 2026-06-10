@@ -1,4 +1,4 @@
-ent-ActionPAIOpenPda = Otwórz PDA
-    .desc = Otwórz PDA, w którym się znajdujesz.
-ent-CentcommPersonalAI = urządzenie osobistej SI centralnego dowództwa
-    .desc = Twój przyjaciel z Centrali, z którym miło spędza się czas!
+ent-ActionPAIOpenPda = Open PDA
+    .desc = Open the PDA you're in.
+ent-CentcommPersonalAI = central command personal ai device
+    .desc = Your CC pal who's fun to be with!
