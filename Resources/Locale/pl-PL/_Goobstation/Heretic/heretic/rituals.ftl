@@ -1,4 +1,3 @@
-
 heretic-ritual-unknown = Unknown Ritual
 heretic-ritual-switch = Selected { $name }
 heretic-ritual-success = Ritual successful
