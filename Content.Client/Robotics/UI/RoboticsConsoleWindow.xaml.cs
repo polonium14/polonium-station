@@ -24,6 +24,11 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using Content.Shared.Store.Components;
+using Robust.Shared.Configuration;
+using Content.Shared.CCVar;
+using Content.Shared.Store;
+using Robust.Client.Graphics;
 
 namespace Content.Client.Robotics.UI;
 
@@ -32,6 +37,9 @@ public sealed partial class RoboticsConsoleWindow : FancyWindow
 {
     [Dependency] private readonly IEntityManager _entMan = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly IPlayerManager _playerManager = default!;
+    [Dependency] private readonly IConfigurationManager _cfg = default!;
+
     private readonly LockSystem _lock;
     private readonly SpriteSystem _sprite;
 
@@ -47,7 +55,6 @@ public sealed partial class RoboticsConsoleWindow : FancyWindow
     public RoboticsConsoleWindow()
     {
         RobustXamlLoader.Load(this);
-        IoCManager.InjectDependencies(this);
 
         _lock = _entMan.System<LockSystem>();
         _sprite = _entMan.System<SpriteSystem>();
@@ -110,9 +117,8 @@ public sealed partial class RoboticsConsoleWindow : FancyWindow
 
         // Only Malf AI should see the impose-law button.
         var isMalfAi = false;
-        if (IoCManager.Resolve<IPlayerManager>().LocalEntity is { } local)
+        if (_playerManager.LocalEntity is { } local)
             isMalfAi = _entMan.HasComponent<MalfAiMarkerComponent>(local);
-
         ImposeLawButton.Visible = isMalfAi;
     }
 
@@ -166,8 +172,15 @@ public sealed partial class RoboticsConsoleWindow : FancyWindow
         // how the turntables
         DisableButton.Disabled = !(data.HasBrain && data.CanDisable);
 
+        if (!_entMan.HasComponent<MalfAiMarkerComponent>(_playerManager.LocalEntity))
+            return;
         // Grey out impose law if borg is already emagged or hacked
         ImposeLawButton.Disabled = data.Emagged;
+        if (data.Emagged) // Polonium - Informacja o emagowanym borgu
+            ImposeLawButton.Text = Loc.GetString("malfai-robotics-borg-emagged");
+        else
+            ImposeLawButton.Text = Loc.GetString("malfai-robotics-impose-law-button");
+        // Polonium - Koniec
     }
 
     protected override void FrameUpdate(FrameEventArgs args)
