@@ -1,15 +1,14 @@
-store-currency-inserted = { CAPITALIZE($used) } wstawiono do { $target }.
-store-currency-war-boost-given = { CAPITALIZE($target) } zaczyna buczeć
-store-currency-inserted-implant = wstawiono { $used } do twojego implantu.
-store-currency-free = za darmo
+store-currency-inserted = { CAPITALIZE(THE($used)) } is inserted into { THE($target) }.
+store-currency-war-boost-given = { CAPITALIZE($target) } starts buzzing
+store-currency-inserted-implant = { CAPITALIZE(THE($used)) } is inserted into your implant.
+store-currency-free = Free
 store-currency-display-debugdollar =
     { $amount ->
-        [one] Debug dolar
-        [few] Debug dolary
-       *[other] Debug dolarów
+        [one] Debug Dollar
+       *[other] Debug Dollars
     }
-store-currency-display-telecrystal = TK
-store-currency-display-stolen-essence = ukradzione essencje
-store-currency-display-silicon-memory = pamięć
+store-currency-display-telecrystal = TC
+store-currency-display-stolen-essence = Stolen Essence
+store-currency-display-silicon-memory = Memory
 store-currency-display-wizcoin = Wiz€oin™
 store-currency-display-cpu = CPU
