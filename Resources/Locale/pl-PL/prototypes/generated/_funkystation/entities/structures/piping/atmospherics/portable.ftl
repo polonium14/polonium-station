@@ -1,2 +1,2 @@
-ent-PipeScrubber = oczyszczacz rurowy
-    .desc = Oczyszcza rury, rurowalnie!
+ent-PipeScrubber = pipe scrubber
+    .desc = It scrubs, pipably!
