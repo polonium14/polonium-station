@@ -1,16 +1,16 @@
 # Cargo
-phrase-ticket = bilet
+phrase-ticket = ticket
 # Engineering
-phrase-reactor = reaktor
-phrase-supermatter = supermateria
-phrase-turbine = turbina
+phrase-reactor = reactor
+phrase-supermatter = supermatter
+phrase-turbine = turbine
 # Medical
-phrase-bone-gel = żel kostny
-phrase-cautery = kauteryzacja
-phrase-cpr = RKO
+phrase-bone-gel = bone gel
+phrase-cautery = cautery
+phrase-cpr = CPR
 phrase-hemostat = hemostat
-phrase-intravenous = dożylny
-phrase-saw = piła
-phrase-retractor = retraktor
-phrase-scalpel = skalpel
-phrase-surgery = chirurgia
+phrase-intravenous = intravenous
+phrase-saw = saw
+phrase-retractor = retractor
+phrase-scalpel = scalpel
+phrase-surgery = surgery
