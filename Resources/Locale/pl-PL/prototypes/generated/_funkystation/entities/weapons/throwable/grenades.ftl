@@ -1,5 +1,5 @@
-ent-CleanerGrenadeLube = czystonat
-    .desc = Specjalny granat dla sprzątaczy, uwalniający dużą chmurę piany do czyszczenia przestrzeni.
+ent-CleanerGrenadeLube = cleanade
+    .desc = Special grenade for janitors, releasing large cloud of space cleaner foam.
     .suffix = Lube
 ent-pIED = pIED
-    .desc = Prosto z książki kucharskiej anarchisty
+    .desc = Straight out of The Anarchist Cookbook
