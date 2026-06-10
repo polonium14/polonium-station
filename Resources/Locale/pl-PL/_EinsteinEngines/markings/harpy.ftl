@@ -1,4 +1,3 @@
-
 marking-HarpyWingDefaultHuescale = Basic Wings (Huescale)
 marking-HarpyWingDefaultHuescale-huescale_harpy = Wings
 marking-HarpyWingDefaultWhitescale = Basic Wings (Whitescale)
