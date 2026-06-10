@@ -1,2 +1,2 @@
-ent-SpawnPointWizard = czarodziej
+ent-SpawnPointWizard = wizard
     .desc = { ent-MarkerBase.desc }
