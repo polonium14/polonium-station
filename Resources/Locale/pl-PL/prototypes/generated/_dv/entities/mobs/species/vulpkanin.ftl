@@ -1,4 +1,4 @@
-ent-BaseMobVulpkanin = Urist McWulp
+ent-BaseMobVulpkanin = Urist McVulp
     .desc = { ent-BaseMobSpeciesOrganic.desc }
-ent-MobVulpkaninDummy = Wulp Testowy
-    .desc = Atrapy wulpa przeznaczone do wykorzystania w konfiguracji postaci.
+ent-MobVulpkaninDummy = Vulpkanin Dummy
+    .desc = A dummy vulpkanin meant to be used in character setup.
