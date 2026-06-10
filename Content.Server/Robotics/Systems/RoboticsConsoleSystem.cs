@@ -187,7 +187,10 @@ public sealed class RoboticsConsoleSystem : SharedRoboticsConsoleSystem
         var imposeCost = FixedPoint2.New(_cfg.GetCVar(CCVars.MalfAiImposeLawCpuCost));
 
         if (!store.Balance.TryGetValue(CpuCurrency, out var balance) || balance < imposeCost)
+        {
+            _popupSystem.PopupCursor(Loc.GetString("malfai-store-insufficient-cpu"), args.Actor, PopupType.Medium); // Polonium - Powiadomienie w przypadku niewystarczającej ilości CPU
             return; // insufficient CPU
+        }
 
         // Deduct cost and proceed
         store.Balance[CpuCurrency] = balance - imposeCost;
