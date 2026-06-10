@@ -1,4 +1,4 @@
 ent-BaseMobRodentia = Urist McRat
     .desc = { ent-BaseMobSpeciesOrganic.desc }
-ent-MobRodentiaDummy = Gryzoń Testowy
-    .desc = Atrapy gryzonia przeznaczone do wykorzystania w konfiguracji postaci.
+ent-MobRodentiaDummy = Rodentia Dummy
+    .desc = A dummy rodentia meant to be used in character setup.
