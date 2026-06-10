@@ -1,4 +1,3 @@
-
 smart-fridge-component-try-eject-unknown-entry = Invalid selection!
 smart-fridge-component-try-eject-out-of-stock = Out of stock!
 smart-fridge-component-try-eject-access-denied = Access denied!
