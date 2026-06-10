@@ -1,2 +1,2 @@
-ent-HighSecDoor = drzwi o wysokim standardzie bezpieczeństwa
-    .desc = Trzyma złych na zewnątrz i dobrych w środku.
+ent-HighSecDoor = high security door
+    .desc = Keeps the bad out and keeps the good in.
