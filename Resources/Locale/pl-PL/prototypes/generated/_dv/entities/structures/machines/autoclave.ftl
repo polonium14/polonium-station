@@ -1,2 +1,2 @@
-ent-Autoclave = autoklawa
-    .desc = Czyści na błysk wszystko, co do niego wrzucisz.
+ent-Autoclave = autoclave
+    .desc = Makes anything you put in it very clean
