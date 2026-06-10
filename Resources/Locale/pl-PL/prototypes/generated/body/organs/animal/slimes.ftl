@@ -1,4 +1,4 @@
-ent-SentientSlimesCore = rdzeń świadomego szlamu
-    .desc = Źródło niesamowitej, niekończącej się maziowatości.
-ent-OrganSlimesLungs = pęcherze gazowe szlamu
-    .desc = Gromadzą azot, który komórki szlamu wykorzystują do procesów regeneracji.
+ent-SentientSlimesCore = sentient slimes core
+    .desc = The source of incredible, unending gooeyness.
+ent-OrganSlimesLungs = slimes gas sacs
+    .desc = Collects nitrogen, which slime cells use for maintenance.
