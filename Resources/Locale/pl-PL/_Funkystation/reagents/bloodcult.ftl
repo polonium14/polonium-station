@@ -1,10 +1,9 @@
-
-reagent-name-edge-essentia = esencja spaczenia
-reagent-desc-edge-essentia = Ciemna, przeklęta substancja, która zatruwa krew rannych ofiar, zamieniając ich krwawiące rany w źródła szkarłatnego pernikulatu.
-reagent-effect-guidebook-bleed-sanguine-perniculate = konwertuje krew z krwawienia w szkarłatny pernikulat
+reagent-name-edge-essentia = edge essentia
+reagent-desc-edge-essentia = A dark, cursed substance that corrupts the blood of wounded victims, turning their bleeding wounds into sources of sanguine perniculate.
+reagent-effect-guidebook-bleed-sanguine-perniculate = convert bleeding blood into sanguine perniculate
 reagent-effect-condition-guidebook-is-blood-cultist =
     { $invert ->
-        [true] cel nie jest kultystą krwi
-       *[false] cel jest kultystą krwi
+        [true] the target is not a blood cultist
+       *[false] the target is a blood cultist
     }
-sanguine-perniculate-holywater-reaction = Nieczysta krew gwałtownie reaguje ze świętą wodą, oczyszczając się!
+sanguine-perniculate-holywater-reaction = The unholy blood violently reacts with the holy water, purging itself!
