@@ -1,4 +1,4 @@
-ent-ClothingNeckCargoLiftBelt = pas nośny
-    .desc = Przemysłowy pas nośny przeznaczony do przenoszenia ciężkich ładunków.
-ent-ClothingNeckSecurityBowtie = formalna mucha
-    .desc = Nieco zbyt duża przypinana mucha. Kiedyś oficerom wydawano klasyczne muchy, ale zbyt wielu z nich pojawiało się bez nich, mówiąc „nie umiałem jej zawiązać”.
+ent-ClothingNeckCargoLiftBelt = lift belt
+    .desc = An industrial grade lift belt designed for handling heavy cargo.
+ent-ClothingNeckSecurityBowtie = formal bowtie
+    .desc = A slightly oversized clip-on bowtie. Officers used to be issued classic bowties, but too many showed up without one reportedly saying "I couldn't tie it".
