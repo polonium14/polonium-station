@@ -1,6 +1,6 @@
-ent-SignalTimerElectronics = elektronika timera sygnałowego
-    .desc = Płyta elektroniczna używana w obwodach timera. Wygląda na to, że można użyć śrubokręta, aby zmienić typ płyty.
-ent-ScreenTimerElectronics = elektronika timera ekranowego
+ent-SignalTimerElectronics = signal timer electronics
+    .desc = An electronics board used in timer circuitry. Looks like you could use a screwdriver to change the board type.
+ent-ScreenTimerElectronics = screen timer electronics
     .desc = { ent-SignalTimerElectronics.desc }
-ent-BrigTimerElectronics = elektronika timera brig
+ent-BrigTimerElectronics = brig timer electronics
     .desc = { ent-SignalTimerElectronics.desc }
