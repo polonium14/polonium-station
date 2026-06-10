@@ -1,2 +1,1 @@
-
-action-name-mapping-erase = Usuń encję
+action-name-mapping-erase = Erase Entity
