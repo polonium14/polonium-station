@@ -1,9 +1,9 @@
-ent-MiniatureEnergyCrossbow = Miniaturowa kusza energetyczna
-    .desc = Energetyczna kusza Syndykatu, mała, cicha i śmiertelna.
-ent-WeaponPlasmaRifle = Karabin plazmowy
-    .desc = Może wybuchnąć ci w twarz.
+ent-MiniatureEnergyCrossbow = Miniature Energy Crossbow
+    .desc = The syndicate's energy crossbow, small, silent and deadly.
+ent-WeaponPlasmaRifle = Plasma Rifle
+    .desc = It may or may not explode in your face.
 ent-WeaponPlasmaRifleEmpty = { ent-WeaponPlasmaRifle }
-    .suffix = Pusty
+    .suffix = Empty
     .desc = { ent-WeaponPlasmaRifle.desc }
-ent-WeaponEnergyRevolver = Rewolwer energetyczny EG-4
-    .desc = Wysoce zaawansowany rewolwer energetyczny zdolny do strzelania zarówno śmiercionośnymi, jak i ogłuszającymi pociskami.
+ent-WeaponEnergyRevolver = EG-4 energy revolver
+    .desc = A highly advanced energy revolver.
