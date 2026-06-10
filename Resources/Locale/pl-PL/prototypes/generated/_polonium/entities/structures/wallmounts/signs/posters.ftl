@@ -1,2 +1,2 @@
 ent-NFZLogo = NFZ Logo
-    .desc = Nano Fundusz Zdrowia – Najlepsza korporacja ubezpieczeniowa w galaktyce!
+    .desc = Nano Fundusz Zdrowia - The best health insurance company in the galaxy.
