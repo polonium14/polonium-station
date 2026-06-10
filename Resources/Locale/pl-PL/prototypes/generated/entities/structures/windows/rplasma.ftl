@@ -1,7 +1,7 @@
-ent-ReinforcedPlasmaWindow = okno plazmowe wzmocnione
+ent-ReinforcedPlasmaWindow = reinforced plasma window
     .desc = { ent-WindowRCDResistant.desc }
-ent-PlasmaReinforcedWindowDirectional = kierunkowe okno plazmowe wzmocnione
-    .desc = Nie rozmazuj szkła tam na dole.
+ent-PlasmaReinforcedWindowDirectional = directional reinforced plasma window
+    .desc = Don't smudge up the glass down there.
 ent-ReinforcedPlasmaWindowDiagonal = { ent-ReinforcedPlasmaWindow }
-    .suffix = diagonalne
+    .suffix = diagonal
     .desc = { ent-ReinforcedPlasmaWindow.desc }
