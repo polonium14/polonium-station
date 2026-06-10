@@ -1,3 +1,3 @@
 ent-DesoxyephedrineBeakerSmall = { ent-Beaker }
-    .suffix = desoksyefedryna
+    .suffix = desoxyephedrine
     .desc = { ent-Beaker.desc }
