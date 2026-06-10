@@ -1,8 +1,8 @@
 ent-PulsedPlasma = { ent-BasicHitscan }
     .desc = { ent-BasicHitscan.desc }
-ent-UllmanPulse = wiązka impulsowa
+ent-UllmanPulse = { ent-BasicHitscan }
     .desc = { ent-BasicHitscan.desc }
-ent-UllmanPulseHeavy = ciężka wiązka impulsowa
+ent-UllmanPulseHeavy = { ent-UllmanPulse }
     .desc = { ent-UllmanPulse.desc }
 ent-MediumOverchargedLaser = { ent-BasicHitscan }
     .desc = { ent-BasicHitscan.desc }
