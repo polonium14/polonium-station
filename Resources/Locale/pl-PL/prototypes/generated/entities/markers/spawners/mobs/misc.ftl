@@ -1,5 +1,5 @@
-ent-SpawnMobGingerbreadAI = spawner człowieka piernika
-    .suffix = Rola ducha
+ent-SpawnMobGingerbreadAI = gingerbread man Spawner
+    .suffix = Ghostrole
     .desc = { ent-MarkerBase.desc }
-ent-SpawnHonkBot = spawner honkbota
+ent-SpawnHonkBot = honk bot spawner
     .desc = { ent-MarkerBase.desc }
