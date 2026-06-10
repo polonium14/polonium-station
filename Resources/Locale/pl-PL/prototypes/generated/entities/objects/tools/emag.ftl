@@ -1,6 +1,6 @@
-ent-EmagUnlimited = sekwencer kryptograficzny
-    .desc = Uniwersalne rozwiązanie do hackingu. Przyjaciel każdego syndykata. Ikoniczny EMAG.
-    .suffix = Nielimitowany
+ent-EmagUnlimited = cryptographic sequencer
+    .desc = The all-in-one hacking solution. Friend of any syndicate. The iconic EMAG.
+    .suffix = Unlimited
 ent-Emag = { ent-EmagUnlimited }
-    .suffix = Limitowany
+    .suffix = Limited
     .desc = { ent-EmagUnlimited.desc }
