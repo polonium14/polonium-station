@@ -1,8 +1,8 @@
-ent-Autodoc = Autolek Mk.XIV
-    .desc = Programowalny robot chirurgiczny zdolny do automatycznego operowania pacjentów.
+ent-Autodoc = Autodoc Mk.XIV
+    .desc = A programmable robotic surgeon capable of automatically operating on patients.
 ent-AutodocSyndie = { ent-Autodoc }
-    .suffix = Syndykat
+    .suffix = Syndie
     .desc = { ent-Autodoc.desc }
 ent-OmnimedToolAutodoc = { ent-OmnimedTool }
-    .suffix = Nieusuwalny
+    .suffix = Unremoveable
     .desc = { ent-OmnimedTool.desc }
