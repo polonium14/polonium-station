@@ -1,6 +1,5 @@
-
-changeling-convert-implant = Czujesz ostry ból w ramieniu, gdy implant zostaje wstrzyknięty!
-changeling-convert-implant-fail = Implant nie został wstrzyknięty całkowicie!
-uplink-changelinginfect-implant-name = Implant Infekcji Odmieńca
-uplink-changelinginfect-implant-desc = Zawiera pasożyta wyekstrahowanego ze zwłok dawno zmarłego Odmieńca. Użycie zarazi cel infekcją, powoli zmieniając go w odmieńca. Nie używaj tego na sobie.
-fragile-implant-extraction = Kruchy implant rozpada się podczas ekstrakcji...
+changeling-convert-implant = You feel a sharp pain in your arm as the implant is injected!
+changeling-convert-implant-fail = The implant fails to inject completely!
+uplink-changelinginfect-implant-name = Changeling Infection Implant
+uplink-changelinginfect-implant-desc = Contains a parasite extracted from the corpse of a long-dead Changeling. Usage will give your target their infection, slowly turning them into a changeling. Do not use this on yourself.
+fragile-implant-extraction = The fragile implant disintegrates upon extraction...
