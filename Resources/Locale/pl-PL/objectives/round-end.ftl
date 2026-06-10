@@ -1,27 +1,15 @@
 objectives-round-end-result =
     { $count ->
-        [one] Był jeden { $agent }
-       *[other] Było { $count } { $agent }.
+        [one] There was one { $agent }.
+       *[other] There were { $count } { MAKEPLURAL($agent) }.
     }
-objectives-round-end-result-in-custody = { $custody } z { $count } { $agent } zostało schwytanych.
+objectives-round-end-result-in-custody = { $custody } out of { $count } { MAKEPLURAL($agent) } were in custody.
 objectives-player-user-named = [color=White]{ $name }[/color] ([color=gray]{ $user }[/color])
 objectives-player-named = [color=White]{ $name }[/color]
-objectives-no-objectives =
-    { $custody }{ $title } { GENDER($title) ->
-        [male] był
-        [female] była
-        [epicene] byłu
-       *[neuter] było
-    } { $agent }.
-objectives-with-objectives =
-    { $custody }{ $title } { GENDER($title) ->
-        [male] był
-        [female] była
-        [epicene] byłu
-       *[neuter] było
-    } { $agent } z następującymi zadaniami:
-objectives-objective-success = { $objective } | [color=green]Sukces![/color]
+objectives-no-objectives = { $custody }{ $title } was a { $agent }.
+objectives-with-objectives = { $custody }{ $title } was a { $agent } who had the following objectives:
 objectives-objective-partial-success = { $objective } | [color=yellow]W większości sukces![/color] ({ $progress }%)
 objectives-objective-partial-failure = { $objective } | [color=orange]Po części porażka![/color] ({ $progress }%)
-objectives-objective-fail = { $objective } | [color=red]Porażka![/color] ({ $progress }%)
-objectives-in-custody = [bold][color=red]| SCHWYTANY | [/color][/bold]
+objectives-objective-success = { $objective } | [color={ $markupColor }]Success![/color]
+objectives-objective-fail = { $objective } | [color={ $markupColor }]Failure![/color] ({ $progress }%)
+objectives-in-custody = [bold][color=red]| IN CUSTODY | [/color][/bold]
