@@ -1,4 +1,4 @@
-ent-BaseWeaponRechargingSidearm = bazowa samoładująca broń boczna
+ent-BaseWeaponRechargingSidearm = base recharging sidearm
     .desc = { ent-BaseItem.desc }
 ent-WeaponPistolAnaconda = LWC Anaconda
-    .desc = Ciężki pistolet z wbudowanym fabrykatorem uzupełniającym amunicję. Amunicja: { ent-CartridgePistol }, regenerowana.
+    .desc = A heavy pistol capable of supplying itself with ammo using a built-in fabricator.
