@@ -1,2 +1,2 @@
-station-event-solar-flare-start-announcement = W pobliżu stacji wykryto rozbłysk słoneczny. Niektóre kanały komunikacyjne mogą przestać funkcjonować.
-station-event-solar-flare-end-announcement = Rozbłysk słoneczny ustał. Kanały komunikacyjne nie są już zakłócone.
+station-event-solar-flare-start-announcement = A solar flare has been detected near the station. Some communication channels may not function.
+station-event-solar-flare-end-announcement = The solar flare ended. Communication channels no longer affected.
