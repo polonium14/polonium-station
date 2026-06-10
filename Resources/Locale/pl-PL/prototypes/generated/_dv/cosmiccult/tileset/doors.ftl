@@ -1,2 +1,2 @@
-ent-DoorCosmicCult = złośliwe przejście
-    .desc = Dziwnie wyglądająca konstrukcja wywołująca uczucie niepokoju.
+ent-DoorCosmicCult = malign passageway
+    .desc = A strange, disquieting structure.
