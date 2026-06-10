@@ -179,6 +179,7 @@ public sealed partial class RoboticsConsoleWindow : FancyWindow
             ImposeLawButton.Text = Loc.GetString("malfai-robotics-borg-emagged");
         else
             ImposeLawButton.Text = Loc.GetString("malfai-robotics-impose-law-button");
+        // Polonium - Koniec
     }
 
     protected override void FrameUpdate(FrameEventArgs args)
