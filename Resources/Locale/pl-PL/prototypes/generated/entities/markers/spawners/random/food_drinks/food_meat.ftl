@@ -1,2 +1,2 @@
-ent-RandomMeat = spawner losowego mięsa
+ent-RandomMeat = random meat spawner
     .desc = { ent-MarkerBase.desc }
