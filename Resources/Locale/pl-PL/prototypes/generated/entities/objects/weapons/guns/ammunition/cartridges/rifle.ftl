@@ -1,10 +1,10 @@
-ent-BaseCartridgeRifle = nabój (.20 karabinowe)
+ent-BaseCartridgeRifle = cartridge (.20 rifle)
     .desc = { ent-BaseCartridge.desc }
-ent-CartridgeRifle = nabój (.20 karabinowe)
+ent-CartridgeRifle = cartridge (.20 rifle)
     .desc = { ent-BaseCartridgeRifle.desc }
-ent-CartridgeRiflePractice = nabój (.20 karabinowe treningowe)
+ent-CartridgeRiflePractice = cartridge (.20 rifle practice)
     .desc = { ent-BaseCartridgeRifle.desc }
-ent-CartridgeRifleIncendiary = nabój (.20 karabinowe zapalające)
+ent-CartridgeRifleIncendiary = cartridge (.20 rifle incendiary)
     .desc = { ent-BaseCartridgeRifle.desc }
-ent-CartridgeRifleUranium = nabój (.20 karabinowe uranowe)
+ent-CartridgeRifleUranium = cartridge (.20 rifle uranium)
     .desc = { ent-BaseCartridgeRifle.desc }
