@@ -1,2 +1,2 @@
-ent-ReplicatorT3Weapon = ramię replikatora
-    .desc = Ty jesteś bronią.
+ent-ReplicatorT3Weapon = replicator arm
+    .desc = You are a weapon.
