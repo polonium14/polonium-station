@@ -1,5 +1,5 @@
 ent-ClothingShoesBootsCombatFilled = { ent-ClothingShoesBootsCombat }
-    .suffix = Uzupełniony, nóż bojowy
+    .suffix = Filled, Combat Knife
     .desc = { ent-ClothingShoesBootsCombat.desc }
 ent-ClothingShoesBootsJackFilled = { ent-ClothingShoesBootsJack }
     .desc = { ent-ClothingShoesBootsJack.desc }
@@ -16,8 +16,8 @@ ent-ClothingShoesBootsCowboyFancyFilled = { ent-ClothingShoesBootsCowboyFancy }
 ent-ClothingShoesHighheelBootsFilled = { ent-ClothingShoesHighheelBoots }
     .desc = { ent-ClothingShoesHighheelBoots.desc }
 ent-ClothingShoesBootsMercFilled = { ent-ClothingShoesBootsMerc }
-    .suffix = Uzupełniony
+    .suffix = Filled
     .desc = { ent-ClothingShoesBootsMerc.desc }
 ent-ClothingShoesBootsSyndieFilled = { ent-ClothingShoesBootsCombat }
-    .suffix = Uzupełniony, nóż do rzucania
+    .suffix = Filled, Throwing Knife
     .desc = { ent-ClothingShoesBootsCombat.desc }
