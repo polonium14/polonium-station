@@ -1,2 +1,2 @@
-ent-BaseMagazineHeavyRifle = magazynek (.20 karabinowe)
+ent-BaseMagazineHeavyRifle = magazine (.20 rifle)
     .desc = { ent-BaseItem.desc }
