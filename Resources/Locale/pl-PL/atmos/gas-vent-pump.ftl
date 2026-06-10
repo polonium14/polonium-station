@@ -1,2 +1,2 @@
-gas-vent-pump-uvlo = Jest w stanie [color=red]blokady podciśnieniowej[/color].
-gas-vent-pump-release-lockout = Zwolnij blokadę podciśnienia
+gas-vent-pump-uvlo = It is in [color=red]under-pressure lock out[/color].
+gas-vent-pump-release-lockout = Release pressure lock out
