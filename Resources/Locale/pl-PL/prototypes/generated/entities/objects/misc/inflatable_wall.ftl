@@ -1,4 +1,4 @@
-ent-InflatableWall = dmuchana barykada
-    .desc = Nadmuchana membrana. Aktywuj, aby spuścić powietrze. Nie przebijać.
-ent-InflatableDoor = dmuchane drzwi
-    .desc = Nadmuchana membrana. Aktywuj, aby spuścić powietrze. Teraz z drzwiami. Nie przebijać.
+ent-InflatableWall = inflatable barricade
+    .desc = An inflated membrane. Release ripvalve to deflate. Do not puncture.
+ent-InflatableDoor = inflatable door
+    .desc = An inflated, semi-traversable membrane. Otherwise known as a door. Release ripvalve to deflate. Do not puncture.
