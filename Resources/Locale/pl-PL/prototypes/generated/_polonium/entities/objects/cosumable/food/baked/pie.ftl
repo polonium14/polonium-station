@@ -1,2 +1,2 @@
-ent-FoodPieKremowka = kremówka
+ent-FoodPieKremowka = kremowka
     .desc = Wadowicki specjał
