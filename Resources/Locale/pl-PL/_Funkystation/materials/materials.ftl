@@ -1,2 +1,1 @@
-
-materials-brass = mosiądz
+materials-brass = brass
