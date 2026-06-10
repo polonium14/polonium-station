@@ -1,4 +1,3 @@
-
 marking-SlimeNose-nose = Nose (Profile)
 marking-SlimeNose = Nose (Profile)
 marking-SlimeMouth-mouth = Mouth
