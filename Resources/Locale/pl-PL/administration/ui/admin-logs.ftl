@@ -1,19 +1,19 @@
-admin-logs-title = Dzienniki Administracyjne
-admin-logs-count = Pokazano { $showing }/{ $total } z rundy { $round }
+admin-logs-title = Admin Logs Panel
 admin-logs-export = Eksportuj
-admin-logs-pop-out = Własne okno
+admin-logs-count = Showing { $showing }/{ $total } of { $round }
+admin-logs-pop-out = Pop Out
 # Round
-admin-logs-round = Runda{ " " }
-admin-logs-reset = Resetuj
-admin-logs-reset-with-id = Resetuj Rundę (#{ $id })
+admin-logs-round = Round{ " " }
+admin-logs-reset = Reset
+admin-logs-reset-with-id = Reset Round (#{ $id })
 # Types
-admin-logs-search-types-placeholder = Wyszukaj Typy (LUB)
-admin-logs-select-all = Wszystkie
-admin-logs-select-none = Brak
+admin-logs-search-types-placeholder = Search Types (OR)
+admin-logs-select-all = All
+admin-logs-select-none = None
 # Players
-admin-logs-search-players-placeholder = Wyszukaj Graczy (LUB)
-admin-logs-include-non-player = Uwzględnij nie-graczy
+admin-logs-search-players-placeholder = Search Players (OR)
+admin-logs-include-non-player = Include Non-players
 # Logs
-admin-logs-search-logs-placeholder = Szukaj w Dziennikach
-admin-logs-refresh = Odśwież
-admin-logs-next = Następny
+admin-logs-search-logs-placeholder = Search Logs
+admin-logs-refresh = Refresh
+admin-logs-next = Next
