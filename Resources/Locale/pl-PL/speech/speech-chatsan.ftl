@@ -1,6 +1,3 @@
-# Tego pliku nie tłumaczyć.
-# Polskie zamienniki dodawaj w chatsan-polonium.ftl
-
 chatsan-word-1 = omg
 chatsan-replacement-1 = oh my god
 chatsan-word-2 = omfg
