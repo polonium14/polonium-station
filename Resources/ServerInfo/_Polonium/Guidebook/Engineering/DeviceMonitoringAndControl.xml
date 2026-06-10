@@ -7,30 +7,30 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-  # Device Monitoring and Control
-  Given the station-wide nature of the atmospherics network, it is important to have a way to monitor and control devices from a central location.
+  # Monitorowanie i sterowanie urządzeniami
+  Biorąc pod uwagę, że sieć atmosferyczna obejmuje całą stację, ważne jest, aby mieć możliwość monitorowania i sterowania urządzeniami z jednego centralnego miejsca.
 
-  Using these systems, Atmospherics can monitor and control the atmosphere across the entire station.
+  Dzięki tym systemom departament atmosferyczny może monitorować i kontrolować warunki atmosferyczne na terenie całej stacji.
 
   <Box>
     <GuideEntityEmbed Entity="AirAlarm" Caption=""/>
     <GuideEntityEmbed Entity="AirSensor" Caption=""/>
   </Box>
   <Box>
-    ## Air Alarms
+    ## Alarmy atmosferyczne
   </Box>
   <Box>
-    [color=#999999][italic]Wide area monitoring and control over atmos devices[italic][/color]
+    [color=#999999][italic]Monitorowanie i sterowanie urządzeniami atmosferycznymi na szerokim obszarze[italic][/color]
   </Box>
 
   <Box>
     <GuideEntityEmbed Entity="ComputerAlert" Caption=""/>
   </Box>
   <Box>
-    ## Atmospheric Alerts Computer
+    ## Komputer alarmów atmosferycznych
   </Box>
   <Box>
-    [color=#999999][italic]Station-wide monitoring of air alarms[italic][/color]
+    [color=#999999][italic]Monitorowanie alarmów atmosferycznych na całej stacji[italic][/color]
   </Box>
 
   <Box>
@@ -38,10 +38,10 @@ SPDX-License-Identifier: MIT
     <GuideEntityEmbed Entity="GasPipeSensor" Caption=""/>
   </Box>
   <Box>
-    ## Atmospheric Network Monitor
+    ## Monitor sieci atmosferycznej
   </Box>
   <Box>
-    [color=#999999][italic]Monitoring of whole pipe networks[italic][/color]
+    [color=#999999][italic]Monitorowanie sieci rurociągów[italic][/color]
   </Box>
 
 </Document>
