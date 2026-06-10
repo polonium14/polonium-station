@@ -1,8 +1,2 @@
-cloning-pod-biomass =
-    Obecnie posiada [color=red]{ $number }[/color] { $number ->
-        [one] jednostkę
-        [few] jednostki
-        [many] jedontek
-       *[other] jednostki
-    } biomasy.
-cloning-pod-component-upgrade-emag-requirement = Karta spala coś wewnątrz komory klonowania.
+cloning-pod-biomass = It currently has [color=red]{ $number }[/color] units of biomass.
+cloning-pod-component-upgrade-emag-requirement = The card zaps something inside the cloning pod.
