@@ -1,68 +1,67 @@
 reagent-effect-condition-guidebook-total-damage =
     { $max ->
-        [2147483648] ma przynajmniej { NATURALFIXED($min, 2) } całkowitych obrażeń
+        [2147483648] it has at least { NATURALFIXED($min, 2) } total damage
        *[other]
             { $min ->
-                [0] ma co najwyżej { NATURALFIXED($max, 2) } całkowitych obrażeń
-               *[other] ma pomiędzy { NATURALFIXED($min, 2) } a { NATURALFIXED($max, 2) } całkowitych obrażeń
+                [0] it has at most { NATURALFIXED($max, 2) } total damage
+               *[other] it has between { NATURALFIXED($min, 2) } and { NATURALFIXED($max, 2) } total damage
             }
     }
 reagent-effect-condition-guidebook-total-hunger =
     { $max ->
-        [2147483648] cel ma przynajmniej { NATURALFIXED($min, 2) } całkowitego głodu
+        [2147483648] the target has at least { NATURALFIXED($min, 2) } total hunger
        *[other]
             { $min ->
-                [0] cel ma co najwyżej { NATURALFIXED($max, 2) } całkowitego głodu
-               *[other] cel ma pomiędzy { NATURALFIXED($min, 2) } a { NATURALFIXED($max, 2) } całkowitego głodu
+                [0] the target has at most { NATURALFIXED($max, 2) } total hunger
+               *[other] the target has between { NATURALFIXED($min, 2) } and { NATURALFIXED($max, 2) } total hunger
             }
     }
 reagent-effect-condition-guidebook-reagent-threshold =
     { $max ->
-        [2147483648] jest przynajmniej { NATURALFIXED($min, 2) }u { $reagent }
+        [2147483648] there's at least { NATURALFIXED($min, 2) }u of { $reagent }
        *[other]
             { $min ->
-                [0] jest co najwyżej { NATURALFIXED($max, 2) }u { $reagent }
-               *[other] jest pomiędzy { NATURALFIXED($min, 2) }u a { NATURALFIXED($max, 2) }u { $reagent }
+                [0] there's at most { NATURALFIXED($max, 2) }u of { $reagent }
+               *[other] there's between { NATURALFIXED($min, 2) }u and { NATURALFIXED($max, 2) }u of { $reagent }
             }
     }
-reagent-effect-condition-guidebook-mob-state-condition = stwór jest w stanie { $state }
-reagent-effect-condition-guidebook-job-condition = praca celu to { $job }
+reagent-effect-condition-guidebook-mob-state-condition = the mob is { $state }
+reagent-effect-condition-guidebook-job-condition = the target's job is { $job }
 reagent-effect-condition-guidebook-solution-temperature =
-    temperatura roztworu wynosi { $max ->
-        [2147483648] przynajmniej { NATURALFIXED($min, 2) }k
+    the solution's temperature is { $max ->
+        [2147483648] at least { NATURALFIXED($min, 2) }k
        *[other]
             { $min ->
-                [0] co najwyżej { NATURALFIXED($max, 2) }k
-               *[other] pomiędzy { NATURALFIXED($min, 2) }k a { NATURALFIXED($max, 2) }k
+                [0] at most { NATURALFIXED($max, 2) }k
+               *[other] between { NATURALFIXED($min, 2) }k and { NATURALFIXED($max, 2) }k
             }
     }
 reagent-effect-condition-guidebook-body-temperature =
-    temperatura ciała wynosi { $max ->
-        [2147483648] przynajmniej { NATURALFIXED($min, 2) }k
+    the body's temperature is { $max ->
+        [2147483648] at least { NATURALFIXED($min, 2) }k
        *[other]
             { $min ->
-                [0] co najwyżej { NATURALFIXED($max, 2) }k
-               *[other] pomiędzy { NATURALFIXED($min, 2) }k a { NATURALFIXED($max, 2) }k
+                [0] at most { NATURALFIXED($max, 2) }k
+               *[other] between { NATURALFIXED($min, 2) }k and { NATURALFIXED($max, 2) }k
             }
     }
 reagent-effect-condition-guidebook-organ-type =
-    organ metabolizujący { $shouldhave ->
-        [true] jest
-       *[false] nie jest
-    } organem { $name }
+    the metabolizing organ { $shouldhave ->
+        [true] is
+       *[false] is not
+    } { INDEFINITE($name) } { $name } organ
 reagent-effect-condition-guidebook-has-tag =
-    cel { $invert ->
-        [true] nie ma
-       *[false] ma
-    } tag { $tag }
-reagent-effect-condition-guidebook-this-reagent = ten reagent
+    the target { $invert ->
+        [true] does not have
+       *[false] has
+    } the tag { $tag }
 reagent-effect-condition-guidebook-blood-reagent-threshold =
     { $max ->
-        [2147483648] w krwiobiegu jest co najmniej { NATURALFIXED($min, 2) }u { $reagent }
+        [2147483648] there's at least { NATURALFIXED($min, 2) }u of { $reagent }
        *[other]
             { $min ->
-                [0] w krwiobiegu jest co najwyżej { NATURALFIXED($max, 2) }u { $reagent }
-               *[other] w krwiobiegu jest między { NATURALFIXED($min, 2) }u a { NATURALFIXED($max, 2) }u { $reagent }
+                [0] there's at most { NATURALFIXED($max, 2) }u of { $reagent }
+               *[other] there's between { NATURALFIXED($min, 2) }u and { NATURALFIXED($max, 2) }u of { $reagent }
             }
     }
 reagent-effect-condition-guidebook-breathing =
@@ -70,18 +69,19 @@ reagent-effect-condition-guidebook-breathing =
         [true] oddycha normalnie
        *[false] dusi się
     }
-reagent-effect-condition-guidebook-ling = cel jest Odmieńcem
-reagent-effect-condition-guidebook-damage-threshold =
-    { $max ->
-        [2147483648] cel ma przynajmniej { NATURALFIXED($min, 2) } obrażeń typu { $damage }
-       *[other]
-            { $min ->
-                [0] cel ma co najwyżej { NATURALFIXED($max, 2) } obrażeń typu { $damage }
-               *[other] cel ma pomiędzy { NATURALFIXED($min, 2) } a { NATURALFIXED($max, 2) } obrażeń typu { $damage }
-            }
-    }
+reagent-effect-condition-guidebook-this-reagent = this reagent
+reagent-effect-condition-guidebook-ling = the target is a changeling
 reagent-effect-condition-guidebook-internals =
     metabolizujący { $usingInternals ->
         [true] używa butli z tlenem
        *[false] oddycha powietrzem atmosferycznym
+    }
+reagent-effect-condition-guidebook-damage-threshold =
+    { $max ->
+        [2147483648] the target has at least { NATURALFIXED($min, 2) } { $damage } damage
+       *[other]
+            { $min ->
+                [0] the target has at most { NATURALFIXED($max, 2) } { $damage } damage
+               *[other] the target has between { NATURALFIXED($min, 2) } and { NATURALFIXED($max, 2) } { $damage } damage
+            }
     }
