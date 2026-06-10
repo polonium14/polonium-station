@@ -1,5 +1,5 @@
-ent-BasePlatform = platforma
-    .desc = Podstawowa platforma mająca na celu zapewnienie stabilnej powierzchni do stania.
+ent-BasePlatform = platform
+    .desc = Basic platform meant to provide a stable surface for stand on.
 ent-Platform = { ent-BasePlatform }
     .desc = { ent-BasePlatform.desc }
 ent-Platform2 = { ent-BasePlatform }
