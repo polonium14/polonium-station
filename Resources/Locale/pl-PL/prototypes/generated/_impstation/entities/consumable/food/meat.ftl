@@ -1,2 +1,2 @@
-ent-FoodThavenMeat = surowy filet thaven
-    .desc = Niepokojące.
+ent-FoodThavenMeat = raw thaven fillet
+    .desc = Concerning.
