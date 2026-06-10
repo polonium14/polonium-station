@@ -1,1 +1,1 @@
-log-wire-pulse-access-log = BŁĄD: Wykryto impuls elektromagnetyczny
+log-wire-pulse-access-log = ERROR: Electromagnetic spike detected
