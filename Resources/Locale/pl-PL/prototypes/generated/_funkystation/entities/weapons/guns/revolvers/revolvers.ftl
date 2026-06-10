@@ -1,2 +1,2 @@
-ent-WeaponRevolverSalamander = Salamandra
-    .desc = Salamandra to niewielki rewolwer kalibru .50 AE, będący niedrogim narzędziem do potajemnych zabójstw. Staraj się nie chybić.
+ent-WeaponRevolverSalamander = Salamander
+    .desc = A miniscule revolver chambered in .50 AE, the salamander is a cheap covert assasination tool. Try to not miss.
