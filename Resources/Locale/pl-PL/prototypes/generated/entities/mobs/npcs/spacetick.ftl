@@ -1,7 +1,7 @@
-ent-MobTick = kosmiczny kleszcz
-    .desc = To kosmiczny kleszcz, uważaj na jego paskudne ugryzienie. CentComm raportuje, że 90 procent amputacji nóg w ładowni jest spowodowanych ugryzieniami kosmicznych kleszczy.
+ent-MobTick = space tick
+    .desc = It's a space tick, watch out for its nasty bite. CentComm reports that 90 percent of cargo leg amputations are due to space tick bites.
     .gender = male
 ent-MobTickSalvage = { ent-MobTick }
-    .suffix = Zasady Salvage
+    .suffix = Salvage Ruleset
     .desc = { ent-MobTick.desc }
     .gender = male
