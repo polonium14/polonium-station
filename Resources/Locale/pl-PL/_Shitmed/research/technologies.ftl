@@ -1,2 +1,1 @@
-
-research-technology-autodoc = Chirurgia zautomatyzowana
+research-technology-autodoc = Automated Surgery
