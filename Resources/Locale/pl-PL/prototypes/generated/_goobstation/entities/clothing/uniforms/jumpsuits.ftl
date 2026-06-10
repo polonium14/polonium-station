@@ -1,7 +1,7 @@
 ent-ClothingUniformJumpsuitDurathread = durathread jumpsuit
     .desc = A loose worn durathread shirt with a grey pants, its resilient fibres provide some protection to the wearer.
-ent-ClothingUniformJumpsuitNanotrasenRepresentative = nanotrasen representative suit
-    .desc = A black suit worn by officials.
+ent-ClothingUniformJumpsuitNanotrasenRepresentative = nanotrasen representative's officer shirt
+    .desc = A black military-style tunic shirt worn by Nanotrasen officials. The expensive materials make it one-of-a-kind aboard most stations.
 ent-ClothingUniformJumpsuitCasualSyndicate = casual syndicate jumpsuit
     .desc = Short sleeves, short temper.
 ent-ClothingUniformJumpsuitBlueshieldOfficer = blueshield officer jumpsuit
@@ -12,6 +12,5 @@ ent-ClothingUniformMailCarrier = mail carrier's uniform
     .desc = Enemy of dogs everywhere.
 ent-ClothingUniformHecu = HECU uniform
     .desc = Hunt down the Freeman.
-
 ent-ClothingUniformJumpsuitTrainer = NCT Jumpsuit
     .desc = A jumpsuit issued to Nanotrasen Career Trainers. Fills you with a feeling of pride.
