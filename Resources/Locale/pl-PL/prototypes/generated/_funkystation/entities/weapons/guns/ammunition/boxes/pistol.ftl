@@ -1,10 +1,10 @@
-ent-BaseMagazineBoxPistolLarge = skrzynka amunicji (.50 AE)
+ent-BaseMagazineBoxPistolLarge = ammunition box (.50 AE)
     .desc = { ent-BaseItem.desc }
-ent-MagazineBoxPistolLarge = skrzynka amunicji (.50 AE)
+ent-MagazineBoxPistolLarge = ammunition box (.50 AE)
     .desc = { ent-BaseMagazineBoxPistolLarge.desc }
-ent-MagazineBoxPistolLargePractice = skrzynka amunicji (.50 AE treningowe)
+ent-MagazineBoxPistolLargePractice = ammunition box (.50 AE practice)
     .desc = { ent-BaseMagazineBoxPistolLarge.desc }
-ent-MagazineBoxPistolLargeIncendiary = skrzynka amunicji (.50 AE zapalające)
+ent-MagazineBoxPistolLargeIncendiary = ammunition box (.50 AE incendiary)
     .desc = { ent-BaseMagazineBoxPistolLarge.desc }
-ent-MagazineBoxPistolLargeUranium = skrzynka amunicji (.50 AE uranowe)
+ent-MagazineBoxPistolLargeUranium = ammunition box (.50 AE uranium)
     .desc = { ent-BaseMagazineBoxPistolLarge.desc }
