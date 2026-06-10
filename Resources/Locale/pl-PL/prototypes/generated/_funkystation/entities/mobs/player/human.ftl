@@ -1,3 +1,3 @@
-ent-MobHumanNeanderthal = Neandertalczyk
+ent-MobHumanNeanderthal = Neanderthal
     .desc = { ent-MobHuman.desc }
     .gender = male
