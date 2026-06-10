@@ -1,5 +1,5 @@
-tool-openable-component-examine-closed = { CAPITALIZE($name) } jest zamknięte.
-tool-openable-component-examine-opened = { CAPITALIZE($name) } jest otwarte.
-tool-openable-component-verb-close = Zamknij
-tool-openable-component-verb-open = Otwórz
-tool-openable-component-verb-cant-close = Nie możesz tym zamknąć { $name }.
+tool-openable-component-examine-closed = The { $name } is closed.
+tool-openable-component-examine-opened = The { $name } is open.
+tool-openable-component-verb-close = Close
+tool-openable-component-verb-open = Open
+tool-openable-component-verb-cant-close = You can't close the { $name } with that.
