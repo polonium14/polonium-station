@@ -1,325 +1,218 @@
 # ERT / Death Squad WTH uplink listings
 
-ert-uplink-ErtCallUplinkStunbaton-name = Zaawansowana pałka ogłuszająca
-ert-uplink-ErtCallUplinkStunbaton-desc = Pałka ogłuszająca o dużej pojemności do obezwładniania celów.
-
-ert-uplink-ErtCallUplinkMachete-name = Maczeta
-ert-uplink-ErtCallUplinkMachete-desc = Ciężkie ostrze sieczne.
-
-ert-uplink-ErtCallUplinkCombatKnife-name = Nóż bojowy
-ert-uplink-ErtCallUplinkCombatKnife-desc = Ostry wojskowy nóż bojowy.
-
-ert-uplink-ErtCallUplinkEnergySword-name = Miecz energetyczny
-ert-uplink-ErtCallUplinkEnergySword-desc = Buńczący się miecz skondensowanej energii.
-
-ert-uplink-ErtCallUplinkMagazineBoxMagnum-name = Pudełko amunicji .45 magnum
-ert-uplink-ErtCallUplinkMagazineBoxMagnum-desc = Pudełko naboi magnum wysokiej mocy.
-
-ert-uplink-ErtCallUplinkSpeedLoaderMagnum-name = Bębenek .45 magnum
-ert-uplink-ErtCallUplinkSpeedLoaderMagnum-desc = Szybki bębenek do rewolwerów magnum.
-
-ert-uplink-ErtCallUplinkMagazinePistol-name = Magazynek pistoletowy
-ert-uplink-ErtCallUplinkMagazinePistol-desc = Standardowy magazynek do pistoletu.
-
-ert-uplink-ErtCallUplinkMagazineRifle-name = Magazynek karabinowy
-ert-uplink-ErtCallUplinkMagazineRifle-desc = Standardowa amunicja karabinowa.
-
-ert-uplink-ErtCallUplinkMagazineBoxAntiMateriel-name = Pudełko amunicji przeciwmateriałowej
-ert-uplink-ErtCallUplinkMagazineBoxAntiMateriel-desc = Naboje przeciwmateriałowe dużego kalibru.
-
-ert-uplink-ErtCallUplinkMagazineLethalshot-name = Magazynek do strzelby (śrut)
-ert-uplink-ErtCallUplinkMagazineLethalshot-desc = Magazynek naboi śrutowych.
-
-ert-uplink-ErtCallUplinkMagazineShotgunIncendiary-name = Magazynek do strzelby (zapalające)
-ert-uplink-ErtCallUplinkMagazineShotgunIncendiary-desc = Zapalające naboje do strzelby.
-
-ert-uplink-ErtCallUplinkMagazineShotgunSlug-name = Magazynek do strzelby (przeszywające)
-ert-uplink-ErtCallUplinkMagazineShotgunSlug-desc = Przeszywające naboje do strzelby.
-
-ert-uplink-ErtCallUplinkMagazineLightRifle-name = Magazynek (.30 karabinowe)
-ert-uplink-ErtCallUplinkMagazineLightRifle-desc = Standardowe naboje .30 karabinowe.
-
-ert-uplink-ErtCallUplinkCartridgeRocket-name = Nabój rakietowy
-ert-uplink-ErtCallUplinkCartridgeRocket-desc = Jednorazowy nabój z głowicą rakietową.
-
-ert-uplink-ErtCallUplinkGrenadeFlashBang-name = Granat błyskowy
-ert-uplink-ErtCallUplinkGrenadeFlashBang-desc = Niegroźny granat dezorientujący.
-
-ert-uplink-ErtCallUplinkEmpGrenade-name = Granat EMP
-ert-uplink-ErtCallUplinkEmpGrenade-desc = Wyłącza pobliską elektronikę.
-
-ert-uplink-ErtCallUplinkExGrenade-name = Granat wybuchowy
-ert-uplink-ErtCallUplinkExGrenade-desc = Potężny wybuch odłamkowy.
-
-ert-uplink-ErtCallUplinkC4-name = Ładunek C4
-ert-uplink-ErtCallUplinkC4-desc = Ładunek wybuchowy z detonacją zdalną do przełamywania.
-
-ert-uplink-ErtCallUplinkClusterBangFull-name = Klastrowy granat błyskowy
-ert-uplink-ErtCallUplinkClusterBangFull-desc = Seria kolejnych detonacji błyskowych.
-
-ert-uplink-ErtCallUplinkClothingEyesGlassesMeson-name = Okulary mesonowe
-ert-uplink-ErtCallUplinkClothingEyesGlassesMeson-desc = Pozwalają ocenić integralność struktur przez ściany.
-
-ert-uplink-ErtCallUplinkAmeJar-name = Słoik AME
-ert-uplink-ErtCallUplinkAmeJar-desc = Zapasowy słoik antymaterii.
-
-ert-uplink-ErtCallUplinkJawsOfLife-name = Szczęki życia
-ert-uplink-ErtCallUplinkJawsOfLife-desc = Hydrauliczne narzędzie ratownicze tnąco-rozpierające.
-
-ert-uplink-ErtCallUplinkPowerDrill-name = Wiertarka elektryczna
-ert-uplink-ErtCallUplinkPowerDrill-desc = Szybkie zasilane wiertło.
-
-ert-uplink-ErtCallUplinkClothingBeltUtilityFilled-name = Pas narzędziowy (wypełniony)
-ert-uplink-ErtCallUplinkClothingBeltUtilityFilled-desc = Wypełniony pas z narzędziami.
-
-ert-uplink-ErtCallUplinkRCD-name = Urządzenie szybkiej budowy
-ert-uplink-ErtCallUplinkRCD-desc = Szybkie narzędzie do budowy ścian i podłóg.
-
-ert-uplink-ErtCallUplinkRCDAmmo-name = Kartridż materii RCD
-ert-uplink-ErtCallUplinkRCDAmmo-desc = Amunicja do RCD.
-
-ert-uplink-ErtCallUplinkHolofanProjector-name = Projektor holowentylatora
-ert-uplink-ErtCallUplinkHolofanProjector-desc = Rozstawia holograficzną barierę przepływu powietrza.
-
-ert-uplink-ErtCallUplinkNetworkConfigurator-name = Konfigurator sieci
-ert-uplink-ErtCallUplinkNetworkConfigurator-desc = Reguluje połączenia urządzeń i sieci.
-
-ert-uplink-ErtCallUplinkGasAnalyzer-name = Analizator gazów
-ert-uplink-ErtCallUplinkGasAnalyzer-desc = Odczytuje skład atmosfery.
-
+ert-uplink-ErtCallUplinkStunbaton-name = Advanced Stun Baton
+ert-uplink-ErtCallUplinkStunbaton-desc = A high-capacity stun baton for subduing targets.
+ert-uplink-ErtCallUplinkMachete-name = Machete
+ert-uplink-ErtCallUplinkMachete-desc = A heavy chopping blade.
+ert-uplink-ErtCallUplinkCombatKnife-name = Combat Knife
+ert-uplink-ErtCallUplinkCombatKnife-desc = A sharp military combat knife.
+ert-uplink-ErtCallUplinkEnergySword-name = Energy Sword
+ert-uplink-ErtCallUplinkEnergySword-desc = A humming blade of condensed energy.
+ert-uplink-ErtCallUplinkMagazineBoxMagnum-name = Magnum Ammo Box
+ert-uplink-ErtCallUplinkMagazineBoxMagnum-desc = Box of high-powered magnum rounds.
+ert-uplink-ErtCallUplinkSpeedLoaderMagnum-name = Magnum Speed Loader
+ert-uplink-ErtCallUplinkSpeedLoaderMagnum-desc = Rapid loader for magnum revolvers.
+ert-uplink-ErtCallUplinkMagazinePistol-name = Pistol Magazine
+ert-uplink-ErtCallUplinkMagazinePistol-desc = Standard pistol magazine.
+ert-uplink-ErtCallUplinkMagazineRifle-name = Rifle Magazine
+ert-uplink-ErtCallUplinkMagazineRifle-desc = Standard rifle ammunition.
+ert-uplink-ErtCallUplinkMagazineBoxAntiMateriel-name = Anti-Materiel Ammo Box
+ert-uplink-ErtCallUplinkMagazineBoxAntiMateriel-desc = High-caliber anti-materiel rounds.
+ert-uplink-ErtCallUplinkMagazineLethalshot-name = Shotgun Magazine (Buckshot)
+ert-uplink-ErtCallUplinkMagazineLethalshot-desc = Buckshot shell magazine.
+ert-uplink-ErtCallUplinkMagazineShotgunIncendiary-name = Shotgun Magazine (Incendiary)
+ert-uplink-ErtCallUplinkMagazineShotgunIncendiary-desc = Incendiary shotgun shells.
+ert-uplink-ErtCallUplinkMagazineShotgunSlug-name = Shotgun Magazine (Slug)
+ert-uplink-ErtCallUplinkMagazineShotgunSlug-desc = Slug shotgun shells.
+ert-uplink-ErtCallUplinkMagazineLightRifle-name = Light Rifle Magazine
+ert-uplink-ErtCallUplinkMagazineLightRifle-desc = Standard light rifle rounds.
+ert-uplink-ErtCallUplinkCartridgeRocket-name = Rocket Cartridge
+ert-uplink-ErtCallUplinkCartridgeRocket-desc = Single-use rocket warhead.
+ert-uplink-ErtCallUplinkGrenadeFlashBang-name = Flashbang Grenade
+ert-uplink-ErtCallUplinkGrenadeFlashBang-desc = Non-lethal disorientation grenade.
+ert-uplink-ErtCallUplinkEmpGrenade-name = EMP Grenade
+ert-uplink-ErtCallUplinkEmpGrenade-desc = Disables nearby electronics.
+ert-uplink-ErtCallUplinkExGrenade-name = High-Explosive Grenade
+ert-uplink-ErtCallUplinkExGrenade-desc = Powerful fragmentation blast.
+ert-uplink-ErtCallUplinkC4-name = C4 Charge
+ert-uplink-ErtCallUplinkC4-desc = Remote-detonated breaching explosive.
+ert-uplink-ErtCallUplinkClusterBangFull-name = Cluster Flashbang
+ert-uplink-ErtCallUplinkClusterBangFull-desc = Multiple sequential flash detonations.
+ert-uplink-ErtCallUplinkClothingEyesGlassesMeson-name = Meson Goggles
+ert-uplink-ErtCallUplinkClothingEyesGlassesMeson-desc = See structural integrity through walls.
+ert-uplink-ErtCallUplinkAmeJar-name = AME Jar
+ert-uplink-ErtCallUplinkAmeJar-desc = Replacement antimatter jar.
+ert-uplink-ErtCallUplinkJawsOfLife-name = Jaws of Life
+ert-uplink-ErtCallUplinkJawsOfLife-desc = Hydraulic rescue cutter/spreader.
+ert-uplink-ErtCallUplinkPowerDrill-name = Power Drill
+ert-uplink-ErtCallUplinkPowerDrill-desc = Rapid powered drill tool.
+ert-uplink-ErtCallUplinkClothingBeltUtilityFilled-name = Toolbelt (Filled)
+ert-uplink-ErtCallUplinkClothingBeltUtilityFilled-desc = Stocked utility toolbelt.
+ert-uplink-ErtCallUplinkRCD-name = Rapid Construction Device
+ert-uplink-ErtCallUplinkRCD-desc = Fast wall/floor construction tool.
+ert-uplink-ErtCallUplinkRCDAmmo-name = RCD Matter Cartridge
+ert-uplink-ErtCallUplinkRCDAmmo-desc = Reload for the RCD.
+ert-uplink-ErtCallUplinkHolofanProjector-name = Holofan Projector
+ert-uplink-ErtCallUplinkHolofanProjector-desc = Deploys a holographic airflow barrier.
+ert-uplink-ErtCallUplinkNetworkConfigurator-name = Network Configurator
+ert-uplink-ErtCallUplinkNetworkConfigurator-desc = Adjust device linking and networks.
+ert-uplink-ErtCallUplinkGasAnalyzer-name = Gas Analyzer
+ert-uplink-ErtCallUplinkGasAnalyzer-desc = Reads atmospheric composition.
 ert-uplink-ErtCallUplinkMultitool-name = Multitool
-ert-uplink-ErtCallUplinkMultitool-desc = Narzędzie do sygnałów, hakowania i interfejsu urządzeń.
-
-ert-uplink-ErtCallUplinkTrayScanner-name = Skaner tacy
-ert-uplink-ErtCallUplinkTrayScanner-desc = Skanuje tace roślin pod kątem danych.
-
-ert-uplink-ErtCallUplinkSheetSteel-name = Arkusze stali
-ert-uplink-ErtCallUplinkSheetSteel-desc = Podstawowy materiał budowlany.
-
-ert-uplink-ErtCallUplinkSheetPlasteel-name = Arkusze plastali
-ert-uplink-ErtCallUplinkSheetPlasteel-desc = Wzmocniony materiał kompozytowy.
-
-ert-uplink-ErtCallUplinkSheetRGlass-name = Arkusze wzmocnionego szkła
-ert-uplink-ErtCallUplinkSheetRGlass-desc = Wytrzymały materiał przezroczysty.
-
-ert-uplink-ErtCallUplinkSheetGlass-name = Arkusze szkła
-ert-uplink-ErtCallUplinkSheetGlass-desc = Standardowe przezroczyste arkusze.
-
-ert-uplink-ErtCallUplinkPartRodMetal-name = Pręty metalowe
-ert-uplink-ErtCallUplinkPartRodMetal-desc = Pręty konstrukcyjne do ram.
-
-ert-uplink-ErtCallUplinkCableHVStack-name = Stos kabli WN
-ert-uplink-ErtCallUplinkCableHVStack-desc = Kable wysokiego napięcia.
-
-ert-uplink-ErtCallUplinkCableMVStack-name = Stos kabli ŚN
-ert-uplink-ErtCallUplinkCableMVStack-desc = Kable średniego napięcia.
-
-ert-uplink-ErtCallUplinkCableApcStack-name = Stos kabli RZN
-ert-uplink-ErtCallUplinkCableApcStack-desc = Kable niskiego napięcia RZN.
-
-ert-uplink-ErtCallUplinkBoxInflatable-name = Pudełko barier dmuchanych
-ert-uplink-ErtCallUplinkBoxInflatable-desc = Przenośne bariery awaryjne.
-
-ert-uplink-ErtCallUplinkWelderExperimental-name = Eksperymentalna spawarka
-ert-uplink-ErtCallUplinkWelderExperimental-desc = Wydajne narzędzie spawalnicze.
-
-ert-uplink-ErtCallUplinkOmnizineChemistryBottle-name = Butelka omnizyny
-ert-uplink-ErtCallUplinkOmnizineChemistryBottle-desc = Reagent o szerokim spektrum leczenia.
-
-ert-uplink-ErtCallUplinkHypospray-name = Hipospray
-ert-uplink-ErtCallUplinkHypospray-desc = Urządzenie do natychmiastowych wstrzyknięć.
-
-ert-uplink-ErtCallUplinkGauze-name = Rolka gazowa
-ert-uplink-ErtCallUplinkGauze-desc = Podstawowy opatrunek na rany.
-
-ert-uplink-ErtCallUplinkBrutepack-name = Zszywka
-ert-uplink-ErtCallUplinkBrutepack-desc = Sterylna zszywka do zamykania ran.
-
-ert-uplink-ErtCallUplinkOintment-name = Siatka regeneracyjna
-ert-uplink-ErtCallUplinkOintment-desc = Zaawansowana siatka na oparzenia.
-
-ert-uplink-ErtCallUplinkStimpack-name = Stymulator
-ert-uplink-ErtCallUplinkStimpack-desc = Tymczasowy stymulator bojowy.
-
-ert-uplink-ErtCallUplinkCompactDefibrillator-name = Kompaktowy defibrylator
-ert-uplink-ErtCallUplinkCompactDefibrillator-desc = Przenośne urządzenie reanimacyjne.
-
-ert-uplink-ErtCallUplinkEmergencyMedipen-name = Medipen awaryjny
-ert-uplink-ErtCallUplinkEmergencyMedipen-desc = Natychmiastowa, ratująca życie mikstura.
-
-ert-uplink-ErtCallUplinkHandheldHealthAnalyzer-name = Analizator zdrowia
-ert-uplink-ErtCallUplinkHandheldHealthAnalyzer-desc = Skanuje parametry życiowe pacjenta.
-
-ert-uplink-ErtCallUplinkMaterialBiomass-name = Materiał biomasy
-ert-uplink-ErtCallUplinkMaterialBiomass-desc = Organiczny materiał do klonowania.
-
-ert-uplink-ErtCallUplinkPillAmbuzolPlus-name = Pigułka "Ambuzol+"
-ert-uplink-ErtCallUplinkPillAmbuzolPlus-desc = Silny antytoksyna i stabilizator.
-
-ert-uplink-ErtCallUplinkSpaceMedipen-name = Medipen kosmiczny
-ert-uplink-ErtCallUplinkSpaceMedipen-desc = Chroni przed ekspozycją na próżnię.
-
-ert-uplink-ErtCallUplinkWeaponPulsePistol-name = Pistolet pulsacyjny
-ert-uplink-ErtCallUplinkWeaponPulsePistol-desc = Kompaktowa energetyczna broń boczna.
-
-ert-uplink-ErtCallUplinkWeaponDisabler-name = Ogłuszacz
-ert-uplink-ErtCallUplinkWeaponDisabler-desc = Niegroźna broń energetyczna do obezwładniania.
-
-ert-uplink-ErtCallUplinkWeaponPistolMk58-name = Pistolet Mk58
-ert-uplink-ErtCallUplinkWeaponPistolMk58-desc = Standardowa balistyczna broń boczna.
-
-ert-uplink-ErtCallUplinkWeaponRevolverMateba-name = Rewolwer Mateba
-ert-uplink-ErtCallUplinkWeaponRevolverMateba-desc = Potężny półautomatyczny rewolwer.
-
-ert-uplink-ErtCallUplinkWeaponRifleLecter-name = Karabin Lecter
-ert-uplink-ErtCallUplinkWeaponRifleLecter-desc = Karabin kinetyczny dużej mocy.
-
-ert-uplink-ErtCallUplinkWeaponPulseCarbine-name = Karabinek pulsacyjny
-ert-uplink-ErtCallUplinkWeaponPulseCarbine-desc = Średniozasięgowa broń energetyczna.
-
-ert-uplink-ErtCallUplinkWeaponPulseRifle-name = Karabin pulsacyjny
-ert-uplink-ErtCallUplinkWeaponPulseRifle-desc = Ciężka platforma szturmowa energetyczna.
-
+ert-uplink-ErtCallUplinkMultitool-desc = Signals, hacking and device interface tool.
+ert-uplink-ErtCallUplinkTrayScanner-name = Tray Scanner
+ert-uplink-ErtCallUplinkTrayScanner-desc = Scans plant trays for data.
+ert-uplink-ErtCallUplinkSheetSteel-name = Steel Sheets
+ert-uplink-ErtCallUplinkSheetSteel-desc = Basic construction material.
+ert-uplink-ErtCallUplinkSheetPlasteel-name = Plasteel Sheets
+ert-uplink-ErtCallUplinkSheetPlasteel-desc = Reinforced composite material.
+ert-uplink-ErtCallUplinkSheetRGlass-name = Reinforced Glass Sheets
+ert-uplink-ErtCallUplinkSheetRGlass-desc = Strong transparent material.
+ert-uplink-ErtCallUplinkSheetGlass-name = Glass Sheets
+ert-uplink-ErtCallUplinkSheetGlass-desc = Standard transparent sheets.
+ert-uplink-ErtCallUplinkPartRodMetal-name = Metal Rods
+ert-uplink-ErtCallUplinkPartRodMetal-desc = Construction rods used in frames.
+ert-uplink-ErtCallUplinkCableHVStack-name = HV Cable Stack
+ert-uplink-ErtCallUplinkCableHVStack-desc = High-voltage cables.
+ert-uplink-ErtCallUplinkCableMVStack-name = MV Cable Stack
+ert-uplink-ErtCallUplinkCableMVStack-desc = Medium-voltage cables.
+ert-uplink-ErtCallUplinkCableApcStack-name = APC Cable Stack
+ert-uplink-ErtCallUplinkCableApcStack-desc = Low-voltage power cables.
+ert-uplink-ErtCallUplinkBoxInflatable-name = Inflatable Barrier Box
+ert-uplink-ErtCallUplinkBoxInflatable-desc = Portable emergency barriers.
+ert-uplink-ErtCallUplinkWelderExperimental-name = Experimental Welder
+ert-uplink-ErtCallUplinkWelderExperimental-desc = High-performance welding tool.
+ert-uplink-ErtCallUplinkOmnizineChemistryBottle-name = Omnizine Bottle
+ert-uplink-ErtCallUplinkOmnizineChemistryBottle-desc = Broad-spectrum healing reagent.
+ert-uplink-ErtCallUplinkHypospray-name = Hypospray
+ert-uplink-ErtCallUplinkHypospray-desc = Instant injection device.
+ert-uplink-ErtCallUplinkGauze-name = Gauze Roll
+ert-uplink-ErtCallUplinkGauze-desc = Basic wound dressing.
+ert-uplink-ErtCallUplinkBrutepack-name = Medicated Suture
+ert-uplink-ErtCallUplinkBrutepack-desc = Sterile wound closing suture.
+ert-uplink-ErtCallUplinkOintment-name = Regenerative Mesh
+ert-uplink-ErtCallUplinkOintment-desc = Advanced burn treatment mesh.
+ert-uplink-ErtCallUplinkStimpack-name = Stimpack
+ert-uplink-ErtCallUplinkStimpack-desc = Temporary combat stimulant.
+ert-uplink-ErtCallUplinkCompactDefibrillator-name = Compact Defibrillator
+ert-uplink-ErtCallUplinkCompactDefibrillator-desc = Portable revival device.
+ert-uplink-ErtCallUplinkEmergencyMedipen-name = Emergency Medipen
+ert-uplink-ErtCallUplinkEmergencyMedipen-desc = Immediate life-saving cocktail.
+ert-uplink-ErtCallUplinkHandheldHealthAnalyzer-name = Health Analyzer
+ert-uplink-ErtCallUplinkHandheldHealthAnalyzer-desc = Scans patient vital statistics.
+ert-uplink-ErtCallUplinkMaterialBiomass-name = Biomass Material
+ert-uplink-ErtCallUplinkMaterialBiomass-desc = Organic cloning feedstock.
+ert-uplink-ErtCallUplinkPillAmbuzolPlus-name = Ambuzol+ Pill
+ert-uplink-ErtCallUplinkPillAmbuzolPlus-desc = Potent anti-toxin and stabilizer.
+ert-uplink-ErtCallUplinkSpaceMedipen-name = Space Medipen
+ert-uplink-ErtCallUplinkSpaceMedipen-desc = Protects against vacuum exposure.
+ert-uplink-ErtCallUplinkWeaponPulsePistol-name = Pulse Pistol
+ert-uplink-ErtCallUplinkWeaponPulsePistol-desc = Compact directed-energy sidearm.
+ert-uplink-ErtCallUplinkWeaponDisabler-name = Disabler
+ert-uplink-ErtCallUplinkWeaponDisabler-desc = Non-lethal energy incapacitation weapon.
+ert-uplink-ErtCallUplinkWeaponPistolMk58-name = Mk58 Pistol
+ert-uplink-ErtCallUplinkWeaponPistolMk58-desc = Standard ballistic sidearm.
+ert-uplink-ErtCallUplinkWeaponRevolverMateba-name = Mateba Revolver
+ert-uplink-ErtCallUplinkWeaponRevolverMateba-desc = Powerful semi-automatic revolver.
+ert-uplink-ErtCallUplinkWeaponRifleLecter-name = Lecter Rifle
+ert-uplink-ErtCallUplinkWeaponRifleLecter-desc = High-power kinetic rifle.
+ert-uplink-ErtCallUplinkWeaponPulseCarbine-name = Pulse Carbine
+ert-uplink-ErtCallUplinkWeaponPulseCarbine-desc = Mid-range energy assault weapon.
+ert-uplink-ErtCallUplinkWeaponPulseRifle-name = Pulse Rifle
+ert-uplink-ErtCallUplinkWeaponPulseRifle-desc = Heavy energy assault platform.
 ert-uplink-ErtCallUplinkWeaponMinigun-name = Minigun
-ert-uplink-ErtCallUplinkWeaponMinigun-desc = Szybkostrzelna broń balistyczna.
-
-ert-uplink-ErtCallUplinkWeaponXrayCannon-name = Działo rentgenowskie
-ert-uplink-ErtCallUplinkWeaponXrayCannon-desc = Przenikająca broń wiązką promieniowania.
-
+ert-uplink-ErtCallUplinkWeaponMinigun-desc = Rapid-fire ballistic weapon.
+ert-uplink-ErtCallUplinkWeaponXrayCannon-name = X-Ray Cannon
+ert-uplink-ErtCallUplinkWeaponXrayCannon-desc = Penetrating radiation beam weapon.
 ert-uplink-ErtCallUplinkWeaponTaser-name = Taser
-ert-uplink-ErtCallUplinkWeaponTaser-desc = Ogłusza cele ładunkiem elektrycznym.
-
-ert-uplink-ErtCallUplinkWeaponAdvancedLaser-name = Zaawansowany laser
-ert-uplink-ErtCallUplinkWeaponAdvancedLaser-desc = Ulepszona energetyczna broń boczna.
-
-ert-uplink-ErtCallUplinkWeaponSniperHristov-name = Karabin snajperski "Chrystow"
-ert-uplink-ErtCallUplinkWeaponSniperHristov-desc = Precyzyjny karabin dalekiego zasięgu.
-
-ert-uplink-ErtCallUplinkWeaponShotgunKammerer-name = Strzelba Kammerer
-ert-uplink-ErtCallUplinkWeaponShotgunKammerer-desc = Taktyczna strzelba bojowa.
-
-ert-uplink-ErtCallUplinkWeaponShotgunBulldog-name = Strzelba Bulldog
-ert-uplink-ErtCallUplinkWeaponShotgunBulldog-desc = Kompaktowa strzelba z bębnem.
-
-ert-uplink-ErtCallUplinkWeaponLauncherRocket-name = Wyrzutnia rakiet
-ert-uplink-ErtCallUplinkWeaponLauncherRocket-desc = Wystrzeliwuje rakiety wybuchowe.
-
-ert-uplink-ErtCallUplinkAdvMopItem-name = Zaawansowany mop
-ert-uplink-ErtCallUplinkAdvMopItem-desc = Wydajny mop do sprzątania.
-
-ert-uplink-ErtCallUplinkWeedSpray-name = Spray na chwasty
-ert-uplink-ErtCallUplinkWeedSpray-desc = Eliminuje inwazyjną florę.
-
-ert-uplink-ErtCallUplinkLightReplacer-name = Wymiennik żarówek
-ert-uplink-ErtCallUplinkLightReplacer-desc = Natychmiastowo instaluje żarówki.
-
-ert-uplink-ErtCallUplinkBoxLightMixed-name = Pudełko mieszanych żarówek
-ert-uplink-ErtCallUplinkBoxLightMixed-desc = Różne żarówki zapasowe.
-
-ert-uplink-ErtCallUplinkSprayBottleSpaceCleaner-name = Butelka kosmicznego środka czyszczącego
-ert-uplink-ErtCallUplinkSprayBottleSpaceCleaner-desc = Usuwa uporczywe plamy.
-
-ert-uplink-ErtCallUplinkMopBucketFull-name = Wiadro z mopem (pełne)
-ert-uplink-ErtCallUplinkMopBucketFull-desc = Wiadro z roztworem do mycia.
-
-ert-uplink-ErtCallUplinkBucket-name = Wiadro
-ert-uplink-ErtCallUplinkBucket-desc = Zwykłe wiadro użytkowe.
-
-ert-uplink-ErtCallUplinkBoxBodyBag-name = Pudełko worków na ciała
-ert-uplink-ErtCallUplinkBoxBodyBag-desc = Kilka worków do transportu zwłok.
-
-ert-uplink-ErtCallUplinkBiohazardSuit-name = Mydło
-ert-uplink-ErtCallUplinkBiohazardSuit-desc = Mydło.
-
-ert-uplink-ErtCallUplinkTrashBag-name = Worek na śmieci
-ert-uplink-ErtCallUplinkTrashBag-desc = Wytrzymały worek na odpady.
-
-ert-uplink-ErtCallUplinkRecharger-name = Przenośna ładowarka
-ert-uplink-ErtCallUplinkRecharger-desc = Pole do ładowania urządzeń.
-
-ert-uplink-ErtCallUplinkHandcuffs-name = Kajdanki
-ert-uplink-ErtCallUplinkHandcuffs-desc = Standardowe kajdanki.
-
-ert-uplink-ErtCallUplinkJetpackBlueFilled-name = Niebieski jetpack
-ert-uplink-ErtCallUplinkJetpackBlueFilled-desc = Napełniony plecak napędowy EVA.
-
-ert-uplink-ErtCallUplinkHandheldGPSBasic-name = Ręczny GPS
-ert-uplink-ErtCallUplinkHandheldGPSBasic-desc = Wyświetla współrzędne pozycji.
-
-ert-uplink-ErtCallUplinkHandheldStationMap-name = Mapa stacji
-ert-uplink-ErtCallUplinkHandheldStationMap-desc = Ręczny wyświetlacz układu stacji.
-
-ert-uplink-ErtCallUplinkHandheldCrewMonitor-name = Monitor załogi
-ert-uplink-ErtCallUplinkHandheldCrewMonitor-desc = Śledzi sensory skafandrów załogi.
-
-ert-uplink-ErtCallUplinkClothingShoesBootsMag-name = Buty magnetyczne
-ert-uplink-ErtCallUplinkClothingShoesBootsMag-desc = Buty magnetyczne do EVA i stabilności.
-
-ert-uplink-ErtCallUplinkCrowbar-name = Łom
-ert-uplink-ErtCallUplinkCrowbar-desc = Narzędzie do wyważania drzwi i skrzyń.
-
-ert-uplink-ErtCallUplinkWeaponL6Saw-name = LKM L6
-ert-uplink-ErtCallUplinkWeaponL6Saw-desc = Broń do tłumienia ogniem o wysokiej szybkostrzelności.
-
-ert-uplink-ErtCallUplinkMagazineLightRifleBox-name = Pudełko amunicji .30 karabinowej
-ert-uplink-ErtCallUplinkMagazineLightRifleBox-desc = Duża ilość naboi .30 karabinowych.
-
-ert-uplink-ErtCallUplinkEnergyShield-name = Tarcza energetyczna
-ert-uplink-ErtCallUplinkEnergyShield-desc = Rozkładana osobista bariera energetyczna.
-
-ert-uplink-ErtCallUplinkWeaponWeaponVisMPSPistol-name = Pistolet Vis MPS
-ert-uplink-ErtCallUplinkWeaponWeaponVisMPSPistol-desc = Zaawansowana balistyczna broń boczna.
-
-ert-uplink-ErtCallUplinkWeaponPMMGun-name = PMM Model-X
-ert-uplink-ErtCallUplinkWeaponPMMGun-desc = Kompaktowa broń automatyczna.
-
-ert-uplink-ErtCallUplinkWeaponBORGun-name = Snajperka BOR
-ert-uplink-ErtCallUplinkWeaponBORGun-desc = Precyzyjny karabin dużego kalibru.
-
-ert-uplink-ErtCallUplinkWeaponWeaponVisMPSPistolMagazine-name = Magazynek Vis MPS
-ert-uplink-ErtCallUplinkWeaponWeaponVisMPSPistolMagazine-desc = Magazynek do pistoletu Vis MPS.
-
-ert-uplink-ErtCallUplinkWeaponPMMGunMagazine-name = Magazynek PMM
-ert-uplink-ErtCallUplinkWeaponPMMGunMagazine-desc = Magazynek do PMM Model-X.
-
-ert-uplink-ErtCallUplinkWeaponBORGunMagazine-name = Magazynek BOR
-ert-uplink-ErtCallUplinkWeaponBORGunMagazine-desc = Amunicja do snajperki BOR.
-
+ert-uplink-ErtCallUplinkWeaponTaser-desc = Stuns targets with electrical charge.
+ert-uplink-ErtCallUplinkWeaponAdvancedLaser-name = Advanced Laser Gun
+ert-uplink-ErtCallUplinkWeaponAdvancedLaser-desc = Improved energy sidearm.
+ert-uplink-ErtCallUplinkWeaponSniperHristov-name = Hristov Sniper Rifle
+ert-uplink-ErtCallUplinkWeaponSniperHristov-desc = Long-range precision rifle.
+ert-uplink-ErtCallUplinkWeaponShotgunKammerer-name = Kammerer Shotgun
+ert-uplink-ErtCallUplinkWeaponShotgunKammerer-desc = Tactical combat shotgun.
+ert-uplink-ErtCallUplinkWeaponShotgunBulldog-name = Bulldog Shotgun
+ert-uplink-ErtCallUplinkWeaponShotgunBulldog-desc = Compact drum-fed shotgun.
+ert-uplink-ErtCallUplinkWeaponLauncherRocket-name = Rocket Launcher
+ert-uplink-ErtCallUplinkWeaponLauncherRocket-desc = Fires explosive rockets.
+ert-uplink-ErtCallUplinkAdvMopItem-name = Advanced Mop
+ert-uplink-ErtCallUplinkAdvMopItem-desc = High-efficiency cleaning mop.
+ert-uplink-ErtCallUplinkWeedSpray-name = Weed Spray
+ert-uplink-ErtCallUplinkWeedSpray-desc = Eliminates invasive flora.
+ert-uplink-ErtCallUplinkLightReplacer-name = Light Replacer
+ert-uplink-ErtCallUplinkLightReplacer-desc = Installs replacement bulbs instantly.
+ert-uplink-ErtCallUplinkBoxLightMixed-name = Mixed Light Bulb Box
+ert-uplink-ErtCallUplinkBoxLightMixed-desc = Assorted replacement light bulbs.
+ert-uplink-ErtCallUplinkSprayBottleSpaceCleaner-name = Space Cleaner Bottle
+ert-uplink-ErtCallUplinkSprayBottleSpaceCleaner-desc = Cleans stubborn stains.
+ert-uplink-ErtCallUplinkMopBucketFull-name = Mop Bucket (Full)
+ert-uplink-ErtCallUplinkMopBucketFull-desc = Bucket of cleaning solution.
+ert-uplink-ErtCallUplinkBucket-name = Bucket
+ert-uplink-ErtCallUplinkBucket-desc = Generic utility bucket.
+ert-uplink-ErtCallUplinkBoxBodyBag-name = Body Bag Box
+ert-uplink-ErtCallUplinkBoxBodyBag-desc = Several body bags for retrieval.
+ert-uplink-ErtCallUplinkBiohazardSuit-name = Soap
+ert-uplink-ErtCallUplinkBiohazardSuit-desc = Soap.
+ert-uplink-ErtCallUplinkTrashBag-name = Trash Bag
+ert-uplink-ErtCallUplinkTrashBag-desc = Heavy-duty trash bag.
+ert-uplink-ErtCallUplinkRecharger-name = Portable Recharger
+ert-uplink-ErtCallUplinkRecharger-desc = Field charging unit.
+ert-uplink-ErtCallUplinkHandcuffs-name = Handcuffs
+ert-uplink-ErtCallUplinkHandcuffs-desc = Standard restraints.
+ert-uplink-ErtCallUplinkJetpackBlueFilled-name = Blue Jetpack
+ert-uplink-ErtCallUplinkJetpackBlueFilled-desc = Filled EVA propulsion pack.
+ert-uplink-ErtCallUplinkHandheldGPSBasic-name = Handheld GPS
+ert-uplink-ErtCallUplinkHandheldGPSBasic-desc = Displays position coordinates.
+ert-uplink-ErtCallUplinkHandheldStationMap-name = Station Map
+ert-uplink-ErtCallUplinkHandheldStationMap-desc = Handheld station layout display.
+ert-uplink-ErtCallUplinkHandheldCrewMonitor-name = Crew Monitor
+ert-uplink-ErtCallUplinkHandheldCrewMonitor-desc = Tracks crew suit sensors.
+ert-uplink-ErtCallUplinkClothingShoesBootsMag-name = Magboots
+ert-uplink-ErtCallUplinkClothingShoesBootsMag-desc = Magnetic boots for EVA & stability.
+ert-uplink-ErtCallUplinkCrowbar-name = Crowbar
+ert-uplink-ErtCallUplinkCrowbar-desc = Pry tool for doors and crates.
+ert-uplink-ErtCallUplinkWeaponL6Saw-name = L6 Light Machine Gun
+ert-uplink-ErtCallUplinkWeaponL6Saw-desc = High-rate suppression weapon.
+ert-uplink-ErtCallUplinkMagazineLightRifleBox-name = Light Rifle Ammo Box
+ert-uplink-ErtCallUplinkMagazineLightRifleBox-desc = Bulk light rifle ammunition.
+ert-uplink-ErtCallUplinkEnergyShield-name = Energy Shield
+ert-uplink-ErtCallUplinkEnergyShield-desc = Deployable personal energy barrier.
+ert-uplink-ErtCallUplinkWeaponWeaponVisMPSPistol-name = Vis MPS Pistol
+ert-uplink-ErtCallUplinkWeaponWeaponVisMPSPistol-desc = Advanced ballistic sidearm.
+ert-uplink-ErtCallUplinkWeaponPMMGun-name = PMM Machine Gun
+ert-uplink-ErtCallUplinkWeaponPMMGun-desc = Compact automatic weapon.
+ert-uplink-ErtCallUplinkWeaponBORGun-name = BOR Sniper
+ert-uplink-ErtCallUplinkWeaponBORGun-desc = High-caliber precision rifle.
+ert-uplink-ErtCallUplinkWeaponWeaponVisMPSPistolMagazine-name = Vis MPS Magazine
+ert-uplink-ErtCallUplinkWeaponWeaponVisMPSPistolMagazine-desc = Ammunition magazine for the Vis MPS.
+ert-uplink-ErtCallUplinkWeaponPMMGunMagazine-name = PMM Magazine
+ert-uplink-ErtCallUplinkWeaponPMMGunMagazine-desc = Magazine for the PMM machine gun.
+ert-uplink-ErtCallUplinkWeaponBORGunMagazine-name = BOR Magazine
+ert-uplink-ErtCallUplinkWeaponBORGunMagazine-desc = Ammunition for BOR sniper rifle.
 ert-uplink-ErtCallUplinkWeaponLaserCellMG-name = EM72 Ashstorm
-ert-uplink-ErtCallUplinkWeaponLaserCellMG-desc = Energetyczny ręczny karabin maszynowy. Używa ładowalnych ogniw wojskowych.
-
-ert-uplink-ErtCallUplinkMilitaryPowerCellMG-name = Ogniwo EM72 Ashstorm
-ert-uplink-ErtCallUplinkMilitaryPowerCellMG-desc = Wysokopojemne ogniwo do EM72 Ashstorm.
-
+ert-uplink-ErtCallUplinkWeaponLaserCellMG-desc = Directed-energy light machine gun. Uses rechargeable military power cells.
+ert-uplink-ErtCallUplinkMilitaryPowerCellMG-name = EM72 Ashstorm battery cell
+ert-uplink-ErtCallUplinkMilitaryPowerCellMG-desc = High-capacity power cell for the EM72 Ashstorm.
 ert-uplink-ErtCallUplinkWeaponRifleXlr556-name = VFD XLR-556 ICWS
-ert-uplink-ErtCallUplinkWeaponRifleXlr556-desc = Szybkostrzelny karabin szturmowy 5,56 z ogniem serii.
-
-ert-uplink-ErtCallUplinkWeaponRifleAsakimAutopulser-name = Plazmowy autopulser Kunisa
-ert-uplink-ErtCallUplinkWeaponRifleAsakimAutopulser-desc = Samodoładowujący się ręczny karabin plazmowy.
-
-ert-uplink-ErtCallUplinkUllmanWeaponPulsePistol-name = U.I. DP-17
-ert-uplink-ErtCallUplinkUllmanWeaponPulsePistol-desc = Kompaktowa broń boczna Ullman z samoładowaniem.
-
-ert-uplink-ErtCallUplinkUllmanWeaponPulseSniper-name = U.I. DP-40
-ert-uplink-ErtCallUplinkUllmanWeaponPulseSniper-desc = Dalekosiężna snajperka Ullman z ciężkimi strzałami hitscan.
-
+ert-uplink-ErtCallUplinkWeaponRifleXlr556-desc = High-rate 5.56 assault rifle with burst fire.
+ert-uplink-ErtCallUplinkWeaponRifleAsakimAutopulser-name = Kunisa-pattern plasma autopulser
+ert-uplink-ErtCallUplinkWeaponRifleAsakimAutopulser-desc = Self-recharging handheld plasma rifle.
+ert-uplink-ErtCallUplinkUllmanWeaponPulsePistol-name = U.I. DP-17 heavy pulse pistol
+ert-uplink-ErtCallUplinkUllmanWeaponPulsePistol-desc = Compact Ullman directed-pulse sidearm with self-recharging battery.
+ert-uplink-ErtCallUplinkUllmanWeaponPulseSniper-name = U.I. DP-40 pulse sniper rifle
+ert-uplink-ErtCallUplinkUllmanWeaponPulseSniper-desc = Long-range Ullman pulse sniper with heavy hitscan shots.
 ert-uplink-ErtCallUplinkWeaponSubMachineGunVectorNtsfHclm-name = NTSF-HCLM-45
-ert-uplink-ErtCallUplinkWeaponSubMachineGunVectorNtsfHclm-desc = Ciężki PM kalibru .45 magnum z ery wojen korporacyjnych.
-
-ert-uplink-ErtCallUplinkMagazineMagnumSubMachineGun-name = Magazynek PM .45 magnum
-ert-uplink-ErtCallUplinkMagazineMagnumSubMachineGun-desc = Magazynek do NTSF-HCLM-45 i kompatybilnych broni.
-
+ert-uplink-ErtCallUplinkWeaponSubMachineGunVectorNtsfHclm-desc = Heavy .45 magnum SMG from the corporate war era.
+ert-uplink-ErtCallUplinkMagazineMagnumSubMachineGun-name = .45 magnum SMG magazine
+ert-uplink-ErtCallUplinkMagazineMagnumSubMachineGun-desc = Magazine for the NTSF-HCLM-45 and compatible weapons.
 ert-uplink-ErtCallUplinkWeaponPistolHawk4-name = LWC Orzeł-4 I.S
-ert-uplink-ErtCallUplinkWeaponPistolHawk4-desc = Ciężka broń boczna LWC z samoprodukującymi się nabojami przeciwpancernymi i tłumikiem.
-
-ert-uplink-ErtCallUplinkSecurityHardsuit-name = Skafander ochrony JSR
-ert-uplink-ErtCallUplinkSecurityHardsuit-desc = Ochronny skafander noszony przez funkcjonariuszy ochrony jednostki szybkiego reagowania.
-
-ert-uplink-ErtCallUplinkMedicHardsuit-name = Skafander medyka JSR
-ert-uplink-ErtCallUplinkMedicHardsuit-desc = Ochronny skafander noszony przez medyków jednostki szybkiego reagowania.
-
-ert-uplink-ErtCallUplinkEngineerHardsuit-name = Skafander inżyniera JSR
-ert-uplink-ErtCallUplinkEngineerHardsuit-desc = Ochronny skafander noszony przez inżynierów jednostki szybkiego reagowania.
-
-ert-uplink-ErtCallUplinkJanitorHardsuit-name = Skafander woźnego JSR
-ert-uplink-ErtCallUplinkJanitorHardsuit-desc = Ochronny skafander noszony przez woźnych jednostki szybkiego reagowania.
+ert-uplink-ErtCallUplinkWeaponPistolHawk4-desc = Heavy LWC sidearm with self-fabricating armor-piercing rounds and integrated suppressor.
+ert-uplink-ErtCallUplinkSecurityHardsuit-name = ERT security's hardsuit
+ert-uplink-ErtCallUplinkSecurityHardsuit-desc = A protective hardsuit worn by the security officers of an emergency response team.
+ert-uplink-ErtCallUplinkMedicHardsuit-name = ERT medic's hardsuit
+ert-uplink-ErtCallUplinkMedicHardsuit-desc = A protective hardsuit worn by the medics of an emergency response team.
+ert-uplink-ErtCallUplinkEngineerHardsuit-name = ERT engineer's hardsuit
+ert-uplink-ErtCallUplinkEngineerHardsuit-desc = A protective hardsuit worn by the engineers of an emergency response team.
+ert-uplink-ErtCallUplinkJanitorHardsuit-name = ERT janitor's hardsuit
+ert-uplink-ErtCallUplinkJanitorHardsuit-desc = A protective hardsuit worn by the janitors of an emergency response team.
