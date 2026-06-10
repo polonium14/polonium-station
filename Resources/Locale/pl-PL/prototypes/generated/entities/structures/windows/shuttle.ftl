@@ -1,5 +1,5 @@
-ent-ShuttleWindow = okno wahadłowca
+ent-ShuttleWindow = shuttle window
     .desc = { ent-WindowRCDResistant.desc }
 ent-ShuttleWindowDiagonal = { ent-ShuttleWindow }
-    .suffix = diagonalne
+    .suffix = diagonal
     .desc = { ent-ShuttleWindow.desc }
