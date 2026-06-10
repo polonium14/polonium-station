@@ -1,2 +1,2 @@
-ent-FoodBurgerSloppyJoe = burger sloppy joe
-    .desc = A może miska brei Steve'a — zależy, skąd jesteś.
+ent-FoodBurgerSloppyJoe = sloppy joe
+    .desc = Or perhaps a Sludgy Steve, depending on where you're from.
