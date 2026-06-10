@@ -1,1 +1,1 @@
-research-technology-weapon-production = Produkcja Broni
+research-technology-weapon-production = Weapon Production

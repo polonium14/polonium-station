@@ -12,13 +12,3 @@ ent-ShuttleGunPirateCannon = pirate ship cannon
     .desc = Kaboom!
 ent-ShuttleGunKinetic = PTK-800 "Matter Dematerializer"
     .desc = Salvage stationary mining turret. Gradually accumulates charges on its own, extremely effective for asteroid excavation.
-
-ent-ShuttleGunSeismic = EXP-SMC "KosmoWstrząs"
-    .desc = Salvage stationary mining turret. Gradually accumulates charges on its own, extremely effective for asteroid excavation.
-    
-
-ent-ShuttleGunPlasmaCutter = PLM-CTT "Shuttle Cutter"
-    .desc = Stacjonarne działo odzyskowe. Ładowane poprzez plazmę, tnie asteroidy z łatwością.
-
-ent-ShuttleGunMineralVacuum = MNV-EX "Mineral Vacuum"
-    .desc = Stacjonarne urządzenie przyciągające rudy. Nie stać przed urządzeniem kiedy jest aktywne. Posiada punkt montażowy dla próżniowego pudła na rudy
