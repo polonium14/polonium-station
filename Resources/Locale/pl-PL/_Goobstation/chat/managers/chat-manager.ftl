@@ -1,4 +1,3 @@
-
 ## Speech verbs for chat
 
 chat-speech-verb-name-gondola = Gondola
