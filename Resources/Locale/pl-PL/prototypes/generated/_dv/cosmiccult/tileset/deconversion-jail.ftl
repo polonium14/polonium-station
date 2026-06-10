@@ -1,4 +1,4 @@
-ent-CosmicDeconversionJail = Próżnia odosobnienia
-    .desc = Zaawansowana mobilna cela przechowawcza. Po zasileniu jej wnętrze staje się aktywnie żrące dla anomalnych wpływów.
-ent-OublietteCircuitBoard = Płyta sterująca próżni odosobnienia
-    .desc = Płyta drukowana przeznaczona do budowy próżni odosobnienia.
+ent-CosmicDeconversionJail = containment oubliette
+    .desc = An advanced mobile containment cell. When powered, its interior space is actively caustic towards anomalous influences.
+ent-OublietteCircuitBoard = containment oubliette machine board
+    .desc = A machine printed circuit board for a containment oubliette.
