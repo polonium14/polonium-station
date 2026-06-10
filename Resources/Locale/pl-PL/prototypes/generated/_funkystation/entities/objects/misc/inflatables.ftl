@@ -1,9 +1,3 @@
-
-
-ent-InflatableDock = nadmuchiwana śluza dokująca
-    .desc = Nadmuchiwana membrana z wzmocnionymi punktami mocowania, zdolna do dokowania. Zawór zwalniający do spuszczania powietrza. Nie przebijaj.
-    .suffix = Dokowanie
-
-
-
-
+ent-InflatableDock = inflatable external airlock
+    .desc = An inflated membrane with reinforced hardpoints, capable of docking. Release valve to deflate. Do not puncture.
+    .suffix = Docking
