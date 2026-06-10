@@ -23,6 +23,11 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using Content.Shared.Store.Components;
+using Robust.Shared.Configuration;
+using Content.Shared.CCVar;
+using Content.Shared.Store;
+using Robust.Client.Graphics;
 
 namespace Content.Client.Robotics.UI;
 
@@ -31,6 +36,9 @@ public sealed partial class RoboticsConsoleWindow : FancyWindow
 {
     [Dependency] private readonly IEntityManager _entMan = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly IPlayerManager _playerManager = default!;
+    [Dependency] private readonly IConfigurationManager _cfg = default!;
+
     private readonly LockSystem _lock;
     private readonly SpriteSystem _sprite;
 
@@ -46,7 +54,6 @@ public sealed partial class RoboticsConsoleWindow : FancyWindow
     public RoboticsConsoleWindow()
     {
         RobustXamlLoader.Load(this);
-        IoCManager.InjectDependencies(this);
 
         _lock = _entMan.System<LockSystem>();
         _sprite = _entMan.System<SpriteSystem>();
@@ -109,9 +116,8 @@ public sealed partial class RoboticsConsoleWindow : FancyWindow
 
         // Only Malf AI should see the impose-law button.
         var isMalfAi = false;
-        if (IoCManager.Resolve<IPlayerManager>().LocalEntity is { } local)
+        if (_playerManager.LocalEntity is { } local)
             isMalfAi = _entMan.HasComponent<MalfAiMarkerComponent>(local);
-
         ImposeLawButton.Visible = isMalfAi;
     }
 
@@ -165,8 +171,32 @@ public sealed partial class RoboticsConsoleWindow : FancyWindow
         // how the turntables
         DisableButton.Disabled = !(data.HasBrain && data.CanDisable);
 
+        if (!_entMan.HasComponent<MalfAiMarkerComponent>(_playerManager.LocalEntity))
+            return;
+        // Polonium - Sprawdzanie czy wystarczy nam punktów na zhakowanie borga
+        bool canAffordHack = false;
+        if (_entMan.TryGetComponent<StoreComponent>(_playerManager.LocalEntity.Value, out var comp))
+        {
+            ProtoId<CurrencyPrototype> cpu = "CPU";
+            if (comp.Balance.TryGetValue(cpu, out var currency))
+            {
+                if (currency < _cfg.GetCVar(CCVars.MalfAiImposeLawCpuCost))
+                {
+                    ImposeLawButton.ToolTip = Loc.GetString("malfai-store-insufficient-cpu");
+                }
+                else
+                {
+                    canAffordHack = true;
+                    ImposeLawButton.ToolTip = Loc.GetString("malfai-robotics-impose-law-tooltip");
+                }
+            }
+        } // Polonium - Koniec
         // Grey out impose law if borg is already emagged or hacked
-        ImposeLawButton.Disabled = data.Emagged;
+        ImposeLawButton.Disabled = data.Emagged || !canAffordHack;
+        if (data.Emagged) // Polonium - Informacja o emagowanym borgu
+            ImposeLawButton.Text = Loc.GetString("malfai-robotics-borg-emagged");
+        else
+            ImposeLawButton.Text = Loc.GetString("malfai-robotics-impose-law-button");
     }
 
     protected override void FrameUpdate(FrameEventArgs args)
