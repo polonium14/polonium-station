@@ -1,5 +1,5 @@
 ent-BaseBorgChassis = cyborg
-    .desc = Hybryda człowieka i maszyny, która pomaga w działalności stacji. Uwielbiają, gdy prosi się ich o wielokrotne powtarzanie swoich zasad.
+    .desc = A man-machine hybrid that assists in station activity. They love being asked to state their laws over and over.
     .gender = male
 ent-BaseBorgTransponder = { "" }
     .desc = { "" }
