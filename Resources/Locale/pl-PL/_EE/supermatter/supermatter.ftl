@@ -1,29 +1,28 @@
-
-supermatter-announcer = System Silnika Supermaterii
-supermatter-examine-integrity = Integralność silnika wynosi [color=yellow]{ $integrity }%[/color].
-supermatter-healing = Krystaliczna hiperstruktura powraca do bezpiecznych parametrów operacyjnych. Integralność: { $integrity }%.
-supermatter-warning = Ostrzeżenie! Integralność krystalicznej hiperstruktury słabnie! Integralność: { $integrity }%.
-supermatter-emergency = NIEBEZPIECZEŃSTWO! Integralność krystalicznej hiperstruktury osiąga poziomy krytyczne! Integralność: { $integrity }%.
-supermatter-delam-explosion = DELAMINACJA KRYSZTAŁU NIEUCHRONNA! Kryształ osiągnął krytyczną awarię integralności! Awaryjne pole destabilizacji przyczynowości zostało włączone.
-supermatter-delam-overmass = DELAMINACJA KRYSZTAŁU NIEUCHRONNA! Integralność krystalicznej hiperstruktury osiągnęła krytyczną awarię masy! Formowanie osobliwości nieuchronne!
-supermatter-delam-tesla = DELAMINACJA KRYSZTAŁU NIEUCHRONNA! Integralność krystalicznej hiperstruktury osiągnęła krytyczną awarię przepięcia! Formowanie kuli energii nieuchronne!
-supermatter-delam-cascade = DELAMINACJA KRYSZTAŁU NIEUCHRONNA! Granice częstotliwości harmonicznych przekroczone, pole destabilizacji przyczynowości nie mogło zostać włączone!
-supermatter-delam-cancel = Krystaliczna hiperstruktura powraca do bezpiecznych parametrów operacyjnych. Zabezpieczenie zostało wyłączone. Integralność: { $integrity }%.
-supermatter-delam-player = Przez chwilę czujesz, jak rzeczywistość się zniekształca...
-supermatter-seconds-before-delam = Szacowany czas do delaminacji: { $seconds } sekund.
-supermatter-seconds-before-delam-countdown = Pozostało { $seconds } sekund do stabilizacji przyczynowości.
+supermatter-announcer = Automatic Supermatter Engine
+supermatter-examine-integrity = Its integrity is [color=yellow]{ $integrity }%[/color].
+supermatter-healing = Crystalline hyperstructure returning to safe operating parameters. Integrity: { $integrity }%.
+supermatter-warning = Warning! Crystal hyperstructure integrity faltering! Integrity: { $integrity }%.
+supermatter-emergency = DANGER! Crystal hyperstructure integrity reaching critical levels! Integrity: { $integrity }%.
+supermatter-delam-explosion = CRYSTAL DELAMINATION IMMINENT! The crystal has reached critical integrity failure! Emergency causality destabilization field has been engaged.
+supermatter-delam-overmass = CRYSTAL DELAMINATION IMMINENT! Crystal hyperstructure integrity has reached critical mass failure! Singularity formation imminent!
+supermatter-delam-tesla = CRYSTAL DELAMINATION IMMINENT! Crystal hyperstructure integrity has reached critical power surge failure! Energy ball formation imminent!
+supermatter-delam-cascade = CRYSTAL DELAMINATION IMMINENT! Harmonic frequency limits exceeded, causality destabilization field could not be engaged!
+supermatter-delam-cancel = Crystalline hyperstructure returning to safe operating parameters. Failsafe has been disengaged. Integrity: { $integrity }%.
+supermatter-delam-player = You feel reality distort for a moment...
+supermatter-seconds-before-delam = Estimated time before delamination: { $seconds } seconds.
+supermatter-seconds-before-delam-countdown = { $seconds } seconds remain before causality stabilization.
 supermatter-seconds-before-delam-imminent = { $seconds }...
-supermatter-threshold-power = Ostrzeżenie: Hiperstruktura osiągnęła niebezpieczny poziom mocy.
-supermatter-threshold-powerloss = NIEBEZPIECZEŃSTWO: REAKCJA ŁAŃCUCHOWA BEZWŁADNOŚCI ŁADUNKU W TOKU.
-supermatter-threshold-mole = Ostrzeżenie: Osiągnięto krytyczną masę chłodziwa.
-supermatter-tamper-begin = Zaczynasz ostrożnie odcinać kawałek kryształu supermaterii...
-supermatter-tamper-end = Czujesz moc tysiąca słońc spoczywającą na twoich dłoniach. A może to tylko promieniowanie?
+supermatter-threshold-power = Warning: Hyperstructure has reached dangerous power level.
+supermatter-threshold-powerloss = DANGER: CHARGE INERTIA CHAIN REACTION IN PROGRESS.
+supermatter-threshold-mole = Warning: Critical coolant mass reached.
+supermatter-tamper-begin = You begin carefully cutting a piece off the supermatter crystal...
+supermatter-tamper-end = You feel the power of a thousand suns laying on your palms. Or is it all the radiation?
 supermatter-announcement-cc-tamper =
-    Nasz automatyczny system ofiar wykrył, że integralność strukturalna kryształu supermaterii została naruszona przez siłę zewnętrzną.
-        Dział inżynieryjny, natychmiast zgłosić się do silnika supermaterii.
-supermatter-collide = { CAPITALIZE($target) } wpada w { $sm }!
-supermatter-collide-mob = Ciało { CAPITALIZE($target) } błyskawicznie zamienia się w pył!
-supermatter-collide-insert = { CAPITALIZE($target) } dotyka { $sm } za pomocą { $item } i błyskawicznie zamienia się to w pył!
-supermatter-collide-insert-user = Dotykasz { $sm } za pomocą { $item } i błyskawicznie zamienia się to w pył!
-supermatter-collide-insert-unremoveable = { CAPITALIZE($target) } dotyka { $sm } za pomocą { $item } i błyskawicznie zamienia się w pył!
-supermatter-collide-insert-unremoveable-user = Dotykasz { $sm } za pomocą { $item } i błyskawicznie zamieniasz się w pył!
+    Our automatic casualty system has detected that the supermatter crystal structural integrity was compromised by an external force.
+        Engineering department, report to the supermatter engine immediately.
+supermatter-collide = { CAPITALIZE(THE($target)) } slams into { THE($sm) }!
+supermatter-collide-mob = { CAPITALIZE(THE($target)) }'s body flashes into dust!
+supermatter-collide-insert = { CAPITALIZE(THE($target)) } touches { THE($sm) } with { THE($item) } and it flashes into dust!
+supermatter-collide-insert-user = You touch { THE($sm) } with { THE($item) } and it flashes into dust!
+supermatter-collide-insert-unremoveable = { CAPITALIZE(THE($target)) } touches { THE($sm) } with { THE($item) } and flashes into dust!
+supermatter-collide-insert-unremoveable-user = You touch { THE($sm) } with { THE($item) } and flash into dust!
