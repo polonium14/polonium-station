@@ -1,4 +1,4 @@
-ent-MobCosmicWisp = Ognik
+ent-MobCosmicWisp = Wisp
     .desc = { ent-BaseSimpleMob.desc }
-ent-CosmicChantryWisp = Uwięziony Ognik
+ent-CosmicChantryWisp = Trapped Wisp
     .desc = { "" }
