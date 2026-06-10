@@ -1,7 +1,7 @@
-ent-MobCosmicAstralAscended = astral ascended
-    .desc = Transcendant, ascendant.
 ent-MobCosmicAstralProjection = astral projection
     .desc = Neither here nor there.
+ent-MobCosmicAstralAscended = astral ascended
+    .desc = Transcendant, ascendant.
 ent-MobCosmicCustodian = malign custodian
     .desc = An abomination wrought of malign mass. It floats with a weightless, unnerving grace.
 ent-MobCosmicOracle = malign oracle
