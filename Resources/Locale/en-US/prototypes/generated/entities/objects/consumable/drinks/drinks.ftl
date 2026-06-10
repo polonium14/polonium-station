@@ -681,8 +681,3 @@ ent-DrinkBloodGlass = { ent-DrinkGlass }
     .suffix = blood
     .desc = { ent-DrinkGlass.desc }
   .gender = neuter
-
-ent-DrinkBarefootGlass = { ent-DrinkGlass }
-    .suffix = { reagent-name-barefoot }
-    .desc = { ent-DrinkGlass.desc }
-    .gender = neuter

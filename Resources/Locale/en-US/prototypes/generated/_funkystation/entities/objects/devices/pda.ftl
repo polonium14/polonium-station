@@ -10,6 +10,3 @@ ent-NanotrasenRepresentativePDA = nanotrasen representative PDA
     .desc = Make everyone anxious with your presense.
 ent-TrainerPDA = nct's PDA
     .desc = A standard-issue nanotrasen career trainer PDA.
-
-ent-GeneticistPDA = PDA genetyka
-    .desc = Wygląda na dość brudną.

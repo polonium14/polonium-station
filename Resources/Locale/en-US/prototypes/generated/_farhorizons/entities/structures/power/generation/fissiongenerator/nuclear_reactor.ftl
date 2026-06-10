@@ -16,6 +16,3 @@ ent-ReactorSmallFlowArrow = { ent-ReactorFlowArrow }
     .desc = { ent-ReactorFlowArrow.desc }
 ent-ReactorGasPipe = { "" }
     .desc = { "" }
-
-ent-ReactorComponent = komponent reaktora
-    .desc = { "" }

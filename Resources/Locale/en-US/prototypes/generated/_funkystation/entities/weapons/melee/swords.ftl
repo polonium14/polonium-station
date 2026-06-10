@@ -6,6 +6,3 @@ ent-WeaponChaplainChainsword = bloody chainsword
     .desc = A brutal mix of chainsaw and sword, covered in blood stains. Blood for the blood god!
 ent-WeaponChaplainHauntedSword = haunted sword
     .desc = An ancient weapon haunted by spirits unknown, it harnesses this powerful spiritual power to harm foes (and for occasional jokes).
-
-ent-SwordChaplainCosmic = gwiaździsta rapier
-    .desc = Eteryczna rapier, który w dotyku jest zimny jak zima. Mówi się, że zbyt długie dzierżenie tego miecza wysysa duszę z tych, którzy nie zostali dotknięci prawdą.

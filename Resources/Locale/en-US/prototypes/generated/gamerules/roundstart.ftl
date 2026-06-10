@@ -54,6 +54,3 @@ ent-SpaceTrafficControlFriendlyEventScheduler = { ent-BaseGameRule }
     .desc = { ent-BaseGameRule.desc }
 ent-BasicRoundstartVariation = { ent-BaseGameRule }
     .desc = { ent-BaseGameRule.desc }
-
-ent-Zombie = { ent-BaseGameRule }
-    .desc = { ent-BaseGameRule.desc }

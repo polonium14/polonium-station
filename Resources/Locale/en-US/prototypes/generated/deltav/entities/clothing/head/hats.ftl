@@ -8,6 +8,3 @@ ent-ClothingHeadHatSurgcapRainbow = surgical cap
     .desc = A rainbow cap surgeons wear during operations. Keeps their hair from tickling your internal organs.
 ent-ClothingHeadHatSurgcapWhite = surgical cap
     .desc = A white cap surgeons wear during operations. Keeps their hair from tickling your internal organs.
-
-ent-ClothingHeadHatSurgcapBlack = surgical cap
-    .desc = A black cap surgeons wear during operations. Keeps their hair from tickling your internal organs.

@@ -22,6 +22,3 @@ ent-IDCardAncientNanotrasen = Nanotrasen ID
     .desc = A neck-worn ID Badge, has one of those fancy new magnetic strips built in. This one is for a Nanotrasen Representative.
 ent-SpaceCowboyIDCard = space cowboy ID card
     .desc = To the Space Station rode a stranger one fine day.
-
-ent-GeneticistIDCard = identyfikator genetyka
-    .desc = { ent-IDCardStandard.desc }
