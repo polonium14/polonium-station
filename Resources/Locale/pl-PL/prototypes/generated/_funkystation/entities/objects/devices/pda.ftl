@@ -1,15 +1,14 @@
-ent-InternalAffairsAgentPDA = PDA agenta spraw wewnętrznych
-    .desc = Do szpiegowania zarówno niewinnych, jak i winnych.
-ent-MagistratePDA = PDA magistrata
-    .desc = Dla tych szczęśliwych.
-ent-SeniorDetectivePDA = PDA starszego detektywa
-    .desc = Gotowy na kolejną rundę, dzieciaku?
-ent-BlueshieldOfficerPDA = PDA oficera niebieskiej tarczy
-    .desc = Pamiętaj, nie jesteś ochroną.
-ent-NanotrasenRepresentativePDA = PDA przedstawiciela Nanotrasen
-    .desc = Spraw, aby wszyscy czuli się nieswojo w twojej obecności.
-ent-GeneticistPDA = PDA genetyka
-    .desc = Wygląda na dość brudną.
-
+ent-InternalAffairsAgentPDA = internal affairs agent PDA
+    .desc = For spying on the innocent and guilty alike.
+ent-MagistratePDA = magistrate PDA
+    .desc = For the fortunate ones.
+ent-SeniorDetectivePDA = senior detective PDA
+    .desc = Ready for another round, kid?
+ent-BlueshieldOfficerPDA = blueshield officer PDA
+    .desc = Remember, you are NOT security.
+ent-NanotrasenRepresentativePDA = nanotrasen representative PDA
+    .desc = Make everyone anxious with your presense.
 ent-TrainerPDA = nct's PDA
     .desc = A standard-issue nanotrasen career trainer PDA.
+ent-GeneticistPDA = PDA genetyka
+    .desc = Wygląda na dość brudną.
