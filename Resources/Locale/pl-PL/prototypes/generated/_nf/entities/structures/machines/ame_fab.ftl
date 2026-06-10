@@ -1,2 +1,2 @@
-ent-AntiMatterFabricator = fabrykator antymaterialny
-    .desc = Olbrzymia maszyna, która przekształca plastal i energię w antymaterię i przechowuje ją w słoikach paliwa AM.
+ent-AntiMatterFabricator = anti-matter fabricator
+    .desc = A colossal machine that converts plasteel and power into antimatter and stores it in AME fuel jars in a slot.
