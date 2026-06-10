@@ -1,3 +1,3 @@
-ent-RandomIngredient = spawner losowych składników
-    .suffix = Nieroślinne
+ent-RandomIngredient = random ingredient spawner
+    .suffix = Non-Plant
     .desc = { ent-MarkerBase.desc }
