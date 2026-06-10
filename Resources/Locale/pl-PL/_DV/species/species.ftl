@@ -1,7 +1,6 @@
-
 ## Species Names
 
-species-name-vulpkanin = Wulp
-species-name-harpy = Harpia
-species-name-rodentia = Gryzoń
+species-name-vulpkanin = Vulpkanin
+species-name-harpy = Harpy
+species-name-rodentia = Rodentia
 species-name-chitinid = Chitinid
