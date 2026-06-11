@@ -65,6 +65,7 @@
 // SPDX-FileCopyrightText: 2026 AirFryerBuyOneGetOneFree <jakoblondon01@gmail.com>
 // SPDX-FileCopyrightText: 2026 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2026 W.xyz() <tptechteam@gmail.com>
+// SPDX-FileCopyrightText: 2026 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2026 w.xyz() <84605679+pirakaplant@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
@@ -73,6 +74,7 @@ using System.Linq;
 using System.Numerics;
 using Content.Client.ContextMenu.UI;
 using Content.Client.Examine;
+using Content.Client.Stylesheets.Fonts;
 using Content.Client.PDA;
 using Content.Client.Resources;
 using Content.Client.Silicons.Laws.SiliconLawEditUi;
@@ -650,7 +652,7 @@ namespace Content.Client.Stylesheets
             var sliderFillBlue = new StyleBoxTexture(sliderFillBox) { Modulate = Color.Blue };
             var sliderFillWhite = new StyleBoxTexture(sliderFillBox) { Modulate = Color.White };
 
-            var boxFont13 = resCache.GetFont("/Fonts/Boxfont-round/Boxfont Round.ttf", 13);
+            var tomorrowFont = TomorrowFont.GetWindowTitle(resCache);
 
             var insetBack = new StyleBoxTexture
             {
@@ -685,7 +687,7 @@ namespace Content.Client.Stylesheets
                     new[]
                     {
                         new StyleProperty(Label.StylePropertyFontColor, NanoGold),
-                        new StyleProperty(Label.StylePropertyFont, notoSansDisplayBold14),
+                        new StyleProperty(Label.StylePropertyFont, tomorrowFont),
                     }),
                 // Alert (white) window title.
                 new StyleRule(
@@ -693,7 +695,7 @@ namespace Content.Client.Stylesheets
                     new[]
                     {
                         new StyleProperty(Label.StylePropertyFontColor, Color.White),
-                        new StyleProperty(Label.StylePropertyFont, notoSansDisplayBold14),
+                        new StyleProperty(Label.StylePropertyFont, tomorrowFont),
                     }),
                 // Window background.
                 new StyleRule(
@@ -1573,7 +1575,7 @@ namespace Content.Client.Stylesheets
 
                 // Window Headers
                 Element<Label>().Class("FancyWindowTitle")
-                    .Prop("font", boxFont13)
+                    .Prop("font", tomorrowFont)
                     .Prop("font-color", NanoGold),
 
                 Element<PanelContainer>().Class("WindowHeadingBackground")
