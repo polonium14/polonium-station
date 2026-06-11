@@ -34,7 +34,7 @@ SPDX-License-Identifier: MIT
 
                 SetSize="980 700"
 
-                MinSize="100 200"
+                MinSize="600 400"
 
                 Resizable="True"
 
