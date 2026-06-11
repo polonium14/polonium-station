@@ -1,4 +1,4 @@
-game-hud-open-escape-menu-button-tooltip = Open escape menu.
+game-hud-open-escape-menu-button-tooltip = Otwórz menu wyjścia.
 game-hud-open-guide-menu-button-tooltip = Open guidebook menu.
 game-hud-open-character-menu-button-tooltip = Open character menu.
 game-hud-open-emotes-menu-button-tooltip = Open emotes menu.
