@@ -7,16 +7,16 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-  #Air Injector
-  The air injector is a special vent that forces gasses into the atmosphere it's exposed to.
+  #Wtryskiwacz powietrza
+  Wtryskiwacz powietrza to specjalny otwór wentylacyjny, który wtłacza gazy do otaczającej go atmosfery.
   <Box>
     <GuideEntityEmbed Entity="GasOutletInjector"/>
   </Box>
-  It is primarily used to force gasses into high-pressure rooms like the station's [textlink="gas storage rooms" link="GasMiningAndStorage"] or a burn chamber.
+  Służy przede wszystkim do wtłaczania gazów do komór wysokociśnieniowych, takich jak komory spalania.
 
-  The air injector does not require [textlink="power" link="Power"] to function.
+  Wtryskiwacz powietrza nie wymaga [textlink="zasilania" link="Power"] do działania.
 
-  The air injector will inject gasses into the atmosphere it's exposed to until the atmosphere reaches [color=orange][protodata="GasOutletInjector" comp="GasOutletInjector" member="MaxPressure"/] kPa[/color].
+  Wtryskiwacz powietrza będzie wtryskiwał gazy do otaczającej go atmosfery, dopóki ciśnienie w atmosferze nie osiągnie [color=orange][protodata="GasOutletInjector" comp="GasOutletInjector" member="MaxPressure"/] kPa[/color].
 
-  The air injector's speed is proportional to the amount of gas in the injector.
+  Prędkość wtryskiwacza jest proporcjonalna do ilości gazu w wtryskiwaczu.
 </Document>

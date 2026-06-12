@@ -7,20 +7,20 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-  # Generators
-  Generators are devices that produce power for the station. They vary in size and power output, and each has its own unique quirks and requirements.
+  # Generatory
+  Generatory to urządzenia wytwarzające energię dla stacji. Różnią się one wielkością i mocą wyjściową, a każdy z nich ma swoje specyficzne cechy i wymagania.
 
-  Engineers are intended to setup low-tier generators like Solar Arrays and the AME at the start of the shift, to give enough time to setup higher-tier generators like the Singularity Engine for sustained power for the rest of the shift.
+  Inżynierowie na początku zmiany mają za zadanie skonfigurować generatory niższych kategorii, takie jak panele słoneczne i SAM, aby zapewnić wystarczającą ilość czasu na uruchomienie generatorów wyższych kategorii, takich jak singularity, które zapewnią stały dopływ energii przez resztę zmiany.
 
   <Box>
     <GuideEntityEmbed Entity="SingularityGenerator" Caption=""/>
     <GuideEntityEmbed Entity="TeslaGenerator" Caption=""/>
   </Box>
   <Box>
-    ## Singularity and Tesla Engine
+    ## Singularity i Tesla
   </Box>
   <Box>
-    [color=#999999][italic]Devices capable of infinite energy — and destructive potential[italic][/color]
+    [color=#999999][italic]Urządzenia dysponujące nieograniczoną energią i siejące nieograniczone spustoszenie[italic][/color]
   </Box>
 
   <Box>
@@ -28,10 +28,10 @@ SPDX-License-Identifier: MIT
 	  <GuideEntityEmbed Entity="Turbine" Caption=""/>
   </Box>
   <Box>
-    ## Nuclear Generator
+    ## Reaktor jądrowy
   </Box>
   <Box>
-    [color=#999999][italic]Harnesses the power of nuclear fission to power the station.[italic][/color]
+    [color=#999999][italic]Wykorzystuje energię rozszczepienia jądrowego do zasilania elektrowni.[italic][/color]
   </Box>
 
   <Box>
@@ -39,10 +39,10 @@ SPDX-License-Identifier: MIT
     <GuideEntityEmbed Entity="AmePartFlatpack" Caption=""/>
   </Box>
   <Box>
-    ## Antimatter Engine
+    ## Silnik antymaterii (SAM)
   </Box>
   <Box>
-    [color=#999999][italic]Short-term support generator for the station[italic][/color]
+    [color=#999999][italic]Awaryjny generator zasilania stacji wytwarzający prąd zasialny paliwem antymaterialnym[italic][/color]
   </Box>
 
   <Box>
@@ -51,10 +51,10 @@ SPDX-License-Identifier: MIT
     <GuideEntityEmbed Entity="TegCirculator" Caption="" Margin="0"/>
   </Box>
   <Box>
-    ## Thermo-electric Generator
+    ## Generator termoelektryczny (TEG)
   </Box>
   <Box>
-    [color=#999999][italic]Advanced atmospherics generator that harnesses the energy of gasses[italic][/color]
+    [color=#999999][italic]Zaawansowany generator przekształcający energię cieplną bezpośrednio w energię elektryczną dzięki występującej różnicy temperatur między dwoma materiałami półprzewodnikowymi[italic][/color]
   </Box>
 
   <Box>
@@ -63,10 +63,10 @@ SPDX-License-Identifier: MIT
     <GuideEntityEmbed Entity="SolarPanel" Caption=""/>
   </Box>
   <Box>
-    ## Solar Panels
+    ## Panele słoneczne
   </Box>
   <Box>
-    [color=#999999][italic]Low-maintenance passive power source[italic][/color]
+    [color=#999999][italic]Niewymagające konserwacji pasywne źródło zasilania[italic][/color]
   </Box>
 
 
@@ -76,19 +76,19 @@ SPDX-License-Identifier: MIT
     <GuideEntityEmbed Entity="PortableGeneratorSuperPacman" Caption="" />
   </Box>
   <Box>
-    ## Portable Generators
+    ## Generatory przenośne
   </Box>
   <Box>
-    [color=#999999][italic]Portable generators for crew use and emergency power[italic][/color]
+    [color=#999999][italic]Przenośne generatory przeznaczone dla załogi oraz do zasilania awaryjnego[italic][/color]
   </Box>
 
   <Box>
     <GuideEntityEmbed Entity="GeneratorRTG" Caption="" />
   </Box>
   <Box>
-    ## Radioisotope Thermoelectric Generator
+    ## Radioizotopowy generator termoelektryczny (RTG)
   </Box>
   <Box>
-    [color=#999999][italic]Zero-maintenance passive power source[italic][/color]
+    [color=#999999][italic]Niewymagające konserwacji pasywne źródło zasilania[italic][/color]
   </Box>
 </Document>

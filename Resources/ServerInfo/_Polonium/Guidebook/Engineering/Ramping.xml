@@ -7,22 +7,22 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-  # Ramping
-  Contrary to what one might expect from a video game electrical simulation, power is not instantly provided upon request.
+  # Stopniowe zwiększanie mocy
+  W przeciwieństwie do tego, czego można by się spodziewać po symulacji elektrycznej w grze komputerowej, moc nie jest dostarczana natychmiast po zgłoszeniu zapotrzebowania.
 
-  Generators and batteries take time to ramp up to match the draw imposed on them, which leads to brownouts when there are large changes in current draw all at once; for example, when batteries run out.
+  Generatory i akumulatory potrzebują czasu, aby dostosować się do obciążenia, co prowadzi do spadków napięcia w przypadku nagłych, znacznych zmian poboru prądu; na przykład gdy wyczerpią się akumulatory.
 
-  Observe the following example:
-  - Say you have a generator that outputs 100 kW of power.
-  - If you have a device that draws 50 kW of power, the generator will output 50 kW of power to match the grid's demand to its supply.
-  - If you then turn on a device that draws another 50 kW of power, the generator will take time to ramp up to 100 kW of power. It will not provide this power instantly.
-  - During this time, devices will not recieve the power they need, and the grid will experience a temporary brownout.
-  - After some seconds have passed, the generator will have ramped up to 100 kW of power, and the brownout will end. All devices are now satisfied with the power they are receiving.
+  Rozważmy następujący przykład:
+  - Załóżmy, że masz generator o mocy wyjściowej 100 kW.
+  - Jeśli masz urządzenie, które pobiera 50 kW mocy, generator wygeneruje 50 kW mocy, aby dopasować podaż do zapotrzebowania sieci.
+  - Jeśli następnie włączysz urządzenie, które pobiera kolejne 50 kW mocy, generator potrzebuje czasu, aby osiągnąć moc 100 kW. Nie dostarczy tej mocy natychmiast.
+  - W tym czasie urządzenia nie będą otrzymywać potrzebnej mocy, a w sieci wystąpi tymczasowy spadek napięcia.
+  - Po upływie kilku sekund generator osiągnie moc 100 kW, a spadek napięcia ustąpi. Wszystkie urządzenia będą teraz otrzymywały wystarczającą ilość mocy.
 
-  During a shift, this is most commonly observed when a generator runs out of fuel and suddenly stops producing power.
-  Suddenly the grid is hit with a large deficit of power (as supply has fallen below demand), and all devices will experience a brownout until SMESes or other generators can ramp up to match the new demand.
+  Podczas zmiany najczęściej można zaobserwować to zjawisko, gdy generatorowi skończy się paliwo i nagle przestaje on wytwarzać energię.
+  W sieci nagle pojawia się znaczny deficyt mocy (ponieważ podaż spadła poniżej popytu), a wszystkie urządzenia doświadczają spadku napięcia, dopóki małe i średnie generatory lub inne generatory nie osiągną mocy pozwalającej zaspokoić nowe zapotrzebowanie.
 
-  This can also happen when a large power consuming device or department is reconnected to the grid.
-  The sudden increase in power draw will cause a brownout until the generators can ramp up to match the new demand.
+  Może się to również zdarzyć, gdy do sieci zostanie ponownie podłączone urządzenie lub departament o dużym poborze mocy.
+  Nagły wzrost poboru mocy spowoduje spadek napięcia, dopóki generatory nie zwiększą mocy, aby sprostać nowemu zapotrzebowaniu.
 
 </Document>

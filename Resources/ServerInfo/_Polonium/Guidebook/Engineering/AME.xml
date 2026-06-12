@@ -15,28 +15,28 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-  # Antimatter Engine (AME)
-  The Antimatter Engine is a short-term support generator for the station, providing a sizable chunk of power for a limited time.
+  # Silnik antymaterii (SAM)
+  Silnik antymaterii to generator zapewniający stacji krótkotrwałe zasilanie, dostarczający znaczną ilość energii przez ograniczony czas.
 
-  It's mainly used to assist engineers in starting up bigger engines like the [textlink="Singularity Engine" link="SingularityEngine"] or [textlink="Tesla Engine" link="TeslaEngine"], by supplementing the station's [textlink="batteries" link="PowerStorage"] with partial power to extend their runtime.
+  Służy głównie do wspomagania inżynierów przy uruchamianiu większych generatorów, takich jak [textlink="Singularity" link="SingularityEngine"] czy [textlink="Tesla" link="TeslaEngine"], poprzez uzupełnianie [textlink="akumulatorów" link="PowerStorage"] stacji o część energii, co pozwala wydłużyć czas ich pracy.
 
-  ## Construction
-  <Box>Required parts:</Box>
+  ## Budowa
+  <Box>Wymagane części:</Box>
   <Box>
   <GuideEntityEmbed Entity="AmeController"/>
   <GuideEntityEmbed Entity="AmePartFlatpack"/>
   <GuideEntityEmbed Entity="AmeJar"/>
   </Box>
 
-  The AME Controller is the part of the AME that outputs power to the station's grid through an [textlink="HV connection" link="VoltageNetworks"].
-  Because of this, you'll want to start your AME construction with the controller on top of an [color=orange]HV wire[/color].
+  Kontroler SAM stanowi część systemu SAM odpowiedzialną za dostarczanie energii do sieci stacji poprzez [textlink="przyłącze wysokiego napięcia" link="VoltageNetworks"].
+  Z tego powodu budowę systemu SAM warto rozpocząć od umieszczenia kontrolera na [color=orange]przewodzie wysokiego napięcia[/color].
 
-  Most stations have exposed [color=orange]HV wiring[/color] or designated spots to wrench an AME controller, so that it connects to the grid.
+  W większości stacji [color=orange]przewody wysokiego napięcia[/color] są odsłonięte lub wyznaczono specjalne miejsca, w których można podłączyć kontroler SAM do sieci zasilającej.
 
-  AME shielding is the physical structure that makes the antimatter engine. It's made by converting AME flatpacks into shielding using a multitool.
+  Obudowa SAM to fizyczna konstrukcja, która tworzy silnik antymaterii. Powstaje ona poprzez rozpakowanie zestawów do montażu SAM za pomocą multinarzędzia.
 
-  To construct an AME, start putting down a 3x3 or larger square of AME flatpacks in preparation for construction, making sure to maximize the number of "center" pieces that are surrounded on all eight sides.
-  The greater amount of center pieces, the more cores your AME will have, and the more power it will be able to output safely.
+  Aby zbudować SAM, zacznij układać kwadrat o wymiarach 3x3 lub większy z zestawów do montażu SAM. Pamiętaj, aby maksymalnie wykorzystać liczbę elementów "środkowych", które są otoczone ze wszystkich ośmiu stron.
+  Im więcej elementów środkowych, tym więcej rdzeni będzie miał SAM i tym większą moc będzie mógł bezpiecznie wytworzyć.
 
   <Box>
     <GuideEntityEmbed Entity="AmePartFlatpack" Caption=""/>
@@ -54,7 +54,7 @@ SPDX-License-Identifier: MIT
     <GuideEntityEmbed Entity="AmePartFlatpack" Caption=""/>
   </Box>
 
-  Once this is done, you can use a multitool to convert each AME flatpack into shielding, which should form a finished AME configuration.
+  Gdy to zrobisz, możesz użyć multinarzędzia, aby przekształcić każdy zestaw do montażu SAM w obudowę, co powinno utworzyć gotową konstrukcję SAM.
 
   <GuideEntityEmbed Entity="AmeController" Caption=""/>
   <Box>
@@ -73,20 +73,20 @@ SPDX-License-Identifier: MIT
     <GuideEntityEmbed Entity="AmeShielding" Caption="" Margin="0"/>
   </Box>
   <Box>
-    [color=#999999][italic]An example of a one core setup[italic][/color]
+    [color=#999999][italic]Przykład struktury z jednym rdzeniem[italic][/color]
   </Box>
 
-  ## Operation
-  To start the AME, insert a fuel jar into the AME controller, and set the safe injection rate.
+  ## Obsługa
+  Aby uruchomić SAM, należy włożyć butlę paliwa SAM do kontrolera SAM i ustawić bezpieczną prędkość wtrysku.
 
-  The safe injection rate is the point where the AME can safely run without overheating, while maximizing power output.
+  Bezpieczna prędkość wtrysku to wartość, przy której SAM może bezpiecznie pracować bez przegrzania, zapewniając jednocześnie maksymalną moc wyjściową.
 
-  This rate is always twice the core count.
+  Wartość ta [color=RED]zawsze[/color] jest dwukrotnością liczby rdzeni.
 
-  For example, an AME with one core will have a safe injection rate of 2. With two cores, the safe injection rate would be 4, and so on.
+  Na przykład bezpieczna prędkość wtrysku dla SAM z jednym rdzeniem, będzie wynosiła 2. W przypadku dwóch rdzeni bezpieczna prędkość wtrysku wyniesie 4 i tak dalej.
 
-  Any more than this ratio will eventually result in the engine [color=#ff0000]overheating[/color] and, shortly afterwards, [color=#ff0000]exploding[/color].
+  Przekroczenie tego stosunku doprowadzi w końcu do [color=#ff0000]przegrzania[/color] i niedługo później do [color=#ff0000]eksplozji[/color] SAM.
 
-  The AME controller will [textlink="report" link="InspectingPower"] on both the amount of power it is providing to the grid, and the theoretical maximum power it could provide if demanded.
+  Kontroler SAM [textlink="zgłosi" link="InspectingPower"] zarówno ilość energii dostarczanej do sieci, jak i teoretyczną maksymalną moc, jaką mógłby dostarczyć w razie zapotrzebowania.
 
 </Document>
