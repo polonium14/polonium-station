@@ -15,7 +15,9 @@ using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Database;
 using Content.Shared.Examine;
 using Content.Shared.Interaction;
+using Content.Shared.Maps;
 using Content.Shared.Materials;
+using Content.Shared.Physics;
 using Content.Shared.Popups;
 using Content.Shared.Tools.Systems;
 using Robust.Shared.Audio.Systems;
@@ -34,8 +36,8 @@ public abstract class SharedFlatpackSystem : EntitySystem
     [Dependency] protected readonly SharedAppearanceSystem Appearance = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!;
-    [Dependency] private readonly EntityLookupSystem _entityLookup = default!;
     [Dependency] private readonly SharedMapSystem _map = default!;
+    [Dependency] private readonly TurfSystem _turfs = default!;
     [Dependency] protected readonly MachinePartSystem MachinePart = default!;
     [Dependency] protected readonly SharedMaterialStorageSystem MaterialStorage = default!;
     [Dependency] private readonly MetaDataSystem _metaData = default!;
@@ -88,12 +90,8 @@ public abstract class SharedFlatpackSystem : EntitySystem
         }
 
         var buildPos = _map.TileIndicesFor(grid, gridComp, xform.Coordinates);
-        var coords = _map.ToCenterCoordinates(grid, buildPos);
 
-        // TODO FLATPAK
-        // Make this logic smarter. This should eventually allow for shit like building microwaves on tables and such.
-        // Also: make it ignore ghosts
-        if (_entityLookup.AnyEntitiesIntersecting(coords, LookupFlags.Dynamic | LookupFlags.Static))
+        if (_turfs.IsTileBlocked(grid, buildPos, CollisionGroup.Impassable))
         {
             // this popup is on the server because the predicts on the intersection is crazy
             if (_net.IsServer)
