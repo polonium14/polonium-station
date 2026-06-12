@@ -36,7 +36,7 @@ SPDX-License-Identifier: MIT
 
   Oznacza to, że maksymalna długość pola zabezpieczającego wynosi 7 pól.
 
-  Generator pola izolacyjnego można włączyć używając [color=yellow][bold][keybind="Use"][/bold][/color].
+  Generator pola zabezpieczającego można włączyć używając [color=yellow][bold][keybind="Use"][/bold][/color].
   Generatory pola zabezpieczającego nie będą działać, jeśli nie zostaną włączone, nawet po trafieniu emiterem. Pamiętaj, aby włączyć generator pola!
 
   Generator pola zabezpieczającego posiada wewnętrzny poziom energii, który uzupełnia się poprzez trafienie go emiterem. Gdy generator pola zabezpieczającego zgromadzi wystarczającą ilość energii, wygeneruje pole zabezpieczające.
