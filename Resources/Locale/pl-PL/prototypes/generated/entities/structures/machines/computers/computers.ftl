@@ -1,5 +1,5 @@
-ent-ComputerAlert = komputer do alertów atmosferycznych
-    .desc = Używany do dostępu do zautomatyzowanego systemu alertów atmosferycznych stacji.
+ent-ComputerAlert = komputer alarmów atmosferycznych
+    .desc = Urządzenie wyświetlające informacje o wszystkich alarmach atmosferycznych i przeciwpożarowych na terenie stacji
 ent-ComputerAtmosMonitoring = monitor sieci atmosferycznej
     .desc = Używany do monitorowania sieci atmosferycznych stacji.
 ent-ComputerEmergencyShuttle = konsola wahadłowca ewakuacyjnego

@@ -15,6 +15,7 @@
 // SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
 // SPDX-FileCopyrightText: 2024 chavonadelal <156101927+chavonadelal@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
 //
 // SPDX-License-Identifier: MIT
@@ -166,8 +167,8 @@ namespace Content.Client.Wires.UI
 
             LayoutContainer.SetAnchorPreset(topContainerWrap, LayoutContainer.LayoutPreset.Wide);
 
-            var font = _resourceCache.GetFont("/Fonts/Boxfont-round/Boxfont Round.ttf", 13);
-            var fontSmall = _resourceCache.GetFont("/Fonts/Boxfont-round/Boxfont Round.ttf", 10);
+            var font = _resourceCache.GetFont("/Fonts/_Polonium/Tomorrow/Tomorrow-Bold.ttf", 13);
+            var fontSmall = _resourceCache.GetFont("/Fonts/_Polonium/Tomorrow/Tomorrow-Bold.ttf", 10);
 
             Button helpButton;
             var topRow = new BoxContainer
@@ -585,7 +586,7 @@ namespace Content.Client.Wires.UI
                     };
                 }
 
-                var font = resourceCache.GetFont("/Fonts/Boxfont-round/Boxfont Round.ttf", 12);
+                var font = resourceCache.GetFont("/Fonts/_Polonium/Tomorrow/Tomorrow-Bold.ttf", 12);
 
                 var hBox = new BoxContainer
                 {

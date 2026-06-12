@@ -7,31 +7,31 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-  # Air Scrubber
-  The air scrubber is essential in maintaining an atmosphere free of waste gasses emitted by breathing creatures and atmospheric upsets.
-  Its primary job is to scrub unwanted gasses from the atmosphere it's exposed to.
+  # Oczyszczacz powietrza
+  Oczyszczacz powietrza odgrywa kluczową rolę w utrzymaniu czystego powietrza.
+  Jego głównym zadaniem jest usuwanie niepożądanych gazów z otaczającego go powietrza.
   <Box>
     <GuideEntityEmbed Entity="GasVentScrubber"/>
   </Box>
-  The air scrubber requires [textlink="power" link="Power"] through a nearby [textlink="LV cable" link="VoltageNetworks"] to function.
+  Aby urządzenie mogło działać, konieczne jest podłączenie go do [textlink="źródła zasilania" link="Power"] za pomocą pobliskiego [textlink="kabla niskonapięciowego" link="VoltageNetworks"].
 
-  The default behavior of an air scrubber is to scrub all gasses except Nitrogen and Oxygen from the atmosphere it's exposed to. It will continue this behavior unless directed by a [textlink="linked" link="Networking"] [textlink="air alarm" link="AirAlarms"].
+  Domyślnym działaniem oczyszczacza powietrza jest usuwanie wszystkich gazów z otaczającej go przestrzeni, z wyjątkiem azotu i tlenu. Urządzenie będzie kontynuowało tę czynność, dopóki nie otrzyma odpowiedniego polecenia od [textlink="połączonego" link="Networking"] [textlink="alarmu atmosferycznego" link="AirAlarms"].
 
-  The scrubber can be welded with any welding tool to stop it from functioning.
+  Oczyszczacz można zespawać dowolnym narzędziem spawalniczym, aby zatrzymać jego działanie.
 
-  ## Configuration Options
-  When [textlink="linked" link="Networking"] to an [textlink="air alarm" link="AirAlarms"], air scrubbers gain more functionality.
+  ## Opcje konfiguracji
+  Oczyszczacz powietrza zyskuje dodatkową funkcjonalność po [textlink="połączeniu" link="Networking"] z [textlink="alarmem atmosferycznym" link="AirAlarms"].
 
-  The target gasses for scrubbing can be defined in the "Gas filters" dropdown. Keep in mind this resets if you change [textlink="air alarm" link="AirAlarms"] modes.
+  Gazy, które mają być poddane oczyszczaniu, można określić w menu rozwijanym "Filtry". Należy pamiętać, że ustawienia te zostaną zresetowane w przypadku zmiany trybu działania [textlink="alarmu atmosferycznego" link="AirAlarms"].
 
-  Air scrubbers have two "direction" options: Scrubbing and Siphoning.
-  - Scrubbing scrubs gasses as defined in the gas filters.
-  - Siphoning ignores all gas filters, and sucks all gasses out of the atmosphere.
+  Oczyszczacze powietrza mają dwie opcje "trybu pracy": filtrowanie i zasysanie.
+  - Tryb filtrowania oczyszcza gazy zgodnie z ustawieniami filtrów gazowych.
+  - Tryb zasysania pomija wszystkie filtry gazowe i odsysają wszystkie gazy z otoczenia.
 
-  Both of these modes are limited by the Rate setting, which defines the rate (in litres) at which the scrubber sucks gasses from its exposed atmosphere.
+  Oba te tryby są ograniczone przez ustawienie prędkości, które określa wydajność (w litrach), z jaką oczyszczacz zasysa gazy z otaczającej go atmosfery.
 
-  Air scrubbers also have a "WideNet" setting, which expands the radius of the scrubber's operating range. Normally, the scrubber scrubs the atmosphere on the single tile it's exposed to.
-  In WideNet mode, the scrubber scrubs gas from the 4 tiles surrounding the scrubber, as shown:
+  Oczyszczacze powietrza posiadają również tryb "WideNet", który zwiększa zasięg działania urządzenia. Zazwyczaj oczyszczacz oczyszcza powietrze na jednym polu, z którym się styka.
+  W trybie WideNet oczyszczacz usuwa gazy z czterech pól otaczających urządzenie, jak pokazano poniżej:
 
   <Box>
     <GuideEntityEmbed Entity="FloorTileItemSteel" Caption=""/>
@@ -45,10 +45,10 @@ SPDX-License-Identifier: MIT
     <GuideEntityEmbed Entity="FloorTileItemSteel" Caption=""/>
   </Box>
 
-  This effectively multiplies its total speed, as air scrubbers will now preform their scrubbing work on 5 tiles at once.
+  W ten sposób efektywnie zwiększa się jego całkowita prędkość, ponieważ oczyszczacze powietrza będą teraz oczyszczać powietrze na 5 kafelkach jednocześnie.
 
-  Scrubbers [textlink="linked" link="Networking"] to an [textlink="air alarm" link="AirAlarms"] in auto mode will automatically enable WideNet mode under the [textlink="air alarm's" link="AirAlarms"] "Filtering (Wide)" mode when a high concentration of unwanted gasses is detected in the atmosphere.
+  Oczyszczacze powietrza [textlink="połączone" link="Networking"] z [textlink="alarmami atmosferycznymi" link="AirAlarms"], które znajdują się w trybue automatycznym włączą tryb WideNet w ramach trybu "Filtrowanie (szerokie)", gdy w powietrzu zostanie wykryte wysokie stężenie niepożądanych gazów.
 
-  WideNet is extremely useful in quickly scrubbing large amounts of tritium from plasma burn chambers.
+  Tryb WideNet doskonale sprawdza się w szybkim usuwaniu dużych ilości trytu z komór spalania plazmowego.
 
 </Document>

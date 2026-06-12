@@ -1,38 +1,4 @@
 ﻿Entries:
-- author: sowelipililimute
-  changes:
-  - message: Smart equipping into your backpack w/ a nested storage window open no
-      longer bugs out
-    type: Fix
-  id: 7928
-  time: '2025-02-11T02:15:36.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/35048
-- author: Tayrtahn
-  changes:
-  - message: Radio frequencies are now displayed with a decimal point.
-    type: Tweak
-  id: 7929
-  time: '2025-02-11T02:36:58.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/35046
-- author: themias
-  changes:
-  - message: Fixed an exploit using multiple R&D computers to research multiple discipline
-      tier 3 technologies
-    type: Fix
-  id: 7930
-  time: '2025-02-11T02:52:26.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34334
-- author: K-Dynamic
-  changes:
-  - message: Flashbangs, stinger grenades, EMP grenades, smoke grenades, and tear
-      gas grenades have new appearances.
-    type: Tweak
-  - message: Projectile grenades (including stinger and shrapnel grenades) should
-      now play animations when triggered.
-    type: Fix
-  id: 7931
-  time: '2025-02-11T03:23:11.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34421
 - author: themias
   changes:
   - message: You can no longer use pulled objects as tools.
@@ -4168,3 +4134,37 @@
   id: 9235
   time: '2026-06-08T12:49:51.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/650
+- author: Czuat
+  changes:
+  - message: "Statek in\u017Cynieryjny JSR MPKS zdolny do napraw rozleg\u0142ych uszkodze\u0144\
+      \ stacji a nawet postawienie nowej."
+    type: Add
+  id: 9236
+  time: '2026-06-10T07:36:02.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/654
+- author: Zintex
+  changes:
+  - message: "Zwi\u0119kszono wymagania czasowe dla wszystkich prac w ochronie."
+    type: Tweak
+  - message: "Niekt\xF3re niepe\u0142nosprawno\u015Bci postaci wykluczaj\u0105 wyb\xF3\
+      r ochrony."
+    type: Tweak
+  id: 9237
+  time: '2026-06-10T07:33:11.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/651
+- author: Nikita_pl
+  changes:
+  - message: "Nowa czcionka dla tytu\u0142\xF3w okien!"
+    type: Tweak
+  id: 9238
+  time: '2026-06-10T09:24:40.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/655
+- author: Elperson
+  changes:
+  - message: "Malf AI teraz informuje kiedy nie starcza punkt\xF3w na zhakowanie borga\
+      \ i informuje, \u017Ce nie da si\u0119 zhakowa\u0107 emagowanych borg\xF3w zamiast\
+      \ blokowa\u0107 przycisku bez \u017Cadnej informacji."
+    type: Fix
+  id: 9239
+  time: '2026-06-10T16:47:59.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/656

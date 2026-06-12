@@ -7,8 +7,8 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-  # Valves
-  Valves are a quick way to halt or permit gas flow through a [textlink="pipenet" link="PipeNetworks"].
+  # Zawory
+  Zawory to prosty sposób na zatrzymanie lub umożliwienie przepływu gazu przez [textlink="sieci rurociągów" link="PipeNetworks"].  
   <Box>
     <GuideEntityEmbed Entity="GasValve"/>
     <GuideEntityEmbed Entity="SignalControlledValve"/>
@@ -16,9 +16,9 @@ SPDX-License-Identifier: MIT
     <GuideEntityEmbed Entity="GasPassiveGate"/>
     <GuideEntityEmbed Entity="GasPressureRegulator"/>
   </Box>
-  All valves do not require [textlink="power" link="Power"] to operate.
+  Nie wszystkie zawory wymagają [textlink="zasilania" link="Power"] do działania.
 
-  Valves may look simple, but they can enable a wide variety of complex pipe systems, including:
-  - Signal valves responding to air alarm or logic gate outputs
-  - Pneumatic valves controlling variable venting of waste gasses from a burn chamber
+  Zawory mogą wydawać się proste, jednak umożliwiają one tworzenie zróżnicowanych, złożonych sieci rurociągów, w tym:
+  - zaworów sterowanych sygnałem reagujące na sygnały alarmów atmosferycznych lub sygnały wyjściowe bramek logicznych
+  - zaworów pneumatycznych sterujących zmiennym odprowadzaniem spalin z komory spalania
 </Document>

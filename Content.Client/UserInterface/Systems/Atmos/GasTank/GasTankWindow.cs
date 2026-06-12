@@ -13,6 +13,7 @@
 // SPDX-FileCopyrightText: 2024 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
 //
 // SPDX-License-Identifier: MIT
@@ -103,12 +104,12 @@ public sealed class GasTankWindow
 
         LayoutContainer.SetAnchorPreset(topContainerWrap, LayoutContainer.LayoutPreset.Wide);
 
-        var font = _cache.GetFont("/Fonts/Boxfont-round/Boxfont Round.ttf", 13);
+        var font = _cache.GetFont("/Fonts/_Polonium/Tomorrow/Tomorrow-Bold.ttf", 13);
 
         _topLabel = new Label
         {
             FontOverride = font,
-           StyleClasses = { StyleClass.LabelKeyText },
+            StyleClasses = { StyleClass.LabelKeyText },
             VerticalAlignment = VAlignment.Center,
             HorizontalExpand = true,
             HorizontalAlignment = HAlignment.Left,

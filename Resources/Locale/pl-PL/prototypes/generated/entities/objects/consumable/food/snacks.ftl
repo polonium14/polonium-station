@@ -86,8 +86,4 @@ ent-FoodCookieFortune = wróżba z ciasteczka
 ent-FoodPacketMRETrash = opakowanie MRE
     .desc = Uniwersalne opakowanie na różne wojskowe racje.
 
-ent-FoodSnackDumplings = pierogi liofilizowane
-    .desc = Klasyczne polskie pierogi z kapustą i grzybami, liofilizowane na potrzeby misji kosmicznej. Smacznego!
 
-ent-FoodPacketDumplingsTrash = pierogi liofilizowane
-    .desc = { ent-FoodPacketTrash.desc }

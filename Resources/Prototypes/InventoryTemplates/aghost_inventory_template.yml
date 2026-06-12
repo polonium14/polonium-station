@@ -29,6 +29,14 @@
       displayName: ID
 
     # For drip reasons.
+    # POLONIUM CHANGE: Added eyes slot.
+    - name: eyes
+      slotTexture: glasses
+      slotFlags: EYES
+      stripTime: 3
+      uiWindowPos: 0,3
+      strippingWindowPos: 0,0
+      displayName: Eyes
     - name: head
       slotTexture: head
       slotFlags: HEAD
