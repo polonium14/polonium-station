@@ -442,7 +442,7 @@ namespace Content.Client.Chemistry.UI
             };
             bufferHBox.AddChild(bufferVol);
 
-            var bufferReagents = state.BufferReagents.OrderBy(x => x.Reagent.Prototype);
+            var bufferReagents = state.BufferReagents.OrderBy(x => GetLocalizedReagentName(x.Reagent));
 
             if (_currentSortMethod == ReagentSortMethod.Amount)
                 bufferReagents = bufferReagents.OrderByDescending(x => x.Quantity);
@@ -475,12 +475,19 @@ namespace Content.Client.Chemistry.UI
             };
             bufferHBox.AddChild(bufferVol);
 
-            var bufferReagents = state.PillBufferReagents.OrderBy(x => x.Reagent.Prototype);
+            var bufferReagents = state.PillBufferReagents.OrderBy(x => GetLocalizedReagentName(x.Reagent));
 
             if (_currentSortMethod == ReagentSortMethod.Amount)
                 bufferReagents = bufferReagents.OrderByDescending(x => x.Quantity);
 
             HandleBuffer(_currentSortMethod == ReagentSortMethod.Time ? state.PillBufferReagents : bufferReagents, true);
+        }
+
+        private string GetLocalizedReagentName(ReagentId reagentId)
+        {
+            return _prototypeManager.TryIndex(reagentId.Prototype, out ReagentPrototype? proto)
+                ? proto.LocalizedName
+                : reagentId.Prototype;
         }
 
         private void HandleBuffer(IEnumerable<ReagentQuantity> reagents, bool pillBuffer)
