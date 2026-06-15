@@ -13,7 +13,7 @@
     weight: 6 # Funky
     earliestStart: 30
     reoccurrenceDelay: 20
-    minimumPlayers: 35
+    minimumPlayers: 30
     duration: null
     occursDuringRoundEnd: false
     chaos:

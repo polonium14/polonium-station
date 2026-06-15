@@ -41,6 +41,14 @@ public sealed class ExplosionShockwaveSystem : EntitySystem
 
     private void OnShockwave(ExplosionShockwaveEvent ev)
     {
+        if (ev.DurationSeconds <= 0f ||
+            float.IsNaN(ev.DurationSeconds) ||
+            float.IsNaN(ev.MaxRadiusTiles) ||
+            float.IsNaN(ev.Intensity))
+        {
+            return;
+        }
+
         ActiveWaves.Add(new ShockwaveInstance
         {
             MapId = ev.MapId,

@@ -1,4 +1,6 @@
 # SPDX-FileCopyrightText: 2025 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 Damian Zieliński <zientasek.pl@gmail.com>
+# SPDX-FileCopyrightText: 2026 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -50,4 +52,59 @@
 - type: ertCall
   id: CBURN-Wagon
   path: "Maps/_Polonium/Shuttles/ERTShuttles/ERTBurnWagonV2.yml"
-  desc: "Pojemny statek. 1 lider CBURN, 4 medyków CBURN, 6 bojowników CBURN."
+  desc: "Średni statek. 1 lider CBURN, 4 medyków CBURN, 6 bojowników CBURN."
+
+- type: ertCall
+  id: ERT-Janitor4
+  path: "Maps/_Polonium/Shuttles/ERTShuttles/ERTJanitor4.yml"
+  desc: "Niewielki statek. 4 woźnych."
+
+- type: ertCall
+  id: ERT-Engineer4
+  path: "Maps/_Polonium/Shuttles/ERTShuttles/ERTEngineer4.yml"
+  desc: "Niewielki statek. 1 lider, 4 inżynierów."
+
+- type: ertCall
+  id: ERT-Small-Eng
+  path: "Maps/_Polonium/Shuttles/ERTShuttles/ERT-Small-Eng.yml"
+  desc: "Mały statek. 1 lider, 2 inżynierów."
+
+- type: ertCall
+  id: ERT-Small-Med
+  path: "Maps/_Polonium/Shuttles/ERTShuttles/ERT-Small-Med.yml"
+  desc: "Mały statek. 1 lider, 2 medyków."
+
+- type: ertCall
+  id: ERT-Small-Sec
+  path: "Maps/_Polonium/Shuttles/ERTShuttles/ERT-Small-Sec.yml"
+  desc: "Mały statek. 1 lider, 2 bojowników."
+
+- type: ertCall
+  id: ERT-Small-Jani
+  path: "Maps/_Polonium/Shuttles/ERTShuttles/ERT-Small-Jani.yml"
+  desc: "Mały statek. 3 woźnych."
+
+- type: ertCall
+  id: ERT-Small-Deathsquad
+  path: "Maps/_Polonium/Shuttles/ERTShuttles/ERT-Small-Deathsquad.yml"
+  desc: "Mały statek. 3 bojowników szwadronu śmierci."
+
+- type: ertCall
+  id: ERT-Medium-Eng-Jani
+  path: "Maps/_Polonium/Shuttles/ERTShuttles/ERT-Medium-Eng-Jani.yml"
+  desc: "Średni statek z wyposażeniem inżynierskim oraz czyszczącym. 1 lider, 6 inżynierów, 3 woźnych."
+
+- type: ertCall
+  id: ERT-Medium-Med
+  path: "Maps/_Polonium/Shuttles/ERTShuttles/ERT-Medium-Med.yml"
+  desc: "Średni statek ze szpitalem i laboratorium chemicznym. 1 lider, 9 medyków."
+
+- type: ertCall
+  id: ERT-Medium-Sec
+  path: "Maps/_Polonium/Shuttles/ERTShuttles/ERT-Medium-Sec.yml"
+  desc: "Średni statek z celami więziennymi i zbrojownią. 1 lider, 9 bojowników."
+
+- type: ertCall
+  id: ERT-Large-Eng
+  path: "Maps/_Polonium/Shuttles/ERTShuttles/ERTkonstrukcyjnyMPKS.yml"
+  desc: "Duży statek inżynieryjny z magazynem materiałów i komponentów, wytwarzarkami, oraz kanistrami powietrza i wszelkimi generatorami prądu zdolny naprawić każdą usterkę, 1 lider 5 inżynierów."

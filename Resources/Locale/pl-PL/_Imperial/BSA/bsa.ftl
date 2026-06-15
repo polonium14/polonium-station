@@ -3,7 +3,7 @@ text-instruction-bsa =
     "Przed rozpoczęciem nuklearnego spalenia wyślij ogłoszenie o zniszczeniu stacji:
     
     Od Centralnego Dowództwa:
-    Stacja XX-###, mówi Departament Operacji Specjalnych. Widzimy, że sytuacja na stacji całkowicie wymknęła się spod kontroli. W związku z tym, jesteśmy zmuszeni do przeprowadzenia protokołów awaryjnego zniszczenia stacji. Szacowany czas przelotu pocisku - 5 minut. Dziękujemy za wybór NanoTrasen. Chwała NT!
+    Stacja XX-###, mówi Departament Operacji Specjalnych. Widzimy, że sytuacja na stacji całkowicie wymknęła się spod kontroli. W związku z tym, jesteśmy zmuszeni do przeprowadzenia protokołów awaryjnego zniszczenia stacji. Szacowany czas przelotu pocisku — 5 minut. Dziękujemy za wybór NanoTrasen. Chwała NT!
     
     Po tym wprowadzamy kod [color=DarkRed][bold]Delta[/bold][/color] lub [color=DarkViolet][bold]Epsilon[/bold][/color] (w zależności od sytuacji) i używamy:
     playglobalsound /Audio/_Polonium/Admeme/artyleria.ogg

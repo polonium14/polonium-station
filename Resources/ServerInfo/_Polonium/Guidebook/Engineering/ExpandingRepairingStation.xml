@@ -7,27 +7,25 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-  # Expanding and Repairing Stations
-  In Space Station 14, it is common for players to want to expand the station, or repair holes left by meteors or other damage.
+  # Rozbudowa i naprawa stacji
+  W grze "Space Station 14" gracze często chcą rozbudowywać stację lub naprawiać dziury powstałe w wyniku uderzeń meteorów lub innych uszkodzeń.
 
-  ## Lattice
-  Lattice is bare rodwork placed in empty space. It's used as a foundation for building and anchoring objects onto the station.
-
-  <Box>
+  ## Kratownica
+  Kratownica to zwykła konstrukcja z prętów umieszczana w pustej przestrzeni. Służy jako podstawa do budowania i mocowania obiektów do stacji.  <Box>
     <GuideEntityEmbed Entity="SheetSteel" Caption=""/>
     <GuideEntityEmbed Entity="PartRodMetal" Caption=""/>
   </Box>
 
-  You can create lattice by placing rods on empty space using [color=yellow][bold][keybind="Use"][/bold][/color]. Remember you can craft steel sheets into rods using the construction menu.
+  Kratownicę można utworzyć, umieszczając pręty na pustej przestrzeni za pomocą [color=#ffe566][bold][keybind="Use"][/bold][/color]. Pamiętaj, że w menu tworzenia możesz przekształcić arkusze stali na pręty.
 
-  Lattice cannot hold pressure, and all gasses will leak out into space through it.
+  Kratownica nie utrzymuje ciśnienia, a wszystkie gazy przedostają się przez nią w przestrzeń kosmiczną.
 
-  You can use wirecutters to remove lattice by using [color=yellow][bold][keybind="Use"][/bold][/color] on them.
+  Można użyć obcinaka do drutu, aby usunąć kratkę za pomocą [color=#ffe566][bold][keybind="Use"][/bold][/color].
 
-  If the game is preventing you from placing lattice, it's because there is another separated grid too close to the grid you're trying to expand. You can use a wirecutter to remove the offending grid.
+  Jeśli gra nie pozwala ci na umieszczenie kratownicy, to dlatego, że w pobliżu siatki, którą próbujesz rozbudować, znajduje się inna kratownica. Możesz użyć obcinaka do drutu, aby usunąć przeszkadzającą kratownicę.
 
-  ## Hull Tiles
-  Hull tiles are solid foundation for the station, where all the other parts of the station rest upon.
+  ## Panele kadłuba
+  Panele kadłuba stanowią solidną podstawę stacji, na której opierają się wszystkie pozostałe elementy konstrukcji.
 
   <Box>
     <GuideEntityEmbed Entity="SheetSteel" Caption=""/>
@@ -36,12 +34,12 @@ SPDX-License-Identifier: MIT
     <GuideEntityEmbed Entity="FloorTileItemWhite" Caption=""/>
   </Box>
 
-  Lattice can be made into hull tiles by using either steel or almost any type of floor tile on them by pressing [color=yellow][bold][keybind="Use"][/bold][/color].
-  This will convert the lattice into a hull tile, which can hold pressure and gasses.
+  Kratownicę można przekształcić w płytkę kadłuba, kładąc na niej stal lub niemal każdy rodzaj płytki podłogowej i naciskając klawisz [color=#ffe566][bold][keybind="Use"][/bold][/color].
+  Spowoduje to przekształcenie kratownicy w płytkę kadłuba, która jest w stanie utrzymać ciśnienie.
 
-  It is advised to use floor tiles to replace lattice instead of steel sheets, as you can craft 4 floor tiles from a single steel sheet.
+  Zaleca się używanie płytek podłogowych zamiast blachy stalowej, ponieważ z jednej blachy stalowej można wytworzyć 4 płytki podłogowe.
 
-  You can use an RCD to deconstruct hull tiles into lattice.
+  Za pomocą USK można rozłożyć płytki kadłuba na kratownicę.
 
 
 </Document>

@@ -69,7 +69,7 @@ If possible, buckle them to a medical bed, if you need time to treat them, strap
 <GuideEntityEmbed Entity="StasisBed"/>
 </Box>
 ## Assessing Corpses
-You can't save them all, sometimes, death happens. Depending on the [color=#a4885c]status[/color] of the body, there are a few things that can be done.
+You can't save them all, sometimes, death happens. Depending on the [color=#e8c878]status[/color] of the body, there are a few things that can be done.
 
 1. Do they have a soul attached? You can tell if, when examining, the following phrase is displayed: "Their soul has departed." If this isn't displayed, there is still a player who can be revived.
 

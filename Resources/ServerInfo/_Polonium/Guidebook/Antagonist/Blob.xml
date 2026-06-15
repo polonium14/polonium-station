@@ -11,7 +11,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 <Document>
 # Blob
 
-  [color=#ff0000]Skażenie biologiczne poziomy piątego zostało wykryte na stacji. Izolacja stacji została ogłoszona.[/color]
+  [color=#ff8a8a]Skażenie biologiczne poziomy piątego zostało wykryte na stacji. Izolacja stacji została ogłoszona.[/color]
 
   Blob to szybko rosnący niebezpieczny organizm biologiczny, którego celem jest opanowanie stacji.
   <Box>
@@ -25,13 +25,13 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
   ## Jądro
 
-  Najważniejszą częścią bloba jest [color=#a4885c]jądro[/color]. Zniszczenie jądra spowoduje zniszczenie blobu, a wszystkie pozostałe komórki umrą wraz z nim.
+  Najważniejszą częścią bloba jest [color=#e8c878]jądro[/color]. Zniszczenie jądra spowoduje zniszczenie blobu, a wszystkie pozostałe komórki umrą wraz z nim.
 
   Możesz zawsze obserwować zdrowie swojego jądra po prawej stronie ekranu w postaci procentu. Pamiętaj, by zawsze mieć na nie oko i nie pozwolić się zniszczyć.
 
-  Możesz zrobić dwie rzeczy z jądrem: [color=#a4885c]przetransportować[/color] oraz [color=#a4885c]rozdzielić[/color].
+  Możesz zrobić dwie rzeczy z jądrem: [color=#e8c878]przetransportować[/color] oraz [color=#e8c878]rozdzielić[/color].
   - Kiedy jądro jest przetransportowane, wybrany węzeł oraz jądro są zamieniane miejscami. Bardzo przydatne, jeśli jądro jest w niebezpiecznej pozycji.
-  - Kiedy jądro jest rozdzielone, wybrany węzeł zostaje [color=#a4885c]nowym, niezależnym jądrem[/color]. Choć ta akcja wymaga dużej ilości punktów, w dłuższej mierze, nowe jądro może Ci bardzo pomóc w przejęciu stacji.
+  - Kiedy jądro jest rozdzielone, wybrany węzeł zostaje [color=#e8c878]nowym, niezależnym jądrem[/color]. Choć ta akcja wymaga dużej ilości punktów, w dłuższej mierze, nowe jądro może Ci bardzo pomóc w przejęciu stacji.
 
   ## Typy blobu
 
@@ -46,9 +46,9 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 	  <GuideEntityEmbed Entity="NodeBlobTile" Caption="Węzeł blobu"/>
   </Box>
 
-  - [color=#a4885c]Blob Produkcyjny[/color] stale produkuje punkty potrzebne na używanie przez bloba różnych akcji.
-  - [color=#a4885c]Blob Fabryczny[/color] tworzy Zarodniki oraz Blobonautów, pomocnych w walce przeciwko stacji.
-  - [color=#a4885c]Węzeł Blobu[/color] pozwala na stawianie pozostałych części wokół siebie w limitowanym zasięgu.
+  - [color=#e8c878]Blob Produkcyjny[/color] stale produkuje punkty potrzebne na używanie przez bloba różnych akcji.
+  - [color=#e8c878]Blob Fabryczny[/color] tworzy Zarodniki oraz Blobonautów, pomocnych w walce przeciwko stacji.
+  - [color=#e8c878]Węzeł Blobu[/color] pozwala na stawianie pozostałych części wokół siebie w limitowanym zasięgu.
 
   Ważne! Części specjalne są powiązane z najbliższym jądrem. 
   Z tego powodu, dla najlepszego umiejscowienia, zaleca się stawianie węzłów jak najbliżej siebie i budowę pozostałych części specjalnych wokół.
@@ -69,7 +69,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
   ## Zarządzanie
 
   - By wybudować jednostkę, naciśnij na wolne pole. Jeśli pole jest zajęte, lub też ktoś albo coś stoi na nim, klikanie zaatakuje i zada obrażenia.
-  - Pamiętaj, że [color=#a4885c]nie możesz stawiać normalnych jednostek daleko od węzłów. Stwórz kilka węzłów by móc rozprzestrzeniać się dalej.
+  - Pamiętaj, że [color=#e8c878]nie możesz stawiać normalnych jednostek daleko od węzłów. Stwórz kilka węzłów by móc rozprzestrzeniać się dalej.
   - Przez kliknięcie Alt+LMB (Alt+Lewy przycisk myszy), możesz ulepszać zwykłe jednostki w wzmocnione jednostki, a wzmocnione jednostki w jednostki refleksyjne.
 
   <Box>
@@ -81,17 +81,17 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
   W pasku zdolności możesz użyć zdolności specjalnych, które pozwolą Ci wykonywać ważne zadania, takie jak stawianie części specjalnych, czy nawet specjalnych interakcji z jądrem i chemikaliami.
 
-  - [color=#a4885c]Zmiana Chemikaliów[/color] pozwala ci zmienić chemikalia na dowolny z pięciu przedstawionych. Każdy ma swoje właściwości przydatne w różnych sytuacjach.
-  - [color=#a4885c]Degradacja jednostki[/color] pozwala na degradowanie dowolnej jednostki spowrotem do zwykłej za darmo. Przydaje się do poprawiania karygodnych umiejscowień.
+  - [color=#e8c878]Zmiana Chemikaliów[/color] pozwala ci zmienić chemikalia na dowolny z pięciu przedstawionych. Każdy ma swoje właściwości przydatne w różnych sytuacjach.
+  - [color=#e8c878]Degradacja jednostki[/color] pozwala na degradowanie dowolnej jednostki spowrotem do zwykłej za darmo. Przydaje się do poprawiania karygodnych umiejscowień.
 
   ## Kurs rundy
 
   Wraz z rośnięciem blobu, stacja przejdzie przez kolejne etapy.
 
-  - 1. [color=#a4885c]Etap Cichy[/color] - Blob nie został odkryty, możesz spokojnie się rozwijać podczas gdy załoga nie wie o twoim istnienu.
-  - 2. [color=#a4885c]Wykrycie zagrożenia[/color] - Jak tylko Blob urośnie wystarczająco, kod Sigma zostaje ogłoszony i kompletna izolacja stacji jest ogłaszana. Wachadłowiec ewakuacyjny nie może zostać wysłany na tym etapie.
-  - 3. [color=#a4885c]Masa krytyczna[/color] - Jeśli blob przejmie znaczącą część stacji, Centralne Dowództwo wyśle faks z kodami detonacyjnymi do awaryjnej głowicy jądrowej na pokładzie stacji. Zadaniem pozostałej załogi jest włączyć głowicę a następnie spróbować uciec za wszelką cenę.
-  - 4. [color=#a4885c]Zwycięstwo Blobu[/color] - Kiedy blob urośnie do gigantycznych rozmiarów, jego rozwój stanie się nie do powstrzymania, skutkując zakończeniem rundy i zwycięstwem blobu.
+  - 1. [color=#e8c878]Etap Cichy[/color] - Blob nie został odkryty, możesz spokojnie się rozwijać podczas gdy załoga nie wie o twoim istnienu.
+  - 2. [color=#e8c878]Wykrycie zagrożenia[/color] - Jak tylko Blob urośnie wystarczająco, kod Sigma zostaje ogłoszony i kompletna izolacja stacji jest ogłaszana. Wachadłowiec ewakuacyjny nie może zostać wysłany na tym etapie.
+  - 3. [color=#e8c878]Masa krytyczna[/color] - Jeśli blob przejmie znaczącą część stacji, Centralne Dowództwo wyśle faks z kodami detonacyjnymi do awaryjnej głowicy jądrowej na pokładzie stacji. Zadaniem pozostałej załogi jest włączyć głowicę a następnie spróbować uciec za wszelką cenę.
+  - 4. [color=#e8c878]Zwycięstwo Blobu[/color] - Kiedy blob urośnie do gigantycznych rozmiarów, jego rozwój stanie się nie do powstrzymania, skutkując zakończeniem rundy i zwycięstwem blobu.
 
   Zaczynając od etapu drugiego, najważniejszym zadaniem kapitana jest ochrona dysku autoryzacji nuklearnej. Jeśli się on straci, nie będzie można powstrzymać blobu podczas kodu Gamma, co daje prawie gwarantowane zwycięstwo dla blobu.
 

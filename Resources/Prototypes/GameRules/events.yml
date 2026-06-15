@@ -327,7 +327,7 @@
     duration: null
     earliestStart: 45
     reoccurrenceDelay: 60 # funkystation
-    minimumPlayers: 30
+    minimumPlayers: 25
     chaos: # Goobstation
       Hostile: 50
       Friend: 50
@@ -707,7 +707,7 @@
     startAudio:
       path: /Audio/_Polonium/Announcements/attention.ogg
     earliestStart: 30 # funkystation delay
-    minimumPlayers: 30 # DeltaV - was 20
+    minimumPlayers: 25
     weight: 1 # DeltaV - was 1.5
     duration: 30 # DeltaV: was 60, used as a delay now
     eventType: HostilesSpawn # Goobstation
@@ -734,7 +734,7 @@
     eventType: Chaotic # Goobstation
   # Goobstation
   - type: GameRule
-    chaosScore: 60
+    chaosScore: 50
   - type: VentCrittersRule
     table: # DeltaV: EntityTable instead of spawn entries
       id: MobHonkBot
@@ -745,7 +745,7 @@
   components:
   - type: StationEvent
     earliestStart: 60 # funkystation
-    minimumPlayers: 40
+    minimumPlayers: 35
     weight: 1.5 # Zombies was happening basically every single survival round, so now it's super rare
     duration: 1
     chaos: # Goobstation
@@ -915,12 +915,12 @@
     startAudio:
       path: /Audio/_Polonium/Announcements/attention.ogg
     weight: 5
-    minimumPlayers: 25
+    minimumPlayers: 20
     reoccurrenceDelay: 20
     eventType: Maintenance # Goobstation
   # Goobstation
   - type: GameRule
-    chaosScore: 160
+    chaosScore: 200
   - type: GreytideVirusRule
     accessGroups:
     - Cargo

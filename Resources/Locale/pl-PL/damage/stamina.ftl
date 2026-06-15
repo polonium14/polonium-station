@@ -1,3 +1,3 @@
-melee-stamina = Not enough stamina
-slow-on-damage-modifier-examine = Slowness from injuries is reduced by [color=yellow]{ $mod }%[/color]
-stamina-resistance-coefficient-value = - [color=lightyellow]Stamina[/color] damage reduced by [color=lightblue]{ $value }%[/color].
+melee-stamina = Za mało wytrzymałości
+slow-on-damage-modifier-examine = Spowolnienie spowodowane obrażeniami zmniejsza się dzięki [color=yellow]{ $mod }%[/color]
+stamina-resistance-coefficient-value = - Obrażenia [color=lightyellow]wytrzymałości[/color] zmniejsza się dzięki [color=lightblue]{ $value }%[/color].

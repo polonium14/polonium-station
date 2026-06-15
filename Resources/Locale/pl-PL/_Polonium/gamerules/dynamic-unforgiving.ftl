@@ -1,0 +1,2 @@
+dynamic-unforgiving-briefing-sender = Centralne Dowodztwo
+dynamic-unforgiving-briefing = Uwaga! W waszym sektorze odnotowano nietypową aktywność wielu zagrożeń. Zaleca się zachowanie czujności i zgłaszanie wszelkich zagrożeń odpowiedniemu personelowi. Prosimy kontynuować wykonywanie swoich obowiązków zgodnie z procedurami. Chwała NT!

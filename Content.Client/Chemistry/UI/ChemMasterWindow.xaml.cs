@@ -18,6 +18,7 @@
 // SPDX-FileCopyrightText: 2024 MilenVolf <63782763+MilenVolf@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
 // SPDX-FileCopyrightText: 2025 Brandon Li <48413902+aspiringLich@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 QueerCats <jansencheng3@gmail.com>
 // SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
 // SPDX-FileCopyrightText: 2025 corresp0nd <46357632+corresp0nd@users.noreply.github.com>
@@ -442,7 +443,7 @@ namespace Content.Client.Chemistry.UI
             };
             bufferHBox.AddChild(bufferVol);
 
-            var bufferReagents = state.BufferReagents.OrderBy(x => x.Reagent.Prototype);
+            var bufferReagents = state.BufferReagents.OrderBy(x => GetLocalizedReagentName(x.Reagent));
 
             if (_currentSortMethod == ReagentSortMethod.Amount)
                 bufferReagents = bufferReagents.OrderByDescending(x => x.Quantity);
@@ -475,12 +476,19 @@ namespace Content.Client.Chemistry.UI
             };
             bufferHBox.AddChild(bufferVol);
 
-            var bufferReagents = state.PillBufferReagents.OrderBy(x => x.Reagent.Prototype);
+            var bufferReagents = state.PillBufferReagents.OrderBy(x => GetLocalizedReagentName(x.Reagent));
 
             if (_currentSortMethod == ReagentSortMethod.Amount)
                 bufferReagents = bufferReagents.OrderByDescending(x => x.Quantity);
 
             HandleBuffer(_currentSortMethod == ReagentSortMethod.Time ? state.PillBufferReagents : bufferReagents, true);
+        }
+
+        private string GetLocalizedReagentName(ReagentId reagentId)
+        {
+            return _prototypeManager.TryIndex(reagentId.Prototype, out ReagentPrototype? proto)
+                ? proto.LocalizedName
+                : reagentId.Prototype;
         }
 
         private void HandleBuffer(IEnumerable<ReagentQuantity> reagents, bool pillBuffer)

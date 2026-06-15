@@ -7,67 +7,67 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-  # Air Alarms
-  The Air Alarm is a device that enables central monitoring and control over all relevant Atmos devices linked to it.
+  # Alarmy atmosferyczne
+  Alarm atmosferyczny to urządzenie umożliwiające centralne monitorowanie i sterowanie wszystkimi podłączonymi do niego urządzeniami atmosferycznymi.
 
   <Box>
     <GuideEntityEmbed Entity="AirAlarm"/>
   </Box>
 
-  Using the Air Alarm, Atmos can quickly and efficiently manage the atmosphere in a given area.
+  Dzięki systemowi alarmów atmosferycznych departament inżynierii może szybko i skutecznie kontrolować warunki atmosferyczne w danym obszarze.
 
-  A room will often have an Air Alarm mounted on the wall, for quick control over multiple devices in that room.
+  W pomieszczeniu często montuje się na ścianie alarmy atmosferyczne, które umożliwiają szybkie sterowanie wieloma urządzeniami znajdującymi się w tym pomieszczeniu.
 
-  You can see how to link devices in the [textlink="Link" link="Networking"] guide.
+  Sposób podłączania urządzeń można sprawdzić w przewodniku o [textlink="łączeniu urządzeń" link="Networking"].
 
-  ## User Interface
-  Interacting with an Air Alarm will bring up a menu with 3 sections:
-  - Top: The current status of the air alarm. This includes the current pressure and temperature of the area the air alarm is monitoring.
-  - Middle: Lists of linked [textlink="Air Vents" link="AirVent"] and [textlink="Air Scrubbers" link="AirScrubber"], as well as all sensors reporting back to the air alarm.
-  - Bottom: Buttons to control air alarm operating modes, as well as the ability to toggle the automatic changing of modes.
+  ## Interfejs użytkownika
+  Po uruchomieniu alarmu atmosferycznego wyświetla się menu składające się z trzech sekcji:
+  - Górna: aktualny stan alarmu atmosferycznego. Pokazuje aktualne ciśnienie i temperaturę w obszarze monitorowanym przez alarm.
+  - Środkowa: Przyciski do sterowania trybami pracy alarmu atmosferycznego, a także możliwość włączenia lub wyłączenia automatycznej zmiany trybów.
+  - Dolna: Lista połączonych [textlink="otworów wentylacyjnych" link="AirVent"] i [textlink="oczyszczaczy powietrza" link="AirScrubber"], a także wszystkich czujników przekazujących dane do alarmów atmosferycznych.
 
-  ## Alarm Status
-  Air alarms quickly communicate the status of the area they are monitoring through the color of the light on the device:
-  - [color=green]Normal[/color]: The area is safe to breathe in.
-  - [color=yellow]Warning[/color]: The area is starting to deviate from the desired atmosphere, and is becoming unsafe.
-  - [color=red]Danger[/color]: The area is no longer safe, internals and/or hardsuits are required.
+  ## Stan alarmu
+  Alarmy atmosferyczne szybko informują o stanie monitorowanego obszaru za pomocą koloru światła na urządzeniu:
+  - [color=#8ee99a]Normalny[/color]: Powietrze w tym obszarze jest bezpieczne do oddychania.
+  - [color=#ffe566]Ostrzeżenie[/color]: Warunki w danym obszarze zaczynają odbiegać od pożądanych i stają się niebezpieczne.
+  - [color=#ff8a8a]Niebezpieczeństwo[/color]: Obszar nie jest już bezpieczny, wymagane jest użycie aparatów oddechowych i/lub kombinezonów ochronnych.
 
-  Air alarms will automatically drop (close) linked [textlink="firelocks" link="FireAndGasControl"] when the [color=Red]Danger[/color] status is reached.
-  These [textlink="firelocks" link="FireAndGasControl"] will automatically raise (open) when the status returns to [color=green]Normal[/color].
+  Alarmy atmosferyczne automatycznie opuszczą (zamkną) połączone [textlink="śluzy przeciwpożarowe" link="FireAndGasControl"], gdy zostanie osiągnięty stan [color=Red]niebezpieczeństwa[/color].
+  [textlink="Śluzy przeciwpożarowe" link="FireAndGasControl"] automatycznie podniosą się (otworzą), gdy stan powróci do [color=#8ee99a]normalnego[/color].
 
-  Air alarms have [textlink="signal" link="Networking"] outputs for each of the three statuses, which can be used to trigger other [textlink="signal" link="Networking"] devices when the status changes.
+  Alarmy atmosferyczne są wyposażone w wyjścia [textlink="sygnałowe" link="Networking"] dla każdego z trzech stanów, które można wykorzystać do uruchomienia innych urządzeń [textlink="sygnałowych" link="Networking"].
 
-  ## Sensors
-  All [textlink="Air Vents" link="AirVent"] and [textlink="Air Scrubbers" link="AirScrubber"] have a built-in sensor, which reports back to the air alarm.
-  These sensors can be adjusted in the [bold]Sensors[/bold] tab of the air alarm menu.
+  ## Czujniki
+  Wszystkie [textlink="otwory wentylacyjne" link="AirVent"] i [textlink="oczyszczacze powietrza" link="AirScrubber"] są wyposażone we wbudowany czujnik, który przekazuje sygnał do alarmu atmosferycznego.
+  Czujniki te można skonfigurować w zakładce [bold]Czujniki[/bold] w menu alarmu powietrznego.
 
-  An air alarm's status is directly determined by the thresholds on each sensor.
-  If a sensor reports a pressure, temperature, or gas composition outside the set thresholds, the air alarm will change its status accordingly.
+  Stan alarmu atmosferycznego zależy bezpośrednio od progów ustawionych dla poszczególnych czujników.
+  Jeśli czujnik zarejestruje ciśnienie, temperaturę lub skład gazu wykraczające poza ustalone progi, stan alarmu atmosferycznego odpowiednio ulegnie zmianie.
 
-  These thresholds can be adjusted and disabled as needed.
-  For example, if you are monitoring a room that naturally has a low temperature (such as a freezer) or a high temperature (such as a burn chamber), you can adjust the temperature thresholds to match the expected values.
+  W razie potrzeby progi te można dostosować lub wyłączyć.
+  Na przykład, jeśli monitorujesz pomieszczenie, w którym naturalnie panuje niska temperatura (np. zamrażarka) lub wysoka temperatura (np. komora spalania), możesz dostosować progi temperatury tak, aby odpowiadały oczekiwanym wartościom.
 
-  An air sensor can also be constructed and [textlink="linked" link="Networking"] to an air alarm.
+  Można również zbudować czujnik powietrza i [textlink="połączyć" link="Networking"] go z alarmem atmosferycznym.
 
   <Box>
     <GuideEntityEmbed Entity="AirSensor"/>
   </Box>
 
-  This is useful for monitoring areas that you don't have an air vent or scrubber in already.
+  Jest to przydatne do monitorowania obszarów, w których nie ma jeszcze otworów wentylacyjnych ani oczyszczaczy powietrza.
 
-  ## Operating Modes
-  To control connected devices quickly, air alarms feature operating modes, which quickly changes the behavior of all linked devices to achieve a desired effect.
-  - None: Disables all devices linked to the air alarm.
-  - Filtering: [textlink="Air Vents" link="AirVent"] will be enabled with their external bound set to standard atmospheric pressure. [textlink="Air Scrubbers" link="AirScrubber"] will be enabled and scrub all waste gasses normally.
-  - Filtering (Wide): Same as Filtering, but all linked [textlink="Air Scrubbers" link="AirScrubber"] will enable their WideNet mode.
-  - Fill: [textlink="Air Vents" link="AirVent"] will be enabled with their external bound set to max pressure, [color=orange][protodata="GasVentPump" comp="GasVentPump" member="MaxPressure"/] kPa[/color]. [textlink="Air Scrubbers" link="AirScrubber"] will be disabled.
-  - Panic: [textlink="Air Vents" link="AirVent"] will be disabled, and [textlink="Air Scrubbers" link="AirScrubber"] will be set to siphon mode.
+  ## Tryby pracy
+  Aby umożliwić szybkie sterowanie podłączonymi urządzeniami, alarmy atmosferyczne wyposażone są w tryby pracy, które błyskawicznie zmieniają działanie wszystkich połączonych urządzeń, pozwalając uzyskać pożądany efekt.
+  - Brak: Wyłącza wszystkie urządzenia podłączone do alarmu atmosferycznego.
+  - Filtrowanie: [textlink="Otwory wentylacyjne" link="AirVent"] zostaną włączone, a ich ciśnienie graniczne zostanie ustawione na standardowe ciśnienie atmosferyczne. [textlink="Oczyszczacze powietrza" link="AirScrubber"] zostaną włączone i będą normalnie oczyszczać wszystkie gazy odpadowe.
+  - Filtrowanie (szerokie): Tak samo jak w przypadku filtrowania, ale wszystkie połączone [textlink="oczyszczacze powietrza" link="AirScrubber"] włączą tryb WideNet.
+  - Napełnianie: [textlink="Otwory wentylacyjne" link="AirVent"] zostaną włączone, a ich ciśnienie graniczne zostanie ustawione na wartość maksymalną, [color=#ffb86b][protodata="GasVentPump" comp="GasVentPump" member="MaxPressure"/] kPa[/color]. [textlink="Oczyszczacze powietrza" link="AirScrubber"] zostaną wyłączone.
+  - Tryb paniki: [textlink="Otwory wentylacyjne" link="AirVent"] zostaną wyłączone, a [textlink="oczyszczacze powietrza" link="AirScrubber"] przełączą się w tryb zasysania.
 
-  Air alarms will automatically switch between the Filtering and Filtering (Wide) modes based on the current status of the area they are monitoring.
-  - If the area reaches [color=red]Danger[/color] status or above, the air alarm will switch to Filtering (Wide) mode.
-  - If the area reaches [color=green]Normal[/color] or [color=yellow]Warning[/color] status, the air alarm will switch to Filtering mode.
+  Alarmy atmosferyczne automatycznie przełączają się między trybami "Filtrowanie" a "Filtrowanie (szerokie)" w zależności od aktualnego stanu monitorowanego obszaru.
+  - Jeśli obszar osiągnie stan [color=#ff8a8a]Niebezpieczeństwo[/color] lub wyższy, alarm atmosferyczne przełączy się w tryb "Filtrowanie (szerokie)".
+  - Jeśli obszar osiągnie stan [color=#8ee99a]Normalny[/color] lub [color=#ffe566]Ostrzeżenie[/color], alarm atmosferyczny przełączy się w tryb Filtrowanie.
 
-  This behavior can be disabled by toggling the "Auto" box in the bottom section of the air alarm menu.
+  Funkcję tę można wyłączyć, odznaczając pole "Tryb automatyczny" w środkowej części menu alarmu atmosferycznego.
 
-  Relevant tips on how to fix [textlink="spacing" link="Spacing"] and [textlink="fires" link="Fires"] can be found in the relevant guides.
+  Wskazówki dotyczące rozwiązywania problemów związanych z [textlink="rozszczenieniem kadłuba statku" link="Spacing"] i [textlink="pożarami" link="Fires"] można znaleźć w odpowiednich poradnikach.
 </Document>

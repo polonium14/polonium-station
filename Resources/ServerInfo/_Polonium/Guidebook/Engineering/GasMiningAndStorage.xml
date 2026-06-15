@@ -7,24 +7,24 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-  # Gas Mining and Storage
-  Gasses are often permanently used. Whether they are lost to [textlink="space" link="Spacing"] or used in a burn chamber, the station needs to be able to produce more gas to replace what is lost.
-  It also needs to store this gas in a safe and efficient manner.
+  # Wydobycie i magazynowanie gazu
+  Gazy są często zużywane nieodwracalnie. Niezależnie od tego, czy są one tracone w wyniku [textlink="rozszczelnienia kadłuba statku" link="Spacing"] czy też są wykorzystywane w komorze spalania, stacja musi być w stanie wyprodukować więcej gazu, aby uzupełnić straty.
+  Musi również magazynować ten gaz w bezpieczny i wydajny sposób.
 
-  ## Gas Miners
-  Gas miners are used to replenish the station's gas supply. They are found in the gas storage tanks in Atmospherics.
+  ## Koparki gazu
+  Koparki gazu służą do uzupełniania zapasów gazu na stacji. Znajdują się one w zbiornikach gazu w departamencie atmosferycznym.
 
   <Box>
     <GuideEntityEmbed Entity="GasMinerOxygenStation"/>
     <GuideEntityEmbed Entity="GasMinerNitrogenStation"/>
   </Box>
 
-  Gas miners constantly produce room temperature gas and push it into the exposed atmosphere. They require no power to function, and never stop working unless they have reached the defined [bold]cutoff pressure[/bold].
+  Koparki gazu nieustannie wytwarzają gaz o temperaturze pokojowej i wypuszczają go do atmosfery. Do działania nie potrzebują zasilania i nie przestają pracować, dopóki nie osiągną określonego [bold]ciśnienia granicznego[/bold].
 
-  You can see more information about the gas miners by inspecting them using [color=yellow][bold][keybind="ExamineEntity"][/bold][/color].
-  Try inspecting the gas miners presented above.
+  Więcej informacji o koparkach gazu można uzyskać, badając je za pomocą [color=#ffe566][bold][keybind="ExamineEntity"][/bold][/color].
+  Spróbuj zbadać koparki gazu przedstawione powyżej.
 
-  Gas miners come in tiers, with the larger versions having a higher pressure cutoff than the smaller versions.
+  Koparki gazu dzielą się na różne klasy, przy czym większe modele mają wyższy próg ciśnienia odcięcia niż mniejsze.
 
   <Box>
     <GuideEntityEmbed Entity="GasMinerNitrogen" Caption="300 kPa"/>
@@ -32,10 +32,10 @@ SPDX-License-Identifier: MIT
     <GuideEntityEmbed Entity="GasMinerNitrogenStationLarge" Caption="4500 kPa"/>
   </Box>
 
-  If gas miners are ever unanchored from the station, they can be reanchored using a regular wrench.
+  Jeśli koparki gazu zostaną kiedykolwiek odłączone od stacji, można je ponownie podłączyć za pomocą zwykłego klucza.
 
-  ## Gas Storage
-  Gas storage tanks are used to store gas produced by the gas miners, and to make it available to other processes. They are found in Atmospherics.
+  ## Magazynowanie gazu
+  Zbiorniki magazynowe służą do przechowywania gazu wydobywanego przez koparki oraz do udostępniania go innym procesom. Można je znaleźć w departamencie atmosferycznym.
 
   <Box>
     <GuideEntityEmbed Entity="WallReinforced" Rotation="0" Caption="" Margin="0"/>
@@ -60,15 +60,15 @@ SPDX-License-Identifier: MIT
   </Box>
 
   <Box>
-    [color=#999999][italic]An example of a small gas holding tank[italic][/color]
+    [color=#c8c8c8][italic]Przykład małego zbiornika na gaz[italic][/color]
   </Box>
 
-  Various atmos processes insert and remove gasses from the gas storage tanks.
-  For example:
-  - The gas miner provides fresh gasses to the gas storage tanks, if there is room.
-  - The recyclernet injects reclaimed gasses into the gas storage tanks for reuse.
-  - Setups like the distronet and burn chamber remove gasses from the gas storage tanks.
+  Inżynierowie atmosferyczni mogą wprowadzać i usuwać gazy ze zbiorników magazynowych na różne sposoby.
+  Na przykład:
+  - Koparka gazudostarcza świeże gazy do zbiorników, o ile jest w nich miejsce.
+  - Sieć recyklingowa wtłacza gazy odzyskane do zbiorników magazynowych w celu ich ponownego wykorzystania.
+  - Systemy takie jak sieć dystrybucyjna i komora spalania usuwają gazy ze zbiorników magazynowych.
 
-  Gas storage tanks are designed to be able to be measured using a [textlink="Gas Analyzer" link="AtmosTools"].
-  Because the outflow vent is a [textlink="passive vent" link="PassiveVent"], you can use a [textlink="gas analyzer" link="AtmosTools"] to measure the gas content of the [textlink="pump's" link="Pumps"] input, which is drawing from the gas storage tank.
+  Zbiorniki do przechowywania gazu są zaprojektowane tak, aby można było dokonywać w nich pomiarów za pomocą [textlink="analizatora gazu" link="AtmosTools"].
+  Ponieważ zastosowany został [textlink="pasywny otwór wentylacyjny" link="PassiveVent"] można użyć [textlink="analizatora gazu" link="AtmosTools"] do pomiaru zawartości gazu na wlocie [textlink="pompki" link="Pumps"], która pobiera gaz ze zbiornika magazynowego.
 </Document>

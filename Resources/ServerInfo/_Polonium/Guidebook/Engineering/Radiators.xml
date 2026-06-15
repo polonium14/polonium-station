@@ -7,30 +7,30 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-  # Radiators
-  Radiators are a device that enables the exchange of heat energy between a [textlink="pipenet" link="PipeNetworks"] and the environment.
+  # Radiatory
+  Radiatory to urządzenia umożliwiające wymianę energii cieplnej między [textlink="sieciami rurociągów" link="PipeNetworks"] a otoczeniem.
 
   <Box>
     <GuideEntityEmbed Entity="HeatExchanger"/>
   </Box>
 
-  Radiators are completely passive: they do not require power to function.
-  They will always equalize the temperature of the gas in the [textlink="pipenet" link="PipeNetworks"] with the environment.
+  Radiatory działają całkowicie pasywnie: do funkcjonowania nie potrzebują zasilania.
+  Zawsze wyrównują temperaturę gazu w [textlink="sieci rurociągów" link="PipeNetworks"] z temperaturą otoczenia.
 
-  Radiators have two methods of transferring heat: convection and radiation.
-  - Convection is the transfer of heat through the movement of gas.
-  - Radiation is the transfer of heat through electromagnetic waves.
+  Radiatory mają dwa sposoby przekazywania ciepła: konwekcję i promieniowanie.
+  - Konwekcja to przekazywanie ciepła poprzez ruch gazów.
+  - Promieniowanie to przekazywanie ciepła za pomocą fal elektromagnetycznych.
 
-  If a radiator is in a vacuum, it will only be able to transfer heat through radiation.
-  If it is in an atmosphere, it will be able to transfer heat through both convection and radiation.
+  Jeśli radiator znajduje się w próżni, będzie mógł przekazywać ciepło wyłącznie poprzez promieniowanie.
+  Jeśli znajduje się w atmosferze, będzie mógł przekazywać ciepło zarówno poprzez konwekcję, jak i promieniowanie.
 
-  Under convection, you can only get as cold or as hot as the atmosphere or [textlink="pipenet" link="PipeNetworks"] you're exchanging heat with (given the temperature of the gas in the [textlink="pipenet" link="PipeNetworks"] or atmosphere stays the same).
+  W przypadku konwekcji temperatura może osiągnąć jedynie wartość równą temperaturze atmosfery lub [textlink="medium" link="PipeNetworks"], z którym zachodzi wymiana ciepła (przy założeniu, że temperatura gazu w [textlink="sieci rurociągów" link="PipeNetworks"] lub atmosferze pozostaje niezmienna).
 
-  If you're exchanging heat with space, you can only get as cold as space.
-  To increase the efficiency of radiation, you can build radiators on lattice, which will allow the radiator to radiate more heat, compared to being directly attached to hull tile.
+  Jeśli przeprowadzamy wymianę ciepła z przestrzenią kosmiczną, temperatura nie może spaść poniżej temperatury panującej w przestrzeni.
+  Aby zwiększyć wydajność promieniowania, można zamontować radiatory na kratownicy, co pozwoli im oddać więcej ciepła w porównaniu z tymi zamontowanymi bezpośrednio na płycie kadłuba.
 
-  Gas will flow naturally through the radiator via differences in pressure, but you can use a gas pump to increase the flow rate.
+  Gaz przepływa przez radiator w sposób naturalny dzięki różnicom ciśnienia, ale można użyć pompy gazowej, aby zwiększyć natężenie przepływu.
 
-  Increasing the flow rate of gas through the radiator will increase the rate of heat exchange.
+  Zwiększenie natężenia przepływu gazu przez radiator zwiększy tempo wymiany ciepła.
 
   </Document>
