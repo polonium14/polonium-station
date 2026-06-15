@@ -9,20 +9,20 @@ SPDX-License-Identifier: MIT
 <Document>
 # Środki karne personelu Centralnego Dowództwa
 
-[bold]Kategoria 1.[/bold] (ISW, RNT, Śędzia) Personel Centralnego Dowództwa może skonfiskować dowolny przedmiot nalężący do [color=#134975]NanoTrasen[/color] znajdujący się w posiadaniu załogi lub [color=#1b67a5]dowództwa[/color] jako konsekwencja za naganne zachowanie;
+[bold]Kategoria 1.[/bold] (ISW, PNT, Śędzia) Personel Centralnego Dowództwa może skonfiskować dowolny przedmiot nalężący do [color=#134975]NanoTrasen[/color] znajdujący się w posiadaniu załogi lub [color=#1b67a5]dowództwa[/color] jako konsekwencja za naganne zachowanie;
 
-[bold]Kategoria 2.[/bold] (RNT, Sędzia) Personel Cetralnego dowództwa jest uprawniony do narzucenia degradacji członka załogi lub dowództwa jako konskewencja za karygodne zachowanie;
+[bold]Kategoria 2.[/bold] (PNT, Sędzia) Personel Cetralnego dowództwa jest uprawniony do narzucenia degradacji członka załogi lub dowództwa jako konskewencja za karygodne zachowanie;
 
 [bold]Kategoria 3.[/bold] (Śędzia) Personel Centralengo Dowództwa może nakazać egzekucje członka załogi wprzyadku skandalicznego zachowania. To powinno być używane wyłącznie jako ostateczność, po tym jak wszystkie inne konsekwencje nie przyniosły skutku.
 
 # Jeśli musisz odstąpić,
 
 [bold]Dokumentuj, dokumentuj, dokumentuj![/bold]
-Raporty, dzwonienie do [color=#009100]Centralnego Dowództwa[/color] przy użyciu [textlink="czerwonego telefonu" link="RedPhoneSOP"], albo nawet modlitwy będą słyszane przez  [color=#009100]Centralne Dowództwo[/color] a twoje czyny mogą zostać usprawiedliwione jeśli będziesz działał w imię interesów[color=#134975]NanoTrasen[/color].
+Raporty, dzwonienie do [color=#009100]Centralnego Dowództwa[/color] przy użyciu [textlink="czerwonego telefonu" link="RedPhoneSOP"], albo nawet modlitwy będą słyszane przez  [color=#009100]Centralne Dowództwo[/color], a twoje czyny mogą zostać usprawiedliwione jeśli będziesz działał w imię interesów[color=#134975]NanoTrasen[/color].
 
 ## Departmental SOP
   - [textlink="Inspektor Spraw Wewnętrznych" link="IAASOP"]
-  - [textlink="Reprezentant Nanotrasen" link="NTRSOP"]
+  - [textlink="Przedstawiciel Nanotrasen" link="NTRSOP"]
   - [textlink="Śędzia" link="MagistrateSOP"]
   - [textlink="Czerwony Telefon" link="RedPhoneSOP"]
 
