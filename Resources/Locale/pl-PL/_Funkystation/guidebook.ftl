@@ -10,7 +10,6 @@ guide-entry-cargo-sop = SPO Logistyki
 guide-entry-science-sop = SPO Badań i Rozwoju
 guide-entry-eoc-sop = Wrogowie Korporacji
 guide-entry-alert-sop = Kody zagrożenia
-guide-entry-legal-sop = SPO Prawne
 guide-entry-ingredient-reactions = Ingredient Reactions
 guide-entry-alertlevel-green = Kod Zielony
 guide-entry-alertlevel-yellow = Kod Żółty
