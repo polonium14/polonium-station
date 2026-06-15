@@ -8,127 +8,148 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-  Poniżej podana jest lista wszystkich dokumentów SPO dla Ochrony.
+Poniżej znajduje się lista wszystkich dokumentów SPO dla Ochrony.
 
-  # SPO Komendanta
+# Procedura stosowania siły
+
+Pełna wersja: [textlink="Procedura stosowania siły" link="UseOfForceSOP"]. Obowiązuje wszystkich funkcjonariuszy Ochrony przy interwencjach wobec podejrzanych.
+
+Niniejszy dokument określa, jaką siłę może zastosować [color=#cb0000]Ochrona[/color] wobec podejrzanego, zależnie od kodu zagrożenia oraz jego zachowania. Funkcjonariusz może stosować siłę [bold]nie wyższą[/bold] niż wskazana w tabeli.
+
+## Tabela stosowania siły
+
+Zielony / Niebieski: współpraca I, opór II, atak II, krytyk III.
+Żółty: współpraca I, opór II, atak III, krytyk III.
+Czerwony: współpraca II, opór III, atak III, krytyk III.
+Delta / Gamma (oraz Fioletowy, Octarine): współpraca II, opór III, atak III, krytyk III.
+
+[bold]Poziom I[/bold] — werbalny. [bold]Poziom II[/bold] — obezwładnienie (błyski, pałki, kajdanki). [bold]Poziom III[/bold] — śmiercionośny, z obowiązkiem ratunku po interwencji, o ile pozwala sytuacja.
+
+# SPO Komendanta
+
+Przy aresztowaniach i interwencjach patrolowych obowiązuje procedura stosowania siły.
 
 ## Kod Zielony
 
-[bold]1.[/bold] Komendant może przeprowadzać aresztowania na tych samych warunkach co [color=#cb0000]Oficerowie Ochrony[/color];
+[bold]1.[/bold] Komendant może dokonywać aresztowań na tych samych warunkach co [color=#cb0000]Oficerowie Ochrony[/color];
 
-[bold]2.[/bold] Komendant może nosić w pełni załadowany pasek ochrony oraz standardową broń boczną (np. VIS MPS). Chociaż wolno mu nosić jego unikalny X-01 Multifazowy, jest to odradzane ze względu na obawy bezpieczeństwa. Na niektórych stacjach Komendant dostaje również w swoim biurze dodatkową broń, wolno mu ją nosić, ale jest to niezalecane;
+[bold]2.[/bold] Komendant może nosić w pełni załadowany pas ochrony oraz standardową broń boczną (np. VIS MPS). Chociaż wolno mu nosić swój unikalny X-01 Multifazowy, jest to odradzane ze względów bezpieczeństwa. Na niektórych stacjach w biurze Komendanta znajduje się również dodatkowa broń; wolno mu ją nosić, lecz jest to niezalecane;
 
-[bold]3.[/bold] Komendant ma obowiązek zezwolić na proces sądowy w warunkach przedstawionych w [textlink="Legal SOP" link="LegalSOP"] oraz ma obowiązek zezwolić podejrzanemu na spotkanie z jego wybranym reprezentantem prawnym w dowolnym momencie trwania wyroku. Czasomierz wyroku podejrzanego powinno zapauzować na czas takich spotkań oraz wznawiać w momencie jego powrotu do celi;
+[bold]3.[/bold] Komendant ma obowiązek zezwolić na proces sądowy na warunkach przedstawionych w [textlink="SPO Prawnym" link="LegalSOP"] oraz umożliwić podejrzanemu spotkanie z wybranym przez niego reprezentantem prawnym w dowolnym momencie odbywania wyroku. Odliczanie czasu wyroku powinno zostać wstrzymane na czas takich spotkań i wznowione w momencie powrotu więźnia do celi;
 
-[bold]4.[/bold] Komendant ma obowiązek zezwolić podejrzanemu na dostęp do prawnika [italic]w trakcie przesłuchań[/italic] tylko w przypadkach, gdy zbrodnia jest poziomu III lub wyżej;
+[bold]4.[/bold] Komendant ma obowiązek zapewnić podejrzanemu obecność prawnika [italic]w trakcie przesłuchań[/italic] tylko w przypadku przestępstw poziomu III lub wyższego;
 
-[bold]5.[/bold] Komendant powinien stosować się do tych samych wytycznych, co [color=#cb0000]Nadzorca Ochrony[/color] dla sprzętu ze zbrojowni, mobilnych błysków oraz rozstawianych barier;
+[bold]5.[/bold] Komendant powinien przestrzegać tych samych wytycznych co [color=#cb0000]Nadzorca Ochrony[/color] w kwestii sprzętu ze zbrojowni, mobilnych błysków oraz rozstawianych barier;
 
-[bold]6.[/bold] Komendant [bold]nie[/bold] ma zezwolenia, aby zabierać i nosić sprzęt ze zbrojowni;
+[bold]6.[/bold] Komendant [bold]nie[/bold] ma prawa pobierać ani nosić sprzętu ze zbrojowni;
 
-[bold]7.[/bold] Komendant ma zezwolenie na noszenie swojego zwykłego płaszcza lub swojego opancerzonego trencza;
+[bold]7.[/bold] Komendant ma prawo nosić swój standardowy płaszcz lub opancerzony trencz;
 
-[bold]8.[/bold] Komendant ma zezwolenie na noszenie swojej unikalnej maski przeciwgazowej;
+[bold]8.[/bold] Komendant ma prawo nosić swoją unikalną maskę przeciwgazową;
 
-[bold]9.[/bold] Komendant [bold]nie[/bold] może zmieniać wydanych wyroków, chyba że pojawią się nowe dowody, albo sam więzień spróbuje uciec;
+[bold]9.[/bold] Komendant [bold]nie[/bold] może zmieniać wydanych wyroków, chyba że pojawią się nowe dowody albo więzień spróbuje uciec;
 
-[bold]10.[/bold] Komendant powinien stosować się do tych samych wytycznych, co [color=#cb0000]Oficerowie Ochrony[/color] odnośnie ubioru, z tym wyjątkiem, że wszystkie unikalne ubrania komendanta są również dozwolone;
+[bold]10.[/bold] Komendant powinien przestrzegać tych samych wytycznych dotyczących ubioru co [color=#cb0000]Oficerowie Ochrony[/color], z tą różnicą, że dozwolone są również wszystkie unikalne elementy ubioru Komendanta;
 
-[bold]11.[/bold] Zachęca się Komendanta, aby przestrzegał [textlink="Zasad Postępowania Ochrony" link="RulesOfConduct"], ponieważ daje to dobry przykład dla [color=#cb0000]Kadetów Ochrony[/color] oraz wspiera zaufanie publiczne do Ochrony.
+[bold]11.[/bold] Komendant jest zachęcany do przestrzegania [textlink="Zasad Postępowania Ochrony" link="RulesOfConduct"], ponieważ daje to dobry przykład [color=#cb0000]Kadetom Ochrony[/color] oraz buduje zaufanie publiczne do działu Ochrony.
 
 ## Kod Niebieski
 
-[bold]1.[/bold] Wszystkie wskazania przechodzą z Kodu Zielonego. Odnośnie wskazania 2, komendant jest teraz zachęcany do noszenia X-01.
+[bold]1.[/bold] Obowiązują wszystkie wytyczne z Kodu Zielonego. W odniesieniu do punktu 2, Komendant jest teraz zachęcany do noszenia X-01.
 
-[bold]2.[/bold] Odnośnie wskazania 5, komendant upoważniony jest do pewnej wyrozumiałości, aby zapewnić bezpieczeństwo dowództwu oraz reszcie ważnej załogi.
+[bold]2.[/bold] W odniesieniu do punktu 5, Komendant ma prawo do pewnej elastyczności, aby zapewnić bezpieczeństwo Dowództwu oraz kluczowemu personelowi.
 
 ## Kod Czerwony
 
-[bold]1.[/bold] Wskazania 1, 2, 4, 6, 8, 9, 10 oraz 11 przechodzą z [color=green]Kodu Zielonego[/color];
+[bold]1.[/bold] Obowiązują wytyczne 1, 2, 4, 6, 8, 9, 10 oraz 11 z [color=green]Kodu Zielonego[/color];
 
-[bold]2.[/bold] Komendant [bold]nie[/bold] ma obowiązku prowadzić sądu w czasie zagrożenia. Ma jednak obowiązek zezwolić podejrzanemu na spotkanie z jego wybranym reprezentantem prawnym w dowolnym momencie trwania wyroku. Czasomierz wyroku podejrzanego powinno się zapauzować na czas takich spotkań oraz wznawiać w momencie jego powrotu do celi.
+[bold]2.[/bold] Komendant [bold]nie[/bold] ma obowiązku organizowania procesu sądowego w czasie zagrożenia. Ma jednak obowiązek umożliwić podejrzanemu spotkanie z wybranym przez niego reprezentantem prawnym w dowolnym momencie odbywania wyroku. Odliczanie czasu wyroku powinno zostać wstrzymane na czas takich spotkań i wznowione w momencie powrotu więźnia do celi.
 
-[bold]3.[/bold] Komendant ma zezwolenie na pobieranie dowolnej ilości sprzętu ze zbrojowni pod warunkiem, że zostawi wystarczająco sprzętu dla reszty [color=#cb0000]Ochrony[/color];
+[bold]3.[/bold] Komendant ma prawo pobrać dowolną ilość sprzętu ze zbrojowni, pod warunkiem że pozostawi wystarczającą jego ilość dla reszty [color=#cb0000]Ochrony[/color];
 
-[bold]4.[/bold] Komendant ma [bold]obowiązek[/bold] zrobić ogłoszenie wyjaśniające powód wprowadzenia Kodu Czerwonego.
+[bold]4.[/bold] Komendant ma [bold]obowiązek[/bold] wydać ogłoszenie wyjaśniające powód wprowadzenia Kodu Czerwonego.
 
-  # Oficerowie Ochrony / Kadeci
+# Oficerowie Ochrony / Kadeci
+
+Przy zatrzymaniach i aresztach obowiązuje procedura stosowania siły. Poniższe wytyczne uzupełniają ją w zależności od kodu zagrożenia.
 
 ## Kod Zielony
 
-[bold]1.[/bold] Oficerowie Ochrony są zachęcani, aby zapoznać się z [textlink="Zasadami Postępowania Ochrony" link="RulesOfConduct"] przed nawiązaniem kontaktu z członkami załogi;
+[bold]1.[/bold] Oficerowie Ochrony są zachęcani do zapoznania się z [textlink="Zasadami Postępowania Ochrony" link="RulesOfConduct"] oraz procedurą stosowania siły przed nawiązaniem kontaktu z członkami załogi;
 
-[bold]2.[/bold] Oficerowie Ochrony są zobowiązani do podania przyczyn zatrzymania przed podjęciem dalszych działań. Wyjątek stanowi sytuacja, gdy podejrzany odmawia zatrzymania się;
+[bold]2.[/bold] Oficerowie Ochrony są zobowiązani podać przyczynę zatrzymania (poziom I) przed podjęciem dalszych działań. Wyjątek stanowi sytuacja, gdy podejrzany odmawia zatrzymania się;
 
-[bold]3.[/bold] Oficerowie Ochrony są zobowiązani podjąć próbę doprowadzenia podejrzanych lub świadków do aresztu bez zakładania im kajdanek ani obezwładniania. W przypadku odmowy współpracy ze strony podejrzanego, Oficer może postąpić jak zwykle;
+[bold]3.[/bold] Oficerowie Ochrony są zobowiązani podjąć próbę doprowadzenia podejrzanych lub świadków do aresztu bez środków poziomu II. W przypadku odmowy współpracy ze strony podejrzanego stosuje się tabelę stosowania siły;
 
-[bold]4.[/bold] Oficerom Ochrony nie wolno wyciągać żadnej broni, dopóki podejrzany nie podejmie próby ucieczki lub nie stanie się aktywnie wrogi;
+[bold]4.[/bold] Oficerom Ochrony nie wolno stosować poziomu III ani wyciągać broni śmiercionośnej, dopóki zachowanie podejrzanego nie uzasadni wyższego poziomu siły według procedury;
 
-[bold]5.[/bold] Oficerowie Ochrony [bold]nie[/bold] mogą żądać dostępu do innych departamentów w trakcie patroli. Jednakże, prośby o dostęp skierowane do [color=#9fed58]Kierownika Personelu[/color] są akceptowalne;
+[bold]5.[/bold] Oficerowie Ochrony [bold]nie[/bold] mogą żądać dostępu do innych departamentów w trakcie patroli. Jednakże prośby o dostęp skierowane do [color=#9fed58]Kierownika Personelu[/color] są akceptowalne;
 
-[bold]6.[/bold] Oficerowie Ochrony [bold]nie[/bold] mają pozwolenia na trzymanie wyciągniętej broni w trakcie normalnego patrolu;
+[bold]6.[/bold] Oficerowie Ochrony [bold]nie[/bold] mają prawa trzymać wyciągniętej broni w trakcie normalnego patrolu;
 
-[bold]7.[/bold] Oficerowie Ochrony [bold]nie[/bold] mają pozwolenia na prowadzenie przeszukań, chyba że dysponują nakazem zatwierdzonym przez [color=#1b67a5]Komendanta[/color] / [color=#1b67a5]Kapitana[/color], lub jest oczywiste, że dana osoba popełniła przestępstwo;
+[bold]7.[/bold] Oficerowie Ochrony [bold]nie[/bold] mają prawa prowadzić przeszukań, chyba że istnieją uzasadnione podejrzenia lub dowody, że dana osoba popełniła przestępstwo. Dalsze przeszukania wymagają nakazu [color=#1b67a5]Komendanta[/color] lub [color=#1b67a5]Kapitana[/color];
 
-[bold]8.[/bold] Oficerowie Ochrony mają nosić swoje uniformy zgodnie z [textlink="Zasadami Postępowania Ochrony" link="RulesOfConduct"].
+[bold]8.[/bold] Oficerowie Ochrony powinni nosić swoje uniformy zgodnie z [textlink="Zasadami Postępowania Ochrony" link="RulesOfConduct"].
 
 ## Kod Niebieski
 
-[bold]1.[/bold] Obowiązują wskazania 1, 2, 4 oraz 8 z [color=green]Kodu Zielonego[/color];
+[bold]1.[/bold] Obowiązują wytyczne 1, 2, 4 oraz 8 z [color=green]Kodu Zielonego[/color];
 
-[bold]2.[/bold] Oficerom Ochrony wolno nosić dowolne uzbrojenie ze zbrojowni, za pozwoleniem [color=#cb0000]Nadzorcy Ochrony[/color], ale nie więcej niż jedną sztukę naraz. Wyjątkami są zagrożenia dla całej stacji oraz terroryzm.
+[bold]2.[/bold] Oficerom Ochrony wolno nosić dowolne uzbrojenie ze zbrojowni za pozwoleniem [color=#cb0000]Nadzorcy Ochrony[/color], ale nie więcej niż jedną sztukę naraz. Wyjątkami są zagrożenia dla całej stacji oraz terroryzm;
 
-[bold]3.[/bold] Oficerowie Ochrony mają pozwolenie na trzymanie wyciągniętej broni w trakcie normalnego patrolu, ale jest to wysoce niezalecane;
+[bold]3.[/bold] Oficerowie Ochrony mają prawo trzymać wyciągniętą broń w trakcie normalnego patrolu, lecz jest to wysoce niezalecane, dopóki nie zachodzi potrzeba poziomu III;
 
 [bold]4.[/bold] Oficerom Ochrony wolno trzymać wyciągniętą broń w trakcie aresztowania;
 
 [bold]5.[/bold] Oficerowie Ochrony mogą żądać dostępu do innych departamentów w trakcie patroli;
 
-[bold]6.[/bold] Oficerowie Ochrony mogą losowo przeszukiwać załogantów, ale nie wolno im używać żadnej formy siły, chyba że załogant jest przesadnie wrogi. Załoganci, którzy odmawiają przeszukania, mogą być obezwładnieni i zakajdankowani na czas przeszukania;
+[bold]6.[/bold] Oficerowie Ochrony mogą losowo przeszukiwać załogantów. Przy odmowie przeszukania dopuszczalne jest obezwładnienie i zakajdankowanie (poziom II). Siła wyższa niż poziom II wymaga wrogiego zachowania zgodnie z procedurą stosowania siły;
 
 [bold]7.[/bold] Oficerowie Ochrony mogą zostawiać więźniów w kajdankach, jeśli są oni wrogo nastawieni.
 
 ## Kod Czerwony
 
-[bold]1.[/bold] Obowiązują wskazania 2, 3, 4, 5, 6 oraz 7 z [color=blue]Kodu Niebieskiego[/color]; wskazanie 8 przechodzi z [color=green]Kodu Zielonego[/color];
+[bold]1.[/bold] Obowiązują wytyczne 2, 3, 4, 5, 6 oraz 7 z [color=blue]Kodu Niebieskiego[/color]; wytyczna 8 przechodzi z [color=green]Kodu Zielonego[/color];
 
-[bold]2.[/bold] Oficerowie Ochrony mogą aresztować podejrzanych bez podawania powodu, o ile są dowody na ich zbrodnie;
+[bold]2.[/bold] Oficerowie Ochrony mogą aresztować podejrzanych bez podawania powodu, o ile istnieją dowody na ich przestępstwa;
 
-[bold]3.[/bold] Oficerowie Ochrony mogą na siłę przenosić personel do ich departamentów, jeśli jest to potrzebne.
+[bold]3.[/bold] Oficerowie Ochrony mogą na siłę przenosić personel do ich departamentów, jeśli jest to konieczne.
 
-  # Nadzorca Ochrony
+# Nadzorca Ochrony
+
+Przy aresztowaniach, przeszukaniach więźniów i interwencjach w więzieniu obowiązuje procedura stosowania siły.
 
 ## Kod Zielony
 
-[bold]1.[/bold] Nadzorca [bold]nie[/bold] może przeprowadzać aresztowań, jeśli są aktywni [color=#cb0000]Oficerowie Ochrony[/color];
+[bold]1.[/bold] Nadzorca [bold]nie[/bold] może dokonywać aresztowań, jeśli są aktywni [color=#cb0000]Oficerowie Ochrony[/color];
 
-[bold]2.[/bold] Nadzorca musi przeprowadzić pełne i szczegółowe przeszukanie każdego więźnia, włącznie z ich kieszeniami, PDA i kieszeniami płaszczy;
+[bold]2.[/bold] Nadzorca musi przeprowadzić pełne i szczegółowe przeszukanie każdego więźnia, włącznie z jego kieszeniami, PDA oraz kieszeniami płaszcza;
 
-[bold]3.[/bold] Nadzorca musi zezwolić na rozprawę sądową w przypadkach określonych w [textlink="SPO Prawne" link="LegalSOP"], oraz ma obowiązek zezwolić podejrzanemu na spotkanie z jego wybranym reprezentantem prawnym w dowolnym momencie trwania wyroku. Czasomierz wyroku podejrzanego powinno się zapauzować na czas takich spotkań oraz wznawiać w momencie jego powrotu do celi;
+[bold]3.[/bold] Nadzorca musi zezwolić na rozprawę sądową w przypadkach określonych w [textlink="SPO Prawnym" link="LegalSOP"] oraz umożliwić podejrzanemu spotkanie z wybranym przez niego reprezentantem prawnym w dowolnym momencie odbywania wyroku. Odliczanie czasu wyroku powinno zostać wstrzymane na czas takich spotkań i wznowione w momencie powrotu więźnia do celi;
 
-[bold]4.[/bold] Nadzorca ma obowiązek zezwolić podejrzanemu na prawnika [italic]w trakcie przesłuchań[/italic] tylko w przypadkach, gdy zbrodnia jest poziomu III lub wyżej;
+[bold]4.[/bold] Nadzorca ma obowiązek zapewnić podejrzanemu obecność prawnika [italic]w trakcie przesłuchań[/italic] tylko w przypadku przestępstw poziomu III lub wyższego;
 
-[bold]5.[/bold] Nadzorca [bold]nie[/bold] może rozdawać żadnych broni ani pancerzy ze zbrojowni, z wyjątkiem sprzętu ochronnego, który został skradziony lub zgubiony. Skafandry mogą zostać wydane, jeśli potrzebne jest awaryjne operowanie w przestrzeni kosmicznej. Wyjątkami są zagrożenia dla całej stacji oraz terroryzm;
+[bold]5.[/bold] Nadzorca [bold]nie[/bold] może wydawać żadnej broni ani pancerza ze zbrojowni, z wyjątkiem sprzętu ochronnego, który został skradziony lub zgubiony. Skafandry mogą zostać wydane, jeśli konieczne jest awaryjne działanie w przestrzeni kosmicznej. Wyjątkami są zagrożenia dla całej stacji oraz terroryzm;
 
-[bold]6.[/bold] Nadzorca może nosić w pełni załadowany pasek ochrony oraz standardową broń boczną (np. VIS MPS). Chociaż wolno mu nosić jego unikalną strzelbę energetyczną, jest to odradzane ze względu na obawy bezpieczeństwa;
+[bold]6.[/bold] Nadzorca może nosić w pełni załadowany pas ochrony oraz standardową broń boczną (np. VIS MPS). Chociaż wolno mu nosić swoją unikalną strzelbę energetyczną, jest to odradzane ze względów bezpieczeństwa;
 
 [bold]7.[/bold] Nadzorca [bold]nie[/bold] może stawiać mobilnych błysków w więzieniu;
 
 [bold]8.[/bold] Nadzorca [bold]nie[/bold] może ustawiać rozstawianych barier w więzieniu;
 
-[bold]9.[/bold] Nadzorca ma obowiązek wyczytać wszystkie zbrodnie więźnia w momencie skazania;
+[bold]9.[/bold] Nadzorca ma obowiązek odczytać wszystkie przestępstwa więźnia w momencie skazania;
 
 [bold]10.[/bold] Nadzorca nie może zostawić więźnia przykutego do łóżka. Wyjątkiem są wrogo zachowujący się więźniowie oraz tacy, którzy próbują uciec z więzienia;
 
-[bold]11.[/bold] Nadzorca powinien stosować się do tych samych wytycznych co [color=#cb0000]Oficerowie Ochrony[/color] odnośnie ubioru, z tym wyjątkiem, że wszystkie unikalne ubrania Nadzorcy są również dozwolone;
+[bold]11.[/bold] Nadzorca powinien przestrzegać tych samych wytycznych dotyczących ubioru co [color=#cb0000]Oficerowie Ochrony[/color], z tą różnicą, że dozwolone są również wszystkie unikalne elementy ubioru Nadzorcy;
 
-[bold]12.[/bold] Zachęca się Nadzorcowi, aby przestrzegał [textlink="Zasad Postępowania Ochrony" link="RulesOfConduct"], ponieważ daje to dobry przykład dla [color=#cb0000]Kadetów Ochrony[/color] oraz wspiera zaufanie publiczne do Ochrony.
+[bold]12.[/bold] Nadzorca jest zachęcany do przestrzegania [textlink="Zasad Postępowania Ochrony" link="RulesOfConduct"], ponieważ daje to dobry przykład [color=#cb0000]Kadetom Ochrony[/color] oraz buduje zaufanie publiczne do działu Ochrony.
 
 ## Kod Niebieski
 
-[bold]1.[/bold] Obowiązują wskazania 1, 2, 3, 4, 6, 9, 11 oraz 12 z [color=green]Kodu Zielonego[/color];
+[bold]1.[/bold] Obowiązują wytyczne 1, 2, 3, 4, 6, 9, 11 oraz 12 z [color=green]Kodu Zielonego[/color];
 
-[bold]2.[/bold] Nadzorca ma zezwolenie na wydawanie dowolnego sprzętu ze zbrojowni. Broń strzelecka powinna być wydawana tylko za zezwoleniem [color=#1b67a5]Komendanta[/color] lub [color=#1b67a5]Kapitana[/color], ponieważ stwarza ryzyko użycia siły śmiercionośnej, chyba że obecne są zagrożenia dla całej stacji lub terroryzm.
+[bold]2.[/bold] Nadzorca ma prawo wydawać dowolny sprzęt ze zbrojowni. Broń strzelecka powinna być wydawana tylko za zezwoleniem [color=#1b67a5]Komendanta[/color] lub [color=#1b67a5]Kapitana[/color], ponieważ stwarza ryzyko użycia siły śmiercionośnej, chyba że występują zagrożenia dla całej stacji lub terroryzm;
 
 [bold]3.[/bold] Nadzorca może stawiać mobilne błyski w więzieniu;
 
@@ -136,43 +157,45 @@ SPDX-License-Identifier: MIT
 
 ## Kod Czerwony
 
-[bold]1.[/bold] Obowiązują wskazania 2, 4, 6, 9, 11 oraz 12 z [color=green]Kodu Zielonego[/color];
+[bold]1.[/bold] Obowiązują wytyczne 2, 4, 6, 9, 11 oraz 12 z [color=green]Kodu Zielonego[/color];
 
-[bold]2.[/bold] Obowiązują wskazania 3 oraz 4 z [color=blue]Kodu Niebieskiego[/color]. Dodatkowo Nadzorca może nosić dowolną broń ze zbrojowni, ale nie więcej niż jedną sztukę naraz.
+[bold]2.[/bold] Obowiązują wytyczne 3 oraz 4 z [color=blue]Kodu Niebieskiego[/color]. Dodatkowo Nadzorca może nosić dowolną broń ze zbrojowni, ale nie więcej niż jedną sztukę naraz;
 
-[bold]3.[/bold] Nadzorca [bold]nie[/bold] ma obowiązku prowadzić sądu w czasie zagrożenia. Ma jednak obowiązek zezwolić podejrzanemu na spotkanie z jego wybranym reprezentantem prawnym w dowolnym momencie trwania wyroku. Czasomierz wyroku podejrzanego powinno się zapauzować na czas takich spotkań oraz wznawiać w momencie jego powrotu do celi.
+[bold]3.[/bold] Nadzorca [bold]nie[/bold] ma obowiązku organizowania procesu sądowego w czasie zagrożenia. Ma jednak obowiązek umożliwić podejrzanemu spotkanie z wybranym przez niego reprezentantem prawnym w dowolnym momencie odbywania wyroku. Odliczanie czasu wyroku powinno zostać wstrzymane na czas takich spotkań i wznowione w momencie powrotu więźnia do celi;
 
-[bold]4.[/bold] Nadzorca może rozdawać dowolną broń i pancerz ze zbrojowni. Obejmuje to osiągnięcia technologiczne z Rozwoju;
+[bold]4.[/bold] Nadzorca może wydawać dowolną broń i pancerz ze zbrojowni. Obejmuje to osiągnięcia technologiczne z Rozwoju;
 
-[bold]5.[/bold] Nadzorca może swobodnie przeprowadzać aresztowania.
+[bold]5.[/bold] Nadzorca może swobodnie dokonywać aresztowań.
 
-  # Detektyw
+# Detektyw
+
+Przy zatrzymaniach i aresztach obowiązuje procedura stosowania siły oraz SPO Oficera Ochrony.
 
 ## Kod Zielony
 
-[bold]1.[/bold] Detektywowi wolno pomagać innym [color=#cb0000]Oficerom Ochrony[/color] ze wszystkimi obowiązkami patrolowymi. Obejmuje to zatrzymania, przeszukania i aresztowania zgodnie z obecnym kodem zagrożenia. Powinni jednak skupić się na śledztwach i zbieraniu dowodów;
+[bold]1.[/bold] Detektywowi wolno pomagać innym [color=#cb0000]Oficerom Ochrony[/color] we wszystkich obowiązkach patrolowych. Obejmuje to zatrzymania, przeszukania i aresztowania zgodnie z obecnym kodem zagrożenia. Powinien jednak skupić się na śledztwach i zbieraniu dowodów;
 
-[bold]2.[/bold] Detektyw ma przestrzegać całego SPO Oficera Ochrony przy zatrzymaniach, przeszukaniach i aresztowaniach, zgodnie z obecnym kodem zagrożenia;
+[bold]2.[/bold] Detektyw musi przestrzegać całego SPO Oficera Ochrony przy zatrzymaniach, przeszukaniach i aresztowaniach, zgodnie z obecnym kodem zagrożenia;
 
-[bold]3.[/bold] Detektyw może nosić swój rewolwer, razem z zapasową amunicją;
+[bold]3.[/bold] Detektyw może nosić swój rewolwer wraz z zapasową amunicją. Rewolwer traktuje się jako broń poziomu III;
 
 [bold]4.[/bold] Detektyw może nosić w pełni wyposażony pas ochrony;
 
-[bold]5.[/bold] Detektyw może nosić ubrania spoza departamentu ochrony za zezwoleniem [color=#1b67a5]Komendanta[/color] w celu prowadzenia śledztwa pod przykrywką. Mają jednak obowiązek nosić swoje [color=#cb0000]ID ochrony[/color] przez cały ten czas;
+[bold]5.[/bold] Detektyw może nosić ubrania spoza departamentu Ochrony za zezwoleniem [color=#1b67a5]Komendanta[/color] w celu prowadzenia śledztwa pod przykrywką. Ma jednak obowiązek nosić swoje [color=#cb0000]ID Ochrony[/color] przez cały ten czas;
 
-[bold]6.[/bold] Kiedy nie operuje pod przykrywką, Detektyw powinien stosować się do normalnych wytycznych [color=#cb0000]Oficerów Ochrony[/color] odnośnie ubioru, z tym wyjątkiem, że wszystkie unikalne ubrania detektywa są również dozwolone.
+[bold]6.[/bold] Gdy nie działa pod przykrywką, Detektyw powinien przestrzegać normalnych wytycznych [color=#cb0000]Oficerów Ochrony[/color] dotyczących ubioru, z tą różnicą, że dozwolone są również wszystkie unikalne elementy ubioru Detektywa.
 
 ## Kod Niebieski
 
-[bold]1.[/bold] Wszystkie wskazania przechodzą z [color=green]Kodu Zielonego[/color];
+[bold]1.[/bold] Obowiązują wszystkie wytyczne z [color=green]Kodu Zielonego[/color];
 
-[bold]2.[/bold] Detektyw może wziąć dowolnego zatrzymanego na przesłuchanie w trakcie procesu zamykania. Jeśli podejrzany żąda prawnika na przesłuchanie, to Detektyw ma obowiązek się zgodzić tylko wtedy, gdy podejrzany popełnił zbrodnię poziomu trzeciego lub wyżej. Żadnego zatrzymanego nie wolno trzymać przez więcej niż 10 minut w procesie zamykania, jeśli nie ma żadnych dostępnych dowodów.
+[bold]2.[/bold] Detektyw może wziąć dowolnego zatrzymanego na przesłuchanie w trakcie procesu zamknięcia. Jeśli podejrzany żąda prawnika na przesłuchaniu, Detektyw ma obowiązek się zgodzić tylko wtedy, gdy podejrzany popełnił przestępstwo poziomu trzeciego lub wyższego. Żadnego zatrzymanego nie wolno trzymać dłużej niż 10 minut w procesie zamknięcia, jeśli nie ma żadnych dostępnych dowodów.
 
 ## Kod Czerwony
 
-[bold]1.[/bold] Obowiązują wskazania 1, 2, 3, 4 i 5 z [color=green]Kodu Zielonego[/color];
+[bold]1.[/bold] Obowiązują wytyczne 1, 2, 3, 4 oraz 5 z [color=green]Kodu Zielonego[/color];
 
-[bold]2.[/bold] Obowiązują wskazania 2 i 3 z [color=darkblue]Kodu Niebieskiego[/color];
+[bold]2.[/bold] Obowiązuje wytyczna 2 z [color=blue]Kodu Niebieskiego[/color];
 
-[bold]3.[/bold] Detektywowi wolno nosić dowolne uzbrojenie ze zbrojowni, za pozwoleniem [color=#cb0000]Nadzorcy Ochrony[/color], ale nie więcej niż jedną sztukę naraz. Wyjątkami są zagrożenia dla całej stacji oraz terroryzm.
+[bold]3.[/bold] Detektywowi wolno nosić dowolne uzbrojenie ze zbrojowni za pozwoleniem [color=#cb0000]Nadzorcy Ochrony[/color], ale nie więcej niż jedną sztukę naraz. Wyjątkami są zagrożenia dla całej stacji oraz terroryzm.
 </Document>
