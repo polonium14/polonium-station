@@ -1,0 +1,177 @@
+# SPDX-License-Identifier: MIT
+
+- type: latheRecipe
+  id: PrintedDocumentReportStationRecipe
+  result: PrintedDocumentReportStation
+  categories: [CommandDocuments]
+  completetime: 2
+  applyMaterialDiscount: false
+  materials: { PrinterPaper: 100 }
+
+- type: latheRecipe
+  id: PrintedDocumentErtRequestRecipe
+  result: PrintedDocumentErtRequest
+  categories: [CommandDocuments]
+  completetime: 2
+  applyMaterialDiscount: false
+  materials: { PrinterPaper: 100 }
+
+- type: latheRecipe
+  id: PrintedDocumentResignationRecipe
+  result: PrintedDocumentResignation
+  categories: [CommandDocuments]
+  completetime: 2
+  applyMaterialDiscount: false
+  materials: { PrinterPaper: 100 }
+
+- type: latheRecipe
+  id: PrintedDocumentJobChangeRequestRecipe
+  result: PrintedDocumentJobChangeRequest
+  categories: [CommandDocuments]
+  completetime: 2
+  applyMaterialDiscount: false
+  materials: { PrinterPaper: 100 }
+
+- type: latheRecipe
+  id: PrintedDocumentAccessExtensionRecipe
+  result: PrintedDocumentAccessExtension
+  categories: [CommandDocuments]
+  completetime: 2
+  applyMaterialDiscount: false
+  materials: { PrinterPaper: 100 }
+
+- type: latheRecipe
+  id: PrintedDocumentIdCardRequestRecipe
+  result: PrintedDocumentIdCardRequest
+  categories: [CommandDocuments]
+  completetime: 2
+  applyMaterialDiscount: false
+  materials: { PrinterPaper: 100 }
+
+- type: latheRecipe
+  id: PrintedDocumentRemovalOrderRecipe
+  result: PrintedDocumentRemovalOrder
+  categories: [CommandDocuments]
+  completetime: 2
+  applyMaterialDiscount: false
+  materials: { PrinterPaper: 100 }
+
+- type: latheRecipe
+  id: PrintedDocumentInterimHeadRequestRecipe
+  result: PrintedDocumentInterimHeadRequest
+  categories: [CommandDocuments]
+  completetime: 2
+  applyMaterialDiscount: false
+  materials: { PrinterPaper: 100 }
+
+- type: latheRecipe
+  id: PrintedDocumentComplaintRecipe
+  result: PrintedDocumentComplaint
+  categories: [CommandDocuments]
+  completetime: 2
+  applyMaterialDiscount: false
+  materials: { PrinterPaper: 100 }
+
+- type: latheRecipe
+  id: PrintedDocumentRestrictedEquipmentPermitRecipe
+  result: PrintedDocumentRestrictedEquipmentPermit
+  categories: [SecurityDocuments]
+  completetime: 2
+  applyMaterialDiscount: false
+  materials: { PrinterPaper: 100 }
+
+- type: latheRecipe
+  id: PrintedDocumentInterrogationProtocolRecipe
+  result: PrintedDocumentInterrogationProtocol
+  categories: [SecurityDocuments]
+  completetime: 2
+  applyMaterialDiscount: false
+  materials: { PrinterPaper: 100 }
+
+- type: latheRecipe
+  id: PrintedDocumentSearchWarrantRecipe
+  result: PrintedDocumentSearchWarrant
+  categories: [SecurityDocuments]
+  completetime: 2
+  applyMaterialDiscount: false
+  materials: { PrinterPaper: 100 }
+
+- type: latheRecipe
+  id: PrintedDocumentExecutionOrderRecipe
+  result: PrintedDocumentExecutionOrder
+  categories: [SecurityDocuments]
+  completetime: 2
+  applyMaterialDiscount: false
+  materials: { PrinterPaper: 100 }
+
+- type: latheRecipe
+  id: PrintedDocumentInvestigationReportRecipe
+  result: PrintedDocumentInvestigationReport
+  categories: [SecurityDocuments]
+  completetime: 2
+  applyMaterialDiscount: false
+  materials: { PrinterPaper: 100 }
+
+- type: latheRecipe
+  id: PrintedDocumentDeathCertificateRecipe
+  result: PrintedDocumentDeathCertificate
+  categories: [MedicalDocuments]
+  completetime: 2
+  applyMaterialDiscount: false
+  materials: { PrinterPaper: 100 }
+
+- type: latheRecipe
+  id: PrintedDocumentMedicationOrderRecipe
+  result: PrintedDocumentMedicationOrder
+  categories: [MedicalDocuments]
+  completetime: 2
+  applyMaterialDiscount: false
+  materials: { PrinterPaper: 100 }
+
+- type: latheRecipe
+  id: PrintedDocumentPrescriptionRecipe
+  result: PrintedDocumentPrescription
+  categories: [MedicalDocuments]
+  completetime: 2
+  applyMaterialDiscount: false
+  materials: { PrinterPaper: 100 }
+
+- type: latheRecipe
+  id: PrintedDocumentEuthanasiaRequestRecipe
+  result: PrintedDocumentEuthanasiaRequest
+  categories: [MedicalDocuments]
+  completetime: 2
+  applyMaterialDiscount: false
+  materials: { PrinterPaper: 100 }
+
+- type: latheRecipe
+  id: PrintedDocumentHealthCertificateRecipe
+  result: PrintedDocumentHealthCertificate
+  categories: [MedicalDocuments]
+  completetime: 2
+  applyMaterialDiscount: false
+  materials: { PrinterPaper: 100 }
+
+- type: latheRecipe
+  id: PrintedDocumentCargoOrderRecipe
+  result: PrintedDocumentCargoOrder
+  categories: [CargoDocuments]
+  completetime: 2
+  applyMaterialDiscount: false
+  materials: { PrinterPaper: 100 }
+
+- type: latheRecipe
+  id: PrintedDocumentConstructionPermitRecipe
+  result: PrintedDocumentConstructionPermit
+  categories: [EngineeringDocuments]
+  completetime: 2
+  applyMaterialDiscount: false
+  materials: { PrinterPaper: 100 }
+
+- type: latheRecipe
+  id: PrintedDocumentSentienceCertificateRecipe
+  result: PrintedDocumentSentienceCertificate
+  categories: [ScienceDocuments]
+  completetime: 2
+  applyMaterialDiscount: false
+  materials: { PrinterPaper: 100 }

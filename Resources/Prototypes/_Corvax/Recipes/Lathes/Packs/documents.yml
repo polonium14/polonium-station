@@ -1,0 +1,27 @@
+# SPDX-License-Identifier: MIT
+
+- type: latheRecipePack
+  id: CorvaxDocumentsPack
+  recipes:
+  - PrintedDocumentReportStationRecipe
+  - PrintedDocumentErtRequestRecipe
+  - PrintedDocumentResignationRecipe
+  - PrintedDocumentJobChangeRequestRecipe
+  - PrintedDocumentAccessExtensionRecipe
+  - PrintedDocumentIdCardRequestRecipe
+  - PrintedDocumentRemovalOrderRecipe
+  - PrintedDocumentInterimHeadRequestRecipe
+  - PrintedDocumentComplaintRecipe
+  - PrintedDocumentRestrictedEquipmentPermitRecipe
+  - PrintedDocumentInterrogationProtocolRecipe
+  - PrintedDocumentSearchWarrantRecipe
+  - PrintedDocumentExecutionOrderRecipe
+  - PrintedDocumentInvestigationReportRecipe
+  - PrintedDocumentDeathCertificateRecipe
+  - PrintedDocumentMedicationOrderRecipe
+  - PrintedDocumentPrescriptionRecipe
+  - PrintedDocumentEuthanasiaRequestRecipe
+  - PrintedDocumentHealthCertificateRecipe
+  - PrintedDocumentCargoOrderRecipe
+  - PrintedDocumentConstructionPermitRecipe
+  - PrintedDocumentSentienceCertificateRecipe

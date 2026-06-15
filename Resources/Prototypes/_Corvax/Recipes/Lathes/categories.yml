@@ -1,0 +1,25 @@
+# SPDX-License-Identifier: MIT
+
+- type: latheCategory
+  id: CommandDocuments
+  name: lathe-category-command-documents
+
+- type: latheCategory
+  id: SecurityDocuments
+  name: lathe-category-security-documents
+
+- type: latheCategory
+  id: MedicalDocuments
+  name: lathe-category-medical-documents
+
+- type: latheCategory
+  id: CargoDocuments
+  name: lathe-category-cargo-documents
+
+- type: latheCategory
+  id: EngineeringDocuments
+  name: lathe-category-engineering-documents
+
+- type: latheCategory
+  id: ScienceDocuments
+  name: lathe-category-science-documents
