@@ -127,6 +127,18 @@ SPDX-License-Identifier: MIT
 
   Piana z [color=#7ee8f7]odczynnikiem[/color] nanosi substancję chemiczną zawartą w roztworze na wszystkie obiekty znajdujące się w jej zasięgu – różni się to od [color=#7ee8f7]dymu[/color], ponieważ pozwala również na miejscowe nakładanie odczynników.
 
+  Piana z odczynnika pozostawia ślady na podłodze po użyciu z napojami lub innymi płynami, więc pamiętaj o tym podczas przygotowywania mieszanek!
+
+  Większa ilość fluorosurfaktantu i wody oznacza lepsze rozprzestrzenianie się piany – pamiętaj jednak, że nie zwiększa to jej mocy, która zależy od ilości odczynnika dodanego do roztworu.
+  Życzymy udanej zabawy podczas mieszania i tworzenia własnej piany!
+
+  Aby przygotować piankę z odczynnika, wymieszaj:
+
+  -1 część fluorosurfaktantu
+  -1 część wody
+  -(Opcjonalnie) dowolną ilość odczynnika
+
+
   ## Spienione metale
   <Box>
     <GuideEntityEmbed Entity="MetalFoamGrenade" Caption="Granat ze spienionym metalem"/>
@@ -173,6 +185,8 @@ SPDX-License-Identifier: MIT
 
   -1 część potasu
   -1 część wody
+
+  Spowoduje to natychmiastowy, niewielki, ale łatwy do wzmocnienia wybuch, który wyzwala ciepło i może rozbić szyby! Można to wykorzystać do łączenia efektów z większymi ładunkami wybuchowymi, takimi jak CLF3!
 
   ##CLF3
   <Box>
