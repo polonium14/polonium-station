@@ -23,7 +23,7 @@ SPDX-License-Identifier: MIT
 
   ## Claws
 
-  Felinids have razor sharp claws, so their unarmed attacks deal [color=orange]Slashing[/color] and [color=orange]Piercing[/color] damage.
+  Felinids have razor sharp claws, so their unarmed attacks deal [color=#ffb86b]Slashing[/color] and [color=#ffb86b]Piercing[/color] damage.
 
   ## Padded Feet
 
@@ -32,7 +32,7 @@ SPDX-License-Identifier: MIT
 
   ## Damage
 
-  Felinids take 15% more [color=orange]Blunt[/color], [color=orange]Slashing[/color] and [color=orange]Piercing[/color] damage,
+  Felinids take 15% more [color=#ffb86b]Blunt[/color], [color=#ffb86b]Slashing[/color] and [color=#ffb86b]Piercing[/color] damage,
   and take 30% more [color=cornflowerblue]Cold[/color] damage than other species.
 
 </Document>

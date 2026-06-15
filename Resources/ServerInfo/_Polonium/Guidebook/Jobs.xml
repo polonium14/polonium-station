@@ -17,42 +17,42 @@ SPDX-License-Identifier: MIT
 SS14 posiada dużą liczbę zawodów, podzielonych na siedem głównych działów:
 
 ## Serwis (Obsługa)
-[color=#9fed58]Serwis[/color] to różnorodny dział, który obejmuje Kierownika Personelu i inne zawody, które istnieją, aby służyć stacji.
+[color=#b8ff9e]Serwis[/color] to różnorodny dział, który obejmuje Kierownika Personelu i inne zawody, które istnieją, aby służyć stacji.
 
 Głównie funkcjonuje jako ludzie, którzy zabawiają, sprzątają i obsługują resztę załogi, z wyjątkiem pasażerów, którzy nie mają konkretnej pracy poza gubieniem się w korytarzach technicznych.
 
 ## Logistyka (Zaopatrzenie)
-[color=#b18644]Dział Logistyczny[/color] składa się z techników logistyków, techników odzysku i Kwatermistrza. Jako dział jest odpowiedzialny za dystrybucję zasobów i handel, oraz jest zdolny do kupowania i sprzedawania rzeczy na rynku galaktycznym.
+[color=#e8c878]Dział Logistyczny[/color] składa się z techników logistyków, techników odzysku i Kwatermistrza. Jako dział jest odpowiedzialny za dystrybucję zasobów i handel, oraz jest zdolny do kupowania i sprzedawania rzeczy na rynku galaktycznym.
 
 W większości oznacza to, że przeszukują stację i różne wraki w poszukiwaniu materiałów do sprzedaży i redystrybucji, oraz kupują materiały, o które proszą inne działy.
 
 ## Medycyna
-[color=#5b97bc]Medycyna[/color] składa się ze stażystów medycznych, chemików, lekarzy i Ordynatora. Jako dział jest odpowiedzialny za opiekę nad załogą, leczenie i/lub klonowanie rannych i martwych, leczenie chorób i zapobieganie temu, by wszyscy umarli w straszny, krwawy sposób w jakiejś szafie.
+[color=#9dd4f5]Medycyna[/color] składa się ze stażystów medycznych, chemików, lekarzy i Ordynatora. Jako dział jest odpowiedzialny za opiekę nad załogą, leczenie i/lub klonowanie rannych i martwych, leczenie chorób i zapobieganie temu, by wszyscy umarli w straszny, krwawy sposób w jakiejś szafie.
 
 Medycyna jest jednym z lepiej wyposażonych działów, z możliwością lokalizowania rannych członków załogi za pomocą monitora załogi, niemal nieskończonym zapasem chemikaliów (o ile chemia działa sprawnie) oraz zdolnością do szybkiego diagnozowania i szczepienia chorób zakaźnych.
 
 ## Badanie i Rozwój (B+R)
-[color=#c96dbf]B+R[/color] składa się z asystentów badawczych, naukowców i Kierownika Badań. Jako dział jest odpowiedzialny za badanie technologii i artefaktów, ulepszanie maszyn oraz drukowanie nowych i użytecznych urządzeń.
+[color=#e8a0ff]B+R[/color] składa się z asystentów badawczych, naukowców i Kierownika Badań. Jako dział jest odpowiedzialny za badanie technologii i artefaktów, ulepszanie maszyn oraz drukowanie nowych i użytecznych urządzeń.
 
 Naukowcy powinni szukać nowych artefaktów do badania, a także zachęcać działy do pomocy w ulepszaniu ich maszyn.
 
 ## Inżynieria
-[color=#f39f27]Inżynieria[/color] składa się z pomocników technicznych, inżynierów stacji, techników atmosferycznych i Naczelnego Inżyniera. Jako dział jest odpowiedzialny za utrzymanie zasilania stacji, integralności jej struktury i działanie systemu podtrzymywania życia (powietrza).
+[color=#ffc966]Inżynieria[/color] składa się z pomocników technicznych, inżynierów stacji, techników atmosferycznych i Naczelnego Inżyniera. Jako dział jest odpowiedzialny za utrzymanie zasilania stacji, integralności jej struktury i działanie systemu podtrzymywania życia (powietrza).
 
 Inżynieria jest dobrze wyposażona do bezpiecznego wychodzenia w przestrzeń kosmiczną, i jako taka powinna zawsze próbować naprawiać niezdatne do zamieszkania części stacji.
 
 ## Ochrona
-[color=#cb0000]Ochrona[/color] składa się z kadetów ochrony, detektywa, oficerów ochrony, nadzorcy (Wardena) i Komendanta Ochrony. Jako dział jest odpowiedzialny za radzenie sobie z awanturnikami i zagrożeniami nie-humanoidalnymi, takimi jak gigantyczne szczury i karpie.
+[color=#ff8a8a]Ochrona[/color] składa się z kadetów ochrony, detektywa, oficerów ochrony, nadzorcy (Wardena) i Komendanta Ochrony. Jako dział jest odpowiedzialny za radzenie sobie z awanturnikami i zagrożeniami nie-humanoidalnymi, takimi jak gigantyczne szczury i karpie.
 
 W rezultacie tego, oraz potrzeby zachowania równowagi, ochrona czasem jest przytłoczona przez złą załogę (nie zabijajcie klauna), i ważne jest, aby jej członkowie starali się zachowywać jak najlepiej.
 
 ## Dowództwo
-[color=#1b67a5]Dowództwo[/color] składa się z szefa każdego działu. Jest odpowiedzialne za utrzymanie sprawnego działania stacji i jej działów.
+[color=#8ec8ff]Dowództwo[/color] składa się z szefa każdego działu. Jest odpowiedzialne za utrzymanie sprawnego działania stacji i jej działów.
 
 Członkowie dowództwa powinni zawsze być stosunkowo kompetentni w swoich odpowiednich działach i próbować delegować odpowiedzialność oraz kierować pracą.
 
 # Zmiana Pracy
-[color=#9fed58]Kierownik Personelu[/color] jest osobą odpowiedzialną za zmianę uprawnień w identyfikatorach i wydawanie kluczy szyfrujących. Udaj się do jego biura i daj mu znać, jaką pracę chciałbyś wykonywać zamiast obecnej.
+[color=#b8ff9e]Kierownik Personelu[/color] jest osobą odpowiedzialną za zmianę uprawnień w identyfikatorach i wydawanie kluczy szyfrujących. Udaj się do jego biura i daj mu znać, jaką pracę chciałbyś wykonywać zamiast obecnej.
 
-Często będą chcieli, abyś przyniósł papier [color=#a4885c]ostemplowany[/color] przez szefa działu. Nie przejmuj się, po prostu znajdź go i wręcz mu papier.
+Często będą chcieli, abyś przyniósł papier [color=#e8c878]ostemplowany[/color] przez szefa działu. Nie przejmuj się, po prostu znajdź go i wręcz mu papier.
 </Document>

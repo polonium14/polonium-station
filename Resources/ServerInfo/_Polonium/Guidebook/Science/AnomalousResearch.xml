@@ -35,12 +35,12 @@ Anomalies are static objects that appear on the station. They cannot be moved, a
 
 Each anomaly has three main stats, two of which can be seen in anomaly scans:
 
-- [color=#a4885c]Severity:[/color] This is a numerical value corresponding to the danger of an anomaly.
-- [color=#a4885c]Stability:[/color] Shown as either decaying, stable, or growing; this is how frequently and widespread the effects will be.
-- [color=#a4885c]Health:[/color] Health is a hidden stat. It decreases when you use [color=#a4885c]containment particles[/color] on an anomaly. If you use too many, the anomaly will disappear.
+- [color=#e8c878]Severity:[/color] This is a numerical value corresponding to the danger of an anomaly.
+- [color=#e8c878]Stability:[/color] Shown as either decaying, stable, or growing; this is how frequently and widespread the effects will be.
+- [color=#e8c878]Health:[/color] Health is a hidden stat. It decreases when you use [color=#e8c878]containment particles[/color] on an anomaly. If you use too many, the anomaly will disappear.
 
 ## Pulses and Supercritical Events
-The most dangerous effects of anomalies are seen during [color=#a4885c]pulses[/color] and [color=#a4885c]supercritical events[/color].
+The most dangerous effects of anomalies are seen during [color=#e8c878]pulses[/color] and [color=#e8c878]supercritical events[/color].
 
 Pulses are semi-regular bursts of anomalous effects. They're moderately dangerous, scaling with both the severity and stability of an anomaly.
 

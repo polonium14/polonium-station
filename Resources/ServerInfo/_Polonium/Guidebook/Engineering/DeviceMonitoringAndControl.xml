@@ -20,7 +20,7 @@ SPDX-License-Identifier: MIT
     ## Alarmy atmosferyczne
   </Box>
   <Box>
-    [color=#999999][italic]Monitorowanie i sterowanie urządzeniami atmosferycznymi na szerokim obszarze[italic][/color]
+    [color=#c8c8c8][italic]Monitorowanie i sterowanie urządzeniami atmosferycznymi na szerokim obszarze[italic][/color]
   </Box>
 
   <Box>
@@ -30,7 +30,7 @@ SPDX-License-Identifier: MIT
     ## Komputer alarmów atmosferycznych
   </Box>
   <Box>
-    [color=#999999][italic]Monitorowanie alarmów atmosferycznych na całej stacji[italic][/color]
+    [color=#c8c8c8][italic]Monitorowanie alarmów atmosferycznych na całej stacji[italic][/color]
   </Box>
 
   <Box>
@@ -41,7 +41,7 @@ SPDX-License-Identifier: MIT
     ## Monitor sieci atmosferycznej
   </Box>
   <Box>
-    [color=#999999][italic]Monitorowanie sieci rurociągów[italic][/color]
+    [color=#c8c8c8][italic]Monitorowanie sieci rurociągów[italic][/color]
   </Box>
 
 </Document>

@@ -44,6 +44,7 @@ guide-entry-janitor-sop = Janitor SOP
 guide-entry-mime-sop = Mime SOP
 guide-entry-reporter-sop = Reporter SOP
 guide-entry-security-sop = Security SOP
+guide-entry-use-of-force-sop = Use of Force Procedure
 guide-entry-hos-sop = Head of Security SOP
 guide-entry-securityofficer-sop = Security Officer/Cadet SOP
 guide-entry-warden-sop = Warden SOP

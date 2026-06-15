@@ -11,32 +11,32 @@ SPDX-License-Identifier: MIT
 Właśnie rozpocząłeś swoją zmianę na stacji kosmicznej Nanotrasen.
 Ty i twoi współzałoganci macie za zadanie współpracować, przetrwać i dobrze się bawić!
 
-[bold]Pamiętaj, aby przestrzegać wszystkich zasad serwera.[/bold] Możesz zadawać pytania lub zgłaszać łamanie zasad [color=#EB2D3A][bold]administratorom[/bold][/color] za pomocą [bold]menu pomocy administratora[/bold] ([italic]dostępne po naciśnięciu [/italic][color=yellow][bold][keybind="OpenAHelp"/][/bold][/color]).
+[bold]Pamiętaj, aby przestrzegać wszystkich zasad serwera.[/bold] Możesz zadawać pytania lub zgłaszać łamanie zasad [color=#ff8a8a][bold]administratorom[/bold][/color] za pomocą [bold]menu pomocy administratora[/bold] ([italic]dostępne po naciśnięciu [/italic][color=#ffe566][bold][keybind="OpenAHelp"/][/bold][/color]).
 
 Bardziej szczegółowe poradniki dotyczące [italic]konkretnych prac[/italic] i [italic]mechanik[/italic] znajdziesz [textlink="tutaj." link="SS14"/]
 
-Ten poradnik możesz otworzyć ponownie w dowolnym momencie za pomocą [color=yellow][bold][keybind="OpenGuidebook"][/bold][/color].
+Ten poradnik możesz otworzyć ponownie w dowolnym momencie za pomocą [color=#ffe566][bold][keybind="OpenGuidebook"][/bold][/color].
 
 ## Podstawowe sterowanie
 Oto sterowanie, które będzie ci potrzebne podczas gry:
 
-- Poruszaj się używając [color=yellow][bold][keybind="MoveUp"][keybind="MoveLeft"][keybind="MoveDown"][keybind="MoveRight"][/bold][/color].
+- Poruszaj się używając [color=#ffe566][bold][keybind="MoveUp"][keybind="MoveLeft"][keybind="MoveDown"][keybind="MoveRight"][/bold][/color].
 
-- Przytrzymaj [color=yellow][bold][keybind="Walk"][/bold][/color], aby chodzić.
+- Przytrzymaj [color=#ffe566][bold][keybind="Walk"][/bold][/color], aby chodzić.
 
-- Biegaj używając [color=yellow][bold][keybind="Sprint"][/bold][/color].
+- Biegaj używając [color=#ffe566][bold][keybind="Sprint"][/bold][/color].
 
-- Badaj otoczenie za pomocą [color=yellow][bold][keybind="ExamineEntity"][/bold][/color]
+- Badaj otoczenie za pomocą [color=#ffe566][bold][keybind="ExamineEntity"][/bold][/color]
 
-- Wchodź w interakcje ze światem używając [color=yellow][bold][keybind="Use"][/bold][/color]
+- Wchodź w interakcje ze światem używając [color=#ffe566][bold][keybind="Use"][/bold][/color]
 
-- Najedź kursorem na obiekt i naciśnij [color=yellow][bold][keybind="UseSecondary"][/bold][/color], aby wyświetlić [italic]menu kontekstowe[/italic], które zawiera dodatkowe interakcje
+- Najedź kursorem na obiekt i naciśnij [color=#ffe566][bold][keybind="UseSecondary"][/bold][/color], aby wyświetlić [italic]menu kontekstowe[/italic], które zawiera dodatkowe interakcje
 
-- Zmieniaj ręce za pomocą [color=yellow][bold][keybind="SwapHands"][/bold][/color] i aktywuj trzymany przedmiot za pomocą [color=yellow][bold][keybind="ActivateItemInHand"][/bold][/color]
+- Zmieniaj ręce za pomocą [color=#ffe566][bold][keybind="SwapHands"][/bold][/color] i aktywuj trzymany przedmiot za pomocą [color=#ffe566][bold][keybind="ActivateItemInHand"][/bold][/color]
 
-- Upuszczaj trzymane przedmioty za pomocą [color=yellow][bold][keybind="Drop"][/bold][/color] lub rzucaj je używając [color=yellow][bold][keybind="ThrowItemInHand"][/bold][/color]
+- Upuszczaj trzymane przedmioty za pomocą [color=#ffe566][bold][keybind="Drop"][/bold][/color] lub rzucaj je używając [color=#ffe566][bold][keybind="ThrowItemInHand"][/bold][/color]
 
-- Przeciągaj i puszczaj rzeczy za pomocą [color=yellow][bold][keybind="TryPullObject"][/bold][/color] i [color=yellow][bold][keybind="ReleasePulledObject"][/bold][/color]
+- Przeciągaj i puszczaj rzeczy za pomocą [color=#ffe566][bold][keybind="TryPullObject"][/bold][/color] i [color=#ffe566][bold][keybind="ReleasePulledObject"][/bold][/color]
 
 Bardziej szczegółową listę znajdziesz na stronie [textlink="sterowanie" link="Controls"].
 
@@ -46,7 +46,7 @@ Space Station 14 to wieloosobowa gra o paranoi i chaosie na stacji kosmicznej or
 Dołącz do dziesiątek innych graczy na szczegółowo zaprojektowanej i symulowanej stacji kosmicznej, zanurz się w odgrywaniu ról i radź sobie z zagrożeniami po drodze.
 
 SS14 to [italic]gra open-source[/italic] tworzona przez ludzi [bold]takich jak ty![/bold]
-Otrzymuje [color=lime]codzienne aktualizacje[/color] i czasami może być [color=#EB2D3A][bold]niestabilna.[/bold][/color]
+Otrzymuje [color=lime]codzienne aktualizacje[/color] i czasami może być [color=#ff8a8a][bold]niestabilna.[/bold][/color]
 
 [italic]Jeśli chcesz zgłaszać błędy lub pomóc w rozwoju gry, dołącz do Discorda i dowiedz się, jak zacząć.[/italic]
 

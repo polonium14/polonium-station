@@ -88,7 +88,7 @@ SPDX-License-Identifier: MIT
 
   When mixing some chemicals, gas can be created!
 
-  This can be beneficial or [color=red]HIGHLY DANGEROUS[/color] depending on the context in which it is used!
+  This can be beneficial or [color=#ff8a8a]HIGHLY DANGEROUS[/color] depending on the context in which it is used!
 
   ## Plasma Gas
   <Box>
@@ -115,7 +115,7 @@ SPDX-License-Identifier: MIT
 
   # Foam reactions
 
-  There are two types of [color=cyan]foam[/color] reactions.
+  There are two types of [color=#7ee8f7]foam[/color] reactions.
 
   ##Reagent Foam
 
@@ -125,7 +125,7 @@ SPDX-License-Identifier: MIT
     <GuideEntityEmbed Entity="Beaker" Caption="(Optional) reagent(s)"/>
   </Box>
 
-  [color=cyan]Reagent[/color] foam applies whatever chemical is in the solution to those within it's radius- this is different from [color=cyan]smoke[/color] because it can apply reagents topically as well.
+  [color=#7ee8f7]Reagent[/color] foam applies whatever chemical is in the solution to those within it's radius- this is different from [color=#7ee8f7]smoke[/color] because it can apply reagents topically as well.
 
   Reagent foam leaves residue on the floor when utilized with drinks or other liquids, so be sure to take this into account while making mixes!
 
@@ -145,7 +145,7 @@ SPDX-License-Identifier: MIT
     <GuideEntityEmbed Entity="FoamedIronMetal" Caption="Foamed Iron"/>
     <GuideEntityEmbed Entity="FoamedAluminiumMetal" Caption="Foamed Aluminum"/>
   </Box>
-  [color=cyan]Metal[/color] foam creates fairly sturdy walls made of solidified foam metal. This also can be utilized for a variety of purposes, such as sealing hallways, hull breaches, and more!
+  [color=#7ee8f7]Metal[/color] foam creates fairly sturdy walls made of solidified foam metal. This also can be utilized for a variety of purposes, such as sealing hallways, hull breaches, and more!
   To make metal foam you mix:
 
   -3 parts metal (Iron, Aluminum)
@@ -162,7 +162,7 @@ SPDX-License-Identifier: MIT
   </Box>
   When mixing some chemicals, smoke can coat the area!
 
-  This causes any [color=cyan]reagents[/color] within the mix to be ingested by anyone who breathes it in, which can result in many fun (or deadly!) effects!
+  This causes any [color=#7ee8f7]reagents[/color] within the mix to be ingested by anyone who breathes it in, which can result in many fun (or deadly!) effects!
 
   The basic recipe to mix smoke is:
   -1 part Phosphorous

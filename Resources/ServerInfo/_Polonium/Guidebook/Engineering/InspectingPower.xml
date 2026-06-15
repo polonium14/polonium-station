@@ -21,7 +21,7 @@ SPDX-License-Identifier: MIT
   Komputer monitorujący zasilanie składa się z dwóch głównych sekcji: mapy stacji oraz statystyk dotyczących zasilania.
 
   Mapa stacji przedstawia:
-  - Układ stacji z zaznaczonymi sieciami o [color=green]niskim[/color], [color=yellow]średnim[/color] i [color=orange]wysokim[/color] [textlink="napięciu" link="VoltageNetworks"].
+  - Układ stacji z zaznaczonymi sieciami o [color=#8ee99a]niskim[/color], [color=#ffe566]średnim[/color] i [color=#ffb86b]wysokim[/color] [textlink="napięciu" link="VoltageNetworks"].
   - Wszystkie [textlink="APC, SMES i podstacje" link="VoltageNetworks"].
   - Wszystkie podłączone do stacji [textlink="generatory" link="Generators"] (należy pamiętać, że nie muszą one być podłączone do sieci energetycznej, aby były wyświetlane).
 
@@ -61,7 +61,7 @@ SPDX-License-Identifier: MIT
   - Zużycie wyjściowe, czyli pojemność akumulatorów, które są obecnie rozładowywane.
 
   Należy pamiętać, że informacje te dotyczą wyłącznie sprawdzanej sieci elektrycznej.
-  Kabel [color=green]niskonapięciowy[/color] (który prawdopodobnie zasila tylko kilka pomieszczeń) nie będzie wykazywał takich samych parametrów jak kabel [color=orange]wysokonapięciowy[/color] (który zasila całą stację).
+  Kabel [color=#8ee99a]niskonapięciowy[/color] (który prawdopodobnie zasila tylko kilka pomieszczeń) nie będzie wykazywał takich samych parametrów jak kabel [color=#ffb86b]wysokonapięciowy[/color] (który zasila całą stację).
 
   Warto o tym pamiętać, ponieważ może to pomóc w ustaleniu, dlaczego "w tym pomieszczeniu jest prąd, a w tamtym go nie ma!".
 

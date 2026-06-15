@@ -1,0 +1,152 @@
+<!--
+SPDX-FileCopyrightText: 2026 Polonium Station Contributors
+
+SPDX-License-Identifier: MIT
+-->
+<Document>
+# Procedura stosowania siły
+
+Niniejszy dokument określa, jaką siłę może zastosować [color=#ff8a8a]Ochrona[/color] podczas [textlink="zatrzymania i aresztowania" link="SecuritySOP"], zależnie od [textlink="kodu zagrożenia" link="AlertLevelsSOP"] oraz zachowania podejrzanego.
+
+[bold]Podejrzany[/bold] — osoba, wobec której funkcjonariusz stosuje procedury Ochrony.
+[bold]Funkcjonariusz[/bold] — kadet, oficer, detektyw, nadzorca lub komendant Ochrony.
+
+Funkcjonariusz może stosować siłę [bold]nie wyższą[/bold] niż wskazana w tabeli. Niższy poziom należy wypróbować wcześniej, o ile pozwala na to sytuacja i czas reakcji.
+
+## Tabela stosowania siły
+
+<Table Columns="5">
+  <ColorBox>
+    <Box>Kod zagrożenia</Box>
+  </ColorBox>
+  <ColorBox>
+    <Box>Współpraca</Box>
+  </ColorBox>
+  <ColorBox>
+    <Box>Opór lub ucieczka</Box>
+  </ColorBox>
+  <ColorBox>
+    <Box>Atak</Box>
+  </ColorBox>
+  <ColorBox>
+    <Box>Doprowadzenie do stanu krytycznego</Box>
+  </ColorBox>
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="2">[color=#8ee99a]Zielony[/color]</Box>
+  </ColorBox>
+  <ColorBox Color="#66bb6a">
+    <Box HorizontalAlignment="Center" Margin="2">[color=white]I[/color]</Box>
+  </ColorBox>
+  <ColorBox Color="#ffca28">
+    <Box HorizontalAlignment="Center" Margin="2">[color=black]II[/color]</Box>
+  </ColorBox>
+  <ColorBox Color="#ffca28">
+    <Box HorizontalAlignment="Center" Margin="2">[color=black]II[/color]</Box>
+  </ColorBox>
+  <ColorBox Color="#ef5350">
+    <Box HorizontalAlignment="Center" Margin="2">[color=white]III[/color]</Box>
+  </ColorBox>
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="2">[color=#8ec8ff]Niebieski[/color]</Box>
+  </ColorBox>
+  <ColorBox Color="#66bb6a">
+    <Box HorizontalAlignment="Center" Margin="2">[color=white]I[/color]</Box>
+  </ColorBox>
+  <ColorBox Color="#ffca28">
+    <Box HorizontalAlignment="Center" Margin="2">[color=black]II[/color]</Box>
+  </ColorBox>
+  <ColorBox Color="#ffca28">
+    <Box HorizontalAlignment="Center" Margin="2">[color=black]II[/color]</Box>
+  </ColorBox>
+  <ColorBox Color="#ef5350">
+    <Box HorizontalAlignment="Center" Margin="2">[color=white]III[/color]</Box>
+  </ColorBox>
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="2">[color=#ff8a8a]Czerwony[/color]</Box>
+  </ColorBox>
+  <ColorBox Color="#ffca28">
+    <Box HorizontalAlignment="Center" Margin="2">[color=black]II[/color]</Box>
+  </ColorBox>
+  <ColorBox Color="#ffca28">
+    <Box HorizontalAlignment="Center" Margin="2">[color=black]II[/color]</Box>
+  </ColorBox>
+  <ColorBox Color="#ef5350">
+    <Box HorizontalAlignment="Center" Margin="2">[color=white]III[/color]</Box>
+  </ColorBox>
+  <ColorBox Color="#ef5350">
+    <Box HorizontalAlignment="Center" Margin="2">[color=white]III[/color]</Box>
+  </ColorBox>
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="2">[color=#ffb86b]Oktarynowy[/color]</Box>
+  </ColorBox>
+  <ColorBox Color="#ffca28">
+    <Box HorizontalAlignment="Center" Margin="2">[color=black]II[/color]</Box>
+  </ColorBox>
+  <ColorBox Color="#ef5350">
+    <Box HorizontalAlignment="Center" Margin="2">[color=white]III[/color]</Box>
+  </ColorBox>
+  <ColorBox Color="#ef5350">
+    <Box HorizontalAlignment="Center" Margin="2">[color=white]IV[/color]</Box>
+  </ColorBox>
+  <ColorBox Color="#ef5350">
+    <Box HorizontalAlignment="Center" Margin="2">[color=white]IV[/color]</Box>
+  </ColorBox>
+  <ColorBox>
+    <Box HorizontalAlignment="Left" Margin="2">[color=#ffb86b]Delta / Gamma[/color]</Box>
+  </ColorBox>
+  <ColorBox Color="#ffca28">
+    <Box HorizontalAlignment="Center" Margin="2">[color=black]II[/color]</Box>
+  </ColorBox>
+  <ColorBox Color="#ef5350">
+    <Box HorizontalAlignment="Center" Margin="2">[color=white]IV[/color]</Box>
+  </ColorBox>
+  <ColorBox Color="#ef5350">
+    <Box HorizontalAlignment="Center" Margin="2">[color=white]IV[/color]</Box>
+  </ColorBox>
+  <ColorBox Color="#ef5350">
+    <Box HorizontalAlignment="Center" Margin="2">[color=white]IV[/color]</Box>
+  </ColorBox>
+</Table>
+
+[italic]Kody Fioletowy i Żółty stosują te same limity co Zielony i Niebieski.[/italic]
+[italic]Inne kody zagrożenia stosują te same limity co obowiązywały do tej pory podczas poprzedniego kodu zagrożenia.[/italic]
+
+## Poziomy siły
+
+[color=#8ee99a][bold]Poziom I — Werbalny[/bold][/color]
+Polecenia słowne, nakazy, komunikacja radiowa, eskalacja do przełożonego.
+
+[color=#ffd54f][bold]Poziom II — Obezwładnienie[/bold][/color]
+Błyski, pałki, kajdanki, gaz łzowy, tasery oraz inne środki mniej śmiercionośne służące do zatrzymania lub obezwładnienia.
+
+[color=#ff8a8a][bold]Poziom III — Śmiercionośny[/bold][/color]
+Broń palna, lasery na trybie śmiercionośnym i inne środki mogące zabić. Dopuszczalny, gdy niższe poziomy nie wystarczają. Po interwencji [bold]należy[/bold] podjąć próbę uratowania osoby, o ile pozwala na to sytuacja.
+
+[color=#ff8a8a][bold]Poziom IV — Neutralizacja[/bold][/color]
+Natychmiastowa likwidacja zagrożenia. Dopuszczalny, gdy niższe poziomy nie wystarczają lub zagrożenie wymaga natychmiastowej neutralizacji. Ratowanie osoby według uznania funkcjonariusza.
+
+## Zachowanie podejrzanego
+
+[bold]Współpraca[/bold] — podejrzany wykonuje polecenia lub dobrowolnie poddaje się procedurze.
+
+[bold]Opór lub ucieczka[/bold] — podejrzany odmawia współpracy, wyrywa się, ucieka albo aktywnie utrudnia zatrzymanie.
+
+[bold]Atak[/bold] — podejrzany stosuje przemoc, grozi nią lub próbuje zranić, pojmać bądź zabić funkcjonariusza albo inną osobę.
+
+[bold]Doprowadzenie do krytyka[/bold] — podejrzany faktycznie doprowadza kogoś do stanu krytycznego lub zabija.
+
+## Wyjątki
+
+Poziom III jest dozwolony niezależnie od tabeli, gdy:
+- podejrzany dysponuje bronią śmiercionośną i może z niej skorzystać (chyba że jest unieruchomiony lub został rozbrojony);
+- trwa pościg w otwartej przestrzeni lub próżni, a podejrzany ignoruje polecenia;
+- środki poziomu II są nieskuteczne (np. egzoszkielet, ciężki pancerz);
+
+Poziom IV jest dozwolony niezależnie od tabeli, gdy:
+- obowiązuje nakaz neutralizacji celu;
+- podejrzany stanowi potwierdzone zagrożenie dla życia funkcjonariusza lub innych osób.
+
+## Opieka medyczna
+
+Osoba doprowadzona do stanu krytycznego podczas interwencji musi otrzymać pomoc medyczną i reanimację, chyba że trwa aktywne zagrożenie lub obowiązuje wyższy nakaz operacyjny uniemożliwiający ratunek.
+</Document>

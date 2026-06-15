@@ -14,7 +14,7 @@ SPDX-License-Identifier: MIT
   # Zombies
 
   <Box>
-    [color=#999999][bold]Zombies [/bold]are a team-based cooperative conversion antagonist. Zombies may be encountered during the initial infected game mode or through exposure to the drug Romerol, which can be purchased by Syndicate nuclear operatives or potentially discovered in maintenance pills[/color]
+    [color=#c8c8c8][bold]Zombies [/bold]are a team-based cooperative conversion antagonist. Zombies may be encountered during the initial infected game mode or through exposure to the drug Romerol, which can be purchased by Syndicate nuclear operatives or potentially discovered in maintenance pills[/color]
   </Box>
   <Box>
     <GuideEntityEmbed Entity="SignBiohazard" Caption=""/>

@@ -28,11 +28,11 @@ SPDX-License-Identifier: MIT
     <GuideEntityEmbed Entity="GasPipeStraight" Caption="Input/Output"/>
   </Box>
 
-  Zawór [color=green]otworzy się[/color]], gdy ciśnienie po stronie wyjściowej będzie niższe od ciśnienia po stronie sterującej o [color=orange][protodata="PressureControlledValve" comp="PressureControlledValve" member="Threshold"/] kPa[/color].
+  Zawór [color=#8ee99a]otworzy się[/color]], gdy ciśnienie po stronie wyjściowej będzie niższe od ciśnienia po stronie sterującej o [color=#ffb86b][protodata="PressureControlledValve" comp="PressureControlledValve" member="Threshold"/] kPa[/color].
 
-  Zawór [color=red]zamknie się[/color], gdy ciśnienie po stronie wyjściowej będzie niższe od ciśnienia po stronie sterującej o [color=orange][protodata="PressureControlledValve" comp="PressureControlledValve" member="Threshold"/] kPa[/color].
+  Zawór [color=#ff8a8a]zamknie się[/color], gdy ciśnienie po stronie wyjściowej będzie niższe od ciśnienia po stronie sterującej o [color=#ffb86b][protodata="PressureControlledValve" comp="PressureControlledValve" member="Threshold"/] kPa[/color].
 
-  Na przykład zawór pneumatyczny o ciśnieniu sterującym wynoszącym 500 kPa otworzy się, gdy ciśnienie wyjściowe wyniesie 500 kPa – [color=orange][protodata="PressureControlledValve" comp="PressureControlledValve" member="Threshold"/] kPa[/color] lub mniej, a zamknie się, gdy ciśnienie wyjściowe wyniesie 500 kPa – [color=orange][protodata="PressureControlledValve" comp="PressureControlledValve" member="Threshold"/] kPa[/color] lub wyższe.
+  Na przykład zawór pneumatyczny o ciśnieniu sterującym wynoszącym 500 kPa otworzy się, gdy ciśnienie wyjściowe wyniesie 500 kPa – [color=#ffb86b][protodata="PressureControlledValve" comp="PressureControlledValve" member="Threshold"/] kPa[/color] lub mniej, a zamknie się, gdy ciśnienie wyjściowe wyniesie 500 kPa – [color=#ffb86b][protodata="PressureControlledValve" comp="PressureControlledValve" member="Threshold"/] kPa[/color] lub wyższe.
 
   Ciśnienie sterujące zaworu jest określane przez połączenie z siecią rurociągową i jako takie może być regulowane w trakcie pracy za pomocą [textlink="pompki" link="Pumps"]lub innego źródła ciśnienia sterującego.
 

@@ -1,18 +1,4 @@
 ﻿Entries:
-- author: pheenty
-  changes:
-  - message: The interrogator lamp is now considered security contraband.
-    type: Tweak
-  id: 7936
-  time: '2025-02-11T16:15:14.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/35064
-- author: pheenty
-  changes:
-  - message: Chief Engineer's hardsuit storage unit now has an atmospheric gas mask.
-    type: Add
-  id: 7937
-  time: '2025-02-11T17:48:27.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/35063
 - author: Terraspark4941
   changes:
   - message: The spray nozzle can now be stored inside the backpack water tank!
@@ -4172,3 +4158,30 @@
   id: 9243
   time: '2026-06-15T09:33:09.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/673
+- author: Czuat
+  changes:
+  - message: Naprawiono opis Lektera
+    type: Fix
+  id: 9244
+  time: '2026-06-15T19:22:51.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/669
+- author: Nikita_pl
+  changes:
+  - message: "Dodano informacj\u0119 o procedurach zatrzymywania, aresztowania, przes\u0142\
+      uchiwania, egzekucji."
+    type: Add
+  - message: "Dodano informacje o poziomach stosowania si\u0142y przez SPO Ochrony."
+    type: Add
+  - message: "Przes\u0142uchania teraz jawnie obowi\u0105zuj\u0105 podczas kodu Zielonego\
+      \ oraz Niebieskiego."
+    type: Tweak
+  - message: "Poprawiono b\u0142\u0119dy w SPO ochrony."
+    type: Fix
+  - message: "Obietnica tego, \u017Ce ogrom tych informacji wkr\xF3tce trafi na Wiki,\
+      \ co znacznie poprawi ich czytelno\u015B\u0107."
+    type: Add
+  - message: "Poprawiono czytelno\u015B\u0107 podr\u0119cznika"
+    type: Tweak
+  id: 9245
+  time: '2026-06-15T19:46:01.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/674

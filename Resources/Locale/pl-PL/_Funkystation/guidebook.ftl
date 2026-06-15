@@ -1,6 +1,7 @@
 
 guide-entry-command-sop = SPO Dowództwa
 guide-entry-security-sop = SPO Ochrony
+guide-entry-use-of-force-sop = Procedura stosowania siły
 guide-entry-legal-sop = SPO Prawne
 guide-entry-engineering-sop = SPO Inżynierii
 guide-entry-medical-sop = SPO Medycyny
@@ -9,6 +10,7 @@ guide-entry-cargo-sop = SPO Logistyki
 guide-entry-science-sop = SPO Badań i Rozwoju
 guide-entry-eoc-sop = Wrogowie Korporacji
 guide-entry-alert-sop = Kody zagrożenia
+guide-entry-legal-sop = SPO Prawne
 guide-entry-ingredient-reactions = Ingredient Reactions
 guide-entry-alertlevel-green = Kod Zielony
 guide-entry-alertlevel-yellow = Kod Żółty
