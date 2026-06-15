@@ -68,7 +68,7 @@ SPDX-License-Identifier: MIT
 
 [bold]6.[/bold] Oficerowie Ochrony [bold]nie[/bold] mają pozwolenia na trzymanie wyciągniętej broni w trakcie normalnego patrolu;
 
-[bold]7.[/bold] Oficerowie Ochrony [bold]nie[/bold] mają pozwolenia na prowadzenie przeszukań, chyba że istnieją uzasadnione podejrzenia/dowody, że ​​dana osoba popełniła przestępstwo. Dalsze przeszukania wymagają nakazu od [color=#1b67a5]Komendanta[/color] lub [color=#1b67a5]Kapitana[/color];
+[bold]7.[/bold] Oficerowie Ochrony [bold]nie[/bold] mają pozwolenia na prowadzenie przeszukań, chyba że dysponują nakazem zatwierdzonym przez [color=#1b67a5]Komendanta[/color] / [color=#1b67a5]Kapitana[/color], lub jest oczywiste, że dana osoba popełniła przestępstwo;
 
 [bold]8.[/bold] Oficerowie Ochrony mają nosić swoje uniformy zgodnie z [textlink="Zasadami Postępowania Ochrony" link="RulesOfConduct"].
 

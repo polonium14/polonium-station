@@ -33,11 +33,11 @@ SPDX-License-Identifier: MIT
 
   Przeszukanie osobiste polega na zajęciu przedmiotów znajdujących się w plecaku, rękach, płaszczu, pasku, kieszeniach i czapce danej osoby. Jeśli podczas przeszukania zostaną znalezione jakiekolwiek przedmioty zabronione, funkcjonariusz może zdecydować o dalszym przeszukaniu w ramach zatrzymania lub po prostu skonfiskować przedmioty objęte ograniczeniami. Po przeprowadzeniu przeszukania wszystkie przedmioty zgodne z prawem należy zwrócić danej osobie.
 
-  Członek załogi może zgodnie z prawem odmówić poddania się przeszukaniu przeprowadzanemu bez uzasadnionego podejrzenia, gdy poziom alarmowy wynosi zielony. Należy zauważyć, że jeśli poziom alarmowy wynosi niebieski lub wyższy, wszystkie przeszukiwania są legalne.
+  Gdy poziom alarmowy wynosi zielony, przeszukania są dozwolone wyłącznie na podstawie nakazu zatwierdzonego przez Komendanta lub Kapitana. Członek załogi może zgodnie z prawem odmówić poddania się przeszukaniu przeprowadzanemu bez takiego nakazu. Należy zauważyć, że jeśli poziom alarmowy wynosi niebieski lub wyższy, wszystkie przeszukiwania są legalne.
 
   ## Implantacja
 
-  Każdy więzień przebywający w areszcie może zostać poddany zabiegowi wszczepienia lub usunięcia implantu, o ile jest to uzasadnione. Proces wszczepienia implantu nie powinien wydłużać wyroku skazanego, co oznacza, że nie można przetrzymywać go dłużej w celu wszczepienia implantu, chyba że określono inaczej. Więzień może nadal zostać poddany zabiegowi wszczepienia implantu bez spełnienia powyższych warunków, jeśli wyrazi na to wyraźną zgodę.
+  Więzień przebywający w areszcie może zostać poddany zabiegowi usunięcia implantu, o ile jest to uzasadnione. Wszczepianie implantów więźniom jest dozwolone wyłącznie w przypadkach opisanych poniżej. Proces wszczepienia implantu nie powinien wydłużać wyroku skazanego, co oznacza, że nie można przetrzymywać go dłużej w celu wszczepienia implantu, chyba że określono inaczej.
 
   [bold]Osłony Umysłu[/bold]: Osłony umysłu mogą być stosowane u każdego więźnia, który wyraźnie został poddany praniu mózgu. W przeciwieństwie do standardowego wszczepiania implantów, można przetrzymywać więźnia do momentu wydania mu osłony umysłu, o ile odbywa się to w odpowiednim czasie. Jeśli podejrzany odmówi współpracy lub implant nie będzie działał, można go oskarżyć o odmowę poddania się osłonie umysłu.
 
