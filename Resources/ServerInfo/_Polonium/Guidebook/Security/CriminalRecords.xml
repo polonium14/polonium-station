@@ -36,6 +36,8 @@ SPDX-License-Identifier: MIT
     - Po formalnym aresztowaniu (procedura aresztowania, krok 6) zaktualizuj status na [bold]Zatrzymany[/bold], aby inni wiedzieli, że osoba jest już więźniem.
 
     - Po odbyciu ich wyroku, zaktualizuj status na [bold]Zwolniony[/bold], aby inni nie myśleli że są skazańcem na wolności.
+    
+    - Po egzekucji usuń wpis ze statusu aktywnego więźnia lub oznacz sprawę jako zakończoną.
 
     - Otworzyć okno Historii Kryminalnej, aby ją sprawdzić lub zmodyfikować.
 
