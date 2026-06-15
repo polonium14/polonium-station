@@ -68,7 +68,7 @@ Funkcjonariusz może stosować siłę [bold]nie wyższą[/bold] niż wskazana w 
     <Box HorizontalAlignment="Center" Margin="2">[color=black]II[/color]</Box>
   </ColorBox>
   <ColorBox Color="#ffca28">
-    <Box HorizontalAlignment="Center" Margin="2">[color=white]II[/color]</Box>
+    <Box HorizontalAlignment="Center" Margin="2">[color=black]II[/color]</Box>
   </ColorBox>
   <ColorBox Color="#ef5350">
     <Box HorizontalAlignment="Center" Margin="2">[color=white]III[/color]</Box>
