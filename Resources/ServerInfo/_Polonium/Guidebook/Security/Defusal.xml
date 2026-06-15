@@ -10,8 +10,7 @@ SPDX-License-Identifier: MIT
 
 <Document>
   # Rozbrajanie dużych bomb
-  So, you found a large bomb and it's beeping. These bombs take a long time to detonate and punch a big hole into the hull. Just keep reading, and nobody will explode.
-  Więc, znalazleś dużą pikającą bombę. Tym bombą schodzi dużo czasu żeby się zdetonować i zrobić masywną dziurę w kadłubie. Po prostu czytaj dalej i nikt nie wybuchnie.
+  Znalazłeś więc dużą bombę, która wydaje sygnał dźwiękowy. Detonacja takich bomb trwa długo i powoduje powstanie ogromnej dziury w kadłubie. Po prostu czytaj dalej, a nikomu nic się nie stanie.
 
   ## Sprzęt
   Będziesz potrzebował dwóch niezbędnych narzędzi, ale multinarzędzie jest ekstremalnie przydatne do identyfikowania kabli.
@@ -21,7 +20,7 @@ SPDX-License-Identifier: MIT
     <GuideEntityEmbed Entity="Multitool"/>
   </Box>
 
-  Co do sprzętu ochronnego, [color=yellow]Kombinezon bombowy[/color] lub jakikolwiek inny sprzęt ochronny może uratować cię przed transformacją w czerwoną plame.
+  Co do sprzętu ochronnego, [color=yellow]Kombinezon Sapera[/color] lub jakikolwiek inny sprzęt ochronny może uratować cię przed transformacją w czerwoną plame.
   <Box>
     <GuideEntityEmbed Entity="ClothingHeadHelmetBombSuit"/>
     <GuideEntityEmbed Entity="ClothingOuterSuitBomb"/>
@@ -40,7 +39,6 @@ SPDX-License-Identifier: MIT
   Aby uzbroić bombe, musisz albo kliknąć [color=yellow]PPM[/click] i wybrać [color=yellow]Rozpocznij odliczanie[/click] lub [color=yellow]ALT-Kliknij[/color]. Wtedy zacznie pikać.
 
   ## Czas
-  A bomb has a limited time, at a minimum of [protodata="SyndicateBomb" comp="OnUseTimerTrigger" member="ShortestDelayOption"/] seconds and a maximum of [protodata="SyndicateBomb" comp="OnUseTimerTrigger" member="LongestDelayOption"/] seconds. You can view the timer by examining it, unless the Proceed wire is cut. Once the timer hits zero, the bomb will detonate.
   Bomba ma ograniczony czasomierz, od minimalnie [protodata="SyndicateBomb" comp="OnUseTimerTrigger" member="ShortestDelayOption"/] sekund do maksymalnie [protodata="SyndicateBomb" comp="OnUseTimerTrigger" member="LongestDelayOption"/] sekund. Można zobaczyć licznik przyglądając się bombie, chyba że przecięty jest kabel "Naprzód". Kiedy licznik osiągnie zero, bomba wybuchnie.
 
   ## Śróby boltujące
