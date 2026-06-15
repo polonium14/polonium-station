@@ -1,20 +1,6 @@
 ﻿Entries:
 - author: pheenty
   changes:
-  - message: Python now costs only 4 TC!
-    type: Tweak
-  id: 7934
-  time: '2025-02-11T09:36:45.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/33306
-- author: centcomofficer24
-  changes:
-  - message: Increased the armor crates price from 725 spesos to 1250 spesos.
-    type: Tweak
-  id: 7935
-  time: '2025-02-11T12:17:33.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34541
-- author: pheenty
-  changes:
   - message: The interrogator lamp is now considered security contraband.
     type: Tweak
   id: 7936
@@ -4169,3 +4155,20 @@
   id: 9241
   time: '2026-06-15T08:11:46.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/668
+- author: Nikita_pl
+  changes:
+  - message: "Przet\u0142umaczono SPO prawnik\xF3w"
+    type: Tweak
+  id: 9242
+  time: '2026-06-15T09:33:22.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/672
+- author: Nikita_pl
+  changes:
+  - message: "Przeszukania w kod zielony teraz wymagaj\u0105 nakazu."
+    type: Tweak
+  - message: "Usuni\u0119to informacje o wstrzykiwaniu implant\xF3w wi\u0119\u017A\
+      niom."
+    type: Remove
+  id: 9243
+  time: '2026-06-15T09:33:09.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/673
