@@ -26,7 +26,7 @@ SPDX-License-Identifier: MIT
   Aby uniknąć wykroczenia poza docelową wartość, urządzenia termiczne zmniejszają moc ogrzewania lub chłodzenia w miarę zbliżania się do docelowej temperatury.
   Niemniej jednak nadal zużywają taką samą ilość energii elektrycznej, nawet gdy nie są w użyciu.
 
-  Wszystkie termomaszyny mają docelowy zakres tolerancji temperatury wynoszący [color=orange][protodata="GasThermoMachineFreezer" comp="GasThermoMachine" member="TemperatureTolerance"/] K[/color], co oznacza, że przestaną ogrzewać lub chłodzić, gdy temperatura znajdzie się w zakresie [color=orange][protodata="GasThermoMachineFreezer" comp="GasThermoMachine" member="TemperatureTolerance"/] K[/color] od temperatury docelowej.
+  Wszystkie termomaszyny mają docelowy zakres tolerancji temperatury wynoszący [color=#ffb86b][protodata="GasThermoMachineFreezer" comp="GasThermoMachine" member="TemperatureTolerance"/] K[/color], co oznacza, że przestaną ogrzewać lub chłodzić, gdy temperatura znajdzie się w zakresie [color=#ffb86b][protodata="GasThermoMachineFreezer" comp="GasThermoMachine" member="TemperatureTolerance"/] K[/color] od temperatury docelowej.
 
   ## Termomaszyna kosmiczna
   Termomaszyna kosmiczna to przenośne urządzenie do regulacji temperatury, które ogrzewa lub chłodzi powietrze w otoczeniu, w którym się znajduje.
@@ -38,7 +38,7 @@ SPDX-License-Identifier: MIT
 
   Można je często znaleźć w departamencie Atmosferyki, choć odpowiednią płytkę drukowaną można wydrukować na drukarce do płytek drukowanych, którą zazwyczaj można znaleźć w departamencie Rozwoju i Badań.
 
-  Termomaszyna kosmiczna może schłodzić powietrze do temperatury [color=orange][protodata="SpaceHeater" comp="SpaceHeater" member="MinTemperature"/] K[/color] i ogrzać je do temperatury [color=orange][protodata="SpaceHeater" comp="SpaceHeater" member="MaxTemperature"/] K[/color].
+  Termomaszyna kosmiczna może schłodzić powietrze do temperatury [color=#ffb86b][protodata="SpaceHeater" comp="SpaceHeater" member="MinTemperature"/] K[/color] i ogrzać je do temperatury [color=#ffb86b][protodata="SpaceHeater" comp="SpaceHeater" member="MaxTemperature"/] K[/color].
 
   Posiada również trzy poziomy mocy, które decydują o tym, jak szybko ogrzewa lub chłodzi otoczenie.
   
@@ -56,11 +56,11 @@ SPDX-License-Identifier: MIT
     <GuideEntityEmbed Entity="GasThermoMachineAdvancedFreezer" Caption=""/>
   </Box>
 
-  Podstawowa termomaszyna pobiera [color=orange][protodata="GasThermoMachineFreezer" comp="GasThermoMachine" member="HeatCapacity" format="N0"/] W[/color] mocy i może ogrzewać lub chłodzić gaz w sieci rurociągów do temperatury nawet [color=orange][protodata="GasThermoMachineHeater" comp="GasThermoMachine" member="MaxTemperature"/] K[/color] lub do [color=orange][protodata="GasThermoMachineFreezer" comp="GasThermoMachine" member="MinTemperature"/] K[/color].
+  Podstawowa termomaszyna pobiera [color=#ffb86b][protodata="GasThermoMachineFreezer" comp="GasThermoMachine" member="HeatCapacity" format="N0"/] W[/color] mocy i może ogrzewać lub chłodzić gaz w sieci rurociągów do temperatury nawet [color=#ffb86b][protodata="GasThermoMachineHeater" comp="GasThermoMachine" member="MaxTemperature"/] K[/color] lub do [color=#ffb86b][protodata="GasThermoMachineFreezer" comp="GasThermoMachine" member="MinTemperature"/] K[/color].
 
-  Ulepszona termomaszyna pobiera [color=orange][protodata="GasThermoMachineUpgradedFreezer" comp="GasThermoMachine" member="HeatCapacity" format="N0"/] W[/color] mocy i może ogrzewać lub chłodzić gaz w sieci rurociągów do temperatury nawet [color=orange][protodata="GasThermoMachineUpgradedHeater" comp="GasThermoMachine" member="MaxTemperature"/] K[/color] lub do [color=orange][protodata="GasThermoMachineUpgradedFreezer" comp="GasThermoMachine" member="MinTemperature"/] K[/color]. Ulepszone płytki termomaszyn można wydrukować po zbadaniu atmosferyki.
+  Ulepszona termomaszyna pobiera [color=#ffb86b][protodata="GasThermoMachineUpgradedFreezer" comp="GasThermoMachine" member="HeatCapacity" format="N0"/] W[/color] mocy i może ogrzewać lub chłodzić gaz w sieci rurociągów do temperatury nawet [color=#ffb86b][protodata="GasThermoMachineUpgradedHeater" comp="GasThermoMachine" member="MaxTemperature"/] K[/color] lub do [color=#ffb86b][protodata="GasThermoMachineUpgradedFreezer" comp="GasThermoMachine" member="MinTemperature"/] K[/color]. Ulepszone płytki termomaszyn można wydrukować po zbadaniu atmosferyki.
   
-  Zaawansowana maszyna termiczna pobiera [color=orange][protodata="GasThermoMachineAdvancedFreezer" comp="GasThermoMachine" member="HeatCapacity" format="N0"/] W[/color] mocy i może ogrzewać lub chłodzić gaz w sieci rurociągów do temperatury nawet [color=orange][protodata="GasThermoMachineAdvancedHeater" comp="GasThermoMachine" member="MaxTemperature"/] K[/color] lub do [color=orange][protodata="GasThermoMachineAdvancedFreezer" comp="GasThermoMachine" member="MinTemperature"/] K[/color]. Zaawansowane płytki termomaszyn można wydrukować po zbadaniu zaawansowanej atmosferyki.
+  Zaawansowana maszyna termiczna pobiera [color=#ffb86b][protodata="GasThermoMachineAdvancedFreezer" comp="GasThermoMachine" member="HeatCapacity" format="N0"/] W[/color] mocy i może ogrzewać lub chłodzić gaz w sieci rurociągów do temperatury nawet [color=#ffb86b][protodata="GasThermoMachineAdvancedHeater" comp="GasThermoMachine" member="MaxTemperature"/] K[/color] lub do [color=#ffb86b][protodata="GasThermoMachineAdvancedFreezer" comp="GasThermoMachine" member="MinTemperature"/] K[/color]. Zaawansowane płytki termomaszyn można wydrukować po zbadaniu zaawansowanej atmosferyki.
 
   Tryb pracy termomaszyny można zmienić, rozkładając ją na części i używając śrubokręta do zmiany ustawień na płytce drukowanej.
   Płytkę można wydrukować na drukarce do płytek drukowanych, którą często można znaleźć w Departamencie Badań i Rozwoju.
@@ -85,9 +85,9 @@ SPDX-License-Identifier: MIT
     <GuideEntityEmbed Entity="GasThermoMachineHellfireFreezer"/>
   </Box>
 
-  Urządzenia te pobierają [color=orange][protodata="GasThermoMachineHellfireFreezer" comp="GasThermoMachine" member="HeatCapacity" format="N0"/] W[/color] mocy i mogą ogrzewać lub chłodzić gaz w sieci rurociągów do temperatury nawet [color=orange][protodata="GasThermoMachineHellfireHeater" comp="GasThermoMachine" member="MaxTemperature"/] K[/color] lub do [color=orange][protodata="GasThermoMachineHellfireFreezer" comp="GasThermoMachine" member="MinTemperature"/] K[/color].
+  Urządzenia te pobierają [color=#ffb86b][protodata="GasThermoMachineHellfireFreezer" comp="GasThermoMachine" member="HeatCapacity" format="N0"/] W[/color] mocy i mogą ogrzewać lub chłodzić gaz w sieci rurociągów do temperatury nawet [color=#ffb86b][protodata="GasThermoMachineHellfireHeater" comp="GasThermoMachine" member="MaxTemperature"/] K[/color] lub do [color=#ffb86b][protodata="GasThermoMachineHellfireFreezer" comp="GasThermoMachine" member="MinTemperature"/] K[/color].
 
-  Jednakże wytracają one również [color=orange][protodata="GasThermoMachineHellfireFreezer" comp="GasThermoMachine" member="EnergyLeakPercentage" format="P0"/][/color] części swojej energii do otoczenia, ogrzewając lub chłodząc odpowiednio powietrze w ich otoczeniu.
+  Jednakże wytracają one również [color=#ffb86b][protodata="GasThermoMachineHellfireFreezer" comp="GasThermoMachine" member="EnergyLeakPercentage" format="P0"/][/color] części swojej energii do otoczenia, ogrzewając lub chłodząc odpowiednio powietrze w ich otoczeniu.
   Jeśli się o to odpowiednio nie zadba, może to stanowić zagrożenie.
 
   Płytki piekielnej termomaszyny można wydrukować po przeprowadzeniu badań nad technologią Atmospherics Exotech.

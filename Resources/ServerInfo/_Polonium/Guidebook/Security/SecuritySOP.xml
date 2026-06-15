@@ -30,7 +30,7 @@ Stosuj, gdy istnieje podstawa do interwencji wobec podejrzanego, ale nie podją�
 
 [bold]1. Ustal podstawę.[/bold] Musisz dysponować uzasadnionym podejrzeniem, być świadkiem przestępstwa, posiadać nakaz albo działać na podstawie przepisów obowiązujących przy danym kodzie zagrożenia ([textlink="Prawo Kosmiczne" link="SpaceLaw"]).
 
-[bold]2. Poinformuj o zatrzymaniu.[/bold] Podaj swoją tożsamość, fakt zatrzymania i jego przyczynę (poziom I procedury stosowania siły). Na [color=red]Kodzie Czerwonym[/color], przy istniejących dowodach na przestępstwo, możesz odroczyć podanie powodu do momentu doprowadzenia do więzienia.
+[bold]2. Poinformuj o zatrzymaniu.[/bold] Podaj swoją tożsamość, fakt zatrzymania i jego przyczynę (poziom I procedury stosowania siły). Na [color=#ff8a8a]Kodzie Czerwonym[/color], przy istniejących dowodach na przestępstwo, możesz odroczyć podanie powodu do momentu doprowadzenia do więzienia.
 
 [bold]3. Zatrzymaj podejrzanego.[/bold] Uniemożliw mu ucieczkę. Najpierw spróbuj doprowadzić go bez środków poziomu II. Przy oporze stosuj [textlink="procedurę stosowania siły" link="UseOfForceSOP"].
 
@@ -51,13 +51,13 @@ Stosuj po podjęciu decyzji o formalnym osadzeniu podejrzanego. Osoba aresztowan
 
 [bold]1. Doprowadź do więzienia.[/bold] Transportuj w kajdankach, jeśli to konieczne. Zapewnij bezpieczeństwo podejrzanego i załogi.
 
-[bold]2. Przekaż nadzorcy.[/bold] Jeśli [color=#cb0000]Nadzorca Ochrony[/color] jest dostępny, przejmuje on dalsze kroki aresztowania. W jego nieobecności obowiązki przejmuje komendant lub najstarszy stopniem oficer.
+[bold]2. Przekaż nadzorcy.[/bold] Jeśli [color=#ff8a8a]Nadzorca Ochrony[/color] jest dostępny, przejmuje on dalsze kroki aresztowania. W jego nieobecności obowiązki przejmuje komendant lub najstarszy stopniem oficer.
 
 [bold]3. Przeszukaj ponownie.[/bold] Przeprowadź pełne przeszukanie osobiste: kieszenie, PDA, płaszcz i pas. Nadzorca ma obowiązek wykonać je przy każdym nowym więźniu.
 
-[bold]4. Przeprowadź przesłuchanie.[/bold] Postępuj według [textlink="procedury przesłuchania" link="SecuritySOP"] (obowiązkowej na [color=green]Kodzie Zielonym[/color] i [color=blue]Kodzie Niebieskim[/color], o ile pozwala na to obsada Ochrony).
+[bold]4. Przeprowadź przesłuchanie.[/bold] Postępuj według [textlink="procedury przesłuchania" link="SecuritySOP"] (obowiązkowej na [color=#8ee99a]Kodzie Zielonym[/color] i [color=#8ec8ff]Kodzie Niebieskim[/color], o ile pozwala na to obsada Ochrony).
 
-[bold]5. Wymierz wyrok lub zwolnij.[/bold] Decyzję podejmij na podstawie [textlink="Prawa Kosmicznego" link="SpaceLaw"] oraz [bold]Protokołu Przesłuchania[/bold] z pieczątką [color=#1b67a5]Komendanta[/color]. Wyrok wydaje nadzorca; w jego nieobecności komendant lub najstarszy stopniem oficer. Komendant nie może zmieniać wydanego wyroku bez nowych dowodów lub próby ucieczki więźnia.
+[bold]5. Wymierz wyrok lub zwolnij.[/bold] Decyzję podejmij na podstawie [textlink="Prawa Kosmicznego" link="SpaceLaw"] oraz [bold]Protokołu Przesłuchania[/bold] z pieczątką [color=#8ec8ff]Komendanta[/color]. Wyrok wydaje nadzorca; w jego nieobecności komendant lub najstarszy stopniem oficer. Komendant nie może zmieniać wydanego wyroku bez nowych dowodów lub próby ucieczki więźnia.
 
 [bold]6. Zaktualizuj rejestry.[/bold] Ustaw status [bold]Zatrzymany[/bold] w [textlink="rejestrach kryminalnych" link="CriminalRecords"] i wpisz zarzuty wraz z czasem wyroku.
 
@@ -71,24 +71,24 @@ Obowiązkowy etap [textlink="procedury aresztowania" link="SecuritySOP"] (krok 4
 
 ### Obowiązkowość
 
-- Na [color=green]Kodzie Zielonym[/color] i [color=blue]Kodzie Niebieskim[/color] przesłuchanie jest [bold]obowiązkowe[/bold] przy każdym aresztowaniu.
-- [bold]Wyjątek:[/bold] zbyt mała liczba personelu Ochrony uniemożliwiająca bezpieczne przeprowadzenie przesłuchania — w takim przypadku [color=#1b67a5]Komendant[/color] lub [color=#1b67a5]Kapitan[/color] może zezwolić na uproszczone postępowanie bez pełnego przesłuchania.
+- Na [color=#8ee99a]Kodzie Zielonym[/color] i [color=#8ec8ff]Kodzie Niebieskim[/color] przesłuchanie jest [bold]obowiązkowe[/bold] przy każdym aresztowaniu.
+- [bold]Wyjątek:[/bold] zbyt mała liczba personelu Ochrony uniemożliwiająca bezpieczne przeprowadzenie przesłuchania — w takim przypadku [color=#8ec8ff]Komendant[/color] lub [color=#8ec8ff]Kapitan[/color] może zezwolić na uproszczone postępowanie bez pełnego przesłuchania.
 - Na pozostałych kodach zagrożenia przesłuchanie przeprowadza się według uznania prowadzącego aresztowanie.
 
 ### Kto może przesłuchiwać
 
 Przesłuchanie może prowadzić:
-- [color=#cb0000]Nadzorca Ochrony[/color];
-- [color=#1b67a5]Komendant[/color];
-- inny funkcjonariusz [color=#cb0000]Ochrony[/color];
-- [color=#1b67a5]Kapitan[/color];
+- [color=#ff8a8a]Nadzorca Ochrony[/color];
+- [color=#8ec8ff]Komendant[/color];
+- inny funkcjonariusz [color=#ff8a8a]Ochrony[/color];
+- [color=#8ec8ff]Kapitan[/color];
 - [bold]Prawnik[/bold] za zgodą Nadzorcy lub Komendanta.
 
 [bold]Podmiot, który aresztował danego podejrzanego, nie może prowadzić jego przesłuchania.[/bold]
 
 ### Zasady szczególne
 
-- Przy przesłuchaniu [bold]Kierownika działu[/bold] obowiązkowa jest obecność [color=#1b67a5]Kapitana[/color].
+- Przy przesłuchaniu [bold]Kierownika działu[/bold] obowiązkowa jest obecność [color=#8ec8ff]Kapitana[/color].
 - Przy przestępstwach poziomu III lub wyższym zapewnij prawnika na żądanie ([textlink="Prawo Kosmiczne" link="SpaceLaw"]).
 - Jeśli po upływie [bold]15 minut[/bold] od rozpoczęcia przesłuchania nie ma żadnych dowodów wskazujących na winę podejrzanego, należy go [bold]zwolnić jako niewinnego[/bold].
 - Przed rozpoczęciem przesłuchania podejrzany może pozostać w pokoju przesłuchań przez maksymalnie [bold]5 minut[/bold] sam na sam z adwokatem w celu omówienia strategii obrony. Czas oczekiwania na przybycie adwokata wlicza się w ten limit.
@@ -113,7 +113,7 @@ Przesłuchanie może prowadzić:
 
 ### Protokół Przesłuchania
 
-Wynikiem każdego przesłuchania musi być wypełniony dokument [bold]Protokół Przesłuchania[/bold] z pieczątką [color=#1b67a5]Komendanta[/color]. Protokół powinien zawierać co najmniej:
+Wynikiem każdego przesłuchania musi być wypełniony dokument [bold]Protokół Przesłuchania[/bold] z pieczątką [color=#8ec8ff]Komendanta[/color]. Protokół powinien zawierać co najmniej:
 - tożsamość i stanowiskoprzesłuchiwanego;
 - tożsamość i stanowisko przeprowadzającego przesłuchanie;
 - obecni świadkowie;
@@ -136,7 +136,7 @@ Stosuj, gdy skazany otrzymał [bold]karę śmierci[/bold] i ma zostać formalnie
 - wyrok sędziego przewodniczącego po procesie ([textlink="SPO Prawne" link="LegalSOP"]);
 - nakaz Centralnego Dowództwa ([textlink="Prawo Kosmiczne" link="SpaceLaw"]).
 
-Na [color=green]Kodzie Zielonym[/color] i [color=blue]Kodzie Niebieskim[/color] zaleca się przeprowadzenie procesu sądowego przed egzekucją, jeśli skazany o to poprosi. Na pozostałych kodach ceremonia może zostać skrócona, ale [bold]Nakaz egzekucji[/bold] nadal jest wymagany.
+Na [color=#8ee99a]Kodzie Zielonym[/color] i [color=#8ec8ff]Kodzie Niebieskim[/color] zaleca się przeprowadzenie procesu sądowego przed egzekucją, jeśli skazany o to poprosi. Na pozostałych kodach ceremonia może zostać skrócona, ale [bold]Nakaz egzekucji[/bold] nadal jest wymagany.
 
 ### Warunki wykonania
 
@@ -151,12 +151,12 @@ Egzekucji [bold]nie wolno[/bold] przeprowadzić, dopóki nie są spełnione [bol
 ### Kto może zatwierdzić i przeprowadzić
 
 [bold]Nakaz egzekucji[/bold] opatruje pieczęcią:
-- [color=#1b67a5]Komendant[/color] lub [color=#1b67a5]Kapitan[/color] — egzekucja na podstawie wyroku Ochrony lub po procesie bez sędziego;
+- [color=#8ec8ff]Komendant[/color] lub [color=#8ec8ff]Kapitan[/color] — egzekucja na podstawie wyroku Ochrony lub po procesie bez sędziego;
 - sędzia przewodniczący — egzekucja po procesie sądowym;
 - przedstawiciel Centralnego Dowództwa — egzekucja na podstawie nakazu CD.
 - inne jednostki Centralnego Dowództwa.
 
-Egzekucję przeprowadza wyznaczony funkcjonariusz [color=#cb0000]Ochrony[/color]. [bold]Funkcjonariusz, który aresztował skazanego, nie powinien być wykonawcą egzekucji[/bold], o ile to możliwe.
+Egzekucję przeprowadza wyznaczony funkcjonariusz [color=#ff8a8a]Ochrony[/color]. [bold]Funkcjonariusz, który aresztował skazanego, nie powinien być wykonawcą egzekucji[/bold], o ile to możliwe.
 
 ### Zalecane kroki
 
@@ -190,6 +190,6 @@ Bez wypełnionego [bold]Nakazu egzekucji[/bold] formalna egzekucja jest niedozwo
 Choć „poważne” zachowanie nie jest wymagane, członkowie departamentu Ochrony [bold]powinni[/bold] traktować swoją pracę poważnie. Inni członkowie załogi są zniechęcani lub zabronieni przez zasady od wykonywania pracy Ochrony. Jeśli [bold]ty też[/bold] jej nie wykonujesz, to jest problem.
 
 <Box>
-[color=#999999][italic]"Oficerowie Ochrony mogą na siłę przenosić personel do ich departamentów, jeśli jest to konieczne."[/italic] — SPO Oficera Ochrony/Kadeta {RED:3}[/color]
+[color=#c8c8c8][italic]"Oficerowie Ochrony mogą na siłę przenosić personel do ich departamentów, jeśli jest to konieczne."[/italic] — SPO Oficera Ochrony/Kadeta {RED:3}[/color]
 </Box>
 </Document>

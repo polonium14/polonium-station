@@ -15,15 +15,15 @@ SPDX-License-Identifier: MIT
 <Document>
 # Ochrona
 
-Zapewnianie bezpieczeństwa stacji i załogi jest priorytetem [color=#cb0000]Ochrony[/color]. Jest gotowa na wszystko, a sama [color=#cb0000]Ochrona[/color] zawsze jest pod ręką, aby utrzymać porządek.
+Zapewnianie bezpieczeństwa stacji i załogi jest priorytetem [color=#ff8a8a]Ochrony[/color]. Jest gotowa na wszystko, a sama [color=#ff8a8a]Ochrona[/color] zawsze jest pod ręką, aby utrzymać porządek.
 
-[color=#cb0000]Ochrona[/color] mierzy się z [textlink="Agentami Syndykatu" link="Traitors"], [textlink="Specjalistami Nuklearnymi" link="NuclearOperatives"], [textlink="Zombie" link="Zombies"] oraz niesforną załogą.
+[color=#ff8a8a]Ochrona[/color] mierzy się z [textlink="Agentami Syndykatu" link="Traitors"], [textlink="Specjalistami Nuklearnymi" link="NuclearOperatives"], [textlink="Zombie" link="Zombies"] oraz niesforną załogą.
 
 Postępowanie przy interwencjach opisują [textlink="procedura zatrzymania" link="SecuritySOP"], [textlink="procedura aresztowania" link="SecuritySOP"], [textlink="procedura przesłuchania" link="SecuritySOP"] oraz [textlink="procedura egzekucji" link="SecuritySOP"] w SPO Ochrony.
 
 ## Personel
 
-[color=#cb0000]Ochrona[/color] składa się z Kadetów Ochrony, Funkcjonariuszy Ochrony oraz Detektywa. [color=#cb0000]Ochroną[/color] zarządza Nadzorca Ochrony oraz Komendant.
+[color=#ff8a8a]Ochrona[/color] składa się z Kadetów Ochrony, Funkcjonariuszy Ochrony oraz Detektywa. [color=#ff8a8a]Ochroną[/color] zarządza Nadzorca Ochrony oraz Komendant.
 
 <Box>
   <GuideEntityEmbed Entity="ToyFigurineSecurity" Caption="Secoff"/>
@@ -47,11 +47,11 @@ Ochrona stosuje siłę według [textlink="Procedury stosowania siły" link="UseO
 
 ## Błyski
 
-[color=#a4885c]Błyski[/color] należą do poziomu II. Są skutecznym narzędziem do rozpraszania tłumów i zatrzymywania szczególnie nieuchwytnych celów. Mają duży obszar działania i oślepiają wszystkich bez odpowiedniej ochrony.
+[color=#e8c878]Błyski[/color] należą do poziomu II. Są skutecznym narzędziem do rozpraszania tłumów i zatrzymywania szczególnie nieuchwytnych celów. Mają duży obszar działania i oślepiają wszystkich bez odpowiedniej ochrony.
 
-Warto zauważyć, że błyski można stosować zarówno na dużym obszarze (przycisk [color=yellow]Z[/color]), jak i podczas bezpośredniego ataku na osobę z aktywnym [color=red]Trybem walki[/color]. Ważne jest, że błyski skierowane bezpośrednio są o [color=yellow]2,5[/color] razy mocniejsze niż te obszarowe.
+Warto zauważyć, że błyski można stosować zarówno na dużym obszarze (przycisk [color=#ffe566]Z[/color]), jak i podczas bezpośredniego ataku na osobę z aktywnym [color=#ff8a8a]Trybem walki[/color]. Ważne jest, że błyski skierowane bezpośrednio są o [color=#ffe566]2,5[/color] razy mocniejsze niż te obszarowe.
 
-[color=#cb0000]Ochrona[/color] oraz [color=#a4885c]niektórzy[/color] inni członkowie załogi mają sprzęt chroniący przed błyskami i granatami błyskowo-hukowymi.
+[color=#ff8a8a]Ochrona[/color] oraz [color=#e8c878]niektórzy[/color] inni członkowie załogi mają sprzęt chroniący przed błyskami i granatami błyskowo-hukowymi.
 
 <Box>
   <GuideEntityEmbed Entity="Flash"/>

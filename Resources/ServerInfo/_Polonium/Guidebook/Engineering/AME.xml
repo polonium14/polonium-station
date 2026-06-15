@@ -29,9 +29,9 @@ SPDX-License-Identifier: MIT
   </Box>
 
   Kontroler SAM stanowi część systemu SAM odpowiedzialną za dostarczanie energii do sieci stacji poprzez [textlink="przyłącze wysokiego napięcia" link="VoltageNetworks"].
-  Z tego powodu budowę systemu SAM warto rozpocząć od umieszczenia kontrolera na [color=orange]przewodzie wysokiego napięcia[/color].
+  Z tego powodu budowę systemu SAM warto rozpocząć od umieszczenia kontrolera na [color=#ffb86b]przewodzie wysokiego napięcia[/color].
 
-  W większości stacji [color=orange]przewody wysokiego napięcia[/color] są odsłonięte lub wyznaczono specjalne miejsca, w których można podłączyć kontroler SAM do sieci zasilającej.
+  W większości stacji [color=#ffb86b]przewody wysokiego napięcia[/color] są odsłonięte lub wyznaczono specjalne miejsca, w których można podłączyć kontroler SAM do sieci zasilającej.
 
   Obudowa SAM to fizyczna konstrukcja, która tworzy silnik antymaterii. Powstaje ona poprzez rozpakowanie zestawów do montażu SAM za pomocą multinarzędzia.
 
@@ -73,7 +73,7 @@ SPDX-License-Identifier: MIT
     <GuideEntityEmbed Entity="AmeShielding" Caption="" Margin="0"/>
   </Box>
   <Box>
-    [color=#999999][italic]Przykład struktury z jednym rdzeniem[italic][/color]
+    [color=#c8c8c8][italic]Przykład struktury z jednym rdzeniem[italic][/color]
   </Box>
 
   ## Obsługa
@@ -85,7 +85,7 @@ SPDX-License-Identifier: MIT
 
   Na przykład bezpieczna prędkość wtrysku dla SAM z jednym rdzeniem, będzie wynosiła 2. W przypadku dwóch rdzeni bezpieczna prędkość wtrysku wyniesie 4 i tak dalej.
 
-  Przekroczenie tego stosunku doprowadzi w końcu do [color=#ff0000]przegrzania[/color] i niedługo później do [color=#ff0000]eksplozji[/color] SAM.
+  Przekroczenie tego stosunku doprowadzi w końcu do [color=#ff8a8a]przegrzania[/color] i niedługo później do [color=#ff8a8a]eksplozji[/color] SAM.
 
   Kontroler SAM [textlink="zgłosi" link="InspectingPower"] zarówno ilość energii dostarczanej do sieci, jak i teoretyczną maksymalną moc, jaką mógłby dostarczyć w razie zapotrzebowania.
 

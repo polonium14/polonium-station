@@ -30,11 +30,11 @@ Istnieje wiele narzędzi, które można wykorzystać do utrzymania upraw w zdrow
 </Box>
 To taca hydroponiczna, hoduje rośliny za pomocą wody. Najpierw napełnij tacę wodą, a następnie dodaj nasiona.
 Światła tacy hydroponicznej oznaczają różne rzeczy w zależności od koloru i pozycji:
-- [color=red]Czerwone Światło, Lewo[/color]: Martwa roślina, która wymaga ponownego zasadzenia. Użyj łopaty, aby usunąć roślinę.
-- [color=orange]Migające Pomarańczowe Światło, Środek[/color]: Środowisko jest nieoptymalne. Sprawdź, co wpływa na roślinę, klikając na nią z Shiftem. Prawdopodobnie są to chwasty, ale może to być niepożądane ciśnienie lub brak tlenu. Jeśli chwasty, użyj mini motyki lub spryskaj 1 raz sprayem na chwasty. Ostrzegamy jednak, że nadużywanie środków chwastobójczych może prowadzić do niezdrowych roślin, ewentualnie je zabijając.
-- [color=#0336ff]Niebieskie Światło, Prawo[/color]: Wymaga wody. Użyj wiadra na zbiorniku z wodą i napełnij tacę.
-- [color=green]Zielone Światło, Lewo[/color]: Gotowe do zbioru. Kliknij lewym przyciskiem myszy, aby zebrać.
-- [color=yellow]Żółte Światło, Prawo[/color]: Wymaga składników odżywczych. Użyj dowolnego owocu i włóż go do gleby lub weź składniki odżywcze EZ z chemii.
+- [color=#ff8a8a]Czerwone Światło, Lewo[/color]: Martwa roślina, która wymaga ponownego zasadzenia. Użyj łopaty, aby usunąć roślinę.
+- [color=#ffb86b]Migające Pomarańczowe Światło, Środek[/color]: Środowisko jest nieoptymalne. Sprawdź, co wpływa na roślinę, klikając na nią z Shiftem. Prawdopodobnie są to chwasty, ale może to być niepożądane ciśnienie lub brak tlenu. Jeśli chwasty, użyj mini motyki lub spryskaj 1 raz sprayem na chwasty. Ostrzegamy jednak, że nadużywanie środków chwastobójczych może prowadzić do niezdrowych roślin, ewentualnie je zabijając.
+- [color=#7eb8ff]Niebieskie Światło, Prawo[/color]: Wymaga wody. Użyj wiadra na zbiorniku z wodą i napełnij tacę.
+- [color=#8ee99a]Zielone Światło, Lewo[/color]: Gotowe do zbioru. Kliknij lewym przyciskiem myszy, aby zebrać.
+- [color=#ffe566]Żółte Światło, Prawo[/color]: Wymaga składników odżywczych. Użyj dowolnego owocu i włóż go do gleby lub weź składniki odżywcze EZ z chemii.
 
 Cykl życia tacy hydroponicznej wygląda następująco:
 - [color=lightgreen]Pusta[/color]: brak wody, nasiona lub składników odżywczych
@@ -74,7 +74,7 @@ Fenotyp, czyli zestaw obserwowalnych cech i właściwości rośliny, można okre
 Możesz określić fenotyp rośliny, po prostu je hodując i obserwując! Tak właśnie Gregor Mendel, ojciec genetyki, badał je w 1866 roku.
 
 ## Mutacje
-Rośliny potraktowane [color=cyan]niestabilnym mutagenem[/color] doświadczą losowych mutacji genetycznych, które mogą zmienić ich geny i skutkować zmianami w ich cechach. Możesz zachować rośliny z mutacjami, które chcesz, zbierając ich nasiona.
+Rośliny potraktowane [color=#7ee8f7]niestabilnym mutagenem[/color] doświadczą losowych mutacji genetycznych, które mogą zmienić ich geny i skutkować zmianami w ich cechach. Możesz zachować rośliny z mutacjami, które chcesz, zbierając ich nasiona.
 
 Im więcej niestabilnego mutagenu użyjesz, tym więcej mutacji otrzymasz. Ponieważ wiele genów jest kluczowych dla przetrwania rośliny, większość mutacji spowoduje śmierć rośliny.
 
@@ -83,7 +83,7 @@ Im więcej niestabilnego mutagenu użyjesz, tym więcej mutacji otrzymasz. Ponie
 </Box>
 
 ## Zapylanie krzyżowe
-Możesz użyć [color=cyan]sterylnej wymazówki[/color], aby przenieść pyłek z jednej rośliny na drugą. Rośliny, które są zapylane krzyżowo, mają szansę na przeniesienie cech. Uważaj przy ponownym użyciu wymazówek; pyłek jest lepki!
+Możesz użyć [color=#7ee8f7]sterylnej wymazówki[/color], aby przenieść pyłek z jednej rośliny na drugą. Rośliny, które są zapylane krzyżowo, mają szansę na przeniesienie cech. Uważaj przy ponownym użyciu wymazówek; pyłek jest lepki!
 
 <Box>
 <GuideEntityEmbed Entity="BoxMouthSwab"/>

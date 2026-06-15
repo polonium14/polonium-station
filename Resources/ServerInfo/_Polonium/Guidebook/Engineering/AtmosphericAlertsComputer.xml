@@ -19,7 +19,7 @@ SPDX-License-Identifier: MIT
   Komputer alarmów atmosferycznych często znajduje się w pomieszczeniach technicznych odpowiedzialnych za utrzymywanie parametrów atmosferycznych i służy technikom z tego departamenty do monitorowania parametrów atmosferycznych całej stacji.
   Jednakże jest to również dobry wskaźnik dla inżynierów, pozwalający szybko ocenić stopień uszkodzeń stacji.
 
-  Komputer wyświetla listę alarmów atmosferycznych, które aktualnie znajdują się w stanie [color=orange]Ostrzeżenie[/color] i [color=red]Niebezpieczeństwo[/color]. Ponadto komputer pokazuje lokalizację wszystkich alarmów atmosferycznych, oznaczonych kolorami odpowiadającymi ich aktualnemu statusowi.
+  Komputer wyświetla listę alarmów atmosferycznych, które aktualnie znajdują się w stanie [color=#ffb86b]Ostrzeżenie[/color] i [color=#ff8a8a]Niebezpieczeństwo[/color]. Ponadto komputer pokazuje lokalizację wszystkich alarmów atmosferycznych, oznaczonych kolorami odpowiadającymi ich aktualnemu statusowi.
 
   Alarmy atmosferyczne w stanie "normalnym" są domyślnie ukryte.
   Widoczność alarmów atmosferycznych o statusie "normalnym" można włączać i wyłączać, dostosowując filtry znajdujące się w dolnej części interfejsu.

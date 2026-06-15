@@ -16,11 +16,11 @@ SPDX-License-Identifier: MIT
     <GuideEntityEmbed Entity="PartRodMetal" Caption=""/>
   </Box>
 
-  Kratownicę można utworzyć, umieszczając pręty na pustej przestrzeni za pomocą [color=yellow][bold][keybind="Use"][/bold][/color]. Pamiętaj, że w menu tworzenia możesz przekształcić arkusze stali na pręty.
+  Kratownicę można utworzyć, umieszczając pręty na pustej przestrzeni za pomocą [color=#ffe566][bold][keybind="Use"][/bold][/color]. Pamiętaj, że w menu tworzenia możesz przekształcić arkusze stali na pręty.
 
   Kratownica nie utrzymuje ciśnienia, a wszystkie gazy przedostają się przez nią w przestrzeń kosmiczną.
 
-  Można użyć obcinaka do drutu, aby usunąć kratkę za pomocą [color=yellow][bold][keybind="Use"][/bold][/color].
+  Można użyć obcinaka do drutu, aby usunąć kratkę za pomocą [color=#ffe566][bold][keybind="Use"][/bold][/color].
 
   Jeśli gra nie pozwala ci na umieszczenie kratownicy, to dlatego, że w pobliżu siatki, którą próbujesz rozbudować, znajduje się inna kratownica. Możesz użyć obcinaka do drutu, aby usunąć przeszkadzającą kratownicę.
 
@@ -34,7 +34,7 @@ SPDX-License-Identifier: MIT
     <GuideEntityEmbed Entity="FloorTileItemWhite" Caption=""/>
   </Box>
 
-  Kratownicę można przekształcić w płytkę kadłuba, kładąc na niej stal lub niemal każdy rodzaj płytki podłogowej i naciskając klawisz [color=yellow][bold][keybind="Use"][/bold][/color].
+  Kratownicę można przekształcić w płytkę kadłuba, kładąc na niej stal lub niemal każdy rodzaj płytki podłogowej i naciskając klawisz [color=#ffe566][bold][keybind="Use"][/bold][/color].
   Spowoduje to przekształcenie kratownicy w płytkę kadłuba, która jest w stanie utrzymać ciśnienie.
 
   Zaleca się używanie płytek podłogowych zamiast blachy stalowej, ponieważ z jednej blachy stalowej można wytworzyć 4 płytki podłogowe.

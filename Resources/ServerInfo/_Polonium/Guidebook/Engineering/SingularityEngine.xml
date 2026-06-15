@@ -63,9 +63,9 @@ SPDX-License-Identifier: MIT
   </Box>
   Do działania potrzebują plazmy gazowej. Zbiorniki plazmy podłączone do kolektorów muszą być wypełnione plazmą, aby wytwarzać energię.
 
-  Możesz włączyć kolektory, używając [color=yellow][bold][keybind="Use"][/bold][/color].
+  Możesz włączyć kolektory, używając [color=#ffe566][bold][keybind="Use"][/bold][/color].
 
-  Można również wysunąć zbiornik, wchodząc w interakcję z kolektorem za pomocą [color=yellow][bold][keybind="AltActivateItemInWorld"][/bold][/color].
+  Można również wysunąć zbiornik, wchodząc w interakcję z kolektorem za pomocą [color=#ffe566][bold][keybind="AltActivateItemInWorld"][/bold][/color].
   Teraz możesz napełnić zbiornik plazmą za pomocą pojemnika z plazmą, a następnie ponownie umieścić go w kolektorze.
 
   Maksymalna moc, jaką może wytworzyć kolektor promieniowania, zależy od:

@@ -26,9 +26,9 @@ SPDX-License-Identifier: MIT
   Wynika to z faktu, że stacja zasłania niektóre panele, więc nie należy się tym zbytnio przejmować.
   Większość stacji posiada panele słoneczne rozmieszczone ze wszystkich stron, więc energia jest generowana nieprzerwanie.
 
-  Gdy są bezpośrednio skierowane w stronę słońca i nic nie zasłania promieni słonecznych, zwykłe panele słoneczne mogą wytworzyć [color=orange][protodata="SolarPanel" comp="SolarPanel" member="MaxSupply" format="N0"] W[/color] mocy.
+  Gdy są bezpośrednio skierowane w stronę słońca i nic nie zasłania promieni słonecznych, zwykłe panele słoneczne mogą wytworzyć [color=#ffb86b][protodata="SolarPanel" comp="SolarPanel" member="MaxSupply" format="N0"] W[/color] mocy.
 
-  Panele słoneczne wytwarzają [color=orange]energię wysokiego napięcia[/color], dlatego też wymagają poprowadzenia pod nimi [color=orange]przewodu wysokonapięciowego[/color], który łączy je z siecią energetyczną stacji.
+  Panele słoneczne wytwarzają [color=#ffb86b]energię wysokiego napięcia[/color], dlatego też wymagają poprowadzenia pod nimi [color=#ffb86b]przewodu wysokonapięciowego[/color], który łączy je z siecią energetyczną stacji.
 
   ## Źródło energii
   Na pierwszy rzut oka panele słoneczne mogą wydawać się zbędnym źródłem energii.
@@ -101,7 +101,7 @@ SPDX-License-Identifier: MIT
   Na początku zmiany panele słoneczne są ustawione nieprawidłowo i odłączone od sieci energetycznej.
   Aby rozpocząć wytwarzanie energii, należy je ustawić i podłączyć do sieci energetycznej stacji.
 
-  Zazwyczaj wymaga to poprowadzenia linii [color=orange]przewodu wysokonapięciowego[/color] do paneli z maszynowni paneli słonecznych, a następnie użycia komputera do kontroli paneli słonecznych.
+  Zazwyczaj wymaga to poprowadzenia linii [color=#ffb86b]przewodu wysokonapięciowego[/color] do paneli z maszynowni paneli słonecznych, a następnie użycia komputera do kontroli paneli słonecznych.
 
   W pobliżu pomieszczeń maszynowych paneli słonecznych często znajduje się komputer do kontroli paneli słonecznych, a także [textlink="SMES" link="PowerStorage"] do magazynowania energii wytworzonej przez panele do późniejszego wykorzystania.
 
@@ -115,6 +115,6 @@ SPDX-License-Identifier: MIT
 
   Można to osiągnąć poprzez zastąpienie szyb w panelu słonecznym szybami z szkła plazmowego lub uranowego.
 
-  Panele słoneczne plazmowe i uranowe wytwarzają [color=orange][protodata="SolarPanelPlasma" comp="SolarPanel" member="MaxSupply" format="N0"] W[/color] i [color=orange][protodata="SolarPanelUranium" comp="SolarPanel" member="MaxSupply" format="N0"] W[/color] mocy.
+  Panele słoneczne plazmowe i uranowe wytwarzają [color=#ffb86b][protodata="SolarPanelPlasma" comp="SolarPanel" member="MaxSupply" format="N0"] W[/color] i [color=#ffb86b][protodata="SolarPanelUranium" comp="SolarPanel" member="MaxSupply" format="N0"] W[/color] mocy.
   Są one również znacznie wytrzymalsze niż zwykłe panele słoneczne.
 </Document>

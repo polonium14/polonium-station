@@ -20,7 +20,7 @@ SPDX-License-Identifier: MIT
   </Box>
 
   Zbiorniki na gaz to rozwiązanie umożliwiające przechowywanie gazu w przenośnym pojemniku, co ułatwia jego transport.
-  Mogą one pomieścić [color=orange][protodata="StorageCanister" comp="GasCanister" member="Volume"/] litrów[/color] gazu.
+  Mogą one pomieścić [color=#ffb86b][protodata="StorageCanister" comp="GasCanister" member="Volume"/] litrów[/color] gazu.
 
   Butle na gaz można podłączyć do zbiornika z gazem w celu ich napełnienia za pomocą zaworu spustowego znajdującego się w zbiorniku.
   Zawór spustowy jest również wyposażony w regulowany reduktor ciśnienia, który pozwala kontrolować ciśnienie w podłączonej butli.

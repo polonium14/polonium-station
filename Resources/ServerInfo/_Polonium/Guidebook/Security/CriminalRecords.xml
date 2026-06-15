@@ -29,7 +29,7 @@ SPDX-License-Identifier: MIT
   W sekcji rejestrów stacji możesz:
     - Zobaczyć związane z ochroną informacje o załogantach takie jak ich imię, odciski palców oraz DNA.
 
-    - Zmienić status poszukiwań na m.in.: [color=blue]Podejrzany[/color], [color=red]Poszukiwany[/color] and [color=grey]Zatrzymany[/color]. Przy niektórych statusach oczekiwane jest że podasz powód.
+    - Zmienić status poszukiwań na m.in.: [color=#8ec8ff]Podejrzany[/color], [color=#ff8a8a]Poszukiwany[/color] and [color=#c8c8c8]Zatrzymany[/color]. Przy niektórych statusach oczekiwane jest że podasz powód.
 
     - Jeśli są poszukiwani możesz zobaczyć powód pod rozwijanym statusem.
 

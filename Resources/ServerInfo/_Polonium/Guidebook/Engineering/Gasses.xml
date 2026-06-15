@@ -90,7 +90,7 @@ SPDX-License-Identifier: MIT
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
       </Box>
     </ColorBox>
-    <ColorBox Color="#3a758c">
+    <ColorBox Color="#7ec8e8">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Frezon
       </Box>
@@ -125,7 +125,7 @@ SPDX-License-Identifier: MIT
         Powyżej 23k
       </Box>
     </ColorBox>
-    <ColorBox Color="#3a758c">
+    <ColorBox Color="#7ec8e8">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         N2, Frezon
       </Box>
@@ -173,7 +173,7 @@ SPDX-License-Identifier: MIT
         Poniżej 300k
       </Box>
     </ColorBox>
-    <ColorBox Color="#3a758c">
+    <ColorBox Color="#7ec8e8">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Frezon, BZ
       </Box>
@@ -202,7 +202,7 @@ SPDX-License-Identifier: MIT
         BZ
       </Box>
     </ColorBox>
-    <ColorBox Color="#2887E8">
+    <ColorBox Color="#8ec8ff">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
 	    Tlen
       </Box>
@@ -251,7 +251,7 @@ SPDX-License-Identifier: MIT
         Para wodna
       </Box>
     </ColorBox>
-    <ColorBox Color="#2887E8">
+    <ColorBox Color="#8ec8ff">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
 	    Tlen
       </Box>
@@ -461,7 +461,7 @@ SPDX-License-Identifier: MIT
   <Box>
     <GuideEntityEmbed Entity="TritiumCanister" Caption=""/>
   </Box>
-  Tryt to przezroczysty, zielony gaz, który jest wysoce łatwopalny i radioaktywny oraz ulega spaleniu w kontakcie z tlenem, co sprawia, że jest bardzo przydatny podczas pracy z [color=#a4885c]TEG[/color].
+  Tryt to przezroczysty, zielony gaz, który jest wysoce łatwopalny i radioaktywny oraz ulega spaleniu w kontakcie z tlenem, co sprawia, że jest bardzo przydatny podczas pracy z [color=#e8c878]TEG[/color].
     <Box>
     <GuideEntityEmbed Entity="OxygenCanister"/>
     <GuideEntityEmbed Entity="PlasmaCanister"/>

@@ -17,13 +17,13 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
   # Revolutionaries
 
   <Box>
-    [color=#999999][italic]"Vivu la revolucio!!"[/italic][/color]
+    [color=#c8c8c8][italic]"Vivu la revolucio!!"[/italic][/color]
   </Box>
   <Box>
     <GuideEntityEmbed Entity="PosterContrabandRevolt" Caption=""/>
   </Box>
 
-  Revolutionaries are conversion antagonists sponsored by the [color=#ff0000]Syndicate[/color] who are tasked with taking control of the station.
+  Revolutionaries are conversion antagonists sponsored by the [color=#ff8a8a]Syndicate[/color] who are tasked with taking control of the station.
   Head revolutionaries are graciously given a PDA uplink, paid for by Yucatan Communications.
 
   ## Objectives
@@ -31,14 +31,14 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
   Your objective is [bold]not to destroy the station[/bold], but [italic]to take it over[/italic], so try to minimize damage as much as possible.
 
-  [bold]The revolution will fail[/bold] if all of the [bold][color=#5e9cff]Head Revolutionaries[/color][/bold] die, and all [color=red]Revolutionaries[/color] will de-convert if this happens.
+  [bold]The revolution will fail[/bold] if all of the [bold][color=#5e9cff]Head Revolutionaries[/color][/bold] die, and all [color=#ff8a8a]Revolutionaries[/color] will de-convert if this happens.
 
   [bold]The revolution will also fail[/bold] if all of the [bold][color=#5e9cff]Head Revolutionaries[/color][/bold] are off the station. Your objective is to capture the station, so do not wander far.
 
   ## Your Uplink
   [bold][color=#5e9cff]Head Revolutionaries[/color][/bold] are chosen at the start of the shift. They are given a PDA uplink similar to a Syndicate uplink.
 
-  Telecrystals cannot be used in this PDA. Instead, a new currency, [color=#ff0000]RevCoin[/color], must be used. Be sure to lock your uplink after you're done using it.
+  Telecrystals cannot be used in this PDA. Instead, a new currency, [color=#ff8a8a]RevCoin[/color], must be used. Be sure to lock your uplink after you're done using it.
 
   There are no restocks, so there is no point in saving RevCoin.
 
@@ -47,8 +47,8 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
   </Box>
 
   ## Mindshields & Eye Protection
-  [color=cyan]Mindshield implanters[/color] are an obstruction to the revolution. These will:
-  - Prevent the implanted person from being converted into a [color=red]Revolutionary[/color]
+  [color=#7ee8f7]Mindshield implanters[/color] are an obstruction to the revolution. These will:
+  - Prevent the implanted person from being converted into a [color=#ff8a8a]Revolutionary[/color]
   - De-convert Revolutionaries, and will make them no longer loyal to your cause
   - [bold]Be visibly destroyed upon being implanted into a [color=#5e9cff]Head Revolutionary[/color][/bold], giving you away
   - NOT protect against flash disorientation
