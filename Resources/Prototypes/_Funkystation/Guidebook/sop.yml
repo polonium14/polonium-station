@@ -34,7 +34,7 @@
 
 - type: guideEntry
   id: LegalSOP
-  name: LegalSOP
+  name: guide-entry-legal-sop
   text: "/ServerInfo/_Polonium/Guidebook/Legal/LegalSOP.xml"
 
 # ALERT LEVELS
