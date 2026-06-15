@@ -19,6 +19,8 @@ Zapewnianie bezpieczeństwa stacji i załogi jest priorytetem [color=#cb0000]Och
 
 [color=#cb0000]Ochrona[/color] mierzy się z [textlink="Agentami Syndykatu" link="Traitors"], [textlink="Specjalistami Nuklearnymi" link="NuclearOperatives"], [textlink="Zombie" link="Zombies"] oraz niesforną załogą.
 
+Postępowanie przy interwencjach opisują [textlink="procedura zatrzymania" link="SecuritySOP"] i [textlink="procedura aresztowania" link="SecuritySOP"] w SPO Ochrony.
+
 ## Personel
 
 [color=#cb0000]Ochrona[/color] składa się z Kadetów Ochrony, Funkcjonariuszy Ochrony oraz Detektywa. [color=#cb0000]Ochroną[/color] zarządza Nadzorca Ochrony oraz Komendant.
@@ -36,7 +38,7 @@ Ochrona stosuje siłę według [textlink="Procedury stosowania siły" link="UseO
 
 [bold]Poziom I[/bold] — polecenia słowne i komunikacja.
 
-[bold]Poziom II[/bold] — sprzęt mniej śmiercionośny. Pałki służą do ograniczenia ruchu napastnika, a kajdanki do aresztowania podejrzanego, blokując mu swobodę poruszania się i korzystania z dłoni. Kajdankowanie przerwie również atak napastnika, jeśli kajdankujący był w [color=red]Trybie walki[/color].
+[bold]Poziom II[/bold] — sprzęt mniej śmiercionośny. Pałki służą do ograniczenia ruchu napastnika, a kajdanki do kontroli podejrzanego podczas zatrzymania lub aresztowania, blokując mu swobodę poruszania się i korzystania z dłoni.
 
 <Box>
   <GuideEntityEmbed Entity="Truncheon"/>

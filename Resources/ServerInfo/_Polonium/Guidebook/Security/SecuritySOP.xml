@@ -10,6 +10,58 @@
 Zobacz również:
 - [textlink="Instrukcja Treningowa Ochrony" link="SecurityTrainingManual"]
 - [textlink="Prawo Kosmiczne" link="SpaceLaw"]
+- [textlink="Rejestry kryminalne" link="CriminalRecords"]
+
+## Definicje
+
+[bold]Zatrzymanie[/bold] — tymczasowe wstrzymanie osoby podejrzanej o przestępstwo w celu ustalenia tożsamości, przeprowadzenia dozwolonego przeszukania i podjęcia decyzji o dalszym postępowaniu. Osoba zatrzymana [bold]nie jest jeszcze[/bold] formalnym więźniem i może zostać zwolniona bez wyroku.
+
+[bold]Aresztowanie[/bold] — formalne wzięcie osoby pod straż Ochrony, doprowadzenie do więzienia, przesłuchanie, wymierzenie wyroku i rozpoczęcie odbywania kary lub tymczasowego osadzenia do czasu procesu.
+
+Zatrzymanie może zakończyć się zwolnieniem. Aresztowanie rozpoczyna się decyzją o formalnym osadzeniu i kończy zwolnieniem po wyroku lub decyzji sądowej.
+
+Podczas obu procedur obowiązuje [textlink="Procedura stosowania siły" link="UseOfForceSOP"] oraz wytyczne zależne od [textlink="kodu zagrożenia" link="AlertLevelsSOP"] w SPO poszczególnych stanowisk.
+
+## Procedura zatrzymania
+
+Stosuj, gdy istnieje podstawa do interwencji wobec podejrzanego, ale nie podjąłeś jeszcze decyzji o formalnym aresztowaniu.
+
+[bold]1. Ustal podstawę.[/bold] Musisz dysponować uzasadnionym podejrzeniem, być świadkiem przestępstwa, posiadać nakaz albo działać na podstawie przepisów obowiązujących przy danym kodzie zagrożenia ([textlink="Prawo Kosmiczne" link="SpaceLaw"]).
+
+[bold]2. Poinformuj o zatrzymaniu.[/bold] Podaj swoją tożsamość, fakt zatrzymania i jego przyczynę (poziom I procedury stosowania siły). Na [color=red]Kodzie Czerwonym[/color], przy istniejących dowodach na przestępstwo, możesz odroczyć podanie powodu do momentu doprowadzenia do więzienia.
+
+[bold]3. Zatrzymaj podejrzanego.[/bold] Uniemożliw mu ucieczkę. Najpierw spróbuj doprowadzić go bez środków poziomu II. Przy oporze stosuj [textlink="procedurę stosowania siły" link="UseOfForceSOP"].
+
+[bold]4. Ustal tożsamość.[/bold] Sprawdź identyfikator i manifest załogi. W razie potrzeby pobierz odciski palców lub próbkę DNA.
+
+[bold]5. Przeszukaj, jeśli dozwolone.[/bold] Postępuj według [textlink="Prawa Kosmicznego" link="SpaceLaw"] i obowiązującego kodu zagrożenia. Przedmioty zabronione skonfiskuj. Przedmioty legalne zwróć przy zwolnieniu.
+
+[bold]6. Zbierz informacje.[/bold] Przeprowadź wstępne przesłuchanie, zabezpiecz dowody lub przekaż sprawę detektywowi. Detektyw może prowadzić [italic]proces zamknięcia[/italic] — przesłuchanie przed decyzją o aresztowaniu, nie dłużej niż 10 minut bez dostępnych dowodów.
+
+[bold]7. Podejmij decyzję:[/bold]
+- [bold]Zwolnij[/bold] — brak podstaw do dalszego postępowania; poinformuj o zakończeniu zatrzymania.
+- [bold]Aresztuj[/bold] — przejdź do procedury aresztowania.
+- [bold]Przekaż[/bold] — przekaż podejrzanego innemu funkcjonariuszowi lub nadzorcy w celu dalszego postępowania.
+
+## Procedura aresztowania
+
+Stosuj po podjęciu decyzji o formalnym osadzeniu podejrzanego. Osoba aresztowana staje się więźniem.
+
+[bold]1. Doprowadź do więzienia.[/bold] Transportuj w kajdankach, jeśli to konieczne. Zapewnij bezpieczeństwo podejrzanego i załogi.
+
+[bold]2. Przekaż nadzorcy.[/bold] Jeśli [color=#cb0000]Nadzorca Ochrony[/color] jest dostępny, przejmuje on dalsze kroki aresztowania. W jego nieobecności obowiązki przejmuje komendant lub najstarszy stopniem oficer.
+
+[bold]3. Przeszukaj ponownie.[/bold] Przeprowadź pełne przeszukanie osobiste: kieszenie, PDA, płaszcz i pas. Nadzorca ma obowiązek wykonać je przy każdym nowym więźniu.
+
+[bold]4. Przesłuchaj.[/bold] Poinformuj o zarzutach i zapytaj o przyznanie się do winy ([textlink="Prawo Kosmiczne" link="SpaceLaw"]). Zapewnij prawnika na żądanie przy przestępstwach poziomu III lub wyższym. Umożliw spotkanie z prawnikiem w dowolnym momencie odbywania wyroku — wtedy wstrzymaj odliczanie czasu kary.
+
+[bold]5. Wymierz wyrok.[/bold] Na podstawie [textlink="Prawa Kosmicznego" link="SpaceLaw"]. Wyrok wydaje nadzorca; w jego nieobecności komendant lub najstarszy stopniem oficer. Komendant nie może zmieniać wydanego wyroku bez nowych dowodów lub próby ucieczki więźnia.
+
+[bold]6. Zaktualizuj rejestry.[/bold] Ustaw status [bold]Zatrzymany[/bold] w [textlink="rejestrach kryminalnych" link="CriminalRecords"] i wpisz zarzuty wraz z czasem wyroku.
+
+[bold]7. Osadź w celi.[/bold] Zdejmij kajdanki po osadzeniu, o ile więzień nie stwarza zagrożenia. Zapewnij odzież, wodę, żywność, schronienie i podstawową opiekę medyczną.
+
+[bold]8. Monitoruj więźnia.[/bold] Pilnuj odbywania wyroku, praw więźnia i bezpieczeństwa aresztu. Po zakończeniu kary ustaw status [bold]Zwolniony[/bold] w rejestrach.
 
 ## Zasady i oczekiwania OOC Ochrony
 

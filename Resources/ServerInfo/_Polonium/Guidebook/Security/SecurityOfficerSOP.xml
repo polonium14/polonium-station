@@ -9,23 +9,23 @@ SPDX-License-Identifier: MIT
 <Document>
 # Oficerowie Ochrony / Kadeci
 
-Przy zatrzymaniach i aresztach obowiązuje [textlink="Procedura stosowania siły" link="UseOfForceSOP"]. Poniższe wytyczne uzupełniają ją w zależności od kodu zagrożenia.
+Obowiązują [textlink="procedura zatrzymania" link="SecuritySOP"], [textlink="procedura aresztowania" link="SecuritySOP"] oraz [textlink="procedura stosowania siły" link="UseOfForceSOP"]. Poniższe wytyczne uzupełniają je w zależności od kodu zagrożenia.
 
 ## Kod Zielony
 
-[bold]1.[/bold] Oficerowie Ochrony są zachęcani do zapoznania się z [textlink="Zasadami Postępowania Ochrony" link="RulesOfConduct"] oraz procedurą stosowania siły przed nawiązaniem kontaktu z członkami załogi;
+[bold]1.[/bold] Oficerowie Ochrony są zachęcani do zapoznania się z [textlink="Zasadami Postępowania Ochrony" link="RulesOfConduct"], procedurą zatrzymania i aresztowania oraz procedurą stosowania siły przed pierwszą interwencją;
 
-[bold]2.[/bold] Oficerowie Ochrony są zobowiązani podać przyczynę zatrzymania (poziom I) przed podjęciem dalszych działań. Wyjątek stanowi sytuacja, gdy podejrzany odmawia zatrzymania się;
+[bold]2.[/bold] Podczas zatrzymania obowiązuje podanie przyczyny przed użyciem siły wyższej niż poziom I;
 
-[bold]3.[/bold] Oficerowie Ochrony są zobowiązani podjąć próbę doprowadzenia podejrzanych lub świadków do aresztu bez środków poziomu II. W przypadku odmowy współpracy ze strony podejrzanego stosuje się tabelę stosowania siły;
+[bold]3.[/bold] Podczas zatrzymania oficer podejmuje próbę doprowadzenia podejrzanego bez środków poziomu II, zanim zastosuje obezwładnienie lub kajdanki;
 
-[bold]4.[/bold] Oficerom Ochrony nie wolno stosować poziomu III ani wyciągać broni śmiercionośnej, dopóki zachowanie podejrzanego nie uzasadni wyższego poziomu siły według procedury;
+[bold]4.[/bold] Poziom III i broń śmiercionośna są niedozwolone, dopóki zachowanie podejrzanego nie uzasadni wyższego poziomu siły;
 
 [bold]5.[/bold] Oficerowie Ochrony [bold]nie[/bold] mogą żądać dostępu do innych departamentów w trakcie patroli. Jednakże prośby o dostęp skierowane do [color=#9fed58]Kierownika Personelu[/color] są akceptowalne;
 
 [bold]6.[/bold] Oficerowie Ochrony [bold]nie[/bold] mają prawa trzymać wyciągniętej broni w trakcie normalnego patrolu;
 
-[bold]7.[/bold] Oficerowie Ochrony [bold]nie[/bold] mają prawa prowadzić przeszukań, chyba że istnieją uzasadnione podejrzenia lub dowody, że dana osoba popełniła przestępstwo. Dalsze przeszukania wymagają nakazu [color=#1b67a5]Komendanta[/color] lub [color=#1b67a5]Kapitana[/color];
+[bold]7.[/bold] Przeszukanie podczas zatrzymania wymaga uzasadnionego podejrzenia lub dowodów na przestępstwo. Dalsze przeszukania wymagają nakazu [color=#1b67a5]Komendanta[/color] lub [color=#1b67a5]Kapitana[/color];
 
 [bold]8.[/bold] Oficerowie Ochrony powinni nosić swoje uniformy zgodnie z [textlink="Zasadami Postępowania Ochrony" link="RulesOfConduct"].
 
@@ -37,19 +37,19 @@ Przy zatrzymaniach i aresztach obowiązuje [textlink="Procedura stosowania siły
 
 [bold]3.[/bold] Oficerowie Ochrony mają prawo trzymać wyciągniętą broń w trakcie normalnego patrolu, lecz jest to wysoce niezalecane, dopóki nie zachodzi potrzeba poziomu III;
 
-[bold]4.[/bold] Oficerom Ochrony wolno trzymać wyciągniętą broń w trakcie aresztowania;
+[bold]4.[/bold] Oficerom Ochrony wolno trzymać wyciągniętą broń podczas aresztowania;
 
 [bold]5.[/bold] Oficerowie Ochrony mogą żądać dostępu do innych departamentów w trakcie patroli;
 
-[bold]6.[/bold] Oficerowie Ochrony mogą losowo przeszukiwać załogantów. Przy odmowie przeszukania dopuszczalne jest obezwładnienie i zakajdankowanie (poziom II). Siła wyższa niż poziom II wymaga wrogiego zachowania zgodnie z procedurą stosowania siły;
+[bold]6.[/bold] Oficerowie Ochrony mogą losowo przeszukiwać załogantów w ramach zatrzymania. Przy odmowie przeszukania dopuszczalne jest obezwładnienie i zakajdankowanie (poziom II). Siła wyższa niż poziom II wymaga wrogiego zachowania;
 
-[bold]7.[/bold] Oficerowie Ochrony mogą zostawiać więźniów w kajdankach, jeśli są oni wrogo nastawieni.
+[bold]7.[/bold] Oficerowie Ochrony mogą zostawiać więźniów w kajdankach po aresztowaniu, jeśli są oni wrogo nastawieni.
 
 ## Kod Czerwony
 
 [bold]1.[/bold] Obowiązują wytyczne 2, 3, 4, 5, 6 oraz 7 z [color=blue]Kodu Niebieskiego[/color]; wytyczna 8 przechodzi z [color=green]Kodu Zielonego[/color];
 
-[bold]2.[/bold] Oficerowie Ochrony mogą aresztować podejrzanych bez podawania powodu, o ile istnieją dowody na ich przestępstwa;
+[bold]2.[/bold] Podczas zatrzymania oficer może odroczyć podanie powodu do więzienia, o ile istnieją dowody na przestępstwo; aresztowanie nadal wymaga przeprowadzenia przesłuchania w więzieniu;
 
 [bold]3.[/bold] Oficerowie Ochrony mogą na siłę przenosić personel do ich departamentów, jeśli jest to konieczne.
 </Document>
