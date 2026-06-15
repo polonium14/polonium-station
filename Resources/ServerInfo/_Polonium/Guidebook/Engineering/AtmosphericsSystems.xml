@@ -27,7 +27,7 @@ SPDX-License-Identifier: MIT
     ## Sieci rurociągów
   </Box>
   <Box>
-    [color=#999999][italic]Połączone ze sobą rury, które pełnią wspólną funkcję — nazywane "sieciami rurociągów"[italic][/color]
+    [color=#c8c8c8][italic]Połączone ze sobą rury, które pełnią wspólną funkcję — nazywane "sieciami rurociągów"[italic][/color]
   </Box>
 
   <Box>
@@ -38,7 +38,7 @@ SPDX-License-Identifier: MIT
     ## Monitorowanie i sterowanie urządzeniami
   </Box>
   <Box>
-    [color=#999999][italic]Monitorowanie i sterowanie urządzeniami regulującymi warunki w pomieszczeniu[italic][/color]
+    [color=#c8c8c8][italic]Monitorowanie i sterowanie urządzeniami regulującymi warunki w pomieszczeniu[italic][/color]
   </Box>
 
   <Box>
@@ -49,7 +49,7 @@ SPDX-License-Identifier: MIT
     ## Kontrola pożarów i gazów
   </Box>
   <Box>
-    [color=#999999][italic]Urządzenia do kontroli i zapobiegania wyciekom gazu oraz pożarom[italic][/color]
+    [color=#c8c8c8][italic]Urządzenia do kontroli i zapobiegania wyciekom gazu oraz pożarom[italic][/color]
   </Box>
 
   <Box>
@@ -60,7 +60,7 @@ SPDX-License-Identifier: MIT
     ## Wydobycie i magazynowanie gazu
   </Box>
   <Box>
-    [color=#999999][italic]Urządzenia służące do wydobywania gazu na potrzeby stacji oraz do jego magazynowania na przyszłość[italic][/color]
+    [color=#c8c8c8][italic]Urządzenia służące do wydobywania gazu na potrzeby stacji oraz do jego magazynowania na przyszłość[italic][/color]
   </Box>
 
 </Document>

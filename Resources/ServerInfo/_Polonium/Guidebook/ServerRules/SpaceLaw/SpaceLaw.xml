@@ -19,10 +19,10 @@ SPDX-License-Identifier: MIT
   - Więźniom należy zapewnić odpowiednią opiekę medyczną. Powinni oni również mieć zapewnioną pomoc psychiatryczną i duchową, jeśli o to poproszą.
   - Więźniowie muszą mieć dostęp do sprzętu komunikacyjnego (radia), o ile nie jest on nadużywany.
   - Więźniom należy zapewnić odzież, żywność, wodę, schronienie i bezpieczeństwo. Jeśli areszt nie jest już bezpieczny, należy przenieść więźniów do innego miejsca.
-  - Więźniowie muszą mieć dostęp do pomocy prawnej podczas przesłuchania, jeśli o to poproszą i jeśli jest ona dostępna.
-  - Więźniowie nie mogą być skazani przed formalnym przesłuchaniem i przedstawieniem dowodów, chyba że przyznali się do zarzucanych im przestępstw.
-  - Więźniowie muszą mieć dostęp do pomocy prawnej [bold]przed[/bold] i podczas przesłuchania, jeśli o to poproszą i jest ona dostępna.
-  - Więźniowie muszą być przesłuchiwani w odpowiednim czasie, ale przesłuchanie nie musi odbywać się w prywatnej sali przesłuchań. "Przesłuchanie" musi polegać jedynie na poinformowaniu danej osoby o zarzucanych jej przestępstwach i zapytaniu o przyznanie się do winy. Po przyznaniu się więźnia do winy lub nieprzyznaniu się do winy można rozpocząć wykonywanie wyroku.
+  - Więźniowie muszą mieć dostęp do pomocy prawnej podczas przesłuchania przy przestępstwach poziomu III lub wyższym, jeśli o to poproszą i jeśli jest ona dostępna.
+  - Więźniowie nie mogą być skazani przed formalnym przesłuchaniem i przedstawieniem dowodów, chyba że przyznali się do zarzucanych im przestępstw. Szczegóły: [textlink="procedura przesłuchania" link="SecuritySOP"].
+  - Więźniowie mogą mieć do 5 minut sam na sam z adwokatem przed rozpoczęciem przesłuchania w celu omówienia strategii obrony; czas oczekiwania na adwokata wlicza się w ten limit.
+  - Formalne przesłuchanie po aresztowaniu musi zakończyć się wypełnionym [bold]Protokołem Przesłuchania[/bold] z pieczątką Komendanta. Bez ważnego protokołu nie wolno rozpocząć odbywania wyroku. Brak dowodów po 15 minutach od rozpoczęcia przesłuchania — zwolnienie jako niewinny.
   - Po zakończeniu pobytu w areszcie więźniowie muszą otrzymać przypisane im urządzenia PDA. Wyjątkiem jest sytuacja, w której istnieją solidne dowody na manipulowanie urządzeniem PDA – w takim przypadku urządzenie należy zabezpieczyć i wymienić na nowe.
   - Więźniowie muszą mieć zapewnioną swobodę poruszania się i nie powinni być krępowani kajdankami ani innymi środkami po osadzeniu w areszcie, chyba że istnieje nadmierne zagrożenie dla życia lub zdrowia. Podobnie, wszyscy więźniowie przebywający w areszcie na czas dłuższy lub bezterminowy powinni być przetrzymywani w celach zbiorowych i nie powinni być umieszczani w izolatkach, chyba że stanowią zagrożenie dla życia lub zdrowia.
 
@@ -71,7 +71,7 @@ SPDX-License-Identifier: MIT
 
   [bold]Wpływy zewnętrzne:[/bold] Przestępstwa popełnione pod wpływem kontroli umysłowej innej osoby lub bytu podlegają ułaskawieniu po dokonaniu wyraźnej i skutecznej dekonwersji.
 
-  [bold]Egzekucje:[/bold] Egzekucje mogą być zatwierdzone przez przewodniczącego sędziego po przeprowadzeniu procesu sądowego. Egzekucje mogą być również zatwierdzone przez Centralne Dowodzenie po formalnym zgłoszeniu.
+  [bold]Egzekucje:[/bold] Egzekucje mogą być zatwierdzone przez przewodniczącego sędziego po przeprowadzeniu procesu sądowego. Egzekucje mogą być również zatwierdzone przez Centralne Dowodzenie po formalnym zgłoszeniu. Formalna egzekucja wymaga wypełnionego [bold]Nakazu egzekucji[/bold] zgodnie z [textlink="procedurą egzekucji" link="SecuritySOP"]. Nie dotyczy to natychmiastowej neutralizacji w terenie na kodach wojennych ani poziomu IV procedury stosowania siły.
 
 
   # Powtarzające się przestępstwa

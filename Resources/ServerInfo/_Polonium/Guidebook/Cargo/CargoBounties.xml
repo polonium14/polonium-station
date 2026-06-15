@@ -10,7 +10,7 @@ SPDX-License-Identifier: MIT
 
 <Document>
   # Zlecenia Logistyki
-  Chociaż [textlink="Logistyka" link="Cargo"] może zarabiać [color=cyan]spesos[/color] sprzedając wszystko, bardziej opłacalne jest realizowanie [color=cyan]zleceń[/color] które znajdują się w Komputerze Zleceń Logistyki
+  Chociaż [textlink="Logistyka" link="Cargo"] może zarabiać [color=#7ee8f7]spesos[/color] sprzedając wszystko, bardziej opłacalne jest realizowanie [color=#7ee8f7]zleceń[/color] które znajdują się w Komputerze Zleceń Logistyki
 
   ## Rozpoczynanie Zleceń
 
@@ -19,9 +19,9 @@ SPDX-License-Identifier: MIT
     <GuideEntityEmbed Entity="PaperCargoBountyManifest"/>
   </Box>
 
-  Aby zacząć realizować zlecenia, otwórz ekran zleceń używając [color=cyan]Komputera zleceń Logistyki[/color]. Komputer do zleceń zawiera liste wszystkich obecnych zleceń umożliwiając ci wydrukowanie lub pominięcie ich.
+  Aby zacząć realizować zlecenia, otwórz ekran zleceń używając [color=#7ee8f7]Komputera zleceń Logistyki[/color]. Komputer do zleceń zawiera liste wszystkich obecnych zleceń umożliwiając ci wydrukowanie lub pominięcie ich.
 
-  - Jak wydrukujesz etykietę dostaniesz [color=cyan]Manifest Zleceń[/color] listę towarów jakich potrzebujesz nabyć. Możesz wydrukować nieskończenie wiele manifestów, więc upewnij się że nie realizujesz tego samego zlecenia co drugi Logistyk.
+  - Jak wydrukujesz etykietę dostaniesz [color=#7ee8f7]Manifest Zleceń[/color] listę towarów jakich potrzebujesz nabyć. Możesz wydrukować nieskończenie wiele manifestów, więc upewnij się że nie realizujesz tego samego zlecenia co drugi Logistyk.
 
   - Pominięcie zlecenia powoduje zastąpienie go nowym, jednocześnie aktywnych może być tylko 6 zleceń na raz. Pominięcie zleceń ma 3 minutowy czas odnowienia i unieważnia zlecenie, co może zdenerwować drugiego Logistyka który nad nim pracuje.
 
@@ -33,11 +33,11 @@ SPDX-License-Identifier: MIT
     <GuideEntityEmbed Entity="AppraisalTool"/>
   </Box>
 
-  Z [color=cyan]Manifestem Zleceń[/color], to od ciebie zależy, czy zbierzesz wymagane towary. Większość oddziałów da ci czego potrzebujesz gdy pokażesz im Manifest Zleceń.
+  Z [color=#7ee8f7]Manifestem Zleceń[/color], to od ciebie zależy, czy zbierzesz wymagane towary. Większość oddziałów da ci czego potrzebujesz gdy pokażesz im Manifest Zleceń.
 
-  Po zebraniu wszystkich wymaganych dóbr, wróć do ładowni i włóż je do pustej [color=cyan]Skrzyni[/color]. Gdy wszystko juz się w niej znajdzie zamknij ją i nałóż na nią manifest.
+  Po zebraniu wszystkich wymaganych dóbr, wróć do ładowni i włóż je do pustej [color=#7ee8f7]Skrzyni[/color]. Gdy wszystko juz się w niej znajdzie zamknij ją i nałóż na nią manifest.
 
-  By zweryfikować ukończenie zlecenia, użyj [color=cyan]Narzędzia do wyceny[/color]. Powinno ono potwierdzić zrealizowanie zlecenia.
+  By zweryfikować ukończenie zlecenia, użyj [color=#7ee8f7]Narzędzia do wyceny[/color]. Powinno ono potwierdzić zrealizowanie zlecenia.
 
   ## Sprzedaż Zamówień
 
@@ -49,7 +49,7 @@ SPDX-License-Identifier: MIT
 
   Gdy już zweryfikujesz czy zlecenie zostało poprawnie wypełnione, wykonaj te same kroki, jak w przypadku sprzedaży czegokolwiek innego.
 
-  Poprostu przetransportuj to na [color=cyan]Stacje Handlową[/color], sprzedaj to, i zrobione!
+  Poprostu przetransportuj to na [color=#7ee8f7]Stacje Handlową[/color], sprzedaj to, i zrobione!
 
   Gdy wrócisz, powinieneś znaleźć nowe zlecenie na miejscu poprzedniego.
 </Document>

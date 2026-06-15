@@ -21,62 +21,62 @@ SPDX-License-Identifier: MIT
 <Box Orientation="Vertical"><CommandButton Text="ui-options-tab-controls" Command="options 2"/></Box>
 
 ## Ruch
-Możesz poruszać się po świecie gry używając [color=yellow][bold][keybind="MoveUp"][keybind="MoveLeft"][keybind="MoveDown"][keybind="MoveRight"][/bold][/color].
-Przytrzymując [color=yellow][bold][keybind="Walk"][/bold][/color], będziesz chodzić, co zapobiega poślizgnięciu się na ziemi.
+Możesz poruszać się po świecie gry używając [color=#ffe566][bold][keybind="MoveUp"][keybind="MoveLeft"][keybind="MoveDown"][keybind="MoveRight"][/bold][/color].
+Przytrzymując [color=#ffe566][bold][keybind="Walk"][/bold][/color], będziesz chodzić, co zapobiega poślizgnięciu się na ziemi.
 
-Możesz [color=cyan]biegać[/color] używając [color=yellow][bold][keybind="Sprint"][/bold][/color].
+Możesz [color=#7ee8f7]biegać[/color] używając [color=#ffe566][bold][keybind="Sprint"][/bold][/color].
 
-Możesz przełączyć chodzenie lub bieganie na [color=cyan]tryb przełącznika[/color] w menu sterowania.
+Możesz przełączyć chodzenie lub bieganie na [color=#7ee8f7]tryb przełącznika[/color] w menu sterowania.
 
-Możesz w dowolnym momencie przejść w tryb czołgania, używając [color=yellow][bold][keybind="ToggleStanding"][/bold][/color].
+Możesz w dowolnym momencie przejść w tryb czołgania, używając [color=#ffe566][bold][keybind="ToggleStanding"][/bold][/color].
 
-[color=cyan]Przeciąganie[/color] obiektów odbywa się za pomocą [color=yellow][bold][keybind="TryPullObject"][/bold][/color].
-Podczas przeciągania możesz przesuwać obiekt do kursora myszy używając [color=yellow][bold][keybind="MovePulledObject"][/bold][/color].
-Naciśnięcie [color=yellow][bold][keybind="ReleasePulledObject"][/bold][/color] zwalnia przedmiot, który aktualnie przeciągasz.
+[color=#7ee8f7]Przeciąganie[/color] obiektów odbywa się za pomocą [color=#ffe566][bold][keybind="TryPullObject"][/bold][/color].
+Podczas przeciągania możesz przesuwać obiekt do kursora myszy używając [color=#ffe566][bold][keybind="MovePulledObject"][/bold][/color].
+Naciśnięcie [color=#ffe566][bold][keybind="ReleasePulledObject"][/bold][/color] zwalnia przedmiot, który aktualnie przeciągasz.
 
-Możesz znaleźć się w sytuacji z [color=#EB2D3A][bold]niską grawitacją.[/bold][/color]
+Możesz znaleźć się w sytuacji z [color=#ff8a8a][bold]niską grawitacją.[/bold][/color]
 Spowoduje to, że twoja postać będzie dryfować podczas ruchu.
 Poza stacją nie będziesz w stanie kontrolować kierunku.
 [bold]Rzucanie przedmiotami[/bold] lub [bold]użycie gaśnicy[/bold] może pomóc w poruszaniu się w tym stanie.
 
 ## Interakcje
-Ogólne interakcje wykonuje się za pomocą [color=yellow][bold][keybind="Use"][/bold][/color].
+Ogólne interakcje wykonuje się za pomocą [color=#ffe566][bold][keybind="Use"][/bold][/color].
 Są one [bold]zależne od kontekstu[/bold] i zależą od przedmiotu w aktywnej ręce.
-Możesz także użyć [color=yellow][bold][keybind="AltActivateItemInWorld"][/bold][/color], aby wykonać [bold]alternatywne interakcje[/bold].
+Możesz także użyć [color=#ffe566][bold][keybind="AltActivateItemInWorld"][/bold][/color], aby wykonać [bold]alternatywne interakcje[/bold].
 
-Aby wykonać [color=cyan]podstawowe interakcje[/color], użyj [color=yellow][bold][keybind="ActivateItemInWorld"][/bold][/color].
+Aby wykonać [color=#7ee8f7]podstawowe interakcje[/color], użyj [color=#ffe566][bold][keybind="ActivateItemInWorld"][/bold][/color].
 To tak jakby [bold]interagować bez przedmiotu w ręce[/bold].
-Naciśnięcie [color=yellow][bold][keybind="ActivateItemInHand"][/bold][/color] działa tak samo z aktualnie trzymanym przedmiotem.
+Naciśnięcie [color=#ffe566][bold][keybind="ActivateItemInHand"][/bold][/color] działa tak samo z aktualnie trzymanym przedmiotem.
 Najczęściej używane jest do wykonywania podstawowych interakcji podczas trzymania czegoś, np. otwierania drzwi, gdy masz zajęte ręce.
 
-Najedź kursorem na obiekt i naciśnij [color=yellow][bold][keybind="UIRightClick"/][/bold][/color], aby otworzyć [color=cyan]menu kontekstowe[/color].
+Najedź kursorem na obiekt i naciśnij [color=#ffe566][bold][keybind="UIRightClick"/][/bold][/color], aby otworzyć [color=#7ee8f7]menu kontekstowe[/color].
 Pozwala to nie tylko przeglądać duże stosy przedmiotów, ale także wykonywać [bold]dodatkowe interakcje.[/bold]
 
-[color=cyan]Badanie[/color] obiektów odbywa się za pomocą [color=yellow][bold][keybind="ExamineEntity"][/bold][/color], co otwiera okno z nazwą obiektu, krótkim opisem i innymi istotnymi szczegółami.
+[color=#7ee8f7]Badanie[/color] obiektów odbywa się za pomocą [color=#ffe566][bold][keybind="ExamineEntity"][/bold][/color], co otwiera okno z nazwą obiektu, krótkim opisem i innymi istotnymi szczegółami.
 [italic]Badanie rzeczy wokół ciebie może pomóc ci dowiedzieć się, do czego służą i jakie mają właściwości[/italic].
 
 ## Ręce
-Użycie [color=yellow][bold][keybind="Use"][/bold][/color] na przedmiotach w świecie podnosi je i umieszcza w aktywnej ręce.
-Możesz zmienić aktywną rękę za pomocą [color=yellow][bold][keybind="SwapHands"][/bold][/color].
+Użycie [color=#ffe566][bold][keybind="Use"][/bold][/color] na przedmiotach w świecie podnosi je i umieszcza w aktywnej ręce.
+Możesz zmienić aktywną rękę za pomocą [color=#ffe566][bold][keybind="SwapHands"][/bold][/color].
 
-Możesz [color=cyan]upuścić[/color] trzymany przedmiot używając [color=yellow][bold][keybind="Drop"][/bold][/color] lub [color=cyan]rzucić go[/color] w stronę kursora za pomocą [color=yellow][bold][keybind="ThrowItemInHand"][/bold][/color].
+Możesz [color=#7ee8f7]upuścić[/color] trzymany przedmiot używając [color=#ffe566][bold][keybind="Drop"][/bold][/color] lub [color=#7ee8f7]rzucić go[/color] w stronę kursora za pomocą [color=#ffe566][bold][keybind="ThrowItemInHand"][/bold][/color].
 
 ## Ekwipunek
-Możesz [color=cyan]otworzyć[/color] swój ekwipunek za pomocą [color=yellow][bold][keybind="OpenInventoryMenu"][/bold][/color].
+Możesz [color=#7ee8f7]otworzyć[/color] swój ekwipunek za pomocą [color=#ffe566][bold][keybind="OpenInventoryMenu"][/bold][/color].
 Każde miejsce na HUDzie może być wypełnione odpowiednim [bold]przedmiotem[/bold] lub [bold]częścią ubrania[/bold].
 
 Dwa miejsca na pasku szybkiego wyboru odpowiadają [bold]torbie i paskowi[/bold].
-Możesz je otworzyć używając [color=yellow][bold][keybind="ActivateItemInWorld"][/bold][/color] na nich lub klikając ikonę w [bold]prawym dolnym rogu[/bold].
+Możesz je otworzyć używając [color=#ffe566][bold][keybind="ActivateItemInWorld"][/bold][/color] na nich lub klikając ikonę w [bold]prawym dolnym rogu[/bold].
 
-Naciśnięcie [color=yellow][bold][keybind="MoveStoredItem"][/bold][/color] pozwala [color=cyan]wyjąć przedmiot[/color] z torby.
-Przytrzymanie pozwala [color=cyan]przeciągnąć[/color] przedmiot w inne miejsce.
-Podczas przeciągania naciśnięcie [color=yellow][bold][keybind="RotateStoredItem"][/bold][/color] [color=cyan]obraca[/color] przedmiot.
+Naciśnięcie [color=#ffe566][bold][keybind="MoveStoredItem"][/bold][/color] pozwala [color=#7ee8f7]wyjąć przedmiot[/color] z torby.
+Przytrzymanie pozwala [color=#7ee8f7]przeciągnąć[/color] przedmiot w inne miejsce.
+Podczas przeciągania naciśnięcie [color=#ffe566][bold][keybind="RotateStoredItem"][/bold][/color] [color=#7ee8f7]obraca[/color] przedmiot.
 
-Możesz wykonywać wszystkie zwykłe interakcje z przedmiotami w torbie, w tym [color=cyan]badanie[/color] i otwieranie [color=cyan]menu kontekstowego[/color].
+Możesz wykonywać wszystkie zwykłe interakcje z przedmiotami w torbie, w tym [color=#7ee8f7]badanie[/color] i otwieranie [color=#7ee8f7]menu kontekstowego[/color].
 
 ## Kamera
-Kamerę można [color=cyan]przybliżać[/color] i oddalać za pomocą [color=yellow][bold][keybind="ZoomIn"][/bold][/color] i [color=yellow][bold][keybind="ZoomOut"][/bold][/color], a także zresetować za pomocą [color=yellow][bold][keybind="ResetZoom"][/bold][/color].
-Podobnie możesz [color=cyan]obracać[/color] ją w lewo i prawo za pomocą [color=yellow][bold][keybind="CameraRotateLeft"][/bold][/color] i [color=yellow][bold][keybind="CameraRotateRight"][/bold][/color].
-Możesz wycentrować ją do obrotu siatki za pomocą [color=yellow][bold][keybind="CameraReset"][/bold][/color].
+Kamerę można [color=#7ee8f7]przybliżać[/color] i oddalać za pomocą [color=#ffe566][bold][keybind="ZoomIn"][/bold][/color] i [color=#ffe566][bold][keybind="ZoomOut"][/bold][/color], a także zresetować za pomocą [color=#ffe566][bold][keybind="ResetZoom"][/bold][/color].
+Podobnie możesz [color=#7ee8f7]obracać[/color] ją w lewo i prawo za pomocą [color=#ffe566][bold][keybind="CameraRotateLeft"][/bold][/color] i [color=#ffe566][bold][keybind="CameraRotateRight"][/bold][/color].
+Możesz wycentrować ją do obrotu siatki za pomocą [color=#ffe566][bold][keybind="CameraReset"][/bold][/color].
 
 </Document>

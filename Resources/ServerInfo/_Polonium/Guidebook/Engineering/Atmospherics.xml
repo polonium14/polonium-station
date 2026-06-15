@@ -20,7 +20,7 @@ SPDX-License-Identifier: MIT
   Ustawienia parametrów atmosferycznych są niezbędne dla długotrwałego komfortu, ale zazwyczaj nie są one wystarczająco opisane, przez co ich konfiguracja bywa nieco skomplikowana. Poniżej postaramy się omówić podstawowe kwestie.
 
   ## Standardowa mieszanka
-  Wdychanie czystego tlenu (O2) lub czystego azotu (N2) jest generalnie szkodliwe dla zdrowia załogi, dlatego zaleca się stosowanie mieszanki składającej się z [color=#a4885c]74% azotu (N2) i 26% tlenu (O2) przy ciśnieniu 101,24 kPa.[/color] Zaleca się, aby mieszalnik gazów był ustawiony na ciśnienie wyjściowe co najmniej 300 kPa, co pozwoli na szybsze ponowne zwiększenie ciśnienia w pomieszczeniach, nie stwarzając przy tym zbyt dużego ryzyka nadciśnienia w przypadku sabotażu systemu dystrybucyjnego przez zdrajców.
+  Wdychanie czystego tlenu (O2) lub czystego azotu (N2) jest generalnie szkodliwe dla zdrowia załogi, dlatego zaleca się stosowanie mieszanki składającej się z [color=#e8c878]74% azotu (N2) i 26% tlenu (O2) przy ciśnieniu 101,24 kPa.[/color] Zaleca się, aby mieszalnik gazów był ustawiony na ciśnienie wyjściowe co najmniej 300 kPa, co pozwoli na szybsze ponowne zwiększenie ciśnienia w pomieszczeniach, nie stwarzając przy tym zbyt dużego ryzyka nadciśnienia w przypadku sabotażu systemu dystrybucyjnego przez zdrajców.
   <Box>
     <GuideEntityEmbed Entity="OxygenCanister"/>
     <GuideEntityEmbed Entity="NitrogenCanister"/>
@@ -48,13 +48,13 @@ SPDX-License-Identifier: MIT
   Jeśli wykonasz wszystkie powierzone zadania, możesz zarobić dodatkowe pieniądze, tworząc nowe mieszanki gazów chemicznych.
 
   ## Arkusz referencyjny
-  - Standardowa mieszanka atmosferyczna składa się z [color=#a4885c]78% N2 i 22% O2 przy ciśnieniu 101,24 kPa.[/color]
+  - Standardowa mieszanka atmosferyczna składa się z [color=#e8c878]78% N2 i 22% O2 przy ciśnieniu 101,24 kPa.[/color]
   - Gaz podlega prawom fizyki. Można skorzystać z następującego równania:
   <Box>
-    [color=cyan]PV = nRT[/color]
+    [color=#7ee8f7]PV = nRT[/color]
   </Box>
   <Box>
-    ([color=#a4885c]Ciśnienie (kPa) * Objętość (l) = Liczba moli * R * Temperatura (K)[/color])
+    ([color=#e8c878]Ciśnienie (kPa) * Objętość (l) = Liczba moli * R * Temperatura (K)[/color])
   </Box> aby uzyskać informacje, które mogą być potrzebne na temat danego gazu. Wartość R wynosi około 8.31446.
 
 </Document>

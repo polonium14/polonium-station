@@ -20,7 +20,7 @@ SPDX-License-Identifier: MIT
   Odbywa się to za pomocą dwóch systemów: systemu Łączenia i systemu Listowania.
 
   Do użycia tych systemów można użyć narzędzia Multitool lub programu Network Configurator.
-  Możesz przełączać się między różnymi systemami za pomocą skrótu klawiszowego [color=yellow][bold][keybind="AltActivateItemInHand"][/bold][/color] lub najeżdżając kursorem na urządzenie i używając skrótu [color=yellow][bold][keybind="AltActivateItemInWorld"][/bold][/color].
+  Możesz przełączać się między różnymi systemami za pomocą skrótu klawiszowego [color=#ffe566][bold][keybind="AltActivateItemInHand"][/bold][/color] lub najeżdżając kursorem na urządzenie i używając skrótu [color=#ffe566][bold][keybind="AltActivateItemInWorld"][/bold][/color].
 
   <Box HorizontalAlignment="Stretch">
     <Box>
@@ -62,9 +62,9 @@ SPDX-License-Identifier: MIT
 
   Każde urządzenie ma swój unikalny adres, który służy do jego identyfikacji w systemie listowania. Łącząc urządzenie z urządzeniem głównym, dodajesz adres tego urządzenia do listy urządzeń, z którymi urządzenie główne będzie się komunikować.
 
-  Możesz zapisać adres urządzenia w swoim narzędziu, wchodząc w interakcję z urządzeniem za pomocą [color=yellow][bold][keybind="Use"][/bold][/color].
+  Możesz zapisać adres urządzenia w swoim narzędziu, wchodząc w interakcję z urządzeniem za pomocą [color=#ffe566][bold][keybind="Use"][/bold][/color].
 
-  Po zapisaniu listy urządzeń w narzędziu możesz powiązać je z urządzeniem głównym, wchodząc w interakcję z tym urządzeniem za pomocą [color=yellow][bold][keybind="Use"][/bold][/color], co spowoduje wyświetlenie okna dialogowego.
+  Po zapisaniu listy urządzeń w narzędziu możesz powiązać je z urządzeniem głównym, wchodząc w interakcję z tym urządzeniem za pomocą [color=#ffe566][bold][keybind="Use"][/bold][/color], co spowoduje wyświetlenie okna dialogowego.
 
   Interfejs użytkownika oferuje kilka opcji:
   - Ustaw: Zastępuje bieżącą listę połączonych urządzeń urządzeniami zapisanymi w narzędziu.
@@ -73,5 +73,5 @@ SPDX-License-Identifier: MIT
   - Kopiuj: Kopiuje listę aktualnie połączonych urządzeń do urządzenia.
   - Pokaż: Rysuje linię między urządzeniem głównym a wszystkimi połączonymi urządzeniami. Jest to przydatne do wizualizacji obszaru, który obejmuje alarm powietrzny.
 
-  Jeśli chcesz wyczyścić narzędzie, możesz nacisnąć [color=yellow][bold][keybind="Use"][/bold][/color] na narzędziu lub użyć [color=yellow][bold][keybind="ActivateItemInHand"][/bold][/color], aby wyświetlić listę zapisanych urządzeń, a następnie nacisnąć przycisk "Wyczyść".
+  Jeśli chcesz wyczyścić narzędzie, możesz nacisnąć [color=#ffe566][bold][keybind="Use"][/bold][/color] na narzędziu lub użyć [color=#ffe566][bold][keybind="ActivateItemInHand"][/bold][/color], aby wyświetlić listę zapisanych urządzeń, a następnie nacisnąć przycisk "Wyczyść".
 </Document>
