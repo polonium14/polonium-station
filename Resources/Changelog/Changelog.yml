@@ -1,18 +1,4 @@
 ﻿Entries:
-- author: themias
-  changes:
-  - message: You can no longer use pulled objects as tools.
-    type: Fix
-  id: 7932
-  time: '2025-02-11T03:29:37.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34587
-- author: Nox38
-  changes:
-  - message: Vendomats now contain 2 Screwdrivers, and an addition Wirecutter.
-    type: Tweak
-  id: 7933
-  time: '2025-02-11T06:35:05.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/35059
 - author: pheenty
   changes:
   - message: Python now costs only 4 TC!
@@ -4168,3 +4154,18 @@
   id: 9239
   time: '2026-06-10T16:47:59.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/656
+- author: haze
+  changes:
+  - message: "ChemMaster sortuje odczynniki chemiczne alfabetycznie wed\u0142ug przet\u0142\
+      umaczonych nazw zamiast angielskich identyfikator\xF3w prototyp\xF3w."
+    type: Fix
+  id: 9240
+  time: '2026-06-15T08:09:55.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/665
+- author: Czuat
+  changes:
+  - message: Naprawiono opis Beryla
+    type: Fix
+  id: 9241
+  time: '2026-06-15T08:11:46.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/668
