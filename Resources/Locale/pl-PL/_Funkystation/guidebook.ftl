@@ -1,6 +1,7 @@
 
 guide-entry-command-sop = SPO Dowództwa
 guide-entry-security-sop = SPO Ochrony
+guide-entry-use-of-force-sop = Procedura stosowania siły
 guide-entry-legal-sop = SPO Prawne
 guide-entry-engineering-sop = SPO Inżynierii
 guide-entry-medical-sop = SPO Medycyny

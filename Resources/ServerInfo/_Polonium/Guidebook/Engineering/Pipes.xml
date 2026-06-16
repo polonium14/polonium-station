@@ -19,10 +19,10 @@ SPDX-License-Identifier: MIT
     <GuideEntityEmbed Entity="GasPipeFourway" Caption="czwórnik"/>
   </Box>
 
-  Rury będą [color=#a4885c]automatycznie łączyć się[/color] z innymi rurami po przymocowaniu (lub przykręceniu) do kadłuba, tworząc [textlink="sieć rurociągu." link="PipeNetworks"]
+  Rury będą [color=#e8c878]automatycznie łączyć się[/color] z innymi rurami po przymocowaniu (lub przykręceniu) do kadłuba, tworząc [textlink="sieć rurociągu." link="PipeNetworks"]
   Sieć rur nazywana jest potocznie [textlink="rurociągiem" link="PipeNetworks"].
 
-  Rury [color=red]nie będą się łączyć[/color] z rurami, które są już połączone z inną rurą.
+  Rury [color=#ff8a8a]nie będą się łączyć[/color] z rurami, które są już połączone z inną rurą.
   Na przykład nie da się zbudować zgiętej rury na prostej rurze, aby utworzyć prowizoryczny trójnik.
 
   Jednakże dwie rury mogą znajdować się na tym samym kafelku, o ile jedna z nich nie blokuje połączenia drugiej z inną rurą.

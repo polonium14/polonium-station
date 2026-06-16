@@ -96,9 +96,9 @@ SPDX-License-Identifier: MIT
   Warto zamontować cztery silniki odrzutowe, po jednym z każdej strony platformy, aby zapewnić sobie możliwość poruszania się w dowolnym kierunku.
 
   Aby działały, muszą być skierowane na zewnątrz, w przestrzeń kosmiczną, i nie uruchomią się, jeśli przed dyszą znajduje się kafelek.
-  Silniki można obracać — nawet te przykręcone — za pomocą [color=yellow][bold][keybind="RotateObjectClockwise"][/bold][/color] lub [color=yellow][bold][keybind="RotateObjectCounterclockwise"][/bold][/color], aby obrócić je w prawo lub w lewo.
+  Silniki można obracać — nawet te przykręcone — za pomocą [color=#ffe566][bold][keybind="RotateObjectClockwise"][/bold][/color] lub [color=#ffe566][bold][keybind="RotateObjectCounterclockwise"][/bold][/color], aby obrócić je w prawo lub w lewo.
 
-  Silniki można wyłączyć lub włączyć za pomocą [color=yellow][bold][keybind="Use"][/bold][/color]pustą ręką lub [color=yellow][bold][keybind="ActivateItemInWorld"][/bold][/color].
+  Silniki można wyłączyć lub włączyć za pomocą [color=#ffe566][bold][keybind="Use"][/bold][/color]pustą ręką lub [color=#ffe566][bold][keybind="ActivateItemInWorld"][/bold][/color].
 
   ## Sterowanie obrotem
   Teraz, gdy masz już kontrolę nad kierunkiem ruchu, musisz zainstalować żyroskop, aby sterować obrotem.

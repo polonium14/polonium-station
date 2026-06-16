@@ -9,7 +9,7 @@ SPDX-License-Identifier: MIT
 <Document>
   # Sieci napięciowe
   W Space Station 14 system dystrybucji energii podzielony jest na trzy odrębne sieci napięciowe.
-  Są to: sieć [color=green]niskonapięciowa[/color], sieć [color=yellow]średnionapięciowa[/color] oraz sieć [color=orange]wysokonapięciowa[/color].
+  Są to: sieć [color=#8ee99a]niskonapięciowa[/color], sieć [color=#ffe566]średnionapięciowa[/color] oraz sieć [color=#ffb86b]wysokonapięciowa[/color].
 
   Sieci te zasilają różne rodzaje urządzeń na stacji.
 
@@ -20,7 +20,7 @@ SPDX-License-Identifier: MIT
   </Box>
 
   ## Sieć niskonapięciowa
-  Sieć [color=green]niskonapięciowa[/color] służy do zasilania niemal wszystkich niewielkich urządzeń w stacji. Obejmuje to między innymi oświetlenie, komputery i inne niewielkie urządzenia.
+  Sieć [color=#8ee99a]niskonapięciowa[/color] służy do zasilania niemal wszystkich niewielkich urządzeń w stacji. Obejmuje to między innymi oświetlenie, komputery i inne niewielkie urządzenia.
 
   <Box>
     <GuideEntityEmbed Entity="PoweredSmallLight" Caption=""/>
@@ -32,13 +32,13 @@ SPDX-License-Identifier: MIT
     <GuideEntityEmbed Entity="AlwaysPoweredWallLight" Caption=""/>
   </Box>
 
-  [color=green]Niskie napięcie[/color] jest dostarczane przez urządzenia APC, czyli montowane na ścianie urządzenia, które przekształcają energię [color=Yellow]średniego napięcia[/color] na energię [color=green]niskiego napięcia[/color].
+  [color=#8ee99a]Niskie napięcie[/color] jest dostarczane przez urządzenia APC, czyli montowane na ścianie urządzenia, które przekształcają energię [color=Yellow]średniego napięcia[/color] na energię [color=#8ee99a]niskiego napięcia[/color].
 
   <Box>
     <GuideEntityEmbed Entity="APCBasic"/>
   </Box>
 
-  [color=green]Przewód niskonapięciowy[/color] nie musi być poprowadzony bezpośrednio do każdej maszyny, ponieważ może zasilać wiele maszyn, o ile znajduje się wystarczająco blisko nich.
+  [color=#8ee99a]Przewód niskonapięciowy[/color] nie musi być poprowadzony bezpośrednio do każdej maszyny, ponieważ może zasilać wiele maszyn, o ile znajduje się wystarczająco blisko nich.
   Może zasilać maszyny w promieniu 2 pól oraz w odległości 3 pól w każdym z głównych kierunków.
 
   ## Sieć średnionapięciowa
@@ -66,7 +66,7 @@ SPDX-License-Identifier: MIT
   </Box>
 
   <Box>
-    [color=#999999][italic]Akcelerator cząstek[italic][/color]
+    [color=#c8c8c8][italic]Akcelerator cząstek[italic][/color]
   </Box>
 
   Energia elektryczna [color=Yellow]średniego napięcia[/color] jest dostarczana przez stacje transformatorowe – duże urządzenia, które przekształcają energię [color=Orange]wysokiego napięcia[/color] na energię [color=Yellow]średniego napięcia[/color].
@@ -96,7 +96,7 @@ SPDX-License-Identifier: MIT
   ## Obrażenia od porażenia prądem
   Jeśli zostaniesz porażony prądem przez przewód pod napięciem, otrzymasz obrażenia. Ich wartość zależy od napięcia przewodu, który cię poraził.
 
-  Przewody [color=green]niskonapięciowe[/color] zadają mniej obrażeń niż przewody [color=Yellow]średnienapięciowe[/color], które z kolei zadają mniej obrażeń niż przewody [color=Orange]wysokonapięciowe[/color].
+  Przewody [color=#8ee99a]niskonapięciowe[/color] zadają mniej obrażeń niż przewody [color=Yellow]średnienapięciowe[/color], które z kolei zadają mniej obrażeń niż przewody [color=Orange]wysokonapięciowe[/color].
 
   Przewody [color=Orange]wysokonapięciowe[/color] i [color=Yellow]średnienapięciowe[/color] pod napięciem są niebezpieczne, dlatego podczas pracy z nimi należy nosić rękawice izolacyjne.
 

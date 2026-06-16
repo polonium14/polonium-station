@@ -44,7 +44,7 @@ Użyj przenośnego analizatora do szybkich, nieinwazyjnych kontroli i znajdowani
 
 Interfejs konsoli zawiera kilka kluczowych paneli:
 
-- Informacje o Podmiocie - Wyświetla imię, całkowite obrażenia, [color=#a4885c]niestabilność genetyczną[/color] i obrażenia radiacyjne.
+- Informacje o Podmiocie - Wyświetla imię, całkowite obrażenia, [color=#e8c878]niestabilność genetyczną[/color] i obrażenia radiacyjne.
 - Lista Mutacji - Wyświetla wszystkie wykryte mutacje w DNA podmiotu.
 - Ujawniona Sekwencja - Pokazuje aktualnie znane zasady (X = nieznana).
 - Sekwencer - Klikaj zasady, aby je przełączać (każda zmiana zadaje 0,2 obrażeń radiacyjnych). Dopasuj ukrytą oryginalną sekwencję, aby aktywować mutację.
@@ -68,7 +68,7 @@ Interfejs konsoli zawiera kilka kluczowych paneli:
 
 Mutacje zajmują stałe bloki z unikalnymi sekwencjami zasad (A, C, G, T). Ujawnienie poprawnej sekwencji aktywuje mutację.
 
-Dodawanie mutacji zwiększa [color=#a4885c]niestabilność genetyczną[/color] podmiotu o wartość niestabilności mutacji.
+Dodawanie mutacji zwiększa [color=#e8c878]niestabilność genetyczną[/color] podmiotu o wartość niestabilności mutacji.
 
 Progi niestabilności:
 - >100 - Po 60-90 sekundach, ryzyko losowej niebezpiecznej mutacji. Efekty nie mogą zostać cofnięte.

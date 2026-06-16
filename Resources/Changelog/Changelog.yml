@@ -1,61 +1,4 @@
 ﻿Entries:
-- author: themias
-  changes:
-  - message: You can no longer use pulled objects as tools.
-    type: Fix
-  id: 7932
-  time: '2025-02-11T03:29:37.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34587
-- author: Nox38
-  changes:
-  - message: Vendomats now contain 2 Screwdrivers, and an addition Wirecutter.
-    type: Tweak
-  id: 7933
-  time: '2025-02-11T06:35:05.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/35059
-- author: pheenty
-  changes:
-  - message: Python now costs only 4 TC!
-    type: Tweak
-  id: 7934
-  time: '2025-02-11T09:36:45.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/33306
-- author: centcomofficer24
-  changes:
-  - message: Increased the armor crates price from 725 spesos to 1250 spesos.
-    type: Tweak
-  id: 7935
-  time: '2025-02-11T12:17:33.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34541
-- author: pheenty
-  changes:
-  - message: The interrogator lamp is now considered security contraband.
-    type: Tweak
-  id: 7936
-  time: '2025-02-11T16:15:14.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/35064
-- author: pheenty
-  changes:
-  - message: Chief Engineer's hardsuit storage unit now has an atmospheric gas mask.
-    type: Add
-  id: 7937
-  time: '2025-02-11T17:48:27.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/35063
-- author: Terraspark4941
-  changes:
-  - message: The spray nozzle can now be stored inside the backpack water tank!
-    type: Tweak
-  id: 7938
-  time: '2025-02-11T19:05:35.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34209
-- author: Tayrtahn
-  changes:
-  - message: Ghosts are no longer sent to the void if the player they are following
-      is polymorphed.
-    type: Fix
-  id: 7939
-  time: '2025-02-11T21:34:24.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/33878
 - author: Tayrtahn
   changes:
   - message: Clusterbangs now properly limit their maximum capacity.
@@ -4168,3 +4111,76 @@
   id: 9239
   time: '2026-06-10T16:47:59.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/656
+- author: haze
+  changes:
+  - message: "ChemMaster sortuje odczynniki chemiczne alfabetycznie wed\u0142ug przet\u0142\
+      umaczonych nazw zamiast angielskich identyfikator\xF3w prototyp\xF3w."
+    type: Fix
+  id: 9240
+  time: '2026-06-15T08:09:55.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/665
+- author: Czuat
+  changes:
+  - message: Naprawiono opis Beryla
+    type: Fix
+  id: 9241
+  time: '2026-06-15T08:11:46.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/668
+- author: Nikita_pl
+  changes:
+  - message: "Przet\u0142umaczono SPO prawnik\xF3w"
+    type: Tweak
+  id: 9242
+  time: '2026-06-15T09:33:22.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/672
+- author: Nikita_pl
+  changes:
+  - message: "Przeszukania w kod zielony teraz wymagaj\u0105 nakazu."
+    type: Tweak
+  - message: "Usuni\u0119to informacje o wstrzykiwaniu implant\xF3w wi\u0119\u017A\
+      niom."
+    type: Remove
+  id: 9243
+  time: '2026-06-15T09:33:09.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/673
+- author: Czuat
+  changes:
+  - message: Naprawiono opis Lektera
+    type: Fix
+  id: 9244
+  time: '2026-06-15T19:22:51.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/669
+- author: Nikita_pl
+  changes:
+  - message: "Dodano informacj\u0119 o procedurach zatrzymywania, aresztowania, przes\u0142\
+      uchiwania, egzekucji."
+    type: Add
+  - message: "Dodano informacje o poziomach stosowania si\u0142y przez SPO Ochrony."
+    type: Add
+  - message: "Przes\u0142uchania teraz jawnie obowi\u0105zuj\u0105 podczas kodu Zielonego\
+      \ oraz Niebieskiego."
+    type: Tweak
+  - message: "Poprawiono b\u0142\u0119dy w SPO ochrony."
+    type: Fix
+  - message: "Obietnica tego, \u017Ce ogrom tych informacji wkr\xF3tce trafi na Wiki,\
+      \ co znacznie poprawi ich czytelno\u015B\u0107."
+    type: Add
+  - message: "Poprawiono czytelno\u015B\u0107 podr\u0119cznika"
+    type: Tweak
+  id: 9245
+  time: '2026-06-15T19:46:01.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/674
+- author: haze
+  changes:
+  - message: "Usuni\u0119to duplikat z guidebook.ftl w celu naprawy workflow"
+    type: Fix
+  id: 9246
+  time: '2026-06-15T22:35:46.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/678
+- author: haze
+  changes:
+  - message: "Przet\u0142umaczono rozdzia\u0142 o chemikaliach"
+    type: Add
+  id: 9247
+  time: '2026-06-16T05:04:36.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/675

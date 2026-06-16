@@ -10,7 +10,7 @@ SPDX-License-Identifier: MIT
   # Zarządzanie gazami
   Departament atmosferyczny dysponuje szeroką gamą narzędzi i sprzętu przeznaczonego do zarządzania gazami na terenie całej stacji.
 
-  [bold]Ostrzeżenie: odłączenie (odkręcenie) większości urządzeń zawierających gaz spowoduje [color=red]wyciek gazu[/color] do atmosfery.[/bold]
+  [bold]Ostrzeżenie: odłączenie (odkręcenie) większości urządzeń zawierających gaz spowoduje [color=#ff8a8a]wyciek gazu[/color] do atmosfery.[/bold]
   Można bezpiecznie odłączać [textlink="zbiorniki z gazem" link="GasCanisters"], [textlink="przenośne oczyszczacze powietrza" link="PortableScrubber"], [textlink="kondensatory gazów" link="GasCondensing"] i [textlink="termomaszyny" link="Thermomachines"].
 
   <Box>
@@ -24,7 +24,7 @@ SPDX-License-Identifier: MIT
     ## Rury
   </Box>
   <Box>
-    [color=#999999][italic]Doprowadzanie gazów z jednego miejsca do drugiego[italic][/color]
+    [color=#c8c8c8][italic]Doprowadzanie gazów z jednego miejsca do drugiego[italic][/color]
   </Box>
 
   <Box>
@@ -35,7 +35,7 @@ SPDX-License-Identifier: MIT
     ## Pompki
   </Box>
   <Box>
-    [color=#999999][italic]Wymuszanie przemieszczania gazów z jednego miejsca do drugiego[italic][/color]
+    [color=#c8c8c8][italic]Wymuszanie przemieszczania gazów z jednego miejsca do drugiego[italic][/color]
   </Box>
 
   <Box>
@@ -49,7 +49,7 @@ SPDX-License-Identifier: MIT
     ## Wprowadzanie i usuwanie gazów z atmosfery
   </Box>
   <Box>
-    [color=#999999][italic]Wprowadzanie i usuwanie gazów z istniejącej (lub nieistniejącej) atmosfery[italic][/color]
+    [color=#c8c8c8][italic]Wprowadzanie i usuwanie gazów z istniejącej (lub nieistniejącej) atmosfery[italic][/color]
   </Box>
 
   <Box>
@@ -63,7 +63,7 @@ SPDX-License-Identifier: MIT
     ## Zawory
   </Box>
   <Box>
-    [color=#999999][italic]Kontrolowanie przepływu gazu w rurach[italic][/color]
+    [color=#c8c8c8][italic]Kontrolowanie przepływu gazu w rurach[italic][/color]
   </Box>
 
   <Box>
@@ -74,7 +74,7 @@ SPDX-License-Identifier: MIT
     ## Mieszanie i filtrowanie
   </Box>
   <Box>
-    [color=#999999][italic]Modyfikowanie składu gazu[italic][/color]
+    [color=#c8c8c8][italic]Modyfikowanie składu gazu[italic][/color]
   </Box>
 
   <Box>
@@ -89,7 +89,7 @@ SPDX-License-Identifier: MIT
     ## Zbiorniki z gazem
   </Box>
   <Box>
-    [color=#999999][italic]Przechowywanie i transport gazu w celu ułatwienia jego użytkowania przez załogę[italic][/color]
+    [color=#c8c8c8][italic]Przechowywanie i transport gazu w celu ułatwienia jego użytkowania przez załogę[italic][/color]
   </Box>
 
   <Box>
@@ -102,7 +102,7 @@ SPDX-License-Identifier: MIT
     ## Termomaszyny i radiatory
   </Box>
   <Box>
-    [color=#999999][italic]Regulacja temperatury gazów w sieci rurociągów lub w atmosferze[italic][/color]
+    [color=#c8c8c8][italic]Regulacja temperatury gazów w sieci rurociągów lub w atmosferze[italic][/color]
   </Box>
 
   <Box>
@@ -112,6 +112,6 @@ SPDX-License-Identifier: MIT
     ## Kondensatory gazów
   </Box>
   <Box>
-    [color=#999999][italic]Skraplanie gazów w celu dalszego wykorzystania[italic][/color]
+    [color=#c8c8c8][italic]Skraplanie gazów w celu dalszego wykorzystania[italic][/color]
   </Box>
 </Document>

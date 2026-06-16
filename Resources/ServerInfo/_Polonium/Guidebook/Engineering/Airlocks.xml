@@ -15,7 +15,7 @@ SPDX-License-Identifier: MIT
     <GuideEntityEmbed Entity="AirlockGlass" Caption=""/>
   </Box>
 
-  Śluzy można otworzyć za pomocą klawisza [color=yellow][bold][keybind="Use"][/bold][/color], gdy masz wolną rękę, klawisza [color=yellow][bold][keybind="ActivateItemInWorld"][/bold][/color], gdy masz zajęte ręce, lub poprzez wejście w śluzę.
+  Śluzy można otworzyć za pomocą klawisza [color=#ffe566][bold][keybind="Use"][/bold][/color], gdy masz wolną rękę, klawisza [color=#ffe566][bold][keybind="ActivateItemInWorld"][/bold][/color], gdy masz zajęte ręce, lub poprzez wejście w śluzę.
 
   Śluzy otworzą się tylko wtedy, gdy posiadasz kartę identyfikacyjną z odpowiednim poziomem dostępu.
   Karta identyfikacyjna musi znajdować się w Twojej dłoni lub w czytniku kart.
@@ -44,7 +44,7 @@ SPDX-License-Identifier: MIT
     <GuideEntityEmbed Entity="PlayerStationAiEmpty" Caption=""/>
   </Box>
   <Box>
-    [color=#999999][italic]SI stacji, które ma kontrole nad wszystkimi śluzami na stacji[italic][/color]
+    [color=#c8c8c8][italic]SI stacji, które ma kontrole nad wszystkimi śluzami na stacji[italic][/color]
   </Box>
 
   <Box>
@@ -56,7 +56,7 @@ SPDX-License-Identifier: MIT
     <GuideEntityEmbed Entity="DoorRemoteResearch" Caption=""/>
   </Box>
   <Box>
-    [color=#999999][italic]Cenne piloty do zdalnego sterowania śluzami. Potężna władza...[italic][/color]
+    [color=#c8c8c8][italic]Cenne piloty do zdalnego sterowania śluzami. Potężna władza...[italic][/color]
   </Box>
 
 
@@ -107,39 +107,39 @@ SPDX-License-Identifier: MIT
 
   Poniżej znajduje się lista przewodów wraz z ich funkcjami:
 
-  [color=#a4885c]Przewód bolców (BOLT)[/color]
-  - [color=yellow]Przesłanie impulsu[/color]: Zasuwa lub otwiera bolce śluzy.
-  - [color=red]Przecięcie przewodu[/color]: Zasuwa bolce śluzy.
-  - [color=green]Naprawienie przewodu[/color]: Nie robi nic.
+  [color=#e8c878]Przewód bolców (BOLT)[/color]
+  - [color=#ffe566]Przesłanie impulsu[/color]: Zasuwa lub otwiera bolce śluzy.
+  - [color=#ff8a8a]Przecięcie przewodu[/color]: Zasuwa bolce śluzy.
+  - [color=#8ee99a]Naprawienie przewodu[/color]: Nie robi nic.
 
-  [color=#a4885c]Przewód zasilający (POWR)[/color]
-  - [color=yellow]Przesłanie impulsu[/color]: Odcina zasilanie śluzy na krótką chwilę.
-  - [color=red]Przecięcie przewodu[/color]: W przypadku przecięcia obu przewodów zasilających następuje odcięcie zasilania drzwi, a w przypadku przecięcia tylko jednego przewodu dochodzi do zwarcia, co grozi porażeniem prądem osób nieposiadających rękawic izolacyjnych.
-  - [color=green]Naprawienie przewodu[/color]: W przypadku przerwania obu przewodów zasilających przywraca zasilanie do drzwi, a w przypadku przerwania tylko jednego przewodu zapobiega zwarciu.
+  [color=#e8c878]Przewód zasilający (POWR)[/color]
+  - [color=#ffe566]Przesłanie impulsu[/color]: Odcina zasilanie śluzy na krótką chwilę.
+  - [color=#ff8a8a]Przecięcie przewodu[/color]: W przypadku przecięcia obu przewodów zasilających następuje odcięcie zasilania drzwi, a w przypadku przecięcia tylko jednego przewodu dochodzi do zwarcia, co grozi porażeniem prądem osób nieposiadających rękawic izolacyjnych.
+  - [color=#8ee99a]Naprawienie przewodu[/color]: W przypadku przerwania obu przewodów zasilających przywraca zasilanie do drzwi, a w przypadku przerwania tylko jednego przewodu zapobiega zwarciu.
 
-  [color=#a4885c]Przewód rejestru dostępu (LOG)[/color]
-  - [color=yellow]Przesłanie impulsu[/color]: Tymczasowo wyłącza rejestrowanie otwarć drzwi.
-  - [color=red]Przecięcie przewodu[/color]: Wyłącza rejestrowanie otwarć drzwi.
-  - [color=green]Naprawienie przewodu[/color]: Włącza rejestrowanie otwarć drzwi.
+  [color=#e8c878]Przewód rejestru dostępu (LOG)[/color]
+  - [color=#ffe566]Przesłanie impulsu[/color]: Tymczasowo wyłącza rejestrowanie otwarć drzwi.
+  - [color=#ff8a8a]Przecięcie przewodu[/color]: Wyłącza rejestrowanie otwarć drzwi.
+  - [color=#8ee99a]Naprawienie przewodu[/color]: Włącza rejestrowanie otwarć drzwi.
 
-  [color=#a4885c]Zasilanie światła sygnalizującego stan bolców (BLIT)[/color]
-  - [color=yellow]Przesłanie impulsu[/color]: Tymczasowo wyłącza system lub ponownie go włącza.
-  - [color=red]Przecięcie przewodu[/color]: Zapobiega włączeniu się lampki sygnalizującej, która sygnalizuje, czy drzwi mają zasunięte bolce.
-  - [color=green]Naprawienie przewodu[/color]: Włącza system ponownie.
+  [color=#e8c878]Zasilanie światła sygnalizującego stan bolców (BLIT)[/color]
+  - [color=#ffe566]Przesłanie impulsu[/color]: Tymczasowo wyłącza system lub ponownie go włącza.
+  - [color=#ff8a8a]Przecięcie przewodu[/color]: Zapobiega włączeniu się lampki sygnalizującej, która sygnalizuje, czy drzwi mają zasunięte bolce.
+  - [color=#8ee99a]Naprawienie przewodu[/color]: Włącza system ponownie.
 
-  [color=#a4885c]Zasilanie timera (TIMR)[/color]
-  - [color=yellow]Przesłanie impulsu[/color]: Tymczasowo skraca czas działania timera drzwi.
-  - [color=red]Przecięcie przewodu[/color]: Wyłącza timer. Drzwi zamkną się, gdy tylko będzie to bezpieczne.
-  - [color=green]Naprawienie przewodu[/color]: Ponownie włącza timer.
+  [color=#e8c878]Zasilanie timera (TIMR)[/color]
+  - [color=#ffe566]Przesłanie impulsu[/color]: Tymczasowo skraca czas działania timera drzwi.
+  - [color=#ff8a8a]Przecięcie przewodu[/color]: Wyłącza timer. Drzwi zamkną się, gdy tylko będzie to bezpieczne.
+  - [color=#8ee99a]Naprawienie przewodu[/color]: Ponownie włącza timer.
 
-  [color=#a4885c]Zasilanie światła bezpieczeństwa (SAFE)[/color]
-  - [color=yellow]Przesłanie impulsu[/color]: Tymczasowo wyłącza system bezpieczeństwa.
-  - [color=red]Przecięcie przewodu[/color]: Wyłącza system bezpieczeństwa. Drzwi zamkną się nawet w przypadku obecności przeszkody.
-  - [color=green]Naprawienie przewodu[/color]: Ponownie włącza system bezpieczeństwa.
+  [color=#e8c878]Zasilanie światła bezpieczeństwa (SAFE)[/color]
+  - [color=#ffe566]Przesłanie impulsu[/color]: Tymczasowo wyłącza system bezpieczeństwa.
+  - [color=#ff8a8a]Przecięcie przewodu[/color]: Wyłącza system bezpieczeństwa. Drzwi zamkną się nawet w przypadku obecności przeszkody.
+  - [color=#8ee99a]Naprawienie przewodu[/color]: Ponownie włącza system bezpieczeństwa.
 
-  [color=#a4885c]Zasilanie modułu dostępu SI (AIA)[/color]
-  - [color=yellow]Przesłanie impulsu[/color]: Nie robi nic.
-  - [color=red]Przecięcie przewodu[/color]: Wyłącza dostęp SI.
-  - [color=green]Naprawienie przewodu[/color]: Włącza dostęp SI.
+  [color=#e8c878]Zasilanie modułu dostępu SI (AIA)[/color]
+  - [color=#ffe566]Przesłanie impulsu[/color]: Nie robi nic.
+  - [color=#ff8a8a]Przecięcie przewodu[/color]: Wyłącza dostęp SI.
+  - [color=#8ee99a]Naprawienie przewodu[/color]: Włącza dostęp SI.
 
 </Document>
