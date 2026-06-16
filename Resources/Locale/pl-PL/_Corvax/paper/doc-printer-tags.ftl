@@ -5,3 +5,4 @@ doc-var-station = :STACJA:
 doc-var-date = :DATA:
 doc-var-name = :IMIĘ_NAZWISKO:
 doc-var-job = :STANOWISKO:
+IdSlot = Karta ID

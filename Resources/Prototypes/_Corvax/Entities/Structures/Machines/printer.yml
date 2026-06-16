@@ -27,8 +27,29 @@
     producingSound: /Audio/Machines/scanning.ogg
     idleState: icon
     runningState: building
-    staticPacks:
-    - CorvaxDocumentsPack
+    staticRecipes:
+    - PrintedDocumentReportStationRecipe
+    - PrintedDocumentErtRequestRecipe
+    - PrintedDocumentResignationRecipe
+    - PrintedDocumentJobChangeRequestRecipe
+    - PrintedDocumentAccessExtensionRecipe
+    - PrintedDocumentIdCardRequestRecipe
+    - PrintedDocumentRemovalOrderRecipe
+    - PrintedDocumentInterimHeadRequestRecipe
+    - PrintedDocumentComplaintRecipe
+    - PrintedDocumentRestrictedEquipmentPermitRecipe
+    - PrintedDocumentInterrogationProtocolRecipe
+    - PrintedDocumentSearchWarrantRecipe
+    - PrintedDocumentExecutionOrderRecipe
+    - PrintedDocumentInvestigationReportRecipe
+    - PrintedDocumentDeathCertificateRecipe
+    - PrintedDocumentMedicationOrderRecipe
+    - PrintedDocumentPrescriptionRecipe
+    - PrintedDocumentEuthanasiaRequestRecipe
+    - PrintedDocumentHealthCertificateRecipe
+    - PrintedDocumentCargoOrderRecipe
+    - PrintedDocumentConstructionPermitRecipe
+    - PrintedDocumentSentienceCertificateRecipe
   - type: Fixtures
     fixtures:
       fix1:
