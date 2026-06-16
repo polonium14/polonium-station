@@ -8,6 +8,7 @@
   components:
     - type: Paper
 
+
 # Dowództwo
 
 - type: entity
@@ -82,6 +83,87 @@
     - type: Paper
       content: doc-text-printer-complaint
 
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentInterimCaptainRequest
+  name: interim captain request
+  components:
+    - type: Paper
+      content: doc-text-printer-interim-captain-request
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentHeadsCouncilProtocol
+  name: heads council meeting protocol
+  components:
+    - type: Paper
+      content: doc-text-printer-heads-council-protocol
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentDepartmentActivityReport
+  name: department activity report
+  components:
+    - type: Paper
+      content: doc-text-printer-department-activity-report
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentOrderCompletionReport
+  name: order completion report
+  components:
+    - type: Paper
+      content: doc-text-printer-order-completion-report
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentPositionCreationRequest
+  name: position creation request
+  components:
+    - type: Paper
+      content: doc-text-printer-position-creation-request
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentEmployeeCommendationRequest
+  name: employee commendation request
+  components:
+    - type: Paper
+      content: doc-text-printer-employee-commendation-request
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentStationEmploymentRequest
+  name: station employment request
+  components:
+    - type: Paper
+      content: doc-text-printer-station-employment-request
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentAccessRevocationOrder
+  name: access revocation order
+  components:
+    - type: Paper
+      content: doc-text-printer-access-revocation-order
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentCommandDecree
+  name: command decree
+  components:
+    - type: Paper
+      content: doc-text-printer-command-decree
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentStationGoalProgressReport
+  name: station goal progress report
+  components:
+    - type: Paper
+      content: doc-text-printer-station-goal-progress-report
+
+
 # Dział Ochrony
 
 - type: entity
@@ -123,6 +205,71 @@
   components:
     - type: Paper
       content: doc-text-printer-investigation-report
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentWitnessTestimony
+  name: witness testimony
+  components:
+    - type: Paper
+      content: doc-text-printer-witness-testimony
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentArrestRequest
+  name: arrest request
+  components:
+    - type: Paper
+      content: doc-text-printer-arrest-request
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentDetainedPersonsRegister
+  name: detained persons register
+  components:
+    - type: Paper
+      content: doc-text-printer-detained-persons-register
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentRoomSearchProtocol
+  name: room search protocol
+  components:
+    - type: Paper
+      content: doc-text-printer-room-search-protocol
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentAssetSeizureOrder
+  name: asset seizure order
+  components:
+    - type: Paper
+      content: doc-text-printer-asset-seizure-order
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentPatrolReport
+  name: patrol report
+  components:
+    - type: Paper
+      content: doc-text-printer-patrol-report
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentDisciplinarySentence
+  name: disciplinary sentence
+  components:
+    - type: Paper
+      content: doc-text-printer-disciplinary-sentence
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentArrestExtensionRequest
+  name: arrest extension request
+  components:
+    - type: Paper
+      content: doc-text-printer-arrest-extension-request
+
 
 # Dział Medyczny
 
@@ -166,15 +313,89 @@
     - type: Paper
       content: doc-text-printer-health-certificate
 
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentEpidemiologyReport
+  name: epidemiology report
+  components:
+    - type: Paper
+      content: doc-text-printer-epidemiology-report
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentDrugSynthesisRequest
+  name: drug synthesis request
+  components:
+    - type: Paper
+      content: doc-text-printer-drug-synthesis-request
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentPatientMedicalCard
+  name: patient medical card
+  components:
+    - type: Paper
+      content: doc-text-printer-patient-medical-card
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentPsychologicalInterventionProtocol
+  name: psychological intervention protocol
+  components:
+    - type: Paper
+      content: doc-text-printer-psychological-intervention-protocol
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentQuarantineCertificate
+  name: quarantine certificate
+  components:
+    - type: Paper
+      content: doc-text-printer-quarantine-certificate
+
+
 # Dział Logistyczny
 
 - type: entity
   parent: PrintedDocument
   id: PrintedDocumentCargoOrder
-  name: supply order
+  name: cargo order
   components:
     - type: Paper
       content: doc-text-printer-cargo-order
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentDisposalReport
+  name: disposal report
+  components:
+    - type: Paper
+      content: doc-text-printer-disposal-report
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentDeliveryReceipt
+  name: delivery receipt
+  components:
+    - type: Paper
+      content: doc-text-printer-delivery-receipt
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentFundsRequest
+  name: funds request
+  components:
+    - type: Paper
+      content: doc-text-printer-funds-request
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentWarehouseReport
+  name: warehouse report
+  components:
+    - type: Paper
+      content: doc-text-printer-warehouse-report
+
 
 # Dział Inżynieryjny
 
@@ -186,6 +407,47 @@
     - type: Paper
       content: doc-text-printer-construction-permit
 
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentRenovationRequest
+  name: renovation request
+  components:
+    - type: Paper
+      content: doc-text-printer-renovation-request
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentTechnicalWorkReport
+  name: technical work report
+  components:
+    - type: Paper
+      content: doc-text-printer-technical-work-report
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentPowerStatusReport
+  name: power status report
+  components:
+    - type: Paper
+      content: doc-text-printer-power-status-report
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentAtmosStatusReport
+  name: atmos status report
+  components:
+    - type: Paper
+      content: doc-text-printer-atmos-status-report
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentDemolitionPermit
+  name: demolition permit
+  components:
+    - type: Paper
+      content: doc-text-printer-demolition-permit
+
+
 # Dział Badań i Rozwoju
 
 - type: entity
@@ -195,3 +457,207 @@
   components:
     - type: Paper
       content: doc-text-printer-sentience-certificate
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentExperimentReport
+  name: experiment report
+  components:
+    - type: Paper
+      content: doc-text-printer-experiment-report
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentObjectStudyReport
+  name: object study report
+  components:
+    - type: Paper
+      content: doc-text-printer-object-study-report
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentModernizationRequest
+  name: modernization request
+  components:
+    - type: Paper
+      content: doc-text-printer-modernization-request
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentProductManufacturingOrder
+  name: product manufacturing order
+  components:
+    - type: Paper
+      content: doc-text-printer-product-manufacturing-order
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentAnomalyStudyReport
+  name: anomaly study report
+  components:
+    - type: Paper
+      content: doc-text-printer-anomaly-study-report
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentSpecialistTrainingRequest
+  name: specialist training request
+  components:
+    - type: Paper
+      content: doc-text-printer-specialist-training-request
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentObjectClassificationProtocol
+  name: object classification protocol
+  components:
+    - type: Paper
+      content: doc-text-printer-object-classification-protocol
+
+
+# Dział Serwisowy
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentServiceObjectStudyReport
+  name: service object study report
+  components:
+    - type: Paper
+      content: doc-text-printer-service-object-study-report
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentServiceProductOrder
+  name: service product order
+  components:
+    - type: Paper
+      content: doc-text-printer-service-product-order
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentServiceOrder
+  name: service order
+  components:
+    - type: Paper
+      content: doc-text-printer-service-order
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentEventOrganizationRequest
+  name: event organization request
+  components:
+    - type: Paper
+      content: doc-text-printer-event-organization-request
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentCateringStatusReport
+  name: catering status report
+  components:
+    - type: Paper
+      content: doc-text-printer-catering-status-report
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentRoomReservation
+  name: room reservation
+  components:
+    - type: Paper
+      content: doc-text-printer-room-reservation
+
+
+# Centralne Dowództwo
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentCentcomUniversal
+  name: centcom universal document
+  components:
+    - type: Paper
+      content: doc-text-printer-centcom-universal
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentCentcomStaffOrder
+  name: centcom staff order
+  components:
+    - type: Paper
+      content: doc-text-printer-centcom-staff-order
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentCentcomStaffResponse
+  name: centcom staff response
+  components:
+    - type: Paper
+      content: doc-text-printer-centcom-staff-response
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentCentcomPeriodicReportsOrder
+  name: centcom periodic reports order
+  components:
+    - type: Paper
+      content: doc-text-printer-centcom-periodic-reports-order
+
+
+# Inspekcja SPO
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentIaVerificationRequest
+  name: IA verification request
+  components:
+    - type: Paper
+      content: doc-text-printer-ia-verification-request
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentIaDocumentationRequest
+  name: IA documentation request
+  components:
+    - type: Paper
+      content: doc-text-printer-ia-documentation-request
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentIaDepartmentAuditReport
+  name: IA department audit report
+  components:
+    - type: Paper
+      content: doc-text-printer-ia-department-audit-report
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentIaInterrogationProtocol
+  name: IA interrogation protocol
+  components:
+    - type: Paper
+      content: doc-text-printer-ia-interrogation-protocol
+
+
+# Syndykat
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentSyndicateCooperationOffer
+  name: syndicate cooperation offer
+  components:
+    - type: Paper
+      content: doc-text-printer-syndicate-cooperation-offer
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentSyndicateInfoExchangeProposal
+  name: syndicate info exchange proposal
+  components:
+    - type: Paper
+      content: doc-text-printer-syndicate-info-exchange-proposal
+
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentSyndicateSummons
+  name: syndicate summons
+  components:
+    - type: Paper
+      content: doc-text-printer-syndicate-summons

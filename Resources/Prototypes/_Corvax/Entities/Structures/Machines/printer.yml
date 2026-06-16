@@ -37,19 +37,75 @@
     - PrintedDocumentRemovalOrderRecipe
     - PrintedDocumentInterimHeadRequestRecipe
     - PrintedDocumentComplaintRecipe
+    - PrintedDocumentInterimCaptainRequestRecipe
+    - PrintedDocumentHeadsCouncilProtocolRecipe
+    - PrintedDocumentDepartmentActivityReportRecipe
+    - PrintedDocumentOrderCompletionReportRecipe
+    - PrintedDocumentPositionCreationRequestRecipe
+    - PrintedDocumentEmployeeCommendationRequestRecipe
+    - PrintedDocumentStationEmploymentRequestRecipe
+    - PrintedDocumentAccessRevocationOrderRecipe
+    - PrintedDocumentCommandDecreeRecipe
+    - PrintedDocumentStationGoalProgressReportRecipe
     - PrintedDocumentRestrictedEquipmentPermitRecipe
     - PrintedDocumentInterrogationProtocolRecipe
     - PrintedDocumentSearchWarrantRecipe
     - PrintedDocumentExecutionOrderRecipe
     - PrintedDocumentInvestigationReportRecipe
+    - PrintedDocumentWitnessTestimonyRecipe
+    - PrintedDocumentArrestRequestRecipe
+    - PrintedDocumentDetainedPersonsRegisterRecipe
+    - PrintedDocumentRoomSearchProtocolRecipe
+    - PrintedDocumentAssetSeizureOrderRecipe
+    - PrintedDocumentPatrolReportRecipe
+    - PrintedDocumentDisciplinarySentenceRecipe
+    - PrintedDocumentArrestExtensionRequestRecipe
     - PrintedDocumentDeathCertificateRecipe
     - PrintedDocumentMedicationOrderRecipe
     - PrintedDocumentPrescriptionRecipe
     - PrintedDocumentEuthanasiaRequestRecipe
     - PrintedDocumentHealthCertificateRecipe
+    - PrintedDocumentEpidemiologyReportRecipe
+    - PrintedDocumentDrugSynthesisRequestRecipe
+    - PrintedDocumentPatientMedicalCardRecipe
+    - PrintedDocumentPsychologicalInterventionProtocolRecipe
+    - PrintedDocumentQuarantineCertificateRecipe
     - PrintedDocumentCargoOrderRecipe
+    - PrintedDocumentDisposalReportRecipe
+    - PrintedDocumentDeliveryReceiptRecipe
+    - PrintedDocumentFundsRequestRecipe
+    - PrintedDocumentWarehouseReportRecipe
     - PrintedDocumentConstructionPermitRecipe
+    - PrintedDocumentRenovationRequestRecipe
+    - PrintedDocumentTechnicalWorkReportRecipe
+    - PrintedDocumentPowerStatusReportRecipe
+    - PrintedDocumentAtmosStatusReportRecipe
+    - PrintedDocumentDemolitionPermitRecipe
     - PrintedDocumentSentienceCertificateRecipe
+    - PrintedDocumentExperimentReportRecipe
+    - PrintedDocumentObjectStudyReportRecipe
+    - PrintedDocumentModernizationRequestRecipe
+    - PrintedDocumentProductManufacturingOrderRecipe
+    - PrintedDocumentAnomalyStudyReportRecipe
+    - PrintedDocumentSpecialistTrainingRequestRecipe
+    - PrintedDocumentObjectClassificationProtocolRecipe
+    - PrintedDocumentServiceObjectStudyReportRecipe
+    - PrintedDocumentServiceProductOrderRecipe
+    - PrintedDocumentServiceOrderRecipe
+    - PrintedDocumentEventOrganizationRequestRecipe
+    - PrintedDocumentCateringStatusReportRecipe
+    - PrintedDocumentRoomReservationRecipe
+    - PrintedDocumentCentcomUniversalRecipe
+    - PrintedDocumentCentcomStaffOrderRecipe
+    - PrintedDocumentCentcomStaffResponseRecipe
+    - PrintedDocumentCentcomPeriodicReportsOrderRecipe
+    - PrintedDocumentIaVerificationRequestRecipe
+    - PrintedDocumentIaDocumentationRequestRecipe
+    - PrintedDocumentIaDepartmentAuditReportRecipe
+    - PrintedDocumentIaInterrogationProtocolRecipe
+    - PrintedDocumentSyndicateCooperationOfferRecipe
+    - PrintedDocumentSyndicateInfoExchangeProposalRecipe
+    - PrintedDocumentSyndicateSummonsRecipe
   - type: Fixtures
     fixtures:
       fix1:

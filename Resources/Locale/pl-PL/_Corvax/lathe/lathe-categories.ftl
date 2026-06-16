@@ -4,3 +4,7 @@ lathe-category-medical-documents = Dział Medyczny
 lathe-category-cargo-documents = Dział Logistyczny
 lathe-category-engineering-documents = Dział Inżynieryjny
 lathe-category-science-documents = Dział Badań i Rozwoju
+lathe-category-service-documents = Dział Serwisowy
+lathe-category-centcom-documents = Centralne Dowództwo
+lathe-category-internal-affairs-documents = Inspekcja SPO
+lathe-category-syndicate-documents = Syndykat

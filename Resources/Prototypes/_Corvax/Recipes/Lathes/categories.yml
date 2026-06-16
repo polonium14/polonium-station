@@ -23,3 +23,19 @@
 - type: latheCategory
   id: ScienceDocuments
   name: lathe-category-science-documents
+
+- type: latheCategory
+  id: ServiceDocuments
+  name: lathe-category-service-documents
+
+- type: latheCategory
+  id: CentComDocuments
+  name: lathe-category-centcom-documents
+
+- type: latheCategory
+  id: InternalAffairsDocuments
+  name: lathe-category-internal-affairs-documents
+
+- type: latheCategory
+  id: SyndicateDocuments
+  name: lathe-category-syndicate-documents
