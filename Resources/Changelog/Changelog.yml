@@ -1,14 +1,6 @@
 ﻿Entries:
 - author: Tayrtahn
   changes:
-  - message: Ghosts are no longer sent to the void if the player they are following
-      is polymorphed.
-    type: Fix
-  id: 7939
-  time: '2025-02-11T21:34:24.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/33878
-- author: Tayrtahn
-  changes:
   - message: Clusterbangs now properly limit their maximum capacity.
     type: Fix
   id: 7940
@@ -4185,3 +4177,10 @@
   id: 9246
   time: '2026-06-15T22:35:46.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/678
+- author: haze
+  changes:
+  - message: "Przet\u0142umaczono rozdzia\u0142 o chemikaliach"
+    type: Add
+  id: 9247
+  time: '2026-06-16T05:04:36.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/675
