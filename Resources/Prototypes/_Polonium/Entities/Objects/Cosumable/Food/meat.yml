@@ -1,7 +1,7 @@
 - type: entity
   name: parówka
   parent: FoodMeatBase
-  id: z
+  id: FoodMeatParowka
   description: Parówka taka jak z żabki.
   components:
   - type: Tag
@@ -19,3 +19,28 @@
           Quantity: 5
         - ReagentId: Fat
           Quantity: 2
+
+- type: entity
+  name: Pęto parówek
+  parent: FoodMeatBase
+  id: FoodMeatPetoParowek
+  description: Pęto parówek, no bo kto nie lubi parówek.
+  components:
+  - type: Tag
+    tags:
+    - Raw
+    - Meat
+  - type: Sprite
+    sprite: _Polonium/Objects/Cosumable/Food/meat.rsi
+    state: petoparowek
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 20
+        - ReagentId: Fat
+          Quantity: 8
+  - type: SliceableFood
+    count: 4
+    slice: FoodMeatParowka
