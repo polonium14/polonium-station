@@ -4,7 +4,7 @@ meta:
   engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 05/22/2026 12:55:49
+  time: 06/16/2026 16:36:47
   entityCount: 17033
 maps:
 - 4480
@@ -9898,7 +9898,7 @@ entities:
       pos: 33.5,6.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -90958.15
+      secondsUntilStateChange: -90993.48
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -10776,7 +10776,7 @@ entities:
       pos: 39.5,7.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -72157.14
+      secondsUntilStateChange: -72192.47
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -13787,13 +13787,6 @@ entities:
     components:
     - type: Transform
       pos: 13.5,20.5
-      parent: 2
-- proto: BananaPhoneInstrument
-  entities:
-  - uid: 9600
-    components:
-    - type: Transform
-      pos: 27.258966,6.8224545
       parent: 2
 - proto: Barricade
   entities:
@@ -37758,6 +37751,53 @@ entities:
       rot: 3.141592653589793 rad
       pos: 112.5,-18.5
       parent: 2
+- proto: CallableBananaPhoneInstrument
+  entities:
+  - uid: 9600
+    components:
+    - type: Transform
+      pos: 27.258966,6.8224545
+      parent: 2
+    - type: ContainerContainer
+      containers:
+        handset: !type:ContainerSlot {}
+- proto: CallablePhoneInstrument
+  entities:
+  - uid: 7008
+    components:
+    - type: Transform
+      pos: 32.44386,41.590744
+      parent: 2
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+    - type: ContainerContainer
+      containers:
+        handset: !type:ContainerSlot {}
+  - uid: 9625
+    components:
+    - type: Transform
+      pos: 21.466303,46.650757
+      parent: 2
+    - type: ContainerContainer
+      containers:
+        handset: !type:ContainerSlot {}
+  - uid: 15425
+    components:
+    - type: Transform
+      pos: 12.515507,33.667786
+      parent: 2
+    - type: ContainerContainer
+      containers:
+        handset: !type:ContainerSlot {}
+  - uid: 15898
+    components:
+    - type: Transform
+      pos: 93.51382,21.642849
+      parent: 2
+    - type: ContainerContainer
+      containers:
+        handset: !type:ContainerSlot {}
 - proto: CandyBowl
   entities:
   - uid: 13078
@@ -50448,11 +50488,6 @@ entities:
       parent: 2
 - proto: filingCabinetRandom
   entities:
-  - uid: 10276
-    components:
-    - type: Transform
-      pos: 15.5,-5.5
-      parent: 2
   - uid: 12127
     components:
     - type: Transform
@@ -79274,31 +79309,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 69.51636,37.46118
       parent: 2
-- proto: PhoneInstrument
-  entities:
-  - uid: 7008
-    components:
-    - type: Transform
-      pos: 32.44386,41.590744
-      parent: 2
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-  - uid: 9625
-    components:
-    - type: Transform
-      pos: 21.466303,46.650757
-      parent: 2
-  - uid: 15425
-    components:
-    - type: Transform
-      pos: 12.515507,33.667786
-      parent: 2
-  - uid: 15898
-    components:
-    - type: Transform
-      pos: 93.51382,21.642849
-      parent: 2
 - proto: PianoInstrument
   entities:
   - uid: 1663
@@ -82949,6 +82959,13 @@ entities:
     components:
     - type: Transform
       pos: 34.5,-54.5
+      parent: 2
+- proto: PrinterDoc
+  entities:
+  - uid: 10276
+    components:
+    - type: Transform
+      pos: 15.5,-5.5
       parent: 2
 - proto: Protolathe
   entities:
