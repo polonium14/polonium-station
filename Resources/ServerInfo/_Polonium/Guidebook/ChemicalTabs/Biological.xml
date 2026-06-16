@@ -7,9 +7,9 @@ SPDX-License-Identifier: MIT
 
 <Document>
 
-# Biological
+# Biologiczne
 
-These reagents include chemicals that you can get from certain materials and from living things. To get the other chemicals you have to use machines like the electrolyzer and the centrifuge.
+Odczynniki te obejmują substancje chemiczne, które można uzyskać z niektórych materiałów oraz z organizmów żywych. Aby uzyskać pozostałe substancje chemiczne, konieczne jest użycie urządzeń takich jak elektrolizer i wirówka.
 
 <GuideReagentGroupEmbed Group="Biological"/>
 
