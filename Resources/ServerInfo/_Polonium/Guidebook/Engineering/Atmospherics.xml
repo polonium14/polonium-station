@@ -15,46 +15,46 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-  # Atmospherics
+  # Układ atmosferyczny
 
-  Atmospherics setups are a necessity for your long-term comfort, but are generally underdocumented, resulting in them being a bit tricky to set up. The following attempts to cover the basics.
+  Ustawienia parametrów atmosferycznych są niezbędne dla długotrwałego komfortu, ale zazwyczaj nie są one wystarczająco opisane, przez co ich konfiguracja bywa nieco skomplikowana. Poniżej postaramy się omówić podstawowe kwestie.
 
-  ## Standard Mix
-  Breathing pure O2 or pure N2 is generally bad for the health of your crew, and it is recommended to instead aim for a mix of [color=#a4885c]74% N2 and 26% O2 at 101.24kPa.[/color] It's recommended that your gas mixer setup be set to output at least 300kPA for faster re-pressurization of rooms, without posing too much of an overpressurization risk, should traitors sabotage the distro.
+  ## Standardowa mieszanka
+  Wdychanie czystego tlenu (O2) lub czystego azotu (N2) jest generalnie szkodliwe dla zdrowia załogi, dlatego zaleca się stosowanie mieszanki składającej się z [color=#e8c878]74% azotu (N2) i 26% tlenu (O2) przy ciśnieniu 101,24 kPa.[/color] Zaleca się, aby mieszalnik gazów był ustawiony na ciśnienie wyjściowe co najmniej 300 kPa, co pozwoli na szybsze ponowne zwiększenie ciśnienia w pomieszczeniach, nie stwarzając przy tym zbyt dużego ryzyka nadciśnienia w przypadku sabotażu systemu dystrybucyjnego przez zdrajców.
   <Box>
     <GuideEntityEmbed Entity="OxygenCanister"/>
     <GuideEntityEmbed Entity="NitrogenCanister"/>
     <GuideEntityEmbed Entity="AirCanister"/>
   </Box>
-  Variations on this mix may be necessary for the long-term comfort of atypical crew, (for example, Voxes, who are poisoned by Oxygen and breathe Nitrogen). For atypical crew (to be implemented), it is recommended to try and give them their own personal space, isolated by either an airlock or disposals section. Keep in mind that both methods are leaky and you will need scrubbers on both sides of the lock to clean up any leaked gasses.
+  W celu zapewnienia długotrwałego komfortu załogi o nietypowych potrzebach (na przykład Voxów, które oddychają azotem a tlen jest dla nich trujący) konieczne może być wprowadzenie pewnych modyfikacji w tym układzie. W takim przypadku zaleca się zapewnienie im osobnej przestrzeni, odizolowanej za pomocą śluzy powietrznej lub sekcji utylizacyjnej. Należy pamiętać, że obie metody są nieszczelne i konieczne będzie zastosowanie oczyszczaczy po obu stronach śluzy w celu usunięcia wszelkich wycieków gazów.
   <Box>
     <GuideEntityEmbed Entity="NitrogenCanister"/>
     <GuideEntityEmbed Entity="StorageCanister"/>
   </Box>
-  ## Vents and Scrubbers
-  Vents and scrubbers are core atmospherics devices that fill and cleanse rooms, respectively. By default, they are configured for filling rooms to standard pressure (101.24kPa) and to remove all non-O2/N2 gasses from a room. They can be reconfigured from their default settings by linking them to an Air Alarm, allowing you to configure how they respond to various types of gasses or pressure levels.
+  ## Otwory wentylacyjne i oczyszczacze powietrza
+  Otwory wentylacyjne i oczyszczacze powietrza to podstawowe urządzenia atmosferyczne, które służą odpowiednio do napełniania i oczyszczania pomieszczeń. Domyślnie skonfigurowane są do wypełniania pomieszczeń do standardowego ciśnienia (101,24 kPa) oraz do usuwania wszystkich innych gazów niż O2/N2. Można zmienić ich domyślne ustawienia, łącząc je z alarmem atmosferycznym, co pozwala skonfigurować sposób, w jaki reagują na różne rodzaje gazów lub poziomy ciśnienia.
 
   <Box>
     <GuideEntityEmbed Entity="GasVentPump"/>
     <GuideEntityEmbed Entity="GasVentScrubber"/>
   </Box>
-  During standard operation, if a normal vent detects that the outside environment is space, it will automatically cease operation until a minimum pressure is reached to avoid destruction of useful gasses. This can be fixed by pressurizing the room up to that minimum pressure by refilling it with a gas canister (potentially multiple, if the room is of significant size).
+  W trakcie standardowej pracy, jeśli otwór wentylacyjny wykryje, że ciśnienie w otoczeniu jest zbyt niskie, automatycznie wstrzyma działanie do momentu osiągnięcia zadanego minimalnego ciśnienia, aby zapobiec utracie cennych gazów. Problem ten można rozwiązać poprzez zwiększenie ciśnienia w pomieszczeniu do zadanego minimalnego poziomu poprzez uzupełnienie gazu w pomieszczeniu przy użyciu butli (ewentualnie kilku, jeśli pomieszczenie jest duże).
 
-  Should you encounter a situation where scrubbers aren't cleaning a room fast enough (and the "Siphon" functionality still cannot keep up), employ portable scrubbers by dragging them to the affected location and wrenching them down. They work much faster than typical scrubbers and can clean up a room quite quickly. Large spills may require you to employ multiple.
+  Jeśli zdarzy się, że oczyszczacze powietrza nie są w stanie wystarczająco szybko oczyścić pomieszczenia, użyj przenośnych oczyszczaczy powietrza. Po prostu przeciągnij je w odpowiednie miejsce i przymocuj za pomocą klucza. Działają one znacznie szybciej niż zwykłe oczyszczacze i potrafią dość szybko oczyścić pomieszczenie. W przypadku większych wycieków może być konieczne użycie kilku takich urządzeń.
   <Box>
     <GuideEntityEmbed Entity="PortableScrubber"/>
   </Box>
-  # Gas mixes and Burn chambers
-  In the event you finish all the tasks at hand, you can make some extra money by creating new chemical gasses.
+  # Mieszanki gazowe i komory spalania
+  Jeśli wykonasz wszystkie powierzone zadania, możesz zarobić dodatkowe pieniądze, tworząc nowe mieszanki gazów chemicznych.
 
-  ## Reference Sheet
-  - Standard atmospheric mix is [color=#a4885c]78% N2 and 22% O2 at 101.24kPa.[/color]
-  - Gas obeys real math. You can use the equation:
+  ## Arkusz referencyjny
+  - Standardowa mieszanka atmosferyczna składa się z [color=#e8c878]78% N2 i 22% O2 przy ciśnieniu 101,24 kPa.[/color]
+  - Gaz podlega prawom fizyki. Można skorzystać z następującego równania:
   <Box>
-    [color=cyan]PV = nRT[/color]
+    [color=#7ee8f7]PV = nRT[/color]
   </Box>
   <Box>
-    ([color=#a4885c]Pressure kPa * Volume L = Moles * R * Temperature K[/color])
-  </Box> to derive information you might need to know about a gas. R is approximately 8.31446.
+    ([color=#e8c878]Ciśnienie (kPa) * Objętość (l) = Liczba moli * R * Temperatura (K)[/color])
+  </Box> aby uzyskać informacje, które mogą być potrzebne na temat danego gazu. Wartość R wynosi około 8.31446.
 
 </Document>

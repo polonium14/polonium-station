@@ -255,3 +255,8 @@ malfai-round-end-result = Malfunctioning AI
 # Confused why I have to do this..
 objective-issuer-malfai = Malfunctioning AI
 malfai-round-end-name-user = [color=white]{$name}[/color] ([color=gray]{$user}[/color])
+
+# CPU
+alerts-malfai-cpu-name = Ilość CPU
+
+alerts-malfai-cpu-desc = Ilość CPU które możesz wykorzystać do zakupu ulepszeń

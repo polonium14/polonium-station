@@ -7,25 +7,25 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-  # Spacing
-  Spacing is the most common form of atmospheric upset that can occur on the station.
+  # Rozszczelnienie kadłuba statku
+  Rozszczelnienie kadłuba statku to najczęstszy powód kłopotów atmosferycznych na stacji.
+    
+  Chociaż [textlink="usunięcie uszkodzenia" link="ExpandingRepairingStation"], które spowodowało rozszczelnienie, często wymaga sporo czasu, sam problem powstały w wyniku rozszczelnienia można szybko rozwiązać poprzez ponowne zwiększenie ciśnienia w danym obszarze.
 
-  While the damage that caused the spacing is often time-consuming to [textlink="fix" link="ExpandingRepairingStation"], the actual spacing problem can be quickly resolved by simply repressurizing the area.
+  Naprawianie rozszczelnienia zazwyczaj sprowadza się do dwóch prostych kroków:
 
-  Fixing spacing generally follows two simple steps:
+  1. Zidentyfikuj obszar, który został rozszczelniony, i [textlink="uszczelnij dziurę." link="ExpandingRepairingStation"]
 
-  1. Identify the area that has been spaced and [textlink="seal the hole." link="ExpandingRepairingStation"]
+  - Jeśli masz trudności ze znalezieniem dziury, a powietrze przedostaje się do przestrzeni kosmicznej, możesz uważnie wsłuchać się w szum przepływającego powietrza.
+  - Poszukaj wszelkich dziur pod trudno widocznymi miejscami takimi jak ściany oraz inne duże struktury.
 
-  - If you're having trouble finding the hole, you can carefully listen for the flow of air rushing by you, if air is currently leaking to space.
-  - Look for any holes underneath girders that may be hard to see.
+  2. Wyrównaj ciśnienie.
 
-  2. Repressurize the area.
+  - [textlink="Otwory wentylacyjne" link="AirVent"] przechodzą w tryb blokady ciśnieniowej, aby zapobiec dalszej utracie powietrza. W celu wyrównania ciśnienia w danym obszarze konieczne będzie ręczne wyłączenie tej blokady. Można to zrobić, ustawiając podłączony [textlink="alarm atmosferyczny" link="AirAlarms"] na tryb napełniania lub klikając prawym przyciskiem myszy na otwór wentylacyjny i wybierając opcję "Zwolnij blokadę ciśnieniową", aby tymczasowo ręcznie wyłączyć tę blokadę.
 
-  - [textlink="Air vents" link="AirVent"] enter pressure lockout in order not to lose more air to spacing, so you'll need to override the vents to repressurize the area. You can do this by setting the connected [textlink="air alarm" link="AirAlarms"] to fill, or by right-clicking on the vent and selecting 'Release pressure lock out' to manually override it temporarily.
+  ## Czego należy unikać
+  - Pamiętaj, że choć dysponujesz nieograniczonymi zasobami [textlink="wydobytego gazu" link="GasMiningAndStorage"], nie da się nim wystarczająco szybko napełnić wielu pomieszczeń jednocześnie. Ustawienie [textlink="alarmów powietrznych" link="AirAlarms"] tak, aby najpierw napełniły pomieszczenia [italic]przed[/italic] rozwiązaniem podstawowego problemu, często prowadzi do straty czasu i gazu.
 
-  ## Things to Avoid
-  - Keep in mind that while you have an infinite supply of [textlink="mined gas" link="GasMiningAndStorage"], it is not quick enough to fill up multiple rooms at once. Setting [textlink="air alarms" link="AirAlarms"] to fill first [italic]before[/italic] fixing the root problem will often lead to wasted time and gas.
-
-  - Leaving [textlink="air alarms" link="AirAlarms"] on the Fill mode unsupervised may lead to overpressuring a room, which can potentially harm crew if it gets out of hand.
+  - Pozostawienie [textlink="alarmów powietrznych" link="AirAlarms"] w trybie napełniania bez nadzoru może doprowadzić do nadmiernego wzrostu ciśnienia w pomieszczeniu, co w przypadku zaniedbania może stanowić zagrożenie dla załogi.
 
 </Document>

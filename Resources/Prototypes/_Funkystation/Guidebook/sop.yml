@@ -34,7 +34,7 @@
 
 - type: guideEntry
   id: LegalSOP
-  name: LegalSOP
+  name: guide-entry-legal-sop
   text: "/ServerInfo/_Polonium/Guidebook/Legal/LegalSOP.xml"
 
 # ALERT LEVELS
@@ -224,11 +224,17 @@
   name: guide-entry-security-sop
   text: "/ServerInfo/_Polonium/Guidebook/Security/SecuritySOP.xml"
   children:
+  - UseOfForceSOP
   - HoSSOP
   - SecurityOfficerSOP
   - WardenSOP
   - DetectiveSOP
   - SecurityTrainingManual
+
+- type: guideEntry
+  id: UseOfForceSOP
+  name: guide-entry-use-of-force-sop
+  text: "/ServerInfo/_Polonium/Guidebook/Security/UseOfForceSOP.xml"
 
 - type: guideEntry
   id: HoSSOP

@@ -7,10 +7,10 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-  # Wire Panels
-  Some station devices like airlocks, vending machines, and arcade consoles have wire panels, which control certain aspects of their functionality.
+  # Panele z przewodami
+  Niektóre urządzenia na stacji, takie jak śluzy powietrzne, automaty sprzedażowe i konsole do gier, są wyposażone w panele z okablowaniem, które sterują niektórymi funkcjami tych urządzeń. 
 
-  These panels can be opened using a screwdriver to access the wiring inside.
+  Panele te można otworzyć za pomocą śrubokręta.
 
   <Box>
     <GuideEntityEmbed Entity="Wirecutter"/>
@@ -18,20 +18,20 @@ SPDX-License-Identifier: MIT
     <GuideEntityEmbed Entity="Multitool"/>
   </Box>
 
-  From here you can use wirecutters and a multitool to interact with the wiring. Note that interacting with the wiring often requires insulated gloves, as if the wire is live, you can get shocked.
+  W tym miejscu możesz użyć obcinaka i multinarzędzia do pracy z okablowaniem. Pamiętaj, że podczas pracy z okablowaniem konieczne jest założenie rękawic izolacyjnych, ponieważ jeśli przewód jest pod napięciem, możesz zostać porażonym prądem.
 
   <Box>
     <GuideEntityEmbed Entity="ClothingHandsGlovesColorYellow"/>
   </Box>
 
-  You can cut and mend wires using the wirecutters and pulse wires using the multitool.
+  Za pomocą obcinaka można przecinać i naprawiać przewody, a za pomocą multinarzędzia – wysyłać impulsy do przewodów.
 
-  Cutting wires often completely disables or restores functionality to a device.
-  It may also trigger unintended functionality like shocking people, dropping door bolts, or exploding.
+  Przecięcie przewodów często całkowicie wyłącza lub przywraca działanie urządzenia.
+  Może to również wywołać niezamierzone skutki, takie jak porażenie prądem, opuszczenie bolców drzwiowych lub wybuch.
 
-  Pulsing wires can have a variety of effects, but oftentimes it either temporarily disables or enables functionality.
+  Impulsowanie przewodów może mieć różne skutki, ale często powoduje tymczasowe wyłączenie lub włączenie funkcji.
 
-  You can't pulse wires if the wire you're trying to pulse is cut. You have to mend the wire first.
+  Nie można impulsować przewodów, jeśli przewód, który próbujesz impulsować, jest przecięty – musisz go najpierw naprawić.
 
 
 </Document>

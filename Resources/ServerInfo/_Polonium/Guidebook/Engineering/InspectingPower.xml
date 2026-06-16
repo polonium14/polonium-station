@@ -7,9 +7,9 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-  # Inspecting Power
-  Engineers can inspect a power network to see useful statistics about it.
-  This can help engineers diagnose power issues and find root causes to problems.
+  # Sprawdzanie zasilania
+  Inżynierowie mogą sprawdzić sieć zasilającą, aby uzyskać przydatne dane statystyczne na jej temat.
+  Może to pomóc inżynierom w diagnozowaniu problemów z zasilaniem i ustaleniu ich przyczyn.
 
   ## Power Monitoring Computer
   The Power Monitoring Computer is a device that can be used to inspect all the power networks on the station.
@@ -18,51 +18,51 @@ SPDX-License-Identifier: MIT
     <GuideEntityEmbed Entity="ComputerPowerMonitoring"/>
   </Box>
 
-  The Power Monitoring Computer has two major sections, a station map and the power statistics.
+  Komputer monitorujący zasilanie składa się z dwóch głównych sekcji: mapy stacji oraz statystyk dotyczących zasilania.
 
-  The station map shows:
-  - The station layout, with [color=green]low[/color], [color=yellow]medium[/color], and [color=orange]high[/color] [textlink="voltage networks" link="VoltageNetworks"] highlighted.
-  - [textlink="All APCs, SMES, and substations." link="VoltageNetworks"]
-  - All power [textlink="producers" link="Generators"] connected to the station (note that they don't have to be connected to a power network to be shown).
+  Mapa stacji przedstawia:
+  - Układ stacji z zaznaczonymi sieciami o [color=#8ee99a]niskim[/color], [color=#ffe566]średnim[/color] i [color=#ffb86b]wysokim[/color] [textlink="napięciu" link="VoltageNetworks"].
+  - Wszystkie [textlink="APC, SMES i podstacje" link="VoltageNetworks"].
+  - Wszystkie podłączone do stacji [textlink="generatory" link="Generators"] (należy pamiętać, że nie muszą one być podłączone do sieci energetycznej, aby były wyświetlane).
 
-  The power statistics show:
-  - The total [textlink="generator" link="Generators"] output, which is what the generators are currently producing to match grid demand.
-  - The total [textlink="battery" link="PowerStorage"] usage, which is the amount of power being drawn from batteries. Grids completely powered by generators will show low battery usage.
-  - The total network loads, which is the amount of power being requested by the station.
+  Statystyki dotyczące zasilania pokazują:
+  - Całkowitą moc wyjściową [textlink="generatorów" link="Generatory"], czyli ilość energii wytwarzanej obecnie przez generatory w celu zaspokojenia zapotrzebowania sieci.
+  - Całkowite zużycie [textlink="akumulatorów" link="PowerStorage"]. Sieci zasilane wyłącznie przez generatory będą wykazywać niskie zużycie akumulatorów.
+  - Całkowite obciążenie sieci, czyli ilość energii, jakiej potrzebuje stacja.
 
-  In an ideal situation, the total generator output should match the total network load, and the total battery usage should be low.
-  Using these three statistics, engineers can get an accurate picture of the station's power situation.
-  For example:
-  - If the total generator output is lower than the total network load, the station is in a power deficit.
-  - If the total battery usage is high, the station is drawing power from batteries to make up the difference.
-  - If it is zero with the generator load below the total network load, then the station is actively in a brownout, as the batteries are fully discharged.
-  - If the total generator output is higher than the total network load, the SMESes are charging.
+  W idealnej sytuacji całkowita moc generatora powinna odpowiadać całkowitemu obciążeniu sieci, a całkowite zużycie akumulatorów powinno być niskie.
+  Korzystając z tych trzech wskaźników, inżynierowie mogą uzyskać dokładny obraz sytuacji energetycznej stacji.
+  Na przykład:
+  - Jeśli całkowita moc generatora jest niższa od całkowitego obciążenia sieci, stacja jest w deficycie energii.
+  - Jeśli całkowite zużycie akumulatorów jest wysokie, stacja pobiera energię z akumulatorów, aby wyrównać różnicę.
+  - Jeśli wynosi zero, a obciążenie generatora jest niższe od całkowitego obciążenia sieci, oznacza to, że stacja znajduje się w fazie spadku mocy, ponieważ akumulatory są całkowicie rozładowane.
+  - Jeśli całkowita moc generatora jest wyższa niż całkowite obciążenie sieci, akumulatory SMES ładują się.
 
-  ## Device Tabs
-  The Power Monitoring Computer has tabs for each device category on the station.
-  Navigating these power tabs will show the power statistics for each device category.
-  For example:
-  - Clicking on a source will show what that source is supplying the power to, and how much power it is supplying. It will also highlight the devices that are connected to that source.
-  - Clicking on an SMES, Substation, or APC will show the two power grids it is connected to, how much power it is receiving, and how much power it is distributing, as well as the exact devices that are making an exchange with the target device.
+  ## Zakładki urządzeń
+  Komputer monitorujący zasilanie posiada zakładki dla każdej kategorii urządzeń w stacji.
+  Przeglądanie tych zakładek pozwala wyświetlić statystyki zasilania dla poszczególnych kategorii urządzeń.
+  Na przykład:
+  - Kliknięcie na źródło zasilania spowoduje wyświetlenie informacji o tym, do jakich urządzeń dostarcza ono energię oraz jaka jest jej moc. Zostaną również podświetlone urządzenia podłączone do tego źródła.
+  - Kliknięcie na SMES, podstację lub APC spowoduje wyświetlenie dwóch sieci energetycznych, do których jest ono podłączone, ilości energii, jaką otrzymuje i jaką rozprowadza, a także urządzeń, które wymieniają energię z urządzeniem docelowym.
 
-  ## Inspecting via Multitool
-  The Multitool can be used to inspect power cables to see their power statistics.
+  ## Sprawdzanie za pomocą narzędzia wielofunkcyjnego
+  Za pomocą narzędzia wielofunkcyjnego można sprawdzić kable zasilające i wyświetlić dane dotyczące ich zasilania.
 
   <Box>
     <GuideEntityEmbed Entity="Multitool"/>
   </Box>
 
-  When you click on a cable with the Multitool, it will show the cable's power statistics. This includes:
-  - The current supply, which is the amount of power the source is providing.
-  - The current supply from batteries, which is the amount of power being drawn from batteries.
-  - The theoretical supply, which is the maximum amount of power the source could provide if demanded.
-  - The ideal consumption, which is the current demand on the cable.
-  - The input storage, which is the capacity of batteries that are currently charging.
-  - The output storage, which is the capacity of batteries that are currently discharging.
+  Po kliknięciu na kabel za pomocą narzędzia wielofunkcyjnego wyświetlą się statystyki dotyczące zasilania tego kabla. Obejmują one:
+  - Zasilanie bieżące, czyli ilość energii dostarczanej przez źródło.
+  - Pobór prądu z akumulatorów, czyli ilość energii pobieranej z akumulatorów.
+  - Pobór teoretyczny, czyli maksymalną ilość energii, jaką źródło mogłoby dostarczyć w razie zapotrzebowania.
+  - Zużycie idealne, czyli aktualne zapotrzebowanie na prąd w kablu.
+  - Zużycie wejściowe, czyli pojemność akumulatorów, które są obecnie ładowane.
+  - Zużycie wyjściowe, czyli pojemność akumulatorów, które są obecnie rozładowywane.
 
-  Note that this information is relevant only to the voltage network you inspected.
-  A [color=green]low voltage[/color] cable (which likely only services a few rooms) will not show the same statistics as a [color=orange]high voltage[/color] cable (which services the entire station).
+  Należy pamiętać, że informacje te dotyczą wyłącznie sprawdzanej sieci elektrycznej.
+  Kabel [color=#8ee99a]niskonapięciowy[/color] (który prawdopodobnie zasila tylko kilka pomieszczeń) nie będzie wykazywał takich samych parametrów jak kabel [color=#ffb86b]wysokonapięciowy[/color] (który zasila całą stację).
 
-  This is useful information to keep in mind, as it can help you troubleshoot why "this room is powered, but this one isn't!"
+  Warto o tym pamiętać, ponieważ może to pomóc w ustaleniu, dlaczego "w tym pomieszczeniu jest prąd, a w tamtym go nie ma!".
 
 </Document>

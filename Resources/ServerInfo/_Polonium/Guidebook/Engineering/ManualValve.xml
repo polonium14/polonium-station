@@ -7,17 +7,17 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-  # Manual Valve
-  The manual valve is as simple as it gets.
-  Allows or blocks the flow of gasses depending on if it's open or closed.
+  # Zawór ręczny
+  Zawór ręczny jest niezwykle prosty w działaniu.
+  W zależności od tego, czy jest otwarty, czy zamknięty, przepuszcza lub blokuje przepływ gazów.
   <Box>
     <GuideEntityEmbed Entity="GasValve"/>
   </Box>
 
-  Gas can freely flow between both sides with no restrictions.
+  Gazy mogą swobodnie przepływać między obiema stronami bez żadnych ograniczeń.
 
-  Manual valves are used in a variety of applications, for example:
-  - Allowing or blocking the bypass of a recyclernet, to space waste gas directly
-  - Connecting or isolating heaters/coolers from the station's distro
+  Zawory ręczne znajdują zastosowanie w wielu różnych sytuacjach, na przykład:
+  - umożliwienie lub zablokowanie obejścia sieci recyrkulacyjnej, wyrzucając gazy odpadowe bezpośrednio do przestrzeni kosmicznej
+  - w celu podłączenia lub odłączenia termomaszyn grzejących/chłodzących od sieci dystrybucyjnej stacji
 
 </Document>

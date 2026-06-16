@@ -1,19 +1,195 @@
 <Document>
-  # SPO Ochrony
+# SPO Ochrony
 
-  - [textlink="Komendant" link="HoSSOP"]
-  - [textlink="Oficer Ochrony/Kadet" link="SecurityOfficerSOP"]
-  - [textlink="Nadzorca" link="WardenSOP"]
-  - [textlink="Detective" link="DetectiveSOP"]
+W zależności od sytuacji, drobne odstępstwa od poniższych punktów nie podlegają surowym karom, mogą jednak skutkować upomnieniem.
 
-Proszę zobacz również:
-  - [textlink="Instrukcja Treningowa Ochrony" link="SecurityTrainingManual"]
-  - [textlink="Prawo Kosmiczne" link="SpaceLaw"]
+- [textlink="Procedura stosowania siły" link="UseOfForceSOP"]
+- [textlink="Komendant" link="HoSSOP"]
+- [textlink="Oficer Ochrony/Kadet" link="SecurityOfficerSOP"]
+- [textlink="Nadzorca" link="WardenSOP"]
+- [textlink="Detektyw" link="DetectiveSOP"]
 
-## Zasady i oczekiwania OOC ochrony 
-Podczas gdy bycie "poważnym" nie jest wymagane dla ochrony, członkowie departamentu ochrony [bold]powinni[/bold] brać swoją prace na poważnie. Inni członkowie załogi są zniechęcani lub zabronieni zasadami aby nie robić roboty ochrony. Więc jeśli [bold]ty też[/bold] nie robisz roboty ochrony, to jest problem.
+Zobacz również:
+- [textlink="Instrukcja Treningowa Ochrony" link="SecurityTrainingManual"]
+- [textlink="Prawo Kosmiczne" link="SpaceLaw"]
+- [textlink="Rejestry kryminalne" link="CriminalRecords"]
+
+## Definicje
+
+[bold]Zatrzymanie[/bold] — tymczasowe wstrzymanie osoby podejrzanej o przestępstwo w celu ustalenia tożsamości, przeprowadzenia dozwolonego przeszukania i podjęcia decyzji o dalszym postępowaniu. Osoba zatrzymana [bold]nie jest jeszcze[/bold] formalnym więźniem i może zostać zwolniona bez wyroku.
+
+[bold]Aresztowanie[/bold] — formalne wzięcie osoby pod straż Ochrony, doprowadzenie do więzienia, przesłuchanie, wymierzenie wyroku i rozpoczęcie odbywania kary lub tymczasowego osadzenia do czasu procesu.
+
+Zatrzymanie może zakończyć się zwolnieniem. Aresztowanie rozpoczyna się decyzją o formalnym osadzeniu i kończy zwolnieniem po wyroku lub decyzji sądowej.
+
+Podczas obu procedur obowiązuje [textlink="Procedura stosowania siły" link="UseOfForceSOP"] oraz wytyczne zależne od [textlink="kodu zagrożenia" link="AlertLevelsSOP"] w SPO poszczególnych stanowisk.
+
+## Procedura zatrzymania
+
+Stosuj, gdy istnieje podstawa do interwencji wobec podejrzanego, ale nie podjąłeś jeszcze decyzji o formalnym aresztowaniu.
+
+[bold]1. Ustal podstawę.[/bold] Musisz dysponować uzasadnionym podejrzeniem, być świadkiem przestępstwa, posiadać nakaz albo działać na podstawie przepisów obowiązujących przy danym kodzie zagrożenia ([textlink="Prawo Kosmiczne" link="SpaceLaw"]).
+
+[bold]2. Poinformuj o zatrzymaniu.[/bold] Podaj swoją tożsamość, fakt zatrzymania i jego przyczynę (poziom I procedury stosowania siły). Na [color=#ff8a8a]Kodzie Czerwonym[/color], przy istniejących dowodach na przestępstwo, możesz odroczyć podanie powodu do momentu doprowadzenia do więzienia.
+
+[bold]3. Zatrzymaj podejrzanego.[/bold] Uniemożliw mu ucieczkę. Najpierw spróbuj doprowadzić go bez środków poziomu II. Przy oporze stosuj [textlink="procedurę stosowania siły" link="UseOfForceSOP"].
+
+[bold]4. Ustal tożsamość.[/bold] Sprawdź identyfikator i manifest załogi. W razie potrzeby pobierz odciski palców lub próbkę DNA.
+
+[bold]5. Przeszukaj, jeśli dozwolone.[/bold] Postępuj według [textlink="Prawa Kosmicznego" link="SpaceLaw"] i obowiązującego kodu zagrożenia. Przedmioty zabronione skonfiskuj. Przedmioty legalne zwróć przy zwolnieniu.
+
+[bold]6. Zbierz informacje.[/bold] Zabezpiecz dowody lub przekaż sprawę detektywowi. Detektyw może prowadzić [italic]proces zamknięcia[/italic] podczas zatrzymania — wstępne ustalenia przed decyzją o aresztowaniu, nie dłużej niż 10 minut bez dostępnych dowodów. To nie zastępuje formalnego przesłuchania po aresztowaniu.
+
+[bold]7. Podejmij decyzję:[/bold]
+- [bold]Zwolnij[/bold] — brak podstaw do dalszego postępowania; poinformuj o zakończeniu zatrzymania.
+- [bold]Aresztuj[/bold] — przejdź do procedury aresztowania.
+- [bold]Przekaż[/bold] — przekaż podejrzanego innemu funkcjonariuszowi lub nadzorcy w celu dalszego postępowania.
+
+## Procedura aresztowania
+
+Stosuj po podjęciu decyzji o formalnym osadzeniu podejrzanego. Osoba aresztowana staje się więźniem.
+
+[bold]1. Doprowadź do więzienia.[/bold] Transportuj w kajdankach, jeśli to konieczne. Zapewnij bezpieczeństwo podejrzanego i załogi.
+
+[bold]2. Przekaż nadzorcy.[/bold] Jeśli [color=#ff8a8a]Nadzorca Ochrony[/color] jest dostępny, przejmuje on dalsze kroki aresztowania. W jego nieobecności obowiązki przejmuje komendant lub najstarszy stopniem oficer.
+
+[bold]3. Przeszukaj ponownie.[/bold] Przeprowadź pełne przeszukanie osobiste: kieszenie, PDA, płaszcz i pas. Nadzorca ma obowiązek wykonać je przy każdym nowym więźniu.
+
+[bold]4. Przeprowadź przesłuchanie.[/bold] Postępuj według [textlink="procedury przesłuchania" link="SecuritySOP"] (obowiązkowej na [color=#8ee99a]Kodzie Zielonym[/color] i [color=#8ec8ff]Kodzie Niebieskim[/color], o ile pozwala na to obsada Ochrony).
+
+[bold]5. Wymierz wyrok lub zwolnij.[/bold] Decyzję podejmij na podstawie [textlink="Prawa Kosmicznego" link="SpaceLaw"] oraz [bold]Protokołu Przesłuchania[/bold] z pieczątką [color=#8ec8ff]Komendanta[/color]. Wyrok wydaje nadzorca; w jego nieobecności komendant lub najstarszy stopniem oficer. Komendant nie może zmieniać wydanego wyroku bez nowych dowodów lub próby ucieczki więźnia.
+
+[bold]6. Zaktualizuj rejestry.[/bold] Ustaw status [bold]Zatrzymany[/bold] w [textlink="rejestrach kryminalnych" link="CriminalRecords"] i wpisz zarzuty wraz z czasem wyroku.
+
+[bold]7. Osadź w celi.[/bold] Zdejmij kajdanki po osadzeniu, o ile więzień nie stwarza zagrożenia. Zapewnij odzież, wodę, żywność, schronienie i podstawową opiekę medyczną.
+
+[bold]8. Monitoruj więźnia.[/bold] Pilnuj odbywania wyroku, praw więźnia i bezpieczeństwa aresztu. Po zakończeniu kary ustaw status [bold]Zwolniony[/bold] w rejestrach. Przy wyroku śmierci przejdź do [textlink="procedury egzekucji" link="SecuritySOP"].
+
+## Procedura przesłuchania
+
+Obowiązkowy etap [textlink="procedury aresztowania" link="SecuritySOP"] (krok 4). Służy ustaleniu winy, zebraniu zeznań i podjęciu decyzji przed wymierzeniem wyroku lub zwolnieniem.
+
+### Obowiązkowość
+
+- Na [color=#8ee99a]Kodzie Zielonym[/color] i [color=#8ec8ff]Kodzie Niebieskim[/color] przesłuchanie jest [bold]obowiązkowe[/bold] przy każdym aresztowaniu.
+- [bold]Wyjątek:[/bold] zbyt mała liczba personelu Ochrony uniemożliwiająca bezpieczne przeprowadzenie przesłuchania — w takim przypadku [color=#8ec8ff]Komendant[/color] lub [color=#8ec8ff]Kapitan[/color] może zezwolić na uproszczone postępowanie bez pełnego przesłuchania.
+- Na pozostałych kodach zagrożenia przesłuchanie przeprowadza się według uznania prowadzącego aresztowanie.
+
+### Kto może przesłuchiwać
+
+Przesłuchanie może prowadzić:
+- [color=#ff8a8a]Nadzorca Ochrony[/color];
+- [color=#8ec8ff]Komendant[/color];
+- inny funkcjonariusz [color=#ff8a8a]Ochrony[/color];
+- [color=#8ec8ff]Kapitan[/color];
+- [bold]Prawnik[/bold] za zgodą Nadzorcy lub Komendanta.
+
+[bold]Podmiot, który aresztował danego podejrzanego, nie może prowadzić jego przesłuchania.[/bold]
+
+### Zasady szczególne
+
+- Przy przesłuchaniu [bold]Kierownika działu[/bold] obowiązkowa jest obecność [color=#8ec8ff]Kapitana[/color].
+- Przy przestępstwach poziomu III lub wyższym zapewnij prawnika na żądanie ([textlink="Prawo Kosmiczne" link="SpaceLaw"]).
+- Jeśli po upływie [bold]15 minut[/bold] od rozpoczęcia przesłuchania nie ma żadnych dowodów wskazujących na winę podejrzanego, należy go [bold]zwolnić jako niewinnego[/bold].
+- Przed rozpoczęciem przesłuchania podejrzany może pozostać w pokoju przesłuchań przez maksymalnie [bold]5 minut[/bold] sam na sam z adwokatem w celu omówienia strategii obrony. Czas oczekiwania na przybycie adwokata wlicza się w ten limit.
+
+### Zalecane kroki
+
+[bold]1. Przygotuj przesłuchanie.[/bold] Zabezpiecz pokój przesłuchań, przygotuj blankiet Protokołu Przesłuchania i zestaw dostępnych dowodów.
+
+[bold]2. Wyznacz prowadzącego.[/bold] Upewnij się, że nie jest to funkcjonariusz, który dokonał aresztowania. W razie potrzeby uzyskaj zgodę Nadzorcy lub Komendanta dla prawnika.
+
+[bold]3. Umożliw konsultację z adwokatem.[/bold] Jeśli podejrzany ma prawnika, pozwól im porozmawiać sam na sam do 5 minut przed rozpoczęciem przesłuchania.
+
+[bold]4. Rozpocznij przesłuchanie.[/bold] Zanotuj godzinę rozpoczęcia. Poinformuj podejrzanego o tożsamości prowadzącego i obecnych osób.
+
+[bold]5. Przedstaw zarzuty.[/bold] Odczytaj zarzucane przestępstwa i wskaż dowody, które je popierają.
+
+[bold]6. Przesłuchaj.[/bold] Zapytaj o stanowisko wobec zarzutów: przyznanie się do winy, zaprzeczenie lub odmowę wypowiedzi. Dokumentuj przebieg i istotne zeznania.
+
+[bold]7. Oceń wynik.[/bold] Jeśli brak dowodów po 15 minutach — zwolnij jako niewinnego. W przeciwnym razie przygotuj decyzję: wyrok, skierowanie do procesu sądowego ([textlink="SPO Prawne" link="LegalSOP"]) lub zwolnienie.
+
+[bold]8. Sporządź protokół.[/bold] Wypełnij Protokół Przesłuchania i opatrz go pieczątką Komendanta. Bez ważnego protokołu nie wolno rozpocząć odbywania wyroku.
+
+### Protokół Przesłuchania
+
+Wynikiem każdego przesłuchania musi być wypełniony dokument [bold]Protokół Przesłuchania[/bold] z pieczątką [color=#8ec8ff]Komendanta[/color]. Protokół powinien zawierać co najmniej:
+- tożsamość i stanowiskoprzesłuchiwanego;
+- tożsamość i stanowisko przeprowadzającego przesłuchanie;
+- obecni świadkowie;
+- zebrane dowody;
+- decyzja przesłuchania (np. wyrok, zwolnienie, skierowanie do procesu sądowego, kara śmierci).
+
+
+[italic]Zalecane jest skorzystanie z zatwierdzonego formularza Protokołu Przesłuchania.[/italic]
+
+## Procedura egzekucji
+
+Przed formalną egzekucją [bold]zawsze[/bold] wymagany jest wypełniony dokument Nakaz egzekucji.
+
+Nie dotyczy natychmiastowej [bold]likwidacji w terenie[/bold] (poziom IV [textlink="procedury stosowania siły" link="UseOfForceSOP"]) ani egzekucji w terenie na kodach wojennych ([textlink="Delta" link="DeltaAlert"], [textlink="Gamma" link="GammaAlert"], [textlink="Octarine" link="OctarineAlert"]) — tam obowiązują odrębne przepisy alarmowe.
+
+### Kiedy stosować
+
+Stosuj, gdy skazany otrzymał [bold]karę śmierci[/bold] i ma zostać formalnie stracony, a nie jedynie trwale zneutralizowany w trakcie aktywnego zagrożenia. Typowe podstawy:
+- wyrok zapisany w [bold]Protokole Przesłuchania[/bold] lub wyroku sądu;
+- wyrok sędziego przewodniczącego po procesie ([textlink="SPO Prawne" link="LegalSOP"]);
+- nakaz Centralnego Dowództwa ([textlink="Prawo Kosmiczne" link="SpaceLaw"]).
+
+Na [color=#8ee99a]Kodzie Zielonym[/color] i [color=#8ec8ff]Kodzie Niebieskim[/color] zaleca się przeprowadzenie procesu sądowego przed egzekucją, jeśli skazany o to poprosi. Na pozostałych kodach ceremonia może zostać skrócona, ale [bold]Nakaz egzekucji[/bold] nadal jest wymagany.
+
+### Warunki wykonania
+
+Egzekucji [bold]nie wolno[/bold] przeprowadzić, dopóki nie są spełnione [bold]wszystkie[/bold] poniższe warunki:
+
+1. [bold]Podstawa prawna[/bold] — istnieje ważna decyzja wymierzająca karę śmierci (protokół, wyrok sądu lub nakaz CD).
+2. [bold]Nakaz egzekucji[/bold] — sporządzony, wypełniony i opatrzony wymaganymi pieczęciami (patrz niżej).
+3. [bold]Tożsamość skazanego[/bold] — potwierdzona (ID, manifest, odciski palców lub DNA).
+4. [bold]Brak odwieszenia[/bold] — wyrok nie został uchylony, zawieszony ani zastąpiony inną karą.
+5. [bold]Bezpieczeństwo[/bold] — obsada Ochrony pozwala na kontrolowane przeprowadzenie egzekucji; w razie aktywnego zagrożenia dla stacji egzekucję należy odroczyć lub skrócić do minimum niezbędnego do wykonania wyroku.
+
+### Kto może zatwierdzić i przeprowadzić
+
+[bold]Nakaz egzekucji[/bold] opatruje pieczęcią:
+- [color=#8ec8ff]Komendant[/color] lub [color=#8ec8ff]Kapitan[/color] — egzekucja na podstawie wyroku Ochrony lub po procesie bez sędziego;
+- sędzia przewodniczący — egzekucja po procesie sądowym;
+- przedstawiciel Centralnego Dowództwa — egzekucja na podstawie nakazu CD.
+- inne jednostki Centralnego Dowództwa.
+
+Egzekucję przeprowadza wyznaczony funkcjonariusz [color=#ff8a8a]Ochrony[/color]. [bold]Funkcjonariusz, który aresztował skazanego, nie powinien być wykonawcą egzekucji[/bold], o ile to możliwe.
+
+### Zalecane kroki
+
+[bold]1. Przygotuj dokumentację.[/bold] Sprawdź podstawę wyroku i miej przy sobie wypełniony Nakaz egzekucji.
+
+[bold]2. Uzyskaj zgodę.[/bold] Uzyskaj wymagane podpisy pieczęciowe na Nakazie przed przystąpieniem do egzekucji.
+
+[bold]3. Poinformuj skazanego.[/bold] Odczytaj wyrok i treść Nakazu. Umożliw ostatnie słowa; przy przestępstwach poziomu III lub wyższym zapewnij obecność prawnika na żądanie.
+
+[bold]4. Doprowadź na miejsce egzekucji.[/bold] Typowo więzienie, strefa egzekucji lub inne wyznaczone, kontrolowane miejsce. Skazany powinien być rozbrojony i pod strażą.
+
+[bold]5. Odczytaj Nakaz na głos.[/bold] Obecni funkcjonariusze i — jeśli to możliwe — świadkowie dowodzą, że egzekucja ma podstawę prawną.
+
+[bold]6. Wykonaj wyrok.[/bold] Metoda musi być zgodna z Nakazem.
+
+[bold]8. Potwierdź i zamknij sprawę.[/bold] Upewnij się, że skazany nie żyje. Zaktualizuj [textlink="rejestry kryminalne" link="CriminalRecords"]. Zabezpiecz Nakaz egzekucji w aktach Ochrony.
+
+### Nakaz egzekucji
+
+Bez wypełnionego [bold]Nakazu egzekucji[/bold] formalna egzekucja jest niedozwolona. Dokument powinien zawierać co najmniej:
+- dane skazanego;
+- wybrana metoda terminacji;
+- kwalifikacja prawna (artykuły PK);
+- lokalizacja egzekucji;
+- uzasadnienie egzekucji;
+
+[italic]Zalecane jest skorzystanie z zatwierdzonego formularza Protokołu Przesłuchania.[/italic]
+
+## Zasady i oczekiwania OOC Ochrony
+
+Choć „poważne” zachowanie nie jest wymagane, członkowie departamentu Ochrony [bold]powinni[/bold] traktować swoją pracę poważnie. Inni członkowie załogi są zniechęcani lub zabronieni przez zasady od wykonywania pracy Ochrony. Jeśli [bold]ty też[/bold] jej nie wykonujesz, to jest problem.
 
 <Box>
-[color=#999999][italic]"Oficerowie Ochrony mogą na siłę przenoszenić personel do ich departamentów jeśli jest to potrzebne."[/italic] - SPO Oficera Ochrony/Kadeta {RED:3}[/color]
+[color=#c8c8c8][italic]"Oficerowie Ochrony mogą na siłę przenosić personel do ich departamentów, jeśli jest to konieczne."[/italic] — SPO Oficera Ochrony/Kadeta {RED:3}[/color]
 </Box>
 </Document>

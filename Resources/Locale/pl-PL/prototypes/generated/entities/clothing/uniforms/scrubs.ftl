@@ -14,4 +14,5 @@ ent-UniformScrubsColorBlueSleeveless = niebieska szata bez rękawów
 ent-UniformScrubsColorBlackSleeveless = czarna szata bez rękawów
     .desc = Czarna, groźnie wyglądająca szata noszona przez koronerów. Rękawy tylko przeszkadzały.
 
-
+ent-UniformScrubsColorBlack = coroner scrubs
+    .desc = Black, menacing scrubs worn by coroners. Smells of formaldehyde.

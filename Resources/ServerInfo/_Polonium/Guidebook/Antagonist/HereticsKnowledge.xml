@@ -30,7 +30,7 @@
 
 	They are not visible to the naked eye of a crew member, hovewer they [bold]will[/bold] become visible after harvesting, aside from suddenly changing colors.
 
-	PRO TIP: Harvesting with a [color=orange]Focus[/color] equipped will yield double the points from influences.
+	PRO TIP: Harvesting with a [color=#ffb86b]Focus[/color] equipped will yield double the points from influences.
 	<Box>
 		<GuideEntityEmbed Entity="EldritchInfluenceSpent" Caption="Harvested influence. Notice the glow."/>
 	</Box>

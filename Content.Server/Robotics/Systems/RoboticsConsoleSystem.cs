@@ -1,4 +1,5 @@
 // SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Tyranex <bobthezombie4@gmail.com>
 // SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
 //
 // SPDX-License-Identifier: MIT
@@ -25,6 +26,7 @@ using Content.Shared.Silicons.StationAi;
 using Robust.Shared.Utility;
 using Content.Shared.CCVar;
 using Robust.Shared.Configuration;
+using Content.Shared.Popups;
 
 namespace Content.Server.Research.Systems;
 
@@ -42,6 +44,7 @@ public sealed class RoboticsConsoleSystem : SharedRoboticsConsoleSystem
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
     [Dependency] private readonly Content.Shared.Damage.DamageableSystem _damageable = default!;
     [Dependency] private readonly Content.Shared.Mobs.Systems.MobThresholdSystem _mobThreshold = default!;
+    [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
     [Dependency] private readonly AlertsSystem _alerts = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
 
@@ -185,7 +188,10 @@ public sealed class RoboticsConsoleSystem : SharedRoboticsConsoleSystem
         var imposeCost = FixedPoint2.New(_cfg.GetCVar(CCVars.MalfAiImposeLawCpuCost));
 
         if (!store.Balance.TryGetValue(CpuCurrency, out var balance) || balance < imposeCost)
+        {
+            _popupSystem.PopupCursor(Loc.GetString("malfai-store-insufficient-cpu"), args.Actor, PopupType.Medium); // Polonium - Powiadomienie w przypadku niewystarczającej ilości CPU
             return; // insufficient CPU
+        }
 
         // Deduct cost and proceed
         store.Balance[CpuCurrency] = balance - imposeCost;

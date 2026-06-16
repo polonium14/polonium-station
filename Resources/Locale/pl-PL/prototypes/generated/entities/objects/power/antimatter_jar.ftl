@@ -1,2 +1,2 @@
-ent-AmeJar = AME fuel jar
-    .desc = A hermetically sealed jar containing antimatter for use in an antimatter reactor.
+ent-AmeJar = butla paliwa do SAM
+    .desc = Hermetycznie zamknięta butla zawierający antymaterię przeznaczoną do stosowania w SAM.

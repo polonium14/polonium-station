@@ -7,55 +7,55 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-  # Chief Engineer
+  # SPO Głównego Inżyniera
 
-  [bold]1.[/bold] The Chief Engineer must make sure to properly wire Solar Panels and activate the Anti-Matter Engine (AME) if available, and co-ordinate a plan with their team to activate a more powerful engine for long-term station use;
+  [bold]1.[/bold] Główny Inżynier musi upewnić się, że panele słoneczne są prawidłowo podłączone, a silnik antymaterii (AME) - o ile jest dostępny - został uruchomiony, a także uzgodnić z zespołem plan uruchomienia silnika o większej mocy do długoterminowego zasilania stacji;
 
-  [bold]2.[/bold] The Chief Engineer, along with the Research Director, is responsible for maintaining the integrity of Telecommunications. The Chief Engineer must not hinder the proper functionality of Telecommunications, and must diagnose and repair any issues that arise;
+  [bold]2.[/bold] Główny Inżynier, wraz z [color=#e8a0ff]Kierownikiem Badań[/color], odpowiada za utrzymanie sprawności systemu telekomunikacyjnego. Główny Inżynier nie może utrudniać prawidłowego funkcjonowania systemu telekomunikacyjnego oraz ma obowiązek diagnozować i usuwać wszelkie pojawiające się usterki;
 
-  [bold]3.[/bold] The Chief Engineer is bound to the same rules regarding the axe as Atmospheric Technicians;
+  [bold]3.[/bold] Główny Inżynier podlega tym samym zasadom dotyczącym siekiery, co [color=#ffc966]Technicy Atmosferyki[/color];
 
-  [bold]4.[/bold] The Chief Engineer is permitted to carry a flash and a disabler;
+  [bold]4.[/bold] Główny Inżynier ma prawo nosić lampę błyskową oraz standardową broń krótką (tj. MK-58 lub RG-2);
 
-  [bold]5.[/bold] The Chief Engineer is responsible for maintaining the integrity of all power sources set up on the station. Neglecting this duty is grounds for termination should the Supermatter delaminates or if power fails on the station;
+  [bold]5.[/bold] Główny Inżynier odpowiada za utrzymanie sprawności wszystkich źródeł zasilania zainstalowanych na stacji. Zaniedbanie tego obowiązku stanowi podstawę do zwolnienia w przypadku delaminacji supermaterii lub awarii zasilania na stacji;
 
-  [bold]6.[/bold] The Chief Engineer may declare an area "Condemned", if it is damaged to the point where repairs cannot reasonably be completed within an acceptable frame of time;
+  [bold]6.[/bold] Główny Inżynier może ogłosić, że dany obszar jest "niezdatny do użytku", jeśli jest on uszkodzony w stopniu uniemożliwiającym przeprowadzenie napraw w rozsądnym terminie;
 
-  [bold]7.[/bold] The Chief Engineer is permitted to grant Building Permits to crewmembers, and may dismantle or destroy unauthorized buildings / setups;
+  [bold]7.[/bold] Główny Inżynier jest uprawniony do wydawania pozwoleń na budowę członkom załogi oraz może rozebrać lub zburzyć nielegalne budowle lub konstrukcje;
 
-  [bold]8.[/bold] The Chief Engineer is responsible for maintaining the integrity of the Station's Atmospherics System. Failure to maintain this integrity is grounds for termination.
+  [bold]8.[/bold] Główny Inżynier odpowiada za utrzymanie integralności systemu atmosferycznego stacji. Nieprzestrzeganie tego obowiązku stanowi podstawę do rozwiązania umowy o pracę.
 
-  # Station Engineer
+  # SPO Inżyniera Stacji
 
-  [bold]1.[/bold] Engineers must properly wire Solar Panels and activate the Anti-Matter Engine (AME) if available, and co-ordinate a plan to activate a more powerful engine for long-term station use;
+  [bold]1.[/bold] Inżynierowie muszą prawidłowo podłączyć panele słoneczne i uruchomić silnik antymaterii (AME), jeśli jest dostępny, a także opracować plan uruchomienia silnika o większej mocy do długoterminowego użytku stacji;
 
-  [bold]2.[/bold] Engineers are responsible for maintaining the integrity of all engines aboard the station, even those that are de-activated or inert. Neglecting this duty is grounds for termination should an engine malfunction;
+  [bold]2.[/bold] Inżynierowie są odpowiedzialni za utrzymanie sprawności wszystkich źródeł zasilania na stacji, nawet tych wyłączonych lub nieaktywnych. Zaniedbanie tego obowiązku stanowi podstawę do zwolnienia w przypadku awarii silnika;
 
-  [bold]3.[/bold] Engineers are permitted to construct additional engines (such as additional SM/Tesla/Singularity engines) with approval from the Chief Engineer;
+  [bold]3.[/bold] Inżynierowie mogą budować dodatkowe źródła zasilania (takie jak silniki SM lub Tesla) za zgodą [color=#8ec8ff]Głównego Inżyniera[/color];
 
-  [bold]4.[/bold] Engineers are permitted to carry out solo reconstruction/rebuilding/personal projects if there is no damage to the station that requires fixing;
+  [bold]4.[/bold] Inżynierowie mogą realizować samodzielne projekty związane z przebudową, odbudową lub projekty własne, o ile stacja nie wykazuje żadnych uszkodzeń wymagających naprawy;
 
-  [bold]5.[/bold] Engineers must check each active engine at least once per 30 minutes;
+  [bold]5.[/bold] Inżynierowie muszą sprawdzać każdy pracujący silnik co najmniej raz na 30 minut;
 
-  [bold]6.[/bold] Engineers must constantly monitor the Supermatter engine if it is online and under emitter fire;
+  [bold]6.[/bold] Inżynierowie muszą nieustannie monitorować Supermaterię o ile jest używana i znajduje się pod ostrzałem emiterów;
 
-  [bold]7.[/bold] Engineers must respond promptly to breaches, regardless of size. Failure to report within fifteen (15) minutes will be considered a breach of Standard Operating Procedure, unless there are no spare Engineers to report. All Hazard Zones must be cordoned off with Engineering Tape or holobarriers, for the safety of crewmembers;
+  [bold]7.[/bold] Inżynierowie muszą niezwłocznie reagować na wszelkie uszkodzenia, niezależnie od ich skali. Brak zgłoszenia w ciągu piętnastu (15) minut będzie traktowany jako naruszenie standardowej procedury operacyjnej, chyba że nie ma innych inżynierów, którzy mogliby zgłosić zdarzenie. Wszystkie strefy zagrożenia należy odgrodzić taśmą inżynieryjną lub holobarierami w celu zapewnienia bezpieczeństwa członków załogi;
 
-  [bold]8.[/bold] Engineers are permitted to hack doors to gain unauthorized access to locations if said locations happen to require urgent repairs;
+  [bold]8.[/bold] Inżynierowie mogą włamać się do pomieszczeń, aby uzyskać nieuprawniony dostęp, jeśli wymagają one [bold]pilnych[/bold] napraw;
 
-  [bold]9.[/bold] Engineers are to maintain the integrity of the Station's Power Network;
+  [bold]9.[/bold] Inżynierowie mają za zadanie dbać o niezawodność sieci energetycznej stacji;
 
-  [bold]10.[/bold] Engineers must ensure there is at least one (1) engineering hardsuit available on the station at all times, unless there is an emergency that requires the use of all suits.
+  [bold]10.[/bold] Inżynierowie muszą zadbać o to, aby na stacji przez cały czas dostępny był co najmniej jeden (1) inżynieryjny kombinezon próżniowy (hardsuit), chyba że wystąpi sytuacja awaryjna wymagająca użycia wszystkich kombinezonów.
 
-  [bold]11.[/bold] Engineers are permitted to completely repipe the Atmospherics Piping Setup, provided they do not pump harmful gases into distro;
+  [bold]11.[/bold] Inżynierowie mogą całkowicie wymienić instalację rurociągów atmosferycznych, pod warunkiem że nie wpompują szkodliwych gazów do sieci dystrybucyjnej;
 
-  [bold]12.[/bold] Engineers are [bold]not[/bold] permitted to create volatile or harmful mixes to use outside atmospherics;
+  [bold]12.[/bold] Inżynierowie [bold]nie mogą[/bold] tworzyć mieszanek niestabilnych lub szkodliwych do stosowania poza obrębem departamentu atmosferyki;
 
-  [bold]13.[/bold] Engineers are [bold]not[/bold] permitted to take the axe out of its case out-side of a construction zone or if there is an immediate and urgent threat to their life or urgent access to crisis locations is necessary. The axe must be returned to the case afterwards, and the case locked;
+  [bold]13.[/bold] Inżynierom [bold]nie wolno[/bold] wyjmować siekiery z pojemnika poza terenem budowy, chyba że istnieje bezpośrednie i pilne zagrożenie dla ich życia lub konieczny jest natychmiastowy dostęp do miejsc kryzysowych. Po zakończeniu prac siekierę należy ponownie umieścić w pojemniku i zamknąć go na klucz;
 
-  [bold]14.[/bold] Engineers are [bold]not[/bold] permitted to tamper with the default values on Air Alarms outside of atmospherics without express permission from CE;
+  [bold]14.[/bold] Inżynierowie [bold]nie mogą[/bold] zmieniać domyślnych ustawień alarmów powietrznych w pomieszczeniach nienależących do departamentu atmosferyki bez wyraźnej zgody kierownictwa;
 
-  [bold]15.[/bold] Engineers must periodically check on the Central Alarms Computer, in periods of, at most, thirty (30) minutes;
+  [bold]15.[/bold] Inżynierowie muszą okresowo sprawdzać stan centralnego komputera alarmowego, co najwyżej co trzydzieści (30) minut;
 
-  [bold]16.[/bold] Engineers must ensure that distro has a steady supply of the appropriate mix and ensure the station remains breathable.
+  [bold]16.[/bold] Inżynierowie muszą zadbać o stały dopływ odpowiedniej mieszanki do systemu dystrybucji oraz zapewnić odpowiednią wentylację stacji.
 </Document>

@@ -14,20 +14,20 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-  # Engineering
-  [color=#f39f27]Engineering[/color] is a combination of [textlink="construction" link="Construction"] work, [textlink="repair" link="ExpandingRepairingStation"] work, maintaining a death machine that happens to produce [textlink="power" link="Power"], and making sure the station contains [textlink="breathable air" link="Atmospherics"].
+  # Inżynieria
+  [color=#ffc966]Inżynieria[/color] to połączenie [textlink="budowy" link="Construction"] oraz [textlink="napraw" link="ExpandingRepairingStation"] – polega na konserwacji maszyny śmierci, która przy okazji wytwarza [textlink="energię" link="Power"], a także zapewnianie, że stacja posiada [textlink="powietrze zdatne do oddychania" link="Atmospherics"].
 
-  ## Personnel
-  [color=#f39f27]Engineering[/color]'s staff is made up of Technical Assistants, Station Engineers and Atmospheric Technicians.
-  Engineering is run by the Chief Engineer.
+  ## Personel
+  Zespół działu [color=#ffc966]Inżynierii[/color] składa się z asystentów technicznych, inżynierów stacji oraz techników atmosferycznych.
+  Działem Inżynierii kieruje Główny Inżynier.
 
   <Box>
-    <GuideEntityEmbed Entity="ToyFigurineEngineer" Caption="Engineer"/>
-    <GuideEntityEmbed Entity="ToyFigurineAtmosTech" Caption="Atmosian"/>
-    <GuideEntityEmbed Entity="ToyFigurineChiefEngineer" Caption="CE"/>
+    <GuideEntityEmbed Entity="ToyFigurineEngineer" Caption="Inżynier"/>
+    <GuideEntityEmbed Entity="ToyFigurineAtmosTech" Caption="Inżynier (też)"/>
+    <GuideEntityEmbed Entity="ToyFigurineChiefEngineer" Caption="Główny Inżynier"/>
   </Box>
 
-  ## Tools
+  ## Narzędzia
   <Box>
     <GuideEntityEmbed Entity="Wrench"/>
     <GuideEntityEmbed Entity="Crowbar"/>
@@ -39,8 +39,8 @@ SPDX-License-Identifier: MIT
     <GuideEntityEmbed Entity="Multitool"/>
     <GuideEntityEmbed Entity="NetworkConfigurator"/>
   </Box>
-  Your core toolset is a small variety of tools.
-  If you're an engineer, then you should have a belt on your waist containing one of each; if not, you can likely find them in maintenance shafts and in tool storage within assorted toolboxes and vending machines.
+  Twój podstawowy zestaw narzędzi składa się z niewielkiej liczby różnych narzędzi.
+  Jeśli jesteś inżynierem, powinieneś mieć na pasie po jednym egzemplarzu każdego z nich; jeśli nie, prawdopodobnie znajdziesz je w szybach konserwacyjnych oraz w magazynach narzędziowych oraz w różnych skrzynkach narzędziowych i automatach.
 
-  Most tasks will have explainers for how to perform them on examination; for example, if you're [textlink="constructing" link="Construction"] a wall, it'll tell you the next step if you look at it a bit closer.
+  Większość zadań zawiera wskazówki dotyczące sposobu ich wykonania; na przykład, jeśli [textlink="budujesz" link="Construction"] ścianę, po przyjrzeniu się jej nieco bliżej pojawi się informacja o kolejnym kroku.
 </Document>
