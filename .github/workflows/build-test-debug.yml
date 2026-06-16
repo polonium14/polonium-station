@@ -37,7 +37,7 @@ on:
     branches: [ master, staging, stable ]
 
 jobs:
-  build_cloud:
+  build_github:
     if: github.actor != 'PJBot' && github.actor != 'Polonium-bot' && github.event.pull_request.draft == false
     runs-on: ubuntu-22.04
     steps:
@@ -73,7 +73,7 @@ jobs:
       run: dotnet test --no-build --configuration DebugOpt Content.Tests/Content.Tests.csproj -- NUnit.ConsoleOut=0
 
   integration_tests_self_hosted:
-    needs: build_cloud
+    needs: build_github
     runs-on: self-hosted
     container:
       image: ubuntu:24.04
@@ -114,7 +114,7 @@ jobs:
         dotnet test --no-build --configuration DebugOpt Content.IntegrationTests/Content.IntegrationTests.csproj -- NUnit.ConsoleOut=0 NUnit.MapWarningTo=Failed RunConfiguration.TestSessionTimeout=9000000
 
   ci-success:
-    name: Build & Test Debug
+    name: Success
     needs:
       - integration_tests_self_hosted
     runs-on: ubuntu-latest
