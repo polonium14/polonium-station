@@ -37,21 +37,18 @@ on:
     branches: [ master, staging, stable ]
 
 jobs:
-  build:
+  build_cloud:
     if: github.actor != 'PJBot' && github.actor != 'Polonium-bot' && github.event.pull_request.draft == false
-    strategy:
-      matrix:
-        os: [ubuntu-22.04]
-
-    runs-on: ${{ matrix.os }}
-
+    runs-on: ubuntu-24.04
     steps:
+    - name: Clean workspace
+      run: git clean -ffdx
+
     - name: Checkout Master
       uses: actions/checkout@v4.2.2
 
     - name: Setup Submodule
-      run: |
-        git submodule update --init --recursive
+      run: git submodule update --init --recursive
 
     - name: Pull engine updates
       uses: space-wizards/submodule-dependency@v0.1.5
@@ -75,16 +72,49 @@ jobs:
     - name: Run Content.Tests
       run: dotnet test --no-build --configuration DebugOpt Content.Tests/Content.Tests.csproj -- NUnit.ConsoleOut=0
 
+  integration_tests_self_hosted:
+    needs: build_cloud
+    runs-on: self-hosted
+    steps:
+    - name: Clean workspace
+      run: git clean -ffdx
+
+    - name: Checkout Master
+      uses: actions/checkout@v4.2.2
+
+    - name: Setup Submodule
+      run: git submodule update --init --recursive
+
+    - name: Pull engine updates
+      uses: space-wizards/submodule-dependency@v0.1.5
+
+    - name: Update Engine Submodules
+      run: |
+        cd RobustToolbox/
+        git submodule update --init --recursive
+
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v4.1.0
+      with:
+        dotnet-version: 9.0.x
+
+    - name: Install dependencies
+      run: dotnet restore
+
+    - name: Build Project
+      run: dotnet build --configuration DebugOpt --no-restore /m
+
     - name: Run Content.IntegrationTests
       shell: pwsh
       run: |
         $env:DOTNET_gcServer=1
         $env:VSTEST_CONNECTION_TIMEOUT=600000
         dotnet test --no-build --configuration DebugOpt Content.IntegrationTests/Content.IntegrationTests.csproj -- NUnit.ConsoleOut=0 NUnit.MapWarningTo=Failed RunConfiguration.TestSessionTimeout=9000000
+
   ci-success:
     name: Build & Test Debug
     needs:
-      - build
+      - integration_tests_self_hosted
     runs-on: ubuntu-latest
     steps:
       - name: CI succeeded
