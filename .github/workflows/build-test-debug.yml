@@ -35,18 +35,17 @@ on:
   pull_request:
     types: [ opened, reopened, synchronize, ready_for_review ]
     branches: [ master, staging, stable ]
-  workflow_dispatch: 
 
 jobs:
   build_cloud:
     if: github.actor != 'PJBot' && github.actor != 'Polonium-bot' && github.event.pull_request.draft == false
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-22.04
     steps:
-    - name: Clean workspace
-      run: git clean -ffdx
-
     - name: Checkout Master
       uses: actions/checkout@v4.2.2
+
+    - name: Clean workspace
+      run: git clean -ffdx
 
     - name: Setup Submodule
       run: git submodule update --init --recursive
@@ -76,12 +75,14 @@ jobs:
   integration_tests_self_hosted:
     needs: build_cloud
     runs-on: self-hosted
+    container:
+      image: ubuntu:24.04
     steps:
-    - name: Clean workspace
-      run: git clean -ffdx
-
     - name: Checkout Master
       uses: actions/checkout@v4.2.2
+
+    - name: Clean workspace
+      run: git clean -ffdx
 
     - name: Setup Submodule
       run: git submodule update --init --recursive
