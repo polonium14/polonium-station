@@ -79,11 +79,11 @@ jobs:
     container:
       image: ubuntu:24.04
     steps:
-    - name: Checkout Master
-      uses: actions/checkout@v4.2.2
-
     - name: Install git
       run: apt-get update && apt-get install -y git
+    
+    - name: Checkout Master
+      uses: actions/checkout@v4.2.2
 
     - name: Clean workspace
       run: git clean -ffdx
