@@ -255,7 +255,7 @@ public abstract class SharedCallablePhoneSystem : EntitySystem
 
     public void UpdatePhoneVisual(EntityUid phone, AppearanceComponent? appearance = null)
     {
-        if (!Resolve(phone, ref appearance))
+        if (!Resolve(phone, ref appearance, false))
             return;
 
         var state = IsHandsetInCradle(phone)
