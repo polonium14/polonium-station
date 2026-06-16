@@ -14,46 +14,46 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 -->
 
 <Document>
-  # Revolutionaries
+  # Rewolucjoniści
 
   <Box>
-    [color=#c8c8c8][italic]"Vivu la revolucio!!"[/italic][/color]
+    [color=#c8c8c8][italic]"Niech żyje rewolucja!!"[/italic][/color]
   </Box>
   <Box>
     <GuideEntityEmbed Entity="PosterContrabandRevolt" Caption=""/>
   </Box>
 
-  Revolutionaries are conversion antagonists sponsored by the [color=#ff8a8a]Syndicate[/color] who are tasked with taking control of the station.
-  Head revolutionaries are graciously given a PDA uplink, paid for by Yucatan Communications.
+  Rewolucjoniści są antagonistami rekrutowanymi w trakcie rundy i są sponsorowani przez [color=#ff8a8a]Syndykat[/color], których zadaniem jest przejęcie kontroli nad stacją.
+  Przywódcy rewolucjonistów otrzymują urządzenie PDA z uplinkiem, opłacone przez Yucatan Communications.
 
-  ## Objectives
-  You must cuff, kill, or exile all of the [textlink="Command staff" link="Command"] on station in no particular order.
+  ## Cele
+  Musisz skuć kajdankami, zabić lub wygnać wszystkich członków [textlink="dowództwa" link="Command"] przebywających na stacji, w dowolnej kolejności.
 
-  Your objective is [bold]not to destroy the station[/bold], but [italic]to take it over[/italic], so try to minimize damage as much as possible.
+  Twoim celem [bold]nie jest zniszczenie stacji[/bold], ale jej [italic]przejęcie /italic], więc postaraj się jak najbardziej ograniczyć zniszczenia.
 
-  [bold]The revolution will fail[/bold] if all of the [bold][color=#5e9cff]Head Revolutionaries[/color][/bold] die, and all [color=#ff8a8a]Revolutionaries[/color] will de-convert if this happens.
+  [bold]Rewolucja zakończy się niepowodzeniem[/bold], jeśli zginą wszyscy [bold][color=#5e9cff]przywódcy rewolucji[/color][/bold], a w takim przypadku wszyscy [color=#ff8a8a]rewolucjoniści[/color] przestaną być rewolucjonistami.
 
-  [bold]The revolution will also fail[/bold] if all of the [bold][color=#5e9cff]Head Revolutionaries[/color][/bold] are off the station. Your objective is to capture the station, so do not wander far.
+  [bold]Rewolucja również zakończy się niepowodzeniem[/bold], jeśli wszyscy przywódcy rewolucji [bold][color=#5e9cff]będą poza stacją[/color][/bold]. Twoim celem jest przejęcie stacji, więc nie oddalaj się zbytnio.
 
-  ## Your Uplink
-  [bold][color=#5e9cff]Head Revolutionaries[/color][/bold] are chosen at the start of the shift. They are given a PDA uplink similar to a Syndicate uplink.
+  ## Twój Uplink
+  [bold][color=#5e9cff]Przywódcy rewolucji[/color][/bold] są wybierani na początku zmiany. Otrzymują oni urządzenie PDA z uplinkiem, podobne do urządzenia używanego przez Syndykat.
 
-  Telecrystals cannot be used in this PDA. Instead, a new currency, [color=#ff8a8a]RevCoin[/color], must be used. Be sure to lock your uplink after you're done using it.
+  W tym uplinku nie można używać telekryształów. Zamiast tego należy korzystać z nowej waluty, [color=#ff8a8a]RevCoin[/color]. Po zakończeniu korzystania z uplinku należy go koniecznie zablokować.
 
-  There are no restocks, so there is no point in saving RevCoin.
+  Zapasy nie są uzupełniane, więc nie ma sensu gromadzić RevCoinów.
 
   <Box>
     <GuideEntityEmbed Entity="RevCoin"/>
   </Box>
 
-  ## Mindshields & Eye Protection
-  [color=#7ee8f7]Mindshield implanters[/color] are an obstruction to the revolution. These will:
-  - Prevent the implanted person from being converted into a [color=#ff8a8a]Revolutionary[/color]
-  - De-convert Revolutionaries, and will make them no longer loyal to your cause
-  - [bold]Be visibly destroyed upon being implanted into a [color=#5e9cff]Head Revolutionary[/color][/bold], giving you away
-  - NOT protect against flash disorientation
+  ## Ochrona umysłu i okulary
+  [color=#7ee8f7]Implanty ochrony umysłu[/color] stanowią przeszkodę dla rewolucji. Powodują one, że:
+  - Osoba, której wszczepiono implant, nie zostanie przemieniona w [color=#ff8a8a]rewolucjonistę[/color]
+  - Przemienią rewolucjonistów w członków załogi i sprawią, że przestaną podążać za głównym rewolucjonistą
+  - [bold]Zostaną widocznie zniszczone po wszczepieniu [color=#5e9cff]głównemu rewolucjoniście[/color][/bold], co zdradzi jego obecność
+  - NIE chronią przed chwilową dezorientacją spowodowaną błyskiem
 
-  These however, do protect against flash disorientation and conversion.
+  Te jednak chronią przed chwilową dezorientacją i przemianą.
 
   <Box>
     <GuideEntityEmbed Entity="ClothingEyesGlassesSunglasses"/>
@@ -61,56 +61,55 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
     <GuideEntityEmbed Entity="ClothingHeadHatWelding"/>
   </Box>
 
-  Keep in mind that, if someone is mindshielded while a revolutionary, they are able to remember everything from their past, including who converted them.
+  Należy pamiętać, że jeśli ktoś jest objęty osłoną umysłu, będąc rewolucjonistą, jest w stanie przypomnieć sobie wszystko ze swojej przeszłości, w tym to, kto go nawrócił.
 
-  ## Your tools
+  ## Twoje narzędzia
   <Box>
     <GuideEntityEmbed Entity="Flash"/>
   </Box>
 
-  Your flash and your fast draw implanter are your bread and butter. You can remove mindshields from crew members and implant them in animals, so you can continue converting.
+  Twój błysk i implanter to twoje podstawowe narzędzia. Możesz usuwać osłony umysłowe z członków załogi i wszczepiać je zwierzętom, dzięki czemu możesz kontynuować nawracanie.
 
-  You do not need a special flash. Any flash in your hands is a tool for conversion.
+  Nie potrzebujesz specjalnego błysku. Każdy błysk w twoich rękach jest narzędziem do nawracania.
 
-  People will notice when you start converting. Plan your conversions carefully, as one wrong move can alert security.
+  Ludzie zauważą, kiedy zaczniesz ich konwertować. Starannie planuj swoje działania, ponieważ jeden zły ruch może zaalarmować ochronę.
 
   <Box>
     <GuideEntityEmbed Entity="LieutenantRevolutionaryImplanter"/>
   </Box>
 
-  This tool allows you to convert an otherwise regular revolutionary to a lieutenant, allowing you to build cadres of revolutionaries ready to act on a moments notice.
+  Narzędzie to pozwala przemienić zwykłego rewolucjonistę w porucznika, co umożliwia tworzenie kadr rewolucjonistów gotowych do działania w każdej chwili.
 
-  This is your organizing tool. These lieutenants, while unable to convert anyone, can see the revolutionary status of all crew on-board.
+  To twoje narzędzie organizacyjne. Porucznicy ci, choć nie są w stanie nikogo przemienić, mogą sprawdzić status wszystkich rewolucjonistów  na pokładzie.
 
-  They also have intrinsic radio access to the Syndicate channel, allowing them to co-ordinate with you from anywhere on the station.
+  Mają również stały dostęp radiowy do kanału Syndykatu, co pozwala im koordynować działania z tobą z dowolnego miejsca na stacji.
 
   <Box>
     <GuideEntityEmbed Entity="RevsFastDrawImplanter"/>
   </Box>
 
-  This implanter removes implants, quickly. A regular implanter takes 60 seconds to remove a single implant, while this only takes 30 seconds.
-  Useful for when you want to get command or security on your side.
+  Ten implanter pozwala szybko usuwać implanty. Zwykły implanter potrzebuje 60 sekund na usunięcie pojedynczego implantu, podczas gdy ten zajmuje to zaledwie 30 sekund.
+  Przydatne, gdy chcesz zapewnić sobie przewagę w walce lub zwiększyć bezpieczeństwo.
 
-  Be sure to [bold]toggle your implanter[/bold] to remove a mindshield, as you will deal great damage if you attempt to remove the wrong one!
+  Pamiętaj, aby [bold]przełączyć implanter[/bold] w celu usunięcia osłony umysłu, ponieważ próba usunięcia niewłaściwego implantu spowoduje zadanie ogromnych obrażeń!
 
   <Box>
     <GuideEntityEmbed Entity="EncryptionKeySyndie"/>
   </Box>
 
-  An encryption key that allows you to speak to other operatives and head revolutionaries on the station. Useful for long way communication, not-so-useful if you are caught.
-
+  Klucz szyfrujący, który umożliwia komunikację z innymi agentami i przywódcami rewolucji na stacji. Przydatny do komunikacji na duże odległości, ale niezbyt przydatny, jeśli zostaniesz złapany.
   <Box>
     <GuideEntityEmbed Entity="ClothingEyesGlassesSunglasses"/>
   </Box>
 
-  Style. Prevents you from being flashed. Useful if you are being chased by security or over-zealous crew members.
+  Drip. Chroni przed błyskami fleszy. Przydatny, gdy ścigają cię ochroniarze lub nadgorliwi członkowie załogi.
 
-  ## Extra Tools
+  ## Dodatkowe narzędzia
 
   <Box>
     <GuideEntityEmbed Entity="GrenadeFlashBangRevolutionary"/>
   </Box>
 
-  This flash can convert anyone in its flash radius, useful for causing mayhem. You must take a screwdriver to a flash and mess with it. Only head revolutionaries have access to this incredible power, so keep it well hidden.
-  Only head revolutionaries can throw the revolutionary flashbang and have it convert people.
+  Ten granat błyskowy może przemienić każdego w promieniu swojego działania, co przydaje się do wywołania chaosu. Aby to zrobić, musisz wziąć śrubokręt, podejść do granatu i przy nim pomajstrować. Tylko przywódcy rewolucji mają dostęp do tej niesamowitej mocy, więc dobrze go ukryj.
+  Tylko przywódcy rewolucji mogą rzucać rewolucyjny granat błyskowy i przekonwertować nimi ludzi.
 </Document>
