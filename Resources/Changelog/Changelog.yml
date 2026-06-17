@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: AgentSmithRadio
-  changes:
-  - message: Added grilled cheese sandwich and recipe.
-    type: Add
-  id: 7947
-  time: '2025-02-13T08:00:39.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/33807
 - author: themias
   changes:
   - message: The experimental welding tool now requires only minimal eye protection
@@ -4195,3 +4188,14 @@
   id: 9254
   time: '2026-06-17T15:39:34.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/692
+- author: Nikita_pl
+  changes:
+  - message: "Dodano wygodn\u0105 drukark\u0119 dokument\xF3w! Znajduje si\u0119 zazwyczaj\
+      \ u Kierownika Personelu lub na mostku."
+    type: Add
+  - message: "Drukark\u0119 (1) dokument\xF3w dodano do map: Amber, Atlas, Cluster,\
+      \ Cork, Eden, Gax, Packed, Saltern oraz Terra."
+    type: Add
+  id: 9255
+  time: '2026-06-17T15:50:11.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/681
