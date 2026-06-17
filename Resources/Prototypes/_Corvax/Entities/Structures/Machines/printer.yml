@@ -103,6 +103,8 @@
     - PrintedDocumentIaDocumentationRequestRecipe
     - PrintedDocumentIaDepartmentAuditReportRecipe
     - PrintedDocumentIaInterrogationProtocolRecipe
+  - type: EmagLatheRecipes
+    emagStaticRecipes:
     - PrintedDocumentSyndicateCooperationOfferRecipe
     - PrintedDocumentSyndicateInfoExchangeProposalRecipe
     - PrintedDocumentSyndicateSummonsRecipe
