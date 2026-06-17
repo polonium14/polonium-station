@@ -91,11 +91,15 @@ SPDX-License-Identifier: MIT
 
   # Przestępstwa
 
+  Każde przestępstwo ma unikalny kod numeryczny (§100–§504). Pierwsza cyfra oznacza stopień: 1 — I, 2 — II, 3 — III, 4 — IV, 5 — V. Litery w nawiasie (R, G, T, C, M, L) oznaczają grupę kolorystyczną — przestępstwa tej samej grupy nie składają się łącznie.
+
   # I Stopnia
 
   W przypadku drobnych przestępstw należy rozwiązać problem, a następnie ostrzec sprawcę, aby nie popełniał tego przestępstwa ponownie. Jeśli mimo to sprawca nadal będzie je popełniał, lepszym rozwiązaniem może być areszt.
 
   ## Zakłócanie porządku
+
+  [bold]Kod:[/bold] §100 (R)
 
   [bold]Opis[/bold]: Zakłócanie porządku publicznego.
 
@@ -106,6 +110,8 @@ SPDX-License-Identifier: MIT
 
   ## Drobna kradzież
 
+  [bold]Kod:[/bold] §101 (G)
+
   [bold]Opis[/bold]: Zabranie bez zgody innej osoby, organizacji lub własności wspólnej przedmiotów, które nie są niezbędne lub są niedrogie.
 
   [bold]Zalecana minimalna kara:[/bold] 1:00
@@ -114,6 +120,8 @@ SPDX-License-Identifier: MIT
   [bold]Uwagi:[/bold] Różnica między drobną kradzieżą a wielką kradzieżą polega na tym, jak ważny jest skradziony przedmiot. Przedmioty takie jak instrumenty, odzież i narzędzia zaliczają się do drobnych kradzieży. W większości przypadków wystarczy zatrzymać złodzieja, zwrócić skradziony przedmiot i puścić go z ostrzeżeniem.
 
   ## Posiadanie/używanie nielegalnych substancji
+
+  [bold]Kod:[/bold] §102
 
   [bold]Opis[/bold]: Produkcja, posiadanie lub nadużywanie substancji lub chemikaliów objętych ograniczeniami.
 
@@ -124,6 +132,8 @@ SPDX-License-Identifier: MIT
 
   ## Wtargnięcie
 
+  [bold]Kod:[/bold] §103 (T)
+
   [bold]Opis[/bold]: Wejście na teren niezabezpieczony bez pozwolenia.
 
   [bold]Zalecana minimalna kara:[/bold] Ostrzeżenie
@@ -132,6 +142,8 @@ SPDX-License-Identifier: MIT
   [bold]Uwagi:[/bold] Zamiast zatrzymywać sprawców, często lepiej po prostu usunąć ich z terenu.
 
   ## Wandalizm
+
+  [bold]Kod:[/bold] §104 (C)
 
   [bold]Opis[/bold]: Celowe oszpecenie lub nielegalna ingerencja w mienie publiczne lub prywatne.
 
@@ -145,6 +157,8 @@ SPDX-License-Identifier: MIT
 
   ## Okrucieństwo wobec zwierząt
 
+  [bold]Kod:[/bold] §201
+
   [bold]Opis[/bold]: Złośliwe zadawanie niepotrzebnego cierpienia lub krzywdy istocie nierozumnej.
 
   [bold]Zalecana minimalna kara:[/bold] 2:00
@@ -153,6 +167,8 @@ SPDX-License-Identifier: MIT
   [bold]Uwagi:[/bold] Nie obejmuje to legalnych i autoryzowanych testów na zwierzętach i zazwyczaj nie dotyczy szkodników lub stworzeń, które mogą stanowić zagrożenie dla stacji.
 
   ## Uszkodzenie/zniszczenie mienia
+
+  [bold]Kod:[/bold] §202 (C)
 
   [bold]Opis[/bold]: Celowe uszkodzenie lub oszpecenie mienia publicznego lub prywatnego lub sprzętu.
 
@@ -163,6 +179,8 @@ SPDX-License-Identifier: MIT
 
   ## Narażenie na niebezpieczeństwo
 
+  [bold]Kod:[/bold] §203 (M)
+
   [bold]Opis[/bold]: Lekkomyślne narażanie siebie lub innych na niebezpieczeństwo poprzez bezpośrednie działania umyślne lub wynikające z zaniedbania.
 
   [bold]Zalecana minimalna kara:[/bold] 2:00
@@ -171,6 +189,8 @@ SPDX-License-Identifier: MIT
   [bold]Uwagi:[/bold] Obejmuje wypadki przy pracy, zaniedbania przemysłowe, eksperymenty na sobie, a nawet błędy medyczne.
 
   ## Niezastosowanie się do poleceń
+
+  [bold]Kod:[/bold] §204 (L)
 
   [bold]Opis[/bold]: Stawianie oporu wobec uzasadnionych poleceń wydanych przez władze. Obejmuje to nakazy i uprawnione przeszukania.
 
@@ -181,6 +201,8 @@ SPDX-License-Identifier: MIT
 
   ## Posiadanie sprzętu objętego ograniczeniami
 
+  [bold]Kod:[/bold] §205
+
   [bold]Opis[/bold]: Posiadanie lub używanie nieśmiercionośnych przedmiotów lub obiektów, które są objęte ograniczeniami lub są nielegalne.
 
   [bold]Zalecana minimalna kara:[/bold] Ostrzeżenie
@@ -189,6 +211,8 @@ SPDX-License-Identifier: MIT
   [bold]Uwagi:[/bold] Dotyczy to głównie kontrabandy syndykatu: EMAG-ów, masek przeciwgazowych syndykatu, krwistoczerwonych kombinezonów, przerobionych PDA lub implantów, jednak czasami może obejmować również przedmioty, których dana osoba nie powinna posiadać, takie jak kamizelki kevlarowe i sprzęt ochrony.
 
   ## Zamieszki
+
+  [bold]Kod:[/bold] §200 (R)
 
   [bold]Opis[/bold]: Udział w dużej grupie osób powodującej bezprawne zakłócenie porządku publicznego.
 
@@ -203,6 +227,8 @@ SPDX-License-Identifier: MIT
 
   ## Napaść
 
+  [bold]Kod:[/bold] §300 (M)
+
   [bold]Opis[/bold]: Grożenie komuś użyciem siły fizycznej lub próba jej użycia w celu wywołania strachu przed krzywdą.
 
   [bold]Zalecana minimalna kara:[/bold] Ostrzeżenie
@@ -211,6 +237,8 @@ SPDX-License-Identifier: MIT
   [bold]Uwagi:[/bold] Napad to jedynie groźba, a nie akt przemocy. Zarzut ten może być kumulowany w przypadku różnych ofiar.
 
   ## Pobicie
+
+  [bold]Kod:[/bold] §301 (M)
 
   [bold]Opis[/bold]: Faktyczne użycie siły fizycznej wobec kogoś bez jego zgody.
 
@@ -221,6 +249,8 @@ SPDX-License-Identifier: MIT
 
   ## Naruszenie zatrzymania
 
+  [bold]Kod:[/bold] §303 (L)
+
   [bold]Opis[/bold]: Celowe stawianie oporu i ucieczka przed aresztowaniem lub zatrzymaniem przez upoważniony personel.
 
   [bold]Zalecana minimalna kara:[/bold] 2:00
@@ -229,6 +259,8 @@ SPDX-License-Identifier: MIT
   [bold]Uwagi:[/bold] Dotyczy to wyłącznie sytuacji, w której dana osoba jest aktywnie aresztowana fizycznie. Obejmuje to osoby zdejmujące kajdanki lub pomagające innym w uniknięciu aresztowania. Ucieczka z aresztu jest odrębnym przestępstwem.
 
   ## Wielka kradzież
+
+  [bold]Kod:[/bold] §304 (G)
 
   [bold]Opis[/bold]: Zabranie bez zgody innej osoby lub organizacji ważnego lub nieodzownego mienia.
 
@@ -239,6 +271,8 @@ SPDX-License-Identifier: MIT
 
   ## Nieumyślne spowodowanie śmierci
 
+  [bold]Kod:[/bold] §302 (M)
+
   [bold]Opis[/bold]: Przypadkowe pozbawienie życia istoty rozumnej bez zamiaru.
 
   [bold]Zalecana minimalna kara:[/bold] 4:00
@@ -247,6 +281,8 @@ SPDX-License-Identifier: MIT
   [bold]Uwagi:[/bold] Obejmuje nieumyślne spowodowanie śmierci w obronie własnej oraz śmierć wynikającą z zaniedbania.
 
   ## Masowe zniszczenie
+
+  [bold]Kod:[/bold] §305 (C)
 
   [bold]Opis[/bold]: Spowodowanie ogromnych zniszczeń na danym obszarze lub w kluczowym systemie stacji.
 
@@ -257,6 +293,8 @@ SPDX-License-Identifier: MIT
 
   ## Posiadanie broni objętej ograniczeniami
 
+  [bold]Kod:[/bold] §306
+
   [bold]Opis[/bold]: Posiadanie lub używanie broni, która jest niezgodna z prawem lub stanowi kontrabandę.
 
   [bold]Zalecana minimalna kara:[/bold] 3:00
@@ -266,6 +304,8 @@ SPDX-License-Identifier: MIT
 
   ## Wtargnięcie na teren zabezpieczony
 
+  [bold]Kod:[/bold] §307 (T)
+
   [bold]Opis[/bold]: Wejście na teren zabezpieczony bez pozwolenia.
 
   [bold]Zalecana minimalna kara:[/bold] 3:00
@@ -274,6 +314,8 @@ SPDX-License-Identifier: MIT
   [bold]Uwagi:[/bold] Obejmuje to takie miejsca, jak telekomunikacja, biura dowódców, obszary ochrony, obszary dowodzenia, skarbiec i zbrojownie.
 
   ## Ucieczka z aresztu
+
+  [bold]Kod:[/bold] §308
 
   [bold]Opis[/bold]: Wydostanie się z celi lub spod dozoru z zamiarem ucieczki.
 
@@ -287,6 +329,8 @@ SPDX-License-Identifier: MIT
 
   ## Porwanie
 
+  [bold]Kod:[/bold] §400
+
   [bold]Opis[/bold]: Bezprawne ograniczenie wolności, transport, kontrola lub uwięzienie istoty rozumnej wbrew jej woli.
 
   [bold]Zalecana minimalna kara:[/bold] 4:00
@@ -295,6 +339,8 @@ SPDX-License-Identifier: MIT
   [bold]Uwagi:[/bold] Szeroki zakres czynów, stosowany głównie jako pojęcie zbiorcze w odniesieniu do bezprawnego kontrolowania innej istoty.
 
   ## Morderstwo
+
+  [bold]Kod:[/bold] §401 (M)
 
   [bold]Opis[/bold]: Zabicie istoty rozumnej ze złośliwym zamiarem.
 
@@ -309,6 +355,8 @@ SPDX-License-Identifier: MIT
 
   ## Masowe morderstwo
 
+  [bold]Kod:[/bold] §500 (M)
+
   [bold]Opis[/bold]: Zabicie trzech lub więcej istot rozumnych ze złośliwym zamiarem.
 
   [bold]Zalecana minimalna kara:[/bold] Permamentna
@@ -317,6 +365,8 @@ SPDX-License-Identifier: MIT
   [bold]Uwagi:[/bold] Ma zastosowanie wyłącznie w przypadku wielokrotnych, umyślnych zabójstw.
 
   ## Rażące zaniedbanie
+
+  [bold]Kod:[/bold] §501
 
   [bold]Opis[/bold]: Lekkomyślne narażenie siebie lub innych na niebezpieczeństwo poprzez bezpośrednie działanie lub zaniechanie działania jako członek dowództwa.
 
@@ -327,6 +377,8 @@ SPDX-License-Identifier: MIT
 
   ## Uniemożliwienie wskrzeszenia
 
+  [bold]Kod:[/bold] §502
+
   [bold]Opis[/bold]: Sprawienie, że ciało jest niemożliwe do wskrzeszenia.
 
   [bold]Zalecana minimalna kara:[/bold] 15:00
@@ -336,6 +388,8 @@ SPDX-License-Identifier: MIT
 
   ## Odmowa poddania się osłonie umysłu
 
+  [bold]Kod:[/bold] §503
+
   [bold]Opis[/bold]: Odmowa zastosowania się do rozsądnej procedury osłony umysłu.
 
   [bold]Zalecana minimalna kara:[/bold] Permamentna do czasu akceptacji osłony
@@ -344,6 +398,8 @@ SPDX-License-Identifier: MIT
   [bold]Uwagi:[/bold] Ma zastosowanie, jeśli podejrzany jest skrajnie niechętny do współpracy lub implant nie działa z powodu zbyt zaawansowanego stanu psychicznego więźnia. Jeśli implant nie działa, zalecana maksymalna kara zostaje podwyższona do przyspieszonej egzekucji. Należy zauważyć, że osoby cierpiące na neuroawersję nie mogą odmówić zastosowania osłony umysłu w przypadku potwierdzonego zagrożenia praniem mózgu lub kontrolą umysłu, ale po ustąpieniu zagrożenia należy usunąć z nich implanty. Odmowa usunięcia osłon umysłu u osób cierpiących na neuroawersję po ustąpieniu zagrożenia może stanowić zaniedbanie medyczne w ramach zarzutu narażenia na niebezpieczeństwo.
 
   ## Terroryzm
+
+  [bold]Kod:[/bold] §504
 
   [bold]Opis[/bold]: Podejmowanie złośliwych działań destrukcyjnych, które grożą zniszczeniem lub skutecznie niszczą statek lub siedlisko.
 
