@@ -6,225 +6,224 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-  # Reactions
-  Here are some chemicals that, when utilized properly, have unique effects!
+  # Reakcje
+  Oto kilka substancji chemicznych, które przy odpowiednim zastosowaniu dają niezwykłe efekty!
 
 
-  #Creation reactions
+  #Reakcje tworzenia
 
-  When mixing some chemicals, items can be created!
+  Mieszając niektóre substancje chemiczne, można wytworzyć przedmioty!
 
-  Some of the easiest recipes for an aspiring chemist to understand are the simple recipes that help with making items.
+  Jednymi z najłatwiejszych do zrozumienia dla początkującego chemika są proste receptury, które pomagają w wytwarzaniu przedmiotów.
 
 
-  ##Soap
+  ##Mydło
   <Box>
-    <GuideEntityEmbed Entity="Soap" Caption="Soap"/>
-    <GuideEntityEmbed Entity="SoapHomemade" Caption="Homemade Soap"/>
+    <GuideEntityEmbed Entity="Soap" Caption="Mydło"/>
+    <GuideEntityEmbed Entity="SoapHomemade" Caption="Domowe mydło"/>
   </Box>
-  Soap can be made with the following reagents:
+  Mydło można wytworzyć przy użyciu następujących składników:
 
-  -15u Fat
-  -10u Table Salt
-  -10u Water (or) 10u Blood
+  -15 jednostek tłuszczu
+  -10 jednostek soli kuchennej
+  -10 jednostek wody (lub) 10 jednostek krwi
   
-  You can also make a homemade variant by swapping out water with blood!
+  Można również przygotować domową wersję, zastępując wodę krwią!
 
-  ##Meat
+  ##Mięso
   <Box>
-    <GuideEntityEmbed Entity="FoodMeat" Caption="Meat"/>
+    <GuideEntityEmbed Entity="FoodMeat" Caption="Mięso"/>
   </Box>
-  You can make synthetic meat with:
-  -25u Fat
-  -5u Nutriment
-  -10u Blood
-  -10u Carbon
+  Mięso syntetyczne można wytworzyć przy użyciu:
+  -25 jednostek tłuszczu
+  -5 jednostek składników odżywczych
+  -10 jednostek krwi
+  -10 jednostek węgla
 
-  ##Plastic
+  ##Plastik
   <Box>
-    <GuideEntityEmbed Entity="SheetPlastic" Caption="Plastic"/>
+    <GuideEntityEmbed Entity="SheetPlastic" Caption="Plastik"/>
   </Box>
-  You can make plastic by heating the following reagents to 374K:
+  Plastik można wytworzyć, podgrzewając następujące składniki do temperatury 374 K:
 
-  -5u Oil
-  -3u Ash
-  -2u Sulfuric Acid
+  -5 jednostek ropy
+  -3 jednostki popiołu
+  -2 jednostki kwasu siarkowego
 
-  ##Crystals
+  ##Kryształy
 
   <Box>
-    <GuideEntityEmbed Entity="ShardCrystalGreen" Caption="Green Crystal"/>
-    <GuideEntityEmbed Entity="ShardCrystalCyan" Caption="Cyan Crystal"/>
-    <GuideEntityEmbed Entity="ShardCrystalPink" Caption="Pink Crystal"/>
-    <GuideEntityEmbed Entity="ShardCrystalRed" Caption="Red Crystal"/>
-    <GuideEntityEmbed Entity="ShardCrystalOrange" Caption="Orange Crystal"/>
+    <GuideEntityEmbed Entity="ShardCrystalGreen" Caption="Zielony kryształ"/>
+    <GuideEntityEmbed Entity="ShardCrystalCyan" Caption="Cyjanowy kryształ"/>
+    <GuideEntityEmbed Entity="ShardCrystalPink" Caption="Różowy kryształ"/>
+    <GuideEntityEmbed Entity="ShardCrystalRed" Caption="Czerwony kryształ"/>
+    <GuideEntityEmbed Entity="ShardCrystalOrange" Caption="Pomarańczowy kryształ"/>
   </Box>
-  You can create synthetic crystals for decoration by mixing and heating to 374k:
+  Syntetyczne kryształy można wytworzyć, mieszając i podgrzewając do 374 K:
 
-  -15u Sugar
-  -15u Water
-  -5u Ethanol
+  -15 jednostek cukru
+  -15 jednostek wody
+  -5 jednostek etanolu
 
-  ##Gunpowder
+  ##Proch strzelniczy
   <Box>
-    <GuideEntityEmbed Entity="MaterialGunpowder" Caption="Gunpowder"/>
+    <GuideEntityEmbed Entity="MaterialGunpowder" Caption="Proch strzelniczy"/>
   </Box>
-  You can create gunpowder, a component used in improvised explosives, by mixing:
-  -6u Potassium
-  -2u Sulfur
-  -2u Charcoal
+  Proch strzelniczy, składnik stosowany w improwizowanych ładunkach wybuchowych, można uzyskać poprzez zmieszanie:
+  -6 jednostek potasu
+  -2 jednostek siarki
+  -2 jednostek węgla drzewnego
 
-  ##Solidification
+  ##Krystalizacja
   <Box>
-    <GuideEntityEmbed Entity="IngotGold1" Caption="Gold"/>
-    <GuideEntityEmbed Entity="IngotSilver1" Caption="Silver"/>
+    <GuideEntityEmbed Entity="IngotGold1" Caption="Złoto"/>
+    <GuideEntityEmbed Entity="IngotSilver1" Caption="Srebro"/>
   </Box>
-  You can solidify reagents such as silver and gold into bars by using:
-  -10u Metal (silver or gold)
-  -5u Frost Oil
+  Składniki takie jak srebro i złoto można krystalizować w sztabki, używając:
+  -10 jednostek metalu (srebro lub złoto)
+  -5 jednostek lodowej ropy
 
 
-  # Gas reactions
+  # Reakcje gazowe
 
-  When mixing some chemicals, gas can be created!
+  Podczas mieszania niektórych substancji chemicznych może powstać gaz!
 
-  This can be beneficial or [color=#ff8a8a]HIGHLY DANGEROUS[/color] depending on the context in which it is used!
+  W zależności od kontekstu, w jakim ma to miejsce, może to być korzystne lub [color=red]BARDZO NIEBEZPIECZNE[/color]!
 
-  ## Plasma Gas
+  ## Gaz plazmowy
   <Box>
-    <GuideEntityEmbed Entity="PlasmaCanister" Caption="Plasma Gas"/>
+    <GuideEntityEmbed Entity="PlasmaCanister" Caption="Gaz plazmowy"/>
   </Box>
-  One of the most basic and dangerous gas reactions is the gaseous plasma that is made while mixing Phlogiston.
+  Jedną z najbardziej podstawowych i niebezpiecznych reakcji gazowych jest powstanie plazmy gazowej podczas mieszania Phlogistonu.
 
-  The recipe to make this (and release the gas) is:
+  Przepis na jej wytworzenie (i uwolnienie gazu) jest następujący:
 
-  -1 part Plasma
-  -1 part Phosphorus
-  -1 part Sulfuric Acid
+  - 1 część plazmy
+  - 1 część fosforu
+  - 1 część kwasu siarkowego
 
   ## Frezon
   <Box>
-    <GuideEntityEmbed Entity="FrezonCanister" Caption="Frezon Gas"/>
+    <GuideEntityEmbed Entity="FrezonCanister" Caption="Frezon"/>
   </Box>
-  Another effect can be used to make Frezon gas, which is very damaging to the stations atmosphere. Please wear your winter coats!
+  Kolejny efekt można wykorzystać do wytworzenia gazu frezonowego, który ma bardzo szkodliwy wpływ na atmosferę stacji. Proszę założyć zimowe płaszcze!
 
-  The reaction to create Frezon gas is:
+  Reakcja prowadząca do powstania gazu frezonowego wygląda następująco:
 
-  -1 part Fresium
-  -1 part Water
+  - 1 część fresium
+  - 1 część wody
 
-  # Foam reactions
+  # Reakcje z udziałem piany
 
-  There are two types of [color=#7ee8f7]foam[/color] reactions.
+  Wyróżnia się dwa rodzaje reakcji z udziałem [color=cyan]piany[/color].
 
-  ##Reagent Foam
+  ##Piana z odczynnikiem
 
   <Box>
-    <GuideEntityEmbed Entity="Beaker" Caption="Fluorosurfactant"/>
-    <GuideEntityEmbed Entity="Beaker" Caption="Water"/>
-    <GuideEntityEmbed Entity="Beaker" Caption="(Optional) reagent(s)"/>
+    <GuideEntityEmbed Entity="Beaker" Caption="Fluorosurfaktant"/>
+    <GuideEntityEmbed Entity="Beaker" Caption="Woda"/>
+    <GuideEntityEmbed Entity="Beaker" Caption="Opcjonalne odczynniki"/>
   </Box>
 
-  [color=#7ee8f7]Reagent[/color] foam applies whatever chemical is in the solution to those within it's radius- this is different from [color=#7ee8f7]smoke[/color] because it can apply reagents topically as well.
+  Piana z [color=#7ee8f7]odczynnikiem[/color] nanosi substancję chemiczną zawartą w roztworze na wszystkie obiekty znajdujące się w jej zasięgu – różni się to od [color=#7ee8f7]dymu[/color], ponieważ pozwala również na miejscowe nakładanie odczynników.
 
-  Reagent foam leaves residue on the floor when utilized with drinks or other liquids, so be sure to take this into account while making mixes!
+  Piana z odczynnika pozostawia ślady na podłodze po użyciu z napojami lub innymi płynami, więc pamiętaj o tym podczas przygotowywania mieszanek!
 
-  More Fluorosurfactant and water mean more spread- but be aware this doesn't increase the potency of the foam, which depends on how much of the reagent you put in the solution.
-  Enjoy mixing and creating your own foam!
+  Większa ilość fluorosurfaktantu i wody oznacza lepsze rozprzestrzenianie się piany – pamiętaj jednak, że nie zwiększa to jej mocy, która zależy od ilości odczynnika dodanego do roztworu.
+  Życzymy udanej zabawy podczas mieszania i tworzenia własnej piany!
 
-  To make reagent foam you mix:
+  Aby przygotować piankę z odczynnika, wymieszaj:
 
-  -1 part Fluorosurfactant
-  -1 part Water
-  -(Optional) Any amount of Reagent
+  -1 część fluorosurfaktantu
+  -1 część wody
+  -(Opcjonalnie) dowolną ilość odczynnika
 
 
-  ## Metal Foam
+  ## Spienione metale
   <Box>
-    <GuideEntityEmbed Entity="MetalFoamGrenade" Caption="Metal Foam"/>
-    <GuideEntityEmbed Entity="FoamedIronMetal" Caption="Foamed Iron"/>
-    <GuideEntityEmbed Entity="FoamedAluminiumMetal" Caption="Foamed Aluminum"/>
+    <GuideEntityEmbed Entity="MetalFoamGrenade" Caption="Granat ze spienionym metalem"/>
+    <GuideEntityEmbed Entity="FoamedIronMetal" Caption="Spienione żelazo"/>
+    <GuideEntityEmbed Entity="FoamedAluminiumMetal" Caption="Spienione aluminium"/>
   </Box>
-  [color=#7ee8f7]Metal[/color] foam creates fairly sturdy walls made of solidified foam metal. This also can be utilized for a variety of purposes, such as sealing hallways, hull breaches, and more!
-  To make metal foam you mix:
+  [color=cyan]Spieniony metal[/color] tworzy dość solidne ściany ze spienionej metalowej pianki. Można ją wykorzystać do wielu różnych celów, takich jak uszczelnianie korytarzy, wyrw w kadłubie i nie tylko!
+  Aby uzyskać piankę metalową, należy wymieszać:
 
-  -3 parts metal (Iron, Aluminum)
-  -1 part Foaming Agent
-  -1 part Fluorosulfuric acid
+  -3 części metalu (żelaza, aluminium)
+  -1 część środka spieniającego
+  -1 część kwasu fluorosiarczowego
 
-  Be aware that the fluorosulfuric acid will hurt anyone near it before it solidifies!
-  Increasing the reactants will increase the size of the foam area.
+  Należy pamiętać, że kwas fluorosiarczowy może spowodować obrażenia u osób znajdujących się w pobliżu, zanim się zestali!
+  Zwiększenie ilości odczynników spowoduje powiększenie powierzchni pianki.
 
 
-  # Smoke reactions
+  # Reakcje dymu
   <Box>
-    <GuideEntityEmbed Entity="SmokeGrenade" Caption="Smoke Grenade"/>
+    <GuideEntityEmbed Entity="SmokeGrenade" Caption="Granat dymny"/>
   </Box>
-  When mixing some chemicals, smoke can coat the area!
+  Podczas mieszania niektórych substancji chemicznych może wydobywać się dym, który pokryje całą okolicę!
 
-  This causes any [color=#7ee8f7]reagents[/color] within the mix to be ingested by anyone who breathes it in, which can result in many fun (or deadly!) effects!
+  Powoduje to, że wszelkie [color=cyan]odczynniki[/color] zawarte w mieszance mogą być wdychane przez każdą osobę w ich zasięgu, co może skutkować wieloma zabawnymi (lub śmiertelnymi!) efektami!
 
-  The basic recipe to mix smoke is:
-  -1 part Phosphorous
-  -1 part Potassium
-  -1 part Sugar
-  -(Optional) Any amount of reagent
+  Podstawowa receptura na mieszankę dymną to:
+  -1 część fosforu
+  -1 część potasu
+  -1 część cukru
+  -(Opcjonalnie) Dowolna ilość odczynnika
 
-  More of the reagents mean a larger area of effect, and adding more reagents will result in larger quantities of whatever is in solution being inhaled by those without internals on.
+  Większa ilość odczynników oznacza większy obszar działania, a dodanie większej ilości odczynników spowoduje, że osoby bez wyposażenia wewnętrznego wdychają większe ilości tego, co znajduje się w roztworze.
 
-  # Explosive reactions
+  # Reakcje wybuchowe
 
-  When mixing some chemicals, explosions can be caused!
+  Podczas mieszania niektórych substancji chemicznych może powstać wybuch!
 
-  ##Potassium and Water
+  ##Potas i woda
   <Box>
-    <GuideEntityEmbed Entity="Beaker" Caption="Potassium"/>
-    <GuideEntityEmbed Entity="Beaker" Caption="Water"/>
+    <GuideEntityEmbed Entity="Beaker" Caption="Potas"/>
+    <GuideEntityEmbed Entity="Beaker" Caption="Woda"/>
   </Box>
-  The most basic of explosions is mixing:
+  Najprostszy przepis na reakcję wybuchową polega na wymieszaniu:
 
-  -1 Part Potassium
-  -1 Part Water
+  -1 część potasu
+  -1 część wody
 
-  This will instantly cause a small but easily scalable explosion, which releases heat and can shatter windows! This can be used for chaining effects together with larger explosive payloads, such as CLF3!
-
+  Spowoduje to natychmiastowy, niewielki, ale łatwy do wzmocnienia wybuch, który wyzwala ciepło i może rozbić szyby! Można to wykorzystać do łączenia efektów z większymi ładunkami wybuchowymi, takimi jak CLF3!
 
   ##CLF3
   <Box>
-    <GuideEntityEmbed Entity="Beaker" Caption="Chlorine"/>
-    <GuideEntityEmbed Entity="Beaker" Caption="Fluorine"/>
+    <GuideEntityEmbed Entity="Beaker" Caption="Chlor"/>
+    <GuideEntityEmbed Entity="Beaker" Caption="Fluor"/>
   </Box>
 
-  Some more advanced explosions can be formed by mixing and then heating to 370K:
-  -1 part Chlorine
-  -3 parts Fluorine
+  Niektóre bardziej zaawansowane wybuchy można uzyskać poprzez zmieszanie składników, a następnie podgrzanie ich do temperatury 370 K:
+  -1 część chloru
+  -3 części fluoru
 
-  Be aware that this WILL cause an explosion as soon as the CLF3 is hot enough to be made! This will likely result in it's loss unless precautions are taken.
+  Należy pamiętać, że spowoduje to wybuch, gdy tylko CLF3 osiągnie temperaturę wystarczającą do jego wytworzenia! Jeśli nie zostaną podjęte odpowiednie środki ostrożności, prawdopodobnie doprowadzi to do jego utraty.
 
 
-  ##EMPs
+  ##Impulsy elektromagnetyczne (EMP)
   <Box>
-    <GuideEntityEmbed Entity="EmpGrenade" Caption="Emp"/>
+    <GuideEntityEmbed Entity="EmpGrenade" Caption="Granat EMP"/>
   </Box>
-  To make a homemade EMP, which will immediately knock out any electronics in the area; you use:
+  Aby stworzyć domowy granat EMP, który natychmiast unieruchomi wszelkie urządzenia elektroniczne w okolicy, potrzebujesz:
 
-  -1 part Aluminum
-  -1 part Iron
-  -1 part Uranium
+  -1 część aluminium
+  -1 część żelaza
+  -1 część uranu
 
-  As with other area of effect tools, the size and will increase the more reagents you use.
+  Podobnie jak w przypadku innych narzędzi o zasięgu obszarowym, jego zasięg i siła wzrosną wraz z ilością użytych składników.
 
-  ##Flashbangs
+  ##Granaty błyskowo-hukowe
   <Box>
-    <GuideEntityEmbed Entity="GrenadeFlashBang" Caption="Flashbang"/>
+    <GuideEntityEmbed Entity="GrenadeFlashBang" Caption="Granat błyskowo-hukowy"/>
   </Box>
-  To make a homemade flashbang, capable of disorienting and confusing people within it's radius, you use:
+  Aby wykonać domowej roboty granat błyskowo-hukowy, zdolny do dezorientowania i wprawiania w zakłopotanie osób znajdujących się w jego zasięgu, należy użyć:
 
-  -1 part Aluminum
-  -1 part Potassium
-  -1 part Sulfur
+  - 1 część aluminium
+  - 1 część potasu
+  - 1 część siarki
 
-  Size and radius increase with the reagent amounts.
+  Wielkość i zasięg rosną wraz ze zwiększaniem ilości składników.
 
 
 

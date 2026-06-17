@@ -1,69 +1,4 @@
 ﻿Entries:
-- author: Tayrtahn
-  changes:
-  - message: Ghosts are no longer sent to the void if the player they are following
-      is polymorphed.
-    type: Fix
-  id: 7939
-  time: '2025-02-11T21:34:24.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/33878
-- author: Tayrtahn
-  changes:
-  - message: Clusterbangs now properly limit their maximum capacity.
-    type: Fix
-  id: 7940
-  time: '2025-02-11T23:13:00.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34281
-- author: beck-thompson
-  changes:
-  - message: Fultons are now part of the Advanced Tools T2 research!
-    type: Add
-  id: 7941
-  time: '2025-02-12T00:29:13.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34567
-- author: Nox38
-  changes:
-  - message: Deathsquad agents Matebas now come loaded with AP rounds.
-    type: Fix
-  id: 7942
-  time: '2025-02-12T00:43:10.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34910
-- author: MilonPL
-  changes:
-  - message: The announce command now takes optional color and sound parameters.
-    type: Tweak
-  id: 7943
-  time: '2025-02-12T08:58:08.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34889
-- author: Xillan
-  changes:
-  - message: Changed light brown gloves to have their own unique fiber for detectives,
-      where previously they were indistinguishable from normal / dark brown gloves.
-    type: Tweak
-  id: 7944
-  time: '2025-02-12T18:41:58.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/35111
-- author: SaphireLattice, themias
-  changes:
-  - message: Chair buckle draw depth is slightly less broken
-    type: Fix
-  id: 7945
-  time: '2025-02-13T05:51:28.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/33447
-- author: Minemoder
-  changes:
-  - message: Slime plushie now squishes.
-    type: Tweak
-  id: 7946
-  time: '2025-02-13T07:55:04.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/33554
-- author: AgentSmithRadio
-  changes:
-  - message: Added grilled cheese sandwich and recipe.
-    type: Add
-  id: 7947
-  time: '2025-02-13T08:00:39.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/33807
 - author: themias
   changes:
   - message: The experimental welding tool now requires only minimal eye protection
@@ -4185,3 +4120,82 @@
   id: 9246
   time: '2026-06-15T22:35:46.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/678
+- author: haze
+  changes:
+  - message: "Przet\u0142umaczono rozdzia\u0142 o chemikaliach"
+    type: Add
+  id: 9247
+  time: '2026-06-16T05:04:36.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/675
+- author: Czuat
+  changes:
+  - message: "Przet\u0142umaczono poradnik z\u0142odzieja!"
+    type: Tweak
+  id: 9248
+  time: '2026-06-16T08:34:03.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/677
+- author: Koilak
+  changes:
+  - message: "SPO Centralengo Dow\xF3dztwa po polsku"
+    type: Add
+  id: 9249
+  time: '2026-06-16T08:31:43.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/662
+- author: Nikita_pl
+  changes:
+  - message: "Zmieniono minimalny czas wyroku z 20 minut na 30 minut \u017Ceby trafi\u0107\
+      \ do permy (tak jak na wizden)"
+    type: Tweak
+  id: 9250
+  time: '2026-06-17T08:52:27.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/689
+- author: haze
+  changes:
+  - message: "Dodano t\u0142umaczenie podr\u0119cznika rozdzia\u0142u o czarodziejach"
+    type: Add
+  id: 9251
+  time: '2026-06-17T14:59:49.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/685
+- author: Czuat
+  changes:
+  - message: "t\u0142umaczenie poradnika zdrajcy"
+    type: Add
+  id: 9252
+  time: '2026-06-17T15:01:03.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/682
+- author: nikitosych
+  changes:
+  - message: "Dodano numeryczne kody przest\u0119pstw (\xA7100\u2013\xA7504) do Prawa\
+      \ Kosmicznego w guidebooku."
+    type: Add
+  - message: "Ka\u017Cdy zarzut w szczeg\xF3\u0142owym opisie ma teraz pole \"Kod\"\
+      \ z numerem \xA7 i ewentualn\u0105 grup\u0105 kolorystyczn\u0105 (R/G/T/C/M/L)."
+    type: Tweak
+  - message: "Pobie\u017Cny wykaz przest\u0119pstw zawiera kody \xA7 przy nazwach;\
+      \ napa\u015B\u0107 (\xA7300) i pobicie (\xA7301) s\u0105 rozdzielone zamiast\
+      \ jednej pozycji \"napa\u015B\u0107/pobicie\"."
+    type: Tweak
+  id: 9253
+  time: '2026-06-17T15:20:38.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/691
+- author: Nikita_pl
+  changes:
+  - message: Poprawiono balans w presetach gry
+    type: Add
+  - message: "DynamicUnforgiving zamieniono na AllAtOnce/AllerAtOnce (prawdopodobie\u0144\
+      stwo 1%)"
+    type: Tweak
+  id: 9254
+  time: '2026-06-17T15:39:34.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/692
+- author: Nikita_pl
+  changes:
+  - message: "Dodano wygodn\u0105 drukark\u0119 dokument\xF3w! Znajduje si\u0119 zazwyczaj\
+      \ u Kierownika Personelu lub na mostku."
+    type: Add
+  - message: "Drukark\u0119 (1) dokument\xF3w dodano do map: Amber, Atlas, Cluster,\
+      \ Cork, Eden, Gax, Packed, Saltern oraz Terra."
+    type: Add
+  id: 9255
+  time: '2026-06-17T15:50:11.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/681
