@@ -16,7 +16,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
   <Box>
    <GuideEntityEmbed Entity="APCBasic" Caption=""/>
   </Box>
-  CPU są główną waluta do zakupu twoich umiejętności. Zyskujesz je poprzez tymczasowe wyprowadzenie prądu z APC, możesz to zrobić przez ich interfejs, albo menu kołowe.
+  CPU są główną walutą do zakupu twoich umiejętności. Zyskujesz je poprzez tymczasowe wyprowadzenie prądu z APC, możesz to zrobić przez ich interfejs, albo menu kołowe.
   Naruszenie APC uniemożliwia prądowi płynięcię, oraz wizualnie oznacza, iż naruszono APC, zalecana jest ostrożność. Gdy APC jest naruszone, nie możesz ponownie go naruszyć przez jakiś czas.
 
   # Przejmowanie cyborgów
