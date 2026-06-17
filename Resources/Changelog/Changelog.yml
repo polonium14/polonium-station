@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: SaphireLattice, themias
-  changes:
-  - message: Chair buckle draw depth is slightly less broken
-    type: Fix
-  id: 7945
-  time: '2025-02-13T05:51:28.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/33447
 - author: Minemoder
   changes:
   - message: Slime plushie now squishes.
@@ -4184,3 +4177,18 @@
   id: 9252
   time: '2026-06-17T15:01:03.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/682
+- author: nikitosych
+  changes:
+  - message: "Dodano numeryczne kody przest\u0119pstw (\xA7100\u2013\xA7504) do Prawa\
+      \ Kosmicznego w guidebooku."
+    type: Add
+  - message: "Ka\u017Cdy zarzut w szczeg\xF3\u0142owym opisie ma teraz pole \"Kod\"\
+      \ z numerem \xA7 i ewentualn\u0105 grup\u0105 kolorystyczn\u0105 (R/G/T/C/M/L)."
+    type: Tweak
+  - message: "Pobie\u017Cny wykaz przest\u0119pstw zawiera kody \xA7 przy nazwach;\
+      \ napa\u015B\u0107 (\xA7300) i pobicie (\xA7301) s\u0105 rozdzielone zamiast\
+      \ jednej pozycji \"napa\u015B\u0107/pobicie\"."
+    type: Tweak
+  id: 9253
+  time: '2026-06-17T15:20:38.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/691
