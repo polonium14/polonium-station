@@ -72,8 +72,8 @@ meta:
   engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 05/22/2026 12:48:53
-  entityCount: 20541
+  time: 06/16/2026 16:22:32
+  entityCount: 20540
 maps:
 - 1
 grids:
@@ -13649,7 +13649,7 @@ entities:
       pos: 6.5,-12.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -34716.383
+      secondsUntilStateChange: -34860.926
       state: Opening
     - type: DeviceLinkSink
       invokeCounter: 1
@@ -22682,13 +22682,6 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 10.504643,-64.42394
-      parent: 2
-- proto: BananaPhoneInstrument
-  entities:
-  - uid: 1831
-    components:
-    - type: Transform
-      pos: 13.477564,-30.347912
       parent: 2
 - proto: BannerRevolution
   entities:
@@ -46419,6 +46412,26 @@ entities:
       rot: 3.141592653589793 rad
       pos: -62.5,-9.5
       parent: 2
+- proto: CallableBananaPhoneInstrument
+  entities:
+  - uid: 1831
+    components:
+    - type: Transform
+      pos: 13.477564,-30.347912
+      parent: 2
+    - type: ContainerContainer
+      containers:
+        handset: !type:ContainerSlot {}
+- proto: CallablePhoneInstrument
+  entities:
+  - uid: 14152
+    components:
+    - type: Transform
+      pos: -17.355742,-53.175934
+      parent: 2
+    - type: ContainerContainer
+      containers:
+        handset: !type:ContainerSlot {}
 - proto: Candle
   entities:
   - uid: 6441
@@ -61655,11 +61668,6 @@ entities:
       parent: 2
 - proto: DogBed
   entities:
-  - uid: 9090
-    components:
-    - type: Transform
-      pos: -15.5,-46.5
-      parent: 2
   - uid: 9091
     components:
     - type: Transform
@@ -61679,6 +61687,11 @@ entities:
     components:
     - type: Transform
       pos: -25.5,-50.5
+      parent: 2
+  - uid: 17171
+    components:
+    - type: Transform
+      pos: -11.5,-47.5
       parent: 2
   - uid: 19032
     components:
@@ -65432,7 +65445,7 @@ entities:
       pos: -16.5,-17.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -71950.98
+      secondsUntilStateChange: -72095.516
       state: Closing
     - type: DeviceNetwork
       deviceLists:
@@ -93900,7 +93913,7 @@ entities:
       pos: -39.5,-35.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -12306.123
+      secondsUntilStateChange: -12450.666
       state: Closing
   - uid: 13639
     components:
@@ -96636,8 +96649,11 @@ entities:
   - uid: 13944
     components:
     - type: Transform
-      pos: -11.59888,-47.871864
+      pos: -11.269913,-48.600796
       parent: 2
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
 - proto: MaterialWoodPlank
   entities:
   - uid: 13946
@@ -97592,11 +97608,6 @@ entities:
     - type: Transform
       pos: 20.5,-46.5
       parent: 2
-  - uid: 14100
-    components:
-    - type: Transform
-      pos: -11.5,-47.5
-      parent: 2
 - proto: PaperBin5
   entities:
   - uid: 14102
@@ -97907,13 +97918,6 @@ entities:
     components:
     - type: Transform
       pos: -23.127619,-18.398756
-      parent: 2
-- proto: PhoneInstrument
-  entities:
-  - uid: 14152
-    components:
-    - type: Transform
-      pos: -17.355742,-53.175934
       parent: 2
 - proto: PianoInstrument
   entities:
@@ -101167,6 +101171,13 @@ entities:
     components:
     - type: Transform
       pos: 41.507294,-9.45423
+      parent: 2
+- proto: PrinterDoc
+  entities:
+  - uid: 16370
+    components:
+    - type: Transform
+      pos: -15.5,-46.5
       parent: 2
 - proto: Protolathe
   entities:
@@ -110479,10 +110490,10 @@ entities:
       parent: 2
 - proto: SpawnMobCorgi
   entities:
-  - uid: 16370
+  - uid: 14100
     components:
     - type: Transform
-      pos: -15.5,-46.5
+      pos: -11.5,-47.5
       parent: 2
 - proto: SpawnMobCrabAtmos
   entities:
@@ -115316,12 +115327,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -11.5,-46.5
       parent: 2
-  - uid: 17171
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -11.5,-47.5
-      parent: 2
   - uid: 17172
     components:
     - type: Transform
@@ -116053,6 +116058,11 @@ entities:
       parent: 2
 - proto: ToySpawner
   entities:
+  - uid: 9090
+    components:
+    - type: Transform
+      pos: -11.5,-47.5
+      parent: 2
   - uid: 17306
     components:
     - type: Transform
@@ -116072,11 +116082,6 @@ entities:
     components:
     - type: Transform
       pos: -31.5,-45.5
-      parent: 2
-  - uid: 17310
-    components:
-    - type: Transform
-      pos: -15.5,-46.5
       parent: 2
   - uid: 17311
     components:

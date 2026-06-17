@@ -58,8 +58,8 @@ meta:
   engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 06/08/2026 12:28:42
-  entityCount: 9002
+  time: 06/16/2026 16:41:51
+  entityCount: 9003
 maps:
 - 1
 grids:
@@ -48937,6 +48937,13 @@ entities:
     - type: Transform
       pos: 30.5,32.5
       parent: 2
+- proto: PottedPlantRandomPlastic
+  entities:
+  - uid: 4559
+    components:
+    - type: Transform
+      pos: 23.5,1.5
+      parent: 2
 - proto: PottedPlantRD
   entities:
   - uid: 8894
@@ -50163,6 +50170,13 @@ entities:
     - type: Transform
       pos: -7.5,-4.5
       parent: 7677
+- proto: PrinterDoc
+  entities:
+  - uid: 4558
+    components:
+    - type: Transform
+      pos: 23.5,0.5
+      parent: 2
 - proto: Protolathe
   entities:
   - uid: 4661
@@ -55966,11 +55980,6 @@ entities:
     components:
     - type: Transform
       pos: 25.5,-3.5
-      parent: 2
-  - uid: 5293
-    components:
-    - type: Transform
-      pos: 19.5,-4.5
       parent: 2
   - uid: 5294
     components:

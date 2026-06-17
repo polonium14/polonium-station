@@ -60,8 +60,8 @@ meta:
   engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 06/09/2026 20:40:49
-  entityCount: 12383
+  time: 06/16/2026 16:39:27
+  entityCount: 12384
 maps:
 - 1
 grids:
@@ -4013,6 +4013,15 @@ entities:
     - type: InstantAction
       originalIconColor: '#FFFFFFFF'
       container: 6568
+  - uid: 10026
+    mapInit: true
+    paused: true
+    components:
+    - type: Transform
+      parent: 8003
+    - type: InstantAction
+      originalIconColor: '#FFFFFFFF'
+      container: 8003
 - proto: AirAlarm
   entities:
   - uid: 6
@@ -7719,8 +7728,11 @@ entities:
   - uid: 508
     components:
     - type: Transform
-      pos: 7.6804676,19.441128
+      pos: 7.66765,18.547411
       parent: 2
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
   - uid: 509
     components:
     - type: Transform
@@ -7746,8 +7758,11 @@ entities:
   - uid: 512
     components:
     - type: Transform
-      pos: 7.4773426,19.456753
+      pos: 7.9454284,18.790636
       parent: 2
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
 - proto: BoxFolderCentComClipboard
   entities:
   - uid: 6563
@@ -7782,8 +7797,11 @@ entities:
   - uid: 518
     components:
     - type: Transform
-      pos: 7.2742176,19.456753
+      pos: 7.6259837,18.868425
       parent: 2
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
 - proto: BoxFolderWhite
   entities:
   - uid: 520
@@ -52700,9 +52718,26 @@ entities:
   - uid: 8003
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 7.852048,19.178608
+      pos: 9.49404,17.088064
       parent: 2
+    - type: HandheldLight
+      toggleActionEntity: 10026
+    - type: ContainerContainer
+      containers:
+        cell_slot: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
+        actions: !type:Container
+          showEnts: False
+          occludes: True
+          ents:
+          - 10026
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: True
+    - type: ActionsContainer
   - uid: 8004
     components:
     - type: Transform
@@ -53499,8 +53534,11 @@ entities:
   - uid: 8119
     components:
     - type: Transform
-      pos: 7.241931,18.889677
+      pos: 8.410706,17.416027
       parent: 2
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
   - uid: 12313
     components:
     - type: Transform
@@ -53537,8 +53575,11 @@ entities:
   - uid: 8124
     components:
     - type: Transform
-      pos: 7.2571726,18.545927
+      pos: 8.737095,17.29094
       parent: 2
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
 - proto: MaterialWoodPlank1
   entities:
   - uid: 8126
@@ -57256,6 +57297,13 @@ entities:
     - type: Transform
       pos: 58.5,17.5
       parent: 2
+- proto: PrinterDoc
+  entities:
+  - uid: 11794
+    components:
+    - type: Transform
+      pos: 7.5,19.5
+      parent: 2
 - proto: Protolathe
   entities:
   - uid: 2645
@@ -60252,15 +60300,21 @@ entities:
   - uid: 9214
     components:
     - type: Transform
-      pos: 7.332247,19.765924
+      pos: 7.3412614,18.951817
       parent: 2
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
 - proto: RubberStampDenied
   entities:
   - uid: 9215
     components:
     - type: Transform
-      pos: 7.691622,19.765924
+      pos: 7.3412614,18.562656
       parent: 2
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
 - proto: RubberStampTrader
   entities:
   - uid: 12236
@@ -66014,11 +66068,6 @@ entities:
     components:
     - type: Transform
       pos: -35.5,-24.5
-      parent: 2
-  - uid: 10026
-    components:
-    - type: Transform
-      pos: 7.5,19.5
       parent: 2
   - uid: 10027
     components:
@@ -75814,13 +75863,6 @@ entities:
       parent: 2
     - type: WarpPoint
       location: chapel
-  - uid: 11794
-    components:
-    - type: Transform
-      pos: 8.5,19.5
-      parent: 2
-    - type: WarpPoint
-      location: hop's office
   - uid: 11795
     components:
     - type: Transform
@@ -75905,6 +75947,11 @@ entities:
       parent: 2
     - type: WarpPoint
       location: telecomms
+  - uid: 12384
+    components:
+    - type: Transform
+      pos: 8.5,19.5
+      parent: 2
 - proto: WashingMachine
   entities:
   - uid: 555
