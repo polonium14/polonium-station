@@ -1,19 +1,4 @@
 ﻿Entries:
-- author: MilonPL
-  changes:
-  - message: The announce command now takes optional color and sound parameters.
-    type: Tweak
-  id: 7943
-  time: '2025-02-12T08:58:08.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34889
-- author: Xillan
-  changes:
-  - message: Changed light brown gloves to have their own unique fiber for detectives,
-      where previously they were indistinguishable from normal / dark brown gloves.
-    type: Tweak
-  id: 7944
-  time: '2025-02-12T18:41:58.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/35111
 - author: SaphireLattice, themias
   changes:
   - message: Chair buckle draw depth is slightly less broken
@@ -4185,3 +4170,17 @@
   id: 9250
   time: '2026-06-17T08:52:27.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/689
+- author: haze
+  changes:
+  - message: "Dodano t\u0142umaczenie podr\u0119cznika rozdzia\u0142u o czarodziejach"
+    type: Add
+  id: 9251
+  time: '2026-06-17T14:59:49.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/685
+- author: Czuat
+  changes:
+  - message: "t\u0142umaczenie poradnika zdrajcy"
+    type: Add
+  id: 9252
+  time: '2026-06-17T15:01:03.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/682
