@@ -28,12 +28,12 @@ SPDX-License-Identifier: MIT
 
   ## Stan alarmu
   Alarmy atmosferyczne szybko informują o stanie monitorowanego obszaru za pomocą koloru światła na urządzeniu:
-  - [color=green]Normalny[/color]: Powietrze w tym obszarze jest bezpieczne do oddychania.
-  - [color=yellow]Ostrzeżenie[/color]: Warunki w danym obszarze zaczynają odbiegać od pożądanych i stają się niebezpieczne.
-  - [color=red]Niebezpieczeństwo[/color]: Obszar nie jest już bezpieczny, wymagane jest użycie aparatów oddechowych i/lub kombinezonów ochronnych.
+  - [color=#8ee99a]Normalny[/color]: Powietrze w tym obszarze jest bezpieczne do oddychania.
+  - [color=#ffe566]Ostrzeżenie[/color]: Warunki w danym obszarze zaczynają odbiegać od pożądanych i stają się niebezpieczne.
+  - [color=#ff8a8a]Niebezpieczeństwo[/color]: Obszar nie jest już bezpieczny, wymagane jest użycie aparatów oddechowych i/lub kombinezonów ochronnych.
 
   Alarmy atmosferyczne automatycznie opuszczą (zamkną) połączone [textlink="śluzy przeciwpożarowe" link="FireAndGasControl"], gdy zostanie osiągnięty stan [color=Red]niebezpieczeństwa[/color].
-  [textlink="Śluzy przeciwpożarowe" link="FireAndGasControl"] automatycznie podniosą się (otworzą), gdy stan powróci do [color=green]normalnego[/color].
+  [textlink="Śluzy przeciwpożarowe" link="FireAndGasControl"] automatycznie podniosą się (otworzą), gdy stan powróci do [color=#8ee99a]normalnego[/color].
 
   Alarmy atmosferyczne są wyposażone w wyjścia [textlink="sygnałowe" link="Networking"] dla każdego z trzech stanów, które można wykorzystać do uruchomienia innych urządzeń [textlink="sygnałowych" link="Networking"].
 
@@ -60,12 +60,12 @@ SPDX-License-Identifier: MIT
   - Brak: Wyłącza wszystkie urządzenia podłączone do alarmu atmosferycznego.
   - Filtrowanie: [textlink="Otwory wentylacyjne" link="AirVent"] zostaną włączone, a ich ciśnienie graniczne zostanie ustawione na standardowe ciśnienie atmosferyczne. [textlink="Oczyszczacze powietrza" link="AirScrubber"] zostaną włączone i będą normalnie oczyszczać wszystkie gazy odpadowe.
   - Filtrowanie (szerokie): Tak samo jak w przypadku filtrowania, ale wszystkie połączone [textlink="oczyszczacze powietrza" link="AirScrubber"] włączą tryb WideNet.
-  - Napełnianie: [textlink="Otwory wentylacyjne" link="AirVent"] zostaną włączone, a ich ciśnienie graniczne zostanie ustawione na wartość maksymalną, [color=orange][protodata="GasVentPump" comp="GasVentPump" member="MaxPressure"/] kPa[/color]. [textlink="Oczyszczacze powietrza" link="AirScrubber"] zostaną wyłączone.
+  - Napełnianie: [textlink="Otwory wentylacyjne" link="AirVent"] zostaną włączone, a ich ciśnienie graniczne zostanie ustawione na wartość maksymalną, [color=#ffb86b][protodata="GasVentPump" comp="GasVentPump" member="MaxPressure"/] kPa[/color]. [textlink="Oczyszczacze powietrza" link="AirScrubber"] zostaną wyłączone.
   - Tryb paniki: [textlink="Otwory wentylacyjne" link="AirVent"] zostaną wyłączone, a [textlink="oczyszczacze powietrza" link="AirScrubber"] przełączą się w tryb zasysania.
 
   Alarmy atmosferyczne automatycznie przełączają się między trybami "Filtrowanie" a "Filtrowanie (szerokie)" w zależności od aktualnego stanu monitorowanego obszaru.
-  - Jeśli obszar osiągnie stan [color=red]Niebezpieczeństwo[/color] lub wyższy, alarm atmosferyczne przełączy się w tryb "Filtrowanie (szerokie)".
-  - Jeśli obszar osiągnie stan [color=green]Normalny[/color] lub [color=yellow]Ostrzeżenie[/color], alarm atmosferyczny przełączy się w tryb Filtrowanie.
+  - Jeśli obszar osiągnie stan [color=#ff8a8a]Niebezpieczeństwo[/color] lub wyższy, alarm atmosferyczne przełączy się w tryb "Filtrowanie (szerokie)".
+  - Jeśli obszar osiągnie stan [color=#8ee99a]Normalny[/color] lub [color=#ffe566]Ostrzeżenie[/color], alarm atmosferyczny przełączy się w tryb Filtrowanie.
 
   Funkcję tę można wyłączyć, odznaczając pole "Tryb automatyczny" w środkowej części menu alarmu atmosferycznego.
 

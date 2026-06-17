@@ -9,9 +9,9 @@ SPDX-License-Identifier: MIT
 <Document>
   # Singularity / Tesla
 
-  Singularity / Tesla może dostarczać [color=#a4885c]nieskończoną moc[/color] przez całą zmianę, co czyni je cennym atutem stacji.
+  Singularity / Tesla może dostarczać [color=#e8c878]nieskończoną moc[/color] przez całą zmianę, co czyni je cennym atutem stacji.
 
-  Z równą łatwością może jednak [color=red]zniszczyć całą stację[/color], dlatego wymaga starannego przygotowania i monitorowania, aby zapobiec [bold]wypadkowi[/bold].
+  Z równą łatwością może jednak [color=#ff8a8a]zniszczyć całą stację[/color], dlatego wymaga starannego przygotowania i monitorowania, aby zapobiec [bold]wypadkowi[/bold].
 
   # Konfiguracja
   Oba generatory wymagają tych samych podstawowych kroków konfiguracyjnych, ale mają różne podsystemy i wymagania.
@@ -19,7 +19,7 @@ SPDX-License-Identifier: MIT
   ## Pole zabezpieczające
   Pole zabezpieczające to wielopłytkowe pole świetlne, które odpycha singularity i teslę, zapobiegając jej ucieczce.
 
-  Lasery emiterów i pola zabezpieczające mogą również powodować uszkodzenia i/lub wyrzucić cię w przestrzeń kosmiczną; [color=#a4885c]unikaj ich dotykania[/color], gdy są aktywne.
+  Lasery emiterów i pola zabezpieczające mogą również powodować uszkodzenia i/lub wyrzucić cię w przestrzeń kosmiczną; [color=#e8c878]unikaj ich dotykania[/color], gdy są aktywne.
 
   <Box>
     <GuideEntityEmbed Entity="Emitter"/>
@@ -36,7 +36,7 @@ SPDX-License-Identifier: MIT
 
   Oznacza to, że maksymalna długość pola zabezpieczającego wynosi 7 pól.
 
-  Generator pola zabezpieczającego można włączyć używając [color=yellow][bold][keybind="Use"][/bold][/color].
+  Generator pola zabezpieczającego można włączyć używając [color=#ffe566][bold][keybind="Use"][/bold][/color].
   Generatory pola zabezpieczającego nie będą działać, jeśli nie zostaną włączone, nawet po trafieniu emiterem. Pamiętaj, aby włączyć generator pola!
 
   Generator pola zabezpieczającego posiada wewnętrzny poziom energii, który uzupełnia się poprzez trafienie go emiterem. Gdy generator pola zabezpieczającego zgromadzi wystarczającą ilość energii, wygeneruje pole zabezpieczające.
@@ -62,7 +62,7 @@ SPDX-License-Identifier: MIT
 
   Emitery są podłączone do kabli średnionapięciowych i emitują promienie laserowe tak długo, jak długo są zasilane i włączone.
 
-  Zaleca się [color=#a4885c]zablokowanie emiterów[/color] za pomocą [color=yellow][bold][keybind="AltActivateItemInWorld"][/bold][/color], aby zapobiec sytuacji, w której sabotażyści mogliby uwolnić singularity lub teslę poprzez zwykłe wyłączenie pola.
+  Zaleca się [color=#e8c878]zablokowanie emiterów[/color] za pomocą [color=#ffe566][bold][keybind="AltActivateItemInWorld"][/bold][/color], aby zapobiec sytuacji, w której sabotażyści mogliby uwolnić singularity lub teslę poprzez zwykłe wyłączenie pola.
 
   ## Akcelerator cząstek
   Akcelerator cząstek (PA) to struktura składająca się z kilku bloków, która wystrzeliwuje przyspieszone cząstki ze swoich emiterów.
@@ -95,7 +95,7 @@ SPDX-License-Identifier: MIT
   </Box>
 
   Następnie przykręć panele za pomocą śrubokręta.
-  [color=#a4885c]Zeskanuj elementy[/color] za pomocą komputera sterującego akceleratorem cząstek, aby sprawdzić, czy działa (system akceleratora cząstek nie będzie działał, jeśli go nie zeskanujesz!).
+  [color=#e8c878]Zeskanuj elementy[/color] za pomocą komputera sterującego akceleratorem cząstek, aby sprawdzić, czy działa (system akceleratora cząstek nie będzie działał, jeśli go nie zeskanujesz!).
   Jeśli system wyświetli komunikat o niekompletności, sprawdź, czego brakuje.
 
   <Box>

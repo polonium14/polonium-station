@@ -13,7 +13,7 @@ SPDX-License-Identifier: MIT
     <GuideEntityEmbed Entity="GasPassiveGate"/>
   </Box>
 
-  Wyjście zaworu znajduje się po stronie [color=red]czerwonego[/color] koła.
+  Wyjście zaworu znajduje się po stronie [color=#ff8a8a]czerwonego[/color] koła.
   Po zbadaniu zaworu wyświetla się również aktualne natężenie przepływu w rurze.
 
   Zawór pasywny ma wiele praktycznych zastosowań, na przykład:

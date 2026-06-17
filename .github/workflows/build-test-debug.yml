@@ -21,7 +21,9 @@
 # SPDX-FileCopyrightText: 2025 pa.pecherskij <pa.pecherskij@interfax.ru>
 # SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2026 Maciej Walendziuk <ozzeusz@gmail.com>
 # SPDX-FileCopyrightText: 2026 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2026 nikitosych <174215049+nikitosych@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
@@ -35,23 +37,21 @@ on:
   pull_request:
     types: [ opened, reopened, synchronize, ready_for_review ]
     branches: [ master, staging, stable ]
+  workflow_dispatch: 
 
 jobs:
-  build:
+  build_github:
     if: github.actor != 'PJBot' && github.actor != 'Polonium-bot' && github.event.pull_request.draft == false
-    strategy:
-      matrix:
-        os: [ubuntu-22.04]
-
-    runs-on: ${{ matrix.os }}
-
+    runs-on: ubuntu-22.04
     steps:
     - name: Checkout Master
       uses: actions/checkout@v4.2.2
 
+    - name: Clean workspace
+      run: git clean -ffdx
+
     - name: Setup Submodule
-      run: |
-        git submodule update --init --recursive
+      run: git submodule update --init --recursive
 
     - name: Pull engine updates
       uses: space-wizards/submodule-dependency@v0.1.5
@@ -75,16 +75,54 @@ jobs:
     - name: Run Content.Tests
       run: dotnet test --no-build --configuration DebugOpt Content.Tests/Content.Tests.csproj -- NUnit.ConsoleOut=0
 
+  integration_tests_self_hosted:
+    needs: build_github
+    runs-on: self-hosted
+    container:
+      image: ubuntu-latest
+    steps:
+    - name: Checkout Master
+      uses: actions/checkout@v4.2.2
+
+    - name: Install git
+      run: apt-get update && apt-get install -y git
+
+    - name: Clean workspace
+      run: git clean -ffdx
+
+    - name: Setup Submodule
+      run: git submodule update --init --recursive
+
+    - name: Pull engine updates
+      uses: space-wizards/submodule-dependency@v0.1.5
+
+    - name: Update Engine Submodules
+      run: |
+        cd RobustToolbox/
+        git submodule update --init --recursive
+
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v4.1.0
+      with:
+        dotnet-version: 9.0.x
+
+    - name: Install dependencies
+      run: dotnet restore
+
+    - name: Build Project
+      run: dotnet build --configuration DebugOpt --no-restore /m
+
     - name: Run Content.IntegrationTests
       shell: pwsh
       run: |
         $env:DOTNET_gcServer=1
         $env:VSTEST_CONNECTION_TIMEOUT=600000
         dotnet test --no-build --configuration DebugOpt Content.IntegrationTests/Content.IntegrationTests.csproj -- NUnit.ConsoleOut=0 NUnit.MapWarningTo=Failed RunConfiguration.TestSessionTimeout=9000000
+
   ci-success:
-    name: Build & Test Debug
+    name: Success
     needs:
-      - build
+      - integration_tests_self_hosted
     runs-on: ubuntu-latest
     steps:
       - name: CI succeeded

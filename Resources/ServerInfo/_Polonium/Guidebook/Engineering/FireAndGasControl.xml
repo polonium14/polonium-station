@@ -30,10 +30,10 @@ SPDX-License-Identifier: MIT
 
   ## Podstawowe działanie
   Gdy nie są podłączone do [textlink="alarmy atmosferycznego" link="AirAlarms"] ani alarmu przeciwpożarowego, śluzy przeciwpożarowe działają w oparciu o wykrywane przez siebie warunki. Śluzy przeciwpożarowe opadną (zamkną się), jeśli:
-  - Różnica temperatur między dwiema stronami śluzy wynosi [color=orange][protodata="Firelock" comp="Firelock" member="TemperatureThreshold"/] K[/color] lub więcej.
-  - Różnica ciśnienia między dwiema stronami śluzy przeciwpożarowej wynosi [color=orange][protodata="Firelock" comp="Firelock" member="PressureThreshold"/] kPa[/color] lub więcej.
+  - Różnica temperatur między dwiema stronami śluzy wynosi [color=#ffb86b][protodata="Firelock" comp="Firelock" member="TemperatureThreshold"/] K[/color] lub więcej.
+  - Różnica ciśnienia między dwiema stronami śluzy przeciwpożarowej wynosi [color=#ffb86b][protodata="Firelock" comp="Firelock" member="PressureThreshold"/] kPa[/color] lub więcej.
 
-  Jeśli te warunki będą się utrzymywać, śluza przeciwpożarowa przejdzie w tryb blokady. Śluzy przeciwpożarowe w trybie blokady będą miały [color=red]czerwone[/color] światła i nie da się ich otworzyć ręcznie. Mogą je otworzyć wyłącznie osoby posiadające uprawnienia inżynieryjne lub łom.
+  Jeśli te warunki będą się utrzymywać, śluza przeciwpożarowa przejdzie w tryb blokady. Śluzy przeciwpożarowe w trybie blokady będą miały [color=#ff8a8a]czerwone[/color] światła i nie da się ich otworzyć ręcznie. Mogą je otworzyć wyłącznie osoby posiadające uprawnienia inżynieryjne lub łom.
 
   Śluz przeciwpożarowych w trybie blokady nie da się otworzyć za pomocą dostępu inżynieryjnego, jeśli nie są zasilane. Śluzę przeciwpożarową w trybie blokady, która nie jest zasilana, można otworzyć wyłącznie za pomocą łomu.
 
@@ -59,9 +59,9 @@ SPDX-License-Identifier: MIT
   ## Funkcjonalność z podłączonymi alarmami atmosferycznymi
   W przypadku podłączenia do alarmu atmosferycznego śluzy przeciwpożarowe opuszczą się również na polecenie podłączonego [textlink="alarmu atmosferycznego" link="AirAlarms"].
 
-  Śluzy przeciwpożarowe zostaną opuszczone, jeśli alarm atmosferyczny osiągnie stan [color=red]Niebezpieczeństwo[/color]. Śluzy pozostaną opuszczone do momentu, aż alarm atmosferyczny nie powróci do stanu [color=green]zielonego[/color].
+  Śluzy przeciwpożarowe zostaną opuszczone, jeśli alarm atmosferyczny osiągnie stan [color=#ff8a8a]Niebezpieczeństwo[/color]. Śluzy pozostaną opuszczone do momentu, aż alarm atmosferyczny nie powróci do stanu [color=#8ee99a]zielonego[/color].
 
-  Śluzy przeciwpożarowe znajdujące się w trybie blokady nie podniosą się, nawet jeśli alarm atmosferyczny powróci do stanu [color=green]zielonego[/color]. Nawet jeśli różnica ciśnień zostanie wyeliminowana, śluza przeciwpożarowa pozostanie opuszczona do momentu, aż alarm atmosferyczny ponownie wyśle sygnał o stanie zielonym.
+  Śluzy przeciwpożarowe znajdujące się w trybie blokady nie podniosą się, nawet jeśli alarm atmosferyczny powróci do stanu [color=#8ee99a]zielonego[/color]. Nawet jeśli różnica ciśnień zostanie wyeliminowana, śluza przeciwpożarowa pozostanie opuszczona do momentu, aż alarm atmosferyczny ponownie wyśle sygnał o stanie zielonym.
 
   ## Działanie w przypadku alarmu przeciwpożarowego
   Po podłączeniu do systemu alarmowego śluzy przeciwpożarowe zostaną opuszczone w przypadku uruchomienia alarmu przeciwpożarowego. Blokady pozostaną opuszczone do momentu zresetowania alarmu przeciwpożarowego.
@@ -73,11 +73,11 @@ SPDX-License-Identifier: MIT
     <GuideEntityEmbed Entity="FireAlarm"/>
   </Box>
 
-  Urządzenia wyposażone w czujniki można [textlink="połączyć" link="Networking"] z systemem przeciwpożarowym, który uruchomi alarm, jeśli czujnik wykryje przekroczenie progu temperatury [color=red]Niebezpieczeństwo[/color] zadanego przez jego czujniki.
+  Urządzenia wyposażone w czujniki można [textlink="połączyć" link="Networking"] z systemem przeciwpożarowym, który uruchomi alarm, jeśli czujnik wykryje przekroczenie progu temperatury [color=#ff8a8a]Niebezpieczeństwo[/color] zadanego przez jego czujniki.
 
-  W przypadku uruchomienia alarmu przeciwpożarowego wszystkie podłączone śluzy przeciwpożarowe przejdą w stan alarmowy [color=red]Niebezpieczeństwo[/color] i zostaną opuszczone.
+  W przypadku uruchomienia alarmu przeciwpożarowego wszystkie podłączone śluzy przeciwpożarowe przejdą w stan alarmowy [color=#ff8a8a]Niebezpieczeństwo[/color] i zostaną opuszczone.
 
-  Alarm wyłączy się automatycznie, gdy czujnik powróci do [color=green]normalnego[/color] progu temperatury.
+  Alarm wyłączy się automatycznie, gdy czujnik powróci do [color=#8ee99a]normalnego[/color] progu temperatury.
 
   Można ręcznie uruchomić i zresetować alarm przeciwpożarowy, używając go.
 

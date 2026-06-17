@@ -16,7 +16,7 @@ SPDX-License-Identifier: MIT
 
   Wtryskiwacz powietrza nie wymaga [textlink="zasilania" link="Power"] do działania.
 
-  Wtryskiwacz powietrza będzie wtryskiwał gazy do otaczającej go atmosfery, dopóki ciśnienie w atmosferze nie osiągnie [color=orange][protodata="GasOutletInjector" comp="GasOutletInjector" member="MaxPressure"/] kPa[/color].
+  Wtryskiwacz powietrza będzie wtryskiwał gazy do otaczającej go atmosfery, dopóki ciśnienie w atmosferze nie osiągnie [color=#ffb86b][protodata="GasOutletInjector" comp="GasOutletInjector" member="MaxPressure"/] kPa[/color].
 
   Prędkość wtryskiwacza jest proporcjonalna do ilości gazu w wtryskiwaczu.
 </Document>

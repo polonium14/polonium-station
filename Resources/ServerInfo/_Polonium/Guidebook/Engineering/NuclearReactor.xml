@@ -108,7 +108,7 @@
 
 	The [bold]Temperature Gauge[/bold] shows the current temperature of the Reactor, in a range between 0 and 2000 kelvin.
 
-	If the Reactor ever reaches 2000 kelvin, it will [color=red]meltdown[/color].
+	If the Reactor ever reaches 2000 kelvin, it will [color=#ff8a8a]meltdown[/color].
 
 	The [bold]Radiation Gauge[/bold] shows the current radiation being emitted by the Reactor, in a range between 0 and 50 rads.
 
@@ -128,7 +128,7 @@
 	</Box>
 	[color=#ff3300][bold]Plasma[/bold][/color] has a reactive effect, creating more neutrons and decaying into [color=#13ff4b][bold]Tritium[/bold][/color].
 
-	If there is enough plasma within the Reactor, it may end up going into a runaway reaction and [color=red]melting down[/color].
+	If there is enough plasma within the Reactor, it may end up going into a runaway reaction and [color=#ff8a8a]melting down[/color].
 
 	<Box>
 		<GuideEntityEmbed Entity="CarbonDioxideCanister" Caption=""/>
@@ -141,13 +141,13 @@
 		<GuideEntityEmbed Entity="TritiumCanister" Caption=""/>
 	</Box>
 	[color=#13ff4b][bold]Tritium[/bold][/color] transmutes within a Reactor, randomly decaying into a wide variety of gasses:
-	- [color=#2887e8][bold]Oxygen[/bold][/color]
-	- [color=#FF0000][bold]Nitrogen[/bold][/color]
+	- [color=#8ec8ff][bold]Oxygen[/bold][/color]
+	- [color=#ff8a8a][bold]Nitrogen[/bold][/color]
 	- [color=#56941e][bold]Ammonia[/bold][/color]
-	- [color=#8f00ff][bold]Nitrous Oxide[/bold][/color]
-	- [color=#3a758c][bold]Frezon[/bold][/color]
+	- [color=#d8a0ff][bold]Nitrous Oxide[/bold][/color]
+	- [color=#7ec8e8][bold]Frezon[/bold][/color]
 
-	In the presence of [color=#2887e8][bold]Oxygen[/bold][/color] and at the temperatures of the Reactor, [color=#13ff4b][bold]Tritium[/bold][/color] will begin to burn, [color=red]creating large amounts of heat[/color].
+	In the presence of [color=#8ec8ff][bold]Oxygen[/bold][/color] and at the temperatures of the Reactor, [color=#13ff4b][bold]Tritium[/bold][/color] will begin to burn, [color=#ff8a8a]creating large amounts of heat[/color].
 
 	## Reactor Radiation
 	<Box>
@@ -206,9 +206,9 @@
 
 	If the Turbine RPM gets too high, it will start to take damage.
 
-	Prolonged time spent at overspeed or excessive overspeed will cause the Turbine to [color=red]tear itself apart[/color].
+	Prolonged time spent at overspeed or excessive overspeed will cause the Turbine to [color=#ff8a8a]tear itself apart[/color].
 
-	Damage to the Turbine can be repaired with a [color=yellow]welder[/color], though it will likely take multiple attempts to fully repair it.
+	Damage to the Turbine can be repaired with a [color=#ffe566]welder[/color], though it will likely take multiple attempts to fully repair it.
 
 	### Overtemp
 	The gas going into the Turbine is too hot.

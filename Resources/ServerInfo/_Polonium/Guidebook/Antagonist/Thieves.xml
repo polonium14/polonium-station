@@ -10,84 +10,82 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-  # Thieves
+  # Złodzieje
 
   <Box>
-    [color=#999999][italic]"Yoink! I'll be taking that! And that! Ooh, don't mind if I do!"[/italic][/color]
+    [color=#999999][italic]"Wezmę sobie to, to i to! i nikt mnie nie powstrzyma!"[/italic][/color]
   </Box>
   <Box>
     <GuideEntityEmbed Entity="ClothingNeckCloakVoid" Caption=""/>
   </Box>
 
-  Thieves are petty yet crafty [color=green]criminals[/color] who can't keep their hands to themselves. You were forcefully given a [bold]pacifism implant[/bold] after your last arrest, but you won't let that stop you from trying to add to your collection.
+  Złodzieje są chciwymi [color=green]kryminalistami[/color] którzy nie są wstanie się powstrzymać od wzięcia tego co cudze. Po twoim ostatnim aresztowaniu przymusowo zaimplantowano ci [bold]implant pacyfizmu[/bold], ale to cię nie powstrzywa od powiększenia swojej kolekcji skradzionych dóbr.
+  
+  Nie powinieneś pod żadnym pozorem obchodzić zamierzonych limitacji nałożonych ci poprzez [bold]implant pacyfizmu[/bold] powodująć krzywdę załogantów pośrednio oraz bezpośrednio. Przykłady skrzywdzenia kogoś pośrednio to: Wyłączenie osobie butli tlenowej aby się udusiła, wstrzykiwanie komuś toksycznych substancji, detonując ładunki wybuchowe w obecności innych osób oraz narażanie osób na promieniowanie.
+  
+  ## Sztuka Fachu
+  W porównaniu do innych antagonistów, [bold]Musisz się trzymać zdala od kłopotów[/bold] z powodu twojego [bold]implantu pacyfizmu[/bold].
+  Jeśli [color=#cb0000]Ochrona[/color] wpadnie na twój trop, możesz tylko uciekać, i przez to że działasz samemu, nie możesz liczyć na to że ktoś cie wyciągnie z tarapatów.
 
-  You should not, under any circumstances, attempt to intentionally bypass the intended limitations of the pacifist implant via causing direct or indirect harm to other crewmembers. Examples of indirect harm include but are not limited to: removing internals from someone in an attempt to asphyxiate them, injecting someone with harmful chemicals, triggering explosives in someone's presence, or exposing someone to radiation.
+  Jednak pomimo przeciwności losu, nakradniesz wszystkiego czego sobie pragniesz używająć swojej determinacji, zręcznych rąk, kilku gadżetów oraz twoich [color=cyan]Rękawic Złodzieja[/color].
 
-  ## Art of the Steal
-  Unlike other antagonists, [bold]staying out of trouble is almost a requirement for you[/bold] because of your implant.
-  You can only run if [color=#cb0000]Security[/color] picks a fight with you, and because you work alone you don't have any friends to pull you out of danger.
+  Para rękawic którą posiadasz dają ci ogromne możliwości: [bold]Podkradanie przedmiotów tak szybko że nikt się nie skapnie.[/bold] Z małą wprawą będziesz w stanie ukraść im portfel podczas prowadzenia rozmowy.
 
-  But against all odds, you'll successfully swipe what you want using determination, sleight of hand, a few tools and your [color=cyan]thieving gloves.[/color]
-
-  The pair of gloves you have give you a major advantage: [bold]the ability to take things off of people without them even noticing.[/bold] With a little practice, you can steal their wallet and keep up a conversation at the same time.
-
-  They're also made of the highest quality [bold]holographic chameleon fibers[/bold] you could steal, but while they can take the appearance of insulated gloves you'll still need to find a real pair to keep your hands from burning.
-
-  ## Your Skills
-
-  You've stolen a thing or two in various past lives, and you've gotten good at it.
-
-  When chosen as a thief, you gain the ability to pickpocket people [bold]without[/bold] needing any fancy tools. Careful not to get caught though, as a Mind Shield will wipe any memory of you learning this extremely useful skill.
-
+  Są one także wykonane z najwyższej jakości [bold]holograficznych włókien kameleonowych[/bold], pozwalając im na imitację wyglądu innych rękawiczek. Jednak pomimo że mogą wyglądać jak rękawice izolacyjne, to nie chronią przed prądem więc musisz zdobyć prawdziwą parę aby nie zostać porażonym.
   <Box>
-    <GuideEntityEmbed Entity="ClothingHandsChameleonThief" Caption="your thieving gloves"/>
+    <GuideEntityEmbed Entity="ThievingGloves" Caption="Twoje rękawiczki"/>
   </Box>
+  ## Twoje Umiejętności
 
-  ## Tools of the Trade
-  You've got two more aces up your stolen sleeves: your [color=cyan]beacon[/color] and your [color=cyan]satchel.[/color]
+  Ukradłeś jedną czy dwie rzeczy w twoich poprzednich wcieleniach, i stałeś się w tym bardzo dobry.
 
-  Your [color=cyan]beacon[/color] provides safe passage home for trinkets that may not be easy to carry with you on the evac shuttle. Simply find a secluded part of the station to unfold the beacon, then set its coordinates to your hideout.
-  Any shinies near it will be [bold]teleported to your vault when the shift ends,[/bold] fulfilling your objectives.
+  Kiedy zostajesz złodziejem, dostajesz umiejętność skrytego zdejmowania przedmiotów nawet bez rękawic złodziejskich, oznacza to, że inni ludzie nie widzą twojego paska ładowania które pojawia się nad twoją głową kiedy kradniesz im przedmiot, działa to także [bold]wkładając im przedmioty do ekwipunku[/bold], użyj tego mądrze aby wrobić klauna.
+  Posiadasz możliwość zmiany trybu kradzieży żeby było to widoczne i abyś mógł zgrywać niewinnego. 
+  
+  Musisz jednak uważać ponieważ jeśli zostaniesz schwytany i zaimplantowany [color=cyan]implantem Mindshield[/color], stracisz tę niesamowicie przydatną umiejętność.
+  
 
-  However, this will instantly out you if found and make it extremely easy for people to reclaim their "missing" possessions. [bold]Make sure to hide it well![/bold]
+  ## Narzędzia Fachu
+  Masz jeszcze kilka innych skradzionych asów w twoim rękawie znajdujących się w twojej [color=cyan]złodziejskiej torbie[/color]
 
-  <Box>
-    <GuideEntityEmbed Entity="ThiefBeacon"/>
-  </Box>
-
-  Your [color=cyan]satchel[/color] contains... well, whatever you remembered to pack. [bold]You can select two pre-made kits[/bold] to help you complete grander heists.
+  Twoja [color=cyan]złodziejska torba[/color] zawiera... cokolwiek czego nie zapomniałeś spakować. [bold]Możesz wybrać dwa gotowe zestawy[/bold] które pomogą ci w większych napadach.
 
   <Box>
     <GuideEntityEmbed Entity="SatchelThief"/>
   </Box>
   <Box>
-    <GuideEntityEmbed Entity="StorageImplanter" Caption="Anatomy"/>
-    <GuideEntityEmbed Entity="C4" Caption="Breacher"/>
-    <GuideEntityEmbed Entity="ChameleonProjector" Caption="Chameleon"/>
-    <GuideEntityEmbed Entity="EncryptionKeyStationMaster" Caption="Communicator"/>
+    <GuideEntityEmbed Entity="StorageImplanter" Caption="Anatomiczny"/>
+    <GuideEntityEmbed Entity="C4" Caption="Włamywacz"/>
+    <GuideEntityEmbed Entity="ChameleonProjector" Caption="Kameleon"/>
+    <GuideEntityEmbed Entity="EncryptionKeyStationMaster" Caption="Łącznik"/>
   </Box>
   <Box>
-    <GuideEntityEmbed Entity="NitrousOxideTank" Caption="Sleeper"/>
-    <GuideEntityEmbed Entity="Emag" Caption="Smuggler"/>
-    <GuideEntityEmbed Entity="Telecrystal" Caption="Syndie"/>
+    <GuideEntityEmbed Entity="NitrousOxideTank" Caption="Śpioch"/>
+    <GuideEntityEmbed Entity="Fulton" Caption="Przemytnik"/>
+    <GuideEntityEmbed Entity="Telecrystal" Caption="Syndykat"/>
   </Box>
 
-  ## Centerpiece of the Collection
-  Your kleptomania will take you places. One day, you'll feel like stealing a few figurines. Another day, you'll feel like stealing an industrial machine.
+  ## Twoja Kolekcja
+  Twoja kleptomania zabierze cię na różne przygody, jednego dnia będziesz chciał ukraść figurki, drugiego dnia buty a następnego całą maszynę industrialną.
 
-  No matter. They'll all be a part of your collection within a matter of time.
+  Nie ważne na co się zdecydujesz, to tylko kwestia czasu zanim wszystko trafi do twojej kolekcji.
+  
+  Znajdź odpowiednie miejsce żeby ukryć swoje łupy albo stwórz kryjówkę, ponadto twoja [color=cyan]torba złodziejska[/color] po wybraniu zestawów może zostać przykręcona do poszycia i schowana pod kafelkami, tworząc szybkie i bezpieczne miejsce do ukrywania łupu.
+<Box>
+    <GuideEntityEmbed Entity="Wrench"/>
+	<GuideEntityEmbed Entity="ClothingBackpackSatchelSmugglerUnanchored"/>
+  </Box>
+  
+  Pamiętaj aby przed końcem rundy pochwalić się swoimi łupami opisując swoją przygodę w karcie postaci!
 
-  You can steal items by [bold]having them on your person[/bold] when you get to CentComm. Failing this, you can steal larger items by [bold]leaving them by your beacon.[/bold]
-
-  Some of the more [italic]animate[/italic] objectives may not cooperate with you. Make sure they're alive and with you or your beacon when the shift ends.
-
-  Things that you may desire include but are not limited to:
+  Kilka rzeczy które możesz chcieć ukraść:
 
   <Box>
-   <GuideEntityEmbed Entity="ToyFigurineGreytider" Caption="Figurines"/>
-   <GuideEntityEmbed Entity="PassengerIDCard" Caption="ID cards"/>
-   <GuideEntityEmbed Entity="ChemDispenser" Caption="Structures"/>
-   <GuideEntityEmbed Entity="MobCorgiIan" Caption="Animals/Pets"/>
+   <GuideEntityEmbed Entity="ToyFigurineGreytider" Caption="Figurki"/>
+   <GuideEntityEmbed Entity="PassengerIDCard" Caption="Karty ID"/>
+   <GuideEntityEmbed Entity="ChemDispenser" Caption="Maszyny i struktury"/>
+   <GuideEntityEmbed Entity="MobCorgiIan" Caption="Zwierzaki/Pupile"/>
+   <GuideEntityEmbed Entity="ClothingNeckCloakCapFormal" Caption="Ubrania"/>
   </Box>
 
 </Document>

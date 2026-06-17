@@ -11,7 +11,7 @@ SPDX-License-Identifier: MIT
 # Mowa i kanały tekstowe
 Rozmowa to kluczowa część Space Station 14. Możesz nacisnąć [keybind="FocusChatInputWindow"/], aby przejść do pola tekstowego.
 
-Słowo obok pola tekstowego to [color=#a4885c]kanał tekstowy[/color], na który zaraz wyślesz wiadomość, czyli sposób, w jaki wypowiesz to, co napisałeś.
+Słowo obok pola tekstowego to [color=#e8c878]kanał tekstowy[/color], na który zaraz wyślesz wiadomość, czyli sposób, w jaki wypowiesz to, co napisałeś.
 
 Lokalny to zwykła mowa o normalnej głośności.
 
@@ -21,27 +21,27 @@ Szept jest słyszalny tylko przez osoby znajdujące się blisko ciebie. Automaty
 
 Emoty to gesty, które wykonujesz. Mogą je odebrać wszyscy, którzy nie są oślepieni. Często zobaczysz mimów wykonujących wiele emotów.
 
-Wiadomości szeptane można wysłać rozpoczynając wiadomość od [color=#a4885c][keybind="FocusWhisperChatWindow"/][/color], a emoty wysyłasz zaczynając wiadomość od ([color=#a4885c]@[/color]) lub ([color=#a4885c]*[/color]).
+Wiadomości szeptane można wysłać rozpoczynając wiadomość od [color=#e8c878][keybind="FocusWhisperChatWindow"/][/color], a emoty wysyłasz zaczynając wiadomość od ([color=#e8c878]@[/color]) lub ([color=#e8c878]*[/color]).
 Możesz także przełączać się między wszystkimi tymi kanałami tekstowymi naciskając [keybind="CycleChatChannelForward"/].
 
 Ludzie mogą nie zrozumieć wszystkiego, co mówisz, jeśli stoisz zbyt daleko od nich. Jest to szczególnie ważne podczas szeptania.
 
 ## Radio
 
-Twoje radio pozwala komunikować się z [color=#a4885c]twoim działem[/color]. Aby komunikować się z całą stacją, musisz użyć interkomów rozmieszczonych na stacji, aby nadać wiadomość. Możesz słuchać kanału Common, ale nie możesz mówić na nim przez zestaw słuchawkowy.
+Twoje radio pozwala komunikować się z [color=#e8c878]twoim działem[/color]. Aby komunikować się z całą stacją, musisz użyć interkomów rozmieszczonych na stacji, aby nadać wiadomość. Możesz słuchać kanału Common, ale nie możesz mówić na nim przez zestaw słuchawkowy.
 
 <Box>
   <GuideEntityEmbed Entity="ClothingHeadsetGrey"/>
   <GuideEntityEmbed Entity="Intercom"/>
 </Box>
 
-Aby wysłać wiadomość [color=#a4885c]do całej stacji[/color] przez radio, użyj interkomu. Kliknij na niego, wybierz kanał, na którym chcesz rozmawiać, i włącz mikrofon, aby rozpocząć transmisję przez kanał [color=#32cd32]Common[/color]. Możesz także włączyć głośnik, aby słuchać [color=#32cd32]Common[/color] przez interkom. Interkom przekazuje wszystko, co powiesz w określonym zasięgu, a szept wymaga, byś był bliżej interkomu, by został odebrany.
+Aby wysłać wiadomość [color=#e8c878]do całej stacji[/color] przez radio, użyj interkomu. Kliknij na niego, wybierz kanał, na którym chcesz rozmawiać, i włącz mikrofon, aby rozpocząć transmisję przez kanał [color=#8ee99a]Common[/color]. Możesz także włączyć głośnik, aby słuchać [color=#8ee99a]Common[/color] przez interkom. Interkom przekazuje wszystko, co powiesz w określonym zasięgu, a szept wymaga, byś był bliżej interkomu, by został odebrany.
 
 Interkomy w pobliżu niektórych działów mają także ich kanały, których możesz użyć do komunikacji w tym dziale.
 
 ## Radio działowe
 
-Możesz wysyłać wiadomości przez kanały radiowe swojego działu używając [color=#32cd32]dwukropka (:)[/color] i litery działu, jeśli masz zestaw słuchawkowy z odpowiednim kluczem szyfrującym.
+Możesz wysyłać wiadomości przez kanały radiowe swojego działu używając [color=#8ee99a]dwukropka (:)[/color] i litery działu, jeśli masz zestaw słuchawkowy z odpowiednim kluczem szyfrującym.
 
 Zbadaj swój zestaw słuchawkowy, aby zobaczyć dostępne kanały działowe.
 
@@ -49,22 +49,22 @@ Zbadaj swój zestaw słuchawkowy, aby zobaczyć dostępne kanały działowe.
   <GuideEntityEmbed Entity="ClothingHeadsetEngineering"/>
 </Box>
 
-Zbadanie niezmodyfikowanego zestawu inżynierskiego pokaże prefiksy dla kanałów [color=#32cd32]Common[/color] i [color=#f37746]Engineering[/color].
+Zbadanie niezmodyfikowanego zestawu inżynierskiego pokaże prefiksy dla kanałów [color=#8ee99a]Common[/color] i [color=#ff9f7a]Engineering[/color].
 
-Możesz także użyć [color=#a4885c]:h[/color]. Ten skrót automatycznie wybierze domyślny kanał twojego działu.
-Na przykład, jeśli jesteś inżynierem stacji, [color=#a4885c]:h[/color] domyślnie wybierze [color=#f37746]:e[/color].
+Możesz także użyć [color=#e8c878]:h[/color]. Ten skrót automatycznie wybierze domyślny kanał twojego działu.
+Na przykład, jeśli jesteś inżynierem stacji, [color=#e8c878]:h[/color] domyślnie wybierze [color=#ff9f7a]:e[/color].
 
 ## Klucze szyfrujące
-[color=#a4885c]Klucze szyfrujące[/color] dają dostęp do odpowiednich kanałów.
+[color=#e8c878]Klucze szyfrujące[/color] dają dostęp do odpowiednich kanałów.
 
-Zbadanie naszego wcześniejszego zestawu inżynierskiego pokazuje [color=#32cd32]Common[/color] i [color=#f37746]Engineering[/color], ponieważ zestaw inżyniera zaczyna się z tymi [color=#a4885c]kluczami szyfrującymi[/color].
+Zbadanie naszego wcześniejszego zestawu inżynierskiego pokazuje [color=#8ee99a]Common[/color] i [color=#ff9f7a]Engineering[/color], ponieważ zestaw inżyniera zaczyna się z tymi [color=#e8c878]kluczami szyfrującymi[/color].
 
 <Box>
   <GuideEntityEmbed Entity="EncryptionKeyCommon"/>
   <GuideEntityEmbed Entity="EncryptionKeyEngineering"/>
 </Box>
 
-Możesz wyjąć klucze szyfrujące używając [color=#a4885c]śrubokręta[/color] na zestawie słuchawkowym. Nowe klucze wkłada się do zestawu klikając na niego, trzymając klucz w ręce.
+Możesz wyjąć klucze szyfrujące używając [color=#e8c878]śrubokręta[/color] na zestawie słuchawkowym. Nowe klucze wkłada się do zestawu klikając na niego, trzymając klucz w ręce.
 
 Wszyscy członkowie dowództwa mają dodatkowe klucze szyfrujące, ale możesz też poprosić o taki w biurze HoP-a podczas zmiany pracy.
 

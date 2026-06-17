@@ -19,7 +19,7 @@ SPDX-License-Identifier: MIT
 
   Przenośny oczyszczacz automatycznie rozpoczyna usuwanie wszystkich gazów niezdatnych do oddychania z pomieszczenia, gdy zostanie przykręcony kluczem do podłogi.
 
-  Przestanie oczyszczać, gdy zostanie odkręcony od podłogi lub gdy jego zbiornik wewnętrzny będzie pełny. Oczyszczacz ma pojemność wewnętrzną [color=orange][protodata="PortableScrubber" comp="PortableScrubber" member="Volume"/] litrów[/color].
+  Przestanie oczyszczać, gdy zostanie odkręcony od podłogi lub gdy jego zbiornik wewnętrzny będzie pełny. Oczyszczacz ma pojemność wewnętrzną [color=#ffb86b][protodata="PortableScrubber" comp="PortableScrubber" member="Volume"/] litrów[/color].
 
   ## Opróżnianie i przechowywanie odpadów
   Jego zbiornik wewnętrzny można opróżnić, przykręcając do[textlink="portu gazowego" link="GasCanisters"].

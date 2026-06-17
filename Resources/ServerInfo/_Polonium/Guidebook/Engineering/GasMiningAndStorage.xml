@@ -21,7 +21,7 @@ SPDX-License-Identifier: MIT
 
   Koparki gazu nieustannie wytwarzają gaz o temperaturze pokojowej i wypuszczają go do atmosfery. Do działania nie potrzebują zasilania i nie przestają pracować, dopóki nie osiągną określonego [bold]ciśnienia granicznego[/bold].
 
-  Więcej informacji o koparkach gazu można uzyskać, badając je za pomocą [color=yellow][bold][keybind="ExamineEntity"][/bold][/color].
+  Więcej informacji o koparkach gazu można uzyskać, badając je za pomocą [color=#ffe566][bold][keybind="ExamineEntity"][/bold][/color].
   Spróbuj zbadać koparki gazu przedstawione powyżej.
 
   Koparki gazu dzielą się na różne klasy, przy czym większe modele mają wyższy próg ciśnienia odcięcia niż mniejsze.
@@ -60,7 +60,7 @@ SPDX-License-Identifier: MIT
   </Box>
 
   <Box>
-    [color=#999999][italic]Przykład małego zbiornika na gaz[italic][/color]
+    [color=#c8c8c8][italic]Przykład małego zbiornika na gaz[italic][/color]
   </Box>
 
   Inżynierowie atmosferyczni mogą wprowadzać i usuwać gazy ze zbiorników magazynowych na różne sposoby.

@@ -23,7 +23,7 @@ SPDX-License-Identifier: MIT
 
   ## Claws
 
-  Rodentia have dull claws, which do a mixture of [color=orange]Blunt[/color] and [color=orange]Slashing[/color] damage.
+  Rodentia have dull claws, which do a mixture of [color=#ffb86b]Blunt[/color] and [color=#ffb86b]Slashing[/color] damage.
 
   ## Sticky Fingers
 
@@ -37,8 +37,8 @@ SPDX-License-Identifier: MIT
 
   ## Damage
 
-  Due to being smaller and more fragile than other species, Rodentia take 30% more [color=orange]Blunt[/color] damage, and
-  15% more [color=orange]Slashing[/color] and [color=orange]Piercing[/color] damage.
+  Due to being smaller and more fragile than other species, Rodentia take 30% more [color=#ffb86b]Blunt[/color] damage, and
+  15% more [color=#ffb86b]Slashing[/color] and [color=#ffb86b]Piercing[/color] damage.
 
   ## Rodentia Naming Conventions
 
