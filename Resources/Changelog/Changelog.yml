@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: themias
-  changes:
-  - message: The experimental welding tool now requires only minimal eye protection
-      (e.g. sunglasses)
-    type: Tweak
-  id: 7948
-  time: '2025-02-13T19:26:01.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34792
 - author: Winkarst-cpu
   changes:
   - message: Thrusters now deal heat damage.
@@ -4199,3 +4191,12 @@
   id: 9255
   time: '2026-06-17T15:50:11.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/681
+- author: Zintex
+  changes:
+  - message: "Terra: wi\u0119cej kamer"
+    type: Add
+  - message: 'Terra: dodano SI stacji'
+    type: Add
+  id: 9256
+  time: '2026-06-18T20:40:23.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/695
