@@ -6,32 +6,32 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-  # The Wizard
+  # Czarodziej
 
   <Box>
-    [color=#457573][italic]IT'S WIZARD TIME MOTHERF-...[italic][/color]
+    [color=#457573][italic]CZAS NA CZARODZIEJA, SKUR...[italic][/color]
   </Box>
   <Box>
     <GuideEntityEmbed Entity="ToyFigurineWizard" Caption=""/>
   </Box>
-  Wizards are a force of chaos and unpredictability. You never know what one is going to do next.
-  Generally sent by the [color=#40E0D0]Space Wizards Federation[/color] or some schmuck turned into one by rolling a nat 20 on a cursed die.
-  And since a Wizard is highly unpredictable, one may show up when you least expect it!
+  Czarodzieje to uosobienie chaosu i nieprzewidywalności. Nigdy nie wiadomo, co który z nich zrobi za chwilę.
+  Zazwyczaj są wysyłani przez [color=#40E0D0]Federację Kosmicznych Czarodziejów[/color] albo to po prostu jakiś frajer, który stał się czarodziejem po wyrzuceniu naturalnej dwudziestki na przeklętej kostce.
+  A ponieważ czarodziej jest niezwykle nieprzewidywalny, może się pojawić wtedy, kiedy najmniej się tego spodziewasz!
 
-  ## The Grimoire
+  ## Księga Czarodzieja
   <Box>
-    <GuideEntityEmbed Entity="WizardsGrimoire" Caption="Wizards Grimoire"/>
+    <GuideEntityEmbed Entity="WizardsGrimoire" Caption="Księga Czarodzieja"/>
   </Box>
 
-  [bold]By wizard law of eld your Grimoire is bound to you.[/bold] This means you cannot share your Grimoire with anyone else. The spells and equipment inside are for you and you alone.
-  The Wizard's Grimoire is used to get all sorts of magical spells, equipment, and creatures. What's available to you is [italic]extremely powerful[/italic] so you only have 10 [color=#FF0000]W[/color][color=#FFA500]i[/color][color=#FFFF00]z[/color][color=#00FF00]€[/color][color=#0000FF]o[/color][color=#4B0082]i[/color][color=#8F00FF]n[/color]™ to spend on them.
-  Your only limit, other than the price, is your creativity. Try to find some combinations!
+  [bold]Zgodnie z pradawnym prawem czarodziejów twoja księga jest z tobą nierozerwalnie związana. [/bold] Oznacza to, że nie możesz dzielić się nią z nikim innym. Zaklęcia i wyposażenie w niej zawarte są przeznaczone wyłącznie dla ciebie.
+  Księga czarodzieja służy do uzyskiwania wszelkiego rodzaju zaklęć, wyposażenia i stworzeń. To, co jest dla ciebie dostępne, jest [italic]niezwykle potężne[/italic], więc masz tylko 10 [color=#ff8a8a]W[/color][color=#FFA500]i[/color][color=#FFFF00]z[/color] [color=#00FF00]€[/color][color=#8ec8ff]o[/color][color=#c8a0ff]i[/color][color=#d8a0ff]n[/color]™ do wydania na nie.
+  Jedynym ograniczeniem, poza ceną, jest twoja kreatywność. Spróbuj znaleźć różne kombinacje!
 
   <Box>
-    <GuideEntityEmbed Entity="PonderingOrbWizard" Caption="The Pondering Orb"/>
+    <GuideEntityEmbed Entity="PonderingOrbWizard" Caption="Kula Kontemplacji"/>
   </Box>
 
-  If you ever find yourself wanting to ponder, look no further! The [bold]Pondering Orb[/bold] allows the Wizard to tap into the Station's camera network to spy on others unsuspectingly.
-  Could be useful if you're trying to plan something out or stay one step ahead of [color=red]Security[/color].
+  Jeśli kiedykolwiek zechcesz się zamyślić, mamy coś, czego szukasz! [bold]Kula Kontemplacji[/bold] pozwala czarodziejowi podłączyć się do sieci kamer stacji, by podglądać innych, którzy niczego nie podejrzewają.
+  Może się to przydać, jeśli planujesz coś lub chcesz być o krok przed [color=#ff8a8a]ochroną[/color].
 
 </Document>

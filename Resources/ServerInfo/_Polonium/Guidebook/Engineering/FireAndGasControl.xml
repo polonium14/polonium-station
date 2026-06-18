@@ -7,9 +7,9 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-  # Fire and Gas Control
-  Unfortunately, [textlink="fires" link="Fires"], [textlink="spacing" link="Spacing"], and other [textlink="atmospheric upsets" link="AtmosphericUpsets"] are a common occurrence on the station.
-  These upsets can quickly spread throughout the station and make the atmosphere uninhabitable for the crew.
+  # Kontrola pożarów i gazów
+  Niestety, [textlink="pożary" link="Fires"], [textlink="uszkodzenia poszycia kadłuba" link="Spacing"] i inne [textlink="zakłócenia atmosferyczne" link="AtmosphericUpsets"] są powszechnym zjawiskiem na stacji.
+  Zakłócenia te mogą szybko rozprzestrzeniać się po całej stacji i sprawiać, że atmosfera staje się niezdatna do życia dla załogi.
 
   <Box>
     <GuideEntityEmbed Entity="Firelock"/>
@@ -18,33 +18,33 @@ SPDX-License-Identifier: MIT
     <GuideEntityEmbed Entity="FireAlarm"/>
   </Box>
 
-  To combat this, stations have a variety of devices to help prevent these upsets from spreading.
+  Aby zwalczać to zjawiska, stacje dysponują różnorodnymi urządzeniami, które pomagają zapobiegać rozprzestrzenianiu się tych zaburzeń.
 
-  ## Firelocks
-  Firelocks are a simple and effective way to prevent fires from spreading throughout the station.
+  ## Śluzy przeciwpożarowe
+  Śluzy przeciwpożarowe to prosty i skuteczny sposób zapobiegania rozprzestrzenianiu się ognia na terenie stacji.
 
-  Based on conditions sensed by the firelock, or through instruction from a connected [textlink="air" link="AirAlarms"] or fire alarm, they can close off sections of the station to prevent the spread of dangerous conditions.
+  W zależności od warunków wykrytych przez czujnik przeciwpożarowy lub na podstawie sygnału z podłączonego [textlink="alarmu atmosferycznego" link="AirAlarms"] mogą one odciąć poszczególne sekcje stacji, aby zapobiec rozprzestrzenianiu się niebezpiecznych warunków.
 
-  ## Station Sectioning
-  Firelocks are intentionally placed in key areas to divide the station into sections. Open spaces like hallways or promenades are divided into smaller sections. This prevents the spread of dangerous conditions to the entire station through connected rooms, hallways, and other open spaces.
+  ## Podział stacji na sekcje
+  W kluczowych miejscach celowo umieszczono śluzy przeciwpożarowe, w celu podzielenia stacji na sekcje. Otwarte przestrzenie, takie jak korytarze czy przejścia, są podzielone na mniejsze sekcje. Zapobiega to rozprzestrzenianiu się zagrożenia na całą stację poprzez połączone pomieszczenia, korytarze i inne otwarte przestrzenie.
 
-  ## Basic Operation
-  When not connected to an [textlink="air alarm" link="AirAlarms"] or fire alarm, firelocks will function based on the conditions they sense. Firelocks will drop (close) if:
-  - The temperature between the two sides of the firelock is different by [color=orange][protodata="Firelock" comp="Firelock" member="TemperatureThreshold"/] K[/color] or more.
-  - The pressure between the two sides of the firelock is different by [color=orange][protodata="Firelock" comp="Firelock" member="PressureThreshold"/] kPa[/color] or more.
+  ## Podstawowe działanie
+  Gdy nie są podłączone do [textlink="alarmy atmosferycznego" link="AirAlarms"] ani alarmu przeciwpożarowego, śluzy przeciwpożarowe działają w oparciu o wykrywane przez siebie warunki. Śluzy przeciwpożarowe opadną (zamkną się), jeśli:
+  - Różnica temperatur między dwiema stronami śluzy wynosi [color=#ffb86b][protodata="Firelock" comp="Firelock" member="TemperatureThreshold"/] K[/color] lub więcej.
+  - Różnica ciśnienia między dwiema stronami śluzy przeciwpożarowej wynosi [color=#ffb86b][protodata="Firelock" comp="Firelock" member="PressureThreshold"/] kPa[/color] lub więcej.
 
-  If these conditions continue, the firelock will enter lockout mode. Firelocks in lockout mode will have [color=red]red[/color] lights and cannot be pried open by hand. They can only be opened by people with Engineering access or by using a crowbar.
+  Jeśli te warunki będą się utrzymywać, śluza przeciwpożarowa przejdzie w tryb blokady. Śluzy przeciwpożarowe w trybie blokady będą miały [color=#ff8a8a]czerwone[/color] światła i nie da się ich otworzyć ręcznie. Mogą je otworzyć wyłącznie osoby posiadające uprawnienia inżynieryjne lub łom.
 
-  Firelocks in lockout mode cannot be opened by using Engineering access if they are unpowered. Only a crowbar can open an unpowered firelock in lockout mode.
+  Śluz przeciwpożarowych w trybie blokady nie da się otworzyć za pomocą dostępu inżynieryjnego, jeśli nie są zasilane. Śluzę przeciwpożarową w trybie blokady, która nie jest zasilana, można otworzyć wyłącznie za pomocą łomu.
 
-  If the conditions between the two sides of the firelock return to within acceptable differences, the firelock will disable lockout mode, and can be opened by anyone.
-  Note that this only means that the conditions are the same on both sides of the firelock, not that they are safe.
+  Jeśli warunki po obu stronach śluzy przeciwpożarowej powrócą do dopuszczalnych wartości, śluza wyłączy tryb blokady i będzie można ją otworzyć.
+  Należy pamiętać, że oznacza to jedynie, iż warunki po obu stronach blokady są takie same, a niekoniecznie że są one bezpieczne.
 
-  A common example of this is a firelock that has released due to both sides being exposed to space.
+  Typowym przykładem w tej sytuacji jest śluza przeciwpożarowa, która została odbezpieczona w wyniku wystawienia obu stron na działanie próżni kosmicznej.
 
-  ## Connecting to Air and Fire Alarms
-  Firelocks can be connected to [textlink="air alarms" link="AirAlarms"] and fire alarms to receive instructions on when to drop.
-  Firelocks use the [textlink="List system" link="Networking"], and you can connect these devices using a multitool or network configurator.
+  ## Łączenie z alarmami atmosferycznymi i czujnikami pożarów
+  Śluzy przeciwpożarowe mogą być połączone z [textlink="alarmami atmosferycznymi" link="AirAlarms"] i czujnikami pożarów, aby otrzymywać sygnały o konieczności zablokowania śluzy.
+  Śluzy używają [textlink="systemu list" link="Networking"], a podłączenie tych urządzeń można wykonać za pomocą narzędzia wielofunkcyjnego lub konfiguratora sieciowego.
 
   <Box>
     <GuideEntityEmbed Entity="Firelock" Caption=""/>
@@ -54,32 +54,32 @@ SPDX-License-Identifier: MIT
     <GuideEntityEmbed Entity="AirAlarm" Caption=""/>
   </Box>
 
-  Each firelock has its own unique address. The process for connecting air vents, scrubbers, and sensors to air alarms is very similar.
+  Każda śluza ma swój unikalny adres. Procedura podłączania otworów wentylacyjnych, filtrów i czujników do alarmu atmosferycznego jest bardzo podobna.
 
-  ## Operation Under Air Alarms
-  When connected to an air alarm, firelocks will also drop under the command of the connected [textlink="air alarm" link="AirAlarms"].
+  ## Funkcjonalność z podłączonymi alarmami atmosferycznymi
+  W przypadku podłączenia do alarmu atmosferycznego śluzy przeciwpożarowe opuszczą się również na polecenie podłączonego [textlink="alarmu atmosferycznego" link="AirAlarms"].
 
-  Firelocks will drop if the air alarm reaches a [color=red]Danger[/color] alert state. Firelocks will remain dropped until the air alarm returns to a [color=green]Green[/color] alert state.
+  Śluzy przeciwpożarowe zostaną opuszczone, jeśli alarm atmosferyczny osiągnie stan [color=#ff8a8a]Niebezpieczeństwo[/color]. Śluzy pozostaną opuszczone do momentu, aż alarm atmosferyczny nie powróci do stanu [color=#8ee99a]zielonego[/color].
 
-  Firelocks that are in lockout mode will not raise even if the air alarm returns to a [color=green]Green[/color] alert state. Even if the pressure difference is resolved, the firelock will remain dropped until the air alarm re-sends a green alert state.
+  Śluzy przeciwpożarowe znajdujące się w trybie blokady nie podniosą się, nawet jeśli alarm atmosferyczny powróci do stanu [color=#8ee99a]zielonego[/color]. Nawet jeśli różnica ciśnień zostanie wyeliminowana, śluza przeciwpożarowa pozostanie opuszczona do momentu, aż alarm atmosferyczny ponownie wyśle sygnał o stanie zielonym.
 
-  ## Operation Under Fire Alarms
-  When connected to a fire alarm, firelocks will drop if the fire alarm is triggered. Firelocks will remain dropped until the fire alarm is reset.
+  ## Działanie w przypadku alarmu przeciwpożarowego
+  Po podłączeniu do systemu alarmowego śluzy przeciwpożarowe zostaną opuszczone w przypadku uruchomienia alarmu przeciwpożarowego. Blokady pozostaną opuszczone do momentu zresetowania alarmu przeciwpożarowego.
 
-  ## Fire Alarms
-  Fire alarms are devices that can be used to centrally control all connected firelocks.
+  ## Alarmy przeciwpożarowe
+  Alarmy przeciwpożarowe to urządzenia, które umożliwiają scentralizowane sterowanie wszystkimi podłączonymi śluzami przeciwpożarowymi.
 
   <Box>
     <GuideEntityEmbed Entity="FireAlarm"/>
   </Box>
 
-  Devices with sensors can be [textlink="linked" link="Networking"] to fire alarms, which will trigger the fire alarm if the sensor enters the [color=red]Danger[/color] temperature threshold as defined by its sensors.
+  Urządzenia wyposażone w czujniki można [textlink="połączyć" link="Networking"] z systemem przeciwpożarowym, który uruchomi alarm, jeśli czujnik wykryje przekroczenie progu temperatury [color=#ff8a8a]Niebezpieczeństwo[/color] zadanego przez jego czujniki.
 
-  When the fire alarm is triggered, all connected firelocks will be overridden with a [color=red]Danger[/color] alert state and will drop.
+  W przypadku uruchomienia alarmu przeciwpożarowego wszystkie podłączone śluzy przeciwpożarowe przejdą w stan alarmowy [color=#ff8a8a]Niebezpieczeństwo[/color] i zostaną opuszczone.
 
-  The alarm will automatically clear itself when the sensor returns to a [color=green]Normal[/color] temperature threshold.
+  Alarm wyłączy się automatycznie, gdy czujnik powróci do [color=#8ee99a]normalnego[/color] progu temperatury.
 
-  You can trigger and reset a fire alarm manually by interacting with it.
+  Można ręcznie uruchomić i zresetować alarm przeciwpożarowy, używając go.
 
-  This can be used to quickly drop firelocks in a room manually, or to raise them after an upset has been resolved.
+  Można to wykorzystać do szybkiego opuszczenia śluz przeciwpożarowych w pomieszczeniu lub do ich podniesienia po rozwiązaniu sytuacji awaryjnej.
 </Document>

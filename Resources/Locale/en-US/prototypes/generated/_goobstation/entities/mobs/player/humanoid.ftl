@@ -1,8 +1,8 @@
 ent-LostFrontierSalvagerSpawner = lost frontier salvager spawner
     .desc = { ent-MarkerBase.desc }
-  .suffix = przyzywacz
   .gender = female
+  .suffix = przyzywacz
 ent-RandomHumanoidLostFrontierSalvager = lost salvager ghost role
     .desc = { "" }
-  .suffix = przyzwanie
   .gender = female
+  .suffix = przyzwanie

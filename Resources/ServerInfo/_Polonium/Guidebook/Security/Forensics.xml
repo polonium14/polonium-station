@@ -34,7 +34,7 @@ SPDX-License-Identifier: MIT
 
   ## Jak uzyskać czyjeś DNA ?
 
-  Mozesz skanować kałuże krwi, wymiotów, okulary, butelki, puszki oraz inne zbiorniki płynów korzystając z [color=#a4885c]Skanera Kryminalistyki[/color] aby uzyskać DNA dowolnej osoby.
+  Mozesz skanować kałuże krwi, wymiotów, okulary, butelki, puszki oraz inne zbiorniki płynów korzystając z [color=#e8c878]Skanera Kryminalistyki[/color] aby uzyskać DNA dowolnej osoby.
   <Box>
     <GuideEntityEmbed Entity="ForensicScanner"/>
   </Box>
@@ -44,17 +44,17 @@ SPDX-License-Identifier: MIT
 
   ## Mam DNA, jak wiedzieć czyje ono jest?
 
-  Możesz wydrukować informacje kryminalistyczne z wszystkiego co skanowałeś, dzięki czemu nic nie zgubisz. Teraz z papierem piszącym DNA idziesz do [color=#a4885c]Komputera Redordów Stacji[/color] i znajdź osobę której DNA pasuje; tak samo robisz z odciskami palców. 
+  Możesz wydrukować informacje kryminalistyczne z wszystkiego co skanowałeś, dzięki czemu nic nie zgubisz. Teraz z papierem piszącym DNA idziesz do [color=#e8c878]Komputera Redordów Stacji[/color] i znajdź osobę której DNA pasuje; tak samo robisz z odciskami palców. 
 
   ## Zbieranie odcisków
-  Jest również możliwe żeby zebrać odciski od kogoś na miejscu, jeśli każesz im zdjąć rękawiczki i użejesz kryminalistycznej podkładni na ich palcach. Wtedy nie musisz iść do [color=#a4885c]Komputera Redordów Stacji[/color] aby sprawdzić czy DNA pasuje.
+  Jest również możliwe żeby zebrać odciski od kogoś na miejscu, jeśli każesz im zdjąć rękawiczki i użejesz kryminalistycznej podkładni na ich palcach. Wtedy nie musisz iść do [color=#e8c878]Komputera Redordów Stacji[/color] aby sprawdzić czy DNA pasuje.
 
   <GuideEntityEmbed Entity="ForensicPad"/>
 
   ## Włókna
   Kiedy ktokolwiek noszący rękawiczki dotknie czegoś na stacji zostawi na tym część włókien. To komplikuje sprawy ale nic nie jest nie-rozwiązywalne dla prawdziwego detektywa.
 
-  Jest łącznie około [color=red]26[/color] róznych rodzajów włokien. Czy powstrzyma cię to przed odnalezieniem sprawcy?
+  Jest łącznie około [color=#ff8a8a]26[/color] róznych rodzajów włokien. Czy powstrzyma cię to przed odnalezieniem sprawcy?
 
   <Box>
     <GuideEntityEmbed Entity="ComputerStationRecords"/>

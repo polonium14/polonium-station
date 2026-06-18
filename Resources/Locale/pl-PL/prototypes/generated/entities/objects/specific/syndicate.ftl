@@ -36,3 +36,7 @@ ent-BaseUplinkRadio350TC = { ent-BaseUplinkRadio }
 ent-BaseUplinkRadioDebug = { ent-BaseUplinkRadio }
     .suffix = DEBUG
     .desc = { ent-BaseUplinkRadio.desc }
+
+ent-BaseUplinkRadio25TC = { ent-BaseUplinkRadio }
+    .suffix = 25 TC
+    .desc = { ent-BaseUplinkRadio.desc }

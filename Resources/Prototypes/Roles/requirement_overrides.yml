@@ -104,59 +104,86 @@
     SecurityOfficer:
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 10800 #3 hrs
+      time: 18000 #5 hrs
     - !type:TraitsRequirement # Funky
       inverted: true
       traits:
       - Pacifist
+      - Blindness
+      - Muted
+      - ImpairedMobility
     SecurityCadet:
     - !type:OverallPlaytimeRequirement
-      time: 18000 #5 hrs
+      time: 36000 #10 hrs
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 36000 #10 hrs
+      time: 144000 #40 hrs
       inverted: true # stop playing intern if you're good at security!
     - !type:TraitsRequirement # Funky
       inverted: true
       traits:
       - Pacifist
+      - Blindness
+      - Muted
+      - ImpairedMobility
     Brigmedic:
     - !type:DepartmentTimeRequirement
       department: Medical
-      time: 10800 #3 hrs
+      time: 18000 # 5 hrs
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 10800 #3 hrs
+      time: 18000 # 5 hrs
     - !type:TraitsRequirement # Funky
       inverted: true
       traits:
       - Pacifist
+      - Blindness
+      - Muted
+      - ImpairedMobility
     HeadOfSecurity:
+    - !type:RoleTimeRequirement
+      role: JobWarden
+      time: 3h
+    - !type:RoleTimeRequirement
+      role: JobDetective
+      time: 1h
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 54000 #15 hrs
+      time: 108000 #30 hrs
     - !type:OverallPlaytimeRequirement
       time: 72000 #20 hrs
     - !type:TraitsRequirement # Funky
       inverted: true
       traits:
       - Pacifist
+      - Blindness
+      - Muted
+      - ImpairedMobility
     Detective:
-    - !type:DepartmentTimeRequirement
-      department: Security
-      time: 10800 #3 hrs
+    - !type:RoleTimeRequirement
+      role: JobSecurityOfficer
+      time: 18000 #5 hrs
     - !type:TraitsRequirement # Funky
       inverted: true
       traits:
       - Pacifist
+      - Blindness
+      - Muted
+      - ImpairedMobility
     Warden:
+    - !type:RoleTimeRequirement
+      role: JobSecurityOfficer
+      time: 18000 #5 hrs
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 28800 #8 hrs
+      time: 54000 #15 hrs
     - !type:TraitsRequirement # Funky
       inverted: true
       traits:
       - Pacifist
+      - Blindness
+      - Muted
+      - ImpairedMobility
     ResearchAssistant:
     - !type:OverallPlaytimeRequirement
       time: 0

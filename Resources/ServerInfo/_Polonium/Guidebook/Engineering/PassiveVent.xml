@@ -7,17 +7,17 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-  # Passive Vent
-  The passive vent is an extremely basic vent.
-  It serves as a direct connection between the pipenet it's connected to and the atmosphere it's exposed to.
+  # Pasywny otwór wentylacyjny
+  Pasywny otwór wentylacyjny to niezwykle prosta konstrukcja.
+  Służy on jako bezpośrednie połączenie między siecią rurociągową, do której jest podłączony, a otaczającą atmosferą.
   <Box>
     <GuideEntityEmbed Entity="GasPassiveVent"/>
   </Box>
-  Gasses are free to move between the passive vent and the atmosphere it's connected to.
-  The passive vent requires no [textlink="power" link="Power"] to function.
+  Gazy mogą swobodnie przemieszczać się między pasywnym otworem wentylacyjnym a atmosferą, z którą jest on połączony.
+  Pasywny otwór wentylacyjny do działania nie wymaga [textlink="zasilania" link="Power"].
 
-  This vent is commonly found in the station's [textlink="gas storage tanks" link="GasMiningAndStorage"] and connected to the station's wastenet.
-  It is a simple and reliable way to pull gasses from a gas miner, or to space unwanted gasses safely.
+  Pasywny otwór wentylacyjny jest powszechnie spotykany w [textlink="zbiornikach gazu" link="GasMiningAndStorage"]i podłączony jest do sieci odprowadzania gazów stacji.
+  Jest to prosty i niezawodny sposób na odprowadzanie gazów z koparki gazu lub bezpieczne usuwanie niepożądanych gazów w przestrzeń kosmiczną.
 
-  The passive vent can be welded with any welding tool to stop it from functioning.
+  Pasywny otwór wentylacyjny można zaspawać dowolnym narzędziem spawalniczym, aby uniemożliwić jego działanie.
 </Document>

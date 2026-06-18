@@ -38,7 +38,7 @@
   path: /Fonts/NotoSansDisplay/NotoSansDisplay-BoldItalic.ttf
 
 - type: font
-  id: BoxRound
+  id: BoxRound # Deprecated
   path: /Fonts/Boxfont-round/Boxfont Round.ttf
 
 - type: font
@@ -52,3 +52,8 @@
 - type: font
   id: Emoji
   path: /Fonts/NotoEmoji.ttf
+
+# Polonium - new font for the Nanostyles
+- type: font
+  id: Tomorrow
+  path: /Fonts/_Polonium/Tomorrow/Tomorrow-Bold.ttf

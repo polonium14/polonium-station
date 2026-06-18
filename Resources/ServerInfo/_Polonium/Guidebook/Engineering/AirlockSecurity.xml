@@ -11,78 +11,78 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-  # Airlock Upgrades
-  It is not uncommon for plucky individuals to try and bypass an airlock by meddling with its internal wiring.
+  # Ulepszenia śluz
+  Często zdarza się, że odważni ludzie próbują przejść przez zabezpieczoną śluzę, manipulując przy jej wewnętrznym okablowaniu.
 
-  Fortunately, certain countermeasures can be installed into airlocks to inconvenience any would-be trespassers.
+  Na szczęście w śluzach można zainstalować pewne zabezpieczenia, które utrudnią życie potencjalnym intruzom.
 
-  ## Medium security airlocks
-  The most basic form of intrusion deterrence is to install a secured steel plating that will prevent access to internal wiring of the airlock.
+  ## Śluzy o średnim poziomie zabezpieczenia
+  Najprostszym sposobem zapobiegania włamaniom jest zamontowanie zabezpieczonej blachy stalowej, która uniemożliwi dostęp do wewnętrznego okablowania śluzy.
 
-  To upgrade a basic airlock to a medium security airlock, you will require the following materials:
+  Aby przekształcić podstawową śluzę w śluzę o średnim poziomie zabezpieczenia, potrzebne będą następujące materiały:
   <Box HorizontalAlignment="Stretch">
 	  <Box>
-		  <GuideEntityEmbed Entity="SheetSteel" Caption="2 steel sheets"/>
+		  <GuideEntityEmbed Entity="SheetSteel" Caption="2 sztuki stali"/>
 	  </Box>
 	  <Box>
-		  <GuideEntityEmbed Entity="Screwdriver" Caption="Screwdriver"/>
+		  <GuideEntityEmbed Entity="Screwdriver" Caption="Śrubokręt"/>
 	  </Box>
 	  <Box>
-		  <GuideEntityEmbed Entity="Welder" Caption="Welder"/>
+		  <GuideEntityEmbed Entity="Welder" Caption="Spawarka"/>
 	  </Box>
   </Box>
 
-  To upgrade a basic airlock:
-  -	Use the screwdriver to open the airlock maintenance panel.
-  -	Add the steel sheets to the airlock.
-  -	Weld the steel sheets into place.
-  -	Close the maintenance panel using the screwdriver.
+  Aby ulepszyć podstawową śluzę:
+  - Otwórz panel serwisowy śluzy za pomocą śrubokręta.
+  - Zainstaluj stalową blachę w śluzie.
+  - Przyspawaj stalową blachę.
+  - Zamknij panel serwisowy za pomocą śrubokręta.
 
-  ## High security airlocks
-  For airlocks leading to the more sensitive areas of the space station, the use of stronger deterrents are advised. High security airlocks have improved armor plating to protect its internal wiring.
+  ## Śluzy o podwyższonym poziomie bezpieczeństwa
+  W przypadku śluz prowadzących do bardziej newralgicznych obszarów stacji zaleca się stosowanie skuteczniejszych środków zapobiegawczych. Śluzy o podwyższonym poziomie bezpieczeństwa są wyposażone we wzmocnione opancerzenie, które chroni ich wewnętrzną instalację elektryczną.
 
-  To upgrade a medium security airlock to a high security airlock, you will require the following materials:
+  Aby przekształcić śluzę o średnim poziomie bezpieczeństwa w śluzę o wysokim poziomie bezpieczeństwa, potrzebne będą następujące materiały:
   <Box HorizontalAlignment="Stretch">
 	  <Box>
-		  <GuideEntityEmbed Entity="SheetPlasteel" Caption="2 plasteel sheets"/>
+		  <GuideEntityEmbed Entity="SheetPlasteel" Caption="2 sztuki plastali"/>
 	  </Box>
 	  <Box>
-		  <GuideEntityEmbed Entity="Screwdriver" Caption="Screwdriver"/>
+		  <GuideEntityEmbed Entity="Screwdriver" Caption="Śrubokręt"/>
 	  </Box>
 	  <Box>
-		  <GuideEntityEmbed Entity="Welder" Caption="Welder"/>
+		  <GuideEntityEmbed Entity="Welder" Caption="Spawarka"/>
 	  </Box>
   </Box>
 
-  To upgrade a medium security airlock:
-  - Use the screwdriver to open the airlock maintenance panel.
-  - Add the plasteel sheets to the airlock.
-  - Weld the plasteel sheets into place.
-  - Close the maintenance panel using the screwdriver.
+  Aby ulepszyć śluzę powietrzną o średnim poziomie bezpieczeństwa:
+  - Otwórz panel serwisowy śluzy za pomocą śrubokręta.
+  - Zainstaluj plastalową blachę w śluzie.
+  - Przyspawaj plastalową blachę.
+  - Zamknij panel serwisowy za pomocą śrubokręta.
 
-  ## Maximum security airlocks
-  You can optionally upgrade a high security airlock to a maximum security airlock. Maximum security airlocks possess an additional layer of electrified wire mesh on top of its other protections, which can shock any unauthorized personnel attempting to tamper with the airlock.
+  ## Śluzy o maksymalnym poziomie bezpieczeństwa
+  Istnieje możliwość rozbudowy śluzy o wysokim poziomie bezpieczeństwa do śluzy o maksymalnym poziomie bezpieczeństwa. Śluzy o maksymalnym poziomie bezpieczeństwa są wyposażone w dodatkową warstwę siatki z drutu pod napięciem, która stanowi uzupełnienie pozostałych zabezpieczeń i może porazić prądem każdą nieuprawnioną osobę próbującą ingerować w działanie śluzy.
 
-  To upgrade a high security airlock to a maximum security airlock, you will require the following materials:
+  Aby przekształcić śluzę o wysokim poziomie bezpieczeństwa w śluzę o maksymalnym poziomie bezpieczeństwa, potrzebne będą następujące materiały:
   <Box HorizontalAlignment="Stretch">
 	  <Box>
-		  <GuideEntityEmbed Entity="SheetPlasteel" Caption="2 plasteel sheets"/>
+		  <GuideEntityEmbed Entity="SheetPlasteel" Caption="2 sztuki plastali"/>
 	  </Box>
     <Box>
-      <GuideEntityEmbed Entity="PartRodMetal" Caption="2 metal rods"/>
+      <GuideEntityEmbed Entity="PartRodMetal" Caption="2 metalowe pręty"/>
     </Box>
 	  <Box>
-		  <GuideEntityEmbed Entity="Screwdriver" Caption="Screwdriver"/>
+		  <GuideEntityEmbed Entity="Screwdriver" Caption="Śrubokręt"/>
 	  </Box>
 	  <Box>
-		  <GuideEntityEmbed Entity="Welder" Caption="Welder"/>
+		  <GuideEntityEmbed Entity="Welder" Caption="Spawarka"/>
 	  </Box>
   </Box>
 
-  To upgrade a high security airlock:
-  -	Use the screwdriver to open the airlock maintenance panel.
-  -	Add the plasteel sheets to the airlock.
-  -	Weld the plasteel sheets into place.
-  - Add the metal rods to the airlock.
-  -	Close the maintenance panel using the screwdriver.
+  Aby ulepszyć śluzę o wysokim poziomie bezpieczeństwa:
+  - Otwórz panel serwisowy śluzy za pomocą śrubokręta.
+  - Zainstaluj plastalową blachę w śluzie.
+  - Przyspawaj plastalową blachę.
+  - Zainstaluj metalowe pręty w śluzie.
+  - Zamknij panel serwisowy za pomocą śrubokręta.
 </Document>

@@ -7,7 +7,7 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-  # Gas Canisters
+  # Zbiorniki na gaz
   <Box>
     <GuideEntityEmbed Entity="AirCanister"/>
     <GuideEntityEmbed Entity="OxygenCanister"/>
@@ -19,20 +19,20 @@ SPDX-License-Identifier: MIT
     <GuideEntityEmbed Entity="GasPort"/>
   </Box>
 
-  Gas canisters are a way to store gas in a portable container for easy transport.
-  They can store [color=orange][protodata="StorageCanister" comp="GasCanister" member="Volume"/] liters[/color] of gas.
+  Zbiorniki na gaz to rozwiązanie umożliwiające przechowywanie gazu w przenośnym pojemniku, co ułatwia jego transport.
+  Mogą one pomieścić [color=#ffb86b][protodata="StorageCanister" comp="GasCanister" member="Volume"/] litrów[/color] gazu.
 
-  You can connect handheld tanks to a gas canister to refill them using the release valve on the canister.
-  The release valve also has a adjustable pressure regulator to control the pressure of the handheld tank connected.
+  Butle na gaz można podłączyć do zbiornika z gazem w celu ich napełnienia za pomocą zaworu spustowego znajdującego się w zbiorniku.
+  Zawór spustowy jest również wyposażony w regulowany reduktor ciśnienia, który pozwala kontrolować ciśnienie w podłączonej butli.
 
-  Opening the release valve on a canister with no handheld tank connected will release gas into the atmosphere, at the specified regulator pressure.
+  Otwarcie zaworu spustowego zbiornika z gazem, do którego nie jest podłączona żadna butla, spowoduje uwolnienie gazu do atmosfery pod ciśnieniem określonym przez reduktor.
 
-  [bold]Be sure to close the release valve before you eject your handheld tank![/bold]
+  [bold]Pamiętaj, aby zamknąć zawór spustowy przed wyjęciem butli![/bold]
 
-  ## Connector Ports
-  Gas canisters and [textlink="portable scrubbers" link="PortableScrubber"] can be connected to a [textlink="pipenet" link="PipeNetworks"] by anchoring (wrenching) the device on top of a connector.
-  When connected, gas will be free to move in and out of the canister to balance pressure, temperature, and composition.
+  ## Porty gazowe
+  Zbiorniki na gaz i [textlink="przenośne oczyszczacze powietrza" link="PortableScrubber"] można podłączyć do [textlink="sieci rurociągowej" link="PipeNetworks"] poprzez dokręcenie (przy pomocy klucza) urządzenia na porcie.
+  Po podłączeniu gaz będzie swobodnie przepływał do i ze zbiornika w celu wyrównania ciśnienia, temperatury i składu gazu.
 
-  A pump can be used to insert or extract gas from a canister, useful for filling or emptying a canister entirely.
+  Za pomocą pompki można wprowadzać lub usuwać gaz ze zbiornika, co przydaje się do całkowitego napełnienia lub opróżnienia zbiornika.
 
 </Document>

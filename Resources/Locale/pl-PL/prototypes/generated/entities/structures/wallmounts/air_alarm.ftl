@@ -1,4 +1,4 @@
-ent-AirAlarm = air alarm
-    .desc = An air alarm. Alarms... air?
-ent-AirAlarmAssembly = air alarm assembly
-    .desc = An air alarm. Doesn't look like it'll be alarming air any time soon.
+ent-AirAlarm = alarm atmosferyczny
+    .desc = Automatyczny alarm wykrywający zmiany składu i ciśnienia powietrza w pomieszczeniu.
+ent-AirAlarmAssembly = rozkręcony alarm atmosferyczny
+    .desc = Rozkręcony alarm atmosferyczny. Chyba jeszcze nie alarmuje...
