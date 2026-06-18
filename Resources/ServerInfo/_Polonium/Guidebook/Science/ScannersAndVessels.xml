@@ -7,26 +7,26 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-## Anomaly Scanner
+## Skaner anomalii
 
-The Anomaly Scanner is used to gather various information on anomalies. They can be found inside of the lockers in the science department.
+Skaner anomalii służy do gromadzenia różnorodnych informacji dotyczących anomalii. Urządzenia te znajdują się w szafkach w departamencie badań i rozwoju.
 
 <Box>
 <GuideEntityEmbed Entity="AnomalyScanner"/>
 </Box>
 
-Scanning an anomaly shows the severity, general stability, approximate point output, reactions with particle types, and time until the next pulse. The reaction types, specifically, can be used in conjunction with the A.P.E. to manipulate anomalies.
+Skanowanie anomalii pozwala określić jej nasilenie, ogólną stabilność, przybliżoną wartość punktową, reakcje z poszczególnymi typami cząstek oraz czas do następnego impulsu. W szczególności typy reakcji można wykorzystać w połączeniu z urządzeniem M.A.K.A.K. do manipulowania anomaliami.
 
-## Anomaly Vessel
+## Pojemnik na artefakty
 
-The anomaly vessel is a machine that generates points from anomalies. Use the anomaly scanner on an empty vessel, and the anomaly that was last scanned will be synced with the vessel.
+Pojemnik na anomalie to urządzenie, które generuje punkty na podstawie anomalii. Użyj skanera anomalii na pustym pojemniku, a ostatnio zeskanowana anomalia zostanie zsynchronizowana z pojemnikiem.
 
 <Box>
 <GuideEntityEmbed Entity="MachineAnomalyVessel"/>
 </Box>
 
-The amount of points a vessel generates per second is based on the severity, stability, and health of an anomaly. The higher each of these values, the higher the point output will be.
+Liczba punktów generowanych przez pojemnik na sekundę zależy od stopnia zagrożenia, stabilności i stanu anomalii. Im wyższe są te wartości, tym większa będzie liczba generowanych punktów.
 
-Be careful: if an anomaly goes [color=#e8c878]supercritical[/color], the vessel it is linked to will explode. This may damage the station and nearby equipment.
+Uwaga: jeśli anomalia osiągnie stan [color=#e8c878]nadkrytyczny[/color], pojemnik, z którym jest połączona, ulegnie eksplozji. Może to spowodować uszkodzenie stacji i pobliskiego sprzętu.
 
 </Document>
