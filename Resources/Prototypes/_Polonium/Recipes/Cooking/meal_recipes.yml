@@ -26,3 +26,13 @@
   solids:
     FoodBreadBun: 1
     FoodMeatParowka: 1
+
+- type: microwaveMealRecipe
+  id: RecipePetoParowek
+  name: PetoParowek recipe
+  result: FoodMeatPetoParowek
+  time: 10
+  group: Savory
+  solids:
+    FoodMeat: 1
+    SheetPaper1: 1
