@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: Winkarst-cpu
-  changes:
-  - message: Thrusters now deal heat damage.
-    type: Fix
-  id: 7949
-  time: '2025-02-13T19:27:34.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/35088
 - author: Booblesnoot42
   changes:
   - message: Removing the security plate from an intercom will no longer delete its
@@ -4200,3 +4193,13 @@
   id: 9256
   time: '2026-06-18T20:40:23.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/695
+- author: Zintex
+  changes:
+  - message: "mapa Gwiazda \u015Amierci: zmiana wyposa\u017Cenia w zbrojowni (pancerz\
+      \ w skrzynkach, bez odbijaj\u0105cych laser pancerzy)"
+    type: Tweak
+  - message: "mapa Gwiazda \u015Amierci: poprawiono elektryk\u0119 w serwisie"
+    type: Fix
+  id: 9257
+  time: '2026-06-18T21:12:51.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/696
