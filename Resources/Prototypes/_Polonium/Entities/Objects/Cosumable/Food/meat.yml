@@ -2,7 +2,7 @@
   name: parówka
   parent: FoodMeatBase
   id: FoodMeatParowka
-  description: Parówka taka jak z żabki.
+  description: Parówka, taka jak z żabki.
   components:
   - type: Tag
     tags:
