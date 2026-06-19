@@ -24,11 +24,11 @@ By researching the unique things each artifact can do, you gain Research Points,
 <GuideEntityEmbed Entity="ComplexXenoArtifact" Caption=""/>
 <GuideEntityEmbed Entity="ComplexXenoArtifactItem" Caption=""/>
 </Box>
-Artifacts consist of a randomly-generated tree of nodes. These nodes have a "[color=#a4885c]depth[/color]", representing how dangerous the node is, and the number of other nodes connected to it, called "[color=#a4885c]edges[/color]",
+Artifacts consist of a randomly-generated tree of nodes. These nodes have a "[color=#e8c878]depth[/color]", representing how dangerous the node is, and the number of other nodes connected to it, called "[color=#e8c878]edges[/color]",
 
 Artifacts always start at depth zero, the root of the tree. Travelling the tree to find as many nodes as possible is the main goal of the scientists working on them. Knowledge is extracted from nodes to gain Research Points and increase the artifact's sale value.
 
-Each node has two components: its [color=#a4885c]stimulus[/color] and a [color=#a4885c]reaction[/color].
+Each node has two components: its [color=#e8c878]stimulus[/color] and a [color=#e8c878]reaction[/color].
 
 A stimulus is the external behavior that triggers the reaction. There's a variety of these, and higher depth nodes have more difficult to accomplish stimuli. Some stimuli will need improvisation to trigger, and you may need to talk to other departments to get everything you need.
 
@@ -43,15 +43,15 @@ All non-zero-depth nodes will have exactly one edge that leads up to its parent 
 <GuideEntityEmbed Entity="MachineArtifactAnalyzer"/>
 <GuideEntityEmbed Entity="ComputerAnalysisConsole"/>
 </Box>
-The main equipment that you'll be using for Xenoarchaeology is the [color=#a4885c]artifact analyzer[/color] and the [color=#a4885c]analysis console[/color]. You can use these to create reports that contain valuable information about an artifact.
+The main equipment that you'll be using for Xenoarchaeology is the [color=#e8c878]artifact analyzer[/color] and the [color=#e8c878]analysis console[/color]. You can use these to create reports that contain valuable information about an artifact.
 
 To set them up, simply link them with a network configurator and set an artifact on top of the analyzer. Every station has at least one of these machines already set up.
 
-Use the console's [color=#a4885c]scan[/color] button to discover what stimulus the artifact needs and what its reaction will do. Scanning takes thirty seconds.
+Use the console's [color=#e8c878]scan[/color] button to discover what stimulus the artifact needs and what its reaction will do. Scanning takes thirty seconds.
 
-Use the [color=#a4885c]print[/color] button to save the scan result, so you can refer to it later.
+Use the [color=#e8c878]print[/color] button to save the scan result, so you can refer to it later.
 
-Once you've discovered a new node, you can extract points from the artifact using the [color=#a4885c]Extract[/color] button.
+Once you've discovered a new node, you can extract points from the artifact using the [color=#e8c878]Extract[/color] button.
 
 ## Assembling Artifacts
 <GuideEntityEmbed Entity="ArtifactFragment" Caption="Artifact Fragment"/>
@@ -65,6 +65,6 @@ It is possible to gather multiple artifact fragments and assemble them into a wo
 Artifacts placed on top of a powered artifact analyzer are subjected to a bias which affects which node they will move to after being activated. The bias can be set in the artifact console.
 
 There are two types of biases:
-- [color=#a4885c]Up:[/color] favors nodes closer to the origin. Results in a decrease of depth.
-- [color=#a4885c]Down:[/color] favors nodes farther away from the origin. Results in an increase of depth.
+- [color=#e8c878]Up:[/color] favors nodes closer to the origin. Results in a decrease of depth.
+- [color=#e8c878]Down:[/color] favors nodes farther away from the origin. Results in an increase of depth.
 </Document>

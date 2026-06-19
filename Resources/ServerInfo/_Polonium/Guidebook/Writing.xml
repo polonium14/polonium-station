@@ -23,7 +23,7 @@ Możesz łączyć znaczniki [bold][italic]pogrubienia i kursywy[/italic][/bold],
 
 Kolor obsługuje zapis szesnastkowy lub większość nazw kolorów HTML. Na przykład:
 
-- [color=#ff0000]\[color=#ff0000\]\[\/color\][/color]
-- [color=red]\[color=red\]\[\/color\][/color]
+- [color=#ff8a8a]\[color=#ff8a8a\]\[\/color\][/color]
+- [color=#ff8a8a]\[color=#ff8a8a\]\[\/color\][/color]
 
 </Document>

@@ -7,23 +7,23 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-  # Portable Scrubber
-  The portable scrubber is a portable machine that can be used to scrub the atmosphere in a room.
+  # Przenośny oczyszczacz powietrza
+  Przenośny oczyszczacz powietrza to urządzenie, które służy do oczyszczania powietrza w pomieszczeniu.
   <Box>
     <GuideEntityEmbed Entity="PortableScrubber"/>
   </Box>
 
-  It is invaluable for quickly removing unwanted gasses from a room when regular [textlink="scrubbers" link="AirScrubber"] are working too slow, or when a [textlink="scrubber" link="AirScrubber"] is not present.
+  Urządzenie to jest niezwykle przydatne do szybkiego usuwania niepożądanych gazów z pomieszczenia, gdy standardowe [textlink="oczyszczacze powietrza" link="AirScrubber"] działają zbyt wolno lub gdy nie ma w pobliżu żadnego [textlink="oczyszczacza powietrza" link="AirScrubber"].
 
-  The portable scrubber requires [textlink="power" link="Power"] through a nearby [textlink="LV cable" link="VoltageNetworks"] to function.
+  Przenośny oczyszczacz wymaga [textlink="zasilania" link="Power"] z pobliskiego [textlink="kabla niskonapięciowego" link="VoltageNetworks"] aby działać.
 
-  The portable scrubber automatically starts removing all non-breathable gasses from the room when it is bolted (wrenched) to the floor.
+  Przenośny oczyszczacz automatycznie rozpoczyna usuwanie wszystkich gazów niezdatnych do oddychania z pomieszczenia, gdy zostanie przykręcony kluczem do podłogi.
 
-  It will stop scrubbing when unbolted (unwrenched) from the floor or when its internal volume is full. The scrubber has an internal capacity of [color=orange][protodata="PortableScrubber" comp="PortableScrubber" member="Volume"/] liters[/color].
+  Przestanie oczyszczać, gdy zostanie odkręcony od podłogi lub gdy jego zbiornik wewnętrzny będzie pełny. Oczyszczacz ma pojemność wewnętrzną [color=#ffb86b][protodata="PortableScrubber" comp="PortableScrubber" member="Volume"/] litrów[/color].
 
-  ## Dumping Waste and Storage
-  The scrubber's internal volume can be emptied by anchoring (wrenching) onto a [textlink="connector" link="GasCanisters"].
+  ## Opróżnianie i przechowywanie odpadów
+  Jego zbiornik wewnętrzny można opróżnić, przykręcając do[textlink="portu gazowego" link="GasCanisters"].
 
-  Stations commonly have a dedicated emptying point to quickly transfer the waste from the scrubber to the station's wastenet.
+  Stacje zazwyczaj posiadają dedykowany punkt opróżniania, umożliwiający szybkie przeniesienie odpadów z oczyszczacza do sieci odprowadzania odpadów stacji.
 
 </Document>

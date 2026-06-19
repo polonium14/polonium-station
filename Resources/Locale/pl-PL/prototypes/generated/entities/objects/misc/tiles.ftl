@@ -201,3 +201,6 @@ ent-FloorTileItemAstroAsteroidSand = astro-piasek asteroidy
     .desc = Sztuczny piasek. Na szczęście nie jest tak szorstki jak prawdziwy.
 ent-FloorTileItemWoodLarge = duża drewniana podłoga
     .desc = { ent-FloorTileItemBase.desc }
+
+ent-FloorTileItemDarkMaint = steel maint floor
+    .desc = { ent-FloorTileItemBase.desc }

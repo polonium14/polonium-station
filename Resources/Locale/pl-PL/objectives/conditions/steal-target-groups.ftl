@@ -44,7 +44,7 @@ steal-target-groups-clothing-neck-clownmedal = medal błazna
 steal-target-groups-wanted-list-cartridge = karta listy poszukiwanych
 # Thief structures
 steal-target-groups-teg = część TEG
-steal-target-groups-freezer-heater = chłodnica lub grzejnik
+steal-target-groups-freezer-heater = termomaszyna chłodząca lub termomaszyna grzejąca
 steal-target-groups-altar-nanotrasen = dowolny ołtarz NanoTrasen
 steal-target-groups-nuclear-bomb = rdzeń ładunki jądrowego
 steal-target-groups-fax-machine-captain = faks długiego zasięgu kapitana

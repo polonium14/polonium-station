@@ -40,6 +40,7 @@
 # SPDX-FileCopyrightText: 2025 rottenheadphones <juaelwe@outlook.com>
 # SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
 # SPDX-FileCopyrightText: 2026 Damian Zieliński <zientasek.pl@gmail.com>
+# SPDX-FileCopyrightText: 2026 Koilak <152626891+Koilak@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2026 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
@@ -50,7 +51,7 @@ meta:
   engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 05/06/2026 21:28:41
+  time: 06/16/2026 16:24:25
   entityCount: 9530
 maps:
 - 7466
@@ -18488,6 +18489,18 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -67.5,-3.5
       parent: 2
+- proto: CallablePhoneInstrument
+  entities:
+  - uid: 6389
+    components:
+    - type: Transform
+      pos: 30.935675,8.570768
+      parent: 2
+    - type: Physics
+      canCollide: False
+    - type: ContainerContainer
+      containers:
+        handset: !type:ContainerSlot {}
 - proto: CandyBowl
   entities:
   - uid: 2778
@@ -25898,13 +25911,6 @@ entities:
     components:
     - type: Transform
       pos: 3.5,7.5
-      parent: 2
-- proto: filingCabinetDrawerRandom
-  entities:
-  - uid: 3947
-    components:
-    - type: Transform
-      pos: 27.5,-1.5
       parent: 2
 - proto: FireAxeCabinetFilled
   entities:
@@ -43748,15 +43754,6 @@ entities:
     - type: Transform
       pos: 41.255913,-0.44052505
       parent: 2
-- proto: PhoneInstrument
-  entities:
-  - uid: 6389
-    components:
-    - type: Transform
-      pos: 30.935675,8.570768
-      parent: 2
-    - type: Physics
-      canCollide: False
 - proto: PianoInstrument
   entities:
   - uid: 6390
@@ -46178,6 +46175,13 @@ entities:
     components:
     - type: Transform
       pos: -57.5,2.5
+      parent: 2
+- proto: PrinterDoc
+  entities:
+  - uid: 3947
+    components:
+    - type: Transform
+      pos: 27.5,-1.5
       parent: 2
 - proto: Protolathe
   entities:
@@ -54412,40 +54416,6 @@ entities:
     - type: Transform
       pos: -33.5,8.5
       parent: 2
-- proto: WeaponVisMPSPistol
-  entities:
-  - uid: 9470
-    components:
-    - type: Transform
-      pos: 8.305714,22.73275
-      parent: 2
-  - uid: 9471
-    components:
-    - type: Transform
-      pos: 8.399464,22.498375
-      parent: 2
-- proto: WeaponVisMPSPistolMagazine
-  entities:
-  - uid: 9466
-    components:
-    - type: Transform
-      pos: 8.680714,22.73275
-      parent: 2
-  - uid: 9467
-    components:
-    - type: Transform
-      pos: 8.758839,22.67025
-      parent: 2
-  - uid: 9468
-    components:
-    - type: Transform
-      pos: 8.852589,22.60775
-      parent: 2
-  - uid: 9469
-    components:
-    - type: Transform
-      pos: 8.696339,22.560875
-      parent: 2
 - proto: WallmountTelescreen
   entities:
   - uid: 7911
@@ -60562,6 +60532,40 @@ entities:
     components:
     - type: Transform
       pos: -0.2405796,22.498983
+      parent: 2
+- proto: WeaponVisMPSPistol
+  entities:
+  - uid: 9470
+    components:
+    - type: Transform
+      pos: 8.305714,22.73275
+      parent: 2
+  - uid: 9471
+    components:
+    - type: Transform
+      pos: 8.399464,22.498375
+      parent: 2
+- proto: WeaponVisMPSPistolMagazine
+  entities:
+  - uid: 9466
+    components:
+    - type: Transform
+      pos: 8.680714,22.73275
+      parent: 2
+  - uid: 9467
+    components:
+    - type: Transform
+      pos: 8.758839,22.67025
+      parent: 2
+  - uid: 9468
+    components:
+    - type: Transform
+      pos: 8.852589,22.60775
+      parent: 2
+  - uid: 9469
+    components:
+    - type: Transform
+      pos: 8.696339,22.560875
       parent: 2
 - proto: Welder
   entities:

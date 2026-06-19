@@ -1,6 +1,7 @@
 
 guide-entry-command-sop = SPO Dowództwa
 guide-entry-security-sop = SPO Ochrony
+guide-entry-use-of-force-sop = Procedura stosowania siły
 guide-entry-legal-sop = SPO Prawne
 guide-entry-engineering-sop = SPO Inżynierii
 guide-entry-medical-sop = SPO Medycyny
@@ -47,8 +48,8 @@ guide-entry-chemist-sop = SPO Chemika
 guide-entry-paramedic-sop = SPO Ratownika Medycznego
 guide-entry-psychologist-sop = SPO Psychologa
 guide-entry-blood-cult = Kult Krwi
-guide-entry-ce-sop = SPO Inżyniera Naczelnego
-guide-entry-stationengineer-sop = SPO Inżyniera Stacji i P.T.
+guide-entry-ce-sop = SPO Głównego Inżyniera
+guide-entry-stationengineer-sop = SPO Inżyniera Stacji
 guide-entry-atmospheric-sop = SPO Technika Atmosferycznego
 guide-entry-training-manual-security = Podręcznik Szkoleniowy Ochrony
 guide-entry-qm-sop = SPO Kierownika Logistyki

@@ -69,48 +69,94 @@ ent-TowelColorNTUnfolded = ręcznik marki Nanotrasen
 ent-TowelColorSyndicateUnfolded = ręcznik syndykatu
     .desc = Bardzo wszechstronny, złowrogo wyglądający czarny ręcznik. Dla najsilniejszych wojowników prysznica Syndykatu.
 
+ent-TowelColorWhite = white towel
+    .suffix = folded
+    .desc = { ent-TowelColorWhiteUnfolded.desc }
 
+ent-TowelColorGray = gray towel
+    .suffix = folded
+    .desc = { ent-TowelColorGrayUnfolded.desc }
 
+ent-TowelColorBlack = black towel
+    .suffix = folded
+    .desc = { ent-TowelColorBlackUnfolded.desc }
 
+ent-TowelColorRed = red towel
+    .suffix = folded
+    .desc = { ent-TowelColorRedUnfolded.desc }
 
+ent-TowelColorPink = pink towel
+    .suffix = folded
+    .desc = { ent-TowelColorPinkUnfolded.desc }
 
+ent-TowelColorMaroon = maroon towel
+    .suffix = folded
+    .desc = { ent-TowelColorMaroonUnfolded.desc }
 
+ent-TowelColorOrange = orange towel
+    .suffix = folded
+    .desc = { ent-TowelColorOrangeUnfolded.desc }
 
+ent-TowelColorYellow = yellow towel
+    .suffix = folded
+    .desc = { ent-TowelColorYellowUnfolded.desc }
 
+ent-TowelColorGreen = green towel
+    .suffix = folded
+    .desc = { ent-TowelColorGreenUnfolded.desc }
 
+ent-TowelColorDarkGreen = dark green towel
+    .suffix = folded
+    .desc = { ent-TowelColorDarkGreenUnfolded.desc }
 
+ent-TowelColorTeal = teal towel
+    .suffix = folded
+    .desc = { ent-TowelColorTealUnfolded.desc }
 
+ent-TowelColorLightBlue = light blue towel
+    .suffix = folded
+    .desc = { ent-TowelColorLightBlueUnfolded.desc }
 
+ent-TowelColorBlue = blue towel
+    .suffix = folded
+    .desc = { ent-TowelColorBlueUnfolded.desc }
 
+ent-TowelColorDarkBlue = dark blue towel
+    .suffix = folded
+    .desc = { ent-TowelColorDarkBlueUnfolded.desc }
 
+ent-TowelColorPurple = purple towel
+    .suffix = folded
+    .desc = { ent-TowelColorPurpleUnfolded.desc }
 
+ent-TowelColorLightBrown = light brown towel
+    .suffix = folded
+    .desc = { ent-TowelColorLightBrownUnfolded.desc }
 
+ent-TowelColorBrown = brown towel
+    .suffix = folded
+    .desc = { ent-TowelColorBrownUnfolded.desc }
 
+ent-TowelColorMime = silent towel
+    .suffix = folded
+    .desc = { ent-TowelColorMimeUnfolded.desc }
 
+ent-TowelColorCentcom = centcomm towel
+    .suffix = folded
+    .desc = { ent-TowelColorCentcomUnfolded.desc }
 
+ent-TowelColorSilver = silver towel
+    .suffix = folded
+    .desc = { ent-TowelColorSilverUnfolded.desc }
 
+ent-TowelColorGold = gold towel
+    .suffix = folded
+    .desc = { ent-TowelColorGoldUnfolded.desc }
 
+ent-TowelColorNT = Nanotrasen branded towel
+    .suffix = folded
+    .desc = { ent-TowelColorNTUnfolded.desc }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ent-TowelColorSyndicate = syndicate towel
+    .suffix = folded
+    .desc = { ent-TowelColorSyndicateUnfolded.desc }

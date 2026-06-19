@@ -7,10 +7,10 @@ SPDX-License-Identifier: MIT
 
 <Document>
 # Serwis (Obsługa)
-[color=#9fed58]Obsługa[/color] utrzymuje stację w czystości, wydajności i zdrowiu psychicznym, aby wszystkie inne działy mogły wykonywać swoją pracę lepiej i utrzymywać swój personel w dobrym nastroju. Kończy się też na tym, że wykonują większość papierkowej roboty na stacji.
+[color=#b8ff9e]Obsługa[/color] utrzymuje stację w czystości, wydajności i zdrowiu psychicznym, aby wszystkie inne działy mogły wykonywać swoją pracę lepiej i utrzymywać swój personel w dobrym nastroju. Kończy się też na tym, że wykonują większość papierkowej roboty na stacji.
 
 ## Personel
-Personel [color=#9fed58]Obsługi[/color] składa się z Pracowników Obsługi, Kucharzy, Botaników, Barmanów, Woźnych, Kapłanów, Klaunów, Mimów, Muzyków, Prawników, Bibliotekarzy i Pasażerów. Działem Obsługi zarządza Kierownik Personelu.
+Personel [color=#b8ff9e]Obsługi[/color] składa się z Pracowników Obsługi, Kucharzy, Botaników, Barmanów, Woźnych, Kapłanów, Klaunów, Mimów, Muzyków, Prawników, Bibliotekarzy i Pasażerów. Działem Obsługi zarządza Kierownik Personelu.
 
   <Box>
     <GuideEntityEmbed Entity="ToyFigurineChef" Caption="Chef"/>
@@ -32,10 +32,10 @@ Personel [color=#9fed58]Obsługi[/color] składa się z Pracowników Obsługi, K
   </Box>
 
 ## Współpraca
-[color=#9fed58]Serwis[/color], mimo że jest najbardziej zróżnicowany, bywa zdecydowanie najbardziej [color=#a4885c]powiązanym[/color] działem.
-Większość prac w [color=#9fed58]Serwisie[/color] wymaga [color=#a4885c]współpracy[/color] między pracownikami.
+[color=#b8ff9e]Serwis[/color], mimo że jest najbardziej zróżnicowany, bywa zdecydowanie najbardziej [color=#e8c878]powiązanym[/color] działem.
+Większość prac w [color=#b8ff9e]Serwisie[/color] wymaga [color=#e8c878]współpracy[/color] między pracownikami.
 Kucharze często potrzebują składników, które tylko botanicy mogą efektywnie wyhodować. Barman może prosić o banany, które tylko klauni noszą w obfitości.
 Prawnik może zaprosić mima do zagrania w kalambury, aby przekonać sędziego, że jego klient jest niewinny.
 
-Wiele [color=#a4885c]współpracy[/color] jest konieczne wewnątrz i na zewnątrz [color=#9fed58]Obsługi[/color]. Często [color=#9fed58]Serwis[/color] jest potrzebny innym działom, więc miejcie się na baczności.
+Wiele [color=#e8c878]współpracy[/color] jest konieczne wewnątrz i na zewnątrz [color=#b8ff9e]Obsługi[/color]. Często [color=#b8ff9e]Serwis[/color] jest potrzebny innym działom, więc miejcie się na baczności.
 </Document>
