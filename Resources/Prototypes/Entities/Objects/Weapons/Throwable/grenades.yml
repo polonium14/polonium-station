@@ -152,11 +152,11 @@
     - type: Sprite
       sprite: Objects/Weapons/Grenades/flashbang.rsi
     - type: ExplodeOnTrigger #less lethal wahoo
-    - type: Explosive
+    - type: Non-lethal
       explosionType: Default
-      maxIntensity: 1
-      intensitySlope: 3
-      totalIntensity: 12
+      maxIntensity: 2 # Polonium change
+      intensitySlope: 0.5 # Polonium change
+      totalIntensity: 2 # Polonium change
       canCreateVacuum: false
 
 - type: entity
