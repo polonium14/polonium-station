@@ -1,20 +1,4 @@
 ﻿Entries:
-- author: Velken
-  changes:
-  - message: Paramedic Void Suit now has flashlight and an ambulance siren.
-    type: Add
-  - message: Paramedic Void Suit is now restricted to Medical.
-    type: Tweak
-  id: 7951
-  time: '2025-02-13T19:52:21.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34657
-- author: themias
-  changes:
-  - message: Fixed being able to fax multiple times in quick succession
-    type: Fix
-  id: 7952
-  time: '2025-02-13T20:12:57.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/35135
 - author: Centronias
   changes:
   - message: High-heeled Boots now click and clack when walking
@@ -4202,3 +4186,17 @@
   id: 9258
   time: '2026-06-19T16:50:24.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/700
+- author: Malpa
+  changes:
+  - message: "Przet\u0142umaczono poradnik z MalfAi"
+    type: Tweak
+  id: 9259
+  time: '2026-06-21T06:44:11.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/634
+- author: Koilak
+  changes:
+  - message: Explozje Flashbangu.
+    type: Tweak
+  id: 9260
+  time: '2026-06-21T06:42:13.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/699
