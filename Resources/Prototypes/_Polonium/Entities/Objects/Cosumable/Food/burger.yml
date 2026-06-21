@@ -1,0 +1,33 @@
+- type: entity
+  name: Hot dog
+  parent: FoodBurgerBase
+  id: FoodHotDog
+  description: Hot dog, niczym z żabki.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - bun
+    - meaty
+  - type: Sprite
+    sprite: _Polonium/Objects/Cosumable/Food/burger.rsi
+    state: hotdog
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+        - ReagentId: Protein
+          Quantity: 5
+  - type: Tag
+    tags:
+    - Meat
+  - type: Item
+    sprite: _Polonium/Objects/Cosumable/Food/burger.rsi
+    inhandVisuals:
+      left:
+      - state: hotdog-inhand-left
+      right:
+      - state: hotdog-inhand-right
+
