@@ -1,44 +1,4 @@
 ﻿Entries:
-- author: Booblesnoot42
-  changes:
-  - message: Removing the security plate from an intercom will no longer delete its
-      encryption keys.
-    type: Fix
-  id: 7950
-  time: '2025-02-13T19:31:35.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34911
-- author: Velken
-  changes:
-  - message: Paramedic Void Suit now has flashlight and an ambulance siren.
-    type: Add
-  - message: Paramedic Void Suit is now restricted to Medical.
-    type: Tweak
-  id: 7951
-  time: '2025-02-13T19:52:21.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34657
-- author: themias
-  changes:
-  - message: Fixed being able to fax multiple times in quick succession
-    type: Fix
-  id: 7952
-  time: '2025-02-13T20:12:57.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/35135
-- author: Centronias
-  changes:
-  - message: High-heeled Boots now click and clack when walking
-    type: Tweak
-  id: 7953
-  time: '2025-02-13T22:35:59.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/35083
-- author: keronshb
-  changes:
-  - message: The Supermatter Grenade has been renamed to Singularity Grenade.
-    type: Tweak
-  - message: The Singularity Grenade no longer has an explosion.
-    type: Remove
-  id: 7954
-  time: '2025-02-14T15:01:41.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/35122
 - author: ArtisticRoomba
   changes:
   - message: The Solar Panels section of the Engineering Guidebook has been updated
@@ -4203,3 +4163,40 @@
   id: 9257
   time: '2026-06-18T21:12:51.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/696
+- author: Zintex
+  changes:
+  - message: "Dodany magazyn kanistr\xF3w na mapie Terra"
+    type: Add
+  id: 9258
+  time: '2026-06-19T16:50:24.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/700
+- author: Malpa
+  changes:
+  - message: "Przet\u0142umaczono poradnik z MalfAi"
+    type: Tweak
+  id: 9259
+  time: '2026-06-21T06:44:11.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/634
+- author: Koilak
+  changes:
+  - message: Explozje Flashbangu.
+    type: Tweak
+  id: 9260
+  time: '2026-06-21T06:42:13.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/699
+- author: pinkscreen
+  changes:
+  - message: Hotdogi!
+    type: Add
+  id: 9261
+  time: '2026-06-21T15:07:02.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/683
+- author: Czuat
+  changes:
+  - message: "Poprawiono Dinozaury z Amber alertu, ich martwe cia\u0142a ju\u017C\
+      \ nie b\u0119d\u0105 blokowa\u0107 strza\u0142\xF3w, wida\u0107 poprawnie ich\
+      \ zdrowie, oraz mo\u017Cna je przesuwa\u0107"
+    type: Fix
+  id: 9262
+  time: '2026-06-21T15:06:22.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/702

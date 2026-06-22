@@ -16,3 +16,25 @@
     Sugar: 5
   solids:
     FoodDoughPie: 1
+
+- type: microwaveMealRecipe
+  id: RecipeHotDog
+  name: HotDog recipe
+  result: FoodHotDog
+  time: 10
+  group: Savory
+  reagents:
+    Ketchup: 5
+  solids:
+    FoodBreadBun: 1
+    FoodMeatParowka: 1
+
+- type: microwaveMealRecipe
+  id: RecipePetoParowek
+  name: PetoParowek recipe
+  result: FoodMeatPetoParowek
+  time: 10
+  group: Savory
+  solids:
+    FoodMeat: 1
+    Paper: 1
