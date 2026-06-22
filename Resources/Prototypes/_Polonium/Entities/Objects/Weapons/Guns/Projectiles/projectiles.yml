@@ -27,24 +27,6 @@
 
 
 - type: entity
-  id: BulletPlasmaCutterShuttle
-  parent: BulletPlasmaCutter
-  components:
-  - type: GatheringProjectile
-    amount: 80
-  - type: Projectile
-    damage:
-      types:
-        Heat: 12 
-        Structural: 25
-  - type: TimedDespawn
-    lifetime: 0.4 
-  - type: PointLight
-    radius: 5
-    color: purple
-    energy: 2
-
-- type: entity
   id: BulletMineralVacuum
   parent: BaseBullet
   #categories: [ HideSpawnMenu ]
