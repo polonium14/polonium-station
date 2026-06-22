@@ -1,0 +1,61 @@
+<!--
+SPDX-FileCopyrightText: 2024 DevilishMilk <bluscout78@yahoo.com>
+SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 kbarkevich <24629810+kbarkevich@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+<Document>
+# Nadzorca Ochrony
+
+Przy zatrzymaniach i aresztowaniach obowiązują [textlink="procedury zatrzymania, aresztowania i przesłuchania" link="SecuritySOP"] oraz [textlink="procedura stosowania siły" link="UseOfForceSOP"]. Nadzorca odpowiada za kroki aresztowania od momentu przyjęcia więźnia w więzieniu (kroki 2–8) oraz może prowadzić przesłuchania.
+
+## Kod Zielony
+
+[bold]1.[/bold] Nadzorca [bold]nie[/bold] może dokonywać aresztowań, jeśli są aktywni [color=#ff8a8a]Oficerowie Ochrony[/color];
+
+[bold]2.[/bold] Nadzorca musi przeprowadzić pełne przeszukanie osobiste każdego więźnia zgodnie z procedurą aresztowania (krok 3), włącznie z kieszeniami, PDA oraz kieszeniami płaszcza;
+
+[bold]3.[/bold] Nadzorca musi zezwolić na rozprawę sądową w przypadkach określonych w [textlink="SPO Prawnym" link="LegalSOP"] oraz umożliwić podejrzanemu spotkanie z wybranym przez niego reprezentantem prawnym w dowolnym momencie odbywania wyroku. Odliczanie czasu wyroku powinno zostać wstrzymane na czas takich spotkań i wznowione w momencie powrotu więźnia do celi;
+
+[bold]4.[/bold] Nadzorca ma obowiązek zapewnić podejrzanemu obecność prawnika [italic]w trakcie przesłuchań[/italic] tylko w przypadku przestępstw poziomu III lub wyższego;
+
+[bold]5.[/bold] Nadzorca [bold]nie[/bold] może wydawać żadnej broni ani pancerza ze zbrojowni, z wyjątkiem sprzętu ochronnego, który został skradziony lub zgubiony. Skafandry mogą zostać wydane, jeśli konieczne jest awaryjne działanie w przestrzeni kosmicznej. Wyjątkami są zagrożenia dla całej stacji oraz terroryzm;
+
+[bold]6.[/bold] Nadzorca może nosić w pełni załadowany pas ochrony oraz standardową broń boczną (np. VIS MPS). Chociaż wolno mu nosić swoją unikalną strzelbę energetyczną, jest to odradzane ze względów bezpieczeństwa;
+
+[bold]7.[/bold] Nadzorca [bold]nie[/bold] może stawiać mobilnych błysków w więzieniu;
+
+[bold]8.[/bold] Nadzorca [bold]nie[/bold] może ustawiać rozstawianych barier w więzieniu;
+
+[bold]9.[/bold] Nadzorca ma obowiązek przeprowadzić lub nadzorować przesłuchanie zgodnie z procedurą przesłuchania, sporządzić Protokół Przesłuchania i — w razie skazania — wymierzyć wyrok na jego podstawie. Przy wyroku śmierci nadzoruje przygotowanie Nakazu egzekucji i egzekucję według [textlink="procedury egzekucji" link="SecuritySOP"];
+
+[bold]10.[/bold] Nadzorca nie może zostawić więźnia przykutego do łóżka. Wyjątkiem są wrogo zachowujący się więźniowie oraz tacy, którzy próbują uciec z więzienia;
+
+[bold]11.[/bold] Nadzorca powinien przestrzegać tych samych wytycznych dotyczących ubioru co [color=#ff8a8a]Oficerowie Ochrony[/color], z tą różnicą, że dozwolone są również wszystkie unikalne elementy ubioru Nadzorcy;
+
+[bold]12.[/bold] Nadzorca jest zachęcany do przestrzegania [textlink="Zasad Postępowania Ochrony" link="RulesOfConduct"], ponieważ daje to dobry przykład [color=#ff8a8a]Kadetom Ochrony[/color] oraz buduje zaufanie publiczne do działu Ochrony.
+
+## Kod Niebieski
+
+[bold]1.[/bold] Obowiązują wytyczne 1, 2, 3, 4, 6, 9, 11 oraz 12 z [color=#8ee99a]Kodu Zielonego[/color];
+
+[bold]2.[/bold] Nadzorca ma prawo wydawać dowolny sprzęt ze zbrojowni. Broń strzelecka powinna być wydawana tylko za zezwoleniem [color=#8ec8ff]Komendanta[/color] lub [color=#8ec8ff]Kapitana[/color], ponieważ stwarza ryzyko użycia siły śmiercionośnej, chyba że występują zagrożenia dla całej stacji lub terroryzm;
+
+[bold]3.[/bold] Nadzorca może stawiać mobilne błyski w więzieniu;
+
+[bold]4.[/bold] Nadzorca może ustawiać rozstawiane bariery w więzieniu;
+
+## Kod Czerwony
+
+[bold]1.[/bold] Obowiązują wytyczne 2, 4, 6, 9, 11 oraz 12 z [color=#8ee99a]Kodu Zielonego[/color];
+
+[bold]2.[/bold] Obowiązują wytyczne 3 oraz 4 z [color=#8ec8ff]Kodu Niebieskiego[/color]. Dodatkowo Nadzorca może nosić dowolną broń ze zbrojowni, ale nie więcej niż jedną sztukę naraz;
+
+[bold]3.[/bold] Nadzorca [bold]nie[/bold] ma obowiązku organizowania procesu sądowego w czasie zagrożenia. Ma jednak obowiązek umożliwić podejrzanemu spotkanie z wybranym przez niego reprezentantem prawnym w dowolnym momencie odbywania wyroku. Odliczanie czasu wyroku powinno zostać wstrzymane na czas takich spotkań i wznowione w momencie powrotu więźnia do celi;
+
+[bold]4.[/bold] Nadzorca może wydawać dowolną broń i pancerz ze zbrojowni. Obejmuje to osiągnięcia technologiczne z Rozwoju;
+
+[bold]5.[/bold] Nadzorca może swobodnie dokonywać aresztowań.
+</Document>

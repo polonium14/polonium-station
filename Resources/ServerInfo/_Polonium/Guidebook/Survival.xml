@@ -1,0 +1,61 @@
+<!--
+SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+SPDX-FileCopyrightText: 2023 Myakot <30875116+Myakot@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+SPDX-FileCopyrightText: 2024 Hmeister-real <118129069+Hmeister-real@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Iztok Bajcar <50874197+iztokbajcar@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 UBlueberry <161545003+UBlueberry@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Vasilis <vasilis@pikachu.systems>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+# Przetrwanie
+Generalnie mądrze jest unikać sytuacji, które mogą cię skrzywdzić, ponieważ medycy mogą cię uleczyć tylko w pewnym stopniu, mając ograniczone zasoby chemikaliów i środków medycznych, zwłaszcza gdy agenci nuklearni są u twoich drzwi.
+
+## Ocena sytuacji
+Twoje PDA zawiera zarówno nazwę statku, jak i listę załogi aktualnie na nim przebywającej, przypomnienie twojego imienia w razie potrzeby oraz przypisane ci zadanie na zmianę, co pozwala szybko ocenić sytuację. Twój skafander ma również wbudowane czujniki życiowe, które raportują twój aktualny stan do monitorów załogi na stacji. Możesz ustawić, ile informacji jest nadawanych, poprzez menu pod prawym przyciskiem myszy na twoim skafandrze.
+
+## Wzywanie pomocy
+
+Twoją najlepszą nadzieją jest użycie aplikacji SOS w PDA, aby zaalarmować Ochronę i Medyków, że potrzebujesz pomocy. Możesz również użyć ręcznego radia ratunkowego, aby wezwać pomoc.
+
+<Box>
+  <GuideEntityEmbed Entity="SOSCartridge"/>
+  <GuideEntityEmbed Entity="RadioHandheldEmergency"/>
+</Box>
+
+## Leczenie awaryjne
+W przypadku poważnego zagrożenia, jest kilka rzeczy, które możesz zrobić, aby zapewnić sobie długoterminowe przetrwanie, w tym:
+- Jeśli wchodzisz w stan krytyczny, użyj awaryjnego wstrzykiwacza (medipena) ze swojej skrzynki ratunkowej. Upewni się on, że nie skończysz w stanie niezdolności do działania. Awaryjne wstrzykiwacze mogą być również używane do reanimacji ludzi leżących w stanie krytycznym oraz do przedłużenia czasu, jaki masz na poradzenie sobie z truciznami itp.
+
+<Box>
+  <GuideEntityEmbed Entity="EmergencyMedipen"/>
+  <GuideEntityEmbed Entity="SpaceMedipen"/>
+</Box>
+
+- Twoja skrzynka ratunkowa zawiera maskę oddechową i butlę z tlenem, które mogą pomóc ci przetrwać dłużej w przypadku dekompresji. Jeśli jesteś jednym z ludzi-szlamów (slimepeople), pamiętaj, że azot zastępuje dla ciebie tlen i że twoja skrzynka ratunkowa będzie zawierać czerwoną butlę z azotem zamiast standardowej niebiesko/żółtej butli z tlenem.
+
+<Box>
+  <GuideEntityEmbed Entity="ClothingMaskBreath"/>
+  <GuideEntityEmbed Entity="EmergencyOxygenTankFilled"/>
+</Box>
+
+- Jeśli aktywnie krwawisz lub po prostu chcesz się przygotować, możliwe jest pocięcie materiałowych przedmiotów nożem lub innym ostrym przedmiotem i użycie uzyskanego materiału do stworzenia gazy w menu tworzenia przedmiotów, aby zatamować krwawienie, jednak sam materiał może być użyty w mniejszym stopniu w sytuacjach awaryjnych.
+
+<Box>
+  <GuideEntityEmbed Entity="Gauze"/>
+  <GuideEntityEmbed Entity="MaterialCloth"/>
+</Box>
+
+## Inne różne wskazówki
+- Zamiast faktycznego analizatora zdrowia, po prostu zbadanie siebie i użycie szczegółowego opisu (examine) jest dobrą metodą, aby dowiedzieć się, jakie masz rany.
+- Jeśli tracisz wzrok, marchewki są kolejnym sposobem na leczenie tego problemu (ponieważ zawierają Oculine, lek chemiczny używany do leczenia ślepoty), o ile są dostępne.
+- Dobrze przygotowane posiłki (gotowane jedzenie, a nie z automatu) są generalnie znacznie lepsze dla twojego ogólnego zdrowia i mogą pomóc szybciej leczyć mniejsze rany.
+- Zwykły odpoczynek w łóżku może pozwolić niektórym ranom zagoić się samodzielnie. Łóżka medyczne są do tego najlepsze, zapewniając sterylną powierzchnię i wsparcie dla wszystkich uszkodzonych części ciała, ale każde łóżko zadziała.
+- Faktyczne spanie na łóżku jeszcze bardziej zwiększa tempo twojego leczenia.
+- Posiłki zawierające białka, takie jak mięso, ogromnie pomogą w kondycji twojego ciała po poważnej utracie krwi. Mimo to zaleca się wizytę u lekarza.
+
+</Document>

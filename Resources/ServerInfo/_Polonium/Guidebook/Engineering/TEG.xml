@@ -1,0 +1,246 @@
+<!--
+SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+SPDX-FileCopyrightText: 2024 Iztok Bajcar <50874197+iztokbajcar@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 JIPDawg <51352440+JIPDawg@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Kira Bridgeton <161087999+Verbalase@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Terraspark4941 <terraspark4941@gmail.com>
+SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+  # Generator termoelektryczny (TEG)
+
+  TEG wytwarza energię poprzez wymianę ciepła między gorącymi i zimnymi gazami.
+  Na stacji gorący gaz powstaje zazwyczaj w wyniku spalania plazmy, a układ [textlink="radiatorów" link="Radiators"] w przestrzeni kosmicznej odprowadza ciepło, schładzając krążące gazy.
+
+  TEG w dużym stopniu opiera się na [textlink="orurowaniu" link="Pipes"] i [textlink="atmosferyce" link="Atmospherics"]. 
+  Jedynymi naprawdę specjalnymi elementami są rdzeń generatora i cyrkulatory; reszta to standardowy sprzęt atmosferyczny.
+  Należy zauważyć, że chociaż dokładny układ może się znacznie różnić między stacjami, ogólne komponenty i konfiguracja są zazwyczaj takie same.
+
+  ## Generator
+
+  Sam generator główny to urządzenie składające się z trzech głównych części: generatora centralnego oraz dwóch "cyrkulatorów", rozmieszczonych w następujący sposób:
+
+  <Box>
+    <GuideEntityEmbed Entity="TegCirculator" Rotation="180" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="TegCenter" Rotation="90" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="TegCirculator" Caption="" Margin="0"/>
+  </Box>
+
+  Cyrkulatory pobierają gorący lub zimny gaz i przepuszczają go przez urządzenie w celu wymiany ciepła.
+  Następnie gaz jest odprowadzany na drugim końcu cyrkulatora. Generator wytwarza energię elektryczną i przekazuje ją za pośrednictwem [color=#ffb86b]przewodu wysokiego napięcia[/color].
+
+  Należy pamiętać, że cyrkulatory są [color=#e8c878]kierunkowe[/color]: przepuszczają gaz tylko w jedną stronę.
+  Kierunek ten można sprawdzić w grze, przyglądając się cyrkulatorowi.
+  Pomiędzy wejściem a wyjściem musi występować różnica ciśnień, dlatego zazwyczaj są tam pompki, które trzeba włączyć.
+
+  Nie ma znaczenia, która strona jest gorąca, a która zimna – wystarczy, że występuje między nimi różnica temperatur.
+  Gazy w obu "pętlach" nigdy się nie mieszają, [color=#e8c878]wymienia się między nimi jedynie energia[/color].
+  Strona gorąca ulegnie ochłodzeniu, a strona zimna – ogrzaniu.
+
+  ## Rurociągi
+
+  W tym miejscu należy zwrócić uwagę na dwa główne układy [textlink="rur" link="PipeNetworks"]: [color=#ff8a8a]pętlę gorącą[/color] (w której gaz będzie spalany w celu wytworzenia ciepła) oraz [color=#7ee8f7]pętlę zimną[/color] (w której cyrkulujące, ogrzane spaliny będą albo odprowadzane w przestrzeń kosmiczną, albo ponownie schładzane).
+  Należy upewnić się, że [color=#e8c878][bold]oba [textlink="rurociągi" link="PipeNetworks"] NIE mieszają się[/bold][/color], ponieważ ciepło powinno być wymieniane między nimi wyłącznie za pośrednictwem TEG.
+
+  # Gorąca pętla
+
+  Jak zapewne powiedział kiedyś jakiś chiński mędrzec: najlepszym sposobem, by coś rozgrzać, jest podpalenie tego.
+  Cóż, w zależności od sytuacji może to nie być zbyt mądre, ale na szczęście dział inżynieryjny dysponuje wszystkim, co potrzebne, by zrobić to w rozsądny sposób.
+
+  Jak wspomniano powyżej, istnieje wiele różnych układów, które można zastosować do podgrzewania (lub chłodzenia) gazów; w tej części przewodnika omówimy kilka powszechnie stosowanych metod dotyczących gorącej pętli, związanych z [color=#ff8a8a]komorą spalania[/color].
+
+  Na marginesie: Pożary plazmowe charakteryzują się stosunkowo niską temperaturą w porównaniu np. z pożarami trytu.
+  Możliwe, że opłacalne byłoby pozyskiwanie trytu z instalacji wydobywczej i poddawanie go reakcji z tlenem, aby uzyskać naprawdę piekielne temperatury.
+
+  ## Komora spalania
+
+  Komora spalania jest najczęściej stosowaną metodą podgrzewania gazów, a ponadto znajduje szerokie zastosowanie również w innych celach (zobacz: Produkcja trytu).
+
+  W większości (jeśli nie we wszystkich) stacjach komora spalania jest oddzielona od głównego bloku atmosferycznego siatką o szerokości 1 pola, co ma na celu zapobieżenie przedostawaniu się rozpalonego gazu do systemu dystrybucyjnego w razie uszkodzenia. Komory składają się z 3 ważnych części:
+  - [textlink="Wtryskiwaczy powietrza" link="AirInjector"]/[textlink="pasywnych otworów wentylacyjncyh" link="PassiveVent"]
+  - Otworu wentylacyjnego przeznaczonego do wyrzucania gazów do przestrzeni kosmicznej
+  - Układ oczyszczaczy powietrza
+
+  Oto przykładowa konfiguracja:
+  <Box>
+    <GuideEntityEmbed Entity="WallReinforced" Rotation="0" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="WallReinforced" Rotation="0" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="BlastDoorOpen" Rotation="0" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="WallReinforced" Rotation="0" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="WallReinforced" Rotation="0" Caption="" Margin="0"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="ReinforcedPlasmaWindow" Rotation="0" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="GasVentScrubber" Rotation="90" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="GasPipeTJunction" Rotation="0" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="GasVentScrubber" Rotation="-90" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="ReinforcedPlasmaWindow" Rotation="0" Caption="" Margin="0"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="ReinforcedPlasmaWindow" Rotation="0" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="GasPassiveVent" Rotation="0" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="GasPipeTJunction" Rotation="90" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="GasVentScrubber" Rotation="-90" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="ReinforcedPlasmaWindow" Rotation="0" Caption="" Margin="0"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="WallReinforced" Rotation="0" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="ReinforcedPlasmaWindow" Rotation="0" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="ReinforcedPlasmaWindow" Rotation="0" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="ReinforcedPlasmaWindow" Rotation="0" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="WallReinforced" Rotation="0" Caption="" Margin="0"/>
+  </Box>
+
+  [textlink="Wtryskiwacz powietrza" link="AirInjector"] (lub [textlink="pasywny otwór wentylacyjny" link="PassiveVent"]) wtłacza powietrze (lub umożliwia przepływ powietrza) do komory spalania.
+  W obu przypadkach należy zainstalować przed nim pompkę, aby utrzymać wysokie ciśnienie.
+
+  Istnieje znacząca różnica między [textlink="pasywnym otworzem wentylacyjnym" link="PassiveVent"] a [textlink="wtryskiwaczem powietrza" link="AirInjector"]; [textlink="wtryskiwacz powietrza" link="AirInjector"] może wtryskiwać powietrze tylko do [color=#e8c878]9MPa[/color], co można bardzo łatwo osiągnąć przy dobrym spalaniu.
+  Najlepiej byłoby wymienić [textlink="wtryskiwacz powietrza" link="AirInjector"] na [textlink="pasywny otwór wentylacyjny" link="PassiveVent"] podłączony do pompy objętościowej.
+
+  Otwór wentylacyjny (oznaczony jako drzwi przeciwwybuchowe do przestrzeni kosmicznej po jednej stronie komory spalania) umożliwia odprowadzanie i niszczenie spalin.
+  Należy go od czasu do czasu otwierać, aby utrzymać ciśnienie pod kontrolą lub w celu rozładowania nadmiaru doprowadzanego gazu.
+  Do sporadycznego rozładowywania gazu przydatny może okazać się nawet zawór pneumatyczny.
+
+  Układ [textlink="oczyszczaczy powietrza" link="AirScrubber"] odfiltrowuje wszystkie spaliny i kieruje je do TEG.
+  Należy pamiętać, że stosowanie domyślnych ustawień w układzie [textlink="oczyszczaczy powietrza" link="AirScrubber"] nie jest dobrym pomysłem, ponieważ spowoduje to również odfiltrowanie cennej plazmy.
+  Dzięki temu można zebrać jak najwięcej dostępnego ciepła i przekazać je do TEG.
+
+  Pamiętaj, że to tylko jeden z wielu sposobów konfiguracji gorącej pętli; [color=#e8c878]nie bój się eksperymentować! Próbuj łączyć i dopasowywać ustawienia pętli według własnych potrzeb![/color]
+  [textlink="Pompki objętościowe" link="Pumps"] zamiast [textlink="pompek ciśnieniowych" link="Pumps"], [textlink="radiatory" link="Radiators"] do pozyskiwania ciepła, a nawet anomalia piroklastyczna jako źródło tego ciepła!
+  Możliwości są nieograniczone!
+
+  # Zimna pętla
+
+  Podobnie jak w przypadku pętli gorącej, pętlę zimną również należy skonfigurować tak, aby mogła zasilać TEG.
+  Jednak pętla zimna jest zazwyczaj znacznie mniej złożona technicznie niż pętla gorąca; w rzeczywistości pętla zimna musi być jedynie "względnie" chłodniejsza – w końcu temperatura pokojowa jest technicznie rzecz biorąc dużo niższa niż temperatura powierzchni słońca, prawda?
+
+  Istnieją trzy główne metody stosowane w zimnej pętli: [color=#e8c878]chłodnica wodna[/color] (zobacz: film Liltenheada na temat TEG), [color=#7ee8f7]układ chłodzący[/color] oraz [color=#e8c878]pętla z termomaszyną chłodzącą[/color].
+
+  ## Chłodnica wodna
+
+  Metoda ta jest prosta. Polega na przepuszczeniu jakiegoś bezużytecznego gazu (w tym przypadku pary wodnej) przez TEG i wypuszczeniu go w przestrzeń kosmiczną. Jest to rozwiązanie niezwykle tanie i proste, ale kosztem jest wydajność i trwała utrata gazu.
+
+  Konfiguracja tego rozwiązania jest tak prosta, że poradziłby sobie z nią nawet Hamlet! Należy pobrać gaz (w tym przypadku parę wodną), przepuścić go przez zimną stronę TEG, a następnie wypuścić w przestrzeń kosmiczną.
+
+  <Box>
+    <GuideEntityEmbed Entity="GasPressurePump" Rotation="90" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="GasPipeStraight" Rotation="90" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="TegCirculator" Rotation="90" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="GasPipeStraight" Rotation="90" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="WallReinforced" Rotation="0" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="GasPassiveVent" Rotation="270" Caption="" Margin="-1"/>
+  </Box>
+
+  ## Układ chłodzący
+
+  Jest to domyślna metoda chłodzenia, którą można spotkać na wielu stacjach.
+  Ze względu na umiarkowaną złożoność i brak strat jakichkolwiek zasobów, ta metoda [color=#e8c878]powinna[/color] stanowić główny sposób chłodzenia TEG.
+  Jednak obecnie na większości stacji radiatory z jakiegoś powodu są nieprawidłowo podłączone, co znacznie obniża wydajność.
+
+  Aby prawidłowo korzystać z wymienników ciepła, należy je podłączyć [color=#e8c878]równolegle[/color], a nie szeregowo (jak to ma miejsce w większości stacji).
+  Pompka ciśnieniowa pracująca przy maksymalnym ciśnieniu powinna znajdować się za wymiennikami ciepła, a pompa objętościowa przed nimi.
+  Natężenie przepływu pompy objętościowej należy ustawić zgodnie z następującym wzorem:
+  <Box>
+    [color=#7ee8f7]( 200 / liczba wymienników ciepła )[/color] L/s.
+  </Box>
+
+  Mówiąc najprościej, układ chłodzący składa się z trzech głównych elementów: portu gazowego, kilku pompek oraz układu radiatorów umieszczonego w przestrzeni kosmicznej.
+  Można go skonfigurować w następujący sposób:
+
+  <Box>
+    <GuideEntityEmbed Entity="GasPipeBend" Rotation="90" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="GasPipeTJunction" Rotation="0" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="GasPipeTJunction" Rotation="0" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="GasPipeTJunction" Rotation="0" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="GasPipeTJunction" Rotation="0" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="GasPipeBend" Rotation="0" Caption="" Margin="-1"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="HeatExchanger" Rotation="0" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="HeatExchanger" Rotation="0" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="HeatExchanger" Rotation="0" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="HeatExchanger" Rotation="0" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="HeatExchanger" Rotation="0" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="GasPipeStraight" Rotation="0" Caption="" Margin="-1"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="GasPipeTJunction" Rotation="90" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="GasPipeTJunction" Rotation="180" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="GasPipeTJunction" Rotation="180" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="GasPipeTJunction" Rotation="180" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="GasPipeBend" Rotation="270" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="GasPipeStraight" Rotation="0" Caption="" Margin="-1"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="WallReinforced" Rotation="0" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="ReinforcedWindow" Rotation="0" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="ReinforcedWindow" Rotation="0" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="ReinforcedWindow" Rotation="0" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="ReinforcedWindow" Rotation="0" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="WallReinforced" Rotation="0" Caption="" Margin="0"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="GasPipeBend" Rotation="180" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="GasPressurePump" Rotation="90" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="TegCirculator" Rotation="90" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="GasPipeTJunction" Rotation="0" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="GasVolumePump" Rotation="90" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="GasPipeBend" Rotation="270" Caption="" Margin="-1"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="TegCenter" Rotation="0" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="GasPort" Rotation="180" Caption="" Margin="-1"/>
+  </Box>
+
+  - Port gazowy: Służy do wprowadzania gazu o dużej pojemności cieplnej; najczęściej wykorzystuje się do tego plazmę lub frezon, ponieważ oba te gazy charakteryzują się bardzo wysoką pojemnością cieplną (chociaż w zasadzie nadaje się do tego niemal każdy gaz). (Tak, plazma nie jest równoznaczna z wysoką temperaturą. Można ją schłodzić, a wtedy działa jako doskonały nośnik wymiany ciepła.)
+  - Pompky wejściowe/wyjściowe: Służą do zapewnienia ciągłego przepływu gazu zarówno przez cyrkulator, jak i układ radiatorów. Gdy gaz się ochładza i nagrzewa (oraz przepływa przez wymiennik), należy wywierać na nim ciśnienie, aby utrzymać przepływ.
+  - Radiator: Zasadniczo jest to po prostu zestaw radiatorów w przestrzeni kosmicznej. Nie ma tu wiele do dodania, poza tym, że chłodzi on gaz znajdujący się w jego wnętrzu. Należy upewnić się, że radiatory są [color=#e8c878]umieszczone na kratownicy, a nie na poszyciu[/color]! W przeciwnym razie wydajność wymiany ciepła ulegnie znacznemu obniżeniu, ponieważ radiatory nie będą miały bezpośredniego kontaktu z przestrzenią znajdującą się pod nimi.
+
+  ## Pętla z termomaszyną chłodzącą
+
+  W większości przypadków ta metoda jest stosowana w zaawansowanych konfiguracjach TEG.
+  Zasadniczo jest to po prostu układ chłodzący, w którym radiatory zastąpiono termomaszyną chłodzącą.
+  Chociaż termomaszyna chłodząca zużywa energię, stanowi to jedynie niewielką część tego, co może wygenerować TEG, a obecnie jest to rozwiązanie lepsze niż domyślny układ chłodzący.
+
+  Postępuj zgodnie z instrukcjami dla układu chłodzącego, ale zamiast radiatorów użyj termomaszyny chłodzącej. Tak jak poniżej:
+  <Box>
+    <GuideEntityEmbed Entity="GasPort" Rotation="90" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="GasPipeBend" Rotation="0" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="GasThermoMachineFreezerEnabled" Caption="" Rotation="0" Margin="0"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="GasPipeBend" Rotation="90" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="GasVolumePump" Rotation="270" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="GasPipeTJunction" Rotation="180" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="GasPipeTJunction" Rotation="180" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="GasPipeBend" Rotation="0" Caption="" Margin="-1"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="GasPipeBend" Rotation="180" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="GasPipeStraight" Rotation="90" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="TegCirculator" Rotation="90" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="GasPipeStraight" Rotation="90" Caption="" Margin="-1"/>
+    <GuideEntityEmbed Entity="GasPipeBend" Rotation="270" Caption="" Margin="-1"/>
+  </Box>
+
+  Po raz kolejny, aby uzyskać maksymalną wydajność, użyj w obiegu plazmy lub frezonu (chociaż sprawdzi się niemal każdy gaz).
+
+  ## W dążeniu do wyższej wydajności
+  Pamiętaj, że atmosferyka to ciągła nauka.
+  Powyższe konfiguracje to zaledwie wierzchołek góry lodowej; istnieje wiele sposobów na skonfigurowanie TEG i wiele możliwości ulepszenia powyższych ustawień.
+  [color=#e8c878]Eksperymentuj![/color]
+
+  Zawsze staraj się ulepszać projekty, które widzisz, i zawsze staraj się ulepszać projekty, które sam tworzysz.
+  TEG to potężne narzędzie, a z wielką mocą wiąże się wielka odpowiedzialność.
+  Upewnij się, że używasz go mądrze i dobrze.
+
+  Atmosferyka w Space Station 14 to złożony system, a TEG jest tylko jego częścią.
+  [bold]To gigantyczna zagadka, więc rusz się i ją rozwiąż![/bold]
+
+</Document>

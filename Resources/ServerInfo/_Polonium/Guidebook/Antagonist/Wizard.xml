@@ -1,0 +1,37 @@
+<!--
+SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+  # Czarodziej
+
+  <Box>
+    [color=#457573][italic]CZAS NA CZARODZIEJA, SKUR...[italic][/color]
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="ToyFigurineWizard" Caption=""/>
+  </Box>
+  Czarodzieje to uosobienie chaosu i nieprzewidywalności. Nigdy nie wiadomo, co który z nich zrobi za chwilę.
+  Zazwyczaj są wysyłani przez [color=#40E0D0]Federację Kosmicznych Czarodziejów[/color] albo to po prostu jakiś frajer, który stał się czarodziejem po wyrzuceniu naturalnej dwudziestki na przeklętej kostce.
+  A ponieważ czarodziej jest niezwykle nieprzewidywalny, może się pojawić wtedy, kiedy najmniej się tego spodziewasz!
+
+  ## Księga Czarodzieja
+  <Box>
+    <GuideEntityEmbed Entity="WizardsGrimoire" Caption="Księga Czarodzieja"/>
+  </Box>
+
+  [bold]Zgodnie z pradawnym prawem czarodziejów twoja księga jest z tobą nierozerwalnie związana. [/bold] Oznacza to, że nie możesz dzielić się nią z nikim innym. Zaklęcia i wyposażenie w niej zawarte są przeznaczone wyłącznie dla ciebie.
+  Księga czarodzieja służy do uzyskiwania wszelkiego rodzaju zaklęć, wyposażenia i stworzeń. To, co jest dla ciebie dostępne, jest [italic]niezwykle potężne[/italic], więc masz tylko 10 [color=#ff8a8a]W[/color][color=#FFA500]i[/color][color=#FFFF00]z[/color] [color=#00FF00]€[/color][color=#8ec8ff]o[/color][color=#c8a0ff]i[/color][color=#d8a0ff]n[/color]™ do wydania na nie.
+  Jedynym ograniczeniem, poza ceną, jest twoja kreatywność. Spróbuj znaleźć różne kombinacje!
+
+  <Box>
+    <GuideEntityEmbed Entity="PonderingOrbWizard" Caption="Kula Kontemplacji"/>
+  </Box>
+
+  Jeśli kiedykolwiek zechcesz się zamyślić, mamy coś, czego szukasz! [bold]Kula Kontemplacji[/bold] pozwala czarodziejowi podłączyć się do sieci kamer stacji, by podglądać innych, którzy niczego nie podejrzewają.
+  Może się to przydać, jeśli planujesz coś lub chcesz być o krok przed [color=#ff8a8a]ochroną[/color].
+
+</Document>

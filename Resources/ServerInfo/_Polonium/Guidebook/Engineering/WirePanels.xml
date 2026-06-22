@@ -1,0 +1,37 @@
+<!--
+SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+  # Panele z przewodami
+  Niektóre urządzenia na stacji, takie jak śluzy powietrzne, automaty sprzedażowe i konsole do gier, są wyposażone w panele z okablowaniem, które sterują niektórymi funkcjami tych urządzeń. 
+
+  Panele te można otworzyć za pomocą śrubokręta.
+
+  <Box>
+    <GuideEntityEmbed Entity="Wirecutter"/>
+    <GuideEntityEmbed Entity="Screwdriver"/>
+    <GuideEntityEmbed Entity="Multitool"/>
+  </Box>
+
+  W tym miejscu możesz użyć obcinaka i multinarzędzia do pracy z okablowaniem. Pamiętaj, że podczas pracy z okablowaniem konieczne jest założenie rękawic izolacyjnych, ponieważ jeśli przewód jest pod napięciem, możesz zostać porażonym prądem.
+
+  <Box>
+    <GuideEntityEmbed Entity="ClothingHandsGlovesColorYellow"/>
+  </Box>
+
+  Za pomocą obcinaka można przecinać i naprawiać przewody, a za pomocą multinarzędzia – wysyłać impulsy do przewodów.
+
+  Przecięcie przewodów często całkowicie wyłącza lub przywraca działanie urządzenia.
+  Może to również wywołać niezamierzone skutki, takie jak porażenie prądem, opuszczenie bolców drzwiowych lub wybuch.
+
+  Impulsowanie przewodów może mieć różne skutki, ale często powoduje tymczasowe wyłączenie lub włączenie funkcji.
+
+  Nie można impulsować przewodów, jeśli przewód, który próbujesz impulsować, jest przecięty – musisz go najpierw naprawić.
+
+
+</Document>

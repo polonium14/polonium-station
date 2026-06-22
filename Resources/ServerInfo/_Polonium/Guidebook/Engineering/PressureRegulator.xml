@@ -1,0 +1,23 @@
+<Document>
+  # Regulator ciśnienia wlotowego
+  Regulator ciśnienia wlotowego to urządzenie pasywne, które umożliwia odprowadzanie gazu z [textlink="sieci rurociągów" link="PipeNetworks"] gdy ciśnienie przekroczy określony próg.
+
+  <Box>
+    <GuideEntityEmbed Entity="GasPressureRegulator"/>
+  </Box>
+
+  ## Działanie
+  Zawór automatycznie [color=#8ee99a]otworzy się[/color], gdy ciśnienie w rurze przekroczy ustawiony próg, umożliwiając ujście gazu do podłączonej rury wylotowej.
+
+  Zawór ponownie się [color=#ff8a8a]zamknie[/color], gdy ciśnienie spadnie poniżej ustawionego progu.
+
+  Przepływ przez zawór jest ograniczony do [color=#ffb86b][protodata="GasPressureRegulator" comp="GasPressureRegulator" member="MaxTransferRate"/] L/s[/color].
+
+  ## Przykłady zastosowań
+  Zawór ten jest powszechnie stosowany w celu zapobiegania nadciśnieniu w instalacjach gazowych, takich jak zimne pętle [textlink="TEG" link="TEG"] i [textlink="rury" link="Pipes"], które mogłyby spowodować awarię systemu (zatkanie [textlink="pompek" link="Pumps"]).
+
+  Zawór ten może służyć również do odprowadzania gorącego gazu z komory spalania.
+  Na przykład niepożądane może być dopuszczenie do sytuacji, w której ciśnienie w komorze spalania przez dłuższy czas spadnie poniżej określonego poziomu, ponieważ może to spowodować nadmierne ochłodzenie i rozrzedzenie gazu, co z kolei doprowadziłoby do wygaszenia płomienia.
+
+  Regulator ciśnienia wlotowego może służyć do odprowadzania nadmiaru gazu, utrzymując jednocześnie ciśnienie w komorze spalania powyżej określonego progu, co może pomóc w podtrzymaniu ognia w komorze spalania.
+</Document>

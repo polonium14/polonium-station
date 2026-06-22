@@ -1,0 +1,61 @@
+<!--
+SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+  # SPO Głównego Inżyniera
+
+  [bold]1.[/bold] Główny Inżynier musi upewnić się, że panele słoneczne są prawidłowo podłączone, a silnik antymaterii (AME) - o ile jest dostępny - został uruchomiony, a także uzgodnić z zespołem plan uruchomienia silnika o większej mocy do długoterminowego zasilania stacji;
+
+  [bold]2.[/bold] Główny Inżynier, wraz z [color=#e8a0ff]Kierownikiem Badań[/color], odpowiada za utrzymanie sprawności systemu telekomunikacyjnego. Główny Inżynier nie może utrudniać prawidłowego funkcjonowania systemu telekomunikacyjnego oraz ma obowiązek diagnozować i usuwać wszelkie pojawiające się usterki;
+
+  [bold]3.[/bold] Główny Inżynier podlega tym samym zasadom dotyczącym siekiery, co [color=#ffc966]Technicy Atmosferyki[/color];
+
+  [bold]4.[/bold] Główny Inżynier ma prawo nosić lampę błyskową oraz standardową broń krótką (tj. MK-58 lub RG-2);
+
+  [bold]5.[/bold] Główny Inżynier odpowiada za utrzymanie sprawności wszystkich źródeł zasilania zainstalowanych na stacji. Zaniedbanie tego obowiązku stanowi podstawę do zwolnienia w przypadku delaminacji supermaterii lub awarii zasilania na stacji;
+
+  [bold]6.[/bold] Główny Inżynier może ogłosić, że dany obszar jest "niezdatny do użytku", jeśli jest on uszkodzony w stopniu uniemożliwiającym przeprowadzenie napraw w rozsądnym terminie;
+
+  [bold]7.[/bold] Główny Inżynier jest uprawniony do wydawania pozwoleń na budowę członkom załogi oraz może rozebrać lub zburzyć nielegalne budowle lub konstrukcje;
+
+  [bold]8.[/bold] Główny Inżynier odpowiada za utrzymanie integralności systemu atmosferycznego stacji. Nieprzestrzeganie tego obowiązku stanowi podstawę do rozwiązania umowy o pracę.
+
+  # SPO Inżyniera Stacji
+
+  [bold]1.[/bold] Inżynierowie muszą prawidłowo podłączyć panele słoneczne i uruchomić silnik antymaterii (AME), jeśli jest dostępny, a także opracować plan uruchomienia silnika o większej mocy do długoterminowego użytku stacji;
+
+  [bold]2.[/bold] Inżynierowie są odpowiedzialni za utrzymanie sprawności wszystkich źródeł zasilania na stacji, nawet tych wyłączonych lub nieaktywnych. Zaniedbanie tego obowiązku stanowi podstawę do zwolnienia w przypadku awarii silnika;
+
+  [bold]3.[/bold] Inżynierowie mogą budować dodatkowe źródła zasilania (takie jak silniki SM lub Tesla) za zgodą [color=#8ec8ff]Głównego Inżyniera[/color];
+
+  [bold]4.[/bold] Inżynierowie mogą realizować samodzielne projekty związane z przebudową, odbudową lub projekty własne, o ile stacja nie wykazuje żadnych uszkodzeń wymagających naprawy;
+
+  [bold]5.[/bold] Inżynierowie muszą sprawdzać każdy pracujący silnik co najmniej raz na 30 minut;
+
+  [bold]6.[/bold] Inżynierowie muszą nieustannie monitorować Supermaterię o ile jest używana i znajduje się pod ostrzałem emiterów;
+
+  [bold]7.[/bold] Inżynierowie muszą niezwłocznie reagować na wszelkie uszkodzenia, niezależnie od ich skali. Brak zgłoszenia w ciągu piętnastu (15) minut będzie traktowany jako naruszenie standardowej procedury operacyjnej, chyba że nie ma innych inżynierów, którzy mogliby zgłosić zdarzenie. Wszystkie strefy zagrożenia należy odgrodzić taśmą inżynieryjną lub holobarierami w celu zapewnienia bezpieczeństwa członków załogi;
+
+  [bold]8.[/bold] Inżynierowie mogą włamać się do pomieszczeń, aby uzyskać nieuprawniony dostęp, jeśli wymagają one [bold]pilnych[/bold] napraw;
+
+  [bold]9.[/bold] Inżynierowie mają za zadanie dbać o niezawodność sieci energetycznej stacji;
+
+  [bold]10.[/bold] Inżynierowie muszą zadbać o to, aby na stacji przez cały czas dostępny był co najmniej jeden (1) inżynieryjny kombinezon próżniowy (hardsuit), chyba że wystąpi sytuacja awaryjna wymagająca użycia wszystkich kombinezonów.
+
+  [bold]11.[/bold] Inżynierowie mogą całkowicie wymienić instalację rurociągów atmosferycznych, pod warunkiem że nie wpompują szkodliwych gazów do sieci dystrybucyjnej;
+
+  [bold]12.[/bold] Inżynierowie [bold]nie mogą[/bold] tworzyć mieszanek niestabilnych lub szkodliwych do stosowania poza obrębem departamentu atmosferyki;
+
+  [bold]13.[/bold] Inżynierom [bold]nie wolno[/bold] wyjmować siekiery z pojemnika poza terenem budowy, chyba że istnieje bezpośrednie i pilne zagrożenie dla ich życia lub konieczny jest natychmiastowy dostęp do miejsc kryzysowych. Po zakończeniu prac siekierę należy ponownie umieścić w pojemniku i zamknąć go na klucz;
+
+  [bold]14.[/bold] Inżynierowie [bold]nie mogą[/bold] zmieniać domyślnych ustawień alarmów powietrznych w pomieszczeniach nienależących do departamentu atmosferyki bez wyraźnej zgody kierownictwa;
+
+  [bold]15.[/bold] Inżynierowie muszą okresowo sprawdzać stan centralnego komputera alarmowego, co najwyżej co trzydzieści (30) minut;
+
+  [bold]16.[/bold] Inżynierowie muszą zadbać o stały dopływ odpowiedniej mieszanki do systemu dystrybucji oraz zapewnić odpowiednią wentylację stacji.
+</Document>

@@ -1,0 +1,58 @@
+<!--
+SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+  # Magazynowanie energii
+  Ze względu na zjawisko [textlink="stopniowego zwiększania mocy" link="Ramping"] generatorów ważne jest posiadanie urządzeń do magazynowania energii, które pomagają wyrównać skoki i spadki zużycia energii, a także zapewniają zasilanie w przypadku jej niedoboru.
+
+  Każdy transformator dla danego poziomu napięcia ([color=#ffb86b]wysokonapięciowy[/color], [color=#ffe566]średionapięciowy[/color] i [color=#8ee99a]niskonapięciowy[/color]) jest wyposażony w niewielki akumulator, który pozwala zniwelować niewielkie skoki i spadki napięcia; nie jest to jednak skuteczne rozwiązanie w przypadku znacznego deficytu w sieci.
+
+  ## SMES
+
+  SMES (Superconducting Magnetic Energy Storage) to urządzenie, które może magazynować duże ilości energii i szybko ją uwalniać.
+
+  <Box>
+    <GuideEntityEmbed Entity="SMESBasic"/>
+  </Box>
+
+  Aby naładować urządzenie SMES, należy podłączyć zasilanie [color=#ffb86b]wysokonapięciowe[/color] do złącza kablowego skierowanego w stronę urządzenia SMES. Urządzenie SMES będzie pobierać energię z tego złącza i wysyłać ją z jego spodniej części.
+
+  Złącze to zapewnia, że [color=#ffb86b]wejście wysokonapięciowe[/color] i [color=#ffb86b]wyjście wysokonapięciowe[/color] nie są ze sobą połączone.
+
+  <Box HorizontalAlignment="Stretch">
+    <Box>
+      <GuideEntityEmbed Entity="CableTerminal"/>
+    </Box>
+
+    <Box>
+      <GuideEntityEmbed Entity="CableHV" Caption="Output"/>
+      <GuideEntityEmbed Entity="SMESBasic" Caption="" Margin="0"/>
+      <GuideEntityEmbed Entity="CableTerminal" Caption="" Margin="0" Rotation="270"/>
+      <GuideEntityEmbed Entity="CableHV" Caption="Input"/>
+    </Box>
+  </Box>
+
+  Urządzenia SMES mogą magazynować [color=#ffb86b][protodata="SMESBasic" comp="Battery" member="MaxCharge" format="N0"/] J[/color] energii i dostarczać maksymalnie [color=#ffb86b][protodata="SMESBasic" comp="PowerNetworkBattery" member="MaxSupply" format="N0"/] W[/color] mocy.
+
+  Jeśli akumulator jest w pełni naładowany, SMES przekaże energię otrzymaną z kabla wejściowego do kabla wyjściowego. W przypadku niedoboru mocy SMES zwiększy swoją moc, aby uzupełnić pobór energii.
+
+  ## Zaawansowany SMES
+  Zaawanssowany SMES stanowi ulepszoną wersję urządzenia SMES, która pozwala na magazynowanie jeszcze większej ilości energii.
+
+  <Box>
+    <GuideEntityEmbed Entity="SMESAdvanced"/>
+  </Box>
+
+  Są one wykorzystywane przede wszystkim w układach SMES stacji do magazynowania dużych ilości energii dla sieci energetycznej stacji.
+  Pomagają one inżynierom zyskać czas na uruchomienie zasilania na początku rundy lub zapewnić zasilanie w przypadku długotrwałego niedoboru energii.
+
+  Zaawansowane SMESy mogą magazynować [color=#ffb86b][protodata="SMESAdvanced" comp="Battery" member="MaxCharge" format="N0"/] J[/color] energii i dostarczać maksymalnie [color=#ffb86b][protodata="SMESAdvanced" comp="PowerNetworkBattery" member="MaxSupply" format="N0"/] W[/color] mocy.
+
+  Należy pamiętać, że nie jest to magiczne rozwiązanie problemów z niedoborem energii i że akumulatory te nie są w stanie magazynować energii w nieskończoność.
+  Obciążenie stacji szybko rozładuje te akumulatory, jeśli nie będzie źródła zasilania, które częściowo je wspiera.
+</Document>

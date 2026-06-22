@@ -1,0 +1,117 @@
+<!--
+SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+  # Zarządzanie gazami
+  Departament atmosferyczny dysponuje szeroką gamą narzędzi i sprzętu przeznaczonego do zarządzania gazami na terenie całej stacji.
+
+  [bold]Ostrzeżenie: odłączenie (odkręcenie) większości urządzeń zawierających gaz spowoduje [color=#ff8a8a]wyciek gazu[/color] do atmosfery.[/bold]
+  Można bezpiecznie odłączać [textlink="zbiorniki z gazem" link="GasCanisters"], [textlink="przenośne oczyszczacze powietrza" link="PortableScrubber"], [textlink="kondensatory gazów" link="GasCondensing"] i [textlink="termomaszyny" link="Thermomachines"].
+
+  <Box>
+    <GuideEntityEmbed Entity="GasPipeStraight" Caption=""/>
+    <GuideEntityEmbed Entity="GasPipeHalf" Caption=""/>
+    <GuideEntityEmbed Entity="GasPipeBend" Caption=""/>
+    <GuideEntityEmbed Entity="GasPipeTJunction" Caption=""/>
+    <GuideEntityEmbed Entity="GasPipeFourway" Caption=""/>
+  </Box>
+  <Box>
+    ## Rury
+  </Box>
+  <Box>
+    [color=#c8c8c8][italic]Doprowadzanie gazów z jednego miejsca do drugiego[italic][/color]
+  </Box>
+
+  <Box>
+    <GuideEntityEmbed Entity="GasPressurePump" Caption=""/>
+    <GuideEntityEmbed Entity="GasVolumePump" Caption=""/>
+  </Box>
+  <Box>
+    ## Pompki
+  </Box>
+  <Box>
+    [color=#c8c8c8][italic]Wymuszanie przemieszczania gazów z jednego miejsca do drugiego[italic][/color]
+  </Box>
+
+  <Box>
+    <GuideEntityEmbed Entity="GasVentPump" Caption=""/>
+    <GuideEntityEmbed Entity="GasPassiveVent" Caption=""/>
+    <GuideEntityEmbed Entity="GasOutletInjector" Caption=""/>
+    <GuideEntityEmbed Entity="GasVentScrubber" Caption=""/>
+    <GuideEntityEmbed Entity="PortableScrubber" Caption=""/>
+  </Box>
+  <Box>
+    ## Wprowadzanie i usuwanie gazów z atmosfery
+  </Box>
+  <Box>
+    [color=#c8c8c8][italic]Wprowadzanie i usuwanie gazów z istniejącej (lub nieistniejącej) atmosfery[italic][/color]
+  </Box>
+
+  <Box>
+    <GuideEntityEmbed Entity="GasValve" Caption=""/>
+    <GuideEntityEmbed Entity="SignalControlledValve" Caption=""/>
+    <GuideEntityEmbed Entity="PressureControlledValve" Caption=""/>
+    <GuideEntityEmbed Entity="GasPassiveGate" Caption=""/>
+    <GuideEntityEmbed Entity="GasPressureRegulator" Caption=""/>
+  </Box>
+  <Box>
+    ## Zawory
+  </Box>
+  <Box>
+    [color=#c8c8c8][italic]Kontrolowanie przepływu gazu w rurach[italic][/color]
+  </Box>
+
+  <Box>
+    <GuideEntityEmbed Entity="GasMixer" Caption=""/>
+    <GuideEntityEmbed Entity="GasFilter" Caption=""/>
+  </Box>
+  <Box>
+    ## Mieszanie i filtrowanie
+  </Box>
+  <Box>
+    [color=#c8c8c8][italic]Modyfikowanie składu gazu[italic][/color]
+  </Box>
+
+  <Box>
+    <GuideEntityEmbed Entity="AirCanister" Caption=""/>
+    <GuideEntityEmbed Entity="OxygenCanister" Caption=""/>
+    <GuideEntityEmbed Entity="NitrogenCanister" Caption=""/>
+    <GuideEntityEmbed Entity="CarbonDioxideCanister" Caption=""/>
+    <GuideEntityEmbed Entity="StorageCanister" Caption=""/>
+    <GuideEntityEmbed Entity="GasPort" Caption=""/>
+  </Box>
+  <Box>
+    ## Zbiorniki z gazem
+  </Box>
+  <Box>
+    [color=#c8c8c8][italic]Przechowywanie i transport gazu w celu ułatwienia jego użytkowania przez załogę[italic][/color]
+  </Box>
+
+  <Box>
+    <GuideEntityEmbed Entity="SpaceHeater" Caption=""/>
+    <GuideEntityEmbed Entity="GasThermoMachineHeater" Caption=""/>
+    <GuideEntityEmbed Entity="GasThermoMachineFreezer" Caption=""/>
+    <GuideEntityEmbed Entity="HeatExchanger" Caption=""/>
+  </Box>
+  <Box>
+    ## Termomaszyny i radiatory
+  </Box>
+  <Box>
+    [color=#c8c8c8][italic]Regulacja temperatury gazów w sieci rurociągów lub w atmosferze[italic][/color]
+  </Box>
+
+  <Box>
+    <GuideEntityEmbed Entity="BaseGasCondenser" Caption=""/>
+  </Box>
+  <Box>
+    ## Kondensatory gazów
+  </Box>
+  <Box>
+    [color=#c8c8c8][italic]Skraplanie gazów w celu dalszego wykorzystania[italic][/color]
+  </Box>
+</Document>

@@ -1,0 +1,149 @@
+<!--
+SPDX-FileCopyrightText: 2023 AjexRose <112997230+AjexRose@users.noreply.github.com>
+SPDX-FileCopyrightText: 2023 TurboTrackerss14 <130304754+TurboTrackerss14@users.noreply.github.com>
+SPDX-FileCopyrightText: 2023 end <72604018+laok233@users.noreply.github.com>
+SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Thomas <87614336+Aeshus@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+  # Odzysk
+
+  [color=#7ee8f7]Odzysk[/color] to jedno z kluczowych, ale również jedneym z najniebezpieczniejszych źródeł dochodu Logistyki. Odzysk pozyskuje pieniądze z [color=#7ee8f7]Kosmicznych śmieci[/color] i wyrusza na [color=#7ee8f7] Wyprawy Planetarne[/color].
+
+  Choć jest to ryzykowne ze względu na zagrożenia związane z przestrzenią kosmiczną i obcymi planetami, przy odpowiednim przygotowaniu i pracy zespołowej każda drużyna odzysku może zarobić dużo pieniędzy dla departamentu logistyki.
+
+  ## Przygotowania
+
+  Przed wyruszeniem na misję Odzysku upewnij się, że jesteś wyposażony we wszystkie niezbędne rzeczy. W przeciwnym razie zginiesz, zanim zobaczysz jakiekolwiek zyski!
+
+  <Box>
+    <GuideEntityEmbed Entity="SuitStorageSalv"/>
+    <GuideEntityEmbed Entity="LockerSalvageSpecialist"/>
+    <GuideEntityEmbed Entity="VendingMachineSalvage"/>
+  </Box>
+
+  Wszystko czego potrzebujesz przed opuszczeniem stacji, znajduje się w początkowym pokoju działu Odzysku. Choć dział naukowy może opracować lepszą broń i wyposażenie, lepiej mieć cokolwiek niż nic.
+
+  <Box>
+    <GuideEntityEmbed Entity="ClothingOuterHardsuitSpatio"/>
+    <GuideEntityEmbed Entity="ClothingShoesBootsMag"/>
+    <GuideEntityEmbed Entity="VendingMachineTankDispenserEVA"/>
+  </Box>
+
+  Najbardziej podstawowym wyposażeniem, którego będziesz potrzebował jest zestaw EVA.
+
+
+  - [color=#7ee8f7]Kombinezon kosmiczny[/color]: Utrzymuje cię przy życiu w przestrzeni kosmicznej. [italic]Pamiętaj, żeby aktywować hełm, aby móc oddychać, oraz włączyć wbudowaną latarke.[/italic].
+  - [color=#7ee8f7]Magnetyczne buty[/color]: Zapewniają ci przyczepność podczas eksplorowania kosmicznych szczątków, a dodatkowo chronią przed poślizgnięciem się..
+  - [color=#7ee8f7]Tlen/Azot[/color]: W zależności od twojego gatunku, będziesz potrzebował [color=#7ee8f7]Azotu[/color] (szlamy i voxy) albo [color=#7ee8f7]Tlenu[/color] (każda inna rasa). [color=#7ee8f7]Dystrybutor zbiorników gazu[/color] posiada wszystkie potrzebne butle, więc zaopatrz się odpowiednio. Uważaj jednak wahadłowiec działu odzysku nie zawsze ma atmosferę, więc możesz zacząć się dusić jeszcze zanim dotrzesz w przestrzeń kosmiczną.
+
+  <Box>
+    <GuideEntityEmbed Entity="WeaponProtoKineticAccelerator"/>
+  </Box>
+
+   Każdy Specjalista ds. odzysku musi być uzbrojony, na wypadek gdyby mieli się bronić przed wrogimi istotami.
+
+  - [color=#7ee8f7]Akcelerator protokinetyczny[/color]: Ta broń ma nieskończoną amunicję, dzięki czemu możesz powoli wydobywać surowce i poruszać się w przestrzeni kosmicznej.
+
+  <Box>
+    <GuideEntityEmbed Entity="Pickaxe"/>
+    <GuideEntityEmbed Entity="OreBag"/>
+  </Box>
+
+  Wydobycie surowców (na asteroidach lub podczas ekspedycji) wymaga własnego podstawowego zestawu wyposażenia.
+
+  - [color=#7ee8f7]Kilof[/color]: Jest wymagany do wydobycia surowców z sensowną prędkością podczas trzymania oburącz. Dodatkowo działa również jako broń do walki wręcz!
+  - [color=#7ee8f7]Plecak na rudę[/color]: Po wyposażeniu pasa urządzenie to przyciąga pobliską rudę i automatycznie ją zbiera.
+
+  <Box>
+    <GuideEntityEmbed Entity="FultonBeacon"/>
+    <GuideEntityEmbed Entity="Fulton"/>
+  </Box>
+
+  Przed plądrowaniem (wraków kosmicznych lub ekspedycji) przygotuj Fultony do transportu dużych obiektów albo martwych techników odzysku.
+
+  - [color=#7ee8f7]Znacznik Fultonów[/color]: Rozłóż go przy wahadłowcu, a wszystkie obiekty podłączone do Fultonów w promieniu 15 pól zostaną do niego przetransportowane.
+  - [color=#7ee8f7]Fulton[/color]: Po połączeniu z Znacznikiem Fultonów przypnij Fulton do obiektu, a po minucie obiekt zostanie przetransportowany do Znacznika.
+
+  <Box>
+    <GuideEntityEmbed Entity="RadioHandheld"/>
+    <GuideEntityEmbed Entity="HandheldGPSBasic"/>
+    <GuideEntityEmbed Entity="ClothingBeltUtilityFilled"/>
+  </Box>
+
+  Na koniec dostępne jest również kilka przydatnych, choć niewymaganych elementów wyposażenia dla działu odzysku.
+
+  - [color=#7ee8f7]Radio[/color]: Dzięki temu możesz komunikować się z innymi specjalistami ds. odzysku, nawet jeśli standardowa łączność radiowa jest niedostępna. Jest to niezbędne do koordynacji działań Odzyzku w kosmosie lub podczas wypraw.
+  - [color=#7ee8f7]System Pozycjonowania Globalnego[/color]: Dzięki temu uzyskasz Twoje dokładne położenie. Jeśli zgubisz się w kosmosie, może to pomóc zorganizować akcję ratunkową, albo pozwoli Ci to wrócić do wahadłowca lub na stację, jeśli zgubisz się podczas wyprawy.
+  - [color=#7ee8f7]Pas Narzędziowy[/color]: Tutaj znajdziesz cały sprzęt potrzebny do plądrowania maszyn i innych przedmiotów z wraków statków kosmicznych i ekspedycji kosmicznych.
+
+  ## Kosmiczne szczątki
+
+  Gdy wszystko jest już przygotowane, czas wyruszyć i odkrywać gwiazdy.
+
+  Zanim od razu ruszysz na ekspedycje, dobrą praktyką jest rozpoczęcie od eksploracji kosmicznych szczątków, aby załoga mogła przyzwyczaić się do swojej pracy.
+
+  [color=#7ee8f7]Kosmiczne szczątki[/color] Jest to zazwyczaj znacznie bezpieczniejsze niż ekspedycje i zapewnia wiele podstawowych materiałów (takich jak stal, szkło itd.), których na początku zmiany często brakuje.
+
+  <Box>
+    <GuideEntityEmbed Entity="SalvageMagnet"/>
+  </Box>
+
+  [color=#7ee8f7]Magnes Odzysku[/color] to urządzenie, które sprowadza kosmiczne szczątki do pobliskiej przestrzeni.
+
+  Magnes odzysku oferuje losowy zestaw sześciu obiektów od asteroid, przez kosmiczne szczątki, aż po wraki o różnej wielkości. Oferta odświeża się co 3 minuty, dopóki nie zostanie wybrana, po czym kosmiczne szczątki są sprowadzane dla następnej załogi odzysku.[bold]6 minutes[/bold].
+
+  Magnes odzysku dostarcza informacji o rodzajach surowców znajdujących się na asteroidzie, co pomaga zdecydować, które z nich należy priorytetowo wydobywać w zależności od aktualnych potrzeb stacji.
+
+  W ciągu tych 6 minut poleć do szczątków, wydobądź wszystko, co ma jakąkolwiek wartość, a następnie wróć na stację. [italic]Jeśli nie wrócisz na czas do wahadłowca, utkniesz w otwartej przestrzeni kosmicznej[/italic]!
+
+  Są dwie gówne aktywności które możesz robić z Magnesem Odzysku:
+  
+  <Box>
+    <GuideEntityEmbed Entity="Pickaxe"/>
+    <GuideEntityEmbed Entity="OreBag"/>
+    <GuideEntityEmbed Entity="OreProcessor"/>
+  </Box>
+
+  - [color=#7ee8f7]Wydobycie na asteroidach[/color]: To najbezpieczniejszy sposób na zarabianie pieniędzy, ponieważ nie występują tam żadne wrogie istoty. Wystarczy latać wokół i wydobywać rudę za pomocą [color=#7ee8f7]kilofa[/color] oraz [color=#7ee8f7]torby na rudę[/color]. Po zebraniu całej rudy możesz przetworzyć ją na materiały przy użyciu [color=#7ee8f7]przetwornika rudy[/color].
+
+  <Box>
+    <GuideEntityEmbed Entity="Wrench"/>
+    <GuideEntityEmbed Entity="Fulton"/>
+    <GuideEntityEmbed Entity="WeaponProtoKineticAccelerator"/>
+  </Box>
+
+  - [color=#7ee8f7]Odzysk wraków kosmicznych[/color]: Jest to nieco bardziej niebezpieczne, ponieważ występują tam wrogie istoty. Trzymaj się od nich na dystans i strzelaj do nich za pomocą [color=#7ee8f7]Akceleratora protokinetycznego[/color]. Głównie będziesz zdobywać wyposażenie i maszyny przy użyciu [color=#7ee8f7]Kluczy[/color] i [color=#7ee8f7]Fultonów[/color].
+
+  ## Ekspedycje planetarne 
+
+  Na końcu,[color=#7ee8f7]Ekspedycje planetarne[/color] są najniebezpieczniejszą ale najbardziej opłacalną drogą Odzysku do zarabiania pieniędzy.
+
+  <Box>
+    <GuideEntityEmbed Entity="ComputerSalvageExpedition"/>
+    <GuideEntityEmbed Entity="CoordinatesDisk"/>
+    <GuideEntityEmbed Entity="ComputerShuttle"/>
+  </Box>
+
+
+ Na początku, użyj[color=#7ee8f7]Komputera Odzysku do ekspedycji[/color] do wybrania ekspedycji. Co 30 sekundy, komputer pokaże nowe opcje przyciągnięcia asteroidy oraz wyświetli informacje o nich [color=#ffe566]poziomie trudności[/color] i [color=#ffe566]typie przeciwników[/color].
+
+  Po rozwarzeniu swoich opcji, wybierz taka ekspedycje która najbardziej odpowiada potrzebom stacji i umiejętności załogi.
+
+  Jak już przyjmniesz misje eksedycyjną, zostanie wysunięty [color=#7ee8f7]Dysk z koordynatami[/color] który należy umieścić w [color=#7ee8f7]Konsoli Wahadłowca[/color].
+
+ Po umieszczeniu dysku w konsoli wahadłowca przełącz się na [color=#ffe566]Tryb mapy[/color]. Następnie kliknij "[color=#ffe566]Skanuj pobliskie obiekty[/color]".Teraz w rozwijanym menu znajduje się w lewym dolnym rogu interfejsu konsoli, wybierz [color=#ffe566]FTL[/color], kliknij [color=#ffe566] planetę na mapie[/color] a rozpoczniesz podróż nadświetlną. 
+
+  Gdy juz wylądujesz na planecie, będziesz miał [bold]11 minut[/bold] na spożytkowanie pomiędzy [color=#7ee8f7]Wydobyciem[/color] i [color=#7ee8f7]Plądrowaniem Placówek[/color]
+
+  - [color=#7ee8f7]Ekspedycje Wydobywcze[/color]: Wydobycie podczas ekspedycji zapewnia dostęp do szerokiej gamy surowców, ale jednocześnie zwiększa rysyko zgubienia się lub napotkania zagrożeń środowiskowych i wrogich istot.
+
+
+  - [color=#7ee8f7]Plądrowanie Placówek[/color]: To właśnie tutaj można osiągnąć największy zysk. Kiedy wylądujesz na planecie, kierunek do lochu zostanie ogłoszony przez radio. Następnie należy włamać się do lochu, wyeliminować wszystkie wrogie istoty i zabezpeczyć zdobyte dobra. [color=#7ee8f7]Fultony[/color] są tutaj szczególnie przydatne, ponieważ będziesz transportować całe maszyny oraz anomaliwe. Nagrodami za Plądrowanie Placówek są drogie urządzenia do sprzedaży oraz ekskluzywne technologie, takie jak[color=#ffe566]klonowanie[/color]. Dodatkowo ciała pokonanych przeciwników również mogą zostać wykorzystane i sprzedane!
+
+</Document>

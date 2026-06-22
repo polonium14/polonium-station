@@ -1,0 +1,60 @@
+<!--
+SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+SPDX-FileCopyrightText: 2024 Kira Bridgeton <161087999+Verbalase@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+SPDX-FileCopyrightText: 2024 Terraspark4941 <terraspark4941@gmail.com>
+SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+  # Generatory przenośne
+
+  Generatory przenośne służą do zapewnienia zasilania awaryjnegego w istotnych pomieszczeniach, obszarach, a nawet całych departamentach.
+  Są one łatwe w instalacji i utrzymaniu oraz mogą być wykorzystywane do zasilania krytycznych systemów i obszarów w przypadku awarii zasilania.
+
+  <Box>
+    <GuideEntityEmbed Entity="PortableGeneratorJrPacman" Caption="J.R.P.A.C.M.A.N." />
+    <GuideEntityEmbed Entity="PortableGeneratorPacman" Caption="P.A.C.M.A.N." />
+    <GuideEntityEmbed Entity="PortableGeneratorSuperPacman" Caption="S.U.P.E.R.P.A.C.M.A.N." />
+  </Box>
+
+  # J.R.P.A.C.M.A.N.
+
+  <Box>
+    <GuideEntityEmbed Entity="PortableGeneratorJrPacman" Caption="J.R.P.A.C.M.A.N." />
+    <GuideEntityEmbed Entity="WeldingFuelTank" />
+  </Box>
+
+  Generator J.R.P.A.C.M.A.N. można znaleźć w szybach konserwacyjnych na terenie całej stacji i jest ono idealnym rozwiązaniem dla załogi, która może je samodzielnie uruchomić w razie problemów z zasilaniem.
+  Jego moc wyjściowa wynosząca do [color=#ffb86b][protodata="PortableGeneratorJrPacman" comp="FuelGenerator" member="MaxTargetPower" format="N0"/] W[/color] wystarcza do zasilania jednego lub dwóch pomieszczeń, co może okazać się nieocenione w takich miejscach jak ambulatorium lub laboratorium chemiczne w dziale medycznym.
+
+  Instalacja jest niezwykle prosta: przykręć go na [color=#8ee99a]niskonapięciowym[/color] kablu zasilającym, wlej trochę paliwa spawalniczego i uruchom.
+
+  Paliwo spawalnicze jest jedynym źródłem paliwa, z którego może korzystać J.R.P.A.C.M.A.N., i można je znaleźć w zbiornikach paliwa spawalniczego na całej stacji, zazwyczaj w obszarach konserwacyjnych.
+
+  # P.A.C.M.A.N. i S.U.P.E.R.P.A.C.M.A.N.
+
+  <Box>
+    <GuideEntityEmbed Entity="PortableGeneratorPacman" Caption="P.A.C.M.A.N." />
+    <GuideEntityEmbed Entity="SheetPlasma" />
+  </Box>
+
+  <Box>
+    <GuideEntityEmbed Entity="PortableGeneratorSuperPacman" Caption="S.U.P.E.R.P.A.C.M.A.N." />
+    <GuideEntityEmbed Entity="SheetUranium" />
+  </Box>
+
+  Generator P.A.C.M.A.N. i S.U.P.E.R.P.A.C.M.A.N. są przeznaczone do użytku przez inżynierów w przypadku większych awarii zasilania oraz jako źródło zasilania uzupełniającego w razie niedoborów energii.
+  Służą one do uruchamiania większych [textlink="generatorów" link="SingularityTeslaEngine"], zasilania wielu departamentów i tym podobnych.
+
+  S.U.P.E.R.P.A.C.M.A.N. charakteryzuje się większą mocą wyjściową (do[color=#ffb86b][protodata="PortableGeneratorSuperPacman" comp="FuelGenerator" member="MaxTargetPower" format="N0"/] W[/color]) i dłuższym czasem pracy przy maksymalnej mocy, ale mniej efektywnie skaluje się do niższych mocy.
+
+  Podłącza się je bezpośrednio do [color=#ffe566]średnionapięciowych[/color] lub [color=#ffb86b]wysokonapięciowych[/color] [textlink="kabli" link="VoltageNetworks"] i możliwe jest przełączanie się między nimi, co zapewnia elastyczność.
+
+  Generatory S.U.P.E.R.P.A.C.M.A.N i P.A.C.M.A.N wymagają odpowiednio uranu i plazmy jako paliwa.
+</Document>

@@ -1,0 +1,38 @@
+<!--
+SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+  # Zbiorniki na gaz
+  <Box>
+    <GuideEntityEmbed Entity="AirCanister"/>
+    <GuideEntityEmbed Entity="OxygenCanister"/>
+    <GuideEntityEmbed Entity="NitrogenCanister"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="CarbonDioxideCanister"/>
+    <GuideEntityEmbed Entity="StorageCanister"/>
+    <GuideEntityEmbed Entity="GasPort"/>
+  </Box>
+
+  Zbiorniki na gaz to rozwiązanie umożliwiające przechowywanie gazu w przenośnym pojemniku, co ułatwia jego transport.
+  Mogą one pomieścić [color=#ffb86b][protodata="StorageCanister" comp="GasCanister" member="Volume"/] litrów[/color] gazu.
+
+  Butle na gaz można podłączyć do zbiornika z gazem w celu ich napełnienia za pomocą zaworu spustowego znajdującego się w zbiorniku.
+  Zawór spustowy jest również wyposażony w regulowany reduktor ciśnienia, który pozwala kontrolować ciśnienie w podłączonej butli.
+
+  Otwarcie zaworu spustowego zbiornika z gazem, do którego nie jest podłączona żadna butla, spowoduje uwolnienie gazu do atmosfery pod ciśnieniem określonym przez reduktor.
+
+  [bold]Pamiętaj, aby zamknąć zawór spustowy przed wyjęciem butli![/bold]
+
+  ## Porty gazowe
+  Zbiorniki na gaz i [textlink="przenośne oczyszczacze powietrza" link="PortableScrubber"] można podłączyć do [textlink="sieci rurociągowej" link="PipeNetworks"] poprzez dokręcenie (przy pomocy klucza) urządzenia na porcie.
+  Po podłączeniu gaz będzie swobodnie przepływał do i ze zbiornika w celu wyrównania ciśnienia, temperatury i składu gazu.
+
+  Za pomocą pompki można wprowadzać lub usuwać gaz ze zbiornika, co przydaje się do całkowitego napełnienia lub opróżnienia zbiornika.
+
+</Document>

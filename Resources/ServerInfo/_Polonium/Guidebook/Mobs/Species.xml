@@ -1,0 +1,44 @@
+<!--
+SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+SPDX-FileCopyrightText: 2024 BeeRobynn <robynthewarcrime@proton.me>
+SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Fishbait <Fishbait@git.ml>
+SPDX-FileCopyrightText: 2024 John Space <bigdumb421@gmail.com>
+SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 ATDoop <bug@bug.bug>
+SPDX-FileCopyrightText: 2025 Patrycja <git@ptrcnull.me>
+SPDX-FileCopyrightText: 2025 corresp0nd <46357632+corresp0nd@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+  # Species
+
+  Nanotrasen employs a variety of sapient species.
+
+  <Box>
+  <GuideEntityEmbed Entity="MobArachnid" Caption="Arachnid"/>
+  <GuideEntityEmbed Entity="MobDiona" Caption="Diona"/>
+  <GuideEntityEmbed Entity="MobDwarf" Caption="Dwarf"/>
+  <GuideEntityEmbed Entity="MobFelinid" Caption="Felinid"/>
+  <GuideEntityEmbed Entity="MobGingerbread" Caption="Gingerbread"/>
+  </Box>
+  <Box>
+  <GuideEntityEmbed Entity="MobHarpy" Caption="Harpy"/>
+  <GuideEntityEmbed Entity="MobHuman" Caption="Human"/>
+  <GuideEntityEmbed Entity="MobMoth" Caption="Moth Person"/>
+  <GuideEntityEmbed Entity="MobReptilian" Caption="Reptilian"/>
+  <GuideEntityEmbed Entity="MobSlimePerson" Caption="Slime Person"/>
+  <GuideEntityEmbed Entity="MobVox" Caption="Vox"/>
+  </Box>
+  <Box>
+  <GuideEntityEmbed Entity="MobVulpkanin" Caption="Vulpkanin"/>
+  <GuideEntityEmbed Entity="MobRodentia" Caption="Rodentia"/>
+  <GuideEntityEmbed Entity="MobIPCDummy" Caption="I.P.C."/>
+  <GuideEntityEmbed Entity="MobThaven" Caption="Thaven"/>
+  </Box>
+
+</Document>

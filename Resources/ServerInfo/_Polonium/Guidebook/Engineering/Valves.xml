@@ -1,0 +1,24 @@
+<!--
+SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+  # Zawory
+  Zawory to prosty sposób na zatrzymanie lub umożliwienie przepływu gazu przez [textlink="sieci rurociągów" link="PipeNetworks"].  
+  <Box>
+    <GuideEntityEmbed Entity="GasValve"/>
+    <GuideEntityEmbed Entity="SignalControlledValve"/>
+    <GuideEntityEmbed Entity="PressureControlledValve"/>
+    <GuideEntityEmbed Entity="GasPassiveGate"/>
+    <GuideEntityEmbed Entity="GasPressureRegulator"/>
+  </Box>
+  Nie wszystkie zawory wymagają [textlink="zasilania" link="Power"] do działania.
+
+  Zawory mogą wydawać się proste, jednak umożliwiają one tworzenie zróżnicowanych, złożonych sieci rurociągów, w tym:
+  - zaworów sterowanych sygnałem reagujące na sygnały alarmów atmosferycznych lub sygnały wyjściowe bramek logicznych
+  - zaworów pneumatycznych sterujących zmiennym odprowadzaniem spalin z komory spalania
+</Document>

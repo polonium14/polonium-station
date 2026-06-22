@@ -1,0 +1,87 @@
+<!-- Przetłumaczono za pomocą DeepL Pro -->
+
+<Document>
+# Genetyka
+
+Genetyka to medyczno-naukowy pododział zajmujący się analizowaniem, sekwencjonowaniem i aplikowaniem mutacji genetycznych w żywych organizmach. Jest to niezwykle potężne, ale niebezpieczne narzędzie, które może przyznać nadludzkie zdolności lub spowodować katastrofalną niestabilność genetyczną i rozpad komórkowy.
+
+## Podstawowy Sprzęt
+
+<Box>
+<GuideEntityEmbed Entity="MedicalScanner" Caption="skaner medyczny" Rotation="0"/>
+<GuideEntityEmbed Entity="ComputerDnaScanner" Caption="konsola genetyka" Rotation="0"/>
+</Box>
+
+Skaner medyczny to urządzenie przypominające kapsułę, które pomieści badany podmiot (przeciągnij i upuść lub użyj opcji "wyrzuć pasażera").
+
+Konsola genetyka (umieszczona w pobliżu) zapewnia pełny interfejs, musi być zasilana i wymaga połączenia ze skanerem.
+
+<Box>
+<GuideEntityEmbed Entity="HandheldGeneticAnalyzer" Caption="przenośny analizator genetyczny" Rotation="0"/>
+</Box>
+
+Przenośny analizator genetyczny to przenośny skaner, który szybko odczytuje aktualne mutacje i niestabilność genetyczną celu. Wymaga ogniwa zasilającego i może drukować wyniki do późniejszego wykorzystania.
+
+## Podstawy
+
+Umieść żywy podmiot w skanerze DNA.
+
+Usiądź przy konsoli DNA i uzyskaj dostęp do interfejsu.
+
+Użyj sekwencera, aby odgadnąć/ujawnić poprawną sekwencję zasad (A, C, G, T) dla każdego bloku mutacji.
+
+Kliknij lewym przyciskiem zasadę, aby przełączać do przodu. Kliknij prawym, aby przełączać do tyłu.
+
+Aktywuj użyteczne mutacje i zapisz je w pamięci.
+
+Zbadaj zapisane mutacje, aby gromadzić punkty badawcze i odblokować drukowanie iniekcji.
+
+Wydrukuj aktywatory DNA lub mutatory DNA, aby wstrzyknąć mutacje innym.
+
+Użyj przenośnego analizatora do szybkich, nieinwazyjnych kontroli i znajdowania nieujawnionych sekcji sekwencji.
+
+## Korzystanie z Konsoli
+
+Interfejs konsoli zawiera kilka kluczowych paneli:
+
+- Informacje o Podmiocie - Wyświetla imię, całkowite obrażenia, [color=#e8c878]niestabilność genetyczną[/color] i obrażenia radiacyjne.
+- Lista Mutacji - Wyświetla wszystkie wykryte mutacje w DNA podmiotu.
+- Ujawniona Sekwencja - Pokazuje aktualnie znane zasady (X = nieznana).
+- Sekwencer - Klikaj zasady, aby je przełączać (każda zmiana zadaje 0,2 obrażeń radiacyjnych). Dopasuj ukrytą oryginalną sekwencję, aby aktywować mutację.
+- Zapisane Mutacje - Przechowuj tu odkryte mutacje do późniejszego wydrukowania.
+- Wydrukuj Aktywator / Wydrukuj Mutator - Tworzy jednorazową iniekcję z zapisanej mutacji.
+- Przemieszaj DNA - Losowo resetuje DNA podmiotu (30 s czasu odnowienia, zadaje 15 obrażeń radiacyjnych).
+
+## Iniekcje DNA
+
+<Box>
+<GuideEntityEmbed Entity="DNAInjectorGenericActivator" Caption="aktywator DNA" Rotation="0"/>
+<GuideEntityEmbed Entity="DNAInjectorGenericMutator" Caption="mutator DNA" Rotation="0"/>
+<GuideEntityEmbed Entity="DNAInjectorEmpty" Caption="pusta iniekcja DNA" Rotation="0"/>
+</Box>
+
+- Aktywatory - Aktywują mutację już obecną w DNA celu.
+- Mutatory - Wstawiają i natychmiast aktywują nową mutację (jeśli cel może ją przyjąć).
+- Oba są jednorazowe; po iniekcji zostawiają pustą strzykawkę. Włóż ją z powrotem do konsoli, aby wypełnić.
+
+## Mutacje i Niestabilność Genetyczna
+
+Mutacje zajmują stałe bloki z unikalnymi sekwencjami zasad (A, C, G, T). Ujawnienie poprawnej sekwencji aktywuje mutację.
+
+Dodawanie mutacji zwiększa [color=#e8c878]niestabilność genetyczną[/color] podmiotu o wartość niestabilności mutacji.
+
+Progi niestabilności:
+- >100 - Po 60-90 sekundach, ryzyko losowej niebezpiecznej mutacji. Efekty nie mogą zostać cofnięte.
+- >150 - Ciągłe bieżące obrażenia komórkowe.
+
+Przemieszanie DNA resetuje większość mutacji (z wyjątkiem odpornych na przemieszanie), ale zadaje ciężkie obrażenia radiacyjne.
+
+## Wskazówki i Bezpieczeństwo
+
+- Sekwencjonowanie i przemieszanie zadają obrażenia radiacyjne - uważnie monitoruj zdrowie podmiotu i lecz obrażenia w razie potrzeby.
+- Mutadon usuwa większość niechcianych mutacji (niektóre potężne są odporne).
+- Narażenie na promieniowanie może losowo wywołać mutacje - zarówno dobre, jak i złe.
+- Niektóre mutacje są charakterystyczne dla gatunku lub nie mogą pojawić się naturalnie.
+
+Przy ostrożnym sekwencjonowaniu i testowaniu, Genetyka może zamienić załogę w prawie nadludzi - lub przypadkowo stworzyć genetyczne horrory. Eksperymentuj odpowiedzialnie!
+</Document>

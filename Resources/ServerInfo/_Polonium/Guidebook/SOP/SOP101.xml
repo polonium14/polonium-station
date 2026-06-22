@@ -1,0 +1,44 @@
+<!--
+SPDX-FileCopyrightText: 2024 DevilishMilk <bluscout78@yahoo.com>
+SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 kbarkevich <24629810+kbarkevich@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+  # Standardowe Procedury Operacyjne
+
+  <Box>
+    [color=#c8c8c8][italic]"Stacja jest obecnie zagrożona nieuchronnym zniszczeniem. Członkowie załogi powinni słuchać poleceń Dowództwa, aby uzyskać więcej informacji."[/italic][/color]
+  </Box>
+
+  Traktuj SPO jako swoją nową biblię przestrzeni, zawierającą kompletne informacje na temat sposobów legalnego zabijania ludzi.
+
+  # Czym są Standardowe Procedury Operacyjne? (SPO)
+
+  Standardowe Procedury Operacyjne, odtąd zwane SPO, określają, w jaki sposób NanoTrasen oczekuje zarządzania swoimi placówkami. Zapewnia to właściwe traktowanie więźniów, bezpieczne radzenie sobie z określonymi sytuacjami oraz identyfikację zagrożeń na stacji.
+  Odstępstwo od SPO jest poważną i świadomą decyzją, a wszelkie działania podjęte w trakcie takiego odstępstwa mogą stanowić podstawę do dyscyplinowania i/lub rozwiązania umowy.
+
+  [bold]SPO Działowe nie powinno być traktowane jako lista warunków do zwolnienia kogoś z pracy i nie powinno być rygorystycznie przestrzegane co do joty ze szkodą dla okoliczności i kontekstu. Jak zawsze, SPO może być elastyczne, jeśli sytuacja tego wymaga, a decyzja o ukaraniu członka załogi za jego naruszenie ostatecznie należy do odpowiedniego Kierownika Działu (w przypadku członków działu) lub Kapitana (w przypadku Kierownika Działu).[/bold]
+
+  # Czy SPO to tylko wytyczne?
+
+  Tak, są to wytyczne, ale ich przestrzeganie zapewnia ustanowienie właściwego zaufania publicznego. W przeciwnym razie możesz zostać uznany za "Gównochroniarza", lub co gorsza, "Gównaukowca", więc zawsze mądrze jest skonsultować się z odpowiednim dokumentem SPO dla twojego działu. Jeśli musisz złamać SPO, lepiej miej dobry powód, aby uzasadnić to później.
+
+  # Świetnie, gdzie mogę znaleźć SPO dla mojego działu?
+
+  Poniżej znajdują się linki do wszystkich dokumentów SPO działów, a każda rola ma tam podlinkowaną własną stronę SPO. Możesz uzyskać dostęp do wszystkich SPO za pośrednictwem paska bocznego przewodnika pod tym dokumentem.
+
+  - [textlink="Poziomy Alarmowe i Ty" link="AlertLevelsSOP"]
+  - [textlink="SPO Dowództwa" link="CommandSOP"]
+  - [textlink="SPO Ochrony" link="SecuritySOP"]
+  - [textlink="SPO Prawne" link="LegalSOP"]
+  - [textlink="SPO Medyczne" link="MedicalSOP"]
+  - [textlink="SPO Serwisu (Obsługi)" link="ServiceSOP"]
+  - [textlink="SPO Inżynierii" link="EngineeringSOP"]
+  - [textlink="SPO Logistyki" link="CargoSOP"]
+  - [textlink="SPO Nauki" link="ScienceSOP"]
+
+</Document>

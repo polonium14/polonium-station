@@ -1,0 +1,36 @@
+<!--
+SPDX-FileCopyrightText: 2024 Ben Velie <veliebm@gmail.com>
+SPDX-FileCopyrightText: 2024 Kira Bridgeton <161087999+Verbalase@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Terraspark4941 <terraspark4941@gmail.com>
+SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+  # Radioizotopowy generator termoelektryczny (RTG)
+
+  <Box>
+    <GuideEntityEmbed Entity="GeneratorRTG" Caption="RTG" />
+  </Box>
+
+  Radioizotopowy generator termoelektryczny (RTG) to pasywne źródło energii, które wytwarza energię w wyniku rozpadu izotopów promieniotwórczych.
+
+  Nie wymagają one żadnej konserwacji i stanowią niezawodne źródło zasilania, dzięki czemu idealnie nadają się do zasilania kluczowych systemów, które muszą działać nieprzerwanie, takich jak systemy telekomunikacyjne, sztuczna inteligencja czy serwer monitorowania załogi.
+
+  Generatory RTG zawsze wytwarzają [color=#ffb86b][protodata="GeneratorRTG" comp="PowerSupplier" member="MaxSupply" format="N0"/] W[/color] mocy i muszą być podłączone do [color=#ffb86b]sieci wysokiego napięcia[/color] [textlink="network" link="VoltageNetworks"], aby mogły działać.
+
+  Można je jednak zdobyć wyłącznie poprzez znalezienie ich jako łup podczas wyprawy. Jeśli ktoś przywiezie je ze sobą, koniecznie mu podziękuj!
+
+  ## Uszkodzenia RTG
+  <Box>
+    <GuideEntityEmbed Entity="GeneratorRTGDamaged" Caption="Damaged RTG" />
+  </Box>
+  Jeśli generatory RTG otrzymają wystarczająco dużo obrażeń, mogą stać się uszkodzonymi generatorami RTG.
+  Uszkodzone generatory RTG działają tak samo jak zwykłe, ale są [color=#ffe566]radioaktywne[/color].
+
+  Oznacza to, że są bardziej niebezpieczne, ale z drugiej strony można umieścić obok nich kolektory promieniowania, aby zamienić to promieniowanie w dodatkową energię.
+  Zazwyczaj jest to opłacalne, biorąc pod uwagę, że energia jest nadal darmowa, o ile tylko uda się znaleźć bezpieczne miejsce na umieszczenie RTG.
+</Document>

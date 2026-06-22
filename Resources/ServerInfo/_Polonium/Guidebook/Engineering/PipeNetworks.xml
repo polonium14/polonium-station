@@ -1,0 +1,46 @@
+<!--
+SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+  # Sieci rurociągów
+  Sieci rurociągów to układ połączonych ze sobą [textlink="rurociągów" link="Rurociągi"], które zazwyczaj służą do realizacji wspólnego zadania.
+
+  <Box>
+    <GuideEntityEmbed Entity="GasPipeStraight" Caption=""/>
+    <GuideEntityEmbed Entity="GasPipeHalf" Caption=""/>
+    <GuideEntityEmbed Entity="GasPipeBend" Caption=""/>
+    <GuideEntityEmbed Entity="GasPipeTJunction" Caption=""/>
+    <GuideEntityEmbed Entity="GasPipeFourway" Caption=""/>
+    <GuideEntityEmbed Entity="GasPressurePump" Caption=""/>
+    <GuideEntityEmbed Entity="GasVolumePump" Caption=""/>
+  </Box>
+
+  W całej stacji stosuje się sieci rurociągów do dostarczania, odprowadzania lub po prostu transportu gazu.
+  Doskonałymi przykładami są systemy dystrybucji lub odprowadzania gazów, które odpowiednio dostarczają powietrze do oddychania i odprowadzają gazy odpadowe.
+
+  ## Jak działają sieci rurociągów
+  W grze Space Station 14 sieci rurociągów funkcjonują jako jednolita, wyznaczona przestrzeń, z punktami wejścia i wyjścia na końcach sieci.
+  Wpompowywanie lub odsysanie gazu za pomocą [textlink="pompki" link="Pumps"] wpłynie na całą sieć, a nie tylko na rurę, do której jest podłączona.
+
+  Oto kilka przykładów urządzeń służących do rozdzielania sieci rurociągów:
+  - [textlink="Pompki ciśnieniowe i objętościowe" link="Pumps"]
+  - [textlink="Mieszalniki gazów i filtry" link="MixingAndFiltering"]
+  - [textlink="Zawory" link="Valves"]
+  - [textlink="Radiatory" link="Radiators"]
+
+  Poniżej przedstawiono przykład sieci rurociągów podzielonej na dwie odrębne sieci przy zastosowaniu [textlink="pompki" link="Pumps"]:
+
+  <Box>
+    <GuideEntityEmbed Entity="GasPipeStraight" Caption="Sieć nr. 1" Rotation="90"/>
+    <GuideEntityEmbed Entity="GasPipeStraight" Caption="" Rotation="90"/>
+    <GuideEntityEmbed Entity="GasPressurePump" Caption="Separator sieciowy" Rotation="90"/>
+    <GuideEntityEmbed Entity="GasPipeStraight" Caption="" Rotation="90"/>
+    <GuideEntityEmbed Entity="GasPipeStraight" Caption="Sieć nr. 2" Rotation="90"/>
+  </Box>
+
+</Document>

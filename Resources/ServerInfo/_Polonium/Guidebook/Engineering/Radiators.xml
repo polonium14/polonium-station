@@ -1,0 +1,36 @@
+<!--
+SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+  # Radiatory
+  Radiatory to urządzenia umożliwiające wymianę energii cieplnej między [textlink="sieciami rurociągów" link="PipeNetworks"] a otoczeniem.
+
+  <Box>
+    <GuideEntityEmbed Entity="HeatExchanger"/>
+  </Box>
+
+  Radiatory działają całkowicie pasywnie: do funkcjonowania nie potrzebują zasilania.
+  Zawsze wyrównują temperaturę gazu w [textlink="sieci rurociągów" link="PipeNetworks"] z temperaturą otoczenia.
+
+  Radiatory mają dwa sposoby przekazywania ciepła: konwekcję i promieniowanie.
+  - Konwekcja to przekazywanie ciepła poprzez ruch gazów.
+  - Promieniowanie to przekazywanie ciepła za pomocą fal elektromagnetycznych.
+
+  Jeśli radiator znajduje się w próżni, będzie mógł przekazywać ciepło wyłącznie poprzez promieniowanie.
+  Jeśli znajduje się w atmosferze, będzie mógł przekazywać ciepło zarówno poprzez konwekcję, jak i promieniowanie.
+
+  W przypadku konwekcji temperatura może osiągnąć jedynie wartość równą temperaturze atmosfery lub [textlink="medium" link="PipeNetworks"], z którym zachodzi wymiana ciepła (przy założeniu, że temperatura gazu w [textlink="sieci rurociągów" link="PipeNetworks"] lub atmosferze pozostaje niezmienna).
+
+  Jeśli przeprowadzamy wymianę ciepła z przestrzenią kosmiczną, temperatura nie może spaść poniżej temperatury panującej w przestrzeni.
+  Aby zwiększyć wydajność promieniowania, można zamontować radiatory na kratownicy, co pozwoli im oddać więcej ciepła w porównaniu z tymi zamontowanymi bezpośrednio na płycie kadłuba.
+
+  Gaz przepływa przez radiator w sposób naturalny dzięki różnicom ciśnienia, ale można użyć pompy gazowej, aby zwiększyć natężenie przepływu.
+
+  Zwiększenie natężenia przepływu gazu przez radiator zwiększy tempo wymiany ciepła.
+
+  </Document>

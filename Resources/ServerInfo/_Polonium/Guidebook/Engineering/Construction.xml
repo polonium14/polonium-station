@@ -1,0 +1,37 @@
+<!--
+SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+SPDX-FileCopyrightText: 2023 Myakot <30875116+Myakot@users.noreply.github.com>
+SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+SPDX-FileCopyrightText: 2023 end <72604018+laok233@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Kira Bridgeton <161087999+Verbalase@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Terraspark4941 <terraspark4941@gmail.com>
+SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+  # Budowa i wytwarzanie
+
+  <Box>
+    <GuideEntityEmbed Entity="Bed" Caption=""/>
+    <GuideEntityEmbed Entity="TableReinforced" Caption=""/>
+    <GuideEntityEmbed Entity="WeaponImprovisedPneumaticCannon" Caption=""/>
+    <GuideEntityEmbed Entity="Chair" Caption=""/>
+  </Box>
+
+
+  Menu tworzenia służy do budowania i wytwarzania przedmiotów w grze.
+  Można je otworzyć, naciskając klawisz [color=#ffe566][bold][keybind="OpenCraftingMenu"][/bold][/color].
+
+  Podczas umieszczania obiektów, które "przyciągają się" do siatki, możesz przytrzymać [color=#ffe566][bold][keybind="EditorLinePlace"][/bold][/color] aby ustawiać całą linię naraz, oraz [color=#ffe566][bold][keybind="EditorGridPlace"][/bold][/color] aby umieścić całą siatkę za jednym razem.
+
+  Podczas wytwarzania przedmiotów wymagających wielu składników pamiętaj, że nie musisz trzymać wszystkiego naraz; możesz po prostu położyć składniki na podłodze, w plecaku lub na stole obok siebie, a podczas wytwarzania zostaną one zużyte.
+  Umieszczając "ducha" w dowolnym miejscu świata, naciśnij [color=#ffe566][bold][keybind="EditorRotateObject"][/bold][/color], aby obrócić go w prawo.
+  Jeśli budujesz element, który można odbić lustrzanie (np. mieszalniki gazu/filtry), możesz nacisnąć [color=#ffe566][bold][keybind="EditorFlipObject"][/bold][/color] aby je lustrzanie odbić.
+  Można również użyć przycisku [color=#ffe566][bold][keybind="RotateObjectClockwise"][/bold][/color] i [color=#ffe566][bold][keybind="RotateObjectCounterclockwise"][/bold][/color], aby obrócić obiekt w prawo lub w lewo, jeśli jest już zbudowany, pod warunkiem że nie jest zakotwiczony (nie jest przykręcony).
+
+
+</Document>

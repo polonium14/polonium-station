@@ -1,0 +1,91 @@
+<!--
+SPDX-FileCopyrightText: 2024 UBlueberry <161545003+UBlueberry@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Tadeo <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 pa.pecherskij <pa.pecherskij@interfax.ru>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+  # Złodzieje
+
+  <Box>
+    [color=#999999][italic]"Wezmę sobie to, to i to! i nikt mnie nie powstrzyma!"[/italic][/color]
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="ClothingNeckCloakVoid" Caption=""/>
+  </Box>
+
+  Złodzieje są chciwymi [color=green]kryminalistami[/color] którzy nie są wstanie się powstrzymać od wzięcia tego co cudze. Po twoim ostatnim aresztowaniu przymusowo zaimplantowano ci [bold]implant pacyfizmu[/bold], ale to cię nie powstrzywa od powiększenia swojej kolekcji skradzionych dóbr.
+  
+  Nie powinieneś pod żadnym pozorem obchodzić zamierzonych limitacji nałożonych ci poprzez [bold]implant pacyfizmu[/bold] powodująć krzywdę załogantów pośrednio oraz bezpośrednio. Przykłady skrzywdzenia kogoś pośrednio to: Wyłączenie osobie butli tlenowej aby się udusiła, wstrzykiwanie komuś toksycznych substancji, detonując ładunki wybuchowe w obecności innych osób oraz narażanie osób na promieniowanie.
+  
+  ## Sztuka Fachu
+  W porównaniu do innych antagonistów, [bold]Musisz się trzymać zdala od kłopotów[/bold] z powodu twojego [bold]implantu pacyfizmu[/bold].
+  Jeśli [color=#cb0000]Ochrona[/color] wpadnie na twój trop, możesz tylko uciekać, i przez to że działasz samemu, nie możesz liczyć na to że ktoś cie wyciągnie z tarapatów.
+
+  Jednak pomimo przeciwności losu, nakradniesz wszystkiego czego sobie pragniesz używająć swojej determinacji, zręcznych rąk, kilku gadżetów oraz twoich [color=cyan]Rękawic Złodzieja[/color].
+
+  Para rękawic którą posiadasz dają ci ogromne możliwości: [bold]Podkradanie przedmiotów tak szybko że nikt się nie skapnie.[/bold] Z małą wprawą będziesz w stanie ukraść im portfel podczas prowadzenia rozmowy.
+
+  Są one także wykonane z najwyższej jakości [bold]holograficznych włókien kameleonowych[/bold], pozwalając im na imitację wyglądu innych rękawiczek. Jednak pomimo że mogą wyglądać jak rękawice izolacyjne, to nie chronią przed prądem więc musisz zdobyć prawdziwą parę aby nie zostać porażonym.
+  <Box>
+    <GuideEntityEmbed Entity="ThievingGloves" Caption="Twoje rękawiczki"/>
+  </Box>
+  ## Twoje Umiejętności
+
+  Ukradłeś jedną czy dwie rzeczy w twoich poprzednich wcieleniach, i stałeś się w tym bardzo dobry.
+
+  Kiedy zostajesz złodziejem, dostajesz umiejętność skrytego zdejmowania przedmiotów nawet bez rękawic złodziejskich, oznacza to, że inni ludzie nie widzą twojego paska ładowania które pojawia się nad twoją głową kiedy kradniesz im przedmiot, działa to także [bold]wkładając im przedmioty do ekwipunku[/bold], użyj tego mądrze aby wrobić klauna.
+  Posiadasz możliwość zmiany trybu kradzieży żeby było to widoczne i abyś mógł zgrywać niewinnego. 
+  
+  Musisz jednak uważać ponieważ jeśli zostaniesz schwytany i zaimplantowany [color=cyan]implantem Mindshield[/color], stracisz tę niesamowicie przydatną umiejętność.
+  
+
+  ## Narzędzia Fachu
+  Masz jeszcze kilka innych skradzionych asów w twoim rękawie znajdujących się w twojej [color=cyan]złodziejskiej torbie[/color]
+
+  Twoja [color=cyan]złodziejska torba[/color] zawiera... cokolwiek czego nie zapomniałeś spakować. [bold]Możesz wybrać dwa gotowe zestawy[/bold] które pomogą ci w większych napadach.
+
+  <Box>
+    <GuideEntityEmbed Entity="SatchelThief"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="StorageImplanter" Caption="Anatomiczny"/>
+    <GuideEntityEmbed Entity="C4" Caption="Włamywacz"/>
+    <GuideEntityEmbed Entity="ChameleonProjector" Caption="Kameleon"/>
+    <GuideEntityEmbed Entity="EncryptionKeyStationMaster" Caption="Łącznik"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="NitrousOxideTank" Caption="Śpioch"/>
+    <GuideEntityEmbed Entity="Fulton" Caption="Przemytnik"/>
+    <GuideEntityEmbed Entity="Telecrystal" Caption="Syndykat"/>
+  </Box>
+
+  ## Twoja Kolekcja
+  Twoja kleptomania zabierze cię na różne przygody, jednego dnia będziesz chciał ukraść figurki, drugiego dnia buty a następnego całą maszynę industrialną.
+
+  Nie ważne na co się zdecydujesz, to tylko kwestia czasu zanim wszystko trafi do twojej kolekcji.
+  
+  Znajdź odpowiednie miejsce żeby ukryć swoje łupy albo stwórz kryjówkę, ponadto twoja [color=cyan]torba złodziejska[/color] po wybraniu zestawów może zostać przykręcona do poszycia i schowana pod kafelkami, tworząc szybkie i bezpieczne miejsce do ukrywania łupu.
+<Box>
+    <GuideEntityEmbed Entity="Wrench"/>
+	<GuideEntityEmbed Entity="ClothingBackpackSatchelSmugglerUnanchored"/>
+  </Box>
+  
+  Pamiętaj aby przed końcem rundy pochwalić się swoimi łupami opisując swoją przygodę w karcie postaci!
+
+  Kilka rzeczy które możesz chcieć ukraść:
+
+  <Box>
+   <GuideEntityEmbed Entity="ToyFigurineGreytider" Caption="Figurki"/>
+   <GuideEntityEmbed Entity="PassengerIDCard" Caption="Karty ID"/>
+   <GuideEntityEmbed Entity="ChemDispenser" Caption="Maszyny i struktury"/>
+   <GuideEntityEmbed Entity="MobCorgiIan" Caption="Zwierzaki/Pupile"/>
+   <GuideEntityEmbed Entity="ClothingNeckCloakCapFormal" Caption="Ubrania"/>
+  </Box>
+
+</Document>

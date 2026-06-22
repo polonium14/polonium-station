@@ -1,0 +1,31 @@
+<!--
+SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+  # Rozszczelnienie kadłuba statku
+  Rozszczelnienie kadłuba statku to najczęstszy powód kłopotów atmosferycznych na stacji.
+    
+  Chociaż [textlink="usunięcie uszkodzenia" link="ExpandingRepairingStation"], które spowodowało rozszczelnienie, często wymaga sporo czasu, sam problem powstały w wyniku rozszczelnienia można szybko rozwiązać poprzez ponowne zwiększenie ciśnienia w danym obszarze.
+
+  Naprawianie rozszczelnienia zazwyczaj sprowadza się do dwóch prostych kroków:
+
+  1. Zidentyfikuj obszar, który został rozszczelniony, i [textlink="uszczelnij dziurę." link="ExpandingRepairingStation"]
+
+  - Jeśli masz trudności ze znalezieniem dziury, a powietrze przedostaje się do przestrzeni kosmicznej, możesz uważnie wsłuchać się w szum przepływającego powietrza.
+  - Poszukaj wszelkich dziur pod trudno widocznymi miejscami takimi jak ściany oraz inne duże struktury.
+
+  2. Wyrównaj ciśnienie.
+
+  - [textlink="Otwory wentylacyjne" link="AirVent"] przechodzą w tryb blokady ciśnieniowej, aby zapobiec dalszej utracie powietrza. W celu wyrównania ciśnienia w danym obszarze konieczne będzie ręczne wyłączenie tej blokady. Można to zrobić, ustawiając podłączony [textlink="alarm atmosferyczny" link="AirAlarms"] na tryb napełniania lub klikając prawym przyciskiem myszy na otwór wentylacyjny i wybierając opcję "Zwolnij blokadę ciśnieniową", aby tymczasowo ręcznie wyłączyć tę blokadę.
+
+  ## Czego należy unikać
+  - Pamiętaj, że choć dysponujesz nieograniczonymi zasobami [textlink="wydobytego gazu" link="GasMiningAndStorage"], nie da się nim wystarczająco szybko napełnić wielu pomieszczeń jednocześnie. Ustawienie [textlink="alarmów powietrznych" link="AirAlarms"] tak, aby najpierw napełniły pomieszczenia [italic]przed[/italic] rozwiązaniem podstawowego problemu, często prowadzi do straty czasu i gazu.
+
+  - Pozostawienie [textlink="alarmów powietrznych" link="AirAlarms"] w trybie napełniania bez nadzoru może doprowadzić do nadmiernego wzrostu ciśnienia w pomieszczeniu, co w przypadku zaniedbania może stanowić zagrożenie dla załogi.
+
+</Document>

@@ -1,0 +1,127 @@
+<!--
+SPDX-FileCopyrightText: 2023 Derby <Derby@ss14>
+SPDX-FileCopyrightText: 2023 DerbyX <50932435+DerbyX@users.noreply.github.com>
+SPDX-FileCopyrightText: 2023 Errant <35878406+Errant-4@users.noreply.github.com>
+SPDX-FileCopyrightText: 2023 liltenhead <104418166+liltenhead@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+SPDX-FileCopyrightText: 2024 Boaz1111 <149967078+Boaz1111@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Ghagliiarghii <68826635+Ghagliiarghii@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Piras314 <92357316+Piras314@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2024 UBlueberry <161545003+UBlueberry@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 pa.pecherskij <pa.pecherskij@interfax.ru>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+  # Zdrajcy
+
+  <Box>
+    [color=#c8c8c8][italic]"WHISKEY. ECHO. WHISKEY. LIMA. ALPHA. DELTA. AGENCIE, ZOSTAŁEŚ AKTYWOWANY."[/italic][/color]
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="PosterContrabandSyndicateRecruitment" Caption=""/>
+  </Box>
+  Zdrajcy są antagonistami wynajętymi przez [color=#ff8a8a]Syndykat.[/color] Jesteś uśpionym agentem który w swoim [bold]uplinku[/bold] posiada szeroki wachlarz narzędzi oraz uzbrojenia.
+  Ponadto otrzymujesz [bold]słowa kodowe[/bold] które możesz użyć do zidentyfikowania innych agentów, a dobrze skoordynowana drużyna zdrajców może osiągnąć brutalne resultaty.
+  
+  Wszyscy oprócz [textlink="szefów departamentów" link="Command"] lub członków [textlink="Ochrony" link="Security"] mogą być zdrajcami, chyba że pozwala na to specjalny tryb gry.
+   
+  ## Uplink i Aktywacja
+  [color=#7ee8f7]Uplink[/color] jest twoim najważniejszym narzędziem jako zdrajca. Możesz rozmienić 100 [color=#ff8a8a]telekryształów[/color] (TK) z którymi zaczynasz na przedmioty które pomogą ci w osiągnięciu twoich celów.
+
+  Poprzez naciśnięcie [color=#ffe566][bold][keybind="OpenCharacterMenu"][/bold][/color] możesz zobaczyć swój personalny kod do uplinka przypisany do twojego startowego [bold]PDA[/bold], [bold]kod ten musisz wprowadzić w ustawieniach PDA do zmiany dzwonka aby móc otworzyć ten Uplink.[/bold]
+  Naciśnięcie [color=#ffe566][bold][keybind="OpenCharacterMenu"][/bold][/color] wyświetla także twoje cele oraz słowa kodowe.
+
+  Jeżeli nie posiadasz PDA w momencie aktywacji, zostaniesz zaopatrzony w [color=#7ee8f7]implant uplinku[/color] [bold]za pełną cenę implantu w [color=#ff8a8a]telekryształach[/color].[/bold]
+  Możesz otworzyć go z hotbara.
+  <Box>
+    <GuideEntityEmbed Entity="PassengerPDA" Caption="PDA"/>
+    <GuideEntityEmbed Entity="Telecrystal" Caption="Telekryształy"/>
+    <GuideEntityEmbed Entity="BaseUplinkRadio" Caption="Implant Uplinku"/>
+  </Box>
+
+  [bold]Upewnij się aby zamknąć swój uplink w PDA aby nikt się do niego nie dostał[/bold]. Nie chcesz aby [color=#ff8a8a]Ochrona[/color] go znalazła i skonfiskowała!
+
+  Normalnie inni nie są w stanie się dostać do zaimplantowanego uplinka, dlatego nie ma dla nich środków bezpieczeństwa, jednak można je usunąć z twojego ciała za pomocą pustego implantera
+
+  <Box>
+    <GuideEntityEmbed Entity="WeaponPistolViper" Caption="Bronie"/>
+    <GuideEntityEmbed Entity="FireAxe" State="icon" Caption="Broń Biała"/>
+    <GuideEntityEmbed Entity="C4" Caption="Ładunki Wybuchowe"/>
+    <GuideEntityEmbed Entity="Syringe" Caption="Implanty"/>
+    <GuideEntityEmbed Entity="ClothingBackpackDuffelSyndicate" Caption="Zestawy"/>
+  </Box>
+
+  Twoje zakupy powinny ci pomóc w osiągnieciu celów. Niektóre rzeczy jednak mogą być dla ciebie zbędne, dlatego musisz się zdecydować czy idziesz na cicho czy na głośno.
+  
+  ## Koordynacja
+  Słowa kodowe są słowami i frazami które każdy zdrajca syndykatu zna. Pozwalają one na dyskretne zydentyfikowanie i nawiązanie kontaktu z innymi zdrajcami, co może być pomocne w osiągnięciu celów jeśli przykładowo musisz [italic][color=#7ee8f7]utrzymać ich przy życiu[/color][/italic] lub [italic][color=#7ee8f7]pomóc im w osiągnieciu celów[/color][/italic]
+ 
+  Jeśli znajdziesz przyjaciół, [bold]możesz wypłacić [color=#ff8a8a]telekryształy[/color] z twojego uplinka i im podarować.[/bold] Mogą je wpłacić do swojego uplinka wkładając [color=#ff8a8a]telekryształy[/color] do PDA z uplinkiem lub w siebie jeśli mają implant.
+
+  Niektóre oferty w twoim uplinku wymagają wiecej niż 100 TK aby je zakupić, więc jeśli chcesz je zakupić to musisz się z kimś podzielić
+  
+  Trzeba jednak pamiętać o tym że możesz zostać [bold]zdradzony[/bold] przez innego zdrajce przez to że macie sprzeczne cele, a nawet samemu być celem zabójstwa. bądz gotowy na to że w każdym momencie możesz zostać wykorzystany i zabity, takie są realia w tym fachu i trzeba się z tym pogodzić.
+
+  ## Asasynacja
+  Jednym z twoich celów może być [italic][color=#7ee8f7]zabójstwo lub porzucenie załoganta.[/color][/italic]
+  
+  Możesz [color=#7ee8f7]porzucić[/color] swój cel [bold]uniemożliwiając mu dotarcie do centralnego dowództwa[/bold] poprzez wahadłowiec ewakuacyjny lub kapsułe ratunkową.
+
+  Jeżeli nie możesz porzucić swojego celu lub jest zbyt ważnym celem aby pozostawić go przy życiu, będziesz sobie musiał pobrudzić ręce i ich [color=#7ee8f7]zamordować.[/color] upewnij się że twój cel jest martwy w momencie [bold]zadokowania wahadłowca ewakuacyjnego do centralnego dowództwa,[/bold] i nie dopuść do ich resuscytacji.
+
+  Pamiętaj że syndykat chce tylko aby cele były martwe. [color=#ff8a8a]Unikaj masowego mordu i ogromnych uszkodzeń stacji,[/color] ponieważ im więcej zabierzesz niewinnych żyć, tym większą kulą u nogi stajesz się dla syndykatu.
+  
+  ## Ucieczka oraz Samolikwidacja
+  Twoje cele mogą wymagać od ciebie [italic][color=#7ee8f7]dotarcia do centralnego dowództwa bez bycia zabitym lub schwytanym.[/color][/italic] Nie pozwól [color=#ff8a8a]Ochronie[/color] cię powstrzymać przed wykonaniem swoich celów i [bold]powróceniem żywym.[/bold]
+  
+  Alternatywnie, twój cel może wymagać od ciebie [italic][color=#7ee8f7]chwalebnej śmierci.[/color][/italic] [bold]Upewnij się że nie powrócisz do świata żywych,[/bold] w innym przypadku obudzisz się w kajdanach.
+
+  ## Przywłaszczenie
+  Często będzie od ciebie wymagane [italic][color=#7ee8f7]ukradnięcie własności szefa departamentu.[/color][/italic]
+  
+  Cel może znajdować się w ich biurze, lub w ich ekwipunku. Jeśli nie będziesz w stanie im cicho podkraść celu będziesz musiał ich zabić
+
+  Z celów jakie możesz dostać w swoim zadaniu:
+  - Okradnięcie [color=#ffe566]Kapitana[/color] z [bold]Karty ID[/bold], [bold]Antycznego pistoletu laserowego[/bold], [bold]plecaka odrzutowego kapitana[/bold], albo [bold]dysku autoryzacji nuklearnej[/bold].
+  <Box>
+    <GuideEntityEmbed Entity="CaptainIDCard" Caption=""/>
+    <GuideEntityEmbed Entity="WeaponAntiqueLaser" Caption=""/>
+    <GuideEntityEmbed Entity="JetpackCaptainFilled" Caption=""/>
+    <GuideEntityEmbed Entity="NukeDisk" Caption=""/>
+  </Box>
+  - Okradnięcie [color=#9dd4f5]Ordynatora medycznego[/color] z [bold]hypospreju[/bold] lub [bold]ręcznego monitora załogi[/bold].
+  <Box>
+    <GuideEntityEmbed Entity="Hypospray" Caption=""/>
+    <GuideEntityEmbed Entity="HandheldCrewMonitorEmpty" Caption=""/>
+  </Box>
+  - Okradnięcie [color=#e8a0ff]Dyrektora badawczego[/color] z [bold]eksperymentalnego skafandra badawczego[/bold] albo [bold]portatywnego teleportera[/bold].
+  <Box>
+    <GuideEntityEmbed Entity="ClothingOuterHardsuitRd" Caption=""/>
+    <GuideEntityEmbed Entity="HandTeleporter" Caption=""/>
+  </Box>
+  - Okradnięcie [color=#ff8a8a]Komendanta ochrony[/color] z [bold]energetycznej strzelby[/bold].
+  <Box>
+    <GuideEntityEmbed Entity="WeaponEnergyShotgun" Caption=""/>
+  </Box>
+  - Okradnięcie [color=#ffc966]Głownego inżyniera[/color] z [bold]zaawansowanych butów magnetycznych[/bold].
+  <Box>
+    <GuideEntityEmbed Entity="ClothingShoesBootsMagAdv" Caption=""/>
+  </Box>
+  - Okradnięcie [color=#e8c878]Kwatermistrza[/color] z [bold]cyfrowej tablicy zamówień[/bold].
+  <Box>
+    <GuideEntityEmbed Entity="BoxFolderQmClipboard" Caption=""/>
+  </Box>
+  - Zarżnij Iana, psa [color=#b8ff9e]Kierownika personelu[/color] i uzyskaj [bold]pierwszorzędny kawałek mięsa korgi[/bold].
+  <Box>
+    <GuideEntityEmbed Entity="MobCorgiIan" Caption=""/>
+    <GuideEntityEmbed Entity="FoodMeatCorgi" Caption=""/>
+  </Box>
+
+</Document>

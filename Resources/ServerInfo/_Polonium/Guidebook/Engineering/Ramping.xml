@@ -1,0 +1,28 @@
+<!--
+SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+  # Stopniowe zwiększanie mocy
+  W przeciwieństwie do tego, czego można by się spodziewać po symulacji elektrycznej w grze komputerowej, moc nie jest dostarczana natychmiast po zgłoszeniu zapotrzebowania.
+
+  Generatory i akumulatory potrzebują czasu, aby dostosować się do obciążenia, co prowadzi do spadków napięcia w przypadku nagłych, znacznych zmian poboru prądu; na przykład gdy wyczerpią się akumulatory.
+
+  Rozważmy następujący przykład:
+  - Załóżmy, że masz generator o mocy wyjściowej 100 kW.
+  - Jeśli masz urządzenie, które pobiera 50 kW mocy, generator wygeneruje 50 kW mocy, aby dopasować podaż do zapotrzebowania sieci.
+  - Jeśli następnie włączysz urządzenie, które pobiera kolejne 50 kW mocy, generator potrzebuje czasu, aby osiągnąć moc 100 kW. Nie dostarczy tej mocy natychmiast.
+  - W tym czasie urządzenia nie będą otrzymywać potrzebnej mocy, a w sieci wystąpi tymczasowy spadek napięcia.
+  - Po upływie kilku sekund generator osiągnie moc 100 kW, a spadek napięcia ustąpi. Wszystkie urządzenia będą teraz otrzymywały wystarczającą ilość mocy.
+
+  Podczas zmiany najczęściej można zaobserwować to zjawisko, gdy generatorowi skończy się paliwo i nagle przestaje on wytwarzać energię.
+  W sieci nagle pojawia się znaczny deficyt mocy (ponieważ podaż spadła poniżej popytu), a wszystkie urządzenia doświadczają spadku napięcia, dopóki małe i średnie generatory lub inne generatory nie osiągną mocy pozwalającej zaspokoić nowe zapotrzebowanie.
+
+  Może się to również zdarzyć, gdy do sieci zostanie ponownie podłączone urządzenie lub departament o dużym poborze mocy.
+  Nagły wzrost poboru mocy spowoduje spadek napięcia, dopóki generatory nie zwiększą mocy, aby sprostać nowemu zapotrzebowaniu.
+
+</Document>

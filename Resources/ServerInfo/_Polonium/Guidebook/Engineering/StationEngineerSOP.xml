@@ -1,0 +1,42 @@
+<!--
+SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+<Document>
+# SPO Inżyniera Stacji
+
+[bold]1.[/bold] Inżynierowie muszą prawidłowo podłączyć panele słoneczne i uruchomić silnik antymaterii (AME), jeśli jest dostępny, a także opracować plan uruchomienia silnika o większej mocy do długoterminowego użytku stacji;
+
+[bold]2.[/bold] Inżynierowie są odpowiedzialni za utrzymanie sprawności wszystkich źródeł zasilania na stacji, nawet tych wyłączonych lub nieaktywnych. Zaniedbanie tego obowiązku stanowi podstawę do zwolnienia w przypadku awarii silnika;
+
+[bold]3.[/bold] Inżynierowie mogą budować dodatkowe źródła zasilania (takie jak silniki SM, Singularity lub Tesla) za zgodą [color=#8ec8ff]Głównego Inżyniera[/color];
+
+[bold]4.[/bold] Inżynierowie mogą realizować samodzielne projekty związane z przebudową, odbudową lub projekty własne, o ile stacja nie wykazuje żadnych uszkodzeń wymagających naprawy;
+
+[bold]5.[/bold] Inżynierowie muszą sprawdzać każdy pracujący silnik co najmniej raz na 30 minut;
+
+[bold]6.[/bold] Inżynierowie muszą nieustannie monitorować Supermaterię o ile jest używana i znajduje się pod ostrzałem emiterów;
+
+[bold]7.[/bold] Inżynierowie muszą niezwłocznie reagować na wszelkie uszkodzenia, niezależnie od ich skali. Brak zgłoszenia w ciągu piętnastu (15) minut będzie traktowany jako naruszenie standardowej procedury operacyjnej, chyba że nie ma innych inżynierów, którzy mogliby zgłosić zdarzenie. Wszystkie strefy zagrożenia należy odgrodzić taśmą inżynieryjną lub holobarierami w celu zapewnienia bezpieczeństwa członków załogi;
+
+[bold]8.[/bold] Inżynierowie mogą włamać się do pomieszczeń, aby uzyskać nieuprawniony dostęp, jeśli wymagają one [bold]pilnych[/bold] napraw;
+
+[bold]9.[/bold] Inżynierowie mają za zadanie dbać o niezawodność sieci energetycznej stacji;
+
+[bold]10.[/bold] Inżynierowie muszą zadbać o to, aby na stacji przez cały czas dostępny był co najmniej jeden (1) inżynieryjny kombinezon próżniowy (hardsuit), chyba że wystąpi sytuacja awaryjna wymagająca użycia wszystkich kombinezonów.
+
+[bold]11.[/bold] Inżynierowie mogą całkowicie wymienić instalację rurociągów atmosferycznych, pod warunkiem że nie wpompują szkodliwych gazów do sieci dystrybucyjnej;
+
+[bold]12.[/bold] Inżynierowie [bold]nie mogą[/bold] tworzyć mieszanek niestabilnych lub szkodliwych do stosowania poza obrębem departamentu atmosferyki;
+
+[bold]13.[/bold] Inżynierom [bold]nie wolno[/bold] wyjmować siekiery z pojemnika poza terenem budowy, chyba że istnieje bezpośrednie i pilne zagrożenie dla ich życia lub konieczny jest natychmiastowy dostęp do miejsc kryzysowych. Po zakończeniu prac siekierę należy ponownie umieścić w pojemniku i zamknąć go na klucz;
+
+[bold]14.[/bold] Inżynierowie [bold]nie mogą[/bold] zmieniać domyślnych ustawień alarmów powietrznych w pomieszczeniach nienależących do departamentu atmosferyki bez wyraźnej zgody kierownictwa;
+
+[bold]15.[/bold] Inżynierowie muszą okresowo sprawdzać stan centralnego komputera alarmowego, co najwyżej co trzydzieści (30) minut;
+
+[bold]16.[/bold] Inżynierowie muszą zadbać o stały dopływ odpowiedniej mieszanki do systemu dystrybucji oraz zapewnić odpowiednią wentylację stacji.
+</Document>

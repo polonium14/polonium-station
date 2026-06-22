@@ -1,0 +1,168 @@
+<!--
+SPDX-FileCopyrightText: 2023 2013HORSEMEATSCANDAL <146540817+2013HORSEMEATSCANDAL@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+SPDX-FileCopyrightText: 2024 Brandon Hu <103440971+Brandon-Huu@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Iztok Bajcar <50874197+iztokbajcar@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 UBlueberry <161545003+UBlueberry@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Zonespace <41448081+Zonespace27@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 strO0pwafel <153459934+strO0pwafel@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+# Słowniczek
+
+Ta strona zawiera większość terminów slangowych, z jakimi możesz się spotkać na stacji i w społeczności!
+
+# Slang In-Character (IC)
+
+Są to terminy, z którymi możesz spotkać się w grze.
+
+## ANM (ang. AOS)
+Aresztowanie na miejscu — aresztować w zasięgu wzroku.
+
+## PD
+Pełny dostęp — ID, które ma każdy dostęp na stacji. Kapitan jest jedyną osobą, która w normalnych okolicznościach posiada taki dostęp.
+
+## Atmos
+Skrót od Atmosferyki lub Techników Atmosferycznych.
+
+## Zaboltowane
+Śluza powietrzna, która nigdy nie zmieni stanu. Pozostanie na stałe otwarta lub na stałe zamknięta, dopóki nie zostanie odryglowana. Zamknięte i zaboltowane śluzy mają stałe czerwone światła.
+
+## Borg
+Skrót od cyborgów, robotów sterowanych przez graczy.
+
+## Brig
+Główny obszar działu ochrony. To tutaj przyprowadzani są więźniowie i przetrzymywani za karę. Nadzorca jest odpowiedzialny za sprawne funkcjonowanie briga.
+
+## Kargonia
+Nawiązanie do ogłoszenia niepodległości przez dział logistyczny (anglizyzm "Cargo"). Wbrew zasadom.
+
+## NI / IN
+Skrót od Naczelnego Inżyniera, szefa Działu Inżynierii.
+
+## CentComm/CentDow/Centralne Dowództwo
+Agencja administracyjna, która nadzoruje stację kosmiczną Nanotrasen, którą zamieszkujesz.
+
+## Czerwony Telefon
+Dedykowana linia bezpośrednia do pilnego kontaktowania się z Centralnym Dowództwem. Zasady użytkowania: [textlink="Czerwony Telefon" link="RedPhoneSOP"].
+
+## CMO
+Angielski skrót od Chief Medical Officer (Ordynator), kierownika Działu Medycznego.
+
+## Kryt
+Skrót od stanu krytycznego, stanu zdrowia, w którym tracisz przytomność i prawie nie możesz się już poruszać. Będąc w stanie krytycznym, twoje zdrowie powoli spada, aż umrzesz, chyba że otrzymasz pomoc z zewnątrz.
+
+## Emag
+  Odnosi się do sekwencera kryptograficznego Syndykatu. "Zemagowany" zazwyczaj odnosi się do śluz lub szafek, które są zaryglowane w pozycji otwartej, ale także każdego innego urządzenia zhakowanego przez Emag.
+
+## Dostęp Awaryjny
+  Śluza powietrzna, którą może otworzyć każdy, nawet bez dostępu lub ID. Śluzy ustawione na dostęp awaryjny mają migające żółte światła.
+
+## JSR
+Jednostka Szybkiego Reagowania. Mogą zostać wysłani przez Centralne Dowództwo w różnych celach.
+
+## Bogowie
+Termin IC reprezentujący Administratorów Serwera. CentComm jest również czasami mianowany w ten sposób.
+
+## Szarafala (Greytide/Titer)
+Zazwyczaj używane w odniesieniu do Pasażera ze względu na kolor ich standardowego munduru (szary), chociaż może być używane negatywnie w odniesieniu do innych członków załogi (nie tylko pasażerów), którzy zachowują się niesfornie lub popełniają różne drobne przestępstwa.
+
+## KP
+Skrót od Kierownika Personelu, szefa Działu Obsługi. Może również odnosić się do biura KP, gdzie wydawane lub zmieniane są ID.
+
+## KO
+Skrót od Komendanta Ochrony, szefa Działu Ochrony.
+
+## Insule
+Skrót od Rękawic Izolowanych. Są to żółte rękawice najczęściej noszone przez Inżynierów. Oferują całkowitą ochronę przed porażeniem prądem, które jest najczęściej powodowane przez drzwi pod napięciem. Znacznie skuteczniejsze niż ich budżetowa odmiana.
+
+## KOS
+Angielski skrót od "Kill on sight" (Zabić w zasięgu wzroku). Ktoś popełnił tak poważne przestępstwo, że jest uważany za zbyt duże zagrożenie dla standardowych procedur aresztowania.
+
+## Nanotrasen/NT
+Nanotrasen to firma, która jest właścicielem stacji kosmicznej, którą zamieszkujesz.
+
+## Perma
+Skrót od Permabriga (Areszt Permanentny). Jest to przeznaczone dla najpoważniejszych przestępstw i oznacza, że więzień nigdy nie zostanie zwolniony. Większość stacji ma dedykowany, oddzielny obszar ochrony na areszt permanentny.
+
+## KM
+Skrót od Kwatermistrza, szefa działu logistyki.
+
+## KB
+Skrót od Kierownika Badań, szefa działu badań i rozwoju.
+
+## Robust
+Słowo używane do opisania kogoś, kto jest szczególnie biegły w walce lub przetrwał ciężką walkę.
+
+## B+R
+Skrót od Badania i Rozwój (Research and Development).
+
+## Zmiana
+Sposób In-Character na określenie rund.
+
+## Singuloose
+Osobliwość, która naruszyła swoje zabezpieczenia, czy to przez wypadek, zaniedbanie czy sabotaż. Przebije się przez stację, powodując ogromne zniszczenia.
+
+## Dekompresja
+Zdarzenie, które powoduje utratę ciśnienia powietrza w obszarze, np. wyłom w kadłubie.
+
+## SSD
+Skrót od "Sudden Sleep Disorder" lub "Space Sleep Disorder" (Zespół Nagłego/Kosmicznego Snu). Jest to sposób in-character na odniesienie się do gracza, który rozłączył się i już nie odpowiada.
+
+## Syndykat
+Ogólne odniesienie do każdego zatrudnionego przez Syndykat. Obejmuje to od (podejrzanych) Agentów Syndykatu po Agentów Nuklearnych.
+
+## TK
+Telekryształ, waluta używana przez Agentów Syndykatu do zakupu zakazanej kontrabandy, takiej jak broń i inny nielegalny sprzęt.
+
+## Tesloose
+Wariant terminu Singuloose, ale dla tesli. Przebija się przez stację, celując w elektronikę wszelkiego rodzaju.
+
+## Wardenloose
+Żartobliwy termin nawiązujący do Singuloose. Wardenloose ma miejsce, gdy Nadzorca (Warden) jest widziany poza aresztem.
+
+## Ksenoarcheologia
+Badanie artefaktów, zazwyczaj wykonywane przez B+R.
+
+# Slang Out-Of-Character (OOC)
+
+Są to terminy, których powinieneś używać tylko na czacie OOC lub poza grą.
+
+## Admeme
+Wydarzenie (event) zorganizowane lub spowodowane przez admina.
+
+## AHelp/Admin Help
+Przekaźnik używany do zgłaszania łamania zasad lub innych problemów administratorom (F1).
+
+## Antag
+Skrót od Antagonistów, czyli różnych ról o tematyce złoczyńców, które mają na celu wprowadzenie chaosu w rundzie. Ich obecność jest zazwyczaj początkowo cicha, ale działania, które podejmują, często kończą się zdefiniowaniem przebiegu rundy.
+
+## Bwoink
+Dźwięk wydawany po otrzymaniu wiadomości od admina (ahelp). Módl się, żeby to nie był ban.
+
+## LOOC/OOC
+Odpowiednio Lokalne Out-Of-Character i (Globalne) Out-Of-Character. Są to kanały tekstowe, które pozwalają graczom rozmawiać z innymi graczami poza odgrywaniem ról. LOOC jest włączone podczas rund, podczas gdy OOC jest zazwyczaj włączone tylko po zakończeniu rundy i przed rozpoczęciem następnej.
+
+## LRP
+Low Roleplay (Niski poziom RP). Serwery oznaczone jako LRP zazwyczaj mają luźne zasady odgrywania ról.
+
+## MRP
+Medium Roleplay (Średni poziom RP). Serwery oznaczone jako MRP zazwyczaj mają przyzwoitą podstawę zasad odgrywania ról i generalnie wymagają od graczy zachowywania się tak, jak ich postać zachowywałaby się realistycznie w danej sytuacji. Mniej swobody jest przyznawane zachowaniom takim jak otwarte przeciwstawianie się Ochronie lub swojemu szefowi.
+
+## HRP
+High Roleplay (Wysoki poziom RP). Serwery oznaczone jako HRP zazwyczaj mają obszerne zasady dotyczące tego, co jest, a co nie jest dozwolone podczas odgrywania postaci. Jesteś zazwyczaj zobowiązany do działania tak, jak robiłaby to twoja postać, posiadania historii postaci i przestrzegania protokołów na stacji. Niektóre serwery HRP mogą tworzyć własną historię (lore) lub ustawienia, aby dalej ułatwiać typ serwera, jaki chcą hostować.
+
+## Selfantag/Samoantagonizm
+Termin określający gracza, który angażuje się w działalność podobną do antagonisty, nie będąc w rzeczywistości antagonistą. Obejmuje to szeroki zakres zachowań, ale zazwyczaj jest używane do opisania irytującego zachowania lub działań, które są bardzo szkodliwe dla innych graczy bez celu. Samo-antagonizowanie jest wykroczeniem podlegającym banowi. Czasami używane w IC. NIE RÓB TEGO.
+
+## Upstream
+Bazowa wersja gry. Wszelkie zmiany w Upstream "spłyną" do wszystkich innych forków gry. Wszystkie oficjalne serwery Wizard's Den działają na Upstreamie.
+
+## Validhunter
+Gracz, który poluje na "validów", czyli ludzi, których można zabić zgodnie z zasadami (np. antagonistów), nawet jeśli ta osoba nie jest z ochrony.
+
+</Document>

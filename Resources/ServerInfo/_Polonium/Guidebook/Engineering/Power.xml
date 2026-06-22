@@ -1,0 +1,48 @@
+<!--
+SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+SPDX-FileCopyrightText: 2023 Myakot <30875116+Myakot@users.noreply.github.com>
+SPDX-FileCopyrightText: 2023 end <72604018+laok233@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Kira Bridgeton <161087999+Verbalase@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+SPDX-FileCopyrightText: 2024 Terraspark4941 <terraspark4941@gmail.com>
+SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+  # Zasilanie
+  Zasilanie to siła napędowa stacji.
+  Bez niego na stacji szybko zapanuje chaos.
+  Inżynierowie odpowiadają za utrzymanie sieci energetycznej stacji, dbając o dostawy i dystrybucję energii oraz o zaspokojenie potrzeb wszystkich działów.
+
+  <Box>
+    <GuideEntityEmbed Entity="SingularityGenerator" Caption=""/>
+    <GuideEntityEmbed Entity="TeslaGenerator" Caption=""/>
+    <GuideEntityEmbed Entity="AmeController" Caption=""/>
+    <GuideEntityEmbed Entity="SMESBasic" Caption=""/>
+    <GuideEntityEmbed Entity="SubstationBasic" Caption=""/>
+    <GuideEntityEmbed Entity="APCBasic" Caption=""/>
+  </Box>
+
+  Symulacja systemu zasilania w grze "Space Station 14" ma wiele różnych aspektów, podobnie jak rozgrywka przewidziana dla inżynierów.
+
+  Oto kilka ważnych informacji, o których należy pamiętać:
+  - [textlink="Generatory" link="Generators"] są podzielone na klasy i podlegają hierarchii. Im niższa klasa, tym mniej są one wydajne, ale tym łatwiej je zainstalować. Im wyższa klasa, tym są one wydajniejsze, ale tym bardziej skomplikowana jest ich instalacja.
+  - W Space Station 14 znajdują się [textlink="sieci energetyczne" link="VoltageNetworks"], które rozprowadzają energię po całej stacji, a ich napięcie jest obniżane przez urządzenia, dzięki czemu mogą z nich korzystać inne maszyny.
+  - [textlink="Generatory" link="Generators"] [textlink="stopniowo zwiększają moc" link="Ramping"], co oznacza, że potrzebują czasu, aby dostosować swoją podaż do zapotrzebowania sieci.
+
+  ## Rozpoczęcie pracy
+  Na początku zmiany stacja jest zasilana wyłącznie z [textlink="akumulatorów" link="PowerStorage"].
+  W zależności od poboru mocy przez stację wystarczy to na maksymalnie 5–10 minut.
+
+  Aby przedłużyć ten czas, możesz uruchomić [textlink="silnik antymaterii (SAM)" link="AME"]. Dzięki temu znacznie wydłużysz czas pracy akumulatorów stacji, zyskując więcej czasu na skonfigurowanie[textlink="generatorów" link="Generators"] wyższej klasy.
+  Możesz jeszcze bardziej wydłużyć ten czas, konfigurując [textlink="panele słoneczne" link="SolarPanels"], które pasywnie generują energię.
+
+  Po skonfigurowaniu [textlink="silnika antymaterii (SAM)" link="AME"] i [textlink="paneli słonecznych" link="SolarPanels"] powinieneś już wytwarzać spore ilości energii.
+
+  Teraz, gdy zyskałeś trochę czasu, możesz skupić się na skonfigurowaniu [textlink="generatorów" link="Generators"] wyższej klasy, takich jak [textlink="Singularity" link="SingularityEngine"], które mogą zapewnić energię na resztę zmiany.
+
+</Document>

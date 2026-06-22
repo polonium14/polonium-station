@@ -1,0 +1,119 @@
+<!--
+SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
+SPDX-FileCopyrightText: 2025 corresp0nd <46357632+corresp0nd@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+-->
+
+<Document>
+  # Supermateria
+
+  Supermateria to niezwykle niebezpieczne, niestabilne i radioaktywne źródło energii. Bez ostrożnego zarządzania komora supermaterii wypełni się ogniem, pojawią się wyładowania atmosferyczne, a w końcu eksplozja zniszczy dział inżynierii.
+
+  Jednak przy odpowiedniej ostrożności i obsłudze supermateria może stanowić niezwykle potężne źródło energii dla stacji. Chociaż podstawowa konfiguracja zaspokoi typowe zapotrzebowanie stacji na energię, na kryształ supermaterii silny wpływ mają gazy na wiele różnych sposobów — zarówno korzystnych, jak i szkodliwych.
+
+  ## Środki ostrożności
+
+  [bold][color=#ff8a8a]NIGDY NIE WCHODŹ DO KOMORY Z KRYSTALEM, ZANIM NIE ZOSTANIE URUCHOMIONY UKŁAD CHŁODZENIA![/color][/bold]
+
+  Przed wejściem do komory z supermaterią należy pamiętać o kilku rzeczach, aby uniknąć katastrofy i obrażeń ciała.
+
+  • Nie włączaj kryształu przed uruchomieniem obiegu chłodzącego. [color=#ff8a8a]Nie dotykaj kryształu. Nie wchodź do kryształu.[/color]
+
+  • W pobliżu kryształu zawsze noś odzież ochronną przed promieniowaniem.
+
+  • Nie patrz bezpośrednio w kryształ. Gogle inżynierskie zapobiegną halucynacjom.
+
+  • Jeśli musisz zbliżyć się do kryształu, załóż i włącz buty magnetyczne.
+
+  ## Kryształ Supermatterii
+
+  <GuideEntityEmbed Entity="Supermatter" Caption=""/>
+
+  Kryształ supermaterii stanowi centralny element generowania prądu przy pomocy supermaterii. Powoli pochłania on otaczające go gazy i wchodzi z nimi w reakcję, emitując przy tym niezwykle szkodliwe — ale przynoszące ogromne zyski — poziomy promieniowania.
+
+  Po zasileniu — zazwyczaj przez emitery — intensywność jego promieniowania wzrasta, a jako odpad uwalniany jest gorący tlen i plazma. Co więcej, [color=#ff8a8a]wszystko, co dotknie kryształu, ulega natychmiastowemu spopieleniu[/color].
+
+  ## Kolektory promieniowania
+
+  <Box>
+    <GuideEntityEmbed Entity="RadiationCollectorNoTank"/>
+    <GuideEntityEmbed Entity="PlasmaTank"/>
+  </Box>
+
+  Aby wykorzystać potencjał radioaktywny kryształu, w pobliżu umieszczono kolektory promieniowania. Są one podłączone do kabli wysokiego napięcia, dzięki czemu wytwarzają energię dla stacji.
+
+  Do działania kolektorów promieniowania niezbędny jest zbiornik wypełniony gazem plazmowym, który należy okresowo wymieniać, aby zapewnić ciągłość wytwarzania energii.
+
+  ## Pętla chłodząca
+
+  W skrócie, stabilność kryształu supermaterii zapewnia pętla chłodząca. Komora jest wypełniona bezpiecznym, zimnym gazem, a wszelkie szkodliwe lub niepożądane produkty uboczne są usuwane z systemu.
+
+  <GuideEntityEmbed Entity="NitrogenCanister"/>
+
+  Większość stacji jest wyposażona w zbiorniki z azotem: supermateria reaguje z azotem w sposób całkowicie bezpieczny, co sprawia, że jest to idealny gaz do podstawowej konfiguracji.
+
+  <Box>
+    <GuideEntityEmbed Entity="GasPort"/>
+    <GuideEntityEmbed Entity="GasPressurePump"/>
+    <GuideEntityEmbed Entity="GasFilter"/>
+  </Box>
+
+  Aby skonfigurować pętlę chłodzącą, podłącz butle z azotem do portów gazowych i włącz odpowiednie pompki. Podążaj wzdłuż rur, włączając po drodze pompki i filtry.
+
+  Należy uważać, aby nie uruchomić pomp gazowych wewnątrz śluz komory wewnętrznej przed skonfigurowaniem pełnego obiegu chłodzącego. Pompa gazowa obejściowa znajduje się na zewnątrz zewnętrznej śluzy; należy jej używać, aby zapewnić przepływ gazu podczas pracy.
+
+  Co najmniej jeden z filtrów, które zasilają obieg, powinien być ustawiony na filtrowanie azotu. Pozwoli to utrzymać schłodzony azot w obiegu, zapewniając utrzymanie kryształu w bezpiecznych parametrach.
+
+  <GuideEntityEmbed Entity="GasAnalyzer"/>
+
+  Po skonfigurowaniu całej pętli chłodzącej należy sprawdzić za pomocą analizatora gazu, czy w żadnym miejscu układu nie doszło do zablokowania przepływu gazu. Należy wyłączyć pompę gazu obejściowego przy komorach wyrównawczych, włączyć pompy gazu wewnętrzne oraz skonfigurować alarm powietrzny.
+
+  ## Konfiguracja alarmu atmosferycznego
+
+  <GuideEntityEmbed Entity="AirAlarm" Caption=""/>
+
+  Większość alarmów atmosferycznych jest dostępna wyłącznie dla inżynierów atmosferycznych. Alarm atmosferyczny supermaterii jest wyjątkowy i może być konfigurowany przez inżynierów stacji.
+
+  <Box>
+    <GuideEntityEmbed Entity="GasVentPump"/>
+    <GuideEntityEmbed Entity="GasVentScrubber"/>
+  </Box>
+
+  Domyślnie otwory wentylacyjne w komorze supermaterii wytwarzają ciśnienie gazu nieprzekraczające 101,3 kPa i działają zgodnie z parametrami blokady ciśnieniowej.
+
+  Za pomocą alarmu atmosferycznego należy zwiększyć próg ciśnieniowy każdego otworu wentylacyjnego lub przełączyć je na regulację ciśnienia wewnętrznego. Należy również wyłączyć funkcje blokady ciśnieniowej każdego otworu wentylacyjnego.
+
+  Oczyszczacze powietrza również wymagają dostosowania w stosunku do domyślnej konfiguracji. Upewnij się, że każdy oczyszczacz jest ustawiony na filtrowanie wszystkich gazów oraz że funkcja WideNet jest włączona w celu uzyskania maksymalnej wydajności.
+
+  ## Emitery
+
+  <GuideEntityEmbed Entity="Emitter"/>
+
+  Gdy pętla chłodząca zostanie w pełni skonfigurowana, a kolektory promieniowania napełnione, supermateria jest gotowa do uruchomienia.
+
+  Emitery to najpopularniejszy sposób na uruchomienie supermaterii i utrzymanie jej wysokiego poziomu energii wewnętrznej. Wejdź w interakcję z emiterem, aby go włączyć, a zacznie on wystrzeliwać lasery w kierunku kryształu.
+
+  ## Eksperymenty
+
+  <GuideEntityEmbed Entity="ComputerSupermatter"/>
+
+  Chociaż azot skutecznie zapewnia bezpieczeństwo i stabilność supermaterii, to jednocześnie ogranicza zdolność kryształu supermaterii do wytwarzania energii.
+
+  Konsola monitorująca supermaterię umożliwia dokładną obserwację kryształu oraz wpływu gazów na jego działanie. Jest to kluczowy element wyposażenia, pozwalający na bezpieczne prowadzenie eksperymentów z supermaterią.
+
+  <Box>
+    <GuideEntityEmbed Entity="CarbonDioxideCanister" Caption=""/>
+    <GuideEntityEmbed Entity="PlasmaCanister" Caption=""/>
+    <GuideEntityEmbed Entity="TritiumCanister" Caption=""/>
+    <GuideEntityEmbed Entity="WaterVaporCanister" Caption=""/>
+    <GuideEntityEmbed Entity="AmmoniaCanister" Caption=""/>
+    <GuideEntityEmbed Entity="NitrousOxideCanister" Caption=""/>
+    <GuideEntityEmbed Entity="BZCanister" Caption=""/>
+    <GuideEntityEmbed Entity="HealiumCanister" Caption=""/>
+    <GuideEntityEmbed Entity="PluoxiumCanister" Caption=""/>
+  </Box>
+
+  Wypróbuj różne mieszanki gazów i zobacz, co się stanie!
+</Document>

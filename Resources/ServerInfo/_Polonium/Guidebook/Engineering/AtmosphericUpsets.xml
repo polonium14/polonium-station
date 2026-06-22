@@ -1,0 +1,30 @@
+<!--
+SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+  # Zakłócenia atmosferyczne
+  Zakłócenia atmosferyczne to odchylenia od normalnych warunków atmosferycznych, które powinny być utrzymywane w stacji.
+
+  Takie zakłócenia mogą wynikać z wielu różnych czynników, takich jak [textlink="pożary" link="Fires"], [textlink="rozszczelnienia kadłuba statku" link="Spacing"] lub inne zdarzenia, które mogą szybko rozprzestrzenić się po całej stacji i sprawić, że warunki na niej staną się nie do zniesienia dla załogi.
+
+  Dla porównania, normalne warunki atmosferyczne na stacji to ciśnienie 101,3 kPa i temperatura 293,15 K (20°C).
+  Standardowa mieszanka gazowa na stacji składa się również z 78% azotu i 22% tlenu.
+
+  ## Likwidacja szkód
+  W przypadku wszelkich sytuacji kryzysowych związanych z atmosferą ważne jest, aby działać szybko, aby zapobiec rozprzestrzenianiu się niebezpiecznych zjawisk i w jak największym stopniu je ograniczyć.
+
+  Otwieranie [textlink="śluz przeciwpożarowych" link="FireAndGasControl"] na obszar narażony często powoduje, że trzeba rozwiązać [italic]dwa[/italic] problemy zamiast jednego.
+
+  Pamiętaj, aby użyć swojego [textlink="projektora holowentylatorowego" link="AtmosTools"], aby zapobiec rozprzestrzenianiu się niebezpiecznych warunków między [textlink="śluzami przeciwpożarowymi" link="FireAndGasControl"].
+
+  <Box>
+    <GuideEntityEmbed Entity="HolofanProjector"/>
+    <GuideEntityEmbed Entity="HoloFan"/>
+  </Box>
+
+</Document>

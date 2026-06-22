@@ -1,0 +1,45 @@
+<!--
+SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+  # Rozbudowa i naprawa stacji
+  W grze "Space Station 14" gracze często chcą rozbudowywać stację lub naprawiać dziury powstałe w wyniku uderzeń meteorów lub innych uszkodzeń.
+
+  ## Kratownica
+  Kratownica to zwykła konstrukcja z prętów umieszczana w pustej przestrzeni. Służy jako podstawa do budowania i mocowania obiektów do stacji.  <Box>
+    <GuideEntityEmbed Entity="SheetSteel" Caption=""/>
+    <GuideEntityEmbed Entity="PartRodMetal" Caption=""/>
+  </Box>
+
+  Kratownicę można utworzyć, umieszczając pręty na pustej przestrzeni za pomocą [color=#ffe566][bold][keybind="Use"][/bold][/color]. Pamiętaj, że w menu tworzenia możesz przekształcić arkusze stali na pręty.
+
+  Kratownica nie utrzymuje ciśnienia, a wszystkie gazy przedostają się przez nią w przestrzeń kosmiczną.
+
+  Można użyć obcinaka do drutu, aby usunąć kratkę za pomocą [color=#ffe566][bold][keybind="Use"][/bold][/color].
+
+  Jeśli gra nie pozwala ci na umieszczenie kratownicy, to dlatego, że w pobliżu siatki, którą próbujesz rozbudować, znajduje się inna kratownica. Możesz użyć obcinaka do drutu, aby usunąć przeszkadzającą kratownicę.
+
+  ## Panele kadłuba
+  Panele kadłuba stanowią solidną podstawę stacji, na której opierają się wszystkie pozostałe elementy konstrukcji.
+
+  <Box>
+    <GuideEntityEmbed Entity="SheetSteel" Caption=""/>
+    <GuideEntityEmbed Entity="FloorTileItemSteel" Caption=""/>
+    <GuideEntityEmbed Entity="FloorTileItemDark" Caption=""/>
+    <GuideEntityEmbed Entity="FloorTileItemWhite" Caption=""/>
+  </Box>
+
+  Kratownicę można przekształcić w płytkę kadłuba, kładąc na niej stal lub niemal każdy rodzaj płytki podłogowej i naciskając klawisz [color=#ffe566][bold][keybind="Use"][/bold][/color].
+  Spowoduje to przekształcenie kratownicy w płytkę kadłuba, która jest w stanie utrzymać ciśnienie.
+
+  Zaleca się używanie płytek podłogowych zamiast blachy stalowej, ponieważ z jednej blachy stalowej można wytworzyć 4 płytki podłogowe.
+
+  Za pomocą USK można rozłożyć płytki kadłuba na kratownicę.
+
+
+</Document>

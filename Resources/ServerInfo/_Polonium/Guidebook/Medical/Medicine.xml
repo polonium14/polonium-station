@@ -1,0 +1,48 @@
+<!--
+SPDX-FileCopyrightText: 2023 Sir Winters <7543955+Owai-Seek@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Fluffiest Floofers <thebluewulf@gmail.com>
+SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 Fenn <162015305+TooSillyFennec@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 corresp0nd <46357632+corresp0nd@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+
+# Core Medications
+
+These medications are almost always useful to medbay in one way or another.
+
+<GuideReagentEmbed Reagent="Libital"/>
+<GuideReagentEmbed Reagent="Probital"/>
+<GuideReagentEmbed Reagent="Aiuri"/>
+<GuideReagentEmbed Reagent="Lenturi"/>
+<GuideReagentEmbed Reagent="Multiver"/>
+<GuideReagentEmbed Reagent="PenteticAcid"/>
+<GuideReagentEmbed Reagent="Dexalin"/>
+<GuideReagentEmbed Reagent="Salbutamol"/>
+<GuideReagentEmbed Reagent="Inaprovaline"/>
+
+# Specialty Medications
+
+These medications tend to have specific use cases.
+
+<GuideReagentEmbed Reagent="Cryoxadone"/>
+<GuideReagentEmbed Reagent="Epinephrine"/>
+<GuideReagentEmbed Reagent="Hyronalin"/>
+<GuideReagentEmbed Reagent="Arithrazine"/>
+<GuideReagentEmbed Reagent="Phalanximine"/>
+<GuideReagentEmbed Reagent="Tricordrazine"/>
+<GuideReagentEmbed Reagent="TranexamicAcid"/>
+<GuideReagentEmbed Reagent="Ambuzol"/>
+<GuideReagentEmbed Reagent="Oculine"/>
+
+# All Medications
+
+This is a list of -all- medications available, including ones previously listed.
+
+<GuideReagentGroupEmbed Group="Medicine"/>
+
+</Document>

@@ -1,0 +1,230 @@
+<!--
+SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+SPDX-FileCopyrightText: 2024 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 dffdff2423 <dffdff2423@gmail.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+  # Prawo kosmiczne: Wykaz przestępstw
+  Przestępstwa są uporządkowane według stopnia (wagi) oraz koloru lub przypisanego im kodu literowego. Każde przestępstwo ma unikalny kod numeryczny (§100–§504).
+
+  [bold]Przestępstwa o tym samym kolorze lub kodzie nie mogą być stawiane w zarzutach łącznie.[/bold] Na przykład, jeśli aresztujesz kogoś za morderstwo (§401), nie możesz oskarżyć tej samej osoby o napaść (§300).
+
+  ## Pobieżny wykaz przestępstw
+  <Table Columns="5">
+    <ColorBox>
+      <Box>
+        I Stopnia
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        II Stopnia
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        III Stopnia
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        IV Stopnia
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        V Stopnia
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Posiadanie/używanie nielegalnych substancji (§102)\nOstrzeż. - 3:00
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#ffcc67">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]Niezastosowanie się do poleceń (§204, L)\nOstrzeż. - 2:00[/color]
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#ffcc67">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]Naruszenie zatrzymania (§303, L)\n2:00 - 4:00[/color]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Porwanie (§400)\n4:00 - 10:00
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Rażące zaniedbanie (§501)\nDegradacja - Perma
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Okrucieństwo wobec zwierząt (§201)\n2:00 - 5:00
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Ucieczka z aresztu (§308)\n2:00 - 5:00
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Odmowa poddania się osłonie umysłu (§503)\nDo przyjęcia - Perma
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#fd6864">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]Narażenie na\nniebezpieczeństwo (§203, M)\n2:00 - 4:00[/color]
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#fd6864">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]Nieumyślne spowodowanie śmierci (§302, M)\n4:00 - 10:00[/color]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Uniemożliwienie wskrzeszenia (§502)\n15:00 - Perma
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#68cbd0">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]Zakłócanie porządku (§100, R)\nOstrzeż. - 2:00[/color]
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#68cbd0">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]Zamieszki (§200, R)\n2:00 - 4:00[/color]
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#fd6864">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]Napaść (§300, M)\nOstrzeż. - 3:00\nPobicie (§301, M)\n1:00 - 3:00\nKumuluje się z różnymi ofiarami[/color]
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#fd6864">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]Morderstwo (§401, M)\n4:00 - 10:00[/color]
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#fd6864">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]Masowe morderstwo (§500, M)\nPerma - Perma[/color]
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#dae8fc">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]Wandalizm (§104, C)\nOstrzeż. - 2:00[/color]
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#dae8fc">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]Uszkodzenie/zniszczenie mienia (§202, C)\n2:00 - 4:00[/color]
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#dae8fc">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]Masowe zniszczenie (§305, C)\n10:00 - 15:00[/color]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Terroryzm (§504)\nPerma - Egzekucja
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Posiadanie sprzętu\nobjętego ograniczeniami (§205)\nOstrzeż. - 5:00
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Posiadanie broni\nobjętej ograniczeniami (§306)\n3:00 - 6:00
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#9698ED">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]Wtargnięcie (§103, T)\nOstrzeż. - 2:00[/color]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#9698ED">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]Wtargnięcie na teren zabezpieczony (§307, T)\n3:00 - 8:00[/color]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#ffce93">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]Drobna kradzież (§101, G)\n1:00 - 3:00[/color]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#ffce93">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        [color=black]Wielka kradzież (§304, G)\n3:00 - 6:00[/color]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      </Box>
+    </ColorBox>
+  </Table>
+</Document>

@@ -1,0 +1,120 @@
+<!--
+SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+  # Panele słoneczne
+  Panele słoneczne to niewymagające konserwacji pasywne źródło energii, które wytwarza prąd z promieni słonecznych.
+
+  Stanowią one odnawialne źródło energii, które może służyć jako uzupełnienie generatorów w sieci energetycznej stacji.
+  Jest to niezwykle przydatne, ponieważ podczas gdy większość generatorów zużywa jakieś paliwo, panele słoneczne wytwarzają energię za darmo.
+
+  <Box>
+    <GuideEntityEmbed Entity="SolarPanel" Caption=""/>
+    <GuideEntityEmbed Entity="SolarPanel"/>
+    <GuideEntityEmbed Entity="SolarPanel" Caption=""/>
+  </Box>
+
+  ## Wytwarzanie energii
+  Panele słoneczne wytwarzają energię w zależności od ich kąta nachylenia względem słońca oraz od tego, czy są zasłonięte przez inne obiekty.
+
+  Z tego powodu niektóre panele mogą generować 0 W energii, podczas gdy inne znacznie więcej.
+  Wynika to z faktu, że stacja zasłania niektóre panele, więc nie należy się tym zbytnio przejmować.
+  Większość stacji posiada panele słoneczne rozmieszczone ze wszystkich stron, więc energia jest generowana nieprzerwanie.
+
+  Gdy są bezpośrednio skierowane w stronę słońca i nic nie zasłania promieni słonecznych, zwykłe panele słoneczne mogą wytworzyć [color=#ffb86b][protodata="SolarPanel" comp="SolarPanel" member="MaxSupply" format="N0"] W[/color] mocy.
+
+  Panele słoneczne wytwarzają [color=#ffb86b]energię wysokiego napięcia[/color], dlatego też wymagają poprowadzenia pod nimi [color=#ffb86b]przewodu wysokonapięciowego[/color], który łączy je z siecią energetyczną stacji.
+
+  ## Źródło energii
+  Na pierwszy rzut oka panele słoneczne mogą wydawać się zbędnym źródłem energii.
+  W końcu w centrum stacji znajduje się ta ogromna czarna dziura.
+  Po co więc montować panele słoneczne, skoro możemy z niej skorzystać?
+
+  Zainstalowanie paneli słonecznych obok [textlink="SAM" link="AME"] jest idealnym rozwiązaniem z kilku powodów:
+  - Posiadanie aktywnych paneli słonecznych obok [textlink="SAM" link="AME"] znacznie bardziej wydłuża czas pracy akumulatorów stacji niż samo [textlink="SAM" link="AME"]. Dzięki temu inżynierowie zyskują więcej czasu na przygotowanie większych źródeł zasilania.
+  - Posiadanie aktywnych paneli słonecznych może zmniejszyć obciążenie innych generatorów energii. Na przykład, jeśli panele słoneczne wytwarzają wystarczającą ilość energii, aby zaspokoić połowę zapotrzebowania stacji, przekłada się to na zmniejszenie obciążenia innych generatorów, co może zmniejszyć ilość spalanego przez nie paliwa.
+
+
+  ## Regulowanie paneli
+  Ponieważ stacja krąży wokół gwiazdy, położenie słońca w przestrzeni kosmicznej zmienia się z upływem czasu.
+  Aby efektywnie wytwarzać energię, panele słoneczne muszą być skierowane bezpośrednio w stronę słońca, dlatego muszą się poruszać, dostosowując się do zmiany jego położenia.
+
+  Kąt nachylenia paneli słonecznych można regulować za pomocą komputera sterującego panelami słonecznymi.
+  <Box>
+    <GuideEntityEmbed Entity="ComputerSolarControl"/>
+  </Box>
+
+  Można również dostosować prędkość, z jaką panele poruszają się, aby śledzić ruch słońca.
+
+  Prędkość, z jaką słońce porusza się wokół stacji, jest inna na każdej zmianie, dlatego należy obserwować położenie słońca i odpowiednio dostosowywać prędkość.
+
+  Komputer do kontroli paneli słonecznych podaje również informacje o całkowitej mocy wytworzonej przez panele słoneczne.
+
+  ## Budowa
+
+  Panele słoneczne można zbudować przy użyciu dwóch sztuk szkła na zestawu do konstrukcji panela. 
+  <Box>
+    <GuideEntityEmbed Entity="SolarAssembly" Caption=""/>
+    <GuideEntityEmbed Entity="SheetGlass10" Caption=""/>
+    <GuideEntityEmbed Entity="SolarPanel" Caption=""/>
+  </Box>
+
+  Zestawy do konstrukcji paneli mogą być zakupione w departamencie zaopatrzenia.
+
+  ## Naprawy
+  Panele słoneczne mogą czasami ulec uszkodzeniu i wymagać naprawy.
+
+  <Box>
+    <GuideEntityEmbed Entity="SolarPanelBroken"/>
+  </Box>
+
+  Aby je naprawić, można użyć łomu do wyjęcia odłamków szkła z panelu.
+  Zespawaj te odłamki w arkusze szkła, a następnie wykorzystaj je do wykonania nowego panelu.
+
+  <Box>
+    <GuideEntityEmbed Entity="SolarPanelBroken" Caption=""/>
+    <GuideEntityEmbed Entity="Crowbar" Caption=""/>
+    <GuideEntityEmbed Entity="ShardGlass" Caption=""/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="Welder" Caption=""/>
+    <GuideEntityEmbed Entity="SheetGlass10" Caption=""/>
+    <GuideEntityEmbed Entity="SolarAssembly" Caption=""/>
+    <GuideEntityEmbed Entity="SolarPanel" Caption=""/>
+  </Box>
+
+  ## Instalacja paneli słonecznych
+  Panele słoneczne są zazwyczaj umieszczone na zewnątrz stacji i służą do wytwarzania dużych ilości darmowej energii dla stacji.
+
+  Można do nich dotrzeć albo wychodząc na zewnątrz, albo przechodząc przez tunele konserwacyjne stacji.
+  Pomieszczenia z panelami słonecznymi są często oznaczone tabliczkami i zamknięte za drzwiami z dostępem dla personelu technicznego.
+  <Box>
+    <GuideEntityEmbed Entity="SignDirectionalSolar" Caption=""/>
+    <GuideEntityEmbed Entity="AirlockEngineering" Caption=""/>
+  </Box>
+
+  Na początku zmiany panele słoneczne są ustawione nieprawidłowo i odłączone od sieci energetycznej.
+  Aby rozpocząć wytwarzanie energii, należy je ustawić i podłączyć do sieci energetycznej stacji.
+
+  Zazwyczaj wymaga to poprowadzenia linii [color=#ffb86b]przewodu wysokonapięciowego[/color] do paneli z maszynowni paneli słonecznych, a następnie użycia komputera do kontroli paneli słonecznych.
+
+  W pobliżu pomieszczeń maszynowych paneli słonecznych często znajduje się komputer do kontroli paneli słonecznych, a także [textlink="SMES" link="PowerStorage"] do magazynowania energii wytworzonej przez panele do późniejszego wykorzystania.
+
+  ## Ulepszanie paneli słonecznych
+  Panele słoneczne można ulepszyć, aby zwiększyć ich moc wyjściową.
+
+  <Box>
+    <GuideEntityEmbed Entity="SolarPanelPlasma" Caption=""/>
+    <GuideEntityEmbed Entity="SolarPanelUranium" Caption=""/>
+  </Box>
+
+  Można to osiągnąć poprzez zastąpienie szyb w panelu słonecznym szybami z szkła plazmowego lub uranowego.
+
+  Panele słoneczne plazmowe i uranowe wytwarzają [color=#ffb86b][protodata="SolarPanelPlasma" comp="SolarPanel" member="MaxSupply" format="N0"] W[/color] i [color=#ffb86b][protodata="SolarPanelUranium" comp="SolarPanel" member="MaxSupply" format="N0"] W[/color] mocy.
+  Są one również znacznie wytrzymalsze niż zwykłe panele słoneczne.
+</Document>

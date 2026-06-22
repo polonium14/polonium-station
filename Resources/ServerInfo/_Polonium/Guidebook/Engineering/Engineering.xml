@@ -1,0 +1,46 @@
+<!--
+SPDX-FileCopyrightText: 2023 Julian Giebel <juliangiebel@live.de>
+SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+SPDX-FileCopyrightText: 2023 end <72604018+laok233@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Iztok Bajcar <50874197+iztokbajcar@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Kira Bridgeton <161087999+Verbalase@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Terraspark4941 <terraspark4941@gmail.com>
+SPDX-FileCopyrightText: 2024 UBlueberry <161545003+UBlueberry@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+  # Inżynieria
+  [color=#ffc966]Inżynieria[/color] to połączenie [textlink="budowy" link="Construction"] oraz [textlink="napraw" link="ExpandingRepairingStation"] – polega na konserwacji maszyny śmierci, która przy okazji wytwarza [textlink="energię" link="Power"], a także zapewnianie, że stacja posiada [textlink="powietrze zdatne do oddychania" link="Atmospherics"].
+
+  ## Personel
+  Zespół działu [color=#ffc966]Inżynierii[/color] składa się z asystentów technicznych, inżynierów stacji oraz techników atmosferycznych.
+  Działem Inżynierii kieruje Główny Inżynier.
+
+  <Box>
+    <GuideEntityEmbed Entity="ToyFigurineEngineer" Caption="Inżynier"/>
+    <GuideEntityEmbed Entity="ToyFigurineAtmosTech" Caption="Inżynier (też)"/>
+    <GuideEntityEmbed Entity="ToyFigurineChiefEngineer" Caption="Główny Inżynier"/>
+  </Box>
+
+  ## Narzędzia
+  <Box>
+    <GuideEntityEmbed Entity="Wrench"/>
+    <GuideEntityEmbed Entity="Crowbar"/>
+    <GuideEntityEmbed Entity="Screwdriver"/>
+    <GuideEntityEmbed Entity="Wirecutter"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="Welder"/>
+    <GuideEntityEmbed Entity="Multitool"/>
+    <GuideEntityEmbed Entity="NetworkConfigurator"/>
+  </Box>
+  Twój podstawowy zestaw narzędzi składa się z niewielkiej liczby różnych narzędzi.
+  Jeśli jesteś inżynierem, powinieneś mieć na pasie po jednym egzemplarzu każdego z nich; jeśli nie, prawdopodobnie znajdziesz je w szybach konserwacyjnych oraz w magazynach narzędziowych oraz w różnych skrzynkach narzędziowych i automatach.
+
+  Większość zadań zawiera wskazówki dotyczące sposobu ich wykonania; na przykład, jeśli [textlink="budujesz" link="Construction"] ścianę, po przyjrzeniu się jej nieco bliżej pojawi się informacja o kolejnym kroku.
+</Document>

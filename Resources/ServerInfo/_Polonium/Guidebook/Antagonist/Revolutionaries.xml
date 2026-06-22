@@ -1,0 +1,115 @@
+<!--
+SPDX-FileCopyrightText: 2023 coolmankid12345 <55817627+coolmankid12345@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Ghagliiarghii <68826635+Ghagliiarghii@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Killerqu00 <47712032+Killerqu00@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2024 UBlueberry <161545003+UBlueberry@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+-->
+
+<Document>
+  # Rewolucjoniści
+
+  <Box>
+    [color=#c8c8c8][italic]"Niech żyje rewolucja!!"[/italic][/color]
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="PosterContrabandRevolt" Caption=""/>
+  </Box>
+
+  Rewolucjoniści są antagonistami rekrutowanymi w trakcie rundy i są sponsorowani przez [color=#ff8a8a]Syndykat[/color], których zadaniem jest przejęcie kontroli nad stacją.
+  Przywódcy rewolucjonistów otrzymują urządzenie PDA z uplinkiem, opłacone przez Yucatan Communications.
+
+  ## Cele
+  Musisz skuć kajdankami, zabić lub wygnać wszystkich członków [textlink="dowództwa" link="Command"] przebywających na stacji, w dowolnej kolejności.
+
+  Twoim celem [bold]nie jest zniszczenie stacji[/bold], ale jej [italic]przejęcie /italic], więc postaraj się jak najbardziej ograniczyć zniszczenia.
+
+  [bold]Rewolucja zakończy się niepowodzeniem[/bold], jeśli zginą wszyscy [bold][color=#5e9cff]przywódcy rewolucji[/color][/bold], a w takim przypadku wszyscy [color=#ff8a8a]rewolucjoniści[/color] przestaną być rewolucjonistami.
+
+  [bold]Rewolucja również zakończy się niepowodzeniem[/bold], jeśli wszyscy przywódcy rewolucji [bold][color=#5e9cff]będą poza stacją[/color][/bold]. Twoim celem jest przejęcie stacji, więc nie oddalaj się zbytnio.
+
+  ## Twój Uplink
+  [bold][color=#5e9cff]Przywódcy rewolucji[/color][/bold] są wybierani na początku zmiany. Otrzymują oni urządzenie PDA z uplinkiem, podobne do urządzenia używanego przez Syndykat.
+
+  W tym uplinku nie można używać telekryształów. Zamiast tego należy korzystać z nowej waluty, [color=#ff8a8a]RevCoin[/color]. Po zakończeniu korzystania z uplinku należy go koniecznie zablokować.
+
+  Zapasy nie są uzupełniane, więc nie ma sensu gromadzić RevCoinów.
+
+  <Box>
+    <GuideEntityEmbed Entity="RevCoin"/>
+  </Box>
+
+  ## Ochrona umysłu i okulary
+  [color=#7ee8f7]Implanty ochrony umysłu[/color] stanowią przeszkodę dla rewolucji. Powodują one, że:
+  - Osoba, której wszczepiono implant, nie zostanie przemieniona w [color=#ff8a8a]rewolucjonistę[/color]
+  - Przemienią rewolucjonistów w członków załogi i sprawią, że przestaną podążać za głównym rewolucjonistą
+  - [bold]Zostaną widocznie zniszczone po wszczepieniu [color=#5e9cff]głównemu rewolucjoniście[/color][/bold], co zdradzi jego obecność
+  - NIE chronią przed chwilową dezorientacją spowodowaną błyskiem
+
+  Te jednak chronią przed chwilową dezorientacją i przemianą.
+
+  <Box>
+    <GuideEntityEmbed Entity="ClothingEyesGlassesSunglasses"/>
+    <GuideEntityEmbed Entity="ClothingEyesGlassesSecurity"/>
+    <GuideEntityEmbed Entity="ClothingHeadHatWelding"/>
+  </Box>
+
+  Należy pamiętać, że jeśli ktoś jest objęty osłoną umysłu, będąc rewolucjonistą, jest w stanie przypomnieć sobie wszystko ze swojej przeszłości, w tym to, kto go nawrócił.
+
+  ## Twoje narzędzia
+  <Box>
+    <GuideEntityEmbed Entity="Flash"/>
+  </Box>
+
+  Twój błysk i implanter to twoje podstawowe narzędzia. Możesz usuwać osłony umysłowe z członków załogi i wszczepiać je zwierzętom, dzięki czemu możesz kontynuować nawracanie.
+
+  Nie potrzebujesz specjalnego błysku. Każdy błysk w twoich rękach jest narzędziem do nawracania.
+
+  Ludzie zauważą, kiedy zaczniesz ich konwertować. Starannie planuj swoje działania, ponieważ jeden zły ruch może zaalarmować ochronę.
+
+  <Box>
+    <GuideEntityEmbed Entity="LieutenantRevolutionaryImplanter"/>
+  </Box>
+
+  Narzędzie to pozwala przemienić zwykłego rewolucjonistę w porucznika, co umożliwia tworzenie kadr rewolucjonistów gotowych do działania w każdej chwili.
+
+  To twoje narzędzie organizacyjne. Porucznicy ci, choć nie są w stanie nikogo przemienić, mogą sprawdzić status wszystkich rewolucjonistów  na pokładzie.
+
+  Mają również stały dostęp radiowy do kanału Syndykatu, co pozwala im koordynować działania z tobą z dowolnego miejsca na stacji.
+
+  <Box>
+    <GuideEntityEmbed Entity="RevsFastDrawImplanter"/>
+  </Box>
+
+  Ten implanter pozwala szybko usuwać implanty. Zwykły implanter potrzebuje 60 sekund na usunięcie pojedynczego implantu, podczas gdy ten zajmuje to zaledwie 30 sekund.
+  Przydatne, gdy chcesz zapewnić sobie przewagę w walce lub zwiększyć bezpieczeństwo.
+
+  Pamiętaj, aby [bold]przełączyć implanter[/bold] w celu usunięcia osłony umysłu, ponieważ próba usunięcia niewłaściwego implantu spowoduje zadanie ogromnych obrażeń!
+
+  <Box>
+    <GuideEntityEmbed Entity="EncryptionKeySyndie"/>
+  </Box>
+
+  Klucz szyfrujący, który umożliwia komunikację z innymi agentami i przywódcami rewolucji na stacji. Przydatny do komunikacji na duże odległości, ale niezbyt przydatny, jeśli zostaniesz złapany.
+  <Box>
+    <GuideEntityEmbed Entity="ClothingEyesGlassesSunglasses"/>
+  </Box>
+
+  Drip. Chroni przed błyskami fleszy. Przydatny, gdy ścigają cię ochroniarze lub nadgorliwi członkowie załogi.
+
+  ## Dodatkowe narzędzia
+
+  <Box>
+    <GuideEntityEmbed Entity="GrenadeFlashBangRevolutionary"/>
+  </Box>
+
+  Ten granat błyskowy może przemienić każdego w promieniu swojego działania, co przydaje się do wywołania chaosu. Aby to zrobić, musisz wziąć śrubokręt, podejść do granatu i przy nim pomajstrować. Tylko przywódcy rewolucji mają dostęp do tej niesamowitej mocy, więc dobrze go ukryj.
+  Tylko przywódcy rewolucji mogą rzucać rewolucyjny granat błyskowy i przekonwertować nimi ludzi.
+</Document>

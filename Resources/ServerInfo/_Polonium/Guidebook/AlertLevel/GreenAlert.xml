@@ -1,0 +1,45 @@
+<!--
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+    # Kod Zagrożenia - Zielony
+
+    <Box>
+        [italic]Wywołuje: Każdy, kto ma dostęp na poziomie Dowództwa do działającej konsoli komunikacyjnej.[/italic]
+    </Box>
+
+    [bold]Warunki:[/bold]
+
+    Domyślny kod alertu na początku zmiany. Nie zmieniaj, chyba że zagrożenie jest podejrzewane/potwierdzone;
+
+    [bold]LUB[/bold]
+
+    Wszystkie potwierdzone/podejrzewane zagrożenia dla stacji i/lub załogi zostały zażegnane albo samoistnie zniknęły. Zaleca się, aby po ponad 15 minutach na Kodzie Niebieskim bez wrogiej aktywności ogłosić Kod Zielony;
+
+    [bold]Ochrona:[/bold]
+
+    Cała broń musi być schowana do kabur lub trzymana w kieszeniach/slotach schowka kombinezonu, chyba że jest absolutnie wymagana;
+
+    Losowe kontrole oraz przeszukania są dozwolone wyłącznie na podstawie nakazu zatwierdzonego przez Komendanta Ochrony lub Kapitana lub w sytuacjach wyjątkowych.
+
+    [bold]Obszary zabezpieczone:[/bold]
+
+    Magazyn EVA, Magazyn Techniczny, Generator Grawitacji, Bezpieczny Magazyn Inżynieryjny, Zarządzanie SI, Skarbiec, Brama oraz wszelkie inne miejsca wymagające dostępu na poziomie Dowództwa, które nie są regularnie używane.
+
+    Obszary zabezpieczone, takie jak EVA, powinny pozostać niezaboltowane i gotowe do użycia zgodnie z ich przeznaczeniem.
+
+    Wyjątki poniżej;
+
+    Skarbiec nie powinien być otwierany, chyba że wymagane są naprawy, złoto jest potrzebne dla Badań i Rozwoju (w razie gdyby Górnictwo nie dostarczyło) lub krytyczny przedmiot musi zostać ukryty w sejfie.
+
+    Przeszukanie osoby lub działu wymaga podpisanego i opieczętowanego nakazu zatwierdzonego przez Komendanta Ochrony lub Kapitana.
+
+    [bold]Załoga ogólna:[/bold]
+
+    Choć nie jest to wymagane, zaleca się, aby załoga aktywowała i maksymalnie ustawiła czujniki kombinezonów ze względu na potencjał wypadków przy pracy;
+
+    Swobodny tranzyt przez stację jest dozwolony dla załogi, z wyłączeniem Obszarów zabezpieczonych.
+</Document>

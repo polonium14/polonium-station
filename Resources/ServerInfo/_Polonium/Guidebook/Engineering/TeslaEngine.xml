@@ -1,0 +1,113 @@
+<!--
+SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+  # Tesla
+  Tesli to potężny generator, który wykorzystuje zamkniętą kulę składającą się z błyskawic do wytwarzania energii dla stacji.  
+  <Box>
+    <GuideEntityEmbed Entity="TeslaGenerator"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="TeslaEnergyBall"/>
+  </Box>
+
+  Wytwarza energię poprzez wykorzystanie uderzeń piorunów generowanych przez kulę błyskawic za pomocą cewek Tesli.
+
+  ## Pole zabezpieczające
+  Tesla wymaga pola zabezpieczającego, aby zapobiec wydostawaniu się kuli błyskawic i zniszczeniu stacji.
+
+  Zaleca się użycie pola powstrzymującego o minimalnym rozmiarze dla kuli błyskawic.
+  Większe pola powstrzymujące pozwalają kuli piorunowej zbliżyć się do wrażliwego sprzętu i potencjalnie go uderzyć, ignorując umieszczone pręty uziemiające i cewki Tesli.
+
+  <Box>
+    <GuideEntityEmbed Entity="ContainmentFieldGenerator" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="ContainmentField" Caption="" Rotation="90" Margin="0"/>
+    <GuideEntityEmbed Entity="ContainmentFieldGenerator" Caption="" Margin="0"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="ContainmentField" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="TeslaGenerator" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="ContainmentField" Caption="" Margin="0"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="ContainmentFieldGenerator" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="ContainmentField" Caption="" Rotation="90" Margin="0"/>
+    <GuideEntityEmbed Entity="ContainmentFieldGenerator" Caption="" Margin="0"/>
+  </Box>
+
+  ## Uderzenia pioruna
+  Gdy Tesla jest aktywna, kula błyskawicy będzie regularnie uderzać w otaczające ją obiekty.
+
+  Tesla chętniej uderza w niektóre obiekty niż w inne, na przykład cewki Tesli i pręty uziemiające.
+
+  Jeśli Tesla nie znajdzie żadnych cewek Tesli ani prętów uziemiających, w które mogłaby uderzyć w pierwszej kolejności, uderzy w niemal każdy obiekt stacji, który może być zasilany, na przykład podstacje, APC i maszyny.
+
+  Niektóre obiekty nie są uderzane przez Teslę, takie jak baterie, światła, PDA i inne przedmioty przenośne.
+
+  Uderza również moby i członków załogi, porażając ich prądem. Przed zbliżeniem się do niej należy założyć rękawice izolacyjne.
+
+  ## Cewki Tesli
+  Uderzenia piorunów można wykorzystać za pomocą cewek Tesli, które przekształcają je w energię elektryczną dla stacji.
+
+  <Box>
+    <GuideEntityEmbed Entity="TeslaCoil" Caption=""/>
+    <GuideEntityEmbed Entity="TeslaCoil"/>
+    <GuideEntityEmbed Entity="TeslaCoil" Caption=""/>
+  </Box>
+
+  Cewki Tesli należy rozmieścić wokół kuli błyskawicy, aby przechwycić energię uderzeń piorunów, a także zapobiec uderzeniom piorunów w wrażliwy sprzęt znajdujący się w większej odległości.
+
+  Cewki Tesli ulegają uszkodzeniu za każdym razem, gdy uderzy w nie piorun, i ostatecznie ulegną zniszczeniu, jeśli nie zostaną naprawione.
+  Należy monitorować stan cewek Tesli i w razie potrzeby je naprawiać.
+
+  Kiedy piorun uderza w cewki Tesli, ładują one wewnętrzną baterię, która jest szybko rozładowywana do sieci.
+  Energia ta zostanie rozładowana nawet jeśli nie ma odbiornika, który by ją wykorzystał, dlatego warto mieć w pobliżu SMES, aby magazynować energię i rozładowywać ją w sposób płynny.
+
+  ## Pręty uziemiające
+  Pręty uziemiające pomagają chronić wrażliwy sprzęt przed uderzeniami pioruna.
+
+  <Box>
+    <Box>
+      <GuideEntityEmbed Entity="TeslaGroundingRod" Caption=""/>
+    </Box>
+    <Box>
+      <GuideEntityEmbed Entity="TeslaGroundingRod"/>
+    </Box>
+    <Box>
+      <GuideEntityEmbed Entity="TeslaGroundingRod" Caption=""/>
+    </Box>
+  </Box>
+
+  Pręty uziemiające nie ulegają uszkodzeniom w wyniku uderzeń pioruna.
+  Dzięki temu warto stworzyć z nich sieć zabezpieczającą, na której można polegać w przypadku uszkodzenia lub zniszczenia cewek Tesli.
+
+  Inżynierowie powinni stosować pręty uziemiające w celu ochrony wrażliwego sprzętu przed uderzeniami pioruna, np. emiterów zasilających generatory pola ochronnego.
+
+  ## Uciekająca Tesla (Tesloose)
+  Jeśli kula błyskawicy wydostanie się z pola zabezpieczającego, nazywa się ją uciekającą teslą (?) lub tesloose.
+
+  Uciekająca tesla będzie losowo poruszać się po stacji, przyciągana przez obiekty, które można zasilić, takie jak APC, podstacje i maszyny.
+  Chętnie uderza również członków załogi i moby, porażając ich prądem.
+
+  Noszenie rękawic izolacyjnych ochroni cię przed porażeniem prądem przez teslę, ale nie zapobiegnie jej uderzeniu w ciebie.
+
+  <Box>
+    <GuideEntityEmbed Entity="ClothingHandsGlovesColorYellow"/>
+  </Box>
+
+  Teslę można zniszczyć, wystrzeliwując w nią antycząstki za pomocą przenośnego spowalniacza cząstek, jednak Tesla jest znacznie potężniejsza od Singularity i do jej zniszczenia potrzeba ogromnej ilości antycząstek.
+  Do zniszczenia tesloose zaleca się zaangażowanie grupy osób wyposażonych w spowalniacze.
+
+  Przenośne spowalniacze cząstek można zbadać i wyprodukować w Dziale Badań i Rozwoju lub nabyć w zaopatrzeniu.
+
+  <Box>
+    <GuideEntityEmbed Entity="WeaponParticleDecelerator"/>
+  </Box>
+
+
+</Document>

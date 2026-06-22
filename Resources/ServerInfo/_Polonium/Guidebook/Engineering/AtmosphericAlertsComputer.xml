@@ -1,0 +1,38 @@
+<!--
+SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+  # Komputer alarmów atmosferycznych
+  Komputer alarmów atmosferycznych to urządzenie wyświetlające informacje o wszystkich alarmach atmosferycznych i przeciwpożarowych na terenie stacji.
+
+  <Box>
+    <GuideEntityEmbed Entity="ComputerAlert"/>
+  </Box>
+
+  Jest to przydatne narzędzie do szybkiego identyfikowania obszarów wymagających uwagi.
+
+  Komputer alarmów atmosferycznych często znajduje się w pomieszczeniach technicznych odpowiedzialnych za utrzymywanie parametrów atmosferycznych i służy technikom z tego departamenty do monitorowania parametrów atmosferycznych całej stacji.
+  Jednakże jest to również dobry wskaźnik dla inżynierów, pozwalający szybko ocenić stopień uszkodzeń stacji.
+
+  Komputer wyświetla listę alarmów atmosferycznych, które aktualnie znajdują się w stanie [color=#ffb86b]Ostrzeżenie[/color] i [color=#ff8a8a]Niebezpieczeństwo[/color]. Ponadto komputer pokazuje lokalizację wszystkich alarmów atmosferycznych, oznaczonych kolorami odpowiadającymi ich aktualnemu statusowi.
+
+  Alarmy atmosferyczne w stanie "normalnym" są domyślnie ukryte.
+  Widoczność alarmów atmosferycznych o statusie "normalnym" można włączać i wyłączać, dostosowując filtry znajdujące się w dolnej części interfejsu.
+
+  Na mapie wyświetlana jest ramka otaczająca obszar monitorowany przez alarm atmosferyczny, co może pomóc w zidentyfikowaniu obszaru, który jest zagrożony.
+  Kolor tej ramki zmienia się w zależności od stanu alarmu atmosferycznego.
+
+  Jeśli alarm atmosferyczny nie jest zasilany, zostanie wyszarzony na liście oraz na mapie.
+
+  Kliknięcie na alarm atmosferyczny na liście lub na mapie spowoduje wyświetlenie szczegółowych informacji o stanie powietrza w danym obszarze, co może pomóc w ocenie rodzaju zaistniałego zagrożenia.
+
+  Lista załączonych [textlink="alarmów przeciwpożarowych" link="FireAndGasControl"] jest również wyświetlana na komputerze alarmów atmosferycznych w osobnej zakładce, co pozwala szybko zidentyfikować obszary, w których może panować pożar.
+
+  Można wyciszyć określone alarmy (np. alarmy monitorujące komory spalania i zamrażarki), klikając dany alarm na liście i naciskając przycisk "Wycisz alarmy z tego urządzenia".
+  Spowoduje to ukrycie alarmu na liście, lecz nadal będzie on widoczny na mapie.
+</Document>

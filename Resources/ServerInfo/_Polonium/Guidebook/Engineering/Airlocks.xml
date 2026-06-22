@@ -1,0 +1,145 @@
+<!--
+SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+  # Śluzy
+  Śluzy służą do kontroli dostępu do różnych obszarów stacji.
+
+  <Box>
+    <GuideEntityEmbed Entity="Airlock" Caption=""/>
+    <GuideEntityEmbed Entity="AirlockGlass" Caption=""/>
+  </Box>
+
+  Śluzy można otworzyć za pomocą klawisza [color=#ffe566][bold][keybind="Use"][/bold][/color], gdy masz wolną rękę, klawisza [color=#ffe566][bold][keybind="ActivateItemInWorld"][/bold][/color], gdy masz zajęte ręce, lub poprzez wejście w śluzę.
+
+  Śluzy otworzą się tylko wtedy, gdy posiadasz kartę identyfikacyjną z odpowiednim poziomem dostępu.
+  Karta identyfikacyjna musi znajdować się w Twojej dłoni lub w czytniku kart.
+  W przypadku posiadania wielu kart identyfikacyjnych śluza sprawdzi je wszystkie podczas próby otwarcia.
+  Takie samo zachowanie dotyczy również kart identyfikacyjnych znajdujących się w urządzeniu PDA.
+
+  Poziom uprawnień wymagany do otwarcia śluzy można zmienić za pomocą konfiguratora dostępu lub za pomocą narzędzia wielofunkcyjnego podłączonego do układu elektronicznego śluzy (co wymaga jej demontażu).
+
+  <Box>
+    <GuideEntityEmbed Entity="AccessConfigurator" Caption=""/>
+    <GuideEntityEmbed Entity="Multitool" Caption=""/>
+    <GuideEntityEmbed Entity="DoorElectronics" Caption=""/>
+  </Box>
+
+  Śluzy blokują przepływ gazu, dzięki czemu można ich używać do odcinania obszarów w razie [textlink="rozszczelnienia kadłuba statku" link="Spacing"] lub [textlink="pożaru" link="Fires"].
+  Ponadto magazynują gaz na swoim kafelku, nawet gdy są zamknięte, dlatego należy zachować ostrożność podczas ich otwierania w trakcie lub po wycieku gazu.
+
+  ## Zamknięcie bolców i dostęp awaryjny
+  Śluzy można zamknąć za pomocą bolców, aby uniemożliwić ich otwarcie lub wyważenie. W takim przypadku na górnej części drzwi śluzy zapalą się czerwone światła.
+
+  Śluzy można również ustawić w trybie awaryjnym. W tym trybie każdy może otworzyć śluzę, niezależnie od poziomu uprawnień. W takiej sytuacji na górnej części drzwi śluzy zaczną migać żółte światła.
+
+  ## Sterowanie zdalne
+  Śluzy można obsługiwać zdalnie – albo za pomocą sztucznej inteligencji stacji, albo za pomocą pilota do drzwi.
+  <Box>
+    <GuideEntityEmbed Entity="PlayerStationAiEmpty" Caption=""/>
+  </Box>
+  <Box>
+    [color=#c8c8c8][italic]SI stacji, które ma kontrole nad wszystkimi śluzami na stacji[italic][/color]
+  </Box>
+
+  <Box>
+    <GuideEntityEmbed Entity="DoorRemoteEngineering" Caption=""/>
+    <GuideEntityEmbed Entity="DoorRemoteCommand" Caption=""/>
+    <GuideEntityEmbed Entity="DoorRemoteMedical" Caption=""/>
+    <GuideEntityEmbed Entity="DoorRemoteService" Caption=""/>
+    <GuideEntityEmbed Entity="DoorRemoteSecurity" Caption=""/>
+    <GuideEntityEmbed Entity="DoorRemoteResearch" Caption=""/>
+  </Box>
+  <Box>
+    [color=#c8c8c8][italic]Cenne piloty do zdalnego sterowania śluzami. Potężna władza...[italic][/color]
+  </Box>
+
+
+  Kierownicy działów zazwyczaj otrzymują piloty do drzwi swojego działu.
+
+  Za pomocą tych pilotów można otwierać, zamykać, ryglować oraz przełączać w tryb awaryjny.
+
+  ## Łączenie
+  Śluzy można łączyć z innymi urządzeniami za pomocą funkcji [textlink="łączenia" link="Networking"].
+  Umożliwia to tworzenie połączeń między stacjami a przestrzenią kosmiczną lub łączenie ze sobą wielu śluz.
+
+  ## Wygląd
+  Śluzy mogą mieć różny wygląd, dostosowany do poszczególnych departamentów stacji. Wygląd danego departamentu zazwyczaj odzwierciedla wymagany poziom dostępu.
+
+  <Box>
+    <GuideEntityEmbed Entity="Airlock" Caption=""/>
+    <GuideEntityEmbed Entity="AirlockCargo" Caption=""/>
+    <GuideEntityEmbed Entity="AirlockCommand" Caption=""/>
+    <GuideEntityEmbed Entity="AirlockEngineering" Caption=""/>
+    <GuideEntityEmbed Entity="AirlockMedical" Caption=""/>
+    <GuideEntityEmbed Entity="AirlockScience" Caption=""/>
+    <GuideEntityEmbed Entity="AirlockSecurity" Caption=""/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="AirlockGlass" Caption=""/>
+    <GuideEntityEmbed Entity="AirlockCargoGlass" Caption=""/>
+    <GuideEntityEmbed Entity="AirlockCommandGlass" Caption=""/>
+    <GuideEntityEmbed Entity="AirlockEngineeringGlass" Caption=""/>
+    <GuideEntityEmbed Entity="AirlockMedicalGlass" Caption=""/>
+    <GuideEntityEmbed Entity="AirlockScienceGlass" Caption=""/>
+    <GuideEntityEmbed Entity="AirlockSecurityGlass" Caption=""/>
+  </Box>
+
+  Śluzy mogą być przemalowane za pomocą pistoletu natryskowego.
+  <Box>
+    <GuideEntityEmbed Entity="SprayPainter" Caption=""/>
+  </Box>
+
+  ## Okablowanie
+  Śluzy posiadają wewnętrzne okablowanie umieszczone pod panelem serwisowym, który można otworzyć za pomocą śrubokręta.
+  Każdy przewód steruje określonymi funkcjami śluzy.
+  Przerwanie, przecięcie lub naprawa przewodu wpłynie na działanie śluzy na różne sposoby.
+
+  Kontrolki obok przewodów wskazują stan danego przewodu:
+  - Światło stałe oznacza, że system działa prawidłowo.
+  - Migające światło oznacza, że system nie działa prawidłowo - nie działa w ogóle, albo nie działa zgodnie z przeznaczeniem.
+  - Brak światła oznacza, że system nie jest zasilany.
+
+  Poniżej znajduje się lista przewodów wraz z ich funkcjami:
+
+  [color=#e8c878]Przewód bolców (BOLT)[/color]
+  - [color=#ffe566]Przesłanie impulsu[/color]: Zasuwa lub otwiera bolce śluzy.
+  - [color=#ff8a8a]Przecięcie przewodu[/color]: Zasuwa bolce śluzy.
+  - [color=#8ee99a]Naprawienie przewodu[/color]: Nie robi nic.
+
+  [color=#e8c878]Przewód zasilający (POWR)[/color]
+  - [color=#ffe566]Przesłanie impulsu[/color]: Odcina zasilanie śluzy na krótką chwilę.
+  - [color=#ff8a8a]Przecięcie przewodu[/color]: W przypadku przecięcia obu przewodów zasilających następuje odcięcie zasilania drzwi, a w przypadku przecięcia tylko jednego przewodu dochodzi do zwarcia, co grozi porażeniem prądem osób nieposiadających rękawic izolacyjnych.
+  - [color=#8ee99a]Naprawienie przewodu[/color]: W przypadku przerwania obu przewodów zasilających przywraca zasilanie do drzwi, a w przypadku przerwania tylko jednego przewodu zapobiega zwarciu.
+
+  [color=#e8c878]Przewód rejestru dostępu (LOG)[/color]
+  - [color=#ffe566]Przesłanie impulsu[/color]: Tymczasowo wyłącza rejestrowanie otwarć drzwi.
+  - [color=#ff8a8a]Przecięcie przewodu[/color]: Wyłącza rejestrowanie otwarć drzwi.
+  - [color=#8ee99a]Naprawienie przewodu[/color]: Włącza rejestrowanie otwarć drzwi.
+
+  [color=#e8c878]Zasilanie światła sygnalizującego stan bolców (BLIT)[/color]
+  - [color=#ffe566]Przesłanie impulsu[/color]: Tymczasowo wyłącza system lub ponownie go włącza.
+  - [color=#ff8a8a]Przecięcie przewodu[/color]: Zapobiega włączeniu się lampki sygnalizującej, która sygnalizuje, czy drzwi mają zasunięte bolce.
+  - [color=#8ee99a]Naprawienie przewodu[/color]: Włącza system ponownie.
+
+  [color=#e8c878]Zasilanie timera (TIMR)[/color]
+  - [color=#ffe566]Przesłanie impulsu[/color]: Tymczasowo skraca czas działania timera drzwi.
+  - [color=#ff8a8a]Przecięcie przewodu[/color]: Wyłącza timer. Drzwi zamkną się, gdy tylko będzie to bezpieczne.
+  - [color=#8ee99a]Naprawienie przewodu[/color]: Ponownie włącza timer.
+
+  [color=#e8c878]Zasilanie światła bezpieczeństwa (SAFE)[/color]
+  - [color=#ffe566]Przesłanie impulsu[/color]: Tymczasowo wyłącza system bezpieczeństwa.
+  - [color=#ff8a8a]Przecięcie przewodu[/color]: Wyłącza system bezpieczeństwa. Drzwi zamkną się nawet w przypadku obecności przeszkody.
+  - [color=#8ee99a]Naprawienie przewodu[/color]: Ponownie włącza system bezpieczeństwa.
+
+  [color=#e8c878]Zasilanie modułu dostępu SI (AIA)[/color]
+  - [color=#ffe566]Przesłanie impulsu[/color]: Nie robi nic.
+  - [color=#ff8a8a]Przecięcie przewodu[/color]: Wyłącza dostęp SI.
+  - [color=#8ee99a]Naprawienie przewodu[/color]: Włącza dostęp SI.
+
+</Document>

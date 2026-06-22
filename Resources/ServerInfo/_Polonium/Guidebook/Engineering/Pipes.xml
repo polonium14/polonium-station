@@ -1,0 +1,33 @@
+<!--
+SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+  # Rury
+  Rury służą do transportu gazów z jednego miejsca do drugiego.
+  Do budowy można wykorzystać wiele różnych rodzajów rur:
+
+  <Box>
+    <GuideEntityEmbed Entity="GasPipeStraight" Caption="prosta"/>
+    <GuideEntityEmbed Entity="GasPipeHalf" Caption="połówka"/>
+    <GuideEntityEmbed Entity="GasPipeBend" Caption="zgięta"/>
+    <GuideEntityEmbed Entity="GasPipeTJunction" Caption="trójnik"/>
+    <GuideEntityEmbed Entity="GasPipeFourway" Caption="czwórnik"/>
+  </Box>
+
+  Rury będą [color=#e8c878]automatycznie łączyć się[/color] z innymi rurami po przymocowaniu (lub przykręceniu) do kadłuba, tworząc [textlink="sieć rurociągu." link="PipeNetworks"]
+  Sieć rur nazywana jest potocznie [textlink="rurociągiem" link="PipeNetworks"].
+
+  Rury [color=#ff8a8a]nie będą się łączyć[/color] z rurami, które są już połączone z inną rurą.
+  Na przykład nie da się zbudować zgiętej rury na prostej rurze, aby utworzyć prowizoryczny trójnik.
+
+  Jednakże dwie rury mogą znajdować się na tym samym kafelku, o ile jedna z nich nie blokuje połączenia drugiej z inną rurą.
+  Na przykład na tym samym kafelku można umieścić dwie rury zgięte, z których jedna transportuje gaz z północy na wschód, a druga z zachodu na południe.
+
+  Rury (oraz większość urządzeń służących do transportu gazów) można pomalować za pomocą pistoletu natryskowego.
+  Często stosuje się to w celu rozróżnienia przewodów z czystym powietrzem od przewodów z brudnym powietrzem w sieci dystrybucyjnej stacji.
+</Document>

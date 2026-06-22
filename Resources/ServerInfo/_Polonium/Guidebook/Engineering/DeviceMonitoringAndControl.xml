@@ -1,0 +1,47 @@
+<!--
+SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+  # Monitorowanie i sterowanie urządzeniami
+  Biorąc pod uwagę, że sieć atmosferyczna obejmuje całą stację, ważne jest, aby mieć możliwość monitorowania i sterowania urządzeniami z jednego centralnego miejsca.
+
+  Dzięki tym systemom departament atmosferyczny może monitorować i kontrolować warunki atmosferyczne na terenie całej stacji.
+
+  <Box>
+    <GuideEntityEmbed Entity="AirAlarm" Caption=""/>
+    <GuideEntityEmbed Entity="AirSensor" Caption=""/>
+  </Box>
+  <Box>
+    ## Alarmy atmosferyczne
+  </Box>
+  <Box>
+    [color=#c8c8c8][italic]Monitorowanie i sterowanie urządzeniami atmosferycznymi na szerokim obszarze[italic][/color]
+  </Box>
+
+  <Box>
+    <GuideEntityEmbed Entity="ComputerAlert" Caption=""/>
+  </Box>
+  <Box>
+    ## Komputer alarmów atmosferycznych
+  </Box>
+  <Box>
+    [color=#c8c8c8][italic]Monitorowanie alarmów atmosferycznych na całej stacji[italic][/color]
+  </Box>
+
+  <Box>
+    <GuideEntityEmbed Entity="ComputerAtmosMonitoring" Caption=""/>
+    <GuideEntityEmbed Entity="GasPipeSensor" Caption=""/>
+  </Box>
+  <Box>
+    ## Monitor sieci atmosferycznej
+  </Box>
+  <Box>
+    [color=#c8c8c8][italic]Monitorowanie sieci rurociągów[italic][/color]
+  </Box>
+
+</Document>

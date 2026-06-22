@@ -1,0 +1,76 @@
+<!--
+SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+SPDX-FileCopyrightText: 2023 Myakot <30875116+Myakot@users.noreply.github.com>
+SPDX-FileCopyrightText: 2023 TurboTrackerss14 <130304754+TurboTrackerss14@users.noreply.github.com>
+SPDX-FileCopyrightText: 2023 faint <46868845+ficcialfaint@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 UBlueberry <161545003+UBlueberry@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Huhm-1 <cameronhillard40@gmail.com>
+SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 pa.pecherskij <pa.pecherskij@interfax.ru>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+# Ochrona
+
+Zapewnianie bezpieczeństwa stacji i załogi jest priorytetem [color=#ff8a8a]Ochrony[/color]. Jest gotowa na wszystko, a sama [color=#ff8a8a]Ochrona[/color] zawsze jest pod ręką, aby utrzymać porządek.
+
+[color=#ff8a8a]Ochrona[/color] mierzy się z [textlink="Agentami Syndykatu" link="Traitors"], [textlink="Specjalistami Nuklearnymi" link="NuclearOperatives"], [textlink="Zombie" link="Zombies"] oraz niesforną załogą.
+
+Postępowanie przy interwencjach opisują [textlink="procedura zatrzymania" link="SecuritySOP"], [textlink="procedura aresztowania" link="SecuritySOP"], [textlink="procedura przesłuchania" link="SecuritySOP"] oraz [textlink="procedura egzekucji" link="SecuritySOP"] w SPO Ochrony.
+
+## Personel
+
+[color=#ff8a8a]Ochrona[/color] składa się z Kadetów Ochrony, Funkcjonariuszy Ochrony oraz Detektywa. [color=#ff8a8a]Ochroną[/color] zarządza Nadzorca Ochrony oraz Komendant.
+
+<Box>
+  <GuideEntityEmbed Entity="ToyFigurineSecurity" Caption="Secoff"/>
+  <GuideEntityEmbed Entity="ToyFigurineDetective" Caption="Detective"/>
+  <GuideEntityEmbed Entity="ToyFigurineWarden" Caption="Warden"/>
+  <GuideEntityEmbed Entity="ToyFigurineHeadOfSecurity" Caption="HoS"/>
+</Box>
+
+## Sprzęt
+
+Ochrona stosuje siłę według [textlink="Procedury stosowania siły" link="UseOfForceSOP"]. Poniższy sprzęt odpowiada poszczególnym poziomom:
+
+[bold]Poziom I[/bold] — polecenia słowne i komunikacja.
+
+[bold]Poziom II[/bold] — sprzęt mniej śmiercionośny. Pałki służą do ograniczenia ruchu napastnika, a kajdanki do kontroli podejrzanego podczas zatrzymania lub aresztowania, blokując mu swobodę poruszania się i korzystania z dłoni.
+
+<Box>
+  <GuideEntityEmbed Entity="Truncheon"/>
+  <GuideEntityEmbed Entity="Handcuffs"/>
+</Box>
+
+## Błyski
+
+[color=#e8c878]Błyski[/color] należą do poziomu II. Są skutecznym narzędziem do rozpraszania tłumów i zatrzymywania szczególnie nieuchwytnych celów. Mają duży obszar działania i oślepiają wszystkich bez odpowiedniej ochrony.
+
+Warto zauważyć, że błyski można stosować zarówno na dużym obszarze (przycisk [color=#ffe566]Z[/color]), jak i podczas bezpośredniego ataku na osobę z aktywnym [color=#ff8a8a]Trybem walki[/color]. Ważne jest, że błyski skierowane bezpośrednio są o [color=#ffe566]2,5[/color] razy mocniejsze niż te obszarowe.
+
+[color=#ff8a8a]Ochrona[/color] oraz [color=#e8c878]niektórzy[/color] inni członkowie załogi mają sprzęt chroniący przed błyskami i granatami błyskowo-hukowymi.
+
+<Box>
+  <GuideEntityEmbed Entity="Flash"/>
+  <GuideEntityEmbed Entity="ClothingEyesGlassesSecurity"/>
+  <GuideEntityEmbed Entity="GrenadeFlashBang"/>
+</Box>
+
+## Broń śmiercionośna
+
+Broń śmiercionośna należy do poziomu III i może być użyta tylko zgodnie z procedurą stosowania siły.
+
+<Box>
+  <GuideEntityEmbed Entity="WeaponLaserCarbine"/>
+  <GuideEntityEmbed Entity="WeaponShotgunKammerer"/>
+  <GuideEntityEmbed Entity="WeaponPistolMk58"/>
+  <GuideEntityEmbed Entity="WeaponRifleLecter"/>
+</Box>
+
+## Różnorodne
+
+Funkcjonariusze Ochrony nie powinni patrolować wentylacji na zielonym kodzie zagrożenia, szczególnie w pojedynkę. Zamiast tego powinni skupić się na utrzymywaniu porządku na stacji.
+</Document>

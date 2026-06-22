@@ -1,0 +1,66 @@
+<!--
+SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+  # Urządzenia atmosferyczne
+  Departament atmosferyczny dysponuje szeroką gamą urządzeń służących do transportu, zarządzania i innych operacji związanych z gazem.
+  Urządzenia te często współpracują ze sobą, aby zapewnić załodze bezpieczną atmosferę nadającą się do oddychania.
+
+  W niniejszym rozdziale omówiono różne urządzenia, którymi dysponuje departament atmosferyczny, sposób ich wzajemnego połączenia oraz optymalne sposoby ich wykorzystania.
+
+
+  <Box>
+    <GuideEntityEmbed Entity="GasPipeStraight" Caption=""/>
+    <GuideEntityEmbed Entity="GasPipeHalf" Caption=""/>
+    <GuideEntityEmbed Entity="GasPipeBend" Caption=""/>
+    <GuideEntityEmbed Entity="GasPipeTJunction" Caption=""/>
+    <GuideEntityEmbed Entity="GasPipeFourway" Caption=""/>
+    <GuideEntityEmbed Entity="GasPressurePump" Caption=""/>
+    <GuideEntityEmbed Entity="GasVolumePump" Caption=""/>
+  </Box>
+  <Box>
+    ## Sieci rurociągów
+  </Box>
+  <Box>
+    [color=#c8c8c8][italic]Połączone ze sobą rury, które pełnią wspólną funkcję — nazywane "sieciami rurociągów"[italic][/color]
+  </Box>
+
+  <Box>
+    <GuideEntityEmbed Entity="ComputerAlert" Caption=""/>
+    <GuideEntityEmbed Entity="AirAlarm" Caption=""/>
+  </Box>
+  <Box>
+    ## Monitorowanie i sterowanie urządzeniami
+  </Box>
+  <Box>
+    [color=#c8c8c8][italic]Monitorowanie i sterowanie urządzeniami regulującymi warunki w pomieszczeniu[italic][/color]
+  </Box>
+
+  <Box>
+    <GuideEntityEmbed Entity="Firelock" Caption=""/>
+    <GuideEntityEmbed Entity="FireAlarm" Caption=""/>
+  </Box>
+  <Box>
+    ## Kontrola pożarów i gazów
+  </Box>
+  <Box>
+    [color=#c8c8c8][italic]Urządzenia do kontroli i zapobiegania wyciekom gazu oraz pożarom[italic][/color]
+  </Box>
+
+  <Box>
+    <GuideEntityEmbed Entity="GasMinerOxygenStation" Caption=""/>
+    <GuideEntityEmbed Entity="AirCanister" Caption=""/>
+  </Box>
+  <Box>
+    ## Wydobycie i magazynowanie gazu
+  </Box>
+  <Box>
+    [color=#c8c8c8][italic]Urządzenia służące do wydobywania gazu na potrzeby stacji oraz do jego magazynowania na przyszłość[italic][/color]
+  </Box>
+
+</Document>

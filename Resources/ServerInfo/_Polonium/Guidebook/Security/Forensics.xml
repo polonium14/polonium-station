@@ -1,0 +1,62 @@
+<!--
+SPDX-FileCopyrightText: 2023 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+SPDX-FileCopyrightText: 2023 Myakot <30875116+Myakot@users.noreply.github.com>
+SPDX-FileCopyrightText: 2023 faint <46868845+ficcialfaint@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 ArtisticRoomba <145879011+ArtisticRoomba@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Iztok Bajcar <50874197+iztokbajcar@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2024 UBlueberry <161545003+UBlueberry@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+  # Kryminalistyka
+
+  Jest sporo narzędzi jakich możesz użyć aby zbierać i sprawdzać dowody zbrodni na terenie stacji.
+
+  # Sonda logów (Log probe)
+
+  Ten mały dodatek do twojego PDA jest bardzo przydatny. Po prostu zainstaluj program a twoje PDA dostanie umiejętność skanowania wszystkiego co wymaga dostępu (np. śluzy) oraz zobaczyć kto i kiedy z nich korzystał. 
+
+  Zazwyczaj możesz znaleźć kasete z sondą w szafce detektywa. Po włożeniu do PDA, przejdź do programów i powinna pojawić się nowa aplikacja "Log probe". Aby skorzystać z sondy wystarczy otworzyć aplikacje i przeskanować (LPM) cokolwiek co wymaga dostępu z twojego PDA; wszystkie użycia się wtedy wyświetlą na twoim PDA.
+
+  Warto wsponieć że imiona wydobyte z aplikacji nie zawsze są w 100% trafne, ponieważ biorą imię od ID, a nie bezpośrednio od użytkownika. Na przykład jeśli ktoś otworzył śluze bez ID to imię będzie "Nieznany".
+
+  <Box>
+    <GuideEntityEmbed Entity="LockerDetective"/>
+    <GuideEntityEmbed Entity="LogProbeCartridge"/>
+  </Box>
+
+  # DNA oraz Odciski palców
+
+  ## Jak uzyskać czyjeś DNA ?
+
+  Mozesz skanować kałuże krwi, wymiotów, okulary, butelki, puszki oraz inne zbiorniki płynów korzystając z [color=#e8c878]Skanera Kryminalistyki[/color] aby uzyskać DNA dowolnej osoby.
+  <Box>
+    <GuideEntityEmbed Entity="ForensicScanner"/>
+  </Box>
+  Więc bądź ostrożny kiedy z kimś walczysz.
+
+  Ten sam skaner pozwala uzyskiwać odciski palców z praktycznie każdego obiektu. Jeśli potencjalny podejrzany używał rękawiczek, to twój skaner pokaże jakie włokna zostały na miejscu zbrodni.
+
+  ## Mam DNA, jak wiedzieć czyje ono jest?
+
+  Możesz wydrukować informacje kryminalistyczne z wszystkiego co skanowałeś, dzięki czemu nic nie zgubisz. Teraz z papierem piszącym DNA idziesz do [color=#e8c878]Komputera Redordów Stacji[/color] i znajdź osobę której DNA pasuje; tak samo robisz z odciskami palców. 
+
+  ## Zbieranie odcisków
+  Jest również możliwe żeby zebrać odciski od kogoś na miejscu, jeśli każesz im zdjąć rękawiczki i użejesz kryminalistycznej podkładni na ich palcach. Wtedy nie musisz iść do [color=#e8c878]Komputera Redordów Stacji[/color] aby sprawdzić czy DNA pasuje.
+
+  <GuideEntityEmbed Entity="ForensicPad"/>
+
+  ## Włókna
+  Kiedy ktokolwiek noszący rękawiczki dotknie czegoś na stacji zostawi na tym część włókien. To komplikuje sprawy ale nic nie jest nie-rozwiązywalne dla prawdziwego detektywa.
+
+  Jest łącznie około [color=#ff8a8a]26[/color] róznych rodzajów włokien. Czy powstrzyma cię to przed odnalezieniem sprawcy?
+
+  <Box>
+    <GuideEntityEmbed Entity="ComputerStationRecords"/>
+  </Box>
+</Document>

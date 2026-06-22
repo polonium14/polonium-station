@@ -1,0 +1,73 @@
+<!--
+SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+  # Alarmy atmosferyczne
+  Alarm atmosferyczny to urządzenie umożliwiające centralne monitorowanie i sterowanie wszystkimi podłączonymi do niego urządzeniami atmosferycznymi.
+
+  <Box>
+    <GuideEntityEmbed Entity="AirAlarm"/>
+  </Box>
+
+  Dzięki systemowi alarmów atmosferycznych departament inżynierii może szybko i skutecznie kontrolować warunki atmosferyczne w danym obszarze.
+
+  W pomieszczeniu często montuje się na ścianie alarmy atmosferyczne, które umożliwiają szybkie sterowanie wieloma urządzeniami znajdującymi się w tym pomieszczeniu.
+
+  Sposób podłączania urządzeń można sprawdzić w przewodniku o [textlink="łączeniu urządzeń" link="Networking"].
+
+  ## Interfejs użytkownika
+  Po uruchomieniu alarmu atmosferycznego wyświetla się menu składające się z trzech sekcji:
+  - Górna: aktualny stan alarmu atmosferycznego. Pokazuje aktualne ciśnienie i temperaturę w obszarze monitorowanym przez alarm.
+  - Środkowa: Przyciski do sterowania trybami pracy alarmu atmosferycznego, a także możliwość włączenia lub wyłączenia automatycznej zmiany trybów.
+  - Dolna: Lista połączonych [textlink="otworów wentylacyjnych" link="AirVent"] i [textlink="oczyszczaczy powietrza" link="AirScrubber"], a także wszystkich czujników przekazujących dane do alarmów atmosferycznych.
+
+  ## Stan alarmu
+  Alarmy atmosferyczne szybko informują o stanie monitorowanego obszaru za pomocą koloru światła na urządzeniu:
+  - [color=#8ee99a]Normalny[/color]: Powietrze w tym obszarze jest bezpieczne do oddychania.
+  - [color=#ffe566]Ostrzeżenie[/color]: Warunki w danym obszarze zaczynają odbiegać od pożądanych i stają się niebezpieczne.
+  - [color=#ff8a8a]Niebezpieczeństwo[/color]: Obszar nie jest już bezpieczny, wymagane jest użycie aparatów oddechowych i/lub kombinezonów ochronnych.
+
+  Alarmy atmosferyczne automatycznie opuszczą (zamkną) połączone [textlink="śluzy przeciwpożarowe" link="FireAndGasControl"], gdy zostanie osiągnięty stan [color=Red]niebezpieczeństwa[/color].
+  [textlink="Śluzy przeciwpożarowe" link="FireAndGasControl"] automatycznie podniosą się (otworzą), gdy stan powróci do [color=#8ee99a]normalnego[/color].
+
+  Alarmy atmosferyczne są wyposażone w wyjścia [textlink="sygnałowe" link="Networking"] dla każdego z trzech stanów, które można wykorzystać do uruchomienia innych urządzeń [textlink="sygnałowych" link="Networking"].
+
+  ## Czujniki
+  Wszystkie [textlink="otwory wentylacyjne" link="AirVent"] i [textlink="oczyszczacze powietrza" link="AirScrubber"] są wyposażone we wbudowany czujnik, który przekazuje sygnał do alarmu atmosferycznego.
+  Czujniki te można skonfigurować w zakładce [bold]Czujniki[/bold] w menu alarmu powietrznego.
+
+  Stan alarmu atmosferycznego zależy bezpośrednio od progów ustawionych dla poszczególnych czujników.
+  Jeśli czujnik zarejestruje ciśnienie, temperaturę lub skład gazu wykraczające poza ustalone progi, stan alarmu atmosferycznego odpowiednio ulegnie zmianie.
+
+  W razie potrzeby progi te można dostosować lub wyłączyć.
+  Na przykład, jeśli monitorujesz pomieszczenie, w którym naturalnie panuje niska temperatura (np. zamrażarka) lub wysoka temperatura (np. komora spalania), możesz dostosować progi temperatury tak, aby odpowiadały oczekiwanym wartościom.
+
+  Można również zbudować czujnik powietrza i [textlink="połączyć" link="Networking"] go z alarmem atmosferycznym.
+
+  <Box>
+    <GuideEntityEmbed Entity="AirSensor"/>
+  </Box>
+
+  Jest to przydatne do monitorowania obszarów, w których nie ma jeszcze otworów wentylacyjnych ani oczyszczaczy powietrza.
+
+  ## Tryby pracy
+  Aby umożliwić szybkie sterowanie podłączonymi urządzeniami, alarmy atmosferyczne wyposażone są w tryby pracy, które błyskawicznie zmieniają działanie wszystkich połączonych urządzeń, pozwalając uzyskać pożądany efekt.
+  - Brak: Wyłącza wszystkie urządzenia podłączone do alarmu atmosferycznego.
+  - Filtrowanie: [textlink="Otwory wentylacyjne" link="AirVent"] zostaną włączone, a ich ciśnienie graniczne zostanie ustawione na standardowe ciśnienie atmosferyczne. [textlink="Oczyszczacze powietrza" link="AirScrubber"] zostaną włączone i będą normalnie oczyszczać wszystkie gazy odpadowe.
+  - Filtrowanie (szerokie): Tak samo jak w przypadku filtrowania, ale wszystkie połączone [textlink="oczyszczacze powietrza" link="AirScrubber"] włączą tryb WideNet.
+  - Napełnianie: [textlink="Otwory wentylacyjne" link="AirVent"] zostaną włączone, a ich ciśnienie graniczne zostanie ustawione na wartość maksymalną, [color=#ffb86b][protodata="GasVentPump" comp="GasVentPump" member="MaxPressure"/] kPa[/color]. [textlink="Oczyszczacze powietrza" link="AirScrubber"] zostaną wyłączone.
+  - Tryb paniki: [textlink="Otwory wentylacyjne" link="AirVent"] zostaną wyłączone, a [textlink="oczyszczacze powietrza" link="AirScrubber"] przełączą się w tryb zasysania.
+
+  Alarmy atmosferyczne automatycznie przełączają się między trybami "Filtrowanie" a "Filtrowanie (szerokie)" w zależności od aktualnego stanu monitorowanego obszaru.
+  - Jeśli obszar osiągnie stan [color=#ff8a8a]Niebezpieczeństwo[/color] lub wyższy, alarm atmosferyczne przełączy się w tryb "Filtrowanie (szerokie)".
+  - Jeśli obszar osiągnie stan [color=#8ee99a]Normalny[/color] lub [color=#ffe566]Ostrzeżenie[/color], alarm atmosferyczny przełączy się w tryb Filtrowanie.
+
+  Funkcję tę można wyłączyć, odznaczając pole "Tryb automatyczny" w środkowej części menu alarmu atmosferycznego.
+
+  Wskazówki dotyczące rozwiązywania problemów związanych z [textlink="rozszczenieniem kadłuba statku" link="Spacing"] i [textlink="pożarami" link="Fires"] można znaleźć w odpowiednich poradnikach.
+</Document>

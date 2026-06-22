@@ -1,0 +1,104 @@
+<!--
+SPDX-FileCopyrightText: 2023 Kevin Zheng <kevinz5000@gmail.com>
+SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+SPDX-FileCopyrightText: 2023 end <72604018+laok233@users.noreply.github.com>
+SPDX-FileCopyrightText: 2023 willicassi <146377084+willicassi@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 IlyaElDunaev <154531074+IlyaElDunaev@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2024 UBlueberry <161545003+UBlueberry@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Fenn <162015305+TooSillyFennec@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 corresp0nd <46357632+corresp0nd@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+# Botanika
+Jako botanik, twoim zadaniem jest wyhodowanie wystarczającej ilości jedzenia, aby powstrzymać kucharza przed szukaniem "alternatywnych źródeł". Hoduj dużo pszenicy, a kiedy się tym zmęczysz, hoduj zioło. Rób koktajle z zioła i doprawiaj drinki pokrzywami. Po prostu hoduj rośliny, a pójdzie ci świetnie!
+
+## Rozpoczęcie zmiany
+Najpierw zidentyfikuj maszyny wokół siebie, których będziesz używać. Skonsultuj się z Kucharzem, czy chce, aby coś konkretnego zostało wyhodowane, w przeciwnym razie hoduj pszenicę i banany oraz cokolwiek innego, na co masz ochotę. Możesz także hodować rośliny dla Chemii, Barmana lub na sprzedaż przez Logistykę.
+
+
+# Narzędzia
+Istnieje wiele narzędzi, które można wykorzystać do utrzymania upraw w zdrowiu i wzroście. Taca hydroponiczna to miejsce, w którym spędzisz większość czasu jako botanik.
+
+## Taca Hydroponiczna
+<Box>
+<GuideEntityEmbed Entity="hydroponicsTray"/>
+</Box>
+To taca hydroponiczna, hoduje rośliny za pomocą wody. Najpierw napełnij tacę wodą, a następnie dodaj nasiona.
+Światła tacy hydroponicznej oznaczają różne rzeczy w zależności od koloru i pozycji:
+- [color=#ff8a8a]Czerwone Światło, Lewo[/color]: Martwa roślina, która wymaga ponownego zasadzenia. Użyj łopaty, aby usunąć roślinę.
+- [color=#ffb86b]Migające Pomarańczowe Światło, Środek[/color]: Środowisko jest nieoptymalne. Sprawdź, co wpływa na roślinę, klikając na nią z Shiftem. Prawdopodobnie są to chwasty, ale może to być niepożądane ciśnienie lub brak tlenu. Jeśli chwasty, użyj mini motyki lub spryskaj 1 raz sprayem na chwasty. Ostrzegamy jednak, że nadużywanie środków chwastobójczych może prowadzić do niezdrowych roślin, ewentualnie je zabijając.
+- [color=#7eb8ff]Niebieskie Światło, Prawo[/color]: Wymaga wody. Użyj wiadra na zbiorniku z wodą i napełnij tacę.
+- [color=#8ee99a]Zielone Światło, Lewo[/color]: Gotowe do zbioru. Kliknij lewym przyciskiem myszy, aby zebrać.
+- [color=#ffe566]Żółte Światło, Prawo[/color]: Wymaga składników odżywczych. Użyj dowolnego owocu i włóż go do gleby lub weź składniki odżywcze EZ z chemii.
+
+Cykl życia tacy hydroponicznej wygląda następująco:
+- [color=lightgreen]Pusta[/color]: brak wody, nasiona lub składników odżywczych
+- [color=lightgreen]Nawodniona[/color]: dodałeś do niej wodę (np. z butelki lub wiadra).
+- [color=lightgreen]Gotowa do sadzenia[/color]: dodałeś do niej wodę i składniki odżywcze (tj. nawóz).
+- [color=lightgreen]Zasadzona[/color]: dodałeś do niej nasiono
+- [color=lightgreen]Gotowa do zbioru[/color]: poczekałeś, aż roślina urośnie
+- [color=lightgreen]Próbkowana[/color]: pobrałeś próbkę (nasiono)
+- [color=lightgreen]Zebrana[/color]: zebrałeś gotowe rośliny. Niektóre rośliny odrosną ponownie. Inne umrą i będą wymagały ponownego zasadzenia.
+- [color=lightgreen]Niezdrowa[/color]: Pobrałeś zbyt wiele nasion lub spryskałeś ją śmiercionośnymi chemikaliami. Roślina nie radzi sobie zbyt dobrze. Będzie nadal rosnąć. Zdrowie można przywrócić nawozami lub możesz spisać ją na straty i wydobyć nasiono (sekatorem) i zasadzić ponownie.
+- [color=lightgreen]Stara / Zwiędła[/color]: roślina dojrzała i wkrótce umrze. Nadal będzie zdatna do zbioru i będziesz mógł wydobyć nasiona, ale tylko przez krótki czas. Wydobądź nasiono, a następnie wyrwij ją / zetnij.
+- [color=lightgreen]Martwa[/color]: roślina została zebrana i przestała rosnąć. Należy ją wyrwać / ściąć. Nie można wydobyć nasion.
+
+## Ekstraktor Nasion
+<Box>
+<GuideEntityEmbed Entity="SeedExtractor"/>
+</Box>
+Wydobywa nasiona. Włóż plon, otrzymaj nasiona.
+
+
+# Genetyka Roślin
+Jak wszystkie inne formy życia znane NanoTrasen, rośliny przekazują cechy potomstwu w swoich genach. Manipulując genetyką roślin, botanicy mogą wytwarzać odmiany roślin o pożądanych mutacjach, które zwiększają zdrowie i plon roślin.
+
+## Cechy
+Fenotyp, czyli zestaw obserwowalnych cech i właściwości rośliny, można określić poprzez uważną obserwację i badanie. Kilka powszechnych cech to:
+
+- [color=lightgreen]Bioluminescencja[/color]: rośliny z tą cechą świecą w ciemności
+- [color=lightgreen]Wysoki plon[/color]: rośliny z tą cechą dają więcej owoców na zbiór
+- [color=lightgreen]Mniej wody[/color]: rośliny z tą cechą wymagają mniej wody niż normalnie, aby rosnąć
+- [color=lightgreen]Zdrewniała[/color]: rośliny z tą cechą wymagają ostrych narzędzi do zbioru
+- [color=lightgreen]Długie życie[/color]: rośliny z tą cechą żyją więcej cykli zbiorów przed śmiercią
+- [color=lightgreen]Słabe światło[/color]: rośliny z tą cechą potrzebują mniej światła niż normalnie, aby rosnąć
+- [color=lightgreen]Odporność na szkodniki[/color]: rośliny z tą cechą są bardziej odporne na szkodniki
+- [color=lightgreen]Beznasienna[/color]: rośliny z tą cechą nie produkują zdolnych do życia nasion
+- [color=lightgreen]Odporność na chwasty[/color]: rośliny z tą cechą hamują wzrost chwastów
+
+Możesz określić fenotyp rośliny, po prostu je hodując i obserwując! Tak właśnie Gregor Mendel, ojciec genetyki, badał je w 1866 roku.
+
+## Mutacje
+Rośliny potraktowane [color=#7ee8f7]niestabilnym mutagenem[/color] doświadczą losowych mutacji genetycznych, które mogą zmienić ich geny i skutkować zmianami w ich cechach. Możesz zachować rośliny z mutacjami, które chcesz, zbierając ich nasiona.
+
+Im więcej niestabilnego mutagenu użyjesz, tym więcej mutacji otrzymasz. Ponieważ wiele genów jest kluczowych dla przetrwania rośliny, większość mutacji spowoduje śmierć rośliny.
+
+<Box>
+<GuideEntityEmbed Entity="UnstableMutagenChemistryBottle"/>
+</Box>
+
+## Zapylanie krzyżowe
+Możesz użyć [color=#7ee8f7]sterylnej wymazówki[/color], aby przenieść pyłek z jednej rośliny na drugą. Rośliny, które są zapylane krzyżowo, mają szansę na przeniesienie cech. Uważaj przy ponownym użyciu wymazówek; pyłek jest lepki!
+
+<Box>
+<GuideEntityEmbed Entity="BoxMouthSwab"/>
+<GuideEntityEmbed Entity="DiseaseSwab"/>
+</Box>
+
+## Chemikalia
+Niektóre chemikalia mają specjalne działanie na rośliny.
+
+[textlink="Kliknij tutaj, aby zobaczyć wszystkie chemikalia botaniczne." link="Botanical"]
+
+  <GuideReagentEmbed Reagent="Multiver"/>
+<GuideReagentEmbed Reagent="Cryoxadone"/>
+<GuideReagentEmbed Reagent="Necrosol"/>
+<GuideReagentEmbed Reagent="Phalanximine"/>
+<GuideReagentGroupEmbed Group="Botanical"/>
+
+</Document>

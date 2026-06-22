@@ -1,0 +1,114 @@
+<!--
+SPDX-FileCopyrightText: 2024 John Space <bigdumb421@gmail.com>
+SPDX-FileCopyrightText: 2024 fishbait <gnesse@gmail.com>
+SPDX-FileCopyrightText: 2025 Fat Engineer Gaming <159075414+Fat-Engineer-Gaming@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+-->
+
+<Document>
+# Blob
+
+  [color=#ff8a8a]Skażenie biologiczne poziomy piątego zostało wykryte na stacji. Izolacja stacji została ogłoszona.[/color]
+
+  Blob to szybko rosnący niebezpieczny organizm biologiczny, którego celem jest opanowanie stacji.
+  <Box>
+    <GuideEntityEmbed Entity="CoreBlobTile" Caption="Jądro blobu"/>
+	<GuideEntityEmbed Entity="MobMouseCancer" Caption="Nosiciel blobu"/>
+  </Box>
+
+  Możesz zostać nosicielem blobu zarówno na początku, jak i w trakcie rundy, poprzez zabranie roli ducha. Najczęściej nosiciel to świadomy humanoid lub specjalna zielona, radioaktywna mysz.
+
+  [bold]PAMIĘTAJ:[/bold] Masz ograniczony czas! Po zostaniu nosicielem bloba masz limitowany czas 10 minut na znalezienie i przygotowanie miejsca. Po 10-u minutach zostaniesz automatycznie przetransportowany w bloba.
+
+  ## Jądro
+
+  Najważniejszą częścią bloba jest [color=#e8c878]jądro[/color]. Zniszczenie jądra spowoduje zniszczenie blobu, a wszystkie pozostałe komórki umrą wraz z nim.
+
+  Możesz zawsze obserwować zdrowie swojego jądra po prawej stronie ekranu w postaci procentu. Pamiętaj, by zawsze mieć na nie oko i nie pozwolić się zniszczyć.
+
+  Możesz zrobić dwie rzeczy z jądrem: [color=#e8c878]przetransportować[/color] oraz [color=#e8c878]rozdzielić[/color].
+  - Kiedy jądro jest przetransportowane, wybrany węzeł oraz jądro są zamieniane miejscami. Bardzo przydatne, jeśli jądro jest w niebezpiecznej pozycji.
+  - Kiedy jądro jest rozdzielone, wybrany węzeł zostaje [color=#e8c878]nowym, niezależnym jądrem[/color]. Choć ta akcja wymaga dużej ilości punktów, w dłuższej mierze, nowe jądro może Ci bardzo pomóc w przejęciu stacji.
+
+  ## Typy blobu
+
+  Twoja standardowa część [bold]zwykły jednostka[/bold]. Zwykłe jednostki są bardzo podatne na oparzenia oraz nawet obrażenia fizyczne.
+  Mogą one także być także ulepszane we wzmocnione wersje samych siebie lub w specjalne części.
+
+  ## Części specjalne
+
+  <Box>
+    <GuideEntityEmbed Entity="ResourceBlobTile" Caption="Blob Produkcyjny"/>
+	  <GuideEntityEmbed Entity="FactoryBlobTile" Caption="Blob Fabryczny"/>
+	  <GuideEntityEmbed Entity="NodeBlobTile" Caption="Węzeł blobu"/>
+  </Box>
+
+  - [color=#e8c878]Blob Produkcyjny[/color] stale produkuje punkty potrzebne na używanie przez bloba różnych akcji.
+  - [color=#e8c878]Blob Fabryczny[/color] tworzy Zarodniki oraz Blobonautów, pomocnych w walce przeciwko stacji.
+  - [color=#e8c878]Węzeł Blobu[/color] pozwala na stawianie pozostałych części wokół siebie w limitowanym zasięgu.
+
+  Ważne! Części specjalne są powiązane z najbliższym jądrem. 
+  Z tego powodu, dla najlepszego umiejscowienia, zaleca się stawianie węzłów jak najbliżej siebie i budowę pozostałych części specjalnych wokół.
+
+  Kiedy węzeł jest zniszczony, wszystkie powązane części specjalne zostaną zniszczone, a ich koszt zwrócony.
+
+  ## Pomocnicy
+
+  <Box>
+    <GuideEntityEmbed Entity="MobBlobBlobbernaut" Caption="Blobonaut"/>
+	<GuideEntityEmbed Entity="MobBlobPod" Caption="Zarodnik Bloba"/>
+  </Box>
+
+  Bloby Fabryczne mogą produkować Zarodniki oraz Blobonautów.
+  - Pody mają umiejętność przemiany martwych humanoidów w blobowe zombi, co zmusi ich do walki po twojej stronie przeciwko reszcie załogi.
+  - Blobonauci zadają ogromne obrażenia, które bardzo się przydają przy atakowaniu.
+
+  ## Zarządzanie
+
+  - By wybudować jednostkę, naciśnij na wolne pole. Jeśli pole jest zajęte, lub też ktoś albo coś stoi na nim, klikanie zaatakuje i zada obrażenia.
+  - Pamiętaj, że [color=#e8c878]nie możesz stawiać normalnych jednostek daleko od węzłów. Stwórz kilka węzłów by móc rozprzestrzeniać się dalej.
+  - Przez kliknięcie Alt+LMB (Alt+Lewy przycisk myszy), możesz ulepszać zwykłe jednostki w wzmocnione jednostki, a wzmocnione jednostki w jednostki refleksyjne.
+
+  <Box>
+    <GuideEntityEmbed Entity="StrongBlobTile" Caption="Wzmocniona jednostka"/>
+	  <GuideEntityEmbed Entity="ReflectiveBlobTile" Caption="Refleksyjna jednostka"/>
+  </Box>
+
+  ## Zdolności specjalne
+
+  W pasku zdolności możesz użyć zdolności specjalnych, które pozwolą Ci wykonywać ważne zadania, takie jak stawianie części specjalnych, czy nawet specjalnych interakcji z jądrem i chemikaliami.
+
+  - [color=#e8c878]Zmiana Chemikaliów[/color] pozwala ci zmienić chemikalia na dowolny z pięciu przedstawionych. Każdy ma swoje właściwości przydatne w różnych sytuacjach.
+  - [color=#e8c878]Degradacja jednostki[/color] pozwala na degradowanie dowolnej jednostki spowrotem do zwykłej za darmo. Przydaje się do poprawiania karygodnych umiejscowień.
+
+  ## Kurs rundy
+
+  Wraz z rośnięciem blobu, stacja przejdzie przez kolejne etapy.
+
+  - 1. [color=#e8c878]Etap Cichy[/color] - Blob nie został odkryty, możesz spokojnie się rozwijać podczas gdy załoga nie wie o twoim istnienu.
+  - 2. [color=#e8c878]Wykrycie zagrożenia[/color] - Jak tylko Blob urośnie wystarczająco, kod Sigma zostaje ogłoszony i kompletna izolacja stacji jest ogłaszana. Wachadłowiec ewakuacyjny nie może zostać wysłany na tym etapie.
+  - 3. [color=#e8c878]Masa krytyczna[/color] - Jeśli blob przejmie znaczącą część stacji, Centralne Dowództwo wyśle faks z kodami detonacyjnymi do awaryjnej głowicy jądrowej na pokładzie stacji. Zadaniem pozostałej załogi jest włączyć głowicę a następnie spróbować uciec za wszelką cenę.
+  - 4. [color=#e8c878]Zwycięstwo Blobu[/color] - Kiedy blob urośnie do gigantycznych rozmiarów, jego rozwój stanie się nie do powstrzymania, skutkując zakończeniem rundy i zwycięstwem blobu.
+
+  Zaczynając od etapu drugiego, najważniejszym zadaniem kapitana jest ochrona dysku autoryzacji nuklearnej. Jeśli się on straci, nie będzie można powstrzymać blobu podczas kodu Gamma, co daje prawie gwarantowane zwycięstwo dla blobu.
+
+  <Box>
+    <GuideEntityEmbed Entity="NukeDisk" Caption="Dysk autoryzacji nuklearnej"/>
+  </Box>
+
+  ## Sposoby kontroli
+
+  Ponieważ blob jest kreaturą biologiczną, [color=#ff5500]ciepło i ogień[/color] są największymi słabościami blobu. Obrażenia cieplne są bardzo efektywne przeciwko niemu, dlatego poniższe bronie przydadzą Ci się w walce z nim:
+
+  <Box>
+    <GuideEntityEmbed Entity="MagazineBoxPistolIncendiary" Caption="Pociski zapalające"/>
+	  <GuideEntityEmbed Entity="WeaponLaserCarbine" Caption="Karabin laserowy"/>
+	  <GuideEntityEmbed Entity="Welder" Caption="Spawarka"/>
+  </Box>
+
+  Obrażenia cięte są także bardziej skuteczne przeciw jednostką reflektywnym niż inne typy obrażeń fizycznych, zadając ponad dwukrotnie więcej obrażeń.
+
+</Document>

@@ -1,0 +1,29 @@
+<!--
+SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+  # Przenośny oczyszczacz powietrza
+  Przenośny oczyszczacz powietrza to urządzenie, które służy do oczyszczania powietrza w pomieszczeniu.
+  <Box>
+    <GuideEntityEmbed Entity="PortableScrubber"/>
+  </Box>
+
+  Urządzenie to jest niezwykle przydatne do szybkiego usuwania niepożądanych gazów z pomieszczenia, gdy standardowe [textlink="oczyszczacze powietrza" link="AirScrubber"] działają zbyt wolno lub gdy nie ma w pobliżu żadnego [textlink="oczyszczacza powietrza" link="AirScrubber"].
+
+  Przenośny oczyszczacz wymaga [textlink="zasilania" link="Power"] z pobliskiego [textlink="kabla niskonapięciowego" link="VoltageNetworks"] aby działać.
+
+  Przenośny oczyszczacz automatycznie rozpoczyna usuwanie wszystkich gazów niezdatnych do oddychania z pomieszczenia, gdy zostanie przykręcony kluczem do podłogi.
+
+  Przestanie oczyszczać, gdy zostanie odkręcony od podłogi lub gdy jego zbiornik wewnętrzny będzie pełny. Oczyszczacz ma pojemność wewnętrzną [color=#ffb86b][protodata="PortableScrubber" comp="PortableScrubber" member="Volume"/] litrów[/color].
+
+  ## Opróżnianie i przechowywanie odpadów
+  Jego zbiornik wewnętrzny można opróżnić, przykręcając do[textlink="portu gazowego" link="GasCanisters"].
+
+  Stacje zazwyczaj posiadają dedykowany punkt opróżniania, umożliwiający szybkie przeniesienie odpadów z oczyszczacza do sieci odprowadzania odpadów stacji.
+
+</Document>

@@ -1,0 +1,115 @@
+<!--
+SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+  # Singularity
+  Singularity to potężny generator, który wykorzystuje zamkniętą osobliwość do wytwarzania energii dla stacji.
+
+  <Box>
+    <GuideEntityEmbed Entity="SingularityGenerator"/>
+    <GuideEntityEmbed Entity="Singularity"/>
+  </Box>
+
+  Wytwarza energię poprzez zbieranie promieniowania emitowanego przez singularity za pomocą kolektorów promieniowania i plazmy gazowej.
+
+  ## Uruchamianie singularity
+  Aby uruchomić singularity, inżynierowie muszą wykonać następujące czynności:
+  - Umieścić generator singularity w środku pola zabezpieczającego. W niektórych stacjach generator jest już na miejscu, podczas gdy w innych inżynierowie muszą go przynieść z magazynu.
+  - Włączyć cztery generatory pola zabezpieczającego.
+  - Włączyć i zablokować emitery.
+  - Sprawdź, czy generatory pola zabezpieczającego utworzyły pole zabezpieczające wokół singularity.
+  - Włącz kolektory promieniowania. Do wytworzenia energii potrzebują one plazmy. Mogą być puste, więc pamiętaj, aby je napełnić.
+  - Zbuduj akcelerator cząstek.
+  - Włącz komputer sterujący akceleratorem cząstek i ustaw żądany poziom mocy.
+
+  Po wykonaniu tych czynności singularity zacznie wytwarzać energię dla stacji.
+  Pamiętaj, aby monitorować poziom mocy singularity i pole zabezpieczające, aby zapobiec jej ucieczce i zniszczeniu stacji.
+  Często sprawdzaj poziom napełnienia kolektorów, ponieważ z czasem wyczerpie się w nich plazma.
+
+  ## Pole zabezpieczające
+  Aby zapobiec ucieczce singularity i zniszczeniu stacji, inżynierowie muszą ją uwięzić w polu zabezpieczającym.
+
+  Zaleca się zastosowanie pola zabezpieczającego o maksymalnym rozmiarze. Jeśli pole będzie mniejsze, singularity może z niego wydostać.
+
+  Generatory pola zabezpieczającego należy rozmieścić na planie kwadratu, zachowując odstęp 7 kafelków między każdym generatorem.
+
+  <Box>
+    <GuideEntityEmbed Entity="ContainmentFieldGenerator" Caption=""/>
+    <GuideEntityEmbed Entity="ContainmentField" Caption="" Rotation="90"/>
+    <GuideEntityEmbed Entity="ContainmentFieldGenerator" Caption=""/>
+  </Box>
+
+  ## Poziomy mocy i rozkład
+  Ponieważ singularity emituje promieniowanie, ulegają rozkładowi, tracąc z czasem swoją moc.
+
+  Aby przeciwdziałać temu rozkładowi, akcelerator cząstek emituje cząstki, które zderzają się z singularity, zasilając ją i podtrzymując.
+
+  Singularity mają określone poziomy mocy, które decydują o ich mocy promieniowania.
+  Inżynierowie mogą zwiększać lub zmniejszać poziom mocy singularity, regulując go na komputerze sterującym akceleratora cząstek.
+
+  Akceleratory cząstek zwykle działają w zakresie poziomów mocy od 1 do 3, co przekłada się na poziom mocy singularity od 1 do 3.
+
+  Poziomy mocy określają również wielkość singularity – wyższe poziomy mocy pozwalają utrzymać większe singularity, które są w stanie wytworzyć więcej mocy.
+
+  ## Wytwarzanie energii
+  Singularity wytwarza energię poprzez przechwytywanie emitowanego przez siebie promieniowania za pomocą kolektorów promieniowania.  <Box>
+    <GuideEntityEmbed Entity="RadiationCollector"/>
+    <GuideEntityEmbed Entity="PlasmaTank"/>
+  </Box>
+  Do działania potrzebują plazmy gazowej. Zbiorniki plazmy podłączone do kolektorów muszą być wypełnione plazmą, aby wytwarzać energię.
+
+  Możesz włączyć kolektory, używając [color=#ffe566][bold][keybind="Use"][/bold][/color].
+
+  Można również wysunąć zbiornik, wchodząc w interakcję z kolektorem za pomocą [color=#ffe566][bold][keybind="AltActivateItemInWorld"][/bold][/color].
+  Teraz możesz napełnić zbiornik plazmą za pomocą pojemnika z plazmą, a następnie ponownie umieścić go w kolektorze.
+
+  Maksymalna moc, jaką może wytworzyć kolektor promieniowania, zależy od:
+  - ilości przechwytywanego promieniowania (czyli w praktyce od poziomu mocy singularity)
+  - ilości plazmy w podłączonym zbiorniku
+
+  Z upływem czasu kolektor wyczerpie plazmę ze zbiornika, co spowoduje spadek jego efektywnej mocy wyjściowej.
+  W końcu zbiornik zostanie opróżniony, a kolektor przestanie wytwarzać energię. Pamiętaj, aby uzupełniać zbiorniki!
+
+  ## Ochrona przed promieniowaniem
+  Singularity emituje ogromne ilości promieniowania, które może zabić członków załogi nieposiadających odpowiedniej ochrony.
+  Podczas pracy w pobliżu Singularity należy nosić kombinezon przeciwpromieniowy lub kombinezon inżynieryjny.
+  Nie wyeliminuje to całkowicie promieniowania, ale zmniejszy otrzymywane obrażenia.
+
+  <Box>
+    <GuideEntityEmbed Entity="ClothingOuterHardsuitEngineering"/>
+  </Box>
+
+  <Box>
+    <GuideEntityEmbed Entity="ClosetRadiationSuit"/>
+    <GuideEntityEmbed Entity="ClothingOuterSuitRad"/>
+    <GuideEntityEmbed Entity="GeigerCounter"/>
+  </Box>
+
+  Główny Inżynier dysponuje specjalnym kombinezonem ochronnym, który całkowicie eliminuje wszelkie obrażenia od promieniowania, co pozwala mu pracować w pobliżu singularity bez obawy o narastające z czasem uszkodzenia spowodowane promieniowaniem.
+
+  ## Właściwości singularity
+ Singularity ma kilka właściwości, które sprawiają, że jest ona zarówno niebezpieczna, jak i przydatna do wytwarzania energii:
+ - Wywiera silne przyciąganie grawitacyjne, które może wciągać obiekty i członków załogi.
+ - Może trwale zniszczyć każdy obiekt, który się z nim zetknie, niezależnie od tego, czy jest to członek załogi, czy sprzęt stacji. Każdy obiekt pochłonięty przez singularity zostaje utracony na zawsze i zasila ją.
+  - Nieustannie emituje promieniowanie, które może zaszkodzić członkom załogi nieposiadającym odpowiedniej ochrony.
+  - Singularity może z czasem ulegać rozpadowi, tracąc moc i zmniejszając emisję promieniowania.
+
+  ## Uciekające Singularity (Singuloose)
+  Jeśli singularity wydostanie się z pola zabezpieczającego, zacznie pochłaniać stację, niszcząc wszystko na swojej drodze.
+  Im więcej pochłania, tym bardziej się powiększa, co utrudnia jej ponowne uwięzienie.
+
+  Singularity można zniszczyć, wystrzeliwując w nią antycząstki za pomocą przenośnego spowalniacza cząstek, ale jest to ryzykowna i niebezpieczna operacja, która wymaga starannego planowania i wykonania.
+  Często do zniszczenia singularity potrzeba wielu spowalniaczy strzelających jednocześnie.
+
+  Przenośne spowalniacze cząstek mogą być albo zbadane i wyprodukowane przez Dział Badań i Rozwoju, albo kupione w zaopatrzeniu.
+
+  <Box>
+    <GuideEntityEmbed Entity="WeaponParticleDecelerator"/>
+  </Box>
+
+</Document>

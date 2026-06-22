@@ -1,0 +1,105 @@
+<!--
+SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+  # Singularity / Tesla
+
+  Singularity / Tesla może dostarczać [color=#e8c878]nieskończoną moc[/color] przez całą zmianę, co czyni je cennym atutem stacji.
+
+  Z równą łatwością może jednak [color=#ff8a8a]zniszczyć całą stację[/color], dlatego wymaga starannego przygotowania i monitorowania, aby zapobiec [bold]wypadkowi[/bold].
+
+  # Konfiguracja
+  Oba generatory wymagają tych samych podstawowych kroków konfiguracyjnych, ale mają różne podsystemy i wymagania.
+
+  ## Pole zabezpieczające
+  Pole zabezpieczające to wielopłytkowe pole świetlne, które odpycha singularity i teslę, zapobiegając jej ucieczce.
+
+  Lasery emiterów i pola zabezpieczające mogą również powodować uszkodzenia i/lub wyrzucić cię w przestrzeń kosmiczną; [color=#e8c878]unikaj ich dotykania[/color], gdy są aktywne.
+
+  <Box>
+    <GuideEntityEmbed Entity="Emitter"/>
+    <GuideEntityEmbed Entity="ContainmentFieldGenerator"/>
+    <GuideEntityEmbed Entity="ContainmentField"/>
+  </Box>
+
+  Pola zabezpieczające są generowane pomiędzy aktywnymi generatorami pól zabezpieczających, które są zasilane przez emitery.
+
+  Generator pola zabezpieczającego może wygenerować pole zabezpieczające, jeśli:
+  - generator został włączony,
+  - inny generator pola znajduje się w odległości do 8 pól,
+  - oraz generatory pól znajdują się na tej samej osi kardynalnej.
+
+  Oznacza to, że maksymalna długość pola zabezpieczającego wynosi 7 pól.
+
+  Generator pola zabezpieczającego można włączyć używając [color=#ffe566][bold][keybind="Use"][/bold][/color].
+  Generatory pola zabezpieczającego nie będą działać, jeśli nie zostaną włączone, nawet po trafieniu emiterem. Pamiętaj, aby włączyć generator pola!
+
+  Generator pola zabezpieczającego posiada wewnętrzny poziom energii, który uzupełnia się poprzez trafienie go emiterem. Gdy generator pola zabezpieczającego zgromadzi wystarczającą ilość energii, wygeneruje pole zabezpieczające.
+
+  Poziom energii będzie naturalnie zanikał z upływem czasu, a pole zniknie, gdy poziom energii osiągnie zero po pewnym opóźnieniu.
+
+  Gdy pole zabezpieczające jest aktywne, nie można wyłączyć generatora pola ani go odkręcić. Aby wyłączyć generator, należy poczekać, aż pole zaniknie.
+
+  <Box>
+    <GuideEntityEmbed Entity="ContainmentFieldGenerator" Caption=""/>
+    <GuideEntityEmbed Entity="ContainmentField" Caption="" Rotation="90" Margin="0"/>
+    <GuideEntityEmbed Entity="ContainmentField" Caption="" Rotation="90" Margin="0"/>
+    <GuideEntityEmbed Entity="ContainmentField" Caption="" Rotation="90" Margin="0"/>
+    <GuideEntityEmbed Entity="ContainmentFieldGenerator" Caption=""/>
+  </Box>
+
+  ## Emitery
+  Emitery to urządzenia zasilające generatory pola zabezpieczającego.
+
+  <Box>
+    <GuideEntityEmbed Entity="Emitter"/>
+  </Box>
+
+  Emitery są podłączone do kabli średnionapięciowych i emitują promienie laserowe tak długo, jak długo są zasilane i włączone.
+
+  Zaleca się [color=#e8c878]zablokowanie emiterów[/color] za pomocą [color=#ffe566][bold][keybind="AltActivateItemInWorld"][/bold][/color], aby zapobiec sytuacji, w której sabotażyści mogliby uwolnić singularity lub teslę poprzez zwykłe wyłączenie pola.
+
+  ## Akcelerator cząstek
+  Akcelerator cząstek (PA) to struktura składająca się z kilku bloków, która wystrzeliwuje przyspieszone cząstki ze swoich emiterów.
+
+  <Box>
+    <GuideEntityEmbed Entity="ParticleAcceleratorEndCap" Caption="" Margin="0"/>
+  </Box>
+
+  <Box>
+    <GuideEntityEmbed Entity="ParticleAcceleratorControlBox" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="ParticleAcceleratorFuelChamber" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="CableMV" Caption="" Margin="0"/>
+  </Box>
+
+  <Box>
+    <GuideEntityEmbed Entity="ParticleAcceleratorPowerBox" Caption="" Margin="0"/>
+  </Box>
+
+  <Box>
+    <GuideEntityEmbed Entity="ParticleAcceleratorEmitterStarboard" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="ParticleAcceleratorEmitterFore" Caption="" Margin="0"/>
+    <GuideEntityEmbed Entity="ParticleAcceleratorEmitterPort" Caption="" Margin="0"/>
+  </Box>
+
+  Niektóre stacje dysponują już niedokończonym akceleratorem cząstek.
+  Aby go wybudować, należy najpierw upewnić się, że pod skrzynką zasilającą akceleratora znajduje się kabel średnionapięciowy, przykręcić wszystkie elementy, a następnie podłączyć kabel niskonapięciowy do każdego z nich.
+
+  <Box>
+    <GuideEntityEmbed Entity="CableApcStack"/>
+  </Box>
+
+  Następnie przykręć panele za pomocą śrubokręta.
+  [color=#e8c878]Zeskanuj elementy[/color] za pomocą komputera sterującego akceleratorem cząstek, aby sprawdzić, czy działa (system akceleratora cząstek nie będzie działał, jeśli go nie zeskanujesz!).
+  Jeśli system wyświetli komunikat o niekompletności, sprawdź, czego brakuje.
+
+  <Box>
+    <GuideEntityEmbed Entity="ParticleAcceleratorControlBox"/>
+  </Box>
+
+</Document>

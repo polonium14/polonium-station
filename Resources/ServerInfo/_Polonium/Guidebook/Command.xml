@@ -1,0 +1,67 @@
+<!--
+SPDX-FileCopyrightText: 2024 UBlueberry <161545003+UBlueberry@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+# Dowództwo
+Kierownicy każdego działu łączą się, tworząc dział [color=#8ec8ff]Dowództwa[/color], siłę, z którą trzeba się liczyć i zarządców stacji. Zazwyczaj mają dostęp do specjalnego sprzętu i własne pokoje. Często są poszukiwani (żywi lub martwi).
+
+## Personel
+[color=#8ec8ff]Dowództwo[/color] składa się z szefów każdego działu, którymi są [color=#b8ff9e]Kierownik Personelu[/color], [color=#ff8a8a]Komendant Ochrony[/color], [color=#9dd4f5]Ordynator[/color], [color=#ffc966]Naczelny Inżynier[/color], [color=#e8a0ff]Kierownik Badań[/color], [color=#e8c878]Kwatermistrz[/color] i przede wszystkim, [color=#8ec8ff]Kapitan[/color].
+  <Box>
+    <GuideEntityEmbed Entity="ToyFigurineCaptain" Caption="Captain"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="ToyFigurineHeadOfPersonnel" Caption="HoP"/>
+    <GuideEntityEmbed Entity="ToyFigurineHeadOfSecurity" Caption="HoS"/>
+    <GuideEntityEmbed Entity="ToyFigurineChiefMedicalOfficer" Caption="CMO"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="ToyFigurineChiefEngineer" Caption="CE"/>
+    <GuideEntityEmbed Entity="ToyFigurineResearchDirector" Caption="RD"/>
+    <GuideEntityEmbed Entity="ToyFigurineQuartermaster" Caption="QM"/>
+  </Box>
+
+## Przejmowanie kontroli
+Gratulacje z okazji awansu! Oprócz całej dodatkowej papierkowej roboty, twoje nowe [color=#e8c878]obowiązki[/color] obejmują prowadzenie działu, wprowadzanie zmian i wybieranie priorytetów, dbanie o bezpieczeństwo personelu i sprzętu oraz robienie wszystkiego, co w twojej mocy, aby lenić się, podczas gdy twoi poplecznicy wykonują całą pracę.
+
+Nie zapomnij, nadal masz pracę! Twoje fantazyjne narzędzia nie dają ci dnia wolnego; nadal musisz uzupełniać braki kadrowe, pomagać pracownikom, którzy sobie nie radzą, i uczyć nowych pracowników.
+
+Może ci ujść na sucho samo siedzenie i pozwalanie ludziom, by cię nienawidzili, ale mądrzej jest być aktywnym i pracować razem z nimi.
+Rozmawiaj ze swoimi pracownikami. Poznaj ich poziom doświadczenia i preferencje dotyczące zadań i rozważ przydzielenie ich na podstawie tych dwóch czynników.
+
+## Twoja szafka
+
+Aby poradzić sobie z nowymi, niszczącymi duszę zadaniami, każdy kierownik otrzymuje specjalne przedmioty, którymi może kierować podwładnymi. Większość twoich nowych, błyszczących narzędzi można znaleźć w twojej [color=#e8c878]szafce[/color].
+  <Box>
+    <GuideEntityEmbed Entity="LockerCaptain"/>
+  </Box>
+
+Twój [color=#e8c878]pilot[/color] jest bardzo prosty, ale głęboko niedoceniany. Mała, ale potężna siła, twój pilot może otwierać i zamykać [color=#e8c878]śluzy[/color], obracać [color=#e8c878]rygle[/color], aby je zablokować, lub przełączać [color=#e8c878]dostęp awaryjny[/color]. Może to robić z odległości.
+  <Box>
+    <GuideEntityEmbed Entity="DoorRemoteCommand"/>
+  </Box>
+Pilot wpływa na to, gdzie ludzie się przemieszczają. Kierownicy mogą zablokować personelowi dostęp do niebezpiecznych obszarów lub wpuścić kogoś, aby szybko coś zabrał.
+
+Masz również dostęp do własnego kanału [color=#8ec8ff]Dowództwa[/color], jak każdy inny dział. Jednak twój jest szczególnie wyjątkowy, ponieważ ludzie, którzy cię słyszą, mają [color=#e8c878]całe działy[/color] na wyciągnięcie ręki.
+Używaj go do komunikacji z innymi kierownikami i bądź przedstawicielem tego, czego chcą lub potrzebują twoi pracownicy.
+
+[color=#8ec8ff]Kapitan[/color] i [color=#b8ff9e]Kierownik Personelu[/color] otrzymują dostęp do lukratywnego [color=#e8c878]głównego klucza szyfrującego[/color], pozwalającego im dostroić się do każdego kanału radiowego na stacji. Jest to niezwykle cenne, ponieważ możesz koordynować działania między działami samodzielnie, bez konieczności przekazywania informacji innemu szefowi.
+[color=#e8c878]Nie zmarnuj tej kluczowej przewagi![/color]
+  <Box>
+    <GuideEntityEmbed Entity="ClothingHeadsetCommand"/>
+    <GuideEntityEmbed Entity="EncryptionKeyStationMaster"/>
+  </Box>
+
+Aby bagno papierkowej roboty (które z pewnością cię przytłoczy) było jeszcze trudniejsze do opanowania, hojnie podarowano ci [color=#e8c878]pieczątkę[/color] w twojej szafce. Używaj jej do podpisywania dokumentów. Po ostemplowaniu nie można go edytować. Najpierw go przejrzyj.
+  <Box>
+    <GuideEntityEmbed Entity="RubberStampCaptain"/>
+  </Box>
+
+## Czerwony telefon
+
+Na wielu stacjach [color=#7eb8ff]Nanotrasen[/color] dostępny jest [color=#e8c878]Czerwony Telefon[/color] — linia bezpośrednia do pilnego kontaktowania się z [color=#7dffa8]Centralnym Dowództwem[/color]. Pełna polityka korporacyjna: [textlink="Czerwony Telefon" link="RedPhoneSOP"].
+</Document>

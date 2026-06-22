@@ -1,0 +1,54 @@
+<!--
+SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+  # Oczyszczacz powietrza
+  Oczyszczacz powietrza odgrywa kluczową rolę w utrzymaniu czystego powietrza.
+  Jego głównym zadaniem jest usuwanie niepożądanych gazów z otaczającego go powietrza.
+  <Box>
+    <GuideEntityEmbed Entity="GasVentScrubber"/>
+  </Box>
+  Aby urządzenie mogło działać, konieczne jest podłączenie go do [textlink="źródła zasilania" link="Power"] za pomocą pobliskiego [textlink="kabla niskonapięciowego" link="VoltageNetworks"].
+
+  Domyślnym działaniem oczyszczacza powietrza jest usuwanie wszystkich gazów z otaczającej go przestrzeni, z wyjątkiem azotu i tlenu. Urządzenie będzie kontynuowało tę czynność, dopóki nie otrzyma odpowiedniego polecenia od [textlink="połączonego" link="Networking"] [textlink="alarmu atmosferycznego" link="AirAlarms"].
+
+  Oczyszczacz można zespawać dowolnym narzędziem spawalniczym, aby zatrzymać jego działanie.
+
+  ## Opcje konfiguracji
+  Oczyszczacz powietrza zyskuje dodatkową funkcjonalność po [textlink="połączeniu" link="Networking"] z [textlink="alarmem atmosferycznym" link="AirAlarms"].
+
+  Gazy, które mają być poddane oczyszczaniu, można określić w menu rozwijanym "Filtry". Należy pamiętać, że ustawienia te zostaną zresetowane w przypadku zmiany trybu działania [textlink="alarmu atmosferycznego" link="AirAlarms"].
+
+  Oczyszczacze powietrza mają dwie opcje "trybu pracy": filtrowanie i zasysanie.
+  - Tryb filtrowania oczyszcza gazy zgodnie z ustawieniami filtrów gazowych.
+  - Tryb zasysania pomija wszystkie filtry gazowe i odsysają wszystkie gazy z otoczenia.
+
+  Oba te tryby są ograniczone przez ustawienie prędkości, które określa wydajność (w litrach), z jaką oczyszczacz zasysa gazy z otaczającej go atmosfery.
+
+  Oczyszczacze powietrza posiadają również tryb "WideNet", który zwiększa zasięg działania urządzenia. Zazwyczaj oczyszczacz oczyszcza powietrze na jednym polu, z którym się styka.
+  W trybie WideNet oczyszczacz usuwa gazy z czterech pól otaczających urządzenie, jak pokazano poniżej:
+
+  <Box>
+    <GuideEntityEmbed Entity="FloorTileItemSteel" Caption=""/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="FloorTileItemSteel" Caption=""/>
+    <GuideEntityEmbed Entity="GasVentScrubber" Caption=""/>
+    <GuideEntityEmbed Entity="FloorTileItemSteel" Caption=""/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="FloorTileItemSteel" Caption=""/>
+  </Box>
+
+  W ten sposób efektywnie zwiększa się jego całkowita prędkość, ponieważ oczyszczacze powietrza będą teraz oczyszczać powietrze na 5 kafelkach jednocześnie.
+
+  Oczyszczacze powietrza [textlink="połączone" link="Networking"] z [textlink="alarmami atmosferycznymi" link="AirAlarms"], które znajdują się w trybue automatycznym włączą tryb WideNet w ramach trybu "Filtrowanie (szerokie)", gdy w powietrzu zostanie wykryte wysokie stężenie niepożądanych gazów.
+
+  Tryb WideNet doskonale sprawdza się w szybkim usuwaniu dużych ilości trytu z komór spalania plazmowego.
+
+</Document>

@@ -1,0 +1,40 @@
+<!--
+SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+SPDX-FileCopyrightText: 2023 Myakot <30875116+Myakot@users.noreply.github.com>
+SPDX-FileCopyrightText: 2023 end <72604018+laok233@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Iztok Bajcar <50874197+iztokbajcar@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Kira Bridgeton <161087999+Verbalase@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 MjrLandWhale <brandonemitch@gmail.com>
+SPDX-FileCopyrightText: 2024 Terraspark4941 <terraspark4941@gmail.com>
+SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+  # Pożary
+  Pożary są prawdopodobnie najniebezpieczniejszym zjawiskiem atmosferycznym, jakie może wystąpić na stacji.
+
+  <Box>
+    <GuideEntityEmbed Entity="Firelock" Caption=""/>
+    <GuideEntityEmbed Entity="FirelockGlass" Caption=""/>
+  </Box>
+
+  Często wytwarzają one gazy pod wysokim ciśnieniem i wysokiej temperaturze, które mogą szybko rozprzestrzenić się po całej stacji, jeśli komory przeciwpożarowe lub drzwi zostaną otwarte nierozważnie.
+
+  Jeśli ludzie utknęli w ogniu, mogą szybko stracić przytomność, zginąć, a nawet spalić się na popiół, co uniemożliwi ich reanimację.
+
+  ## Gaszenie pożarów
+  Podstawowymi składnikami każdego pożaru jest paliwo i tlen.
+  Usunięcie któregokolwiek z tych dwóch elementów spowoduje ugaszenie pożaru.
+  Na przykład pożary, do których nie dociera tlen, powoli wygasają same, podobnie jak pożary, którym brakuje paliwa.
+
+  Wystawienie ognia na działanie przestrzeni kosmicznej spowoduje jego ugaszenie, ponieważ cały gaz po prostu rozproszy się w przestrzeni.
+  Następnie można [textlink="zacząć naprawiać" link="ExpandingRepairingStation"] [textlink="rozszczelnienie kadłuba statku" link="Spacing"] i dokonać wyrównania ciśnienia w tym obszarze.
+
+  ## Wskazówki
+  - [bold]Poznaj oznaki zbliżającego się pożaru.[/bold] Jeśli w danym obszarze znajdują się łatwopalne gazy, to tylko kwestia czasu, zanim nieostrożny pasażer wywoła pożar. Postaraj się odizolować ten obszar i jak najszybciej usunąć gazy.
+  - [bold]Zapobiegaj rozprzestrzenianiu się gazów za pomocą projektora holofan.[/bold] Przepuszczenie gazów przez śluzę przeciwpożarową może sprawić, że inne pomieszczenia staną się niebezpieczne. Zwiększa to liczbę pomieszczeń, które musisz naprawić.
+</Document>

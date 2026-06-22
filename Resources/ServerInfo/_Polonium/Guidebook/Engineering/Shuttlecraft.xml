@@ -1,0 +1,149 @@
+<!--
+SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+SPDX-FileCopyrightText: 2023 end <72604018+laok233@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Kira Bridgeton <161087999+Verbalase@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Terraspark4941 <terraspark4941@gmail.com>
+SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+  # Budowa wachadłowców
+
+  Budowa wahadłowców jest prosta, choć dość kosztowna i trudna do zrealizowania w ciągu godziny.
+
+  To świetne zajęcie, jeśli masz sporo wolnego czasu i szukasz małego wyzwania.
+
+  ## Pierwsze kroki
+  <Box>Wymagane części:</Box>
+  <Box>
+  <GuideEntityEmbed Entity="Thruster"/>
+  <GuideEntityEmbed Entity="Gyroscope"/>
+  <GuideEntityEmbed Entity="ComputerShuttle"/>
+  <GuideEntityEmbed Entity="SubstationBasic"/>
+  <GuideEntityEmbed Entity="PortableGeneratorPacman" Caption="P.A.C.M.A.N." />
+  </Box>
+  <Box>
+  <GuideEntityEmbed Entity="CableHVStack"/>
+  <GuideEntityEmbed Entity="CableMVStack"/>
+  <GuideEntityEmbed Entity="CableApcStack"/>
+  <GuideEntityEmbed Entity="APCBasic"/>
+  </Box>
+
+  <Box>Części opcjonalne:</Box>
+  <Box>
+  <GuideEntityEmbed Entity="AirCanister"/>
+  <GuideEntityEmbed Entity="LightTube" Caption="światła"/>
+  <GuideEntityEmbed Entity="AirlockGlassShuttle"/>
+  <GuideEntityEmbed Entity="SMESBasic"/>
+  </Box>
+  <Box>
+  <GuideEntityEmbed Entity="MobCorgiIan"/>
+  <GuideEntityEmbed Entity="NuclearBomb"/>
+  </Box>
+
+  ## Podstawa
+  Do wykonania tego etapu będziesz potrzebować stali, prętów metalowych oraz płytek podłogowych (opcjonalnie).
+
+  <Box>
+    <GuideEntityEmbed Entity="SheetSteel" Caption=""/>
+    <GuideEntityEmbed Entity="PartRodMetal" Caption=""/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="FloorTileItemSteel" Caption=""/>
+    <GuideEntityEmbed Entity="FloorTileItemDark" Caption=""/>
+    <GuideEntityEmbed Entity="FloorTileItemWhite" Caption=""/>
+  </Box>
+
+  Wyrusz w kosmos z blachami i prętami metalowymi w ręku i kliknij na krawędź stacji, aby umieścić kratownicę.
+
+  Umieść linię kratownicy w odległości około 3–4 kafelków od stacji, a następnie zacznij budować platformę z kratownicy.
+
+  Powtarzaj tę czynność, aż uzyskasz platformę o wymiarach co najmniej 3x3, połączoną ze stacją za pomocą pojedynczej linii kratownicy.
+
+  Po zakończeniu budowy podstawy promu możesz użyć nożyc do cięcia drutu, aby odciąć kratownicę łączącą nowy statek ze stacją.
+
+  Platforma ta jest traktowana jako odrębna siatka w stosunku do stacji, dlatego nie podlega grawitacji ani nie jest utrzymywana w miejscu przez kotwicę stacji — może się swobodnie przemieszczać.
+
+  Możesz dalej rozbudowywać platformę z kratownicy, klikając tuż przy jej krawędzi z prętami w ręku.
+
+  ## Porty dokujące
+  Śluzy promów pełnią funkcję portów dokujących, do których statki mogą bezpiecznie dokować przy stacjach.
+
+  Orientacja portów dokujących ma duże znaczenie, ponieważ decyduje o tym, do której ściany dokuje prom.
+
+  Mały numer umieszczony na spodzie portu dokującego określa kierunek tego portu.
+
+  <Box>
+    <GuideEntityEmbed Entity="AirlockShuttle"/>
+    <GuideEntityEmbed Entity="AirlockGlassShuttle"/>
+  </Box>
+
+  ## Sterowanie kierunkowe
+  Następnie, gdy uzyskasz już pożądany kształt, umieść i zamontuj silniki manewrowe na krawędziach.
+
+  <Box>
+    <GuideEntityEmbed Entity="Thruster" Caption="" Rotation="0"/>
+    <GuideEntityEmbed Entity="Thruster" Caption="" Rotation="90"/>
+    <GuideEntityEmbed Entity="Thruster" Caption="" Rotation="180"/>
+    <GuideEntityEmbed Entity="Thruster" Caption="" Rotation="270"/>
+  </Box>
+
+  Warto zamontować cztery silniki odrzutowe, po jednym z każdej strony platformy, aby zapewnić sobie możliwość poruszania się w dowolnym kierunku.
+
+  Aby działały, muszą być skierowane na zewnątrz, w przestrzeń kosmiczną, i nie uruchomią się, jeśli przed dyszą znajduje się kafelek.
+  Silniki można obracać — nawet te przykręcone — za pomocą [color=#ffe566][bold][keybind="RotateObjectClockwise"][/bold][/color] lub [color=#ffe566][bold][keybind="RotateObjectCounterclockwise"][/bold][/color], aby obrócić je w prawo lub w lewo.
+
+  Silniki można wyłączyć lub włączyć za pomocą [color=#ffe566][bold][keybind="Use"][/bold][/color]pustą ręką lub [color=#ffe566][bold][keybind="ActivateItemInWorld"][/bold][/color].
+
+  ## Sterowanie obrotem
+  Teraz, gdy masz już kontrolę nad kierunkiem ruchu, musisz zainstalować żyroskop, aby sterować obrotem.
+
+  <Box>
+    <GuideEntityEmbed Entity="Gyroscope"/>
+  </Box>
+  Umiejscowienie żyroskopu nie jest tak istotne jak w przypadku silników manewrowych, ale powinno znajdować się w miejscu, do którego masz łatwy dostęp i które jest podłączone do zasilania.
+
+  Uwaga: w przypadku obiektów o dużej masie do skutecznego obracania może być potrzebny więcej niż jeden żyroskop.
+
+  ## Zasilanie
+  Skoro masz już wszystkie systemy zainstalowane, musisz je podłączyć do zasilania.
+
+  W przypadku małych promów dobrym wyborem jest przenośny generator typu J.R.P.A.C.M.A.N. Dostarcza on prąd niskiego napięcia, więc nie musisz martwić się o transformatory.
+  Paliwo do generatora można zazwyczaj znaleźć w tunelach konserwacyjnych.
+
+  <Box HorizontalAlignment="Stretch">
+    <Box>
+      <GuideEntityEmbed Entity="PortableGeneratorJrPacman" Caption="J.R.P.A.C.M.A.N."/>
+    </Box>
+    <Box>
+      <GuideEntityEmbed Entity="WeldingFuelTankFull"/>
+    </Box>
+  </Box>
+
+  Niektóre stacje oferują jednak znacznie lepsze generatory oraz kompaktowe rozwiązania, takie jak Shuttle APU czy generator statyczny.
+  Urządzenia te wytwarzają napięcie wysokiego napięcia (WN), które trzeba następnie obniżyć do średniego (ŚN) i niskiego (NN).
+  Na szczęście stacje te zazwyczaj wyposażone są w montowane na ścianie tablice rozdzielcze przeznaczone właśnie do tego celu.
+
+  <Box HorizontalAlignment="Stretch">
+    <Box>
+      <GuideEntityEmbed Entity="GeneratorWallmountAPU"/>
+    </Box>
+    <Box>
+      <GuideEntityEmbed Entity="GeneratorBasic15kW"/>
+    </Box>
+    <Box>
+      <GuideEntityEmbed Entity="SubstationWallBasic"/>
+    </Box>
+  </Box>
+
+  ## Pilotowanie
+  Na koniec zamontuj komputer promu w dogodnym miejscu i upewnij się, że wszystkie silniki manewrowe i żyroskopy są zasilane (pamiętaj o podłączeniu sieci ŚN i NN!).
+  Jeśli tak jest, gratulacje! Powinieneś mieć sprawny wachadłowiec!
+
+  Sprawienie, by był on przyjazny dla załogi i wyglądał estetycznie, pozostawiamy jako zadanie dla czytelnika.
+</Document>

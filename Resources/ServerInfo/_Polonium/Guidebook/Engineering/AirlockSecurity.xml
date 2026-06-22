@@ -1,0 +1,88 @@
+<!--
+SPDX-FileCopyrightText: 2023 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Iztok Bajcar <50874197+iztokbajcar@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Kira Bridgeton <161087999+Verbalase@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Terraspark4941 <terraspark4941@gmail.com>
+SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+  # Ulepszenia śluz
+  Często zdarza się, że odważni ludzie próbują przejść przez zabezpieczoną śluzę, manipulując przy jej wewnętrznym okablowaniu.
+
+  Na szczęście w śluzach można zainstalować pewne zabezpieczenia, które utrudnią życie potencjalnym intruzom.
+
+  ## Śluzy o średnim poziomie zabezpieczenia
+  Najprostszym sposobem zapobiegania włamaniom jest zamontowanie zabezpieczonej blachy stalowej, która uniemożliwi dostęp do wewnętrznego okablowania śluzy.
+
+  Aby przekształcić podstawową śluzę w śluzę o średnim poziomie zabezpieczenia, potrzebne będą następujące materiały:
+  <Box HorizontalAlignment="Stretch">
+	  <Box>
+		  <GuideEntityEmbed Entity="SheetSteel" Caption="2 sztuki stali"/>
+	  </Box>
+	  <Box>
+		  <GuideEntityEmbed Entity="Screwdriver" Caption="Śrubokręt"/>
+	  </Box>
+	  <Box>
+		  <GuideEntityEmbed Entity="Welder" Caption="Spawarka"/>
+	  </Box>
+  </Box>
+
+  Aby ulepszyć podstawową śluzę:
+  - Otwórz panel serwisowy śluzy za pomocą śrubokręta.
+  - Zainstaluj stalową blachę w śluzie.
+  - Przyspawaj stalową blachę.
+  - Zamknij panel serwisowy za pomocą śrubokręta.
+
+  ## Śluzy o podwyższonym poziomie bezpieczeństwa
+  W przypadku śluz prowadzących do bardziej newralgicznych obszarów stacji zaleca się stosowanie skuteczniejszych środków zapobiegawczych. Śluzy o podwyższonym poziomie bezpieczeństwa są wyposażone we wzmocnione opancerzenie, które chroni ich wewnętrzną instalację elektryczną.
+
+  Aby przekształcić śluzę o średnim poziomie bezpieczeństwa w śluzę o wysokim poziomie bezpieczeństwa, potrzebne będą następujące materiały:
+  <Box HorizontalAlignment="Stretch">
+	  <Box>
+		  <GuideEntityEmbed Entity="SheetPlasteel" Caption="2 sztuki plastali"/>
+	  </Box>
+	  <Box>
+		  <GuideEntityEmbed Entity="Screwdriver" Caption="Śrubokręt"/>
+	  </Box>
+	  <Box>
+		  <GuideEntityEmbed Entity="Welder" Caption="Spawarka"/>
+	  </Box>
+  </Box>
+
+  Aby ulepszyć śluzę powietrzną o średnim poziomie bezpieczeństwa:
+  - Otwórz panel serwisowy śluzy za pomocą śrubokręta.
+  - Zainstaluj plastalową blachę w śluzie.
+  - Przyspawaj plastalową blachę.
+  - Zamknij panel serwisowy za pomocą śrubokręta.
+
+  ## Śluzy o maksymalnym poziomie bezpieczeństwa
+  Istnieje możliwość rozbudowy śluzy o wysokim poziomie bezpieczeństwa do śluzy o maksymalnym poziomie bezpieczeństwa. Śluzy o maksymalnym poziomie bezpieczeństwa są wyposażone w dodatkową warstwę siatki z drutu pod napięciem, która stanowi uzupełnienie pozostałych zabezpieczeń i może porazić prądem każdą nieuprawnioną osobę próbującą ingerować w działanie śluzy.
+
+  Aby przekształcić śluzę o wysokim poziomie bezpieczeństwa w śluzę o maksymalnym poziomie bezpieczeństwa, potrzebne będą następujące materiały:
+  <Box HorizontalAlignment="Stretch">
+	  <Box>
+		  <GuideEntityEmbed Entity="SheetPlasteel" Caption="2 sztuki plastali"/>
+	  </Box>
+    <Box>
+      <GuideEntityEmbed Entity="PartRodMetal" Caption="2 metalowe pręty"/>
+    </Box>
+	  <Box>
+		  <GuideEntityEmbed Entity="Screwdriver" Caption="Śrubokręt"/>
+	  </Box>
+	  <Box>
+		  <GuideEntityEmbed Entity="Welder" Caption="Spawarka"/>
+	  </Box>
+  </Box>
+
+  Aby ulepszyć śluzę o wysokim poziomie bezpieczeństwa:
+  - Otwórz panel serwisowy śluzy za pomocą śrubokręta.
+  - Zainstaluj plastalową blachę w śluzie.
+  - Przyspawaj plastalową blachę.
+  - Zainstaluj metalowe pręty w śluzie.
+  - Zamknij panel serwisowy za pomocą śrubokręta.
+</Document>

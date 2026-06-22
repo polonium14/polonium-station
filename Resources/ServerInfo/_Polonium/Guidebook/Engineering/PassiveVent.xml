@@ -1,0 +1,23 @@
+<!--
+SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+  # Pasywny otwór wentylacyjny
+  Pasywny otwór wentylacyjny to niezwykle prosta konstrukcja.
+  Służy on jako bezpośrednie połączenie między siecią rurociągową, do której jest podłączony, a otaczającą atmosferą.
+  <Box>
+    <GuideEntityEmbed Entity="GasPassiveVent"/>
+  </Box>
+  Gazy mogą swobodnie przemieszczać się między pasywnym otworem wentylacyjnym a atmosferą, z którą jest on połączony.
+  Pasywny otwór wentylacyjny do działania nie wymaga [textlink="zasilania" link="Power"].
+
+  Pasywny otwór wentylacyjny jest powszechnie spotykany w [textlink="zbiornikach gazu" link="GasMiningAndStorage"]i podłączony jest do sieci odprowadzania gazów stacji.
+  Jest to prosty i niezawodny sposób na odprowadzanie gazów z koparki gazu lub bezpieczne usuwanie niepożądanych gazów w przestrzeń kosmiczną.
+
+  Pasywny otwór wentylacyjny można zaspawać dowolnym narzędziem spawalniczym, aby uniemożliwić jego działanie.
+</Document>

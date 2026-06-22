@@ -1,0 +1,88 @@
+<!--
+SPDX-FileCopyrightText: 2023 Sir Winters <7543955+Owai-Seek@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Iztok Bajcar <50874197+iztokbajcar@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Tunguso4ka <71643624+Tunguso4ka@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 UBlueberry <161545003+UBlueberry@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Fenn <162015305+TooSillyFennec@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 corresp0nd <46357632+corresp0nd@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+# Chemist
+Now you've done it. You picked the one job where -math- is mandatory. Grab your beaker, pull up a chair, and get cracking, it's time to cook up some chems.
+
+While chemists primarily make medications, there's a very wide variety of chemicals that can be made, all of which are showcased in the Chemicals entry of the Guidebook.
+
+[textlink="Click here to see a complete list of chemicals." link="Chemicals"]
+
+## Equipment:
+
+  <Box>
+    <GuideEntityEmbed Entity="ChemDispenser"/>
+    <GuideEntityEmbed Entity="ChemBag"/>
+    <GuideEntityEmbed Entity="KitchenReagentGrinder"/>
+    <GuideEntityEmbed Entity="ChemMaster"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="LargeBeaker"/>
+    <GuideEntityEmbed Entity="ChemistryEmptyBottle01"/>
+    <GuideEntityEmbed Entity="HandLabeler"/>
+    <GuideEntityEmbed Entity="Syringe"/>
+    <GuideEntityEmbed Entity="PillCanister"/>
+  </Box>
+
+## The Basics:
+Chemistry is fairly straightforward once you know what to expect. Here's a simple, step-by-step process on how to begin.
+
+- Grab a beaker, Pill Canister, and if desired, some Bottles.
+- Place the beaker in the Chemical Dispenser, and Pill Canister (or bottle) in the Chem Master.
+- Open the Chemical Dispenser UI, and make your mix. Recipes are in other sections of the guidebook.
+- Alt-click the dispenser to remove your beaker, and place it in the Chem Master.
+- Open the Chem Master UI. On the Input tab, move your mix into the buffer.
+- Move to the Output tab, customise your pill, and press the Create button.
+- Alt-click the Chem Master to get the pill bottle out. You may have to remove the beaker first.
+- Click on a table, crate, or another surface to empty the pill bottle if desired. Alternatively, store or empty it into another storage container.
+
+That's it, you've made your first set of pills! Consider checking with Medical Doctors and other crew to see what else may be requested, refilling the medical kits in medbay storage, or just experimenting!
+
+You can also use the hand labeler to organize individual bottles or bags without using the Chem Master labeling system.
+
+## Extra Content:
+
+  Chemistry is a versatile role with plenty to experiment with. Generally, the only requirement is making enough chemicals to heal any patients that come in, but how you do so, and what you do afterward, is up to you.
+
+  This job requires a lot of trial and error, so it's up to you to figure out what to make with the tools available to you. These tools and products can be dangerous or helpful, for example...
+
+  <Box>
+    <GuideEntityEmbed Entity="ModularGrenade"/>
+    <GuideEntityEmbed Entity="CableApcStack"/>
+    <GuideEntityEmbed Entity="ChemicalPayload"/>
+    <GuideEntityEmbed Entity="TimerTrigger"/>
+  </Box>
+  Have you tried making Fluorosurfactant before? What about Napalm?
+
+  <Box>
+    <GuideEntityEmbed Entity="RegenerativeMesh"/>
+    <GuideEntityEmbed Entity="MedicatedSuture"/>
+  </Box>
+  Sometimes you will see "advanced" topicals, but did you know that you can make them as well?
+
+  Ask the chef to borrow their microwave and try out the following recipes:
+
+  - 1 Poppy
+  - 1 Bruise Pack
+  - 1 Piece of Cloth
+  - 20u Tranexamic Acid
+  - 20u Cryptobiolin
+
+  or
+
+  - 1 Aloe
+  - 1 Ointment
+  - 1 Piece of Cloth
+  - 20u Oxandrolone
+  - 20u Sigynate
+</Document>

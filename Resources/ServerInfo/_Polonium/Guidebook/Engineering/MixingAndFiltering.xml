@@ -1,0 +1,63 @@
+<!--
+SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+  # Mieszanie i filtrowanie
+    Mieszalniki i filtry gazowe są niezbędnymi urządzeniami służącymi do regulacji składu gazów w [textlink="sieci rurociągów" link="PipeNetworks"].
+  <Box>
+    <GuideEntityEmbed Entity="GasMixer"/>
+    <GuideEntityEmbed Entity="GasFilter"/>
+  </Box>
+
+  ## Mieszalniki gazu
+  Mieszalniki gazu służą do mieszania gazów w określonych proporcjach w [textlink="sieciach rurociągowych" link="PipeNetworks"].
+  Są one niezbędne do tworzenia kontrolowanych mieszanek gazowych do różnych zastosowań.
+
+  Mieszalniki gazu mają 3 przyłącza: 2 wejścia i 1 wyjście, jak pokazano poniżej:
+  <Box>
+    <GuideEntityEmbed Entity="GasPipeStraight" Caption="Primary" Rotation="90"/>
+    <GuideEntityEmbed Entity="GasMixer" Caption="" Rotation="90"/>
+    <GuideEntityEmbed Entity="GasPipeStraight" Caption="Output" Rotation="90"/>
+  </Box>
+<Box>
+  <GuideEntityEmbed Entity="GasPipeStraight" Caption="Side"/>
+</Box>
+
+  Mieszalniki gazów nadal będą przygotowywać żądaną mieszankę gazową, nawet jeśli jeden z gazów wejściowych nie jest dostępny. Na przykład:
+  - Jeśli żądana mieszanka to 22% tlenu i 78% azotu, ale nie ma dostępnego tlenu, mieszalnik nie będzie działał, dopóki tlen nie będzie dostępny.
+  - Jeśli tlen jest dostępny, ale pod ciśnieniem niższym niż wymagane do wytworzenia właściwej mieszanki przy żądanym ciśnieniu, mieszalnik nadal wytworzy mieszankę, ale ciśnienie wyjściowe będzie niższe niż żądane.
+
+  Mieszalniki gazów mieszają gazy na podstawie ciśnienia, a nie liczby moli. Może to powodować problemy, jeśli gazy mają różne temperatury. Na przykład:
+  - Załóżmy, że mieszalnik gazów ma za zadanie zmieszać tlen i azot w stosunku 1:2 przy określonym ciśnieniu.
+  - W tym przypadku azot ma temperaturę dwukrotnie wyższą niż tlen.
+  - Cieplejszy gaz ma większe ciśnienie, a zatem mniej moli na jednostkę objętości niż tlen.
+  - Z tego powodu azot będzie miał o połowę mniej moli w porównaniu z tlenem, gdy mieszalnik gazów spróbuje stworzyć mieszankę.
+  - Wynik będzie wynosił 1:1 zamiast 1:2. W rezultacie na 1 mol tlenu przypada 1 mol azotu, a nie 2 mole azotu na 1 mol tlenu.
+
+  Mieszalniki gazów mogą znaleźć zastosowanie w wielu różnych dziedzinach, na przykład:
+  - Mieszanie tlenu i azotu w celu uzyskania środowiska umożliwiającego oddychanie
+  - Mieszanie tlenu i plazmy w procesie spalania plazmowego w celu wytworzenia trytu
+
+  ## Filtr gazu
+  Filtry gazu służą do oddzielania gazów od mieszaniny w [textlink="sieciach rurociągowych" link="PipeNetworks"].
+
+  <Box>
+    <GuideEntityEmbed Entity="GasPipeStraight" Caption="Input" Rotation="90"/>
+    <GuideEntityEmbed Entity="GasFilter" Caption="" Rotation="90"/>
+    <GuideEntityEmbed Entity="GasPipeStraight" Caption="Output" Rotation="90"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="GasPipeStraight" Caption="Filtered Output"/>
+  </Box>
+
+  Filtry gazowe ulegną zablokowaniu i nie będą filtrować gazu, jeśli którekolwiek z wyjść zostanie zablokowane.
+
+  Filtry gazowe mogą być wykorzystywane w wielu różnych zastosowaniach, na przykład:
+  - do odfiltrowywania niepożądanych gazów z [textlink="sieci rurociągowych" link="PipeNetworks"]
+  - do oddzielania określonych gazów w celu ich magazynowania w sieci recyklingowej stacji
+</Document>

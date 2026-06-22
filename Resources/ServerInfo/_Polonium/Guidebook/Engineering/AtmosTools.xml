@@ -1,0 +1,60 @@
+<!--
+SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+  # Narzędzia atmosferyczne
+  Inżynierowie atmosferyczni dysponują tym samym podstawowym zestawem narzędzi co inżynierowie, ale mają również dostęp do dwóch nowych narzędzi: projektora holowentylatorowego i analizatora gazów.
+
+  <Box>
+    <GuideEntityEmbed Entity="HolofanProjector"/>
+    <GuideEntityEmbed Entity="GasAnalyzer"/>
+  </Box>
+
+  ## Projektor holowentylatorowy
+  Projektor holowentylatorowy to urządzenie, które może wyświetlać barierę z twardego światła, blokującą przepływ powietrza i gazów, a jednocześnie umożliwiającą ludziom swobodne przechodzenie.
+
+  <Box>
+    <GuideEntityEmbed Entity="HolofanProjector"/>
+    <GuideEntityEmbed Entity="HoloFan"/>
+  </Box>
+
+  Jest to niezwykle przydatne przy przemieszczaniu się między [textlink="śluzami przeciwpożarowymi" link="FireAndGasControl"] bez ryzyka przedostawania się gazu między pomieszczeniami, a także jako sygnał dla zwykłej załogi, że dane pomieszczenie może być niebezpieczne i nie należy do niego wchodzić.
+  Można to również wykorzystać do utworzenia tymczasowej bariery, która pozwoli załodze na szybkie przemieszczanie się między strefą z kontrolowanym ciśnieniem a strefą bez kontroli ciśnienia bez ryzyka przedostawania się powietrza z innych pomieszczeń.
+
+  Urządzenie posiada wewnętrzny akumulator, który zużywa się wraz z każdym użyciem. Można go naładować, wyjmując ogniwo zasilające i umieszczając je w ładowarce lub stacji ładującej.
+
+  Holowentylator umieszczony w pobliżu [textlink="śluzy przeciwpożarowej" link="FireAndGasControl"] wyłączają blokadę pożarową, umożliwiając jego ręczne otwarcie.
+
+  ## Analizator gazów
+  Analizator gazów to urządzenie służące do analizy składu gazowego otoczenia lub dowolnego [textlink="urządzenia atmosferycznego" link="GasManipulation"] zawierającego gaz.
+
+  <Box>
+    <GuideEntityEmbed Entity="GasAnalyzer"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="GasPipeBend" Caption=""/>
+    <GuideEntityEmbed Entity="GasPressurePump" Caption=""/>
+    <GuideEntityEmbed Entity="SignalControlledValve" Caption=""/>
+    <GuideEntityEmbed Entity="GasFilter" Caption=""/>
+    <GuideEntityEmbed Entity="StorageCanister" Caption=""/>
+    <GuideEntityEmbed Entity="GasThermoMachineFreezer" Caption=""/>
+  </Box>
+
+  Możesz skorzystać z analizatora gazu, klikając na [textlink="urządzenie" link="GasManipulation"] zawierające gaz lub klikając na powietrze w pomieszczeniu.
+
+  Po uruchomieniu analizator gazu wyświetli on następujące dane:
+  - Objętość mierzonego urządzenia (nie objętość gazu!)
+  - Ciśnienie całkowite gazu w kPa
+  - Temperaturę gazu w kelwinach (K) i stopniach Celsjusza (°C)
+  - Dokładny skład gazu w ilościach molowych oraz jako procent całkowitej objętości gazu
+
+  W dolnej części interfejsu użytkownika analizator gazów wyświetla wizualną informację o różnych [textlink="gazach" link="Gasses"] występujących w składzie, a także o ich względnych stężeniach.
+
+  Gdy analizator gazu bada [textlink="urządzenia" link="GasManipulation"] dwu i trójkanałowe (urządzenia z dwoma lub trzema wejściami/wyjściami), wyświetla skład każdego wejścia/wyjścia osobno. Jest to przydatne podczas rozwiązywania problemów instalacji przeznaczonych do [textlink="mieszania i filtrowania" link="MixingAndFiltering"] gazów.
+
+</Document>

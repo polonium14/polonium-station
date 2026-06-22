@@ -1,0 +1,23 @@
+<!--
+SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+  # Zawór ręczny
+  Zawór ręczny jest niezwykle prosty w działaniu.
+  W zależności od tego, czy jest otwarty, czy zamknięty, przepuszcza lub blokuje przepływ gazów.
+  <Box>
+    <GuideEntityEmbed Entity="GasValve"/>
+  </Box>
+
+  Gazy mogą swobodnie przepływać między obiema stronami bez żadnych ograniczeń.
+
+  Zawory ręczne znajdują zastosowanie w wielu różnych sytuacjach, na przykład:
+  - umożliwienie lub zablokowanie obejścia sieci recyrkulacyjnej, wyrzucając gazy odpadowe bezpośrednio do przestrzeni kosmicznej
+  - w celu podłączenia lub odłączenia termomaszyn grzejących/chłodzących od sieci dystrybucyjnej stacji
+
+</Document>

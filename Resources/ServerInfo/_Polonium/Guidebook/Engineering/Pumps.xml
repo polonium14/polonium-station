@@ -1,0 +1,56 @@
+<!--
+SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+# Pompki
+  Pompki stanowią główny sposób aktywnego przemieszczania gazów w [textlink="sieciach rurociągów." link="PipeNetworks"]
+  Pobierają gaz z jednej strony i tłoczą go na drugą.
+  Wyróżnia się dwa rodzaje pompek:
+
+  <Box>
+    <GuideEntityEmbed Entity="GasPressurePump" Caption="pompka ciśnieniowa"/>
+    <GuideEntityEmbed Entity="GasVolumePump" Caption="pompka objętościowa"/>
+  </Box>
+
+  Kilka ważnych informacji dotyczących pompek:
+  - Pompki [color=#e8c878]wymagają zasilania[/color] pobieranego z pobliskiego kabla niskiego napięcia.
+  - Wyjście pompki znajduje się po stronie z czerwonym paskiem.
+  - Gaz przez pompy nie może się cofać (chociaż jeśli używasz pompy wyłącznie w tym celu, powinieneś zamiast tego użyć [textlink="zaworu pasywnego" link="PassiveGate"]).
+  - Pompki nie mogą przepompowywać gazów do rur, w których ciśnienie lub objętość przekracza ich [color=#e8c878]limit[/color]. Powoduje to ich [color=#ff8a8a]zablokowanie[/color].
+
+  Pompki wyświetlają kolorową animację, gdy pracują.
+  Jeśli nie mają gazu do pompowania lub są zablokowane, wyświetlają migającą [color=#ff8a8a]czerwoną[/color] animację.
+  Pompki wyłączone, pozbawione zasilania lub nieprzykręcone nie wyświetlają żadnej animacji.
+
+  ## Pompki ciśnieniowe
+  Pompki ciśnieniowe to najpopularniejszy rodzaj pompek.
+  Przepompowują one gaz pod wpływem [color=#e8c878]ciśnienia[/color], dzięki czemu nadają się do precyzyjnej regulacji ciśnienia w rurze lub do wytwarzania próżni.
+
+  <Box>
+    <GuideEntityEmbed Entity="GasPressurePump" Caption="pompka ciśnieniowa"/>
+  </Box>
+
+  Pompka ciśnieniowa [color=#ff8a8a]nie może[/color] tłoczyć gazu do rurociągu, w którym ciśnienie jest wyższe lub równe ciśnieniu ustawionemu na pompce.
+
+  Na przykład, jeśli ciśnienie pompki jest ustawione na 500 kPa pompka ciśnieniowa nie może tłoczyć gazu do rurociągu, w którym panuje obecnie ciśnienie 500 kPa.
+
+  Pompki ciśnieniowe mogą wytworzyć ciśnienie maksymalne wynoszące [color=#ffb86b][protodata="GasPressurePump" comp="GasPressurePump" member="MaxTargetPressure"/] kPa[/color].
+  Jeśli spróbują wtłoczyć gaz do rurociągu pod ciśnieniem wyższym niż ta wartość, zostaną one [color=#ff8a8a]zablokowane[/color].
+
+  ## Pompki objętościowe
+  Pompki objętościowe stanowią alternatywny rodzaj pompy, w której przepływ gazu opiera się na jego [color=#e8c878]objętości[/color].
+
+  <Box>
+    <GuideEntityEmbed Entity="GasVolumePump" Caption="pompka objętościowa"/>
+  </Box>
+
+  Są one niezwykle przydatne do szybkiego transportu dużych ilości gazu.
+  Zazwyczaj pozwalają one osiągnąć wyższe ciśnienie niż pompy ciśnieniowe.
+
+  Chociaż pompy objętościowe działają na zasadzie objętości, ulegną one [color=#ff8a8a]zablokowaniu[/color], jeśli będą próbowały wtłoczyć gaz do rurociągu przy ciśnieniu wyższym niż [color=#ffb86b][protodata="GasVolumePump" comp="GasVolumePump" member="HigherThreshold"/] kPa[/color].
+</Document>

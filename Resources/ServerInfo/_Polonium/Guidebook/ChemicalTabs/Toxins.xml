@@ -1,0 +1,12 @@
+<!--
+SPDX-FileCopyrightText: 2024 f0x-n3rd <150924715+f0x-n3rd@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+# Toksyny
+Substancje chemiczne wymienione na tej liście zawierają toksyny, które wywołują określone skutki i mogą prowadzić do śmierci. Należy z nich korzystać w sposób odpowiedzialny.
+<GuideReagentGroupEmbed Group="Toxins"/>
+</Document>

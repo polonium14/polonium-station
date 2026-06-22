@@ -1,0 +1,31 @@
+<!--
+SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+  # Kondensatory gazu
+  Kondensatory gazu pobierają gazy i przekształcają je w postać ciekłą.
+
+  <Box>
+    <GuideEntityEmbed Entity="BaseGasCondenser"/>
+  </Box>
+
+  Na przykład para wodna może zostać skroplona do postaci wody w stanie ciekłym, tlen do postaci ciekłego tlenu i tak dalej.
+
+  Urządzenie posiada [textlink="przyłącze" link="PipeNetworks"] do doprowadzenia gazu oraz wewnętrzny zbiornik do przechowywania skroplonej cieczy.
+
+  Kondensator przestaje skraplać gaz, jeśli zbiornik jest pełny.
+  Możesz pobrać ciecz z kondensatora, wchodząc z nim w interakcję za pomocą dowolnego pustego pojemnika.
+
+  Kondensatory gazowe mogą przyjmować wiele gazów jako materiał wejściowy i skraplać je do postaci ciekłej.
+  Na przykład, jeśli wprowadzisz mieszaninę tlenu i azotu, w zbiorniku wyjściowym otrzymasz ciekły tlen i ciekły azot.
+
+  Ponieważ [textlink="departament chemii" link="Chemist"]dysponuje ograniczoną ilością odczynników w postaci płynnej, bardzo doceni pracę wykwalifikowanego technika atmosferycznego, który może dostarczyć potrzebne jej odczynniki.
+
+
+
+</Document>

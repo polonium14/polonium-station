@@ -1,0 +1,77 @@
+<!--
+SPDX-FileCopyrightText: 2023 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
+SPDX-FileCopyrightText: 2023 Julian Giebel <juliangiebel@live.de>
+SPDX-FileCopyrightText: 2023 end <72604018+laok233@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Iztok Bajcar <50874197+iztokbajcar@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Kira Bridgeton <161087999+Verbalase@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Terraspark4941 <terraspark4941@gmail.com>
+SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+  # Łączenie urządzeń
+  Stacja wymaga, aby urządzenia komunikowały się między sobą, aby mogły wykonywać swoje zadania.
+  [textlink="Alarmy atmosferyczne" link="AirAlarms"] muszą komunikować się z odpowiednimi urządzeniami, a [textlink="śluzy" link="Airlocks"] muszą być połączone, aby tworzyć prawidłowe śluzy powietrzne, i wiele więcej.
+
+  Odbywa się to za pomocą dwóch systemów: systemu Łączenia i systemu Listowania.
+
+  Do użycia tych systemów można użyć narzędzia Multitool lub programu Network Configurator.
+  Możesz przełączać się między różnymi systemami za pomocą skrótu klawiszowego [color=#ffe566][bold][keybind="AltActivateItemInHand"][/bold][/color] lub najeżdżając kursorem na urządzenie i używając skrótu [color=#ffe566][bold][keybind="AltActivateItemInWorld"][/bold][/color].
+
+  <Box HorizontalAlignment="Stretch">
+    <Box>
+      <GuideEntityEmbed Entity="Multitool"/>
+    </Box>
+    <Box>
+      <GuideEntityEmbed Entity="NetworkConfigurator"/>
+    </Box>
+  </Box>
+
+  Niektóre urządzenia wymagają uprawnień dostępu, aby można było je z nimi połączyćna przykład, aby połączyć urządzenia z [textlink="alarmem atmosferycznym" link="AirAlarms"].
+  W przypadku drzwi potrzebujesz uprawnień na poziomie tych drzwi, które chcesz połączyć.
+
+  ## System łączenia
+  System łączenia służy do bezpośredniego połączenia dwóch urządzeń, na przykład do połączenia jednych drzwi z innymi.
+
+  <Box>
+    <GuideEntityEmbed Entity="AirlockExternal"/>
+    <GuideEntityEmbed Entity="AirlockEngineering"/>
+    <GuideEntityEmbed Entity="BlastDoor"/>
+    <GuideEntityEmbed Entity="SignalButton"/>
+  </Box>
+
+  W systemie łączenia urządzenia posiadają [bold]porty[/bold], które mogą zarówno wysyłać, jak i odbierać sygnały.
+
+  Po najechaniu kursorem na port wyświetli się podpowiedź z opisem jego funkcji.
+  Na przykład w przypadku portów wyjściowych podane są warunki, w których wywołują one sygnał, a w przypadku portów wejściowych – jakie działanie podejmie urządzenie po otrzymaniu sygnału.
+
+  ## System listowania
+  System listowania służy do łączenia wielu urządzeń z jednym urządzeniem głównym, na przykład do podłączenia wielu czujników atmosferycznych do alarmu atmosferycznego.
+
+  <Box>
+    <GuideEntityEmbed Entity="AirAlarm" Caption=""/>
+    <GuideEntityEmbed Entity="GasVentPump" Caption=""/>
+    <GuideEntityEmbed Entity="GasVentScrubber" Caption=""/>
+    <GuideEntityEmbed Entity="AirSensor" Caption=""/>
+    <GuideEntityEmbed Entity="Firelock" Caption=""/>
+  </Box>
+
+  Każde urządzenie ma swój unikalny adres, który służy do jego identyfikacji w systemie listowania. Łącząc urządzenie z urządzeniem głównym, dodajesz adres tego urządzenia do listy urządzeń, z którymi urządzenie główne będzie się komunikować.
+
+  Możesz zapisać adres urządzenia w swoim narzędziu, wchodząc w interakcję z urządzeniem za pomocą [color=#ffe566][bold][keybind="Use"][/bold][/color].
+
+  Po zapisaniu listy urządzeń w narzędziu możesz powiązać je z urządzeniem głównym, wchodząc w interakcję z tym urządzeniem za pomocą [color=#ffe566][bold][keybind="Use"][/bold][/color], co spowoduje wyświetlenie okna dialogowego.
+
+  Interfejs użytkownika oferuje kilka opcji:
+  - Ustaw: Zastępuje bieżącą listę połączonych urządzeń urządzeniami zapisanymi w narzędziu.
+  - Dodaj: Dodaje urządzenia zapisane w narzędziu do bieżącej listy połączonych urządzeń.
+  - Wyczyść: Usuwa wszystkie połączone urządzenia z alarmu atmosferycznego.
+  - Kopiuj: Kopiuje listę aktualnie połączonych urządzeń do urządzenia.
+  - Pokaż: Rysuje linię między urządzeniem głównym a wszystkimi połączonymi urządzeniami. Jest to przydatne do wizualizacji obszaru, który obejmuje alarm powietrzny.
+
+  Jeśli chcesz wyczyścić narzędzie, możesz nacisnąć [color=#ffe566][bold][keybind="Use"][/bold][/color] na narzędziu lub użyć [color=#ffe566][bold][keybind="ActivateItemInHand"][/bold][/color], aby wyświetlić listę zapisanych urządzeń, a następnie nacisnąć przycisk "Wyczyść".
+</Document>

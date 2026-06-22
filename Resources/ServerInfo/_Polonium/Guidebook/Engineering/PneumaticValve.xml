@@ -1,0 +1,51 @@
+<!--
+SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+  # Zawór pneumatyczny
+  Zawór pneumatyczny to zawór dwukierunkowy sterowany za pomocą sygnału ciśnieniowego.
+  <Box>
+    <GuideEntityEmbed Entity="PressureControlledValve"/>
+  </Box>
+
+  Zawór pneumatyczny posiada 3 łącza: wejściowe, wyjściowe i sterujące.
+  Strona "wejściowa" będzie łączem wejściowo-wyjściowym o najwyższym ciśnieniu i może pełnić rolę strony wyjściowej, dzięki czemu zawór działa dwukierunkowo.
+
+  <Box>
+    <GuideEntityEmbed Entity="GasPipeStraight" Caption="Input/Output"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="GasPipeStraight" Caption="Control" Rotation="90"/>
+    <GuideEntityEmbed Entity="PressureControlledValve" Caption=""/>
+    <GuideEntityEmbed Entity="FloorTileItemSteel" Caption=""/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="GasPipeStraight" Caption="Input/Output"/>
+  </Box>
+
+  Zawór [color=#8ee99a]otworzy się[/color]], gdy ciśnienie po stronie wyjściowej będzie niższe od ciśnienia po stronie sterującej o [color=#ffb86b][protodata="PressureControlledValve" comp="PressureControlledValve" member="Threshold"/] kPa[/color].
+
+  Zawór [color=#ff8a8a]zamknie się[/color], gdy ciśnienie po stronie wyjściowej będzie niższe od ciśnienia po stronie sterującej o [color=#ffb86b][protodata="PressureControlledValve" comp="PressureControlledValve" member="Threshold"/] kPa[/color].
+
+  Na przykład zawór pneumatyczny o ciśnieniu sterującym wynoszącym 500 kPa otworzy się, gdy ciśnienie wyjściowe wyniesie 500 kPa – [color=#ffb86b][protodata="PressureControlledValve" comp="PressureControlledValve" member="Threshold"/] kPa[/color] lub mniej, a zamknie się, gdy ciśnienie wyjściowe wyniesie 500 kPa – [color=#ffb86b][protodata="PressureControlledValve" comp="PressureControlledValve" member="Threshold"/] kPa[/color] lub wyższe.
+
+  Ciśnienie sterujące zaworu jest określane przez połączenie z siecią rurociągową i jako takie może być regulowane w trakcie pracy za pomocą [textlink="pompki" link="Pumps"]lub innego źródła ciśnienia sterującego.
+
+  ## Różnice w stosunku do pompek
+
+  Zawór pneumatyczny różni się od [textlink="pompki" link="Pumps"], która przemieszcza gaz poprzez wykonanie pracy.
+  Zawór pneumatyczny jest urządzeniem pasywnym, które przemieszcza gaz w oparciu o wyższe ciśnienie gazu na wlocie, dzięki czemu czasami może napełniać zbiorniki szybciej niż [textlink="pompka" link="Pumps"].
+
+  Na przykład zawór pneumatyczny o ciśnieniu roboczym 500 kPa napełni objętość szybciej niż [textlink="pompka" link="Pumps"] ustawiona na 500 kPa.
+  Jednak [textlink="pompka" link="Pumps"] będzie w stanie utrzymać ciśnienie przy danej objętości z większą dokładnością.
+
+  Zawór pneumatyczny może być wykorzystywany w wielu różnych zastosowaniach, na przykład:
+  - Do automatycznego odpowietrzania gazów w komorze spalania na podstawie sygnału sterującego
+  - Do szybkiego napełniania zbiornika na podstawie dostosowywanego ciśnienia sterującego
+
+</Document>

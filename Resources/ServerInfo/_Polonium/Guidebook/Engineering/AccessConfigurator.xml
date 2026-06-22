@@ -1,0 +1,61 @@
+<!--
+SPDX-FileCopyrightText: 2023 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Iztok Bajcar <50874197+iztokbajcar@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Kira Bridgeton <161087999+Verbalase@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Terraspark4941 <terraspark4941@gmail.com>
+SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+  # Konfigurator dostępu
+  Konfigurator dostępu to narzędzie służące do określania, jakie grupy pracowników mogą korzystać z określonych urządzeń.
+
+  <Box>
+	  <GuideEntityEmbed Entity="AccessConfigurator" Caption="konfigurator dostępu"/>
+  </Box>
+
+  Do urządzeń, które można konfigurować, należą śluzy, zabezpieczone skrzynie i szafki, a także maszyny z ograniczonym dostępem.
+  Uwaga: Dla wygody dostęp do śluz można skonfigurować za pomocą [color=#e8c878]konfiguratora sieciowego[/color] (lub multinarzędzia).
+
+  ## Gdzie znaleźć konfiguratory dostępu
+  Każda stacja jest wyposażona w maksymalnie dwa konfiguratory dostępu. Pierwszy znajduje się w posiadaniu Głównego Inżyniera, natomiast drugi można znaleźć u Kierownika Personelu.
+
+  ## Jak korzystać z konfiguratora dostępu
+  Aby zmodyfikować urządzenie za pomocą konfiguratora dostępu:
+  - Najpierw użyj konfiguratora dostępu na wybranym urządzeniu, aby połączyć je ze sobą. Spowoduje to automatyczne otwarcie interfejsu konfiguratora.
+  - Następnie włóż kartę identyfikacyjną do konfiguratora dostępu.
+  - Ustaw wymagania dostępu dla podłączonego urządzenia. To, jakie wymagania można dodać lub usunąć, zależy od uprawnień dostępu przypisanych do włożonej karty identyfikacyjnej.
+  - Wszelkie wprowadzone zmiany zostaną zastosowane [color=#e8c878]natychmiast[/color]. Po zakończeniu wystarczy wyjąć kartę identyfikacyjną z konfiguratora dostępu i zamknąć interfejs użytkownika.
+
+  ## Ograniczenia dotyczące zmiany uprawnień dostępu
+  Ze względów bezpieczeństwa, aby zmodyfikować uprawnienia, wprowadzony identyfikator musi spełniać [bold]wszystkie[/bold] wymagania dotyczące dostępu, które są obecnie aktywne na podłączonym urządzeniu.
+
+  Na przykład urządzenie, do którego dostęp mają zarówno pracownicy departamentu Rozwoju i Badań, jak i Medycznego, można modyfikować wyłącznie za pomocą karty identyfikacyjnej uprawniającej do dostępu do [color=#e8c878]obu[/color] tych działów.
+  Konfigurator dostępu wyświetli ostrzeżenie, jeśli włożona karta identyfikacyjna nie posiada wystarczających uprawnień do modyfikacji urządzenia.
+
+  Urządzenie, dla którego nie ustalono żadnych wymagań dotyczących dostępu, takie jak śluza o publicznym dostępie, można obsługiwać za pomocą dowolnej ważnej karty identyfikacyjnej stacji.
+
+  ## Naprawa uszkodzonych czytników kart identyfikacyjnych
+  Agenci Syndykatu mogą próbować włamać się do urządzeń z ograniczonym dostępem za pomocą [color=#e8c878]zakłócacza uwierzytelniania[/color].
+  To podstępne narzędzie całkowicie wyłącza wszystkie czytniki kart identyfikacyjnych podłączone do urządzenia, zapewniając w ten sposób nieograniczony dostęp.
+
+  <Box>
+    <GuideEntityEmbed Entity="AccessBreaker"/>
+  </Box>
+
+  Aby naprawić te uszkodzenia, zazwyczaj konieczne jest częściowe rozmontowanie urządzenia, a następnie jego ponowne złożenie.
+  Spowoduje to przywrócenie domyślnych ustawień dostępu, co pozwoli na ponowną konfigurację urządzenia zgodnie z potrzebami.
+
+  ## Naprawa śluz, do których dostęp został zablokowany
+  Śluzy, w których wymagania dotyczące dostępu zostały zmanipulowane, można naprawić na wiele sposobów.
+
+  Jeśli posiadasz konfigurator dostępu, możesz użyć [color=#e8c878]śrubokręta[/color] do zdjęcia panelu serwisowego śluzy, a następnie skorzystać z niego, aby zmienić ustawienia dotyczące dostępu do śluzy.
+  W tym przypadku nie ma potrzeby częściowego demontażu śluzy.
+
+  Jeśli nie masz konfiguratora dostępu, nadal możesz naprawić śluzę, rozmontowując ją do momentu wyjęcia elektroniki drzwi, a następnie ponownie ją montując.
+  Spowoduje to zresetowanie śluzy do domyślnych ustawień dostępu, jakie miała na początku zmiany.
+
+</Document>

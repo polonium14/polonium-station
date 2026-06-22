@@ -1,0 +1,23 @@
+<!--
+SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+  # Zawór pasywny
+  Zawór pasywny to prosty zawór jednokierunkowy, który zapobiega cofaniu się gazów.
+  <Box>
+    <GuideEntityEmbed Entity="GasPassiveGate"/>
+  </Box>
+
+  Wyjście zaworu znajduje się po stronie [color=#ff8a8a]czerwonego[/color] koła.
+  Po zbadaniu zaworu wyświetla się również aktualne natężenie przepływu w rurze.
+
+  Zawór pasywny ma wiele praktycznych zastosowań, na przykład:
+  - Zapobieganie zanieczyszczeniu czystego gazu przez cofnięcie się mieszanki gazowej przez rurę.
+  - Zapobieganie zmianom ciśnienia lub temperatury między dwoma [textlink="sieciami rurociągów" link="PipeNetworks"] przebiegającymi w przeciwnych kierunkach.
+  - Szybkie sprawdzanie natężenia przepływu w sieci rurociągowej bez konieczności użycia [textlink="analizatora gazów" link="AtmosTools"].
+</Document>

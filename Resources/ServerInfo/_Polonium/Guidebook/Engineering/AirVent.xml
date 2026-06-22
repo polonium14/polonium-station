@@ -1,0 +1,72 @@
+<!--
+SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+  # Otwory wentylacyjne
+  Otwór wentylacyjny to standardowy element wyposażenia, występujący we wszystkich pomieszczeniach, w których należy zapewnić odpowiednie ciśnienie i przepływ powietrza.
+  Jego głównym zadaniem jest doprowadzanie gazów do otaczającej go atmosfery, aż do osiągnięcia ustalonego ciśnienia.
+
+  <Box>
+    <GuideEntityEmbed Entity="GasVentPump"/>
+  </Box>
+
+  Aby urządzenie mogło działać, konieczne jest podłączenie go do [textlink="źródła zasilania" link="Power"] za pomocą pobliskiego [textlink="kabla niskonapięciowego" link="VoltageNetworks"].
+
+  Otwory wentylacyjne można zespawać dowolnym narzędziem spawalniczym, aby zatrzymać jego działanie.
+
+  ## Działanie domyślne
+  Domyślnym działaniem otworu wentylacyjnego jest po prostu wypuszczanie gazu do otoczenia pod ciśnieniem [color=#ffb86b][protodata="GasVentPump" comp="GasVentPump" member="DefaultExternalBound"/] kPa[/color].
+
+  Prędkość przepływu powietrza w otworze wentylacyjnym jest proporcjonalna do różnicy między dwukrotnością ciśnienia w [textlink="sieci rurociągów" link="PipeNetworks"] a ciśnieniem atmosferycznym.
+  Ujmując to w postaci równania:
+  <Box>
+    [italic]Prędkość = 2 × ciśnienie sieci rurociągów - ciśnienie atmosferyczne[/italic]
+  </Box>
+
+  Oznacza to na przykład, że otwór wentylacyjny nie będzie w stanie wytworzyć ciśnienia 101,3 kPa, jeśli ciśnienie gazu wewnątrz niego spadnie poniżej połowy tej wartości.
+
+  ## Blokada ciśnieniowa
+  Otwory wentylacyjne przejdą w tryb [color=#ff8a8a]blokady ciśnieniowej[/color], gdy ciśnienie powietrza, spadnie poniżej [color=#ffb86b][protodata="GasVentPump" comp="GasVentPump" member="UnderPressureLockoutThreshold"/] kPa[/color].
+  Ma to na celu zapobieganie utraty użytecznych gazów, jeśli pomieszczenie nie jest szczelne.
+  Światła na otworze wentylacyjnym zmienią kolor na [color=#ffe566]żółty[/color], aby zwrócić uwagę na tę zmianę.
+
+  Można ją [color=#8ee99a]wyłączyć[/color], klikając prawym przyciskiem myszy na otworze wentylacyjnym i wybierając opcję "Zwolnij blokadę ciśnieniową" lub ustawiając tryb na "Napełnianie" na podłączonym [textlink="alarmie atmosferycznym" link="AirAlarms"].
+
+  Należy pamiętać, że z otworów wentylacyjnych, podczas gdy włączona jest [color=#ff8a8a]blokada ciśnieniowa[/color], nadal bardzo powoli ulatnia się gaz.
+  Ilość ulatniającego się gazu zależy od aktualnego ciśnienia w sieci rurociągów, do której są one podłączone.
+
+  ## Opcje konfiguracyjne
+  Otwory wentylacyjne zyskują dodatkową funkcjonalność po [textlink="połączeniu" link="Networking"] z [textlink="alarmem atmosferycznym" link="AirAlarms"].
+
+  Otwory wentylacyjne mają dwie opcje "kierunku wentylacji": "Wypuszczanie" i "Zasysanie".
+  - Opcja "Wypuszczanie" polega po prostu na uwalnianiu gazów z podłączonej sieci rur do atmosfery.
+  - Opcja "Zasysanie" polega na zasysaniu powietrza z atmosfery do podłączonej sieci rur. Lampki na otworze wentylacyjnym zmienią kolor na [color=#ff8a8a]czerwony[/color], aby podkreślić tę zmianę.
+
+  ## Zakresy ciśnienia
+  Otwory wentylacyjne są wyposażone w system regulacji ciśnienia, który kontroluje ciśnienie, przy jakim otwór wentylacyjny podnosi ciśnienie w otoczeniu lub zasysa powietrze z podłączonej sieci rurociągów. Zakresy te są uwzględniane zarówno w trybie wypuszczania, jak i zasysania.
+
+  Ustawienie "Granica ciśnienia" ma cztery opcje:
+  - Opcja ExternalBound powoduje, że otwór wentylacyjny działa zgodnie z limitami ciśnienia określonymi w pozycji External bound.
+  - Opcja InternalBound powoduje, że otwór wentylacyjny działa zgodnie z limitami ciśnienia określonymi w pozycji Internal bound.
+  - Opcja Both powoduje, że otwór wentylacyjny działa zgodnie z limitami ciśnienia określonymi zarówno w pozycji External bound, jak i Internal bound.
+  - Opcja NoBound powoduje, że otwór wentylacyjny nie podlega żadnym limitom.
+
+  Gdy zawór odpowietrzający pracuje w trybie wpuszczania:
+  - Jeśli zewnętrzne ciśnienie graniczne jest ustawione na 101,3 kPa, otwór wentylacyjny nie doprowadzi ciśnienia atmosferycznego powyżej 101,3 kPa.
+  - Jeśli wewnętrzne ciśnienie graniczne jest ustawione na 50 kPa, otwór wentylacyjny nie będzie zasysał gazu z podłączonej rury, jeśli ciśnienie w niej spadnie poniżej 50 kPa.
+
+  Gdy otwór wentylacyjny pracuje w trybie zasysania:
+  - Jeśli zewnętrzne ciśnienie graniczne jest ustawione na 101,3 kPa, otwór wentylacyjny będzie odprowadzał gazy, dopóki ciśnienie atmosferyczne nie osiągnie wartości 101,3 kPa.
+  - Jeśli wewnętrzne ciśnienie graniczne jest ustawione na 50 kPa, otwór wentylacyjny nie będzie wtłaczał gazów do sieci rurociągowej, jeśli ciśnienie w niej przekracza 50 kPa.
+
+  Jeśli nadal nie do końca rozumiesz, na czym polegają ograniczenia ciśnienia (PressureBounds), oto prosta wskazówka:
+  - Ograniczenie zewnętrzne (External bound) możesz traktować jako górną granicę ciśnienia atmosfery zewnętrznej. „Nie będę zwiększać ciśnienia atmosfery zewnętrznej powyżej tej wartości ani pobierać powietrza z atmosfery poniżej tej wartości”.
+  - Granicę wewnętrzną można traktować jako dolną granicę dla podłączonej sieci rur. „Nie będę pobierać powietrza ze źródła poniżej tego ciśnienia ani wtłaczać powietrza do sieci rur powyżej tego ciśnienia”.
+  - Ustawienia „Pressure bound” po prostu określają, które granice należy uwzględnić, a które zignorować.
+
+</Document>

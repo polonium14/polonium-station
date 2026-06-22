@@ -1,0 +1,230 @@
+<!--
+SPDX-FileCopyrightText: 2025 Goomson <GoomsonCode@proton.me>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+  # Reakcje
+  Oto kilka substancji chemicznych, które przy odpowiednim zastosowaniu dają niezwykłe efekty!
+
+
+  #Reakcje tworzenia
+
+  Mieszając niektóre substancje chemiczne, można wytworzyć przedmioty!
+
+  Jednymi z najłatwiejszych do zrozumienia dla początkującego chemika są proste receptury, które pomagają w wytwarzaniu przedmiotów.
+
+
+  ##Mydło
+  <Box>
+    <GuideEntityEmbed Entity="Soap" Caption="Mydło"/>
+    <GuideEntityEmbed Entity="SoapHomemade" Caption="Domowe mydło"/>
+  </Box>
+  Mydło można wytworzyć przy użyciu następujących składników:
+
+  -15 jednostek tłuszczu
+  -10 jednostek soli kuchennej
+  -10 jednostek wody (lub) 10 jednostek krwi
+  
+  Można również przygotować domową wersję, zastępując wodę krwią!
+
+  ##Mięso
+  <Box>
+    <GuideEntityEmbed Entity="FoodMeat" Caption="Mięso"/>
+  </Box>
+  Mięso syntetyczne można wytworzyć przy użyciu:
+  -25 jednostek tłuszczu
+  -5 jednostek składników odżywczych
+  -10 jednostek krwi
+  -10 jednostek węgla
+
+  ##Plastik
+  <Box>
+    <GuideEntityEmbed Entity="SheetPlastic" Caption="Plastik"/>
+  </Box>
+  Plastik można wytworzyć, podgrzewając następujące składniki do temperatury 374 K:
+
+  -5 jednostek ropy
+  -3 jednostki popiołu
+  -2 jednostki kwasu siarkowego
+
+  ##Kryształy
+
+  <Box>
+    <GuideEntityEmbed Entity="ShardCrystalGreen" Caption="Zielony kryształ"/>
+    <GuideEntityEmbed Entity="ShardCrystalCyan" Caption="Cyjanowy kryształ"/>
+    <GuideEntityEmbed Entity="ShardCrystalPink" Caption="Różowy kryształ"/>
+    <GuideEntityEmbed Entity="ShardCrystalRed" Caption="Czerwony kryształ"/>
+    <GuideEntityEmbed Entity="ShardCrystalOrange" Caption="Pomarańczowy kryształ"/>
+  </Box>
+  Syntetyczne kryształy można wytworzyć, mieszając i podgrzewając do 374 K:
+
+  -15 jednostek cukru
+  -15 jednostek wody
+  -5 jednostek etanolu
+
+  ##Proch strzelniczy
+  <Box>
+    <GuideEntityEmbed Entity="MaterialGunpowder" Caption="Proch strzelniczy"/>
+  </Box>
+  Proch strzelniczy, składnik stosowany w improwizowanych ładunkach wybuchowych, można uzyskać poprzez zmieszanie:
+  -6 jednostek potasu
+  -2 jednostek siarki
+  -2 jednostek węgla drzewnego
+
+  ##Krystalizacja
+  <Box>
+    <GuideEntityEmbed Entity="IngotGold1" Caption="Złoto"/>
+    <GuideEntityEmbed Entity="IngotSilver1" Caption="Srebro"/>
+  </Box>
+  Składniki takie jak srebro i złoto można krystalizować w sztabki, używając:
+  -10 jednostek metalu (srebro lub złoto)
+  -5 jednostek lodowej ropy
+
+
+  # Reakcje gazowe
+
+  Podczas mieszania niektórych substancji chemicznych może powstać gaz!
+
+  W zależności od kontekstu, w jakim ma to miejsce, może to być korzystne lub [color=red]BARDZO NIEBEZPIECZNE[/color]!
+
+  ## Gaz plazmowy
+  <Box>
+    <GuideEntityEmbed Entity="PlasmaCanister" Caption="Gaz plazmowy"/>
+  </Box>
+  Jedną z najbardziej podstawowych i niebezpiecznych reakcji gazowych jest powstanie plazmy gazowej podczas mieszania Phlogistonu.
+
+  Przepis na jej wytworzenie (i uwolnienie gazu) jest następujący:
+
+  - 1 część plazmy
+  - 1 część fosforu
+  - 1 część kwasu siarkowego
+
+  ## Frezon
+  <Box>
+    <GuideEntityEmbed Entity="FrezonCanister" Caption="Frezon"/>
+  </Box>
+  Kolejny efekt można wykorzystać do wytworzenia gazu frezonowego, który ma bardzo szkodliwy wpływ na atmosferę stacji. Proszę założyć zimowe płaszcze!
+
+  Reakcja prowadząca do powstania gazu frezonowego wygląda następująco:
+
+  - 1 część fresium
+  - 1 część wody
+
+  # Reakcje z udziałem piany
+
+  Wyróżnia się dwa rodzaje reakcji z udziałem [color=cyan]piany[/color].
+
+  ##Piana z odczynnikiem
+
+  <Box>
+    <GuideEntityEmbed Entity="Beaker" Caption="Fluorosurfaktant"/>
+    <GuideEntityEmbed Entity="Beaker" Caption="Woda"/>
+    <GuideEntityEmbed Entity="Beaker" Caption="Opcjonalne odczynniki"/>
+  </Box>
+
+  Piana z [color=#7ee8f7]odczynnikiem[/color] nanosi substancję chemiczną zawartą w roztworze na wszystkie obiekty znajdujące się w jej zasięgu – różni się to od [color=#7ee8f7]dymu[/color], ponieważ pozwala również na miejscowe nakładanie odczynników.
+
+  Piana z odczynnika pozostawia ślady na podłodze po użyciu z napojami lub innymi płynami, więc pamiętaj o tym podczas przygotowywania mieszanek!
+
+  Większa ilość fluorosurfaktantu i wody oznacza lepsze rozprzestrzenianie się piany – pamiętaj jednak, że nie zwiększa to jej mocy, która zależy od ilości odczynnika dodanego do roztworu.
+  Życzymy udanej zabawy podczas mieszania i tworzenia własnej piany!
+
+  Aby przygotować piankę z odczynnika, wymieszaj:
+
+  -1 część fluorosurfaktantu
+  -1 część wody
+  -(Opcjonalnie) dowolną ilość odczynnika
+
+
+  ## Spienione metale
+  <Box>
+    <GuideEntityEmbed Entity="MetalFoamGrenade" Caption="Granat ze spienionym metalem"/>
+    <GuideEntityEmbed Entity="FoamedIronMetal" Caption="Spienione żelazo"/>
+    <GuideEntityEmbed Entity="FoamedAluminiumMetal" Caption="Spienione aluminium"/>
+  </Box>
+  [color=cyan]Spieniony metal[/color] tworzy dość solidne ściany ze spienionej metalowej pianki. Można ją wykorzystać do wielu różnych celów, takich jak uszczelnianie korytarzy, wyrw w kadłubie i nie tylko!
+  Aby uzyskać piankę metalową, należy wymieszać:
+
+  -3 części metalu (żelaza, aluminium)
+  -1 część środka spieniającego
+  -1 część kwasu fluorosiarczowego
+
+  Należy pamiętać, że kwas fluorosiarczowy może spowodować obrażenia u osób znajdujących się w pobliżu, zanim się zestali!
+  Zwiększenie ilości odczynników spowoduje powiększenie powierzchni pianki.
+
+
+  # Reakcje dymu
+  <Box>
+    <GuideEntityEmbed Entity="SmokeGrenade" Caption="Granat dymny"/>
+  </Box>
+  Podczas mieszania niektórych substancji chemicznych może wydobywać się dym, który pokryje całą okolicę!
+
+  Powoduje to, że wszelkie [color=cyan]odczynniki[/color] zawarte w mieszance mogą być wdychane przez każdą osobę w ich zasięgu, co może skutkować wieloma zabawnymi (lub śmiertelnymi!) efektami!
+
+  Podstawowa receptura na mieszankę dymną to:
+  -1 część fosforu
+  -1 część potasu
+  -1 część cukru
+  -(Opcjonalnie) Dowolna ilość odczynnika
+
+  Większa ilość odczynników oznacza większy obszar działania, a dodanie większej ilości odczynników spowoduje, że osoby bez wyposażenia wewnętrznego wdychają większe ilości tego, co znajduje się w roztworze.
+
+  # Reakcje wybuchowe
+
+  Podczas mieszania niektórych substancji chemicznych może powstać wybuch!
+
+  ##Potas i woda
+  <Box>
+    <GuideEntityEmbed Entity="Beaker" Caption="Potas"/>
+    <GuideEntityEmbed Entity="Beaker" Caption="Woda"/>
+  </Box>
+  Najprostszy przepis na reakcję wybuchową polega na wymieszaniu:
+
+  -1 część potasu
+  -1 część wody
+
+  Spowoduje to natychmiastowy, niewielki, ale łatwy do wzmocnienia wybuch, który wyzwala ciepło i może rozbić szyby! Można to wykorzystać do łączenia efektów z większymi ładunkami wybuchowymi, takimi jak CLF3!
+
+  ##CLF3
+  <Box>
+    <GuideEntityEmbed Entity="Beaker" Caption="Chlor"/>
+    <GuideEntityEmbed Entity="Beaker" Caption="Fluor"/>
+  </Box>
+
+  Niektóre bardziej zaawansowane wybuchy można uzyskać poprzez zmieszanie składników, a następnie podgrzanie ich do temperatury 370 K:
+  -1 część chloru
+  -3 części fluoru
+
+  Należy pamiętać, że spowoduje to wybuch, gdy tylko CLF3 osiągnie temperaturę wystarczającą do jego wytworzenia! Jeśli nie zostaną podjęte odpowiednie środki ostrożności, prawdopodobnie doprowadzi to do jego utraty.
+
+
+  ##Impulsy elektromagnetyczne (EMP)
+  <Box>
+    <GuideEntityEmbed Entity="EmpGrenade" Caption="Granat EMP"/>
+  </Box>
+  Aby stworzyć domowy granat EMP, który natychmiast unieruchomi wszelkie urządzenia elektroniczne w okolicy, potrzebujesz:
+
+  -1 część aluminium
+  -1 część żelaza
+  -1 część uranu
+
+  Podobnie jak w przypadku innych narzędzi o zasięgu obszarowym, jego zasięg i siła wzrosną wraz z ilością użytych składników.
+
+  ##Granaty błyskowo-hukowe
+  <Box>
+    <GuideEntityEmbed Entity="GrenadeFlashBang" Caption="Granat błyskowo-hukowy"/>
+  </Box>
+  Aby wykonać domowej roboty granat błyskowo-hukowy, zdolny do dezorientowania i wprawiania w zakłopotanie osób znajdujących się w jego zasięgu, należy użyć:
+
+  - 1 część aluminium
+  - 1 część potasu
+  - 1 część siarki
+
+  Wielkość i zasięg rosną wraz ze zwiększaniem ilości składników.
+
+
+
+</Document>

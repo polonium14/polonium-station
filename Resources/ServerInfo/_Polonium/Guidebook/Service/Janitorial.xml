@@ -1,0 +1,68 @@
+<!--
+SPDX-FileCopyrightText: 2023 Myakot <30875116+Myakot@users.noreply.github.com>
+SPDX-FileCopyrightText: 2023 Sir Winters <7543955+Owai-Seek@users.noreply.github.com>
+SPDX-FileCopyrightText: 2023 end <72604018+laok233@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+# Praca Woźnego
+
+Utrzymujesz czystość. Czasami to ciężka praca, ale ktoś musi to robić. Ten przewodnik przeprowadzi cię przez narzędzia fachu i sposób ich użycia.
+
+## Podstawowe Wyposażenie
+<Box>
+<GuideEntityEmbed Entity="MopItem"/>
+<GuideEntityEmbed Entity="JanitorialTrolley"/>
+<GuideEntityEmbed Entity="MopBucket"/>
+<GuideEntityEmbed Entity="Bucket"/>
+<GuideEntityEmbed Entity="TrashBag"/>
+</Box>
+<Box>
+<GuideEntityEmbed Entity="SprayBottleSpaceCleaner"/>
+<GuideEntityEmbed Entity="BoxLightMixed"/>
+<GuideEntityEmbed Entity="SoapNT"/>
+<GuideEntityEmbed Entity="Mousetrap"/>
+</Box>
+
+## Dodatkowe Wyposażenie
+<Box>
+<GuideEntityEmbed Entity="WetFloorSign"/>
+<GuideEntityEmbed Entity="Holoprojector" Caption="holosign projector"/>
+<GuideEntityEmbed Entity="LightReplacer"/>
+<GuideEntityEmbed Entity="WireBrush"/>
+</Box>
+<Box>
+<GuideEntityEmbed Entity="AdvMopItem" Caption="Advanced mop, ask in R&D"/>
+</Box>
+
+## Pozyskiwanie i Utylizacja Płynów
+<Box>
+<GuideEntityEmbed Entity="WaterTankFull"/>
+<GuideEntityEmbed Entity="Sink"/>
+<GuideEntityEmbed Entity="FloorDrain"/>
+</Box>
+
+## Sprzątanie.
+Teraz przejdźmy do (przenośnego) mięsa i ziemniaków. Jesteśmy tu, żeby sprzątać, prawda? Utrzymajmy to w prostocie. Główne narzędzia, których będziesz używać, to wierny mop, worek na śmieci, kosmiczny czyścik i jedno z trzech różnych wiader.
+
+Mopowanie: Napełnij swój wózek wodą i znajdź kałuże! Zmocz mopa i wytrzyj je. Powstała kałuża wody wyschnie po krótkim czasie. Nie zapomnij ustawić znaków "mokra podłoga"!
+- Aby opróżnić wózek, przeciągnij go (kursorem) na odpływ podłogowy. To wyleje wszystkie płyny ze środka! Odpływy podłogowe zazwyczaj można znaleźć gdzieś w medbayu, zamrażarce kuchennej i oczywiście w schowku woźnego.
+
+Śmieci: Umieść je bezpośrednio w worku lub trzymaj w ręce. Kliknij -obok- śmieci, aby zebrać -wszystkie- pobliskie śmieci, lub kliknij na każdy kawałek indywidualnie. Użycie worka na utylizacji opróżni go.
+- Logistycy mogą chcieć niektórych twoich śmieci, warto od czasu do czasu zapytać!
+
+Kosmiczny Czyścik: Ten cudowny spray może robić dwie rzeczy: czyścić graffiti i w razie potrzeby czyścić kałuże!
+- Możesz poprosić o więcej w chemii.
+
+## Dodatkowe Obowiązki
+Dobry woźny zawsze rozgląda się za dodatkową pracą, a narzędzi do dyspozycji jest mnóstwo. Miej oko na zepsute światła, pomóż kucharzowi pozbyć się myszy w kuchni, a jeśli czujesz się -naprawdę- hojny, spróbuj uzupełnić automaty i szafki awaryjne na stacji!
+
+## Dodatkowe Informacje:
+<GuideReagentEmbed Reagent="SpaceCleaner"/>
+<GuideReagentEmbed Reagent="Ammonia"/>
+
+</Document>

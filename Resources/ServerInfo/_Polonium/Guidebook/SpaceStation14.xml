@@ -1,0 +1,62 @@
+<!--
+SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+SPDX-FileCopyrightText: 2023 Myakot <30875116+Myakot@users.noreply.github.com>
+SPDX-FileCopyrightText: 2023 end <72604018+laok233@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 UBlueberry <161545003+UBlueberry@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+# Stacja i Zmiany
+
+Każda runda w SS14 to [bold]samodzielna zmiana[/bold], która odbywa się na jednej z wielu różnych stacji.
+
+Rundy trwają zazwyczaj od [color=#7ee8f7]1 do 2 godzin[/color], ale gracze mogą swobodnie wychodzić i dołączać w dowolnym momencie trwania rundy.
+
+## Terminal promów
+Jeśli dołączysz w środku zmiany, prawdopodobnie pojawisz się na [color=lime]terminalu promów[/color].
+Tutaj możesz napić się drinka, porozmawiać z innymi graczami i poczekać na wahadłowiec, który zabierze cię na stację.
+
+Ekrany na ścianach wyświetlają szacowany czas przybycia wahadłowca.
+Gdy przybędzie, po prostu wejdź na pokład, aby zostać przetransportowanym na stację.
+
+Upewnij się, że zostajesz wewnątrz terminala i nie stoisz w strefie lądowania wahadłowca. [color=#ff8a8a][bold]Możesz zostać zmiażdżony przez nadlatujący wahadłowiec[/bold][/color].
+
+## Nawigacja
+Każda stacja ma wiele różnych lokalizacji do odwiedzenia.
+Obejmują one zarówno konkretne działy, gdzie odbywa się praca, jak i wspólne obszary, gdzie można odpocząć i porozmawiać z innymi.
+
+<Box>
+  <GuideEntityEmbed Entity="StationMap"/>
+  <GuideEntityEmbed Entity="SignDirectionalDorms" Caption="Znaki kierunkowe"/>
+  <GuideEntityEmbed Entity="SignBridge" Caption="Znaki informacyjne"/>
+</Box>
+
+[color=#7ee8f7]Mapy stacji[/color] dają przegląd całej stacji z kolorowymi znacznikami oznaczającymi lokalizacje różnych rzeczy.
+Zwykłe [color=#7ee8f7]znaki[/color] na ścianach mogą wskazać ci drogę do różnych działów.
+
+## Opuszczanie Stacji
+Pod koniec zmiany [color=#c8c8c8](chyba że nastąpi [color=#ff8a8a][bold]katastrofa nuklearna[/bold][/color])[/color], opuścisz stację za pomocą [color=lime]wahadłowca ewakuacyjnego[/color].
+Kiedy zostanie wezwany, na stacji zostanie odtworzony komunikat alarmujący załogę o jego [color=#7ee8f7]przybyciu za 10 minut.[/color]
+Gdy przybędzie, musisz udać się do niego, wejść na pokład, a następnie przetrwać podróż do [bold]Centralnego Dowództwa[/bold].
+
+Runda oficjalnie nie kończy się, dopóki nie dotrzesz do [bold]Centralnego Dowództwa[/bold].
+
+<Box>
+  <GuideEntityEmbed Entity="CryogenicSleepUnit"/>
+</Box>
+
+Jeśli musisz opuścić rundę wcześniej, możesz to zrobić za pomocą [color=lime]kriogenicznej komory snu[/color].
+Po prostu wejście do środka i opuszczenie gry przechowa twoje rzeczy i zapewni, że nie zostaną skradzione ani niewłaściwie użyte.
+
+## Więcej informacji
+Uczysz się sterowania? [textlink="Kliknij tutaj, aby przeczytać o sterowaniu" link="Controls"]
+
+Nie wiesz, jak wykonywać pracę? [textlink="Kliknij tutaj, aby przejść do listy działów" link="Jobs"]
+
+Ciągle umierasz? [textlink="Kliknij tutaj, aby zobaczyć poradnik przetrwania" link="Survival"]
+
+</Document>

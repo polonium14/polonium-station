@@ -1,0 +1,632 @@
+<!--
+SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 Terkala <appleorange64@gmail.com>
+SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+  # Gazy
+  Gazy odgrywają kluczową rolę podczas pracy stacji.
+  Być może znasz je jako substancje, którymi oddychasz, ale mają one również wiele innych zastosowań.
+
+  Gazy posiadają pewne właściwości, dzięki którym sprawdzają się w różnych zadaniach.
+  Departament atmosferyki może również pozyskiwać gazy egzotyczne poprzez łączenie gazów, co pozwala wykorzystywać je do specjalnych celów.
+
+ <Table Columns="5">
+    <ColorBox>
+      <Box>
+        Gaz do wytworzenia
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        Wymagana temperatura
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        Gazy wejściowe
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        Produkty uboczne
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        Uwagi dodatkowe
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#13FF4B">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Tryt
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Trwający pożar
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#FF3300">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        O2, Plazma
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#618583">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Para wodna, CO2
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Palny
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#7b68ee">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Pluoxium
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        150-250k
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#453a59">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        CO2, O2, tryt
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#acacac">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+	    Wodór
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#7ec8e8">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Frezon
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Poniżej 73k
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#13FF4B">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        O2, N2, tryt
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#DA1010">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+	   Azot
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Endotermiczny
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#2e422e">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Podtlenek azotu
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Powyżej 23k
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#7ec8e8">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        N2, Frezon
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+	    Silnie endotermiczny
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#9370db">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        BZ
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+	    Poniżej 310k
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#59563a">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Plazma, N2O
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+	    Egzotermiczny, zależny od ciśnienia i objętości
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#fa8072">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+	    Healium
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Poniżej 300k
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#7ec8e8">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Frezon, BZ
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Egzotermiczny
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#e3574d">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Halon
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+	    Elektroliza
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#9370db">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        BZ
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#8ec8ff">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+	    Tlen
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Gasi pożary
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#a52a2a">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+	    Nitrium
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+	    1,500k
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#9370db">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        N2, tryt, BZ
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Palny
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#acacac">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Wodór
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+	  Elektroliza
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#a0d0d0">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Para wodna
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#8ec8ff">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+	    Tlen
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Palny
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#087912">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Proto-Nitrate
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+	    5,000-10,000k
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#9c8ee9">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Wodór, Pluox
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Katalizuje tryt, wodór i BZ
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#005959">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Hel
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+	    270k
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#9370db">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Proto-Nitrate, BZ
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#33cccc">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Hyper-Noblium
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+	    15k
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#13FF4B">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        N2, tryt, BZ
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+	    Zatrzymuje reakcje
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#525151">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Anti-Noblium
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+	    Elektroliza-100k
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#33cccc">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Hyper-Noblium
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#1c1a1a">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Zauker
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        50,000-75,000k
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#33a1cc">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Nitrium, Hyper-nob
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Bardzo śmiercionośny
+      </Box>
+    </ColorBox>
+  </Table>
+
+  ## Tlen
+  <Box>
+    <GuideEntityEmbed Entity="OxygenCanister" Caption=""/>
+    <GuideEntityEmbed Entity="OxygenTank" Caption=""/>
+    <GuideEntityEmbed Entity="DoubleEmergencyOxygenTank" Caption=""/>
+    <GuideEntityEmbed Entity="ExtendedEmergencyOxygenTank" Caption=""/>
+    <GuideEntityEmbed Entity="EmergencyOxygenTank" Caption=""/>
+  </Box>
+
+  Gaz powszechnie stosowany przez większość gatunków na stacji do oddychania.
+
+  Tlen jest utleniaczem, co oznacza, że wspomaga spalanie.
+  Dzięki temu jest przydatny podczas łączenia gazów w komorze spalania, ale jednocześnie stanowi zagrożenie w połączeniu z gazami łatwopalnymi.
+
+  ## Azot
+  <Box>
+    <GuideEntityEmbed Entity="NitrogenCanister" Caption=""/>
+    <GuideEntityEmbed Entity="NitrogenTank" Caption=""/>
+    <GuideEntityEmbed Entity="DoubleEmergencyNitrogenTank" Caption=""/>
+    <GuideEntityEmbed Entity="ExtendedEmergencyNitrogenTank" Caption=""/>
+    <GuideEntityEmbed Entity="EmergencyNitrogenTank" Caption=""/>
+  </Box>
+
+  Gaz obojętny, stosowany między innymi w połączeniu z tlenem do tworzenia atmosfery nadającej się do oddychania.
+
+  Azot jest bardzo stabilny i stanowi większość standardowej atmosfery nadającej się do oddychania.
+
+  Niektóre gatunki, takie jak Slime'y, oddychają azotem, a Voxy do oddychania potrzebują wyłącznie azotu.
+
+  ## Mieszanka powietrzna
+  <Box>
+    <GuideEntityEmbed Entity="AirCanister" Caption=""/>
+    <GuideEntityEmbed Entity="AirTank" Caption=""/>
+  </Box>
+
+  Mieszanka gazów, którą większość gatunków przebywających na stacji może swobodnie wdychać.
+  Składa się ona z 21% tlenu i 79% azotu.
+
+
+  ## Dwutlenek węgla
+  <Box>
+    <GuideEntityEmbed Entity="CarbonDioxideCanister" Caption=""/>
+  </Box>
+
+  Gaz odpadowy wytwarzany przez większość gatunków na stacji. Typowy produkt uboczny spalania.
+
+  Choć wydaje się bezużyteczny, niektóre działy wykorzystują go w swojej pracy.
+
+  ## Para wodna
+  <Box>
+    <GuideEntityEmbed Entity="WaterVaporCanister" Caption=""/>
+  </Box>
+  Powszechnie występujący gaz, powstający w wyniku spalania plazmy oraz w innych procesach.
+
+  Para wodna charakteryzuje się wysoką pojemnością cieplną w porównaniu z innymi gazami, dzięki czemu doskonale nadaje się do przenoszenia ciepła.
+
+  ## Amoniak
+  <Box>
+    <GuideEntityEmbed Entity="AmmoniaCanister" Caption=""/>
+  </Box>
+  Gaz powstający w wyniku rozkładu zwłok.
+
+  Można go skroplić w celu uzyskania amoniaku, który można wykorzystać do produkcji środka do czyszczenia powierzchni.
+  
+  ## Plazma
+  <Box>
+    <GuideEntityEmbed Entity="PlasmaCanister" Caption=""/>
+  </Box>
+  Gaz wysoce łatwopalny, wykorzystywany w wielu procesach na stacji.
+
+  Dział inżynierii wykorzystuje ten gaz do wytwarzania energii oraz do produkcji gazów specjalnych.
+
+  Jego spalanie generuje duże ilości ciepła, a także produkty uboczne, takie jak dwutlenek węgla, para wodna i tryt, w zależności od wydajności spalania.
+
+  Gaz plazmowy charakteryzuje się również dobrą pojemnością cieplną właściwą, co sprawia, że nadaje się do transportu ciepła.
+
+  ## Tryt
+  <Box>
+    <GuideEntityEmbed Entity="TritiumCanister" Caption=""/>
+  </Box>
+  Tryt to przezroczysty, zielony gaz, który jest wysoce łatwopalny i radioaktywny oraz ulega spaleniu w kontakcie z tlenem, co sprawia, że jest bardzo przydatny podczas pracy z [color=#e8c878]TEG[/color].
+    <Box>
+    <GuideEntityEmbed Entity="OxygenCanister"/>
+    <GuideEntityEmbed Entity="PlasmaCanister"/>
+    <GuideEntityEmbed Entity="GasVentScrubber"/>
+    <GuideEntityEmbed Entity="TritiumCanister"/>
+  </Box>
+  Można go uzyskać poprzez spalanie 1% plazmy i 96% lub więcej tlenu w komorze spalania (idealny stosunek to około 3% plazmy na 97% tlenu przy wprowadzaniu do komory spalania, w której trwa proces spalania).
+  Gaz ten można odprowadzać przez oczyszczacze powietrza, aby zapobiec dalszemu spalaniu w rurociągach.
+
+  ##Pluoxium
+  Pluoxium to niereaktywny substytut tlenu, który dostarcza do krwiobiegu osiem razy więcej tlenu, a minimalne ciśnienie wymagane w systemie wewnętrznym wynosi zaledwie 3 kPa.
+  Można go wytworzyć poprzez połączenie 66% dwutlenku węgla, 33% tlenu i 1% trytu w reakcji egzotermicznej w temperaturze od 50 do 273 kelwinów. W wyniku tej reakcji powstaje również wodór jako produkt uboczny. Ponadto Pluoxium powstaje również w Supermaterii, gdy obecne są tlen i CO2.
+
+  <Box>
+    <GuideEntityEmbed Entity="OxygenCanister"/>
+    <GuideEntityEmbed Entity="CarbonDioxideCanister"/>
+    <GuideEntityEmbed Entity="TritiumCanister"/>
+    <GuideEntityEmbed Entity="GasVentScrubber"/>
+    <GuideEntityEmbed Entity="PluoxiumCanister"/>
+  </Box>
+
+  ## Frezon
+  <Box>
+    <GuideEntityEmbed Entity="FrezonCanister" Caption=""/>
+  </Box>
+
+  Gaz ten cieszy się ogromnym zainteresowaniem ze względu na trudności związane z jego wytwarzaniem oraz liczne właściwości.
+
+  Charakteryzuje się niezwykle wysoką pojemnością cieplną, dzięki czemu doskonale nadaje się do transportu dużych ilości ciepła.
+
+  Frezon może łączyć się w powietrzu z azotem, tworząc podtlenek azotu, a jednocześnie znacznie schładzając powietrze do temperatur poniżej zera.
+  <Box>
+    <GuideEntityEmbed Entity="TritiumCanister"/>
+    <GuideEntityEmbed Entity="AirCanister"/>
+    <GuideEntityEmbed Entity="GasVentScrubber"/>
+    <GuideEntityEmbed Entity="FrezonCanister"/>
+  </Box>
+  Jeśli chcesz samodzielnie wytworzyć ten gaz, oto co musisz wiedzieć:
+  - Do reakcji potrzeba 90% tlenu, 8% azotu i 2% trytu w temperaturze 73,15 kelwinów lub niższej.
+  - Azot jest niezbędny jako katalizator reakcji. Ilość zużytego azotu zależy od wydajności reakcji.
+  - Im bliżej 73,15 kelwinów, tym więcej frezonu powstaje, a tym samym mniej azotu jest zużywane.
+
+  Pamiętaj, że w przypadku gazów liczy się eksperymentowanie i optymalizacja procesu. Próbuj, aż osiągniesz zamierzony efekt!
+
+  ## Podtlenek azotu
+  <Box>
+    <GuideEntityEmbed Entity="NitrousOxideCanister" Caption=""/>
+    <GuideEntityEmbed Entity="EmergencyFunnyOxygenTank" Caption=""/>
+  </Box>
+  Gaz rekreacyjny i odpadowy, wytwarzany przez Slime'y oraz w wyniku połączenia frezonu i azotu.
+
+  ##BZ
+  Gaz BZ jest silnym środkiem halucynogennym, a także środkiem usypiającym dla Slime'ów. Wdychanie go jest toksyczne i powoduje podrażnienie dróg oddechowych oraz kaszel. BZ jest często wykorzystywany jako składnik w bardziej złożonych reakcjach gazowych.
+  Można go wytworzyć poprzez połączenie 33% podtlenku azotu i 66% plazmy w reakcji egzotermicznej. Reakcja staje się mniej wydajna, jeśli zawartość plazmy jest większa niż trzykrotność zawartości podtlenku azotu. Reakcja przebiega najszybciej poza rurami i w środowiskach o niskim ciśnieniu.
+
+  <Box>
+    <GuideEntityEmbed Entity="PlasmaCanister"/>
+    <GuideEntityEmbed Entity="NitrousOxideCanister"/>
+    <GuideEntityEmbed Entity="GasVentScrubber"/>
+    <GuideEntityEmbed Entity="BZCanister"/>
+  </Box>
+
+  ##Healium
+  Healium to czerwony gaz powstający w niskich temperaturach, który działa jako silny środek nasenny, a jednocześnie leczy oparzenia, stłuczenia i uszkodzenia spowodowane toksynami. Nadmierne stosowanie prowadzi do odurzenia.
+  Można go uzyskać poprzez połączenie 92% frezonu i 8% BZ w reakcji egzotermicznej.
+
+  <Box>
+    <GuideEntityEmbed Entity="BZCanister"/>
+    <GuideEntityEmbed Entity="FrezonCanister"/>
+    <GuideEntityEmbed Entity="GasVentScrubber"/>
+    <GuideEntityEmbed Entity="HealiumCanister"/>
+  </Box>
+
+  ##Halon
+  Halon gasi pożary poprzez pochłanianie tlenu w stosunku 20 moli tlenu na 1 mol halonu w temperaturze powyżej 343,15 kelwinów w reakcji endotermicznej, w wyniku której powstaje dwutlenek węgla. Jest on wytwarzany w wyniku niezwykle egzotermicznej reakcji elektrolizy BZ, w której na każdy mol BZ powstają 2 mole halonu i 0,2 mola tlenu. Należy stosować ostrożnie, aby uniknąć niedoboru tlenu.
+
+  <Box>
+    <GuideEntityEmbed Entity="BZCanister"/>
+    <GuideEntityEmbed Entity="Electrolyzer"/>
+    <GuideEntityEmbed Entity="GasVentScrubber"/>
+    <GuideEntityEmbed Entity="HalonCanister"/>
+  </Box>
+
+  ##Nitrium
+  Nitrium to gazowy środek pobudzający, który po wdychaniu może zwiększyć prędkość i wytrzymałość. W niższych stężeniach Nitrium zwiększa maksymalną prędkość biegu u osób zdrowych i nieograniczonych fizycznie. Ponadto przy nieco wyższych stężeniach wdychanie Nitrium zapobiega senności. Przy wysokich stężeniach wdychanie tego gazu powoduje stopniowe wyłączenie płuc, co prowadzi do uduszenia.
+  Można go wytworzyć poprzez połączenie 47,5% azotu, 47,5% trytu i 5% BZ w temperaturze 1500 kelwinów lub wyższej. Wyższa temperatura zapewnia większą wydajność.
+  <Box>
+    <GuideEntityEmbed Entity="BZCanister"/>
+    <GuideEntityEmbed Entity="TritiumCanister"/>
+    <GuideEntityEmbed Entity="NitrogenCanister"/>
+    <GuideEntityEmbed Entity="GasVentScrubber"/>
+    <GuideEntityEmbed Entity="NitriumCanister"/>
+  </Box>
+
+  W kontakcie z tlenem w temperaturze pokojowej nitrium rozkłada się na azot i wodór. Reakcja ta może powodować wydzielanie znacznej ilości ciepła, co w razie wycieku może sprawić, że w stacji zrobi się nieprzyjemnie gorąco.
+
+  ##Wodór
+  Wodór jest gazem wysoce łatwopalnym, ale nietoksycznym, który spala się podobnie jak tryt, dzięki czemu nadaje się jako źródło paliwa. Wytwarza się go poprzez elektrolizę pary wodnej za pomocą elektrolizera, w wyniku której powstają wodór i tlen.
+
+  <Box>
+    <GuideEntityEmbed Entity="WaterVaporCanister"/>
+    <GuideEntityEmbed Entity="Electrolyzer"/>
+    <GuideEntityEmbed Entity="GasVentScrubber"/>
+    <GuideEntityEmbed Entity="HydrogenCanister"/>
+  </Box>
+
+  W połączeniu z BZ w temperaturach poniżej 273 K i ciśnieniach powyżej 10 MPa wodór może tworzyć wodór metaliczny, rzadko spotykany materiał. Należy obchodzić się z wodorem ostrożnie, aby zapobiec pożarom lub wybuchom, a butle przechowywać w bezpiecznym miejscu.
+
+  ##Proto-Nitrate
+  Proto-Nitrate to wysoce reaktywny, nietoksyczny gaz. W wyniku reakcji egzotermicznej 1 mola wodoru z 0,1 mola pluoksium powstaje 1,1 mola proto-azotanu; reakcja przebiega najskuteczniej w temperaturze 5 000–10 000 kelwinów.
+
+  <Box>
+    <GuideEntityEmbed Entity="HydrogenCanister"/>
+    <GuideEntityEmbed Entity="PluoxiumCanister"/>
+    <GuideEntityEmbed Entity="GasVentScrubber"/>
+    <GuideEntityEmbed Entity="ProtoNitrateCanister"/>
+  </Box>
+
+  Wystawienie PN na działanie trytu lub wodoru powoduje przemianę jednego z tych pierwiastków w drugi w reakcji tworzącej plazmę, która ma charakter odpowiednio egzotermiczny lub endotermiczny.
+  W temperaturze od 260 do 280 kelwinów reaguje również z BZ, tworząc azot, hel i plazmę. Należy obchodzić się z nim ostrożnie, aby uniknąć wycieków.
+
+  ##Hel
+  Hel to obojętny, niewidoczny gaz powstający w wyniku rozkładu BZ. Rozpad ten można wywołać poprzez jednoczesne wystawienie BZ i protoazotanu na działanie temperatury nieco poniżej temperatury pokojowej (260–280 kelwinów). Ma on minimalne zastosowanie w atmosferach, dlatego należy go usuwać, aby uniknąć rozcieńczania innych gazów.
+  <Box>
+    <GuideEntityEmbed Entity="ProtoNitrateCanister"/>
+    <GuideEntityEmbed Entity="BZCanister"/>
+    <GuideEntityEmbed Entity="GasVentScrubber"/>
+    <GuideEntityEmbed Entity="HeliumCanister"/>
+  </Box>
+
+  ##Hyper-Noblium
+  Hyper-Noblium jest gazem szlachetnym znanym ze swojej wysokiej pojemności cieplnej oraz zdolności do zatrzymywania wszelkich reakcji w temperaturze powyżej 20 kelwinów. Jest to najlepszy możliwy czynnik chłodzący w branży, ale jego wytworzenie jest niezwykle trudne. Poddanie 10 molom azotu i 5 molom trytu działaniu temperatur poniżej 15 kelwinów spowoduje wytworzenie 1 mola hipernoblu. Reakcja ta jest również silnie egzotermiczna, więc tempo produkcji będzie zależało od tego, jak skuteczne chłodzenie uda się zapewnić podczas reakcji.
+
+  <Box>
+    <GuideEntityEmbed Entity="TritiumCanister"/>
+    <GuideEntityEmbed Entity="NitrogenCanister"/>
+    <GuideEntityEmbed Entity="BZCanister"/>
+    <GuideEntityEmbed Entity="GasVentScrubber"/>
+    <GuideEntityEmbed Entity="HyperNobliumCanister"/>
+  </Box>
+
+  Aby uzyskać duże ilości hyper-noblium, konieczne jest dodanie znacznych ilości BZ do komory reakcyjnej. BZ znacznie zmniejsza zużycie trytu, a także znacznie ogranicza egzotermiczny charakter reakcji.
+
+  ##Anti-Noblium
+  Anti-Noblium to gaz szlachetny o niszowych zastosowaniach, wytwarzany w procesie elektrolizy Hyper-Noblium w temperaturze poniżej 150 kelwinów, w wyniku czego z każdego mola Hyper-Noblium uzyskuje się 0,5 mola Anti-Noblium. Należy go przechowywać z zachowaniem należytej ostrożności, aby zachować zapasy Hyper-Noblium do innych reakcji.
+
+  <Box>
+    <GuideEntityEmbed Entity="HyperNobliumCanister"/>
+    <GuideEntityEmbed Entity="Electrolyzer"/>
+    <GuideEntityEmbed Entity="GasVentScrubber"/>
+    <GuideEntityEmbed Entity="AntiNobliumCanister"/>
+  </Box>
+
+  Specjalna właściwość Hyper-Noblium polegająca na zapobieganiu reakcjom nie dotyczy tworzenia Anti-Noblium; to samo dotyczy wszystkich innych reakcji, w których bierze udział elektrolyzer.
+
+  ##Zauker
+  Zauker jest gazem śmiertelnym w przypadku wdychania. Powstaje w wyniku połączenia 0,2 mola hipernoblu z 1 molem nitrium w temperaturze od 50 000 do 75 000 kelwinów, co w reakcji egzotermicznej daje 1 mol zaukera. Jest to gaz trudny do wytworzenia ze względu na zdolność hipernoblu do hamowania reakcji, co wymaga ścisłej kontroli komory reakcyjnej, aby reakcja w ogóle mogła przebiegać.
+
+  <Box>
+    <GuideEntityEmbed Entity="NitriumCanister"/>
+    <GuideEntityEmbed Entity="HyperNobliumCanister"/>
+    <GuideEntityEmbed Entity="GasVentScrubber"/>
+    <GuideEntityEmbed Entity="ZaukerCanister"/>
+  </Box>
+
+  W reakcji z azotem rozkłada się na 0,3 mola tlenu i 0,7 mola azotu na mol Zaukera; reakcja ta jest również egzotermiczna i podlega podobnym czynnikom hamującym. Należy przechowywać w bezpieczny sposób, aby zapobiec wyciekom.
+
+</Document>

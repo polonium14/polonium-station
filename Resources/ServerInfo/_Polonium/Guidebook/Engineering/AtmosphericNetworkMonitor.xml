@@ -1,0 +1,55 @@
+<!--
+SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<Document>
+  # Monitor sieci atmosferycznej
+  Monitor sieci atmosferycznej to komputer, który wyświetla informacje o monitorowanych [textlink="sieciach rurociągów" link="PipeNetworks"] w obrębie stacji.
+
+  <Box>
+    <GuideEntityEmbed Entity="ComputerAtmosMonitoring"/>
+  </Box>
+
+  Jest to przydatne narzędzie do szybkiego pomiaru temperatury, ciśnienia i składu gazów w [textlink="sieciach rurociągowych" link="PipeNetworks"], a także do określenia, w jaki sposób rozprzestrzeniają się one w obrębie stacji.
+
+  ## Wyświetlane sieci
+  Monitor sieci atmosferycznej wyświetla listę wszystkich monitorowanych [textlink="sieci rurociągów" link="PipeNetworks"] w stacji.
+
+  Każda sieć jest oznaczona kolorem i nazwana na podstawie nazwy oraz koloru czujnika rury gazowej, który ją monitoruje.
+  Za pomocą etykieciarki można zmienić nazwę sieci, a jej kolor można zmienić za pomocą pistoletu natryskowego.
+
+  Kliknięcie na sieć spowoduje wyświetlenie szczegółowych informacji na jej temat oraz zaznaczenie jej na mapie stacji.
+
+  Informacje te obejmują ilość molową gazu w całej sieci, a także skład gazu w sieci.
+  Może to okazać się niezwykle przydatne przy monitorowaniu ważnych sieci, takich jak sieć rurociągów dystrybucyjnych, które nie działają prawidłowo, jeśli ciśnienie spadnie poniżej określonego poziomu.
+
+  ## Mapa stacji
+  Monitor sieci atmosferycznej wyświetla na mapie stacji lokalizację wszystkich [textlink="sieci rurociągów" link="PipeNetworks"], a także wszelkich urządzeń podłączonych do rurociągów.
+  Należy pamiętać, że sieć rurociągów nie musi mieć podłączonego czujnika rurociągu gazowego, aby była widoczna na mapie.
+
+  Urządzenia te są oznaczone na mapie kolorem odpowiadającym ich barwie w stacji, co ułatwia rozróżnienie poszczególnych [textlink="sieci rurociągowych" link="PipeNetworks"] oraz podłączonych do nich urządzeń.
+
+  Urządzenia rurowe są pogrupowane w legendzie mapy według pełnionej funkcji:
+  - [bold]Otwór sieciowy[/bold] to urządzenie łączące sieć rurociągów z atmosferą stacji. Przykładami są [textlink="otwory wentylacyjne" link="AirVents"], [textlink="otwory pasywne" link="PassiveVent"] oraz [textlink="wtryskiwacze powietrza" link="AirInjector"].
+  - [bold]Oczyszczacz powietrza[/bold] to po prostu [textlink="oczyszczacz powietrza" link="AirScrubber"].
+  - [bold]Regulator przepływu[/bold] to urządzenie, które kontroluje przepływ gazu przez sieć rurociągów. Na przykład [textlink="pompki" link="Pumps"], [textlink="zawory" link="Valves"] oraz [textlink="mieszalniki/filtry gazowe" link="MixingAndFiltering"]. Strzałka na urządzeniu wskazuje kierunek przepływu gazu. Często podkreśla to również miejsce, w którym sieć rurociągów jest rozdzielona lub rozgałęziona.
+ - [bold]Termomaszyny[/bold] to urządzenie, które wpływa na temperaturę gazu w sieci rurociągów. Przykładami mogą być [textlink="termomaszyny" link="Thermomachines"], [textlink="radiatory" link="Radiators"], a nawet kriokomory medyczne.
+
+  ## Czujniki rury gazowej
+  Monitory sieci atmosferycznej gromadzą dane dotyczące [textlink="sieci rurociągowych" link="PipeNetworks"] za pomocą czujników rur gazowych.
+
+  <Box>
+    <GuideEntityEmbed Entity="GasPipeSensor"/>
+  </Box>
+
+  Stacja powinna domyślnie posiadać czujniki rur gazowych we wszystkich głównych [textlink="sieciach rurociągów" link="PipeNetworks"]. Przykładami są sieci dystrybucyjne i odprowadzające.
+
+  Jeśli chcesz monitorować nową sieć, możesz zbudować czujnik na rurze gazowej, a zostanie on automatycznie wyświetlony w monitorze sieci atmosferycznej.
+  Pamiętaj, aby budować czujniki na sieci rurociągów, które chcesz monitorować.
+  [textlink="Sieci rurociągowe" link="PipeNetworks"] można łatwo oddzielić za pomocą zwykłej pompki lub zaworu, co może spowodować, że czujnik będzie przesyłał dane do zupełnie innej sieci.
+
+</Document>
