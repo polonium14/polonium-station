@@ -6,7 +6,6 @@
   components:
   - type: MagnetPickup
     range: 2
-    slotCheck: false
   - type: Sprite
     noRot: true
     sprite: /Textures/_Polonium/Structures/Storage/vacuumorebox.rsi

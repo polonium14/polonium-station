@@ -5,7 +5,8 @@
   components:
   - type: GameRule
     minPlayers: 15
-    chaosScore: 500
+  - type: DynamicRuleCost
+    cost: 500
   - type: LoadMapRule
     gridPath: /Maps/Shuttles/ShuttleEvent/striker.yml
   - type: NukeopsRule

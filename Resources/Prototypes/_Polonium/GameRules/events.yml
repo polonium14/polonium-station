@@ -26,13 +26,10 @@
     minimumPlayers: 5
     reoccurrenceDelay: 25
     earliestStart: 20
-    eventType: HostilesSpawn # Goobstation
-  # Goobstation
-  - type: GameRule
-    chaosScore: 250
   - type: RandomEntityStorageSpawnRule
     prototype: MobCowiekMaupa
-    openStorageSound: /Audio/_Polonium/Effects/Jumpscare/jumpscare1.ogg
+  - type: DynamicRuleCost
+    cost: 250
 
 - type: entity
   parent: GreytideVirus

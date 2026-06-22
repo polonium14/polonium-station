@@ -14,7 +14,9 @@
     Telecrystal: 12
   categories:
   - UplinkWeaponry
-  saleLimit: 1
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
 
 - type: listing
   id: UplinkPistolVisMPSMagazine
@@ -35,7 +37,9 @@
     Telecrystal: 40
   categories:
   - UplinkWeaponry
-  saleLimit: 1
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
 
 - type: listing
   id: UplinkPistolPMMMagazine
@@ -56,7 +60,9 @@
     Telecrystal: 45
   categories:
   - UplinkWeaponry
-  saleLimit: 1
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
 
 - type: listing
   id: UplinkSniperBor
@@ -67,7 +73,9 @@
     Telecrystal: 55
   categories:
   - UplinkWeaponry
-  saleLimit: 1
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
 
 - type: listing
   id: UplinkSniperBorMagazine

@@ -45,10 +45,6 @@
     baseRadialAcceleration: 5
     maxRange: 30
     minRange: 1
-    whitelist:
-      tags:
-        - ArtifactFragment
-        - Ore
   - type: SingularityDistortion
     falloffPower: 1.6
     intensity: 4

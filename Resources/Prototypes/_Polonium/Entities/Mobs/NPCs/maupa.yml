@@ -14,7 +14,15 @@
   - type: InputMover
   - type: MobMover
   - type: Body
-    prototype: Monkey
+  - type: EntityTableContainerFill
+    containers:
+      body_organs: !type:AllSelector
+        children:
+        - id: OrganAnimalLungs
+        - id: OrganAnimalHeart
+        - id: OrganAnimalStomach
+        - id: OrganAnimalLiver
+        - id: OrganAnimalKidneys
   - type: Sprite
     sprite: _Polonium/Mobs/maupa.rsi
     layers:

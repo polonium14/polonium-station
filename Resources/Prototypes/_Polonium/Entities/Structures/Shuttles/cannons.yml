@@ -16,15 +16,7 @@
     containers:
       machine_board: !type:Container
       machine_parts: !type:Container
-      hidden_slot: !type:ContainerSlot
       ballistic-ammo: !type:Container
-  - type: ItemSlots
-    slots:
-      hidden_slot:
-        name: computer_slot_accessory
-        whitelist:
-          tags:
-          - ListeningBug
   - type: Destructible
     thresholds:
     - trigger:
