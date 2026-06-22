@@ -1,0 +1,14 @@
+uplink-pistol-vis-mps-name = VIS MPS .35
+uplink-pistol-vis-mps-desc = Kompaktowy pistolet VIS MPS kalibru .35, używany przez polskie siły bezpieczeństwa w całej galaktyce. Oferuje dobrą równowagę między siłą ognia a kontrolą odrzutu, niezawodny w walce na krótkim dystansie.
+uplink-pistol-vis-mps-magazine-name = Magazynek do VIS MPS
+uplink-pistol-vis-mps-magazine-desc = Magazynek o pojemności 25 nabojów do pistoleta VIS MPS kalibru .35. Wykonany z lekkich materiałów, zapewnia mobilność podczas intensywnych starć.
+uplink-pistol-pmm-name = PMM Model-X
+uplink-pistol-pmm-desc = Pistolet Maszynowy Modułowy serii X kalibru .35 klasy PDW, popularny wśród sił bezpieczeństwa i agencji ochrony na wielu stacjach kosmicznych.
+uplink-pistol-pmm-magazine-name = Magazynek do PMM
+uplink-pistol-pmm-magazine-desc = Magazynek o pojemności 30 nabojów do PMM kalibru .35. Wykonany z lekkich materiałów, umożliwia szybkie przeładowanie i długotrwałe użytkowanie w terenie.
+uplink-sniper-bor-name = BOR .30
+uplink-sniper-bor-desc = Zaawansowany karabin snajperski kalibru .30, szeroko stosowany przez jednostki wojskowe i siły specjalne w całej galaktyce. Oferuje doskonałą celność na długich dystansach oraz dobrą siłę ognia.
+uplink-sniper-bor-magazine-name = Magazynek do BOR .30
+uplink-sniper-bor-magazine-desc = Magazynek o pojemności 10 nabojów do karabinu snajperskiego BOR .30. Wykonany z wytrzymałych materiałów, zapewnia niezawodność i stabilność podczas precyzyjnego strzelania.
+uplink-rifle-beryl-name = Beryl wz. 96
+uplink-rifle-beryl-desc = Karabin szturmowy kalibru .20, szeroko stosowany przez siły zbrojne i jednostki specjalne w całej galaktyce. Oferuje wysoką szybkostrzelność i prędkość wylotową, ale kosztem obniżonej celności przy długich przytrzymaniach.

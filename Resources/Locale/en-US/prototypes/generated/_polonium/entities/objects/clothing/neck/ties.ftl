@@ -1,0 +1,12 @@
+ent-ClothingNeckTieCentcom = centcomm tie
+    .desc = A tie in centcomm's colors
+ent-ClothingNeckTieGray = gray-tie
+    .desc = A neosilk gray tie.
+ent-ClothingNeckTieBlue = blue-tie
+    .desc = A neosilk blue tie.
+ent-ClothingNeckTieBrown = brown-tie
+    .desc = A neosilk brown tie.
+ent-ClothingNeckTieOrange = orange-tie
+    .desc = A neosilk orange tie.
+ent-ClothingNeckTieGreen = green-tie
+    .desc = A neosilk green tie.
