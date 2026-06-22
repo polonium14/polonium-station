@@ -23,7 +23,6 @@
     quickEquip: false
     slots:
     - Back
-    - backStorage
   - type: AmmoCounter
   - type: Gun
     minAngle: 21
