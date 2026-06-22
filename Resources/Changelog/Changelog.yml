@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: Tayrtahn
-  changes:
-  - message: Chickens and ducks now report hunger levels when examined.
-    type: Add
-  id: 7956
-  time: '2025-02-15T04:29:41.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/35164
 - author: VerinSenpai
   changes:
   - message: Air alarm devices now return to their previous settings after a power
@@ -4190,3 +4183,11 @@
   id: 9263
   time: '2026-06-22T15:38:48.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/704
+- author: Alcovvhore
+  changes:
+  - message: "Obra\u017Cenia bagnetu mosina zwi\u0119kszone z 12 k\u0142utych do 15\
+      \ k\u0142utych."
+    type: Tweak
+  id: 9264
+  time: '2026-06-22T22:16:34.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/707
