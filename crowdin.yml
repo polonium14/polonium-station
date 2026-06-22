@@ -1,0 +1,8 @@
+files:
+  - source: /Resources/Locale/en-US/**/*.ftl
+    ignore:
+      - /Resources/Locale/en-US/**/datasets
+      - /Resources/Locale/en-US/**/accent
+      - /Resources/Locale/en-US/_Polonium
+    translation: /Resources/Locale//%locale%/**//%original_file_name%
+    update_option: update_without_changes
