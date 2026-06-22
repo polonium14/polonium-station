@@ -99,3 +99,19 @@ cargo-acquisition-slip-body = [head=3]Szczegóły mienia[/head]
     { "[head=3]Szczegóły zakupu[/head]" }
     { "[bold]Zamawiający:[/bold]" } { $orderer }
     { "[bold]Powód:[/bold]" } { $reason }
+
+cargo-console-menu-flavor-left = Order even more pizza boxes than usual!
+
+cargo-console-menu-flavor-right = v2.1
+
+cargo-console-menu-order-row-title = {$productName} (x{$orderAmount} for {$orderPrice}$)
+
+cargo-console-menu-order-row-product-description = Reason: {$orderReason}
+
+cargo-console-menu-order-row-button-approve = Approve
+
+cargo-console-menu-order-row-button-cancel = Cancel
+
+cargo-console-menu-order-row-alerts-reason-absent = The reason is not specified
+
+cargo-console-menu-order-row-alerts-requester-unknown = Unknown

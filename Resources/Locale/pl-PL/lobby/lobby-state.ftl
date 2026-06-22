@@ -33,3 +33,11 @@ lobby-state-playtime-comment-normal =
 lobby-state-playtime-comment-concerning = Dziś grałeś(-aś) { $hours } godzin. Zrób sobie przerwę.
 lobby-state-playtime-comment-grasstouchless = Grałeś(-aś) { $hours } godzin. Rozważ wylogowanie się, aby zadbać o swoje potrzeby.
 lobby-state-playtime-comment-selfdestructive = { $hours } godzin. Serio?
+
+lobby-state-background-text = Menu art: [color=white]{$backgroundTitle}[/color] by [color=white]{$backgroundArtist}[/color]
+
+lobby-state-background-no-background-text = No menu art loaded.
+
+lobby-state-background-unknown-title = [color=dimgray]Unknown title[/color]
+
+lobby-state-background-unknown-artist = [color=dimgray]Unknown artist[/color]

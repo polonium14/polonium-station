@@ -130,3 +130,18 @@ construction-graph-tag-fire-helmet = fire helmet
 construction-graph-tag-spationaut-hardsuit = spationaut hardsuit
 # clothing
 construction-graph-tag-backpack = backpack
+
+construction-graph-tag-boxhug = a box of hugs
+
+construction-graph-tag-mop-basic = mop
+
+construction-graph-tag-paper = office paper
+
+construction-graph-tag-core-pinpointer-piece = piece of core pinpointer
+
+construction-graph-tag-station-ai-core-electronics = station AI core electronics
+
+construction-graph-tag-turret-control-electronics = sentry turret control panel electronics
+
+# chemistry
+construction-graph-tag-centrifuge-compatible = centrifugable container

@@ -32,3 +32,9 @@ role-subtype-survivor = Ocalały
 role-subtype-subverted = Zdradzony
 role-subtype-paradox-clone = Klon z Paradoksu
 role-subtype-wizard = Czarodziej
+
+role-subtype-xenoborg = Xenoborg
+
+role-subtype-xenoborg-core = Xenoborg Core
+
+role-subtype-changeling = Changeling

@@ -13,3 +13,9 @@ store-ui-button-out-of-stock = { "" } (brak w magazynie)
 store-not-account-owner = Ten { $store } nie jest z tobą powiązany!
 store-preset-name-uplink = Uplink
 store-preset-name-spellbook = Księga zaklęć
+
+store-ui-refund-text = Refund
+
+store-preset-name-nukie-delivery = NukeOps Bluespace Delivery
+
+store-preset-name-changeling = DNA Store

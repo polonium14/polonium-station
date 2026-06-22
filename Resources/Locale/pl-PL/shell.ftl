@@ -49,3 +49,7 @@ shell-argument-number-invalid = Argument { $index } musi być prawidłową liczb
 # Hints
 shell-argument-username-hint = <nazwa użytkownika>
 shell-argument-username-optional-hint = [nazwa użytkownika]
+
+shell-can-only-run-from-pre-round-lobby = You can only run this command while the game is in the pre-round lobby.
+
+shell-can-only-run-while-round-is-active = You can only run this command while the game is in a round.

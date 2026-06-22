@@ -10,3 +10,7 @@ access-id-card-console-component-no-hands-error = Nie masz rąk.
 id-card-console-privileged-id = Uprawniony Identyfikator
 id-card-console-target-id = Docelowy Identyfikator
 id-card-console-damaged = Naruszona integralność strukturalna, karty wysunięto.
+
+id-card-console-window-select-all-button = Grant all
+
+id-card-console-window-deselect-all-button = Revoke all

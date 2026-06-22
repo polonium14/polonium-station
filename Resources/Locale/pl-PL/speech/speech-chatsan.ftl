@@ -132,3 +132,7 @@ chatsan-word-67 = allg
 chatsan-replacement-67 = all good
 chatsan-word-68 = alr
 chatsan-replacement-68 = alright
+
+chatsan-word-69 = wya
+
+chatsan-replacement-69 = where you at

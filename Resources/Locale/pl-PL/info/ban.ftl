@@ -79,3 +79,5 @@ server-ban-string-no-pii = { $admin } utworzył ban serwerowy o surowości { $se
 server-ban-string-never = nigdy
 # Kick on ban
 ban-kick-reason = Zostałeś zbanowany
+
+ban-panel-expiry-error = err

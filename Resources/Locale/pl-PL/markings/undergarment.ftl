@@ -15,3 +15,67 @@ marking-UndergarmentBottomSatinVox-satin_vox = Satin
 marking-UndergarmentBottomBoxersReptilian-boxers_reptilian = Boxers
 marking-UndergarmentBottomBriefsReptilian-briefs_reptilian = Briefs
 marking-UndergarmentBottomSatinReptilian-satin_reptilian = Satin
+
+marking-UndergarmentTopTanktop = Tanktop
+
+marking-UndergarmentTopBinder = Binder
+
+marking-UndergarmentTopBra = Classic Bra
+
+marking-UndergarmentTopSportsbra = Sports Bra
+
+marking-UndergarmentBottomBoxers = Boxers
+
+marking-UndergarmentBottomBriefs = Briefs
+
+marking-UndergarmentBottomSatin = Satin
+
+marking-UndergarmentTopTanktopVox = Tanktop
+
+marking-UndergarmentTopBinderVox = Binder
+
+marking-UndergarmentTopBraVox = Classic Bra
+
+marking-UndergarmentTopSportsbraVox = Sports Bra
+
+marking-UndergarmentBottomBoxersVox = Boxers
+
+marking-UndergarmentBottomBoxersVox_boxers_vox = Boxers
+
+marking-UndergarmentBottomBriefsVox = Briefs
+
+marking-UndergarmentBottomSatinVox = Satin
+
+marking-UndergarmentBottomBoxersReptilian = Boxers
+
+marking-UndergarmentBottomBriefsReptilian = Briefs
+
+marking-UndergarmentBottomSatinReptilian = Satin
+
+marking-UndergarmentTopTanktopVulpkanin = Tanktop
+
+marking-UndergarmentTopTanktopVulpkanin-tanktop_vulpkanin = Tanktop
+
+marking-UndergarmentTopBinderVulpkanin = Binder
+
+marking-UndergarmentTopBinderVulpkanin-binder_vulpkanin = Binder
+
+marking-UndergarmentTopBraVulpkanin = Classic Bra
+
+marking-UndergarmentTopBraVulpkanin-classic_vulpkanin = Classic Bra
+
+marking-UndergarmentTopSportsbraVulpkanin = Sports Bra
+
+marking-UndergarmentTopSportsbraVulpkanin-sports_vulpkanin = Sports Bra
+
+marking-UndergarmentBottomBoxersVulpkanin = Boxers
+
+marking-UndergarmentBottomBoxersVulpkanin-boxers_vulpkanin = Boxers
+
+marking-UndergarmentBottomBriefsVulpkanin = Briefs
+
+marking-UndergarmentBottomBriefsVulpkanin-briefs_vulpkanin = Briefs
+
+marking-UndergarmentBottomSatinVulpkanin = Satin
+
+marking-UndergarmentBottomSatinVulpkanin-satin_vulpkanin = Satin

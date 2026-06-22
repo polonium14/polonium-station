@@ -11,3 +11,9 @@ generic-hours = godziny
 generic-minutes = minuty
 generic-playtime-title = Czas gry
 generic-confirm = Potwierdź
+
+generic-and = and
+
+generic-or = or
+
+generic-seconds = seconds

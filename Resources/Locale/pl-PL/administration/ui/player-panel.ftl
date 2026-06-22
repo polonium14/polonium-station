@@ -21,3 +21,5 @@ player-panel-rejuvenate = Przywróć zdrowie
 player-panel-false = False
 player-panel-true = True
 player-panel-follow = Śledź
+
+player-panel-camera = Camera

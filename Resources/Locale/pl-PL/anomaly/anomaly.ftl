@@ -89,3 +89,5 @@ anomaly-behavior-inconstancy = [color=crimson]Wykryto nietrwałość. Typy cząs
 anomaly-behavior-fast = [color=crimson]Częstotliwość pulsacji jest znacznie zwiększona.[/color]
 anomaly-behavior-strenght = [color=crimson]Moc pulsacji jest znacznie zwiększona.[/color]
 anomaly-behavior-moving = [color=crimson]Wykryto niestabilność współrzędnych.[/color]
+
+anomaly-secret-admin = [color=red](ERROR)[/color]

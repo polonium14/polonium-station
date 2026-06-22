@@ -198,3 +198,9 @@ marking-HumanHairVlongfringe = Bardzo długie z grzywką
 marking-HumanHairVolaju = Volaju
 marking-HumanHairWisp = Kosmyk
 marking-HumanHairLongWithBangs = Długie z grzywką
+
+marking-HumanHairBaby = Baby
+
+marking-HumanHairCube = Cube
+
+marking-HumanHairOverEyePigtail = Pigtail (Over Eye)

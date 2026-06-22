@@ -129,3 +129,15 @@ chat-speech-verb-name-electricity = Elektryczność
 chat-speech-verb-electricity-1 = trzaska
 chat-speech-verb-electricity-2 = bzyczy
 chat-speech-verb-electricity-3 = piszczy
+
+chat-speech-verb-vulpkanin = Vulpkanin
+
+chat-speech-verb-name-wawa = Wawa
+
+chat-speech-verb-wawa-1 = intones
+
+chat-speech-verb-wawa-2 = states
+
+chat-speech-verb-wawa-3 = declares
+
+chat-speech-verb-wawa-4 = ponders

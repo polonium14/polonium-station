@@ -22,3 +22,27 @@ marking-TattooEyeMothRight-tattoo_eye_moth_r = Right Eye
 marking-TattooEyeMothRight = Right Eye
 marking-TattooEyeMothLeft-tattoo_eye_moth_l = Left Eye
 marking-TattooEyeMothLeft = Left Eye
+
+marking-TattooEyeVulpkaninRight-tattoo_eye_vulpkanin_r = Right Eye
+
+marking-TattooEyeVulpkaninRight = Right Eye
+
+marking-TattooEyeVulpkaninLeft-tattoo_eye_vulpkanin_l = Left Eye
+
+marking-TattooEyeVulpkaninLeft = Left Eye
+
+marking-TattooEyeshadowUpper-tattoo_eyeshadow_upper = Eyeshadow (Upper)
+
+marking-TattooEyeshadowUpper = Eyeshadow (Upper)
+
+marking-TattooEyeshadowLower-tattoo_eyeshadow_lower = Eyeshadow (Lower)
+
+marking-TattooEyeshadowLower = Eyeshadow (Lower)
+
+marking-TattooEyeshadowLowerReptilian-tattoo_eyeshadow_lower_reptilian = Eyeshadow (Lower)
+
+marking-TattooEyeshadowLowerReptilian = Eyeshadow (Lower)
+
+marking-TattooVoxTailRing-tattoo_vox_tail_ring = Tail Ring
+
+marking-TattooVoxTailRing = Tail Ring

@@ -55,3 +55,15 @@ criminal-records-species-filter = Gatunek
 
 criminal-records-console-auto-history = ARESZTOWANY: { $reason }
 criminal-records-console-unspecified-reason = <nieokreślony powód>
+
+criminal-records-status-hostile = Hostile
+
+criminal-records-status-eliminated = Eliminated
+
+criminal-records-console-hostile = {$name} ({$job}) was marked as hostile by {$officer} for: {$reason}.
+
+criminal-records-console-not-hostile = {$name} ({$job}) no longer marked as hostile by {$officer}.
+
+criminal-records-console-eliminated = {$name} ({$job}) was marked as eliminated by {$officer}.
+
+criminal-records-console-not-eliminated = {$name} ({$job}) no longer marked as eliminated by {$officer}.

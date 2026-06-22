@@ -80,3 +80,25 @@ chat-emote-name-yap = Yaps
 chat-emote-name-gekker = Gekkers
 chat-emote-msg-gurgle = gurgles.
 chat-emote-msg-coo = coos.
+
+chat-emote-name-bark = Bark
+
+chat-emote-name-snarl = Snarl
+
+chat-emote-name-whine = Whine
+
+chat-emote-name-howl = Howl
+
+chat-emote-name-growl = Growl
+
+chat-emote-msg-deathgasp-scurret = lets out a final 'wa' and falls still...
+
+chat-emote-msg-bark = barks.
+
+chat-emote-msg-snarl = snarls.
+
+chat-emote-msg-whine = whines.
+
+chat-emote-msg-howl = howls.
+
+chat-emote-msg-growl = growls.

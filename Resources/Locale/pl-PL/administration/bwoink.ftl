@@ -28,3 +28,4 @@ bwoink-message-silent = (C)
 
 # C - cichy
 
+bwoink-admin-title = Admin Help

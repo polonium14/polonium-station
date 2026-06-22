@@ -35,3 +35,15 @@ lathe-menu-silo-linked-message = Silos połączony
 lathe-menu-fabricating-message = Wytwarzanie...
 lathe-menu-materials-title = Materiały
 lathe-menu-queue-title = Kolejka budowania
+
+lathe-menu-delete-fabricating-tooltip = Cancel printing the current item.
+
+lathe-menu-delete-item-tooltip = Cancel printing this batch.
+
+lathe-menu-move-up-tooltip = Move this batch ahead in the queue.
+
+lathe-menu-move-down-tooltip = Move this batch back in the queue.
+
+lathe-menu-item-single = {$index}. {$name}
+
+lathe-menu-item-batch = {$index}. {$name} ({$printed}/{$total})

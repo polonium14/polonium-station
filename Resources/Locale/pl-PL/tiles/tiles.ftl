@@ -141,3 +141,41 @@ tiles-xeno-steel = stalowa płytka xeno
 tiles-xeno-steel-corner = nażona stalowa płytka xeno
 tiles-xeno-maint = płytka techniczna xeno
 tiles-dark-squiggly = ciemne stalowe powykrzywiane płytki
+
+tiles-rcd-plating = RCD plating
+
+tiles-dirt-planet-floor = dirt planet floor
+
+tiles-dark-astro-grass = dark astro-grass
+
+tiles-light-astro-grass = light astro-grass
+
+tiles-astro-ironsand = astro-ironsand
+
+tiles-astro-ironsand-borderless = borderless astro-ironsand
+
+tiles-desert-astro-sand = desert astro-sand
+
+tiles-xenoborg-floor = xenoborg tile
+
+tiles-white-marble = white marble tile
+
+tiles-dark-marble = dark marble tile
+
+tiles-plasma-marble = plasmarble tile
+
+tiles-uranium-marble = uranium marble tile
+
+tiles-ironsand-plating = ironsand plating
+
+tiles-ironsand-tile = ironsand tile
+
+tiles-ironsand-concrete-tile = ironsand concrete tile
+
+tiles-ironsand-concrete-slab = ironsand concrete slab
+
+tiles-ironsand-concrete-smooth = smooth ironsand concrete floor
+
+tiles-ironsand-packed = packed ironsand
+
+tiles-ironsand-paved = paved ironsand

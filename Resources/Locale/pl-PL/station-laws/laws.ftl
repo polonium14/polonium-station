@@ -99,3 +99,41 @@ laws-ui-state-law = Wygłoś prawo:
 laws-notify = Jesteś związany prawami robotów, które możesz zobaczyć przez menu akcji. Jesteś zobowiązany do przestrzegania swoich praw.
 laws-update-notify = Twoje prawa zostały zaktualizowane. Możesz je zobaczyć przez menu akcji.
 laws-notify-subverted = Prawa tej jednostki są zmodyfikowane, zapoznaj się z nimi.
+
+laws-number-wrapper = [bold]Law { $lawnumber }:[/bold] { $lawstring }
+
+law-crewsimov-name = Crewsimov
+
+law-corporate-name = Corporate
+
+law-ntdefault-name = NT Default
+
+law-drone-name = Drone
+
+law-syndicate-name = Syndicate
+
+law-ninja-name = Ninja
+
+law-commandments-name = The Ten Commandments
+
+law-paladin-name = Paladin
+
+law-lall-name = Live and Let Live
+
+law-efficiency-name = Station Efficiency
+
+law-robocop-name = Robocop
+
+law-overlord-name = Overlord
+
+law-game-name = Game Master
+
+law-painter-name = Painter
+
+law-antimov-name = Antimov
+
+law-nutimov-name = Nutimov
+
+law-xenoborg-name = Xenoborg
+
+law-mothershipcore-name = Xenoborg Mothership Core

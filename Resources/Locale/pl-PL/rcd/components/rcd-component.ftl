@@ -43,3 +43,26 @@ rcd-component-sensorsmonitors = Czujniki i monitory
 rcd-component-deconstruct = demontaż
 rcd-component-floor-steel = stalowa płytka
 rcd-component-plating = pokrycie korpusu
+
+# RPD mode change
+rcd-rpd-mode-primary = Primary
+
+rcd-rpd-mode-secondary = Secondary
+
+rcd-rpd-mode-tertiary = Tertiary
+
+rcd-rpd-mode-free = Free
+
+rcd-component-examine-rpd-mode = Current mode: [color=cyan]{$mode}[/color]
+
+rcd-verb-switch-mode = Switch mode
+
+rcd-item-status-mode = Mode: {$mode}
+
+rcd-component-cannot-build-identical-entity = That already exists there!
+
+rcd-component-pumps-valves = Pumps & Valves
+
+rcd-component-atmospheric-utility = Atmospheric Utility
+
+rcd-component-sensors-monitors = Sensors & Monitors

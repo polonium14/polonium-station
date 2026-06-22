@@ -6,3 +6,5 @@ access-overrider-window-no-target = Brak podłączonego urządzenia
 access-overrider-window-missing-privileges = Dostęp do tego urządzenia nie może być modyfikowany. Wsuniętemu identyfikatorowi brakuje następujących uprawnień:
 access-overrider-cannot-modify-access = Nie posiadasz wystarczających uprawnień aby modyfikować te urządzenie.
 access-overrider-out-of-range = Podłączone urządzenie jest za daleko.
+
+access-overrider-window-missing-privileges-no-id = Access to this device cannot be modified. Missing the following privileges:

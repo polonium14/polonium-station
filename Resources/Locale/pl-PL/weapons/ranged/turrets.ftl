@@ -15,3 +15,8 @@ station-ai-turret-is-attacking-warning =
         [epicene] otworzyłu
        *[neuter] otworzyło
     } ogień do wroga.
+
+# Turret notification for station AI
+station-ai-turret-component-name = {$name} ({$address})
+
+station-ai-turret-component-is-attacking-warning = {CAPITALIZE($source)} has engaged a hostile target.

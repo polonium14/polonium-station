@@ -61,3 +61,11 @@ trait-spanish-name = Spanish accent
 trait-spanish-desc = Hola señor, donde esta la biblioteca.
 trait-painnumbness-name = Numb
 trait-painnumbness-desc = You lack any sense of feeling pain, being unaware of how hurt you may be.
+
+trait-monochromacy-name = Monochromacy
+
+trait-monochromacy-desc = You are fully colorblind, everything you perceive ranges from blacks to whites.
+
+trait-hemophilia-name = Hemophilia
+
+trait-hemophilia-desc = Your body fails to make blood clots.

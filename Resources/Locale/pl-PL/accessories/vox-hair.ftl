@@ -22,3 +22,13 @@ marking-VoxHairTielQuills = Voksie Kolce (Tył)
 marking-VoxHairYasu = Voksie Yasuhiro
 marking-VoxHairWiseBraid = Voksie Warkocze mędrca
 marking-VoxHairSpotty = Voksie Włosy w plamy
+
+marking-VoxHairMadScientist = Vox Mad Scientist
+
+marking-VoxHairHedgehog = Vox Hedgehog
+
+marking-VoxHairBushy = Vox Bushy Quills
+
+marking-VoxHairSlick = Vox Slick Quills
+
+marking-VoxHairCatfish = Vox Catfish

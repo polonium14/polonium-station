@@ -15,3 +15,5 @@ changelog-tab-title-Maps = Mapy
 changelog-tab-title-Funkylog = Funkylog
 cmd-changelog-desc = Otwórz listę zmian.
 cmd-changelog-help = Użycie: changelog
+
+changelog-tab-title-Rules = Rules

@@ -73,3 +73,33 @@ station-beacon-disposals = Utylizacja
 station-beacon-cryosleep = Kriosen
 station-beacon-escape-pod = Pod Ewak.
 station-beacon-vox = Pokój Voxów
+
+station-beacon-solars-N = Solars N
+
+station-beacon-solars-NE = Solars NE
+
+station-beacon-solars-E = Solars E
+
+station-beacon-solars-SE = Solars SE
+
+station-beacon-solars-S = Solars S
+
+station-beacon-solars-W = Solars W
+
+station-beacon-solars-NW = Solars NW
+
+station-beacon-escape-pod-N = Escape Pod N
+
+station-beacon-escape-pod-NE = Escape Pod NE
+
+station-beacon-escape-pod-E = Escape Pod E
+
+station-beacon-escape-pod-SE = Escape Pod SE
+
+station-beacon-escape-pod-S = Escape Pod S
+
+station-beacon-escape-pod-SW = Escape Pod SW
+
+station-beacon-escape-pod-W = Escape Pod W
+
+station-beacon-escape-pod-NW = Escape Pod NW

@@ -58,3 +58,7 @@ reagent-name-toxintrash = śmieciotoksyna
 reagent-desc-toxintrash = Strasznie śmierdzący płyn. Śmiertelnie niebezpieczny dla osób niebędących voksami.
 reagent-name-bz-metabolites = Metabolity BZ
 reagent-desc-bz-metabolites = Produkt uboczny BZ, który niszczy rezerwy chemiczne istot podatnych na zmiany.
+
+reagent-name-hemorrhinol = hemorrhinol
+
+reagent-desc-hemorrhinol = A toxin that causes severe damage to blood vessels, causing rapid bleeding.

@@ -48,3 +48,7 @@ signal-port-name-power-discharging = Discharging
 signal-port-description-power-discharging = This port is invoked with HIGH when the battery is losing charge and LOW when not.
 signal-port-name-item-detected = Detected
 signal-port-description-item-detected = This port is invoked whenever the transmitter detects an item.
+
+signal-port-name-trigger-sender = Trigger
+
+signal-port-description-trigger-sender = This port is invoked whenever the device triggers.

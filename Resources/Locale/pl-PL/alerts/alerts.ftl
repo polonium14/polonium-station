@@ -82,3 +82,7 @@ alerts-rooted-name = Zakorzeniony
 alerts-rooted-desc = Jesteś przytwierdzony do ziemi. Nie możesz się poślizgnąć, ale pochłaniasz płyny spod siebie.
 alerts-stealthy-name = Kieszonkowiec
 alerts-stealthy-desc = Czy aktualnie dokonujesz kieszonkowania. Kliknij, aby przełączyć.
+
+alerts-knockdown-name = [color=yellow]Knocked Down[/color]
+
+alerts-knockdown-desc = You're [color=yellow]Knocked Down[/color]! Something has slipped or pushed you over, encumbering your movement.

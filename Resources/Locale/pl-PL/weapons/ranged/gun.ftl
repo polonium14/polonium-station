@@ -59,3 +59,7 @@ gun-speedloader-empty = Ładownik pusty
 # GunSpreadModifier
 examine-gun-spread-modifier-reduction = Rozrzut zmniejszony o [color=yellow]{ NATURALPERCENT($percentage) }[/color].
 examine-gun-spread-modifier-increase = Rozrzut zwiększony o [color=yellow]{ NATURALPERCENT($percentage) }[/color].
+
+gun-set-fire-mode-examine = Set to [color=yellow]{$mode}[/color].
+
+gun-set-fire-mode-popup = Changed to {$mode}

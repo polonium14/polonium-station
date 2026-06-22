@@ -25,3 +25,5 @@ zombie-robotumor-sickness-3 = Wykrywasz wiele usterek systemu.
 zombie-robotumor-advanced-1 = BŁĄD KRYTYCZNY: Układy logiczne niestabilne.
 zombie-robotumor-advanced-2 = OSTRZEŻENIE: W pamięci wykryto wrogie podprogramy!
 zombie-tumor-ability-gained = Czujesz przytłaczającą potrzebę, by ulec infekcji...
+
+zombie-roleban-ghosted = You have been ghosted because you are banned from playing the Zombie role.

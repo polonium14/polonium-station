@@ -8,3 +8,5 @@ construction-recipe-curtains-pink = curtains (pink)
 construction-recipe-curtains-purple = curtains (purple)
 construction-recipe-curtains-red = curtains (red)
 construction-recipe-curtains-white = curtains (white)
+
+construction-recipe-curtains-sky-blue = curtains (sky blue)

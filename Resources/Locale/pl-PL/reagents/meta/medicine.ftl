@@ -108,3 +108,17 @@ reagent-name-potassium-iodide = jodek potasu
 reagent-desc-potassium-iodide = Zmniejsza szkodliwe skutki promieniowania o 90%. Wyłącznie do stosowania profilaktycznego.
 reagent-name-haloperidol = haloperidol
 reagent-desc-haloperidol = Usuwa większość substancji pobudzających i halucynogennych. Zmniejsza działanie narkotyczne i drżenie. Powoduje senność.
+
+reagent-name-dexalin-plus-saline = dexalin plus & saline
+
+reagent-name-puncturase-tranexamic = puncturase & tranexamic
+
+reagent-name-pyrazine-dermaline = pyrazine & dermaline
+
+reagent-name-arcryox = arcryox
+
+reagent-desc-arcryox = A sickeningly blue cryogenics chemical that is able to heal extreme wounds even on the dead. It has trouble stabilizing patients however.
+
+reagent-name-warfarin = warfarin
+
+reagent-desc-warfarin = Commonly used as an anticoagulant medication. Causes blood to have difficulty forming clots. Can cause internal bleeding when overdosed.

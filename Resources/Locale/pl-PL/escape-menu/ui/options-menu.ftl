@@ -401,3 +401,23 @@ ui-options-function-target-left-leg = Celuj w lewą nogę
 ui-options-function-target-left-foot = Celuj w lewą stopę
 ui-options-function-target-right-leg = Celuj w prawą nogę
 ui-options-function-target-right-foot = Celuj w prawą stopę
+
+ui-options-hold-to-attack-melee = Hold to attack (melee)
+
+ui-options-hold-to-attack-ranged = Hold to attack (ranged)
+
+ui-options-function-smart-equip-suit-storage = Smart-equip to suit storage
+
+ui-options-function-smart-equip-pocket1 = Smart-equip to pocket 1
+
+ui-options-function-smart-equip-pocket2 = Smart-equip to pocket 2
+
+ui-options-function-inspect-entity-tooltip = Open a ViewVariables window for the entity your mouse is currently hovering over.
+
+ui-options-function-inspect-server-component = Inspect Server Component
+
+ui-options-function-inspect-server-component-tooltip = Open a ViewVariables window with the server component set by the "quickinspect" command for the entity your mouse is currently hovering over.
+
+ui-options-function-inspect-client-component = Inspect Client Component
+
+ui-options-function-inspect-client-component-tooltip = Open a ViewVariables window with the client component set by the "quickinspect" command for the entity your mouse is currently hovering over.

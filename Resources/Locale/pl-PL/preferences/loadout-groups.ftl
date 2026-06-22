@@ -217,3 +217,9 @@ loadout-group-reporter-jumpsuit = Reporter – kombinezon
 loadout-group-psychologist-jumpsuit = Psycholog – kombinezon
 loadout-group-boxer-jumpsuit = Bokser – kombinezon
 loadout-group-boxer-gloves = Bokser – rękawice
+
+loadout-group-survival-military = See line 14, no one will ever see this so :3
+
+loadout-group-bartender-shaker = Bartender shaker
+
+loadout-group-chaplain-bible = Holy Book

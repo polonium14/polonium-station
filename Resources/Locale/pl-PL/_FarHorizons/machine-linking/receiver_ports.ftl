@@ -12,3 +12,7 @@ signal-port-name-gas-turbine-receiver-increase = Zwiększ Obciążenie
 signal-port-description-gas-turbine-receiver-increase = Zwiększa obciążenie wirnika turbiny.
 signal-port-name-gas-turbine-receiver-decrease = Zmniejsz Obciążenie
 signal-port-description-gas-turbine-receiver-decrease = Zmniejsza obciążenie wirnika turbiny.
+
+signal-port-name-gas-turbine-data-receiver = Turbine Monitor
+
+signal-port-description-gas-turbine-data-receiver = Receiving info about a gas turbine.

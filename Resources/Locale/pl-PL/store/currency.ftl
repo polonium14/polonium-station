@@ -13,3 +13,5 @@ store-currency-display-stolen-essence = ukradzione essencje
 store-currency-display-silicon-memory = pamięć
 store-currency-display-wizcoin = Wiz€oin™
 store-currency-display-cpu = CPU
+
+store-currency-display-dna = DNA

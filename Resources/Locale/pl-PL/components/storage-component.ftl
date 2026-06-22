@@ -10,3 +10,5 @@ comp-storage-window-weight = { $weight }/{ $maxWeight }, Maksymalny rozmiar: { $
 comp-storage-window-slots = Miejsca: { $itemCount }/{ $maxCount }, Maksymalny rozmiar: { $size }
 comp-storage-verb-open-storage = Otwórz pojemnik
 comp-storage-verb-close-storage = Zamknij pojemnik
+
+comp-storage-window-dummy = Dummy

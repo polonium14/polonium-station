@@ -17,3 +17,9 @@ credits-window-attributions-license = [color=white]License:[/color] { $license }
 credits-window-attributions-source = [color=white]Source:[/color] { $source }
 credits-window-attributions-failed = [color=red]Failed to read file:[/color] { $file }
 credits-window-ss14pl-contributors-section-title = Kontrybutorzy Polskiej wersji Space Station 14
+
+credits-window-immortals-title = In Memoriam
+
+credits-window-previous-page-button = Previous Page
+
+credits-window-next-page-button = Next Page

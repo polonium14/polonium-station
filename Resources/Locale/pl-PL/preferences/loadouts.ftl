@@ -13,3 +13,8 @@ loadouts-min-limit = Minimalna liczba: { $count }
 loadouts-max-limit = Maksymalna liczba: { $count }
 loadouts-points-limit = Punkty: { $count } / { $max }
 loadouts-points-restriction = Niewystarczająca liczba punktów
+
+loadouts-count-items-in-group = {$item} and {$count} other {$count ->
+[1] item
+*[other] items
+}

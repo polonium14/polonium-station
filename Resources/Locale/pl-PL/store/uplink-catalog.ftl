@@ -392,3 +392,43 @@ uplink-fake-mindshield-name = Fałszywa Osłona Umysłu
 uplink-fake-mindshield-desc = Przełączalny implant zdolny do naśladowania tych samych transmisji, które wysyła prawdziwa osłona umysłu, gdy jest włączona, oszukując zdolne wyświetlacze HUD, aby myślały, że masz osłonę umysłu (implant Nanotrasen nie jest dostarczany).
 uplink-smuggler-satchel-name = Torba Przemytnika
 uplink-smuggler-satchel-desc = Poręczna, podejrzanie wyglądająca torba. Wystarczająco płaska, aby zmieścić się pod panelami podłogowymi.
+
+uplink-c20r-name = C-20r
+
+uplink-c20r-desc = Old faithful: The classic C-20r Submachine Gun.
+
+uplink-bulldog-name = Bulldog
+
+uplink-bulldog-desc = Lean and mean: Contains the popular Bulldog Shotgun.
+
+uplink-grenade-launcher-name = China-Lake
+
+uplink-grenade-launcher-desc = An old China-Lake grenade launcher bundled with 5 rounds of anti-personnel ammo.
+
+uplink-syndicate-id-card-name = Syndicate ID Card
+
+uplink-syndicate-id-card-desc = A Syndicate ID card, with Syndicate access. Unlikely to be useful on its own, but goes great with reconfigured doors. Does not come with access-copying functionality.
+
+uplink-syndimov-law-name = Syndi Law Circuit
+
+uplink-syndimov-law-desc = A subversive Lawset to use when you want to turn the A.I. to your side, use as much as possible.
+
+uplink-voice-mask-implanter-name = Identity Mask Implanter
+
+uplink-voice-mask-implanter-desc = Modifies your vocal cords and facial structure to be able to mimic anyone you could imagine.
+
+uplink-bulldog-bundle-name = Bulldog Bundle
+
+uplink-bulldog-bundle-desc = Lean and mean: Contains the popular Bulldog Shotgun, a 12g slug drum, and four 12g buckshot drums.
+
+uplink-acolyte-armor-name = Acolyte Armor
+
+uplink-acolyte-armor-desc = The must have of any self respecting cult leader. An evil looking piece of armor, made of bones, and surprisingly resistant to damage.
+
+uplink-briefcase-gun-name = Briefcase Gun
+
+uplink-briefcase-gun-desc = An indistinct briefcase with a highly compact C-20K mounted inside it. Careful not the grip the handle too tight!
+
+uplink-energycrossbow-name = Mini Energy Crossbow
+
+uplink-energycrossbow-desc = The go-to sidearm of any operative who prefers their victims not to be moving. Fires regenerating toxic arrows that floors victims in an instant.

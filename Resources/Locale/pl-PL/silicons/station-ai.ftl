@@ -42,3 +42,20 @@ station-ai-hologram-male = Male appearance
 station-ai-hologram-face = Disembodied head
 station-ai-hologram-cat = Cat form
 station-ai-hologram-dog = Corgi form
+
+station-ai-eye-name = AI eye - {$name}
+
+station-ai-has-no-power-for-upload = Upload failed - the AI core is unpowered.
+
+station-ai-is-too-damaged-for-upload = Upload failed - the AI core must be repaired.
+
+station-ai-core-losing-power = Your AI core is now running on reserve battery power.
+
+station-ai-core-critical-power = Your AI core is critically low on power. External power must be re-established or severe data corruption may occur!
+
+# Ghost role
+station-ai-ghost-role-name = Station AI
+
+station-ai-ghost-role-description = Serve the station crew as its ever watchful AI.
+
+ai-device-no-access = You have no access to this device

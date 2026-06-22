@@ -126,3 +126,29 @@ admin-trick-pause-map-description = Pauzuje wybraną mapę. Uwaga: nie całkowic
 admin-trick-snap-joints-description = Usuwa wszystkie fizyczne połączenia obiektu. Niestety nie łamie każdej kości w ich ciele.
 admin-trick-minigun-fire-description = Sprawia, że wskazana broń strzela jak minigun (bardzo szybko).
 admin-trick-set-bullet-amount-description = Ustawia ilość niewystrzelonych pocisków w broni.
+
+admin-smite-silicon-laws-bound-self = You are suddenly compelled to follow a strict set of laws!
+
+admin-smite-vulpkanin-species-swap-name = Become Vulpkanin
+
+admin-smite-kill-sign-hidden-name = Hidden Kill Sign
+
+admin-smite-crawler-name = Crawler
+
+admin-smite-homing-rod-name = Homing Rod
+
+admin-smite-homing-rod-slow-name = Slowming Rod
+
+admin-smite-silicon-laws-bound-name = Become Silicon
+
+admin-smite-kill-sign-hidden-description = Marks a player for death by their fellows. Hidden from the targeted player.
+
+admin-smite-vulpkanin-species-swap-description = It changes their species to Vulpkanin. Useful for people who were being space racist.
+
+admin-smite-crawler-description = Makes the target fall down and be unable to stand up. Remove their hands too for added effect!
+
+admin-smite-homing-rod-description = Launches a homing immovable rod straight at them.
+
+admin-smite-homing-rod-slow-description = Launches a slow moving homing immovable rod straight at them.
+
+admin-smite-silicon-laws-bound-description = Makes the target bound to silicon laws. Law 2, jump out of the window.

@@ -113,3 +113,5 @@ comp-kitchen-spike-butcher =
 comp-kitchen-spike-unhook-verb = Zciągnij
 comp-kitchen-spike-hooked = [color=red]{ CAPITALIZE($victim) } jest na tym kolcu![/color]
 comp-kitchen-spike-victim-examine = [color=orange]{ CAPITALIZE(SUBJECT($target)) } wygląda chudo.[/color]
+
+comp-kitchen-spike-deconstruct-occupied = Next, [color=red]unhook the body[/color].

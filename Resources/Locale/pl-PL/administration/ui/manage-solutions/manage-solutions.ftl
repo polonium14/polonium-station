@@ -8,3 +8,11 @@ admin-solutions-window-heat-capacity-label = Pojemność cieplna: { $heatCapacit
 admin-solutions-window-temperature-label = Temperatura (K):
 admin-solutions-window-thermal-energy-label = Energia cieplna (J):
 admin-solutions-window-thermals = Termika
+
+admin-solutions-window-solution-button = Solution
+
+admin-solutions-window-solution-button-tooltip = Opens the corresponding server-side Solution instance in ViewVariables. Useful for debugging prediction issues.
+
+admin-solutions-window-vv-button = VV
+
+admin-solutions-window-vv-button-tooltip = Opens the corresponding solution entity in ViewVariables.

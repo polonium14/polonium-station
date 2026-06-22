@@ -62,3 +62,13 @@ steal-target-groups-animal-morty = Morty
 steal-target-groups-animal-renault = Renolt
 steal-target-groups-animal-shiva = Śiwa
 steal-target-groups-animal-tropico = Tropiko
+
+steal-target-groups-weapon-energy-magnum = energy magnum
+
+steal-target-groups-officer-handguns = security officer's handgun
+
+steal-target-groups-huds = HUD
+
+steal-target-groups-belt-ce = chief engineer's toolbelt
+
+steal-target-groups-captain-sword = captain's sabre

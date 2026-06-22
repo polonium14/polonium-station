@@ -96,3 +96,9 @@ reagent-physical-desc-holy = święcie
 reagent-physical-desc-slimy = śluzowato
 reagent-physical-desc-neural = nerwowo
 reagent-physical-desc-unidentifiable = niezidentyfikowanie
+
+reagent-physical-desc-non-newtonian = non-newtonian
+
+reagent-physical-desc-thin = thin
+
+reagent-physical-desc-arcryox = icy blue

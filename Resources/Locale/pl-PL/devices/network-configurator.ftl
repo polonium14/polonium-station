@@ -46,3 +46,13 @@ network-configurator-item-status-label =
 # command
 cmd-clearnetworklinkoverlays-desc = Usuń wszystkie nakładki połączeń sieciowych.
 cmd-clearnetworklinkoverlays-help = Sposób użycia: clearnetworklinkoverlays
+
+network-configurator-text-set = Set
+
+network-configurator-text-add = Add
+
+network-configurator-text-clear = Clear
+
+network-configurator-text-copy = Copy
+
+network-configurator-text-show = Show

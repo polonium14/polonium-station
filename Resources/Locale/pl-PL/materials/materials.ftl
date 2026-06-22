@@ -36,3 +36,13 @@ materials-raw-uranium = surowy uran
 materials-raw-bananium = surowy banan
 materials-raw-salt = surowa sól
 materials-raw-diamond = surowy diament
+
+materials-uranium-glass = uranium glass
+
+materials-reinforced-uranium-glass = reinforced uranium glass
+
+materials-runed-glass = runed glass
+
+materials-runed-steel = runed steel
+
+materials-runed-plasteel = runed plasteel

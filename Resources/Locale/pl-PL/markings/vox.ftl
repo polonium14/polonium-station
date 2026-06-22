@@ -69,3 +69,29 @@ marking-VoxTailSpikes-vox_tail_spikes = Vox Tail (Spiked)
 marking-VoxTailSpikes = Vox Tail (Spiked)
 marking-VoxTailDocked-vox_tail_docked = Vox Tail (Vestigial)
 marking-VoxTailDocked = Vox Tail (Vestigial)
+
+marking-VoxCheek-cheekblush = Cheeks
+
+marking-VoxCheek = Cheeks
+
+marking-VoxBeak-beak = Beak (Pointed)
+
+marking-VoxBeakCoverTip-beakcover_tip = Beak Tip
+
+marking-VoxBeakCoverTip = Beak Tip
+
+marking-VoxBeakCoverStripe-beakcover_stripe = Beak Stripe
+
+marking-VoxBeakCoverStripe = Beak Stripe
+
+marking-TattooVoxChestV-night_v = Vox Chest Tattoo (V Shape)
+
+marking-TattooVoxChestV = Vox Chest Tattoo (V Shape)
+
+marking-TattooVoxUnderbelly-underbelly = Underbelly
+
+marking-TattooVoxUnderbelly = Underbelly
+
+marking-VoxTail-vox_tail = Vox Tail (Medium)
+
+marking-VoxTailSplit-vox_tail_split = Vox Tail (Split)

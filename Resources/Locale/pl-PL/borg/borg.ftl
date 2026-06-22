@@ -50,3 +50,7 @@ borg-type-medical-transponder = cyborg medyczny
 borg-type-service-name = Serwisowy
 borg-type-service-desc = Wspieraj różnorodne usługi dla załogi – od serwowania przekąsek i napojów, przez botanikę, po rozrywkę.
 borg-type-service-transponder = cyborg serwisowy
+
+borg-module-action-name = Activate {$moduleName}
+
+borg-module-action-description = Select the {$moduleName}, enabling you to use the tools it provides.

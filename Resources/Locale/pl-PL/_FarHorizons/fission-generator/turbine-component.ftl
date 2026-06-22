@@ -44,3 +44,39 @@ comp-turbine-ui-stator-load = Stator Load
 comp-turbine-ui-locked-message = Controls locked.
 comp-turbine-ui-footer-left = Danger: fast-moving machinery.
 comp-turbine-ui-footer-right = 1.1 REV 3
+
+gas-turbine-examine-stator-null = It seems to be missing a stator.
+
+gas-turbine-examine-stator = It has a stator.
+
+gas-turbine-examine-blade-null = It seems to be missing a turbine blade.
+
+gas-turbine-examine-blade = It has a turbine blade.
+
+# Shown during repairs
+gas-turbine-repair-fail-blade = You need to replace the turbine blade before this can be repaired.
+
+gas-turbine-repair-fail-stator = You need to replace the stator before this can be repaired.
+
+gas-turbine-eject-fail-speed = You cannot remove turbine parts while the turbine is spinning!
+
+gas-turbine-insert-fail-speed = You cannot insert turbine parts while the turbine is spinning!
+
+# Shown when using the UI
+comp-turbine-ui-tab-main = Controls
+
+comp-turbine-ui-tab-parts = Parts
+
+comp-turbine-ui-blade = Turbine Blade
+
+comp-turbine-ui-blade-integrity = Integrity
+
+comp-turbine-ui-blade-stress = Stress
+
+comp-turbine-ui-stator = Turbine Stator
+
+comp-turbine-ui-stator-potential = Potential
+
+comp-turbine-ui-stator-supply = Supply
+
+comp-turbine-ui-power = { POWERWATTS($power) }

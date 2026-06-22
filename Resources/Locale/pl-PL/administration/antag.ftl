@@ -16,3 +16,15 @@ admin-verb-text-make-head-rev = Zrób Głównego Rewolucjonistę
 admin-verb-text-make-thief = Zrób Złodzieja
 admin-verb-text-make-paradox-clone = Utwórz Klona Paradoksalnego
 admin-overlay-antag-classic = ANTAG
+
+admin-verb-make-wizard = Make the target into a Wizard.
+
+admin-verb-make-space-ninja = Make the target into a Space Ninja.
+
+admin-verb-make-bloodcult = Make the target into a Blood Cultist.
+
+admin-verb-text-make-wizard = Make Wizard
+
+admin-verb-text-make-space-ninja = Make Ninja
+
+admin-verb-text-make-bloodcult = Make Blood Cultist

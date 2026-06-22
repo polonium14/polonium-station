@@ -100,3 +100,7 @@ petting-success-tesla = You pet { $target }, violating the laws of nature and ph
 petting-failure-tesla = You reach out towards { $target }, but { SUBJECT($target) } { CONJUGATE-BASIC($target, "zap", "zaps") } your hand away.
 petting-success-mail-teleporter = You pet { $target } on { POSS-ADJ($target) } dutiful, cold exterior.
 petting-failure-mail-teleporter = You reach out to pet { $target }, but { SUBJECT($target) } { CONJUGATE-BE($target) } busy sorting mail!
+
+petting-success-scurret = You pet {THE($target)} on {POSS-ADJ($target)} legally distinct head.
+
+petting-failure-scurret = You reach out to pet {THE($target)}, but {SUBJECT($target)} does a backflip!

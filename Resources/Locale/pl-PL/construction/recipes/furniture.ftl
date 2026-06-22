@@ -9,3 +9,5 @@ construction-recipe-table-fancy-purple = fancy table (purple)
 construction-recipe-table-fancy-pink = fancy table (pink)
 construction-recipe-table-fancy-red = fancy table (red)
 construction-recipe-table-fancy-white = fancy table (white)
+
+construction-recipe-table-fancy-sky-blue = fancy table (sky blue)

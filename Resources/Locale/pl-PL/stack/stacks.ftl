@@ -249,3 +249,40 @@ stack-xeno-steel = xeno steel tile
 stack-xeno-steel-corner = xeno steel corner tile
 stack-xeno-maint = xeno techmaint
 stack-dark-squiggly = dark steel squiggly tile
+
+stack-runed-glass = runed glass
+
+stack-runed-steel = runed steel
+
+stack-runed-plasteel = runed plasteel
+
+stack-explosive-cord = {$amount ->
+    [1] explosive cord
+    *[other] explosive cords
+}
+
+stack-ironsand-concrete-tile = ironsand concrete tile
+
+stack-ironsand-concrete-mono-tile = ironsand concrete mono tile
+
+stack-ironsand-concrete-smooth = ironsand concrete smooth
+
+stack-dark-astro-grass-floor = dark astro-grass floor
+
+stack-light-astro-grass-floor = light astro-grass floor
+
+stack-desert-astro-sand-floor = desert astro-sand floor
+
+stack-xenoborg = xenoborg tile
+
+stack-white-marble-floor = white marble floor
+
+stack-dark-marble-floor = dark marble floor
+
+stack-plasma-marble-floor = plasmarble floor
+
+stack-uranium-marble-floor = uranium marble floor
+
+stack-astro-ironsand-floor = astro-ironsand floor
+
+stack-astro-ironsand-floor-borderless = borderless astro-ironsand floor

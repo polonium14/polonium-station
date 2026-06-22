@@ -361,3 +361,7 @@ flavor-complex-bottledlightning = piorun w butelce
 flavor-complex-punishment = kara
 flavor-weh = weh
 flavor-hew = hew
+
+flavor-complex-canned-tuna = like canned tuna
+
+flavor-complex-artifact-glue = like crushed artifacts

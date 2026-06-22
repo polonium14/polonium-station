@@ -75,3 +75,25 @@ air-alarm-ui-thresholds-upper-warning-bound = Ostrzeżenie powyżej
 air-alarm-ui-thresholds-lower-warning-bound = Ostrzeżenie poniżej
 air-alarm-ui-thresholds-copy = Skopiuj progi do wszystkich urządzeń
 air-alarm-ui-thresholds-copy-tooltip = Kopiuje progi czujników tego urządzenia do wszystkich urządzeń w tej zakładce alarmu powietrza.
+
+air-alarm-ui-title = Air Alarm
+
+air-alarm-ui-pump-direction-siphoning = Siphoning
+
+air-alarm-ui-pump-direction-scrubbing = Scrubbing
+
+air-alarm-ui-pump-direction-releasing = Releasing
+
+air-alarm-ui-pressure-bound-nobound = No Bound
+
+air-alarm-ui-pressure-bound-internalbound = Internal Bound
+
+air-alarm-ui-pressure-bound-externalbound = External Bound
+
+air-alarm-ui-pressure-bound-both = Both
+
+air-alarm-ui-widget-gas-filters = Gas Filters
+
+air-alarm-ui-scrubber-select-all-gases-label = Select all
+
+air-alarm-ui-scrubber-deselect-all-gases-label = Deselect all

@@ -47,3 +47,5 @@ highlights-psychologist = Psychologist, Psycholog
 highlights-personal-ai = Personalna SI, "pAI", "pSI"
 highlights-cyborg = Cyborg, Silikon, Borg
 highlights-station-ai = SI Stacji, Silikon, "AI", "SI"
+
+highlights-musician = Musician, "Music", Theatre, Theater, Service, "Serv"

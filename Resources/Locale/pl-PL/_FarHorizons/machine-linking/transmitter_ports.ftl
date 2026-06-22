@@ -6,3 +6,7 @@ signal-port-name-gas-turbine-speed-high = Wysoka Prędkość
 signal-port-description-gas-turbine-speed-high = Prędkość jest wyższa niż optymalna.
 signal-port-name-gas-turbine-speed-low = Niska Prędkość
 signal-port-description-gas-turbine-speed-low = Prędkość jest niższa niż optymalna.
+
+signal-port-name-gas-turbine-data-sender = Gas Turbine
+
+signal-port-description-gas-turbine-data-sender = Sending info about a gas turbine to a monitor.
