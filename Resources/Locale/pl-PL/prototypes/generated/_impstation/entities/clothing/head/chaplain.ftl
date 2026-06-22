@@ -1,0 +1,10 @@
+ent-ClothingHeadHatVeil = black veil
+    .desc = Not exactly a white wedding, is it?
+ent-ClothingHeadHatDruid = druid's crown
+    .desc = Shaped after a peculiar beast.
+ent-ClothingHeadHatMoon = moon crown
+    .desc = The pure silver feels cold to the touch.
+ent-ClothingHeadHatSun = sun crown
+    .desc = The pure gold feels hot to the touch.
+ent-ClothingHeadHatTidal = tidal crown
+    .desc = You can hear waves crashing if you listen closely.

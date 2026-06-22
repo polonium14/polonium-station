@@ -1,0 +1,12 @@
+ent-HydroponicsToolMiniHoe = miniatura motyka
+    .desc = Służy do usuwania chwastów lub drapania się po plecach.
+ent-HydroponicsToolClippers = nożyce do roślin
+    .desc = Narzędzie służące do pobierania próbek z roślin.
+ent-HydroponicsToolScythe = kosa
+    .desc = Ostra i zakrzywiona klinga na długim włóknometalowym trzonku, to narzędzie ułatwia żniwa.
+ent-HydroponicsToolHatchet = siekiera
+    .desc = Bardzo ostra siekiera na krótkim włóknometalowym trzonku. Ma długą historię siekania rzeczy, ale teraz jest używana do rąbania drewna.
+ent-HydroponicsToolSpade = łopata
+    .desc = Małe narzędzie do kopania i przerzucania ziemi.
+ent-PlantBag = worek na rośliny
+    .desc = Worek dla botaników do przenoszenia roślin i sadzonek.

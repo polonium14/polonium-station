@@ -1,0 +1,14 @@
+ent-BaseMagazineGrenade = nabój granatowy
+    .desc = { ent-BaseItem.desc }
+ent-MagazineGrenadeEmpty = { ent-BaseMagazineGrenade }
+    .desc = { ent-BaseMagazineGrenade.desc }
+ent-MagazineGrenadeFrag = nabój granatowy odłamkowy
+    .desc = { ent-BaseMagazineGrenade.desc }
+ent-MagazineGrenadeEMP = nabój granatowy EMP
+    .desc = { ent-BaseMagazineGrenade.desc }
+ent-MagazineGrenadeFlash = nabój granatowy błyskowy
+    .desc = { ent-BaseMagazineGrenade.desc }
+ent-MagazineGrenadeBlast = nabój granatowy wybuchowy
+    .desc = { ent-BaseMagazineGrenade.desc }
+ent-MagazineGrenadeBaton = nabój granatowy pałkowy
+    .desc = { ent-BaseMagazineGrenade.desc }

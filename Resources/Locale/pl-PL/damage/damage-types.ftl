@@ -1,0 +1,14 @@
+damage-type-asphyxiation = Niedotlenienie
+damage-type-bloodloss = Utrata krwi
+damage-type-blunt = Obuchowe
+damage-type-cellular = Komórkowe
+damage-type-caustic = Chemiczne
+damage-type-cold = Odmrożenie
+damage-type-heat = Oparzenie
+damage-type-piercing = Kłute
+damage-type-poison = Zatrucie
+damage-type-radiation = Napromieniowanie
+damage-type-shock = Porażenie
+damage-type-slash = Cięte
+damage-type-structural = Strukturalne
+damage-type-holy = Święte

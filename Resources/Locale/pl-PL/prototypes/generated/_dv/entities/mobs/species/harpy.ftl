@@ -1,0 +1,10 @@
+ent-MobHarpyBase = Urist McHarpia
+    .desc = { ent-BaseMobHuman.desc }
+ent-MobHarpyDummy = Urist McHands
+    .desc = Atrapa Harpii przeznaczona do wykorzystania w konfiguracji postaci.
+ent-ActionHarpyPlayMidi = Odtwórz MIDI
+    .desc = Śpiewaj z całego serca! Kliknij prawym przyciskiem myszy, aby wybrać instrument.
+ent-ActionSyrinxChangeVoiceMask = Ustaw nazwę głosową
+    .desc = Zmień nazwę, którą inni słyszą, na coś innego.
+ent-ActionToggleFlight = Lot
+    .desc = Wykorzystaj swoje skrzydła, aby latać. Obal zarzuty dotyczące nielotnych ptaków.

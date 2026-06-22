@@ -1,0 +1,12 @@
+ent-Stunbaton = pałka ogłuszająca
+    .desc = Pałka ogłuszająca do ogłuszania ludzi. Aktywne używanie jej do zadawania obrażeń jest uważane za złe zachowanie.
+    .suffix = NIE MAPOWAĆ
+ent-Truncheon = pałka policyjna
+    .desc = Sztywna pałka z ćwiekami ze stali, przeznaczona do zadawania obrażeń.
+ent-Flash = błysk
+    .desc = Ultrajasna żarówka błyskowa z wyzwalaczem, która powoduje oszołomienie ofiary i chwilową utratę wzroku. Bezużyteczna, gdy jest przepalona.
+ent-SciFlash = { ent-Flash }
+    .suffix = 2 ładunki
+    .desc = { ent-Flash.desc }
+ent-PortableFlasher = przenośny błysk
+    .desc = Ultrajasna żarówka błyskowa z wyzwalaczem zbliżeniowym, przydatna do uczynienia obszaru dostępnym tylko dla ochrony.

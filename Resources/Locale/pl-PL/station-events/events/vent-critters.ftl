@@ -1,0 +1,1 @@
+station-event-vent-creatures-start-announcement = Uwaga. Wykryto duży napływ nieznanych form życia w systemach wentylacyjnych stacji. Prosimy o pozbycie się tych stworzeń, zanim zaczną wpływać na wydajność pracy.

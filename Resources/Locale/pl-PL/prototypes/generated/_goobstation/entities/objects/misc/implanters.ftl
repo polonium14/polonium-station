@@ -1,0 +1,15 @@
+ent-BaseFastDrawImplanter = implantator szybkiego wyciągania
+    .desc = Strzykawka z narzędziami do szybkiego usuwania implantów i ich rozdrabniania. Na jej korpusie znajdują się małe złote gwiazdki.
+ent-RevsFastDrawImplanter = { ent-BaseFastDrawImplanter }
+    .desc = { ent-BaseFastDrawImplanter.desc }
+ent-BaseImplantOnlyImplanterCentcomm = implantator Centralnego Dowództwa
+    .desc = Kompaktowa strzykawka jednorazowa przeznaczona wyłącznie do wstrzykiwania implantów podskórnych. Igła do wprowadzania jest pokryta środkiem znieczulającym.
+ent-BluespaceLifelineImplanter = { ent-BaseImplantOnlyImplanterCentcomm }
+    .suffix = linia ratunkowa bluespace
+    .desc = { ent-BaseImplantOnlyImplanterCentcomm.desc }
+ent-PacifismImplanter = { ent-BaseImplantOnlyImplanter }
+    .suffix = pacyfizm
+    .desc = { ent-BaseImplantOnlyImplanter.desc }
+ent-SmokeImplanter = { ent-BaseImplantOnlyImplanterSyndi }
+    .suffix = dymny
+    .desc = { ent-BaseImplantOnlyImplanterSyndi.desc }

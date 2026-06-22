@@ -1,0 +1,12 @@
+ent-RubberStampIAA = pieczątka ASW
+    .suffix = NIE MAPOWAĆ
+    .desc = { ent-RubberStampBase.desc }
+ent-RubberStampMagistrate = pieczątka magistrata
+    .suffix = NIE MAPOWAĆ
+    .desc = { ent-RubberStampBase.desc }
+ent-RubberStampCyborg = pieczątka borga
+    .suffix = NIE MAPOWAĆ
+    .desc = { ent-RubberStampBase.desc }
+ent-RubberStampCentComIntern = pieczątka stażysty Centralnego Dowództwa
+    .suffix = NIE MAPOWAĆ
+    .desc = { ent-RubberStampBase.desc }

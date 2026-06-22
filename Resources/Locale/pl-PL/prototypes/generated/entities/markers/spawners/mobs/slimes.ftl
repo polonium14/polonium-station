@@ -1,0 +1,12 @@
+ent-SpawnMobAdultSlimesBlue = spawner niebieskich szlamów
+    .desc = { ent-MarkerBase.desc }
+ent-SpawnMobAdultSlimesBlueAngry = spawner agresywnych niebieskich szlamów
+    .desc = { ent-MarkerBase.desc }
+ent-SpawnMobAdultSlimesGreen = spawner zielonych szlamów
+    .desc = { ent-MarkerBase.desc }
+ent-SpawnMobAdultSlimesGreenAngry = spawner agresywnych zielonych szlamów
+    .desc = { ent-MarkerBase.desc }
+ent-SpawnMobAdultSlimesYellow = spawner żółtych szlamów
+    .desc = { ent-MarkerBase.desc }
+ent-SpawnMobAdultSlimesYellowAngry = spawner agresywnych żółtych szlamów
+    .desc = { ent-MarkerBase.desc }

@@ -1,0 +1,9 @@
+ent-ArcadeBase = automat do gier
+    .desc = Automat do gier.
+ent-SpaceVillainArcade = Kosmiczny Złoczyńca
+    .desc = { ent-ArcadeBase.desc }
+ent-SpaceVillainArcadeFilled = { ent-SpaceVillainArcade }
+    .suffix = Wypełniony
+    .desc = { ent-SpaceVillainArcade.desc }
+ent-BlockGameArcade = NTetrys
+    .desc = Automat do gier z dziwnie znajomą grą.

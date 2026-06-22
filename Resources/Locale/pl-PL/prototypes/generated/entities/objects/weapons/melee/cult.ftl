@@ -1,0 +1,17 @@
+ent-CultDagger = sztylet kultysty
+    .desc = Może być użyty do rysowania run i jest przyzwoitą bronią do walki wręcz. Może także usuwać runy.
+ent-CultDaggerCurved = sztylet kultysty
+    .suffix = Zakrzywiony
+    .desc = { ent-CultDagger.desc }
+ent-CultDaggerSerrated = sztylet kultysty
+    .suffix = Ząbkowany
+    .desc = { ent-CultDagger.desc }
+ent-CultDaggerStraight = sztylet kultysty
+    .suffix = Prosty
+    .desc = { ent-CultDagger.desc }
+ent-RitualDagger = rytualny sztylet
+    .desc = Dziwny sztylet używany przez mroczne grupy do rytuałów i ofiar.
+ent-EldritchBlade = pradawne ostrze
+    .desc = Miecz pulsujący nieświętą energią.
+ent-UnholyHalberd = nieświęta halabarda
+    .desc = Halabarda, która wydaje się być powiązana z jej właścicielem.

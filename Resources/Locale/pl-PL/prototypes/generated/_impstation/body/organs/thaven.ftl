@@ -1,0 +1,14 @@
+ent-OrganThavenBrain = thaven brain
+    .desc = An organic positronic brain. Quite remarkable, really.
+ent-OrganThavenEyes = thaven eyes
+    .desc = The dark sclera have a faint, iridescent coating.
+ent-OrganThavenLungs = thaven lungs
+    .desc = Technically not lungs since they don't draw chemicals from the air, these strange, durable organs use the motion of respiration to provide energy for cell maintenance.
+ent-OrganThavenHeart = thaven heart
+    .desc = The toxic heart of a thaven. You're wearing gloves, right?
+ent-OrganThavenStomach = thaven stomach
+    .desc = Surprisingly similar to the stomach of a sharkminnow.
+ent-OrganThavenLiver = thaven liver
+    .desc = It loosely resembles a slab of dragon flesh.
+ent-OrganThavenKidneys = thaven kidneys
+    .desc = Shiny, coppery veins make these the most ornate kidneys known to modern science.

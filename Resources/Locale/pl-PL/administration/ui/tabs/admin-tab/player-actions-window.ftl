@@ -1,0 +1,12 @@
+admin-player-actions-window-title = Panel działań gracza
+admin-player-actions-window-ban = Panel banowania
+admin-player-actions-window-admin-ghost = Admin Duch
+admin-player-actions-window-teleport = Teleportacja
+admin-player-actions-window-permissions = Panel uprawnień
+admin-player-actions-window-announce = Ogłoszenia
+admin-player-actions-window-shuttle = (Ponowne) wezwanie transportu
+admin-player-actions-window-admin-logs = Logi administratora
+admin-player-actions-window-admin-notes = Notatki administratora
+admin-player-actions-window-admin-fax = Faks administratora
+admin-player-actions-window-admin-chat = Czat administratora
+admin-player-actions-window-entity-search = Wyszukiwanie encji

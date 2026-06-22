@@ -1,0 +1,11 @@
+forensic-residue = { LOC($adjective) } pozostałość
+forensic-residue-colored = { LOC($adjective) } { LOC($color) } pozostałość
+residue-unknown = nieznany
+residue-slippery = śliski
+residue-green = zielony
+residue-powdered = proszowy
+residue-blue = niebieski
+residue-red = czerwony
+residue-grey = szary
+residue-brown = brązowy
+residue-white = biały

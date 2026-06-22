@@ -1,0 +1,16 @@
+ent-BaseMedicalPatch = base patch
+    .desc = A patch for applying medicine over time to patients.
+ent-MedicalPatchBasic = patch
+    .desc = A chemical patch. Keep it on tightly.
+ent-UsedMedicalPatch = patch used
+    .desc = Disgustingggg!!!
+ent-UsedMedicalPatchMakeshift = patch used
+    .desc = You have nearly thrown up lunch by seeing this...
+ent-MedicalPatchRapid = rapid patch
+    .desc = A rapid patch for fast application. Be sure to not overdose a patient.
+ent-MedicalPatchTherapeutic = therapeutic patch
+    .desc = A patch that applies a dose over a longer period of time than other patches.
+ent-MedicalPatchLarge = large patch
+    .desc = A larger chemical patch. Holds more chemicals, but injects them slowly.
+ent-MedicalPatchMakeshift = makeshift patch
+    .desc = You hate this creation, but it has chemicals. Maybe.

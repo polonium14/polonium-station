@@ -1,0 +1,16 @@
+descriptions-atv-dataset-1 = Pojazd do każdej nawierzchni.
+descriptions-atv-dataset-2 = Pojazd przeciwko mrówkom.
+descriptions-atv-dataset-3 = Warzywo na każdą porę.
+descriptions-atv-dataset-4 = Tak naprawdę dwa pojazdy.
+descriptions-atv-dataset-5 = Zmienna dowolnego typu.
+descriptions-atv-dataset-6 = Pojazd wspomagający przy urazach.
+descriptions-atv-dataset-7 = Wirus przesyłany algorytmem.
+descriptions-atv-dataset-8 = Wakaty dla pijanych maluchów.
+descriptions-atv-dataset-9 = Wulkan rozdzierający dupy.
+descriptions-atv-dataset-10 = Tele Wizja.
+descriptions-atv-dataset-11 = Niezręczny majstrujący włóczęga.
+descriptions-atv-dataset-12 = Wolontariusz tragedii artystycznych.
+descriptions-atv-dataset-13 = Automatyczny wakat na taco.
+descriptions-atv-dataset-14 = Kolejny wspaniały widok.
+descriptions-atv-dataset-15 = Wszystkie dziewice.
+descriptions-atv-dataset-16 = Okropny pojazd.

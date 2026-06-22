@@ -1,0 +1,10 @@
+ent-ClothingBeltEngineeringHarness = engineering harness
+    .desc = Holds your tools, and holds you to the Station. If only you had remembered to bring your carabiners.
+ent-ClothingBeltChiefEngineeringHarness = chief engineer's harness
+    .desc = Slightly scorched, frayed straps. It seems you STILL forgot your carabiners, though.
+ent-ClothingBeltEngineeringHarnessFilled = { ent-ClothingBeltEngineeringHarness }
+    .suffix = Filled
+    .desc = { ent-ClothingBeltEngineeringHarness.desc }
+ent-ClothingBeltChiefEngineeringHarnessFilled = { ent-ClothingBeltChiefEngineeringHarness }
+    .suffix = Filled
+    .desc = { ent-ClothingBeltChiefEngineeringHarness.desc }

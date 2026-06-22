@@ -1,0 +1,15 @@
+ent-ShuttleGunSvalinnMachineGunCircuitboard = CKM LSE-400c "Svalinn" (płytka maszynowa)
+    .desc = Płytka maszynowa do ciężkiego karabinu maszynowego LSE-400c "Svalinn".
+    .suffix = NIE MAPOWAĆ, Płytka maszynowa
+ent-ShuttleGunPerforatorCircuitboard = LSE-1200c "Perforator" (płytka maszynowa)
+    .desc = Płytka maszynowa do LSE-1200c "Perforator".
+    .suffix = NIE MAPOWAĆ, Płytka maszynowa
+ent-ShuttleGunFriendshipCircuitboard = EXP-320g "Przyjaźń" (płytka maszynowa)
+    .desc = Płytka maszynowa do EXP-320g "Przyjaźń".
+    .suffix = NIE MAPOWAĆ, Płytka maszynowa
+ent-ShuttleGunDusterCircuitboard = EXP-2100g "Duster" (płytka maszynowa)
+    .desc = Płytka maszynowa do EXP-2100g "Duster".
+    .suffix = NIE MAPOWAĆ, Płytka maszynowa
+ent-ShuttleGunKineticCircuitboard = PTK-800 "Dematerializator" (płytka maszynowa)
+    .desc = Płytka maszynowa do PTK-800 "Dematerializator".
+    .suffix = Płytka maszynowa

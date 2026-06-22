@@ -1,0 +1,14 @@
+ent-RipleyCentralElectronics = moduł jednostki centralnej Ripley
+    .desc = Elektroniczne centrum sterowania dla mecha typu Ripley.
+ent-RipleyPeripheralsElectronics = moduł peryferiów Ripley
+    .desc = Układ sterowania podzespołami peryferyjnymi dla mecha typu Ripley.
+ent-HonkerCentralElectronics = moduł jednostki centralnej H.O.N.K.
+    .desc = Elektroniczne centrum sterowania dla mecha typu H.O.N.K.
+ent-HonkerPeripheralsElectronics = moduł peryferiów H.O.N.K.
+    .desc = Układ sterowania podzespołami peryferyjnymi dla mecha typu H.O.N.K.
+ent-HonkerTargetingElectronics = moduł celowania i kontroli uzbrojenia H.O.N.K.
+    .desc = Układ elektroniczny sterujący celowaniem dla mecha typu H.O.N.K.
+ent-HamtrCentralElectronics = moduł jednostki centralnej HAMTR
+    .desc = Elektroniczne centrum sterowania dla mecha typu HAMTR.
+ent-HamtrPeripheralsElectronics = moduł peryferiów HAMTR
+    .desc = Układ sterowania podzespołami peryferyjnymi dla mecha typu HAMTR.

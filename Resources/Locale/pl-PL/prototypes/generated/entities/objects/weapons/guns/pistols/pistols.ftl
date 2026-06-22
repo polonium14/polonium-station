@@ -1,0 +1,12 @@
+ent-BaseWeaponPistol = BasePistol
+    .desc = Celuj i strzelaj.
+ent-WeaponPistolViper = żmija
+    .desc = Mały, łatwy do ukrycia, ale nieco słabszy pistolet. Przerobiony na w pełni automatyczny. Używa amunicji kalibru .35 auto.
+ent-WeaponPistolEchis = echis
+    .desc = Żmija do użytku przez cyborgi. Tworzy amunicję kalibru .35 na bieżąco z wewnętrznego fabrykatora amunicji, który powoli się sam doładowuje.
+ent-WeaponPistolCobra = kobra
+    .desc = Pistolet półautomatyczny z integralnym tłumikiem używany przez Syndykat, strzelający bezłuskowymi pociskami poddźwiękowymi. Ulubiona broń agentów, którzy cenią sobie ciszę i nie chcą pozostawiać śladów. Zasilany magazynkami do pistoletów kalibru .25.
+ent-WeaponPistolMk58 = mk 58
+    .desc = Tania, powszechnie dostępna broń krótka, produkowana przez spółkę zależną NanoTrasen. Wykorzystuje amunicję kalibru .35 auto.
+ent-WeaponPistolN1984 = N1984
+    .desc = Wyjątkowo potężny "pistolet ręczny" zaprojektowany w ramach inicjatywy BFG Nanotrasen. Komorowany na .45, kaliber pana, jest ogólnie uważany za zbyt nieporęczny do standardowego użytku, ale stał się pewnego rodzaju symbolem statusu wśród urzędników Nanotrasen. Zasilany z magazynków na .45.

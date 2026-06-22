@@ -1,0 +1,15 @@
+ent-LootSpawnerMaterials = spawner materiałów
+    .suffix = Materiały budowlane
+    .desc = { ent-MarkerBase.desc }
+ent-LootSpawnerMaterialsSupplementary = spawner materiałów
+    .suffix = Materiały uzupełniające
+    .desc = { ent-MarkerBase.desc }
+ent-LootSpawnerMaterialsHighValueConstruction = spawner wartościowych materiałów
+    .suffix = Materiały budowlane
+    .desc = { ent-MarkerBase.desc }
+ent-LootSpawnerMaterialsHighValue = spawner wartościowych materiałów
+    .desc = { ent-MarkerBase.desc }
+ent-LootSpawnerMaterialsSurplus = spawner nadwyżek materiałowych
+    .desc = { ent-MarkerBase.desc }
+ent-LootSpawnerCableCoil = spawner zwojów kabli
+    .desc = { ent-MarkerBase.desc }

@@ -1,0 +1,14 @@
+ent-Handcuffs = kajdanki
+    .desc = Używane do zatrzymywania przestępców i innych dupków.
+ent-Cablecuffs = prowizoryczne kajdanki
+    .desc = Domowej roboty kajdanki wykonane z zapasowych kabli.
+ent-Zipties = trytytki
+    .desc = Wytrzymałe jednorazowe plastikowe opaski zaciskowe, idealne do krępowania niesfornych więźniów.
+ent-BaseHandcuffsBroken = { ent-BaseItem }
+    .desc = { ent-BaseItem.desc }
+ent-ZiptiesBroken = zerwane trytytki
+    .desc = Te trytytki wyglądają, jakby próbowały spiąć niewłaściwe kable.
+ent-CablecuffsBroken = przerwane kable
+    .desc = Te kable są przerwane w kilku miejscach i nie wydają się zbyt użyteczne.
+ent-ClothingOuterStraightjacket = kaftan bezpieczeństwa
+    .desc = Służy do krępowania osób, które mogą wyrządzić krzywdę sobie lub innym.

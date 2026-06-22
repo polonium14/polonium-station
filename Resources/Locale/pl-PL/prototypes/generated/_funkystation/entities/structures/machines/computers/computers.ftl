@@ -1,0 +1,14 @@
+ent-ScienceComputerComms = konsola komunikacyjna nauki
+    .desc = Komputer służący do nadawania ogłoszeń stacyjnych, ustawiania poziomów alarmowych oraz wzywania promu ratunkowego.
+ent-SecurityComputerComms = konsola komunikacyjna ochrony
+    .desc = Komputer służący do nadawania ogłoszeń stacyjnych, ustawiania poziomów alarmowych oraz wzywania promu ratunkowego.
+ent-ServiceComputerComms = konsola komunikacyjna serwisu
+    .desc = Komputer służący do nadawania ogłoszeń stacyjnych, ustawiania poziomów alarmowych oraz wzywania promu ratunkowego.
+ent-CargoComputerComms = konsola komunikacyjna zaopatrzenia
+    .desc = Komputer służący do nadawania ogłoszeń stacyjnych, ustawiania poziomów alarmowych oraz wzywania promu ratunkowego.
+ent-EngiComputerComms = konsola komunikacyjna inżynierii
+    .desc = Komputer służący do nadawania ogłoszeń stacyjnych, ustawiania poziomów alarmowych oraz wzywania promu ratunkowego.
+ent-MedicalComputerComms = konsola komunikacyjna medycyny
+    .desc = Komputer służący do nadawania ogłoszeń stacyjnych, ustawiania poziomów alarmowych oraz wzywania promu ratunkowego.
+ent-ComputerCargoOrdersAtmospherics = konsola rezerw atmosferycznych
+    .desc = Używana przez dział atmosfery do zarządzania gazami i zamawiania zapasów.

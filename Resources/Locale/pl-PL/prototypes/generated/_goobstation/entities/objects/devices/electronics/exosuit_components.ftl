@@ -1,0 +1,12 @@
+ent-BaseExosuitParts = komponenty podstawowe
+    .desc = { ent-BaseItem.desc }
+ent-DurandArmorPlate = płyty pancerza Duranda
+    .desc = Płyty pancerza wykonane z plasteelu do egzoszkieletu Durand.
+ent-GygaxArmorPlate = płyty pancerza Gigaxa
+    .desc = Płyty pancerza wykonane ze stali do egzoszkieletu Gigax.
+ent-RipleyUpgradeKit = zestaw ulepszający egzoszkielet
+    .desc = Ten zestaw pozwala na złożenie egzoszkieletu Ripley MK-II.
+ent-MechAirTank = zbiornik powietrza do egzoszkieletu
+    .desc = Specjalny pojemnik na powietrze, zdolny do przechowywania dużej ilości powietrza.
+ent-MechThruster = napęd egzoszkieletu
+    .desc = Napęd, dzięki któremu egzoszkielet może bezpiecznie poruszać się w warunkach braku grawitacji.

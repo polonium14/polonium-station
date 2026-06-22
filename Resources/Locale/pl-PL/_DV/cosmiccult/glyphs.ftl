@@ -1,0 +1,20 @@
+
+cult-glyph-target-dead = Wpływ glifu nie ma żadnego efektu na zmarłych..
+cult-glyph-not-enough-cultists = Niewystarczająca liczba kultystów obecnych, aby przywołać glif!
+cult-glyph-conditions-not-met = Brak odpowiednich celów w zasięgu glifu!
+cult-glyph-too-many-targets = Zbyt wiele celów obecnych na glifie!
+cult-glyph-target-mindshield = Mentalna osłona zapobiega przejęciu wpływu glifu!
+cult-glyph-target-otherantag = Umysł celu jest zbyt wykrzywiony, aby efekty glifu mogły zadziałać.
+cult-glyph-target-chaplain = Iskra boskiej mocy zapobiega przejęciu wpływu glifu!
+cult-glyph-name-knowledge = Pakt Wiedzy
+cult-glyph-description-knowledge = Wiedza. Zaszczepia iskrę niezatartej wiedzy. Może nawrócić większość, by dołączyła do naszych szeregów.
+cult-glyph-name-projection = Pakt Projekcji
+cult-glyph-description-projection = Projekcja. Pozwala nam wznieść się w tymczasowej astralnej formie, by szpiegować tych wokół nas.
+cult-glyph-name-warding = Komunia Ochrony
+cult-glyph-description-warding = Ochrona. Transmutuje odzież odporną na ciśnienie w entropiczny strój.
+cult-glyph-name-blades = Komunia Ostrzy
+cult-glyph-description-blades = Ostrza. Transmutuje i wydobywa ostre przedmioty w bardziej śmiercionośną broń.
+cult-glyph-name-cessation = Konkord Ustania
+cult-glyph-description-cessation = Ustanie. Transmutuje przenośny oczyszczacz atmosferyczny w Próżniową Iglicę do naszego użytku.
+cult-glyph-name-truth = Konkord Prawdy
+cult-glyph-description-truth = Prawda. Zaszczepia czystą, niezatartą prawdę. Może nawrócić absolutnie każdego, by dołączył do naszych szeregów.

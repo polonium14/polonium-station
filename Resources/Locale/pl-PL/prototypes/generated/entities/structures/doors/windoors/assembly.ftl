@@ -1,0 +1,14 @@
+ent-WindoorAssembly = konstrukcja okna przesuwnego
+    .desc = Otwiera się, zamyka i przez nią widać!
+ent-WindoorAssemblySecure = konstrukcja bezpiecznego okna przesuwnego
+    .desc = Otwiera się, zamyka i przez nią widać! Ta wygląda na wytrzymałą.
+ent-WindoorAssemblyClockwork = konstrukcja zegarmistrzowskiego okna przesuwnego
+    .desc = Otwiera się, zamyka i przez nią widać! Ta wygląda na wytrzymałą.
+ent-WindoorAssemblyPlasma = konstrukcja plazmowego okna przesuwnego
+    .desc = Otwiera się, zamyka i przez nią widać! To wygląda na purpurowe-, nie, różowe. Czekaj...
+ent-WindoorAssemblySecurePlasma = konstrukcja bezpiecznego plazmowego okna przesuwnego
+    .desc = Otwiera się, zamyka i przez nią widać! To wygląda na wytrzymałe i purpurowe-, nie, fioletowe. Poczekaj...
+ent-WindoorAssemblyUranium = konstrukcja uranowego okna przesuwnego
+    .desc = Otwiera się, zamyka i przez nią widać! To wygląda na chorobliwie zielone...
+ent-WindoorAssemblySecureUranium = konstrukcja bezpiecznego uranowego okna przesuwnego
+    .desc = Otwiera się, zamyka i przez nią widać! To wygląda na wytrzymałe i radioaktywno-limonkowe!

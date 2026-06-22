@@ -1,0 +1,15 @@
+ent-InflatableWallStack = dmuchana barykada
+    .desc = Złożona membrana, która po aktywacji błyskawicznie rozpręża się do dużego sześciennego kształtu.
+    .suffix = Pełny
+ent-InflatableDoorStack = dmuchane drzwi
+    .desc = Złożona membrana, która po aktywacji błyskawicznie rozpręża się do dużego sześciennego kształtu.
+    .suffix = Pełny
+ent-InflatableWallStack5 = { ent-InflatableWallStack }
+    .suffix = 5
+    .desc = { ent-InflatableWallStack.desc }
+ent-InflatableWallStack1 = { ent-InflatableWallStack }
+    .suffix = 1
+    .desc = { ent-InflatableWallStack.desc }
+ent-InflatableDoorStack1 = { ent-InflatableDoorStack }
+    .suffix = 1
+    .desc = { ent-InflatableDoorStack.desc }

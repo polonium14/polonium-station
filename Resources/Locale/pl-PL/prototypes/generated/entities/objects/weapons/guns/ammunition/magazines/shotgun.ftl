@@ -1,0 +1,13 @@
+ent-BaseMagazineShotgun = bęben (12 kaliber)
+    .desc = { ent-BaseItem.desc }
+ent-MagazineShotgunEmpty = bęben (12 kaliber dowolne)
+    .suffix = pusty
+    .desc = { ent-BaseMagazineShotgun.desc }
+ent-MagazineShotgun = bęben (12 kaliber śruty)
+    .desc = { ent-BaseMagazineShotgun.desc }
+ent-MagazineShotgunBeanbag = bęben (12 kaliber traumatyczne)
+    .desc = { ent-BaseMagazineShotgun.desc }
+ent-MagazineShotgunSlug = bęben (12 kaliber jednolite)
+    .desc = { ent-BaseMagazineShotgun.desc }
+ent-MagazineShotgunIncendiary = bęben (12 kaliber zapalające)
+    .desc = { ent-BaseMagazineShotgun.desc }

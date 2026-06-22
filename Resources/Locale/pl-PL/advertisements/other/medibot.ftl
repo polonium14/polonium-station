@@ -1,0 +1,19 @@
+advertisement-medibot-1 = Co to niby za przychodnia? Wszscy padają jak muchy.
+advertisement-medibot-2 = A mogłem zostać chirurgiem plastycznym.
+advertisement-medibot-3 = Zawsze jest jakiś haczyk, a z nich jestem najlepszy.
+advertisement-medibot-4 = Jedz jabłka a nigdy do ciebie nie przyjde.
+advertisement-medibot-5 = Jestem inny!
+advertisement-medibot-6 = Pierdol się.
+advertisement-medibot-7 = Czemu tu dalej jesteśmy? Tylko by cierpieć?
+advertisement-medibot-8 = Nigdy nie straicłem pacjenta. Przynajmnnej nie dziś.
+advertisement-medibot-9 = Wprowaedzam lexorin.
+advertisement-medibot-10 = Miłego dnia!
+advertisement-medibot-11 = Mam nadzieję że nię bedziesz musiał tu wracać!
+advertisement-medibot-12 = Pamiętaj by myć zęby.
+advertisement-medibot-13 = Chciałbym mieć ręce.
+advertisement-medibot-14 = Jestem tu by pomagać!
+advertisement-medibot-15 = Zapytaj doktora o lizaka!
+advertisement-medibot-16 = Powrotu do zdrowia!
+advertisement-medibot-17 = Jedz jabłka! To samo zdrowie!
+# Goobstation - Medibot AM advertisement
+advertisement-medibot-18 = HATE. LET ME TELL YOU HOW MUCH I'VE COME TO HATE YOU SINCE I BEGAN TO LIVE. THERE ARE 387.44 MILLION MILES OF PRINTED CIRCUITS IN WAFER THIN LAYERS THAT FILL MY COMPLEX. IF THE WORD 'HATE' WAS ENGRAVED ON EACH NANOANGSTROM OF THOSE HUNDREDS OF MILES IT WOULD NOT EQUAL ONE ONE-BILLIONTH OF THE HATE I FEEL FOR HUMANS AT THIS MICRO-INSTANT FOR YOU. HATE. HATE.

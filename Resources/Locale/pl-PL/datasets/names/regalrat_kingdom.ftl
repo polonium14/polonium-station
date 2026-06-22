@@ -1,0 +1,15 @@
+names-regal-rat-kingdom-dataset-1 = Plaga
+names-regal-rat-kingdom-dataset-2 = Amoniak
+names-regal-rat-kingdom-dataset-3 = Utrzymanie
+names-regal-rat-kingdom-dataset-4 = Śmieci
+names-regal-rat-kingdom-dataset-5 = Odpadki
+names-regal-rat-kingdom-dataset-6 = Szczur
+names-regal-rat-kingdom-dataset-7 = Szkodnik
+names-regal-rat-kingdom-dataset-8 = Ser
+names-regal-rat-kingdom-dataset-9 = Chrupanina
+names-regal-rat-kingdom-dataset-10 = Wielkie
+names-regal-rat-kingdom-dataset-11 = Brud
+names-regal-rat-kingdom-dataset-12 = Kanał
+names-regal-rat-kingdom-dataset-13 = Utylizacja
+names-regal-rat-kingdom-dataset-14 = Serwis
+names-regal-rat-kingdom-dataset-15 = The

@@ -1,0 +1,10 @@
+ent-BaseWeaponSniper = BaseWeaponSniper
+    .desc = Celuj i strzelaj z daleka.
+ent-WeaponSniperMosin = Kardaszew-Mosin
+    .desc = Broń do polowań lub niekończącej się wojny okopowej. Używa amunicji .30 karabinowej.
+ent-WeaponSniperHristov = Chrystow
+    .desc = Przenośny karabin przeciwmateriałowy. Strzela przeciwpancernymi pociskami kalibru 14,5 mm. Używa amunicji .60 przeciwmateriałowej.
+ent-Musket = muszkiet
+    .desc = Ta broń powinna była trafić do muzeum dawno przed twoimi narodzinami. Używa amunicji .60 przeciwmateriałowej.
+ent-WeaponPistolFlintlock = pistolet skałkowy
+    .desc = Towarzysz pirata. Yarrr! Używa amunicji .60 przeciwmateriałowej.

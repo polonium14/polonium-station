@@ -1,0 +1,10 @@
+ent-OffsetCane = standardowa laska offsetowa
+    .desc = Standardowa laska offsetowa, niezbędna do poruszania się, gdy nogi odmawiają posłuszeństwa. Może (ale nie musi) dawać mądrość starszych.
+ent-OffsetCaneClown = tęczowa laska offsetowa
+    .desc = Tęczowa laska offsetowa, idealna dla klaunów i tych, którzy lubią odrobinę koloru w życiu.
+ent-OffsetCaneMime = pasiasta laska offsetowa
+    .desc = Czarna i biała pasiasta laska, idealna do cichych występów.
+ent-OffsetCaneNT = nanotrasenowa laska offsetowa
+    .desc = Standardowa laska offsetowa Nanotrasen z logo NT, preferowana przez tych, którzy wolą bardziej korporacyjny wygląd.
+ent-OffsetCaneWood = drewniana laska offsetowa
+    .desc = Drewniana laska offsetowa, klasyczny wybór dla ceniących naturalne materiały i solidny chwyt.

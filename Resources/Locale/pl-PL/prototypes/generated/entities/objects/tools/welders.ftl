@@ -1,0 +1,10 @@
+ent-Welder = spawarka
+    .desc = Topi prawie wszystko, o ile ma paliwo. Nie zapomnij o ochronie oczu!
+ent-WelderIndustrial = spawarka przemysłowa
+    .desc = Przemysłowa spawarka o ponad dwukrotnie większej pojemności paliwa.
+ent-WelderIndustrialAdvanced = zaawansowana spawarka przemysłowa
+    .desc = Zaawansowana spawarka przemysłowa o ponad dwukrotnie większej pojemności paliwa i gorętszym płomieniu.
+ent-WelderExperimental = eksperymentalna spawarka
+    .desc = Eksperymentalna spawarka zdolna do samodzielnego generowania paliwa i mniej szkodliwa dla oczu.
+ent-WelderMini = miniaturowa spawarka
+    .desc = Kompaktowe narzędzie do spawania na wypadek awarii.

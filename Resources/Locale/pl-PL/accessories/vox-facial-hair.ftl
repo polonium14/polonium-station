@@ -1,0 +1,7 @@
+marking-VoxFacialHairBeard = Voksia broda (lotki)
+marking-VoxFacialHairColonel = Voksie wąsy (pułkownik)
+marking-VoxFacialHairFu = Voksie wąsy (quill fu)
+marking-VoxFacialHairNeck = Voksia broda (lotki na szyi)
+marking-VoxFacialHairMane = Voksia broda (grzywa)
+marking-VoxFacialHairManeSmall = Voksia broda (mała grzywa)
+marking-VoxFacialHairTufts = Voksie bokobrody (kępki)

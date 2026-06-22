@@ -1,0 +1,14 @@
+ent-Soap = mydło
+    .desc = Tanie mydło w kostce. Bez zapachu.
+ent-SoapNT = mydło
+    .desc = Mydło marki Nanotrasen. Pachnie plazmą.
+ent-SoapDeluxe = mydło
+    .desc = Luksusowe mydło marki Waffle Co. Pachnie truskawkami.
+ent-SoapSyndie = mydło
+    .desc = Budzące niepokój mydło w kostce. Pachnie strachem.
+ent-SoapletSyndie = mydełko
+    .desc = Malutki kawałek mydła Syndykatu.
+ent-SoapHomemade = mydło
+    .desc = Mydło własnej roboty. Pachnie... cóż... no wiadomo.
+ent-SoapOmega = mydło omega
+    .desc = Najbardziej zaawansowane mydło znane ludzkości. Pachnie bluespace'em.

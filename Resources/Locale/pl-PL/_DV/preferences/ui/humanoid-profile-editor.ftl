@@ -1,0 +1,2 @@
+
+trait-category-fonts = Czcionki

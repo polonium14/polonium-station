@@ -1,0 +1,12 @@
+ent-ClothingUniformSkirtClayshaper = clayshaper's garb
+    .desc = Free from our hunger for dominion.
+ent-ClothingUniformSkirtDruid = druid's garb
+    .desc = Patient and generous.
+ent-ClothingUniformSkirtMoon = moon drape
+    .desc = Silvered and weightless.
+ent-ClothingUniformSun = sun suit
+    .desc = The material is thick and stiff and catches the light warmly.
+ent-ClothingUniformTech = brother of technology suit
+    .desc = There's this great new investment opportunity you can't wait to tell everyone about.
+ent-ClothingUniformSkirtTidal = tidal robes
+    .desc = It's very comfortable, for just being a square of cloth.

@@ -1,0 +1,16 @@
+ent-CrateEmergencyExplosive = skrzynia z kombinezonem saperskim
+    .desc = Nauka oszalała? Coś pika za śluzą? Kup teraz i bądź bohaterem, na którego stacja zasłu... to znaczy, którego potrzebuje! (czasu nie wliczono)
+ent-CrateEmergencyFire = skrzynia strażacka
+    .desc = Tylko ty możesz zapobiec pożarom na stacji. Zostań bohaterem dzięki dwóm kombinezonom strażackim, maskom przeciwgazowym, latarkom, dużym butlom z tlenem, gaśnicom i kaskom!
+ent-CrateEmergencyInternals = skrzynia z aparaturą tlenową
+    .desc = Opanuj swoją energię życiową i kontroluj oddech dzięki 3 maskom oddechowym, kombinezonom ratunkowym i dużym butlom z powietrzem.
+ent-CrateEmergencyInternalsLarge = skrzynia z aparaturą tlenową (duża)
+    .desc = Opanuj swoją energię życiową i kontroluj oddech dzięki 6 maskom oddechowym, kombinezonom ratunkowym i dużym butlom z powietrzem.
+ent-CrateNitrogenInternals = skrzynia z aparaturą azotową
+    .desc = Zawiera cztery maski oddechowe i cztery duże butle z azotem. Przeznaczona dla Szlamoludzi i Voxów.
+ent-CrateEmergencyRadiation = skrzynia ochrony radiacyjnej
+    .desc = Przetrwaj apokalipsę nuklearną i awarię silnika supermaterii dzięki dwóm zestawom kombinezonów radiacyjnych. Każdy zestaw zawiera hełm, skafander i licznik Geigera. Dorzucamy nawet butelkę wódki i szklanki, biorąc pod uwagę średnią długość życia osób, które to zamawiają.
+ent-CrateEmergencyInflatablewall = skrzynia ścian dmuchanych
+    .desc = Trzy stosy dmuchanych ścian na momenty, gdy metalowe ściany stacji nie chcą już dłużej trzymać atmosfery.
+ent-CrateGenericBiosuit = skrzynia ratunkowych kombinezonów biologicznych
+    .desc = Zawiera 2 skafandry chroniące przed zagrożeniem biologicznym, aby żadna choroba nie odciągnęła cię od tego, co tam właściwie robisz.

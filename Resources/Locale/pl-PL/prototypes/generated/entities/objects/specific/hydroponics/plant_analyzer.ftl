@@ -1,0 +1,10 @@
+ent-PlantAnalyzerUnpowered = analizator roślin
+    .desc = Skaner używany do oceny różnych obszarów wzrostu roślin, cech genetycznych i reagentów.
+ent-PlantAnalyzer = { ent-PlantAnalyzerUnpowered }
+    .suffix = Zasilany
+    .desc = { ent-PlantAnalyzerUnpowered.desc }
+ent-PlantAnalyzerEmpty = { ent-PlantAnalyzer }
+    .suffix = Pusty
+    .desc = { ent-PlantAnalyzer.desc }
+ent-PlantAnalyzerReportPaper = raport z analizatora roślin
+    .desc = Wydruk z analizatora roślin.

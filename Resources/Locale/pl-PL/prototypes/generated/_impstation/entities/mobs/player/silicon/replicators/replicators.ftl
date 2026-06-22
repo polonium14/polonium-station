@@ -1,0 +1,13 @@
+ent-BaseMobReplicator = replikator
+    .desc = Po prostu mały robocik. Jak bardzo mógłby zaszkodzić?
+ent-MobReplicatorQueen = { ent-MobReplicator }
+    .suffix = Królowa, Poziom 1
+    .desc = { ent-MobReplicator.desc }
+ent-MobReplicator = { ent-BaseMobReplicator }
+    .desc = { ent-BaseMobReplicator.desc }
+ent-MobReplicatorTier2 = { ent-BaseMobReplicator }
+    .suffix = Poziom 2
+    .desc = { ent-BaseMobReplicator.desc }
+ent-MobReplicatorTier3 = { ent-BaseMobReplicator }
+    .desc = O rany.
+    .suffix = Poziom 3

@@ -1,0 +1,9 @@
+ninja-no-power = Niewystarczająca moc w kombinezonie ninja!
+ninja-revealed = Zostałeś wykryty!
+ninja-suit-cooldown = Kombinezon potrzebuje czasu na regenerację po ostatnim ataku.
+ninja-cell-downgrade = Kombinezon zaakceptuje tylko nową baterię o lepszych parametrach niż obecna!
+ninja-cell-too-large = To źródło zasilania nie mieści się w kombinezonie ninja!
+ninja-download-fail = Serwer nie posiada danych badawczych...
+ninja-research-steal-fail = Nie skradziono żadnych nowych węzłów badawczych...
+ninja-research-steal-success = Skradziono { $count } nowych węzłów z { $server }.
+ninja-criminal-records-hack-announcement = BŁĄD: Rejestry kryminalne wykryły błąd [USUNIĘTO] #*;"

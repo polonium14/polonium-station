@@ -1,0 +1,17 @@
+ent-ReinforcementRadio = radio wsparcia syndykatu
+    .desc = Wezwij agenta syndykatu wątpliwej jakości, natychmiast! Dostarczane są tylko podstawowe wyposażenie.
+ent-ReinforcementRadioSyndicate = radio wsparcia syndykatu
+    .desc = Wezwij agenta syndykatu wątpliwej jakości, natychmiast!
+ent-ReinforcementRadioSyndicateNukeops = radio wsparcia specjalistów nuklearnych
+    .desc = Wezwij operatywa nuklearnego wątpliwej jakości, natychmiast! Dostarczane jest podstawowe wyposażenie nuklearne.
+    .suffix = Specjaliści Nuklearni
+ent-ReinforcementRadioSyndicateAncestor = radio wsparcia przodka genetycznego
+    .desc = Wezwij specjalnie wyszkolonego przodka według własnego wyboru, aby Ci pomógł.
+ent-ReinforcementRadioSyndicateAncestorNukeops = { ent-ReinforcementRadioSyndicateAncestor }
+    .suffix = Specjaliści Nuklearni
+    .desc = { ent-ReinforcementRadioSyndicateAncestor.desc }
+ent-ReinforcementRadioSyndicateSyndiCat = radio wsparcia syndykota
+    .desc = Wezwij wiernie wyszkolonego kota z mikrobombą, aby Ci pomógł.
+ent-ReinforcementRadioSyndicateCyborgAssault = radio wsparcia cyborga szturmowego
+    .desc = Wezwij dobrze uzbrojonego cyborga szturmowego, natychmiast!
+    .suffix = Specjaliści Nuklearni

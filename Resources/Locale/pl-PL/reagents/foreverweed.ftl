@@ -1,0 +1,12 @@
+foreverweed-effect-longtime = Mam nadzieję, że nie będziesz chciał wkrótce zejść, haha, bo będziesz taki jeszcze PRZEZ DŁUGI czas, haha!!!!
+foreverweed-effect-parents = Zaprosiłem wszystkich twoich rodziców, rodzinę, przyjaciół i mentorów – wszyscy wpadają na cały dzień!!!!
+foreverweed-effect-paranoia-one = *puk puk*
+foreverweed-effect-paranoia-two = Coś próbuje się wydostać z twojego ekwipunku!
+foreverweed-effect-paranoia-three = Słyszałeś to?
+foreverweed-effect-syndicate = Ta osoba jest agentem syndykatu, czuje to
+foreverweed-effect-space-cops = Nie pozwól kosmicznej policji dostrzec, że jesteś naćpany
+foreverweed-effect-space-cops-paranoia = Kosmiczna policja wie, że jesteś naćpany
+foreverweed-effect-captain = Nie pozwól Kapitanowi dostrzec, że jesteś naćpany
+foreverweed-effect-captain-paranoia = Kapitan wie, że jesteś naćpany
+foreverweed-effect-centcomm = Nie pozwól Dowództwu Centralnemu dostrzec, że jesteś naćpany
+foreverweed-effect-centcomm-paranoia = Dowództwo Centralne wie, że jesteś naćpany

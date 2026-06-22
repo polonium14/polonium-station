@@ -1,0 +1,12 @@
+ent-RevCoin = RevCoin
+    .desc = The universal language of revolution.
+    .suffix = 100 RC
+ent-RevCoin1 = { ent-RevCoin }
+    .suffix = 1 RC
+    .desc = { ent-RevCoin.desc }
+ent-RevCoin5 = { ent-RevCoin }
+    .suffix = 5 RC
+    .desc = { ent-RevCoin.desc }
+ent-RevCoin10 = { ent-RevCoin }
+    .suffix = 10 RC
+    .desc = { ent-RevCoin.desc }

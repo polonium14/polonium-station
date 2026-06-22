@@ -1,0 +1,12 @@
+
+# for dinos
+alert-level-amber = Amber
+alert-level-amber-announcement = Wykryto pola zakłóceń czasowych pochodzące z sekund w przeszłości. Członkowie załogi powinni przygotować się na zbliżające się wojny dinozaurów.
+alert-level-amber-instructions = Broń stacji przed mezozoiczną hordą. To są Wojny Dinozaurów.
+# cosmic cult
+alert-level-octarine = Oktarynowy
+alert-level-octarine-announcement =
+    Kataklizmowa anomalia bluespace zagraża otoczeniu rzeczywistości.
+    Personel ochrony otrzymał autoryzację na użycie broni palnej.
+    Wszelkie instrukcje przełożonych mają rygor rozkazu. Każdy akt niesubordynacji lub oporu spotka się z natychmiastową odpowiedzią zbrojną.
+alert-level-octarine-instructions = TO JEST KONIEC TO JEST KONIEC TO JEST KO...1-3x341cv..

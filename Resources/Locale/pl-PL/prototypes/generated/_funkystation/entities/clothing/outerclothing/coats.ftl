@@ -1,0 +1,16 @@
+ent-ClothingOuterMagistrateCoat = płaszcz sędziego
+    .desc = A twoją karą jest śmierć.
+ent-ClothingOuterCargoWindbreaker = wiatrówka technika logistyka
+    .desc = Pracujemy, aby zasłużyć sobie na prawo do pracy.
+ent-ClothingOuterSalvageWindbreaker = wiatrówka specjalisty ds. odzysku
+    .desc = W zaskakująco dobrym stanie. Prawdopodobnie nigdy nie noszona. Nie zmieści się na twoim kombinezonie ochronnym.
+ent-ClothingOuterCargoCourierWindbreaker = wiatrówka listonosza
+    .desc = W Nanotrasen Interstellar dbamy o to, aby wszyscy nasi pracownicy byli odpowiednio wyposażeni do wykonywania swoich obowiązków, niezależnie od warunków atmosferycznych!
+ent-ClothingOuterCargoSeniorWindbreaker = wiatrówka starszego technika logistyki
+    .desc = Wygląda nieco matowo i wyblakło, ale jest niezrównanie wygodna. Pachnie pieniędzmi.
+ent-ClothingOuterQMWindbreaker = wiatrówka kwatermistrza
+    .desc = Za zwiększenie kwartalnej produktywności o 0,3%, Nanotrasen nagrodził cię tym wyróżniającym się wiatrówką, aby odróżnić cię od zwykłych dronów. W końcu jesteś Kwatermistrzem.
+ent-ClothingOuterJacketChefBlue = niebieska kurtka szefa kuchni
+    .desc = Fartuch-kurtka używana przez szefa kuchni wysokiej klasy zespołu niebieskiego.
+ent-ClothingOuterNTRCoat = płaszcz przedstawiciela Nanotrasen
+    .desc = Drogocenny płaszcz noszony tylko przez najbardziej szanowanych urzędników Nanotrasen.

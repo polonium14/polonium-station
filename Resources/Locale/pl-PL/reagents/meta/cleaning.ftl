@@ -1,0 +1,10 @@
+reagent-name-bleach = wybielacz
+reagent-desc-bleach = Silny środek czyszczący, który czyści płytki tak samo jak kosmiczny oczyszczacz, a także odkaża ubrania. Wyjątkowo toksyczny po połknięciu.
+reagent-name-space-cleaner = kosmomyj
+reagent-desc-space-cleaner = Jest w stanie wyczyścić niemal każdą powierzchnię z wszelkich zanieczyszczeń. Sprzątacz z pewnością doceni uzupełnianie.
+reagent-name-soap = mydło
+reagent-desc-soap = Na twoim miejscu nie czyściłbym sobie tym ust.
+reagent-name-space-lube = kosmosmar
+reagent-desc-space-lube = Kosmosmar jest wysokowydajnym środkiem smarnym przeznaczonym do konserwacji wyjątkowo skomplikowanego sprzętu mechanicznego (i z pewnością nie służącym do powodowania poślizgów).
+reagent-name-space-glue = kosmoklej
+reagent-desc-space-glue = Kosmoklej jest klejem o wysokiej wydajności przeznaczonym do konserwacji wyjątkowo skomplikowanego sprzętu mechanicznego (i na pewno nie do przyklejania ludzi do podłogi).

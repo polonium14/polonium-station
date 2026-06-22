@@ -1,0 +1,16 @@
+ent-WallCosmicCult = złośliwa ściana
+    .desc = Dziwnie wyglądająca ściana. Zbyt długie wpatrywanie się w nią wywołuje uczucie dyskomfortu.
+ent-WallCosmicCultTrimmed = złośliwa ściana
+    .suffix = Przycięta
+    .desc = { ent-WallCosmicCult.desc }
+ent-WindowCosmicCult = złośliwa szyba
+    .desc = Dziwnie wyglądająca szyba. Coś w niej budzi niepokój.
+ent-WindowCosmicCultDark = złośliwa szyba
+    .suffix = Przyciemniona
+    .desc = { ent-WindowCosmicCult.desc }
+ent-WindowCosmicCultDiagonal = złośliwa szyba
+    .desc = Dziwnie wyglądająca szyba. Coś w niej budzi niepokój.
+    .suffix = Diagonalna
+ent-WindowCosmicCultDiagonalDark = złośliwa szyba
+    .suffix = Diagonalna, Przyciemniona
+    .desc = { ent-WindowCosmicCultDiagonal.desc }

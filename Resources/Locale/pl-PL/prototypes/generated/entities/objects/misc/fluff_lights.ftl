@@ -1,0 +1,17 @@
+ent-BaseLamp = latarnia
+    .desc = { ent-BaseItem.desc }
+ent-Lamp = lampa
+    .desc = Urządzenie emitujące światło.
+ent-LampBanana = bananowa lampa
+    .desc = Urządzenie emitujące światło w kształcie banana.
+ent-LampGold = lampka na biurko
+    .desc = Urządzenie emitujące światło, które świetnie wyglądałoby na biurku.
+ent-LampInterrogator = lampa przesłuchań
+    .desc = Ultra-jasna lampa dla złego gliny.
+ent-Floodlight = reflektor
+    .desc = Słup z zamontowanymi potężnymi światłami.
+ent-FloodlightEmpty = reflektor
+    .desc = Słup z zamontowanymi na nim mocnymi światłami.
+    .suffix = Pusty
+ent-FloodlightBroken = zepsuty reflektor
+    .desc = Słup z zamontowanymi potężnymi światłami. Jest zepsuty.

@@ -1,0 +1,12 @@
+ent-WeaponImprovisedPneumaticCannon = improwizowana armata pneumatyczna
+    .desc = Improwizowana przy użyciu jedynie rury, kilku opasek zaciskowych i armaty pneumatycznej. Nie akceptuje zbiorników bez wystarczającej ilości gazu.
+ent-LauncherCreamPie = armata na kremowe ciasto
+    .desc = Załaduj kremowe ciasto dla optymalnych rezultatów.
+ent-LauncherSyringe = pistolet na strzykawki
+    .desc = Załaduj pełne zatrutych strzykawek dla optymalnej zabawy.
+ent-WeaponImprovisedPneumaticCannonGun = { ent-WeaponImprovisedPneumaticCannon }
+    .suffix = Pistolet
+    .desc = { ent-WeaponImprovisedPneumaticCannon.desc }
+ent-WeaponImprovisedPneumaticCannonAdmeme = { ent-WeaponImprovisedPneumaticCannonGun }
+    .suffix = Admeme
+    .desc = { ent-WeaponImprovisedPneumaticCannonGun.desc }

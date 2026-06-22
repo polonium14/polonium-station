@@ -1,0 +1,10 @@
+ent-BlankHandyFlag = czysta flaga ręczna
+    .desc = Kawałek białego materiału owinięty na patyku.
+ent-NTHandyFlag = flaga ręczna Nanotrasen
+    .desc = Chwała NT! Czekaj, naprawdę zrobili flagę ręczną dla korporacji?
+ent-SyndieHandyFlag = flaga ręczna syndykatu
+    .desc = Dla prawdziwie zbuntowanych patriotów. Śmierć NT!
+ent-LGBTQHandyFlag = flaga ręczna LGBTQ
+    .desc = Flaga ręczna "bądź gejem, popełniaj przestępstwa".
+ent-PirateHandyFlag = flaga ręczna piratów
+    .desc = Trzymając ją w rękach, pokażesz tym karpiom, że nie żartujesz.

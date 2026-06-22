@@ -1,0 +1,10 @@
+ent-BoxHandcuff = pudełko z kajdankami
+    .desc = Pudełko pełne kajdanek.
+ent-BoxFlashbang = pudełko z granatami błyskowymi
+    .desc = UWAGA: Te urządzenia są niezwykle niebezpieczne i mogą powodować ślepotę lub głuchotę przy wielokrotnym użyciu.
+ent-BoxSechud = pudełko z okularami ochronnymi
+    .desc = Pudełko z okularami ochronnymi.
+ent-BoxZiptie = pudełko z opaskami zaciskowymi
+    .desc = Pudełko pełne opasek zaciskowych.
+ent-BoxForensicPad = pudełko z podkładkami kryminalistycznymi
+    .desc = Pudełko z podkładkami kryminalistycznymi.

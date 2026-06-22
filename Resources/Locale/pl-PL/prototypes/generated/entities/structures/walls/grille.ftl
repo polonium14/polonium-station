@@ -1,0 +1,12 @@
+ent-Grille = krata
+    .desc = Krucha konstrukcja z prętów żelaznych.
+ent-ClockworkGrille = kratka zegarmistrzowska
+    .desc = Krucha konstrukcja z prętów żelaznych zmontowana w tradycyjny ratvariański sposób.
+ent-GrilleBroken = krata
+    .desc = Krucha konstrukcja z prętów żelaznych. Widział lepsze dni.
+ent-ClockworkGrilleBroken = kratka zegarmistrzowska
+    .desc = Krucha konstrukcja z prętów żelaznych zmontowana w tradycyjny ratvariański sposób. Widział lepsze dni.
+ent-GrilleDiagonal = krata diagonalna
+    .desc = { ent-Grille.desc }
+ent-ClockworkGrilleDiagonal = diagonalna kratka zegarmistrzowska
+    .desc = { ent-ClockworkGrille.desc }

@@ -1,0 +1,15 @@
+ent-AirlockShuttle = śluza dokująca
+    .desc = Niezbędna do połączenia dwóch statków kosmicznych.
+    .suffix = Dokowanie
+ent-AirlockGlassShuttle = śluza dokująca
+    .desc = Niezbędna do połączenia dwóch statków kosmicznych.
+    .suffix = Szklana, dokowanie
+ent-AirlockShuttleAssembly = konstrukcja śluzy zewnętrznej
+    .desc = Nieukończona konstrukcja niezbędna do połączenia dwóch statków kosmicznych.
+    .suffix = Dokowanie
+ent-AirlockGlassShuttleSyndicate = śluza dokująca
+    .desc = Niezbędna do połączenia dwóch statków kosmicznych.
+    .suffix = Szklana, dokowanie
+ent-AirlockShuttleSyndicate = śluza dokująca
+    .desc = Niezbędna do połączenia dwóch statków kosmicznych.
+    .suffix = Dokowanie

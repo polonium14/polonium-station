@@ -1,0 +1,9 @@
+ent-MailRoboticsParts = { ent-BaseMail }
+    .suffix = Robotics Parts
+    .desc = { ent-BaseMail.desc }
+ent-MailScienceBoards = { ent-BaseMailSmall }
+    .suffix = Materials
+    .desc = { ent-BaseMailSmall.desc }
+ent-MailScienceTools = { ent-BaseMailSmall }
+    .suffix = Sci Tools
+    .desc = { ent-BaseMailSmall.desc }

@@ -1,0 +1,14 @@
+ent-TapeRecorder = magnetofon
+    .desc = Wszystko, co zostanie powiedziane do tego urządzenia, może i będzie użyte przeciwko tobie w sądzie kosmicznego prawa.
+ent-TapeRecorderFilled = { ent-TapeRecorder }
+    .suffix = Napełniony
+    .desc = { ent-TapeRecorder.desc }
+ent-CassetteTape = kaseta magnetofonowa
+    .desc = Kaseta magnetofonowa, która może pomieścić do dwóch minut zawartości na każdej stronie.
+ent-CassetteTapeHigh = rozszerzona kaseta magnetofonowa
+    .desc = Kaseta magnetofonowa, która może pomieścić do czterech minut zawartości na każdej stronie. Wygląda na to, że została nawinięta z większą ilością taśmy.
+ent-CassetteTapeHyper = hiper rozszerzona kaseta magnetofonowa
+    .desc = Kaseta magnetofonowa, która może pomieścić do ośmiu minut zawartości na każdej stronie. Wygląda na to, że została zaprojektowana z dużą precyzją i dużą ilością taśmy.
+ent-CassetteTapeInterview = { ent-CassetteTape }
+    .suffix = Wywiad z Garrym Smoshem
+    .desc = { ent-CassetteTape.desc }

@@ -1,0 +1,17 @@
+ent-RandomSyndieKitSpawner = spawner losowego zestawu Syndykatu
+    .suffix = Nie Mapować
+    .desc = { ent-MarkerBase.desc }
+ent-ClothingBackpackDuffelSyndicateFilledKitSlasher = zestaw Syndykatu: Rzeźnik
+    .desc = Wszystko, czego potrzebujesz, by stać się postrachem korytarzy! Zawiera unikalną piłę mechaniczną i opancerzony fartuch dla niekończącej się zabawy w siekanie!
+ent-ClothingBackpackDuffelSyndicateFilledKitNinja = zestaw Syndykatu: Budżetowy Ninja
+    .desc = Poprosiliśmy Klan Pająka o ich technologię, ale odmówili, więc musieliśmy improwizować. Idealny do uderzania z cienia.
+ent-ClothingBackpackDuffelSyndicateFilledKitHacker = zestaw Syndykatu: Haker
+    .desc = Idealny zestaw narzędzi do włamywania się do systemów stacji.
+ent-ClothingBackpackDuffelSyndicateFilledKitHunter = zestaw Syndykatu: Łowca
+    .desc = Zostań mistrzem inwigilacji Syndykatu. Podsłuchuj załogę i używaj najnowocześniejszych gogli termowizyjnych, by wytropić nawet najbardziej nieuchwytne cele!
+ent-ClothingBackpackDuffelSyndicateFilledKitUndercover = zestaw Syndykatu: Tajniak
+    .desc = Wykorzystaj tę kolekcję tajnych przedmiotów i ubrań kameleon, by podszyć się pod każdego i wszystko. Niespodzianka.
+ent-ClothingBackpackDuffelSyndicateFilledKitBond = zestaw Syndykatu: Urist McBond
+    .desc = Zostań elitarnym tajnym agentem. Unikaj aresztowania. Graj w złowieszczego pokera. Specjalne okulary kameleon w zestawie mają wbudowany HUD.
+ent-ClothingBackpackDuffelSyndicateFilledKitChemical = zestaw Syndykatu: Chemik
+    .desc = Wstrzykuj wrogom neurotoksyny! Wstrzykuj sobie stymulanty! Wstrzykuj wszystkim pleśń bez żadnego powodu! Rób to wszystko i jeszcze więcej dzięki temu zestawowi!

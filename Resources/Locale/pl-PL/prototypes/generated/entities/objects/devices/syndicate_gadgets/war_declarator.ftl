@@ -1,0 +1,2 @@
+ent-NukeOpsDeclarationOfWar = deklarator wojny
+    .desc = Użyj, aby wysłać deklarację wojny do celu, opóźniając odlot wahadłowca, podczas gdy oni przygotowują się do ataku. Tak bezczelne posunięcie przyciągnie uwagę potężnych dobroczyńców z Syndykatu, którzy zaopatrzą twoją drużynę w ogromną ilość dodatkowych telekryształów. Musi zostać użyte na początku misji, w przeciwnym razie twoi dobroczyńcy stracą zainteresowanie.

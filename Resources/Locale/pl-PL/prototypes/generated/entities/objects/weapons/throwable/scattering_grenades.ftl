@@ -1,0 +1,15 @@
+ent-ScatteringGrenadeBase = { ent-BaseItem }
+    .desc = { ent-BaseItem.desc }
+ent-ClusterBang = granat klastrowy błyskowy
+    .desc = Może być używany tylko z granatami błyskowo-hukowymi. Wybucha kilka razy.
+ent-ClusterBangFull = { ent-ClusterBang }
+    .desc = Wypuszcza trzy granaty błyskowo-hukowe po upływie czasu.
+    .suffix = Pełny
+ent-ClusterGrenade = granat klastrowy
+    .desc = Dlaczego używać jednego granatu, skoro można użyć trzech naraz!
+ent-ClusterBananaPeel = klastrowa skórka od banana
+    .desc = Rozdziela się na 6 wybuchowych skórek od banana po rzuceniu, gwarantowana zabawa!
+ent-SlipocalypseClusterSoap = mydła klastrowe ślizgokalipsa
+    .desc = Rozsiewa małe kawałki mydła syndykatu na obszarze po upadku na podłogę.
+ent-GrenadeFoamDart = granat z piankowymi strzałkami
+    .desc = Wypuszcza irytujący spray piankowych strzałek powodujących silne podrażnienia.

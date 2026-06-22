@@ -1,0 +1,1 @@
+station-event-kudzu-growth-start-announcement = Uwaga załogo, wykryliśmy na stacji Inwazję Biologiczną Typu 2, która stanowi potencjalnie poważne zagrożenie dla produktywności załogi. Radzimy ją eksterminować.

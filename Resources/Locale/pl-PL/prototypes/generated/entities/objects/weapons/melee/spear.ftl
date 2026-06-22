@@ -1,0 +1,10 @@
+ent-Spear = włócznia
+    .desc = Klasyka gatunku. Utrzymuje morderstwo w przystępnej cenie od 200 000 lat p.n.e.
+ent-SpearReinforced = wzmocniona włócznia
+    .desc = Włócznia z końcówką z wzmocnionego szkła.
+ent-SpearPlasma = plazmowa włócznia
+    .desc = Włócznia z końcówką z plazmowego odłamka.
+ent-SpearUranium = uranowa włócznia
+    .desc = Włócznia z końcówką z uranowego odłamka.
+ent-SpearBone = kościana włócznia
+    .desc = Włócznia wykonana z kości.

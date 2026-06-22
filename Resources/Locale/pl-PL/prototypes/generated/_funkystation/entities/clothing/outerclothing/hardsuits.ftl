@@ -1,0 +1,10 @@
+ent-ClothingOuterHardsuitMusicianConstruction = powłoka kombinezonu muzyka
+    .desc = Niestandardowa, niekompletna powłoka kombinezonu muzyka.
+ent-ClothingOuterHardsuitMusician = kombinezon muzyka
+    .desc = Niestandardowy kombinezon muzyka.
+ent-ClothingOuterArmorHelldiver = taktyczny kombinezon NT-01 do odzysku
+    .desc = Ten pancerz jest standardowym wyposażeniem NanoTrasen, wykonanym z tego samego stopu tytanu co kadłub Goliatha.
+ent-ClothingOuterHardsuitCarpScale = kombinezon z łusków karpia
+    .desc = Kombinezon ozdobiony elastycznymi i trwałymi łuskami, z wbudowanym plecakiem odrzutowym. Carp nie polubi cię za noszenie go.
+ent-ClothingOuterHardsuitHivelord = kombinezon Władcy Roju
+    .desc = Dziwny kombinezon wykonany z pozostałych części Władcy Roju, zapewnia niewielką część ich zdolności regeneracyjnych podczas noszenia.

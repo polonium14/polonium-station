@@ -1,0 +1,15 @@
+ent-MailMedicalBasicSupplies = { ent-BaseMailSmall }
+    .suffix = Base Medics
+    .desc = { ent-BaseMailSmall.desc }
+ent-MailMedicalMedicinePills = { ent-BaseMail }
+    .suffix = Pills
+    .desc = { ent-BaseMail.desc }
+ent-MailMedicalEmergencyPens = { ent-BaseMail }
+    .suffix = Medipens
+    .desc = { ent-BaseMail.desc }
+ent-MailMedicalStabilizers = { ent-BaseMail }
+    .suffix = Stabilizers
+    .desc = { ent-BaseMail.desc }
+ent-MailMedicalChemistrySupplement = { ent-BaseMailSmall }
+    .suffix = Chemical Supplies
+    .desc = { ent-BaseMailSmall.desc }

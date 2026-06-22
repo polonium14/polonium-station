@@ -1,0 +1,11 @@
+ent-MoneyCabinet = sejf na pieniądze
+    .desc = Jest mała etykieta z napisem "Tylko w nagłych wypadkach".
+ent-MoneyCabinetOpen = { ent-MoneyCabinet }
+    .suffix = Otwarty
+    .desc = { ent-MoneyCabinet.desc }
+ent-MoneyCabinetFilled = { ent-MoneyCabinet }
+    .suffix = Wypełniony
+    .desc = { ent-MoneyCabinet.desc }
+ent-MoneyCabinetFilledOpen = { ent-MoneyCabinetFilled }
+    .suffix = Wypełniony, Otwarty
+    .desc = { ent-MoneyCabinetFilled.desc }

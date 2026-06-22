@@ -1,0 +1,10 @@
+ent-BaseArrow = { ent-BaseItem }
+    .desc = { ent-BaseItem.desc }
+ent-ArrowRegular = strzała
+    .desc = Możesz poczuć moc stepu w sobie.
+ent-ArrowImprovised = strzała z odłamka szkła
+    .desc = Ulubiony pocisk szarego koszula.
+ent-ArrowImprovisedPlasma = strzała z odłamka plazmy
+    .desc = Ulubiony pocisk szarego koszula. Teraz z dodatkową śmiertelnością!
+ent-ArrowImprovisedUranium = strzała z odłamka uranu
+    .desc = Ulubiony pocisk szarego koszula. Teraz z dodatkowym promieniowaniem!

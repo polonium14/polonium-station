@@ -1,0 +1,16 @@
+ent-BaseMeteor = meteor
+    .desc = Wolisz je, gdy spalają się w atmosferze.
+ent-MeteorSpaceDust = kosmiczny pył
+    .desc = Wywołuje kichanie na stacji.
+ent-MeteorSmall = { ent-BaseMeteor }
+    .suffix = Mały
+    .desc = { ent-BaseMeteor.desc }
+ent-MeteorMedium = { ent-BaseMeteor }
+    .suffix = Średni
+    .desc = { ent-BaseMeteor.desc }
+ent-MeteorLarge = { ent-BaseMeteor }
+    .suffix = Duży
+    .desc = { ent-BaseMeteor.desc }
+ent-MeteorUrist = Urist McMeteor
+    .desc = Jako odnoszący sukcesy członek społeczeństwa z stabilną, niewzruszoną psychiką i nieograniczoną determinacją, naturalną zdolnością do finansów i dominacji, zostałeś wybrany, nie, zostałes bezwysiłkowo poprowadzony przez boską (biologiczną) traumę do tego momentu. Bramy przeznaczenia otwierają się szeroko, a ty znów stoisz na pulsującej nicości. Migotliwy ból głowy duszy.
+    .suffix = Meteor

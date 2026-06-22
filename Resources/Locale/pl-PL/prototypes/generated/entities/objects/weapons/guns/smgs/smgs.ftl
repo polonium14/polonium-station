@@ -1,0 +1,10 @@
+ent-BaseWeaponSubMachineGun = BaseSMG
+    .desc = Celuj i strzelaj szybko.
+ent-WeaponSubMachineGunAtreides = Atryda
+    .desc = Pla-ket-ket-ket-ket! Używa amunicji .35 auto.
+ent-WeaponSubMachineGunC20r = pistolet maszynowy C-20r
+    .desc = Broń palna często używana przez niesławnych specjalistów nuklearnych. Używa amunicji .35 auto.
+ent-WeaponSubMachineGunDrozd = Drozd
+    .desc = Doskonały w pełni automatyczny ciężki pistolet maszynowy.
+ent-WeaponSubMachineGunWt550 = WT550
+    .desc = Doskonały pistolet maszynowy, produkowany przez dział broni palnej NanoTrasen. Używa amunicji .35 auto.

@@ -1,0 +1,10 @@
+ent-BioSynthHeart = serce biosyntetyczne
+    .desc = To serce można przeszczepić do dowolnego żywego organizmu. Samoistnie dostosowuje się do jego biorcy.
+ent-BioSynthLiver = wątroba biosyntetyczna
+    .desc = Tę wątrobę można przeszczepić do dowolnego żywego organizmu. Samoistnie dostosowuje się do jego biorcy.
+ent-BioSynthLungs = płuca biosyntetyczne
+    .desc = Te płuca można przeszczepić do dowolnego żywego organizmu. Samoistnie dostosowują się do jego biorcy.
+ent-BioSynthEyes = oczy biosyntetyczne
+    .desc = Te oczy można przeszczepić do dowolnego żywego organizmu. Samoistnie dostosowują się do jego biorcy.
+ent-BioSynthStomach = żołądek biosyntetyczny
+    .desc = Ten żołądek można przeszczepić do dowolnego żywego organizmu. Samoistnie dostosowuje się do jego biorcy.

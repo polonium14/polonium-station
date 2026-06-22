@@ -1,0 +1,14 @@
+ent-BaseMagazineBoxMagnum = { ent-BaseItem }
+    .desc = { ent-BaseItem.desc }
+ent-MagazineBoxMagnum = skrzynka amunicji (.45 magnum)
+    .desc = Kartonowe pudełko nabojów kaliber .45 magnum. Przeznaczone do przechowywania amunicji kinetycznej ogólnego przeznaczenia.
+ent-MagazineBoxMagnumPractice = skrzynka amunicji (.45 magnum treningowe)
+    .desc = Kartonowe pudełko nabojów kaliber .45 magnum. Przeznaczone do przechowywania niegroźnej amunicji kredowej.
+ent-MagazineBoxMagnumIncendiary = skrzynka amunicji (.45 magnum zapalające)
+    .desc = Kartonowe pudełko nabojów kaliber .45 magnum. Przeznaczone do przechowywania samozapalającej się amunicji zapalającej.
+ent-MagazineBoxMagnumUranium = skrzynka amunicji (.45 magnum uranowe)
+    .desc = Kartonowe pudełko nabojów kaliber .45 magnum. Przeznaczone do przechowywania egzotycznej amunicji z rdzeniem uranowym.
+ent-MagazineBoxMagnumAP = skrzynka amunicji (.45 magnum przeciwpancerne)
+    .desc = Kartonowe pudełko nabojów kaliber .45 magnum. Przeznaczone do przechowywania rzadkiej amunicji przeciwpancernej.
+ent-MagazineBoxMagnumSilver = skrzynka amunicji (.45 magnum srebrne)
+    .desc = Kartonowe pudełko nabojów kaliber .45 magnum. Przeznaczone do przechowywania błogosławionej amunicji srebrnej.

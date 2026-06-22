@@ -1,0 +1,9 @@
+ent-JugHolywater = { ent-Jug }
+    .suffix = święcona woda
+    .desc = { ent-Jug.desc }
+ent-CrateChaplain = skrzynka religijna
+    .desc = { ent-CratePlastic.desc }
+ent-CrateServiceReligious = skrzynka ze sprzętem religijnym
+    .desc = Zawiera święconą wodę, Biblię i zapas kadzidła.
+ent-CrateScienceAnomalousContainment = skrzynka ze sprzętem do anomalii
+    .desc = Zawiera płytkę maszynową Próżni Osadczej i dwie płytki maszynowe M.A.K.A.K.

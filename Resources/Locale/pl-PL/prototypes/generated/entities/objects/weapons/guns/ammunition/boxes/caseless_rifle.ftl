@@ -1,0 +1,10 @@
+ent-BaseMagazineBoxCaselessRifle = skrzynka amunicji (.25 bezłuskowe)
+    .desc = { ent-BaseItem.desc }
+ent-MagazineBoxCaselessRifle10x24 = skrzynka amunicji (.25 bezłuskowe)
+    .desc = { ent-BaseMagazineBoxCaselessRifle.desc }
+ent-MagazineBoxCaselessRifleBig = skrzynka amunicji (.25 bezłuskowe)
+    .desc = { ent-BaseMagazineBoxCaselessRifle.desc }
+ent-MagazineBoxCaselessRifle = skrzynka amunicji (.25 bezłuskowe)
+    .desc = { ent-BaseMagazineBoxCaselessRifle.desc }
+ent-MagazineBoxCaselessRiflePractice = skrzynka amunicji (.25 bezłuskowe treningowe)
+    .desc = { ent-BaseMagazineBoxCaselessRifle.desc }

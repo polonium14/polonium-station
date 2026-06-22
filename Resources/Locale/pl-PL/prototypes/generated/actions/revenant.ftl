@@ -1,0 +1,10 @@
+ent-ActionRevenantShop = Sklep
+    .desc = Otwiera sklep z umiejętnościami.
+ent-ActionRevenantDefile = Zbezczeszczenie
+    .desc = Kosztuje 30 Esencji.
+ent-ActionRevenantOverloadLights = Przeciążenie świateł
+    .desc = Kosztuje 40 Esencji.
+ent-ActionRevenantMalfunction = Awaria
+    .desc = Kosztuje 60 Esencji.
+ent-ActionRevenantBloodWriting = Krwawe pismo
+    .desc = Kosztuje 2 Esencje za glif.

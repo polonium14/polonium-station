@@ -1,0 +1,10 @@
+advertisement-donut-1 = Każdy z nas jest trochę jak glina!
+advertisement-donut-2 = Mamy nadzieję, że jesteś głodny!
+advertisement-donut-3 = Sprzedaliśmy już ponad milion pączków!
+advertisement-donut-4 = Jesteśmy dumni z konsekwencji naszych produktów!
+advertisement-donut-5 = Słodkie, cukrowe i pyszne!
+advertisement-donut-6 = Nie martw się, bądź szczęśliwy!
+thankyou-donut-1 = Smacznego pączka!
+thankyou-donut-2 = Kolejny pączek sprzedany!
+thankyou-donut-3 = Miłego dnia, panie funkcjonariuszu!
+thankyou-donut-4 = Mam nadzieję, że się uzależnisz!

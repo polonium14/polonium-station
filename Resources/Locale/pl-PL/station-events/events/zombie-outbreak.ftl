@@ -1,0 +1,1 @@
+station-event-zombie-outbreak-announcement = Potwierdzono obecność żywych trupów na stacji. Cały personel powinien się uzbroić, zabarykadować drzwi i zabezpieczyć swoją lokalizację, aby zapobiec dalszej infekcji.

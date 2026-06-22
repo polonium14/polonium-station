@@ -1,0 +1,14 @@
+ent-BaseMagazineBoxLightRifle = skrzynka amunicji (.30 karabinowe)
+    .desc = { ent-BaseItem.desc }
+ent-MagazineBoxLightRifleBig = skrzynka amunicji (.30 karabinowe)
+    .desc = { ent-BaseMagazineBoxLightRifle.desc }
+ent-MagazineBoxLightRifle = skrzynka amunicji (.30 karabinowe)
+    .desc = { ent-BaseMagazineBoxLightRifle.desc }
+ent-MagazineBoxLightRiflePractice = skrzynka amunicji (.30 karabinowe treningowe)
+    .desc = { ent-BaseMagazineBoxLightRifle.desc }
+ent-MagazineBoxLightRifleSilver = skrzynka amunicji (.30 karabinowe srebrne)
+    .desc = { ent-BaseMagazineBoxLightRifle.desc }
+ent-MagazineBoxLightRifleIncendiary = skrzynka amunicji (.30 karabinowe zapalające)
+    .desc = { ent-BaseMagazineBoxLightRifle.desc }
+ent-MagazineBoxLightRifleUranium = skrzynka amunicji (.30 karabinowe uranowe)
+    .desc = { ent-BaseMagazineBoxLightRifle.desc }

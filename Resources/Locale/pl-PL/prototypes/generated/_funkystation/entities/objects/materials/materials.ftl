@@ -1,0 +1,14 @@
+ent-MaterialCarpScale = łuska karpia
+    .desc = Gruba, wytrzymała i dziwnie lekka. Może nadawać się na dobry pancerz.
+    .suffix = Pełna
+ent-MaterialCarpScale1 = { ent-MaterialCarpScale }
+    .suffix = 1
+    .desc = { ent-MaterialCarpScale.desc }
+ent-MaterialHivelordTendril = wąs władcy roju
+    .desc = Prawie wydaje się, że nadal się porusza...
+    .suffix = Pełny
+ent-MaterialHivelordTendril1 = { ent-MaterialHivelordTendril }
+    .suffix = 1
+    .desc = { ent-MaterialHivelordTendril.desc }
+ent-SpationautUpgradeKit = zestaw ulepszeń spationauta
+    .desc = Pudełko zawierające różne części przeznaczone do modyfikacji i dostosowania standardowego kombinezonu spationauta.

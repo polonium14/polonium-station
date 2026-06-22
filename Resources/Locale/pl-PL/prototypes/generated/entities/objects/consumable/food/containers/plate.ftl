@@ -1,0 +1,16 @@
+ent-FoodPlate = duży talerz
+    .desc = Duży talerz, świetny do chleba.
+ent-FoodPlateTrash = rozbita talerz
+    .desc = Rozbity talerz. Bezużyteczny.
+ent-FoodPlateSmall = mały talerz
+    .desc = Mały talerz. Delikatny.
+ent-FoodPlateSmallTrash = { ent-FoodPlateTrash }
+    .desc = { ent-FoodPlateTrash.desc }
+ent-FoodPlatePlastic = plastikowy talerz
+    .desc = Duży niebieski plastikowy talerz, idealny na tort urodzinowy.
+ent-FoodPlateSmallPlastic = plastikowy talerz
+    .desc = Niebieski plastikowy talerz, idealny na kawałki tortu urodzinowego.
+ent-FoodPlateTin = forma na placek
+    .desc = Tania foliowa forma na placki.
+ent-FoodPlateMuffinTin = forma na muffinki
+    .desc = Tania foliowa forma na muffinki.

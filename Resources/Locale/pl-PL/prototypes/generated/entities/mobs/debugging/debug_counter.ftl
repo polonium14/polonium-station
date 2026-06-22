@@ -1,0 +1,9 @@
+ent-MobDebugCounter = licznik debugowania
+    .desc = Potrafi liczyć
+    .suffix = AI, DEBUG
+ent-MobDebugRandomCounter = randomowy licznik debugowania
+    .desc = Potrafi losować
+    .suffix = AI, DEBUG
+ent-MobDebugRandomLess = debugowy mniej
+    .desc = Potrafi zmniejszać
+    .suffix = AI, DEBUG

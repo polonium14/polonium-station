@@ -1,0 +1,16 @@
+ent-ClarkeCentralElectronics = moduł jednostki centralnej Klark
+    .desc = Elektroniczne centrum sterowania dla mecha typu Klark.
+ent-ClarkePeripheralsElectronics = moduł peryferiów Klark
+    .desc = Układ sterowania podzespołami peryferyjnymi dla mecha typu Klark.
+ent-GygaxCentralElectronics = moduł jednostki centralnej Gigax
+    .desc = Elektroniczne centrum sterowania dla mecha typu Gigax.
+ent-GygaxPeripheralsElectronics = moduł peryferiów Gigax
+    .desc = Układ sterowania podzespołami peryferyjnymi dla mecha typu Gigax.
+ent-GygaxTargetingElectronics = moduł celowania i kontroli uzbrojenia Gigax
+    .desc = Układ elektroniczny sterujący celowaniem dla mecha typu Gigax.
+ent-DurandCentralElectronics = moduł jednostki centralnej Durand
+    .desc = Elektroniczne centrum sterowania dla mecha typu Durand.
+ent-DurandPeripheralsElectronics = moduł peryferiów Durand
+    .desc = Układ sterowania podzespołami peryferyjnymi dla mecha typu Durand.
+ent-DurandTargetingElectronics = moduł celowania i kontroli uzbrojenia Durand
+    .desc = Układ elektroniczny sterujący celowaniem dla mecha typu Durand.

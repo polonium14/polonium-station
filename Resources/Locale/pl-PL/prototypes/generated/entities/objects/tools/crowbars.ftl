@@ -1,0 +1,12 @@
+ent-BaseCrowbar = łom
+    .desc = { ent-BaseItem.desc }
+ent-Crowbar = { ent-BaseCrowbar }
+    .desc = Wielofunkcyjne narzędzie do wyważania drzwi i walki z międzywymiarowymi najeźdźcami.
+ent-CrowbarRed = łom awaryjny
+    .desc = Łom awaryjny przeznaczony do wyważania drzwi i zamków przeciwpożarowych podczas przerw w dostawie prądu.
+ent-CrowbarGreen = { ent-BaseCrowbar }
+    .desc = Wielofunkcyjne narzędzie do wyważania drzwi i walki z międzywymiarowymi najeźdźcami, wydrukowane z autolata.
+ent-CrowbarOrange = { ent-BaseCrowbar }
+    .desc = Wielofunkcyjne narzędzie do wyważania drzwi i walki z międzywymiarowymi najeźdźcami, znalezione w skrzynkach z narzędziami.
+ent-CrowbarYellow = { ent-BaseCrowbar }
+    .desc = Wielofunkcyjne narzędzie do wyważania drzwi i walki z międzywymiarowymi najeźdźcami, wydawane przez dział inżynierii.

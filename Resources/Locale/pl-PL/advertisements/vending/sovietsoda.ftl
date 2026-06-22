@@ -1,0 +1,9 @@
+advertisement-sovietsoda-1 = Dla towarzysza i ojczyzny.
+advertisement-sovietsoda-2 = Czy wypełniłeś dziś swój dzienny limit żywieniowy?
+advertisement-sovietsoda-3 = Bardzo dobrze!
+advertisement-sovietsoda-4 = Jesteśmy prostymi ludźmi, bo to jest wszystko, co jemy.
+advertisement-sovietsoda-5 = Gdzie jest człowiek, tam jest problem. Gdzie nie ma człowieka, tam nie ma problemu.
+advertisement-sovietsoda-6 = Jeśli jest dobre na co dzień, jest dobre dla nas!
+thankyou-sovietsoda-1 = Smacznego, towarzyszu!
+thankyou-sovietsoda-2 = Wracaj do pracy.
+thankyou-sovietsoda-3 = To wszystko, co dostaniesz.

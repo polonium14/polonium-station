@@ -1,0 +1,10 @@
+ent-HoloparasiteInjector = wtryskiwacz holopasożytu
+    .desc = Złożone dzieło sztuki w formie przenośnej maszyny, pozwalające użytkownikowi na goszczenie strażnika holopasożyta.
+ent-HoloClownInjector = wtryskiwacz holoklauna
+    .desc = Złożone dzieło sztuki w formie przenośnej maszyny, pozwalające użytkownikowi na goszczenie strażnika holoklauna.
+ent-MagicalLamp = magiczna lampa
+    .desc = Federacja czarodziejów musiała obciąć koszty po skandalu z towarami dżinów.
+ent-BoxHoloparasite = pudełko holopasożyta
+    .desc = Pudełko zawierające wtryskiwacz holopasożyta.
+ent-BoxHoloclown = pudełko holoklauna
+    .desc = Pudełko zawierające wtryskiwacz holoklauna.

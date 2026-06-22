@@ -1,0 +1,10 @@
+ent-FoodMealCultLollipop = entro-pop
+    .desc = Migocze i znika z pola widzenia — oczy nigdy się na nim nie skupiają. Kosmicznie pyszne!
+ent-FoodMealBigLollipop = gigantyczny lizak
+    .desc = Wow!!! Jest wielki jak twoja głowa!!!
+ent-FoodMealClothLollipop = lizak z tkaniny
+    .desc = Utkany z miłości.
+ent-FoodMealFruitLollipop = owocowy lizak
+    .desc = To nie wyszło z mikrofalówki? Jak szef kuchni to zrobił?
+ent-FoodMealMeatLollipop = mięsny lizak
+    .desc = Wciąż kapie...

@@ -1,0 +1,14 @@
+ent-ClothingOuterWinterNTR = płaszcz zimowy przedstawiciela Nanotrasen
+    .desc = Elegancki, wygodny, imponujący. Idealny do przechowywania clipboardów i pieczątek — lub broni.
+ent-ClothingOuterWinterIAA = płaszcz zimowy agenta spraw wewnętrznych
+    .desc = Żadna zamieć ani burza nie ukryje naruszeń SPO przed noszącym ten ciepły płaszcz.
+ent-ClothingOuterWinterMagistrate = płaszcz zimowy sędziego
+    .desc = Owiń się ciepło, sprawiedliwość nie czeka na pogodę.
+ent-ClothingOuterWinterStingray = płaszcz zimowy cyber barmana
+    .desc = W pewnym momencie płakałem z książką i zdałem sobie sprawę... Płakałem nad fałszywymi rzeczami. Historia i jej postacie. Nie obchodziło mnie to, ponieważ były fałszywe. Dlaczego nie myśleć o "rzeczywistości" w ten sam sposób?
+ent-ClothingOuterWinterChefBlue = niebieski płaszcz szefa kuchni
+    .desc = Płaszcz specjalnie zaprojektowany dla niebieskiego zespołu, niezbędny dla niebieskrwistych jaszczurczych szefów kuchni.
+ent-ClothingOuterWinterMedSenior = ocieplany fartuch starszego lekarza
+    .desc = Niestandardowy, medycznej jakości fartuch laboratoryjny z dodatkową izolacją. Pachnie... czysto.
+ent-ClothingOuterWinterNTRFurCollar = płaszcz przedstawiciela Nanotrasen z futrzanym kołnierzem
+    .desc = Wełniany płaszcz z futrzanym kołnierzem, wykonany z materiałów najwyższej jakości, stworzony, aby wytrzymać najtrudniejsze warunki pogodowe; na przykład, gdy ogrzewanie w twoim biurze nie działa.

@@ -1,0 +1,9 @@
+ent-OrganVoxLungs = płuca voksa
+    .desc = Niebieskie, beztlenowe płuca voksa; pobierają azot do oddychania. Jakakolwiek forma tlenu gazowego jest śmiertelnie toksyczna w przypadku wdychania.
+    .suffix = voks
+ent-OrganVoxStomach = żołądek voksa
+    .desc = Żołądek, który śmierdzi amoniakiem.
+ent-OrganVoxLiver = wątroba voksa
+    .desc = Pachnie łatwopalnie.
+ent-OrganVoxHeart = serce voksa
+    .desc = Dziwne serce voksa.

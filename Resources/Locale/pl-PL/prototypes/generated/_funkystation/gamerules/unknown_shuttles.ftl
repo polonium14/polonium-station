@@ -1,0 +1,14 @@
+ent-UnknownShuttleSkeletonMafia = { ent-BaseUnknownShuttleRule }
+    .desc = { ent-BaseUnknownShuttleRule.desc }
+ent-UnknownShuttleLoneRoboticist = { ent-BaseUnknownShuttleRule }
+    .desc = { ent-BaseUnknownShuttleRule.desc }
+ent-UnknownShuttleFoamRoid = { ent-BaseUnknownShuttleRule }
+    .desc = { ent-BaseUnknownShuttleRule.desc }
+ent-UnknownShuttleMouseJumpscare = { ent-BaseUnknownShuttleRule }
+    .desc = { ent-BaseUnknownShuttleRule.desc }
+ent-UnknownShuttleClownPatrol = { ent-BaseUnknownShuttleRule }
+    .desc = { ent-BaseUnknownShuttleRule.desc }
+ent-UnknownShuttleWanderingNomad = { ent-BaseUnknownShuttleRule }
+    .desc = { ent-BaseUnknownShuttleRule.desc }
+ent-UnknownShuttleSpaceCowboy = { ent-BaseUnknownShuttleRule }
+    .desc = { ent-BaseUnknownShuttleRule.desc }

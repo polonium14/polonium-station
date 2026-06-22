@@ -1,0 +1,14 @@
+ent-ClothingNeckHeadphones = słuchawki
+    .desc = Wysokiej jakości słuchawki od Drunk Masters z dobrą izolacją dźwięku.
+ent-ClothingNeckStethoscope = stetoskop
+    .desc = Przestarzały przyrząd medyczny do słuchania dźwięków ludzkiego ciała. Sprawia też, że wyglądasz, jakbyś wiedział, co robisz.
+ent-ClothingNeckBling = łańcuch bling
+    .desc = Czułbyś się w nim jak gangster, gdyby nie był wykonany z taniego plastiku.
+ent-ClothingNeckLawyerbadge = odznaka prawnika
+    .desc = Odznaka potwierdzająca, że właściciel jest „prawowitym” prawnikiem, który zdał egzamin adwokacki NT, wymagany do wykonywania zawodu.
+ent-ActionStethoscope = Osłuchaj stetoskopem
+    .desc = { "" }
+ent-Dinkystar = gwiezdna naklejka
+    .desc = Marna mała gwiazdka tylko dla najciężej pracujących oficerów ochrony! Nawet już się nie klei.
+ent-ClothingNeckTankHarness = uprząż na butlę
+    .desc = Prosta uprząż, która pozwala na zamocowanie butli z gazem.

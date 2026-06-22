@@ -1,0 +1,16 @@
+ent-FoodNoodlesBase = { ent-FoodInjectableBase }
+    .desc = To dopiero porządny makaron!
+ent-FoodNoodlesBoiled = ugotowany makaron spaghetti
+    .desc = Zwykła porcja makaronu — brakuje dodatków.
+ent-FoodNoodles = spaghetti
+    .desc = Spaghetti w czerwonym sosie. Idealne do chlapania po kieszeniach!
+ent-FoodNoodlesCopy = copypasta
+    .desc = Lepiej tego nie próbować — wszyscy mówią, jakie to złe...
+ent-FoodNoodlesMeatball = spaghetti z klopsikami
+    .desc = To dopiero porządny klopsik!
+ent-FoodNoodlesSpesslaw = spesslaw
+    .desc = Ulubione danie prawnika.
+ent-FoodNoodlesChowmein = makaron chow mein
+    .desc = Miłe połączenie makaronu, mięsa i smażonych warzyw.
+ent-FoodNoodlesButter = makaron z masłem
+    .desc = Makaron w maśle. Prosty i śliski, ale pyszny.

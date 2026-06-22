@@ -1,0 +1,11 @@
+ent-HandheldGeneticAnalyzerUnpowered = genetic analyzer
+    .desc = A hand-held body scanner capable of distinguishing genetic sequences of a subject.
+    .suffix = empty
+ent-HandheldGeneticAnalyzer = { ent-HandheldGeneticAnalyzerUnpowered }
+    .suffix = Powered
+    .desc = { ent-HandheldGeneticAnalyzerUnpowered.desc }
+ent-HandheldGeneticAnalyzerEmpty = { ent-HandheldGeneticAnalyzer }
+    .suffix = Empty
+    .desc = { ent-HandheldGeneticAnalyzer.desc }
+ent-GeneticAnalyzerReportPaper = genetic analysis report
+    .desc = A detailed genetic analysis of a scanned subject's structural enzymes sequences.

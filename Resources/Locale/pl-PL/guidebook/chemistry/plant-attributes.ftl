@@ -1,0 +1,10 @@
+plant-attribute-growth = wiek
+plant-attribute-water = poziom wody
+plant-attribute-potency = potencja
+plant-attribute-weeds = poziom chwastów
+plant-attribute-toxins = poziom toksynów
+plant-attribute-nutrition = poziom odżywnienia
+plant-attribute-mutation-level = poziom mutacji
+plant-attribute-pests = poziom szkodników
+plant-attribute-mutation-mod = modyfikator mutacji
+plant-attribute-health = zdrowie

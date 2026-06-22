@@ -1,0 +1,10 @@
+ent-Cane = laska
+    .desc = Drewniana laska.
+ent-CaneBlade = ostrze laski
+    .desc = Ostro zakończone ostrze z rękojeścią w kształcie laski. Zaczarowane mocą ognia przez miłośnika książek.
+ent-CaneSheath = { ent-Cane }
+    .suffix = Pusta
+    .desc = { ent-Cane.desc }
+ent-CaneSheathFilled = { ent-CaneSheath }
+    .suffix = Pełna
+    .desc = { ent-CaneSheath.desc }

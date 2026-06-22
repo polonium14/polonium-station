@@ -1,0 +1,11 @@
+ent-MobGuardianBase = strażnik
+    .desc = strażnik
+    .gender = male
+ent-MobHoloparasiteGuardian = holopasożyt
+    .desc = Fascynujący zawijas twardego światła faluje w cudowny, ale dziwnie znajome oblicze. Z dumą zaspokaja się siłą życiową właściciela.
+ent-MobIfritGuardian = ifryt
+    .desc = Zepsuty dżin, wyrwany z fitry aby wykonywać błache potrzeby czarodzieja. Szaleńczo zaspokaja się siłą życiową właściciela.
+ent-MobHoloClownGuardian = holoklaun
+    .desc = Fascynujący zawijas twardego światła faluje w kształt niebieskiego klauna niewiadomego pochodzenia.
+ent-ActionToggleGuardian = Przełącz manifestację stróża
+    .desc = Zamanifestuj swojego stróża lub odwołaj go spowrotem do swojego ciała.

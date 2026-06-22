@@ -1,0 +1,15 @@
+store-ui-default-title = Sklep
+store-ui-default-withdraw-text = Wypłać
+store-ui-balance-display = { $currency }: { $amount }
+store-ui-default-refund-text = Zwrot
+store-ui-default-search-text = Szukaj
+store-ui-price-display = { $amount } { $currency }
+store-ui-discount-display-with-currency = { $amount } taniej ({ $currency })
+store-ui-discount-display = ({ $amount } taniej!)
+store-ui-traitor-flavor = Copyright (C) NT -30643
+store-ui-traitor-warning = Agenci muszą zablokować uplink po użyciu, aby uniknąć wykrycia.
+store-withdraw-button-ui = Wypłać { $currency }
+store-ui-button-out-of-stock = { "" } (brak w magazynie)
+store-not-account-owner = Ten { $store } nie jest z tobą powiązany!
+store-preset-name-uplink = Uplink
+store-preset-name-spellbook = Księga zaklęć

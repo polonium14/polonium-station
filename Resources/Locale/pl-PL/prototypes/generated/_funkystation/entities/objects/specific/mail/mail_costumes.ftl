@@ -1,0 +1,9 @@
+ent-MailMothSuit = { ent-BaseMailLarge }
+    .suffix = Moff Suit
+    .desc = { ent-BaseMailLarge.desc }
+ent-MailRedRacoonSuit = { ent-BaseMailLarge }
+    .suffix = Red Racoon Suit
+    .desc = { ent-BaseMailLarge.desc }
+ent-MailViceSuit = { ent-BaseMailLarge }
+    .suffix = Vice Suit
+    .desc = { ent-BaseMailLarge.desc }

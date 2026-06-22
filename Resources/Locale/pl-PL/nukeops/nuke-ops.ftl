@@ -1,0 +1,2 @@
+nuke-ops-no-more-threat-announcement-shuttle-call = Na podstawie danych zebranych przez nasze czujniki dalekiego zasięgu zagrożenie nuklearne zostało wyeliminowane. Wezwano wahadłowiec ewakuacyjny. Przewidywany czas przybycia: { $time } { $units }. Mogą Państwo cofnąć wahadłowiec, aby przedłużyć zmianę.
+nuke-ops-no-more-threat-announcement = Na podstawie danych zebranych przez nasze czujniki dalekiego zasięgu zagrożenie nuklearne zostało wyeliminowane. Wahadłowiec ewakuacyjny jest już wezwany.

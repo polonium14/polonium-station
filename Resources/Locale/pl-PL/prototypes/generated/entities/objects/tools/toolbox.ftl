@@ -1,0 +1,17 @@
+ent-ToolboxBase = { ent-BaseStorageItem }
+    .desc = { ent-BaseStorageItem.desc }
+ent-ToolboxEmergency = awaryjna skrzynka narzędziowa
+    .desc = Jasnoczerwona skrzynka narzędziowa, wyposażona w narzędzia awaryjne.
+ent-ToolboxMechanical = mechaniczna skrzynka narzędziowa
+    .desc = Niebieska skrzynka, wyposażona w narzędzia mechaniczne.
+ent-ToolboxElectrical = elektryczna skrzynka narzędziowa
+    .desc = Skrzynka narzędziowa zwykle wyposażona w sprzęt elektryczny.
+ent-ToolboxElectricalTurret = elektryczna skrzynka narzędziowa
+    .desc = Skrzynka narzędziowa zwykle wyposażona w sprzęt elektryczny.
+    .suffix = Syndykat, Wieżyczka
+ent-ToolboxArtistic = artystyczna skrzynka narzędziowa
+    .desc = Skrzynka narzędziowa zwykle wyposażona w przybory artystyczne.
+ent-ToolboxSyndicate = podejrzana skrzynka narzędziowa
+    .desc = Złowrogo wyglądająca skrzynka wypełniona elitarnymi narzędziami Syndykatu.
+ent-ToolboxGolden = złota skrzynka narzędziowa
+    .desc = Solidna, złota skrzynka. Biedak zabiłby za coś takiego.

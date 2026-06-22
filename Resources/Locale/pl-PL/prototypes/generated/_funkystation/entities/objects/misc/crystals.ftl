@@ -1,0 +1,10 @@
+ent-AmmoniaCrystal = kryształ amoniaku
+    .desc = Kryształ wykonany z gazu amoniaku. Widać w nim ciekłe gazy.
+ent-HealiumCrystal = kryształ healium
+    .desc = Kryształ wykonany z gazu healium. Jest zimny w dotyku.
+ent-ProtoNitrateCrystal = kryształ protoazotanu
+    .desc = Kryształ wykonany z gazu protoazotanu. Widać w nim ciekłe gazy.
+ent-NitrousOxideCrystal = kryształ podtlenku azotu
+    .desc = Kryształ wykonany z gazu podtlenku azotu. Widać w nim ciekłe gazy.
+ent-CrystalCell = ogniwo krystaliczne
+    .desc = Nieładowalne ogniwo o ogromnej pojemności energetycznej.

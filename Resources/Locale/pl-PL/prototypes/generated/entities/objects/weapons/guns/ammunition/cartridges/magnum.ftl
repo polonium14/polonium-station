@@ -1,0 +1,14 @@
+ent-BaseCartridgeMagnum = nabój (.45 magnum)
+    .desc = { ent-BaseCartridge.desc }
+ent-CartridgeMagnum = nabój (.45 magnum)
+    .desc = Ciężki nabój magnum używany głównie w rewolwerach. Standardowa amunicja kinetyczna jest powszechna i przydatna w większości sytuacji.
+ent-CartridgeMagnumPractice = nabój (.45 magnum treningowe)
+    .desc = Ciężki nabój magnum używany głównie w rewolwerach. Amunicja kredowa jest zazwyczaj nieszkodliwa, używana do ćwiczeń.
+ent-CartridgeMagnumIncendiary = nabój (.45 magnum zapalające)
+    .desc = Ciężki nabój magnum używany głównie w rewolwerach. Amunicja zapalająca zawiera samonagrzewający się związek, który podpala cel.
+ent-CartridgeMagnumAP = nabój (.45 magnum przeciwpancerny)
+    .desc = Ciężki nabój magnum używany głównie w rewolwerach. Amunicja przeciwpancerna jest znana ze swojej zdolności do przebijania pancerza.
+ent-CartridgeMagnumUranium = nabój (.45 magnum uranowe)
+    .desc = Ciężki nabój magnum używany głównie w rewolwerach. Amunicja uranowa zastępuje ołów w rdzeniu pocisku materiałem rozszczepialnym, promieniując cel od wewnątrz.
+ent-CartridgeMagnumSilver = nabój (.45 magnum srebrne)
+    .desc = Ciężki nabój magnum używany głównie w rewolwerach. Srebrna amunicja oferuje swoją świętą moc, która zabija nie tylko ciało, ale także duszę.

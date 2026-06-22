@@ -1,0 +1,11 @@
+ent-ElectricalDisruptionKit = zestaw do sabotażu elektrycznego
+    .suffix = Uzupełniony
+    .desc = { ent-BoxCardboard.desc }
+ent-ChemicalSynthesisKit = zestaw do syntezy chemicznej
+    .desc = Zestaw startowy dla aspirującego chemika. Zawiera dwie fiolki westyny na wszystkie twoje przestępcze potrzeby!
+ent-ThrowingKnivesKit = zestaw noży do rzucania
+    .desc = Zestaw 4 noży do rzucania sygnowanych marką Syndykatu. Idealne do osadzania w ciałach twoich ofiar.
+ent-BoxDeathRattleImplants = pudełko implantatorów Ostatecznego Tchnienia
+    .desc = Sześć implantatorów Ostatecznego Tchnienia dla całej drużyny.
+ent-CombatBakeryKit = zestaw piekarnictwa bojowego
+    .desc = Zestaw tajnej broni ukrytej w wypiekach.

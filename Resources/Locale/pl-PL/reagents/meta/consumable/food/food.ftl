@@ -1,0 +1,14 @@
+reagent-name-nutriment = składnik odżywczy
+reagent-desc-nutriment = Wszystkie witaminy, minerały i węglowodany, których organizm potrzebuje, w czystej postaci.
+reagent-name-glucose = glukoza
+reagent-desc-glucose = Prosty cukier występujący w wielu produktach spożywczych.
+reagent-name-vitamin = witamina
+reagent-desc-vitamin = Występuje w zdrowych, pełnowartościowych posiłkach.
+reagent-name-protein = białko
+reagent-desc-protein = Występuje w niektórych posiłkach, dobre dla zdrowia organizmu.
+reagent-name-cocoapowder = kakao w proszku
+reagent-desc-cocoapowder = Z najlepszych odmian ziaren kakaowca.
+reagent-name-butter = masło
+reagent-desc-butter = Możesz w to uwierzyć!
+reagent-name-pumpkin-flesh = miąższ dyni
+reagent-desc-pumpkin-flesh = Papkowate, słodkie resztki dyni.

@@ -1,0 +1,64 @@
+# Traitor single items
+steal-target-groups-hypospray = hyposprej
+steal-target-groups-handheld-crew-monitor = portatywny monitor załogi
+steal-target-groups-clothing-outer-hardsuit-rd = eksperymentalny kombinezon rozwojowy
+steal-target-groups-hand-teleporter = portatywny teleporter
+steal-target-groups-clothing-shoes-boots-mag-adv = zaawansowane magnesobuty
+steal-target-groups-box-folder-qm-clipboard = cyfrowa podkładka zamówień
+steal-target-groups-clothing-hands-knuckledusters-qm = złote kastety
+steal-target-groups-food-meat-corgi = pierwszorzędny kawałek mięsa korgi
+steal-target-groups-captain-id-card = ID kapitana
+steal-target-groups-jetpack-captain-filled = plecak odrzutowy kapitana
+steal-target-groups-weapon-antique-laser = antyczny pistolet laserowy
+steal-target-groups-nuke-disk = dysk autoryzacji bomby nuklearnej
+steal-target-groups-weapon-energy-shot-gun = strzelba energetyczna
+# Thief Collection
+steal-target-groups-figurines = figurka
+steal-target-groups-heads-cloaks = płaszcz szefa
+steal-target-groups-heads-bedsheets = kołdra szefa
+steal-target-groups-stamps = pieczątka
+steal-target-groups-door-remotes = pilot do drzwi
+steal-target-groups-encryption-keys = karta szyfrująca
+steal-target-groups-technology-disks = dyskietka technologiczna
+steal-target-groups-mail = korespondencja
+steal-target-groups-id-cards = karta ID
+steal-target-groups-lamps = LAMPA
+# Thief single item
+steal-target-groups-forensic-scanner = skaner kryminalistyczny
+steal-target-groups-flippo-engraved-lighter = wygrawerowana zapalniczka detektywa
+steal-target-groups-ammo-tech-fab-circuitboard = płyta maszynowa fabrykatora amunicji
+steal-target-groups-clothing-head-hat-warden = czapka nadzorcy
+steal-target-groups-clothing-outer-hardsuit-void-paramed = kombinezon ratownika
+steal-target-groups-medical-tech-fab-circuitboard = płyta maszynowa fabrykatora medycznego
+steal-target-groups-clothing-headset-alt-medical = zestaw słuchawkowy (pełny) Ordynatora
+steal-target-groups-research-and-development-server-machine-circuitboard = płyta maszynowa serwera B+R
+steal-target-groups-fire-axe = siekiera
+steal-target-groups-ame-part-flatpack = flatpak silnika antymaterii
+steal-target-groups-salvage-expeditions-computer-circuitboard = płyta maszynowa ekspedycji odzyskowych
+steal-target-groups-cargo-shuttle-console-circuitboard = płyta maszynowa wahadłowca logistycznego
+steal-target-groups-salvage-shuttle-console-circuitboard = płyta konsolowa wahadhłowca odzyskowego
+steal-target-groups-clothing-eyes-hud-beer = gogle piwne
+steal-target-groups-bible = biblia
+steal-target-groups-clothing-neck-goldmedal = złoty medal załoganta
+steal-target-groups-clothing-neck-clownmedal = medal błazna
+steal-target-groups-wanted-list-cartridge = karta listy poszukiwanych
+# Thief structures
+steal-target-groups-teg = część TEG
+steal-target-groups-freezer-heater = termomaszyna chłodząca lub termomaszyna grzejąca
+steal-target-groups-altar-nanotrasen = dowolny ołtarz NanoTrasen
+steal-target-groups-nuclear-bomb = rdzeń ładunki jądrowego
+steal-target-groups-fax-machine-captain = faks długiego zasięgu kapitana
+steal-target-groups-chem-dispenser = dystrybutor chemiczny
+steal-target-groups-xeno-artifact = obcy artefakt
+steal-target-groups-booze-dispenser = dystrybutor alkoholu
+steal-target-groups-plant-rd = "roślinka doniczkowa KB"
+steal-target-groups-toilet-golden-dirty-water = złota toaleta
+# Thief Animal
+steal-target-groups-animal-named-cat = kot Ordynatora
+steal-target-groups-animal-ian = Ian
+steal-target-groups-animal-mc-griff = McGriff
+steal-target-groups-animal-walter = Walter
+steal-target-groups-animal-morty = Morty
+steal-target-groups-animal-renault = Renolt
+steal-target-groups-animal-shiva = Śiwa
+steal-target-groups-animal-tropico = Tropiko

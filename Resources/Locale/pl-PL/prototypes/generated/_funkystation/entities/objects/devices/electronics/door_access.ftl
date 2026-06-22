@@ -1,0 +1,9 @@
+ent-DoorElectronicsSpaceCowboy = { ent-DoorElectronics }
+    .suffix = Kowboj, Zablokowana
+    .desc = { ent-DoorElectronics.desc }
+ent-DoorElectronicsLibrary = { ent-DoorElectronics }
+    .suffix = Biblioteka, Zablokowana
+    .desc = { ent-DoorElectronics.desc }
+ent-DoorElectronicsReporter = { ent-DoorElectronics }
+    .suffix = Reporter, Zablokowana
+    .desc = { ent-DoorElectronics.desc }

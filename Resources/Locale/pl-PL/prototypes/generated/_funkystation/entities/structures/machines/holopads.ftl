@@ -1,0 +1,15 @@
+ent-HolopadNTRep = { ent-Holopad }
+    .suffix = Przedstawiciel NT
+    .desc = { ent-Holopad.desc }
+ent-HolopadInternalAffairs = { ent-Holopad }
+    .suffix = Sprawy Wewnętrzne
+    .desc = { ent-Holopad.desc }
+ent-HolopadMagistrate = { ent-Holopad }
+    .suffix = Sędzia
+    .desc = { ent-Holopad.desc }
+ent-HolopadServiceGeneral = { ent-Holopad }
+    .suffix = Serwis ogólny
+    .desc = { ent-Holopad.desc }
+ent-HolopadGenetics = { ent-Holopad }
+    .suffix = Genetyka
+    .desc = { ent-Holopad.desc }

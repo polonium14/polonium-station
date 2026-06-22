@@ -1,0 +1,2 @@
+
+namepreset-firstdashlast = { $first }-{ $last }

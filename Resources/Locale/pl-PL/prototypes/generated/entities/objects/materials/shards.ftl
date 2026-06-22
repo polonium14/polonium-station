@@ -1,0 +1,12 @@
+ent-ShardBase = { ent-BaseItem }
+    .desc = To odłamek jakiegoś nieznanego materiału.
+ent-ShardGlass = odłamek szkła
+    .desc = Mały kawałek szkła.
+ent-ShardGlassReinforced = odłamek szkła wzmocnionego
+    .desc = Mały kawałek wzmocnionego szkła.
+ent-ShardGlassPlasma = odłamek szkła plazmowego
+    .desc = Mały kawałek szkła plazmowego.
+ent-ShardGlassUranium = odłamek szkła uranowego
+    .desc = Mały kawałek szkła uranowego.
+ent-ShardGlassClockwork = odłamek szkła zegarowego
+    .desc = Mały kawałek szkła z domieszką mosiądzu.

@@ -1,0 +1,15 @@
+ent-MailChapCandles = { ent-BaseMailSmall }
+    .suffix = Candles
+    .desc = { ent-BaseMailSmall.desc }
+ent-MailBartenderTools = { ent-BaseMailSmall }
+    .suffix = Bartender Tools
+    .desc = { ent-BaseMailSmall.desc }
+ent-MailBartenderPremiumBooze = { ent-BaseMailSmall }
+    .suffix = Premium Booze
+    .desc = { ent-BaseMailSmall.desc }
+ent-MailJanitorReplacementLights = { ent-BaseMailLarge }
+    .suffix = Janitor Replacement Lights
+    .desc = { ent-BaseMailLarge.desc }
+ent-MailChefCheese = { ent-BaseMailSmall }
+    .suffix = Cheese for Jani
+    .desc = { ent-BaseMailSmall.desc }

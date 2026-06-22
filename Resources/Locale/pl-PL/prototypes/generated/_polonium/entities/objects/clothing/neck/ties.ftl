@@ -1,0 +1,12 @@
+ent-ClothingNeckTieCentcom = krawat Centralnego Dowództwa
+    .desc = Krawat w barwach Centrali.
+ent-ClothingNeckTieGray = szary krawat
+    .desc = Neojedwabny szary krawat.
+ent-ClothingNeckTieBlue = niebieski krawat
+    .desc = Neojedwabny niebieski krawat.
+ent-ClothingNeckTieBrown = brązowy krawat
+    .desc = Neojedwabny brązowy krawat.
+ent-ClothingNeckTieOrange = pomarańczowy krawat
+    .desc = Neojedwabny pomarańczowy krawat.
+ent-ClothingNeckTieGreen = zielony krawat
+    .desc = Neojedwabny zielony krawat.

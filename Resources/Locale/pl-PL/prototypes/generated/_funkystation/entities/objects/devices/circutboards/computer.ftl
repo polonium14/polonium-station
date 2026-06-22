@@ -1,0 +1,14 @@
+ent-ScienceCommsComputerCircuitboard = konsola komunikacyjna naukowa (płytka konsolowa)
+    .desc = Płytka drukowana do konsoli komunikacyjnej naukowej.
+ent-SecurityCommsComputerCircuitboard = konsola komunikacyjna ochrony (płytka konsolowa)
+    .desc = Płytka drukowana do konsoli komunikacyjnej ochrony.
+ent-ServiceCommsComputerCircuitboard = konsola komunikacyjna serwisowa (płytka konsolowa)
+    .desc = Płytka drukowana do konsoli komunikacyjnej serwisowej.
+ent-CargoCommsComputerCircuitboard = konsola komunikacyjna zaopatrzeniowa (płytka konsolowa)
+    .desc = Płytka drukowana do konsoli komunikacyjnej zaopatrzeniowej.
+ent-EngiCommsComputerCircuitboard = konsola komunikacyjna inżynieryjna (płytka konsolowa)
+    .desc = Płytka drukowana do konsoli komunikacyjnej inżynieryjnej.
+ent-MedicalCommsComputerCircuitboard = konsola komunikacyjna medyczna (płytka konsolowa)
+    .desc = Płytka drukowana do konsoli komunikacyjnej medycznej.
+ent-CargoRequestAtmosphericsComputerCircuitboard = konsola rezerw atmosferycznych (płytka konsolowa)
+    .desc = Płytka drukowana do konsoli rezerw atmosferycznych.

@@ -1,0 +1,10 @@
+ent-CrateEmergencyDefibrillator = skrzynia z defibrylatorem ratunkowym
+    .desc = Skrzynia zawierająca defibrylator.
+ent-CrateEmergencyMedipens = skrzynia z ratunkowymi aplikatorami medycznymi
+    .desc = Skrzynia zawierająca sześć ratunkowych aplikatorów medycznych.
+ent-CrateMedicalEquipment = skrzynia z ekwipunkiem medycznym
+    .desc = Do leczenia zarówno dużych, jak i małych obrażeń. Zawiera pas i gogle medyczne, analizator zdrowia, podstawowe leki miejscowe, maskę medyczną, parę rękawiczek oraz poradniki medyczne.
+ent-CrateMedicalParamedSuit = skrzynia ze skafandrem paramedyka
+    .desc = Zawiera skafander próżniowy dla paramedyka oraz zestaw butli z powietrzem. Wymaga dostępu medycznego do otwarcia.
+ent-CrateMedicalBiomass = skrzynia z biomasą
+    .desc = Skrzynia zawierająca 100 jednostek biomasy.

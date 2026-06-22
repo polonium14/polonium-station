@@ -1,0 +1,16 @@
+ent-UtensilBase = { ent-BaseItem }
+    .desc = { ent-BaseItem.desc }
+ent-UtensilBasePlastic = { ent-UtensilBase }
+    .desc = { ent-UtensilBase.desc }
+ent-Fork = widelec
+    .desc = Sztuciec do jedzenia, idealny do dźgania.
+ent-ForkPlastic = plastikowy widelec
+    .desc = Sztuciec do jedzenia, idealny do dźgania.
+ent-Spoon = łyżka
+    .desc = Nie ma łyżki.
+ent-SpoonPlastic = plastikowa łyżka
+    .desc = Nie ma łyżki.
+ent-KnifePlastic = plastikowy nóż
+    .desc = To nie jest nóż. To jest nóż.
+ent-BarSpoon = łyżka barmańska
+    .desc = Twój osobisty pomocnik do mieszania drinków i zmieniania żyć.

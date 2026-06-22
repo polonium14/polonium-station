@@ -1,0 +1,1 @@
+station-event-breaker-flip-announcement = Na podstawie { $data }, zdecydowaliśmy się wyłączyć określone APC, aby uniknąć uszkodzenia sprzętu. Prosimy o kontakt z działem inżynieryjnym w celu ich ponownego włączenia.

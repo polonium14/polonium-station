@@ -1,0 +1,14 @@
+ent-PartUraniumBase = { ent-BaseItem }
+    .desc = { ent-BaseItem.desc }
+ent-PartRodUranium = uranowy pręt
+    .suffix = Pełny
+    .desc = { ent-PartUraniumBase.desc }
+ent-PartRodUraniuml10 = uranowy pręt
+    .suffix = 10
+    .desc = { ent-PartRodUranium.desc }
+ent-PartRodUranium1 = uranowy pręt
+    .suffix = Pojedynczy
+    .desc = { ent-PartRodUranium.desc }
+ent-PartRodUraniumLingering0 = { ent-PartRodUranium }
+    .suffix = Pozostałość, 0
+    .desc = { ent-PartRodUranium.desc }

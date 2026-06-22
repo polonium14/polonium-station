@@ -1,0 +1,13 @@
+ent-BaseMagazineRifle = magazynek (.20 karabinowe)
+    .desc = { ent-BaseItem.desc }
+ent-MagazineRifle = magazynek (.20 karabinowe)
+    .desc = { ent-BaseMagazineRifle.desc }
+ent-MagazineRifleEmpty = magazynek (.20 karabinowe dowolne)
+    .suffix = pusty
+    .desc = { ent-MagazineRifle.desc }
+ent-MagazineRifleIncendiary = magazynek (.20 karabinowe zapalające)
+    .desc = { ent-MagazineRifle.desc }
+ent-MagazineRiflePractice = magazynek (.20 karabinowe treningowe)
+    .desc = { ent-BaseMagazineRifle.desc }
+ent-MagazineRifleUranium = magazynek (.20 karabinowe uranowe)
+    .desc = { ent-BaseMagazineRifle.desc }

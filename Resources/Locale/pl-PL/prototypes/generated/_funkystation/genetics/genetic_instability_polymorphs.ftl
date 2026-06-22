@@ -1,0 +1,12 @@
+ent-PolyFleshJared = { ent-MobFleshJared }
+    .suffix = Polimorf
+    .desc = { ent-MobFleshJared.desc }
+ent-PolyFleshClamp = { ent-MobFleshClamp }
+    .suffix = Polimorf
+    .desc = { ent-MobFleshClamp.desc }
+ent-PolyFleshLover = { ent-MobFleshLover }
+    .suffix = Polimorf
+    .desc = { ent-MobFleshLover.desc }
+ent-PolyFleshGolem = { ent-BaseMob }
+    .suffix = Polimorf
+    .desc = { ent-BaseMob.desc }

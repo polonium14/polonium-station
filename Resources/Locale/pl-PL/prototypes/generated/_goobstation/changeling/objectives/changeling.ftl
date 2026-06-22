@@ -1,0 +1,10 @@
+ent-BaseChangelingObjective = { ent-BaseObjective }
+    .desc = { ent-BaseObjective.desc }
+ent-ChangelingSurviveObjective = Przetrwaj
+    .desc = Muszę przetrwać za wszelką cenę.
+ent-ChangelingAbsorbObjective = { ent-BaseChangelingObjective }
+    .desc = { ent-BaseChangelingObjective.desc }
+ent-ChangelingStealDNAObjective = { ent-BaseChangelingObjective }
+    .desc = { ent-BaseChangelingObjective.desc }
+ent-EscapeIdentityObjective = { ent-BaseChangelingObjective }
+    .desc = Muszę uciec promem ewakuacyjnym, pozostając w ukryciu.

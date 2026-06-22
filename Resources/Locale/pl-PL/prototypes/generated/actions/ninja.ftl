@@ -1,0 +1,12 @@
+ent-ActionToggleNinjaGloves = Przełącz rękawice ninja
+    .desc = Przełącza wszystkie funkcje rękawic pod lewym kliknięciem. Obejmuje to wytrych do drzwi, pobieranie energii, ogłuszanie wrogów i hakowanie niektórych komputerów.
+ent-ActionCreateThrowingStar = Stwórz gwiazdkę do rzucania
+    .desc = Przekierowuje energię kombinezonu na stworzenie gwiazdki do rzucania, która zadaje dodatkowe obrażenia kondycji.
+ent-ActionRecallKatana = Przywołaj katanę
+    .desc = Teleportuje katanę energetyczną powiązaną z tym kombinezonem do użytkownika; koszt zależy od odległości.
+ent-ActionNinjaEmp = Wybuch EM
+    .desc = Unieruchamia pobliską technologię za pomocą impulsu elektromagnetycznego.
+ent-ActionTogglePhaseCloak = Płaszcz fazowy
+    .desc = Przełącza płaszcz fazowy kombinezonu. Uważaj — jeśli zostaniesz trafiony, wszystkie umiejętności zostaną wyłączone na 5 sekund, w tym maskowanie!
+ent-ActionEnergyKatanaDash = Doskok katany
+    .desc = Teleportuj się w dowolne miejsce w zasięgu wzroku, o ile trzymasz katanę energetyczną w dłoni.

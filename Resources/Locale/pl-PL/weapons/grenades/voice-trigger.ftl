@@ -1,0 +1,10 @@
+examine-trigger-voice = Wyświetlacz: "{ $keyphrase }"
+trigger-voice-uninitialized = Wyświetlacz: niezainicjalizowane...
+verb-trigger-voice-record = Nagraj
+verb-trigger-voice-stop = Zatrzymaj
+verb-trigger-voice-clear = Usuń nagranie
+popup-trigger-voice-start-recording = Rozpoczęto nagranie
+popup-trigger-voice-stop-recording = Zatrzymano nagranie
+popup-trigger-voice-record-failed-too-long = Wiadomość zbyt długa, spróbuj ponownie
+popup-trigger-voice-record-failed-too-short = Wiadomość zbyt krótka, spróbuj ponownie
+popup-trigger-voice-recorded = Pomyślnie nagrano

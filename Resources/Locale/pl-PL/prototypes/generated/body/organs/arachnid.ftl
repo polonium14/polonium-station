@@ -1,0 +1,16 @@
+ent-BaseArachnidOrgan = { ent-BaseItem }
+    .desc = { ent-BaseItem.desc }
+ent-OrganArachnidStomach = żołądek
+    .desc = Obrzydlistwo. Ciężko to przetrawić.
+ent-OrganArachnidLungs = płuca
+    .desc = Filtrują tlen z atmosfery... tylko znacznie zachłanniej.
+ent-OrganArachnidHeart = serce
+    .desc = Obrzydliwie nieustępliwa mała pompa biologiczna stworzona dla pająków.
+ent-OrganArachnidLiver = wątroba
+    .desc = Sugestia podania: chianti i bób.
+ent-OrganArachnidKidneys = nerki
+    .desc = Filtrują toksyny z krwiobiegu.
+ent-OrganArachnidEyes = oczy
+    .desc = Dwoje to już była przesada.
+ent-OrganArachnidTongue = język
+    .desc = Mięsisty mięsień służący głównie do kłamania.

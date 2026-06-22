@@ -1,0 +1,16 @@
+ent-BaseGingerbreadOrgan = { ent-BaseItem }
+    .desc = { ent-BaseItem.desc }
+ent-OrganGingerbreadBrain = pudding brain
+    .desc = The source of incredible, unending fudginess. Yum!
+ent-OrganGingerbreadEyes = gummy eyes
+    .desc = Two glossy gummy candies that somehow see the world. Wiggle them and they jiggle right back.
+ent-OrganGingerbreadLungs = spongecake lungs
+    .desc = Soft, airy pastry sacs that inhale oxygen and exhale the smell of a warm bakery.
+ent-OrganGingerbreadHeart = candy apple heart
+    .desc = A candy-coated apple that thumps with sticky determination. Beats louder when near open flames.
+ent-OrganGingerbreadStomach = sour candy stomach
+    .desc = A lemon sour candy that handles digestion. Tart enough to melt almost anything.
+ent-OrganGingerbreadLiver = brownie liver
+    .desc = A rich brownie square that filters stray crumbs and off-flavors. Warm, gooey, and medically vital.
+ent-OrganGingerbreadKidneys = croissant kidneys
+    .desc = Two flaky crescents doing their best to act like real kidneys. It shouldn’t work, but somehow it does.

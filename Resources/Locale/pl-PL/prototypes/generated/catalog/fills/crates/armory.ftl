@@ -1,0 +1,14 @@
+ent-CrateArmorySMG = skrzynia z pistoletami maszynowymi
+    .desc = Zawiera dwa wysokowydajne, półautomatyczne karabiny z czterema magazynkami. Wymaga dostępu do Zbrojowni, aby otworzyć.
+ent-CrateArmoryShotgun = skrzynia z strzelbami
+    .desc = Dla sytuacji, gdy przeciwnik musi zostać zastąpiony ołowiem. Zawiera dwie strzelby bojowe Egzekutor oraz standardowe naboje do strzelb. Wymaga dostępu do Zbrojowni, aby otworzyć.
+ent-CrateTrackingImplants = skrzynia z implantami śledzącymi
+    .desc = Zawiera kilka implantatorów śledzących.
+ent-CrateTrainingBombs = skrzynia z bombami treningowymi
+    .desc = Zawiera trzy bomby treningowe o niskiej mocy, przeznaczone do nauki rozbrajania i bezpiecznego usuwania ładunków wybuchowych przez ochronę, kombinezon EOD nie jest dołączony. Wymaga dostępu do Zbrojowni, aby otworzyć.
+ent-CrateArmoryLaser = skrzynia z karabinami laserowymi
+    .desc = Zawiera trzy standardowe karabiny laserowe. Wymaga dostępu do Zbrojowni, aby otworzyć.
+ent-CrateArmoryPistols = skrzynia z pistoletami
+    .desc = Zawiera dwa standardowe pistolety NT z czterema magazynkami. Wymaga dostępu do Zbrojowni, aby otworzyć.
+ent-CrateSecurityRiot = skrzynia z wyposażeniem do tłumienia zamieszek
+    .desc = Zawiera dwa komplety pancerza przeciwzamieszkowego, hełmy, maski gazowe i tarcze oraz cztery granaty z gazem łzawiącym. Wymaga dostępu do Zbrojowni, aby otworzyć.

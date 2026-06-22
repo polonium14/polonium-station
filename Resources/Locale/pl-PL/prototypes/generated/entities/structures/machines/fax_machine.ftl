@@ -1,0 +1,11 @@
+ent-FaxMachineBase = faks dalekiego zasięgu
+    .desc = Technologie bluespace w zastosowaniu biurokracji.
+ent-FaxMachineCentcom = faks dalekiego zasięgu Centralnego Dowództwa
+    .suffix = Centralne Dowództwo
+    .desc = { ent-FaxMachineBase.desc }
+ent-FaxMachineSyndie = faks dalekiego zasięgu Syndykatu
+    .suffix = Syndykat
+    .desc = { ent-FaxMachineBase.desc }
+ent-FaxMachineCaptain = faks dalekiego zasięgu Kapitana
+    .suffix = Kody Nuklearne
+    .desc = { ent-FaxMachineBase.desc }

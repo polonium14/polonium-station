@@ -1,0 +1,10 @@
+ent-BaseMobClown = wypaczony klaun
+    .desc = Śliska masa zabawnej materii, animowana przez honkularną energię.
+ent-MobClownJared = { ent-BaseMobClown }
+    .desc = { ent-BaseMobClown.desc }
+ent-MobClownGolem = { ent-BaseMobClown }
+    .desc = { ent-BaseMobClown.desc }
+ent-MobClownClamp = { ent-BaseMobClown }
+    .desc = { ent-BaseMobClown.desc }
+ent-MobClownLover = { ent-BaseMobClown }
+    .desc = { ent-BaseMobClown.desc }

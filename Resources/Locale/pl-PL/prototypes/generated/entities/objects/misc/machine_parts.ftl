@@ -1,0 +1,11 @@
+ent-BaseStockPart = część zapasowa
+    .desc = Co?
+ent-CapacitorStockPart = kondensator
+    .desc = Podstawowy kondensator używany w konstrukcji różnych urządzeń.
+    .suffix = Ocena 1
+ent-MicroManipulatorStockPart = manipulator
+    .desc = Podstawowy manipulator używany w konstrukcji różnych urządzeń.
+    .suffix = Ocena 1
+ent-MatterBinStockPart = pojemnik na materię
+    .desc = Podstawowy pojemnik na materię używany w konstrukcji różnych urządzeń.
+    .suffix = Ocena 1

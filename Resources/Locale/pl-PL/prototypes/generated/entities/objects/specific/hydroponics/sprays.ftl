@@ -1,0 +1,9 @@
+ent-PlantBGoneSpray = Plant-B-Gone
+    .desc = Zabija te uciążliwe chwasty!
+    .suffix = Pełny
+ent-WeedSpray = środek chwastobójczy
+    .desc = Jest to toksyczna mieszanka w postaci sprayu, służąca do zwalczania drobnych chwastów.
+    .suffix = Pełny
+ent-PestSpray = środek owadobójczy
+    .desc = To jakiś spray do zwalczania szkodników! Nie wdychać!
+    .suffix = Pełny

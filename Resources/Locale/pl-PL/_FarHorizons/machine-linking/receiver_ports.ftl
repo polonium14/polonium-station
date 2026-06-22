@@ -1,0 +1,14 @@
+signal-port-name-nuclear-reactor-data-receiver = Monitor Reaktora
+signal-port-description-nuclear-reactor-data-receiver = Odbieranie informacji o reaktorze jądrowym.
+signal-port-name-vitals-monitor-receiver-med = Łóżko Medyczne
+signal-port-description-vitals-monitor-receiver-med = Wysyłanie informacji o stanie pacjenta do Monitora Życiowych Funkcji.
+signal-port-name-vitals-monitor-receiver-stasis = Łóżko Stazy
+signal-port-description-vitals-monitor-receiver-stasis = Wysyłanie informacji o stanie pacjenta do Monitora Życiowych Funkcji.
+signal-port-name-nuclear-reactor-receiver-insert = Pręty Sterujące Włożone
+signal-port-description-nuclear-reactor-receiver-insert = Zwiększa poziom włożenia prętów sterujących.
+signal-port-name-nuclear-reactor-receiver-retract = Pręty Sterujące Wyjęte
+signal-port-description-nuclear-reactor-receiver-retract = Zmniejsza poziom włożenia prętów sterujących.
+signal-port-name-gas-turbine-receiver-increase = Zwiększ Obciążenie
+signal-port-description-gas-turbine-receiver-increase = Zwiększa obciążenie wirnika turbiny.
+signal-port-name-gas-turbine-receiver-decrease = Zmniejsz Obciążenie
+signal-port-description-gas-turbine-receiver-decrease = Zmniejsza obciążenie wirnika turbiny.

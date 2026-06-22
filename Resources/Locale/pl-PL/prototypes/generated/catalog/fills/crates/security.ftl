@@ -1,0 +1,14 @@
+ent-CrateSecurityArmor = skrzynia z kamizelkami kuloodpornymi
+    .desc = Zawiera trzy kamizelki kuloodporne. Wymaga dostępu do ochrony, aby otworzyć.
+ent-CrateSecurityHelmet = skrzynia z hełmami
+    .desc = Zawiera trzy standardowe hełmy. Wymaga dostępu do ochrony, aby otworzyć.
+ent-CrateSecurityNonlethal = skrzynia z bronią nieśmiercionośną
+    .desc = Zawiera mieszankę rozbrajaczy, pałek ogłuszających i granatów błyskowych. Wymaga dostępu do ochrony, aby otworzyć.
+ent-CrateSecuritySupplies = skrzynia z zapasami ochrony
+    .desc = Zawiera różne zapasy dla zespołu ochrony stacji. Wymaga dostępu do ochrony, aby otworzyć.
+ent-CrateRestraints = skrzynia z kajdankami
+    .desc = Zawiera po dwa pudełka kajdanek i opasek zaciskowych. Wymaga dostępu do ochrony, aby otworzyć.
+ent-CrateSecurityBiosuit = skrzynia z kombinezonami biologicznymi ochrony
+    .desc = Zawiera 2 kombinezony biologiczne, aby żadna choroba nie rozpraszała Cię podczas pełnienia obowiązków. Wymaga dostępu do ochrony, aby otworzyć.
+ent-CrateSecurityTrackingMindshieldImplants = skrzynia z implantami
+    .desc = Zawiera 4 implanty MindShield i 4 implanty śledzące. Wymaga dostępu do ochrony, aby otworzyć.

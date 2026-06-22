@@ -1,0 +1,15 @@
+ent-LootSpawnerSecurityBasic = spawner wyposażenia ochrony
+    .suffix = Sprzęt, Prosty
+    .desc = { ent-MarkerBase.desc }
+ent-LootSpawnerSecurity = { ent-LootSpawnerSecurityBasic }
+    .suffix = Sprzęt, Lepszy
+    .desc = { ent-MarkerBase.desc }
+ent-LootSpawnerArmory = spawner wyposażenia zbrojowni
+    .suffix = Broń, Pancerz
+    .desc = { ent-MarkerBase.desc }
+ent-LootSpawnerArmoryGunsOnly = { ent-LootSpawnerArmory }
+    .suffix = Broń
+    .desc = { ent-MarkerBase.desc }
+ent-LootSpawnerArmoryArmorOnly = { ent-LootSpawnerArmory }
+    .suffix = Pancerz
+    .desc = { ent-MarkerBase.desc }

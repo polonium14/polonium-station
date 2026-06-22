@@ -1,0 +1,10 @@
+ent-RandomWoodenSupport = spawner drewnianych podpór
+    .desc = { ent-MarkerBase.desc }
+ent-RandomWoodenWall = spawner drewnianych ścian
+    .desc = { ent-MarkerBase.desc }
+ent-RandomStalagmiteOrCrystal = spawner stalagmitów lub kryształów
+    .desc = { ent-MarkerBase.desc }
+ent-RandomBrownStalagmite = spawner brązowych stalagmitów
+    .desc = { ent-MarkerBase.desc }
+ent-RandomGreyStalagmite = spawner szarych stalagmitów
+    .desc = { ent-MarkerBase.desc }

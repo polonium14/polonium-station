@@ -1,0 +1,9 @@
+ent-MailMedicalSurgeryKit = { ent-BaseMailLarge }
+    .suffix = SurgeryKit
+    .desc = { ent-BaseMailLarge.desc }
+ent-MailOmnizineBottle = { ent-BaseMail }
+    .suffix = Omnizine Bottle
+    .desc = { ent-BaseMail.desc }
+ent-MailMedicalBluespaceBeaker = { ent-BaseMailLarge }
+    .suffix = Bluespace Beaker
+    .desc = { ent-BaseMailLarge.desc }

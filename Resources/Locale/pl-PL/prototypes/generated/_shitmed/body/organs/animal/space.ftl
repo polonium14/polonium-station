@@ -1,0 +1,14 @@
+ent-OrganSpaceAnimalLungs = płuca zwierzęcia kosmicznego
+    .desc = { ent-OrganAnimalLungs.desc }
+ent-OrganSpaceAnimalHeart = serce zwierzęcia kosmicznego
+    .desc = { ent-OrganAnimalHeart.desc }
+ent-OrganSpaceAnimalLiver = wątroba zwierzęcia kosmicznego
+    .desc = { ent-OrganAnimalLiver.desc }
+ent-OrganGoliathHeart = serce goliata
+    .desc = { ent-OrganAnimalHeart.desc }
+ent-OrganDragonLungs = płuca smoka
+    .desc = { ent-OrganAnimalLungs.desc }
+ent-OrganLaserEyes = oczy laserowego drapieżnika
+    .desc = { ent-OrganHumanEyes.desc }
+ent-OrganCobraHeart = gruczoł kobry
+    .desc = { ent-OrganAnimalHeart.desc }

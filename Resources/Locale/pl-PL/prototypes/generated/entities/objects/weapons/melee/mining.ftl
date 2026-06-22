@@ -1,0 +1,14 @@
+ent-Pickaxe = kilof
+    .desc = Wyprofilowany idealnie do wbijania w skały.
+ent-MiningDrill = wiertło górnicze
+    .desc = Potężne narzędzie do szybkiego wiercenia w skałach.
+ent-MiningDrillDiamond = diamentowe wiertło górnicze
+    .desc = Znacznie wydajniejsze wiertło z diamentową końcówką.
+ent-BaseWeaponCrusher = kruszarka
+    .desc = Wczesny projekt proto-kinetycznego akceleratora.
+ent-WeaponCrusher = { ent-BaseWeaponCrusher }
+    .desc = { ent-BaseWeaponCrusher.desc }
+ent-WeaponCrusherDagger = sztylet kruszarki
+    .desc = Pomniejszona wersja proto-kinetycznej kruszarki. Ostrze wibruje z dużą prędkością dzięki energii kinetycznej.
+ent-WeaponCrusherGlaive = glewia kruszarki
+    .desc = Wczesny projekt proto-kinetycznego akceleratora w formie glewii.

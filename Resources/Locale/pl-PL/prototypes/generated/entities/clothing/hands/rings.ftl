@@ -1,0 +1,12 @@
+ent-GoldRing = złoty pierścionek
+    .desc = Cenny pierścionek.
+ent-SilverRing = srebrny pierścionek
+    .desc = Wygląda na nieco mniej wartościowy niż złoty.
+ent-GoldRingDiamond = złoty pierścionek z diamentem
+    .desc = Wykonany z etycznie wydobytych kosmicznych diamentów.
+ent-SilverRingDiamond = srebrny pierścionek z diamentem
+    .desc = Wykonany z etycznie wydobytych kosmicznych diamentów.
+ent-GoldRingGem = złoty pierścionek z klejnotem
+    .desc = Błyszczący i wartościowy!
+ent-SilverRingGem = srebrny pierścionek z klejnotem
+    .desc = Błyszczący i nie aż tak wartościowy!

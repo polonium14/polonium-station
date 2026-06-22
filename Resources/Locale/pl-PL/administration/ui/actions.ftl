@@ -1,0 +1,13 @@
+admin-player-actions-reason = Powód
+admin-player-actions-bans = Lista banów
+admin-player-actions-notes = Notatki
+admin-player-actions-kick = Wyrzuć
+admin-player-actions-ban = Zbanuj
+admin-player-actions-ahelp = AHelp
+admin-player-actions-respawn = Respawnuj
+admin-player-actions-spawn = Spawnuj tutaj
+admin-player-spawn-failed = Nie znaleziono prawidłowych współrzędnych.
+admin-player-actions-player-panel = Otwórz Panel Gracza
+admin-player-actions-clone = Sklonuj
+admin-player-actions-follow = Sledź
+admin-player-actions-confirm = Na pewno?

@@ -1,0 +1,12 @@
+ent-BaseLockerTeleporter = teleporter wyposażenia specjalnego
+    .desc = Urządzenie, które pozwala na zamówienie dostawy specjalnego wyposażenia.
+ent-BlueshieldOfficerLockerTeleporter = teleporter szafki oficera niebieskiej tarczy
+    .desc = Urządzenie, które pozwala na zamówienie dostawy szafki oficera niebieskiej tarczy.
+ent-UniqueBlueshieldOfficerLockerTeleporter = { ent-BlueshieldOfficerLockerTeleporter }
+    .suffix = Unikalny
+    .desc = { ent-BlueshieldOfficerLockerTeleporter.desc }
+ent-NanorepLockerTeleporter = teleporter szafki przedstawiciela Nanotrasen
+    .desc = Urządzenie, które pozwala na zamówienie dostawy szafki przedstawiciela Nanotrasen.
+ent-UniqueNanorepLockerTeleporter = { ent-NanorepLockerTeleporter }
+    .suffix = Unikalny
+    .desc = { ent-NanorepLockerTeleporter.desc }

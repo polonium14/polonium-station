@@ -1,0 +1,10 @@
+guidebook-window-title = Podręcznik
+guidebook-tab-popout-tooltip = Otwórz w nowym oknie
+guidebook-tab-popout-disabled-tooltip = Nie można otworzyć ostatniej zakładki w nowym oknie
+guidebook-placeholder-text = Wybierz wpis.
+guidebook-placeholder-text-2 = Jeśli jesteś nowy, przejdź do "Jesteś nowy? Zacznij tutaj!"
+guidebook-filter-placeholder-text = Filtruj elementy
+guidebook-parser-error = Błąd przetwarzania
+guidebook-error-message = Komunikat błędu
+guidebook-monkey-unspin = Unspin Monkey
+guidebook-monkey-disco = Disco Monkey

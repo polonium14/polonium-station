@@ -1,0 +1,9 @@
+ent-WeaponMechDebugBallistic = debug bang
+    .suffix = Broń Mecha, DEBUG, Balistyczna
+    .desc = { ent-BaseMechWeaponRange.desc }
+ent-WeaponMechDebugLaser = debug pow
+    .desc = Broń wykorzystująca światło wzmocnione przez wymuszoną emisję promieniowania.
+    .suffix = Broń Mecha, DEBUG, Laser
+ent-WeaponMechDebugDisabler = debug tew
+    .desc = Broń do samoobrony, która wyczerpuje cele organiczne, osłabiając je aż do upadku.
+    .suffix = Mech Weapon, DEBUG, Ogłuszacz

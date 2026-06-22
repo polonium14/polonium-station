@@ -1,0 +1,14 @@
+ent-MobGondolaOLD = gondola
+    .desc = Nie mając rąk, ucieleśnia taoistyczną zasadę wu-wei (niedziałania), a jej uśmiechnięta twarz ukazuje pełną akceptację świata takim, jaki jest.
+    .gender = female
+ent-MobMothSyndy = syndykaraluch
+    .desc = Wybuchowy ćmio–karaluch.
+    .gender = male
+ent-MobSyndieAngryBee = pszczoła syndykatu
+    .desc = Jaka miła pszczoła. Och nie, wygląda na wściekłą i chce mojej pizzy.
+    .suffix = Wściekła, syndykat
+    .gender = female
+ent-MobAngryBeeWeak = { ent-MobAngryBee }
+    .suffix = Wściekła, słaba
+    .desc = { ent-MobAngryBee.desc }
+    .gender = female

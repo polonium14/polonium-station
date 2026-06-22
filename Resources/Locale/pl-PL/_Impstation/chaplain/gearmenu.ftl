@@ -1,0 +1,87 @@
+
+null-grail-verb = Swirl contents
+null-grail-popup = You begin swirling the { $shakeable }'s contents.
+null-grail-popup-others = { CAPITALIZE($user) } begins swirling the { $shakeable }'s contents.
+null-grail-mix-success = You bless the { $mixed } with the { $mixer }
+null-rod-transformed = Your Null Rod transforms!
+null-rod-rejection = The Null Rod sears your hands!
+chaplain-gearmenu-window-title = Transpose Shape
+chaplain-gearmenu-window-description = Permanently transform the Null Rod into something else entirely.
+chaplain-gearmenu-window-selected = Form selected: ({ $selectedCount }/{ $maxCount })
+chaplain-gearset-category-rosary-name = Silvered Rosary
+chaplain-gearset-category-rosary-description =
+    An expensive-looking rosary, made from silver. Exudes somewhat
+    soothing vibes. Nice! A potent tool against those who devote
+    themselves to entities beyond the veil of bluespace.
+chaplain-gearset-category-grail-name = Gildgrail
+chaplain-gearset-category-grail-description =
+    A jewel-encrusted golden chalice. Can hold a deceptively
+    large volume of liquid. The perfect centrepiece for a communion.
+    Or a laboratory. You could even use it for serving drinks at the bar!
+chaplain-gearset-category-glove-name = Divine Grasp
+chaplain-gearset-category-glove-description =
+    The touch of god! Or goddess. It's up to you, really.
+    This gauntlet is imbued with no small amount of divine power.
+    Though not overly damaging, it is capable of deflecting incoming
+    attacks and knocking down foes with its powerful blows.
+chaplain-gearset-category-bow-name = Aureole Arc
+chaplain-gearset-category-bow-description =
+    Wrought from ornately carved synthwood, this golden-inlaid bow
+    hums with power. Though this bow's shots are potent,
+    each arrow must be nocked and fired seperately. This form will
+    splinter the Null Rod into a matching quiver, filled with arrows.
+# begin funky
+chaplain-gearset-category-gun-name = Annabelle
+chaplain-gearset-category-gun-description =
+    A Winchester 1886 with religious imagery plastered all over it.
+    Carved into its stock, "Matthew 19:23-24." Though it comes with
+    four silver bullets, it has no matching ammo box. Spend them wisely.
+chaplain-gearset-category-rapier-name = Star Rapier
+chaplain-gearset-category-rapier-description =
+    An interesting weapon harnessing the power of winter.
+    Some may call it the embodiment of contradiction, others call it
+    fighting fire with fire. Or cold, they burn all the same.
+    As a precision weapon, it has lower damage when doing wide swings.
+chaplain-gearset-category-crucifix-name = Crooked Crucifix
+chaplain-gearset-category-crucifix-description =
+    An ancient inverted crucifix wielding great power.
+    it's poison coating never seems to wear out, even a
+    small splinter of it being able to cause sickness.
+    It is able to execute very fast thanks to it's demonic influence.
+chaplain-gearset-category-pistol-name = N1984H
+chaplain-gearset-category-pistol-description =
+    Blessed by the power of Nanotransen, this pistol
+    can kill not only the body but also the soul.
+    Being made out of pure silver, it has a significantly slower
+    fire rate and much worse accuracy than a standard N1984.
+chaplain-gearset-category-staff-name = Staff of Nature
+chaplain-gearset-category-staff-description =
+    A powerful living wood staff capable of healing allies and
+    burning the enemies of mother nature.
+    While subpar at hurting others, it excells in healing and curing.
+chaplain-gearset-category-launcher-name = Honkmother's Honkannon
+chaplain-gearset-category-launcher-description =
+    Blessed by the Honkmother, this pie cannon is able to infinitely fire
+    bananium pies that both stun and deal slight damage.
+    It deals very little damage and reloads slowly, but will always be funny.
+    HONK!
+chaplain-gearset-category-toolbox-name = Enchanted Toolbox
+chaplain-gearset-category-toolbox-description =
+    An enchanted toolbox made of brass and gold that is able to fit in
+    backpacks, satchels and dufflebags.
+    It's bigger on the inside than in the outside, allowing for greater storage,
+    but it's smaller size means it won't hurt as much as a normal toolbox.
+chaplain-gearset-category-chainsword-name = Bloody Chainsword
+chaplain-gearset-category-chainsword-description =
+    A menacing-looking chainsword stained with the blood of slain foes, the
+    Bloody Chainsword put the fear of death into the hearts of those it strikes.
+    Its damage is low but its high attack speed more than makes up for it.
+    Blood for the blood god, skulls for the skull throne!
+chaplain-gearset-category-haunted-sword-name = Haunted Sword
+chaplain-gearset-category-haunted-sword-description =
+    Haunted and possesed by an ancient and powerful spirit, the Haunted
+    Sword can serve as both a close companion and a powerful weapon.
+    Don't forget to keep your sword stimulated with bad jokes and stories!
+
+# end funky
+

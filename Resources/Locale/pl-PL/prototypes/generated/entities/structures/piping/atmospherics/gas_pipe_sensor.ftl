@@ -1,0 +1,17 @@
+ent-GasPipeSensor = czujnik rury gazowej
+    .desc = Raportuje stan gazu w podłączonej sieci rur.
+ent-GasPipeSensorDistribution = { ent-GasPipeSensor }
+    .suffix = Dystrybucja
+    .desc = { ent-GasPipeSensor.desc }
+ent-GasPipeSensorWaste = { ent-GasPipeSensor }
+    .suffix = Odpady
+    .desc = { ent-GasPipeSensor.desc }
+ent-GasPipeSensorMixedAir = { ent-GasPipeSensor }
+    .suffix = Mieszane powietrze
+    .desc = { ent-GasPipeSensor.desc }
+ent-GasPipeSensorTEGHot = { ent-GasPipeSensor }
+    .suffix = TEG gorący
+    .desc = { ent-GasPipeSensor.desc }
+ent-GasPipeSensorTEGCold = { ent-GasPipeSensor }
+    .suffix = TEG zimny
+    .desc = { ent-GasPipeSensor.desc }

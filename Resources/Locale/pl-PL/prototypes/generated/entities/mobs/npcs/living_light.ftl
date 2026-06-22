@@ -1,0 +1,12 @@
+ent-MobLivingLight = świetlista osoba
+    .desc = Oślepiająca postać z czystego światła, pozornie nietykalna.
+    .gender = female
+ent-MobLuminousPerson = { ent-MobLivingLight }
+    .desc = { ent-MobLivingLight.desc }
+    .gender = female
+ent-MobLuminousObject = świetlisty obiekt
+    .desc = Mały świecący obiekt, który powoduje oparzenia skóry swoim blaskiem.
+    .gender = male
+ent-MobLuminousEntity = świetlista istota
+    .desc = Oślepiająca, półprzezroczysta istota, jasne oko wydaje się niebezpieczne i parzące.
+    .gender = female

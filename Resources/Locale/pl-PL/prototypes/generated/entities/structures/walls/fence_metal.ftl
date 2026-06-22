@@ -1,0 +1,15 @@
+ent-BaseFenceMetal = ogrodzenie z siatki drucianej
+    .desc = Metalowy fragment ogrodzenia odgradzający coś prawdopodobnie bardzo ważnego.
+ent-FenceMetalBroken = uszkodzone ogrodzenie z siatki drucianej
+    .desc = Ktoś naprawdę się zdenerwował na nieożywiony przedmiot.
+ent-FenceMetalStraight = { ent-BaseFenceMetal }
+    .suffix = Proste
+    .desc = { ent-BaseFenceMetal.desc }
+ent-FenceMetalCorner = { ent-BaseFenceMetal }
+    .suffix = Róg
+    .desc = { ent-BaseFenceMetal.desc }
+ent-FenceMetalEnd = { ent-BaseFenceMetal }
+    .suffix = Koniec
+    .desc = { ent-BaseFenceMetal.desc }
+ent-FenceMetalGate = ogrodzenie z siatki drucianej z bramą
+    .desc = Możesz użyć drzwi zamiast przeskakiwać przez ogrodzenie — jeśli jesteś TCHÓRZEM, oczywiście.

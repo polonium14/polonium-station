@@ -1,0 +1,9 @@
+ent-DrinkFeverDreamGlass = { ent-DrinkGlass }
+    .suffix = gorączkowy sen
+    .desc = { ent-DrinkGlass.desc }
+ent-DrinkBatteryAcidGlass = { ent-DrinkGlass }
+    .suffix = kwas z baterii
+    .desc = { ent-DrinkGlass.desc }
+ent-DrinkAngelsKissGlass = { ent-DrinkGlass }
+    .suffix = pocałunek anioła
+    .desc = { ent-DrinkGlass.desc }

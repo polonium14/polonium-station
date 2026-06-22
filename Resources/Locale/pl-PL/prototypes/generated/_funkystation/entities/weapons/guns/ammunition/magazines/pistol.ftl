@@ -1,0 +1,13 @@
+ent-BaseMagazinePistolLarge = magazynek pistoletowy (.50 AE)
+    .desc = { ent-BaseItem.desc }
+ent-MagazinePistolLarge = magazynek pistoletowy (.50 AE)
+    .desc = { ent-BaseMagazinePistolLarge.desc }
+ent-MagazinePistolLargeEmpty = magazynek pistoletowy (.50 AE pusty)
+    .suffix = empty
+    .desc = { ent-MagazinePistolLarge.desc }
+ent-MagazinePistolLargeIncendiary = magazynek pistoletowy (.50 AE zapalające)
+    .desc = { ent-MagazinePistolLarge.desc }
+ent-MagazinePistolLargePractice = magazynek pistoletowy (.50 AE treningowe)
+    .desc = { ent-BaseMagazinePistolLarge.desc }
+ent-MagazinePistolLargeUranium = magazynek pistoletowy (.50 AE uranowe)
+    .desc = { ent-BaseMagazinePistolLarge.desc }

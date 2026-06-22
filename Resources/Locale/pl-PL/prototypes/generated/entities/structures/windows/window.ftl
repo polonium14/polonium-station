@@ -1,0 +1,15 @@
+ent-Window = okno
+    .desc = Nie rozmazuj szkła tam na dole.
+ent-TintedWindow = przyciemnione okno
+    .desc = { ent-Window.desc }
+ent-WindowRCDResistant = { ent-Window }
+    .desc = { ent-Window.desc }
+ent-WindowDirectional = kierunkowe okno
+    .desc = Nie rozmazuj szkła tam na dole.
+ent-WindowDirectionalRCDResistant = { ent-WindowDirectional }
+    .desc = { ent-WindowDirectional.desc }
+ent-WindowFrostedDirectional = kierunkowe okno matowe
+    .desc = Nie rozmazuj szkła tam na dole.
+ent-WindowDiagonal = { ent-Window }
+    .suffix = diagonalne
+    .desc = { ent-Window.desc }

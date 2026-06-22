@@ -1,0 +1,16 @@
+ent-BaseSpeedLoaderMagnum = speed loader (.45 magnum)
+    .desc = { ent-BaseItem.desc }
+ent-SpeedLoaderMagnum = speed loader (.45 magnum)
+    .desc = Zaprojektowany do szybkiego przeładowania pustego rewolweru, mieści do sześciu nabojów. Przeznaczony do przechowywania amunicji kinetycznej ogólnego przeznaczenia.
+ent-SpeedLoaderMagnumEmpty = speed loader (.45 magnum dowolne)
+    .desc = Zaprojektowany do szybkiego przeładowania pustego rewolweru, mieści do sześciu nabojów dla dużej broni na twoim biodrze.
+ent-SpeedLoaderMagnumIncendiary = speed loader (.45 magnum zapalające)
+    .desc = Zaprojektowany do szybkiego przeładowania pustego rewolweru, mieści do sześciu nabojów. Przeznaczony do przechowywania samozapalającej się amunicji zapalającej.
+ent-SpeedLoaderMagnumPractice = speed loader (.45 magnum treningowe)
+    .desc = Zaprojektowany do szybkiego przeładowania pustego rewolweru, mieści do sześciu nabojów. Przeznaczony do przechowywania niegroźnej amunicji kredowej, idealnej do ćwiczenia szybkiego wyciągania.
+ent-SpeedLoaderMagnumAP = speed loader (.45 magnum przeciwpancerne)
+    .desc = Zaprojektowany do szybkiego przeładowania pustego rewolweru, mieści do sześciu nabojów. Przeznaczony do przechowywania rzadkiej amunicji przebijającej pancerz.
+ent-SpeedLoaderMagnumUranium = speed loader (.45 magnum uranowe)
+    .desc = Zaprojektowany do szybkiego przeładowania pustego rewolweru, mieści do sześciu nabojów. Przeznaczony do przechowywania egzotycznej amunicji z rdzeniem uranowym.
+ent-SpeedLoaderMagnumSilver = speed loader (.45 magnum srebrne)
+    .desc = Zaprojektowany do szybkiego przeładowania pustego rewolweru, mieści do sześciu nabojów. Przeznaczony do przechowywania błogosławionej amunicji srebrnej.

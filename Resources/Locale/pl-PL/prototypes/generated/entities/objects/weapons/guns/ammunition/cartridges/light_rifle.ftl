@@ -1,0 +1,12 @@
+ent-BaseCartridgeLightRifle = nabój (.30 karabinowe)
+    .desc = { ent-BaseCartridge.desc }
+ent-CartridgeLightRifle = nabój (.30 karabinowe)
+    .desc = { ent-BaseCartridgeLightRifle.desc }
+ent-CartridgeLightRiflePractice = nabój (.30 karabinowe treningowe)
+    .desc = { ent-BaseCartridgeLightRifle.desc }
+ent-CartridgeLightRifleSilver = nabój (.30 karabinowe srebrne)
+    .desc = { ent-BaseCartridgeLightRifle.desc }
+ent-CartridgeLightRifleIncendiary = nabój (.30 karabinowe zapalające)
+    .desc = { ent-BaseCartridgeLightRifle.desc }
+ent-CartridgeLightRifleUranium = nabój (.30 karabinowe uranowe)
+    .desc = { ent-BaseCartridgeLightRifle.desc }

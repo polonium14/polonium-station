@@ -1,0 +1,15 @@
+buzzochloricbees-effect-oh-god-bees = Otaczają cię pszczoły, mnóstwo pszczół.
+buzzochloricbees-effect-its-the-bees = To są pszczoły, o boże, pszczoły.
+buzzochloricbees-effect-why-am-i-covered-in-bees = Wściekłe pszczoły cię pokrywają.
+buzzochloricbees-effect-one-with-the-bees = Tworzysz jedność z pszczołami.
+buzzochloricbees-effect-squeaky-clean = Czujesz się czysty jak pszczoły chcą się cię pozbyć.
+buzzochloricbees-effect-histamine-bee-allergy = Okazuje się że masz alergię na pszczoły.
+buzzochloricbees-effect-histamine-swells = Puchniesz jak balon w otoczeniu pszczół.
+buzzochloricbees-effect-histamine-numb-to-the-bees = Drętwiejesz przez pszczoły.
+buzzochloricbees-effect-histamine-cannot-be-one-with-the-bees = Nie tworzysz jedności z pszczołami.
+buzzochloricbees-effect-licoxide-electrifying = Pszczoły są elektryzujące.
+buzzochloricbees-effect-licoxide-shocked-by-bee-facts = Jesteś porażony pięcioma faktami o pszczołach.
+buzzochloricbees-effect-licoxide-buzzed = Czujesz się bzykany.
+buzzochloricbees-effect-licoxide-buzzes = Bzyczysz z pszczołami.
+buzzochloricbees-effect-fiber-hairy = Czujesz się włochaty jak pszczoła.
+buzzochloricbees-effect-fiber-soft = Czujesz parę wyjątkowo miękkich pszczół.
