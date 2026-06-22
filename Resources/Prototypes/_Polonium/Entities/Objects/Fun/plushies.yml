@@ -22,7 +22,7 @@
   - type: EmitSoundOnCollide
     sound:
       path: /Audio/Items/Toys/weh.ogg
-  - type: Food
+  - type: Edible
     requiresSpecialDigestion: true
     useSound:
       path: /Audio/Items/Toys/weh.ogg
@@ -43,14 +43,6 @@
     sprite: _Polonium/Objects/Fun/Plushies/ItanKio-Plush.rsi
     state: icon
   - type: TriggerOnUse
-  - type: OnUseTimerTrigger
-    beepSound:
-      path: /Audio/Items/Toys/weh.ogg
-      params:
-        volume: 5
-    initialBeepDelay: 0
-    beepInterval: 1
-    delay: 5
   - type: Explosive
     explosionType: Minibomb
     totalIntensity: 300

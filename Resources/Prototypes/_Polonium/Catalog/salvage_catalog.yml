@@ -34,17 +34,6 @@
     SalvageTicket: 50
 
 - type: listing
-  id: SalvageVendorShuttleGunPlasmaCutterCircuitboard
-  name: vendor-salvage-shuttle-gun-plasma-cutter-circuitboard
-  description: vendor-salvage-shuttle-gun-plasma-cutter-circuitboard-desc
-  icon: { sprite:  _Polonium/Objects/Weapons/Guns/Shuttles/plasmacutter.rsi, state: plm-ctt}
-  productEntity: ShuttleGunPlasmaCutterCircuitboard
-  categories:
-  - SalvageVendorEquipment
-  cost:
-    SalvageTicket: 350
-
-- type: listing
   id: SalvageVendorShuttleMineralVacuumCircuitboard
   name: vendor-salvage-shuttle-gun-mineral-vacuum-circuitboard
   description: vendor-salvage-shuttle-gun-mineral-vacuum-circuitboard-desc

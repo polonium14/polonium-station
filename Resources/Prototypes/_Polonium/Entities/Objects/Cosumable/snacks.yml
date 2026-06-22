@@ -26,7 +26,7 @@
         right:
           - state: kabanosy-inhand-right
             sprite: _Polonium/Objects/Cosumable/Food/snacks.rsi
-    - type: Food
+    - type: Edible
       trash:
         - FoodPacketKabanosyTrash
     - type: Tag
@@ -56,7 +56,7 @@
       right:
         - state: dumplings-inhand-right
           sprite: _Polonium/Objects/Cosumable/Food/snacks.rsi
-  - type: Food
+  - type: Edible
     trash:
     - FoodPacketDumplingsTrash
   - type: Tag

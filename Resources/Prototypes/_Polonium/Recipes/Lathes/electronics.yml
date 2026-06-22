@@ -9,10 +9,5 @@
 
 - type: latheRecipe
   parent: BaseCircuitboardRecipe
-  id: ShuttleGunPlasmaCutterCircuitboard
-  result: ShuttleGunPlasmaCutterCircuitboard
-
-- type: latheRecipe
-  parent: BaseCircuitboardRecipe
   id: ShuttleGunMineralVacuumCircuitboard
   result: ShuttleGunMineralVacuumCircuitboard

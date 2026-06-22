@@ -61,57 +61,6 @@
   
 
 - type: entity
-  id: ShuttleGunPlasmaCutter
-  parent: [ ShuttleGunBase, ConstructibleMachine]
-  name: PLM-CTT "Shuttle Cutter"
-  description: Basic stationary plasma cutter unit. Effective against asteroids. Uses regular power cells to fire, and has slow rate of fire.
-  components:
-  - type: Sprite
-    sprite: _Polonium/Objects/Weapons/Guns/Shuttles/plasmacutter.rsi
-    layers:
-    - state: plm-ctt
-  - type: ContainerContainer
-    containers:
-      machine_board: !type:Container
-      machine_parts: !type:Container
-      hidden_slot: !type:ContainerSlot
-  - type: ItemSlots
-    slots:
-      hidden_slot:
-        name: computer_slot_accessory
-        whitelist:
-          tags:
-          - ListeningBug
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 150
-      behaviors:
-        - !type:ChangeConstructionNodeBehavior
-          node: machineFrame
-        - !type:DoActsBehavior
-          acts: ["Destruction"]
-  - type: Gun
-    fireRate: 1.1
-    projectileSpeed: 60
-    useKey: false
-    soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/ship_svalinn.ogg
-      params:
-        variation: 0.05
-  - type: Machine
-    board: ShuttleGunPlasmaCutterCircuitboard
-  - type: Battery
-    maxCharge: 6000
-    startingCharge: 0
-  - type: MaterialEnergy
-    materialWhiteList: [Plasma]
-  - type: ProjectileBatteryAmmoProvider
-    proto: BulletPlasmaCutterShuttle
-    fireCost: 100
-
-- type: entity
   id: ShuttleGunMineralVacuum
   parent: [ ShuttleGunBase, ConstructibleMachine]
   name: MNV-EX "Mineral Vacuum"
