@@ -836,7 +836,7 @@
   parent: ClothingHeadBase
   id: ClothingHeadHatTrucker
   name: trucker hat
-  description: Formerly Chuck's, this hat is yours now.
+  description: Formerly Chuck's, this hat is yours now. Not really, these hats are mass produced.
   components:
   - type: Sprite
     sprite: Clothing/Head/Hats/truckershat.rsi

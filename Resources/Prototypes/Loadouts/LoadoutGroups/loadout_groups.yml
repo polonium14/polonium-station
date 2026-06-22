@@ -472,15 +472,29 @@
   minLimit: 0
   loadouts:
   - BotanistHead
-  - BotanistBandana
+  - BotanistBandanaBlack
+  - BotanistBandanaBlue
+  - BotanistBandanaGold
+  - BotanistBandanaGreen
+  - BotanistBandanaRed
+  - BotanistBandanaSkull
+  - BotanistBandanaBrown
+#  - BotanistBandana
 
 - type: loadoutGroup
   id: BotanistJumpsuit
   name: loadout-group-botanist-jumpsuit
   loadouts:
-  - BotanistJumpsuit
-  - BotanistJumpskirt
-  - BotanistOveralls
+  - FuBotanistShirtPants
+  - FuBotanistShirtPantsOveralls
+  - FuBotanistShirtPantsOverallsTurtle
+  - FuBotanistJumpsuit
+  - FuBotanistJumpsuitDirty
+  - FuBotanistJumperSkirt
+  - FuBotanistJumperSkirtTurtle
+#  - BotanistJumpsuit
+#  - BotanistJumpskirt
+#  - BotanistOveralls
 
 - type: loadoutGroup
   id: BotanistBackpack

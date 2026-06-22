@@ -16,6 +16,7 @@ using Content.Shared.Popups;
 using Content.Shared.Slippery;
 using Content.Shared.Inventory;
 using Content.Shared._Funkystation.Fluids;
+using Content.Shared._Funkystation.Footprints;
 using Robust.Shared.Collections;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
@@ -498,6 +499,7 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
         var anchored = _map.GetAnchoredEntitiesEnumerator(gridId, mapGrid, tileRef.GridIndices);
         var puddleQuery = GetEntityQuery<PuddleComponent>();
         var sparklesQuery = GetEntityQuery<EvaporationSparkleComponent>();
+        var footprintQuery = GetEntityQuery<FootprintComponent>();
 
         while (anchored.MoveNext(out var ent))
         {
@@ -508,6 +510,9 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
             }
 
             if (!puddleQuery.TryGetComponent(ent, out var puddle))
+                continue;
+
+            if (footprintQuery.HasComponent(ent.Value))
                 continue;
 
             if (TryAddSolution(ent.Value, solution, sound, puddleComponent: puddle))
@@ -541,10 +546,14 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
 
         var anc = _map.GetAnchoredEntitiesEnumerator(tile.GridUid, grid, tile.GridIndices);
         var puddleQuery = GetEntityQuery<PuddleComponent>();
+        var footprintQuery = GetEntityQuery<FootprintComponent>();
 
         while (anc.MoveNext(out var ent))
         {
             if (!puddleQuery.HasComponent(ent.Value))
+                continue;
+
+            if (footprintQuery.HasComponent(ent.Value))
                 continue;
 
             puddleUid = ent.Value;

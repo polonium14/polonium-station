@@ -239,9 +239,9 @@
   description: A belt used to hold most hydroponics supplies. Suprisingly, not green.
   components:
   - type: Sprite
-    sprite: Clothing/Belt/plant.rsi
+    sprite: _Funkystation/Clothing/Belt/hydro.rsi
   - type: Clothing
-    sprite: Clothing/Belt/plant.rsi
+    sprite: _Funkystation/Clothing/Belt/hydro.rsi
   - type: Storage
     whitelist:
       tags:
@@ -259,7 +259,7 @@
       - Smokable
       - HandLabeler
   - type: ItemMapper
-    sprite: *BeltOverlay
+    sprite: _Funkystation/Clothing/Belt/belt_overlay.rsi
     mapLayers:
       hatchet:
         whitelist:

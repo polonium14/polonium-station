@@ -12,6 +12,10 @@
   - type: StaticPrice
     price: 25
   - type: Appearance
+  - type: SolutionContainerManager # Funky change
+    solutions:
+      stain:
+        maxVol: 5
   - type: Stainable
     clothingVisuals:
       mask:
