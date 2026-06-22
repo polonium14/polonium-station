@@ -56,7 +56,7 @@
     rootTask:
       task: SimpleHostileCompound
   - type: NPCUseActionOnTarget
-    actionId: ActionGoliathTentacleNerfed # Tymczasowa fajna akcja
+    actionId: ActionGoliathTentacle # forky: brak wersji Nerfed, użyto bazowej
   #   actionId: ActionLeap # TODO
   - type: Tag
     tags:

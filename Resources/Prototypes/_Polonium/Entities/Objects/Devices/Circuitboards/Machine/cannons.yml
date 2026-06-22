@@ -14,7 +14,6 @@
   - type: MachineBoard
     prototype: ShuttleGunSeismic
     stackRequirements:
-      MatterBin: 2
       Manipulator: 1
       Steel: 5
       CableHV: 1
@@ -31,9 +30,7 @@
   - type: MachineBoard
     prototype: ShuttleGunMineralVacuum
     stackRequirements:
-      MatterBin: 4
       Manipulator: 2
-      Capacitor: 2
       Steel: 5
       Glass: 2
       CableHV: 2

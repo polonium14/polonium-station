@@ -27,13 +27,9 @@
       - type: NukeOperative
       - type: RandomMetadata
         nameSegments:
-        - NamesNukieFirstOperator
         - NamesSyndicateElite
       - type: NpcFactionMember
         factions:
         - Syndicate
       mindRoles:
       - MindRoleNukeops
-  - type: Tag
-    tags:
-    - RoundstartAntag
