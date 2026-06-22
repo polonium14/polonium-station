@@ -4,6 +4,7 @@ ent-WeaponVisMPSPistolMagazineIncendiary = Magazynek VIS MPS (.35 auto incendiar
 ent-WeaponVisMPSPistolMagazineUranium = Magazynek VIS MPS (.35 auto uranium)
 ent-WeaponVisMPSPistolMagazinePractice = Magazynek VIS MPS (.35 auto practice)
 ent-WeaponVisMPSPistolMagazineEmpty = Magazynek VIS MPS (.35 auto any)
+    .desc = Magazynek do pistoletu VIS MPS.
     .suffix = (pusty)
 ent-WeaponVisMPSPistolMagazinUranium = Magazynek VIS MPS (.35 auto uranium)
     .desc = Magazynek VIS MPS (.35 auto uranium)
