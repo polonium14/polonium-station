@@ -1,0 +1,19 @@
+- files: ["code_epsilon.ogg"]
+  copyright: "Made by Bolgarich. Edited by Nikita.pl and Pinkscreen."
+  license: "CC-BY-4.0"
+  source: "https://music.youtube.com/watch?v=EtTi4kwHMto&si=uratyjxMNeqEexVz"
+
+- files: ["code_epsilon_nointro.ogg"] # Wersja bez intro
+  copyright: "Made by Bolgarich. Edited by Nikita.pl and Pinkscreen."
+  license: "CC-BY-4.0"
+  source: "https://music.youtube.com/watch?v=EtTi4kwHMto&si=uratyjxMNeqEexVz"
+
+- files: ["running_out.ogg"]
+  copyright: "Made by Bolgarich"
+  license: "CC-BY-4.0"
+  source: "https://music.youtube.com/watch?v=SzEp2nv6oZ4&si=z6w6ThY12_CB0PQX"
+
+- files: ["i_cant_afford_mastering.ogg"]
+  copyright: "Made by C418"
+  license: "Custom" # CC-BY-NC-ND 3.0
+  source: "https://c418.bandcamp.com/track/i-cant-afford-mastering"

@@ -1,0 +1,30 @@
+# SPDX-FileCopyrightText: 2026 Copilot <175728472+Copilot@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 nikitosych <174215049+nikitosych@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- files: ["blue.ogg"]
+  copyright: "Pinkscreen, Nikita.pl"
+  license: "CC-BY-NC-4.0"
+  source: "https://github.com/polonium14/polonium-station/tree/main/Resources/Audio/_Polonium/Announcements/AlertLevels"
+- files: ["cyan.ogg"]
+  copyright: "Pinkscreen, Nikita.pl"
+  license: "CC-BY-NC-4.0"
+  source: "https://github.com/polonium14/polonium-station/tree/main/Resources/Audio/_Polonium/Announcements/AlertLevels"
+- files: ["delta.ogg"]
+  copyright: "Pinkscreen, Nikita.pl"
+  license: "CC-BY-NC-4.0"
+  source: "https://github.com/polonium14/polonium-station/tree/main/Resources/Audio/_Polonium/Announcements/AlertLevels"
+- files: ["green.ogg"]
+  copyright: "Pinkscreen, Nikita.pl"
+  license: "CC-BY-NC-4.0"
+  source: "https://github.com/polonium14/polonium-station/tree/main/Resources/Audio/_Polonium/Announcements/AlertLevels"
+- files: ["octarine.ogg"]
+  copyright: "Pinkscreen, Nikita.pl"
+  license: "CC-BY-NC-4.0"
+  source: "https://github.com/polonium14/polonium-station/tree/main/Resources/Audio/_Polonium/Announcements/AlertLevels"
+- files: ["red.ogg"]
+  copyright: "Pinkscreen, Nikita.pl"
+  license: "CC-BY-NC-4.0"
+  source: "https://github.com/polonium14/polonium-station/tree/main/Resources/Audio/_Polonium/Announcements/AlertLevels"

@@ -1,0 +1,9 @@
+# SPDX-FileCopyrightText: 2026 Polonium-bot <admin@ss14.pl>
+# SPDX-FileCopyrightText: 2026 nikitosych <174215049+nikitosych@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- files: ["scream-1.ogg", "scream-2.ogg"]
+  license: "CC-BY-SA-4.0"
+  copyright: "Ta legenda została stworzona przez kanał 'nie cowiek maupa' na YouTube."
+  source: "https://youtu.be/5TnaxtfpmM4?si=GmWArxhmW6ZEutFm"

@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "license": "CC-BY-NC-SA-3.0",
+  "copyright": "Taken from Aquilla https://github.com/aq33/NSV13, Ported/co-authored by Nikitosych (github)",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+        "name": "maupa",
+        "directions": 1
+    },
+    {
+        "name": "martwa",
+        "directions": 1
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+# SPDX-FileCopyrightText: 2025 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 thepinkscreen <76622775+thepinkscreen@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 nikitosych <174215049+nikitosych@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- files: ["aliens.ogg"]
+  copyright: "Pinkscreen"
+  license: "CC-BY-NC-4.0"
+  source: "https://github.com/polonium14/polonium-station/tree/main/Resources/Audio/_Polonium/Announcements"
+- files: ["announce.ogg"]
+  copyright: "Pinkscreen, Nikita.pl"
+  license: "CC-BY-SA-4.0"
+  source: "https://github.com/polonium14/polonium-station/tree/main/Resources/Audio/_Polonium/Announcements"
+- files: ["attention.ogg"]
+  copyright: "Pinkscreen"
+  license: "CC-BY-NC-4.0"
+  source: "https://github.com/polonium14/polonium-station/tree/main/Resources/Audio/_Polonium/Announcements"
+- files: ["intercept.ogg"]
+  copyright: "Pinkscreen"
+  license: "CC-BY-NC-4.0"
+  source: "https://github.com/polonium14/polonium-station/tree/main/Resources/Audio/_Polonium/Announcements"
+- files: ["ion_storm.ogg"]
+  copyright: "Pinkscreen"
+  license: "CC-BY-NC-4.0"
+  source: "https://github.com/polonium14/polonium-station/tree/main/Resources/Audio/_Polonium/Announcements"
+- files: ["meteors.ogg"]
+  copyright: "Pinkscreen"
+  license: "CC-BY-NC-4.0"
+  source: "https://github.com/polonium14/polonium-station/tree/main/Resources/Audio/_Polonium/Announcements"
+- files: ["power_off.ogg"]
+  copyright: "Pinkscreen"
+  license: "CC-BY-NC-4.0"
+  source: "https://github.com/polonium14/polonium-station/tree/main/Resources/Audio/_Polonium/Announcements"
+- files: ["power_on.ogg"]
+  copyright: "Pinkscreen"
+  license: "CC-BY-NC-4.0"
+  source: "https://github.com/polonium14/polonium-station/tree/main/Resources/Audio/_Polonium/Announcements"
+- files: ["shuttle_dock.ogg"]
+  copyright: "Pinkscreen"
+  license: "CC-BY-NC-4.0"
+  source: "https://github.com/polonium14/polonium-station/tree/main/Resources/Audio/_Polonium/Announcements"
+- files: ["shuttlecalled.ogg"]
+  copyright: "Pinkscreen"
+  license: "CC-BY-NC-4.0"
+  source: "https://github.com/polonium14/polonium-station/tree/main/Resources/Audio/_Polonium/Announcements"
+- files: ["shuttlerecalled.ogg"]
+  copyright: "Pinkscreen"
+  license: "CC-BY-NC-4.0"
+  source: "https://github.com/polonium14/polonium-station/tree/main/Resources/Audio/_Polonium/Announcements"
+- files: ["welcome.ogg"]
+  copyright: "Pinkscreen"
+  license: "CC-BY-NC-4.0"
+  source: "https://github.com/polonium14/polonium-station/tree/main/Resources/Audio/_Polonium/Announcements"
+- files: ["epsilon.ogg"]
+  copyright: "Pinkscreen, Nikita.pl"
+  license: "CC-BY-NC-4.0"
+  source: "https://github.com/polonium14/polonium-station/tree/main/Resources/Audio/_Polonium/Announcements"
+- files: ["centcomm_announce.ogg"]
+  copyright: "Pinkscreen, Nikita.pl"
+  license: "CC-BY-NC-4.0"
+  source: "https://github.com/polonium14/polonium-station/tree/main/Resources/Audio/_Polonium/Announcements"
+- files: ["crew_announce.ogg"]
+  copyright: "Pinkscreen, Nikita.pl"
+  license: "CC-BY-NC-4.0"
+  source: "https://github.com/polonium14/polonium-station/tree/main/Resources/Audio/_Polonium/Announcements"
