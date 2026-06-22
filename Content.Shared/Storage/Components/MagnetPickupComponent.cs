@@ -24,4 +24,10 @@ public sealed partial class MagnetPickupComponent : Component
 
     [ViewVariables(VVAccess.ReadWrite), DataField("range")]
     public float Range = 1f;
+
+    /// <summary>
+    /// Whether the magnet must be in a matching inventory slot to work.
+    /// </summary>
+    [ViewVariables(VVAccess.ReadWrite), DataField("slotCheck")]
+    public bool SlotCheck = true;
 }
