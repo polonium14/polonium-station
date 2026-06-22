@@ -1,0 +1,72 @@
+# SPDX-FileCopyrightText: 2026 Szyszkrzyneczka <rammus.vult@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: BulletSeismicCharge
+  name: seismic charge
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Bombs/seismic.rsi
+    layers:
+      - state: icon
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Cryo
+    totalIntensity: 120
+    intensitySlope: 2
+    maxIntensity: 30
+    canCreateVacuum: true
+    maxTileBreak: 60
+  - type: PointLight
+    radius: 1
+    color: orange
+    energy: 0.5
+
+
+- type: entity
+  id: BulletPlasmaCutterShuttle
+  parent: BulletPlasmaCutter
+  components:
+  - type: GatheringProjectile
+    amount: 80
+  - type: Projectile
+    damage:
+      types:
+        Heat: 12 
+        Structural: 25
+  - type: TimedDespawn
+    lifetime: 0.4 
+  - type: PointLight
+    radius: 5
+    color: purple
+    energy: 2
+
+- type: entity
+  id: BulletMineralVacuum
+  parent: BaseBullet
+  #categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    visible: false
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 0
+  - type: TimedDespawn
+    lifetime: 0.5
+  - type: Ammo
+    muzzleFlash: null
+  - type: GravityWell
+    baseRadialAcceleration: 5
+    maxRange: 30
+    minRange: 1
+    whitelist:
+      tags:
+        - ArtifactFragment
+        - Ore
+  - type: SingularityDistortion
+    falloffPower: 1.6
+    intensity: 4

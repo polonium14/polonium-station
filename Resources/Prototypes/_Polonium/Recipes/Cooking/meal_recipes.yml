@@ -1,0 +1,40 @@
+# SPDX-FileCopyrightText: 2026 Polonium-bot <admin@ss14.pl>
+# SPDX-FileCopyrightText: 2026 Szyszkrzyn <52501307+Szyszkrzyneczka@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 Szyszkrzyneczka <rammus.vult@gmail.com>
+# SPDX-FileCopyrightText: 2026 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: microwaveMealRecipe
+  id: RecipeKremowka
+  name: przepis na kremówkę
+  result: FoodPieKremowka
+  time: 15
+  group: Pie
+  reagents:
+    Cream: 5
+    Sugar: 5
+  solids:
+    FoodDoughPie: 1
+
+- type: microwaveMealRecipe
+  id: RecipeHotDog
+  name: HotDog recipe
+  result: FoodHotDog
+  time: 10
+  group: Savory
+  reagents:
+    Ketchup: 5
+  solids:
+    FoodBreadBun: 1
+    FoodMeatParowka: 1
+
+- type: microwaveMealRecipe
+  id: RecipePetoParowek
+  name: PetoParowek recipe
+  result: FoodMeatPetoParowek
+  time: 10
+  group: Savory
+  solids:
+    FoodMeat: 1
+    Paper: 1

@@ -1,0 +1,60 @@
+# SPDX-FileCopyrightText: 2026 Szyszkrzyneczka <rammus.vult@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: ShuttleGunSeismicCircuitboard
+  parent: BaseMachineCircuitboard
+  name: EXP-SMC "KosmoWstrząs" machine board
+  description: A machine printed circuit board for an EXP-SMC "KosmoWstrząs".
+  suffix: Machine Board
+  components:
+  - type: Sprite
+    state: security
+  - type: MachineBoard
+    prototype: ShuttleGunSeismic
+    stackRequirements:
+      MatterBin: 2
+      Manipulator: 1
+      Steel: 5
+      CableHV: 1
+
+- type: entity
+  id: ShuttleGunPlasmaCutterCircuitboard
+  parent: BaseMachineCircuitboard
+  name: PLM-CTT "Shuttle Cutter" machine board
+  description: A machine printed circuit board for an PLM-CTT "Shuttle Cutter".
+  suffix: Machine Board
+  components:
+  - type: Sprite
+    state: security
+  - type: MachineBoard
+    prototype: ShuttleGunPlasmaCutter
+    stackRequirements:
+      MatterBin: 2
+      Manipulator: 3
+      Capacitor: 2
+      Steel: 5
+      Glass: 2
+      CableHV: 3
+      Gold: 1
+
+- type: entity
+  id: ShuttleGunMineralVacuumCircuitboard
+  parent: BaseMachineCircuitboard
+  name: MNV-EX "Mineral Vacuum" machine board
+  description: A machine printed circuit board for an MNV-EX "Mineral Vacuum".
+  suffix: Machine Board
+  components:
+  - type: Sprite
+    state: security
+  - type: MachineBoard
+    prototype: ShuttleGunMineralVacuum
+    stackRequirements:
+      MatterBin: 4
+      Manipulator: 2
+      Capacitor: 2
+      Steel: 5
+      Glass: 2
+      CableHV: 2
+      Gold: 1

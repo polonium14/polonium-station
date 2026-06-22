@@ -1,0 +1,83 @@
+# SPDX-FileCopyrightText: 2025 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Tofi! <52051567+Tofi-Dev@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+
+  # Muszę zrobić poprawny prototyp do tłumaczenia kiedyś
+  id: WeaponVisMPSPistolMagazineBase
+  name: Magazynek VIS MPS (.35 auto any)
+  parent: [ BaseItem, BaseSecurityContraband]
+  components:
+    - type: Tag
+      tags:
+        - WeaponVisMPSPistolMagazine
+    - type: BallisticAmmoProvider
+      mayTransfer: true
+      whitelist:
+        tags:
+          - CartridgePistol
+      capacity: 16
+    - type: Item
+      size: Small
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
+    - type: Sprite
+      sprite: _Polonium/Weapons/Guns/Magazines/VIS_MPS_Mag.rsi
+      layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-1
+        map: ["enum.GunVisualLayers.Mag"]
+    - type: MagazineVisuals
+      magState: mag
+      steps: 6
+      zeroVisible: false
+    - type: Appearance
+
+
+# Pierdyłiard wersji tego magazyneku
+
+- type: entity
+  id: WeaponVisMPSPistolMagazine
+  parent: WeaponVisMPSPistolMagazineBase
+  name: Magazynek VIS MPS (.35 auto)
+  components:
+    - type: BallisticAmmoProvider
+      proto: CartridgePistol
+
+- type : entity
+  id: WeaponVisMPSPistolMagazineIncendiary
+  parent: WeaponVisMPSPistolMagazineBase
+  name: Magazynek VIS MPS (.35 auto incendiary)
+  components:
+    - type: BallisticAmmoProvider
+      proto: CartridgePistolIncendiary
+
+- type : entity
+  id: WeaponVisMPSPistolMagazineUranium
+  parent: WeaponVisMPSPistolMagazineBase
+  name: Magazynek VIS MPS (.35 auto uranium)
+  components:
+    - type: BallisticAmmoProvider
+      proto: CartridgePistolUranium
+
+- type : entity
+  id: WeaponVisMPSPistolMagazinePractice
+  parent: WeaponVisMPSPistolMagazineBase
+  name: Magazynek VIS MPS (.35 auto practice)
+  components:
+    - type: BallisticAmmoProvider
+      proto: CartridgePistolPractice
+
+- type: entity
+  id: WeaponVisMPSPistolMagazineEmpty
+  parent: WeaponVisMPSPistolMagazineBase
+  name: Magazynek VIS MPS (.35 auto any)
+  suffix: (pusty)
+  components:
+    - type: BallisticAmmoProvider
+      proto: null

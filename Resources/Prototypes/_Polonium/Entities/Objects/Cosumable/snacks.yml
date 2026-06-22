@@ -1,0 +1,84 @@
+# SPDX-FileCopyrightText: 2025 Tofi! <52051567+Tofi-Dev@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 Polonium-bot <admin@ss14.pl>
+# SPDX-FileCopyrightText: 2026 cybercoffeedev <cybercoffeedev@proton.me>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  name: kabanosy neo-tarczyńskie
+  parent: FoodSnackBase
+  id: FoodSnackKabanosy
+  description: Słone, cienkie paluszki mięsa, które były wędzone przez jakiś czas.
+  components:
+    - type: Sprite
+      sprite: _Polonium/Objects/Cosumable/Food/snacks.rsi
+      state: kabanosy
+    - type: FlavorProfile
+      flavors:
+        - cheap
+        - salty
+        - meaty
+    - type: Item
+      inhandVisuals:
+        left:
+          - state: kabanosy-inhand-left
+            sprite: _Polonium/Objects/Cosumable/Food/snacks.rsi
+        right:
+          - state: kabanosy-inhand-right
+            sprite: _Polonium/Objects/Cosumable/Food/snacks.rsi
+    - type: Food
+      trash:
+        - FoodPacketKabanosyTrash
+    - type: Tag
+      tags:
+        - FoodSnack
+        - ReptilianFood
+
+- type: entity
+  name: pierogi liofilizowane
+  parent: FoodSnackBase
+  id: FoodSnackDumplings
+  description: Klasyczne polskie pierogi z kapustą i grzybami, liofilizowane na potrzeby misji kosmicznej. Smacznego!
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Cosumable/Food/snacks.rsi
+    state: dumplings
+  - type: FlavorProfile
+    flavors:
+      - savory
+      - cabbage
+      - mushroom
+  - type: Item
+    inhandVisuals:
+      left:
+        - state: dumplings-inhand-left
+          sprite: _Polonium/Objects/Cosumable/Food/snacks.rsi
+      right:
+        - state: dumplings-inhand-right
+          sprite: _Polonium/Objects/Cosumable/Food/snacks.rsi
+  - type: Food
+    trash:
+    - FoodPacketDumplingsTrash
+  - type: Tag
+    tags:
+      - FoodSnack
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: FoodPacketTrash
+  id: FoodPacketDumplingsTrash
+  name: pierogi liofilizowane
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Cosumable/Food/snacks.rsi
+    state: dumplings-trash
+
+- type: entity
+  name: opakowanie po kabanosach
+  description: Aż mi smutno, że się skończyły.
+  parent: FoodPacketTrash
+  id: FoodPacketKabanosyTrash
+  components:
+    - type: Sprite
+      sprite: _Polonium/Objects/Cosumable/Food/snacks.rsi
+      state: kabanosy-trash

@@ -1,0 +1,63 @@
+# SPDX-FileCopyrightText: 2025 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Tofi! <52051567+Tofi-Dev@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  name: VIS MPS
+  parent: [BaseWeaponPistol, BaseSecurityContraband]
+  id: WeaponVisMPSPistol
+  description: Standardowy pistolet używany przez polskie wojsko.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Weapons/Guns/VIS_MPS.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  # broni dostępne tryby: tylko samoczynny
+  - type: Gun
+    fireRate: 3.5
+    availableModes:
+        - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/pistol.ogg
+  # sloty: magazynek i komora
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: WeaponVisMPSPistolMagazine
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - WeaponVisMPSPistolMagazine
+        whitelistFailPopup: gun-magazine-whitelist-fail
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgePistol
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgePistol
+  # kontenery slotów: magazynek i komora
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  # licznik amunicji
+  - type: AmmoCounter
+  # wizualizacja magazynku
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  # wygląd
+  - type: Appearance
+  - type: StaticPrice
+    price: 1800
+

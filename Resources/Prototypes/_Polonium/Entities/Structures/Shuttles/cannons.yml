@@ -1,0 +1,168 @@
+# SPDX-FileCopyrightText: 2026 Szyszkrzyneczka <rammus.vult@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: ShuttleGunSeismic
+  parent: [ ShuttleGunBase, ConstructibleMachine]
+  name: EXP-SMC "CosmoQuake"
+  description: Salvage stationary mining turret. Requires seismic charges, extremely effective for asteroid excavation.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Weapons/Guns/Shuttles/seismic.rsi
+    layers:
+    - state: exp-smc
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+      hidden_slot: !type:ContainerSlot
+      ballistic-ammo: !type:Container
+  - type: ItemSlots
+    slots:
+      hidden_slot:
+        name: computer_slot_accessory
+        whitelist:
+          tags:
+          - ListeningBug
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+        - !type:ChangeConstructionNodeBehavior
+          node: machineFrame
+        - !type:DoActsBehavior
+          acts: ["Destruction"]
+  - type: Gun
+    projectileSpeed: 5
+    fireRate: 1
+    selectedMode: SemiAuto
+    angleDecay: 45
+    minAngle: 5
+    maxAngle: 15
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/kinetic_accel.ogg
+      params:
+        variation: 0.12
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+        - SeismicCharge
+    capacity: 4
+    proto: SeismicCharge
+    soundInsert:
+      path: /Audio/Weapons/Guns/Gunshots/grenade_launcher.ogg
+  - type: Machine
+    board: ShuttleGunSeismicCircuitboard
+  
+
+- type: entity
+  id: ShuttleGunPlasmaCutter
+  parent: [ ShuttleGunBase, ConstructibleMachine]
+  name: PLM-CTT "Shuttle Cutter"
+  description: Basic stationary plasma cutter unit. Effective against asteroids. Uses regular power cells to fire, and has slow rate of fire.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Weapons/Guns/Shuttles/plasmacutter.rsi
+    layers:
+    - state: plm-ctt
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+      hidden_slot: !type:ContainerSlot
+  - type: ItemSlots
+    slots:
+      hidden_slot:
+        name: computer_slot_accessory
+        whitelist:
+          tags:
+          - ListeningBug
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+        - !type:ChangeConstructionNodeBehavior
+          node: machineFrame
+        - !type:DoActsBehavior
+          acts: ["Destruction"]
+  - type: Gun
+    fireRate: 1.1
+    projectileSpeed: 60
+    useKey: false
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/ship_svalinn.ogg
+      params:
+        variation: 0.05
+  - type: Machine
+    board: ShuttleGunPlasmaCutterCircuitboard
+  - type: Battery
+    maxCharge: 6000
+    startingCharge: 0
+  - type: MaterialEnergy
+    materialWhiteList: [Plasma]
+  - type: ProjectileBatteryAmmoProvider
+    proto: BulletPlasmaCutterShuttle
+    fireCost: 100
+
+- type: entity
+  id: ShuttleGunMineralVacuum
+  parent: [ ShuttleGunBase, ConstructibleMachine]
+  name: MNV-EX "Mineral Vacuum"
+  description: A mining tool designed to vacuum up loose minerals in space. Not a weapon.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Weapons/Guns/Shuttles/mineralvacuum.rsi
+    layers:
+    - state: mnv-ex
+  - type: ItemSlots
+    slots:
+      ore_box:
+        name: ore box slot
+        insertOnInteract: true
+        ejectOnInteract: true
+        whitelist:
+          tags:
+          - VacuumOreBox
+        swap: true
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+      ore_box: !type:ContainerSlot
+  - type: ItemMapper
+    mapLayers:
+      ore_box:
+        minCount: 1
+        whitelist:
+          tags:
+          - VacuumOreBox
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+        - !type:ChangeConstructionNodeBehavior
+          node: machineFrame
+        - !type:DoActsBehavior
+          acts: ["Destruction"]
+  - type: Gun
+    fireRate: 2
+    projectileSpeed: 0.5
+    useKey: false
+    soundGunshot:
+  - type: Machine
+    board: ShuttleGunMineralVacuumCircuitboard
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 0.01
+  - type: BasicEntityAmmoProvider
+    proto: BulletMineralVacuum
+    capacity: 1
+    count: 1

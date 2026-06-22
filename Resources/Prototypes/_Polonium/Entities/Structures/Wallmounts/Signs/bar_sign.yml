@@ -1,0 +1,12 @@
+- type: entity
+  parent: BaseBarSign
+  id: BarSignZabka
+  name: Zabka
+  description: Leading galaxy food corporation for the working class.
+  components:
+  - type: BarSign
+    current: Zabka
+  - type: Sprite
+    drawdepth: WallMountedItems
+    sprite: _Polonium/Structures/Wallmounts/Barsigns/zabkacafe.rsi
+    state: empty

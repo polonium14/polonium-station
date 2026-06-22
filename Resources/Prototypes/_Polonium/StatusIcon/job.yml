@@ -1,0 +1,15 @@
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconCBURNMedic
+  icon:
+    sprite: /Textures/_Polonium/Interface/Misc/job_icons.rsi
+    state: CBURNMedic
+  jobName: job-name-cburn-medic
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconCBURNLeader
+  icon:
+    sprite: /Textures/_Polonium/Interface/Misc/job_icons.rsi
+    state: CBURNLeader
+  jobName: job-name-cburn-leader

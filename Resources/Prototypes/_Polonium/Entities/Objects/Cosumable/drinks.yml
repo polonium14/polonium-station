@@ -1,0 +1,16 @@
+- type: entity
+  parent: [DrinkBottleVisualsAll, DrinkBottleGlassBaseFull]
+  id: DrinkOranzadaFull
+  name: butelka oranżady
+  description: Ah, polski klasyk, teraz z ulepszoną formulą dla stacji koszmicznych.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Oranzada
+          Quantity: 30
+  - type: Sprite
+    sprite: _Polonium/Objects/Cosumable/Food/Drinks/Oranzada.rsi
+  - type: Sealable

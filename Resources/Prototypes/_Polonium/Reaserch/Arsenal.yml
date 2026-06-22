@@ -1,0 +1,16 @@
+
+
+# Tier 2
+- type: technology
+  id: WeaponProduction
+  name: research-technology-weapon-production
+  icon:
+    sprite: _Polonium/Weapons/Guns/Snipers/Bor.rsi
+    state: base
+  discipline: Arsenal
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+  - WeaponSubMachineGunGlauberyt
+  - WeaponBORSniperGun
+  - WeaponVisMPSPistol

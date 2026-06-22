@@ -1,0 +1,29 @@
+# SPDX-FileCopyrightText: 2026 Polonium-bot <admin@ss14.pl>
+# SPDX-FileCopyrightText: 2026 nikitosych <174215049+nikitosych@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: BaseItem
+  id: GenieLamp
+  name: Lampa Dżina
+  description: Stara lampa, która wygląda jakby mogła spełnić życzenia.
+  components:
+  - type: Sprite
+    sprite: /Textures/_Polonium/Objects/Misc/genie.rsi
+    state: icon
+  - type: Item
+    sprite: /Textures/_Polonium/Objects/Misc/genie.rsi
+    size: Tiny
+  - type: UseDelay
+    delay: 30
+  - type: EmitSoundOnUse
+    sound:
+        collection: GenieLamp
+        params:
+            variation: 0.2
+  - type: PopupOnUse
+    message: Czujesz nadprzyrodzoną obecność wokół siebie...
+    showToOthers: true
+    popupSize: large
+  - type: AdminAlertOnUse # skoro to jest przedmiot eventowy

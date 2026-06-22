@@ -1,0 +1,31 @@
+- type: entity
+  name: vacuum ore box 
+  id: OreBoxVacuum
+  parent: BaseStorageItem
+  description: Advanced ore box for automatically picking up and storing unprocessed minerals.
+  components:
+  - type: MagnetPickup
+    range: 2
+    slotCheck: false
+  - type: Sprite
+    noRot: true
+    sprite: /Textures/_Polonium/Structures/Storage/vacuumorebox.rsi
+    layers:
+    - state: vacuumorebox
+  - type: Item
+    size: Ginormous
+  - type: Storage
+    maxItemSize: Huge
+    grid:
+    - 0,0,11,7
+    quickInsert: true
+    areaInsert: true
+    whitelist:
+      tags:
+        - ArtifactFragment
+        - Ore
+        - Recyclable
+  - type: Dumpable
+  - type: Tag
+    tags:
+    - VacuumOreBox

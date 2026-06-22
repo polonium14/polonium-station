@@ -1,0 +1,64 @@
+# SPDX-FileCopyrightText: 2026 Damian Zieliński <zientasek.pl@gmail.com>
+# SPDX-FileCopyrightText: 2026 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 Polonium-bot <admin@ss14.pl>
+# SPDX-FileCopyrightText: 2026 nikitosych <174215049+nikitosych@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: Thief
+  id: ThiefSecretPlus
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: GameRule
+    minPlayers: 12
+
+- type: entity
+  parent: BaseGameRule
+  id: CowiekMaupaSpawn
+  components:
+  - type: StationEvent
+    startAnnouncement: station-event-vent-creatures-start-announcement
+    startAudio:
+      path: /Audio/_Polonium/Announcements/attention.ogg
+    weight: 5
+    duration: 1
+    minimumPlayers: 5
+    reoccurrenceDelay: 25
+    earliestStart: 20
+    eventType: HostilesSpawn # Goobstation
+  # Goobstation
+  - type: GameRule
+    chaosScore: 250
+  - type: RandomEntityStorageSpawnRule
+    prototype: MobCowiekMaupa
+    openStorageSound: /Audio/_Polonium/Effects/Jumpscare/jumpscare1.ogg
+
+- type: entity
+  parent: GreytideVirus
+  id: GreytideVirusSecretPlus
+  components:
+  - type: StationEvent
+    minimumPlayers: 15
+    weight: 4
+
+- type: entity
+  parent: ZombieOutbreak
+  id: ZombieOutbreakSurvivalPlus
+  components:
+  - type: StationEvent
+    minimumPlayers: 25
+    weight: 2.5
+
+- type: entity
+  parent: ReplicatorSpawn
+  id: ReplicatorSpawnSecretPlus
+  components:
+  - type: StationEvent
+    eventType: HostilesSpawn
+    weight: 4
+    minimumPlayers: 15
+    earliestStart: 25
+    reoccurrenceDelay: 45
+  - type: GameRule
+    chaosScore: 650

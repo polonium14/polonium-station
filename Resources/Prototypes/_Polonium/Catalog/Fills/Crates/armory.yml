@@ -1,0 +1,30 @@
+# SPDX-FileCopyrightText: 2025 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: CrateArmoryExclusivePistols
+  parent: [ CrateWeaponSecure, BaseSecurityContraband ]
+  name: Skrzynia z ekskluzywnymi pistoletami NT
+  description: Zawiera pistolety specjalnego wydania NT. Wymaga dostępu do zbrojowni, aby otworzyć.
+  components:
+  - type: StorageFill
+    contents:
+    - id: WeaponVisMPSPistol
+      amount: 2
+    - id: WeaponVisMPSPistolMagazine
+      amount: 6
+
+- type: entity
+  id: CrateArmoryExclusiveSMGs
+  parent: [ CrateWeaponSecure, BaseSecurityContraband ]
+  name: Skrzynia z ekskluzywnymi pistoletami NT
+  description: Zawiera pistolety maszynowe specjalnego wydania NT. Wymaga dostępu do zbrojowni, aby otworzyć.
+  components:
+  - type: StorageFill
+    contents:
+    - id: PMMMachineGun
+      amount: 2
+    - id: PMMMachineGunMagazine
+      amount: 6

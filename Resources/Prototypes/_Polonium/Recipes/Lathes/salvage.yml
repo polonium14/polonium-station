@@ -1,0 +1,8 @@
+- type: latheRecipe
+  id: OreBoxVacuum
+  result: OreBoxVacuum
+  completetime: 15
+  materials:
+    Steel: 3000
+    Gold: 100
+    Plasma: 100

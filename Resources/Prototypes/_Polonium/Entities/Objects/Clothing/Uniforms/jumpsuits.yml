@@ -1,0 +1,105 @@
+# SPDX-FileCopyrightText: 2026 Polonium-bot <admin@ss14.pl>
+# SPDX-FileCopyrightText: 2026 nikitosych <174215049+nikitosych@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# TODO wersje ze spódniczką dla kobiet
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitPolish
+  name: koszulka patriotyczna
+  description: Jeszcze Polska nie zginęła!
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/Uniforms/Jumpsuit/koszulka-flaga_a.rsi
+  - type: Clothing
+    sprite: _Polonium/Clothing/Uniforms/Jumpsuit/koszulka-flaga_a.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitPolishAlt1
+  name: koszulka patriotyczna z flagą
+  description: Jeszcze Polska nie zginęła!
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/Uniforms/Jumpsuit/koszulka-flaga_b.rsi
+  - type: Clothing
+    sprite: _Polonium/Clothing/Uniforms/Jumpsuit/koszulka-flaga_b.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitPolishAlt2
+  name: koszulka patriotyczna z flagą
+  description: Jeszcze Polska nie zginęła!
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/Uniforms/Jumpsuit/koszulka-flaga_c.rsi
+  - type: Clothing
+    sprite: _Polonium/Clothing/Uniforms/Jumpsuit/koszulka-flaga_c.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitPolishAlt3
+  name: koszulka patriotyczna JP
+  description: Noś z dumą, dopóki inni nie dowiedzą się, co oznacza ten skrót.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/Uniforms/Jumpsuit/koszulka-flaga_d.rsi
+  - type: Clothing
+    sprite: _Polonium/Clothing/Uniforms/Jumpsuit/koszulka-flaga_d.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitPolishAlt4
+  name: czerwona koszulka patriotyczna
+  description: Czerwona jak krew poległych za ojczyznę.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/Uniforms/Jumpsuit/koszulka-flaga_e.rsi
+  - type: Clothing
+    sprite: _Polonium/Clothing/Uniforms/Jumpsuit/koszulka-flaga_e.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitPolishAlt5
+  name: biała koszulka patriotyczna
+  description: Biała jak orzeł na tle nieba.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/Uniforms/Jumpsuit/koszulka-flaga_f.rsi
+  - type: Clothing
+    sprite: _Polonium/Clothing/Uniforms/Jumpsuit/koszulka-flaga_f.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitPolishAlt6
+  name: koszulka patriotyczna z flagą Polską Walczącą
+  description: Symbol walki o wolność i niepodległość Polski.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/Uniforms/Jumpsuit/koszulka-flaga_g.rsi
+  - type: Clothing
+    sprite: _Polonium/Clothing/Uniforms/Jumpsuit/koszulka-flaga_g.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitPolishAlt7
+  name: koszulka patriotyczna
+  description: Jeszcze Indonezja nie zginęła!
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/Uniforms/Jumpsuit/koszulka-flaga_h.rsi
+  - type: Clothing
+    sprite: _Polonium/Clothing/Uniforms/Jumpsuit/koszulka-flaga_h.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitPolishAlt8
+  name: koszulka patriotyczna z orłem
+  description: Na piersi dumny orzeł biały.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/Uniforms/Jumpsuit/koszulka-flaga_i.rsi
+  - type: Clothing
+    sprite: _Polonium/Clothing/Uniforms/Jumpsuit/koszulka-flaga_i.rsi

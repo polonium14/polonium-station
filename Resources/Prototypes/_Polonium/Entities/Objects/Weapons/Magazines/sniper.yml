@@ -1,0 +1,81 @@
+# SPDX-FileCopyrightText: 2025 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Tofi! <52051567+Tofi-Dev@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 Koilak <152626891+Koilak@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+
+  # Muszę zrobić poprawny prototyp do tłumaczenia kiedyś
+  id: BorSniperMagazineBase
+  name: Magazynek Alexis-BOR (.30 rifle any)
+  parent: [ BaseItem, BaseSecurityContraband]
+  components:
+    - type: Tag
+      tags:
+        - BorSniperMagazine
+    - type: BallisticAmmoProvider
+      mayTransfer: true
+      whitelist:
+        tags:
+          - CartridgeLightRifle
+      capacity: 7
+    - type: Item
+      size: Small
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
+    - type: Sprite
+      sprite: _Polonium/Weapons/Guns/Magazines/BOR_Mag.rsi
+      layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-1
+        map: ["enum.GunVisualLayers.Mag"]
+    - type: MagazineVisuals
+      magState: mag
+      steps: 2
+      zeroVisible: false
+    - type: Appearance
+
+- type: entity
+  id: BorSniperMagazine
+  name: Magazynek Alexis-BOR (.30 rifle)
+  parent: BorSniperMagazineBase
+  components:
+    - type: BallisticAmmoProvider
+      proto: CartridgeLightRifle
+
+- type: entity
+  id: BorSniperMagazineEmpty
+  parent: BorSniperMagazineBase
+  name: Magazynek Alexis-BOR (.30 rifle dowlone)
+  suffix: (pusty)
+  components:
+    - type: BallisticAmmoProvider
+      proto: null
+
+- type: entity
+  id: BorSniperMagazinePractice
+  name: Magazynek Alexis-BOR (.30 rifle ślepaki)
+  parent: BorSniperMagazineBase
+  components:
+    - type: BallisticAmmoProvider
+      proto: CartridgeLightRiflePractice
+
+- type: entity
+  id: BorSniperMagazineIncendiary
+  name: Magazynek Alexis-BOR (.30 rifle samozapalające)
+  parent: BorSniperMagazineBase
+  components:
+    - type: BallisticAmmoProvider
+      proto: CartridgeLightRifleIncendiary
+
+- type: entity
+  id: BorSniperMagazineUranium
+  name: Magazynek Alexis-BOR (.30 rifle uranowe)
+  parent: BorSniperMagazineBase
+  components:
+    - type: BallisticAmmoProvider
+      proto: CartridgeLightRifleUranium

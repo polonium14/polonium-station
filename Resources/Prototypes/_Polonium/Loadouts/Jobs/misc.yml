@@ -1,0 +1,87 @@
+# SPDX-FileCopyrightText: 2026 Damian Zieliński <zientasek.pl@gmail.com>
+# SPDX-FileCopyrightText: 2026 Polonium-bot <admin@ss14.pl>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+
+# Department Ties
+- type: loadout
+  id: RedTie
+  equipment:
+    neck: ClothingNeckTieRed
+
+- type: loadout
+  id: BrownTie
+  equipment:
+    neck: ClothingNeckTieBrown
+
+- type: loadout
+  id: BlueTie
+  equipment:
+    neck: ClothingNeckTieBlue
+
+- type: loadout
+  id: OrangeTie
+  equipment:
+    neck: ClothingNeckTieOrange
+
+- type: loadout
+  id: GrayTie
+  equipment:
+    neck: ClothingNeckTieGray
+
+- type: loadout
+  id: GreenTie
+  equipment:
+    neck: ClothingNeckTieGreen
+
+- type: loadout
+  id: CentcomTie
+  equipment:
+    neck: ClothingNeckTieCentcom
+
+# Scarfs loadout
+- type: loadout
+  id: BrownScarf
+  equipment:
+    neck: ClothingNeckScarfStripedBrown
+
+- type: loadout
+  id: BlackScarf
+  equipment:
+    neck: ClothingNeckScarfStripedBlack
+
+- type: loadout
+  id: GreenScarf
+  equipment:
+    neck: ClothingNeckScarfStripedGreen
+
+- type: loadout
+  id: BlueScarf
+  equipment:
+    neck: ClothingNeckScarfStripedBlue
+
+- type: loadout
+  id: LightBlueScarf
+  equipment:
+    neck: ClothingNeckScarfStripedLightBlue
+
+- type: loadout
+  id: RedScarf
+  equipment:
+    neck: ClothingNeckScarfStripedRed
+
+- type: loadout
+  id: OrangeScarf
+  equipment:
+    neck: ClothingNeckScarfStripedOrange
+
+- type: loadout
+  id: PurpleScarf
+  equipment:
+    neck: ClothingNeckScarfStripedPurple
+
+- type: loadout
+  id: CentcomScarf
+  equipment:
+    neck: ClothingNeckScarfStripedCentcom

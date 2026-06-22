@@ -1,0 +1,85 @@
+# SPDX-FileCopyrightText: 2026 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 Polonium-bot <admin@ss14.pl>
+# SPDX-FileCopyrightText: 2026 nikitosych <174215049+nikitosych@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: MobCowiekMaupa
+  parent: [ SimpleMobBase, MobCombat ]
+  name: bestia
+  description: Największy zbrodniarz kosmiczny. Mimo tego, co sugeruje nazwa, obok małpy nawet nie stał.
+  components:
+  - type: CombatMode
+  - type: InputMover
+  - type: MobMover
+  - type: Body
+    prototype: Monkey
+  - type: Sprite
+    sprite: _Polonium/Mobs/maupa.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: maupa
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: maupa
+      Dead:
+        Base: martwa
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 3.5
+    baseSprintSpeed : 5
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      150: Dead
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      125: 1.35
+  - type: MeleeWeapon
+    soundHit:
+      path: "/Audio/_Polonium/Weapons/Melee/punch.ogg"
+      params:
+        variation: 0.1
+    angle: 20
+    attackRate: 1.2
+    animation: WeaponArcBite
+    wideAnimation: WeaponArcPunch
+    damage:
+      types:
+        Slash: 3.5
+        Blunt: 2.5
+  - type: NpcFactionMember
+    factions:
+    - SimpleHostile
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+  - type: NPCUseActionOnTarget
+    actionId: ActionGoliathTentacleNerfed # Tymczasowa fajna akcja
+  #   actionId: ActionLeap # TODO
+  - type: Tag
+    tags:
+    - FootstepSound
+    - DoorBumpOpener
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatHuman
+      amount: 4
+  - type: Prying
+    pryPowered: true
+    force: true
+    speedModifier: 1.325
+    useSound:
+      path: /Audio/Items/crowbar.ogg
+  - type: Vocal
+    sounds:
+      Male: UnisexMaupa
+      Female: UnisexMaupa
+      Unsexed: UnisexMaupa
+  - type: Emoting
+  - type: Speech
+    speechVerb: LargeMob
+    speechSounds: Bass
+    allowedEmotes: ['Scream']
+  - type: Maupa

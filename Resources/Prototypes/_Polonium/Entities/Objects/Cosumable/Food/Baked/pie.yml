@@ -1,0 +1,33 @@
+# SPDX-FileCopyrightText: 2026 Polonium-bot <admin@ss14.pl>
+# SPDX-FileCopyrightText: 2026 Szyszkrzyneczka <rammus.vult@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  name: kremowka
+  parent: FoodPieBase
+  id: FoodPieKremowka
+  description: Wadowicki specjał
+  components:
+  - type: FlavorProfile
+    flavors:
+      - sweet
+      - cream
+  - type: Sprite
+    sprite: _Polonium/Objects/Cosumable/Food/Baked/pie.rsi
+    layers:
+    - state: kremowka
+  - type: Tag
+    tags:
+    - Pie
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 50
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 25
+        - ReagentId: Sugar
+          Quantity: 10
+        - ReagentId: Vitamin
+          Quantity: 5

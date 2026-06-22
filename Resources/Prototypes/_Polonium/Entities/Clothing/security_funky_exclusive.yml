@@ -1,0 +1,422 @@
+# Uniforms
+
+- type: entity
+  parent: ClothingUniformJumpsuitSecBase
+  id: ClothingUniformJumpsuitSecBaseFunkyExclusive
+  name: security service uniform
+  description: Exclusive security uniform. Not sold in SecDrobe or standard loadouts.
+  suffix: Funky
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Clothing/Uniforms/Jumpsuit/security.rsi
+  - type: Clothing
+    sprite: _Funkystation/Clothing/Uniforms/Jumpsuit/security.rsi
+
+- type: entity
+  parent: ClothingUniformSecurityDressBase
+  id: ClothingUniformSecurityDressBaseFunkyExclusive
+  name: security dress uniform
+  description: Exclusive security dress uniform.
+  suffix: Funky
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Clothing/Uniforms/Jumpsuit/security_dress.rsi
+  - type: Clothing
+    sprite: _Funkystation/Clothing/Uniforms/Jumpsuit/security_dress.rsi
+
+- type: entity
+  parent: ClothingUniformSecurityDressSenior
+  id: ClothingUniformSecurityDressSeniorFunkyExclusive
+  name: security senior dress uniform
+  description: Exclusive senior security dress uniform.
+  suffix: Funky
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Clothing/Uniforms/Jumpsuit/security_dress_senior.rsi
+  - type: Clothing
+    sprite: _Funkystation/Clothing/Uniforms/Jumpsuit/security_dress_senior.rsi
+
+- type: entity
+  parent: ClothingUniformSecurityMessBase
+  id: ClothingUniformSecurityMessBaseFunkyExclusive
+  name: security mess uniform
+  description: Exclusive security mess uniform.
+  suffix: Funky
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Clothing/Uniforms/Jumpsuit/security_mess.rsi
+  - type: Clothing
+    sprite: _Funkystation/Clothing/Uniforms/Jumpsuit/security_mess.rsi
+
+- type: entity
+  parent: ClothingUniformSecurityDressSkirtBase
+  id: ClothingUniformSecurityDressSkirtBaseFunkyExclusive
+  name: security dress uniform with skirt
+  description: Exclusive security dress skirt.
+  suffix: Funky
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Clothing/Uniforms/Jumpskirt/security_dress.rsi
+  - type: Clothing
+    sprite: _Funkystation/Clothing/Uniforms/Jumpskirt/security_dress.rsi
+
+- type: entity
+  parent: ClothingUniformSecurityDressSkirtSenior
+  id: ClothingUniformSecurityDressSkirtSeniorFunkyExclusive
+  name: security senior dress uniform with skirt
+  description: Exclusive senior security dress skirt.
+  suffix: Funky Exclusive
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Clothing/Uniforms/Jumpskirt/security_dress_senior.rsi
+  - type: Clothing
+    sprite: _Funkystation/Clothing/Uniforms/Jumpskirt/security_dress_senior.rsi
+
+- type: entity
+  parent: ClothingUniformSecurityMessSkirtBase
+  id: ClothingUniformSecurityMessSkirtBaseFunkyExclusive
+  name: security mess uniform with skirt
+  description: Exclusive security mess skirt.
+  suffix: Funky
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Clothing/Uniforms/Jumpskirt/security_mess.rsi
+  - type: Clothing
+    sprite: _Funkystation/Clothing/Uniforms/Jumpskirt/security_mess.rsi
+
+- type: entity
+  parent: ClothingUniformJumpsuitHosBase
+  id: ClothingUniformJumpsuitHosBaseFunkyExclusive
+  name: head of security's service uniform
+  description: Exclusive HoS service uniform.
+  suffix: Funky Exclusive
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Clothing/Uniforms/Jumpsuit/hos.rsi
+  - type: Clothing
+    sprite: _Funkystation/Clothing/Uniforms/Jumpsuit/hos.rsi
+
+- type: entity
+  parent: ClothingUniformDressHosBase
+  id: ClothingUniformDressHosBaseFunkyExclusive
+  name: head of security's dress uniform
+  description: Exclusive HoS dress uniform.
+  suffix: Funky
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Clothing/Uniforms/Jumpsuit/hos_dress.rsi
+  - type: Clothing
+    sprite: _Funkystation/Clothing/Uniforms/Jumpsuit/hos_dress.rsi
+
+- type: entity
+  parent: ClothingUniformMessHosBase
+  id: ClothingUniformMessHosBaseFunkyExclusive
+  name: head of security's formal uniform
+  description: Exclusive HoS formal uniform.
+  suffix: Funky
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Clothing/Uniforms/Jumpsuit/hos_mess.rsi
+  - type: Clothing
+    sprite: _Funkystation/Clothing/Uniforms/Jumpsuit/hos_mess.rsi
+
+- type: entity
+  parent: ClothingUniformHosDressSkirtBase
+  id: ClothingUniformHosDressSkirtBaseFunkyExclusive
+  name: head of security's dress uniform with skirt
+  description: Exclusive HoS dress skirt.
+  suffix: Funky
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Clothing/Uniforms/Jumpskirt/hos_dress.rsi
+  - type: Clothing
+    sprite: _Funkystation/Clothing/Uniforms/Jumpskirt/hos_dress.rsi
+
+- type: entity
+  parent: ClothingUniformMessHosDressBase
+  id: ClothingUniformMessHosDressBaseFunkyExclusive
+  name: head of security's formal dress
+  description: Exclusive HoS formal dress.
+  suffix: Funky
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Clothing/Uniforms/Jumpskirt/hos_mess.rsi
+  - type: Clothing
+    sprite: _Funkystation/Clothing/Uniforms/Jumpskirt/hos_mess.rsi
+
+- type: entity
+  parent: ClothingUniformJumpsuitCadetBase
+  id: ClothingUniformJumpsuitCadetBaseFunkyExclusive
+  name: enlisted uniform
+  description: Exclusive security cadet uniform.
+  suffix: Funky
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Clothing/Uniforms/Jumpsuit/cadet.rsi
+  - type: Clothing
+    sprite: _Funkystation/Clothing/Uniforms/Jumpsuit/cadet.rsi
+
+# Headwear
+
+- type: entity
+  parent: ClothingHeadHatBeretSecurity
+  id: ClothingHeadHatBeretSecurityFunkyExclusive
+  name: security beret
+  description: Exclusive security beret.
+  suffix: Funky
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Clothing/Head/Hats/security_beret.rsi
+  - type: Clothing
+    sprite: _Funkystation/Clothing/Head/Hats/security_beret.rsi
+
+- type: entity
+  parent: ClothingHeadHatSecurityTrooper
+  id: ClothingHeadHatSecurityTrooperFunkyExclusive
+  name: trooper hat
+  description: Exclusive trooper hat.
+  suffix: Funky Exclusive
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Clothing/Head/Hats/security.rsi
+  - type: Clothing
+    sprite: _Funkystation/Clothing/Head/Hats/security.rsi
+
+- type: entity
+  parent: ClothingHeadHatSecsoft
+  id: ClothingHeadHatSecsoftFunkyExclusive
+  name: security cap
+  description: Exclusive security cap.
+  suffix: Funky
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Clothing/Head/Hats/security_soft.rsi
+  - type: Clothing
+    sprite: _Funkystation/Clothing/Head/Hats/security_soft.rsi
+
+- type: entity
+  parent: ClothingHeadHatBeretHoS
+  id: ClothingHeadHatBeretHoSFunkyExclusive
+  name: head of security's beret
+  description: Exclusive FunkyStation-issue HoS beret.
+  suffix: Funky
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Clothing/Head/Hats/hos_beret.rsi
+  - type: Clothing
+    sprite: _Funkystation/Clothing/Head/Hats/hos_beret.rsi
+
+- type: entity
+  parent: ClothingHeadHatBeretWarden
+  id: ClothingHeadHatBeretWardenFunkyExclusive
+  name: warden's beret
+  description: Exclusive warden beret.
+  suffix: Funky
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Clothing/Head/Hats/warden_beret.rsi
+  - type: Clothing
+    sprite: _Funkystation/Clothing/Head/Hats/warden_beret.rsi
+
+- type: entity
+  parent: ClothingHeadHatHoshat
+  id: ClothingHeadHatHoshatFunkyExclusive
+  name: head of security's hat
+  description: Exclusive HoS cap.
+  suffix: Funky
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Clothing/Head/Hats/hos.rsi
+  - type: Clothing
+    sprite: _Funkystation/Clothing/Head/Hats/hos.rsi
+
+- type: entity
+  parent: ClothingHeadHatWarden
+  id: ClothingHeadHatWardenFunkyExclusive
+  name: warden's hat
+  description: Exclusive warden hat.
+  suffix: Funky
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Clothing/Head/Hats/warden.rsi
+  - type: Clothing
+    sprite: _Funkystation/Clothing/Head/Hats/warden.rsi
+
+- type: entity
+  parent: ClothingHeadHatCadetSecurity
+  id: ClothingHeadHatCadetSecurityFunkyExclusive
+  name: cadet's white sailor hat
+  description: Exclusive cadet hat.
+  suffix: Funky
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Clothing/Head/Hats/cadet.rsi
+  - type: Clothing
+    sprite: _Funkystation/Clothing/Head/Hats/cadet.rsi
+
+# Outer clothing
+
+- type: entity
+  parent: ClothingOuterArmorBasic
+  id: ClothingOuterArmorBasicFunkyExclusive
+  name: armor vest
+  description: Exclusive armor vest.
+  suffix: Funky
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Clothing/OuterClothing/Vests/security.rsi
+  - type: Clothing
+    sprite: _Funkystation/Clothing/OuterClothing/Vests/security.rsi
+
+- type: entity
+  parent: ClothingOuterArmorBasicSlim
+  id: ClothingOuterArmorBasicSlimFunkyExclusive
+  name: armor vest
+  description: Exclusive slim armor vest.
+  suffix: Funky, Slim
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Clothing/OuterClothing/Vests/security.rsi
+  - type: Clothing
+    sprite: _Funkystation/Clothing/OuterClothing/Vests/security.rsi
+
+- type: entity
+  parent: ClothingOuterCoatHoSTrench
+  id: ClothingOuterCoatHoSTrenchFunkyExclusive
+  name: head of security's armored trenchcoat
+  description: Exclusive HoS trenchcoat.
+  suffix: Funky
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Clothing/OuterClothing/Coats/hos.rsi
+  - type: Clothing
+    sprite: _Funkystation/Clothing/OuterClothing/Coats/hos.rsi
+
+- type: entity
+  parent: ClothingOuterCoatWarden
+  id: ClothingOuterCoatWardenFunkyExclusive
+  name: warden's armored jacket
+  description: Exclusive warden jacket.
+  suffix: Funky
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Clothing/OuterClothing/Coats/warden.rsi
+  - type: Clothing
+    sprite: _Funkystation/Clothing/OuterClothing/Coats/warden.rsi
+
+- type: entity
+  parent: [ClothingOuterWinterCoatToggleable, BaseSecurityContraband, AllowBackStorageClothingCombat]
+  id: ClothingOuterWinterSecFunkyExclusive
+  name: security winter coat
+  description: Exclusive security winter coat.
+  suffix: Funky
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Clothing/OuterClothing/WinterCoats/sec_wintercoat.rsi
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      right:
+      - state: inhand-right
+  - type: Clothing
+    sprite: _Funkystation/Clothing/OuterClothing/WinterCoats/sec_wintercoat.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.7
+        Heat: 0.85
+  - type: ExplosionResistance
+    damageCoefficient: 0.90
+  - type: StaminaResistance
+    damageCoefficient: 0.80
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatHoodWinterSec
+
+- type: entity
+  parent: ClothingOuterWinterHoS
+  id: ClothingOuterWinterHoSFunkyExclusive
+  name: head of security's armored winter coat
+  description: Exclusive HoS winter coat.
+  suffix: Funky
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Clothing/OuterClothing/WinterCoats/hos_wintercoat.rsi
+  - type: Clothing
+    sprite: _Funkystation/Clothing/OuterClothing/WinterCoats/hos_wintercoat.rsi
+
+- type: entity
+  parent: ClothingOuterWinterWarden
+  id: ClothingOuterWinterWardenFunkyExclusive
+  name: warden's armored winter coat
+  description: Exclusive warden winter coat.
+  suffix: Funky
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Clothing/OuterClothing/WinterCoats/ward_wintercoat.rsi
+  - type: Clothing
+    sprite: _Funkystation/Clothing/OuterClothing/WinterCoats/ward_wintercoat.rsi
+
+# Belts & shoes
+
+- type: entity
+  parent: ClothingBeltSecurity
+  id: ClothingBeltSecurityFunkyExclusive
+  name: security belt
+  description: Exclusive security belt.
+  suffix: Funky
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Clothing/Belt/security_belt.rsi
+  - type: Clothing
+    sprite: _Funkystation/Clothing/Belt/security_belt.rsi
+
+- type: entity
+  parent: ClothingBeltSecurityWebbing
+  id: ClothingBeltSecurityWebbingFunkyExclusive
+  name: security carrier
+  description: Exclusive security carrier.
+  suffix: Funky
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Clothing/Belt/security_webbing.rsi
+  - type: Clothing
+    sprite: _Funkystation/Clothing/Belt/security_webbing.rsi
+
+- type: entity
+  parent: ClothingShoesBootsWinterSec
+  id: ClothingShoesBootsWinterSecFunkyExclusive
+  name: insulated jackboots
+  description: Exclusive security winter boots.
+  suffix: Funky
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Clothing/Shoes/Boots/insulatedjackboots.rsi
+  - type: Clothing
+    sprite: _Funkystation/Clothing/Shoes/Boots/insulatedjackboots.rsi
+
+# HoS neck (loadout items)
+
+- type: entity
+  parent: ClothingNeckCloakHos
+  id: ClothingNeckCloakHosFunkyExclusive
+  name: head of security's cloak
+  description: Exclusive HoS cloak.
+  suffix: Funky
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Clothing/Neck/Cloaks/hos_cloak.rsi
+
+- type: entity
+  parent: ClothingNeckMantleHOS
+  id: ClothingNeckMantleHOSFunkyExclusive
+  name: head of security's mantle
+  description: Exclusive HoS mantle.
+  suffix: Funky
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Clothing/Neck/Mantle/hos_mantle.rsi
+  - type: Clothing
+    sprite: _Funkystation/Clothing/Neck/Mantle/hos_mantle.rsi

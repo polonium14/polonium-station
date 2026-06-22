@@ -1,0 +1,164 @@
+# SPDX-FileCopyrightText: 2026 Damian Zieliński <zientasek.pl@gmail.com>
+# SPDX-FileCopyrightText: 2026 Polonium-bot <admin@ss14.pl>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: [ ClothingNeckBase, BaseCentcommContraband ]
+  id: ClothingNeckTieCentcom
+  name: centcomm tie
+  description: A tie in centcomm's colors
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/Neck/Ties/centcomtie.rsi
+  - type: Clothing
+    sprite: _Polonium/Clothing/Neck/Ties/centcomtie.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - HamsterWearable
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckTieGray
+  name: gray-tie
+  description: A neosilk gray tie.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/Neck/Ties/tie.rsi
+  - type: Clothing
+    sprite: _Polonium/Clothing/Neck/Ties/tie.rsi
+  - type: Tag
+    tags:
+    - HamsterWearable
+    - WhitelistChameleon
+    - ClothMade
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckTieBlue
+  name: blue-tie
+  description: A neosilk blue tie.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/Neck/Ties/tie.rsi
+    color: "#52B4E9"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#52B4E9"
+      right:
+      - state: inhand-right
+        color: "#52B4E9"
+  - type: Clothing
+    sprite: _Polonium/Clothing/Neck/Ties/tie.rsi
+    clothingVisuals:
+      neck:
+      - state: equipped-NECK
+        color: "#52B4E9"
+      neck-hamster:
+      - state: equipped-NECK-hamster
+        color: "#52B4E9"
+  - type: Tag
+    tags:
+    - HamsterWearable
+    - WhitelistChameleon
+    - ClothMade
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckTieBrown
+  name: brown-tie
+  description: A neosilk brown tie.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/Neck/Ties/tie.rsi
+    color: "#A46106"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#A46106"
+      right:
+      - state: inhand-right
+        color: "#A46106"
+  - type: Clothing
+    sprite: _Polonium/Clothing/Neck/Ties/tie.rsi
+    clothingVisuals:
+      neck:
+      - state: equipped-NECK
+        color: "#A46106"
+      neck-hamster:
+      - state: equipped-NECK-hamster
+        color: "#A46106"
+  - type: Tag
+    tags:
+    - HamsterWearable
+    - WhitelistChameleon
+    - ClothMade
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckTieOrange
+  name: orange-tie
+  description: A neosilk orange tie.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/Neck/Ties/tie.rsi
+    color: "#EFB341"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#EFB341"
+      right:
+      - state: inhand-right
+        color: "#EFB341"
+  - type: Clothing
+    sprite: _Polonium/Clothing/Neck/Ties/tie.rsi
+    clothingVisuals:
+      neck:
+      - state: equipped-NECK
+        color: "#EFB341"
+      neck-hamster:
+      - state: equipped-NECK-hamster
+        color: "#EFB341"
+  - type: Tag
+    tags:
+    - HamsterWearable
+    - WhitelistChameleon
+    - ClothMade
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckTieGreen
+  name: green-tie
+  description: A neosilk green tie.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Clothing/Neck/Ties/tie.rsi
+    color: "#9FED58"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#9FED58"
+      right:
+      - state: inhand-right
+        color: "#9FED58"
+  - type: Clothing
+    sprite: _Polonium/Clothing/Neck/Ties/tie.rsi
+    clothingVisuals:
+      neck:
+      - state: equipped-NECK
+        color: "#9FED58"
+      neck-hamster:
+      - state: equipped-NECK-hamster
+        color: "#9FED58"
+  - type: Tag
+    tags:
+    - HamsterWearable
+    - WhitelistChameleon
+    - ClothMade

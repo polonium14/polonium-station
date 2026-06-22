@@ -1,0 +1,14 @@
+- type: soundCollection
+  id: CallablePhoneHandsetPickupMic
+  files:
+    - /Audio/_Polonium/Machines/Telephone/handset_pickup_mic_1.ogg
+    - /Audio/_Polonium/Machines/Telephone/handset_pickup_mic_2.ogg
+    - /Audio/_Polonium/Machines/Telephone/handset_pickup_mic_3.ogg
+
+- type: soundCollection
+  id: CallablePhoneHandsetHangupMic
+  files:
+    - /Audio/_Polonium/Machines/Telephone/handset_hangup_mic_1.ogg
+    - /Audio/_Polonium/Machines/Telephone/handset_hangup_mic_2.ogg
+    - /Audio/_Polonium/Machines/Telephone/handset_hangup_mic_3.ogg
+    - /Audio/_Polonium/Machines/Telephone/handset_hangup_mic_4.ogg
