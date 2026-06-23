@@ -1,3 +1,27 @@
+# SPDX-FileCopyrightText: 2022 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 ike709 <ike709@github.com>
+# SPDX-FileCopyrightText: 2022 ike709 <ike709@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 CMDR-JohnAlex <94056103+CMDR-JohnAlex@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Doctor-Cpu <77215380+Doctor-Cpu@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Emisse <99158783+Emisse@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2024 Kira Bridgeton <161087999+Verbalase@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <92357316+Piras314@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2024 outget <77005931+outget@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Sadie <147350443+Sadie-silly@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 vectorassembly <vectorassembly@icloud.com>
+# SPDX-FileCopyrightText: 2026 Damian Zieliński <zientasek.pl@gmail.com>
+# SPDX-FileCopyrightText: 2026 Polonium-bot <admin@ss14.pl>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - files: ["thunderdome.ogg"]
   license: "CC-BY-NC-SA-3.0"
   copyright: "-Sector11 by MashedByMachines. Converted from MP3 to OGG."
@@ -12,7 +36,7 @@
   license: "Custom"
   copyright: "Space Asshole by Chris Remo is used with special permission from the author, under the condition that the project remains non-commercial and open source. The author also requested that a link to his bandcamp be included: https://chrisremo.bandcamp.com/"
   source: "https://idlethumbs.bandcamp.com/track/space-asshole"
-  # The source is a direct link to the track, but not the "main" bandcamp of the author. Hence the link is also included separately in the copyright.
+  # The source is a direct link the the track, but not the "main" bandcamp of the author. Hence the link is also included separately in the copyright.
 
 - files: ["the_wizard.ogg"]
   license: "Custom"
@@ -38,7 +62,7 @@
 
 - files: ["title2.ogg"]
   license: "Custom"
-  copyright: "Originally composed by Jonathan Dunn for RoboCop (Game Boy) published by Ocean Software. Remixed by Eric Shumaker for his video Dilbert 3. As of October 9th, 2008 nobody owns the rights to this song and copyright action has never been taken against anyone using this song in their projects."
+  copyright: "Originally composed by Jonathan Dunn for Robocop 2 Gameboy published by Ocean Software. Remixed by Eric Shumaker for his video Dilbert 3. As of October 9th, 2008 nobody owns the rights to this song and copyright action has never been taken against anyone using this song in their projects."
   source: "https://www.youtube.com/watch?v=4o6_8Unj2mQ"
 
 - files: ["title3.ogg"]
@@ -49,12 +73,12 @@
 - files: ["comet_haley.ogg"]
   license: "CC-BY-NC-SA-3.0"
   copyright: "Comet Haley by Stellardrone. Converted from MP3 to OGG."
-  source: "https://stellardrone.bandcamp.com/track/comet-halley"
+  source: "https://freemusicarchive.org/music/Stellardrone/Light_Years_1227/07_Comet_Halley"
 
 - files: ["mod.flip-flap.ogg"]
   license: "Custom"
   copyright: "Flip Flap by X-ceed is licensed under a short but clear license (see flip-flap.txt in this directory) and is free for non-commercial use. It was converted from MOD to WAV using Schism Tracker, in 16 Bit, Non-Interpolated mode, no output equalizer settings, Ramp volume at start of sample enabled. From there it was converted to OGG Vorbis with `ffmpeg -i flip-flap.wav -q 2.9 flip-flap-renc.ogg` (quality scale chosen to match size of the OGG file being replaced). Non-interpolated mode was chosen as the module has a high enough sample rate to balance it out, but seems muffled in other interpolation modes. If 'Ramp volume at start of sample' is not enabled, a clicking phenomenon results."
-  source: "http://aminet.net/package/mods/xceed/Flipflap"
+  source: "http://aminet.net/package/mods/xceed/Fextendlipflap"
 
 - files: ["Spac_Stac.ogg"]
   license: "CC-BY-NC-SA-3.0"
@@ -63,15 +87,285 @@
 
 - files: ["pwmur.ogg"]
   license: "CC-BY-NC-SA-3.0"
-  copyright: "phoron will make us rich by Sunbeamstress/Lauren Loveless."
-  source: "https://soundcloud.com/sunbeamstress/phoron-will-make-us-rich"
+  copyright: "phoron will make us rich by Alexander Divine."
+  source: "https://soundcloud.com/alexanderdivine/phoron-will-make-us-rich"
 
 - files: ["lasers_rip_apart_the_bulkhead.ogg"]
   license: "CC-BY-NC-SA-3.0"
-  copyright: "lasers rip apart the bulkhead by Sunbeamstress/Lauren Loveless."
-  source: "https://soundcloud.com/sunbeamstress/lasers-rip-apart-the-bulkhead"
+  copyright: "lasers rip apart the bulkhead by Alexander Divine."
+  source: "https://soundcloud.com/alexanderdivine/lasers-rip-apart-the-bulkhead"
 
 - files: ["every_light_is_blinking_at_once.ogg"]
   license: "CC-BY-NC-SA-3.0"
-  copyright: "every light is blinking at once by Sunbeamstress/Lauren Loveless."
-  source: "https://soundcloud.com/sunbeamstress/every-light-is-blinking-at-once"
+  copyright: "every light is blinking at once by Alexander Divine."
+  source: "https://soundcloud.com/alexanderdivine/every-light-is-blinking-at-once"
+
+- files: ["skubstep.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "skubstep by finket."
+  source: "https://soundcloud.com/finket/skubstep-extended"
+
+- files: ["sneedsfeedandseed.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "Sneed's Feed and Seed by Burgerchild"
+  source: "https://soundcloud.com/burgerchild/sneeds-feed-and-seed-2022"
+
+- files: ["clownwmv.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "Clown.wmv by Admiral Hippie"
+  source: "https://www.youtube.com/watch?v=9whQIbNmu9s"
+
+- files: ["clownalwayswins.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "Clown Always Wins by NИTRODE"
+  source: "https://www.youtube.com/watch?v=UkN2DQYRooA"
+
+- files: ["honk.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "Honk! by SlendyMawn"
+  source: "https://www.youtube.com/watch?v=DCy3TtYwaWc"
+
+- files: ["dawsonschristian.ogg"]
+  license: "Custom"
+  copyright: "Dawson's Christian by Vic Tyler"
+  source: "https://archive.org/details/filk_carmen_mirandas_ghost"
+
+- files: ["thewizard.ogg"]
+  license: "Custom"
+  copyright: "The Wizard by Chris Remo is used with special permission from the author, under the condition that the project remains non-commercial and open source. The author also requested that a link to his bandcamp be included: https://chrisremo.bandcamp.com/"
+  source: "https://idlethumbs.bandcamp.com/track/the-wizard"
+
+- files: ["skubstub.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "DJ B1G YAPPA"
+  source: "https://forums.goobstation.com"
+
+- files: ["space_radiation.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "Space Radiation by Outer"
+  source: "https://soundcloud.com/user-957617053"
+
+- files: ["redsun.ogg"]
+  license: "CC-BY-NC-SA-4.0"
+  copyright: "Bluecometdude"
+  source: "https://soundcloud.com/bluecometdude/red-sun-in-the-sky-hq-and-extended"
+
+# Funky Station
+- files: ["ironwill.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "Iron Will by Dynzz made for Funky Station"
+  source: "https://funkystation.org/"
+
+- files: ["Minerals.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "Minerals by Pigeonbeans from Planets EP"
+  source: "https://soundcloud.com/pigeonbeans/minerals"
+
+- files: ["ashwalking.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "Ashwalking by Pigeonbeans for Space Station 14"
+  source: "https://soundcloud.com/pigeonbeans/ashwalking"
+
+- files: ["droopy_likes_your_face.ogg"]
+  license: "Custom"
+  copyright: "Droopy likes your face by C418. License is https://creativecommons.org/licenses/by-nc-nd/3.0/deed.en"
+  source: "https://c418.bandcamp.com/album/life-changing-moments-seem-minor-in-pictures"
+
+- files: ["dagd.ogg"]
+  license: "CC-BY-NC-SA-4.0"
+  copyright: "D.A.G.D by vectorassembly, a funky exclusive"
+  source: "https://vectorassembly.org"
+
+- files: ["meltdown.ogg"]
+  license: "CC-BY-NC-SA-4.0"
+  copyright: "M for Meltdown by vectorassembly"
+  source: "https://vectorassembly.org"
+
+# Goobstation
+- files: ["horn.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "Honk! by SlendyMawn, Remastered by Scruq"
+  source: "https://www.youtube.com/watch?v=ujY7djCJVwQ"
+
+- files: ["marhaba.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "Marhaba by Ian Alex Mac. Converted from MP3 to OGG."
+  source: "https://freemusicarchive.org/music/Ian_Alex_Mac/Cues/Marhaba"
+
+- files: ["monument.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "Monument by Six Umbrellas."
+  source: "https://sixumbrellas.bandcamp.com/album/the-psychedelic-and"
+
+- files: ["the_future_soon.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "The Future Soon by Jonathan Coulton"
+  source: "https://www.youtube.com/watch?v=l5PEz3kGbp4"
+
+# Delta-V
+- files: ["434387_Time_Lapse_of_Clouds.ogg"]
+  license: "CC-BY-3.0"
+  copyright: "==(Time Lapse of Clouds)== by Buoy"
+  source: "https://www.newgrounds.com/audio/listen/434387"
+
+- files: ["a_different_reality_lagoona_remix.xm.ogg"]
+  license: "CC-BY-4.0"
+  copyright: "A.D.R (Lagoona rmx) by Andreas Viklund"
+  source: "https://modarchive.org/index.php?request=view_by_moduleid&query=134786"
+
+- files: ["autumnal_equinox.xm.ogg"]
+  license: "CC-BY-NC-4.0"
+  copyright: "Autumnal Equinox by lemonade"
+  source: "https://modarchive.org/index.php?request=view_by_moduleid&query=143993"
+
+- files: ["aggravated.it.ogg"]
+  license: "CC-BY-NC-SA-4.0"
+  copyright: "MEL -Aggravated Assault by melcom"
+  source: "https://modarchive.org/index.php?request=view_by_moduleid&query=176234"
+
+- files: ["Black_Heat.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Black Heat by Ross Bugden, converted from WAV to OGG"
+  source: "https://soundcloud.com/rossbugden/intense-and-upbeat-electronic-trailer-music-black-heat-copyright-and-royalty-free"
+
+- files: ["drozerix_-_alone.xm.ogg"]
+  license: "Custom"
+  copyright: "Alone by Drozerix"
+  source: "https://modarchive.org/index.php?request=view_by_moduleid&query=199968"
+
+- files: ["drozerix_-_leisurely_voice.xm.ogg"]
+  license: "Custom"
+  copyright: "Leisurely Voice by Drozerix"
+  source: "https://modarchive.org/index.php?request=view_by_moduleid&query=183837"
+
+- files: ["Get_It_Done.ogg"]
+  license: "CC0-1.0"
+  copyright: "Get It Done by A-Guy, converted from mp3 to OGG"
+  source: "https://github.com/A-Guy173/Music/blob/main/getitdone.mp3"
+
+- files: ["hackers.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "Hackers by Karl Casey @ White Bat Audio"
+  source: "https://www.youtube.com/watch?v=k8nHWwO1U2Q"
+
+- files: ["melcom-cyberpunk.it.ogg"]
+  license: "CC-BY-NC-SA-4.0"
+  copyright: "MEL -Cyberpunk by melcom"
+  source: "https://modarchive.org/index.php?request=view_by_moduleid&query=184215"
+
+- files: ["midori_-_conundrum_final.it.ogg"]
+  license: "CC-BY-NC-SA-4.0"
+  copyright: "Conundrum by Midori Mizuno"
+  source: "https://modarchive.org/index.php?request=view_by_moduleid&query=181705"
+
+- files: ["Patricia_Taxxon_-_Minute.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Minute by Patricia Taxxon off the album 'Aeroplane'"
+  source: "https://patriciataxxon.bandcamp.com/track/minute"
+
+- files: ["psirius_-_nights_of_orion.xm.ogg"]
+  license: "CC-BY-NC-SA-4.0"
+  copyright: "Nights of Orion by Psirius"
+  source: "https://modarchive.org/index.php?request=view_by_moduleid&query=184962"
+
+- files: ["psirius_-_nymphs_of_the_forest.mptm.ogg"]
+  license: "CC-BY-NC-SA-4.0"
+  copyright: "Nymphs of the forest by Psirius"
+  source: "https://modarchive.org/index.php?request=view_by_moduleid&query=185545"
+
+- files: ["superposition.ogg"]
+  license: "CC-BY-NC-3.0"
+  copyright: "Superposition by Amie Waters"
+  source: "https://amiewaters.bandcamp.com/track/superposition-2"
+
+- files: ["thestation.ogg"]
+  license: "CC0-1.0"
+  copyright: "The Station by A-Guy, converted from mp3 to OGG"
+  source: "https://github.com/A-Guy173/Music/blob/main/thestation.mp3"
+
+- files: ["Undefined_Theory.ogg"]
+  license: "CC0-1.0"
+  copyright: "Undefined Theory by A-Guy, converted to OGG"
+  source: "https://www.youtube.com/watch?v=FIOs2t84MKo"
+
+# 🌟Starlight🌟
+- files: ["cosmonaut.ogg"]
+  license: "CC-BY-ND-4.0"
+  copyright: "Cosmonaut by Artifyber, for InanimateIJK & their associated projects."
+  source: "https://soundcloud.com/r3dz3r/cosmonaut"
+
+- files: ["chasing-cosmic-dreams.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "Created by Darkrell in Udio v1.5"
+  source: "https://github.com/ss14Starlight/space-station-14"
+
+- files: ["breacher.ogg"]
+  license: "CC-BY-ND-4.0"
+  copyright: "Breacher by Artifyber, for InanimateIJK & their associated projects."
+  source: "https://soundcloud.com/r3dz3r/breacher"
+
+- files: ["Resistance.ogg"]
+  license: "CC-BY-ND-4.0"
+  copyright: "Resistance by Artifyber, for InanimateIJK & their associated projects."
+  source: "https://soundcloud.com/r3dz3r/resistance"
+
+- files: ["echoes-in-the-deep.ogg"]
+  license: "CC-BY-ND-4.0"
+  copyright: "Echoes in the Deep by nightyshade @ Trieste Port Discord"
+  source: "https://discord.com/channels/1253266481093808140/1307494081366069331/1370530213653385286"
+
+- files: ["timefracture.ogg"]
+  license: "CC-BY-3.0"
+  copyright: "Timefracture by Bad History, shortened by InanimateIJK."
+  source: "https://www.youtube.com/watch?v=INBbCL335NE"
+
+- files: ["762_treastise.ogg"]
+  license: "CC-BY-3.0"
+  copyright: "762 Treastise by Haplogynae, permission given to STARLIGHT."
+  source: "https://soundcloud.com/haplogynae/mikazu-762-treatise"
+
+- files: ["hull_rupture.ogg"]
+  license: "CC-BY-3.0"
+  copyright: "Hull Rupture by Haplogynae, permission given to STARLIGHT."
+  source: "https://soundcloud.com/haplogynae/baystation-12-hull-rupture"
+
+- files: ["Liberation.ogg"]
+  license: "CC-BY-3.0"
+  copyright: "Bolgarich, allowed if referred as the creator to the piece. Slowed version of original."
+  source: "https://www.youtube.com/watch?v=R9kPrVKzFCw"
+
+# RMC
+- files: ["Super_Nova_In_The_Catacombs.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Super Nova In The Catacombs by WigWoo1 on youtube. https://www.youtube.com/@WigWoo1"
+  source: "https://www.youtube.com/watch?v=ly3-rhDTeOU&ab_channel=WigWoo1"
+
+- files: ["shadowinthesilvernebula.ogg"]
+  license: "CC-BY-SA-4.0"
+  copyright: "Shadow in the Silver Nebula by Mendax on archive.org"
+  source: "https://archive.org/details/shadowinthesilvernebula"
+
+- files: ["enemy_is_unknown.ogg"]
+  license: "CC-BY-4.0"
+  copyright: "Nighty"
+  source: "https://discord.com/channels/1168210010233376858/1168217282988757116/1294247035158925314"
+
+- files: ["the_fallen_queen.ogg"]
+  license: "CC-BY-4.0"
+  copyright: "Bolgarich"
+  source: "https://discord.com/channels/1168210010233376858/1168217282988757116/1292488660150915124"
+
+- files: ["Dire_Situation.ogg"]
+  license: "Custom"
+  copyright: "Dire Situation by GoodShowOldChap (aka ahtelyahwat, aka Rick O'Shea) licensed as CC0-1.0, made with sampled audio: Generative glitch radio loop by Rmshh -- https://freesound.org/s/744013/ -- License: Attribution 4.0"
+  source: "https://discord.com/channels/1168210010233376858/1168217282988757116/1299948750286098533"
+
+- files: ["Time_Is_Running_Out.ogg"]
+  license: "CC-BY-4.0"
+  copyright: "Made by Nighty"
+  source: "https://discord.com/channels/1168210010233376858/1168217282988757116/1303410400095633449"
+
+- files: ["Dropzone.ogg"]
+  license: "CC-BY-SA-4.0"
+  copyright: "Made by Qwesta"
+  source: "https://discord.com/channels/1168210010233376858/1168217282988757116/1311095405647495401"
