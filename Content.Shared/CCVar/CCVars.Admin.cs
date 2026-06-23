@@ -201,4 +201,11 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<bool> GameAdminJobTracking =
         CVarDef.Create("game.admin_job_tracking", false, CVar.SERVERONLY);
+
+    /// <summary>
+    ///     Minimum entity search result count before notifying other admins in admin chat and admin logs.
+    ///     Set to 0 to disable logging.
+    /// </summary>
+    public static readonly CVarDef<int> EntitySearchLogMinResults =
+        CVarDef.Create("admin.entity_search_log_min_results", 0, CVar.SERVERONLY);
 }

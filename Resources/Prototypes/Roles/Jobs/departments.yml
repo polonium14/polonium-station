@@ -110,6 +110,7 @@
   - SecurityOfficer
   - Detective
   - Warden
+  - Brigmedic # Polonium
 
 - type: department
   id: Science

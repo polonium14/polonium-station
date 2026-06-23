@@ -145,3 +145,6 @@
 
 - type: playTimeTracker
   id: JobWarden
+
+- type: playTimeTracker # Polonium
+  id: JobBrigmedic

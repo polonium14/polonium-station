@@ -11,3 +11,4 @@ ui-bql-results-tp = TP
 ui-bql-results-vv-tooltip = View entity variables
 ui-bql-results-tp-tooltip = Teleport to entity
 ui-bql-results-status = { $count } entities
+ui-bql-results-status-more = { $count } entities (more available)

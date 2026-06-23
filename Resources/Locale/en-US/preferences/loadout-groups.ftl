@@ -205,3 +205,10 @@ loadout-group-paramedic-shoes = Paramedic shoes
 loadout-group-reporter-jumpsuit = Reporter jumpsuit
 
 loadout-group-psychologist-jumpsuit = Psychologist jumpsuit
+
+# Polonium - Brigmedic
+loadout-group-brigmedic-head = Brigmedic head
+loadout-group-brigmedic-jumpsuit = Brigmedic jumpsuit
+loadout-group-brigmedic-backpack = Brigmedic backpack
+loadout-group-brigmedic-outerclothing = Brigmedic outer clothing
+loadout-group-brigmedic-glasses = Brigmedic glasses

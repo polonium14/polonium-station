@@ -23,6 +23,7 @@
     - AnomalyShadow
     - AnomalyTech
     #- AnomalySanta
+    - AnomalyBanana
     rareChance: 0.3
     rarePrototypes:
     - RandomAnomalyInjectorSpawner
