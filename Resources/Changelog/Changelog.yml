@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: VerinSenpai
-  changes:
-  - message: Air alarm devices now return to their previous settings after a power
-      cycle.
-    type: Fix
-  id: 7957
-  time: '2025-02-15T06:07:15.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34887
 - author: DoutorWhite & metalgearsloth
   changes:
   - message: Added planet lighting for indoor / outdoor areas.
@@ -4191,3 +4183,12 @@
   id: 9264
   time: '2026-06-22T22:16:34.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/707
+- author: Czuat
+  changes:
+  - message: "T\u0142umaczenie SPO Medycyny, teraz b\u0119dziecie wiedzie\u0107 czy\
+      \ jak wam chirurg g\u0142owe odcio\u0142, to czy da si\u0119 to naprawi\u0107\
+      ."
+    type: Add
+  id: 9265
+  time: '2026-06-23T06:42:02.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/697
