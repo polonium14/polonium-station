@@ -4,8 +4,10 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using System.Collections.Generic;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Polonium.CallablePhone;
 
@@ -18,35 +20,18 @@ public sealed partial class CallablePhoneComponent : Component
     public const string HandsetSlotId = "handset";
 
     /// <summary>
-    /// If true, this phone is on the public station directory (red, blue, banana).
+    /// Phone groups this line belongs to. Other phones may dial this one when their
+    /// <see cref="DialableGroups"/> overlaps this set. An empty set means unlisted.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public bool ListedInDirectory = true;
+    public HashSet<ProtoId<PhoneGroupPrototype>> PhoneGroups = new();
 
     /// <summary>
-    /// If true, may only dial listed public lines, not the private CentComm line (blue, banana).
+    /// Phone groups this line may dial into. A call is allowed when this set overlaps
+    /// the receiver's <see cref="PhoneGroups"/>.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public bool ExcludeCentCommFromDial;
-
-    /// <summary>
-    /// If true, may dial and see the private CentComm line (red phone).
-    /// </summary>
-    [DataField, AutoNetworkedField]
-    public bool IncludeCentCommInDirectory;
-
-    /// <summary>
-    /// If true, the handset directory lists only CentComm lines (station red phone).
-    /// Requires <see cref="IncludeCentCommInDirectory"/>.
-    /// </summary>
-    [DataField, AutoNetworkedField]
-    public bool OnlyCentCommInDirectory;
-
-    /// <summary>
-    /// If true, this line is private but may dial any public listed line (blood-red phone).
-    /// </summary>
-    [DataField, AutoNetworkedField]
-    public bool PrivateLine;
+    public HashSet<ProtoId<PhoneGroupPrototype>> DialableGroups = new();
 
     /// <summary>
     /// If true, calling this phone opens an admin chat window (CentComm line).
