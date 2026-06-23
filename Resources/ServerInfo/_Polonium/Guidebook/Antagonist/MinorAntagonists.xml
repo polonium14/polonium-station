@@ -40,7 +40,7 @@ SPDX-License-Identifier: MIT
   - Esencję zużywa się również podczas używania [bold]umiejętności[/bold].
   - Aby zdobyć esencję, najpierw musisz [bold]zbadać[/bold] różne dusze pod kątem ich wartości. Bardziej wartościowe dusze dają więcej esencji. Następnie musisz ją [bold]wyssać[/bold], gdy ofiara otrzyma krytyczne trafienie, zginie lub zasypia. Wszystko to wykonuje się za pomocą [color=#ffe566][bold][keybind="Use"][/bold][/color].
   - [bold]Skradziona esencja[/bold] służy do kupowania nowych umiejętności, które ułatwiają obezwładnianie załogi.
-  - Podczas wysysania duszy lub używania umiejętności jesteś [bold]podatny na ataki[/bold]. O tym, że jesteś podatny, informuje efekt statusu [color=#8f63e6][italic]Corporeal[/italic][/color].
+  - Podczas wysysania duszy lub używania umiejętności jesteś [bold]podatny na ataki[/bold]. O tym, że jesteś podatny, informuje efekt statusu [color=#8f63e6][italic]Cielesny[/italic][/color].
 
   # Król Szczurów
 
@@ -54,8 +54,8 @@ SPDX-License-Identifier: MIT
 
   Królowie szczurów to niezwykle duże gryzonie, zdolne do [color=#ffe566]tworzenia ogromnych armii szczurów[/color] dzięki spożywaniu równie ogromnych ilości pożywienia.
   - Dysponujesz kilkoma zdolnościami, których użycie kosztuje cię [bold]głód[/bold].
-  - Jedną z takich zdolności jest [color=#ffe566][italic]Stwórz armię[/italic][/color], która przywołuje [bold]Sługę Szczura[/bold]. Możesz [bold]rozkazać[/bold] swoim sługom, by pozostali na miejscu, podążali za tobą, zaatakowali wybrany przez ciebie cel lub atakowali losowo.
-  - Możesz wyczarować chmurę [color=#77b58e]amoniaku[/color] za pomocą [color=purple][italic]Domeny Króla Szczurów[/italic][/color]. Ten fioletowy gaz jest lekko trujący dla ludzi, ale leczy szczury.
+  - Jedną z takich zdolności jest [color=#ffe566][italic]Zbierz armię[/italic][/color], która przywołuje [bold]Sługę Szczura[/bold]. Możesz [bold]rozkazać[/bold] swoim sługom, by pozostali na miejscu, podążali za tobą, zaatakowali wybrany przez ciebie cel lub atakowali losowo.
+  - Możesz wyczarować chmurę [color=#77b58e]amoniaku[/color] za pomocą [color=purple][italic]Władztwo Króla Szczurów[/italic][/color]. Ten fioletowy gaz jest lekko trujący dla ludzi, ale leczy szczury.
   - [color=#9daa98][italic]Przeszukaj[/italic][/color] pojemnik na śmieci, korzystając z menu kontekstowego. Wykorzystaj to, aby znaleźć [bold]resztki jedzenia[/bold] i powiększyć swoją armię.
   - Oprócz swoich umiejętności [bold]jesteś silniejszy niż większość innych zwierząt[/bold]. Ty i twoi słudzy potraficie mówić, a oboje jesteście na tyle mali, że zmieścicie się pod śluzami i stołami.
   - [bold]Twoi podwładni są bardzo delikatni![/bold] Uważaj na przestrzenie bez powietrza, eksplozje i ostrza broni białej.
@@ -70,14 +70,14 @@ SPDX-License-Identifier: MIT
     <GuideEntityEmbed Entity="MobCarp" Caption=""/>
   </Box>
 
-  Kosmiczne smoki to gigantyczne ryby z innych wymiarów, które potrafią [color=#ff8a8a]pożerać członków załogi[/color] i tworzyć [color=#4b7fcc]szczeliny karpiowe[/color].
+  Kosmiczne smoki to gigantyczne ryby z innych wymiarów, które potrafią [color=#ff8a8a]pożerać członków załogi[/color] i tworzyć [color=#4b7fcc]karpio wyrwy[/color].
   - Smoki mają potężne szczęki, które pozwalają im [color=#ff8a8a][italic]pożerać[/italic][/color] elementy infrastruktury, takie jak śluzy, okna i ściany.
   - Potrafią również leczyć się, używając [color=#ff8a8a][italic]Pożerania[/italic][/color] na członkach załogi, którzy stracili przytomność lub zginęli.
   - Twój [color=#ffb86b][italic]Oddech smoka[/italic] [/color] to [bold]płonący pocisk[/bold], który leci po prostej trajektorii, wielokrotnie eksplodując i podpalając wszystko na swojej drodze. Staraj się nie trafić w swoje karpie!
-  - Masz zdolność [color=#4b7fcc][italic]Przywołania Szczeliny Karpiowej[/italic][/color]. Szczeliny okresowo generują [bold]kosmiczne karpie[/bold] i ładują energię przez 5 minut, [bold]w trakcie których są podatne na ataki[/bold]. Po upływie 5 minut stają się niezniszczalne i będą przywoływać karpie, dopóki smok żyje.
-  - Doświadczysz [bold]tymczasowego, osłabiającego efektu sprzężenia zwrotnego[/bold], jeśli jedna z twoich szczelin zostanie zniszczona przed zakończeniem ładowania.
-  - Jeśli minie pięć minut od momentu pojawienia się szczeliny lub od ostatniego ładowania szczeliny, [bold]znikniesz[/bold].
-  - Smoki, które mają maksymalnie 3 w pełni naładowane szczeliny, [bold]nigdy nie znikną[/bold], ale nadal są śmiertelne.
+  - Masz zdolność [color=#4b7fcc][italic]Przywołania Karpio Wyrwy[/italic][/color]. Wyrwy okresowo generują [bold]kosmiczne karpie[/bold] i ładują energię przez 5 minut, [bold]w trakcie których są podatne na ataki[/bold]. Po upływie 5 minut stają się niezniszczalne i będą przywoływać karpie, dopóki smok żyje.
+  - Doświadczysz [bold]tymczasowego, osłabiającego efektu sprzężenia zwrotnego[/bold], jeśli jedna z twoich wyrw zostanie zniszczona przed zakończeniem ładowania.
+  - Jeśli minie pięć minut od momentu pojawienia się wyrwy lub od ostatniego ładowania wyrwy, [bold]znikniesz[/bold].
+  - Smoki, które mają maksymalnie 3 w pełni naładowane wyrwy, [bold]nigdy nie znikną[/bold], ale nadal są śmiertelne.
 
   # Szlamy i pająki
 
