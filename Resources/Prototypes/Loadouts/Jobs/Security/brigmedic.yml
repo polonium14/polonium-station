@@ -1,0 +1,123 @@
+# Head
+- type: loadout
+  id: BrigmedicBeret
+  equipment:
+    head: ClothingHeadHatBeretBrigmedic
+
+- type: loadout
+  id: SecurityMedicBeret
+  equipment:
+    head: ClothingHeadHatBeretSecurityMedic
+
+- type: loadout
+  id: SecurityMedicHelmet
+  equipment:
+    head: ClothingHeadHelmetSecurityMedic
+
+# Eyes
+- type: loadout
+  id: BrigmedicNormGlasses
+  equipment:
+    eyes: ClothingEyesGlassesMedSec
+
+- type: loadout
+  id: BrigmedicHud
+  equipment:
+    eyes: ClothingEyesHudMedSec
+
+# Jumpsuit
+- type: loadout
+  id: BrigmedicJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitBrigmedic
+  groupBy: "jumpsuit"
+
+- type: loadout
+  id: BrigmedicJumpskirt
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtBrigmedic
+  groupBy: "jumpskirt"
+
+# OuterClothing
+- type: loadout
+  id: ArmoredMedicalGown
+  equipment:
+    outerClothing: ClothingOuterCoatAMG
+
+- type: loadout
+  id: VestArmorMedSec
+  equipment:
+    outerClothing: ClothingOuterVestArmorMedSec
+  groupBy: "armor"
+
+# Back
+- type: loadout
+  id: BrigmedicBackpack
+  equipment:
+    back: ClothingBackpackBrigmedic
+
+- type: loadout
+  id: BrigmedicSatchel
+  equipment:
+    back: ClothingBackpackSatchelBrigmedic
+
+- type: loadout
+  id: BrigmedicDuffel
+  equipment:
+    back: ClothingBackpackDuffelBrigmedic
+
+# Loadout groups
+- type: loadoutGroup
+  id: BrigmedicHead
+  name: loadout-group-brigmedic-head
+  minLimit: 0
+  loadouts:
+  - BrigmedicBeret
+  - SecurityMedicBeret
+  - SecurityMedicHelmet
+
+- type: loadoutGroup
+  id: BrigmedicJumpsuit
+  name: loadout-group-brigmedic-jumpsuit
+  loadouts:
+  - BrigmedicJumpsuit
+  - BrigmedicJumpskirt
+
+- type: loadoutGroup
+  id: BrigmedicOuterClothing
+  name: loadout-group-brigmedic-outerclothing
+  loadouts:
+  - ArmoredMedicalGown
+  - VestArmorMedSec
+  - SecurityOfficerWintercoat
+
+- type: loadoutGroup
+  id: BrigmedicBackpack
+  name: loadout-group-brigmedic-backpack
+  loadouts:
+  - BrigmedicBackpack
+  - BrigmedicSatchel
+  - BrigmedicDuffel
+
+- type: loadoutGroup
+  id: BrigmedicGlasses
+  name: loadout-group-brigmedic-glasses
+  minLimit: 1
+  loadouts:
+  - BrigmedicNormGlasses
+  - BrigmedicHud
+
+# Role loadout
+- type: roleLoadout
+  id: JobBrigmedic
+  groups:
+  - BrigmedicHead
+  - BrigmedicJumpsuit
+  - BrigmedicOuterClothing
+  - BrigmedicGlasses
+  - BrigmedicBackpack
+  - SecurityBelt
+  - SecurityShoes
+  - SurvivalSecurity
+  - Trinkets
+  - GroupSpeciesBreathToolSecurity
