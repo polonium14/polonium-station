@@ -26,3 +26,17 @@
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
+
+- type: chameleonOutfit
+  id: BrigmedicChameleonOutfit
+  job: Brigmedic
+  hasMindShield: true
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitBrigmedic
+    outerClothing: ClothingOuterCoatAMG
+    head: ClothingHeadHatBeretBrigmedic
+    eyes: ClothingEyesHudMedical
+    mask: ClothingMaskBreathMedicalSecurity
+    gloves: ClothingHandsGlovesNitrile
+    shoes: ClothingShoesColorRed
+    belt: ClothingBeltMedicalFilled

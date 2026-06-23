@@ -201,7 +201,7 @@
       visible: false
       shader: unshaded
       map: [ "light" ]
-    - state: icon-up
+    - state: icon-flash
       visible: false
       map: [ "visor_icon" ]
   - type: HandheldLight
@@ -266,7 +266,7 @@
       enum.HelmetVisorVisuals.IsDown:
         visor_icon:
           False: {visible: false}
-          True: {visible: true, state: icon-up}
+          True: {visible: true, state: icon-flash}
         unshaded_base:
           False: {visible: true}
           True: {visible: false}

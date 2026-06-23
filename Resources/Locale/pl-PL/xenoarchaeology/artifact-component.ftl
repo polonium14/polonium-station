@@ -1,7 +1,5 @@
 ### Commands
 
-cmd-unlocknode-desc = Odblokowuje węzeł na danym artefakcie
-cmd-unlocknode-help = unlocknode <uid artefaktu> <uid węzła>
 cmd-parse-failure-unlocknode-arg-num = Nieprawidłowa liczba argumentów
 cmd-parse-failure-unlocknode-invalid-entity = Podany netEntity nie jest prawidłowym węzłem
 

@@ -540,7 +540,6 @@
   parent: [WeaponDisablerPractice, BaseSecurityCommandContraband]
   id: WeaponDisabler
   description: A self-defense weapon that exhausts organic targets, weakening them until they collapse.
-  categories: [ DoNotMap ]
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Battery/disabler.rsi
@@ -570,7 +569,6 @@
   parent: [BaseWeaponBattery, BaseSecurityContraband]
   id: WeaponDisablerSMG
   description: Advanced weapon that exhausts organic targets, weakening them until they collapse.
-  categories: [ DoNotMap ]
   components:
   - type: Item
     size: Large
@@ -612,7 +610,6 @@
   parent: [BaseWeaponBatterySmall, BaseSecurityContraband]
   id: WeaponTaser
   description: A low-capacity, energy-based stun gun used by security teams to subdue targets at close range.
-  categories: [ DoNotMap ]
   components:
   - type: Tag
     tags:
