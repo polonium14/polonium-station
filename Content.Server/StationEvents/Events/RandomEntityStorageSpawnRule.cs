@@ -44,5 +44,10 @@ public sealed class RandomEntityStorageSpawnRule : StationEventSystem<RandomEnti
         {
             Del(spawn);
         }
+        else if (comp.FirstOpenStorageSound != null)
+        {
+            storageComp.FirstOpenSound = comp.FirstOpenStorageSound;
+            Dirty(locker, storageComp);
+        }
     }
 }

@@ -127,6 +127,18 @@ public sealed partial class EntityStorageComponent : Component, IGasMixtureHolde
     public SoundSpecifier OpenSound = new SoundPathSpecifier("/Audio/Effects/closetopen.ogg");
 
     /// <summary>
+    /// Sound to play the first time the storage is opened.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public SoundSpecifier? FirstOpenSound;
+
+    /// <summary>
+    /// Whether the storage has been opened at least once.
+    /// </summary>
+    [AutoNetworkedField]
+    public bool FirstTimeOpened;
+
+    /// <summary>
     /// Whitelist for what entities are allowed to be inserted into this container. If this is not null, the
     /// standard requirement that the entity must be an item or mob is waived.
     /// </summary>

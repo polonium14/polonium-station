@@ -2,6 +2,7 @@ using System.Linq;
 using System.Numerics;
 using Content.Shared.Destructible;
 using Content.Shared.Foldable;
+using Content.Shared.Ghost;
 using Content.Shared.Hands.Components;
 using Content.Shared.Explosion;
 using Content.Shared.Interaction;
@@ -224,7 +225,7 @@ public abstract class SharedEntityStorageSystem : EntitySystem
         }
     }
 
-    public void OpenStorage(EntityUid uid, EntityStorageComponent? component = null)
+    public void OpenStorage(EntityUid uid, EntityStorageComponent? component = null, EntityUid? user = null)
     {
         if (!Resolve(uid, ref component))
             return;
@@ -239,7 +240,20 @@ public abstract class SharedEntityStorageSystem : EntitySystem
         EmptyContents(uid, component);
         ModifyComponents(uid, component);
         if (_net.IsClient && _timing.IsFirstTimePredicted)
-            _audio.PlayPvs(component.OpenSound, uid);
+        {
+            if (component is { FirstOpenSound: not null, FirstTimeOpened: false } &&
+                user != null && !HasComp<GhostComponent>(user.Value))
+            {
+                _audio.PlayPvs(component.FirstOpenSound, uid);
+            }
+            else
+            {
+                _audio.PlayPvs(component.OpenSound, uid);
+            }
+        }
+
+        component.FirstTimeOpened = true;
+        Dirty(uid, component);
         ReleaseGas(uid, component);
         var afterev = new StorageAfterOpenEvent();
         RaiseLocalEvent(uid, ref afterev);
@@ -390,7 +404,7 @@ public abstract class SharedEntityStorageSystem : EntitySystem
         if (!CanOpen(user, target, silent))
             return false;
 
-        OpenStorage(target);
+        OpenStorage(target, user: user);
         return true;
     }
 

@@ -28,6 +28,7 @@
     earliestStart: 20
   - type: RandomEntityStorageSpawnRule
     prototype: MobCowiekMaupa
+    openStorageSound: /Audio/_Polonium/Effects/Jumpscare/jumpscare1.ogg
   - type: DynamicRuleCost
     cost: 250
 
