@@ -15,16 +15,16 @@ SPDX-License-Identifier: MIT
 
   ## Fabrykator egzoszkieletów
 <Box>
-<GuideEntityEmbed Entity="ExosuitFabricator" Caption="EFabrykator egzoszkieletów"/>
+<GuideEntityEmbed Entity="ExosuitFabricator" Caption="Fabrykator egzoszkieletów"/>
 </Box>
-  W [color=#e8c878]fabrykatorze egzoszkieletów[/color] ibędziesz drukować większość części do swoich konstrukcji, takich jak:
+  W [color=#e8c878]fabrykatorze egzoszkieletów[/color] będziesz drukować większość części do swoich konstrukcji, takich jak:
   - kończyny [textlink="cyborgów" link="Cyborgs"]
   - części i wyposażenie mechów
   - czujniki zbliżeniowe
 
   Obsługa fabrykatora egzoszkieletów przebiega tak samo, jak w przypadku każdej innej tokarki na stacji; wystarczy po prostu kliknąć fabrykator, aby otworzyć interfejs użytkownika, a następnie kliknąć ikonę części, którą chcesz wydrukować.
   - Nie ma żadnych schematów? Kliknij przycisk [color=#e8c878]synchronizuj[/color] w interfejsie użytkownika, aby sprawdzić, czy pojawiły się nowe schematy. Jeśli nawet wtedy nic się nie wyświetli, prawdopodobnie nie zbadałeś jeszcze odpowiedniej technologii!
-  - Jeśli schemat jest wyszarzony, prawdopodobnie wynika to z braku materiałów. Aby dodać nowe materiały (takie jak [color=#99A3A4]stal[/color], plastik [color=#ECF0F1]lub [color=#AED6F1]szkło[/color]), wystarczy kliknąć drukarkę, trzymając przy tym dany materiał.
+  - Jeśli schemat jest wyszarzony, prawdopodobnie wynika to z braku materiałów. Aby dodać nowe materiały (takie jak [color=#99A3A4]stal[/color], [color=#ECF0F1]plastik[/color] lub [color=#AED6F1]szkło[/color]), wystarczy kliknąć drukarkę, trzymając przy tym dany materiał.
 
   Każda stacja jest domyślnie wyposażona w pełen zestaw sprzętu robotycznego, ale jeśli dostępna jest technologia [color=#e8c878]Robotyka[/color], możesz zbudować kolejny fabrykator, co pozwoli ci na wykonanie odpowiedniej płytki drukowanej.
 

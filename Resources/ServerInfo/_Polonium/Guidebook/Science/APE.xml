@@ -27,7 +27,7 @@ Każdy typ cząstki powoduje następujące efekty:
 
 - [color=crimson]Niebezpieczeństwo:[/color] Zwiększa nasilenie anomalii.
 - [color=plum]Niestabilność:[/color] Zwiększa niestabilność anomalii.
-- [color=goldenrod]Hamowanie:[/color] Zwiększa stabilność anomalii kosztem jej zdrowia – jeśli anomalia zostanie trafiona zbyt dużą liczbą cząstek ograniczających, ulegnie zapadnięciu, pozostawiając po sobie rdzeń anomalii.
+- [color=goldenrod]Hamowanie:[/color] Zwiększa stabilność anomalii kosztem jej stanu – jeśli anomalia zostanie trafiona zbyt dużą liczbą cząstek powstrzymujących, ulegnie zapadnięciu, pozostawiając po sobie rdzeń anomalii.
 - [color=#6b75fa]Transformacja:[/color] Zwiększa nasilenie anomalii, dając szansę na zmianę jej zachowania.
 
 Każdy efekt odpowiada konkretnemu typowi cząstki, co można ustalić poprzez skanowanie anomalii.

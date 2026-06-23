@@ -12,7 +12,7 @@ SPDX-License-Identifier: MIT
   # Raporty dotyczące artefaktów
   Znaczna część rozgrywki w ksenoarcheologii opiera się na interpretacji raportów dotyczących artefaktów, które są generowane na [color=#e8c878]konsoli analitycznej[/color] po zeskanowaniu artefaktu. Raporty zawierają następujące informacje:
 
-  - [color=#e8c878] ID obiektu:[/color] unikalny identyfikator numeryczny odpowiadający obiektowi. Przydatny w połączeniu ze [color=#e8c878]skanerem obiektów[/color] do szybkiej identyfikacji powtarzających się obiektów.
+  - [color=#e8c878] ID węzła:[/color] unikalny identyfikator numeryczny odpowiadający węzłowi artefaktu. Przydatny w połączeniu ze [color=#e8c878]skanerem obiektów[/color] do szybkiej identyfikacji powtarzających się węzłów.
 
   - [color=#e8c878]Głębokość:[/color] odległość od obiektu początkowego (głębokość 0). Jest to dobry wskaźnik wartości i zagrożenia związanego z danym obiektem.
 

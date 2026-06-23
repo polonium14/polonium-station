@@ -17,7 +17,7 @@ Skaner anomalii służy do gromadzenia różnorodnych informacji dotyczących an
 
 Skanowanie anomalii pozwala określić jej nasilenie, ogólną stabilność, przybliżoną wartość punktową, reakcje z poszczególnymi typami cząstek oraz czas do następnego impulsu. W szczególności typy reakcji można wykorzystać w połączeniu z urządzeniem M.A.K.A.K. do manipulowania anomaliami.
 
-## Pojemnik na artefakty
+## Pojemnik na anomalie
 
 Pojemnik na anomalie to urządzenie, które generuje punkty na podstawie anomalii. Użyj skanera anomalii na pustym pojemniku, a ostatnio zeskanowana anomalia zostanie zsynchronizowana z pojemnikiem.
 

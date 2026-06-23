@@ -9,7 +9,7 @@ SPDX-License-Identifier: MIT
 
 <Document>
   # Cyborgi
-  Cyborgi to hybrydy człowieka i maszyny, stworzone specjalnie przez departament [textlink="robotyki" link="Robotics"], przeznaczone do wykonywania różnych zadań na stacji. Cyborgi ściśle kierują się [color=#7ee8f7]prawami krzemowymi[/color] i bezwarunkowo służą załodze. [italic](Przez większość czasu.)[italic]
+  Cyborgi to hybrydy człowieka i maszyny, stworzone specjalnie przez departament [textlink="robotyki" link="Robotics"], przeznaczone do wykonywania różnych zadań na stacji. Cyborgi ściśle kierują się [color=#7ee8f7]prawami krzemowymi[/color] i bezwarunkowo służą załodze. [italic](Przez większość czasu.)[/italic]
 
   ## Podstawowe elementy
   <Box>
@@ -48,13 +48,13 @@ SPDX-License-Identifier: MIT
   </Box>
   Cyborgi nie mają rąk, dlatego nie mogą podnosić przedmiotów tak jak większość innych graczy. Zamiast tego ich wyposażenie stanowią różne [color=#e8c878]moduły[/color]. Każdy typ cyborga zaczyna grę z własnym, specyficznym zestawem modułów, ale jako ulepszenia można wstawiać dodatkowe moduły. Te dodatkowe moduły można wydrukować na [color=#e8c878]drukarce do egzoszkieletów[/color].
 
-  [color=#e8c878]Moduły uniwersalne[/color] zwiększają wszechstronność. Można je zamontować w dowolnej obudowie, zapewniając przydatne narzędzia, takie jak łomy, GPS oraz możliwość interakcji z kablami. [bold]W uniwersalnej obudowie cyborga można zamontować do pięciu dodatkowych modułów.[/bold] modules add versatility. They can be fitted into any chassis, granting useful tools such as crowbars, GPS, and the ability to interact with cables. [bold]The generic cyborg chassis can fit up to five additional modules.[/bold]
+  [color=#e8c878]Moduły uniwersalne[/color] zwiększają wszechstronność. Można je zamontować w dowolnej obudowie, zapewniając przydatne narzędzia, takie jak łomy, GPS oraz możliwość interakcji z kablami. [bold]W uniwersalnej obudowie cyborga można zamontować do pięciu dodatkowych modułów.[/bold]
   <Box>
     <GuideEntityEmbed Entity="BorgModuleCable" Caption="Przewód"/>
     <GuideEntityEmbed Entity="BorgModuleFireExtinguisher" Caption="Gaśnica"/>
   </Box>
   <Box>
-    [italic]]Przykłady modułów uniwersalnych[/italic]
+    [italic]Przykłady modułów uniwersalnych[/italic]
   </Box>
 
   W przypadku bardziej specyficznych potrzeb dostępne są [color=#e8c878]specjalistyczne[/color] moduły, zapewniające takie możliwości, jak badanie anomalii, budowanie ścian, reanimowanie członków załogi czy usuwanie wycieku smaru kosmicznego. Moduły te są zazwyczaj oznaczone kolorami z tej samej palety, co departament [italic](lub zawód)[/italic], z którym są powiązane. Moduły te [italic](z wyjątkiem modułów [color=#e8a8ff]naukowych[/color], które można zamontować w dowolnym szkielecie)[/italic] można montować wyłącznie w powiązanych z nimi szkieletami. [bold]Specjalistyczne szkielety, czyli szkielety inżynieryjne, sprzątające, usługowe, medyczne i górnicze, mogą pomieścić do trzech dodatkowych modułów.[/bold]
