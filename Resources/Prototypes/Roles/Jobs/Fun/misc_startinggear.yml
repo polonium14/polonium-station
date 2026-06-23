@@ -145,9 +145,9 @@
 - type: startingGear
   id: MobAghostGear
   equipment:
-      # POLONIUM CHANGE: Added HUD glasses.
-      eyes: ClothingEyesHudOmni
-      back: ClothingBackpackSatchelAdmin
+    # POLONIUM CHANGE: Added HUD glasses.
+    eyes: ClothingEyesHudOmni
+    back: ClothingBackpackSatchelAdmin
     id: AdminPDA
   storage:
     back:
