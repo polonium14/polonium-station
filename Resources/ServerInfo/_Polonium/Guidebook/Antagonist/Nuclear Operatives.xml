@@ -13,124 +13,124 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-  # Nuclear Operatives
+  # Specjaliści Nuklearni
 
   <Box>
-    [color=#c8c8c8][italic]"OPERATIVES STANDBY. YOUR OBJECTIVES ARE SIMPLE.[/italic][/color]
+    [color=#c8c8c8][italic]"OPERATORZY, BĄDŹCIE W GOTOWOŚCI. WASZE ZADANIA SĄ PROSTE.[/italic][/color]
   </Box>
   <Box>
-    [color=#c8c8c8][italic]DELIVER THE PAYLOAD AND GET OUT BEFORE THE PAYLOAD DETONATES. BEGIN MISSION."[/italic][/color]
+    [color=#c8c8c8][italic]DOSTARCZCIE ŁADUNEK I WYCOFAJCIE SIĘ, ZANIM ŁADUNEK WYBUCHNIE. ROZPOCZNIJCIE MISJĘ."[/italic][/color]
   </Box>
   <Box>
     <GuideEntityEmbed Entity="PosterContrabandEnlistGorlex" Caption=""/>
   </Box>
 
-  You've just been chosen to be a nuclear operative for the [color=#ff8a8a]Syndicate[/color]. You have one goal: blow up one of Nanotrasen's finest vessels with a nuclear fission explosive.
+  Właśnie zostałeś wybrany na specjalistę nuklearnego w [color=#ff8a8a]Syndykacie[/color]. Masz jeden cel: wysadzić jeden z najlepszych statków Nanotrasen za pomocą głowicy nuklearnej.
 
-  ## Operatives
-  Your team will be made up of several different roles, which are:
-  - [bold]Operatives[/bold], standard soldiers who can take up the grunt work.
-  - The [bold]Agent[/bold] who works with reagents to make medicines or chemical weapons.
-  - The [bold]Commander[/bold] who draws up the plan and leads the team.
+  ## Operatorzy
+  Twój zespół będzie składał się z kilku różnych ról, a mianowicie:
+  - [bold]Operatorzy[/bold], zwykli żołnierze, którzy mają wykonywać najcięższe zadania.
+  - [bold]Agent[/bold] zajmujący się odczynnikami w celu wytwarzania leków lub broni chemicznej.
+  - [bold]Dowódca[/bold] opracowujący plan i kierujący zespołem.
 
   <Box>
     <GuideEntityEmbed Entity="ClothingOuterHardsuitSyndie"/>
-    <GuideEntityEmbed Entity="ClothingOuterHardsuitSyndieMedic" Caption="agent's hardsuit"/>
-    <GuideEntityEmbed Entity="ClothingOuterHardsuitSyndieCommander" Caption="commander's hardsuit"/>
+    <GuideEntityEmbed Entity="ClothingOuterHardsuitSyndieMedic" Caption="skafander agenta"/>
+    <GuideEntityEmbed Entity="ClothingOuterHardsuitSyndieCommander" Caption="skafander dowódcy"/>
   </Box>
 
-  You should only enable the Agent or Commander roles if you intend to take on their responsibilities. Do not use them as an extra chance for rolling Nuclear Operative, with intent to push their responsibilities off on another player.
+  Role Agenta lub Dowódcy należy wybrać tylko wtedy, gdy zamierzasz podjąć się związanych z nimi obowiązków. Nie należy wykorzystywać ich jako dodatkowej szansy na uzyskanie roli Specjalisty Nuklearnego z zamiarem zrzucenia związanych z nimi obowiązków na innego gracza.
 
-  ## The Disk
+  ## Dysk
 
-  Each operative starts with a [color=#7ee8f7]pinpointer[/color], which you should turn on and keep with you at all times. It will always point to the [color=#7ee8f7]nuclear authentication disk.[/color]
-  The disk belongs to the [color=#ffe566]Captain[/color], who will almost always have it on them. Follow the direction of the arrow on the pinpointer to the disk, and [italic]do whatever it takes to get it[/italic].
+  Każdy operator na start otrzymuje [color=#7ee8f7]pinpointer[/color], który należy włączyć i mieć przy sobie przez cały czas. Urządzenie to zawsze wskaże [color=#7ee8f7]dysk autoryzacji nuklearnej[/color].
+  Dysk należy do [color=#ffe566]kapitana[/color], który prawie zawsze ma go przy sobie. Podążaj za kierunkiem strzałki na pinpointerze, aby dotrzeć do dysku, i [italic]zrób wszystko, co konieczne, aby go zdobyć[/italic].
 
   <Box>
     <GuideEntityEmbed Entity="PinpointerNuclear"/>
     <GuideEntityEmbed Entity="NukeDisk"/>
   </Box>
 
-  ## Preparation
-  Each member in your squad has been given an [color=#7ee8f7]uplink[/color] to purchase everything you will need for the mission, similar to [textlink="Traitors." link="Traitors"]
+  ## Przygotowania
+  Każdy członek twojej drużyny otrzymał [color=#7ee8f7]uplink[/color], dzięki któremu może kupić wszystko, co będzie potrzebne do wykonania misji, podobnie jak w przypadku [textlink="zdrajców" link="Traitors"].
 
   <Box>
-    <GuideEntityEmbed Entity="BaseUplinkRadio200TC" Caption="your uplink"/>
+    <GuideEntityEmbed Entity="BaseUplinkRadio200TC" Caption="uplink"/>
   </Box>
 
-  You can purchase the same kinds of gear Traitors can, but you have higher quality gear available to you and more telecrystals to spend.
+  Możesz kupować ten sam rodzaj wyposażenia, co zdrajcy, ale masz do dyspozycji sprzęt wyższej jakości i więcej telekryształów do wydania.
   <Box>
-    <GuideEntityEmbed Entity="WeaponLightMachineGunL6" Caption="Weaponry"/>
-    <GuideEntityEmbed Entity="MagazineLightRifleBox" State="icon" Caption="Ammo"/>
-    <GuideEntityEmbed Entity="C4" Caption="Explosives"/>
-    <GuideEntityEmbed Entity="ClothingOuterHardsuitJuggernaut" Caption="Wearables"/>
-    <GuideEntityEmbed Entity="Stimpack" Caption="Chemicals"/>
+    <GuideEntityEmbed Entity="WeaponLightMachineGunL6" Caption="Uzbrojenie"/>
+    <GuideEntityEmbed Entity="MagazineLightRifleBox" State="icon" Caption="Amunicja"/>
+    <GuideEntityEmbed Entity="C4" Caption="Materiały wybuchowe"/>
+    <GuideEntityEmbed Entity="ClothingOuterHardsuitJuggernaut" Caption="Wyposażenie"/>
+    <GuideEntityEmbed Entity="Stimpack" Caption="Medycyna"/>
   </Box>
   <Box>
-    <GuideEntityEmbed Entity="ChameleonProjector" Caption="Deception"/>
-    <GuideEntityEmbed Entity="Emag" Caption="Disruption"/>
-    <GuideEntityEmbed Entity="MacroBombImplanter" Caption="Implants"/>
-    <GuideEntityEmbed Entity="BorgChassisSyndicateAssault" Caption="Allies"/>
-    <GuideEntityEmbed Entity="ClothingEyesGlassesOutlawGlasses" Caption="Pointless"/>
+    <GuideEntityEmbed Entity="ChameleonProjector" Caption="Oszustwo"/>
+    <GuideEntityEmbed Entity="Emag" Caption="Zamieszanie"/>
+    <GuideEntityEmbed Entity="MacroBombImplanter" Caption="Implanty"/>
+    <GuideEntityEmbed Entity="BorgChassisSyndicateAssault" Caption="Sojusznicy"/>
+    <GuideEntityEmbed Entity="ClothingEyesGlassesOutlawGlasses" Caption="Bezsensowne"/>
   </Box>
 
-  You'll also have to choose if you want to [color=#ff8a8a]declare war[/color] or not. Doing so grants your team [bold]200 extra telecrystals each[/bold].
-  However, the crew will immediately learn of your existence and will have plenty of time to prepare for your arrival.
+  Będziesz musiał również zdecydować, czy chcesz [color=#ff8a8a]wypowiedzieć wojnę[/color], czy nie. Jeśli to zrobisz, twoja drużyna otrzyma [bold]po 200 dodatkowych telekryształów[/bold].
+  Jednak załoga natychmiast dowie się o twoim istnieniu i będzie miała mnóstwo czasu, by przygotować się na twoje przybycie.
 
-  The [bold]Commander[/bold] is the only person who can declare war. Make your choice quick, [italic]this is a limited-time offer![/italic]
+  Tylko [bold]dowódca[/bold] może wypowiedzieć wojnę. Zdecyduj się szybko, [italic]to oferta ograniczona czasowo![/italic]
   <Box>
     <GuideEntityEmbed Entity="NukeOpsDeclarationOfWar"/>
   </Box>
 
-  ## Getting to the Station
-  You've got the plan, you've got the gear. Now, execute.
+  ## Dotarcie na stację
+  Masz plan, masz sprzęt. Teraz czas na jego realizację.
 
-  Grab a [bold]jetpack[/bold] from your armory and go with your other operatives to the [color=#7ee8f7]Syndicate Shuttle[/color].
-  Among other things you may need, you'll find an [bold]IFF Console[/bold] on the shuttle. It allows you to hide from other ships and mass scanners when [italic]"Show IFF"[/italic] and [italic]"Show Vessel"[/italic] are toggled off.
+  Weź [bold]dżetpak[/bold] ze swojej zbrojowni i udaj się wraz z pozostałymi operatorami do [color=#7ee8f7]statku Syndykatu[/color].
+  Wśród innych przydatnych elementów wyposażenia na swoim statku  znajdziesz [bold]konsolę IFF[/bold]. Pozwala ona ukryć się przed innymi statkami i skanerami mas, gdy opcje [italic]"Pokaż IFF"[/italic] i [italic]"Pokaż statek"[/italic] są wyłączone.
 
-  When everyone is ready, FTL to the station and fly to it with a jetpack. Don't forget the code, your pinpointers and the nuke if you're taking it.
+  Kiedy wszyscy będą gotowi, teleportujcie się do stacji za pomocą FTL i lećcie tam dżetpakami. Nie zapomnijcie o kodzie, pinpointerach i głowicy nuklearnej, jeśli ją zabieracie.
 
   <Box>
     <GuideEntityEmbed Entity="JetpackBlack"/>
     <GuideEntityEmbed Entity="ComputerIFFSyndicate"/>
   </Box>
 
-  ## The Nuke & Arming Procedure
-  You have a paper with the [color=#7ee8f7]nuclear authentication codes[/color] on your shuttle. [bold]Check to see if the nuke ID matches the one on your shuttle.[/bold] If it doesn't, you'll have to use explosive in the station's vault.
+  ## Procedura uruchamiania i uzbrojenia głowicy nuklearnej
+  W swoim statku znajdziesz dokument z [color=#7ee8f7]kodami uwierzytelniającymi głowice nuklearnej[/color]. [bold]Sprawdź, czy identyfikator głowicy nuklearnej zgadza się z tym w twoim statku.[/bold] Jeśli nie, będziesz musiał użyć głowicy znajdującej się w skarbcu stacji.
 
-  - Obtain the [bold]nuclear authentication disk[/bold] and insert it into the nuke.
-  - Type in the [bold]nuclear authentication code[/bold] and press "[bold]E[/bold]" on the keypad to Enter.
-  - To begin [bold]self-destruct process[/bold], press "[color=#ff8a8a]ARM[/color]". After 300 seconds, the nuke will explode.
-  - [bold]Defend the nuke[/bold], even if it's at the cost of your lives! The mission requirements do not include your return.
-  - It takes 30 seconds for someone to [bold]disarm[/bold] the nuke. Re-arming it is possible, but the chance of mission success drops if you let it happen.
-  - Should the nuke be re-armed, the timer will start from where it left off.
+  - Zdobądź [bold]dysk autoryzacyjny nuklearnej[/bold] i włóż go do głowicy nuklearnej.
+  - Wpisz [bold]kod uwierzytelniający[/bold] i naciśnij klawisz "[bold]E[/bold]" na klawiaturze, aby go zatwierdzić.
+  - Aby rozpocząć [bold]proces samozniszczenia[/bold], naciśnij "[color=#ff8a8a]URUCHOM[/color]". Po 300 sekundach bomba wybuchnie.
+  - [bold]Brońcie bomby[/bold], nawet jeśli będzie to kosztowało was życie! Wymagania misji nie obejmują waszego powrotu.
+  - [bold]Rozbrojenie[/bold] bomby zajmuje 30 sekund. Ponowne uzbrojenie jest możliwe, ale jeśli do tego dojdzie, szanse na sukces misji spadają.
+  - W przypadku ponownego uzbrojenia bomby licznik czasu rozpocznie odliczanie od miejsca, w którym zostało przerwane.
 
   <Box>
-    <GuideEntityEmbed Entity="NuclearBomb" Caption="The Nuclear Fission Explosive"/>
+    <GuideEntityEmbed Entity="NuclearBomb" Caption="Głowica nuklearna"/>
   </Box>
 
-  ## Winning Conditions
+  ## Warunki zwycięstwa
 
-  The [color=#00ff00]victor[/color] of the round is announced on the round end screen, as well as the scale of their victory.
+  Na ekranie końcowym rundy ogłaszany jest [color=#00ff00]zwycięzca[/color] rundy oraz skala jego zwycięstwa.
 
   [bold][color=#ff8a8a]Syndicate Major Victory![/color][/bold]
-  - The nuke detonates on the station.
-  - The crew escapes on evac, but the nuke is still armed.
-  - The nuke is armed and delivered to Central Command on the evac shuttle.
+  - Głowica nuklearna wybuchła na stacji.
+  - Załoga ewakuowała się gdy głowica nadal była uzbrojona.
+  - Uzbrojona głowica została przetransportowana promem ewakuacyjnym do Centralnego Dowództwa.
 
   [bold][color=#ff8a8a]Syndicate Minor Victory[/color][/bold]
-  - The crew escapes on evac, but every operative survives.
-  - The crew escapes and some operatives die, but the crew loses the disk.
+  - Załoga uciekła w ramach ewakuacji, ale wszyscy operatorzy przeżyli.
+  - Załoga uciekła, niektórzy operatorzy giną, ale załoga traci dysk.
 
   [bold][color=#c8c8c8]Neutral Victory[/color][/bold]
-  - The nuke detonates off the station.
+  - Głowica nuklearna wybuchła w pobliżu stacji.
 
   [bold][color=#8ee99a]Crew Minor Victory[/color][/bold]
-  - The crew escapes on evac with the disk and some operatives die.
+  - Załoga uciekła statkiem ewakuacyjnym z dyskiem, a część operatorów ginie.
 
   [bold][color=#8ee99a]Crew Major Victory![/color][/bold]
-  - All operatives die.
-  - The crew blow up the nuclear operative outpost with the nuke.
+  - Wszyscy opeatorzy zginęli.
+  - Załoga wysadziła w powietrze stanowisko operacyjne za pomocą głowicy nuklearnej.
 </Document>
 
 
