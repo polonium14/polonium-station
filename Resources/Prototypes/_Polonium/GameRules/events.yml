@@ -18,10 +18,10 @@
     minimumPlayers: 5
     reoccurrenceDelay: 25
     earliestStart: 20
-    eventType: HostilesSpawn # Goobstation
+    # eventType: HostilesSpawn # Goobstation - pole z #533 (Secret+), brak w forky
   # Goobstation
   - type: GameRule
-    chaosScore: 250
+    # chaosScore: 250 # pole z #533 (Secret+), brak w forky
   - type: RandomEntityStorageSpawnRule
     prototype: MobCowiekMaupa
     openStorageSound: /Audio/_Polonium/Effects/Jumpscare/jumpscare1.ogg
