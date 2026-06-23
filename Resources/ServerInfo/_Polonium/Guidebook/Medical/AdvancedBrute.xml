@@ -10,29 +10,29 @@ SPDX-License-Identifier: MIT
 
 <Document>
 
-  # Specialized Brute Chemicals
+  # Specjalistyczne chemikalia typu fizycznego
 
-  Nanotrasen's greatest scientists have synthesized three more specific brute chemicals! Each one heals a specific damage subtype.
-
+  Najlepsi naukowcy z Nanotrasen zsyntetyzowali trzy kolejne specyficzne substancje chemiczne na leczenie obrażeń fizycznych! Każda z nich leczy określony podtyp obrażeń.
+  
   <GuideReagentEmbed Reagent="Bruizine"/>
   <GuideReagentEmbed Reagent="Puncturase"/>
   <GuideReagentEmbed Reagent="Lacerinol"/>
 
-  # Razorium
+  # Brzytworium
 
-  [color=#ff8a8a]USE CAUTION[/color] when using the aforementioned specialized brute chemicals. Should one mix together with a different type of advanced brute chemical, the resulting mixture will create a dangerous chemical known as Razorium!
+  [color=#ff8a8a]UWAŻAJ[/color] podczas stosowania wyżej wymienionych specjalistycznych środków chemicznych na obrażenia fizyczne. W przypadku zmieszania ich z innym rodzajem zaawansowanego środka chemicznego na obrażenia fizyczne, powstała mieszanina stworzy niebezpieczną substancję chemiczną znaną jako Brzytworium!
   <GuideReagentEmbed Reagent="Razorium"/>
-  To avoid this, make sure the patient is done metabolizing one medication before giving them another. Keep an eye on the rate their health is changing.
+  Aby tego uniknąć, przed podaniem kolejnego leku upewnij się, że organizm pacjenta zakończył już metabolizację poprzedniego. Obserwuj tempo zmian w stanie zdrowia pacjenta.
 
-  [bold]Some examples of mixtures that create Razorium are as follows:[/bold]
+  [bold]Oto kilka przykładów mieszanek, z których powstaje Brzytworium:[/bold]
 
-  Salicylic Acid and Puncturase
+  Kwas Salicylowy i Kłujorazyna
 
-  Puncturase and Lacerinol
+  Kłujorazyna i Skaleczyna
 
-  Bruizine and Salicylic Acid
-
-  Lacerinol and Bruizine
-
-  Please note that [bold]any[/bold] combination of these 4 chemicals will likely mix and create Razorium! 
+  Siniakozyna i Kwas Salicylowy
+  
+  Skaleczyna i Siniakozyna
+  
+  Należy pamiętać, że [bold]każda[/bold] kombinacja tych 4 substancji chemicznych prawdopodobnie ulegnie zmieszaniu tworząc Brzytworium!  
 </Document>

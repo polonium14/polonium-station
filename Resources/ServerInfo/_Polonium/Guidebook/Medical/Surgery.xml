@@ -9,77 +9,77 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 -->
 
 <Document>
-  # Surgery
-  Your usual weekly activity. By performing surgical operations on your patients, you can heal wounds, remove or add body parts, organs, and more.
+ # Operacje
+  Twoja standardowa cotygodniowa czynność. Przeprowadzając operacje chirurgiczne na pacjentach, możesz leczyć rany, usuwać lub dodawać części ciała, narządy i nie tylko.
 
-  ## The Basics
-  To start surgery your patient needs to be laying down, and ideally sedated.
+  ## Podstawy
+  Aby rozpocząć operację, pacjent musi leżeć, a najlepiej być pod wpływem środków znieczulających.
 
-  You will also need an operating table to perform more advanced surgeries, such as replacing limbs or organs. These can be made in Science if none are available.
-  You may also find spare Operating Tables in maintenance.
+  Do wykonywania bardziej zaawansowanych operacji, takich jak wymiana kończyn lub narządów, potrzebny będzie również stół operacyjny. Jeśli nie masz go pod ręką, możesz go stworzyć w dziale badawczym.
+  Zapasowe stoły operacyjne możesz również znaleźć w tunelach Konserwacyjnych.
 
   <Box>
-    <GuideEntityEmbed Entity="OperatingTable" Caption="nitrous oxide"/>
+    <GuideEntityEmbed Entity="OperatingTable" />
   </Box>
 
-  If they are not sedated, they will be in a lot of pain, which decreases their mood, and will make surgical wounds worse.
+  Jeśli pacjenci nie zostaną poddani znieczuleniu, będą odczuwać silny ból, co pogorszy ich samopoczucie i spowoduje pogorszenie stanu ran pooperacyjnych.
 
   <Box>
-    <GuideEntityEmbed Entity="NitrousOxideTank" Caption="nitrous oxide"/>
-    <GuideEntityEmbed Entity="ClothingMaskBreathMedical" Caption="any breathing tool"/>
+    <GuideEntityEmbed Entity="NitrousOxideTank" />
+    <GuideEntityEmbed Entity="ClothingMaskBreathMedical" Caption="maska do oddychania lub inne"/>
   </Box>
 
-  You also need to wear protective gear such as a mask and gloves to prevent harming the patient due to contamination.
+  Należy utrzymywać sterylne warunki podczas operacji nosząc ubrania ochronne, takie jak maska i rękawiczki, aby zapobiec wyrządzeniu szkody pacjentowi w wyniku zakażenia.
 
   <Box>
-    <GuideEntityEmbed Entity="ClothingMaskSterile" Caption="any mask"/>
-    <GuideEntityEmbed Entity="ClothingHandsGlovesNitrile" Caption="any gloves"/>
+    <GuideEntityEmbed Entity="ClothingMaskSterile" />
+    <GuideEntityEmbed Entity="ClothingHandsGlovesNitrile" Caption="rękawiczki nitrylowe/lateksowe" />
   </Box>
 
-  ## Getting Started
+  ## Pierwsze kroki
 
-  To engage in surgery, you'll need a set of surgical tools.
+  Aby przeprowadzić operację, potrzebny będzie zestaw narzędzi chirurgicznych.
 
   <Box>
-    <GuideEntityEmbed Entity="Scalpel" Caption="scalpel"/>
-    <GuideEntityEmbed Entity="Retractor" Caption="retractor"/>
-    <GuideEntityEmbed Entity="Hemostat" Caption="hemostat"/>
-    <GuideEntityEmbed Entity="Drill" Caption="drill"/>
+    <GuideEntityEmbed Entity="Scalpel" />
+    <GuideEntityEmbed Entity="Retractor" />
+    <GuideEntityEmbed Entity="Hemostat" />
+    <GuideEntityEmbed Entity="Drill" />
   </Box>
 
   <Box>
-    <GuideEntityEmbed Entity="Saw" Caption="saw"/>
-    <GuideEntityEmbed Entity="Cautery" Caption="cautery"/>
-    <GuideEntityEmbed Entity="BoneGel" Caption="bone gel"/>
+    <GuideEntityEmbed Entity="Saw" />
+    <GuideEntityEmbed Entity="Cautery" />
+    <GuideEntityEmbed Entity="BoneGel" />
     </Box>
 
-  Once you've got tools in hand, interact with your patient to begin surgery. You'll be able to choose which part you want to operate on.
+  Gdy już będziesz mieć narzędzia pod ręką, trzymając użyj prawego przycisku myszy na pacjencie, aby rozpocząć operację. Będziesz mógł wybrać, którą część chcesz operować.
 
-  ## Sterility
+  ## Sterylność
 
-  Your tools will accumulate dirt and grime while you use them, requiring you to clean them.
-  Unclean tools will cause your patient to take poison damage.
-
-  <Box>
-    <GuideEntityEmbed Entity="SoapNT" Caption="soap" />
-    <GuideEntityEmbed Entity="Scalpel" Caption="scalpel" />
-  </Box>
-
-  You can clean your tools by using soap on them. Be sure to also regularly clean or change your mask and gloves, as well.
-  Using the same dirty tools between two or more patients will cause your tools to become filthy, so be sure to clean them regularly.
-
-  ## Ghetto Surgery
-
-  Certain non-surgical tools can be used in a pinch, use the scalpel examine icon to see how good or bad something is.
-  An operating table is still required for certain medical procedures.
+  Podczas użytkowania na narzędziach gromadzi się brud oraz zanieczyszczenia, co wymaga ich wyczyszczenia.
+  brudne narzędzia spowodują, że pacjent otrzyma obrażenia od trucizny.
 
   <Box>
-    <GuideEntityEmbed Entity="Welder" Caption="welder"/>
-    <GuideEntityEmbed Entity="Wirecutter" Caption="wirecutter"/>
-    <GuideEntityEmbed Entity="KitchenKnife" Caption="knife"/>
-    <GuideEntityEmbed Entity="Crowbar" Caption="crowbar"/>
+    <GuideEntityEmbed Entity="SoapNT" />
+    <GuideEntityEmbed Entity="Scalpel" />
   </Box>
 
-  They aren't ideal compared to real surgical equipment, but they'll do in a pinch!
+  Narzędzia można wyczyścić, używając do tego mydła. Należy również pamiętać o regularnym czyszczeniu lub wymianie maski i rękawiczek.
+  Używanie tych samych brudnych narzędzi u dwóch lub więcej pacjentów spowoduje ich silne zabrudzenie, dlatego należy je regularnie czyścić.
+
+  ## Chirurgia w prowizorycznych warunkach
+
+  W razie potrzeby można użyć niektórych narzędzi niechirurgicznych – użyj inspekcji na narzędziu oraz kliknij w ikone skalpela aby sprawdzić jak narzędzie sprawdza się w danej czynności.
+  Do niektórych zabiegów medycznych nadal potrzebny jest stół operacyjny.
+
+  <Box>
+    <GuideEntityEmbed Entity="Welder" />
+    <GuideEntityEmbed Entity="Wirecutter" />
+    <GuideEntityEmbed Entity="KitchenKnife" />
+    <GuideEntityEmbed Entity="Crowbar" />
+  </Box>
+
+  Nie są co prawda idealne w porównaniu z prawdziwym sprzętem chirurgicznym, ale w razie potrzeby się przydadzą!
 
 </Document>

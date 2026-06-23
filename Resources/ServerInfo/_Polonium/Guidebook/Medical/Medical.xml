@@ -8,22 +8,22 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-# Medical
-This is the department where people go to when they're hurt, it's up to the folks working here to fix them.
+# Dział Medyczny
+To dział, do którego trafiają ludzie, gdy są ranni – zadaniem osób tu pracujących jest zapewnienie im pomocy.
 
-## Personnel
-[color=#9dd4f5]Medical[/color]'s staff is made up of Medical Interns, Medical Doctors, Paramedics and Chemists. [color=#9dd4f5]Medical[/color] is run by the Chief Medical Officer.
+## Personel
+Personel [color=#9dd4f5]Działu medycznego[/color] składa się ze stażystów medycznych, lekarzy, ratowników medycznych i chemików. [color=#9dd4f5]Dział medyczny[/color] kierowany jest przez Ordynatora Medycznego(OM).
 
   <Box>
-    <GuideEntityEmbed Entity="ToyFigurineMedicalDoctor" Caption="Doctor"/>
-    <GuideEntityEmbed Entity="ToyFigurineParamedic" Caption="Paramedic"/>
-    <GuideEntityEmbed Entity="ToyFigurineChemist" Caption="Chemist"/>
-    <GuideEntityEmbed Entity="ToyFigurineChiefMedicalOfficer" Caption="CMO"/>
+    <GuideEntityEmbed Entity="ToyFigurineMedicalDoctor" Caption="Lekarz"/>
+    <GuideEntityEmbed Entity="ToyFigurineParamedic" Caption="Ratownik"/>
+    <GuideEntityEmbed Entity="ToyFigurineChemist" Caption="Chemik"/>
+    <GuideEntityEmbed Entity="ToyFigurineChiefMedicalOfficer" Caption="OM"/>
   </Box>
 
-Right now, medbay is divided into two different sets of care:
+Obecnie dział medyczny spełnia dwa różne zadania:
 
-## Medical Treatment
+## Opieka medyczna
   <Box>
     <GuideEntityEmbed Entity="Brutepack"/>
     <GuideEntityEmbed Entity="Bloodpack"/>
@@ -31,7 +31,7 @@ Right now, medbay is divided into two different sets of care:
     <GuideEntityEmbed Entity="Gauze"/>
     <GuideEntityEmbed Entity="HandheldHealthAnalyzer"/>
   </Box>
-## Chemical Production
+## Produkcja Chemiczna
   <Box>
     <GuideEntityEmbed Entity="ChemDispenser"/>
     <GuideEntityEmbed Entity="LargeBeaker"/>

@@ -7,22 +7,22 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-# Cloning
-If all else fails, patients will need to be cloned. This should only be used as a last resort, if recovery is impossible. This is most often the case when the body has started to rot, or if they have excessive amounts of damage.
+# Klonowanie
+Jeśli wszystko inne zawiedzie, konieczne będzie sklonowanie pacjentów. Należy to traktować wyłącznie jako ostateczność, gdy powrót do zdrowia jest niemożliwy. Najczęściej ma to miejsce, gdy ciało zaczęło się rozkładać lub gdy odniosło nadmierne obrażenia.
 
-Cloning itself is relatively simple. (Assuming the network is set.) Just drag a body into the scanner, check the cloning console, and clone! If they've taken cellular damage, or have rotted for too long, the results can be... less than pleasant.
+Samo klonowanie jest stosunkowo proste. (Zakładając, że sieć jest skonfigurowana.) Wystarczy przeciągnąć ciało do skanera, sprawdzić konsolę klonowania i klonować! Jeśli doszło do uszkodzeń komórkowych lub ciało zbyt długo ulegało rozkładowi, wyniki mogą być… mniej niż przyjemne.
 
-As a note: Cloning isn't always available, and it would be best not to rely on it. 
+Uwaga: klonowanie nie zawsze jest dostępne i najlepiej nie polegać na tej metodzie.
 <Box>
-<GuideEntityEmbed Entity="ComputerCloningConsole" Caption="cloning console"/>
+<GuideEntityEmbed Entity="ComputerCloningConsole" />
 <GuideEntityEmbed Entity="MedicalScanner"/>
 <GuideEntityEmbed Entity="CloningPod"/>
 <GuideEntityEmbed Entity="NetworkConfigurator"/>
 </Box>
-## Biomass
-Creating a clone requires biomass, which, gruesomely, involves recycling organic material. Be it crew members without a soul, station pets, or hostile creatures that have been 'taken care of', things can often be recycled.
+## Biomasa
+Stworzenie klona wymaga biomasy, co – choć brzmi to makabrycznie – wiąże się z recyklingiem materiału organicznego. Niezależnie od tego, czy chodzi o członków załogi pozbawionych duszy, zwierzęta domowe ze stacji, czy też wrogie stworzenia, którymi już się „zajęto” – często można je poddać recyklingowi.
 
-Dragging a body onto the biomass reclaimer (with your cursor) will mulch it for re-use. If it's a crew member, it's common practice to strip the body and return departmental gear before doing such.
+Przeciągnięcie ciała na urządzenie do odzyskiwania biomasy (za pomocą kursora) spowoduje jego rozdrobnienie w celu ponownego wykorzystania. Jeśli jest to członek załogi, przed wykonaniem tej czynności zwykle rozbiera się ciało i zwraca wyposażenie służbowe.
 <Box>
 <GuideEntityEmbed Entity="BiomassReclaimer"/>
 <GuideEntityEmbed Entity="MaterialBiomass"/>
