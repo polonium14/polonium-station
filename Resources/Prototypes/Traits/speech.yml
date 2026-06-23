@@ -91,6 +91,18 @@
 
 # 2 Cost
 
+  # This one is by Polonium (Tofi's peak!!!)
+- type: trait
+  id: Kurwalski
+  name: trait-kurwalski-name
+  description: trait-kurwalski-desc
+  category: SpeechTraits
+  cost: 1
+  components:
+  - type: KurwalskiAccent
+
+# 2 Cost
+
 - type: trait
   id: SocialAnxiety
   name: trait-socialanxiety-name
