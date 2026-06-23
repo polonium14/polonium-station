@@ -379,3 +379,8 @@
   license: "CC-BY-4.0"
   copyright: "Pinkscreen"
   source: "https://github.com/polonium14/polonium-station/blob/4a4ed428173ec9c874fa4e598156a6e4d0df094e/Resources/Audio/Lobby/CzyToKoniec.ogg"
+
+- files: [gownochrona.ogg]
+  license: "CC-BY-4.0"
+  copyright: "Zintex"
+  source: "https://github.com/Zintex/polonium-station/blob/9d4ed00c6bb63cd99b75a14dce7ef1e14fe6896c/Resources/Audio/Lobby/gownochrona.ogg"
