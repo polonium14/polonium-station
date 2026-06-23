@@ -418,4 +418,11 @@ public sealed partial class CCVars
     /// </remarks>
     public static readonly CVarDef<int> TileStackLimit =
         CVarDef.Create("game.tile_stack_limit", 5, CVar.SERVER | CVar.REPLICATED);
+
+    // from Corvax to Polonium
+    /// <summary>
+    /// Send station goal on round start or not.
+    /// </summary>
+    public static readonly CVarDef<bool> StationGoal =
+        CVarDef.Create("game.station_goal", true, CVar.SERVERONLY);
 }

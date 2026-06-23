@@ -10,6 +10,7 @@
   id: StandardNanotrasenStation
   parent:
     - BaseStation
+    - BaseStationGoal
     - BaseStationNews
     - BaseStationCargo
     - BaseStationJobsSpawning
