@@ -1,45 +1,4 @@
 ﻿Entries:
-- author: ArtisticRoomba
-  changes:
-  - message: The Solar Panels section of the Engineering Guidebook has been updated
-      to include information on upgrading solar panels, as well as how much each variant
-      produces.
-    type: Add
-  - message: The Tesla Engine section of the Engineering Guidebook has been slightly
-      reorganized to better outline the differences between Grounding Rods and Tesla
-      Coils, as well as tips on how to use them.
-    type: Tweak
-  - message: The Access Configurator section of the Engineering Guidebook has been
-      updated to reflect the recent addition of the Authentication Disruptor, as well
-      as how to fix access-broken doors and equipment the easy way.
-    type: Add
-  id: 7955
-  time: '2025-02-15T03:59:19.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34695
-- author: Tayrtahn
-  changes:
-  - message: Chickens and ducks now report hunger levels when examined.
-    type: Add
-  id: 7956
-  time: '2025-02-15T04:29:41.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/35164
-- author: VerinSenpai
-  changes:
-  - message: Air alarm devices now return to their previous settings after a power
-      cycle.
-    type: Fix
-  id: 7957
-  time: '2025-02-15T06:07:15.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34887
-- author: DoutorWhite & metalgearsloth
-  changes:
-  - message: Added planet lighting for indoor / outdoor areas.
-    type: Add
-  - message: Added day-night cycle functionality.
-    type: Add
-  id: 7958
-  time: '2025-02-16T08:35:32.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/32522
 - author: metalgearsloth
   changes:
   - message: Fix lighting quality affecting planet lighting.
@@ -4200,3 +4159,34 @@
   id: 9262
   time: '2026-06-21T15:06:22.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/702
+- author: Zintex
+  changes:
+  - message: "powi\u0119kszone wymagania godzinowe dla Kapitana, KP, NTR i Magistrate."
+    type: Tweak
+  id: 9263
+  time: '2026-06-22T15:38:48.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/704
+- author: Alcovvhore
+  changes:
+  - message: "Obra\u017Cenia bagnetu mosina zwi\u0119kszone z 12 k\u0142utych do 15\
+      \ k\u0142utych."
+    type: Tweak
+  id: 9264
+  time: '2026-06-22T22:16:34.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/707
+- author: Czuat
+  changes:
+  - message: "T\u0142umaczenie SPO Medycyny, teraz b\u0119dziecie wiedzie\u0107 czy\
+      \ jak wam chirurg g\u0142owe odcio\u0142, to czy da si\u0119 to naprawi\u0107\
+      ."
+    type: Add
+  id: 9265
+  time: '2026-06-23T06:42:02.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/697
+- author: haze
+  changes:
+  - message: "Poprawiono logik\u0119 telefon\xF3w."
+    type: Tweak
+  id: 9266
+  time: '2026-06-23T10:00:27.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/706

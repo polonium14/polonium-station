@@ -11,38 +11,38 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 -->
 
 <Document>
-# Patches
+# Okłady
 
-Patches are a simple and effective way to administer medication to a patient over time with lower risk of an overdose.
-They can be made at a medical techfab, and are filled directly or via a ChemMaster. They can be directly applied to a patient and will fall off by themselves once empty.
+Okłady to prosty i skuteczny sposób podawania pacjentowi leków przez dłuższy czas, przy mniejszym ryzyku przedawkowania.
+Można je wytwarzać w fabrykatorze medycznym, a napełnia się je bezpośrednio lub za pomocą urządzenia ChemMaster. Można je nakładać bezpośrednio na pacjenta, a po wyczerpaniu się zawartości odpadają same.
 
 <GuideEntityEmbed Entity="MedicalPatchBasic" Rotation="0"/>
 
-There are 6 types of patches:
-- Basic
-- Rapid
-- Large
-- Therapeutic
-- Prefilled
-- Makeshift
+Jest 6 różnych rodzajów okładów:
+- Zwykły
+- Szybki
+- Duży
+- Terapeutyczny
+- Przygotowany
+- Prowizoryczny
 
-## Basic
-The (basic) patch holds 30 units of chemicals and transfers 2 unit every second.
+## Zwykły
+Okład Zwykły mieści 30 jednostek substancji chemicznej i uwalnia 2 jednostki na sekundę.
 
-## Rapid
-The rapid patch holds 30 units and transfers 5 units every second.
+## Szybki
+Okład Szybki mieści 30 jednostek i uwalnia 5 jednostek na sekundę.
 
-## Large
-The large patch holds 60 units and transfers 1 unit every second.
+## Duży
+Okład Duży mieści 60 jednostek i uwalnia 1 jednostkę na sekundę.
 
-## Therapeutic
-The therapeutic patch holds 30 units and transfers 0.5 units every second.
+## Terapeutyczny
+Okład Terapetyczny mieści 30 jednostek i uwalnia 0,5 jednostki na sekundę.
 
-## Prefilled
-NanoMed Plus machines and some medkits contain prefilled patches for treating Brute or Burn damage.
-These hold 30 units and transfer 0.5 units per second, but cannot be refilled or emptied. Not reusable.
+## Przygotowany
+Urządzenia NanoMed Plus oraz niektóre apteczki zawierają wstępnie przygotowane okłady do leczenia obrażeń fizycznych lub oparzeń.
+Mają one pojemność 30 jednostek i przekazują 0,5 jednostki na sekundę, ale nie można ich ponownie napełnić ani opróżnić. Nie nadają się do ponownego użycia.
 
-## Makeshift
-This rudimentary patch can hold 15 units and transfers 2 unit every 4 seconds.
-However, it can be made by hand with cloth. Not reusable.
+## Prowizoryczny
+Ten prowizoryczny okład ma pojemność 15 jednostek i przekazuje 2 jednostki co 4 sekundy.
+Można go jednak wykonać ręcznie z kawałka materiału. Nie nadaje się do ponownego użycia.
 </Document>

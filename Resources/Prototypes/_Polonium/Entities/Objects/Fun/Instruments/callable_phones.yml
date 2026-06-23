@@ -1,4 +1,5 @@
 # SPDX-FileCopyrightText: 2026 Maciej Walendziuk <ozzeusz@gmail.com>
+# SPDX-FileCopyrightText: 2026 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2026 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
@@ -38,9 +39,10 @@
     guides:
     - RedPhoneSOP
   - type: CallablePhone
-    isCentComm: false
-    includeCentCommInDirectory: true
-    onlyCentCommInDirectory: true
+    phoneGroups:
+    - PublicStation
+    dialableGroups:
+    - CentComm
     # phoneName: callable-phone-example-bridge  # optional; also editable via View Variables at runtime
     pickupHandsetSound:
       path: /Audio/_Polonium/Machines/Telephone/handset_pickup.ogg
@@ -116,8 +118,8 @@
           OnHook: { state: blue_phone }
           OffHook: { state: blue_phone_no_handset }
   - type: CallablePhone
-    includeCentCommInDirectory: false
-    excludeCentCommFromDial: true
+    dialableGroups:
+    - PublicStation
   - type: Contraband
     severity: Restricted
     allowedDepartments: [ Command ]
@@ -153,9 +155,11 @@
           OnHook: { state: blood_red_phone }
           OffHook: { state: blood_red_phone_no_handset }
   - type: CallablePhone
-    listedInDirectory: false
-    includeCentCommInDirectory: false
-    privateLine: true
+    phoneGroups:
+    - Syndicate
+    dialableGroups:
+    - PublicStation
+    - Syndicate
   - type: Prayable
     sentMessage: prayer-popup-notify-syndicate-sent
     notificationPrefix: prayer-chat-notify-syndicate
@@ -184,8 +188,11 @@
   components:
   - type: CallablePhone
     isCentComm: true
-    listedInDirectory: false
-    includeCentCommInDirectory: false
+    phoneGroups:
+    - CentComm
+    dialableGroups:
+    - PublicStation
+    - CentComm
     adminChatPrefix: prayer-chat-notify-centcom
 
 - type: entity
@@ -229,9 +236,8 @@
         mask:
         - ItemMask
   - type: CallablePhone
-    listedInDirectory: true
-    includeCentCommInDirectory: false
-    excludeCentCommFromDial: true
+    dialableGroups:
+    - PublicStation
   - type: Prayable
     sentMessage: prayer-popup-notify-honkmother-sent
     notificationPrefix: prayer-chat-notify-honkmother

@@ -29,32 +29,41 @@
   id: Zeroed
   jobs:
     Captain:
+    - !type:RoleTimeRequirement
+      role: JobHeadOfPersonnel
+      time: 18000 #5 hrs
     - !type:DepartmentTimeRequirement
-      department: Engineering
+      department: Cargo
       time: 7200 #2 hrs
     - !type:DepartmentTimeRequirement
+      department: Science
+      time: 7200 #2 hrs
+    - !type:DepartmentTimeRequirement
+      department: Engineering
+      time: 18000 #5 hrs
+    - !type:DepartmentTimeRequirement
       department: Medical
+      time: 18000 #5 hrs
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 36000 #10 hrs
+    - !type:DepartmentTimeRequirement
+      department: Command
+      time: 72000 #20 hrs
+    - !type:OverallPlaytimeRequirement
+      time: 144000 #40 hrs
+    HeadOfPersonnel:
+    - !type:OverallPlaytimeRequirement
+      time: 90000 #25 hrs
+    - !type:DepartmentTimeRequirement
+      department: Civilian
       time: 7200 #2 hrs
     - !type:DepartmentTimeRequirement
       department: Security
       time: 18000 #5 hrs
     - !type:DepartmentTimeRequirement
       department: Command
-      time: 36000 #10 hrs
-    - !type:OverallPlaytimeRequirement
-      time: 72000 #20 hrs
-    HeadOfPersonnel:
-    - !type:OverallPlaytimeRequirement
-      time: 36000 #10 hrs
-    - !type:DepartmentTimeRequirement
-      department: Civilian
-      time: 7200 #2 hrs
-    - !type:DepartmentTimeRequirement
-      department: Security
-      time: 7200 #2 hrs
-    - !type:DepartmentTimeRequirement
-      department: Command
-      time: 7200 #2 hrs
+      time: 18000 #5 hrs
     AtmosphericTechnician:
     - !type:OverallPlaytimeRequirement
       time: 3600 # 1 hour
@@ -272,8 +281,14 @@
     Magistrate:
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 36000 # 10 hours
+      time: 72000 #20 hrs
+    - !type:DepartmentTimeRequirement
+      department: CentralCommand
+      time: 18000 #5 hrs
     NanotrasenRepresentative:
     - !type:DepartmentTimeRequirement
       department: Command
-      time: 36000 # 10 hours
+      time: 72000 #20 hrs
+    - !type:DepartmentTimeRequirement
+      department: CentralCommand
+      time: 18000 #5 hrs
