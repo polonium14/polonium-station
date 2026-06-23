@@ -69,3 +69,7 @@
   background: /Textures/LobbyScreens/reclaimer-nuke.webp
   title: lobby-state-background-reclaimernuke-title
   artist: lobby-state-background-reclaimernuke-artist
+
+- type: lobbyBackground
+  id: Saeko
+  background: /Textures/LobbyScreens/saeko.webp
