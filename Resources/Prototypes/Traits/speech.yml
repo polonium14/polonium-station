@@ -101,6 +101,24 @@
   components:
   - type: KurwalskiAccent
 
+- type: trait
+  id: Wiejski
+  name: trait-wiejski-name
+  description: trait-wiejski-desc
+  category: SpeechTraits
+  cost: 1
+  components:
+  - type: WiejskiAccent
+
+- type: trait
+  id: Malopolski
+  name: trait-malopolski-name
+  description: trait-malopolski-desc
+  category: SpeechTraits
+  cost: 1
+  components:
+  - type: MalopolskiAccent
+
 # 2 Cost
 
 - type: trait
