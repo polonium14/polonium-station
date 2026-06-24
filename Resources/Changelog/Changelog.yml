@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: Velken
-  changes:
-  - message: ': Paramedic Siren''s light is now visible to all and not just the wearer.'
-    type: Fix
-  id: 7963
-  time: '2025-02-16T18:43:20.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/35203
 - author: slarticodefast
   changes:
   - message: Fixed uplink items not being able to be used in your hand.
@@ -4189,3 +4182,12 @@
   id: 9270
   time: '2026-06-24T13:29:35.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/716
+- author: haze
+  changes:
+  - message: "Przet\u0142umaczono rozdzia\u0142 o specjalistach nuklearnych"
+    type: Add
+  - message: "Zmieniono \"Specjali\u015Bci Nuklearni\" na \"Operatorzy Nuklearni\""
+    type: Tweak
+  id: 9271
+  time: '2026-06-24T13:50:39.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/708
