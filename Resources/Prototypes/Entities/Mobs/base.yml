@@ -37,6 +37,7 @@
   - type: MindContainer
   - type: RequireProjectileTarget
     active: False
+  - type: Sprinter
 
 # The progenitor. This should only container the most basic components possible.
 # Only put things on here if every mob *must* have it. This includes ghosts.

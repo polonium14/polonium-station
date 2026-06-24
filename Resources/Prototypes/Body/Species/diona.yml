@@ -71,6 +71,8 @@
   id: MobDiona
   name: McUrist Plants
   components:
+  - type: Sprinter
+    canSprint: false
   - type: Respirator
     damage:
       types:
