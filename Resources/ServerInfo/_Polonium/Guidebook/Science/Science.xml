@@ -10,47 +10,47 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-# Science
-[color=#e8a0ff]Science[/color], often called Research and Development, is a job made up of both generating research points to unlock new technologies as well as using said technologies to produce new items at lathes to help out the station.
+# Departament Badań i Rozwoju
+[color=#e8a0ff]Departament Badań i Rozwoju[/color] zajmuje się zarówno zdobywaniem punktów badawczych w celu odblokowania nowych technologii, jak i wykorzystywaniem tych technologii do wytwarzania nowych przedmiotów na tokarkach, co pomaga w funkcjonowaniu stacji.
 
-## Personnel
-[color=#e8a0ff]Science[/color]'s staff is made up of Research Assistants and Scientists. [color=#e8a0ff]Science[/color] is run by the Research Director.
+## Personel
+Personel [color=#e8a0ff]departamentu Badań i Rozwoju[/color] składa się z asystentów badawczych i naukowców. Jest on zarządzany przez Kierownika Badań.
 
   <Box>
-   <GuideEntityEmbed Entity="ToyFigurineScientist" Caption="Scientist"/>
-   <GuideEntityEmbed Entity="ToyFigurineResearchDirector" Caption="RD"/>
+   <GuideEntityEmbed Entity="ToyFigurineScientist" Caption="Naukowiec"/>
+   <GuideEntityEmbed Entity="ToyFigurineResearchDirector" Caption="Kierownik Badań"/>
   </Box>
   
-## Technologies
+## Technologie
   <Box>
     <GuideEntityEmbed Entity="ComputerResearchAndDevelopment"/>
     <GuideEntityEmbed Entity="ResearchAndDevelopmentServer"/>
   </Box>
-The most important thing inside your department is the R&D server, which stores unlocked technologies, and the R&D computer, which allows you to unlock [color=#e8c878]technologies[/color].
+Najważniejszym elementem w twoim departamencie jest serwer badań i rozwoju, na którym przechowywane są odblokowane technologie, oraz komputer badawczo-rozwojowy, który umożliwia odblokowywanie [color=#e8c878]technologii[/color].
 
-Each technology costs [color=#e8c878]Research Points[/color] and unlocks recipes at lathes. Some technologies will also have prerequisites you have to unlock before you can research them.
+Każda technologia kosztuje [color=#e8c878]punkty badań[/color] i odblokowuje przepisy na tokarkach. Niektóre technologie mają również wymagania wstępne, które musisz spełnić, zanim będziesz mógł je zbadać.
 
-[textlink="Click here to see a list of technologies." link="Technologies"].
+[textlink="Kliknij tutaj, aby wyświetlić listę technologii." link="Technologies"].
 
-## Disciplines
-Technologies are spread over 4 different Disciplines:
+## Dziedziny
+Technologie dzielą się na 4 różne dziedziny:
   <Box>
-    <GuideEntityEmbed Entity="Wrench" Caption="Industrial"/>
-    <GuideEntityEmbed Entity="WeaponTetherGun" Caption="Experimental"/>
-    <GuideEntityEmbed Entity="ComputerTelevision" Caption="Civil Services"/>
-    <GuideEntityEmbed Entity="WeaponXrayCannon" Caption="Arsenal"/>
+    <GuideEntityEmbed Entity="Wrench" Caption="Przemysłowa"/>
+    <GuideEntityEmbed Entity="WeaponTetherGun" Caption="Eksperymentalna"/>
+    <GuideEntityEmbed Entity="ComputerTelevision" Caption="Usługi cywilne"/>
+    <GuideEntityEmbed Entity="WeaponXrayCannon" Caption="Zbrojeniowa"/>
   </Box>
 
-<GuideEntityEmbed Entity="ComputerResearchAndDevelopment"/> Use your nearest R&D console to take note of which kind of research is locked behind each Discipline tree.
+<GuideEntityEmbed Entity="ComputerResearchAndDevelopment"/> Skorzystaj z najbliższej konsoli badawczo-rozwojowej, aby sprawdzić, jakie rodzaje badań są dostępne w poszczególnych drzewkach dyscyplin.
 
-## Tiers
-Each Discipline tree has up to 3 tiers of technologies. At the start the only tier that is open and available for you is tier 1.
+## Poziomy
+Każde drzewko zawiera maksymalnie 3 poziomy technologii. Na początku jedynym poziomem, który jest dla ciebie otwarty i dostępny, jest poziom 1.
 
-In order to progress further, you have to research up to [color=brown]75%[/color] of the current tier to move to the next one. So in order to unlock T2 researches you need to research 75% of T1.
+Aby przejść dalej, musisz zbadać co najmniej [color=brown]75%[/color] bieżącego poziomu, aby przejść do następnego. Zatem aby odblokować badania poziomu 2, musisz zbadać 75% poziomu 1.
 
-Now [color=#8ee99a]Tier 3[/color] is where it gets interesting. If you research a T3 tech, you [color=brown]lock out[/color] T3 techs from other Discipline trees. That is, unless... you find some other way around it, probably should ask your [color=purple]Research Director[/color].
+[color=#8ee99a]Poziom 3[/color] staje się naprawdę interesujący. Jeśli zbadasz technologię z poziomu 3, [color=brown]zablokujesz dostęp[/color] do technologii z poziomu 3 w innych drzewach dyscyplin. Chyba że... znajdziesz jakiś inny sposób na obejście tego ograniczenia – prawdopodobnie powinieneś zapytać o to swojego  [color=purple]kierownika badań[/color].
 
-## Lathes
+## Tokarki
   <Box>
     <GuideEntityEmbed Entity="Protolathe"/>
     <GuideEntityEmbed Entity="CircuitImprinter"/>
@@ -60,6 +60,5 @@ Now [color=#8ee99a]Tier 3[/color] is where it gets interesting. If you research 
     <GuideEntityEmbed Entity="MedicalTechFab"/>
     <GuideEntityEmbed Entity="SecurityTechFab"/>
   </Box>
-At a lathe, you can choose a server to allow it print whatever recipes you have unlocked. Recipes require various materials (steel, glass, plastic, gold, plasma) which can be acquired at Cargo or Salvage.
-
+  Na tokarce możesz wybrać serwer, aby umożliwić jej drukowanie wszystkich odblokowanych przez ciebie przepisów. Przepisy wymagają różnych materiałów (stali, szkła, plastiku, złota, plazmy), które można zdobyć w departamencie zaopatrzenia lub odzysku
 </Document>

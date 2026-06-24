@@ -7,22 +7,22 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-# Technologies
+# Technologie
 
-All technologies have a cost and a tier requirement in order to be researched. Unlocking them adds a variety of recipes that can be printed at various lathes.
+Każda technologia ma określoną cenę oraz wymagany poziom, aby można ją było zbadać. Odblokowanie technologii dodaje szereg schematów, które można wydrukować na różnych tokarkach.
 
-The different technologies and their respective discipline are listed below.
+Poniżej wymieniono różne technologie wraz z odpowiadającymi im dziedzinami.
 
-## Industrial
+## Przemysłowa
 <GuideTechDisciplineEmbed Discipline="Industrial"/>
 
-## Arsenal
+## Zbrojeniowa
 <GuideTechDisciplineEmbed Discipline="Arsenal"/>
 
-## Experimental
+## Eksperymentalna
 <GuideTechDisciplineEmbed Discipline="Experimental"/>
 
-## Civilian Services
+## Usługi cywilne
 <GuideTechDisciplineEmbed Discipline="CivilianServices"/>
 
 </Document>

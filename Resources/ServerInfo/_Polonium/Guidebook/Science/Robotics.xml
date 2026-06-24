@@ -10,66 +10,66 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-  # Robotics
-  The science team has the ability to create several unique types of robots to suit the station's needs. In order to begin, you'll want to research [color=#e8c878]Robotics[/color] technology.
+  # Robotyka
+  Zespół naukowy jest w stanie stworzyć kilka unikalnych typów robotów dostosowanych do potrzeb stacji. Aby rozpocząć, należy przeprowadzić badania nad technologią [color=#e8c878]Robotyka[/color].
 
-  ## Exosuit Fabricator
+  ## Fabrykator egzoszkieletów
 <Box>
-<GuideEntityEmbed Entity="ExosuitFabricator" Caption="Exosuit Fabricator"/>
+<GuideEntityEmbed Entity="ExosuitFabricator" Caption="Fabrykator egzoszkieletów"/>
 </Box>
-  The [color=#e8c878]Exosuit Fabricator[/color] is where you'll be printing out most of the parts for your creations, such as:
-  - [textlink="Cyborg" link="Cyborgs"] limbs
-  - Mech parts and equipment
-  - Proximity sensors
+  W [color=#e8c878]fabrykatorze egzoszkieletów[/color] będziesz drukować większość części do swoich konstrukcji, takich jak:
+  - kończyny [textlink="cyborgów" link="Cyborgs"]
+  - części i wyposażenie mechów
+  - czujniki zbliżeniowe
 
-  Operating the exosuit fabricator is the same as every other lathe on the station; simply click the fabricator to open the UI, then click the icon for whatever part you want to print.
-  - Are there no recipes? click the [color=#e8c878]sync[/color] button on the UI to check for any new blueprints. If, even then, nothing shows up, you've likely not researched the relevant technology yet!
-  - If a recipe appears grayed-out, it's likely due to a lack of materials. To insert new materials (either [color=#99A3A4]steel[/color], [color=#ECF0F1]plastic[/color], or [color=#AED6F1]glass[/color]), simply click the fabricator while holding said material.
+  Obsługa fabrykatora egzoszkieletów przebiega tak samo, jak w przypadku każdej innej tokarki na stacji; wystarczy po prostu kliknąć fabrykator, aby otworzyć interfejs użytkownika, a następnie kliknąć ikonę części, którą chcesz wydrukować.
+  - Nie ma żadnych schematów? Kliknij przycisk [color=#e8c878]synchronizuj[/color] w interfejsie użytkownika, aby sprawdzić, czy pojawiły się nowe schematy. Jeśli nawet wtedy nic się nie wyświetli, prawdopodobnie nie zbadałeś jeszcze odpowiedniej technologii!
+  - Jeśli schemat jest wyszarzony, prawdopodobnie wynika to z braku materiałów. Aby dodać nowe materiały (takie jak [color=#99A3A4]stal[/color], [color=#ECF0F1]plastik[/color] lub [color=#AED6F1]szkło[/color]), wystarczy kliknąć drukarkę, trzymając przy tym dany materiał.
 
-  Every station starts with a full suite of robotics equipment by default, but you can make another fabricator if [color=#e8c878]Robotics[/color] technology is available, which will allow you to make the respective circuit board.
+  Każda stacja jest domyślnie wyposażona w pełen zestaw sprzętu robotycznego, ale jeśli dostępna jest technologia [color=#e8c878]Robotyka[/color], możesz zbudować kolejny fabrykator, co pozwoli ci na wykonanie odpowiedniej płytki drukowanej.
 
-  ## Bots
+  ## Boty
 <Box>
-<GuideEntityEmbed Entity="MobCleanBot" Caption="Cleanbot"/>
-<GuideEntityEmbed Entity="MobMedibot" Caption="Medibot"/>
+<GuideEntityEmbed Entity="MobCleanBot" Caption="czystobot"/>
+<GuideEntityEmbed Entity="MobMedibot" Caption="medibot"/>
 </Box>
 <Box>
-<GuideEntityEmbed Entity="MobHonkBot" Caption="Honkbot"/>
-<GuideEntityEmbed Entity="MobMimeBot" Caption="Mimebot"/>
+<GuideEntityEmbed Entity="MobHonkBot" Caption="honkbot"/>
+<GuideEntityEmbed Entity="MobMimeBot" Caption="mimbot"/>
 </Box>
-  [color=#e8c878]Bots[/color] are small, simple automata which can perform simple tasks, such as cleaning. They don't use power cells, but are quite fragile. Making these will require parts which can be made at an exosuit fabricator.
+  [color=#e8c878]Boty[/color] to małe, proste automaty, które potrafią wykonywać proste zadania, takie jak sprzątanie. Nie wykorzystują ogniw zasilających, ale są dość delikatne. Do ich produkcji potrzebne będą części, które można wykonać w fabrykatorze egzoszkieletów.
 
-  To make a bot, open the [color=#e8c878]Construction Menu[/color] and go to the "Utilities" category  (or just search "bot") and you'll have the whole list of recipes. In order to assemble the bot, you must have the parts outlined by the recipe close to you and click [color=#e8c878]Build[/color], after a few seconds your newly created silicon servant should appear at your feet!
+  Aby stworzyć bota, otwórz [color=#e8c878]Menu konstrukcji[/color] i przejdź do kategorii "Utilities" (lub po prostu wyszukaj hasło "bot") – zobaczysz tam pełną listę przepisów. Aby złożyć bota, musisz mieć przy sobie części wymienione w przepisie i kliknąć [color=#e8c878]Zbuduj[/color] – po kilku sekundach twój nowo stworzony krzemowy sługa powinien pojawić się u twoich stóp!
 
-  ## Mechs
+  ## Mechy
 <Box>
 <GuideEntityEmbed Entity="MechRipley" Caption="Ripley APLU"/>
 <GuideEntityEmbed Entity="MechHonker" Caption="H.O.N.K."/>
 <GuideEntityEmbed Entity="MechHamtr" Caption="HAMTR"/>
 <GuideEntityEmbed Entity="MechVim" Caption="Vim"/>
 </Box>
-  [color=#e8c878]Mechs[/color] are giant behemoths of metal designed to carry out a variety of functions respective to their model. They are piloted by players and require power cells to function.
+  [color=#e8c878]Mechy[/color] to gigantyczne metalowe kolosy zaprojektowane do wykonywania różnorodnych zadań w zależności od modelu. Są sterowane przez graczy i do działania potrzebują ogniw zasilających.
 
-  Each mech requires its own unique set of limbs and parts to create. These can be fabricated at the Exosuit Fabricator, the same as any other part, save for the required [color=#e8c878]circuit boards[/color], which are made at a [color=#e8c878]Circuit Board Imprinter[/color], which can normally be found in the [textlink="science" link="Science"] department.
+  Do stworzenia każdego mecha potrzebny jest unikalny zestaw kończyn i części. Można je wytwarzać w drukarce egzoszkieletów, tak samo jak każdą inną część, z wyjątkiem niezbędnych [color=#e8c878]płyt drukowanych[/color], które są produkowane w [color=#e8c878]drukarce płytek drukowanych[/color], którą zazwyczaj można znaleźć w departamencie [textlink="Badań i Rozwoju" link="Science"].
 <Box>
-<GuideEntityEmbed Entity="RipleyCentralElectronics" Caption="Ripley central controls module"/>
+<GuideEntityEmbed Entity="RipleyCentralElectronics" Caption="Moduł sterowania centralnego Ripley"/>
 </Box>
 <Box>
-<GuideEntityEmbed Entity="RipleyPeripheralsElectronics" Caption="Ripley peripherals control module"/>
+<GuideEntityEmbed Entity="RipleyPeripheralsElectronics" Caption="Moduł sterujący urządzeniami peryferyjnymi Ripley"/>
 </Box>
 
-  For example, both of the circuit boards above are necessary to create a ripley mech, and cannot be used to make any other mech.
+  Na przykład obie powyższe płytki drukowane są niezbędne do stworzenia mecha typu Ripley i nie można ich wykorzystać do zbudowania żadnego innego mecha.
 
-  To start making a mech, print their harness in the fabricator and insert the limbs, you can [color=#e8c878]examine[/color] it to see how to proceed with construction once all limbs are in place.
-  - Every mech requires some combination of wires, tool usage, and their own unique circuit boards to construct after the chassis has been assembled. Most mechs have two or more unique circuit boards. For example, the [color=#e8c878]Ripley[/color] mech requires a [color=#e8c878]ripley controls module[/color] board and a [color=#e8c878]ripley peripherals module[/color] board.
-  - Mechs require large amounts of material to create - be sure to ask your fellow scientists and cargo personnel for any materials you're missing!
-  - The Vim exosuit requires a pair of borg legs and an EVA helmet, regular or syndicate, then a voice trigger and a power cell.
+  Aby rozpocząć tworzenie mecha, wydrukuj jego uprząż w fabrykatorze i włóż kończyny; możesz [color=#e8c878]przyjrzeć się[/color] jej, aby sprawdzić, jak kontynuować montaż po umieszczeniu wszystkich kończyn na miejscu.
+  - Każdy mech wymaga pewnej kombinacji przewodów, użycia narzędzi oraz własnych, unikalnych płytek drukowanych do złożenia po zmontowaniu podwozia. Większość mechów posiada co najmniej dwie unikalne płytki drukowane. Na przykład mech [color=#e8c878]Ripley[/color] wymaga płytki [color=#e8c878]modułu sterowania centralnego Ripley[/color] oraz płytki [color=#e8c878]modułu sterującego urządzeniami peryferyjnymi Ripley[/color].
+  - Do budowy mechów potrzeba ogromnych ilości materiałów – koniecznie poproś innych naukowców i pracowników działu zaopatrzenia o materiały, których ci brakuje!
+  - Do skompletowania mecha Vim potrzebna jest para nóg typu borg oraz hełm EVA (zwykły lub syndykatu), a także wyzwalacz głosowy i ogniwo zasilające.
 
-  ## Equipment
-    A mech is nothing more than an expensive hunk of metal without their exclusive tools. Equipment can be created at the fabricator, the same as any other part.
+  ## Wyposażenie
+    Bez specjalistycznych narzędzi mech to nic więcej niż kosztowny kawał metalu. Wyposażenie można wytworzyć w fabrykatorze, tak samo jak każdą inną część.
 <Box>
-<GuideEntityEmbed Entity="MechEquipmentGrabber" Caption="The Hydraulic Clamp, as an example."/>
+<GuideEntityEmbed Entity="MechEquipmentGrabber" Caption="Na przykład zacisk hydrauliczny."/>
 </Box>
-  - To install equipment, just click on the mech with the equipment in your hand.
-  - To use equipment, perform the "Cycle Equipment" action until the tool you desire is equipped.
+  - Aby założyć wyposażenie, wystarczy kliknąć na mecha z danym przedmiotem w dłoni.
+  - Aby użyć wyposażenia, wykonaj czynność "Zmiana wyposażenia", aż do momentu, gdy zostanie założone żądane narzędzie.
 </Document>

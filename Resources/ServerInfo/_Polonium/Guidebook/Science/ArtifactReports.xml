@@ -9,26 +9,26 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-  # Artifact Reports
-  A large portion of Xenoarchaeology gameplay revolves around the interpretation of artifact reports, which are created at the [color=#e8c878]analysis console[/color] after an artifact is scanned. Reports contain the following information:
+  # Raporty dotyczące artefaktów
+  Znaczna część rozgrywki w ksenoarcheologii opiera się na interpretacji raportów dotyczących artefaktów, które są generowane na [color=#e8c878]konsoli analitycznej[/color] po zeskanowaniu artefaktu. Raporty zawierają następujące informacje:
 
-  - [color=#e8c878]Node ID:[/color] a unique numeric ID corresponding to this artifact's node. Useful in conjunction with a [color=#e8c878]node scanner[/color] for quickly identifying recurring nodes.
+  - [color=#e8c878] ID węzła:[/color] unikalny identyfikator numeryczny odpowiadający węzłowi artefaktu. Przydatny w połączeniu ze [color=#e8c878]skanerem obiektów[/color] do szybkiej identyfikacji powtarzających się węzłów.
 
-  - [color=#e8c878]Depth:[/color] a distance from the starting node (depth 0). This is a good shorthand for the value and danger of a node.
+  - [color=#e8c878]Głębokość:[/color] odległość od obiektu początkowego (głębokość 0). Jest to dobry wskaźnik wartości i zagrożenia związanego z danym obiektem.
 
-  - [color=#e8c878]Activation status:[/color] whether or not a node has been activated in the past.
+  - [color=#e8c878]Stan aktywacji:[/color] informacja, czy obiekt był aktywowany w przeszłości.
 
-  - [color=#e8c878]Stimulus:[/color] the stimulus for that particular node.
+  - [color=#e8c878]Bodziec:[/color] bodziec dla tego konkretnego obiektu.
 
-  - [color=#e8c878]Reaction:[/color] the reaction the stimulus induces. This is often vague, so caution is advised.
+  - [color=#e8c878]Reakcja:[/color] reakcja wywołana przez bodziec. Jest ona często niejasna, dlatego zaleca się ostrożność.
 
-  - [color=#e8c878]Edges:[/color] the amount of nodes that are connected to the current node. Using this, you can calculate the total number of nodes as well as organize a map of their connections.
+  - [color=#e8c878]Krawędzie:[/color] liczba węzłów połączonych z bieżącym węzłem. Dzięki tej informacji można obliczyć całkowitą liczbę węzłów, a także stworzyć mapę ich połączeń.
 
-  - [color=#e8c878]Unextracted value:[/color] the amount of research points an artifact will give when extracted. Extracting sets this to zero and traversing new nodes increases it.
+  - [color=#e8c878]Wartość nie wydobyta:[/color] liczba punktów badawczych, jaką artefakt zapewni po wydobyciu. Wydobycie ustawia tę wartość na zero, a przemierzanie nowych węzłów ją zwiększa.
 
-  Reports are a helpful tool in manipulating an artifact, especially in the later stages where you are traversing nodes that have already been activated.
+  Raporty są pomocnym narzędziem w zarządzaniu artefaktem, zwłaszcza na późniejszych etapach, kiedy przemierzasz węzły, które zostały już aktywowane.
   <Box>
   <GuideEntityEmbed Entity="PaperArtifactAnalyzer"/>
   </Box>
-  To help with this process, consider printing out reports, writing down details uncovered during activation, or storing them in a folder nearby.
+  Aby ułatwić sobie ten proces, warto rozważyć wydrukowanie raportów, zanotowanie szczegółów ujawnionych podczas aktywacji lub przechowywanie ich w folderze w pobliżu.
 </Document>
