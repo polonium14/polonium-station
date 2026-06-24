@@ -13,7 +13,7 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-  # Specjaliści Nuklearni
+  # Operatorzy Nuklearni
 
   <Box>
     [color=#c8c8c8][italic]"OPERATORZY, BĄDŹCIE W GOTOWOŚCI. WASZE ZADANIA SĄ PROSTE.[/italic][/color]
@@ -25,7 +25,7 @@ SPDX-License-Identifier: MIT
     <GuideEntityEmbed Entity="PosterContrabandEnlistGorlex" Caption=""/>
   </Box>
 
-  Właśnie zostałeś wybrany na specjalistę nuklearnego w [color=#ff8a8a]Syndykacie[/color]. Masz jeden cel: wysadzić jeden z najlepszych statków Nanotrasen za pomocą głowicy nuklearnej.
+  Właśnie zostałeś wybrany na operatora nuklearnego w [color=#ff8a8a]Syndykacie[/color]. Masz jeden cel: wysadzić jeden z najlepszych statków Nanotrasen za pomocą głowicy nuklearnej.
 
   ## Operatorzy
   Twój zespół będzie składał się z kilku różnych ról, a mianowicie:
@@ -39,7 +39,7 @@ SPDX-License-Identifier: MIT
     <GuideEntityEmbed Entity="ClothingOuterHardsuitSyndieCommander" Caption="skafander dowódcy"/>
   </Box>
 
-  Role Agenta lub Dowódcy należy wybrać tylko wtedy, gdy zamierzasz podjąć się związanych z nimi obowiązków. Nie należy wykorzystywać ich jako dodatkowej szansy na uzyskanie roli Specjalisty Nuklearnego z zamiarem zrzucenia związanych z nimi obowiązków na innego gracza.
+  Role Agenta lub Dowódcy należy wybrać tylko wtedy, gdy zamierzasz podjąć się związanych z nimi obowiązków. Nie należy wykorzystywać ich jako dodatkowej szansy na uzyskanie roli Operatora Nuklearnego z zamiarem zrzucenia związanych z nimi obowiązków na innego gracza.
 
   ## Dysk
 
