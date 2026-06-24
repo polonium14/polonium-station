@@ -1,11 +1,13 @@
 files:
   - source: /Resources/Locale/en-US/**/*.ftl
     ignore:
+      - /Resources/Locale/en-US/**/bql
       - /Resources/Locale/en-US/**/datasets
       - /Resources/Locale/en-US/**/accent
       - /Resources/Locale/en-US/_Polonium
       - /Resources/Locale/en-US/_Corvax
       - /Resources/Locale/en-US/_Imperial
+      - /Resources/Locale/en-US/_White
       - /Resources/Locale/en-US/robust-toolbox
       - /Resources/Locale/en-US/_directions.ftl
       - /Resources/Locale/en-US/_units.ftl
@@ -13,5 +15,8 @@ files:
       - /Resources/Locale/en-US/**/_polonium
       - /Resources/Locale/en-US/**/_corvax
       - /Resources/Locale/en-US/**/_imperial
+      - /Resources/Locale/en-US/**/_white
+      - /Resources/Locale/en-US/visual_effects.ftl
+      - /Resources/Locale/en-US/gender.ftl
     translation: /Resources/Locale//%locale%/**//%original_file_name%
     update_option: update_without_changes
