@@ -1,0 +1,40 @@
+# SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2026 Polonium-bot <admin@ss14.pl>
+# SPDX-FileCopyrightText: 2026 nikitosych <174215049+nikitosych@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: guideEntry
+  id: Surgery
+  name: guide-entry-surgery
+  text: "/ServerInfo/_Polonium/Guidebook/Medical/Surgery.xml"
+  children:
+  - PartManipulation
+  - OrganManipulation
+  - UtilitySurgeries
+  - Autodoc
+
+- type: guideEntry
+  id: PartManipulation
+  name: guide-entry-partmanipulation
+  text: "/ServerInfo/_Polonium/Guidebook/Medical/PartManipulation.xml"
+  filterEnabled: true
+
+- type: guideEntry
+  id: OrganManipulation
+  name: guide-entry-organmanipulation
+  text: "/ServerInfo/_Polonium/Guidebook/Medical/OrganManipulation.xml"
+  filterEnabled: true
+
+- type: guideEntry
+  id: UtilitySurgeries
+  name: guide-entry-utilitysurgeries
+  text: "/ServerInfo/_Polonium/Guidebook/Medical/UtilitySurgeries.xml"
+  filterEnabled: true
+
+- type: guideEntry
+  id: Autodoc
+  name: guide-entry-autodoc
+  text: "/ServerInfo/_Polonium/Guidebook/Medical/Autodoc.xml"
