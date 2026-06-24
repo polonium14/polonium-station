@@ -13,3 +13,4 @@ jobs:
     - uses: actions-ecosystem/action-add-labels@v1.1.3
       with:
         labels: "S: Zatwierdzono"
+        github_token: ${{ secrets.BOT_TOKEN }}
