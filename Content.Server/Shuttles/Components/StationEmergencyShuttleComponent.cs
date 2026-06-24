@@ -1,3 +1,12 @@
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Moony <moony@hellomouse.net>
+// SPDX-FileCopyrightText: 2024 ElectroJr <leonsfriedrich@gmail.com>
+// SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2026 taydeo <tay@funkystation.org>
+// SPDX-FileCopyrightText: 2026 taydeo <td12233a@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.Shuttles.Systems;
 using Robust.Shared.Audio;
 using Robust.Shared.Serialization.TypeSerializers.Implementations;
