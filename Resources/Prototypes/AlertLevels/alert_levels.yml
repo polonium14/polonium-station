@@ -65,6 +65,18 @@
       emergencyLightColor: DarkViolet
       forceEnableEmergencyLights: true
       shuttleTime: 1200
+    amber:
+      announcement: alert-level-amber-announcement
+      selectable: false
+      sound:
+        path: /Audio/_Impstation/Misc/amber.ogg
+        params:
+          volume: -1
+      disableSelection: true
+      color: DarkGoldenrod
+      emergencyLightColor: DarkGoldenrod
+      forceEnableEmergencyLights: true
+      shuttleTime: 1200
     octarine:
       announcement: alert-level-octarine-announcement
       selectable: false
