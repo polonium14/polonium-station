@@ -98,6 +98,9 @@ binds:
   key: S
 - function: Walk
   type: State
+  key: Control
+- function: Sprint
+  type: State
   key: Shift
 # Shuttle
 - function: ShuttleStrafeUp

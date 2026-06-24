@@ -136,6 +136,7 @@ ui-options-header-text-other = Text input other
 
 ui-options-hotkey-keymap = Use US QWERTY Keys
 ui-options-hotkey-toggle-walk = Toggle Walk
+ui-options-hotkey-toggle-sprint = Toggle Sprint
 
 ui-options-function-move-up = Move Up
 ui-options-function-move-left = Move Left

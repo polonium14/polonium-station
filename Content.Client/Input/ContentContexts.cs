@@ -100,6 +100,7 @@ namespace Content.Client.Input
             human.AddFunction(EngineKeyFunctions.MoveLeft);
             human.AddFunction(EngineKeyFunctions.MoveRight);
             human.AddFunction(EngineKeyFunctions.Walk);
+            human.AddFunction(ContentKeyFunctions.Sprint);
             human.AddFunction(ContentKeyFunctions.ToggleKnockdown);
             human.AddFunction(ContentKeyFunctions.SwapHands);
             human.AddFunction(ContentKeyFunctions.SwapHandsReverse);
@@ -149,6 +150,7 @@ namespace Content.Client.Input
             aghost.AddFunction(EngineKeyFunctions.MoveLeft);
             aghost.AddFunction(EngineKeyFunctions.MoveRight);
             aghost.AddFunction(EngineKeyFunctions.Walk);
+            aghost.AddFunction(ContentKeyFunctions.Sprint);
             aghost.AddFunction(ContentKeyFunctions.SwapHands);
             aghost.AddFunction(ContentKeyFunctions.SwapHandsReverse);
             aghost.AddFunction(ContentKeyFunctions.Drop);

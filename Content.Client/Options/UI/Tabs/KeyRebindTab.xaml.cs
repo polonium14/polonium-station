@@ -73,25 +73,42 @@ namespace Content.Client.Options.UI.Tabs
 
         private readonly List<Action> _deferCommands = new();
 
-        private void InitToggleWalk()
+        private void InitToggleMovement(CVarDef<bool> toggleCVar)
         {
-            if (_cfg.GetCVar(CCVars.ToggleWalk))
+            if (toggleCVar == CCVars.ToggleWalk)
             {
-                ToggleFunctions.Add(EngineKeyFunctions.Walk);
+                if (_cfg.GetCVar(CCVars.ToggleWalk))
+                {
+                    ToggleFunctions.Add(EngineKeyFunctions.Walk);
+                }
+                else
+                {
+                    ToggleFunctions.Remove(EngineKeyFunctions.Walk);
+                }
             }
-            else
+            else if (toggleCVar == CCVars.ToggleSprint)
             {
-                ToggleFunctions.Remove(EngineKeyFunctions.Walk);
+                if (_cfg.GetCVar(CCVars.ToggleSprint))
+                {
+                    ToggleFunctions.Add(ContentKeyFunctions.Sprint);
+                }
+                else
+                {
+                    ToggleFunctions.Remove(ContentKeyFunctions.Sprint);
+                }
             }
         }
 
-        private void HandleToggleWalk(BaseButton.ButtonToggledEventArgs args)
+        private void HandleToggleMovement(
+            BaseButton.ButtonToggledEventArgs args,
+            CVarDef<bool> toggleCVar,
+            BoundKeyFunction keyFunction)
         {
-            _cfg.SetCVar(CCVars.ToggleWalk, args.Pressed);
+            _cfg.SetCVar(toggleCVar, args.Pressed);
             _cfg.SaveToFile();
-            InitToggleWalk();
+            InitToggleMovement(toggleCVar);
 
-            if (!_keyControls.TryGetValue(EngineKeyFunctions.Walk, out var keyControl))
+            if (!_keyControls.TryGetValue(keyFunction, out var keyControl))
             {
                 return;
             }
@@ -107,7 +124,7 @@ namespace Content.Client.Options.UI.Tabs
 
                 var registration = new KeyBindingRegistration
                 {
-                    Function = EngineKeyFunctions.Walk,
+                    Function = keyFunction,
                     BaseKey = binding.BaseKey,
                     Mod1 = binding.Mod1,
                     Mod2 = binding.Mod2,
@@ -126,6 +143,16 @@ namespace Content.Client.Options.UI.Tabs
             }
 
             _deferCommands.Add(_inputManager.SaveToUserData);
+        }
+
+        private void HandleToggleWalk(BaseButton.ButtonToggledEventArgs args)
+        {
+            HandleToggleMovement(args, CCVars.ToggleWalk, EngineKeyFunctions.Walk);
+        }
+
+        private void HandleToggleSprint(BaseButton.ButtonToggledEventArgs args)
+        {
+            HandleToggleMovement(args, CCVars.ToggleSprint, ContentKeyFunctions.Sprint);
         }
 
         private void HandleStaticStorageUI(BaseButton.ButtonToggledEventArgs args)
@@ -206,7 +233,10 @@ namespace Content.Client.Options.UI.Tabs
             AddButton(EngineKeyFunctions.MoveRight);
             AddButton(EngineKeyFunctions.Walk);
             AddCheckBox("ui-options-hotkey-toggle-walk", _cfg.GetCVar(CCVars.ToggleWalk), HandleToggleWalk);
-            InitToggleWalk();
+            InitToggleMovement(CCVars.ToggleWalk);
+            AddButton(ContentKeyFunctions.Sprint);
+            AddCheckBox("ui-options-hotkey-toggle-sprint", _cfg.GetCVar(CCVars.ToggleSprint), HandleToggleSprint);
+            InitToggleMovement(CCVars.ToggleSprint);
             AddButton(ContentKeyFunctions.ToggleKnockdown);
 
             AddHeader("ui-options-header-camera");
