@@ -12,59 +12,59 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-# Xenoarchaeology
-Xenoarchaeology is a science subdepartment focused on researching and experimenting on alien artifacts.
+# Ksenoarcheologia
+Ksenoarcheologia to dziedzina nauki zajmująca się badaniem i eksperymentowaniem z artefaktami pozaziemskimi.
 
-At the start of each shift, the Science department will usually have access to at least two artifacts to experiment on. You can buy more by talking to the Cargo department.
+Na początku każdej zmiany departament Badań i Rozwoju ma zazwyczaj do dyspozycji co najmniej dwa artefakty do przeprowadzania eksperymentów. Aby kupić więcej, należy zwrócić się do działu zaopatrzenia.
 
-By researching the unique things each artifact can do, you gain Research Points, increase the artifact's sale value, and potentially discover a useful ability or two that can help your department or the whole station!
+Badając wyjątkowe właściwości każdego artefaktu, zdobywasz punkty badawcze, zwiększasz wartość rynkową artefaktu i możesz odkryć kilka przydatnych zdolności, które pomogą twojemu wydziałowi lub całej stacji!
 
-## Artifact Nodes
+## Węzły artefaktów
 <Box>
 <GuideEntityEmbed Entity="ComplexXenoArtifact" Caption=""/>
 <GuideEntityEmbed Entity="ComplexXenoArtifactItem" Caption=""/>
 </Box>
-Artifacts consist of a randomly-generated tree of nodes. These nodes have a "[color=#e8c878]depth[/color]", representing how dangerous the node is, and the number of other nodes connected to it, called "[color=#e8c878]edges[/color]",
+Artefakty składają się z losowo generowanego drzewa węzłów. Węzły te mają "[color=#e8c878]głębokość[/color]", która określa, jak niebezpieczny jest dany węzeł, oraz liczbę innych węzłów z nim połączonych, zwanych "[color=#e8c878]krawędziami[/color]".
 
-Artifacts always start at depth zero, the root of the tree. Travelling the tree to find as many nodes as possible is the main goal of the scientists working on them. Knowledge is extracted from nodes to gain Research Points and increase the artifact's sale value.
+Artefakty zawsze zaczynają się na głębokości zerowej, czyli w korzeniu drzewa. Przemierzanie drzewa w celu odnalezienia jak największej liczby węzłów stanowi główny cel naukowców zajmujących się tymi artefaktami. Z węzłów pozyskuje się wiedzę, aby zdobywać punkty badawcze i zwiększać wartość rynkową artefaktu.
 
-Each node has two components: its [color=#e8c878]stimulus[/color] and a [color=#e8c878]reaction[/color].
+Każdy węzeł składa się z dwóch elementów: [color=#e8c878]bodźca[/color] oraz [color=#e8c878]reakcji[/color].
 
-A stimulus is the external behavior that triggers the reaction. There's a variety of these, and higher depth nodes have more difficult to accomplish stimuli. Some stimuli will need improvisation to trigger, and you may need to talk to other departments to get everything you need.
+Bodźcem jest zewnętrzne zachowanie, które wywołuje reakcję. Istnieje wiele różnych bodźców, a węzły na wyższych poziomach charakteryzują się bodźcami trudniejszymi do zrealizowania. Niektóre bodźce wymagają improwizacji, a aby uzyskać wszystko, co jest potrzebne, może zaistnieć konieczność skontaktowania się z innymi działami.
 
-Some reactions are instantaneous effects while others are permanent changes. Once an artifact is triggered, the reaction causes the artifact to randomly move to another node it is linked to.
+Niektóre reakcje występują natychmiastowo, podczas gdy inne powodują trwałe zmiany. Po uruchomieniu artefaktu reakcja powoduje, że artefakt losowo przemieszcza się do innego węzła, z którym jest połączony.
 
-With some experimental science, you can begin to grasp how the different nodes of an artifact are connected, and how to move between them by repeatedly activating nodes.
+Dzięki pewnym eksperymentom naukowym można zacząć rozumieć, w jaki sposób poszczególne węzły artefaktu są ze sobą połączone oraz jak przemieszczać się między nimi poprzez aktywowanie węzłów.
 
-All non-zero-depth nodes will have exactly one edge that leads up to its parent node. All other edges a node has lead down to the next depth.
+Wszystkie węzły o głębokości niezerowej będą miały dokładnie jedną krawędź prowadzącą do węzła nadrzędnego. Wszystkie pozostałe krawędzie danego węzła prowadzą w dół, do kolejnej głębokości.
 
-## Artifact Analyzer and Analysis Console
+## Analizator artefaktów i konsola analizy
 <Box>
 <GuideEntityEmbed Entity="MachineArtifactAnalyzer"/>
 <GuideEntityEmbed Entity="ComputerAnalysisConsole"/>
 </Box>
-The main equipment that you'll be using for Xenoarchaeology is the [color=#e8c878]artifact analyzer[/color] and the [color=#e8c878]analysis console[/color]. You can use these to create reports that contain valuable information about an artifact.
+Głównym sprzętem, z którego będziesz korzystać w ramach ksenoarcheologii, jest [color=#e8c878]analizator artefaktów[/color] oraz [color=#e8c878]konsola analizy[/color]. Możesz ich używać do tworzenia raportów zawierających cenne informacje na temat artefaktu.
 
-To set them up, simply link them with a network configurator and set an artifact on top of the analyzer. Every station has at least one of these machines already set up.
+Aby je skonfigurować, wystarczy podłączyć je za pomocą konfiguratora sieciowego i umieścić artefakt na analizatorze. Każda stacja posiada co najmniej jedno z tych urządzeń, które jest już skonfigurowane.
 
-Use the console's [color=#e8c878]scan[/color] button to discover what stimulus the artifact needs and what its reaction will do. Scanning takes thirty seconds.
+Użyj przycisku [color=#e8c878]skanuj[/color] na konsoli, aby dowiedzieć się, jakiego bodźca potrzebuje artefakt i jaki będzie skutek jego reakcji. Skanowanie trwa trzydzieści sekund.
 
-Use the [color=#e8c878]print[/color] button to save the scan result, so you can refer to it later.
+Użyj przycisku [color=#e8c878]drukuj[/color], aby zapisać wynik skanowania i móc do niego wrócić później.
 
-Once you've discovered a new node, you can extract points from the artifact using the [color=#e8c878]Extract[/color] button.
+Po odkryciu nowego węzła możesz wyodrębnić punkty z artefaktu, korzystając z przycisku [color=#e8c878]Wyodrębnij punkty[/color].
 
-## Assembling Artifacts
-<GuideEntityEmbed Entity="ArtifactFragment" Caption="Artifact Fragment"/>
+## Tworzenie artefaktów
+<GuideEntityEmbed Entity="ArtifactFragment" Caption="Fragment artefaktu"/>
 
-It is possible to gather multiple artifact fragments and assemble them into a working artifact. You can ask for these from Salvage, who usually find these while mining asteroids or on Expeditions.
+Można zebrać wiele fragmentów artefaktów i złożyć je w działający artefakt. Można poprosić o nie w departamencie odzysku – zazwyczaj znajdują je podczas wydobywania surowców z asteroid lub w trakcie wypraw.
 
-## Traversal Bias
+## Tendencja do przemieszczania się
 <Box>
   <GuideEntityEmbed Entity="MachineArtifactAnalyzer"/>
 </Box>
-Artifacts placed on top of a powered artifact analyzer are subjected to a bias which affects which node they will move to after being activated. The bias can be set in the artifact console.
+Artefakty umieszczone na zasilanym analizatorze artefaktów podlegają przesunięciu, które wpływa na to, do którego węzła się przemieszczą po aktywacji. Przesunięcie to można ustawić w konsoli artefaktów.
 
-There are two types of biases:
-- [color=#e8c878]Up:[/color] favors nodes closer to the origin. Results in a decrease of depth.
-- [color=#e8c878]Down:[/color] favors nodes farther away from the origin. Results in an increase of depth.
+Istnieją dwa rodzaje przesunięć:
+- [color=#e8c878]W górę:[/color] faworyzuje węzły położone bliżej punktu początkowego. Powoduje zmniejszenie głębokości.
+- [color=#e8c878]W dół:[/color] faworyzuje węzły położone dalej od punktu początkowego. Powoduje zwiększenie głębokości.
 </Document>

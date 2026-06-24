@@ -3942,4 +3942,5 @@ Resources/MapImages
 /release-funny/SS14.Client.zip
 /release-funny/SS14.Server_win-x64.zip
 
-‎Tools/changelog/package-lock.json
+Tools/changelog/package-lock.json
+Tools/**/*.log

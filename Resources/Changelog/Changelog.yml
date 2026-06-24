@@ -1,40 +1,4 @@
 ﻿Entries:
-- author: metalgearsloth
-  changes:
-  - message: Fix lighting quality affecting planet lighting.
-    type: Fix
-  id: 7959
-  time: '2025-02-16T13:29:03.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/35207
-- author: metalgearsloth
-  changes:
-  - message: Re-enable blur for rooves and increase amount of blur.
-    type: Tweak
-  id: 7960
-  time: '2025-02-16T15:35:24.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/35213
-- author: metalgearsloth
-  changes:
-  - message: Rooves now block weather.
-    type: Tweak
-  id: 7961
-  time: '2025-02-16T15:55:41.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/35214
-- author: n00kii
-  changes:
-  - message: Fixed laser weapon visuals being broken when shooting across grids or
-      into space.
-    type: Fix
-  id: 7962
-  time: '2025-02-16T16:14:04.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34515
-- author: Velken
-  changes:
-  - message: ': Paramedic Siren''s light is now visible to all and not just the wearer.'
-    type: Fix
-  id: 7963
-  time: '2025-02-16T18:43:20.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/35203
 - author: slarticodefast
   changes:
   - message: Fixed uplink items not being able to be used in your hand.
@@ -4190,3 +4154,40 @@
   id: 9266
   time: '2026-06-23T10:00:27.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/706
+- author: Zintex
+  changes:
+  - message: "\"G\xF3wnochrona\" - autorski utw\xF3r do lobby i szaf graj\u0105cych"
+    type: Add
+  id: 9267
+  time: '2026-06-23T23:17:07.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/710
+- author: haze
+  changes:
+  - message: "Przet\u0142umaczono rozdzia\u0142 o minor antagach"
+    type: Add
+  id: 9268
+  time: '2026-06-24T12:12:24.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/709
+- author: haze
+  changes:
+  - message: "Dodano t\u0142umaczenia kostek"
+    type: Add
+  id: 9269
+  time: '2026-06-24T13:00:21.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/715
+- author: haze
+  changes:
+  - message: "Przet\u0142umaczono Nar'Si"
+    type: Add
+  id: 9270
+  time: '2026-06-24T13:29:35.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/716
+- author: haze
+  changes:
+  - message: "Przet\u0142umaczono rozdzia\u0142 o specjalistach nuklearnych"
+    type: Add
+  - message: "Zmieniono \"Specjali\u015Bci Nuklearni\" na \"Operatorzy Nuklearni\""
+    type: Tweak
+  id: 9271
+  time: '2026-06-24T13:50:39.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/708
