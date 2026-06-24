@@ -144,7 +144,7 @@
     minimumPlayers: 0
   - type: MeteorSwarm
     announcement: station-event-space-dust-start-announcement
-    announcementSound: /Audio/Announcements/attention.ogg
+    announcementSound: /Audio/_Polonium/Announcements/attention.ogg
     nonDirectional: true
     meteors:
       MeteorSpaceDust: 1
@@ -199,7 +199,7 @@
     weight: 0.05
   - type: MeteorSwarm
     announcement: station-event-meteor-urist-start-announcement
-    announcementSound: /Audio/Announcements/attention.ogg
+    announcementSound: /Audio/_Polonium/Announcements/attention.ogg
     meteors:
       MeteorUrist: 1
     waves:
@@ -216,7 +216,7 @@
   - type: StationEvent
     startAnnouncement: station-event-immovable-rod-start-announcement
     startAudio:
-      path: /Audio/Announcements/attention.ogg
+      path: /Audio/_Polonium/Announcements/attention.ogg
     weight: 3.5
     reoccurrenceDelay: 1
     duration: 1
@@ -260,7 +260,7 @@
     weight: 0.05
   - type: MeteorSwarm
     announcement: station-event-meteor-cow-start-announcement
-    announcementSound: /Audio/Announcements/attention.ogg
+    announcementSound: /Audio/_Polonium/Announcements/attention.ogg
     meteors:
       MeteorCow: 1
     waves:
@@ -278,7 +278,7 @@
     weight: 0.05
   - type: MeteorSwarm
     announcement: station-event-meteor-clown-start-announcement
-    announcementSound: /Audio/Announcements/attention.ogg
+    announcementSound: /Audio/_Polonium/Announcements/attention.ogg
     meteors:
       MeteorClown: 1
     waves:
@@ -296,7 +296,7 @@
     weight: 0.05
   - type: MeteorSwarm
     announcement: station-event-meteor-potato-start-announcement
-    announcementSound: /Audio/Announcements/attention.ogg
+    announcementSound: /Audio/_Polonium/Announcements/attention.ogg
     meteors:
       MeteorPotato: 1
     waves:
@@ -314,7 +314,7 @@
     weight: 0.03
   - type: MeteorSwarm
     announcement: station-event-fun-swarm-start-announcement
-    announcementSound: /Audio/Announcements/attention.ogg
+    announcementSound: /Audio/_Polonium/Announcements/attention.ogg
     meteors:
       MeteorClown: 1
       MeteorCow: 1

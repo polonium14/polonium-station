@@ -61,7 +61,10 @@ public abstract partial class SharedChatSystem : EntitySystem
     public const int WhisperClearRange = 2; // how far whisper goes while still being understandable, in world units
     public const int WhisperMuffledRange = 5; // how far whisper goes at all, in world units
     public static readonly SoundSpecifier DefaultAnnouncementSound
-        = new SoundPathSpecifier("/Audio/Announcements/announce.ogg");
+        = new SoundPathSpecifier("/Audio/_Polonium/Announcements/announce.ogg");
+
+    public static readonly SoundSpecifier CCAnnouncementSound
+        = new SoundPathSpecifier("/Audio/_Polonium/Announcements/centcomm_announce.ogg");
 
     public static readonly ProtoId<RadioChannelPrototype> CommonChannel = "Common";
 

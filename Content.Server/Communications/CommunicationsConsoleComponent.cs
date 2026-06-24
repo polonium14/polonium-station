@@ -99,7 +99,7 @@ namespace Content.Server.Communications
         /// Announce sound file path
         /// </summary>
         [DataField]
-        public SoundSpecifier Sound = new SoundPathSpecifier("/Audio/Announcements/announce.ogg");
+        public SoundSpecifier Sound = new SoundPathSpecifier("/Audio/_Polonium/Announcements/crew_announce.ogg");
 
         /// <summary>
         /// Hides the sender identity (If they even have one).
