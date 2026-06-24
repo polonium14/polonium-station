@@ -1,7 +1,21 @@
+# SPDX-FileCopyrightText: 2024 Ian <ignaz.k@live.de>
+# SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2024 f0x-n3rd <150924715+f0x-n3rd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Fenn <162015305+TooSillyFennec@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Goomson <GoomsonCode@proton.me>
+# SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 corresp0nd <46357632+corresp0nd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2026 Polonium-bot <admin@ss14.pl>
+# SPDX-FileCopyrightText: 2026 nikitosych <174215049+nikitosych@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: guideEntry
   id: Chemicals
   name: guide-entry-chemicals
-  text: "/ServerInfo/Guidebook/Chemicals.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Chemicals.xml"
   children:
   - Elements
   - Medicine
@@ -13,58 +27,74 @@
   - Biological
   - Special
   - Others
+  - Exotic # funky
+  - Reactions # funky
   filterEnabled: True
 
 - type: guideEntry
   id: Elements
   name: guide-entry-elements
-  text: "/ServerInfo/Guidebook/ChemicalTabs/Elements.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/ChemicalTabs/Elements.xml"
   filterEnabled: True
 
 - type: guideEntry
   id: Narcotics
   name: guide-entry-narcotics
-  text: "/ServerInfo/Guidebook/ChemicalTabs/Narcotics.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/ChemicalTabs/Narcotics.xml"
   filterEnabled: True
 
 - type: guideEntry
   id: Pyrotechnic
   name: guide-entry-pyrotechnics
-  text: "/ServerInfo/Guidebook/ChemicalTabs/Pyrotechnic.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/ChemicalTabs/Pyrotechnic.xml"
   filterEnabled: True
 
 - type: guideEntry
   id: Toxins
   name: guide-entry-toxins
-  text: "/ServerInfo/Guidebook/ChemicalTabs/Toxins.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/ChemicalTabs/Toxins.xml"
   filterEnabled: True
 
 - type: guideEntry
   id: Foods
   name: guide-entry-foods
-  text: "/ServerInfo/Guidebook/ChemicalTabs/Foods.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/ChemicalTabs/Foods.xml"
   filterEnabled: True
 
 - type: guideEntry
   id: Botanical
   name: guide-entry-botanical
-  text: "/ServerInfo/Guidebook/Medical/Botanicals.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Medical/Botanicals.xml"
   filterEnabled: True
 
 - type: guideEntry
   id: Biological
   name: guide-entry-biological
-  text: "/ServerInfo/Guidebook/ChemicalTabs/Biological.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/ChemicalTabs/Biological.xml"
   filterEnabled: True
 
 - type: guideEntry
   id: Special
   name: guide-entry-special
-  text: "/ServerInfo/Guidebook/ChemicalTabs/Special.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/ChemicalTabs/Special.xml"
   filterEnabled: True
 
 - type: guideEntry
   id: Others
   name: guide-entry-others
-  text: "/ServerInfo/Guidebook/ChemicalTabs/Other.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/ChemicalTabs/Others.xml"
   filterEnabled: True
+
+  # begin funky
+- type: guideEntry
+  id: Exotic
+  name: guide-entry-exotic
+  text: "/ServerInfo/_Polonium/Guidebook/ChemicalTabs/Exotic.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  id: Reactions
+  name: guide-entry-reactions
+  text: "/ServerInfo/_Polonium/Guidebook/ChemicalTabs/Reactions.xml"
+  # end funky
+

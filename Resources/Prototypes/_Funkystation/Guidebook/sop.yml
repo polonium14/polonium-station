@@ -1,0 +1,367 @@
+# SPDX-FileCopyrightText: 2024 DevilishMilk <bluscout78@yahoo.com>
+# SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 CMM <funkycmm>
+# SPDX-FileCopyrightText: 2025 Colin Moore <funkycmm>
+# SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 YaraaraY <158123176+YaraaraY@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 corresp0nd <46357632+corresp0nd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 ferynn <117872973+ferynn@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 ferynn <witchy.girl.me@gmail.com>
+# SPDX-FileCopyrightText: 2025 funkycmm <cmmaccounts@protonmail.com>
+# SPDX-FileCopyrightText: 2025 kbarkevich <24629810+kbarkevich@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2026 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 Polonium-bot <admin@ss14.pl>
+# SPDX-FileCopyrightText: 2026 nikitosych <174215049+nikitosych@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: guideEntry
+  id: SOP101
+  name: SOP 101
+  text: "/ServerInfo/_Polonium/Guidebook/SOP/SOP101.xml"
+  children:
+  - CommandSOP
+  - CentralCommandSOP
+  - LegalSOP
+  - ServiceSOP
+  - SecuritySOP
+  - ScienceSOP
+  - MedicalSOP
+  - EngineeringSOP
+  - CargoSOP
+  - AlertLevelsSOP
+
+- type: guideEntry
+  id: LegalSOP
+  name: guide-entry-legal-sop
+  text: "/ServerInfo/_Polonium/Guidebook/Legal/LegalSOP.xml"
+
+# ALERT LEVELS
+
+- type: guideEntry
+  id: AlertLevelsSOP
+  name: guide-entry-alert-sop
+  text: "/ServerInfo/_Polonium/Guidebook/Command/AlertLevels.xml"
+  children:
+  - GreenAlertSOP
+  - YellowAlertSOP
+  - BlueAlertSOP
+  - RedAlertSOP
+  - VioletAlertSOP
+  - GammaAlertSOP
+  - DeltaAlertSOP
+  - OctarineAlertSOP
+
+- type: guideEntry
+  id: GreenAlertSOP
+  name: guide-entry-alertlevel-green
+  priority: 10
+  text: "/ServerInfo/_Polonium/Guidebook/AlertLevel/GreenAlert.xml"
+
+- type: guideEntry
+  id: YellowAlertSOP
+  name: guide-entry-alertlevel-yellow
+  priority: 20
+  text: "/ServerInfo/_Polonium/Guidebook/AlertLevel/YellowAlert.xml"
+
+- type: guideEntry
+  id: BlueAlertSOP
+  name: guide-entry-alertlevel-blue
+  priority: 30
+  text: "/ServerInfo/_Polonium/Guidebook/AlertLevel/BlueAlert.xml"
+
+- type: guideEntry
+  id: RedAlertSOP
+  name: guide-entry-alertlevel-red
+  priority: 40
+  text: "/ServerInfo/_Polonium/Guidebook/AlertLevel/RedAlert.xml"
+
+- type: guideEntry
+  id: VioletAlertSOP
+  name: guide-entry-alertlevel-violet
+  priority: 50
+  text: "/ServerInfo/_Polonium/Guidebook/AlertLevel/VioletAlert.xml"
+
+- type: guideEntry
+  id: GammaAlertSOP
+  name: guide-entry-alertlevel-gamma
+  priority: 60
+  text: "/ServerInfo/_Polonium/Guidebook/AlertLevel/GammaAlert.xml"
+
+- type: guideEntry
+  id: DeltaAlertSOP
+  name: guide-entry-alertlevel-delta
+  priority: 70
+  text: "/ServerInfo/_Polonium/Guidebook/AlertLevel/DeltaAlert.xml"
+
+# impstation cosmic cult
+- type: guideEntry
+  id: OctarineAlertSOP
+  name: alert-level-octarine
+  priority: 70
+  text: "/ServerInfo/_Polonium/Guidebook/AlertLevel/OctarineAlert.xml"
+
+# COMMAND
+
+- type: guideEntry
+  id: CommandSOP
+  name: guide-entry-command-sop
+  text: "/ServerInfo/_Polonium/Guidebook/Command/GeneralCommandSOP.xml"
+  children:
+  - CommandTrainingManual
+  - OrderOfSuccession
+  - CaptainSOP
+  - RedPhoneSOP
+
+- type: guideEntry
+  id: CaptainSOP
+  name: guide-entry-captain-sop
+  text: "/ServerInfo/_Polonium/Guidebook/Command/CaptainSOP.xml"
+
+- type: guideEntry
+  id: RedPhoneSOP
+  name: guide-entry-red-phone-sop
+  text: "/ServerInfo/_Polonium/Guidebook/Command/RedPhone.xml"
+
+- type: guideEntry
+  id: OrderOfSuccession
+  name: guide-entry-order-of-succession
+  text: "/ServerInfo/_Polonium/Guidebook/Command/OrderOfSuccession.xml"
+
+# CC
+
+- type: guideEntry
+  id: CentralCommandSOP
+  name: guide-entry-central-command-sop
+  text: "/ServerInfo/_Polonium/Guidebook/CentralCommand/CCSOP.xml"
+  children:
+  - IAASOP
+  - NTRSOP
+  - MagistrateSOP
+
+- type: guideEntry
+  id: IAASOP
+  name: guide-entry-iaa-sop
+  text: "/ServerInfo/_Polonium/Guidebook/CentralCommand/IAASOP.xml"
+
+- type: guideEntry
+  id: NTRSOP
+  name: guide-entry-ntr-sop
+  text: "/ServerInfo/_Polonium/Guidebook/CentralCommand/NTRSOP.xml"
+
+- type: guideEntry
+  id: MagistrateSOP
+  name: guide-entry-magistrate-sop
+  text: "/ServerInfo/_Polonium/Guidebook/CentralCommand/MagistrateSOP.xml"
+
+# SERVICE
+
+- type: guideEntry
+  id: ServiceSOP
+  name: guide-entry-service-sop
+  text: "/ServerInfo/_Polonium/Guidebook/Service/ServiceSOP.xml"
+  children:
+  - HoPSOP
+  - BartenderSOP
+  - BotanistSOP
+  - ChaplainSOP
+  - ChefSOP
+  - ClownSOP
+  - JanitorSOP
+  - MimeSOP
+  - ReporterSOP
+
+- type: guideEntry
+  id: HoPSOP
+  name: guide-entry-hop-sop
+  text: "/ServerInfo/_Polonium/Guidebook/Service/HoPSOP.xml"
+
+- type: guideEntry
+  id: BartenderSOP
+  name: guide-entry-bartender-sop
+  text: "/ServerInfo/_Polonium/Guidebook/Service/BartenderSOP.xml"
+
+- type: guideEntry
+  id: BotanistSOP
+  name: guide-entry-botanist-sop
+  text: "/ServerInfo/_Polonium/Guidebook/Service/BotanistSOP.xml"
+
+- type: guideEntry
+  id: ChaplainSOP
+  name: guide-entry-chaplain-sop
+  text: "/ServerInfo/_Polonium/Guidebook/Service/ChaplainSOP.xml"
+
+- type: guideEntry
+  id: ChefSOP
+  name: guide-entry-chef-sop
+  text: "/ServerInfo/_Polonium/Guidebook/Service/ChefSOP.xml"
+
+- type: guideEntry
+  id: ClownSOP
+  name: guide-entry-clown-sop
+  text: "/ServerInfo/_Polonium/Guidebook/Service/ClownSOP.xml"
+
+- type: guideEntry
+  id: JanitorSOP
+  name: guide-entry-janitor-sop
+  text: "/ServerInfo/_Polonium/Guidebook/Service/JanitorSOP.xml"
+
+- type: guideEntry
+  id: MimeSOP
+  name: guide-entry-mime-sop
+  text: "/ServerInfo/_Polonium/Guidebook/Service/MimeSOP.xml"
+
+- type: guideEntry
+  id: ReporterSOP
+  name: guide-entry-reporter-sop
+  text: "/ServerInfo/_Polonium/Guidebook/Service/ReporterSOP.xml"
+
+# SEC
+
+- type: guideEntry
+  id: SecuritySOP
+  name: guide-entry-security-sop
+  text: "/ServerInfo/_Polonium/Guidebook/Security/SecuritySOP.xml"
+  children:
+  - UseOfForceSOP
+  - HoSSOP
+  - SecurityOfficerSOP
+  - WardenSOP
+  - DetectiveSOP
+  - SecurityTrainingManual
+
+- type: guideEntry
+  id: UseOfForceSOP
+  name: guide-entry-use-of-force-sop
+  text: "/ServerInfo/_Polonium/Guidebook/Security/UseOfForceSOP.xml"
+
+- type: guideEntry
+  id: HoSSOP
+  name: guide-entry-hos-sop
+  text: "/ServerInfo/_Polonium/Guidebook/Security/HoSSOP.xml"
+
+- type: guideEntry
+  id: SecurityOfficerSOP
+  name: guide-entry-securityofficer-sop
+  text: "/ServerInfo/_Polonium/Guidebook/Security/SecurityOfficerSOP.xml"
+
+- type: guideEntry
+  id: WardenSOP
+  name: guide-entry-warden-sop
+  text: "/ServerInfo/_Polonium/Guidebook/Security/WardenSOP.xml"
+
+- type: guideEntry
+  id: DetectiveSOP
+  name: guide-entry-detective-sop
+  text: "/ServerInfo/_Polonium/Guidebook/Security/DetectiveSOP.xml"
+
+# SCI
+
+- type: guideEntry
+  id: ScienceSOP
+  name: guide-entry-science-sop
+  text: "/ServerInfo/_Polonium/Guidebook/Science/ScienceSOP.xml"
+  children:
+  - RDSOP
+  - ScientistSOP
+  - RoboticistSOP
+
+- type: guideEntry
+  id: RDSOP
+  name: guide-entry-rd-sop
+  text: "/ServerInfo/_Polonium/Guidebook/Science/RDSOP.xml"
+
+- type: guideEntry
+  id: ScientistSOP
+  name: guide-entry-scientist-sop
+  text: "/ServerInfo/_Polonium/Guidebook/Science/ScientistSOP.xml"
+
+- type: guideEntry
+  id: RoboticistSOP
+  name: guide-entry-roboticist-sop
+  text: "/ServerInfo/_Polonium/Guidebook/Science/RoboticistSOP.xml"
+
+# MED
+
+- type: guideEntry
+  id: MedicalSOP
+  name: guide-entry-medical-sop
+  text: "/ServerInfo/_Polonium/Guidebook/Medical/MedicalSOP.xml"
+  children:
+  - CMOSOP
+  - DoctorSOP
+  - ChemistSOP
+  - ParamedicSOP
+  - PsychologistSOP
+
+- type: guideEntry
+  id: CMOSOP
+  name: guide-entry-cmo-sop
+  text: "/ServerInfo/_Polonium/Guidebook/Medical/CMOSOP.xml"
+
+- type: guideEntry
+  id: DoctorSOP
+  name: guide-entry-doctor-sop
+  text: "/ServerInfo/_Polonium/Guidebook/Medical/DoctorSOP.xml"
+
+- type: guideEntry
+  id: ChemistSOP
+  name: guide-entry-chemist-sop
+  text: "/ServerInfo/_Polonium/Guidebook/Medical/ChemistSOP.xml"
+
+- type: guideEntry
+  id: ParamedicSOP
+  name: guide-entry-paramedic-sop
+  text: "/ServerInfo/_Polonium/Guidebook/Medical/ParamedicSOP.xml"
+
+- type: guideEntry
+  id: PsychologistSOP
+  name: guide-entry-psychologist-sop
+  text: "/ServerInfo/_Polonium/Guidebook/Medical/PsychologistSOP.xml"
+
+# ENGI
+
+- type: guideEntry
+  id: EngineeringSOP
+  name: guide-entry-engineering-sop
+  text: "/ServerInfo/_Polonium/Guidebook/Engineering/EngineeringSOP.xml"
+  children:
+  - CESOP
+  - StationEngineerSOP
+
+- type: guideEntry
+  id: CESOP
+  name: guide-entry-ce-sop
+  text: "/ServerInfo/_Polonium/Guidebook/Engineering/CESOP.xml"
+
+- type: guideEntry
+  id: StationEngineerSOP
+  name: guide-entry-stationengineer-sop
+  text: "/ServerInfo/_Polonium/Guidebook/Engineering/StationEngineerSOP.xml"
+
+# CARGO
+
+- type: guideEntry
+  id: CargoSOP
+  name: guide-entry-cargo-sop
+  text: "/ServerInfo/_Polonium/Guidebook/Cargo/CargoSOP.xml"
+  children:
+  - QMSOP
+  - CargoTechnicianSOP
+  - SalvageSOP
+
+- type: guideEntry
+  id: QMSOP
+  name: guide-entry-qm-sop
+  text: "/ServerInfo/_Polonium/Guidebook/Cargo/QMSOP.xml"
+
+- type: guideEntry
+  id: CargoTechnicianSOP
+  name: guide-entry-cargotechnician-sop
+  text: "/ServerInfo/_Polonium/Guidebook/Cargo/CargoTechnicianSOP.xml"
+
+- type: guideEntry
+  id: SalvageSOP
+  name: guide-entry-salvage-sop
+  text: "/ServerInfo/_Polonium/Guidebook/Cargo/SalvageSOP.xml"

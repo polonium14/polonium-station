@@ -1,59 +1,109 @@
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 BeeRobynn <robynthewarcrime@proton.me>
+# SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Fishbait <Fishbait@git.ml>
+# SPDX-FileCopyrightText: 2024 John Space <bigdumb421@gmail.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 ATDoop <bug@bug.bug>
+# SPDX-FileCopyrightText: 2025 corresp0nd <46357632+corresp0nd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2026 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 Polonium-bot <admin@ss14.pl>
+# SPDX-FileCopyrightText: 2026 nikitosych <174215049+nikitosych@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: guideEntry
   id: Species
   name: guide-entry-species
-  text: "/ServerInfo/Guidebook/Mobs/Species.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Mobs/Species.xml"
   children:
-  - Arachnid
-  - Diona
-  - Dwarf
-  - Human
-  - Moth
-  - Reptilian
-  - SlimePerson
-  - Vox
-  - Vulpkanin
+    - Arachnid
+    - Diona
+    - Dwarf
+    - Human
+    - Moth
+    - Reptilian
+    - SlimePerson
+    # Goobstation
+    - Felinid
+    - Gingerbread
+    - Harpy
+    - Vox
+    - Vulpkanin
+    - Rodentia
+    # - IPC
+    # ImpStation additions
+    - Thaven
 
 - type: guideEntry
   id: Arachnid
   name: species-name-arachnid
-  text: "/ServerInfo/Guidebook/Mobs/Arachnid.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Mobs/Arachnid.xml"
 
 - type: guideEntry
   id: Diona
   name: species-name-diona
-  text: "/ServerInfo/Guidebook/Mobs/Diona.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Mobs/Diona.xml"
 
 - type: guideEntry
   id: Dwarf
   name: species-name-dwarf
-  text: "/ServerInfo/Guidebook/Mobs/Dwarf.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Mobs/Dwarf.xml"
 
 - type: guideEntry
   id: Human
   name: species-name-human
-  text: "/ServerInfo/Guidebook/Mobs/Human.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Mobs/Human.xml"
 
 - type: guideEntry
   id: Moth
   name: species-name-moth
-  text: "/ServerInfo/Guidebook/Mobs/Moth.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Mobs/Moth.xml"
 
 - type: guideEntry
   id: Reptilian
   name: species-name-reptilian
-  text: "/ServerInfo/Guidebook/Mobs/Reptilian.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Mobs/Reptilian.xml"
 
 - type: guideEntry
   id: SlimePerson
   name: species-name-slime
-  text: "/ServerInfo/Guidebook/Mobs/SlimePerson.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Mobs/SlimePerson.xml"
+
+# Goobstation
+- type: guideEntry
+  id: Felinid
+  name: species-name-felinid
+  text: "/ServerInfo/_Polonium/Guidebook/Mobs/Felinid.xml"
+
+- type: guideEntry
+  id: Gingerbread
+  name: species-name-gingerbread
+  text: "/ServerInfo/_Polonium/Guidebook/Mobs/Gingerbread.xml"
+
+- type: guideEntry
+  id: Harpy
+  name: species-name-harpy
+  text: "/ServerInfo/_Polonium/Guidebook/Mobs/Harpy.xml"
 
 - type: guideEntry
   id: Vox
   name: species-name-vox
-  text: "/ServerInfo/Guidebook/Mobs/Vox.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Mobs/Vox.xml"
 
 - type: guideEntry
   id: Vulpkanin
   name: species-name-vulpkanin
-  text: "/ServerInfo/Guidebook/Mobs/Vulpkanin.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Mobs/Vulpkanin.xml"
+
+- type: guideEntry
+  id: Rodentia
+  name: species-name-rodentia
+  text: "/ServerInfo/_Polonium/Guidebook/Mobs/DeltaV/Rodentia.xml"
+
+#- type: guideEntry
+#  id: IPC
+#  name: species-name-ipc
+#  text: "/ServerInfo/Guidebook/Mobs/IPCs.xml"

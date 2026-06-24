@@ -1,32 +1,50 @@
+# SPDX-FileCopyrightText: 2023 CrigCrag <137215465+CrigCrag@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Hebi <spiritbreakz@gmail.com>
+# SPDX-FileCopyrightText: 2023 Sir Winters <7543955+Owai-Seek@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 end <72604018+laok233@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2024 f0x-n3rd <150924715+f0x-n3rd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2026 Polonium-bot <admin@ss14.pl>
+# SPDX-FileCopyrightText: 2026 nikitosych <174215049+nikitosych@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: guideEntry
   id: Medical
   name: guide-entry-medical
-  text: "/ServerInfo/Guidebook/Medical/Medical.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Medical/Medical.xml"
   children:
   - MedicalDoctor
   - Chemist
   - Cloning
   - Cryogenics
+  - Medicalpatches
+  - Surgery # Shitmed Change
 
 - type: guideEntry
   id: MedicalDoctor
   name: guide-entry-medicaldoctor
-  text: "/ServerInfo/Guidebook/Medical/MedicalDoctor.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Medical/MedicalDoctor.xml"
 
 - type: guideEntry
   id: Cloning
   name: guide-entry-cloning
-  text: "/ServerInfo/Guidebook/Medical/Cloning.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Medical/Cloning.xml"
 
 - type: guideEntry
   id: Cryogenics
   name: guide-entry-cryogenics
-  text: "/ServerInfo/Guidebook/Medical/Cryogenics.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Medical/Cryogenics.xml"
 
 - type: guideEntry
   id: Chemist
   name: guide-entry-chemist
-  text: "/ServerInfo/Guidebook/Medical/Chemist.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Medical/Chemist.xml"
   children:
   # - Medicine
   # Duplicate guide entries are currently not supported
@@ -37,16 +55,16 @@
 - type: guideEntry
   id: Medicine
   name: guide-entry-medicine
-  text: "/ServerInfo/Guidebook/Medical/Medicine.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Medical/Medicine.xml"
   filterEnabled: True
 
 - type: guideEntry
   id: Botanicals
   name: guide-entry-botanicals
-  text: "/ServerInfo/Guidebook/Medical/Botanicals.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Medical/Botanicals.xml"
   filterEnabled: True
 
 - type: guideEntry
   id: AdvancedBrute
   name: guide-entry-brute
-  text: "/ServerInfo/Guidebook/Medical/AdvancedBrute.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Medical/AdvancedBrute.xml"

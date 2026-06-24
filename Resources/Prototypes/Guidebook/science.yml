@@ -1,7 +1,18 @@
+# SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 M3739 <47579354+M3739@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 OttoMaticode <124523848+OttoMaticode@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Hannah Giovanna Dawson <karakkaraz@gmail.com>
+# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2026 Polonium-bot <admin@ss14.pl>
+# SPDX-FileCopyrightText: 2026 nikitosych <174215049+nikitosych@users.noreply.github.com>
+#
+# SPDX-License-Identifier: MIT
+
 - type: guideEntry
   id: Science
   name: guide-entry-science
-  text: "/ServerInfo/Guidebook/Science/Science.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Science/Science.xml"
   children:
   - Technologies
   - AnomalousResearch
@@ -11,13 +22,13 @@
 - type: guideEntry
   id: Technologies
   name: guide-entry-technologies
-  text: "/ServerInfo/Guidebook/Science/Technologies.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Science/Technologies.xml"
   filterEnabled: True
 
 - type: guideEntry
   id: AnomalousResearch
   name: guide-entry-anomalous-research
-  text: "/ServerInfo/Guidebook/Science/AnomalousResearch.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Science/AnomalousResearch.xml"
   children:
   - APE
   - ScannersAndVessels
@@ -25,39 +36,38 @@
 - type: guideEntry
   id: ScannersAndVessels
   name: guide-entry-scanners-and-vessels
-  text: "/ServerInfo/Guidebook/Science/ScannersAndVessels.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Science/ScannersAndVessels.xml"
 
 - type: guideEntry
   id: APE
   name: guide-entry-ape
-  text: "/ServerInfo/Guidebook/Science/APE.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Science/APE.xml"
 
 - type: guideEntry
   id: Xenoarchaeology
   name: guide-entry-xenoarchaeology
-  text: "/ServerInfo/Guidebook/Science/Xenoarchaeology.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Science/Xenoarchaeology.xml"
   children:
-    - AnalysisConsole
-    - XenoarchaeologyUnlockingNodes
-
-- type: guideEntry
-  id: XenoarchaeologyUnlockingNodes
-  name: guide-entry-xenoarchaeologyunlockingnodes
-  text: "/ServerInfo/Guidebook/Science/UnlockingNodes.xml"
-
-- type: guideEntry
-  id: AnalysisConsole
-  name: guide-entry-analysisconsole
-  text: "/ServerInfo/Guidebook/Science/AnalysisConsole.xml"
+  - ArtifactReports
 
 - type: guideEntry
   id: Robotics
   name: guide-entry-robotics
-  text: "/ServerInfo/Guidebook/Science/Robotics.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Science/Robotics.xml"
   children:
   - Cyborgs
 
 - type: guideEntry
+  id: ArtifactReports
+  name: guide-entry-artifact-reports
+  text: "/ServerInfo/_Polonium/Guidebook/Science/ArtifactReports.xml"
+
+- type: guideEntry
   id: Cyborgs
   name: guide-entry-cyborgs
-  text: "/ServerInfo/Guidebook/Science/Cyborgs.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Science/Cyborgs.xml"
+
+# - type: guideEntry # Funkystation - Genetics
+#   id: Genetics
+#   name: guide-entry-genetics
+#   text: "/ServerInfo/_Polonium/Guidebook/Science/Genetics.xml"
