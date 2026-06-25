@@ -1,6 +1,6 @@
-ent-CrateVendingMachineRestockNipponFilled = Nippon-tan restock crate
-    .desc = Contains a restock box for the Nippon-tan.
-ent-CrateVendingMachineRestockFitnessFilled = SweatMAX restock crate
-    .desc = Contains a restock box for the SweatMAX.
-ent-CrateVendingMachineRestocSolFilled = Mars Mart restock crate
-    .desc = Contains a restock box for the Mars Mart.
+ent-CrateVendingMachineRestockNipponFilled = skrzynia z zapasami do Niepon-tan
+    .desc = Zawiera pudełko z zapasami do automatu Niepon-tan.
+ent-CrateVendingMachineRestockFitnessFilled = skrzynia z zapasami do SweatMAX
+    .desc = Zawiera pudełko z zapasami do automatu SweatMAX.
+ent-CrateVendingMachineRestocSolFilled = skrzynia z zapasami do Mars Mart
+    .desc = Zawiera pudełko z zapasami do automatu Mars Mart.
