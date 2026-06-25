@@ -1,2 +1,2 @@
-ent-BoxFolderBookshelfLabels = bookshelf label folder
-    .desc = A folder filled with labels for your shelves.
+ent-BoxFolderBookshelfLabels = folder z etykietami na półkę z książkami
+    .desc = Folder wypełniony etykietami na twoje półki.
