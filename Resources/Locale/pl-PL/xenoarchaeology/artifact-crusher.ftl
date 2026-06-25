@@ -1,1 +1,1 @@
-artifact-crusher-verb-start-crushing = Rozpocznij miażdżenie
+artifact-crusher-verb-start-crushing = Start crushing
