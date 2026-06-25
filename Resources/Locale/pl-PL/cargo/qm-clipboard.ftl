@@ -1,1 +1,1 @@
-qm-clipboard-computer-verb-text = Przełącz zamówienia
+qm-clipboard-computer-verb-text = Toggle Requests
