@@ -126,8 +126,3 @@
   id: Shockwave
   kind: source
   path: "/Textures/Shaders/shockwave.swsl"
-
-- type: shader
-  id: Shockwave
-  kind: source
-  path: "/Textures/Shaders/shockwave.swsl"
