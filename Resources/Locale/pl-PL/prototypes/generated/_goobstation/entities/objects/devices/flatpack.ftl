@@ -1,2 +1,2 @@
-ent-TimelineDisruptorFlatpack = zestaw do montażu zakłócacza czasoprzestrzennego
-    .desc = Zestaw do montażu zakłócacza czasoprzestrzennego.
+ent-TimelineDisruptorFlatpack = timeline disruptor flatpack
+    .desc = A flatpack used for constructing a solar assembly.
