@@ -45,6 +45,6 @@ signal-port-description-supercrit = This port is invoked when a bound anomaly ex
 signal-port-name-power-charging = Charging
 signal-port-description-power-charging = This port is invoked with HIGH when the battery is gaining charge and LOW when not.
 signal-port-name-power-discharging = Discharging
-signal-port-description-power-discharging = This port is invoked with HIGH when the battery is losing charge and LOW when not.
 signal-port-name-item-detected = Detected
 signal-port-description-item-detected = This port is invoked whenever the transmitter detects an item.
+signal-port-description-power-discharging = This port is invoked with HIGH when the battery is losing charge and LOW when not.
