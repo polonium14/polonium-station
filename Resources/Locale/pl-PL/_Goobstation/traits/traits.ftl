@@ -1,2 +1,2 @@
 trait-scottish-name = Scottish accent
-trait-scottish-desc = Your Dorf pride be as strong as tha accent ye blather wi!
+trait-scottish-desc = Your scottish pride is as strong as your accent!
