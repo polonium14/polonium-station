@@ -1,4 +1,4 @@
-ent-WeaponEnergyTurretStationMachineCircuitboard = sentry turret machine board
-    .desc = A machine printed circuit board for a sentry turret.
-ent-WeaponEnergyTurretAIMachineCircuitboard = AI sentry turret machine board
-    .desc = A machine printed circuit board for an AI sentry turret.
+ent-WeaponEnergyTurretStationMachineCircuitboard = wieżyczka ochronna (płytka maszynowa)
+    .desc = Płytka maszynowa do wieżyczki ochronnej.
+ent-WeaponEnergyTurretAIMachineCircuitboard = wieżyczka ochronna SI (płytka maszynowa)
+    .desc = Płytka maszynowa do wieżyczki ochronnej SI.
