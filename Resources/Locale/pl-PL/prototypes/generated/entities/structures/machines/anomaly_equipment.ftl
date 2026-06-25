@@ -1,8 +1,8 @@
-ent-MachineAnomalyVessel = anomaly vessel
-    .desc = A container able to harness a scan of an anomaly and turn it into research data.
-ent-MachineAnomalyVesselExperimental = experimental anomaly vessel
-    .desc = An advanced anomaly vessel capable of greater research potential at the cost of increased volatility and low-level radioactive decay into the environment.
-ent-MachineAPE = A.P.E.
-    .desc = An Anomalous Particle Emitter, capable of shooting out unstable particles which can interface with anomalies.
-ent-MachineAnomalyGenerator = anomaly generator
-    .desc = The peak of pseudoscientific technology.
+ent-MachineAnomalyVessel = naczynie anomalne
+    .desc = Pojemnik zdolny do przechwycenia skanu anomalii i przetworzenia go w dane badawcze.
+ent-MachineAnomalyVesselExperimental = eksperymentalne naczynie anomalne
+    .desc = Zaawansowane naczynie anomalne zdolne do większego potencjału badawczego kosztem zwiększonej zmienności i niskopoziomowego rozkładu radioaktywnego do środowiska.
+ent-MachineAPE = M.A.K.A.K.
+    .desc = Mobilny Akcelerator Anomalno-Kinetyczny, zdolny do wystrzeliwania niestabilnych cząstek, które mogą wchodzić w interakcje z anomaliami.
+ent-MachineAnomalyGenerator = generator anomalii
+    .desc = Wierzchołek pseudonaukowej technologii.
