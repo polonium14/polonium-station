@@ -1,7 +1,7 @@
-admin-entity-search-title = Entity Search
-admin-entity-search-placeholder = Search by display name or prototype ID…
-admin-entity-search-button = Search
-admin-entity-search-next = Next
-admin-entity-search-log = { $admin } ran entity search and got { $count } results.
-cmd-entitysearchui-desc = Opens the admin entity search panel.
-cmd-entitysearchui-help = Usage: entitysearchui
+admin-entity-search-title = Wyszukiwanie encji
+admin-entity-search-placeholder = Szukaj po nazwie wyświetlanej lub ID prototypu…
+admin-entity-search-button = Szukaj
+admin-entity-search-next = Następny
+admin-entity-search-log = { $admin } uruchomił(a) wyszukiwanie encji i otrzymał(a) { $count } wyników.
+cmd-entitysearchui-desc = Otwiera panel wyszukiwania encji administratora.
+cmd-entitysearchui-help = Użycie: entitysearchui
