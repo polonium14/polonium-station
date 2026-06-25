@@ -1,2 +1,2 @@
-humanoid-profile-editor-borgname-label = Preferred Cyborg Name:
-humanoid-profile-editor-antag-roll-before-jobs = Keep in mind that all antags except for initial infected and sleeper agent are rolled before jobs.
+humanoid-profile-editor-borgname-label = Preferowana nazwa cyborga:
+humanoid-profile-editor-antag-roll-before-jobs = Pamiętaj, że wszyscy antagowie oprócz początkowo zainfekowanych i uśpionego agenta są losowani przed przydziałem stanowisk.
