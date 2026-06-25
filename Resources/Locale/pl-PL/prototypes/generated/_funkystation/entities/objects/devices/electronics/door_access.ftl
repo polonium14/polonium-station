@@ -1,9 +1,9 @@
 ent-DoorElectronicsSpaceCowboy = { ent-DoorElectronics }
-    .suffix = SpaceCowboy, Locked
+    .suffix = Kowboj, Zablokowana
     .desc = { ent-DoorElectronics.desc }
 ent-DoorElectronicsLibrary = { ent-DoorElectronics }
-    .suffix = Library, Locked
+    .suffix = Biblioteka, Zablokowana
     .desc = { ent-DoorElectronics.desc }
 ent-DoorElectronicsReporter = { ent-DoorElectronics }
-    .suffix = Reporter, Locked
+    .suffix = Reporter, Zablokowana
     .desc = { ent-DoorElectronics.desc }
