@@ -1,3 +1,3 @@
-ent-RandomAnimalSpawner = Random Animal Spawner
-    .suffix = No Mice
+ent-RandomAnimalSpawner = spawner losowych zwierząt
+    .suffix = Brak myszy
     .desc = { ent-MarkerBase.desc }
