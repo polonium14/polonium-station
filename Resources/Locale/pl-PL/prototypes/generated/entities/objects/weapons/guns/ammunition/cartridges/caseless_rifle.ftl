@@ -1,6 +1,6 @@
-ent-BaseCartridgeCaselessRifle = cartridge (.25 caseless)
+ent-BaseCartridgeCaselessRifle = nabój (.25 bezłuskowe)
     .desc = { ent-BaseCartridge.desc }
-ent-CartridgeCaselessRifle = cartridge (.25 caseless)
-    .desc = A small caliber utilizing caseless technology, omitting conventional brass casing in favor of hardened propellant. Standard kinetic ammunition is common and useful in most situations.
-ent-CartridgeCaselessRiflePractice = cartridge (.25 caseless practice)
-    .desc = A small caliber utilizing caseless technology, omitting conventional brass casing in favor of hardened propellant. Chalk ammunition is generally non-harmful, used for practice.
+ent-CartridgeCaselessRifle = nabój (.25 bezłuskowe)
+    .desc = Mały kaliber wykorzystujący technologię bezłuskową, pomijający tradycyjną mosiężną łuskę na rzecz utwardzonego materiału pędnego. Standardowa amunicja kinetyczna jest powszechnie stosowana i przydatna w większości sytuacji.
+ent-CartridgeCaselessRiflePractice = nabój (.25 bezłuskowe treningowe)
+    .desc = Mały kaliber wykorzystujący technologię bezłuskową, pomijający tradycyjną mosiężną łuskę na rzecz utwardzonego materiału pędnego. Amunicja kredowa jest zazwyczaj nieszkodliwa, używana do ćwiczeń.
