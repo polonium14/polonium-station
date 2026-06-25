@@ -1,4 +1,4 @@
-ent-MusicTechFab = music techfab
-    .desc = Prints equipment for use by the musician.
-ent-CargoTechFab = cargo techfab
-    .desc = Prints equipment for use by cargo personnel.
+ent-MusicTechFab = techfab muzykalny
+    .desc = Drukuje sprzęt do użytku przez muzyka.
+ent-CargoTechFab = techfab logistyczny
+    .desc = Drukuje sprzęt do użytku przez personel logistyki.
