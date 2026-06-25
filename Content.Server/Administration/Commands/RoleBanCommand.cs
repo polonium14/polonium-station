@@ -97,7 +97,7 @@ public sealed class RoleBanCommand : IConsoleCommand
                     return;
                 }
 
-                if (!int.TryParse(args[5], out round))
+                if (!int.TryParse(args[5], out round) || round <= 0)
                 {
                     shell.WriteLine(Loc.GetString("cmd-roleban-round-parse", ("round", args[5])));
                     return;

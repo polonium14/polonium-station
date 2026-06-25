@@ -542,6 +542,7 @@ public sealed partial class BanPanel : DefaultWindow
         CurrentRound = round;
         ResetRoundButton.Text = Loc.GetString("admin-logs-reset-with-id", ("id", round));
         UpdateResetButton();
+        UpdateSubmitEnabled();
     }
 
     public void SetRoundSpinBox(int round)

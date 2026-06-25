@@ -126,7 +126,7 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
     {
         var originalReason = banInfo.Reason;
         var roundId = GetCurrentRoundId();
-        banInfo.WithReason(FormatBanReason(originalReason, banInfo.SituationRound, roundId));
+        var displayReason = FormatBanReasonForDisplay(originalReason, banInfo.SituationRound, roundId);
 
         var (banDef, expires) = await CreateBanDef(banInfo, BanType.Server, null);
 
@@ -169,7 +169,7 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
             ("name", targetName),
             ("ip", addressRangeString),
             ("hwid", hwidString),
-            ("reason", banInfo.Reason));
+            ("reason", displayReason));
 
         _sawmill.Info(logMessage);
         _chat.SendAdminAlert(logMessage);
@@ -182,7 +182,7 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
 
             _ = _dc.SendBanNotification(
                 adminName,
-                firstUser?.UserName ?? targetName,
+                firstUser?.UserName ?? GetDiscordBanTargetName(banInfo),
                 originalReason,
                 expires?.ToUnixTimeSeconds() ?? 0,
                 DateTimeOffset.UtcNow.ToUnixTimeSeconds(),
@@ -247,7 +247,7 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
     {
         var originalReason = banInfo.Reason;
         var roundId = GetCurrentRoundId();
-        banInfo.WithReason(FormatBanReason(originalReason, banInfo.SituationRound, roundId));
+        var displayReason = FormatBanReasonForDisplay(originalReason, banInfo.SituationRound, roundId);
 
         ImmutableArray<BanRoleDef> roleDefs =
         [
@@ -274,7 +274,7 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
             "cmd-roleban-success",
             ("target", targetName),
             ("role", string.Join(", ", roleDefs)),
-            ("reason", banInfo.Reason),
+            ("reason", displayReason),
             ("length", length)));
 
         foreach (var (userId, _) in banInfo.Users)
@@ -302,16 +302,30 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
         }
     }
 
-    private static string FormatBanReason(string reason, int? situationRound, int? currentRoundId)
+    private static string FormatBanReasonForDisplay(string reason, int? situationRound, int? currentRoundId)
     {
         if (situationRound is null or 0)
         {
             return currentRoundId != null
-                ? $"**#{currentRoundId}** | {reason}"
+                ? $"#{currentRoundId} | {reason}"
                 : reason;
         }
 
-        return $"**#{situationRound}** | {reason}";
+        return $"#{situationRound} | {reason}";
+    }
+
+    private string GetDiscordBanTargetName(CreateBanInfo banInfo)
+    {
+        if (banInfo.Users.Count > 0)
+            return string.Join(", ", banInfo.Users.Select(u => $"{u.UserName} ({u.UserId})"));
+
+        if (banInfo.AddressRanges.Count > 0)
+            return string.Join(", ", banInfo.AddressRanges.Select(a => $"{a.Address}/{a.Mask}"));
+
+        if (banInfo.HWIds.Count > 0)
+            return string.Join(", ", banInfo.HWIds);
+
+        return Loc.GetString("ban-notify-ban-target-user-unknown");
     }
 
     private int? GetCurrentRoundId()

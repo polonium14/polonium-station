@@ -86,7 +86,8 @@ public sealed class BanPanelEui : BaseEui
         if (ban.BanDurationMinutes > 0)
             banInfo.WithMinutes(ban.BanDurationMinutes);
 
-        if (ban.SituationRound > 0)
+        var currentRound = _ticker?.RoundId ?? 0;
+        if (ban.SituationRound > 0 && ban.SituationRound <= currentRound)
             banInfo.WithSituationRound(ban.SituationRound);
 
         (IPAddress, int)? addressRange = null;

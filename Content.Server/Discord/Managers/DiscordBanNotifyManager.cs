@@ -106,18 +106,14 @@ public sealed class DiscordBanNotifyManager
         if (webhookUri == string.Empty)
             return;
 
-        WebhookIdentifier? webhook = null;
-
-        if (await _dc.GetWebhook(webhookUri) is { } data)
-            webhook = data.ToIdentifier();
-
-        if (webhook == null)
-            return;
-
         try
         {
+            if (await _dc.GetWebhook(webhookUri) is not { } data)
+                return;
+
+            var webhook = data.ToIdentifier();
             var payload = new WebhookPayload { Embeds = [embed] };
-            await _dc.CreateMessage(webhook.Value, payload);
+            await _dc.CreateMessage(webhook, payload);
         }
         catch (Exception)
         {
