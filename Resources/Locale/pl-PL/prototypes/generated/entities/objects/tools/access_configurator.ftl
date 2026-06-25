@@ -1,5 +1,5 @@
-ent-AccessConfigurator = access configurator
-    .desc = Used to modify the access level requirements for airlocks and other lockable devices.
-ent-AccessConfiguratorUniversal = universal access configurator
-    .desc = A modified access configurator used only by the mythical Administrator.
+ent-AccessConfigurator = konfigurator dostępu
+    .desc = Używany do modyfikowania wymagań poziomu dostępu dla śluz powietrznych i innych urządzeń z zamkami.
+ent-AccessConfiguratorUniversal = uniwersalny konfigurator dostępu
+    .desc = Zmodyfikowany konfigurator dostępu używany tylko przez mitycznego Administratora.
     .suffix = Admin
