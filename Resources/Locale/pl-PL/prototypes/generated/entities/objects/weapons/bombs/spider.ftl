@@ -1,2 +1,2 @@
-ent-SpiderCharge = spider clan charge
-    .desc = A modified C-4 charge supplied to you by the Spider Clan. Its explosive power has been juiced up, but only works in one specific area.
+ent-SpiderCharge = ładunek Klanu Pająka
+    .desc = Zmodyfikowany ładunek C-4 dostarczony przez Klan Pająka. Jego siła wybuchu została zwiększona, ale działa tylko w jednym konkretnym obszarze.
