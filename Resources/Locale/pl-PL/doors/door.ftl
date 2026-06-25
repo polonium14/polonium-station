@@ -1,1 +1,1 @@
-door-pry = Podważ drzwi
+door-pry = Pry door
