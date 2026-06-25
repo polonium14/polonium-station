@@ -1,2 +1,2 @@
-ent-ReagentImplant = reagent implant
-    .desc = This implant lets the user get up to 3 instant doses of any chemicals contained within itself.
+ent-ReagentImplant = implantator odczynników
+    .desc = Ten implant pozwala użytkownikowi na otrzymanie do 3 natychmiastowych dawek dowolnych chemikaliów zawartych w nim.
