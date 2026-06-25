@@ -1,5 +1,5 @@
-ent-MiningWindow = mining shuttle window
+ent-MiningWindow = okno wahadłowca górniczego
     .desc = { ent-ShuttleWindow.desc }
 ent-MiningWindowDiagonal = { ent-ShuttleWindow }
-    .suffix = diagonal
+    .suffix = diagonalne
     .desc = { ent-ShuttleWindow.desc }
