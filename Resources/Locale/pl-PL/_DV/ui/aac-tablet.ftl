@@ -1,4 +1,4 @@
-aac-tablet-title = AAC Tablet
-aac-tablet-combine = Combine
+aac-tablet-title = tablet KWA
+aac-tablet-combine = Połącz
 aac-tablet-backspace = Backspace
-aac-tablet-send = Send
+aac-tablet-send = Wyślij
