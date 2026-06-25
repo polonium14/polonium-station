@@ -1,2 +1,2 @@
-ent-MailingUnitElectronics = mailing unit electronics
-    .desc = An electronics board used in mailing units.
+ent-MailingUnitElectronics = elektronika bloku pocztowego
+    .desc = Płytka elektroniczna używana w blokach pocztowych.
