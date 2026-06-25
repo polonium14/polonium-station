@@ -33,6 +33,7 @@ public sealed partial class BanPanel : DefaultWindow
     private uint Multiplier { get; set; }
     private bool HasBanFlag { get; set; }
     private TimeSpan? ButtonResetOn { get; set; }
+    private int CurrentRound { get; set; }
 
     // This is less efficient than just holding a reference to the root control and enumerating children, but you
     // have to know how the controls are nested, which makes the code more complicated.
@@ -118,6 +119,11 @@ public sealed partial class BanPanel : DefaultWindow
             OnHwidChanged();
         };
         SubmitButton.OnPressed += SubmitButtonOnOnPressed;
+
+        RoundSpinBox.IsValid = i => i >= 0 && i <= CurrentRound;
+        RoundSpinBox.ValueChanged += RoundSpinBoxChanged;
+        RoundSpinBox.InitDefaultButtons();
+        ResetRoundButton.OnPressed += ResetRoundPressed;
 
         IpCheckbox.Pressed = _cfg.GetCVar(CCVars.ServerBanIpBanDefault);
         HwidCheckbox.Pressed = _cfg.GetCVar(CCVars.ServerBanHwidBanDefault);
@@ -526,7 +532,39 @@ public sealed partial class BanPanel : DefaultWindow
 
     private void UpdateSubmitEnabled()
     {
-        SubmitButton.Disabled = ErrorLevel != ErrorLevelEnum.None;
+        SubmitButton.Disabled = ErrorLevel != ErrorLevelEnum.None
+            || RoundSpinBox.IsValid == null
+            || !RoundSpinBox.IsValid(RoundSpinBox.Value);
+    }
+
+    public void SetCurrentRound(int round)
+    {
+        CurrentRound = round;
+        ResetRoundButton.Text = Loc.GetString("admin-logs-reset-with-id", ("id", round));
+        UpdateResetButton();
+        UpdateSubmitEnabled();
+    }
+
+    public void SetRoundSpinBox(int round)
+    {
+        RoundSpinBox.Value = round;
+        UpdateResetButton();
+    }
+
+    private void RoundSpinBoxChanged(ValueChangedEventArgs _)
+    {
+        UpdateResetButton();
+        UpdateSubmitEnabled();
+    }
+
+    private void UpdateResetButton()
+    {
+        ResetRoundButton.Disabled = RoundSpinBox.Value == CurrentRound;
+    }
+
+    private void ResetRoundPressed(BaseButton.ButtonEventArgs _)
+    {
+        RoundSpinBox.Value = CurrentRound;
     }
 
     private void OnPlayerNameChanged()
@@ -633,6 +671,9 @@ public sealed partial class BanPanel : DefaultWindow
         var useLastHwid = HwidCheckbox.Pressed && LastConnCheckbox.Pressed && Hwid is null;
         var severity = (NoteSeverity) SeverityOption.SelectedId;
         var erase = EraseCheckbox.Pressed;
+        var situationRound = RoundSpinBox.IsValid != null && RoundSpinBox.IsValid(RoundSpinBox.Value)
+            ? RoundSpinBox.Value
+            : 0;
 
         var ban = new Ban(
             player,
@@ -645,7 +686,8 @@ public sealed partial class BanPanel : DefaultWindow
             severity,
             jobs,
             antags,
-            erase
+            erase,
+            situationRound
         );
 
         BanSubmitted?.Invoke(ban);

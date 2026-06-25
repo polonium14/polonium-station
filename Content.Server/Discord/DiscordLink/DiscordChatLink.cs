@@ -1,7 +1,7 @@
+using System.Threading.Tasks;
 using Content.Server.Chat.Managers;
 using Content.Shared.CCVar;
 using Content.Shared.Chat;
-using NetCord;
 using NetCord.Gateway;
 using Robust.Shared.Asynchronous;
 using Robust.Shared.Configuration;
@@ -25,10 +25,6 @@ public sealed class DiscordChatLink : IPostInjectInit
     {
         _discordLink.OnMessageReceived += OnMessageReceived;
 
-        #if DEBUG
-        _discordLink.RegisterCommandCallback(OnDebugCommandRun, "debug");
-        #endif
-
         _configurationManager.OnValueChanged(CCVars.OocDiscordChannelId, OnOocChannelIdChanged, true);
         _configurationManager.OnValueChanged(CCVars.AdminChatDiscordChannelId, OnAdminChannelIdChanged, true);
     }
@@ -41,34 +37,26 @@ public sealed class DiscordChatLink : IPostInjectInit
         _configurationManager.UnsubValueChanged(CCVars.AdminChatDiscordChannelId, OnAdminChannelIdChanged);
     }
 
-    #if DEBUG
-    private void OnDebugCommandRun(CommandReceivedEventArgs ev)
-    {
-        var args = string.Join('\n', ev.Arguments);
-        _sawmill.Info($"Provided arguments: \n{args}");
-    }
-    #endif
-
     private void OnOocChannelIdChanged(string channelId)
     {
-        if (string.IsNullOrEmpty(channelId))
-        {
-            _oocChannelId = null;
-            return;
-        }
-
-        _oocChannelId = ulong.Parse(channelId);
+        _oocChannelId = TryParseChannelId(channelId, CCVars.OocDiscordChannelId.Name);
     }
 
     private void OnAdminChannelIdChanged(string channelId)
     {
-        if (string.IsNullOrEmpty(channelId))
-        {
-            _adminChannelId = null;
-            return;
-        }
+        _adminChannelId = TryParseChannelId(channelId, CCVars.AdminChatDiscordChannelId.Name);
+    }
 
-        _adminChannelId = ulong.Parse(channelId);
+    private ulong? TryParseChannelId(string channelId, string cvarName)
+    {
+        if (string.IsNullOrEmpty(channelId))
+            return null;
+
+        if (ulong.TryParse(channelId, out var id))
+            return id;
+
+        _sawmill.Error($"Invalid Discord channel ID in {cvarName}: '{channelId}'");
+        return null;
     }
 
     private void OnMessageReceived(Message message)

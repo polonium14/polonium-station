@@ -5,6 +5,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Content.Server.Chat.Managers;
 using Content.Server.Database;
+using Content.Server.Discord.Managers;
 using Content.Server.GameTicking;
 using Content.Shared.CCVar;
 using Content.Shared.Database;
@@ -38,6 +39,7 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
     [Dependency] private readonly IEntitySystemManager _systems = default!;
     [Dependency] private readonly ITaskManager _taskManager = default!;
     [Dependency] private readonly UserDbDataManager _userDbData = default!;
+    [Dependency] private readonly DiscordBanNotifyManager _dc = default!;
 
     private ISawmill _sawmill = default!;
 
@@ -122,6 +124,10 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
     #region Server Bans
     public async void CreateServerBan(CreateServerBanInfo banInfo)
     {
+        var originalReason = banInfo.Reason;
+        var roundId = GetCurrentRoundId();
+        var displayReason = FormatBanReasonForDisplay(originalReason, banInfo.SituationRound, roundId);
+
         var (banDef, expires) = await CreateBanDef(banInfo, BanType.Server, null);
 
         await _db.AddBanAsync(banDef);
@@ -143,7 +149,7 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
             ? "null"
             : string.Join(", ", banInfo.Users.Select(u => $"{u.UserName} ({u.UserId})"));
 
-        var addressRangeString = banInfo.AddressRanges.Count != 0
+        var addressRangeString = banInfo.AddressRanges.Count == 0
             ? "null"
             : string.Join(", ", banInfo.AddressRanges.Select(a => $"{a.Address}/{a.Mask}"));
 
@@ -163,12 +169,27 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
             ("name", targetName),
             ("ip", addressRangeString),
             ("hwid", hwidString),
-            ("reason", banInfo.Reason));
+            ("reason", displayReason));
 
         _sawmill.Info(logMessage);
         _chat.SendAdminAlert(logMessage);
 
         KickMatchingConnectedPlayers(banDef, "newly placed ban");
+
+        if (banInfo.NotifyDiscord)
+        {
+            var firstUser = banInfo.Users.FirstOrNull();
+
+            _ = _dc.SendBanNotification(
+                adminName,
+                firstUser?.UserName ?? GetDiscordBanTargetName(banInfo),
+                originalReason,
+                expires?.ToUnixTimeSeconds() ?? 0,
+                DateTimeOffset.UtcNow.ToUnixTimeSeconds(),
+                roundId,
+                banInfo.SituationRound,
+                null);
+        }
     }
 
     private NoteSeverity GetSeverityForServerBan(CreateBanInfo banInfo, CVarDef<string> defaultCVar)
@@ -224,6 +245,10 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
 
     public async void CreateRoleBan(CreateRoleBanInfo banInfo)
     {
+        var originalReason = banInfo.Reason;
+        var roundId = GetCurrentRoundId();
+        var displayReason = FormatBanReasonForDisplay(originalReason, banInfo.SituationRound, roundId);
+
         ImmutableArray<BanRoleDef> roleDefs =
         [
             .. ToBanRoleDef(banInfo.JobPrototypes),
@@ -249,7 +274,7 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
             "cmd-roleban-success",
             ("target", targetName),
             ("role", string.Join(", ", roleDefs)),
-            ("reason", banInfo.Reason),
+            ("reason", displayReason),
             ("length", length)));
 
         foreach (var (userId, _) in banInfo.Users)
@@ -257,6 +282,57 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
             if (_playerManager.TryGetSessionById(userId, out var session))
                 SendRoleBans(session);
         }
+
+        if (banInfo.NotifyDiscord)
+        {
+            var firstUser = banInfo.Users.FirstOrNull();
+            uint? minutes = banInfo.Duration != null ? (uint)banInfo.Duration.Value.TotalMinutes : null;
+            var roleNames = banInfo.JobPrototypes.Select(p => p.ToString())
+                .Concat(banInfo.AntagPrototypes.Select(p => p.ToString()))
+                .ToList();
+
+            _dc.SendRoleBanNotification(
+                firstUser?.UserId,
+                firstUser?.UserName,
+                banInfo.BanningAdmin,
+                minutes,
+                originalReason,
+                banInfo.SituationRound,
+                roleNames);
+        }
+    }
+
+    private static string FormatBanReasonForDisplay(string reason, int? situationRound, int? currentRoundId)
+    {
+        if (situationRound is null or 0)
+        {
+            return currentRoundId != null
+                ? $"#{currentRoundId} | {reason}"
+                : reason;
+        }
+
+        return $"#{situationRound} | {reason}";
+    }
+
+    private string GetDiscordBanTargetName(CreateBanInfo banInfo)
+    {
+        if (banInfo.Users.Count > 0)
+            return string.Join(", ", banInfo.Users.Select(u => $"{u.UserName} ({u.UserId})"));
+
+        if (banInfo.AddressRanges.Count > 0)
+            return string.Join(", ", banInfo.AddressRanges.Select(a => $"{a.Address}/{a.Mask}"));
+
+        if (banInfo.HWIds.Count > 0)
+            return string.Join(", ", banInfo.HWIds);
+
+        return Loc.GetString("ban-notify-ban-target-user-unknown");
+    }
+
+    private int? GetCurrentRoundId()
+    {
+        return _systems.TryGetEntitySystem<GameTicker>(out var ticker) && ticker.RoundId != 0
+            ? ticker.RoundId
+            : null;
     }
 
     private async Task<(BanDef Ban, DateTimeOffset? Expires)> CreateBanDef(
