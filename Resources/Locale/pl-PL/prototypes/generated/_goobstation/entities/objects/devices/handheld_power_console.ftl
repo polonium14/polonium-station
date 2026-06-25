@@ -1,2 +1,2 @@
-ent-BaseHandheldStationMapPowerCe = handheld power console
-    .desc = Fine-crafted handheld power map console for Chief Engineers. Allows the user to view the powergrid.
+ent-BaseHandheldStationMapPowerCe = ręczna konsola zasilania
+    .desc = Starannie wykonana ręczna konsola mapy zasilania dla starszych inżynierów. Pozwala użytkownikowi przeglądać sieć energetyczną.
