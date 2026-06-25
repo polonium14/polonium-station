@@ -1,2 +1,2 @@
-ent-WeaponEnergyShotgunOverseer = energetyczna strzelba "Dignity"
-    .desc = Ostatnia rzecz, którą widziało wielu piratów — jednoręczna strzelba energetyczna nadzorców polujących na piratów. Amunicja: { ent-BulletLaserSpreadMono } oraz { ent-BulletLaserSlug }.
+ent-WeaponEnergyShotgunOverseer = energy shotgun "Dignity"
+    .desc = A weapon that has been the last thing seen by many pirates, "Dignity" is a 1-handed energy shotgun often used by pirate hunting overseers.
