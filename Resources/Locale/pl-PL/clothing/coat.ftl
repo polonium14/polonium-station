@@ -1,1 +1,1 @@
-multiphase_HoS = X-01 Multiphase
+multiphase_HoS = X-01 Multifaza
