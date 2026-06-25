@@ -1,2 +1,2 @@
-ent-CoordinatesDisk = coordinates disk
-    .desc = A disk containing the coordinates to a location in space. Necessary for any FTL-traversing vessel to reach their destination. Fits inside shuttle consoles.
+ent-CoordinatesDisk = dysk koordynat
+    .desc = Dysk zawierający współrzędne miejsca w kosmosie. Niezbędny dla każdego statku przemierzającego FTL, aby dotrzeć do celu. Pasuje do konsol promów.
