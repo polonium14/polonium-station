@@ -1,8 +1,8 @@
-ent-CrateMaterialGlassBulk = bulk glass sheet crate
-    .desc = 270 sheets of glass, packed with extreme care.
-ent-CrateMaterialSteelBulk = bulk steel sheet crate
-    .desc = 270 sheets of steel.
-ent-CrateMaterialPlasticBulk = bulk plastic sheet crate
-    .desc = 270 sheets of plastic.
-ent-CrateMaterialPlasmaBulk = bulk solid plasma crate
-    .desc = 90 sheets of plasma.
+ent-CrateMaterialGlassBulk = hurtowa skrzynia arkuszy szkła
+    .desc = 270 arkuszy szkła, zapakowanych z najwyższą starannością.
+ent-CrateMaterialSteelBulk = hurtowa skrzynia arkuszy stali
+    .desc = 270 arkuszy stali.
+ent-CrateMaterialPlasticBulk = hurtowa skrzynia arkuszy plastiku
+    .desc = 270 arkuszy plastiku.
+ent-CrateMaterialPlasmaBulk = hurtowa skrzynia stałej plazmy
+    .desc = 90 arkuszy plazmy.
