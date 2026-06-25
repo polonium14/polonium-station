@@ -1,6 +1,10 @@
 roles-antag-cult-name = Blood Cultist
 roles-antag-cult-objective = Your objective is to summon your master, the Geometer of Blood, Nar'Sie. Through conversion, domination, and blood may She be brought back into this world. Cooperate with your fellow Cultists to tear open the veil and bring about Her coming!
-cult-role-greeting = You are a Blood Cultist. Use your Cult Dagger to strike at the cult's foes, receive healing from Her pylons, and offer their souls to Her!
+cult-role-greeting =
+    You are a Blood Cultist.
+    You are tasked with summoning your master, Nar'Sie, to this plane of existence.
+    Sacrifice those the Geometer of Blood demands and convert your crewmates to the cause to tear open the veil.
+    TOK-LYR RQA-NAP G'OLT-ULOFT!!
 cult-briefing = Help your fellow cult members convert the crew and sacrifice your targets to summon your deity.
 cult-start-briefing = The Geometer of Blood has a task for you.
 cult-briefing-targets = Nar'Sie demands blood. Inspect the veil to comprehend Her wishes.
@@ -14,7 +18,7 @@ cult-rune-drawing-vowel-first = You begin smearing a
 cult-rune-drawing-vowel-second = into the floor with blood...
 cult-rune-select = Select Rune
 cult-veil-drawing-toostrong = The veil is too strong here to tear open.
-cult-veil-drawing-pleaseconfirm = Use the dagger again to confirm the { $name } area.
+cult-veil-drawing-pleaseconfirm = Use the dagger again to confirm the { $name } area -- beware, the crew will be alerted!
 cult-veil-drawing-wronglocation = You must draw this rune at the { $name } area!
 cult-veil-drawing-alreadyexists-location = A tear veil rune has already been drawn at { $name }. Choose a different location.
 cult-veil-drawing-confirmed = You may now draw the Tear Veil rune at { $name }!
@@ -25,9 +29,9 @@ cult-veil-ritual-not-enough-at-end = The ritual fails! Not enough cultists remai
 cult-veil-ritual-failed = The Tear the Veil ritual has failed! The cultists were unable to maintain the ritual.
 cult-veil-ritual-success = The Tear the Veil ritual is complete! The veil has been weakened, and Nar'Sie's power grows!
 cult-veil-ritual-already-completed = The Tear the Veil ritual has already been completed. The veil cannot be weakened further.
-cult-veil-ritual-central-command-announcement = Attention all personnel: Reality-distorting anomalies have been detected. The veil between dimensions has been compromised. All security personnel are to arm immediately. Avoid, arrest, or stop any crew exhibiting extradimensional abilities. The station is now operating under maximum alert protocols.
+cult-veil-ritual-central-command-announcement = Uwaga cały personel: wykryto anomalie zakłócające rzeczywistość. Zasłona między wymiarami została naruszona. Cały personel ochrony ma natychmiast się uzbroić. Należy unikać, aresztować lub zatrzymać każdą załogę wykazującą zdolności pozamiarowe. Stacja działa obecnie w trybie maksymalnego alarmu.
 cult-final-ritual-already-in-progress = The final summoning ritual is already in progress!
-cult-final-ritual-not-enough-cultists = Not enough cultists stand upon the summoning runes! { $current } present, { $required } required.
+cult-final-ritual-not-enough-cultists = Not enough cultists stand upon the summoning runes! { $current } present, { $required } required. All three runes must be occupied!
 cult-final-ritual-started = THE FINAL RITUAL BEGINS! All cultists must remain on the summoning runes! Nar'Sie's arrival is at hand!
 cult-final-ritual-not-enough-at-end = The summoning fails! Not enough cultists remained on the runes. { $current } cultists present, { $required } required.
 cult-final-ritual-failed = The final summoning has failed! Nar'Sie's wrath will be terrible!
@@ -41,11 +45,11 @@ cult-invocation-revive-fail = Nar'Sie demands more sacrifice!
 cult-invocation-fail-nosoul = Nar'Sie rejects this soulless husk!
 cult-invocation-fail-teamkill = Nar'Sie rejects your offering of another Cultist!
 cult-invocation-fail-mindshielded = Your victim resists Nar'Sie's influence!
-cult-invocation-fail-resisted = This being resists Nar'Sie's influence!
+cult-invocation-fail-resisted = This holy being resists Nar'Sie's influence!
 cult-invocation-fail = More cultists must be present!
 cult-invocation-fail-noshell = An empty juggernaut shell must be present on the rune to perform a sacrifice!
 cult-invocation-interrupted = The ritual was interrupted!
-cult-revive-success = The ritual is complete! Life flows back into the body!
+cult-revive-success = The ritual is complete! Life flows back into the body as your own blood is drained!
 cult-revive-success-noncultist = The ritual is complete! Life flows back into the body, though Nar'Sie demands her blood tithe!
 cult-revive-fail-notarget = No valid target found to revive! The target must be dead and on the rune.
 cult-sanguine-perniculate-heal = The sanguine perniculate soothes your wounds, healing { $amount } holy damage!
@@ -87,16 +91,16 @@ cult-blood-consumed = You consume the blood, feeling it course through your vein
 bloodcult-juggernaut-healed-by-blood = The juggernaut absorbs the blood, its wounds knitting together!
 cult-status-veil-strong = [italic]The Veil needs to be weakened before we are able to summon The Dark One.[/italic]
 cult-status-veil-weak = [italic]You and your acolytes have succeeded in preparing the station for the ultimate ritual![/italic]
-cult-status-veil-weak-pending = [italic]A blood anomaly will manifest soon—ready your conversion runes and prepare sacrifices.[/italic]
-cult-status-veil-weak-anomaly = [italic][color=red]The blood anomaly has manifested![/color] Feed it with sacrifices to empower the final summoning ritual.[/italic]
+cult-status-veil-weak-pending = [italic]A blood anomaly will manifest soon—ready your offering runes and prepare sacrifices.[/italic]
+cult-status-veil-weak-anomaly = [italic]The blood anomaly has manifested! Feed it with sacrifices to empower the final summoning ritual.[/italic]
 cult-veil-torn = The veil... is... torn!
 cult-rift-spawn-soon = The veil screams. A blood anomaly will manifest in two minutes—prepare your offerings!
 cult-status-veil-strong-goal = [italic]Current goal: Sacrifice { $targetName }, the { $targetJob } via invoking an offer rune with its body or brain on it and at least { $cultistsRequired } cultists around it.[/italic]
 cult-status-veil-weak-goal-anomaly = [italic]Current goal: Feed the blood anomaly at { $firstLoc }, { $secondLoc }, or { $thirdLoc } with offering runes, then gather 9 cultists, constructs, or summoned ghosts on Tear Veil to summon Nar'Sie.[/italic]
 cult-status-veil-weak-goal = [italic]Current goal: Summon Nar'Sie by invoking the rune 'Tear Veil' with 9 cultists, constructs, or summoned ghosts on it.
-    The summoning can only be accomplished in the { $firstLoc } area, the { $secondLoc } area, or the { $thirdLoc } area - where the veil is weak enough for the ritual to begin.[/italic]
+    The summoning can only be accomplished in the { $firstLoc } area, the { $secondLoc } area, or the { $thirdLoc } area — where the veil is weak enough for the ritual to begin.[/italic]
 cult-status-veil-weak-goal-pending = [italic]Current goal: Await the arrival of the holy blood of Nar'Sie as you spill more blood in her name![/italic]
-cult-status-veil-weak-rift-location = [italic]The final rift coalesces around [bold][color=#FF3333]{ $location }[/color][/bold]. The ritual must be completed there.[/italic]
+cult-status-veil-weak-rift-location = [italic]The final rift coalesces around { $location }. The ritual must be completed there.[/italic]
 cult-status-veil-weak-direction = [italic]{ $location } lies to your { $direction }. Follow the call of the rift.[/italic]
 cult-status-veil-weak-direction-here = [italic]You stand at { $location }; the rift is within reach.[/italic]
 cult-status-veil-weak-direction-nosense = [italic]The rift is beyond your senses; you must find a better vantage point.[/italic]
@@ -111,7 +115,7 @@ cult-blood-progress-tear-veil = [italic]Next objective: Perform the Tear Veil ri
 cult-blood-progress-final-summon = [italic]Next objective: Find the reality rift and perform the final summoning ritual with 9 cultists.[/italic]
 cult-blood-progress-final-summon-pending = [italic]Next objective: Await the manifestation of the blood rift.[/italic]
 cult-blood-progress-final-summon-ready = [italic]Next objective: Chant the final summoning ritual to bring Nar'Sie into this reality![/italic]
-cult-blood-progress-final-summon-location = [italic]Final summoning site: [bold][color=#FF3333]{ $location }[/color][/bold].[/italic]
+cult-blood-progress-final-summon-location = [italic]Final summoning site: { $location }.[/italic]
 cult-blood-progress-complete = [italic]Blood Spilled: { $bloodCollected }u. All blood thresholds have been met![/italic]
 cult-status-veil-weak-cultdata =
     Current cult members: { $cultCount } | Conversions until Rise: { $cultUntilRise }
@@ -124,8 +128,8 @@ cult-ascend-2 = The veil weakens as your cult grows, and you are unable to hide 
 cult-deconverted = You suddenly de-convert, and no longer consider yourself a cultist!
 cult-break-control = You look bewildered as Nar'Sie's influence is shattered! You don't remember any of your time in the cult.
 cult-deconverted-memory-loss = You lose the last several hours of your memories.
-cult-evac-called-announcement = Unusual dimensional disturbances have faded, evac called while centcom investigates this dimensional anomaly. ETA: { $time } { $units }
-cult-evac-sender-announcement = Central Command
+cult-evac-called-announcement = Niezwykłe zaburzenia wymiarowe ustąpiły, wezwano wahadłowiec ewakuacyjny. Centralne Dowództwo bada tę anomalię wymiarową. Przewidywany czas przybycia: { $time } { $units }
+cult-evac-sender-announcement = Centralne Dowództwo
 cult-commune-window = Commune
 cult-commune-info = Whisper into the veil and communicate with your fellow worshippers.
 cult-commune-send = Send
@@ -133,9 +137,10 @@ cult-commune-message = Acolyte { $name } (as { $job }): { $message }
 cult-commune-incantation = Y'll tor tz'ul z'nik rar.
 cult-narsie-spawning = Reality breaks down around you.
 cult-win-announcement-shuttle-call =
-    Due to spatio-temporal complications, the station has been deemed unprofitable to salvage. A crew transfer shuttle has been dispatched. Failure to board and return to Central Command for debriefing will be interpreted as abandonment of contract, and your families will undergo penalties for as long as it takes to recoup these expenses.
-    ETA: { $time } { $units }.
-cult-win-announcement = Due to spatio-temporal complications, the station has been deemed unprofitable to salvage. Failure to return to Central Command for debriefing will be interpreted as abandonment of contract, and your families will undergo penalties for as long as it takes to recoup these expenses.
+    Ze względu na komplikacje czasowo-przestrzenne stacja została uznana za nieopłacalną w utrzymaniu. Wysłano wahadłowiec w celu ewakuacji personelu. Niestawienie się na pokładzie i niezłożenie raportu w Centralnym Dowództwie zostanie uznane za zerwanie umowy, a Wasze rodziny zostaną obciążone karami finansowymi do czasu pełnego pokrycia strat korporacji.
+    
+    Przewidywany czas przybycia: { $time } { $units }.
+cult-win-announcement = Ze względu na komplikacje czasowo-przestrzenne stacja została uznana za nieopłacalną w utrzymaniu. Wysłano wahadłowiec w celu ewakuacji personelu. Niestawienie się na pokładzie i niezłożenie raportu w Centralnym Dowództwie zostanie uznane za zerwanie umowy, a Wasze rodziny zostaną obciążone karami finansowymi do czasu pełnego pokrycia strat korporacji.
 cult-ghost-role-name = Reawakened Blood Cultist
 cult-ghost-role-desc = A zealous Blood Cultist of Nar'Sie, re-awakened after catatonia.
 cult-ghost-role-rules =
@@ -145,11 +150,7 @@ cult-roundend-victory =
     The blood cult has summoned Nar'Sie and laid claim
     to the sector in Her name.
 cult-roundend-failure = The blood cult was unable to summon their master.
-cult-roundend-count =
-    The blood cult performed { $count } { $count ->
-        [1] conversion
-       *[other] conversions
-    } throughout the round.
+cult-roundend-count = There were { $count } total blood cultists.
 cult-roundend-sacrifices = The blood cult rendered { $sacrifices } souls up to the Geometer of Blood.
 cult-soulstone-role-name = Trapped Soul
 cult-soulstone-role-description = You are trapped in a soulstone. You can speak and will be released as a shade when a cultist uses the stone.
@@ -159,15 +160,15 @@ cult-summoning-pylon = The rune glows crimson as a pylon anchors itself to reali
 cult-summoning-forsaken-boots = The rune shudders as cursed boots materialize from the void!
 cult-summoning-acolyte-armor = The rune glows with unholy light as acolyte armor and a cult helmet materialize!
 cult-summoning-need-more-metal = Not enough runed metal! You have { $have }, but need { $needed } for a juggernaut shell.
-cult-summoning-no-materials = Place Runed Steel, Runed Glass, Runed Plasteel, Plastic, Cloth, or Durathread on the summoning rune.
-cult-summoning-insufficient-materials = Not enough materials! You need 30 runed steel for a juggernaut shell, 10 runed glass for a pylon, 10 runed plasteel and an outerwear item for acolyte armor, or 5 plastic and 5 cloth (or 5 durathread) for forsaken boots.
+cult-summoning-no-materials = Place Runed Metal or Runed Glass on the summoning rune. 30 runed metal summons a juggernaut shell; 10 runed glass summons a pylon.
+cult-summoning-insufficient-materials = Not enough materials! You need 30 runed metal for a juggernaut shell or 10 runed glass for a pylon.
 cult-summoning-need-more-steel = Not enough runed steel! You have { $have }, but need { $needed } for a juggernaut shell.
 cult-summoning-need-more-glass = Not enough runed glass! You have { $have }, but need { $needed } for a pylon.
 cult-summoning-need-more-plastic = Not enough plastic! You have { $have }, but need { $needed } for forsaken boots.
 cult-summoning-need-more-cloth = Not enough cloth! You have { $have }, but need { $needed } for forsaken boots.
 cult-summoning-need-more-plasteel = Not enough runed plasteel! You have { $have }, but need { $needed } and outerwear clothing for acolyte armor.
 cult-summoning-need-outerwear = You need to place an outerwear item on the summoning rune along with the runed plasteel to create acolyte armor.
-cult-summoning-pylon-location-blocked = The pylon cannot be summoned here - the location is blocked!
+cult-summoning-pylon-location-blocked = The pylon cannot be summoned here — the location is blocked!
 cult-summoning-pylon-no-grid = The pylon cannot be summoned here.
 cult-summoning-pylon-anchor-failed = The pylon could not anchor at the rune location, but was summoned nearby instead.
 cult-summoning-pylon-failed = The pylon summoning failed! Your materials have been refunded.
