@@ -1,2 +1,2 @@
-ent-SupermatterSliver = supermatter sliver
-    .desc = A shard from the station's Supermatter crystal. Highly radioactive.
+ent-SupermatterSliver = odłamek supermaterii
+    .desc = Odłamek kryształu supermaterii ze stacji. Silnie radioaktywny.
