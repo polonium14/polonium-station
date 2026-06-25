@@ -1,2 +1,2 @@
-ent-Brick = brick
-    .desc = The simple brick, one of mankinds most brilliant creations.
+ent-Brick = cegła
+    .desc = Zwykła cegła, jedno z najgenialniejszych dzieł ludzkości.
