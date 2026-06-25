@@ -1,5 +1,5 @@
 ent-MobRoingus = roingus
-    .desc = Odbijaj się!
+    .desc = Bounce!
     .gender = male
 ent-MobMeowl = meowl
-    .desc = Szczyt ewolucji — najbardziej wydajny łowca szkodników po tej stronie galaktyki. Uważany za silnie inwazyjny gatunek na każdej planecie.
+    .desc = The peak of evolution, the most efficient pest hunter any side of the galaxy. Considered highly invasive on every planet.
