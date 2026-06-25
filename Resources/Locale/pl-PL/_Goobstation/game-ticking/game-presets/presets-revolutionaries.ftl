@@ -1,18 +1,18 @@
-revolutionaries-lose-announcement-shuttle-call = Based on data from our long-range sensors, the enemy revolutionary cells on the station have been suppressed and neutralized. An evacuation shuttle has been called, ETA: { $time } { $units }.
-revolutionaries-lose-announcement = Based on data from our long-range sensors, the enemy revolutionary cells on the station have been suppressed and neutralized.
+revolutionaries-lose-announcement-shuttle-call = Na podstawie danych z naszych czujników dalekiego zasięgu, wrogie komórki rewolucyjne na stacji zostały stłumione i zneutralizowane. Wezwano wahadłowiec ewakuacyjny, przewidywany czas przybycia: { $time } { $units }.
+revolutionaries-lose-announcement = Na podstawie danych z naszych czujników dalekiego zasięgu, wrogie komórki rewolucyjne na stacji zostały stłumione i zneutralizowane.
 revolutionaries-win-announcement-shuttle-call =
-    All command members have been eliminated or have been taken hostage. The station is now under Revolutionary control. An evacuation shuttle has been called, ETA: { $time } { $units }.
+    Wszyscy członkowie dowództwa zostali wyeliminowani lub wzięci jako zakładnicy. Stacja jest teraz pod kontrolą Rewolucjonistów. Wezwano wahadłowiec ewakuacyjny, przewidywany czas przybycia: { $time } { $units }.
     
-    Vivu la revolucio!
+    Viva la revolución!
 revolutionaries-win-announcement =
-    All command members have been eliminated or have been taken hostage. The station is now under Revolutionary control.
+    Wszyscy członkowie dowództwa zostali wyeliminowani lub wzięci jako zakładnicy. Stacja jest teraz pod kontrolą Rewolucjonistów.
     
-    Vivu la revolucio!
-revolutionaries-win-sender = Yucatan Communications
-revolutionaries-sender-cc = Central Command
-revolutionaries-open-revolt-confirmation = THIS ACTION WILL REVEAL ALL HEAD REVS! Use it again to confirm.
-revolutionaries-open-revolt-rev-popup = Open Revolt has been declared! Vivu la revolucio!
+    Viva la revolución!
+revolutionaries-win-sender = Komunikacja Jukatan
+revolutionaries-sender-cc = Centralne Dowództwo
+revolutionaries-open-revolt-confirmation = TA AKCJA UJAWNI WSZYSTKICH PRZYWÓDCÓW REWOLUCJI! Użyj ponownie, aby potwierdzić.
+revolutionaries-open-revolt-rev-popup = Ogłoszono Otwartą Rewoltę! Viva la revolución!
 revolutionaries-open-revolt-announcement =
-    We have detected a psionic declaration of Open Revolt aboard the station by active revolutionary cells.
+    Wykryliśmy psioniczną deklarację Otwartej Rewolty na pokładzie stacji przez aktywne komórki rewolucyjne.
     
-    The source has been determined, and the following individuals are to be detained or neutralized immediately in the interest of public safety: { $nameList }.
+    Źródło zostało ustalone, a następujące osoby mają zostać natychmiast zatrzymane lub zneutralizowane w interesie bezpieczeństwa publicznego: { $nameList }.
