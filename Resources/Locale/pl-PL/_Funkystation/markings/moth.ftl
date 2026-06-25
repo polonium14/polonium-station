@@ -1,14 +1,13 @@
-
-marking-MothEyesSoft-eyes_soft = Łagodne Oczy
-marking-MothEyesSoft-eyes_soft_skin = Skóra
-marking-MothEyesSoft = Łagodne Oczy
+marking-MothEyesSoft-eyes_soft = Soft Eyes
+marking-MothEyesSoft-eyes_soft_skin = Skin
+marking-MothEyesSoft = Soft Eyes
 marking-HeterochromiaMothSoft-eyes_heterochromia_soft = Heterochromia
-marking-HeterochromiaMothSoft = Heterochromia (Łagodne Oczy)
-marking-MothEyeshadow-motheyeshadow = Cień do powiek
-marking-MothEyeshadow = Cień do powiek (Ćma)
-marking-MothTailless-tailless = Bez ogona
-marking-MothTailless = Bez ogona (Ćma)
-marking-MothAntennaWeevil-weevil_head = Czułki Wołka
-marking-MothAntennaWeevil = Czułki Wołka (Ćma)
-marking-MothWeevil-weevil = Wołek
-marking-MothWeevil = Wołek (Ćma)
+marking-HeterochromiaMothSoft = Heterochromia (Soft Eyes)
+marking-MothEyeshadow-motheyeshadow = Eyeshadow
+marking-MothEyeshadow = Eyeshadow (Moth)
+marking-MothTailless-tailless = Tailless
+marking-MothTailless = Tailless (Moth)
+marking-MothAntennaWeevil-weevil_head = Weevil Antenna
+marking-MothAntennaWeevil = Weevil Antenna (Moth)
+marking-MothWeevil-weevil = Weevil
+marking-MothWeevil = Weevil (Moth)
