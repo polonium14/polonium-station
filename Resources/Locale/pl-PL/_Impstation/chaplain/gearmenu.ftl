@@ -1,7 +1,6 @@
-
 null-grail-verb = Swirl contents
-null-grail-popup = You begin swirling the { $shakeable }'s contents.
-null-grail-popup-others = { CAPITALIZE($user) } begins swirling the { $shakeable }'s contents.
+null-grail-popup = You begin swirling the { THE($shakeable) }'s contents.
+null-grail-popup-others = { CAPITALIZE(THE($user)) } begins swirling the { THE($shakeable) }'s contents.
 null-grail-mix-success = You bless the { $mixed } with the { $mixer }
 null-rod-transformed = Your Null Rod transforms!
 null-rod-rejection = The Null Rod sears your hands!
@@ -28,14 +27,14 @@ chaplain-gearset-category-bow-name = Aureole Arc
 chaplain-gearset-category-bow-description =
     Wrought from ornately carved synthwood, this golden-inlaid bow
     hums with power. Though this bow's shots are potent,
-    each arrow must be nocked and fired seperately. This form will
-    splinter the Null Rod into a matching quiver, filled with arrows.
+    each arrow takes time to regenerate, with up to four
+    charges being held at any one time.
 # begin funky
 chaplain-gearset-category-gun-name = Annabelle
 chaplain-gearset-category-gun-description =
     A Winchester 1886 with religious imagery plastered all over it.
-    Carved into its stock, "Matthew 19:23-24." Though it comes with
-    four silver bullets, it has no matching ammo box. Spend them wisely.
+    Carved into its stock, "Matthew 19:23-24." it comes with seven silver
+    bullets, and a matching ammo box with 14. Spend them wisely.
 chaplain-gearset-category-rapier-name = Star Rapier
 chaplain-gearset-category-rapier-description =
     An interesting weapon harnessing the power of winter.
