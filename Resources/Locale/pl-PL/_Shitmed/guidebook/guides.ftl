@@ -1,5 +1,5 @@
-guide-entry-surgery = Surgery
-guide-entry-partmanipulation = Part Manipulation
-guide-entry-organmanipulation = Organ Manipulation
-guide-entry-utilitysurgeries = Utility Surgeries
-guide-entry-autodoc = Autodoc
+guide-entry-surgery = Chirurgia
+guide-entry-partmanipulation = Manipulacja częściami
+guide-entry-organmanipulation = Manipulacja organami
+guide-entry-utilitysurgeries = Zabiegi chirurgiczne
+guide-entry-autodoc = Autolek
