@@ -1,5 +1,5 @@
-ent-MobNarsieBase = Nar'Sie
-    .desc = Your mind begins to bubble and ooze as it tries to comprehend what it sees.
+ent-MobNarsieBase = Nar'Si
+    .desc = Twój umysł zaczyna bulgotać i wyciekać, próbując pojąć to, co widzi.
 ent-MobNarsieSpawn = { ent-MobNarsieBase }
     .suffix = Spawn
     .desc = { ent-MobNarsieBase.desc }
