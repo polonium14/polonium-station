@@ -1,6 +1,6 @@
-configuration-menu-confirm = Potwierdź
-configuration-menu-device-title = Konfiguracja urządzenia
+configuration-menu-confirm = Confirm
+configuration-menu-device-title = Device Configuration
 
 ## ConfigureVerb
 
-configure-verb-get-data-text = Otwórz konfigurację
+configure-verb-get-data-text = Open Configuration
