@@ -1,4 +1,4 @@
-ent-BaseBulletRubber = bazowy pocisk gumowy
+ent-BaseBulletRubber = base bullet rubber
     .desc = { ent-BaseBullet.desc }
-ent-BaseBulletEmp = bazowy pocisk EMP
+ent-BaseBulletEmp = base bullet emp
     .desc = { ent-BaseBulletTrigger.desc }
