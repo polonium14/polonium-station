@@ -1,20 +1,20 @@
-device-pda-slot-component-slot-name-cartridge = Cartridge
+device-pda-slot-component-slot-name-cartridge = Kartridż
 default-program-name = Program
-notekeeper-program-name = Notekeeper
+notekeeper-program-name = Notatnik
 nano-task-program-name = NanoTask
-news-read-program-name = Station news
-crew-manifest-program-name = Crew manifest
-crew-manifest-cartridge-loading = Loading ...
+news-read-program-name = Wiadomości Stacyjne
+crew-manifest-program-name = Manifest Załogi
+crew-manifest-cartridge-loading = Ładowanie ...
 net-probe-program-name = NetProbe
-net-probe-scan = Scanned { $device }!
-net-probe-label-name = Name
-net-probe-label-address = Address
-net-probe-label-frequency = Frequency
-net-probe-label-network = Network
+net-probe-scan = Zeskanowano { $device }!
+net-probe-label-name = Nazwa
+net-probe-label-address = Adres
+net-probe-label-frequency = Częstotliwość
+net-probe-label-network = Sieć
 log-probe-program-name = LogProbe
-log-probe-scan = Downloaded logs from { $device }!
-log-probe-label-time = Time
-log-probe-label-accessor = Accessed by
+log-probe-scan = Pobrano logi z { $device }!
+log-probe-label-time = Czas
+log-probe-label-accessor = Odblokowane przez:
 log-probe-label-number = #
 log-probe-print-button = Wydrukuj Logi
 log-probe-printout-device = Zeskanowane Urządzenie: { $name }
@@ -29,55 +29,68 @@ plant-scan-program-name = PlantScan
 
 nano-task-ui-heading-high-priority-tasks =
     { $amount ->
-        [zero] No High Priority Tasks
-        [one] 1 High Priority Task
-       *[other] { $amount } High Priority Tasks
-    }
+        [zero] Brak
+        [one] { $amount } Zadanie
+        [few] { $amount } Zadania
+        [4] { $amount } Zadania
+       *[other] { $amount } Zadań
+    } o Wysokim Priorytecie
 nano-task-ui-heading-medium-priority-tasks =
     { $amount ->
-        [zero] No Medium Priority Tasks
-        [one] 1 Medium Priority Task
-       *[other] { $amount } Medium Priority Tasks
-    }
+        [zero] Brak
+        [one] { $amount } Zadanie
+        [few] { $amount } Zadania
+        [4] { $amount } Zadania
+       *[other] { $amount } Zadań
+    } o Średnim Priorytecie
 nano-task-ui-heading-low-priority-tasks =
     { $amount ->
-        [zero] No Low Priority Tasks
-        [one] 1 Low Priority Task
-       *[other] { $amount } Low Priority Tasks
-    }
-nano-task-ui-done = Done
-nano-task-ui-revert-done = Undo
-nano-task-ui-priority-low = Low
-nano-task-ui-priority-medium = Medium
-nano-task-ui-priority-high = High
-nano-task-ui-cancel = Cancel
-nano-task-ui-print = Print
-nano-task-ui-delete = Delete
-nano-task-ui-save = Save
-nano-task-ui-new-task = New Task
-nano-task-ui-description-label = Description:
-nano-task-ui-description-placeholder = Get something important
-nano-task-ui-requester-label = Requester:
-nano-task-ui-requester-placeholder = John Nanotrasen
-nano-task-ui-item-title = Edit Task
-nano-task-printed-description = Description: { $description }
-nano-task-printed-requester = Requester: { $requester }
-nano-task-printed-high-priority = Priority: High
-nano-task-printed-medium-priority = Priority: Medium
-nano-task-printed-low-priority = Priority: Low
+        [zero] Brak
+        [one] { $amount } Zadanie
+        [few] { $amount } Zadania
+        [4] { $amount } Zadania
+       *[other] { $amount } Zadań
+    } o Niskim Priorytecie
+nano-task-ui-done = Gotowe
+nano-task-ui-revert-done = Cofnij
+nano-task-ui-priority-low = Niski
+nano-task-ui-priority-medium = Średni
+nano-task-ui-priority-high = Wysoki
+nano-task-ui-cancel = Anuluj
+nano-task-ui-print = Wydrukuj
+nano-task-ui-delete = Usuń
+nano-task-ui-save = Zapisz
+nano-task-ui-new-task = Nowe Zadanie
+nano-task-ui-description-label = Opis:
+nano-task-ui-description-placeholder = Zrób coś ważnego.
+nano-task-ui-requester-label = Żądający:
+nano-task-ui-requester-placeholder = Jan Nanotrasen
+nano-task-ui-item-title = Edytuj Zadanie
+nano-task-printed-description = [bold]Opis[/bold]: { $description }
+nano-task-printed-requester = [bold]Żądający[/bold]: { $requester }
+nano-task-printed-high-priority = [bold]Priorytet[/bold]: [color=red]Wysoki[/color]
+nano-task-printed-medium-priority = [bold]Priorytet[/bold]: Średni
+nano-task-printed-low-priority = [bold]Priorytet[/bold]: Niski
 # Wanted list cartridge
-wanted-list-program-name = Wanted list
-wanted-list-label-no-records = It's all right, cowboy
-wanted-list-search-placeholder = Search by name and status
-wanted-list-age-label = [color=darkgray]Age:[/color] [color=white]{ $age }[/color]
-wanted-list-job-label = [color=darkgray]Job:[/color] [color=white]{ $job }[/color]
-wanted-list-species-label = [color=darkgray]Species:[/color] [color=white]{ $species }[/color]
-wanted-list-gender-label = [color=darkgray]Gender:[/color] [color=white]{ $gender }[/color]
-wanted-list-reason-label = [color=darkgray]Reason:[/color] [color=white]{ $reason }[/color]
-wanted-list-unknown-reason-label = unknown reason
-wanted-list-initiator-label = [color=darkgray]Initiator:[/color] [color=white]{ $initiator }[/color]
-wanted-list-unknown-initiator-label = unknown initiator
-wanted-list-status-label = [color=darkgray]status:[/color] { $status }
-wanted-list-history-table-time-col = Time
-wanted-list-history-table-reason-col = Crime
-wanted-list-history-table-initiator-col = Initiator
+wanted-list-program-name = Lista Poszukiwanych
+wanted-list-label-no-records = Jest wszystko dobrze, żołnierzu!
+wanted-list-search-placeholder = Szukaj poprzez imie i status
+wanted-list-age-label = [color=darkgray]Wiek:[/color] [color=white]{ $age }[/color]
+wanted-list-job-label = [color=darkgray]Zawód:[/color] [color=white]{ $job }[/color]
+wanted-list-species-label = [color=darkgray]Gatunek:[/color] [color=white]{ $species }[/color]
+wanted-list-gender-label = [color=darkgray]Płeć:[/color] [color=white]{ $gender }[/color]
+wanted-list-reason-label = [color=darkgray]Powód:[/color] [color=white]{ $reason }[/color]
+wanted-list-unknown-reason-label = Nieznany Powód
+wanted-list-initiator-label = [color=darkgray]Inicjator:[/color] [color=white]{ $initiator }[/color]
+wanted-list-unknown-initiator-label = Nieznany Inicjator
+wanted-list-status-label = [color=darkgray]status:[/color] { $status ->
+        [suspected] [color=yellow]podejrzany[/color]
+        [wanted] [color=red]poszukiwany[/color]
+        [detained] [color=#b18644]zatrzymany[/color]
+        [paroled] [color=green]zwol. warunkowo[/color]
+        [discharged] [color=green]zwoloniony[/color]
+       *[other] nic
+    }
+wanted-list-history-table-time-col = Czas
+wanted-list-history-table-reason-col = Przestępstwo
+wanted-list-history-table-initiator-col = Inicjator
