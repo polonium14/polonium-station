@@ -1,4 +1,4 @@
-pai-system-role-name-cc = Centcomm Personal AI
+pai-system-role-name-cc = Osobista SI Centrali
 pai-system-role-description-cc =
-    Be someone's CC pal!
-    (Memories *not* included.)
+    Bądź kumplem kogoś z CD!
+    (Wspomnienia *nie* wliczone w cenę.)
