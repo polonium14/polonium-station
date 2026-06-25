@@ -1,77 +1,47 @@
 # Commands
 
+
 ## Delay shuttle round end
 
-emergency-shuttle-command-round-desc = Zatrzymuje odliczanie rozpoczynane gdy wahadłowiec wyjdzie z hiperprzestrzeni.
-emergency-shuttle-command-round-yes = Runda przedłużona.
-emergency-shuttle-command-round-no = Nie można przedłużyć rundy.
+emergency-shuttle-command-round-desc = Stops the timer that ends the round when the emergency shuttle exits hyperspace.
+emergency-shuttle-command-round-yes = Round delayed.
+emergency-shuttle-command-round-no = Unable to delay round end.
 
 ## Dock emergency shuttle
 
-emergency-shuttle-command-dock-desc = Powiadamia wahadłowiec aby zadokował do stacji... jeśli może.
+emergency-shuttle-command-dock-desc = Calls the emergency shuttle and docks it to the station... if it can.
 
 ## Launch emergency shuttle
 
-emergency-shuttle-command-launch-desc = Przedwcześnie startuje wchadłowiec ratunkowy, jeśli można.
+emergency-shuttle-command-launch-desc = Early launches the emergency shuttle if possible.
 # Emergency shuttle
-emergency-shuttle-left =
-    Wahadłowiec ratunkowy opuścił stację. { $transitTime ->
-        [one] Oczekiwana
-       *[other] Oczekiwane
-    } { $transitTime } { $transitTime ->
-        [one] sekunda
-        [few] sekundy
-       *[other] sekund
-    } do Centralnego Dowództwa.
-emergency-shuttle-launch-time =
-    Wahadłowiec ratunkowy wystartuje za { $consoleAccumulator } { $consoleAccumulator ->
-        [one] sekundę
-        [few] sekundy
-       *[other] sekund
-    }.
-emergency-shuttle-docked =
-    Wahadłowiec ratunkowy zadokował na { $direction } od { $location } stacji. Wystartuje on za { $time } { $time ->
-        [one] sekundę
-        [few] sekundy
-       *[other] sekund
-    }. { $extended }
-emergency-shuttle-good-luck = Wahadłowiec ratunkowy nie jest w stanie znaleźć stacji. Powodzenia.
-emergency-shuttle-nearby =
-    Wahadłowiec ratunkowy nie jest w stanie znaleźć wolnego portu. Przemieścił się na { $direction } od { $location } stacji. Wystartuje on za { $time } { $time ->
-        [one] sekundę
-        [few] sekundy
-       *[other] sekund
-    }. { $extended }
-emergency-shuttle-extended = { " " }Czas do startu został przedłużony ze względu na nieprzychylne okoliczności.
+emergency-shuttle-left = The Emergency Shuttle has left the station. Estimate { $transitTime } seconds until the shuttle arrives at CentComm.
+emergency-shuttle-launch-time = The emergency shuttle will launch in { $consoleAccumulator } seconds.
+emergency-shuttle-docked = The Emergency Shuttle has docked { $direction } of the station, { $location }. It will leave in { $time } seconds.{ $extended }
+emergency-shuttle-good-luck = The Emergency Shuttle is unable to find a station. Good luck.
+emergency-shuttle-nearby = The Emergency Shuttle is unable to find a valid docking port. It has warped in { $direction } of the station, { $location }. It will leave in { $time } seconds.{ $extended }
+emergency-shuttle-extended = { " " }Launch time has been extended due to inconvenient circumstances.
 # Emergency shuttle console popup / announcement
-emergency-shuttle-console-no-early-launches = Przedwczesny odlot jest niedostępny.
-emergency-shuttle-console-auth-left =
-    brakuje { $remaining ->
-        [one] jednego uprawnienia
-       *[other] { $remaining } uprawnień
-    } do  przedwczesnego odlotu.
-emergency-shuttle-console-auth-revoked =
-    Uprawnienie do odlotu wycofane, wymagane { $remaining ->
-        [one] jedno uprawnienie
-       *[other] { $remaining } uprawnienia
-    }.
-emergency-shuttle-console-denied = Odmowa dostępu
+emergency-shuttle-console-no-early-launches = Early launch is disabled
+emergency-shuttle-console-auth-left = { $remaining } authorizations needed until shuttle is launched early.
+emergency-shuttle-console-auth-revoked = Early launch authorization revoked, { $remaining } authorizations needed.
+emergency-shuttle-console-denied = Access denied
 # UI
-emergency-shuttle-console-window-title = Konsola wahadłowca ratunkowego
-emergency-shuttle-ui-engines = SILNIKI:
-emergency-shuttle-ui-idle = Bezczynny
-emergency-shuttle-ui-repeal-all = Odwołaj wszystkie
-emergency-shuttle-ui-early-authorize = Uprawnienie przedwczesnego odlotu
-emergency-shuttle-ui-authorize = UPRAWNIJ
-emergency-shuttle-ui-repeal = WYCOFAJ
-emergency-shuttle-ui-authorizations = Uprawnienia
-emergency-shuttle-ui-remaining = Brakuje: { $remaining }
+emergency-shuttle-console-window-title = Emergency Shuttle Console
+emergency-shuttle-ui-engines = ENGINES:
+emergency-shuttle-ui-idle = Idle
+emergency-shuttle-ui-repeal-all = Repeal All
+emergency-shuttle-ui-early-authorize = Early Launch Authorization
+emergency-shuttle-ui-authorize = AUTHORIZE
+emergency-shuttle-ui-repeal = REPEAL
+emergency-shuttle-ui-authorizations = Authorizations
+emergency-shuttle-ui-remaining = Remaining: { $remaining }
 # Map Misc.
-map-name-centcomm = Centralne Dowództwo
-map-name-terminal = Port odlotów
+map-name-centcomm = Central Command
 cmd-delayroundend-desc = Zatrzymuje odliczanie rozpoczynane gdy wahadłowiec wyjdzie z hiperprzestrzeni.
 cmd-delayroundend-help = Użycie: delayroundend
 cmd-dockemergencyshuttle-desc = Powiadamia wahadłowiec aby zadokował do stacji... jeśli może.
 cmd-dockemergencyshuttle-help = Użycie: dockemergencyshuttle
 cmd-launchemergencyshuttle-desc = Przedwcześnie startuje wchadłowiec ratunkowy, jeśli można.
 cmd-launchemergencyshuttle-help = Użycie: launchemergencyshuttle
+map-name-terminal = Arrivals Terminal
