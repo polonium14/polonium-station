@@ -27,7 +27,7 @@
     ╚══════════════════╝[/color]
 delivery-spam-robust-toolboxes = [color=blue][head=1]
     ░░▄▀░░
-    ░▄█▄▄▀ [head=3]ROBUST - TOOLBOXES AND TOOLS[/head]
+    ░▄█▄▄▀ [head=3]ROBUST — TOOLBOXES AND TOOLS[/head]
     ██▀░░░ [/head][/color]
     
     { "[bold]BUY ONE TOOLBOX, GET ONE SET OF TOOLS FOR FREE![/bold]" }
@@ -36,7 +36,7 @@ delivery-spam-robust-toolboxes = [color=blue][head=1]
     
     { "[bold]ALL THIS AND POSSIBLY MORE FOR ONLY ONE ORGAN![/bold]" }
     
-    ROBUST - TOOLBOXES AND TOOLS:
+    ROBUST — TOOLBOXES AND TOOLS:
     -LEAD AND ASBESTOS FREE!
     -OR WITH LEAD AND ASBESTOS, IF YOU PREFER!
     -CHEAP! ONLY ONE ORGAN! THAT'S LESS THAN TWO ORGANS!
@@ -91,7 +91,7 @@ delivery-spam-free-all-access = [head=3]Have You ever wanted to have [italic][co
     
     
     { "[color=gray]" }
-    { "[bullet/]Note: station ID must be stated in the format of \"NT/NX - ###\"" }
+    { "[bullet/]Note: station ID must be stated in the format of \"NT/NX — ###\"" }
     { "[bullet/]Note: Payments lodged to the client's station's cargo department amount to roughly $5000 spesos per transaction, not including individual processing fees" }
     { "[bullet/]Note: We at Gour-Lecksss LMT. are not responsible if your station's HoP forces you to fill out an ACTUAL Free AA form if they find out about this letter" }
     { "[/color]" }
