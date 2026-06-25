@@ -1,2 +1,2 @@
-ent-ArmBlade = arm blade
-    .desc = A grotesque blade made out of bone and flesh that cleaves through people as a hot knife through butter.
+ent-ArmBlade = ostrze z ramienia
+    .desc = Groteskowe ostrze wykonane z kości i mięsa, które tnie ludzi jak gorący nóż masło.
