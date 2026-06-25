@@ -1,9 +1,19 @@
-carp-rift-warning = A rift is causing an unnaturally large energy flux { $location }. Stop it at all costs!
-carp-rift-duplicate = Cannot have 2 charging rifts at the same time!
-carp-rift-examine = It is [color=yellow]{ $percentage }%[/color] charged!
-carp-rift-max = You have reached your maximum amount of rifts
-carp-rift-anchor = Rifts require a stable surface to spawn.
-carp-rift-proximity = Too close to a nearby rift! Need to be at least { $proximity }m away.
-carp-rift-space-proximity = Too close to space! Need to be at least { $proximity }m away.
-carp-rift-weakened = You are unable to summon more rifts in your weakened state.
-carp-rift-destroyed = A rift has been destroyed! You are now weakened temporarily.
+carp-rift-warning = Wyrwa powoduje nienaturalnie duże turbulencje energii w { $location }. Zatrzymajcie to za wszelką cenę!
+carp-rift-duplicate = Nie można posiadać 2 rosnących wyrw w tym samym momencie!
+carp-rift-examine = Jest ona w [color=yellow]{ NATURALPERCENT($percentage) }[/color] pełnej wielkości!
+carp-rift-max = Osiągnięto limit liczby wyrw
+carp-rift-anchor = Wyrwy potrzebują solidnej podstawy do materializacji
+carp-rift-proximity =
+    Zbyt blisko do jednej z wyrw! Muszą być oddalone przynajmniej o { $proximity } { $proximity ->
+        [one] metr
+        [few] metry
+       *[other] metrów
+    }.
+carp-rift-space-proximity =
+    Zbyt blisko kosmosu! Muszą być oddalone przynajmniej o { $proximity } { $proximity ->
+        [one] metr
+        [few] metry
+       *[other] metrów
+    }.
+carp-rift-weakened = Nie jesteś w stanie przyzwać większej liczby wyrw w twoim osłabionym stanie.
+carp-rift-destroyed = Wyrwa została zniszczona! Ogarnia cię tymczasowe osłabienie.
