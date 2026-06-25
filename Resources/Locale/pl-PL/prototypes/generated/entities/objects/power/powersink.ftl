@@ -1,2 +1,2 @@
-ent-PowerSink = power sink
-    .desc = Drains immense amounts of electricity from the grid.
+ent-PowerSink = pochłaniacz energii
+    .desc = Pochłania gigantyczne ilości energii z sieci.
