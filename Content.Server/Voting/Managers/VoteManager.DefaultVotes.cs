@@ -142,6 +142,7 @@ namespace Content.Server.Voting.Managers
             var options = new VoteOptions
             {
                 Title = Loc.GetString("ui-vote-restart-title"),
+                VoteType = StandardVoteType.Restart,
                 Options =
                 {
                     (Loc.GetString("ui-vote-restart-yes"), "yes"),
@@ -223,6 +224,7 @@ namespace Content.Server.Voting.Managers
             var options = new VoteOptions
             {
                 Title = Loc.GetString("ui-vote-gamemode-title"),
+                VoteType = StandardVoteType.Preset,
                 Duration = alone
                     ? TimeSpan.FromSeconds(_cfg.GetCVar(CCVars.VoteTimerAlone))
                     : TimeSpan.FromSeconds(_cfg.GetCVar(CCVars.VoteTimerPreset))
@@ -269,6 +271,7 @@ namespace Content.Server.Voting.Managers
             var options = new VoteOptions
             {
                 Title = Loc.GetString("ui-vote-map-title"),
+                VoteType = StandardVoteType.Map,
                 Duration = alone
                     ? TimeSpan.FromSeconds(_cfg.GetCVar(CCVars.VoteTimerAlone))
                     : TimeSpan.FromSeconds(_cfg.GetCVar(CCVars.VoteTimerMap))
@@ -447,6 +450,7 @@ namespace Content.Server.Voting.Managers
             var options = new VoteOptions
             {
                 Title = voteTitle,
+                VoteType = StandardVoteType.Votekick,
                 Options =
                 {
                     (Loc.GetString("ui-vote-votekick-yes"), "yes"),

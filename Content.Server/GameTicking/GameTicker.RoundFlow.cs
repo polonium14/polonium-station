@@ -67,6 +67,7 @@ using Content.Server.GameTicking.Events;
 using Content.Server.Maps;
 using Content.Server.Roles;
 using Content.Shared.CCVar;
+using Content.Shared.GameTicking;
 using Content.Shared.Database;
 using Content.Shared.GameTicking;
 using Content.Shared.Maps;
@@ -741,6 +742,10 @@ namespace Content.Server.GameTicking
 
                 SendStatusToAll();
                 UpdateInfoText();
+
+                var ev = new RoundRestartingEvent();
+
+                RaiseLocalEvent(ref ev);
 
                 ReqWindowAttentionAll();
             }
