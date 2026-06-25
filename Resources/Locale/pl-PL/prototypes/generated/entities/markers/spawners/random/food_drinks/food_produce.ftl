@@ -1,2 +1,2 @@
-ent-RandomProduce = spawner losowych warzyw i owoców
+ent-RandomProduce = random produce spawner
     .desc = { ent-MarkerBase.desc }
