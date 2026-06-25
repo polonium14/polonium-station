@@ -1,4 +1,4 @@
-ent-DiseaseDiagnoser = Disease Diagnoser Delta Extreme
-    .desc = A machine that analyzes disease samples.
-ent-DiagnosisReportPaper = disease diagnoser report
-    .desc = A chilling medical receipt.
+ent-DiseaseDiagnoser = Diagnozator chorób Delta Extreme
+    .desc = Urządzenie analizujące próbki chorób.
+ent-DiagnosisReportPaper = raport diagnozatora chorób
+    .desc = Chłodzący medyczny paragon.
