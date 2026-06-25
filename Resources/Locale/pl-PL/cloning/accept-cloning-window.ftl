@@ -1,6 +1,6 @@
-accept-cloning-window-title = Cloning Machine
+accept-cloning-window-title = Maszyna Klonująca
 accept-cloning-window-prompt-text-part =
-    You are being cloned!
-    Transfer your soul to the clone body?
-accept-cloning-window-accept-button = Yes
-accept-cloning-window-deny-button = No
+    Jesteś klonowany!
+    Czy chcesz przenieść swoją duszę do ciała klona?
+accept-cloning-window-accept-button = Tak
+accept-cloning-window-deny-button = Nie
