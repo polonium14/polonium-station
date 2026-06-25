@@ -1,4 +1,4 @@
-ent-CrateNPCMeowl = skrzynia z miau-lem
-    .desc = Skrzynia zawierająca trzy z najbardziej śmiercionośnych istot na świecie.
-ent-CrateNPCMiniDragonFriendly = klatka z udomowionym mini smokiem
-    .desc = Skrzynia zawierająca niezwykle rzadkiego, udomowionego mini-smoka.
+ent-CrateNPCMeowl = meowl crate
+    .desc = A crate containing three of the deadliest beings known.
+ent-CrateNPCMiniDragonFriendly = domesticated mini dragon crate
+    .desc = A crate containing an incredibly rare domesticated mini dragon.
