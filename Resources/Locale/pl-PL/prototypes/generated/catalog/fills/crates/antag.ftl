@@ -1,6 +1,6 @@
-ent-CratePirateChestCaptain = piracka skrzynia kapitana
-    .suffix = Uzupełniona
+ent-CratePirateChestCaptain = captains pirate chest
+    .suffix = Filled
     .desc = { ent-CratePirate.desc }
-ent-CratePirateChest = piracka skrzynia załogi
-    .suffix = Uzupełniona
+ent-CratePirateChest = crews pirate chest
+    .suffix = Filled
     .desc = { ent-CratePirate.desc }
