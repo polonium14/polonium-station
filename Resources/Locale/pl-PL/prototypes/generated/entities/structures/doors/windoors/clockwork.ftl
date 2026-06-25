@@ -1,2 +1,2 @@
-ent-BaseClockworkWindoor = clockwork windoor
+ent-BaseClockworkWindoor = okno przesuwne zegarmistrzowskie
     .desc = { ent-BaseWindoor.desc }
