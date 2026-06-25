@@ -4,6 +4,6 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-fibers-modular = modular
-fibers-classified = classified
-fibers-pitch-black = pitch-black
+fibers-modular = modularne
+fibers-classified = utajnione
+fibers-pitch-black = całkowicie czarne
