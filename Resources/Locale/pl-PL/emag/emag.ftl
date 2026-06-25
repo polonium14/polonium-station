@@ -1,2 +1,2 @@
-emag-success = The device zaps something in { THE($target) }.
-emag-no-charges = No charges left!
+emag-success = Urządzenie razi coś w { $target }.
+emag-no-charges = Nie ma ładunków!
