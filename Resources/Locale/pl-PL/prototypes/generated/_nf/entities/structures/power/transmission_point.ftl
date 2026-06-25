@@ -1,2 +1,2 @@
-ent-PowerTransmissionPoint = punkt przesyłu energii
-    .desc = Olbrzymia maszyna do przesyłu energii na odległość za pomocą splątania kwantowego.
+ent-PowerTransmissionPoint = power transmission point
+    .desc = A gargantuan machine for offsite power transmission using quantum entanglement.
