@@ -3,4 +3,4 @@
 
 ## Showed to users other than the climber
 
-glass-table-shattered-others = { CAPITALIZE(THE($table)) } cracks under the weight of { THE($climber) }!
+glass-table-shattered-others = { CAPITALIZE($table) } pęka pod ciężarem { $climber }!
