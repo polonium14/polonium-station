@@ -1,10 +1,10 @@
 ent-BaseWeaponSubMachineGun = BaseSMG
-    .desc = Celuj i strzelaj szybko.
-ent-WeaponSubMachineGunAtreides = Atryda
-    .desc = Pla-ket-ket-ket-ket! Używa amunicji .35 auto.
-ent-WeaponSubMachineGunC20r = pistolet maszynowy C-20r
-    .desc = Broń palna często używana przez niesławnych operatorów nuklearnych. Używa amunicji .35 auto.
+    .desc = A rooty tooty point and shooty.
+ent-WeaponSubMachineGunAtreides = Atreides
+    .desc = Pla-ket-ket-ket-ket! Uses .35 auto ammo.
+ent-WeaponSubMachineGunC20r = C-20r submachine gun
+    .desc = A firearm that is often used by the infamous nuclear operatives. Uses .35 auto ammo.
 ent-WeaponSubMachineGunDrozd = Drozd
-    .desc = Doskonały w pełni automatyczny ciężki pistolet maszynowy.
+    .desc = An excellent fully automatic Heavy SMG.
 ent-WeaponSubMachineGunWt550 = WT550
-    .desc = Doskonały pistolet maszynowy, produkowany przez dział broni palnej NanoTrasen. Używa amunicji .35 auto.
+    .desc = An excellent SMG, produced by NanoTrasen's Small Arms Division. Uses .35 auto ammo.
