@@ -1,2 +1,2 @@
-ent-CarpRift = carp rift
-    .desc = A rift akin to the ones space carp use to travel long distances.
+ent-CarpRift = karpio wyrwa
+    .desc = Wyrwa podobna to tych które kosmiczne karpie używają aby przemierzać długie dystanse.
