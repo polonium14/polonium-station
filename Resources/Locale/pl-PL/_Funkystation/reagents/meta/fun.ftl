@@ -1,6 +1,6 @@
-reagent-name-catextract = catberry extract
-reagent-desc-catextract = An unusual liquid extracted from a catberry.
-reagent-name-ink = ink
-reagent-desc-ink = A thick, dark, viscous liquid
-reagent-name-polystatic-amylostyronate = Polystatic Amylostyronate
-reagent-desc-polystatic-amylostyronate = A thick slurry of chemicals that one day might've been a peanut.
+reagent-name-catextract = ekstrakt z catberry
+reagent-desc-catextract = Niezwykła ciecz pozyskana z owocu catberry.
+reagent-name-ink = atrament
+reagent-desc-ink = Gęsta, ciemna, lepka ciecz.
+reagent-name-polystatic-amylostyronate = Amylostyronian Polistatyczny
+reagent-desc-polystatic-amylostyronate = Gęsta papka z substancji chemicznych, która kiedyś mogła być orzeszkiem ziemnym.
