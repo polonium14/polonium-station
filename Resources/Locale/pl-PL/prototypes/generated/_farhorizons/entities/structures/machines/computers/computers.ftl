@@ -1,2 +1,2 @@
-ent-NuclearReactorMonitor = nuclear reactor monitor
-    .desc = A device that monitors the state of a connected nuclear reactor.
+ent-NuclearReactorMonitor = monitor reaktora jądrowego
+    .desc = Urządzenie monitorujące stan podłączonego reaktora jądrowego.
