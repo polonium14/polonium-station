@@ -1,2 +1,2 @@
-ent-RandomBoard = random board spawner
+ent-RandomBoard = spawner płytek drukowanych
     .desc = { ent-MarkerBase.desc }
