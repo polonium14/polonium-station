@@ -1,8 +1,8 @@
-ent-ClothingHeadHelmetHardsuitMusician = helm kombinezonu muzyka
-    .desc = Helm kombinezonu muzyka.
-ent-ClothingHeadHelmetHelldiver = helm taktyczny NT-01
-    .desc = Ta zbroja jest standardowym wyposażeniem NanoTrasen, wykonana z tego samego stopu tytanu co kadłub Goliatha.
-ent-ClothingHeadHelmetHardsuitCarpScale = helm kombinezonu z łusków karpia
-    .desc = Helm kombinezonu z efektownym wyglądem.
-ent-ClothingHeadHelmetHardsuitHivelord = helm kombinezonu władcy roju
-    .desc = { ent-ClothingHeadHelmetHardsuitCarpScale.desc }
+ent-ClothingHeadHelmetHardsuitMusician = musician hardsuit helmet
+    .desc = A musician hardsuit helmet.
+ent-ClothingHeadHelmetHelldiver = diving hardsuit helmet
+    .desc = A unique variant of the classic mining hardsuit helmet, given to only the most dedicated of salvagers.
+ent-ClothingHeadHelmetHardsuitCarpScale = carp scale hardsuit helmet
+    .desc = A hardsuit fitted with a striking vissage.
+ent-ClothingHeadHelmetHardsuitHivelord = hivelord hardsuit helmet
+    .desc = A hardsuit fitted with a striking vissage.
