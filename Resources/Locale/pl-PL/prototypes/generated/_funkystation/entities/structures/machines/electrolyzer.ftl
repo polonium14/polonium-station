@@ -1,2 +1,2 @@
-ent-Electrolyzer = electrolyzer
+ent-Electrolyzer = elektrolizer
     .desc = { ent-BaseMachinePowered.desc }
