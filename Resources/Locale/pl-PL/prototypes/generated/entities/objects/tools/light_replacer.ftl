@@ -1,5 +1,5 @@
-ent-LightReplacer = wymieniacz żarówek
-    .desc = Przedmiot, który przy pomocy magnesów ułatwia wymianę rozbitych lamp. Uzupełnij, wkładając więcej żarówek do środka.
+ent-LightReplacer = light replacer
+    .desc = An item which uses magnets to easily replace broken lights. Refill by adding more lights into the replacer.
 ent-LightReplacerEmpty = { ent-LightReplacer }
-    .suffix = Pusty
+    .suffix = Empty
     .desc = { ent-LightReplacer.desc }
