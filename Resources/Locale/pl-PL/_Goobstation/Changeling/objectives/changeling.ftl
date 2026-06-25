@@ -1,4 +1,3 @@
-
 objective-condition-absorb-title = Absorb { $count } humanoids.
 objective-condition-absorb-description = I must absorb { $count } humanoids. It is necessary for my survival and further evolution.
 objective-condition-stealdna-title = Extract { $count } compatible genomes.
