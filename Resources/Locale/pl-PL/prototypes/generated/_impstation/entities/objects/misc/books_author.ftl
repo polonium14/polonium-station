@@ -1,2 +1,2 @@
-ent-BookCosmicCult = ancient treatise on cosmology
-    .desc = The book is an ancient synthleather-bound treatise with a bright, star-shaped mark on the cover. Though the pages seem to be dyed in odd hues, the ink appears clearly legible despite the book's apparent age. It's strangely well-preserved, and has clearly been stored away for a very long time.
+ent-BookCosmicCult = starożytny traktat o kosmologii
+    .desc = Książka jest starożytnym traktatem oprawionym w syntetyczną skórę, z jasnym znakiem w kształcie gwiazdy na okładce. Chociaż strony wydają się być zabarwione na dziwne odcienie, atrament jest wyraźnie czytelny pomimo widocznego wieku książki. Jest ona dziwnie dobrze zachowana i najwyraźniej była przechowywana przez bardzo długi czas.
