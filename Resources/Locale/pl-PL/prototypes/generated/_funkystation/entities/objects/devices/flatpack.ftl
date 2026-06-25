@@ -1,4 +1,4 @@
-ent-TegCenterFlatpack = zestaw do montażu TEG
-    .desc = Zestaw do montażu centralnej części termoelektrycznego generatora.
-ent-TegCirculatorFlatpack = zestaw do montażu TEG (cyrkulator)
-    .desc = Zestaw do montażu bocznej części termoelektrycznego generatora.
+ent-TegCenterFlatpack = teg center flatpack
+    .desc = A flatpack used for constructing the center of a TEG.
+ent-TegCirculatorFlatpack = teg circulator flatpack
+    .desc = A flatpack used for constructing a side of a TEG.
