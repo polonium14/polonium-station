@@ -30,6 +30,7 @@ public sealed class DepartmentBanCommand : IConsoleCommand
         string department;
         string reason;
         uint minutes;
+        int round = 0;
         if (!Enum.TryParse(_cfg.GetCVar(CCVars.DepartmentBanDefaultSeverity), out NoteSeverity severity))
         {
             _sawmill ??= _log.GetSawmill("admin.department_ban");
@@ -75,6 +76,30 @@ public sealed class DepartmentBanCommand : IConsoleCommand
                 }
 
                 break;
+            case 6:
+                target = args[0];
+                department = args[1];
+                reason = args[2];
+
+                if (!uint.TryParse(args[3], out minutes))
+                {
+                    shell.WriteError(Loc.GetString("cmd-roleban-minutes-parse", ("time", args[3]), ("help", Help)));
+                    return;
+                }
+
+                if (!Enum.TryParse(args[4], ignoreCase: true, out severity))
+                {
+                    shell.WriteLine(Loc.GetString("cmd-roleban-severity-parse", ("severity", args[4]), ("help", Help)));
+                    return;
+                }
+
+                if (!int.TryParse(args[5], out round))
+                {
+                    shell.WriteLine(Loc.GetString("cmd-roleban-round-parse", ("round", args[5])));
+                    return;
+                }
+
+                break;
             default:
                 shell.WriteError(Loc.GetString("cmd-roleban-arg-count"));
                 shell.WriteLine(Help);
@@ -103,6 +128,8 @@ public sealed class DepartmentBanCommand : IConsoleCommand
         banInfo.WithBanningAdmin(shell.Player?.UserId);
         banInfo.AddHWId(targetHWid);
         banInfo.WithSeverity(severity);
+        if (round > 0)
+            banInfo.WithSituationRound(round);
 
         foreach (var job in departmentProto.Roles)
         {
@@ -141,6 +168,7 @@ public sealed class DepartmentBanCommand : IConsoleCommand
             3 => CompletionResult.FromHint(Loc.GetString("cmd-roleban-hint-3")),
             4 => CompletionResult.FromHintOptions(durOpts, Loc.GetString("cmd-roleban-hint-4")),
             5 => CompletionResult.FromHintOptions(severities, Loc.GetString("cmd-roleban-hint-5")),
+            6 => CompletionResult.FromHint(Loc.GetString("cmd-roleban-hint-round")),
             _ => CompletionResult.Empty
         };
     }

@@ -7,6 +7,7 @@ using Content.Server.Chat.Managers;
 using Content.Server.Connection;
 using Content.Server.Database;
 using Content.Server.Discord.DiscordLink;
+using Content.Server.Discord.Managers;
 using Content.Server.EUI;
 using Content.Server.FeedbackSystem;
 using Content.Server.GameTicking;
@@ -167,6 +168,7 @@ namespace Content.Server.Entry
             _euiManager.Initialize();
             _gameMap.Initialize();
             _entSys.GetEntitySystem<GameTicker>().PostInitialize();
+            IoCManager.Resolve<DiscordBanNotifyManager>().Initialize();
             _ban.Initialize();
             _connection.PostInit();
             _multiServerKick.Initialize();

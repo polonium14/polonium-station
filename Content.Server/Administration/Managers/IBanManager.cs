@@ -135,6 +135,8 @@ public abstract class CreateBanInfo
     internal NoteSeverity? Severity;
     internal string Reason;
     internal NetUserId? BanningAdmin;
+    internal int? SituationRound;
+    internal bool NotifyDiscord = true;
 
     protected CreateBanInfo(string reason)
     {
@@ -327,6 +329,24 @@ public abstract class CreateBanInfo
     public CreateBanInfo WithBanningAdmin(NetUserId? banningAdmin)
     {
         BanningAdmin = banningAdmin;
+        return this;
+    }
+
+    /// <summary>
+    /// Specify the round in which the banned situation occurred, for display in ban reason and Discord notifications.
+    /// </summary>
+    public CreateBanInfo WithSituationRound(int situationRound)
+    {
+        SituationRound = situationRound;
+        return this;
+    }
+
+    /// <summary>
+    /// Whether to send a Discord notification when the ban is created.
+    /// </summary>
+    public CreateBanInfo WithDiscordNotification(bool notify)
+    {
+        NotifyDiscord = notify;
         return this;
     }
 }

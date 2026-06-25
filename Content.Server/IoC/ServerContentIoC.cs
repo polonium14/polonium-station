@@ -9,6 +9,7 @@ using Content.Server.Database;
 using Content.Server.Discord;
 using Content.Server.Discord.DiscordLink;
 using Content.Server.Discord.WebhookMessages;
+using Content.Server.Discord.Managers;
 using Content.Server.EUI;
 using Content.Server.FeedbackSystem;
 using Content.Server.GhostKick;
@@ -82,6 +83,7 @@ internal static class ServerContentIoC
         deps.Register<CVarControlManager>();
         deps.Register<DiscordLink>();
         deps.Register<DiscordChatLink>();
+        deps.Register<DiscordBanNotifyManager>();
         deps.Register<ServerFeedbackManager>();
         deps.Register<ISharedFeedbackManager, ServerFeedbackManager>();
     }
