@@ -1,2 +1,1 @@
-
-objective-condition-traitor-target-alive-title = Upewnij się, że { $targetName }, { CAPITALIZE($job) } pozostaje bezpieczny przed innymi agentami.
+objective-condition-traitor-target-alive-title = Ensure { $targetName }, { CAPITALIZE($job) } stays safe from other agents.
