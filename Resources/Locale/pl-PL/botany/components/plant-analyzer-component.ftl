@@ -1,98 +1,98 @@
-plant-analyzer-component-no-seed = no plant found
-plant-analyzer-component-yes = Yes
-plant-analyzer-component-no = No
-plant-analyzer-component-health = Health:
-plant-analyzer-component-age = Age:
-plant-analyzer-component-water = Water:
-plant-analyzer-component-nutrition = Nutrition:
-plant-analyzer-component-toxins = Toxins:
-plant-analyzer-component-pests = Pests:
-plant-analyzer-component-weeds = Weeds:
-plant-analyzer-component-alive = [color=green]ALIVE[color]
-plant-analyzer-component-dead = [color=red]DEAD[color]
-plant-analyzer-component-unviable = [color=red]UNVIABLE[color]
-plant-analyzer-component-mutating = [color=#00ff5f]MUTATING[color]
+plant-analyzer-component-no-seed = Brak Rośliny
+plant-analyzer-component-yes = Tak
+plant-analyzer-component-no = Nie
+plant-analyzer-component-health = Zdrowie:
+plant-analyzer-component-age = Wiek:
+plant-analyzer-component-water = Nawodnienie:
+plant-analyzer-component-nutrition = Odżywienie:
+plant-analyzer-component-toxins = Toksyny:
+plant-analyzer-component-pests = Szkodniki:
+plant-analyzer-component-weeds = Chwasty:
+plant-analyzer-component-alive = [color=green]ŻYWE[color]
+plant-analyzer-component-dead = [color=red]MARTWE[color]
+plant-analyzer-component-unviable = [color=red]NIEZDATNE[color]
+plant-analyzer-component-mutating = [color=#00ff5f]MUTUJĄCE[color]
 plant-analyzer-component-kudzu = [color=red]KUDZU[color]
-plant-analyzer-soil = Unabsorbed Reagents: [color=white]{ $chemicals }[/color]
-plant-analyzer-soil-empty = Unabsorbed Reagents: [color=gray]None[/color]
-plant-analyzer-component-environment = [bold]Desired Environment Analysis[/bold] { $nl }
-plant-analyzer-component-light = Light Level: [color=white]{ $lightLevel } ± { $lightTolerance }[/color]{ $nl }
-plant-analyzer-component-temperature = Temperature: [color=lightsalmon]{ $temp }°k ± { $tempTolerance }°k[/color]{ $nl }
-plant-analyzer-component-pressure = Pressure: [color=lightblue]{ $kpa }kPa ± { $kpaTolerance }kPa[/color]{ $nl }
-plant-analyzer-component-requiredgas = Required Gases: [color=lightgray]{ $gases }[/color]
-plant-analyzer-component-nogas = Required Gases: [color=gray]None[/color]
-plant-analyzer-produce-title = [bold]Plant Produce Analysis[/bold] { $nl }
+plant-analyzer-soil = Niewchłonięte Reagenty: [color=white]{ $chemicals }[/color]
+plant-analyzer-soil-empty = Niewchłonięte Reagenty: [color=gray]Brak[/color]
+plant-analyzer-component-environment = [bold]Analiza Optymalnych Warunków[/bold] { $nl }
+plant-analyzer-component-light = Poziom Naświetlenia: [color=white]{ $lightLevel } ± { $lightTolerance }[/color]{ $nl }
+plant-analyzer-component-temperature = Temperatura: [color=lightsalmon]{ $temp }°k ± { $tempTolerance }°k[/color]{ $nl }
+plant-analyzer-component-pressure = Ciśnienie: [color=lightblue]{ $kpa }kPa ± { $kpaTolerance }kPa[/color]{ $nl }
+plant-analyzer-component-requiredgas = Wymagane Gazy: [color=lightgray]{ $gases }[/color]
+plant-analyzer-component-nogas = Wymagane Gazy: [color=gray]Brak[/color]
+plant-analyzer-produce-title = [bold]Analiza Plonu Rośliny[/bold] { $nl }
 plant-analyzer-produce-amount =
-    Produce: { $yield ->
-        [0] [color=gray]None[/color]$nl
+    Plony: { $yield ->
+        [0] [color=gray]Brak[/color]$nl
         [one] [color=#a4885c][bold]{ $yield }[/bold] { $produce }[/color]
        *[other] [color=#a4885c][bold]{ $yield }[/bold] { $producePlural }[/color]
     }{ $nl }
 plant-analyzer-produce-size =
-    Potency: { $yield ->
+    Bogactwo Plonów: { $yield ->
         [0] [color=gray]N/A[/color]
        *[other] [color=lightgreen][bold]{ $potency }[/bold] { "(" }{ $potencyDesc }{ ")" }[/color]
     }{ $nl }
 plant-analyzer-produce-seedless =
-    Seedless: { $seedless ->
-        [true] { " " }[color=red]Yes[/color]
-       *[false] { " " }[color=green]No[/color]
+    Brak Nasion: { $seedless ->
+        [true] { " " }[color=red]Tak[/color]
+       *[false] { " " }[color=green]Nie[/color]
     }{ $nl }
 plant-analyzer-produce-gases =
-    Emitted Gases: { $gasCount ->
-        [0] [color=gray]None[/color]
+    Wydzielane Gazy: { $gasCount ->
+        [0] [color=gray]Brak[/color]
        *[other] [color=lightgray]{ $gases }[/color]
     }{ $nl }
 plant-analyzer-produce-reagents =
-    Reagents: { $yield ->
-        [0] [color=gray]None[/color]
+    Reagenty: { $yield ->
+        [0] [color=gray]Brak[/color]
        *[other]
             { $chemCount ->
-                [0] [color=gray]None[/color]
+                [0] [color=gray]Brak[/color]
                *[other] [color=white]{ $chemicals }[/color]
             }
     }
-plant-analyzer-produce-plural = { MAKEPLURAL($thing) }
-plant-analyzer-potency-tiny = Tiny
-plant-analyzer-potency-small = Small
-plant-analyzer-potency-medium = Medium
-plant-analyzer-potency-large = Large
-plant-analyzer-potency-huge = Huge
-plant-analyzer-potency-gigantic = Gigantic
-plant-analyzer-potency-ludicrous = Ludicrous
-plant-analyzer-potency-immeasurable = [italic]Immeasurable[/italic]
-plant-analyzer-potency-perfect = [color=yellow][bold]Perfect[/bold][/color]
-plant-analyzer-print = Print
+plant-analyzer-produce-plural = { $thing }
+plant-analyzer-potency-tiny = Minimalna
+plant-analyzer-potency-small = Mała
+plant-analyzer-potency-medium = Średnia
+plant-analyzer-potency-large = Duża
+plant-analyzer-potency-huge = Wielka
+plant-analyzer-potency-gigantic = Gigantyczna
+plant-analyzer-potency-ludicrous = Niedorzeczna
+plant-analyzer-potency-immeasurable = [italic]Nieobliczalna[/italic]
+plant-analyzer-potency-perfect = [color=yellow][bold]Perfekcyjna[/bold][/color]
+plant-analyzer-print = Drukuj
 plant-analyzer-printout-missing = N/A
-plant-analyzer-printout = [color=#9FED58][head=2]Plant Analyzer Report[/head][/color]{ $nl }──────────────────────────────{ $nl }[bullet/] Species: { $seedName }{ $nl }{ $indent }[bullet/] Viable: { $viable ->
-        [Yes] [color=green]Yes[/color]
-        [No] [color=red]No[/color]
+plant-analyzer-printout = [color=#9FED58][head=2]Raport Analizatora Roślin[/head][/color]{ $nl }──────────────────────────────{ $nl }[bullet/] Gatunek: { $seedName }{ $nl }{ $indent }[bullet/] Zdatne: { $viable ->
+        [Yes] [color=green]Tak[/color]
+        [No] [color=red]Nie[/color]
        *[other] { LOC("plant-analyzer-printout-missing") }
     }{ $nl }{ $indent }[bullet/] Kudzu: { $kudzu ->
-        [Yes] [color=red]Yes[/color]
-        [No] [color=green]No[/color]
+        [Yes] [color=red]Tak[/color]
+        [No] [color=green]Nie[/color]
        *[other] { LOC("plant-analyzer-printout-missing") }
-    }{ $nl }{ $indent }[bullet/] Endurance: { $endurance }{ $nl }{ $indent }[bullet/] Lifespan: { $lifespan }{ $nl }{ $indent }[bullet/] Produce: { $yield ->
+    }{ $nl }{ $indent }[bullet/] Wytrzymałość: { $endurance }{ $nl }{ $indent }[bullet/] Długość życia: { $lifespan }{ $nl }{ $indent }[bullet/] Owoc: { $yield ->
         [-1] { LOC("plant-analyzer-printout-missing") }
-        [0] [color=gray]None[/color]$nl
+        [0] [color=gray]Brak[/color]$nl
         [one] [color=#a4885c][bold]{ $yield }[/bold] { $produce }[/color]
        *[other] [color=#a4885c][bold]{ $yield }[/bold] { $producePlural }[/color]
-    }{ $nl }{ $indent }[bullet/] Potency: { $yield ->
+    }{ $nl }{ $indent }[bullet/] Potencja: { $yield ->
         [-1] { LOC("plant-analyzer-printout-missing") }
         [0] [color=red]0[/color]
        *[other] [color=lightgreen][bold]{ $potency }[/bold] { "(" }{ $potencyDesc }{ ")" }[/color]
-    }{ $nl }{ $indent }[bullet/] Seedless: { $seeds ->
-        [Yes] [color=red]Yes[/color]
-        [No] [color=green]No[/color]
+    }{ $nl }{ $indent }[bullet/] Brak Nasion: { $seeds ->
+        [Yes] [color=red]Tak[/color]
+        [No] [color=green]Nie[/color]
        *[other] { LOC("plant-analyzer-printout-missing") }
-    }{ $nl }[bullet/] Growth profile:{ $nl }{ $indent }[bullet/] Water: [color=cyan]{ $water }[/color]{ $nl }{ $indent }[bullet/] Nutrition: [color=orange]{ $nutrients }[/color]{ $nl }{ $indent }[bullet/] Toxins: [color=yellowgreen]{ $toxins }[/color]{ $nl }{ $indent }[bullet/] Pests: [color=magenta]{ $pests }[/color]{ $nl }{ $indent }[bullet/] Weeds: [color=red]{ $weeds }[/color]{ $nl }[bullet/] Desired Environment:{ $nl }{ $indent }[bullet/] Light Level: [color=gray][bold]{ $lightLevel } ± { $lightTolerance }[/bold][/color]{ $nl }{ $indent }[bullet/] Temperature: [color=lightsalmon]{ $temp }°k ± { $tempTolerance }°k[/color]{ $nl }{ $indent }[bullet/] Pressure: [color=lightblue]{ $kpa }kPa ± { $kpaTolerance }kPa[/color]{ $nl }{ $indent }[bullet/] Required Gases [color=lightgray]{ $gasesIn }[/color]{ $nl }[bullet/] Emitted Gases: { $gasCount ->
-        [0] [color=gray]None[/color]
+    }{ $nl }[bullet/] Dane:{ $nl }{ $indent }[bullet/] Woda: [color=cyan]{ $water }[/color]{ $nl }{ $indent }[bullet/] Odżywnienie: [color=orange]{ $nutrients }[/color]{ $nl }{ $indent }[bullet/] Toksyny: [color=yellowgreen]{ $toxins }[/color]{ $nl }{ $indent }[bullet/] Szkodniki: [color=magenta]{ $pests }[/color]{ $nl }{ $indent }[bullet/] Chwasty: [color=red]{ $weeds }[/color]{ $nl }[bullet/] Pożądane Warunki:{ $nl }{ $indent }[bullet/] Poziom Oświetlenia: [color=gray][bold]{ $lightLevel } ± { $lightTolerance }[/bold][/color]{ $nl }{ $indent }[bullet/] Temperatura: [color=lightsalmon]{ $temp }°k ± { $tempTolerance }°k[/color]{ $nl }{ $indent }[bullet/] Ciśnienie: [color=lightblue]{ $kpa }kPa ± { $kpaTolerance }kPa[/color]{ $nl }{ $indent }[bullet/] Wymagane Gazy: [color=lightgray]{ $gasesIn }[/color]{ $nl }[bullet/] Wydzielane Gazy: { $gasCount ->
+        [0] [color=gray]Brak[/color]
        *[other] [color=lightgray]{ $gasesOut }[/color]
-    }{ $nl }[bullet/] Reagents: { $yield ->
-        [0] [color=gray]None[/color]
+    }{ $nl }[bullet/] Reagenty: { $yield ->
+        [0] [color=gray]Brak[/color]
        *[other]
             { $chemCount ->
-                [0] [color=gray]None[/color]
+                [0] [color=gray]Brak[/color]
                *[other] [color=gray]{ $chemicals }[/color]
             }
     }
