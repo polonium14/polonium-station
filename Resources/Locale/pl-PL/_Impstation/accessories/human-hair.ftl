@@ -1,3 +1,3 @@
-marking-HumanHairGatheredlow = Gathered Low
-marking-HumanHairFrenchBraid = French Braid
-marking-HumanHairLowpigtails = Low Pigtails
+marking-HumanHairGatheredlow = Nisko upięte
+marking-HumanHairFrenchBraid = Warkocz francuski
+marking-HumanHairLowpigtails = Niskie kucyki
