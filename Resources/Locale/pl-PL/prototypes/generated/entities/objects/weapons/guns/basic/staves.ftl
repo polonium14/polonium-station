@@ -1,4 +1,4 @@
-ent-WeaponStaffHealing = staff of healing
-    .desc = You don't foresee having to use this in your quest for carnage too often.
-ent-WeaponStaffPolymorphDoor = staff of entrance
-    .desc = For when you need a get-away route.
+ent-WeaponStaffHealing = laska uzdrawiania
+    .desc = Nie przewidujesz, że będziesz musiał jej często używać w swojej misji siekania.
+ent-WeaponStaffPolymorphDoor = laska wejściowa
+    .desc = Na wypadek, gdybyś potrzebował drogi ucieczki.
