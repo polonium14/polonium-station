@@ -1,3 +1,3 @@
-ent-RandomHumanoidVisitorSecurityClown = rola odwiedzającego klauna ochroniarza
+ent-RandomHumanoidVisitorSecurityClown = visiting Security Clown ghost role
     .desc = { "" }
     .gender = female
