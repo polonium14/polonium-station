@@ -1,2 +1,2 @@
-ent-ActionToggleKnuckleDustersStun = Przełącz kastety ogłuszające
-    .desc = Przełącza wbudowaną pałkę ogłuszającą w kastetach.
+ent-ActionToggleKnuckleDustersStun = Toggle stun knuckle dusters
+    .desc = Toggles the duster's built in stun baton.
