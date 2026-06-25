@@ -1,6 +1,6 @@
 ent-BaseWeaponLightMachineGun = BaseWeaponLightMachineGun
-    .desc = A rooty tooty point and shooty.
-ent-WeaponLightMachineGunL6 = L6 SAW
-    .desc = A rather traditionally made LMG with a pleasantly lacquered wooden pistol grip. Uses .30 rifle ammo.
-ent-WeaponLightMachineGunL6C = L6C ROW
-    .desc = A L6 SAW for use by cyborgs. Creates .30 rifle ammo on the fly from an internal ammo fabricator, which slowly self-charges.
+    .desc = Chwyć i trzymaj.
+ent-WeaponLightMachineGunL6 = L6 PIŁA
+    .desc = Raczej tradycyjnie wykonany LKM z przyjemnie lakierowanym drewnianym chwytem pistoletowym. Używa amunicji karabinowej .30.
+ent-WeaponLightMachineGunL6C = L6C SZEREG
+    .desc = L6 SZEREG do użytku przez cyborgi. Tworzy amunicję karabinową .30 na bieżąco z wewnętrznego fabrykatora amunicji, który powoli się sam doładowuje.
