@@ -1,2 +1,2 @@
-ent-GrenadeFlashBangRevolutionary = revolutionary flashbang
+ent-GrenadeFlashBangRevolutionary = rewolucyjny granat błyskowy
     .desc = Viva.
