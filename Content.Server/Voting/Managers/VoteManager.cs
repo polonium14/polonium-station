@@ -211,7 +211,7 @@ namespace Content.Server.Voting.Managers
             var start = _timing.RealTime;
             var end = start + options.Duration;
             var reg = new VoteReg(id, entries, options.Title, options.InitiatorText,
-                options.InitiatorPlayer, start, end, options.VoterEligibility, options.DisplayVotes, options.TargetEntity);
+                options.InitiatorPlayer, start, end, options.VoterEligibility, options.DisplayVotes, options.VoteType, options.TargetEntity);
 
             var handle = new VoteHandle(this, reg);
 
@@ -505,6 +505,7 @@ namespace Content.Server.Voting.Managers
             public readonly HashSet<ICommonSession> VotesDirty = new();
             public readonly VoterEligibility VoterEligibility;
             public readonly bool DisplayVotes;
+            public readonly StandardVoteType VoteType;
             public readonly NetEntity? TargetEntity;
 
             public bool Cancelled;
@@ -516,7 +517,7 @@ namespace Content.Server.Voting.Managers
             public ICommonSession? Initiator { get; }
 
             public VoteReg(int id, VoteEntry[] entries, string title, string initiatorText,
-                ICommonSession? initiator, TimeSpan start, TimeSpan end, VoterEligibility voterEligibility, bool displayVotes, NetEntity? targetEntity)
+                ICommonSession? initiator, TimeSpan start, TimeSpan end, VoterEligibility voterEligibility, bool displayVotes, StandardVoteType voteType, NetEntity? targetEntity)
             {
                 Id = id;
                 Entries = entries;
@@ -527,6 +528,7 @@ namespace Content.Server.Voting.Managers
                 EndTime = end;
                 VoterEligibility = voterEligibility;
                 DisplayVotes = displayVotes;
+                VoteType = voteType;
                 TargetEntity = targetEntity;
             }
         }
@@ -564,6 +566,7 @@ namespace Content.Server.Voting.Managers
 
             public int Id => _reg.Id;
             public string Title => _reg.Title;
+            public StandardVoteType Type => _reg.VoteType;
             public string InitiatorText => _reg.InitiatorText;
             public bool Finished => _reg.Finished;
             public bool Cancelled => _reg.Cancelled;
