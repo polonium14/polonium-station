@@ -1,11 +1,11 @@
-ent-MoneyCabinet = money cabinet
-    .desc = There is a small label that reads "For Emergency use only".
+ent-MoneyCabinet = sejf na pieniądze
+    .desc = Jest mała etykieta z napisem "Tylko w nagłych wypadkach".
 ent-MoneyCabinetOpen = { ent-MoneyCabinet }
-    .suffix = Open
+    .suffix = Otwarty
     .desc = { ent-MoneyCabinet.desc }
 ent-MoneyCabinetFilled = { ent-MoneyCabinet }
-    .suffix = Filled
+    .suffix = Wypełniony
     .desc = { ent-MoneyCabinet.desc }
 ent-MoneyCabinetFilledOpen = { ent-MoneyCabinetFilled }
-    .suffix = Filled, Open
+    .suffix = Wypełniony, Otwarty
     .desc = { ent-MoneyCabinetFilled.desc }
