@@ -1,32 +1,32 @@
 ### Commands
 
-cmd-unlocknode-desc = Unlocks a node on a given artifact
-cmd-unlocknode-help = unlocknode <artifact uid> <node uid>
-cmd-parse-failure-unlocknode-arg-num = Incorrect number of args
-cmd-parse-failure-unlocknode-invalid-entity = Provided netEntity is not valid node
+cmd-unlocknode-desc = Odblokowuje węzeł na danym artefakcie
+cmd-unlocknode-help = unlocknode <uid artefaktu> <uid węzła>
+cmd-parse-failure-unlocknode-arg-num = Nieprawidłowa liczba argumentów
+cmd-parse-failure-unlocknode-invalid-entity = Podany netEntity nie jest prawidłowym węzłem
 
 ### Verbs
 
-artifact-verb-make-always-active = Make artifact always active
-artifact-verb-activate = Activate artifact
+artifact-verb-make-always-active = Ustaw artefakt jako zawsze aktywny
+artifact-verb-activate = Aktywuj artefakt
 
 ### Unlocking
 
-artifact-unlock-state-begin = It begins to shift in strange ways...
-artifact-unlock-state-end-success = It slows down, visibly changed.
-artifact-unlock-state-end-failure = It slows down before uneventfully stopping.
+artifact-unlock-state-begin = Zaczyna zmieniać się w dziwny sposób...
+artifact-unlock-state-end-success = Spowalnia się, wyraźnie odmieniony.
+artifact-unlock-state-end-failure = Spowalnia się, po czym bez efektu zatrzymuje się.
 
 ### Activation
 
-artifact-activation-fail = Nothing happens...
-artifact-activation-artifexium = The liquid seeps into the pores of the artifact...
+artifact-activation-fail = Nic się nie dzieje...
+artifact-activation-artifexium = Ciecz przesiąka w pory artefaktu...
 
 ### Misc.
 
-artifact-examine-trigger-desc = [color=gray][italic]Am I on your mind?[/italic][/color]
-artifact-node-class-1 = [color=#ff2bb1]Hylic[/color]
-artifact-node-class-2 = [color=#ff8b2b]Psychic[/color]
-artifact-node-class-3 = [color=#a9ff38]Pneumatic[/color]
+artifact-examine-trigger-desc = [color=gray][italic]Jestem w twoich myślach?[/italic][/color]
+artifact-node-class-1 = [color=#ff2bb1]Materialny[/color]
+artifact-node-class-2 = [color=#ff8b2b]Psychiczny[/color]
+artifact-node-class-3 = [color=#a9ff38]Pneumatyczny[/color]
 artifact-node-class-4 = [color=#2bfff8]Archon[/color]
-artifact-node-class-5 = [color=#7883ff]Luminary[/color]
-artifact-node-class-6 = [color=#be78ff]Demiurge[/color]
+artifact-node-class-5 = [color=#7883ff]Luminaryczny[/color]
+artifact-node-class-6 = [color=#be78ff]Demiurg[/color]
