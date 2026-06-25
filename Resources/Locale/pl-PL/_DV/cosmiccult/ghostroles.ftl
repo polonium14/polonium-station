@@ -1,7 +1,9 @@
-
 ghost-role-information-theunknown-name = The Unknown
 ghost-role-information-theunknown-description = The Cosmic Cult has won. An fragment of cosmic power extrudes into realspace.
 ghost-role-information-theunknown-rules = ...
+
+# COLOSSUS
+
 role-subtype-colossus = Colossus
 ghost-role-information-colossus-name = Entropic Colossus
 ghost-role-information-colossus-description = Call upon an Effigy of Entropy to perpetuate your existence and accelerate the end of all things! You have 15 minutes to do so or your energies will be extinguished.
@@ -22,10 +24,13 @@ ghost-role-colossus-effigy-error-intersection = Too crowded! An Effigy requires 
 ghost-role-colossus-effigy-error-space = Too close to space! An Effigy must be be at least { $DISTANCE }m away.
 objective-condition-effigy-no-target = Beckon an Effigy wherever you desire.
 objective-condition-effigy = Beckon an Effigy near "{ $location }".
+
+# MINDSINK (Positronic Brain)
+
 ghost-role-mindsink-installed = Whispers hum from its surface!
 ghost-role-mindsink-off = It lies dormant.
-ghost-role-mindsink-still-searching = It is drawing upon the noösphere...
-ghost-role-mindsink-searching = It has started drawing upon the noösphere...
+ghost-role-mindsink-still-searching = It is drawing upon bluespace energies...
+ghost-role-mindsink-searching = It has started drawing upon bluespace energies...
 ghost-role-mindsink-role-name = Malign Mindsink
 ghost-role-mindsink-role-description = Serve the station crew, despite your unusual origins.
 ghost-role-mindsink-wipe-device-verb-text = Erase Mind
