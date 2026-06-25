@@ -1,4 +1,4 @@
-ent-ActionEatMouse = action-name-eat-mouse
-    .desc = action-description-eat-mouse
-ent-ActionHairball = action-name-hairball
-    .desc = action-description-hairball
+ent-ActionEatMouse = Zjedz mysz
+    .desc = Pożryj mysz, aby zaspokoić głód.
+ent-ActionHairball = Wypluj kłaczek
+    .desc = Pozbądź się kłaczka zalegającego w Twoim gardle.
