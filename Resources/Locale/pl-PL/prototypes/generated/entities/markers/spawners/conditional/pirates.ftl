@@ -1,2 +1,2 @@
-ent-SpawnPointPirates = Pirate spawn point
+ent-SpawnPointPirates = punkt spawnu piratów
     .desc = { ent-MarkerBase.desc }
