@@ -1,10 +1,10 @@
 ## RoundEndSystem
 
-round-end-system-shuttle-called-announcement = An emergency shuttle has been sent. ETA: { $time } { $units }.
-round-end-system-shuttle-already-called-announcement = An emergency shuttle has already been sent.
-round-end-system-shuttle-auto-called-announcement = An automatic crew shift change shuttle has been sent. ETA: { $time } { $units }. Recall the shuttle to extend the shift.
-round-end-system-shuttle-recalled-announcement = The emergency shuttle has been recalled.
-round-end-system-shuttle-sender-announcement = Station
-round-end-system-round-restart-eta-announcement = Restarting the round in { $time } { $units }...
-eta-units-minutes = minutes
-eta-units-seconds = seconds
+round-end-system-shuttle-called-announcement = Wezwano wahadłowiec ewakuacyjny. Przewidywany czas przybycia: { $time } { $units }.
+round-end-system-shuttle-already-called-announcement = Wysłano już wahadłowiec ewakuacyjny.
+round-end-system-shuttle-auto-called-announcement = Automatyczny wahadłowiec zmiany załogi został wysłany. Przewidywany czas przybycia: { $time } { $units }. Mogą Państwo cofnąć wahadłowiec, aby przedłużyć zmianę.
+round-end-system-shuttle-recalled-announcement = Wahadłowiec awaryjny został odwołany.
+round-end-system-shuttle-sender-announcement = Stacja
+round-end-system-round-restart-eta-announcement = Restart rundy za { $time } { $units }...
+eta-units-minutes = minut
+eta-units-seconds = sekund
