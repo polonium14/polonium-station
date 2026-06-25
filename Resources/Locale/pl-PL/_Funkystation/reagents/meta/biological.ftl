@@ -1,2 +1,2 @@
-reagent-name-machine-oil = machine oil
-reagent-desc-machine-oil = The blood of machinery.
+reagent-name-machine-oil = olej maszynowy
+reagent-desc-machine-oil = Krew maszyn.
