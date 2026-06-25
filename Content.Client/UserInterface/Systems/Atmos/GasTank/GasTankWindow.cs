@@ -24,6 +24,7 @@ using System.Numerics;
 using Content.Client.Message;
 using Content.Client.Resources;
 using Content.Client.Stylesheets;
+using Content.Client.Stylesheets.Fonts;
 using Content.Shared.Atmos.Components;
 using Content.Shared.Atmos.EntitySystems;
 using Content.Shared.Timing;
@@ -112,7 +113,7 @@ public sealed class GasTankWindow
 
         LayoutContainer.SetAnchorPreset(topContainerWrap, LayoutContainer.LayoutPreset.Wide);
 
-        var font = _cache.GetFont("/Fonts/Sysfont/Sysfont-Regular.otf", 13); // FUNKY EDIT
+        var font = PoloniumFonts.GetWindowTitleFont(_cache);
 
         _topLabel = new Label
         {

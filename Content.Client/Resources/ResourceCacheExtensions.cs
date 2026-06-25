@@ -13,7 +13,9 @@
 using JetBrains.Annotations;
 using Robust.Client.Graphics;
 using Robust.Client.ResourceManagement;
+using Robust.Client.UserInterface.RichText;
 using Robust.Shared.Graphics;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
 namespace Content.Client.Resources
@@ -57,6 +59,12 @@ namespace Content.Client.Resources
                 rp[i] = new ResPath(path[i]);
 
             return cache.GetFont(rp, size);
+        }
+
+        // POLONIUM: Get a font from a font prototype
+        public static Font GetFont(this IResourceCache cache, IPrototypeManager prototypes, ProtoId<FontPrototype> font, int size)
+        {
+            return cache.GetFont(prototypes.Index(font).Path, size);
         }
     }
 }
