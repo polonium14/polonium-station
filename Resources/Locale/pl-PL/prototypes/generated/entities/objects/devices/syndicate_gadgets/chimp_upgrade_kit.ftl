@@ -1,2 +1,2 @@
-ent-WeaponPistolCHIMPUpgradeKit = C.H.I.M.P. handcannon upgrade chip
-    .desc = An experimental upgrade kit for the C.H.I.M.P.
+ent-WeaponPistolCHIMPUpgradeKit = układ modernizacyjny rewolweru M.A.Ł.P.K.A.
+    .desc = Eksperymentalny zestaw modernizacyjny dla M.A.Ł.P.K.i.
