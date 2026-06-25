@@ -1,9 +1,9 @@
 ent-LockerScienceFilled = { ent-LockerScientist }
-    .suffix = Filled
+    .suffix = Pełny
     .desc = { ent-LockerScientist.desc }
 ent-LockerRoboticsFilled = { ent-LockerRoboticist }
-    .suffix = Filled
+    .suffix = Pełny
     .desc = { ent-LockerRoboticist.desc }
 ent-LockerScienceRoboticsFilled = { ent-LockerScientist }
-    .suffix = Filled
+    .suffix = Pełny
     .desc = { ent-LockerScientist.desc }
