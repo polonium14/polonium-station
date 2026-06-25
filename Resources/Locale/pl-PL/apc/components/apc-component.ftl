@@ -1,4 +1,4 @@
-apc-component-insufficient-access = Brak wystarczających uprawnień!
-apc-component-on-examine-panel-open = [color=lightgray]Panel elektroniczny APC[/color] jest [color=red]otwarty[/color].
-apc-component-on-examine-panel-closed = [color=lightgray]Panel elektroniczny APC[/color] jest [color=darkgreen]zamknięty[/color].
-apc-component-on-toggle-cancel = Nic nie robi!
+apc-component-insufficient-access = Insufficient access!
+apc-component-on-examine-panel-open = The [color=lightgray]APC electronics panel[/color] is [color=red]open[/color].
+apc-component-on-examine-panel-closed = The [color=lightgray]APC electronics panel[/color] is [color=darkgreen]closed[/color].
+apc-component-on-toggle-cancel = It does nothing!
