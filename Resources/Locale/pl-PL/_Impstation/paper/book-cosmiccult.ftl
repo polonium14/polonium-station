@@ -1,4 +1,3 @@
-
 book-text-cosmiccult =
     Cosmology, as we understand it, is the study of the universe’s origin, structure, and fate. It provides a framework through which we begin to understand the observable reality: the stars, the galaxies, the forces of gravity and entropy. Through centuries of observation and theory, we have charted the universe’s expansion, calculated the life cycles of stars, and formulated models of matter and energy that give order to the cosmos. In its purest form, cosmology is a science of patterns—of motion and law.
     
