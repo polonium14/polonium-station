@@ -1,2 +1,2 @@
-sandbox-title = Sandbox
-sandbox-description = No stress, build something!
+sandbox-title = Piaskownica
+sandbox-description = Bez stresu, zbuduj coś!
