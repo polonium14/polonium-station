@@ -1,2 +1,2 @@
-ent-BowHardlight = hardlight bow
-    .desc = A modern bow that can fabricate hardlight arrows using an internal energy. This one is designed by the Syndicate for silent takedowns of targets.
+ent-BowHardlight = łuk z twardego światła
+    .desc = Nowoczesny łuk, który potrafi wytwarzać strzały z twardego światła dzięki wewnętrznej energii. Ten model został zaprojektowany przez Syndykat do cichego eliminowania celów.
