@@ -1,11 +1,11 @@
-ent-GeigerMount = geiger mount
-    .desc = A small wall mounted geiger counter. Warranty void if opened.
+ent-GeigerMount = licznik Geigera
+    .desc = Mały licznik Geigera montowany na ścianie. Gwarancja traci ważność po otwarciu.
 ent-GeigerMountOpen = { ent-GeigerMount }
-    .suffix = Open
+    .suffix = Otwarty, Montowany na ścianie
     .desc = { ent-GeigerMount.desc }
 ent-GeigerMountFilled = { ent-GeigerMount }
-    .suffix = Filled
+    .suffix = Wypełniony, Montowany na ścianie
     .desc = { ent-GeigerMount.desc }
 ent-GeigerMountFilledOpen = { ent-GeigerMountFilled }
-    .suffix = Filled, Open
+    .suffix = Wypełniony, Otwarty, Montowany na ścianie
     .desc = { ent-GeigerMountFilled.desc }
