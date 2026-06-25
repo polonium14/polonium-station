@@ -1,4 +1,3 @@
-
 knowledge-path-void-s1-name = Glimmer of Winter
 knowledge-path-void-s1-desc =
     I feel a shimmer in the air, the air around me gets colder.
@@ -34,7 +33,7 @@ knowledge-path-void-s5-desc =
     freezing the ground and any victims within.
 knowledge-path-void-s6-name = Void Phase
 knowledge-path-void-s6-desc =
-    The entity calls themself the Aristocrat. They effortlessly walk through air like nothing — leaving a harsh, cold breeze in their wake.
+    The entity calls themself the Aristocrat. They effortlessly walk through air like nothing - leaving a harsh, cold breeze in their wake.
     They disappear, and I am left in the blizzard.
     
     Grants you Void Phase, a long range targeted teleport spell.
