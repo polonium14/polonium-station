@@ -1,6 +1,6 @@
 ent-BaseTabletopChemicalMachine = { ent-BaseMachinePowered }
     .desc = { ent-BaseMachinePowered.desc }
-ent-MachineElectrolysisUnit = electrolysis unit
-    .desc = The latest in medicinal electrocution technology.
-ent-MachineCentrifuge = tabletop centrifuge
-    .desc = Around and around it goes...
+ent-MachineElectrolysisUnit = urządzenie do elektrolizy
+    .desc = Najnowsza technologia medycznego elektrowstrząsu.
+ent-MachineCentrifuge = wirówka stołowa
+    .desc = Kręci się i kręci...
