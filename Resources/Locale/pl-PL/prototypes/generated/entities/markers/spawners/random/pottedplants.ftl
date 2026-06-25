@@ -1,4 +1,4 @@
-ent-PottedPlantRandom = random potted plant spawner
+ent-PottedPlantRandom = spawner losowych roślin doniczkowych
     .desc = { ent-MarkerBase.desc }
-ent-PottedPlantRandomPlastic = random plastic potted plant spawner
+ent-PottedPlantRandomPlastic = spawner losowych sztucznych roślin doniczkowych
     .desc = { ent-MarkerBase.desc }
