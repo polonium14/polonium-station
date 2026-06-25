@@ -1,2 +1,2 @@
 ent-CargoCart = cargo cart
-    .desc = Supplies, where you need them.
+    .desc = SUpplies, where you need them.
