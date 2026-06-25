@@ -1,3 +1,3 @@
 ent-DoorElectronicsCentralCommandCaptain = { ent-DoorElectronics }
-    .suffix = CentCommCap, Locked
+    .suffix = Kapitan CD, Zablokowane
     .desc = { ent-DoorElectronics.desc }
