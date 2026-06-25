@@ -1,7 +1,7 @@
 ent-CultBaseStructure = { ent-BaseBloodCultContraband }
     .suffix = Base
     .desc = { ent-BaseBloodCultContraband.desc }
-ent-CultPylon = pylon
+ent-CultPylon = Pylon
     .desc = A floating crystal that slowly heals those faithful to Nar'Sie.
     .suffix = Cult
 ent-CultForge = Forge
