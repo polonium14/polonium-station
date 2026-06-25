@@ -34,7 +34,7 @@ SPDX-License-Identifier: MIT
 
                 SetSize="980 700"
 
-                MinSize="100 200"
+                MinSize="600 400"
 
                 Resizable="True"
 
@@ -104,7 +104,7 @@ SPDX-License-Identifier: MIT
 
             </BoxContainer>
 
-            <ScrollContainer Name="Scroll" HScrollEnabled="False" HorizontalExpand="True" VerticalExpand="True">
+            <ScrollContainer Name="Scroll" HScrollEnabled="False" HorizontalExpand="True" VerticalExpand="True" ReserveScrollbarSpace="True" Margin="0 0 5 0">
 
                 <Control>
 
@@ -112,7 +112,7 @@ SPDX-License-Identifier: MIT
 
                     </BoxContainer>
 
-                    <BoxContainer Orientation="Vertical" Name="Placeholder" Margin="5 5 5 5">
+                    <BoxContainer Orientation="Vertical" Name="Placeholder" Margin="5 5 10 5">
 
                         <Label HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Loc 'guidebook-placeholder-text'}"/>
 
