@@ -1,8 +1,8 @@
-bounty-console-menu-title = Cargo bounty console
-bounty-console-label-button-text = Print label
-bounty-console-skip-button-text = Skip
-bounty-console-time-label = Time: [color=orange]{ $time }[/color]
-bounty-console-reward-label = Reward: [color=limegreen]${ $reward }[/color]
+bounty-console-menu-title = Konsola żądań logistycznych
+bounty-console-label-button-text = Wydrukuj żądanie
+bounty-console-skip-button-text = Pomiń
+bounty-console-time-label = Czas: [color=orange]{ $time }[/color]
+bounty-console-reward-label = Nagroda: [color=limegreen]${ $reward }[/color]
 bounty-console-manifest-label = Manifest: [color=orange]{ $item }[/color]
 bounty-console-manifest-entry =
     { $amount ->
@@ -17,18 +17,18 @@ bounty-console-manifest-entry-reagent =
 bounty-console-manifest-entry-gas =
     { $amount ->
         [1] { $item }
-       *[other] { $item } { $amount }mols
+       *[other] { $item } { $amount }mol
     }
-bounty-console-manifest-reward = Reward: ${ $reward }
+bounty-console-manifest-reward = Nagroda: ${ $reward }
 bounty-console-description-label = [color=gray]{ $description }[/color]
 bounty-console-id-label = ID#{ $id }
-bounty-console-flavor-left = Bounties sourced from local unscrupulous dealers.
-bounty-console-flavor-right = v1.4
-bounty-manifest-header = [font size=14][bold]Official cargo bounty manifest[/bold] (ID#{ $id })[/font]
-bounty-manifest-list-start = Item manifest:
-bounty-console-tab-available-label = Available
-bounty-console-tab-history-label = History
-bounty-console-history-empty-label = No bounty history found
-bounty-console-history-notice-completed-label = [color=limegreen]Completed[/color]
-bounty-console-history-notice-skipped-label = [color=red]Skipped[/color] by { $id }
-bounty-console-category-description = { $category } Bounty: { $id }
+bounty-console-flavor-left = Żądania zbierane z lokalnych nieuczciwych handlarzy.
+bounty-console-flavor-right = w1.4
+bounty-manifest-header = [font size=14][bold]Oficjalne rządanie logistyczne[/bold] (ID#{ $id })[/font]
+bounty-manifest-list-start = Zawartość:
+bounty-console-tab-available-label = Dastępne
+bounty-console-tab-history-label = Historia
+bounty-console-history-empty-label = Brak histori żądań
+bounty-console-history-notice-completed-label = [color=limegreen]Wypełnione[/color]
+bounty-console-history-notice-skipped-label = [color=red]Pominięte[/color] przez { $id }
+bounty-console-category-description = { $category } Żądanie: { $id }
