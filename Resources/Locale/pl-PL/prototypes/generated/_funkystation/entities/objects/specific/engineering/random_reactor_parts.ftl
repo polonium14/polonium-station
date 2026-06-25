@@ -1,8 +1,8 @@
-ent-RandomFuelRodSpawner = Random Fuel Rod Spawner
+ent-RandomFuelRodSpawner = spawner losowych prętów paliwowych
     .desc = { ent-MarkerBase.desc }
-ent-RandomControlRodSpawner = Random Control Rod Spawner
+ent-RandomControlRodSpawner = spawner losowych prętów kontrolnych
     .desc = { ent-MarkerBase.desc }
-ent-RandomGasChannelSpawner = Random Gas Channel Spawner
+ent-RandomGasChannelSpawner = spawner losowych kanałów gazowych
     .desc = { ent-MarkerBase.desc }
-ent-RandomHeatExchangerSpawner = Random Heat Exchange Spawner
+ent-RandomHeatExchangerSpawner = spawner losowych wymienników ciepła
     .desc = { ent-MarkerBase.desc }
