@@ -1,2 +1,2 @@
-ent-EggSpider = egg spider
-    .desc = Is it a gemstone? Is it an egg? It looks expensive.
+ent-EggSpider = pająk jajeczny
+    .desc = Czy to kamień szlachetny? Czy to jajko? Wygląda drogo.
