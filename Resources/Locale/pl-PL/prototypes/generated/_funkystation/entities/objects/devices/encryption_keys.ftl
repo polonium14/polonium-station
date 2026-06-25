@@ -1,2 +1,2 @@
-ent-EncryptionKeyEmergency = emergency encryption key
-    .desc = An encryption key used by paramedics, brigmedics, and security dispatchers.
+ent-EncryptionKeyEmergency = klucz szyfrowania (awaryjny)
+    .desc = Klucz szyfrowania używany przez ratowników medycznych, medyków więziennych i dyspozytorów ochrony.
