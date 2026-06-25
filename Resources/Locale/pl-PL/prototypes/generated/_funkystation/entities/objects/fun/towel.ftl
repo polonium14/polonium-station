@@ -1,162 +1,117 @@
-ent-BaseTowelUnfolded = podstawowy ręcznik
-    .desc = Jeśli chcesz tu przetrwać, musisz wiedzieć, gdzie jest twój ręcznik.
-ent-TowelColorWhiteUnfolded = biały ręcznik
-    .desc = Tanio wykonany i bardzo wszechstronny biały ręcznik. Jeśli chcesz tu przetrwać, musisz wiedzieć, gdzie jest twój ręcznik.
-
-ent-TowelColorGrayUnfolded = szary ręcznik
-    .desc = Bardzo wszechstronny ciepły szary ręcznik. Idealny do siedzenia na plaży tuż poza zasięgiem przypływu.
-
-ent-TowelColorBlackUnfolded = czarny ręcznik
-    .desc = Bardzo wszechstronny czarny ręcznik. Wielu kapelanów dodawałoby frędzle na końcach tego ręcznika, aby zaznaczyć przykazania swojej wiary.
-
-ent-TowelColorRedUnfolded = czerwony ręcznik
-    .desc = Bardzo wszechstronny czerwony ręcznik. Idealny do sprzątania potencjalnego rozlewu krwi!
-
-ent-TowelColorPinkUnfolded = różowy ręcznik
-    .desc = Bardzo wszechstronny, wytarty różowy ręcznik. Przetrwał wiele zmian w swoich wyblakłych odcieniach i wciąż jest zaskakująco miękki.
-
-ent-TowelColorMaroonUnfolded = bordowy ręcznik
-    .desc = Bardzo wszechstronny, luksusowy bordowy ręcznik. JEST TAKI PUSZYSTY!
-
-ent-TowelColorOrangeUnfolded = pomarańczowy ręcznik
-    .desc = Bardzo wszechstronny pomarańczowy ręcznik. Pomimo koloru, ten ręcznik nie jest pod wysokim napięciem.
-
-ent-TowelColorYellowUnfolded = żółty ręcznik
-    .desc = Bardzo wszechstronny żółty ręcznik. Wydaje się trochę śliski.
-
-ent-TowelColorGreenUnfolded = zielony ręcznik
-    .desc = Bardzo wszechstronny, wytrzymały zielony ręcznik. Dobrze służy swojemu posiadaczowi.
-
-ent-TowelColorDarkGreenUnfolded = ciemnozielony ręcznik
-    .desc = Bardzo wszechstronny ciemnozielony ręcznik. Książki i woda się nie łączą. Dlatego zawsze powinieneś mieć to na wypadek awarii.
-
-ent-TowelColorTealUnfolded = turkusowy ręcznik
-    .desc = Bardzo wszechstronny turkusowy ręcznik. A może to akwamaryna. Zdecydowanie kolor związany z wodą.
-
-ent-TowelColorLightBlueUnfolded = jasnoniebieski ręcznik
-    .desc = Bardzo wszechstronny jasnoniebieski ręcznik. Pacjent potrzebuje chłosty ręcznikiem, aby przeżyć.
-
-ent-TowelColorBlueUnfolded = niebieski ręcznik
-    .desc = Bardzo wszechstronny niebieski ręcznik. Staraj się go nie zgubić w wodzie.
-
-ent-TowelColorDarkBlueUnfolded = ciemnoniebieski ręcznik
-    .desc = Bardzo wszechstronny, wykwintny ciemnoniebieski ręcznik. Ten odcień! Można za niego umrzeć!
-
-ent-TowelColorPurpleUnfolded = fioletowy ręcznik
-    .desc = Bardzo wszechstronny fioletowy ręcznik. Ręcznik to (zazwyczaj) duży kawałek materiału używany do pochłaniania płynów, szczególnie wody. Może być używany do wchłaniania płynów z rozlania lub do wycierania ciała po umyciu. Ręczniki mogą występować w różnych kolorach i wzorach.
-
-ent-TowelColorLightBrownUnfolded = jasnobrązowy ręcznik
-    .desc = Bardzo wszechstronny jasnobrązowy ręcznik. Nie zbadałeś jeszcze jego wartości na rynku wtórnym.
-
-ent-TowelColorBrownUnfolded = brązowy ręcznik
-    .desc = Bardzo wszechstronny brązowy ręcznik. Dobrze ukrywa brud.
-
-ent-TowelColorMimeUnfolded = cichy ręcznik
-    .desc = Bardzo wszechstronny biały ręcznik. Bez charakterystycznego chłaśnięcia, ten ręcznik nie jest wyjątkowy.
-
-ent-TowelColorCentcomUnfolded = ręcznik centrali
-    .desc = Bardzo wszechstronny, królewsko zielony ręcznik. Kolor przypomina ci grube stosy gotówki, które nie trafiają do twojej wypłaty.
-
-ent-TowelColorSilverUnfolded = srebrny ręcznik
-    .desc = Bardzo wszechstronny, pluszowy srebrny ręcznik. Utkany z prawdziwego srebra i sztucznego złota! Wygodny pomimo metalicznych nitek.
-
-ent-TowelColorGoldUnfolded = złoty ręcznik
-    .desc = Bardzo wszechstronny, ciężki złoty ręcznik. Obiecano ci płatny urlop. Zamiast tego dostałeś to.
-
-ent-TowelColorNTUnfolded = ręcznik marki Nanotrasen
-    .desc = Bardzo wszechstronny, lśniący niebieski ręcznik wyhaftowany odblaskowym N. Dla najsilniejszych wojowników prysznica Nanotrasen.
-
-ent-TowelColorSyndicateUnfolded = ręcznik syndykatu
-    .desc = Bardzo wszechstronny, złowrogo wyglądający czarny ręcznik. Dla najsilniejszych wojowników prysznica Syndykatu.
-
+ent-BaseTowelUnfolded = base towel
+    .desc = If you want to survive out here, you gotta know where your towel is.
+ent-TowelColorWhiteUnfolded = white towel
+    .desc = A cheaply-made and highly versatile white towel. If you want to survive out here, you gotta know where your towel is.
 ent-TowelColorWhite = white towel
     .suffix = folded
     .desc = { ent-TowelColorWhiteUnfolded.desc }
-
+ent-TowelColorGrayUnfolded = gray towel
+    .desc = A highly versatile warm grey towel. Perfect for sitting on the beach just out of tide's reach.
 ent-TowelColorGray = gray towel
     .suffix = folded
     .desc = { ent-TowelColorGrayUnfolded.desc }
-
+ent-TowelColorBlackUnfolded = black towel
+    .desc = A highly versatile black towel. Many chaplains would put tassels on the ends of this towel to signify precepts of their faith.
 ent-TowelColorBlack = black towel
     .suffix = folded
     .desc = { ent-TowelColorBlackUnfolded.desc }
-
+ent-TowelColorRedUnfolded = red towel
+    .desc = A highly versatile red towel. Perfect for cleaning up any would-be bloodshed!
 ent-TowelColorRed = red towel
     .suffix = folded
     .desc = { ent-TowelColorRedUnfolded.desc }
-
+ent-TowelColorPinkUnfolded = pink towel
+    .desc = A highly versatile, threadbare pink towel. It's seen many shifts in its faded tones, and is still surprisingly soft.
 ent-TowelColorPink = pink towel
     .suffix = folded
     .desc = { ent-TowelColorPinkUnfolded.desc }
-
+ent-TowelColorMaroonUnfolded = maroon towel
+    .desc = A highly versatile, luxurious maroon towel. IT'S SO FLUFFY!
 ent-TowelColorMaroon = maroon towel
     .suffix = folded
     .desc = { ent-TowelColorMaroonUnfolded.desc }
-
+ent-TowelColorOrangeUnfolded = orange towel
+    .desc = A highly versatile orange towel. Despite its color, this towel is not high-voltage.
 ent-TowelColorOrange = orange towel
     .suffix = folded
     .desc = { ent-TowelColorOrangeUnfolded.desc }
-
+ent-TowelColorYellowUnfolded = yellow towel
+    .desc = A highly versatile yellow towel. Feels a bit slippery.
 ent-TowelColorYellow = yellow towel
     .suffix = folded
     .desc = { ent-TowelColorYellowUnfolded.desc }
-
+ent-TowelColorGreenUnfolded = green towel
+    .desc = A highly versatile, durable green towel. Services its wielder well.
 ent-TowelColorGreen = green towel
     .suffix = folded
     .desc = { ent-TowelColorGreenUnfolded.desc }
-
+ent-TowelColorDarkGreenUnfolded = dark green towel
+    .desc = A highly versatile dark green towel. Books and water do not mix. That's why you should always have this for emergencies.
 ent-TowelColorDarkGreen = dark green towel
     .suffix = folded
     .desc = { ent-TowelColorDarkGreenUnfolded.desc }
-
+ent-TowelColorTealUnfolded = teal towel
+    .desc = A highly versatile teal towel. Or maybe it's aqua. Definitely a water-based color.
 ent-TowelColorTeal = teal towel
     .suffix = folded
     .desc = { ent-TowelColorTealUnfolded.desc }
-
+ent-TowelColorLightBlueUnfolded = light blue towel
+    .desc = A highly versatile light blue towel. The patient needs towel whips to live.
 ent-TowelColorLightBlue = light blue towel
     .suffix = folded
     .desc = { ent-TowelColorLightBlueUnfolded.desc }
-
+ent-TowelColorBlueUnfolded = blue towel
+    .desc = A highly versatile blue towel. Try not to get it lost in the water.
 ent-TowelColorBlue = blue towel
     .suffix = folded
     .desc = { ent-TowelColorBlueUnfolded.desc }
-
+ent-TowelColorDarkBlueUnfolded = dark blue towel
+    .desc = A highly versatile, exquisite dark blue towel. The hue! It's to die for!
 ent-TowelColorDarkBlue = dark blue towel
     .suffix = folded
     .desc = { ent-TowelColorDarkBlueUnfolded.desc }
-
+ent-TowelColorPurpleUnfolded = purple towel
+    .desc = A highly versatile purple towel. A towel is a (usually) large piece of cloth that is used to absorb liquids, particularly water. It can be used to absorb the liquids from a spill, or to dry off a body that has recently been washed. Towels can come in a variety of colors and designs.
 ent-TowelColorPurple = purple towel
     .suffix = folded
     .desc = { ent-TowelColorPurpleUnfolded.desc }
-
+ent-TowelColorLightBrownUnfolded = light brown towel
+    .desc = A highly versatile light brown towel. You are yet to investigate its value on the second-hand market.
 ent-TowelColorLightBrown = light brown towel
     .suffix = folded
     .desc = { ent-TowelColorLightBrownUnfolded.desc }
-
+ent-TowelColorBrownUnfolded = brown towel
+    .desc = A highly versatile brown towel. Hides the dirt well.
 ent-TowelColorBrown = brown towel
     .suffix = folded
     .desc = { ent-TowelColorBrownUnfolded.desc }
-
+ent-TowelColorMimeUnfolded = silent towel
+    .desc = A highly versatile white towel. Without its signature thwack, this towel isn't special.
 ent-TowelColorMime = silent towel
     .suffix = folded
     .desc = { ent-TowelColorMimeUnfolded.desc }
-
+ent-TowelColorCentcomUnfolded = centcomm towel
+    .desc = A highly versatile, regal green towel. The color reminds you of the fat stacks of cash that's not going toward your paycheck.
 ent-TowelColorCentcom = centcomm towel
     .suffix = folded
     .desc = { ent-TowelColorCentcomUnfolded.desc }
-
+ent-TowelColorSilverUnfolded = silver towel
+    .desc = A highly versatile, plush silver towel. Woven with real silver and fake gold! Comfortable despite the metallic threads.
 ent-TowelColorSilver = silver towel
     .suffix = folded
     .desc = { ent-TowelColorSilverUnfolded.desc }
-
+ent-TowelColorGoldUnfolded = gold towel
+    .desc = A highly versatile, heavy gold towel. You were promised paid vacation. You were given this instead.
 ent-TowelColorGold = gold towel
     .suffix = folded
     .desc = { ent-TowelColorGoldUnfolded.desc }
-
+ent-TowelColorNTUnfolded = Nanotrasen branded towel
+    .desc = A highly versatile, illustrious blue towel embroidered with a reflective N. For Nanotrasen's strongest shower warriors.
 ent-TowelColorNT = Nanotrasen branded towel
     .suffix = folded
     .desc = { ent-TowelColorNTUnfolded.desc }
-
+ent-TowelColorSyndicateUnfolded = syndicate towel
+    .desc = A highly versatile, malicious-looking black towel. For the Syndicates's strongest shower warriors.
 ent-TowelColorSyndicate = syndicate towel
     .suffix = folded
     .desc = { ent-TowelColorSyndicateUnfolded.desc }
