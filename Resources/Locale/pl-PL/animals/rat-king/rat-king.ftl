@@ -1,3 +1,3 @@
-rat-king-domain-popup = A cloud of ammonia is released into the air!
-rat-king-too-hungry = You are too hungry to use this ability!
-rat-king-rummage-text = Rummage
+rat-king-domain-popup = Chmura amoniaku unosi się w powietrzu!
+rat-king-too-hungry = Jesteś zbyt głodny, by użyć tej zdolności!
+rat-king-rummage-text = Grzebanie
