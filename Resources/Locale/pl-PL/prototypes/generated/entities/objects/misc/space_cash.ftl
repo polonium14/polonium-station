@@ -1,5 +1,5 @@
 ent-SpaceCash = spesos
-    .desc = You gotta have money.
+    .desc = Musisz mieć pieniądze.
 ent-SpaceCash10 = { ent-SpaceCash }
     .suffix = 10
     .desc = { ent-SpaceCash.desc }
