@@ -1,2 +1,2 @@
 ent-Gohei = gohei
-    .desc = A wooden stick with white streamers at the end. Originally used by shrine maidens to purify things. Now used by the station's weeaboos.
+    .desc = Drewniany kijek z białymi wstążkami na końcu. Oryginalnie używany przez kapłanki do oczyszczania. Teraz używany przez stacyjnych otaku.
