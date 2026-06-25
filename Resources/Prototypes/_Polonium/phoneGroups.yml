@@ -1,0 +1,11 @@
+- type: phoneGroup
+  id: PublicStation
+  name: phone-group-public-station
+
+- type: phoneGroup
+  id: CentComm
+  name: phone-group-centcomm
+
+- type: phoneGroup
+  id: Syndicate
+  name: phone-group-syndicate
