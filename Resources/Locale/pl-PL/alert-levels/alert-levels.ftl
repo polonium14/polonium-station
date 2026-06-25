@@ -1,30 +1,52 @@
-alert-level-announcement = Attention! Station alert level is now { $name }! { $announcement }
-alert-level-unknown = Unknown.
-alert-level-unknown-instructions = Unknown.
-alert-level-green = Green
-alert-level-green-announcement = It is now safe to return to your workplaces.
-alert-level-green-instructions = Do your job.
-alert-level-blue = Blue
-alert-level-blue-announcement = There is a suspected threat to the station. Security should perform random checks. Crewmembers are advised to be vigilant and report suspicious activity to Security.
-alert-level-blue-instructions = Crewmembers are advised to be vigilant and report suspicious activity to Security.
-alert-level-red = Red
-alert-level-red-announcement = There is a confirmed immediate threat to the station. Security should prepare to use lethal force if necessary. Crewmembers should find a safe place to shelter in, and are advised to follow any present authorities.
-alert-level-red-instructions = Crewmembers should find a safe place to shelter in, and are advised to follow any present authorities.
-alert-level-violet = Violet
-alert-level-violet-announcement = There is a viral threat on the station. Medical staff are advised to isolate crewmembers with any symptoms. Crewmembers are advised to distance themselves from others and perform safety measures to prevent further spread.
-alert-level-violet-instructions = Crewmembers are advised to distance themselves from others and perform safety measures to prevent further spread.
-alert-level-yellow = Yellow
-alert-level-yellow-announcement = There is a structural or atmospheric threat within the station. Engineering staff are advised to immediately respond and perform safety measures. Crewmembers are advised to stay away from the threat, and stay in their workplaces if necessary.
-alert-level-yellow-instructions = Crewmembers are advised to stay away from the threat, and stay in their workplaces if necessary.
+alert-level-announcement = Uwaga! Kod zagrożenia na stacji został zmieniony na { $name }! { $announcement }
+alert-level-unknown = Nieznany.
+alert-level-unknown-instructions = Nieznane.
+alert-level-green = Zielony
+alert-level-green-announcement =
+    Członkowie załogi mogą teraz bezpiecznie powrócić do swojego stanowiska pracy.
+    Funkcjonariusze ochrony mają obowiązek trzymania broni w kaburach oraz poszanowania praw personelu.
+    Przypominamy, że wszelkie nieautoryzowane przeszukania są zabronione.
+alert-level-green-instructions = Pracuj.
+alert-level-blue = Niebieski
+alert-level-blue-announcement =
+    Potwierdzono nieznane zagrożenie dla stacji.
+    Personel ochrony jest upoważniony do przeprowadzania wyrywkowych kontroli osobistych oraz utrzymywania broni w pobliżu.
+    Użycie broni dopuszczalne jest wyłącznie w sytuacjach wyższej konieczności.
+    Członkowie załogi powinni zachować czujność i zgłaszać podejrzane zachowania ochronie.
+alert-level-blue-instructions = Zachowuj czujność i zgłaszaj podejrzane zachowania ochronie.
+alert-level-red = Czerwony
+alert-level-red-announcement =
+    Istnieje bezpośrednie zagrożenie dla stacji.
+    Służby ochrony otrzymują autoryzację na użycie broni palnej, zarządza się wyrywkowe kontrole działów i personelu.
+    Załodze zaleca się natychmiastowo udać się do wyznaczonych stref bezpieczeństwa i ściśle wykonywać polecenia przełożonych.
+alert-level-red-instructions = Znajdź schronienie i stosuj się do rozkazów przełożonych.
+alert-level-violet = Fioletowy
+alert-level-violet-announcement =
+    Istnieje zagrożenie wirusowe na stacji. Dział medyczny powinien izolować członków załogi z jakimikolwiek objawami.
+    Członkowie załogi powinni zachowywać bezpieczny dystans do innych i stosować środki ostrożności, aby zapobiec dalszemu rozpowszechnianiu się zagrożenia.
+alert-level-violet-instructions = Zachowuj bezpieczny dystans do innych i stosuj środki ostrożności, aby zapobiec dalszemu rozpowszechnianiu się zagrożenia.
+alert-level-yellow = Żółty
+alert-level-yellow-announcement =
+    Wystąpiło zagrożenie strukturalne lub atmosferyczne na stacji. Personel techniczny powinien niezwłocznie działać i podejmować środki bezpieczeństwa.
+    Członkom załogi zaleca się unikać zagrożonych stref lub pozostać przy swoich stanowiskach, jeśli będzie to konieczne.
+alert-level-yellow-instructions = Unikaj zagrożonych stref lub pozostań przy swoim stanowisku, jeśli będzie to konieczne.
 alert-level-gamma = Gamma
-alert-level-gamma-announcement = Central Command has ordered the Gamma security level on the station. Security is to have weapons equipped at all times, and all civilians should wait in a public area and await instructions.
-alert-level-gamma-instructions = Crewmembers should stay in their departments or a public area and await instructions.
+alert-level-gamma-announcement =
+    Centralne Dowództwo zarządziło Kod Gamma na stacji.
+    Ochrona ma być uzbrojona przez cały czas.
+    Wszyscy cywile powinni natychmiast udać się do najbliższego przełożonego w celu udania się do bezpiecznej lokalizacji.
+alert-level-gamma-instructions = Udaj się do najbliższego przełożonego w celu udania się do bezpiecznej lokalizacji.
 alert-level-delta = Delta
-alert-level-delta-announcement = The station is currently under threat of imminent destruction. Crewmembers are advised to listen to heads of staff for more information.
-alert-level-delta-instructions = Crewmembers are advised to listen to heads of staff for more information.
+alert-level-delta-announcement = Stacji grozi obecnie bezpośrednie unicestwienie. Zarządza się bezwzględne posłuszeństwo wobec Dowództwa.
+alert-level-delta-instructions = Zaleca się słuchać poleceń dowództwa w celu uzyskania informacji.
 alert-level-epsilon = Epsilon
-alert-level-epsilon-announcement = Central Command has ordered the Epsilon security level on the station. Consider all contracts terminated.
-alert-level-epsilon-instructions = Crewmembers should stand down. Consider all contracts terminated.
-alert-level-cyan = Cyan
-alert-level-cyan-announcement = There is a confirmed active threat of Altered, Malfunctioning, or Foreign Silicons aboard the station. Crewmembers are advised to listen to qualified members of command to the safety and security of Silicon-based beings, and to exercise caution around any potentially afflicted or corrupted Silicons.
-alert-level-cyan-instructions = Report any silicon activity to Security immediately.
+alert-level-epsilon-announcement =
+    Centralne Dowództwo ogłosiło kod Epsilon.
+    Wszystkie kontrakty zostały zerwane.
+alert-level-epsilon-instructions = [BŁĄD]
+alert-level-cyan = Cyjanowy
+alert-level-cyan-announcement =
+    Wszystkie cyborgi zostały sklasyfikowane jako podmioty wysokiego ryzyka.
+    Zaleca się zachowanie dystansu i unikanie wszelkiej interakcji.
+    Wszelkie działania silikonów należy niezwłocznie zgłaszać personelu ochrony.
+alert-level-cyan-instructions = Unikaj kontaktu z cyborgami i zgłaszaj wszelkie podejrzane działania personelowi ochrony.
