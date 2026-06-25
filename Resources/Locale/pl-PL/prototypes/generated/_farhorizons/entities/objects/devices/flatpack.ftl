@@ -1,4 +1,4 @@
-ent-NuclearReactorFlatpack = nuclear reactor flatpack
-    .desc = A flatpack used for constructing a nuclear reactor. Parts sold separately.
-ent-GasTurbineFlatpack = gas turbine flatpack
-    .desc = A flatpack used for constructing a gas turbine.
+ent-NuclearReactorFlatpack = zestaw do montażu reaktora jądrowego
+    .desc = Zestaw do montażu reaktora jądrowego. Części sprzedawane osobno.
+ent-GasTurbineFlatpack = zestaw do montażu turbiny gazowej
+    .desc = Zestaw do montażu turbiny gazowej.
