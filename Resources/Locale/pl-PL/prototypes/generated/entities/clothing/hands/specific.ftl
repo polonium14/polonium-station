@@ -1,6 +1,6 @@
-ent-ClothingHandsChameleon = czarne rękawiczki
-    .desc = Zwykłe czarne rękawiczki, które nie chronią przed porażeniem.
-    .suffix = Kameleon
+ent-ClothingHandsChameleon = black gloves
+    .desc = Regular black gloves that do not keep you from frying.
+    .suffix = Chameleon
 ent-ClothingHandsChameleonThief = { ent-ClothingHandsChameleon }
-    .suffix = Kameleon, Złodziejskie
+    .suffix = Chameleon, Thieving
     .desc = { ent-ClothingHandsChameleon.desc }
