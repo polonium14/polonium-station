@@ -1,6 +1,6 @@
-ent-TimerTrigger = timer trigger
-    .desc = A configurable timer.
-ent-SignalTrigger = signal trigger
-    .desc = Adds a machine link that is triggered by signals.
-ent-VoiceTrigger = voice trigger
-    .desc = Adds a machine link that is triggered by vocal keywords.
+ent-TimerTrigger = trigger czasowy
+    .desc = Konfigurowalny timer.
+ent-SignalTrigger = trigger sygnałowy
+    .desc = Dodaje połączenie maszyny, które jest wyzwalane przez sygnały.
+ent-VoiceTrigger = trigger głosowy
+    .desc = Dodaje połączenie maszyny, które jest wyzwalane przez słowa kluczowe głosowe.
