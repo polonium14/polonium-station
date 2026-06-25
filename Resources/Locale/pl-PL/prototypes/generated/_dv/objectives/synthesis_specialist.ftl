@@ -1,6 +1,6 @@
 ent-BaseSynthesisObjective = { ent-BaseTraitorObjective }
     .desc = { ent-BaseTraitorObjective.desc }
-ent-SynthesisSurviveObjective = Survive and Prosper
-    .desc = Survive to sell off your goods another day!
-ent-SynthesisPrescribeObjective = Profit and Synthesis
-    .desc = Sell your finest potions, craft nefarious concoctions, and peddle them to the highest bidder.
+ent-SynthesisSurviveObjective = Przetrwaj i Prosperuj
+    .desc = Przetrwaj, aby sprzedać swoje towary kolejnego dnia!
+ent-SynthesisPrescribeObjective = Zyskaj i Syntezuj
+    .desc = Sprzedawaj swoje najlepsze mikstury, twórz nikczemne eliksiry i sprzedawaj je najwyższemu oferentowi.
