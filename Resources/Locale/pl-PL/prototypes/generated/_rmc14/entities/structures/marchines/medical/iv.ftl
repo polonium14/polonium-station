@@ -1,9 +1,9 @@
-ent-CMIV = IV stand
-    .desc = A stand meant to hold IV bags upright, injecting or drawing from patients attached to it.
-    .suffix = IV, empty
-ent-CMBloodPack = IV bag
-    .desc = An IV bag. Contains fluids, typically used for transfusions.
-    .suffix = CM, empty
-ent-CMBloodPackFull = IV bag
-    .suffix = CM, Full
+ent-CMIV = stojak do kroplówki
+    .desc = Stojak przeznaczony do utrzymywania worków do kroplówek w pozycji pionowej, podając lub pobierając płyny od pacjentów podłączonych do niego.
+    .suffix = IV, pusty
+ent-CMBloodPack = worek do kroplówki
+    .desc = Worek do kroplówki. Zawiera płyny, zazwyczaj używane do transfuzji.
+    .suffix = CM, pusty
+ent-CMBloodPackFull = worek do kroplówki
+    .suffix = CM, pełny
     .desc = { ent-CMBloodPack.desc }
