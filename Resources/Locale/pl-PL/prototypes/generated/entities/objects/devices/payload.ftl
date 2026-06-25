@@ -1,8 +1,8 @@
 ent-BasePayload = { ent-BaseItem }
     .desc = { ent-BaseItem.desc }
-ent-ExplosivePayload = explosive payload
+ent-ExplosivePayload = ładunek wybuchowy
     .desc = { ent-BasePayload.desc }
-ent-ChemicalPayload = chemical payload
-    .desc = A chemical payload. Has space to store two beakers. In combination with a trigger and a case, this can be used to initiate chemical reactions.
-ent-FlashPayload = flash payload
-    .desc = A single-use flash payload.
+ent-ChemicalPayload = ładunek chemiczny
+    .desc = Ładunek chemiczny. Posiada miejsce na przechowywanie dwóch zlewek. W połączeniu z wyzwalaczem i obudową, może być używany do inicjowania reakcji chemicznych.
+ent-FlashPayload = ładunek błyskowy
+    .desc = Jednorazowy ładunek błyskowy.
