@@ -1,2 +1,2 @@
-ent-Chainsaw = chainsaw
-    .desc = A very large chainsaw. Usually you use this for cutting down trees... usually.
+ent-Chainsaw = piła łańcuchowa
+    .desc = Bardzo duża piła łańcuchowa. Zazwyczaj służy do ścinania drzew... zazwyczaj.
