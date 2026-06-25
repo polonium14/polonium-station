@@ -1,4 +1,3 @@
-
 marking-VulpEar-vulp = Vulpkanin ears (base)
 marking-VulpEar-vulp-inner = Vulpkanin ears (inner)
 marking-VulpEar = Vulpkanin
