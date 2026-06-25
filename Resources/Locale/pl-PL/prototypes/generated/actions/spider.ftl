@@ -1,8 +1,8 @@
-ent-ActionSpiderWeb = Spider Web
-    .desc = Spawns a web that slows your prey down.
-ent-ActionSericulture = Weave silk
-    .desc = Weave a bit of silk for use in arts and crafts.
-ent-ActionWrap = Cocoon prey
-    .desc = Wrap a nearby humanoid in immobilizing silk.
-ent-ActionBite = Bite
-    .desc = Bite a target and inject them with a solution.
+ent-ActionSpiderWeb = Pajęcza sieć
+    .desc = Tworzy sieć, która spowalnia Twoją ofiarę.
+ent-ActionSericulture = Przędzenie jedwabiu
+    .desc = Przędzie nieco jedwabiu do wykorzystania w rzemiośle i sztuce.
+ent-ActionWrap = Opleć ofiarę
+    .desc = Owija pobliskiego humanoida w unieruchamiający kokon z jedwabiu.
+ent-ActionBite = Ugryź
+    .desc = Gryzie cel i wstrzykuje mu odpowiednią substancję.
