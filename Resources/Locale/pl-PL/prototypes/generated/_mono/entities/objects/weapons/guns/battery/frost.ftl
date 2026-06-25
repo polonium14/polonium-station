@@ -1,2 +1,2 @@
-ent-WeaponEnergyGunFrost = EN-5 MRÓZ
-    .desc = Samoładujący pistolet energetyczny ze śmiertelnymi pociskami zadającymi poważne obrażenia. Amunicja obezwładniająca i lepsza celność niż we wcześniejszych wersjach. Amunicja: { ent-BulletDisabler } oraz { ent-BulletEnergyGunLaser }.
+ent-WeaponEnergyGunFrost = VFD EN-5 FROST
+    .desc = A self-recharging energy gun with lethal rounds that can inflict serious damage. Comes with disabling munitions and improved accuracy compared to it's previous versions.
