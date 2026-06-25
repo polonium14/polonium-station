@@ -1,18 +1,6 @@
-butcherable-different-tool =
-    Bedziesz { GENDER($user) ->
-        [male] potrzebował
-        [female] potrzebowała
-        [epicene] potrzebowału
-       *[neuter] potrzebowało
-    } innego narzędzia aby rozłożyć { $target }.
-butcherable-knife-butchered-success = Rozłożono { $target } używając { $knife }.
-butcherable-need-knife = Użyj ostrego obiektu aby rozłożyć { $target }.
-butcherable-not-in-container = { CAPITALIZE($target) } nie może być w pojemniku.
-butcherable-mob-isnt-dead =
-    Musi być { GENDER($target) ->
-        [male] martwy
-        [female] martwa
-        [epicene] martwu
-       *[neuter] martwe
-    }.
-butcherable-verb-name = Rozłóż
+butcherable-different-tool = You are going to need a different tool to butcher { THE($target) }.
+butcherable-knife-butchered-success = You butcher { THE($target) } with { THE($knife) }.
+butcherable-need-knife = Use a sharp object to butcher { THE($target) }.
+butcherable-not-in-container = { CAPITALIZE(THE($target)) } can't be in a container.
+butcherable-mob-isnt-dead = Needs to be dead.
+butcherable-verb-name = Butcher
