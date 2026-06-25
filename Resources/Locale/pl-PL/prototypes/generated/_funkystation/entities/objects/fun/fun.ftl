@@ -1,4 +1,4 @@
-ent-BoxFunBoxing = boxing box
-    .desc = Want to set up an underground fight club or host a tournament amongst station crew? This crate is for you!
-ent-TrainWhistle = train whistle
-    .desc = Choo Choo!
+ent-BoxFunBoxing = pudełko bokserskie
+    .desc = Chcesz założyć podziemny klub walki lub zorganizować turniej dla załogi stacji? To pudełko jest dla Ciebie!
+ent-TrainWhistle = gwizdek kolejowy
+    .desc = Ciu ciu!
