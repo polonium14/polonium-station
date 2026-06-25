@@ -1,2 +1,2 @@
-ent-ComputerSupermatter = konsola monitorująca supermaterię
-    .desc = Używana do monitorowania stanu kryształów supermaterii.
+ent-ComputerSupermatter = supermatter monitoring console
+    .desc = Used to monitor the status of supermatter crystals.
