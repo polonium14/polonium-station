@@ -1,1 +1,1 @@
-station-event-ion-storm-synth = Bzzt! There's something in the air.
+station-event-ion-storm-synth = Bzzt! Coś wisi w powietrzu.
