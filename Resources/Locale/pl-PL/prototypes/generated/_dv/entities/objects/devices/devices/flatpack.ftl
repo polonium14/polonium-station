@@ -1,2 +1,2 @@
-ent-AutoclaveFlatpack = autoclave flatpack
-    .desc = A flatpack used for constructing an Autoclave.
+ent-AutoclaveFlatpack = zestaw do montażu autoklawy
+    .desc = Zestaw do montażu autoklawy.
