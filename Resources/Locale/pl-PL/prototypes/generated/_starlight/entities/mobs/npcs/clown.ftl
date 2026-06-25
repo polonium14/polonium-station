@@ -1,5 +1,5 @@
-ent-BaseMobClown = wypaczony klaun
-    .desc = Śliska masa zabawnej materii, animowana przez honkularną energię.
+ent-BaseMobClown = aberrant clown
+    .desc = A slippery mass of hilarious matter, animated through honktacular energy.
 ent-MobClownJared = { ent-BaseMobClown }
     .desc = { ent-BaseMobClown.desc }
 ent-MobClownGolem = { ent-BaseMobClown }
