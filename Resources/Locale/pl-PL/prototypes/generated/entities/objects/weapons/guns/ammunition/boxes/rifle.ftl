@@ -1,12 +1,12 @@
 ent-BaseMagazineBoxRifle = { ent-BaseItem }
     .desc = { ent-BaseItem.desc }
-ent-MagazineBoxRifleBig = skrzynka amunicji (.20 karabinowe)
+ent-MagazineBoxRifleBig = ammunition box (.20 rifle)
     .desc = { ent-BaseMagazineBoxRifle.desc }
-ent-MagazineBoxRifle = skrzynka amunicji (.20 karabinowe)
+ent-MagazineBoxRifle = ammunition box (.20 rifle)
     .desc = { ent-BaseMagazineBoxRifle.desc }
-ent-MagazineBoxRiflePractice = skrzynka amunicji (.20 karabinowe treningowe)
+ent-MagazineBoxRiflePractice = ammunition box (.20 rifle practice)
     .desc = { ent-BaseMagazineBoxRifle.desc }
-ent-MagazineBoxRifleIncendiary = skrzynka amunicji (.20 karabinowe zapalające)
+ent-MagazineBoxRifleIncendiary = ammunition box (.20 rifle incendiary)
     .desc = { ent-BaseMagazineBoxRifle.desc }
-ent-MagazineBoxRifleUranium = skrzynka amunicji (.20 karabinowe uranowe)
+ent-MagazineBoxRifleUranium = ammunition box (.20 rifle uranium)
     .desc = { ent-BaseMagazineBoxRifle.desc }
