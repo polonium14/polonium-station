@@ -1,6 +1,6 @@
-ent-VisitorSecurityClownSpawner = visiting security clown spawner
+ent-VisitorSecurityClownSpawner = spawner odwiedzającego klauna ochroniarza
     .desc = { ent-MarkerBase.desc }
-ent-DerelictCyborgSpawner = Derelict Cyborg Spawner
+ent-DerelictCyborgSpawner = spawner porzuconego cyborga
     .desc = { ent-MarkerBase.desc }
-ent-VisitorSkeletonSpawner = Visiting Skeleton Spawner
+ent-VisitorSkeletonSpawner = spawner odwiedzającego szkieleta
     .desc = { ent-MarkerBase.desc }
