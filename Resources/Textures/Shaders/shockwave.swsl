@@ -13,7 +13,8 @@ void fragment()
 
     highp float ringDist = abs(dist - radius);
 
-    highp float mask = 1.0 - smoothstep(0.0, thickness, ringDist);
+    highp float mask = 1.0 - smoothstep(0.0, thickness * 0.65, ringDist);
+    mask = pow(mask, 0.75);
 
     highp float sign_dir = dist < radius ? -1.0 : 1.0;
     highp float warp = mask * warpStrength * sign_dir;
