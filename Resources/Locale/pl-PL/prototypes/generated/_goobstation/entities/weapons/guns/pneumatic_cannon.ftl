@@ -1,3 +1,3 @@
-ent-LauncherCreamPieRegenerating = regenerating pie cannon
-    .desc = A self-regenerating pie cannon.
-    .suffix = Regenerating
+ent-LauncherCreamPieRegenerating = regenerująca armata do ciast
+    .desc = Samoregenerująca się armata do ciast.
+    .suffix = Regenerująca
