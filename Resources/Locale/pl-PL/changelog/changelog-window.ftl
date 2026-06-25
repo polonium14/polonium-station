@@ -1,17 +1,17 @@
 ### ChangelogWindow.xaml.cs
 
-changelog-window-title = Lista zmian
-changelog-author-changed = [color=#EEE]{ $author }[/color] zmienił(-a):
-changelog-today = Dzisiaj
-changelog-yesterday = Wczoraj
-changelog-new-changes = nowe zmiany
-changelog-version-unknown = Nieznana Wersja
+changelog-window-title = Changelog
+changelog-author-changed = [color=#EEE]{ $author }[/color] changed:
+changelog-today = Today
+changelog-yesterday = Yesterday
+changelog-new-changes = new changes
+changelog-version-unknown = Unknown Version
 changelog-version-tag = { $fork }/{ $version }
-changelog-button = Lista zmian
-changelog-button-new-entries = Lista zmian (nowe!)
-changelog-tab-title-Changelog = Lista zmian
+changelog-button = Changelog
+changelog-button-new-entries = Changelog (new!)
+changelog-tab-title-Changelog = Changelog
 changelog-tab-title-Admin = Admin
-changelog-tab-title-Maps = Mapy
 changelog-tab-title-Funkylog = Funkylog
 cmd-changelog-desc = Otwórz listę zmian.
 cmd-changelog-help = Użycie: changelog
+changelog-tab-title-Maps = Maps
