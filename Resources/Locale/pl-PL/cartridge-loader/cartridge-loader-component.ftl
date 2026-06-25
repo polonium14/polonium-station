@@ -1,2 +1,2 @@
-cartridge-bound-user-interface-install-button = Zainstaluj
-cartridge-bound-user-interface-uninstall-button = Usuń
+cartridge-bound-user-interface-install-button = Install
+cartridge-bound-user-interface-uninstall-button = Remove
