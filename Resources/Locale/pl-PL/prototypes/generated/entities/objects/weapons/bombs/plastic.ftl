@@ -1,6 +1,6 @@
 ent-BasePlasticExplosive = { ent-BaseItem }
     .desc = { ent-BaseItem.desc }
-ent-C4 = composition C-4
-    .desc = Used to put holes in specific areas without too much extra hole. A saboteur's favorite.
-ent-SeismicCharge = seismic charge
-    .desc = Concussion based explosive designed to destroy large amounts of rock.
+ent-C4 = materiał wybuchowy C-4
+    .desc = Używany do robienia dziur w określonych miejscach bez zbyt dużych dodatkowych uszkodzeń. Ulubieniec sabotażystów.
+ent-SeismicCharge = ładunek sejsmiczny
+    .desc = Wybuch oparty na wstrząsie, zaprojektowany do niszczenia dużych ilości skał.
