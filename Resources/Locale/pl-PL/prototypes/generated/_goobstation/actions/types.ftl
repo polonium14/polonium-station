@@ -1,4 +1,4 @@
-ent-ActionActivateBluespaceLifeline = Activate Bluespace Lifeline
-    .desc = Activates your bluespace lifeline implant, teleporting you far-far away from this station. You won't be able to come back.
-ent-ActivateSmokeImplant = Release a cloud of smoke
-    .desc = Releases a large cloud of smoke around you that lasts 15 seconds.
+ent-ActionActivateBluespaceLifeline = Aktywuj bluespace'ową linię życia
+    .desc = Aktywuje twój implant linii życia, teleportując cię bardzo, bardzo daleko od tej stacji. Nie będziesz mógł już tu wrócić.
+ent-ActivateSmokeImplant = Uwolnij chmurę dymu
+    .desc = Uwalnia wokół ciebie dużą chmurę dymu, która utrzymuje się przez 15 sekund.
