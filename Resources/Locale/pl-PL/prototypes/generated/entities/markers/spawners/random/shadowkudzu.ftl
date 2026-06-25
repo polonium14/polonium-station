@@ -1,3 +1,2 @@
-ent-ShadowKudzuLootSpawner = Spawner lootu cieniowej anomalii
+ent-ShadowKudzuLootSpawner = { ent-MarkerBase }
     .desc = { ent-MarkerBase.desc }
-    .suffix = Cieniowy
