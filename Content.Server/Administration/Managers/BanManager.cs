@@ -149,7 +149,7 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
             ? "null"
             : string.Join(", ", banInfo.Users.Select(u => $"{u.UserName} ({u.UserId})"));
 
-        var addressRangeString = banInfo.AddressRanges.Count != 0
+        var addressRangeString = banInfo.AddressRanges.Count == 0
             ? "null"
             : string.Join(", ", banInfo.AddressRanges.Select(a => $"{a.Address}/{a.Mask}"));
 
