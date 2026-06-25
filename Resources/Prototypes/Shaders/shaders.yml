@@ -151,3 +151,8 @@
   id: Goggles
   kind: source
   path: "/Textures/_Funkystation/Shaders/goggles.swsl"
+
+- type: shader
+  id: Shockwave
+  kind: source
+  path: "/Textures/Shaders/shockwave.swsl"
