@@ -1,12 +1,12 @@
-role-type-crew-aligned-name = Crew Aligned
-role-type-solo-antagonist-name = Solo Antagonist
-role-type-team-antagonist-name = Team Antagonist
-role-type-free-agent-name = Free Agent
+role-type-crew-aligned-name = Załoga lub jej sojusznik
+role-type-solo-antagonist-name = Solo Antagonista
+role-type-team-antagonist-name = Drużynowy Antagonista
+role-type-free-agent-name = Wolny Agent
 role-type-familiar-name = Familiar
-role-type-silicon-name = Silicon
-role-type-silicon-antagonist-name = Altered Silicon
-role-type-malfunctioning-silicon-name = Malfunctioning Silicon
-role-type-update-message = Your role is [color = { $color }]{ $role }[/color]
+role-type-silicon-name = Humanoid Silikonowy
+role-type-silicon-antagonist-name = Zmieniony Humanoid Silikonowy
+role-type-malfunctioning-silicon-name = Niesprawny Humanoid Silikonowy
+role-type-update-message = Twoja rola to [color = { $color }]{ $role }[/color]
 # If you change a color here, you might want to also change it in role_types.yml
 role-type-crew-aligned-color = #eeeeee
 role-type-crew-aligned-alternate-color = #008000
