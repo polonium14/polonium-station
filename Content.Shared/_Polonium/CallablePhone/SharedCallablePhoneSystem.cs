@@ -182,6 +182,9 @@ public abstract class SharedCallablePhoneSystem : EntitySystem
     /// </summary>
     public bool CanSourceDialReceiver(CallablePhoneComponent source, CallablePhoneComponent receiver)
     {
+        if (ReferenceEquals(source, receiver))
+            return false;
+
         if (source.IsCentComm)
             return true;
 
@@ -193,6 +196,9 @@ public abstract class SharedCallablePhoneSystem : EntitySystem
     /// </summary>
     public bool CanSourceSeeInDirectory(CallablePhoneComponent source, CallablePhoneComponent receiver)
     {
+        if (ReferenceEquals(source, receiver))
+            return false;
+
         if (source.IsCentComm)
             return true;
 
