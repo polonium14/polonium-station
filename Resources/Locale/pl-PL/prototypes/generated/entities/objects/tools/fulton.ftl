@@ -1,10 +1,10 @@
-ent-FultonBeacon = fulton beacon
-    .desc = Beacon to receive fulton extractions.
+ent-FultonBeacon = nadajnik fultona
+    .desc = Nadajnik do odbioru ekstrakcji fultona.
 ent-Fulton = fulton
-    .desc = Used to extract containers, items, or forcibly recruit people into your base of operations.
-    .suffix = Full
+    .desc = Służy do ewakuacji kontenerów i przedmiotów albo do przymusowej rekrutacji ludzi do twojej bazy operacyjnej.
+    .suffix = Pełny
 ent-Fulton1 = fulton
-    .suffix = One
+    .suffix = Jeden
     .desc = { ent-Fulton.desc }
-ent-FultonEffect = fulton effect
+ent-FultonEffect = efekt fultona
     .desc = { "" }
