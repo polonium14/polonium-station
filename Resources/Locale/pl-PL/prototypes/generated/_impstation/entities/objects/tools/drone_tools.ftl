@@ -1,6 +1,6 @@
 ent-OmnitoolUnremoveable = { ent-Omnitool }
-    .suffix = Unremoveable
+    .suffix = Niezdejmowalne
     .desc = { ent-Omnitool.desc }
 ent-WelderExperimentalUnremoveable = { ent-WelderExperimental }
-    .suffix = Unremoveable
+    .suffix = Niezdejmowalne
     .desc = { ent-WelderExperimental.desc }
