@@ -1,2 +1,1 @@
-
-equip-part-missing-error = { $target } nie ma { $part }!
+equip-part-missing-error = { $target } is missing their { $part }!
