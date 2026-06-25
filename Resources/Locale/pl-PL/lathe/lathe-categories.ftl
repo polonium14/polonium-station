@@ -1,16 +1,14 @@
-# Generic
-lathe-category-circuitry = Obwody
 lathe-category-clothing = Ubrania
-lathe-category-lights = Światła
+# Generic
+lathe-category-ammo = Ammo
 lathe-category-machines = Maszyny
-lathe-category-parts = Części
+lathe-category-circuitry = Circuitry
 lathe-category-tiles = Płytki
-lathe-category-tools = Narzędzia
-lathe-category-weapons = Broń
-# Biogen
-lathe-category-food = Jedzenie
-lathe-category-chemicals = Chemikalia
-lathe-category-materials = Materiały
+lathe-category-lights = Lights
+lathe-category-parts = Parts
+lathe-category-robotics = Robotics
+lathe-category-tools = Tools
+lathe-category-weapons = Weapons
 # Circuit imprinter
 lathe-category-computers = Komputery
 lathe-category-engineering = Inżynieryjne
@@ -30,16 +28,17 @@ lathe-category-wood = Drewniane
 # Science
 lathe-category-mechs = Mechy
 lathe-category-modules = Moduły
-lathe-category-robotics = Robotyka
-# Security TechFab
-lathe-category-ammo = Amunicja
+# Biogen
+lathe-category-food = Food
+lathe-category-chemicals = Chemicals
 lathe-category-boxes = Pudełka
 lathe-category-magazines = Magazynki
+lathe-category-materials = Materials
 # Uniform
-lathe-category-bedsheets = Prześcieradła
-lathe-category-carpets = Dywany
-lathe-category-coats = Kurtki
-lathe-category-command = Dowództwo
-lathe-category-hats = Czapki
-lathe-category-jumpsuits = Kombinezony
-lathe-category-neck = Szyja
+lathe-category-bedsheets = Bedsheets
+lathe-category-carpets = Carpets
+lathe-category-coats = Coats
+lathe-category-command = Command
+lathe-category-hats = Hats
+lathe-category-jumpsuits = Jumpsuits
+lathe-category-neck = Neck
