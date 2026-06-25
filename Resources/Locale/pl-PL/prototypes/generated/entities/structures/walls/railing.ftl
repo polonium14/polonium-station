@@ -1,5 +1,5 @@
-ent-BaseRailing = railing
-    .desc = Basic railing meant to protect idiots like you from falling.
+ent-BaseRailing = balustrada
+    .desc = Podstawowa balustrada mająca na celu ochronę idiotów przed upadkiem.
 ent-Railing = { ent-BaseRailing }
     .desc = { ent-BaseRailing.desc }
 ent-RailingCorner = { ent-BaseRailing }
