@@ -1,2 +1,2 @@
-ent-SprayPainter = pistolet natryskowy
-    .desc = Pistolet natryskowy do malowania śluz i rur.
+ent-SprayPainter = spray painter
+    .desc = A spray painter for painting airlocks and pipes.
