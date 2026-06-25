@@ -1,6 +1,6 @@
 # Examine Text
 gas-valve-system-examined =
-    The valve is [color={ $statusColor }]{ $open ->
-        [true] open
-       *[false] closed
+    Zawór jest [color={ $statusColor }]{ $open ->
+        [true] otwarty
+       *[false] zamknięty
     }[/color].
