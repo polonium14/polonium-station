@@ -1,8 +1,8 @@
-ent-CrateHydroponicsSeedsExotic = exotic seeds crate
-    .desc = Any entrepreneuring botanist's dream. Contains many different exotic seeds. Requires Hydroponics access to open.
-ent-CrateHydroponicsSeedsMedicinal = medicinal seeds crate
-    .desc = The wannabe chemist's dream. The power of medicine is at your fingertips! Requires Hydroponics access to open.
-ent-CrateHydroponicsTools = hydroponics equipment crate
-    .desc = Supplies for growing a great garden! Contains some spray bottles of plant chemicals, a hatchet, a mini-hoe, scythe, as well as a pair of leather gloves and a botanist's apron.
-ent-CrateHydroponicsSeeds = seeds crate
-    .desc = Big things have small beginnings. Contains twelve different seeds.
+ent-CrateHydroponicsSeedsExotic = skrzynia egzotycznych nasion
+    .desc = Marzenie każdego przedsiębiorczego botanika. Zawiera mnóstwo różnych egzotycznych nasion. Wymaga dostępu do hydroponiki.
+ent-CrateHydroponicsSeedsMedicinal = skrzynia nasion leczniczych
+    .desc = Marzenie aspirującego chemika. Potęga medycyny jest na wyciągnięcie ręki! Wymaga dostępu do hydroponiki.
+ent-CrateHydroponicsTools = skrzynia z wyposażeniem hydroponicznym
+    .desc = Zaopatrzenie do uprawy wspaniałego ogrodu! Zawiera butelki z opryskiem, toporek, motykę, kosę, a także parę skórzanych rękawic i fartuch botanika.
+ent-CrateHydroponicsSeeds = skrzynia nasion
+    .desc = Wielkie rzeczy mają skromne początki. Zawiera dwanaście różnych rodzajów nasion.
