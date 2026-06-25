@@ -1,1 +1,1 @@
-rejuvenate-verb-get-data-text = Ożyw
+rejuvenate-verb-get-data-text = Rejuvenate
