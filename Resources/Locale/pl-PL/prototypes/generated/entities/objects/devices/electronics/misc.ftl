@@ -1,3 +1,3 @@
-ent-FreezerElectronics = elektronika zamrażarki
-    .desc = Elektronika służąca w kuchennych zamrażarkach.
+ent-FreezerElectronics = freezer electronics
+    .desc = An electronics board used in kitchen freezers.
     .gender = female
