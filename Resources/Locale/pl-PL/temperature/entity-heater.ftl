@@ -8,11 +8,11 @@
     }
 -entity-heater-setting-name =
     { $setting ->
-        [off] off
-        [low] low
-        [medium] medium
-        [high] high
-       *[other] unknown
+        [off] wył.
+        [low] niski
+        [medium] średni
+        [high] wysoki
+       *[other] nieznane
     }
 entity-heater-examined =
     It is set to { $setting ->
