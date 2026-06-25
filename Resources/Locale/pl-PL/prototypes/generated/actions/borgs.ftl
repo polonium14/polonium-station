@@ -1,4 +1,4 @@
-ent-ActionViewLaws = View Laws
-    .desc = View the laws that you must follow.
-ent-ActionSelectBorgType = Select Cyborg Type
+ent-ActionViewLaws = Przeglądaj prawa
+    .desc = Wyświetla listę praw, których musisz przestrzegać.
+ent-ActionSelectBorgType = Wybierz typ cyborga
     .desc = { "" }
