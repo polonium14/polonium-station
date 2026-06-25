@@ -1,7 +1,7 @@
-observe-nevermind = Nieważne
-observe-confirm = Obserwuj
-observe-warning-1 = Na pewno chcesz obserwować?
-observe-warning-2 = Nie będziesz mieć możliwości uczestnictwa w rundzie oraz skorzystania z nowego życia.
-observe-warning-window-title = Uwaga
-observe-as-admin = Obserwuj jako administrator
-observe-as-player = Obserwuj jako gracz
+observe-nevermind = Nevermind
+observe-confirm = Observe
+observe-warning-1 = Are you sure you want to observe?
+observe-warning-2 = You cannot play in the round or use a new life if you do so.
+observe-warning-window-title = Warning
+observe-as-admin = Admin Observe
+observe-as-player = Player Observe
