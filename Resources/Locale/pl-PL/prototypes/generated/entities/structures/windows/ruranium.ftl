@@ -1,7 +1,7 @@
-ent-ReinforcedUraniumWindow = okno uranowe wzmocnione
+ent-ReinforcedUraniumWindow = reinforced uranium window
     .desc = { ent-WindowRCDResistant.desc }
-ent-UraniumReinforcedWindowDirectional = kierunkowe okno uranowe wzmocnione
-    .desc = Nie rozmazuj szkła tam na dole.
+ent-UraniumReinforcedWindowDirectional = directional reinforced uranium window
+    .desc = Don't smudge up the glass down there.
 ent-ReinforcedUraniumWindowDiagonal = { ent-ReinforcedUraniumWindow }
-    .suffix = diagonalne
+    .suffix = diagonal
     .desc = { ent-ReinforcedUraniumWindow.desc }
