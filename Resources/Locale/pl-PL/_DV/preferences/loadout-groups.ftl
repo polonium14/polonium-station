@@ -1,2 +1,2 @@
 # Species
-loadout-group-humanoid-silicon = Silicon-friendly survival box
+loadout-group-humanoid-silicon = Zestaw przetrwania dla syntetycznych humanoidów
