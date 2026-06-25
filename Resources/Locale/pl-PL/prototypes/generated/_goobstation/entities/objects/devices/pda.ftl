@@ -1,6 +1,6 @@
-ent-ChronoPDA = futuristic PDA
-    .desc = A powerful quantum computer disguised as a regular pda for disguise.
-ent-HelldiverPDA = salvage diver PDA
-    .desc = Smells like corpses of insects and androids.
-ent-HecuPDA = HECU PDA
-    .desc = Smells of gunpowder.
+ent-ChronoPDA = futurystyczny PDA
+    .desc = Potężny komputer kwantowy ukryty jako zwykły PDA dla kamuflażu.
+ent-HelldiverPDA = PDA nurka ratunkowego
+    .desc = Pachnie jak zwłoki owadów i androidów.
+ent-HecuPDA = PDA HECU
+    .desc = Pachnie prochem.
