@@ -1,2 +1,2 @@
-ent-ProjectileBabyDragonsBreath = baby dragon's breath
-    .desc = Try not to get toasted.
+ent-ProjectileBabyDragonsBreath = oddech małego smoka
+    .desc = Staraj się nie przypiec.
