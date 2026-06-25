@@ -390,6 +390,8 @@ public abstract partial class SharedChatSystem : EntitySystem
     /// <param name="player">The player doing the speaking.</param>
     /// <param name="nameOverride">The name to use for the speaking entity. Usually this should just be modified via <see cref="TransformSpeakerNameEvent"/>. If this is set, the event will not get raised.</param>
     /// <param name="ignoreActionBlocker">If set to true, action blocker will not be considered for whether an entity can send this message.</param>
+    /// <param name="excludeRecipient">If set, the attached entity will not receive this message.</param>
+    /// <param name="triggerSpeakEvent">If false, the speak event will not be raised.</param>
     public virtual void TrySendInGameICMessage(
         EntityUid source,
         string message,
@@ -400,7 +402,9 @@ public abstract partial class SharedChatSystem : EntitySystem
         ICommonSession? player = null,
         string? nameOverride = null,
         bool checkRadioPrefix = true,
-        bool ignoreActionBlocker = false
+        bool ignoreActionBlocker = false,
+        EntityUid? excludeRecipient = null,
+        bool triggerSpeakEvent = true
         )
     { }
 

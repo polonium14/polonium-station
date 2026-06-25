@@ -20,7 +20,6 @@ callable-phone-centcomm-pickup-decline = Odrzuć
 callable-phone-centcomm-pickup-reason-checkbox = Powód
 callable-phone-centcomm-pickup-reason-placeholder = Opcjonalny powód odrzucenia...
 callable-phone-centcomm-call-declined-default-reason = Linia jest niedostępna.
-callable-phone-centcomm-call-declined-admin-log = Połączenie odrzucone: { $reason }
 callable-phone-centcomm-call-declined-chat = [italic]CentComm odrzuciło twoje połączenie: {$reason}[/italic]
 callable-phone-centcomm-call-declined-chat-plain = CentComm odrzuciło twoje połączenie: {$reason}
 callable-phone-centcomm-call-declined-timeout-chat = [italic]Nikt ci nie odebrał. Po drugiej stronie linii słychać tylko martwy elektroniczny głuch...[/italic]
@@ -35,14 +34,9 @@ callable-phone-impersonation-placeholder = Nazwa rozmówcy w tej rozmowie...
 callable-phone-impersonation-apply = Zastosuj
 callable-phone-impersonation-applied = Mówisz jako { $name }.
 callable-phone-impersonation-cleared = Wyczyszczono nazwę rozmówcy.
-callable-phone-admin-unknown-caller = Operator CD
+callable-phone-admin-unknown-caller = Nieznany rozmowca
 callable-phone-centcomm-handset-locked = Tylko administrator może teraz obsługiwać tę linię.
 callable-phone-centcomm-admin-took-ic = { $admin } przejął rozmowę przez słuchawkę.
 callable-phone-window-relay-label = Źródło:
 callable-phone-window-answer-call = Odbierz
 callable-phone-window-end-call = Odrzuć
-
-# Optional directory names for red phones (set phoneName on CallablePhone in map/prototype)
-callable-phone-example-bridge = Bridge
-
-callable-phone-example-medbay = Medbay
