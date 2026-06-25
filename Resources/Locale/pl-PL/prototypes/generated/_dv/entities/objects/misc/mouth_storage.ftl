@@ -1,2 +1,2 @@
-ent-CheekStorage = cheek storage
-    .desc = The cheeks of an animal, capable of storing small objects.
+ent-CheekStorage = magazyn policzkowy
+    .desc = Policzek zwierzęcia, zdolny do przechowywania małych przedmiotów.
