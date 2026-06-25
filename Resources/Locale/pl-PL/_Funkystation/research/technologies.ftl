@@ -1,3 +1,3 @@
-research-technology-instruments = Instrument Production
-research-technology-weapon-energy-gun = Compact Energy Weaponry
-research-technology-experimental-tesla-gun = Experimental Tesla Gun
+research-technology-instruments = Produkcja Instrumentów
+research-technology-weapon-energy-gun = Kompaktowa Broń Energetyczna
+research-technology-experimental-tesla-gun = Eksperymentalne Działo Tesla
