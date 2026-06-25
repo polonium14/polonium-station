@@ -12,11 +12,13 @@ public sealed class BanPanelEuiState : EuiStateBase
 {
     public string PlayerName { get; set; }
     public bool HasBan { get; set; }
+    public int RoundId { get; }
 
-    public BanPanelEuiState(string playerName, bool hasBan)
+    public BanPanelEuiState(string playerName, bool hasBan, int roundId)
     {
         PlayerName = playerName;
         HasBan = hasBan;
+        RoundId = roundId;
     }
 }
 
@@ -57,7 +59,8 @@ public sealed record Ban
         NoteSeverity severity,
         ProtoId<JobPrototype>[]? bannedJobs,
         ProtoId<AntagPrototype>[]? bannedAntags,
-        bool erase)
+        bool erase,
+        int situationRound = 0)
     {
         Target = target;
         IpAddress = ipAddressTuple?.Item1.ToString();
@@ -71,6 +74,7 @@ public sealed record Ban
         BannedJobs = bannedJobs;
         BannedAntags = bannedAntags;
         Erase = erase;
+        SituationRound = situationRound;
     }
 
     public readonly string? Target;
@@ -85,4 +89,5 @@ public sealed record Ban
     public readonly ProtoId<JobPrototype>[]? BannedJobs;
     public readonly ProtoId<AntagPrototype>[]? BannedAntags;
     public readonly bool Erase;
+    public readonly int SituationRound;
 }

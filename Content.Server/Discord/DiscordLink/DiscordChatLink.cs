@@ -39,24 +39,24 @@ public sealed class DiscordChatLink : IPostInjectInit
 
     private void OnOocChannelIdChanged(string channelId)
     {
-        if (string.IsNullOrEmpty(channelId))
-        {
-            _oocChannelId = null;
-            return;
-        }
-
-        _oocChannelId = ulong.Parse(channelId);
+        _oocChannelId = TryParseChannelId(channelId, CCVars.OocDiscordChannelId.Name);
     }
 
     private void OnAdminChannelIdChanged(string channelId)
     {
-        if (string.IsNullOrEmpty(channelId))
-        {
-            _adminChannelId = null;
-            return;
-        }
+        _adminChannelId = TryParseChannelId(channelId, CCVars.AdminChatDiscordChannelId.Name);
+    }
 
-        _adminChannelId = ulong.Parse(channelId);
+    private ulong? TryParseChannelId(string channelId, string cvarName)
+    {
+        if (string.IsNullOrEmpty(channelId))
+            return null;
+
+        if (ulong.TryParse(channelId, out var id))
+            return id;
+
+        _sawmill.Error($"Invalid Discord channel ID in {cvarName}: '{channelId}'");
+        return null;
     }
 
     private void OnMessageReceived(Message message)

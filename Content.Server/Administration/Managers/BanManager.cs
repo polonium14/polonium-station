@@ -179,13 +179,12 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
         if (banInfo.NotifyDiscord)
         {
             var firstUser = banInfo.Users.FirstOrNull();
-            uint? minutes = banInfo.Duration != null ? (uint)banInfo.Duration.Value.TotalMinutes : null;
 
             _ = _dc.SendBanNotification(
                 adminName,
                 firstUser?.UserName ?? targetName,
                 originalReason,
-                expires.GetValueOrDefault().ToUnixTimeSeconds(),
+                expires?.ToUnixTimeSeconds() ?? 0,
                 DateTimeOffset.UtcNow.ToUnixTimeSeconds(),
                 roundId,
                 banInfo.SituationRound,

@@ -9,6 +9,7 @@ namespace Content.Client.Administration.UI.BanPanel;
 public sealed class BanPanelEui : BaseEui
 {
     private BanPanel BanPanel { get; }
+    private bool FirstState { get; set; } = true;
 
     public BanPanelEui()
     {
@@ -27,6 +28,13 @@ public sealed class BanPanelEui : BaseEui
 
         BanPanel.UpdateBanFlag(s.HasBan);
         BanPanel.UpdatePlayerData(s.PlayerName);
+        BanPanel.SetCurrentRound(s.RoundId);
+
+        if (!FirstState)
+            return;
+
+        FirstState = false;
+        BanPanel.SetRoundSpinBox(s.RoundId);
     }
 
     public override void Opened()

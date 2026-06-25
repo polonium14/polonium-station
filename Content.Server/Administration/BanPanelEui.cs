@@ -4,6 +4,7 @@ using Content.Server.Administration.Managers;
 using Content.Server.Administration.Systems;
 using Content.Server.Chat.Managers;
 using Content.Server.EUI;
+using Content.Server.GameTicking;
 using Content.Shared.Administration;
 using Content.Shared.Database;
 using Content.Shared.Eui;
@@ -19,8 +20,10 @@ public sealed class BanPanelEui : BaseEui
     [Dependency] private readonly IPlayerLocator _playerLocator = default!;
     [Dependency] private readonly IChatManager _chat = default!;
     [Dependency] private readonly IAdminManager _admins = default!;
+    [Dependency] private readonly IEntitySystemManager _sysMan = default!;
 
     private readonly ISawmill _sawmill;
+    private GameTicker? _ticker;
 
     private NetUserId? PlayerId { get; set; }
     private string PlayerName { get; set; } = string.Empty;
@@ -34,12 +37,13 @@ public sealed class BanPanelEui : BaseEui
         IoCManager.InjectDependencies(this);
 
         _sawmill = _log.GetSawmill("admin.bans_eui");
+        _sysMan.TryGetEntitySystem(out _ticker);
     }
 
     public override EuiStateBase GetNewState()
     {
         var hasBan = _admins.HasAdminFlag(Player, AdminFlags.Ban);
-        return new BanPanelEuiState(PlayerName, hasBan);
+        return new BanPanelEuiState(PlayerName, hasBan, _ticker?.RoundId ?? 0);
     }
 
     public override void HandleMessage(EuiMessageBase msg)
@@ -81,6 +85,9 @@ public sealed class BanPanelEui : BaseEui
         banInfo.WithSeverity(ban.Severity);
         if (ban.BanDurationMinutes > 0)
             banInfo.WithMinutes(ban.BanDurationMinutes);
+
+        if (ban.SituationRound > 0)
+            banInfo.WithSituationRound(ban.SituationRound);
 
         (IPAddress, int)? addressRange = null;
         if (ban.IpAddress is not null)
