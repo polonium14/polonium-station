@@ -1,4 +1,4 @@
-ent-MobDiona = Urist McGałąź
+ent-MobDiona = Urist McPlants
     .desc = { ent-BaseMobDiona.desc }
-ent-MobDionaReformed = Zreformowana Diona
+ent-MobDionaReformed = Reformed Diona
     .desc = { ent-MobDiona.desc }
