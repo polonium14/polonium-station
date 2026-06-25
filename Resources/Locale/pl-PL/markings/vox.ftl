@@ -1,4 +1,3 @@
-
 marking-TattooEyeshadowVoxSmall-tattoo_eyeshadow_small = Eyeshadow (Small)
 marking-TattooEyeshadowVoxSmall = Eyeshadow (Small)
 marking-TattooEyeshadowVoxMedium-tattoo_eyeshadow_medium = Eyeshadow (Medium)
