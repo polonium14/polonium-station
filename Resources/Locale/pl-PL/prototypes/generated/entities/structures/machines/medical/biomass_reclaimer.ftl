@@ -1,2 +1,2 @@
-ent-BiomassReclaimer = biomass reclaimer
-    .desc = Reclaims biomass from corpses. Gruesome.
+ent-BiomassReclaimer = maszyna do odzyskiwania biomasy
+    .desc = Odzyskuje biomasę z ciał. Makabryczne.
