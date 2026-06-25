@@ -53,6 +53,7 @@
 // SPDX-FileCopyrightText: 2025 āda <ss.adasts@gmail.com>
 // SPDX-FileCopyrightText: 2026 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2026 Velken <8467292+Velken@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2026 taydeo <tay@funkystation.org>
 // SPDX-FileCopyrightText: 2026 taydeo <td12233a@gmail.com>
 //
