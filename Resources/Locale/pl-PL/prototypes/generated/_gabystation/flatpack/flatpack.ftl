@@ -1,2 +1,2 @@
-ent-FlatpackWashingMachine = flatpack washing machine
-    .desc = A compact washing machine.
+ent-FlatpackWashingMachine = zestaw do montażu pralki
+    .desc = Kompaktowa pralka.
