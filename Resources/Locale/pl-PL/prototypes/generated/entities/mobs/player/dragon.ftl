@@ -1,17 +1,17 @@
-ent-ActionDevour = [color=red]Pożryj[/color]
-    .desc = Spróbuj zniszczyć strukturę swoimi szczękami, lub połknąć stworzenie.
-ent-ActionDragonsBreath = [color=orange]Zionięcie[/color]
-    .desc = Wypluj kulę ognia na każdego głupca który cię zaatakuje!
-ent-ActionSpawnRift = Przyzwij karpo wyrwę
-    .desc = Przyzywa wyrwę z której okresowo wychodzić będą karpie.
-ent-BaseMobDragon = Kosmiczny Smok
-    .desc = Latający lewiatan, lekko spokrewniony z kosmicznymi karpiami.
+ent-BaseMobDragon = space dragon
+    .desc = A flying leviathan, loosely related to space carps.
     .gender = male
-ent-DragonsBreathGun = smocze płuco
-    .desc = oddychał nim smok.
+ent-MobDragon = { ent-BaseMobDragon }
+    .desc = { ent-BaseMobDragon.desc }
+ent-DragonsBreathGun = dragon's lung
+    .desc = For dragon's breathing.
     .gender = neuter
 ent-MobDragonDungeon = { ent-BaseMobDragon }
     .suffix = Dungeon
     .desc = { ent-BaseMobDragon.desc }
-ent-MobDragon = { ent-BaseMobDragon }
-    .desc = { ent-BaseMobDragon.desc }
+ent-ActionSpawnRift = Summon Carp Rift
+    .desc = Summons a carp rift that will periodically spawns carps.
+ent-ActionDevour = [color=red]Devour[/color]
+    .desc = Attempt to break a structure with your jaws or swallow a creature.
+ent-ActionDragonsBreath = [color=orange]Dragon's Breath[/color]
+    .desc = Spew out flames at anyone foolish enough to attack you!
