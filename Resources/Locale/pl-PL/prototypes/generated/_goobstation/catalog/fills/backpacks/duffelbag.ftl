@@ -1,6 +1,6 @@
-ent-ClothingBackpackDuffelSyndicateMedicHardsuitBundle = syndicate medic hardsuit bundle
-    .desc = A surplus combat medic hardsuit, bundled for your LARP.
-ent-ClothingBackpackDuffelSyndicateStealthHardsuitBundle = cybersun stealthsuit bundle
-    .desc = An advanced cybersun stealth hardsuit bundle.
-ent-ClothingBackpackDuffelSyndicateM90Bundle = M-90 bundle
-    .desc = A bundle carrying the syndicate's M-90 assault rifle, packed with 2 spare magazines.
+ent-ClothingBackpackDuffelSyndicateMedicHardsuitBundle = zestaw medyczny hardsuit Syndykatu
+    .desc = Nadmiarowy medyczny hardsuit bojowy, zapakowany do twojego LARPa.
+ent-ClothingBackpackDuffelSyndicateStealthHardsuitBundle = zestaw pancerza maskującego Cybersun
+    .desc = Zaawansowany zestaw pancerza wspomaganego typu Stealth od Cybersun.
+ent-ClothingBackpackDuffelSyndicateM90Bundle = zestaw M-90
+    .desc = Zestaw zawierający karabin szturmowy M-90 Syndykatu wraz z 2 zapasowymi magazynkami.
