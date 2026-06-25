@@ -1,3 +1,1 @@
-
-# Zintegrowane Podwozie Pozytronowe
-species-name-ipc = ZPP
+species-name-ipc = IPC
