@@ -1,1 +1,1 @@
-station-event-unknown-shuttle-incoming = Uwaga! Zauważono niezidentyfikowany wahadłowiec zbliżający się do Państwa sektora.
+station-event-unknown-shuttle-incoming = Attention! An unidentified space shuttle has been spotted approaching your sector.
