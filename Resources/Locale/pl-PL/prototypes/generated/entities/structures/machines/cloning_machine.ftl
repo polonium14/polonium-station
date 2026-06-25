@@ -1,2 +1,2 @@
-ent-CloningPod = cloning pod
-    .desc = A Cloning Pod. 50% reliable.
+ent-CloningPod = kapsuła do klonowania
+    .desc = Kapsuła do klonowania. 50% niezawodności.
