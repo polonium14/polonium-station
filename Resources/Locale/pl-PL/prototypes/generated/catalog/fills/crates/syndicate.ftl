@@ -1,7 +1,7 @@
-ent-CrateSyndicateSurplusBundle = Syndicate surplus crate
-    .desc = Contains 250 telecrystals worth of completely random Syndicate items. It can be useless junk or really good.
-ent-CrateCybersunJuggernautBundle = Cybersun juggernaut bundle
-    .desc = Contains everything except a big gun to go postal.
-    .suffix = Filled
-ent-CrateSyndicateSuperSurplusBundle = Syndicate super surplus crate
-    .desc = Contains 625 telecrystals worth of completely random Syndicate items.
+ent-CrateSyndicateSurplusBundle = skrzynia nadwyżkowa Syndykatu
+    .desc = Zawiera losowe przedmioty Syndykatu o wartości 250 telekryształów. Może to być bezużyteczny złom albo naprawdę dobry sprzęt.
+ent-CrateCybersunJuggernautBundle = zestaw Juggernaut od Cybersun
+    .desc = Zawiera wszystko, czego potrzebujesz, by wpaść w szał, z wyjątkiem dużej spluwy.
+    .suffix = Uzupełniony
+ent-CrateSyndicateSuperSurplusBundle = super-skrzynia nadwyżkowa Syndykatu
+    .desc = Zawiera losowe przedmioty Syndykatu o wartości 625 telekryształów.
