@@ -1,6 +1,6 @@
-ent-BaseBoardEntity = plansza
-    .desc = Pusta plansza.
+ent-BaseBoardEntity = board
+    .desc = A blank board.
 ent-BaseTabletopPiece = { ent-BaseItem }
     .desc = { ent-BaseItem.desc }
-ent-BaseBoardTabletop = podstawa planszy
+ent-BaseBoardTabletop = baseboard
     .desc = { "" }
