@@ -2,6 +2,7 @@ using System.Numerics;
 using Content.Client.Examine;
 using Content.Client.Resources;
 using Content.Client.Stylesheets;
+using Content.Client.Stylesheets.Fonts;
 using Content.Shared.Wires;
 using Robust.Client.Animations;
 using Robust.Client.Graphics;
@@ -144,11 +145,8 @@ namespace Content.Client.Wires.UI
             rootContainer.AddChild(topContainerWrap);
 
             LayoutContainer.SetAnchorPreset(topContainerWrap, LayoutContainer.LayoutPreset.Wide);
-            // FUNKY EDIT START
-            // i guess here??
-            var font = _resourceCache.GetFont("/Fonts/Sysfont/Sysfont-Regular.otf", 13);
-            var fontSmall = _resourceCache.GetFont("/Fonts/Sysfont/Sysfont-Regular.otf", 10);
-            // FUNKY EDIT END
+            var font = PoloniumFonts.GetWindowTitleFont(_resourceCache);
+            var fontSmall = PoloniumFonts.GetWindowTitleFont(_resourceCache, 10);
 
             Button helpButton;
             var topRow = new BoxContainer
@@ -566,7 +564,7 @@ namespace Content.Client.Wires.UI
                     };
                 }
 
-                var font = resourceCache.GetFont("/Fonts/Sysfont/Sysfont-Regular.otf", 12);
+                var font = PoloniumFonts.GetWindowTitleFont(resourceCache, 12);
 
                 var hBox = new BoxContainer
                 {
