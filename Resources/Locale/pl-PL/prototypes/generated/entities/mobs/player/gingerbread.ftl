@@ -1,5 +1,5 @@
-ent-MobGingerbread = Urist McCiasteczko
+ent-MobGingerbread = Urist McCookie
     .desc = { ent-BaseMobGingerbread.desc }
-ent-MobGingerbreadAI = człowiek piernik
+ent-MobGingerbreadAI = gingerbread man
     .desc = { ent-MobGingerbread.desc }
     .gender = male
