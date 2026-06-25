@@ -10,5 +10,5 @@ ent-ShuttleGunDuster = EXP-2100g "Duster"
     .desc = A powerful stationary grenade launcher. A cartridge is required for use.
 ent-ShuttleGunPirateCannon = pirate ship cannon
     .desc = Kaboom!
-ent-ShuttleGunKinetic = PTK-800 "Dematerializator"
-    .desc = Stacjonarne działo odzyskowe. Ładuje się samoistnie, doskonałe do wydobywania asteroid.
+ent-ShuttleGunKinetic = PTK-800 "Matter Dematerializer"
+    .desc = Salvage stationary mining turret. Gradually accumulates charges on its own, extremely effective for asteroid excavation.
