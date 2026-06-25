@@ -1,2 +1,2 @@
-ent-CrateCopsNRobbers = cops and robbers crate
-    .desc = Recreate an ancient game of dress up and pretend you're still terra-bound with this crate of cap guns and cowboy hats!
+ent-CrateCopsNRobbers = skrzynia „policjanci i złodzieje”
+    .desc = Odtwórz starożytną zabawę w przebieranki i udawaj, że wciąż jesteś na Ziemi dzięki tej skrzyni pełnej pistoletów na kapiszony i kowbojskich kapeluszy!
