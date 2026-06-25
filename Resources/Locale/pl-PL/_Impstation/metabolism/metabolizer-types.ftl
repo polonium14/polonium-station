@@ -1,2 +1,2 @@
-metabolizer-type-thaven = Thaven
+metabolizer-type-thaven = Tejwan
 metabolizer-type-plasma = Plazma
