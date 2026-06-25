@@ -1,3 +1,2 @@
-
-reagent-name-milk-choco = mleko czekoladowe
-reagent-desc-milk-choco = Napój mleczny o smaku czekolady.
+reagent-name-milk-choco = chocolate milk
+reagent-desc-milk-choco = A milk drink flavored with chocolate.
