@@ -1,9 +1,9 @@
 ent-BaseSpellbook = spellbook
     .desc = { ent-BaseItem.desc }
-ent-WizardsGrimoire = księga czarodzieja
+ent-WizardsGrimoire = wizards grimoire
     .suffix = Wizard
     .desc = { ent-BaseItem.desc }
-ent-WizardsGrimoireNoRefund = księga czarodzieja
+ent-WizardsGrimoireNoRefund = wizards grimoire
     .suffix = Wizard, No Refund
     .desc = { ent-WizardsGrimoire.desc }
 ent-SpawnSpellbook = spawn spellbook
