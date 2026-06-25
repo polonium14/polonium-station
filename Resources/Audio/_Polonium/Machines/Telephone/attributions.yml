@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Maciej Walendziuk <ozzeusz@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - files:
   - busy.ogg
   - call_waiting.ogg
@@ -15,3 +19,8 @@
   license: "Custom"
   copyright: "Can: use the content for free, use it commercially, modify/edit it, use it without attribution. Cannot: resell or redistribute the raw file unchanged, use trademarked/logo content commercially on products, use it illegally, misleadingly, or immorally, use it as part of a trademark/brand identity."
   source: "https://pixabay.com/"
+
+- files: ["static.ogg"]
+  license: "Custom"
+  copyright: "Timbre on freesound.org (CC 0)"
+  source: "https://freesound.org/people/Timbre/sounds/550328/"
