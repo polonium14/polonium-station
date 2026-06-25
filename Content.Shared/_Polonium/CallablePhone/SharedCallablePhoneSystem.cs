@@ -185,6 +185,9 @@ public abstract class SharedCallablePhoneSystem : EntitySystem
         if (source.IsCentComm)
             return true;
 
+        if (source.OnlyCentCommInDirectory)
+            return receiver.IsCentComm && source.IncludeCentCommInDirectory;
+
         if (receiver.ListedInDirectory)
         {
             if (source.ExcludeCentCommFromDial && receiver.IsCentComm)
