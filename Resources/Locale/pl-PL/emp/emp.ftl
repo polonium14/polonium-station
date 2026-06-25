@@ -1,1 +1,1 @@
-emp-disabled-comp-on-examine = [color=lightblue]It's disrupted by an electric field... [/color]
+emp-disabled-comp-on-examine = [color=lightblue]Jest zakłócone przez pole elektryczne...[/color]
