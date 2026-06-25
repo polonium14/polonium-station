@@ -1,2 +1,2 @@
-ent-ChronoTeleporter = futuristic teleporter
-    .desc = Actually, not that futuristic as everything else
+ent-ChronoTeleporter = futurystyczny teleporter
+    .desc = Tak naprawdę nie jest to aż tak futurystyczne jak wszystko inne.
