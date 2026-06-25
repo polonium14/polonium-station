@@ -1,13 +1,13 @@
-power-radiation-collector-gas-tank-missing = Komora [color=darkred]nie zawiera[/color] zbiornika plazmy.
+power-radiation-collector-gas-tank-missing = The plasma tank slot is [color=darkred]empty[/color].
 power-radiation-collector-gas-tank-present =
-    Komora [color=darkgreen]zawiera[/color] [color={ $fullness ->
-       *[0] red]pusty
-        [1] red]prawie pusty
-        [2] yellow]pół pełny
-        [3] lime]pełny
-    }[/color] zbiornik plazmy.
+    The plasma tank slot is [color=darkgreen]filled[/color] and the tank indicator reads [color={ $fullness ->
+       *[0] red]empty
+        [1] red]low
+        [2] yellow]half-full
+        [3] lime]full
+    }[/color].
 power-radiation-collector-enabled =
-    Jest [color={ $state ->
-        [true] darkgreen]włączony
-       *[false] darkred]wyłączony
+    It's switched [color={ $state ->
+        [true] darkgreen]on
+       *[false] darkred]off
     }[/color].
