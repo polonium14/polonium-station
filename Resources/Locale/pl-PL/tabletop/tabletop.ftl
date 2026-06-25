@@ -1,19 +1,19 @@
 ## TabletopGameComponent
 
-tabletop-verb-play-game = Zagraj
-tabletop-verb-dump-pieces = Zrzuć pionki
-tabletop-default-board-name = Gra planszowa
-tabletop-error-remove-non-hologram = Nie możesz zdjąć wbudowanych pionków!
-tabletop-added-piece = Plansza jasno migocze!
+tabletop-verb-play-game = Play Game
+tabletop-verb-dump-pieces = Dump Pieces
+tabletop-default-board-name = Board Game
+tabletop-error-remove-non-hologram = You cant remove a built in piece!
+tabletop-added-piece = The board shimmers brightly!
 
 ## Chess
 
-tabletop-chess-board-name = Szachy
-tabletop-chess-flip = Obróć
+tabletop-chess-board-name = Chess
+tabletop-chess-flip = Flip
 
 ## Parchís
 
-tabletop-parchis-board-name = Chińczyk
+tabletop-parchis-board-name = Parchís
 
 ## Backgammon
 
@@ -21,8 +21,8 @@ tabletop-backgammon-board-name = Backgammon
 
 ## Checkers
 
-tabletop-checkers-board-name = Warcaby
+tabletop-checkers-board-name = Checkers
 
 ## Battlemap
 
-tabletop-battlemap-board-name = Mapa bitewna
+tabletop-battlemap-board-name = Battlemap
