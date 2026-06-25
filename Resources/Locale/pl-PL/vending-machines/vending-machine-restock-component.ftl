@@ -1,4 +1,4 @@
-vending-machine-restock-invalid-inventory = { CAPITALIZE(THE($this)) } isn't the right package to restock { THE($target) }.
+vending-machine-restock-invalid-inventory = { CAPITALIZE($this) } isn't the right package to restock { $target }.
 vending-machine-restock-start-self = You start restocking { $target }.
 vending-machine-restock-needs-panel-open = { CAPITALIZE($target) } needs { POSS-ADJ($target) } maintenance panel opened first.
 vending-machine-restock-start = { $user } starts restocking { $target }.
