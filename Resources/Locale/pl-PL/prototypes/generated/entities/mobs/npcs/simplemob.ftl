@@ -1,9 +1,9 @@
 ent-BaseSimpleMob = { ent-BaseMob }
-    .suffix = AI
+    .suffix = SI
     .desc = { ent-BaseMob.desc }
 ent-SimpleSpaceMobBase = { ent-BaseSimpleMob }
-    .suffix = AI
+    .suffix = SI
     .desc = { ent-BaseSimpleMob.desc }
 ent-SimpleMobBase = { ent-MobRespirator }
-    .suffix = AI
+    .suffix = SI
     .desc = { ent-MobRespirator.desc }
