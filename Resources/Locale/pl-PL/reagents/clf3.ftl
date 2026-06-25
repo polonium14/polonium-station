@@ -1,3 +1,3 @@
-clf3-it-burns = It burns like hell!!
-clf3-get-away = You need to get away now!
-clf3-explosion = The mixture fireballs outwards!
+clf3-it-burns = Pali jak diabli!
+clf3-get-away = Musisz się natychmiast z tąd wycofać!
+clf3-explosion = Mieszanka wybucha kulą ognia!
