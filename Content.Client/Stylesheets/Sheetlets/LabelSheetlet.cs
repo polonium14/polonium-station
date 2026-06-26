@@ -1,3 +1,11 @@
+// SPDX-FileCopyrightText: 2025 Brandon Li <48413902+aspiringLich@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 eoineoineoin <helloworld@eoinrul.es>
+// SPDX-FileCopyrightText: 2026 taydeo <tay@funkystation.org>
+// SPDX-FileCopyrightText: 2026 taydeo <td12233a@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Client.Resources;
 using Content.Client.Stylesheets.Fonts;
 using Content.Client.Stylesheets.Palette;
@@ -22,10 +30,18 @@ public sealed class LabelSheetlet : Sheetlet<PalettedStylesheet>
                 .Class(StyleClass.LabelHeading)
                 .Font(sheet.BaseFont.GetFont(16, FontKind.Bold))
                 .FontColor(sheet.HighlightPalette.Text),
+            E<RichTextLabel>()
+                .Class(StyleClass.LabelHeading)
+                .Font(sheet.BaseFont.GetFont(16, FontKind.Bold))
+                .Modulate(sheet.HighlightPalette.Text),
             E<Label>()
                 .Class(StyleClass.LabelHeadingBigger)
                 .Font(sheet.BaseFont.GetFont(20, FontKind.Bold))
                 .FontColor(sheet.HighlightPalette.Text),
+            E<RichTextLabel>()
+                .Class(StyleClass.LabelHeadingBigger)
+                .Font(sheet.BaseFont.GetFont(20, FontKind.Bold))
+                .Modulate(sheet.HighlightPalette.Text),
             E<Label>()
                 .Class(StyleClass.LabelSubText)
                 .Font(sheet.BaseFont.GetFont(10))
@@ -34,6 +50,10 @@ public sealed class LabelSheetlet : Sheetlet<PalettedStylesheet>
                 .Class(StyleClass.LabelKeyText)
                 .Font(sheet.BaseFont.GetFont(12, FontKind.Bold))
                 .FontColor(sheet.HighlightPalette.Text),
+            E<RichTextLabel>()
+                .Class(StyleClass.LabelKeyText)
+                .Font(sheet.BaseFont.GetFont(12, FontKind.Bold))
+                .Modulate(sheet.HighlightPalette.Text),
             E<Label>()
                 .Class(StyleClass.LabelWeak)
                 .FontColor(Color.DarkGray), // TODO: you know the drill by now

@@ -1,3 +1,64 @@
+// SPDX-FileCopyrightText: 2019 ZelteHonor <gabrieldionbouchard@gmail.com>
+// SPDX-FileCopyrightText: 2020 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2020 FL-OZ <anotherscuffed@gmail.com>
+// SPDX-FileCopyrightText: 2020 Injazz <43905364+Injazz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2020 Memory <58238103+FL-OZ@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2020 Qustinnus <Floydje123@hotmail.com>
+// SPDX-FileCopyrightText: 2020 Rohesie <rohesie@gmail.com>
+// SPDX-FileCopyrightText: 2020 Víctor Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2020 chairbender <kwhipke1@gmail.com>
+// SPDX-FileCopyrightText: 2020 daniel-cr <eldanielcr@gmail.com>
+// SPDX-FileCopyrightText: 2020 moneyl <8206401+Moneyl@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Daniel Castro Razo <eldanielcr@gmail.com>
+// SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Galactic Chimp <GalacticChimpanzee@gmail.com>
+// SPDX-FileCopyrightText: 2021 Javier Guardia Fernández <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Swept <sweptwastaken@protonmail.com>
+// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <gradientvera@outlook.com>
+// SPDX-FileCopyrightText: 2022 Acruid <shatter66@gmail.com>
+// SPDX-FileCopyrightText: 2022 Emisse <99158783+Emisse@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Paul Ritter <ritter.paul1@googlemail.com>
+// SPDX-FileCopyrightText: 2022 keronshb <54602815+keronshb@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+// SPDX-FileCopyrightText: 2023 Slava0135 <40753025+Slava0135@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Vordenburg <114301317+Vordenburg@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2024 LordCarve <27449516+LordCarve@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 MilenVolf <63782763+MilenVolf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Mr. 27 <45323883+Dutch-VanDerLinde@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2024 Trevor Day <tday93@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 TsjipTsjip <19798667+TsjipTsjip@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Hannah Giovanna Dawson <karakkaraz@gmail.com>
+// SPDX-FileCopyrightText: 2025 JesterX666 <32009105+JesterX666@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Kyle Tyo <36606155+VerinSenpai@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 M4rchy-S <89603088+M4rchy-S@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2025 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 SpaceManiac <tad@platymuus.com>
+// SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2025 beck-thompson <107373427+beck-thompson@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 āda <ss.adasts@gmail.com>
+// SPDX-FileCopyrightText: 2026 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 Velken <8467292+Velken@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 taydeo <tay@funkystation.org>
+// SPDX-FileCopyrightText: 2026 taydeo <td12233a@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Linq;
 using System.Numerics;
 using Content.Server.Administration.Logs;
@@ -74,6 +135,16 @@ public sealed partial class ExplosionSystem : SharedExplosionSystem
     public const ushort DefaultTileSize = 1;
 
     public const int MaxExplosionAudioRange = 30;
+
+    /// <summary>
+    ///     The "default" explosion prototype.
+    /// </summary>
+    /// <remarks>
+    ///     Generally components should specify an explosion prototype via a yaml datafield, so that the yaml-linter can
+    ///     find errors. However some components, like rogue arrows, or some commands like the admin-smite need to have
+    ///     a "default" option specified outside of yaml data-fields. Hence this const string.
+    /// </remarks>
+    public static readonly ProtoId<ExplosionPrototype> DefaultExplosionPrototypeId = "Default";
 
     public override void Initialize()
     {
@@ -355,6 +426,9 @@ public sealed partial class ExplosionSystem : SharedExplosionSystem
         // camera shake
         CameraShake(iterationIntensity.Count * 4f, pos, queued.TotalIntensity);
 
+        // PVS bypass shockwave distortion ring
+        SendShockwave(pos, iterationIntensity.Count, queued.TotalIntensity);
+
         //For whatever bloody reason, sound system requires ENTITY coordinates.
         var mapEntityCoords = _transformSystem.ToCoordinates(_map.GetMap(pos.MapId), pos);
 
@@ -427,5 +501,78 @@ public sealed partial class ExplosionSystem : SharedExplosionSystem
             if (effect > 0.01f)
                 _recoilSystem.KickCamera(uid, -delta.Normalized() * effect);
         }
+    }
+
+    /// <summary>
+    /// Sends shockwave distortion events to all players in the visual range
+    /// </summary>
+    private void SendShockwave(MapCoordinates epicenter, int iterationCount, float totalIntensity)
+    {
+        const float MinIntensityForShockwave = 150f;
+        const float NuclearIntensityThreshold = 50000f;
+
+        if (totalIntensity < MinIntensityForShockwave)
+            return;
+
+        var now = _timing.CurTime.TotalSeconds;
+        var pos = epicenter.Position;
+
+        if (totalIntensity >= NuclearIntensityThreshold)
+        {
+            var filter = Filter.BroadcastMap(epicenter.MapId);
+
+            // 0 - flash
+            RaiseNetworkEvent(new ExplosionShockwaveEvent(
+                epicenter.MapId, pos, now,
+                maxRadiusTiles: 1f,
+                durationSeconds: 3f,
+                intensity: 0f,
+                flash: true), filter);
+
+            // 1 - fast inner distortion ring
+            RaiseNetworkEvent(new ExplosionShockwaveEvent(
+                epicenter.MapId, pos, now + 0.3,
+                maxRadiusTiles: 60f,
+                durationSeconds: 1.28f,
+                intensity: 1f), filter);
+
+            // 2 - primary shockwave
+            RaiseNetworkEvent(new ExplosionShockwaveEvent(
+                epicenter.MapId, pos, now + 0.35,
+                maxRadiusTiles: 120f,
+                durationSeconds: 2.3f,
+                intensity: 0.85f), filter);
+
+            // 3 - pressure wave
+            RaiseNetworkEvent(new ExplosionShockwaveEvent(
+                epicenter.MapId, pos, now + 0.7,
+                maxRadiusTiles: 200f,
+                durationSeconds: 3.2f,
+                intensity: 0.4f), filter);
+
+            return;
+        }
+
+        // Wave radius and reach scale with intensity; at 150 nearby players see a short pulse, larger blasts travel farther.
+        var explosionRadius = IntensityToRadius(totalIntensity, 1f, float.MaxValue);
+        var minExplosionRadius = IntensityToRadius(MinIntensityForShockwave, 1f, float.MaxValue);
+        var shockwaveRadius = MathF.Max(7f, 7f + (explosionRadius - minExplosionRadius) * 2f);
+
+        var intensityT = Math.Clamp((totalIntensity - MinIntensityForShockwave) / 8000f, 0f, 1f);
+        var visualIntensity = 0.45f + intensityT * 0.55f;
+
+        var duration = Math.Clamp(0.5f + shockwaveRadius / 20f, 0.5f, 1.85f);
+
+        var reachFromIntensity = 22f + MathF.Sqrt(totalIntensity - MinIntensityForShockwave) * 1.8f;
+        var visualRange = MathF.Max(
+            shockwaveRadius + 18f,
+            MathF.Max(reachFromIntensity, iterationCount * 5f));
+
+        var ev = new ExplosionShockwaveEvent(
+            epicenter.MapId, pos, now,
+            shockwaveRadius, duration, visualIntensity);
+
+        var shockwaveFilter = Filter.Empty().AddInRange(epicenter, visualRange, _playerManager, EntityManager);
+        RaiseNetworkEvent(ev, shockwaveFilter);
     }
 }

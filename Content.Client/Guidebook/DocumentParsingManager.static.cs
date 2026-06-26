@@ -1,3 +1,13 @@
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Thomas <87614336+Aeshus@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 pathetic meowmeow <uhhadd@gmail.com>
+// SPDX-FileCopyrightText: 2026 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 Princess Cheeseballs <66055347+Princess-Cheeseballs@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 taydeo <tay@funkystation.org>
+// SPDX-FileCopyrightText: 2026 taydeo <td12233a@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Linq;
 using Content.Client.Guidebook.Controls;
 using Pidgin;
@@ -89,32 +99,35 @@ public sealed partial class DocumentParsingManager
             .Cast<Control>())
         .Labelled("richtext");
 
+    private static RichTextLabel CreateWrappingHeader(string text, string styleClass)
+    {
+        var label = new RichTextLabel
+        {
+            HorizontalExpand = true,
+            VerticalAlignment = VAlignment.Top,
+            StyleClasses = { styleClass },
+        };
+
+        var msg = new FormattedMessage();
+        msg.AddText(text);
+        label.SetMessage(msg);
+        return label;
+    }
+
     private static readonly Parser<char, Control> HeaderControlParser = Try(Char('#'))
-        .Then(SkipWhitespaces.Then(Map(text => new Label
-                {
-                    Text = text,
-                    StyleClasses = { "LabelHeadingBigger" }
-                },
+        .Then(SkipWhitespaces.Then(Map(text => CreateWrappingHeader(text, "LabelHeadingBigger"),
                 AnyCharExcept('\n').AtLeastOnceString())
             .Cast<Control>()))
         .Labelled("header");
 
     private static readonly Parser<char, Control> SubHeaderControlParser = Try(String("##"))
-        .Then(SkipWhitespaces.Then(Map(text => new Label
-                {
-                    Text = text,
-                    StyleClasses = { "LabelHeading" }
-                },
+        .Then(SkipWhitespaces.Then(Map(text => CreateWrappingHeader(text, "LabelHeading"),
                 AnyCharExcept('\n').AtLeastOnceString())
             .Cast<Control>()))
         .Labelled("subheader");
 
     private static readonly Parser<char, Control> TertiaryHeaderControlParser = Try(String("###"))
-        .Then(SkipWhitespaces.Then(Map(text => new Label
-                {
-                    Text = text,
-                    StyleClasses = { "LabelKeyText" }
-                },
+        .Then(SkipWhitespaces.Then(Map(text => CreateWrappingHeader(text, "LabelKeyText"),
                 AnyCharExcept('\n').AtLeastOnceString())
             .Cast<Control>()))
         .Labelled("tertiaryheader");

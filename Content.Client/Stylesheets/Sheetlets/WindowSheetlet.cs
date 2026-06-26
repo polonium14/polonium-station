@@ -1,3 +1,9 @@
+// SPDX-FileCopyrightText: 2025 Brandon Li <48413902+aspiringLich@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 taydeo <tay@funkystation.org>
+// SPDX-FileCopyrightText: 2026 taydeo <td12233a@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Client.Resources;
 using Content.Client.Stylesheets.Fonts;
 using Content.Client.Stylesheets.Palette;
@@ -53,6 +59,8 @@ public sealed class WindowSheetlet<T> : Sheetlet<T>
         var leftPanel = StyleBoxHelpers.OpenLeftStyleBox(sheet);
         leftPanel.SetPadding(StyleBox.Margin.All, 0.0f);
 
+        var windowTitleFont = PoloniumFonts.GetWindowTitleFont(ResCache);
+
         // TODO: maybe also change everything here to `NanoWindow` or something
         return
         [
@@ -60,11 +68,11 @@ public sealed class WindowSheetlet<T> : Sheetlet<T>
             E<Label>()
                 .Class(DefaultWindow.StyleClassWindowTitle)
                 .FontColor(sheet.HighlightPalette.Text)
-                .Font(sheet.BaseFont.GetFont(14, FontKind.Bold)),
+                .Font(windowTitleFont),
             E<Label>()
                 .Class("windowTitleAlert")
                 .FontColor(Color.White)
-                .Font(sheet.BaseFont.GetFont(14, FontKind.Bold)),
+                .Font(windowTitleFont),
             // TODO: maybe also change everything here to `NanoWindow` or something
             E()
                 .Class(DefaultWindow.StyleClassWindowPanel)
@@ -104,7 +112,7 @@ public sealed class WindowSheetlet<T> : Sheetlet<T>
             // Title
             E<Label>()
                 .Class("FancyWindowTitle") // TODO: hardcoding class name
-                .Font(ResCache.GetFont("/Fonts/Sysfont/Sysfont-Regular.otf", 13)) // TODO: hardcoding font
+                .Font(windowTitleFont)
                 .FontColor(sheet.HighlightPalette.Text),
 
             // Help Button

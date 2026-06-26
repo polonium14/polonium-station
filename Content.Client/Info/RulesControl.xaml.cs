@@ -1,3 +1,19 @@
+// SPDX-FileCopyrightText: 2021 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Kevin Zheng <kevinz5000@gmail.com>
+// SPDX-FileCopyrightText: 2022 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2022 Veritius <veritiusgaming@gmail.com>
+// SPDX-FileCopyrightText: 2022 ike709 <ike709@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 metalgearsloth <metalgearsloth@gmail.com>
+// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 taydeo <tay@funkystation.org>
+// SPDX-FileCopyrightText: 2026 taydeo <td12233a@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Client.Guidebook;
 using Content.Client.Guidebook.RichText;
 using Content.Client.UserInterface.Systems.Info;
@@ -24,7 +40,11 @@ public sealed partial class RulesControl : BoxContainer, ILinkClickHandler
 
         SetGuide();
 
-        HomeButton.OnPressed += _ => SetGuide();
+        HomeButton.OnPressed += _ =>
+        {
+            _priorEntries.Clear();
+            SetGuide(addToPrior: false);
+        };
 
         BackButton.OnPressed += _ => SetGuide(_priorEntries.Pop(), false);
     }
@@ -48,7 +68,8 @@ public sealed partial class RulesControl : BoxContainer, ILinkClickHandler
             _priorEntries.Push(_currentEntry);
         _currentEntry = entry.Value;
 
-        HomeButton.Visible = entry.Value != coreEntry.Id;
-        BackButton.Visible = _priorEntries.Count != 0 && _priorEntries.Peek() != entry.Value;
+        var onCoreRulesPage = entry.Value == coreEntry.Id;
+        HomeButton.Visible = !onCoreRulesPage;
+        BackButton.Visible = !onCoreRulesPage && _priorEntries.Count != 0;
     }
 }
