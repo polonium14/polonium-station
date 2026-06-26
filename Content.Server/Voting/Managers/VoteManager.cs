@@ -278,7 +278,7 @@ namespace Content.Server.Voting.Managers
             if (!CheckVoterEligibility(player, v.VoterEligibility))
             {
                 msg.VoteActive = false;
-                player.Channel.SendMessage(msg);
+                _netManager.ServerSendMessage(msg, player.Channel);
                 return;
             }
 
@@ -321,7 +321,7 @@ namespace Content.Server.Voting.Managers
                 msg.Options[i] = (msg.DisplayVotes ? (ushort) entry.Votes : (ushort) 0, entry.Text);
             }
 
-            player.Channel.SendMessage(msg);
+            _netManager.ServerSendMessage(msg, player.Channel);
         }
 
         private void DirtyCanCallVoteAll()
