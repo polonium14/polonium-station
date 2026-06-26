@@ -7,6 +7,14 @@ role_timers = false
 admin_job_tracking = true
 role_loadout_timers = false
 
+# Windows + Docker/Hyper-V often reserves ports 1123-1222, which blocks the default 1212.
+# Use a port outside excluded ranges; status host follows net.port automatically.
+[net]
+port = 1223
+
+[status]
+bind = "localhost:1223"
+
 [events]
 enabled = false
 
