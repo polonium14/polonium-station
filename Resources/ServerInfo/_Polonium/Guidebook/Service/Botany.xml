@@ -95,7 +95,7 @@ Niektóre chemikalia mają specjalne działanie na rośliny.
 
 [textlink="Kliknij tutaj, aby zobaczyć wszystkie chemikalia botaniczne." link="Botanical"]
 
-  <GuideReagentEmbed Reagent="Multiver"/>
+<GuideReagentEmbed Reagent="Dylovene"/>
 <GuideReagentEmbed Reagent="Cryoxadone"/>
 <GuideReagentEmbed Reagent="Necrosol"/>
 <GuideReagentEmbed Reagent="Phalanximine"/>

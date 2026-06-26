@@ -99,7 +99,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
   Along with this, hollowing someone does not mean they are removed from the round.
 
   Hollowing someone gives them 200 genetic damage; in most cases this does mean they are dead forever. Genetic damage causes cloning to fail, and there are no conventional means for healing genetic damage on corpses.
-  By setting up pyrogenics and making Natusixadone, medical is able to completely revive any hollowed corpses.
+  By setting up cryogenics and making Opporozidone, medical is able to completely revive any hollowed corpses.
 
-  <GuideReagentEmbed Reagent="Natusixadone"/>
+  <GuideReagentEmbed Reagent="Opporozidone"/>
 </Document>
