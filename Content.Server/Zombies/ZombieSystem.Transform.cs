@@ -107,6 +107,7 @@ public sealed partial class ZombieSystem
     [Dependency] private readonly ServerInventorySystem _inventory = default!;
     [Dependency] private readonly MindSystem _mind = default!;
     [Dependency] private readonly MovementSpeedModifierSystem _movementSpeedModifier = default!;
+    [Dependency] private readonly HTNSystem _htn = default!;
     [Dependency] private readonly NPCSystem _npc = default!;
     [Dependency] private readonly SharedRoleSystem _roles = default!;
     [Dependency] private readonly StandingStateSystem _standing = default!;
@@ -293,12 +294,13 @@ public sealed partial class ZombieSystem
         var htn = EnsureComp<HTNComponent>(target);
         htn.RootTask = new HTNCompoundTask() { Task = "SimpleHostileCompound" };
         htn.Blackboard.SetValue(NPCBlackboard.Owner, target);
-        _npc.SleepNPC(target, htn);
 
         //He's gotta have a mind
         var hasMind = _mind.TryGetMind(target, out var mindId, out _);
         if (hasMind && _mind.TryGetSession(mindId, out var session))
         {
+            _npc.SleepNPC(target, htn);
+
             //Zombie role for player manifest
             _roles.MindAddRole(mindId, "MindRoleZombie", mind: null, silent: true);
 
@@ -311,6 +313,7 @@ public sealed partial class ZombieSystem
         else
         {
             _npc.WakeNPC(target, htn);
+            _htn.Replan(htn);
         }
 
         if (!HasComp<GhostRoleMobSpawnerComponent>(target) && !hasMind) //this specific component gives build test trouble so pop off, ig
