@@ -312,6 +312,7 @@ public sealed partial class ZombieSystem
         }
         else
         {
+            _npc.SleepNPC(target, htn);
             _npc.WakeNPC(target, htn);
             _htn.Replan(htn);
         }
