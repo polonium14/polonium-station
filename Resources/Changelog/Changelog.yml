@@ -1,13 +1,4 @@
 ﻿Entries:
-- author: PicklOH
-  changes:
-  - message: Added a lethals drum to the Bulldog bundle.
-    type: Add
-  - message: Removed a beanbag drum from the Bulldog bundle.
-    type: Remove
-  id: 7965
-  time: '2025-02-16T22:30:46.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34945
 - author: psykana
   changes:
   - message: DNA Scrambler implant now requires confirmation to activate
@@ -4191,3 +4182,10 @@
   id: 9272
   time: '2026-06-24T18:42:41.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/718
+- author: Nikita_pl
+  changes:
+  - message: "Poprawiono zombiak\xF3w kt\xF3re nic nie robi\u0142y po zainfekowaniu"
+    type: Fix
+  id: 9273
+  time: '2026-06-27T18:57:09.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/738
