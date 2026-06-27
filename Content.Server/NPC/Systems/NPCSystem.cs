@@ -27,6 +27,7 @@ using Content.Shared.Mobs;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.NPC;
 using Content.Shared.NPC.Systems;
+using Content.Shared.Zombies;
 using Robust.Server.GameObjects;
 using Robust.Shared.Configuration;
 using Robust.Shared.Player;
@@ -70,8 +71,11 @@ namespace Content.Server.NPC.Systems
             if (_mobState.IsIncapacitated(uid) || TerminatingOrDeleted(uid))
                 return;
 
-            // This NPC has an attached mind, so it should not wake up.
-            if (TryComp<MindContainerComponent>(uid, out var mindContainer) && mindContainer.HasMind)
+            // SSD crew should stay inactive until their player returns.
+            // Zombies resume AI when abandoned
+            if (TryComp<MindContainerComponent>(uid, out var mindContainer)
+                && mindContainer.HasMind
+                && !HasComp<ZombieComponent>(uid))
                 return;
 
             WakeNPC(uid, component);
