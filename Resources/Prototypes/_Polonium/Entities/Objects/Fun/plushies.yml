@@ -91,3 +91,18 @@
       - !type:DoActsBehavior
         acts: ["Destruction"]
   - type: Damageable
+
+- type: entity
+  parent: PlushieMoth
+  id: PlushieMothDeathshead
+  name: pluszak Asa Trupiogłowego
+  description: Puszysty pluszak przypominający pewnego barmana ćmę. Widnieje na nim mały napis "Nie dawać whiskey po północy".
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Fun/Plushies/deathshead.rsi
+    state: icon
+  - type: ReactionMixer
+    mixMessage: "spoon-mixing-success"
+    timeToMix: 0.5
+    reactionTypes:
+    - Stir
