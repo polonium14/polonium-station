@@ -80,6 +80,9 @@
         volume: -3
     listeningRange: 2.5
     speakerVolume: Speak
+  - type: ContainerContainer
+    containers:
+      handset: !type:ContainerSlot {}
   - type: ItemSlots
     slots:
       handset:

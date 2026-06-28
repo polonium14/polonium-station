@@ -8,6 +8,6 @@ namespace Content.Shared._Polonium.CallablePhone;
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class TelephoneHandsetComponent : Component
 {
-    [DataField, AutoNetworkedField]
+    [AutoNetworkedField]
     public NetEntity ParentPhone;
 }
