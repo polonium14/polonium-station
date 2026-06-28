@@ -28,7 +28,7 @@ public sealed class PlantAnalyzerSystem : BaseAnalyzerSystem<PlantAnalyzerCompon
     [Dependency] private readonly SharedHandsSystem _handsSystem = default!;
     [Dependency] private readonly PaperSystem _paperSystem = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    [Dependency] private readonly SharedLabelSystem _labelSystem = default!;
+    [Dependency] private readonly LabelSystem _labelSystem = default!;
 
     public override void Initialize()
     {
@@ -94,7 +94,7 @@ public sealed class PlantAnalyzerSystem : BaseAnalyzerSystem<PlantAnalyzerCompon
                     yield: plantHolder.Seed.ProductPrototypes.Count == 0 ? 0 : BotanySystem.CalculateTotalYield(plantHolder.Seed.Yield, plantHolder.YieldMod),
                     potency: plantHolder.Seed.Potency,
                     chemicals: [.. plantHolder.Seed.Chemicals.Keys],
-                    produce: plantHolder.Seed.ProductPrototypes,
+                    produce: plantHolder.Seed.ProductPrototypes.Select(x => (string)x).ToList(),
                     exudeGasses: [.. plantHolder.Seed.ExudeGasses.Keys],
                     seedless: plantHolder.Seed.Seedless
                 );

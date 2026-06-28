@@ -11,8 +11,8 @@
     - state: icon
     - state: analyzer
       shader: unshaded
-      visible: true
-      map: [ "enum.PowerDeviceVisualLayers.Powered" ]
+      visible: false
+      map: ["enum.ToggleableVisuals.Layer"]
   - type: Item
     heldPrefix: analyzer
     storedRotation: -90
@@ -31,8 +31,8 @@
   - type: Appearance
   - type: GenericVisualizer
     visuals:
-      enum.PowerCellSlotVisuals.Enabled:
-        enum.PowerDeviceVisualLayers.Powered:
+      enum.ToggleableVisuals.Enabled:
+        enum.ToggleableVisuals.Layer:
           True: { visible: true }
           False: { visible: false }
   - type: GuideHelp

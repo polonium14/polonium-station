@@ -4,7 +4,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Diagnostics.CodeAnalysis;
-using Content.Server.PowerCell;
+using Content.Shared.PowerCell;
 using Content.Shared.DoAfter;
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Events;
@@ -78,7 +78,7 @@ public abstract class BaseAnalyzerSystem<TAnalyzerComponent, TAnalyzerDoAfterEve
     /// </summary>
     public void OnAfterInteract(Entity<TAnalyzerComponent> uid, ref AfterInteractEvent args)
     {
-        if (args.Target == null || !args.CanReach || !ValidScanTarget(args.Target) || !Cell.HasDrawCharge(uid, user: args.User))
+        if (args.Target == null || !args.CanReach || !ValidScanTarget(args.Target) || !Cell.HasDrawCharge(uid.Owner, user: args.User))
             return;
 
         Audio.PlayPvs(uid.Comp.ScanningBeginSound, uid);
@@ -98,7 +98,7 @@ public abstract class BaseAnalyzerSystem<TAnalyzerComponent, TAnalyzerDoAfterEve
 
     public void OnDoAfter(Entity<TAnalyzerComponent> uid, ref TAnalyzerDoAfterEvent args)
     {
-        if (args.Handled || args.Cancelled || args.Target == null || !Cell.HasDrawCharge(uid, user: args.User))
+        if (args.Handled || args.Cancelled || args.Target == null || !Cell.HasDrawCharge(uid.Owner, user: args.User))
             return;
 
         if (!uid.Comp.Silent)
