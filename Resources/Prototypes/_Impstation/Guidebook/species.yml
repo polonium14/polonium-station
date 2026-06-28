@@ -7,7 +7,4 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-- type: guideEntry
-  id: Thaven
-  name: Thaven
-  text: "/ServerInfo/_Polonium/Guidebook/Mobs/Thaven.xml"
+# TEMP: disabled until guidebook entity embeds are fixed

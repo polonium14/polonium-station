@@ -189,7 +189,8 @@
 - type: guideEntry
   id: Thermomachines
   name: guide-entry-thermomachines
-  text: "/ServerInfo/_Polonium/Guidebook/Engineering/Thermomachines.xml"
+  # TEMP: entity embeds broken
+  text: "/ServerInfo/_Polonium/Guidebook/_Stub.xml"
   children:
   - Radiators
 
@@ -331,12 +332,14 @@
 - type: guideEntry
   id: VoltageNetworks
   name: guide-entry-voltagenetworks
-  text: "/ServerInfo/_Polonium/Guidebook/Engineering/VoltageNetworks.xml"
+  # TEMP: entity embeds broken
+  text: "/ServerInfo/_Polonium/Guidebook/_Stub.xml"
 
 - type: guideEntry
   id: Generators
   name: guide-entry-generators
-  text: "/ServerInfo/_Polonium/Guidebook/Engineering/Generators.xml"
+  # TEMP: entity embeds broken
+  text: "/ServerInfo/_Polonium/Guidebook/_Stub.xml"
   children:
   - PortableGenerator
   - AME
@@ -346,7 +349,7 @@
   - RTG
   - SolarPanels
   # Goobstation - Supermatter
-  - Supermatter
+  # - Supermatter
 
 - type: guideEntry
   id: AME

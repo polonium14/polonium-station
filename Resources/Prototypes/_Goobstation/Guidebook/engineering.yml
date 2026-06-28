@@ -9,7 +9,4 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-- type: guideEntry
-  id: Supermatter
-  name: guide-entry-sm
-  text: "/ServerInfo/_Polonium/Guidebook/Engineering/Supermatter.xml"
+# TEMP: disabled until guidebook entity embeds are fixed

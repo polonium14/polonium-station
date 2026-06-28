@@ -7,7 +7,4 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-- type: guideEntry
-  id: Changelings
-  name: guide-entry-changelings
-  text: "/ServerInfo/_Polonium/Guidebook/Antagonist/Changelings.xml"
+# TEMP: disabled until guidebook entity embeds are fixed

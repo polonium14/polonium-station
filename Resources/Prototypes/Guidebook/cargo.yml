@@ -14,7 +14,8 @@
 - type: guideEntry
   id: Cargo
   name: guide-entry-cargo
-  text: "/ServerInfo/_Polonium/Guidebook/Cargo/Cargo.xml"
+  # TEMP: entity embeds broken
+  text: "/ServerInfo/_Polonium/Guidebook/_Stub.xml"
   children:
   - CargoBounties
   - Salvage

@@ -33,12 +33,13 @@
   name: guide-entry-antagonists
   text: "/ServerInfo/_Polonium/Guidebook/Antagonist/Antagonists.xml"
   children:
-  - CosmicCult # impstation - cosmic cult
+  # TEMP: disabled until guidebook entity embeds are fixed
+  # - CosmicCult # impstation - cosmic cult
   - Traitors
-  - Changelings # Goobstation - changelings
-  - Heretics # Goobstation - heretics
-  - Blob # Goobstation - Blob
-  - BloodCult # Funky Station - Blood Cult
+  # - Changelings # Goobstation - changelings
+  # - Heretics # Goobstation - heretics
+  # - Blob # Goobstation - Blob
+  # - BloodCult # Funky Station - Blood Cult
   - NuclearOperatives
   - Wizard
   - Zombies
@@ -52,12 +53,14 @@
 - type: guideEntry
   id: Traitors
   name: guide-entry-traitors
-  text: "/ServerInfo/_Polonium/Guidebook/Antagonist/Traitors.xml"
+  # TEMP: entity embeds broken
+  text: "/ServerInfo/_Polonium/Guidebook/_Stub.xml"
 
 - type: guideEntry
   id: NuclearOperatives
   name: guide-entry-nuclear-operatives
-  text: "/ServerInfo/_Polonium/Guidebook/Antagonist/Nuclear Operatives.xml"
+  # TEMP: entity embeds broken
+  text: "/ServerInfo/_Polonium/Guidebook/_Stub.xml"
 
 - type: guideEntry
   id: Zombies
@@ -67,12 +70,14 @@
 - type: guideEntry
   id: Revolutionaries
   name: guide-entry-revolutionaries
-  text: "/ServerInfo/_Polonium/Guidebook/Antagonist/Revolutionaries.xml" # goobstation
+  # TEMP: entity embeds broken
+  text: "/ServerInfo/_Polonium/Guidebook/_Stub.xml" # goobstation
 
 - type: guideEntry
   id: MinorAntagonists
   name: guide-entry-minor-antagonists
-  text: "/ServerInfo/_Polonium/Guidebook/Antagonist/MinorAntagonists.xml"
+  # TEMP: entity embeds broken
+  text: "/ServerInfo/_Polonium/Guidebook/_Stub.xml"
 
 - type: guideEntry
   id: SpaceNinja

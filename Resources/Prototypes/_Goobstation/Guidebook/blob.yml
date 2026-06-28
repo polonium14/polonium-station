@@ -7,7 +7,4 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-- type: guideEntry
-  id: Blob
-  name: guide-entry-blob
-  text: "/ServerInfo/_Polonium/Guidebook/Antagonist/Blob.xml"
+# TEMP: disabled until guidebook entity embeds are fixed

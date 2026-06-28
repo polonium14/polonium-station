@@ -10,7 +10,8 @@
 - type: guideEntry
   id: Surgery
   name: guide-entry-surgery
-  text: "/ServerInfo/_Polonium/Guidebook/Medical/Surgery.xml"
+  # TEMP: entity embeds broken
+  text: "/ServerInfo/_Polonium/Guidebook/_Stub.xml"
   children:
   - PartManipulation
   - OrganManipulation
@@ -20,22 +21,26 @@
 - type: guideEntry
   id: PartManipulation
   name: guide-entry-partmanipulation
-  text: "/ServerInfo/_Polonium/Guidebook/Medical/PartManipulation.xml"
+  # TEMP: entity embeds broken
+  text: "/ServerInfo/_Polonium/Guidebook/_Stub.xml"
   filterEnabled: true
 
 - type: guideEntry
   id: OrganManipulation
   name: guide-entry-organmanipulation
-  text: "/ServerInfo/_Polonium/Guidebook/Medical/OrganManipulation.xml"
+  # TEMP: entity embeds broken
+  text: "/ServerInfo/_Polonium/Guidebook/_Stub.xml"
   filterEnabled: true
 
 - type: guideEntry
   id: UtilitySurgeries
   name: guide-entry-utilitysurgeries
-  text: "/ServerInfo/_Polonium/Guidebook/Medical/UtilitySurgeries.xml"
+  # TEMP: entity embeds broken
+  text: "/ServerInfo/_Polonium/Guidebook/_Stub.xml"
   filterEnabled: true
 
 - type: guideEntry
   id: Autodoc
   name: guide-entry-autodoc
-  text: "/ServerInfo/_Polonium/Guidebook/Medical/Autodoc.xml"
+  # TEMP: entity embeds broken
+  text: "/ServerInfo/_Polonium/Guidebook/_Stub.xml"

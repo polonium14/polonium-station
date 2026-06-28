@@ -39,7 +39,8 @@
 - type: guideEntry
   id: Botany
   name: guide-entry-botany
-  text: "/ServerInfo/_Polonium/Guidebook/Service/Botany.xml"
+  # TEMP: entity embeds broken
+  text: "/ServerInfo/_Polonium/Guidebook/_Stub.xml"
 
 - type: guideEntry
   id: Chef

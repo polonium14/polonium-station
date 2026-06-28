@@ -40,4 +40,5 @@
 - type: guideEntry
   id: Survival
   name: guide-entry-survival
-  text: "/ServerInfo/_Polonium/Guidebook/Survival.xml"
+  # TEMP: entity embeds broken
+  text: "/ServerInfo/_Polonium/Guidebook/_Stub.xml"

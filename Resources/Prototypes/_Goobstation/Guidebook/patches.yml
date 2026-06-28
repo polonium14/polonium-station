@@ -10,4 +10,5 @@
 - type: guideEntry
   id: Medicalpatches
   name: guide-entry-medpatches
-  text: "/ServerInfo/_Polonium/Guidebook/Medical/Medicalpatches.xml"
+  # TEMP: entity embeds broken
+  text: "/ServerInfo/_Polonium/Guidebook/_Stub.xml"

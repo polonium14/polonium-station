@@ -153,7 +153,8 @@
 - type: guideEntry # Funk
   id: IngredientReactions
   name: guide-entry-ingredient-reactions
-  text: "/ServerInfo/_Polonium/Guidebook/Service/IngredientReactions.xml"
+  # TEMP: entity embeds broken
+  text: "/ServerInfo/_Polonium/Guidebook/_Stub.xml"
 
 - type: guideEntry
   id: Lawsets
