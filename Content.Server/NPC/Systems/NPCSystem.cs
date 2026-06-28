@@ -170,7 +170,7 @@ namespace Content.Server.NPC.Systems
             if (HasComp<ActorComponent>(uid))
                 return;
 
-            switch (args.NewMobState)
+            switch (args.Component.CurrentState)
             {
                 case MobState.Alive:
                 case MobState.SoftCritical:
