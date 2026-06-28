@@ -17,7 +17,7 @@ public sealed partial class PlantAdjustToxinsEntityEffectSystem : EntityEffectSy
 {
     protected override void Effect(Entity<PlantHolderComponent> entity, ref EntityEffectEvent<PlantAdjustToxins> args)
     {
-        if (entity.Comp.Seed == null || entity.Comp.Dead)
+        if (entity.Comp.Dead)
             return;
 
         entity.Comp.Toxins += args.Effect.Amount;

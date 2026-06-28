@@ -255,6 +255,7 @@
   - type: Storage
     whitelist:
       tags:
+      - PlantAnalyzer
       - PlantSampleTaker
       - BotanyShovel
       - BotanyHoe

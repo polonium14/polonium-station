@@ -209,6 +209,8 @@
         type: InstrumentBoundUserInterface
       enum.HealthAnalyzerUiKey.Key:
         type: HealthAnalyzerBoundUserInterface
+      enum.PlantAnalyzerUiKey.Key:
+        type: PlantAnalyzerBoundUserInterface
   - type: Tag
     tags:
     - DoorBumpOpener
@@ -1050,6 +1052,7 @@
       - WantedListCartridge
       - LogProbeCartridge
       - AstroNavCartridge
+      - PlantScanCartridge # Mira Sector
 
 - type: entity
   parent: CentcomPDA
@@ -1076,6 +1079,7 @@
       - WantedListCartridge
       - MedTekCartridge
       - AstroNavCartridge
+      - PlantScanCartridge # Mira Sector
   - type: Tag #  Ignore Chameleon tags
     tags:
     - DoorBumpOpener
@@ -1280,6 +1284,7 @@
       - WantedListCartridge
       - LogProbeCartridge
       - AstroNavCartridge
+      - PlantScanCartridge # Mira Sector
 
 - type: entity
   parent: ERTLeaderPDA
