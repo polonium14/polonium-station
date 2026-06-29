@@ -1,7 +1,7 @@
 {
     "version": 1,
     "license": "CC-BY-NC-SA-3.0",
-    "copyright": "Sprite by Princess Cheeseballs (github)" "edited by Mangos21 (github)/"
+    "copyright": "Sprite by Princess Cheeseballs (github), edit by Mangos21 (github)",
     "size": {
         "x": 32,
         "y": 32
@@ -9,10 +9,6 @@
     "states": [
         {
             "name": "icon"
-        },
-        {
-            "name": "equipped-HELMET",
-            "directions": 4
         },
         {
             "name": "inhand-left",
