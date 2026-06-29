@@ -54,6 +54,7 @@
   id: SecurityWeaponsStatic
   recipes:
   - Flash
+  - Stunbaton
   - CombatKnife
   - RiotShield
 
@@ -133,3 +134,9 @@
   - WeaponSubMachineGunGlauberyt
   - WeaponBORSniperGun
   - WeaponVisMPSPistol
+
+- type: latheRecipePack
+  id: SecurityDisablers
+  recipes:
+  - WeaponDisabler
+  - WeaponDisablerSMG
