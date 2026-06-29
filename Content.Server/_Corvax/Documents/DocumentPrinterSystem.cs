@@ -26,14 +26,19 @@ public sealed partial class DocumentPrinterSystem : EntitySystem
         var station = _station.GetOwningStation(result.ResultItem);
         var stationName = station != null ? Name(station.Value) : null;
 
+        // Polonium: avoid double localization string extraction
+        var content = Loc.HasString(paperComp.Content)
+            ? Loc.GetString(paperComp.Content)
+            : paperComp.Content;
+
         if (_itemSlots.TryGetSlot(ent.Owner, ent.Comp.SlotName, out var slot) && slot.Item is { Valid: true } idCardEntity
             && TryComp<IdCardComponent>(idCardEntity, out var idCard))
         {
-            _paper.SetContent((result.ResultItem, paperComp), FormatString(Loc.GetString(paperComp.Content), stationName, idCard));
+            _paper.SetContent((result.ResultItem, paperComp), FormatString(content, stationName, idCard));
         }
         else
         {
-            _paper.SetContent((result.ResultItem, paperComp), FormatString(Loc.GetString(paperComp.Content), stationName));
+            _paper.SetContent((result.ResultItem, paperComp), FormatString(content, stationName));
         }
     }
 

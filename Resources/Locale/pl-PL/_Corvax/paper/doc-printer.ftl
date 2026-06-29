@@ -1,5 +1,5 @@
-doc-text-printer-report-station = [color=#1b67a5]█▄ █ ▀█▀    [head=2]Raport o sytuacji na stacji[/head][/color]
-    {"[color=#1b67a5]█ ▀█   █     [head=3]Sektor: :STACJA: | DOW-CD[/head][/color]"}
+doc-text-printer-report-station = [color=#1b67a5][mono]█▄ █ ▀█▀[/mono]    [head=2]Raport o sytuacji na stacji[/head][/color]
+    {"[color=#1b67a5][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | DOW-CD[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -13,11 +13,11 @@ doc-text-printer-report-station = [color=#1b67a5]█▄ █ ▀█▀    [head=2
     {"- [bold]Integralność systemów technicznych:[/bold]"}
     {"- [bold]Uwagi dodatkowe*:[/bold]"}
     {"* - pole opcjonalne."}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-ert-request = [color=#1b67a5]█▄ █ ▀█▀    [head=2]Żądanie wysłania[/head][/color]
-    {"[color=#1b67a5]█ ▀█   █     [head=2]Jednostki Szybkiego Reagowania[/head][/color]"}
+doc-text-printer-ert-request = [color=#1b67a5][mono]█▄ █ ▀█▀[/mono]    [head=2]Żądanie wysłania[/head][/color]
+    {"[color=#1b67a5][mono]█ ▀█  █[/mono]     [head=2]Jednostki Szybkiego Reagowania[/head][/color]"}
     {"             [head=3]Sektor: :STACJA: | XXX-CD[/head]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
@@ -30,11 +30,11 @@ doc-text-printer-ert-request = [color=#1b67a5]█▄ █ ▀█▀    [head=2]Ż
     {"- [bold]Efektywność i stan działu Ochrony:[/bold]"}
     {"Przyjmuję do wiadomości, że niniejszy dokument zostanie poddany weryfikacji przez Centralne Dowództwo; rozumiem ryzyko związane z odrzuceniem bezzasadnego wezwania oraz biorę pełną odpowiedzialność za konsekwencje uruchomienia procedury ratunkowej; zobowiązuję się do osobistego wprowadzenia oddziału JSR w sytuację taktyczną niezwłocznie po jego przybyciu, o ile mój stan fizyczny oraz świadomość pozostaną zachowane:"}
     {"TAK/NIE (Usunąć niewłaściwe)"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-resignation = [color=#1b67a5]█▄ █ ▀█▀    [head=2]Wypowiedzenie umowy o pracę[/head][/color]
-    {"[color=#1b67a5]█ ▀█   █     [head=3]Sektor: :STACJA: | XXX-DOW[/head][/color]"}
+doc-text-printer-resignation = [color=#1b67a5][mono]█▄ █ ▀█▀[/mono]    [head=2]Wypowiedzenie umowy o pracę[/head][/color]
+    {"[color=#1b67a5][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | XXX-DOW[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -43,28 +43,28 @@ doc-text-printer-resignation = [color=#1b67a5]█▄ █ ▀█▀    [head=2]Wy
     {"Niniejszym składam oficjalną rezygnację z zajmowanego przeze mnie stanowiska i proszę o rozwiązanie mojej umowy o pracę z korporacją NanoTrasen ze skutkiem natychmiastowym."}
     {"- [bold]Powód wypowiedzenia:[/bold]"}
     {"[bold]Zobowiązuję się[/bold] natychmiast po zatwierdzeniu niniejszego pisma przez osobę przełożoną zwrócić wszelkie mienie korporacyjne (w tym odzież, kartę identyfikacyjną oraz PDA) należące do działu, w którym byłem zatrudniony."}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-job-change-request = [color=#1b67a5]█▄ █ ▀█▀    [head=2]Wniosek o zmianę stanowiska[/head][/color]
-    {"[color=#1b67a5]█ ▀█   █     [head=3]Sektor: :STACJA: | XXX-DOW[/head][/color]"}
+doc-text-printer-job-change-request = [color=#1b67a5][mono]█▄ █ ▀█▀[/mono]    [head=2]Wniosek o zmianę stanowiska[/head][/color]
+    {"[color=#1b67a5][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | XXX-DOW[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
     {"[bold]Stanowisko:[/bold] :STANOWISKO:"}
     {"==============================================="}
-    {"Proszę o rozpatrzenie mojej kandydatury na stanowisko :STANOWISKO: w dziale <Wprowadź dział>."}
+    {"Proszę o rozpatrzenie mojej kandydatury na stanowisko <Wprowadź stanowisko> w dziale <Wprowadź dział>."}
     {"- [bold]Powód zmiany stanowiska:[/bold]"}
     {"- [bold]Moje kompetencje:[/bold]"}
     {"[bold]Zobowiązuję się[/bold] przestrzegać Standardowych Procedur Operacyjnych działu oraz wszelkich wytycznych związanych z nowym stanowiskiem pracy:"}
     {"TAK/NIE (Usunąć niewłaściwe)"}
     {"[bold]Zobowiązuję się[/bold] natychmiast po zatwierdzeniu niniejszego pisma przez osobę przełożoną zwrócić wszelkie mienie korporacyjne (w tym odzież, kartę identyfikacyjną oraz PDA) należące do działu, w którym byłem zatrudniony:"}
     {"TAK/NIE (Usunąć niewłaściwe)"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-access-extension = [color=#1b67a5]█▄ █ ▀█▀    [head=2]Wniosek o rozszerzenie dostępu[/head][/color]
-    {"[color=#1b67a5]█ ▀█   █     [head=3]Sektor: :STACJA: | XXX-DOW[/head][/color]"}
+doc-text-printer-access-extension = [color=#1b67a5][mono]█▄ █ ▀█▀[/mono]    [head=2]Wniosek o rozszerzenie dostępu[/head][/color]
+    {"[color=#1b67a5][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | XXX-DOW[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -74,11 +74,11 @@ doc-text-printer-access-extension = [color=#1b67a5]█▄ █ ▀█▀    [head
     {"- [bold]Uzasadnienie:[/bold]"}
     {"Rozumiem ryzyko związane z odrzuceniem bezzasadnego wniosku oraz biorę pełną odpowiedzialność za konsekwencje wynikające z przyznania mi dodatkowych dostępów:"}
     {"TAK/NIE (Usunąć niewłaściwe)"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-id-card-request = [color=#1b67a5]█▄ █ ▀█▀    [head=2]Wniosek o wydanie karty identyfikacyjnej[/head][/color]
-    {"[color=#1b67a5]█ ▀█   █     [head=3]Sektor: :STACJA: | XXX-DOW[/head][/color]"}
+doc-text-printer-id-card-request = [color=#1b67a5][mono]█▄ █ ▀█▀[/mono]    [head=2]Wniosek o wydanie karty identyfikacyjnej[/head][/color]
+    {"[color=#1b67a5][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | XXX-DOW[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -89,25 +89,25 @@ doc-text-printer-id-card-request = [color=#1b67a5]█▄ █ ▀█▀    [head=
     {"- [bold]Stanowisko docelowe:[/bold]"}
     {"- [bold]Sposób potwierdzenia tożsamości:[/bold]"}
     {"- [bold]Wydanie PDA jest wymagane:[/bold] TAK/NIE (Usunąć niewłaściwe)"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-removal-order = [color=#1b67a5]█▄ █ ▀█▀    [head=2]Nakaz usunięcia ze stanowiska[/head][/color]
-    {"[color=#1b67a5]█ ▀█   █     [head=3]Sektor: :STACJA: | XXX-DOW[/head][/color]"}
+doc-text-printer-removal-order = [color=#1b67a5][mono]█▄ █ ▀█▀[/mono]    [head=2]Nakaz usunięcia ze stanowiska[/head][/color]
+    {"[color=#1b67a5][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | XXX-DOW[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
     {"[bold]Stanowisko:[/bold] :STANOWISKO:"}
     {"==============================================="}
-    {"Niniejszym nakazuję natychmiastowe odsunięcie <Imię i nazwisko pracownika> od pełnienia obowiązków na stanowisku :STANOWISKO: w dziale <Wprowadź dział>."}
+    {"Niniejszym nakazuję natychmiastowe odsunięcie <Imię i nazwisko pracownika> od pełnienia obowiązków na stanowisku <Wprowadź stanowisko> w dziale <Wprowadź dział>."}
     {"[bold]Decyzja posiada rygor natychmiastowej wykonalności.[/bold]"}
     {"- [bold]Powód usunięcia:[/bold]"}
     {"Pracownik [bold]jest zobowiązany[/bold] do zwrotu wszelkiego mienia korporacyjnego (w tym odzieży, karty identyfikacyjnej oraz PDA) należącego do działu, w którym był zatrudniony, nie później niż w ciągu 10 minut od otrzymania niniejszego nakazu. Niezastosowanie się do nakazu skutkuje interwencją ochrony stacji."}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-interim-head-request = [color=#1b67a5]█▄ █ ▀█▀    [head=2]Wniosek o wyznaczenie tymczasowego[/head][/color]
-    {"[color=#1b67a5]█ ▀█   █     [head=2]pełniącego obowiązki Kierownika Działu[/head][/color]"}
+doc-text-printer-interim-head-request = [color=#1b67a5][mono]█▄ █ ▀█▀[/mono]    [head=2]Wniosek o wyznaczenie tymczasowego[/head][/color]
+    {"[color=#1b67a5][mono]█ ▀█  █[/mono]     [head=2]pełniącego obowiązki Kierownika Działu[/head][/color]"}
     {"             [head=3]Sektor: :STACJA: | XXX-CD[/head]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
@@ -118,11 +118,11 @@ doc-text-printer-interim-head-request = [color=#1b67a5]█▄ █ ▀█▀    [
     {"- [bold]Stan poprzedniego Kierownika Działu:[/bold]"}
     {"- [bold]Uzasadnienie:[/bold]"}
     {"Po przybyciu kierownika z Centralnego Dowództwa zobowiązuję się do niezwłocznego przekazania mu pełnej kontroli nad działem oraz mienia osobistego."}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-complaint = [color=#1b67a5]█▄ █ ▀█▀    [head=2]Skarga[/head][/color]
-    {"[color=#1b67a5]█ ▀█   █     [head=3]Sektor: :STACJA: | XXX-DOW[/head][/color]"}
+doc-text-printer-complaint = [color=#1b67a5][mono]█▄ █ ▀█▀[/mono]    [head=2]Skarga[/head][/color]
+    {"[color=#1b67a5][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | XXX-DOW[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -132,11 +132,11 @@ doc-text-printer-complaint = [color=#1b67a5]█▄ █ ▀█▀    [head=2]Skar
     {"- [bold]Szczegółowy opis incydentu:[/bold]"}
     {"- [bold]Skarga została rozpatrzona przez:[/bold]"}
     {"- [bold]Decyzja ostateczna:[/bold]"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-interim-captain-request = [color=#1b67a5]█▄ █ ▀█▀    [head=2]Wniosek o powołanie[/head][/color]
-    {"[color=#1b67a5]█ ▀█   █     [head=2]Tymczasowego Kapitana Stacji[/head][/color]"}
+doc-text-printer-interim-captain-request = [color=#1b67a5][mono]█▄ █ ▀█▀[/mono]    [head=2]Wniosek o powołanie[/head][/color]
+    {"[color=#1b67a5][mono]█ ▀█  █[/mono]     [head=2]Tymczasowego Kapitana Stacji[/head][/color]"}
     {"             [head=3]Sektor: :STACJA: | DOW-CD[/head]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
@@ -148,11 +148,11 @@ doc-text-printer-interim-captain-request = [color=#1b67a5]█▄ █ ▀█▀  
     {"- [bold]Uzasadnienie powołania:[/bold]"}
     {"[bold]Oświadczam,[/bold] że po przybyciu stałego Kapitana niezwłocznie przekażę mu pełnię władzy, dostępy oraz mienie służbowe:"}
     {"TAK/NIE (Usunąć niewłaściwe)"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-heads-council-protocol = [color=#1b67a5]█▄ █ ▀█▀    [head=2]Protokół ze spotkania[/head][/color]
-    {"[color=#1b67a5]█ ▀█   █     [head=2]Rady Głównych Działów[/head][/color]"}
+doc-text-printer-heads-council-protocol = [color=#1b67a5][mono]█▄ █ ▀█▀[/mono]    [head=2]Protokół ze spotkania[/head][/color]
+    {"[color=#1b67a5][mono]█ ▀█  █[/mono]     [head=2]Rady Głównych Działów[/head][/color]"}
     {"             [head=3]Sektor: :STACJA: | DOW-DOW[/head]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
@@ -166,11 +166,11 @@ doc-text-printer-heads-council-protocol = [color=#1b67a5]█▄ █ ▀█▀   
     {"[bold]Lista głosujących «przeciw»:[/bold]"}
     {"[bold]Lista wstrzymujących się:[/bold]"}
     {"[bold]Podjęta uchwała:[/bold]"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-department-activity-report = [color=#1b67a5]█▄ █ ▀█▀    [head=2]Raport działalności działu[/head][/color]
-    {"[color=#1b67a5]█ ▀█   █     [head=3]Sektor: :STACJA: | XXX-DOW[/head][/color]"}
+doc-text-printer-department-activity-report = [color=#1b67a5][mono]█▄ █ ▀█▀[/mono]    [head=2]Raport działalności działu[/head][/color]
+    {"[color=#1b67a5][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | XXX-DOW[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -183,11 +183,11 @@ doc-text-printer-department-activity-report = [color=#1b67a5]█▄ █ ▀█�
     {"- [bold]Stopień realizacji celu działu:[/bold]"}
     {"- [bold]Ogólny stan działu:[/bold]"}
     {"[italic]* W razie potrzeby dołącz listę pracowników zdegradowanych lub zwolnionych w trakcie zmiany.[/italic]"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-order-completion-report = [color=#1b67a5]█▄ █ ▀█▀    [head=2]Raport z wykonania zlecenia[/head][/color]
-    {"[color=#1b67a5]█ ▀█   █     [head=3]Sektor: :STACJA: | XXX-DOW[/head][/color]"}
+doc-text-printer-order-completion-report = [color=#1b67a5][mono]█▄ █ ▀█▀[/mono]    [head=2]Raport z wykonania zlecenia[/head][/color]
+    {"[color=#1b67a5][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | XXX-DOW[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -198,11 +198,11 @@ doc-text-printer-order-completion-report = [color=#1b67a5]█▄ █ ▀█▀  
     {"- [bold]Wykonane czynności:[/bold]"}
     {"- [bold]Uzyskany rezultat:[/bold]"}
     {"- [bold]Uwagi:[/bold]"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-position-creation-request = [color=#1b67a5]█▄ █ ▀█▀    [head=2]Wniosek o utworzenie[/head][/color]
-    {"[color=#1b67a5]█ ▀█   █     [head=2]nowego stanowiska służbowego[/head][/color]"}
+doc-text-printer-position-creation-request = [color=#1b67a5][mono]█▄ █ ▀█▀[/mono]    [head=2]Wniosek o utworzenie[/head][/color]
+    {"[color=#1b67a5][mono]█ ▀█  █[/mono]     [head=2]nowego stanowiska służbowego[/head][/color]"}
     {"             [head=3]Sektor: :STACJA: | DOW-CD[/head]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
@@ -214,11 +214,11 @@ doc-text-printer-position-creation-request = [color=#1b67a5]█▄ █ ▀█▀
     {"- [bold]Dział docelowy:[/bold]"}
     {"- [bold]Proponowane SPO dla stanowiska:[/bold]"}
     {"[italic]Centralne Dowództwo zastrzega sobie prawo odrzucenia wniosku bez podania przyczyny. Wnioskodawca ponosi odpowiedzialność za ewentualne problemy wynikające z wprowadzenia stanowiska.[/italic]"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-employee-commendation-request = [color=#1b67a5]█▄ █ ▀█▀    [head=2]Wniosek o wyróżnienie pracownika[/head][/color]
-    {"[color=#1b67a5]█ ▀█   █     [head=3]Sektor: :STACJA: | DOW-CD[/head][/color]"}
+doc-text-printer-employee-commendation-request = [color=#1b67a5][mono]█▄ █ ▀█▀[/mono]    [head=2]Wniosek o wyróżnienie pracownika[/head][/color]
+    {"[color=#1b67a5][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | DOW-CD[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -230,26 +230,26 @@ doc-text-printer-employee-commendation-request = [color=#1b67a5]█▄ █ ▀�
     {"- [bold]Powód wyróżnienia:[/bold]"}
     {"- [bold]Proponowana forma nagrody:[/bold] premia / medal / inne"}
     {"[italic]Wniosek wymaga pieczęci Kierownika Działu pracownika lub Kapitana.[/italic]"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-station-employment-request = [color=#1b67a5]█▄ █ ▀█▀    [head=2]Wniosek o zatrudnienie na stacji[/head][/color]
-    {"[color=#1b67a5]█ ▀█   █     [head=3]Sektor: :STACJA: | XXX-DOW[/head][/color]"}
+doc-text-printer-station-employment-request = [color=#1b67a5][mono]█▄ █ ▀█▀[/mono]    [head=2]Wniosek o zatrudnienie na stacji[/head][/color]
+    {"[color=#1b67a5][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | XXX-DOW[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
     {"[bold]Stanowisko:[/bold] :STANOWISKO:"}
     {"==============================================="}
-    {"Proszę o przyjęcie mnie do działu <Wprowadź dział> na stanowisko :STANOWISKO:."}
+    {"Proszę o przyjęcie mnie do działu <Wprowadź dział> na stanowisko <Wprowadź stanowisko>."}
     {"- [bold]Dotychczasowe stanowisko (jeśli dotyczy):[/bold]"}
     {"- [bold]Powód zatrudnienia / transferu:[/bold]"}
     {"[bold]Zobowiązuję się[/bold] przestrzegać SPO działu oraz zwrócić wyposażenie poprzedniego stanowiska po zatwierdzeniu dokumentu:"}
     {"TAK/NIE (Usunąć niewłaściwe)"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-access-revocation-order = [color=#1b67a5]█▄ █ ▀█▀    [head=2]Nakaz odebrania dostępów[/head][/color]
-    {"[color=#1b67a5]█ ▀█   █     [head=3]Sektor: :STACJA: | DOW-XXX[/head][/color]"}
+doc-text-printer-access-revocation-order = [color=#1b67a5][mono]█▄ █ ▀█▀[/mono]    [head=2]Nakaz odebrania dostępów[/head][/color]
+    {"[color=#1b67a5][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | DOW-XXX[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -261,11 +261,11 @@ doc-text-printer-access-revocation-order = [color=#1b67a5]█▄ █ ▀█▀  
     {"3."}
     {"- [bold]Powód nakazu:[/bold]"}
     {"[bold]Decyzja wchodzi w życie natychmiast.[/bold] Niezastosowanie się skutkuje interwencją Działu Ochrony."}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-command-decree = [color=#1b67a5]█▄ █ ▀█▀    [head=2]Dekret dowódczy[/head][/color]
-    {"[color=#1b67a5]█ ▀█   █     [head=3]Sektor: :STACJA: | DOW-DOW[/head][/color]"}
+doc-text-printer-command-decree = [color=#1b67a5][mono]█▄ █ ▀█▀[/mono]    [head=2]Dekret dowódczy[/head][/color]
+    {"[color=#1b67a5][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | DOW-DOW[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -281,11 +281,11 @@ doc-text-printer-command-decree = [color=#1b67a5]█▄ █ ▀█▀    [head=2
     {"- [ ] Dział Inżynieryjny"}
     {"- [ ] Dział Badań i Rozwoju"}
     {"- [ ] Dział Serwisowy"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-station-goal-progress-report = [color=#1b67a5]█▄ █ ▀█▀    [head=2]Raport z realizacji celu stacji[/head][/color]
-    {"[color=#1b67a5]█ ▀█   █     [head=3]Sektor: :STACJA: | DOW-CD[/head][/color]"}
+doc-text-printer-station-goal-progress-report = [color=#1b67a5][mono]█▄ █ ▀█▀[/mono]    [head=2]Raport z realizacji celu stacji[/head][/color]
+    {"[color=#1b67a5][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | DOW-CD[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -297,11 +297,11 @@ doc-text-printer-station-goal-progress-report = [color=#1b67a5]█▄ █ ▀█
     {"- [bold]Przeszkody napotkane w trakcie realizacji:[/bold]"}
     {"- [bold]Szacowany czas ukończenia:[/bold]"}
     {"- [bold]Rekomendacje:[/bold]"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-restricted-equipment-permit = [color=#1b67a5]█▄ █ ▀█▀    [head=2]Zezwolenie na sprzęt ograniczony[/head][/color]
-    {"[color=#1b67a5]█ ▀█   █     [head=3]Sektor: :STACJA: | XXX-OCH[/head][/color]"}
+doc-text-printer-restricted-equipment-permit = [color=#1b67a5][mono]█▄ █ ▀█▀[/mono]    [head=2]Zezwolenie na sprzęt ograniczony[/head][/color]
+    {"[color=#1b67a5][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | XXX-OCH[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -313,11 +313,11 @@ doc-text-printer-restricted-equipment-permit = [color=#1b67a5]█▄ █ ▀█�
     {"1. Nazwa sprzętu - Ilość"}
     {"2. Nazwa sprzętu - Ilość"}
     {"(Powtórz według potrzeb, tę linię należy usunąć)"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-interrogation-protocol = [color=#1b67a5]█▄ █ ▀█▀    [head=2]Protokół przesłuchania[/head][/color]
-    {"[color=#1b67a5]█ ▀█   █     [head=3]Sektor: :STACJA: | OCH-DOW[/head][/color]"}
+doc-text-printer-interrogation-protocol = [color=#1b67a5][mono]█▄ █ ▀█▀[/mono]    [head=2]Protokół przesłuchania[/head][/color]
+    {"[color=#1b67a5][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | OCH-DOW[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -333,11 +333,11 @@ doc-text-printer-interrogation-protocol = [color=#1b67a5]█▄ █ ▀█▀   
     {"- [bold]Dowody bezpośrednie:[/bold]"}
     {"- [bold]Dowody pośrednie:[/bold]"}
     {"- [bold]Konkluzja i decyzja:[/bold]"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-search-warrant = [color=#1b67a5]█▄ █ ▀█▀    [head=2]Nakaz przeszukania[/head][/color]
-    {"[color=#1b67a5]█ ▀█   █     [head=3]Sektor: :STACJA: | XXX-OCH[/head][/color]"}
+doc-text-printer-search-warrant = [color=#1b67a5][mono]█▄ █ ▀█▀[/mono]    [head=2]Nakaz przeszukania[/head][/color]
+    {"[color=#1b67a5][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | XXX-OCH[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -345,11 +345,11 @@ doc-text-printer-search-warrant = [color=#1b67a5]█▄ █ ▀█▀    [head=2
     {"==============================================="}
     {"- [bold]Tożsamość osoby przeszukiwanej:[/bold]"}
     {"- [bold]Uzasadnienie przeszukania:[/bold]"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-execution-order = [color=#1b67a5]█▄ █ ▀█▀    [head=2]Nakaz egzekucji[/head][/color]
-    {"[color=#1b67a5]█ ▀█   █     [head=3]Sektor: :STACJA: | XXX-OCH[/head][/color]"}
+doc-text-printer-execution-order = [color=#1b67a5][mono]█▄ █ ▀█▀[/mono]    [head=2]Nakaz egzekucji[/head][/color]
+    {"[color=#1b67a5][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | XXX-OCH[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -362,11 +362,11 @@ doc-text-printer-execution-order = [color=#1b67a5]█▄ █ ▀█▀    [head=
     {"- [bold]Lokalizacja procedury:[/bold]"}
     {"[bold]Oświadczam, że[/bold] powyższa decyzja jest ostateczna i nie podlega zaskarżeniu. Została ona podjęta zgodnie z [italic]Protokołem Bezpieczeństwa NanoTrasen[/italic]. Zobowiązuję się do przeprowadzenia egzekucji bez narażania integralności strukturalnej stacji."}
     {"[bold]Uwaga:[/bold] Jakiekolwiek zakłócenie procedury przez osoby trzecie będzie traktowane jako współudział w zbrodni przeciwko Korporacji."}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-investigation-report = [color=#1b67a5]█▄ █ ▀█▀    [head=2]Raport z dochodzenia[/head][/color]
-    {"[color=#1b67a5]█ ▀█   █     [head=3]Sektor: :STACJA: | DET-OCH[/head][/color]"}
+doc-text-printer-investigation-report = [color=#1b67a5][mono]█▄ █ ▀█▀[/mono]    [head=2]Raport z dochodzenia[/head][/color]
+    {"[color=#1b67a5][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | DET-OCH[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -381,11 +381,11 @@ doc-text-printer-investigation-report = [color=#1b67a5]█▄ █ ▀█▀    [
     {"5. Inne:"}
     {"[bold]III. PRZEBIEG DOCHODZENIA:[/bold]"}
     {"[bold]IV. KONKLUZJA I REKOMENDACJE:[/bold]"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-witness-testimony = [color=#1b67a5]█▄ █ ▀█▀    [head=2]Zeznanie świadka[/head][/color]
-    {"[color=#1b67a5]█ ▀█   █     [head=3]Sektor: :STACJA: | OCH-OCH[/head][/color]"}
+doc-text-printer-witness-testimony = [color=#1b67a5][mono]█▄ █ ▀█▀[/mono]    [head=2]Zeznanie świadka[/head][/color]
+    {"[color=#1b67a5][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | OCH-OCH[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -398,11 +398,11 @@ doc-text-printer-witness-testimony = [color=#1b67a5]█▄ █ ▀█▀    [hea
     {"[bold]Opis zdarzenia z perspektywy świadka:[/bold]"}
     {"[bold]Osoby obecne przy zdarzeniu:[/bold]"}
     {"[italic]Świadek oświadcza, że podane informacje są zgodne z jego najlepszą wiedzą.[/italic]"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-arrest-request = [color=#1b67a5]█▄ █ ▀█▀    [head=2]Wniosek o zatrzymanie[/head][/color]
-    {"[color=#1b67a5]█ ▀█   █     [head=3]Sektor: :STACJA: | OCH-OCH[/head][/color]"}
+doc-text-printer-arrest-request = [color=#1b67a5][mono]█▄ █ ▀█▀[/mono]    [head=2]Wniosek o zatrzymanie[/head][/color]
+    {"[color=#1b67a5][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | OCH-OCH[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -414,11 +414,11 @@ doc-text-printer-arrest-request = [color=#1b67a5]█▄ █ ▀█▀    [head=2
     {"- [bold]Uzasadnienie zatrzymania:[/bold]"}
     {"- [bold]Zebrane dowody (krótki opis):[/bold]"}
     {"[bold]Proponowany czas aresztu:[/bold] ___ minut"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-detained-persons-register = [color=#1b67a5]█▄ █ ▀█▀    [head=2]Rejestr osób zatrzymanych w ciągu zmiany[/head][/color]
-    {"[color=#1b67a5]█ ▀█   █     [head=3]Sektor: :STACJA: | OCH-DOW[/head][/color]"}
+doc-text-printer-detained-persons-register = [color=#1b67a5][mono]█▄ █ ▀█▀[/mono]    [head=2]Rejestr osób zatrzymanych w ciągu zmiany[/head][/color]
+    {"[color=#1b67a5][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | OCH-DOW[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -432,11 +432,11 @@ doc-text-printer-detained-persons-register = [color=#1b67a5]█▄ █ ▀█▀
     {"- Łączna liczba zatrzymań: ___"}
     {"- Osoby nadal przetrzymywane: ___"}
     {"- Osoby zwolnione: ___"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-room-search-protocol = [color=#1b67a5]█▄ █ ▀█▀    [head=2]Protokół przeszukania pomieszczenia[/head][/color]
-    {"[color=#1b67a5]█ ▀█   █     [head=3]Sektor: :STACJA: | OCH-OCH[/head][/color]"}
+doc-text-printer-room-search-protocol = [color=#1b67a5][mono]█▄ █ ▀█▀[/mono]    [head=2]Protokół przeszukania pomieszczenia[/head][/color]
+    {"[color=#1b67a5][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | OCH-OCH[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -449,11 +449,11 @@ doc-text-printer-room-search-protocol = [color=#1b67a5]█▄ █ ▀█▀    [
     {"1."}
     {"2."}
     {"- [bold]Dalsze działania:[/bold]"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-asset-seizure-order = [color=#1b67a5]█▄ █ ▀█▀    [head=2]Nakaz konfiskaty mienia[/head][/color]
-    {"[color=#1b67a5]█ ▀█   █     [head=3]Sektor: :STACJA: | OCH-XXX[/head][/color]"}
+doc-text-printer-asset-seizure-order = [color=#1b67a5][mono]█▄ █ ▀█▀[/mono]    [head=2]Nakaz konfiskaty mienia[/head][/color]
+    {"[color=#1b67a5][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | OCH-XXX[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -465,11 +465,11 @@ doc-text-printer-asset-seizure-order = [color=#1b67a5]█▄ █ ▀█▀    [h
     {"1. Nazwa przedmiotu — Ilość"}
     {"2. Nazwa przedmiotu — Ilość"}
     {"[bold]Miejsce tymczasowego składowania:[/bold]"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-patrol-report = [color=#1b67a5]█▄ █ ▀█▀    [head=2]Raport z patrolu[/head][/color]
-    {"[color=#1b67a5]█ ▀█   █     [head=3]Sektor: :STACJA: | OCH-DOW[/head][/color]"}
+doc-text-printer-patrol-report = [color=#1b67a5][mono]█▄ █ ▀█▀[/mono]    [head=2]Raport z patrolu[/head][/color]
+    {"[color=#1b67a5][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | OCH-DOW[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -481,11 +481,11 @@ doc-text-printer-patrol-report = [color=#1b67a5]█▄ █ ▀█▀    [head=2]
     {"- [bold]Stwierdzone nieprawidłowości:[/bold]"}
     {"- [bold]Podjęte działania:[/bold]"}
     {"- [bold]Wymagana eskalacja:[/bold] TAK/NIE (Usunąć niewłaściwe)"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-disciplinary-sentence = [color=#1b67a5]█▄ █ ▀█▀    [head=2]Wyrok dyscyplinarny[/head][/color]
-    {"[color=#1b67a5]█ ▀█   █     [head=3]Sektor: :STACJA: | OCH-OCH[/head][/color]"}
+doc-text-printer-disciplinary-sentence = [color=#1b67a5][mono]█▄ █ ▀█▀[/mono]    [head=2]Wyrok dyscyplinarny[/head][/color]
+    {"[color=#1b67a5][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | OCH-OCH[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -497,11 +497,11 @@ doc-text-printer-disciplinary-sentence = [color=#1b67a5]█▄ █ ▀█▀    
     {"- [bold]Kara administracyjna:[/bold] degradacja / zwolnienie / brak"}
     {"- [bold]Czas aresztu przed wyrokiem:[/bold] ___ minut"}
     {"[bold]Uzasadnienie wyroku:[/bold]"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-arrest-extension-request = [color=#1b67a5]█▄ █ ▀█▀    [head=2]Wniosek o przedłużenie aresztu[/head][/color]
-    {"[color=#1b67a5]█ ▀█   █     [head=3]Sektor: :STACJA: | OCH-DOW[/head][/color]"}
+doc-text-printer-arrest-extension-request = [color=#1b67a5][mono]█▄ █ ▀█▀[/mono]    [head=2]Wniosek o przedłużenie aresztu[/head][/color]
+    {"[color=#1b67a5][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | OCH-DOW[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -511,11 +511,11 @@ doc-text-printer-arrest-extension-request = [color=#1b67a5]█▄ █ ▀█▀ 
     {"- [bold]Aktualny czas pozostały:[/bold]"}
     {"- [bold]Żądane przedłużenie o:[/bold] ___ minut"}
     {"- [bold]Uzasadnienie przedłużenia:[/bold]"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-death-certificate = [color=#50afbf]█▄ █ ▀█▀    [head=2]Akt zgonu[/head][/color]
-    {"[color=#50afbf]█ ▀█   █     [head=3]Sektor: :STACJA: | MED-XXX[/head][/color]"}
+doc-text-printer-death-certificate = [color=#50afbf][mono]█▄ █ ▀█▀[/mono]    [head=2]Akt zgonu[/head][/color]
+    {"[color=#50afbf][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | MED-XXX[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -523,11 +523,11 @@ doc-text-printer-death-certificate = [color=#50afbf]█▄ █ ▀█▀    [hea
     {"==============================================="}
     {"[bold]- Tożsamość zmarłego:[/bold]"}
     {"[bold]- Przyczyna zgonu:[/bold]"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-medication-order = [color=#50afbf]█▄ █ ▀█▀    [head=2]Zamówienie leków[/head][/color]
-    {"[color=#50afbf]█ ▀█   █     [head=3]Sektor: :STACJA: | XXX-MED[/head][/color]"}
+doc-text-printer-medication-order = [color=#50afbf][mono]█▄ █ ▀█▀[/mono]    [head=2]Zamówienie leków[/head][/color]
+    {"[color=#50afbf][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | XXX-MED[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -537,11 +537,11 @@ doc-text-printer-medication-order = [color=#50afbf]█▄ █ ▀█▀    [head
     {"1. Nazwa leku/materiału - Ilość"}
     {"2. Nazwa leku/materiału - Ilość"}
     {"[bold]Cel zamówienia:[/bold]"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-prescription = [color=#50afbf]█▄ █ ▀█▀    [head=2]Recepta[/head][/color]
-    {"[color=#50afbf]█ ▀█   █     [head=3]Sektor: :STACJA: | MED-XXX[/head][/color]"}
+doc-text-printer-prescription = [color=#50afbf][mono]█▄ █ ▀█▀[/mono]    [head=2]Recepta[/head][/color]
+    {"[color=#50afbf][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | MED-XXX[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -552,11 +552,11 @@ doc-text-printer-prescription = [color=#50afbf]█▄ █ ▀█▀    [head=2]R
     {"[bold]- Przepisane leki i dawkowanie:[/bold]"}
     {"1. Nazwa leku - Dawkowanie"}
     {"2. Nazwa leku - Dawkowanie"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-euthanasia-request = [color=#50afbf]█▄ █ ▀█▀    [head=2]Wniosek o przeprowadzenie eutanazji[/head][/color]
-    {"[color=#50afbf]█ ▀█   █     [head=3]Sektor: :STACJA: | XXX-MED[/head][/color]"}
+doc-text-printer-euthanasia-request = [color=#50afbf][mono]█▄ █ ▀█▀[/mono]    [head=2]Wniosek o przeprowadzenie eutanazji[/head][/color]
+    {"[color=#50afbf][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | XXX-MED[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -564,11 +564,11 @@ doc-text-printer-euthanasia-request = [color=#50afbf]█▄ █ ▀█▀    [he
     {"==============================================="}
     {"[bold]- Tożsamość pacjenta:[/bold]"}
     {"[bold]- Uzasadnienie eutanazji:[/bold]"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-health-certificate = [color=#50afbf]█▄ █ ▀█▀    [head=2]Zaświadczenie o stanie zdrowia[/head][/color]
-    {"[color=#50afbf]█ ▀█   █     [head=3]Sektor: :STACJA: | MED-XXX[/head][/color]"}
+doc-text-printer-health-certificate = [color=#50afbf][mono]█▄ █ ▀█▀[/mono]    [head=2]Zaświadczenie o stanie zdrowia[/head][/color]
+    {"[color=#50afbf][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | MED-XXX[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -584,11 +584,11 @@ doc-text-printer-health-certificate = [color=#50afbf]█▄ █ ▀█▀    [he
     {"[bold]- Pacjent stanowi zagrożenie dla otoczenia:[/bold] <Opisz lub wpisz «Brak zagrożenia»>"}
     {"[bold]- Wykonane badania:[/bold]"}
     {"[bold]- Dodatkowe uwagi lub zalecenia:[/bold]"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-epidemiology-report = [color=#50afbf]█▄ █ ▀█▀    [head=2]Raport epidemiologiczny[/head][/color]
-    {"[color=#50afbf]█ ▀█   █     [head=3]Sektor: :STACJA: | MED-DOW[/head][/color]"}
+doc-text-printer-epidemiology-report = [color=#50afbf][mono]█▄ █ ▀█▀[/mono]    [head=2]Raport epidemiologiczny[/head][/color]
+    {"[color=#50afbf][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | MED-DOW[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -599,11 +599,11 @@ doc-text-printer-epidemiology-report = [color=#50afbf]█▄ █ ▀█▀    [h
     {"- [bold]Lokalizacje wystąpień:[/bold]"}
     {"- [bold]Podjęte środki izolacji:[/bold]"}
     {"- [bold]Rekomendacje dla załogi:[/bold]"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-drug-synthesis-request = [color=#50afbf]█▄ █ ▀█▀    [head=2]Wniosek o syntezę leków[/head][/color]
-    {"[color=#50afbf]█ ▀█   █     [head=3]Sektor: :STACJA: | XXX-MED[/head][/color]"}
+doc-text-printer-drug-synthesis-request = [color=#50afbf][mono]█▄ █ ▀█▀[/mono]    [head=2]Wniosek o syntezę leków[/head][/color]
+    {"[color=#50afbf][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | XXX-MED[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -615,11 +615,11 @@ doc-text-printer-drug-synthesis-request = [color=#50afbf]█▄ █ ▀█▀   
     {"- [bold]Cel syntezy:[/bold]"}
     {"- [bold]Priorytet:[/bold] standardowy / pilny / krytyczny"}
     {"[italic]Wniosek obowiązuje do końca bieżącej zmiany.[/italic]"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-patient-medical-card = [color=#50afbf]█▄ █ ▀█▀    [head=2]Karta medyczna pacjenta[/head][/color]
-    {"[color=#50afbf]█ ▀█   █     [head=3]Sektor: :STACJA: | MED-MED[/head][/color]"}
+doc-text-printer-patient-medical-card = [color=#50afbf][mono]█▄ █ ▀█▀[/mono]    [head=2]Karta medyczna pacjenta[/head][/color]
+    {"[color=#50afbf][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | MED-MED[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -631,11 +631,11 @@ doc-text-printer-patient-medical-card = [color=#50afbf]█▄ █ ▀█▀    [
     {"- [bold]Przeprowadzone zabiegi:[/bold]"}
     {"- [bold]Przyjmowane leki:[/bold]"}
     {"- [bold]Uwagi personelu medycznego:[/bold]"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-psychological-intervention-protocol = [color=#50afbf]█▄ █ ▀█▀    [head=2]Protokół interwencji psychologicznej[/head][/color]
-    {"[color=#50afbf]█ ▀█   █     [head=3]Sektor: :STACJA: | MED-DOW[/head][/color]"}
+doc-text-printer-psychological-intervention-protocol = [color=#50afbf][mono]█▄ █ ▀█▀[/mono]    [head=2]Protokół interwencji psychologicznej[/head][/color]
+    {"[color=#50afbf][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | MED-DOW[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -647,11 +647,11 @@ doc-text-printer-psychological-intervention-protocol = [color=#50afbf]█▄ █
     {"- [bold]Przebieg rozmowy / interwencji:[/bold]"}
     {"- [bold]Ocena zagrożenia dla otoczenia:[/bold] niskie / średnie / wysokie"}
     {"- [bold]Zalecenia:[/bold]"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-quarantine-certificate = [color=#50afbf]█▄ █ ▀█▀    [head=2]Zaświadczenie o kwarantannie[/head][/color]
-    {"[color=#50afbf]█ ▀█   █     [head=3]Sektor: :STACJA: | MED-XXX[/head][/color]"}
+doc-text-printer-quarantine-certificate = [color=#50afbf][mono]█▄ █ ▀█▀[/mono]    [head=2]Zaświadczenie o kwarantannie[/head][/color]
+    {"[color=#50afbf][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | MED-XXX[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -663,11 +663,11 @@ doc-text-printer-quarantine-certificate = [color=#50afbf]█▄ █ ▀█▀   
     {"- [bold]Warunki kwarantanny:[/bold]"}
     {"[bold]Osoba objęta kwarantanną zobowiązuje się[/bold] pozostawać w wyznaczonej strefie do odwołania:"}
     {"TAK/NIE (Usunąć niewłaściwe)"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-cargo-order = [color=#6e502b]█▄ █ ▀█▀    [head=2]Zamówienie[/head][/color]
-    {"[color=#6e502b]█ ▀█   █     [head=3]Sektor: :STACJA: | XXX-LOG[/head][/color]"}
+doc-text-printer-cargo-order = [color=#6e502b][mono]█▄ █ ▀█▀[/mono]    [head=2]Zamówienie[/head][/color]
+    {"[color=#6e502b][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | XXX-LOG[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -678,11 +678,11 @@ doc-text-printer-cargo-order = [color=#6e502b]█▄ █ ▀█▀    [head=2]Za
     {"2. Nazwa przedmiotu - Ilość"}
     {"[bold]- Cel zamówienia:[/bold]"}
     {"[bold]- Miejsce dostawy:[/bold] <Lokalizacja lub «Odbiór osobisty»>"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-disposal-report = [color=#6e502b]█▄ █ ▀█▀    [head=2]Raport z likwidacji[/head][/color]
-    {"[color=#6e502b]█ ▀█   █     [head=3]Sektor: :STACJA: | LOG-XXX[/head][/color]"}
+doc-text-printer-disposal-report = [color=#6e502b][mono]█▄ █ ▀█▀[/mono]    [head=2]Raport z likwidacji[/head][/color]
+    {"[color=#6e502b][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | LOG-XXX[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -693,11 +693,11 @@ doc-text-printer-disposal-report = [color=#6e502b]█▄ █ ▀█▀    [head=
     {"1."}
     {"2."}
     {"3."}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-delivery-receipt = [color=#6e502b]█▄ █ ▀█▀    [head=2]Potwierdzenie odbioru dostawy[/head][/color]
-    {"[color=#6e502b]█ ▀█   █     [head=3]Sektor: :STACJA: | LOG-XXX[/head][/color]"}
+doc-text-printer-delivery-receipt = [color=#6e502b][mono]█▄ █ ▀█▀[/mono]    [head=2]Potwierdzenie odbioru dostawy[/head][/color]
+    {"[color=#6e502b][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | LOG-XXX[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -710,11 +710,11 @@ doc-text-printer-delivery-receipt = [color=#6e502b]█▄ █ ▀█▀    [head
     {"1. Nazwa — Ilość — Stan"}
     {"2. Nazwa — Ilość — Stan"}
     {"- [bold]Uwagi dotyczące jakości:[/bold]"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-funds-request = [color=#6e502b]█▄ █ ▀█▀    [head=2]Wniosek o środki finansowe[/head][/color]
-    {"[color=#6e502b]█ ▀█   █     [head=3]Sektor: :STACJA: | LOG-DOW[/head][/color]"}
+doc-text-printer-funds-request = [color=#6e502b][mono]█▄ █ ▀█▀[/mono]    [head=2]Wniosek o środki finansowe[/head][/color]
+    {"[color=#6e502b][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | LOG-DOW[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -726,11 +726,11 @@ doc-text-printer-funds-request = [color=#6e502b]█▄ █ ▀█▀    [head=2]
     {"1."}
     {"2."}
     {"[bold]Termin realizacji wydatku:[/bold]"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-warehouse-report = [color=#6e502b]█▄ █ ▀█▀    [head=2]Raport magazynowy działu logistycznego[/head][/color]
-    {"[color=#6e502b]█ ▀█   █     [head=3]Sektor: :STACJA: | LOG-DOW[/head][/color]"}
+doc-text-printer-warehouse-report = [color=#6e502b][mono]█▄ █ ▀█▀[/mono]    [head=2]Raport magazynowy działu logistycznego[/head][/color]
+    {"[color=#6e502b][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | LOG-DOW[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -741,11 +741,11 @@ doc-text-printer-warehouse-report = [color=#6e502b]█▄ █ ▀█▀    [head
     {"- [bold]Odrzucone wnioski (liczba):[/bold]"}
     {"- [bold]Najczęściej zamawiane kategorie:[/bold]"}
     {"- [bold]Problemy logistyczne w trakcie zmiany:[/bold]"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-construction-permit = [color=#665f1f]█▄ █ ▀█▀    [head=2]Zezwolenie na budowę[/head][/color]
-    {"[color=#665f1f]█ ▀█   █     [head=3]Sektor: :STACJA: | INŻ-XXX[/head][/color]"}
+doc-text-printer-construction-permit = [color=#665f1f][mono]█▄ █ ▀█▀[/mono]    [head=2]Zezwolenie na budowę[/head][/color]
+    {"[color=#665f1f][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | INŻ-XXX[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -755,11 +755,11 @@ doc-text-printer-construction-permit = [color=#665f1f]█▄ █ ▀█▀    [h
     {"[bold]- Stanowisko wnioskodawcy:[/bold]"}
     {"[bold]- Opis planowanej budowy:[/bold]"}
     {"[bold]- Lokalizacja budowy:[/bold]"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-renovation-request = [color=#665f1f]█▄ █ ▀█▀    [head=2]Wniosek o prace remontowe[/head][/color]
-    {"[color=#665f1f]█ ▀█   █     [head=3]Sektor: :STACJA: | INŻ-DOW[/head][/color]"}
+doc-text-printer-renovation-request = [color=#665f1f][mono]█▄ █ ▀█▀[/mono]    [head=2]Wniosek o prace remontowe[/head][/color]
+    {"[color=#665f1f][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | INŻ-DOW[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -770,11 +770,11 @@ doc-text-printer-renovation-request = [color=#665f1f]█▄ █ ▀█▀    [he
     {"- [bold]Proponowany zakres prac:[/bold]"}
     {"- [bold]Szacowany czas naprawy:[/bold]"}
     {"- [bold]Wymagane materiały:[/bold]"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-technical-work-report = [color=#665f1f]█▄ █ ▀█▀    [head=2]Raport z prac technicznych[/head][/color]
-    {"[color=#665f1f]█ ▀█   █     [head=3]Sektor: :STACJA: | INŻ-DOW[/head][/color]"}
+doc-text-printer-technical-work-report = [color=#665f1f][mono]█▄ █ ▀█▀[/mono]    [head=2]Raport z prac technicznych[/head][/color]
+    {"[color=#665f1f][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | INŻ-DOW[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -785,11 +785,11 @@ doc-text-printer-technical-work-report = [color=#665f1f]█▄ █ ▀█▀    
     {"- [bold]Zużyte materiały:[/bold]"}
     {"- [bold]Stan po zakończeniu prac:[/bold]"}
     {"- [bold]Zalecenia eksploatacyjne:[/bold]"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-power-status-report = [color=#665f1f]█▄ █ ▀█▀    [head=2]Raport stanu zasilania stacji[/head][/color]
-    {"[color=#665f1f]█ ▀█   █     [head=3]Sektor: :STACJA: | INŻ-DOW[/head][/color]"}
+doc-text-printer-power-status-report = [color=#665f1f][mono]█▄ █ ▀█▀[/mono]    [head=2]Raport stanu zasilania stacji[/head][/color]
+    {"[color=#665f1f][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | INŻ-DOW[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -800,11 +800,11 @@ doc-text-printer-power-status-report = [color=#665f1f]█▄ █ ▀█▀    [h
     {"- [bold]Obszary bez zasilania:[/bold]"}
     {"- [bold]Awarię zgłoszono:[/bold] TAK/NIE"}
     {"- [bold]Plan działań naprawczych:[/bold]"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-atmos-status-report = [color=#665f1f]█▄ █ ▀█▀    [head=2]Raport systemu atmosferycznego[/head][/color]
-    {"[color=#665f1f]█ ▀█   █     [head=3]Sektor: :STACJA: | INŻ-DOW[/head][/color]"}
+doc-text-printer-atmos-status-report = [color=#665f1f][mono]█▄ █ ▀█▀[/mono]    [head=2]Raport systemu atmosferycznego[/head][/color]
+    {"[color=#665f1f][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | INŻ-DOW[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -815,11 +815,11 @@ doc-text-printer-atmos-status-report = [color=#665f1f]█▄ █ ▀█▀    [h
     {"- [bold]Wykryte wycieki:[/bold]"}
     {"- [bold]Status filtrów i scrubberów:[/bold]"}
     {"- [bold]Wymagana interwencja:[/bold]"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-demolition-permit = [color=#665f1f]█▄ █ ▀█▀    [head=2]Zezwolenie na demontaż konstrukcji[/head][/color]
-    {"[color=#665f1f]█ ▀█   █     [head=3]Sektor: :STACJA: | INŻ-XXX[/head][/color]"}
+doc-text-printer-demolition-permit = [color=#665f1f][mono]█▄ █ ▀█▀[/mono]    [head=2]Zezwolenie na demontaż konstrukcji[/head][/color]
+    {"[color=#665f1f][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | INŻ-XXX[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -830,11 +830,11 @@ doc-text-printer-demolition-permit = [color=#665f1f]█▄ █ ▀█▀    [hea
     {"- [bold]Opis elementów do usunięcia:[/bold]"}
     {"- [bold]Uzasadnienie:[/bold]"}
     {"[italic]Demontaż może rozpocząć się dopiero po zatwierdzeniu niniejszego dokumentu.[/italic]"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-sentience-certificate = [color=#665f1f]█▄ █ ▀█▀    [head=2]Zaświadczenie o rozumności istoty[/head][/color]
-    {"[color=#665f1f]█ ▀█   █     [head=3]Sektor: :STACJA: | BR-XXX[/head][/color]"}
+doc-text-printer-sentience-certificate = [color=#665f1f][mono]█▄ █ ▀█▀[/mono]    [head=2]Zaświadczenie o rozumności istoty[/head][/color]
+    {"[color=#665f1f][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | BR-XXX[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -845,11 +845,11 @@ doc-text-printer-sentience-certificate = [color=#665f1f]█▄ █ ▀█▀    
     {"[bold]- Wygląd istoty:[/bold]"}
     {"[bold]- Tożsamość (lub identyfikator):[/bold]"}
     {"[bold]- Istota została przyjęta do załogi:[/bold] TAK/NIE (Usuń niewłaściwe)"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-experiment-report = [color=#665f1f]█▄ █ ▀█▀    [head=2]Raport z eksperymentu[/head][/color]
-    {"[color=#665f1f]█ ▀█   █     [head=3]Sektor: :STACJA: | BR-XXX[/head][/color]"}
+doc-text-printer-experiment-report = [color=#665f1f][mono]█▄ █ ▀█▀[/mono]    [head=2]Raport z eksperymentu[/head][/color]
+    {"[color=#665f1f][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | BR-XXX[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -860,11 +860,11 @@ doc-text-printer-experiment-report = [color=#665f1f]█▄ █ ▀█▀    [hea
     {"1. Podmiot / Obiekt badania:"}
     {"2. Założenia badawcze:"}
     {"3. Rezultat:"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-object-study-report = [color=#665f1f]█▄ █ ▀█▀    [head=2]Raport z badania obiektu[/head][/color]
-    {"[color=#665f1f]█ ▀█   █     [head=3]Sektor: :STACJA: | BR-XXX[/head][/color]"}
+doc-text-printer-object-study-report = [color=#665f1f][mono]█▄ █ ▀█▀[/mono]    [head=2]Raport z badania obiektu[/head][/color]
+    {"[color=#665f1f][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | BR-XXX[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -874,11 +874,11 @@ doc-text-printer-object-study-report = [color=#665f1f]█▄ █ ▀█▀    [h
     {"[Tutaj wpisz wygląd]"}
     {"Stwierdzone właściwości obiektu:"}
     {"[Tutaj wpisz działanie i cechy]"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-modernization-request = [color=#665f1f]█▄ █ ▀█▀    [head=2]Wniosek o przeprowadzenie modernizacji[/head][/color]
-    {"[color=#665f1f]█ ▀█   █     [head=3]Sektor: :STACJA: | XXX-INŻ[/head][/color]"}
+doc-text-printer-modernization-request = [color=#665f1f][mono]█▄ █ ▀█▀[/mono]    [head=2]Wniosek o przeprowadzenie modernizacji[/head][/color]
+    {"[color=#665f1f][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | XXX-INŻ[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -891,11 +891,11 @@ doc-text-printer-modernization-request = [color=#665f1f]█▄ █ ▀█▀    
     {"1."}
     {"2."}
     {"3."}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-product-manufacturing-order = [color=#665f1f]█▄ █ ▀█▀    [head=2]Zamówienie na wykonanie produktu[/head][/color]
-    {"[color=#665f1f]█ ▀█   █     [head=3]Sektor: :STACJA: | BR-XXX[/head][/color]"}
+doc-text-printer-product-manufacturing-order = [color=#665f1f][mono]█▄ █ ▀█▀[/mono]    [head=2]Zamówienie na wykonanie produktu[/head][/color]
+    {"[color=#665f1f][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | BR-XXX[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -907,11 +907,11 @@ doc-text-printer-product-manufacturing-order = [color=#665f1f]█▄ █ ▀█�
     {"2."}
     {"3."}
     {"Uzasadnienie / Cel użycia:"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-anomaly-study-report = [color=#665f1f]█▄ █ ▀█▀    [head=2]Raport z badania anomalii[/head][/color]
-    {"[color=#665f1f]█ ▀█   █     [head=3]Sektor: :STACJA: | BR-DOW[/head][/color]"}
+doc-text-printer-anomaly-study-report = [color=#665f1f][mono]█▄ █ ▀█▀[/mono]    [head=2]Raport z badania anomalii[/head][/color]
+    {"[color=#665f1f][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | BR-DOW[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -922,11 +922,11 @@ doc-text-printer-anomaly-study-report = [color=#665f1f]█▄ █ ▀█▀    [
     {"- [bold]Obserwowane właściwości:[/bold]"}
     {"- [bold]Stopień zagrożenia:[/bold] niski / średni / wysoki / krytyczny"}
     {"- [bold]Rekomendowane środki bezpieczeństwa:[/bold]"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-specialist-training-request = [color=#665f1f]█▄ █ ▀█▀    [head=2]Wniosek o szkolenie specjalistyczne[/head][/color]
-    {"[color=#665f1f]█ ▀█   █     [head=3]Sektor: :STACJA: | BR-DOW[/head][/color]"}
+doc-text-printer-specialist-training-request = [color=#665f1f][mono]█▄ █ ▀█▀[/mono]    [head=2]Wniosek o szkolenie specjalistyczne[/head][/color]
+    {"[color=#665f1f][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | BR-DOW[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -938,11 +938,11 @@ doc-text-printer-specialist-training-request = [color=#665f1f]█▄ █ ▀█�
     {"- [bold]Powód przeprowadzenia szkolenia:[/bold]"}
     {"[bold]Kursant oświadcza,[/bold] że rozumie ryzyko związane z posiadanymi po szkoleniu umiejętnościami:"}
     {"TAK/NIE (Usunąć niewłaściwe)"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-object-classification-protocol = [color=#665f1f]█▄ █ ▀█▀    [head=2]Protokół klasyfikacji obiektu[/head][/color]
-    {"[color=#665f1f]█ ▀█   █     [head=3]Sektor: :STACJA: | BR-OCH[/head][/color]"}
+doc-text-printer-object-classification-protocol = [color=#665f1f][mono]█▄ █ ▀█▀[/mono]    [head=2]Protokół klasyfikacji obiektu[/head][/color]
+    {"[color=#665f1f][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | BR-OCH[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -953,11 +953,11 @@ doc-text-printer-object-classification-protocol = [color=#665f1f]█▄ █ ▀�
     {"- [bold]Stwierdzone właściwości:[/bold]"}
     {"- [bold]Przypisana klasa zagrożenia:[/bold]"}
     {"- [bold]Zalecenia dla Działu Ochrony:[/bold]"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-service-object-study-report = [color=#1b487e]█▄ █ ▀█▀    [head=2]Raport z badania obiektu[/head][/color]
-    {"[color=#1b487e]█ ▀█   █     [head=3]Sektor: :STACJA: | SRW-XXX[/head][/color]"}
+doc-text-printer-service-object-study-report = [color=#1b487e][mono]█▄ █ ▀█▀[/mono]    [head=2]Raport z badania obiektu[/head][/color]
+    {"[color=#1b487e][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | SRW-XXX[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -968,11 +968,11 @@ doc-text-printer-service-object-study-report = [color=#1b487e]█▄ █ ▀█�
     {"Stwierdzone właściwości obiektu:"}
     {"[Tutaj wpisz działanie i cechy]"}
     {"[italic]Miejsce na pieczątkę (opcjonalnie).[/italic]"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-service-product-order = [color=#1b487e]█▄ █ ▀█▀    [head=2]Zamówienie na wykonanie produktu[/head][/color]
-    {"[color=#1b487e]█ ▀█   █     [head=3]Sektor: :STACJA: | SRW-XXX[/head][/color]"}
+doc-text-printer-service-product-order = [color=#1b487e][mono]█▄ █ ▀█▀[/mono]    [head=2]Zamówienie na wykonanie produktu[/head][/color]
+    {"[color=#1b487e][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | SRW-XXX[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -985,11 +985,11 @@ doc-text-printer-service-product-order = [color=#1b487e]█▄ █ ▀█▀    
     {"3."}
     {"Uzasadnienie / Cel użycia:"}
     {"[italic]Miejsce na pieczątkę (opcjonalnie).[/italic]"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-service-order = [color=#1b487e]█▄ █ ▀█▀    [head=2]Zlecenie serwisowe[/head][/color]
-    {"[color=#1b487e]█ ▀█   █     [head=3]Sektor: :STACJA: | SRW-XXX[/head][/color]"}
+doc-text-printer-service-order = [color=#1b487e][mono]█▄ █ ▀█▀[/mono]    [head=2]Zlecenie serwisowe[/head][/color]
+    {"[color=#1b487e][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | SRW-XXX[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -1000,11 +1000,11 @@ doc-text-printer-service-order = [color=#1b487e]█▄ █ ▀█▀    [head=2]
     {"- [bold]Lokalizacja:[/bold]"}
     {"- [bold]Termin realizacji:[/bold]"}
     {"[italic]Miejsce na pieczątkę (opcjonalnie).[/italic]"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-event-organization-request = [color=#1b487e]█▄ █ ▀█▀    [head=2]Wniosek o organizację wydarzenia[/head][/color]
-    {"[color=#1b487e]█ ▀█   █     [head=3]Sektor: :STACJA: | SRW-DOW[/head][/color]"}
+doc-text-printer-event-organization-request = [color=#1b487e][mono]█▄ █ ▀█▀[/mono]    [head=2]Wniosek o organizację wydarzenia[/head][/color]
+    {"[color=#1b487e][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | SRW-DOW[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -1015,11 +1015,11 @@ doc-text-printer-event-organization-request = [color=#1b487e]█▄ █ ▀█�
     {"- [bold]Organizator:[/bold]"}
     {"- [bold]Szacowana liczba uczestników:[/bold]"}
     {"- [bold]Wymagane zasoby / pomieszczenia:[/bold]"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-catering-status-report = [color=#1b487e]█▄ █ ▀█▀    [head=2]Raport stanu zaplecza gastronomicznego[/head][/color]
-    {"[color=#1b487e]█ ▀█   █     [head=3]Sektor: :STACJA: | SRW-DOW[/head][/color]"}
+doc-text-printer-catering-status-report = [color=#1b487e][mono]█▄ █ ▀█▀[/mono]    [head=2]Raport stanu zaplecza gastronomicznego[/head][/color]
+    {"[color=#1b487e][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | SRW-DOW[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -1030,11 +1030,11 @@ doc-text-printer-catering-status-report = [color=#1b487e]█▄ █ ▀█▀   
     {"- [bold]Obsługiwane strefy:[/bold]"}
     {"- [bold]Skargi gości (jeśli były):[/bold]"}
     {"- [bold]Rekomendacje uzupełnienia:[/bold]"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-room-reservation = [color=#1b487e]█▄ █ ▀█▀    [head=2]Rezerwacja pomieszczenia[/head][/color]
-    {"[color=#1b487e]█ ▀█   █     [head=3]Sektor: :STACJA: | SRW-SRW[/head][/color]"}
+doc-text-printer-room-reservation = [color=#1b487e][mono]█▄ █ ▀█▀[/mono]    [head=2]Rezerwacja pomieszczenia[/head][/color]
+    {"[color=#1b487e][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | SRW-SRW[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -1044,16 +1044,16 @@ doc-text-printer-room-reservation = [color=#1b487e]█▄ █ ▀█▀    [head
     {"- [bold]Czas rezerwacji (od–do):[/bold]"}
     {"- [bold]Cel wykorzystania:[/bold]"}
     {"- [bold]Osoby upoważnione do wstępu:[/bold]"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-centcom-universal = [color=#088723]╔══════════════════╗[/color]
-    {"[color=#088723]║███░███░░░░██░░░░░║[/color]"}
-    {"[color=#088723]║░██░████░░░██░░░░░║[/color]"}
-    {"[color=#088723]║░░█░██░██░░██░█░░░║[/color]   [head=2]Oficjalny dokument[/head]"}
-    {"[color=#088723]║░░░░██░░██░██░██░░║[/color]   [head=2]NanoTrasen[/head]"}
-    {"[color=#088723]║░░░░██░░░████░███░║[/color]   [head=3]Stacja :STACJA: | CD-XX[/head]"}
-    {"[color=#088723]╚══════════════════╝[/color]"}
+doc-text-printer-centcom-universal = [color=#088723][mono]╔══════════════════╗[/mono][/color]
+    {"[color=#088723][mono]║███░███░░░░██░░░░░║[/mono][/color]"}
+    {"[color=#088723][mono]║░██░████░░░██░░░░░║[/mono][/color]"}
+    {"[color=#088723][mono]║░░█░██░██░░██░█░░░║[/mono][/color]   [head=2]Oficjalny dokument[/head]"}
+    {"[color=#088723][mono]║░░░░██░░██░██░██░░║[/mono][/color]   [head=2]NanoTrasen[/head]"}
+    {"[color=#088723][mono]║░░░░██░░░████░███░║[/mono][/color]   [head=3]Stacja :STACJA: | CD-XX[/head]"}
+    {"[color=#088723][mono]╚══════════════════╝[/mono][/color]"}
     {"==============================================="}
     {"[bold]<TYTUŁ DOKUMENTU>[/bold]"}
     {"==============================================="}
@@ -1064,16 +1064,16 @@ doc-text-printer-centcom-universal = [color=#088723]╔════════�
     {"Szanowni Państwo,"}
     {"W imieniu Centralnego Dowództwa NanoTrasen..."}
     {"Chwała NT!"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-centcom-staff-order = [color=#088723]╔══════════════════╗[/color]
-    {"[color=#088723]║███░███░░░░██░░░░░║[/color]"}
-    {"[color=#088723]║░██░████░░░██░░░░░║[/color]"}
-    {"[color=#088723]║░░█░██░██░░██░█░░░║[/color]   [head=2]Polecenie Sztabu[/head]"}
-    {"[color=#088723]║░░░░██░░██░██░██░░║[/color]   [head=2]Centralnego Dowództwa[/head]"}
-    {"[color=#088723]║░░░░██░░░████░███░║[/color]   [head=3]Stacja :STACJA: | CD-DOW[/head]"}
-    {"[color=#088723]╚══════════════════╝[/color]"}
+doc-text-printer-centcom-staff-order = [color=#088723][mono]╔══════════════════╗[/mono][/color]
+    {"[color=#088723][mono]║███░███░░░░██░░░░░║[/mono][/color]"}
+    {"[color=#088723][mono]║░██░████░░░██░░░░░║[/mono][/color]"}
+    {"[color=#088723][mono]║░░█░██░██░░██░█░░░║[/mono][/color]   [head=2]Polecenie Sztabu[/head]"}
+    {"[color=#088723][mono]║░░░░██░░██░██░██░░║[/mono][/color]   [head=2]Centralnego Dowództwa[/head]"}
+    {"[color=#088723][mono]║░░░░██░░░████░███░║[/mono][/color]   [head=3]Stacja :STACJA: | CD-DOW[/head]"}
+    {"[color=#088723][mono]╚══════════════════╝[/mono][/color]"}
     {"==============================================="}
     {"[bold]<TYTUŁ POLECENIA>[/bold]"}
     {"==============================================="}
@@ -1086,16 +1086,16 @@ doc-text-printer-centcom-staff-order = [color=#088723]╔═══════�
     {"<Treść polecenia>"}
     {"Polecenie należy wykonać bezzwłocznie. W razie wątpliwości dopuszczalne jest złożenie oficjalnego wniosku o wyjaśnienie."}
     {"Chwała NT!"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-centcom-staff-response = [color=#088723]╔══════════════════╗[/color]
-    {"[color=#088723]║███░███░░░░██░░░░░║[/color]"}
-    {"[color=#088723]║░██░████░░░██░░░░░║[/color]"}
-    {"[color=#088723]║░░█░██░██░░██░█░░░║[/color]   [head=2]Odpowiedź Sztabu[/head]"}
-    {"[color=#088723]║░░░░██░░██░██░██░░║[/color]   [head=2]Centralnego Dowództwa[/head]"}
-    {"[color=#088723]║░░░░██░░░████░███░║[/color]   [head=3]Stacja :STACJA: | CD-DOW[/head]"}
-    {"[color=#088723]╚══════════════════╝[/color]"}
+doc-text-printer-centcom-staff-response = [color=#088723][mono]╔══════════════════╗[/mono][/color]
+    {"[color=#088723][mono]║███░███░░░░██░░░░░║[/mono][/color]"}
+    {"[color=#088723][mono]║░██░████░░░██░░░░░║[/mono][/color]"}
+    {"[color=#088723][mono]║░░█░██░██░░██░█░░░║[/mono][/color]   [head=2]Odpowiedź Sztabu[/head]"}
+    {"[color=#088723][mono]║░░░░██░░██░██░██░░║[/mono][/color]   [head=2]Centralnego Dowództwa[/head]"}
+    {"[color=#088723][mono]║░░░░██░░░████░███░║[/mono][/color]   [head=3]Stacja :STACJA: | CD-DOW[/head]"}
+    {"[color=#088723][mono]╚══════════════════╝[/mono][/color]"}
     {"==============================================="}
     {"[bold]ODPOWIEDŹ NA KORESPONDENCJĘ STACJI[/bold]"}
     {"==============================================="}
@@ -1106,16 +1106,16 @@ doc-text-printer-centcom-staff-response = [color=#088723]╔══════�
     {"Państwa komunikat wpłynął do Sektorowego Sztabu i został rozpatrzony."}
     {"<Treść odpowiedzi>"}
     {"Chwała NT!"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-centcom-periodic-reports-order = [color=#088723]╔══════════════════╗[/color]
-    {"[color=#088723]║███░███░░░░██░░░░░║[/color]"}
-    {"[color=#088723]║░██░████░░░██░░░░░║[/color]"}
-    {"[color=#088723]║░░█░██░██░░██░█░░░║[/color]   [head=2]Polecenie[/head]"}
-    {"[color=#088723]║░░░░██░░██░██░██░░║[/color]   [head=2]raportowania[/head]"}
-    {"[color=#088723]║░░░░██░░░████░███░║[/color]   [head=3]Stacja :STACJA: | CD-DOW[/head]"}
-    {"[color=#088723]╚══════════════════╝[/color]"}
+doc-text-printer-centcom-periodic-reports-order = [color=#088723][mono]╔══════════════════╗[/mono][/color]
+    {"[color=#088723][mono]║███░███░░░░██░░░░░║[/mono][/color]"}
+    {"[color=#088723][mono]║░██░████░░░██░░░░░║[/mono][/color]"}
+    {"[color=#088723][mono]║░░█░██░██░░██░█░░░║[/mono][/color]   [head=2]Polecenie[/head]"}
+    {"[color=#088723][mono]║░░░░██░░██░██░██░░║[/mono][/color]   [head=2]raportowania[/head]"}
+    {"[color=#088723][mono]║░░░░██░░░████░███░║[/mono][/color]   [head=3]Stacja :STACJA: | CD-DOW[/head]"}
+    {"[color=#088723][mono]╚══════════════════╝[/mono][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -1126,11 +1126,11 @@ doc-text-printer-centcom-periodic-reports-order = [color=#088723]╔════
     {"[bold]Tytuł:[/bold] <np. Raport zmian kodów zagrożenia>"}
     {"Raport zostanie zażądany przed zakończeniem zmiany. Jego kompletność wpłynie na ocenę całego działu."}
     {"Chwała NT!"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-ia-verification-request = [color=#7a5c1a]█▄ █ ▀█▀    [head=2]Wniosek o weryfikację SPO[/head][/color]
-    {"[color=#7a5c1a]█ ▀█   █     [head=3]Sektor: :STACJA: | ASW-DOW[/head][/color]"}
+doc-text-printer-ia-verification-request = [color=#7a5c1a][mono]█▄ █ ▀█▀[/mono]    [head=2]Wniosek o weryfikację SPO[/head][/color]
+    {"[color=#7a5c1a][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | ASW-DOW[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -1141,11 +1141,11 @@ doc-text-printer-ia-verification-request = [color=#7a5c1a]█▄ █ ▀█▀  
     {"- [bold]Opis podejrzenia naruszenia:[/bold]"}
     {"- [bold]Osoby, których dotyczy wniosek:[/bold]"}
     {"[italic]Wnioskodawca oświadcza, że podane informacje wynikają z rzetelnej obserwacji.[/italic]"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-ia-documentation-request = [color=#7a5c1a]█▄ █ ▀█▀    [head=2]Wniosek o udostępnienie dokumentacji[/head][/color]
-    {"[color=#7a5c1a]█ ▀█   █     [head=3]Sektor: :STACJA: | ASW-XXX[/head][/color]"}
+doc-text-printer-ia-documentation-request = [color=#7a5c1a][mono]█▄ █ ▀█▀[/mono]    [head=2]Wniosek o udostępnienie dokumentacji[/head][/color]
+    {"[color=#7a5c1a][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | ASW-XXX[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -1156,11 +1156,11 @@ doc-text-printer-ia-documentation-request = [color=#7a5c1a]█▄ █ ▀█▀ 
     {"2."}
     {"3."}
     {"[bold]Cel wglądu:[/bold] weryfikacja zgodności z Prawem Kosmicznym i SPO."}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-ia-department-audit-report = [color=#7a5c1a]█▄ █ ▀█▀    [head=2]Raport z kontroli działu[/head][/color]
-    {"[color=#7a5c1a]█ ▀█   █     [head=3]Sektor: :STACJA: | ASW-CD[/head][/color]"}
+doc-text-printer-ia-department-audit-report = [color=#7a5c1a][mono]█▄ █ ▀█▀[/mono]    [head=2]Raport z kontroli działu[/head][/color]
+    {"[color=#7a5c1a][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | ASW-CD[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -1172,11 +1172,11 @@ doc-text-printer-ia-department-audit-report = [color=#7a5c1a]█▄ █ ▀█�
     {"- [bold]Zalecenia naprawcze:[/bold]"}
     {"- [bold]Termin usunięcia usterek:[/bold]"}
     {"- [bold]Status:[/bold] w trakcie / zamknięte"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-ia-interrogation-protocol = [color=#7a5c1a]█▄ █ ▀█▀    [head=2]Protokół przesłuchania inspekcyjnego[/head][/color]
-    {"[color=#7a5c1a]█ ▀█   █     [head=3]Sektor: :STACJA: | ASW-OCH[/head][/color]"}
+doc-text-printer-ia-interrogation-protocol = [color=#7a5c1a][mono]█▄ █ ▀█▀[/mono]    [head=2]Protokół przesłuchania inspekcyjnego[/head][/color]
+    {"[color=#7a5c1a][mono]█ ▀█  █[/mono]     [head=3]Sektor: :STACJA: | ASW-OCH[/head][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Autor dokumentu:[/bold] :IMIĘ_NAZWISKO:"}
@@ -1187,32 +1187,32 @@ doc-text-printer-ia-interrogation-protocol = [color=#7a5c1a]█▄ █ ▀█▀
     {"- [bold]Obecni świadkowie:[/bold]"}
     {"[bold]Treść zeznań:[/bold]"}
     {"[bold]Wnioski inspektora:[/bold]"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-syndicate-cooperation-offer = [color=#1b67a5]      ░▒▓███████▓▒░ [head=2]Oferta współpracy[/head][/color]
-    {"[color=#1b67a5]░▒▓█▓▒░       [head=3]Sektor: :STACJA:[/head][/color]"}
-    {"[color=#1b67a5]░▒▓█▓▒░[/color]"}
-    {"[color=#1b67a5] ░▒▓██████▓▒░[/color]"}
-    {"[color=#1b67a5]      ░▒▓█▓▒░[/color]"}
-    {"[color=#1b67a5]      ░▒▓█▓▒░[/color]"}
-    {"[color=#1b67a5]░▒▓███████▓▒░[/color]"}
+doc-text-printer-syndicate-cooperation-offer = [color=#1b67a5]      [mono]░▒▓███████▓▒░[/mono] [head=2]Oferta współpracy[/head][/color]
+    {"[color=#1b67a5][mono]░▒▓█▓▒░[/mono]       [head=3]Sektor: :STACJA:[/head][/color]"}
+    {"[color=#1b67a5][mono]░▒▓█▓▒░[/mono][/color]"}
+    {"[color=#1b67a5] [mono]░▒▓██████▓▒░[/mono][/color]"}
+    {"[color=#1b67a5]      [mono]░▒▓█▓▒░[/mono][/color]"}
+    {"[color=#1b67a5]      [mono]░▒▓█▓▒░[/mono][/color]"}
+    {"[color=#1b67a5][mono]░▒▓███████▓▒░[/mono][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Kryptonim agenta:[/bold] <Wprowadź kryptonim>"}
     {"==============================================="}
     {"Syndykat przedkłada propozycję współpracy między stacją a agentem <kryptonim>. Wymagane świadczenia ze strony stacji:"}
     {"<Opisz warunki>"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-syndicate-info-exchange-proposal = [color=#1b67a5]      ░▒▓███████▓▒░ [head=2]Propozycja wymiany informacji[/head][/color]
-    {"[color=#1b67a5]░▒▓█▓▒░       [head=3]Sektor: :STACJA:[/head][/color]"}
-    {"[color=#1b67a5]░▒▓█▓▒░[/color]"}
-    {"[color=#1b67a5] ░▒▓██████▓▒░[/color]"}
-    {"[color=#1b67a5]      ░▒▓█▓▒░[/color]"}
-    {"[color=#1b67a5]      ░▒▓█▓▒░[/color]"}
-    {"[color=#1b67a5]░▒▓███████▓▒░[/color]"}
+doc-text-printer-syndicate-info-exchange-proposal = [color=#1b67a5]      [mono]░▒▓███████▓▒░[/mono] [head=2]Propozycja wymiany informacji[/head][/color]
+    {"[color=#1b67a5][mono]░▒▓█▓▒░[/mono]       [head=3]Sektor: :STACJA:[/head][/color]"}
+    {"[color=#1b67a5][mono]░▒▓█▓▒░[/mono][/color]"}
+    {"[color=#1b67a5] [mono]░▒▓██████▓▒░[/mono][/color]"}
+    {"[color=#1b67a5]      [mono]░▒▓█▓▒░[/mono][/color]"}
+    {"[color=#1b67a5]      [mono]░▒▓█▓▒░[/mono][/color]"}
+    {"[color=#1b67a5][mono]░▒▓███████▓▒░[/mono][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"[bold]Kryptonim:[/bold] <Wprowadź kryptonim>"}
@@ -1220,16 +1220,16 @@ doc-text-printer-syndicate-info-exchange-proposal = [color=#1b67a5]      ░▒�
     {"W zamian za poufne informacje operacyjne oczekujemy:"}
     {"<Wymień oczekiwane świadczenia>"}
     {"Kontakt: <Sposób nawiązania łączności>"}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
-doc-text-printer-syndicate-summons = [color=#1b67a5]      ░▒▓███████▓▒░ [head=2]Wezwanie do porozumienia[/head][/color]
-    {"[color=#1b67a5]░▒▓█▓▒░       [head=3]Sektor: :STACJA:[/head][/color]"}
-    {"[color=#1b67a5]░▒▓█▓▒░[/color]"}
-    {"[color=#1b67a5] ░▒▓██████▓▒░[/color]"}
-    {"[color=#1b67a5]      ░▒▓█▓▒░[/color]"}
-    {"[color=#1b67a5]      ░▒▓█▓▒░[/color]"}
-    {"[color=#1b67a5]░▒▓███████▓▒░[/color]"}
+doc-text-printer-syndicate-summons = [color=#1b67a5]      [mono]░▒▓███████▓▒░[/mono] [head=2]Wezwanie do porozumienia[/head][/color]
+    {"[color=#1b67a5][mono]░▒▓█▓▒░[/mono]       [head=3]Sektor: :STACJA:[/head][/color]"}
+    {"[color=#1b67a5][mono]░▒▓█▓▒░[/mono][/color]"}
+    {"[color=#1b67a5] [mono]░▒▓██████▓▒░[/mono][/color]"}
+    {"[color=#1b67a5]      [mono]░▒▓█▓▒░[/mono][/color]"}
+    {"[color=#1b67a5]      [mono]░▒▓█▓▒░[/mono][/color]"}
+    {"[color=#1b67a5][mono]░▒▓███████▓▒░[/mono][/color]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATA:"}
     {"==============================================="}
@@ -1237,6 +1237,6 @@ doc-text-printer-syndicate-summons = [color=#1b67a5]      ░▒▓████�
     {"Proponujemy spotkanie w lokalizacji: <Miejsce>"}
     {"Termin: <Czas od początku zmiany>"}
     {"Nieobecność może zostać uznana za odmowę dialogu."}
-    {"▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"}
-    {"▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
