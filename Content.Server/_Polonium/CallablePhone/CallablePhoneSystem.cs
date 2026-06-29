@@ -1721,13 +1721,13 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
     {
         foreach (var linked in centCommTelephone.LinkedTelephones)
         {
-            if (!TryComp<TelephoneComponent>(linked, out var linkedTelephone))
-                continue;
-
             if (!TryComp<TelephoneComponent>(linked, out var callerTelephone))
                 continue;
 
             if (callerTelephone.CurrentState is not TelephoneState.InCall and not TelephoneState.EndingCall)
+                continue;
+
+            if (!TryComp<CallablePhoneComponent>(linked, out var callerCallable))
                 continue;
 
             PlayHandsetHangup((linked, callerCallable), micVariant: true);
