@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: Emisse
-  changes:
-  - message: Centcomm has been rebuilt from the ground up.
-    type: Tweak
-  id: 7967
-  time: '2025-02-17T08:51:45.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/35240
 - author: Sparlight
   changes:
   - message: Space debris has returned to Wizden servers.
@@ -4189,3 +4182,10 @@
   id: 9274
   time: '2026-06-28T09:03:23.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/739
+- author: Zintex
+  changes:
+  - message: "Dodany utw\xF3r g\xF3wnochrona w wersji elektronicznej."
+    type: Add
+  id: 9275
+  time: '2026-06-29T23:52:49.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/745
