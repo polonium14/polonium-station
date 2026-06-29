@@ -1,0 +1,26 @@
+# SPDX-FileCopyrightText: 2025 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 Czuat <143895262+Czuat@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 Polonium-bot <admin@ss14.pl>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: Tag
+  id: ErtUplinkCombat
+
+- type: Tag
+  id: ErtUplinkDeadSquad
+
+- type: Tag
+  id: ErtUplinkCBURN
+
+- type: Tag
+  id: ErtUplinkERT
+
+- type: Tag
+  id: ErtUplinkMedical
+  
+- type: Tag
+  id: ErtUplinkJanitorial
+  
+- type: Tag
+  id: ErtUplinkEngineering

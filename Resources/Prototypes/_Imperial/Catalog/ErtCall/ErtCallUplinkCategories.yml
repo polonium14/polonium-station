@@ -1,0 +1,61 @@
+# SPDX-FileCopyrightText: 2026 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+#   - ERTUplinkMelee
+#   - ERTUplikWeaponCombat
+#   - ERTUplinkAmmoCombat
+#   - ERTUplinkWeaponNonCombat
+#   - ERTUplinkAmmoNonCombat
+#   - ERTUplinkExplosives
+#   - ERTUplinkMedial
+#   - ERTUplinkEngineering
+#   - ERTUplinkUtilities
+#   - ERTUplinkJanitor
+#   - ERTUplinkPointless
+
+- type: storeCategory
+  id: ERTUplinkMelee
+  name: ert-uplink-melee
+
+- type: storeCategory
+  id: ERTUplinkWeaponCombat
+  name: ert-uplink-weapons
+
+- type: storeCategory
+  id: ERTUplinkAmmoCombat
+  name: ert-uplink-ammunition
+
+- type: storeCategory
+  id: ERTUplinkWeaponNonCombat
+  name: ert-uplink-secondary-weapons
+
+- type: storeCategory
+  id: ERTUplinkAmmoNonCombat
+  name: ert-uplink-ammunition
+
+- type: storeCategory
+  id: ERTUplinkExplosives
+  name: ert-uplink-explosives
+
+- type: storeCategory
+  id: ERTUplinkMedial
+  name: ert-uplink-medicine
+
+- type: storeCategory
+  id: ERTUplinkEngineering
+  name: ert-uplink-engineering
+
+- type: storeCategory
+  id: ERTUplinkUtilities
+  name: ert-uplink-utilities
+
+- type: storeCategory
+  id: ERTUplinkJanitor
+  name: ert-uplink-janitorial
+
+- type: storeCategory
+  id: ERTUplinkPointless
+  name: ert-uplink-other
+
