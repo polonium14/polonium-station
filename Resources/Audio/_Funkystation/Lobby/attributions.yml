@@ -1,12 +1,6 @@
-- files: ["dagd.ogg"]
-  license: "CC-BY-NC-SA-4.0"
-  copyright: "D.A.G.D by vectorassembly, a funky exclusive"
-  source: "https://vectorassembly.org"
-
-- files: ["meltdown.ogg"]
-  license: "CC-BY-NC-SA-4.0"
-  copyright: "M for Meltdown by vectorassembly"
-  source: "https://vectorassembly.org"
+# SPDX-FileCopyrightText: 2025 corresp0nd <46357632+corresp0nd@users.noreply.github.com>
+#
+# SPDX-License-Identifier: MIT
 
 - files: ["an_alien_song_alien_kids.ogg","the_great_message_alien_kids.ogg"]
   license: "Custom"
