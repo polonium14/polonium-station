@@ -1,3 +1,11 @@
+# SPDX-FileCopyrightText: 2025 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Tofi! <52051567+Tofi-Dev@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 nikitosych <174215049+nikitosych@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 Saver310 <antekoszukaniec1@gmail.com>
+# SPDX-FileCopyrightText: 2026 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   parent: BasePlushie
   id: PlushieItanKio
@@ -84,3 +92,18 @@
       - !type:DoActsBehavior
         acts: ["Destruction"]
   - type: Damageable
+
+- type: entity
+  parent: PlushieMoth
+  id: PlushieMothDeathshead
+  name: pluszak Asa Trupiogłowego
+  description: Puszysty pluszak przypominający pewnego barmana ćmę. Widnieje na nim mały napis "Nie dawać whiskey po północy".
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Fun/Plushies/deathshead.rsi
+    state: icon
+  - type: ReactionMixer
+    mixMessage: "spoon-mixing-success"
+    timeToMix: 0.5
+    reactionTypes:
+    - Stir

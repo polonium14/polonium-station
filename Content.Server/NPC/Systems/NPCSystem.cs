@@ -13,6 +13,8 @@
 // SPDX-FileCopyrightText: 2024 Vasilis <vasilis@pikachu.systems>
 // SPDX-FileCopyrightText: 2025 YaraaraY <158123176+YaraaraY@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+// SPDX-FileCopyrightText: 2026 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
 //
 // SPDX-License-Identifier: MIT
 
@@ -26,6 +28,7 @@ using Content.Shared.Mobs;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.NPC;
 using Content.Shared.NPC.Systems;
+using Content.Shared.Zombies;
 using Robust.Server.GameObjects;
 using Robust.Shared.Configuration;
 using Robust.Shared.Player;
@@ -69,8 +72,11 @@ namespace Content.Server.NPC.Systems
             if (_mobState.IsIncapacitated(uid) || TerminatingOrDeleted(uid))
                 return;
 
-            // This NPC has an attached mind, so it should not wake up.
-            if (TryComp<MindContainerComponent>(uid, out var mindContainer) && mindContainer.HasMind)
+            // SSD crew should stay inactive until their player returns.
+            // Zombies resume AI when abandoned
+            if (TryComp<MindContainerComponent>(uid, out var mindContainer)
+                && mindContainer.HasMind
+                && !HasComp<ZombieComponent>(uid))
                 return;
 
             WakeNPC(uid, component);
@@ -164,7 +170,7 @@ namespace Content.Server.NPC.Systems
             if (HasComp<ActorComponent>(uid))
                 return;
 
-            switch (args.NewMobState)
+            switch (args.Component.CurrentState)
             {
                 case MobState.Alive:
                 case MobState.SoftCritical:
