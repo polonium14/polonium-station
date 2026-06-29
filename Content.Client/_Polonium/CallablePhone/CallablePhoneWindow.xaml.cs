@@ -78,14 +78,14 @@ public sealed partial class CallablePhoneWindow : FancyWindow
 
 
         var callerId = _telephone.GetFormattedCallerIdForEntity(
-            telephone.LastCallerId.Item1,
-            telephone.LastCallerId.Item2,
+            telephone.LastCallerId?.CallerId,
+            telephone.LastCallerId?.CallerJob,
             Color.LightGray,
             "Default",
             11);
 
         var deviceId = _telephone.GetFormattedDeviceIdForEntity(
-            telephone.LastCallerId.Item3,
+            telephone.LastCallerId?.DeviceId,
             Color.LightGray,
             "Default",
             11);

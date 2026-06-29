@@ -227,7 +227,7 @@ public sealed partial class TelephoneSystem : SharedTelephoneSystem
                     {
                         // Cordless handset: keep the line up even if a phone moves to another grid.
                         if (_callablePhone.IsHandsetOffHook(entity.Owner) ||
-                            _callablePhone.IsHandsetOffHook(receiver.Owner))
+                            _callablePhone.IsHandsetOffHook(receiverUid))
                         {
                             continue;
                         }

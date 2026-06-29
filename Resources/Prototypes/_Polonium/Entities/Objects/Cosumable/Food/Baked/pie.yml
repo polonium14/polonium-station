@@ -12,7 +12,7 @@
   - type: FlavorProfile
     flavors:
       - sweet
-      - cream
+      - creamy
   - type: Sprite
     sprite: _Polonium/Objects/Cosumable/Food/Baked/pie.rsi
     layers:

@@ -1,4 +1,5 @@
 
+guide-entry-sop101 = SOP 101
 guide-entry-command-sop = SPO Dowództwa
 guide-entry-security-sop = SPO Ochrony
 guide-entry-use-of-force-sop = Procedura stosowania siły

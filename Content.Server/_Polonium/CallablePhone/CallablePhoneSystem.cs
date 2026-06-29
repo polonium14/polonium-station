@@ -762,8 +762,8 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
         }
 
         var callerName = _telephone.GetPlainCallerIdForEntity(
-            telephone.LastCallerId.Item1,
-            telephone.LastCallerId.Item2);
+            telephone.LastCallerId?.CallerId,
+            telephone.LastCallerId?.CallerJob);
 
         SendCentCommRingNotification(phone, callerName);
         PromptAdminGhostsForCentCommCall(phone, callerName);
@@ -1723,7 +1723,10 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
             if (!TryComp<CallablePhoneComponent>(linked, out var callerCallable))
                 continue;
 
-            if (linked.Comp.CurrentState is not TelephoneState.InCall and not TelephoneState.EndingCall)
+            if (!TryComp<TelephoneComponent>(linked, out var callerTelephone))
+                continue;
+
+            if (callerTelephone.CurrentState is not TelephoneState.InCall and not TelephoneState.EndingCall)
                 continue;
 
             PlayHandsetHangup((linked, callerCallable), micVariant: true);

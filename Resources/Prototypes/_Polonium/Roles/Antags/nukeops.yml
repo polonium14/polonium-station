@@ -4,3 +4,14 @@
   storage:
     back:
     - NukeOpsDeclarationOfWar
+
+- type: antagSpecifier
+  parent: LoneOp
+  id: LoneOpRoundStart
+  startingGear: SyndicateLoneOperativeGearFullRoundStart
+  components:
+  - type: RandomMetadata
+    nameSegments:
+    - NamesSyndicateElite
+  mindRoles:
+  - MindRoleNukeops

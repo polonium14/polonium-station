@@ -64,10 +64,16 @@ public sealed partial class ChatSystem
     /// <summary>
     ///     Sends a chat message to the given players in range of the source entity.
     /// </summary>
-    private void SendInVoiceRange(ChatChannel channel, string message, string wrappedMessage, EntityUid source, ChatTransmitRange range, NetUserId? author = null)
+    private void SendInVoiceRange(ChatChannel channel, string message, string wrappedMessage, EntityUid source, ChatTransmitRange range, NetUserId? author = null, EntityUid? excludeRecipient = null)
     {
         foreach (var (session, data) in GetRecipients(source, VoiceRange))
         {
+            if (excludeRecipient != null &&
+                session.AttachedEntity == excludeRecipient)
+            {
+                continue;
+            }
+
             var entRange = MessageRangeCheck(session, data, range);
             if (entRange == MessageRangeCheckResult.Disallowed)
                 continue;

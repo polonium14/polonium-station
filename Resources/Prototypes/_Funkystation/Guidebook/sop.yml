@@ -18,7 +18,7 @@
 
 - type: guideEntry
   id: SOP101
-  name: SOP 101
+  name: guide-entry-sop101
   text: "/ServerInfo/_Polonium/Guidebook/SOP/SOP101.xml"
   children:
   - CommandSOP

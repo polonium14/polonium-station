@@ -20,7 +20,6 @@
         shape:
           !type:PhysShapeAabb {}
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: Metallic
   - type: StaticPrice
     price: 200
@@ -188,7 +187,6 @@
         shape:
           !type:PhysShapeAabb {}
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: Metallic
   - type: StaticPrice
     price: 550

@@ -238,6 +238,7 @@ namespace Content.Server.Lathe
                 if (currentRecipe.Result is { } resultProto)
                 {
                     var result = Spawn(resultProto, Transform(uid).Coordinates);
+                    RaiseLocalEvent(uid, new LatheGetResultEvent(result));
                     _stack.TryMergeToContacts(result);
                 }
 

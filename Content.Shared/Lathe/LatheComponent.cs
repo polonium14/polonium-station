@@ -117,6 +117,19 @@ namespace Content.Shared.Lathe
     }
 
     /// <summary>
+    /// Event raised on a lathe when it finishes producing an item.
+    /// </summary>
+    public sealed partial class LatheGetResultEvent : EntityEventArgs
+    {
+        public readonly EntityUid ResultItem;
+
+        public LatheGetResultEvent(EntityUid result)
+        {
+            ResultItem = result;
+        }
+    }
+
+    /// <summary>
     /// Event raised on a lathe when it starts producing a recipe.
     /// </summary>
     [ByRefEvent]

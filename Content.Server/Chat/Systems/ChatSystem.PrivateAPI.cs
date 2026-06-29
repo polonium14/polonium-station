@@ -18,7 +18,9 @@ public sealed partial class ChatSystem
         ChatTransmitRange range,
         string? nameOverride,
         bool hideLog = false,
-        bool ignoreActionBlocker = false
+        bool ignoreActionBlocker = false,
+        EntityUid? excludeRecipient = null,
+        bool triggerSpeakEvent = true
         )
     {
         if (!_actionBlocker.CanSpeak(source) && !ignoreActionBlocker)
@@ -56,10 +58,13 @@ public sealed partial class ChatSystem
             ("fontSize", speech.FontSize),
             ("message", FormattedMessage.EscapeText(message)));
 
-        SendInVoiceRange(ChatChannel.Local, message, wrappedMessage, source, range);
+        SendInVoiceRange(ChatChannel.Local, message, wrappedMessage, source, range, excludeRecipient: excludeRecipient);
 
-        var ev = new EntitySpokeEvent(source, message, null, null);
-        RaiseLocalEvent(source, ev, true);
+        if (triggerSpeakEvent)
+        {
+            var ev = new EntitySpokeEvent(source, message, null, null);
+            RaiseLocalEvent(source, ev, true);
+        }
 
         // To avoid logging any messages sent by entities that are not players, like vendors, cloning, etc.
         // Also doesn't log if hideLog is true.

@@ -8,6 +8,7 @@
 
 using Content.Shared.Alert;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Prototypes;
 using Content.Shared.FixedPoint;
 using Content.Shared.Humanoid;
 using Robust.Shared.Audio;
@@ -129,7 +130,7 @@ public sealed partial class SprinterComponent : Component
     [DataField, ViewVariables]
     public DamageSpecifier SprintDamageSpecifier = new()
     {
-        DamageDict = new Dictionary<string, FixedPoint2>
+        DamageDict = new Dictionary<ProtoId<DamageTypePrototype>, FixedPoint2>
         {
             { "Blunt", 7 },
         }
