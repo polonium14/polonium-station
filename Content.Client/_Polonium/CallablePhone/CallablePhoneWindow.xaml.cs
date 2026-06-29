@@ -76,16 +76,17 @@ public sealed partial class CallablePhoneWindow : FancyWindow
         if (_owner == null || !_entManager.TryGetComponent<TelephoneComponent>(_owner.Value, out var telephone))
             return;
 
+        var lastCallerId = telephone.LastCallerId;
 
         var callerId = _telephone.GetFormattedCallerIdForEntity(
-            telephone.LastCallerId.Item1,
-            telephone.LastCallerId.Item2,
+            lastCallerId?.CallerId,
+            lastCallerId?.CallerJob,
             Color.LightGray,
             "Default",
             11);
 
         var deviceId = _telephone.GetFormattedDeviceIdForEntity(
-            telephone.LastCallerId.Item3,
+            lastCallerId?.DeviceId,
             Color.LightGray,
             "Default",
             11);

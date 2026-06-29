@@ -22,7 +22,7 @@
 
 - type: entity
   name: Pęto parówek
-  parent: FoodMeatBase
+  parent: [FoodMeatBase, BaseSlicingRefinableFood]
   id: FoodMeatPetoParowek
   description: Pęto parówek, no bo kto nie lubi parówek.
   components:
@@ -41,6 +41,7 @@
           Quantity: 20
         - ReagentId: Fat
           Quantity: 8
-  - type: SliceableFood
-    count: 4
-    slice: FoodMeatParowka
+  - type: ToolRefinable
+    refineResult:
+    - id: FoodMeatParowka
+      amount: 4
