@@ -761,9 +761,10 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
             break;
         }
 
+        var lastCallerId = telephone.LastCallerId;
         var callerName = _telephone.GetPlainCallerIdForEntity(
-            telephone.LastCallerId?.CallerId,
-            telephone.LastCallerId?.CallerJob);
+            lastCallerId?.CallerId,
+            lastCallerId?.CallerJob);
 
         SendCentCommRingNotification(phone, callerName);
         PromptAdminGhostsForCentCommCall(phone, callerName);
@@ -1720,7 +1721,7 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
     {
         foreach (var linked in centCommTelephone.LinkedTelephones)
         {
-            if (!TryComp<CallablePhoneComponent>(linked, out var callerCallable))
+            if (!TryComp<TelephoneComponent>(linked, out var linkedTelephone))
                 continue;
 
             if (!TryComp<TelephoneComponent>(linked, out var callerTelephone))

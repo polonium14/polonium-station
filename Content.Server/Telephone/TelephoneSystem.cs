@@ -220,7 +220,7 @@ public sealed partial class TelephoneSystem : SharedTelephoneSystem
                     if (!TryComp<TelephoneComponent>(receiverUid, out var receiverTelephone))
                         continue;
 
-                    var receiver = (receiverUid, receiverTelephone);
+                    var receiver = new Entity<TelephoneComponent>(receiverUid, receiverTelephone);
 
                     if (!IsSourceInRangeOfReceiver(entity, receiver) &&
                         !IsSourceInRangeOfReceiver(receiver, entity))
