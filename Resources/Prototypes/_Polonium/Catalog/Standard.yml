@@ -14,3 +14,8 @@
   name: Zintex - Gównochrona
   path:
     path: "/Audio/Lobby/gownochrona.ogg"
+- type: jukebox
+  id: gownochrona_electronic
+  name: Zintex - Gównochrona (Wersja Elektroniczna)
+  path:
+    path: "/Audio/Lobby/gownochrona_electronic.ogg"
