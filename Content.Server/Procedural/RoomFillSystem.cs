@@ -11,7 +11,7 @@ using Robust.Shared.Random;
 
 namespace Content.Server.Procedural;
 
-public sealed class RoomFillSystem : EntitySystem
+public sealed partial class RoomFillSystem : EntitySystem
 {
     [Dependency] private readonly DungeonSystem _dungeon = default!;
     [Dependency] private readonly SharedMapSystem _maps = default!;

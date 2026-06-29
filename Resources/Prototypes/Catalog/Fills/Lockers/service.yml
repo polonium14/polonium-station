@@ -136,6 +136,7 @@
     - id: LightReplacer
     - id: BoxLightMixed
     - id: Holoprojector
+    - id: WireBrush
     - !type:AllSelector
       rolls: 2
       children:
@@ -145,7 +146,6 @@
       - id: SoapNT
       - id: FlashlightLantern
       - id: Plunger
-      - id: WireBrush
     - id: PlushieLizardJobJanitor
       prob: 0.02
 
@@ -188,7 +188,7 @@
     - id: ClothingHeadBandGreen # [Resprite] Rehydrating botany pt. 2!
     - id: ChemistryBottleRobustHarvest
       prob: 0.3
-    - id: ClothingBeltPlant
+    - id: ClothingBeltPlantFilled
     - id: PlantBag ##Some maps don't have nutrivend
     - id: PlantAnalyzer
     - id: BoxMouthSwab

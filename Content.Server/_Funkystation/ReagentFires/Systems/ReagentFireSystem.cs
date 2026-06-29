@@ -3,6 +3,7 @@ using Content.Server._Funkystation.ReagentFires.Components;
 using Content.Server.Atmos.Components;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Decals;
+using Content.Shared._Funkystation.CCVar;
 using Content.Shared._Funkystation.ReagentFires;
 using Content.Shared.Atmos;
 using Content.Shared.Chemistry.Components;
@@ -17,33 +18,39 @@ using Content.Shared.Mobs.Components;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Configuration;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
 namespace Content.Server._Funkystation.ReagentFires.Systems
 {
-    public sealed class ReagentFireSystem : EntitySystem
+    public sealed partial class ReagentFireSystem : EntitySystem
     {
-        [Dependency] private readonly AtmosphereSystem _atmos = null!;
-        [Dependency] private readonly SharedTransformSystem _transform = null!;
-        [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = null!;
-        [Dependency] private readonly IPrototypeManager _prototypeManager = null!;
-        [Dependency] private readonly SharedAppearanceSystem _appearance = null!;
-        [Dependency] private readonly EntityLookupSystem _lookup = null!;
-        [Dependency] private readonly SharedAudioSystem _audio = null!;
-        [Dependency] private readonly SharedPointLightSystem _light = null!;
-        [Dependency] private readonly DecalSystem _decalSystem = null!;
-        [Dependency] private readonly IRobustRandom _random = null!;
-        [Dependency] private readonly DamageableSystem _damageable = null!;
+        [Dependency] private AtmosphereSystem _atmos = null!;
+        [Dependency] private SharedTransformSystem _transform = null!;
+        [Dependency] private SharedSolutionContainerSystem _solutionContainerSystem = null!;
+        [Dependency] private IPrototypeManager _prototypeManager = null!;
+        [Dependency] private SharedAppearanceSystem _appearance = null!;
+        [Dependency] private EntityLookupSystem _lookup = null!;
+        [Dependency] private SharedAudioSystem _audio = null!;
+        [Dependency] private SharedPointLightSystem _light = null!;
+        [Dependency] private DecalSystem _decalSystem = null!;
+        [Dependency] private IRobustRandom _random = null!;
+        [Dependency] private DamageableSystem _damageable = null!;
+        [Dependency] private IConfigurationManager _cfg = null!;
 
         private readonly List<EntityUid> _toExtinguish = new();
         private readonly string[] _burntDecals = ["burnt1", "burnt2", "burnt3", "burnt4"];
+        private float _puddleDamageMultiplier = 1.0f;
+        private readonly List<(EntityUid Uid, ReagentPuddleFireComponent FireComp, PuddleComponent Puddle, TransformComponent Xform)> _activeFires = new();
+        private const string StructuralDamage = "Structural";
+        private const string HeatDamage = "Heat";
 
         public override void Initialize()
         {
             base.Initialize();
-            SubscribeLocalEvent<SolutionComponent, SolutionChangedEvent>(OnSolutionChanged);
+            Subs.CVar(_cfg, ReagentFireCVars.PuddleFireDamageMultiplier, value => _puddleDamageMultiplier = value, true);
             SubscribeLocalEvent<TransformComponent, TileExposedEvent>(OnTileExposed);
             SubscribeLocalEvent<PuddleComponent, TileFireEvent>(OnPuddleTileFire);
             SubscribeLocalEvent<ReagentPuddleFireComponent, ComponentShutdown>(OnFireShutdown);
@@ -64,29 +71,24 @@ namespace Content.Server._Funkystation.ReagentFires.Systems
             }
         }
 
-        private void OnSolutionChanged(EntityUid uid, SolutionComponent component, ref SolutionChangedEvent args)
+        public void UpdateFire(Entity<PuddleComponent> ent)
         {
-            if (!TryComp<ContainedSolutionComponent>(uid, out var relation))
+            if (ent.Comp.Solution == null)
                 return;
-
-            var containerUid = relation.Container;
-            if (!TryComp<PuddleComponent>(containerUid, out _))
-                return;
-
-            var solution = component.Solution;
+            var solution = ent.Comp.Solution.Value.Comp.Solution;
             var flammability = solution.GetSolutionFlammability(_prototypeManager);
             var selfOxidizing = solution.IsSolutionSelfOxidizing(_prototypeManager);
 
             if (flammability <= 0)
             {
-                if (HasComp<ReagentPuddleFireComponent>(containerUid))
+                if (HasComp<ReagentPuddleFireComponent>(ent))
                 {
-                    Extinguish(containerUid);
+                    Extinguish(ent);
                 }
                 return;
             }
 
-            var fireComp = EnsureComp<ReagentPuddleFireComponent>(containerUid);
+            var fireComp = EnsureComp<ReagentPuddleFireComponent>(ent);
             fireComp.Flammability = flammability;
             fireComp.SelfOxidizing = selfOxidizing;
 
@@ -106,10 +108,10 @@ namespace Content.Server._Funkystation.ReagentFires.Systems
                     _appearance.SetData(fireComp.FireEffectEntity.Value, ReagentPuddleFireVisuals.FireColor, fireColor);
                 }
 
-                if (TryComp<PointLightComponent>(containerUid, out var light))
+                if (TryComp<PointLightComponent>(ent, out var light))
                 {
-                    _light.SetRadius(containerUid, MathF.Max(2f, fireComp.FireState - 1f), light);
-                    _light.SetColor(containerUid, fireColor, light);
+                    _light.SetRadius(ent, MathF.Max(2f, fireComp.FireState - 1f), light);
+                    _light.SetColor(ent, fireColor, light);
                 }
             }
         }
@@ -240,10 +242,19 @@ namespace Content.Server._Funkystation.ReagentFires.Systems
         {
             base.Update(frameTime);
             _toExtinguish.Clear();
+            _activeFires.Clear();
 
             var activeQuery = EntityQueryEnumerator<ReagentPuddleFireComponent, PuddleComponent, TransformComponent>();
             while (activeQuery.MoveNext(out var uid, out var fireComp, out var puddle, out var xform))
             {
+                _activeFires.Add((uid, fireComp, puddle, xform));
+            }
+
+            foreach (var (uid, fireComp, puddle, xform) in _activeFires)
+            {
+                if (Deleted(uid))
+                    continue;
+
                 if (!fireComp.OnFire)
                 {
                     if (fireComp.Flammability <= 0)
@@ -415,11 +426,11 @@ namespace Content.Server._Funkystation.ReagentFires.Systems
                 var standingEntities = new HashSet<EntityUid>();
                 _lookup.GetLocalEntitiesIntersecting(gridUid.Value, tilePos, standingEntities, 0f);
 
-                var structuralProto = _prototypeManager.Index<DamageTypePrototype>("Structural");
-                var heatProto = _prototypeManager.Index<DamageTypePrototype>("Heat");
+                var structuralProto = _prototypeManager.Index<DamageTypePrototype>(StructuralDamage);
+                var heatProto = _prototypeManager.Index<DamageTypePrototype>(HeatDamage);
 
-                var structuralDamage = new DamageSpecifier(structuralProto, 2f * flammability);
-                var heatDamage = new DamageSpecifier(heatProto, 2f * flammability);
+                var structuralDamage = new DamageSpecifier(structuralProto, 2f * flammability * _puddleDamageMultiplier);
+                var heatDamage = new DamageSpecifier(heatProto, 2f * flammability * _puddleDamageMultiplier);
 
                 var totalDamage = structuralDamage + heatDamage;
 

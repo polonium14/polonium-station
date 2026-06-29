@@ -118,6 +118,16 @@
   copyright: "ka2220"
   source: "https://forums.goobstation.com"
 
+- files: ["invisiblewall.webp"]
+  license: "CC-BY-SA-3.0"
+  copyright: "vanderslootassgiraffe on discord"
+  source: "https://github.com/space-wizards/space-station-14"
+
+- files: ["janishootout.webp"]
+  license: "CC0-1.0"
+  copyright: "psychpsyo on Github/Twitter"
+  source: "https://github.com/space-wizards/space-station-14"
+
 - files: ["reclaimer-nuke.webp"]
   license: "CC-BY-SA-3.0"
   copyright: "Unknown"
@@ -207,3 +217,8 @@
   license: "CC-BY-NC-3.0"
   copyright: "nikitavix on Discord"
   source: "https://funkystation.org"
+
+- files: ["stationisafuck.webp"]
+  license: "CC-BY-SA-3.0"
+  copyright: "@fuzyfries on discord"
+  source: "https://github.com/space-wizards/space-station-14"

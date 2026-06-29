@@ -28,7 +28,7 @@ using Robust.Shared.Network;
 
 namespace Content.Server.Administration;
 
-public sealed class BanPanelEui : BaseEui
+public sealed partial class BanPanelEui : BaseEui
 {
     [Dependency] private readonly IBanManager _banManager = default!;
     [Dependency] private readonly IEntityManager _entities = default!;

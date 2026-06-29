@@ -143,7 +143,21 @@ public sealed partial class EntityStorageComponent : Component, IGasMixtureHolde
     /// standard requirement that the entity must be an item or mob is waived.
     /// </summary>
     [DataField]
-    public EntityWhitelist? Whitelist;
+    public EntityWhitelist? Whitelist = new()
+    {
+        Components =
+        [
+            "MobState",
+            "Item",
+        ],
+    };
+
+    /// <summary>
+    ///     Blacklist for what entities are not allowed to be inserted into this container.
+    ///     Blacklist takes priority over whitelist.
+    /// </summary>
+    [DataField]
+    public EntityWhitelist? Blacklist;
 
     /// <summary>
     /// The contents of the storage.

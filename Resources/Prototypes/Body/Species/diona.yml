@@ -44,6 +44,7 @@
 - type: entity
   parent: BaseSpeciesAppearance
   id: AppearanceDiona
+  categories: [ HideSpawnMenu ]
   name: diona appearance
   components:
   - type: Inventory
@@ -78,7 +79,7 @@
   - AppearanceDiona
   - BaseSpeciesMobOrganic
   id: MobDiona
-  name: McUrist Plants
+  name: Urist McPlants
   components:
   - type: Sprinter
     canSprint: false
@@ -103,7 +104,6 @@
       Burn:
         sprite: Mobs/Effects/burn_damage.rsi
   - type: Butcherable
-    butcheringType: Spike
     spawned:
       - id: FoodMeatPlant
         amount: 5
@@ -111,7 +111,7 @@
     bloodReferenceSolution:
       reagents:
       - ReagentId: Sap
-        Quantity: 300
+        Quantity: 600
   - type: Reactive
     groups:
       Flammable: [ Touch ]
@@ -183,7 +183,7 @@
   - type: Rootable
 
 - type: entity
-  parent: OrganBase
+  parent: OrganBaseOrganic
   id: OrganDiona
   abstract: true
   suffix: Diona

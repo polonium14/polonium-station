@@ -28,7 +28,7 @@ using Robust.Shared.Timing;
 namespace Content.Shared.Kitchen.EntitySystems;
 
 [UsedImplicitly]
-public abstract class SharedReagentGrinderSystem : EntitySystem
+public abstract partial class SharedReagentGrinderSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly INetManager _net = default!;
@@ -48,7 +48,7 @@ public abstract class SharedReagentGrinderSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<InsideReagentGrinderComponent, SolutionContainerChangedEvent>(OnBeakerSolutionContainerChanged);
+        SubscribeLocalEvent<InsideReagentGrinderComponent, SolutionChangedEvent>(OnBeakerSolutionContainerChanged);
 
         SubscribeLocalEvent<ReagentGrinderComponent, ComponentStartup>(OnGrinderStartup);
         SubscribeLocalEvent<ReagentGrinderComponent, ContainerIsRemovingAttemptEvent>(OnEntRemovingAttempt);
@@ -63,7 +63,7 @@ public abstract class SharedReagentGrinderSystem : EntitySystem
         SubscribeLocalEvent<ReagentGrinderComponent, ReagentGrinderEjectChamberContentMessage>(OnEjectChamberContentMessage);
     }
 
-    private void OnBeakerSolutionContainerChanged(Entity<InsideReagentGrinderComponent> ent, ref SolutionContainerChangedEvent args)
+    private void OnBeakerSolutionContainerChanged(Entity<InsideReagentGrinderComponent> ent, ref SolutionChangedEvent args)
     {
         // Update the UI if the reagents inside the beaker are changed.
         // This is needed in case the component state for the container is applied before that of the solution container
@@ -363,10 +363,11 @@ public abstract class SharedReagentGrinderSystem : EntitySystem
         switch (program)
         {
             case GrinderProgram.Grind:
-                if (_solutionContainersSystem.TryGetSolution(ent.Owner, ent.Comp.GrindableSolutionName, out _, out var solution))
-                {
+                if (ent.Comp.GrindableSolutionName is not { } solutionId)
+                    return null;
+
+                if (_solutionContainersSystem.TryGetSolution(ent.Owner, solutionId, out _, out var solution))
                     return solution;
-                }
                 break;
             case GrinderProgram.Juice:
                 return ent.Comp.JuiceSolution;
