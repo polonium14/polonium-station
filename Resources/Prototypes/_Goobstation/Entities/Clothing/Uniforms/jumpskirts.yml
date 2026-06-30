@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpskirtNanotrasenRepresentative
+  name: nanotrasen representative's coatdress
+  description: A black cassock-style coatdress worn by Nanotrasen officials. The expensive materials make it one-of-a-kind aboard most stations.
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Clothing/Uniforms/Jumpskirt/nanotrasen_representative.rsi
+  - type: Clothing
+    sprite: _Funkystation/Clothing/Uniforms/Jumpskirt/nanotrasen_representative.rsi

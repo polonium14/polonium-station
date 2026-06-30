@@ -1,0 +1,82 @@
+- type: loadoutGroup
+  id: NanotrasenRepresentativeEyes
+  name: loadout-group-ntr-eyes
+  minLimit: 0
+  loadouts:
+  - NanotrasenRepresentativeAdminHud
+  - NanotrasenRepresentativeAdminGlasses
+
+- type: loadoutGroup
+  id: NanotrasenRepresentativeHead
+  name: loadout-group-ntr-head
+  minLimit: 0
+  loadouts:
+  - NanotrasenRepresentativeBeret
+  - NanotrasenRepresentativeTop
+  - NanotrasenRepresentativeBowler
+  - NanotrasenRepresentativeOutlaw
+  - NanotrasenRepresentativeMAA
+
+- type: loadoutGroup
+  id: NanotrasenRepresentativeNeck
+  name: loadout-group-ntr-neck
+  minLimit: 0
+  loadouts:
+  - NanotrasenRepresentativeMantle
+  - CentcomTie # Polonium
+  - CentcomScarf # Polonium
+  - NanotrasenRepresentativeOffcoat
+
+- type: loadoutGroup
+  id: NanotrasenRepresentativeBackpack
+  name: loadout-group-ntr-backpack
+  loadouts:
+  - NanotrasenRepresentativeLeatherSatchel
+  - NanotrasenRepresentativeBackpack
+  - NanotrasenRepresentativeSatchel
+
+- type: loadoutGroup
+  id: NanotrasenRepresentativeJumpsuit
+  name: loadout-group-ntr-jumpsuit
+  loadouts:
+  - NanotrasenRepresentativeJumpsuit
+  - NanotrasenRepresentativeTurtleneck
+  - NanotrasenRepresentativeJumpskirt
+  - NanotrasenRepresentativeTurtleskirt
+
+- type: loadoutGroup
+  id: NanotrasenRepresentativeOuter
+  name: loadout-group-ntr-outer
+  minLimit: 0
+  loadouts:
+  - NanotrasenRepresentativeWinterCoat
+  - NanotrasenRepresentativeFurCollarCoat
+  - NanotrasenRepresentativeCoat
+
+# Funky!
+- type: loadoutGroup
+  id: NanotrasenRepresentativeGloves
+  name: loadout-group-ntr-gloves
+  minLimit: 0
+  loadouts:
+  - NanotrasenRepresentativePaperworkGloves
+  - NanotrasenRepresentativeBlackGloves
+
+- type: loadoutGroup
+  id: NanotrasenRepresentativeShoes
+  name: loadout-group-ntr-shoes
+  loadouts:
+  - NanotrasenRepresentativeBoots
+  - NanotrasenRepresentativeShoes
+  - NanotrasenRepresentativeHeels
+  - DesignerWinterBoots
+
+- type: loadoutGroup
+  id: NanotrasenRepresentativeJobTrinkets # Funky
+  name: loadout-group-jobtrinkets
+  minLimit: 0
+  maxLimit: 2
+  loadouts:
+  - CommandLighter
+  - CentralCommandLighter
+  - CentComPersonalAI

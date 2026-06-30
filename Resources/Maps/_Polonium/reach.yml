@@ -1567,13 +1567,6 @@ entities:
     - type: RadiationGridResistance
     - type: SpreaderGrid
     - type: ImplicitRoof
-- proto: AACTablet
-  entities:
-  - uid: 965
-    components:
-    - type: Transform
-      pos: -3.5157733,-3.0670495
-      parent: 2
 - proto: AccessConfigurator
   entities:
   - uid: 2645
@@ -7229,17 +7222,6 @@ entities:
     components:
     - type: Transform
       parent: 1539
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
-- proto: ClothingMaskSecurityMime
-  entities:
-  - uid: 2865
-    components:
-    - type: Transform
-      parent: 871
     - type: Physics
       angularDamping: 0
       linearDamping: 0
@@ -13117,13 +13099,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 28.5,2.5
       parent: 2
-- proto: GunSafePistolRg2
-  entities:
-  - uid: 2756
-    components:
-    - type: Transform
-      pos: 16.5,-7.5
-      parent: 2
 - proto: GunSafeRifleBeryl
   entities:
   - uid: 2758
@@ -13839,13 +13814,6 @@ entities:
     components:
     - type: Transform
       pos: -0.5,12.5
-      parent: 2
-- proto: MailTeleporter
-  entities:
-  - uid: 946
-    components:
-    - type: Transform
-      pos: 1.5,11.5
       parent: 2
 - proto: MaintenanceFluffSpawner
   entities:
@@ -17029,13 +16997,6 @@ entities:
     components:
     - type: Transform
       pos: 18.5,5.5
-      parent: 2
-- proto: SurgeryKitFilled
-  entities:
-  - uid: 1841
-    components:
-    - type: Transform
-      pos: 10.528191,-4.1092772
       parent: 2
 - proto: SurveillanceCameraRouterSecurity
   entities:

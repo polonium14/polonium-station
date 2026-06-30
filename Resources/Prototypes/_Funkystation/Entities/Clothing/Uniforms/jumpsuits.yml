@@ -1,0 +1,34 @@
+# CentComm role uniforms (backported from master)
+
+- type: entity
+  parent: [ClothingUniformBase, BaseCentcommContraband]
+  id: ClothingUniformJumpsuitMagistrateSuit
+  name: magistrate's suit
+  description: The Judge and Jury. Leave the executions to your henchmen.
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Clothing/Uniforms/Jumpsuit/magistratejumpsuit.rsi
+  - type: Clothing
+    sprite: _Funkystation/Clothing/Uniforms/Jumpsuit/magistratejumpsuit.rsi
+
+- type: entity
+  parent: [ClothingUniformBase, BaseCentcommContraband]
+  id: ClothingUniformJumpsuitMagistrateTurtleneck
+  name: magistrate's turtleneck
+  description: Is the bench comfortable enough, Your Honor?
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Clothing/Uniforms/Jumpsuit/magistrateturtleneck.rsi
+  - type: Clothing
+    sprite: _Funkystation/Clothing/Uniforms/Jumpsuit/magistrateturtleneck.rsi
+
+- type: entity
+  parent: [ClothingUniformBase, BaseCentcommContraband]
+  id: ClothingUniformJumpsuitNTRTurtleneck
+  name: nanotrasen representative's turtleneck
+  description: An expensive blend of wools make this sweater exceptionally comfy, without being itchy at all!
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Clothing/Uniforms/Jumpsuit/nanotrasen_representative_sweater.rsi
+  - type: Clothing
+    sprite: _Funkystation/Clothing/Uniforms/Jumpsuit/nanotrasen_representative_sweater.rsi

@@ -1,0 +1,27 @@
+ent-InternalAffairsAgentIDCard = internal affairs agent ID card
+    .desc = You wouldn't lose this, would you?
+ent-MagistrateIDCard = magistrate ID card
+    .desc = { ent-IDCardStandard.desc }
+ent-CentcomInternIDCard = central command intern ID card
+    .desc = { ent-IDCardStandard.desc }
+ent-BlueshieldOfficerIDCard = blueshield officer ID card
+    .desc = { ent-IDCardStandard.desc }
+ent-NanotrasenRepresentativeIDCard = nanotrasen representative ID card
+    .desc = { ent-IDCardStandard.desc }
+ent-IDCardAncient = A perfectly retrograde identification card
+    .desc = A perfectly retrograde identification card. Looks like it could use some flavor.
+ent-IDCardAncientScience = Scientist ID
+    .desc = A neck-worn ID Badge, has one of those fancy new magnetic strips built in. This one is encoded for the Science Dept.
+ent-IDCardAncientMedical = Medical ID
+    .desc = A neck-worn ID Badge, has one of those fancy new magnetic strips built in. This one is encoded for the Medical Dept.
+ent-IDCardAncientEngineering = Engineering ID
+    .desc = A neck-worn ID Badge, has one of those fancy new magnetic strips built in. This one is encoded for the Engineering Dept.
+ent-IDCardAncientSecurity = Security ID
+    .desc = A neck-worn ID Badgee, has one of those fancy new magnetic strips built in. This one is encoded for the Security Dept.
+ent-IDCardAncientNanotrasen = Nanotrasen ID
+    .desc = A neck-worn ID Badge, has one of those fancy new magnetic strips built in. This one is for a Nanotrasen Representative.
+ent-SpaceCowboyIDCard = space cowboy ID card
+    .desc = To the Space Station rode a stranger one fine day.
+
+ent-GeneticistIDCard = identyfikator genetyka
+    .desc = { ent-IDCardStandard.desc }

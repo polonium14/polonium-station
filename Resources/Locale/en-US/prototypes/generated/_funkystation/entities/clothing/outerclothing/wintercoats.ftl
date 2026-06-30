@@ -1,0 +1,14 @@
+ent-ClothingOuterWinterNTR = nanotrasen representative's winter coat
+    .desc = Sleek, comfortable, imposing. Perfect for keeping clipboards and stamps in - or a gun.
+ent-ClothingOuterWinterIAA = internal affair agent's winter coat
+    .desc = No blizzard or storm can hide SOP violations from the wearer of this warm coat.
+ent-ClothingOuterWinterMagistrate = magistrate's winter coat
+    .desc = Bundle up, justice waits for no weather.
+ent-ClothingOuterWinterStingray = cyber bartender winter coat
+    .desc = At one point I cried with the book and realized... I was crying over fake things. A story and its characters. I didn't care less for them because they were fake. Why not think "of reality" like that too?
+ent-ClothingOuterWinterChefBlue = blue chef's freezer coat
+    .desc = A coat specifically designed for the blue team, sorely needed by blue-blooded lizard chefs.
+ent-ClothingOuterWinterMedSenior = senior physician's insulated labcoat
+    .desc = A custom, medical-grade labcoat fitted with extra insulation. Smells... clean.
+ent-ClothingOuterWinterNTRFurCollar = nanotrasen representative's fur-follar coat
+    .desc = A fur-collar wool coat, made of extremely high-quality materials, built to withstand the toughest weather; like when your office's heater isn't working.

@@ -1,0 +1,16 @@
+- type: roleLoadout
+  id: JobNanotrasenRepresentative
+  groups:
+  - NanotrasenRepresentativeEyes
+  - NanotrasenRepresentativeHead
+  - NanotrasenRepresentativeNeck
+  - NanotrasenRepresentativeOuter
+  - NanotrasenRepresentativeGloves
+  - NanotrasenRepresentativeJumpsuit
+  - NanotrasenRepresentativeBackpack
+  - NanotrasenRepresentativeShoes
+  - Glasses
+  - Trinkets
+  - NanotrasenRepresentativeJobTrinkets
+  - GroupSpeciesBreathTool
+  - Survival

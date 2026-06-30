@@ -1,0 +1,11 @@
+# Map/teleporter IDs without UniqueEntityMarker (not on forky).
+
+- type: entity
+  id: UniqueLockerNanorepFilled
+  suffix: MAP THIS, Unique, Filled
+  parent: LockerNanorepFilled
+
+- type: entity
+  id: UniqueLockerBlueshieldOfficerFilled
+  suffix: MAP THIS, Unique, Filled
+  parent: LockerBlueshieldOfficerFilled

@@ -32,3 +32,55 @@
     sprite: _Funkystation/Clothing/OuterClothing/Wintercoats/NoHood/sec.rsi
   - type: Clothing
     sprite: _Funkystation/Clothing/OuterClothing/Wintercoats/NoHood/sec.rsi
+
+- type: entity
+  parent: [ClothingOuterWinterCoat, BaseCentcommContraband]
+  id: ClothingOuterWinterNTR
+  name: nanotrasen representative's winter coat
+  description: Sleek, comfortable, imposing. Perfect for keeping clipboards and stamps in - or a gun.
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Clothing/OuterClothing/WinterCoats/ntr_winter_coat.rsi
+  - type: Clothing
+    sprite: _Funkystation/Clothing/OuterClothing/WinterCoats/ntr_winter_coat.rsi
+  - type: Item
+    size: Normal
+
+- type: entity
+  parent: [ClothingOuterWinterCoat, BaseCentcommContraband]
+  id: ClothingOuterWinterIAA
+  name: internal affair agent's winter coat
+  description: No blizzard or storm can hide SOP violations from the wearer of this warm coat.
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Clothing/OuterClothing/WinterCoats/iaa_winter_coat.rsi
+  - type: Clothing
+    sprite: _Funkystation/Clothing/OuterClothing/WinterCoats/iaa_winter_coat.rsi
+  - type: Item
+    size: Normal
+
+- type: entity
+  parent: [ClothingOuterWinterCoat, BaseCentcommContraband]
+  id: ClothingOuterWinterMagistrate
+  name: magistrate's winter coat
+  description: Bundle up, justice waits for no weather.
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Clothing/OuterClothing/WinterCoats/magi_winter_coat.rsi
+  - type: Clothing
+    sprite: _Funkystation/Clothing/OuterClothing/WinterCoats/magi_winter_coat.rsi
+  - type: Item
+    size: Normal
+
+- type: entity
+  parent: [ClothingOuterWinterCoat, BaseCentcommContraband]
+  id: ClothingOuterWinterNTRFurCollar
+  name: nanotrasen representative's fur-follar coat
+  description: A fur-collar wool coat, made of extremely high-quality materials, built to withstand the toughest weather; like when your office's heater isn't working.
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Clothing/OuterClothing/WinterCoats/ntr_furcollar_coat.rsi
+  - type: Clothing
+    sprite: _Funkystation/Clothing/OuterClothing/WinterCoats/ntr_furcollar_coat.rsi
+  - type: Item
+    size: Normal

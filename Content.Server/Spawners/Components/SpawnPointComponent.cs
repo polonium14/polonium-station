@@ -1,3 +1,4 @@
+using Content.Server.Ghost.Roles;
 using Content.Shared.Roles;
 using Robust.Shared.Prototypes;
 
@@ -23,6 +24,12 @@ public sealed partial class SpawnPointComponent : Component, ISpawnPoint
     {
         return $"{Job} {SpawnType}";
     }
+
+    // currently only has any amount of functionality in relation to GhostJob type spawners.
+    // If true, then when the spawned entity enters cryo-storage it will reactivate the ghost role via the spawner
+    [DataField("respawn")]
+    [Access(typeof(GhostRoleSystem), Other = AccessPermissions.Read)]
+    public bool Respawn = false;
 }
 
 public enum SpawnPointType
@@ -31,4 +38,5 @@ public enum SpawnPointType
     LateJoin,
     Job,
     Observer,
+    GhostJob, // Funky
 }

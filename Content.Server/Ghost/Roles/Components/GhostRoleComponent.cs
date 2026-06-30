@@ -28,6 +28,20 @@ public sealed partial class GhostRoleComponent : Component
     [DataField("prob")]
     public float Probability = 1f;
 
+    [DataField("requirements")] private HashSet<JobRequirement>? _requirements;
+
+    [ViewVariables(VVAccess.ReadWrite)]
+    [Access(typeof(GhostRoleSystem), Other = AccessPermissions.ReadWriteExecute)]
+    public HashSet<JobRequirement>? Requirements
+    {
+        get => _requirements;
+        set
+        {
+            _requirements = value;
+            IoCManager.Resolve<IEntityManager>().System<GhostRoleSystem>().UpdateAllEui();
+        }
+    }
+
     // We do this so updating RoleName and RoleDescription in VV updates the open EUIs.
 
     [ViewVariables(VVAccess.ReadWrite)]
@@ -104,5 +118,8 @@ public sealed partial class GhostRoleComponent : Component
     [DataField("job")]
     [Access(typeof(GhostRoleSystem), Other = AccessPermissions.ReadWriteExecute)] // also FIXME Friends
     public ProtoId<JobPrototype>? JobProto = null;
+
+    [Access(typeof(GhostRoleSystem))]
+    public EntityUid? SpawnerGhostRoleEntity;
 }
 

@@ -1,0 +1,62 @@
+# SPDX-FileCopyrightText: 2025 Komoni <131829655+Komonighub@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 MaiaArai <158123176+YaraaraY@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Mish <bluscout78@yahoo.com>
+# SPDX-FileCopyrightText: 2025 Teasq <Xerithin@gmail.com>
+# SPDX-FileCopyrightText: 2025 TheHolyAegis <76066612+TheHolyAegis@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 TheHolyAegis <sanderkamphuis719@gmail.com>
+# SPDX-FileCopyrightText: 2025 YaraaraY <158123176+YaraaraY@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 kbarkevich <24629810+kbarkevich@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2026 Zergologist <114537969+Chedd-Error@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: job
+  id: InternalAffairsAgent
+  name: Internal Affairs Agent
+  description: "Serve directly under the Nanotrasen Representative. Identify any violations of Standard Operating Procedure or Space Law. Report those violations."
+  playTimeTracker: JobInternalAffairsAgent
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 72000 #20 hrs
+    - !type:RoleTimeRequirement
+      role: JobLawyer
+      time: 18000 #5 hrs
+  weight: 20
+  startingGear: InternalAffairsAgentGear
+  icon: "JobIconInternalAffairsAgent"
+  requireAdminNotify: false
+  joinNotifyCrew: true
+  supervisors: job-supervisors-ntr
+  canBeAntag: false
+  access:
+  - CentralCommand
+  - Cargo
+  - Brig
+  - External
+  - Cryogenics
+  - Maintenance
+  - Engineering
+  - Medical
+  - Research
+  - Lawyer
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: InternalAffairsAgentGear
+  equipment:
+    id: InternalAffairsAgentPDA
+    eyes: ClothingEyesGlassesCommand
+    ears: ClothingHeadsetCentCom
+    pocket1: BookSOP
+    pocket2: RubberStampIAA
+    belt: ClothingBeltStorageWaistbag
+  inhand:
+  - BriefcaseBrownFilled
+  storage:
+    back:
+    - Flash
+    - BluespaceLifelineImplanter
+    - BoxFolderCentComClipboard

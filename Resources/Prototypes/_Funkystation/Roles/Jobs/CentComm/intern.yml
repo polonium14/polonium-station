@@ -1,0 +1,44 @@
+- type: job
+  id: CentralCommandIntern
+  name: Central Command Intern
+  description: ghost-role-information-centcom-intern-description
+  playTimeTracker: JobCentralCommandIntern
+  setPreference: false
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 360000 #100 hrs
+  - !type:DepartmentTimeRequirement
+    department: CentralCommand
+    time: 72000 #20 hours
+  weight: 0
+  startingGear: CentralCommandInternGear
+  icon: JobIconCentralCommandIntern
+  requireAdminNotify: true
+  joinNotifyCrew: false
+  supervisors: job-supervisors-central-commanders
+  canBeAntag: false
+  accessGroups:
+  - AllAccess
+  access:
+  - CentralCommand
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: CentralCommandInternGear
+  equipment:
+    id: CentcomInternPDA
+    shoes: ClothingShoesBootsLaceup
+    eyes: ClothingEyesGlassesCommand
+    ears: ClothingHeadsetCentCom
+    pocket2: RubberStampCentComIntern
+    gloves: ClothingHandsGlovesHop
+    belt: BoxFolderCentComClipboard
+    back: ClothingBackpack
+    jumpsuit: ClothingUniformJumpsuitCentcomAgent
+  inhand:
+  - BriefcaseBrownFilled
+  storage:
+    back:
+    - BookSpaceLaw

@@ -1,0 +1,30 @@
+- type: roleLoadout
+  id: JobInternalAffairsAgent
+  groups:
+  - InternalAffairsAgentNeck # Polonium
+  - InternalAffairsAgentJumpsuit
+  - InternalAffairsAgentOuterClothing
+  - InternalAffairsAgentGloves
+  - InternalAffairsAgentShoes
+  - InternalAffairsAgentBackpack
+  - InternalAffairsAgentBelt
+  - Survival
+  - Trinkets
+  - InternalAffairsJobTrinkets
+  - GroupSpeciesBreathTool
+
+- type: roleLoadout
+  id: JobMagistrate
+  groups:
+  - MagistrateHead
+  - MagistrateNeck # Polonium
+  - MagistrateJumpsuit
+  - MagistrateOuterClothing
+  - MagistrateGloves
+  - MagistrateShoes
+  - MagistrateBackpack
+  - MagistrateFlavor
+  - Survival
+  - Trinkets
+  - MagistrateJobTrinkets
+  - GroupSpeciesBreathTool

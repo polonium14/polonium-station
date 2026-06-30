@@ -1,0 +1,181 @@
+# SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2024 Sage <sagefacepants@gmail.com>
+# SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2024 Theapug <159912420+Teapug@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 88tv <131759102+88tv@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 8tv <eightev@gmail.com>
+# SPDX-FileCopyrightText: 2025 MaiaArai <158123176+YaraaraY@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2026 TheHolyAegis <sanderkamphuis719@gmail.com>
+# SPDX-FileCopyrightText: 2026 YaraaraY <158123176+YaraaraY@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: loadoutEffectGroup
+  id: SeniorNanotrasenRepresentative
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobNanotrasenRepresentative
+      time: 72000 #20 hrs
+
+- type: loadoutEffectGroup
+  id: SeniorCentralCommand
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:DepartmentTimeRequirement
+      department: CentralCommand
+      time: 72000 #20 hrs
+
+#eyes
+
+- type: loadout
+  id: NanotrasenRepresentativeAdminHud
+  equipment:
+    eyes: ClothingEyesHudCommand
+
+- type: loadout
+  id: NanotrasenRepresentativeAdminGlasses
+  equipment:
+    eyes: ClothingEyesGlassesCommand
+
+#hat
+- type: loadout
+  id: NanotrasenRepresentativeBowler
+  equipment:
+    head: ClothingHeadHatBowlerHat
+
+- type: loadout
+  id: NanotrasenRepresentativeTop
+  equipment:
+    head: ClothingHeadHatTophat
+
+- type: loadout
+  id: NanotrasenRepresentativeOutlaw
+  equipment:
+    head: ClothingHeadHatOutlawHat
+
+- type: loadout
+  id: NanotrasenRepresentativeBeret
+  equipment:
+    head: ClothingHeadHatBeretFrench
+
+- type: loadout
+  id: NanotrasenRepresentativeMAA
+  equipment:
+    head: ClothingHeadHatSyndieMAA
+
+# Neck
+- type: loadout
+  id: NanotrasenRepresentativeMantle
+  equipment:
+    neck: ClothingNeckMantleNTR
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: SeniorNanotrasenRepresentative
+
+- type: loadout
+  id: NanotrasenRepresentativeOffcoat
+  equipment:
+    neck: ClothingNeckCloakNTR
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: SeniorNanotrasenRepresentative
+
+# Backpacks
+- type: loadout
+  id: NanotrasenRepresentativeBackpack
+  equipment:
+    back: ClothingBackpack
+
+- type: loadout
+  id: NanotrasenRepresentativeSatchel
+  equipment:
+    back: ClothingBackpackSatchel
+
+- type: loadout
+  id: NanotrasenRepresentativeLeatherSatchel
+  equipment:
+    back: ClothingBackpackSatchelLeather
+
+# Outer
+- type: loadout
+  id: NanotrasenRepresentativeWinterCoat
+  equipment:
+    outerClothing: ClothingOuterWinterNTR
+
+- type: loadout
+  id: NanotrasenRepresentativeFurCollarCoat
+  equipment:
+    outerClothing: ClothingOuterWinterNTRFurCollar
+
+- type: loadout
+  id: NanotrasenRepresentativeCoat
+  equipment:
+    outerClothing: ClothingOuterNTRCoat
+
+# Gloves
+- type: loadout
+  id: NanotrasenRepresentativePaperworkGloves
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: SeniorCentralCommand
+  equipment:
+    gloves: ClothingHandsGlovesHop
+
+- type: loadout
+  id: NanotrasenRepresentativeBlackGloves
+  equipment:
+    gloves: ClothingHandsGlovesColorBlack
+
+# Jumpsuits
+- type: loadout
+  id: NanotrasenRepresentativeJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitNanotrasenRepresentative
+
+- type: loadout
+  id: NanotrasenRepresentativeTurtleneck
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitNTRTurtleneck
+
+- type: loadout
+  id: NanotrasenRepresentativeJumpskirt
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtNanotrasenRepresentative
+
+- type: loadout
+  id: NanotrasenRepresentativeTurtleskirt
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitNTRTurtleskirt
+
+# Belt
+- type: loadout
+  id: NanotrasenRepresentativeClipboard
+  equipment:
+    belt: BoxFolderCentComClipboard
+
+- type: loadout
+  id: NanotrasenRepresentativeWaistbag
+  equipment:
+    belt: ClothingBeltStorageWaistbag
+
+# Shoes
+- type: loadout
+  id: NanotrasenRepresentativeBoots
+  equipment:
+    shoes: ClothingShoesBootsLaceup
+
+- type: loadout
+  id: NanotrasenRepresentativeShoes
+  equipment:
+    shoes: ClothingShoesLeather
+
+- type: loadout
+  id: NanotrasenRepresentativeHeels
+  equipment:
+    shoes: ClothingShoesHighheelBootsNanotrasen
