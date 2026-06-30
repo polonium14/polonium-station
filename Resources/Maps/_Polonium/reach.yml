@@ -1581,48 +1581,6 @@ entities:
     - type: Transform
       pos: 16.612469,9.489827
       parent: 2
-- proto: ActionToggleInternals
-  entities:
-  - uid: 2065
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 1635
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 1635
-- proto: ActionToggleJetpack
-  entities:
-  - uid: 2045
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 1635
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 1635
-- proto: ActionToggleLight
-  entities:
-  - uid: 1639
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 1104
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 1104
-  - uid: 1982
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 1105
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 1105
 - proto: AirAlarm
   entities:
   - uid: 3
@@ -8795,45 +8753,11 @@ entities:
     - type: Transform
       pos: -16.676073,-2.592504
       parent: 2
-    - type: HandheldLight
-      toggleActionEntity: 1639
-    - type: ContainerContainer
-      containers:
-        cell_slot: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 1639
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-    - type: ActionsContainer
   - uid: 1105
     components:
     - type: Transform
       pos: -16.332323,-2.608129
       parent: 2
-    - type: HandheldLight
-      toggleActionEntity: 1982
-    - type: ContainerContainer
-      containers:
-        cell_slot: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 1982
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-    - type: ActionsContainer
 - proto: FloorDrain
   entities:
   - uid: 1107
@@ -13299,20 +13223,6 @@ entities:
     - type: Transform
       pos: -5.185892,15.27618
       parent: 2
-    - type: GasTank
-      toggleActionEntity: 2065
-    - type: Jetpack
-      toggleActionEntity: 2045
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 2045
-          - 2065
 - proto: KitchenElectricGrill
   entities:
   - uid: 1636
