@@ -48,4 +48,5 @@
       - MobSlug
       - MobFrog
       - MobMothroach
+      - MobDeathsheadroach
     rareChance: 0.15

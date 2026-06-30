@@ -1,0 +1,18 @@
+# SPDX-FileCopyrightText: 2026 Saver310 <antekoszukaniec1@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  name: trupiogłoworaluch
+  parent: MobMothroach
+  id: MobDeathsheadroach
+  description: Uroczy szkodnik barowy, nauka zaszła za daleko.
+  components:
+  - type: GhostRole
+    name: Trupiogłoworaluch
+    description: Ćmaraluch z dużym apetytem na alkohol.
+  - type: Sprite
+    sprite: Mobs/Animals/mothroach/deathshead.rsi
+  - type: Clothing
+    sprite: Mobs/Animals/mothroach/deathshead.rsi
+
