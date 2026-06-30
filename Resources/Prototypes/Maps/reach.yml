@@ -1,9 +1,9 @@
 - type: gameMap
   id: Reach
   mapName: 'Reach'
-  mapPath: /Maps/reach.yml
+  mapPath: /Maps/_Polonium/reach.yml
   minPlayers: 0
-  maxPlayers: 7
+  maxPlayers: 15
   stations:
     Reach:
       stationProto: StandardNanotrasenStation
@@ -15,31 +15,60 @@
             prefixCreator: 'SC'
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/Shuttles/emergency.yml
+        - type: StationCargoShuttle
+          path: /Maps/Shuttles/cargo_relic.yml
         - type: StationJobs
-          availableJobs: # 17 jobs total w/o latejoins, 21 jobs total w/ latejoins
-            #command (2)
+          availableJobs:
+            #central command
+            NanotrasenRepresentative: [ 1, 1 ] # Polonium
+            # NanotrasenCareerTrainer: [ 2, 2 ] # Polonium, whitelistowana rola
+            #command
             Captain: [ 1, 1 ]
+            HeadOfPersonnel: [ 1, 1 ] # Polonium
             HeadOfSecurity: [ 1, 1 ]
-            #service (4)
+            ChiefEngineer: [ 1, 1 ] # Polonium
+            ChiefMedicalOfficer: [ 1, 1 ] # Polonium
+            Quartermaster: [ 1, 1 ] # Polonium
+            ResearchDirector: [ 1, 1 ] # Polonium
+            #security
+            SecurityOfficer: [ 1, 2 ]
+            SecurityCadet: [ 1, 1 ]
+            Brigmedic: [ 1, 1 ] # Polonium
+            Warden: [ 1, 1 ] # Polonium
+            #cargo
+            CargoTechnician: [ 1, 1 ]
+            SalvageSpecialist: [ 1, 1 ]
+            #medical
+            MedicalDoctor: [ 1, 1 ]
+            MedicalIntern: [ 1, 1 ] # Polonium
+            Paramedic: [ 1, 1 ] # Polonium
+            Psychologist: [ 1, 1 ] # Polonium
+            #engineering
+            StationEngineer: [ 1, 2 ]
+            TechnicalAssistant: [ 1, 1 ] # Polonium
+            #science
+            Scientist: [ 1, 1 ]
+            ResearchAssistant: [ 1, 1 ]
+            Borg: [ 1, 1 ]
+            #service
             Bartender: [ 1, 1 ]
             Botanist: [ 1, 1 ]
             Chef: [ 1, 1 ]
-            Janitor: [ 1, 1 ]
-            #engineering (2 - 3)
-            AtmosphericTechnician: [ 1, 1 ]
-            StationEngineer: [ 1, 2 ]
-            #medical (2 - 3)
+            ServiceWorker: [ 1, 1 ] # Polonium
             Chemist: [ 1, 1 ]
-            MedicalDoctor: [ 1, 2 ]
-            #science (1)
-            Scientist: [ 1, 1 ]
-            #security (1 - 3)
-            SecurityOfficer: [ 1, 3 ]
-            #supply (2)
-            CargoTechnician: [ 1, 1 ]
-            SalvageSpecialist: [ 1, 1 ]
-            #civilian (3+)
-            Passenger: [ -1, -1 ] #infinite, not counted
+            Janitor: [ 1, 1 ]
+            Musician: [ 1, 1 ]
+            Passenger: [ -1, -1 ]
             Clown: [ 1, 1 ]
             Mime: [ 1, 1 ]
-            Musician: [ 1, 1 ]
+            Lawyer: [ 1, 1 ] # Polonium
+            Chaplain: [ 1, 1 ] # Polonium
+
+        # Goobstation blob-config-start LOW
+        # Polonium: disabled blob-config (no blob implemented yet)
+        # - type: StationBlobConfig
+        #   stageBegin: 15
+        #   stageCritical: 200
+        #   stageTheEnd: 400
+        # Goobstation blob-config-end
+
