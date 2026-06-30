@@ -220,6 +220,21 @@
 
 - type: entity
   parent: MarkerBase
+  id: SpawnMobKoboldYipYap
+  name: Yip-Yap Spawner
+  suffix: Chef Pet
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: kobold
+      sprite: Mobs/Animals/kobold.rsi
+  - type: ConditionalSpawner
+    prototypes:
+    - MobKoboldYipYap
+
+- type: entity
+  parent: MarkerBase
   id: SpawnMobPollyParrot
   name: Polly the parrot Spawner
   suffix: CE Pet

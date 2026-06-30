@@ -101,6 +101,15 @@
     id: PunPunIDCard
 
 - type: startingGear
+  id: MobKoboldGear
+  equipment:
+    head: ClothingHeadHatChef
+    ears: ClothingHeadsetService
+    jumpsuit: ClothingUniformJumpsuitChef
+    belt: ClothingBeltChef
+    id: YipYapIDCard
+
+- type: startingGear
   id: MobPollyGear
   equipment:
     ears: ClothingHeadsetEngineering
