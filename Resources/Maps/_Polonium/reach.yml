@@ -19441,7 +19441,7 @@ entities:
           - Impassable
           - MidImpassable
           - LowImpassable
-          - BlobImpassable
+          # - BlobImpassable
           layer:
           - BulletImpassable
           - Opaque
