@@ -1,0 +1,9 @@
+- type: entity
+  parent: ClothingShoesBaseWinterBoots
+  id: ClothingShoesBootsWinterParamedic
+  name: paramedic winter boots
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Shoes/Boots/winterbootsparamed.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Shoes/Boots/winterbootsparamed.rsi
