@@ -13665,7 +13665,6 @@ entities:
           ents:
           - 2863
           - 2864
-          - 2865
           - 2866
         paper_label: !type:ContainerSlot
           showEnts: False

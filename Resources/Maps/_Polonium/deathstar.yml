@@ -2419,17 +2419,6 @@ entities:
     - type: SpreaderGrid
     - type: GridPathfinding
     - type: ImplicitRoof
-- proto: AACTablet
-  entities:
-  - uid: 2590
-    components:
-    - type: Transform
-      parent: 2589
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: AcousticGuitarInstrument
   entities:
   - uid: 2583
@@ -10262,20 +10251,6 @@ entities:
     - type: Transform
       pos: 2.5,4.5
       parent: 4254
-- proto: CallableBananaPhoneInstrument
-  entities:
-  - uid: 3288
-    components:
-    - type: Transform
-      parent: 3281
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: ContainerContainer
-      containers:
-        handset: !type:ContainerSlot {}
-    - type: InsideEntityStorage
 - proto: CallablePhoneInstrument
   entities:
   - uid: 3188
@@ -11183,23 +11158,6 @@ entities:
           - 1097
     - type: Physics
       canCollide: False
-  - uid: 1116
-    components:
-    - type: Transform
-      parent: 1115
-    - type: Physics
-      canCollide: False
-- proto: ClothingBackpackERTClown
-  entities:
-  - uid: 3285
-    components:
-    - type: Transform
-      parent: 3281
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: ClothingBackpackMerc
   entities:
   - uid: 1123
@@ -11246,6 +11204,12 @@ entities:
           - 1130
           - 953
           - 992
+    - type: Physics
+      canCollide: False
+  - uid: 1116
+    components:
+    - type: Transform
+      parent: 1115
     - type: Physics
       canCollide: False
 - proto: ClothingEyesGlassesOutlawGlasses
@@ -11376,28 +11340,6 @@ entities:
     - type: Transform
       pos: -7.353871,-9.425218
       parent: 4254
-- proto: ClothingOuterHardsuitClown
-  entities:
-  - uid: 3282
-    components:
-    - type: Transform
-      parent: 3281
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
-- proto: ClothingOuterHardsuitMime
-  entities:
-  - uid: 2593
-    components:
-    - type: Transform
-      parent: 2589
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: ClothingOuterHoodieBlack
   entities:
   - uid: 1133
@@ -11452,7 +11394,7 @@ entities:
       parent: 1122
     - type: Physics
       canCollide: False
-- proto: ClothingUniformSecurityDressBase
+- proto: ClothingUniformSecurityTrooper
   entities:
   - uid: 1121
     components:
@@ -11999,13 +11941,13 @@ entities:
     - type: Transform
       pos: -7.5,9.45
       parent: 2
-- proto: CrateSecuritySwat
-  entities:
-  - uid: 2268
-    components:
-    - type: Transform
-      pos: -8.5,9.45
-      parent: 2
+# - proto: CrateSecuritySwat
+#   entities:
+#   - uid: 2268
+#     components:
+#     - type: Transform
+#       pos: -8.5,9.45
+#       parent: 2
 - proto: CrateSecurityTrackingMindshieldImplants
   entities:
   - uid: 3161
@@ -12077,17 +12019,6 @@ entities:
         - 0
         - 0
         - 0
-- proto: CrayonMime
-  entities:
-  - uid: 2591
-    components:
-    - type: Transform
-      parent: 2589
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: CrewMonitoringServer
   entities:
   - uid: 1219
@@ -13808,17 +13739,6 @@ entities:
       parent: 1096
     - type: Physics
       canCollide: False
-- proto: FoodBurgerMime
-  entities:
-  - uid: 2592
-    components:
-    - type: Transform
-      parent: 2589
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: FoodDonutJellyChocolate
   entities:
   - uid: 1462
@@ -13833,44 +13753,6 @@ entities:
     - type: Transform
       pos: -7.5446777,7.739341
       parent: 2
-- proto: FoodPieBananaCream
-  entities:
-  - uid: 3283
-    components:
-    - type: Transform
-      parent: 3281
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 3284
-    components:
-    - type: Transform
-      parent: 3281
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 3286
-    components:
-    - type: Transform
-      parent: 3281
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 3287
-    components:
-    - type: Transform
-      parent: 3281
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: FoodSaladCaesar
   entities:
   - uid: 1464
@@ -18029,13 +17911,6 @@ entities:
     - type: Transform
       pos: -12.5,10.5
       parent: 2
-- proto: GunSafePistolRg2
-  entities:
-  - uid: 3029
-    components:
-    - type: Transform
-      pos: -10.5,9.5
-      parent: 2
 - proto: GunSafeRifleLecter
   entities:
   - uid: 1943
@@ -18450,58 +18325,6 @@ entities:
         - 0
         - 0
         - 0
-- proto: LockerClown
-  entities:
-  - uid: 3281
-    components:
-    - type: Transform
-      pos: 2.25,-14.5
-      parent: 2
-    - type: EntityStorage
-      air:
-        volume: 200
-        immutable: False
-        temperature: 293.14673
-        moles:
-        - 1.7459903
-        - 6.568249
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 3285
-          - 3282
-          - 3283
-          - 3284
-          - 3286
-          - 3287
-          - 3288
-          - 3289
-          - 3290
-        paper_label: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
 - proto: LockerDetectiveFilled
   entities:
   - uid: 181
@@ -18654,55 +18477,6 @@ entities:
     - type: Transform
       pos: -3.75,3.5
       parent: 2
-- proto: LockerMime
-  entities:
-  - uid: 2589
-    components:
-    - type: Transform
-      pos: 2.75,-14.5
-      parent: 2
-    - type: EntityStorage
-      air:
-        volume: 200
-        immutable: False
-        temperature: 293.1462
-        moles:
-        - 1.606311
-        - 6.042789
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 2590
-          - 2591
-          - 2592
-          - 2593
-          - 2595
-          - 2596
-        paper_label: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
 - proto: LockerParamedicFilledHardsuit
   entities:
   - uid: 3219
@@ -18952,13 +18726,6 @@ entities:
     components:
     - type: Transform
       pos: 1.8199768,14.385779
-      parent: 2
-- proto: MailTeleporter
-  entities:
-  - uid: 995
-    components:
-    - type: Transform
-      pos: 13.5,3.5
       parent: 2
 - proto: MaintenanceFluffSpawner
   entities:
@@ -19565,17 +19332,6 @@ entities:
     - type: Transform
       pos: -4.4913177,-9.236341
       parent: 4254
-- proto: PlushieLizardJobMime
-  entities:
-  - uid: 2596
-    components:
-    - type: Transform
-      parent: 2589
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: PlushieNuke
   entities:
   - uid: 2040
@@ -22578,17 +22334,6 @@ entities:
     - type: Transform
       pos: -7.4934726,-7.426895
       parent: 4254
-- proto: SoapHomemadeBanana
-  entities:
-  - uid: 3290
-    components:
-    - type: Transform
-      parent: 3281
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: SodaDispenser
   entities:
   - uid: 2324
@@ -23357,13 +23102,6 @@ entities:
     components:
     - type: Transform
       pos: -7.5,13.5
-      parent: 2
-- proto: SurgeryKitFilled
-  entities:
-  - uid: 3115
-    components:
-    - type: Transform
-      pos: 0.5044653,2.6302905
       parent: 2
 - proto: SurveillanceCameraGeneral
   entities:
@@ -24312,13 +24050,6 @@ entities:
     - type: Transform
       pos: 10.02179,-4.3596916
       parent: 2
-- proto: ToolboxElectricalMaints
-  entities:
-  - uid: 2265
-    components:
-    - type: Transform
-      pos: -7.5103574,-10.246007
-      parent: 2
 - proto: ToolboxEmergencyFilled
   entities:
   - uid: 2228
@@ -24375,17 +24106,6 @@ entities:
     - type: Transform
       pos: -3.5697134,-6.313054
       parent: 4857
-- proto: ToyFigurineMime
-  entities:
-  - uid: 2595
-    components:
-    - type: Transform
-      parent: 2589
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: TrashBananaPeel
   entities:
   - uid: 4582
@@ -24618,13 +24338,13 @@ entities:
     - type: Transform
       pos: -3.5,-8.5
       parent: 2
-- proto: VendingMachineMailDrobe
-  entities:
-  - uid: 3272
-    components:
-    - type: Transform
-      pos: 19.5,-1.5
-      parent: 2
+# - proto: VendingMachineMailDrobe
+#   entities:
+#   - uid: 3272
+#     components:
+#     - type: Transform
+#       pos: 19.5,-1.5
+#       parent: 2
 - proto: VendingMachineMedical
   entities:
   - uid: 2559
@@ -29040,17 +28760,6 @@ entities:
     - type: Transform
       pos: -1.400831,-7.5095
       parent: 4857
-- proto: WeaponImprovisedPneumaticCannon
-  entities:
-  - uid: 3289
-    components:
-    - type: Transform
-      parent: 3281
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: WeaponPistolCHIMP
   entities:
   - uid: 1246
