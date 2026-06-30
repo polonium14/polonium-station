@@ -1,0 +1,132 @@
+#Lattice
+- type: tile
+  id: LatticeSmall1
+  name: tiles-lattice-small1
+  sprite: /Textures/_Imperial/Objects/Tiles/LatticeSmall1.png
+  baseTurf: Space
+  isSubfloor: true
+  deconstructTools: [ Cutting ]
+  weather: true
+  footstepSounds:
+    collection: FootstepPlating
+  friction: 0.3
+  isSpace: true
+  itemDrop: PartRodMetal1
+  heatCapacity: 10000
+
+- type: tile
+  id: LatticeSmall2
+  name: tiles-lattice-small2
+  sprite: /Textures/_Imperial/Objects/Tiles/LatticeSmall2.png
+  baseTurf: Space
+  isSubfloor: true
+  deconstructTools: [ Cutting ]
+  weather: true
+  footstepSounds:
+    collection: FootstepPlating
+  friction: 0.3
+  isSpace: true
+  itemDrop: PartRodMetal1
+  heatCapacity: 10000
+
+- type: tile
+  id: LatticeSmall3
+  name: tiles-lattice-small3
+  sprite: /Textures/_Imperial/Objects/Tiles/LatticeSmall3.png
+  baseTurf: Space
+  isSubfloor: true
+  deconstructTools: [ Cutting ]
+  weather: true
+  footstepSounds:
+    collection: FootstepPlating
+  friction: 0.3
+  isSpace: true
+  itemDrop: PartRodMetal1
+  heatCapacity: 10000
+
+- type: tile
+  id: LatticeSmall4
+  name: tiles-lattice-small4
+  sprite: /Textures/_Imperial/Objects/Tiles/LatticeSmall4.png
+  baseTurf: Space
+  isSubfloor: true
+  deconstructTools: [ Cutting ]
+  weather: true
+  footstepSounds:
+    collection: FootstepPlating
+  friction: 0.3
+  isSpace: true
+  itemDrop: PartRodMetal1
+  heatCapacity: 10000
+
+- type: tile
+  id: LatticeCorner1
+  name: tiles-lattice-corner1
+  sprite: /Textures/_Imperial/Objects/Tiles/LatticeCorner1.png
+  baseTurf: Space
+  isSubfloor: true
+  deconstructTools: [ Cutting ]
+  weather: true
+  footstepSounds:
+    collection: FootstepPlating
+  friction: 0.3
+  isSpace: true
+  itemDrop: PartRodMetal1
+  heatCapacity: 10000
+
+- type: tile
+  id: LatticeCorner2
+  name: tiles-lattice-corner2
+  sprite: /Textures/_Imperial/Objects/Tiles/LatticeCorner2.png
+  baseTurf: Space
+  isSubfloor: true
+  deconstructTools: [ Cutting ]
+  weather: true
+  footstepSounds:
+    collection: FootstepPlating
+  friction: 0.3
+  isSpace: true
+  itemDrop: PartRodMetal1
+  heatCapacity: 10000
+
+- type: tile
+  id: LatticeCorner3
+  name: tiles-lattice-corner3
+  sprite: /Textures/_Imperial/Objects/Tiles/LatticeCorner3.png
+  baseTurf: Space
+  isSubfloor: true
+  deconstructTools: [ Cutting ]
+  weather: true
+  footstepSounds:
+    collection: FootstepPlating
+  friction: 0.3
+  isSpace: true
+  itemDrop: PartRodMetal1
+  heatCapacity: 10000
+
+- type: tile
+  id: LatticeCorner4
+  name: tiles-lattice-corner4
+  sprite: /Textures/_Imperial/Objects/Tiles/LatticeCorner4.png
+  baseTurf: Space
+  isSubfloor: true
+  deconstructTools: [ Cutting ]
+  weather: true
+  footstepSounds:
+    collection: FootstepPlating
+  friction: 0.3
+  isSpace: true
+  itemDrop: PartRodMetal1
+  heatCapacity: 10000
+
+- type: tile
+  id: FloorTechDarkImperialMaint
+  name: tiles-dark-imperial-maint
+  sprite: /Textures/_Imperial/Objects/Tiles/techmaint2.png
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: FootstepHull
+  itemDrop: FloorTileItemTechmaint
+  heatCapacity: 10000
