@@ -17680,7 +17680,6 @@ entities:
   - uid: 1903
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
       pos: 2.5,-5.5
       parent: 2
   - uid: 1904
@@ -17691,13 +17690,11 @@ entities:
   - uid: 1905
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: -0.5,-4.5
       parent: 2
   - uid: 1906
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: 11.5,-13.5
       parent: 2
   - uid: 1907
@@ -17713,7 +17710,6 @@ entities:
   - uid: 1909
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
       pos: -0.5,-11.5
       parent: 2
   - uid: 1910
@@ -17739,7 +17735,6 @@ entities:
   - uid: 1914
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 10.5,-7.5
       parent: 2
   - uid: 1915
@@ -17750,13 +17745,11 @@ entities:
   - uid: 1916
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
       pos: -0.5,-12.5
       parent: 2
   - uid: 1917
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
       pos: 20.5,0.5
       parent: 2
   - uid: 1918
@@ -17807,55 +17800,46 @@ entities:
   - uid: 1928
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 16.5,7.5
       parent: 2
   - uid: 1929
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 16.5,9.5
       parent: 2
   - uid: 1931
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: 10.5,7.5
       parent: 2
   - uid: 1932
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: 6.5,7.5
       parent: 2
   - uid: 1933
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: 4.5,6.5
       parent: 2
   - uid: 1934
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: 5.5,6.5
       parent: 2
   - uid: 1935
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: -10.5,4.5
       parent: 2
   - uid: 1936
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
       pos: -4.5,-1.5
       parent: 2
   - uid: 1937
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
       pos: -2.5,-1.5
       parent: 2
   - uid: 1938
