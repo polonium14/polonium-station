@@ -492,6 +492,15 @@
             "name": "red_door"
         },
         {
+            "name": "robotics"
+        },
+        {
+            "name": "robotics_door"
+        },
+        {
+            "name": "robotics_open"
+        },
+        {
             "name": "science"
         },
         {

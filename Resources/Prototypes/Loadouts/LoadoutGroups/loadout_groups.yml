@@ -1067,6 +1067,14 @@
   - ScientistDuffel
 
 - type: loadoutGroup
+  id: RoboticistBackpack
+  name: loadout-group-scientist-backpack
+  loadouts:
+  - RoboticistBackpack
+  - RoboticistSatchel
+  - RoboticistDuffel
+
+- type: loadoutGroup
   id: ScientistOuterClothing
   name: loadout-group-scientist-outerclothing
   minLimit: 0
@@ -1102,11 +1110,32 @@
   - ScientistPDA
   - SeniorResearcherPDA
 
+- type: loadoutGroup
+  id: RoboticsPDA
+  name: loadout-group-roboticist-id
+  loadouts:
+  - RoboticsPDA
+
+- type: loadoutGroup
+  id: ScienceRoboticistGlasses
+  name: loadout-group-roboticist-glasses
+  loadouts:
+  - ScienceRoboNormGlasses
+  - ScienceRoboJamjarGlasses
+  - ScienceRoboGlasses
+
 #- type: loadoutGroup
 #  id: ScientistJobTrinkets
 #  name: loadout-group-jobtrinkets
 #  minLimit: 0
 #  loadouts:
+
+- type: loadoutGroup
+  id: RoboticistJobTrinkets
+  name: loadout-group-jobtrinkets
+  minLimit: 0
+  loadouts:
+  - LizardPlushieRoboticist
 
 - type: loadoutGroup
   id: ResearchAssistantJumpsuit

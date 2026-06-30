@@ -30,3 +30,15 @@
   storage:
     back:
     - Dinkystar
+
+- type: loadout
+  id: LizardPlushieRoboticist
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobRoboticist
+      time: 360000 # 100hr
+  storage:
+    back:
+    - PlushieLizardJobRoboticist

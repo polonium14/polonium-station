@@ -1,0 +1,42 @@
+- type: entity
+  parent: ClothingEyesGlassesJamjar
+  id: ClothingEyesGlassesRobojar
+  name: diagnostics jamjar glasses
+  description: These retro glasses remind you of tampering with borgs' laws.
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Clothing/Eyes/Jamjars/robojar.rsi
+  - type: Clothing
+    sprite: _Funkystation/Clothing/Eyes/Jamjars/robojar.rsi
+  - type: VisionCorrection
+  - type: ShowHealthBars
+    damageContainers:
+    - Inorganic
+    - Silicon
+  - type: IdentityBlocker
+    coverage: EYES
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingEyesGlasses
+  id: ClothingEyesGlassesRobo
+  name: diagnostics-issue glasses
+  description: Upgraded glasses that provide a diagnostics HUD.
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Clothing/Eyes/Glasses/robotglasses.rsi
+  - type: Clothing
+    sprite: _Funkystation/Clothing/Eyes/Glasses/robotglasses.rsi
+  - type: VisionCorrection
+  - type: ShowHealthBars
+    damageContainers:
+    - Inorganic
+    - Silicon
+  - type: IdentityBlocker
+    coverage: EYES
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - HamsterWearable

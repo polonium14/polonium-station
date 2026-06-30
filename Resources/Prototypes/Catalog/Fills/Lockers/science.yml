@@ -24,3 +24,53 @@
       prob: 0.02
     - id: PlushieLizardJobScientist
       prob: 0.02
+
+- type: entity
+  id: LockerRoboticsFilled
+  suffix: Filled
+  parent: LockerRoboticist
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: FillLockerRoboticist
+
+- type: entityTable
+  id: FillLockerRoboticist
+  table: !type:AllSelector
+    children:
+    - id: ClothingHandsGlovesRobohands
+    - id: ClothingHeadsetRobotics
+    - id: ClothingMaskGas
+    - id: ClothingOuterCoatRobo
+    - id: ClothingHeadHatWelding
+    - id: ClothingBeltUtilityFilled
+
+- type: entity
+  id: LockerScienceRoboticsFilled
+  suffix: Filled
+  parent: LockerScientist
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: FillLockerScienceRobotics
+
+- type: entityTable
+  id: FillLockerScienceRobotics
+  table: !type:AllSelector
+    children:
+    - id: ClothingHandsGlovesLatex
+    - id: ClothingHeadsetScience
+    - id: ClothingMaskSterile
+    - id: ClothingOuterCoatRnd
+    - id: AnomalyScanner
+    - id: NodeScanner
+    - id: NetworkConfigurator
+      prob: 0.5
+    - id: ClothingHandsGlovesRobohands
+    - id: ClothingHeadsetRobotics
+    - id: ClothingMaskGas
+    - id: ClothingOuterCoatRobo
+    - id: ClothingHeadHatWelding
+    - id: ClothingBeltUtilityFilled

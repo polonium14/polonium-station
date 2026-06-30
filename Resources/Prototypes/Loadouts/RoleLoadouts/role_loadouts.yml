@@ -375,6 +375,26 @@
   - GroupBreathToolDecapoid # MACRO: Decapoid
 
 - type: roleLoadout
+  id: JobRoboticist
+  groups:
+  - GroupTankHarness
+  - ScientistHead
+  - ScientistNeck
+  - ScienceRoboticistGlasses
+  - ScientistJumpsuit
+  - RoboticistBackpack
+  - ScientistOuterClothing
+  - ScientistGloves
+  - ScientistShoes
+  - RoboticsPDA
+  - Glasses
+  - Survival
+  - Trinkets
+  - RoboticistJobTrinkets
+  - GroupSpeciesBreathTool
+  - GroupBreathToolDecapoid # MACRO: Decapoid
+
+- type: roleLoadout
   id: JobResearchAssistant
   groups:
   - GroupTankHarness

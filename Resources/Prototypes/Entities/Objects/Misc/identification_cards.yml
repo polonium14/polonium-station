@@ -411,6 +411,25 @@
     job: Scientist
 
 - type: entity
+  parent: [IDCardStandard, BaseScienceContraband]
+  id: RoboticsIDCard
+  name: robotics ID card
+  description: Seems to have been scratched up.
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: stripe_top
+      color: *color-science-top
+    - state: stripe_bottom
+      color: *color-science-bottom
+    - sprite: *icon-rsi
+      offset: *icon-offset
+      state: Roboticist
+  - type: PresetIdCard
+    job: Roboticist
+
+- type: entity
   parent: ResearchIDCard
   id: SeniorResearcherIDCard
   name: senior researcher ID card

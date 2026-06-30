@@ -40,6 +40,7 @@ job-description-research-assistant = Learn the basics of robotics and how to res
 job-description-reporter = Entertain & inform the crew with your vibrant journalism through wireless cameras, the radio and the news.
 job-description-salvagespec = Use the salvage magnet to draw in detached scraps & asteroids to loot and enrich the station, build a salvage ship and then travel to new planets, while fighting off any space fauna along the way.
 job-description-scientist = Research alien artifacts, unlock new technologies, build newer and better machines around the station, and make everything run more efficiently.
+job-description-roboticist = Build and maintain the station's silicons, create mechs and various cybernetic enchancements for the crew.
 job-description-security = Catch criminals and enemies of the station, enforce the law, and ensure that the station does not fall into disarray.
 job-description-serviceworker = Learn the basics of bartending, cooking, and growing plants.
 job-description-station-ai = Follow your laws, serve the crew.
