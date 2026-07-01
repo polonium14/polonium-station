@@ -5,3 +5,11 @@
     sprite: _Polonium/Structures/Wallmounts/Barsigns/zabkacafe.rsi
     state: zabkacafe
   description: barsign-prototype-description-zabka
+
+- type: barSign
+  id: Szkodnik
+  name: U Szkodnika
+  icon:
+    sprite: _Polonium/Structures/Wallmounts/Barsigns/szkodnik.rsi
+    state: szkodnik
+  description: Nie bądź szkodnikiem! Na grafice można zobaczyć tytułowego barowego szkodnika.
