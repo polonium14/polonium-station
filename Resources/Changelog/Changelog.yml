@@ -1,25 +1,4 @@
 ﻿Entries:
-- author: Emisse
-  changes:
-  - message: Centcomm has been rebuilt from the ground up.
-    type: Tweak
-  id: 7967
-  time: '2025-02-17T08:51:45.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/35240
-- author: Sparlight
-  changes:
-  - message: Space debris has returned to Wizden servers.
-    type: Add
-  id: 7968
-  time: '2025-02-17T12:56:48.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34795
-- author: Kickguy223
-  changes:
-  - message: Cleaning up a puddle properly changes its slippery properties.
-    type: Fix
-  id: 7969
-  time: '2025-02-17T20:53:23.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34525
 - author: lzk228
   changes:
   - message: Syndicate cyborgs can laugh again.
@@ -4189,3 +4168,25 @@
   id: 9274
   time: '2026-06-28T09:03:23.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/739
+- author: Zintex
+  changes:
+  - message: "Dodany utw\xF3r g\xF3wnochrona w wersji elektronicznej."
+    type: Add
+  id: 9275
+  time: '2026-06-29T23:52:49.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/745
+- author: Saver310
+  changes:
+  - message: "W\u0142\u0105cz filtrowanie tekstury w lobby art \"Drunkards' Spree\"\
+      ."
+    type: Fix
+  id: 9276
+  time: '2026-06-30T11:28:09.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/741
+- author: Saver310
+  changes:
+  - message: "Dodano t\u0142umaczenia do pustych butelek i karton\xF3w"
+    type: Add
+  id: 9277
+  time: '2026-06-30T11:26:18.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/742
