@@ -10,3 +10,11 @@
     sprite: _Polonium/Structures/Wallmounts/Barsigns/zabkacafe.rsi
     state: zabkacafe
   description: barsign-prototype-description-zabka
+
+- type: barSign
+  id: Szkodnik
+  name: barsign-prototype-name-szkodnik
+  icon:
+    sprite: _Polonium/Structures/Wallmounts/Barsigns/szkodnik.rsi
+    state: szkodnik
+  description: barsign-prototype-description-szkodnik

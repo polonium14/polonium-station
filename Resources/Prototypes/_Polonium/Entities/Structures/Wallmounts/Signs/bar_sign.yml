@@ -15,3 +15,16 @@
     drawdepth: WallMountedItems
     sprite: _Polonium/Structures/Wallmounts/Barsigns/zabkacafe.rsi
     state: empty
+
+- type: entity
+  parent: BaseBarSign
+  id: BarSignSzkodnik
+  name: U Szkodnika
+  description: Nie bądź szkodnikiem! Na grafice można zobaczyć tytułowego barowego szkodnika.
+  components:
+  - type: BarSign
+    current: Szkodnik
+  - type: Sprite
+    drawdepth: WallMountedItems
+    sprite: _Polonium/Structures/Wallmounts/Barsigns/szkodnik.rsi
+    state: empty
