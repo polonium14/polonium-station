@@ -8,8 +8,8 @@
 
 - type: barSign
   id: Szkodnik
-  name: U Szkodnika
+  name: barsign-prototype-name-szkodnik
   icon:
     sprite: _Polonium/Structures/Wallmounts/Barsigns/szkodnik.rsi
     state: szkodnik
-  description: Nie bądź szkodnikiem! Na grafice można zobaczyć tytułowego barowego szkodnika.
+  description: barsign-prototype-description-szkodnik
