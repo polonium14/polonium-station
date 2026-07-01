@@ -18,18 +18,18 @@ using Robust.Shared.Timing;
 
 namespace Content.Server.BaseAnalyzer;
 
-public abstract class BaseAnalyzerSystem<TAnalyzerComponent, TAnalyzerDoAfterEvent> : EntitySystem
+public abstract partial class BaseAnalyzerSystem<TAnalyzerComponent, TAnalyzerDoAfterEvent> : EntitySystem
     where TAnalyzerComponent : BaseAnalyzerComponent
     where TAnalyzerDoAfterEvent : SimpleDoAfterEvent, new()
 {
-    [Dependency] protected readonly IGameTiming Timing = default!;
-    [Dependency] protected readonly PowerCellSystem Cell = default!;
-    [Dependency] protected readonly SharedAudioSystem Audio = default!;
-    [Dependency] protected readonly SharedDoAfterSystem DoAfterSystem = default!;
-    [Dependency] protected readonly ItemToggleSystem Toggle = default!;
-    [Dependency] protected readonly UserInterfaceSystem UiSystem = default!;
-    [Dependency] protected readonly TransformSystem TransformSystem = default!;
-    [Dependency] protected readonly SharedPopupSystem PopupSystem = default!;
+    [Dependency] protected IGameTiming Timing = default!;
+    [Dependency] protected PowerCellSystem Cell = default!;
+    [Dependency] protected SharedAudioSystem Audio = default!;
+    [Dependency] protected SharedDoAfterSystem DoAfterSystem = default!;
+    [Dependency] protected ItemToggleSystem Toggle = default!;
+    [Dependency] protected UserInterfaceSystem UiSystem = default!;
+    [Dependency] protected TransformSystem TransformSystem = default!;
+    [Dependency] protected SharedPopupSystem PopupSystem = default!;
 
     public override void Initialize()
     {
@@ -64,13 +64,22 @@ public abstract class BaseAnalyzerSystem<TAnalyzerComponent, TAnalyzerDoAfterEve
             var targetCoordinates = Transform(target).Coordinates;
             if (component.MaxScanRange != null && !TransformSystem.InRange(targetCoordinates, transform.Coordinates, component.MaxScanRange.Value))
             {
-                //Range too far, disable updates
-                StopAnalyzingEntity((uid, component), target);
+                HandleOutOfScanRange((uid, component), target);
                 continue;
             }
 
-            UpdateScannedUser(uid, target, true);
+            HandleInScanRange((uid, component), target);
         }
+    }
+
+    protected virtual void HandleOutOfScanRange(Entity<TAnalyzerComponent> analyzer, EntityUid target)
+    {
+        StopAnalyzingEntity(analyzer, target);
+    }
+
+    protected virtual void HandleInScanRange(Entity<TAnalyzerComponent> analyzer, EntityUid target)
+    {
+        UpdateScannedUser(analyzer, target, true);
     }
 
     /// <summary>
@@ -150,7 +159,7 @@ public abstract class BaseAnalyzerSystem<TAnalyzerComponent, TAnalyzerDoAfterEve
     /// <param name="analyzer">The analyzer that should receive the updates</param>
     /// <param name="target">The entity to start analyzing</param>
     public abstract void BeginAnalyzingEntity(Entity<TAnalyzerComponent> analyzer, EntityUid target, EntityUid? part = null);
-    
+
 
     /// <summary>
     /// Remove the analyzer from the active list, and remove the component if it has no active analyzers

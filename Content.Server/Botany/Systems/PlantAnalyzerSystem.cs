@@ -22,20 +22,19 @@ using Robust.Shared.Timing;
 
 namespace Content.Server.Botany.Systems;
 
-public sealed class PlantAnalyzerSystem : BaseAnalyzerSystem<PlantAnalyzerComponent, PlantAnalyzerDoAfterEvent>
+public sealed partial class PlantAnalyzerSystem : BaseAnalyzerSystem<PlantAnalyzerComponent, PlantAnalyzerDoAfterEvent>
 {
-    [Dependency] private readonly IEntityManager _entityManager = default!;
-    [Dependency] private readonly SharedHandsSystem _handsSystem = default!;
-    [Dependency] private readonly PaperSystem _paperSystem = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    [Dependency] private readonly LabelSystem _labelSystem = default!;
+    [Dependency] private IEntityManager _entityManager = default!;
+    [Dependency] private SharedHandsSystem _handsSystem = default!;
+    [Dependency] private PaperSystem _paperSystem = default!;
+    [Dependency] private IPrototypeManager _prototypeManager = default!;
+    [Dependency] private LabelSystem _labelSystem = default!;
 
     public override void Initialize()
     {
         base.Initialize();
 
         SubscribeLocalEvent<PlantAnalyzerComponent, PlantAnalyzerPrintMessage>(OnPrint);
-
     }
 
     /// <inheritdoc/>
@@ -133,7 +132,7 @@ public sealed class PlantAnalyzerSystem : BaseAnalyzerSystem<PlantAnalyzerCompon
         }
 
         // Spawn a piece of paper.
-        var printed = EntityManager.SpawnEntity(component.MachineOutput, Transform(uid).Coordinates);
+        var printed = Spawn(component.MachineOutput, Transform(uid).Coordinates);
         _handsSystem.PickupOrDrop(args.Actor, printed, checkActionBlocker: false);
 
         if (!TryComp<PaperComponent>(printed, out var paperComp))

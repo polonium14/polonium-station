@@ -60,58 +60,24 @@ using Content.Shared.Temperature.Components;
 using Content.Shared.Traits.Assorted;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio.Systems;
-using Robust.Shared.Containers;
-using Robust.Shared.Timing;
-
 namespace Content.Server.Medical;
 
-public sealed class HealthAnalyzerSystem : BaseAnalyzerSystem<HealthAnalyzerComponent, HealthAnalyzerDoAfterEvent>
+public sealed partial class HealthAnalyzerSystem : BaseAnalyzerSystem<HealthAnalyzerComponent, HealthAnalyzerDoAfterEvent>
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly ItemToggleSystem _toggle = default!;
-    [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
-    [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
-    [Dependency] private readonly TransformSystem _transformSystem = default!;
-    [Dependency] private readonly BloodstreamSystem _bloodstreamSystem = default!;
+    [Dependency] private ItemToggleSystem _toggle = default!;
+    [Dependency] private SharedSolutionContainerSystem _solutionContainerSystem = default!;
+    [Dependency] private UserInterfaceSystem _uiSystem = default!;
+    [Dependency] private BloodstreamSystem _bloodstreamSystem = default!;
 
-    public override void Initialize()
+    protected override void HandleOutOfScanRange(Entity<HealthAnalyzerComponent> analyzer, EntityUid target)
     {
-        SubscribeLocalEvent<HealthAnalyzerComponent, AfterInteractEvent>(OnAfterInteract);
-        SubscribeLocalEvent<HealthAnalyzerComponent, HealthAnalyzerDoAfterEvent>(OnDoAfter);
-        SubscribeLocalEvent<HealthAnalyzerComponent, EntGotInsertedIntoContainerMessage>(OnInsertedIntoContainer);
-        SubscribeLocalEvent<HealthAnalyzerComponent, ItemToggledEvent>(OnToggled);
-        SubscribeLocalEvent<HealthAnalyzerComponent, DroppedEvent>(OnDropped);
+        PauseAnalyzingEntity(analyzer, target);
     }
 
-    public override void Update(float frameTime)
+    protected override void HandleInScanRange(Entity<HealthAnalyzerComponent> analyzer, EntityUid target)
     {
-        var analyzerQuery = EntityQueryEnumerator<HealthAnalyzerComponent, TransformComponent>();
-        while (analyzerQuery.MoveNext(out var uid, out var component, out var transform))
-        {
-            if (component.NextUpdate > _timing.CurTime)
-                continue;
-
-            if (component.ScannedEntity is not { } patient)
-                continue;
-
-            if (Deleted(patient))
-            {
-                StopAnalyzingEntity((uid, component), patient);
-                continue;
-            }
-
-            component.NextUpdate = _timing.CurTime + component.UpdateInterval;
-
-            var patientCoordinates = Transform(patient).Coordinates;
-            if (component.MaxScanRange != null && !_transformSystem.InRange(patientCoordinates, transform.Coordinates, component.MaxScanRange.Value))
-            {
-                PauseAnalyzingEntity((uid, component), patient);
-                continue;
-            }
-
-            component.IsAnalyzerActive = true;
-            UpdateScannedUser(uid, patient, true);
-        }
+        analyzer.Comp.IsAnalyzerActive = true;
+        UpdateScannedUser(analyzer, target, true);
     }
 
     public override void BeginAnalyzingEntity(Entity<HealthAnalyzerComponent> healthAnalyzer, EntityUid target, EntityUid? part = null)
@@ -121,15 +87,6 @@ public sealed class HealthAnalyzerSystem : BaseAnalyzerSystem<HealthAnalyzerComp
         _toggle.TryActivate(healthAnalyzer.Owner);
 
         UpdateScannedUser(healthAnalyzer, target, true);
-    }
-
-    private void StopAnalyzingEntity(Entity<HealthAnalyzerComponent> healthAnalyzer, EntityUid target)
-    {
-        healthAnalyzer.Comp.ScannedEntity = null;
-
-        _toggle.TryDeactivate(healthAnalyzer.Owner);
-
-        UpdateScannedUser(healthAnalyzer, target, false);
     }
 
     private void PauseAnalyzingEntity(Entity<HealthAnalyzerComponent> healthAnalyzer, EntityUid target)
