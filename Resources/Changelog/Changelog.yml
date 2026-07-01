@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: Killerqu00
-  changes:
-  - message: Contraband examines now correctly tell you if you can possess the object.
-    type: Fix
-  id: 7971
-  time: '2025-02-18T11:33:08.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/35228
 - author: Ian321
   changes:
   - message: Magazines that started out empty now visually fill.
@@ -4191,3 +4184,10 @@
   id: 9278
   time: '2026-07-01T14:47:15.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/748
+- author: Saver310
+  changes:
+  - message: Dodano nowy barowy znak "U Szkodnika"
+    type: Add
+  id: 9279
+  time: '2026-07-01T17:57:00.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/749
