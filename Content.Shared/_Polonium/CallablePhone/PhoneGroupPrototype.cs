@@ -7,7 +7,7 @@ namespace Content.Shared._Polonium.CallablePhone;
 /// <see cref="CallablePhoneComponent.DialableGroups"/> overlaps the receiver's
 /// <see cref="CallablePhoneComponent.PhoneGroups"/>.
 /// </summary>
-[Prototype("phoneGroup")]
+[Prototype]
 public sealed partial class PhoneGroupPrototype : IPrototype
 {
     [IdDataField, ViewVariables]

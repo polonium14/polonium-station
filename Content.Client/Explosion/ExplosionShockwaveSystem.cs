@@ -11,11 +11,11 @@ namespace Content.Client.Explosion;
 /// Listens for <see cref="ExplosionShockwaveEvent"/> from the server
 /// and manages the shockwave distortion overlay lifecycle.
 /// </summary>
-public sealed class ExplosionShockwaveSystem : EntitySystem
+public sealed partial class ExplosionShockwaveSystem : EntitySystem
 {
-    [Dependency] private readonly IOverlayManager _overlays = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly IPrototypeManager _protoManager = default!;
+    [Dependency] private IOverlayManager _overlays = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private IPrototypeManager _protoManager = default!;
 
     private ExplosionShockwaveOverlay? _overlay;
 

@@ -9,9 +9,9 @@ using Content.Shared.Interaction.Events;
 
 namespace Content.Server._Polonium.Administration.Systems;
 
-public sealed class AdminAlertOnUseSystem : EntitySystem
+public sealed partial class AdminAlertOnUseSystem : EntitySystem
 {
-    [Dependency] private readonly IChatManager _chatManager = default!;
+    [Dependency] private IChatManager _chatManager = default!;
 
     public override void Initialize()
     {

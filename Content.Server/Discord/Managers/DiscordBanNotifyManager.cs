@@ -15,14 +15,14 @@ using Robust.Shared.Player;
 
 namespace Content.Server.Discord.Managers;
 
-public sealed class DiscordBanNotifyManager
+public sealed partial class DiscordBanNotifyManager
 {
-    [Dependency] private readonly DiscordWebhook _dc = default!;
-    [Dependency] private readonly IConfigurationManager _cfg = default!;
-    [Dependency] private readonly ILogManager _log = default!;
-    [Dependency] private readonly ILocalizationManager _loc = default!;
-    [Dependency] private readonly IPlayerManager _playerManager = default!;
-    [Dependency] private readonly IEntitySystemManager _systems = default!;
+    [Dependency] private DiscordWebhook _dc = default!;
+    [Dependency] private IConfigurationManager _cfg = default!;
+    [Dependency] private ILogManager _log = default!;
+    [Dependency] private ILocalizationManager _loc = default!;
+    [Dependency] private IPlayerManager _playerManager = default!;
+    [Dependency] private IEntitySystemManager _systems = default!;
 
     private ISawmill _logger = default!;
 

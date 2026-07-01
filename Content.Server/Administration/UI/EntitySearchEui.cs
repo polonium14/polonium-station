@@ -14,18 +14,18 @@ using static Content.Shared.Administration.EntitySearchEuiMsg;
 
 namespace Content.Server.Administration.UI;
 
-public sealed class EntitySearchEui : BaseEui
+public sealed partial class EntitySearchEui : BaseEui
 {
     private const int BatchSize = 300;
 
     private const int MaxMatchCount = 10_000;
 
-    [Dependency] private readonly IEntityManager _entities = default!;
-    [Dependency] private readonly IAdminManager _adminManager = default!;
-    [Dependency] private readonly IAdminLogManager _adminLogger = default!;
-    [Dependency] private readonly IChatManager _chat = default!;
-    [Dependency] private readonly IConfigurationManager _cfg = default!;
-    [Dependency] private readonly IGameTiming _gameTiming = default!;
+    [Dependency] private IEntityManager _entities = default!;
+    [Dependency] private IAdminManager _adminManager = default!;
+    [Dependency] private IAdminLogManager _adminLogger = default!;
+    [Dependency] private IChatManager _chat = default!;
+    [Dependency] private IConfigurationManager _cfg = default!;
+    [Dependency] private IGameTiming _gameTiming = default!;
 
     private string _query = string.Empty;
     private List<(string name, NetEntity entity)>? _matchCache;

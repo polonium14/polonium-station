@@ -32,19 +32,19 @@ using Robust.Shared.Timing;
 
 namespace Content.Server._Polonium.CallablePhone;
 
-public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
+public sealed partial class CallablePhoneSystem : SharedCallablePhoneSystem
 {
-    [Dependency] private readonly TelephoneSystem _telephone = default!;
-    [Dependency] private readonly UserInterfaceSystem _ui = default!;
-    [Dependency] private readonly ItemSlotsSystem _itemSlots = default!;
-    [Dependency] private readonly PopupSystem _popup = default!;
-    [Dependency] private readonly SpeechSoundSystem _speechSound = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly IAdminManager _adminManager = default!;
-    [Dependency] private readonly IChatManager _chatManager = default!;
-    [Dependency] private readonly IAdminLogManager _adminLogger = default!;
-    [Dependency] private readonly SharedContainerSystem _containers = default!;
+    [Dependency] private TelephoneSystem _telephone = default!;
+    [Dependency] private UserInterfaceSystem _ui = default!;
+    [Dependency] private ItemSlotsSystem _itemSlots = default!;
+    [Dependency] private PopupSystem _popup = default!;
+    [Dependency] private SpeechSoundSystem _speechSound = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private IAdminManager _adminManager = default!;
+    [Dependency] private IChatManager _chatManager = default!;
+    [Dependency] private IAdminLogManager _adminLogger = default!;
+    [Dependency] private SharedContainerSystem _containers = default!;
 
     private readonly HashSet<EntityUid> _centCommAwaitingPickup = new();
     private readonly HashSet<EntityUid> _centCommActiveCalls = new();
@@ -67,7 +67,7 @@ public sealed class CallablePhoneSystem : SharedCallablePhoneSystem
 
     private const int MaxImpersonationNameLength = 32;
 
-    [Dependency] private readonly IPlayerManager _playerManager = default!;
+    [Dependency] private IPlayerManager _playerManager = default!;
 
     private float _cordCheckTimer;
     private float _updateTimer;

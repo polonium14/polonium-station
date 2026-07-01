@@ -5,7 +5,7 @@ using Robust.Shared.Random;
 
 namespace Content.Server.Speech.EntitySystems;
 
-public sealed class KurwalskiAccentSystem : EntitySystem
+public sealed partial class KurwalskiAccentSystem : EntitySystem
 {
     private static readonly Regex RegexPeriod = new(@"\.");
     private static readonly Regex RegexComma = new(@"\,");
@@ -28,7 +28,7 @@ public sealed class KurwalskiAccentSystem : EntitySystem
         " debilu jebany."
     };
 
-    [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private IRobustRandom _random = default!;
 
 
     public override void Initialize()

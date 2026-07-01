@@ -7,10 +7,10 @@ using Robust.Shared.Player;
 
 namespace Content.Server._Polonium.GameTicking;
 
-public sealed class DelayedAnnouncementRuleSystem : GameRuleSystem<DelayedAnnouncementRuleComponent>
+public sealed partial class DelayedAnnouncementRuleSystem : GameRuleSystem<DelayedAnnouncementRuleComponent>
 {
-    [Dependency] private readonly ChatSystem _chat = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private ChatSystem _chat = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
 
     protected override void Started(
         EntityUid uid,

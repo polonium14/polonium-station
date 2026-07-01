@@ -14,14 +14,14 @@ using Robust.Shared.Network;
 
 namespace Content.Shared._Polonium.CallablePhone;
 
-public abstract class SharedCallablePhoneSystem : EntitySystem
+public abstract partial class SharedCallablePhoneSystem : EntitySystem
 {
-    [Dependency] protected readonly SharedHandsSystem Hands = default!;
-    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly ItemSlotsSystem _itemSlots = default!;
-    [Dependency] private readonly INetManager _net = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] protected SharedHandsSystem Hands = default!;
+    [Dependency] private SharedAppearanceSystem _appearance = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private ItemSlotsSystem _itemSlots = default!;
+    [Dependency] private INetManager _net = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
 
     public override void Initialize()
     {

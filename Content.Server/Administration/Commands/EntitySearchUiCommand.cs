@@ -7,10 +7,10 @@ using Robust.Shared.IoC;
 namespace Content.Server.Administration.Commands;
 
 [AdminCommand(AdminFlags.Admin)]
-public sealed class EntitySearchUiCommand : IConsoleCommand
+public sealed partial class EntitySearchUiCommand : IConsoleCommand
 {
-    [Dependency] private readonly IDependencyCollection _deps = default!;
-    [Dependency] private readonly EuiManager _eui = default!;
+    [Dependency] private IDependencyCollection _deps = default!;
+    [Dependency] private EuiManager _eui = default!;
 
     public string Command => "entitysearchui";
 

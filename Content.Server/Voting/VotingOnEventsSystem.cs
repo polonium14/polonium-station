@@ -14,10 +14,10 @@ namespace Content.Server.Voting;
 /// <summary>
 /// Handles creating votes on certain events.
 /// </summary>
-public sealed class VotingOnEventsSystem : EntitySystem
+public sealed partial class VotingOnEventsSystem : EntitySystem
 {
-    [Dependency] private readonly IVoteManager _voteManager = default!;
-    [Dependency] private readonly IConfigurationManager _cfg = default!;
+    [Dependency] private IVoteManager _voteManager = default!;
+    [Dependency] private IConfigurationManager _cfg = default!;
 
     public override void Initialize()
     {

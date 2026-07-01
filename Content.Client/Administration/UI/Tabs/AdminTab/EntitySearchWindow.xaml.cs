@@ -12,9 +12,9 @@ namespace Content.Client.Administration.UI.Tabs.AdminTab;
 [GenerateTypedNameReferences]
 public sealed partial class EntitySearchWindow : DefaultWindow
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly IClientConsoleHost _console = default!;
-    [Dependency] private readonly ILocalizationManager _loc = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private IClientConsoleHost _console = default!;
+    [Dependency] private ILocalizationManager _loc = default!;
 
     public event Action? SearchRequested;
     public event Action? NextResultsRequested;

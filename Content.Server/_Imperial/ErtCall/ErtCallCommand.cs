@@ -13,12 +13,12 @@ using Content.Server.Chat.Systems;
 namespace Content.Server._Imperial.ErtCall;
 
 [AdminCommand(AdminFlags.Admin)]
-public sealed class CallErt : LocalizedCommands
+public sealed partial class CallErt : LocalizedCommands
 {
-    public string Description => Loc.GetString("callertcommand-desc");
-    public string Help => Loc.GetString("callertcommand-help");
-    [Dependency] private readonly IEntityManager _entity = default!;
-    [Dependency] private readonly IPrototypeManager _prototype = default!;
+    public override string Description => Loc.GetString("callertcommand-desc");
+    public override string Help => Loc.GetString("callertcommand-help");
+    [Dependency] private IEntityManager _entity = default!;
+    [Dependency] private IPrototypeManager _prototype = default!;
 
     public override string Command => "callert";
 

@@ -10,7 +10,7 @@ using Robust.Shared.Random;
 
 namespace Content.Server.Speech.EntitySystems;
 
-public sealed class WiejskiAccentSystem : EntitySystem
+public sealed partial class WiejskiAccentSystem : EntitySystem
 {
     private static readonly Regex RegexScie1 = new(@"ście\b");
     private static readonly Regex RegexScie2 = new(@"scie\b");
@@ -32,7 +32,7 @@ public sealed class WiejskiAccentSystem : EntitySystem
     private static readonly Regex RegexAlum = new(@"ałum\b"); // dukaizm
 
 
-    [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private IRobustRandom _random = default!;
 
 
     public override void Initialize()

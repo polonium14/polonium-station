@@ -8,9 +8,9 @@ using Content.Server.Chat.Systems;
 
 namespace Content.Server._Polonium.Maupa;
 
-public sealed class MaupaSystem : EntitySystem
+public sealed partial class MaupaSystem : EntitySystem
 {
-    [Dependency] private readonly AutoEmoteSystem _autoEmote = default!;
+    [Dependency] private AutoEmoteSystem _autoEmote = default!;
     public override void Initialize()
     {
         base.Initialize();

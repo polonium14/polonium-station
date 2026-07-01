@@ -71,7 +71,6 @@ using Content.Server.Roles;
 using Content.Shared.CCVar;
 using Content.Shared.GameTicking;
 using Content.Shared.Database;
-using Content.Shared.GameTicking;
 using Content.Shared.Maps;
 using Content.Shared.Mind;
 using Content.Shared.Players;

@@ -8,9 +8,9 @@ using Content.Shared.CartridgeLoader;
 
 namespace Content.Server.CartridgeLoader.Cartridges;
 
-public sealed class PlantScanCartridgeSystem : EntitySystem
+public sealed partial class PlantScanCartridgeSystem : EntitySystem
 {
-    [Dependency] private readonly CartridgeLoaderSystem _cartridgeLoaderSystem = default!;
+    [Dependency] private CartridgeLoaderSystem _cartridgeLoaderSystem = default!;
 
     public override void Initialize()
     {

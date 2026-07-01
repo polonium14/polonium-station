@@ -7,9 +7,9 @@ using Robust.Shared.IoC;
 namespace Content.Client._Polonium.CallablePhone;
 
 [UsedImplicitly]
-public sealed class CallablePhoneBoundUserInterface : BoundUserInterface
+public sealed partial class CallablePhoneBoundUserInterface : BoundUserInterface
 {
-    [Dependency] private readonly IEntitySystemManager _entitySystemManager = default!;
+    [Dependency] private IEntitySystemManager _entitySystemManager = default!;
 
     [ViewVariables]
     private CallablePhoneWindow? _window;

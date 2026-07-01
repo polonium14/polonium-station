@@ -9,9 +9,9 @@ using static Content.Shared.Administration.EntitySearchEuiMsg;
 namespace Content.Client.Administration.UI;
 
 [UsedImplicitly]
-public sealed class EntitySearchEui : BaseEui
+public sealed partial class EntitySearchEui : BaseEui
 {
-    [Dependency] private readonly IDependencyCollection _deps = default!;
+    [Dependency] private IDependencyCollection _deps = default!;
 
     private readonly EntitySearchWindow _window;
 

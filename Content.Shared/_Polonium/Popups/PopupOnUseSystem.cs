@@ -10,10 +10,10 @@ using Robust.Shared.Timing;
 
 namespace Content.Shared.Popups;
 
-public sealed class PopupOnUseSystem : EntitySystem
+public sealed partial class PopupOnUseSystem : EntitySystem
 {
-    [Dependency] private readonly IGameTiming _gameTiming = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private IGameTiming _gameTiming = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
     public override void Initialize()
     {
         base.Initialize();
