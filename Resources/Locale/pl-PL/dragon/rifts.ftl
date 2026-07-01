@@ -1,6 +1,6 @@
 carp-rift-warning = Wyrwa powoduje nienaturalnie duże turbulencje energii w { $location }. Zatrzymajcie to za wszelką cenę!
 carp-rift-duplicate = Nie można posiadać 2 rosnących wyrw w tym samym momencie!
-carp-rift-examine = Jest ona w [color=yellow]{ NATURALPERCENT($percentage) }[/color] pełnej wielkości!
+carp-rift-examine = Jest ona w [color=yellow]{$percentage}%[/color] pełnej wielkości!
 carp-rift-max = Osiągnięto limit liczby wyrw
 carp-rift-anchor = Wyrwy potrzebują solidnej podstawy do materializacji
 carp-rift-proximity =

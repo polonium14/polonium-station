@@ -81,13 +81,13 @@ cargo-funding-alloc-console-label-cut = [bold] Podział zysku (%) [/bold]
 cargo-funding-alloc-console-label-primary-cut = Udział logistyki w zyskach ze źródeł otwartych (%):
 cargo-funding-alloc-console-label-help = Logistyka otrzymuje { $percent }% wszystkich zysków. Reszta jest rozdzielana jak wskazano poniżej:
 cargo-funding-alloc-console-label-lockbox-cut = Udział logistyki w zyskach ze sprzedaży skrzyń zamkniętych (%):
-cargo-funding-alloc-console-label-help-non-adjustible = Logistyka otrzymuje { NATURALPERCENT($percent) } zysków ze sprzedaży skrzyń otwartych. Reszta jest rozdzielona jak niżej:
+cargo-funding-alloc-console-label-help-non-adjustible = Logistyka otrzymuje {$percent}% zysków ze sprzedaży skrzyń otwartych. Reszta jest rozdzielona jak niżej:
 cargo-funding-alloc-console-label-help-adjustible = Pozostałe zyski ze źródeł otwartych są rozdzielane jak niżej:
 cargo-funding-alloc-console-button-save = Zapisz zmiany
 cargo-funding-alloc-console-label-save-fail = [bold]Rozdział zysków nieprawidłowy![/bold] [color=red]({ $pos ->
         [1] +
        *[-1] -
-    }{ NATURALPERCENT($val) })[/color]
+    }{$val}%)[/color]
 # Slip template
 cargo-acquisition-slip-body = [head=3]Szczegóły mienia[/head]
     { "[bold]Produkt:[/bold]" } { $product }

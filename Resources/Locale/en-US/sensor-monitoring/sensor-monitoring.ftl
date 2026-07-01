@@ -5,7 +5,7 @@ sensor-monitoring-value-display = {$unit ->
     [PowerW] { POWERWATTS($value) }
     [EnergyJ] { POWERJOULES($value) }
     [TemperatureK] { TOSTRING($value, "N3") } K
-    [Ratio] { NATURALPERCENT($value) }
+    [Ratio] { NATURALPERCENT($value, 0) }
     [Moles] { TOSTRING($value, "N3") } mol
     *[Other] { $value }
 }

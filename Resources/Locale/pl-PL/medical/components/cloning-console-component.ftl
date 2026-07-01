@@ -31,4 +31,4 @@ cloning-console-chat-error =
        *[others] jednostek
     } biomasy.
 cloning-console-uncloneable-trait-error = Błąd: klonowanie jest niemożliwe z powodu wyjątkowego składu ciała.
-cloning-console-cellular-warning = Błąd: wynik pewności GENEFSCK wynosi { NATURALPERCENT($percent) }. Klonowanie może mieć nieoczekiwane rezultaty.
+cloning-console-cellular-warning = Błąd: wynik pewności GENEFSCK wynosi {$percent}%. Klonowanie może mieć nieoczekiwane rezultaty.
