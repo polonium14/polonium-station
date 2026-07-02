@@ -15,8 +15,9 @@
   - type: Icon
     state: full
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: Metallic
+  - type: Injurable
+    damageContainer: Inorganic
   - type: Physics
     bodyType: Static
   - type: Fixtures
@@ -56,5 +57,3 @@
   - type: IconSmooth
     key: fence
     base: fence
-    allowedVerbs:
-    - Rattle

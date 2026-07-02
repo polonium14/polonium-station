@@ -51,8 +51,9 @@
   - type: Occluder
   - type: BlockWeather
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: Metallic
+  - type: Injurable
+    damageContainer: Inorganic
   # - type: Lock
     # locked: true
     # lockSlotId: lock_slot
@@ -352,8 +353,9 @@
     resistance: 10
   - type: SpriteFade
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: StructuralMetallic
+  - type: Injurable
+    damageContainer: Inorganic
   - type: ApcPowerReceiver
     powerLoad: 10
   - type: ExtensionCableReceiver

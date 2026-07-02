@@ -23,8 +23,9 @@
         - WallLayer
         density: 100
   - type: Damageable
-    damageContainer: StructuralInorganic
     damageModifierSet: Web
+  - type: Injurable
+    damageContainer: StructuralInorganic
   - type: RangedDamageSound
     soundGroups:
       Brute:

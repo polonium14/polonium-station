@@ -108,6 +108,7 @@
     sprite: _Nuclear14/Structures/Walls/nc14/woodwhite.rsi
   - type: Damageable
     damageModifierSet: Wood
+  - type: Injurable
     damageContainer: Inorganic
   - type: Destructible
     thresholds:
@@ -156,6 +157,7 @@
     state: girder
   - type: Damageable
     damageModifierSet: Wood
+  - type: Injurable
     damageContainer: Inorganic
   - type: Destructible
     thresholds:
@@ -221,6 +223,7 @@
     sprite: _Nuclear14/Structures/Walls/nc14/tent.rsi
   - type: Damageable
     damageModifierSet: Web
+  - type: Injurable
     damageContainer: Inorganic
   - type: Destructible
     thresholds:

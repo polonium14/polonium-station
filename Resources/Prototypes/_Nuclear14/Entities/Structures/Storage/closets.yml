@@ -233,6 +233,7 @@
     sprite: _Nuclear14/Structures/Storage/Closets/cabinet.rsi
   - type: Damageable
     damageModifierSet: Wood
+  - type: Injurable
     damageContainer: Inorganic
   - type: Destructible
     thresholds:
@@ -335,8 +336,9 @@
       entity_storage: !type:Container
         ents: []
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: Metallic
+  - type: Injurable
+    damageContainer: Inorganic
   - type: Destructible
     thresholds:
     - trigger:

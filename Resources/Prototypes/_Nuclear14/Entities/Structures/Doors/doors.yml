@@ -42,8 +42,9 @@
   - type: Appearance
   - type: Airtight
   - type: Damageable
-    damageContainer: StructuralInorganic
     damageModifierSet: Metallic
+  - type: Injurable
+    damageContainer: StructuralInorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -76,8 +77,9 @@
     - state: closed
       map: ["enum.DoorVisualLayers.Base"]
   - type: Damageable
-    damageContainer: StructuralInorganic
     damageModifierSet: Wood
+  - type: Injurable
+    damageContainer: StructuralInorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -237,8 +239,9 @@
   - type: Occluder
     enabled: false
   - type: Damageable
-    damageContainer: StructuralInorganic
     damageModifierSet: Metallic
+  - type: Injurable
+    damageContainer: StructuralInorganic
 
 - type: entity
   parent: N14DoorCellMetal
@@ -294,8 +297,9 @@
   - type: Occluder
     enabled: false
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: Glass
+  - type: Injurable
+    damageContainer: Inorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -347,8 +351,9 @@
     - state: closed
       map: ["enum.DoorVisualLayers.Base"]
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: FlimsyMetallic
+  - type: Injurable
+    damageContainer: Inorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -370,8 +375,9 @@
     - state: closed
       map: ["enum.DoorVisualLayers.Base"]
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: Glass
+  - type: Injurable
+    damageContainer: Inorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -448,8 +454,9 @@
     closeSound:
       path: /Audio/Items/zip.ogg
   - type: Damageable
-    damageContainer: StructuralInorganic
     damageModifierSet: Web
+  - type: Injurable
+    damageContainer: StructuralInorganic
   - type: Destructible
     thresholds:
     - trigger:

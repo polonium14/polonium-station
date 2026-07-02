@@ -1708,7 +1708,7 @@
   sprite: /Textures/_Nuclear14/Tiles/wasteland.png
   variants: 4
   placementVariants: [0, 1, 2, 3]
-  baseTurf: space
+  baseTurf: Space
   isSubfloor: true
   footstepSounds:
     collection: N14FootstepDirt

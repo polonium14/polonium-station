@@ -1,4 +1,4 @@
-- type: entity
+﻿- type: entity
   id: N14WellBoarded
   name: Boarded well
   description: It's a well that's been boarded up. Maybe a crowbar will reveal it's secrets.
@@ -70,7 +70,6 @@
     solution: tank
   - type: ReagentTank
   - type: SolutionRegeneration
-    solution: tank
     generated:
       reagents:
       - ReagentId: Water
@@ -90,7 +89,6 @@
         - ReagentId: Water
           Quantity: 500
   - type: SolutionRegeneration
-    solution: tank
     generated:
       reagents:
       - ReagentId: Water
@@ -110,7 +108,6 @@
         - ReagentId: Water
           Quantity: 500
   - type: SolutionRegeneration
-    solution: tank
     generated:
       reagents:
       - ReagentId: Water

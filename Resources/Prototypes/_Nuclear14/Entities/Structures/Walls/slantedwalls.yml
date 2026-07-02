@@ -54,8 +54,9 @@
   abstract: true
   components:
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: Rock
+  - type: Injurable
+    damageContainer: Inorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -71,17 +72,19 @@
   abstract: true
   components:
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: PerforatedMetallic
     
+  - type: Injurable
+    damageContainer: Inorganic
 - type: entity
   parent: N14BaseWallSlanted
   id: N14BaseWallSlantedMetal
   abstract: true
   components:
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: StructuralMetallic
+  - type: Injurable
+    damageContainer: Inorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -97,8 +100,9 @@
   abstract: true
   components:
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: StructuralMetallicStrong
+  - type: Injurable
+    damageContainer: Inorganic
   - type: RadiationBlocker
     resistance: 10
   - type: Destructible
@@ -116,8 +120,9 @@
   abstract: true
   components:
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: Wood
+  - type: Injurable
+    damageContainer: Inorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -507,6 +512,7 @@
     snapCardinals: true
   - type: Damageable
     damageModifierSet: Metallic
+  - type: Injurable
     damageContainer: Inorganic
   - type: Destructible
     thresholds:

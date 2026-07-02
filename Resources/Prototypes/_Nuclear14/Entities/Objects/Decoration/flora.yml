@@ -23,8 +23,9 @@
         mask:
         - TableMask
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: Wood
+  - type: Injurable
+    damageContainer: Inorganic
   - type: MeleeSound
     soundGroups:
       Brute:

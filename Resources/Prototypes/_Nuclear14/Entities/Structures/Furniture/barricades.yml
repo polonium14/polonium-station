@@ -10,6 +10,7 @@
     state: sandbag_single
   - type: Damageable
     damageModifierSet: Wood
+  - type: Injurable
     damageContainer: Inorganic
   - type: Destructible
     thresholds:
@@ -48,6 +49,7 @@
     snapCardinals: true
   - type: Damageable
     damageModifierSet: Metallic
+  - type: Injurable
     damageContainer: Inorganic
   - type: Destructible
     thresholds:
@@ -95,6 +97,7 @@
     state: barbedwire_single
   - type: Damageable
     damageModifierSet: Metallic
+  - type: Injurable
     damageContainer: Inorganic
   - type: Destructible
     thresholds:
@@ -145,7 +148,7 @@
       path: /Audio/Effects/fence_rattle1.ogg
     slipData:
       launchForwardsMultiplier: 0
-      paralyzeTime: 0
+      stunTime: 0
 
 - type: entity
   parent: N14BarricadeSandbagSingle
@@ -159,6 +162,7 @@
     state: black
   - type: Damageable
     damageModifierSet: Metallic
+  - type: Injurable
     damageContainer: Inorganic
 
 - type: entity

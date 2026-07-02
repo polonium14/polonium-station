@@ -31,8 +31,9 @@
         layer:
         - GlassLayer
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: Glass
+  - type: Injurable
+    damageContainer: Inorganic
   - type: ExaminableDamage
     messages: WindowMessages
   - type: Destructible
@@ -72,8 +73,6 @@
     trackAllDamage: true
     damageOverlay:
       sprite: _Nuclear14/Structures/Windows/slanted/cracks.rsi
-    allowedVerbs:
-    - KnockOn
 
 - type: entity
   parent: N14WindowBase

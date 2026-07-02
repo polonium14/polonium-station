@@ -25,8 +25,9 @@
       path: /Audio/_Nuclear14/Effects/Doors/DRS_Metal_Bay_Door_Close_01.ogg
   - type: Appearance
   - type: Damageable
-    damageContainer: StructuralInorganic
     damageModifierSet: Metallic
+  - type: Injurable
+    damageContainer: StructuralInorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -185,8 +186,9 @@
     graph: N14DoorGraph
     node: WoodDoor
   - type: Damageable
-    damageContainer: StructuralInorganic
     damageModifierSet: Wood
+  - type: Injurable
+    damageContainer: StructuralInorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -309,8 +311,9 @@
   - type: RadiationBlocker
     resistance: 10
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: StructuralMetallic
+  - type: Injurable
+    damageContainer: Inorganic
   - type: ApcPowerReceiver
     powerLoad: 10
   - type: ExtensionCableReceiver
