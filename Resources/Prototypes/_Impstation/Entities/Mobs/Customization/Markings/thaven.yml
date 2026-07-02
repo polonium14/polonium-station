@@ -10,10 +10,8 @@
 - type: marking
   id: ThavenEars1
   bodyPart: HeadSide
-  markingCategory: HeadSide
   groupWhitelist: [ Thaven ]
   forcedColoring: true
-  followSkinColor: true
   sprites:
   - sprite: _Impstation/Mobs/Customization/thaven/thaven.rsi
     state: ears1
@@ -21,10 +19,8 @@
 - type: marking
   id: ThavenEars2
   bodyPart: HeadSide
-  markingCategory: HeadSide
   groupWhitelist: [ Thaven ]
   forcedColoring: true
-  followSkinColor: true
   sprites:
   - sprite: _Impstation/Mobs/Customization/thaven/thaven.rsi
     state: ears2
@@ -32,10 +28,8 @@
 - type: marking
   id: ThavenEars3
   bodyPart: HeadSide
-  markingCategory: HeadSide
   groupWhitelist: [ Thaven ]
   forcedColoring: true
-  followSkinColor: true
   sprites:
   - sprite: _Impstation/Mobs/Customization/thaven/thaven.rsi
     state: ears3
@@ -43,10 +37,8 @@
 - type: marking
   id: ThavenEars4
   bodyPart: HeadSide
-  markingCategory: HeadSide
   groupWhitelist: [ Thaven ]
   forcedColoring: true
-  followSkinColor: true
   sprites:
   - sprite: _Impstation/Mobs/Customization/thaven/thaven.rsi
     state: ears4
@@ -54,10 +46,8 @@
 - type: marking
   id: ThavenPiercings
   bodyPart: HeadTop
-  markingCategory: HeadTop
   groupWhitelist: [ Thaven ]
   forcedColoring: false
-  followSkinColor: false
   coloring:
     default:
       type:
@@ -70,10 +60,8 @@
 - type: marking
   id: ThavenPiercings2
   bodyPart: HeadTop
-  markingCategory: HeadTop
   groupWhitelist: [ Thaven ]
   forcedColoring: false
-  followSkinColor: false
   coloring:
     default:
       type:
@@ -86,7 +74,6 @@
 - type: marking
   id: ThavenChestTattoo1
   bodyPart: Chest
-  markingCategory: Chest
   groupWhitelist: [ Thaven ]
   coloring:
     default:
@@ -100,7 +87,6 @@
 - type: marking
   id: ThavenLArmTattoo1
   bodyPart: LArm
-  markingCategory: Arms
   groupWhitelist: [ Thaven ]
   coloring:
     default:
@@ -114,7 +100,6 @@
 - type: marking
   id: ThavenRArmTattoo1
   bodyPart: RArm
-  markingCategory: Arms
   groupWhitelist: [ Thaven ]
   coloring:
     default:
@@ -128,7 +113,6 @@
 - type: marking
   id: ThavenREyeGlow
   bodyPart: Eyes
-  markingCategory: Head
   groupWhitelist: [ Thaven ]
   coloring:
     default:
@@ -138,12 +122,10 @@
   sprites:
   - sprite: _Impstation/Mobs/Customization/thaven/thaven.rsi
     state: reyeglow
-  shader: unshaded
 
 - type: marking
   id: ThavenLEyeGlow
   bodyPart: Eyes
-  markingCategory: Head
   groupWhitelist: [ Thaven ]
   coloring:
     default:
@@ -153,15 +135,12 @@
   sprites:
   - sprite: _Impstation/Mobs/Customization/thaven/thaven.rsi
     state: leyeglow
-  shader: unshaded
 
 - type: marking
   id: ThavenTailEel
   bodyPart: Tail
-  markingCategory: Tail
   groupWhitelist: [ Thaven ]
   forcedColoring: false
-  followSkinColor: true
   sprites:
   - sprite: _Impstation/Mobs/Customization/thaven/thaven.rsi
     state: taileel1
@@ -171,7 +150,6 @@
 - type: marking
   id: ThavenTailEelOverlay
   bodyPart: Tail
-  markingCategory: Overlay
   groupWhitelist: [ Thaven ]
   coloring:
     default:
@@ -181,15 +159,12 @@
   sprites:
   - sprite: _Impstation/Mobs/Customization/thaven/thaven.rsi
     state: taileel3
-  shader: unshaded
 
 - type: marking
   id: ThavenTailNurse
   bodyPart: Tail
-  markingCategory: Tail
   groupWhitelist: [ Thaven ]
   forcedColoring: false
-  followSkinColor: true
   sprites:
   - sprite: _Impstation/Mobs/Customization/thaven/thaven.rsi
     state: tailnurse1
@@ -199,10 +174,8 @@
 - type: marking
   id: ThavenTailStub
   bodyPart: Tail
-  markingCategory: Tail
   groupWhitelist: [ Thaven ]
   forcedColoring: false
-  followSkinColor: true
   sprites:
   - sprite: _Impstation/Mobs/Customization/thaven/thaven.rsi
     state: tailstub1
@@ -214,10 +187,8 @@
 - type: marking
   id: ThavenArmFinsSmallRight
   bodyPart: RArm
-  markingCategory: Arms
   groupWhitelist: [ Thaven ]
   forcedColoring: false
-  followSkinColor: true
   sprites:
   - sprite: _Impstation/Mobs/Customization/thaven/thaven.rsi
     state: rarmfins1
@@ -225,10 +196,8 @@
 - type: marking
   id: ThavenArmFinsSmallLeft
   bodyPart: LArm
-  markingCategory: Arms
   groupWhitelist: [ Thaven ]
   forcedColoring: false
-  followSkinColor: true
   sprites:
   - sprite: _Impstation/Mobs/Customization/thaven/thaven.rsi
     state: larmfins1
@@ -236,10 +205,8 @@
 - type: marking
   id: ThavenArmFinsBigRight
   bodyPart: RArm
-  markingCategory: Arms
   groupWhitelist: [ Thaven ]
   forcedColoring: false
-  followSkinColor: true
   sprites:
   - sprite: _Impstation/Mobs/Customization/thaven/thaven.rsi
     state: rarmfins2
@@ -247,10 +214,8 @@
 - type: marking
   id: ThavenArmFinsBigLeft
   bodyPart: LArm
-  markingCategory: Arms
   groupWhitelist: [ Thaven ]
   forcedColoring: false
-  followSkinColor: true
   sprites:
   - sprite: _Impstation/Mobs/Customization/thaven/thaven.rsi
     state: larmfins2
@@ -258,10 +223,8 @@
 - type: marking
   id: ThavenLegFinsSmallRight
   bodyPart: LLeg
-  markingCategory: Legs
   groupWhitelist: [ Thaven ]
   forcedColoring: false
-  followSkinColor: true
   sprites:
   - sprite: _Impstation/Mobs/Customization/thaven/thaven.rsi
     state: llegfins1
@@ -269,10 +232,8 @@
 - type: marking
   id: ThavenLegFinsSmallLeft
   bodyPart: RLeg
-  markingCategory: Legs
   groupWhitelist: [ Thaven ]
   forcedColoring: false
-  followSkinColor: true
   sprites:
   - sprite: _Impstation/Mobs/Customization/thaven/thaven.rsi
     state: rlegfins1
@@ -280,10 +241,8 @@
 - type: marking
   id: ThavenBackFin
   bodyPart: Chest
-  markingCategory: Chest
   groupWhitelist: [ Thaven ]
   forcedColoring: false
-  followSkinColor: true
   sprites:
   - sprite: _Impstation/Mobs/Customization/thaven/thaven.rsi
     state: backfin
@@ -291,10 +250,8 @@
 - type: marking
   id: ThavenTailCarpish
   bodyPart: Tail
-  markingCategory: Tail
   groupWhitelist: [ Thaven ]
   forcedColoring: false
-  followSkinColor: true
   sprites:
   - sprite: _Impstation/Mobs/Customization/thaven/thaven.rsi
     state: carpish
@@ -302,10 +259,8 @@
 - type: marking
   id: ThavenTailDraconicLong
   bodyPart: Tail
-  markingCategory: Tail
   groupWhitelist: [ Thaven ]
   forcedColoring: false
-  followSkinColor: true
   sprites:
   - sprite: _Impstation/Mobs/Customization/thaven/thaven.rsi
     state: draconiclong
@@ -313,10 +268,8 @@
 - type: marking
   id: ThavenTailFish
   bodyPart: Tail
-  markingCategory: Tail
   groupWhitelist: [ Thaven ]
   forcedColoring: false
-  followSkinColor: true
   sprites:
   - sprite: _Impstation/Mobs/Customization/thaven/thaven.rsi
     state: fishtail
@@ -324,10 +277,8 @@
 - type: marking
   id: ThavenHeadFinsFairy
   bodyPart: HeadSide
-  markingCategory: HeadSide
   groupWhitelist: [ Thaven ]
   forcedColoring: false
-  followSkinColor: true
   sprites:
   - sprite: _Impstation/Mobs/Customization/thaven/thaven.rsi
     state: fairyfins
@@ -335,10 +286,8 @@
 - type: marking
   id: ThavenHeadAnglerStem
   bodyPart: HeadTop
-  markingCategory: HeadTop
   groupWhitelist: [ Thaven ]
   forcedColoring: false
-  followSkinColor: true
   sprites:
   - sprite: _Impstation/Mobs/Customization/thaven/thaven.rsi
     state: angler-stem
@@ -346,11 +295,8 @@
 - type: marking
   id: ThavenHeadAnglerBulb
   bodyPart: HeadTop
-  markingCategory: Overlay
   groupWhitelist: [ Thaven ]
   forcedColoring: false
-  followSkinColor: true
   sprites:
   - sprite: _Impstation/Mobs/Customization/thaven/thaven.rsi
     state: angler-bulb
-  shader: unshaded

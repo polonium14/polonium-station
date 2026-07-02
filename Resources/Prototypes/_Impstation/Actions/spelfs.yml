@@ -4,16 +4,15 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
+  parent: BaseAction
   id: ActionViewMoods
   name: View Moods
   description: View your current moods.
   components:
-  - type: InstantAction
-    itemIconStyle: NoItem
-    checkCanInteract: false
-    checkConsciousness: false
+  - type: Action
+    useDelay: 0.5
     icon:
       sprite: Interface/Actions/actions_borg.rsi
       state: state-laws
+  - type: InstantAction
     event: !type:ToggleMoodsScreenEvent
-    useDelay: 0.5

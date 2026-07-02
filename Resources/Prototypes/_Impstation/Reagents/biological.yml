@@ -20,54 +20,47 @@
   recognizable: true
   physicalDesc: reagent-physical-desc-viscous
   metabolisms:
-    # like a shitter omnizine, and a shittier ichor
-    Drink:
+    Digestion:
       effects:
       - !type:SatiateThirst
         factor: 1.5
-    Medicine:
-      effects:
       - !type:ModifyBloodLevel
         amount: 1
       - !type:HealthChange
         damage:
-          groups:
-            Burn: -1
-            Toxin: -1
-            Airloss: -1
-            Brute: -1
-      - !type:ModifyBleedAmount
+          types:
+            Heat: -1
+            Caustic: -1
+            Asphyxiation: -1
+            Blunt: -1
+      - !type:ModifyBleed
         amount: -1
 
-
-- type: reagent # can't parent it to blood because anybody should be able to drink it, the flesh/organs are the toxic parts (fugu moment)
+- type: reagent
   id: ShimmeringBlood
   name: reagent-name-shimmering-blood
   group: Biological
   desc: reagent-desc-shimmering-blood
   flavor: shimmeringblood
-  color: "#ff624a" # a slightly warmer color than the ichor extracted from dragon flesh
+  color: "#ff624a"
   recognizable: true
   physicalDesc: reagent-physical-desc-shimmering-blood
   metabolisms:
-    Food:
+    Digestion:
       effects:
       - !type:SatiateHunger
         factor: 1
       - !type:SatiateThirst
         factor: 1
-    Narcotic:
-      effects:
       - !type:GenericStatusEffect
         conditions:
-        - !type:OrganType
-           type: Thaven
-           shouldHave: false
+        - !type:MetabolizerTypeCondition
+          type: [ Thaven ]
+          inverted: true
         key: SeeingRainbows
         component: SeeingRainbows
         type: Add
         time: 5
-        refresh: false
   plantMetabolism:
   - !type:PlantAdjustToxins
     amount: 2
@@ -79,17 +72,3 @@
     collection: FootstepBlood
     params:
       volume: 6
-
-- type: reaction
-  id: SynthBloodBreakdown # synthblood under /_CD/Reagents/biological.yml
-  source: true
-  requiredMixerCategories:
-  - Centrifuge
-  reactants:
-    SynthBlood:
-      amount: 5
-  products:
-    Silicon: 1
-    Lithium: 1
-    Ethanol: 2
-    SpaceLube: 1

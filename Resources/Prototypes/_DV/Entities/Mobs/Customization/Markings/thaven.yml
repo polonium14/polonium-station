@@ -8,7 +8,6 @@
 - type: marking
   id: ThavenCheekBarbels
   bodyPart: HeadTop
-  markingCategory: HeadTop
   groupWhitelist: [ Thaven ]
   coloring: #imp
     default:
@@ -22,7 +21,6 @@
 - type: marking
   id: ThavenEyebrowBarbels
   bodyPart: HeadTop
-  markingCategory: HeadTop
   groupWhitelist: [ Thaven ]
   coloring: #imp
     default:

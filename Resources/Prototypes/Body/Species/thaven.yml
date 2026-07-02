@@ -86,7 +86,7 @@
   - type: HumanoidProfile
     species: Thaven
   - type: Inventory
-    templateId: thaven
+    templateId: human
     speciesId: thaven
     displacements:
       jumpsuit:
@@ -134,7 +134,6 @@
   - type: StaminaDamageOnHit
     damage: 18
   - type: Butcherable
-    butcheringType: Spike
     spawned:
     - id: FoodThavenMeat
       amount: 5
@@ -198,11 +197,11 @@
       group: Thaven
 
 - type: entity
-  parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganThavenExternal ]
+  parent: [ OrganBaseTorso, OrganThavenExternal ]
   id: OrganThavenTorso
 
 - type: entity
-  parent: [ OrganBaseHeadSexed, OrganBaseHead, OrganThavenExternal ]
+  parent: [ OrganBaseHead, OrganThavenExternal ]
   id: OrganThavenHead
   components:
   - type: VisualOrganMarkings
@@ -253,15 +252,15 @@
   id: OrganThavenEyes
 
 - type: entity
-  parent: [ OrganBaseTongue, OrganThavenInternal ]
+  parent: [ OrganBaseTongue, OrganSpriteHumanInternal, OrganThaven ]
   id: OrganThavenTongue
 
 - type: entity
-  parent: [ OrganBaseAppendix, OrganThavenInternal ]
+  parent: [ OrganBaseAppendix, OrganSpriteHumanInternal, OrganThaven ]
   id: OrganThavenAppendix
 
 - type: entity
-  parent: [ OrganBaseEars, OrganThavenInternal ]
+  parent: [ OrganBaseEars, OrganSpriteHumanInternal, OrganThaven ]
   id: OrganThavenEars
 
 - type: entity
