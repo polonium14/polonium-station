@@ -150,7 +150,7 @@
   id: Hologram
   kind: source
   path: "/Textures/Shaders/hologram.swsl"
-
+  
 - type: shader
   id: HeatBlur
   kind: source
@@ -172,3 +172,8 @@
   id: Shockwave
   kind: source
   path: "/Textures/Shaders/shockwave.swsl"
+
+- type: shader
+  id: NightVision
+  kind: source
+  path: "/Textures/Shaders/nightvision.swsl"

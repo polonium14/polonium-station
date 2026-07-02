@@ -28,7 +28,6 @@
     children:
     - id: FlashlightSeclite
     - id: WeaponDisabler
-    - id: WeaponTaser
     - id: ClothingBeltSecurityFilled
     - id: Flash
     - id: ClothingEyesGlassesSecurity
@@ -73,7 +72,8 @@
     children:
     - id: FlashlightSeclite
       prob: 0.8
-    - id: FuClothingUniformSecService
+    - id: WeaponDisabler
+    - id: ClothingUniformJumpsuitSecGrey
       prob: 0.3
     - id: ClothingHeadHelmetBasic
     - id: ClothingOuterArmorBasic
@@ -110,7 +110,6 @@
   table: !type:AllSelector
     children:
     - id: ClothingEyesGlassesSecurity
-    - id: WeaponTaser
     - id: WeaponDisabler
     - id: TrackingImplanter
       amount: 2

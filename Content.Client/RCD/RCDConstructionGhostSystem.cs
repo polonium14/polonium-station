@@ -23,7 +23,6 @@ public sealed partial class RCDConstructionGhostSystem : EntitySystem
 
     [Dependency] private IPlayerManager _playerManager = default!;
     [Dependency] private IPlacementManager _placementManager = default!;
-    [Dependency] private IPrototypeManager _protoManager = default!;
     [Dependency] private HandsSystem _hands = default!;
 
     private Direction _placementDirection = default;
@@ -103,13 +102,12 @@ public sealed partial class RCDConstructionGhostSystem : EntitySystem
             return;
         }
 
-        // Determine if mirrored
         var cachedProto = rcd.CachedPrototype;
         var wantMirror = _useMirrorPrototype && !string.IsNullOrEmpty(cachedProto.MirrorPrototype);
         var prototype = wantMirror ? cachedProto.MirrorPrototype : cachedProto.Prototype;
 
-        bool isLayered = rcd.IsRpd
-            && _protoManager.TryIndex<RCDPrototype>(cachedProto.ID, out var rcdProto)
+        var isLayered = rcd.IsRpd
+            && ProtoMan.TryIndex(cachedProto.ID, out var rcdProto)
             && rcdProto.HasLayers;
 
         var desiredMode = isLayered ? RpdPlacementMode : PlacementMode;
@@ -134,7 +132,7 @@ public sealed partial class RCDConstructionGhostSystem : EntitySystem
             PlacementOption = desiredMode,
             EntityType = prototype,
             Range = (int)Math.Ceiling(SharedInteractionSystem.InteractionRange),
-            IsTile = (cachedProto.Mode == RcdMode.ConstructTile),
+            IsTile = cachedProto.Mode == RcdMode.ConstructTile,
             UseEditorContext = false,
         };
 

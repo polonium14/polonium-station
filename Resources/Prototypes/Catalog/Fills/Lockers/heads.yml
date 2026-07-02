@@ -330,6 +330,7 @@
     - id: HoloprojectorSecurity
     - id: RubberStampHos
     - id: BoxHoSCircuitboards
+    - id: WeaponDisabler
     - id: WantedListCartridge
     - id: DrinkHosFlask
     - id: PlushieLizardJobHeadofsecurity
