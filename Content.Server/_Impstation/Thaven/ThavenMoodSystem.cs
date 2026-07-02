@@ -36,15 +36,15 @@ namespace Content.Server._Impstation.Thaven;
 
 public sealed partial class ThavenMoodsSystem : SharedThavenMoodSystem
 {
-    [Dependency] private readonly IPrototypeManager _proto = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly ActionsSystem _actions = default!;
-    [Dependency] private readonly IConfigurationManager _config = default!;
-    [Dependency] private readonly UserInterfaceSystem _bui = default!;
-    [Dependency] private readonly IChatManager _chatManager = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly SharedMindSystem _mind = default!; // funky
-    [Dependency] private readonly JobSystem _jobs = default!; // funky
+    [Dependency] private IPrototypeManager _proto = default!;
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private ActionsSystem _actions = default!;
+    [Dependency] private IConfigurationManager _config = default!;
+    [Dependency] private UserInterfaceSystem _bui = default!;
+    [Dependency] private IChatManager _chatManager = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private SharedMindSystem _mind = default!; // funky
+    [Dependency] private JobSystem _jobs = default!; // funky
 
     public IReadOnlyList<ThavenMood> SharedMoods => _sharedMoods.AsReadOnly();
     private readonly List<ThavenMood> _sharedMoods = new();
@@ -108,7 +108,7 @@ public sealed partial class ThavenMoodsSystem : SharedThavenMoodSystem
             return false;
 
         _sharedMoods.Add(mood);
-        var enumerator = EntityManager.EntityQueryEnumerator<ThavenMoodsBoundComponent>();
+        var enumerator = EntityQueryEnumerator<ThavenMoodsBoundComponent>();
         while (enumerator.MoveNext(out var ent, out var comp))
         {
             if (!comp.FollowsSharedMoods)

@@ -19,10 +19,6 @@ namespace Content.Client._Impstation.Thaven;
 [GenerateTypedNameReferences]
 public sealed partial class MoodDisplay : Control
 {
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    [Dependency] private readonly IChatManager _chatManager = default!;
-    [Dependency] private readonly EntityManager _entityManager = default!;
-
     private string GetSharedString()
     {
         return $"[italic][font size=10][color=gray]{Loc.GetString("moods-ui-shared-mood")}[/color][/font][/italic]";

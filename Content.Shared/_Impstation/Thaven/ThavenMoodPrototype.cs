@@ -67,8 +67,7 @@ public partial class ThavenMood
     }
 }
 
-[Prototype("thavenMood")]
-[Serializable, NetSerializable]
+[Prototype]
 public sealed partial class ThavenMoodPrototype : IPrototype
 {
     /// <inheritdoc/>
