@@ -9,7 +9,7 @@
 - type: loadout
   id: MagistrateOfficerBeret
   equipment:
-    head: ClothingHeadHatBeretOfficer
+    head: ClothingHeadHatBeretCommand
 
 # Jumpsuit
 - type: loadout

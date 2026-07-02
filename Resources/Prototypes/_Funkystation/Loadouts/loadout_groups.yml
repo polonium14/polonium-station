@@ -1,4 +1,4 @@
-- type: loadoutGroup
+﻿- type: loadoutGroup
   id: InternalAffairsAgentNeck
   name: loadout-group-iaa-neck
   minLimit: 0
@@ -66,11 +66,7 @@
   name: loadout-group-jobtrinkets
   minLimit: 0
   maxLimit: 3
-  loadouts:
-  - CommandLighter
-  - CentralCommandLighter
-  - CentComPersonalAI
-
+  loadouts: []
 - type: loadoutGroup
   id: MagistrateHead
   name: loadout-group-magistrate-head
@@ -155,7 +151,4 @@
   name: loadout-group-jobtrinkets
   minLimit: 0
   maxLimit: 2
-  loadouts:
-  - CommandLighter
-  - CentralCommandLighter
-  - CentComPersonalAI
+  loadouts: []

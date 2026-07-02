@@ -4,7 +4,6 @@
   suffix: Filled
   components:
   - type: GasTank
-    outputPressure: 30.4
     air:
       # 3 minutes
       volume: 0.66

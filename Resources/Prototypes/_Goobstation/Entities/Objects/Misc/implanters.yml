@@ -30,7 +30,6 @@
       deimplantFailureDamage:
         types:
           Heat: 20
-      deimplantCrushes: true
 
 - type: entity
   id: RevsFastDrawImplanter

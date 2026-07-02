@@ -16,7 +16,6 @@
   requireAdminNotify: true
   joinNotifyCrew: false
   supervisors: job-supervisors-central-commanders
-  canBeAntag: false
   accessGroups:
   - AllAccess
   access:

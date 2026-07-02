@@ -30,7 +30,6 @@
   requireAdminNotify: false
   joinNotifyCrew: true
   supervisors: job-supervisors-ntr
-  canBeAntag: false
   access:
   - CentralCommand
   - Cargo
@@ -52,7 +51,7 @@
     id: InternalAffairsAgentPDA
     eyes: ClothingEyesGlassesCommand
     ears: ClothingHeadsetCentCom
-    pocket1: BookSOP
+    pocket1: BookSpaceLaw
     pocket2: RubberStampIAA
     belt: ClothingBeltStorageWaistbag
   inhand:

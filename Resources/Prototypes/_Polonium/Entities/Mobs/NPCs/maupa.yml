@@ -81,10 +81,7 @@
     useSound:
       path: /Audio/Items/crowbar.ogg
   - type: Vocal
-    sounds:
-      Male: UnisexMaupa
-      Female: UnisexMaupa
-      Unsexed: UnisexMaupa
+    emoteSounds: UnisexMaupa
   - type: Emoting
   - type: Speech
     speechVerb: LargeMob

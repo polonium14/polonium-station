@@ -16,7 +16,6 @@
     sprite: /Textures/_Goobstation/Interface/Misc/job_icons.rsi
     state: Future
   jobName: job-name-futureagent
-  allowIdConsole: false # Funkystation
 
 - type: jobIcon
   parent: JobIcon

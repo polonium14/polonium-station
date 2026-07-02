@@ -8,7 +8,6 @@
   icon: "JobIconNanotrasenTrainer"
   joinNotifyCrew: true
   supervisors: job-supervisors-ntr-centcom
-  canBeAntag: false
   whitelisted: true # 1984
   setPreference: true # Omu, enable NCT for admins
   accessGroups:
@@ -27,8 +26,6 @@
   equipment:
     id: TrainerPDA
     ears: ClothingHeadsetAltCentCom
-    eyes: ClothingEyesGlassesCentComm
-    pocket1: WeaponEnergyGunEnergyPistol
     pocket2: Truncheon
   storage:
     back:

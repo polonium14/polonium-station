@@ -80,11 +80,7 @@
   name: loadout-group-jobtrinkets
   minLimit: 0
   maxLimit: 2
-  loadouts:
-  - CommandLighter
-  - CentralCommandLighter
-  - CentComPersonalAI
-
+  loadouts: []
 # Career Trainer
 
 - type: loadoutGroup

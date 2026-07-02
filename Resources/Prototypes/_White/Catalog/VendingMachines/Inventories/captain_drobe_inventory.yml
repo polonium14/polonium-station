@@ -5,7 +5,6 @@
     ClothingHeadsetAltCommand: 1
     ClothingHeadHatCaptain: 1
     ClothingHeadHatCapcap: 1
-    ClothingHeadHatBeretCap: 1 # Nyanotrasen - Captain's Beret
     ClothingEyesGlassesSunglasses: 1
     ClothingNeckCloakCap: 1
     ClothingNeckCloakCapFormal: 1
@@ -13,14 +12,12 @@
     ClothingNeckMantleCap: 1
     ClothingOuterWinterCap: 1
     ClothingOuterArmorCaptainCarapace: 1
-    ClothingOuterCoatCapTrench: 1 # WWDP moved from the locker
     ClothingOuterCoatCaptain: 1
     ClothingUniformJumpsuitCaptain: 1
     ClothingUniformJumpskirtCaptain: 1
     ClothingUniformJumpsuitCapFormal: 1
     ClothingUniformJumpskirtCapFormalDress: 1
     ClothingHandsGlovesCaptain: 1
-    ClothingHandsGlovesInspection: 1 # DeltaV
    # White
     ClothingHeadHatBeretCaptainWhite: 1
     ClothingHeadHatCapcapWhite: 1
@@ -39,7 +36,6 @@
    # Other
     ClothingEyesGlassesGarGiga: 1
     ClothingUniformJumpsuitCommandCaptain: 1
-    ClothingShoesBootsWinterCap: 1
     ClothingBackpackCaptain: 1
     ClothingBackpackDuffelCaptain: 1
     ClothingBackpackSatchelCaptain: 1
