@@ -845,7 +845,7 @@ public sealed partial class RCDSystem : EntitySystem
 
                 if (component.IsRpd && prototype.HasLayers)
                 {
-                    if (_protoManager.TryIndex<EntityPrototype>(proto, out var entityProto) &&
+                    if (ProtoMan.TryIndex(proto, out EntityPrototype? entityProto) &&
                         entityProto.TryGetComponent<AtmosPipeLayersComponent>(out var atmosPipeLayers, _entityManager.ComponentFactory) &&
                         _pipeLayersSystem.TryGetAlternativePrototype(atmosPipeLayers, _currentLayer, out var newProtoId))
                     {
@@ -866,7 +866,7 @@ public sealed partial class RCDSystem : EntitySystem
                 if (component.IsRpd)
                 {
                     // We need to know what the pipe *would* look like to check for overlaps
-                    if (_protoManager.TryIndex<EntityPrototype>(proto, out var pipeProto) &&
+                    if (ProtoMan.TryIndex(proto, out EntityPrototype? pipeProto) &&
                         pipeProto.TryGetComponent<NodeContainerComponent>(out var nodeContainer, _entityManager.ComponentFactory))
                     {
                         // Check every node in the prototype to see if it overlaps something on the grid
@@ -954,7 +954,7 @@ public sealed partial class RCDSystem : EntitySystem
             (component.CachedPrototype?.MirrorPrototype != null &&
              component.ProtoId.Id != component.CachedPrototype?.MirrorPrototype))
         {
-            component.CachedPrototype = _protoManager.Index(component.ProtoId);
+            component.CachedPrototype = ProtoMan.Index(component.ProtoId);
         }
     }
 

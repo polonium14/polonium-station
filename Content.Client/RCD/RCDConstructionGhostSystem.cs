@@ -106,9 +106,7 @@ public sealed partial class RCDConstructionGhostSystem : EntitySystem
         var wantMirror = _useMirrorPrototype && !string.IsNullOrEmpty(cachedProto.MirrorPrototype);
         var prototype = wantMirror ? cachedProto.MirrorPrototype : cachedProto.Prototype;
 
-        var isLayered = rcd.IsRpd
-            && ProtoMan.TryIndex(cachedProto.ID, out var rcdProto)
-            && rcdProto.HasLayers;
+        var isLayered = rcd.IsRpd && cachedProto.HasLayers;
 
         var desiredMode = isLayered ? RpdPlacementMode : PlacementMode;
 
