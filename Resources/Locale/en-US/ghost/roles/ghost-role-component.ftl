@@ -191,6 +191,14 @@ ghost-role-information-centcom-intern-name = Central Command Intern
 ghost-role-information-centcom-intern-description = Respond to faxes and assist in managing affairs at central command.
 ghost-role-information-centcom-intern-rules = As a Central Command Intern you are a liason between the crew and central command officers and staff. Your job is to read and respond to faxes. You do not have authority to make promises or provide information that you have not first confirmed is up to date and accurate according to all internal resources. As a member of central command staff you are aware of and responsible for maintaining the secrecy of corporate secrets. If you have doubts about your ability to respond to a situation, either ignore it (you're just an intern after all), or ask a central command officer (admin) for assistance.
 
+ghost-role-information-internal-affairs-agent-name = Internal Affairs Agent
+ghost-role-information-internal-affairs-agent-description = Oversee Standard Operating Procedure compliance and report violations to station command and Central Command.
+
+ghost-role-information-magistrate-name = Magistrate
+ghost-role-information-magistrate-description = Serve as the station's Central Command legal authority for trials, appeals, warrants, and execution authorization.
+
+ghost-role-information-centcom-staff-rules = You are Central Command staff deployed by an administrator. Follow the briefing you were given. Do not seize station command from the Captain. Escalate unresolved issues to Central Command. Abuse of authority may result in a role ban.
+
 ghost-role-information-cburn-agent-name = CBURN Agent
 ghost-role-information-cburn-agent-description = A highly trained CentComm agent, capable of dealing with various threats.
 

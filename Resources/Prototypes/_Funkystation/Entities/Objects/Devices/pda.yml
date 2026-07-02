@@ -92,6 +92,34 @@
 
 - type: entity
   parent: [BasePDA, BaseCommandContraband]
+  id: TrainerPDA
+  name: nct's PDA
+  description: A standard-issue nanotrasen career trainer PDA.
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Objects/Devices/pda.rsi
+  - type: Pda
+    id: NanotrasenCareerTrainerIDCard
+    penSlot:
+      startingItem: PenCentcom
+      priority: -1
+      whitelist:
+        tags:
+        - Write
+  - type: Appearance
+    appearanceDataInit:
+     enum.PdaVisuals.PdaType:
+       !type:String
+       pda-ntr
+  - type: PdaBorderColor
+    borderColor: "#258E25"
+    accentVColor: "#C3B9B9"
+  - type: Icon
+    sprite: _Funkystation/Objects/Devices/pda.rsi
+    state: pda-ntr
+
+- type: entity
+  parent: [BasePDA, BaseCommandContraband]
   id: CentcomInternPDA
   name: CentComm intern PDA
   description: Light green sign of walking authoritative bureaucracy.

@@ -36,6 +36,47 @@
     - state: centcom
 
 ## CentComm GhostRole Jobs
+
+- type: entity
+  categories: [ Spawner ]
+  id: SpawnPointGhostInternalAffairsAgent
+  name: ghost role spawn point
+  suffix: internal affairs agent
+  parent: SpawnPointGhostRoleJob
+  components:
+  - type: GhostRole
+    name: ghost-role-information-internal-affairs-agent-name
+    description: ghost-role-information-internal-affairs-agent-description
+    rules: ghost-role-information-centcom-staff-rules
+    raffle:
+      settings: default
+  - type: SpawnPoint
+    job_id: InternalAffairsAgent
+  - type: Sprite
+    layers:
+      - state: green
+      - state: centcom
+
+- type: entity
+  categories: [ Spawner ]
+  id: SpawnPointGhostMagistrate
+  name: ghost role spawn point
+  suffix: magistrate
+  parent: SpawnPointGhostRoleJob
+  components:
+  - type: GhostRole
+    name: ghost-role-information-magistrate-name
+    description: ghost-role-information-magistrate-description
+    rules: ghost-role-information-centcom-staff-rules
+    raffle:
+      settings: default
+  - type: SpawnPoint
+    job_id: Magistrate
+  - type: Sprite
+    layers:
+      - state: green
+      - state: centcom
+
 - type: entity
   id: SpawnPointGhostCentCommIntern
   name: ghost role spawn point

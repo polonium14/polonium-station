@@ -635,6 +635,14 @@
     - type: Paper
       content: doc-text-printer-ia-interrogation-protocol
 
+- type: entity
+  parent: PrintedDocument
+  id: PrintedDocumentNtrPenaltyCategoryElevationRequest
+  name: NTR penalty category elevation request
+  components:
+    - type: Paper
+      content: doc-text-printer-ntr-penalty-category-elevation-request
+
 
 # Syndykat
 

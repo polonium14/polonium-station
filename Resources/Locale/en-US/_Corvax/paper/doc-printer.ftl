@@ -152,7 +152,7 @@ doc-text-printer-interim-captain-request = [color=#1b67a5][mono]█▄ █ ▀�
     {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
 doc-text-printer-heads-council-protocol = [color=#1b67a5][mono]█▄ █ ▀█▀[/mono]    [head=2]Protokół ze spotkania[/head][/color]
-    {"[color=#1b67a5][mono]█ ▀█   █[/mono]     [head=2]Rady Głównych Działów[/head][/color]"}
+    {"[color=#1b67a5][mono]█ ▀█   █[/mono]     [head=2]członków Dowództwa[/head][/color]"}
     {"             [head=3]Sektor: :STATION: | DOW-DOW[/head]"}
     {"==============================================="}
     {"[bold]Data:[/bold] :DATE:"}
@@ -1190,6 +1190,27 @@ doc-text-printer-ia-interrogation-protocol = [color=#7a5c1a][mono]█▄ █ ▀
     {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
     {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
     {"[italic]Miejsce na pieczątkę:[/italic]"}
+doc-text-printer-ntr-penalty-category-elevation-request = [color=#7a5c1a][mono]█▄ █ ▀█▀[/mono]    [head=2]Wniosek o podwyższenie[/head][/color]
+    {"[color=#7a5c1a][mono]█ ▀█   █[/mono]     [head=2]dopuszczalnych kategorii karnych[/head][/color]"}
+    {"             [head=3]Sektor: :STATION: | PNT-KAR[/head]"}
+    {"==============================================="}
+    {"[bold]Data:[/bold] :DATE:"}
+    {"[bold]Autor dokumentu:[/bold] :NAME:"}
+    {"[bold]Stanowisko:[/bold] Przedstawiciel Nanotrasen"}
+    {"==============================================="}
+    {"Ja, :NAME:, w charakterze Przedstawiciela Nanotrasen, niniejszym wnoszę do Centralnego Dowództwa o podwyższenie dopuszczalnych kategorii karnych w toku postępowania dyscyplinarnego."}
+    {"- [bold]Osoba, której dotyczy wniosek:[/bold]"}
+    {"- [bold]Stanowisko / dział:[/bold]"}
+    {"- [bold]Opis naruszenia (SPO / Prawo Kosmiczne):[/bold]"}
+    {"- [bold]Numer powiązanego dochodzenia lub raportu:[/bold]"}
+    {"- [bold]Dotychczas zastosowane środki (kategoria 1):[/bold]"}
+    {"- [bold]Wnioskowana kategoria karna:[/bold] ☐ 2 (degradacja)   ☐ 3 (egzekucja)"}
+    {"- [bold]Uzasadnienie wniosku:[/bold]"}
+    {"- [bold]Opis eskalacji lokalnej (HoD → Kapitan → PNT):[/bold]"}
+    {"[italic]Wnioskodawca oświadcza, że do czasu odpowiedzi Centralnego Dowództwa nie nałoży kar wyższych niż kategoria 1. Wniosek należy przesłać faksem lub przez Czerwony Telefon zgodnie z SPO Przedstawiciela Nanotrasen.[/italic]"}
+    {"[mono]▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄[/mono]"}
+    {"[mono]▄▄  ▄▄   ▄▄▄▄     ▄▄▄▄▄▄         ▄▄[/mono]"}
+    {"[italic]Miejsce na pieczątkę PNT:[/italic]"}
 doc-text-printer-syndicate-cooperation-offer = [color=#1b67a5]      [mono]░▒▓███████▓▒░[/mono] [head=2]Oferta współpracy[/head][/color]
     {"[color=#1b67a5][mono]░▒▓█▓▒░[/mono]       [head=3]Sektor: :STATION:[/head][/color]"}
     {"[color=#1b67a5][mono]░▒▓█▓▒░[/mono][/color]"}

@@ -16,13 +16,14 @@
   name: Internal Affairs Agent
   description: "Serve directly under the Nanotrasen Representative. Identify any violations of Standard Operating Procedure or Space Law. Report those violations."
   playTimeTracker: JobInternalAffairsAgent
+  setPreference: false
   requirements:
     - !type:OverallPlaytimeRequirement
       time: 72000 #20 hrs
     - !type:RoleTimeRequirement
       role: JobLawyer
       time: 18000 #5 hrs
-  weight: 20
+  weight: 0
   startingGear: InternalAffairsAgentGear
   icon: "JobIconInternalAffairsAgent"
   requireAdminNotify: false

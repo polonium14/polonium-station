@@ -20,7 +20,6 @@ guide-entry-alertlevel-red = Kod Czerwony
 guide-entry-generalcommand-sop = SPO Dowództwa Generalnego
 guide-entry-captain-sop = SPO Kapitana
 guide-entry-central-command-sop = SPO Centralnego Dowództwa
-guide-entry-iaa-sop = SPO Agenta ds. Wewnętrznych
 guide-entry-ntr-sop = SPO Przedstawiciela Nanotrasen
 guide-entry-magistrate-sop = SPO Sędziego
 guide-entry-alertlevel-violet = Kod Fioletowy

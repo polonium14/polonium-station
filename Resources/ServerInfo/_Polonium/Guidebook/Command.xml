@@ -2,7 +2,7 @@
 SPDX-FileCopyrightText: 2024 UBlueberry <161545003+UBlueberry@users.noreply.github.com>
 SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
 
-SPDX-License-Identifier: MIT
+SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
@@ -63,5 +63,5 @@ Aby bagno papierkowej roboty (które z pewnością cię przytłoczy) było jeszc
 
 ## Czerwony telefon
 
-Na wielu stacjach [color=#7eb8ff]Nanotrasen[/color] dostępny jest [color=#e8c878]Czerwony Telefon[/color] — linia bezpośrednia do pilnego kontaktowania się z [color=#7dffa8]Centralnym Dowództwem[/color]. Pełna polityka korporacyjna: [textlink="Czerwony Telefon" link="RedPhoneSOP"].
+Na wielu stacjach [color=#7eb8ff]Nanotrasen[/color] dostępny jest [color=#e8c878]Czerwony Telefon[/color] — linia bezpośrednia do pilnego kontaktowania się z [color=#009100]Centralnym Dowództwem[/color]. Pełna polityka korporacyjna: [textlink="Czerwony Telefon" link="RedPhoneSOP"].
 </Document>

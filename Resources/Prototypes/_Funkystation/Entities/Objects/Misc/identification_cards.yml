@@ -5,6 +5,7 @@
   description: You wouldn't lose this, would you?
   components:
   - type: Sprite
+    sprite: _Funkystation/Objects/Misc/id_cards.rsi
     layers:
     - state: default
     - state: decal-stripe-cc
@@ -20,6 +21,7 @@
   name: magistrate ID card
   components:
   - type: Sprite
+    sprite: _Funkystation/Objects/Misc/id_cards.rsi
     layers:
     - state: default
     - state: decal-stripe-cc
@@ -35,6 +37,7 @@
   name: nanotrasen representative ID card
   components:
   - type: Sprite
+    sprite: _Funkystation/Objects/Misc/id_cards.rsi
     layers:
     - state: cc
     - sprite: _Goobstation/Interface/Misc/job_icons.rsi
@@ -47,10 +50,28 @@
 
 - type: entity
   parent: [IDCardStandard, BaseCentcommContraband]
+  id: NanotrasenCareerTrainerIDCard
+  name: nanotrasen career trainer ID card
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Objects/Misc/id_cards.rsi
+    layers:
+    - state: cc
+    - sprite: _Goobstation/Interface/Misc/job_icons.rsi
+      offset: "-0.125, 0.09375"
+      state: trainer
+  - type: Item
+    heldPrefix: cc
+  - type: PresetIdCard
+    job: NanotrasenCareerTrainer
+
+- type: entity
+  parent: [IDCardStandard, BaseCentcommContraband]
   id: CentcomInternIDCard
   name: central command intern ID card
   components:
   - type: Sprite
+    sprite: _Funkystation/Objects/Misc/id_cards.rsi
     layers:
     - state: cc
     - sprite: _Funkystation/Interface/Misc/job_icons.rsi

@@ -64,7 +64,7 @@ ghost-role-information-shiva-rules =
     You are [bold]Shiva the Spider[/bold]. The Head of Security's highly trained and most trusted pet.
     You are part of security, and as such are held to higher standards.
     Be a good spider and dont hinder the crew. Use your fangs only when it is needed.
-    
+
     You don't remember any of your previous life, and you don't remember anything you learned as a ghost.
     You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc.
     You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
@@ -165,6 +165,14 @@ ghost-role-information-cerberus-name = Cerberus, Evil Familiar
 ghost-role-information-centcom-intern-name = Central Command Intern
 ghost-role-information-centcom-intern-description = Respond to faxes and assist in managing affairs at central command.
 ghost-role-information-centcom-intern-rules = As a Central Command Intern you are a liason between the crew and central command officers and staff. Your job is to read and respond to faxes. You do not have authority to make promises or provide information that you have not first confirmed is up to date and accurate according to all internal resources. As a member of central command staff you are aware of and responsible for maintaining the secrecy of corporate secrets. If you have doubts about your ability to respond to a situation, either ignore it (you're just an intern after all), or ask a central command officer (admin) for assistance.
+
+ghost-role-information-internal-affairs-agent-name = Inspektor Spraw Wewnętrznych
+ghost-role-information-internal-affairs-agent-description = Nadzoruj przestrzeganie Standardowej Procedury Operacyjnej i zgłaszaj naruszenia dowództwu stacji oraz Centralnemu Dowództwu.
+
+ghost-role-information-magistrate-name = Sędzia
+ghost-role-information-magistrate-description = Pełnij rolę prawnego autorytetu Centralnego Dowództwa na stacji — procesy, odwołania, nakazy i autoryzacja egzekucji.
+
+ghost-role-information-centcom-staff-rules = Jesteś personelem Centralnego Dowództwa wysłanym przez administratora. Postępuj zgodnie z otrzymanym briefingiem. Nie przejmuj dowodzenia stacją od Kapitana. Nierozwiązane sprawy eskaluj do Centralnego Dowództwa. Nadużycie władzy może skutkować banem na rolę.
 # funkystation
 ghost-role-information-celedon-name = Celedon, Animal Lab Rescue
 ghost-role-information-celedon-description = Follow and obey the zookeeper. They must gain your trust first though, you still remember the experiments from the genetics lab on Europa.

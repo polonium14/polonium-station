@@ -78,6 +78,7 @@
   - PrintedDocumentIaDocumentationRequestRecipe
   - PrintedDocumentIaDepartmentAuditReportRecipe
   - PrintedDocumentIaInterrogationProtocolRecipe
+  - PrintedDocumentNtrPenaltyCategoryElevationRequestRecipe
 
 - type: latheRecipePack
   id: PrinterDocEmag
