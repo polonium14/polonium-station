@@ -19,3 +19,33 @@
     sprite: _Goobstation/Clothing/Head/Hats/trainer_beret.rsi
   - type: Clothing
     sprite: _Goobstation/Clothing/Head/Hats/trainer_beret.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatBeretNavy
+  name: navy blue officer beret
+  description: A navy blue beret with the silver shield of the Nanotrasen security forces.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Head/Hats/beret_bso_navy.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Head/Hats/beret_bso_navy.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatBeretOfficer
+  name: officers beret
+  description: A black beret with the silver shield of the Nanotrasen security forces.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Head/Hats/beret_bso_officer.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Head/Hats/beret_bso_officer.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon

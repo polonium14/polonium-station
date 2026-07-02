@@ -145,3 +145,25 @@
     borderColor: "#b8ac04"
   - type: Icon
     state: pda-centcom
+
+- type: entity
+  parent: [BasePDA, BaseCommandContraband]
+  id: BlueshieldOfficerPDA
+  name: blueshield officer PDA
+  description: Remember, you are NOT security.
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Objects/Devices/pda.rsi
+  - type: Pda
+    id: BlueshieldOfficerIDCard
+  - type: Appearance
+    appearanceDataInit:
+     enum.PdaVisuals.PdaType:
+       !type:String
+       pda-bso
+  - type: PdaBorderColor
+    borderColor: "#004281"
+    accentVColor: "#469EF7"
+  - type: Icon
+    sprite: _Funkystation/Objects/Devices/pda.rsi
+    state: pda-bso

@@ -16,7 +16,7 @@
     children:
     - id: BoxFolderCentCom
 #    - id: WeaponDisabler # Funky
-    - id: WeaponEnergyGunEnergyPistol # Funky
+    - id: WeaponDisabler
     - id: BriefcaseBrownFilled
     - id: BookSpaceLaw
     - id: BedsheetCentcom
@@ -55,7 +55,7 @@
     - id: ClothingOuterHardsuitBlueshield
     - id: OxygenTankFilled
     - id: NitrogenTankFilled
-    - id: SecHypo
+    - id: Hypospray
 
 - type: entity
   id: LockerBlueshieldOfficerFilled

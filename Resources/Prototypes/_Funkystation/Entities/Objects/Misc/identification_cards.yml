@@ -37,6 +37,22 @@
 
 - type: entity
   parent: [IDCardStandard, BaseCentcommContraband]
+  id: BlueshieldOfficerIDCard
+  name: blueshield officer ID card
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Objects/Misc/id_cards.rsi
+    layers:
+    - state: default
+    - state: decal-stripe-cc
+    - sprite: _Funkystation/Interface/Misc/job_icons.rsi
+      offset: "-0.125, 0.09375"
+      state: Blueshield
+  - type: PresetIdCard
+    job: BlueshieldOfficer
+
+- type: entity
+  parent: [IDCardStandard, BaseCentcommContraband]
   id: NanotrasenRepresentativeIDCard
   name: nanotrasen representative ID card
   components:

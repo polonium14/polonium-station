@@ -1,0 +1,36 @@
+# Blueshield hardsuit
+
+- type: entity
+  parent: [ ClothingOuterHardsuitBase, BaseCommandContraband ]
+  id: ClothingOuterHardsuitBlueshield
+  name: blueshield hardsuit
+  description: A hardsuit for the captains personal bodyguard.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/OuterClothing/Hardsuits/bso.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/OuterClothing/Hardsuits/bso.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.5
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.60
+        Slash: 0.60
+        Piercing: 0.40
+        Heat: 0.80
+        Cold: 0.90
+        Shock: 0.90
+        Caustic: 0.80
+        Radiation: 0.80
+  - type: ExplosionResistance
+    damageCoefficient: 0.60
+  - type: StaminaResistance
+    damageCoefficient: 0.70
+  - type: ClothingSpeedModifier
+    walkModifier: 0.85
+    sprintModifier: 0.85
+  - type: HeldSpeedModifier
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitBlueshield
