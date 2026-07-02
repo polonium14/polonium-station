@@ -3,23 +3,109 @@ SPDX-FileCopyrightText: 2024 DevilishMilk <bluscout78@yahoo.com>
 SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
 SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
 SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2026 Polonium-bot <admin@ss14.pl>
 
-SPDX-License-Identifier: MIT
+SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 <Document>
 # SPO Przedstawiciela Nanotrasen
- 
-[bold]1.[/bold] Przedstawiciel Nanotrasen ma za zadanie zapewnić przestrzeganie Standardowych Procedur Operacyjnych przez każdy departament, przez wszystkich pracowników, włącznie z [color=#1b67a5]Dowództwem[/color]. Jeśli [color=#1b67a5]Kierownik Departamentu[/color] jest niedostępny, Przedstawiciel Nanotrasem ma obowiązek by obecny kapitan wytypował [color=#1b67a5]Kierownika Zastępczego[/color] dla danego departamentu jeśli odpowieni i chętny kandydant jest obecny.
 
-[bold]2.[/bold] Przedstawiciel NanoTrasen musi podjąć próbę rozwiązania jakiegokolwiek wykroczenia poza Standardowe Procedure Operacyjne samodzielnie przed skontaktowaniem się z [color=#009100]Centralnym Dowództwem[/color].
+Przedstawiciel Nanotrasen (PNT) to rewizor wysłany przez [color=#009100]Centralne Dowództwo[/color], który kontroluje przestrzeganie [textlink="Prawa Kosmicznego" link="SpaceLaw"] i Standardowych Procedur Operacyjnych. Pełni funkcje kontroli wewnętrznej na stacji — nie jest członkiem załogi obiektu, co pozwala mu zachować bezstronność, gdy dowództwo stacji działa niekompetentnie lub łamie przepisy.
 
-[bold]3.[/bold] W przypadku nieobecności [color=#cb0000]Sędzi[/color], Przedstawiciel NanoTrasen ma zapewnić że Prawo Kosmiczne jest odpowiednio przestrzegane i egzekwowane.
+PNT nie egzekwuje prawa samodzielnie — weryfikuje, czy inni robią to prawidłowo. Za zatrzymywanie przestępców odpowiada [color=#ff8a8a]Ochrona[/color].
 
-[bold]4.[/bold] Przedstawiciel NanoTrasen może jedynie zadawać kary kategorii 1 i 2 w przypadku nie przestrzegania Standardowych Procedur Operacyjnych. NRT możę jedynie zadawać kary jako konsekwencje za błędne przestrzeganie [textlink="Prawa Kosmicznego" link="SpaceLaw"] jednyie w przypadku braku obecności [color=#cb0000]Sędzi[/color] i pod żadnym pozorem nie może nakazywać kar kategorii 3 nawet jeśli na stacji nie ma obecnego [color=#cb0000]Sędziego[/color];
+## Obowiązki
 
-[bold]5.[/bold] Przedstawiciel Nanotrasen musi przestrzegać zaleceń [color=#cb0000]Sędzi[/color] i nie interweniować w jego werdykty niedotyczące Procedur Operacyjnych, jednak powinien twardo zadeklarować ewentualną niezgodę, oraz powiadomić [color=#009100]Centralne Dowództwo[/color] bezpośrednio jeśli mają podstawy sądzić że błąd był popełniony.
-[bold]6.[/bold] Przedstawiciel NanoTrasen ma zezwolenie na noszenie błysku, lasko-miecza, oraz standardowej broni (np., MK-5 lub RG-2);
+[bold]1.[/bold] Dbać o przestrzeganie podstawowych praw istot rozumnych na obiekcie korporacji oraz prawidłowe stosowanie [textlink="Prawa Kosmicznego" link="SpaceLaw"];
 
-## Zasady i Ekspektacje OOC dla Przedstawiciela NanoTrasen
-Celem PNT jest bycie najwyższym inspektorem na stacji w sprawach Standardowych Procedur Operacyjnych. Jest on ważną rolą po przez limitowanie nadochoczych ISW oraz jako autorytet do którego zaloga może wnosić skargi odnośnie ISW. Do tego może on wykonywać rzadsze, mniej rygorystyczne inspekcje departamentów.
+[bold]2.[/bold] Nadzorować przestrzeganie SPO przez personel stacji i reagować na wykryte naruszenia:
+  - przy naruszeniu przez pracownika departamentu — skontaktować się z [color=#1b67a5]Kierownikiem Departamentu[/color];
+  - przy naruszeniu przez [color=#1b67a5]Kierownika Departamentu[/color] — skontaktować się z [color=#8ec8ff]Kapitanem[/color];
+  - przy naruszeniu przez [color=#8ec8ff]Kapitana[/color] — niezwłocznie złożyć raport do [color=#009100]Centralnego Dowództwa[/color];
+  - jeśli wyniki kontroli lub dochodzeń są ignorowane albo problemu nie da się rozwiązać lokalnie — niezwłocznie złożyć raport do [color=#009100]Centralnego Dowództwa[/color];
+
+[bold]3.[/bold] Prowadzić konsultacje przed egzekucją dla osób skazanych na karę śmierci — na wniosek skazanego lub na prośbę [color=#ff8a8a]Ochrony[/color];
+
+[bold]4.[/bold] Stosować oficjalny, służbowy styl wypowiedzi wobec załogi i unikać familiarnych form zwracania się do członków personelu. W warunkach stanu zagrożenia ten wymóg traci moc;
+
+[bold]5.[/bold] Czuwać nad wykonywaniem poleceń [color=#009100]Centralnego Dowództwa[/color]. Jeśli [color=#8ec8ff]Kapitan[/color] nie radzi sobie z obowiązkami — złożyć stosowny raport do [color=#009100]Centralnego Dowództwa[/color];
+
+[bold]6.[/bold] Przy poważnym incydencie lub zdarzeniu istotnie wpływającym na załogę obowiązkowo powiadomić [color=#009100]Centralne Dowództwo[/color];
+
+[bold]7.[/bold] Przyjmować skargi i kompetentne wnioski personelu, w tym udzielać konsultacji w zakresie etyki korporacyjnej, kultury pracy oraz działalności dyplomatycznej i reprezentacyjnej.
+
+## Uprawnienia
+
+[bold]1.[/bold] Prowadzić wewnętrzne dochodzenia służbowe zgodnie z właściwą procedurą;
+
+[bold]2.[/bold] W warunkach [textlink="Kodu Zielonego" link="GreenAlertSOP"] lub [textlink="Kodu Niebieskiego" link="BlueAlertSOP"] odstawić funkcjonariusza [color=#ff8a8a]Ochrony[/color] od przesłuchania i wydania werdyktu wobec zatrzymanego oraz przekazać sprawę przełożonemu, jeśli:
+  - widać wyraźne odstępstwa od procedury;
+  - ogłoszony werdykt nie odpowiada karze za popełnione przestępstwo;
+  - werdykt skazujący nie wynika z zebranych dowodów;
+  - powyższe naruszenia popełnił [color=#8ec8ff]Kapitan[/color] — PNT zgłasza sprawę do [color=#009100]Centralnego Dowództwa[/color];
+
+[bold]3.[/bold] Świadczyć usługi prawne załodze:
+  - reprezentować osoby objęte postępowaniem jako obrońca;
+  - pomagać w sporządzaniu dokumentów;
+  - reprezentować interesy klienta w sprawach prawnych;
+  - poświadczać dokumenty własną pieczęcią, potwierdzając ich autorstwo i poprawność;
+
+[bold]4.[/bold] Posiadać przy sobie błysk i używać go wyłącznie w samoobronie;
+
+[bold]5.[/bold] Żądać do wglądu dowolnego dokumentu dotyczącego postępowań na stacji u [color=#1b67a5]Kierownika Departamentu[/color] oraz otrzymać jego kopię. Przy braku dokumentacji może zażądać sporządzenia dokumentu — wyłącznie w warunkach Kodu Zielonego lub Niebieskiego;
+
+[bold]6.[/bold] Wymagać pisemnego raportu o usunięciu naruszeń SPO:
+  - przy naruszeniu przez pracowników departamentu — wobec [color=#1b67a5]Kierownika Departamentu[/color];
+  - przy naruszeniu przez [color=#1b67a5]Kierownika Departamentu[/color] lub braku odpowiedzi — wobec [color=#8ec8ff]Kapitana[/color];
+  - brak odpowiedzi [color=#8ec8ff]Kapitana[/color] przez 10 minut stanowi podstawę złożenia skargi do [color=#009100]Centralnego Dowództwa[/color];
+
+[bold]7.[/bold] Posługiwać się długopisem CD przy korygowaniu poświadczonych dokumentów:
+  - własne dokumenty można poprawiać wyłącznie w celu usunięcia błędów redakcyjnych, bez zmiany treści merytorycznej;
+  - cudze dokumenty — tylko na wyraźną prośbę osoby, która je poświadczyła;
+  - każda poprawka wymaga adnotacji o edycji z imieniem i nazwiskiem PNT oraz pieczęci PNT nad polem na pieczęcie;
+
+[bold]8.[/bold] W uzasadnionych przypadkach prosić o wsparcie [color=#009100]Centralnego Dowództwa[/color] lub ERT:
+  - o wezwanie przedstawiciela CD przy bezczynności dowództwa stacji wobec stwierdzonych naruszeń;
+  - o wsparcie ERT, gdy [color=#8ec8ff]Kapitan[/color] i [color=#1b67a5]Kierownicy Departamentów[/color] są niedostępni;
+
+[bold]9.[/bold] Wysyłać raporty o sytuacji na stacji faksem do [color=#009100]Centralnego Dowództwa[/color], nie częściej niż raz na 30 minut;
+
+[bold]10.[/bold] Nakładać wyłącznie [bold]kary kategorii 1[/bold] (konfiskata mienia) zgodnie z [textlink="SPO Centralnego Dowództwa" link="CentralCommandSOP"];
+
+[bold]11.[/bold] W razie potrzeby wnioskować do [color=#009100]Centralnego Dowództwa[/color] o podwyższenie dopuszczalnych kategorii karnych — np. o zezwolenie na karę kategorii 2 (degradacja) lub 3 (egzekucja). Wniosek sporządza się na formularzu [italic]Wniosek o podwyższenie dopuszczalnych kategorii karnych[/italic] i przesyła przez faks. Do czasu odpowiedzi CD PNT [bold]nie[/bold] może nakładać kar wyższych niż kategoria 1.
+
+## Zakazy
+
+[bold]1.[/bold] Wysyłać faksy do [color=#009100]Centralnego Dowództwa[/color] z powodów nieuwzględnionych w obowiązkach i uprawnieniach;
+
+[bold]2.[/bold] Wykonywać pracę dowództwa stacji i kierować pracownikami obiektu;
+
+[bold]3.[/bold] Wykonywać procedury [color=#ff8a8a]Ochrony[/color] ani aktywnie uczestniczyć w zatrzymywaniu przestępców;
+
+[bold]4.[/bold] Zdejmować odznakę obrońcy, jeśli ją nosi;
+
+[bold]5.[/bold] Fałszować dokumenty — w tym zmieniać treść merytoryczną poświadczonego dokumentu lub edytować go bez zgody osoby, która go poświadczyła. Naruszenie może stanowić przestępstwo według [textlink="Prawa Kosmicznego" link="SpaceLaw"];
+
+[bold]6.[/bold] Zabierać siekierę strażacką z mostka — wyjątek stanowi stan zagrożenia.
+
+## Faks do Centralnego Dowództwa
+
+Faks do [color=#009100]Centralnego Dowództwa[/color] stosuje się w sytuacjach krańcowych, m.in. gdy:
+  - dowództwo stacji nie informuje CD o krytycznym stanie na pokładzie lub odmawia wezwania pomocy — PNT może pominąć lokalne dowództwo i wysłać faks bezpośrednio;
+  - naruszenie [textlink="Prawa Kosmicznego" link="SpaceLaw"] lub SPO nie zostało rozwiązane lokalnie mimo eskalacji;
+  - [color=#8ec8ff]Kapitan[/color] narusza Prawo Kosmiczne lub SPO — podstawa do dochodzenia służbowego i raportu do CD;
+  - konieczna jest kara wyższa niż kategoria 1 — PNT składa wniosek o podwyższenie dopuszczalnych kategorii karnych wraz z udokumentowanym uzasadnieniem.
+
+## Zasady i oczekiwania OOC
+
+PNT to bezstronny audytor i źródło wiarygodnej informacji dla załogi. Nie przejmuje dowodzenia stacją od [color=#8ec8ff]Kapitana[/color] — jego zadaniem jest dokumentacja, dochodzenia i eskalacja do [color=#009100]CD[/color], a nie egzekucja własnych kar.
+
+[bold]1.[/bold] Główna aktywność PNT to biurokracja i dokumentacja. Nie łapiesz przestępców — sprawdzasz, czy inni robią to zgodnie z procedurą.
+
+[bold]2.[/bold] Wymaganie ścisłego przestrzegania SPO w trakcie stanu zagrożenia jest bezcelowe i sprzeczne z dokumentacją wewnętrzną.
+
+[bold]3.[/bold] Bądź dostępny: okresowo przypominaj o swojej obecności przez radio ogólne, konsolę ogłoszeń lub kanał informacyjny.
+
+[bold]4.[/bold] PNT może nakładać wyłącznie kary kategorii 1. Jeśli uzna, że potrzebna jest kara wyższa — składa wniosek do [color=#009100]Centralnego Dowództwa[/color] o podwyższenie dopuszczalnych kategorii karnych i czeka na odpowiedź przed podjęciem dalszych działań.
+
 </Document>

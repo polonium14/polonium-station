@@ -1,8 +1,9 @@
 <!--
 SPDX-FileCopyrightText: 2025 kbarkevich <24629810+kbarkevich@users.noreply.github.com>
 SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2026 Polonium-bot <admin@ss14.pl>
 
-SPDX-License-Identifier: MIT
+SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
@@ -16,7 +17,7 @@ SPDX-License-Identifier: MIT
 
   [bold]4.[/bold] Oczekuje się, że prawnicy zachowają w ścisłej tajemnicy informacje uzyskane od swoich klientów podczas spotkań. Jeśli klient ujawni informacje wskazujące na zamiar zaszkodzenia stacji w sposób, który doprowadziłby do wcześniejszej ewakuacji, oczekuje się, że prawnik odmówi reprezentowania klienta, jednak nadal nie ma on prawa ujawniać informacji przekazanych w trakcie poufnej rozmowy;
 
-  [bold]5.[/bold] Zachęca się prawników do posiadania własnego kodeksu postępowania i reprezentowania klientów tylko w przypadkach, w których ten osobisty kodeks etyczny nie zostanie naruszony. Z tego powodu prawnicy mogą odmówić reprezentowania klienta z jakiegokolwiek powodu, chyba że nakaz reprezentowania wyda Magistrat. W przypadku, gdy prawnik odmówił reprezentowania klienta, ale następnie otrzymał taki nakaz, oczekuje się, że będzie reprezentował klienta uczciwie i nie będzie celowo działał na jego niekorzyść ani dążył do przegrania procesu w jakikolwiek sposób.
+  [bold]5.[/bold] Zachęca się prawników do posiadania własnego kodeksu postępowania i reprezentowania klientów tylko w przypadkach, w których ten osobisty kodeks etyczny nie zostanie naruszony. Z tego powodu prawnicy mogą odmówić reprezentowania klienta z jakiegokolwiek powodu, chyba że nakaz reprezentowania wyda sędzia przewodniczący lub [color=#8ec8ff]Kapitan[/color]. W przypadku, gdy prawnik odmówił reprezentowania klienta, ale następnie otrzymał taki nakaz, oczekuje się, że będzie reprezentował klienta uczciwie i nie będzie celowo działał na jego niekorzyść ani dążył do przegrania procesu w jakikolwiek sposób.
 
   ## Zasady i Oczekiwania OOC dla Prawnika
   Celem i duchem roli prawnika jest zapewnienie wartościowej rozgrywki role-play poprzez interakcje z mechanikami Prawa Kosmicznego i SPO. Może to przybierać formę kwestionowania środków karnych na procesie lub "udowadniania" niewinności skazanego. Prawnicy mogą to robić dowolną metodą, jaką uznają za stosowną, ze świadomością, że ich rola ma pomóc innym graczom w czerpaniu większej satysfakcji z gry – nawet jeśli druga strona nie ma szans na wygranie procesu lub uchylenie środka karnego.
@@ -25,47 +26,158 @@ SPDX-License-Identifier: MIT
 
   # Okoliczności Wymagające Procesu
 
-  [bold]1.[/bold] Procesy mogą się odbywać w celu uniewinnienia danej osoby z zarzutów lub skazania jej za nie. Skazanie za przestępstwo może skutkować wyegzekwowaniem pierwotnej kary lub łagodniejszej kary według uznania sędziego;
+  [bold]1.[/bold] Procesy mogą się odbywać w celu uniewinnienia danej osoby z zarzutów lub skazania jej za nie. Skazanie za przestępstwo może skutkować wyegzekwowaniem pierwotnej kary lub łagodniejszej kary według uznania sędziego przewodniczącego;
 
   [bold]2.[/bold] Procesy mogą się odbywać w celu wymuszenia dochodzenia w sprawie nadużyć i nałożenia środków karnych;
 
   [bold]3.[/bold] Procesy mogą się odbywać w celu zakwestionowania lub przedstawienia dowodu ponownego przestrzegania przepisów, które doprowadziły do wcześniej nałożonego środka karnego, a w konsekwencji do zwrotu skonfiskowanego mienia lub przywrócenia powoda na stanowisko służbowe;
 
-  # Standardowe Procedury Procesowe
+  # Procedura Korporacyjnego Sądu
 
-  [bold]1.[/bold] Tylko sędzia przewodniczący na stacji ma prawo odmówić przeprowadzenia procesu po złożeniu wniosku i może to uczynić zgodnie z SPO Magistrata;
+  ## Postanowienia ogólne
 
-  [bold]2.[/bold] W przypadku nieobecności Magistrata, sędzią przewodniczącym na stacji jest Przedstawiciel NanoTrasen. W przypadku nieobecności zarówno Magistrata, jak i Przedstawiciela NanoTrasen, sędzią przewodniczącym na stacji jest Kapitan.
+  Korporacyjny sąd to oficjalne postępowanie pod kierownictwem sędziego przewodniczącego, prowadzone w ramach przepisów [color=#134975]NanoTrasen[/color] i [textlink="Prawa Kosmicznego" link="SpaceLaw"].
 
-  [bold]3.[/bold] Za zgodą sędziego przewodniczącego, obrońca oskarżonego oraz pełnomocnik powoda mogą wezwać pod rygorem kary dowolnego członka załogi lub personelu Centralnego Dowództwa na stacji do stawienia się w charakterze świadka na procesie. Świadkowie nie mogą być zmuszani do przebywania na barierze dla świadków przez łączny czas dłuższy niż 5 minut, jednak sędzia przewodniczący może przydzielić ten czas między obie strony na przesłuchanie główne i krzyżowe według własnego uznania. Strona, która pierwotnie nie wzywała świadka, nie musi otrzymać możliwości przeprowadzenia przesłuchania krzyżowego. Świadkowie mogą dobrowolnie poświęcić więcej swojego czasu na złożenie zeznań, jeśli wyrażą taką wolę, lecz nie wolno ich do tego zmuszać. W przypadku przedłużonych zeznań, łączne przesłuchanie główne i krzyżowe nie może przekroczyć 10 minut;
+  [bold]Sędzia przewodniczący[/bold] — gdy na stacji jest obecny [textlink="Sędzia" link="MagistrateSOP"], pełni on tę funkcję. W przeciwnym razie sędzią przewodniczącym jest [color=#8ec8ff]Kapitan[/color]. Tylko sędzia przewodniczący może odmówić przeprowadzenia procesu po złożeniu wniosku — zgodnie z [textlink="SPO Kapitana" link="CaptainSOP"] lub [textlink="SPO Sędziego" link="MagistrateSOP"].
 
-  [bold]4.[/bold] W procesie należy zezwolić na obecność reprezentacji prawnej, która będzie wypowiadać się w imieniu każdej ze stron. Choć Prawnicy mogą być najbardziej odpowiedni do tej roli, nie ma żadnych ograniczeń co do tego, kto może reprezentować stronę. Obowiązkiem sędziego przewodniczącego jest ustalenie, czy osoba występująca w charakterze pełnomocnika posiada do tego odpowiednie kwalifikacje;
+  [bold]1.[/bold] Korporacyjnego sądu nie wolno inicjować w warunkach [textlink="Kodu Delta" link="DeltaAlertSOP"], [textlink="Kodu Gamma" link="GammaAlertSOP"] ani [textlink="Kodu Octarine" link="OctarineAlertSOP"]. Jeśli podczas rozprawy ogłoszono taki kod, postępowanie należy odroczyć do jego zakończenia;
 
-  [bold]5.[/bold] Przed rozpoczęciem procesu Sędzia powinien uzyskać oświadczenie lub "afidawit" z pełnym opisem przebiegu zdarzeń z perspektywy wszystkich stron i odpowiednich świadków. Dokumenty te powinny być przygotowane wcześniej przez odpowiednich pełnomocników stron;
+  [bold]2.[/bold] Czas trwania sądu wpływa na okres odbywania kary: pierwsze 10 minut rozprawy nie wlicza się do wyroku. Po upływie 10 minut dalszy czas rozprawy wlicza się w okres pozbawienia wolności. Gdy pozostały wyrok spadnie do zera w trakcie rozprawy, skazany uznaje się za w pełni odbywającego karę i podlega zwolnieniu;
 
-  [bold]6.[/bold] Sędzia przewodniczący musi dbać o zachowanie powagi sądu podczas procesu oraz o terminowy przebieg postępowań;
+  [bold]3.[/bold] Wszystkie procesy prowadzi się w sali sądowej. Gdy sala nie istnieje lub jest uszkodzona, dopuszczalne jest inne publiczne miejsce — np. kaplica lub scena;
 
-  ## Oficjalny Przebieg Rozprawy Sądowej
+  [bold]4.[/bold] Uczestnicy powinni zwracać się do sędziego przewodniczącego formalnie (np. „Wasza Czcigodność”, „Sędzio”, „Szanowny Sądzie”). Sędzia przewodniczący może znieść ten wymóg;
 
-  Sędzia przewodniczący musi ściśle egzekwować poniższą procedurę podczas procesu. Sędzia przewodniczący powinien kontrolować czas i wyznaczać limity czasowe dla każdej części postępowania. Uderzenie młotkiem sędziowskim może nastąpić, gdy strona przekroczy swój limit czasowy;
+  [bold]5.[/bold] W procesie dopuszcza się reprezentację prawną każdej ze stron. Choć Prawnicy są najbardziej odpowiedni, sędzia przewodniczący ocenia, czy pełnomocnik ma kwalifikacje do reprezentacji;
 
-  [bold]1.[/bold] Oskarżyciel przedstawia mowę wstępną. Nie powinna ona trwać dłużej niż 60 sekund;
+  [bold]6.[/bold] Przed rozprawą sędzia przewodniczący powinien dysponować oświadczeniem lub protokołem z opisem zdarzenia z perspektywy stron i świadków. Dokumenty przygotowują pełnomocnicy stron;
 
-  [bold]2.[/bold] Obrona przedstawia mowę wstępną. Nie powinna ona trwać dłużej niż 60 sekund;
+  [bold]7.[/bold] Sędzia przewodniczący dba o powagę sądu i terminowy przebieg postępowania.
 
-  [bold]3.[/bold] Oskarżony jest przesłuchiwany najpierw przez obronę, a następnie poddawany przesłuchaniu krzyżowemu przez oskarżyciela. Nie powinno to zająć więcej niż 8 minut;
+  ## Strony procesu
 
-  [bold]4.[/bold] Przesłuchiwani są wszyscy istotni świadkowie. Strona, która powołała świadka, przesłuchuje go jako pierwsza, po czym druga strona może otrzymać szansę na przesłuchanie krzyżowe. Wytyczne dotyczące czasu znajdują się w punkcie 3 SPP (Standardowe Procedury Procesowe);
+  Do pełnego przeprowadzenia sądu wymagane są:
 
-  [bold]5.[/bold] Oskarżyciel przedstawia mowę końcową. Nie powinna ona trwać dłużej niż 150 sekund;
+  - [bold]Sędzia przewodniczący[/bold] — kieruje procesem i wydaje rozstrzygnięcie ([textlink="Sędzia" link="MagistrateSOP"] lub [color=#8ec8ff]Kapitan[/color]);
+  - [bold]Strona oskarżenia[/bold] — formułuje zarzut i przedstawia dowody. Może ją reprezentować: [color=#8ec8ff]Kapitan[/color], [color=#ff8a8a]Komendant[/color], [color=#ff8a8a]Nadzorca[/color] lub inny funkcjonariusz [color=#ff8a8a]Ochrony[/color] za zgodą przełożonego;
+  - [bold]Strona obrony[/bold] — oskarżony oraz — opcjonalnie — obrońca (Prawnik, [color=#b8ff9e]Kierownik Personelu[/color], kierownik departamentu lub [color=#8ec8ff]Kapitan[/color]);
+  - [bold]Pomocnicze role procesowe[/bold] — osoby wspierające wymiar sprawiedliwości, wezwane przez stronę oskarżenia lub obrony;
+  - [bold]Poszkodowani[/bold] — osoby, które ucierpiały w toku zdarzeń będących przedmiotem sprawy;
+  - [bold]Eksperci[/bold] — osoby badające dowody rzeczowe, stan poszkodowanych i oskarżonego, szacujące szkody itp.;
+  - [bold]Świadkowie[/bold] — osoby posiadające informacje o sprawie. Za zgodą sędziego przewodniczącego strony mogą wezwać członków załogi lub personel [color=#009100]Centralnego Dowództwa[/color]. Świadkowie nie mogą być zmuszani do przebywania na miejscu zeznań dłużej niż 5 minut łącznie na przesłuchanie główne i krzyżowe; dobrowolne przedłużenie jest dopuszczalne, lecz łączny czas nie powinien przekraczać 10 minut.
 
-  [bold]6.[/bold] Obrona przedstawia mowę końcową. Nie powinna ona trwać dłużej niż 150 sekund;
+  ## Obowiązki stron
 
-  [bold]7.[/bold] Sędzia przewodniczący ogłasza wyrok. Tylko Centralne Dowództwo lub wyższa instancja, która przybędzie na stację po zakończeniu postępowania sądowego, może uchylić ten wyrok. Wyrok śmierci wymaga sporządzenia Nakazu egzekucji; wykonanie przeprowadza Ochrona według [textlink="procedury egzekucji" link="SecuritySOP"];
+  [bold]Sędzia przewodniczący[/bold] obowiązany jest:
+
+  1. Otworzyć posiedzenie i ogłosić strony procesu;
+  2. Udzielić pierwszego głosu stronie oskarżenia;
+  3. Po przedstawieniu zarzutu zapytać oskarżonego, czy zgadza się z zarzutem i przedstawionymi faktami;
+  4. Udzielić głosu stronie obrony;
+  5. Kierować przesłuchaniem świadków i ekspertów oraz kontrolować porządek;
+  6. Przyznać czas na przemówienia końcowe — najpierw oskarżenie, potem obrona;
+  7. Przyznać oskarżonemu ostatnie słowo;
+  8. Wydać i ogłosić wyrok;
+  9. Ogłosić zamknięcie posiedzenia.
+
+  [bold]Strona oskarżenia[/bold] obowiązana jest:
+
+  1. Jako pierwsza przedstawić zarzut i dowody;
+  2. W razie potrzeby wezwać poszkodowanych i świadków;
+  3. W przemówieniu końcowym wskazać wymaganą karę.
+
+  [bold]Strona obrony[/bold] obowiązana jest:
+
+  1. Po zarzucie przedstawić swoją linię obrony;
+  2. Przedstawić dowody na korzyść oskarżonego;
+  3. Wezwać świadków obrony — jeśli są;
+  4. W przemówieniu końcowym wskazać okoliczności łagodzące lub domagać się uniewinnienia.
+
+  [bold]Oskarżony[/bold] ma prawo:
+
+  1. Przedstawić swoje stanowisko po wystąpieniu oskarżenia;
+  2. Składać zeznania i przedstawiać dowody;
+  3. Skorzystać z ostatniego słowa przed wyrokiem.
+
+  ## Rozprawa sądowa
+
+  Rozprawa sądowa to etap, w którym sędzia przewodniczący analizuje materiały sprawy, słucha stron, świadków i ekspertów, ocenia dowody i ustala winę lub niewinność oskarżonego.
+
+  [bold]Dowody bezpośrednie:[/bold]
+  - sam przedmiot lub podmiot przestępstwa (poszkodowany);
+  - dowody rzeczowe: narzędzie przestępstwa, skradzione mienie itp.;
+  - zeznania co najmniej trzech świadków z zgodnymi szczegółami;
+  - raport [color=#ff8a8a]Ochrony[/color];
+  - zeznania borgsów (SI, cyborgów);
+  - opinie ekspertów;
+  - przyznanie się do winy;
+  - ślady biologiczne: odciski palców, próbki DNA, ślady krwi itp.;
+  - nagrania audio i fotografie.
+
+  [bold]Dowody pośrednie:[/bold]
+  - motyw oskarżonego;
+  - brak alibi;
+  - złe relacje z ofiarą;
+  - trudna sytuacja materialna;
+  - wcześniejsze kary dyscyplinarne;
+  - wcześniejsze skazania;
+  - stan alkoholowy lub narkotykowy.
+
+  [bold]Umorzenie zarzutów[/bold] — sędzia przewodniczący może je umorzyć na etapie rozprawy, gdy m.in.:
+  - brakuje dowodów bezpośrednich;
+  - brak podmiotu lub narzędzia przestępstwa;
+  - brak dowodów rzeczowych potwierdzających naruszenie;
+  - zeznania co najmniej trzech świadków są sprzeczne lub niezgodne z faktami;
+  - ślady biologiczne nie potwierdzają udziału oskarżonego;
+  - dowody pośrednie są wątpliwe lub nie potwierdzają winy;
+  - dowody bezpośrednie wzajemnie się wykluczają;
+  - dowody pośrednie obalają fakty bezpośrednie;
+  - oskarżony jest oczywiście niewinny;
+  - jakakolwiek okoliczność wyklucza winę oskarżonego co do istoty lub okoliczności sprawy.
+
+  ## Wydanie werdyktu
+
+  Werdykt to oficjalne rozstrzygnięcie sędziego przewodniczącego o winie lub niewinności oskarżonego. Może je podważyć wyłącznie [color=#009100]Centralne Dowództwo[/color].
+
+  [bold]1.[/bold] Po analizie sprawy sędzia przewodniczący formułuje wnioski;
+
+  [bold]2.[/bold] Wyrok ogłasza się w obecności stron;
+
+  [bold]3.[/bold] Ogłoszenie powinno zawierać kwalifikację czynu (z artykułami [textlink="Prawa Kosmicznego" link="SpaceLaw"]), wskazanie okoliczności łagodzących lub obciążających — jeśli występują;
+
+  [bold]4.[/bold] Wyrok należy sporządzić na piśmie i przekazać kopię [color=#ff8a8a]Ochronie[/color]. Wyjątek stanowią kody wojenne, gdy pisemna forma jest niemożliwa;
+
+  [bold]5.[/bold] Wyrok śmierci wymaga sporządzenia Nakazu egzekucji; wykonanie przeprowadza [color=#ff8a8a]Ochrona[/color] według [textlink="procedury egzekucji" link="SecuritySOP"].
+
+  ## Apelacja
+
+  Apelacja to formalne zaskarżenie werdyktu korporacyjnego sądu. Rozpatruje ją [textlink="Sędzia" link="MagistrateSOP"], gdy jest obecny na stacji. W jego nieobecności apelację rozpatruje [color=#8ec8ff]Kapitan[/color] jako sędzia przewodniczący, z zachowaniem tych samych zasad co w [textlink="SPO Sędziego" link="MagistrateSOP"].
+
+  [bold]1.[/bold] Apelację można złożyć wyłącznie, gdy wyrok to co najmniej 30 minut pozbawienia wolności lub dożywocie;
+
+  [bold]2.[/bold] Apelacja w jednej sprawie składana jest jednorazowo. Powtórne apelacje z tych samych podstaw podlegają odrzuceniu, chyba że pojawiły się nowe istotne dowody, wcześniej niedostępne wnioskodawcy;
+
+  [bold]3.[/bold] Podstawy apelacji:
+  - pojawienie się nowych dowodów mogących zmienić werdykt;
+  - niewystarczająca baza dowodowa;
+  - potwierdzone fałszerstwo dowodów lub fałszywe zeznania świadków wpływające na wyrok.
+
+  [bold]4.[/bold] Sędzia lub [color=#8ec8ff]Kapitan[/color] może odrzucić apelację zgodnie z [textlink="SPO Sędziego" link="MagistrateSOP"].
+
+  ## Nadzór sądowy
+
+  Nadzór sądowy to procedura nadzorcza [textlink="Sędziego" link="MagistrateSOP"], pozwalająca w trybie operacyjnym przeglądać obowiązujące werdykty i reagować na naruszenia przepisów korporacyjnych bez pełnej rozprawy.
+
+  [bold]1.[/bold] Nadzór może być wszczęty:
+  - z inicjatywy Sędziego po stwierdzeniu naruszenia [textlink="Prawa Kosmicznego" link="SpaceLaw"];
+  - wobec werdyktu wydanego przez [color=#ff8a8a]Ochronę[/color] lub [color=#8ec8ff]Kapitana[/color];
+  - na pisemną lub ustną skargę skazanego;
+
+  [bold]2.[/bold] Sędzia sporządza pisemny dokument o każdym werdykcie nadzorowym lub przeglądzie wcześniejszej decyzji.
 
   ## Obraza Sądu
 
-  Wszystkie osoby obecne na sali sądowej oraz podczas postępowań mają obowiązek zachowywać się z godnością i szacunkiem. Obejmuje to uznawanie autorytetu sędziego przewodniczącego, zachowanie odpowiedniej samokontroli słownej oraz ogólne kulturalne zachowanie.
+  Wszystkie osoby obecne na sali sądowej oraz podczas postępowań mają obowiązek zachowywać się z godnością i szacunkiem. Obejmuje to uznawanie autorytetu sędziego przewodniczącego, zachowanie odpowiedniej samokontroli słownej oraz ogólne kulturalne zachowanie. Uczestnicy zobowiązani są mówić zgodnie z prawdą; celowe zniekształcanie informacji może stanowić osobne naruszenie [textlink="Prawa Kosmicznego" link="SpaceLaw"].
 
   Jeśli jakakolwiek osoba na sali sądowej zachowa się w sposób zakłócający lub przerywający postępowanie, sędzia przewodniczący może uznać tę osobę za winną obrazy sądu i nakazać jej usunięcie, w razie potrzeby przy użyciu siły. Sędzia przewodniczący może również w trybie natychmiastowym nałożyć środek karny adekwatny do powagi obrazy sądu. Decyzja o tym, czy dana osoba dopuściła się obrazy sądu, należy wyłącznie do sędziego przewodniczącego.
 </Document>

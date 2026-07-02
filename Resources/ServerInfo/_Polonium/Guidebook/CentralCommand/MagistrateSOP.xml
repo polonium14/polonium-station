@@ -3,28 +3,67 @@ SPDX-FileCopyrightText: 2024 DevilishMilk <bluscout78@yahoo.com>
 SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
 SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
 SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2026 Polonium-bot <admin@ss14.pl>
 
-SPDX-License-Identifier: MIT
+SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 <Document>
-# SPO Sędzi
+# SPO Sędziego
 
-[bold]1.[/bold] Sędzia zażadzą ostateczną władzą karną na stacji. W przypadku używania tej włądzy bezpośrednio egzekwuje on wolę [color=#009100]Centralnego Dowództwa[/color]
+Sędzia to przedstawiciel działu prawnego [color=#009100]Centralnego Dowództwa[/color], wysyłany na stację eventowo. Gdy jest obecny, pełni funkcję sędziego przewodniczącego i ma pierwszeństwo przed [color=#8ec8ff]Kapitanem[/color] w sprawach sądowych. Szczegółowa [textlink="procedura korporacyjnego sądu" link="LegalSOP"] opisana jest w SPO Prawnych.
 
-[bold]2.[/bold] Sędzia może zmienić czyjkolwiek wyrok, oprócz [color=#009100]Centralnego Dowództwa[/color] w sprawach dotyczących Prawa Kosmiczengo.
+## Obowiązki
 
-[bold]3.[/bold] Sędzia ma za zadanie zapewnić że zasoby stacji nie są marnowane na bazurne, marnotrawne lub z góry wiadome w rezultatach procesy sądowe. W takich przypadkach Sędzia ma zezwolenie na streszczenie processu i wydanie wyroku, jednak musi upewnić się że należyta staranność została zachowana podczas zbieraniu dowodów;
+[bold]1.[/bold] Inicjować korporacyjny sąd, gdy [color=#ff8a8a]Ochrona[/color] przekazuje sprawy z zarzutami co najmniej [bold]III stopnia[/bold] przy [textlink="Kodzie Zielonym" link="GreenAlertSOP"] lub [textlink="Kodzie Niebieskim" link="BlueAlertSOP"]. Przy [textlink="Kodzie Czerwonym" link="RedAlertSOP"] sąd dopuszcza się wyłącznie w sprawach z zarzutami co najmniej [bold]IV stopnia[/bold];
+  - Sędzia może inicjować postępowanie z zarzutami [bold]II stopnia[/bold], jeśli sprawcą jest osoba pełniąca funkcję służbową;
+  - Sędzia może nie inicjować sądu, jeśli zatrzymany w pełni przyznał się do naruszenia [textlink="Prawa Kosmicznego" link="SpaceLaw"];
+  - Przy nadmiernym obciążeniu sprawami Sędzia przekazuje je [color=#ff8a8a]Ochronie[/color] do wydania werdyktu;
+  - W razie nieobecności lub niezdolności Sędziego sprawy przechodzą w jurysdykcję [color=#ff8a8a]Ochrony[/color];
+  - W warunkach [textlink="Kodu Delta" link="DeltaAlertSOP"], [textlink="Kodu Gamma" link="GammaAlertSOP"] lub [textlink="Kodu Octarine" link="OctarineAlertSOP"] inicjowanie korporacyjnego sądu jest zabronione;
 
-[bold]4.[/bold] Sędzia [bold]NIE[/bold]jest nad [textlink="Prawem Kosmicznym" link="SpaceLaw"] i nie może decydować w sprawach dotyczących siebie samego;
+[bold]2.[/bold] Rozpatrywać wpływające apelacje. W nieobecności Sędziego apelacje rozpatruje [color=#8ec8ff]Kapitan[/color] jako sędzia przewodniczący, zgodnie z [textlink="SPO Prawnymi" link="LegalSOP"]. Sędzia może odrzucić apelację, gdy:
+  - apelacja nie zawiera podstaw do rozpatrzenia;
+  - wskazane okoliczności nie mogą wpłynąć na wydany werdykt;
+  - apelacja złożona jest z naruszeniem procedury;
+  - apelacja powtarzana jest z tych samych podstaw bez nowych dowodów;
 
-[bold]5.[/bold] Sędzia ma zpewnić należytą staranność i summieniość [color=#009100]Przedstawiciela NanoTrasen[/color] oraz [color=#009100]Inspektorów Spraw Wewnętrznych[/color], pod jego dowództwem, w kwestiach dotyczących Standardowych Procedur Operacyjnych;
+[bold]3.[/bold] Być bezstronnym — rozpatrywać sprawy obiektywnie, bez osobistego interesu. Przy konflikcie interesów Sędzia składa samoocenę i przekazuje sprawę innemu uprawnionemu sędziowi przewodniczącemu albo wstrzymuje postępowanie do usunięcia przeszkód;
 
-[bold]6.[/bold] Sędzia, poza kwestiami procesów sądowych, powinien jedynie interweniować w kwestiach przestępstw w przypadku których są kiepskie dowody, wymagają dokładnego rozpatrzenia lub zostały karygorycznie źle rozpatrzone;
+[bold]4.[/bold] Stosować formalny, służbowy styl wypowiedzi. W warunkach stanu zagrożenia stacji ten wymóg traci moc;
 
-[bold]7.[/bold] Sędzia może używać kar kategorii 1, 2 i 3 za nieodpowiednie zachowanie dotyczące złej interpretacji [textlink="Prawa Komsicznego" link="SpaceLaw"]. Powinien on także skonsultować się z Przedstawicielem Nanotrasen w przypadku chęci nałożenia kar dotyczących Standardowych Procedur Operacyjncyh, lecz ma możliwość nakłdani nawet kar kategorii 3 za te zaniedbania.
+[bold]5.[/bold] Przestrzegać ustalonego dress code'u (mantia sędziowska, peruka, odznaka prawnika);
 
-[bold]8.[/bold] Sędzia ma zezwolenie na noszenie błysku;
+[bold]6.[/bold] Zapewnić, że zasoby stacji nie są marnowane na bezcelowe lub z góry przesądzone procesy. W takich przypadkach Sędzia może skrócić postępowanie i wydać wyrok, zachowując należytą staranność przy ocenie dowodów;
 
-## Zasady i Ekspektacje OOC Sędzi
-Celem i ideą Sędzi jest bycie ostateczną włądzą nadzorczą i karną na stacji mają za zadanie zachęcać do owocnego Roleplayu po przez wykonywanie swojej roli. Odgrywanie kwesti dotyczących Prawa Kosmicznego, SPO, procesów sądowych, odwołań oraz podobnych, ważnych kwesti dotyczących stacji. Przez to powinni regularnie rozmawiać i dyskutować z Personelem Centralengo Dowództwa, Dowództwem Stacji, zespołem prawnym oraz departamentem ochrony, dodatkowo angażując wszystkie cztery strony w związły Roleplay.
+[bold]7.[/bold] Czuwać nad sumiennością [color=#009100]Przedstawiciela Nanotrasen[/color] w kwestiach SPO i [textlink="Prawa Kosmicznego" link="SpaceLaw"];
+
+[bold]8.[/bold] Sędzia [bold]nie jest[/bold] ponad [textlink="Prawem Kosmicznym" link="SpaceLaw"] i nie orzeka w sprawach dotyczących siebie.
+
+## Uprawnienia
+
+[bold]1.[/bold] Pełnić funkcję ostatecznej władzy karnej na stacji w sprawach dotyczących [textlink="Prawa Kosmicznego" link="SpaceLaw"];
+
+[bold]2.[/bold] Uchylić dowolne rozstrzygnięcie w sprawach [textlink="Prawa Kosmicznego" link="SpaceLaw"], z wyjątkiem poleceń [color=#009100]Centralnego Dowództwa[/color];
+
+[bold]3.[/bold] W trakcie rozprawy lub nadzoru sądowego zażądać od [color=#ff8a8a]Ochrony[/color] materiałów sprawy — raportów, dowodów i zeznań świadków, także dotyczących już zatwierdzonego wyroku. Na [textlink="Kodzie Zielonym" link="GreenAlertSOP"] lub [textlink="Kodzie Niebieskim" link="BlueAlertSOP"] może wymagać sporządzenia dokumentacji do akt;
+
+[bold]4.[/bold] Uchylić moc prawną dowolnego dokumentu na obiekcie korporacji, z wyjątkiem dokumentów opatrzonych pieczęcią [color=#009100]Centralnego Dowództwa[/color]. Przy uchyleniu Sędzia wpisuje powód w dokumencie i opatruje go pieczęcią Sędziego;
+
+[bold]5.[/bold] Sprawdzić każdy wyrok wydany na stacji i — przy stwierdzeniu naruszeń — uchylić go z podaniem powodu, a następnie wydać nowy wyrok na podstawie materiałów sprawy, dowodów i [textlink="Prawa Kosmicznego" link="SpaceLaw"];
+
+[bold]6.[/bold] Edytować dokumenty na wniosek personelu. Nad polem na pieczęcie należy dodać adnotację o edycji z imieniem i nazwiskiem edytora; dokument opatrzyć pieczęcią Sędziego. Dopuszczalna jest korekta błędów redakcyjnych bez zmiany treści merytorycznej;
+
+[bold]7.[/bold] Nakładać kary kategorii 1, 2 i 3 za niewłaściwe stosowanie [textlink="Prawa Kosmicznego" link="SpaceLaw"]. Przed karami za naruszenia SPO zaleca się konsultację z [color=#009100]Przedstawiciel Nanotrasen[/color];
+
+[bold]8.[/bold] Noszenie latarki policyjnej (błysku) jest dozwolone.
+
+## Zakazy
+
+[bold]1.[/bold] Wydawanie werdyktów sprzecznych z [textlink="Prawem Kosmicznym" link="SpaceLaw"] lub nieprawidłowych;
+
+[bold]2.[/bold] Interweniowanie w pracę kierowników departamentów, [color=#8ec8ff]Kapitana[/color] lub [color=#ff8a8a]Ochrony[/color] bez prawnej podstawy — wyjątek stanowi konieczność dochodzenia lub inspekcji bez zakłócania bieżącej pracy.
+
+## Zasady i oczekiwania OOC Sędziego
+
+Celem roli Sędziego jest pełnienie funkcji ostatecznej instancji nadzorczej i karnej na stacji oraz wspieranie rozgrywki wokół [textlink="Prawa Kosmicznego" link="SpaceLaw"], SPO, procesów sądowych i apelacji. Sędzia powinien regularnie współpracować z personelem [color=#009100]Centralnego Dowództwa[/color], dowództwem stacji, zespołem prawnym i [color=#ff8a8a]Ochroną[/color].
 </Document>

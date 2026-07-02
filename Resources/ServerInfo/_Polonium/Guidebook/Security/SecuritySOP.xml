@@ -127,13 +127,13 @@ Wynikiem każdego przesłuchania musi być wypełniony dokument [bold]Protokół
 
 Przed formalną egzekucją [bold]zawsze[/bold] wymagany jest wypełniony dokument Nakaz egzekucji.
 
-Nie dotyczy natychmiastowej [bold]likwidacji w terenie[/bold] (poziom IV [textlink="procedury stosowania siły" link="UseOfForceSOP"]) ani egzekucji w terenie na kodach wojennych ([textlink="Delta" link="DeltaAlert"], [textlink="Gamma" link="GammaAlert"], [textlink="Octarine" link="OctarineAlert"]) — tam obowiązują odrębne przepisy alarmowe.
+Nie dotyczy natychmiastowej [bold]likwidacji w terenie[/bold] (poziom IV [textlink="procedury stosowania siły" link="UseOfForceSOP"]) ani egzekucji w terenie na kodach wojennych ([textlink="Delta" link="DeltaAlertSOP"], [textlink="Gamma" link="GammaAlertSOP"], [textlink="Octarine" link="OctarineAlertSOP"]) — tam obowiązują odrębne przepisy alarmowe.
 
 ### Kiedy stosować
 
 Stosuj, gdy skazany otrzymał [bold]karę śmierci[/bold] i ma zostać formalnie stracony, a nie jedynie trwale zneutralizowany w trakcie aktywnego zagrożenia. Typowe podstawy:
 - wyrok zapisany w [bold]Protokole Przesłuchania[/bold] lub wyroku sądu;
-- wyrok sędziego przewodniczącego po procesie ([textlink="SPO Prawne" link="LegalSOP"]);
+- wyrok sędziego przewodniczącego po procesie ([textlink="SPO Prawne" link="LegalSOP"]) — [textlink="Sędzia" link="MagistrateSOP"] lub [color=#8ec8ff]Kapitan[/color];
 - nakaz Centralnego Dowództwa ([textlink="Prawo Kosmiczne" link="SpaceLaw"]).
 
 Na [color=#8ee99a]Kodzie Zielonym[/color] i [color=#8ec8ff]Kodzie Niebieskim[/color] zaleca się przeprowadzenie procesu sądowego przed egzekucją, jeśli skazany o to poprosi. Na pozostałych kodach ceremonia może zostać skrócona, ale [bold]Nakaz egzekucji[/bold] nadal jest wymagany.
@@ -151,8 +151,8 @@ Egzekucji [bold]nie wolno[/bold] przeprowadzić, dopóki nie są spełnione [bol
 ### Kto może zatwierdzić i przeprowadzić
 
 [bold]Nakaz egzekucji[/bold] opatruje pieczęcią:
-- [color=#8ec8ff]Komendant[/color] lub [color=#8ec8ff]Kapitan[/color] — egzekucja na podstawie wyroku Ochrony lub po procesie bez sędziego;
-- sędzia przewodniczący — egzekucja po procesie sądowym;
+- [color=#8ec8ff]Komendant[/color] lub [color=#8ec8ff]Kapitan[/color] — egzekucja na podstawie wyroku Ochrony lub po procesie sądowym;
+- sędzia przewodniczący ([textlink="Sędzia" link="MagistrateSOP"] lub [color=#8ec8ff]Kapitan[/color]) — egzekucja po procesie sądowym;
 - przedstawiciel Centralnego Dowództwa — egzekucja na podstawie nakazu CD.
 - inne jednostki Centralnego Dowództwa.
 

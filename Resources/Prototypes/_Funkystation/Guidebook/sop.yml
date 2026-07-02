@@ -14,7 +14,7 @@
 # SPDX-FileCopyrightText: 2026 Polonium-bot <admin@ss14.pl>
 # SPDX-FileCopyrightText: 2026 nikitosych <174215049+nikitosych@users.noreply.github.com>
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: guideEntry
   id: SOP101
@@ -136,14 +136,8 @@
   name: guide-entry-central-command-sop
   text: "/ServerInfo/_Polonium/Guidebook/CentralCommand/CCSOP.xml"
   children:
-  - IAASOP
   - NTRSOP
   - MagistrateSOP
-
-- type: guideEntry
-  id: IAASOP
-  name: guide-entry-iaa-sop
-  text: "/ServerInfo/_Polonium/Guidebook/CentralCommand/IAASOP.xml"
 
 - type: guideEntry
   id: NTRSOP

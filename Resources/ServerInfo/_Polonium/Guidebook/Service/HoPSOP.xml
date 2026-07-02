@@ -1,28 +1,92 @@
 <!--
 SPDX-FileCopyrightText: 2024 DevilishMilk <bluscout78@yahoo.com>
 SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+SPDX-FileCopyrightText: 2026 Polonium-bot <admin@ss14.pl>
 
-SPDX-License-Identifier: MIT
+SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 <Document>
 # SPO Kierownika Personelu
 
-[bold]1.[/bold] Kierownik Personelu [bold]nie[/bold] może przenieść żadnego pracownika do innego Działu bez autoryzacji odpowiedniego [color=#8ec8ff]Kierownika Personelu[/color]. Jeśli żaden [color=#8ec8ff]Kierownik działu[/color] nie jest dostępny, Kierownik Personelu może podjąć decyzję samodzielnie. Nie dotyczy to Ochrony, która zawsze wymaga autoryzacji [color=#ff8a8a]Komendanta Ochrony[/color]. Jeśli Komendant Ochrony nie jest aktywny, żadne transfery do Ochrony nie są dozwolone bez autoryzacji [color=#8ec8ff]Kapitana[/color];
+Kierownik Personelu kieruje [textlink="działem Obsługi" link="ServiceSOP"], odpowiada za karty identyfikacyjne, stanowiska i dostępy oraz wspiera załogę w sprawach administracyjnych. Pełni funkcję prawej ręki [color=#8ec8ff]Kapitana[/color] w kwestiach kadrowych.
 
-[bold]2.[/bold] Kierownik Personelu [bold]nie[/bold] może nadać żadnemu pracownikowi zwiększonego dostępu bez autoryzacji odpowiedniego [color=#8ec8ff]Kierownika działu[/color]. Obejmuje to Kierownika Personelu. Ponadto, Kierownik Personelu może nadać dostęp na poziomie [color=#8ec8ff]Kapitana[/color] tylko wtedy, gdy pełni obowiązki [color=#8ec8ff]tymczasowego p.o. Kapitana[/color]. Dostęp ten ma zostać usunięty, gdy właściwy [color=#8ec8ff]Kapitan[/color] przybędzie na stację;
+## Obowiązki
 
-[bold]3.[/bold] Kierownik Personelu [bold]nie[/bold] może zwiększać liczby wakatów, chyba że odpowiedni [color=#8ec8ff]Kierownik działu[/color] wyrazi na to zgodę;
+[bold]1.[/bold] Organizować pracę [textlink="działu Obsługi" link="ServiceSOP"], kontrolować wykonywanie obowiązków przez jego pracowników oraz dbać o należytą jakość świadczonych usług;
 
-[bold]4.[/bold] Kierownik Personelu [bold]nie[/bold] może zwolnić żadnego pracownika bez autoryzacji odpowiedniego [color=#8ec8ff]Kierownika działu[/color], chyba że mają zastosowanie inne warunki (patrz Prawo Kosmiczne i Ogólna Standardowa Procedura Operacyjna);
+[bold]2.[/bold] Kontrolować legalność stanowisk i poziomów dostępu personelu stacji;
 
-[bold]5.[/bold] Kierownik Personelu [bold]nie[/bold] może promować nikogo na żadne stanowisko w [color=#7dffa8]Centralnym Dowództwie[/color]. Używanie ikon [color=#7dffa8]ID Centralnego Dowództwa[/color] jest również zabronione bez wyraźnej zgody;
+[bold]3.[/bold] Zmieniać dostępy i stanowiska wyłącznie na podstawie prawnej. Za podstawę prawną uznaje się:
+  - procedurę opisaną poniżej w sekcji [italic]Procedura zmiany dostępów i stanowisk[/italic];
+  - uprawnienie wynikające z SPO stanowiska, o które wnioskuje pracownik;
+  - pisemne wnioski o nadanie dostępu;
 
-[bold]6.[/bold] Kierownik Personelu może swobodnie korzystać z biurokracji według własnego uznania. Jednak podczas poważnych zagrożeń stacji, szybkość działania powinna mieć pierwszeństwo przed biurokracją;
+[bold]4.[/bold] Przechowywać i przekazywać do [color=#009100]Centralnego Dowództwa[/color] dokumentację dotyczącą zmian dostępów i stanowisk personelu;
 
-[bold]7.[/bold] Kierownik Personelu [bold]nie[/bold] może pozostawić swojego biura bez obsady, jeśli w kolejce czekają pracownicy. Brak reakcji na pracownika z uzasadnioną prośbą w ciągu dziesięciu (10) minut, czy to przez radio, czy osobiście, uznaje się za naruszenie Standardowej Procedury Operacyjnej;
+[bold]5.[/bold] Wspierać pasażerów i członków załogi:
+  - pomagać w sporządzaniu dokumentów;
+  - rozpatrywać skargi i propozycje;
 
-[bold]8.[/bold] Kierownik Personelu [bold]nie[/bold] ma prawa wykonywać obowiązków [color=#ff8a8a]Ochrony[/color]. Kierownik Personelu ma prawo nosić Disablera wyłącznie do samoobrony.
+[bold]6.[/bold] Stosować formalny, służbowy styl wypowiedzi wobec załogi i [color=#009100]Centralnego Dowództwa[/color]; w warunkach stanu zagrożenia stacji ten wymóg traci moc;
+
+[bold]7.[/bold] Nie opuszczać biura bez obsady, gdy w kolejce czeka personel. Brak reakcji na uzasadnioną prośbę w ciągu dziesięciu (10) minut — przez radio lub osobiście — uznaje się za naruszenie SPO;
+
+[bold]8.[/bold] W razie wejścia do innego departamentu opuścić go na polecenie [color=#8ec8ff]Kierownika tego departamentu[/color]. Wyjątki: stan zagrożenia stacji, bezpośrednie zagrożenie życia lub konieczność ratunku;
+
+[bold]9.[/bold] [bold]Nie[/bold] wykonywać obowiązków [color=#ff8a8a]Ochrony[/color] ani formalnie aresztować nikogo. Wyjątek: brak dostępnego personelu [color=#ff8a8a]Ochrony[/color] na stacji [bold]oraz[/bold] wyraźna zgoda [color=#8ec8ff]Kapitana[/color] — wtedy można tymczasowo obezwładnić sprawcę i niezwłocznie przekazać go [color=#ff8a8a]Ochronie[/color] lub [color=#8ec8ff]Kapitanowi[/color] po jego przybyciu.
+
+## Uprawnienia
+
+[bold]1.[/bold] W razie potrzeby wykonywać pracę pracowników [textlink="działu Obsługi" link="ServiceSOP"] w granicach własnych możliwości;
+
+[bold]2.[/bold] Reprezentować pasażerów i członków załogi jako obrońca — zgodnie z [textlink="SPO Prawnymi" link="LegalSOP"];
+
+[bold]3.[/bold] W czasie wolnym od obowiązków biurowych ćwiczyć umiejętności [textlink="działu Obsługi" link="ServiceSOP"];
+
+[bold]4.[/bold] W godzinach pracy korzystać z zapasowej karty Kierownika Personelu w konsoli ID; po zakończeniu pracy zwrócić ją na miejsce;
+
+[bold]5.[/bold] Używać konfiguratora dostępu do ustawiania uprawnień na kartach;
+
+[bold]6.[/bold] W dowolnym kodzie zagrożenia nosić przy sobie i używać: paralizator (disabler/stunner) oraz latarki błyskowej — wyłącznie do samoobrony;
+
+[bold]7.[/bold] Zwolnić pracownika z [textlink="działu Obsługi" link="ServiceSOP"] samodzielnie, z zachowaniem [textlink="Prawa Kosmicznego" link="SpaceLaw"] i ogólnych SPO;
+
+[bold]8.[/bold] Zwolnić pracownika z innego departamentu wyłącznie za zgodą [color=#8ec8ff]Kapitana[/color], potwierdzoną pieczęcią Kapitana na właściwym dokumencie;
+
+[bold]9.[/bold] Swobodnie korzystać z biurokracji według własnego uznania. Przy poważnym zagrożeniu stacji priorytetem jest szybkość i realna interakcja, a nie papierologia.
+
+## Ograniczenia kadrowe i dostępowe
+
+[bold]1.[/bold] [bold]Nie[/bold] przenosić pracownika do innego departamentu bez autoryzacji właściwego [color=#8ec8ff]Kierownika departamentu[/color]. Gdy żaden Kierownik nie jest dostępny, Kierownik Personelu może podjąć decyzję samodzielnie. [color=#ff8a8a]Ochrona[/color] zawsze wymaga autoryzacji [color=#ff8a8a]Komendanta[/color]; gdy Komendant nie jest aktywny — autoryzacji [color=#8ec8ff]Kapitana[/color];
+
+[bold]2.[/bold] [bold]Nie[/bold] nadawać zwiększonego dostępu bez autoryzacji właściwego [color=#8ec8ff]Kierownika departamentu[/color]. Dostęp na poziomie [color=#8ec8ff]Kapitana[/color] wyłącznie jako [color=#8ec8ff]tymczasowy p.o. Kapitana[/color]; należy go usunąć po powrocie właściwego [color=#8ec8ff]Kapitana[/color];
+
+[bold]3.[/bold] [bold]Nie[/bold] nadawać stanowiska ani dostępu przekraczających limit kadry ustalony dla danego departamentu (w tym liczbę wolnych slotów na dane stanowisko) bez zgody właściwego [color=#8ec8ff]Kierownika departamentu[/color];
+
+[bold]4.[/bold] [bold]Nie[/bold] promować nikogo na stanowisko w [color=#009100]Centralnym Dowództwie[/color]. Używanie ikon ID CentCom bez wyraźnej zgody jest zabronione.
+
+## Procedura zmiany dostępów i stanowisk
+
+Przy każdej zmianie stanowiska lub dostępu utrzymuj kontakt z właściwym [color=#8ec8ff]Kierownikiem departamentu[/color] i resztą załogi w tym dziale.
+
+Przykład: technik logistyki chce przejść do Badań jako asystent naukowy:
+  1. Poinformuj go, że pierwszy krok to stanowisko asystenta, nie pełnego naukowca;
+  2. Zapytaj [color=#e8a0ff]Kierownika Badań[/color] na kanale dowództwa, czy potrzebuje asystenta;
+  3. Po zgodzie poinformuj [color=#e8c878]Kierownika Logistyki[/color], że pracownik odchodzi z departamentu;
+  4. Przyjmij kartę ID i ustaw stanowisko asystenta naukowego;
+  5. Udokumentuj zmianę.
+
+## Zakazy
+
+[bold]1.[/bold] Ignorować polecenie opuszczenia departamentu wydane przez [color=#8ec8ff]Kierownika tego departamentu[/color] — z wyjątkiem stanu zagrożenia stacji lub bezpośredniego zagrożenia życia;
+
+[bold]2.[/bold] Aresztować, eskortować do więzienia lub wymierzać kary w imieniu [color=#ff8a8a]Ochrony[/color], chyba że spełnione są warunki z obowiązku nr 9;
+
+[bold]3.[/bold] Nos przy sobie kajdanek ani stój do obezwładniania osób poza samoobroną.
 
 ## Zasady OOC Kierownika Personelu
-Wcielasz się w postać niebiorącą udziału w walce i powinieneś angażować się w walkę tylko wtedy, gdy musisz stawić czoła zagrożeniu zagrażającemu stacji lub w obronie własnej – z wyjątkiem sytuacji, gdy chodzi o cele przeciwnika lub w przypadku uzasadnionej eskalacji konfliktu.
+
+Kierownik Personelu to rola inicjatywowa i mediacyjna — siedzenie w biurze przez całą zmianę ogranicza RP. Pomagaj załodze, koordynuj departamenty, reaguj na prośby w radiu.
+
+Wcielasz się w postać niebiorącą udziału w walce. Angażuj się w konflikt tylko w samoobronie lub gdy stacja jest w realnym zagrożeniu — nie jako zamiennik [color=#ff8a8a]Ochrony[/color].
 </Document>

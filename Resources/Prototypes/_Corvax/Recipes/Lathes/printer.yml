@@ -603,6 +603,14 @@
   materials: { PrinterPaper: 100 }
 
 - type: latheRecipe
+  id: PrintedDocumentNtrPenaltyCategoryElevationRequestRecipe
+  result: PrintedDocumentNtrPenaltyCategoryElevationRequest
+  categories: [InternalAffairsDocuments]
+  completetime: 2
+  applyMaterialDiscount: false
+  materials: { PrinterPaper: 100 }
+
+- type: latheRecipe
   id: PrintedDocumentSyndicateCooperationOfferRecipe
   result: PrintedDocumentSyndicateCooperationOffer
   categories: [SyndicateDocuments]

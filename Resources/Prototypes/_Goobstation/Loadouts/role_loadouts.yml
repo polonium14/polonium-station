@@ -18,3 +18,17 @@
   - NanotrasenRepresentativeJobTrinkets
   - GroupSpeciesBreathTool
   - Survival
+
+- type: roleLoadout
+  id: JobNanotrasenCareerTrainer
+  groups:
+  - NanotrasenTrainerHead
+  - NanotrasenTrainerJumpsuit
+  - NanotrasenTrainerOuterClothing
+  - NanotrasenTrainerBackpack
+  - NanotrasenTrainerShoes
+  - NanotrasenTrainerGloves
+  - NanotrasenTrainerBelt
+  - Trinkets
+  - GroupSpeciesBreathTool
+  - Survival
