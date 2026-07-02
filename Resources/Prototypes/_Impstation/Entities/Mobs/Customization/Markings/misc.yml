@@ -1157,7 +1157,7 @@
   id: Gills
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Thaven ]
+  groupWhitelist: [ Thaven ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -1168,7 +1168,7 @@
   id: ThavenChestScales
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Thaven ]
+  groupWhitelist: [ Thaven ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -1179,7 +1179,7 @@
   id: ThavenHeadScales
   bodyPart: Head
   markingCategory: HeadTop
-  speciesRestriction: [ Thaven ]
+  groupWhitelist: [ Thaven ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -1190,7 +1190,7 @@
   id: ThavenLArmScales
   bodyPart: LArm
   markingCategory: Arms
-  speciesRestriction: [ Thaven ]
+  groupWhitelist: [ Thaven ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -1201,7 +1201,7 @@
   id: ThavenRArmScales
   bodyPart: RArm
   markingCategory: Arms
-  speciesRestriction: [ Thaven ]
+  groupWhitelist: [ Thaven ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -1212,7 +1212,7 @@
   id: ThavenLLegScales
   bodyPart: LLeg
   markingCategory: Legs
-  speciesRestriction: [ Thaven ]
+  groupWhitelist: [ Thaven ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -1223,7 +1223,7 @@
   id: ThavenRLegScales
   bodyPart: RLeg
   markingCategory: Legs
-  speciesRestriction: [ Thaven ]
+  groupWhitelist: [ Thaven ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -1234,7 +1234,7 @@
 #  id: ThavenLHandScales
 #  bodyPart: LHand
 #  markingCategory: Arms
-#  speciesRestriction: [ Thaven ]
+#  groupWhitelist: [ Thaven ]
 #  forcedColoring: false
 #  followSkinColor: false
 #  sprites:
@@ -1245,7 +1245,7 @@
 #  id: ThavenRHandScales
 #  bodyPart: RHand
 #  markingCategory: Arms
-#  speciesRestriction: [ Thaven ]
+#  groupWhitelist: [ Thaven ]
 #  forcedColoring: false
 #  followSkinColor: false
 #  sprites:
@@ -1256,7 +1256,7 @@
 #  id: Thiddies
 #  bodyPart: Chest
 #  markingCategory: Chest
-#  speciesRestriction: [ Thaven ]
+#  groupWhitelist: [ Thaven ]
 #  forcedColoring: true
 #  followSkinColor: true
 #  sprites:
@@ -1269,7 +1269,7 @@
   id: ThavenTopSurgery
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Thaven ]
+  groupWhitelist: [ Thaven ]
   forcedColoring: true
   followSkinColor: true
   sprites:
@@ -1280,7 +1280,7 @@
   id: ThavenFishEars
   bodyPart: HeadSide
   markingCategory: Headside
-  speciesRestriction: [ Thaven ]
+  groupWhitelist: [ Thaven ]
   forcedColoring: true
   followSkinColor: true
   sprites:
@@ -1291,7 +1291,7 @@
   id: ThavenTattooVines
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Thaven ]
+  groupWhitelist: [ Thaven ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -1302,7 +1302,7 @@
   id: ThavenSpines
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Thaven ]
+  groupWhitelist: [ Thaven ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -1313,7 +1313,7 @@
   id: ThavenBiteMark
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Thaven ]
+  groupWhitelist: [ Thaven ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -1324,7 +1324,7 @@
   id: ThavenTattooWave
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Thaven ]
+  groupWhitelist: [ Thaven ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -1335,7 +1335,7 @@
   id: SharkminnowEyeliner
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [ Thaven ]
+  groupWhitelist: [ Thaven ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -1346,7 +1346,7 @@
   id: ThavenTiger
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Thaven ]
+  groupWhitelist: [ Thaven ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -1359,7 +1359,7 @@
   id: ThavenTigerRArm
   bodyPart: RArm
   markingCategory: Arms
-  speciesRestriction: [ Thaven ]
+  groupWhitelist: [ Thaven ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -1370,7 +1370,7 @@
   id: ThavenTigerLArm
   bodyPart: LArm
   markingCategory: Arms
-  speciesRestriction: [ Thaven ]
+  groupWhitelist: [ Thaven ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -1381,7 +1381,7 @@
   id: ThavenHeadStripes
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [ Thaven ]
+  groupWhitelist: [ Thaven ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -1392,7 +1392,7 @@
   id: ThavenBodyStripes
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Thaven ]
+  groupWhitelist: [ Thaven ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -1403,7 +1403,7 @@
   id: ThavenEarsBigFins
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [ Thaven ]
+  groupWhitelist: [ Thaven ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -1416,7 +1416,7 @@
   id: ThavenHeadCap
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [ Thaven ]
+  groupWhitelist: [ Thaven ]
   forcedColoring: false
   followSkinColor: false
   sprites:

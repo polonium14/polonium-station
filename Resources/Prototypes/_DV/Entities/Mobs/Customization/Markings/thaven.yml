@@ -9,7 +9,7 @@
   id: ThavenCheekBarbels
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Thaven]
+  groupWhitelist: [ Thaven ]
   coloring: #imp
     default:
       type:
@@ -23,7 +23,7 @@
   id: ThavenEyebrowBarbels
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Thaven]
+  groupWhitelist: [ Thaven ]
   coloring: #imp
     default:
       type:
@@ -37,7 +37,7 @@
 #  id: ThavenUnderbellyFace
 #  bodyPart: Head
 #  markingCategory: Head
-#  speciesRestriction: [Thaven]
+#  groupWhitelist: [ Thaven ]
 #  coloring: #imp
 #    default:
 #      type:
@@ -52,7 +52,7 @@
 #  id: ThavenUnderbellyTorso
 #  bodyPart: Chest
 #  markingCategory: Chest
-#  speciesRestriction: [Thaven]
+#  groupWhitelist: [ Thaven ]
 #  coloring: #imp
 #    default:
 #      type:

@@ -40,7 +40,12 @@
     # - Rodentia
     # - IPC
     # ImpStation additions
-    # - Thaven
+    - Thaven
+
+- type: guideEntry
+  id: Thaven
+  name: species-name-thaven
+  text: "/ServerInfo/_Polonium/Guidebook/Mobs/Thaven.xml"
 
 - type: guideEntry
   id: Arachnid

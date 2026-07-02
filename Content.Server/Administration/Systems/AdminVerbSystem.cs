@@ -36,6 +36,8 @@ using Robust.Shared.Toolshed;
 using Robust.Shared.Utility;
 using System.Linq;
 using Content.Shared.Chemistry.Components;
+using Content.Shared._Impstation.Thaven.Components;
+using Content.Server._Impstation.Thaven;
 using static Content.Shared.Configurable.ConfigurationComponent;
 
 namespace Content.Server.Administration.Systems
@@ -66,6 +68,7 @@ namespace Content.Server.Administration.Systems
         [Dependency] private AdminFrozenSystem _freeze = default!;
         [Dependency] private IPlayerManager _playerManager = default!;
         [Dependency] private SiliconLawSystem _siliconLawSystem = default!;
+        [Dependency] private ThavenMoodsSystem _moods = default!;
         [Dependency] private AfkConfirmSystem _afkConfirm = default!;
 
         private readonly Dictionary<ICommonSession, List<EditSolutionsEui>> _openSolutionUis = new();
@@ -400,6 +403,25 @@ namespace Content.Server.Administration.Systems
                             }
                             _euiManager.OpenEui(ui, session);
                             ui.UpdateLaws(lawBoundComponent, target.Value);
+                        },
+                        Icon = new SpriteSpecifier.Rsi(new ResPath("/Textures/Interface/Actions/actions_borg.rsi"), "state-laws"),
+                    });
+                }
+
+                if (TryComp<ThavenMoodsBoundComponent>(args.Target, out var moods))
+                {
+                    args.Verbs.Add(new Verb()
+                    {
+                        Text = Loc.GetString("thaven-moods-ui-verb"),
+                        Category = VerbCategory.Admin,
+                        Act = () =>
+                        {
+                            var ui = new ThavenMoodsEui(_moods, EntityManager, _adminManager);
+                            if (!_playerManager.TryGetSessionByEntity(args.User, out var session))
+                                return;
+
+                            _euiManager.OpenEui(ui, session);
+                            ui.UpdateMoods(moods, args.Target);
                         },
                         Icon = new SpriteSpecifier.Rsi(new ResPath("/Textures/Interface/Actions/actions_borg.rsi"), "state-laws"),
                     });

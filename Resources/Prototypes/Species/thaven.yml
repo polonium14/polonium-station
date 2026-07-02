@@ -1,0 +1,17 @@
+- type: species
+  id: Thaven
+  name: species-name-thaven
+  roundStart: true
+  prototype: MobThaven
+  defaultSkinTone: "#ffffff"
+  dollPrototype: AppearanceThaven
+  skinColoration: Hues
+  maleFirstNames: NamesThaven
+  femaleFirstNames: NamesThaven
+  defaultSoundsBySex:
+  - MaleThaven
+  - FemaleThaven
+  - MaleThaven
+  voices:
+  - MaleThaven
+  - FemaleThaven
