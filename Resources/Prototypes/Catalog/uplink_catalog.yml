@@ -973,7 +973,6 @@
     whitelist:
       tags:
       - NukeOpsUplink
-  saleLimit: 1
 
 - type: listing
   id: UplinkAccessBreaker
@@ -2193,12 +2192,10 @@
   categories:
   - UplinkJob
   conditions:
-  - !type:BuyerJobCondition # We can't use BuyerDepartmentCondition here since Zookeeper and Chef can also get this
+  - !type:BuyerJobCondition
     whitelist:
-    - Zookeeper
     - Scientist
     - ResearchDirector
-  saleLimit: 1
 
 - type: listing
   id: UplinkCaneBlade

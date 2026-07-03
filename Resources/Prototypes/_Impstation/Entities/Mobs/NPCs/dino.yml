@@ -49,8 +49,10 @@
   - type: ReplacementAccent
     accent: dino
   - type: Bloodstream
-    bloodReagent: DinoBlood
-    bloodMaxVolume: 400 #poor janitors...
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: DinoBlood
+        Quantity: 400 #poor janitors...
     bloodlossDamage:
       types:
         Bloodloss:
@@ -66,10 +68,10 @@
     - Alive
     - Dead
   - type: Body
-    prototype: Animal
   - type: Damageable
-    damageContainer: Biological
     damageModifierSet: Dinosaur
+  - type: Injurable
+    damageContainer: Biological
   - type: Flammable
     fireSpread: true
     canResistFire: true
@@ -108,16 +110,17 @@
         Blunt: 0.50
         Heat: 0.1
   - type: Temperature # temperature values taken from reptilian species
-    heatDamageThreshold: 400
-    coldDamageThreshold: 285
     currentTemperature: 310.15
     specificHeat: 42
+  - type: TemperatureDamage
+    heatDamageThreshold: 400
+    coldDamageThreshold: 285
     coldDamage:
       types:
-        Cold : 0.1 #per second, scales with temperature & other constants
+        Cold: 0.1 #per second, scales with temperature & other constants
     heatDamage:
       types:
-        Heat : 1.5 #per second, scales with temperature & other constants
+        Heat: 1.5 #per second, scales with temperature & other constants
   - type: TemperatureSpeed
     thresholds:
       301: 0.8
@@ -133,15 +136,11 @@
   - type: Metabolizer
     solutionOnBody: false
     metabolizerTypes: [ Animal ]
-    groups:
-    - id: Medicine
-    - id: Poison
   - type: Speech
     speechSounds: Dino
     speechVerb: Reptilian
   - type: Vocal
-    sounds:
-      Unsexed: DinoEmotes
+    emoteSounds: DinoEmotes
   - type: StandingState
   - type: Pullable
   
@@ -162,8 +161,10 @@
         layer:
           - MobLayer
   - type: Bloodstream
-    bloodReagent: DinoBlood
-    bloodMaxVolume: 100
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: DinoBlood
+        Quantity: 100
     bloodlossDamage:
       types:
         Bloodloss:
@@ -190,7 +191,7 @@
   - type: Devourer
     foodPreferenceWhitelist:
       components:
-      - HumanoidAppearance
+      - HumanoidProfile
     stomachStorageWhitelist:
       components:
       - MobState
