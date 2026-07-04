@@ -178,7 +178,7 @@
     sprite: _Impstation/Mobs/Species/Thaven/organs.rsi
 
 - type: entity
-  parent: OrganThaven
+  parent: [ OrganThaven, OrganThavenVisual ]
   id: OrganThavenExternal
   abstract: true
   components:
@@ -205,6 +205,8 @@
   id: OrganThavenHead
   components:
   - type: VisualOrganMarkings
+    markingData:
+      group: Thaven
     hideableLayers:
     - enum.HumanoidVisualLayers.Hair
     - enum.HumanoidVisualLayers.Snout
