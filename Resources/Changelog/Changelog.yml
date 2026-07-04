@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: Ian321
-  changes:
-  - message: Magazines that started out empty now visually fill.
-    type: Fix
-  id: 7972
-  time: '2025-02-18T12:32:54.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34491
 - author: WarPigeon
   changes:
   - message: Steel crates now have some radiation shielding for safe storage and transport
@@ -4191,3 +4184,12 @@
   id: 9279
   time: '2026-07-01T17:57:00.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/749
+- author: Saver310
+  changes:
+  - message: "Dodano lobby art \"Pewna \u015Amier\u0107\""
+    type: Add
+  - message: Przekonwertowano "Drunkards' Spree" na bezstratne PNG
+    type: Tweak
+  id: 9280
+  time: '2026-07-04T10:02:57.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/751
