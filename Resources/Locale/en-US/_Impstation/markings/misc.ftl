@@ -210,17 +210,15 @@ marking-VoxBelly = Belly
 marking-VoxBelly-voxbelly = Belly
 marking-VoxTailBalled = Thrasher
 marking-VoxTailBalled-voxtailballed = Thrasher
-marking-VoxTailSplit = Twinned
-marking-VoxTailSplit-voxtailsplit = Twinned
+marking-ImpVoxTailSplit = Twinned
+marking-ImpVoxTailSplit-voxtailsplit = Twinned
 # upstream vox markings dont have localized names. lmfao
 # these are just straight up broken and shouldnt be visible from the markings menu period but ALAS im not skilled enough to remove them so you get this stupid botch job instead
 # moving this furniture a few inches to the left -cc
-marking-VoxBeak = Default Beak [DO NOT USE]
 marking-VoxLArmScales = Arm Scales L
 marking-VoxLHandScales = Hand Scales L
 marking-VoxRArmScales = Arm Scales R
 marking-VoxRHandScales = Hand Scales R
-marking-VoxTail = Default Tail [DO NOT USE]
 marking-VoxLFootScales = Foot Scales L
 marking-VoxLLegScales = Leg Scales L
 marking-VoxRFootScales = Foot Scales R
