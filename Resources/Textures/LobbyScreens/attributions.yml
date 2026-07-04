@@ -209,7 +209,13 @@
   copyright: "nikitavix on Discord"
   source: "https://funkystation.org"
 
-- files: ["DrunkardsSpree.webp"]
+- files: ["DrunkardsSpree.png"]
   license: "CC-BY-NC-SA-4.0"
   copyright: "Saver310"
   source: "https://github.com/carpmosia/carpmosia"
+
+- files: ["PewnaSmierc.png"]
+  license: "CC-BY-NC-SA-4.0"
+  copyright: "Saver310"
+  source: "https://github.com/polonium14/polonium-station"
+
