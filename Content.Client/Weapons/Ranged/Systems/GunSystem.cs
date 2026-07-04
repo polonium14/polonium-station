@@ -430,8 +430,12 @@ public sealed partial class GunSystem : SharedGunSystem
 
         foreach (var entity in entities)
         {
+            // Effects like muzzle flashes should have sprites but no fixtures
+            if (!TryComp<FixturesComponent>(entity.Uid, out var fixtures))
+                continue;
+
             // Don't add the target if we can't shoot the target!
-            if (!CheckFixtures(entity.Uid))
+            if (!CheckFixtures(fixtures))
                 continue;
 
             var entry = CheckTarget((entity.Uid, entity.Component, entity.Transform), eye, coordinates);
@@ -527,12 +531,9 @@ public sealed partial class GunSystem : SharedGunSystem
         }
     }
 
-    private bool CheckFixtures(Entity<FixturesComponent?> entity)
+    private bool CheckFixtures(FixturesComponent fixtures)
     {
-        if (!Resolve(entity, ref entity.Comp))
-            return false;
-
-        foreach (var fix in entity.Comp.Fixtures)
+        foreach (var fix in fixtures.Fixtures)
         {
             if (!fix.Value.Hard || (fix.Value.CollisionLayer & (int)CollisionGroup.BulletImpassable) == 0)
                 continue;
