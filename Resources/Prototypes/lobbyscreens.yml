@@ -92,4 +92,8 @@
 
 - type: lobbyBackground
   id: Drunkards
-  background: /Textures/LobbyScreens/DrunkardsSpree.webp
+  background: /Textures/LobbyScreens/DrunkardsSpree.png
+
+- type: lobbyBackground
+  id: CertainDeath
+  background: /Textures/LobbyScreens/PewnaSmierc.png
