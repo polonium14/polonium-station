@@ -203,7 +203,12 @@ public sealed partial class GravityWellSystem : SharedGravityWellSystem
     public void GravPulse(EntityUid uid, GravityWellComponent component, float maxRange, float minRange, in Matrix3x2 baseMatrixDeltaV, TransformComponent? xform = null)
     {
         if (Resolve(uid, ref xform))
+        {
             GravPulse(xform.Coordinates, component, maxRange, minRange, in baseMatrixDeltaV);
+
+            var ev = new GravPulseEvent();
+            RaiseLocalEvent(uid, ref ev);
+        }
     }
 
     /// <summary>
@@ -219,7 +224,12 @@ public sealed partial class GravityWellSystem : SharedGravityWellSystem
     public void GravPulse(EntityUid uid, GravityWellComponent component, float maxRange, float minRange, float baseRadialDeltaV = 0.0f, float baseTangentialDeltaV = 0.0f, TransformComponent? xform = null)
     {
         if (Resolve(uid, ref xform))
+        {
             GravPulse(xform.Coordinates, component, maxRange, minRange, baseRadialDeltaV, baseTangentialDeltaV);
+
+            var ev = new GravPulseEvent();
+            RaiseLocalEvent(uid, ref ev);
+        }
     }
 
     /// <summary>
@@ -341,3 +351,9 @@ public sealed partial class GravityWellSystem : SharedGravityWellSystem
 
     #endregion Getters/Setters
 }
+
+/// <summary>
+/// Raised on an entity when it emits a gravitational pulse.
+/// </summary>
+[ByRefEvent]
+public readonly record struct GravPulseEvent();

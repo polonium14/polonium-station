@@ -349,7 +349,7 @@
   - RTG
   - SolarPanels
   # Goobstation - Supermatter
-  # - Supermatter
+  - Supermatter
 
 - type: guideEntry
   id: AME
