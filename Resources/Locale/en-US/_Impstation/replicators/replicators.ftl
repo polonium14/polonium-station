@@ -25,3 +25,15 @@ replicator-nest-level5 = How is the hull still intact?!
 replicator-nest-levelup = There is a flurry of activity from the nest.
 
 replicator-nest-destroyed = Your nest has been destroyed. A Replicator has been selected to replace it.
+
+replicator-teleport-prey-fail-not-incapacitated = That target is not stunned or knocked down.
+replicator-teleport-prey-fail-replicator = You cannot recall another replicator.
+replicator-teleport-prey-fail-nest = You cannot recall the nest.
+replicator-teleport-prey-fail-dead = That target is dead.
+replicator-teleport-prey-fail-grid = That target is not on the same grid as you.
+replicator-teleport-prey-fail-range = That target is too far away.
+replicator-teleport-prey-fail-no-space = There is no open space on this grid within range.
+replicator-teleport-prey-fail-target-gone = The target is no longer there.
+replicator-teleport-prey-fail-busy = You are already channeling a recall.
+replicator-teleport-prey-success = Target recalled to a random location on this grid.
+replicator-teleport-prey-success-target = Nanites wrench you through space!

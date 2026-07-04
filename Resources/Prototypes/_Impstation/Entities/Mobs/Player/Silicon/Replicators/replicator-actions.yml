@@ -1,0 +1,94 @@
+# SPDX-FileCopyrightText: 2025 ALooseGoose <ALooseGoosey@gmail.com>
+# SPDX-FileCopyrightText: 2025 beck <163376292+widgetbeck@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# these are HEAVILY based on the Bingle free-agent ghostrole from GoobStation, but reflavored and reprogrammed to make them more Robust (and less of a meme.)
+# all credit for the core gameplay concepts and a lot of the core functionality of the code goes to the folks over at Goob, but I re-wrote enough of it to justify putting it in our filestructure.
+# the original Bingle PR can be found here: https://github.com/Goob-Station/Goob-Station/pull/1519
+- type: entity
+  parent: BaseAction
+  id: ActionReplicatorSpawnNest
+  name: Manufacture Nest
+  description: Create a new nest for your hive.
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    icon: _Impstation/Interface/Actions/spawn_nest.png
+    useDelay: 20
+  - type: InstantAction
+    event: !type:ReplicatorSpawnNestActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionReplicatorUpgrade2
+  name: Upgrade (Tier 2)
+  description: Gather nanites. Gain manipulation.
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    icon: _Impstation/Interface/Actions/replicator_level2.png
+    useDelay: 20
+  - type: InstantAction
+    event: !type:ReplicatorUpgrade2ActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionReplicatorUpgrade3
+  name: Upgrade (Tier 3)
+  description: Gather nanites. Become stronger.
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    icon: _Impstation/Interface/Actions/replicator_level3.png
+    useDelay: 20
+  - type: InstantAction
+    event: !type:ReplicatorUpgrade3ActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionReplicatorTeleportPrey
+  name: Hive Recall
+  description: Channel nanites to pull an incapacitated target to a random spot 8-10 tiles away on this grid.
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    icon:
+      sprite: Objects/Magic/magicactions.rsi
+      state: blink
+    useDelay: 2
+    sound:
+      path: /Audio/Magic/blink.ogg
+      params:
+        volume: -4
+  - type: TargetAction
+    repeat: false
+    deselectOnMiss: true
+    targetingIndicator: true
+    range: 10
+    checkCanAccess: false
+  - type: EntityTargetAction
+    whitelist:
+      components:
+      - MobState
+    blacklist:
+      components:
+      - Replicator
+    canTargetSelf: false
+    event: !type:ReplicatorTeleportPreyActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ToggleThermalVision
+  name: Switch Thermal vision
+  description: Switches Thermal vision.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Action
+    itemIconStyle: BigAction
+    priority: -20
+    icon:
+      sprite: _Impstation/Mobs/Replicator/replicator.rsi
+      state: icon
+  - type: InstantAction
+    event: !type:ToggleThermalVisionEvent

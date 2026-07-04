@@ -19,3 +19,15 @@ replicator-nest-level5 = Jak nadal jest niezniszczony?!
 # the default message for when we run out of custom levelup messages.
 replicator-nest-levelup = Z gniazda dochodzi sporo odgłosów.
 replicator-nest-destroyed = Twoje gniazdo zostało zniszczone. Wybrano replikator, który je zastąpi.
+
+replicator-teleport-prey-fail-not-incapacitated = Cel nie jest ogłuszony ani powalony.
+replicator-teleport-prey-fail-replicator = Nie możesz przywołać innego replikatora.
+replicator-teleport-prey-fail-nest = Nie możesz przywołać gniazda.
+replicator-teleport-prey-fail-dead = Cel jest martwy.
+replicator-teleport-prey-fail-grid = Cel nie znajduje się na tym samym gridzie co ty.
+replicator-teleport-prey-fail-range = Cel jest zbyt daleko.
+replicator-teleport-prey-fail-no-space = Nie ma wolnego miejsca na tym gridzie w zasięgu.
+replicator-teleport-prey-fail-target-gone = Cel już tam nie ma.
+replicator-teleport-prey-fail-busy = Już kierujesz przywołanie.
+replicator-teleport-prey-success = Cel przywołany w losowe miejsce na tym gridzie.
+replicator-teleport-prey-success-target = Nanity wyrzucają cię przez przestrzeń!

@@ -1,2 +1,2 @@
-ent-ReplicatorSpawn = { ent-BaseStationEventShortDelay }
-    .desc = { ent-BaseStationEventShortDelay.desc }
+ent-ReplicatorSpawn = { ent-BaseGameRule }
+    .desc = { ent-BaseGameRule.desc }

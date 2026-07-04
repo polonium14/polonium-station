@@ -52,6 +52,19 @@
     chaosScore: 200
 
 - type: entity
+  parent: ReplicatorSpawn
+  id: ReplicatorSpawnSecretPlus
+  components:
+  - type: StationEvent
+    eventType: HostilesSpawn
+    weight: 4
+    minimumPlayers: 15
+    earliestStart: 25
+    reoccurrenceDelay: 45
+  - type: GameRule
+    chaosScore: 650
+
+- type: entity
   parent: ZombieOutbreak
   id: ZombieOutbreakSurvivalPlus
   components:

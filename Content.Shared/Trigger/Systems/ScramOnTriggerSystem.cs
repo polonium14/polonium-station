@@ -3,12 +3,12 @@ using Content.Shared.Maps;
 using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Movement.Pulling.Systems;
 using Content.Shared.Physics;
+using Content.Shared.Teleportation.Systems;
 using Content.Shared.Trigger.Components.Effects;
 using Robust.Shared.Map;
 using Robust.Shared.Network;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Audio.Systems;
-using Robust.Shared.Random;
 
 namespace Content.Shared.Trigger.Systems;
 
@@ -16,10 +16,9 @@ public sealed partial class ScramOnTriggerSystem : XOnTriggerSystem<ScramOnTrigg
 {
     [Dependency] private PullingSystem _pulling = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
-    [Dependency] private IRobustRandom _random = default!;
     [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private INetManager _net = default!;
-    [Dependency] private TurfSystem _turfSystem = default!;
+    [Dependency] private SharedRandomGridTeleportSystem _randomGridTeleport = default!;
 
     protected override void OnTrigger(Entity<ScramOnTriggerComponent> ent, EntityUid target, ref TriggerEvent args)
     {
@@ -38,51 +37,18 @@ public sealed partial class ScramOnTriggerSystem : XOnTriggerSystem<ScramOnTrigg
         if (_net.IsClient)
             return;
 
-        var targetCoords = SelectRandomTileInRange(target, ent.Comp.TeleportRadius);
+        if (!TryComp<PhysicsComponent>(target, out var physics))
+            return;
 
-        if (targetCoords != null)
-        {
-            _transform.SetCoordinates(target, targetCoords.Value);
-            args.Handled = true;
-        }
-    }
-    /// <summary>
-    /// Method to find a random empty tile within a certain radius. Will not select off-grid tiles. Returns
-    /// null if no tile is found within a certain number of tries.
-    /// </summary>
-    /// <remarks> Trends towards the outer radius. Compensates for small grids. </remarks>
-    private EntityCoordinates? SelectRandomTileInRange(EntityUid uid, Vector2 radius, int tries = 40, PhysicsComponent? physicsComponent = null)
-    {
-        var userCoords = Transform(uid).Coordinates;
-        EntityCoordinates? targetCoords = null;
+        if (!_randomGridTeleport.TryFindRandomCoordinates(
+                Transform(target).Coordinates,
+                out var targetCoords,
+                ent.Comp.TeleportRadius.X,
+                ent.Comp.TeleportRadius.Y,
+                (CollisionGroup) physics.CollisionMask))
+            return;
 
-        if (!Resolve(uid, ref physicsComponent))
-            return targetCoords;
-
-
-        for (var i = 0; i < tries; i++)
-        {
-            // distance = r * sq(x) * i
-            // r = the radius of the search area.
-            // sq(x) = the square root of [0 - 1]. Gives a number trending to the
-            // upper range of [0, 1] so that you tend to teleport further.
-            // i = A percentage based on the current try count, which results in each
-            // subsequent try landing closer and closer towards the entity.
-            // Beneficial for smaller maps, especially when the radius is large.
-            var distance = (radius.Y - radius.X) * MathF.Sqrt(_random.NextFloat()) * (1 - (float)i / tries) + radius.X;
-
-            // We then offset the user coords from a random angle * distance
-            var tempTargetCoords = userCoords.Offset(_random.NextAngle().ToVec() * distance);
-
-            if (!_turfSystem.TryGetTileRef(tempTargetCoords, out var tileRef)
-                || _turfSystem.IsSpace(tileRef.Value)
-                || _turfSystem.IsTileBlocked(tileRef.Value, (CollisionGroup)physicsComponent.CollisionMask))
-                continue;
-
-            targetCoords = tempTargetCoords;
-            break;
-        }
-
-        return targetCoords;
+        _transform.SetCoordinates(target, targetCoords);
+        args.Handled = true;
     }
 }

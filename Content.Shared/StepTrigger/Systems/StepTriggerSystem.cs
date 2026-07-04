@@ -237,6 +237,15 @@ public sealed partial class StepTriggerSystem : EntitySystem
         component.Active = active;
         Dirty(uid, component);
     }
+
+    public void SetIgnoreWeightless(Entity<StepTriggerComponent> ent, bool value)
+    {
+        if (ent.Comp.IgnoreWeightless == value)
+            return;
+
+        ent.Comp.IgnoreWeightless = value;
+        Dirty(ent);
+    }
 }
 
 [ByRefEvent]

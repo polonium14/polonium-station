@@ -19,6 +19,12 @@ public sealed partial class BodyComponent : Component
     /// </summary>
     [ViewVariables]
     public Container? Organs;
+
+    /// <summary>
+    /// Whether this body is visible through thermal vision overlays.
+    /// </summary>
+    [DataField]
+    public bool ThermalVisibility = true;
 }
 
 /// <summary>
