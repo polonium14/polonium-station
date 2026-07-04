@@ -1,4 +1,4 @@
-﻿using Content.Shared.Antag;
+using Content.Shared.Antag;
 using Content.Shared.Destructible.Thresholds;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
@@ -20,6 +20,12 @@ public abstract partial class AntagCountSelector
 
     [DataField(required: true)]
     public ProtoId<AntagSpecifierPrototype> Proto;
+
+    /// <summary>
+    /// Expected chaos change per spawned antag. Used by Secret+.
+    /// </summary>
+    [DataField]
+    public float? ChaosScore = null;
 
     public abstract int GetTargetAntagCount(IRobustRandom random, int playerCount);
 

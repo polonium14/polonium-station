@@ -5,6 +5,7 @@
   components:
   - type: GameRule
     minPlayers: 15
+    chaosScore: 400
   - type: DynamicRuleCost
     cost: 500
   - type: LoadMapRule

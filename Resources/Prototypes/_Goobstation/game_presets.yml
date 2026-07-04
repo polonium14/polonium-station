@@ -1,0 +1,69 @@
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 Damian Zieliński <zientasek.pl@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: gamePreset
+  id: SecretPlusLow
+  alias:
+  - secretpluslow
+  - secretpluscalm
+  - turbulence
+  name: secretplus-low-title
+  description: secretplus-low-description
+  showInVote: true
+  rules:
+  - SecretPlusLow
+  - BasicRoundstartVariation
+
+- type: gamePreset
+  id: SecretPlusMid
+  alias:
+  - secretplusmid
+  - secretplus
+  - entropy
+  name: secretplus-mid-title
+  description: secretplus-mid-description
+  showInVote: true
+  rules:
+  - SecretPlusMid
+  - BasicRoundstartVariation
+
+- type: gamePreset
+  id: SecretPlusMidHigh
+  alias:
+  - secretplusmidhigh
+  - secretplusmidchaos
+  name: secretplus-midhigh-title
+  description: secretplus-midhigh-description
+  showInVote: true
+  rules:
+  - SecretPlusMidHigh
+  - BasicRoundstartVariation
+
+- type: gamePreset
+  id: SurvivalPlusMid
+  alias:
+  - survivalplus
+  - survivalnew
+  name: survivalplus-title
+  description: survivalplus-description
+  showInVote: true
+  rules:
+  - SecretPlusRampingMid
+  - BasicRoundstartVariation
+
+- type: gamePreset
+  id: SecretPlusAdmeme
+  alias:
+  - secretplusadmeme
+  - secretplusevil
+  - secretplushigh
+  - chaos
+  name: secretplus-admeme-title
+  description: secretplus-admeme-description
+  showInVote: false
+  rules:
+  - SecretPlusAdmeme
+  - BasicRoundstartVariation

@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Shared._Goobstation.CCVar;
 using Content.Server.GameTicking;
 using Content.Server.RoundEnd;
 using Content.Server.StationEvents.Components;
@@ -24,6 +25,9 @@ public sealed partial class EventManagerSystem : EntitySystem
     public bool EventsEnabled { get; private set; }
     private void SetEnabled(bool value) => EventsEnabled = value;
 
+    public float EventSpeedup = 1f;
+    public int PlayerCountBias = 0;
+
     public Dictionary<EntityPrototype, StationEventComponent>? AllEventCache;
 
     public override void Initialize()
@@ -33,6 +37,8 @@ public sealed partial class EventManagerSystem : EntitySystem
         SubscribeLocalEvent<PrototypesReloadedEventArgs>(OnPrototypesReloaded);
 
         Subs.CVar(_configurationManager, CCVars.EventsEnabled, SetEnabled, true);
+        Subs.CVar(_configurationManager, GoobCVars.StationEventSpeedup, value => EventSpeedup = value, true);
+        Subs.CVar(_configurationManager, GoobCVars.StationEventPlayerBias, value => PlayerCountBias = value, true);
     }
 
     private void OnPrototypesReloaded(PrototypesReloadedEventArgs args)
@@ -71,6 +77,15 @@ public sealed partial class EventManagerSystem : EntitySystem
     }
 
     /// <summary>
+    /// Runs a specific named event.
+    /// </summary>
+    public void RunNamedEvent(string eventId)
+    {
+        var ent = GameTicker.AddGameRule(eventId);
+        Log.Info($"Running event {eventId} as entity {ent}");
+    }
+
+    /// <summary>
     /// Builds a list of all possible events and their probabilities.
     /// </summary>
     public IEnumerable<(EntProtoId, double)> ListLimitedEvents(
@@ -95,6 +110,53 @@ public sealed partial class EventManagerSystem : EntitySystem
         return TryBuildLimitedEvents(selectedEvents, out limitedEvents, currentTime, playerCount);
     }
 
+    /// <summary>
+    /// Returns true if the provided EntityTableSelector gives at least one prototype with a StationEvent comp.
+    /// </summary>
+    public bool TryBuildLimitedEvents(
+        EntityTableSelector limitedEventsTable,
+        Dictionary<EntityPrototype, StationEventComponent> availableEvents,
+        out Dictionary<EntityPrototype, StationEventComponent> limitedEvents)
+    {
+        limitedEvents = new Dictionary<EntityPrototype, StationEventComponent>();
+
+        if (availableEvents.Count == 0)
+        {
+            Log.Warning("No events were available to run!");
+            return false;
+        }
+
+        var selectedEvents = _entityTable.GetSpawns(limitedEventsTable);
+
+        if (!selectedEvents.Any())
+            return false;
+
+        foreach (var eventid in selectedEvents)
+        {
+            if (!ProtoMan.Resolve(eventid, out var eventproto))
+            {
+                Log.Warning("An event ID has no prototype index!");
+                continue;
+            }
+
+            if (limitedEvents.ContainsKey(eventproto))
+                continue;
+
+            if (eventproto.Abstract)
+                continue;
+
+            if (!eventproto.TryComp<StationEventComponent>(out var stationEvent, EntityManager.ComponentFactory))
+                continue;
+
+            if (!availableEvents.ContainsKey(eventproto))
+                continue;
+
+            limitedEvents.Add(eventproto, stationEvent);
+        }
+
+        return limitedEvents.Any();
+    }
+
     public IEnumerable<(EntProtoId, double)> ListLimitedEvents(
         IEnumerable<(EntProtoId, double)> selectedEvents,
         TimeSpan? currentTime = null,
@@ -102,7 +164,7 @@ public sealed partial class EventManagerSystem : EntitySystem
     {
         var limitedEvents = new List<(EntProtoId, double)>();
 
-        playerCount ??= _playerManager.PlayerCount;
+        playerCount ??= _playerManager.PlayerCount + PlayerCountBias;
 
         // playerCount does a lock so we'll just keep the variable here
         currentTime ??= GameTicker.RoundDuration();
@@ -155,7 +217,7 @@ public sealed partial class EventManagerSystem : EntitySystem
     {
         limitedEvents = new Dictionary<EntityPrototype, StationEventComponent>();
 
-        playerCount ??= _playerManager.PlayerCount;
+        playerCount ??= _playerManager.PlayerCount + PlayerCountBias;
 
         // playerCount does a lock so we'll just keep the variable here
         currentTime ??= GameTicker.RoundDuration();
@@ -244,19 +306,22 @@ public sealed partial class EventManagerSystem : EntitySystem
     /// <param name="currentTimeOverride">Override for round time, if using this to simulate events rather than in an actual round.</param>
     /// <returns></returns>
     public Dictionary<EntityPrototype, StationEventComponent> AvailableEvents(
+        bool ignoreEarliestStart = false,
         int? playerCountOverride = null,
-        TimeSpan? currentTimeOverride = null)
+        TimeSpan? currentTimeOverride = null,
+        float reoccurrenceMult = 1f)
     {
-        var playerCount = playerCountOverride ?? _playerManager.PlayerCount;
+        var playerCount = playerCountOverride ?? (_playerManager.PlayerCount + PlayerCountBias);
 
-        // playerCount does a lock so we'll just keep the variable here
-        var currentTime = currentTimeOverride ?? GameTicker.RoundDuration();
+        var currentTime = currentTimeOverride ?? (!ignoreEarliestStart
+            ? GameTicker.RoundDuration()
+            : TimeSpan.Zero);
 
         var result = new Dictionary<EntityPrototype, StationEventComponent>();
 
         foreach (var (proto, stationEvent) in AllEvents())
         {
-            if (CanRun(proto, stationEvent, playerCount, currentTime))
+            if (CanRun(proto, stationEvent, playerCount, currentTime, reoccurrenceMult))
             {
                 result.Add(proto, stationEvent);
             }
@@ -315,7 +380,8 @@ public sealed partial class EventManagerSystem : EntitySystem
         return TimeSpan.Zero;
     }
 
-    private bool CanRun(EntityPrototype prototype, StationEventComponent stationEvent, int playerCount, TimeSpan currentTime)
+    public bool CanRun(EntityPrototype prototype, StationEventComponent stationEvent, int playerCount, TimeSpan currentTime,
+        float reoccurrenceMult = 1f)
     {
         if (GameTicker.IsGameRuleActive(prototype.ID))
             return false;
@@ -330,14 +396,14 @@ public sealed partial class EventManagerSystem : EntitySystem
             return false;
         }
 
-        if (currentTime != TimeSpan.Zero && currentTime.TotalMinutes < stationEvent.EarliestStart)
+        if (currentTime != TimeSpan.Zero && currentTime.TotalMinutes < stationEvent.EarliestStart / EventSpeedup)
         {
             return false;
         }
 
         var lastRun = TimeSinceLastEvent(prototype);
         if (lastRun != TimeSpan.Zero && currentTime.TotalMinutes <
-            stationEvent.ReoccurrenceDelay + lastRun.TotalMinutes)
+            stationEvent.ReoccurrenceDelay * reoccurrenceMult / EventSpeedup + lastRun.TotalMinutes)
         {
             return false;
         }

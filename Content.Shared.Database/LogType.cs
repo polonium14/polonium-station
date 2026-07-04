@@ -483,4 +483,9 @@ public enum LogType
     /// Events related to players connecting/disconnecting.
     /// </summary>
     Connection = 104,
+
+    /// <summary>
+    /// SecretPlus related game interactions.
+    /// </summary>
+    SecretPlus = 10001,
 }

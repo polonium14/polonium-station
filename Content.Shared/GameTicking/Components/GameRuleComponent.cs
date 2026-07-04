@@ -35,6 +35,12 @@ public sealed partial class GameRuleComponent : Component
     /// </summary>
     [DataField]
     public MinMax? Delay;
+
+    /// <summary>
+    /// Expected chaos change when this rule runs. Used by Secret+.
+    /// </summary>
+    [DataField]
+    public float? ChaosScore = null;
 }
 
 /// <summary>

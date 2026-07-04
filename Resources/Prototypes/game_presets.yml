@@ -121,6 +121,17 @@
   showInVote: true
   description: secret-description
   rules:
+    - SecretPoloniumRule
+
+- type: gamePreset
+  id: SecretClassic
+  alias:
+    - secretclassic
+    - vanillasecret
+  name: secret-title
+  showInVote: false
+  description: secret-description
+  rules:
     - Secret
 
 - type: gamePreset

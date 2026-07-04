@@ -14,6 +14,9 @@
     maxOccurrences: 1 # this event has diminishing returns on interesting-ness, so we cap it
     startAudio:
       path: /Audio/_Polonium/Announcements/attention.ogg
+    eventType: Neutral
+  - type: GameRule
+    chaosScore: 20
   - type: RandomSentienceRule
     minSentiences: 2
     maxSentiences: 5

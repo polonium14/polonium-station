@@ -1,4 +1,7 @@
+using Content.Shared._Goobstation.CCVar;
+using Content.Shared._Goobstation.StationEvents;
 using Robust.Shared.Audio;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
 namespace Content.Server.StationEvents.Components;
@@ -87,4 +90,10 @@ public sealed partial class StationEventComponent : Component
     /// </summary>
     [DataField]
     public bool OccursDuringRoundEnd = true;
+
+    /// <summary>
+    /// Event category used by Secret+ to filter eligible events.
+    /// </summary>
+    [DataField]
+    public ProtoId<EventTypePrototype> EventType = "Neutral";
 }

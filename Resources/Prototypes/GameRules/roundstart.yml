@@ -153,10 +153,13 @@
     antags:
     - !type:FixedAntagCount
       proto: NukeopsCommander
+      chaosScore: 300
     - !type:FixedAntagCount
       proto: NukeopsMedic
+      chaosScore: 300
     - !type:LinearAntagCount
       proto: NukeopsOperative
+      chaosScore: 300
       range:
         min: 1
         max: 3
@@ -194,6 +197,7 @@
     antags:
     - !type:LinearAntagCount
       proto: Traitor
+      chaosScore: 150
       range:
         min: 1
         max: 8
@@ -221,6 +225,7 @@
     antags:
     - !type:LinearAntagCount
       proto: Changeling
+      chaosScore: 200
       playerRatio: 15
       range:
         min: 1
@@ -241,6 +246,7 @@
   components:
   - type: GameRule
     minPlayers: 15
+    chaosScore: 1000
   - type: RevolutionaryRule
   - type: AntagSelection
     selectionTime: PrePlayerSpawn
@@ -292,6 +298,7 @@
   components:
   - type: GameRule
     minPlayers: 10
+    chaosScore: 2000
   - type: DynamicRuleCost
     cost: 150
 
@@ -301,6 +308,7 @@
   components:
   - type: GameRule
     minPlayers: 20
+    chaosScore: 1000
     delay:
       min: 600
       max: 900
@@ -346,6 +354,7 @@
   components:
   - type: GameRule
     minPlayers: 30
+    chaosScore: 800
 
 # This rule makes the chosen players unable to get other antag rules, as a way to prevent metagaming job rolls.
 # Put this before antags assigned to station jobs, but after non-job antags (NukeOps/Wiz).

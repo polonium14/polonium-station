@@ -34,6 +34,9 @@
     earliestStart: 15
     weight: 6
     duration: 50
+    eventType: Neutral
+  - type: GameRule
+    chaosScore: 20
   - type: VentCrittersRule
     entries:
     - id: MobMouse
@@ -58,6 +61,9 @@
     weight: 6
     duration: 50
     minimumPlayers: 30 # Hopefully this is enough for the Rat King's potential Army (it was not, raised from 15 -> 30)
+    eventType: HostilesSpawn
+  - type: GameRule
+    chaosScore: 25
   - type: VentCrittersRule # We don't use Horde here to make RK spawns less predictable.
     entries:
     - id: MobMouse
@@ -82,6 +88,9 @@
       path: /Audio/_Polonium/Announcements/attention.ogg
     weight: 6
     duration: 50
+    eventType: Neutral
+  - type: GameRule
+    chaosScore: 20
   - type: VentCrittersRule
     entries:
     - id: MobCockroach
@@ -101,6 +110,9 @@
       path: /Audio/_Polonium/Announcements/attention.ogg
     weight: 6
     duration: 50
+    eventType: Neutral
+  - type: GameRule
+    chaosScore: 20
   - type: VentCrittersRule
     entries:
     - id: MobSnail
@@ -122,6 +134,9 @@
     weight: 6
     duration: 50
     minimumPlayers: 30
+    eventType: Chaotic
+  - type: GameRule
+    chaosScore: 30
   - type: VentCrittersRule
     entries:
     - id: MobSnail

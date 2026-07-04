@@ -1,9 +1,24 @@
 # SPDX-FileCopyrightText: 2026 Damian Zieliński <zientasek.pl@gmail.com>
 # SPDX-FileCopyrightText: 2026 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2026 Polonium-bot <admin@ss14.pl>
-# SPDX-FileCopyrightText: 2026 nikitosych <174215049+nikitosych@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: Thief
+  id: ThiefSecretPlus
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: GameRule
+    minPlayers: 12
+  - type: AntagSelection
+    antags:
+    - !type:LinearAntagCount
+      proto: Thief
+      playerRatio: 20
+      chaosScore: 80
+      range:
+        min: 1
+        max: 2
 
 - type: entity
   parent: BaseGameRule
@@ -18,10 +33,31 @@
     minimumPlayers: 5
     reoccurrenceDelay: 25
     earliestStart: 20
-    # eventType: HostilesSpawn # Goobstation - pole z #533 (Secret+), brak w forky
-  # Goobstation
+    eventType: HostilesSpawn
   - type: GameRule
-    # chaosScore: 250 # pole z #533 (Secret+), brak w forky
+    chaosScore: 250
   - type: RandomEntityStorageSpawnRule
     prototype: MobCowiekMaupa
     openStorageSound: /Audio/_Polonium/Effects/Jumpscare/jumpscare1.ogg
+
+- type: entity
+  parent: GreytideVirus
+  id: GreytideVirusSecretPlus
+  components:
+  - type: StationEvent
+    minimumPlayers: 15
+    weight: 4
+    eventType: HostilesSpawn
+  - type: GameRule
+    chaosScore: 200
+
+- type: entity
+  parent: ZombieOutbreak
+  id: ZombieOutbreakSurvivalPlus
+  components:
+  - type: StationEvent
+    minimumPlayers: 25
+    weight: 2.5
+    eventType: HostilesSpawn
+  - type: GameRule
+    chaosScore: 700

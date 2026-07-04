@@ -176,6 +176,9 @@
       path: /Audio/Announcements/announce.ogg
     weight: 8
     duration: 35
+    eventType: Chaotic
+  - type: GameRule
+    chaosScore: 70
   - type: AnomalySpawnRule
 
 - type: entity
@@ -183,6 +186,7 @@
   parent: BaseStationEventShortDelay
   components:
   - type: GameRule
+    chaosScore: 40
     delay:
       min:  30
       max:  30
@@ -192,6 +196,7 @@
       path: /Audio/Announcements/announce.ogg
     weight: 8
     duration: 35
+    eventType: Chaotic
   - type: BluespaceArtifactRule
 
 - type: entity
@@ -203,6 +208,9 @@
     reoccurrenceDelay: 5
     earliestStart: 1
     duration: 1
+    eventType: Neutral
+  - type: GameRule
+    chaosScore: 40
   - type: BluespaceLockerRule
 
 - type: entity
@@ -213,6 +221,9 @@
     weight: 7
     duration: 1
     minimumPlayers: 15
+    eventType: Maintenance
+  - type: GameRule
+    chaosScore: 60
   - type: BreakerFlipRule
 
 - type: entity
@@ -224,6 +235,9 @@
     minimumPlayers: 25
     weight: 3
     duration: 1
+    eventType: Neutral
+  - type: GameRule
+    chaosScore: 50
   - type: BureaucraticErrorRule
     ignoredJobs:
     - StationAi
@@ -241,6 +255,9 @@
     minimumPlayers: 15
     weight: 5
     duration: 1
+    eventType: Chaotic
+  - type: GameRule
+    chaosScore: 30
   - type: ClericalErrorRule
 
 - type: entity
@@ -251,6 +268,9 @@
     weight: 5
     duration: 1
     minimumPlayers: 10
+    eventType: Chaotic
+  - type: GameRule
+    chaosScore: 60
   - type: RandomEntityStorageSpawnRule
     prototype: MobSkeletonCloset
 
@@ -264,6 +284,9 @@
     reoccurrenceDelay: 20
     minimumPlayers: 20
     duration: null
+    eventType: HostilesSpawn
+  - type: GameRule
+    chaosScore: 600
   - type: SpaceSpawnRule
     spawnDistance: 0
   - type: AntagSpawner
@@ -291,6 +314,9 @@
     earliestStart: 30
     reoccurrenceDelay: 20
     minimumPlayers: 30
+    eventType: HostilesSpawn
+  - type: GameRule
+    chaosScore: 300
   - type: SpaceSpawnRule
   - type: AntagLoadProfileRule
   - type: AntagObjectives
@@ -319,6 +345,9 @@
     earliestStart: 20
     reoccurrenceDelay: 20
     minimumPlayers: 15
+    eventType: Chaotic
+  - type: GameRule
+    chaosScore: 80
   - type: ParadoxCloneRule
     objectiveBlacklist:
       tags:
@@ -345,6 +374,9 @@
     duration: 1
     earliestStart: 45
     minimumPlayers: 20
+    eventType: HostilesSpawn
+  - type: GameRule
+    chaosScore: 450
   - type: RandomSpawnRule
     prototype: MobRevenant
 
@@ -356,6 +388,7 @@
     weight: 1 # rare
     duration: null
     earliestStart: 30
+    eventType: HostilesSpawn
     reoccurrenceDelay: 60
     minimumPlayers: 30
 
@@ -379,6 +412,9 @@
       path: /Audio/_Polonium/Announcements/attention.ogg
     endAnnouncement: station-event-gas-leak-end-announcement
     weight: 8
+    eventType: Maintenance
+  - type: GameRule
+    chaosScore: 80
   - type: GasLeakRule
 
 - type: entity
@@ -390,6 +426,9 @@
     minimumPlayers: 15
     weight: 7
     duration: 240
+    eventType: Maintenance
+  - type: GameRule
+    chaosScore: 80
   - type: KudzuGrowthRule
 
 - type: entity
@@ -406,6 +445,9 @@
         volume: -4
     duration: 60
     maxDuration: 120
+    eventType: Interference
+  - type: GameRule
+    chaosScore: 80
   - type: PowerGridCheckRule
 
 - type: entity
@@ -420,6 +462,9 @@
       path: /Audio/_Polonium/Announcements/attention.ogg
     duration: 120
     maxDuration: 240
+    eventType: Interference
+  - type: GameRule
+    chaosScore: 60
   - type: SolarFlareRule
     onlyJamHeadsets: true
     affectedChannels:
@@ -448,6 +493,9 @@
     minimumPlayers: 15
     weight: 5
     duration: 60
+    eventType: Interference
+  - type: GameRule
+    chaosScore: 70
   - type: VentClogRule
 
 # Critters
@@ -542,6 +590,9 @@
     weight: 1 # Zombies was happening basically every single survival round, so now it's super rare
     duration: 1
     occursDuringRoundEnd: false
+    eventType: HostilesSpawn
+  - type: GameRule
+    chaosScore: 1400
   - type: ZombieRule
   - type: AntagSelection
     antags:
@@ -562,6 +613,9 @@
     weight: 5.5
     minimumPlayers: 20
     duration: null # LoneOpsSpawn needs an infinite duration so that it inherits the NukeOpsRule things of an actually appropriate end screen (not always "Neutral outcome!") and... ending the game if the station is nuked.
+    eventType: HostilesSpawn
+  - type: GameRule
+    chaosScore: 700
   - type: RuleGrids
   - type: LoadMapRule
     gridPath: /Maps/Shuttles/ShuttleEvent/striker.yml
@@ -588,6 +642,9 @@
       path: /Audio/_Polonium/Announcements/intercept.ogg
     duration: null # the rule has to last the whole round not 1 second
     occursDuringRoundEnd: false
+    eventType: HostilesSpawn
+  - type: GameRule
+    chaosScore: 200
   - type: AlertLevelInterceptionRule
   - type: AntagSelection
     antags:
@@ -606,6 +663,9 @@
     duration: 150
     maxDuration: 300
     reoccurrenceDelay: 30
+    eventType: Chaotic
+  - type: GameRule
+    chaosScore: 30
   - type: MassHallucinationsRule
     minTimeBetweenIncidents: 0.1
     maxTimeBetweenIncidents: 300
@@ -623,6 +683,9 @@
     duration: 1
     startAudio:
       path: /Audio/_Polonium/Announcements/ion_storm.ogg
+    eventType: Chaotic
+  - type: GameRule
+    chaosScore: 150
   - type: IonStormRule
 
 - type: entity
@@ -635,6 +698,9 @@
     weight: 5
     minimumPlayers: 25
     reoccurrenceDelay: 20
+    eventType: Maintenance
+  - type: GameRule
+    chaosScore: 200
   - type: GreytideVirusRule
     accessGroups:
     - Cargo
