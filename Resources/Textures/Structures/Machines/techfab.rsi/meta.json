@@ -28,8 +28,11 @@
     {
       "name": "cargo"
     },
-	{
+    {
       "name": "ammo"
+    },
+    {
+      "name": "music"
     },
     {
       "name": "panel"
