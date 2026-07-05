@@ -16,8 +16,8 @@
     offState: off
     brokenState: broken
     normalState: normal-unshaded
-  - type: Advertise
-    pack: MailDrobeAds
+  - type: DatasetVocalizer
+    dataset: MailDrobeAds
   - type: Sprite
     sprite: _Goobstation/Structures/Machines/VendingMachines/maildrobe.rsi
     layers:

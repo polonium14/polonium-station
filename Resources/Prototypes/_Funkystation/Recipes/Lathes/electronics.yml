@@ -16,8 +16,3 @@
   parent: BaseCircuitboardRecipe
   id: PipeScrubberMachineCircuitBoard
   result: PipeScrubberMachineCircuitBoard
-
-- type: latheRecipe
-  parent: BaseCircuitboardRecipe
-  id: WashingMachineCircuitboard
-  result: WashingMachineCircuitboard
