@@ -850,14 +850,6 @@ ClothingUniformJumpsuitHydroponics: FuClothingUniformJumpsuitHydroponics
 ClothingUniformJumpskirtHydroponics: FuClothingUniformJumperskirtHydroponics
 ClothingUniformOveralls: FuClothingUniformShirtPantstHydroponicsOveralls
 
-# 2026-02-27
-Stunbaton: Nightstick
-WeaponDisabler: null
-WeaponTaser: null
-
-# TODO: When the RG-2 and its safe are ported over, uncomment the line below and add a timestamp.
-#GunSafeDisabler: GunSafePistolRg2
-
 # 2026-05-30 zamiana starych telefonów-instrumentów na callable phones
 PhoneInstrument: CallablePhoneInstrument
 PhoneInstrumentSyndicate: CallablePhoneInstrumentSyndicate
