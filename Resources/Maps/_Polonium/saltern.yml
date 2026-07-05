@@ -3944,84 +3944,6 @@ entities:
     - type: Transform
       pos: -37.568184,29.675117
       parent: 2
-- proto: ActionToggleInternals
-  entities:
-  - uid: 446
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 424
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 424
-  - uid: 12287
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 12285
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 12285
-  - uid: 12290
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 12288
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 12288
-- proto: ActionToggleJetpack
-  entities:
-  - uid: 434
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 424
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 424
-  - uid: 12286
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 12285
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 12285
-  - uid: 12289
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 12288
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 12288
-- proto: ActionToggleLight
-  entities:
-  - uid: 3148
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 6568
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 6568
-  - uid: 10026
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 8003
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 8003
 - proto: AirAlarm
   entities:
   - uid: 6
@@ -6967,13 +6889,6 @@ entities:
     components:
     - type: Transform
       pos: 42.5,21.5
-      parent: 2
-- proto: AutoclaveFlatpack
-  entities:
-  - uid: 12340
-    components:
-    - type: Transform
-      pos: 18.348602,-18.640627
       parent: 2
 - proto: Autolathe
   entities:
@@ -36506,33 +36421,6 @@ entities:
     - type: Transform
       pos: 29.136202,-6.538535
       parent: 2
-- proto: FoodSnackAncientHotdog
-  entities:
-  - uid: 3767
-    components:
-    - type: Transform
-      pos: -2.4381542,-1.3946562
-      parent: 2
-  - uid: 12366
-    components:
-    - type: Transform
-      pos: -11.0974,-4.3639646
-      parent: 2
-  - uid: 12367
-    components:
-    - type: Transform
-      pos: -13.238025,-4.8014646
-      parent: 2
-  - uid: 12368
-    components:
-    - type: Transform
-      pos: -11.0974,-3.6608396
-      parent: 2
-  - uid: 12369
-    components:
-    - type: Transform
-      pos: -10.230454,-3.868414
-      parent: 2
 - proto: FoodSnackChocolate
   entities:
   - uid: 5735
@@ -52352,58 +52240,16 @@ entities:
     - type: Transform
       pos: 29.505527,16.757046
       parent: 2
-    - type: GasTank
-      toggleActionEntity: 446
-    - type: Jetpack
-      toggleActionEntity: 434
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 434
-          - 446
   - uid: 12285
     components:
     - type: Transform
       pos: 29.492306,16.399242
       parent: 2
-    - type: GasTank
-      toggleActionEntity: 12287
-    - type: Jetpack
-      toggleActionEntity: 12286
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 12286
-          - 12287
   - uid: 12288
     components:
     - type: Transform
       pos: 29.492306,16.05202
       parent: 2
-    - type: GasTank
-      toggleActionEntity: 12290
-    - type: Jetpack
-      toggleActionEntity: 12289
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 12289
-          - 12290
 - proto: JetpackSecurityFilled
   entities:
   - uid: 255
@@ -52548,24 +52394,6 @@ entities:
     - type: Transform
       pos: -7.1817884,29.876478
       parent: 2
-    - type: HandheldLight
-      toggleActionEntity: 3148
-    - type: ContainerContainer
-      containers:
-        cell_slot: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 3148
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: True
-    - type: ActionsContainer
   - uid: 8002
     components:
     - type: Transform
@@ -52576,24 +52404,6 @@ entities:
     - type: Transform
       pos: 9.49404,17.088064
       parent: 2
-    - type: HandheldLight
-      toggleActionEntity: 10026
-    - type: ContainerContainer
-      containers:
-        cell_slot: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 10026
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: True
-    - type: ActionsContainer
   - uid: 8004
     components:
     - type: Transform
@@ -53196,20 +53006,6 @@ entities:
     - type: Transform
       pos: -8.408398,20.374077
       parent: 2
-- proto: MailMetricsCartridge
-  entities:
-  - uid: 8078
-    components:
-    - type: Transform
-      pos: 22.333054,13.1992035
-      parent: 2
-- proto: MailTeleporter
-  entities:
-  - uid: 8079
-    components:
-    - type: Transform
-      pos: 21.5,10.5
-      parent: 2
 - proto: MaintenanceFluffSpawner
   entities:
   - uid: 8080
@@ -53492,13 +53288,6 @@ entities:
     components:
     - type: Transform
       pos: 7.5,-7.5
-      parent: 2
-- proto: MedicalBiofabricator
-  entities:
-  - uid: 11982
-    components:
-    - type: Transform
-      pos: 17.5,-17.5
       parent: 2
 - proto: MedicalComputerComms
   entities:
@@ -55723,7 +55512,7 @@ entities:
       parent: 2
     - type: ApcPowerReceiver
       powerLoad: 0
-    - type: Timer
+    - type: BlinkingPoweredLight
   - uid: 8455
     components:
     - type: Transform
@@ -63445,21 +63234,6 @@ entities:
     - type: Transform
       pos: -7.5,7.5
       parent: 2
-- proto: SurgeryKitFilled
-  entities:
-  - uid: 7527
-    components:
-    - type: Transform
-      pos: 17.553394,-18.510632
-      parent: 2
-  - uid: 8011
-    components:
-    - type: Transform
-      pos: 0.46659613,13.834739
-      parent: 2
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
 - proto: SurveillanceCameraCommand
   entities:
   - uid: 5656

@@ -10,6 +10,7 @@
   - Igniter
   - ModularReceiver
   - MicroManipulatorStockPart
+  - MatterBinStockPart
   - ConveyorBeltAssembly
 
 - type: latheRecipePack

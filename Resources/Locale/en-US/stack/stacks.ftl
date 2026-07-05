@@ -133,6 +133,7 @@ stack-bloodpack = bloodpack
 stack-medicated-suture = medicated-suture
 stack-regenerative-mesh = regenerative-mesh
 stack-micro-manipulator = modular machine part
+stack-matter-bin = matter bin
 stack-pancake = pancake
 stack-blueberry-pancake = blueberry pancake
 stack-chocolate-chip-pancake = chocolate chip pancake

@@ -628,7 +628,7 @@ SuitStorageBasic: SuitStorageEVA
 ClothingNeckCloakMiner: null
 
 # 2025-05-22
-MatterBinStockPart: MicroManipulatorStockPart
+# MatterBinStockPart: MicroManipulatorStockPart
 CapacitorStockPart: MicroManipulatorStockPart
 
 # 2025-05-26 Turrets
