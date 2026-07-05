@@ -6,6 +6,11 @@
   id: ElectrolyzerMachineCircuitboard
   result: ElectrolyzerMachineCircuitboard
 
+- type: latheRecipe
+  parent: [ BaseCircuitboardRecipe, BaseEngineeringMachineRecipeCategory ]
+  id: BluespaceGasSenderMachineBoard
+  result: BluespaceGasSenderMachineBoard
+
 ## Service
 
 # Washing machine

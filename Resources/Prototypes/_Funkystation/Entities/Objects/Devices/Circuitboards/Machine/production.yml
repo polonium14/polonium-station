@@ -15,6 +15,20 @@
       CableHV: 5
 
 - type: entity
+  id: BluespaceGasSenderMachineBoard
+  parent: BaseMachineCircuitboard
+  name: bluespace gas sender machine board
+  description: A machine printed circuit board for a bluespace gas sender.
+  components:
+  - type: MachineBoard
+    prototype: BluespaceSender
+    stackRequirements:
+      Steel: 5
+      Capacitor: 4
+      Manipulator: 4
+      MatterBin: 2
+
+- type: entity
   parent: BaseMachineCircuitboard
   id: WashingMachineCircuitboard
   name: Nanotrasen Commercial Model-C washing machine board
