@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2026 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: barSign
   id: Zabka
   name: barsign-prototype-name-zabka
@@ -5,3 +10,11 @@
     sprite: _Polonium/Structures/Wallmounts/Barsigns/zabkacafe.rsi
     state: zabkacafe
   description: barsign-prototype-description-zabka
+
+- type: barSign
+  id: Szkodnik
+  name: barsign-prototype-name-szkodnik
+  icon:
+    sprite: _Polonium/Structures/Wallmounts/Barsigns/szkodnik.rsi
+    state: szkodnik
+  description: barsign-prototype-description-szkodnik
