@@ -117,8 +117,3 @@
   - type: Sprite
     sprite: _Polonium/Objects/Fun/Plushies/vulpplush.rsi
     state: icon
-  - type: Clothing
-    quickEquip: false
-    sprite: _Polonium/Objects/Fun/Plushies/vulpplush.rsi
-    slots:
-    - HEAD
