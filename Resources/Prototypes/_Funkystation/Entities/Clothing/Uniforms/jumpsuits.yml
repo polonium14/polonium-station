@@ -32,3 +32,14 @@
     sprite: _Funkystation/Clothing/Uniforms/Jumpsuit/nanotrasen_representative_sweater.rsi
   - type: Clothing
     sprite: _Funkystation/Clothing/Uniforms/Jumpsuit/nanotrasen_representative_sweater.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitCargoMailJumpSuit
+  name: mail carrier's jumpsuit
+  description: A jumpsuit that facilitates deliveries, be it cargo or babies. Keep on keeping on!
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Clothing/Uniforms/Jumpsuit/mailsuit.rsi
+  - type: Clothing
+    sprite: _Funkystation/Clothing/Uniforms/Jumpsuit/mailsuit.rsi
