@@ -154,6 +154,7 @@
     - id: GasAnalyzer
     - id: MedkitOxygenFilled
     - id: HolofanProjector
+    - id: DoorRemoteFirefight
     - id: RPD
     - id: RCDAmmo
     - id: AirGrenade
