@@ -44,6 +44,8 @@
   - OffsetCaneMime
   - OffsetCaneNT
   - Cane
+  - CardBoxBlack
+  - CardBoxNanotrasen
   - TowelColorWhite
 
 - type: loadoutGroup
