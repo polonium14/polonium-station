@@ -16,7 +16,7 @@
           "/Audio/Weapons/smash.ogg"
   - type: InteractionOutline
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/basic.rsi
+    sprite: _DV/Structures/Doors/Airlocks/Standard/basic.rsi
     snapCardinals: true
     layers:
     - state: closed
@@ -211,7 +211,7 @@
   - type: Occluder
     enabled: false
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Glass/glass.rsi
+    sprite: _DV/Structures/Doors/Airlocks/Glass/glass.rsi
   - type: AnimationPlayer
   - type: Fixtures
     fixtures:

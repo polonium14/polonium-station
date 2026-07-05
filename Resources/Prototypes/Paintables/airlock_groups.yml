@@ -12,8 +12,10 @@
     engineering: AirlockEngineering
     freezer: AirlockFreezer
     hydroponics: AirlockHydroponics
+    janitor: AirlockJanitor
     maintenance: AirlockMaint
     medical: AirlockMedical
+    robotics: AirlockRobotics
     salvage: AirlockSalvage
     science: AirlockScience
     security: AirlockSecurity
@@ -32,8 +34,10 @@
     command: AirlockCommandGlass
     engineering: AirlockEngineeringGlass
     hydroponics: AirlockHydroponicsGlass
+    janitor: AirlockJanitorGlass
     maintenance: AirlockMaintGlass
     medical: AirlockMedicalGlass
+    robotics: AirlockRoboticsGlass
     salvage: AirlockSalvageGlass
     science: AirlockScienceGlass
     security: AirlockSecurityGlass

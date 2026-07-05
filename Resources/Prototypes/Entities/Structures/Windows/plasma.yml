@@ -5,9 +5,9 @@
   components:
   - type: Sprite
     drawdepth: WallTops
-    sprite: Structures/Windows/plasma_window.rsi
+    sprite: _DV/Structures/Windows/plasma_window.rsi
   - type: Icon
-    sprite: Structures/Windows/plasma_window.rsi
+    sprite: _DV/Structures/Windows/plasma_window.rsi
   - type: Damageable
     damageModifierSet: Glass
   - type: Injurable
@@ -35,7 +35,7 @@
     node: plasmaWindow
   - type: Appearance
   - type: DamageVisuals
-    thresholds: [5, 10, 20]
+    thresholds: [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
     damageDivisor: 3
     trackAllDamage: true
     damageOverlay:
@@ -56,10 +56,10 @@
     - Window
   components:
   - type: Sprite
-    sprite: Structures/Windows/directional.rsi
+    sprite: _DV/Structures/Windows/directional.rsi
     state: plasma_window
   - type: Icon
-    sprite: Structures/Windows/directional.rsi
+    sprite: _DV/Structures/Windows/directional.rsi
     state: plasma_window
   - type: Construction
     graph: WindowDirectional
@@ -135,6 +135,7 @@
     - South
     - East
   - type: DamageVisuals
+    thresholds: [5, 10, 20]
     damageOverlay:
       sprite: Structures/Windows/cracks_diagonal.rsi
   - type: Construction

@@ -1301,3 +1301,39 @@
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsMaintenance ]
+
+- type: entity
+  parent: AirlockRobotics
+  id: AirlockRoboticsLocked
+  suffix: Robotics, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsRobotics ]
+
+- type: entity
+  parent: AirlockRoboticsGlass
+  id: AirlockRoboticsGlassLocked
+  suffix: Robotics, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsRobotics ]
+
+- type: entity
+  parent: AirlockMaint
+  id: AirlockMaintCommonLocked
+  suffix: Common, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMaintenance ]
+
+- type: entity
+  parent: AirlockMaint
+  id: AirlockMaintIntLocked
+  suffix: Interior, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMaintenance ]
