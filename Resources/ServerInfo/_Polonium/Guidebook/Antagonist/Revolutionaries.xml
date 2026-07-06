@@ -1,59 +1,32 @@
-<!--
-SPDX-FileCopyrightText: 2023 coolmankid12345 <55817627+coolmankid12345@users.noreply.github.com>
-SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
-SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
-SPDX-FileCopyrightText: 2024 Ghagliiarghii <68826635+Ghagliiarghii@users.noreply.github.com>
-SPDX-FileCopyrightText: 2024 Killerqu00 <47712032+Killerqu00@users.noreply.github.com>
-SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
-SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
-SPDX-FileCopyrightText: 2024 UBlueberry <161545003+UBlueberry@users.noreply.github.com>
-SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
-SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
-
-SPDX-License-Identifier: AGPL-3.0-or-later
--->
-
 <Document>
-  # Rewolucjoniści
+  # Revolutionaries
 
   <Box>
-    [color=#c8c8c8][italic]"Niech żyje rewolucja!!"[/italic][/color]
+    [color=#999999][italic]"Viva la revolución!!"[/italic][/color]
   </Box>
   <Box>
     <GuideEntityEmbed Entity="PosterContrabandRevolt" Caption=""/>
   </Box>
 
-  Rewolucjoniści są antagonistami rekrutowanymi w trakcie rundy i są sponsorowani przez [color=#ff8a8a]Syndykat[/color], których zadaniem jest przejęcie kontroli nad stacją.
-  Przywódcy rewolucjonistów otrzymują urządzenie PDA z uplinkiem, opłacone przez Yucatan Communications.
+  Revolutionaries are conversion antagonists sponsored by the [color=#ff0000]Syndicate[/color] who are tasked with taking control of the station. They have no fancy gimmicks or cheap tricks, they only have a cause and strength in numbers.
 
-  ## Cele
-  Musisz skuć kajdankami, zabić lub wygnać wszystkich członków [textlink="dowództwa" link="Command"] przebywających na stacji, w dowolnej kolejności.
+  ## Objectives
+  You must convert, cuff or kill all of the [textlink="Command staff" link="Command"] on station in no particular order.
 
-  Twoim celem [bold]nie jest zniszczenie stacji[/bold], ale jej [italic]przejęcie /italic], więc postaraj się jak najbardziej ograniczyć zniszczenia.
+  Your objective is [bold]not to destroy the station[/bold], but [italic]to take it over[/italic], so try to minimize damage where possible.
 
-  [bold]Rewolucja zakończy się niepowodzeniem[/bold], jeśli zginą wszyscy [bold][color=#5e9cff]przywódcy rewolucji[/color][/bold], a w takim przypadku wszyscy [color=#ff8a8a]rewolucjoniści[/color] przestaną być rewolucjonistami.
+  [bold]The revolution will fail[/bold] if all of the [bold][color=#5e9cff]Head Revolutionaries[/color][/bold] die, and all [color=red]Revolutionaries[/color] will de-convert if this happens.
 
-  [bold]Rewolucja również zakończy się niepowodzeniem[/bold], jeśli wszyscy przywódcy rewolucji [bold][color=#5e9cff]będą poza stacją[/color][/bold]. Twoim celem jest przejęcie stacji, więc nie oddalaj się zbytnio.
-
-  ## Twój Uplink
-  [bold][color=#5e9cff]Przywódcy rewolucji[/color][/bold] są wybierani na początku zmiany. Otrzymują oni urządzenie PDA z uplinkiem, podobne do urządzenia używanego przez Syndykat.
-
-  W tym uplinku nie można używać telekryształów. Zamiast tego należy korzystać z nowej waluty, [color=#ff8a8a]RevCoin[/color]. Po zakończeniu korzystania z uplinku należy go koniecznie zablokować.
-
-  Zapasy nie są uzupełniane, więc nie ma sensu gromadzić RevCoinów.
+  ## Headrevs & Conversion
+  [bold][color=#5e9cff]Head Revolutionaries[/color][/bold] are chosen at the start of the shift and begin with a [color=cyan]flash[/color] and a pair of [color=cyan]sunglasses[/color].
 
   <Box>
-    <GuideEntityEmbed Entity="RevCoin"/>
+    <GuideEntityEmbed Entity="Flash"/>
+    <GuideEntityEmbed Entity="ClothingEyesGlassesSunglasses"/>
   </Box>
 
-  ## Ochrona umysłu i okulary
-  [color=#7ee8f7]Implanty ochrony umysłu[/color] stanowią przeszkodę dla rewolucji. Powodują one, że:
-  - Osoba, której wszczepiono implant, nie zostanie przemieniona w [color=#ff8a8a]rewolucjonistę[/color]
-  - Przemienią rewolucjonistów w członków załogi i sprawią, że przestaną podążać za głównym rewolucjonistą
-  - [bold]Zostaną widocznie zniszczone po wszczepieniu [color=#5e9cff]głównemu rewolucjoniście[/color][/bold], co zdradzi jego obecność
-  - NIE chronią przed chwilową dezorientacją spowodowaną błyskiem
-
-  Te jednak chronią przed chwilową dezorientacją i przemianą.
+  You can convert crew members to your side by taking any [bold]flash[/bold] and attacking someone with it using [color=#ff0000]harm mode[/color].
+  However, [bold]you can't convert your target if they're wearing [color=cyan]flash protection[/color][/bold] such as sunglasses or a welding mask.
 
   <Box>
     <GuideEntityEmbed Entity="ClothingEyesGlassesSunglasses"/>
@@ -61,55 +34,20 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     <GuideEntityEmbed Entity="ClothingHeadHatWelding"/>
   </Box>
 
-  Należy pamiętać, że jeśli ktoś jest objęty osłoną umysłu, będąc rewolucjonistą, jest w stanie przypomnieć sobie wszystko ze swojej przeszłości, w tym to, kto go nawrócił.
+  Another obstacle in your way are those pesky [color=cyan]mindshield implanters[/color]. These will:
+  - Prevent the implanted person from being converted into a [color=red]Revolutionary[/color]
+  - De-convert Revolutionaries, and will make them no longer loyal to your cause
+  - [bold]Visibly be destroyed upon being implanted into a [color=#5e9cff]Head Revolutionary[/color][/bold], giving you away
+  - NOT protect against flash disorientation
 
-  ## Twoje narzędzia
-  <Box>
-    <GuideEntityEmbed Entity="Flash"/>
-  </Box>
-
-  Twój błysk i implanter to twoje podstawowe narzędzia. Możesz usuwać osłony umysłowe z członków załogi i wszczepiać je zwierzętom, dzięki czemu możesz kontynuować nawracanie.
-
-  Nie potrzebujesz specjalnego błysku. Każdy błysk w twoich rękach jest narzędziem do nawracania.
-
-  Ludzie zauważą, kiedy zaczniesz ich konwertować. Starannie planuj swoje działania, ponieważ jeden zły ruch może zaalarmować ochronę.
+  Assume all of [color=#cb0000]Security[/color] and [color=#1b67a5]Command[/color] are implanted with mindshields already, [bold]however they can be removed using an implant extractor, obtainable from the Medical department's MedFab.[/bold]
 
   <Box>
-    <GuideEntityEmbed Entity="LieutenantRevolutionaryImplanter"/>
+    <GuideEntityEmbed Entity="MindShieldImplanter"/>
   </Box>
 
-  Narzędzie to pozwala przemienić zwykłego rewolucjonistę w porucznika, co umożliwia tworzenie kadr rewolucjonistów gotowych do działania w każdej chwili.
+  ## Revolutionary
+  A [color=red]Revolutionary[/color] is a crew member that has been converted by a [bold][color=#5e9cff]Head Revolutionary[/color][/bold].
 
-  To twoje narzędzie organizacyjne. Porucznicy ci, choć nie są w stanie nikogo przemienić, mogą sprawdzić status wszystkich rewolucjonistów  na pokładzie.
-
-  Mają również stały dostęp radiowy do kanału Syndykatu, co pozwala im koordynować działania z tobą z dowolnego miejsca na stacji.
-
-  <Box>
-    <GuideEntityEmbed Entity="RevsFastDrawImplanter"/>
-  </Box>
-
-  Ten implanter pozwala szybko usuwać implanty. Zwykły implanter potrzebuje 60 sekund na usunięcie pojedynczego implantu, podczas gdy ten zajmuje to zaledwie 30 sekund.
-  Przydatne, gdy chcesz zapewnić sobie przewagę w walce lub zwiększyć bezpieczeństwo.
-
-  Pamiętaj, aby [bold]przełączyć implanter[/bold] w celu usunięcia osłony umysłu, ponieważ próba usunięcia niewłaściwego implantu spowoduje zadanie ogromnych obrażeń!
-
-  <Box>
-    <GuideEntityEmbed Entity="EncryptionKeySyndie"/>
-  </Box>
-
-  Klucz szyfrujący, który umożliwia komunikację z innymi agentami i przywódcami rewolucji na stacji. Przydatny do komunikacji na duże odległości, ale niezbyt przydatny, jeśli zostaniesz złapany.
-  <Box>
-    <GuideEntityEmbed Entity="ClothingEyesGlassesSunglasses"/>
-  </Box>
-
-  Drip. Chroni przed błyskami fleszy. Przydatny, gdy ścigają cię ochroniarze lub nadgorliwi członkowie załogi.
-
-  ## Dodatkowe narzędzia
-
-  <Box>
-    <GuideEntityEmbed Entity="GrenadeFlashBangRevolutionary"/>
-  </Box>
-
-  Ten granat błyskowy może przemienić każdego w promieniu swojego działania, co przydaje się do wywołania chaosu. Aby to zrobić, musisz wziąć śrubokręt, podejść do granatu i przy nim pomajstrować. Tylko przywódcy rewolucji mają dostęp do tej niesamowitej mocy, więc dobrze go ukryj.
-  Tylko przywódcy rewolucji mogą rzucać rewolucyjny granat błyskowy i przekonwertować nimi ludzi.
+  [bold][color=red]Revolutionaries[/color] can't convert people themselves,[/bold] but they're more than capable of doing dirty work and carrying out orders.
 </Document>
