@@ -5310,64 +5310,6 @@ entities:
     - type: Transform
       pos: 3.5402613,7.6028175
       parent: 2
-- proto: ActionToggleInternals
-  entities:
-  - uid: 5
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 4
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 4
-  - uid: 8
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 7
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 7
-  - uid: 11
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 10
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 10
-- proto: ActionToggleJetpack
-  entities:
-  - uid: 6
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 4
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 4
-  - uid: 9
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 7
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 7
-  - uid: 12
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 10
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 10
 - proto: AirAlarm
   entities:
   - uid: 13
@@ -58344,58 +58286,16 @@ entities:
     - type: Transform
       pos: 38.389557,13.366144
       parent: 2
-    - type: GasTank
-      toggleActionEntity: 5
-    - type: Jetpack
-      toggleActionEntity: 6
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 6
-          - 5
   - uid: 7
     components:
     - type: Transform
       pos: 38.389557,13.282811
       parent: 2
-    - type: GasTank
-      toggleActionEntity: 8
-    - type: Jetpack
-      toggleActionEntity: 9
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 9
-          - 8
   - uid: 10
     components:
     - type: Transform
       pos: 38.55622,13.407811
       parent: 2
-    - type: GasTank
-      toggleActionEntity: 11
-    - type: Jetpack
-      toggleActionEntity: 12
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 12
-          - 11
 - proto: Jukebox
   entities:
   - uid: 8687
@@ -68028,13 +67928,13 @@ entities:
     - type: Transform
       pos: -27.567995,-25.37563
       parent: 2
-- proto: ShelfWallFreezerWhite
-  entities:
-  - uid: 10265
-    components:
-    - type: Transform
-      pos: -16.5,6.5
-      parent: 2
+#- proto: ShelfWallFreezerWhite
+#  entities:
+#  - uid: 10265
+#    components:
+#    - type: Transform
+#      pos: -16.5,6.5
+#      parent: 2
 - proto: ShuttersNormal
   entities:
   - uid: 10266
@@ -74416,7 +74316,6 @@ entities:
   - uid: 11194
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
       pos: 7.5,25.5
       parent: 2
 - proto: VendingMachineSoda
@@ -74424,7 +74323,6 @@ entities:
   - uid: 11195
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
       pos: 7.5,26.5
       parent: 2
 - proto: VendingMachineSovietSoda
@@ -74489,7 +74387,6 @@ entities:
   - uid: 11205
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
       pos: -21.5,15.5
       parent: 2
 - proto: VendingMachineWinter
