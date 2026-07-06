@@ -20,12 +20,7 @@ Twoje PDA zawiera zarówno nazwę statku, jak i listę załogi aktualnie na nim 
 
 ## Wzywanie pomocy
 
-Twoją najlepszą nadzieją jest użycie aplikacji SOS w PDA, aby zaalarmować Ochronę i Medyków, że potrzebujesz pomocy. Możesz również użyć ręcznego radia ratunkowego, aby wezwać pomoc.
-
-<Box>
-  <GuideEntityEmbed Entity="SOSCartridge"/>
-  <GuideEntityEmbed Entity="RadioHandheldEmergency"/>
-</Box>
+Twoją najlepszą nadzieją jest użycie wspólnego radia, aby zaalarmować Ochronę i Medyków, że potrzebujesz pomocy. Możesz również użyć ręcznego radia ratunkowego, aby wezwać pomoc.
 
 ## Leczenie awaryjne
 W przypadku poważnego zagrożenia, jest kilka rzeczy, które możesz zrobić, aby zapewnić sobie długoterminowe przetrwanie, w tym:
