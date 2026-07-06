@@ -1186,6 +1186,7 @@
   loadouts:
   - HeadofSecurityCloak
   - HeadofSecurityMantle
+  - Bodycam # Goobstation - Body cameras
 
 - type: loadoutGroup
   id: HeadofSecurityOuterClothing
@@ -1233,6 +1234,7 @@
   minLimit: 0
   loadouts:
   - MessTie
+  - Bodycam # Goobstation - Body cameras
 
 - type: loadoutGroup
   id: WardenOuterClothing
@@ -1308,6 +1310,7 @@
   minLimit: 0
   loadouts:
   - MessTie
+  - Bodycam # Goobstation - Body cameras
 
 - type: loadoutGroup
   id: SecurityOuterClothing
@@ -1352,6 +1355,7 @@
   minLimit: 0
   loadouts:
   - DetectiveTie
+  - Bodycam # Goobstation - Body cameras
 
 - type: loadoutGroup
   id: DetectiveJumpsuit
@@ -1432,6 +1436,7 @@
   minLimit: 0
   loadouts:
   - ReporterPressVest
+  - NoPro
 
 #- type: loadoutGroup
 #  id: ReporterJobTrinkets

@@ -20,6 +20,7 @@
     ClothingHeadsetSecurity: 3
     FuClothingOuterWinterSec: 2
     ClothingOuterArmorBasic: 4
+    SurveillanceWirelessCameraBodySecurity: 3 # funkystation - add sec body cam
     ClothingNeckScarfStripedRed: 3
     ClothingEyesBlindfold: 1
     ClothingShoesBootsCombat: 1

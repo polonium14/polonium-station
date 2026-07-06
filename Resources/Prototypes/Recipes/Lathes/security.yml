@@ -297,3 +297,12 @@
   materials:
     Plastic: 100
     Steel: 400
+
+- type: latheRecipe
+  id: SurveillanceWirelessCameraBodySecurity
+  result: SurveillanceWirelessCameraBodySecurity
+  completetime: 3
+  materials:
+    Cloth: 200
+    Steel: 100
+    Plastic: 100
