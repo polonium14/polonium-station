@@ -1,2 +1,3 @@
-stack-metal-hydrogen = metal hydrogen
-stack-pokerchip = poker chip
+stack-metal-hydrogen = wodór metaliczny
+stack-pokerchip = żeton pokerowy
+zaukerite = zaukerit

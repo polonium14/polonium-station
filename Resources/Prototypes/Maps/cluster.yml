@@ -34,7 +34,6 @@
           Lawyer: [ 1, 1 ]
           ServiceWorker: [ 1, 1 ]
           Reporter: [ 1, 1 ]
-          Boxer: [ 1, 1 ]
           #engineering
           ChiefEngineer: [ 1, 1 ]
           StationEngineer: [ 5, 5 ]
