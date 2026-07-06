@@ -13,5 +13,6 @@
   - type: RandomMetadata
     nameSegments:
     - NamesSyndicateElite
+    nameFormat: name-format-nukie-commander
   mindRoles:
   - MindRoleNukeops

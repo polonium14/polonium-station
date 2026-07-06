@@ -11,15 +11,14 @@
   - type: Sprite
     sprite: _Polonium/Objects/Cosumable/Food/burger.rsi
     state: hotdog
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 15
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 10
-        - ReagentId: Protein
-          Quantity: 5
+  - type: Solution
+    solution:
+      maxVol: 15
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 10
+      - ReagentId: Protein
+        Quantity: 5
   - type: Tag
     tags:
     - Meat

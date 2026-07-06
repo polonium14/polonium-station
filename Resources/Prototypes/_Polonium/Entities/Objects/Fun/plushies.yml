@@ -76,3 +76,5 @@
       - !type:DoActsBehavior
         acts: ["Destruction"]
   - type: Damageable
+  - type: Injurable
+    damageContainer: Inorganic

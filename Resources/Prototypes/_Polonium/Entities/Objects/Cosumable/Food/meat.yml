@@ -32,14 +32,13 @@
   - type: Sprite
     sprite: _Polonium/Objects/Cosumable/Food/meat.rsi
     state: petoparowek
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        reagents:
-        - ReagentId: UncookedAnimalProteins
-          Quantity: 20
-        - ReagentId: Fat
-          Quantity: 8
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: UncookedAnimalProteins
+        Quantity: 20
+      - ReagentId: Fat
+        Quantity: 8
   - type: ToolRefinable
     refineResult:
     - id: FoodMeatParowka

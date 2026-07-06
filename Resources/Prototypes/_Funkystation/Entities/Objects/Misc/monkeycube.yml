@@ -10,10 +10,11 @@
   id: SyndicateDinoBox
   description: A blast from the past! Just add water!
   components:
-  - type: StorageFill
-    contents:
-    - id: RandomDinoCube
-      amount: 6
+  - type: EntityTableContainerFill
+    containers:
+      storagebase:
+        id: RandomDinoCube
+        amount: 6
   - type: Sprite
     sprite: Objects/Misc/monkeycube.rsi
     state: box

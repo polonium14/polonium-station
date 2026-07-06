@@ -62,9 +62,6 @@
     - NanoTaskCartridge
     - NewsReaderCartridge
     - WantedListCartridge
-    - NanoChatCartridge
-    - SOSCartridge
-    - WordleCartridge
 
 - type: entity
   parent: [BasePDA, BaseCommandContraband]

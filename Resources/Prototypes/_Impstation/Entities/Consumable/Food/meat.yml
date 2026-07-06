@@ -19,12 +19,11 @@
     - Meat
   - type: Sprite
     state: fish
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        reagents:
-        - ReagentId: CarpoToxin
-          Quantity: 5
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: CarpoToxin
+        Quantity: 5
   - type: Extractable
     juiceSolution:
       reagents:

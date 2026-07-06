@@ -25,14 +25,13 @@
         superSlippery: true
     - type: StepTrigger
       intersectRatio: 0.2
-    - type: SolutionContainerManager
-      solutions:
-        food:
-          reagents:
-            - ReagentId: Laughter
-              Quantity: 2
-            - ReagentId: Protein
-              Quantity: 1
+    - type: Solution
+      solution:
+        reagents:
+          - ReagentId: Laughter
+            Quantity: 2
+          - ReagentId: Protein
+            Quantity: 1
     - type: SpeedModifierContacts
       walkSpeedModifier: 1.0
       sprintSpeedModifier: 1.0

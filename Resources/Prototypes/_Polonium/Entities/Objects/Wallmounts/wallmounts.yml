@@ -21,6 +21,8 @@
           !type:PhysShapeAabb {}
   - type: Damageable
     damageModifierSet: Metallic
+  - type: Injurable
+    damageContainer: Inorganic
   - type: StaticPrice
     price: 200
   - type: Destructible
@@ -188,6 +190,8 @@
           !type:PhysShapeAabb {}
   - type: Damageable
     damageModifierSet: Metallic
+  - type: Injurable
+    damageContainer: Inorganic
   - type: StaticPrice
     price: 550
   - type: Destructible

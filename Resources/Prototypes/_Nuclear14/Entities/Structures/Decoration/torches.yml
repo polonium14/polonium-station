@@ -45,6 +45,8 @@
     normalState: torch_lit
   - type: Damageable
     damageModifierSet: Wood
+  - type: Injurable
+    damageContainer: Inorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -53,8 +55,6 @@
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-  - type: ToggleableLightVisuals
-    spriteLayer: null
   - type: PointLight
     color: "#e39c40"
     radius: 5
