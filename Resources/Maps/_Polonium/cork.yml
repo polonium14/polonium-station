@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 06/16/2026 16:30:13
-  entityCount: 7275
+  entityCount: 7270
 maps:
 - 1
 grids:
@@ -123,13 +123,6 @@ entities:
       parallax: Water
     - type: MapLight
       ambientLightColor: '#5D306EFF'
-    - type: Weather
-      weather:
-        Storm:
-          endTime: 0
-        Rain:
-          endTime: 0
-        SnowfallLight: {}
   - uid: 2
     components:
     - type: MetaData
@@ -4146,86 +4139,6 @@ entities:
     - type: GravityShake
       shakeTimes: 10
     - type: ImplicitRoof
-  - uid: 5
-    components:
-    - type: MetaData
-    - type: Transform
-      parent: 4
-    - type: Solution
-      solution:
-        maxVol: 30
-        name: food
-        reagents:
-        - data: []
-          ReagentId: Fiber
-          Quantity: 30
-    - type: ContainedSolution
-      containerName: food
-      container: 4
-  - uid: 9
-    components:
-    - type: MetaData
-    - type: Transform
-      parent: 8
-    - type: Solution
-      solution:
-        maxVol: 30
-        name: food
-        reagents:
-        - data: []
-          ReagentId: Fiber
-          Quantity: 30
-    - type: ContainedSolution
-      containerName: food
-      container: 8
-  - uid: 11
-    components:
-    - type: MetaData
-    - type: Transform
-      parent: 10
-    - type: Solution
-      solution:
-        maxVol: 10
-        name: food
-        reagents:
-        - data: []
-          ReagentId: Fiber
-          Quantity: 10
-    - type: ContainedSolution
-      containerName: food
-      container: 10
-  - uid: 13
-    components:
-    - type: MetaData
-    - type: Transform
-      parent: 12
-    - type: Solution
-      solution:
-        maxVol: 10
-        name: food
-        reagents:
-        - data: []
-          ReagentId: Fiber
-          Quantity: 10
-    - type: ContainedSolution
-      containerName: food
-      container: 12
-  - uid: 15
-    components:
-    - type: MetaData
-    - type: Transform
-      parent: 14
-    - type: Solution
-      solution:
-        maxVol: 10
-        name: food
-        reagents:
-        - data: []
-          ReagentId: Fiber
-          Quantity: 10
-    - type: ContainedSolution
-      containerName: food
-      container: 14
   - uid: 5654
     components:
     - type: MetaData
@@ -8187,13 +8100,13 @@ entities:
     - type: Transform
       pos: 15.5,-8.5
       parent: 2
-- proto: AutodocCircuitboard
-  entities:
-  - uid: 3524
-    components:
-    - type: Transform
-      pos: -28.39612,-5.862753
-      parent: 2
+#- proto: AutodocCircuitboard
+#  entities:
+#  - uid: 3524
+#    components:
+#    - type: Transform
+#      pos: -28.39612,-5.862753
+#      parent: 2
 - proto: Autolathe
   entities:
   - uid: 172
@@ -18834,25 +18747,21 @@ entities:
   - uid: 1810
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: -24.5,-9.5
       parent: 2
   - uid: 1811
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: -23.5,-9.5
       parent: 2
   - uid: 1812
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: -22.5,-9.5
       parent: 2
   - uid: 1813
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: -21.5,-9.5
       parent: 2
   - uid: 7272
@@ -19401,18 +19310,10 @@ entities:
     components:
     - type: Transform
       parent: 3
-    - type: SolutionContainerManager
-      solutions: null
-      containers:
-      - food
     - type: Physics
       canCollide: False
     - type: ContainerContainer
       containers:
-        solution@food: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: 15
         hidden_slot: !type:ContainerSlot
           showEnts: False
           occludes: True
@@ -19451,18 +19352,10 @@ entities:
     components:
     - type: Transform
       parent: 3
-    - type: SolutionContainerManager
-      solutions: null
-      containers:
-      - food
     - type: Physics
       canCollide: False
     - type: ContainerContainer
       containers:
-        solution@food: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: 11
         hidden_slot: !type:ContainerSlot
           showEnts: False
           occludes: True
@@ -19615,16 +19508,8 @@ entities:
     components:
     - type: Transform
       parent: 3
-    - type: SolutionContainerManager
-      solutions: null
-      containers:
-      - food
     - type: Physics
       canCollide: False
-    - type: ContainerContainer
-      containers:
-        solution@food: !type:ContainerSlot
-          ent: 13
     - type: InsideEntityStorage
 - proto: ClothingOuterArmorBulletproof
   entities:
@@ -19829,18 +19714,10 @@ entities:
           occludes: True
           ents:
           - 6
-        solution@food: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: 5
         multiphase_slot: !type:ContainerSlot
           showEnts: False
           occludes: True
           ent: null
-    - type: SolutionContainerManager
-      solutions: null
-      containers:
-      - food
     - type: Physics
       canCollide: False
     - type: ActionsContainer
@@ -20128,18 +20005,10 @@ entities:
     - type: DeviceNetwork
       address: 4F5B-785D
       transmitFrequency: 1262
-    - type: SolutionContainerManager
-      solutions: null
-      containers:
-      - food
     - type: Physics
       canCollide: False
     - type: ContainerContainer
       containers:
-        solution@food: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: 9
         hidden_slot: !type:ContainerSlot
           showEnts: False
           occludes: True
@@ -33151,13 +33020,13 @@ entities:
     - type: Transform
       pos: 1.5,11.5
       parent: 2
-- proto: OperatingTableCircuitboard
-  entities:
-  - uid: 3526
-    components:
-    - type: Transform
-      pos: 13.619678,17.755585
-      parent: 2
+#- proto: OperatingTableCircuitboard
+#  entities:
+#  - uid: 3526
+#    components:
+#    - type: Transform
+#      pos: 13.619678,17.755585
+#      parent: 2
 - proto: OreBox
   entities:
   - uid: 3564
@@ -39961,13 +39830,6 @@ entities:
     components:
     - type: Transform
       pos: 6.5,-18.5
-      parent: 2
-- proto: SurgeryKitFilled
-  entities:
-  - uid: 3527
-    components:
-    - type: Transform
-      pos: 12.543385,17.486324
       parent: 2
 - proto: SurveillanceCameraGeneral
   entities:
