@@ -27,14 +27,14 @@ namespace Content.Server._Funkystation.Atmos.EntitySystems;
 /// Contains all the server-side logic for bluespace vendors.
 /// <seealso cref="BluespaceVendorComponent"/>
 /// </summary>
-public sealed class BluespaceVendorSystem : EntitySystem
+public sealed partial class BluespaceVendorSystem : EntitySystem
 {
-    [Dependency] private readonly AtmosphereSystem _atmos = default!;
-    [Dependency] private readonly IAdminLogManager _adminLogger = default!;
-    [Dependency] private readonly ItemSlotsSystem _slots = default!;
-    [Dependency] private readonly UserInterfaceSystem _ui = default!;
-    [Dependency] private readonly PowerReceiverSystem _power = default!;
-    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
+    [Dependency] private AtmosphereSystem _atmos = default!;
+    [Dependency] private IAdminLogManager _adminLogger = default!;
+    [Dependency] private ItemSlotsSystem _slots = default!;
+    [Dependency] private UserInterfaceSystem _ui = default!;
+    [Dependency] private PowerReceiverSystem _power = default!;
+    [Dependency] private SharedAppearanceSystem _appearance = default!;
 
     private TimeSpan _lastUpdateTime = TimeSpan.Zero;
     private readonly TimeSpan _updateInterval = TimeSpan.FromSeconds(0.5);
@@ -122,7 +122,7 @@ public sealed class BluespaceVendorSystem : EntitySystem
         }
 
         UpdatePumpingAppearance(uid, vendor, true);
-        
+
         // When retrieving, add selected gases from bluespace to tank
         var initMoles = Math.Min(((releasePressure * tankMixture.Volume) / (Atmospherics.R * Atmospherics.T20C) - tankMixture.TotalMoles), 0.2f) / isRetrievingCount;
 
@@ -133,11 +133,11 @@ public sealed class BluespaceVendorSystem : EntitySystem
 
             var moles = initMoles;
             moles = moles >= bluespaceMixture.GetMoles(i) ? bluespaceMixture.GetMoles(i) : moles;
-            
+
             bluespaceMixture.AdjustMoles(i, -moles);
             if (bluespaceMixture.GetMoles(i) < 0.01f)
                 vendor.BluespaceVendorRetrieveList[i] = !vendor.BluespaceVendorRetrieveList[i];
-                
+
             var addedGases = new GasMixture();
             addedGases.AdjustMoles(i, moles);
             addedGases.Temperature = Atmospherics.T20C;
@@ -171,7 +171,7 @@ public sealed class BluespaceVendorSystem : EntitySystem
             return;
 
         if (vendor.GasTankSlot.Item != null)
-        {   
+        {
             UpdateTankAppearance(uid, vendor);
             var gasTank = Comp<GasTankComponent>(vendor.GasTankSlot.Item.Value);
             vendor.TankGasMixture = gasTank.Air;
@@ -183,7 +183,7 @@ public sealed class BluespaceVendorSystem : EntitySystem
     {
         if (args.Container.ID != vendor.TankContainerName)
             return;
-        
+
         HandleTankRemoval(uid, vendor);
     }
 
@@ -210,11 +210,11 @@ public sealed class BluespaceVendorSystem : EntitySystem
 
         if (!vendor.BluespaceSenderConnected)
             return;
-        
+
         var gasTank = Comp<GasTankComponent>(vendor.GasTankSlot.Item.Value);
         var mixture = gasTank.Air;
         var removedAir = mixture.Remove(mixture.TotalMoles);
-        
+
         _atmos.Merge(vendor.BluespaceGasMixture, removedAir);
         DirtyUI(uid, vendor);
     }

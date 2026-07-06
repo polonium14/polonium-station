@@ -31,13 +31,15 @@ namespace Content.Client._Funkystation.Atmos.UI
     [GenerateTypedNameReferences]
     public sealed partial class BluespaceVendorWindow : FancyWindow
     {
-        [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+        [Dependency] private IPrototypeManager _prototypeManager = default!;
         public event Action? TankEjectButtonPressed;
         public event Action? TankEmptyButtonPressed;
+#pragma warning disable CS0067 // DEAD CODE THAT WAS PORTED - DISABLING WARNINGS TO ALLOW COMPILING
         public event Action<int>? TankFillButtonPressed;
+#pragma warning restore CS0067
         public event Action<int>? RetrieveButtonPressed;
         public event Action<float>? ReleasePressureSet;
-        
+
         public BluespaceVendorWindow()
         {
             RobustXamlLoader.Load(this);
@@ -143,7 +145,7 @@ namespace Content.Client._Funkystation.Atmos.UI
                             HorizontalExpand = true,
                             HorizontalAlignment = HAlignment.Center // Center directly
                         };
-                        
+
                         var RetrieveButton = new Button
                         {
                             Name = "RetrieveButton",
@@ -171,17 +173,17 @@ namespace Content.Client._Funkystation.Atmos.UI
         {
             if (tankGasMixture == null)
             {
-                FillBarPanel.MinSize = new Vector2(0, 20); 
+                FillBarPanel.MinSize = new Vector2(0, 20);
                 return;
             }
 
             float pressure = tankGasMixture.Pressure;
-            float fillPercentage = Math.Clamp(pressure / 1000f, 0f, 1f); 
+            float fillPercentage = Math.Clamp(pressure / 1000f, 0f, 1f);
 
-            var parentContainer = FillBarPanel.Parent?.Parent as PanelContainer; 
+            var parentContainer = FillBarPanel.Parent?.Parent as PanelContainer;
             if (parentContainer != null)
             {
-                float parentWidth = parentContainer.Size.X; 
+                float parentWidth = parentContainer.Size.X;
                 float targetWidth = parentWidth * fillPercentage;
 
                 FillBarPanel.MinSize = new Vector2(targetWidth, 20);
@@ -190,7 +192,7 @@ namespace Content.Client._Funkystation.Atmos.UI
 
         public void SetReleasePressureSpinbox(float releasePressure)
         {
-            if (ReleasePressure.Value == releasePressure || releasePressure == null)
+            if (ReleasePressure.Value == releasePressure)
                 return;
             ReleasePressure.Value = releasePressure;
         }

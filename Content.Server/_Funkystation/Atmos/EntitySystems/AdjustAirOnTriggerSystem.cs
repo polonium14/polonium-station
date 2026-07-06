@@ -19,19 +19,18 @@ namespace Content.Server._Funkystation.Atmos.EntitySystems;
 [UsedImplicitly]
 public sealed partial class AdjustAirOnTriggerSystem : XOnTriggerSystem<AdjustAirOnTriggerComponent>
 {
-    [Dependency] private readonly AtmosphereSystem _atmosphereSystem = default!;
-    [Dependency] private readonly GasTileOverlaySystem _gasOverlaySystem = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly SharedMapSystem _mapSystem = default!;
-    [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
+    [Dependency] private AtmosphereSystem _atmosphereSystem = default!;
+    [Dependency] private GasTileOverlaySystem _gasOverlaySystem = default!;
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private SharedMapSystem _mapSystem = default!;
+    [Dependency] private SharedTransformSystem _transformSystem = default!;
 
     protected override void OnTrigger(Entity<AdjustAirOnTriggerComponent> ent, EntityUid target, ref TriggerEvent args)
     {
         if (!_random.Prob(ent.Comp.Probability))
             return;
 
-        if (!TryComp<TransformComponent>(target, out var xform))
-            return;
+        var xform = Transform(target);
 
         var coords = xform.Coordinates;
         if (!coords.IsValid(EntityManager))

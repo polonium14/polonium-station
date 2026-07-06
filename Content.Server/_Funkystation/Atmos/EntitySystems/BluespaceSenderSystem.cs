@@ -24,13 +24,13 @@ namespace Content.Server._Funkystation.Atmos.EntitySystems;
 /// <summary>
 /// Handles server-side logic for bluespace senders.
 /// </summary>
-public sealed class BluespaceSenderSystem : EntitySystem
+public sealed partial class BluespaceSenderSystem : EntitySystem
 {
-    [Dependency] private readonly AtmosphereSystem _atmos = default!;
-    [Dependency] private readonly NodeContainerSystem _nodeContainer = default!;
-    [Dependency] private readonly PowerReceiverSystem _power = default!;
-    [Dependency] private readonly UserInterfaceSystem _ui = default!;
-    [Dependency] private readonly IGameTiming _gameTiming = default!;
+    [Dependency] private AtmosphereSystem _atmos = default!;
+    [Dependency] private NodeContainerSystem _nodeContainer = default!;
+    [Dependency] private PowerReceiverSystem _power = default!;
+    [Dependency] private UserInterfaceSystem _ui = default!;
+    [Dependency] private IGameTiming _gameTiming = default!;
 
     private TimeSpan _lastUpdateTime = TimeSpan.Zero;
     private readonly TimeSpan _updateInterval = TimeSpan.FromSeconds(2);

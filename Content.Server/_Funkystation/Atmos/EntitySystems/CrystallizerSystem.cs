@@ -27,15 +27,15 @@ using Robust.Shared.Map.Components;
 
 namespace Content.Server._Funkystation.Atmos.Systems
 {
-    public sealed class CrystallizerSystem : EntitySystem
+    public sealed partial class CrystallizerSystem : EntitySystem
     {
-        [Dependency] private readonly UserInterfaceSystem _userInterfaceSystem = default!;
-        [Dependency] private readonly PowerReceiverSystem _power = default!;
-        [Dependency] private readonly AtmosphereSystem _atmos = default!;
-        [Dependency] private readonly NodeContainerSystem _nodeContainer = default!;
-        [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-        [Dependency] private readonly SharedTransformSystem _transform = default!;
-        [Dependency] private readonly SharedMapSystem _map = default!;
+        [Dependency] private UserInterfaceSystem _userInterfaceSystem = default!;
+        [Dependency] private PowerReceiverSystem _power = default!;
+        [Dependency] private AtmosphereSystem _atmos = default!;
+        [Dependency] private NodeContainerSystem _nodeContainer = default!;
+        [Dependency] private IPrototypeManager _prototypeManager = default!;
+        [Dependency] private SharedTransformSystem _transform = default!;
+        [Dependency] private SharedMapSystem _map = default!;
 
         private const float MinProgressAmount = 3f;
         private const float MinDeviationRate = 0.90f;
@@ -286,10 +286,11 @@ namespace Content.Server._Funkystation.Atmos.Systems
 
             // Spawn products
             var mapCoords = _transform.GetMapCoordinates(uid);
-            if (TryComp<TransformComponent>(uid, out var transform) && transform.MapID != MapId.Nullspace)
+            var transform = Transform(uid);
+            if (transform.MapID != MapId.Nullspace)
             {
                 var gridUid = transform.GridUid;
-                if (gridUid != null && EntityManager.TryGetComponent<MapGridComponent>(gridUid, out var mapGrid))
+                if (gridUid != null && TryComp<MapGridComponent>(gridUid, out var mapGrid))
                 {
                     var tile = _map.CoordinatesToTile(gridUid.Value, mapGrid, mapCoords);
                     var southTile = tile + new Vector2i(0, -1);
@@ -298,7 +299,7 @@ namespace Content.Server._Funkystation.Atmos.Systems
                     {
                         for (int i = 0; i < amount; i++)
                         {
-                            var entity = EntityManager.SpawnEntity(productId, coords);
+                            Spawn(productId, coords);
                         }
                     }
                 }

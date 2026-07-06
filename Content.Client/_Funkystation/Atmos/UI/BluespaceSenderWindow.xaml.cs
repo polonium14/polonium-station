@@ -31,11 +31,11 @@ namespace Content.Client._Funkystation.Atmos.UI
     [GenerateTypedNameReferences]
     public sealed partial class BluespaceSenderWindow : FancyWindow
     {
-        [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+        [Dependency] private IPrototypeManager _prototypeManager = default!;
         public event Action<int>? RetrieveButtonPressed;
         public event Action? ToggleStatusButtonPressed;
         public event Action? RetrieveModeButtonPressed;
-        
+
         public BluespaceSenderWindow()
         {
             RobustXamlLoader.Load(this);
@@ -104,7 +104,7 @@ namespace Content.Client._Funkystation.Atmos.UI
                             Name = "GasAmount",
                             Text = $"{moles.ToString("F2")} moles"
                         };
-                        
+
                         var RetrieveButton = new Button
                         {
                             Name = "RetrieveButton",

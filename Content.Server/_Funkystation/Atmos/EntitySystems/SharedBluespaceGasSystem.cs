@@ -20,15 +20,15 @@ using Content.Shared.Atmos.Reactions;
 
 namespace Content.Server._Funkystation.Atmos.Systems
 {
-    public sealed class SharedBluespaceGasSystem : EntitySystem
+    public sealed partial class SharedBluespaceGasSystem : EntitySystem
     {
-        [Dependency] private readonly IConfigurationManager _cfg = default!;
-        [Dependency] protected readonly SharedDeviceLinkSystem DeviceLink = default!;
+        [Dependency] private IConfigurationManager _cfg = default!;
+        [Dependency] private SharedDeviceLinkSystem DeviceLink = default!;
 
         private bool _bluespaceGasEnabled;
 
-        protected ProtoId<SourcePortPrototype> SourcePort = "BluespaceSender";
-        protected ProtoId<SinkPortPrototype> SinkPort = "BluespaceGasUtilizer";
+        private ProtoId<SourcePortPrototype> SourcePort = "BluespaceSender";
+        private ProtoId<SinkPortPrototype> SinkPort = "BluespaceGasUtilizer";
 
         public override void Initialize()
         {
