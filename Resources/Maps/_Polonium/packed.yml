@@ -91582,27 +91582,6 @@ entities:
     - type: Transform
       pos: 12.5,-5.5
       parent: 2
-- proto: SuitStorageHEV
-  entities:
-  - uid: 6476
-    components:
-    - type: Transform
-      pos: 54.5,6.5
-      parent: 2
-    - type: Lock
-      locked: False
-- proto: SuitStorageHEVFilled
-  entities:
-  - uid: 4800
-    components:
-    - type: Transform
-      pos: 13.5,-59.5
-      parent: 2
-  - uid: 5593
-    components:
-    - type: Transform
-      pos: 15.5,-59.5
-      parent: 2
 - proto: SuitStorageHOS
   entities:
   - uid: 14232

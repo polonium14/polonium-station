@@ -11,39 +11,6 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
-  parent: ClothingOuterHardsuitBase
-  id: ClothingOuterSuitHEV
-  name: HEV suit
-  description: A full-body hazardous environment suit designed to protect its wearer from radiation, energy discharges, blunt-force trauma, and disintegration during the handling of hazardous materials.
-  components:
-  - type: Sprite
-    sprite: _Funkystation/Clothing/OuterClothing/Hardsuits/hev.rsi
-  - type: Clothing
-    sprite: _Funkystation/Clothing/OuterClothing/Hardsuits/hev.rsi
-  - type: ExplosionResistance
-    damageCoefficient: 0.7
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.8
-        Shock: 0.8
-        Radiation: 0.05
-        Caustic: 0.65
-  - type: ClothingSpeedModifier
-    walkModifier: 0.9
-    sprintModifier: 0.9
-  - type: HeldSpeedModifier
-  - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHelmetHEV
-  - type: SupermatterImmune
-  - type: ClothingGrantComponent
-    component:
-      - type: SupermatterImmune
-  - type: Tag
-    tags:
-      - HEVSuit
-
-- type: entity
   parent: ClothingNeckBase # funkystation - bodycams should take up a neckslot
   id: SurveillanceWirelessCameraBodyEntertainment
   name: nopro camera

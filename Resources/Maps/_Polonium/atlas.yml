@@ -51457,18 +51457,6 @@ entities:
     - type: Transform
       pos: -37.5,-21.5
       parent: 2
-#- proto: SuitStorageHEVFilled
-#  entities:
-#  - uid: 7539
-#    components:
-#    - type: Transform
-#      pos: -62.5,4.5
-#      parent: 2
-#  - uid: 7540
-#    components:
-#    - type: Transform
-#      pos: -60.5,4.5
-#      parent: 2
 - proto: SuitStorageHOS
   entities:
   - uid: 7541

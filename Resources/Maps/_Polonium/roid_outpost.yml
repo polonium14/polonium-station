@@ -104058,18 +104058,6 @@ entities:
     - type: Transform
       pos: 26.5,5.5
       parent: 2
-- proto: SuitStorageHEVFilled
-  entities:
-  - uid: 5006
-    components:
-    - type: Transform
-      pos: -50.5,13.5
-      parent: 2
-  - uid: 18586
-    components:
-    - type: Transform
-      pos: -47.5,8.5
-      parent: 2
 - proto: SuitStorageRD
   entities:
   - uid: 10636
