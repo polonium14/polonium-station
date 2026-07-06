@@ -5630,13 +5630,13 @@ entities:
     - type: Transform
       pos: -52.5,-4.5
       parent: 2
-- proto: AutoclaveFlatpack
-  entities:
-  - uid: 9507
-    components:
-    - type: Transform
-      pos: 9.779484,-4.3041353
-      parent: 2
+#- proto: AutoclaveFlatpack
+#  entities:
+#  - uid: 9507
+#    components:
+#    - type: Transform
+#      pos: 9.779484,-4.3041353
+#      parent: 2
 - proto: Autolathe
   entities:
   - uid: 351
@@ -43076,13 +43076,13 @@ entities:
     - type: Transform
       pos: -0.3030796,22.832315
       parent: 2
-- proto: MailTeleporter
-  entities:
-  - uid: 6302
-    components:
-    - type: Transform
-      pos: -15.5,15.5
-      parent: 2
+#- proto: MailTeleporter
+#  entities:
+#  - uid: 6302
+#    components:
+#    - type: Transform
+#      pos: -15.5,15.5
+#      parent: 2
 - proto: MaintenanceFluffSpawner
   entities:
   - uid: 6303
@@ -45134,7 +45134,6 @@ entities:
       parent: 2
     - type: ApcPowerReceiver
       powerLoad: 0
-    - type: Timer
   - uid: 6593
     components:
     - type: Transform
@@ -45150,7 +45149,6 @@ entities:
       parent: 2
     - type: ApcPowerReceiver
       powerLoad: 0
-    - type: Timer
   - uid: 6595
     components:
     - type: Transform
@@ -45159,7 +45157,6 @@ entities:
       parent: 2
     - type: ApcPowerReceiver
       powerLoad: 0
-    - type: Timer
   - uid: 6597
     components:
     - type: Transform
@@ -45557,7 +45554,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 4.5,16.5
       parent: 2
-    - type: Timer
   - uid: 6657
     components:
     - type: Transform
@@ -46226,26 +46222,26 @@ entities:
     - type: Transform
       pos: -69.5,4.5
       parent: 2
-- proto: RadioHandheldEngineering
-  entities:
-  - uid: 6351
-    components:
-    - type: Transform
-      pos: -68.06754,0.4960965
-      parent: 2
-    - type: RadioMicrophone
-      enabled: True
-    - type: RadioSpeaker
-      enabled: True
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-    - type: ActiveRadio
-      intrinsicChannels: []
-      channels:
-      - Engineering
-    - type: ActiveListener
-      range: 4
+#- proto: RadioHandheldEngineering
+#  entities:
+#  - uid: 6351
+#    components:
+#    - type: Transform
+#      pos: -68.06754,0.4960965
+#      parent: 2
+#    - type: RadioMicrophone
+#      enabled: True
+#    - type: RadioSpeaker
+#      enabled: True
+#    - type: Physics
+#      angularDamping: 0
+#      linearDamping: 0
+#    - type: ActiveRadio
+#      intrinsicChannels: []
+#      channels:
+#      - Engineering
+#    - type: ActiveListener
+#      range: 4
 - proto: Railing
   entities:
   - uid: 6759
@@ -51461,18 +51457,18 @@ entities:
     - type: Transform
       pos: -37.5,-21.5
       parent: 2
-- proto: SuitStorageHEVFilled
-  entities:
-  - uid: 7539
-    components:
-    - type: Transform
-      pos: -62.5,4.5
-      parent: 2
-  - uid: 7540
-    components:
-    - type: Transform
-      pos: -60.5,4.5
-      parent: 2
+#- proto: SuitStorageHEVFilled
+#  entities:
+#  - uid: 7539
+#    components:
+#    - type: Transform
+#      pos: -62.5,4.5
+#      parent: 2
+#  - uid: 7540
+#    components:
+#    - type: Transform
+#      pos: -60.5,4.5
+#      parent: 2
 - proto: SuitStorageHOS
   entities:
   - uid: 7541
@@ -51512,13 +51508,6 @@ entities:
     components:
     - type: Transform
       pos: -68.5,2.5
-      parent: 2
-- proto: SurgeryKitFilled
-  entities:
-  - uid: 3436
-    components:
-    - type: Transform
-      pos: 11.488715,11.679916
       parent: 2
 - proto: SurveillanceCameraCommand
   entities:
@@ -60404,28 +60393,28 @@ entities:
     - type: Transform
       pos: 2.5,18.5
       parent: 2
-- proto: WeaponEnergyGunEnergyPistol
-  entities:
-  - uid: 57
-    components:
-    - type: Transform
-      pos: 8.196339,23.23275
-      parent: 2
-  - uid: 5727
-    components:
-    - type: Transform
-      pos: 8.243214,23.514
-      parent: 2
-  - uid: 9464
-    components:
-    - type: Transform
-      pos: 8.680714,23.54525
-      parent: 2
-  - uid: 9465
-    components:
-    - type: Transform
-      pos: 8.680714,23.217125
-      parent: 2
+#- proto: WeaponEnergyGunEnergyPistol
+#  entities:
+#  - uid: 57
+#    components:
+#    - type: Transform
+#      pos: 8.196339,23.23275
+#      parent: 2
+#  - uid: 5727
+#    components:
+#    - type: Transform
+#      pos: 8.243214,23.514
+#      parent: 2
+#  - uid: 9464
+#    components:
+#    - type: Transform
+#      pos: 8.680714,23.54525
+#      parent: 2
+#  - uid: 9465
+#    components:
+#    - type: Transform
+#      pos: 8.680714,23.217125
+#      parent: 2
 - proto: WeaponSubMachineGunWt550
   entities:
   - uid: 9052
