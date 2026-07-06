@@ -9,6 +9,7 @@
   recipes:
   - Igniter
   - ModularReceiver
+  - CapacitorStockPart
   - MicroManipulatorStockPart
   - MatterBinStockPart
   - ConveyorBeltAssembly

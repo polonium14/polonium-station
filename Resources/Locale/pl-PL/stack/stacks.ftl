@@ -134,6 +134,7 @@ stack-brutepack = brutepack
 stack-bloodpack = bloodpack
 stack-medicated-suture = medicated-suture
 stack-regenerative-mesh = regenerative-mesh
+stack-capacitor = kondensator
 stack-micro-manipulator = modular machine part
 stack-matter-bin = pojemnik na materię
 stack-pancake = pancake
