@@ -11,6 +11,11 @@
   id: BluespaceGasSenderMachineBoard
   result: BluespaceGasSenderMachineBoard
 
+- type: latheRecipe
+  parent: [ BaseCircuitboardRecipe, BaseEngineeringMachineRecipeCategory ]
+  id: CrystallizerMachineCircuitboard
+  result: CrystallizerMachineCircuitboard
+
 ## Service
 
 # Washing machine

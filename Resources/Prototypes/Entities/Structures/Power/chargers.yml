@@ -105,6 +105,7 @@
         blacklist:
           tags:
           - PotatoBattery
+          - NoRecharge # Assmos - Crystallizer
   - type: Item
     size: Ginormous
   - type: MultiHandedItem
@@ -145,6 +146,9 @@
         whitelist:
           tags:
           - PowerCage
+        blacklist:
+          tags:
+          - NoRecharge # Assmos - Crystallizer
   - type: Machine
     board: PowerCageRechargerCircuitboard
   - type: StaticPrice
@@ -172,6 +176,7 @@
         blacklist:
           tags:
           - PotatoBattery
+          - NoRecharge # Assmos - Crystallizer
   - type: Item
     size: Ginormous
   - type: MultiHandedItem
@@ -200,6 +205,7 @@
         blacklist:
           tags:
           - PotatoBattery
+          - NoRecharge # Assmos - Crystallizer
   - type: Item
     size: Ginormous
   - type: MultiHandedItem
@@ -231,6 +237,7 @@
         blacklist:
           tags:
           - PotatoBattery
+          - NoRecharge # Assmos - Crystallizer
 
 - type: entity
   parent: BaseRecharger

@@ -148,6 +148,7 @@
   - PortableScrubberMachineCircuitBoard
   - HolofanProjector
   - ElectrolyzerMachineCircuitboard # Funky atmos = /tg/ gases
+  - CrystallizerMachineCircuitboard # Assmos - Crystallizer
   technologyPrerequisites:
   - AtmosphericTech
 

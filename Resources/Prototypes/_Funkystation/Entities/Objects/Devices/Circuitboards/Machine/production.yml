@@ -29,6 +29,23 @@
       MatterBin: 2
 
 - type: entity
+  id: CrystallizerMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: crystallizer machine board
+  description: A machine printed circuit board for a crystallizer.
+  components:
+  - type: Sprite
+    state: engineering
+  - type: MachineBoard
+    prototype: Crystallizer
+    stackRequirements:
+      Steel: 5
+      Glass: 5
+      Capacitor: 2
+      Manipulator: 4
+      MatterBin: 4
+
+- type: entity
   parent: BaseMachineCircuitboard
   id: WashingMachineCircuitboard
   name: Nanotrasen Commercial Model-C washing machine board
