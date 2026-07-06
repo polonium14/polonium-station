@@ -98,3 +98,8 @@
 - type: lobbyBackground
   id: CertainDeath
   background: /Textures/LobbyScreens/PewnaSmierc.png
+
+- type: lobbyBackground
+  id: L4D2Quote
+  background: /Textures/LobbyScreens/IHaveNotComeThisFarToDieNow.png
+
