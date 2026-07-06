@@ -39,3 +39,9 @@ lobby-state-background-reclaimernuke-artist = GetOutMarutak
 
 lobby-state-background-stationisafuck-title = Station Is a Fuck
 lobby-state-background-stationisafuck-artist = fuzyfries
+
+lobby-state-background-drunkardsspree-title = Drunkards' Spree
+lobby-state-background-drunkardsspree-artist = Saver310
+
+lobby-state-background-certaindeath-title = Certain Death
+lobby-state-background-certaindeath-artist = Saver310
