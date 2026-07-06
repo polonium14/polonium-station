@@ -7,6 +7,13 @@
 
 - type: stack
   parent: BaseSmallStack
+  id: Capacitor
+  name: stack-capacitor
+  icon: { sprite: /Textures/Objects/Misc/stock_parts.rsi, state: capacitor }
+  spawn: CapacitorStockPart
+
+- type: stack
+  parent: BaseSmallStack
   id: Manipulator
   name: stack-micro-manipulator
   icon: { sprite: /Textures/Objects/Misc/stock_parts.rsi, state: micro_mani }
