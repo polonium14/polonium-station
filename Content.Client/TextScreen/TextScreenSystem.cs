@@ -40,7 +40,17 @@ public sealed partial class TextScreenSystem : VisualizerSystem<TextScreenVisual
             { '*', "star" },
             { '+', "plus" },
             { '-', "dash" },
-            { ' ', "blank" }
+            { ' ', "blank" },
+            // Jeszcze Polska nie zginęła
+            { 'ą', "aogon" },
+            { 'ć', "cacute" },
+            { 'ę', "eogon" },
+            { 'ł', "lstroke" },
+            { 'ń', "nacute" },
+            { 'ó', "oacute" },
+            { 'ś', "sacute" },
+            { 'ź', "zacute" },
+            { 'ż', "zdot" },
         };
 
     private const string DefaultState = "blank";
@@ -346,7 +356,13 @@ public sealed partial class TextScreenSystem : VisualizerSystem<TextScreenVisual
 
         // Or else it checks if its a normal letter or digit
         if (char.IsLetterOrDigit(character.Value))
-            return character.Value.ToString().ToLower();
+        {
+            var lower = char.ToLower(character.Value);
+            if (CharStatePairs.TryGetValue(lower, out value))
+                return value;
+
+            return lower.ToString();
+        }
 
         return null;
     }
