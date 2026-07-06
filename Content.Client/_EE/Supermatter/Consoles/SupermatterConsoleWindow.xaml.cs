@@ -50,9 +50,6 @@ public sealed partial class SupermatterConsoleWindow : FancyWindow
         if (_owner == null)
             return;
 
-        if (!_entManager.TryGetComponent<SupermatterConsoleComponent>(_owner.Value, out var console))
-            return;
-
         if (_trackedEntity != focusData?.NetEntity)
         {
             SendFocusChangeMessageAction?.Invoke(_trackedEntity);
@@ -72,7 +69,7 @@ public sealed partial class SupermatterConsoleWindow : FancyWindow
         for (var index = 0; index < _supermatters.Length; index++)
         {
             var entry = _supermatters.ElementAt(index);
-            UpdateUIEntry(entry, index, SupermattersTable, console, focusData);
+            UpdateUIEntry(entry, index, SupermattersTable, focusData);
         }
 
         // If no alerts are active, display a message
@@ -99,7 +96,7 @@ public sealed partial class SupermatterConsoleWindow : FancyWindow
         }
     }
 
-    private void UpdateUIEntry(SupermatterConsoleEntry entry, int index, Control table, SupermatterConsoleComponent console, SupermatterFocusData? focusData = null)
+    private void UpdateUIEntry(SupermatterConsoleEntry entry, int index, Control table, SupermatterFocusData? focusData = null)
     {
         // Make new UI entry if required
         if (index >= table.ChildCount)
@@ -128,7 +125,7 @@ public sealed partial class SupermatterConsoleWindow : FancyWindow
         if (tableChild is not SupermatterEntryContainer)
         {
             table.RemoveChild(tableChild);
-            UpdateUIEntry(entry, index, table, console, focusData);
+            UpdateUIEntry(entry, index, table, focusData);
 
             return;
         }

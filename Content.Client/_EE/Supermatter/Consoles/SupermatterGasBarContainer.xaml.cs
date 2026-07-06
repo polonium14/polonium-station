@@ -45,8 +45,7 @@ public sealed partial class SupermatterGasBarContainer : BoxContainer
         _proto = IoCManager.Resolve<IPrototypeManager>();
         _cache = IoCManager.Resolve<IResourceCache>();
 
-        var gasId = (int)gas;
-        var gasProto = _proto.Index<GasPrototype>(gasId.ToString());
+        var gasProto = _proto.Index<GasPrototype>(gas.ToString());
 
         // List definitions
         var detailLabels = new List<Label>()
@@ -91,7 +90,7 @@ public sealed partial class SupermatterGasBarContainer : BoxContainer
         GasBar.ForegroundStyleBoxOverride = new StyleBoxFlat();
         GasBarBorder.PanelOverride = new StyleBoxFlat();
 
-        var color = Color.FromHex("#" + gasProto.Color);
+        var color = gasProto.Color;
 
         var barOverride = (StyleBoxFlat)GasBar.ForegroundStyleBoxOverride;
         barOverride.BackgroundColor = color;
@@ -114,11 +113,13 @@ public sealed partial class SupermatterGasBarContainer : BoxContainer
 
         var powerMix = gasData.PowerMixRatio;
         var tempFactor = powerMix > 0.8 ? 50f : 30f;
-        powerMix = 1f * tempFactor / Atmospherics.T0C * powerMix * _config.GetCVar(CCVars.AtmosTickRate);
+        var atmosTickRate = SupermatterConsoleCVars.GetFloat(_config, CCVars.AtmosTickRate);
+        powerMix = 1f * tempFactor / Atmospherics.T0C * powerMix * atmosTickRate;
         PowerInfoLabel.Text = Loc.GetString("supermatter-console-window-label-gas-power-bar", ("power", powerMix.ToString("+0.00;-0.00")));
         PowerInfoLabel.FontColorOverride = GetDetailColor(powerMix);
 
-        var heatResistance = (gasData.HeatResistance - 1) * (Atmospherics.T0C + _config.GetCVar(ECCVars.SupermatterHeatPenaltyThreshold));
+        var heatPenaltyThreshold = SupermatterConsoleCVars.GetFloat(_config, ECCVars.SupermatterHeatPenaltyThreshold);
+        var heatResistance = (gasData.HeatResistance - 1) * (Atmospherics.T0C + heatPenaltyThreshold);
         HeatInfoLabel.Text = Loc.GetString("supermatter-console-window-label-gas-heat-bar", ("heat", heatResistance.ToString("+0.00;-0.00")));
         HeatInfoLabel.FontColorOverride = GetDetailColor(heatResistance);
 
