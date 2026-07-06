@@ -1,13 +1,13 @@
 <Document>
-  # Medical SOP
+  # SPO Medycyny
 
-  - [textlink="Chief Medical Officer" link="CMOSOP"]
-  - [textlink="Medical Doctor" link="DoctorSOP"]
-  - [textlink="Chemist" link="ChemistSOP"]
-  - [textlink="Paramedic" link="ParamedicSOP"]
-  - [textlink="Psychologist" link="PsychologistSOP"]
+  - [textlink="Ordynator Medyczny" link="CMOSOP"]
+  - [textlink="Lekarz i Stażysta" link="DoctorSOP"]
+  - [textlink="Chemik" link="ChemistSOP"]
+  - [textlink="Ratownik" link="ParamedicSOP"]
+  - [textlink="Psycholog" link="PsychologistSOP"]
   
 <Box>
-    [color=#c8c8c8][italic]"The Chemist is [bolditalic]not[/bolditalic] permitted to experiment with explosive mixtures;"[/italic] - Chemist SOP {1}[/color]
+    [color=#c8c8c8][italic]"[bold]1.[/bold] Chemikowi [bold]nie[/bold] wolno przeprowadzać eksperymentów z mieszankami wybuchowymi;"[/italic] - SPO Chemika{1}[/color]
 </Box>
 </Document>

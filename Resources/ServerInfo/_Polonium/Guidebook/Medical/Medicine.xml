@@ -11,22 +11,23 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
 <Document>
 
-# Core Medications
+# Główne Medykamenty
 
-These medications are almost always useful to medbay in one way or another.
+Te medykamenty są zawsze użyteczne w dziale medycznym
 
-<GuideReagentEmbed Reagent="Bicaridine"/>
-<GuideReagentEmbed Reagent="Kelotane"/>
-<GuideReagentEmbed Reagent="Dermaline"/>
-<GuideReagentEmbed Reagent="Dylovene"/>
-<GuideReagentEmbed Reagent="Inaprovaline"/>
+<GuideReagentEmbed Reagent="Libital"/>
+<GuideReagentEmbed Reagent="Probital"/>
+<GuideReagentEmbed Reagent="Aiuri"/>
+<GuideReagentEmbed Reagent="Lenturi"/>
+<GuideReagentEmbed Reagent="Multiver"/>
+<GuideReagentEmbed Reagent="PenteticAcid"/>
 <GuideReagentEmbed Reagent="Dexalin"/>
-<GuideReagentEmbed Reagent="DexalinPlus"/>
-<GuideReagentEmbed Reagent="Iron"/>
+<GuideReagentEmbed Reagent="Salbutamol"/>
+<GuideReagentEmbed Reagent="Inaprovaline"/>
 
-# Specialty Medications
+# Specjalne medykamenty
 
-These medications tend to have specific use cases.
+Te medykamenty mają zastosowania do specjalnych przypadków.
 
 <GuideReagentEmbed Reagent="Cryoxadone"/>
 <GuideReagentEmbed Reagent="Epinephrine"/>
@@ -38,9 +39,9 @@ These medications tend to have specific use cases.
 <GuideReagentEmbed Reagent="Ambuzol"/>
 <GuideReagentEmbed Reagent="Oculine"/>
 
-# All Medications
+# Wszystkie medykamenty
 
-This is a list of -all- medications available, including ones previously listed.
+To lista -wszystkich- dostępnych medykamentów, w tym poprzednio wymienionych.
 
 <GuideReagentGroupEmbed Group="Medicine"/>
 

@@ -1,3 +1,36 @@
+# SPDX-FileCopyrightText: 2021 SweptWasTaken <sweptwastaken@protonmail.com>
+# SPDX-FileCopyrightText: 2021 ike709 <ike709@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 20kdc <asdd2808@gmail.com>
+# SPDX-FileCopyrightText: 2022 Fishfish458 <47410468+Fishfish458@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 T-Stalker <43253663+DogZeroX@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Todd <97599358+WTCWR68@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 WTCWR68 <97599358+WTCWR68@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 fishfish458 <fishfish458>
+# SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Whisper <121047731+QuietlyWhisper@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 CMDR-JohnAlex <94056103+CMDR-JohnAlex@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Emisse <99158783+Emisse@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2024 Kira Bridgeton <161087999+Verbalase@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <92357316+Piras314@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2024 outget <77005931+outget@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Sadie <147350443+Sadie-silly@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 corresp0nd <46357632+corresp0nd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 vectorassembly <vectorassembly@icloud.com>
+# SPDX-FileCopyrightText: 2026 Damian Zieliński <zientasek.pl@gmail.com>
+# SPDX-FileCopyrightText: 2026 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 Polonium-bot <admin@ss14.pl>
+# SPDX-FileCopyrightText: 2026 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 pinkscreen <76622775+thepinkscreen@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 thepinkscreen <76622775+thepinkscreen@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: soundCollection
   id: LobbyMusic
   files:
@@ -16,43 +49,67 @@
     - /Audio/Lobby/lasers_rip_apart_the_bulkhead.ogg
     - /Audio/Lobby/every_light_is_blinking_at_once.ogg
     - /Audio/Lobby/atomicamnesiammx.ogg
+    # Goobstation - Custom lobby music
+#    - /Audio/Lobby/skubstep.ogg
+#    - /Audio/Lobby/sneedsfeedandseed.ogg
+    # - /Audio/Lobby/the_future_soon.ogg
+    - /Audio/Lobby/monument.ogg
+    - /Audio/Lobby/marhaba.ogg
+    - /Audio/Lobby/horn.ogg
+    - /Audio/Lobby/honk.ogg
+    # - /Audio/Lobby/clownalwayswins.ogg
+    - /Audio/Lobby/clownwmv.ogg
+    # - /Audio/Lobby/dawsonschristian.ogg
+    #- /Audio/Lobby/skubstub.ogg
+    - /Audio/Lobby/space_radiation.ogg
+    - /Audio/Lobby/droopy_likes_your_face.ogg
+    # - /Audio/Lobby/spacers_home.ogg
+    # - /Audio/Lobby/starpilotshymn.ogg
+    # - /Audio/Lobby/tusmentiras.ogg
+    - /Audio/Lobby/ironwill.ogg
+    - /Audio/Lobby/Minerals.ogg
+    - /Audio/Lobby/ashwalking.ogg
+    # - /Audio/Lobby/dagd.ogg
+    - /Audio/Lobby/meltdown.ogg
+    # funky station music
+    - /Audio/_Funkystation/Music/an_alien_song_alien_kids.ogg
+    # Delta-V
     - /Audio/Lobby/434387_Time_Lapse_of_Clouds.ogg
-    - /Audio/Lobby/762_treastise.ogg
-    - /Audio/Lobby/Black_Heat.ogg
-    - /Audio/Lobby/Dire_Situation.ogg
-    - /Audio/Lobby/Dropzone.ogg
-    - /Audio/Lobby/Get_It_Done.ogg
-    - /Audio/Lobby/Liberation.ogg
-    - /Audio/Lobby/Patricia_Taxxon_-_Minute.ogg
-    - /Audio/Lobby/Resistance.ogg
-    - /Audio/Lobby/Super_Nova_In_The_Catacombs.ogg
-    - /Audio/Lobby/Time_Is_Running_Out.ogg
-    - /Audio/Lobby/Undefined_Theory.ogg
     - /Audio/Lobby/a_different_reality_lagoona_remix.xm.ogg
-    - /Audio/Lobby/aggravated.it.ogg
     - /Audio/Lobby/autumnal_equinox.xm.ogg
-    - /Audio/Lobby/breacher.ogg
-    - /Audio/Lobby/chasing-cosmic-dreams.ogg
-    - /Audio/Lobby/cosmonaut.ogg
+    - /Audio/Lobby/aggravated.it.ogg
+    - /Audio/Lobby/Black_Heat.ogg
     - /Audio/Lobby/drozerix_-_alone.xm.ogg
     - /Audio/Lobby/drozerix_-_leisurely_voice.xm.ogg
-    - /Audio/Lobby/echoes-in-the-deep.ogg
-    - /Audio/Lobby/enemy_is_unknown.ogg
+    - /Audio/Lobby/Get_It_Done.ogg
     - /Audio/Lobby/hackers.ogg
-    - /Audio/Lobby/horn.ogg
-    - /Audio/Lobby/hull_rupture.ogg
-    - /Audio/Lobby/marhaba.ogg
     - /Audio/Lobby/melcom-cyberpunk.it.ogg
     - /Audio/Lobby/midori_-_conundrum_final.it.ogg
-    - /Audio/Lobby/monument.ogg
+    - /Audio/Lobby/Patricia_Taxxon_-_Minute.ogg
     - /Audio/Lobby/psirius_-_nights_of_orion.xm.ogg
     - /Audio/Lobby/psirius_-_nymphs_of_the_forest.mptm.ogg
-    - /Audio/Lobby/shadowinthesilvernebula.ogg
     - /Audio/Lobby/superposition.ogg
-    - /Audio/Lobby/the_fallen_queen.ogg
-    - /Audio/Lobby/the_future_soon.ogg
     - /Audio/Lobby/thestation.ogg
+    - /Audio/Lobby/Undefined_Theory.ogg
+    # Starlight
+    - /Audio/Lobby/cosmonaut.ogg
+    - /Audio/Lobby/chasing-cosmic-dreams.ogg
+    - /Audio/Lobby/breacher.ogg
+    - /Audio/Lobby/Resistance.ogg
+    - /Audio/Lobby/echoes-in-the-deep.ogg
     - /Audio/Lobby/timefracture.ogg
+    # - /Audio/Lobby/762_treastise.ogg
+    - /Audio/Lobby/hull_rupture.ogg
+    # RMC
+    - /Audio/Lobby/Super_Nova_In_The_Catacombs.ogg
+    - /Audio/Lobby/shadowinthesilvernebula.ogg
+    - /Audio/Lobby/the_fallen_queen.ogg
+    - /Audio/Lobby/enemy_is_unknown.ogg
+    # - /Audio/Lobby/Dire_Situation.ogg
+    - /Audio/Lobby/Time_Is_Running_Out.ogg
+    # - /Audio/Lobby/Dropzone.ogg
+    # Polonium
     - /Audio/Lobby/CzyToKoniec.ogg
-    - /Audio/_Funkystation/Lobby/an_alien_song_alien_kids.ogg
-    - /Audio/_Funkystation/Lobby/the_great_message_alien_kids.ogg
+    - /Audio/_Polonium/Music/i_cant_afford_mastering.ogg
+    - /Audio/Lobby/gownochrona.ogg
+    - /Audio/Lobby/gownochrona_electronic.ogg

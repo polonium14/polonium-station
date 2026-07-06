@@ -14,12 +14,12 @@ roles-antag-suspicion-innocent-name = Niewinny
 roles-antag-suspicion-innocent-objective = Zdekonspiruj wszystkich zdrajców.
 roles-antag-suspicion-suspect-name = Podejżany
 roles-antag-suspicion-suspect-objective = Zabij wszystkich niewinnych.
-roles-antag-nuclear-operative-commander-name = Dowódzca specjalistów nuklearnych
+roles-antag-nuclear-operative-commander-name = Dowódzca operatorów nuklearnych
 roles-antag-nuclear-operative-commander-objective = Porpowadź swój zespół do zniszczenia stacji.
-roles-antag-nuclear-operative-agent-name = Sanitariusz specjalistów nuklearnych
+roles-antag-nuclear-operative-agent-name = Sanitariusz operatorów nuklearnych
 roles-antag-nuclear-operative-agent-objective = Podobny do typowego agenta, leczenie zespołu ma priorytet.
-roles-antag-nuclear-operative-name = Specjalista nuklearny
-roles-antag-nuclear-operative-objective = Znajdź dysk do głowycy jądrowej, i wydadź stację.
+roles-antag-nuclear-operative-name = Operator nuklearny
+roles-antag-nuclear-operative-objective = Znajdź dysk do głowicy jądrowej, i wysadź stację.
 roles-antag-subverted-silicon-name = Przejęty robot
 roles-antag-subverted-silicon-objective = Wykonuj swoje nowe prawa i czyń szodę dla stacji.
 roles-antag-space-ninja-name = Kosmiczny Nindża
@@ -32,13 +32,3 @@ roles-antag-dragon-name = Smok kosmiczny
 roles-antag-dragon-objective = Stwórz armię karpi aby przejąć to terytorium.
 roles-antag-malfunctioning-ai-name = Malfunctioning AI
 roles-antag-malfunctioning-ai-objective = Sabotage the station as a malfunctioning AI.
-
-roles-antag-pirate-name = Pirate
-
-roles-antag-mothership-core-name = Xenoborg Core
-
-roles-antag-mothership-core-objective = Use your xenoborgs to create even more xenoborgs.
-
-roles-antag-xenoborg-name = Xenoborg
-
-roles-antag-xenoborg-objective = Help the mothership create more xenoborgs.

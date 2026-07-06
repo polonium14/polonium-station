@@ -132,7 +132,7 @@ guide-entry-medicinal-recipes = Medyczne
 guide-entry-other-recipes = Inne
 guide-entry-secret-recipes = Sekretne
 guide-entry-antagonists = Antagoniści
-guide-entry-nuclear-operatives = Specjaliści Nuklearni
+guide-entry-nuclear-operatives = Operatorzy Nuklearni
 guide-entry-traitors = Zdrajcy
 guide-entry-zombies = Żywe trupy
 guide-entry-revolutionaries = Rewolucjoniści
@@ -209,15 +209,3 @@ guide-entry-namingscheme = Schemat Nazewnictwa
 guide-entry-rules-ban-durations = Czas Trwania Banów
 guide-entry-writing = Pisanie
 guide-entry-glossary = Słownik
-
-guide-entry-gasrecycling = Gas Recycling
-
-guide-entry-deltapressure = Delta Pressure
-
-guide-entry-xenoarchaeologyunlockingnodes = Unlocking Nodes
-
-guide-entry-analysisconsole = Analysis Console
-
-guide-entry-lawsets = Silicon Lawsets
-
-guide-entry-xenoborgs = Xenoborgs

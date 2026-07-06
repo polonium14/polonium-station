@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2026 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   parent: BaseBarSign
   id: BarSignZabka
@@ -9,4 +14,17 @@
   - type: Sprite
     drawdepth: WallMountedItems
     sprite: _Polonium/Structures/Wallmounts/Barsigns/zabkacafe.rsi
+    state: empty
+
+- type: entity
+  parent: BaseBarSign
+  id: BarSignSzkodnik
+  name: U Szkodnika
+  description: Nie bądź szkodnikiem! Na grafice można zobaczyć tytułowego barowego szkodnika.
+  components:
+  - type: BarSign
+    current: Szkodnik
+  - type: Sprite
+    drawdepth: WallMountedItems
+    sprite: _Polonium/Structures/Wallmounts/Barsigns/szkodnik.rsi
     state: empty

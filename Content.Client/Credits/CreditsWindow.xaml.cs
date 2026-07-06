@@ -359,6 +359,7 @@ public sealed partial class CreditsWindow : DefaultWindow
             ss14ContributorsContainer.AddChild(label);
         }
 
+        AddSection(Loc.GetString("credits-window-ss14pl-contributors-section-title"), "SS14PL.txt");
         AddSection(Loc.GetString("credits-window-contributors-section-title"), "GitHub.txt");
         AddSection(Loc.GetString("credits-window-codebases-section-title"), "SpaceStation13.txt");
         AddSection(Loc.GetString("credits-window-original-remake-team-section-title"), "OriginalRemake.txt");

@@ -20,7 +20,7 @@ comms-console-announcement-unknown-sender = Nieznany
 # Comms console variant titles
 comms-console-announcement-title-station = Konsola komunikacyjna
 comms-console-announcement-title-centcom = Centralne Dowództwo
-comms-console-announcement-title-nukie = Specjaliści Nuklearni Syndykatu
+comms-console-announcement-title-nukie = Operatorzy Nuklearni Syndykatu
 comms-console-announcement-title-station-ai = SI Stacji
 comms-console-announcement-title-wizard = Czarodziej
 # Funkystation
