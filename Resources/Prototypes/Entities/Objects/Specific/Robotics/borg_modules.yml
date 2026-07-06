@@ -1130,6 +1130,7 @@
     - item: HandLabeler
     - item: RubberStampApproved
     - item: RubberStampDenied
+    - item: RubberStampCyborg
     - item: BorgDropper
     - item: DrinkShaker
       hand:

@@ -332,6 +332,9 @@
   id: ClownShoes # ConstructionGraph: Honker, BananaClownShoes
 
 - type: Tag
+  id: ClownRubberStamp
+
+- type: Tag
   id: ClownSuit # ConstructionGraph: BananaClownJumpsuit
 
 - type: Tag

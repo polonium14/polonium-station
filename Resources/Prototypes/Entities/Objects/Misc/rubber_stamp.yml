@@ -1,3 +1,27 @@
+# SPDX-FileCopyrightText: 2023 lzk <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 ArtisticRoomba <145879011+ArtisticRoomba@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 IlyaElDunaev <154531074+IlyaElDunaev@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2024 Kira Bridgeton <161087999+Verbalase@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Mangohydra <156087924+Mangohydra@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 PoTeletubby <ajcraigaz@gmail.com>
+# SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2024 cohanna <160202097+cohanna@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 strO0pwafel <153459934+strO0pwafel@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 MaiaArai <158123176+YaraaraY@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 V <97265903+formlessnameless@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 corresp0nd <46357632+corresp0nd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2026 YaraaraY <158123176+YaraaraY@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   name: generic rubber stamp
   parent: BaseItem
@@ -10,7 +34,7 @@
     stampState: "paper_stamp-generic"
     stampedColor: "#a23e3e"
     sound:
-      path: /Audio/Items/Stamp/thick_stamp_sub.ogg
+      path: /Audio/Items/Stamp/automatic_stamp.ogg
       params:
         volume: -2
         maxDistance: 5
@@ -47,6 +71,7 @@
     stampedName: stamp-component-stamped-name-captain
     stampedColor: "#3681bb"
     stampState: "paper_stamp-cap"
+    stampLargeIcon: "large_stamp-cap" # imp
   - type: Sprite
     state: stamp-cap
 
@@ -60,6 +85,7 @@
     stampedName: stamp-component-stamped-name-centcom
     stampedColor: "#006600"
     stampState: "paper_stamp-centcom"
+    stampLargeIcon: "large_stamp-centcom" # imp
   - type: Sprite
     state: stamp-centcom
 
@@ -73,6 +99,7 @@
     stampedName: stamp-component-stamped-name-chaplain
     stampedColor: "#d70601"
     stampState: "paper_stamp-chaplain"
+    stampLargeIcon: "large_stamp-chap" # imp
   - type: Sprite
     state: stamp-chaplain
 
@@ -86,6 +113,7 @@
     stampedName: stamp-component-stamped-name-lawyer
     stampedColor: "#233D57"
     stampState: "paper_stamp-lawyer"
+    stampLargeIcon: "large_stamp-law" # imp
   - type: Sprite
     state: stamp-lawyer
 
@@ -99,8 +127,12 @@
     stampedName: stamp-component-stamped-name-clown
     stampedColor: "#ff33cc"
     stampState: "paper_stamp-clown"
+    stampLargeIcon: "large_stamp-clown" # imp
   - type: Sprite
     state: stamp-clown
+  - type: Tag
+    tags:
+      - ClownRubberStamp
 
 - type: entity
   name: chief engineer's rubber stamp
@@ -112,6 +144,7 @@
     stampedName: stamp-component-stamped-name-ce
     stampedColor: "#c69b17"
     stampState: "paper_stamp-ce"
+    stampLargeIcon: "large_stamp-ce" # imp
   - type: Sprite
     state: stamp-ce
 
@@ -125,6 +158,7 @@
     stampedName: stamp-component-stamped-name-cmo
     stampedColor: "#33ccff"
     stampState: "paper_stamp-cmo"
+    stampLargeIcon: "large_stamp-cmo" # imp
   - type: Sprite
     state: stamp-cmo
 
@@ -138,6 +172,7 @@
     stampedName: stamp-component-stamped-name-hop
     stampedColor: "#6ec0ea"
     stampState: "paper_stamp-hop"
+    stampLargeIcon: "large_stamp-hop" # imp
   - type: Sprite
     state: stamp-hop
 
@@ -151,6 +186,7 @@
     stampedName: stamp-component-stamped-name-hos
     stampedColor: "#cc0000"
     stampState: "paper_stamp-hos"
+    stampLargeIcon: "large_stamp-hos" # imp
   - type: Sprite
     state: stamp-hos
 
@@ -164,6 +200,7 @@
     stampedName: stamp-component-stamped-name-mime
     stampedColor: "#777777"
     stampState: "paper_stamp-mime"
+    stampLargeIcon: "large_stamp-mime" # imp
     sound: null
   - type: Sprite
     state: stamp-mime
@@ -178,6 +215,7 @@
     stampedName: stamp-component-stamped-name-qm
     stampedColor: "#a23e3e"
     stampState: "paper_stamp-qm"
+    stampLargeIcon: "large_stamp-qm" # imp
   - type: Sprite
     state: stamp-qm
 
@@ -191,6 +229,7 @@
     stampedName: stamp-component-stamped-name-rd
     stampedColor: "#1f66a0"
     stampState: "paper_stamp-rd"
+    stampLargeIcon: "large_stamp-rd" # imp
   - type: Sprite
     state: stamp-rd
 
@@ -216,10 +255,9 @@
     stampedName: stamp-component-stamped-name-syndicate
     stampedColor: "#850000"
     stampState: "paper_stamp-syndicate"
+    stampLargeIcon: "large_stamp-syndicate" # imp
   - type: Sprite
     state: stamp-syndicate
-  - type: StaticPrice
-    price: 1000
 
 - type: entity
   name: warden's rubber stamp
@@ -231,6 +269,7 @@
     stampedName: stamp-component-stamped-name-warden
     stampedColor: "#5b0000"
     stampState: "paper_stamp-warden"
+    stampLargeIcon: "large_stamp-warden" # Funky!
   - type: Sprite
     state: stamp-warden
 
@@ -243,6 +282,7 @@
     stampedName: stamp-component-stamped-name-approved
     stampedColor: "#00be00"
     stampState: "paper_stamp-ok"
+    stampLargeIcon: "large_stamp-ok" # imp
   - type: Sprite
     state: stamp-ok
 
@@ -255,6 +295,7 @@
     stampedName: stamp-component-stamped-name-denied
     stampedColor: "#a23e3e"
     stampState: "paper_stamp-deny"
+    stampLargeIcon: "large_stamp-deny" # imp
   - type: Sprite
     state: stamp-deny
 
@@ -268,6 +309,7 @@
     stampedName: stamp-component-stamped-name-detective
     stampedColor: "#754d36"
     stampState: "paper_stamp-detective"
+    stampLargeIcon: "large_stamp-det" # Funky!
   - type: Sprite
     state: stamp-detective
 
@@ -281,6 +323,7 @@
     stampedName: stamp-component-stamped-name-greytide
     stampedColor: "#323232"
     stampState: "paper_stamp-greytide"
+    stampLargeIcon: "large_stamp-greytide" # Funky!
   - type: Sprite
     state: stamp-greytide
 
@@ -295,6 +338,7 @@
     stampedName: stamp-component-stamped-name-psychologist
     stampedColor: "#5B97BC"
     stampState: "paper_stamp-psychologist"
+    stampLargeIcon: "large_stamp-psych" # Funky!
   - type: Sprite
     state: stamp-psychologist
 
@@ -309,5 +353,6 @@
     stampedName: Wizard
     stampedColor: "#881bc1"
     stampState: "paper_stamp-wizard"
+    stampLargeIcon: "large_stamp-wiz" # Funky!
   - type: Sprite
     state: stamp-wizard
