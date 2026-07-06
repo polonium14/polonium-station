@@ -9,7 +9,7 @@ using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototy
 
 namespace Content.Shared._Funkystation.Atmos.Prototypes
 {
-    [Prototype("crystallizerRecipe")]
+    [Prototype]
     public sealed partial class CrystallizerRecipePrototype : IPrototype
     {
         [IdDataField]
