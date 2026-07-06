@@ -20,6 +20,7 @@
     children:
     - id: KingRatMigration
     - id: SnailMigration
+    - id: MiniDragonMigration
 
 # events
 
@@ -77,6 +78,23 @@
     specialEntries:
     - id: SpawnPointGhostRatKing
       prob: 0.001
+
+- type: entity
+  id: MiniDragonMigration
+  parent: BaseStationEventLongDelay
+  components:
+  - type: StationEvent
+    earliestStart: 15
+    weight: 3
+    duration: 20
+    minimumPlayers: 1
+    eventType: HostilesSpawn
+  - type: GameRule
+    chaosScore: 25
+  - type: VentCrittersRule
+    specialEntries:
+    - id: SpawnPointGhostMiniDragon
+      prob: 0.002
 
 - type: entity
   id: CockroachMigration
