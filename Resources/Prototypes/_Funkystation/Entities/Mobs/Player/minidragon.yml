@@ -85,8 +85,6 @@
       interactFailureString: petting-failure-minidragon
       interactFailureSound:
         path: /Audio/Effects/bite.ogg
-    - type: CombatPower
-      factor: 4
     - type: Puller
       needsHands: false
     - type: MovementSpeedModifier
