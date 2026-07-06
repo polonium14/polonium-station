@@ -8,6 +8,7 @@ using Content.Server.Speech;
 using Content.Server.Speech.Components;
 using Content.Server.Telephone;
 using Content.Shared._Polonium.CallablePhone;
+using Content.Shared.CCVar;
 using Content.Shared.Chat;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Database;
@@ -29,6 +30,7 @@ using Robust.Shared.Containers;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
+using Robust.Shared.Configuration;
 
 namespace Content.Server._Polonium.CallablePhone;
 
@@ -45,6 +47,8 @@ public sealed partial class CallablePhoneSystem : SharedCallablePhoneSystem
     [Dependency] private IChatManager _chatManager = default!;
     [Dependency] private IAdminLogManager _adminLogger = default!;
     [Dependency] private SharedContainerSystem _containers = default!;
+    [Dependency] private IPlayerManager _playerManager = default!;
+    [Dependency] private IConfigurationManager _cfg = default!;
 
     private readonly HashSet<EntityUid> _centCommAwaitingPickup = new();
     private readonly HashSet<EntityUid> _centCommActiveCalls = new();
@@ -66,8 +70,6 @@ public sealed partial class CallablePhoneSystem : SharedCallablePhoneSystem
     private readonly Dictionary<NetEntity, HashSet<ICommonSession>> _openAdminChats = new();
 
     private const int MaxImpersonationNameLength = 32;
-
-    [Dependency] private IPlayerManager _playerManager = default!;
 
     private float _cordCheckTimer;
     private float _updateTimer;
@@ -269,7 +271,7 @@ public sealed partial class CallablePhoneSystem : SharedCallablePhoneSystem
 
                 if (!wasRemoteCentCommSession &&
                     _playerManager.TryGetSessionByEntity(args.User, out var session) &&
-                    _adminManager.IsAdmin(session, includeDeAdmin: true))
+                    _adminManager.IsAdmin(session))
                 {
                     _centCommActiveCalls.Add(phone);
                     _centCommAnsweringAdmin[phone] = session.UserId;
@@ -752,6 +754,15 @@ public sealed partial class CallablePhoneSystem : SharedCallablePhoneSystem
 
     private void BeginCentCommCall(EntityUid phone, TelephoneComponent telephone)
     {
+        if (!_adminManager.ActiveAdmins.Any())
+        {
+            if (!_cfg.GetCVar(CCVars.CentCommCallDeclineWhenNoAdmins))
+                return;
+
+            DeclineCentCommCall(phone, Loc.GetString("callable-phone-centcomm-call-declined-default-reason"));
+            return;
+        }
+
         _centCommAwaitingPickup.Add(phone);
         _centCommRingingCaller.Remove(phone);
 
@@ -892,7 +903,7 @@ public sealed partial class CallablePhoneSystem : SharedCallablePhoneSystem
         if (!callable.IsCentComm)
             return false;
 
-        if (user != null && _adminManager.IsAdmin(user.Value, includeDeAdmin: true))
+        if (user != null && _adminManager.IsAdmin(user.Value))
             return false;
 
         if (_centCommAwaitingPickup.Contains(phone))
@@ -1119,7 +1130,7 @@ public sealed partial class CallablePhoneSystem : SharedCallablePhoneSystem
         var netPhone = GetNetEntity(phone);
         var prompt = new CentCommCallPickupPromptEvent(netPhone, callerName);
 
-        foreach (var session in _adminManager.AllAdmins)
+        foreach (var session in _adminManager.ActiveAdmins)
         {
             if (session.AttachedEntity == null || !HasComp<GhostComponent>(session.AttachedEntity))
                 continue;
@@ -1174,7 +1185,7 @@ public sealed partial class CallablePhoneSystem : SharedCallablePhoneSystem
 
     private void OnCentCommPickupResponse(CentCommCallPickupResponseEvent msg, EntitySessionEventArgs args)
     {
-        if (!_adminManager.IsAdmin(args.SenderSession, includeDeAdmin: true))
+        if (!_adminManager.IsAdmin(args.SenderSession))
             return;
 
         if (args.SenderSession.AttachedEntity == null || !HasComp<GhostComponent>(args.SenderSession.AttachedEntity))
