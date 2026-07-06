@@ -102,6 +102,8 @@
         orGroup: GiftPool
       - id: PlushieSpaceSheep
         orGroup: GiftPool
+      - id: PlushieCirno
+        orGroup: GiftPool
       - id: ClothingNeckCloakMoth
         orGroup: GiftPool
       - id: TennisBall

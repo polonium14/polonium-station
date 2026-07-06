@@ -63,6 +63,12 @@
       - id: ToyIan
       - id: ToyAmongPequeno
       - id: ToyMouse
+    - !type:GroupSelector # Funky plushies
+      children:
+      - id: PlushieGodo
+      - id: PlushieGocrazy
+      - id: PlushieCirno
+      - id: PlushieMothroach
     - !type:GroupSelector # Giant plushies
       children:
       - id: PlushieNar
