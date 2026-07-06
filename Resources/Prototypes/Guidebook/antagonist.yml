@@ -58,8 +58,7 @@
 - type: guideEntry
   id: NuclearOperatives
   name: guide-entry-nuclear-operatives
-  # TEMP: entity embeds broken
-  text: "/ServerInfo/_Polonium/Guidebook/_Stub.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Antagonist/Nuclear Operatives.xml"
 
 - type: guideEntry
   id: Zombies

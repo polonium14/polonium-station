@@ -37,7 +37,6 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   <Box>
   <GuideEntityEmbed Entity="MobVulpkanin" Caption="Vulpkanin"/>
   <GuideEntityEmbed Entity="MobRodentia" Caption="Rodentia"/>
-  <GuideEntityEmbed Entity="MobIPCDummy" Caption="I.P.C."/>
   <GuideEntityEmbed Entity="MobThaven" Caption="Thaven"/>
   </Box>
 

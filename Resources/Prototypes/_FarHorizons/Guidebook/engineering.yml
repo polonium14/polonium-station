@@ -11,8 +11,7 @@
 - type: guideEntry
   id: NuclearReactor
   name: guide-entry-nuclear-reactor
-  # TEMP: entity embeds broken
-  text: "/ServerInfo/_Polonium/Guidebook/_Stub.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Engineering/NuclearReactor.xml"
   children:
   - NuclearMaterials
 

@@ -338,8 +338,7 @@
 - type: guideEntry
   id: Generators
   name: guide-entry-generators
-  # TEMP: entity embeds broken
-  text: "/ServerInfo/_Polonium/Guidebook/_Stub.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Engineering/Generators.xml"
   children:
   - PortableGenerator
   - AME
