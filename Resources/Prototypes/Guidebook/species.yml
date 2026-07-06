@@ -65,8 +65,7 @@
 - type: guideEntry
   id: Human
   name: species-name-human
-  # TEMP: entity embeds broken
-  text: "/ServerInfo/_Polonium/Guidebook/_Stub.xml"
+  text: "/ServerInfo/_Polonium/Guidebook/Mobs/Human.xml"
 
 - type: guideEntry
   id: Moth

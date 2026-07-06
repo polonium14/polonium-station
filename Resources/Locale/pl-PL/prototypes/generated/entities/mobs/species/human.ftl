@@ -1,4 +1,4 @@
 ent-BaseMobHuman = Urist McRęce
     .desc = { ent-BaseMobSpeciesOrganic.desc }
-ent-MobHumanDummy = { ent-BaseSpeciesDummy }
-    .desc = { ent-BaseSpeciesDummy.desc }
+ent-MobHumanDummy = { ent-MobHuman }
+    .desc = { ent-MobHuman.desc }

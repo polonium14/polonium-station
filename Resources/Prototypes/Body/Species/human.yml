@@ -87,6 +87,11 @@
     species: Human
 
 - type: entity
+  parent: AppearanceHuman
+  id: MobHumanDummy
+  categories: [ HideSpawnMenu ]
+
+- type: entity
   parent:
   - AppearanceHuman
   - BaseSpeciesMobOrganic
