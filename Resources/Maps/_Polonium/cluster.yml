@@ -59324,23 +59324,6 @@ entities:
       parent: 2
     - type: MaterialSilo
       range: 10
-- proto: MailMetricsCartridge
-  entities:
-  - uid: 8793
-    components:
-    - type: Transform
-      pos: 22.489313,-28.152006
-      parent: 2
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-- proto: MailTeleporter
-  entities:
-  - uid: 8794
-    components:
-    - type: Transform
-      pos: 18.5,-28.5
-      parent: 2
 - proto: MaintenanceFluffSpawner
   entities:
   - uid: 8795
@@ -59805,13 +59788,6 @@ entities:
     components:
     - type: Transform
       pos: -17.5,11.5
-      parent: 2
-- proto: MedicalBiofabricator
-  entities:
-  - uid: 8874
-    components:
-    - type: Transform
-      pos: -22.5,14.5
       parent: 2
 - proto: MedicalComputerComms
   entities:
@@ -70923,13 +70899,6 @@ entities:
     components:
     - type: Transform
       pos: 28.5,17.5
-      parent: 2
-- proto: SurgeryKitFilled
-  entities:
-  - uid: 10702
-    components:
-    - type: Transform
-      pos: -15.486357,5.6283627
       parent: 2
 - proto: SurveillanceCameraCommand
   entities:
