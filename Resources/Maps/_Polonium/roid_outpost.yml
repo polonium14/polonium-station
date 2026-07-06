@@ -91279,7 +91279,7 @@ entities:
     - type: Physics
       angularDamping: 0
       linearDamping: 0
-- proto: PipeScrubber
+- proto: PortableScrubber
   entities:
   - uid: 17780
     components:
@@ -95782,7 +95782,7 @@ entities:
     - type: Physics
       angularDamping: 0
       linearDamping: 0
-- proto: RadioHandheldEmergency
+- proto: RadioHandheld
   entities:
   - uid: 9208
     components:
@@ -95809,7 +95809,7 @@ entities:
     - type: Transform
       pos: -6.3236365,-0.27651465
       parent: 2
-- proto: RadioHandheldEngineering
+- proto: RadioHandheld
   entities:
   - uid: 9207
     components:

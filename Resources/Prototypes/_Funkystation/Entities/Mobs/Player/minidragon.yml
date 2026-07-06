@@ -42,7 +42,7 @@
         200: Critical
         250: Dead
     - type: Stamina
-      critThreshold: 200
+      baseCritThreshold: 200
     - type: DamageStateVisuals
       states:
         Alive:
@@ -115,13 +115,12 @@
       solutionOnBody: false
       updateInterval: 0.25
       metabolizerTypes: [ Dragon ]
-      groups:
-      - id: Medicine
-      - id: Poison
+      stages: [ Digestion, Bloodstream ]
     - type: Flammable
       damage:
         types: {}
     - type: Temperature
+    - type: TemperatureDamage
       heatDamageThreshold: 1200
     - type: Prying # Open door from xeno.yml.
       pryPowered: true
@@ -133,13 +132,12 @@
       allowedStates:
       - Alive
       - Critical
-      damageCap: 250
       damage:
-        groups:
-          Brute: -0.4
-          Burn: -0.4
-          Toxin: -0.4
-          Airloss: -0.4
+        types:
+          Blunt: -0.4
+          Heat: -0.4
+          Poison: -0.4
+          Asphyxiation: -0.4
 
 - type: entity
   name: mini dragon

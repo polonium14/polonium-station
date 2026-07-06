@@ -79249,7 +79249,7 @@ entities:
     - type: Transform
       pos: 62.601738,38.788567
       parent: 2
-- proto: PipeScrubber
+- proto: PortableScrubber
   entities:
   - uid: 1258
     components:

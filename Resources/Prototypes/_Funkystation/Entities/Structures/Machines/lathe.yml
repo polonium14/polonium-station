@@ -31,32 +31,8 @@
   - type: Lathe
     idleState: icon
     runningState: icon
-    staticRecipes:
-    - TrumpetInstrument
-    - TromboneInstrument
-    - FrenchHornInstrument
-    - EuphoniumInstrument
-    - GunpetInstrument
-    - GlockenspielInstrument
-    - MusicBoxInstrument
-    - XylophoneInstrument
-    - MicrophoneInstrument
-    - WoodblockInstrument
-    - KalimbaInstrument
-    - ElectricGuitarInstrument
-    - BassGuitarInstrument
-    - RockGuitarInstrument
-    - AcousticGuitarInstrument
-    - BanjoInstrument
-    - ViolinInstrument
-    - ViolaInstrument
-    - CelloInstrument
-    - SaxophoneInstrument
-    - HarmonicaInstrument
-    - ClarinetInstrument
-    - FluteInstrument
-    - RecorderInstrument
-    - BagpipeInstrument
+    staticPacks:
+    - MusicTechFabStatic
   - type: Machine
     board: MusicTechFabCircuitboard
   - type: MaterialStorage
@@ -89,53 +65,13 @@
   - type: Lathe
     idleState: icon
     runningState: icon
-    staticRecipes:
-    - BoxShotgunFlare
-    - WeaponFlareGun
-    - FultonBeacon
-    - Fulton
-    - AppraisalTool
-    - SheetRGlass
-    - SheetPGlass
-    - SheetRPGlass
-    - SheetUGlass
-    - SheetRUGlass
-    - SheetPlasteel
-    - ToolboxArtistic
-    - ToolboxEmergency
-    - ToolboxElectrical
-    - ToolboxMechanical
-    - OreBag
-    - Pickaxe
-    - MaterialBag
-    - GrapplingGun
-    - HandheldGPSBasic
-    dynamicRecipes:
-    - MiningDrill
-    - MiningDrillDiamond
-    - HandHeldMassScanner
-    - MineralScannerEmpty
-    - AdvancedMineralScannerEmpty
-    - WeaponProtoKineticAccelerator
-    - ClothingShoesBootsMagSci
-    - OreBagOfHolding # It can create bluespace bags, but *not* synthethic bluespace crystals from diamonds and plasma
-    - ClothingBackpackHolding
-    - ClothingBackpackSatchelHolding
-    - ClothingBackpackDuffelHolding
-    - WeaponPlasmaCutter
-    - MechEquipmentGrabber
-    - MechEquipmentDrill
-    - MechEquipmentDrillDiamond
-    - MechEquipmentKineticAccelerator
-    - CargoTelepadMachineCircuitboard
-    - WeaponLaserSvalinn
-    - OreProcessorIndustrialMachineCircuitboard
-    - PKAUpgradeDamage
-    - PKAUpgradeRange
-    - PKAUpgradeFireRate
+    staticPacks:
+    - CargoTechFabStatic
+    dynamicPacks:
+    - CargoTechFabDynamic
   - type: EmagLatheRecipes
-    emagStaticRecipes:
-    - ToolboxSyndicate
+    emagStaticPacks:
+    - CargoTechFabEmagStatic
   - type: Machine
     board: CargoTechFabCircuitboard
   - type: MaterialStorage

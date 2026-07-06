@@ -1,0 +1,83 @@
+# SPDX-FileCopyrightText: 2025 ThatOneMoon <juozas.dringelis@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: latheRecipePack
+  id: MusicTechFabStatic
+  recipes:
+  - TrumpetInstrument
+  - TromboneInstrument
+  - FrenchHornInstrument
+  - EuphoniumInstrument
+  - GunpetInstrument
+  - GlockenspielInstrument
+  - MusicBoxInstrument
+  - XylophoneInstrument
+  - MicrophoneInstrument
+  - WoodblockInstrument
+  - KalimbaInstrument
+  - ElectricGuitarInstrument
+  - BassGuitarInstrument
+  - RockGuitarInstrument
+  - AcousticGuitarInstrument
+  - BanjoInstrument
+  - ViolinInstrument
+  - ViolaInstrument
+  - CelloInstrument
+  - SaxophoneInstrument
+  - HarmonicaInstrument
+  - ClarinetInstrument
+  - FluteInstrument
+  - RecorderInstrument
+  - BagpipeInstrument
+
+- type: latheRecipePack
+  id: CargoTechFabStatic
+  recipes:
+  - BoxShotgunFlare
+  - WeaponFlareGun
+  - FultonBeacon
+  - Fulton
+  - AppraisalTool
+  - SheetRGlass
+  - SheetPGlass
+  - SheetRPGlass
+  - SheetUGlass
+  - SheetRUGlass
+  - SheetPlasteel
+  - ToolboxArtistic
+  - ToolboxEmergency
+  - ToolboxElectrical
+  - ToolboxMechanical
+  - OreBag
+  - Pickaxe
+  - MaterialBag
+  - GrapplingGun
+  - HandheldGPSBasic
+
+- type: latheRecipePack
+  id: CargoTechFabDynamic
+  recipes:
+  - MiningDrill
+  - MiningDrillDiamond
+  - HandHeldMassScanner
+  - MineralScannerEmpty
+  - AdvancedMineralScannerEmpty
+  - WeaponProtoKineticAccelerator
+  - ClothingShoesBootsMagSci
+  - OreBagOfHolding
+  - ClothingBackpackHolding
+  - ClothingBackpackSatchelHolding
+  - ClothingBackpackDuffelHolding
+  - MechEquipmentGrabber
+  - CargoTelepadMachineCircuitboard
+  - WeaponLaserSvalinn
+  - OreProcessorIndustrialMachineCircuitboard
+  - PKAUpgradeDamage
+  - PKAUpgradeRange
+  - PKAUpgradeFireRate
+
+- type: latheRecipePack
+  id: CargoTechFabEmagStatic
+  recipes:
+  - ToolboxSyndicate

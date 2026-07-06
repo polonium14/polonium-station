@@ -30,5 +30,6 @@ roles-antag-thief-name = Złodziej
 roles-antag-thief-objective = Dołącz do swojej kolekcji parę rzeczy NT, bez używania przemocy.
 roles-antag-dragon-name = Smok kosmiczny
 roles-antag-dragon-objective = Stwórz armię karpi aby przejąć to terytorium.
+roles-antag-pirate-name = Pirat
 roles-antag-malfunctioning-ai-name = Malfunctioning AI
 roles-antag-malfunctioning-ai-objective = Sabotage the station as a malfunctioning AI.

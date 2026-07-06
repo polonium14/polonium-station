@@ -117396,7 +117396,7 @@ entities:
     - type: Transform
       pos: 41.32377,3.7988958
       parent: 2
-- proto: RadioHandheldEmergency
+- proto: RadioHandheld
   entities:
   - uid: 7100
     components:

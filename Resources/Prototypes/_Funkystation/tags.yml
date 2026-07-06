@@ -19,5 +19,8 @@
 - type: Tag # Funky - Rag fits in janibelt
   id: Rag
 
+- type: Tag
+  id: LizardEmotes
+
 - type: Tag # Assmos - Crystallizer
   id: NoRecharge
