@@ -1220,21 +1220,6 @@
         Steel: 5
 
 - type: entity
-  id: CrystallizerMachineCircuitboard
-  parent: BaseMachineCircuitboard
-  name: crystallizer machine board
-  description: A machine printed circuit board for a crystallizer.
-  components:
-  - type: MachineBoard
-    prototype: Crystallizer
-    stackRequirements:
-      Steel: 5
-      Glass: 5
-      Capacitor: 2
-      Manipulator: 4
-      MatterBin: 4
-
-- type: entity
   id: MailTeleporterMachineCircuitboard
   parent: BaseMachineCircuitboard
   name: mail teleporter machine board
