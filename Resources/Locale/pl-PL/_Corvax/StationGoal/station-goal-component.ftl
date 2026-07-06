@@ -78,9 +78,9 @@ station-goal-bank =
     
     Zalecana lista leków:
     1. arithrazine;
-    2. libital;
-    3. inaprovaline / dexalin;
-    4. aiuri / lenturi;
+    2. bikarydyna;
+    3. inaprowalina / deksalina;
+    4. dermalina / kelotan;
     5. diphenhydramine / stellibinin;
     6. doxarubixadone;
     7. cryoxadone;

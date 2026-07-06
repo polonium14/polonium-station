@@ -65,26 +65,15 @@ Możesz również użyć ręcznej etykieciarki, aby uporządkować poszczególne
 
   Próbowałeś może zrobić Fluorosurfaktant? albo Napalm?
 
-  Możesz czasem napotkać "zaawansowane" opatrunki medyczne, wiesz że ty też możesz je wytworzyć?
+  Możesz czasem napotkać "zaawansowane" opatrunki medyczne — wiesz, że ty też możesz je wytworzyć?
 <Box>
     <GuideEntityEmbed Entity="RegenerativeMesh"/>
     <GuideEntityEmbed Entity="MedicatedSuture"/>
   </Box>
-  Poproś szefa kuchni o dostęp do mikrofalówki i wypróbuj kilka receptur:
-  [textlink="Kliknij tutaj, aby zobaczyć szczegóły" link="MedicinalRecipes"]
+  Poproś szefa kuchni o dostęp do mikrofalówki i sprawdź dostępne przepisy lecznicze:
+  [textlink="Kliknij tutaj, aby zobaczyć przepisy lecznicze." link="MedicinalRecipes"]
 
-  - 1 Mak
-  - 1 Bruise Pack
-  - 1 Materiał
-  - 20u Kwas Traneksamiczny
-  - 20u Kryptobiolina
-
-  lub
-
-  - 1 Aloez
-  - 1 Maść na oparzenia
-  - 1 Materiał
-  - 20u Oksandrolon
-  - 20u Syginat
+  Szczegółowe informacje o lekach znajdziesz w sekcji:
+  [textlink="Kliknij tutaj, aby zobaczyć listę medykamentów." link="Medicine"]
 
 </Document>

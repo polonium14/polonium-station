@@ -91249,7 +91249,7 @@ entities:
     - type: Transform
       pos: -64.16931,32.54505
       parent: 2
-- proto: PillCanisterMutadone
+- proto: PillCanisterHyronalin
   entities:
   - uid: 20821
     components:

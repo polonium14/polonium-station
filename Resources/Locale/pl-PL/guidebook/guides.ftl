@@ -94,7 +94,7 @@ guide-entry-command = Dowództwo
 guide-entry-service = Serwis
 guide-entry-newplayer = Jesteś nowy? Zacznij tutaj!
 # Funkystaion - Genetics
-guide-entry-genetics = Genetyka
+#guide-entry-genetics = Genetyka
 guide-entry-charactercreation = Tworzenie postaci
 guide-entry-species = Gatunki
 guide-entry-yourfirstcharacter = Twoja pierwsza postać

@@ -79232,7 +79232,7 @@ entities:
     - type: Transform
       pos: -10.371484,6.6507306
       parent: 2
-- proto: PillCanisterMutadone
+- proto: PillCanisterHyronalin
   entities:
   - uid: 11149
     components:

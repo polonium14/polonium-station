@@ -38,6 +38,3 @@ ent-DNAMutatorTrichochromaticShift = mutator DNA (Zmiana Trójbarwna)
     .desc = { ent-BaseDNAInjectorSyringe.desc }
 ent-DNAMutatorFirebreath = mutator DNA (Zianie Ogniem)
     .desc = { ent-BaseDNAInjectorSyringe.desc }
-ent-MutadoneChemistryBottle = { ent-BaseChemistryBottleFilled }
-    .suffix = mutadon
-    .desc = { ent-BaseChemistryBottleFilled.desc }
