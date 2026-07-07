@@ -27,6 +27,9 @@
   - SpeedLoaderMagnumPractice
   - MagazinePistolSubMachineGunPractice
   - WeaponFlareGunSecurity
+  - WeaponVisMPSPistolMagazinePractice
+  - PMMMachineGunMagazinePractice
+  - BorSniperMagazinePractice
 
 # Shared between secfab and emagged autolathe
 - type: latheRecipePack
@@ -50,6 +53,12 @@
   - MagazineRifleEmpty
   - SpeedLoaderMagnum
   - SpeedLoaderMagnumEmpty
+  - WeaponVisMPSPistolMagazineEmpty
+  - WeaponVisMPSPistolMagazine
+  - PMMMachineGunMagazineEmpty
+  - PMMMachineGunMagazine
+  - BorSniperMagazineEmpty
+  - BorSniperMagazine
 
 - type: latheRecipePack
   id: SecurityWeaponsStatic
@@ -122,6 +131,12 @@
   - MagazineShotgunIncendiary
   - SpeedLoaderMagnumIncendiary
   - SpeedLoaderMagnumUranium
+  - WeaponVisMPSPistolMagazineIncendiary
+  - WeaponVisMPSPistolMagazineUranium
+  - PMMMachineGunMagazineIncendiary
+  - PMMMachineGunMagazineUranium
+  - BorSniperMagazineIncendiary
+  - BorSniperMagazineUranium
 
 - type: latheRecipePack
   id: SecurityWeapons
