@@ -55,7 +55,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   Każdy członek twojej drużyny otrzymał [color=#7ee8f7]uplink[/color], dzięki któremu może kupić wszystko, co będzie potrzebne do wykonania misji, podobnie jak w przypadku [textlink="zdrajców" link="Traitors"].
 
   <Box>
-    <GuideEntityEmbed Entity="BaseUplinkRadio60TC" Caption="uplink"/>
+    <GuideEntityEmbed Entity="BaseUplinkRadio200TC" Caption="uplink"/>
   </Box>
 
   Możesz kupować ten sam rodzaj wyposażenia, co zdrajcy, ale masz do dyspozycji sprzęt wyższej jakości i więcej telekryształów do wydania.
