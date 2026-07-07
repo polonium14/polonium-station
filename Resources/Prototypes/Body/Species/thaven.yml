@@ -266,8 +266,14 @@
   id: OrganThavenEars
 
 - type: entity
-  parent: [ OrganBaseLungs, OrganThavenInternal, OrganThavenMetabolizer ]
+  parent: [ OrganHumanLungs, OrganThavenInternal ]
   id: OrganThavenLungs
+  name: thaven lungs
+  description: Technically not lungs since they don't draw chemicals from the air, these strange, durable organs use the motion of respiration to provide energy for cell maintenance.
+  components:
+  - type: Metabolizer
+    metabolizerTypes: [ Thaven ]
+    stages: [ Respiration ]
 
 - type: entity
   parent: [ OrganBaseHeart, OrganThavenInternal, OrganThavenMetabolizer ]
