@@ -130,6 +130,11 @@ chat-speech-verb-electricity-1 = trzaska
 chat-speech-verb-electricity-2 = bzyczy
 chat-speech-verb-electricity-3 = piszczy
 
+chat-speech-verb-name-vulpkanin = Vulpkanin
+chat-speech-verb-vulpkanin-1 = warczy
+chat-speech-verb-vulpkanin-2 = szczeka
+chat-speech-verb-vulpkanin-3 = mruczy
+chat-speech-verb-vulpkanin-4 = skomli
 chat-speech-verb-vulpkanin = Vulpkanin
 
 chat-speech-verb-name-wawa = Wawa
