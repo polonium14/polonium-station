@@ -14,7 +14,7 @@
   - type: Item
     size: Huge
     shape:
-    - 0,0,5,1
+    - 0,0,0,1
   - type: Sprite
     sprite: _Polonium/Weapons/Guns/Snipers/Bor.rsi
     layers:
@@ -69,7 +69,7 @@
     price: 1500
   - type: GunRequiresWield
   - type: CursorOffsetRequiresWield
-  - type: EyeCursorOffset 
+  - type: EyeCursorOffset
     maxOffset: 4.0 # Dystans trochę mniejszy niż Hristow
     offsetSpeed: 0.05 # Balansowane wolnym zoomem
     pvsIncrease: 0.2

@@ -137,7 +137,7 @@
   id: SyndicateOperativeGearFull
   parent: SyndicateOperativeGearFullNoUplink
   equipment:
-    pocket2: BaseUplinkRadio40TC
+    pocket2: BaseUplinkRadio225TC # Goobstation - Telecrystal rework
 
 - type: chameleonOutfit
   id: NukeopsOutfit
@@ -151,10 +151,11 @@
 #Nuclear Operative Commander Gear
 - type: startingGear
   id: SyndicateCommanderGearFull
-  parent: SyndicateOperativeGearFull
+  parent: SyndicateOperativeGearFullNoUplink
   equipment:
     id: SyndiCommanderPDA
     neck: SyndicateWhistle
+    pocket2: BaseUplinkRadio350TC # goobstation - im rich :fire::fire:
     outerClothing: ClothingOuterHardsuitSyndieCommander
   inhand:
   - NukeOpsDeclarationOfWar
@@ -204,4 +205,4 @@
   id: SyndicateLoneOperativeGearFull
   parent: SyndicateOperativeGearFull
   equipment:
-    pocket2: BaseUplinkRadio60TC
+    pocket2: BaseUplinkRadio350TC # Goobstation - Telecrystal rework
