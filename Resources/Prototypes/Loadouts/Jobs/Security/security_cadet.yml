@@ -1,3 +1,12 @@
+# SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Fr0goo <frogoofrog@outlook.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2026 Frogoo <153249069+Fr0goo@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 Tea <Xerithin@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # Head
 - type: loadout
   id: CadetHat
@@ -6,25 +15,7 @@
 
 # Jumpsuit
 - type: loadout
-  id: RedJumpsuit
+  id: CadetUniform
   equipment:
-    jumpsuit: ClothingUniformJumpsuitColorRed
-
-- type: loadout
-  id: RedJumpskirt
-  equipment:
-    jumpsuit: ClothingUniformJumpskirtColorRed
-
-##########################################
-# Funky security uniforms
-- type: loadout
-  id: FuSecurityCadetPants
-  equipment:
-    jumpsuit: FuClothingUniformCadetPants
-
-- type: loadout
-  id: FuSecurityCadetSkirt
-  equipment:
-    jumpsuit: FuClothingUniformCadetSkirt
-
-##########################################
+    jumpsuit: ClothingUniformJumpsuitCadetBase
+  groupBy: "jumpsuit"

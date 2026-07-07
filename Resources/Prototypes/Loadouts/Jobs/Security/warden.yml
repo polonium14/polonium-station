@@ -1,3 +1,11 @@
+# SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 TrixxedHeart <46364955+TrixxedBit@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Xcybitt <xcybitt@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+# Head
 - type: loadout
   id: WardenHead
   equipment:
@@ -8,16 +16,23 @@
   equipment:
     head: ClothingHeadHatBeretWarden
 
+- type: loadout
+  id: WardenHelmet
+  equipment:
+    head: ClothingHeadHelmetRiot
+
 # Jumpsuit
 - type: loadout
   id: WardenJumpsuit
   equipment:
     jumpsuit: ClothingUniformJumpsuitWarden
+  groupBy: "jumpsuit"
 
 - type: loadout
   id: WardenJumpskirt
   equipment:
     jumpsuit: ClothingUniformJumpskirtWarden
+  groupBy: "jumpskirt"
 
 # OuterClothing
 - type: loadout
@@ -28,4 +43,4 @@
 - type: loadout
   id: WardenArmoredWinterCoat
   equipment:
-    outerClothing: FuClothingOuterWinterWard
+    outerClothing: ClothingOuterWinterWarden

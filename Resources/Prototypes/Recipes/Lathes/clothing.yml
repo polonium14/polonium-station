@@ -757,10 +757,10 @@
   id: ClothingOuterWinterRobo
   result: ClothingOuterWinterRobo
 
-- type: latheRecipe
-  parent: BaseCoatRecipe
-  id: FuClothingOuterWinterSec
-  result: FuClothingOuterWinterSec
+#- type: latheRecipe
+#  parent: BaseCoatRecipe
+#  id: ClothingOuterWinterSec
+#  result: ClothingOuterWinterSec
 
 - type: latheRecipe
   parent: BaseCoatRecipe

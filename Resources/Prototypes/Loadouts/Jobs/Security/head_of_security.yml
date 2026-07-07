@@ -1,3 +1,18 @@
+# SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Amethyst <52829582+jackel234@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Mora <46364955+TrixxedHeart@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 TrixxedHeart <46364955+TrixxedBit@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Xcybitt <xcybitt@gmail.com>
+# SPDX-FileCopyrightText: 2025 jackel234 <jackel234@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2026 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 Tea <Xerithin@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+# For mantles
 - type: loadoutEffectGroup
   id: MasterHoS
   effects:
@@ -5,91 +20,38 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobHeadOfSecurity
-      time: 20h
+      time: 72000 #20 hrs
 
 # Jumpsuit
 - type: loadout
-  id: HeadofSecurityJumpsuit
+  id: HeadofSecurityService
   equipment:
-    jumpsuit: ClothingUniformJumpsuitHoS
-  groupBy: "jumpsuit"
+    jumpsuit: ClothingUniformJumpsuitHosBase
+  groupBy: "service"
 
 - type: loadout
-  id: HeadofSecurityJumpskirt
+  id: HeadofSecurityDress
   equipment:
-    jumpsuit: ClothingUniformJumpskirtHoS
-  groupBy: "jumpskirt"
+    jumpsuit: ClothingUniformDressHosBase
+  groupBy: "dress"
 
 - type: loadout
-  id: HeadofSecurityTurtleneck
+  id: HeadofSecurityDressSkirt
   equipment:
-    jumpsuit: ClothingUniformJumpsuitHoSAlt
-  groupBy: "jumpsuit"
-
-- type: loadout
-  id: HeadofSecurityTurtleneckSkirt
-  equipment:
-    jumpsuit: ClothingUniformJumpskirtHoSAlt
-  groupBy: "jumpskirt"
+    jumpsuit: ClothingUniformHosDressSkirtBase
+  groupBy: "dress"
 
 - type: loadout
   id: HeadofSecurityFormalSuit
   equipment:
-    jumpsuit: ClothingUniformJumpsuitHosFormal
-  groupBy: "jumpsuit"
+    jumpsuit: ClothingUniformMessHosBase
+  groupBy: "formal"
 
 - type: loadout
-  id: HeadofSecurityFormalSkirt
+  id: HeadofSecurityFormalDress
   equipment:
-    jumpsuit: ClothingUniformJumpskirtHosFormal
-  groupBy: "jumpskirt"
-
-##########################################
-# Funky security uniforms
-
-- type: loadout
-  id: FuHosService
-  equipment:
-    jumpsuit: FuClothingUniformHosService
-  groupBy: "service"
-
-- type: loadout
-  id: FuHosDressPants
-  equipment:
-    jumpsuit: FuClothingUniformHosDressPants
-  groupBy: "dresspants"
-
-- type: loadout
-  id: FuHosDressSkirt
-  equipment:
-    jumpsuit: FuClothingUniformHosDressSkirt
-  groupBy: "dressskirt"
-
-- type: loadout
-  id: FuHosDressSkirtStockings
-  equipment:
-    jumpsuit: FuClothingUniformHosDressSkirtStockings
-  groupBy: "dressskirt"
-
-- type: loadout
-  id: FuHosMessPants
-  equipment:
-    jumpsuit: FuClothingUniformHosMessPants
-  groupBy: "messpants"
-
-- type: loadout
-  id: FuHosMessSkirt
-  equipment:
-    jumpsuit: FuClothingUniformHosMessSkirt
-  groupBy: "messskirt"
-
-- type: loadout
-  id: FuHosMessSkirtStockings
-  equipment:
-    jumpsuit: FuClothingUniformHosMessSkirtStockings
-  groupBy: "messskirt"
-
-##########################################
+    jumpsuit: ClothingUniformMessHosDressBase
+  groupBy: "formal"
 
 # Head
 - type: loadout
@@ -130,4 +92,14 @@
 - type: loadout
   id: HeadofSecurityWinterCoat
   equipment:
-    outerClothing: FuClothingOuterWinterHos
+    outerClothing: ClothingOuterWinterHoS
+
+- type: loadout
+  id: HeadofSecurityArmorVest
+  equipment:
+    outerClothing: ClothingOuterArmorBasic
+
+- type: loadout
+  id: HeadofSecurityArmorVestSlim
+  equipment:
+    outerClothing: ClothingOuterArmorBasicSlim

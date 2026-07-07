@@ -285,7 +285,7 @@
   id: FillWardrobeSecurity
   table: !type:AllSelector
     children:
-    - id: ClothingUniformJumpsuitSec
+    - id: ClothingUniformJumpsuitSecBase
     - id: ClothingBackpackSecurity
     - id: ClothingShoesBootsJack
     - id: ClothingEyesGlassesSunglasses

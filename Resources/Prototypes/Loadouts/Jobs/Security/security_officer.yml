@@ -1,3 +1,29 @@
+# SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Cojoke <83733158+Cojoke-dot@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 DieselMohawk <gavin.drinka@gmail.com>
+# SPDX-FileCopyrightText: 2024 Mr. 27 <45323883+Dutch-VanDerLinde@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 PoorMansDreams <150595537+PoorMansDreams@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 SpeltIncorrectyl <66873282+SpeltIncorrectyl@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Fr0goo <frogoofrog@outlook.com>
+# SPDX-FileCopyrightText: 2025 Mora <46364955+TrixxedHeart@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Teasq <Xerithin@gmail.com>
+# SPDX-FileCopyrightText: 2025 TrixxedHeart <46364955+TrixxedBit@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 W.xyz() <tptechteam@gmail.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 w.xyz() <84605679+pirakaplant@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 Damian Zieliński <zientasek.pl@gmail.com>
+# SPDX-FileCopyrightText: 2026 Frogoo <153249069+Fr0goo@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 Tea <Xerithin@gmail.com>
+# SPDX-FileCopyrightText: 2026 ThatOneMoon <91613003+ThatOneMoon@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 ThatOneMoon <juozas.dringelis@gmail.com>
+# SPDX-FileCopyrightText: 2026 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+# Senior Time
 - type: loadoutEffectGroup
   id: SeniorOfficer
   effects:
@@ -5,13 +31,12 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobWarden
-      time: 6h
+      time: 21600 #6 hrs
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:DepartmentTimeRequirement
       department: Security
-      time: 60h
-
+      time: 216000 # 60 hrs
 # Head
 - type: loadout
   id: SecurityHelmet
@@ -33,114 +58,70 @@
   equipment:
     head: ClothingHeadHatSecurityTrooper
 
+# Eyes - Funkystation
+- type: loadout
+  id: SecurityNormGlasses
+  equipment:
+    eyes: ClothingEyesGlassesSecurity
+
+- type: loadout
+  id: SecurityHud
+  equipment:
+    eyes: ClothingEyesHudSecurity
+
+- type: loadout
+  id: SecurityEyepatch
+  equipment:
+    eyes: ClothingEyesEyepatchHudSecurity
+
 # Jumpsuit
 - type: loadout
-  id: SecurityJumpsuit
+  id: SecurityFatigues
   equipment:
-    jumpsuit: ClothingUniformJumpsuitSec
+    jumpsuit: ClothingUniformJumpsuitSecBase
+  groupBy: "fatigues"
 
 - type: loadout
-  id: SecurityJumpskirt
+  id: SecurityDress
   equipment:
-    jumpsuit: ClothingUniformJumpskirtSec
+    jumpsuit: ClothingUniformSecurityDressBase
+  groupBy: "dress"
 
 - type: loadout
-  id: SecurityJumpsuitGrey
+  id: SecurityDressSkirt
   equipment:
-    jumpsuit: ClothingUniformJumpsuitSecGrey
+    jumpsuit: ClothingUniformSecurityDressSkirtBase
+  groupBy: "dress"
 
 - type: loadout
-  id: SecurityJumpskirtGrey
-  equipment:
-    jumpsuit: ClothingUniformJumpskirtSecGrey
-
-- type: loadout
-  id: TrooperUniform
-  equipment:
-    jumpsuit: ClothingUniformSecurityTrooper
-
-- type: loadout
-  id: SeniorOfficerJumpsuit
+  id: SecuritySeniorDress
   effects:
   - !type:GroupLoadoutEffect
     proto: SeniorOfficer
   equipment:
-    jumpsuit: ClothingUniformJumpsuitSeniorOfficer
+    jumpsuit: ClothingUniformSecurityDressSenior
+  groupBy: "dress"
 
 - type: loadout
-  id: SeniorOfficerJumpskirt
+  id: SecuritySeniorDressSkirt
   effects:
   - !type:GroupLoadoutEffect
     proto: SeniorOfficer
   equipment:
-    jumpsuit: ClothingUniformJumpskirtSeniorOfficer
-
-##########################################
-# Funky security uniforms
+    jumpsuit: ClothingUniformSecurityDressSkirtSenior
+  groupBy: "dress"
 
 - type: loadout
-  id: FuSecurityService
+  id: SecurityMess
   equipment:
-    jumpsuit: FuClothingUniformSecService
-  groupBy: "service"
+    jumpsuit: ClothingUniformSecurityMessBase
+  groupBy: "mess"
 
 - type: loadout
-  id: FuSecurityDressPants
+  id: SecurityMessSkirt
   equipment:
-    jumpsuit: FuClothingUniformSecDressPants
-  groupBy: "dresspants"
-
-# No senior gear
-#- type: loadout
-#  id: FuSecurityDressPantsSenior
-#  equipment:
-#    jumpsuit: FuClothingUniformSecDressPantsSenior
-#  groupBy: "dresspants"
-
-- type: loadout
-  id: FuSecurityDressSkirt
-  equipment:
-    jumpsuit: FuClothingUniformSecDressSkirt
-  groupBy: "dressskirt"
-
-- type: loadout
-  id: FuSecurityDressSkirtStockings
-  equipment:
-    jumpsuit: FuClothingUniformSecDressSkirtStockings
-  groupBy: "dressskirt"
-
-# No senior uniforms
-#- type: loadout
-#  id: FuSecurityDressSkirtSenior
-#  equipment:
-#    jumpsuit: FuClothingUniformSecDressSkirtSenior
-#  groupBy: "dressskirt"
-
-#- type: loadout
-#  id: FuSecurityDressSkirtSeniorStockings
-#  equipment:
-#   jumpsuit: FuClothingUniformSecDressSkirtSeniorStockings
-# groupBy: "dressskirt"
-
-- type: loadout
-  id: FuSecurityMessPants
-  equipment:
-    jumpsuit: FuClothingUniformSecMessPants
-  groupBy: "messpants"
-
-- type: loadout
-  id: FuSecurityMessSkirt
-  equipment:
-    jumpsuit: FuClothingUniformSecMessSkirt
-  groupBy: "messskirt"
-
-- type: loadout
-  id: FuSecurityMessSkirtStockings
-  equipment:
-    jumpsuit: FuClothingUniformSecMessSkirtStockings
-  groupBy: "messskirt"
-
-##########################################
+    jumpsuit: ClothingUniformSecurityMessSkirtBase
+  groupBy: "mess"
 
 # Back
 - type: loadout
@@ -167,23 +148,32 @@
 - type: loadout
   id: SecurityWebbing
   equipment:
-    belt: FuClothingBeltSecurityWebbingFilled
+    belt: ClothingBeltSecurityWebbingFilled
 
 # Outerclothing
 - type: loadout
   id: ArmorVest
   equipment:
     outerClothing: ClothingOuterArmorBasic
+  groupBy: "armor"
 
 - type: loadout
   id: ArmorVestSlim
   equipment:
     outerClothing: ClothingOuterArmorBasicSlim
+  groupBy: "armor"
 
 - type: loadout
   id: SecurityOfficerWintercoat
   equipment:
-    outerClothing: FuClothingOuterWinterSec
+    outerClothing: ClothingOuterWinterSec
+
+# Gloves - Funky
+
+- type: loadout
+  id: FingerlessGloves
+  equipment:
+    gloves: ClothingHandsGlovesFingerless
 
 # Shoes
 - type: loadout
@@ -214,3 +204,22 @@
     proto: SeniorOfficer
   equipment:
     id: SeniorOfficerPDA
+
+# Service Weapon
+- type: loadout
+  id: SecurityOfficerEnergyGun
+  storage:
+    back:
+    - WeaponEnergyPistol
+
+- type: loadout
+  id: SecurityOfficerPistol
+  storage:
+    back:
+    - WeaponPistolMk58
+
+- type: loadout
+  id: SecurityOfficerVIS
+  storage:
+    back:
+    - WeaponVisMPSPistol

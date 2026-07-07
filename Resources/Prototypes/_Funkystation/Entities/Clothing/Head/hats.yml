@@ -7,9 +7,9 @@
   description: A clean, white hat for the newly enlisted! Here's hoping it stays clean.
   components:
   - type: Sprite
-    sprite: _Funkystation/Clothing/Head/Hats/cadet.rsi
+    sprite: Clothing/Head/Hats/beret_security.rsi
   - type: Clothing
-    sprite: _Funkystation/Clothing/Head/Hats/cadet.rsi
+    sprite: Clothing/Head/Hats/beret_security.rsi
   - type: Tag
     tags:
     - ClothMade

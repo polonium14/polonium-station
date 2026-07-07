@@ -345,7 +345,7 @@
     back: ClothingBackpackSatchelSecurity
     ears: ClothingHeadsetSecurity
     eyes: ClothingEyesGlassesSecurity
-    outerClothing: FuClothingOuterWinterWard
+    outerClothing: ClothingOuterWinterWarden
     #pocket1: # TODO: RG-2
     pocket2: Zipties
   inhand:

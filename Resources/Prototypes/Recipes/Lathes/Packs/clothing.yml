@@ -167,7 +167,7 @@
   - ClothingOuterWinterViro
   - ClothingOuterWinterSci
   - ClothingOuterWinterRobo
-  - FuClothingOuterWinterSec
+#  - ClothingOuterWinterSec
 
 - type: latheRecipePack
   id: Ties

@@ -1166,18 +1166,11 @@
   id: HeadofSecurityJumpsuit
   name: loadout-group-head-of-security-jumpsuit
   loadouts:
-  - FuHosService
-  - FuHosDressPants
-  - FuHosDressSkirt
-  - FuHosDressSkirtStockings
-  - FuHosMessSkirt
-  - FuHosMessSkirtStockings
-#  - HeadofSecurityJumpsuit
-#  - HeadofSecurityJumpskirt
-#  - HeadofSecurityTurtleneck
-#  - HeadofSecurityTurtleneckSkirt
-#  - HeadofSecurityFormalSuit
-#  - HeadofSecurityFormalSkirt
+  - HeadofSecurityService
+  - HeadofSecurityDress
+  - HeadofSecurityDressSkirt
+  - HeadofSecurityFormalSuit
+  - HeadofSecurityFormalDress
 
 - type: loadoutGroup
   id: HeadofSecurityNeck
@@ -1194,7 +1187,7 @@
   loadouts:
   - HeadofSecurityCoat
   - HeadofSecurityWinterCoat
-  - ArmorVest
+  - HeadofSecurityArmorVest
 
 - type: loadoutGroup
   id: HeadofSecurityJobTrinkets
@@ -1215,18 +1208,13 @@
   id: WardenJumpsuit
   name: loadout-group-warden-jumpsuit
   loadouts:
-  - FuSecurityService
-  - FuSecurityDressPants
- # - FuSecurityDressPantsSenior No senior gear
-  - FuSecurityDressSkirt
-  - FuSecurityDressSkirtStockings
- # - FuSecurityDressSkirtSenior No senior gear
- # - FuSecurityDressSkirtSeniorStockings No senior gear
-  - FuSecurityMessPants
-  - FuSecurityMessSkirt
-  - FuSecurityMessSkirtStockings
-#  - WardenJumpsuit
-#  - WardenJumpskirt
+  - SecurityFatigues
+  - SecurityDress
+  - SecurityDressSkirt
+  - SecuritySeniorDress
+  - SecuritySeniorDressSkirt
+  - SecurityMess
+  - SecurityMessSkirt
 
 - type: loadoutGroup
   id: WardenNeck
@@ -1264,23 +1252,13 @@
   id: SecurityJumpsuit
   name: loadout-group-security-jumpsuit
   loadouts:
-  - FuSecurityService
-  - FuSecurityDressPants
- # - FuSecurityDressPantsSenior
-  - FuSecurityDressSkirt
-  - FuSecurityDressSkirtStockings
- # - FuSecurityDressSkirtSenior
- # - FuSecurityDressSkirtSeniorStockings
-  - FuSecurityMessPants
-  - FuSecurityMessSkirt
-  - FuSecurityMessSkirtStockings
-#  - SecurityJumpsuit
-#  - SecurityJumpskirt
-#  - SecurityJumpsuitGrey
-#  - SecurityJumpskirtGrey
-#  - SeniorOfficerJumpsuit
-#  - SeniorOfficerJumpskirt
-#  - TrooperUniform
+  - SecurityFatigues
+  - SecurityDress
+  - SecurityDressSkirt
+  - SecuritySeniorDress
+  - SecuritySeniorDressSkirt
+  - SecurityMess
+  - SecurityMessSkirt
 
 - type: loadoutGroup
   id: SecurityBackpack
@@ -1392,10 +1370,7 @@
   id: SecurityCadetJumpsuit
   name: loadout-group-security-cadet-jumpsuit
   loadouts:
-  - FuSecurityCadetPants
-  - FuSecurityCadetSkirt
-#  - RedJumpsuit
-#  - RedJumpskirt
+  - CadetUniform
 
 #- type: loadoutGroup
 #  id: SecurityCadetJobTrinkets
