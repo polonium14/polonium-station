@@ -11,6 +11,10 @@
   id: WeaponBORSniperGun
   description: Najnowszy model snajperki bazowana na BOR 7,62. modyfikowana, żeby mogła używać amunicji .30 rifle
   components:
+  - type: Item
+    size: Huge
+    shape:
+    - 0,0,5,1
   - type: Sprite
     sprite: _Polonium/Weapons/Guns/Snipers/Bor.rsi
     layers:
