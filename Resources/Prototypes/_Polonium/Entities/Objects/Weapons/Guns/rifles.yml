@@ -25,6 +25,7 @@
     quickEquip: false
     slots:
     - Back
+    - suitStorage
   - type: GunWieldBonus
     minAngle: -5
     maxAngle: -27
