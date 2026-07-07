@@ -23,6 +23,9 @@ namespace Content.Client.Paper.UI;
 [GenerateTypedNameReferences]
 public sealed partial class StampWidget : PanelContainer
 {
+    private static readonly ProtoId<FontPrototype> DefaultFont = "Default";
+    private static readonly ProtoId<ShaderPrototype> PaperStampShader = "PaperStamp";
+
     private StyleBoxTexture? _borderTexture;
     private ShaderInstance? _stampShader;
 
@@ -76,14 +79,14 @@ public sealed partial class StampWidget : PanelContainer
                 StampedByLabel.FontColorOverride = value.StampedColor;
                 ModulateSelfOverride = value.StampedColor;
 
-                var font = prototypes.Index<FontPrototype>("Default");
+                var font = prototypes.Index(DefaultFont);
                 if (value.StampFont != null && prototypes.TryIndex<FontPrototype>(value.StampFont, out var stampFont))
                     font = stampFont;
 
                 StampedByLabel.FontOverride = new VectorFont(resCache.GetResource<FontResource>(font.Path), 40);
             }
 
-            _stampShader = prototypes.Index<ShaderPrototype>("PaperStamp").InstanceUnique();
+            _stampShader = prototypes.Index(PaperStampShader).InstanceUnique();
         }
     }
 
