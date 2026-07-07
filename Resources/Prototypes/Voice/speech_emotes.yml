@@ -24,6 +24,16 @@
     - yells
     - yelled
     - yelling
+    - krzyczy
+    - krzyknął
+    - krzyknęła
+    - wrzeszczy
+    - wrzasnął
+    - wrzasnęła
+    - drze się
+    - skrzeczy
+    - zaskrzeczał
+    - zaskrzeczała
 
 - type: emote
   id: Laugh
@@ -53,6 +63,15 @@
     - chortle
     - chortles
     - chortling
+    - śmieje się
+    - zaśmiał się
+    - zaśmiała się
+    - chichocze
+    - zachichotał
+    - zachichotała
+    - rechocze
+    - zrechotał
+    - zrechotała
 
 - type: emote
   id: Honk
@@ -71,6 +90,9 @@
     - honks
     - honked
     - honking
+    - trąbi
+    - zatrąbił
+    - zatrąbiła
 
 - type: emote
   id: Sigh
@@ -88,6 +110,9 @@
     - sigh
     - sighs
     - sighed
+    - wzdycha
+    - westchnął
+    - westchnęła
 
 - type: emote
   id: Whistle
@@ -105,6 +130,10 @@
     - whistle
     - whistles
     - whistleblowing
+    - gwiżdże
+    - zagwizdał
+    - zagwizdała
+    - gwizdanie
 
 - type: emote
   id: Crying
@@ -125,6 +154,12 @@
     - sob
     - sobs
     - sobbing
+    - płacze
+    - zapłakał
+    - zapłakała
+    - szlocha
+    - zaszlochał
+    - zaszlochała
 
 - type: emote
   id: Squish
@@ -143,6 +178,9 @@
     - squish
     - squishing
     - squishes
+    - plaska
+    - mlaszcze
+    - plask
 
 - type: emote
   id: Chitter
@@ -161,6 +199,9 @@
    - chitter
    - chitters
    - chittered
+   - szczebiocze
+   - zaszczebiotał
+   - zaszczebiotała
 
 - type: emote
   id: Squeak
@@ -179,6 +220,9 @@
    - squeak
    - squeaks
    - squeaked
+   - piszczy
+   - pisnął
+   - pisnęła
 
 - type: emote
   id: Click
@@ -196,6 +240,9 @@
   chatTriggers:
    - click
    - clicks
+   - klika
+   - kliknął
+   - kliknęła
 
 # Vulpkanin
 - type: emote
@@ -215,6 +262,9 @@
   - barks
   - barked
   - barking
+  - szczeka
+  - zaszczekał
+  - zaszczekała
 
 - type: emote
   id: Snarl
@@ -233,6 +283,9 @@
   - snarls
   - snarled
   - snarling
+  - warczy
+  - zawarczał
+  - zawarczała
 
 - type: emote
   id: Whine
@@ -251,6 +304,10 @@
   - whines
   - whined
   - whining
+  - skomli
+  - skomle
+  - zaskomlał
+  - zaskomlała
 
 - type: emote
   id: Howl
@@ -269,6 +326,9 @@
   - howls
   - howling
   - howled
+  - wyje
+  - zawył
+  - zawyła
 
 - type: emote
   id: Growl
@@ -287,6 +347,9 @@
   - growls
   - growled
   - growling
+  - mruczy
+  - zamruczał
+  - zamruczała
 
 # hand emotes
 - type: emote
@@ -305,6 +368,9 @@
     - claps
     - clapping
     - clapped
+    - klaszcze
+    - klasnął
+    - klasnęła
 
 - type: emote
   id: ClapSingle
@@ -324,6 +390,9 @@
     - claps her hands together
     - claps his hands together
     - claps its hands together
+    - klaszcze w dłonie
+    - klasnął w dłonie
+    - klasnęła w dłonie
 
 - type: emote
   id: Snap
@@ -350,6 +419,12 @@
     - snaps its fingers
     - snapping fingers
     - snapped fingers
+    - pstryka
+    - pstryknął
+    - pstryknęła
+    - pstryka palcami
+    - pstryknął palcami
+    - pstryknęła palcami
 
 - type: emote
   id: Thump
@@ -375,6 +450,12 @@
     - thumps her tail
     - thumps his tail
     - thumps its tail
+    - uderza
+    - uderzył
+    - uderzyła
+    - uderza ogonem
+    - uderzył ogonem
+    - uderzyła ogonem
 
 - type: emote
   id: Salute
@@ -391,6 +472,9 @@
   chatTriggers:
     - salute
     - salutes
+    - salutuje
+    - zasalutował
+    - zasalutowała
 
 - type: emote
   id: Gasp
@@ -403,6 +487,11 @@
    - gasp
    - gasps
    - gasped
+   - sapie
+   - sapnął
+   - sapnęła
+   - wzdycha głośno
+   - łapie powietrze
 
 - type: emote
   id: DefaultDeathgasp
@@ -414,6 +503,7 @@
   chatMessages: ["chat-emote-msg-deathgasp"]
   chatTriggers:
   - deathgasp
+  - ostatnie tchnienie
 
 - type: emote
   id: MonkeyDeathgasp
@@ -444,6 +534,9 @@
     - buzz
     - buzzed
     - buzzes
+    - brzęczy
+    - zabrzęczał
+    - zabrzęczała
 
 - type: emote
   id: Weh
@@ -478,6 +571,9 @@
     - chirps
     - chirped
     - chirping
+    - ćwierka
+    - zaćwierkał
+    - zaćwierkała
 
 - type: emote
   id: Flap
@@ -513,6 +609,12 @@
    - flutters her wings
    - flutters their wings
    - flutters its wings
+   - trzepocze
+   - zatrzepotał
+   - zatrzepotała
+   - trzepocze skrzydłami
+   - zatrzepotał skrzydłami
+   - zatrzepotała skrzydłami
 
 # Machine Emotes
 - type: emote
@@ -532,6 +634,9 @@
     - beeps
     - beeped
     - beeping
+    - pika
+    - piknął
+    - piknęła
 
 - type: emote
   id: Chime
@@ -550,6 +655,9 @@
     - chimes
     - chimed
     - chiming
+    - dzwoni
+    - zadzwonił
+    - zadzwoniła
 
 - type: emote
   id: Buzz-Two
@@ -574,6 +682,10 @@
     - buzzes twice
     - buzzing twice
     - buzzed twice
+    - brzęczy podwójnie
+    - brzęczy dwa razy
+    - zabrzęczał dwa razy
+    - zabrzęczała dwa razy
 
 - type: emote
   id: Ping
@@ -592,3 +704,6 @@
     - pings
     - pinged
     - pinging
+    - pinguje
+    - pingnął
+    - pingnęła

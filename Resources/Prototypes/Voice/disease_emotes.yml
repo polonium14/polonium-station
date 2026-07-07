@@ -19,6 +19,15 @@
   - sneeze!
   - sneezes!
   - sneezed!
+  - kicha
+  - kichnął
+  - kichnęła
+  - kicha.
+  - kichnął.
+  - kichnęła.
+  - kicha!
+  - kichnął!
+  - kichnęła!
 
 - type: emote
   id: Cough
@@ -42,6 +51,15 @@
     - cough!
     - coughs!
     - coughed!
+    - kaszle
+    - kaszlnął
+    - kaszlnęła
+    - kaszle.
+    - kaszlnął.
+    - kaszlnęła.
+    - kaszle!
+    - kaszlnął!
+    - kaszlnęła!
 
 - type: emote
   id: CatMeow
@@ -82,6 +100,9 @@
   chatTriggers:
     - yawn
     - yawns
+    - ziewa
+    - ziewnął
+    - ziewnęła
 
 - type: emote
   id: Snore
