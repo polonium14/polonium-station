@@ -20,7 +20,7 @@ shuttle-console-unknown = Nieznane
 shuttle-console-iff-label = { $name } ({ $distance }m)
 shuttle-console-exclusion = Strefa wykluczona
 shuttle-console-nav-settings = Ustawienia
-shuttle-console-iff-toggle = Wykonuj ISO
+shuttle-console-iff-toggle = Pokaż IFF
 shuttle-console-dock-toggle = Pokaż porty dokowania
 
 # MAP
