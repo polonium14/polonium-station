@@ -1,3 +1,4 @@
+using Content.Shared.Inventory;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Overlays;
 using Robust.Client.Graphics;
@@ -11,6 +12,7 @@ namespace Content.Client.Overlays;
 public sealed partial class NightVisionOverlaySystem : EquipmentHudSystem<NightVisionComponent>
 {
     [Dependency] private IOverlayManager _overlayMan = default!;
+    [Dependency] private InventorySystem _inventory = default!;
 
     private NightVisionOverlay _overlay = default!;
 
@@ -21,6 +23,15 @@ public sealed partial class NightVisionOverlaySystem : EquipmentHudSystem<NightV
         _overlay = new NightVisionOverlay();
 
         SubscribeLocalEvent<NightVisionComponent, AfterAutoHandleStateEvent>(OnHandleState);
+    }
+
+    protected override void OnRefreshEquipmentHud(Entity<NightVisionComponent> ent, ref InventoryRelayedEvent<RefreshEquipmentHudEvent<NightVisionComponent>> args)
+    {
+        // Polonium: creatures worn on the head should not grant night vision
+        if (_inventory.InSlotWithAnyFlags(ent.Owner, SlotFlags.HEAD))
+            return;
+
+        base.OnRefreshEquipmentHud(ent, ref args);
     }
 
     protected override void UpdateInternal(RefreshEquipmentHudEvent<NightVisionComponent> component)
