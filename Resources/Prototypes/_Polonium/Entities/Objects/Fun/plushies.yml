@@ -107,3 +107,8 @@
     timeToMix: 0.5
     reactionTypes:
     - Stir
+  - type: Clothing
+    quickEquip: false
+    sprite: _Polonium/Objects/Fun/Plushies/deathshead.rsi
+    slots:
+    - HEAD
