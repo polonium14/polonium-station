@@ -185,7 +185,7 @@ public abstract partial class SharedStoreSystem : EntitySystem
         if (stack != null)
             Stack.SetCount((currency.Owner, stack), 0);
 
-        QueueDel(currency);
+        PredictedQueueDel(currency);    // Polonium: fix networked items removal (case: telecrystals being inserted into uplink)
         return true;
     }
 

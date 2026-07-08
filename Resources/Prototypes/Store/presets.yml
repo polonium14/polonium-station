@@ -60,3 +60,16 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: RingerAccessUplink
+
+- type: entity
+  id: StorePresetSalvage
+  abstract: true
+  components:
+  - type: Store
+    name: store-preset-name-salvage
+    categories:
+    - SalvageVendorWearables
+    currencyWhitelist:
+    - SalvageTicket
+    balance:
+      SalvageTicket: 0

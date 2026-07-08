@@ -1,0 +1,47 @@
+# SPDX-FileCopyrightText: 2025 ThatOneMoon <juozas.dringelis@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  name: supply handheld radio
+  description: A handheld radio tuned to the supply radio frequency.
+  parent: [ RadioHandheld, BaseCargoContraband ]
+  id: RadioHandheldCargo
+  components:
+  - type: RadioMicrophone
+    broadcastChannel: Supply
+  - type: RadioSpeaker
+    channels:
+    - Supply
+  - type: Sprite
+    sprite: _Funkystation/Objects/Devices/radio.rsi
+    layers:
+    - state: base
+    - state: cap-cargo
+    - state: active
+      shader: unshaded
+  - type: Item
+    sprite: Objects/Devices/securityhandy.rsi
+    heldPrefix: walkietalkie
+
+- type: entity
+  name: command handheld radio
+  description: A handheld radio tuned to the command radio frequency.
+  parent: [ RadioHandheld, BaseCommandContraband ]
+  id: RadioHandheldCommand
+  components:
+  - type: RadioMicrophone
+    broadcastChannel: Command
+  - type: RadioSpeaker
+    channels:
+    - Command
+  - type: Sprite
+    sprite: _Funkystation/Objects/Devices/radio.rsi
+    layers:
+    - state: base
+    - state: cap-command
+    - state: active
+      shader: unshaded
+  - type: Item
+    sprite: Objects/Devices/securityhandy.rsi
+    heldPrefix: walkietalkie

@@ -5,6 +5,7 @@
   materials:
     RawIron: 100
     Coal: 30
+  printTicket: true
 
 - type: latheRecipe
   id: SheetSteel30
@@ -20,6 +21,7 @@
   completetime: 0
   materials:
     RawQuartz: 100
+  printTicket: true
 
 - type: latheRecipe
   id: SheetGlass30
@@ -99,6 +101,7 @@
   completetime: 0
   materials:
     RawPlasma: 100
+  printTicket: true
 
 - type: latheRecipe
   id: SheetPlasma30
@@ -115,6 +118,8 @@
     RawPlasma: 100
     RawIron: 200 #Twice as durable as steel, Twice the material cost
     Coal: 30
+  printTicket: true
+  ticketProtoId: SalvageTicket5
 
 - type: latheRecipe
   id: SheetPlasteel30
@@ -195,6 +200,8 @@
   completetime: 0
   materials:
     RawDiamond: 100
+  printTicket: true
+  ticketProtoId: SalvageTicket75
 
 - type: latheRecipe
   id: SheetUranium1
@@ -202,6 +209,8 @@
   completetime: 0
   materials:
     RawUranium: 100
+  printTicket: true
+  ticketProtoId: SalvageTicket3
 
 - type: latheRecipe
   id: IngotGold1
@@ -209,6 +218,8 @@
   completetime: 0
   materials:
     RawGold: 100
+  printTicket: true
+  ticketProtoId: SalvageTicket2
 
 - type: latheRecipe
   id: IngotSilver1
@@ -216,6 +227,8 @@
   completetime: 0
   materials:
     RawSilver: 100
+  printTicket: true
+  ticketProtoId: SalvageTicket2
 
 - type: latheRecipe
   id: SheetPlastic
@@ -231,6 +244,8 @@
   completetime: 0
   materials:
     RawBananium: 100
+  printTicket: true
+  ticketProtoId: SalvageTicket5
 
 - type: latheRecipe
   id: MaterialSheetMeat

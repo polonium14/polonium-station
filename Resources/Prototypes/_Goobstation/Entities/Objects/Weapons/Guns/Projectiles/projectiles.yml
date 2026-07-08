@@ -1,4 +1,57 @@
+# SPDX-FileCopyrightText: 2025 ThatOneMoon <juozas.dringelis@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
+  id: BulletPlasmaCutter
+  name: cutter bolt
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  description: Not too bad, but you still don't want to get hit by it.
+  components:
+  - type: Reflective
+    reflective:
+      - NonEnergy
+  - type: Sprite
+    noRot: false
+    sprite: _Goobstation/Objects/Weapons/Guns/Projectiles/bullet_cutter.rsi
+    layers:
+    - state: icon
+      shader: unshaded
+  - type: GatheringProjectile
+    amount: 40
+  - type: Projectile
+    deleteOnCollide: false
+    damage:
+      types:
+        Heat: 5
+        Structural: 25
+  - type: TimedDespawn
+    lifetime: 0.2
+  - type: PointLight
+    radius: 2
+    color: purple
+    energy: 1
+
+- type: entity
+  id: BulletPlasmaCutterStrong
+  parent: BulletPlasmaCutter
+  components:
+  - type: GatheringProjectile
+  - type: Projectile
+    damage:
+      types:
+        Heat: 8
+        Structural: 25
+  - type: TimedDespawn
+    lifetime: 0.4
+  - type: PointLight
+    radius: 4
+    color: purple
+    energy: 2
+
+- type: entity
+  name: revolver bolt
   id: BulletEnergyGunRevolver
   parent: BaseBullet
   categories: [ HideSpawnMenu ]
@@ -23,15 +76,15 @@
       projectile:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.15,-0.15,0.15,0.15"
+          bounds: "-0.2,-0.2,0.2,0.2"
         hard: false
         mask:
-        - Impassable
-        - BulletImpassable
+        - Opaque
   - type: Projectile
-    impactEffect: BulletImpactEffectDisabler
+    impactEffect: BulletImpactEffectRedDisabler
     damage:
       types:
-        Heat: 25
+        Blunt: 5
+        Heat: 20
     soundHit:
       collection: MeatLaserImpact

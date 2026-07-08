@@ -1,0 +1,27 @@
+# SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2025 ThatOneMoon <juozas.dringelis@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+# Helldiver - required for salvage vendor helldiver kit
+- type: entity
+  parent: SalvageIDCard
+  id: HelldiverIDCard
+  name: salvage diver ID card
+  description: To go where no person should go, to gain what was not ours, is what we ought to do.
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Objects/Misc/id_cards.rsi
+    layers:
+    - state: helldiver
+    - state: decal-stripe-cargo
+    - sprite: _Funkystation/Interface/Misc/job_icons.rsi
+      offset: "-0.125, 0.09375"
+      state: Helldiver
+  - type: Item
+    sprite: _Funkystation/Objects/Misc/id_cards.rsi
+    heldPrefix: helldiver
+  - type: IdCard
+    jobTitle: job-name-salvagediver
+    jobIcon: JobIconShaftMiner

@@ -238,6 +238,12 @@ namespace Content.Server.Lathe
                     _stack.TryMergeToContacts(result);
                 }
 
+                if (currentRecipe.PrintTicket)
+                {
+                    var tickets = Spawn(currentRecipe.TicketProtoId, Transform(uid).Coordinates);
+                    _stack.TryMergeToContacts(tickets);
+                }
+
                 if (currentRecipe.ResultReagents is { } resultReagents &&
                     comp.ReagentOutputSlotId is { } slotId)
                 {
