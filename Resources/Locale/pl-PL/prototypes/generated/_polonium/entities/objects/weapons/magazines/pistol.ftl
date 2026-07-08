@@ -1,4 +1,4 @@
-ent-WeaponVisMPSPistolMagazineBase = Magazynek VIS MPS (.35 auto any)
+ent-WeaponVisMPSPistolMagazineBase = Magazynek VIS MPS (.35 auto dowolny)
     .desc = { ent-BaseItem.desc }
 ent-WeaponVisMPSPistolMagazine = Magazynek VIS MPS (.35 auto)
     .desc = Magazynek VIS MPS (.35 auto)
@@ -8,7 +8,7 @@ ent-WeaponVisMPSPistolMagazineUranium = Magazynek VIS MPS (.35 auto uranium)
     .desc = { ent-WeaponVisMPSPistolMagazineBase.desc }
 ent-WeaponVisMPSPistolMagazinUranium = Magazynek VIS MPS (.35 auto uranium)
     .desc = Magazynek VIS MPS (.35 auto uranium)
-ent-WeaponVisMPSPistolMagazineEmpty = Magazynek VIS MPS (.35 auto any)
+ent-WeaponVisMPSPistolMagazineEmpty = Magazynek VIS MPS (.35 auto dowolny)
     .suffix = (pusty)
     .desc = { ent-WeaponVisMPSPistolMagazineBase.desc }
 ent-WeaponVisMPSPistolMagazinePractice = Magazynek VIS MPS (.35 auto treningowe)

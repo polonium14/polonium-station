@@ -1,5 +1,12 @@
-# Tego pliku nie tłumaczyć.
+# Tego pliku nie tłumaczyć w całości.
 # Polskie zamienniki dodawaj w chatsan-polonium.ftl
+# Poniżej nadpisania skrótów, które muszą być po polsku zamiast angielskiego chatsan.
+
+chatsan-replacement-1 = O mój Boże
+chatsan-replacement-12 = będąc szczerym
+chatsan-replacement-please = proszę
+chatsan-replacement-26 = Tak przy okazji
+chatsan-replacement-55 = szczerze mówiąc
 
 chatsan-word-1 = omg
 chatsan-replacement-1 = oh my god

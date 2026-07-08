@@ -15,6 +15,7 @@ using Robust.Shared.Random;
 using System.Linq;
 using Content.Shared.Chemistry;
 using Content.Shared.Damage.Systems;
+using Content.Server.Destructible;
 
 namespace Content.Server._Funkystation.WashingMachine;
 
@@ -36,6 +37,7 @@ public sealed partial class WashingMachineSystem : SharedWashingMachineSystem
         base.Initialize();
         SubscribeLocalEvent<WashingMachineComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<WashingMachineComponent, BreakageEventArgs>(OnBreak);
+        SubscribeLocalEvent<WashingMachineComponent, DamageThresholdReached>(OnDamageThresholdReached);
     }
 
     private void OnMapInit(Entity<WashingMachineComponent> ent, ref MapInitEvent args)
@@ -144,6 +146,8 @@ public sealed partial class WashingMachineSystem : SharedWashingMachineSystem
 
         UpdateForensics((uid, comp), items);
 
+        Storage.OpenStorage(uid);
+
         if (comp.AccumulatedSelfDamage > 0)
         {
             var bluntProto = _proto.Index<DamageTypePrototype>(BluntProtoId);
@@ -153,7 +157,6 @@ public sealed partial class WashingMachineSystem : SharedWashingMachineSystem
         }
 
         Dirty(uid, comp);
-        Storage.OpenStorage(uid);
     }
 
     protected override void UpdateForensics(Entity<WashingMachineComponent> ent, HashSet<EntityUid> items)
@@ -179,7 +182,13 @@ public sealed partial class WashingMachineSystem : SharedWashingMachineSystem
         ent.Comp.State = WashingMachineState.Broken;
         ent.Comp.WashFinishTime = null;
         Audio.Stop(ent.Comp.AudioStream);
+        Storage.OpenStorage(ent.Owner);
         Dirty(ent.Owner, ent.Comp);
         Appearance.SetData(ent.Owner, WashingMachineVisuals.State, WashingMachineState.Broken);
+    }
+
+    private void OnDamageThresholdReached(Entity<WashingMachineComponent> ent, ref DamageThresholdReached args)
+    {
+        Storage.OpenStorage(ent.Owner);
     }
 }

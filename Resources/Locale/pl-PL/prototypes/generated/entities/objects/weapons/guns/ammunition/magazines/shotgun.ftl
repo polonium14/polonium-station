@@ -1,6 +1,6 @@
 ent-BaseMagazineShotgun = bęben (12 kaliber)
     .desc = { ent-BaseItem.desc }
-ent-MagazineShotgunEmpty = bęben (12 kaliber dowolne)
+ent-MagazineShotgunEmpty = bęben (12 kaliber pusty)
     .suffix = pusty
     .desc = { ent-BaseMagazineShotgun.desc }
 ent-MagazineShotgun = bęben (12 kaliber śruty)

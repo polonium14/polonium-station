@@ -1,74 +1,77 @@
 # Names
 chat-emote-name-scream = Krzyk
-chat-emote-name-laugh = Smiech
-chat-emote-name-honk = Honk
+chat-emote-name-laugh = Śmiech
+chat-emote-name-honk = Trąbienie
 chat-emote-name-sigh = Wzdech
 chat-emote-name-whistle = Gwizd
 chat-emote-name-crying = Płakanie
-chat-emote-name-squish = Skłisz
-chat-emote-name-chitter = Ćwierk
-chat-emote-name-bubble = Bubble
-chat-emote-name-slosh = Slosh
-chat-emote-name-pop = Pop
-chat-emote-name-fizz = Fizz
+chat-emote-name-squish = Plusk
+chat-emote-name-chitter = Szczebiotanie
 chat-emote-name-squeak = Pisk
-chat-emote-name-thump = Tupnij Ogonem
+chat-emote-name-thump = Uderzenie Ogonem
 chat-emote-name-click = Klik
 chat-emote-name-clap = Klask
 chat-emote-name-clap-single = Pojedyncze Klaskanie
-chat-emote-name-snap = Pstryknij Palcami
-chat-emote-name-salute = Oddaj Cześć
-chat-emote-name-gasp = Dusić się
-chat-emote-name-deathgasp = Ostatni Oddech
-chat-emote-name-buzz = Bzyczenie
-chat-emote-name-boop = Boop
+chat-emote-name-snap = Pstryknięcie Palcami
+chat-emote-name-salute = Salut
+chat-emote-name-gasp = Sapnięcie
+chat-emote-name-deathgasp = Ostatnie Tchnienie
+chat-emote-name-buzz = Brzęczenie
 chat-emote-name-weh = Weh
 chat-emote-name-hew = Hew
-chat-emote-name-chirp = Ćwir
-chat-emote-name-beep = Bip
-chat-emote-name-chime = Dzwoneczek
-chat-emote-name-buzztwo = Bzyczenie 2
+chat-emote-name-chirp = Ćwierkanie
+chat-emote-name-flap = Trzepotanie Skrzydłami
+chat-emote-name-beep = Piknięcie
+chat-emote-name-chime = Dzwonek
+chat-emote-name-buzztwo = Podwójne Brzęczenie
 chat-emote-name-ping = Ping
 chat-emote-name-sneeze = Kichnięcie
 chat-emote-name-cough = Kaszel
-chat-emote-name-catmeow = Miauczenie kota
-chat-emote-name-cathisses = Syczenie kota
-chat-emote-name-monkeyscreeches = Skrzek małpy
-chat-emote-name-robotbeep = Robot (bip)
+chat-emote-name-catmeow = Miauczenie Kota
+chat-emote-name-cathisses = Syczenie Kota
+chat-emote-name-monkeyscreeches = Skrzek Małpy
+chat-emote-name-robotbeep = Robot (pik)
 chat-emote-name-yawn = Ziewnięcie
 chat-emote-name-snore = Chrapanie
-# Message
+chat-emote-name-bark = Szczekanie
+chat-emote-name-snarl = Warczenie
+chat-emote-name-whine = Skomlenie
+chat-emote-name-howl = Wycie
+chat-emote-name-growl = Mruczenie
+chat-emote-name-gurgle = Bulgotanie
+chat-emote-name-coo = Gruchanie
+chat-emote-name-yap = Skomlenie
+chat-emote-name-gekker = Gekker
+
+# Messages — formy czasu teraźniejszego zgodne z chatTriggers w speech_emotes.yml / disease_emotes.yml
 chat-emote-msg-scream = krzyczy!
-chat-emote-name-gurgle = Gurgle
 chat-emote-msg-laugh = śmieje się.
-chat-emote-msg-honk = honk.
+chat-emote-msg-honk = trąbi.
 chat-emote-msg-sigh = wzdycha.
 chat-emote-msg-whistle = gwiżdże.
 chat-emote-msg-crying = płacze.
-chat-emote-msg-squish = chlupocze.
-chat-emote-msg-chitter = ćwierka.
-chat-emote-msg-bubble = bubbles.
-chat-emote-msg-slosh = sloshes.
-chat-emote-msg-pop = pops.
-chat-emote-msg-fizz = fizzes.
+chat-emote-msg-squish = plaska.
+chat-emote-msg-chitter = szczebiocze.
 chat-emote-msg-squeak = piszczy.
-chat-emote-msg-thump = tupa swoim ogonem.
+chat-emote-msg-thump = uderza ogonem.
 chat-emote-msg-click = klika.
 chat-emote-msg-clap = klaszcze!
-chat-emote-msg-clap-single = klaszcze w swoje dłonie.
+chat-emote-msg-clap-single = klaszcze w dłonie.
 chat-emote-msg-snap = pstryka { POSS-ADJ($entity) } palcami.
 chat-emote-msg-salute = salutuje.
-chat-emote-msg-gasp = dusi się.
+chat-emote-msg-gasp = sapie.
 chat-emote-msg-deathgasp = sztywnieje i bezwładnie upada, { POSS-ADJ($entity) } oczy gasną, martwe i bez życia...
 chat-emote-msg-deathgasp-monkey = wydaje ciche "uhuh uh...", po czym { SUBJECT($entity) } upada i nieruchomieje...
-chat-emote-msg-buzz = bzycze!
-chat-emote-msg-weh = robi "weh"!
-chat-emote-msg-hew = robi "hew"!
+chat-emote-msg-deathgasp-scurret = wydaje ostatnie «wa» i bezwładnie pada...
+chat-emote-msg-buzz = brzęczy!
+chat-emote-msg-weh = robi «weh»!
+chat-emote-msg-hew = robi «hew»!
 chat-emote-msg-chirp = ćwierka!
-chat-emote-msg-beep = bipcze.
+chat-emote-msg-flap = trzepocze skrzydłami.
+chat-emote-msg-beep = pika.
 chat-emote-msg-chime = dzwoni.
-chat-emote-msg-buzzestwo = bzyczy dwa razy.
-chat-emote-msg-ping = pingnie.
+chat-emote-msg-buzzestwo = brzęczy dwa razy.
+chat-emote-msg-ping = pinguje.
 chat-emote-msg-sneeze = kicha.
 chat-emote-msg-cough = kaszle.
 chat-emote-msg-catmeow = miauczy.
@@ -76,29 +79,10 @@ chat-emote-msg-cathisses = syczy!
 chat-emote-msg-monkeyscreeches = skrzeczy!
 chat-emote-msg-yawn = ziewa.
 chat-emote-msg-snore = chrapie.
-chat-emote-name-yap = Yaps
-chat-emote-name-gekker = Gekkers
-chat-emote-msg-gurgle = gurgles.
-chat-emote-msg-coo = coos.
-
-chat-emote-name-bark = Bark
-
-chat-emote-name-snarl = Snarl
-
-chat-emote-name-whine = Whine
-
-chat-emote-name-howl = Howl
-
-chat-emote-name-growl = Growl
-
-chat-emote-msg-deathgasp-scurret = lets out a final 'wa' and falls still...
-
-chat-emote-msg-bark = barks.
-
-chat-emote-msg-snarl = snarls.
-
-chat-emote-msg-whine = whines.
-
-chat-emote-msg-howl = howls.
-
-chat-emote-msg-growl = growls.
+chat-emote-msg-bark = szczeka.
+chat-emote-msg-snarl = warczy.
+chat-emote-msg-whine = skomli.
+chat-emote-msg-howl = wyje.
+chat-emote-msg-growl = mruczy.
+chat-emote-msg-gurgle = bulgocze.
+chat-emote-msg-coo = grucha.
