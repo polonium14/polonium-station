@@ -10,9 +10,9 @@ ghost-gui-toggle-other-ghosts-visibility-popup-off = Disabled visibility of othe
 #end Funkystation
 
 ghost-gui-toggle-ghost-visibility-popup-off = Wyłączono widoczność duchów.
-ghost-gui-toggle-lighting-manager-popup-normal = Oświetlenie standardowe.
-ghost-gui-toggle-lighting-manager-popup-personal-light = Włączono światło własne.
-ghost-gui-toggle-lighting-manager-popup-fullbright = Tryb pełnej jasności.
+ghost-gui-toggle-lighting-manager-popup-normal = Normalne światło.
+ghost-gui-toggle-lighting-manager-popup-half-bright = Pół-jasność.
+ghost-gui-toggle-lighting-manager-popup-fullbright = Pełna jasność.
 ghost-gui-toggle-fov-popup = Przełączono pole widzenia.
 ghost-gui-toggle-hearing-popup-on = Teraz słyszysz wszystkie wiadomości.
 ghost-gui-toggle-hearing-popup-off = Teraz słyszysz tylko komunikacje radiową i pobliskie wiadomości.

@@ -213,6 +213,7 @@
   id: Changeling
   parent: [BaseGameRule, BaseRoundstartAntagRule]
   components:
+  - type: ChangelingRule
   - type: GameRule
     minPlayers: 25
   - type: AntagSelection

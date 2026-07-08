@@ -139,7 +139,9 @@ admin-smite-homing-rod-name = Homing Rod
 
 admin-smite-homing-rod-slow-name = Slowming Rod
 
-admin-smite-silicon-laws-bound-name = Become Silicon
+admin-smite-silicon-laws-bound-name = Zostań Silikonem
+
+admin-smite-make-stinky-name = Nadaj smród
 
 admin-smite-kill-sign-hidden-description = Marks a player for death by their fellows. Hidden from the targeted player.
 
@@ -151,4 +153,6 @@ admin-smite-homing-rod-description = Launches a homing immovable rod straight at
 
 admin-smite-homing-rod-slow-description = Launches a slow moving homing immovable rod straight at them.
 
-admin-smite-silicon-laws-bound-description = Makes the target bound to silicon laws. Law 2, jump out of the window.
+admin-smite-silicon-laws-bound-description = Sprawia, że cel jest związany prawami silikonu. Prawo 2: wyskocz przez okno.
+
+admin-smite-make-stinky-description = Sprawia, że cel śmierdzi, zmuszając go do uwalniania amoniaku. Fuu!

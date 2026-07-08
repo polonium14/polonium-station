@@ -4,6 +4,8 @@ guidebook-tab-popout-disabled-tooltip = Nie można otworzyć ostatniej zakładki
 guidebook-placeholder-text = Wybierz wpis.
 guidebook-placeholder-text-2 = Jeśli jesteś nowy, przejdź do "Jesteś nowy? Zacznij tutaj!"
 guidebook-filter-placeholder-text = Filtruj elementy
+guidebook-toc-header = Spis treści
+
 guidebook-parser-error = Błąd przetwarzania
 guidebook-error-message = Komunikat błędu
 guidebook-monkey-unspin = Unspin Monkey
