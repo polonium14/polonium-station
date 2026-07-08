@@ -22,3 +22,7 @@ lobby-state-background-janishootout-title = Jani Shootout
 lobby-state-background-janishootout-artist = psychpsyo
 lobby-state-background-reclaimernuke-title = Reclaimer Nuke
 lobby-state-background-reclaimernuke-artist = GetOutMarutak
+lobby-state-background-drunkardsspree-title = Drunkards' Spree
+lobby-state-background-drunkardsspree-artist = Saver310
+lobby-state-background-certaindeath-title = Pewna Śmierć
+lobby-state-background-certaindeath-artist = Saver310
