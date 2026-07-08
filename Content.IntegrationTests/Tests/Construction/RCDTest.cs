@@ -86,7 +86,7 @@ public sealed class RCDTest : InteractionTest
 
         // Check that the cost of the wall was subtracted from the current charges.
         var newCharges = sCharges.GetCurrentCharges(ToServer(rcd));
-        Assert.That(initialCharges - settingWall.Cost, Is.EqualTo(newCharges), "RCD has wrong amount of charges after building something.");
+        Assert.That(initialCharges - settingWall.Cost.Int(), Is.EqualTo(newCharges), "RCD has wrong amount of charges after building something.");
         initialCharges = newCharges;
 
         // Try building another wall in the same spot.
@@ -120,7 +120,7 @@ public sealed class RCDTest : InteractionTest
 
         // Check that the cost of the airlock was subtracted from the current charges.
         newCharges = sCharges.GetCurrentCharges(ToServer(rcd));
-        Assert.That(initialCharges - settingAirlock.Cost, Is.EqualTo(newCharges), "RCD has wrong amount of charges after building something.");
+        Assert.That(initialCharges - settingAirlock.Cost.Int(), Is.EqualTo(newCharges), "RCD has wrong amount of charges after building something.");
         initialCharges = newCharges;
 
         // Switch to building plating.
@@ -148,7 +148,7 @@ public sealed class RCDTest : InteractionTest
 
         // Check that the cost of the plating was subtracted from the current charges.
         newCharges = sCharges.GetCurrentCharges(ToServer(rcd));
-        Assert.That(initialCharges - settingPlating.Cost, Is.EqualTo(newCharges), "RCD has wrong amount of charges after building something.");
+        Assert.That(initialCharges - settingPlating.Cost.Int(), Is.EqualTo(newCharges), "RCD has wrong amount of charges after building something.");
         initialCharges = newCharges;
 
         // Switch to building steel tiles.
@@ -163,7 +163,7 @@ public sealed class RCDTest : InteractionTest
 
         // Check that the cost of the plating was subtracted from the current charges.
         newCharges = sCharges.GetCurrentCharges(ToServer(rcd));
-        Assert.That(initialCharges - settingFloorSteel.Cost, Is.EqualTo(newCharges), "RCD has wrong amount of charges after building something.");
+        Assert.That(initialCharges - settingFloorSteel.Cost.Int(), Is.EqualTo(newCharges), "RCD has wrong amount of charges after building something.");
         initialCharges = newCharges;
 
         // Switch to deconstruction mode.
@@ -177,7 +177,8 @@ public sealed class RCDTest : InteractionTest
 
         // Check that the cost of the deconstruction was subtracted from the current charges.
         newCharges = sCharges.GetCurrentCharges(ToServer(rcd));
-        Assert.That(initialCharges - wallComp.Cost, Is.EqualTo(newCharges), "RCD has wrong amount of charges after deconstructing something.");
+        var wallCost = wallComp.Cost;
+        Assert.That(initialCharges - wallCost.Int(), Is.EqualTo(newCharges), "RCD has wrong amount of charges after deconstructing something.");
         initialCharges = newCharges;
 
         // Deconstruct the airlock.
@@ -188,7 +189,8 @@ public sealed class RCDTest : InteractionTest
 
         // Check that the cost of the deconstruction was subtracted from the current charges.
         newCharges = sCharges.GetCurrentCharges(ToServer(rcd));
-        Assert.That(initialCharges - airlockComp.Cost, Is.EqualTo(newCharges), "RCD has wrong amount of charges after deconstructing something.");
+        var airlockCost = airlockComp.Cost;
+        Assert.That(initialCharges - airlockCost.Int(), Is.EqualTo(newCharges), "RCD has wrong amount of charges after deconstructing something.");
         initialCharges = newCharges;
 
         // Deconstruct the steel tile.
@@ -198,7 +200,7 @@ public sealed class RCDTest : InteractionTest
 
         // Check that the cost of the deconstruction was subtracted from the current charges.
         newCharges = sCharges.GetCurrentCharges(ToServer(rcd));
-        Assert.That(initialCharges - settingDeconstructTile.Cost, Is.EqualTo(newCharges), "RCD has wrong amount of charges after deconstructing something.");
+        Assert.That(initialCharges - settingDeconstructTile.Cost.Int(), Is.EqualTo(newCharges), "RCD has wrong amount of charges after deconstructing something.");
         initialCharges = newCharges;
 
         // Deconstruct the plating.
@@ -208,7 +210,7 @@ public sealed class RCDTest : InteractionTest
 
         // Check that the cost of the deconstruction was subtracted from the current charges.
         newCharges = sCharges.GetCurrentCharges(ToServer(rcd));
-        Assert.That(initialCharges - settingDeconstructTile.Cost, Is.EqualTo(newCharges), "RCD has wrong amount of charges after deconstructing something.");
+        Assert.That(initialCharges - settingDeconstructTile.Cost.Int(), Is.EqualTo(newCharges), "RCD has wrong amount of charges after deconstructing something.");
         initialCharges = newCharges;
 
         // Deconstruct the lattice.
@@ -218,7 +220,7 @@ public sealed class RCDTest : InteractionTest
 
         // Check that the cost of the deconstruction was subtracted from the current charges.
         newCharges = sCharges.GetCurrentCharges(ToServer(rcd));
-        Assert.That(initialCharges - settingDeconstructLattice.Cost, Is.EqualTo(newCharges), "RCD has wrong amount of charges after deconstructing something.");
+        Assert.That(initialCharges - settingDeconstructLattice.Cost.Int(), Is.EqualTo(newCharges), "RCD has wrong amount of charges after deconstructing something.");
 
         // Wait for the visual effect to disappear.
         await RunSeconds(3);

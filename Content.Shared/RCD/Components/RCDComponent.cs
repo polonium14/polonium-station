@@ -1,3 +1,14 @@
+// SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2024 August Eymann <august.eymann@gmail.com>
+// SPDX-FileCopyrightText: 2024 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Steve <marlumpy@gmail.com>
+// SPDX-FileCopyrightText: 2025 marc-pelletier <113944176+marc-pelletier@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+//
+// SPDX-License-Identifier: MIT
+
+using Content.Shared.Atmos.Components;
 using Content.Shared.RCD.Systems;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
@@ -56,12 +67,30 @@ public sealed partial class RCDComponent : Component
     public bool IsRpd { get; set; } = false;
 
     /// <summary>
+    /// Funkystation
+    /// Stores color data for the RPD
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public (string Key, Color? Color) PipeColor { get; set; } = ("default", null);
+
+    /// <summary>
+    /// Funkystation
+    /// Stores player rotation
+    /// This is a horrible workaround to the fact eye rotation is not currently networked and required for pipe layering
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public float? LastKnownEyeRotation { get; set; } = null;
+
+    /// <summary>
     /// The direction constructed entities will face upon spawning
     /// </summary>
     [DataField, AutoNetworkedField]
     public Direction ConstructionDirection
     {
-        get => _constructionDirection;
+        get
+        {
+            return _constructionDirection;
+        }
         set
         {
             _constructionDirection = value;
@@ -78,31 +107,5 @@ public sealed partial class RCDComponent : Component
     /// Contains no position data
     /// </remarks>
     [ViewVariables(VVAccess.ReadOnly)]
-    public Transform ConstructionTransform { get; private set; }
-
-    /// <summary>
-    /// Stores player rotation
-    /// This is a workaround to the fact eye rotation is not currently networked and required for pipe layering
-    /// Sent only when needed
-    /// </summary>
-    [DataField, AutoNetworkedField]
-    public float? LastKnownEyeRotation { get; set; } = null;
-
-    /// <summary>
-    /// Current pipe layer / build mode for RPD
-    /// </summary>
-    [DataField, AutoNetworkedField]
-    public RpdMode CurrentMode { get; set; } = RpdMode.Free;
-
-    [DataField]
-    public SoundSpecifier SoundSwitchMode { get; set; } = new SoundPathSpecifier("/Audio/Machines/quickbeep.ogg");
-}
-
-[Serializable, NetSerializable]
-public enum RpdMode : byte
-{
-    Primary = 0,
-    Secondary = 1,
-    Tertiary = 2,
-    Free = 3,
+    public Transform ConstructionTransform { get; private set; } = default!;
 }

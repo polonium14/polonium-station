@@ -1,3 +1,10 @@
+// SPDX-FileCopyrightText: 2024 August Eymann <august.eymann@gmail.com>
+// SPDX-FileCopyrightText: 2024 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 marc-pelletier <113944176+marc-pelletier@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+//
+// SPDX-License-Identifier: MIT
+
 using Content.Shared.FixedPoint;
 using Content.Shared.RCD.Systems;
 using Robust.Shared.GameStates;
@@ -13,7 +20,7 @@ public sealed partial class RCDDeconstructableComponent : Component
     /// Number of charges consumed when the deconstruction is completed
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public int Cost = 1;
+    public FixedPoint2 Cost = 1;
 
     /// <summary>
     /// The length of the deconstruction-

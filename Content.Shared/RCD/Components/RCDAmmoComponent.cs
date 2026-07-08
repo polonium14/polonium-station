@@ -1,3 +1,12 @@
+// SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2024 August Eymann <august.eymann@gmail.com>
+// SPDX-FileCopyrightText: 2024 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 marc-pelletier <113944176+marc-pelletier@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+//
+// SPDX-License-Identifier: MIT
+
 using Content.Shared.FixedPoint;
 using Content.Shared.RCD.Systems;
 using Robust.Shared.GameStates;
@@ -12,6 +21,6 @@ public sealed partial class RCDAmmoComponent : Component
     /// How many charges are contained in this ammo cartridge.
     /// Can be partially transferred into an RCD, until it is empty then it gets deleted.
     /// </summary>
-    [DataField, AutoNetworkedField]
-    public int Charges = 300; // Funkystation - increase by x10
+    [DataField("charges"), ViewVariables(VVAccess.ReadWrite), AutoNetworkedField]
+    public FixedPoint2 Charges = 30;
 }

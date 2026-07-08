@@ -1,3 +1,12 @@
+// SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2024 August Eymann <august.eymann@gmail.com>
+// SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2024 marc-pelletier <113944176+marc-pelletier@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+//
+// SPDX-License-Identifier: MIT
+
 using Content.Shared.Charges.Components;
 using Content.Shared.Charges.Systems;
 using Content.Shared.Examine;
@@ -11,7 +20,7 @@ namespace Content.Shared.RCD.Systems;
 
 public sealed partial class RCDAmmoSystem : EntitySystem
 {
-    [Dependency] private SharedChargesSystem _sharedCharges = default!;
+    [Dependency] private SharedChargesSystem _charges = default!;
     [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private IGameTiming _timing = default!;
 
@@ -42,10 +51,10 @@ public sealed partial class RCDAmmoSystem : EntitySystem
             !TryComp<LimitedChargesComponent>(target, out var charges))
             return;
 
-        var current = _sharedCharges.GetCurrentCharges((target, charges));
         var user = args.User;
         args.Handled = true;
-        var count = Math.Min(charges.MaxCharges - current, comp.Charges);
+        var available = charges.MaxCharges - _charges.GetCurrentCharges((target, charges, null));
+        var count = FixedPoint2.Min(available, comp.Charges);
         if (count <= 0)
         {
             _popup.PopupClient(Loc.GetString("rcd-ammo-component-after-interact-full"), target, user);
@@ -53,7 +62,7 @@ public sealed partial class RCDAmmoSystem : EntitySystem
         }
 
         _popup.PopupClient(Loc.GetString("rcd-ammo-component-after-interact-refilled"), target, user);
-        _sharedCharges.AddCharges(target, count);
+        _charges.AddCharges((target, charges, null), count.Int());
         comp.Charges -= count;
         Dirty(uid, comp);
 

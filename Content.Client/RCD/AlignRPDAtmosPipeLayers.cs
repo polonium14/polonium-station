@@ -2,6 +2,7 @@ using Content.Client.Gameplay;
 using Content.Client.Hands.Systems;
 using Content.Shared.Atmos.Components;
 using Content.Shared.Atmos.EntitySystems;
+using Content.Shared.Construction.Prototypes;
 using Content.Shared.Hands.Components;
 using Content.Shared.Interaction;
 using Content.Shared.RCD;
@@ -54,6 +55,7 @@ public sealed partial class AlignRPDAtmosPipeLayers : PlacementMode
     private static AtmosPipeLayer _currentLayer = AtmosPipeLayer.Primary;
     private static float? _currentEyeRotation = null;
     private Color _guideColor = new(0, 0, 0.5785f);
+    private TimeSpan _lastLayerSendTime = TimeSpan.Zero;
 
     public AlignRPDAtmosPipeLayers(PlacementManager pMan) : base(pMan)
     {
@@ -82,12 +84,8 @@ public sealed partial class AlignRPDAtmosPipeLayers : PlacementMode
         if (gridUid == null || !_entityManager.TryGetComponent<MapGridComponent>(gridUid, out var grid))
             return;
 
-        if (!_handsSystem.TryGetActiveItem(player, out var heldEntity) ||
-            !_entityManager.TryGetComponent<RCDComponent>(heldEntity, out var rcd))
-            return;
-
         // Draw guide circles for each pipe layer if we are not in line/grid placing mode
-        if (rcd.CurrentMode == RpdMode.Free && pManager.PlacementType == PlacementTypes.None )
+        if (pManager.PlacementType == PlacementTypes.None)
         {
             var gridRotation = _transformSystem.GetWorldRotation(gridUid.Value);
             var worldPosition = _mapSystem.LocalToWorld(gridUid.Value, grid, MouseCoords.Position);
@@ -128,68 +126,37 @@ public sealed partial class AlignRPDAtmosPipeLayers : PlacementMode
                 CurrentTile.Y + tileSize / 2 + pManager.PlacementOffset.Y));
         }
 
-        var player = _playerManager.LocalSession?.AttachedEntity;
-        if (player == null)
-            return;
-
-        if (!_handsSystem.TryGetActiveItem(player.Value, out var heldEntity))
-            return;
-
-        if (!_entityManager.TryGetComponent<RCDComponent>(heldEntity, out var rcd) || !rcd.IsRpd)
-            return;
-
-        if (!_entityManager.TryGetComponent<TransformComponent>(player.Value, out var playerXform))
-            return;
-
-        if (!_transformSystem.InRange(playerXform.Coordinates, MouseCoords, SharedInteractionSystem.InteractionRange))
-            return;
-
+        // Calculate the position of the mouse cursor with respect to the center of the tile to determine which layer to use
         var mouseCoordsDiff = _mouseCoordsRaw.Position - MouseCoords.Position;
-        var newLayer = AtmosPipeLayer.Primary; // fallback
-
-        // Get held RCD to check CurrentMode
-        switch (rcd.CurrentMode)
+        var newLayer = AtmosPipeLayer.Primary;
+        if (mouseCoordsDiff.Length() > MouseDeadzoneRadius)
         {
-            case RpdMode.Primary:
-                newLayer = AtmosPipeLayer.Primary;
-                break;
-
-            case RpdMode.Secondary:
-                newLayer = AtmosPipeLayer.Secondary;
-                break;
-
-            case RpdMode.Tertiary:
-                newLayer = AtmosPipeLayer.Tertiary;
-                break;
-
-            case RpdMode.Free:
-                // Only in Free mode do we use mouse direction
-                if (mouseCoordsDiff.Length() > MouseDeadzoneRadius)
-                {
-                    var gridRotation = _transformSystem.GetWorldRotation(gridId.Value);
-                    var rawAngle = new Angle(mouseCoordsDiff);
-                    var eyeRotation = _eyeManager.CurrentEye.Rotation;
-                    var direction = (rawAngle + eyeRotation + gridRotation + Math.PI / 2).GetCardinalDir();
-                    newLayer = (direction == Direction.North || direction == Direction.East)
-                        ? AtmosPipeLayer.Secondary
-                        : AtmosPipeLayer.Tertiary;
-                }
-                break;
+            var gridRotation = _transformSystem.GetWorldRotation(gridId.Value);
+            var rawAngle = new Angle(mouseCoordsDiff);
+            var eyeRotation = _eyeManager.CurrentEye.Rotation;
+            var direction = (rawAngle + eyeRotation + gridRotation + Math.PI / 2).GetCardinalDir();
+            newLayer = (direction == Direction.North || direction == Direction.East) ? AtmosPipeLayer.Secondary : AtmosPipeLayer.Tertiary;
         }
 
-        // Update layer if changed
-        if (newLayer != _currentLayer)
-            _currentLayer = newLayer;
-
-        if (rcd.CurrentMode == RpdMode.Free)
+        // Update the layer only if within interaction range and layer has changed
+        if (_playerManager.LocalSession?.AttachedEntity is { } player &&
+            _entityManager.TryGetComponent<TransformComponent>(player, out var xform) &&
+            _transformSystem.InRange(xform.Coordinates, MouseCoords, SharedInteractionSystem.InteractionRange) &&
+            _handsSystem.TryGetActiveItem(player, out var heldEntity) &&
+            _entityManager.TryGetComponent<RCDComponent>(heldEntity, out var rcd))
+        {
+            if (newLayer != _currentLayer)
+            {
+                _currentLayer = newLayer;
+            }
             UpdateEyeRotation(heldEntity.Value, _eyeManager.CurrentEye.Rotation);
+        }
 
         UpdatePlacer(_currentLayer);
     }
 
-    // Since player eye rotation isn't networked and there is a comment warning against doing so,
-    // we need a way of sending current eye rotation to the rpd for correct layer placement.
-    // I'm sure there's a better solution for this but I haven't found it
+    // Since player eye rotation isn't networked, we need a way of sending current eye rotation to the rpd for correct layer placement
+    // hopefully a better solution is found eventually
     private void UpdateEyeRotation(EntityUid heldEntity, Angle eyeRotation)
     {
         if (_currentEyeRotation != eyeRotation.Theta)
@@ -262,11 +229,9 @@ public sealed partial class AlignRPDAtmosPipeLayers : PlacementMode
         if (!_entityManager.TryGetComponent<RCDComponent>(heldEntity, out var rcd))
             return false;
 
-        var gridUid = _transformSystem.GetGrid(position);
-        if (!_entityManager.TryGetComponent<MapGridComponent>(gridUid, out var mapGrid))
+        // Retrieve the map grid data for the position
+        if (!_rcdSystem.TryGetMapGridData(position, out var mapGridData))
             return false;
-        var tile = _mapSystem.GetTileRef(gridUid.Value, mapGrid, position);
-        var posVector = _mapSystem.TileIndicesFor(gridUid.Value, mapGrid, position);
 
         // Determine if the user is hovering over a target
         var currentState = _stateManager.CurrentState;
@@ -277,7 +242,7 @@ public sealed partial class AlignRPDAtmosPipeLayers : PlacementMode
         var target = screen.GetClickedEntity(_transformSystem.ToMapCoordinates(_mouseCoordsRaw));
 
         // Determine if the RCD operation is valid or not
-        if (!_rcdSystem.IsRCDOperationStillValid(heldEntity.Value, rcd, gridUid.Value, mapGrid, tile, posVector, target, player.Value, false))
+        if (!_rcdSystem.IsRCDOperationStillValid(heldEntity.Value, rcd, mapGridData.Value, target, player.Value, false))
             return false;
 
         return true;
