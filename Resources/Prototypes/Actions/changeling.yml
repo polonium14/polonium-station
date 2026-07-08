@@ -201,7 +201,7 @@
       amount: 10 # About 100s of being high
     - !type:AddReagentToBloodstream
       reagent: Cryptobiolin
-      quantity: 10 # About 20s of your speech being scrambled
+      amount: 10 # About 20s of your speech being scrambled
 
 - type: entity
   parent: BaseAction
