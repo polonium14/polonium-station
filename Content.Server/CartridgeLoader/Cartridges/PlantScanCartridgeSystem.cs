@@ -28,7 +28,7 @@ public sealed partial class PlantScanCartridgeSystem : EntitySystem
     private void OnCartridgeRemoved(Entity<PlantScanCartridgeComponent> ent, ref CartridgeRemovedEvent args)
     {
         // only remove when the program itself is removed
-        if (!_cartridgeLoaderSystem.HasProgram<PlantScanCartridgeComponent>(args.Loader))
+        if (!_cartridgeLoaderSystem.HasProgram<PlantScanCartridgeComponent>(args.Loader.AsNullable()))
         {
             RemComp<PlantAnalyzerComponent>(args.Loader);
         }

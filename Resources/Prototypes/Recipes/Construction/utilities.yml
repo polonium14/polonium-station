@@ -226,7 +226,6 @@
   placementMode: SnapgridCenter
   canBuildInImpassable: false
 
-
 # INTERCOM
 - type: construction
   id: IntercomAssembly

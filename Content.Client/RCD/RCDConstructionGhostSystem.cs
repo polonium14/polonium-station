@@ -101,7 +101,6 @@ public sealed partial class RCDConstructionGhostSystem : EntitySystem
 
             return;
         }
-
         var cachedProto = rcd.CachedPrototype;
         var wantMirror = _useMirrorPrototype && !string.IsNullOrEmpty(cachedProto.MirrorPrototype);
         var prototype = wantMirror ? cachedProto.MirrorPrototype : cachedProto.Prototype;

@@ -6,6 +6,7 @@ map = "Dev"
 role_timers = false
 admin_job_tracking = true
 role_loadout_timers = false
+new_character_jobs = "Passenger, Captain"
 
 # Windows + Docker/Hyper-V often reserves ports 1123-1222, which blocks the default 1212.
 # Use a port outside excluded ranges; status host follows net.port automatically.
