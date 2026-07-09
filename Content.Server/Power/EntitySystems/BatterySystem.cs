@@ -32,9 +32,12 @@ public sealed class BatterySystem : SharedBatterySystem
         if (!ent.Comp.NetSyncEnabled)
             return;
 
-        DebugTools.Assert(!HasComp<ApcPowerReceiverBatteryComponent>(ent), $"{ToPrettyString(ent.Owner)} has a predicted battery connected to the power net. Disable net sync!");
-        DebugTools.Assert(!HasComp<PowerNetworkBatteryComponent>(ent), $"{ToPrettyString(ent.Owner)} has a predicted battery connected to the power net. Disable net sync!");
-        DebugTools.Assert(!HasComp<PowerConsumerComponent>(ent), $"{ToPrettyString(ent.Owner)} has a predicted battery connected to the power net. Disable net sync!");
+        DebugTools.Assert(!HasComp<ApcPowerReceiverBatteryComponent>(ent),
+            $"{ToPrettyString(ent.Owner)} has a predicted battery connected to the power net. Disable net sync!");
+        DebugTools.Assert(!HasComp<PowerNetworkBatteryComponent>(ent),
+            $"{ToPrettyString(ent.Owner)} has a predicted battery connected to the power net. Disable net sync!");
+        DebugTools.Assert(!HasComp<PowerConsumerComponent>(ent),
+            $"{ToPrettyString(ent.Owner)} has a predicted battery connected to the power net. Disable net sync!");
     }
 
 
@@ -65,4 +68,26 @@ public sealed class BatterySystem : SharedBatterySystem
             SetCharge((uid, bat), netBat.NetworkBattery.CurrentStorage);
         }
     }
+
+
+    public int GetChargeDifference(EntityUid uid, BatteryComponent? battery = null) // Debug
+    {
+        if (!Resolve(uid, ref battery))
+            return 0;
+
+        return Convert.ToInt32(battery.MaxCharge - battery.LastCharge);
+    }
+
+    public float AddCharge(EntityUid uid, float value, BatteryComponent? battery = null)
+    {
+        if (value <= 0 || !Resolve(uid, ref battery))
+            return 0;
+
+        var newValue = Math.Clamp(battery.LastCharge + value, 0, battery.MaxCharge);
+        battery.LastCharge = newValue;
+        //var ev = new ChargeChangedEvent(battery.LastCharge, battery.MaxCharge); Zobaczymy czy będzie potrzebne, bo ChargeChangedEvent brakuje
+        //RaiseLocalEvent(uid, ref ev);
+        return newValue;
+    }
 }
+
