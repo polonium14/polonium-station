@@ -125,6 +125,7 @@ stack-uranium-ore = uranium ore
 stack-bananium-ore = bananium ore
 stack-coal = coal
 stack-salt = salt
+stack-salvageticket = Bilet Złomiarza
 stack-inflatable-wall = inflatable wall
 stack-inflatable-door = inflatable door
 stack-ointment = ointment

@@ -24,3 +24,9 @@
 
 - type: Tag # Assmos - Crystallizer
   id: NoRecharge
+
+- type: Tag
+  id: CardboardboxLarge
+
+- type: Tag
+  id: ListeningBug

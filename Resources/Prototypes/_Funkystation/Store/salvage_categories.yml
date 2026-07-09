@@ -1,7 +1,3 @@
-# SPDX-FileCopyrightText: 2025 ThatOneMoon <juozas.dringelis@gmail.com>
-#
-# SPDX-License-Identifier: AGPL-3.0-or-later
-
 # Store Preset
 - type: entity
   id: StorePresetSalvageVendor
@@ -18,8 +14,6 @@
     - SalvageTicket
     balance:
       SalvageTicket: 0
-    sales:
-      enabled: false
 
 
 - type: storeCategory

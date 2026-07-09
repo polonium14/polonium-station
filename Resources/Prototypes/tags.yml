@@ -1248,6 +1248,9 @@
 - type: Tag
   id: SaltShaker # Storage whitelist: ClothingBeltChef. ItemMapper: ClothingBeltChef
 
+- type: Tag
+  id: SpatioUpgradeKit
+
 - type: Tag # Used on DungeonRoom prototypes.
   id: SalvageExperiment # PrefabDunGen whitelist on Experiment DungeonConfig.
 

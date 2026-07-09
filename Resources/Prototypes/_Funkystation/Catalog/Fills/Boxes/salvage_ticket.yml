@@ -1,10 +1,3 @@
-# SPDX-FileCopyrightText: 2026 ThatOneMoon <91613003+ThatOneMoon@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2026 ThatOneMoon <juozas.dringelis@gmail.com>
-# SPDX-FileCopyrightText: 2026 TheSecondLord <88201625+TheSecondLord@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2026 YaraaraY <158123176+YaraaraY@users.noreply.github.com>
-#
-# SPDX-License-Identifier: AGPL-3.0-or-later
-
 - type: entity
   id: BoxSalvageVendShuttleKit
   parent: CardboardBoxLarge
@@ -21,7 +14,7 @@
     - id: GyroscopeMachineCircuitboard
     - id: APCElectronics
     - id: WallmountSubstationElectronics
-    - id: FoodPackingPeanut
+    - id: MaterialCardboard1
       amount: 25
 
 - type: entity
@@ -65,5 +58,5 @@
     - id: EmergencyMedipen
       amount: 2
     - id: RollerBedSpawnFolded
-    - id: FoodPackingPeanut
+    - id: MaterialCardboard1
       amount: 9

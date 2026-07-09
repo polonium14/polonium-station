@@ -1,7 +1,3 @@
-# SPDX-FileCopyrightText: 2026 maciejwalendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
-#
-# SPDX-License-Identifier: AGPL-3.0-or-later
-
 - type: entity
   parent: [BasePDA, BaseCommandContraband]
   id: InternalAffairsAgentPDA
@@ -55,13 +51,15 @@
   - type: Icon
     sprite: _Funkystation/Objects/Devices/pda.rsi
     state: pda-magi
-  - type: CartridgeLoader
-    preinstalled:
-    - CrewManifestCartridge
-    - NotekeeperCartridge
-    - NanoTaskCartridge
-    - NewsReaderCartridge
-    - WantedListCartridge
+  - type: EntityTableContainerFill
+    containers:
+      preinstalled-program-container: !type:AllSelector
+        children:
+        - id: CrewManifestCartridge
+        - id: NotekeeperCartridge
+        - id: NanoTaskCartridge
+        - id: NewsReaderCartridge
+        - id: WantedListCartridge
 
 - type: entity
   parent: [BasePDA, BaseCommandContraband]

@@ -1,8 +1,3 @@
-# SPDX-FileCopyrightText: 2025 mkanke-real <mikekanke@gmail.com>
-# SPDX-FileCopyrightText: 2026 YaraaraY <158123176+YaraaraY@users.noreply.github.com>
-#
-# SPDX-License-Identifier: MIT
-
 - type: entity
   id: BoxEmergencyMedipens
   parent: CardboardBoxLarge
@@ -13,5 +8,5 @@
     contents:
     - id: EmergencyMedipen
       amount: 6
-    - id: FoodPackingPeanut
+    - id: MaterialCardboard1
       amount: 39
