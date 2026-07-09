@@ -15,7 +15,7 @@ using Content.Server.Power.Components;
 
 namespace Content.Server._Polonium.MaterialEnergy
 {
-    public sealed class MaterialEnergySystem : EntitySystem
+    public sealed partial class MaterialEnergySystem : EntitySystem
     {
         [Dependency] private IEntityManager _entityManager = default!;
         [Dependency] private BatterySystem _batterySystem = default!;
