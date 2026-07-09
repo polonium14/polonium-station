@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: WarPigeon
-  changes:
-  - message: Steel crates now have some radiation shielding for safe storage and transport
-      of radioactive materials.
-    type: Add
-  id: 7973
-  time: '2025-02-18T12:56:14.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/35168
 - author: BramvanZijp
   changes:
   - message: Fixed Janitor-Restricted contraband unintentionally stating Security
@@ -4193,3 +4185,11 @@
   id: 9280
   time: '2026-07-04T10:02:57.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/751
+- author: Saver310
+  changes:
+  - message: "Dodanie funkcjonalno\u015Bci noszenia Trupiog\u0142owego na g\u0142\
+      owie"
+    type: Tweak
+  id: 9281
+  time: '2026-07-08T10:24:55.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/753
