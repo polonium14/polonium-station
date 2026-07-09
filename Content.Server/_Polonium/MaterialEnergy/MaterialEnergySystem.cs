@@ -17,9 +17,9 @@ namespace Content.Server._Polonium.MaterialEnergy
 {
     public sealed class MaterialEnergySystem : EntitySystem
     {
-        [Dependency] private readonly IEntityManager _entityManager = default!;
-        [Dependency] private readonly BatterySystem _batterySystem = default!;
-        [Dependency] private readonly StackSystem _stack = default!;
+        [Dependency] private IEntityManager _entityManager = default!;
+        [Dependency] private BatterySystem _batterySystem = default!;
+        [Dependency] private StackSystem _stack = default!;
 
         public override void Initialize()
         {
