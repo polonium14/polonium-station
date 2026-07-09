@@ -17,6 +17,10 @@
     - id: RadioHandheld
     - id: AppraisalTool
     - id: FireExtinguisher
+    - id: RemoteSignaller
+    - id: Multitool
+    - id: SeismicCharge
+      amount: 2
     - id: Flare
       prob: 0.3
       rolls: !type:ConstantNumberSelector
