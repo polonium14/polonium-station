@@ -123,6 +123,54 @@
         - id: DrinkShakeWhite
         - id: DrinkTheMartinez
         - id: DrinkMoonshineGlass
+        # readded missing drinks - Yaket
+        - id: DrinkGlassAmaretto
+        - id: DrinkGlassApplejack
+        - id: DrinkGlassBitters
+        - id: DrinkGlassCremeDeCacao
+        - id: DrinkGlassCremeDeMenthe
+        - id: DrinkGlassFernet
+        - id: DrinkGlassHakkaMate
+        - id: DrinkGlassMelonSoda
+        - id: DrinkGlassNavyRum
+        - id: DrinkGlassRiceBeer
+        - id: DrinkGlassShochu
+        - id: DrinkGlassTripleSec
+        - id: DrinkGlass24VoltEnergy
+        - id: DrinkGlassVoltaicYellowWine
+        - id: DrinkGlassAlexander
+        - id: DrinkGlassAmarettoAlexander
+        - id: DrinkGlassAmarettoSour
+        - id: DrinkGlassAmaterasu
+        - id: DrinkGlassBanzaiTi
+        - id: DrinkGlassTripleCitrus
+        - id: DrinkGlassRootMintBrew
+        - id: DrinkGlassBetweenTheSheets
+        - id: DrinkGlassBittersAndSoda
+        - id: DrinkGlassBlueBlazer
+        - id: DrinkGlassBosozoku
+        - id: DrinkGlassBrancaMenta
+        - id: DrinkGlassBugSpray
+        - id: DrinkGlassCreviceSpike
+        - id: DrinkGlassFringeWeaver
+        - id: DrinkGlassFourBit
+        - id: DrinkGlassMauiSunrise
+        - id: DrinkGlassRedCityAM
+        - id: DrinkGlassSentaiQuencha
+        - id: DrinkGlassUtilityPole
+        - id: DrinkGlassAdmiralty
+        - id: DrinkGlassLongJohnSilver
+        - id: DrinkGlassLonghaul
+        - id: DrinkGlassTropicalStorm
+        - id: DrinkGlassQuadrupleSec
+        - id: DrinkGlassNekomimosa
+        - id: DrinkGlassWizzFizz
+        - id: DrinkBlackJapanGlass
+        - id: DrinkBruisedMelonGlass
+        - id: DrinkCoconutSakeColadaGlass
+        - id: DrinkCosmicAlaskaGlass
+        - id: DrinkHorsesNeckGlass
+        - id: DrinkRansomNoteGlass
       - !type:GroupSelector #rare
         weight: 0.05
         children:

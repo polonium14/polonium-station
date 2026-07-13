@@ -285,3 +285,34 @@
   physicalDesc: reagent-physical-desc-fizzy
   flavor: metallic
   color: "#66538F"
+
+# backported missing drinks for funky drinks - Yaket
+- type: reagent
+  id: HakkaMate
+  name: reagent-name-hakka-mate
+  parent: BaseSoda
+  desc: reagent-desc-hakka-mate
+  physicalDesc: reagent-physical-desc-fizzy
+  flavor: hakkamate
+  color: "#cc9633"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/hakkamate.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 4
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+
+- type: reagent
+  id: MelonSoda
+  name: reagent-name-melon-soda
+  parent: BaseSoda
+  desc: reagent-desc-melon-soda
+  physicalDesc: reagent-physical-desc-fizzy
+  flavor: melonsoda
+  color: "#33cc4f"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/melonsoda.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 4
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
