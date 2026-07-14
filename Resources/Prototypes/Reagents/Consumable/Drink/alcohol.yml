@@ -2529,3 +2529,26 @@
       effects:
       - !type:SatiateThirst
         factor: 2
+
+- type: reagent
+  parent: BaseAlcohol
+  id: Applejack
+  name: reagent-name-applejack
+  desc: reagent-desc-applejack
+  physicalDesc: reagent-physical-desc-tangy
+  flavor: applejack
+  color: "#ae0000"
+  recognizable: true
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/applejack.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 4
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Digestion:
+      metabolites:
+        Ethanol: 0.2
+      effects:
+      - !type:SatiateThirst
+        factor: 2

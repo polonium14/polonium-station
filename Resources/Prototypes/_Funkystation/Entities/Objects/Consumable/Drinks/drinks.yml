@@ -16,6 +16,9 @@
         reagents:
         - ReagentId: Eggnog
           Quantity: 30
+  - type: Icon
+    sprite: Objects/Consumable/Drinks/eggnogglass.rsi
+    state: icon
 
 - type: entity
   parent: DrinkGlass
@@ -29,6 +32,7 @@
         reagents:
         - ReagentId: Peggnog
           Quantity: 30
+#brak .rsi
 
 - type: entity
   parent: DrinkGlass
@@ -42,6 +46,7 @@
         reagents:
         - ReagentId: SpikedEggnog
           Quantity: 30
+#brak .rsi
 
 - type: entity
   parent: DrinkGlass
@@ -71,6 +76,7 @@
         reagents:
         - ReagentId: Chutzpah
           Quantity: 30
+#brak .rsi
 
 - type: entity
   parent: DrinkGlass
@@ -84,6 +90,7 @@
         reagents:
         - ReagentId: MargheritaDrink
           Quantity: 30
+#brak .rsi
 
 - type: entity
   parent: DrinkGlass
@@ -97,6 +104,7 @@
         reagents:
         - ReagentId: PineappleMargherita
           Quantity: 30
+#brak .rsi
 
 - type: entity
   parent: DrinkGlass
@@ -110,6 +118,9 @@
         reagents:
         - ReagentId: Amaretto
           Quantity: 30
+  - type: Icon
+    sprite: Objects/Consumable/Drinks/amarettoglass.rsi
+    state: icon
 
 - type: entity
   parent: DrinkGlass
@@ -123,6 +134,9 @@
         reagents:
         - ReagentId: Applejack
           Quantity: 30
+  - type: Icon
+    sprite: Objects/Consumable/Drinks/applejack.rsi
+    state: icon
 
 - type: entity
   parent: DrinkGlass
@@ -136,6 +150,9 @@
         reagents:
         - ReagentId: Bitters
           Quantity: 30
+  - type: Icon
+    sprite: Objects/Consumable/Drinks/bittersglass.rsi
+    state: icon
 
 - type: entity
   parent: DrinkGlass
@@ -149,6 +166,9 @@
         reagents:
         - ReagentId: CremeDeCacao
           Quantity: 30
+  - type: Icon
+    sprite: Objects/Consumable/Drinks/cremedecacaoglass.rsi
+    state: icon
 
 - type: entity
   parent: DrinkGlass
@@ -162,6 +182,9 @@
         reagents:
         - ReagentId: CremeDeMenthe
           Quantity: 30
+  - type: Icon
+    sprite: Objects/Consumable/Drinks/cremedementheglass.rsi
+    state: icon
 
 - type: entity
   parent: DrinkGlass
@@ -175,6 +198,9 @@
         reagents:
         - ReagentId: Fernet
           Quantity: 30
+  - type: Icon
+    sprite: Objects/Consumable/Drinks/fernetglass.rsi
+    state: icon
 
 - type: entity
   parent: DrinkGlass
@@ -188,6 +214,9 @@
         reagents:
         - ReagentId: HakkaMate
           Quantity: 30
+  - type: Icon
+    sprite: Objects/Consumable/Drinks/hakkamate.rsi
+    state: icon
 
 - type: entity
   parent: DrinkGlass
@@ -201,6 +230,9 @@
         reagents:
         - ReagentId: MelonSoda
           Quantity: 30
+  - type: Icon
+    sprite: Objects/Consumable/Drinks/melonsoda.rsi
+    state: icon
 
 - type: entity
   parent: DrinkGlass
@@ -214,6 +246,9 @@
         reagents:
         - ReagentId: NavyRum
           Quantity: 30
+  - type: Icon
+    sprite: Objects/Consumable/Drinks/navyrumglass.rsi
+    state: icon
 
 - type: entity
   parent: DrinkGlass
@@ -227,6 +262,9 @@
         reagents:
         - ReagentId: RiceBeer
           Quantity: 30
+  - type: Icon
+    sprite: Objects/Consumable/Drinks/ricebeerglass.rsi
+    state: icon
 
 - type: entity
   parent: DrinkGlass
@@ -240,6 +278,9 @@
         reagents:
         - ReagentId: Shochu
           Quantity: 30
+  - type: Icon
+    sprite: Objects/Consumable/Drinks/shochuglass.rsi
+    state: icon
 
 - type: entity
   parent: DrinkGlass
@@ -253,6 +294,9 @@
         reagents:
         - ReagentId: TripleSec
           Quantity: 30
+  - type: Icon
+    sprite: Objects/Consumable/Drinks/triplesecglass.rsi
+    state: icon
 
 - type: entity
   parent: DrinkGlass
@@ -266,6 +310,7 @@
         reagents:
         - ReagentId: 24VoltEnergy
           Quantity: 30
+# 24volt energy w szkle nie posiada .rsi
 
 - type: entity
   parent: DrinkGlass
@@ -279,6 +324,9 @@
         reagents:
         - ReagentId: VoltaicYellowWine
           Quantity: 30
+  - type: Icon
+    sprite: Objects/Consumable/Drinks/voltaicyellowwineglass.rsi
+    state: icon
 
 - type: entity
   parent: DrinkGlass
@@ -292,6 +340,9 @@
         reagents:
         - ReagentId: Alexander
           Quantity: 30
+  - type: Icon
+    sprite: _Funkystation/Objects/Consumable/Drinks/alexander.rsi
+    state: icon
 
 - type: entity
   parent: DrinkGlass
@@ -305,6 +356,9 @@
         reagents:
         - ReagentId: AmarettoAlexander
           Quantity: 30
+  - type: Icon
+    sprite: _Funkystation/Objects/Consumable/Drinks/amarettoalexander.rsi
+    state: icon
 
 - type: entity
   parent: DrinkGlass
@@ -318,6 +372,9 @@
         reagents:
         - ReagentId: AmarettoSour
           Quantity: 30
+  - type: Icon
+    sprite: _Funkystation/Objects/Consumable/Drinks/amarettosour.rsi
+    state: icon
 
 - type: entity
   parent: DrinkGlass
@@ -331,6 +388,9 @@
         reagents:
         - ReagentId: Amaterasu
           Quantity: 30
+  - type: Icon
+    sprite: _Funkystation/Objects/Consumable/Drinks/amaterasu.rsi
+    state: icon
 
 - type: entity
   parent: DrinkGlass
@@ -344,6 +404,9 @@
         reagents:
         - ReagentId: BanzaiTi
           Quantity: 30
+  - type: Icon
+    sprite: _Funkystation/Objects/Consumable/Drinks/banzaiti.rsi
+    state: icon
 
 - type: entity
   parent: DrinkGlass
@@ -357,6 +420,9 @@
         reagents:
         - ReagentId: TripleCitrus
           Quantity: 30
+  - type: Icon
+    sprite: _Funkystation/Objects/Consumable/Drinks/triplecitrus.rsi
+    state: icon
 
 - type: entity
   parent: DrinkGlass
@@ -370,6 +436,9 @@
         reagents:
         - ReagentId: RootMintBrew
           Quantity: 30
+  - type: Icon
+    sprite: _Funkystation/Objects/Consumable/Drinks/rootmintbrew.rsi
+    state: icon
 
 - type: entity
   parent: DrinkGlass
@@ -383,6 +452,9 @@
         reagents:
         - ReagentId: BetweenTheSheets
           Quantity: 30
+  - type: Icon
+    sprite: _Funkystation/Objects/Consumable/Drinks/betweenthesheets.rsi
+    state: icon
 
 - type: entity
   parent: DrinkGlass
@@ -396,6 +468,9 @@
         reagents:
         - ReagentId: BittersAndSoda
           Quantity: 30
+  - type: Icon
+    sprite: _Funkystation/Objects/Consumable/Drinks/bittersandsoda.rsi
+    state: icon
 
 - type: entity
   parent: DrinkGlass
@@ -409,6 +484,9 @@
         reagents:
         - ReagentId: BlankPaper
           Quantity: 30
+  - type: Icon
+    sprite: _Funkystation/Objects/Consumable/Drinks/blankpaper.rsi
+    state: icon
 
 - type: entity
   parent: DrinkGlass
@@ -422,6 +500,9 @@
         reagents:
         - ReagentId: BlueBlazer
           Quantity: 30
+  - type: Icon
+    sprite: _Funkystation/Objects/Consumable/Drinks/blueblazer.rsi
+    state: icon
 
 - type: entity
   parent: DrinkGlass
@@ -435,6 +516,9 @@
         reagents:
         - ReagentId: Bosozoku
           Quantity: 30
+  - type: Icon
+    sprite: _Funkystation/Objects/Consumable/Drinks/bosozoku.rsi
+    state: icon
 
 - type: entity
   parent: DrinkGlass
@@ -448,6 +532,9 @@
         reagents:
         - ReagentId: BrancaMenta
           Quantity: 30
+  - type: Icon
+    sprite: _Funkystation/Objects/Consumable/Drinks/brancamenta.rsi
+    state: icon
 
 - type: entity
   parent: DrinkGlass
@@ -461,6 +548,9 @@
         reagents:
         - ReagentId: BugSpray
           Quantity: 30
+  - type: Icon
+    sprite: _Funkystation/Objects/Consumable/Drinks/bugspray.rsi
+    state: icon
 
 - type: entity
   parent: DrinkGlass
@@ -474,6 +564,9 @@
         reagents:
         - ReagentId: CreviceSpike
           Quantity: 30
+  - type: Icon
+    sprite: _Funkystation/Objects/Consumable/Drinks/crevicespike.rsi
+    state: icon
 
 - type: entity
   parent: DrinkGlass
@@ -487,6 +580,9 @@
         reagents:
         - ReagentId: FringeWeaver
           Quantity: 30
+  - type: Icon
+    sprite: _Funkystation/Objects/Consumable/Drinks/fringeweaver.rsi
+    state: icon
 
 - type: entity
   parent: DrinkGlass
@@ -500,6 +596,9 @@
         reagents:
         - ReagentId: FourBit
           Quantity: 30
+  - type: Icon
+    sprite: _Funkystation/Objects/Consumable/Drinks/fourbit.rsi
+    state: icon
 
 - type: entity
   parent: DrinkGlass
@@ -513,6 +612,9 @@
         reagents:
         - ReagentId: MauiSunrise
           Quantity: 30
+  - type: Icon
+    sprite: _Funkystation/Objects/Consumable/Drinks/mauisunrise.rsi
+    state: icon
 
 - type: entity
   parent: DrinkGlass
@@ -526,6 +628,9 @@
         reagents:
         - ReagentId: QuadrupleSec
           Quantity: 30
+  - type: Icon
+    sprite: _Funkystation/Objects/Consumable/Drinks/quadruplesec.rsi
+    state: icon
 
 - type: entity
   parent: DrinkGlass
@@ -539,6 +644,9 @@
         reagents:
         - ReagentId: Nekomimosa
           Quantity: 30
+  - type: Icon
+    sprite: _Funkystation/Objects/Consumable/Drinks/nekomimosa.rsi
+    state: icon
 
 - type: entity
   parent: DrinkGlass
@@ -552,6 +660,9 @@
         reagents:
         - ReagentId: RedCityAM
           Quantity: 30
+  - type: Icon
+    sprite: _Funkystation/Objects/Consumable/Drinks/redcityam.rsi
+    state: icon
 
 - type: entity
   parent: DrinkGlass
@@ -565,6 +676,9 @@
         reagents:
         - ReagentId: SentaiQuencha
           Quantity: 30
+  - type: Icon
+    sprite: _Funkystation/Objects/Consumable/Drinks/sentaiquencha.rsi
+    state: icon
 
 - type: entity
   parent: DrinkGlass
@@ -578,6 +692,9 @@
         reagents:
         - ReagentId: UtilityPole
           Quantity: 30
+  - type: Icon
+    sprite: _Funkystation/Objects/Consumable/Drinks/utilitypole.rsi
+    state: icon
 
 - type: entity
   parent: DrinkGlass
@@ -591,6 +708,9 @@
         reagents:
         - ReagentId: WizzFizz
           Quantity: 30
+  - type: Icon
+    sprite: _Funkystation/Objects/Consumable/Drinks/wizzfizz.rsi
+    state: icon
 
 - type: entity
   parent: DrinkGlass
@@ -604,6 +724,9 @@
         reagents:
         - ReagentId: Admiralty
           Quantity: 30
+  - type: Icon
+    sprite: _Funkystation/Objects/Consumable/Drinks/admirality.rsi
+    state: icon
 
 - type: entity
   parent: DrinkGlass
@@ -617,6 +740,9 @@
         reagents:
         - ReagentId: LongJohnSilver
           Quantity: 30
+  - type: Icon
+    sprite: _Funkystation/Objects/Consumable/Drinks/longjohnsilver.rsi
+    state: icon
 
 - type: entity
   parent: DrinkGlass
@@ -630,6 +756,9 @@
         reagents:
         - ReagentId: LongHaul
           Quantity: 30
+  - type: Icon
+    sprite: _Funkystation/Objects/Consumable/Drinks/longhaul.rsi
+    state: icon
 
 - type: entity
   parent: DrinkGlass
@@ -643,4 +772,7 @@
         reagents:
         - ReagentId: TropicalStorm
           Quantity: 30
+  - type: Icon
+    sprite: _Funkystation/Objects/Consumable/Drinks/tropicalstorm.rsi
+    state: icon
 # pignog

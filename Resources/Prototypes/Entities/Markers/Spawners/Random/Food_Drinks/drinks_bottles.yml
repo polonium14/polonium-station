@@ -63,8 +63,6 @@
     - id: DrinkShochuBottleFull # readded missing drinks - Yaket
     - id: DrinkTripleSecBottleFull  # readded missing drinks - Yaket
     - id: DrinkVoltaicYellowWineBottleFull  # readded missing drinks - Yaket
-    - id: DrinkHakkaMateCan # readded missing drinks - Yaket
-    - id: DrinkMelonSodaCan # readded missing drinks - Yaket
 
 - type: entityTable
   id: RandomRareAlcoholTable

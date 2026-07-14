@@ -60,6 +60,8 @@
     - id: DrinkWaterBottleFull
     - id: DrinkWaterCup
     - id: DrinkWineCan
+    - id: DrinkHakkaMateCan # readded missing drinks - Yaket
+    - id: DrinkMelonSodaCan # readded missing drinks - Yaket
 
 - type: entityTable
   id: RandomRareSodaTable

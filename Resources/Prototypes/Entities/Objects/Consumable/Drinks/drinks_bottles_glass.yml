@@ -670,7 +670,7 @@
   parent: [DrinkVisualsAllFilled, DrinkBottleGlassBaseFull]
   id: DrinkNavyRumBottleFull
   name: Pride of the Empire navy-strength rum
-  description: By King George, this must be the finest bottle of white-rum that the seven seas, no, the galaxy has ever seen! One glass, and you'll be screaming 'Tally ho!' and "By Ceaser's Ghost!'.
+  description: By King George, this must be the finest bottle of white-rum that the seven seas, no, the galaxy has ever seen! One glass, and you'll be screaming 'Tally ho!' and 'By Caesar's Ghost!'.
   components:
   - type: SolutionContainerManager
     solutions:
@@ -784,7 +784,7 @@
     sprite: Objects/Consumable/Drinks/bittersbottle.rsi
   - type: Sealable
   - type: Label
-    currentLabel: reagent-name-creme-bitters
+    currentLabel: reagent-name-bitters
 
 - type: entity
   parent: [DrinkVisualsAllFilled, DrinkBottleGlassBaseFull]
