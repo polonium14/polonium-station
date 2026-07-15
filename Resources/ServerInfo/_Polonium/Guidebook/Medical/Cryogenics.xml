@@ -59,11 +59,8 @@ Standardowe ciśnienie pompy gazowej wynosi 100,325 kPa. Krioksadon działa w te
 <GuideReagentEmbed Reagent="Aloxadone"/>
 <GuideReagentEmbed Reagent="Cryoxadone"/>
 <GuideReagentEmbed Reagent="Doxarubixadone"/>
-<GuideReagentEmbed Reagent="Hemoxadone"/>
-<GuideReagentEmbed Reagent="Cyanoxadone"/>
 <GuideReagentEmbed Reagent="Dexalin"/>
 <GuideReagentEmbed Reagent="Leporazine"/>
-<GuideReagentEmbed Reagent="Necrosol"/>
 <GuideReagentEmbed Reagent="Opporozidone"/>
 
 </Document>
