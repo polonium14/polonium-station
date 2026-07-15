@@ -582,12 +582,12 @@
   - type: TegCirculator
 
 - type: entity
-  parent: GasBinaryBase
+  parent: GasPipeBase
   id: HeatExchanger
   name: radiator
   description: Transfers heat between the pipe and its surroundings.
   placement:
-    mode: SnapgridCenter
+    mode: AlignAtmosPipeLayers
   components:
   - type: Transform
     noRot: false
@@ -600,9 +600,17 @@
     - state: heStraight
       map: [ "enum.SubfloorLayers.FirstLayer" ]
   - type: AtmosPipeLayers
-    spriteRsiPaths: {}
-    numberOfPipeLayers: 1
+    alternativePrototypes:
+      Primary: HeatExchanger
+      Secondary: HeatExchangerAlt1
+      Tertiary: HeatExchangerAlt2
+    spriteRsiPaths:
+      Primary: Structures/Piping/Atmospherics/heatexchanger.rsi
+      Secondary: Structures/Piping/Atmospherics/heatexchanger_alt1.rsi
+      Tertiary: Structures/Piping/Atmospherics/heatexchanger_alt2.rsi
   - type: SubFloorHide
+    blockInteractions: false
+    blockAmbience: false
     visibleLayers:
     - enum.SubfloorLayers.FirstLayer
   - type: Appearance
@@ -632,6 +640,8 @@
   parent: HeatExchanger
   id: HeatExchangerBend
   suffix: Bend
+  placement:
+    mode: AlignAtmosPipeLayers
   components:
     - type: SubFloorHide
       visibleLayers:
@@ -656,3 +666,12 @@
     - type: Construction
       graph: GasBinary
       node: bendradiator
+    - type: AtmosPipeLayers
+      alternativePrototypes:
+        Primary: HeatExchangerBend
+        Secondary: HeatExchangerBendAlt1
+        Tertiary: HeatExchangerBendAlt2
+      spriteRsiPaths:
+        Primary: Structures/Piping/Atmospherics/heatexchanger.rsi
+        Secondary: Structures/Piping/Atmospherics/heatexchanger_alt1.rsi
+        Tertiary: Structures/Piping/Atmospherics/heatexchanger_alt2.rsi
