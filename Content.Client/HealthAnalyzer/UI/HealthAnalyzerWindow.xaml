@@ -1,15 +1,108 @@
 <controls:FancyWindow
     xmlns="https://spacestation14.io"
     xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
-    xmlns:ui="clr-namespace:Content.Client.HealthAnalyzer.UI"
-    MaxHeight="525"
-    MinWidth="300">
-    <ScrollContainer
-        Margin="5 5 5 5"
-        ReturnMeasure="True"
-        VerticalExpand="True">
+    xmlns:customControls="clr-namespace:Content.Client.Administration.UI.CustomControls"
+    MinWidth="800"
+    MinHeight="525">
+    <BoxContainer Orientation="Vertical" VerticalExpand="True">
+        <BoxContainer Orientation="Horizontal" Margin="8 10 8 10">
+            <Button Name="BodyButton" Text="{Loc 'health-analyzer-window-tab-body'}" MinWidth="130" MinHeight="30"
+                    HorizontalExpand="True" StyleClasses="OpenRight"/>
+            <Button Name="OrgansButton" Text="{Loc 'health-analyzer-window-tab-organs'}" MinWidth="130" MinHeight="30"
+                    HorizontalExpand="True" StyleClasses="OpenBoth"/>
+            <Button Name="ChemicalsButton" Text="{Loc 'health-analyzer-window-tab-chemicals'}" MinWidth="130" MinHeight="30"
+                    HorizontalExpand="True" StyleClasses="OpenLeft"/>
+        </BoxContainer>
+        <PanelContainer StyleClasses="LowDivider"/>
+        <BoxContainer Orientation="Horizontal" VerticalExpand="True">
+            <ScrollContainer Margin="5 5 5 5" ReturnMeasure="True" VerticalExpand="True">
+                <BoxContainer Name="RootContainer" VerticalExpand="True" Orientation="Vertical">
+                    <Label Name="NoPatientDataText" Text="{Loc health-analyzer-window-no-patient-data-text}"/>
 
-        <ui:HealthAnalyzerControl
-            Name="HealthAnalyzer"/>
-    </ScrollContainer>
+                    <Button Name="ReturnButton" Text="{Loc 'health-analyzer-window-return-button-text'}"
+                            Margin="0 0 0 10" HorizontalExpand="False"/>
+
+                    <BoxContainer Name="PatientDataContainer" Margin="0 16 0 5" Orientation="Vertical">
+                        <BoxContainer Orientation="Horizontal" Margin="0 0 0 5">
+                            <PanelContainer>
+                                <SpriteView OverrideDirection="South" Name="SpriteView" Access="Public" SetSize="96 96"/>
+                                <PanelContainer Name="PartView" SetSize="57 96" Margin="18 0 0 0"
+                                                VerticalAlignment="Center" HorizontalAlignment="Left">
+                                    <PanelContainer SetSize="15 33" Margin="4 0 0 0" HorizontalAlignment="Left">
+                                        <TextureButton Name="RightArmButton" MinSize="15 33"
+                                                       StyleClasses="TargetDollButtonRightArm" VerticalAlignment="Top"/>
+                                    </PanelContainer>
+                                    <PanelContainer SetSize="43 75" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                        <TextureButton Name="HeadButton" MinSize="28 23" VerticalAlignment="Top"
+                                                       HorizontalAlignment="Center" StyleClasses="TargetDollButtonHead"/>
+                                        <TextureButton Name="ChestButton" SetSize="28 37" Margin="0 18 0 0"
+                                                       VerticalAlignment="Top" HorizontalAlignment="Center"
+                                                       StyleClasses="TargetDollButtonChest"/>
+                                        <PanelContainer MinSize="38 35" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                                            <PanelContainer MinSize="20 30" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+                                                <TextureButton Name="LeftLegButton" MinSize="20 30" VerticalAlignment="Top"
+                                                               HorizontalAlignment="Left" StyleClasses="TargetDollButtonLeftLeg"/>
+                                            </PanelContainer>
+                                            <PanelContainer MinSize="20 30" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+                                                <TextureButton Name="RightLegButton" MinSize="20 30" VerticalAlignment="Top"
+                                                               HorizontalAlignment="Right" StyleClasses="TargetDollButtonRightLeg"/>
+                                            </PanelContainer>
+                                        </PanelContainer>
+                                    </PanelContainer>
+                                    <PanelContainer SetSize="15 33" Margin="0 0 4 0" HorizontalAlignment="Right">
+                                        <TextureButton Name="LeftArmButton" MinSize="15 33"
+                                                       StyleClasses="TargetDollButtonLeftArm" VerticalAlignment="Top"/>
+                                    </PanelContainer>
+                                </PanelContainer>
+                            </PanelContainer>
+                            <TextureRect Name="NoDataTex" Access="Public" SetSize="64 64" Visible="false"
+                                         Stretch="KeepAspectCentered" TexturePath="/Textures/Interface/Misc/health_analyzer_out_of_range.png"/>
+                            <BoxContainer Margin="5 0 0 0" Orientation="Vertical" VerticalAlignment="Top">
+                                <RichTextLabel Name="NameLabel" SetWidth="150"/>
+                                <Label Name="SpeciesLabel" VerticalAlignment="Top" StyleClasses="LabelSubText"/>
+                                <Label Name="PartNameLabel" VerticalAlignment="Bottom" StyleClasses="LabelSubText"/>
+                            </BoxContainer>
+                            <Label Margin="0 0 5 0" HorizontalExpand="True" HorizontalAlignment="Right"
+                                   VerticalExpand="True" VerticalAlignment="Top" Name="ScanModeLabel"
+                                   Text="{Loc 'health-analyzer-window-entity-unknown-text'}"/>
+                        </BoxContainer>
+
+                        <PanelContainer StyleClasses="LowDivider"/>
+
+                        <GridContainer Margin="0 5 0 0" Columns="2">
+                            <Label Text="{Loc 'health-analyzer-window-entity-status-text'}"/>
+                            <Label Name="StatusLabel"/>
+                            <Label Text="{Loc 'health-analyzer-window-entity-temperature-text'}"/>
+                            <Label Name="TemperatureLabel"/>
+                            <Label Text="{Loc 'health-analyzer-window-entity-blood-level-text'}"/>
+                            <Label Name="BloodLabel"/>
+                            <Label Name="DamageLabelHeading" Text="{Loc 'health-analyzer-window-entity-damage-total-text'}"/>
+                            <Label Name="DamageLabel"/>
+                        </GridContainer>
+                    </BoxContainer>
+
+                    <PanelContainer Name="AlertsDivider" Visible="False" StyleClasses="LowDivider"/>
+
+                    <BoxContainer Name="AlertsContainer" Visible="False" Margin="0 5" Orientation="Vertical"
+                                  HorizontalAlignment="Center">
+                    </BoxContainer>
+
+                    <PanelContainer StyleClasses="LowDivider"/>
+
+                    <BoxContainer Name="GroupsContainer" Margin="0 5 0 5" Orientation="Vertical">
+                    </BoxContainer>
+                </BoxContainer>
+            </ScrollContainer>
+            <customControls:VSeparator VerticalExpand="True" StyleClasses="LowDivider"/>
+            <ScrollContainer Margin="16 16 16 16" ReturnMeasure="True" VerticalExpand="True" HorizontalExpand="True">
+                <BoxContainer Name="ConditionsContainer" VerticalExpand="True" HorizontalExpand="True" Orientation="Vertical">
+                    <RichTextLabel Name="ConditionsLabel" Text="{Loc 'health-analyzer-window-conditions-text'}"
+                                   HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalExpand="True"/>
+                    <BoxContainer Name="ConditionsListContainer" Orientation="Vertical" HorizontalExpand="True"
+                                  HorizontalAlignment="Left">
+                    </BoxContainer>
+                </BoxContainer>
+            </ScrollContainer>
+        </BoxContainer>
+    </BoxContainer>
 </controls:FancyWindow>

@@ -76,6 +76,10 @@
         - id: Saw
         - id: Hemostat
         - id: ClothingMaskSterile
+        - id: BoneGel
+        - id: MedicalStitches
+        - id: BoxLatexGloves
+        - id: BoxSterileMask
 
 - type: entity
   parent: CrateMedical

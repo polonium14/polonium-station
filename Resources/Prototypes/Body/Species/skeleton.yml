@@ -78,13 +78,6 @@
     damageModifierSet: Skeleton
   - type: Injurable
     damageContainer: BiologicalMetaphysical
-  - type: DamageVisuals
-    damageOverlayGroups:
-      Brute:
-        sprite: Mobs/Effects/brute_damage.rsi
-        color: "#555555AA"
-      Burn:
-        sprite: Mobs/Effects/burn_damage.rsi
   - type: MobThresholds
     thresholds:
       0: Alive
@@ -201,21 +194,82 @@
     markingData:
       group: Skeleton
 
+
 - type: entity
   parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganSkeletonPersonExternal ]
   id: OrganSkeletonPersonTorso
+  components:
+  - type: Damageable
+  - type: Injurable
+    damageContainer: BiologicalMetaphysical
+  - type: Nerve
+  - type: Woundable
+    integrityCap: 200
+    thresholds:
+      Healthy: 200
+      Minor: 190
+      Moderate: 180
+      Severe: 160
+      Critical: 140
+      Mangled: 125
+      Severed: 110
 
 - type: entity
   parent: [ OrganBaseHead, OrganSkeletonPersonExternal ]
   id: OrganSkeletonPersonHead
+  components:
+  - type: Damageable
+  - type: Injurable
+    damageContainer: BiologicalMetaphysical
+  - type: Nerve
+  - type: Woundable
+    integrityCap: 125
+    thresholds:
+      Healthy: 125
+      Minor: 115
+      Moderate: 105
+      Severe: 85
+      Critical: 65
+      Mangled: 50
+      Severed: 35
 
 - type: entity
   parent: [ OrganBaseArmLeft, OrganSkeletonPersonExternal ]
   id: OrganSkeletonPersonArmLeft
+  components:
+  - type: Damageable
+  - type: Injurable
+    damageContainer: BiologicalMetaphysical
+  - type: Nerve
+  - type: Woundable
+    integrityCap: 80
+    thresholds:
+      Healthy: 80
+      Minor: 70
+      Moderate: 60
+      Severe: 40
+      Critical: 20
+      Mangled: 5
+      Severed: -10
 
 - type: entity
   parent: [ OrganBaseArmRight, OrganSkeletonPersonExternal ]
   id: OrganSkeletonPersonArmRight
+  components:
+  - type: Damageable
+  - type: Injurable
+    damageContainer: BiologicalMetaphysical
+  - type: Nerve
+  - type: Woundable
+    integrityCap: 80
+    thresholds:
+      Healthy: 80
+      Minor: 70
+      Moderate: 60
+      Severe: 40
+      Critical: 20
+      Mangled: 5
+      Severed: -10
 
 - type: entity
   parent: [ OrganBaseHandLeft, OrganSkeletonPersonExternal ]
@@ -228,10 +282,40 @@
 - type: entity
   parent: [ OrganBaseLegLeft, OrganSkeletonPersonExternal ]
   id: OrganSkeletonPersonLegLeft
+  components:
+  - type: Damageable
+  - type: Injurable
+    damageContainer: BiologicalMetaphysical
+  - type: Nerve
+  - type: Woundable
+    integrityCap: 80
+    thresholds:
+      Healthy: 80
+      Minor: 70
+      Moderate: 60
+      Severe: 40
+      Critical: 20
+      Mangled: 5
+      Severed: -10
 
 - type: entity
   parent: [ OrganBaseLegRight, OrganSkeletonPersonExternal ]
   id: OrganSkeletonPersonLegRight
+  components:
+  - type: Damageable
+  - type: Injurable
+    damageContainer: BiologicalMetaphysical
+  - type: Nerve
+  - type: Woundable
+    integrityCap: 80
+    thresholds:
+      Healthy: 80
+      Minor: 70
+      Moderate: 60
+      Severe: 40
+      Critical: 20
+      Mangled: 5
+      Severed: -10
 
 - type: entity
   parent: [ OrganBaseFootLeft, OrganSkeletonPersonExternal ]

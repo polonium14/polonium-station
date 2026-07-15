@@ -397,6 +397,40 @@
 
 - type: entity
   parent: ChemicalMedipen
+  id: BoneAutoInjector
+  name: bone auto-injector
+  description: A single-dose, non-refillable medipen containing osteodine, used to quickly and easily mend broken bones.
+  components:
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: base-needle-inhand-left
+      - state: base-colorA-inhand-left
+        color: "#fafafa"
+      - state: base-colorB-inhand-left
+      right:
+      - state: base-needle-inhand-right
+      - state: base-colorA-inhand-right
+        color: "#fafafa"
+      - state: base-colorB-inhand-right
+  - type: Sprite
+    sprite: Objects/Specific/Medical/medipen.rsi
+    layers:
+    - state: atropen
+      map: ["enum.SolutionContainerLayers.Fill"]
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    changeColor: false
+    emptySpriteName: atropen_empty
+  - type: Solution
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: Osteodine
+        Quantity: 30
+
+- type: entity
+  parent: ChemicalMedipen
   id: PunctAutoInjector
   name: puncturase auto-injector
   description: A single-dose, non-refillable medipen containing puncturase and tranexamic acid, used to quickly and easily treat puncture wounds. Commonly used as a combat medicine.

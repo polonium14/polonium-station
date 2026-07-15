@@ -1,4 +1,6 @@
+using Content.Shared._Shitmed.Medical.Surgery.Wounds.Components;
 using Content.Shared.Alert;
+using Content.Shared.Body;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Events;
 using Content.Shared.Chemistry.Components;
@@ -21,6 +23,7 @@ using Content.Shared.Rejuvenate;
 using Content.Shared.StatusEffectNew;
 using Content.Shared._Funkystation.Fluids;
 using Content.Shared._Funkystation.WallStains; // Funky Wall Stains
+using Content.Shared._Goobstation.CCVar;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
@@ -44,9 +47,13 @@ public abstract partial class SharedBloodstreamSystem : EntitySystem
     [Dependency] private DamageableSystem _damageableSystem = default!;
     [Dependency] private EntityLookupSystem _lookup = default!;
 
+    private float _bloodlossMultiplier = 4f;
+
     public override void Initialize()
     {
         base.Initialize();
+
+        Subs.CVar(_cfg, GoobCVars.BleedMultiplier, value => _bloodlossMultiplier = value, true);
 
         SubscribeLocalEvent<BloodstreamComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<BloodstreamComponent, EntRemovedFromContainerMessage>(OnEntRemoved);
@@ -58,11 +65,15 @@ public abstract partial class SharedBloodstreamSystem : EntitySystem
         SubscribeLocalEvent<BloodstreamComponent, ApplyMetabolicMultiplierEvent>(OnApplyMetabolicMultiplier);
         SubscribeLocalEvent<BloodstreamComponent, RejuvenateEvent>(OnRejuvenate);
         SubscribeLocalEvent<BloodstreamComponent, MetabolismExclusionEvent>(OnMetabolismExclusion);
+
+        InitializeWounds();
     }
 
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
+
+        UpdateWounds(frameTime);
 
         var curTime = _timing.CurTime;
         var query = EntityQueryEnumerator<BloodstreamComponent>();
@@ -101,7 +112,7 @@ public abstract partial class SharedBloodstreamSystem : EntitySystem
                 else
                 {
                     // If they're healthy, we'll try and heal some bloodloss instead.
-                    _damageableSystem.TryChangeDamage(uid, bloodstream.BloodlossHealDamage * bloodPercentage, ignoreResistances: true, interruptsDoAfters: false);
+                    _damageableSystem.TryChangeDamage(uid, bloodstream.BloodlossHealDamage * bloodPercentage * _bloodlossMultiplier, ignoreResistances: true, interruptsDoAfters: false);
 
                     _status.TryRemoveStatusEffect(uid, Bloodloss);
                 }
@@ -210,10 +221,11 @@ public abstract partial class SharedBloodstreamSystem : EntitySystem
             return;
 
         // Does the calculation of how much bleed rate should be added/removed, then applies it
-        var oldBleedAmount = ent.Comp.BleedAmount;
+        var oldBleedAmount = ent.Comp.BleedAmountNotFromWounds;
         var total = bloodloss.GetTotal();
         var totalFloat = total.Float();
-        TryModifyBleedAmount(ent.AsNullable(), totalFloat);
+        if (!HasWoundSupport(ent.Owner))
+            TryModifyBleedAmount(ent.AsNullable(), totalFloat);
 
         // Funky Wall Stains
         if (totalFloat >= 2f
@@ -346,15 +358,21 @@ public abstract partial class SharedBloodstreamSystem : EntitySystem
             return 0.0f;
         }
 
-        var totalBloodLevel = FixedPoint2.New(entity.Comp.MaxVolumeModifier); // Can't go above max volume factor...
+        // Computed in raw float, not FixedPoint2 - FixedPoint2's operator/ truncates to 2 decimal
+        // places, and since this ratio lives in the 0..1 range that caps the result at whole-percent
+        // steps (0.01 = 1%) no matter how precise the underlying reagent quantities are. Health
+        // analyzer displays this with 1 decimal digit, so the FixedPoint2 rounding was silently
+        // eating the digit it was supposed to show.
+        var totalBloodLevel = entity.Comp.MaxVolumeModifier; // Can't go above max volume factor...
 
         foreach (var (reagentId, quantity) in entity.Comp.BloodReferenceSolution.Contents)
         {
             // Ideally we use a different calculation for blood pressure, this just defines how much *usable* blood you have!
-            totalBloodLevel = FixedPoint2.Min(totalBloodLevel, bloodSolution.GetTotalPrototypeQuantity(reagentId.Prototype) / quantity);
+            var ratio = (float)bloodSolution.GetTotalPrototypeQuantity(reagentId.Prototype) / (float)quantity;
+            totalBloodLevel = MathF.Min(totalBloodLevel, ratio);
         }
 
-        return (float)totalBloodLevel;
+        return totalBloodLevel;
     }
 
     /// <summary>
@@ -544,20 +562,37 @@ public abstract partial class SharedBloodstreamSystem : EntitySystem
         if (!Resolve(ent, ref ent.Comp, logMissing: false))
             return false;
 
-        ent.Comp.BleedAmount += amount;
-        ent.Comp.BleedAmount = Math.Clamp(ent.Comp.BleedAmount, 0, ent.Comp.MaxBleedAmount);
+        ent.Comp.BleedAmountNotFromWounds = Math.Max(ent.Comp.BleedAmountNotFromWounds + amount, 0);
+        RecomputeBleedAmount(ent, ent.Comp);
+        return true;
+    }
 
-        DirtyField(ent, ent.Comp, nameof(BloodstreamComponent.BleedAmount));
+    private void RecomputeBleedAmount(EntityUid uid, BloodstreamComponent comp)
+    {
+        comp.BleedAmount = Math.Clamp(comp.BleedAmountFromWounds + comp.BleedAmountNotFromWounds, 0, comp.MaxBleedAmount);
+        DirtyField(uid, comp, nameof(BloodstreamComponent.BleedAmount));
 
-        if (ent.Comp.BleedAmount == 0)
-            _alertsSystem.ClearAlert(ent.Owner, ent.Comp.BleedingAlert);
+        if (comp.BleedAmount == 0)
+            _alertsSystem.ClearAlert(uid, comp.BleedingAlert);
         else
         {
-            var severity = (short)Math.Clamp(Math.Round(ent.Comp.BleedAmount, MidpointRounding.ToZero), 0, 10);
-            _alertsSystem.ShowAlert(ent.Owner, ent.Comp.BleedingAlert, severity);
+            var severity = (short)Math.Clamp(Math.Round(comp.BleedAmount, MidpointRounding.ToZero), 0, 10);
+            _alertsSystem.ShowAlert(uid, comp.BleedingAlert, severity);
+        }
+    }
+
+    private bool HasWoundSupport(EntityUid uid)
+    {
+        if (!TryComp<BodyComponent>(uid, out var body) || body.Organs is null)
+            return false;
+
+        foreach (var organ in body.Organs.ContainedEntities)
+        {
+            if (HasComp<WoundableComponent>(organ))
+                return true;
         }
 
-        return true;
+        return false;
     }
 
     /// <summary>

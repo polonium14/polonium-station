@@ -1658,6 +1658,7 @@
   - type: StatusIcon
     bounds: -0.5,-0.5,0.5,0.5
   - type: JobStatus # marks them as crew
+  - type: Targeting
 
 - type: entity
   name: monkey

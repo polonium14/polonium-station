@@ -21,6 +21,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Server.BaseAnalyzer;
+using Content.Shared._Shitmed.Medical.HealthAnalyzer;
 using Robust.Shared.Audio;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
@@ -40,4 +41,10 @@ public sealed partial class HealthAnalyzerComponent : BaseAnalyzerComponent
     [DataField(customTypeSerializer: typeof(TimeOffsetSerializer))]
     [AutoPausedField]
     public override TimeSpan NextUpdate { get; set; } = TimeSpan.Zero;
+
+    [DataField]
+    public HealthAnalyzerMode CurrentMode = HealthAnalyzerMode.Body;
+
+    [DataField]
+    public EntityUid? CurrentBodyPart;
 }

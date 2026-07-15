@@ -1,0 +1,129 @@
+<widgets:TargetingControl
+    xmlns="https://spacestation14.io"
+    xmlns:widgets="clr-namespace:Content.Client._Shitmed.UserInterface.Systems.Targeting.Widgets"
+    Name="TargetingButton"
+    VerticalExpand="True"
+    VerticalAlignment="Bottom"
+    HorizontalAlignment="Right">
+    <Control HorizontalAlignment="Right">
+        <TextureRect
+            Name="TargetDoll"
+            Stretch="KeepAspectCentered"
+            SetSize="96 96">
+            <PanelContainer
+                SetSize="57 96"
+                Margin="18 0 0 0"
+                VerticalAlignment="Bottom"
+                HorizontalAlignment="Left">
+                <PanelContainer
+                    SetSize="18 39"
+                    Margin="0 7 0 0"
+                    HorizontalAlignment="Left">
+                    <TextureButton
+                        Name="RightArmButton"
+                        MinSize="18 39"
+                        StyleClasses="TargetDollButtonRightArm"
+                        VerticalAlignment="Top">
+                        <TextureRect
+                            TexturePath="/Textures/_Shitmed/Interface/Targeting/Doll/rightarm.png"
+                            Stretch="KeepAspectCentered"
+                            SetSize="12 36"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center"/>
+                    </TextureButton>
+                </PanelContainer>
+                <PanelContainer
+                    SetSize="51 90"
+                    Margin="0 64 0 0"
+                    VerticalAlignment="Bottom"
+                    HorizontalAlignment="Center">
+                    <TextureButton
+                        Name="HeadButton"
+                        MinSize="33 27"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Center"
+                        StyleClasses="TargetDollButtonHead">
+                        <TextureRect
+                            TexturePath="/Textures/_Shitmed/Interface/Targeting/Doll/head.png"
+                            Stretch="KeepAspectCentered"
+                            SetSize="27 21"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center"/>
+                    </TextureButton>
+                    <TextureButton
+                        Name="ChestButton"
+                        SetSize="33 45"
+                        Margin="0 21 0 0"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Center"
+                        StyleClasses="TargetDollButtonChest">
+                        <TextureRect
+                            TexturePath="/Textures/_Shitmed/Interface/Targeting/Doll/torso.png"
+                            Stretch="KeepAspectCentered"
+                            SetSize="27 30"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center"/>
+                    </TextureButton>
+                    <PanelContainer
+                        MinSize="45 42"
+                        VerticalAlignment="Bottom"
+                        HorizontalAlignment="Center">
+                        <PanelContainer
+                            MinSize="24 36"
+                            VerticalAlignment="Bottom"
+                            HorizontalAlignment="Right">
+                            <TextureButton
+                                Name="LeftLegButton"
+                                MinSize="21 36"
+                                VerticalAlignment="Top"
+                                HorizontalAlignment="Left"
+                                StyleClasses="TargetDollButtonLeftLeg">
+                                <TextureRect
+                                    TexturePath="/Textures/_Shitmed/Interface/Targeting/Doll/leftleg.png"
+                                    Stretch="KeepAspectCentered"
+                                    SetSize="21 36"
+                                    VerticalAlignment="Center"
+                                    HorizontalAlignment="Center"/>
+                            </TextureButton>
+                        </PanelContainer>
+                        <PanelContainer
+                            MinSize="24 36"
+                            VerticalAlignment="Bottom"
+                            HorizontalAlignment="Left">
+                            <TextureButton
+                                Name="RightLegButton"
+                                MinSize="21 36"
+                                VerticalAlignment="Top"
+                                HorizontalAlignment="Right"
+                                StyleClasses="TargetDollButtonRightLeg">
+                                <TextureRect
+                                    TexturePath="/Textures/_Shitmed/Interface/Targeting/Doll/rightleg.png"
+                                    Stretch="KeepAspectCentered"
+                                    SetSize="21 36"
+                                    VerticalAlignment="Center"
+                                    HorizontalAlignment="Center"/>
+                            </TextureButton>
+                        </PanelContainer>
+                    </PanelContainer>
+                </PanelContainer>
+                <PanelContainer
+                    SetSize="18 39"
+                    Margin="0 7 0 0"
+                    HorizontalAlignment="Right">
+                    <TextureButton
+                        Name="LeftArmButton"
+                        MinSize="18 39"
+                        StyleClasses="TargetDollButtonLeftArm"
+                        VerticalAlignment="Top">
+                        <TextureRect
+                            TexturePath="/Textures/_Shitmed/Interface/Targeting/Doll/leftarm.png"
+                            Stretch="KeepAspectCentered"
+                            SetSize="12 36"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center"/>
+                    </TextureButton>
+                </PanelContainer>
+            </PanelContainer>
+        </TextureRect>
+    </Control>
+</widgets:TargetingControl>

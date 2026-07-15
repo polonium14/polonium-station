@@ -62,6 +62,12 @@ public sealed partial class BloodstreamComponent : Component
     [DataField, AutoNetworkedField]
     public float BleedAmount;
 
+    [DataField, AutoNetworkedField]
+    public float BleedAmountFromWounds;
+
+    [DataField, AutoNetworkedField]
+    public float BleedAmountNotFromWounds;
+
     /// <summary>
     /// How much should bleeding be reduced every update interval?
     /// </summary>

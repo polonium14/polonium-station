@@ -1,0 +1,27 @@
+namespace Content.Shared._Shitmed.Targeting;
+
+/// <summary>
+/// Represents and enum of possible target parts.
+/// </summary>
+/// <remarks>
+/// To get all body parts as an Array, use static
+/// method in SharedTargetingSystem GetValidParts.
+/// </remarks>
+[Flags]
+public enum TargetBodyPart : ushort
+{
+    Head = 1,
+    Chest = 1 << 1,
+    LeftArm = 1 << 2,
+    RightArm = 1 << 3,
+    LeftLeg = 1 << 4,
+    RightLeg = 1 << 5,
+
+    Arms = LeftArm | RightArm,
+    Legs = LeftLeg | RightLeg,
+    BodyMiddle = Chest | Arms,
+
+    All = Head | Chest | LeftArm | RightArm | LeftLeg | RightLeg,
+
+    Vital = Head | Chest,
+}

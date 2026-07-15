@@ -1707,6 +1707,7 @@ namespace Content.Client.Stylesheets
                         BorderThickness= new Thickness(0, 1, 0, 0),
                     }),
 
+
                 // Silicon law edit ui
                 Element<Label>().Class(SiliconLawContainer.StyleClassSiliconLawPositionLabel)
                     .Prop(Label.StylePropertyFontColor, NanoGold),

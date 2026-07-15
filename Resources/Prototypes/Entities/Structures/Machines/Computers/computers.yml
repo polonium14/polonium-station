@@ -775,7 +775,7 @@
   parent: BaseComputerAiAccess
   id: computerBodyScanner
   name: body scanner computer
-  description: A body scanner.
+  description: A body scanner. Link it to an operating table or medical bed with a network configurator to see live patient data.
   components:
   - type: Computer
     board: BodyScannerComputerCircuitboard
@@ -784,6 +784,18 @@
     energy: 4.0
     color: "#1f8c28"
   - type: AmbientMusicMarkerMedical
+  - type: BodyScannerConsole
+  - type: DeviceLinkSource
+    ports:
+      - BodyScannerSender
+  - type: ActivatableUI
+    key: enum.HealthAnalyzerUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.HealthAnalyzerUiKey.Key:
+        type: HealthAnalyzerBoundUserInterface
+      enum.WiresUiKey.Key:
+        type: WiresBoundUserInterface
 
 - type: entity
   parent: BaseComputerAiAccess

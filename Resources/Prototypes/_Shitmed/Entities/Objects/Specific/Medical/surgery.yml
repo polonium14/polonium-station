@@ -1,0 +1,46 @@
+
+- type: entity
+  parent: BaseToolSurgery
+  id: Bonesetter
+  name: bone setter
+  description: Used for setting bones back into place.
+  components:
+  - type: Sprite
+    sprite: _Shitmed/Objects/Specific/Medical/Surgery/bonesetter.rsi
+    state: bonesetter
+  - type: Item
+    sprite: _Shitmed/Objects/Specific/Medical/Surgery/bonesetter.rsi
+  - type: SurgeryTool
+    startSound:
+      path: /Audio/_Shitmed/Medical/Surgery/bone_setter.ogg
+  - type: BoneSetter
+
+- type: entity
+  parent: BaseToolSurgery
+  id: BoneGel
+  name: bottle of bone gel
+  description: A container for bone gel that often needs to be refilled from a specialized machine.
+  components:
+  - type: Sprite
+    sprite: _Shitmed/Objects/Specific/Medical/Surgery/bone-gel.rsi
+    state: bone-gel
+  - type: Item
+    sprite: _Shitmed/Objects/Specific/Medical/Surgery/bone-gel.rsi
+  - type: SurgeryTool
+  - type: BoneGel
+
+- type: entity
+  parent: BaseToolSurgery
+  id: MedicalStitches
+  name: medical stitches
+  description: A fine, curved needle with a length of absorbable polyglycolide suture thread.
+  components:
+  - type: Sprite
+    sprite: _Shitmed/Objects/Specific/Medical/Surgery/stitches.rsi
+    state: stitches
+  - type: Item
+    sprite: _Shitmed/Objects/Specific/Medical/Surgery/stitches.rsi
+  - type: SurgeryTool
+    startSound:
+      path: /Audio/Items/Medical/brutepack_begin.ogg # NOTE: reused bandage-apply sound, not a dedicated Stitches sound — fits better than the saw.ogg placeholder Goob upstream uses.
+  - type: Stitches

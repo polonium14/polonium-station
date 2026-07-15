@@ -1,5 +1,6 @@
 using System.Linq;
 using System.Numerics;
+using Content.Shared._Shitmed.Targeting;
 using Content.Shared.Atmos;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Prototypes;
@@ -142,6 +143,34 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
         var damagePerType = _damageable.GetAllDamage(target.Value).DamageDict;
 
         DrawDiagnosticGroups(damageSortedGroups, damagePerType);
+
+        DrawPartStatuses(state.PartStatuses);
+    }
+
+    private void DrawPartStatuses(Dictionary<TargetBodyPart, string>? partStatuses)
+    {
+        WoundsContainer.RemoveAllChildren();
+
+        var hasData = partStatuses is { Count: > 0 };
+        WoundsDivider.Visible = hasData;
+        WoundsContainer.Visible = hasData;
+
+        if (!hasData)
+            return;
+
+        foreach (var part in SharedTargetingSystem.GetValidParts())
+        {
+            if (!partStatuses!.TryGetValue(part, out var status))
+                continue;
+
+            var partName = Loc.GetString($"target-zone-{part.ToString().ToLower()}");
+
+            WoundsContainer.AddChild(new RichTextLabel
+            {
+                Text = $"{partName}: {status}",
+                Margin = new Thickness(0, 2),
+            });
+        }
     }
 
     private static string GetStatus(MobState mobState)

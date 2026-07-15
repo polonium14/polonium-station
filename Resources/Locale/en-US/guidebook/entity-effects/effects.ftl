@@ -447,6 +447,12 @@ entity-effect-guidebook-innoculate-zombie-infection =
         *[other] cure
     } an ongoing zombie infection, and provides immunity to future infections
 
+entity-effect-guidebook-heal-bones =
+    { $chance ->
+        [1] Heals
+        *[other] heal
+    } all broken and fractured bones in the body
+
 entity-effect-guidebook-reduce-rotting =
     { $chance ->
         [1] Regenerates
