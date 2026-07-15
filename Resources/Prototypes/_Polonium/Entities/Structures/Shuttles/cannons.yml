@@ -100,6 +100,8 @@
   - type: Battery
     maxCharge: 6000
     startingCharge: 6000
+  - type: MaterialEnergy
+    materialWhiteList: [Plasma]
   - type: BatteryAmmoProvider
     proto: BulletPlasmaCutterShuttle
     fireCost: 100
