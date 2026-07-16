@@ -114,12 +114,12 @@ namespace Content.Server.Atmos.Piping.Trinary.EntitySystems
             if (args.Handled || !args.Complex)
                 return;
 
-            if (TryComp(args.User, out ActorComponent? actor))
+            if (!TryComp(args.User, out ActorComponent? actor))
                 return;
 
             if (Comp<TransformComponent>(uid).Anchored)
             {
-                _userInterfaceSystem.OpenUi(uid, GasFilterUiKey.Key, actor!.PlayerSession);
+                _userInterfaceSystem.OpenUi(uid, GasFilterUiKey.Key, actor.PlayerSession);
                 DirtyUI(uid, filter);
             }
             else
