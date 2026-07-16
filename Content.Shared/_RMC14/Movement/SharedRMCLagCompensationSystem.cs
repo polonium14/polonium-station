@@ -132,18 +132,23 @@ public abstract class SharedRMCLagCompensationSystem : EntitySystem
         var targetCoordinates = _transform.ToMapCoordinates(GetCoordinates(target, perspectiveSession));
         var transform = new Transform(targetCoordinates.Position, 0);
         var targetBounds = new Box2(transform.Position, transform.Position);
+        var hasMatchingFixture = false;
 
         foreach (var fixture in target.Comp.Fixtures.Values)
         {
             if ((fixture.CollisionLayer & projectile.Comp.CollisionMask) == 0)
                 continue;
 
+            hasMatchingFixture = true;
             for (var i = 0; i < fixture.Shape.ChildCount; i++)
             {
                 var boundy = fixture.Shape.ComputeAABB(transform, i);
                 targetBounds = targetBounds.Union(boundy);
             }
         }
+
+        if (!hasMatchingFixture)
+            return false;
 
         var projectileTransform = new Transform(substeppedProjectilePos, 0);
         var projectileBounds = new Box2(projectileTransform.Position, projectileTransform.Position);
