@@ -104,7 +104,7 @@ namespace Content.Client.Atmos.UI
                     Text = gas.Name,
                     ToggleMode = true,
                     HorizontalExpand = true,
-                    Pressed = _selectedGases.Contains((Gas) int.Parse(gas.ID))
+                    Pressed = _selectedGases.Contains(Enum.Parse<Gas>(gas.ID)),
                 };
                 gasButton.OnToggled += args =>
                 {
@@ -139,57 +139,5 @@ namespace Content.Client.Atmos.UI
             _selectedGases.Clear();
             FilterGasesChanged?.Invoke(new HashSet<Gas>(_selectedGases));
         }
-
-        // <summary>
-        // Funky - end of changes for filtering of multiple gases
-        // </summary>
-
-        // <summary>
-        // Funky - below removed for filtering of multiple gases
-        // </summary>
-
-        // public void SetGasFiltered(string? id, string name)
-        // {
-        //     CurrentGasId = id;
-        //     CurrentGasLabel.Text = Loc.GetString("comp-gas-filter-ui-filter-gas-current") + $" {name}";
-        //     GasList.ClearSelected();
-        //     SelectGasButton.Disabled = true;
-        // }
-
-        // public void PopulateGasList(IEnumerable<GasPrototype> gases)
-        // {
-        //     GasList.Add(new ItemList.Item(GasList)
-        //     {
-        //         Metadata = null,
-        //         Text = Loc.GetString("comp-gas-filter-ui-filter-gas-none")
-        //     });
-
-        //     foreach (var gas in gases)
-        //     {
-        //         var gasName = Loc.GetString(gas.Name);
-        //         GasList.Add(GetGasItem(gas.ID, gasName, GasList));
-        //     }
-        // }
-
-        // private static ItemList.Item GetGasItem(string id, string name, ItemList itemList)
-        // {
-        //     return new(itemList)
-        //     {
-        //         Metadata = id,
-        //         Text = name
-        //     };
-        // }
-
-        // private void GasListOnItemSelected(ItemList.ItemListSelectedEventArgs obj)
-        // {
-        //     SelectedGas = (string) obj.ItemList[obj.ItemIndex].Metadata!;
-        //     if(SelectedGas != CurrentGasId) SelectGasButton.Disabled = false;
-        // }
-
-        // private void GasListOnItemDeselected(ItemList.ItemListDeselectedEventArgs obj)
-        // {
-        //     SelectedGas = CurrentGasId;
-        //     SelectGasButton.Disabled = true;
-        // }
     }
 }
