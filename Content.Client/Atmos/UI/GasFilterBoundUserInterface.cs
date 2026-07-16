@@ -34,12 +34,15 @@ namespace Content.Client.Atmos.UI
 
             _window.ToggleStatusButtonPressed += OnToggleStatusButtonPressed;
             _window.FilterTransferRateChanged += OnFilterTransferRatePressed;
-            _window.SelectGasPressed += OnSelectGasPressed;
+            //_window.SelectGasPressed += OnSelectGasPressed; // Funky - removed for filtering of multiple gases
+            _window.FilterGasesChanged += OnFilterGasesChanged; // Funky - for filtering of multiple gases
         }
 
-        private void OnToggleStatusButtonPressed(bool status)
+        private void OnToggleStatusButtonPressed()
         {
-            SendMessage(new GasFilterToggleStatusMessage(status));
+            if (_window is null)
+                return;
+            SendMessage(new GasFilterToggleStatusMessage(_window.FilterStatus));
         }
 
         private void OnFilterTransferRatePressed(string value)
@@ -49,22 +52,23 @@ namespace Content.Client.Atmos.UI
             SendMessage(new GasFilterChangeRateMessage(rate));
         }
 
-        private void OnSelectGasPressed()
+        // private void OnSelectGasPressed() // Funky - removed for filtering of multiple gases
+        // {
+        //     if (_window is null) return;
+        //     if (_window.SelectedGas is null)
+        //     {
+        //         SendMessage(new GasFilterSelectGasMessage(null));
+        //     }
+        //     else
+        //     {
+        //         if (!int.TryParse(_window.SelectedGas, out var gas)) return;
+        //         SendMessage(new GasFilterSelectGasMessage(gas));
+        //     }
+        // }
+
+        private void OnFilterGasesChanged(HashSet<Gas> gases) // Funky - for filtering of multiple gases
         {
-            if (_window is null)
-                return;
-
-            if (_window.SelectedGas is null)
-            {
-                SendMessage(new GasFilterSelectGasMessage(null));
-            }
-            else
-            {
-                if (!Enum.TryParse<Gas>(_window.SelectedGas, out var gas))
-                    return;
-
-                SendMessage(new GasFilterSelectGasMessage(gas));
-            }
+            SendMessage(new GasFilterChangeGasesMessage(gases));
         }
 
         /// <summary>
@@ -80,23 +84,28 @@ namespace Content.Client.Atmos.UI
             _window.Title = (cast.FilterLabel);
             _window.SetFilterStatus(cast.Enabled);
             _window.SetTransferRate(cast.TransferRate);
-            if (cast.FilteredGas is not null)
-            {
-                var atmos = EntMan.System<AtmosphereSystem>();
-                var gas = atmos.GetGas((Gas) cast.FilteredGas);
-                var gasName = Loc.GetString(gas.Name);
-                _window.SetGasFiltered(gas.ID, gasName);
-            }
-            else
-            {
-                _window.SetGasFiltered(null, Loc.GetString("comp-gas-filter-ui-filter-gas-none"));
-            }
+
+            // Funky - removed for filtering of multiple gases
+            // if (cast.FilteredGas is not null)
+            // {
+            //     var atmos = EntMan.System<AtmosphereSystem>();
+            //     var gas = atmos.GetGas((Gas) cast.FilteredGas);
+            //     var gasName = Loc.GetString(gas.Name);
+            //     _window.SetGasFiltered(gas.ID, gasName);
+            // }
+            // else
+            // {
+            //     _window.SetGasFiltered(null, Loc.GetString("comp-gas-filter-ui-filter-gas-none"));
+            // }
+
+            _window.SetFilteredGases(cast.FilterGases ?? new HashSet<Gas>()); // Funky - for filtering of multiple gases
         }
 
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);
-            if (!disposing) return;
+            if (!disposing)
+                return;
             _window?.Dispose();
         }
     }
