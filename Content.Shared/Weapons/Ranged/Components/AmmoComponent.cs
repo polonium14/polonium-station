@@ -1,3 +1,4 @@
+using System.Numerics;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
@@ -14,6 +15,9 @@ public partial class AmmoComponent : Component, IShootable
 
     [DataField]
     public EntProtoId? MuzzleFlash = "MuzzleFlashEffect";
+
+    [DataField]
+    public Vector2 MuzzleFlashOffset = Vector2.Zero;
 }
 
 /// <summary>

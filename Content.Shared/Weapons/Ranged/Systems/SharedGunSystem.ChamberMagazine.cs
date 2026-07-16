@@ -1,4 +1,5 @@
 using System.Diagnostics.CodeAnalysis;
+using Content.Shared._RMC14.Weapons.Ranged.Prediction;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Examine;
 using Content.Shared.Interaction;
@@ -226,18 +227,22 @@ public abstract partial class SharedGunSystem
             if (relayedArgs.Ammo.Count > 0)
             {
                 var newChamberEnt = relayedArgs.Ammo[0].Entity;
-                TryInsertChamber(uid, newChamberEnt!.Value);
+                if (newChamberEnt != null)
+                    TryInsertPredictedChamber(uid, newChamberEnt.Value);
+
                 var ammoEv = new GetAmmoCountEvent();
                 RaiseLocalEvent(magEnt.Value, ref ammoEv);
                 FinaliseMagazineTakeAmmo(uid, component, ammoEv.Count, ammoEv.Capacity, user, appearance);
                 UpdateAmmoCount(uid);
 
-                // Clientside reconciliation things
                 if (_netManager.IsClient)
                 {
                     foreach (var (ent, _) in relayedArgs.Ammo)
                     {
-                        if (!IsClientSide(ent!.Value))
+                        if (ent == null || !IsClientSide(ent.Value))
+                            continue;
+
+                        if (TryComp(uid, out PredictedChamberClientComponent? predicted) && predicted.Round == ent)
                             continue;
 
                         Del(ent.Value);
@@ -293,8 +298,33 @@ public abstract partial class SharedGunSystem
         }
     }
 
+    private bool TryInsertPredictedChamber(EntityUid gun, EntityUid ammo)
+    {
+        if (_netManager.IsClient && IsClientSide(ammo))
+        {
+            var predicted = EnsureComp<PredictedChamberClientComponent>(gun);
+            if (predicted.Round is { } existing && Exists(existing))
+                Del(existing);
+
+            predicted.Round = ammo;
+            return true;
+        }
+
+        return TryInsertChamber(gun, ammo);
+    }
+
     private bool TryTakeChamberEntity(EntityUid uid, [NotNullWhen(true)] out EntityUid? entity)
     {
+        if (_netManager.IsClient &&
+            TryComp(uid, out PredictedChamberClientComponent? predicted) &&
+            predicted.Round is { } round &&
+            Exists(round))
+        {
+            entity = round;
+            predicted.Round = null;
+            return true;
+        }
+
         if (!Containers.TryGetContainer(uid, ChamberSlot, out var container) ||
             container is not ContainerSlot slot)
         {
@@ -312,6 +342,14 @@ public abstract partial class SharedGunSystem
 
     public EntityUid? GetChamberEntity(EntityUid uid)
     {
+        if (_netManager.IsClient &&
+            TryComp(uid, out PredictedChamberClientComponent? predicted) &&
+            predicted.Round is { } round &&
+            Exists(round))
+        {
+            return round;
+        }
+
         if (!Containers.TryGetContainer(uid, ChamberSlot, out var container) ||
             container is not ContainerSlot slot)
         {
@@ -390,7 +428,8 @@ public abstract partial class SharedGunSystem
                 if (relayedArgs.Ammo.Count > 0)
                 {
                     var newChamberEnt = relayedArgs.Ammo[^1].Entity;
-                    TryInsertChamber(uid, newChamberEnt!.Value);
+                    if (newChamberEnt != null)
+                        TryInsertPredictedChamber(uid, newChamberEnt.Value);
                 }
 
                 // Anything above the chamber-refill amount gets fired.
@@ -417,12 +456,10 @@ public abstract partial class SharedGunSystem
             FinaliseMagazineTakeAmmo(uid, component, ammoEv.Count, ammoEv.Capacity, args.User, appearance);
         }
         // If gun doesn't autocycle (e.g. bolt-action weapons) then we leave the chambered entity in there but still return it.
-        else if (Containers.TryGetContainer(uid, ChamberSlot, out var container) &&
-                 container is ContainerSlot { ContainedEntity: not null } slot)
+        else if (GetChamberEntity(uid) is { } chambered)
         {
             // Shooting code won't eject it if it's still contained.
-            chamberEnt = slot.ContainedEntity;
-            args.Ammo.Add((chamberEnt.Value, EnsureShootable(chamberEnt.Value)));
+            args.Ammo.Add((chambered, EnsureShootable(chambered)));
         }
     }
 }

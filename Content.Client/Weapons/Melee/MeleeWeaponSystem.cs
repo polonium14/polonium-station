@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Client._RMC14.Movement;
 using Content.Client.Gameplay;
 using Content.Shared.CCVar;
 using Content.Shared.CombatMode;
@@ -28,6 +29,7 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
     [Dependency] private IInputManager _inputManager = default!;
     [Dependency] private IPlayerManager _player = default!;
     [Dependency] private IStateManager _stateManager = default!;
+    [Dependency] private RMCLagCompensationSystem _rmcLagCompensation = default!;
     [Dependency] private AnimationPlayerSystem _animation = default!;
     [Dependency] private InputSystem _inputSystem = default!;
     [Dependency] private SharedColorFlashEffectSystem _color = default!;
@@ -193,6 +195,7 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
         // This should really be improved. GetEntitiesInArc uses pos instead of bounding boxes.
         // Server will validate it with InRangeUnobstructed.
         var entities = GetNetEntityList(ArcRayCast(userPos, direction.ToWorldAngle(), component.Angle, distance, userXform.MapID, user).ToList());
+        _rmcLagCompensation.SendLastRealTick();
         RaisePredictiveEvent(new HeavyAttackEvent(GetNetEntity(meleeUid), entities.GetRange(0, Math.Min(MaxTargets, entities.Count)), GetNetCoordinates(coordinates)));
     }
 
@@ -203,6 +206,7 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
         if (_stateManager.CurrentState is GameplayStateBase screen)
             target = screen.GetClickedEntity(mousePos);
 
+        _rmcLagCompensation.SendLastRealTick();
         RaisePredictiveEvent(new DisarmAttackEvent(GetNetEntity(target), GetNetCoordinates(coordinates)));
     }
 
@@ -222,6 +226,7 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
         if (Interaction.CombatModeCanHandInteract(attacker, target))
             return;
 
+        _rmcLagCompensation.SendLastRealTick();
         RaisePredictiveEvent(new LightAttackEvent(GetNetEntity(target), GetNetEntity(weaponUid), GetNetCoordinates(coordinates)));
     }
 

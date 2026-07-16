@@ -21,6 +21,7 @@
     - FullAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/water_spray.ogg
+  - type: GunIgnorePrediction
   - type: Absorbent
     pickupAmount: 35
     solutionName: tank

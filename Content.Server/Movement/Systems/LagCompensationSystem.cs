@@ -1,3 +1,4 @@
+using Content.Server._RMC14.Movement;
 using Content.Server.Movement.Components;
 using Robust.Server.Player;
 using Robust.Shared.Map;
@@ -13,10 +14,11 @@ namespace Content.Server.Movement.Systems;
 public sealed partial class LagCompensationSystem : EntitySystem
 {
     [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private RMCLagCompensationSystem _rmcLagCompensation = default!;
 
     // I figured 500 ping is max, so 1.5 is 750.
     // Max ping I've had is 350ms from aus to spain.
-    public static readonly TimeSpan BufferTime = TimeSpan.FromMilliseconds(750);
+    public TimeSpan BufferTime = TimeSpan.FromMilliseconds(750);
 
     public override void Initialize()
     {
@@ -32,8 +34,6 @@ public sealed partial class LagCompensationSystem : EntitySystem
         var curTime = _timing.CurTime;
         var earliestTime = curTime - BufferTime;
 
-        // Cull any old ones from active updates
-        // Probably fine to include ignored.
         var query = AllEntityQuery<LagCompensationComponent>();
 
         while (query.MoveNext(out var comp))
@@ -54,7 +54,7 @@ public sealed partial class LagCompensationSystem : EntitySystem
     private void OnLagMove(EntityUid uid, LagCompensationComponent component, ref MoveEvent args)
     {
         if (!args.NewPosition.EntityId.IsValid())
-            return; // probably being sent to nullspace for deletion.
+            return;
 
         component.Positions.Enqueue((_timing.CurTime, args.NewPosition, args.NewRotation));
     }
@@ -70,17 +70,24 @@ public sealed partial class LagCompensationSystem : EntitySystem
 
         var angle = Angle.Zero;
         var coordinates = EntityCoordinates.Invalid;
-        var ping = pSession.Ping;
-        // Use 1.5 due to the trip buffer.
-        var sentTime = _timing.CurTime - TimeSpan.FromMilliseconds(ping * 1.5);
+        var offset = _timing.CurTick - _rmcLagCompensation.GetLastRealTick(pSession.UserId).Value;
+        var offsetTime = offset.Value * _timing.TickPeriod;
+        if (offsetTime > BufferTime)
+            offsetTime = TimeSpan.Zero;
 
+        var sentTime = _timing.CurTime - offsetTime;
+
+        TimeSpan? found = null;
         foreach (var pos in lag.Positions)
         {
+            if (found != null && found != pos.Item1)
+                break;
+
             coordinates = pos.Item2;
             angle = pos.Item3;
 
             if (pos.Item1 >= sentTime)
-                break;
+                found ??= pos.Item1;
         }
 
         if (coordinates == default)

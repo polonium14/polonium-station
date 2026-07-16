@@ -13,6 +13,7 @@
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
+  - type: GunIgnorePrediction
   - type: AmmoCounter
   # These will only do anything if the effect layer is actually set.
   - type: Appearance
