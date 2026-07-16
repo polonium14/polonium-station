@@ -14,6 +14,7 @@
 // SPDX-FileCopyrightText: 2025 J <billsmith116@gmail.com>
 // SPDX-FileCopyrightText: 2025 Krunklehorn <42424291+Krunklehorn@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2026 B_Kirill <153602297+B-Kirill@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2026 mq <113324899+mqole@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2026 taydeo <tay@funkystation.org>
 // SPDX-FileCopyrightText: 2026 taydeo <td12233a@gmail.com>

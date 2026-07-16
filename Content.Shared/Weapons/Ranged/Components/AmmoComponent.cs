@@ -7,6 +7,7 @@
 // SPDX-FileCopyrightText: 2025 Kyle Tyo <36606155+VerinSenpai@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 PJB3005 <pieterjan.briers+git@gmail.com>
 // SPDX-FileCopyrightText: 2025 Vasilis The Pikachu <vasilis@pikachu.systems>
+// SPDX-FileCopyrightText: 2026 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2026 taydeo <tay@funkystation.org>
 // SPDX-FileCopyrightText: 2026 taydeo <td12233a@gmail.com>
 //

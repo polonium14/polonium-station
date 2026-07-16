@@ -1,5 +1,6 @@
 // SPDX-FileCopyrightText: 2022 metalgearsloth <metalgearsloth@gmail.com>
 // SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2026 taydeo <tay@funkystation.org>
 // SPDX-FileCopyrightText: 2026 taydeo <td12233a@gmail.com>
 //
