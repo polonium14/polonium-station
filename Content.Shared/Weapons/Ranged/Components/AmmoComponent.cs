@@ -16,8 +16,11 @@ public partial class AmmoComponent : Component, IShootable
     [DataField]
     public EntProtoId? MuzzleFlash = "MuzzleFlashEffect";
 
+    /// <summary>
+    /// Distance the muzzle flash is shifted from its origin along the shot direction.
+    /// </summary>
     [DataField]
-    public Vector2 MuzzleFlashOffset = Vector2.Zero;
+    public Vector2 MuzzleFlashOffset = new(0.5f, 0);
 }
 
 /// <summary>

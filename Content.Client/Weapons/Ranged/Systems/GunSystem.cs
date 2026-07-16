@@ -2,7 +2,6 @@ using System.Linq;
 using System.Numerics;
 using Content.Client._RMC14.Movement;
 using Content.Client._RMC14.Weapons.Ranged.Prediction;
-using Content.Client.Animations;
 using Content.Client.Clickable;
 using Content.Client.Gameplay;
 using Content.Client.Items;
@@ -290,32 +289,55 @@ public sealed partial class GunSystem : SharedGunSystem
             return;
         }
 
-        var gunXform = Transform(gunUid);
-        var gridUid = gunXform.GridUid;
-        EntityCoordinates coordinates;
-
-        if (TryComp(gridUid, out MapGridComponent? mapGrid))
+        EntityUid? attachTo = null;
+        if (tracked != null)
         {
-            coordinates = new EntityCoordinates(gridUid.Value, _maps.LocalToGrid(gridUid.Value, mapGrid, gunXform.Coordinates));
+            attachTo = tracked.Value;
+            if (Containers.TryGetContainingContainer((tracked.Value, null), out var container))
+                attachTo = container.Owner;
         }
-        else if (gunXform.MapUid != null)
+
+        EntityCoordinates coordinates;
+        if (attachTo != null)
         {
-            coordinates = new EntityCoordinates(gunXform.MapUid.Value, TransformSystem.GetWorldPosition(gunXform));
+            coordinates = new EntityCoordinates(attachTo.Value, Vector2.Zero);
         }
         else
         {
-            return;
+            var gunXform = Transform(gunUid);
+            var gridUid = gunXform.GridUid;
+
+            if (TryComp(gridUid, out MapGridComponent? mapGrid))
+            {
+                coordinates = new EntityCoordinates(gridUid.Value, _maps.LocalToGrid(gridUid.Value, mapGrid, gunXform.Coordinates));
+            }
+            else if (gunXform.MapUid != null)
+            {
+                coordinates = new EntityCoordinates(gunXform.MapUid.Value, TransformSystem.GetWorldPosition(gunXform));
+            }
+            else
+            {
+                return;
+            }
         }
 
         var ent = Spawn(message.Prototype, coordinates);
-        TransformSystem.SetWorldRotationNoLerp(ent, message.Angle);
+        var xform = Transform(ent);
+        xform.ActivelyLerping = false;
 
-        if (tracked != null)
+        if (attachTo != null)
         {
-            var track = EnsureComp<TrackUserComponent>(ent);
-            track.User = tracked;
-            track.Offset = offset;
-            track.OriginOffset = originOffset;
+            var parentRot = TransformSystem.GetWorldRotation(attachTo.Value);
+            var worldOffset = message.Angle.RotateVec(offset);
+            if (originOffset != Vector2.Zero)
+                worldOffset += parentRot.RotateVec(originOffset);
+
+            TransformSystem.SetLocalPositionNoLerp(ent, (-parentRot).RotateVec(worldOffset), xform);
+            TransformSystem.SetLocalRotationNoLerp(ent, message.Angle - parentRot, xform);
+        }
+        else
+        {
+            TransformSystem.SetWorldRotationNoLerp(ent, message.Angle);
         }
 
         var lifetime = 0.4f;
