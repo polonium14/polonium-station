@@ -1,4 +1,5 @@
 using System.Numerics;
+using Content.Shared._RMC14.Weapons.Ranged.Prediction;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Damage.Components;
 using Content.Shared.Database;
@@ -7,6 +8,7 @@ using Content.Shared.Weapons.Hitscan.Events;
 using Content.Shared.Weapons.Ranged.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.Map;
+using Robust.Shared.Network;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Player;
@@ -20,6 +22,8 @@ public sealed partial class HitscanBasicRaycastSystem : EntitySystem
     [Dependency] private SharedContainerSystem _container = default!;
     [Dependency] private ISharedAdminLogManager _log = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
+    [Dependency] private INetManager _netManager = default!;
+    [Dependency] private SharedGunPredictionSystem _gunPrediction = default!;
 
     [Dependency] private EntityQuery<HitscanBasicVisualsComponent> _visualsQuery = default!;
 
@@ -51,7 +55,7 @@ public sealed partial class HitscanBasicRaycastSystem : EntitySystem
 
         // Do visuals without an event. They should always happen and putting it on the attempt event is weird!
         // If more stuff gets added here, it should probably be turned into an event.
-        FireEffects(args.FromCoordinates, distanceTried, args.ShotDirection.ToAngle(), ent.Owner);
+        FireEffects(args.FromCoordinates, distanceTried, args.ShotDirection.ToAngle(), ent.Owner, args.Shooter);
 
         // Admin logging
         if (result?.HitEntity != null)
@@ -86,7 +90,13 @@ public sealed partial class HitscanBasicRaycastSystem : EntitySystem
     /// <param name="distance">Distance of the hitscan shot.</param>
     /// <param name="shotAngle">Angle of the shot.</param>
     /// <param name="hitscanUid">The hitscan entity itself.</param>
-    private void FireEffects(EntityCoordinates fromCoordinates, float distance, Angle shotAngle, EntityUid hitscanUid)
+    /// <param name="shooter">Optional shooter, excluded from the network broadcast when predicting.</param>
+    private void FireEffects(
+        EntityCoordinates fromCoordinates,
+        float distance,
+        Angle shotAngle,
+        EntityUid hitscanUid,
+        EntityUid? shooter = null)
     {
         if (distance == 0 || !_visualsQuery.TryComp(hitscanUid, out var vizComp))
             return;
@@ -137,12 +147,26 @@ public sealed partial class HitscanBasicRaycastSystem : EntitySystem
             sprites.Add((netCoords, shotAngle.FlipPositive(), vizComp.ImpactFlash, 1f));
         }
 
-        if (sprites.Count > 0)
+        if (sprites.Count == 0)
+            return;
+
+        var ev = new SharedGunSystem.HitscanEvent { Sprites = sprites };
+
+        // Clients cannot RaiseNetworkEvent with a Filter. During gun prediction, raise locally so the shooter still sees the hitscan
+        if (_netManager.IsClient)
         {
-            RaiseNetworkEvent(new SharedGunSystem.HitscanEvent
-            {
-                Sprites = sprites,
-            }, Filter.Pvs(fromCoordinates, entityMan: EntityManager));
+            RaiseLocalEvent(ev);
+            return;
         }
+
+        var filter = Filter.Pvs(fromCoordinates, entityMan: EntityManager);
+        if (_gunPrediction.GunPrediction &&
+            shooter != null &&
+            TryComp(shooter, out ActorComponent? actor))
+        {
+            filter.RemovePlayer(actor.PlayerSession);
+        }
+
+        RaiseNetworkEvent(ev, filter);
     }
 }
