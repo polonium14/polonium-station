@@ -47,8 +47,8 @@ namespace Content.Server.Projectiles;
 
 public sealed partial class ProjectileSystem : SharedProjectileSystem
 {
-    [Dependency] private readonly DestructibleSystem _destructible = default!;
-    [Dependency] private readonly DamageableSystem _damageable = default!;
+    [Dependency] private DestructibleSystem _destructible = default!;
+    [Dependency] private DamageableSystem _damageable = default!;
 
     protected override FixedPoint2 GetProjectileDamageRequired(EntityUid target)
     {

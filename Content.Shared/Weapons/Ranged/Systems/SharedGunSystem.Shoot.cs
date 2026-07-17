@@ -5,7 +5,6 @@ using Content.Shared._RMC14.CCVar;
 using Content.Shared._RMC14.Random;
 using Content.Shared._RMC14.Weapons.Ranged;
 using Content.Shared._RMC14.Weapons.Ranged.Prediction;
-using Content.Shared.CombatMode;
 using Content.Shared.Containers;
 using Content.Shared.Database;
 using Content.Shared.Projectiles;
@@ -28,8 +27,8 @@ namespace Content.Shared.Weapons.Ranged.Systems;
 
 public abstract partial class SharedGunSystem
 {
-    [Dependency] private readonly IConfigurationManager _config = default!;
-    [Dependency] private readonly SharedCameraRecoilSystem _recoil = default!;
+    [Dependency] private IConfigurationManager _config = default!;
+    [Dependency] private SharedCameraRecoilSystem _recoil = default!;
 
     public bool GunPrediction { get; private set; }
 

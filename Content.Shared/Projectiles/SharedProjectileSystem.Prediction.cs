@@ -22,12 +22,12 @@ namespace Content.Shared.Projectiles;
 
 public abstract partial class SharedProjectileSystem
 {
-    [Dependency] private readonly INetManager _net = default!;
-    [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
-    [Dependency] private readonly SharedCameraRecoilSystem _sharedCameraRecoil = default!;
-    [Dependency] private readonly SharedColorFlashEffectSystem _color = default!;
-    [Dependency] private readonly DamageableSystem _damageableSystem = default!;
-    [Dependency] private readonly SharedGunSystem _guns = default!;
+    [Dependency] private INetManager _net = default!;
+    [Dependency] private ISharedAdminLogManager _adminLogger = default!;
+    [Dependency] private SharedCameraRecoilSystem _sharedCameraRecoil = default!;
+    [Dependency] private SharedColorFlashEffectSystem _color = default!;
+    [Dependency] private DamageableSystem _damageableSystem = default!;
+    [Dependency] private SharedGunSystem _guns = default!;
 
     partial void InitializeProjectilePrediction()
     {
@@ -105,14 +105,14 @@ public abstract partial class SharedProjectileSystem
         }
 
         if (modifiedDamage is not null &&
-            (EntityManager.EntityExists(component.Shooter) || EntityManager.EntityExists(component.Weapon)))
+            (Exists(component.Shooter) || Exists(component.Weapon)))
         {
             if (modifiedDamage.AnyPositive() && !deleted)
                 _color.RaiseEffect(Color.Red, new List<EntityUid> { target }, filter);
 
             if (_net.IsServer)
             {
-                var shooterOrWeapon = EntityManager.EntityExists(component.Shooter)
+                var shooterOrWeapon = Exists(component.Shooter)
                     ? component.Shooter!.Value
                     : component.Weapon!.Value;
 
@@ -134,7 +134,7 @@ public abstract partial class SharedProjectileSystem
         if (_net.IsServer &&
             modifiedDamage is not null &&
             modifiedDamage.AnyPositive() &&
-            EntityManager.EntityExists(component.Shooter))
+            Exists(component.Shooter))
         {
             component.ProjectileSpent = !TryPenetrate((uid, component), modifiedDamage, GetProjectileDamageRequired(target));
         }
