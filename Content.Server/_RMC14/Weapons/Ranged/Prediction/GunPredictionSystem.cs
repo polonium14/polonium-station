@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server._RMC14.Movement;
 using Content.Server.Movement.Components;
 using Content.Shared._RMC14.CCVar;

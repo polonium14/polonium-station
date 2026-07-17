@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 namespace Content.Shared._RMC14.Random;
 
 // https://github.com/medo64/Medo.ScrambledLinear/blob/main/src/Xoroshiro/Xoroshiro64S.cs
