@@ -48,8 +48,6 @@ public sealed class GunPredictionSystem : SharedGunPredictionSystem
 
         SubscribeLocalEvent<PredictedProjectileClientComponent, UpdateIsPredictedEvent>(OnClientProjectileUpdateIsPredicted);
         SubscribeLocalEvent<PredictedProjectileClientComponent, StartCollideEvent>(OnClientProjectileStartCollide);
-        SubscribeLocalEvent<PredictedProjectileClientComponent, ComponentShutdown>(OnClientProjectileShutdown);
-        SubscribeLocalEvent<PredictedProjectileClientComponent, EntityTerminatingEvent>(OnClientProjectileTerminating);
 
         SubscribeLocalEvent<PredictedProjectileServerComponent, ComponentAdd>(OnServerProjectileAdd);
         SubscribeLocalEvent<PredictedProjectileServerComponent, ComponentStartup>(OnServerProjectileStartup);
@@ -131,18 +129,6 @@ public sealed class GunPredictionSystem : SharedGunPredictionSystem
         MarkClientHit(ent, ent.Comp, physics);
     }
 
-    private void OnClientProjectileShutdown(Entity<PredictedProjectileClientComponent> ent, ref ComponentShutdown args)
-    {
-        // When the client-side predicted projectile is removed (hit or cleaned up), reveal the hidden
-        // authoritative server projectile so the shot stays visible for the rest of its flight.
-        ShowServerProjectileCounterpart(ent.Owner.Id);
-    }
-
-    private void OnClientProjectileTerminating(Entity<PredictedProjectileClientComponent> ent, ref EntityTerminatingEvent args)
-    {
-        ShowServerProjectileCounterpart(ent.Owner.Id);
-    }
-
     private void OnServerProjectileAdd(Entity<PredictedProjectileServerComponent> ent, ref ComponentAdd args)
     {
         HideServerProjectile(ent);
@@ -172,24 +158,27 @@ public sealed class GunPredictionSystem : SharedGunPredictionSystem
             _sprite.SetVisible((ent, sprite), false);
     }
 
-    private void ShowServerProjectileCounterpart(int clientId)
-    {
-        var query = EntityQueryEnumerator<PredictedProjectileServerComponent, SpriteComponent>();
-        while (query.MoveNext(out var uid, out var server, out var sprite))
-        {
-            if (server.ClientEnt != _player.LocalEntity || server.ClientId != clientId)
-                continue;
-
-            _sprite.SetVisible((uid, sprite), true);
-        }
-    }
-
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
 
         if (!_timing.IsFirstTimePredicted)
             return;
+
+        var serverProjectiles = EntityQueryEnumerator<PredictedProjectileServerComponent, SpriteComponent>();
+        while (serverProjectiles.MoveNext(out var serverUid, out var server, out var serverSprite))
+        {
+            if (server.ClientEnt != _player.LocalEntity)
+                continue;
+
+            if (IsClientSide(serverUid) || _predictedClientQuery.HasComp(serverUid))
+                continue;
+
+            if (_ignorePredictionHideQuery.HasComp(serverUid))
+                continue;
+
+            _sprite.SetVisible((serverUid, serverSprite), false);
+        }
 
         // TODO gun prediction remove this once the client reliably detects collisions
         var projectiles = EntityQueryEnumerator<PredictedProjectileClientComponent, ProjectileComponent, PhysicsComponent>();
@@ -259,19 +248,22 @@ public sealed class GunPredictionSystem : SharedGunPredictionSystem
             MarkClientHit(uid, predicted, physics);
         }
 
+        // Keep the shooter's authoritative projectile hidden after a predicted hit.
+        // Only hide when past the impact distance — never force-visible (that re-shows the lagging
+        // server bullet as a second shot).
         var predictedQuery = EntityQueryEnumerator<PredictedProjectileHitComponent, SpriteComponent, TransformComponent>();
         while (predictedQuery.MoveNext(out var uid, out var hit, out var sprite, out var xform))
         {
-            // Don't touch our own client-side prediction entity.
             if (IsClientSide(uid) || _predictedClientQuery.HasComp(uid))
                 continue;
 
             var origin = hit.Origin;
             var coordinates = xform.Coordinates;
-            var visible = origin.TryDistance(EntityManager, _transform, coordinates, out var distance) &&
-                          distance < hit.Distance;
-
-            _sprite.SetVisible((uid, sprite), visible);
+            if (!origin.TryDistance(EntityManager, _transform, coordinates, out var distance) ||
+                distance >= hit.Distance)
+            {
+                _sprite.SetVisible((uid, sprite), false);
+            }
         }
     }
 

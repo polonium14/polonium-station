@@ -2,6 +2,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
 using Content.Shared.Camera;
 using Content.Shared._RMC14.CCVar;
+using Content.Shared._RMC14.Random;
 using Content.Shared._RMC14.Weapons.Ranged;
 using Content.Shared._RMC14.Weapons.Ranged.Prediction;
 using Content.Shared.CombatMode;
@@ -290,7 +291,7 @@ public abstract partial class SharedGunSystem
         var toMap = TransformSystem.ToMapCoordinates(toCoordinates).Position;
         var mapDirection = toMap - fromMap.Position;
         var mapAngle = mapDirection.ToAngle();
-        var angle = GetRecoilAngle(Timing.CurTime, gun, mapDirection.ToAngle());
+        var angle = GetRecoilAngle(Timing.CurTime, gun, gun.Comp, mapDirection.ToAngle());
 
         var fromEnt = Maps.TryFindGridAt(fromMap, out var gridUid, out _)
             ? TransformSystem.WithEntityId(fromCoordinates, gridUid)
@@ -516,7 +517,7 @@ public abstract partial class SharedGunSystem
         ShootProjectile(uid, mapDirection, gunVelocity, gun, user, gun.Comp.ProjectileSpeedModified);
     }
 
-    private Angle GetRecoilAngle(TimeSpan curTime, GunComponent component, Angle direction)
+    private Angle GetRecoilAngle(TimeSpan curTime, EntityUid gunUid, GunComponent component, Angle direction)
     {
         var timeSinceLastFire = (curTime - component.LastFire).TotalSeconds;
         var newTheta = MathHelper.Clamp(
@@ -526,7 +527,10 @@ public abstract partial class SharedGunSystem
         component.CurrentAngle = new Angle(newTheta);
         component.LastFire = component.NextFire;
 
-        var random = Random.NextFloat(-0.5f, 0.5f);
+        long tick = Timing.CurTick.Value;
+        tick = tick << 32;
+        tick = tick | (uint) GetNetEntity(gunUid).Id;
+        var random = new Xoroshiro64S(tick).NextFloat(-0.5f, 0.5f);
         var angle = new Angle(direction.Theta + component.CurrentAngle.Theta * random);
         DebugTools.Assert(component.CurrentAngle.Theta * random <= component.MaxAngleModified.Theta);
         return angle;
