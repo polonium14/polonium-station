@@ -27,14 +27,26 @@ namespace Content.Shared.Atmos.Piping.Trinary.Components
         public string FilterLabel { get; }
         public float TransferRate { get; }
         public bool Enabled { get; }
-        public Gas? FilteredGas { get; }
+        public HashSet<Gas>? FilterGases { get; } // Funky - for filtering of multiple gases
 
-        public GasFilterBoundUserInterfaceState(string filterLabel, float transferRate, bool enabled, Gas? filteredGas)
+        // Funky - removed for filtering of multiple gases
+        // public Gas? FilteredGas { get; }
+
+        // Funky - removed for filtering of multiple gases
+        // public GasFilterBoundUserInterfaceState(string filterLabel, float transferRate, bool enabled, Gas? filteredGas)
+        // {
+        //     FilterLabel = filterLabel;
+        //     TransferRate = transferRate;
+        //     Enabled = enabled;
+        //     FilteredGas = filteredGas;
+        // }
+
+        public GasFilterBoundUserInterfaceState(string filterLabel, float transferRate, bool enabled, HashSet<Gas>? filterGases)
         {
             FilterLabel = filterLabel;
             TransferRate = transferRate;
             Enabled = enabled;
-            FilteredGas = filteredGas;
+            FilterGases = filterGases;
         }
     }
 
@@ -61,8 +73,23 @@ namespace Content.Shared.Atmos.Piping.Trinary.Components
     }
 
     [Serializable, NetSerializable]
-    public sealed class GasFilterSelectGasMessage(Gas? gas) : BoundUserInterfaceMessage
+    public sealed class GasFilterChangeGasesMessage : BoundUserInterfaceMessage
     {
-        public readonly Gas? Gas = gas;
+        public HashSet<Gas> Gases { get; }
+
+        public GasFilterChangeGasesMessage(HashSet<Gas> gases)
+        {
+            Gases = gases;
+        }
     }
+
+    // Funky - removed for filtering of multiple gases
+    // public sealed class GasFilterSelectGasMessage : BoundUserInterfaceMessage
+    // {
+    //     public int? ID { get; }
+    //     public GasFilterSelectGasMessage(int? id)
+    //     {
+    //         ID = id;
+    //     }
+    // }
 }
