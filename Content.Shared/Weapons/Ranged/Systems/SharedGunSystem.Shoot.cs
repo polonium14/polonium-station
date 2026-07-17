@@ -302,8 +302,9 @@ public abstract partial class SharedGunSystem
         var gunVelocity = Physics.GetMapLinearVelocity(fromEnt);
 
         var shotProjectiles = new List<EntityUid>(ammo.Count);
+        var predictedIndex = 0;
 
-        void MarkPredicted(EntityUid projectile, int index)
+        void MarkPredicted(EntityUid projectile)
         {
             if (!_netManager.IsServer || !GunPrediction || predictedProjectiles == null || userSession == null)
                 return;
@@ -314,13 +315,13 @@ public abstract partial class SharedGunSystem
             if (HasComp<GunIgnorePredictionComponent>(gun))
                 return;
 
-            if (index >= predictedProjectiles.Count)
+            if (predictedIndex >= predictedProjectiles.Count)
                 return;
 
             if (!Exists(projectile))
                 return;
 
-            var predicted = predictedProjectiles[index];
+            var predicted = predictedProjectiles[predictedIndex++];
             var comp = new PredictedProjectileServerComponent
             {
                 Shooter = userSession,
@@ -413,13 +414,13 @@ public abstract partial class SharedGunSystem
                             RemoveShootable(ent.Value);
                     }
 
-                    MarkPredicted(ent!.Value, 0);
                     break;
                 case HitscanAmmoComponent:
                     if (ent == null)
                         break;
 
-                    if (_netManager.IsServer || ClientSideGunPrediction)
+                    if (_netManager.IsServer ||
+                        (ClientSideGunPrediction && !HasComp<GunIgnorePredictionComponent>(gun)))
                     {
                         var hitscanEv = new HitscanTraceEvent
                         {
@@ -451,7 +452,7 @@ public abstract partial class SharedGunSystem
         void CreateAndFireProjectiles(EntityUid ammoEnt, AmmoComponent ammoComp)
         {
             predictedProjectiles ??= new List<int>();
-            MarkPredicted(ammoEnt, 0);
+            MarkPredicted(ammoEnt);
 
             if (TryComp<ProjectileSpreadComponent>(ammoEnt, out var ammoSpreadComp))
             {
@@ -471,7 +472,7 @@ public abstract partial class SharedGunSystem
                     var newUid = Spawn(ammoSpreadComp.Proto, fromEnt);
                     ShootOrThrow(newUid, angles[i].ToVec(), gunVelocity, gun, user);
                     shotProjectiles.Add(newUid);
-                    MarkPredicted(newUid, i);
+                    MarkPredicted(newUid);
                 }
             }
             else

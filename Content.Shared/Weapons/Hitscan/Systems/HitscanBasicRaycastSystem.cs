@@ -55,7 +55,7 @@ public sealed partial class HitscanBasicRaycastSystem : EntitySystem
 
         // Do visuals without an event. They should always happen and putting it on the attempt event is weird!
         // If more stuff gets added here, it should probably be turned into an event.
-        FireEffects(args.FromCoordinates, distanceTried, args.ShotDirection.ToAngle(), ent.Owner, args.Shooter);
+        FireEffects(args.FromCoordinates, distanceTried, args.ShotDirection.ToAngle(), ent.Owner, args.Gun, args.Shooter);
 
         // Admin logging
         if (result?.HitEntity != null)
@@ -90,12 +90,14 @@ public sealed partial class HitscanBasicRaycastSystem : EntitySystem
     /// <param name="distance">Distance of the hitscan shot.</param>
     /// <param name="shotAngle">Angle of the shot.</param>
     /// <param name="hitscanUid">The hitscan entity itself.</param>
+    /// <param name="gun">The gun that fired this hitscan.</param>
     /// <param name="shooter">Optional shooter, excluded from the network broadcast when predicting.</param>
     private void FireEffects(
         EntityCoordinates fromCoordinates,
         float distance,
         Angle shotAngle,
         EntityUid hitscanUid,
+        EntityUid gun,
         EntityUid? shooter = null)
     {
         if (distance == 0 || !_visualsQuery.TryComp(hitscanUid, out var vizComp))
@@ -161,6 +163,7 @@ public sealed partial class HitscanBasicRaycastSystem : EntitySystem
 
         var filter = Filter.Pvs(fromCoordinates, entityMan: EntityManager);
         if (_gunPrediction.GunPrediction &&
+            !HasComp<GunIgnorePredictionComponent>(gun) &&
             shooter != null &&
             TryComp(shooter, out ActorComponent? actor))
         {
