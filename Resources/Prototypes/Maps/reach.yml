@@ -28,8 +28,6 @@
             prefixCreator: 'SC'
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/Shuttles/emergency.yml
-        - type: StationCargoShuttle
-          path: /Maps/Shuttles/cargo_relic.yml
         - type: StationJobs
           availableJobs:
             #central command
