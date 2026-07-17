@@ -273,7 +273,23 @@ public sealed partial class MeleeWeaponSystem
                 targetPos += entRotation.RotateVec(arcComponent.Offset);
             }
 
-            TransformSystem.SetWorldPosition(uid, targetPos);
+            if (arcComponent.OriginOffset != Vector2.Zero)
+            {
+                var userRotation = TransformSystem.GetWorldRotation(arcComponent.User.Value);
+                targetPos += userRotation.RotateVec(arcComponent.OriginOffset);
+            }
+
+            xform.ActivelyLerping = false;
+
+            if (xform.ParentUid.IsValid())
+            {
+                var localPos = Vector2.Transform(targetPos, TransformSystem.GetInvWorldMatrix(xform.ParentUid));
+                TransformSystem.SetLocalPositionNoLerp(uid, localPos, xform);
+            }
+            else
+            {
+                TransformSystem.SetWorldPosition(uid, targetPos);
+            }
         }
     }
 }

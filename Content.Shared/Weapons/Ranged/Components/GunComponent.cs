@@ -283,6 +283,13 @@ public sealed partial class GunComponent : Component
     /// </summary>
     [DataField]
     public Vector2 DefaultDirection = new Vector2(0, -1);
+
+    /// <summary>
+    /// Offset from the shooter's origin when firing.
+    /// </summary>
+    /// <example>[0, -1] means the projectile spawns 1 tile in front of the shooter</example>
+    [DataField]
+    public Vector2 ShootOriginOffset = Vector2.Zero;
 }
 
 [Flags]

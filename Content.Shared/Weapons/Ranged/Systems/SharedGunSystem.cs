@@ -52,11 +52,11 @@
 
 using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
+using Content.Shared._RMC14.Weapons.Ranged.Prediction;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Actions;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Audio;
-using Content.Shared.CombatMode;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Systems;
@@ -72,6 +72,7 @@ using Content.Shared.Verbs;
 using Content.Shared.Weapons.Hitscan.Components;
 using Content.Shared.Weapons.Melee;
 using Content.Shared.Weapons.Melee.Events;
+using Content.Shared._RMC14.Weapons.Ranged;
 using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Weapons.Ranged.Events;
 using Content.Shared.Whitelist;
@@ -82,6 +83,7 @@ using Robust.Shared.Map;
 using Robust.Shared.Network;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Systems;
+using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Serialization;
@@ -97,7 +99,6 @@ public abstract partial class SharedGunSystem : EntitySystem
     [Dependency] private INetManager _netManager = default!;
     [Dependency] private ItemSlotsSystem _slots = default!;
     [Dependency] private RechargeBasicEntityAmmoSystem _recharge = default!;
-    [Dependency] private SharedCombatModeSystem _combatMode = default!;
     [Dependency] private SharedHandsSystem _hands = default!;
     [Dependency] private UseDelaySystem _useDelay = default!;
     [Dependency] protected DamageableSystem Damageable = default!;
@@ -123,6 +124,8 @@ public abstract partial class SharedGunSystem : EntitySystem
     /// </summary>
     public const float ProjectileSpeed = 40f;
 
+    protected const float DamagePitchVariation = 0.05f;
+
     /// <summary>
     ///     Name of the container slot used as the gun's chamber
     /// </summary>
@@ -144,7 +147,6 @@ public abstract partial class SharedGunSystem : EntitySystem
 
     public override void Initialize()
     {
-        SubscribeAllEvent<RequestShootEvent>(OnShootRequest);
         SubscribeAllEvent<RequestStopShootEvent>(OnStopShootRequest);
         SubscribeLocalEvent<GunComponent, MeleeHitEvent>(OnGunMelee);
 
@@ -157,6 +159,8 @@ public abstract partial class SharedGunSystem : EntitySystem
         InitializeMagazine();
         InitializeRevolver();
         InitializeBasicEntity();
+
+        InitializePrediction();
         InitializeClothing();
         InitializeContainer();
         InitializeSolution();
@@ -193,26 +197,7 @@ public abstract partial class SharedGunSystem : EntitySystem
         }
     }
 
-    private void OnShootRequest(RequestShootEvent msg, EntitySessionEventArgs args)
-    {
-        var user = args.SenderSession.AttachedEntity;
-
-        if (user == null ||
-            !_combatMode.IsInCombatMode(user) ||
-            !TryGetGun(user.Value, out var gun))
-        {
-            return;
-        }
-
-        if (gun.Owner != GetEntity(msg.Gun))
-            return;
-
-        gun.Comp.ShootCoordinates = GetCoordinates(msg.Coordinates);
-        gun.Comp.Target = GetEntity(msg.Target);
-        AttemptShoot(user.Value, gun);
-        if (msg.Continuous)
-            gun.Comp.ShotCounter = 0;
-    }
+    partial void InitializePrediction();
 
     private void OnStopShootRequest(RequestStopShootEvent ev, EntitySessionEventArgs args)
     {
@@ -284,7 +269,7 @@ public abstract partial class SharedGunSystem : EntitySystem
     {
         gun.Comp.ShootCoordinates = toCoordinates;
         gun.Comp.Target = target;
-        var result = AttemptShoot(user, gun);
+        var result = AttemptShoot(user, gun) != null;
         gun.Comp.ShotCounter = 0;
         DirtyField(gun.AsNullable(), nameof(GunComponent.ShotCounter));
         return result;
@@ -297,204 +282,14 @@ public abstract partial class SharedGunSystem : EntitySystem
     {
         var coordinates = new EntityCoordinates(gun, gun.Comp.DefaultDirection);
         gun.Comp.ShootCoordinates = coordinates;
-        var result = AttemptShoot(gun, gun);
+        var result = AttemptShoot(gun, gun) != null;
         gun.Comp.ShotCounter = 0;
         return result;
     }
 
-    private bool AttemptShoot(EntityUid user, Entity<GunComponent> gun)
-    {
-        if (gun.Comp.FireRateModified <= 0f ||
-            !_actionBlockerSystem.CanAttack(user))
-        {
-            return false;
-        }
+    protected abstract void Popup(string message, EntityUid? uid, EntityUid? user);
 
-        var toCoordinates = gun.Comp.ShootCoordinates;
-
-        if (toCoordinates == null)
-            return false;
-
-        var curTime = Timing.CurTime;
-
-        // check if anything wants to prevent shooting
-        var prevention = new ShotAttemptedEvent
-        {
-            User = user,
-            Used = gun
-        };
-        RaiseLocalEvent(gun, ref prevention);
-        if (prevention.Cancelled)
-            return false;
-
-        RaiseLocalEvent(user, ref prevention);
-        if (prevention.Cancelled)
-            return false;
-
-        // Need to do this to play the clicking sound for empty automatic weapons
-        // but not play anything for burst fire.
-        if (gun.Comp.NextFire > curTime)
-            return false;
-
-        var fireRate = TimeSpan.FromSeconds(1f / gun.Comp.FireRateModified);
-
-        if (gun.Comp.SelectedMode == SelectiveFire.Burst || gun.Comp.BurstActivated)
-            fireRate = TimeSpan.FromSeconds(1f / gun.Comp.BurstFireRate);
-
-        // First shot
-        // Previously we checked shotcounter but in some cases all the bullets got dumped at once
-        // curTime - fireRate is insufficient because if you time it just right you can get a 3rd shot out slightly quicker.
-        if (gun.Comp.NextFire < curTime - fireRate || gun.Comp.ShotCounter == 0 && gun.Comp.NextFire < curTime)
-            gun.Comp.NextFire = curTime;
-
-        var shots = 0;
-        var lastFire = gun.Comp.NextFire;
-
-        while (gun.Comp.NextFire <= curTime)
-        {
-            gun.Comp.NextFire += fireRate;
-            shots++;
-        }
-
-        // NextFire has been touched regardless so need to dirty the gun.
-        DirtyField(gun.AsNullable(), nameof(GunComponent.NextFire));
-
-        // Get how many shots we're actually allowed to make, due to clip size or otherwise.
-        // Don't do this in the loop so we still reset NextFire.
-        if (!gun.Comp.BurstActivated)
-        {
-            switch (gun.Comp.SelectedMode)
-            {
-                case SelectiveFire.SemiAuto:
-                    shots = Math.Min(shots, 1 - gun.Comp.ShotCounter);
-                    break;
-                case SelectiveFire.Burst:
-                    shots = Math.Min(shots, gun.Comp.ShotsPerBurstModified - gun.Comp.ShotCounter);
-                    break;
-                case SelectiveFire.FullAuto:
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException($"No implemented shooting behavior for {gun.Comp.SelectedMode}!");
-            }
-        }
-        else
-        {
-            shots = Math.Min(shots, gun.Comp.ShotsPerBurstModified - gun.Comp.ShotCounter);
-        }
-
-        var attemptEv = new AttemptShootEvent(user, null);
-        RaiseLocalEvent(gun, ref attemptEv);
-
-        if (attemptEv.Cancelled)
-        {
-            if (attemptEv.Message != null)
-            {
-                PopupSystem.PopupClient(attemptEv.Message, gun, user);
-            }
-            gun.Comp.BurstActivated = false;
-            gun.Comp.BurstShotsCount = 0;
-            gun.Comp.NextFire = TimeSpan.FromSeconds(Math.Max(lastFire.TotalSeconds + SafetyNextFire, gun.Comp.NextFire.TotalSeconds));
-            return false;
-        }
-
-        var fromCoordinates = Transform(user).Coordinates;
-        // Remove ammo
-        var ev = new TakeAmmoEvent(shots, [], fromCoordinates, user);
-
-        // Listen it just makes the other code around it easier if shots == 0 to do this.
-        if (shots > 0)
-            RaiseLocalEvent(gun, ev);
-
-        DebugTools.Assert(ev.Ammo.Count <= shots);
-        DebugTools.Assert(shots >= 0);
-        UpdateAmmoCount(gun);
-
-        // Even if we don't actually shoot update the ShotCounter. This is to avoid spamming empty sounds
-        // where the gun may be SemiAuto or Burst.
-        gun.Comp.ShotCounter += shots;
-        DirtyField(gun.AsNullable(), nameof(GunComponent.ShotCounter));
-
-        if (ev.Ammo.Count <= 0)
-        {
-            // triggers effects on the gun if it's empty
-            var emptyGunShotEvent = new OnEmptyGunShotEvent(user);
-            RaiseLocalEvent(gun, ref emptyGunShotEvent);
-
-            gun.Comp.BurstActivated = false;
-            gun.Comp.BurstShotsCount = 0;
-            gun.Comp.NextFire += TimeSpan.FromSeconds(gun.Comp.BurstCooldown);
-
-            // Play empty gun sounds if relevant
-            // If they're firing an existing clip then don't play anything.
-            if (shots > 0)
-            {
-                PopupSystem.PopupCursor(ev.Reason ?? Loc.GetString("gun-magazine-fired-empty"), user);
-
-                // Don't spam safety sounds at gun fire rate, play it at a reduced rate.
-                // May cause prediction issues? Needs more tweaking
-                gun.Comp.NextFire = TimeSpan.FromSeconds(Math.Max(lastFire.TotalSeconds + SafetyNextFire, gun.Comp.NextFire.TotalSeconds));
-                Audio.PlayPredicted(gun.Comp.SoundEmpty, gun, user);
-                return false;
-            }
-
-            return false;
-        }
-
-        // Handle burstfire
-        if (gun.Comp.SelectedMode == SelectiveFire.Burst)
-        {
-            gun.Comp.BurstActivated = true;
-        }
-        if (gun.Comp.BurstActivated)
-        {
-            gun.Comp.BurstShotsCount += shots;
-            if (gun.Comp.BurstShotsCount >= gun.Comp.ShotsPerBurstModified)
-            {
-                gun.Comp.NextFire += TimeSpan.FromSeconds(gun.Comp.BurstCooldown);
-                gun.Comp.BurstActivated = false;
-                gun.Comp.BurstShotsCount = 0;
-            }
-        }
-
-        // Shoot confirmed - sounds also played here in case it's invalid (e.g. cartridge already spent).
-        Shoot(gun, ev.Ammo, fromCoordinates, toCoordinates.Value, out var userImpulse, user, throwItems: attemptEv.ThrowItems);
-        var shotEv = new GunShotEvent(user, ev.Ammo);
-        RaiseLocalEvent(gun, ref shotEv);
-
-        if (!userImpulse || !TryComp<PhysicsComponent>(user, out var userPhysics))
-            return true;
-
-        var shooterEv = new ShooterImpulseEvent();
-        RaiseLocalEvent(user, ref shooterEv);
-
-        if (shooterEv.Push)
-            CauseImpulse(fromCoordinates, toCoordinates.Value, (user, userPhysics));
-        return true;
-    }
-
-    public void Shoot(
-        Entity<GunComponent> gun,
-        EntityUid ammo,
-        EntityCoordinates fromCoordinates,
-        EntityCoordinates toCoordinates,
-        out bool userImpulse,
-        EntityUid? user = null,
-        bool throwItems = false)
-    {
-        var shootable = EnsureShootable(ammo);
-        Shoot(gun, new List<(EntityUid? Entity, IShootable Shootable)>(1) { (ammo, shootable) }, fromCoordinates, toCoordinates, out userImpulse, user, throwItems);
-    }
-
-    public abstract void Shoot(
-        Entity<GunComponent> gun,
-        List<(EntityUid? Entity, IShootable Shootable)> ammo,
-        EntityCoordinates fromCoordinates,
-        EntityCoordinates toCoordinates,
-        out bool userImpulse,
-        EntityUid? user = null,
-        bool throwItems = false);
-
-    public void ShootProjectile(EntityUid uid, Vector2 direction, Vector2 gunVelocity, EntityUid? gunUid, EntityUid? user = null, float speed = ProjectileSpeed)
+    public virtual void ShootProjectile(EntityUid uid, Vector2 direction, Vector2 gunVelocity, EntityUid? gunUid, EntityUid? user = null, float speed = ProjectileSpeed)
     {
         var physics = EnsureComp<PhysicsComponent>(uid);
         Physics.SetBodyStatus(uid, physics, BodyStatus.InAir);
@@ -512,8 +307,6 @@ public abstract partial class SharedGunSystem : EntitySystem
 
         TransformSystem.SetWorldRotation(uid, direction.ToWorldAngle() + projectile.Angle);
     }
-
-    protected abstract void Popup(string message, EntityUid? uid, EntityUid? user);
 
     /// <summary>
     /// Call this whenever the ammo count for a gun changes.
@@ -583,6 +376,7 @@ public abstract partial class SharedGunSystem : EntitySystem
     {
         RemCompDeferred<CartridgeAmmoComponent>(uid);
         RemCompDeferred<AmmoComponent>(uid);
+        RemCompDeferred<HitscanAmmoComponent>(uid);
     }
 
     protected void MuzzleFlash(EntityUid gun, AmmoComponent component, Angle worldAngle, EntityUid? user = null)
@@ -597,8 +391,61 @@ public abstract partial class SharedGunSystem : EntitySystem
         if (sprite == null)
             return;
 
-        var ev = new MuzzleFlashEvent(GetNetEntity(gun), sprite, worldAngle);
-        CreateEffect(gun, ev, user);
+        var muzzleFlashOffset = component.MuzzleFlashOffset;
+        var muzzleFlashOriginOffset = Vector2.Zero;
+        if (TryComp(gun, out GunComponent? gunComp))
+        {
+            var beforeEv = new RMCBeforeMuzzleFlashEvent(gun, gunComp.ShootOriginOffset);
+            RaiseLocalEvent(gun, ref beforeEv);
+            gun = beforeEv.Weapon;
+            muzzleFlashOriginOffset = beforeEv.Offset;
+        }
+
+        var ev = new MuzzleFlashEvent(GetNetEntity(gun), sprite, worldAngle, muzzleFlashOffset, muzzleFlashOriginOffset);
+        CreateEffect(gun, ev, gun, user, muzzleFlashOffset, muzzleFlashOriginOffset);
+    }
+
+    public void PlayImpactSound(
+        EntityUid otherEntity,
+        DamageSpecifier? modifiedDamage,
+        SoundSpecifier? weaponSound,
+        bool forceWeaponSound,
+        Filter? filter = null,
+        EntityUid? projectile = null)
+    {
+        DebugTools.Assert(!Deleted(otherEntity), "Impact sound entity was deleted");
+
+        if (_netManager.IsClient && HasComp<PredictedProjectileServerComponent>(projectile))
+            return;
+
+        filter ??= Filter.Pvs(otherEntity);
+        var playedSound = false;
+
+        if (!forceWeaponSound &&
+            modifiedDamage != null &&
+            modifiedDamage.GetTotal() > 0 &&
+            TryComp<RangedDamageSoundComponent>(otherEntity, out var rangedSound))
+        {
+            var type = SharedMeleeWeaponSystem.GetHighestDamageSound(modifiedDamage, ProtoMan);
+
+            if (type != null &&
+                rangedSound.SoundTypes?.TryGetValue(type, out var damageSoundType) == true &&
+                filter.Count > 0)
+            {
+                Audio.PlayEntity(damageSoundType, filter, otherEntity, true, AudioParams.Default.WithVariation(DamagePitchVariation));
+                playedSound = true;
+            }
+            else if (type != null &&
+                     rangedSound.SoundGroups?.TryGetValue(type, out var damageSoundGroup) == true &&
+                     filter.Count > 0)
+            {
+                Audio.PlayEntity(damageSoundGroup, filter, otherEntity, true, AudioParams.Default.WithVariation(DamagePitchVariation));
+                playedSound = true;
+            }
+        }
+
+        if (!playedSound && weaponSound != null && filter.Count > 0)
+            Audio.PlayEntity(weaponSound, filter, otherEntity, true);
     }
 
     public void CauseImpulse(EntityCoordinates fromCoordinates, EntityCoordinates toCoordinates, Entity<PhysicsComponent> user)
@@ -688,9 +535,13 @@ public abstract partial class SharedGunSystem : EntitySystem
         }
     }
 
-    protected abstract void CreateEffect(EntityUid gunUid, MuzzleFlashEvent message, EntityUid? user = null);
-
-    public abstract void PlayImpactSound(EntityUid otherEntity, DamageSpecifier? modifiedDamage, SoundSpecifier? weaponSound, bool forceWeaponSound);
+    protected abstract void CreateEffect(
+        EntityUid gunUid,
+        MuzzleFlashEvent message,
+        EntityUid? user = null,
+        EntityUid? player = null,
+        Vector2 offset = default,
+        Vector2 originOffset = default);
 
     /// <summary>
     /// Used for animated effects on the client.
@@ -738,14 +589,25 @@ public abstract partial class SharedGunSystem : EntitySystem
 /// <param name="Cancelled">Set this to true if the shot should be cancelled.</param>
 /// <param name="ThrowItems">Set this to true if the ammo shouldn't actually be fired, just thrown.</param>
 [ByRefEvent]
-public record struct AttemptShootEvent(EntityUid User, string? Message, bool Cancelled = false, bool ThrowItems = false);
+public record struct AttemptShootEvent(
+    EntityUid User,
+    string? Message,
+    EntityCoordinates FromCoordinates,
+    EntityCoordinates? ToCoordinates,
+    bool Cancelled = false,
+    bool ThrowItems = false,
+    bool ResetCooldown = false);
 
 /// <summary>
 ///     Raised directed on the gun after firing.
 /// </summary>
 /// <param name="User">The user that fired this gun.</param>
 [ByRefEvent]
-public record struct GunShotEvent(EntityUid User, List<(EntityUid? Uid, IShootable Shootable)> Ammo);
+public record struct GunShotEvent(
+    EntityUid User,
+    List<(EntityUid? Uid, IShootable Shootable)> Ammo,
+    EntityCoordinates FromCoordinates = default,
+    EntityCoordinates ToCoordinates = default);
 
 /// <summary>
 /// Raised on an entity after firing a gun to see if any components or systems would allow this entity to be pushed

@@ -13,6 +13,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using System.Numerics;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
@@ -29,6 +30,12 @@ public partial class AmmoComponent : Component, IShootable
 
     [DataField]
     public EntProtoId? MuzzleFlash = "MuzzleFlashEffect";
+
+    /// <summary>
+    /// Distance the muzzle flash is shifted from its origin along the shot direction.
+    /// </summary>
+    [DataField]
+    public Vector2 MuzzleFlashOffset = new(0.5f, 0);
 }
 
 /// <summary>

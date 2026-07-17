@@ -13,6 +13,7 @@
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
+  - type: GunIgnorePrediction
   - type: AmmoCounter
   # All staves recharge. Wands are not.
   - type: RechargeBasicEntityAmmo
