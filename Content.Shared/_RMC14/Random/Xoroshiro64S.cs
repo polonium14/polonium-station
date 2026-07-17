@@ -43,7 +43,8 @@ public record struct Xoroshiro64S
         _s0 = RotateLeft(s0, 26) ^ s1 ^ (s1 << 9);
         _s1 = RotateLeft(s1, 13);
 
-        return Math.Abs((int) result);
+        // Masking out the sign bit to ensue result is always positive
+        return (int) (result & 0x7FFFFFFF);
     }
 
     public float NextFloat()
