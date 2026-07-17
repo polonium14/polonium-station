@@ -98,6 +98,8 @@ public abstract partial class SharedRMCLagCompensationSystem : EntitySystem
         return session == null ? _timing.CurTick : _lastRealTicks.GetValueOrDefault(session.Value, _timing.CurTick);
     }
 
+    private GameTick _lastSentRealTick;
+
     public void SetLastRealTick(NetUserId session, GameTick tick)
     {
         if (_net.IsClient)
@@ -111,7 +113,15 @@ public abstract partial class SharedRMCLagCompensationSystem : EntitySystem
         if (_net.IsServer)
             return;
 
-        RaiseNetworkEvent(new RMCSetLastRealTickEvent(GetLastRealTick(null)));
+        if (!_timing.IsFirstTimePredicted)
+            return;
+
+        var tick = GetLastRealTick(null);
+        if (tick == _lastSentRealTick)
+            return;
+
+        _lastSentRealTick = tick;
+        RaiseNetworkEvent(new RMCSetLastRealTickEvent(tick));
     }
 
     public bool Collides(
