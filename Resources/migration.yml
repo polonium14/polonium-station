@@ -489,7 +489,7 @@ ClothingNeckShockCollar: ClothingBackpackElectropack
 # 2024-08-22
 ComputerShuttleSalvage: ComputerShuttleSalvage
 SalvageShuttleConsoleCircuitboard: SalvageShuttleConsoleCircuitboard
-SalvageShuttleCircuitboardStealObjective: SalvageShuttleCircuitboardStealObjective
+SalvageShuttleCircuitboardStealObjective: null
 
 # 2024-08-28
 ClothingBackpackDuffelSyndicateCostumeCentcom: null
