@@ -21,22 +21,22 @@ on:
 jobs:
   update_headers:
     runs-on: ubuntu-latest
-    if: github.actor != 'Polonium-bot' && github.actor != 'PJBot' && github.actor != 'github-actions[bot]' && github.actor != 'github-actions'
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.actor != 'Polonium-bot' && github.actor != 'PJBot' && github.actor != 'github-actions[bot]' && github.actor != 'github-actions'
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
         with:
-          repository: ${{ github.event.pull_request.base.repo.full_name }}
-          ref: ${{ github.event.pull_request.base.sha }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          ref: ${{ github.event.pull_request.head.sha }}
           fetch-depth: 0
           token: ${{ secrets.BOT_TOKEN }}
 
-      - name: Checkout base branch
+      - name: Checkout PR branch
         shell: bash
         run: |
           set -euo pipefail
-          git fetch origin "${{ github.base_ref }}":"${{ github.base_ref }}"
-          git checkout "${{ github.base_ref }}"
+          git fetch origin "${{ github.event.pull_request.base.sha }}"
+          git checkout "${{ github.head_ref }}"
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -54,7 +54,13 @@ jobs:
           set -e # Exit script on first error
 
           echo "Acquiring the REUSE updater script..."
-          curl -o /tmp/update_pr_reuse_headers.py -s https://raw.githubusercontent.com/${GH_REPO}/refs/heads/master/Tools/update_pr_reuse_headers.py
+          if [ -f Tools/update_pr_reuse_headers.py ]; then
+            cp Tools/update_pr_reuse_headers.py /tmp/update_pr_reuse_headers.py
+          elif curl -o /tmp/update_pr_reuse_headers.py -sf "https://raw.githubusercontent.com/${GH_REPO}/refs/heads/${{ github.head_ref }}/Tools/update_pr_reuse_headers.py"; then
+            echo "Using script from PR branch."
+          else
+            curl -o /tmp/update_pr_reuse_headers.py -s "https://raw.githubusercontent.com/${GH_REPO}/refs/heads/${{ github.base_ref }}/Tools/update_pr_reuse_headers.py"
+          fi
 
           echo "Fetching files for PR #${PR_NUMBER} in repo ${GH_REPO}"
           PR_FILES_JSON=$(curl -s -f -H "Authorization: token ${GH_TOKEN}" \
@@ -116,7 +122,7 @@ jobs:
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          branch: ${{ github.base_ref }}
+          branch: ${{ github.head_ref }}
           commit_message: "chore: Automatically update REUSE headers"
           commit_user_name: ${{ vars.CHANGELOG_USER }}
           commit_user_email: ${{ vars.CHANGELOG_EMAIL }}
