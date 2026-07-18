@@ -2,12 +2,18 @@ name: Diff RSIs
 
 on:
   pull_request_target:
+    types: [ opened, reopened, synchronize, ready_for_review ]
     paths:
       - '**.rsi/**.png'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
 
 jobs:
   diff:
     name: Diff
+    if: github.actor != 'Polonium-bot' && github.actor != 'PJBot' && github.actor != 'github-actions[bot]' && github.actor != 'github-actions' && github.event.pull_request.draft == false
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -66,4 +72,4 @@ jobs:
           comment-id: ${{ steps.fc.outputs.comment-id }}
           edit-mode: append
           body: |
-            Edit: diff updated after ${{ github.event.pull_request.head.sha }}
+            Edycja: diff zaktualizowany po ${{ github.event.pull_request.head.sha }}

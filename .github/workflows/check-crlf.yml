@@ -4,10 +4,14 @@ on:
   pull_request:
     types: [ opened, reopened, synchronize, ready_for_review ]
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number }}
+  cancel-in-progress: true  # We only care about latest.
+
 jobs:
   build:
     name: CRLF Check
-    if: github.event.pull_request.draft == false
+    if: github.actor != 'Polonium-bot' && github.actor != 'PJBot' && github.actor != 'github-actions[bot]' && github.actor != 'github-actions' && github.event.pull_request.draft == false
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v7
