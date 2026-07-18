@@ -1,6 +1,18 @@
 - type: gameMapPool
   id: DefaultMapPool
   maps:
+  # _Polonium
+  - DeathStar
+  - Terra
+  - Cluster
+  - Saltern
+  - Cork
+  - Atlas
+  - Reach
+  # - Amber
+  # - Eden
+  # - roid_outpost
+  # other
   - Bagel
   - Box
   - Elkridge
@@ -9,7 +21,6 @@
   - Oasis
   - Packed
   - Plasma
-  - Reach
   - Exo
   - Snowball
   - Serpentcrest
