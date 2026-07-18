@@ -1100,10 +1100,11 @@
   flavorType: Complex
   description: flavor-complex-driest-martini
 
-- type: flavor
-  id: eggnog
-  flavorType: Complex
-  description: flavor-complex-eggnog
+#conflict with funky Eggnogg - Yaket
+# - type: flavor
+#   id: eggnog
+#   flavorType: Complex
+#   description: flavor-complex-eggnog
 
 - type: flavor
   id: erikasurprise
@@ -1365,10 +1366,10 @@
   flavorType: Complex
   description: flavor-complex-punishment
 
-- type: flavor
-  id: forbidden
-  flavorType: Complex
-  description: flavor-complex-forbidden
+#- type: flavor
+#  id: forbidden
+#  flavorType: Complex
+#  description: flavor-complex-forbidden
 
 - type: flavor
   id: holy

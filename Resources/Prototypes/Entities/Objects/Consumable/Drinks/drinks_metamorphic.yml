@@ -728,19 +728,20 @@
     sprite: Objects/Consumable/Drinks/dr_gibb_glass.rsi
     state: icon
 
-- type: entity
-  parent: DrinkGlass
-  id: DrinkEggnog
-  suffix: eggnog
-  components:
-  - type: Solution
-    solution:
-      reagents:
-      - ReagentId: Eggnog
-        Quantity: 60
-  - type: Icon
-    sprite: Objects/Consumable/Drinks/eggnogglass.rsi
-    state: icon
+# conflict with funky Eggnogg - Yaket
+#- type: entity
+#  parent: DrinkGlass
+#  id: DrinkEggnog
+#  suffix: eggnog
+#  components:
+#  - type: Solution
+#    solution:
+#      reagents:
+#      - ReagentId: Eggnog
+#        Quantity: 60
+#  - type: Icon
+#    sprite: Objects/Consumable/Drinks/eggnogglass.rsi
+#    state: icon
 
 - type: entity
   parent: DrinkGlass

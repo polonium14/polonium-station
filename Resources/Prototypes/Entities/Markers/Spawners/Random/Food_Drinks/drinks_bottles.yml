@@ -66,6 +66,17 @@
     - id: DrinkAleBottleFull
     - id: DrinkAleBottleFullGrowler
     - id: DrinkChampagneBottleFull
+    - id: DrinkAmarettoBottleFull # readded missing drinks - Yaket
+    - id: DrinkApplejackBottleFull  # readded missing drinks - Yaket
+    - id: DrinkBittersBottleFull  # readded missing drinks - Yaket
+    - id: DrinkCreamOfCoconutBottleFull # readded missing drinks - Yaket
+    - id: DrinkCremeDeCacaoBottleFull # readded missing drinks - Yaket
+    - id: DrinkCremeDeMentheBottleFull  # readded missing drinks - Yaket
+    - id: DrinkNavyRumBottleFull  # readded missing drinks - Yaket
+    - id: DrinkRiceBeerBottleFull # readded missing drinks - Yaket
+    - id: DrinkShochuBottleFull # readded missing drinks - Yaket
+    - id: DrinkTripleSecBottleFull  # readded missing drinks - Yaket
+    - id: DrinkVoltaicYellowWineBottleFull  # readded missing drinks - Yaket
 
 - type: entityTable
   id: RandomRareAlcoholTable

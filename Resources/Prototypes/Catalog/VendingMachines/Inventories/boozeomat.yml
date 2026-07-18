@@ -84,7 +84,22 @@
     DrinkSakeBottleFull: 3
     DrinkBeerCan: 5
     DrinkWineCan: 5
+    DrinkAmarettoBottleFull: 3 # readded missing drinks - Yaket
+    DrinkApplejackBottleFull: 3 # readded missing drinks - Yaket
+    DrinkBittersBottleFull: 3 # readded missing drinks - Yaket
+    DrinkCreamOfCoconutBottleFull: 3  # readded missing drinks - Yaket
+    DrinkCremeDeCacaoBottleFull: 3  # readded missing drinks - Yaket
+    DrinkCremeDeMentheBottleFull: 3 # readded missing drinks - Yaket
+    DrinkNavyRumBottleFull: 3 # readded missing drinks - Yaket
+    DrinkRiceBeerBottleFull: 3  # readded missing drinks - Yaket
+    DrinkShochuBottleFull: 3  # readded missing drinks - Yaket
+    DrinkTripleSecBottleFull: 3 # readded missing drinks - Yaket
+    DrinkVoltaicYellowWineBottleFull: 3 # readded missing drinks - Yaket
+    DrinkHakkaMateCan: 5  # readded missing drinks - Yaket
+    DrinkMelonSodaCan: 5  # readded missing drinks - Yaket
   contrabandInventory:
     ChemistryBottleEthanol: 3
     DrinkBottleOfNothingFull: 1
     DrinkPoisonWinebottleFull: 2
+  emaggedInventory:
+    DrinkPoisonWinebottleFull: 2  # readded missing drinks - Yaket
