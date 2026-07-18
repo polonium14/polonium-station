@@ -96230,7 +96230,7 @@ entities:
     - type: Transform
       pos: -16.5,-50.5
       parent: 2
-    - type: MaterialSilo
+    - type: OreSilo
       range: 10
   - uid: 14254
     components:
@@ -96239,7 +96239,7 @@ entities:
     - type: Transform
       pos: -27.5,4.5
       parent: 2
-    - type: MaterialSilo
+    - type: OreSilo
       range: 14
   - uid: 16831
     components:
@@ -96248,7 +96248,7 @@ entities:
     - type: Transform
       pos: -6.5,-14.5
       parent: 2
-    - type: MaterialSilo
+    - type: OreSilo
       range: 10
   - uid: 16838
     components:
@@ -96257,7 +96257,7 @@ entities:
     - type: Transform
       pos: 10.5,20.5
       parent: 2
-    - type: MaterialSilo
+    - type: OreSilo
       range: 15
   - uid: 20544
     components:

@@ -89563,28 +89563,28 @@ entities:
     - type: Transform
       pos: -29.5,-23.5
       parent: 2
-    - type: MaterialSilo
+    - type: OreSilo
       range: 15
   - uid: 8321
     components:
     - type: Transform
       pos: 33.5,18.5
       parent: 2
-    - type: MaterialSilo
+    - type: OreSilo
       range: 10
   - uid: 9144
     components:
     - type: Transform
       pos: -32.5,9.5
       parent: 2
-    - type: MaterialSilo
+    - type: OreSilo
       range: 10
   - uid: 20320
     components:
     - type: Transform
       pos: -2.5,-41.5
       parent: 2
-    - type: MaterialSilo
+    - type: OreSilo
       range: 10
 - proto: MagazinePistolSubMachineGunTopMounted
   entities:
