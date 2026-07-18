@@ -45,7 +45,6 @@
 # SPDX-FileCopyrightText: 2025 uhbg <uhbg@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2026 Tayrtahn <tayrtahn@gmail.com>
 # SPDX-FileCopyrightText: 2026 Terkala <appleorange64@gmail.com>
-# SPDX-FileCopyrightText: 2026 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2026 taydeo <tay@funkystation.org>
 # SPDX-FileCopyrightText: 2026 taydeo <td12233a@gmail.com>
 #
@@ -1101,10 +1100,11 @@
   flavorType: Complex
   description: flavor-complex-driest-martini
 
-- type: flavor
-  id: eggnog
-  flavorType: Complex
-  description: flavor-complex-eggnog
+#conflict with funky Eggnogg - Yaket
+# - type: flavor
+#   id: eggnog
+#   flavorType: Complex
+#   description: flavor-complex-eggnog
 
 - type: flavor
   id: erikasurprise
@@ -1366,10 +1366,10 @@
   flavorType: Complex
   description: flavor-complex-punishment
 
-- type: flavor
-  id: forbidden
-  flavorType: Complex
-  description: flavor-complex-forbidden
+#- type: flavor
+#  id: forbidden
+#  flavorType: Complex
+#  description: flavor-complex-forbidden
 
 - type: flavor
   id: holy

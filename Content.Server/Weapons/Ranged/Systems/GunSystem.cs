@@ -43,7 +43,6 @@
 // SPDX-FileCopyrightText: 2026 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
 // SPDX-FileCopyrightText: 2026 TemporalOroboros <TemporalOroboros@gmail.com>
 // SPDX-FileCopyrightText: 2026 Whatstone <166147148+whatston3@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2026 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2026 mq <113324899+mqole@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2026 nikitosych <174215049+nikitosych@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2026 taydeo <tay@funkystation.org>

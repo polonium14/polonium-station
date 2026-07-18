@@ -6,11 +6,12 @@ on:
 
 jobs:
   add_label:
+    if: github.actor != 'Polonium-bot' && github.actor != 'PJBot' && github.actor != 'github-actions[bot]' && github.actor != 'github-actions'
     runs-on: ubuntu-latest
     steps:
     - uses: actions-ecosystem/action-add-labels@v1
       with:
-        labels: "Status: Needs Review"
+        labels: "S: Needs Review"
     - uses: actions-ecosystem/action-remove-labels@v1
       with:
-        labels: "Status: Awaiting Changes"
+        labels: "S: Awaiting Changes"

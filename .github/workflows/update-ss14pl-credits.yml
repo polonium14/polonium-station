@@ -1,0 +1,65 @@
+# SPDX-FileCopyrightText: 2025 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 nikitosych <174215049+nikitosych@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+name: Add contributor to credits
+
+concurrency: commit_action
+
+on:
+  pull_request_target:
+    types:
+      - closed
+
+jobs:
+  add-contributor:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.base.ref }}
+          token: ${{ secrets.BOT_TOKEN }}
+
+      - name: Add contributor to credits
+        env:
+          AUTHOR: ${{ github.event.pull_request.user.login }}
+        run: |
+          FILE="Resources/Credits/SS14PL.txt"
+          touch "$FILE"
+
+          NAMES=$(tr -d '\r\n' < "$FILE")
+
+          FOUND=false
+          IFS=',' read -ra ENTRIES <<< "$NAMES"
+          for entry in "${ENTRIES[@]}"; do
+            if [ "$entry" = "$AUTHOR" ]; then
+              FOUND=true
+              break
+            fi
+          done
+
+          if [ "$FOUND" = true ]; then
+            echo "Author '$AUTHOR' already in credits."
+            exit 0
+          fi
+
+          if [ -z "$NAMES" ]; then
+            printf '%s\n' "$AUTHOR" > "$FILE"
+          else
+            printf '%s\n' "$NAMES,$AUTHOR" > "$FILE"
+          fi
+
+      - name: Commit and push
+        run: |
+          git config user.name "${{ vars.CHANGELOG_USER }}"
+          git config user.email "${{ vars.CHANGELOG_EMAIL }}"
+          git add Resources/Credits/SS14PL.txt
+          git diff --cached --quiet && echo "No changes" && exit 0
+          git commit -m "chore: add ${{ github.event.pull_request.user.login }} to credits"
+          git push

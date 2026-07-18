@@ -7,7 +7,6 @@
 # SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Alpaccalypse <21291379+Alpaccalypse@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2026 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2026 taydeo <tay@funkystation.org>
 # SPDX-FileCopyrightText: 2026 taydeo <td12233a@gmail.com>
 #
@@ -67,6 +66,17 @@
     - id: DrinkAleBottleFull
     - id: DrinkAleBottleFullGrowler
     - id: DrinkChampagneBottleFull
+    - id: DrinkAmarettoBottleFull # readded missing drinks - Yaket
+    - id: DrinkApplejackBottleFull  # readded missing drinks - Yaket
+    - id: DrinkBittersBottleFull  # readded missing drinks - Yaket
+    - id: DrinkCreamOfCoconutBottleFull # readded missing drinks - Yaket
+    - id: DrinkCremeDeCacaoBottleFull # readded missing drinks - Yaket
+    - id: DrinkCremeDeMentheBottleFull  # readded missing drinks - Yaket
+    - id: DrinkNavyRumBottleFull  # readded missing drinks - Yaket
+    - id: DrinkRiceBeerBottleFull # readded missing drinks - Yaket
+    - id: DrinkShochuBottleFull # readded missing drinks - Yaket
+    - id: DrinkTripleSecBottleFull  # readded missing drinks - Yaket
+    - id: DrinkVoltaicYellowWineBottleFull  # readded missing drinks - Yaket
 
 - type: entityTable
   id: RandomRareAlcoholTable

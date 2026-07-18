@@ -5,10 +5,10 @@ on:
 
 jobs:
   labeler:
-    if: github.actor != 'funkystationbot'
+    if: github.actor != 'Polonium-bot' && github.actor != 'PJBot' && github.actor != 'github-actions[bot]' && github.actor != 'github-actions'
     permissions:
       contents: read
       pull-requests: write
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/labeler@v6
+    - uses: actions/labeler@v5

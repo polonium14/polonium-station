@@ -48,7 +48,6 @@
 # SPDX-FileCopyrightText: 2025 kosticia <kosticia46@gmail.com>
 # SPDX-FileCopyrightText: 2025 uhbg <uhbg@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2026 0-Anon <cec124@case.edu>
-# SPDX-FileCopyrightText: 2026 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2026 taydeo <tay@funkystation.org>
 # SPDX-FileCopyrightText: 2026 taydeo <td12233a@gmail.com>
 #
@@ -454,19 +453,20 @@
   products:
     DriestMartini: 2
 
-- type: reaction
-  id: Eggnog
-  requiredMixerCategories:
-  - Shake
-  reactants:
-    Egg:
-      amount: 1
-    Milk:
-      amount: 4
-    Rum:
-      amount: 5
-  products:
-    Eggnog: 10
+# conflict with funky Eggnogg - Yaket
+# - type: reaction
+#   id: Eggnog
+#   requiredMixerCategories:
+#   - Shake
+#   reactants:
+#     Egg:
+#       amount: 1
+#     Milk:
+#       amount: 4
+#     Rum:
+#       amount: 5
+#   products:
+#     Eggnog: 10
 
 - type: reaction
   id: ElectricShark

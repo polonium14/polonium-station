@@ -8,23 +8,26 @@ on:
     types: [ opened, reopened, synchronize, ready_for_review ]
     branches: [ master, staging, stable ]
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event_name == 'pull_request' && github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name != 'merge_group' }}
+
+env: # Polonium: prevent dotnet from sending telemetry
+  DOTNET_CLI_TELEMETRY_OPTOUT: 1
+  DOTNET_NOLOGO: 1
+  NUGET_XMLDOC_MODE: skip
+
 jobs:
   build:
-    if: github.actor != 'PJBot' && github.event.pull_request.draft == false
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
-
-    runs-on: ${{ matrix.os }}
+    if: github.actor != 'Polonium-bot' && github.actor != 'PJBot' && github.actor != 'github-actions[bot]' && github.actor != 'github-actions' && github.event.pull_request.draft == false
+    runs-on: ubuntu-latest
     timeout-minutes: 30
 
     steps:
     - name: Checkout Master
       uses: actions/checkout@v7
-
-    - name: Setup Submodule
-      run: |
-        git submodule update --init --recursive
+      with:
+        submodules: recursive
 
     - name: Pull engine updates
       uses: space-wizards/submodule-dependency@v0.1.5
@@ -38,6 +41,11 @@ jobs:
       uses: actions/setup-dotnet@v5
       with:
         dotnet-version: 10.0.x
+        cache: true # Polonium
+        cache-dependency-path: |
+          **/*.csproj
+          nuget.config
+          RobustToolbox/nuget.config
 
     - name: Install dependencies
       run: dotnet restore
@@ -59,7 +67,7 @@ jobs:
       if: always()
       uses: actions/upload-artifact@v4
       with:
-        name: nunit3-results-${{ matrix.os }}
+        name: nunit3-results
         path: test_results/*
         retention-days: 7
         compression-level: 9

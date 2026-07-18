@@ -59,7 +59,6 @@
 # SPDX-FileCopyrightText: 2026 MaiaArai <158123176+YaraaraY@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2026 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
 # SPDX-FileCopyrightText: 2026 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2026 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2026 pathetic meowmeow <uhhadd@gmail.com>
 # SPDX-FileCopyrightText: 2026 taydeo <tay@funkystation.org>
 # SPDX-FileCopyrightText: 2026 taydeo <td12233a@gmail.com>
@@ -979,20 +978,21 @@
       metabolites:
         Ethanol: 0.3
 
-- type: reagent
-  id: Eggnog
-  name: reagent-name-eggnog
-  parent: BaseAlcohol
-  desc: reagent-desc-eggnog
-  physicalDesc: reagent-physical-desc-creamy
-  flavor: eggnog
-  color: "#e6d6bc"
-  metamorphicSprite:
-    sprite: Objects/Consumable/Drinks/eggnogglass.rsi
-    state: icon_empty
-  metamorphicMaxFillLevels: 4
-  metamorphicFillBaseName: fill-
-  metamorphicChangeColor: false
+# conflict with funky Eggnogg - Yaket
+#- type: reagent
+#  id: Eggnog
+#  name: reagent-name-eggnog
+#  parent: BaseAlcohol
+#  desc: reagent-desc-eggnog
+#  physicalDesc: reagent-physical-desc-creamy
+#  flavor: eggnog
+#  color: "#e6d6bc"
+#  metamorphicSprite:
+#    sprite: Objects/Consumable/Drinks/eggnogglass.rsi
+#    state: icon_empty
+#  metamorphicMaxFillLevels: 4
+#  metamorphicFillBaseName: fill-
+#  metamorphicChangeColor: false
 
 - type: reagent
   id: ElectricShark
@@ -2372,3 +2372,250 @@
         - !type:MetabolizerTypeCondition
           type: [Dwarf]
           inverted: true
+
+# backported couple drinks - Yaket
+
+- type: reagent
+  id: TripleSec
+  name: reagent-name-triple-sec
+  parent: BaseAlcohol
+  desc: reagent-desc-triple-sec
+  physicalDesc: reagent-physical-desc-citric
+  flavor: triplesec
+  color: "#e6a65d"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/triplesecglass.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 4
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Digestion:
+      metabolites:
+        Ethanol: 0.2
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+
+- type: reagent
+  id: NavyRum
+  name: reagent-name-navy-rum
+  parent: BaseAlcohol
+  desc: reagent-desc-navy-rum
+  physicalDesc: reagent-physical-desc-strong-smelling
+  flavor: navyrum
+  color: "#faf2df"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/navyrumglass.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 4
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Digestion:
+      metabolites:
+        Ethanol: 0.2
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+
+- type: reagent
+  id: Fernet
+  name: reagent-name-fernet
+  parent: BaseAlcohol
+  desc: reagent-desc-fernet
+  physicalDesc: reagent-physical-desc-strong-smelling
+  flavor: fernet
+  color: "#324638"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/fernetglass.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 4
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Digestion:
+      metabolites:
+        Ethanol: 0.3
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+
+- type: reagent
+  id: CremeDeCacao
+  name: reagent-name-creme-de-cacao
+  parent: BaseAlcohol
+  desc: reagent-desc-creme-de-cacao
+  physicalDesc: reagent-physical-desc-sweet
+  flavor: cremedecacao
+  color: "#662d0b"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/cremedecacaoglass.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 4
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Digestion:
+      metabolites:
+        Ethanol: 0.2
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+
+- type: reagent
+  parent: BaseAlcohol
+  id: Amaretto
+  name: reagent-name-amaretto
+  desc: reagent-desc-amaretto
+  physicalDesc: reagent-physical-desc-sweet
+  flavor: amaretto
+  color: "#9d3636"
+  recognizable: true
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/amarettoglass.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Digestion:
+      metabolites:
+        Ethanol: 0.2
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+
+- type: reagent
+  id: Shochu
+  name: reagent-name-shochu
+  parent: BaseAlcohol
+  desc: reagent-desc-shochu
+  physicalDesc: reagent-physical-desc-strong-smelling
+  flavor: shochu
+  color: "#DEDEE6"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/shochuglass.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Digestion:
+      metabolites:
+        Ethanol: 0.2
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+
+- type: reagent
+  parent: BaseAlcohol
+  id: Bitters
+  name: reagent-name-bitters
+  desc: reagent-desc-bitters
+  physicalDesc: reagent-physical-desc-strong-smelling
+  flavor: bitters
+  color: "#504121"
+  recognizable: true
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/bittersglass.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 4
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Digestion:
+      metabolites:
+        Ethanol: 0.3
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+
+- type: reagent
+  id: RiceBeer
+  name: reagent-name-rice-beer
+  parent: BaseAlcohol
+  desc: reagent-desc-rice-beer
+  physicalDesc: reagent-physical-desc-crisp
+  flavor: ricebeer
+  color: "#d5e65e"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/ricebeerglass.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 4
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Digestion:
+      metabolites:
+        Ethanol: 0.2
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+
+- type: reagent
+  id: CremeDeMenthe
+  name: reagent-name-creme-de-menthe
+  parent: BaseAlcohol
+  desc: reagent-desc-creme-de-menthe
+  physicalDesc: reagent-physical-desc-minty
+  flavor: cremedementhe
+  color: "#2b9b6c"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/cremedementheglass.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 4
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Digestion:
+      metabolites:
+        Ethanol: 0.2
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+
+- type: reagent
+  id: VoltaicYellowWine
+  name: reagent-name-voltaic-yellow-wine
+  parent: BaseAlcohol
+  desc: reagent-desc-voltaic-yellow-wine
+  physicalDesc: reagent-physical-desc-electric
+  flavor: voltaicyellowwine
+  color: "#e6e55d"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/voltaicyellowwineglass.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 4
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Digestion:
+      metabolites:
+        Ethanol: 0.2
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+
+- type: reagent
+  parent: BaseAlcohol
+  id: Applejack
+  name: reagent-name-applejack
+  desc: reagent-desc-applejack
+  physicalDesc: reagent-physical-desc-tangy
+  flavor: applejack
+  color: "#ae0000"
+  recognizable: true
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/applejack.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 4
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Digestion:
+      metabolites:
+        Ethanol: 0.2
+      effects:
+      - !type:SatiateThirst
+        factor: 2
