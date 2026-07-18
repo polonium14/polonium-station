@@ -21,7 +21,7 @@ on:
 jobs:
   update_headers:
     runs-on: ubuntu-latest
-    if: github.actor != 'Polonium-bot'
+    if: github.actor != 'Polonium-bot' && github.actor != 'github-actions[bot]' && github.actor != 'github-actions'
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -108,7 +108,9 @@ jobs:
             --pr-base-sha ${{ github.event.pull_request.base.sha }} \
             --pr-head-sha ${{ github.event.pull_request.head.sha }} \
             --ignore-author "Copilot" \
-            --ignore-author "Polonium-bot"
+            --ignore-author "Polonium-bot" \
+            --ignore-author "github-actions" \
+            --ignore-author "github-actions[bot]"
         working-directory: ${{ github.workspace }}
 
       - name: Commit changes
