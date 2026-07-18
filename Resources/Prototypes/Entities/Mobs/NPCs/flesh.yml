@@ -45,7 +45,7 @@
     animationThreshold: 25
   - type: ToolRefinable
     refineResult:
-    - id: FoodMeat
+    - id: FoodMysteryMeat # modified to work like before rebase - Yaket
   - type: Bloodstream
     bloodReferenceSolution:
       reagents:
@@ -246,7 +246,7 @@
     animationThreshold: 25
   - type: ToolRefinable
     refineResult:
-    - id: FoodMeat
+    - id: FoodMysteryMeat # modified to work like before rebase - Yaket
   - type: Bloodstream
     bloodReferenceSolution:
       reagents:

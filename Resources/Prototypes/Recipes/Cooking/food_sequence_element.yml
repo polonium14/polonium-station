@@ -1579,6 +1579,19 @@
   - sprite: Objects/Fun/Plushies/sheep.rsi
     state: spacesheeptoy
 
+# readded missing food - Yaket
+
+# Mystery Meat
+
+- type: foodSequenceElement
+  id: FoodMysteryMeatCooked
+  name: food-sequence-content-mystery-meat
+  sprites:
+  - sprite: _Funkystation/Objects/Consumable/Food/meat.rsi
+    state: mysterymeat-cooked
+
+
+
 #Among pequeño - does not work with randomized sprites
 
 #- type: foodSequenceElement
