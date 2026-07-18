@@ -1,67 +1,11 @@
-# SPDX-FileCopyrightText: 2022 0x6273 <0x40@keemail.me>
-# SPDX-FileCopyrightText: 2022 20kdc <asdd2808@gmail.com>
-# SPDX-FileCopyrightText: 2022 Francesco <frafonia@gmail.com>
-# SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
-# SPDX-FileCopyrightText: 2022 LittleBuilderJane <63973502+LittleBuilderJane@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 metalgearsloth <comedian_vs_clown@hotmail.com>
-# SPDX-FileCopyrightText: 2022 metalgearsloth <metalgearsloth@gmail.com>
-# SPDX-FileCopyrightText: 2023 778b <33431126+778b@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Eoin Mcloughlin <helloworld@eoinrul.es>
-# SPDX-FileCopyrightText: 2023 Jackrost <jackrost@mail.ru>
-# SPDX-FileCopyrightText: 2023 Kevin Zheng <kevinz5000@gmail.com>
-# SPDX-FileCopyrightText: 2023 LankLTE <135308300+LankLTE@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 OliverOtter <153337321+OliverOtter@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Scribbles0 <91828755+Scribbles0@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 TsjipTsjip <19798667+TsjipTsjip@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Ubaser <134914314+UbaserB@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 88tv <131759102+88tv@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 8tv <eightev@gmail.com>
-# SPDX-FileCopyrightText: 2024 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Aexxie <codyfox.077@gmail.com>
-# SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
-# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
-# SPDX-FileCopyrightText: 2024 Boaz1111 <149967078+Boaz1111@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Brandon Hu <103440971+Brandon-Huu@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Emisse <99158783+Emisse@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 JustCone <141039037+JustCone14@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Krunklehorn <42424291+Krunklehorn@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 NkoKirkto <153374559+NkoKirkto@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 NkoKirkto <halloleute640mail.com>
-# SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
-# SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
-# SPDX-FileCopyrightText: 2024 Verm <32827189+Vermidia@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 eoineoineoin <github@eoinrul.es>
-# SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Icepick <122653407+Icepicked@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Mish <bluscout78@yahoo.com>
-# SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
-# SPDX-FileCopyrightText: 2025 corresp0nd <46357632+corresp0nd@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 kbarkevich <24629810+kbarkevich@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 leonidassoup <aidenfisherofficial@gmail.com>
-# SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 rottenheadphones <juaelwe@outlook.com>
-# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
-# SPDX-FileCopyrightText: 2026 Damian Zieliński <zientasek.pl@gmail.com>
-# SPDX-FileCopyrightText: 2026 Koilak <152626891+Koilak@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2026 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2026 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2026 thepinkscreen <76622775+thepinkscreen@users.noreply.github.com>
-#
-# SPDX-License-Identifier: AGPL-3.0-or-later
-
 meta:
   format: 7
   category: Map
-  engineVersion: 268.0.0
+  engineVersion: 280.0.0
   forkId: ""
   forkVersion: ""
-  time: 06/16/2026 16:39:27
-  entityCount: 12384
+  time: 07/18/2026 09:55:04
+  entityCount: 12350
 maps:
 - 1
 grids:
@@ -1514,164 +1458,31 @@ entities:
         - volume: 2500
           temperature: 293.15
           moles:
-          - 21.824879
-          - 82.10312
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
+            Oxygen: 21.824879
+            Nitrogen: 82.10312
         - volume: 2500
           temperature: 235
           moles:
-          - 27.225372
-          - 102.419266
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
+            Oxygen: 27.225372
+            Nitrogen: 102.419266
         - volume: 2500
           immutable: True
-          moles:
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
+          moles: {}
         - volume: 2500
           temperature: 293.15
           moles:
-          - 0
-          - 6666.982
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
+            Nitrogen: 6666.982
+        - volume: 2500
+          temperature: 293.15
+          moles: {}
         - volume: 2500
           temperature: 293.15
           moles:
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
+            Oxygen: 6666.982
         - volume: 2500
           temperature: 293.15
           moles:
-          - 6666.982
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-        - volume: 2500
-          temperature: 293.15
-          moles:
-          - 0
-          - 0
-          - 0
-          - 6666.982
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
+            Plasma: 6666.982
         chunkSize: 4
     - type: Gravity
       gravityShakeSound: !type:SoundPathSpecifier
@@ -3927,11 +3738,15 @@ entities:
     - type: OccluderTree
     - type: SpreaderGrid
     - type: Shuttle
+      dampingModifier: 0.25
     - type: GridPathfinding
     - type: GasTileOverlay
     - type: RadiationGridResistance
     - type: NavMap
     - type: ImplicitRoof
+    - type: TileHistory
+      chunkHistory: {}
+    - type: ExplosionAirtightGrid
 - proto: AcousticGuitarInstrument
   entities:
   - uid: 3
@@ -6994,14 +6809,12 @@ entities:
     - type: SolutionContainerManager
       solutions:
         beaker:
-          temperature: 293.15
-          canReact: True
           maxVol: 50
-          name: null
           reagents:
           - data: null
             ReagentId: Leporazine
             Quantity: 40
+      containers: []
   - uid: 417
     components:
     - type: Transform
@@ -24005,9 +23818,6 @@ entities:
     - type: Transform
       pos: -1.5092547,24.523743
       parent: 2
-    - type: ContainerContainer
-      containers:
-        handset: !type:ContainerSlot {}
 - proto: CaptainIDCard
   entities:
   - uid: 3630
@@ -28643,26 +28453,8 @@ entities:
         immutable: False
         temperature: 293.14963
         moles:
-        - 1.7459903
-        - 6.568249
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
+          Oxygen: 1.7459903
+          Nitrogen: 6.568249
   - uid: 4503
     components:
     - type: Transform
@@ -28750,7 +28542,7 @@ entities:
             - -0.25,0.48
           mask:
           - Impassable
-          - MidImpassable
+          - TableLayer
           - LowImpassable
           layer:
           - BulletImpassable
@@ -28760,8 +28552,8 @@ entities:
           restitution: 0
           friction: 0.4
     - type: EntityStorage
-      open: True
       removedMasks: 20
+      open: True
     - type: PlaceableSurface
       isPlaceable: True
   - uid: 4520
@@ -28804,26 +28596,8 @@ entities:
         immutable: False
         temperature: 293.1496
         moles:
-        - 1.7459903
-        - 6.568249
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
+          Oxygen: 1.7459903
+          Nitrogen: 6.568249
     - type: ContainerContainer
       containers:
         entity_storage: !type:Container
@@ -30032,11 +29806,6 @@ entities:
       parent: 2
 - proto: ComputerShuttleCargo
   entities:
-  - uid: 4334
-    components:
-    - type: Transform
-      pos: 23.5,17.5
-      parent: 2
   - uid: 4713
     components:
     - type: Transform
@@ -30044,10 +29813,10 @@ entities:
       parent: 2
 - proto: ComputerShuttleSalvage
   entities:
-  - uid: 4376
+  - uid: 434
     components:
     - type: Transform
-      pos: 28.5,21.5
+      pos: 23.5,17.5
       parent: 2
 - proto: ComputerSolarControl
   entities:
@@ -30359,26 +30128,8 @@ entities:
         immutable: False
         temperature: 293.1496
         moles:
-        - 1.7459903
-        - 6.568249
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
+          Oxygen: 1.7459903
+          Nitrogen: 6.568249
 - proto: CrateEmptySpawner
   entities:
   - uid: 4764
@@ -30506,26 +30257,8 @@ entities:
         immutable: False
         temperature: 293.1496
         moles:
-        - 1.7459903
-        - 6.568249
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
+          Oxygen: 1.7459903
+          Nitrogen: 6.568249
     - type: ContainerContainer
       containers:
         entity_storage: !type:Container
@@ -47810,7 +47543,14 @@ entities:
     - type: Transform
       pos: -15.5,36.5
       parent: 2
-- proto: GlowstickBase
+- proto: GlowstickBlue
+  entities:
+  - uid: 7217
+    components:
+    - type: Transform
+      pos: 52.729786,-1.2094907
+      parent: 2
+- proto: GlowstickGreen
   entities:
   - uid: 690
     components:
@@ -47826,13 +47566,6 @@ entities:
     components:
     - type: Transform
       pos: 27.774315,12.444383
-      parent: 2
-- proto: GlowstickBlue
-  entities:
-  - uid: 7217
-    components:
-    - type: Transform
-      pos: 52.729786,-1.2094907
       parent: 2
 - proto: GravityGenerator
   entities:
@@ -51173,7 +50906,7 @@ entities:
     - type: Transform
       pos: 29.30994,12.660811
       parent: 2
-- proto: HandheldHealthAnalyzerUnpowered
+- proto: HandheldHealthAnalyzer
   entities:
   - uid: 7875
     components:
@@ -52829,26 +52562,8 @@ entities:
         immutable: False
         temperature: 293.14673
         moles:
-        - 1.7459903
-        - 6.568249
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
+          Oxygen: 1.7459903
+          Nitrogen: 6.568249
     - type: ContainerContainer
       containers:
         entity_storage: !type:Container
@@ -54384,6 +54099,23 @@ entities:
     - type: Transform
       pos: -35.523197,-23.564377
       parent: 2
+- proto: PlushieSpawner50
+  entities:
+  - uid: 10064
+    components:
+    - type: Transform
+      pos: -30.5,-2.5
+      parent: 2
+  - uid: 10065
+    components:
+    - type: Transform
+      pos: -31.5,16.5
+      parent: 2
+  - uid: 10066
+    components:
+    - type: Transform
+      pos: -30.5,13.5
+      parent: 2
 - proto: PonderingOrb
   entities:
   - uid: 8296
@@ -54484,19 +54216,19 @@ entities:
     - type: Transform
       pos: -6.5,-19.5
       parent: 2
-- proto: PosterContrabandLustyExomorph
-  entities:
-  - uid: 8313
-    components:
-    - type: Transform
-      pos: 5.5,-29.5
-      parent: 2
 - proto: PosterContrabandMissingGloves
   entities:
   - uid: 8314
     components:
     - type: Transform
       pos: -30.5,8.5
+      parent: 2
+- proto: PosterContrabandRealExomorph
+  entities:
+  - uid: 8313
+    components:
+    - type: Transform
+      pos: 5.5,-29.5
       parent: 2
 - proto: PosterContrabandRedRum
   entities:
@@ -60139,6 +59871,12 @@ entities:
     - type: Transform
       pos: -11.5,16.5
       parent: 2
+    - type: TechnologyDatabase
+      supportedDisciplines:
+      - Industrial
+      - Arsenal
+      - Experimental
+      - CivilianServices
 - proto: SeedExtractor
   entities:
   - uid: 9226
@@ -62331,7 +62069,7 @@ entities:
     - type: Transform
       pos: -32.5,15.5
       parent: 2
-- proto: SpacemenFigureSpawner
+- proto: SpacemenFigurineSpawner90
   entities:
   - uid: 9522
     components:
@@ -66191,23 +65929,6 @@ entities:
     - type: Transform
       pos: 12.492016,27.532398
       parent: 2
-- proto: ToySpawner
-  entities:
-  - uid: 10064
-    components:
-    - type: Transform
-      pos: -30.5,-2.5
-      parent: 2
-  - uid: 10065
-    components:
-    - type: Transform
-      pos: -31.5,16.5
-      parent: 2
-  - uid: 10066
-    components:
-    - type: Transform
-      pos: -30.5,13.5
-      parent: 2
 - proto: TrashBag
   entities:
   - uid: 10068
@@ -66269,6 +65990,12 @@ entities:
     - type: Transform
       pos: 8.5,21.5
       parent: 2
+    - type: TechnologyDatabase
+      supportedDisciplines:
+      - Industrial
+      - Arsenal
+      - Experimental
+      - CivilianServices
     - type: MaterialStorage
       materialWhiteList:
       - Cloth
@@ -75484,104 +75211,6 @@ entities:
       parent: 2
     - type: WarpPoint
       location: library
-- proto: WarpPointBombing
-  entities:
-  - uid: 11793
-    components:
-    - type: Transform
-      pos: -36.5,14.5
-      parent: 2
-    - type: WarpPoint
-      location: chapel
-  - uid: 11795
-    components:
-    - type: Transform
-      pos: 9.5,-9.5
-      parent: 2
-    - type: WarpPoint
-      location: medbay
-  - uid: 11796
-    components:
-    - type: Transform
-      pos: 16.5,-0.5
-      parent: 2
-    - type: WarpPoint
-      location: chemistry
-  - uid: 11797
-    components:
-    - type: Transform
-      pos: 13.5,-15.5
-      parent: 2
-    - type: WarpPoint
-      location: morgue
-  - uid: 11798
-    components:
-    - type: Transform
-      pos: -12.5,19.5
-      parent: 2
-    - type: WarpPoint
-      location: armory
-  - uid: 11799
-    components:
-    - type: Transform
-      pos: -9.5,-20.5
-      parent: 2
-    - type: WarpPoint
-      location: science
-  - uid: 11800
-    components:
-    - type: Transform
-      pos: 8.5,25.5
-      parent: 2
-    - type: WarpPoint
-      location: captain's quarters
-  - uid: 11801
-    components:
-    - type: Transform
-      pos: 3.5,30.5
-      parent: 2
-    - type: WarpPoint
-      location: bridge
-  - uid: 11802
-    components:
-    - type: Transform
-      pos: -1.5,17.5
-      parent: 2
-    - type: WarpPoint
-      location: vault
-  - uid: 11803
-    components:
-    - type: Transform
-      pos: 8.5,9.5
-      parent: 2
-    - type: WarpPoint
-      location: eva room
-  - uid: 11804
-    components:
-    - type: Transform
-      pos: 58.5,2.5
-      parent: 2
-    - type: WarpPoint
-      location: particle accelerator
-  - uid: 11805
-    components:
-    - type: Transform
-      pos: 34.5,14.5
-      parent: 2
-    - type: WarpPoint
-      location: atmospherics
-  - uid: 11807
-    components:
-    - type: Transform
-      pos: 50.5,-5.5
-      parent: 2
-    - type: WarpPoint
-      location: telecomms
-  - uid: 12384
-    components:
-    - type: Transform
-      pos: 8.5,19.5
-      parent: 2
 - proto: WashingMachine
   entities:
   - uid: 555
