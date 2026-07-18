@@ -1,0 +1,41 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "https://bdragon1727.itch.io/32x32-pixel-shaders-effect",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "bluespace-2",
+            "delays": [
+                [
+                    0.3,
+                    0.45,
+                    0.3,
+                    0.3,
+                    0.3,
+                    0.3,
+                    0.45,
+                    0.3
+                ]
+            ]
+        },
+        {
+            "name": "bluespace-1",
+            "delays": [
+                [
+                    0.3,
+                    0.45,
+                    0.3,
+                    0.3,
+                    0.3,
+                    0.3,
+                    0.45,
+                    0.3
+                ]
+            ]
+        }
+    ]
+}

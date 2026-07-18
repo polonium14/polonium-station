@@ -19,9 +19,14 @@ public sealed class ExplosionShockwaveEvent : EntityEventArgs
     public float Intensity { get; }
 
     /// <summary>
-    /// Whether to render a blinding white flash before the distortion ring
+    /// Whether to render a blinding flash before the distortion ring.
     /// </summary>
     public bool Flash { get; }
+
+    /// <summary>
+    /// Tint of the full-screen flash overlay.
+    /// </summary>
+    public Color FlashColor { get; }
 
     public ExplosionShockwaveEvent(
         MapId mapId,
@@ -30,7 +35,8 @@ public sealed class ExplosionShockwaveEvent : EntityEventArgs
         float maxRadiusTiles,
         float durationSeconds,
         float intensity,
-        bool flash = false)
+        bool flash = false,
+        Color? flashColor = null)
     {
         MapId = mapId;
         EpicenterWorld = epicenterWorld;
@@ -39,5 +45,6 @@ public sealed class ExplosionShockwaveEvent : EntityEventArgs
         DurationSeconds = durationSeconds;
         Intensity = intensity;
         Flash = flash;
+        FlashColor = flashColor ?? Color.White;
     }
 }
