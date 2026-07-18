@@ -2345,3 +2345,87 @@
   - type: Icon
     sprite: Objects/Consumable/Drinks/bacchusblessing.rsi
     state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkBlackJapanGlass
+  suffix: black japan
+  components:
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: BlackJapan
+        Quantity: 60
+  - type: Icon
+    sprite: Objects/Consumable/Drinks/blackjapan.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkBruisedMelonGlass
+  suffix: bruised melon
+  components:
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: BruisedMelon
+        Quantity: 60
+  - type: Icon
+    sprite: Objects/Consumable/Drinks/bruisedmelon.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkCoconutSakeColadaGlass
+  suffix: coconut sake colada
+  components:
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: CoconutSakeColada
+        Quantity: 60
+  - type: Icon
+    sprite: Objects/Consumable/Drinks/coconutsakecolada.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkCosmicAlaskaGlass
+  suffix: cosmic alaska
+  components:
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: CosmicAlaska
+        Quantity: 60
+  - type: Icon
+    sprite: Objects/Consumable/Drinks/cosmicalaska.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkHorsesNeckGlass
+  suffix: horses neck
+  components:
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: HorsesNeck
+        Quantity: 60
+  - type: Icon
+    sprite: Objects/Consumable/Drinks/horsesneck.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkRansomNoteGlass
+  suffix: ransom note
+  components:
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: RansomNote
+        Quantity: 60
+  - type: Icon
+    sprite: Objects/Consumable/Drinks/ransomnote.rsi
+    state: icon
