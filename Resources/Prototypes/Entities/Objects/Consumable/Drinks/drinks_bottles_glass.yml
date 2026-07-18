@@ -667,7 +667,7 @@
     fillBaseName: fill-
 
 - type: entity
-  parent: [DrinkVisualsAllFilled, DrinkBottleGlassBaseFull]
+  parent: [DrinkVisualsAll, DrinkBottleGlassBaseFull]
   id: DrinkNavyRumBottleFull
   name: Pride of the Empire navy-strength rum
   description: By King George, this must be the finest bottle of white-rum that the seven seas, no, the galaxy has ever seen! One glass, and you'll be screaming 'Tally ho!' and 'By Caesar's Ghost!'.
@@ -688,7 +688,7 @@
     fillBaseName: fill-
 
 - type: entity
-  parent: [DrinkVisualsAllFilled, DrinkBottleGlassBaseFull]
+  parent: [DrinkVisualsAll, DrinkBottleGlassBaseFull]
   id: DrinkFernetBottleFull
   name: Rossi Fernet
   description: A bottle of power, jaw-punching Fernet so bitter it feels like it's stabbing your tongue. Drinking this by itself isn't advised by at least several drink agencies.
@@ -727,7 +727,7 @@
   - type: Sealable
 
 - type: entity
-  parent: [DrinkVisualsAllFilled, DrinkBottleGlassBaseFull]
+  parent: [DrinkVisualsAll, DrinkBottleGlassBaseFull]
   id: DrinkAmarettoBottleFull
   name: Mancini Amaretto
   description: A bottle of Mancini Amaretto. Don't worry, the almond taste isn't from cyanide. Hopefully.
@@ -748,7 +748,7 @@
     fillBaseName: fill-
 
 - type: entity
-  parent: [DrinkVisualsAllFilled, DrinkBottleGlassBaseFull]
+  parent: [DrinkVisualsAll, DrinkBottleGlassBaseFull]
   id: DrinkShochuBottleFull
   name: "Hādohittā Premium shochu"
   description: Similar to sake, but a lot stronger. This particular brand appears to be rice shochu.
@@ -826,7 +826,7 @@
   - type: Sealable
 
 - type: entity
-  parent: [DrinkVisualsAllFilled, DrinkBottleGlassBaseFull]
+  parent: [DrinkVisualsAll, DrinkBottleGlassBaseFull]
   id: DrinkVoltaicYellowWineBottleFull
   name: "Arc-Flash voltaic yellow wine"
   description: Arc-Flash yellow wine, to put a zap in your step. Is it you, or does the air feel statically charged?

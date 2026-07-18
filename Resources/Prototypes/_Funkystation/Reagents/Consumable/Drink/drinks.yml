@@ -12,6 +12,12 @@
   physicalDesc: reagent-physical-desc-creamy
   flavor: eggnog
   color: "#F5D695"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/eggnogglass.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 4
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: true
   recognizable: true
   metabolisms:
     Digestion:
@@ -27,6 +33,12 @@
   physicalDesc: reagent-physical-desc-creamy
   flavor: peggnog
   color: "#ffca95"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/glass_collins_shape.rsi
+    state: icon
+  metamorphicMaxFillLevels: 3
+  metamorphicFillBaseName: fill
+  metamorphicChangeColor: true
   recognizable: true
   metabolisms:
     Digestion:

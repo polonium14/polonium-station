@@ -12,6 +12,12 @@
   physicalDesc: reagent-physical-desc-creamy
   flavor: spiked-eggnog
   color: "#F5D695"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/glass_collins_shape.rsi
+    state: icon
+  metamorphicMaxFillLevels: 3
+  metamorphicFillBaseName: fill
+  metamorphicChangeColor: true
   metabolisms:
     Digestion:
       metabolites:
@@ -50,6 +56,12 @@
   physicalDesc: reagent-physical-desc-tangy
   flavor: chutzpah
   color: "#552A00"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/glass_collins_shape.rsi
+    state: icon
+  metamorphicMaxFillLevels: 3
+  metamorphicFillBaseName: fill
+  metamorphicChangeColor: true
   metabolisms:
     Digestion:
       metabolites:
@@ -67,6 +79,12 @@
   physicalDesc: reagent-physical-desc-pulpy
   flavor: margherita-drink
   color: "#FF6C26"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/glass_collins_shape.rsi
+    state: icon
+  metamorphicMaxFillLevels: 3
+  metamorphicFillBaseName: fill
+  metamorphicChangeColor: true
   metabolisms:
     Digestion:
       metabolites:
@@ -83,6 +101,12 @@
   physicalDesc: reagent-physical-desc-pulpy
   flavor: pineapple-margherita
   color: "#FF6C26"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/glass_collins_shape.rsi
+    state: icon
+  metamorphicMaxFillLevels: 3
+  metamorphicFillBaseName: fill
+  metamorphicChangeColor: true
   metabolisms:
     Digestion:
       metabolites:
