@@ -24,7 +24,6 @@
 // SPDX-FileCopyrightText: 2026 ArtisticRoomba <145879011+ArtisticRoomba@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2026 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
 // SPDX-FileCopyrightText: 2026 Princess Cheeseballs <66055347+Princess-Cheeseballs@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2026 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2026 taydeo <tay@funkystation.org>
 // SPDX-FileCopyrightText: 2026 taydeo <td12233a@gmail.com>
 // SPDX-FileCopyrightText: 2026 veprolet <68151557+veprolet@users.noreply.github.com>
