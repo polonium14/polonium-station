@@ -725,7 +725,7 @@
         - ReagentId: Admiralty
           Quantity: 30
   - type: Icon
-    sprite: _Funkystation/Objects/Consumable/Drinks/admirality.rsi
+    sprite: _Funkystation/Objects/Consumable/Drinks/admiralty.rsi
     state: icon
 
 - type: entity
