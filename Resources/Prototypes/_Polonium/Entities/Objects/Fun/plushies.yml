@@ -112,3 +112,18 @@
     sprite: _Polonium/Objects/Fun/Plushies/deathshead.rsi
     slots:
     - HEAD
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieAppolo
+  name: pluszak Appolo Coppe
+  description: Miniaturowa wersja uśmiechniętego listonosza. Prezent perfekcyjny na wszelkie okazje!
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Fun/Plushies/vulpplush.rsi
+    state: icon
+  - type: Clothing
+    quickEquip: false
+    sprite: _Polonium/Objects/Fun/Plushies/vulpplush.rsi
+    slots:
+    - HEAD

@@ -94,6 +94,13 @@
     - PlushieMothDeathshead
   groupBy: "plushies"
 
+- type: loadout
+  id: PlushieAppolo
+  storage:
+    back:
+    - PlushieAppolo
+  groupBy: "plushies"
+
 # Smokeables
 - type: loadout
   id: Lighter
