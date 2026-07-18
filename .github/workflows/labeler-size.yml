@@ -2,6 +2,7 @@ name: "Labels: Size"
 on: pull_request_target
 jobs:
   size-label:
+    if: github.actor != 'Polonium-bot' && github.actor != 'PJBot' && github.actor != 'github-actions[bot]' && github.actor != 'github-actions'
     runs-on: ubuntu-latest
     steps:
       - name: size-label

@@ -6,10 +6,14 @@ on:
   pull_request:
     types: [ opened, reopened, synchronize, ready_for_review ]
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event_name == 'pull_request' && github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name != 'merge_group' }}
+
 jobs:
   yaml-schema-validation:
     name: YAML RGA schema validator
-    if: github.actor != 'funky-station/forky-station' && github.event.pull_request.draft == false
+    if: github.actor != 'Polonium-bot' && github.actor != 'PJBot' && github.actor != 'github-actions[bot]' && github.actor != 'github-actions' && github.event.pull_request.draft == false
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v7

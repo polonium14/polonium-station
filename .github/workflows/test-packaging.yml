@@ -26,10 +26,14 @@ on:
       - 'RobustToolbox'
       - 'RobustToolbox/**'
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event_name == 'pull_request' && github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name != 'merge_group' }}
+
 jobs:
   build:
     name: Test Packaging
-    if: github.actor != 'funkystationbot' && github.event.pull_request.draft == false
+    if: github.actor != 'Polonium-bot' && github.actor != 'PJBot' && github.actor != 'github-actions[bot]' && github.actor != 'github-actions' && github.event.pull_request.draft == false
     runs-on: ubuntu-latest
 
     steps:
