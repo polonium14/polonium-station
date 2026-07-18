@@ -41,6 +41,7 @@ namespace Content.Shared.Atmos.Prototypes;
 [Prototype]
 public sealed partial class GasPrototype : IPrototype
 {
+
     // TODO: Add interfaces for gas behaviours e.g. breathing, burning
 
     /// <inheritdoc />

@@ -22728,6 +22728,13 @@ entities:
     - type: Transform
       pos: 2.5,16.5
       parent: 2
+- proto: SpawnPointNanotrasenCareerTrainer
+  entities:
+  - uid: 5318
+    components:
+    - type: Transform
+      pos: 3.5,16.5
+      parent: 2
 - proto: SpawnPointParamedic
   entities:
   - uid: 3125

@@ -16574,12 +16574,26 @@ entities:
     - type: Transform
       pos: -4.5,-3.5
       parent: 2
+- proto: SpawnPointMusician
+  entities:
+  - uid: 2876
+    components:
+    - type: Transform
+      pos: -5.5,-1.5
+      parent: 2
 - proto: SpawnPointNanotrasenRepresentative
   entities:
   - uid: 2642
     components:
     - type: Transform
       pos: 22.5,0.5
+      parent: 2
+- proto: SpawnPointNanotrasenCareerTrainer
+  entities:
+  - uid: 2875
+    components:
+    - type: Transform
+      pos: 23.5,0.5
       parent: 2
 - proto: SpawnPointObserver
   entities:

@@ -30,6 +30,7 @@
   - type: ContainerAmmoProvider
     container: storagebase
   - type: PneumaticCannon
+  - type: GunIgnorePrediction
   - type: Storage
     maxItemSize: Normal
     grid:
@@ -93,6 +94,7 @@
     clumsyProof: true
   - type: ContainerAmmoProvider
     container: storagebase
+  - type: GunIgnorePrediction
   - type: Item
     size: Large
   - type: Clothing
@@ -135,6 +137,7 @@
   - type: BatterySelfRecharger
     autoRechargeRate: 1
   - type: AmmoCounter
+  - type: GunIgnorePrediction
   - type: Item
     size: Normal
 
@@ -168,6 +171,7 @@
     clumsyProof: true
   - type: ContainerAmmoProvider
     container: storagebase
+  - type: GunIgnorePrediction
   - type: Item
     size: Large
     shape:

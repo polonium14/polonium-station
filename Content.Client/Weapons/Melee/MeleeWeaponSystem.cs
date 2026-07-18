@@ -29,6 +29,7 @@
 // SPDX-FileCopyrightText: 2025 Sigil <84070966+Siigiil@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
 // SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2026 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
 // SPDX-FileCopyrightText: 2026 Pok <113675512+Pok27@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2026 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
@@ -42,6 +43,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
+using Content.Client._RMC14.Movement;
 using Content.Client.Gameplay;
 using Content.Shared.CCVar;
 using Content.Shared.CombatMode;
@@ -71,6 +73,7 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
     [Dependency] private IInputManager _inputManager = default!;
     [Dependency] private IPlayerManager _player = default!;
     [Dependency] private IStateManager _stateManager = default!;
+    [Dependency] private RMCLagCompensationSystem _rmcLagCompensation = default!;
     [Dependency] private AnimationPlayerSystem _animation = default!;
     [Dependency] private InputSystem _inputSystem = default!;
     [Dependency] private SharedColorFlashEffectSystem _color = default!;
@@ -236,6 +239,7 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
         // This should really be improved. GetEntitiesInArc uses pos instead of bounding boxes.
         // Server will validate it with InRangeUnobstructed.
         var entities = GetNetEntityList(ArcRayCast(userPos, direction.ToWorldAngle(), component.Angle, distance, userXform.MapID, user).ToList());
+        _rmcLagCompensation.SendLastRealTick();
         RaisePredictiveEvent(new HeavyAttackEvent(GetNetEntity(meleeUid), entities.GetRange(0, Math.Min(MaxTargets, entities.Count)), GetNetCoordinates(coordinates)));
     }
 
@@ -246,6 +250,7 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
         if (_stateManager.CurrentState is GameplayStateBase screen)
             target = screen.GetClickedEntity(mousePos);
 
+        _rmcLagCompensation.SendLastRealTick();
         RaisePredictiveEvent(new DisarmAttackEvent(GetNetEntity(target), GetNetCoordinates(coordinates)));
     }
 
@@ -265,6 +270,7 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
         if (Interaction.CombatModeCanHandInteract(attacker, target))
             return;
 
+        _rmcLagCompensation.SendLastRealTick();
         RaisePredictiveEvent(new LightAttackEvent(GetNetEntity(target), GetNetEntity(weaponUid), GetNetCoordinates(coordinates)));
     }
 

@@ -53,6 +53,7 @@
 // SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 themias <89101928+themias@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2026 ArtisticRoomba <145879011+ArtisticRoomba@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2026 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
 // SPDX-FileCopyrightText: 2026 TemporalOroboros <TemporalOroboros@gmail.com>
 // SPDX-FileCopyrightText: 2026 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
@@ -65,6 +66,7 @@
 
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using Content.Shared._RMC14.Movement;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Administration.Logs;
 using Content.Shared.CCVar;
@@ -138,6 +140,8 @@ namespace Content.Shared.Interaction
         [Dependency] private SharedPlayerRateLimitManager _rateLimit = default!;
         [Dependency] private TagSystem _tagSystem = default!;
         [Dependency] private UseDelaySystem _useDelay = default!;
+        [Dependency] private SharedRMCLagCompensationSystem _rmcLagCompensation = default!;
+        [Dependency] private INetManager _net = default!;
 
         [Dependency] private EntityQuery<IgnoreUIRangeComponent> _ignoreUiRangeQuery = default!;
         [Dependency] private EntityQuery<FixturesComponent> _fixtureQuery = default!;
@@ -321,6 +325,7 @@ namespace Content.Shared.Interaction
 
         private bool HandleTryPullObject(ICommonSession? session, EntityCoordinates coords, EntityUid uid)
         {
+            _rmcLagCompensation.SendLastRealTick();
             if (!ValidateClientInput(session, coords, uid, out var userEntity))
             {
                 Log.Info($"TryPullObject input validation failed");
@@ -371,6 +376,7 @@ namespace Content.Shared.Interaction
 
         public bool HandleAltUseInteraction(ICommonSession? session, EntityCoordinates coords, EntityUid uid)
         {
+            _rmcLagCompensation.SendLastRealTick();
             // client sanitization
             if (!ValidateClientInput(session, coords, uid, out var user))
             {
@@ -385,6 +391,7 @@ namespace Content.Shared.Interaction
 
         public bool HandleUseInteraction(ICommonSession? session, EntityCoordinates coords, EntityUid uid)
         {
+            _rmcLagCompensation.SendLastRealTick();
             // client sanitization
             if (!ValidateClientInput(session, coords, uid, out var userEntity))
             {
@@ -754,7 +761,9 @@ namespace Content.Shared.Interaction
             CollisionGroup collisionMask = InRangeUnobstructedMask,
             Ignored? predicate = null,
             bool popup = false,
-            bool overlapCheck = true)
+            bool overlapCheck = true,
+            EntityUid? user = null,
+            bool lagCompensate = true)
         {
             if (!Resolve(other, ref other.Comp))
                 return false;
@@ -767,10 +776,15 @@ namespace Content.Shared.Interaction
                 return ev.InRange;
             }
 
+            var otherCoordinates = other.Comp.Coordinates;
+            var otherAngle = other.Comp.LocalRotation;
+            if (lagCompensate && TryComp(user ?? origin, out ActorComponent? originActor))
+                (otherCoordinates, otherAngle) = _rmcLagCompensation.GetCoordinatesAngle(other, originActor.PlayerSession);
+
             return InRangeUnobstructed(origin,
                 other,
-                other.Comp.Coordinates,
-                other.Comp.LocalRotation,
+                otherCoordinates,
+                otherAngle,
                 range,
                 collisionMask,
                 predicate,
@@ -817,6 +831,19 @@ namespace Content.Shared.Interaction
             bool popup = false,
             bool overlapCheck = true)
         {
+            if (_net.IsServer &&
+                Resolve(other, ref other.Comp, false) &&
+                !_transform.InRange(otherCoordinates, other.Comp.Coordinates, 0.01f))
+            {
+                range += _rmcLagCompensation.MarginTiles;
+            }
+
+            if (origin.Owner == other.Owner && Resolve(other, ref other.Comp, false))
+            {
+                otherCoordinates = other.Comp.Coordinates;
+                otherAngle = other.Comp.LocalRotation;
+            }
+
             Ignored combinedPredicate = e => e == origin.Owner || (predicate?.Invoke(e) ?? false);
             var inRange = true;
             MapCoordinates originPos = default;
@@ -1185,6 +1212,7 @@ namespace Content.Shared.Interaction
         #region ActivateItemInWorld
         private bool HandleActivateItemInWorld(ICommonSession? session, EntityCoordinates coords, EntityUid uid)
         {
+            _rmcLagCompensation.SendLastRealTick();
             if (!ValidateClientInput(session, coords, uid, out var user))
             {
                 Log.Info($"ActivateItemInWorld input validation failed");

@@ -1,7 +1,4 @@
 # SPDX-FileCopyrightText: 2026 Szyszkrzyneczka <rammus.vult@gmail.com>
-# SPDX-FileCopyrightText: 2026 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2026 maciejwalendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2026 nikitosych <174215049+nikitosych@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -51,6 +48,7 @@
     proto: SeismicCharge
     soundInsert:
       path: /Audio/Weapons/Guns/Gunshots/grenade_launcher.ogg
+  - type: GunIgnorePrediction
   - type: Machine
     board: ShuttleGunSeismicCircuitboard
 
@@ -105,6 +103,7 @@
   - type: BatteryAmmoProvider
     proto: BulletPlasmaCutterShuttle
     fireCost: 100
+  - type: GunIgnorePrediction
 
 - type: entity
   id: ShuttleGunMineralVacuum
@@ -161,3 +160,4 @@
     proto: BulletMineralVacuum
     capacity: 1
     count: 1
+  - type: GunIgnorePrediction

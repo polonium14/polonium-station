@@ -27,6 +27,7 @@
     - SemiAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/grenade_launcher.ogg
+  - type: GunIgnorePrediction
 
 - type: entity
   parent: [ BaseWeaponLauncher, BaseSyndicateContraband ]
@@ -242,6 +243,7 @@
           True: { state: base-unshaded }
           False: { state: base-unshaded-off }
   - type: PacifismAllowedGun
+  - type: GunIgnorePrediction
 
 # Admeme
 - type: entity

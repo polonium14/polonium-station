@@ -56374,6 +56374,13 @@ entities:
     - type: Transform
       pos: 26.5,-0.5
       parent: 2
+- proto: SpawnPointNanotrasenCareerTrainer
+  entities:
+  - uid: 108823
+    components:
+    - type: Transform
+      pos: 27.5,-0.5
+      parent: 2
 - proto: SpawnPointObserver
   entities:
   - uid: 5322

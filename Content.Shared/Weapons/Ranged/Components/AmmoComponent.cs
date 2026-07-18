@@ -7,12 +7,14 @@
 // SPDX-FileCopyrightText: 2025 Kyle Tyo <36606155+VerinSenpai@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 PJB3005 <pieterjan.briers+git@gmail.com>
 // SPDX-FileCopyrightText: 2025 Vasilis The Pikachu <vasilis@pikachu.systems>
+// SPDX-FileCopyrightText: 2026 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2026 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2026 taydeo <tay@funkystation.org>
 // SPDX-FileCopyrightText: 2026 taydeo <td12233a@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using System.Numerics;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
@@ -29,6 +31,12 @@ public partial class AmmoComponent : Component, IShootable
 
     [DataField]
     public EntProtoId? MuzzleFlash = "MuzzleFlashEffect";
+
+    /// <summary>
+    /// Distance the muzzle flash is shifted from its origin along the shot direction.
+    /// </summary>
+    [DataField]
+    public Vector2 MuzzleFlashOffset = new(0.5f, 0);
 }
 
 /// <summary>

@@ -12,6 +12,7 @@
 // SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
 // SPDX-FileCopyrightText: 2025 eoineoineoin <helloworld@eoinrul.es>
 // SPDX-FileCopyrightText: 2025 themias <89101928+themias@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2026 Pok <113675512+Pok27@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2026 Red <96445749+TheShuEd@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2026 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
@@ -273,7 +274,23 @@ public sealed partial class MeleeWeaponSystem
                 targetPos += entRotation.RotateVec(arcComponent.Offset);
             }
 
-            TransformSystem.SetWorldPosition(uid, targetPos);
+            if (arcComponent.OriginOffset != Vector2.Zero)
+            {
+                var userRotation = TransformSystem.GetWorldRotation(arcComponent.User.Value);
+                targetPos += userRotation.RotateVec(arcComponent.OriginOffset);
+            }
+
+            xform.ActivelyLerping = false;
+
+            if (xform.ParentUid.IsValid())
+            {
+                var localPos = Vector2.Transform(targetPos, TransformSystem.GetInvWorldMatrix(xform.ParentUid));
+                TransformSystem.SetLocalPositionNoLerp(uid, localPos, xform);
+            }
+            else
+            {
+                TransformSystem.SetWorldPosition(uid, targetPos);
+            }
         }
     }
 }

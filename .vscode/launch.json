@@ -32,6 +32,24 @@
             "stopAtEntry": false
         },
         {
+            "name": "Client Tools",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "${workspaceFolder}/bin/Content.Client/Content.Client.dll",
+            "args": [],
+            "console": "internalConsole",
+            "stopAtEntry": false
+        },
+        {
+            "name": "Server Tools",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "${workspaceFolder}/bin/Content.Server/Content.Server.dll",
+            "args": [],
+            "console": "integratedTerminal",
+            "stopAtEntry": false
+        },
+        {
             "name": "YAML Linter",
             "type": "coreclr",
             "request": "launch",
@@ -50,6 +68,14 @@
                 "Client"
             ],
             "preLaunchTask": "build"
+        },
+        {
+            "name": "Server/Client Tools",
+            "configurations": [
+                "Server Tools",
+                "Client Tools"
+            ],
+            "preLaunchTask": "build-tools"
         }
     ]
 }

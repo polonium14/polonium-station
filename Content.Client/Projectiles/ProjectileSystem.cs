@@ -1,6 +1,7 @@
 // SPDX-FileCopyrightText: 2023 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2026 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2026 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
 // SPDX-FileCopyrightText: 2026 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2026 taydeo <tay@funkystation.org>
@@ -24,7 +25,7 @@ public sealed partial class ProjectileSystem : SharedProjectileSystem
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeNetworkEvent<ImpactEffectEvent>(OnProjectileImpact);
+        SubscribeAllEvent<ImpactEffectEvent>(OnProjectileImpact);
     }
 
     private void OnProjectileImpact(ImpactEffectEvent ev)

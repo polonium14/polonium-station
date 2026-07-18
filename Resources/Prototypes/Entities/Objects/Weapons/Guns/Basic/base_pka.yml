@@ -25,6 +25,7 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/kinetic_accel.ogg
     projectileSpeed: 25
+  - type: GunIgnorePrediction
   - type: AmmoCounter
   - type: CustomSpriteAmmoCounter
     loadedAmmoSprite: Interface/ItemStatus/PKA/not_spent.png

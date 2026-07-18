@@ -11,6 +11,7 @@
 // SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
 // SPDX-FileCopyrightText: 2024 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2026 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2026 mq <113324899+mqole@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2026 taydeo <tay@funkystation.org>
@@ -283,6 +284,13 @@ public sealed partial class GunComponent : Component
     /// </summary>
     [DataField]
     public Vector2 DefaultDirection = new Vector2(0, -1);
+
+    /// <summary>
+    /// Offset from the shooter's origin when firing.
+    /// </summary>
+    /// <example>[0, -1] means the projectile spawns 1 tile in front of the shooter</example>
+    [DataField]
+    public Vector2 ShootOriginOffset = Vector2.Zero;
 }
 
 [Flags]
