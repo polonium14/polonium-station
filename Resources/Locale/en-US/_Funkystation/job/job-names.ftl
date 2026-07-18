@@ -9,6 +9,5 @@ job-name-hd = Hospitality Director
 job-name-iaa = Internal Affairs Agent
 job-name-magistrate = Magistrate
 job-name-party-maker = Party Maker
-job-name-nct = Nanotrasen Career Trainer
 job-name-security-clown = Security Clown
 job-name-xo = Executive Officer

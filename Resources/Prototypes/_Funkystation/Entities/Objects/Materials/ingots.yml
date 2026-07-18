@@ -24,15 +24,12 @@
   - type: Item
     heldPrefix: metalhydrogen
   - type: Appearance
-  - type: Extractable
-    grindableSolutionName: hydrogen
-  - type: SolutionContainerManager
-    solutions:
-      hydrogen:
-        reagents:
-        - ReagentId: Hydrogen
-          Quantity: 20
-        canReact: false
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Hydrogen
+        Quantity: 20
+      canReact: false
 
 - type: entity
   parent: MetalHydrogen
@@ -61,7 +58,7 @@
 - type: entity
   parent: IngotBase
   id: Zaukerite
-  name: zaukerite
+  name: zaukerite bar
   suffix: Full
   components:
   - type: Material
@@ -83,20 +80,19 @@
   - type: Item
     heldPrefix: zaukerite
   - type: Appearance
-  - type: Extractable
-    grindableSolutionName: zaukerite
-  - type: SolutionContainerManager
-    solutions:
-      zaukerite:
-        reagents:
-        - ReagentId: Zauker
-          Quantity: 20
-        canReact: false
+    # - type: Extractable
+    #   grindableSolutionName: zaukerite
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Zauker
+        Quantity: 20
+      canReact: false
 
 - type: entity
   parent: Zaukerite
   id: Zaukerite10
-  name: zaukerite
+  name: zaukerite bar
   suffix: 10
   components:
   - type: Sprite
@@ -108,7 +104,7 @@
 - type: entity
   parent: Zaukerite
   id: Zaukerite1
-  name: zaukerite
+  name: zaukerite bar
   suffix: Single
   components:
   - type: Sprite

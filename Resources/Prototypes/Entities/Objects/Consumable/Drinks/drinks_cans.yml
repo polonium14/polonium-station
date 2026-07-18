@@ -536,13 +536,11 @@
   name: hakka mate can
   description: A bright orange can of hakka mate, a form of yerba-mate soda popular on mars!
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: HakkaMate
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: HakkaMate
+        Quantity: 40
   - type: Sprite
     sprite: Objects/Consumable/Drinks/hakkamate_can.rsi
   - type: Item
@@ -554,13 +552,11 @@
   name: katsuga melon soda can
   description: A can of katsuga melon soda. Has the distinct taste of melon and soda, unsurprisingly.
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: MelonSoda
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: MelonSoda
+        Quantity: 40
   - type: Sprite
     sprite: Objects/Consumable/Drinks/melonsoda_can.rsi
   - type: Item

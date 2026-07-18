@@ -1,42 +1,46 @@
 - type: entity
   name: colored lighttube box
-  parent: BoxLightbulb
+  parent: BoxLighttube
   id: BoxLightTubeColored
   components:
-  - type: StorageFill
-    contents:
-      - id: LightTubeCrystalBlue
-      - id: LightTubeCrystalBlue
-      - id: LightTubeCrystalCyan
-      - id: LightTubeCrystalCyan
-      - id: LightTubeCrystalGreen
-      - id: LightTubeCrystalGreen
-      - id: LightTubeCrystalOrange
-      - id: LightTubeCrystalOrange
-      - id: LightTubeCrystalPink
-      - id: LightTubeCrystalPink
-      - id: LightTubeCrystalRed
-      - id: LightTubeCrystalRed
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: LightTubeCrystalBlue
+          amount: 2
+        - id: LightTubeCrystalCyan
+          amount: 2
+        - id: LightTubeCrystalGreen
+          amount: 2
+        - id: LightTubeCrystalOrange
+          amount: 2
+        - id: LightTubeCrystalPink
+          amount: 2
+        - id: LightTubeCrystalRed
+          amount: 2
 
 - type: entity
-  name: colored lighttube box
+  name: colored lightbulb box
   parent: BoxLightbulb
   id: BoxLightBulbColored
   components:
-  - type: StorageFill
-    contents:
-      - id: LightBulbCrystalBlue
-      - id: LightBulbCrystalBlue
-      - id: LightBulbCrystalCyan
-      - id: LightBulbCrystalCyan
-      - id: LightBulbCrystalGreen
-      - id: LightBulbCrystalGreen
-      - id: LightBulbCrystalOrange
-      - id: LightBulbCrystalOrange
-      - id: LightBulbCrystalPink
-      - id: LightBulbCrystalPink
-      - id: LightBulbCrystalRed
-      - id: LightBulbCrystalRed
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: LightBulbCrystalBlue
+          amount: 2
+        - id: LightBulbCrystalCyan
+          amount: 2
+        - id: LightBulbCrystalGreen
+          amount: 2
+        - id: LightBulbCrystalOrange
+          amount: 2
+        - id: LightBulbCrystalPink
+          amount: 2
+        - id: LightBulbCrystalRed
+          amount: 2
 
 - type: entity
   name: premium M.R.E.
@@ -48,15 +52,17 @@
     maxItemSize: Normal
     grid:
     - 0,0,3,3
-  - type: StorageFill
-    contents:
-      - id: DrinkMREFlask
-      - id: FoodTinMRE
-      - id: FoodTinBeans
-      - id: FoodSnackEnergyBar
-      - id: FoodTinPeaches
-      - id: FoodSnackChocolate
-      - id: DrinkCartonMilk
-      - id: FoodBakedCookieOatmeal
-      - id: FoodBakedCookieOatmeal
-      - id: FoodSaladValid
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: DrinkMREFlask
+        - id: FoodTinMRE
+        - id: FoodTinBeans
+        - id: FoodSnackEnergyBar
+        - id: FoodTinPeaches
+        - id: FoodSnackChocolate
+        - id: FoodCondimentPacketKetchup
+        - id: FoodBakedCookieOatmeal
+          amount: 2
+        - id: FoodSaladValid

@@ -22,3 +22,66 @@
   - gurgled
   - gurgling
 
+# Cat emotes for MobMeuwl
+- type: emote
+  id: Meow
+  name: Meow
+  category: Vocal
+  available: false
+  icon: _Goobstation/Interface/Emotes/meow.png
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: [meows.]
+  chatTriggers:
+    - meow
+    - meows
+    - meowing
+    - meowed
+    - miau
+    - miaus
+    - nya
+    - nyas
+    - mraow
+    - mraows
+
+- type: emote
+  id: Mew
+  name: Mew
+  category: Vocal
+  available: false
+  icon: _Goobstation/Interface/Emotes/mew.png
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: [mews.]
+  chatTriggers:
+    - mew
+    - mews
+    - mewing
+    - mewed
+
+- type: emote
+  id: Purr
+  name: Purr
+  category: Vocal
+  available: false
+  icon: _Goobstation/Interface/Emotes/purr.png
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: [purrs.]
+  chatTriggers:
+    - purr
+    - purrs
+    - purring
+    - purred

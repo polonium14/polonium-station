@@ -57,7 +57,10 @@
     interactSuccessSound:
       path: /Audio/Animals/cat_meow.ogg
   - type: Bloodstream
-    bloodMaxVolume: 50
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: Blood
+        Quantity: 50
   - type: MeleeWeapon
     altDisarm: false
     angle: 0
