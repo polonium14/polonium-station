@@ -1,0 +1,15 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Made by Nikita at https://github.com/polonium14/polonium-station/tree/master/Resources/Textures/_Polonium/Actions/AI/lockdown.rsi",
+    "size": {
+      "x": 16,
+      "y": 16
+    },
+    "states": [
+      {
+        "name": "l"
+      }
+    ]
+  }
+  

@@ -1,0 +1,32 @@
+- type: entity
+  parent: BaseAction
+  id: ActionStationAiExternalLockdown
+  name: Total lockdown
+  description: Bolt all external airlocks on the station.
+  components:
+  - type: Action
+    priority: -8
+    itemIconStyle: BigAction
+    useDelay: 30
+    icon:
+      sprite: _Polonium/Actions/AI/lockdown.rsi
+      state: l
+  - type: InstantAction
+    event: !type:StationAiExternalLockdownEvent
+
+- type: entity
+  parent: BaseAGhostAction
+  id: ActionAGhostExternalLockdown
+  name: Total lockdown
+  description: Bolt all external airlocks on the station.
+  components:
+  - type: Action
+    priority: -8
+    itemIconStyle: BigAction
+    useDelay: 10
+    icon:
+      sprite: _Polonium/Actions/AI/lockdown.rsi
+      state: l
+    keywords: [ "AI", "lockdown", "airlock", "bolt" ]
+  - type: InstantAction
+    event: !type:StationAiExternalLockdownEvent

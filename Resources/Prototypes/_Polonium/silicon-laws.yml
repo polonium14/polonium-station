@@ -1,0 +1,23 @@
+- type: siliconLaw
+  id: LastInstructions1
+  order: 1
+  lawString: law-last-instructions-1
+
+- type: siliconLaw
+  id: LastInstructions2
+  order: 2
+  lawString: law-last-instructions-2
+
+- type: siliconLaw
+  id: LastInstructions3
+  order: 3
+  lawString: law-last-instructions-3
+
+- type: siliconLawset
+  id: LastInstructions
+  name: law-last-instructions-name
+  laws:
+  - LastInstructions1
+  - LastInstructions2
+  - LastInstructions3
+  obeysTo: laws-owner-legitimate-leadership

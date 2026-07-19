@@ -74,3 +74,18 @@
     eventType: HostilesSpawn
   - type: GameRule
     chaosScore: 700
+
+# Like BreakerFlip, but flips every APC breaker on the station.
+- type: entity
+  parent: BaseGameRule
+  id: BreakerDown
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: StationEvent
+    weight: 0
+    duration: 1
+    minimumPlayers: 1
+    eventType: Maintenance
+  - type: GameRule
+    chaosScore: 200
+  - type: BreakerDownRule
