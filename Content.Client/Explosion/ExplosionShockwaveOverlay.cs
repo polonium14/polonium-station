@@ -20,8 +20,18 @@ public sealed class ExplosionShockwaveOverlay : Overlay
     public override OverlaySpace Space => OverlaySpace.WorldSpace;
     public override bool RequestScreenTexture => true;
 
+    /// <summary>
+    /// Must match the uniform array lengths in shockwave.swsl (shader was rewritten by chatGPT and was not verified completely)
+    /// </summary>
     private const int MaxRings = 8;
     private const string ShaderID = "Shockwave";
+
+    private readonly Vector2[] _centers = new Vector2[MaxRings];
+    private readonly float[] _radii = new float[MaxRings];
+    private readonly float[] _thicknesses = new float[MaxRings];
+    private readonly float[] _warpStrengths = new float[MaxRings];
+    private int _count;
+
     public ExplosionShockwaveOverlay(ExplosionShockwaveSystem system, IPrototypeManager protoManager, IGameTiming timing)
     {
         _system = system;
@@ -32,24 +42,17 @@ public sealed class ExplosionShockwaveOverlay : Overlay
 
     protected override bool BeforeDraw(in OverlayDrawArgs args)
     {
-        return args.Viewport.Eye != null && _system.ActiveWaves.Count > 0;
-    }
-
-    protected override void Draw(in OverlayDrawArgs args)
-    {
-        if (ScreenTexture == null || args.Viewport.Eye == null)
-            return;
+        if (args.Viewport.Eye == null || _system.ActiveWaves.Count == 0)
+            return false;
 
         var viewport = args.Viewport;
-        var eye = viewport.Eye!;
         var now = _timing.CurTime.TotalSeconds;
-        var worldHandle = args.WorldHandle;
-        var renderScale = viewport.RenderScale * eye.Scale;
+        var ppm = EyeManager.PixelsPerMeter;
 
-        var drawn = 0;
+        _count = 0;
         foreach (var wave in _system.ActiveWaves)
         {
-            if (drawn >= MaxRings)
+            if (_count >= MaxRings)
                 break;
 
             if (wave.MapId != args.MapId)
@@ -65,7 +68,6 @@ public sealed class ExplosionShockwaveOverlay : Overlay
             var centerLocal = viewport.WorldToLocal(wave.EpicenterWorld);
             centerLocal.Y = viewport.Size.Y - centerLocal.Y;
 
-            var ppm = EyeManager.PixelsPerMeter;
             var radiusPx = radiusTiles * ppm;
 
             var baseThickness = wave.Flash
@@ -82,21 +84,51 @@ public sealed class ExplosionShockwaveOverlay : Overlay
             if (warpPx < 0.01f)
                 continue;
 
+            _centers[_count] = centerLocal;
+            _radii[_count] = radiusPx;
+            _thicknesses[_count] = thicknessPx;
+            _warpStrengths[_count] = warpPx;
+            _count++;
+        }
+
+        if (_count > 0)
+            return true;
+
+        foreach (var wave in _system.ActiveWaves)
+        {
+            if (wave.Flash && wave.MapId == args.MapId)
+                return true;
+        }
+
+        return false;
+    }
+
+    protected override void Draw(in OverlayDrawArgs args)
+    {
+        if (ScreenTexture == null || args.Viewport.Eye == null)
+            return;
+
+        var worldHandle = args.WorldHandle;
+
+        if (_count > 0)
+        {
+            var renderScale = args.Viewport.RenderScale * args.Viewport.Eye.Scale;
+
             _shader.SetParameter("SCREEN_TEXTURE", ScreenTexture);
-            _shader.SetParameter("center", centerLocal);
-            _shader.SetParameter("radius", radiusPx);
-            _shader.SetParameter("thickness", thicknessPx);
-            _shader.SetParameter("warpStrength", warpPx);
             _shader.SetParameter("renderScale", renderScale);
+            _shader.SetParameter("count", _count);
+            _shader.SetParameter("center", _centers);
+            _shader.SetParameter("radius", _radii);
+            _shader.SetParameter("thickness", _thicknesses);
+            _shader.SetParameter("warpStrength", _warpStrengths);
 
             worldHandle.UseShader(_shader);
             worldHandle.DrawRect(args.WorldAABB, Color.White);
             worldHandle.UseShader(null);
-
-            drawn++;
         }
 
         //  nuclear flash overlays drawn ON TOP of all distortion, so the shader doesn't overwrite them
+        var now = _timing.CurTime.TotalSeconds;
         foreach (var wave in _system.ActiveWaves)
         {
             if (!wave.Flash)
@@ -106,51 +138,60 @@ public sealed class ExplosionShockwaveOverlay : Overlay
                 continue;
 
             var elapsed = (float) Math.Max(0, now - wave.ServerStartSeconds);
-            DrawNuclearFlash(worldHandle, args, elapsed, wave.DurationSeconds);
+            DrawNuclearFlash(worldHandle, args, elapsed, wave.DurationSeconds, wave.FlashColor);
         }
     }
 
     /// <summary>
-    /// Renders a full-screen blinding flash for nuclear detonations
-    /// Timings are stretched to survive frame hitches from explosion
-    /// Phase 1 (0–0.5s): white flash
-    /// Phase 2 (0.5–1.2s): white to orange
-    /// Phase 3 (1.2–3s): orange glow fade
-    /// Phase 4 (3s+): red tint fading out
+    /// Renders a full-screen blinding flash for nuclear detonations.
+    /// Timings are stretched to survive frame hitches from explosion.
+    /// Phase 1 (0–0.5s): peak flash
+    /// Phase 2 (0.5–1.2s): peak to mid
+    /// Phase 3 (1.2–3s): glow fade
+    /// Phase 4 (3s+): tint fading out
     /// </summary>
     private static void DrawNuclearFlash(
         DrawingHandleWorld handle,
         in OverlayDrawArgs args,
         float elapsed,
-        float duration)
+        float duration,
+        Color flashColor)
     {
+        var useClassicWarm = flashColor.R > 0.95f && flashColor.G > 0.95f && flashColor.B > 0.95f;
+        var peak = useClassicWarm ? Color.White : Lerp(Color.White, flashColor, 0.35f);
+        var mid = useClassicWarm ? new Color(1f, 0.85f, 0.5f) : flashColor;
+        var late = useClassicWarm ? new Color(1f, 0.4f, 0.1f) : ScaleRgb(flashColor, 0.55f);
+        var end = useClassicWarm ? new Color(1f, 0.3f, 0.05f) : ScaleRgb(flashColor, 0.3f);
+
         float alpha;
         Color tint;
 
         if (elapsed < 0.5f)
         {
             alpha = 1f;
-            tint = Color.White;
+            tint = peak;
         }
         else if (elapsed < 1.2f)
         {
             var p = (elapsed - 0.5f) / 0.7f;
             var ease = p * p;
             alpha = 1f - ease * 0.4f;
-            tint = Lerp(Color.White, new Color(1f, 0.85f, 0.5f), ease);
+            tint = Lerp(peak, mid, ease);
         }
         else if (elapsed < 3f)
         {
             var p = (elapsed - 1.2f) / 1.8f;
             var ease = p * p;
-            alpha = 0.6f * (1f - ease);
-            tint = Lerp(new Color(1f, 0.85f, 0.5f), new Color(1f, 0.4f, 0.1f), ease);
+            // end at 0.1s, so phase 4 continues the fade instead of popping back up
+            alpha = LerpFloat(0.6f, 0.1f, ease);
+            tint = Lerp(mid, late, ease);
         }
         else
         {
             var p = Math.Clamp((elapsed - 3f) / Math.Max(duration - 3f, 0.5f), 0f, 1f);
-            alpha = 0.1f * (1f - p);
-            tint = new Color(1f, 0.3f, 0.05f);
+            var ease = p * p;
+            alpha = 0.1f * (1f - ease);
+            tint = Lerp(late, end, ease);
         }
 
         if (alpha <= 0.005f)
@@ -159,6 +200,16 @@ public sealed class ExplosionShockwaveOverlay : Overlay
         var color = new Color(tint.R, tint.G, tint.B, alpha);
         handle.UseShader(null);
         handle.DrawRect(args.WorldAABB, color);
+    }
+
+    private static Color ScaleRgb(Color c, float scale)
+    {
+        return new Color(c.R * scale, c.G * scale, c.B * scale);
+    }
+
+    private static float LerpFloat(float a, float b, float t)
+    {
+        return a + (b - a) * t;
     }
 
     private static Color Lerp(Color a, Color b, float t)

@@ -1,0 +1,114 @@
+# SPDX-FileCopyrightText: 2026 nikitosych <174215049+nikitosych@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: BaseWeaponBatterySmall
+  id: WeaponDebugBSA
+  name: ogłuszacz nuklearny
+  description: Z miłością, do stacji...
+  suffix: ABS, NIE MAPOWAĆ, MEGA NIEBEZPIECZNY
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Imperial/Objects/Weapons/Adminbuse/bsa.rsi
+    state: icon
+  - type: Gun
+    fireRate: 10
+    projectileSpeed: 30
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/laser_cannon2.ogg
+  - type: BatteryAmmoProvider
+    proto: BulletDebugBSA
+    fireCost: 1
+  - type: Battery
+    maxCharge: 3
+    startingCharge: 3
+
+- type: entity
+  parent: WeaponDebugBSA
+  id: WeaponDebugBSAPrecision
+  name: ogłuszacz nuklearny precyzyjny
+  description: Módl się, oby nie w ciebie.
+  suffix: ABS, Precision, NIE MAPOWAĆ
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: BatteryAmmoProvider
+    proto: BulletDebugBSAPrecision
+    fireCost: 1
+  - type: Battery
+    maxCharge: 10
+    startingCharge: 10
+
+- type: entity
+  id: BulletDebugBSA
+  name: pocisk artylerii bluespace
+  description: Na pewno umarłeś.
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+    layers:
+      - state: impact_laser_blue
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: BluespaceArtillery
+    maxIntensity: 175
+    intensitySlope: 5
+    totalIntensity: 5000000
+    maxTileBreak: 5000000
+  - type: FlyBySound
+    sound:
+      collection: EnergyMiss
+      params:
+        volume: 5
+  - type: PointLight
+    color: "#4FC3F7"
+    radius: 240
+    energy: 240
+
+- type: entity
+  parent: BulletDebugBSA
+  id: BulletDebugBSAPrecision
+  name: pocisk artylerii bluespace
+  description: Módl się.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Explosive
+    explosionType: BluespaceArtillery
+    maxIntensity: 175
+    intensitySlope: 10
+    totalIntensity: 19840
+    maxTileBreak: 500
+  - type: PointLight
+    color: "#4FC3F7"
+    radius: 150
+    energy: 150
+
+- type: entity
+  parent: ClothingBackpackDuffelCBURN
+  id: ClothingBackpackDuffelDSOWithBSA
+  name: torba ze śmiercią
+  description: Śliczny zestaw do wysadzenia całej stacji — lub tylko tego, kto na to zasłużył.
+  suffix: ABS, Debug
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponDebugBSA
+      - id: WeaponDebugBSAPrecision
+      - id: WeaponDebugBSAInstruction
+
+- type: entity
+  parent: Paper
+  id: WeaponDebugBSAInstruction
+  name: Instrukcja obsługi ABS
+  description: Papier zawierający zalecenia, które NIE są obowiązkowe, ale mogą uczynić aplikację piękniejszą.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Paper
+    content: text-instruction-bsa
+    stampState: paper_stamp-centcom
+    stampedBy:
+      - stampedColor: "#4d4d4d"
+        stampedName: special-operations-officer

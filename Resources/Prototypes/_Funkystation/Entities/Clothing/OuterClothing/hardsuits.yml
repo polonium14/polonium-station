@@ -3,12 +3,15 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 # Helldiver - salvage vendor kit
+# size is Huge so it fits ClothingBackpackDuffelSalvageHelldiver (HardsuitBase is Ginormous on wizden)
 - type: entity
   parent: ClothingOuterHardsuitGoliath
   id: ClothingOuterArmorHelldiver
   name: diving hardsuit
   description: A unique variant of the classic mining hardsuit, given to only the most dedicated of salvagers.
   components:
+  - type: Item
+    size: Huge
   - type: Sprite
     sprite: _Goobstation/Clothing/OuterClothing/Armor/helldiver.rsi
   - type: Clothing

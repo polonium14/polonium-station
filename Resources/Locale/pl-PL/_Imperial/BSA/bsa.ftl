@@ -13,8 +13,10 @@ text-instruction-bsa =
     
     Gdy muzyka się skończy, weź [color=yellow][bold]ogłuszacz nuklearny[/bold][/color] w rękę, aktywuj tryb bojowy i strzelaj z odległości około dwóch promów ewakuacyjnych w stacji.
     
+    Do punktowych uderzeń użyj [color=cyan][bold]ogłuszacza nuklearnego precyzyjnego[/bold][/color].
+    
     Jeśli twoim celem jest zestrzelenie promu, który próbuje uciec, poczekaj, aż wejdzie w przestrzeń Błyskawicy.
     Zysk.
     
-    Oj, właśnie, zapomniałam... Jeśli jesteś szarąfalą, nowicjuszem, dopiero co się zarejestrowałeś lub kobietą w ciąży, w sumie kimkolwiek, ale nie administratorem, to proszę, oddaj tę torbę z zabawką, papierem i ogłuszaczem nuklearnym najbliższemu administratorowi.".
+    Oj, właśnie, zapomniałam... Jeśli jesteś szarąfalą, nowicjuszem, dopiero co się zarejestrowałeś lub kobietą w ciąży, w sumie kimkolwiek, ale nie administratorem, to proszę, oddaj tę torbę z zabawką, papierem i ogłuszaczami najbliższemu administratorowi.".
     -Oficer Amelia-
