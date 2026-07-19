@@ -1,0 +1,11 @@
+- type: entity
+  parent: BaseGameRule
+  id: ExternalLockdown
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: StationEvent
+    startAnnouncement: station-event-external-lockdown-announcement
+    startAudio:
+      path: /Audio/_Polonium/Admeme/epsilon_lockdown.ogg
+    duration: 1
+  - type: ExternalLockdownRule
