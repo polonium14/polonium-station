@@ -25,13 +25,14 @@
         },
         {
             "label": "build (C# Dev Kit)",
-            "detail": "needs C# Dev Kit extention. use the (build) task instead if you dont have the extention.",
-            "type": "dotnet",
-            "task": "build",
-            "icon": {
-                "id": "build",
-                "color": "terminal.ansiBlue"
-            },
+            "detail": "Shell fallback of the C# Dev Kit build task. Prefer the 'build' task if you do not use C# Dev Kit.",
+            "command": "dotnet",
+            "type": "shell",
+            "args": [
+                "build",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:'ForceNoAlign;NoSummary'"
+            ],
             "group": {
                 "kind": "build"
             },
