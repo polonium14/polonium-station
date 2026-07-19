@@ -22,8 +22,10 @@ public sealed partial class BluespaceStrikeSystem : EntitySystem
     [Dependency] private AudioSystem _audio = default!;
     [Dependency] private ExplosionSystem _explosion = default!;
     [Dependency] private SharedMapSystem _map = default!;
+    [Dependency] private SharedTransformSystem _transform = default!;
 
     private readonly HashSet<BluespaceStrikeEui> _openEuis = new();
+    private readonly List<EntityUid> _toDetonate = new();
 
     public override void Initialize()
     {
@@ -80,7 +82,6 @@ public sealed partial class BluespaceStrikeSystem : EntitySystem
         var delay = TimeSpan.FromSeconds(delaySeconds);
         var fallDuration = TimeSpan.FromSeconds(BluespaceStrikeComponent.FallDurationSeconds);
 
-        comp.Epicenter = epicenter;
         comp.DetonateAt = now + delay;
         comp.SpawnFallingAt = now + delay - fallDuration;
         if (comp.SpawnFallingAt < now)
@@ -114,12 +115,15 @@ public sealed partial class BluespaceStrikeSystem : EntitySystem
 
     private void SpawnMarkers(EntityUid strike, BluespaceStrikeComponent comp, MapCoordinates epicenter)
     {
-        var radiusInt = (int)MathF.Ceiling(comp.Radius);
+        var markerRadius = MathF.Min(comp.Radius, BluespaceStrikeComponent.MaxMarkerRadius);
+        var radiusInt = (int)MathF.Ceiling(markerRadius);
+        var radiusSq = markerRadius * markerRadius;
+
         for (var x = -radiusInt; x <= radiusInt; x++)
         {
             for (var y = -radiusInt; y <= radiusInt; y++)
             {
-                if (x * x + y * y > comp.Radius * comp.Radius)
+                if (x * x + y * y > radiusSq)
                     continue;
 
                 var pos = epicenter.Position + new Vector2(x, y);
@@ -151,7 +155,7 @@ public sealed partial class BluespaceStrikeSystem : EntitySystem
             return;
 
         ent.Comp.FallingSpawned = true;
-        var incoming = Spawn(BluespaceStrikeComponent.IncomingPrototype, ent.Comp.Epicenter);
+        var incoming = Spawn(BluespaceStrikeComponent.IncomingPrototype, _transform.GetMapCoordinates(ent));
         ent.Comp.IncomingVisual = incoming;
 
         if (TryComp(incoming, out BluespaceStrikeIncomingComponent? incomingComp))
@@ -165,7 +169,7 @@ public sealed partial class BluespaceStrikeSystem : EntitySystem
 
     private void Detonate(Entity<BluespaceStrikeComponent> ent)
     {
-        var mapCoords = ent.Comp.Epicenter;
+        var mapCoords = _transform.GetMapCoordinates(ent);
         var intensity = ent.Comp.TotalIntensity;
         var slope = ent.Comp.IntensitySlope;
         var max = ent.Comp.MaxIntensity;
@@ -211,7 +215,7 @@ public sealed partial class BluespaceStrikeSystem : EntitySystem
         base.Update(frameTime);
 
         var now = _timing.CurTime;
-        var toDetonate = new List<EntityUid>();
+        _toDetonate.Clear();
         var query = EntityQueryEnumerator<BluespaceStrikeComponent>();
         while (query.MoveNext(out var uid, out var comp))
         {
@@ -219,10 +223,10 @@ public sealed partial class BluespaceStrikeSystem : EntitySystem
                 SpawnFallingVisual((uid, comp));
 
             if (now >= comp.DetonateAt)
-                toDetonate.Add(uid);
+                _toDetonate.Add(uid);
         }
 
-        foreach (var uid in toDetonate)
+        foreach (var uid in _toDetonate)
         {
             if (TryComp(uid, out BluespaceStrikeComponent? comp))
                 Detonate((uid, comp));

@@ -4,7 +4,6 @@
 
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
-using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
@@ -21,6 +20,7 @@ public sealed partial class BluespaceStrikeComponent : Component
     public const float DefaultSlope = 5f;
     public const float DefaultMaxIntensity = 100f;
     public const float FallDurationSeconds = 0.9f;
+    public const float MaxMarkerRadius = 100f;
 
     public const string ExplosionType = "BluespaceArtillery";
     public static readonly EntProtoId ControllerPrototype = "BluespaceStrikeController";
@@ -44,9 +44,6 @@ public sealed partial class BluespaceStrikeComponent : Component
 
     [DataField, AutoNetworkedField]
     public float MaxIntensity = DefaultMaxIntensity;
-
-    [ViewVariables]
-    public MapCoordinates Epicenter;
 
     [DataField]
     public List<EntityUid> Markers = new();

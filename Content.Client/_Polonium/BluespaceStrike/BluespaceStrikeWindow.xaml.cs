@@ -79,12 +79,18 @@ public sealed partial class BluespaceStrikeWindow : DefaultWindow
     {
         UpdateMapOptions();
 
-        if (!_entMan.TryGetComponent(_playerManager.LocalEntity, out TransformComponent? transform))
+        if (_playerManager.LocalEntity is not { } localEntity)
+            return;
+
+        if (!_entMan.TryGetComponent(localEntity, out TransformComponent? transform))
             return;
 
         _pausePreview = true;
-        MapOptions.Select(_mapData.IndexOf(transform.MapID));
-        (MapX.Value, MapY.Value) = _transform.GetMapCoordinates(_playerManager.LocalEntity!.Value, xform: transform).Position;
+        var mapIndex = _mapData.IndexOf(transform.MapID);
+        if (mapIndex >= 0)
+            MapOptions.Select(mapIndex);
+
+        (MapX.Value, MapY.Value) = _transform.GetMapCoordinates(localEntity, xform: transform).Position;
         _pausePreview = false;
 
         UpdatePreview();
@@ -104,8 +110,13 @@ public sealed partial class BluespaceStrikeWindow : DefaultWindow
         if (_mapData.Count == 0)
             return;
 
-        var coords = new MapCoordinates(new Vector2(MapX.Value, MapY.Value), _mapData[MapOptions.SelectedId]);
-        _eui.RequestPreviewData(coords, MathF.Max(0.1f, Radius.Value));
+        var selectedId = MapOptions.SelectedId;
+        if (selectedId < 0 || selectedId >= _mapData.Count)
+            return;
+
+        var coords = new MapCoordinates(new Vector2(MapX.Value, MapY.Value), _mapData[selectedId]);
+        var radius = Math.Clamp(Radius.Value, 0.1f, BluespaceStrikeComponent.MaxMarkerRadius);
+        _eui.RequestPreviewData(coords, radius);
     }
 
     private void SubmitButtonOnOnPressed(ButtonEventArgs args)
@@ -116,13 +127,18 @@ public sealed partial class BluespaceStrikeWindow : DefaultWindow
         if (_mapData.Count == 0)
             return;
 
+        var selectedId = MapOptions.SelectedId;
+        if (selectedId < 0 || selectedId >= _mapData.Count)
+            return;
+
         var delay = Math.Clamp(Delay.Value,
             BluespaceStrikeComponent.MinDelaySeconds,
             BluespaceStrikeComponent.MaxDelaySeconds);
         Delay.Value = delay;
 
-        var radius = MathF.Max(0.1f, Radius.Value);
-        var coords = new MapCoordinates(new Vector2(MapX.Value, MapY.Value), _mapData[MapOptions.SelectedId]);
+        var radius = Math.Clamp(Radius.Value, 0.1f, BluespaceStrikeComponent.MaxMarkerRadius);
+        Radius.Value = radius;
+        var coords = new MapCoordinates(new Vector2(MapX.Value, MapY.Value), _mapData[selectedId]);
         _eui.ConfirmStrike(coords, radius, delay, ShowMarkersAndSound.Pressed);
     }
 }

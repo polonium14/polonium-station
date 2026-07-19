@@ -84,8 +84,11 @@ public sealed class BluespaceStrikeEui : BaseEui
         if (station == null)
         {
             var stations = _station.GetStations();
-            if (stations.Count > 0)
-                station = stations[0];
+            foreach (var candidate in stations)
+            {
+                station = candidate;
+                break;
+            }
         }
 
         if (station == null)
