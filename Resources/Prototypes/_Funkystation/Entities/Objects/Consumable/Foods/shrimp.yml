@@ -7,7 +7,7 @@
 #2/27/25 today I have learned I am not to be trusted with terminals
 - type: entity
   name: Shreersh
-  parent: FoodMeatBase
+  parent: FoodMeatCookedBase
   id: FoodShrimpFried
   description: A shrimple meal that's easy to make by aspiring and expert chefs alike!
   components:
@@ -29,12 +29,23 @@
               Quantity: 20
             - ReagentId: Protein
               Quantity: 5
+      - type: Item
+        sprite: Objects/Consumable/Food/meat.rsi
+        size: Tiny
+        shape:
+        inhandVisuals:
+          left:
+          - state: generic-pink-inhand-left
+            color: orange
+          right:
+          - state: generic-pink-inhand-right
+            color: orange
 
 - type: entity
   name: Raw Shrimp
-  parent: FoodMeatBase
+  parent: FoodMeatRawBase
   id: FoodShrimpRaw
-  description: A Shmall piece of Shrimp that has yet to reach it's true potential. Sauté it with some butter!
+  description: A Shmall piece of Shrimp that has yet to reach its true potential. Sauté it with some butter!
   components:
       - type: Tag
         tags:
@@ -54,3 +65,14 @@
               Quantity: 20
             - ReagentId: Protein
               Quantity: 5
+      - type: Item
+        sprite: Objects/Consumable/Food/meat.rsi
+        size: Tiny
+        shape:
+        inhandVisuals:
+          left:
+          - state: generic-pink-inhand-left
+            color: #FFFFFF
+          right:
+          - state: generic-pink-inhand-right
+            color: #FFFFFF

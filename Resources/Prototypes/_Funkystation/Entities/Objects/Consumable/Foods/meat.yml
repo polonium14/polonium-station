@@ -10,7 +10,7 @@
   name: raw mystery meat
   parent: [FoodMeatRawBase, BaseSlicingRefinableFood]
   id: FoodMysteryMeat
-  description: Grinded-down organic bits and pieces, coagulated into a slab of ambiguous protein.
+  description: Ground-down organic bits and pieces, coagulated into a slab of ambiguous protein.
   components:
   - type: Sprite
     sprite: _Funkystation/Objects/Consumable/Food/meat.rsi
@@ -29,12 +29,21 @@
     graph: MysteryMeatSteak
     node: start
     defaultTarget: cooked mystery meat
+  - type: Item
+    sprite: Objects/Consumable/Food/meat.rsi
+    size: Tiny
+    shape:
+    inhandVisuals:
+      left:
+      - state: generic-pink-inhand-left
+      right:
+      - state: generic-pink-inhand-right
 
 # Cooked
 
 - type: entity
   name: cooked mystery meat
-  parent: [FoodMeatRawBase, BaseSlicingRefinableFood]
+  parent: [FoodMeatCookedBase, BaseSlicingRefinableFood]
   id: FoodMysteryMeatCooked
   description: A little more edible than when it was raw. Still just as ambiguous though.
   components:
@@ -52,9 +61,9 @@
       food:
         reagents:
         - ReagentId: Nutriment
-          Quantity: 5
+          Quantity: 20
         - ReagentId: Protein
-          Quantity: 5
+          Quantity: 10
   - type: ToolRefinable
     refineResult:
     - id: FoodMysteryCutletCooked
@@ -66,6 +75,17 @@
     entries:
       Burger: FoodMysteryMeatCooked
       Taco: FoodMysteryMeatCooked
+  - type: Item
+    sprite: Objects/Consumable/Food/meat.rsi
+    size: Tiny
+    shape:
+    inhandVisuals:
+      left:
+      - state: generic-pink-inhand-left
+        color: brown
+      right:
+      - state: generic-pink-inhand-right
+        color: brown
 
 # Cutlets
 
@@ -73,7 +93,7 @@
 
 - type: entity
   name: raw mystery cutlet
-  parent: FoodMeatBase
+  parent: FoodMeatCutletBase
   id: FoodMysteryCutlet
   description: This can probably pass for a slice of raw bacon if you squint.
   components:
@@ -98,12 +118,21 @@
     graph: MysteryCutlet
     node: start
     defaultTarget: cooked mystery cutlet
+  - type: Item
+    sprite: Objects/Consumable/Food/meat.rsi
+    size: Tiny
+    shape:
+    inhandVisuals:
+      left:
+      - state: generic-pink-inhand-left
+      right:
+      - state: generic-pink-inhand-right
 
 # Cooked
 
 - type: entity
   name: cooked mystery cutlet
-  parent: FoodMeatBase
+  parent: FoodMeatCutletCookedBase
   id: FoodMysteryCutletCooked
   description: This can probably pass for a slice of bacon if you squint.
   components:
@@ -121,7 +150,7 @@
       food:
         reagents:
         - ReagentId: Nutriment
-          Quantity: 2
+          Quantity: 4
         - ReagentId: Protein
           Quantity: 2
   - type: FoodSequenceElement
@@ -131,3 +160,14 @@
   - type: Construction
     graph: MysteryCutlet
     node: cooked mystery cutlet
+  - type: Item
+    sprite: Objects/Consumable/Food/meat.rsi
+    size: Tiny
+    shape:
+    inhandVisuals:
+      left:
+      - state: generic-pink-inhand-left
+        color: brown
+      right:
+      - state: generic-pink-inhand-right
+        color: brown
