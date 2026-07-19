@@ -77664,21 +77664,21 @@ entities:
     - type: Transform
       pos: 53.5,21.5
       parent: 2
-    - type: MaterialSilo
+    - type: OreSilo
       range: 16
   - uid: 15175
     components:
     - type: Transform
       pos: 40.5,26.5
       parent: 2
-    - type: MaterialSilo
+    - type: OreSilo
       range: 10
   - uid: 16113
     components:
     - type: Transform
       pos: 70.5,4.5
       parent: 2
-    - type: MaterialSilo
+    - type: OreSilo
       range: 8
   - uid: 16114
     components:

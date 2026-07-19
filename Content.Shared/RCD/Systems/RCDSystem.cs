@@ -66,6 +66,7 @@ public partial class RCDSystem : EntitySystem
     [Dependency] private ISharedAdminLogManager _adminLogger = default!;
     [Dependency] private ITileDefinitionManager _tileDefMan = default!;
     [Dependency] private FloorTileSystem _floors = default!;
+    [Dependency] private TileSystem _tile = default!;
     [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private SharedChargesSystem _charges = default!;
     [Dependency] private SharedDoAfterSystem _doAfter = default!;
@@ -344,12 +345,7 @@ public partial class RCDSystem : EntitySystem
 
         // Play audio and consume charges
         _audio.PlayPredicted(component.SuccessSound, uid, args.User);
-        // Goobstation - start
-        if (component.CachedPrototype.Mode == RcdMode.Deconstruct)
-            _charges.AddCharges((uid, CompOrNull<LimitedChargesComponent>(uid), null), args.Cost.Int() / 2);
-        else
-            _charges.AddCharges((uid, CompOrNull<LimitedChargesComponent>(uid), null), -args.Cost.Int());
-        // Goobstation - end
+        _charges.AddCharges((uid, CompOrNull<LimitedChargesComponent>(uid), null), -args.Cost.Int());
     }
 
     private void OnRCDconstructionGhostRotationEvent(RCDConstructionGhostRotationEvent ev, EntitySessionEventArgs session)
@@ -503,13 +499,31 @@ public partial class RCDSystem : EntitySystem
                 return false;
             }
 
+            var tileDef = _turf.GetContentTileDefinition(mapGridData.Tile);
+
             // Check rule: Tiles can't be identical
-            if (_turf.GetContentTileDefinition(mapGridData.Tile).ID == component.CachedPrototype.Prototype)
+            if (tileDef.ID == component.CachedPrototype.Prototype)
             {
                 if (popMsgs)
                     _popup.PopupClient(Loc.GetString("rcd-component-cannot-build-identical-tile"), uid, user);
 
                 return false;
+            }
+
+            // Check rule: Respect baseTurf and baseWhitelist (wizden)
+            if (component.CachedPrototype.Prototype != null &&
+                _tileDefMan.TryGetDefinition(component.CachedPrototype.Prototype, out var replacementDef))
+            {
+                var replacementContentDef = (ContentTileDefinition) replacementDef;
+
+                if (replacementContentDef.BaseTurf != tileDef.ID &&
+                    !replacementContentDef.BaseWhitelist.Contains(tileDef.ID))
+                {
+                    if (popMsgs)
+                        _popup.PopupClient(Loc.GetString("rcd-component-cannot-build-on-empty-tile-message"), uid, user);
+
+                    return false;
+                }
             }
 
             // Ensure that all construction rules shared between tiles and object are checked before exiting here
@@ -645,7 +659,10 @@ public partial class RCDSystem : EntitySystem
         switch (component.CachedPrototype.Mode)
         {
             case RcdMode.ConstructTile:
-                _mapSystem.SetTile(mapGridData.GridUid, mapGridData.Component, mapGridData.Position, new Tile(_tileDefMan[component.CachedPrototype.Prototype].TileId));
+                if (!_tileDefMan.TryGetDefinition(component.CachedPrototype.Prototype, out var tileDef))
+                    return;
+
+                _tile.ReplaceTile(mapGridData.Tile, (ContentTileDefinition) tileDef, mapGridData.GridUid, mapGridData.Component);
                 _adminLogger.Add(LogType.RCD, LogImpact.High, $"{ToPrettyString(user):user} used RCD to set grid: {mapGridData.GridUid} {mapGridData.Position} to {component.CachedPrototype.Prototype}");
                 break;
 
@@ -711,10 +728,9 @@ public partial class RCDSystem : EntitySystem
 
                 if (target == null)
                 {
-                    // Deconstruct tile (either converts the tile to lattice, or removes lattice)
-                    var tile = (_turf.GetContentTileDefinition(mapGridData.Tile).ID != "Lattice") ? new Tile(_tileDefMan["Lattice"].TileId) : Tile.Empty;
-                    _mapSystem.SetTile(mapGridData.GridUid, mapGridData.Component, mapGridData.Position, tile);
-                    _adminLogger.Add(LogType.RCD, LogImpact.High, $"{ToPrettyString(user):user} used RCD to set grid: {mapGridData.GridUid} tile: {mapGridData.Position} open to space");
+                    // Deconstruct tile, don't drop tile as item (wizden)
+                    if (_tile.DeconstructTile(mapGridData.Tile, spawnItem: false))
+                        _adminLogger.Add(LogType.RCD, LogImpact.High, $"{ToPrettyString(user):user} used RCD to set grid: {mapGridData.GridUid} tile: {mapGridData.Position} open to space");
                 }
                 else
                 {

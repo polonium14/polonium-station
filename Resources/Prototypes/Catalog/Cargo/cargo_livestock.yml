@@ -243,3 +243,13 @@
   cost: 5000
   category: cargoproduct-category-name-livestock
   group: market
+
+- type: cargoProduct
+  id: LivestockMeowl
+  icon:
+    sprite: _Funkystation/Mobs/Animals/meowl.rsi
+    state: icon
+  product: CrateNPCMeowl
+  cost: 5000
+  category: cargoproduct-category-name-livestock
+  group: market

@@ -22,6 +22,7 @@
       Blunt: 5
       Piercing: 5
   fireColor: Transparent
+  flash: false # Polonium
   tileBreakChance: [0, 0.5, 1]
   tileBreakIntensity: [0, 10, 30]
   tileBreakRerollReduction: 20
@@ -73,6 +74,7 @@
       Piercing: 6
       Structural: 20
   fireColor: Transparent
+  flash: false # Polonium
   tileBreakChance: [ 0, 0.5, 1 ]
   tileBreakIntensity: [ 1, 10, 15 ]
   tileBreakRerollReduction: 30
@@ -133,6 +135,7 @@
       Blunt: 7
       Piercing: 4
   fireColor: Transparent
+  flash: false # Polonium
   tileBreakChance: [0, 0.5, 1]
   tileBreakIntensity: [0, 10, 30]
   tileBreakRerollReduction: 20
@@ -187,3 +190,23 @@
   fireStates: 3
   fireStacks: 2
   temperature: 1500
+
+# Polonium: bluespace artillery explosion
+- type: explosion
+  id: BluespaceArtillery
+  damagePerIntensity:
+    types:
+      Heat: 30
+      Blunt: 30
+      Piercing: 20
+      Structural: 100
+  tileBreakChance: [ 0, 0.5, 1 ]
+  tileBreakIntensity: [ 0, 10, 30 ]
+  tileBreakRerollReduction: 10
+  intensityPerState: 20
+  lightColor: "#55AAFF"
+  flashColor: "#4FC3F7"
+  texturePath: /Textures/_Polonium/Effects/bluespace.rsi
+  fireStates: 1
+  fireStacks: 3
+  temperature: 2000
