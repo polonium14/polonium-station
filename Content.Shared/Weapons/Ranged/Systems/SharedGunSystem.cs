@@ -287,8 +287,6 @@ public abstract partial class SharedGunSystem : EntitySystem
         return result;
     }
 
-    protected abstract void Popup(string message, EntityUid? uid, EntityUid? user);
-
     public virtual void ShootProjectile(EntityUid uid, Vector2 direction, Vector2 gunVelocity, EntityUid? gunUid, EntityUid? user = null, float speed = ProjectileSpeed)
     {
         var physics = EnsureComp<PhysicsComponent>(uid);

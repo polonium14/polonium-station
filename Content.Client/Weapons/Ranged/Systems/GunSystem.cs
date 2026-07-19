@@ -299,14 +299,6 @@ public sealed partial class GunSystem : SharedGunSystem
             _sprite.SetVisible((uid, sprite), true);
     }
 
-    protected override void Popup(string message, EntityUid? uid, EntityUid? user)
-    {
-        if (uid == null || user == null || !Timing.IsFirstTimePredicted)
-            return;
-
-        PopupSystem.PopupEntity(message, uid.Value, user.Value);
-    }
-
     protected override void CreateEffect(
         EntityUid gunUid,
         MuzzleFlashEvent message,
@@ -504,8 +496,8 @@ public sealed partial class GunSystem : SharedGunSystem
     /// <summary>
     /// This Comparer takes a list of Entities that we can hit and orders them by which target the player is probably trying to shoot.
     /// We organize based on these criteria in this order:
-    /// alive means the entity has a MobState and is currently alive. We check it first since they typically shoot back.
     /// occluded is whether the cursor is above the sprite or just near it.
+    /// alive means the entity has a MobState and is currently alive.
     /// depth is the order in which sprites are layered, bigger number means its rendered above others.
     /// renderOrder is used to indicate if a sprite should be visually more important, typically this value is 0.
     /// bottom indicates which sprite is visually the lowest on the screen and therefore typically above other sprites.
@@ -517,14 +509,14 @@ public sealed partial class GunSystem : SharedGunSystem
         public int Compare((EntityUid clicked, bool alive, bool occluded, int depth, uint renderOrder, float bottom, float distance) x,
             (EntityUid clicked, bool alive, bool occluded, int depth, uint renderOrder, float bottom, float distance) y)
         {
-            var cmp = y.alive.CompareTo(x.alive);
+            var cmp = y.occluded.CompareTo(x.occluded);
+
             if (cmp != 0)
             {
                 return cmp;
             }
 
-            cmp = y.occluded.CompareTo(x.occluded);
-
+            cmp = y.alive.CompareTo(x.alive);
             if (cmp != 0)
             {
                 return cmp;

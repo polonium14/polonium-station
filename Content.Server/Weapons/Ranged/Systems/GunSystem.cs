@@ -93,8 +93,6 @@ public sealed partial class GunSystem : SharedGunSystem
         args.Price += price * ent.Comp.UnspawnedCount;
     }
 
-    protected override void Popup(string message, EntityUid? uid, EntityUid? user) { }
-
     protected override void CreateEffect(
         EntityUid gunUid,
         MuzzleFlashEvent message,

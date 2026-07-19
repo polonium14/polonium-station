@@ -15,7 +15,7 @@ public abstract partial class SharedNightVisionSystem : EntitySystem
     [Dependency] private InventorySystem _inventory = default!;
 
     [SubscribeLocalEvent]
-    private void OnStartup(Entity<NightVisionComponent> ent, ref ComponentStartup args)
+    private void OnStartup(Entity<NightVisionComponent> ent, ref MapInitEvent args)
     {
         if (ent.Comp.RelayOverlay)
             return;
@@ -25,7 +25,7 @@ public abstract partial class SharedNightVisionSystem : EntitySystem
     }
 
     [SubscribeLocalEvent]
-    private void OnRemove(Entity<NightVisionComponent> ent, ref ComponentRemove args)
+    private void OnRemove(Entity<NightVisionComponent> ent, ref ComponentShutdown args)
     {
         if (ent.Comp.RelayOverlay)
             return;

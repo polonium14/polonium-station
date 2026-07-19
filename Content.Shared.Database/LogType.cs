@@ -485,6 +485,11 @@ public enum LogType
     Connection = 104,
 
     /// <summary>
+    /// Silicon law changes.
+    /// </summary>
+    SiliconLaw = 105,
+
+    /// <summary>
     /// SecretPlus related game interactions.
     /// </summary>
     SecretPlus = 10001,
