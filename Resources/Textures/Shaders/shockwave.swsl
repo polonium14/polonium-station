@@ -1,26 +1,34 @@
+// Rewritten by ChatGPT
+
 uniform sampler2D SCREEN_TEXTURE;
-uniform highp vec2 center;       // epicenter in fragment-space pixels
-uniform highp float radius;      // current wavefront radius in pixels
-uniform highp float thickness;   // ring half-width in pixels
-uniform highp float warpStrength; // distortion magnitude (0..1 range typical)
 uniform highp vec2 renderScale;
+uniform lowp int count;
+
+uniform highp vec2[8] center;        // epicenter in fragment-space pixels
+uniform highp float[8] radius;       // current wavefront radius in pixels
+uniform highp float[8] thickness;    // ring half-width in pixels
+uniform highp float[8] warpStrength; // distortion magnitude
 
 void fragment()
 {
     highp vec2 frag = FRAGCOORD.xy;
-    highp vec2 delta = frag - center;
-    highp float dist = length(delta / renderScale);
+    highp vec2 displaced = frag;
 
-    highp float ringDist = abs(dist - radius);
+    for (int i = 0; i < 8 && i < count; i++) {
+        highp vec2 delta = frag - center[i];
+        highp float dist = length(delta / renderScale);
 
-    highp float mask = 1.0 - smoothstep(0.0, thickness, ringDist);
-    mask = pow(mask, 0.75);
+        highp float ringDist = abs(dist - radius[i]);
 
-    highp float sign_dir = dist < radius ? -1.0 : 1.0;
-    highp float warp = mask * warpStrength * sign_dir;
+        highp float mask = 1.0 - smoothstep(0.0, thickness[i], ringDist);
+        mask = pow(mask, 0.75);
 
-    highp vec2 dir = dist > 0.001 ? normalize(delta) : vec2(0.0, 1.0);
-    highp vec2 displaced = frag + dir * warp * renderScale;
+        highp float sign_dir = dist < radius[i] ? -1.0 : 1.0;
+        highp float warp = mask * warpStrength[i] * sign_dir;
+
+        highp vec2 dir = dist > 0.001 ? normalize(delta) : vec2(0.0, 1.0);
+        displaced += dir * warp * renderScale;
+    }
 
     COLOR = zTextureSpec(SCREEN_TEXTURE, displaced * SCREEN_PIXEL_SIZE);
 }

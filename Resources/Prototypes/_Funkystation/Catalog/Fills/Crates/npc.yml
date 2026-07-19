@@ -4,6 +4,17 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
+  id: CrateNPCMeowl
+  parent: CrateLivestock
+  name: meowl crate
+  description: A crate containing three of the deadliest beings known.
+  components:
+  - type: StorageFill
+    contents:
+      - id: MobMeowl
+        amount: 3
+
+- type: entity
   id: CrateNPCMiniDragonFriendly
   parent: CrateLivestock
   name: domesticated mini dragon crate

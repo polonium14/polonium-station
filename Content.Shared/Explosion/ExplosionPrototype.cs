@@ -75,6 +75,18 @@ public sealed partial class ExplosionPrototype : IPrototype
     public Color? FireColor;
 
     /// <summary>
+    ///     Whether high-intensity detonations play a full-screen flash overlay.
+    /// </summary>
+    [DataField]
+    public bool Flash = true;
+
+    /// <summary>
+    ///     Tint of the full-screen flash for high-intensity detonations.
+    /// </summary>
+    [DataField]
+    public Color FlashColor = Color.White;
+
+    /// <summary>
     ///     If an explosion finishes in less than this many iterations, play a small sound instead.
     /// </summary>
     /// <remarks>

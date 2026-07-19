@@ -421,7 +421,7 @@ public sealed partial class ExplosionSystem : SharedExplosionSystem
         CameraShake(iterationIntensity.Count * 4f, pos, queued.TotalIntensity);
 
         // PVS bypass shockwave distortion ring
-        SendShockwave(pos, iterationIntensity.Count, queued.TotalIntensity);
+        SendShockwave(pos, iterationIntensity.Count, queued.TotalIntensity, queued.Proto);
 
         //For whatever bloody reason, sound system requires ENTITY coordinates.
         var mapEntityCoords = _transformSystem.ToCoordinates(_map.GetMap(pos.MapId), pos);
@@ -500,9 +500,9 @@ public sealed partial class ExplosionSystem : SharedExplosionSystem
     /// <summary>
     /// Sends shockwave distortion events to all players in the visual range
     /// </summary>
-    private void SendShockwave(MapCoordinates epicenter, int iterationCount, float totalIntensity)
+    private void SendShockwave(MapCoordinates epicenter, int iterationCount, float totalIntensity, ExplosionPrototype proto)
     {
-        const float MinIntensityForShockwave = 150f;
+        const float MinIntensityForShockwave = 72f;
         const float NuclearIntensityThreshold = 50000f;
 
         if (totalIntensity < MinIntensityForShockwave)
@@ -515,13 +515,16 @@ public sealed partial class ExplosionSystem : SharedExplosionSystem
         {
             var filter = Filter.BroadcastMap(epicenter.MapId);
 
-            // 0 - flash
-            RaiseNetworkEvent(new ExplosionShockwaveEvent(
-                epicenter.MapId, pos, now,
-                maxRadiusTiles: 1f,
-                durationSeconds: 3f,
-                intensity: 0f,
-                flash: true), filter);
+            if (proto.Flash)
+            {
+                RaiseNetworkEvent(new ExplosionShockwaveEvent(
+                    epicenter.MapId, pos, now,
+                    maxRadiusTiles: 1f,
+                    durationSeconds: 3.95f,
+                    intensity: 0f,
+                    flash: true,
+                    flashColor: proto.FlashColor), filter);
+            }
 
             // 1 - fast inner distortion ring
             RaiseNetworkEvent(new ExplosionShockwaveEvent(

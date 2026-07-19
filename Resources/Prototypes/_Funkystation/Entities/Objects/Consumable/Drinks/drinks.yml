@@ -9,13 +9,11 @@
   id: DrinkEggnog
   suffix: eggnog
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: Eggnog
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Eggnog
+        Quantity: 30
   - type: Icon
     sprite: Objects/Consumable/Drinks/eggnogglass.rsi
     state: icon
@@ -25,13 +23,11 @@
   id: DrinkPeggnog
   suffix: peggnog
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: Peggnog
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Peggnog
+        Quantity: 30
 #brak .rsi
 
 - type: entity
@@ -39,13 +35,11 @@
   id: DrinkSpikedEggnog
   suffix: spiked eggnog
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: SpikedEggnog
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: SpikedEggnog
+        Quantity: 30
 #brak .rsi
 
 - type: entity
@@ -53,13 +47,11 @@
   id: DrinkTayquila
   suffix: tayquila
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: Tayquila
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Tayquila
+        Quantity: 30
   - type: Icon
     sprite: _Funkystation/Objects/Consumable/Drinks/tayquila.rsi
     state: icon
@@ -69,13 +61,11 @@
   id: DrinkChutzpah
   suffix: chutzpah
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: Chutzpah
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Chutzpah
+        Quantity: 30
 #brak .rsi
 
 - type: entity
@@ -83,13 +73,11 @@
   id: MargheritaDrink
   suffix: margherita
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: MargheritaDrink
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: MargheritaDrink
+        Quantity: 30
 #brak .rsi
 
 - type: entity
@@ -97,13 +85,11 @@
   id: PineappleMargherita
   suffix: pineapple margherita
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: PineappleMargherita
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: PineappleMargherita
+        Quantity: 30
 #brak .rsi
 
 - type: entity
@@ -111,13 +97,11 @@
   id: DrinkGlassAmaretto
   suffix: amaretto
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: Amaretto
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Amaretto
+        Quantity: 30
   - type: Icon
     sprite: Objects/Consumable/Drinks/amarettoglass.rsi
     state: icon
@@ -127,13 +111,11 @@
   id: DrinkGlassApplejack
   suffix: applejack
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: Applejack
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Applejack
+        Quantity: 30
   - type: Icon
     sprite: Objects/Consumable/Drinks/applejack.rsi
     state: icon
@@ -143,13 +125,11 @@
   id: DrinkGlassBitters
   suffix: bitters
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: Bitters
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Bitters
+        Quantity: 30
   - type: Icon
     sprite: Objects/Consumable/Drinks/bittersglass.rsi
     state: icon
@@ -159,13 +139,11 @@
   id: DrinkGlassCremeDeCacao
   suffix: creme de cacao
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: CremeDeCacao
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: CremeDeCacao
+        Quantity: 30
   - type: Icon
     sprite: Objects/Consumable/Drinks/cremedecacaoglass.rsi
     state: icon
@@ -175,13 +153,11 @@
   id: DrinkGlassCremeDeMenthe
   suffix: creme de menthe
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: CremeDeMenthe
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: CremeDeMenthe
+        Quantity: 30
   - type: Icon
     sprite: Objects/Consumable/Drinks/cremedementheglass.rsi
     state: icon
@@ -191,13 +167,11 @@
   id: DrinkGlassFernet
   suffix: fernet
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: Fernet
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Fernet
+        Quantity: 30
   - type: Icon
     sprite: Objects/Consumable/Drinks/fernetglass.rsi
     state: icon
@@ -207,13 +181,11 @@
   id: DrinkGlassHakkaMate
   suffix: hakka mate
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: HakkaMate
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: HakkaMate
+        Quantity: 30
   - type: Icon
     sprite: Objects/Consumable/Drinks/hakkamate.rsi
     state: icon
@@ -223,13 +195,11 @@
   id: DrinkGlassMelonSoda
   suffix: melon soda
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: MelonSoda
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: MelonSoda
+        Quantity: 30
   - type: Icon
     sprite: Objects/Consumable/Drinks/melonsoda.rsi
     state: icon
@@ -239,13 +209,11 @@
   id: DrinkGlassNavyRum
   suffix: navy rum
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: NavyRum
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: NavyRum
+        Quantity: 30
   - type: Icon
     sprite: Objects/Consumable/Drinks/navyrumglass.rsi
     state: icon
@@ -255,13 +223,11 @@
   id: DrinkGlassRiceBeer
   suffix: rice beer
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: RiceBeer
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: RiceBeer
+        Quantity: 30
   - type: Icon
     sprite: Objects/Consumable/Drinks/ricebeerglass.rsi
     state: icon
@@ -271,13 +237,11 @@
   id: DrinkGlassShochu
   suffix: shochu
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: Shochu
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Shochu
+        Quantity: 30
   - type: Icon
     sprite: Objects/Consumable/Drinks/shochuglass.rsi
     state: icon
@@ -287,13 +251,11 @@
   id: DrinkGlassTripleSec
   suffix: triple sec
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: TripleSec
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: TripleSec
+        Quantity: 30
   - type: Icon
     sprite: Objects/Consumable/Drinks/triplesecglass.rsi
     state: icon
@@ -303,13 +265,11 @@
   id: DrinkGlass24VoltEnergy
   suffix: 24 volt energy
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: 24VoltEnergy
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: 24VoltEnergy
+        Quantity: 30
 # 24volt energy w szkle nie posiada .rsi
 
 - type: entity
@@ -317,13 +277,11 @@
   id: DrinkGlassVoltaicYellowWine
   suffix: voltaic yellow wine
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: VoltaicYellowWine
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: VoltaicYellowWine
+        Quantity: 30
   - type: Icon
     sprite: Objects/Consumable/Drinks/voltaicyellowwineglass.rsi
     state: icon
@@ -333,13 +291,11 @@
   id: DrinkGlassAlexander
   suffix: alexander
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: Alexander
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Alexander
+        Quantity: 30
   - type: Icon
     sprite: _Funkystation/Objects/Consumable/Drinks/alexander.rsi
     state: icon
@@ -349,13 +305,11 @@
   id: DrinkGlassAmarettoAlexander
   suffix: amaretto alexander
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: AmarettoAlexander
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: AmarettoAlexander
+        Quantity: 30
   - type: Icon
     sprite: _Funkystation/Objects/Consumable/Drinks/amarettoalexander.rsi
     state: icon
@@ -365,13 +319,11 @@
   id: DrinkGlassAmarettoSour
   suffix: amaretto sour
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: AmarettoSour
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: AmarettoSour
+        Quantity: 30
   - type: Icon
     sprite: _Funkystation/Objects/Consumable/Drinks/amarettosour.rsi
     state: icon
@@ -381,13 +333,11 @@
   id: DrinkGlassAmaterasu
   suffix: amaterasu
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: Amaterasu
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Amaterasu
+        Quantity: 30
   - type: Icon
     sprite: _Funkystation/Objects/Consumable/Drinks/amaterasu.rsi
     state: icon
@@ -397,13 +347,11 @@
   id: DrinkGlassBanzaiTi
   suffix: banzai-tī
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: BanzaiTi
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: BanzaiTi
+        Quantity: 30
   - type: Icon
     sprite: _Funkystation/Objects/Consumable/Drinks/banzaiti.rsi
     state: icon
@@ -413,13 +361,11 @@
   id: DrinkGlassTripleCitrus
   suffix: triple citrus
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: TripleCitrus
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: TripleCitrus
+        Quantity: 30
   - type: Icon
     sprite: _Funkystation/Objects/Consumable/Drinks/triplecitrus.rsi
     state: icon
@@ -429,13 +375,11 @@
   id: DrinkGlassRootMintBrew
   suffix: root mint brew
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: RootMintBrew
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: RootMintBrew
+        Quantity: 30
   - type: Icon
     sprite: _Funkystation/Objects/Consumable/Drinks/rootmintbrew.rsi
     state: icon
@@ -445,13 +389,11 @@
   id: DrinkGlassBetweenTheSheets
   suffix: between the sheets
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: BetweenTheSheets
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: BetweenTheSheets
+        Quantity: 30
   - type: Icon
     sprite: _Funkystation/Objects/Consumable/Drinks/betweenthesheets.rsi
     state: icon
@@ -461,13 +403,11 @@
   id: DrinkGlassBittersAndSoda
   suffix: bitters and soda
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: BittersAndSoda
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: BittersAndSoda
+        Quantity: 30
   - type: Icon
     sprite: _Funkystation/Objects/Consumable/Drinks/bittersandsoda.rsi
     state: icon
@@ -477,13 +417,11 @@
   id: DrinkGlassBlankPaper
   suffix: blank paper
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: BlankPaper
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: BlankPaper
+        Quantity: 30
   - type: Icon
     sprite: _Funkystation/Objects/Consumable/Drinks/blankpaper.rsi
     state: icon
@@ -493,13 +431,11 @@
   id: DrinkGlassBlueBlazer
   suffix: blue blazer
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: BlueBlazer
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: BlueBlazer
+        Quantity: 30
   - type: Icon
     sprite: _Funkystation/Objects/Consumable/Drinks/blueblazer.rsi
     state: icon
@@ -509,13 +445,11 @@
   id: DrinkGlassBosozoku
   suffix: bōsōzoku
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: Bosozoku
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Bosozoku
+        Quantity: 30
   - type: Icon
     sprite: _Funkystation/Objects/Consumable/Drinks/bosozoku.rsi
     state: icon
@@ -525,13 +459,11 @@
   id: DrinkGlassBrancaMenta
   suffix: branca menta
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: BrancaMenta
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: BrancaMenta
+        Quantity: 30
   - type: Icon
     sprite: _Funkystation/Objects/Consumable/Drinks/brancamenta.rsi
     state: icon
@@ -541,13 +473,11 @@
   id: DrinkGlassBugSpray
   suffix: bug spray
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: BugSpray
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: BugSpray
+        Quantity: 30
   - type: Icon
     sprite: _Funkystation/Objects/Consumable/Drinks/bugspray.rsi
     state: icon
@@ -557,13 +487,11 @@
   id: DrinkGlassCreviceSpike
   suffix: crevice spike
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: CreviceSpike
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: CreviceSpike
+        Quantity: 30
   - type: Icon
     sprite: _Funkystation/Objects/Consumable/Drinks/crevicespike.rsi
     state: icon
@@ -573,13 +501,11 @@
   id: DrinkGlassFringeWeaver
   suffix: fringe weaver
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: FringeWeaver
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: FringeWeaver
+        Quantity: 30
   - type: Icon
     sprite: _Funkystation/Objects/Consumable/Drinks/fringeweaver.rsi
     state: icon
@@ -589,13 +515,11 @@
   id: DrinkGlassFourBit
   suffix: four bit
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: FourBit
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: FourBit
+        Quantity: 30
   - type: Icon
     sprite: _Funkystation/Objects/Consumable/Drinks/fourbit.rsi
     state: icon
@@ -605,13 +529,11 @@
   id: DrinkGlassMauiSunrise
   suffix: maui sunrise
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: MauiSunrise
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: MauiSunrise
+        Quantity: 30
   - type: Icon
     sprite: _Funkystation/Objects/Consumable/Drinks/mauisunrise.rsi
     state: icon
@@ -621,13 +543,11 @@
   id: DrinkGlassQuadrupleSec
   suffix: quadruple sec
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: QuadrupleSec
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: QuadrupleSec
+        Quantity: 30
   - type: Icon
     sprite: _Funkystation/Objects/Consumable/Drinks/quadruplesec.rsi
     state: icon
@@ -637,13 +557,11 @@
   id: DrinkGlassNekomimosa
   suffix: nekomimosa
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: Nekomimosa
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Nekomimosa
+        Quantity: 30
   - type: Icon
     sprite: _Funkystation/Objects/Consumable/Drinks/nekomimosa.rsi
     state: icon
@@ -653,13 +571,11 @@
   id: DrinkGlassRedCityAM
   suffix: red city AM
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: RedCityAM
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: RedCityAM
+        Quantity: 30
   - type: Icon
     sprite: _Funkystation/Objects/Consumable/Drinks/redcityam.rsi
     state: icon
@@ -669,13 +585,11 @@
   id: DrinkGlassSentaiQuencha
   suffix: sentai quencha
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: SentaiQuencha
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: SentaiQuencha
+        Quantity: 30
   - type: Icon
     sprite: _Funkystation/Objects/Consumable/Drinks/sentaiquencha.rsi
     state: icon
@@ -685,13 +599,11 @@
   id: DrinkGlassUtilityPole
   suffix: utility pole
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: UtilityPole
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: UtilityPole
+        Quantity: 30
   - type: Icon
     sprite: _Funkystation/Objects/Consumable/Drinks/utilitypole.rsi
     state: icon
@@ -701,13 +613,11 @@
   id: DrinkGlassWizzFizz
   suffix: wizz fizz
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: WizzFizz
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: WizzFizz
+        Quantity: 30
   - type: Icon
     sprite: _Funkystation/Objects/Consumable/Drinks/wizzfizz.rsi
     state: icon
@@ -717,15 +627,13 @@
   id: DrinkGlassAdmiralty
   suffix: admiralty
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: Admiralty
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Admiralty
+        Quantity: 30
   - type: Icon
-    sprite: _Funkystation/Objects/Consumable/Drinks/admirality.rsi
+    sprite: _Funkystation/Objects/Consumable/Drinks/admiralty.rsi
     state: icon
 
 - type: entity
@@ -733,13 +641,11 @@
   id: DrinkGlassLongJohnSilver
   suffix: long john silver
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: LongJohnSilver
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: LongJohnSilver
+        Quantity: 30
   - type: Icon
     sprite: _Funkystation/Objects/Consumable/Drinks/longjohnsilver.rsi
     state: icon
@@ -749,13 +655,11 @@
   id: DrinkGlassLonghaul
   suffix: longhaul
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: LongHaul
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: LongHaul
+        Quantity: 30
   - type: Icon
     sprite: _Funkystation/Objects/Consumable/Drinks/longhaul.rsi
     state: icon
@@ -765,13 +669,11 @@
   id: DrinkGlassTropicalStorm
   suffix: tropical storm
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: TropicalStorm
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: TropicalStorm
+        Quantity: 30
   - type: Icon
     sprite: _Funkystation/Objects/Consumable/Drinks/tropicalstorm.rsi
     state: icon

@@ -659,20 +659,19 @@
   name: "Wernon triple sec"
   description: You don't need to be a member of security to enjoy this bottle of Wernon triple sec. May or may not be triple-distilled, depending on who you ask.
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        reagents:
-        - ReagentId: TripleSec
-          Quantity: 100
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: TripleSec
+        Quantity: 120
   - type: Label
     currentLabel: reagent-name-triple-sec
   - type: Sprite
     sprite: Objects/Consumable/Drinks/triplesecbottle.rsi
   - type: Sealable
   - type: SolutionContainerVisuals
-    maxFillLevels: 5
-    fillBaseName: fill-
+    inHandsMaxFillLevels: 0
+    inHandsFillBaseName: null
 
 - type: entity
   parent: [DrinkVisualsAll, DrinkBottleGlassBaseFull]
@@ -680,20 +679,20 @@
   name: Pride of the Empire navy-strength rum
   description: By King George, this must be the finest bottle of white-rum that the seven seas, no, the galaxy has ever seen! One glass, and you'll be screaming 'Tally ho!' and 'By Caesar's Ghost!'.
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        reagents:
-        - ReagentId: NavyRum
-          Quantity: 100
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: NavyRum
+        Quantity: 120
   - type: Label
     currentLabel: reagent-name-navy-rum
   - type: Sprite
     sprite: Objects/Consumable/Drinks/navyrumbottle.rsi
   - type: Sealable
   - type: SolutionContainerVisuals
+    inHandsMaxFillLevels: 0
+    inHandsFillBaseName: null
     maxFillLevels: 4
-    fillBaseName: fill-
 
 - type: entity
   parent: [DrinkVisualsAll, DrinkBottleGlassBaseFull]
@@ -701,20 +700,20 @@
   name: Rossi Fernet
   description: A bottle of power, jaw-punching Fernet so bitter it feels like it's stabbing your tongue. Drinking this by itself isn't advised by at least several drink agencies.
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        reagents:
-        - ReagentId: Fernet
-          Quantity: 100
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Fernet
+        Quantity: 120
   - type: Label
     currentLabel: reagent-name-fernet
   - type: Sprite
     sprite: Objects/Consumable/Drinks/fernetbottle.rsi
   - type: Sealable
   - type: SolutionContainerVisuals
+    inHandsMaxFillLevels: 0
+    inHandsFillBaseName: null
     maxFillLevels: 4
-    fillBaseName: fill-
 
 - type: entity
   parent: [DrinkVisualsAllFilled, DrinkBottleGlassBaseFull]
@@ -722,17 +721,19 @@
   name: Andromeda Creme de Cacao
   description: A bottle of Andromeda chocolate liqueur. Despite the chocolate it contains no dairy.
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        reagents:
-        - ReagentId: CremeDeCacao
-          Quantity: 100
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: CremeDeCacao
+        Quantity: 120
   - type: Label
     currentLabel: reagent-name-creme-de-cacao
   - type: Sprite
     sprite: Objects/Consumable/Drinks/cremedecacaobottle.rsi
   - type: Sealable
+  - type: SolutionContainerVisuals
+    inHandsMaxFillLevels: 0
+    inHandsFillBaseName: null
 
 - type: entity
   parent: [DrinkVisualsAll, DrinkBottleGlassBaseFull]
@@ -740,20 +741,20 @@
   name: Mancini Amaretto
   description: A bottle of Mancini Amaretto. Don't worry, the almond taste isn't from cyanide. Hopefully.
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        reagents:
-        - ReagentId: Amaretto
-          Quantity: 100
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Amaretto
+        Quantity: 120
   - type: Label
     currentLabel: reagent-name-amaretto
   - type: Sprite
     sprite: Objects/Consumable/Drinks/amarettobottle.rsi
   - type: Sealable
   - type: SolutionContainerVisuals
+    inHandsMaxFillLevels: 0
+    inHandsFillBaseName: null
     maxFillLevels: 4
-    fillBaseName: fill-
 
 - type: entity
   parent: [DrinkVisualsAll, DrinkBottleGlassBaseFull]
@@ -761,20 +762,20 @@
   name: "Hādohittā Premium shochu"
   description: Similar to sake, but a lot stronger. This particular brand appears to be rice shochu.
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        reagents:
-        - ReagentId: Shochu
-          Quantity: 100
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Shochu
+        Quantity: 120
   - type: Label
     currentLabel: reagent-name-shochu
   - type: Sprite
     sprite: Objects/Consumable/Drinks/shochubottle.rsi
   - type: Sealable
   - type: SolutionContainerVisuals
+    inHandsMaxFillLevels: 0
+    inHandsFillBaseName: null
     maxFillLevels: 3
-    fillBaseName: fill-
 
 - type: entity
   parent: [DrinkVisualsOpenable, DrinkBottleGlassBaseFull]
@@ -782,12 +783,11 @@
   name: Epiolos' Old-Fashioned Authentic bitters
   description: A bottle which, despite being produced in the past month, looks like it was made in 1904.
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        reagents:
-        - ReagentId: Bitters
-          Quantity: 100
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Bitters
+        Quantity: 120
   - type: Sprite
     sprite: Objects/Consumable/Drinks/bittersbottle.rsi
   - type: Sealable
@@ -800,20 +800,19 @@
   name: Kaze rice beer
   description: A bottle of rice beer made from rice, as opposed to all the other grains and crops they could've used. When will this beer-making stop!?
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        reagents:
-        - ReagentId: RiceBeer
-          Quantity: 100
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: RiceBeer
+        Quantity: 120
   - type: Label
     currentLabel: reagent-name-rice-beer
   - type: Sprite
     sprite: Objects/Consumable/Drinks/ricebeerbottle.rsi
   - type: Sealable
   - type: SolutionContainerVisuals
-    maxFillLevels: 5
-    fillBaseName: fill-
+    inHandsMaxFillLevels: 0
+    inHandsFillBaseName: null
 
 - type: entity
   parent: [DrinkVisualsAllFilled, DrinkBottleGlassBaseFull]
@@ -821,17 +820,19 @@
   name: Andromeda Creme de Menthe
   description: A bottle of Andromeda mint liqueur, legally guaranteed to put a spring in your step as per the Andromeda Corporation Code of Conduct.
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        reagents:
-        - ReagentId: CremeDeMenthe
-          Quantity: 100
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: CremeDeMenthe
+        Quantity: 120
   - type: Label
     currentLabel: reagent-name-creme-de-menthe
   - type: Sprite
     sprite: Objects/Consumable/Drinks/cremedementhebottle.rsi
   - type: Sealable
+  - type: SolutionContainerVisuals
+    inHandsMaxFillLevels: 0
+    inHandsFillBaseName: null
 
 - type: entity
   parent: [DrinkVisualsAll, DrinkBottleGlassBaseFull]
@@ -839,20 +840,61 @@
   name: "Arc-Flash voltaic yellow wine"
   description: Arc-Flash yellow wine, to put a zap in your step. Is it you, or does the air feel statically charged?
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        reagents:
-        - ReagentId: VoltaicYellowWine
-          Quantity: 100
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: VoltaicYellowWine
+        Quantity: 120
   - type: Label
     currentLabel: reagent-name-voltaic-yellow-wine
   - type: Sprite
     sprite: Objects/Consumable/Drinks/voltaicyellowwinebottle.rsi
   - type: Sealable
   - type: SolutionContainerVisuals
+    inHandsMaxFillLevels: 0
+    inHandsFillBaseName: null
     maxFillLevels: 4
-    fillBaseName: fill-
 
+- type: entity
+  parent: [DrinkVisualsAll, DrinkBottleGlassBaseFull]
+  id: DrinkApplejackBottleFull
+  name: Buckin' Bronco's Applejack
+  description: A bottle of apple brandy. Not as sweet as you might expect.
+  components:
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Applejack
+        Quantity: 120
+  - type: Label
+    currentLabel: reagent-name-applejack
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/alco-bottle.rsi
+    layers:
+    - state: icon_red
+      map: ["enum.OpenableVisuals.Layer"]
+    - state: fill-1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+  - type: SolutionContainerVisuals
+    maxFillLevels: 6
 
-
+- type: entity
+  parent: [DrinkVisualsAll, DrinkBottleGlassBaseFull]
+  id: DrinkCreamOfCoconutBottleFull
+  name: Andromeda Creme de Coconut
+  description: A coconut liqueur for smooth, creamy, tropical drinks.
+  components:
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: CreamOfCoconut
+        Quantity: 120
+  - type: Label
+    currentLabel: reagent-name-cream-of-coconut
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/cremedecoconutbottle.rsi
+  - type: Sealable
+  - type: SolutionContainerVisuals
+    inHandsMaxFillLevels: 0
+    inHandsFillBaseName: null

@@ -45,6 +45,7 @@ public sealed partial class ExplosionShockwaveSystem : EntitySystem
             DurationSeconds = ev.DurationSeconds,
             Intensity = ev.Intensity,
             Flash = ev.Flash,
+            FlashColor = ev.FlashColor,
         });
 
         EnsureOverlay();
@@ -91,5 +92,6 @@ public sealed partial class ExplosionShockwaveSystem : EntitySystem
         public float DurationSeconds;
         public float Intensity;
         public bool Flash;
+        public Color FlashColor;
     }
 }
