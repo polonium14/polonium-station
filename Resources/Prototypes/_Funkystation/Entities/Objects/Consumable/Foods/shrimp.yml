@@ -72,7 +72,7 @@
         inhandVisuals:
           left:
           - state: generic-pink-inhand-left
-            color: #FFFFFF
+            color: "#FFFFFF"
           right:
           - state: generic-pink-inhand-right
-            color: #FFFFFF
+            color: "#FFFFFF"
