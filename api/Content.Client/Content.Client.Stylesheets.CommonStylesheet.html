@@ -1,0 +1,1467 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class CommonStylesheet
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class CommonStylesheet
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Content.Client.Stylesheets.CommonStylesheet">
+  
+  
+  <h1 id="Content_Client_Stylesheets_CommonStylesheet" data-uid="Content.Client.Stylesheets.CommonStylesheet" class="text-break">Class CommonStylesheet
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="Content.Client.Stylesheets.BaseStylesheet.html">BaseStylesheet</a></div>
+    <div class="level2"><a class="xref" href="Content.Client.Stylesheets.PalettedStylesheet.html">PalettedStylesheet</a></div>
+    <div class="level3"><span class="xref">CommonStylesheet</span></div>
+      <div class="level4"><a class="xref" href="Content.Client.Stylesheets.Stylesheets.NanotrasenStylesheet.html">NanotrasenStylesheet</a></div>
+      <div class="level4"><a class="xref" href="Content.Client.Stylesheets.Stylesheets.SystemStylesheet.html">SystemStylesheet</a></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Content.Client.Stylesheets.SheetletConfigs.IButtonConfig.html">IButtonConfig</a></div>
+    <div><a class="xref" href="Content.Client.Stylesheets.SheetletConfigs.IWindowConfig.html">IWindowConfig</a></div>
+    <div><a class="xref" href="Content.Client.Stylesheets.SheetletConfigs.IIconConfig.html">IIconConfig</a></div>
+    <div><a class="xref" href="Content.Client.Stylesheets.SheetletConfigs.ITabContainerConfig.html">ITabContainerConfig</a></div>
+    <div><a class="xref" href="Content.Client.Stylesheets.SheetletConfigs.ISliderConfig.html">ISliderConfig</a></div>
+    <div><a class="xref" href="Content.Client.Stylesheets.SheetletConfigs.IRadialMenuConfig.html">IRadialMenuConfig</a></div>
+    <div><a class="xref" href="Content.Client.Stylesheets.SheetletConfigs.IPlaceholderConfig.html">IPlaceholderConfig</a></div>
+    <div><a class="xref" href="Content.Client.Stylesheets.SheetletConfigs.ITooltipConfig.html">ITooltipConfig</a></div>
+    <div><a class="xref" href="Content.Client.Stylesheets.SheetletConfigs.IPanelConfig.html">IPanelConfig</a></div>
+    <div><a class="xref" href="Content.Client.Stylesheets.SheetletConfigs.INanoHeadingConfig.html">INanoHeadingConfig</a></div>
+    <div><a class="xref" href="Content.Client.Stylesheets.SheetletConfigs.ILineEditConfig.html">ILineEditConfig</a></div>
+    <div><a class="xref" href="Content.Client.Stylesheets.SheetletConfigs.IStripebackConfig.html">IStripebackConfig</a></div>
+    <div><a class="xref" href="Content.Client.Stylesheets.ISheetletConfig.html">ISheetletConfig</a></div>
+    <div><a class="xref" href="Content.Client.Stylesheets.IStyleResources.html">IStyleResources</a></div>
+    <div><a class="xref" href="Content.Client.Stylesheets.SheetletConfigs.ICheckboxConfig.html">ICheckboxConfig</a></div>
+  </div>
+  <div class="inheritedMembers">
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Content.Client.Stylesheets.html">Content.Client.Stylesheets</a></h6>
+  <h6><strong>Assembly</strong>: Content.Client.dll</h6>
+  <h5 id="Content_Client_Stylesheets_CommonStylesheet_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class CommonStylesheet : PalettedStylesheet, IButtonConfig, IWindowConfig, IIconConfig, ITabContainerConfig, ISliderConfig, IRadialMenuConfig, IPlaceholderConfig, ITooltipConfig, IPanelConfig, INanoHeadingConfig, ILineEditConfig, IStripebackConfig, ISheetletConfig, IStyleResources, ICheckboxConfig</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Client_Stylesheets_CommonStylesheet__ctor_System_Object_.md&amp;value=---%0Auid%3A%20Content.Client.Stylesheets.CommonStylesheet.%23ctor(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Client/Stylesheets/CommonStylesheet.cs/#L14">View Source</a>
+  </span>
+  <a id="Content_Client_Stylesheets_CommonStylesheet__ctor_" data-uid="Content.Client.Stylesheets.CommonStylesheet.#ctor*"></a>
+  <h4 id="Content_Client_Stylesheets_CommonStylesheet__ctor_System_Object_" data-uid="Content.Client.Stylesheets.CommonStylesheet.#ctor(System.Object)">CommonStylesheet(Object)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected CommonStylesheet(object config)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">config</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Content_Client_Stylesheets_CommonStylesheet__ctor_System_Object__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This constructor will not access any virtual or abstract properties, so you can set them from your config.</p>
+</div>
+  <h3 id="eii">Explicit Interface Implementations
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IButtonConfig_BaseButtonPath.md&amp;value=---%0Auid%3A%20Content.Client.Stylesheets.CommonStylesheet.Content%23Client%23Stylesheets%23SheetletConfigs%23IButtonConfig%23BaseButtonPath%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Client/Stylesheets/CommonStylesheet.cs/#L59">View Source</a>
+  </span>
+  <a id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IButtonConfig_BaseButtonPath_" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#IButtonConfig#BaseButtonPath*"></a>
+  <h4 id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IButtonConfig_BaseButtonPath" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#IButtonConfig#BaseButtonPath">IButtonConfig.BaseButtonPath</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ResPath IButtonConfig.BaseButtonPath { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Utility.ResPath</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IButtonConfig_ButtonPalette.md&amp;value=---%0Auid%3A%20Content.Client.Stylesheets.CommonStylesheet.Content%23Client%23Stylesheets%23SheetletConfigs%23IButtonConfig%23ButtonPalette%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Client/Stylesheets/CommonStylesheet.cs/#L72">View Source</a>
+  </span>
+  <a id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IButtonConfig_ButtonPalette_" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#IButtonConfig#ButtonPalette*"></a>
+  <h4 id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IButtonConfig_ButtonPalette" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#IButtonConfig#ButtonPalette">IButtonConfig.ButtonPalette</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ColorPalette IButtonConfig.ButtonPalette { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ColorPalette</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IButtonConfig_MonotoneBaseButtonPath.md&amp;value=---%0Auid%3A%20Content.Client.Stylesheets.CommonStylesheet.Content%23Client%23Stylesheets%23SheetletConfigs%23IButtonConfig%23MonotoneBaseButtonPath%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Client/Stylesheets/CommonStylesheet.cs/#L67">View Source</a>
+  </span>
+  <a id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IButtonConfig_MonotoneBaseButtonPath_" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#IButtonConfig#MonotoneBaseButtonPath*"></a>
+  <h4 id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IButtonConfig_MonotoneBaseButtonPath" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#IButtonConfig#MonotoneBaseButtonPath">IButtonConfig.MonotoneBaseButtonPath</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ResPath IButtonConfig.MonotoneBaseButtonPath { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Utility.ResPath</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IButtonConfig_MonotoneOpenBothButtonPath.md&amp;value=---%0Auid%3A%20Content.Client.Stylesheets.CommonStylesheet.Content%23Client%23Stylesheets%23SheetletConfigs%23IButtonConfig%23MonotoneOpenBothButtonPath%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Client/Stylesheets/CommonStylesheet.cs/#L70">View Source</a>
+  </span>
+  <a id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IButtonConfig_MonotoneOpenBothButtonPath_" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#IButtonConfig#MonotoneOpenBothButtonPath*"></a>
+  <h4 id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IButtonConfig_MonotoneOpenBothButtonPath" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#IButtonConfig#MonotoneOpenBothButtonPath">IButtonConfig.MonotoneOpenBothButtonPath</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ResPath IButtonConfig.MonotoneOpenBothButtonPath { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Utility.ResPath</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IButtonConfig_MonotoneOpenLeftButtonPath.md&amp;value=---%0Auid%3A%20Content.Client.Stylesheets.CommonStylesheet.Content%23Client%23Stylesheets%23SheetletConfigs%23IButtonConfig%23MonotoneOpenLeftButtonPath%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Client/Stylesheets/CommonStylesheet.cs/#L68">View Source</a>
+  </span>
+  <a id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IButtonConfig_MonotoneOpenLeftButtonPath_" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#IButtonConfig#MonotoneOpenLeftButtonPath*"></a>
+  <h4 id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IButtonConfig_MonotoneOpenLeftButtonPath" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#IButtonConfig#MonotoneOpenLeftButtonPath">IButtonConfig.MonotoneOpenLeftButtonPath</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ResPath IButtonConfig.MonotoneOpenLeftButtonPath { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Utility.ResPath</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IButtonConfig_MonotoneOpenRightButtonPath.md&amp;value=---%0Auid%3A%20Content.Client.Stylesheets.CommonStylesheet.Content%23Client%23Stylesheets%23SheetletConfigs%23IButtonConfig%23MonotoneOpenRightButtonPath%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Client/Stylesheets/CommonStylesheet.cs/#L69">View Source</a>
+  </span>
+  <a id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IButtonConfig_MonotoneOpenRightButtonPath_" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#IButtonConfig#MonotoneOpenRightButtonPath*"></a>
+  <h4 id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IButtonConfig_MonotoneOpenRightButtonPath" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#IButtonConfig#MonotoneOpenRightButtonPath">IButtonConfig.MonotoneOpenRightButtonPath</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ResPath IButtonConfig.MonotoneOpenRightButtonPath { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Utility.ResPath</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IButtonConfig_OpenBothButtonPath.md&amp;value=---%0Auid%3A%20Content.Client.Stylesheets.CommonStylesheet.Content%23Client%23Stylesheets%23SheetletConfigs%23IButtonConfig%23OpenBothButtonPath%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Client/Stylesheets/CommonStylesheet.cs/#L62">View Source</a>
+  </span>
+  <a id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IButtonConfig_OpenBothButtonPath_" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#IButtonConfig#OpenBothButtonPath*"></a>
+  <h4 id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IButtonConfig_OpenBothButtonPath" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#IButtonConfig#OpenBothButtonPath">IButtonConfig.OpenBothButtonPath</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ResPath IButtonConfig.OpenBothButtonPath { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Utility.ResPath</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IButtonConfig_OpenLeftButtonPath.md&amp;value=---%0Auid%3A%20Content.Client.Stylesheets.CommonStylesheet.Content%23Client%23Stylesheets%23SheetletConfigs%23IButtonConfig%23OpenLeftButtonPath%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Client/Stylesheets/CommonStylesheet.cs/#L60">View Source</a>
+  </span>
+  <a id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IButtonConfig_OpenLeftButtonPath_" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#IButtonConfig#OpenLeftButtonPath*"></a>
+  <h4 id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IButtonConfig_OpenLeftButtonPath" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#IButtonConfig#OpenLeftButtonPath">IButtonConfig.OpenLeftButtonPath</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ResPath IButtonConfig.OpenLeftButtonPath { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Utility.ResPath</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IButtonConfig_OpenRightButtonPath.md&amp;value=---%0Auid%3A%20Content.Client.Stylesheets.CommonStylesheet.Content%23Client%23Stylesheets%23SheetletConfigs%23IButtonConfig%23OpenRightButtonPath%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Client/Stylesheets/CommonStylesheet.cs/#L61">View Source</a>
+  </span>
+  <a id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IButtonConfig_OpenRightButtonPath_" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#IButtonConfig#OpenRightButtonPath*"></a>
+  <h4 id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IButtonConfig_OpenRightButtonPath" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#IButtonConfig#OpenRightButtonPath">IButtonConfig.OpenRightButtonPath</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ResPath IButtonConfig.OpenRightButtonPath { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Utility.ResPath</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IButtonConfig_RoundedButtonBorderedPath.md&amp;value=---%0Auid%3A%20Content.Client.Stylesheets.CommonStylesheet.Content%23Client%23Stylesheets%23SheetletConfigs%23IButtonConfig%23RoundedButtonBorderedPath%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Client/Stylesheets/CommonStylesheet.cs/#L65">View Source</a>
+  </span>
+  <a id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IButtonConfig_RoundedButtonBorderedPath_" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#IButtonConfig#RoundedButtonBorderedPath*"></a>
+  <h4 id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IButtonConfig_RoundedButtonBorderedPath" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#IButtonConfig#RoundedButtonBorderedPath">IButtonConfig.RoundedButtonBorderedPath</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ResPath IButtonConfig.RoundedButtonBorderedPath { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Utility.ResPath</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IButtonConfig_RoundedButtonPath.md&amp;value=---%0Auid%3A%20Content.Client.Stylesheets.CommonStylesheet.Content%23Client%23Stylesheets%23SheetletConfigs%23IButtonConfig%23RoundedButtonPath%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Client/Stylesheets/CommonStylesheet.cs/#L64">View Source</a>
+  </span>
+  <a id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IButtonConfig_RoundedButtonPath_" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#IButtonConfig#RoundedButtonPath*"></a>
+  <h4 id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IButtonConfig_RoundedButtonPath" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#IButtonConfig#RoundedButtonPath">IButtonConfig.RoundedButtonPath</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ResPath IButtonConfig.RoundedButtonPath { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Utility.ResPath</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IButtonConfig_SmallButtonPath.md&amp;value=---%0Auid%3A%20Content.Client.Stylesheets.CommonStylesheet.Content%23Client%23Stylesheets%23SheetletConfigs%23IButtonConfig%23SmallButtonPath%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Client/Stylesheets/CommonStylesheet.cs/#L63">View Source</a>
+  </span>
+  <a id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IButtonConfig_SmallButtonPath_" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#IButtonConfig#SmallButtonPath*"></a>
+  <h4 id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IButtonConfig_SmallButtonPath" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#IButtonConfig#SmallButtonPath">IButtonConfig.SmallButtonPath</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ResPath IButtonConfig.SmallButtonPath { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Utility.ResPath</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_ICheckboxConfig_CheckboxCheckedPath.md&amp;value=---%0Auid%3A%20Content.Client.Stylesheets.CommonStylesheet.Content%23Client%23Stylesheets%23SheetletConfigs%23ICheckboxConfig%23CheckboxCheckedPath%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Client/Stylesheets/CommonStylesheet.cs/#L17">View Source</a>
+  </span>
+  <a id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_ICheckboxConfig_CheckboxCheckedPath_" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#ICheckboxConfig#CheckboxCheckedPath*"></a>
+  <h4 id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_ICheckboxConfig_CheckboxCheckedPath" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#ICheckboxConfig#CheckboxCheckedPath">ICheckboxConfig.CheckboxCheckedPath</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ResPath ICheckboxConfig.CheckboxCheckedPath { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Utility.ResPath</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_ICheckboxConfig_CheckboxUncheckedPath.md&amp;value=---%0Auid%3A%20Content.Client.Stylesheets.CommonStylesheet.Content%23Client%23Stylesheets%23SheetletConfigs%23ICheckboxConfig%23CheckboxUncheckedPath%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Client/Stylesheets/CommonStylesheet.cs/#L16">View Source</a>
+  </span>
+  <a id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_ICheckboxConfig_CheckboxUncheckedPath_" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#ICheckboxConfig#CheckboxUncheckedPath*"></a>
+  <h4 id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_ICheckboxConfig_CheckboxUncheckedPath" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#ICheckboxConfig#CheckboxUncheckedPath">ICheckboxConfig.CheckboxUncheckedPath</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ResPath ICheckboxConfig.CheckboxUncheckedPath { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Utility.ResPath</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IIconConfig_CrossIconPath.md&amp;value=---%0Auid%3A%20Content.Client.Stylesheets.CommonStylesheet.Content%23Client%23Stylesheets%23SheetletConfigs%23IIconConfig%23CrossIconPath%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Client/Stylesheets/CommonStylesheet.cs/#L50">View Source</a>
+  </span>
+  <a id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IIconConfig_CrossIconPath_" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#IIconConfig#CrossIconPath*"></a>
+  <h4 id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IIconConfig_CrossIconPath" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#IIconConfig#CrossIconPath">IIconConfig.CrossIconPath</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ResPath IIconConfig.CrossIconPath { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Utility.ResPath</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IIconConfig_HelpIconPath.md&amp;value=---%0Auid%3A%20Content.Client.Stylesheets.CommonStylesheet.Content%23Client%23Stylesheets%23SheetletConfigs%23IIconConfig%23HelpIconPath%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Client/Stylesheets/CommonStylesheet.cs/#L49">View Source</a>
+  </span>
+  <a id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IIconConfig_HelpIconPath_" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#IIconConfig#HelpIconPath*"></a>
+  <h4 id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IIconConfig_HelpIconPath" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#IIconConfig#HelpIconPath">IIconConfig.HelpIconPath</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ResPath IIconConfig.HelpIconPath { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Utility.ResPath</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IIconConfig_InvertedTriangleIconPath.md&amp;value=---%0Auid%3A%20Content.Client.Stylesheets.CommonStylesheet.Content%23Client%23Stylesheets%23SheetletConfigs%23IIconConfig%23InvertedTriangleIconPath%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Client/Stylesheets/CommonStylesheet.cs/#L51">View Source</a>
+  </span>
+  <a id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IIconConfig_InvertedTriangleIconPath_" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#IIconConfig#InvertedTriangleIconPath*"></a>
+  <h4 id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IIconConfig_InvertedTriangleIconPath" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#IIconConfig#InvertedTriangleIconPath">IIconConfig.InvertedTriangleIconPath</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ResPath IIconConfig.InvertedTriangleIconPath { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Utility.ResPath</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_ILineEditConfig_LineEditPath.md&amp;value=---%0Auid%3A%20Content.Client.Stylesheets.CommonStylesheet.Content%23Client%23Stylesheets%23SheetletConfigs%23ILineEditConfig%23LineEditPath%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Client/Stylesheets/CommonStylesheet.cs/#L23">View Source</a>
+  </span>
+  <a id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_ILineEditConfig_LineEditPath_" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#ILineEditConfig#LineEditPath*"></a>
+  <h4 id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_ILineEditConfig_LineEditPath" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#ILineEditConfig#LineEditPath">ILineEditConfig.LineEditPath</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ResPath ILineEditConfig.LineEditPath { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Utility.ResPath</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_INanoHeadingConfig_NanoHeadingPath.md&amp;value=---%0Auid%3A%20Content.Client.Stylesheets.CommonStylesheet.Content%23Client%23Stylesheets%23SheetletConfigs%23INanoHeadingConfig%23NanoHeadingPath%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Client/Stylesheets/CommonStylesheet.cs/#L21">View Source</a>
+  </span>
+  <a id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_INanoHeadingConfig_NanoHeadingPath_" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#INanoHeadingConfig#NanoHeadingPath*"></a>
+  <h4 id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_INanoHeadingConfig_NanoHeadingPath" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#INanoHeadingConfig#NanoHeadingPath">INanoHeadingConfig.NanoHeadingPath</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ResPath INanoHeadingConfig.NanoHeadingPath { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Utility.ResPath</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IPanelConfig_BlackPanelDarkThinBorderPath.md&amp;value=---%0Auid%3A%20Content.Client.Stylesheets.CommonStylesheet.Content%23Client%23Stylesheets%23SheetletConfigs%23IPanelConfig%23BlackPanelDarkThinBorderPath%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Client/Stylesheets/CommonStylesheet.cs/#L26">View Source</a>
+  </span>
+  <a id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IPanelConfig_BlackPanelDarkThinBorderPath_" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#IPanelConfig#BlackPanelDarkThinBorderPath*"></a>
+  <h4 id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IPanelConfig_BlackPanelDarkThinBorderPath" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#IPanelConfig#BlackPanelDarkThinBorderPath">IPanelConfig.BlackPanelDarkThinBorderPath</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ResPath IPanelConfig.BlackPanelDarkThinBorderPath { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Utility.ResPath</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IPanelConfig_GeometricPanelBorderPath.md&amp;value=---%0Auid%3A%20Content.Client.Stylesheets.CommonStylesheet.Content%23Client%23Stylesheets%23SheetletConfigs%23IPanelConfig%23GeometricPanelBorderPath%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Client/Stylesheets/CommonStylesheet.cs/#L25">View Source</a>
+  </span>
+  <a id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IPanelConfig_GeometricPanelBorderPath_" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#IPanelConfig#GeometricPanelBorderPath*"></a>
+  <h4 id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IPanelConfig_GeometricPanelBorderPath" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#IPanelConfig#GeometricPanelBorderPath">IPanelConfig.GeometricPanelBorderPath</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ResPath IPanelConfig.GeometricPanelBorderPath { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Utility.ResPath</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IPlaceholderConfig_PlaceholderPath.md&amp;value=---%0Auid%3A%20Content.Client.Stylesheets.CommonStylesheet.Content%23Client%23Stylesheets%23SheetletConfigs%23IPlaceholderConfig%23PlaceholderPath%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Client/Stylesheets/CommonStylesheet.cs/#L31">View Source</a>
+  </span>
+  <a id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IPlaceholderConfig_PlaceholderPath_" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#IPlaceholderConfig#PlaceholderPath*"></a>
+  <h4 id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IPlaceholderConfig_PlaceholderPath" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#IPlaceholderConfig#PlaceholderPath">IPlaceholderConfig.PlaceholderPath</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ResPath IPlaceholderConfig.PlaceholderPath { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Utility.ResPath</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IRadialMenuConfig_BackHoverPath.md&amp;value=---%0Auid%3A%20Content.Client.Stylesheets.CommonStylesheet.Content%23Client%23Stylesheets%23SheetletConfigs%23IRadialMenuConfig%23BackHoverPath%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Client/Stylesheets/CommonStylesheet.cs/#L38">View Source</a>
+  </span>
+  <a id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IRadialMenuConfig_BackHoverPath_" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#IRadialMenuConfig#BackHoverPath*"></a>
+  <h4 id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IRadialMenuConfig_BackHoverPath" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#IRadialMenuConfig#BackHoverPath">IRadialMenuConfig.BackHoverPath</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ResPath IRadialMenuConfig.BackHoverPath { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Utility.ResPath</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IRadialMenuConfig_BackNormalPath.md&amp;value=---%0Auid%3A%20Content.Client.Stylesheets.CommonStylesheet.Content%23Client%23Stylesheets%23SheetletConfigs%23IRadialMenuConfig%23BackNormalPath%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Client/Stylesheets/CommonStylesheet.cs/#L37">View Source</a>
+  </span>
+  <a id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IRadialMenuConfig_BackNormalPath_" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#IRadialMenuConfig#BackNormalPath*"></a>
+  <h4 id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IRadialMenuConfig_BackNormalPath" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#IRadialMenuConfig#BackNormalPath">IRadialMenuConfig.BackNormalPath</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ResPath IRadialMenuConfig.BackNormalPath { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Utility.ResPath</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IRadialMenuConfig_ButtonHoverPath.md&amp;value=---%0Auid%3A%20Content.Client.Stylesheets.CommonStylesheet.Content%23Client%23Stylesheets%23SheetletConfigs%23IRadialMenuConfig%23ButtonHoverPath%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Client/Stylesheets/CommonStylesheet.cs/#L34">View Source</a>
+  </span>
+  <a id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IRadialMenuConfig_ButtonHoverPath_" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#IRadialMenuConfig#ButtonHoverPath*"></a>
+  <h4 id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IRadialMenuConfig_ButtonHoverPath" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#IRadialMenuConfig#ButtonHoverPath">IRadialMenuConfig.ButtonHoverPath</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ResPath IRadialMenuConfig.ButtonHoverPath { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Utility.ResPath</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IRadialMenuConfig_ButtonNormalPath.md&amp;value=---%0Auid%3A%20Content.Client.Stylesheets.CommonStylesheet.Content%23Client%23Stylesheets%23SheetletConfigs%23IRadialMenuConfig%23ButtonNormalPath%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Client/Stylesheets/CommonStylesheet.cs/#L33">View Source</a>
+  </span>
+  <a id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IRadialMenuConfig_ButtonNormalPath_" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#IRadialMenuConfig#ButtonNormalPath*"></a>
+  <h4 id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IRadialMenuConfig_ButtonNormalPath" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#IRadialMenuConfig#ButtonNormalPath">IRadialMenuConfig.ButtonNormalPath</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ResPath IRadialMenuConfig.ButtonNormalPath { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Utility.ResPath</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IRadialMenuConfig_CloseHoverPath.md&amp;value=---%0Auid%3A%20Content.Client.Stylesheets.CommonStylesheet.Content%23Client%23Stylesheets%23SheetletConfigs%23IRadialMenuConfig%23CloseHoverPath%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Client/Stylesheets/CommonStylesheet.cs/#L36">View Source</a>
+  </span>
+  <a id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IRadialMenuConfig_CloseHoverPath_" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#IRadialMenuConfig#CloseHoverPath*"></a>
+  <h4 id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IRadialMenuConfig_CloseHoverPath" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#IRadialMenuConfig#CloseHoverPath">IRadialMenuConfig.CloseHoverPath</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ResPath IRadialMenuConfig.CloseHoverPath { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Utility.ResPath</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IRadialMenuConfig_CloseNormalPath.md&amp;value=---%0Auid%3A%20Content.Client.Stylesheets.CommonStylesheet.Content%23Client%23Stylesheets%23SheetletConfigs%23IRadialMenuConfig%23CloseNormalPath%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Client/Stylesheets/CommonStylesheet.cs/#L35">View Source</a>
+  </span>
+  <a id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IRadialMenuConfig_CloseNormalPath_" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#IRadialMenuConfig#CloseNormalPath*"></a>
+  <h4 id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IRadialMenuConfig_CloseNormalPath" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#IRadialMenuConfig#CloseNormalPath">IRadialMenuConfig.CloseNormalPath</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ResPath IRadialMenuConfig.CloseNormalPath { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Utility.ResPath</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_ISliderConfig_SliderFillPath.md&amp;value=---%0Auid%3A%20Content.Client.Stylesheets.CommonStylesheet.Content%23Client%23Stylesheets%23SheetletConfigs%23ISliderConfig%23SliderFillPath%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Client/Stylesheets/CommonStylesheet.cs/#L40">View Source</a>
+  </span>
+  <a id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_ISliderConfig_SliderFillPath_" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#ISliderConfig#SliderFillPath*"></a>
+  <h4 id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_ISliderConfig_SliderFillPath" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#ISliderConfig#SliderFillPath">ISliderConfig.SliderFillPath</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ResPath ISliderConfig.SliderFillPath { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Utility.ResPath</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_ISliderConfig_SliderGrabber.md&amp;value=---%0Auid%3A%20Content.Client.Stylesheets.CommonStylesheet.Content%23Client%23Stylesheets%23SheetletConfigs%23ISliderConfig%23SliderGrabber%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Client/Stylesheets/CommonStylesheet.cs/#L44">View Source</a>
+  </span>
+  <a id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_ISliderConfig_SliderGrabber_" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#ISliderConfig#SliderGrabber*"></a>
+  <h4 id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_ISliderConfig_SliderGrabber" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#ISliderConfig#SliderGrabber">ISliderConfig.SliderGrabber</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ResPath ISliderConfig.SliderGrabber { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Utility.ResPath</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_ISliderConfig_SliderOutlinePath.md&amp;value=---%0Auid%3A%20Content.Client.Stylesheets.CommonStylesheet.Content%23Client%23Stylesheets%23SheetletConfigs%23ISliderConfig%23SliderOutlinePath%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Client/Stylesheets/CommonStylesheet.cs/#L42">View Source</a>
+  </span>
+  <a id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_ISliderConfig_SliderOutlinePath_" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#ISliderConfig#SliderOutlinePath*"></a>
+  <h4 id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_ISliderConfig_SliderOutlinePath" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#ISliderConfig#SliderOutlinePath">ISliderConfig.SliderOutlinePath</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ResPath ISliderConfig.SliderOutlinePath { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Utility.ResPath</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IStripebackConfig_StripebackPath.md&amp;value=---%0Auid%3A%20Content.Client.Stylesheets.CommonStylesheet.Content%23Client%23Stylesheets%23SheetletConfigs%23IStripebackConfig%23StripebackPath%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Client/Stylesheets/CommonStylesheet.cs/#L19">View Source</a>
+  </span>
+  <a id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IStripebackConfig_StripebackPath_" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#IStripebackConfig#StripebackPath*"></a>
+  <h4 id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IStripebackConfig_StripebackPath" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#IStripebackConfig#StripebackPath">IStripebackConfig.StripebackPath</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ResPath IStripebackConfig.StripebackPath { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Utility.ResPath</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_ITabContainerConfig_TabContainerPanelPath.md&amp;value=---%0Auid%3A%20Content.Client.Stylesheets.CommonStylesheet.Content%23Client%23Stylesheets%23SheetletConfigs%23ITabContainerConfig%23TabContainerPanelPath%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Client/Stylesheets/CommonStylesheet.cs/#L47">View Source</a>
+  </span>
+  <a id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_ITabContainerConfig_TabContainerPanelPath_" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#ITabContainerConfig#TabContainerPanelPath*"></a>
+  <h4 id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_ITabContainerConfig_TabContainerPanelPath" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#ITabContainerConfig#TabContainerPanelPath">ITabContainerConfig.TabContainerPanelPath</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ResPath ITabContainerConfig.TabContainerPanelPath { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Utility.ResPath</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_ITooltipConfig_TooltipBoxPath.md&amp;value=---%0Auid%3A%20Content.Client.Stylesheets.CommonStylesheet.Content%23Client%23Stylesheets%23SheetletConfigs%23ITooltipConfig%23TooltipBoxPath%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Client/Stylesheets/CommonStylesheet.cs/#L28">View Source</a>
+  </span>
+  <a id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_ITooltipConfig_TooltipBoxPath_" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#ITooltipConfig#TooltipBoxPath*"></a>
+  <h4 id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_ITooltipConfig_TooltipBoxPath" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#ITooltipConfig#TooltipBoxPath">ITooltipConfig.TooltipBoxPath</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ResPath ITooltipConfig.TooltipBoxPath { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Utility.ResPath</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_ITooltipConfig_WhisperBoxPath.md&amp;value=---%0Auid%3A%20Content.Client.Stylesheets.CommonStylesheet.Content%23Client%23Stylesheets%23SheetletConfigs%23ITooltipConfig%23WhisperBoxPath%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Client/Stylesheets/CommonStylesheet.cs/#L29">View Source</a>
+  </span>
+  <a id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_ITooltipConfig_WhisperBoxPath_" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#ITooltipConfig#WhisperBoxPath*"></a>
+  <h4 id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_ITooltipConfig_WhisperBoxPath" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#ITooltipConfig#WhisperBoxPath">ITooltipConfig.WhisperBoxPath</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ResPath ITooltipConfig.WhisperBoxPath { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Utility.ResPath</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IWindowConfig_TransparentWindowBackgroundBorderedPath.md&amp;value=---%0Auid%3A%20Content.Client.Stylesheets.CommonStylesheet.Content%23Client%23Stylesheets%23SheetletConfigs%23IWindowConfig%23TransparentWindowBackgroundBorderedPath%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Client/Stylesheets/CommonStylesheet.cs/#L57">View Source</a>
+  </span>
+  <a id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IWindowConfig_TransparentWindowBackgroundBorderedPath_" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#IWindowConfig#TransparentWindowBackgroundBorderedPath*"></a>
+  <h4 id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IWindowConfig_TransparentWindowBackgroundBorderedPath" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#IWindowConfig#TransparentWindowBackgroundBorderedPath">IWindowConfig.TransparentWindowBackgroundBorderedPath</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ResPath IWindowConfig.TransparentWindowBackgroundBorderedPath { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Utility.ResPath</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IWindowConfig_WindowBackgroundBorderedPath.md&amp;value=---%0Auid%3A%20Content.Client.Stylesheets.CommonStylesheet.Content%23Client%23Stylesheets%23SheetletConfigs%23IWindowConfig%23WindowBackgroundBorderedPath%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Client/Stylesheets/CommonStylesheet.cs/#L56">View Source</a>
+  </span>
+  <a id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IWindowConfig_WindowBackgroundBorderedPath_" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#IWindowConfig#WindowBackgroundBorderedPath*"></a>
+  <h4 id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IWindowConfig_WindowBackgroundBorderedPath" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#IWindowConfig#WindowBackgroundBorderedPath">IWindowConfig.WindowBackgroundBorderedPath</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ResPath IWindowConfig.WindowBackgroundBorderedPath { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Utility.ResPath</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IWindowConfig_WindowBackgroundPath.md&amp;value=---%0Auid%3A%20Content.Client.Stylesheets.CommonStylesheet.Content%23Client%23Stylesheets%23SheetletConfigs%23IWindowConfig%23WindowBackgroundPath%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Client/Stylesheets/CommonStylesheet.cs/#L55">View Source</a>
+  </span>
+  <a id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IWindowConfig_WindowBackgroundPath_" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#IWindowConfig#WindowBackgroundPath*"></a>
+  <h4 id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IWindowConfig_WindowBackgroundPath" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#IWindowConfig#WindowBackgroundPath">IWindowConfig.WindowBackgroundPath</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ResPath IWindowConfig.WindowBackgroundPath { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Utility.ResPath</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IWindowConfig_WindowHeaderAlertTexturePath.md&amp;value=---%0Auid%3A%20Content.Client.Stylesheets.CommonStylesheet.Content%23Client%23Stylesheets%23SheetletConfigs%23IWindowConfig%23WindowHeaderAlertTexturePath%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Client/Stylesheets/CommonStylesheet.cs/#L54">View Source</a>
+  </span>
+  <a id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IWindowConfig_WindowHeaderAlertTexturePath_" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#IWindowConfig#WindowHeaderAlertTexturePath*"></a>
+  <h4 id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IWindowConfig_WindowHeaderAlertTexturePath" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#IWindowConfig#WindowHeaderAlertTexturePath">IWindowConfig.WindowHeaderAlertTexturePath</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ResPath IWindowConfig.WindowHeaderAlertTexturePath { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Utility.ResPath</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IWindowConfig_WindowHeaderTexturePath.md&amp;value=---%0Auid%3A%20Content.Client.Stylesheets.CommonStylesheet.Content%23Client%23Stylesheets%23SheetletConfigs%23IWindowConfig%23WindowHeaderTexturePath%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Client/Stylesheets/CommonStylesheet.cs/#L53">View Source</a>
+  </span>
+  <a id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IWindowConfig_WindowHeaderTexturePath_" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#IWindowConfig#WindowHeaderTexturePath*"></a>
+  <h4 id="Content_Client_Stylesheets_CommonStylesheet_Content_Client_Stylesheets_SheetletConfigs_IWindowConfig_WindowHeaderTexturePath" data-uid="Content.Client.Stylesheets.CommonStylesheet.Content#Client#Stylesheets#SheetletConfigs#IWindowConfig#WindowHeaderTexturePath">IWindowConfig.WindowHeaderTexturePath</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ResPath IWindowConfig.WindowHeaderTexturePath { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Utility.ResPath</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Content.Client.Stylesheets.SheetletConfigs.IButtonConfig.html">IButtonConfig</a>
+  </div>
+  <div>
+      <a class="xref" href="Content.Client.Stylesheets.SheetletConfigs.IWindowConfig.html">IWindowConfig</a>
+  </div>
+  <div>
+      <a class="xref" href="Content.Client.Stylesheets.SheetletConfigs.IIconConfig.html">IIconConfig</a>
+  </div>
+  <div>
+      <a class="xref" href="Content.Client.Stylesheets.SheetletConfigs.ITabContainerConfig.html">ITabContainerConfig</a>
+  </div>
+  <div>
+      <a class="xref" href="Content.Client.Stylesheets.SheetletConfigs.ISliderConfig.html">ISliderConfig</a>
+  </div>
+  <div>
+      <a class="xref" href="Content.Client.Stylesheets.SheetletConfigs.IRadialMenuConfig.html">IRadialMenuConfig</a>
+  </div>
+  <div>
+      <a class="xref" href="Content.Client.Stylesheets.SheetletConfigs.IPlaceholderConfig.html">IPlaceholderConfig</a>
+  </div>
+  <div>
+      <a class="xref" href="Content.Client.Stylesheets.SheetletConfigs.ITooltipConfig.html">ITooltipConfig</a>
+  </div>
+  <div>
+      <a class="xref" href="Content.Client.Stylesheets.SheetletConfigs.IPanelConfig.html">IPanelConfig</a>
+  </div>
+  <div>
+      <a class="xref" href="Content.Client.Stylesheets.SheetletConfigs.INanoHeadingConfig.html">INanoHeadingConfig</a>
+  </div>
+  <div>
+      <a class="xref" href="Content.Client.Stylesheets.SheetletConfigs.ILineEditConfig.html">ILineEditConfig</a>
+  </div>
+  <div>
+      <a class="xref" href="Content.Client.Stylesheets.SheetletConfigs.IStripebackConfig.html">IStripebackConfig</a>
+  </div>
+  <div>
+      <a class="xref" href="Content.Client.Stylesheets.ISheetletConfig.html">ISheetletConfig</a>
+  </div>
+  <div>
+      <a class="xref" href="Content.Client.Stylesheets.IStyleResources.html">IStyleResources</a>
+  </div>
+  <div>
+      <a class="xref" href="Content.Client.Stylesheets.SheetletConfigs.ICheckboxConfig.html">ICheckboxConfig</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Client_Stylesheets_CommonStylesheet.md&amp;value=---%0Auid%3A%20Content.Client.Stylesheets.CommonStylesheet%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Client/Stylesheets/CommonStylesheet.cs/#L7" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="toggle-mode">
+                <div class="icon">
+                  <i aria-hidden="true">☀</i>
+                </div>
+                <label class="switch">
+                  <input type="checkbox" id="switch-style">
+                  <span class="slider round"></span>
+                </label>
+                <div class="icon">
+                  <i aria-hidden="true">☾</i>
+                </div>
+              </div>
+          
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <h5>In This Article</h5>
+              <div></div>
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <div class="pull-left">
+              
+              <span>Generated by <strong>DocFX</strong></span>
+            </div>
+            <div class="toggle-mode pull-right visible-sm visible-xs">
+              <div class="icon">
+                <i aria-hidden="true">☀</i>
+              </div>
+              <label class="switch">
+                <input type="checkbox" id="switch-style-m">
+                <span class="slider round"></span>
+              </label>
+              <div class="icon">
+                <i aria-hidden="true">☾</i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="../../styles/toggle-theme.js"></script>
+      </footer>    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

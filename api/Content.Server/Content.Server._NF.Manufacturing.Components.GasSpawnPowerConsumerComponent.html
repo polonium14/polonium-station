@@ -1,0 +1,624 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class GasSpawnPowerConsumerComponent
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class GasSpawnPowerConsumerComponent
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Content.Server._NF.Manufacturing.Components.GasSpawnPowerConsumerComponent">
+  
+  
+  <h1 id="Content_Server__NF_Manufacturing_Components_GasSpawnPowerConsumerComponent" data-uid="Content.Server._NF.Manufacturing.Components.GasSpawnPowerConsumerComponent" class="text-break">Class GasSpawnPowerConsumerComponent
+  </h1>
+  <div class="markdown level0 summary"><p>An entity with this will produce some amount of gas over time if supplied with power.
+Gas is output at a regular frequency, and the amount of gas spawned scales with the amount of power given.
+At high power input, gas returns diminish logarithmically.
+Expected to be used with a GasCanister that can contain the mixture.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">GasSpawnPowerConsumerComponent</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Content.Server._NF.Manufacturing.Components.html">Content.Server._NF.Manufacturing.Components</a></h6>
+  <h6><strong>Assembly</strong>: Content.Server.dll</h6>
+  <h5 id="Content_Server__NF_Manufacturing_Components_GasSpawnPowerConsumerComponent_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class GasSpawnPowerConsumerComponent : Component</code></pre>
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server__NF_Manufacturing_Components_GasSpawnPowerConsumerComponent_AccumulatedEnergy.md&amp;value=---%0Auid%3A%20Content.Server._NF.Manufacturing.Components.GasSpawnPowerConsumerComponent.AccumulatedEnergy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/_NF/Manufacturing/Components/GasSpawnPowerConsumerComponent.cs/#L45">View Source</a>
+  </span>
+  <h4 id="Content_Server__NF_Manufacturing_Components_GasSpawnPowerConsumerComponent_AccumulatedEnergy" data-uid="Content.Server._NF.Manufacturing.Components.GasSpawnPowerConsumerComponent.AccumulatedEnergy">AccumulatedEnergy</h4>
+  <div class="markdown level1 summary"><p>The total energy accumulated, in watts.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float AccumulatedEnergy</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server__NF_Manufacturing_Components_GasSpawnPowerConsumerComponent_AccumulatedSpawnCheckEnergy.md&amp;value=---%0Auid%3A%20Content.Server._NF.Manufacturing.Components.GasSpawnPowerConsumerComponent.AccumulatedSpawnCheckEnergy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/_NF/Manufacturing/Components/GasSpawnPowerConsumerComponent.cs/#L51">View Source</a>
+  </span>
+  <h4 id="Content_Server__NF_Manufacturing_Components_GasSpawnPowerConsumerComponent_AccumulatedSpawnCheckEnergy" data-uid="Content.Server._NF.Manufacturing.Components.GasSpawnPowerConsumerComponent.AccumulatedSpawnCheckEnergy">AccumulatedSpawnCheckEnergy</h4>
+  <div class="markdown level1 summary"><p>The energy accumulated this spawn check, in watts.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float AccumulatedSpawnCheckEnergy</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server__NF_Manufacturing_Components_GasSpawnPowerConsumerComponent_EnergyPerMole.md&amp;value=---%0Auid%3A%20Content.Server._NF.Manufacturing.Components.GasSpawnPowerConsumerComponent.EnergyPerMole%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/_NF/Manufacturing/Components/GasSpawnPowerConsumerComponent.cs/#L58">View Source</a>
+  </span>
+  <h4 id="Content_Server__NF_Manufacturing_Components_GasSpawnPowerConsumerComponent_EnergyPerMole" data-uid="Content.Server._NF.Manufacturing.Components.GasSpawnPowerConsumerComponent.EnergyPerMole">EnergyPerMole</h4>
+  <div class="markdown level1 summary"><p>The total amount of energy required to spawn one mole of gas.
+2,500 J/mol = 2,000,000 W / 800 mol/s</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float EnergyPerMole</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server__NF_Manufacturing_Components_GasSpawnPowerConsumerComponent_LinearMaxValue.md&amp;value=---%0Auid%3A%20Content.Server._NF.Manufacturing.Components.GasSpawnPowerConsumerComponent.LinearMaxValue%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/_NF/Manufacturing/Components/GasSpawnPowerConsumerComponent.cs/#L79">View Source</a>
+  </span>
+  <h4 id="Content_Server__NF_Manufacturing_Components_GasSpawnPowerConsumerComponent_LinearMaxValue" data-uid="Content.Server._NF.Manufacturing.Components.GasSpawnPowerConsumerComponent.LinearMaxValue">LinearMaxValue</h4>
+  <div class="markdown level1 summary"><p>The maximum value (inclusive) of the linear mode per deposit, in watts</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float LinearMaxValue</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server__NF_Manufacturing_Components_GasSpawnPowerConsumerComponent_LinearRate.md&amp;value=---%0Auid%3A%20Content.Server._NF.Manufacturing.Components.GasSpawnPowerConsumerComponent.LinearRate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/_NF/Manufacturing/Components/GasSpawnPowerConsumerComponent.cs/#L73">View Source</a>
+  </span>
+  <h4 id="Content_Server__NF_Manufacturing_Components_GasSpawnPowerConsumerComponent_LinearRate" data-uid="Content.Server._NF.Manufacturing.Components.GasSpawnPowerConsumerComponent.LinearRate">LinearRate</h4>
+  <div class="markdown level1 summary"><p>The number of moles of gas to spawn per joule of power.
+0.0004 mol/J = 1 / 2,500 J/mol</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float LinearRate</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server__NF_Manufacturing_Components_GasSpawnPowerConsumerComponent_LogarithmCoefficient.md&amp;value=---%0Auid%3A%20Content.Server._NF.Manufacturing.Components.GasSpawnPowerConsumerComponent.LogarithmCoefficient%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/_NF/Manufacturing/Components/GasSpawnPowerConsumerComponent.cs/#L97">View Source</a>
+  </span>
+  <h4 id="Content_Server__NF_Manufacturing_Components_GasSpawnPowerConsumerComponent_LogarithmCoefficient" data-uid="Content.Server._NF.Manufacturing.Components.GasSpawnPowerConsumerComponent.LogarithmCoefficient">LogarithmCoefficient</h4>
+  <div class="markdown level1 summary"><p>The coefficient of the logarithmic mode: k in Tk<em>a^(log10(x/T)-R)
+Note: should be set to LinearRate</em>LinearMaxValue for a continuous function.
+0.0004 * 2,000,000 = 800</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float LogarithmCoefficient</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server__NF_Manufacturing_Components_GasSpawnPowerConsumerComponent_LogarithmRateBase.md&amp;value=---%0Auid%3A%20Content.Server._NF.Manufacturing.Components.GasSpawnPowerConsumerComponent.LogarithmRateBase%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/_NF/Manufacturing/Components/GasSpawnPowerConsumerComponent.cs/#L89">View Source</a>
+  </span>
+  <h4 id="Content_Server__NF_Manufacturing_Components_GasSpawnPowerConsumerComponent_LogarithmRateBase" data-uid="Content.Server._NF.Manufacturing.Components.GasSpawnPowerConsumerComponent.LogarithmRateBase">LogarithmRateBase</h4>
+  <div class="markdown level1 summary"><p>The base on power the logarithmic mode: a in Tk*a^(log10(x/T)-R)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float LogarithmRateBase</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server__NF_Manufacturing_Components_GasSpawnPowerConsumerComponent_LogarithmSubtrahend.md&amp;value=---%0Auid%3A%20Content.Server._NF.Manufacturing.Components.GasSpawnPowerConsumerComponent.LogarithmSubtrahend%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/_NF/Manufacturing/Components/GasSpawnPowerConsumerComponent.cs/#L104">View Source</a>
+  </span>
+  <h4 id="Content_Server__NF_Manufacturing_Components_GasSpawnPowerConsumerComponent_LogarithmSubtrahend" data-uid="Content.Server._NF.Manufacturing.Components.GasSpawnPowerConsumerComponent.LogarithmSubtrahend">LogarithmSubtrahend</h4>
+  <div class="markdown level1 summary"><p>The exponential subtrahend of the logarithmic mode: R in Tk*a^(log10(x/T)-R)
+Note: should be set to log10(LinearMaxValue) for a continuous function.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float LogarithmSubtrahend</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server__NF_Manufacturing_Components_GasSpawnPowerConsumerComponent_MaximumMolesPerSecond.md&amp;value=---%0Auid%3A%20Content.Server._NF.Manufacturing.Components.GasSpawnPowerConsumerComponent.MaximumMolesPerSecond%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/_NF/Manufacturing/Components/GasSpawnPowerConsumerComponent.cs/#L111">View Source</a>
+  </span>
+  <h4 id="Content_Server__NF_Manufacturing_Components_GasSpawnPowerConsumerComponent_MaximumMolesPerSecond" data-uid="Content.Server._NF.Manufacturing.Components.GasSpawnPowerConsumerComponent.MaximumMolesPerSecond">MaximumMolesPerSecond</h4>
+  <div class="markdown level1 summary"><p>The maximum number of moles of gas to spawn, per second.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float MaximumMolesPerSecond</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server__NF_Manufacturing_Components_GasSpawnPowerConsumerComponent_MaximumRequestablePower.md&amp;value=---%0Auid%3A%20Content.Server._NF.Manufacturing.Components.GasSpawnPowerConsumerComponent.MaximumRequestablePower%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/_NF/Manufacturing/Components/GasSpawnPowerConsumerComponent.cs/#L123">View Source</a>
+  </span>
+  <h4 id="Content_Server__NF_Manufacturing_Components_GasSpawnPowerConsumerComponent_MaximumRequestablePower" data-uid="Content.Server._NF.Manufacturing.Components.GasSpawnPowerConsumerComponent.MaximumRequestablePower">MaximumRequestablePower</h4>
+  <div class="markdown level1 summary"><p>The maximum requestable power.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float MaximumRequestablePower</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server__NF_Manufacturing_Components_GasSpawnPowerConsumerComponent_MinimumRequestablePower.md&amp;value=---%0Auid%3A%20Content.Server._NF.Manufacturing.Components.GasSpawnPowerConsumerComponent.MinimumRequestablePower%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/_NF/Manufacturing/Components/GasSpawnPowerConsumerComponent.cs/#L117">View Source</a>
+  </span>
+  <h4 id="Content_Server__NF_Manufacturing_Components_GasSpawnPowerConsumerComponent_MinimumRequestablePower" data-uid="Content.Server._NF.Manufacturing.Components.GasSpawnPowerConsumerComponent.MinimumRequestablePower">MinimumRequestablePower</h4>
+  <div class="markdown level1 summary"><p>The minimum requestable power.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float MinimumRequestablePower</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server__NF_Manufacturing_Components_GasSpawnPowerConsumerComponent_NextSpawnCheck.md&amp;value=---%0Auid%3A%20Content.Server._NF.Manufacturing.Components.GasSpawnPowerConsumerComponent.NextSpawnCheck%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/_NF/Manufacturing/Components/GasSpawnPowerConsumerComponent.cs/#L39">View Source</a>
+  </span>
+  <h4 id="Content_Server__NF_Manufacturing_Components_GasSpawnPowerConsumerComponent_NextSpawnCheck" data-uid="Content.Server._NF.Manufacturing.Components.GasSpawnPowerConsumerComponent.NextSpawnCheck">NextSpawnCheck</h4>
+  <div class="markdown level1 summary"><p>The next time this power plant is selling accumulated power.
+Should not be changedduring runtime, will cause errors in deposit amounts.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TimeSpan NextSpawnCheck</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TimeSpan</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server__NF_Manufacturing_Components_GasSpawnPowerConsumerComponent_PowerNodeName.md&amp;value=---%0Auid%3A%20Content.Server._NF.Manufacturing.Components.GasSpawnPowerConsumerComponent.PowerNodeName%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/_NF/Manufacturing/Components/GasSpawnPowerConsumerComponent.cs/#L25">View Source</a>
+  </span>
+  <h4 id="Content_Server__NF_Manufacturing_Components_GasSpawnPowerConsumerComponent_PowerNodeName" data-uid="Content.Server._NF.Manufacturing.Components.GasSpawnPowerConsumerComponent.PowerNodeName">PowerNodeName</h4>
+  <div class="markdown level1 summary"><p>The name of the power node to be connected/disconnected.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string PowerNodeName</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server__NF_Manufacturing_Components_GasSpawnPowerConsumerComponent_SpawnCheckPeriod.md&amp;value=---%0Auid%3A%20Content.Server._NF.Manufacturing.Components.GasSpawnPowerConsumerComponent.SpawnCheckPeriod%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/_NF/Manufacturing/Components/GasSpawnPowerConsumerComponent.cs/#L32">View Source</a>
+  </span>
+  <h4 id="Content_Server__NF_Manufacturing_Components_GasSpawnPowerConsumerComponent_SpawnCheckPeriod" data-uid="Content.Server._NF.Manufacturing.Components.GasSpawnPowerConsumerComponent.SpawnCheckPeriod">SpawnCheckPeriod</h4>
+  <div class="markdown level1 summary"><p>The period between depositing money into a sector account.
+Also the T in Tk*a^(log10(x/T)-R) for rate calculation</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TimeSpan SpawnCheckPeriod</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TimeSpan</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server__NF_Manufacturing_Components_GasSpawnPowerConsumerComponent_SpawnMixture.md&amp;value=---%0Auid%3A%20Content.Server._NF.Manufacturing.Components.GasSpawnPowerConsumerComponent.SpawnMixture%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/_NF/Manufacturing/Components/GasSpawnPowerConsumerComponent.cs/#L63">View Source</a>
+  </span>
+  <a id="Content_Server__NF_Manufacturing_Components_GasSpawnPowerConsumerComponent_SpawnMixture_" data-uid="Content.Server._NF.Manufacturing.Components.GasSpawnPowerConsumerComponent.SpawnMixture*"></a>
+  <h4 id="Content_Server__NF_Manufacturing_Components_GasSpawnPowerConsumerComponent_SpawnMixture" data-uid="Content.Server._NF.Manufacturing.Components.GasSpawnPowerConsumerComponent.SpawnMixture">SpawnMixture</h4>
+  <div class="markdown level1 summary"><p>The total mixture to spawn per unit of energy.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GasMixture SpawnMixture { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="../Content.Shared/Content.Shared.Atmos.GasMixture.html">GasMixture</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server__NF_Manufacturing_Components_GasSpawnPowerConsumerComponent.md&amp;value=---%0Auid%3A%20Content.Server._NF.Manufacturing.Components.GasSpawnPowerConsumerComponent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/_NF/Manufacturing/Components/GasSpawnPowerConsumerComponent.cs/#L17" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="toggle-mode">
+                <div class="icon">
+                  <i aria-hidden="true">☀</i>
+                </div>
+                <label class="switch">
+                  <input type="checkbox" id="switch-style">
+                  <span class="slider round"></span>
+                </label>
+                <div class="icon">
+                  <i aria-hidden="true">☾</i>
+                </div>
+              </div>
+          
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <h5>In This Article</h5>
+              <div></div>
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <div class="pull-left">
+              
+              <span>Generated by <strong>DocFX</strong></span>
+            </div>
+            <div class="toggle-mode pull-right visible-sm visible-xs">
+              <div class="icon">
+                <i aria-hidden="true">☀</i>
+              </div>
+              <label class="switch">
+                <input type="checkbox" id="switch-style-m">
+                <span class="slider round"></span>
+              </label>
+              <div class="icon">
+                <i aria-hidden="true">☾</i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="../../styles/toggle-theme.js"></script>
+      </footer>    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,461 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class SharedLightCycleSystem
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class SharedLightCycleSystem
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Content.Shared.SharedLightCycleSystem">
+  
+  
+  <h1 id="Content_Shared_SharedLightCycleSystem" data-uid="Content.Shared.SharedLightCycleSystem" class="text-break">Class SharedLightCycleSystem
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">SharedLightCycleSystem</span></div>
+      <div class="level2"><a class="xref" href="../Content.Client/Content.Client.Light.LightCycleSystem.html">LightCycleSystem</a></div>
+      <div class="level2"><a class="xref" href="../Content.Server/Content.Server.Light.EntitySystems.LightCycleSystem.html">LightCycleSystem</a></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Content.Shared.html">Content.Shared</a></h6>
+  <h6><strong>Assembly</strong>: Content.Shared.dll</h6>
+  <h5 id="Content_Shared_SharedLightCycleSystem_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class SharedLightCycleSystem : EntitySystem</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_SharedLightCycleSystem_CalculateColorLevel_Content_Shared_Light_Components_LightCycleComponent_System_Single_.md&amp;value=---%0Auid%3A%20Content.Shared.SharedLightCycleSystem.CalculateColorLevel(Content.Shared.Light.Components.LightCycleComponent%2CSystem.Single)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/SharedLightCycleSystem.cs/#L72">View Source</a>
+  </span>
+  <a id="Content_Shared_SharedLightCycleSystem_CalculateColorLevel_" data-uid="Content.Shared.SharedLightCycleSystem.CalculateColorLevel*"></a>
+  <h4 id="Content_Shared_SharedLightCycleSystem_CalculateColorLevel_Content_Shared_Light_Components_LightCycleComponent_System_Single_" data-uid="Content.Shared.SharedLightCycleSystem.CalculateColorLevel(Content.Shared.Light.Components.LightCycleComponent,System.Single)">CalculateColorLevel(LightCycleComponent, Single)</h4>
+  <div class="markdown level1 summary"><p>It is important to note that each color must have a different exponent, to modify how early or late one color should stand out in relation to another.
+This &quot;simulates&quot; what the atmosphere does and is what generates the effect of dawn and dusk.
+The blue component must be a cosine function with half period, so that its minimum is at dawn and dusk, generating the &quot;warm&quot; color corresponding to these periods.
+As you can see in the values, the maximums of the function serve more to define the curve behavior,
+they must be &quot;clipped&quot; so as not to distort the original color of the lighting. In practice, the maximum values, in fact, are the clip thresholds.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Color CalculateColorLevel(LightCycleComponent comp, float time)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Light.Components.LightCycleComponent.html">LightCycleComponent</a></td>
+        <td><span class="parametername">comp</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">time</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Color</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_SharedLightCycleSystem_CalculateCurve_System_Single_System_Single_System_Single_System_Single_System_Single_System_Single_.md&amp;value=---%0Auid%3A%20Content.Shared.SharedLightCycleSystem.CalculateCurve(System.Single%2CSystem.Single%2CSystem.Single%2CSystem.Single%2CSystem.Single%2CSystem.Single)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/SharedLightCycleSystem.cs/#L111">View Source</a>
+  </span>
+  <a id="Content_Shared_SharedLightCycleSystem_CalculateCurve_" data-uid="Content.Shared.SharedLightCycleSystem.CalculateCurve*"></a>
+  <h4 id="Content_Shared_SharedLightCycleSystem_CalculateCurve_System_Single_System_Single_System_Single_System_Single_System_Single_System_Single_" data-uid="Content.Shared.SharedLightCycleSystem.CalculateCurve(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)">CalculateCurve(Single, Single, Single, Single, Single, Single)</h4>
+  <div class="markdown level1 summary"><p>Generates a sinusoidal curve as a function of x (time). The other parameters serve to adjust the behavior of the curve.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static float CalculateCurve(float x, float waveLength, float crest, float shift, float exponent, float phase = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">x</span></td>
+        <td><p>It corresponds to the independent variable of the function, which in the context of this algorithm is the current time.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">waveLength</span></td>
+        <td><p>It's the wavelength of the function, it can be said to be the total duration of the light cycle.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">crest</span></td>
+        <td><p>It's the maximum point of the function, where it will have its greatest value.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">shift</span></td>
+        <td><p>It's the vertical displacement of the function, in practice it corresponds to the minimum value of the function.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">exponent</span></td>
+        <td><p>It is the exponent of the sine, serves to &quot;flatten&quot; the function close to its minimum points and make it &quot;steeper&quot; close to its maximum.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">phase</span></td>
+        <td><p>It changes the phase of the wave, like a &quot;horizontal shift&quot;. It is important to transform the sinusoidal function into cosine, when necessary.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><p>The result of the function.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_SharedLightCycleSystem_CalculateLightLevel_Content_Shared_Light_Components_LightCycleComponent_System_Single_.md&amp;value=---%0Auid%3A%20Content.Shared.SharedLightCycleSystem.CalculateLightLevel(Content.Shared.Light.Components.LightCycleComponent%2CSystem.Single)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/SharedLightCycleSystem.cs/#L57">View Source</a>
+  </span>
+  <a id="Content_Shared_SharedLightCycleSystem_CalculateLightLevel_" data-uid="Content.Shared.SharedLightCycleSystem.CalculateLightLevel*"></a>
+  <h4 id="Content_Shared_SharedLightCycleSystem_CalculateLightLevel_Content_Shared_Light_Components_LightCycleComponent_System_Single_" data-uid="Content.Shared.SharedLightCycleSystem.CalculateLightLevel(Content.Shared.Light.Components.LightCycleComponent,System.Single)">CalculateLightLevel(LightCycleComponent, Single)</h4>
+  <div class="markdown level1 summary"><p>Calculates light intensity as a function of time.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double CalculateLightLevel(LightCycleComponent comp, float time)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Light.Components.LightCycleComponent.html">LightCycleComponent</a></td>
+        <td><span class="parametername">comp</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">time</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_SharedLightCycleSystem_GetColor_Entity_Content_Shared_Light_Components_LightCycleComponent__Color_System_Single_.md&amp;value=---%0Auid%3A%20Content.Shared.SharedLightCycleSystem.GetColor(Entity%7BContent.Shared.Light.Components.LightCycleComponent%7D%2CColor%2CSystem.Single)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/SharedLightCycleSystem.cs/#L38">View Source</a>
+  </span>
+  <a id="Content_Shared_SharedLightCycleSystem_GetColor_" data-uid="Content.Shared.SharedLightCycleSystem.GetColor*"></a>
+  <h4 id="Content_Shared_SharedLightCycleSystem_GetColor_Entity_Content_Shared_Light_Components_LightCycleComponent__Color_System_Single_" data-uid="Content.Shared.SharedLightCycleSystem.GetColor(Entity{Content.Shared.Light.Components.LightCycleComponent},Color,System.Single)">GetColor(Entity&lt;LightCycleComponent&gt;, Color, Single)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Color GetColor(Entity&lt;LightCycleComponent&gt; cycle, Color color, float time)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Light.Components.LightCycleComponent.html">LightCycleComponent</a>&gt;</td>
+        <td><span class="parametername">cycle</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Color</span></td>
+        <td><span class="parametername">color</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">time</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Color</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_SharedLightCycleSystem_Initialize.md&amp;value=---%0Auid%3A%20Content.Shared.SharedLightCycleSystem.Initialize%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/SharedLightCycleSystem.cs/#L13">View Source</a>
+  </span>
+  <a id="Content_Shared_SharedLightCycleSystem_Initialize_" data-uid="Content.Shared.SharedLightCycleSystem.Initialize*"></a>
+  <h4 id="Content_Shared_SharedLightCycleSystem_Initialize" data-uid="Content.Shared.SharedLightCycleSystem.Initialize">Initialize()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Initialize()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_SharedLightCycleSystem_OnCycleMapInit_Entity_Content_Shared_Light_Components_LightCycleComponent__MapInitEvent__.md&amp;value=---%0Auid%3A%20Content.Shared.SharedLightCycleSystem.OnCycleMapInit(Entity%7BContent.Shared.Light.Components.LightCycleComponent%7D%2CMapInitEvent%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/SharedLightCycleSystem.cs/#L20">View Source</a>
+  </span>
+  <a id="Content_Shared_SharedLightCycleSystem_OnCycleMapInit_" data-uid="Content.Shared.SharedLightCycleSystem.OnCycleMapInit*"></a>
+  <h4 id="Content_Shared_SharedLightCycleSystem_OnCycleMapInit_Entity_Content_Shared_Light_Components_LightCycleComponent__MapInitEvent__" data-uid="Content.Shared.SharedLightCycleSystem.OnCycleMapInit(Entity{Content.Shared.Light.Components.LightCycleComponent},MapInitEvent@)">OnCycleMapInit(Entity&lt;LightCycleComponent&gt;, ref MapInitEvent)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnCycleMapInit(Entity&lt;LightCycleComponent&gt; ent, ref MapInitEvent args)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Light.Components.LightCycleComponent.html">LightCycleComponent</a>&gt;</td>
+        <td><span class="parametername">ent</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">MapInitEvent</span></td>
+        <td><span class="parametername">args</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_SharedLightCycleSystem.md&amp;value=---%0Auid%3A%20Content.Shared.SharedLightCycleSystem%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/SharedLightCycleSystem.cs/#L11" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="toggle-mode">
+                <div class="icon">
+                  <i aria-hidden="true">☀</i>
+                </div>
+                <label class="switch">
+                  <input type="checkbox" id="switch-style">
+                  <span class="slider round"></span>
+                </label>
+                <div class="icon">
+                  <i aria-hidden="true">☾</i>
+                </div>
+              </div>
+          
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <h5>In This Article</h5>
+              <div></div>
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <div class="pull-left">
+              
+              <span>Generated by <strong>DocFX</strong></span>
+            </div>
+            <div class="toggle-mode pull-right visible-sm visible-xs">
+              <div class="icon">
+                <i aria-hidden="true">☀</i>
+              </div>
+              <label class="switch">
+                <input type="checkbox" id="switch-style-m">
+                <span class="slider round"></span>
+              </label>
+              <div class="icon">
+                <i aria-hidden="true">☾</i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="../../styles/toggle-theme.js"></script>
+      </footer>    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

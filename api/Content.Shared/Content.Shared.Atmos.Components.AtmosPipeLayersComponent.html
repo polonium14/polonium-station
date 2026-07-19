@@ -1,0 +1,422 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class AtmosPipeLayersComponent
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class AtmosPipeLayersComponent
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Content.Shared.Atmos.Components.AtmosPipeLayersComponent">
+  
+  
+  <h1 id="Content_Shared_Atmos_Components_AtmosPipeLayersComponent" data-uid="Content.Shared.Atmos.Components.AtmosPipeLayersComponent" class="text-break">Class AtmosPipeLayersComponent
+  </h1>
+  <div class="markdown level0 summary"><p>Contains layer data for atmos pipes. Layers allow multiple atmos pipes with the
+same orientation to be anchored to the same tile without their contents mixing.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">AtmosPipeLayersComponent</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Content.Shared.Atmos.Components.html">Content.Shared.Atmos.Components</a></h6>
+  <h6><strong>Assembly</strong>: Content.Shared.dll</h6>
+  <h5 id="Content_Shared_Atmos_Components_AtmosPipeLayersComponent_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class AtmosPipeLayersComponent : Component</code></pre>
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Atmos_Components_AtmosPipeLayersComponent_AlternativePrototypes.md&amp;value=---%0Auid%3A%20Content.Shared.Atmos.Components.AtmosPipeLayersComponent.AlternativePrototypes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Atmos/Components/AtmosPipeLayersComponent.cs/#L72">View Source</a>
+  </span>
+  <h4 id="Content_Shared_Atmos_Components_AtmosPipeLayersComponent_AlternativePrototypes" data-uid="Content.Shared.Atmos.Components.AtmosPipeLayersComponent.AlternativePrototypes">AlternativePrototypes</h4>
+  <div class="markdown level1 summary"><p>Entity prototypes that will be used to replace the current one when using
+position dependent entity placement via AlignAtmosPipeLayers.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Dictionary&lt;AtmosPipeLayer, EntProtoId&gt; AlternativePrototypes</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Dictionary</span>&lt;<a class="xref" href="Content.Shared.Atmos.Components.AtmosPipeLayer.html">AtmosPipeLayer</a>, <span class="xref">Robust.Shared.Prototypes.EntProtoId</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Content_Shared_Atmos_Components_AtmosPipeLayersComponent_AlternativePrototypes_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>If the dictionary is not empty there should be an entry for each atmos pipe layer.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Atmos_Components_AtmosPipeLayersComponent_CurrentPipeLayer.md&amp;value=---%0Auid%3A%20Content.Shared.Atmos.Components.AtmosPipeLayersComponent.CurrentPipeLayer%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Atmos/Components/AtmosPipeLayersComponent.cs/#L37">View Source</a>
+  </span>
+  <h4 id="Content_Shared_Atmos_Components_AtmosPipeLayersComponent_CurrentPipeLayer" data-uid="Content.Shared.Atmos.Components.AtmosPipeLayersComponent.CurrentPipeLayer">CurrentPipeLayer</h4>
+  <div class="markdown level1 summary"><p>Determines which layer the pipe is currently assigned.
+Only pipes on the same layer can connect with each other.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AtmosPipeLayer CurrentPipeLayer</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Atmos.Components.AtmosPipeLayer.html">AtmosPipeLayer</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Atmos_Components_AtmosPipeLayersComponent_Delay.md&amp;value=---%0Auid%3A%20Content.Shared.Atmos.Components.AtmosPipeLayersComponent.Delay%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Atmos/Components/AtmosPipeLayersComponent.cs/#L90">View Source</a>
+  </span>
+  <h4 id="Content_Shared_Atmos_Components_AtmosPipeLayersComponent_Delay" data-uid="Content.Shared.Atmos.Components.AtmosPipeLayersComponent.Delay">Delay</h4>
+  <div class="markdown level1 summary"><p>The base delay to use for changing layers.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float Delay</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Atmos_Components_AtmosPipeLayersComponent_NumberOfPipeLayers.md&amp;value=---%0Auid%3A%20Content.Shared.Atmos.Components.AtmosPipeLayersComponent.NumberOfPipeLayers%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Atmos/Components/AtmosPipeLayersComponent.cs/#L29">View Source</a>
+  </span>
+  <h4 id="Content_Shared_Atmos_Components_AtmosPipeLayersComponent_NumberOfPipeLayers" data-uid="Content.Shared.Atmos.Components.AtmosPipeLayersComponent.NumberOfPipeLayers">NumberOfPipeLayers</h4>
+  <div class="markdown level1 summary"><p>The number of pipe layers this entity supports.
+Must be equal to or less than the number of values
+in <a class="xref" href="Content.Shared.Atmos.Components.AtmosPipeLayer.html">AtmosPipeLayer</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte NumberOfPipeLayers</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Byte</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Atmos_Components_AtmosPipeLayersComponent_PipeLayersLocked.md&amp;value=---%0Auid%3A%20Content.Shared.Atmos.Components.AtmosPipeLayersComponent.PipeLayersLocked%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Atmos/Components/AtmosPipeLayersComponent.cs/#L78">View Source</a>
+  </span>
+  <h4 id="Content_Shared_Atmos_Components_AtmosPipeLayersComponent_PipeLayersLocked" data-uid="Content.Shared.Atmos.Components.AtmosPipeLayersComponent.PipeLayersLocked">PipeLayersLocked</h4>
+  <div class="markdown level1 summary"><p>The pipe layers of this entity cannot be changed when this value is true.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool PipeLayersLocked</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Atmos_Components_AtmosPipeLayersComponent_SpriteLayersRsiPaths.md&amp;value=---%0Auid%3A%20Content.Shared.Atmos.Components.AtmosPipeLayersComponent.SpriteLayersRsiPaths%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Atmos/Components/AtmosPipeLayersComponent.cs/#L62">View Source</a>
+  </span>
+  <h4 id="Content_Shared_Atmos_Components_AtmosPipeLayersComponent_SpriteLayersRsiPaths" data-uid="Content.Shared.Atmos.Components.AtmosPipeLayersComponent.SpriteLayersRsiPaths">SpriteLayersRsiPaths</h4>
+  <div class="markdown level1 summary"><p>Used to update specific sprite layers when the entity's pipe layer changes.
+The dictionary key is the name of the sprite layer to be updated, and its value is
+a second dictionary which contains the RSI paths indexed by pipe layer.
+If you want to change the default RSI path used by the entity, use
+<a class="xref" href="Content.Shared.Atmos.Components.AtmosPipeLayersComponent.html#Content_Shared_Atmos_Components_AtmosPipeLayersComponent_SpriteRsiPaths">SpriteRsiPaths</a> instead.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Dictionary&lt;string, Dictionary&lt;AtmosPipeLayer, string&gt;&gt; SpriteLayersRsiPaths</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Dictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">Dictionary</span>&lt;<a class="xref" href="Content.Shared.Atmos.Components.AtmosPipeLayer.html">AtmosPipeLayer</a>, <span class="xref">System.String</span>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Content_Shared_Atmos_Components_AtmosPipeLayersComponent_SpriteLayersRsiPaths_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>If an dictionary is not empty there should be an entry for each pipe layer.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Atmos_Components_AtmosPipeLayersComponent_SpriteRsiPaths.md&amp;value=---%0Auid%3A%20Content.Shared.Atmos.Components.AtmosPipeLayersComponent.SpriteRsiPaths%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Atmos/Components/AtmosPipeLayersComponent.cs/#L49">View Source</a>
+  </span>
+  <h4 id="Content_Shared_Atmos_Components_AtmosPipeLayersComponent_SpriteRsiPaths" data-uid="Content.Shared.Atmos.Components.AtmosPipeLayersComponent.SpriteRsiPaths">SpriteRsiPaths</h4>
+  <div class="markdown level1 summary"><p>The RSI paths that the entity will use to update its sprite when its pipe layer changes;
+if empty, the entity sprite will not update when it pipe layer changes.
+If you want to set specific sprite layers to update when the pipe layer changes, use
+<a class="xref" href="Content.Shared.Atmos.Components.AtmosPipeLayersComponent.html#Content_Shared_Atmos_Components_AtmosPipeLayersComponent_SpriteLayersRsiPaths">SpriteLayersRsiPaths</a> instead.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Dictionary&lt;AtmosPipeLayer, string&gt; SpriteRsiPaths</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Dictionary</span>&lt;<a class="xref" href="Content.Shared.Atmos.Components.AtmosPipeLayer.html">AtmosPipeLayer</a>, <span class="xref">System.String</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Content_Shared_Atmos_Components_AtmosPipeLayersComponent_SpriteRsiPaths_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>If the dictionary is not empty there should be an entry for each atmos pipe layer.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Atmos_Components_AtmosPipeLayersComponent_Tool.md&amp;value=---%0Auid%3A%20Content.Shared.Atmos.Components.AtmosPipeLayersComponent.Tool%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Atmos/Components/AtmosPipeLayersComponent.cs/#L84">View Source</a>
+  </span>
+  <h4 id="Content_Shared_Atmos_Components_AtmosPipeLayersComponent_Tool" data-uid="Content.Shared.Atmos.Components.AtmosPipeLayersComponent.Tool">Tool</h4>
+  <div class="markdown level1 summary"><p>Tool quality required to cause a pipe to change layers</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ProtoId&lt;ToolQualityPrototype&gt; Tool</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Prototypes.ProtoId</span>&lt;<a class="xref" href="Content.Shared.Tools.ToolQualityPrototype.html">ToolQualityPrototype</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Atmos_Components_AtmosPipeLayersComponent.md&amp;value=---%0Auid%3A%20Content.Shared.Atmos.Components.AtmosPipeLayersComponent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Atmos/Components/AtmosPipeLayersComponent.cs/#L19" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="toggle-mode">
+                <div class="icon">
+                  <i aria-hidden="true">☀</i>
+                </div>
+                <label class="switch">
+                  <input type="checkbox" id="switch-style">
+                  <span class="slider round"></span>
+                </label>
+                <div class="icon">
+                  <i aria-hidden="true">☾</i>
+                </div>
+              </div>
+          
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <h5>In This Article</h5>
+              <div></div>
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <div class="pull-left">
+              
+              <span>Generated by <strong>DocFX</strong></span>
+            </div>
+            <div class="toggle-mode pull-right visible-sm visible-xs">
+              <div class="icon">
+                <i aria-hidden="true">☀</i>
+              </div>
+              <label class="switch">
+                <input type="checkbox" id="switch-style-m">
+                <span class="slider round"></span>
+              </label>
+              <div class="icon">
+                <i aria-hidden="true">☾</i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="../../styles/toggle-theme.js"></script>
+      </footer>    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

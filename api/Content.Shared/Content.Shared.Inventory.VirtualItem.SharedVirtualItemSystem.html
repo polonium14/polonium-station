@@ -1,0 +1,634 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class SharedVirtualItemSystem
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class SharedVirtualItemSystem
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Content.Shared.Inventory.VirtualItem.SharedVirtualItemSystem">
+  
+  
+  <h1 id="Content_Shared_Inventory_VirtualItem_SharedVirtualItemSystem" data-uid="Content.Shared.Inventory.VirtualItem.SharedVirtualItemSystem" class="text-break">Class SharedVirtualItemSystem
+  </h1>
+  <div class="markdown level0 summary"><p>In charge of managing virtual items.
+Virtual items are used to block a <see cref="!:SlotButton"></see>
+or a <see cref="!:HandButton"></see> with a non-existent item that
+is a visual copy of another for whatever use</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">SharedVirtualItemSystem</span></div>
+      <div class="level2"><a class="xref" href="../Content.Client/Content.Client.Inventory.VirtualItemSystem.html">VirtualItemSystem</a></div>
+      <div class="level2"><a class="xref" href="../Content.Server/Content.Server.Inventory.VirtualItemSystem.html">VirtualItemSystem</a></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Content.Shared.Inventory.VirtualItem.html">Content.Shared.Inventory.VirtualItem</a></h6>
+  <h6><strong>Assembly</strong>: Content.Shared.dll</h6>
+  <h5 id="Content_Shared_Inventory_VirtualItem_SharedVirtualItemSystem_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class SharedVirtualItemSystem : EntitySystem</code></pre>
+  </div>
+  <h5 id="Content_Shared_Inventory_VirtualItem_SharedVirtualItemSystem_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>The slot visuals are managed by <see cref="!:HandsUiController"></see>
+and <see cref="!:InventoryUiController"></see>, see the <a class="xref" href="Content.Shared.Inventory.VirtualItem.VirtualItemComponent.html">VirtualItemComponent</a>
+references there for more information</p>
+</div>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Inventory_VirtualItem_SharedVirtualItemSystem_DeleteInHandsMatching_EntityUid_EntityUid_.md&amp;value=---%0Auid%3A%20Content.Shared.Inventory.VirtualItem.SharedVirtualItemSystem.DeleteInHandsMatching(EntityUid%2CEntityUid)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Inventory/VirtualItem/SharedVirtualItemSystem.cs/#L169">View Source</a>
+  </span>
+  <a id="Content_Shared_Inventory_VirtualItem_SharedVirtualItemSystem_DeleteInHandsMatching_" data-uid="Content.Shared.Inventory.VirtualItem.SharedVirtualItemSystem.DeleteInHandsMatching*"></a>
+  <h4 id="Content_Shared_Inventory_VirtualItem_SharedVirtualItemSystem_DeleteInHandsMatching_EntityUid_EntityUid_" data-uid="Content.Shared.Inventory.VirtualItem.SharedVirtualItemSystem.DeleteInHandsMatching(EntityUid,EntityUid)">DeleteInHandsMatching(EntityUid, EntityUid)</h4>
+  <div class="markdown level1 summary"><p>Scan the user's hands until we find the virtual entity, if the
+virtual entity is a copy of the matching entity, delete it</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DeleteInHandsMatching(EntityUid user, EntityUid matching)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">user</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">matching</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Inventory_VirtualItem_SharedVirtualItemSystem_DeleteInSlotMatching_EntityUid_EntityUid_System_Nullable_System_String__.md&amp;value=---%0Auid%3A%20Content.Shared.Inventory.VirtualItem.SharedVirtualItemSystem.DeleteInSlotMatching(EntityUid%2CEntityUid%2CSystem.Nullable%7BSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Inventory/VirtualItem/SharedVirtualItemSystem.cs/#L218">View Source</a>
+  </span>
+  <a id="Content_Shared_Inventory_VirtualItem_SharedVirtualItemSystem_DeleteInSlotMatching_" data-uid="Content.Shared.Inventory.VirtualItem.SharedVirtualItemSystem.DeleteInSlotMatching*"></a>
+  <h4 id="Content_Shared_Inventory_VirtualItem_SharedVirtualItemSystem_DeleteInSlotMatching_EntityUid_EntityUid_System_Nullable_System_String__" data-uid="Content.Shared.Inventory.VirtualItem.SharedVirtualItemSystem.DeleteInSlotMatching(EntityUid,EntityUid,System.Nullable{System.String})">DeleteInSlotMatching(EntityUid, EntityUid, Nullable&lt;String&gt;)</h4>
+  <div class="markdown level1 summary"><p>Scan the user's inventory slots until we find a virtual entity, when
+that's done check if the found virtual entity is a copy of our matching entity,
+if it is, delete it</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DeleteInSlotMatching(EntityUid user, EntityUid matching, string? slotName = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">user</span></td>
+        <td><p>The entity that we want to delete the virtual entity from</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">matching</span></td>
+        <td><p>The entity that made the virtual entity</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">slotName</span></td>
+        <td><p>Set this param if you have the name of the slot, it avoids unnecessary queries</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Inventory_VirtualItem_SharedVirtualItemSystem_DeleteVirtualItem_Entity_Content_Shared_Inventory_VirtualItem_VirtualItemComponent__EntityUid_.md&amp;value=---%0Auid%3A%20Content.Shared.Inventory.VirtualItem.SharedVirtualItemSystem.DeleteVirtualItem(Entity%7BContent.Shared.Inventory.VirtualItem.VirtualItemComponent%7D%2CEntityUid)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Inventory/VirtualItem/SharedVirtualItemSystem.cs/#L275">View Source</a>
+  </span>
+  <a id="Content_Shared_Inventory_VirtualItem_SharedVirtualItemSystem_DeleteVirtualItem_" data-uid="Content.Shared.Inventory.VirtualItem.SharedVirtualItemSystem.DeleteVirtualItem*"></a>
+  <h4 id="Content_Shared_Inventory_VirtualItem_SharedVirtualItemSystem_DeleteVirtualItem_Entity_Content_Shared_Inventory_VirtualItem_VirtualItemComponent__EntityUid_" data-uid="Content.Shared.Inventory.VirtualItem.SharedVirtualItemSystem.DeleteVirtualItem(Entity{Content.Shared.Inventory.VirtualItem.VirtualItemComponent},EntityUid)">DeleteVirtualItem(Entity&lt;VirtualItemComponent&gt;, EntityUid)</h4>
+  <div class="markdown level1 summary"><p>Queues a deletion for a virtual item and notifies the blocking entity and user.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DeleteVirtualItem(Entity&lt;VirtualItemComponent&gt; item, EntityUid user)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Inventory.VirtualItem.VirtualItemComponent.html">VirtualItemComponent</a>&gt;</td>
+        <td><span class="parametername">item</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">user</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Inventory_VirtualItem_SharedVirtualItemSystem_Initialize.md&amp;value=---%0Auid%3A%20Content.Shared.Inventory.VirtualItem.SharedVirtualItemSystem.Initialize%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Inventory/VirtualItem/SharedVirtualItemSystem.cs/#L51">View Source</a>
+  </span>
+  <a id="Content_Shared_Inventory_VirtualItem_SharedVirtualItemSystem_Initialize_" data-uid="Content.Shared.Inventory.VirtualItem.SharedVirtualItemSystem.Initialize*"></a>
+  <h4 id="Content_Shared_Inventory_VirtualItem_SharedVirtualItemSystem_Initialize" data-uid="Content.Shared.Inventory.VirtualItem.SharedVirtualItemSystem.Initialize">Initialize()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Initialize()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Inventory_VirtualItem_SharedVirtualItemSystem_TrySpawnVirtualItem_EntityUid_EntityUid_System_Nullable_EntityUid___.md&amp;value=---%0Auid%3A%20Content.Shared.Inventory.VirtualItem.SharedVirtualItemSystem.TrySpawnVirtualItem(EntityUid%2CEntityUid%2CSystem.Nullable%7BEntityUid%7D%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Inventory/VirtualItem/SharedVirtualItemSystem.cs/#L256">View Source</a>
+  </span>
+  <a id="Content_Shared_Inventory_VirtualItem_SharedVirtualItemSystem_TrySpawnVirtualItem_" data-uid="Content.Shared.Inventory.VirtualItem.SharedVirtualItemSystem.TrySpawnVirtualItem*"></a>
+  <h4 id="Content_Shared_Inventory_VirtualItem_SharedVirtualItemSystem_TrySpawnVirtualItem_EntityUid_EntityUid_System_Nullable_EntityUid___" data-uid="Content.Shared.Inventory.VirtualItem.SharedVirtualItemSystem.TrySpawnVirtualItem(EntityUid,EntityUid,System.Nullable{EntityUid}@)">TrySpawnVirtualItem(EntityUid, EntityUid, out Nullable&lt;EntityUid&gt;)</h4>
+  <div class="markdown level1 summary"><p>Spawns a virtual item and setups the component without any special handling</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TrySpawnVirtualItem(EntityUid blockingEnt, EntityUid user, out EntityUid? virtualItem)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">blockingEnt</span></td>
+        <td><p>The entity we will make a virtual entity copy of</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">user</span></td>
+        <td><p>The entity that we want to insert the virtual entity</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">EntityUid</span>&gt;</td>
+        <td><span class="parametername">virtualItem</span></td>
+        <td><p>The virtual item, if spawned</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Inventory_VirtualItem_SharedVirtualItemSystem_TrySpawnVirtualItemInHand_EntityUid_EntityUid_System_Boolean_.md&amp;value=---%0Auid%3A%20Content.Shared.Inventory.VirtualItem.SharedVirtualItemSystem.TrySpawnVirtualItemInHand(EntityUid%2CEntityUid%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Inventory/VirtualItem/SharedVirtualItemSystem.cs/#L122">View Source</a>
+  </span>
+  <a id="Content_Shared_Inventory_VirtualItem_SharedVirtualItemSystem_TrySpawnVirtualItemInHand_" data-uid="Content.Shared.Inventory.VirtualItem.SharedVirtualItemSystem.TrySpawnVirtualItemInHand*"></a>
+  <h4 id="Content_Shared_Inventory_VirtualItem_SharedVirtualItemSystem_TrySpawnVirtualItemInHand_EntityUid_EntityUid_System_Boolean_" data-uid="Content.Shared.Inventory.VirtualItem.SharedVirtualItemSystem.TrySpawnVirtualItemInHand(EntityUid,EntityUid,System.Boolean)">TrySpawnVirtualItemInHand(EntityUid, EntityUid, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Spawns a virtual item in a empty hand</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TrySpawnVirtualItemInHand(EntityUid blockingEnt, EntityUid user, bool dropOthers = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">blockingEnt</span></td>
+        <td><p>The entity we will make a virtual entity copy of</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">user</span></td>
+        <td><p>The entity that we want to insert the virtual entity</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">dropOthers</span></td>
+        <td><p>Whether or not to try and drop other items to make space</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Inventory_VirtualItem_SharedVirtualItemSystem_TrySpawnVirtualItemInHand_EntityUid_EntityUid_System_Nullable_EntityUid___System_Boolean_Content_Shared_Hands_Components_Hand_.md&amp;value=---%0Auid%3A%20Content.Shared.Inventory.VirtualItem.SharedVirtualItemSystem.TrySpawnVirtualItemInHand(EntityUid%2CEntityUid%2CSystem.Nullable%7BEntityUid%7D%40%2CSystem.Boolean%2CContent.Shared.Hands.Components.Hand)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Inventory/VirtualItem/SharedVirtualItemSystem.cs/#L128">View Source</a>
+  </span>
+  <a id="Content_Shared_Inventory_VirtualItem_SharedVirtualItemSystem_TrySpawnVirtualItemInHand_" data-uid="Content.Shared.Inventory.VirtualItem.SharedVirtualItemSystem.TrySpawnVirtualItemInHand*"></a>
+  <h4 id="Content_Shared_Inventory_VirtualItem_SharedVirtualItemSystem_TrySpawnVirtualItemInHand_EntityUid_EntityUid_System_Nullable_EntityUid___System_Boolean_Content_Shared_Hands_Components_Hand_" data-uid="Content.Shared.Inventory.VirtualItem.SharedVirtualItemSystem.TrySpawnVirtualItemInHand(EntityUid,EntityUid,System.Nullable{EntityUid}@,System.Boolean,Content.Shared.Hands.Components.Hand)">TrySpawnVirtualItemInHand(EntityUid, EntityUid, out Nullable&lt;EntityUid&gt;, Boolean, Hand)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TrySpawnVirtualItemInHand(EntityUid blockingEnt, EntityUid user, out EntityUid? virtualItem, bool dropOthers = false, Hand empty = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">blockingEnt</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">user</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">EntityUid</span>&gt;</td>
+        <td><span class="parametername">virtualItem</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">dropOthers</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Hands.Components.Hand.html">Hand</a></td>
+        <td><span class="parametername">empty</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Inventory_VirtualItem_SharedVirtualItemSystem_TrySpawnVirtualItemInInventory_EntityUid_EntityUid_System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20Content.Shared.Inventory.VirtualItem.SharedVirtualItemSystem.TrySpawnVirtualItemInInventory(EntityUid%2CEntityUid%2CSystem.String%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Inventory/VirtualItem/SharedVirtualItemSystem.cs/#L195">View Source</a>
+  </span>
+  <a id="Content_Shared_Inventory_VirtualItem_SharedVirtualItemSystem_TrySpawnVirtualItemInInventory_" data-uid="Content.Shared.Inventory.VirtualItem.SharedVirtualItemSystem.TrySpawnVirtualItemInInventory*"></a>
+  <h4 id="Content_Shared_Inventory_VirtualItem_SharedVirtualItemSystem_TrySpawnVirtualItemInInventory_EntityUid_EntityUid_System_String_System_Boolean_" data-uid="Content.Shared.Inventory.VirtualItem.SharedVirtualItemSystem.TrySpawnVirtualItemInInventory(EntityUid,EntityUid,System.String,System.Boolean)">TrySpawnVirtualItemInInventory(EntityUid, EntityUid, String, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Spawns a virtual item inside a inventory slot</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TrySpawnVirtualItemInInventory(EntityUid blockingEnt, EntityUid user, string slot, bool force = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">blockingEnt</span></td>
+        <td><p>The entity we will make a virtual entity copy of</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">user</span></td>
+        <td><p>The entity that we want to insert the virtual entity</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">slot</span></td>
+        <td><p>The slot to which we will insert the virtual entity (could be the &quot;shoes&quot; slot, for example)</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">force</span></td>
+        <td><p>Whether or not to force an equip</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Inventory_VirtualItem_SharedVirtualItemSystem_TrySpawnVirtualItemInInventory_EntityUid_EntityUid_System_String_System_Boolean_System_Nullable_EntityUid___.md&amp;value=---%0Auid%3A%20Content.Shared.Inventory.VirtualItem.SharedVirtualItemSystem.TrySpawnVirtualItemInInventory(EntityUid%2CEntityUid%2CSystem.String%2CSystem.Boolean%2CSystem.Nullable%7BEntityUid%7D%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Inventory/VirtualItem/SharedVirtualItemSystem.cs/#L201">View Source</a>
+  </span>
+  <a id="Content_Shared_Inventory_VirtualItem_SharedVirtualItemSystem_TrySpawnVirtualItemInInventory_" data-uid="Content.Shared.Inventory.VirtualItem.SharedVirtualItemSystem.TrySpawnVirtualItemInInventory*"></a>
+  <h4 id="Content_Shared_Inventory_VirtualItem_SharedVirtualItemSystem_TrySpawnVirtualItemInInventory_EntityUid_EntityUid_System_String_System_Boolean_System_Nullable_EntityUid___" data-uid="Content.Shared.Inventory.VirtualItem.SharedVirtualItemSystem.TrySpawnVirtualItemInInventory(EntityUid,EntityUid,System.String,System.Boolean,System.Nullable{EntityUid}@)">TrySpawnVirtualItemInInventory(EntityUid, EntityUid, String, Boolean, out Nullable&lt;EntityUid&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TrySpawnVirtualItemInInventory(EntityUid blockingEnt, EntityUid user, string slot, bool force, out EntityUid? virtualItem)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">blockingEnt</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">user</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">slot</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">force</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">EntityUid</span>&gt;</td>
+        <td><span class="parametername">virtualItem</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Inventory_VirtualItem_SharedVirtualItemSystem.md&amp;value=---%0Auid%3A%20Content.Shared.Inventory.VirtualItem.SharedVirtualItemSystem%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Inventory/VirtualItem/SharedVirtualItemSystem.cs/#L38" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="toggle-mode">
+                <div class="icon">
+                  <i aria-hidden="true">☀</i>
+                </div>
+                <label class="switch">
+                  <input type="checkbox" id="switch-style">
+                  <span class="slider round"></span>
+                </label>
+                <div class="icon">
+                  <i aria-hidden="true">☾</i>
+                </div>
+              </div>
+          
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <h5>In This Article</h5>
+              <div></div>
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <div class="pull-left">
+              
+              <span>Generated by <strong>DocFX</strong></span>
+            </div>
+            <div class="toggle-mode pull-right visible-sm visible-xs">
+              <div class="icon">
+                <i aria-hidden="true">☀</i>
+              </div>
+              <label class="switch">
+                <input type="checkbox" id="switch-style-m">
+                <span class="slider round"></span>
+              </label>
+              <div class="icon">
+                <i aria-hidden="true">☾</i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="../../styles/toggle-theme.js"></script>
+      </footer>    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

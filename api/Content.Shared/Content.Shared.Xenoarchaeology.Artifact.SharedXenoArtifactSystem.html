@@ -1,0 +1,2085 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class SharedXenoArtifactSystem
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class SharedXenoArtifactSystem
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem">
+  
+  
+  <h1 id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem" class="text-break">Class SharedXenoArtifactSystem
+  </h1>
+  <div class="markdown level0 summary"><p>Handles all logic for generating and facilitating interactions with XenoArtifacts</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">SharedXenoArtifactSystem</span></div>
+      <div class="level2"><a class="xref" href="../Content.Client/Content.Client.Xenoarchaeology.Artifact.XenoArtifactSystem.html">XenoArtifactSystem</a></div>
+      <div class="level2"><a class="xref" href="../Content.Server/Content.Server.Xenoarchaeology.Artifact.XenoArtifactSystem.html">XenoArtifactSystem</a></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Content.Shared.Xenoarchaeology.Artifact.html">Content.Shared.Xenoarchaeology.Artifact</a></h6>
+  <h6><strong>Assembly</strong>: Content.Shared.dll</h6>
+  <h5 id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class SharedXenoArtifactSystem : EntitySystem</code></pre>
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_PrototypeManager.md&amp;value=---%0Auid%3A%20Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.PrototypeManager%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Xenoarchaeology/Artifact/SharedXenoArtifactSystem.cs/#L27">View Source</a>
+  </span>
+  <h4 id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_PrototypeManager" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.PrototypeManager">PrototypeManager</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly IPrototypeManager PrototypeManager</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Prototypes.IPrototypeManager</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_RobustRandom.md&amp;value=---%0Auid%3A%20Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.RobustRandom%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Xenoarchaeology/Artifact/SharedXenoArtifactSystem.cs/#L28">View Source</a>
+  </span>
+  <h4 id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_RobustRandom" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.RobustRandom">RobustRandom</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly IRobustRandom RobustRandom</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Random.IRobustRandom</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_ActivateNode_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactComponent__Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactNodeComponent__System_Nullable_EntityUid__System_Nullable_EntityUid__Robust_Shared_Map_EntityCoordinates_System_Boolean_.md&amp;value=---%0Auid%3A%20Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.ActivateNode(Entity%7BContent.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent%7D%2CEntity%7BContent.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactNodeComponent%7D%2CSystem.Nullable%7BEntityUid%7D%2CSystem.Nullable%7BEntityUid%7D%2CRobust.Shared.Map.EntityCoordinates%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Xenoarchaeology/Artifact/SharedXenoArtifactSystem.XAE.cs/#L119">View Source</a>
+  </span>
+  <a id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_ActivateNode_" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.ActivateNode*"></a>
+  <h4 id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_ActivateNode_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactComponent__Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactNodeComponent__System_Nullable_EntityUid__System_Nullable_EntityUid__Robust_Shared_Map_EntityCoordinates_System_Boolean_" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.ActivateNode(Entity{Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent},Entity{Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactNodeComponent},System.Nullable{EntityUid},System.Nullable{EntityUid},Robust.Shared.Map.EntityCoordinates,System.Boolean)">ActivateNode(Entity&lt;XenoArtifactComponent&gt;, Entity&lt;XenoArtifactNodeComponent&gt;, Nullable&lt;EntityUid&gt;, Nullable&lt;EntityUid&gt;, EntityCoordinates, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Pushes node activation event and updates durability for activated node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ActivateNode(Entity&lt;XenoArtifactComponent&gt; artifact, Entity&lt;XenoArtifactNodeComponent&gt; node, EntityUid? user, EntityUid? target, EntityCoordinates coordinates, bool consumeDurability = true)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent.html">XenoArtifactComponent</a>&gt;</td>
+        <td><span class="parametername">artifact</span></td>
+        <td><p>Artifact entity, for which attempt to activate was made.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactNodeComponent.html">XenoArtifactNodeComponent</a>&gt;</td>
+        <td><span class="parametername">node</span></td>
+        <td><p>Node entity, effect of which should be activated.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">EntityUid</span>&gt;</td>
+        <td><span class="parametername">user</span></td>
+        <td><p>Character that attempted to activate artifact.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">EntityUid</span>&gt;</td>
+        <td><span class="parametername">target</span></td>
+        <td><p>Target, on which artifact activation attempt was used (for hand-held artifact - it can be 'clicked' over someone).</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Robust.Shared.Map.EntityCoordinates</span></td>
+        <td><span class="parametername">coordinates</span></td>
+        <td><p>Coordinates of <code data-dev-comment-type="paramref" class="paramref">target</code> entity.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">consumeDurability</span></td>
+        <td><p>Marker, if node durability should be adjusted as a result of activation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>True, if activation was successful, false otherwise.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_AdjustNodeDurability_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactNodeComponent__System_Int32_.md&amp;value=---%0Auid%3A%20Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.AdjustNodeDurability(Entity%7BContent.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactNodeComponent%7D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Xenoarchaeology/Artifact/SharedXenoArtifactSystem.Node.cs/#L78">View Source</a>
+  </span>
+  <a id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_AdjustNodeDurability_" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.AdjustNodeDurability*"></a>
+  <h4 id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_AdjustNodeDurability_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactNodeComponent__System_Int32_" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.AdjustNodeDurability(Entity{Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactNodeComponent},System.Int32)">AdjustNodeDurability(Entity&lt;XenoArtifactNodeComponent&gt;, Int32)</h4>
+  <div class="markdown level1 summary"><p>Adds to the node's durability by the specified value. To reduce, provide negative value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AdjustNodeDurability(Entity&lt;XenoArtifactNodeComponent&gt; ent, int durabilityDelta)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactNodeComponent.html">XenoArtifactNodeComponent</a>&gt;</td>
+        <td><span class="parametername">ent</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">durabilityDelta</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_CancelUnlockingState_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactUnlockingComponent_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactComponent__.md&amp;value=---%0Auid%3A%20Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.CancelUnlockingState(Entity%7BContent.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactUnlockingComponent%2CContent.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Xenoarchaeology/Artifact/SharedXenoArtifactSystem.Unlock.cs/#L111">View Source</a>
+  </span>
+  <a id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_CancelUnlockingState_" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.CancelUnlockingState*"></a>
+  <h4 id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_CancelUnlockingState_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactUnlockingComponent_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactComponent__" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.CancelUnlockingState(Entity{Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactUnlockingComponent,Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent})">CancelUnlockingState(Entity&lt;XenoArtifactUnlockingComponent, XenoArtifactComponent&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CancelUnlockingState(Entity&lt;XenoArtifactUnlockingComponent, XenoArtifactComponent&gt; ent)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactUnlockingComponent.html">XenoArtifactUnlockingComponent</a>, <a class="xref" href="Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent.html">XenoArtifactComponent</a>&gt;</td>
+        <td><span class="parametername">ent</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_CanUnlockNode_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactNodeComponent__.md&amp;value=---%0Auid%3A%20Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.CanUnlockNode(Entity%7BContent.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactNodeComponent%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Xenoarchaeology/Artifact/SharedXenoArtifactSystem.Unlock.cs/#L51">View Source</a>
+  </span>
+  <a id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_CanUnlockNode_" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.CanUnlockNode*"></a>
+  <h4 id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_CanUnlockNode_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactNodeComponent__" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.CanUnlockNode(Entity{Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactNodeComponent})">CanUnlockNode(Entity&lt;XenoArtifactNodeComponent&gt;)</h4>
+  <div class="markdown level1 summary"><p>Checks if node can be unlocked.
+Only those nodes, that have no predecessors, or have all
+predecessors unlocked can be unlocked themselves.
+Artifact being suppressed also prevents unlocking.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CanUnlockNode(Entity&lt;XenoArtifactNodeComponent&gt; ent)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactNodeComponent.html">XenoArtifactNodeComponent</a>&gt;</td>
+        <td><span class="parametername">ent</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_CreateNode_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactComponent__Content_Shared_Xenoarchaeology_Artifact_Prototypes_XenoArchTriggerPrototype_System_Int32_.md&amp;value=---%0Auid%3A%20Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.CreateNode(Entity%7BContent.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent%7D%2CContent.Shared.Xenoarchaeology.Artifact.Prototypes.XenoArchTriggerPrototype%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Xenoarchaeology/Artifact/SharedXenoArtifactSystem.Node.cs/#L111">View Source</a>
+  </span>
+  <a id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_CreateNode_" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.CreateNode*"></a>
+  <h4 id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_CreateNode_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactComponent__Content_Shared_Xenoarchaeology_Artifact_Prototypes_XenoArchTriggerPrototype_System_Int32_" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.CreateNode(Entity{Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent},Content.Shared.Xenoarchaeology.Artifact.Prototypes.XenoArchTriggerPrototype,System.Int32)">CreateNode(Entity&lt;XenoArtifactComponent&gt;, XenoArchTriggerPrototype, Int32)</h4>
+  <div class="markdown level1 summary"><p>Creates artifact node entity, attaching trigger and marking depth level for future use.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Entity&lt;XenoArtifactNodeComponent&gt; CreateNode(Entity&lt;XenoArtifactComponent&gt; ent, XenoArchTriggerPrototype trigger, int depth = 0)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent.html">XenoArtifactComponent</a>&gt;</td>
+        <td><span class="parametername">ent</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Xenoarchaeology.Artifact.Prototypes.XenoArchTriggerPrototype.html">XenoArchTriggerPrototype</a></td>
+        <td><span class="parametername">trigger</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">depth</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactNodeComponent.html">XenoArtifactNodeComponent</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_CreateNode_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactComponent__Robust_Shared_Prototypes_ProtoId_Content_Shared_Xenoarchaeology_Artifact_Prototypes_XenoArchTriggerPrototype__System_Int32_.md&amp;value=---%0Auid%3A%20Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.CreateNode(Entity%7BContent.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent%7D%2CRobust.Shared.Prototypes.ProtoId%7BContent.Shared.Xenoarchaeology.Artifact.Prototypes.XenoArchTriggerPrototype%7D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Xenoarchaeology/Artifact/SharedXenoArtifactSystem.Node.cs/#L102">View Source</a>
+  </span>
+  <a id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_CreateNode_" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.CreateNode*"></a>
+  <h4 id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_CreateNode_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactComponent__Robust_Shared_Prototypes_ProtoId_Content_Shared_Xenoarchaeology_Artifact_Prototypes_XenoArchTriggerPrototype__System_Int32_" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.CreateNode(Entity{Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent},Robust.Shared.Prototypes.ProtoId{Content.Shared.Xenoarchaeology.Artifact.Prototypes.XenoArchTriggerPrototype},System.Int32)">CreateNode(Entity&lt;XenoArtifactComponent&gt;, ProtoId&lt;XenoArchTriggerPrototype&gt;, Int32)</h4>
+  <div class="markdown level1 summary"><p>Creates artifact node entity, attaching trigger and marking depth level for future use.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Entity&lt;XenoArtifactNodeComponent&gt; CreateNode(Entity&lt;XenoArtifactComponent&gt; ent, ProtoId&lt;XenoArchTriggerPrototype&gt; trigger, int depth = 0)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent.html">XenoArtifactComponent</a>&gt;</td>
+        <td><span class="parametername">ent</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Robust.Shared.Prototypes.ProtoId</span>&lt;<a class="xref" href="Content.Shared.Xenoarchaeology.Artifact.Prototypes.XenoArchTriggerPrototype.html">XenoArchTriggerPrototype</a>&gt;</td>
+        <td><span class="parametername">trigger</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">depth</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactNodeComponent.html">XenoArtifactNodeComponent</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_FinishUnlockingState_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactUnlockingComponent_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactComponent__.md&amp;value=---%0Auid%3A%20Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.FinishUnlockingState(Entity%7BContent.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactUnlockingComponent%2CContent.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Xenoarchaeology/Artifact/SharedXenoArtifactSystem.Unlock.cs/#L76">View Source</a>
+  </span>
+  <a id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_FinishUnlockingState_" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.FinishUnlockingState*"></a>
+  <h4 id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_FinishUnlockingState_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactUnlockingComponent_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactComponent__" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.FinishUnlockingState(Entity{Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactUnlockingComponent,Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent})">FinishUnlockingState(Entity&lt;XenoArtifactUnlockingComponent, XenoArtifactComponent&gt;)</h4>
+  <div class="markdown level1 summary"><p>Finishes unlocking phase, removing related component, and sums up what nodes were triggered,
+that could be unlocked. Marks such nodes as unlocked, and pushes their node activation event.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void FinishUnlockingState(Entity&lt;XenoArtifactUnlockingComponent, XenoArtifactComponent&gt; ent)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactUnlockingComponent.html">XenoArtifactUnlockingComponent</a>, <a class="xref" href="Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent.html">XenoArtifactComponent</a>&gt;</td>
+        <td><span class="parametername">ent</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_GetActiveNodes_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactComponent__.md&amp;value=---%0Auid%3A%20Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.GetActiveNodes(Entity%7BContent.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Xenoarchaeology/Artifact/SharedXenoArtifactSystem.Node.cs/#L157">View Source</a>
+  </span>
+  <a id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_GetActiveNodes_" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.GetActiveNodes*"></a>
+  <h4 id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_GetActiveNodes_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactComponent__" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.GetActiveNodes(Entity{Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent})">GetActiveNodes(Entity&lt;XenoArtifactComponent&gt;)</h4>
+  <div class="markdown level1 summary"><p>Gets list of 'active' nodes. Active nodes are invoked on artifact use (if durability is greater than zero).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;Entity&lt;XenoArtifactNodeComponent&gt;&gt; GetActiveNodes(Entity&lt;XenoArtifactComponent&gt; ent)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent.html">XenoArtifactComponent</a>&gt;</td>
+        <td><span class="parametername">ent</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">List</span>&lt;<span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactNodeComponent.html">XenoArtifactNodeComponent</a>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_GetAllNodeIndices_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactComponent__.md&amp;value=---%0Auid%3A%20Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.GetAllNodeIndices(Entity%7BContent.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Xenoarchaeology/Artifact/SharedXenoArtifactSystem.Graph.cs/#L119">View Source</a>
+  </span>
+  <a id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_GetAllNodeIndices_" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.GetAllNodeIndices*"></a>
+  <h4 id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_GetAllNodeIndices_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactComponent__" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.GetAllNodeIndices(Entity{Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent})">GetAllNodeIndices(Entity&lt;XenoArtifactComponent&gt;)</h4>
+  <div class="markdown level1 summary"><p>Extracts enumeration of all indices that artifact node container have.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;int&gt; GetAllNodeIndices(Entity&lt;XenoArtifactComponent&gt; ent)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent.html">XenoArtifactComponent</a>&gt;</td>
+        <td><span class="parametername">ent</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_GetAllNodes_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactComponent__.md&amp;value=---%0Auid%3A%20Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.GetAllNodes(Entity%7BContent.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Xenoarchaeology/Artifact/SharedXenoArtifactSystem.Graph.cs/#L107">View Source</a>
+  </span>
+  <a id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_GetAllNodes_" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.GetAllNodes*"></a>
+  <h4 id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_GetAllNodes_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactComponent__" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.GetAllNodes(Entity{Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent})">GetAllNodes(Entity&lt;XenoArtifactComponent&gt;)</h4>
+  <div class="markdown level1 summary"><p>Extracts node entities from artifact container
+(uses pre-cached <a class="xref" href="Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent.html#Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactComponent_NodeVertices">NodeVertices</a> and mapping from NetEntity).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;Entity&lt;XenoArtifactNodeComponent&gt;&gt; GetAllNodes(Entity&lt;XenoArtifactComponent&gt; ent)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent.html">XenoArtifactComponent</a>&gt;</td>
+        <td><span class="parametername">ent</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactNodeComponent.html">XenoArtifactNodeComponent</a>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_GetDepthOrderedNodes_IEnumerable_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactNodeComponent___.md&amp;value=---%0Auid%3A%20Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.GetDepthOrderedNodes(IEnumerable%7BEntity%7BContent.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactNodeComponent%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Xenoarchaeology/Artifact/SharedXenoArtifactSystem.Node.cs/#L221">View Source</a>
+  </span>
+  <a id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_GetDepthOrderedNodes_" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.GetDepthOrderedNodes*"></a>
+  <h4 id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_GetDepthOrderedNodes_IEnumerable_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactNodeComponent___" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.GetDepthOrderedNodes(IEnumerable{Entity{Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactNodeComponent}})">GetDepthOrderedNodes(IEnumerable&lt;Entity&lt;XenoArtifactNodeComponent&gt;&gt;)</h4>
+  <div class="markdown level1 summary"><p>Gets list of nodes, grouped by depth level. Depth level count starts from 0.
+Only 0 depth nodes have no incoming edges - as only they are starting nodes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Dictionary&lt;int, List&lt;Entity&lt;XenoArtifactNodeComponent&gt;&gt;&gt; GetDepthOrderedNodes(IEnumerable&lt;Entity&lt;XenoArtifactNodeComponent&gt;&gt; nodes)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactNodeComponent.html">XenoArtifactNodeComponent</a>&gt;&gt;</td>
+        <td><span class="parametername">nodes</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Dictionary</span>&lt;<span class="xref">System.Int32</span>, <span class="xref">List</span>&lt;<span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactNodeComponent.html">XenoArtifactNodeComponent</a>&gt;&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_GetFreeNodeIndex_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactComponent__.md&amp;value=---%0Auid%3A%20Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.GetFreeNodeIndex(Entity%7BContent.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Xenoarchaeology/Artifact/SharedXenoArtifactSystem.Graph.cs/#L90">View Source</a>
+  </span>
+  <a id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_GetFreeNodeIndex_" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.GetFreeNodeIndex*"></a>
+  <h4 id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_GetFreeNodeIndex_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactComponent__" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.GetFreeNodeIndex(Entity{Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent})">GetFreeNodeIndex(Entity&lt;XenoArtifactComponent&gt;)</h4>
+  <div class="markdown level1 summary"><p>Gets the index of the first empty spot in the NodeVertices array.
+If there is none, resizes both arrays and returns the new index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int GetFreeNodeIndex(Entity&lt;XenoArtifactComponent&gt; ent)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent.html">XenoArtifactComponent</a>&gt;</td>
+        <td><span class="parametername">ent</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_GetIndex_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactComponent__EntityUid_.md&amp;value=---%0Auid%3A%20Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.GetIndex(Entity%7BContent.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent%7D%2CEntityUid)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Xenoarchaeology/Artifact/SharedXenoArtifactSystem.Graph.cs/#L22">View Source</a>
+  </span>
+  <a id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_GetIndex_" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.GetIndex*"></a>
+  <h4 id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_GetIndex_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactComponent__EntityUid_" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.GetIndex(Entity{Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent},EntityUid)">GetIndex(Entity&lt;XenoArtifactComponent&gt;, EntityUid)</h4>
+  <div class="markdown level1 summary"><p>Gets the index, corresponding to a given node, throwing if the node is not present.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int GetIndex(Entity&lt;XenoArtifactComponent&gt; ent, EntityUid node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent.html">XenoArtifactComponent</a>&gt;</td>
+        <td><span class="parametername">ent</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">node</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_GetNode_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactComponent__System_Int32_.md&amp;value=---%0Auid%3A%20Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.GetNode(Entity%7BContent.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent%7D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Xenoarchaeology/Artifact/SharedXenoArtifactSystem.Graph.cs/#L60">View Source</a>
+  </span>
+  <a id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_GetNode_" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.GetNode*"></a>
+  <h4 id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_GetNode_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactComponent__System_Int32_" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.GetNode(Entity{Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent},System.Int32)">GetNode(Entity&lt;XenoArtifactComponent&gt;, Int32)</h4>
+  <div class="markdown level1 summary"><p>Gets node entity with node component from artifact by index of node inside artifact nodes collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Entity&lt;XenoArtifactNodeComponent&gt; GetNode(Entity&lt;XenoArtifactComponent&gt; ent, int index)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent.html">XenoArtifactComponent</a>&gt;</td>
+        <td><span class="parametername">ent</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">index</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactNodeComponent.html">XenoArtifactNodeComponent</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_GetNodeId_EntityUid_.md&amp;value=---%0Auid%3A%20Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.GetNodeId(EntityUid)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Xenoarchaeology/Artifact/SharedXenoArtifactSystem.Node.cs/#L189">View Source</a>
+  </span>
+  <a id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_GetNodeId_" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.GetNodeId*"></a>
+  <h4 id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_GetNodeId_EntityUid_" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.GetNodeId(EntityUid)">GetNodeId(EntityUid)</h4>
+  <div class="markdown level1 summary"><p>Converts node entity uid to its display name (which is Identifier from <a class="xref" href="Content.Shared.NameIdentifier.NameIdentifierComponent.html">NameIdentifierComponent</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetNodeId(EntityUid uid)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">uid</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_GetResearchValue_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactNodeComponent__.md&amp;value=---%0Auid%3A%20Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.GetResearchValue(Entity%7BContent.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactNodeComponent%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Xenoarchaeology/Artifact/SharedXenoArtifactSystem.Node.cs/#L169">View Source</a>
+  </span>
+  <a id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_GetResearchValue_" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.GetResearchValue*"></a>
+  <h4 id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_GetResearchValue_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactNodeComponent__" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.GetResearchValue(Entity{Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactNodeComponent})">GetResearchValue(Entity&lt;XenoArtifactNodeComponent&gt;)</h4>
+  <div class="markdown level1 summary"><p>Gets amount of research points that can be extracted from node.
+We can only extract &quot;what's left&quot; - its base value, reduced by already consumed value.
+Every drained durability brings more points to be extracted.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int GetResearchValue(Entity&lt;XenoArtifactNodeComponent&gt; ent)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactNodeComponent.html">XenoArtifactNodeComponent</a>&gt;</td>
+        <td><span class="parametername">ent</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_GetSegments_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactComponent__.md&amp;value=---%0Auid%3A%20Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.GetSegments(Entity%7BContent.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Xenoarchaeology/Artifact/SharedXenoArtifactSystem.Node.cs/#L198">View Source</a>
+  </span>
+  <a id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_GetSegments_" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.GetSegments*"></a>
+  <h4 id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_GetSegments_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactComponent__" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.GetSegments(Entity{Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent})">GetSegments(Entity&lt;XenoArtifactComponent&gt;)</h4>
+  <div class="markdown level1 summary"><p>Gets two-dimensional array in a form of nested lists, which holds artifact nodes, grouped by segments.
+Segments are groups of interconnected nodes, there might be one or more segments in non-empty artifact.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;List&lt;Entity&lt;XenoArtifactNodeComponent&gt;&gt;&gt; GetSegments(Entity&lt;XenoArtifactComponent&gt; ent)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent.html">XenoArtifactComponent</a>&gt;</td>
+        <td><span class="parametername">ent</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">List</span>&lt;<span class="xref">List</span>&lt;<span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactNodeComponent.html">XenoArtifactNodeComponent</a>&gt;&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_GetSegmentsFromNodes_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactComponent__List_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactNodeComponent___.md&amp;value=---%0Auid%3A%20Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.GetSegmentsFromNodes(Entity%7BContent.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent%7D%2CList%7BEntity%7BContent.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactNodeComponent%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Xenoarchaeology/Artifact/SharedXenoArtifactSystem.Node.cs/#L335">View Source</a>
+  </span>
+  <a id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_GetSegmentsFromNodes_" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.GetSegmentsFromNodes*"></a>
+  <h4 id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_GetSegmentsFromNodes_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactComponent__List_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactNodeComponent___" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.GetSegmentsFromNodes(Entity{Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent},List{Entity{Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactNodeComponent}})">GetSegmentsFromNodes(Entity&lt;XenoArtifactComponent&gt;, List&lt;Entity&lt;XenoArtifactNodeComponent&gt;&gt;)</h4>
+  <div class="markdown level1 summary"><p>Gets two-dimensional array (as lists inside enumeration) that contains artifact nodes, grouped by segment.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;List&lt;Entity&lt;XenoArtifactNodeComponent&gt;&gt;&gt; GetSegmentsFromNodes(Entity&lt;XenoArtifactComponent&gt; ent, List&lt;Entity&lt;XenoArtifactNodeComponent&gt;&gt; nodes)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent.html">XenoArtifactComponent</a>&gt;</td>
+        <td><span class="parametername">ent</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">List</span>&lt;<span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactNodeComponent.html">XenoArtifactNodeComponent</a>&gt;&gt;</td>
+        <td><span class="parametername">nodes</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">List</span>&lt;<span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactNodeComponent.html">XenoArtifactNodeComponent</a>&gt;&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_HasUnlockedPredecessor_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactComponent__EntityUid_.md&amp;value=---%0Auid%3A%20Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.HasUnlockedPredecessor(Entity%7BContent.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent%7D%2CEntityUid)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Xenoarchaeology/Artifact/SharedXenoArtifactSystem.Node.cs/#L129">View Source</a>
+  </span>
+  <a id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_HasUnlockedPredecessor_" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.HasUnlockedPredecessor*"></a>
+  <h4 id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_HasUnlockedPredecessor_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactComponent__EntityUid_" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.HasUnlockedPredecessor(Entity{Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent},EntityUid)">HasUnlockedPredecessor(Entity&lt;XenoArtifactComponent&gt;, EntityUid)</h4>
+  <div class="markdown level1 summary"><p>Checks if all predecessor nodes are marked as 'unlocked'.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HasUnlockedPredecessor(Entity&lt;XenoArtifactComponent&gt; ent, EntityUid node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent.html">XenoArtifactComponent</a>&gt;</td>
+        <td><span class="parametername">ent</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">node</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_Initialize.md&amp;value=---%0Auid%3A%20Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.Initialize%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Xenoarchaeology/Artifact/SharedXenoArtifactSystem.cs/#L34">View Source</a>
+  </span>
+  <a id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_Initialize_" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.Initialize*"></a>
+  <h4 id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_Initialize" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.Initialize">Initialize()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Initialize()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_IsNodeActive_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactComponent__EntityUid_.md&amp;value=---%0Auid%3A%20Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.IsNodeActive(Entity%7BContent.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent%7D%2CEntityUid)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Xenoarchaeology/Artifact/SharedXenoArtifactSystem.Node.cs/#L149">View Source</a>
+  </span>
+  <a id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_IsNodeActive_" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.IsNodeActive*"></a>
+  <h4 id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_IsNodeActive_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactComponent__EntityUid_" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.IsNodeActive(Entity{Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent},EntityUid)">IsNodeActive(Entity&lt;XenoArtifactComponent&gt;, EntityUid)</h4>
+  <div class="markdown level1 summary"><p>Checks if node was marked as 'active'. Active nodes are invoked on artifact use (if durability is greater than zero).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsNodeActive(Entity&lt;XenoArtifactComponent&gt; ent, EntityUid node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent.html">XenoArtifactComponent</a>&gt;</td>
+        <td><span class="parametername">ent</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">node</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_RebuildCachedActiveNodes_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactComponent__.md&amp;value=---%0Auid%3A%20Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.RebuildCachedActiveNodes(Entity%7BContent.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Xenoarchaeology/Artifact/SharedXenoArtifactSystem.Node.cs/#L272">View Source</a>
+  </span>
+  <a id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_RebuildCachedActiveNodes_" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.RebuildCachedActiveNodes*"></a>
+  <h4 id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_RebuildCachedActiveNodes_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactComponent__" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.RebuildCachedActiveNodes(Entity{Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent})">RebuildCachedActiveNodes(Entity&lt;XenoArtifactComponent&gt;)</h4>
+  <div class="markdown level1 summary"><p>Clears all cached active nodes and rebuilds the list using the current node state.
+Active nodes have the following property:</p>
+<ul>
+<li>Are unlocked themselves</li>
+<li>All successors are also unlocked</li>
+</ul>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RebuildCachedActiveNodes(Entity&lt;XenoArtifactComponent&gt; ent)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent.html">XenoArtifactComponent</a>&gt;</td>
+        <td><span class="parametername">ent</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_RebuildCachedActiveNodes_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactComponent___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>You could technically modify this to have a per-node method that only checks direct predecessors
+and then does recursive updates for all successors, but I don't think the optimization is necessary right now.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_RebuildCachedSegments_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactComponent__.md&amp;value=---%0Auid%3A%20Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.RebuildCachedSegments(Entity%7BContent.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Xenoarchaeology/Artifact/SharedXenoArtifactSystem.Node.cs/#L313">View Source</a>
+  </span>
+  <a id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_RebuildCachedSegments_" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.RebuildCachedSegments*"></a>
+  <h4 id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_RebuildCachedSegments_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactComponent__" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.RebuildCachedSegments(Entity{Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent})">RebuildCachedSegments(Entity&lt;XenoArtifactComponent&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RebuildCachedSegments(Entity&lt;XenoArtifactComponent&gt; ent)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent.html">XenoArtifactComponent</a>&gt;</td>
+        <td><span class="parametername">ent</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_RebuildNodeMetaData_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactNodeComponent__.md&amp;value=---%0Auid%3A%20Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.RebuildNodeMetaData(Entity%7BContent.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactNodeComponent%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Xenoarchaeology/Artifact/SharedXenoArtifactSystem.Node.cs/#L257">View Source</a>
+  </span>
+  <a id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_RebuildNodeMetaData_" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.RebuildNodeMetaData*"></a>
+  <h4 id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_RebuildNodeMetaData_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactNodeComponent__" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.RebuildNodeMetaData(Entity{Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactNodeComponent})">RebuildNodeMetaData(Entity&lt;XenoArtifactNodeComponent&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RebuildNodeMetaData(Entity&lt;XenoArtifactNodeComponent&gt; node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactNodeComponent.html">XenoArtifactNodeComponent</a>&gt;</td>
+        <td><span class="parametername">node</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_RebuildXenoArtifactMetaData_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactComponent__.md&amp;value=---%0Auid%3A%20Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.RebuildXenoArtifactMetaData(Entity%7BContent.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Xenoarchaeology/Artifact/SharedXenoArtifactSystem.Node.cs/#L242">View Source</a>
+  </span>
+  <a id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_RebuildXenoArtifactMetaData_" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.RebuildXenoArtifactMetaData*"></a>
+  <h4 id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_RebuildXenoArtifactMetaData_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactComponent__" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.RebuildXenoArtifactMetaData(Entity{Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent})">RebuildXenoArtifactMetaData(Entity&lt;XenoArtifactComponent&gt;)</h4>
+  <div class="markdown level1 summary"><p>Rebuilds all the data, associated with nodes in an artifact, updating caches.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RebuildXenoArtifactMetaData(Entity&lt;XenoArtifactComponent&gt; artifact)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent.html">XenoArtifactComponent</a>&gt;</td>
+        <td><span class="parametername">artifact</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_RelayEventToNodes__1_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactComponent____0__.md&amp;value=---%0Auid%3A%20Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.RelayEventToNodes%60%601(Entity%7BContent.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent%7D%2C%60%600%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Xenoarchaeology/Artifact/SharedXenoArtifactSystem.XAT.cs/#L52">View Source</a>
+  </span>
+  <a id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_RelayEventToNodes_" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.RelayEventToNodes*"></a>
+  <h4 id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_RelayEventToNodes__1_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactComponent____0__" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.RelayEventToNodes``1(Entity{Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent},``0@)">RelayEventToNodes&lt;T&gt;(Entity&lt;XenoArtifactComponent&gt;, ref T)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void RelayEventToNodes&lt;T&gt;(Entity&lt;XenoArtifactComponent&gt; ent, ref T args)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent.html">XenoArtifactComponent</a>&gt;</td>
+        <td><span class="parametername">ent</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">args</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_SetArtifexiumApplied_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactUnlockingComponent__System_Boolean_.md&amp;value=---%0Auid%3A%20Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.SetArtifexiumApplied(Entity%7BContent.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactUnlockingComponent%7D%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Xenoarchaeology/Artifact/SharedXenoArtifactSystem.XAT.cs/#L104">View Source</a>
+  </span>
+  <a id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_SetArtifexiumApplied_" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.SetArtifexiumApplied*"></a>
+  <h4 id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_SetArtifexiumApplied_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactUnlockingComponent__System_Boolean_" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.SetArtifexiumApplied(Entity{Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactUnlockingComponent},System.Boolean)">SetArtifexiumApplied(Entity&lt;XenoArtifactUnlockingComponent&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetArtifexiumApplied(Entity&lt;XenoArtifactUnlockingComponent&gt; ent, bool val)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactUnlockingComponent.html">XenoArtifactUnlockingComponent</a>&gt;</td>
+        <td><span class="parametername">ent</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">val</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_SetConsumedResearchValue_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactNodeComponent__System_Int32_.md&amp;value=---%0Auid%3A%20Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.SetConsumedResearchValue(Entity%7BContent.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactNodeComponent%7D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Xenoarchaeology/Artifact/SharedXenoArtifactSystem.Node.cs/#L180">View Source</a>
+  </span>
+  <a id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_SetConsumedResearchValue_" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.SetConsumedResearchValue*"></a>
+  <h4 id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_SetConsumedResearchValue_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactNodeComponent__System_Int32_" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.SetConsumedResearchValue(Entity{Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactNodeComponent},System.Int32)">SetConsumedResearchValue(Entity&lt;XenoArtifactNodeComponent&gt;, Int32)</h4>
+  <div class="markdown level1 summary"><p>Sets amount of points already extracted from node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetConsumedResearchValue(Entity&lt;XenoArtifactNodeComponent&gt; ent, int value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactNodeComponent.html">XenoArtifactNodeComponent</a>&gt;</td>
+        <td><span class="parametername">ent</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_SetNodeDurability_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactNodeComponent__System_Int32_.md&amp;value=---%0Auid%3A%20Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.SetNodeDurability(Entity%7BContent.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactNodeComponent%7D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Xenoarchaeology/Artifact/SharedXenoArtifactSystem.Node.cs/#L89">View Source</a>
+  </span>
+  <a id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_SetNodeDurability_" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.SetNodeDurability*"></a>
+  <h4 id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_SetNodeDurability_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactNodeComponent__System_Int32_" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.SetNodeDurability(Entity{Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactNodeComponent},System.Int32)">SetNodeDurability(Entity&lt;XenoArtifactNodeComponent&gt;, Int32)</h4>
+  <div class="markdown level1 summary"><p>Sets a node's durability to the specified value. HIGHLY recommended to not be less than 0.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetNodeDurability(Entity&lt;XenoArtifactNodeComponent&gt; ent, int durability)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactNodeComponent.html">XenoArtifactNodeComponent</a>&gt;</td>
+        <td><span class="parametername">ent</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">durability</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_SetNodeUnlocked_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactComponent__Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactNodeComponent__.md&amp;value=---%0Auid%3A%20Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.SetNodeUnlocked(Entity%7BContent.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent%7D%2CEntity%7BContent.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactNodeComponent%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Xenoarchaeology/Artifact/SharedXenoArtifactSystem.Node.cs/#L65">View Source</a>
+  </span>
+  <a id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_SetNodeUnlocked_" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.SetNodeUnlocked*"></a>
+  <h4 id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_SetNodeUnlocked_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactComponent__Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactNodeComponent__" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.SetNodeUnlocked(Entity{Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent},Entity{Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactNodeComponent})">SetNodeUnlocked(Entity&lt;XenoArtifactComponent&gt;, Entity&lt;XenoArtifactNodeComponent&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetNodeUnlocked(Entity&lt;XenoArtifactComponent&gt; artifact, Entity&lt;XenoArtifactNodeComponent&gt; node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent.html">XenoArtifactComponent</a>&gt;</td>
+        <td><span class="parametername">artifact</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactNodeComponent.html">XenoArtifactNodeComponent</a>&gt;</td>
+        <td><span class="parametername">node</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_SetNodeUnlocked_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactNodeComponent__.md&amp;value=---%0Auid%3A%20Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.SetNodeUnlocked(Entity%7BContent.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactNodeComponent%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Xenoarchaeology/Artifact/SharedXenoArtifactSystem.Node.cs/#L50">View Source</a>
+  </span>
+  <a id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_SetNodeUnlocked_" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.SetNodeUnlocked*"></a>
+  <h4 id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_SetNodeUnlocked_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactNodeComponent__" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.SetNodeUnlocked(Entity{Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactNodeComponent})">SetNodeUnlocked(Entity&lt;XenoArtifactNodeComponent&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetNodeUnlocked(Entity&lt;XenoArtifactNodeComponent&gt; ent)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactNodeComponent.html">XenoArtifactNodeComponent</a>&gt;</td>
+        <td><span class="parametername">ent</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_SetSuppressed_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactComponent__System_Boolean_.md&amp;value=---%0Auid%3A%20Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.SetSuppressed(Entity%7BContent.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent%7D%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Xenoarchaeology/Artifact/SharedXenoArtifactSystem.cs/#L65">View Source</a>
+  </span>
+  <a id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_SetSuppressed_" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.SetSuppressed*"></a>
+  <h4 id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_SetSuppressed_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactComponent__System_Boolean_" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.SetSuppressed(Entity{Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent},System.Boolean)">SetSuppressed(Entity&lt;XenoArtifactComponent&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetSuppressed(Entity&lt;XenoArtifactComponent&gt; ent, bool val)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent.html">XenoArtifactComponent</a>&gt;</td>
+        <td><span class="parametername">ent</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">val</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_TriggerXenoArtifact_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactComponent__System_Nullable_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactNodeComponent___System_Boolean_.md&amp;value=---%0Auid%3A%20Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.TriggerXenoArtifact(Entity%7BContent.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent%7D%2CSystem.Nullable%7BEntity%7BContent.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactNodeComponent%7D%7D%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Xenoarchaeology/Artifact/SharedXenoArtifactSystem.XAT.cs/#L66">View Source</a>
+  </span>
+  <a id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_TriggerXenoArtifact_" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.TriggerXenoArtifact*"></a>
+  <h4 id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_TriggerXenoArtifact_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactComponent__System_Nullable_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactNodeComponent___System_Boolean_" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.TriggerXenoArtifact(Entity{Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent},System.Nullable{Entity{Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactNodeComponent}},System.Boolean)">TriggerXenoArtifact(Entity&lt;XenoArtifactComponent&gt;, Nullable&lt;Entity&lt;XenoArtifactNodeComponent&gt;&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Attempts to shift artifact into unlocking state, in which it is going to listen to interactions, that could trigger nodes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void TriggerXenoArtifact(Entity&lt;XenoArtifactComponent&gt; ent, Entity&lt;XenoArtifactNodeComponent&gt;? node, bool force = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent.html">XenoArtifactComponent</a>&gt;</td>
+        <td><span class="parametername">ent</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactNodeComponent.html">XenoArtifactNodeComponent</a>&gt;&gt;</td>
+        <td><span class="parametername">node</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">force</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_TryActivateXenoArtifact_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactComponent__System_Nullable_EntityUid__System_Nullable_EntityUid__Robust_Shared_Map_EntityCoordinates_System_Boolean_.md&amp;value=---%0Auid%3A%20Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.TryActivateXenoArtifact(Entity%7BContent.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent%7D%2CSystem.Nullable%7BEntityUid%7D%2CSystem.Nullable%7BEntityUid%7D%2CRobust.Shared.Map.EntityCoordinates%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Xenoarchaeology/Artifact/SharedXenoArtifactSystem.XAE.cs/#L64">View Source</a>
+  </span>
+  <a id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_TryActivateXenoArtifact_" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.TryActivateXenoArtifact*"></a>
+  <h4 id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_TryActivateXenoArtifact_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactComponent__System_Nullable_EntityUid__System_Nullable_EntityUid__Robust_Shared_Map_EntityCoordinates_System_Boolean_" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.TryActivateXenoArtifact(Entity{Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent},System.Nullable{EntityUid},System.Nullable{EntityUid},Robust.Shared.Map.EntityCoordinates,System.Boolean)">TryActivateXenoArtifact(Entity&lt;XenoArtifactComponent&gt;, Nullable&lt;EntityUid&gt;, Nullable&lt;EntityUid&gt;, EntityCoordinates, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Attempts to activate artifact nodes. 'active' are nodes that are marked as 'unlocked' and have no other successors, marked as 'unlocked'.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryActivateXenoArtifact(Entity&lt;XenoArtifactComponent&gt; artifact, EntityUid? user, EntityUid? target, EntityCoordinates coordinates, bool consumeDurability = true)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent.html">XenoArtifactComponent</a>&gt;</td>
+        <td><span class="parametername">artifact</span></td>
+        <td><p>Artifact entity, for which attempt to activate was made.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">EntityUid</span>&gt;</td>
+        <td><span class="parametername">user</span></td>
+        <td><p>Character that attempted to activate artifact.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">EntityUid</span>&gt;</td>
+        <td><span class="parametername">target</span></td>
+        <td><p>Target, on which artifact activation attempt was used (for hand-held artifact - it can be 'clicked' over someone).</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Robust.Shared.Map.EntityCoordinates</span></td>
+        <td><span class="parametername">coordinates</span></td>
+        <td><p>Coordinates of <code data-dev-comment-type="paramref" class="paramref">target</code> entity.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">consumeDurability</span></td>
+        <td><p>Whether this activation will deplete durability on the activated nodes.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>True, if activation was successful, false otherwise.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_TryGetIndex_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactComponent__EntityUid_System_Nullable_System_Int32___.md&amp;value=---%0Auid%3A%20Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.TryGetIndex(Entity%7BContent.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent%7D%2CEntityUid%2CSystem.Nullable%7BSystem.Int32%7D%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Xenoarchaeology/Artifact/SharedXenoArtifactSystem.Graph.cs/#L35">View Source</a>
+  </span>
+  <a id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_TryGetIndex_" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.TryGetIndex*"></a>
+  <h4 id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_TryGetIndex_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactComponent__EntityUid_System_Nullable_System_Int32___" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.TryGetIndex(Entity{Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent},EntityUid,System.Nullable{System.Int32}@)">TryGetIndex(Entity&lt;XenoArtifactComponent&gt;, EntityUid, out Nullable&lt;Int32&gt;)</h4>
+  <div class="markdown level1 summary"><p>Tries to get index inside nodes collection, corresponding to a given node EntityUid.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryGetIndex(Entity&lt;XenoArtifactComponent&gt; ent, EntityUid node, out int? index)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent.html">XenoArtifactComponent</a>&gt;</td>
+        <td><span class="parametername">ent</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">node</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td><span class="parametername">index</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_TryGetNode_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactComponent__System_Int32_System_Nullable_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactNodeComponent____.md&amp;value=---%0Auid%3A%20Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.TryGetNode(Entity%7BContent.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent%7D%2CSystem.Int32%2CSystem.Nullable%7BEntity%7BContent.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactNodeComponent%7D%7D%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Xenoarchaeology/Artifact/SharedXenoArtifactSystem.Graph.cs/#L71">View Source</a>
+  </span>
+  <a id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_TryGetNode_" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.TryGetNode*"></a>
+  <h4 id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_TryGetNode_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactComponent__System_Int32_System_Nullable_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactNodeComponent____" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.TryGetNode(Entity{Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent},System.Int32,System.Nullable{Entity{Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactNodeComponent}}@)">TryGetNode(Entity&lt;XenoArtifactComponent&gt;, Int32, out Nullable&lt;Entity&lt;XenoArtifactNodeComponent&gt;&gt;)</h4>
+  <div class="markdown level1 summary"><p>Tries to get node entity with node component from artifact by index of node inside artifact nodes collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryGetNode(Entity&lt;XenoArtifactComponent&gt; ent, int index, out Entity&lt;XenoArtifactNodeComponent&gt;? node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent.html">XenoArtifactComponent</a>&gt;</td>
+        <td><span class="parametername">ent</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">index</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactNodeComponent.html">XenoArtifactNodeComponent</a>&gt;&gt;</td>
+        <td><span class="parametername">node</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_TryGetNodeFromUnlockState_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactUnlockingComponent_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactComponent__System_Nullable_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactNodeComponent____.md&amp;value=---%0Auid%3A%20Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.TryGetNodeFromUnlockState(Entity%7BContent.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactUnlockingComponent%2CContent.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent%7D%2CSystem.Nullable%7BEntity%7BContent.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactNodeComponent%7D%7D%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Xenoarchaeology/Artifact/SharedXenoArtifactSystem.Unlock.cs/#L120">View Source</a>
+  </span>
+  <a id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_TryGetNodeFromUnlockState_" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.TryGetNodeFromUnlockState*"></a>
+  <h4 id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_TryGetNodeFromUnlockState_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactUnlockingComponent_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactComponent__System_Nullable_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactNodeComponent____" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.TryGetNodeFromUnlockState(Entity{Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactUnlockingComponent,Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent},System.Nullable{Entity{Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactNodeComponent}}@)">TryGetNodeFromUnlockState(Entity&lt;XenoArtifactUnlockingComponent, XenoArtifactComponent&gt;, out Nullable&lt;Entity&lt;XenoArtifactNodeComponent&gt;&gt;)</h4>
+  <div class="markdown level1 summary"><p>Gets first locked node that can be unlocked (it is locked and all predecessor are unlocked).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryGetNodeFromUnlockState(Entity&lt;XenoArtifactUnlockingComponent, XenoArtifactComponent&gt; ent, out Entity&lt;XenoArtifactNodeComponent&gt;? node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactUnlockingComponent.html">XenoArtifactUnlockingComponent</a>, <a class="xref" href="Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactComponent.html">XenoArtifactComponent</a>&gt;</td>
+        <td><span class="parametername">ent</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactNodeComponent.html">XenoArtifactNodeComponent</a>&gt;&gt;</td>
+        <td><span class="parametername">node</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_Update_System_Single_.md&amp;value=---%0Auid%3A%20Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.Update(System.Single)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Xenoarchaeology/Artifact/SharedXenoArtifactSystem.cs/#L46">View Source</a>
+  </span>
+  <a id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_Update_" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.Update*"></a>
+  <h4 id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_Update_System_Single_" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.Update(System.Single)">Update(Single)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Update(float frameTime)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">frameTime</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_UpdateNodeResearchValue_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactNodeComponent__.md&amp;value=---%0Auid%3A%20Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.UpdateNodeResearchValue(Entity%7BContent.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactNodeComponent%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Xenoarchaeology/Artifact/SharedXenoArtifactSystem.Node.cs/#L387">View Source</a>
+  </span>
+  <a id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_UpdateNodeResearchValue_" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.UpdateNodeResearchValue*"></a>
+  <h4 id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_UpdateNodeResearchValue_Entity_Content_Shared_Xenoarchaeology_Artifact_Components_XenoArtifactNodeComponent__" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.UpdateNodeResearchValue(Entity{Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactNodeComponent})">UpdateNodeResearchValue(Entity&lt;XenoArtifactNodeComponent&gt;)</h4>
+  <div class="markdown level1 summary"><p>Sets node research point amount that can be extracted.
+Used up durability increases amount to be extracted.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateNodeResearchValue(Entity&lt;XenoArtifactNodeComponent&gt; node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactNodeComponent.html">XenoArtifactNodeComponent</a>&gt;</td>
+        <td><span class="parametername">node</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_XATRelayLocalEvent__1.md&amp;value=---%0Auid%3A%20Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.XATRelayLocalEvent%60%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Xenoarchaeology/Artifact/SharedXenoArtifactSystem.XAT.cs/#L39">View Source</a>
+  </span>
+  <a id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_XATRelayLocalEvent_" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.XATRelayLocalEvent*"></a>
+  <h4 id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_XATRelayLocalEvent__1" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.XATRelayLocalEvent``1">XATRelayLocalEvent&lt;T&gt;()</h4>
+  <div class="markdown level1 summary"><p>Relays artifact events for artifact nodes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void XATRelayLocalEvent&lt;T&gt;()</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_XenoArtifactNode_EntityUid_.md&amp;value=---%0Auid%3A%20Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.XenoArtifactNode(EntityUid)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Xenoarchaeology/Artifact/SharedXenoArtifactSystem.Node.cs/#L45">View Source</a>
+  </span>
+  <a id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_XenoArtifactNode_" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.XenoArtifactNode*"></a>
+  <h4 id="Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem_XenoArtifactNode_EntityUid_" data-uid="Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem.XenoArtifactNode(EntityUid)">XenoArtifactNode(EntityUid)</h4>
+  <div class="markdown level1 summary"><p>Gets node component by node entity uid.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public XenoArtifactNodeComponent XenoArtifactNode(EntityUid uid)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">uid</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Xenoarchaeology.Artifact.Components.XenoArtifactNodeComponent.html">XenoArtifactNodeComponent</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Xenoarchaeology_Artifact_SharedXenoArtifactSystem.md&amp;value=---%0Auid%3A%20Content.Shared.Xenoarchaeology.Artifact.SharedXenoArtifactSystem%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Xenoarchaeology/Artifact/SharedXenoArtifactSystem.XAT.cs/#L21" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="toggle-mode">
+                <div class="icon">
+                  <i aria-hidden="true">☀</i>
+                </div>
+                <label class="switch">
+                  <input type="checkbox" id="switch-style">
+                  <span class="slider round"></span>
+                </label>
+                <div class="icon">
+                  <i aria-hidden="true">☾</i>
+                </div>
+              </div>
+          
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <h5>In This Article</h5>
+              <div></div>
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <div class="pull-left">
+              
+              <span>Generated by <strong>DocFX</strong></span>
+            </div>
+            <div class="toggle-mode pull-right visible-sm visible-xs">
+              <div class="icon">
+                <i aria-hidden="true">☀</i>
+              </div>
+              <label class="switch">
+                <input type="checkbox" id="switch-style-m">
+                <span class="slider round"></span>
+              </label>
+              <div class="icon">
+                <i aria-hidden="true">☾</i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="../../styles/toggle-theme.js"></script>
+      </footer>    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

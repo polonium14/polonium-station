@@ -1,0 +1,586 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class PowerTransmissionComponent
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class PowerTransmissionComponent
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Content.Server._NF.Power.Components.PowerTransmissionComponent">
+  
+  
+  <h1 id="Content_Server__NF_Power_Components_PowerTransmissionComponent" data-uid="Content.Server._NF.Power.Components.PowerTransmissionComponent" class="text-break">Class PowerTransmissionComponent
+  </h1>
+  <div class="markdown level0 summary"><p>An entity with this will pay out a given bank account regularly depending on the amount of power received.
+Payouts occur at a fixed period, but the rate of pay depends on the average power input over that period.
+At high power input, the incremental rate of pay diminishes logarithmically.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">PowerTransmissionComponent</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Content.Server._NF.Power.Components.html">Content.Server._NF.Power.Components</a></h6>
+  <h6><strong>Assembly</strong>: Content.Server.dll</h6>
+  <h5 id="Content_Server__NF_Power_Components_PowerTransmissionComponent_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class PowerTransmissionComponent : Component</code></pre>
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server__NF_Power_Components_PowerTransmissionComponent_Account.md&amp;value=---%0Auid%3A%20Content.Server._NF.Power.Components.PowerTransmissionComponent.Account%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/_NF/Power/Components/PowerTransmissionComponent.cs/#L51">View Source</a>
+  </span>
+  <h4 id="Content_Server__NF_Power_Components_PowerTransmissionComponent_Account" data-uid="Content.Server._NF.Power.Components.PowerTransmissionComponent.Account">Account</h4>
+  <div class="markdown level1 summary"><p>The account to deposit funds from sold energy into.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ProtoId&lt;CargoAccountPrototype&gt; Account</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Prototypes.ProtoId</span>&lt;<a class="xref" href="../Content.Shared/Content.Shared.Cargo.Prototypes.CargoAccountPrototype.html">CargoAccountPrototype</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server__NF_Power_Components_PowerTransmissionComponent_AccumulatedEnergy.md&amp;value=---%0Auid%3A%20Content.Server._NF.Power.Components.PowerTransmissionComponent.AccumulatedEnergy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/_NF/Power/Components/PowerTransmissionComponent.cs/#L45">View Source</a>
+  </span>
+  <h4 id="Content_Server__NF_Power_Components_PowerTransmissionComponent_AccumulatedEnergy" data-uid="Content.Server._NF.Power.Components.PowerTransmissionComponent.AccumulatedEnergy">AccumulatedEnergy</h4>
+  <div class="markdown level1 summary"><p>The total energy accumulated, in joules.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float AccumulatedEnergy</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server__NF_Power_Components_PowerTransmissionComponent_DepositPeriod.md&amp;value=---%0Auid%3A%20Content.Server._NF.Power.Components.PowerTransmissionComponent.DepositPeriod%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/_NF/Power/Components/PowerTransmissionComponent.cs/#L32">View Source</a>
+  </span>
+  <h4 id="Content_Server__NF_Power_Components_PowerTransmissionComponent_DepositPeriod" data-uid="Content.Server._NF.Power.Components.PowerTransmissionComponent.DepositPeriod">DepositPeriod</h4>
+  <div class="markdown level1 summary"><p>The period between depositing money into a bank account.
+Also the T in Tk*a^(log10(x/T)-R) for rate calculation</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TimeSpan DepositPeriod</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TimeSpan</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server__NF_Power_Components_PowerTransmissionComponent_LastPowered.md&amp;value=---%0Auid%3A%20Content.Server._NF.Power.Components.PowerTransmissionComponent.LastPowered%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/_NF/Power/Components/PowerTransmissionComponent.cs/#L101">View Source</a>
+  </span>
+  <h4 id="Content_Server__NF_Power_Components_PowerTransmissionComponent_LastPowered" data-uid="Content.Server._NF.Power.Components.PowerTransmissionComponent.LastPowered">LastPowered</h4>
+  <div class="markdown level1 summary"><p>True if the entity was powered last tick.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool LastPowered</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server__NF_Power_Components_PowerTransmissionComponent_LinearMaxValue.md&amp;value=---%0Auid%3A%20Content.Server._NF.Power.Components.PowerTransmissionComponent.LinearMaxValue%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/_NF/Power/Components/PowerTransmissionComponent.cs/#L65">View Source</a>
+  </span>
+  <h4 id="Content_Server__NF_Power_Components_PowerTransmissionComponent_LinearMaxValue" data-uid="Content.Server._NF.Power.Components.PowerTransmissionComponent.LinearMaxValue">LinearMaxValue</h4>
+  <div class="markdown level1 summary"><p>The maximum value (inclusive) of the linear mode per deposit, in watts</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float LinearMaxValue</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server__NF_Power_Components_PowerTransmissionComponent_LinearRate.md&amp;value=---%0Auid%3A%20Content.Server._NF.Power.Components.PowerTransmissionComponent.LinearRate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/_NF/Power/Components/PowerTransmissionComponent.cs/#L59">View Source</a>
+  </span>
+  <h4 id="Content_Server__NF_Power_Components_PowerTransmissionComponent_LinearRate" data-uid="Content.Server._NF.Power.Components.PowerTransmissionComponent.LinearRate">LinearRate</h4>
+  <div class="markdown level1 summary"><p>The rate per joule to credit the account while in the linear mode.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float LinearRate</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server__NF_Power_Components_PowerTransmissionComponent_LogarithmCoefficient.md&amp;value=---%0Auid%3A%20Content.Server._NF.Power.Components.PowerTransmissionComponent.LogarithmCoefficient%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/_NF/Power/Components/PowerTransmissionComponent.cs/#L82">View Source</a>
+  </span>
+  <h4 id="Content_Server__NF_Power_Components_PowerTransmissionComponent_LogarithmCoefficient" data-uid="Content.Server._NF.Power.Components.PowerTransmissionComponent.LogarithmCoefficient">LogarithmCoefficient</h4>
+  <div class="markdown level1 summary"><p>The coefficient of the logarithmic mode: k in Tk<em>a^(log10(x/T)-R)
+Note: should be set to LinearRate</em>LinearMaxValue for a continuous function.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float LogarithmCoefficient</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server__NF_Power_Components_PowerTransmissionComponent_LogarithmRateBase.md&amp;value=---%0Auid%3A%20Content.Server._NF.Power.Components.PowerTransmissionComponent.LogarithmRateBase%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/_NF/Power/Components/PowerTransmissionComponent.cs/#L75">View Source</a>
+  </span>
+  <h4 id="Content_Server__NF_Power_Components_PowerTransmissionComponent_LogarithmRateBase" data-uid="Content.Server._NF.Power.Components.PowerTransmissionComponent.LogarithmRateBase">LogarithmRateBase</h4>
+  <div class="markdown level1 summary"><p>The base on power the logarithmic mode: a in Tk*a^(log10(x/T)-R)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float LogarithmRateBase</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server__NF_Power_Components_PowerTransmissionComponent_LogarithmSubtrahend.md&amp;value=---%0Auid%3A%20Content.Server._NF.Power.Components.PowerTransmissionComponent.LogarithmSubtrahend%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/_NF/Power/Components/PowerTransmissionComponent.cs/#L89">View Source</a>
+  </span>
+  <h4 id="Content_Server__NF_Power_Components_PowerTransmissionComponent_LogarithmSubtrahend" data-uid="Content.Server._NF.Power.Components.PowerTransmissionComponent.LogarithmSubtrahend">LogarithmSubtrahend</h4>
+  <div class="markdown level1 summary"><p>The exponential subtrahend of the logarithmic mode: R in Tk*a^(log10(x/T)-R)
+Note: should be set to log10(LinearMaxValue) for a continuous function.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float LogarithmSubtrahend</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server__NF_Power_Components_PowerTransmissionComponent_MaximumRequestablePower.md&amp;value=---%0Auid%3A%20Content.Server._NF.Power.Components.PowerTransmissionComponent.MaximumRequestablePower%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/_NF/Power/Components/PowerTransmissionComponent.cs/#L113">View Source</a>
+  </span>
+  <h4 id="Content_Server__NF_Power_Components_PowerTransmissionComponent_MaximumRequestablePower" data-uid="Content.Server._NF.Power.Components.PowerTransmissionComponent.MaximumRequestablePower">MaximumRequestablePower</h4>
+  <div class="markdown level1 summary"><p>The maximum requestable power, in watts.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float MaximumRequestablePower</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server__NF_Power_Components_PowerTransmissionComponent_MaxValuePerSecond.md&amp;value=---%0Auid%3A%20Content.Server._NF.Power.Components.PowerTransmissionComponent.MaxValuePerSecond%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/_NF/Power/Components/PowerTransmissionComponent.cs/#L95">View Source</a>
+  </span>
+  <h4 id="Content_Server__NF_Power_Components_PowerTransmissionComponent_MaxValuePerSecond" data-uid="Content.Server._NF.Power.Components.PowerTransmissionComponent.MaxValuePerSecond">MaxValuePerSecond</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float MaxValuePerSecond</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server__NF_Power_Components_PowerTransmissionComponent_MinimumRequestablePower.md&amp;value=---%0Auid%3A%20Content.Server._NF.Power.Components.PowerTransmissionComponent.MinimumRequestablePower%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/_NF/Power/Components/PowerTransmissionComponent.cs/#L107">View Source</a>
+  </span>
+  <h4 id="Content_Server__NF_Power_Components_PowerTransmissionComponent_MinimumRequestablePower" data-uid="Content.Server._NF.Power.Components.PowerTransmissionComponent.MinimumRequestablePower">MinimumRequestablePower</h4>
+  <div class="markdown level1 summary"><p>The minimum requestable power, in watts.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float MinimumRequestablePower</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server__NF_Power_Components_PowerTransmissionComponent_NextDeposit.md&amp;value=---%0Auid%3A%20Content.Server._NF.Power.Components.PowerTransmissionComponent.NextDeposit%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/_NF/Power/Components/PowerTransmissionComponent.cs/#L39">View Source</a>
+  </span>
+  <h4 id="Content_Server__NF_Power_Components_PowerTransmissionComponent_NextDeposit" data-uid="Content.Server._NF.Power.Components.PowerTransmissionComponent.NextDeposit">NextDeposit</h4>
+  <div class="markdown level1 summary"><p>The next time this power plant is selling accumulated power.
+Should not be changed during runtime, will cause errors in deposit amounts.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TimeSpan NextDeposit</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TimeSpan</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server__NF_Power_Components_PowerTransmissionComponent_NodeName.md&amp;value=---%0Auid%3A%20Content.Server._NF.Power.Components.PowerTransmissionComponent.NodeName%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/_NF/Power/Components/PowerTransmissionComponent.cs/#L25">View Source</a>
+  </span>
+  <h4 id="Content_Server__NF_Power_Components_PowerTransmissionComponent_NodeName" data-uid="Content.Server._NF.Power.Components.PowerTransmissionComponent.NodeName">NodeName</h4>
+  <div class="markdown level1 summary"><p>The name of the node to be connected/disconnected.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string NodeName</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server__NF_Power_Components_PowerTransmissionComponent.md&amp;value=---%0Auid%3A%20Content.Server._NF.Power.Components.PowerTransmissionComponent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/_NF/Power/Components/PowerTransmissionComponent.cs/#L17" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="toggle-mode">
+                <div class="icon">
+                  <i aria-hidden="true">☀</i>
+                </div>
+                <label class="switch">
+                  <input type="checkbox" id="switch-style">
+                  <span class="slider round"></span>
+                </label>
+                <div class="icon">
+                  <i aria-hidden="true">☾</i>
+                </div>
+              </div>
+          
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <h5>In This Article</h5>
+              <div></div>
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <div class="pull-left">
+              
+              <span>Generated by <strong>DocFX</strong></span>
+            </div>
+            <div class="toggle-mode pull-right visible-sm visible-xs">
+              <div class="icon">
+                <i aria-hidden="true">☀</i>
+              </div>
+              <label class="switch">
+                <input type="checkbox" id="switch-style-m">
+                <span class="slider round"></span>
+              </label>
+              <div class="icon">
+                <i aria-hidden="true">☾</i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="../../styles/toggle-theme.js"></script>
+      </footer>    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

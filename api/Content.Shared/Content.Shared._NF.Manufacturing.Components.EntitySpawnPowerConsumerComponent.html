@@ -1,0 +1,707 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class EntitySpawnPowerConsumerComponent
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class EntitySpawnPowerConsumerComponent
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Content.Shared._NF.Manufacturing.Components.EntitySpawnPowerConsumerComponent">
+  
+  
+  <h1 id="Content_Shared__NF_Manufacturing_Components_EntitySpawnPowerConsumerComponent" data-uid="Content.Shared._NF.Manufacturing.Components.EntitySpawnPowerConsumerComponent" class="text-break">Class EntitySpawnPowerConsumerComponent
+  </h1>
+  <div class="markdown level0 summary"><p>An entity with this will produce an entity over time after accumulating charge.
+Entities are output after a given amount of energy is accumulated.
+At high power input, energy accumulated diminishes logarithmically.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">EntitySpawnPowerConsumerComponent</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Content.Shared._NF.Manufacturing.Components.html">Content.Shared._NF.Manufacturing.Components</a></h6>
+  <h6><strong>Assembly</strong>: Content.Shared.dll</h6>
+  <h5 id="Content_Shared__NF_Manufacturing_Components_EntitySpawnPowerConsumerComponent_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class EntitySpawnPowerConsumerComponent : Component</code></pre>
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared__NF_Manufacturing_Components_EntitySpawnPowerConsumerComponent_AccumulatedEnergy.md&amp;value=---%0Auid%3A%20Content.Shared._NF.Manufacturing.Components.EntitySpawnPowerConsumerComponent.AccumulatedEnergy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/_NF/Manufacturing/Components/EntitySpawnPowerConsumerComponent.cs/#L44">View Source</a>
+  </span>
+  <h4 id="Content_Shared__NF_Manufacturing_Components_EntitySpawnPowerConsumerComponent_AccumulatedEnergy" data-uid="Content.Shared._NF.Manufacturing.Components.EntitySpawnPowerConsumerComponent.AccumulatedEnergy">AccumulatedEnergy</h4>
+  <div class="markdown level1 summary"><p>The total energy accumulated, in joules.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float AccumulatedEnergy</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared__NF_Manufacturing_Components_EntitySpawnPowerConsumerComponent_AccumulatedSpawnCheckEnergy.md&amp;value=---%0Auid%3A%20Content.Shared._NF.Manufacturing.Components.EntitySpawnPowerConsumerComponent.AccumulatedSpawnCheckEnergy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/_NF/Manufacturing/Components/EntitySpawnPowerConsumerComponent.cs/#L50">View Source</a>
+  </span>
+  <h4 id="Content_Shared__NF_Manufacturing_Components_EntitySpawnPowerConsumerComponent_AccumulatedSpawnCheckEnergy" data-uid="Content.Shared._NF.Manufacturing.Components.EntitySpawnPowerConsumerComponent.AccumulatedSpawnCheckEnergy">AccumulatedSpawnCheckEnergy</h4>
+  <div class="markdown level1 summary"><p>The total energy accumulated this spawn check, in joules.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float AccumulatedSpawnCheckEnergy</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared__NF_Manufacturing_Components_EntitySpawnPowerConsumerComponent_EnergyPerSpawn.md&amp;value=---%0Auid%3A%20Content.Shared._NF.Manufacturing.Components.EntitySpawnPowerConsumerComponent.EnergyPerSpawn%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/_NF/Manufacturing/Components/EntitySpawnPowerConsumerComponent.cs/#L86">View Source</a>
+  </span>
+  <h4 id="Content_Shared__NF_Manufacturing_Components_EntitySpawnPowerConsumerComponent_EnergyPerSpawn" data-uid="Content.Shared._NF.Manufacturing.Components.EntitySpawnPowerConsumerComponent.EnergyPerSpawn">EnergyPerSpawn</h4>
+  <div class="markdown level1 summary"><p>The necessary energy to spawn a unit in the output slot.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float EnergyPerSpawn</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared__NF_Manufacturing_Components_EntitySpawnPowerConsumerComponent_LinearMaxValue.md&amp;value=---%0Auid%3A%20Content.Shared._NF.Manufacturing.Components.EntitySpawnPowerConsumerComponent.LinearMaxValue%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/_NF/Manufacturing/Components/EntitySpawnPowerConsumerComponent.cs/#L94">View Source</a>
+  </span>
+  <h4 id="Content_Shared__NF_Manufacturing_Components_EntitySpawnPowerConsumerComponent_LinearMaxValue" data-uid="Content.Shared._NF.Manufacturing.Components.EntitySpawnPowerConsumerComponent.LinearMaxValue">LinearMaxValue</h4>
+  <div class="markdown level1 summary"><p>The maximum power to increase without logarithmic reduction.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float LinearMaxValue</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared__NF_Manufacturing_Components_EntitySpawnPowerConsumerComponent_LogarithmCoefficient.md&amp;value=---%0Auid%3A%20Content.Shared._NF.Manufacturing.Components.EntitySpawnPowerConsumerComponent.LogarithmCoefficient%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/_NF/Manufacturing/Components/EntitySpawnPowerConsumerComponent.cs/#L107">View Source</a>
+  </span>
+  <h4 id="Content_Shared__NF_Manufacturing_Components_EntitySpawnPowerConsumerComponent_LogarithmCoefficient" data-uid="Content.Shared._NF.Manufacturing.Components.EntitySpawnPowerConsumerComponent.LogarithmCoefficient">LogarithmCoefficient</h4>
+  <div class="markdown level1 summary"><p>The coefficient of the logarithmic mode: k in Tk*a^(log10(x/T)-R)
+Note: should be set to LinearMaxValue for a continuous function.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float LogarithmCoefficient</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared__NF_Manufacturing_Components_EntitySpawnPowerConsumerComponent_LogarithmRateBase.md&amp;value=---%0Auid%3A%20Content.Shared._NF.Manufacturing.Components.EntitySpawnPowerConsumerComponent.LogarithmRateBase%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/_NF/Manufacturing/Components/EntitySpawnPowerConsumerComponent.cs/#L100">View Source</a>
+  </span>
+  <h4 id="Content_Shared__NF_Manufacturing_Components_EntitySpawnPowerConsumerComponent_LogarithmRateBase" data-uid="Content.Shared._NF.Manufacturing.Components.EntitySpawnPowerConsumerComponent.LogarithmRateBase">LogarithmRateBase</h4>
+  <div class="markdown level1 summary"><p>The base on power the logarithmic mode: a in Tk*a^(log10(x/T)-R)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float LogarithmRateBase</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared__NF_Manufacturing_Components_EntitySpawnPowerConsumerComponent_LogarithmSubtrahend.md&amp;value=---%0Auid%3A%20Content.Shared._NF.Manufacturing.Components.EntitySpawnPowerConsumerComponent.LogarithmSubtrahend%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/_NF/Manufacturing/Components/EntitySpawnPowerConsumerComponent.cs/#L114">View Source</a>
+  </span>
+  <h4 id="Content_Shared__NF_Manufacturing_Components_EntitySpawnPowerConsumerComponent_LogarithmSubtrahend" data-uid="Content.Shared._NF.Manufacturing.Components.EntitySpawnPowerConsumerComponent.LogarithmSubtrahend">LogarithmSubtrahend</h4>
+  <div class="markdown level1 summary"><p>The exponential subtrahend of the logarithmic mode: R in Tk*a^(log10(x/T)-R)
+Note: should be set to log10(LinearMaxValue) for a continuous function.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float LogarithmSubtrahend</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared__NF_Manufacturing_Components_EntitySpawnPowerConsumerComponent_Material.md&amp;value=---%0Auid%3A%20Content.Shared._NF.Manufacturing.Components.EntitySpawnPowerConsumerComponent.Material%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/_NF/Manufacturing/Components/EntitySpawnPowerConsumerComponent.cs/#L56">View Source</a>
+  </span>
+  <h4 id="Content_Shared__NF_Manufacturing_Components_EntitySpawnPowerConsumerComponent_Material" data-uid="Content.Shared._NF.Manufacturing.Components.EntitySpawnPowerConsumerComponent.Material">Material</h4>
+  <div class="markdown level1 summary"><p>The material to use, if any.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ProtoId&lt;MaterialPrototype&gt;? Material</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">Robust.Shared.Prototypes.ProtoId</span>&lt;<a class="xref" href="Content.Shared.Materials.MaterialPrototype.html">MaterialPrototype</a>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared__NF_Manufacturing_Components_EntitySpawnPowerConsumerComponent_MaterialAmount.md&amp;value=---%0Auid%3A%20Content.Shared._NF.Manufacturing.Components.EntitySpawnPowerConsumerComponent.MaterialAmount%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/_NF/Manufacturing/Components/EntitySpawnPowerConsumerComponent.cs/#L62">View Source</a>
+  </span>
+  <h4 id="Content_Shared__NF_Manufacturing_Components_EntitySpawnPowerConsumerComponent_MaterialAmount" data-uid="Content.Shared._NF.Manufacturing.Components.EntitySpawnPowerConsumerComponent.MaterialAmount">MaterialAmount</h4>
+  <div class="markdown level1 summary"><p>The amount of material to use for one unit of output.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int MaterialAmount</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared__NF_Manufacturing_Components_EntitySpawnPowerConsumerComponent_MaxEffectivePower.md&amp;value=---%0Auid%3A%20Content.Shared._NF.Manufacturing.Components.EntitySpawnPowerConsumerComponent.MaxEffectivePower%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/_NF/Manufacturing/Components/EntitySpawnPowerConsumerComponent.cs/#L121">View Source</a>
+  </span>
+  <h4 id="Content_Shared__NF_Manufacturing_Components_EntitySpawnPowerConsumerComponent_MaxEffectivePower" data-uid="Content.Shared._NF.Manufacturing.Components.EntitySpawnPowerConsumerComponent.MaxEffectivePower">MaxEffectivePower</h4>
+  <div class="markdown level1 summary"><p>Maximum effective power to store towards spawning an item.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float MaxEffectivePower</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared__NF_Manufacturing_Components_EntitySpawnPowerConsumerComponent_MaximumRequestablePower.md&amp;value=---%0Auid%3A%20Content.Shared._NF.Manufacturing.Components.EntitySpawnPowerConsumerComponent.MaximumRequestablePower%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/_NF/Manufacturing/Components/EntitySpawnPowerConsumerComponent.cs/#L133">View Source</a>
+  </span>
+  <h4 id="Content_Shared__NF_Manufacturing_Components_EntitySpawnPowerConsumerComponent_MaximumRequestablePower" data-uid="Content.Shared._NF.Manufacturing.Components.EntitySpawnPowerConsumerComponent.MaximumRequestablePower">MaximumRequestablePower</h4>
+  <div class="markdown level1 summary"><p>The maximum requestable power.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float MaximumRequestablePower</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared__NF_Manufacturing_Components_EntitySpawnPowerConsumerComponent_MinimumRequestablePower.md&amp;value=---%0Auid%3A%20Content.Shared._NF.Manufacturing.Components.EntitySpawnPowerConsumerComponent.MinimumRequestablePower%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/_NF/Manufacturing/Components/EntitySpawnPowerConsumerComponent.cs/#L127">View Source</a>
+  </span>
+  <h4 id="Content_Shared__NF_Manufacturing_Components_EntitySpawnPowerConsumerComponent_MinimumRequestablePower" data-uid="Content.Shared._NF.Manufacturing.Components.EntitySpawnPowerConsumerComponent.MinimumRequestablePower">MinimumRequestablePower</h4>
+  <div class="markdown level1 summary"><p>The minimum requestable power.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float MinimumRequestablePower</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared__NF_Manufacturing_Components_EntitySpawnPowerConsumerComponent_NextSpawnCheck.md&amp;value=---%0Auid%3A%20Content.Shared._NF.Manufacturing.Components.EntitySpawnPowerConsumerComponent.NextSpawnCheck%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/_NF/Manufacturing/Components/EntitySpawnPowerConsumerComponent.cs/#L38">View Source</a>
+  </span>
+  <h4 id="Content_Shared__NF_Manufacturing_Components_EntitySpawnPowerConsumerComponent_NextSpawnCheck" data-uid="Content.Shared._NF.Manufacturing.Components.EntitySpawnPowerConsumerComponent.NextSpawnCheck">NextSpawnCheck</h4>
+  <div class="markdown level1 summary"><p>The next time this power plant is selling accumulated power.
+Should not be changedduring runtime, will cause errors in deposit amounts.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TimeSpan NextSpawnCheck</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TimeSpan</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared__NF_Manufacturing_Components_EntitySpawnPowerConsumerComponent_NodeName.md&amp;value=---%0Auid%3A%20Content.Shared._NF.Manufacturing.Components.EntitySpawnPowerConsumerComponent.NodeName%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/_NF/Manufacturing/Components/EntitySpawnPowerConsumerComponent.cs/#L24">View Source</a>
+  </span>
+  <h4 id="Content_Shared__NF_Manufacturing_Components_EntitySpawnPowerConsumerComponent_NodeName" data-uid="Content.Shared._NF.Manufacturing.Components.EntitySpawnPowerConsumerComponent.NodeName">NodeName</h4>
+  <div class="markdown level1 summary"><p>The name of the node to be connected/disconnected.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string NodeName</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared__NF_Manufacturing_Components_EntitySpawnPowerConsumerComponent_Processing.md&amp;value=---%0Auid%3A%20Content.Shared._NF.Manufacturing.Components.EntitySpawnPowerConsumerComponent.Processing%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/_NF/Manufacturing/Components/EntitySpawnPowerConsumerComponent.cs/#L68">View Source</a>
+  </span>
+  <h4 id="Content_Shared__NF_Manufacturing_Components_EntitySpawnPowerConsumerComponent_Processing" data-uid="Content.Shared._NF.Manufacturing.Components.EntitySpawnPowerConsumerComponent.Processing">Processing</h4>
+  <div class="markdown level1 summary"><p>If true, the machine is currently producing an entity, and has consumed any requisite materials.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Processing</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared__NF_Manufacturing_Components_EntitySpawnPowerConsumerComponent_SlotName.md&amp;value=---%0Auid%3A%20Content.Shared._NF.Manufacturing.Components.EntitySpawnPowerConsumerComponent.SlotName%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/_NF/Manufacturing/Components/EntitySpawnPowerConsumerComponent.cs/#L74">View Source</a>
+  </span>
+  <h4 id="Content_Shared__NF_Manufacturing_Components_EntitySpawnPowerConsumerComponent_SlotName" data-uid="Content.Shared._NF.Manufacturing.Components.EntitySpawnPowerConsumerComponent.SlotName">SlotName</h4>
+  <div class="markdown level1 summary"><p>The name of the container to output the created entity.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string SlotName</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared__NF_Manufacturing_Components_EntitySpawnPowerConsumerComponent_Spawn.md&amp;value=---%0Auid%3A%20Content.Shared._NF.Manufacturing.Components.EntitySpawnPowerConsumerComponent.Spawn%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/_NF/Manufacturing/Components/EntitySpawnPowerConsumerComponent.cs/#L80">View Source</a>
+  </span>
+  <h4 id="Content_Shared__NF_Manufacturing_Components_EntitySpawnPowerConsumerComponent_Spawn" data-uid="Content.Shared._NF.Manufacturing.Components.EntitySpawnPowerConsumerComponent.Spawn">Spawn</h4>
+  <div class="markdown level1 summary"><p>The entity prototype ID to spawn when enough energy is accumulated.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public EntProtoId Spawn</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Prototypes.EntProtoId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared__NF_Manufacturing_Components_EntitySpawnPowerConsumerComponent_SpawnCheckPeriod.md&amp;value=---%0Auid%3A%20Content.Shared._NF.Manufacturing.Components.EntitySpawnPowerConsumerComponent.SpawnCheckPeriod%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/_NF/Manufacturing/Components/EntitySpawnPowerConsumerComponent.cs/#L31">View Source</a>
+  </span>
+  <h4 id="Content_Shared__NF_Manufacturing_Components_EntitySpawnPowerConsumerComponent_SpawnCheckPeriod" data-uid="Content.Shared._NF.Manufacturing.Components.EntitySpawnPowerConsumerComponent.SpawnCheckPeriod">SpawnCheckPeriod</h4>
+  <div class="markdown level1 summary"><p>The period between depositing money into a sector account.
+Also the T in Tk*a^(log10(x/T)-R) for rate calculation</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TimeSpan SpawnCheckPeriod</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TimeSpan</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared__NF_Manufacturing_Components_EntitySpawnPowerConsumerComponent.md&amp;value=---%0Auid%3A%20Content.Shared._NF.Manufacturing.Components.EntitySpawnPowerConsumerComponent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/_NF/Manufacturing/Components/EntitySpawnPowerConsumerComponent.cs/#L16" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="toggle-mode">
+                <div class="icon">
+                  <i aria-hidden="true">☀</i>
+                </div>
+                <label class="switch">
+                  <input type="checkbox" id="switch-style">
+                  <span class="slider round"></span>
+                </label>
+                <div class="icon">
+                  <i aria-hidden="true">☾</i>
+                </div>
+              </div>
+          
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <h5>In This Article</h5>
+              <div></div>
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <div class="pull-left">
+              
+              <span>Generated by <strong>DocFX</strong></span>
+            </div>
+            <div class="toggle-mode pull-right visible-sm visible-xs">
+              <div class="icon">
+                <i aria-hidden="true">☀</i>
+              </div>
+              <label class="switch">
+                <input type="checkbox" id="switch-style-m">
+                <span class="slider round"></span>
+              </label>
+              <div class="icon">
+                <i aria-hidden="true">☾</i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="../../styles/toggle-theme.js"></script>
+      </footer>    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

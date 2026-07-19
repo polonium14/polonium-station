@@ -1,0 +1,531 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class ChatRepositorySystem
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class ChatRepositorySystem
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Content.Server.Chat.V2.Repository.ChatRepositorySystem">
+  
+  
+  <h1 id="Content_Server_Chat_V2_Repository_ChatRepositorySystem" data-uid="Content.Server.Chat.V2.Repository.ChatRepositorySystem" class="text-break">Class ChatRepositorySystem
+  </h1>
+  <div class="markdown level0 summary"><p>Stores <a class="xref" href="../Content.Shared/Content.Shared.Chat.V2.IChatEvent.html">IChatEvent</a>, gives them UIDs, and issues <span class="xref">MessageCreatedEvent</span>.
+Allows for deletion of messages.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">ChatRepositorySystem</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Content.Server.Chat.V2.Repository.html">Content.Server.Chat.V2.Repository</a></h6>
+  <h6><strong>Assembly</strong>: Content.Server.dll</h6>
+  <h5 id="Content_Server_Chat_V2_Repository_ChatRepositorySystem_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class ChatRepositorySystem : EntitySystem</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_Chat_V2_Repository_ChatRepositorySystem_Add_Content_Shared_Chat_V2_IChatEvent_.md&amp;value=---%0Auid%3A%20Content.Server.Chat.V2.Repository.ChatRepositorySystem.Add(Content.Shared.Chat.V2.IChatEvent)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/Chat/V2/Repository/ChatRepository.cs/#L47">View Source</a>
+  </span>
+  <a id="Content_Server_Chat_V2_Repository_ChatRepositorySystem_Add_" data-uid="Content.Server.Chat.V2.Repository.ChatRepositorySystem.Add*"></a>
+  <h4 id="Content_Server_Chat_V2_Repository_ChatRepositorySystem_Add_Content_Shared_Chat_V2_IChatEvent_" data-uid="Content.Server.Chat.V2.Repository.ChatRepositorySystem.Add(Content.Shared.Chat.V2.IChatEvent)">Add(IChatEvent)</h4>
+  <div class="markdown level1 summary"><p>Adds an <a class="xref" href="../Content.Shared/Content.Shared.Chat.V2.IChatEvent.html">IChatEvent</a> to the repo and raises it with a UID for consumption elsewhere.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Add(IChatEvent ev)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="../Content.Shared/Content.Shared.Chat.V2.IChatEvent.html">IChatEvent</a></td>
+        <td><span class="parametername">ev</span></td>
+        <td><p>The event to store and raise</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>If storing and raising succeeded.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_Chat_V2_Repository_ChatRepositorySystem_Delete_System_UInt32_.md&amp;value=---%0Auid%3A%20Content.Server.Chat.V2.Repository.ChatRepositorySystem.Delete(System.UInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/Chat/V2/Repository/ChatRepository.cs/#L116">View Source</a>
+  </span>
+  <a id="Content_Server_Chat_V2_Repository_ChatRepositorySystem_Delete_" data-uid="Content.Server.Chat.V2.Repository.ChatRepositorySystem.Delete*"></a>
+  <h4 id="Content_Server_Chat_V2_Repository_ChatRepositorySystem_Delete_System_UInt32_" data-uid="Content.Server.Chat.V2.Repository.ChatRepositorySystem.Delete(System.UInt32)">Delete(UInt32)</h4>
+  <div class="markdown level1 summary"><p>Deletes a message from the repository and issues a <span class="xref">MessageDeletedEvent</span> that says this has happened
+both locally and on the network.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Delete(uint id)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt32</span></td>
+        <td><span class="parametername">id</span></td>
+        <td><p>The ID to delete</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>If deletion did anything</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Content_Server_Chat_V2_Repository_ChatRepositorySystem_Delete_System_UInt32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Should only be used for adminning</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_Chat_V2_Repository_ChatRepositorySystem_GetEventFor_System_UInt32_.md&amp;value=---%0Auid%3A%20Content.Server.Chat.V2.Repository.ChatRepositorySystem.GetEventFor(System.UInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/Chat/V2/Repository/ChatRepository.cs/#L82">View Source</a>
+  </span>
+  <a id="Content_Server_Chat_V2_Repository_ChatRepositorySystem_GetEventFor_" data-uid="Content.Server.Chat.V2.Repository.ChatRepositorySystem.GetEventFor*"></a>
+  <h4 id="Content_Server_Chat_V2_Repository_ChatRepositorySystem_GetEventFor_System_UInt32_" data-uid="Content.Server.Chat.V2.Repository.ChatRepositorySystem.GetEventFor(System.UInt32)">GetEventFor(UInt32)</h4>
+  <div class="markdown level1 summary"><p>Returns the event associated with a UID, if it exists.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IChatEvent GetEventFor(uint id)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt32</span></td>
+        <td><span class="parametername">id</span></td>
+        <td><p>The UID of a event.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="../Content.Shared/Content.Shared.Chat.V2.IChatEvent.html">IChatEvent</a></td>
+        <td><p>The event, if it exists.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_Chat_V2_Repository_ChatRepositorySystem_Initialize.md&amp;value=---%0Auid%3A%20Content.Server.Chat.V2.Repository.ChatRepositorySystem.Initialize%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/Chat/V2/Repository/ChatRepository.cs/#L31">View Source</a>
+  </span>
+  <a id="Content_Server_Chat_V2_Repository_ChatRepositorySystem_Initialize_" data-uid="Content.Server.Chat.V2.Repository.ChatRepositorySystem.Initialize*"></a>
+  <h4 id="Content_Server_Chat_V2_Repository_ChatRepositorySystem_Initialize" data-uid="Content.Server.Chat.V2.Repository.ChatRepositorySystem.Initialize">Initialize()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Initialize()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_Chat_V2_Repository_ChatRepositorySystem_NukeForUserId_Robust_Shared_Network_NetUserId_System_Nullable_System_String___.md&amp;value=---%0Auid%3A%20Content.Server.Chat.V2.Repository.ChatRepositorySystem.NukeForUserId(Robust.Shared.Network.NetUserId%2CSystem.Nullable%7BSystem.String%7D%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/Chat/V2/Repository/ChatRepository.cs/#L167">View Source</a>
+  </span>
+  <a id="Content_Server_Chat_V2_Repository_ChatRepositorySystem_NukeForUserId_" data-uid="Content.Server.Chat.V2.Repository.ChatRepositorySystem.NukeForUserId*"></a>
+  <h4 id="Content_Server_Chat_V2_Repository_ChatRepositorySystem_NukeForUserId_Robust_Shared_Network_NetUserId_System_Nullable_System_String___" data-uid="Content.Server.Chat.V2.Repository.ChatRepositorySystem.NukeForUserId(Robust.Shared.Network.NetUserId,System.Nullable{System.String}@)">NukeForUserId(NetUserId, out Nullable&lt;String&gt;)</h4>
+  <div class="markdown level1 summary"><p>Nukes a user's entire chat history from the repo and issues a <span class="xref">MessageDeletedEvent</span> saying this has
+happened.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool NukeForUserId(NetUserId userId, out string? reason)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Network.NetUserId</span></td>
+        <td><span class="parametername">userId</span></td>
+        <td><p>The user ID to nuke.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">reason</span></td>
+        <td><p>Why nuking failed, if it did.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>If nuking did anything.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Content_Server_Chat_V2_Repository_ChatRepositorySystem_NukeForUserId_Robust_Shared_Network_NetUserId_System_Nullable_System_String____remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Note that this could be a <strong>very large</strong> event, as we send every single event ID over the wire.
+By necessity we can't leak the player-source of chat messages (or if they even have the same origin) because of
+client modders who could use that information to cheat/metagrudge/etc &gt;:(</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_Chat_V2_Repository_ChatRepositorySystem_NukeForUsername_System_String_System_Nullable_System_String___.md&amp;value=---%0Auid%3A%20Content.Server.Chat.V2.Repository.ChatRepositorySystem.NukeForUsername(System.String%2CSystem.Nullable%7BSystem.String%7D%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/Chat/V2/Repository/ChatRepository.cs/#L145">View Source</a>
+  </span>
+  <a id="Content_Server_Chat_V2_Repository_ChatRepositorySystem_NukeForUsername_" data-uid="Content.Server.Chat.V2.Repository.ChatRepositorySystem.NukeForUsername*"></a>
+  <h4 id="Content_Server_Chat_V2_Repository_ChatRepositorySystem_NukeForUsername_System_String_System_Nullable_System_String___" data-uid="Content.Server.Chat.V2.Repository.ChatRepositorySystem.NukeForUsername(System.String,System.Nullable{System.String}@)">NukeForUsername(String, out Nullable&lt;String&gt;)</h4>
+  <div class="markdown level1 summary"><p>Nukes a user's entire chat history from the repo and issues a <span class="xref">MessageDeletedEvent</span> saying this has
+happened.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool NukeForUsername(string userName, out string? reason)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">userName</span></td>
+        <td><p>The user ID to nuke.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">reason</span></td>
+        <td><p>Why nuking failed, if it did.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>If nuking did anything.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Content_Server_Chat_V2_Repository_ChatRepositorySystem_NukeForUsername_System_String_System_Nullable_System_String____remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Note that this could be a <strong>very large</strong> event, as we send every single event ID over the wire.
+By necessity we can't leak the player-source of chat messages (or if they even have the same origin) because of
+client modders who could use that information to cheat/metagrudge/etc &gt;:(</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_Chat_V2_Repository_ChatRepositorySystem_Patch_System_UInt32_System_String_.md&amp;value=---%0Auid%3A%20Content.Server.Chat.V2.Repository.ChatRepositorySystem.Patch(System.UInt32%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/Chat/V2/Repository/ChatRepository.cs/#L95">View Source</a>
+  </span>
+  <a id="Content_Server_Chat_V2_Repository_ChatRepositorySystem_Patch_" data-uid="Content.Server.Chat.V2.Repository.ChatRepositorySystem.Patch*"></a>
+  <h4 id="Content_Server_Chat_V2_Repository_ChatRepositorySystem_Patch_System_UInt32_System_String_" data-uid="Content.Server.Chat.V2.Repository.ChatRepositorySystem.Patch(System.UInt32,System.String)">Patch(UInt32, String)</h4>
+  <div class="markdown level1 summary"><p>Edits a specific message and issues a <span class="xref">MessagePatchedEvent</span> that says this happened both locally and
+on the network. Note that this doesn't replay the message (yet), so translators and mutators won't act on it.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Patch(uint id, string message)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt32</span></td>
+        <td><span class="parametername">id</span></td>
+        <td><p>The ID to edit</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">message</span></td>
+        <td><p>The new message to send</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>If patching did anything did anything</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Content_Server_Chat_V2_Repository_ChatRepositorySystem_Patch_System_UInt32_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Should be used for admining and admemeing only.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_Chat_V2_Repository_ChatRepositorySystem_Refresh.md&amp;value=---%0Auid%3A%20Content.Server.Chat.V2.Repository.ChatRepositorySystem.Refresh%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/Chat/V2/Repository/ChatRepository.cs/#L195">View Source</a>
+  </span>
+  <a id="Content_Server_Chat_V2_Repository_ChatRepositorySystem_Refresh_" data-uid="Content.Server.Chat.V2.Repository.ChatRepositorySystem.Refresh*"></a>
+  <h4 id="Content_Server_Chat_V2_Repository_ChatRepositorySystem_Refresh" data-uid="Content.Server.Chat.V2.Repository.ChatRepositorySystem.Refresh">Refresh()</h4>
+  <div class="markdown level1 summary"><p>Dumps held chat storage data and refreshes the repo.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Refresh()</code></pre>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_Chat_V2_Repository_ChatRepositorySystem.md&amp;value=---%0Auid%3A%20Content.Server.Chat.V2.Repository.ChatRepositorySystem%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/Chat/V2/Repository/ChatRepository.cs/#L21" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="toggle-mode">
+                <div class="icon">
+                  <i aria-hidden="true">☀</i>
+                </div>
+                <label class="switch">
+                  <input type="checkbox" id="switch-style">
+                  <span class="slider round"></span>
+                </label>
+                <div class="icon">
+                  <i aria-hidden="true">☾</i>
+                </div>
+              </div>
+          
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <h5>In This Article</h5>
+              <div></div>
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <div class="pull-left">
+              
+              <span>Generated by <strong>DocFX</strong></span>
+            </div>
+            <div class="toggle-mode pull-right visible-sm visible-xs">
+              <div class="icon">
+                <i aria-hidden="true">☀</i>
+              </div>
+              <label class="switch">
+                <input type="checkbox" id="switch-style-m">
+                <span class="slider round"></span>
+              </label>
+              <div class="icon">
+                <i aria-hidden="true">☾</i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="../../styles/toggle-theme.js"></script>
+      </footer>    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

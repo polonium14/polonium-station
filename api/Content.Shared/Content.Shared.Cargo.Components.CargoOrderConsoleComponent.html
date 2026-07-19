@@ -1,0 +1,794 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class CargoOrderConsoleComponent
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class CargoOrderConsoleComponent
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Content.Shared.Cargo.Components.CargoOrderConsoleComponent">
+  
+  
+  <h1 id="Content_Shared_Cargo_Components_CargoOrderConsoleComponent" data-uid="Content.Shared.Cargo.Components.CargoOrderConsoleComponent" class="text-break">Class CargoOrderConsoleComponent
+  </h1>
+  <div class="markdown level0 summary"><p>Handles sending order requests to cargo. Doesn't handle orders themselves via shuttle or telepads.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">CargoOrderConsoleComponent</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Content.Shared.Cargo.Components.html">Content.Shared.Cargo.Components</a></h6>
+  <h6><strong>Assembly</strong>: Content.Shared.dll</h6>
+  <h5 id="Content_Shared_Cargo_Components_CargoOrderConsoleComponent_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class CargoOrderConsoleComponent : Component</code></pre>
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Cargo_Components_CargoOrderConsoleComponent_Account.md&amp;value=---%0Auid%3A%20Content.Shared.Cargo.Components.CargoOrderConsoleComponent.Account%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Cargo/Components/CargoOrderConsoleComponent.cs/#L35">View Source</a>
+  </span>
+  <h4 id="Content_Shared_Cargo_Components_CargoOrderConsoleComponent_Account" data-uid="Content.Shared.Cargo.Components.CargoOrderConsoleComponent.Account">Account</h4>
+  <div class="markdown level1 summary"><p>The account that this console pulls from for ordering.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ProtoId&lt;CargoAccountPrototype&gt; Account</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Prototypes.ProtoId</span>&lt;<a class="xref" href="Content.Shared.Cargo.Prototypes.CargoAccountPrototype.html">CargoAccountPrototype</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Cargo_Components_CargoOrderConsoleComponent_AllowedGroups.md&amp;value=---%0Auid%3A%20Content.Shared.Cargo.Components.CargoOrderConsoleComponent.AllowedGroups%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Cargo/Components/CargoOrderConsoleComponent.cs/#L92">View Source</a>
+  </span>
+  <h4 id="Content_Shared_Cargo_Components_CargoOrderConsoleComponent_AllowedGroups" data-uid="Content.Shared.Cargo.Components.CargoOrderConsoleComponent.AllowedGroups">AllowedGroups</h4>
+  <div class="markdown level1 summary"><p>All of the <a class="xref" href="Content.Shared.Cargo.Prototypes.CargoProductPrototype.html#Content_Shared_Cargo_Prototypes_CargoProductPrototype_Group">Group</a>s that are supported.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;string&gt; AllowedGroups</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">List</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Cargo_Components_CargoOrderConsoleComponent_AnnouncementChannel.md&amp;value=---%0Auid%3A%20Content.Shared.Cargo.Components.CargoOrderConsoleComponent.AnnouncementChannel%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Cargo/Components/CargoOrderConsoleComponent.cs/#L104">View Source</a>
+  </span>
+  <h4 id="Content_Shared_Cargo_Components_CargoOrderConsoleComponent_AnnouncementChannel" data-uid="Content.Shared.Cargo.Components.CargoOrderConsoleComponent.AnnouncementChannel">AnnouncementChannel</h4>
+  <div class="markdown level1 summary"><p>Radio channel on which order approval announcements are transmitted</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ProtoId&lt;RadioChannelPrototype&gt; AnnouncementChannel</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Prototypes.ProtoId</span>&lt;<a class="xref" href="Content.Shared.Radio.RadioChannelPrototype.html">RadioChannelPrototype</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Cargo_Components_CargoOrderConsoleComponent_BaseAccountActionDelay.md&amp;value=---%0Auid%3A%20Content.Shared.Cargo.Components.CargoOrderConsoleComponent.BaseAccountActionDelay%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Cargo/Components/CargoOrderConsoleComponent.cs/#L74">View Source</a>
+  </span>
+  <h4 id="Content_Shared_Cargo_Components_CargoOrderConsoleComponent_BaseAccountActionDelay" data-uid="Content.Shared.Cargo.Components.CargoOrderConsoleComponent.BaseAccountActionDelay">BaseAccountActionDelay</h4>
+  <div class="markdown level1 summary"><p>The minimum time between account actions when <a class="xref" href="Content.Shared.Cargo.Components.CargoOrderConsoleComponent.html#Content_Shared_Cargo_Components_CargoOrderConsoleComponent_TransferUnbounded">TransferUnbounded</a> is false</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TimeSpan BaseAccountActionDelay</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TimeSpan</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Cargo_Components_CargoOrderConsoleComponent_BaseAnnouncementChannel.md&amp;value=---%0Auid%3A%20Content.Shared.Cargo.Components.CargoOrderConsoleComponent.BaseAnnouncementChannel%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Cargo/Components/CargoOrderConsoleComponent.cs/#L109">View Source</a>
+  </span>
+  <h4 id="Content_Shared_Cargo_Components_CargoOrderConsoleComponent_BaseAnnouncementChannel" data-uid="Content.Shared.Cargo.Components.CargoOrderConsoleComponent.BaseAnnouncementChannel">BaseAnnouncementChannel</h4>
+  <div class="markdown level1 summary"><p>Secondary radio channel which always receives order announcements.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly ProtoId&lt;RadioChannelPrototype&gt; BaseAnnouncementChannel</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Prototypes.ProtoId</span>&lt;<a class="xref" href="Content.Shared.Radio.RadioChannelPrototype.html">RadioChannelPrototype</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Cargo_Components_CargoOrderConsoleComponent_BaseTransferLimit.md&amp;value=---%0Auid%3A%20Content.Shared.Cargo.Components.CargoOrderConsoleComponent.BaseTransferLimit%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Cargo/Components/CargoOrderConsoleComponent.cs/#L59">View Source</a>
+  </span>
+  <h4 id="Content_Shared_Cargo_Components_CargoOrderConsoleComponent_BaseTransferLimit" data-uid="Content.Shared.Cargo.Components.CargoOrderConsoleComponent.BaseTransferLimit">BaseTransferLimit</h4>
+  <div class="markdown level1 summary"><p>The maximum percent of total funds that can be transferred or withdrawn in one action.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float BaseTransferLimit</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Cargo_Components_CargoOrderConsoleComponent_CashType.md&amp;value=---%0Auid%3A%20Content.Shared.Cargo.Components.CargoOrderConsoleComponent.CashType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Cargo/Components/CargoOrderConsoleComponent.cs/#L86">View Source</a>
+  </span>
+  <h4 id="Content_Shared_Cargo_Components_CargoOrderConsoleComponent_CashType" data-uid="Content.Shared.Cargo.Components.CargoOrderConsoleComponent.CashType">CashType</h4>
+  <div class="markdown level1 summary"><p>The stack representing cash dispensed on withdrawals.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ProtoId&lt;StackPrototype&gt; CashType</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Prototypes.ProtoId</span>&lt;<a class="xref" href="Content.Shared.Stacks.StackPrototype.html">StackPrototype</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Cargo_Components_CargoOrderConsoleComponent_ErrorSound.md&amp;value=---%0Auid%3A%20Content.Shared.Cargo.Components.CargoOrderConsoleComponent.ErrorSound%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Cargo/Components/CargoOrderConsoleComponent.cs/#L38">View Source</a>
+  </span>
+  <h4 id="Content_Shared_Cargo_Components_CargoOrderConsoleComponent_ErrorSound" data-uid="Content.Shared.Cargo.Components.CargoOrderConsoleComponent.ErrorSound">ErrorSound</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SoundSpecifier ErrorSound</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Audio.SoundSpecifier</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Cargo_Components_CargoOrderConsoleComponent_NextAccountActionTime.md&amp;value=---%0Auid%3A%20Content.Shared.Cargo.Components.CargoOrderConsoleComponent.NextAccountActionTime%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Cargo/Components/CargoOrderConsoleComponent.cs/#L65">View Source</a>
+  </span>
+  <h4 id="Content_Shared_Cargo_Components_CargoOrderConsoleComponent_NextAccountActionTime" data-uid="Content.Shared.Cargo.Components.CargoOrderConsoleComponent.NextAccountActionTime">NextAccountActionTime</h4>
+  <div class="markdown level1 summary"><p>The time at which account actions can be performed again.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TimeSpan NextAccountActionTime</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TimeSpan</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Cargo_Components_CargoOrderConsoleComponent_NextPrintTime.md&amp;value=---%0Auid%3A%20Content.Shared.Cargo.Components.CargoOrderConsoleComponent.NextPrintTime%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Cargo/Components/CargoOrderConsoleComponent.cs/#L121">View Source</a>
+  </span>
+  <h4 id="Content_Shared_Cargo_Components_CargoOrderConsoleComponent_NextPrintTime" data-uid="Content.Shared.Cargo.Components.CargoOrderConsoleComponent.NextPrintTime">NextPrintTime</h4>
+  <div class="markdown level1 summary"><p>The time at which the console will be able to print a slip again.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TimeSpan NextPrintTime</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TimeSpan</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Cargo_Components_CargoOrderConsoleComponent_PrintDelay.md&amp;value=---%0Auid%3A%20Content.Shared.Cargo.Components.CargoOrderConsoleComponent.PrintDelay%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Cargo/Components/CargoOrderConsoleComponent.cs/#L127">View Source</a>
+  </span>
+  <h4 id="Content_Shared_Cargo_Components_CargoOrderConsoleComponent_PrintDelay" data-uid="Content.Shared.Cargo.Components.CargoOrderConsoleComponent.PrintDelay">PrintDelay</h4>
+  <div class="markdown level1 summary"><p>The time between prints.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TimeSpan PrintDelay</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TimeSpan</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Cargo_Components_CargoOrderConsoleComponent_PrintSound.md&amp;value=---%0Auid%3A%20Content.Shared.Cargo.Components.CargoOrderConsoleComponent.PrintSound%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Cargo/Components/CargoOrderConsoleComponent.cs/#L133">View Source</a>
+  </span>
+  <h4 id="Content_Shared_Cargo_Components_CargoOrderConsoleComponent_PrintSound" data-uid="Content.Shared.Cargo.Components.CargoOrderConsoleComponent.PrintSound">PrintSound</h4>
+  <div class="markdown level1 summary"><p>The sound made when printing occurs</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SoundSpecifier PrintSound</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Audio.SoundSpecifier</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Cargo_Components_CargoOrderConsoleComponent_RemoveLimitAccess.md&amp;value=---%0Auid%3A%20Content.Shared.Cargo.Components.CargoOrderConsoleComponent.RemoveLimitAccess%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Cargo/Components/CargoOrderConsoleComponent.cs/#L98">View Source</a>
+  </span>
+  <h4 id="Content_Shared_Cargo_Components_CargoOrderConsoleComponent_RemoveLimitAccess" data-uid="Content.Shared.Cargo.Components.CargoOrderConsoleComponent.RemoveLimitAccess">RemoveLimitAccess</h4>
+  <div class="markdown level1 summary"><p>Access needed to toggle the limit on this console.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HashSet&lt;ProtoId&lt;AccessLevelPrototype&gt;&gt; RemoveLimitAccess</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">HashSet</span>&lt;<span class="xref">Robust.Shared.Prototypes.ProtoId</span>&lt;<a class="xref" href="Content.Shared.Access.AccessLevelPrototype.html">AccessLevelPrototype</a>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Cargo_Components_CargoOrderConsoleComponent_ScanSound.md&amp;value=---%0Auid%3A%20Content.Shared.Cargo.Components.CargoOrderConsoleComponent.ScanSound%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Cargo/Components/CargoOrderConsoleComponent.cs/#L139">View Source</a>
+  </span>
+  <h4 id="Content_Shared_Cargo_Components_CargoOrderConsoleComponent_ScanSound" data-uid="Content.Shared.Cargo.Components.CargoOrderConsoleComponent.ScanSound">ScanSound</h4>
+  <div class="markdown level1 summary"><p>The sound made when an order slip is scanned</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SoundSpecifier ScanSound</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Audio.SoundSpecifier</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Cargo_Components_CargoOrderConsoleComponent_SlipPrinter.md&amp;value=---%0Auid%3A%20Content.Shared.Cargo.Components.CargoOrderConsoleComponent.SlipPrinter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Cargo/Components/CargoOrderConsoleComponent.cs/#L115">View Source</a>
+  </span>
+  <h4 id="Content_Shared_Cargo_Components_CargoOrderConsoleComponent_SlipPrinter" data-uid="Content.Shared.Cargo.Components.CargoOrderConsoleComponent.SlipPrinter">SlipPrinter</h4>
+  <div class="markdown level1 summary"><p>If set to true, restricts this console from ordering and has it print slips instead</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool SlipPrinter</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Cargo_Components_CargoOrderConsoleComponent_ToggleLimitSound.md&amp;value=---%0Auid%3A%20Content.Shared.Cargo.Components.CargoOrderConsoleComponent.ToggleLimitSound%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Cargo/Components/CargoOrderConsoleComponent.cs/#L44">View Source</a>
+  </span>
+  <h4 id="Content_Shared_Cargo_Components_CargoOrderConsoleComponent_ToggleLimitSound" data-uid="Content.Shared.Cargo.Components.CargoOrderConsoleComponent.ToggleLimitSound">ToggleLimitSound</h4>
+  <div class="markdown level1 summary"><p>Sound made when <a class="xref" href="Content.Shared.Cargo.Components.CargoOrderConsoleComponent.html#Content_Shared_Cargo_Components_CargoOrderConsoleComponent_TransferUnbounded">TransferUnbounded</a> is toggled.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SoundSpecifier ToggleLimitSound</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Audio.SoundSpecifier</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Cargo_Components_CargoOrderConsoleComponent_TransferUnbounded.md&amp;value=---%0Auid%3A%20Content.Shared.Cargo.Components.CargoOrderConsoleComponent.TransferUnbounded%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Cargo/Components/CargoOrderConsoleComponent.cs/#L50">View Source</a>
+  </span>
+  <h4 id="Content_Shared_Cargo_Components_CargoOrderConsoleComponent_TransferUnbounded" data-uid="Content.Shared.Cargo.Components.CargoOrderConsoleComponent.TransferUnbounded">TransferUnbounded</h4>
+  <div class="markdown level1 summary"><p>If true, account transfers have no limit and a lower cooldown.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TransferUnbounded</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Cargo_Components_CargoOrderConsoleComponent_UnboundedAccountActionDelay.md&amp;value=---%0Auid%3A%20Content.Shared.Cargo.Components.CargoOrderConsoleComponent.UnboundedAccountActionDelay%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Cargo/Components/CargoOrderConsoleComponent.cs/#L80">View Source</a>
+  </span>
+  <h4 id="Content_Shared_Cargo_Components_CargoOrderConsoleComponent_UnboundedAccountActionDelay" data-uid="Content.Shared.Cargo.Components.CargoOrderConsoleComponent.UnboundedAccountActionDelay">UnboundedAccountActionDelay</h4>
+  <div class="markdown level1 summary"><p>The minimum time between account actions when <a class="xref" href="Content.Shared.Cargo.Components.CargoOrderConsoleComponent.html#Content_Shared_Cargo_Components_CargoOrderConsoleComponent_TransferUnbounded">TransferUnbounded</a> is true</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TimeSpan UnboundedAccountActionDelay</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TimeSpan</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Cargo_Components_CargoOrderConsoleComponent_AccountActionDelay.md&amp;value=---%0Auid%3A%20Content.Shared.Cargo.Components.CargoOrderConsoleComponent.AccountActionDelay%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Cargo/Components/CargoOrderConsoleComponent.cs/#L67">View Source</a>
+  </span>
+  <a id="Content_Shared_Cargo_Components_CargoOrderConsoleComponent_AccountActionDelay_" data-uid="Content.Shared.Cargo.Components.CargoOrderConsoleComponent.AccountActionDelay*"></a>
+  <h4 id="Content_Shared_Cargo_Components_CargoOrderConsoleComponent_AccountActionDelay" data-uid="Content.Shared.Cargo.Components.CargoOrderConsoleComponent.AccountActionDelay">AccountActionDelay</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TimeSpan AccountActionDelay { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TimeSpan</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Cargo_Components_CargoOrderConsoleComponent_ShowGasExtractorTab.md&amp;value=---%0Auid%3A%20Content.Shared.Cargo.Components.CargoOrderConsoleComponent.ShowGasExtractorTab%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Cargo/Components/CargoOrderConsoleComponent.cs/#L145">View Source</a>
+  </span>
+  <a id="Content_Shared_Cargo_Components_CargoOrderConsoleComponent_ShowGasExtractorTab_" data-uid="Content.Shared.Cargo.Components.CargoOrderConsoleComponent.ShowGasExtractorTab*"></a>
+  <h4 id="Content_Shared_Cargo_Components_CargoOrderConsoleComponent_ShowGasExtractorTab" data-uid="Content.Shared.Cargo.Components.CargoOrderConsoleComponent.ShowGasExtractorTab">ShowGasExtractorTab</h4>
+  <div class="markdown level1 summary"><p>Funkystation - Atmos
+Whether to show the atmos gas tab in the UI.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ShowGasExtractorTab { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Cargo_Components_CargoOrderConsoleComponent_TransferLimit.md&amp;value=---%0Auid%3A%20Content.Shared.Cargo.Components.CargoOrderConsoleComponent.TransferLimit%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Cargo/Components/CargoOrderConsoleComponent.cs/#L52">View Source</a>
+  </span>
+  <a id="Content_Shared_Cargo_Components_CargoOrderConsoleComponent_TransferLimit_" data-uid="Content.Shared.Cargo.Components.CargoOrderConsoleComponent.TransferLimit*"></a>
+  <h4 id="Content_Shared_Cargo_Components_CargoOrderConsoleComponent_TransferLimit" data-uid="Content.Shared.Cargo.Components.CargoOrderConsoleComponent.TransferLimit">TransferLimit</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float TransferLimit { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Cargo_Components_CargoOrderConsoleComponent.md&amp;value=---%0Auid%3A%20Content.Shared.Cargo.Components.CargoOrderConsoleComponent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Cargo/Components/CargoOrderConsoleComponent.cs/#L27" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="toggle-mode">
+                <div class="icon">
+                  <i aria-hidden="true">☀</i>
+                </div>
+                <label class="switch">
+                  <input type="checkbox" id="switch-style">
+                  <span class="slider round"></span>
+                </label>
+                <div class="icon">
+                  <i aria-hidden="true">☾</i>
+                </div>
+              </div>
+          
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <h5>In This Article</h5>
+              <div></div>
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <div class="pull-left">
+              
+              <span>Generated by <strong>DocFX</strong></span>
+            </div>
+            <div class="toggle-mode pull-right visible-sm visible-xs">
+              <div class="icon">
+                <i aria-hidden="true">☀</i>
+              </div>
+              <label class="switch">
+                <input type="checkbox" id="switch-style-m">
+                <span class="slider round"></span>
+              </label>
+              <div class="icon">
+                <i aria-hidden="true">☾</i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="../../styles/toggle-theme.js"></script>
+      </footer>    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

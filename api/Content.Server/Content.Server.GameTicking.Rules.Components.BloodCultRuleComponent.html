@@ -1,0 +1,1068 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class BloodCultRuleComponent
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class BloodCultRuleComponent
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent">
+  
+  
+  <h1 id="Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent" data-uid="Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent" class="text-break">Class BloodCultRuleComponent
+  </h1>
+  <div class="markdown level0 summary"><p>Component for the BloodCultRuleSystem that stores info about winning/losing, player counts required
+for stuff, and other round-wide stuff.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">Robust.Shared.GameObjects.Component</span></div>
+    <div class="level2"><span class="xref">BloodCultRuleComponent</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">Robust.Shared.GameObjects.IComponent</span></div>
+  </div>
+  <div class="inheritedMembers">
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Content.Server.GameTicking.Rules.Components.html">Content.Server.GameTicking.Rules.Components</a></h6>
+  <h6><strong>Assembly</strong>: Content.Server.dll</h6>
+  <h5 id="Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class BloodCultRuleComponent : Component, IComponent</code></pre>
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent_BloodAnomalySpawned.md&amp;value=---%0Auid%3A%20Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent.BloodAnomalySpawned%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/GameTicking/Rules/Components/BloodCultRuleComponent.cs/#L125">View Source</a>
+  </span>
+  <h4 id="Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent_BloodAnomalySpawned" data-uid="Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent.BloodAnomalySpawned">BloodAnomalySpawned</h4>
+  <div class="markdown level1 summary"><p>Has the blood anomaly been spawned for the final ritual?</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool BloodAnomalySpawned</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent_BloodAnomalySpawnScheduled.md&amp;value=---%0Auid%3A%20Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent.BloodAnomalySpawnScheduled%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/GameTicking/Rules/Components/BloodCultRuleComponent.cs/#L120">View Source</a>
+  </span>
+  <h4 id="Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent_BloodAnomalySpawnScheduled" data-uid="Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent.BloodAnomalySpawnScheduled">BloodAnomalySpawnScheduled</h4>
+  <div class="markdown level1 summary"><p>Has the blood anomaly spawn been scheduled after weakening the veil?</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool BloodAnomalySpawnScheduled</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent_BloodAnomalySpawnTime.md&amp;value=---%0Auid%3A%20Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent.BloodAnomalySpawnTime%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/GameTicking/Rules/Components/BloodCultRuleComponent.cs/#L130">View Source</a>
+  </span>
+  <h4 id="Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent_BloodAnomalySpawnTime" data-uid="Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent.BloodAnomalySpawnTime">BloodAnomalySpawnTime</h4>
+  <div class="markdown level1 summary"><p>The time the blood anomaly should be spawned, if scheduled.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TimeSpan? BloodAnomalySpawnTime</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">TimeSpan</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent_BloodAnomalyUid.md&amp;value=---%0Auid%3A%20Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent.BloodAnomalyUid%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/GameTicking/Rules/Components/BloodCultRuleComponent.cs/#L135">View Source</a>
+  </span>
+  <h4 id="Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent_BloodAnomalyUid" data-uid="Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent.BloodAnomalyUid">BloodAnomalyUid</h4>
+  <div class="markdown level1 summary"><p>The spawned blood anomaly entity.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public EntityUid? BloodAnomalyUid</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">Robust.Shared.GameObjects.EntityUid</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent_BloodCollected.md&amp;value=---%0Auid%3A%20Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent.BloodCollected%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/GameTicking/Rules/Components/BloodCultRuleComponent.cs/#L75">View Source</a>
+  </span>
+  <h4 id="Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent_BloodCollected" data-uid="Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent.BloodCollected">BloodCollected</h4>
+  <div class="markdown level1 summary"><p>Current amount of blood collected for the ritual.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double BloodCollected</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent_BloodRequiredForEyes.md&amp;value=---%0Auid%3A%20Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent.BloodRequiredForEyes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/GameTicking/Rules/Components/BloodCultRuleComponent.cs/#L80">View Source</a>
+  </span>
+  <h4 id="Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent_BloodRequiredForEyes" data-uid="Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent.BloodRequiredForEyes">BloodRequiredForEyes</h4>
+  <div class="markdown level1 summary"><p>Blood required to reach the first phase (Eyes).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double BloodRequiredForEyes</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent_BloodRequiredForRise.md&amp;value=---%0Auid%3A%20Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent.BloodRequiredForRise%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/GameTicking/Rules/Components/BloodCultRuleComponent.cs/#L85">View Source</a>
+  </span>
+  <h4 id="Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent_BloodRequiredForRise" data-uid="Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent.BloodRequiredForRise">BloodRequiredForRise</h4>
+  <div class="markdown level1 summary"><p>Blood required to reach the second phase (Rise).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double BloodRequiredForRise</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent_BloodRequiredForVeil.md&amp;value=---%0Auid%3A%20Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent.BloodRequiredForVeil%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/GameTicking/Rules/Components/BloodCultRuleComponent.cs/#L90">View Source</a>
+  </span>
+  <h4 id="Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent_BloodRequiredForVeil" data-uid="Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent.BloodRequiredForVeil">BloodRequiredForVeil</h4>
+  <div class="markdown level1 summary"><p>Blood required to reach the third phase (Veil Weakened).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double BloodRequiredForVeil</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent_ConversionsUntilEyes.md&amp;value=---%0Auid%3A%20Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent.ConversionsUntilEyes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/GameTicking/Rules/Components/BloodCultRuleComponent.cs/#L95">View Source</a>
+  </span>
+  <h4 id="Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent_ConversionsUntilEyes" data-uid="Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent.ConversionsUntilEyes">ConversionsUntilEyes</h4>
+  <div class="markdown level1 summary"><p>Conversions needed until glowing eyes -- set when cult is initialized.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int ConversionsUntilEyes</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent_ConversionsUntilRise.md&amp;value=---%0Auid%3A%20Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent.ConversionsUntilRise%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/GameTicking/Rules/Components/BloodCultRuleComponent.cs/#L100">View Source</a>
+  </span>
+  <h4 id="Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent_ConversionsUntilRise" data-uid="Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent.ConversionsUntilRise">ConversionsUntilRise</h4>
+  <div class="markdown level1 summary"><p>Conversions needed until rise -- set when cult is initialized.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int ConversionsUntilRise</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent_CultistsToConvert.md&amp;value=---%0Auid%3A%20Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent.CultistsToConvert%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/GameTicking/Rules/Components/BloodCultRuleComponent.cs/#L173">View Source</a>
+  </span>
+  <h4 id="Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent_CultistsToConvert" data-uid="Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent.CultistsToConvert">CultistsToConvert</h4>
+  <div class="markdown level1 summary"><p>Number of players required to convert a player.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int CultistsToConvert</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent_CultistsToSacrifice.md&amp;value=---%0Auid%3A%20Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent.CultistsToSacrifice%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/GameTicking/Rules/Components/BloodCultRuleComponent.cs/#L168">View Source</a>
+  </span>
+  <h4 id="Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent_CultistsToSacrifice" data-uid="Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent.CultistsToSacrifice">CultistsToSacrifice</h4>
+  <div class="markdown level1 summary"><p>Number of cultists required to sacrifice a dead player.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int CultistsToSacrifice</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent_CultistsWin.md&amp;value=---%0Auid%3A%20Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent.CultistsWin%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/GameTicking/Rules/Components/BloodCultRuleComponent.cs/#L145">View Source</a>
+  </span>
+  <h4 id="Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent_CultistsWin" data-uid="Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent.CultistsWin">CultistsWin</h4>
+  <div class="markdown level1 summary"><p>Have the cultists won?</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CultistsWin</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent_CultVictoryAnnouncementPlayed.md&amp;value=---%0Auid%3A%20Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent.CultVictoryAnnouncementPlayed%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/GameTicking/Rules/Components/BloodCultRuleComponent.cs/#L148">View Source</a>
+  </span>
+  <h4 id="Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent_CultVictoryAnnouncementPlayed" data-uid="Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent.CultVictoryAnnouncementPlayed">CultVictoryAnnouncementPlayed</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CultVictoryAnnouncementPlayed</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent_CultVictoryEndDelay.md&amp;value=---%0Auid%3A%20Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent.CultVictoryEndDelay%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/GameTicking/Rules/Components/BloodCultRuleComponent.cs/#L153">View Source</a>
+  </span>
+  <h4 id="Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent_CultVictoryEndDelay" data-uid="Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent.CultVictoryEndDelay">CultVictoryEndDelay</h4>
+  <div class="markdown level1 summary"><p>Time in seconds after Nar'Sie spawns for the shuttle to be called.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TimeSpan CultVictoryEndDelay</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TimeSpan</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent_CultVictoryEndTime.md&amp;value=---%0Auid%3A%20Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent.CultVictoryEndTime%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/GameTicking/Rules/Components/BloodCultRuleComponent.cs/#L147">View Source</a>
+  </span>
+  <h4 id="Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent_CultVictoryEndTime" data-uid="Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent.CultVictoryEndTime">CultVictoryEndTime</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TimeSpan? CultVictoryEndTime</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">TimeSpan</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent_HasEyes.md&amp;value=---%0Auid%3A%20Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent.HasEyes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/GameTicking/Rules/Components/BloodCultRuleComponent.cs/#L105">View Source</a>
+  </span>
+  <h4 id="Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent_HasEyes" data-uid="Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent.HasEyes">HasEyes</h4>
+  <div class="markdown level1 summary"><p>Has the cult gained glowing eyes yet?</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HasEyes</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent_HasRisen.md&amp;value=---%0Auid%3A%20Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent.HasRisen%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/GameTicking/Rules/Components/BloodCultRuleComponent.cs/#L110">View Source</a>
+  </span>
+  <h4 id="Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent_HasRisen" data-uid="Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent.HasRisen">HasRisen</h4>
+  <div class="markdown level1 summary"><p>Has the cult risen yet?</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HasRisen</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent_InitialReportTime.md&amp;value=---%0Auid%3A%20Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent.InitialReportTime%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/GameTicking/Rules/Components/BloodCultRuleComponent.cs/#L163">View Source</a>
+  </span>
+  <h4 id="Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent_InitialReportTime" data-uid="Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent.InitialReportTime">InitialReportTime</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TimeSpan? InitialReportTime</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">TimeSpan</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent_LocationForSummon.md&amp;value=---%0Auid%3A%20Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent.LocationForSummon%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/GameTicking/Rules/Components/BloodCultRuleComponent.cs/#L60">View Source</a>
+  </span>
+  <h4 id="Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent_LocationForSummon" data-uid="Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent.LocationForSummon">LocationForSummon</h4>
+  <div class="markdown level1 summary"><p>Stores the location the existing cultists have decided to summon Nar'Sie.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public WeakVeilLocation? LocationForSummon</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<a class="xref" href="../Content.Shared/Content.Shared.BloodCult.WeakVeilLocation.html">WeakVeilLocation</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent_MinimumCultistsForVeilRitual.md&amp;value=---%0Auid%3A%20Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent.MinimumCultistsForVeilRitual%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/GameTicking/Rules/Components/BloodCultRuleComponent.cs/#L179">View Source</a>
+  </span>
+  <h4 id="Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent_MinimumCultistsForVeilRitual" data-uid="Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent.MinimumCultistsForVeilRitual">MinimumCultistsForVeilRitual</h4>
+  <div class="markdown level1 summary"><p>Minimum number of cultists required on Tear Veil runes to complete the ritual.
+Calculated at round start based on player count (1/8th of total players, minimum 3).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int MinimumCultistsForVeilRitual</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent_PossibleVeilLocations.md&amp;value=---%0Auid%3A%20Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent.PossibleVeilLocations%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/GameTicking/Rules/Components/BloodCultRuleComponent.cs/#L31">View Source</a>
+  </span>
+  <h4 id="Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent_PossibleVeilLocations" data-uid="Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent.PossibleVeilLocations">PossibleVeilLocations</h4>
+  <div class="markdown level1 summary"><p>Possible Nar'Sie summon locations.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static List&lt;string&gt; PossibleVeilLocations</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">List</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent_ShuttleCallTime.md&amp;value=---%0Auid%3A%20Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent.ShuttleCallTime%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/GameTicking/Rules/Components/BloodCultRuleComponent.cs/#L158">View Source</a>
+  </span>
+  <h4 id="Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent_ShuttleCallTime" data-uid="Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent.ShuttleCallTime">ShuttleCallTime</h4>
+  <div class="markdown level1 summary"><p>Time after the evac shuttle is dispatched for it to arrive.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TimeSpan ShuttleCallTime</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TimeSpan</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent_TotalConversions.md&amp;value=---%0Auid%3A%20Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent.TotalConversions%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/GameTicking/Rules/Components/BloodCultRuleComponent.cs/#L70">View Source</a>
+  </span>
+  <h4 id="Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent_TotalConversions" data-uid="Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent.TotalConversions">TotalConversions</h4>
+  <div class="markdown level1 summary"><p>Total conversions made throughout the round.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int TotalConversions</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent_TotalSacrifices.md&amp;value=---%0Auid%3A%20Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent.TotalSacrifices%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/GameTicking/Rules/Components/BloodCultRuleComponent.cs/#L65">View Source</a>
+  </span>
+  <h4 id="Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent_TotalSacrifices" data-uid="Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent.TotalSacrifices">TotalSacrifices</h4>
+  <div class="markdown level1 summary"><p>Total sacrifices made.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int TotalSacrifices</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent_VeilWeakened.md&amp;value=---%0Auid%3A%20Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent.VeilWeakened%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/GameTicking/Rules/Components/BloodCultRuleComponent.cs/#L115">View Source</a>
+  </span>
+  <h4 id="Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent_VeilWeakened" data-uid="Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent.VeilWeakened">VeilWeakened</h4>
+  <div class="markdown level1 summary"><p>Nar'Sie ready to summon.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool VeilWeakened</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent_VeilWeakenedAnnouncementPlayed.md&amp;value=---%0Auid%3A%20Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent.VeilWeakenedAnnouncementPlayed%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/GameTicking/Rules/Components/BloodCultRuleComponent.cs/#L140">View Source</a>
+  </span>
+  <h4 id="Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent_VeilWeakenedAnnouncementPlayed" data-uid="Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent.VeilWeakenedAnnouncementPlayed">VeilWeakenedAnnouncementPlayed</h4>
+  <div class="markdown level1 summary"><p>Whether or not the VeilWeakened announcement has played.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool VeilWeakenedAnnouncementPlayed</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent_WeakVeil1.md&amp;value=---%0Auid%3A%20Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent.WeakVeil1%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/GameTicking/Rules/Components/BloodCultRuleComponent.cs/#L53">View Source</a>
+  </span>
+  <h4 id="Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent_WeakVeil1" data-uid="Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent.WeakVeil1">WeakVeil1</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public WeakVeilLocation? WeakVeil1</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<a class="xref" href="../Content.Shared/Content.Shared.BloodCult.WeakVeilLocation.html">WeakVeilLocation</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent_WeakVeil2.md&amp;value=---%0Auid%3A%20Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent.WeakVeil2%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/GameTicking/Rules/Components/BloodCultRuleComponent.cs/#L54">View Source</a>
+  </span>
+  <h4 id="Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent_WeakVeil2" data-uid="Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent.WeakVeil2">WeakVeil2</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public WeakVeilLocation? WeakVeil2</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<a class="xref" href="../Content.Shared/Content.Shared.BloodCult.WeakVeilLocation.html">WeakVeilLocation</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent_WeakVeil3.md&amp;value=---%0Auid%3A%20Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent.WeakVeil3%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/GameTicking/Rules/Components/BloodCultRuleComponent.cs/#L55">View Source</a>
+  </span>
+  <h4 id="Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent_WeakVeil3" data-uid="Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent.WeakVeil3">WeakVeil3</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public WeakVeilLocation? WeakVeil3</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<a class="xref" href="../Content.Shared/Content.Shared.BloodCult.WeakVeilLocation.html">WeakVeilLocation</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">Robust.Shared.GameObjects.IComponent</span>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_GameTicking_Rules_Components_BloodCultRuleComponent.md&amp;value=---%0Auid%3A%20Content.Server.GameTicking.Rules.Components.BloodCultRuleComponent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/GameTicking/Rules/Components/BloodCultRuleComponent.cs/#L25" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="toggle-mode">
+                <div class="icon">
+                  <i aria-hidden="true">☀</i>
+                </div>
+                <label class="switch">
+                  <input type="checkbox" id="switch-style">
+                  <span class="slider round"></span>
+                </label>
+                <div class="icon">
+                  <i aria-hidden="true">☾</i>
+                </div>
+              </div>
+          
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <h5>In This Article</h5>
+              <div></div>
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <div class="pull-left">
+              
+              <span>Generated by <strong>DocFX</strong></span>
+            </div>
+            <div class="toggle-mode pull-right visible-sm visible-xs">
+              <div class="icon">
+                <i aria-hidden="true">☀</i>
+              </div>
+              <label class="switch">
+                <input type="checkbox" id="switch-style-m">
+                <span class="slider round"></span>
+              </label>
+              <div class="icon">
+                <i aria-hidden="true">☾</i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="../../styles/toggle-theme.js"></script>
+      </footer>    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

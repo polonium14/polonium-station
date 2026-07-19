@@ -1,0 +1,2411 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class InventorySystem
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class InventorySystem
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Content.Shared.Inventory.InventorySystem">
+  
+  
+  <h1 id="Content_Shared_Inventory_InventorySystem" data-uid="Content.Shared.Inventory.InventorySystem" class="text-break">Class InventorySystem
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">InventorySystem</span></div>
+      <div class="level2"><a class="xref" href="../Content.Client/Content.Client.Inventory.ClientInventorySystem.html">ClientInventorySystem</a></div>
+      <div class="level2"><a class="xref" href="../Content.Server/Content.Server.Inventory.ServerInventorySystem.html">ServerInventorySystem</a></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Content.Shared.Inventory.html">Content.Shared.Inventory</a></h6>
+  <h6><strong>Assembly</strong>: Content.Shared.dll</h6>
+  <h5 id="Content_Shared_Inventory_InventorySystem_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class InventorySystem : EntitySystem</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Inventory_InventorySystem_CanAccess_EntityUid_EntityUid_EntityUid_.md&amp;value=---%0Auid%3A%20Content.Shared.Inventory.InventorySystem.CanAccess(EntityUid%2CEntityUid%2CEntityUid)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Inventory/InventorySystem.Equip.cs/#L235">View Source</a>
+  </span>
+  <a id="Content_Shared_Inventory_InventorySystem_CanAccess_" data-uid="Content.Shared.Inventory.InventorySystem.CanAccess*"></a>
+  <h4 id="Content_Shared_Inventory_InventorySystem_CanAccess_EntityUid_EntityUid_EntityUid_" data-uid="Content.Shared.Inventory.InventorySystem.CanAccess(EntityUid,EntityUid,EntityUid)">CanAccess(EntityUid, EntityUid, EntityUid)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CanAccess(EntityUid actor, EntityUid target, EntityUid itemUid)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">actor</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">target</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">itemUid</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Inventory_InventorySystem_CanEquip_EntityUid_EntityUid_EntityUid_System_String_System_Nullable_System_String___Content_Shared_Inventory_SlotDefinition_Content_Shared_Inventory_InventoryComponent_Content_Shared_Clothing_Components_ClothingComponent_Content_Shared_Item_ItemComponent_.md&amp;value=---%0Auid%3A%20Content.Shared.Inventory.InventorySystem.CanEquip(EntityUid%2CEntityUid%2CEntityUid%2CSystem.String%2CSystem.Nullable%7BSystem.String%7D%40%2CContent.Shared.Inventory.SlotDefinition%2CContent.Shared.Inventory.InventoryComponent%2CContent.Shared.Clothing.Components.ClothingComponent%2CContent.Shared.Item.ItemComponent)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Inventory/InventorySystem.Equip.cs/#L264">View Source</a>
+  </span>
+  <a id="Content_Shared_Inventory_InventorySystem_CanEquip_" data-uid="Content.Shared.Inventory.InventorySystem.CanEquip*"></a>
+  <h4 id="Content_Shared_Inventory_InventorySystem_CanEquip_EntityUid_EntityUid_EntityUid_System_String_System_Nullable_System_String___Content_Shared_Inventory_SlotDefinition_Content_Shared_Inventory_InventoryComponent_Content_Shared_Clothing_Components_ClothingComponent_Content_Shared_Item_ItemComponent_" data-uid="Content.Shared.Inventory.InventorySystem.CanEquip(EntityUid,EntityUid,EntityUid,System.String,System.Nullable{System.String}@,Content.Shared.Inventory.SlotDefinition,Content.Shared.Inventory.InventoryComponent,Content.Shared.Clothing.Components.ClothingComponent,Content.Shared.Item.ItemComponent)">CanEquip(EntityUid, EntityUid, EntityUid, String, out Nullable&lt;String&gt;, SlotDefinition, InventoryComponent, ClothingComponent, ItemComponent)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CanEquip(EntityUid actor, EntityUid target, EntityUid itemUid, string slot, out string? reason, SlotDefinition slotDefinition = null, InventoryComponent inventory = null, ClothingComponent clothing = null, ItemComponent item = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">actor</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">target</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">itemUid</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">slot</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">reason</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Inventory.SlotDefinition.html">SlotDefinition</a></td>
+        <td><span class="parametername">slotDefinition</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Inventory.InventoryComponent.html">InventoryComponent</a></td>
+        <td><span class="parametername">inventory</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Clothing.Components.ClothingComponent.html">ClothingComponent</a></td>
+        <td><span class="parametername">clothing</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Item.ItemComponent.html">ItemComponent</a></td>
+        <td><span class="parametername">item</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Inventory_InventorySystem_CanEquip_EntityUid_EntityUid_System_String_System_Nullable_System_String___Content_Shared_Inventory_SlotDefinition_Content_Shared_Inventory_InventoryComponent_Content_Shared_Clothing_Components_ClothingComponent_Content_Shared_Item_ItemComponent_.md&amp;value=---%0Auid%3A%20Content.Shared.Inventory.InventorySystem.CanEquip(EntityUid%2CEntityUid%2CSystem.String%2CSystem.Nullable%7BSystem.String%7D%40%2CContent.Shared.Inventory.SlotDefinition%2CContent.Shared.Inventory.InventoryComponent%2CContent.Shared.Clothing.Components.ClothingComponent%2CContent.Shared.Item.ItemComponent)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Inventory/InventorySystem.Equip.cs/#L259">View Source</a>
+  </span>
+  <a id="Content_Shared_Inventory_InventorySystem_CanEquip_" data-uid="Content.Shared.Inventory.InventorySystem.CanEquip*"></a>
+  <h4 id="Content_Shared_Inventory_InventorySystem_CanEquip_EntityUid_EntityUid_System_String_System_Nullable_System_String___Content_Shared_Inventory_SlotDefinition_Content_Shared_Inventory_InventoryComponent_Content_Shared_Clothing_Components_ClothingComponent_Content_Shared_Item_ItemComponent_" data-uid="Content.Shared.Inventory.InventorySystem.CanEquip(EntityUid,EntityUid,System.String,System.Nullable{System.String}@,Content.Shared.Inventory.SlotDefinition,Content.Shared.Inventory.InventoryComponent,Content.Shared.Clothing.Components.ClothingComponent,Content.Shared.Item.ItemComponent)">CanEquip(EntityUid, EntityUid, String, out Nullable&lt;String&gt;, SlotDefinition, InventoryComponent, ClothingComponent, ItemComponent)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CanEquip(EntityUid uid, EntityUid itemUid, string slot, out string? reason, SlotDefinition slotDefinition = null, InventoryComponent inventory = null, ClothingComponent clothing = null, ItemComponent item = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">uid</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">itemUid</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">slot</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">reason</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Inventory.SlotDefinition.html">SlotDefinition</a></td>
+        <td><span class="parametername">slotDefinition</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Inventory.InventoryComponent.html">InventoryComponent</a></td>
+        <td><span class="parametername">inventory</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Clothing.Components.ClothingComponent.html">ClothingComponent</a></td>
+        <td><span class="parametername">clothing</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Item.ItemComponent.html">ItemComponent</a></td>
+        <td><span class="parametername">item</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Inventory_InventorySystem_CanUnequip_EntityUid_EntityUid_System_String_System_Nullable_System_String___Robust_Shared_Containers_ContainerSlot_Content_Shared_Inventory_SlotDefinition_Content_Shared_Inventory_InventoryComponent_.md&amp;value=---%0Auid%3A%20Content.Shared.Inventory.InventorySystem.CanUnequip(EntityUid%2CEntityUid%2CSystem.String%2CSystem.Nullable%7BSystem.String%7D%40%2CRobust.Shared.Containers.ContainerSlot%2CContent.Shared.Inventory.SlotDefinition%2CContent.Shared.Inventory.InventoryComponent)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Inventory/InventorySystem.Equip.cs/#L539">View Source</a>
+  </span>
+  <a id="Content_Shared_Inventory_InventorySystem_CanUnequip_" data-uid="Content.Shared.Inventory.InventorySystem.CanUnequip*"></a>
+  <h4 id="Content_Shared_Inventory_InventorySystem_CanUnequip_EntityUid_EntityUid_System_String_System_Nullable_System_String___Robust_Shared_Containers_ContainerSlot_Content_Shared_Inventory_SlotDefinition_Content_Shared_Inventory_InventoryComponent_" data-uid="Content.Shared.Inventory.InventorySystem.CanUnequip(EntityUid,EntityUid,System.String,System.Nullable{System.String}@,Robust.Shared.Containers.ContainerSlot,Content.Shared.Inventory.SlotDefinition,Content.Shared.Inventory.InventoryComponent)">CanUnequip(EntityUid, EntityUid, String, out Nullable&lt;String&gt;, ContainerSlot, SlotDefinition, InventoryComponent)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CanUnequip(EntityUid actor, EntityUid target, string slot, out string? reason, ContainerSlot containerSlot = null, SlotDefinition slotDefinition = null, InventoryComponent inventory = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">actor</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">target</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">slot</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">reason</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Robust.Shared.Containers.ContainerSlot</span></td>
+        <td><span class="parametername">containerSlot</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Inventory.SlotDefinition.html">SlotDefinition</a></td>
+        <td><span class="parametername">slotDefinition</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Inventory.InventoryComponent.html">InventoryComponent</a></td>
+        <td><span class="parametername">inventory</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Inventory_InventorySystem_CanUnequip_EntityUid_System_String_System_Nullable_System_String___Robust_Shared_Containers_ContainerSlot_Content_Shared_Inventory_SlotDefinition_Content_Shared_Inventory_InventoryComponent_.md&amp;value=---%0Auid%3A%20Content.Shared.Inventory.InventorySystem.CanUnequip(EntityUid%2CSystem.String%2CSystem.Nullable%7BSystem.String%7D%40%2CRobust.Shared.Containers.ContainerSlot%2CContent.Shared.Inventory.SlotDefinition%2CContent.Shared.Inventory.InventoryComponent)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Inventory/InventorySystem.Equip.cs/#L534">View Source</a>
+  </span>
+  <a id="Content_Shared_Inventory_InventorySystem_CanUnequip_" data-uid="Content.Shared.Inventory.InventorySystem.CanUnequip*"></a>
+  <h4 id="Content_Shared_Inventory_InventorySystem_CanUnequip_EntityUid_System_String_System_Nullable_System_String___Robust_Shared_Containers_ContainerSlot_Content_Shared_Inventory_SlotDefinition_Content_Shared_Inventory_InventoryComponent_" data-uid="Content.Shared.Inventory.InventorySystem.CanUnequip(EntityUid,System.String,System.Nullable{System.String}@,Robust.Shared.Containers.ContainerSlot,Content.Shared.Inventory.SlotDefinition,Content.Shared.Inventory.InventoryComponent)">CanUnequip(EntityUid, String, out Nullable&lt;String&gt;, ContainerSlot, SlotDefinition, InventoryComponent)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CanUnequip(EntityUid uid, string slot, out string? reason, ContainerSlot containerSlot = null, SlotDefinition slotDefinition = null, InventoryComponent inventory = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">uid</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">slot</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">reason</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Robust.Shared.Containers.ContainerSlot</span></td>
+        <td><span class="parametername">containerSlot</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Inventory.SlotDefinition.html">SlotDefinition</a></td>
+        <td><span class="parametername">slotDefinition</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Inventory.InventoryComponent.html">InventoryComponent</a></td>
+        <td><span class="parametername">inventory</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Inventory_InventorySystem_DropSlotContents_EntityUid_System_String_Content_Shared_Inventory_InventoryComponent_.md&amp;value=---%0Auid%3A%20Content.Shared.Inventory.InventorySystem.DropSlotContents(EntityUid%2CSystem.String%2CContent.Shared.Inventory.InventoryComponent)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Inventory/InventorySystem.Slots.cs/#L338">View Source</a>
+  </span>
+  <a id="Content_Shared_Inventory_InventorySystem_DropSlotContents_" data-uid="Content.Shared.Inventory.InventorySystem.DropSlotContents*"></a>
+  <h4 id="Content_Shared_Inventory_InventorySystem_DropSlotContents_EntityUid_System_String_Content_Shared_Inventory_InventoryComponent_" data-uid="Content.Shared.Inventory.InventorySystem.DropSlotContents(EntityUid,System.String,Content.Shared.Inventory.InventoryComponent)">DropSlotContents(EntityUid, String, InventoryComponent)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DropSlotContents(EntityUid uid, string slotName, InventoryComponent inventory = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">uid</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">slotName</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Inventory.InventoryComponent.html">InventoryComponent</a></td>
+        <td><span class="parametername">inventory</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Inventory_InventorySystem_GetHandOrInventoryEntities_Entity_Content_Shared_Hands_Components_HandsComponent_Content_Shared_Inventory_InventoryComponent__Content_Shared_Inventory_SlotFlags_.md&amp;value=---%0Auid%3A%20Content.Shared.Inventory.InventorySystem.GetHandOrInventoryEntities(Entity%7BContent.Shared.Hands.Components.HandsComponent%2CContent.Shared.Inventory.InventoryComponent%7D%2CContent.Shared.Inventory.SlotFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Inventory/InventorySystem.Helpers.cs/#L29">View Source</a>
+  </span>
+  <a id="Content_Shared_Inventory_InventorySystem_GetHandOrInventoryEntities_" data-uid="Content.Shared.Inventory.InventorySystem.GetHandOrInventoryEntities*"></a>
+  <h4 id="Content_Shared_Inventory_InventorySystem_GetHandOrInventoryEntities_Entity_Content_Shared_Hands_Components_HandsComponent_Content_Shared_Inventory_InventoryComponent__Content_Shared_Inventory_SlotFlags_" data-uid="Content.Shared.Inventory.InventorySystem.GetHandOrInventoryEntities(Entity{Content.Shared.Hands.Components.HandsComponent,Content.Shared.Inventory.InventoryComponent},Content.Shared.Inventory.SlotFlags)">GetHandOrInventoryEntities(Entity&lt;HandsComponent, InventoryComponent&gt;, SlotFlags)</h4>
+  <div class="markdown level1 summary"><p>Yields all entities in hands or inventory slots with the specific flags.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;EntityUid&gt; GetHandOrInventoryEntities(Entity&lt;HandsComponent, InventoryComponent&gt; user, SlotFlags flags = default(SlotFlags))</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Hands.Components.HandsComponent.html">HandsComponent</a>, <a class="xref" href="Content.Shared.Inventory.InventoryComponent.html">InventoryComponent</a>&gt;</td>
+        <td><span class="parametername">user</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Inventory.SlotFlags.html">SlotFlags</a></td>
+        <td><span class="parametername">flags</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">EntityUid</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Inventory_InventorySystem_GetSlotEnumerator_Entity_Content_Shared_Inventory_InventoryComponent__Content_Shared_Inventory_SlotFlags_.md&amp;value=---%0Auid%3A%20Content.Shared.Inventory.InventorySystem.GetSlotEnumerator(Entity%7BContent.Shared.Inventory.InventoryComponent%7D%2CContent.Shared.Inventory.SlotFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Inventory/InventorySystem.Slots.cs/#L188">View Source</a>
+  </span>
+  <a id="Content_Shared_Inventory_InventorySystem_GetSlotEnumerator_" data-uid="Content.Shared.Inventory.InventorySystem.GetSlotEnumerator*"></a>
+  <h4 id="Content_Shared_Inventory_InventorySystem_GetSlotEnumerator_Entity_Content_Shared_Inventory_InventoryComponent__Content_Shared_Inventory_SlotFlags_" data-uid="Content.Shared.Inventory.InventorySystem.GetSlotEnumerator(Entity{Content.Shared.Inventory.InventoryComponent},Content.Shared.Inventory.SlotFlags)">GetSlotEnumerator(Entity&lt;InventoryComponent&gt;, SlotFlags)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public InventorySystem.InventorySlotEnumerator GetSlotEnumerator(Entity&lt;InventoryComponent&gt; entity, SlotFlags flags = default(SlotFlags))</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Inventory.InventoryComponent.html">InventoryComponent</a>&gt;</td>
+        <td><span class="parametername">entity</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Inventory.SlotFlags.html">SlotFlags</a></td>
+        <td><span class="parametername">flags</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Inventory.InventorySystem.InventorySlotEnumerator.html">InventorySystem.InventorySlotEnumerator</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Inventory_InventorySystem_GetSlotIgnoreDependencices_Content_Shared_Inventory_InventoryComponent_System_String_.md&amp;value=---%0Auid%3A%20Content.Shared.Inventory.InventorySystem.GetSlotIgnoreDependencices(Content.Shared.Inventory.InventoryComponent%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Inventory/InventorySystem.Helpers.cs/#L81">View Source</a>
+  </span>
+  <a id="Content_Shared_Inventory_InventorySystem_GetSlotIgnoreDependencices_" data-uid="Content.Shared.Inventory.InventorySystem.GetSlotIgnoreDependencices*"></a>
+  <h4 id="Content_Shared_Inventory_InventorySystem_GetSlotIgnoreDependencices_Content_Shared_Inventory_InventoryComponent_System_String_" data-uid="Content.Shared.Inventory.InventorySystem.GetSlotIgnoreDependencices(Content.Shared.Inventory.InventoryComponent,System.String)">GetSlotIgnoreDependencices(InventoryComponent, String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool GetSlotIgnoreDependencices(InventoryComponent inventory, string slot)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Inventory.InventoryComponent.html">InventoryComponent</a></td>
+        <td><span class="parametername">inventory</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">slot</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Inventory_InventorySystem_HasSlot_EntityUid_System_String_Content_Shared_Inventory_InventoryComponent_.md&amp;value=---%0Auid%3A%20Content.Shared.Inventory.InventorySystem.HasSlot(EntityUid%2CSystem.String%2CContent.Shared.Inventory.InventoryComponent)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Inventory/InventorySystem.Slots.cs/#L156">View Source</a>
+  </span>
+  <a id="Content_Shared_Inventory_InventorySystem_HasSlot_" data-uid="Content.Shared.Inventory.InventorySystem.HasSlot*"></a>
+  <h4 id="Content_Shared_Inventory_InventorySystem_HasSlot_EntityUid_System_String_Content_Shared_Inventory_InventoryComponent_" data-uid="Content.Shared.Inventory.InventorySystem.HasSlot(EntityUid,System.String,Content.Shared.Inventory.InventoryComponent)">HasSlot(EntityUid, String, InventoryComponent)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HasSlot(EntityUid uid, string slot, InventoryComponent component = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">uid</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">slot</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Inventory.InventoryComponent.html">InventoryComponent</a></td>
+        <td><span class="parametername">component</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Inventory_InventorySystem_Initialize.md&amp;value=---%0Auid%3A%20Content.Shared.Inventory.InventorySystem.Initialize%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Inventory/InventorySystem.cs/#L17">View Source</a>
+  </span>
+  <a id="Content_Shared_Inventory_InventorySystem_Initialize_" data-uid="Content.Shared.Inventory.InventorySystem.Initialize*"></a>
+  <h4 id="Content_Shared_Inventory_InventorySystem_Initialize" data-uid="Content.Shared.Inventory.InventorySystem.Initialize">Initialize()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Initialize()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Inventory_InventorySystem_InitializeRelay.md&amp;value=---%0Auid%3A%20Content.Shared.Inventory.InventorySystem.InitializeRelay%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Inventory/InventorySystem.Relay.cs/#L102">View Source</a>
+  </span>
+  <a id="Content_Shared_Inventory_InventorySystem_InitializeRelay_" data-uid="Content.Shared.Inventory.InventorySystem.InitializeRelay*"></a>
+  <h4 id="Content_Shared_Inventory_InventorySystem_InitializeRelay" data-uid="Content.Shared.Inventory.InventorySystem.InitializeRelay">InitializeRelay()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void InitializeRelay()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Inventory_InventorySystem_InSlotWithFlags_Entity_System_Nullable_TransformComponent__System_Nullable_MetaDataComponent___Content_Shared_Inventory_SlotFlags_.md&amp;value=---%0Auid%3A%20Content.Shared.Inventory.InventorySystem.InSlotWithFlags(Entity%7BSystem.Nullable%7BTransformComponent%7D%2CSystem.Nullable%7BMetaDataComponent%7D%7D%2CContent.Shared.Inventory.SlotFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Inventory/InventorySystem.Helpers.cs/#L69">View Source</a>
+  </span>
+  <a id="Content_Shared_Inventory_InventorySystem_InSlotWithFlags_" data-uid="Content.Shared.Inventory.InventorySystem.InSlotWithFlags*"></a>
+  <h4 id="Content_Shared_Inventory_InventorySystem_InSlotWithFlags_Entity_System_Nullable_TransformComponent__System_Nullable_MetaDataComponent___Content_Shared_Inventory_SlotFlags_" data-uid="Content.Shared.Inventory.InventorySystem.InSlotWithFlags(Entity{System.Nullable{TransformComponent},System.Nullable{MetaDataComponent}},Content.Shared.Inventory.SlotFlags)">InSlotWithFlags(Entity&lt;Nullable&lt;TransformComponent&gt;, Nullable&lt;MetaDataComponent&gt;&gt;, SlotFlags)</h4>
+  <div class="markdown level1 summary"><p>Returns true if the given entity is equipped to an inventory slot with the given inventory slot flags.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool InSlotWithFlags(Entity&lt;TransformComponent?, MetaDataComponent?&gt; entity, SlotFlags flags)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<span class="xref">System.Nullable</span>&lt;<span class="xref">TransformComponent</span>&gt;, <span class="xref">System.Nullable</span>&lt;<span class="xref">MetaDataComponent</span>&gt;&gt;</td>
+        <td><span class="parametername">entity</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Inventory.SlotFlags.html">SlotFlags</a></td>
+        <td><span class="parametername">flags</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Inventory_InventorySystem_OnInit_EntityUid_Content_Shared_Inventory_InventoryComponent_ComponentInit_.md&amp;value=---%0Auid%3A%20Content.Shared.Inventory.InventorySystem.OnInit(EntityUid%2CContent.Shared.Inventory.InventoryComponent%2CComponentInit)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Inventory/InventorySystem.Slots.cs/#L83">View Source</a>
+  </span>
+  <a id="Content_Shared_Inventory_InventorySystem_OnInit_" data-uid="Content.Shared.Inventory.InventorySystem.OnInit*"></a>
+  <h4 id="Content_Shared_Inventory_InventorySystem_OnInit_EntityUid_Content_Shared_Inventory_InventoryComponent_ComponentInit_" data-uid="Content.Shared.Inventory.InventorySystem.OnInit(EntityUid,Content.Shared.Inventory.InventoryComponent,ComponentInit)">OnInit(EntityUid, InventoryComponent, ComponentInit)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnInit(EntityUid uid, InventoryComponent component, ComponentInit args)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">uid</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Inventory.InventoryComponent.html">InventoryComponent</a></td>
+        <td><span class="parametername">component</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">ComponentInit</span></td>
+        <td><span class="parametername">args</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Inventory_InventorySystem_RefRelayInventoryEvent__1_EntityUid_Content_Shared_Inventory_InventoryComponent___0__.md&amp;value=---%0Auid%3A%20Content.Shared.Inventory.InventorySystem.RefRelayInventoryEvent%60%601(EntityUid%2CContent.Shared.Inventory.InventoryComponent%2C%60%600%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Inventory/InventorySystem.Relay.cs/#L159">View Source</a>
+  </span>
+  <a id="Content_Shared_Inventory_InventorySystem_RefRelayInventoryEvent_" data-uid="Content.Shared.Inventory.InventorySystem.RefRelayInventoryEvent*"></a>
+  <h4 id="Content_Shared_Inventory_InventorySystem_RefRelayInventoryEvent__1_EntityUid_Content_Shared_Inventory_InventoryComponent___0__" data-uid="Content.Shared.Inventory.InventorySystem.RefRelayInventoryEvent``1(EntityUid,Content.Shared.Inventory.InventoryComponent,``0@)">RefRelayInventoryEvent&lt;T&gt;(EntityUid, InventoryComponent, ref T)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void RefRelayInventoryEvent&lt;T&gt;(EntityUid uid, InventoryComponent component, ref T args)
+    where T : IInventoryRelayEvent</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">uid</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Inventory.InventoryComponent.html">InventoryComponent</a></td>
+        <td><span class="parametername">component</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">args</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Inventory_InventorySystem_RelayEvent__1_Entity_Content_Shared_Inventory_InventoryComponent____0_.md&amp;value=---%0Auid%3A%20Content.Shared.Inventory.InventorySystem.RelayEvent%60%601(Entity%7BContent.Shared.Inventory.InventoryComponent%7D%2C%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Inventory/InventorySystem.Relay.cs/#L186">View Source</a>
+  </span>
+  <a id="Content_Shared_Inventory_InventorySystem_RelayEvent_" data-uid="Content.Shared.Inventory.InventorySystem.RelayEvent*"></a>
+  <h4 id="Content_Shared_Inventory_InventorySystem_RelayEvent__1_Entity_Content_Shared_Inventory_InventoryComponent____0_" data-uid="Content.Shared.Inventory.InventorySystem.RelayEvent``1(Entity{Content.Shared.Inventory.InventoryComponent},``0)">RelayEvent&lt;T&gt;(Entity&lt;InventoryComponent&gt;, T)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RelayEvent&lt;T&gt;(Entity&lt;InventoryComponent&gt; inventory, T args)
+    where T : IInventoryRelayEvent</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Inventory.InventoryComponent.html">InventoryComponent</a>&gt;</td>
+        <td><span class="parametername">inventory</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">args</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Inventory_InventorySystem_RelayEvent__1_Entity_Content_Shared_Inventory_InventoryComponent____0__.md&amp;value=---%0Auid%3A%20Content.Shared.Inventory.InventorySystem.RelayEvent%60%601(Entity%7BContent.Shared.Inventory.InventoryComponent%7D%2C%60%600%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Inventory/InventorySystem.Relay.cs/#L169">View Source</a>
+  </span>
+  <a id="Content_Shared_Inventory_InventorySystem_RelayEvent_" data-uid="Content.Shared.Inventory.InventorySystem.RelayEvent*"></a>
+  <h4 id="Content_Shared_Inventory_InventorySystem_RelayEvent__1_Entity_Content_Shared_Inventory_InventoryComponent____0__" data-uid="Content.Shared.Inventory.InventorySystem.RelayEvent``1(Entity{Content.Shared.Inventory.InventoryComponent},``0@)">RelayEvent&lt;T&gt;(Entity&lt;InventoryComponent&gt;, ref T)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RelayEvent&lt;T&gt;(Entity&lt;InventoryComponent&gt; inventory, ref T args)
+    where T : IInventoryRelayEvent</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Inventory.InventoryComponent.html">InventoryComponent</a>&gt;</td>
+        <td><span class="parametername">inventory</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">args</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Inventory_InventorySystem_RelayInventoryEvent__1_EntityUid_Content_Shared_Inventory_InventoryComponent___0_.md&amp;value=---%0Auid%3A%20Content.Shared.Inventory.InventorySystem.RelayInventoryEvent%60%601(EntityUid%2CContent.Shared.Inventory.InventoryComponent%2C%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Inventory/InventorySystem.Relay.cs/#L164">View Source</a>
+  </span>
+  <a id="Content_Shared_Inventory_InventorySystem_RelayInventoryEvent_" data-uid="Content.Shared.Inventory.InventorySystem.RelayInventoryEvent*"></a>
+  <h4 id="Content_Shared_Inventory_InventorySystem_RelayInventoryEvent__1_EntityUid_Content_Shared_Inventory_InventoryComponent___0_" data-uid="Content.Shared.Inventory.InventorySystem.RelayInventoryEvent``1(EntityUid,Content.Shared.Inventory.InventoryComponent,``0)">RelayInventoryEvent&lt;T&gt;(EntityUid, InventoryComponent, T)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void RelayInventoryEvent&lt;T&gt;(EntityUid uid, InventoryComponent component, T args)
+    where T : IInventoryRelayEvent</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">uid</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Inventory.InventoryComponent.html">InventoryComponent</a></td>
+        <td><span class="parametername">component</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">args</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Inventory_InventorySystem_SetSlotIgnoreDependencices_EntityUid_Content_Shared_Inventory_InventoryComponent_System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20Content.Shared.Inventory.InventorySystem.SetSlotIgnoreDependencices(EntityUid%2CContent.Shared.Inventory.InventoryComponent%2CSystem.String%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Inventory/InventorySystem.Helpers.cs/#L75">View Source</a>
+  </span>
+  <a id="Content_Shared_Inventory_InventorySystem_SetSlotIgnoreDependencices_" data-uid="Content.Shared.Inventory.InventorySystem.SetSlotIgnoreDependencices*"></a>
+  <h4 id="Content_Shared_Inventory_InventorySystem_SetSlotIgnoreDependencices_EntityUid_Content_Shared_Inventory_InventoryComponent_System_String_System_Boolean_" data-uid="Content.Shared.Inventory.InventorySystem.SetSlotIgnoreDependencices(EntityUid,Content.Shared.Inventory.InventoryComponent,System.String,System.Boolean)">SetSlotIgnoreDependencices(EntityUid, InventoryComponent, String, Boolean)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetSlotIgnoreDependencices(EntityUid entityUid, InventoryComponent inventory, string slot, bool ignore = true)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">entityUid</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Inventory.InventoryComponent.html">InventoryComponent</a></td>
+        <td><span class="parametername">inventory</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">slot</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">ignore</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Inventory_InventorySystem_SetTemplateId_Entity_Content_Shared_Inventory_InventoryComponent__Robust_Shared_Prototypes_ProtoId_Content_Shared_Inventory_InventoryTemplatePrototype__.md&amp;value=---%0Auid%3A%20Content.Shared.Inventory.InventorySystem.SetTemplateId(Entity%7BContent.Shared.Inventory.InventoryComponent%7D%2CRobust.Shared.Prototypes.ProtoId%7BContent.Shared.Inventory.InventoryTemplatePrototype%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Inventory/InventorySystem.Slots.cs/#L236">View Source</a>
+  </span>
+  <a id="Content_Shared_Inventory_InventorySystem_SetTemplateId_" data-uid="Content.Shared.Inventory.InventorySystem.SetTemplateId*"></a>
+  <h4 id="Content_Shared_Inventory_InventorySystem_SetTemplateId_Entity_Content_Shared_Inventory_InventoryComponent__Robust_Shared_Prototypes_ProtoId_Content_Shared_Inventory_InventoryTemplatePrototype__" data-uid="Content.Shared.Inventory.InventorySystem.SetTemplateId(Entity{Content.Shared.Inventory.InventoryComponent},Robust.Shared.Prototypes.ProtoId{Content.Shared.Inventory.InventoryTemplatePrototype})">SetTemplateId(Entity&lt;InventoryComponent&gt;, ProtoId&lt;InventoryTemplatePrototype&gt;)</h4>
+  <div class="markdown level1 summary"><p>Change the inventory template ID an entity is using. The new template must be compatible.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetTemplateId(Entity&lt;InventoryComponent&gt; ent, ProtoId&lt;InventoryTemplatePrototype&gt; newTemplate)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Inventory.InventoryComponent.html">InventoryComponent</a>&gt;</td>
+        <td><span class="parametername">ent</span></td>
+        <td><p>The entity to update.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Robust.Shared.Prototypes.ProtoId</span>&lt;<a class="xref" href="Content.Shared.Inventory.InventoryTemplatePrototype.html">InventoryTemplatePrototype</a>&gt;</td>
+        <td><span class="parametername">newTemplate</span></td>
+        <td><p>The ID of the new inventory template prototype.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Content_Shared_Inventory_InventorySystem_SetTemplateId_Entity_Content_Shared_Inventory_InventoryComponent__Robust_Shared_Prototypes_ProtoId_Content_Shared_Inventory_InventoryTemplatePrototype___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+For an inventory template to be compatible with another, it must have exactly the same slot names.
+All other changes are rejected.
+</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Inventory_InventorySystem_Shutdown.md&amp;value=---%0Auid%3A%20Content.Shared.Inventory.InventorySystem.Shutdown%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Inventory/InventorySystem.cs/#L25">View Source</a>
+  </span>
+  <a id="Content_Shared_Inventory_InventorySystem_Shutdown_" data-uid="Content.Shared.Inventory.InventorySystem.Shutdown*"></a>
+  <h4 id="Content_Shared_Inventory_InventorySystem_Shutdown" data-uid="Content.Shared.Inventory.InventorySystem.Shutdown">Shutdown()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Shutdown()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Inventory_InventorySystem_SpawnItemInSlot_EntityUid_System_String_System_String_System_Boolean_System_Boolean_Content_Shared_Inventory_InventoryComponent_.md&amp;value=---%0Auid%3A%20Content.Shared.Inventory.InventorySystem.SpawnItemInSlot(EntityUid%2CSystem.String%2CSystem.String%2CSystem.Boolean%2CSystem.Boolean%2CContent.Shared.Inventory.InventoryComponent)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Inventory/InventorySystem.Helpers.cs/#L86">View Source</a>
+  </span>
+  <a id="Content_Shared_Inventory_InventorySystem_SpawnItemInSlot_" data-uid="Content.Shared.Inventory.InventorySystem.SpawnItemInSlot*"></a>
+  <h4 id="Content_Shared_Inventory_InventorySystem_SpawnItemInSlot_EntityUid_System_String_System_String_System_Boolean_System_Boolean_Content_Shared_Inventory_InventoryComponent_" data-uid="Content.Shared.Inventory.InventorySystem.SpawnItemInSlot(EntityUid,System.String,System.String,System.Boolean,System.Boolean,Content.Shared.Inventory.InventoryComponent)">SpawnItemInSlot(EntityUid, String, String, Boolean, Boolean, InventoryComponent)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool SpawnItemInSlot(EntityUid uid, string slot, string prototype, bool silent = false, bool force = false, InventoryComponent inventory = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">uid</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">slot</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">prototype</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">silent</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">force</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Inventory.InventoryComponent.html">InventoryComponent</a></td>
+        <td><span class="parametername">inventory</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Inventory_InventorySystem_SpawnItemOnEntity_EntityUid_Robust_Shared_Prototypes_EntProtoId_.md&amp;value=---%0Auid%3A%20Content.Shared.Inventory.InventorySystem.SpawnItemOnEntity(EntityUid%2CRobust.Shared.Prototypes.EntProtoId)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Inventory/InventorySystem.Helpers.cs/#L135">View Source</a>
+  </span>
+  <a id="Content_Shared_Inventory_InventorySystem_SpawnItemOnEntity_" data-uid="Content.Shared.Inventory.InventorySystem.SpawnItemOnEntity*"></a>
+  <h4 id="Content_Shared_Inventory_InventorySystem_SpawnItemOnEntity_EntityUid_Robust_Shared_Prototypes_EntProtoId_" data-uid="Content.Shared.Inventory.InventorySystem.SpawnItemOnEntity(EntityUid,Robust.Shared.Prototypes.EntProtoId)">SpawnItemOnEntity(EntityUid, EntProtoId)</h4>
+  <div class="markdown level1 summary"><p>Will attempt to spawn an item inside of an entities bag, pockets, hands or nearby</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SpawnItemOnEntity(EntityUid entity, EntProtoId item)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">entity</span></td>
+        <td><p>The entity that you want to spawn an item on</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Robust.Shared.Prototypes.EntProtoId</span></td>
+        <td><span class="parametername">item</span></td>
+        <td><p>The prototype ID that you want to spawn in the bag.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Inventory_InventorySystem_SpawnItemsOnEntity_EntityUid_List_System_String__.md&amp;value=---%0Auid%3A%20Content.Shared.Inventory.InventorySystem.SpawnItemsOnEntity(EntityUid%2CList%7BSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Inventory/InventorySystem.Helpers.cs/#L122">View Source</a>
+  </span>
+  <a id="Content_Shared_Inventory_InventorySystem_SpawnItemsOnEntity_" data-uid="Content.Shared.Inventory.InventorySystem.SpawnItemsOnEntity*"></a>
+  <h4 id="Content_Shared_Inventory_InventorySystem_SpawnItemsOnEntity_EntityUid_List_System_String__" data-uid="Content.Shared.Inventory.InventorySystem.SpawnItemsOnEntity(EntityUid,List{System.String})">SpawnItemsOnEntity(EntityUid, List&lt;String&gt;)</h4>
+  <div class="markdown level1 summary"><p>Will attempt to spawn a list of items inside of an entities bag, pockets, hands or nearby</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SpawnItemsOnEntity(EntityUid entity, List&lt;string&gt; items)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">entity</span></td>
+        <td><p>The entity that you want to spawn an item on</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">List</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">items</span></td>
+        <td><p>A list of prototype IDs that you want to spawn in the bag.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Inventory_InventorySystem_TryEquip_EntityUid_EntityUid_EntityUid_System_String_System_Boolean_System_Boolean_System_Boolean_Content_Shared_Inventory_InventoryComponent_Content_Shared_Clothing_Components_ClothingComponent_System_Boolean_.md&amp;value=---%0Auid%3A%20Content.Shared.Inventory.InventorySystem.TryEquip(EntityUid%2CEntityUid%2CEntityUid%2CSystem.String%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CContent.Shared.Inventory.InventoryComponent%2CContent.Shared.Clothing.Components.ClothingComponent%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Inventory/InventorySystem.Equip.cs/#L165">View Source</a>
+  </span>
+  <a id="Content_Shared_Inventory_InventorySystem_TryEquip_" data-uid="Content.Shared.Inventory.InventorySystem.TryEquip*"></a>
+  <h4 id="Content_Shared_Inventory_InventorySystem_TryEquip_EntityUid_EntityUid_EntityUid_System_String_System_Boolean_System_Boolean_System_Boolean_Content_Shared_Inventory_InventoryComponent_Content_Shared_Clothing_Components_ClothingComponent_System_Boolean_" data-uid="Content.Shared.Inventory.InventorySystem.TryEquip(EntityUid,EntityUid,EntityUid,System.String,System.Boolean,System.Boolean,System.Boolean,Content.Shared.Inventory.InventoryComponent,Content.Shared.Clothing.Components.ClothingComponent,System.Boolean)">TryEquip(EntityUid, EntityUid, EntityUid, String, Boolean, Boolean, Boolean, InventoryComponent, ClothingComponent, Boolean)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryEquip(EntityUid actor, EntityUid target, EntityUid itemUid, string slot, bool silent = false, bool force = false, bool predicted = false, InventoryComponent inventory = null, ClothingComponent clothing = null, bool checkDoafter = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">actor</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">target</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">itemUid</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">slot</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">silent</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">force</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">predicted</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Inventory.InventoryComponent.html">InventoryComponent</a></td>
+        <td><span class="parametername">inventory</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Clothing.Components.ClothingComponent.html">ClothingComponent</a></td>
+        <td><span class="parametername">clothing</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">checkDoafter</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Inventory_InventorySystem_TryEquip_EntityUid_EntityUid_System_String_System_Boolean_System_Boolean_System_Boolean_Content_Shared_Inventory_InventoryComponent_Content_Shared_Clothing_Components_ClothingComponent_System_Boolean_.md&amp;value=---%0Auid%3A%20Content.Shared.Inventory.InventorySystem.TryEquip(EntityUid%2CEntityUid%2CSystem.String%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CContent.Shared.Inventory.InventoryComponent%2CContent.Shared.Clothing.Components.ClothingComponent%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Inventory/InventorySystem.Equip.cs/#L161">View Source</a>
+  </span>
+  <a id="Content_Shared_Inventory_InventorySystem_TryEquip_" data-uid="Content.Shared.Inventory.InventorySystem.TryEquip*"></a>
+  <h4 id="Content_Shared_Inventory_InventorySystem_TryEquip_EntityUid_EntityUid_System_String_System_Boolean_System_Boolean_System_Boolean_Content_Shared_Inventory_InventoryComponent_Content_Shared_Clothing_Components_ClothingComponent_System_Boolean_" data-uid="Content.Shared.Inventory.InventorySystem.TryEquip(EntityUid,EntityUid,System.String,System.Boolean,System.Boolean,System.Boolean,Content.Shared.Inventory.InventoryComponent,Content.Shared.Clothing.Components.ClothingComponent,System.Boolean)">TryEquip(EntityUid, EntityUid, String, Boolean, Boolean, Boolean, InventoryComponent, ClothingComponent, Boolean)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryEquip(EntityUid uid, EntityUid itemUid, string slot, bool silent = false, bool force = false, bool predicted = false, InventoryComponent inventory = null, ClothingComponent clothing = null, bool checkDoafter = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">uid</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">itemUid</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">slot</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">silent</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">force</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">predicted</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Inventory.InventoryComponent.html">InventoryComponent</a></td>
+        <td><span class="parametername">inventory</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Clothing.Components.ClothingComponent.html">ClothingComponent</a></td>
+        <td><span class="parametername">clothing</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">checkDoafter</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Inventory_InventorySystem_TryGetContainerSlotEnumerator_Entity_Content_Shared_Inventory_InventoryComponent__Content_Shared_Inventory_InventorySystem_InventorySlotEnumerator__Content_Shared_Inventory_SlotFlags_.md&amp;value=---%0Auid%3A%20Content.Shared.Inventory.InventorySystem.TryGetContainerSlotEnumerator(Entity%7BContent.Shared.Inventory.InventoryComponent%7D%2CContent.Shared.Inventory.InventorySystem.InventorySlotEnumerator%40%2CContent.Shared.Inventory.SlotFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Inventory/InventorySystem.Slots.cs/#L176">View Source</a>
+  </span>
+  <a id="Content_Shared_Inventory_InventorySystem_TryGetContainerSlotEnumerator_" data-uid="Content.Shared.Inventory.InventorySystem.TryGetContainerSlotEnumerator*"></a>
+  <h4 id="Content_Shared_Inventory_InventorySystem_TryGetContainerSlotEnumerator_Entity_Content_Shared_Inventory_InventoryComponent__Content_Shared_Inventory_InventorySystem_InventorySlotEnumerator__Content_Shared_Inventory_SlotFlags_" data-uid="Content.Shared.Inventory.InventorySystem.TryGetContainerSlotEnumerator(Entity{Content.Shared.Inventory.InventoryComponent},Content.Shared.Inventory.InventorySystem.InventorySlotEnumerator@,Content.Shared.Inventory.SlotFlags)">TryGetContainerSlotEnumerator(Entity&lt;InventoryComponent&gt;, out InventorySystem.InventorySlotEnumerator, SlotFlags)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryGetContainerSlotEnumerator(Entity&lt;InventoryComponent&gt; entity, out InventorySystem.InventorySlotEnumerator containerSlotEnumerator, SlotFlags flags = default(SlotFlags))</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Inventory.InventoryComponent.html">InventoryComponent</a>&gt;</td>
+        <td><span class="parametername">entity</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Inventory.InventorySystem.InventorySlotEnumerator.html">InventorySystem.InventorySlotEnumerator</a></td>
+        <td><span class="parametername">containerSlotEnumerator</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Inventory.SlotFlags.html">SlotFlags</a></td>
+        <td><span class="parametername">flags</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Inventory_InventorySystem_TryGetContainingSlot_Entity_System_Nullable_TransformComponent__System_Nullable_MetaDataComponent___Content_Shared_Inventory_SlotDefinition__.md&amp;value=---%0Auid%3A%20Content.Shared.Inventory.InventorySystem.TryGetContainingSlot(Entity%7BSystem.Nullable%7BTransformComponent%7D%2CSystem.Nullable%7BMetaDataComponent%7D%7D%2CContent.Shared.Inventory.SlotDefinition%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Inventory/InventorySystem.Helpers.cs/#L55">View Source</a>
+  </span>
+  <a id="Content_Shared_Inventory_InventorySystem_TryGetContainingSlot_" data-uid="Content.Shared.Inventory.InventorySystem.TryGetContainingSlot*"></a>
+  <h4 id="Content_Shared_Inventory_InventorySystem_TryGetContainingSlot_Entity_System_Nullable_TransformComponent__System_Nullable_MetaDataComponent___Content_Shared_Inventory_SlotDefinition__" data-uid="Content.Shared.Inventory.InventorySystem.TryGetContainingSlot(Entity{System.Nullable{TransformComponent},System.Nullable{MetaDataComponent}},Content.Shared.Inventory.SlotDefinition@)">TryGetContainingSlot(Entity&lt;Nullable&lt;TransformComponent&gt;, Nullable&lt;MetaDataComponent&gt;&gt;, out SlotDefinition)</h4>
+  <div class="markdown level1 summary"><p>Returns the definition of the inventory slot that the given entity is currently in..</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryGetContainingSlot(Entity&lt;TransformComponent?, MetaDataComponent?&gt; entity, out SlotDefinition slot)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<span class="xref">System.Nullable</span>&lt;<span class="xref">TransformComponent</span>&gt;, <span class="xref">System.Nullable</span>&lt;<span class="xref">MetaDataComponent</span>&gt;&gt;</td>
+        <td><span class="parametername">entity</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Inventory.SlotDefinition.html">SlotDefinition</a></td>
+        <td><span class="parametername">slot</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Inventory_InventorySystem_TryGetInventoryEntity__1_Entity_Content_Shared_Inventory_InventoryComponent__Entity___0___.md&amp;value=---%0Auid%3A%20Content.Shared.Inventory.InventorySystem.TryGetInventoryEntity%60%601(Entity%7BContent.Shared.Inventory.InventoryComponent%7D%2CEntity%7B%60%600%7D%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Inventory/InventorySystem.Slots.cs/#L61">View Source</a>
+  </span>
+  <a id="Content_Shared_Inventory_InventorySystem_TryGetInventoryEntity_" data-uid="Content.Shared.Inventory.InventorySystem.TryGetInventoryEntity*"></a>
+  <h4 id="Content_Shared_Inventory_InventorySystem_TryGetInventoryEntity__1_Entity_Content_Shared_Inventory_InventoryComponent__Entity___0___" data-uid="Content.Shared.Inventory.InventorySystem.TryGetInventoryEntity``1(Entity{Content.Shared.Inventory.InventoryComponent},Entity{``0}@)">TryGetInventoryEntity&lt;T&gt;(Entity&lt;InventoryComponent&gt;, out Entity&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p>Tries to find an entity in the specified slot with the specified component.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryGetInventoryEntity&lt;T&gt;(Entity&lt;InventoryComponent&gt; entity, out Entity&lt;T&gt; target)
+    where T : IComponent, IClothingSlots</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Inventory.InventoryComponent.html">InventoryComponent</a>&gt;</td>
+        <td><span class="parametername">entity</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;T&gt;</td>
+        <td><span class="parametername">target</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Inventory_InventorySystem_TryGetSlot_EntityUid_System_String_Content_Shared_Inventory_SlotDefinition__Content_Shared_Inventory_InventoryComponent_.md&amp;value=---%0Auid%3A%20Content.Shared.Inventory.InventorySystem.TryGetSlot(EntityUid%2CSystem.String%2CContent.Shared.Inventory.SlotDefinition%40%2CContent.Shared.Inventory.InventoryComponent)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Inventory/InventorySystem.Slots.cs/#L159">View Source</a>
+  </span>
+  <a id="Content_Shared_Inventory_InventorySystem_TryGetSlot_" data-uid="Content.Shared.Inventory.InventorySystem.TryGetSlot*"></a>
+  <h4 id="Content_Shared_Inventory_InventorySystem_TryGetSlot_EntityUid_System_String_Content_Shared_Inventory_SlotDefinition__Content_Shared_Inventory_InventoryComponent_" data-uid="Content.Shared.Inventory.InventorySystem.TryGetSlot(EntityUid,System.String,Content.Shared.Inventory.SlotDefinition@,Content.Shared.Inventory.InventoryComponent)">TryGetSlot(EntityUid, String, out SlotDefinition, InventoryComponent)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryGetSlot(EntityUid uid, string slot, out SlotDefinition slotDefinition, InventoryComponent inventory = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">uid</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">slot</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Inventory.SlotDefinition.html">SlotDefinition</a></td>
+        <td><span class="parametername">slotDefinition</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Inventory.InventoryComponent.html">InventoryComponent</a></td>
+        <td><span class="parametername">inventory</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Inventory_InventorySystem_TryGetSlotContainer_EntityUid_System_String_Robust_Shared_Containers_ContainerSlot__Content_Shared_Inventory_SlotDefinition__Content_Shared_Inventory_InventoryComponent_Robust_Shared_Containers_ContainerManagerComponent_.md&amp;value=---%0Auid%3A%20Content.Shared.Inventory.InventorySystem.TryGetSlotContainer(EntityUid%2CSystem.String%2CRobust.Shared.Containers.ContainerSlot%40%2CContent.Shared.Inventory.SlotDefinition%40%2CContent.Shared.Inventory.InventoryComponent%2CRobust.Shared.Containers.ContainerManagerComponent)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Inventory/InventorySystem.Slots.cs/#L131">View Source</a>
+  </span>
+  <a id="Content_Shared_Inventory_InventorySystem_TryGetSlotContainer_" data-uid="Content.Shared.Inventory.InventorySystem.TryGetSlotContainer*"></a>
+  <h4 id="Content_Shared_Inventory_InventorySystem_TryGetSlotContainer_EntityUid_System_String_Robust_Shared_Containers_ContainerSlot__Content_Shared_Inventory_SlotDefinition__Content_Shared_Inventory_InventoryComponent_Robust_Shared_Containers_ContainerManagerComponent_" data-uid="Content.Shared.Inventory.InventorySystem.TryGetSlotContainer(EntityUid,System.String,Robust.Shared.Containers.ContainerSlot@,Content.Shared.Inventory.SlotDefinition@,Content.Shared.Inventory.InventoryComponent,Robust.Shared.Containers.ContainerManagerComponent)">TryGetSlotContainer(EntityUid, String, out ContainerSlot, out SlotDefinition, InventoryComponent, ContainerManagerComponent)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryGetSlotContainer(EntityUid uid, string slot, out ContainerSlot containerSlot, out SlotDefinition slotDefinition, InventoryComponent inventory = null, ContainerManagerComponent containerComp = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">uid</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">slot</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Robust.Shared.Containers.ContainerSlot</span></td>
+        <td><span class="parametername">containerSlot</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Inventory.SlotDefinition.html">SlotDefinition</a></td>
+        <td><span class="parametername">slotDefinition</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Inventory.InventoryComponent.html">InventoryComponent</a></td>
+        <td><span class="parametername">inventory</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Robust.Shared.Containers.ContainerManagerComponent</span></td>
+        <td><span class="parametername">containerComp</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Inventory_InventorySystem_TryGetSlotEntity_EntityUid_System_String_System_Nullable_EntityUid___Content_Shared_Inventory_InventoryComponent_Robust_Shared_Containers_ContainerManagerComponent_.md&amp;value=---%0Auid%3A%20Content.Shared.Inventory.InventorySystem.TryGetSlotEntity(EntityUid%2CSystem.String%2CSystem.Nullable%7BEntityUid%7D%40%2CContent.Shared.Inventory.InventoryComponent%2CRobust.Shared.Containers.ContainerManagerComponent)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Inventory/InventorySystem.Equip.cs/#L592">View Source</a>
+  </span>
+  <a id="Content_Shared_Inventory_InventorySystem_TryGetSlotEntity_" data-uid="Content.Shared.Inventory.InventorySystem.TryGetSlotEntity*"></a>
+  <h4 id="Content_Shared_Inventory_InventorySystem_TryGetSlotEntity_EntityUid_System_String_System_Nullable_EntityUid___Content_Shared_Inventory_InventoryComponent_Robust_Shared_Containers_ContainerManagerComponent_" data-uid="Content.Shared.Inventory.InventorySystem.TryGetSlotEntity(EntityUid,System.String,System.Nullable{EntityUid}@,Content.Shared.Inventory.InventoryComponent,Robust.Shared.Containers.ContainerManagerComponent)">TryGetSlotEntity(EntityUid, String, out Nullable&lt;EntityUid&gt;, InventoryComponent, ContainerManagerComponent)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryGetSlotEntity(EntityUid uid, string slot, out EntityUid? entityUid, InventoryComponent inventoryComponent = null, ContainerManagerComponent containerManagerComponent = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">uid</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">slot</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">EntityUid</span>&gt;</td>
+        <td><span class="parametername">entityUid</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Inventory.InventoryComponent.html">InventoryComponent</a></td>
+        <td><span class="parametername">inventoryComponent</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Robust.Shared.Containers.ContainerManagerComponent</span></td>
+        <td><span class="parametername">containerManagerComponent</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Inventory_InventorySystem_TryGetSlots_EntityUid_Content_Shared_Inventory_SlotDefinition____.md&amp;value=---%0Auid%3A%20Content.Shared.Inventory.InventorySystem.TryGetSlots(EntityUid%2CContent.Shared.Inventory.SlotDefinition%5B%5D%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Inventory/InventorySystem.Slots.cs/#L196">View Source</a>
+  </span>
+  <a id="Content_Shared_Inventory_InventorySystem_TryGetSlots_" data-uid="Content.Shared.Inventory.InventorySystem.TryGetSlots*"></a>
+  <h4 id="Content_Shared_Inventory_InventorySystem_TryGetSlots_EntityUid_Content_Shared_Inventory_SlotDefinition____" data-uid="Content.Shared.Inventory.InventorySystem.TryGetSlots(EntityUid,Content.Shared.Inventory.SlotDefinition[]@)">TryGetSlots(EntityUid, out SlotDefinition[])</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryGetSlots(EntityUid uid, out SlotDefinition[] slotDefinitions)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">uid</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Inventory.SlotDefinition.html">SlotDefinition</a>[]</td>
+        <td><span class="parametername">slotDefinitions</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Inventory_InventorySystem_TryUnequip_EntityUid_EntityUid_System_String_System_Boolean_System_Boolean_System_Boolean_Content_Shared_Inventory_InventoryComponent_Content_Shared_Clothing_Components_ClothingComponent_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20Content.Shared.Inventory.InventorySystem.TryUnequip(EntityUid%2CEntityUid%2CSystem.String%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CContent.Shared.Inventory.InventoryComponent%2CContent.Shared.Clothing.Components.ClothingComponent%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Inventory/InventorySystem.Equip.cs/#L376">View Source</a>
+  </span>
+  <a id="Content_Shared_Inventory_InventorySystem_TryUnequip_" data-uid="Content.Shared.Inventory.InventorySystem.TryUnequip*"></a>
+  <h4 id="Content_Shared_Inventory_InventorySystem_TryUnequip_EntityUid_EntityUid_System_String_System_Boolean_System_Boolean_System_Boolean_Content_Shared_Inventory_InventoryComponent_Content_Shared_Clothing_Components_ClothingComponent_System_Boolean_System_Boolean_" data-uid="Content.Shared.Inventory.InventorySystem.TryUnequip(EntityUid,EntityUid,System.String,System.Boolean,System.Boolean,System.Boolean,Content.Shared.Inventory.InventoryComponent,Content.Shared.Clothing.Components.ClothingComponent,System.Boolean,System.Boolean)">TryUnequip(EntityUid, EntityUid, String, Boolean, Boolean, Boolean, InventoryComponent, ClothingComponent, Boolean, Boolean)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryUnequip(EntityUid actor, EntityUid target, string slot, bool silent = false, bool force = false, bool predicted = false, InventoryComponent inventory = null, ClothingComponent clothing = null, bool reparent = true, bool checkDoafter = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">actor</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">target</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">slot</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">silent</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">force</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">predicted</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Inventory.InventoryComponent.html">InventoryComponent</a></td>
+        <td><span class="parametername">inventory</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Clothing.Components.ClothingComponent.html">ClothingComponent</a></td>
+        <td><span class="parametername">clothing</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">reparent</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">checkDoafter</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Inventory_InventorySystem_TryUnequip_EntityUid_EntityUid_System_String_System_Nullable_EntityUid___System_Boolean_System_Boolean_System_Boolean_Content_Shared_Inventory_InventoryComponent_Content_Shared_Clothing_Components_ClothingComponent_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20Content.Shared.Inventory.InventorySystem.TryUnequip(EntityUid%2CEntityUid%2CSystem.String%2CSystem.Nullable%7BEntityUid%7D%40%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CContent.Shared.Inventory.InventoryComponent%2CContent.Shared.Clothing.Components.ClothingComponent%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Inventory/InventorySystem.Equip.cs/#L406">View Source</a>
+  </span>
+  <a id="Content_Shared_Inventory_InventorySystem_TryUnequip_" data-uid="Content.Shared.Inventory.InventorySystem.TryUnequip*"></a>
+  <h4 id="Content_Shared_Inventory_InventorySystem_TryUnequip_EntityUid_EntityUid_System_String_System_Nullable_EntityUid___System_Boolean_System_Boolean_System_Boolean_Content_Shared_Inventory_InventoryComponent_Content_Shared_Clothing_Components_ClothingComponent_System_Boolean_System_Boolean_" data-uid="Content.Shared.Inventory.InventorySystem.TryUnequip(EntityUid,EntityUid,System.String,System.Nullable{EntityUid}@,System.Boolean,System.Boolean,System.Boolean,Content.Shared.Inventory.InventoryComponent,Content.Shared.Clothing.Components.ClothingComponent,System.Boolean,System.Boolean)">TryUnequip(EntityUid, EntityUid, String, out Nullable&lt;EntityUid&gt;, Boolean, Boolean, Boolean, InventoryComponent, ClothingComponent, Boolean, Boolean)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryUnequip(EntityUid actor, EntityUid target, string slot, out EntityUid? removedItem, bool silent = false, bool force = false, bool predicted = false, InventoryComponent inventory = null, ClothingComponent clothing = null, bool reparent = true, bool checkDoafter = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">actor</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">target</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">slot</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">EntityUid</span>&gt;</td>
+        <td><span class="parametername">removedItem</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">silent</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">force</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">predicted</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Inventory.InventoryComponent.html">InventoryComponent</a></td>
+        <td><span class="parametername">inventory</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Clothing.Components.ClothingComponent.html">ClothingComponent</a></td>
+        <td><span class="parametername">clothing</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">reparent</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">checkDoafter</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Inventory_InventorySystem_TryUnequip_EntityUid_System_String_System_Boolean_System_Boolean_System_Boolean_Content_Shared_Inventory_InventoryComponent_Content_Shared_Clothing_Components_ClothingComponent_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20Content.Shared.Inventory.InventorySystem.TryUnequip(EntityUid%2CSystem.String%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CContent.Shared.Inventory.InventoryComponent%2CContent.Shared.Clothing.Components.ClothingComponent%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Inventory/InventorySystem.Equip.cs/#L362">View Source</a>
+  </span>
+  <a id="Content_Shared_Inventory_InventorySystem_TryUnequip_" data-uid="Content.Shared.Inventory.InventorySystem.TryUnequip*"></a>
+  <h4 id="Content_Shared_Inventory_InventorySystem_TryUnequip_EntityUid_System_String_System_Boolean_System_Boolean_System_Boolean_Content_Shared_Inventory_InventoryComponent_Content_Shared_Clothing_Components_ClothingComponent_System_Boolean_System_Boolean_" data-uid="Content.Shared.Inventory.InventorySystem.TryUnequip(EntityUid,System.String,System.Boolean,System.Boolean,System.Boolean,Content.Shared.Inventory.InventoryComponent,Content.Shared.Clothing.Components.ClothingComponent,System.Boolean,System.Boolean)">TryUnequip(EntityUid, String, Boolean, Boolean, Boolean, InventoryComponent, ClothingComponent, Boolean, Boolean)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryUnequip(EntityUid uid, string slot, bool silent = false, bool force = false, bool predicted = false, InventoryComponent inventory = null, ClothingComponent clothing = null, bool reparent = true, bool checkDoafter = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">uid</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">slot</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">silent</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">force</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">predicted</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Inventory.InventoryComponent.html">InventoryComponent</a></td>
+        <td><span class="parametername">inventory</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Clothing.Components.ClothingComponent.html">ClothingComponent</a></td>
+        <td><span class="parametername">clothing</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">reparent</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">checkDoafter</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Inventory_InventorySystem_TryUnequip_EntityUid_System_String_System_Nullable_EntityUid___System_Boolean_System_Boolean_System_Boolean_Content_Shared_Inventory_InventoryComponent_Content_Shared_Clothing_Components_ClothingComponent_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20Content.Shared.Inventory.InventorySystem.TryUnequip(EntityUid%2CSystem.String%2CSystem.Nullable%7BEntityUid%7D%40%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CContent.Shared.Inventory.InventoryComponent%2CContent.Shared.Clothing.Components.ClothingComponent%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Inventory/InventorySystem.Equip.cs/#L391">View Source</a>
+  </span>
+  <a id="Content_Shared_Inventory_InventorySystem_TryUnequip_" data-uid="Content.Shared.Inventory.InventorySystem.TryUnequip*"></a>
+  <h4 id="Content_Shared_Inventory_InventorySystem_TryUnequip_EntityUid_System_String_System_Nullable_EntityUid___System_Boolean_System_Boolean_System_Boolean_Content_Shared_Inventory_InventoryComponent_Content_Shared_Clothing_Components_ClothingComponent_System_Boolean_System_Boolean_" data-uid="Content.Shared.Inventory.InventorySystem.TryUnequip(EntityUid,System.String,System.Nullable{EntityUid}@,System.Boolean,System.Boolean,System.Boolean,Content.Shared.Inventory.InventoryComponent,Content.Shared.Clothing.Components.ClothingComponent,System.Boolean,System.Boolean)">TryUnequip(EntityUid, String, out Nullable&lt;EntityUid&gt;, Boolean, Boolean, Boolean, InventoryComponent, ClothingComponent, Boolean, Boolean)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryUnequip(EntityUid uid, string slot, out EntityUid? removedItem, bool silent = false, bool force = false, bool predicted = false, InventoryComponent inventory = null, ClothingComponent clothing = null, bool reparent = true, bool checkDoafter = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">uid</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">slot</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">EntityUid</span>&gt;</td>
+        <td><span class="parametername">removedItem</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">silent</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">force</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">predicted</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Inventory.InventoryComponent.html">InventoryComponent</a></td>
+        <td><span class="parametername">inventory</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Clothing.Components.ClothingComponent.html">ClothingComponent</a></td>
+        <td><span class="parametername">clothing</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">reparent</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">checkDoafter</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Inventory_InventorySystem_UpdateInventoryTemplate_Entity_Content_Shared_Inventory_InventoryComponent__.md&amp;value=---%0Auid%3A%20Content.Shared.Inventory.InventorySystem.UpdateInventoryTemplate(Entity%7BContent.Shared.Inventory.InventoryComponent%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Inventory/InventorySystem.Slots.cs/#L104">View Source</a>
+  </span>
+  <a id="Content_Shared_Inventory_InventorySystem_UpdateInventoryTemplate_" data-uid="Content.Shared.Inventory.InventorySystem.UpdateInventoryTemplate*"></a>
+  <h4 id="Content_Shared_Inventory_InventorySystem_UpdateInventoryTemplate_Entity_Content_Shared_Inventory_InventoryComponent__" data-uid="Content.Shared.Inventory.InventorySystem.UpdateInventoryTemplate(Entity{Content.Shared.Inventory.InventoryComponent})">UpdateInventoryTemplate(Entity&lt;InventoryComponent&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void UpdateInventoryTemplate(Entity&lt;InventoryComponent&gt; ent)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Inventory.InventoryComponent.html">InventoryComponent</a>&gt;</td>
+        <td><span class="parametername">ent</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Inventory_InventorySystem.md&amp;value=---%0Auid%3A%20Content.Shared.Inventory.InventorySystem%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Inventory/InventorySystem.Slots.cs/#L35" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="toggle-mode">
+                <div class="icon">
+                  <i aria-hidden="true">☀</i>
+                </div>
+                <label class="switch">
+                  <input type="checkbox" id="switch-style">
+                  <span class="slider round"></span>
+                </label>
+                <div class="icon">
+                  <i aria-hidden="true">☾</i>
+                </div>
+              </div>
+          
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <h5>In This Article</h5>
+              <div></div>
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <div class="pull-left">
+              
+              <span>Generated by <strong>DocFX</strong></span>
+            </div>
+            <div class="toggle-mode pull-right visible-sm visible-xs">
+              <div class="icon">
+                <i aria-hidden="true">☀</i>
+              </div>
+              <label class="switch">
+                <input type="checkbox" id="switch-style-m">
+                <span class="slider round"></span>
+              </label>
+              <div class="icon">
+                <i aria-hidden="true">☾</i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="../../styles/toggle-theme.js"></script>
+      </footer>    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

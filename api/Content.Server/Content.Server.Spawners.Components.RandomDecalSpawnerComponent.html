@@ -1,0 +1,627 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class RandomDecalSpawnerComponent
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class RandomDecalSpawnerComponent
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Content.Server.Spawners.Components.RandomDecalSpawnerComponent">
+  
+  
+  <h1 id="Content_Server_Spawners_Components_RandomDecalSpawnerComponent" data-uid="Content.Server.Spawners.Components.RandomDecalSpawnerComponent" class="text-break">Class RandomDecalSpawnerComponent
+  </h1>
+  <div class="markdown level0 summary"><p>This component spawns decals around the entity on MapInit.
+See doc strings for the various parameters for more information.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">RandomDecalSpawnerComponent</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Content.Server.Spawners.Components.html">Content.Server.Spawners.Components</a></h6>
+  <h6><strong>Assembly</strong>: Content.Server.dll</h6>
+  <h5 id="Content_Server_Spawners_Components_RandomDecalSpawnerComponent_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class RandomDecalSpawnerComponent : Component</code></pre>
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_Spawners_Components_RandomDecalSpawnerComponent_Cleanable.md&amp;value=---%0Auid%3A%20Content.Server.Spawners.Components.RandomDecalSpawnerComponent.Cleanable%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/Spawners/Components/RandomDecalSpawnerComponent.cs/#L98">View Source</a>
+  </span>
+  <h4 id="Content_Server_Spawners_Components_RandomDecalSpawnerComponent_Cleanable" data-uid="Content.Server.Spawners.Components.RandomDecalSpawnerComponent.Cleanable">Cleanable</h4>
+  <div class="markdown level1 summary"><p>Whether the new decals are cleanable or not</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? Cleanable</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Content_Server_Spawners_Components_RandomDecalSpawnerComponent_Cleanable_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>A null value will cause this to attempt to use the default value (DefaultCleanable) for the decal.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_Spawners_Components_RandomDecalSpawnerComponent_Color.md&amp;value=---%0Auid%3A%20Content.Server.Spawners.Components.RandomDecalSpawnerComponent.Color%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/Spawners/Components/RandomDecalSpawnerComponent.cs/#L83">View Source</a>
+  </span>
+  <h4 id="Content_Server_Spawners_Components_RandomDecalSpawnerComponent_Color" data-uid="Content.Server.Spawners.Components.RandomDecalSpawnerComponent.Color">Color</h4>
+  <div class="markdown level1 summary"><p>Color for the generated decals. Does nothing if RandomColorList is set.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Color Color</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Color</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_Spawners_Components_RandomDecalSpawnerComponent_Decals.md&amp;value=---%0Auid%3A%20Content.Server.Spawners.Components.RandomDecalSpawnerComponent.Decals%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/Spawners/Components/RandomDecalSpawnerComponent.cs/#L23">View Source</a>
+  </span>
+  <h4 id="Content_Server_Spawners_Components_RandomDecalSpawnerComponent_Decals" data-uid="Content.Server.Spawners.Components.RandomDecalSpawnerComponent.Decals">Decals</h4>
+  <div class="markdown level1 summary"><p>A list of decals to randomly select from when spawning.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;ProtoId&lt;DecalPrototype&gt;&gt; Decals</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">List</span>&lt;<span class="xref">Robust.Shared.Prototypes.ProtoId</span>&lt;<a class="xref" href="../Content.Shared/Content.Shared.Decals.DecalPrototype.html">DecalPrototype</a>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_Spawners_Components_RandomDecalSpawnerComponent_DeleteSpawnerAfterSpawn.md&amp;value=---%0Auid%3A%20Content.Server.Spawners.Components.RandomDecalSpawnerComponent.DeleteSpawnerAfterSpawn%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/Spawners/Components/RandomDecalSpawnerComponent.cs/#L126">View Source</a>
+  </span>
+  <h4 id="Content_Server_Spawners_Components_RandomDecalSpawnerComponent_DeleteSpawnerAfterSpawn" data-uid="Content.Server.Spawners.Components.RandomDecalSpawnerComponent.DeleteSpawnerAfterSpawn">DeleteSpawnerAfterSpawn</h4>
+  <div class="markdown level1 summary"><p>Sets whether to delete the entity with this component after the spawner is finished.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool DeleteSpawnerAfterSpawn</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_Spawners_Components_RandomDecalSpawnerComponent_MaxDecals.md&amp;value=---%0Auid%3A%20Content.Server.Spawners.Components.RandomDecalSpawnerComponent.MaxDecals%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/Spawners/Components/RandomDecalSpawnerComponent.cs/#L41">View Source</a>
+  </span>
+  <h4 id="Content_Server_Spawners_Components_RandomDecalSpawnerComponent_MaxDecals" data-uid="Content.Server.Spawners.Components.RandomDecalSpawnerComponent.MaxDecals">MaxDecals</h4>
+  <div class="markdown level1 summary"><p>The maximum amount of decals to spawn across the entire radius.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int MaxDecals</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_Spawners_Components_RandomDecalSpawnerComponent_MaxDecalsPerTile.md&amp;value=---%0Auid%3A%20Content.Server.Spawners.Components.RandomDecalSpawnerComponent.MaxDecalsPerTile%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/Spawners/Components/RandomDecalSpawnerComponent.cs/#L50">View Source</a>
+  </span>
+  <h4 id="Content_Server_Spawners_Components_RandomDecalSpawnerComponent_MaxDecalsPerTile" data-uid="Content.Server.Spawners.Components.RandomDecalSpawnerComponent.MaxDecalsPerTile">MaxDecalsPerTile</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int? MaxDecalsPerTile</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_Spawners_Components_RandomDecalSpawnerComponent_Prob.md&amp;value=---%0Auid%3A%20Content.Server.Spawners.Components.RandomDecalSpawnerComponent.Prob%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/Spawners/Components/RandomDecalSpawnerComponent.cs/#L35">View Source</a>
+  </span>
+  <h4 id="Content_Server_Spawners_Components_RandomDecalSpawnerComponent_Prob" data-uid="Content.Server.Spawners.Components.RandomDecalSpawnerComponent.Prob">Prob</h4>
+  <div class="markdown level1 summary"><p>Probability that a particular decal gets spawned.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float Prob</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_Spawners_Components_RandomDecalSpawnerComponent_Radius.md&amp;value=---%0Auid%3A%20Content.Server.Spawners.Components.RandomDecalSpawnerComponent.Radius%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/Spawners/Components/RandomDecalSpawnerComponent.cs/#L29">View Source</a>
+  </span>
+  <h4 id="Content_Server_Spawners_Components_RandomDecalSpawnerComponent_Radius" data-uid="Content.Server.Spawners.Components.RandomDecalSpawnerComponent.Radius">Radius</h4>
+  <div class="markdown level1 summary"><p>Radius (in tiles) to spawn decals in. 0 will target only the tile the entity is on.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float Radius</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_Spawners_Components_RandomDecalSpawnerComponent_RandomColorList.md&amp;value=---%0Auid%3A%20Content.Server.Spawners.Components.RandomDecalSpawnerComponent.RandomColorList%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/Spawners/Components/RandomDecalSpawnerComponent.cs/#L89">View Source</a>
+  </span>
+  <h4 id="Content_Server_Spawners_Components_RandomDecalSpawnerComponent_RandomColorList" data-uid="Content.Server.Spawners.Components.RandomDecalSpawnerComponent.RandomColorList">RandomColorList</h4>
+  <div class="markdown level1 summary"><p>A random color to select from. Overrides Color if set.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;Color&gt;? RandomColorList</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">List</span>&lt;<span class="xref">Color</span>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_Spawners_Components_RandomDecalSpawnerComponent_RandomRotation.md&amp;value=---%0Auid%3A%20Content.Server.Spawners.Components.RandomDecalSpawnerComponent.RandomRotation%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/Spawners/Components/RandomDecalSpawnerComponent.cs/#L56">View Source</a>
+  </span>
+  <h4 id="Content_Server_Spawners_Components_RandomDecalSpawnerComponent_RandomRotation" data-uid="Content.Server.Spawners.Components.RandomDecalSpawnerComponent.RandomRotation">RandomRotation</h4>
+  <div class="markdown level1 summary"><p>Whether decals should have a random rotation applied to them.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool RandomRotation</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_Spawners_Components_RandomDecalSpawnerComponent_SnapPosition.md&amp;value=---%0Auid%3A%20Content.Server.Spawners.Components.RandomDecalSpawnerComponent.SnapPosition%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/Spawners/Components/RandomDecalSpawnerComponent.cs/#L71">View Source</a>
+  </span>
+  <h4 id="Content_Server_Spawners_Components_RandomDecalSpawnerComponent_SnapPosition" data-uid="Content.Server.Spawners.Components.RandomDecalSpawnerComponent.SnapPosition">SnapPosition</h4>
+  <div class="markdown level1 summary"><p>Whether decals should snap to the center omf a grid space or be placed randoly.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? SnapPosition</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Content_Server_Spawners_Components_RandomDecalSpawnerComponent_SnapPosition_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>A null value will cause this to attempt to use the default value (DefaultSnap) for the decal.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_Spawners_Components_RandomDecalSpawnerComponent_SnapRotation.md&amp;value=---%0Auid%3A%20Content.Server.Spawners.Components.RandomDecalSpawnerComponent.SnapRotation%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/Spawners/Components/RandomDecalSpawnerComponent.cs/#L62">View Source</a>
+  </span>
+  <h4 id="Content_Server_Spawners_Components_RandomDecalSpawnerComponent_SnapRotation" data-uid="Content.Server.Spawners.Components.RandomDecalSpawnerComponent.SnapRotation">SnapRotation</h4>
+  <div class="markdown level1 summary"><p>Whether decals should snap to 90 degree orientations, does nothing if RandomRotation is false.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool SnapRotation</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_Spawners_Components_RandomDecalSpawnerComponent_TileBlacklist.md&amp;value=---%0Auid%3A%20Content.Server.Spawners.Components.RandomDecalSpawnerComponent.TileBlacklist%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/Spawners/Components/RandomDecalSpawnerComponent.cs/#L120">View Source</a>
+  </span>
+  <h4 id="Content_Server_Spawners_Components_RandomDecalSpawnerComponent_TileBlacklist" data-uid="Content.Server.Spawners.Components.RandomDecalSpawnerComponent.TileBlacklist">TileBlacklist</h4>
+  <div class="markdown level1 summary"><p>A list of tile prototype IDs to avoid placing decals on.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;ProtoId&lt;ContentTileDefinition&gt;&gt; TileBlacklist</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">List</span>&lt;<span class="xref">Robust.Shared.Prototypes.ProtoId</span>&lt;<a class="xref" href="../Content.Shared/Content.Shared.Maps.ContentTileDefinition.html">ContentTileDefinition</a>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Content_Server_Spawners_Components_RandomDecalSpawnerComponent_TileBlacklist_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Ignored if TileWhitelist is set.
+Note that due to the nature of tile-based placement, it's possible for decals to &quot;spill over&quot; onto nearby tiles.
+This is mostly so dirt decals don't go on diagonal tiles that won't work for them.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_Spawners_Components_RandomDecalSpawnerComponent_TileWhitelist.md&amp;value=---%0Auid%3A%20Content.Server.Spawners.Components.RandomDecalSpawnerComponent.TileWhitelist%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/Spawners/Components/RandomDecalSpawnerComponent.cs/#L109">View Source</a>
+  </span>
+  <h4 id="Content_Server_Spawners_Components_RandomDecalSpawnerComponent_TileWhitelist" data-uid="Content.Server.Spawners.Components.RandomDecalSpawnerComponent.TileWhitelist">TileWhitelist</h4>
+  <div class="markdown level1 summary"><p>A list of tile prototype IDs to only place decals on.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;ProtoId&lt;ContentTileDefinition&gt;&gt; TileWhitelist</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">List</span>&lt;<span class="xref">Robust.Shared.Prototypes.ProtoId</span>&lt;<a class="xref" href="../Content.Shared/Content.Shared.Maps.ContentTileDefinition.html">ContentTileDefinition</a>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Content_Server_Spawners_Components_RandomDecalSpawnerComponent_TileWhitelist_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Causes the TileBlacklist to be ignored if this is set.
+Note that due to the nature of tile-based placement, it's possible for decals to &quot;spill over&quot; onto nearby tiles.
+This is mostly so dirt decals don't go on diagonal tiles that won't work for them.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_Spawners_Components_RandomDecalSpawnerComponent_ZIndex.md&amp;value=---%0Auid%3A%20Content.Server.Spawners.Components.RandomDecalSpawnerComponent.ZIndex%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/Spawners/Components/RandomDecalSpawnerComponent.cs/#L77">View Source</a>
+  </span>
+  <h4 id="Content_Server_Spawners_Components_RandomDecalSpawnerComponent_ZIndex" data-uid="Content.Server.Spawners.Components.RandomDecalSpawnerComponent.ZIndex">ZIndex</h4>
+  <div class="markdown level1 summary"><p>zIndex for the generated decals</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int ZIndex</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_Spawners_Components_RandomDecalSpawnerComponent.md&amp;value=---%0Auid%3A%20Content.Server.Spawners.Components.RandomDecalSpawnerComponent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/Spawners/Components/RandomDecalSpawnerComponent.cs/#L16" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="toggle-mode">
+                <div class="icon">
+                  <i aria-hidden="true">☀</i>
+                </div>
+                <label class="switch">
+                  <input type="checkbox" id="switch-style">
+                  <span class="slider round"></span>
+                </label>
+                <div class="icon">
+                  <i aria-hidden="true">☾</i>
+                </div>
+              </div>
+          
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <h5>In This Article</h5>
+              <div></div>
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <div class="pull-left">
+              
+              <span>Generated by <strong>DocFX</strong></span>
+            </div>
+            <div class="toggle-mode pull-right visible-sm visible-xs">
+              <div class="icon">
+                <i aria-hidden="true">☀</i>
+              </div>
+              <label class="switch">
+                <input type="checkbox" id="switch-style-m">
+                <span class="slider round"></span>
+              </label>
+              <div class="icon">
+                <i aria-hidden="true">☾</i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="../../styles/toggle-theme.js"></script>
+      </footer>    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

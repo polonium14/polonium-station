@@ -1,0 +1,2583 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class HumanoidCharacterProfile
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class HumanoidCharacterProfile
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile">
+  
+  
+  <h1 id="Content_Shared_Preferences_HumanoidCharacterProfile" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile" class="text-break">Class HumanoidCharacterProfile
+  </h1>
+  <div class="markdown level0 summary"><p>Character profile. Looks immutable, but uses non-immutable semantics internally for serialization/code sanity purposes.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">HumanoidCharacterProfile</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Content.Shared.Preferences.ICharacterProfile.html">ICharacterProfile</a></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Content.Shared.Preferences.html">Content.Shared.Preferences</a></h6>
+  <h6><strong>Assembly</strong>: Content.Shared.dll</h6>
+  <h5 id="Content_Shared_Preferences_HumanoidCharacterProfile_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class HumanoidCharacterProfile : object, ICharacterProfile</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Preferences_HumanoidCharacterProfile__ctor.md&amp;value=---%0Auid%3A%20Content.Shared.Preferences.HumanoidCharacterProfile.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Preferences/HumanoidCharacterProfile.cs/#L263">View Source</a>
+  </span>
+  <a id="Content_Shared_Preferences_HumanoidCharacterProfile__ctor_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.#ctor*"></a>
+  <h4 id="Content_Shared_Preferences_HumanoidCharacterProfile__ctor" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.#ctor">HumanoidCharacterProfile()</h4>
+  <div class="markdown level1 summary"><p>Get the default humanoid character profile, using internal constant values.
+Defaults to <a class="xref" href="Content.Shared.Humanoid.SharedHumanoidAppearanceSystem.html#Content_Shared_Humanoid_SharedHumanoidAppearanceSystem_DefaultSpecies">DefaultSpecies</a> for the species.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HumanoidCharacterProfile()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Preferences_HumanoidCharacterProfile__ctor_Content_Shared_Preferences_HumanoidCharacterProfile_.md&amp;value=---%0Auid%3A%20Content.Shared.Preferences.HumanoidCharacterProfile.%23ctor(Content.Shared.Preferences.HumanoidCharacterProfile)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Preferences/HumanoidCharacterProfile.cs/#L237">View Source</a>
+  </span>
+  <a id="Content_Shared_Preferences_HumanoidCharacterProfile__ctor_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.#ctor*"></a>
+  <h4 id="Content_Shared_Preferences_HumanoidCharacterProfile__ctor_Content_Shared_Preferences_HumanoidCharacterProfile_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.#ctor(Content.Shared.Preferences.HumanoidCharacterProfile)">HumanoidCharacterProfile(HumanoidCharacterProfile)</h4>
+  <div class="markdown level1 summary"><p>Copy constructor</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HumanoidCharacterProfile(HumanoidCharacterProfile other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Preferences.HumanoidCharacterProfile.html">HumanoidCharacterProfile</a></td>
+        <td><span class="parametername">other</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Preferences_HumanoidCharacterProfile__ctor_System_String_System_String_System_String_System_String_System_Int32_Content_Shared_Humanoid_Sex_Robust_Shared_Enums_Gender_Content_Shared_Humanoid_HumanoidCharacterAppearance_Content_Shared_Preferences_SpawnPriorityPreference_Dictionary_Robust_Shared_Prototypes_ProtoId_Content_Shared_Roles_JobPrototype__Robust_Shared_Prototypes_ProtoId_Content_Shared_Roles_JobAlternateTitlePrototype___HashSet_Robust_Shared_Prototypes_ProtoId_Content_Shared_Roles_JobPrototype___HashSet_Robust_Shared_Prototypes_ProtoId_Content_Shared_Roles_AntagPrototype___HashSet_Robust_Shared_Prototypes_ProtoId_Content_Shared_Traits_TraitPrototype___Dictionary_System_String_Content_Shared_Preferences_Loadouts_RoleLoadout__System_Boolean_Content_Shared__Funkystation_Records_PlayerProvidedCharacterRecords_.md&amp;value=---%0Auid%3A%20Content.Shared.Preferences.HumanoidCharacterProfile.%23ctor(System.String%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.Int32%2CContent.Shared.Humanoid.Sex%2CRobust.Shared.Enums.Gender%2CContent.Shared.Humanoid.HumanoidCharacterAppearance%2CContent.Shared.Preferences.SpawnPriorityPreference%2CDictionary%7BRobust.Shared.Prototypes.ProtoId%7BContent.Shared.Roles.JobPrototype%7D%2CRobust.Shared.Prototypes.ProtoId%7BContent.Shared.Roles.JobAlternateTitlePrototype%7D%7D%2CHashSet%7BRobust.Shared.Prototypes.ProtoId%7BContent.Shared.Roles.JobPrototype%7D%7D%2CHashSet%7BRobust.Shared.Prototypes.ProtoId%7BContent.Shared.Roles.AntagPrototype%7D%7D%2CHashSet%7BRobust.Shared.Prototypes.ProtoId%7BContent.Shared.Traits.TraitPrototype%7D%7D%2CDictionary%7BSystem.String%2CContent.Shared.Preferences.Loadouts.RoleLoadout%7D%2CSystem.Boolean%2CContent.Shared._Funkystation.Records.PlayerProvidedCharacterRecords)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Preferences/HumanoidCharacterProfile.cs/#L193">View Source</a>
+  </span>
+  <a id="Content_Shared_Preferences_HumanoidCharacterProfile__ctor_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.#ctor*"></a>
+  <h4 id="Content_Shared_Preferences_HumanoidCharacterProfile__ctor_System_String_System_String_System_String_System_String_System_Int32_Content_Shared_Humanoid_Sex_Robust_Shared_Enums_Gender_Content_Shared_Humanoid_HumanoidCharacterAppearance_Content_Shared_Preferences_SpawnPriorityPreference_Dictionary_Robust_Shared_Prototypes_ProtoId_Content_Shared_Roles_JobPrototype__Robust_Shared_Prototypes_ProtoId_Content_Shared_Roles_JobAlternateTitlePrototype___HashSet_Robust_Shared_Prototypes_ProtoId_Content_Shared_Roles_JobPrototype___HashSet_Robust_Shared_Prototypes_ProtoId_Content_Shared_Roles_AntagPrototype___HashSet_Robust_Shared_Prototypes_ProtoId_Content_Shared_Traits_TraitPrototype___Dictionary_System_String_Content_Shared_Preferences_Loadouts_RoleLoadout__System_Boolean_Content_Shared__Funkystation_Records_PlayerProvidedCharacterRecords_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.#ctor(System.String,System.String,System.String,System.String,System.Int32,Content.Shared.Humanoid.Sex,Robust.Shared.Enums.Gender,Content.Shared.Humanoid.HumanoidCharacterAppearance,Content.Shared.Preferences.SpawnPriorityPreference,Dictionary{Robust.Shared.Prototypes.ProtoId{Content.Shared.Roles.JobPrototype},Robust.Shared.Prototypes.ProtoId{Content.Shared.Roles.JobAlternateTitlePrototype}},HashSet{Robust.Shared.Prototypes.ProtoId{Content.Shared.Roles.JobPrototype}},HashSet{Robust.Shared.Prototypes.ProtoId{Content.Shared.Roles.AntagPrototype}},HashSet{Robust.Shared.Prototypes.ProtoId{Content.Shared.Traits.TraitPrototype}},Dictionary{System.String,Content.Shared.Preferences.Loadouts.RoleLoadout},System.Boolean,Content.Shared._Funkystation.Records.PlayerProvidedCharacterRecords)">HumanoidCharacterProfile(String, String, String, String, Int32, Sex, Gender, HumanoidCharacterAppearance, SpawnPriorityPreference, Dictionary&lt;ProtoId&lt;JobPrototype&gt;, ProtoId&lt;JobAlternateTitlePrototype&gt;&gt;, HashSet&lt;ProtoId&lt;JobPrototype&gt;&gt;, HashSet&lt;ProtoId&lt;AntagPrototype&gt;&gt;, HashSet&lt;ProtoId&lt;TraitPrototype&gt;&gt;, Dictionary&lt;String, RoleLoadout&gt;, Boolean, PlayerProvidedCharacterRecords)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HumanoidCharacterProfile(string name, string flavortext, string species, string borgname, int age, Sex sex, Gender gender, HumanoidCharacterAppearance appearance, SpawnPriorityPreference spawnPriority, Dictionary&lt;ProtoId&lt;JobPrototype&gt;, ProtoId&lt;JobAlternateTitlePrototype&gt;&gt; jobAlternateTitles, HashSet&lt;ProtoId&lt;JobPrototype&gt;&gt; jobPreferences, HashSet&lt;ProtoId&lt;AntagPrototype&gt;&gt; antagPreferences, HashSet&lt;ProtoId&lt;TraitPrototype&gt;&gt; traitPreferences, Dictionary&lt;string, RoleLoadout&gt; loadouts, bool enabled, PlayerProvidedCharacterRecords cdCharacterRecords)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">flavortext</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">species</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">borgname</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">age</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Humanoid.Sex.html">Sex</a></td>
+        <td><span class="parametername">sex</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Robust.Shared.Enums.Gender</span></td>
+        <td><span class="parametername">gender</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Humanoid.HumanoidCharacterAppearance.html">HumanoidCharacterAppearance</a></td>
+        <td><span class="parametername">appearance</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Preferences.SpawnPriorityPreference.html">SpawnPriorityPreference</a></td>
+        <td><span class="parametername">spawnPriority</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Dictionary</span>&lt;<span class="xref">Robust.Shared.Prototypes.ProtoId</span>&lt;<a class="xref" href="Content.Shared.Roles.JobPrototype.html">JobPrototype</a>&gt;, <span class="xref">Robust.Shared.Prototypes.ProtoId</span>&lt;<a class="xref" href="Content.Shared.Roles.JobAlternateTitlePrototype.html">JobAlternateTitlePrototype</a>&gt;&gt;</td>
+        <td><span class="parametername">jobAlternateTitles</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">HashSet</span>&lt;<span class="xref">Robust.Shared.Prototypes.ProtoId</span>&lt;<a class="xref" href="Content.Shared.Roles.JobPrototype.html">JobPrototype</a>&gt;&gt;</td>
+        <td><span class="parametername">jobPreferences</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">HashSet</span>&lt;<span class="xref">Robust.Shared.Prototypes.ProtoId</span>&lt;<a class="xref" href="Content.Shared.Roles.AntagPrototype.html">AntagPrototype</a>&gt;&gt;</td>
+        <td><span class="parametername">antagPreferences</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">HashSet</span>&lt;<span class="xref">Robust.Shared.Prototypes.ProtoId</span>&lt;<a class="xref" href="Content.Shared.Traits.TraitPrototype.html">TraitPrototype</a>&gt;&gt;</td>
+        <td><span class="parametername">traitPreferences</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Dictionary</span>&lt;<span class="xref">System.String</span>, <a class="xref" href="Content.Shared.Preferences.Loadouts.RoleLoadout.html">RoleLoadout</a>&gt;</td>
+        <td><span class="parametername">loadouts</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">enabled</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Content.Shared._Funkystation.Records.PlayerProvidedCharacterRecords.html">PlayerProvidedCharacterRecords</a></td>
+        <td><span class="parametername">cdCharacterRecords</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Preferences_HumanoidCharacterProfile_CDCharacterRecords.md&amp;value=---%0Auid%3A%20Content.Shared.Preferences.HumanoidCharacterProfile.CDCharacterRecords%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Preferences/HumanoidCharacterProfile.cs/#L190">View Source</a>
+  </span>
+  <h4 id="Content_Shared_Preferences_HumanoidCharacterProfile_CDCharacterRecords" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.CDCharacterRecords">CDCharacterRecords</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PlayerProvidedCharacterRecords CDCharacterRecords</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Content.Shared._Funkystation.Records.PlayerProvidedCharacterRecords.html">PlayerProvidedCharacterRecords</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Preferences_HumanoidCharacterProfile_Enabled.md&amp;value=---%0Auid%3A%20Content.Shared.Preferences.HumanoidCharacterProfile.Enabled%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Preferences/HumanoidCharacterProfile.cs/#L117">View Source</a>
+  </span>
+  <h4 id="Content_Shared_Preferences_HumanoidCharacterProfile_Enabled" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.Enabled">Enabled</h4>
+  <div class="markdown level1 summary"><p>Is this character enabled? (Should it be considered for round start selection?)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Enabled</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Preferences_HumanoidCharacterProfile_JobAlternateTitles.md&amp;value=---%0Auid%3A%20Content.Shared.Preferences.HumanoidCharacterProfile.JobAlternateTitles%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Preferences/HumanoidCharacterProfile.cs/#L96">View Source</a>
+  </span>
+  <h4 id="Content_Shared_Preferences_HumanoidCharacterProfile_JobAlternateTitles" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.JobAlternateTitles">JobAlternateTitles</h4>
+  <div class="markdown level1 summary"><p>Prefered job title for each job.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Dictionary&lt;ProtoId&lt;JobPrototype&gt;, ProtoId&lt;JobAlternateTitlePrototype&gt;&gt; JobAlternateTitles</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Dictionary</span>&lt;<span class="xref">Robust.Shared.Prototypes.ProtoId</span>&lt;<a class="xref" href="Content.Shared.Roles.JobPrototype.html">JobPrototype</a>&gt;, <span class="xref">Robust.Shared.Prototypes.ProtoId</span>&lt;<a class="xref" href="Content.Shared.Roles.JobAlternateTitlePrototype.html">JobAlternateTitlePrototype</a>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Preferences_HumanoidCharacterProfile_MaxDescLength.md&amp;value=---%0Auid%3A%20Content.Shared.Preferences.HumanoidCharacterProfile.MaxDescLength%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Preferences/HumanoidCharacterProfile.cs/#L84">View Source</a>
+  </span>
+  <h4 id="Content_Shared_Preferences_HumanoidCharacterProfile_MaxDescLength" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.MaxDescLength">MaxDescLength</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int MaxDescLength = null</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Preferences_HumanoidCharacterProfile_MaxLoadoutNameLength.md&amp;value=---%0Auid%3A%20Content.Shared.Preferences.HumanoidCharacterProfile.MaxLoadoutNameLength%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Preferences/HumanoidCharacterProfile.cs/#L83">View Source</a>
+  </span>
+  <h4 id="Content_Shared_Preferences_HumanoidCharacterProfile_MaxLoadoutNameLength" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.MaxLoadoutNameLength">MaxLoadoutNameLength</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int MaxLoadoutNameLength = null</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Preferences_HumanoidCharacterProfile_MaxNameLength.md&amp;value=---%0Auid%3A%20Content.Shared.Preferences.HumanoidCharacterProfile.MaxNameLength%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Preferences/HumanoidCharacterProfile.cs/#L82">View Source</a>
+  </span>
+  <h4 id="Content_Shared_Preferences_HumanoidCharacterProfile_MaxNameLength" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.MaxNameLength">MaxNameLength</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int MaxNameLength = null</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Preferences_HumanoidCharacterProfile_Age.md&amp;value=---%0Auid%3A%20Content.Shared.Preferences.HumanoidCharacterProfile.Age%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Preferences/HumanoidCharacterProfile.cs/#L142">View Source</a>
+  </span>
+  <a id="Content_Shared_Preferences_HumanoidCharacterProfile_Age_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.Age*"></a>
+  <h4 id="Content_Shared_Preferences_HumanoidCharacterProfile_Age" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.Age">Age</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Age { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Preferences_HumanoidCharacterProfile_AlternateJobTitle.md&amp;value=---%0Auid%3A%20Content.Shared.Preferences.HumanoidCharacterProfile.AlternateJobTitle%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Preferences/HumanoidCharacterProfile.cs/#L98">View Source</a>
+  </span>
+  <a id="Content_Shared_Preferences_HumanoidCharacterProfile_AlternateJobTitle_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.AlternateJobTitle*"></a>
+  <h4 id="Content_Shared_Preferences_HumanoidCharacterProfile_AlternateJobTitle" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.AlternateJobTitle">AlternateJobTitle</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string? AlternateJobTitle { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Preferences_HumanoidCharacterProfile_AntagPreferences.md&amp;value=---%0Auid%3A%20Content.Shared.Preferences.HumanoidCharacterProfile.AntagPreferences%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Preferences/HumanoidCharacterProfile.cs/#L181">View Source</a>
+  </span>
+  <a id="Content_Shared_Preferences_HumanoidCharacterProfile_AntagPreferences_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.AntagPreferences*"></a>
+  <h4 id="Content_Shared_Preferences_HumanoidCharacterProfile_AntagPreferences" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.AntagPreferences">AntagPreferences</h4>
+  <div class="markdown level1 summary"><p><span class="xref">Content.Shared.Preferences.HumanoidCharacterProfile._antagPreferences</span></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlySet&lt;ProtoId&lt;AntagPrototype&gt;&gt; AntagPreferences { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IReadOnlySet</span>&lt;<span class="xref">Robust.Shared.Prototypes.ProtoId</span>&lt;<a class="xref" href="Content.Shared.Roles.AntagPrototype.html">AntagPrototype</a>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Preferences_HumanoidCharacterProfile_Appearance.md&amp;value=---%0Auid%3A%20Content.Shared.Preferences.HumanoidCharacterProfile.Appearance%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Preferences/HumanoidCharacterProfile.cs/#L164">View Source</a>
+  </span>
+  <a id="Content_Shared_Preferences_HumanoidCharacterProfile_Appearance_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.Appearance*"></a>
+  <h4 id="Content_Shared_Preferences_HumanoidCharacterProfile_Appearance" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.Appearance">Appearance</h4>
+  <div class="markdown level1 summary"><p>Stores markings, eye colors, etc for the profile.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HumanoidCharacterAppearance Appearance { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Humanoid.HumanoidCharacterAppearance.html">HumanoidCharacterAppearance</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Preferences_HumanoidCharacterProfile_BorgName.md&amp;value=---%0Auid%3A%20Content.Shared.Preferences.HumanoidCharacterProfile.BorgName%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Preferences/HumanoidCharacterProfile.cs/#L147">View Source</a>
+  </span>
+  <a id="Content_Shared_Preferences_HumanoidCharacterProfile_BorgName_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.BorgName*"></a>
+  <h4 id="Content_Shared_Preferences_HumanoidCharacterProfile_BorgName" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.BorgName">BorgName</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string BorgName { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Preferences_HumanoidCharacterProfile_CharacterAppearance.md&amp;value=---%0Auid%3A%20Content.Shared.Preferences.HumanoidCharacterProfile.CharacterAppearance%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Preferences/HumanoidCharacterProfile.cs/#L159">View Source</a>
+  </span>
+  <a id="Content_Shared_Preferences_HumanoidCharacterProfile_CharacterAppearance_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.CharacterAppearance*"></a>
+  <h4 id="Content_Shared_Preferences_HumanoidCharacterProfile_CharacterAppearance" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.CharacterAppearance">CharacterAppearance</h4>
+  <div class="markdown level1 summary"><p><a class="xref" href="Content.Shared.Preferences.HumanoidCharacterProfile.html#Content_Shared_Preferences_HumanoidCharacterProfile_Appearance">Appearance</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ICharacterAppearance CharacterAppearance { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Humanoid.ICharacterAppearance.html">ICharacterAppearance</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Preferences_HumanoidCharacterProfile_FlavorText.md&amp;value=---%0Auid%3A%20Content.Shared.Preferences.HumanoidCharacterProfile.FlavorText%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Preferences/HumanoidCharacterProfile.cs/#L133">View Source</a>
+  </span>
+  <a id="Content_Shared_Preferences_HumanoidCharacterProfile_FlavorText_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.FlavorText*"></a>
+  <h4 id="Content_Shared_Preferences_HumanoidCharacterProfile_FlavorText" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.FlavorText">FlavorText</h4>
+  <div class="markdown level1 summary"><p>Detailed text that can appear for the character if <a class="xref" href="Content.Shared.CCVar.CCVars.html#Content_Shared_CCVar_CCVars_FlavorText">FlavorText</a> is enabled.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string FlavorText { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Preferences_HumanoidCharacterProfile_Gender.md&amp;value=---%0Auid%3A%20Content.Shared.Preferences.HumanoidCharacterProfile.Gender%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Preferences/HumanoidCharacterProfile.cs/#L153">View Source</a>
+  </span>
+  <a id="Content_Shared_Preferences_HumanoidCharacterProfile_Gender_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.Gender*"></a>
+  <h4 id="Content_Shared_Preferences_HumanoidCharacterProfile_Gender" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.Gender">Gender</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Gender Gender { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Enums.Gender</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Preferences_HumanoidCharacterProfile_JobPreferences.md&amp;value=---%0Auid%3A%20Content.Shared.Preferences.HumanoidCharacterProfile.JobPreferences%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Preferences/HumanoidCharacterProfile.cs/#L176">View Source</a>
+  </span>
+  <a id="Content_Shared_Preferences_HumanoidCharacterProfile_JobPreferences_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.JobPreferences*"></a>
+  <h4 id="Content_Shared_Preferences_HumanoidCharacterProfile_JobPreferences" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.JobPreferences">JobPreferences</h4>
+  <div class="markdown level1 summary"><p><span class="xref">Content.Shared.Preferences.HumanoidCharacterProfile._jobPreferences</span></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlySet&lt;ProtoId&lt;JobPrototype&gt;&gt; JobPreferences { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IReadOnlySet</span>&lt;<span class="xref">Robust.Shared.Prototypes.ProtoId</span>&lt;<a class="xref" href="Content.Shared.Roles.JobPrototype.html">JobPrototype</a>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Preferences_HumanoidCharacterProfile_Loadouts.md&amp;value=---%0Auid%3A%20Content.Shared.Preferences.HumanoidCharacterProfile.Loadouts%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Preferences/HumanoidCharacterProfile.cs/#L122">View Source</a>
+  </span>
+  <a id="Content_Shared_Preferences_HumanoidCharacterProfile_Loadouts_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.Loadouts*"></a>
+  <h4 id="Content_Shared_Preferences_HumanoidCharacterProfile_Loadouts" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.Loadouts">Loadouts</h4>
+  <div class="markdown level1 summary"><p><span class="xref">Content.Shared.Preferences.HumanoidCharacterProfile._loadouts</span></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyDictionary&lt;string, RoleLoadout&gt; Loadouts { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IReadOnlyDictionary</span>&lt;<span class="xref">System.String</span>, <a class="xref" href="Content.Shared.Preferences.Loadouts.RoleLoadout.html">RoleLoadout</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Preferences_HumanoidCharacterProfile_Name.md&amp;value=---%0Auid%3A%20Content.Shared.Preferences.HumanoidCharacterProfile.Name%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Preferences/HumanoidCharacterProfile.cs/#L127">View Source</a>
+  </span>
+  <a id="Content_Shared_Preferences_HumanoidCharacterProfile_Name_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.Name*"></a>
+  <h4 id="Content_Shared_Preferences_HumanoidCharacterProfile_Name" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.Name">Name</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Name { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Preferences_HumanoidCharacterProfile_Sex.md&amp;value=---%0Auid%3A%20Content.Shared.Preferences.HumanoidCharacterProfile.Sex%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Preferences/HumanoidCharacterProfile.cs/#L150">View Source</a>
+  </span>
+  <a id="Content_Shared_Preferences_HumanoidCharacterProfile_Sex_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.Sex*"></a>
+  <h4 id="Content_Shared_Preferences_HumanoidCharacterProfile_Sex" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.Sex">Sex</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Sex Sex { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Humanoid.Sex.html">Sex</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Preferences_HumanoidCharacterProfile_SpawnPriority.md&amp;value=---%0Auid%3A%20Content.Shared.Preferences.HumanoidCharacterProfile.SpawnPriority%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Preferences/HumanoidCharacterProfile.cs/#L170">View Source</a>
+  </span>
+  <a id="Content_Shared_Preferences_HumanoidCharacterProfile_SpawnPriority_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.SpawnPriority*"></a>
+  <h4 id="Content_Shared_Preferences_HumanoidCharacterProfile_SpawnPriority" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.SpawnPriority">SpawnPriority</h4>
+  <div class="markdown level1 summary"><p>When spawning into a round what's the preferred spot to spawn.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SpawnPriorityPreference SpawnPriority { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Preferences.SpawnPriorityPreference.html">SpawnPriorityPreference</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Preferences_HumanoidCharacterProfile_Species.md&amp;value=---%0Auid%3A%20Content.Shared.Preferences.HumanoidCharacterProfile.Species%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Preferences/HumanoidCharacterProfile.cs/#L139">View Source</a>
+  </span>
+  <a id="Content_Shared_Preferences_HumanoidCharacterProfile_Species_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.Species*"></a>
+  <h4 id="Content_Shared_Preferences_HumanoidCharacterProfile_Species" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.Species">Species</h4>
+  <div class="markdown level1 summary"><p>Associated <a class="xref" href="Content.Shared.Humanoid.Prototypes.SpeciesPrototype.html">SpeciesPrototype</a> for this profile.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ProtoId&lt;SpeciesPrototype&gt; Species { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Prototypes.ProtoId</span>&lt;<a class="xref" href="Content.Shared.Humanoid.Prototypes.SpeciesPrototype.html">SpeciesPrototype</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Preferences_HumanoidCharacterProfile_Summary.md&amp;value=---%0Auid%3A%20Content.Shared.Preferences.HumanoidCharacterProfile.Summary%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Preferences/HumanoidCharacterProfile.cs/#L533">View Source</a>
+  </span>
+  <a id="Content_Shared_Preferences_HumanoidCharacterProfile_Summary_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.Summary*"></a>
+  <h4 id="Content_Shared_Preferences_HumanoidCharacterProfile_Summary" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.Summary">Summary</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Summary { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Preferences_HumanoidCharacterProfile_TraitPreferences.md&amp;value=---%0Auid%3A%20Content.Shared.Preferences.HumanoidCharacterProfile.TraitPreferences%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Preferences/HumanoidCharacterProfile.cs/#L186">View Source</a>
+  </span>
+  <a id="Content_Shared_Preferences_HumanoidCharacterProfile_TraitPreferences_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.TraitPreferences*"></a>
+  <h4 id="Content_Shared_Preferences_HumanoidCharacterProfile_TraitPreferences" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.TraitPreferences">TraitPreferences</h4>
+  <div class="markdown level1 summary"><p><span class="xref">Content.Shared.Preferences.HumanoidCharacterProfile._traitPreferences</span></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlySet&lt;ProtoId&lt;TraitPrototype&gt;&gt; TraitPreferences { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IReadOnlySet</span>&lt;<span class="xref">Robust.Shared.Prototypes.ProtoId</span>&lt;<a class="xref" href="Content.Shared.Traits.TraitPrototype.html">TraitPrototype</a>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Preferences_HumanoidCharacterProfile_AsEnabled_System_Boolean_.md&amp;value=---%0Auid%3A%20Content.Shared.Preferences.HumanoidCharacterProfile.AsEnabled(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Preferences/HumanoidCharacterProfile.cs/#L528">View Source</a>
+  </span>
+  <a id="Content_Shared_Preferences_HumanoidCharacterProfile_AsEnabled_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.AsEnabled*"></a>
+  <h4 id="Content_Shared_Preferences_HumanoidCharacterProfile_AsEnabled_System_Boolean_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.AsEnabled(System.Boolean)">AsEnabled(Boolean)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HumanoidCharacterProfile AsEnabled(bool enabled = true)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">enabled</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Preferences.HumanoidCharacterProfile.html">HumanoidCharacterProfile</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Preferences_HumanoidCharacterProfile_Clone.md&amp;value=---%0Auid%3A%20Content.Shared.Preferences.HumanoidCharacterProfile.Clone%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Preferences/HumanoidCharacterProfile.cs/#L879">View Source</a>
+  </span>
+  <a id="Content_Shared_Preferences_HumanoidCharacterProfile_Clone_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.Clone*"></a>
+  <h4 id="Content_Shared_Preferences_HumanoidCharacterProfile_Clone" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.Clone">Clone()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HumanoidCharacterProfile Clone()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Preferences.HumanoidCharacterProfile.html">HumanoidCharacterProfile</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Preferences_HumanoidCharacterProfile_DefaultWithSpecies_System_String_.md&amp;value=---%0Auid%3A%20Content.Shared.Preferences.HumanoidCharacterProfile.DefaultWithSpecies(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Preferences/HumanoidCharacterProfile.cs/#L272">View Source</a>
+  </span>
+  <a id="Content_Shared_Preferences_HumanoidCharacterProfile_DefaultWithSpecies_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.DefaultWithSpecies*"></a>
+  <h4 id="Content_Shared_Preferences_HumanoidCharacterProfile_DefaultWithSpecies_System_String_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.DefaultWithSpecies(System.String)">DefaultWithSpecies(String)</h4>
+  <div class="markdown level1 summary"><p>Return a default character profile, based on species.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static HumanoidCharacterProfile DefaultWithSpecies(string species = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">species</span></td>
+        <td><p>The species to use in this default profile. The default species is <a class="xref" href="Content.Shared.Humanoid.SharedHumanoidAppearanceSystem.html#Content_Shared_Humanoid_SharedHumanoidAppearanceSystem_DefaultSpecies">DefaultSpecies</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Preferences.HumanoidCharacterProfile.html">HumanoidCharacterProfile</a></td>
+        <td><p>Humanoid character profile with default settings.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Preferences_HumanoidCharacterProfile_EnsureValid_Robust_Shared_Player_ICommonSession_IDependencyCollection_.md&amp;value=---%0Auid%3A%20Content.Shared.Preferences.HumanoidCharacterProfile.EnsureValid(Robust.Shared.Player.ICommonSession%2CIDependencyCollection)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Preferences/HumanoidCharacterProfile.cs/#L564">View Source</a>
+  </span>
+  <a id="Content_Shared_Preferences_HumanoidCharacterProfile_EnsureValid_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.EnsureValid*"></a>
+  <h4 id="Content_Shared_Preferences_HumanoidCharacterProfile_EnsureValid_Robust_Shared_Player_ICommonSession_IDependencyCollection_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.EnsureValid(Robust.Shared.Player.ICommonSession,IDependencyCollection)">EnsureValid(ICommonSession, IDependencyCollection)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void EnsureValid(ICommonSession session, IDependencyCollection collection)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Player.ICommonSession</span></td>
+        <td><span class="parametername">session</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">IDependencyCollection</span></td>
+        <td><span class="parametername">collection</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Preferences_HumanoidCharacterProfile_Equals_System_Nullable_System_Object__.md&amp;value=---%0Auid%3A%20Content.Shared.Preferences.HumanoidCharacterProfile.Equals(System.Nullable%7BSystem.Object%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Preferences/HumanoidCharacterProfile.cs/#L816">View Source</a>
+  </span>
+  <a id="Content_Shared_Preferences_HumanoidCharacterProfile_Equals_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.Equals*"></a>
+  <h4 id="Content_Shared_Preferences_HumanoidCharacterProfile_Equals_System_Nullable_System_Object__" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.Equals(System.Nullable{System.Object})">Equals(Nullable&lt;Object&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Equals(object? obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Object</span>&gt;</td>
+        <td><span class="parametername">obj</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Preferences_HumanoidCharacterProfile_GetBorgName.md&amp;value=---%0Auid%3A%20Content.Shared.Preferences.HumanoidCharacterProfile.GetBorgName%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Preferences/HumanoidCharacterProfile.cs/#L807">View Source</a>
+  </span>
+  <a id="Content_Shared_Preferences_HumanoidCharacterProfile_GetBorgName_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.GetBorgName*"></a>
+  <h4 id="Content_Shared_Preferences_HumanoidCharacterProfile_GetBorgName" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.GetBorgName">GetBorgName()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string GetBorgName()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Preferences_HumanoidCharacterProfile_GetHashCode.md&amp;value=---%0Auid%3A%20Content.Shared.Preferences.HumanoidCharacterProfile.GetHashCode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Preferences/HumanoidCharacterProfile.cs/#L821">View Source</a>
+  </span>
+  <a id="Content_Shared_Preferences_HumanoidCharacterProfile_GetHashCode_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.GetHashCode*"></a>
+  <h4 id="Content_Shared_Preferences_HumanoidCharacterProfile_GetHashCode" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.GetHashCode">GetHashCode()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Preferences_HumanoidCharacterProfile_GetLoadoutOrDefault_System_String_Robust_Shared_Player_ICommonSession_System_Nullable_Robust_Shared_Prototypes_ProtoId_Content_Shared_Humanoid_Prototypes_SpeciesPrototype___IEntityManager_Robust_Shared_Prototypes_IPrototypeManager_.md&amp;value=---%0Auid%3A%20Content.Shared.Preferences.HumanoidCharacterProfile.GetLoadoutOrDefault(System.String%2CRobust.Shared.Player.ICommonSession%2CSystem.Nullable%7BRobust.Shared.Prototypes.ProtoId%7BContent.Shared.Humanoid.Prototypes.SpeciesPrototype%7D%7D%2CIEntityManager%2CRobust.Shared.Prototypes.IPrototypeManager)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Preferences/HumanoidCharacterProfile.cs/#L867">View Source</a>
+  </span>
+  <a id="Content_Shared_Preferences_HumanoidCharacterProfile_GetLoadoutOrDefault_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.GetLoadoutOrDefault*"></a>
+  <h4 id="Content_Shared_Preferences_HumanoidCharacterProfile_GetLoadoutOrDefault_System_String_Robust_Shared_Player_ICommonSession_System_Nullable_Robust_Shared_Prototypes_ProtoId_Content_Shared_Humanoid_Prototypes_SpeciesPrototype___IEntityManager_Robust_Shared_Prototypes_IPrototypeManager_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.GetLoadoutOrDefault(System.String,Robust.Shared.Player.ICommonSession,System.Nullable{Robust.Shared.Prototypes.ProtoId{Content.Shared.Humanoid.Prototypes.SpeciesPrototype}},IEntityManager,Robust.Shared.Prototypes.IPrototypeManager)">GetLoadoutOrDefault(String, ICommonSession, Nullable&lt;ProtoId&lt;SpeciesPrototype&gt;&gt;, IEntityManager, IPrototypeManager)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RoleLoadout GetLoadoutOrDefault(string id, ICommonSession session, ProtoId&lt;SpeciesPrototype&gt;? species, IEntityManager entManager, IPrototypeManager protoManager)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">id</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Robust.Shared.Player.ICommonSession</span></td>
+        <td><span class="parametername">session</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">Robust.Shared.Prototypes.ProtoId</span>&lt;<a class="xref" href="Content.Shared.Humanoid.Prototypes.SpeciesPrototype.html">SpeciesPrototype</a>&gt;&gt;</td>
+        <td><span class="parametername">species</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">IEntityManager</span></td>
+        <td><span class="parametername">entManager</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Robust.Shared.Prototypes.IPrototypeManager</span></td>
+        <td><span class="parametername">protoManager</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Preferences.Loadouts.RoleLoadout.html">RoleLoadout</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Preferences_HumanoidCharacterProfile_GetName_System_String_Robust_Shared_Enums_Gender_.md&amp;value=---%0Auid%3A%20Content.Shared.Preferences.HumanoidCharacterProfile.GetName(System.String%2CRobust.Shared.Enums.Gender)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Preferences/HumanoidCharacterProfile.cs/#L801">View Source</a>
+  </span>
+  <a id="Content_Shared_Preferences_HumanoidCharacterProfile_GetName_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.GetName*"></a>
+  <h4 id="Content_Shared_Preferences_HumanoidCharacterProfile_GetName_System_String_Robust_Shared_Enums_Gender_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.GetName(System.String,Robust.Shared.Enums.Gender)">GetName(String, Gender)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string GetName(string species, Gender gender)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">species</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Robust.Shared.Enums.Gender</span></td>
+        <td><span class="parametername">gender</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Preferences_HumanoidCharacterProfile_GetValidTraits_IEnumerable_Robust_Shared_Prototypes_ProtoId_Content_Shared_Traits_TraitPrototype___Robust_Shared_Prototypes_IPrototypeManager_.md&amp;value=---%0Auid%3A%20Content.Shared.Preferences.HumanoidCharacterProfile.GetValidTraits(IEnumerable%7BRobust.Shared.Prototypes.ProtoId%7BContent.Shared.Traits.TraitPrototype%7D%7D%2CRobust.Shared.Prototypes.IPrototypeManager)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Preferences/HumanoidCharacterProfile.cs/#L756">View Source</a>
+  </span>
+  <a id="Content_Shared_Preferences_HumanoidCharacterProfile_GetValidTraits_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.GetValidTraits*"></a>
+  <h4 id="Content_Shared_Preferences_HumanoidCharacterProfile_GetValidTraits_IEnumerable_Robust_Shared_Prototypes_ProtoId_Content_Shared_Traits_TraitPrototype___Robust_Shared_Prototypes_IPrototypeManager_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.GetValidTraits(IEnumerable{Robust.Shared.Prototypes.ProtoId{Content.Shared.Traits.TraitPrototype}},Robust.Shared.Prototypes.IPrototypeManager)">GetValidTraits(IEnumerable&lt;ProtoId&lt;TraitPrototype&gt;&gt;, IPrototypeManager)</h4>
+  <div class="markdown level1 summary"><p>Takes in an IEnumerable of traits and returns a List of the valid traits.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;ProtoId&lt;TraitPrototype&gt;&gt; GetValidTraits(IEnumerable&lt;ProtoId&lt;TraitPrototype&gt;&gt; traits, IPrototypeManager protoManager)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">Robust.Shared.Prototypes.ProtoId</span>&lt;<a class="xref" href="Content.Shared.Traits.TraitPrototype.html">TraitPrototype</a>&gt;&gt;</td>
+        <td><span class="parametername">traits</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Robust.Shared.Prototypes.IPrototypeManager</span></td>
+        <td><span class="parametername">protoManager</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">List</span>&lt;<span class="xref">Robust.Shared.Prototypes.ProtoId</span>&lt;<a class="xref" href="Content.Shared.Traits.TraitPrototype.html">TraitPrototype</a>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Preferences_HumanoidCharacterProfile_MemberwiseEquals_Content_Shared_Preferences_ICharacterProfile_.md&amp;value=---%0Auid%3A%20Content.Shared.Preferences.HumanoidCharacterProfile.MemberwiseEquals(Content.Shared.Preferences.ICharacterProfile)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Preferences/HumanoidCharacterProfile.cs/#L541">View Source</a>
+  </span>
+  <a id="Content_Shared_Preferences_HumanoidCharacterProfile_MemberwiseEquals_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.MemberwiseEquals*"></a>
+  <h4 id="Content_Shared_Preferences_HumanoidCharacterProfile_MemberwiseEquals_Content_Shared_Preferences_ICharacterProfile_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.MemberwiseEquals(Content.Shared.Preferences.ICharacterProfile)">MemberwiseEquals(ICharacterProfile)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool MemberwiseEquals(ICharacterProfile maybeOther)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Preferences.ICharacterProfile.html">ICharacterProfile</a></td>
+        <td><span class="parametername">maybeOther</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Preferences_HumanoidCharacterProfile_Random_System_Nullable_HashSet_System_String___.md&amp;value=---%0Auid%3A%20Content.Shared.Preferences.HumanoidCharacterProfile.Random(System.Nullable%7BHashSet%7BSystem.String%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Preferences/HumanoidCharacterProfile.cs/#L282">View Source</a>
+  </span>
+  <a id="Content_Shared_Preferences_HumanoidCharacterProfile_Random_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.Random*"></a>
+  <h4 id="Content_Shared_Preferences_HumanoidCharacterProfile_Random_System_Nullable_HashSet_System_String___" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.Random(System.Nullable{HashSet{System.String}})">Random(Nullable&lt;HashSet&lt;String&gt;&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static HumanoidCharacterProfile Random(HashSet&lt;string&gt;? ignoredSpecies = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">HashSet</span>&lt;<span class="xref">System.String</span>&gt;&gt;</td>
+        <td><span class="parametername">ignoredSpecies</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Preferences.HumanoidCharacterProfile.html">HumanoidCharacterProfile</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Preferences_HumanoidCharacterProfile_RandomWithSpecies_System_String_.md&amp;value=---%0Auid%3A%20Content.Shared.Preferences.HumanoidCharacterProfile.RandomWithSpecies(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Preferences/HumanoidCharacterProfile.cs/#L296">View Source</a>
+  </span>
+  <a id="Content_Shared_Preferences_HumanoidCharacterProfile_RandomWithSpecies_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.RandomWithSpecies*"></a>
+  <h4 id="Content_Shared_Preferences_HumanoidCharacterProfile_RandomWithSpecies_System_String_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.RandomWithSpecies(System.String)">RandomWithSpecies(String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static HumanoidCharacterProfile RandomWithSpecies(string species = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">species</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Preferences.HumanoidCharacterProfile.html">HumanoidCharacterProfile</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Preferences_HumanoidCharacterProfile_SetLoadout_Content_Shared_Preferences_Loadouts_RoleLoadout_.md&amp;value=---%0Auid%3A%20Content.Shared.Preferences.HumanoidCharacterProfile.SetLoadout(Content.Shared.Preferences.Loadouts.RoleLoadout)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Preferences/HumanoidCharacterProfile.cs/#L843">View Source</a>
+  </span>
+  <a id="Content_Shared_Preferences_HumanoidCharacterProfile_SetLoadout_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.SetLoadout*"></a>
+  <h4 id="Content_Shared_Preferences_HumanoidCharacterProfile_SetLoadout_Content_Shared_Preferences_Loadouts_RoleLoadout_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.SetLoadout(Content.Shared.Preferences.Loadouts.RoleLoadout)">SetLoadout(RoleLoadout)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetLoadout(RoleLoadout loadout)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Preferences.Loadouts.RoleLoadout.html">RoleLoadout</a></td>
+        <td><span class="parametername">loadout</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Preferences_HumanoidCharacterProfile_Validated_Robust_Shared_Player_ICommonSession_IDependencyCollection_.md&amp;value=---%0Auid%3A%20Content.Shared.Preferences.HumanoidCharacterProfile.Validated(Robust.Shared.Player.ICommonSession%2CIDependencyCollection)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Preferences/HumanoidCharacterProfile.cs/#L792">View Source</a>
+  </span>
+  <a id="Content_Shared_Preferences_HumanoidCharacterProfile_Validated_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.Validated*"></a>
+  <h4 id="Content_Shared_Preferences_HumanoidCharacterProfile_Validated_Robust_Shared_Player_ICommonSession_IDependencyCollection_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.Validated(Robust.Shared.Player.ICommonSession,IDependencyCollection)">Validated(ICommonSession, IDependencyCollection)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ICharacterProfile Validated(ICommonSession session, IDependencyCollection collection)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Player.ICommonSession</span></td>
+        <td><span class="parametername">session</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">IDependencyCollection</span></td>
+        <td><span class="parametername">collection</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Preferences.ICharacterProfile.html">ICharacterProfile</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Preferences_HumanoidCharacterProfile_WithAge_System_Int32_.md&amp;value=---%0Auid%3A%20Content.Shared.Preferences.HumanoidCharacterProfile.WithAge(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Preferences/HumanoidCharacterProfile.cs/#L348">View Source</a>
+  </span>
+  <a id="Content_Shared_Preferences_HumanoidCharacterProfile_WithAge_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.WithAge*"></a>
+  <h4 id="Content_Shared_Preferences_HumanoidCharacterProfile_WithAge_System_Int32_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.WithAge(System.Int32)">WithAge(Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HumanoidCharacterProfile WithAge(int age)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">age</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Preferences.HumanoidCharacterProfile.html">HumanoidCharacterProfile</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Preferences_HumanoidCharacterProfile_WithAntagPreference_Robust_Shared_Prototypes_ProtoId_Content_Shared_Roles_AntagPrototype__System_Boolean_.md&amp;value=---%0Auid%3A%20Content.Shared.Preferences.HumanoidCharacterProfile.WithAntagPreference(Robust.Shared.Prototypes.ProtoId%7BContent.Shared.Roles.AntagPrototype%7D%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Preferences/HumanoidCharacterProfile.cs/#L451">View Source</a>
+  </span>
+  <a id="Content_Shared_Preferences_HumanoidCharacterProfile_WithAntagPreference_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.WithAntagPreference*"></a>
+  <h4 id="Content_Shared_Preferences_HumanoidCharacterProfile_WithAntagPreference_Robust_Shared_Prototypes_ProtoId_Content_Shared_Roles_AntagPrototype__System_Boolean_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.WithAntagPreference(Robust.Shared.Prototypes.ProtoId{Content.Shared.Roles.AntagPrototype},System.Boolean)">WithAntagPreference(ProtoId&lt;AntagPrototype&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HumanoidCharacterProfile WithAntagPreference(ProtoId&lt;AntagPrototype&gt; antagId, bool pref)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Prototypes.ProtoId</span>&lt;<a class="xref" href="Content.Shared.Roles.AntagPrototype.html">AntagPrototype</a>&gt;</td>
+        <td><span class="parametername">antagId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">pref</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Preferences.HumanoidCharacterProfile.html">HumanoidCharacterProfile</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Preferences_HumanoidCharacterProfile_WithAntagPreferences_IEnumerable_Robust_Shared_Prototypes_ProtoId_Content_Shared_Roles_AntagPrototype___.md&amp;value=---%0Auid%3A%20Content.Shared.Preferences.HumanoidCharacterProfile.WithAntagPreferences(IEnumerable%7BRobust.Shared.Prototypes.ProtoId%7BContent.Shared.Roles.AntagPrototype%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Preferences/HumanoidCharacterProfile.cs/#L443">View Source</a>
+  </span>
+  <a id="Content_Shared_Preferences_HumanoidCharacterProfile_WithAntagPreferences_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.WithAntagPreferences*"></a>
+  <h4 id="Content_Shared_Preferences_HumanoidCharacterProfile_WithAntagPreferences_IEnumerable_Robust_Shared_Prototypes_ProtoId_Content_Shared_Roles_AntagPrototype___" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.WithAntagPreferences(IEnumerable{Robust.Shared.Prototypes.ProtoId{Content.Shared.Roles.AntagPrototype}})">WithAntagPreferences(IEnumerable&lt;ProtoId&lt;AntagPrototype&gt;&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HumanoidCharacterProfile WithAntagPreferences(IEnumerable&lt;ProtoId&lt;AntagPrototype&gt;&gt; antagPreferences)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">Robust.Shared.Prototypes.ProtoId</span>&lt;<a class="xref" href="Content.Shared.Roles.AntagPrototype.html">AntagPrototype</a>&gt;&gt;</td>
+        <td><span class="parametername">antagPreferences</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Preferences.HumanoidCharacterProfile.html">HumanoidCharacterProfile</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Preferences_HumanoidCharacterProfile_WithBorgName_System_String_.md&amp;value=---%0Auid%3A%20Content.Shared.Preferences.HumanoidCharacterProfile.WithBorgName(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Preferences/HumanoidCharacterProfile.cs/#L355">View Source</a>
+  </span>
+  <a id="Content_Shared_Preferences_HumanoidCharacterProfile_WithBorgName_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.WithBorgName*"></a>
+  <h4 id="Content_Shared_Preferences_HumanoidCharacterProfile_WithBorgName_System_String_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.WithBorgName(System.String)">WithBorgName(String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HumanoidCharacterProfile WithBorgName(string borgname)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">borgname</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Preferences.HumanoidCharacterProfile.html">HumanoidCharacterProfile</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Preferences_HumanoidCharacterProfile_WithCDCharacterRecords_Content_Shared__Funkystation_Records_PlayerProvidedCharacterRecords_.md&amp;value=---%0Auid%3A%20Content.Shared.Preferences.HumanoidCharacterProfile.WithCDCharacterRecords(Content.Shared._Funkystation.Records.PlayerProvidedCharacterRecords)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Preferences/HumanoidCharacterProfile.cs/#L406">View Source</a>
+  </span>
+  <a id="Content_Shared_Preferences_HumanoidCharacterProfile_WithCDCharacterRecords_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.WithCDCharacterRecords*"></a>
+  <h4 id="Content_Shared_Preferences_HumanoidCharacterProfile_WithCDCharacterRecords_Content_Shared__Funkystation_Records_PlayerProvidedCharacterRecords_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.WithCDCharacterRecords(Content.Shared._Funkystation.Records.PlayerProvidedCharacterRecords)">WithCDCharacterRecords(PlayerProvidedCharacterRecords)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HumanoidCharacterProfile WithCDCharacterRecords(PlayerProvidedCharacterRecords records)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Content.Shared._Funkystation.Records.PlayerProvidedCharacterRecords.html">PlayerProvidedCharacterRecords</a></td>
+        <td><span class="parametername">records</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Preferences.HumanoidCharacterProfile.html">HumanoidCharacterProfile</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Preferences_HumanoidCharacterProfile_WithCharacterAppearance_Content_Shared_Humanoid_HumanoidCharacterAppearance_.md&amp;value=---%0Auid%3A%20Content.Shared.Preferences.HumanoidCharacterProfile.WithCharacterAppearance(Content.Shared.Humanoid.HumanoidCharacterAppearance)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Preferences/HumanoidCharacterProfile.cs/#L376">View Source</a>
+  </span>
+  <a id="Content_Shared_Preferences_HumanoidCharacterProfile_WithCharacterAppearance_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.WithCharacterAppearance*"></a>
+  <h4 id="Content_Shared_Preferences_HumanoidCharacterProfile_WithCharacterAppearance_Content_Shared_Humanoid_HumanoidCharacterAppearance_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.WithCharacterAppearance(Content.Shared.Humanoid.HumanoidCharacterAppearance)">WithCharacterAppearance(HumanoidCharacterAppearance)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HumanoidCharacterProfile WithCharacterAppearance(HumanoidCharacterAppearance appearance)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Humanoid.HumanoidCharacterAppearance.html">HumanoidCharacterAppearance</a></td>
+        <td><span class="parametername">appearance</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Preferences.HumanoidCharacterProfile.html">HumanoidCharacterProfile</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Preferences_HumanoidCharacterProfile_WithFlavorText_System_String_.md&amp;value=---%0Auid%3A%20Content.Shared.Preferences.HumanoidCharacterProfile.WithFlavorText(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Preferences/HumanoidCharacterProfile.cs/#L343">View Source</a>
+  </span>
+  <a id="Content_Shared_Preferences_HumanoidCharacterProfile_WithFlavorText_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.WithFlavorText*"></a>
+  <h4 id="Content_Shared_Preferences_HumanoidCharacterProfile_WithFlavorText_System_String_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.WithFlavorText(System.String)">WithFlavorText(String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HumanoidCharacterProfile WithFlavorText(string flavorText)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">flavorText</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Preferences.HumanoidCharacterProfile.html">HumanoidCharacterProfile</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Preferences_HumanoidCharacterProfile_WithGender_Robust_Shared_Enums_Gender_.md&amp;value=---%0Auid%3A%20Content.Shared.Preferences.HumanoidCharacterProfile.WithGender(Robust.Shared.Enums.Gender)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Preferences/HumanoidCharacterProfile.cs/#L365">View Source</a>
+  </span>
+  <a id="Content_Shared_Preferences_HumanoidCharacterProfile_WithGender_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.WithGender*"></a>
+  <h4 id="Content_Shared_Preferences_HumanoidCharacterProfile_WithGender_Robust_Shared_Enums_Gender_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.WithGender(Robust.Shared.Enums.Gender)">WithGender(Gender)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HumanoidCharacterProfile WithGender(Gender gender)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Enums.Gender</span></td>
+        <td><span class="parametername">gender</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Preferences.HumanoidCharacterProfile.html">HumanoidCharacterProfile</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Preferences_HumanoidCharacterProfile_WithJob_Robust_Shared_Prototypes_ProtoId_Content_Shared_Roles_JobPrototype__System_Boolean_.md&amp;value=---%0Auid%3A%20Content.Shared.Preferences.HumanoidCharacterProfile.WithJob(Robust.Shared.Prototypes.ProtoId%7BContent.Shared.Roles.JobPrototype%7D%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Preferences/HumanoidCharacterProfile.cs/#L420">View Source</a>
+  </span>
+  <a id="Content_Shared_Preferences_HumanoidCharacterProfile_WithJob_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.WithJob*"></a>
+  <h4 id="Content_Shared_Preferences_HumanoidCharacterProfile_WithJob_Robust_Shared_Prototypes_ProtoId_Content_Shared_Roles_JobPrototype__System_Boolean_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.WithJob(Robust.Shared.Prototypes.ProtoId{Content.Shared.Roles.JobPrototype},System.Boolean)">WithJob(ProtoId&lt;JobPrototype&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HumanoidCharacterProfile WithJob(ProtoId&lt;JobPrototype&gt; jobId, bool include = true)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Prototypes.ProtoId</span>&lt;<a class="xref" href="Content.Shared.Roles.JobPrototype.html">JobPrototype</a>&gt;</td>
+        <td><span class="parametername">jobId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">include</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Preferences.HumanoidCharacterProfile.html">HumanoidCharacterProfile</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Preferences_HumanoidCharacterProfile_WithJobAltTitle_Robust_Shared_Prototypes_ProtoId_Content_Shared_Roles_JobPrototype__System_Nullable_Robust_Shared_Prototypes_ProtoId_Content_Shared_Roles_JobAlternateTitlePrototype___.md&amp;value=---%0Auid%3A%20Content.Shared.Preferences.HumanoidCharacterProfile.WithJobAltTitle(Robust.Shared.Prototypes.ProtoId%7BContent.Shared.Roles.JobPrototype%7D%2CSystem.Nullable%7BRobust.Shared.Prototypes.ProtoId%7BContent.Shared.Roles.JobAlternateTitlePrototype%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Preferences/HumanoidCharacterProfile.cs/#L386">View Source</a>
+  </span>
+  <a id="Content_Shared_Preferences_HumanoidCharacterProfile_WithJobAltTitle_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.WithJobAltTitle*"></a>
+  <h4 id="Content_Shared_Preferences_HumanoidCharacterProfile_WithJobAltTitle_Robust_Shared_Prototypes_ProtoId_Content_Shared_Roles_JobPrototype__System_Nullable_Robust_Shared_Prototypes_ProtoId_Content_Shared_Roles_JobAlternateTitlePrototype___" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.WithJobAltTitle(Robust.Shared.Prototypes.ProtoId{Content.Shared.Roles.JobPrototype},System.Nullable{Robust.Shared.Prototypes.ProtoId{Content.Shared.Roles.JobAlternateTitlePrototype}})">WithJobAltTitle(ProtoId&lt;JobPrototype&gt;, Nullable&lt;ProtoId&lt;JobAlternateTitlePrototype&gt;&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HumanoidCharacterProfile WithJobAltTitle(ProtoId&lt;JobPrototype&gt; jobId, ProtoId&lt;JobAlternateTitlePrototype&gt;? jobTitle)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Prototypes.ProtoId</span>&lt;<a class="xref" href="Content.Shared.Roles.JobPrototype.html">JobPrototype</a>&gt;</td>
+        <td><span class="parametername">jobId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">Robust.Shared.Prototypes.ProtoId</span>&lt;<a class="xref" href="Content.Shared.Roles.JobAlternateTitlePrototype.html">JobAlternateTitlePrototype</a>&gt;&gt;</td>
+        <td><span class="parametername">jobTitle</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Preferences.HumanoidCharacterProfile.html">HumanoidCharacterProfile</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Preferences_HumanoidCharacterProfile_WithJobPreferences_IEnumerable_Robust_Shared_Prototypes_ProtoId_Content_Shared_Roles_JobPrototype___.md&amp;value=---%0Auid%3A%20Content.Shared.Preferences.HumanoidCharacterProfile.WithJobPreferences(IEnumerable%7BRobust.Shared.Prototypes.ProtoId%7BContent.Shared.Roles.JobPrototype%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Preferences/HumanoidCharacterProfile.cs/#L412">View Source</a>
+  </span>
+  <a id="Content_Shared_Preferences_HumanoidCharacterProfile_WithJobPreferences_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.WithJobPreferences*"></a>
+  <h4 id="Content_Shared_Preferences_HumanoidCharacterProfile_WithJobPreferences_IEnumerable_Robust_Shared_Prototypes_ProtoId_Content_Shared_Roles_JobPrototype___" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.WithJobPreferences(IEnumerable{Robust.Shared.Prototypes.ProtoId{Content.Shared.Roles.JobPrototype}})">WithJobPreferences(IEnumerable&lt;ProtoId&lt;JobPrototype&gt;&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HumanoidCharacterProfile WithJobPreferences(IEnumerable&lt;ProtoId&lt;JobPrototype&gt;&gt; jobPreferences)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">Robust.Shared.Prototypes.ProtoId</span>&lt;<a class="xref" href="Content.Shared.Roles.JobPrototype.html">JobPrototype</a>&gt;&gt;</td>
+        <td><span class="parametername">jobPreferences</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Preferences.HumanoidCharacterProfile.html">HumanoidCharacterProfile</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Preferences_HumanoidCharacterProfile_WithLoadout_Content_Shared_Preferences_Loadouts_RoleLoadout_.md&amp;value=---%0Auid%3A%20Content.Shared.Preferences.HumanoidCharacterProfile.WithLoadout(Content.Shared.Preferences.Loadouts.RoleLoadout)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Preferences/HumanoidCharacterProfile.cs/#L848">View Source</a>
+  </span>
+  <a id="Content_Shared_Preferences_HumanoidCharacterProfile_WithLoadout_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.WithLoadout*"></a>
+  <h4 id="Content_Shared_Preferences_HumanoidCharacterProfile_WithLoadout_Content_Shared_Preferences_Loadouts_RoleLoadout_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.WithLoadout(Content.Shared.Preferences.Loadouts.RoleLoadout)">WithLoadout(RoleLoadout)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HumanoidCharacterProfile WithLoadout(RoleLoadout loadout)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Preferences.Loadouts.RoleLoadout.html">RoleLoadout</a></td>
+        <td><span class="parametername">loadout</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Preferences.HumanoidCharacterProfile.html">HumanoidCharacterProfile</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Preferences_HumanoidCharacterProfile_WithName_System_String_.md&amp;value=---%0Auid%3A%20Content.Shared.Preferences.HumanoidCharacterProfile.WithName(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Preferences/HumanoidCharacterProfile.cs/#L338">View Source</a>
+  </span>
+  <a id="Content_Shared_Preferences_HumanoidCharacterProfile_WithName_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.WithName*"></a>
+  <h4 id="Content_Shared_Preferences_HumanoidCharacterProfile_WithName_System_String_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.WithName(System.String)">WithName(String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HumanoidCharacterProfile WithName(string name)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Preferences.HumanoidCharacterProfile.html">HumanoidCharacterProfile</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Preferences_HumanoidCharacterProfile_WithoutJob_Robust_Shared_Prototypes_ProtoId_Content_Shared_Roles_JobPrototype__.md&amp;value=---%0Auid%3A%20Content.Shared.Preferences.HumanoidCharacterProfile.WithoutJob(Robust.Shared.Prototypes.ProtoId%7BContent.Shared.Roles.JobPrototype%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Preferences/HumanoidCharacterProfile.cs/#L438">View Source</a>
+  </span>
+  <a id="Content_Shared_Preferences_HumanoidCharacterProfile_WithoutJob_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.WithoutJob*"></a>
+  <h4 id="Content_Shared_Preferences_HumanoidCharacterProfile_WithoutJob_Robust_Shared_Prototypes_ProtoId_Content_Shared_Roles_JobPrototype__" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.WithoutJob(Robust.Shared.Prototypes.ProtoId{Content.Shared.Roles.JobPrototype})">WithoutJob(ProtoId&lt;JobPrototype&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HumanoidCharacterProfile WithoutJob(ProtoId&lt;JobPrototype&gt; jobId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Prototypes.ProtoId</span>&lt;<a class="xref" href="Content.Shared.Roles.JobPrototype.html">JobPrototype</a>&gt;</td>
+        <td><span class="parametername">jobId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Preferences.HumanoidCharacterProfile.html">HumanoidCharacterProfile</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Preferences_HumanoidCharacterProfile_WithoutTraitPreference_Robust_Shared_Prototypes_ProtoId_Content_Shared_Traits_TraitPrototype__Robust_Shared_Prototypes_IPrototypeManager_.md&amp;value=---%0Auid%3A%20Content.Shared.Preferences.HumanoidCharacterProfile.WithoutTraitPreference(Robust.Shared.Prototypes.ProtoId%7BContent.Shared.Traits.TraitPrototype%7D%2CRobust.Shared.Prototypes.IPrototypeManager)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Preferences/HumanoidCharacterProfile.cs/#L517">View Source</a>
+  </span>
+  <a id="Content_Shared_Preferences_HumanoidCharacterProfile_WithoutTraitPreference_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.WithoutTraitPreference*"></a>
+  <h4 id="Content_Shared_Preferences_HumanoidCharacterProfile_WithoutTraitPreference_Robust_Shared_Prototypes_ProtoId_Content_Shared_Traits_TraitPrototype__Robust_Shared_Prototypes_IPrototypeManager_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.WithoutTraitPreference(Robust.Shared.Prototypes.ProtoId{Content.Shared.Traits.TraitPrototype},Robust.Shared.Prototypes.IPrototypeManager)">WithoutTraitPreference(ProtoId&lt;TraitPrototype&gt;, IPrototypeManager)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HumanoidCharacterProfile WithoutTraitPreference(ProtoId&lt;TraitPrototype&gt; traitId, IPrototypeManager protoManager)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Prototypes.ProtoId</span>&lt;<a class="xref" href="Content.Shared.Traits.TraitPrototype.html">TraitPrototype</a>&gt;</td>
+        <td><span class="parametername">traitId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Robust.Shared.Prototypes.IPrototypeManager</span></td>
+        <td><span class="parametername">protoManager</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Preferences.HumanoidCharacterProfile.html">HumanoidCharacterProfile</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Preferences_HumanoidCharacterProfile_WithSex_Content_Shared_Humanoid_Sex_.md&amp;value=---%0Auid%3A%20Content.Shared.Preferences.HumanoidCharacterProfile.WithSex(Content.Shared.Humanoid.Sex)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Preferences/HumanoidCharacterProfile.cs/#L360">View Source</a>
+  </span>
+  <a id="Content_Shared_Preferences_HumanoidCharacterProfile_WithSex_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.WithSex*"></a>
+  <h4 id="Content_Shared_Preferences_HumanoidCharacterProfile_WithSex_Content_Shared_Humanoid_Sex_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.WithSex(Content.Shared.Humanoid.Sex)">WithSex(Sex)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HumanoidCharacterProfile WithSex(Sex sex)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Humanoid.Sex.html">Sex</a></td>
+        <td><span class="parametername">sex</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Preferences.HumanoidCharacterProfile.html">HumanoidCharacterProfile</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Preferences_HumanoidCharacterProfile_WithSpawnPriorityPreference_Content_Shared_Preferences_SpawnPriorityPreference_.md&amp;value=---%0Auid%3A%20Content.Shared.Preferences.HumanoidCharacterProfile.WithSpawnPriorityPreference(Content.Shared.Preferences.SpawnPriorityPreference)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Preferences/HumanoidCharacterProfile.cs/#L381">View Source</a>
+  </span>
+  <a id="Content_Shared_Preferences_HumanoidCharacterProfile_WithSpawnPriorityPreference_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.WithSpawnPriorityPreference*"></a>
+  <h4 id="Content_Shared_Preferences_HumanoidCharacterProfile_WithSpawnPriorityPreference_Content_Shared_Preferences_SpawnPriorityPreference_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.WithSpawnPriorityPreference(Content.Shared.Preferences.SpawnPriorityPreference)">WithSpawnPriorityPreference(SpawnPriorityPreference)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HumanoidCharacterProfile WithSpawnPriorityPreference(SpawnPriorityPreference spawnPriority)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Preferences.SpawnPriorityPreference.html">SpawnPriorityPreference</a></td>
+        <td><span class="parametername">spawnPriority</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Preferences.HumanoidCharacterProfile.html">HumanoidCharacterProfile</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Preferences_HumanoidCharacterProfile_WithSpecies_System_String_.md&amp;value=---%0Auid%3A%20Content.Shared.Preferences.HumanoidCharacterProfile.WithSpecies(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Preferences/HumanoidCharacterProfile.cs/#L370">View Source</a>
+  </span>
+  <a id="Content_Shared_Preferences_HumanoidCharacterProfile_WithSpecies_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.WithSpecies*"></a>
+  <h4 id="Content_Shared_Preferences_HumanoidCharacterProfile_WithSpecies_System_String_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.WithSpecies(System.String)">WithSpecies(String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HumanoidCharacterProfile WithSpecies(string species)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">species</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Preferences.HumanoidCharacterProfile.html">HumanoidCharacterProfile</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Preferences_HumanoidCharacterProfile_WithTraitPreference_Robust_Shared_Prototypes_ProtoId_Content_Shared_Traits_TraitPrototype__Robust_Shared_Prototypes_IPrototypeManager_.md&amp;value=---%0Auid%3A%20Content.Shared.Preferences.HumanoidCharacterProfile.WithTraitPreference(Robust.Shared.Prototypes.ProtoId%7BContent.Shared.Traits.TraitPrototype%7D%2CRobust.Shared.Prototypes.IPrototypeManager)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Preferences/HumanoidCharacterProfile.cs/#L469">View Source</a>
+  </span>
+  <a id="Content_Shared_Preferences_HumanoidCharacterProfile_WithTraitPreference_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.WithTraitPreference*"></a>
+  <h4 id="Content_Shared_Preferences_HumanoidCharacterProfile_WithTraitPreference_Robust_Shared_Prototypes_ProtoId_Content_Shared_Traits_TraitPrototype__Robust_Shared_Prototypes_IPrototypeManager_" data-uid="Content.Shared.Preferences.HumanoidCharacterProfile.WithTraitPreference(Robust.Shared.Prototypes.ProtoId{Content.Shared.Traits.TraitPrototype},Robust.Shared.Prototypes.IPrototypeManager)">WithTraitPreference(ProtoId&lt;TraitPrototype&gt;, IPrototypeManager)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HumanoidCharacterProfile WithTraitPreference(ProtoId&lt;TraitPrototype&gt; traitId, IPrototypeManager protoManager)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Prototypes.ProtoId</span>&lt;<a class="xref" href="Content.Shared.Traits.TraitPrototype.html">TraitPrototype</a>&gt;</td>
+        <td><span class="parametername">traitId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Robust.Shared.Prototypes.IPrototypeManager</span></td>
+        <td><span class="parametername">protoManager</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Content.Shared.Preferences.HumanoidCharacterProfile.html">HumanoidCharacterProfile</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Content.Shared.Preferences.ICharacterProfile.html">ICharacterProfile</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Preferences_HumanoidCharacterProfile.md&amp;value=---%0Auid%3A%20Content.Shared.Preferences.HumanoidCharacterProfile%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Preferences/HumanoidCharacterProfile.cs/#L75" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="toggle-mode">
+                <div class="icon">
+                  <i aria-hidden="true">☀</i>
+                </div>
+                <label class="switch">
+                  <input type="checkbox" id="switch-style">
+                  <span class="slider round"></span>
+                </label>
+                <div class="icon">
+                  <i aria-hidden="true">☾</i>
+                </div>
+              </div>
+          
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <h5>In This Article</h5>
+              <div></div>
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <div class="pull-left">
+              
+              <span>Generated by <strong>DocFX</strong></span>
+            </div>
+            <div class="toggle-mode pull-right visible-sm visible-xs">
+              <div class="icon">
+                <i aria-hidden="true">☀</i>
+              </div>
+              <label class="switch">
+                <input type="checkbox" id="switch-style-m">
+                <span class="slider round"></span>
+              </label>
+              <div class="icon">
+                <i aria-hidden="true">☾</i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="../../styles/toggle-theme.js"></script>
+      </footer>    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

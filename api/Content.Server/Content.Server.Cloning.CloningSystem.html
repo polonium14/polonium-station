@@ -1,0 +1,485 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class CloningSystem
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class CloningSystem
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Content.Server.Cloning.CloningSystem">
+  
+  
+  <h1 id="Content_Server_Cloning_CloningSystem" data-uid="Content.Server.Cloning.CloningSystem" class="text-break">Class CloningSystem
+  </h1>
+  <div class="markdown level0 summary"><p>System responsible for making a copy of a humanoid's body.
+For the cloning machines themselves look at CloningPodSystem, CloningConsoleSystem and MedicalScannerSystem instead.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">CloningSystem</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">EntitySystem</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Content.Server.Cloning.html">Content.Server.Cloning</a></h6>
+  <h6><strong>Assembly</strong>: Content.Server.dll</h6>
+  <h5 id="Content_Server_Cloning_CloningSystem_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class CloningSystem : EntitySystem, EntitySystem</code></pre>
+  </div>
+  <h5 id="Content_Server_Cloning_CloningSystem_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>This method of copying items is of course not perfect as we cannot clone every single component, which would be pretty much impossible with our ECS.
+We only consider the most important components so the paradox clone gets similar equipment.
+This method of using subscriptions was chosen to make it easy for forks to add their own custom components that need to be copied.</p>
+</div>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_Cloning_CloningSystem_CopyEquipment_Entity_Content_Shared_Inventory_InventoryComponent__Entity_Content_Shared_Inventory_InventoryComponent__Content_Shared_Inventory_SlotFlags_Content_Shared_Whitelist_EntityWhitelist_Content_Shared_Whitelist_EntityWhitelist_.md&amp;value=---%0Auid%3A%20Content.Server.Cloning.CloningSystem.CopyEquipment(Entity%7BContent.Shared.Inventory.InventoryComponent%7D%2CEntity%7BContent.Shared.Inventory.InventoryComponent%7D%2CContent.Shared.Inventory.SlotFlags%2CContent.Shared.Whitelist.EntityWhitelist%2CContent.Shared.Whitelist.EntityWhitelist)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/Cloning/CloningSystem.cs/#L167">View Source</a>
+  </span>
+  <a id="Content_Server_Cloning_CloningSystem_CopyEquipment_" data-uid="Content.Server.Cloning.CloningSystem.CopyEquipment*"></a>
+  <h4 id="Content_Server_Cloning_CloningSystem_CopyEquipment_Entity_Content_Shared_Inventory_InventoryComponent__Entity_Content_Shared_Inventory_InventoryComponent__Content_Shared_Inventory_SlotFlags_Content_Shared_Whitelist_EntityWhitelist_Content_Shared_Whitelist_EntityWhitelist_" data-uid="Content.Server.Cloning.CloningSystem.CopyEquipment(Entity{Content.Shared.Inventory.InventoryComponent},Entity{Content.Shared.Inventory.InventoryComponent},Content.Shared.Inventory.SlotFlags,Content.Shared.Whitelist.EntityWhitelist,Content.Shared.Whitelist.EntityWhitelist)">CopyEquipment(Entity&lt;InventoryComponent&gt;, Entity&lt;InventoryComponent&gt;, SlotFlags, EntityWhitelist, EntityWhitelist)</h4>
+  <div class="markdown level1 summary"><p>Copies the equipment the original has to the clone.
+This uses the original prototype of the items, so any changes to components that are done after spawning are lost!</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CopyEquipment(Entity&lt;InventoryComponent&gt; original, Entity&lt;InventoryComponent&gt; clone, SlotFlags slotFlags, EntityWhitelist whitelist = null, EntityWhitelist blacklist = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="../Content.Shared/Content.Shared.Inventory.InventoryComponent.html">InventoryComponent</a>&gt;</td>
+        <td><span class="parametername">original</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="../Content.Shared/Content.Shared.Inventory.InventoryComponent.html">InventoryComponent</a>&gt;</td>
+        <td><span class="parametername">clone</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="../Content.Shared/Content.Shared.Inventory.SlotFlags.html">SlotFlags</a></td>
+        <td><span class="parametername">slotFlags</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="../Content.Shared/Content.Shared.Whitelist.EntityWhitelist.html">EntityWhitelist</a></td>
+        <td><span class="parametername">whitelist</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="../Content.Shared/Content.Shared.Whitelist.EntityWhitelist.html">EntityWhitelist</a></td>
+        <td><span class="parametername">blacklist</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_Cloning_CloningSystem_CopyImplants_Entity_Content_Shared_Implants_Components_ImplantedComponent__EntityUid_System_Boolean_Content_Shared_Whitelist_EntityWhitelist_Content_Shared_Whitelist_EntityWhitelist_.md&amp;value=---%0Auid%3A%20Content.Server.Cloning.CloningSystem.CopyImplants(Entity%7BContent.Shared.Implants.Components.ImplantedComponent%7D%2CEntityUid%2CSystem.Boolean%2CContent.Shared.Whitelist.EntityWhitelist%2CContent.Shared.Whitelist.EntityWhitelist)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/Cloning/CloningSystem.cs/#L263">View Source</a>
+  </span>
+  <a id="Content_Server_Cloning_CloningSystem_CopyImplants_" data-uid="Content.Server.Cloning.CloningSystem.CopyImplants*"></a>
+  <h4 id="Content_Server_Cloning_CloningSystem_CopyImplants_Entity_Content_Shared_Implants_Components_ImplantedComponent__EntityUid_System_Boolean_Content_Shared_Whitelist_EntityWhitelist_Content_Shared_Whitelist_EntityWhitelist_" data-uid="Content.Server.Cloning.CloningSystem.CopyImplants(Entity{Content.Shared.Implants.Components.ImplantedComponent},EntityUid,System.Boolean,Content.Shared.Whitelist.EntityWhitelist,Content.Shared.Whitelist.EntityWhitelist)">CopyImplants(Entity&lt;ImplantedComponent&gt;, EntityUid, Boolean, EntityWhitelist, EntityWhitelist)</h4>
+  <div class="markdown level1 summary"><p>Copies all implants from one mob to another.
+Might result in duplicates if the target already has them.
+Can copy the storage inside a storage implant according to a whitelist and blacklist.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CopyImplants(Entity&lt;ImplantedComponent&gt; original, EntityUid target, bool copyStorage = false, EntityWhitelist whitelist = null, EntityWhitelist blacklist = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="../Content.Shared/Content.Shared.Implants.Components.ImplantedComponent.html">ImplantedComponent</a>&gt;</td>
+        <td><span class="parametername">original</span></td>
+        <td><p>Entity to copy implants from.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>Entity to copy implants to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">copyStorage</span></td>
+        <td><p>If true will copy storage of the implants (E.g storage implant)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="../Content.Shared/Content.Shared.Whitelist.EntityWhitelist.html">EntityWhitelist</a></td>
+        <td><span class="parametername">whitelist</span></td>
+        <td><p>Whitelist for the storage copy (If copyStorage is true)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="../Content.Shared/Content.Shared.Whitelist.EntityWhitelist.html">EntityWhitelist</a></td>
+        <td><span class="parametername">blacklist</span></td>
+        <td><p>Blacklist for the storage copy (If copyStorage is true)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_Cloning_CloningSystem_CopyItem_EntityUid_Robust_Shared_Map_EntityCoordinates_Content_Shared_Whitelist_EntityWhitelist_Content_Shared_Whitelist_EntityWhitelist_.md&amp;value=---%0Auid%3A%20Content.Server.Cloning.CloningSystem.CopyItem(EntityUid%2CRobust.Shared.Map.EntityCoordinates%2CContent.Shared.Whitelist.EntityWhitelist%2CContent.Shared.Whitelist.EntityWhitelist)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/Cloning/CloningSystem.cs/#L193">View Source</a>
+  </span>
+  <a id="Content_Server_Cloning_CloningSystem_CopyItem_" data-uid="Content.Server.Cloning.CloningSystem.CopyItem*"></a>
+  <h4 id="Content_Server_Cloning_CloningSystem_CopyItem_EntityUid_Robust_Shared_Map_EntityCoordinates_Content_Shared_Whitelist_EntityWhitelist_Content_Shared_Whitelist_EntityWhitelist_" data-uid="Content.Server.Cloning.CloningSystem.CopyItem(EntityUid,Robust.Shared.Map.EntityCoordinates,Content.Shared.Whitelist.EntityWhitelist,Content.Shared.Whitelist.EntityWhitelist)">CopyItem(EntityUid, EntityCoordinates, EntityWhitelist, EntityWhitelist)</h4>
+  <div class="markdown level1 summary"><p>Copies an item and its storage recursively, placing all items at the same position in grid storage.
+This uses the original prototype of the items, so any changes to components that are done after spawning are lost!</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public EntityUid? CopyItem(EntityUid original, EntityCoordinates coords, EntityWhitelist whitelist = null, EntityWhitelist blacklist = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">original</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Robust.Shared.Map.EntityCoordinates</span></td>
+        <td><span class="parametername">coords</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="../Content.Shared/Content.Shared.Whitelist.EntityWhitelist.html">EntityWhitelist</a></td>
+        <td><span class="parametername">whitelist</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="../Content.Shared/Content.Shared.Whitelist.EntityWhitelist.html">EntityWhitelist</a></td>
+        <td><span class="parametername">blacklist</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">EntityUid</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Content_Server_Cloning_CloningSystem_CopyItem_EntityUid_Robust_Shared_Map_EntityCoordinates_Content_Shared_Whitelist_EntityWhitelist_Content_Shared_Whitelist_EntityWhitelist__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This is not perfect and only considers item in storage containers.
+Some components have their own additional spawn logic on map init, so we cannot just copy all containers.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_Cloning_CloningSystem_CopyStorage_Entity_Content_Shared_Storage_StorageComponent__Entity_Content_Shared_Storage_StorageComponent__Content_Shared_Whitelist_EntityWhitelist_Content_Shared_Whitelist_EntityWhitelist_.md&amp;value=---%0Auid%3A%20Content.Server.Cloning.CloningSystem.CopyStorage(Entity%7BContent.Shared.Storage.StorageComponent%7D%2CEntity%7BContent.Shared.Storage.StorageComponent%7D%2CContent.Shared.Whitelist.EntityWhitelist%2CContent.Shared.Whitelist.EntityWhitelist)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/Cloning/CloningSystem.cs/#L234">View Source</a>
+  </span>
+  <a id="Content_Server_Cloning_CloningSystem_CopyStorage_" data-uid="Content.Server.Cloning.CloningSystem.CopyStorage*"></a>
+  <h4 id="Content_Server_Cloning_CloningSystem_CopyStorage_Entity_Content_Shared_Storage_StorageComponent__Entity_Content_Shared_Storage_StorageComponent__Content_Shared_Whitelist_EntityWhitelist_Content_Shared_Whitelist_EntityWhitelist_" data-uid="Content.Server.Cloning.CloningSystem.CopyStorage(Entity{Content.Shared.Storage.StorageComponent},Entity{Content.Shared.Storage.StorageComponent},Content.Shared.Whitelist.EntityWhitelist,Content.Shared.Whitelist.EntityWhitelist)">CopyStorage(Entity&lt;StorageComponent&gt;, Entity&lt;StorageComponent&gt;, EntityWhitelist, EntityWhitelist)</h4>
+  <div class="markdown level1 summary"><p>Copies an item's storage recursively to another storage.
+The storage grids should have the same shape or it will drop on the floor.
+Basically the same as CopyItem, but we don't copy the outermost container.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CopyStorage(Entity&lt;StorageComponent&gt; original, Entity&lt;StorageComponent&gt; target, EntityWhitelist whitelist = null, EntityWhitelist blacklist = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="../Content.Shared/Content.Shared.Storage.StorageComponent.html">StorageComponent</a>&gt;</td>
+        <td><span class="parametername">original</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="../Content.Shared/Content.Shared.Storage.StorageComponent.html">StorageComponent</a>&gt;</td>
+        <td><span class="parametername">target</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="../Content.Shared/Content.Shared.Whitelist.EntityWhitelist.html">EntityWhitelist</a></td>
+        <td><span class="parametername">whitelist</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="../Content.Shared/Content.Shared.Whitelist.EntityWhitelist.html">EntityWhitelist</a></td>
+        <td><span class="parametername">blacklist</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_Cloning_CloningSystem_Initialize.md&amp;value=---%0Auid%3A%20Content.Server.Cloning.CloningSystem.Initialize%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/Cloning/CloningSystem.Subscriptions.cs/#L51">View Source</a>
+  </span>
+  <a id="Content_Server_Cloning_CloningSystem_Initialize_" data-uid="Content.Server.Cloning.CloningSystem.Initialize*"></a>
+  <h4 id="Content_Server_Cloning_CloningSystem_Initialize" data-uid="Content.Server.Cloning.CloningSystem.Initialize">Initialize()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Initialize()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_Cloning_CloningSystem_TryCloning_EntityUid_System_Nullable_Robust_Shared_Map_MapCoordinates__Robust_Shared_Prototypes_ProtoId_Content_Shared_Cloning_CloningSettingsPrototype__System_Nullable_EntityUid___.md&amp;value=---%0Auid%3A%20Content.Server.Cloning.CloningSystem.TryCloning(EntityUid%2CSystem.Nullable%7BRobust.Shared.Map.MapCoordinates%7D%2CRobust.Shared.Prototypes.ProtoId%7BContent.Shared.Cloning.CloningSettingsPrototype%7D%2CSystem.Nullable%7BEntityUid%7D%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/Cloning/CloningSystem.cs/#L89">View Source</a>
+  </span>
+  <a id="Content_Server_Cloning_CloningSystem_TryCloning_" data-uid="Content.Server.Cloning.CloningSystem.TryCloning*"></a>
+  <h4 id="Content_Server_Cloning_CloningSystem_TryCloning_EntityUid_System_Nullable_Robust_Shared_Map_MapCoordinates__Robust_Shared_Prototypes_ProtoId_Content_Shared_Cloning_CloningSettingsPrototype__System_Nullable_EntityUid___" data-uid="Content.Server.Cloning.CloningSystem.TryCloning(EntityUid,System.Nullable{Robust.Shared.Map.MapCoordinates},Robust.Shared.Prototypes.ProtoId{Content.Shared.Cloning.CloningSettingsPrototype},System.Nullable{EntityUid}@)">TryCloning(EntityUid, Nullable&lt;MapCoordinates&gt;, ProtoId&lt;CloningSettingsPrototype&gt;, out Nullable&lt;EntityUid&gt;)</h4>
+  <div class="markdown level1 summary"><p>Spawns a clone of the given humanoid mob at the specified location or in nullspace.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryCloning(EntityUid original, MapCoordinates? coords, ProtoId&lt;CloningSettingsPrototype&gt; settingsId, out EntityUid? clone)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">original</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">Robust.Shared.Map.MapCoordinates</span>&gt;</td>
+        <td><span class="parametername">coords</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Robust.Shared.Prototypes.ProtoId</span>&lt;<a class="xref" href="../Content.Shared/Content.Shared.Cloning.CloningSettingsPrototype.html">CloningSettingsPrototype</a>&gt;</td>
+        <td><span class="parametername">settingsId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">EntityUid</span>&gt;</td>
+        <td><span class="parametername">clone</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">EntitySystem</span>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_Cloning_CloningSystem.md&amp;value=---%0Auid%3A%20Content.Server.Cloning.CloningSystem%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/Cloning/CloningSystem.Subscriptions.cs/#L41" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="toggle-mode">
+                <div class="icon">
+                  <i aria-hidden="true">☀</i>
+                </div>
+                <label class="switch">
+                  <input type="checkbox" id="switch-style">
+                  <span class="slider round"></span>
+                </label>
+                <div class="icon">
+                  <i aria-hidden="true">☾</i>
+                </div>
+              </div>
+          
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <h5>In This Article</h5>
+              <div></div>
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <div class="pull-left">
+              
+              <span>Generated by <strong>DocFX</strong></span>
+            </div>
+            <div class="toggle-mode pull-right visible-sm visible-xs">
+              <div class="icon">
+                <i aria-hidden="true">☀</i>
+              </div>
+              <label class="switch">
+                <input type="checkbox" id="switch-style-m">
+                <span class="slider round"></span>
+              </label>
+              <div class="icon">
+                <i aria-hidden="true">☾</i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="../../styles/toggle-theme.js"></script>
+      </footer>    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

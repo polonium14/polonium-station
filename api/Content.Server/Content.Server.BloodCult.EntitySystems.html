@@ -1,0 +1,214 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Namespace Content.Server.BloodCult.EntitySystems
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Namespace Content.Server.BloodCult.EntitySystems
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Content.Server.BloodCult.EntitySystems">
+  
+  <h1 id="Content_Server_BloodCult_EntitySystems" data-uid="Content.Server.BloodCult.EntitySystems" class="text-break">Namespace Content.Server.BloodCult.EntitySystems
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="markdown level0 remarks"></div>
+    <h3 id="classes">Classes
+  </h3>
+      <h4><a class="xref" href="Content.Server.BloodCult.EntitySystems.BarrierOnTriggerSystem.html">BarrierOnTriggerSystem</a></h4>
+      <section></section>
+      <h4><a class="xref" href="Content.Server.BloodCult.EntitySystems.BloodCultConstructSystem.html">BloodCultConstructSystem</a></h4>
+      <section></section>
+      <h4><a class="xref" href="Content.Server.BloodCult.EntitySystems.BloodCultistMetabolismSystem.html">BloodCultistMetabolismSystem</a></h4>
+      <section><p>Changes blood cultists' blood to Sanguine Perniculate</p>
+</section>
+      <h4><a class="xref" href="Content.Server.BloodCult.EntitySystems.BloodCultistReactionSystem.html">BloodCultistReactionSystem</a></h4>
+      <section><p>Unified system to handle all blood cultist reagent reactions.
+This includes:</p>
+<ul>
+<li>Blood consumption (ingestion) -&gt; causes bleeding, restores blood levels, adds to ritual pool</li>
+<li>Sanguine Perniculate (touch) -&gt; heals holy damage</li>
+<li>Holy Water (touch) -&gt; deals additional holy damage</li>
+</ul>
+</section>
+      <h4><a class="xref" href="Content.Server.BloodCult.EntitySystems.BloodCultMeleeWeaponSystem.html">BloodCultMeleeWeaponSystem</a></h4>
+      <section></section>
+      <h4><a class="xref" href="Content.Server.BloodCult.EntitySystems.BloodCultMindShieldSystem.html">BloodCultMindShieldSystem</a></h4>
+      <section><p>System that handles Blood Cult deconversion when a mindshield is implanted.</p>
+</section>
+      <h4><a class="xref" href="Content.Server.BloodCult.EntitySystems.BloodCultRiftSetupSystem.html">BloodCultRiftSetupSystem</a></h4>
+      <section><p>Handles setting up the final Blood Cult summoning ritual site.
+Finds a valid 3x3 space near a departmental beacon, replaces flooring, and spawns the rift with runes.</p>
+</section>
+      <h4><a class="xref" href="Content.Server.BloodCult.EntitySystems.BloodCultRiftSystem.html">BloodCultRiftSystem</a></h4>
+      <section><p>Handles Blood Cult rift pulsing (adding Sanguine Perniculate) and final summoning ritual.</p>
+</section>
+      <h4><a class="xref" href="Content.Server.BloodCult.EntitySystems.BloodCultRuneCarverSystem.html">BloodCultRuneCarverSystem</a></h4>
+      <section></section>
+      <h4><a class="xref" href="Content.Server.BloodCult.EntitySystems.BloodCultRuneCleaningSystem.html">BloodCultRuneCleaningSystem</a></h4>
+      <section><p>System that allows mops to clean blood cult runes.
+This extends AbsorbentSystem behavior without modifying the core system.</p>
+</section>
+      <h4><a class="xref" href="Content.Server.BloodCult.EntitySystems.CultAnchorableSystem.html">CultAnchorableSystem</a></h4>
+      <section></section>
+      <h4><a class="xref" href="Content.Server.BloodCult.EntitySystems.CultistSpellSystem.html">CultistSpellSystem</a></h4>
+      <section></section>
+      <h4><a class="xref" href="Content.Server.BloodCult.EntitySystems.EdgeEssentiaBloodSystem.html">EdgeEssentiaBloodSystem</a></h4>
+      <section><p>System that manages restoring original blood types after Edge Essentia wears off
+and tracks Sanguine Perniculate being bled out for the ritual pool.</p>
+</section>
+      <h4><a class="xref" href="Content.Server.BloodCult.EntitySystems.EmpowerOnStandSystem.html">EmpowerOnStandSystem</a></h4>
+      <section></section>
+      <h4><a class="xref" href="Content.Server.BloodCult.EntitySystems.ForceBarrierSystem.html">ForceBarrierSystem</a></h4>
+      <section></section>
+      <h4><a class="xref" href="Content.Server.BloodCult.EntitySystems.InactiveJuggernautSystem.html">InactiveJuggernautSystem</a></h4>
+      <section><p>Handles inactive juggernauts - prevents movement when soulstone is ejected</p>
+</section>
+      <h4><a class="xref" href="Content.Server.BloodCult.EntitySystems.JuggernautBloodAbsorptionSystem.html">JuggernautBloodAbsorptionSystem</a></h4>
+      <section><p>System that handles juggernauts absorbing blood from puddles beneath them to heal.</p>
+</section>
+      <h4><a class="xref" href="Content.Server.BloodCult.EntitySystems.JuggernautBodyContainerSystem.html">JuggernautBodyContainerSystem</a></h4>
+      <section></section>
+      <h4><a class="xref" href="Content.Server.BloodCult.EntitySystems.OfferOnTriggerSystem.html">OfferOnTriggerSystem</a></h4>
+      <section></section>
+      <h4><a class="xref" href="Content.Server.BloodCult.EntitySystems.ReagentAutoRefillSystem.html">ReagentAutoRefillSystem</a></h4>
+      <section><p>Handles automatic refilling of reagents in solution containers.
+Used by cult daggers to regenerate their Edge Essentia over time.
+Maybe a bit too fancy. But I wanted it to be more interesting than just always it inject the same amount.</p>
+</section>
+      <h4><a class="xref" href="Content.Server.BloodCult.EntitySystems.ReviveCultistOnTriggerSystem.html">ReviveCultistOnTriggerSystem</a></h4>
+      <section></section>
+      <h4><a class="xref" href="Content.Server.BloodCult.EntitySystems.SoulStoneSystem.html">SoulStoneSystem</a></h4>
+      <section></section>
+      <h4><a class="xref" href="Content.Server.BloodCult.EntitySystems.SummonOnTriggerSystem.html">SummonOnTriggerSystem</a></h4>
+      <section></section>
+      <h4><a class="xref" href="Content.Server.BloodCult.EntitySystems.TearVeilSystem.html">TearVeilSystem</a></h4>
+      <section><p>Handles the Tear the Veil ritual that progresses the cult to stage 3 (Veil Weakened).
+Requires multiple cultists to stand on TearVeilRunes and chant together.</p>
+</section>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <div class="toggle-mode">
+                <div class="icon">
+                  <i aria-hidden="true">☀</i>
+                </div>
+                <label class="switch">
+                  <input type="checkbox" id="switch-style">
+                  <span class="slider round"></span>
+                </label>
+                <div class="icon">
+                  <i aria-hidden="true">☾</i>
+                </div>
+              </div>
+          
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <h5>In This Article</h5>
+              <div></div>
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <div class="pull-left">
+              
+              <span>Generated by <strong>DocFX</strong></span>
+            </div>
+            <div class="toggle-mode pull-right visible-sm visible-xs">
+              <div class="icon">
+                <i aria-hidden="true">☀</i>
+              </div>
+              <label class="switch">
+                <input type="checkbox" id="switch-style-m">
+                <span class="slider round"></span>
+              </label>
+              <div class="icon">
+                <i aria-hidden="true">☾</i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="../../styles/toggle-theme.js"></script>
+      </footer>    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

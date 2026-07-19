@@ -1,0 +1,507 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class TurretTargetSettingsSystem
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class TurretTargetSettingsSystem
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Content.Shared.Turrets.TurretTargetSettingsSystem">
+  
+  
+  <h1 id="Content_Shared_Turrets_TurretTargetSettingsSystem" data-uid="Content.Shared.Turrets.TurretTargetSettingsSystem" class="text-break">Class TurretTargetSettingsSystem
+  </h1>
+  <div class="markdown level0 summary"><p>This system is used for validating potential targets for NPCs with a <a class="xref" href="Content.Shared.Turrets.TurretTargetSettingsComponent.html">TurretTargetSettingsComponent</a> (i.e., turrets).
+A turret will consider an entity a valid target if the entity does not possess any access tags which appear on the
+turret's <a class="xref" href="Content.Shared.Turrets.TurretTargetSettingsComponent.html#Content_Shared_Turrets_TurretTargetSettingsComponent_ExemptAccessLevels">ExemptAccessLevels</a> list.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">TurretTargetSettingsSystem</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Content.Shared.Turrets.html">Content.Shared.Turrets</a></h6>
+  <h6><strong>Assembly</strong>: Content.Shared.dll</h6>
+  <h5 id="Content_Shared_Turrets_TurretTargetSettingsSystem_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class TurretTargetSettingsSystem : EntitySystem</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Turrets_TurretTargetSettingsSystem_EntityIsTargetForTurret_Entity_Content_Shared_Turrets_TurretTargetSettingsComponent__EntityUid_.md&amp;value=---%0Auid%3A%20Content.Shared.Turrets.TurretTargetSettingsSystem.EntityIsTargetForTurret(Entity%7BContent.Shared.Turrets.TurretTargetSettingsComponent%7D%2CEntityUid)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Turrets/TurretTargetSettingsSystem.cs/#L126">View Source</a>
+  </span>
+  <a id="Content_Shared_Turrets_TurretTargetSettingsSystem_EntityIsTargetForTurret_" data-uid="Content.Shared.Turrets.TurretTargetSettingsSystem.EntityIsTargetForTurret*"></a>
+  <h4 id="Content_Shared_Turrets_TurretTargetSettingsSystem_EntityIsTargetForTurret_Entity_Content_Shared_Turrets_TurretTargetSettingsComponent__EntityUid_" data-uid="Content.Shared.Turrets.TurretTargetSettingsSystem.EntityIsTargetForTurret(Entity{Content.Shared.Turrets.TurretTargetSettingsComponent},EntityUid)">EntityIsTargetForTurret(Entity&lt;TurretTargetSettingsComponent&gt;, EntityUid)</h4>
+  <div class="markdown level1 summary"><p>Returns whether an entity is a valid target for a turret.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool EntityIsTargetForTurret(Entity&lt;TurretTargetSettingsComponent&gt; ent, EntityUid target)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Turrets.TurretTargetSettingsComponent.html">TurretTargetSettingsComponent</a>&gt;</td>
+        <td><span class="parametername">ent</span></td>
+        <td><p>The entity and its <a class="xref" href="Content.Shared.Turrets.TurretTargetSettingsComponent.html">TurretTargetSettingsComponent</a></p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The target entity</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Content_Shared_Turrets_TurretTargetSettingsSystem_EntityIsTargetForTurret_Entity_Content_Shared_Turrets_TurretTargetSettingsComponent__EntityUid__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Returns false if the target possesses one or more access tags that are present on the entity's <a class="xref" href="Content.Shared.Turrets.TurretTargetSettingsComponent.html#Content_Shared_Turrets_TurretTargetSettingsComponent_ExemptAccessLevels">ExemptAccessLevels</a> list.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Turrets_TurretTargetSettingsSystem_HasAccessLevelExemption_Entity_Content_Shared_Turrets_TurretTargetSettingsComponent__Robust_Shared_Prototypes_ProtoId_Content_Shared_Access_AccessLevelPrototype__.md&amp;value=---%0Auid%3A%20Content.Shared.Turrets.TurretTargetSettingsSystem.HasAccessLevelExemption(Entity%7BContent.Shared.Turrets.TurretTargetSettingsComponent%7D%2CRobust.Shared.Prototypes.ProtoId%7BContent.Shared.Access.AccessLevelPrototype%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Turrets/TurretTargetSettingsSystem.cs/#L89">View Source</a>
+  </span>
+  <a id="Content_Shared_Turrets_TurretTargetSettingsSystem_HasAccessLevelExemption_" data-uid="Content.Shared.Turrets.TurretTargetSettingsSystem.HasAccessLevelExemption*"></a>
+  <h4 id="Content_Shared_Turrets_TurretTargetSettingsSystem_HasAccessLevelExemption_Entity_Content_Shared_Turrets_TurretTargetSettingsComponent__Robust_Shared_Prototypes_ProtoId_Content_Shared_Access_AccessLevelPrototype__" data-uid="Content.Shared.Turrets.TurretTargetSettingsSystem.HasAccessLevelExemption(Entity{Content.Shared.Turrets.TurretTargetSettingsComponent},Robust.Shared.Prototypes.ProtoId{Content.Shared.Access.AccessLevelPrototype})">HasAccessLevelExemption(Entity&lt;TurretTargetSettingsComponent&gt;, ProtoId&lt;AccessLevelPrototype&gt;)</h4>
+  <div class="markdown level1 summary"><p>Returns whether a <a class="xref" href="Content.Shared.Turrets.TurretTargetSettingsComponent.html#Content_Shared_Turrets_TurretTargetSettingsComponent_ExemptAccessLevels">ExemptAccessLevels</a> list contains a specific access level.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HasAccessLevelExemption(Entity&lt;TurretTargetSettingsComponent&gt; ent, ProtoId&lt;AccessLevelPrototype&gt; exemption)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Turrets.TurretTargetSettingsComponent.html">TurretTargetSettingsComponent</a>&gt;</td>
+        <td><span class="parametername">ent</span></td>
+        <td><p>The entity and its <a class="xref" href="Content.Shared.Turrets.TurretTargetSettingsComponent.html">TurretTargetSettingsComponent</a></p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Robust.Shared.Prototypes.ProtoId</span>&lt;<a class="xref" href="Content.Shared.Access.AccessLevelPrototype.html">AccessLevelPrototype</a>&gt;</td>
+        <td><span class="parametername">exemption</span></td>
+        <td><p>The access level proto ID being checked</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Turrets_TurretTargetSettingsSystem_HasAnyAccessLevelExemption_Entity_Content_Shared_Turrets_TurretTargetSettingsComponent__ICollection_Robust_Shared_Prototypes_ProtoId_Content_Shared_Access_AccessLevelPrototype___.md&amp;value=---%0Auid%3A%20Content.Shared.Turrets.TurretTargetSettingsSystem.HasAnyAccessLevelExemption(Entity%7BContent.Shared.Turrets.TurretTargetSettingsComponent%7D%2CICollection%7BRobust.Shared.Prototypes.ProtoId%7BContent.Shared.Access.AccessLevelPrototype%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Turrets/TurretTargetSettingsSystem.cs/#L103">View Source</a>
+  </span>
+  <a id="Content_Shared_Turrets_TurretTargetSettingsSystem_HasAnyAccessLevelExemption_" data-uid="Content.Shared.Turrets.TurretTargetSettingsSystem.HasAnyAccessLevelExemption*"></a>
+  <h4 id="Content_Shared_Turrets_TurretTargetSettingsSystem_HasAnyAccessLevelExemption_Entity_Content_Shared_Turrets_TurretTargetSettingsComponent__ICollection_Robust_Shared_Prototypes_ProtoId_Content_Shared_Access_AccessLevelPrototype___" data-uid="Content.Shared.Turrets.TurretTargetSettingsSystem.HasAnyAccessLevelExemption(Entity{Content.Shared.Turrets.TurretTargetSettingsComponent},ICollection{Robust.Shared.Prototypes.ProtoId{Content.Shared.Access.AccessLevelPrototype}})">HasAnyAccessLevelExemption(Entity&lt;TurretTargetSettingsComponent&gt;, ICollection&lt;ProtoId&lt;AccessLevelPrototype&gt;&gt;)</h4>
+  <div class="markdown level1 summary"><p>Returns whether a <a class="xref" href="Content.Shared.Turrets.TurretTargetSettingsComponent.html#Content_Shared_Turrets_TurretTargetSettingsComponent_ExemptAccessLevels">ExemptAccessLevels</a> list contains one or more access levels from another collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HasAnyAccessLevelExemption(Entity&lt;TurretTargetSettingsComponent&gt; ent, ICollection&lt;ProtoId&lt;AccessLevelPrototype&gt;&gt; exemptions)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Turrets.TurretTargetSettingsComponent.html">TurretTargetSettingsComponent</a>&gt;</td>
+        <td><span class="parametername">ent</span></td>
+        <td><p>The entity and its <a class="xref" href="Content.Shared.Turrets.TurretTargetSettingsComponent.html">TurretTargetSettingsComponent</a></p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">ICollection</span>&lt;<span class="xref">Robust.Shared.Prototypes.ProtoId</span>&lt;<a class="xref" href="Content.Shared.Access.AccessLevelPrototype.html">AccessLevelPrototype</a>&gt;&gt;</td>
+        <td><span class="parametername">exemptions</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Turrets_TurretTargetSettingsSystem_SetAccessLevelExemption_Entity_Content_Shared_Turrets_TurretTargetSettingsComponent__Robust_Shared_Prototypes_ProtoId_Content_Shared_Access_AccessLevelPrototype__System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20Content.Shared.Turrets.TurretTargetSettingsSystem.SetAccessLevelExemption(Entity%7BContent.Shared.Turrets.TurretTargetSettingsComponent%7D%2CRobust.Shared.Prototypes.ProtoId%7BContent.Shared.Access.AccessLevelPrototype%7D%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Turrets/TurretTargetSettingsSystem.cs/#L34">View Source</a>
+  </span>
+  <a id="Content_Shared_Turrets_TurretTargetSettingsSystem_SetAccessLevelExemption_" data-uid="Content.Shared.Turrets.TurretTargetSettingsSystem.SetAccessLevelExemption*"></a>
+  <h4 id="Content_Shared_Turrets_TurretTargetSettingsSystem_SetAccessLevelExemption_Entity_Content_Shared_Turrets_TurretTargetSettingsComponent__Robust_Shared_Prototypes_ProtoId_Content_Shared_Access_AccessLevelPrototype__System_Boolean_System_Boolean_" data-uid="Content.Shared.Turrets.TurretTargetSettingsSystem.SetAccessLevelExemption(Entity{Content.Shared.Turrets.TurretTargetSettingsComponent},Robust.Shared.Prototypes.ProtoId{Content.Shared.Access.AccessLevelPrototype},System.Boolean,System.Boolean)">SetAccessLevelExemption(Entity&lt;TurretTargetSettingsComponent&gt;, ProtoId&lt;AccessLevelPrototype&gt;, Boolean, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Adds or removes access levels from a <a class="xref" href="Content.Shared.Turrets.TurretTargetSettingsComponent.html#Content_Shared_Turrets_TurretTargetSettingsComponent_ExemptAccessLevels">ExemptAccessLevels</a> list.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetAccessLevelExemption(Entity&lt;TurretTargetSettingsComponent&gt; ent, ProtoId&lt;AccessLevelPrototype&gt; exemption, bool enabled, bool dirty = true)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Turrets.TurretTargetSettingsComponent.html">TurretTargetSettingsComponent</a>&gt;</td>
+        <td><span class="parametername">ent</span></td>
+        <td><p>The entity and its <a class="xref" href="Content.Shared.Turrets.TurretTargetSettingsComponent.html">TurretTargetSettingsComponent</a></p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Robust.Shared.Prototypes.ProtoId</span>&lt;<a class="xref" href="Content.Shared.Access.AccessLevelPrototype.html">AccessLevelPrototype</a>&gt;</td>
+        <td><span class="parametername">exemption</span></td>
+        <td><p>The proto ID for the access level</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">enabled</span></td>
+        <td><p>Set 'true' to add the exemption, or 'false' to remove it</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">dirty</span></td>
+        <td><p>Set 'true' to dirty the component</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Turrets_TurretTargetSettingsSystem_SetAccessLevelExemptions_Entity_Content_Shared_Turrets_TurretTargetSettingsComponent__ICollection_Robust_Shared_Prototypes_ProtoId_Content_Shared_Access_AccessLevelPrototype___System_Boolean_.md&amp;value=---%0Auid%3A%20Content.Shared.Turrets.TurretTargetSettingsSystem.SetAccessLevelExemptions(Entity%7BContent.Shared.Turrets.TurretTargetSettingsComponent%7D%2CICollection%7BRobust.Shared.Prototypes.ProtoId%7BContent.Shared.Access.AccessLevelPrototype%7D%7D%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Turrets/TurretTargetSettingsSystem.cs/#L52">View Source</a>
+  </span>
+  <a id="Content_Shared_Turrets_TurretTargetSettingsSystem_SetAccessLevelExemptions_" data-uid="Content.Shared.Turrets.TurretTargetSettingsSystem.SetAccessLevelExemptions*"></a>
+  <h4 id="Content_Shared_Turrets_TurretTargetSettingsSystem_SetAccessLevelExemptions_Entity_Content_Shared_Turrets_TurretTargetSettingsComponent__ICollection_Robust_Shared_Prototypes_ProtoId_Content_Shared_Access_AccessLevelPrototype___System_Boolean_" data-uid="Content.Shared.Turrets.TurretTargetSettingsSystem.SetAccessLevelExemptions(Entity{Content.Shared.Turrets.TurretTargetSettingsComponent},ICollection{Robust.Shared.Prototypes.ProtoId{Content.Shared.Access.AccessLevelPrototype}},System.Boolean)">SetAccessLevelExemptions(Entity&lt;TurretTargetSettingsComponent&gt;, ICollection&lt;ProtoId&lt;AccessLevelPrototype&gt;&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Adds or removes a collection of access levels from a <a class="xref" href="Content.Shared.Turrets.TurretTargetSettingsComponent.html#Content_Shared_Turrets_TurretTargetSettingsComponent_ExemptAccessLevels">ExemptAccessLevels</a> list.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetAccessLevelExemptions(Entity&lt;TurretTargetSettingsComponent&gt; ent, ICollection&lt;ProtoId&lt;AccessLevelPrototype&gt;&gt; exemptions, bool enabled)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Turrets.TurretTargetSettingsComponent.html">TurretTargetSettingsComponent</a>&gt;</td>
+        <td><span class="parametername">ent</span></td>
+        <td><p>The entity and its <a class="xref" href="Content.Shared.Turrets.TurretTargetSettingsComponent.html">TurretTargetSettingsComponent</a></p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">ICollection</span>&lt;<span class="xref">Robust.Shared.Prototypes.ProtoId</span>&lt;<a class="xref" href="Content.Shared.Access.AccessLevelPrototype.html">AccessLevelPrototype</a>&gt;&gt;</td>
+        <td><span class="parametername">exemptions</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">enabled</span></td>
+        <td><p>Set 'true' to add the collection as exemptions, or 'false' to remove them</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Turrets_TurretTargetSettingsSystem_SyncAccessLevelExemptions_Entity_Content_Shared_Turrets_TurretTargetSettingsComponent__Entity_Content_Shared_Turrets_TurretTargetSettingsComponent__.md&amp;value=---%0Auid%3A%20Content.Shared.Turrets.TurretTargetSettingsSystem.SyncAccessLevelExemptions(Entity%7BContent.Shared.Turrets.TurretTargetSettingsComponent%7D%2CEntity%7BContent.Shared.Turrets.TurretTargetSettingsComponent%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Turrets/TurretTargetSettingsSystem.cs/#L78">View Source</a>
+  </span>
+  <a id="Content_Shared_Turrets_TurretTargetSettingsSystem_SyncAccessLevelExemptions_" data-uid="Content.Shared.Turrets.TurretTargetSettingsSystem.SyncAccessLevelExemptions*"></a>
+  <h4 id="Content_Shared_Turrets_TurretTargetSettingsSystem_SyncAccessLevelExemptions_Entity_Content_Shared_Turrets_TurretTargetSettingsComponent__Entity_Content_Shared_Turrets_TurretTargetSettingsComponent__" data-uid="Content.Shared.Turrets.TurretTargetSettingsSystem.SyncAccessLevelExemptions(Entity{Content.Shared.Turrets.TurretTargetSettingsComponent},Entity{Content.Shared.Turrets.TurretTargetSettingsComponent})">SyncAccessLevelExemptions(Entity&lt;TurretTargetSettingsComponent&gt;, Entity&lt;TurretTargetSettingsComponent&gt;)</h4>
+  <div class="markdown level1 summary"><p>Sets a <a class="xref" href="Content.Shared.Turrets.TurretTargetSettingsComponent.html#Content_Shared_Turrets_TurretTargetSettingsComponent_ExemptAccessLevels">ExemptAccessLevels</a> list to match that of another.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SyncAccessLevelExemptions(Entity&lt;TurretTargetSettingsComponent&gt; target, Entity&lt;TurretTargetSettingsComponent&gt; source)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Turrets.TurretTargetSettingsComponent.html">TurretTargetSettingsComponent</a>&gt;</td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The entity this is having its exemption list updated <a class="xref" href="Content.Shared.Turrets.TurretTargetSettingsComponent.html">TurretTargetSettingsComponent</a></p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Turrets.TurretTargetSettingsComponent.html">TurretTargetSettingsComponent</a>&gt;</td>
+        <td><span class="parametername">source</span></td>
+        <td><p>The entity that is being used as a template for the target</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Turrets_TurretTargetSettingsSystem_SyncAccessLevelExemptions_Entity_Content_Shared_Turrets_TurretTargetSettingsComponent__ICollection_Robust_Shared_Prototypes_ProtoId_Content_Shared_Access_AccessLevelPrototype___.md&amp;value=---%0Auid%3A%20Content.Shared.Turrets.TurretTargetSettingsSystem.SyncAccessLevelExemptions(Entity%7BContent.Shared.Turrets.TurretTargetSettingsComponent%7D%2CICollection%7BRobust.Shared.Prototypes.ProtoId%7BContent.Shared.Access.AccessLevelPrototype%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Turrets/TurretTargetSettingsSystem.cs/#L66">View Source</a>
+  </span>
+  <a id="Content_Shared_Turrets_TurretTargetSettingsSystem_SyncAccessLevelExemptions_" data-uid="Content.Shared.Turrets.TurretTargetSettingsSystem.SyncAccessLevelExemptions*"></a>
+  <h4 id="Content_Shared_Turrets_TurretTargetSettingsSystem_SyncAccessLevelExemptions_Entity_Content_Shared_Turrets_TurretTargetSettingsComponent__ICollection_Robust_Shared_Prototypes_ProtoId_Content_Shared_Access_AccessLevelPrototype___" data-uid="Content.Shared.Turrets.TurretTargetSettingsSystem.SyncAccessLevelExemptions(Entity{Content.Shared.Turrets.TurretTargetSettingsComponent},ICollection{Robust.Shared.Prototypes.ProtoId{Content.Shared.Access.AccessLevelPrototype}})">SyncAccessLevelExemptions(Entity&lt;TurretTargetSettingsComponent&gt;, ICollection&lt;ProtoId&lt;AccessLevelPrototype&gt;&gt;)</h4>
+  <div class="markdown level1 summary"><p>Sets a <a class="xref" href="Content.Shared.Turrets.TurretTargetSettingsComponent.html#Content_Shared_Turrets_TurretTargetSettingsComponent_ExemptAccessLevels">ExemptAccessLevels</a> list to contain only a supplied collection of access levels.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SyncAccessLevelExemptions(Entity&lt;TurretTargetSettingsComponent&gt; ent, ICollection&lt;ProtoId&lt;AccessLevelPrototype&gt;&gt; exemptions)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span>&lt;<a class="xref" href="Content.Shared.Turrets.TurretTargetSettingsComponent.html">TurretTargetSettingsComponent</a>&gt;</td>
+        <td><span class="parametername">ent</span></td>
+        <td><p>The entity and its <a class="xref" href="Content.Shared.Turrets.TurretTargetSettingsComponent.html">TurretTargetSettingsComponent</a></p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">ICollection</span>&lt;<span class="xref">Robust.Shared.Prototypes.ProtoId</span>&lt;<a class="xref" href="Content.Shared.Access.AccessLevelPrototype.html">AccessLevelPrototype</a>&gt;&gt;</td>
+        <td><span class="parametername">exemptions</span></td>
+        <td><p>The supplied collection of access level proto IDs</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Turrets_TurretTargetSettingsSystem.md&amp;value=---%0Auid%3A%20Content.Shared.Turrets.TurretTargetSettingsSystem%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Turrets/TurretTargetSettingsSystem.cs/#L20" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="toggle-mode">
+                <div class="icon">
+                  <i aria-hidden="true">☀</i>
+                </div>
+                <label class="switch">
+                  <input type="checkbox" id="switch-style">
+                  <span class="slider round"></span>
+                </label>
+                <div class="icon">
+                  <i aria-hidden="true">☾</i>
+                </div>
+              </div>
+          
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <h5>In This Article</h5>
+              <div></div>
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <div class="pull-left">
+              
+              <span>Generated by <strong>DocFX</strong></span>
+            </div>
+            <div class="toggle-mode pull-right visible-sm visible-xs">
+              <div class="icon">
+                <i aria-hidden="true">☀</i>
+              </div>
+              <label class="switch">
+                <input type="checkbox" id="switch-style-m">
+                <span class="slider round"></span>
+              </label>
+              <div class="icon">
+                <i aria-hidden="true">☾</i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="../../styles/toggle-theme.js"></script>
+      </footer>    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

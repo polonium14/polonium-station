@@ -1,0 +1,407 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class RelaySubscriptionHelpers
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class RelaySubscriptionHelpers
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Content.Shared.Inventory.RelaySubscriptionHelpers">
+  
+  
+  <h1 id="Content_Shared_Inventory_RelaySubscriptionHelpers" data-uid="Content.Shared.Inventory.RelaySubscriptionHelpers" class="text-break">Class RelaySubscriptionHelpers
+  </h1>
+  <div class="markdown level0 summary"><p>Helper functions for subscribing to component events that are also relayed via hands/inventory.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">RelaySubscriptionHelpers</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Content.Shared.Inventory.html">Content.Shared.Inventory</a></h6>
+  <h6><strong>Assembly</strong>: Content.Shared.dll</h6>
+  <h5 id="Content_Shared_Inventory_RelaySubscriptionHelpers_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class RelaySubscriptionHelpers : object</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Inventory_RelaySubscriptionHelpers_SubscribeWithRelay__2_EntitySystem_Subscriptions_ComponentEventHandler___0___1__System_Boolean_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20Content.Shared.Inventory.RelaySubscriptionHelpers.SubscribeWithRelay%60%602(EntitySystem.Subscriptions%2CComponentEventHandler%7B%60%600%2C%60%601%7D%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Inventory/RelaySubscriptionHelpers.cs/#L63">View Source</a>
+  </span>
+  <a id="Content_Shared_Inventory_RelaySubscriptionHelpers_SubscribeWithRelay_" data-uid="Content.Shared.Inventory.RelaySubscriptionHelpers.SubscribeWithRelay*"></a>
+  <h4 id="Content_Shared_Inventory_RelaySubscriptionHelpers_SubscribeWithRelay__2_EntitySystem_Subscriptions_ComponentEventHandler___0___1__System_Boolean_System_Boolean_System_Boolean_" data-uid="Content.Shared.Inventory.RelaySubscriptionHelpers.SubscribeWithRelay``2(EntitySystem.Subscriptions,ComponentEventHandler{``0,``1},System.Boolean,System.Boolean,System.Boolean)">SubscribeWithRelay&lt;TComp, TEvent&gt;(EntitySystem.Subscriptions, ComponentEventHandler&lt;TComp, TEvent&gt;, Boolean, Boolean, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Subscribe to an event, along with different relayed event wrappers, in one call.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SubscribeWithRelay&lt;TComp, TEvent&gt;(this EntitySystem.Subscriptions subs, ComponentEventHandler&lt;TComp, TEvent&gt; handler, bool baseEvent = true, bool inventory = true, bool held = true)
+    where TComp : IComponent</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntitySystem.Subscriptions</span></td>
+        <td><span class="parametername">subs</span></td>
+        <td><p>Subscriptions for the entity system we're subscribing on.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">ComponentEventHandler</span>&lt;TComp, TEvent&gt;</td>
+        <td><span class="parametername">handler</span></td>
+        <td><p>The event handler to be called for the event.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">baseEvent</span></td>
+        <td><p>Whether to subscribe the base event type.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">inventory</span></td>
+        <td><p>Whether to subscribe for <a class="xref" href="Content.Shared.Inventory.InventoryRelayedEvent-1.html">InventoryRelayedEvent&lt;TEvent&gt;</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">held</span></td>
+        <td><p>Whether to subscribe for <a class="xref" href="Content.Shared.Hands.HeldRelayedEvent-1.html">HeldRelayedEvent&lt;TEvent&gt;</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TComp</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TEvent</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Content_Shared_Inventory_RelaySubscriptionHelpers_SubscribeWithRelay__2_EntitySystem_Subscriptions_ComponentEventHandler___0___1__System_Boolean_System_Boolean_System_Boolean__seealso">See Also</h5>
+  <div class="seealso">
+      <div><span class="xref">Robust.Shared.GameObjects.EntitySystem.SubscribeLocalEvent``2(Robust.Shared.GameObjects.ComponentEventHandler{``0,``1},System.Type[],System.Type[])</span></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Inventory_RelaySubscriptionHelpers_SubscribeWithRelay__2_EntitySystem_Subscriptions_ComponentEventRefHandler___0___1__System_Boolean_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20Content.Shared.Inventory.RelaySubscriptionHelpers.SubscribeWithRelay%60%602(EntitySystem.Subscriptions%2CComponentEventRefHandler%7B%60%600%2C%60%601%7D%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Inventory/RelaySubscriptionHelpers.cs/#L101">View Source</a>
+  </span>
+  <a id="Content_Shared_Inventory_RelaySubscriptionHelpers_SubscribeWithRelay_" data-uid="Content.Shared.Inventory.RelaySubscriptionHelpers.SubscribeWithRelay*"></a>
+  <h4 id="Content_Shared_Inventory_RelaySubscriptionHelpers_SubscribeWithRelay__2_EntitySystem_Subscriptions_ComponentEventRefHandler___0___1__System_Boolean_System_Boolean_System_Boolean_" data-uid="Content.Shared.Inventory.RelaySubscriptionHelpers.SubscribeWithRelay``2(EntitySystem.Subscriptions,ComponentEventRefHandler{``0,``1},System.Boolean,System.Boolean,System.Boolean)">SubscribeWithRelay&lt;TComp, TEvent&gt;(EntitySystem.Subscriptions, ComponentEventRefHandler&lt;TComp, TEvent&gt;, Boolean, Boolean, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Subscribe to an event, along with different relayed event wrappers, in one call.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SubscribeWithRelay&lt;TComp, TEvent&gt;(this EntitySystem.Subscriptions subs, ComponentEventRefHandler&lt;TComp, TEvent&gt; handler, bool baseEvent = true, bool inventory = true, bool held = true)
+    where TComp : IComponent</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntitySystem.Subscriptions</span></td>
+        <td><span class="parametername">subs</span></td>
+        <td><p>Subscriptions for the entity system we're subscribing on.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">ComponentEventRefHandler</span>&lt;TComp, TEvent&gt;</td>
+        <td><span class="parametername">handler</span></td>
+        <td><p>The event handler to be called for the event.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">baseEvent</span></td>
+        <td><p>Whether to subscribe the base event type.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">inventory</span></td>
+        <td><p>Whether to subscribe for <a class="xref" href="Content.Shared.Inventory.InventoryRelayedEvent-1.html">InventoryRelayedEvent&lt;TEvent&gt;</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">held</span></td>
+        <td><p>Whether to subscribe for <a class="xref" href="Content.Shared.Hands.HeldRelayedEvent-1.html">HeldRelayedEvent&lt;TEvent&gt;</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TComp</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TEvent</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Content_Shared_Inventory_RelaySubscriptionHelpers_SubscribeWithRelay__2_EntitySystem_Subscriptions_ComponentEventRefHandler___0___1__System_Boolean_System_Boolean_System_Boolean__seealso">See Also</h5>
+  <div class="seealso">
+      <div><span class="xref">Robust.Shared.GameObjects.EntitySystem.SubscribeLocalEvent``2(Robust.Shared.GameObjects.ComponentEventRefHandler{``0,``1},System.Type[],System.Type[])</span></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Inventory_RelaySubscriptionHelpers_SubscribeWithRelay__2_EntitySystem_Subscriptions_EntityEventRefHandler___0___1__System_Boolean_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20Content.Shared.Inventory.RelaySubscriptionHelpers.SubscribeWithRelay%60%602(EntitySystem.Subscriptions%2CEntityEventRefHandler%7B%60%600%2C%60%601%7D%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Inventory/RelaySubscriptionHelpers.cs/#L25">View Source</a>
+  </span>
+  <a id="Content_Shared_Inventory_RelaySubscriptionHelpers_SubscribeWithRelay_" data-uid="Content.Shared.Inventory.RelaySubscriptionHelpers.SubscribeWithRelay*"></a>
+  <h4 id="Content_Shared_Inventory_RelaySubscriptionHelpers_SubscribeWithRelay__2_EntitySystem_Subscriptions_EntityEventRefHandler___0___1__System_Boolean_System_Boolean_System_Boolean_" data-uid="Content.Shared.Inventory.RelaySubscriptionHelpers.SubscribeWithRelay``2(EntitySystem.Subscriptions,EntityEventRefHandler{``0,``1},System.Boolean,System.Boolean,System.Boolean)">SubscribeWithRelay&lt;TComp, TEvent&gt;(EntitySystem.Subscriptions, EntityEventRefHandler&lt;TComp, TEvent&gt;, Boolean, Boolean, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Subscribe to an event, along with different relayed event wrappers, in one call.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SubscribeWithRelay&lt;TComp, TEvent&gt;(this EntitySystem.Subscriptions subs, EntityEventRefHandler&lt;TComp, TEvent&gt; handler, bool baseEvent = true, bool inventory = true, bool held = true)
+    where TComp : IComponent</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntitySystem.Subscriptions</span></td>
+        <td><span class="parametername">subs</span></td>
+        <td><p>Subscriptions for the entity system we're subscribing on.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">EntityEventRefHandler</span>&lt;TComp, TEvent&gt;</td>
+        <td><span class="parametername">handler</span></td>
+        <td><p>The event handler to be called for the event.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">baseEvent</span></td>
+        <td><p>Whether to subscribe the base event type.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">inventory</span></td>
+        <td><p>Whether to subscribe for <a class="xref" href="Content.Shared.Inventory.InventoryRelayedEvent-1.html">InventoryRelayedEvent&lt;TEvent&gt;</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">held</span></td>
+        <td><p>Whether to subscribe for <a class="xref" href="Content.Shared.Hands.HeldRelayedEvent-1.html">HeldRelayedEvent&lt;TEvent&gt;</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TComp</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TEvent</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Content_Shared_Inventory_RelaySubscriptionHelpers_SubscribeWithRelay__2_EntitySystem_Subscriptions_EntityEventRefHandler___0___1__System_Boolean_System_Boolean_System_Boolean__seealso">See Also</h5>
+  <div class="seealso">
+      <div><span class="xref">Robust.Shared.GameObjects.EntitySystem.SubscribeLocalEvent``2(Robust.Shared.GameObjects.EntityEventRefHandler{``0,``1},System.Type[],System.Type[])</span></div>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Inventory_RelaySubscriptionHelpers.md&amp;value=---%0Auid%3A%20Content.Shared.Inventory.RelaySubscriptionHelpers%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Inventory/RelaySubscriptionHelpers.cs/#L14" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="toggle-mode">
+                <div class="icon">
+                  <i aria-hidden="true">☀</i>
+                </div>
+                <label class="switch">
+                  <input type="checkbox" id="switch-style">
+                  <span class="slider round"></span>
+                </label>
+                <div class="icon">
+                  <i aria-hidden="true">☾</i>
+                </div>
+              </div>
+          
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <h5>In This Article</h5>
+              <div></div>
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <div class="pull-left">
+              
+              <span>Generated by <strong>DocFX</strong></span>
+            </div>
+            <div class="toggle-mode pull-right visible-sm visible-xs">
+              <div class="icon">
+                <i aria-hidden="true">☀</i>
+              </div>
+              <label class="switch">
+                <input type="checkbox" id="switch-style-m">
+                <span class="slider round"></span>
+              </label>
+              <div class="icon">
+                <i aria-hidden="true">☾</i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="../../styles/toggle-theme.js"></script>
+      </footer>    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1078 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class BloodCultRiftComponent
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class BloodCultRiftComponent
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Content.Shared.BloodCult.Components.BloodCultRiftComponent">
+  
+  
+  <h1 id="Content_Shared_BloodCult_Components_BloodCultRiftComponent" data-uid="Content.Shared.BloodCult.Components.BloodCultRiftComponent" class="text-break">Class BloodCultRiftComponent
+  </h1>
+  <div class="markdown level0 summary"><p>Marks an entity as a Blood Cult reality rift that pulses Sanguine Perniculate.
+The final ritual requires cultists to chant on runes around this rift.
+This is a server-only component that tracks ritual state.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">Robust.Shared.GameObjects.Component</span></div>
+    <div class="level2"><span class="xref">BloodCultRiftComponent</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">Robust.Shared.GameObjects.IComponent</span></div>
+  </div>
+  <div class="inheritedMembers">
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Content.Shared.BloodCult.Components.html">Content.Shared.BloodCult.Components</a></h6>
+  <h6><strong>Assembly</strong>: Content.Shared.dll</h6>
+  <h5 id="Content_Shared_BloodCult_Components_BloodCultRiftComponent_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class BloodCultRiftComponent : Component, IComponent</code></pre>
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_BloodCult_Components_BloodCultRiftComponent_BloodPerPulse.md&amp;value=---%0Auid%3A%20Content.Shared.BloodCult.Components.BloodCultRiftComponent.BloodPerPulse%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/_Funkystation/BloodCult/Components/BloodCultRiftComponent.cs/#L36">View Source</a>
+  </span>
+  <h4 id="Content_Shared_BloodCult_Components_BloodCultRiftComponent_BloodPerPulse" data-uid="Content.Shared.BloodCult.Components.BloodCultRiftComponent.BloodPerPulse">BloodPerPulse</h4>
+  <div class="markdown level1 summary"><p>Amount of Sanguine Perniculate to add per pulse.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float BloodPerPulse</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_BloodCult_Components_BloodCultRiftComponent_ChantInterval.md&amp;value=---%0Auid%3A%20Content.Shared.BloodCult.Components.BloodCultRiftComponent.ChantInterval%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/_Funkystation/BloodCult/Components/BloodCultRiftComponent.cs/#L125">View Source</a>
+  </span>
+  <h4 id="Content_Shared_BloodCult_Components_BloodCultRiftComponent_ChantInterval" data-uid="Content.Shared.BloodCult.Components.BloodCultRiftComponent.ChantInterval">ChantInterval</h4>
+  <div class="markdown level1 summary"><p>Time between chants (in seconds).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float ChantInterval</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_BloodCult_Components_BloodCultRiftComponent_ChantsCompletedInCycle.md&amp;value=---%0Auid%3A%20Content.Shared.BloodCult.Components.BloodCultRiftComponent.ChantsCompletedInCycle%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/_Funkystation/BloodCult/Components/BloodCultRiftComponent.cs/#L151">View Source</a>
+  </span>
+  <h4 id="Content_Shared_BloodCult_Components_BloodCultRiftComponent_ChantsCompletedInCycle" data-uid="Content.Shared.BloodCult.Components.BloodCultRiftComponent.ChantsCompletedInCycle">ChantsCompletedInCycle</h4>
+  <div class="markdown level1 summary"><p>Chants completed in the current sacrifice cycle.
+Once 3 chants are completed, Nar'Sie is summoned.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int ChantsCompletedInCycle</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_BloodCult_Components_BloodCultRiftComponent_CurrentChantStep.md&amp;value=---%0Auid%3A%20Content.Shared.BloodCult.Components.BloodCultRiftComponent.CurrentChantStep%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/_Funkystation/BloodCult/Components/BloodCultRiftComponent.cs/#L101">View Source</a>
+  </span>
+  <h4 id="Content_Shared_BloodCult_Components_BloodCultRiftComponent_CurrentChantStep" data-uid="Content.Shared.BloodCult.Components.BloodCultRiftComponent.CurrentChantStep">CurrentChantStep</h4>
+  <div class="markdown level1 summary"><p>Current chant step in the final ritual.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int CurrentChantStep</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_BloodCult_Components_BloodCultRiftComponent_FinalSacrificeDone.md&amp;value=---%0Auid%3A%20Content.Shared.BloodCult.Components.BloodCultRiftComponent.FinalSacrificeDone%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/_Funkystation/BloodCult/Components/BloodCultRiftComponent.cs/#L94">View Source</a>
+  </span>
+  <h4 id="Content_Shared_BloodCult_Components_BloodCultRiftComponent_FinalSacrificeDone" data-uid="Content.Shared.BloodCult.Components.BloodCultRiftComponent.FinalSacrificeDone">FinalSacrificeDone</h4>
+  <div class="markdown level1 summary"><p>Whether the final sacrifice has already occurred.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool FinalSacrificeDone</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_BloodCult_Components_BloodCultRiftComponent_FinalSacrificePending.md&amp;value=---%0Auid%3A%20Content.Shared.BloodCult.Components.BloodCultRiftComponent.FinalSacrificePending%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/_Funkystation/BloodCult/Components/BloodCultRiftComponent.cs/#L88">View Source</a>
+  </span>
+  <h4 id="Content_Shared_BloodCult_Components_BloodCultRiftComponent_FinalSacrificePending" data-uid="Content.Shared.BloodCult.Components.BloodCultRiftComponent.FinalSacrificePending">FinalSacrificePending</h4>
+  <div class="markdown level1 summary"><p>Whether the final sacrifice event should trigger after the shake sequence completes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool FinalSacrificePending</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_BloodCult_Components_BloodCultRiftComponent_LastNotEnoughCultistsPopup.md&amp;value=---%0Auid%3A%20Content.Shared.BloodCult.Components.BloodCultRiftComponent.LastNotEnoughCultistsPopup%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/_Funkystation/BloodCult/Components/BloodCultRiftComponent.cs/#L137">View Source</a>
+  </span>
+  <h4 id="Content_Shared_BloodCult_Components_BloodCultRiftComponent_LastNotEnoughCultistsPopup" data-uid="Content.Shared.BloodCult.Components.BloodCultRiftComponent.LastNotEnoughCultistsPopup">LastNotEnoughCultistsPopup</h4>
+  <div class="markdown level1 summary"><p>When the &quot;not enough cultists&quot; popup was last shown, to prevent spam.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TimeSpan LastNotEnoughCultistsPopup</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TimeSpan</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_BloodCult_Components_BloodCultRiftComponent_NextShakeIndex.md&amp;value=---%0Auid%3A%20Content.Shared.BloodCult.Components.BloodCultRiftComponent.NextShakeIndex%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/_Funkystation/BloodCult/Components/BloodCultRiftComponent.cs/#L76">View Source</a>
+  </span>
+  <h4 id="Content_Shared_BloodCult_Components_BloodCultRiftComponent_NextShakeIndex" data-uid="Content.Shared.BloodCult.Components.BloodCultRiftComponent.NextShakeIndex">NextShakeIndex</h4>
+  <div class="markdown level1 summary"><p>Index into <a class="xref" href="Content.Shared.BloodCult.Components.BloodCultRiftComponent.html#Content_Shared_BloodCult_Components_BloodCultRiftComponent_ShakeDelays">ShakeDelays</a> for the next shake.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int NextShakeIndex</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_BloodCult_Components_BloodCultRiftComponent_OfferingRunes.md&amp;value=---%0Auid%3A%20Content.Shared.BloodCult.Components.BloodCultRiftComponent.OfferingRunes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/_Funkystation/BloodCult/Components/BloodCultRiftComponent.cs/#L48">View Source</a>
+  </span>
+  <h4 id="Content_Shared_BloodCult_Components_BloodCultRiftComponent_OfferingRunes" data-uid="Content.Shared.BloodCult.Components.BloodCultRiftComponent.OfferingRunes">OfferingRunes</h4>
+  <div class="markdown level1 summary"><p>Offering runes positioned around the anomaly for sacrifices.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;EntityUid&gt; OfferingRunes</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">List</span>&lt;<span class="xref">Robust.Shared.GameObjects.EntityUid</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_BloodCult_Components_BloodCultRiftComponent_PendingSacrifice.md&amp;value=---%0Auid%3A%20Content.Shared.BloodCult.Components.BloodCultRiftComponent.PendingSacrifice%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/_Funkystation/BloodCult/Components/BloodCultRiftComponent.cs/#L144">View Source</a>
+  </span>
+  <h4 id="Content_Shared_BloodCult_Components_BloodCultRiftComponent_PendingSacrifice" data-uid="Content.Shared.BloodCult.Components.BloodCultRiftComponent.PendingSacrifice">PendingSacrifice</h4>
+  <div class="markdown level1 summary"><p>The cultist earmarked for the next sacrifice cycle.
+This tracks who leads the chant.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public EntityUid? PendingSacrifice</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">Robust.Shared.GameObjects.EntityUid</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_BloodCult_Components_BloodCultRiftComponent_PulseInterval.md&amp;value=---%0Auid%3A%20Content.Shared.BloodCult.Components.BloodCultRiftComponent.PulseInterval%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/_Funkystation/BloodCult/Components/BloodCultRiftComponent.cs/#L24">View Source</a>
+  </span>
+  <h4 id="Content_Shared_BloodCult_Components_BloodCultRiftComponent_PulseInterval" data-uid="Content.Shared.BloodCult.Components.BloodCultRiftComponent.PulseInterval">PulseInterval</h4>
+  <div class="markdown level1 summary"><p>Time between pulses (in seconds).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float PulseInterval</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_BloodCult_Components_BloodCultRiftComponent_RequiredCultistsForChant.md&amp;value=---%0Auid%3A%20Content.Shared.BloodCult.Components.BloodCultRiftComponent.RequiredCultistsForChant%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/_Funkystation/BloodCult/Components/BloodCultRiftComponent.cs/#L170">View Source</a>
+  </span>
+  <h4 id="Content_Shared_BloodCult_Components_BloodCultRiftComponent_RequiredCultistsForChant" data-uid="Content.Shared.BloodCult.Components.BloodCultRiftComponent.RequiredCultistsForChant">RequiredCultistsForChant</h4>
+  <div class="markdown level1 summary"><p>Minimum number of chanting cultists required to sustain the ritual.
+This number is reduced by 1 every time a cultist is killed during the ritual.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int RequiredCultistsForChant</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_BloodCult_Components_BloodCultRiftComponent_RequiredSacrifices.md&amp;value=---%0Auid%3A%20Content.Shared.BloodCult.Components.BloodCultRiftComponent.RequiredSacrifices%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/_Funkystation/BloodCult/Components/BloodCultRiftComponent.cs/#L107">View Source</a>
+  </span>
+  <h4 id="Content_Shared_BloodCult_Components_BloodCultRiftComponent_RequiredSacrifices" data-uid="Content.Shared.BloodCult.Components.BloodCultRiftComponent.RequiredSacrifices">RequiredSacrifices</h4>
+  <div class="markdown level1 summary"><p>Total chant steps needed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int RequiredSacrifices</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_BloodCult_Components_BloodCultRiftComponent_RitualInProgress.md&amp;value=---%0Auid%3A%20Content.Shared.BloodCult.Components.BloodCultRiftComponent.RitualInProgress%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/_Funkystation/BloodCult/Components/BloodCultRiftComponent.cs/#L64">View Source</a>
+  </span>
+  <h4 id="Content_Shared_BloodCult_Components_BloodCultRiftComponent_RitualInProgress" data-uid="Content.Shared.BloodCult.Components.BloodCultRiftComponent.RitualInProgress">RitualInProgress</h4>
+  <div class="markdown level1 summary"><p>Is the final ritual currently in progress?</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool RitualInProgress</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_BloodCult_Components_BloodCultRiftComponent_RitualMusic.md&amp;value=---%0Auid%3A%20Content.Shared.BloodCult.Components.BloodCultRiftComponent.RitualMusic%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/_Funkystation/BloodCult/Components/BloodCultRiftComponent.cs/#L157">View Source</a>
+  </span>
+  <h4 id="Content_Shared_BloodCult_Components_BloodCultRiftComponent_RitualMusic" data-uid="Content.Shared.BloodCult.Components.BloodCultRiftComponent.RitualMusic">RitualMusic</h4>
+  <div class="markdown level1 summary"><p>Music played during the final ritual.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SoundSpecifier RitualMusic</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Audio.SoundSpecifier</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_BloodCult_Components_BloodCultRiftComponent_RitualMusicDuration.md&amp;value=---%0Auid%3A%20Content.Shared.BloodCult.Components.BloodCultRiftComponent.RitualMusicDuration%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/_Funkystation/BloodCult/Components/BloodCultRiftComponent.cs/#L194">View Source</a>
+  </span>
+  <h4 id="Content_Shared_BloodCult_Components_BloodCultRiftComponent_RitualMusicDuration" data-uid="Content.Shared.BloodCult.Components.BloodCultRiftComponent.RitualMusicDuration">RitualMusicDuration</h4>
+  <div class="markdown level1 summary"><p>Duration of the ritual music in seconds, calculated when ritual starts.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float RitualMusicDuration</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_BloodCult_Components_BloodCultRiftComponent_RitualMusicPlaying.md&amp;value=---%0Auid%3A%20Content.Shared.BloodCult.Components.BloodCultRiftComponent.RitualMusicPlaying%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/_Funkystation/BloodCult/Components/BloodCultRiftComponent.cs/#L163">View Source</a>
+  </span>
+  <h4 id="Content_Shared_BloodCult_Components_BloodCultRiftComponent_RitualMusicPlaying" data-uid="Content.Shared.BloodCult.Components.BloodCultRiftComponent.RitualMusicPlaying">RitualMusicPlaying</h4>
+  <div class="markdown level1 summary"><p>Tracks whether the ritual music is currently active.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool RitualMusicPlaying</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_BloodCult_Components_BloodCultRiftComponent_RitualStartTime.md&amp;value=---%0Auid%3A%20Content.Shared.BloodCult.Components.BloodCultRiftComponent.RitualStartTime%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/_Funkystation/BloodCult/Components/BloodCultRiftComponent.cs/#L176">View Source</a>
+  </span>
+  <h4 id="Content_Shared_BloodCult_Components_BloodCultRiftComponent_RitualStartTime" data-uid="Content.Shared.BloodCult.Components.BloodCultRiftComponent.RitualStartTime">RitualStartTime</h4>
+  <div class="markdown level1 summary"><p>Time when the ritual started, used to calculate elapsed time for music-synced sacrifices.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TimeSpan RitualStartTime</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TimeSpan</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_BloodCult_Components_BloodCultRiftComponent_RuneRefreshInterval.md&amp;value=---%0Auid%3A%20Content.Shared.BloodCult.Components.BloodCultRiftComponent.RuneRefreshInterval%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/_Funkystation/BloodCult/Components/BloodCultRiftComponent.cs/#L53">View Source</a>
+  </span>
+  <h4 id="Content_Shared_BloodCult_Components_BloodCultRiftComponent_RuneRefreshInterval" data-uid="Content.Shared.BloodCult.Components.BloodCultRiftComponent.RuneRefreshInterval">RuneRefreshInterval</h4>
+  <div class="markdown level1 summary"><p>How often to refresh rune tracking.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float RuneRefreshInterval</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_BloodCult_Components_BloodCultRiftComponent_SacrificesCompleted.md&amp;value=---%0Auid%3A%20Content.Shared.BloodCult.Components.BloodCultRiftComponent.SacrificesCompleted%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/_Funkystation/BloodCult/Components/BloodCultRiftComponent.cs/#L113">View Source</a>
+  </span>
+  <h4 id="Content_Shared_BloodCult_Components_BloodCultRiftComponent_SacrificesCompleted" data-uid="Content.Shared.BloodCult.Components.BloodCultRiftComponent.SacrificesCompleted">SacrificesCompleted</h4>
+  <div class="markdown level1 summary"><p>Number of sacrifices completed during the final ritual.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int SacrificesCompleted</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_BloodCult_Components_BloodCultRiftComponent_ShakeDelays.md&amp;value=---%0Auid%3A%20Content.Shared.BloodCult.Components.BloodCultRiftComponent.ShakeDelays%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/_Funkystation/BloodCult/Components/BloodCultRiftComponent.cs/#L70">View Source</a>
+  </span>
+  <h4 id="Content_Shared_BloodCult_Components_BloodCultRiftComponent_ShakeDelays" data-uid="Content.Shared.BloodCult.Components.BloodCultRiftComponent.ShakeDelays">ShakeDelays</h4>
+  <div class="markdown level1 summary"><p>Sequence of shakes remaining to play during the final ritual.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;float&gt; ShakeDelays</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">List</span>&lt;<span class="xref">System.Single</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_BloodCult_Components_BloodCultRiftComponent_SummoningRunes.md&amp;value=---%0Auid%3A%20Content.Shared.BloodCult.Components.BloodCultRiftComponent.SummoningRunes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/_Funkystation/BloodCult/Components/BloodCultRiftComponent.cs/#L42">View Source</a>
+  </span>
+  <h4 id="Content_Shared_BloodCult_Components_BloodCultRiftComponent_SummoningRunes" data-uid="Content.Shared.BloodCult.Components.BloodCultRiftComponent.SummoningRunes">SummoningRunes</h4>
+  <div class="markdown level1 summary"><p>The 3 summoning runes associated with this rift.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;EntityUid&gt; SummoningRunes</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">List</span>&lt;<span class="xref">Robust.Shared.GameObjects.EntityUid</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_BloodCult_Components_BloodCultRiftComponent_TimeSinceLastSacrifice.md&amp;value=---%0Auid%3A%20Content.Shared.BloodCult.Components.BloodCultRiftComponent.TimeSinceLastSacrifice%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/_Funkystation/BloodCult/Components/BloodCultRiftComponent.cs/#L201">View Source</a>
+  </span>
+  <h4 id="Content_Shared_BloodCult_Components_BloodCultRiftComponent_TimeSinceLastSacrifice" data-uid="Content.Shared.BloodCult.Components.BloodCultRiftComponent.TimeSinceLastSacrifice">TimeSinceLastSacrifice</h4>
+  <div class="markdown level1 summary"><p>Time when the last sacrifice was performed.
+Used to enforce a minimum 5-second cooldown between sacrifices.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TimeSpan TimeSinceLastSacrifice</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TimeSpan</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_BloodCult_Components_BloodCultRiftComponent_TimeUntilNextChant.md&amp;value=---%0Auid%3A%20Content.Shared.BloodCult.Components.BloodCultRiftComponent.TimeUntilNextChant%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/_Funkystation/BloodCult/Components/BloodCultRiftComponent.cs/#L131">View Source</a>
+  </span>
+  <h4 id="Content_Shared_BloodCult_Components_BloodCultRiftComponent_TimeUntilNextChant" data-uid="Content.Shared.BloodCult.Components.BloodCultRiftComponent.TimeUntilNextChant">TimeUntilNextChant</h4>
+  <div class="markdown level1 summary"><p>Time until next chant.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float TimeUntilNextChant</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_BloodCult_Components_BloodCultRiftComponent_TimeUntilNextNarsieChant.md&amp;value=---%0Auid%3A%20Content.Shared.BloodCult.Components.BloodCultRiftComponent.TimeUntilNextNarsieChant%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/_Funkystation/BloodCult/Components/BloodCultRiftComponent.cs/#L182">View Source</a>
+  </span>
+  <h4 id="Content_Shared_BloodCult_Components_BloodCultRiftComponent_TimeUntilNextNarsieChant" data-uid="Content.Shared.BloodCult.Components.BloodCultRiftComponent.TimeUntilNextNarsieChant">TimeUntilNextNarsieChant</h4>
+  <div class="markdown level1 summary"><p>Time until the next &quot;Nar'Sie&quot; chant from non-sacrifice cultists (every 3 seconds).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float TimeUntilNextNarsieChant</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_BloodCult_Components_BloodCultRiftComponent_TimeUntilNextPulse.md&amp;value=---%0Auid%3A%20Content.Shared.BloodCult.Components.BloodCultRiftComponent.TimeUntilNextPulse%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/_Funkystation/BloodCult/Components/BloodCultRiftComponent.cs/#L30">View Source</a>
+  </span>
+  <h4 id="Content_Shared_BloodCult_Components_BloodCultRiftComponent_TimeUntilNextPulse" data-uid="Content.Shared.BloodCult.Components.BloodCultRiftComponent.TimeUntilNextPulse">TimeUntilNextPulse</h4>
+  <div class="markdown level1 summary"><p>Time until next pulse.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float TimeUntilNextPulse</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_BloodCult_Components_BloodCultRiftComponent_TimeUntilNextShake.md&amp;value=---%0Auid%3A%20Content.Shared.BloodCult.Components.BloodCultRiftComponent.TimeUntilNextShake%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/_Funkystation/BloodCult/Components/BloodCultRiftComponent.cs/#L82">View Source</a>
+  </span>
+  <h4 id="Content_Shared_BloodCult_Components_BloodCultRiftComponent_TimeUntilNextShake" data-uid="Content.Shared.BloodCult.Components.BloodCultRiftComponent.TimeUntilNextShake">TimeUntilNextShake</h4>
+  <div class="markdown level1 summary"><p>Time remaining until the next scheduled shake.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float TimeUntilNextShake</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_BloodCult_Components_BloodCultRiftComponent_TimeUntilNextShakeForChant.md&amp;value=---%0Auid%3A%20Content.Shared.BloodCult.Components.BloodCultRiftComponent.TimeUntilNextShakeForChant%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/_Funkystation/BloodCult/Components/BloodCultRiftComponent.cs/#L188">View Source</a>
+  </span>
+  <h4 id="Content_Shared_BloodCult_Components_BloodCultRiftComponent_TimeUntilNextShakeForChant" data-uid="Content.Shared.BloodCult.Components.BloodCultRiftComponent.TimeUntilNextShakeForChant">TimeUntilNextShakeForChant</h4>
+  <div class="markdown level1 summary"><p>Time until the next shake effect, used to sync longer phrase chanting.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float TimeUntilNextShakeForChant</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_BloodCult_Components_BloodCultRiftComponent_TimeUntilRuneRefresh.md&amp;value=---%0Auid%3A%20Content.Shared.BloodCult.Components.BloodCultRiftComponent.TimeUntilRuneRefresh%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/_Funkystation/BloodCult/Components/BloodCultRiftComponent.cs/#L58">View Source</a>
+  </span>
+  <h4 id="Content_Shared_BloodCult_Components_BloodCultRiftComponent_TimeUntilRuneRefresh" data-uid="Content.Shared.BloodCult.Components.BloodCultRiftComponent.TimeUntilRuneRefresh">TimeUntilRuneRefresh</h4>
+  <div class="markdown level1 summary"><p>Time remaining until next rune refresh.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float TimeUntilRuneRefresh</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_BloodCult_Components_BloodCultRiftComponent_TotalChantSteps.md&amp;value=---%0Auid%3A%20Content.Shared.BloodCult.Components.BloodCultRiftComponent.TotalChantSteps%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/_Funkystation/BloodCult/Components/BloodCultRiftComponent.cs/#L119">View Source</a>
+  </span>
+  <h4 id="Content_Shared_BloodCult_Components_BloodCultRiftComponent_TotalChantSteps" data-uid="Content.Shared.BloodCult.Components.BloodCultRiftComponent.TotalChantSteps">TotalChantSteps</h4>
+  <div class="markdown level1 summary"><p>Total chant steps needed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int TotalChantSteps</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">Robust.Shared.GameObjects.IComponent</span>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_BloodCult_Components_BloodCultRiftComponent.md&amp;value=---%0Auid%3A%20Content.Shared.BloodCult.Components.BloodCultRiftComponent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/_Funkystation/BloodCult/Components/BloodCultRiftComponent.cs/#L17" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="toggle-mode">
+                <div class="icon">
+                  <i aria-hidden="true">☀</i>
+                </div>
+                <label class="switch">
+                  <input type="checkbox" id="switch-style">
+                  <span class="slider round"></span>
+                </label>
+                <div class="icon">
+                  <i aria-hidden="true">☾</i>
+                </div>
+              </div>
+          
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <h5>In This Article</h5>
+              <div></div>
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <div class="pull-left">
+              
+              <span>Generated by <strong>DocFX</strong></span>
+            </div>
+            <div class="toggle-mode pull-right visible-sm visible-xs">
+              <div class="icon">
+                <i aria-hidden="true">☀</i>
+              </div>
+              <label class="switch">
+                <input type="checkbox" id="switch-style-m">
+                <span class="slider round"></span>
+              </label>
+              <div class="icon">
+                <i aria-hidden="true">☾</i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="../../styles/toggle-theme.js"></script>
+      </footer>    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

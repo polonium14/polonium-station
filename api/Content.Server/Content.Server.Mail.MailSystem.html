@@ -1,0 +1,793 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class MailSystem
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class MailSystem
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Content.Server.Mail.MailSystem">
+  
+  
+  <h1 id="Content_Server_Mail_MailSystem" data-uid="Content.Server.Mail.MailSystem" class="text-break">Class MailSystem
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">MailSystem</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Content.Server.Mail.html">Content.Server.Mail</a></h6>
+  <h6><strong>Assembly</strong>: Content.Server.dll</h6>
+  <h5 id="Content_Server_Mail_MailSystem_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class MailSystem : EntitySystem</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_Mail_MailSystem_GetMailRecipientCandidates_EntityUid_.md&amp;value=---%0Auid%3A%20Content.Server.Mail.MailSystem.GetMailRecipientCandidates(EntityUid)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/Nyanotrasen/Mail/MailSystem.cs/#L655">View Source</a>
+  </span>
+  <a id="Content_Server_Mail_MailSystem_GetMailRecipientCandidates_" data-uid="Content.Server.Mail.MailSystem.GetMailRecipientCandidates*"></a>
+  <h4 id="Content_Server_Mail_MailSystem_GetMailRecipientCandidates_EntityUid_" data-uid="Content.Server.Mail.MailSystem.GetMailRecipientCandidates(EntityUid)">GetMailRecipientCandidates(EntityUid)</h4>
+  <div class="markdown level1 summary"><p>Get the list of valid mail recipients for a mail teleporter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;MailRecipient&gt; GetMailRecipientCandidates(EntityUid uid)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">uid</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">List</span>&lt;<a class="xref" href="Content.Server.Mail.MailRecipient.html">MailRecipient</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_Mail_MailSystem_GetUndeliveredParcelCount_EntityUid_.md&amp;value=---%0Auid%3A%20Content.Server.Mail.MailSystem.GetUndeliveredParcelCount(EntityUid)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/Nyanotrasen/Mail/MailSystem.cs/#L596">View Source</a>
+  </span>
+  <a id="Content_Server_Mail_MailSystem_GetUndeliveredParcelCount_" data-uid="Content.Server.Mail.MailSystem.GetUndeliveredParcelCount*"></a>
+  <h4 id="Content_Server_Mail_MailSystem_GetUndeliveredParcelCount_EntityUid_" data-uid="Content.Server.Mail.MailSystem.GetUndeliveredParcelCount(EntityUid)">GetUndeliveredParcelCount(EntityUid)</h4>
+  <div class="markdown level1 summary"><p>Return how many parcels are waiting for delivery.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public uint GetUndeliveredParcelCount(EntityUid uid)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">uid</span></td>
+        <td><p>The mail teleporter to check.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_Mail_MailSystem_GetUndeliveredParcels_EntityUid_.md&amp;value=---%0Auid%3A%20Content.Server.Mail.MailSystem.GetUndeliveredParcels(EntityUid)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/Nyanotrasen/Mail/MailSystem.cs/#L578">View Source</a>
+  </span>
+  <a id="Content_Server_Mail_MailSystem_GetUndeliveredParcels_" data-uid="Content.Server.Mail.MailSystem.GetUndeliveredParcels*"></a>
+  <h4 id="Content_Server_Mail_MailSystem_GetUndeliveredParcels_EntityUid_" data-uid="Content.Server.Mail.MailSystem.GetUndeliveredParcels(EntityUid)">GetUndeliveredParcels(EntityUid)</h4>
+  <div class="markdown level1 summary"><p>Return the parcels waiting for delivery.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;EntityUid&gt; GetUndeliveredParcels(EntityUid uid)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">uid</span></td>
+        <td><p>The mail teleporter to check.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">List</span>&lt;<span class="xref">EntityUid</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_Mail_MailSystem_Initialize.md&amp;value=---%0Auid%3A%20Content.Server.Mail.MailSystem.Initialize%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/Nyanotrasen/Mail/MailSystem.cs/#L102">View Source</a>
+  </span>
+  <a id="Content_Server_Mail_MailSystem_Initialize_" data-uid="Content.Server.Mail.MailSystem.Initialize*"></a>
+  <h4 id="Content_Server_Mail_MailSystem_Initialize" data-uid="Content.Server.Mail.MailSystem.Initialize">Initialize()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Initialize()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_Mail_MailSystem_IsEntityFragile_EntityUid_System_Int32_.md&amp;value=---%0Auid%3A%20Content.Server.Mail.MailSystem.IsEntityFragile(EntityUid%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/Nyanotrasen/Mail/MailSystem.cs/#L406">View Source</a>
+  </span>
+  <a id="Content_Server_Mail_MailSystem_IsEntityFragile_" data-uid="Content.Server.Mail.MailSystem.IsEntityFragile*"></a>
+  <h4 id="Content_Server_Mail_MailSystem_IsEntityFragile_EntityUid_System_Int32_" data-uid="Content.Server.Mail.MailSystem.IsEntityFragile(EntityUid,System.Int32)">IsEntityFragile(EntityUid, Int32)</h4>
+  <div class="markdown level1 summary"><p>Returns true if the given entity is considered fragile for delivery.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsEntityFragile(EntityUid uid, int fragileDamageThreshold)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">uid</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">fragileDamageThreshold</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_Mail_MailSystem_OpenMail_EntityUid_Content_Server_Mail_Components_MailComponent_System_Nullable_EntityUid__.md&amp;value=---%0Auid%3A%20Content.Server.Mail.MailSystem.OpenMail(EntityUid%2CContent.Server.Mail.Components.MailComponent%2CSystem.Nullable%7BEntityUid%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/Nyanotrasen/Mail/MailSystem.cs/#L754">View Source</a>
+  </span>
+  <a id="Content_Server_Mail_MailSystem_OpenMail_" data-uid="Content.Server.Mail.MailSystem.OpenMail*"></a>
+  <h4 id="Content_Server_Mail_MailSystem_OpenMail_EntityUid_Content_Server_Mail_Components_MailComponent_System_Nullable_EntityUid__" data-uid="Content.Server.Mail.MailSystem.OpenMail(EntityUid,Content.Server.Mail.Components.MailComponent,System.Nullable{EntityUid})">OpenMail(EntityUid, MailComponent, Nullable&lt;EntityUid&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OpenMail(EntityUid uid, MailComponent component = null, EntityUid? user = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">uid</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Content.Server.Mail.Components.MailComponent.html">MailComponent</a></td>
+        <td><span class="parametername">component</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">EntityUid</span>&gt;</td>
+        <td><span class="parametername">user</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_Mail_MailSystem_PenalizeStationFailedDelivery_EntityUid_Content_Server_Mail_Components_MailComponent_System_String_.md&amp;value=---%0Auid%3A%20Content.Server.Mail.MailSystem.PenalizeStationFailedDelivery(EntityUid%2CContent.Server.Mail.Components.MailComponent%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/Nyanotrasen/Mail/MailSystem.cs/#L308">View Source</a>
+  </span>
+  <a id="Content_Server_Mail_MailSystem_PenalizeStationFailedDelivery_" data-uid="Content.Server.Mail.MailSystem.PenalizeStationFailedDelivery*"></a>
+  <h4 id="Content_Server_Mail_MailSystem_PenalizeStationFailedDelivery_EntityUid_Content_Server_Mail_Components_MailComponent_System_String_" data-uid="Content.Server.Mail.MailSystem.PenalizeStationFailedDelivery(EntityUid,Content.Server.Mail.Components.MailComponent,System.String)">PenalizeStationFailedDelivery(EntityUid, MailComponent, String)</h4>
+  <div class="markdown level1 summary"><p>Penalize a station for a failed delivery.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void PenalizeStationFailedDelivery(EntityUid uid, MailComponent component, string localizationString)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">uid</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Content.Server.Mail.Components.MailComponent.html">MailComponent</a></td>
+        <td><span class="parametername">component</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">localizationString</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Content_Server_Mail_MailSystem_PenalizeStationFailedDelivery_EntityUid_Content_Server_Mail_Components_MailComponent_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This will mark a parcel as no longer being profitable, which will
+prevent multiple failures on different conditions for the same
+delivery.</p>
+<p>The standard penalization is breaking the anti-tamper lock,
+but this allows a delivery to fail for other reasons too
+while having a generic function to handle different messages.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_Mail_MailSystem_SetupMail_EntityUid_Content_Server_Mail_Components_MailTeleporterComponent_Content_Server_Mail_MailRecipient_.md&amp;value=---%0Auid%3A%20Content.Server.Mail.MailSystem.SetupMail(EntityUid%2CContent.Server.Mail.Components.MailTeleporterComponent%2CContent.Server.Mail.MailRecipient)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/Nyanotrasen/Mail/MailSystem.cs/#L491">View Source</a>
+  </span>
+  <a id="Content_Server_Mail_MailSystem_SetupMail_" data-uid="Content.Server.Mail.MailSystem.SetupMail*"></a>
+  <h4 id="Content_Server_Mail_MailSystem_SetupMail_EntityUid_Content_Server_Mail_Components_MailTeleporterComponent_Content_Server_Mail_MailRecipient_" data-uid="Content.Server.Mail.MailSystem.SetupMail(EntityUid,Content.Server.Mail.Components.MailTeleporterComponent,Content.Server.Mail.MailRecipient)">SetupMail(EntityUid, MailTeleporterComponent, MailRecipient)</h4>
+  <div class="markdown level1 summary"><p>Handle all the gritty details particular to a new mail entity.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetupMail(EntityUid uid, MailTeleporterComponent component, MailRecipient recipient)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">uid</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Content.Server.Mail.Components.MailTeleporterComponent.html">MailTeleporterComponent</a></td>
+        <td><span class="parametername">component</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Content.Server.Mail.MailRecipient.html">MailRecipient</a></td>
+        <td><span class="parametername">recipient</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Content_Server_Mail_MailSystem_SetupMail_EntityUid_Content_Server_Mail_Components_MailTeleporterComponent_Content_Server_Mail_MailRecipient__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This is separate mostly so the unit tests can get to it.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_Mail_MailSystem_SpawnMail_EntityUid_Content_Server_Mail_Components_MailTeleporterComponent_.md&amp;value=---%0Auid%3A%20Content.Server.Mail.MailSystem.SpawnMail(EntityUid%2CContent.Server.Mail.Components.MailTeleporterComponent)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/Nyanotrasen/Mail/MailSystem.cs/#L675">View Source</a>
+  </span>
+  <a id="Content_Server_Mail_MailSystem_SpawnMail_" data-uid="Content.Server.Mail.MailSystem.SpawnMail*"></a>
+  <h4 id="Content_Server_Mail_MailSystem_SpawnMail_EntityUid_Content_Server_Mail_Components_MailTeleporterComponent_" data-uid="Content.Server.Mail.MailSystem.SpawnMail(EntityUid,Content.Server.Mail.Components.MailTeleporterComponent)">SpawnMail(EntityUid, MailTeleporterComponent)</h4>
+  <div class="markdown level1 summary"><p>Handle the spawning of all the mail for a mail teleporter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SpawnMail(EntityUid uid, MailTeleporterComponent component = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityUid</span></td>
+        <td><span class="parametername">uid</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Content.Server.Mail.Components.MailTeleporterComponent.html">MailTeleporterComponent</a></td>
+        <td><span class="parametername">component</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_Mail_MailSystem_TryGetMailRecipientForReceiver_Content_Server_Mail_Components_MailReceiverComponent_System_Nullable_Content_Server_Mail_MailRecipient___.md&amp;value=---%0Auid%3A%20Content.Server.Mail.MailSystem.TryGetMailRecipientForReceiver(Content.Server.Mail.Components.MailReceiverComponent%2CSystem.Nullable%7BContent.Server.Mail.MailRecipient%7D%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/Nyanotrasen/Mail/MailSystem.cs/#L622">View Source</a>
+  </span>
+  <a id="Content_Server_Mail_MailSystem_TryGetMailRecipientForReceiver_" data-uid="Content.Server.Mail.MailSystem.TryGetMailRecipientForReceiver*"></a>
+  <h4 id="Content_Server_Mail_MailSystem_TryGetMailRecipientForReceiver_Content_Server_Mail_Components_MailReceiverComponent_System_Nullable_Content_Server_Mail_MailRecipient___" data-uid="Content.Server.Mail.MailSystem.TryGetMailRecipientForReceiver(Content.Server.Mail.Components.MailReceiverComponent,System.Nullable{Content.Server.Mail.MailRecipient}@)">TryGetMailRecipientForReceiver(MailReceiverComponent, out Nullable&lt;MailRecipient&gt;)</h4>
+  <div class="markdown level1 summary"><p>Try to construct a recipient struct for a mail parcel based on a receiver.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryGetMailRecipientForReceiver(MailReceiverComponent receiver, out MailRecipient? recipient)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Content.Server.Mail.Components.MailReceiverComponent.html">MailReceiverComponent</a></td>
+        <td><span class="parametername">receiver</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<a class="xref" href="Content.Server.Mail.MailRecipient.html">MailRecipient</a>&gt;</td>
+        <td><span class="parametername">recipient</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_Mail_MailSystem_TryGetMailTeleporterForReceiver_Content_Server_Mail_Components_MailReceiverComponent_Content_Server_Mail_Components_MailTeleporterComponent__.md&amp;value=---%0Auid%3A%20Content.Server.Mail.MailSystem.TryGetMailTeleporterForReceiver(Content.Server.Mail.Components.MailReceiverComponent%2CContent.Server.Mail.Components.MailTeleporterComponent%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/Nyanotrasen/Mail/MailSystem.cs/#L604">View Source</a>
+  </span>
+  <a id="Content_Server_Mail_MailSystem_TryGetMailTeleporterForReceiver_" data-uid="Content.Server.Mail.MailSystem.TryGetMailTeleporterForReceiver*"></a>
+  <h4 id="Content_Server_Mail_MailSystem_TryGetMailTeleporterForReceiver_Content_Server_Mail_Components_MailReceiverComponent_Content_Server_Mail_Components_MailTeleporterComponent__" data-uid="Content.Server.Mail.MailSystem.TryGetMailTeleporterForReceiver(Content.Server.Mail.Components.MailReceiverComponent,Content.Server.Mail.Components.MailTeleporterComponent@)">TryGetMailTeleporterForReceiver(MailReceiverComponent, out MailTeleporterComponent)</h4>
+  <div class="markdown level1 summary"><p>Try to match a mail receiver to a mail teleporter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryGetMailTeleporterForReceiver(MailReceiverComponent receiver, out MailTeleporterComponent teleporterComponent)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Content.Server.Mail.Components.MailReceiverComponent.html">MailReceiverComponent</a></td>
+        <td><span class="parametername">receiver</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Content.Server.Mail.Components.MailTeleporterComponent.html">MailTeleporterComponent</a></td>
+        <td><span class="parametername">teleporterComponent</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_Mail_MailSystem_TryMatchJobTitleToDepartment_System_String_System_Nullable_System_String___.md&amp;value=---%0Auid%3A%20Content.Server.Mail.MailSystem.TryMatchJobTitleToDepartment(System.String%2CSystem.Nullable%7BSystem.String%7D%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/Nyanotrasen/Mail/MailSystem.cs/#L451">View Source</a>
+  </span>
+  <a id="Content_Server_Mail_MailSystem_TryMatchJobTitleToDepartment_" data-uid="Content.Server.Mail.MailSystem.TryMatchJobTitleToDepartment*"></a>
+  <h4 id="Content_Server_Mail_MailSystem_TryMatchJobTitleToDepartment_System_String_System_Nullable_System_String___" data-uid="Content.Server.Mail.MailSystem.TryMatchJobTitleToDepartment(System.String,System.Nullable{System.String}@)">TryMatchJobTitleToDepartment(String, out Nullable&lt;String&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryMatchJobTitleToDepartment(string jobTitle, out string? jobDepartment)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">jobTitle</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">jobDepartment</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_Mail_MailSystem_TryMatchJobTitleToPrototype_System_String_Content_Shared_Roles_JobPrototype__.md&amp;value=---%0Auid%3A%20Content.Server.Mail.MailSystem.TryMatchJobTitleToPrototype(System.String%2CContent.Shared.Roles.JobPrototype%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/Nyanotrasen/Mail/MailSystem.cs/#L470">View Source</a>
+  </span>
+  <a id="Content_Server_Mail_MailSystem_TryMatchJobTitleToPrototype_" data-uid="Content.Server.Mail.MailSystem.TryMatchJobTitleToPrototype*"></a>
+  <h4 id="Content_Server_Mail_MailSystem_TryMatchJobTitleToPrototype_System_String_Content_Shared_Roles_JobPrototype__" data-uid="Content.Server.Mail.MailSystem.TryMatchJobTitleToPrototype(System.String,Content.Shared.Roles.JobPrototype@)">TryMatchJobTitleToPrototype(String, out JobPrototype)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryMatchJobTitleToPrototype(string jobTitle, out JobPrototype jobPrototype)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">jobTitle</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="../Content.Shared/Content.Shared.Roles.JobPrototype.html">JobPrototype</a></td>
+        <td><span class="parametername">jobPrototype</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_Mail_MailSystem_Update_System_Single_.md&amp;value=---%0Auid%3A%20Content.Server.Mail.MailSystem.Update(System.Single)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/Nyanotrasen/Mail/MailSystem.cs/#L120">View Source</a>
+  </span>
+  <a id="Content_Server_Mail_MailSystem_Update_" data-uid="Content.Server.Mail.MailSystem.Update*"></a>
+  <h4 id="Content_Server_Mail_MailSystem_Update_System_Single_" data-uid="Content.Server.Mail.MailSystem.Update(System.Single)">Update(Single)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Update(float frameTime)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">frameTime</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Server_Mail_MailSystem.md&amp;value=---%0Auid%3A%20Content.Server.Mail.MailSystem%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Server/Nyanotrasen/Mail/MailSystem.cs/#L74" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="toggle-mode">
+                <div class="icon">
+                  <i aria-hidden="true">☀</i>
+                </div>
+                <label class="switch">
+                  <input type="checkbox" id="switch-style">
+                  <span class="slider round"></span>
+                </label>
+                <div class="icon">
+                  <i aria-hidden="true">☾</i>
+                </div>
+              </div>
+          
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <h5>In This Article</h5>
+              <div></div>
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <div class="pull-left">
+              
+              <span>Generated by <strong>DocFX</strong></span>
+            </div>
+            <div class="toggle-mode pull-right visible-sm visible-xs">
+              <div class="icon">
+                <i aria-hidden="true">☀</i>
+              </div>
+              <label class="switch">
+                <input type="checkbox" id="switch-style-m">
+                <span class="slider round"></span>
+              </label>
+              <div class="icon">
+                <i aria-hidden="true">☾</i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="../../styles/toggle-theme.js"></script>
+      </footer>    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,475 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class ExplosiveComponent
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class ExplosiveComponent
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Content.Shared.Explosion.Components.ExplosiveComponent">
+  
+  
+  <h1 id="Content_Shared_Explosion_Components_ExplosiveComponent" data-uid="Content.Shared.Explosion.Components.ExplosiveComponent" class="text-break">Class ExplosiveComponent
+  </h1>
+  <div class="markdown level0 summary"><p>Specifies an explosion that can be spawned by this entity. The explosion itself is spawned via <see cref="!:ExplosionSystem.TriggerExplosive"></see>.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">ExplosiveComponent</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Content.Shared.Explosion.Components.html">Content.Shared.Explosion.Components</a></h6>
+  <h6><strong>Assembly</strong>: Content.Shared.dll</h6>
+  <h5 id="Content_Shared_Explosion_Components_ExplosiveComponent_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class ExplosiveComponent : Component</code></pre>
+  </div>
+  <h5 id="Content_Shared_Explosion_Components_ExplosiveComponent_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>The total intensity may be overridden by whatever system actually calls TriggerExplosive(), but this
+component still determines the explosion type and other properties.</p>
+</div>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Explosion_Components_ExplosiveComponent_CanCreateVacuum.md&amp;value=---%0Auid%3A%20Content.Shared.Explosion.Components.ExplosiveComponent.CanCreateVacuum%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Explosion/Components/ExplosiveComponent.cs/#L89">View Source</a>
+  </span>
+  <h4 id="Content_Shared_Explosion_Components_ExplosiveComponent_CanCreateVacuum" data-uid="Content.Shared.Explosion.Components.ExplosiveComponent.CanCreateVacuum">CanCreateVacuum</h4>
+  <div class="markdown level1 summary"><p>Whether this explosive should be able to create a vacuum by breaking tiles.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CanCreateVacuum</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Explosion_Components_ExplosiveComponent_DeleteAfterExplosion.md&amp;value=---%0Auid%3A%20Content.Shared.Explosion.Components.ExplosiveComponent.DeleteAfterExplosion%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Explosion/Components/ExplosiveComponent.cs/#L96">View Source</a>
+  </span>
+  <h4 id="Content_Shared_Explosion_Components_ExplosiveComponent_DeleteAfterExplosion" data-uid="Content.Shared.Explosion.Components.ExplosiveComponent.DeleteAfterExplosion">DeleteAfterExplosion</h4>
+  <div class="markdown level1 summary"><p>An override for whether or not the entity should be deleted after it explodes.
+If null, the system calling the explode method handles it.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? DeleteAfterExplosion</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Explosion_Components_ExplosiveComponent_Exploded.md&amp;value=---%0Auid%3A%20Content.Shared.Explosion.Components.ExplosiveComponent.Exploded%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Explosion/Components/ExplosiveComponent.cs/#L108">View Source</a>
+  </span>
+  <h4 id="Content_Shared_Explosion_Components_ExplosiveComponent_Exploded" data-uid="Content.Shared.Explosion.Components.ExplosiveComponent.Exploded">Exploded</h4>
+  <div class="markdown level1 summary"><p>Avoid somehow double-triggering this explosion (e.g. by damaging this entity from its own explosion.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Exploded</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Explosion_Components_ExplosiveComponent_ExplosionType.md&amp;value=---%0Auid%3A%20Content.Shared.Explosion.Components.ExplosiveComponent.ExplosionType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Explosion/Components/ExplosiveComponent.cs/#L45">View Source</a>
+  </span>
+  <h4 id="Content_Shared_Explosion_Components_ExplosiveComponent_ExplosionType" data-uid="Content.Shared.Explosion.Components.ExplosiveComponent.ExplosionType">ExplosionType</h4>
+  <div class="markdown level1 summary"><p>The explosion prototype. This determines the damage types, the tile-break chance, and some visual
+information (e.g., the light that the explosion gives off).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ProtoId&lt;ExplosionPrototype&gt; ExplosionType</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Robust.Shared.Prototypes.ProtoId</span>&lt;<a class="xref" href="Content.Shared.Explosion.ExplosionPrototype.html">ExplosionPrototype</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Explosion_Components_ExplosiveComponent_IntensitySlope.md&amp;value=---%0Auid%3A%20Content.Shared.Explosion.Components.ExplosiveComponent.IntensitySlope%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Explosion/Components/ExplosiveComponent.cs/#L58">View Source</a>
+  </span>
+  <h4 id="Content_Shared_Explosion_Components_ExplosiveComponent_IntensitySlope" data-uid="Content.Shared.Explosion.Components.ExplosiveComponent.IntensitySlope">IntensitySlope</h4>
+  <div class="markdown level1 summary"><p>How quickly the intensity drops off as you move away from the epicenter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float IntensitySlope</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Explosion_Components_ExplosiveComponent_MaxIntensity.md&amp;value=---%0Auid%3A%20Content.Shared.Explosion.Components.ExplosiveComponent.MaxIntensity%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Explosion/Components/ExplosiveComponent.cs/#L52">View Source</a>
+  </span>
+  <h4 id="Content_Shared_Explosion_Components_ExplosiveComponent_MaxIntensity" data-uid="Content.Shared.Explosion.Components.ExplosiveComponent.MaxIntensity">MaxIntensity</h4>
+  <div class="markdown level1 summary"><p>The maximum intensity the explosion can have on a single tile. This limits the maximum damage and tile
+break chance the explosion can achieve at any given location.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float MaxIntensity</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Explosion_Components_ExplosiveComponent_MaxTileBreak.md&amp;value=---%0Auid%3A%20Content.Shared.Explosion.Components.ExplosiveComponent.MaxTileBreak%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Explosion/Components/ExplosiveComponent.cs/#L83">View Source</a>
+  </span>
+  <h4 id="Content_Shared_Explosion_Components_ExplosiveComponent_MaxTileBreak" data-uid="Content.Shared.Explosion.Components.ExplosiveComponent.MaxTileBreak">MaxTileBreak</h4>
+  <div class="markdown level1 summary"><p>Maximum number of times that an explosive can break a tile. Currently, for normal space stations breaking a
+tile twice will generally result in a vacuum.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int MaxTileBreak</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Explosion_Components_ExplosiveComponent_Repeatable.md&amp;value=---%0Auid%3A%20Content.Shared.Explosion.Components.ExplosiveComponent.Repeatable%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Explosion/Components/ExplosiveComponent.cs/#L103">View Source</a>
+  </span>
+  <h4 id="Content_Shared_Explosion_Components_ExplosiveComponent_Repeatable" data-uid="Content.Shared.Explosion.Components.ExplosiveComponent.Repeatable">Repeatable</h4>
+  <div class="markdown level1 summary"><p>Whether to not set <a class="xref" href="Content.Shared.Explosion.Components.ExplosiveComponent.html#Content_Shared_Explosion_Components_ExplosiveComponent_Exploded">Exploded</a> to true, allowing it to explode multiple times.
+This should never be used if it is damageable.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Repeatable</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Explosion_Components_ExplosiveComponent_TileBreakScale.md&amp;value=---%0Auid%3A%20Content.Shared.Explosion.Components.ExplosiveComponent.TileBreakScale%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Explosion/Components/ExplosiveComponent.cs/#L76">View Source</a>
+  </span>
+  <h4 id="Content_Shared_Explosion_Components_ExplosiveComponent_TileBreakScale" data-uid="Content.Shared.Explosion.Components.ExplosiveComponent.TileBreakScale">TileBreakScale</h4>
+  <div class="markdown level1 summary"><p>Factor used to scale the explosion intensity when calculating tile break chances. Allows for stronger
+explosives that don't space tiles, without having to create a new explosion-type prototype.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float TileBreakScale</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Explosion_Components_ExplosiveComponent_TotalIntensity.md&amp;value=---%0Auid%3A%20Content.Shared.Explosion.Components.ExplosiveComponent.TotalIntensity%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Explosion/Components/ExplosiveComponent.cs/#L69">View Source</a>
+  </span>
+  <h4 id="Content_Shared_Explosion_Components_ExplosiveComponent_TotalIntensity" data-uid="Content.Shared.Explosion.Components.ExplosiveComponent.TotalIntensity">TotalIntensity</h4>
+  <div class="markdown level1 summary"><p>The total intensity of this explosion. The radius of the explosion scales like the cube root of this
+number (see <see cref="!:ExplosionSystem.RadiusToIntensity"></see>).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float TotalIntensity</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Content_Shared_Explosion_Components_ExplosiveComponent_TotalIntensity_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This number can be overridden by passing optional argument to <see cref="!:ExplosionSystem.TriggerExplosive"></see>.</p>
+</div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/polonium14/polonium-station/new/master/apiSpec/new?filename=Content_Shared_Explosion_Components_ExplosiveComponent.md&amp;value=---%0Auid%3A%20Content.Shared.Explosion.Components.ExplosiveComponent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/polonium14/polonium-station/blob/master/Content.Shared/Explosion/Components/ExplosiveComponent.cs/#L37" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="toggle-mode">
+                <div class="icon">
+                  <i aria-hidden="true">☀</i>
+                </div>
+                <label class="switch">
+                  <input type="checkbox" id="switch-style">
+                  <span class="slider round"></span>
+                </label>
+                <div class="icon">
+                  <i aria-hidden="true">☾</i>
+                </div>
+              </div>
+          
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <h5>In This Article</h5>
+              <div></div>
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <div class="pull-left">
+              
+              <span>Generated by <strong>DocFX</strong></span>
+            </div>
+            <div class="toggle-mode pull-right visible-sm visible-xs">
+              <div class="icon">
+                <i aria-hidden="true">☀</i>
+              </div>
+              <label class="switch">
+                <input type="checkbox" id="switch-style-m">
+                <span class="slider round"></span>
+              </label>
+              <div class="icon">
+                <i aria-hidden="true">☾</i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="../../styles/toggle-theme.js"></script>
+      </footer>    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>
