@@ -9,6 +9,7 @@ using Content.Shared.Actions;
 using Content.Shared.Doors.Components;
 using Content.Shared.Doors.Systems;
 using Content.Shared.Ghost;
+using Content.Shared.Interaction.Components;
 using Content.Shared.Popups;
 using Content.Shared.Silicons.Laws;
 using Content.Shared.Silicons.Laws.Components;
@@ -26,7 +27,6 @@ namespace Content.Server._Polonium.StationAi;
 public sealed partial class ExternalLockdownSystem : EntitySystem
 {
     public static readonly ProtoId<SiliconLawsetPrototype> LastInstructionsLawset = "LastInstructions";
-    public static readonly ProtoId<SiliconLawsetPrototype> DefaultLawset = "Crewsimov";
     public static readonly EntProtoId AiLockdownActionId = "ActionStationAiExternalLockdown";
     public static readonly EntProtoId AghostLockdownActionId = "ActionAGhostExternalLockdown";
     private static readonly EntProtoId AdminObserverPrototypeId = "AdminObserver";
@@ -54,7 +54,8 @@ public sealed partial class ExternalLockdownSystem : EntitySystem
 
         SubscribeLocalEvent<AlertLevelChangedEvent>(OnAlertLevelChanged);
         SubscribeLocalEvent<StationAiExternalLockdownEvent>(OnLockdownAction);
-        SubscribeLocalEvent<GhostComponent, MapInitEvent>(OnGhostMapInit);
+        SubscribeLocalEvent<StationAiCoreComponent, MapInitEvent>(OnStationAiCoreMapInit);
+        SubscribeLocalEvent<BypassInteractionChecksComponent, MapInitEvent>(OnAdminObserverMapInit); // This component exists only in aghost, god please don't let this component be added to any other entity
     }
 
     private void OnAlertLevelChanged(AlertLevelChangedEvent args)
@@ -76,15 +77,24 @@ public sealed partial class ExternalLockdownSystem : EntitySystem
             RevokeLockdownFromAdminObservers();
     }
 
-    private void OnGhostMapInit(Entity<GhostComponent> ent, ref MapInitEvent args)
+    private void OnStationAiCoreMapInit(Entity<StationAiCoreComponent> ent, ref MapInitEvent args)
+    {
+        if (!TryComp<TransformComponent>(ent, out var xform))
+            return;
+
+        var station = _station.GetOwningStation(ent, xform);
+        if (station == null || !_stationsInEpsilon.Contains(station.Value))
+            return;
+
+        ApplyEpsilonToCoreAis(ent);
+    }
+
+    private void OnAdminObserverMapInit(EntityUid uid, BypassInteractionChecksComponent _, ref MapInitEvent args)
     {
         if (_stationsInEpsilon.Count == 0)
             return;
 
-        if (!IsAdminObserver(ent))
-            return;
-
-        EnsureLockdownAction(ent, AghostLockdownActionId);
+        EnsureLockdownAction(uid, AghostLockdownActionId);
     }
 
     private void OnLockdownAction(StationAiExternalLockdownEvent args)
@@ -95,25 +105,13 @@ public sealed partial class ExternalLockdownSystem : EntitySystem
         args.Handled = true;
 
         var station = _station.GetOwningStation(args.Performer);
-        var count = 0;
-
-        if (station != null)
+        if (station == null)
         {
-            count = BoltExternalAirlocksOnStation(station.Value);
+            _popup.PopupEntity(Loc.GetString("station-ai-external-lockdown-no-station"), args.Performer, args.Performer);
+            return;
         }
-        else
-        {
-            foreach (var stationUid in _station.GetStations())
-            {
-                count += BoltExternalAirlocksOnStation(stationUid);
-            }
 
-            if (count == 0)
-            {
-                _popup.PopupEntity(Loc.GetString("station-ai-external-lockdown-no-station"), args.Performer, args.Performer);
-                return;
-            }
-        }
+        var count = BoltExternalAirlocksOnStation(station.Value);
 
         _popup.PopupEntity(
             Loc.GetString("station-ai-external-lockdown-complete", ("count", count)),
@@ -123,7 +121,22 @@ public sealed partial class ExternalLockdownSystem : EntitySystem
 
     public void ApplyEpsilonToStationAis(EntityUid station)
     {
-        foreach (var ai in GetStationAis(station))
+        var query = EntityQueryEnumerator<StationAiCoreComponent, TransformComponent>();
+        while (query.MoveNext(out var coreUid, out _, out var xform))
+        {
+            if (_station.GetOwningStation(coreUid, xform) != station)
+                continue;
+
+            ApplyEpsilonToCoreAis(coreUid);
+        }
+    }
+
+    private void ApplyEpsilonToCoreAis(EntityUid coreUid)
+    {
+        if (!_container.TryGetContainer(coreUid, StationAiCoreComponent.Container, out var container))
+            return;
+
+        foreach (var ai in container.ContainedEntities)
         {
             ApplyLastInstructions(ai);
             EnsureLockdownAction(ai, AiLockdownActionId);
@@ -131,10 +144,20 @@ public sealed partial class ExternalLockdownSystem : EntitySystem
     }
     public void ClearEpsilonFromStationAis(EntityUid station)
     {
-        foreach (var ai in GetStationAis(station))
+        var query = EntityQueryEnumerator<StationAiCoreComponent, TransformComponent>();
+        while (query.MoveNext(out var coreUid, out _, out var xform))
         {
-            RestoreDefaultLaws(ai);
-            RemoveLockdownAction(ai, AiLockdownActionId);
+            if (_station.GetOwningStation(coreUid, xform) != station)
+                continue;
+
+            if (!_container.TryGetContainer(coreUid, StationAiCoreComponent.Container, out var container))
+                continue;
+
+            foreach (var ai in container.ContainedEntities)
+            {
+                RestoreDefaultLaws(ai);
+                RemoveLockdownAction(ai, AiLockdownActionId);
+            }
         }
     }
 
@@ -167,28 +190,16 @@ public sealed partial class ExternalLockdownSystem : EntitySystem
         return MetaData(uid).EntityPrototype?.ID == AdminObserverPrototypeId.Id;
     }
 
-    private IEnumerable<EntityUid> GetStationAis(EntityUid station)
-    {
-        var query = EntityQueryEnumerator<StationAiCoreComponent, TransformComponent>();
-        while (query.MoveNext(out var coreUid, out _, out var xform))
-        {
-            if (_station.GetOwningStation(coreUid, xform) != station)
-                continue;
-
-            if (!_container.TryGetContainer(coreUid, StationAiCoreComponent.Container, out var container))
-                continue;
-
-            foreach (var ai in container.ContainedEntities)
-            {
-                yield return ai;
-            }
-        }
-    }
-
     public void ApplyLastInstructions(EntityUid silicon)
     {
         if (!TryComp<SiliconLawProviderComponent>(silicon, out var provider))
             return;
+
+        if (!HasComp<EpsilonLawBackupComponent>(silicon))
+        {
+            var backup = EnsureComp<EpsilonLawBackupComponent>(silicon);
+            backup.Lawset = _laws.GetLaws(silicon).Clone();
+        }
 
         var lawset = _laws.GetLawset(LastInstructionsLawset);
         _laws.SetLaws(lawset.Laws, silicon, provider.LawUploadSound);
@@ -199,8 +210,11 @@ public sealed partial class ExternalLockdownSystem : EntitySystem
         if (!TryComp<SiliconLawProviderComponent>(silicon, out var provider))
             return;
 
-        var lawset = _laws.GetLawset(DefaultLawset);
-        _laws.SetLaws(lawset.Laws, silicon, provider.LawUploadSound);
+        if (!TryComp<EpsilonLawBackupComponent>(silicon, out var backup))
+            return;
+
+        _laws.SetLaws(backup.Lawset.Clone().Laws, silicon, provider.LawUploadSound);
+        RemComp<EpsilonLawBackupComponent>(silicon);
     }
 
     public void EnsureLockdownAction(EntityUid entity, EntProtoId actionId)
@@ -239,8 +253,13 @@ public sealed partial class ExternalLockdownSystem : EntitySystem
             if (!IsExternalAirlock(uid))
                 continue;
 
-            if (door.State == DoorState.Open)
-                _doors.TryClose(uid, door);
+            if (door.State != DoorState.Closed)
+            {
+                if (door.State is DoorState.Open or DoorState.Opening)
+                    _doors.TryClose(uid, door);
+
+                continue;
+            }
 
             if (!_boltQuery.TryComp(uid, out var bolt))
                 continue;

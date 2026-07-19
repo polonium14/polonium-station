@@ -16,22 +16,6 @@ public sealed partial class BreakerDownRule : StationEventSystem<BreakerDownRule
 {
     [Dependency] private ApcSystem _apcSystem = default!;
 
-    protected override void Added(
-        EntityUid uid,
-        BreakerDownRuleComponent component,
-        GameRuleComponent gameRule,
-        GameRuleAddedEvent args)
-    {
-        if (!TryComp<StationEventComponent>(uid, out var stationEvent))
-            return;
-
-        // stationEvent.StartAnnouncement = Loc.GetString(
-        //     "station-event-breaker-down-announcement",
-        //     ("data", Loc.GetString($"random-sentience-event-data-{RobustRandom.Next(1, 6)}")));
-
-        base.Added(uid, component, gameRule, args);
-    }
-
     protected override void Started(
         EntityUid uid,
         BreakerDownRuleComponent component,
