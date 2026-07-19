@@ -78,6 +78,10 @@ food-sequence-content-cherry = cherry
 food-sequence-content-snail = snail
 food-sequence-content-anomaly-berry = anomaly berry
 
+# added missing - Yaket
+food-sequence-content-mystery-meat = mystery meat
+food-sequence-content-mysterycutlet-cooked = mystery cutlet
+
 # BURGERS
 
 food-sequence-burger-gen = {$content}burger
