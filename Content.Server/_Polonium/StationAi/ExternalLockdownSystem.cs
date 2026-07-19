@@ -79,7 +79,7 @@ public sealed partial class ExternalLockdownSystem : EntitySystem
 
     private void OnStationAiCoreMapInit(Entity<StationAiCoreComponent> ent, ref MapInitEvent args)
     {
-        if (!TryComp<TransformComponent>(ent, out var xform))
+        if (!TryComp(ent, out TransformComponent? xform))
             return;
 
         var station = _station.GetOwningStation(ent, xform);
