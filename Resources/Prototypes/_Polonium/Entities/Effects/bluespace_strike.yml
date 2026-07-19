@@ -1,0 +1,53 @@
+# SPDX-FileCopyrightText: 2026 nikitosych <174215049+nikitosych@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: BluespaceStrikeController
+  name: bluespace strike
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Transform
+  - type: BluespaceStrike
+
+- type: entity
+  id: BluespaceStrikeMarker
+  name: ""
+  description: ""
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Transform
+  - type: Sprite
+    sprite: _Polonium/Effects/bs_strike.rsi
+    state: "1"
+    drawdepth: Effects
+    noRot: true
+    layers:
+    - state: "1"
+      shader: unshaded
+  - type: Clickable
+
+- type: entity
+  id: BluespaceStrikeIncoming
+  name: ""
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Transform
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+    state: impact_laser_blue
+    drawdepth: Effects
+    noRot: true
+    scale: 5, 5
+    layers:
+    - state: impact_laser_blue
+      shader: unshaded
+  - type: PointLight
+    color: "#4FC3F7"
+    radius: 8
+    energy: 5
+  - type: BluespaceStrikeIncoming
+  - type: AnimationPlayer
+  - type: Tag
+    tags:
+    - HideContextMenu

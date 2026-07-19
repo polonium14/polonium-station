@@ -1,0 +1,8 @@
+# SPDX-FileCopyrightText: 2026 nikitosych <174215049+nikitosych@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- files: ["airraid.ogg"]
+  copyright: "jacksonacademyashmore"
+  license: "Custom"
+  source: "https://freesound.org/people/jacksonacademyashmore/sounds/563775/"
