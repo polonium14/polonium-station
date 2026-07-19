@@ -1,0 +1,46 @@
+<DefaultWindow
+    xmlns="https://spacestation14.io"
+    Title="{Loc 'admin-bluespace-strike-eui-title'}"
+    SetHeight="420">
+    <BoxContainer Name="MainContainer" Orientation="Vertical">
+
+        <BoxContainer Orientation="Horizontal">
+            <Label Text="{Loc 'admin-bluespace-strike-eui-label-mapid'}" MinSize="120 0" />
+            <OptionButton Name="MapOptions" MinSize="70 0" HorizontalExpand="True" />
+        </BoxContainer>
+        <BoxContainer Orientation="Horizontal">
+            <Label Text="{Loc 'admin-bluespace-strike-eui-label-xmap'}" MinSize="120 0" />
+            <FloatSpinBox Name="MapX" MinSize="70 0" HorizontalExpand="True" />
+        </BoxContainer>
+        <BoxContainer Orientation="Horizontal">
+            <Label Text="{Loc 'admin-bluespace-strike-eui-label-ymap'}" MinSize="120 0" />
+            <FloatSpinBox Name="MapY" MinSize="70 0" HorizontalExpand="True" />
+        </BoxContainer>
+        <Button Name="Recentre" Text="{Loc 'admin-bluespace-strike-eui-label-current'}" />
+
+        <Label Name="EpsilonWarning"
+               Text="{Loc 'admin-bluespace-strike-eui-warning-not-epsilon'}"
+               FontColorOverride="#FF3333"
+               HorizontalAlignment="Stretch"
+               Align="Center"
+               Visible="False"
+               StyleClasses="LabelKeyText" />
+
+        <Control MinSize="0 20"/>
+
+        <CheckBox Name="Preview" Text="{Loc 'admin-bluespace-strike-eui-label-preview'}"/>
+        <CheckBox Name="ShowMarkersAndSound" Text="{Loc 'admin-bluespace-strike-eui-label-markers'}" Pressed="True"/>
+        <BoxContainer Orientation="Horizontal">
+            <Label Text="{Loc 'admin-bluespace-strike-eui-label-radius'}" MinSize="120 0"/>
+            <FloatSpinBox Name="Radius" MinSize="130 0" HorizontalExpand="True" Value="8"/>
+        </BoxContainer>
+        <BoxContainer Orientation="Horizontal">
+            <Label Text="{Loc 'admin-bluespace-strike-eui-label-delay'}" MinSize="120 0" />
+            <FloatSpinBox Name="Delay" MinSize="130 0" HorizontalExpand="True" Value="15"/>
+        </BoxContainer>
+
+        <Control MinSize="0 20"/>
+
+        <Button Name="Confirm" Text="{Loc 'admin-bluespace-strike-eui-label-confirm'}" />
+    </BoxContainer>
+</DefaultWindow>

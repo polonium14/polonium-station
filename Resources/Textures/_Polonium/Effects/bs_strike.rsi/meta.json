@@ -1,0 +1,26 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Made by Nikita.pl for Polonium Station at https://github.com/polonium14/polonium-station/tree/master/Resources/Textures/_Polonium/Effects/bs_strike.rsi",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "1",
+            "delays": [
+                [
+                    0.18,
+                    0.18,
+                    0.18,
+                    0.18,
+                    0.18,
+                    0.18,
+                    0.18,
+                    0.18
+                ]
+            ]
+        }
+    ]
+}
