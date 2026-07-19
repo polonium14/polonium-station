@@ -45,7 +45,7 @@ public sealed partial class BluespaceStrikeComponent : Component
     [DataField, AutoNetworkedField]
     public float MaxIntensity = DefaultMaxIntensity;
 
-    [DataField]
+    [ViewVariables]
     public MapCoordinates Epicenter;
 
     [DataField]
