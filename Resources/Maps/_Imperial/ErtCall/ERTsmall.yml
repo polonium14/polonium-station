@@ -648,7 +648,7 @@ entities:
       parent: 82
     - type: Physics
       canCollide: False
-- proto: EpinephrineChemistryBottle
+- proto: ChemistryBottleEpinephrine
   entities:
   - uid: 129
     components:

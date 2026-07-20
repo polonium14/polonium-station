@@ -847,6 +847,19 @@
         Quantity: 15
 
 - type: entity
+  suffix: opporozidone
+  parent: PrefilledSyringe
+  id: SyringeOpporozidone
+  components:
+  - type: Label
+    localizedLabel: reagent-name-opporozidone
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Opporozidone
+        Quantity: 15
+
+- type: entity
   suffix: inaprovaline
   parent: PrefilledSyringe
   id: SyringeInaprovaline
