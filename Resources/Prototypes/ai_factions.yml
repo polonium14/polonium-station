@@ -166,3 +166,22 @@
   # cause they are hostile to them
   - SimpleHostile
   - AllHostile
+
+# Hostile to everyone except other DeathSquad members.
+- type: npcFaction
+  id: DeathSquad
+  hostile:
+  - NanoTrasen
+  - Dragon
+  - Mouse
+  - Passive
+  - PetsNT
+  - SimpleHostile
+  - SimpleNeutral
+  - Syndicate
+  - Xeno
+  - Zombie
+  - Revolutionary
+  - Wizard
+  - Xenoborg
+  - AllHostile
