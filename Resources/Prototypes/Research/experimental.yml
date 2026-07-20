@@ -158,3 +158,15 @@
   cost: 10000
   recipeUnlocks:
   - DeviceDesynchronizer
+
+- type: technology
+  id: NightVisionTech
+  name: research-technology-night-vision
+  icon:
+    sprite: _EE/Clothing/Eyes/Goggles/security_nightvision.rsi
+    state: icon
+  discipline: Experimental
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+  - ClothingEyesNightVisionSecurityGoggles

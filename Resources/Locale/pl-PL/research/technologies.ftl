@@ -77,4 +77,4 @@ research-technology-quantum-fiber-weaving = Przędzenie strun kwantowych
 research-technology-bluespace-chemistry = Niebiesko przestrzenna chemia
 research-technology-dual-wielding-technology = Technologia podwójnego trzymania
 research-technology-shuttle-salvage-weapons = Technologia Wyrzutni Odzyskowych
-research-technology-shuttle-salvage-equipment = Technologia Sprzętu Promów Odzyskowych
+research-technology-shuttle-salvage-equipment = Technologia Sprzętu Promów Odzyskowychresearch-technology-night-vision = Noktowizja

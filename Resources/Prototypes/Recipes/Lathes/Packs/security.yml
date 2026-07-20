@@ -74,6 +74,7 @@
   id: SecurityEquipment
   recipes:
   - ClothingBackpackElectropack
+  - ClothingEyesNightVisionSecurityGoggles
   - HoloprojectorSecurity
   - PortableRecharger
   - PowerCageHigh
