@@ -970,6 +970,8 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitDeathsquad
+  - type: CreamPieStunImmune
+    requireAttachedHelmet: true
 
 #CBURN Hardsuit
 - type: entity

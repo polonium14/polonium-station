@@ -79,6 +79,15 @@
     - AllHostile
 
 - type: entity
+  parent: [BaseWeaponBallisticTurret, BaseCentcommContraband]
+  id: WeaponTurretDeathSquad
+  suffix: Death Squad
+  components:
+  - type: NpcFactionMember
+    factions:
+    - DeathSquad
+
+- type: entity
   parent: BaseWeaponBallisticTurret
   id: WeaponTurretXeno
   name: xeno turret

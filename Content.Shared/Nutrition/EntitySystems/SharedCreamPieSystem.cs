@@ -1,7 +1,9 @@
 using Content.Shared.Chemistry.EntitySystems;
+using Content.Shared.Clothing.Components;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Fluids;
 using Content.Shared.IdentityManagement;
+using Content.Shared.Inventory;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Popups;
 using Content.Shared.Rejuvenate;
@@ -38,6 +40,8 @@ public abstract partial class SharedCreamPieSystem : EntitySystem
         SubscribeLocalEvent<CreamPiedComponent, ThrowHitByEvent>(OnCreamPiedHitBy);
         SubscribeLocalEvent<CreamPieComponent, BeforeToolRefinedEvent>(OnToolRefine);
         SubscribeLocalEvent<CreamPiedComponent, RejuvenateEvent>(OnRejuvenate);
+        SubscribeLocalEvent<CreamPieStunImmuneComponent, CreamPieStunAttemptEvent>(OnCreamPieStunImmune);
+        SubscribeLocalEvent<CreamPieStunImmuneComponent, InventoryRelayedEvent<CreamPieStunAttemptEvent>>(OnCreamPieStunImmuneRelayed);
     }
 
     /// <summary>
@@ -116,12 +120,39 @@ public abstract partial class SharedCreamPieSystem : EntitySystem
         SplatCreamPie(ent);
     }
 
+    private void OnCreamPieStunImmuneRelayed(Entity<CreamPieStunImmuneComponent> ent, ref InventoryRelayedEvent<CreamPieStunAttemptEvent> args)
+    {
+        OnCreamPieStunImmune(ent, ref args.Args);
+    }
+
+    private void OnCreamPieStunImmune(Entity<CreamPieStunImmuneComponent> ent, ref CreamPieStunAttemptEvent args)
+    {
+        if (args.Cancelled)
+            return;
+
+        if (ent.Comp.RequireAttachedHelmet)
+        {
+            if (!TryComp<ToggleableClothingComponent>(ent, out var toggleable)
+                || toggleable.ClothingUid == null
+                || !Exists(toggleable.ClothingUid)
+                || toggleable.Container?.ContainedEntity != null)
+            {
+                return;
+            }
+        }
+
+        args.Cancelled = true;
+    }
+
     private void OnCreamPiedHitBy(Entity<CreamPiedComponent> creamPied, ref ThrowHitByEvent args)
     {
         if (!Exists(args.Thrown) || !TryComp<CreamPieComponent>(args.Thrown, out var creamPie))
             return;
 
-        _stunSystem.TryUpdateParalyzeDuration(creamPied.Owner, creamPie.ParalyzeTime);
+        var stunAttempt = new CreamPieStunAttemptEvent();
+        RaiseLocalEvent(creamPied.Owner, ref stunAttempt);
+        if (!stunAttempt.Cancelled)
+            _stunSystem.TryUpdateParalyzeDuration(creamPied.Owner, creamPie.ParalyzeTime);
 
         // Already creamed, no need to spam popups.
         if (creamPied.Comp.CreamPied)
