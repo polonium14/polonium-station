@@ -1,2 +1,2 @@
-ent-ThrusterMedium = średni silnik
+ent-ThrusterMedium = medium thruster
     .desc = { ent-BaseThruster.desc }

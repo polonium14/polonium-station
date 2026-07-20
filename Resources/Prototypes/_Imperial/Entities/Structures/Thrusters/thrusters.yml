@@ -1,0 +1,63 @@
+# SPDX-FileCopyrightText: 2025 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 Damian Zieliński <zientasek.pl@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: ThrusterMedium
+  name: medium thruster
+  parent: BaseThruster
+  placement:
+    mode: AlignTileAny
+  components:
+  - type: Thruster
+    burnShape: ["-1.2,1.4","-0.7,2.7","-0.3,2.7","0.2,1.4"]
+    thrust: 480000
+    basePowerLoad: 4500
+    damage:
+      types:
+        Heat: 90
+  - type: ApcPowerReceiver
+    powerLoad: 4500
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-1.4,-0.4,0.4,1.35"
+        density: 1750
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: Sprite
+    sprite: _Imperial/Objects/Thrusters/medium.rsi
+    offset: -0.5, 0.5
+    layers:
+    - state: base
+      map: ["enum.ThrusterVisualLayers.Base"]
+    - state: thrust
+      map: ["enum.ThrusterVisualLayers.ThrustOn"]
+      shader: unshaded
+      visible: false
+    - state: thrust_burn_unshaded
+      map: ["enum.ThrusterVisualLayers.ThrustingUnshaded"]
+      shader: unshaded
+      visible: false
+      offset: 0, 1.875
+  - type: Anchorable
+    flags:
+    - Anchorable
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 600
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+  - type: StaticPrice
+    price: 750
