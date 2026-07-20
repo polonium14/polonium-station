@@ -720,7 +720,7 @@ entities:
       linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
-- proto: RPDRecharging
+- proto: RPD
   entities:
   - uid: 94
     components:

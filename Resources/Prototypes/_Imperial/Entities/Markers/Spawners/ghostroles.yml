@@ -1,0 +1,207 @@
+﻿# SPDX-FileCopyrightText: 2025 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 Damian Zieliński <zientasek.pl@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+#ERT START
+#Leader
+- type: entity
+  categories: [ Spawner ]
+  id: SpawnERTLeaderEVAPreset
+  name: ghost role spawn point
+  parent: SpawnPointGhostRoleJob
+  components:
+  - type: GhostRole
+    name: ertcall-leader-eva-name
+    description: ertcall-leader-eva-desc
+    rules: ertcall-leader-eva-rules
+    raffle:
+      settings: short
+  - type: SpawnPoint
+    job_id: ERTLeader
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+    - sprite: Markers/jobs.rsi
+      state: ertleadereva
+
+#Medic
+- type: entity
+  categories: [ Spawner ]
+  id: SpawnERTMedicEVAPreset
+  name: ghost role spawn point
+  parent: SpawnPointGhostRoleJob
+  components:
+  - type: GhostRole
+    name: ertcall-medic-eva-name
+    description: ertcall-medic-eva-desc
+    rules: ertcall-medic-eva-rules
+    raffle:
+      settings: short
+  - type: SpawnPoint
+    job_id: ERTMedical
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+    - sprite: Markers/jobs.rsi
+      state: ertmedicaleva
+
+#Security
+- type: entity
+  categories: [ Spawner ]
+  id: SpawnERTSecurityEVAPreset
+  name: ghost role spawn point
+  parent: SpawnPointGhostRoleJob
+  components:
+  - type: GhostRole
+    name: ertcall-security-eva-name
+    description: ertcall-security-eva-desc
+    rules: ertcall-security-eva-rules
+    raffle:
+      settings: short
+  - type: SpawnPoint
+    job_id: ERTSecurity
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+    - sprite: Markers/jobs.rsi
+      state: ertsecurityeva
+
+#Engineer
+- type: entity
+  categories: [ Spawner ]
+  id: SpawnERTEngineerEVAPreset
+  name: ghost role spawn point
+  parent: SpawnPointGhostRoleJob
+  components:
+  - type: GhostRole
+    name: ertcall-engineer-eva-name
+    description: ertcall-engineer-eva-desc
+    rules: ertcall-engineer-eva-rules
+    raffle:
+      settings: short
+  - type: SpawnPoint
+    job_id: ERTEngineer
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+    - sprite: Markers/jobs.rsi
+      state: ertengineereva
+
+#Junitor
+- type: entity
+  categories: [ Spawner ]
+  id: SpawnERTJunitorEVAPreset
+  name: ghost role spawn point
+  parent: SpawnPointGhostRoleJob
+  components:
+  - type: GhostRole
+    name: ertcall-junitor-eva-name
+    description: ertcall-junitor-eva-desc
+    rules: ertcall-junitor-eva-rules
+    raffle:
+      settings: short
+  - type: SpawnPoint
+    job_id: ERTJanitor
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+    - sprite: Markers/jobs.rsi
+      state: ertjanitoreva
+#ERT END
+
+#CBURN START
+#Leader
+- type: entity
+  categories: [ Spawner ]
+  id: SpawnCBURNLeaderEVAPreset
+  name: ghost role spawn point
+  parent: SpawnPointGhostRoleJob
+  components:
+  - type: GhostRole
+    name: ertcall-cburn-leader-eva-name
+    description: ertcall-cburn-leader-eva-desc
+    rules: ertcall-cburn-leader-eva-rules
+    raffle:
+      settings: short
+  - type: SpawnPoint
+    job_id: CBURNLeader
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+    - sprite: Markers/jobs.rsi
+      state: cburn
+
+#Security
+- type: entity
+  categories: [ Spawner ]
+  id: SpawnCBURNSecurityEVAPreset
+  name: ghost role spawn point
+  parent: SpawnPointGhostRoleJob
+  components:
+  - type: GhostRole
+    name: ertcall-cburn-security-eva-name
+    description: ertcall-cburn-security-eva-desc
+    rules: ertcall-cburn-security-eva-rules
+    raffle:
+      settings: short
+  - type: SpawnPoint
+    job_id: CBURN
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+    - sprite: Markers/jobs.rsi
+      state: ertsecurityeva
+
+#Medic
+- type: entity
+  categories: [ Spawner ]
+  id: SpawnCBURNMedicEVAPreset
+  name: ghost role spawn point
+  parent: SpawnPointGhostRoleJob
+  components:
+  - type: GhostRole
+    name: ertcall-cburn-medic-eva-name
+    description: ertcall-cburn-medic-eva-desc
+    rules: ertcall-cburn-medic-eva-rules
+    raffle:
+      settings: short
+  - type: SpawnPoint
+    job_id: CBURNMedic
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+    - sprite: Markers/jobs.rsi
+      state: ertmedicaleva
+#CBURN END
+
+#DEAD SQUAD START
+- type: entity
+  categories: [ Spawner ]
+  id: SpawnDeadSquadSecurityEVAPreset
+  name: ghost role spawn point
+  parent: SpawnPointGhostRoleJob
+  components:
+  - type: GhostRole
+    name: ertcall-deadsquad-security-eva-name
+    description: ertcall-deadsquad-security-eva-desc
+    rules: ertcall-deadsquad-security-eva-rules
+    raffle:
+      settings: short
+  - type: SpawnPoint
+    job_id: DeathSquad
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+    - sprite: Markers/jobs.rsi
+      state: ertsecurityeva
+#DEAD SQUAD END
