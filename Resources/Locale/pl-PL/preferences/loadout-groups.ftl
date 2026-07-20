@@ -223,3 +223,7 @@ loadout-group-survival-military = See line 14, no one will ever see this so :3
 loadout-group-bartender-shaker = Bartender shaker
 
 loadout-group-chaplain-bible = Holy Book
+
+loadout-group-assistive-items = Przedmioty wspomagające
+loadout-group-reporter-head = Kapelusz reportera
+loadout-group-reporter-outerclothing = Kamizelka reportera

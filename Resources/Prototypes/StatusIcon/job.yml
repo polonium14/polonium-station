@@ -56,7 +56,6 @@
     sprite: &old-icon-rsi /Textures/Interface/Misc/job_icons.rsi # Funky - Fallback RSI for jobs without new icons
     state: HeadOfPersonnel
   jobName: job-name-hop
-  allowSelection: false # Funky - Job deprecated
 
 - type: jobIcon
   parent: JobIcon
@@ -233,7 +232,6 @@
     sprite: *old-icon-rsi # Funky - Fallback RSI
     state: Warden
   jobName: job-name-warden
-  allowSelection: false # Funky - Job deprecated
 
 # Service
 
@@ -260,7 +258,6 @@
     sprite: *old-icon-rsi # Funky - Fallback RSI
     state: Boxer
   jobName: job-name-boxer
-  allowSelection: false # Funky - Job deprecated
 
 - type: jobIcon
   parent: JobIcon
@@ -555,7 +552,6 @@
     sprite: *old-icon-rsi # Funky - Fallback RSI
     state: Nanotrasen
   jobName: job-name-centcommoff
-  allowSelection: false # Funky - Job deprecated
 
 - type: jobIcon
   parent: JobIcon

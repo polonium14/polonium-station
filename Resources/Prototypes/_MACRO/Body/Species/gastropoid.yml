@@ -123,6 +123,8 @@
   id: MobGastropoid
   name: Uristsiru McShell
   components:
+  - type: Sprinter
+    canSprint: false
   - type: Butcherable
     spawned:
     - id: FoodMeat # TODO: was FoodMeatSnail before

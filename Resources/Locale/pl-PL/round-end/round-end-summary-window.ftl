@@ -6,3 +6,12 @@ round-end-summary-window-gamemode-name-label = Tryb gry to [color=white]{ $gamem
 round-end-summary-window-duration-label = Trwała [color=yellow]{ $hours } godzin, { $minutes } minut, i { $seconds } sekund.
 round-end-summary-window-player-info-if-observer-text = [color=gray]{ $playerOOCName }[/color] był [color=lightblue]{ $playerICName }[/color], obserwatorem.
 round-end-summary-window-player-info-if-not-observer-text = [color=gray]{ $playerOOCName }[/color] był [color={ $icNameColor }]{ $playerICName }[/color] w roli [color=orange]{ $playerRole }[/color].
+
+round-end-summary-window-player-manifest-tab-search-placeholder = Szukaj graczy, ról, typów...
+round-end-summary-window-player-manifest-tab-sort-character = Postać
+round-end-summary-window-player-manifest-tab-sort-role = Rola
+round-end-summary-window-player-manifest-tab-sort-player-type = Typ
+round-end-summary-window-player-manifest-tab-sort-player = Gracz
+round-end-summary-window-player-manifest-tab-sort-player-type-antag = Antagonista
+round-end-summary-window-player-manifest-tab-sort-player-type-crew = Załoga
+round-end-summary-window-player-manifest-tab-sort-player-type-observer = Obserwator

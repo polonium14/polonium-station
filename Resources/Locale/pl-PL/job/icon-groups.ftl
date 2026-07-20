@@ -1,0 +1,14 @@
+job-icon-group-cargo = Logistyka
+job-icon-group-command = Dowództwo
+job-icon-group-engineering = Inżynieria
+job-icon-group-medical = Medycyna
+job-icon-group-research = Badania
+job-icon-group-security = Ochrona
+job-icon-group-service = Usługi
+job-icon-group-entertainer = Rozrywka
+job-icon-group-civilian = Cywile
+job-icon-group-centcomm = CentComm
+job-icon-group-silicon = Silikon
+job-icon-group-blank = Puste
+job-icon-group-threat = Zagrożenie
+job-icon-group-admin = Admin

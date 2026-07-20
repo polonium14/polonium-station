@@ -18,19 +18,18 @@
     transferAmount: 5
   - type: Sprite
     sprite: _Funkystation/Objects/Consumable/Food/gyros.rsi
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 40
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 25
-        - ReagentId: Vitamin
-          Quantity: 5
-        - ReagentId: Protein
-          Quantity: 6
-        - ReagentId: TzatzikiSauce
-          Quantity: 4
+  - type: Solution
+    solution:
+      maxVol: 40
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 25
+      - ReagentId: Vitamin
+        Quantity: 5
+      - ReagentId: Protein
+        Quantity: 6
+      - ReagentId: TzatzikiSauce
+        Quantity: 4
   - type: Item
     sprite: _Funkystation/Objects/Consumable/Food/gyros.rsi
 

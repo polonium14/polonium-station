@@ -190,7 +190,7 @@ public sealed partial class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleCo
 	[Dependency] private ActionContainerSystem _actionContainer = default!;
 	[Dependency] private SharedPointLightSystem _pointLight = default!;
 	[Dependency] private SharedUserInterfaceSystem _uiSystem = default!;
-    [Dependency] private TargetSystem _target = default!;
+    [Dependency] private AliveHumanoidTargetSystem _target = default!; 
 
 	public readonly string CultComponentId = "BloodCultist";
 
@@ -1217,7 +1217,7 @@ public sealed partial class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleCo
 
 	private void SetConversionsNeeded(BloodCultRuleComponent component)
 	{
-		var allAliveHumans = _target.GetAliveHumans();
+		var allAliveHumans = _target.GetMinds();
 		// 10% cult needed for eyes
 		component.ConversionsUntilEyes = (int)Math.Ceiling((float)allAliveHumans.Count * 0.125f);
 		// 30% cult needed for rise
@@ -1230,7 +1230,7 @@ public sealed partial class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleCo
 	/// </summary>
 	private void SetMinimumCultistsForVeilRitual(BloodCultRuleComponent component)
 	{
-		var allAliveHumans = _target.GetAliveHumans();
+		var allAliveHumans = _target.GetMinds(); // Polonium
 		// 5% of players, minimum of 2, maximum of 4
 		// So at 20 players its 2, at 20-60 players its 3, at 60+ players its 4
 		component.MinimumCultistsForVeilRitual = Math.Max(2, Math.Min(4,(int)Math.Ceiling((float)allAliveHumans.Count * 0.05f)));

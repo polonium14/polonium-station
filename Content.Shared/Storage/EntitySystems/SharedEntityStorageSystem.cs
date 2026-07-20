@@ -416,7 +416,7 @@ public abstract partial class SharedEntityStorageSystem : EntitySystem
 
     public bool IsOpen(EntityUid target, EntityStorageComponent? component = null)
     {
-        if (!Resolve(target, ref component))
+        if (!Resolve(target, ref component, false))
             return false;
 
         return component.Open;
@@ -424,7 +424,7 @@ public abstract partial class SharedEntityStorageSystem : EntitySystem
 
     public bool CanOpen(EntityUid user, EntityUid target, bool silent = false, EntityStorageComponent? component = null)
     {
-        if (!Resolve(target, ref component))
+        if (!Resolve(target, ref component, false))
             return false;
 
         if (!component.Contents.Contains(user) &&

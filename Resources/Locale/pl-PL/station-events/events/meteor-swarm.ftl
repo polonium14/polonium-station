@@ -7,3 +7,4 @@ station-event-meteor-cow-start-announcement = Stacja zderzyła się z niezidenty
 station-event-meteor-clown-start-announcement = Stacja zderzyła się z niezidentyfikowanym rojem szczątków. HONK! Natychmiast ewakuować magazyn gazu rozweselającego.
 station-event-meteor-potato-start-announcement = Stacja zderzyła się z niezidentyfikowanym rojem szczątków. Wykryto wysokie stężenie skrobi.
 station-event-fun-swarm-start-announcement = Stacja zderzyła się z niezidentyfikowanym rojem szczątków. Prosimy odpowiednio panikować.
+station-event-bio-swarm-start-announcement = Wykryto meteoryty na kursie kolizyjnym ze stacją. Wykryto aktywność biologiczną.

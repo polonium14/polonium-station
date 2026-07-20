@@ -15,12 +15,11 @@
   - type: Sprite
     sprite: _Funkystation/Objects/Consumable/Food/meat.rsi
     state: mysterymeat
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        reagents:
-        - ReagentId: UncookedAnimalProteins
-          Quantity: 20
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: UncookedAnimalProteins
+        Quantity: 20
   - type: ToolRefinable
     refineResult:
     - id: FoodMysteryCutlet
@@ -56,14 +55,13 @@
     sprite: _Funkystation/Objects/Consumable/Food/meat.rsi
     layers:
     - state: mysterymeat-cooked
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 20
-        - ReagentId: Protein
-          Quantity: 10
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 20
+      - ReagentId: Protein
+        Quantity: 10
   - type: ToolRefinable
     refineResult:
     - id: FoodMysteryCutletCooked
@@ -106,14 +104,13 @@
     sprite: _Funkystation/Objects/Consumable/Food/meat.rsi
     layers:
     - state: mysterycutlet
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        reagents:
-        - ReagentId: UncookedAnimalProteins
-          Quantity: 4
-        - ReagentId: Fat
-          Quantity: 2
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: UncookedAnimalProteins
+        Quantity: 4
+      - ReagentId: Fat
+        Quantity: 2
   - type: Construction
     graph: MysteryCutlet
     node: start
@@ -145,14 +142,13 @@
     sprite: _Funkystation/Objects/Consumable/Food/meat.rsi
     layers:
     - state: mysterycutlet-cooked
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 4
-        - ReagentId: Protein
-          Quantity: 2
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 4
+      - ReagentId: Protein
+        Quantity: 2
   - type: FoodSequenceElement
     entries:
       Burger: CookedMysteryCutlet

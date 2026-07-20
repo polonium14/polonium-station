@@ -490,6 +490,8 @@
   name: snail
   description: Revolting unless you're french.
   components:
+  - type: Sprinter
+    canSprint: false
   - type: GhostRole
     makeSentient: true
     allowSpeech: false

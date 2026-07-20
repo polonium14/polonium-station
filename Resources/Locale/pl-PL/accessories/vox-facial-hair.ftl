@@ -5,3 +5,12 @@ marking-VoxFacialHairNeck = Voksia broda (lotki na szyi)
 marking-VoxFacialHairMane = Voksia broda (grzywa)
 marking-VoxFacialHairManeSmall = Voksia broda (mała grzywa)
 marking-VoxFacialHairTufts = Voksie bokobrody (kępki)
+
+# Sprite-layer aliases / new markings
+marking-VoxFacialHairBeard-beard_s = Voksia broda (lotki)
+marking-VoxFacialHairColonel-colonel_s = Voksie wąsy (pułkownik)
+marking-VoxFacialHairFu-fu_s = Voksie wąsy (quill fu)
+marking-VoxFacialHairNeck-neck_s = Voksia broda (lotki na szyi)
+marking-VoxFacialHairMane-mane_s = Voksia broda (grzywa)
+marking-VoxFacialHairManeSmall-manesmall_s = Voksia broda (mała grzywa)
+marking-VoxFacialHairTufts-tuft_s = Voksie bokobrody (kępki)

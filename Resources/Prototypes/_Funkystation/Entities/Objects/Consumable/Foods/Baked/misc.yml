@@ -19,14 +19,13 @@
   - type: Tag
     tags:
     - ClothMade
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 5
-        reagents:
-        - ReagentId: Sugar
-          Quantity: 1
-        - ReagentId: Fiber
-          Quantity: 3
-        - ReagentId: Nutriment
-          Quantity: 1
+  - type: Solution
+    solution:
+      maxVol: 5
+      reagents:
+      - ReagentId: Sugar
+        Quantity: 1
+      - ReagentId: Fiber
+        Quantity: 3
+      - ReagentId: Nutriment
+        Quantity: 1

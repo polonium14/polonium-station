@@ -306,10 +306,10 @@ public sealed partial class CCVars
         CVarDef.Create("game.ipintel_database_cleanup_mins", 15, CVar.SERVERONLY);
 
     /// <summary>
-    /// How long to store results in the cache before they must be retrieved again in days.
+    /// How long to store results in the cache before they must be retrieved again, in days.
     /// </summary>
-    public static readonly CVarDef<TimeSpan> GameIPIntelCacheLength =
-        CVarDef.Create("game.ipintel_cache_length", TimeSpan.FromDays(7), CVar.SERVERONLY);
+    public static readonly CVarDef<int> GameIPIntelCacheLength =
+        CVarDef.Create("game.ipintel_cache_length", 7, CVar.SERVERONLY);
 
     /// <summary>
     /// Amount of playtime in minutes to be exempt from an IP check. 0 to search everyone. 5 hours by default.
@@ -317,8 +317,8 @@ public sealed partial class CCVars
     /// <remarks>
     /// Trust me you want one.
     /// </remarks>
-    public static readonly CVarDef<TimeSpan> GameIPIntelExemptPlaytime =
-        CVarDef.Create("game.ipintel_exempt_playtime", TimeSpan.FromMinutes(300), CVar.SERVERONLY);
+    public static readonly CVarDef<int> GameIPIntelExemptPlaytime =
+        CVarDef.Create("game.ipintel_exempt_playtime", 300, CVar.SERVERONLY);
 
     /// <summary>
     /// Rating to reject at. Anything equal to or higher than this will reject the connection.

@@ -65,3 +65,10 @@ trait-category-speech = Cechy mowy
 trait-category-quirks = Cechy nietypowe
 trait-category-alcohol-tolerance = Tolerancja alkoholu
 trait-category-vision-tolerance = Tolerancja wzroku
+
+humanoid-profile-editor-randomize-markings-button = Znaki
+humanoid-profile-editor-voice-label = Głos:
+humanoid-profile-editor-voice-masculine = Męski
+humanoid-profile-editor-voice-feminine = Żeński
+humanoid-profile-editor-voice-neutral = Neutralny
+humanoid-profile-editor-voice-none = Bezimienny głos

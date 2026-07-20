@@ -29,3 +29,6 @@ changeling-catalog-last-resort-name = Ostatnia Deska Ratunku
 changeling-catalog-last-resort-desc = Rozbij obecne ciało i uciekaj jako słaby ślimak-głowa. Jeśli zainfekujesz ludzkie zwłoki, możesz wrócić do pełnego ciała changelinga.
 
                                       Uwaga! To resetuje twój postęp jako changeling, usuwając zakupy ze sklepu i wchłonięte tożsamości!
+
+changeling-catalog-night-vision-name = Noktowizja
+changeling-catalog-night-vision-desc = Modyfikujesz fotoreceptory i wyostrzasz zmysły, by widzieć w całkowitej ciemności.

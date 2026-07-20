@@ -47,8 +47,8 @@ public sealed class IPIntel
         cfg.OnValueChanged(CCVars.GameIPIntelBackOffSeconds, b => _backoffSeconds = b, true);
         cfg.OnValueChanged(CCVars.GameIPIntelCleanupMins, b => _cleanupMins = b, true);
         cfg.OnValueChanged(CCVars.GameIPIntelBadRating, b => _rating = b, true);
-        cfg.OnValueChanged(CCVars.GameIPIntelCacheLength, b => _cacheDays = b, true);
-        cfg.OnValueChanged(CCVars.GameIPIntelExemptPlaytime, b => _exemptPlaytime = b, true);
+        cfg.OnValueChanged(CCVars.GameIPIntelCacheLength, b => _cacheDays = TimeSpan.FromDays(b), true); // Polonium
+        cfg.OnValueChanged(CCVars.GameIPIntelExemptPlaytime, b => _exemptPlaytime = TimeSpan.FromMinutes(b), true); // Polonium
         cfg.OnValueChanged(CCVars.GameIPIntelAlertAdminReject, b => _alertAdminReject = b, true);
         cfg.OnValueChanged(CCVars.GameIPIntelAlertAdminWarnRating, b => _alertAdminWarn = b, true);
     }

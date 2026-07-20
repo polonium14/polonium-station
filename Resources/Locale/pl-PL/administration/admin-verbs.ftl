@@ -3,6 +3,7 @@ edit-solutions-verb-get-data-text = Edit Solutions
 explode-verb-get-data-text = Wysadź
 ahelp-verb-get-data-text = Wiadomość
 admin-verbs-admin-logs-entity = Dziennik Encji
+admin-verbs-admin-logs-player = Logi gracza
 admin-verbs-teleport-to = Teleportuj Do
 admin-verbs-teleport-here = Teleportuj Tutaj
 admin-verbs-freeze = Zamróź

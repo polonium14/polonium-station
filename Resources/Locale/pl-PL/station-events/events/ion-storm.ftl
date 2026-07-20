@@ -79,3 +79,12 @@ ion-storm-law-protect = NIGDY NIE WOLNO CI SKRZYWDZIĆ {ION-HARM-PROTECT($ion)} 
 # implementing other variants is annoying so just have this one
 # COMMUNISM IS KILLING CLOWNS
 ion-storm-law-concept-verb = {ION-CONCEPT($ion)} TO {ION-VERB($ion)} {ION-SUBJECT($ion)}
+
+ion-law-error-no-protos = BŁĄD 404
+ion-law-error-was-null = 500 WEWNĘTRZNY BŁĄD SERWERA
+ion-law-error-no-selectors = BŁĄD: NIE MOŻNA ZNALEŹĆ ZASOBU
+ion-law-error-no-available-selectors = SYSTEM PRÓBOWAŁ WYWOŁAĆ ZASÓB, KTÓRY NIE ISTNIEJE
+ion-law-error-dataset-empty-or-not-found = NIE MOŻNA ZNALEŹĆ SZUKANEGO PLIKU
+ion-law-error-fallback-dataset-empty-or-not-found = PUNKT PRZYWRACANIA SYSTEMU NIE POWIÓDŁ SIĘ
+ion-law-error-no-selector-selected = WYBRANY ZASÓB ZOSTAŁ PRZENIESIONY LUB USUNIĘTY
+ion-law-error-no-bool-value = TO ZDANIE JEST FAŁSZYWE

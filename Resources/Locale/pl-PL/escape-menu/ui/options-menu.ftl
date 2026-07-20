@@ -39,6 +39,7 @@ ui-options-restart-sounds = Dźwięki restartu rundy
 ui-options-event-music = Muzyka wydarzeń
 ui-options-admin-sounds = Odtwórz dźwięki administratora
 ui-options-bwoink-sound = Odtwórz dźwięk powiadomienia AHelp
+ui-options-audio-hrtf = Włącz przetwarzanie audio HRTF (wymaga restartu)
 ui-options-volume-label = Głośność
 
 ## Graphics menu
@@ -363,12 +364,28 @@ cmd-options-help = Użycie: options [tab]
 
 ui-options-accessibility-header-visuals = Wizualne
 ui-options-accessibility-header-content = Treść
+ui-options-accessibility-header-reduced-motion = Ograniczony ruch
 
 ui-options-enable-color-name = Dodaj kolory do imion postaci
 ui-options-colorblind-friendly = Tryb przyjazny dla daltonistów
-ui-options-reduced-motion = Ogranicz ruch efektów wizualnych
-ui-options-disable-ai-static = Wyłącz efekt statyczny na nakładce kamery SI
-ui-options-disable-nv-noise = Wyłącz efekt szumu na nakładce noktowizji
+ui-options-reduced-motion = Ogranicz ogólne efekty wizualne
+ui-options-reduced-motion-tooltip = Włącz, aby pokazywać alternatywne sprite'y z ograniczonym ruchem dla niektórych przedmiotów.
+ui-options-disable-ai-static = Statyka kamery SI
+ui-options-disable-ai-static-tooltip = Zastępuje efekt statycznej kamery SI zwykłym gradientem.
+ui-options-disable-blurry-vision = Rozmazany wzrok
+ui-options-disable-blurry-vision-tooltip = Zastępuje ruch w shaderze rozmazania efektem statycznym.
+ui-options-disable-drunk-overlay = Nakładka upojenia
+ui-options-disable-drunk-overlay-tooltip = Zastępuje ruch w shaderze upojenia statycznym przesunięciem.
+ui-options-disable-flash-effect = Błysk
+ui-options-disable-flash-effect-tooltip = Zastępuje efekt błysku odpowiednikiem z ograniczonym ruchem.
+ui-options-disable-heat-distortion = Zniekształcenie ciepła
+ui-options-disable-heat-distortion-tooltip = Zmniejsza ruch w shaderze zniekształcenia ciepła.
+ui-options-disable-nv-noise = Nakładka noktowizji
+ui-options-disable-nv-noise-tooltip = Wyłącza efekt szumu na nakładce noktowizji.
+ui-options-disable-rainbow-overlay = Nakładka tęczy
+ui-options-disable-rainbow-overlay-tooltip = Zastępuje ruch w shaderze tęczy statycznym przesunięciem.
+ui-options-disable-singulo-warp = Osobliwość
+ui-options-disable-singulo-warp-tooltip = Wyłącza efekt wypaczania ekranu przy osobliwości.
 ui-options-screen-shake-intensity = Intensywność trzęsienia ekranu
 
 ui-options-chat-window-opacity = Przezroczystość okna czatu

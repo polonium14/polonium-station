@@ -25,19 +25,18 @@
       - state: bowl
       - sprite: _Funkystation/Objects/Consumable/Food/bowl.rsi
         state: mysterystew
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 50
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 15
-        - ReagentId: Vitamin
-          Quantity: 5
-        - ReagentId: Protein
-          Quantity: 10
-        - ReagentId: Water
-          Quantity: 10
+  - type: Solution
+    solution:
+      maxVol: 50
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 15
+      - ReagentId: Vitamin
+        Quantity: 5
+      - ReagentId: Protein
+        Quantity: 10
+      - ReagentId: Water
+        Quantity: 10
   # didn't implement the bounty so no need for that for now ~ Yaket
   # - type: Tag
   #   tags:

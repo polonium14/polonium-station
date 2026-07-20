@@ -665,7 +665,7 @@
       - ReagentId: TripleSec
         Quantity: 120
   - type: Label
-    currentLabel: reagent-name-triple-sec
+    localizedLabel: reagent-name-triple-sec
   - type: Sprite
     sprite: Objects/Consumable/Drinks/triplesecbottle.rsi
   - type: Sealable
@@ -685,7 +685,7 @@
       - ReagentId: NavyRum
         Quantity: 120
   - type: Label
-    currentLabel: reagent-name-navy-rum
+    localizedLabel: reagent-name-navy-rum
   - type: Sprite
     sprite: Objects/Consumable/Drinks/navyrumbottle.rsi
   - type: Sealable
@@ -706,7 +706,7 @@
       - ReagentId: Fernet
         Quantity: 120
   - type: Label
-    currentLabel: reagent-name-fernet
+    localizedLabel: reagent-name-fernet
   - type: Sprite
     sprite: Objects/Consumable/Drinks/fernetbottle.rsi
   - type: Sealable
@@ -727,7 +727,7 @@
       - ReagentId: CremeDeCacao
         Quantity: 120
   - type: Label
-    currentLabel: reagent-name-creme-de-cacao
+    localizedLabel: reagent-name-creme-de-cacao
   - type: Sprite
     sprite: Objects/Consumable/Drinks/cremedecacaobottle.rsi
   - type: Sealable
@@ -747,7 +747,7 @@
       - ReagentId: Amaretto
         Quantity: 120
   - type: Label
-    currentLabel: reagent-name-amaretto
+    localizedLabel: reagent-name-amaretto
   - type: Sprite
     sprite: Objects/Consumable/Drinks/amarettobottle.rsi
   - type: Sealable
@@ -768,7 +768,7 @@
       - ReagentId: Shochu
         Quantity: 120
   - type: Label
-    currentLabel: reagent-name-shochu
+    localizedLabel: reagent-name-shochu
   - type: Sprite
     sprite: Objects/Consumable/Drinks/shochubottle.rsi
   - type: Sealable
@@ -792,7 +792,7 @@
     sprite: Objects/Consumable/Drinks/bittersbottle.rsi
   - type: Sealable
   - type: Label
-    currentLabel: reagent-name-bitters
+    localizedLabel: reagent-name-bitters
 
 - type: entity
   parent: [DrinkVisualsAllFilled, DrinkBottleGlassBaseFull]
@@ -806,7 +806,7 @@
       - ReagentId: RiceBeer
         Quantity: 120
   - type: Label
-    currentLabel: reagent-name-rice-beer
+    localizedLabel: reagent-name-rice-beer
   - type: Sprite
     sprite: Objects/Consumable/Drinks/ricebeerbottle.rsi
   - type: Sealable
@@ -826,7 +826,7 @@
       - ReagentId: CremeDeMenthe
         Quantity: 120
   - type: Label
-    currentLabel: reagent-name-creme-de-menthe
+    localizedLabel: reagent-name-creme-de-menthe
   - type: Sprite
     sprite: Objects/Consumable/Drinks/cremedementhebottle.rsi
   - type: Sealable
@@ -846,7 +846,7 @@
       - ReagentId: VoltaicYellowWine
         Quantity: 120
   - type: Label
-    currentLabel: reagent-name-voltaic-yellow-wine
+    localizedLabel: reagent-name-voltaic-yellow-wine
   - type: Sprite
     sprite: Objects/Consumable/Drinks/voltaicyellowwinebottle.rsi
   - type: Sealable
@@ -867,7 +867,7 @@
       - ReagentId: Applejack
         Quantity: 120
   - type: Label
-    currentLabel: reagent-name-applejack
+    localizedLabel: reagent-name-applejack
   - type: Sprite
     sprite: Objects/Consumable/Drinks/alco-bottle.rsi
     layers:
@@ -891,7 +891,7 @@
       - ReagentId: CreamOfCoconut
         Quantity: 120
   - type: Label
-    currentLabel: reagent-name-cream-of-coconut
+    localizedLabel: reagent-name-cream-of-coconut
   - type: Sprite
     sprite: Objects/Consumable/Drinks/cremedecoconutbottle.rsi
   - type: Sealable

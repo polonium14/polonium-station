@@ -16,8 +16,7 @@
 
 - type: reaction
   id: Tayquila
-  requiredMixerCategories:
-  - Stir
+  priority: 1
   reactants:
     Tequila:
       amount: 1

@@ -283,7 +283,7 @@ public abstract partial class SharedSprintingSystem : EntitySystem
 
         ent.Comp.LastDepleted = _timing.CurTime;
 
-        _movementSpeed.RefreshMovementSpeedModifiers(ent);
+        _movementSpeed.RefreshMovementSpeedModifiers(ent.Owner);
     }
 
     private void RefreshAlert(EntityUid uid, SprinterComponent? comp)
