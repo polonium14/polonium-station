@@ -102,6 +102,10 @@
       nameSegments:
         - NamesMilitaryFirstLeader
         - NamesMilitaryLast
+    - type: NpcFactionMember
+      factions:
+      - NanoTrasen
+      - DeathSquad
 
 
 ## ERT Leader
