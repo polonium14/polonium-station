@@ -14,7 +14,7 @@
 - type: gameMap
   id: Reach
   mapName: 'Reach'
-  mapPath: /Maps/_Polonium/reach.yml
+  mapPath: /Maps/reach.yml
   minPlayers: 0
   maxPlayers: 15
   stations:
