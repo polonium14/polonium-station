@@ -15,11 +15,3 @@
   parent: [ BaseCircuitboardRecipe, BaseEngineeringMachineRecipeCategory ]
   id: CrystallizerMachineCircuitboard
   result: CrystallizerMachineCircuitboard
-
-## Service
-
-# Washing machine
-- type: latheRecipe
-  parent: BaseCircuitboardRecipe
-  id: WashingMachineCircuitboard
-  result: WashingMachineCircuitboard

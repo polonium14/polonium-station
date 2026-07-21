@@ -960,5 +960,15 @@ CableHVStackLingering10: CableHVStack10
 CableMVStackLingering10: CableMVStack10
 CableApcStackLingering10: CableApcStack10
 
-# 2026-07-20
+# 2026-07-20 - Polonium
 RPDRecharging: RPD
+
+# 2026-07-21 - Polonium anti stains & anti washing machines
+WashingMachine: null
+WashingMachineCircuitboard: null
+FlatpackWashingMachine: null
+CrateServiceWashingMachineSet: null
+WallStain: null
+WallStainFireEffect: null
+WallStainSparkle: null
+SolutionStain: null

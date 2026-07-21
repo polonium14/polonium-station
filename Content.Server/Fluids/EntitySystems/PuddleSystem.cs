@@ -14,10 +14,7 @@ using Content.Shared.IdentityManagement;
 using Content.Shared.Maps;
 using Content.Shared.Popups;
 using Content.Shared.Slippery;
-using Content.Shared.Inventory;
-using Content.Shared._Funkystation.Fluids;
 using Content.Shared._Funkystation.Footprints;
-using Content.Shared._Funkystation.WallStains;
 using Robust.Shared.Collections;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
@@ -38,7 +35,6 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
     [Dependency] private SharedSolutionContainerSystem _solutionContainerSystem = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
     [Dependency] private TurfSystem _turf = default!;
-    [Dependency] private InventorySystem _inventory = default!;
 
     [Dependency] private ReagentFireSystem _fireSystem = default!;
 
@@ -53,40 +49,6 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
 
         SubscribeLocalEvent<PuddleComponent, SpreadNeighborsEvent>(OnPuddleSpread);
         SubscribeLocalEvent<PuddleComponent, SlipEvent>(OnPuddleSlip);
-
-        SubscribeLocalEvent<InventoryComponent, MoveEvent>(OnStepInPuddle);
-    }
-
-    private void OnStepInPuddle(Entity<InventoryComponent> ent, ref MoveEvent args)
-    {
-        var gridUid = args.NewPosition.GetGridUid(EntityManager);
-        if (!gridUid.HasValue || !TryComp<MapGridComponent>(gridUid, out var grid))
-            return;
-
-        if (args.OldPosition.GetGridUid(EntityManager) != gridUid ||
-            _map.CoordinatesToTile(gridUid.Value, grid, args.OldPosition) == _map.CoordinatesToTile(gridUid.Value, grid, args.NewPosition))
-            return;
-
-        var tile = _map.GetTileRef(gridUid.Value, grid, args.NewPosition);
-
-        if (!TryGetPuddle(tile, out var puddleUid) || !_puddleQuery.TryGetComponent(puddleUid, out var puddleComp))
-            return;
-
-        if (!_solutionContainerSystem.ResolveSolution(puddleUid, puddleComp.SolutionName, ref puddleComp.Solution, out var solution))
-            return;
-
-        if (solution.Volume <= FixedPoint2.Zero)
-            return;
-
-        var transferAmount = FixedPoint2.Min(FixedPoint2.New(1), solution.Volume);
-        var splitSol = _solutionContainerSystem.SplitSolution(puddleComp.Solution.Value, transferAmount);
-
-        if (_inventory.TryGetSlotEntity(ent.Owner, "shoes", out var shoes))
-        {
-            var spilledEvent = new SpilledOnEvent(puddleUid, splitSol);
-            var relayedEvent = new InventoryRelayedEvent<SpilledOnEvent>(spilledEvent);
-            RaiseLocalEvent(shoes.Value, relayedEvent);
-        }
     }
 
     // TODO: This can be predicted once https://github.com/space-wizards/RobustToolbox/pull/5849 is merged
@@ -267,16 +229,6 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
 
         var splitSol = _solutionContainerSystem.SplitSolution(entity.Comp.Solution.Value, solution.Volume * 0.15f);
         Reactive.DoEntityReaction(args.Slipped, splitSol, ReactionMethod.Touch);
-
-        if (splitSol.Volume > 0)
-        {
-            var stainEv = new SpilledOnEvent(entity.Owner, splitSol.Clone());
-            RaiseLocalEvent(args.Slipped, stainEv);
-
-            // Funky Wall Stains
-            var splashEv = new SplashOnWallEvent(Transform(entity.Owner).Coordinates, splitSol.Clone());
-            RaiseLocalEvent(ref splashEv);
-        }
     }
 
     public FixedPoint2 CurrentVolume(EntityUid uid, PuddleComponent? puddleComponent = null)
@@ -415,9 +367,6 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
             targets.Add(owner);
             Reactive.DoEntityReaction(owner, splitSolution, ReactionMethod.Touch);
 
-            if (splitSolution.Volume > 0)
-                RaiseLocalEvent(owner, new SpilledOnEvent(entity, splitSolution.Clone()));
-
             Popups.PopupEntity(Loc.GetString("spill-land-spilled-on-other",
                     ("spillable", entity),
                     ("target", Identity.Entity(owner, EntityManager))),
@@ -427,10 +376,6 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
 
         _color.RaiseEffect(spilled.GetColor(ProtoMan), targets,
             Filter.Pvs(entity, entityManager: EntityManager));
-
-        // Funky Wall Stains
-        var splashEv = new SplashOnWallEvent(coordinates, spilled.Clone());
-        RaiseLocalEvent(ref splashEv);
 
         return TrySpillAt(coordinates, spilled, out puddleUid, sound);
     }
