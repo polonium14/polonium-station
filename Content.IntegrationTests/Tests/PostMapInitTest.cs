@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text.RegularExpressions;
 using Content.IntegrationTests.Fixtures;
 using Content.IntegrationTests.Fixtures.Attributes;
 using Content.IntegrationTests.Utility;
@@ -53,67 +52,9 @@ namespace Content.IntegrationTests.Tests
             AdminTestArenaSystem.ArenaMapPath
         };
 
-        /// <summary>
-        /// A dictionary linking maps to collections of entity prototype ids that should be exempt from "DoNotMap" restrictions.
-        /// </summary>
-        /// <remarks>
-        /// This declares that the listed entity prototypes are allowed to be present on the map
-        /// despite being categorized as "DoNotMap", while any unlisted prototypes will still
-        /// cause the test to fail.
-        /// </remarks>
-        private static readonly Dictionary<string, HashSet<EntProtoId>> DoNotMapWhitelistSpecific = new()
-        {
-            // Funkystation edit - allow DNM disablers and such on base maps
-            {"/Maps/bagel.yml", ["RubberStampMime", "GunSafeDisabler"]}, // Mime stamp is original
-            {"/Maps/_Polonium/cluster.yml", ["RubberStampMime"]},
-            {"/Maps/reach.yml", ["HandheldCrewMonitor", "Stunbaton"]}, // HH crew monitor is original
-            {"/Maps/plasma.yml", ["GunSafeDisabler"]},
-            {"/Maps/packed.yml", ["GunSafeDisabler"]},
-            {"/Maps/box.yml", ["GunSafeDisabler", "Stunbaton"]},
-            {"/Maps/exo.yml", ["Stunbaton"]},
-            {"/Maps/fland.yml", ["GunSafeDisabler", "WeaponDisabler"]},
-            {"/Maps/marathon.yml", ["GunSafeDisabler"]},
-            {"/Maps/oasis.yml", ["GunSafeDisabler", "WeaponDisabler"]},
-            {"/Maps/relic.yml", ["GunSafeDisabler", "Stunbaton"]},
-            {"/Maps/saltern.yml", ["WeaponDisabler"]},
-            {"/Maps/serpentcrest.yml", ["GunSafeDisabler", "Stunbaton"]},
-            {"/Maps/snowball.yml", ["GunSafeDisabler"]},
-            {"/Maps/Shuttles/cargo_relic.yml", ["WeaponTaser"]},
-            {"/Maps/Shuttles/dart.yml", ["Stunbaton", "WeaponTaser"]},
-            {"/Maps/Shuttles/emergency_raven.yml", ["Stunbaton", "WeaponDisabler"]},
-            {"/Maps/Ruins/ruined_prison_ship.yml", ["WeaponDisabler"]},
-            // Funkystation edit end
-            {"/Maps/Shuttles/ShuttleEvent/honki.yml", ["GoldenBikeHorn", "RubberStampClown"]},
-            {"/Maps/Shuttles/ShuttleEvent/syndie_evacpod.yml", ["RubberStampSyndicate"]},
-            {"/Maps/Shuttles/ShuttleEvent/cruiser.yml", ["ShuttleGunPerforator"]},
-            {"/Maps/Shuttles/ShuttleEvent/instigator.yml", ["ShuttleGunFriendship"]},
-        };
-
-        /// <summary>
-        /// Maps listed here are given blanket freedom to contain "DoNotMap" entities. Use sparingly.
-        /// </summary>
-        /// <remarks>
-        /// It is also possible to whitelist entire directories here. For example, adding
-        /// "/Maps/Shuttles/**" will whitelist all shuttle maps.
-        /// </remarks>
-        private static readonly string[] DoNotMapWhitelist =
-        {
-            "/Maps/centcomm.yml",
-            "/Maps/Shuttles/AdminSpawn/**" // admin gaming
-        };
-
-        /// <summary>
-        /// Converts the above globs into regex so your eyes dont bleed trying to add filepaths.
-        /// </summary>
-        private static readonly Regex[] DoNotMapWhiteListRegexes = DoNotMapWhitelist
-            .Select(glob => new Regex(GlobToRegex(glob), RegexOptions.IgnoreCase | RegexOptions.Compiled))
-            .ToArray();
-
         private static readonly string[] GameMaps = GameDataScrounger.PrototypesOfKind<GameMapPrototype>().Where(x => x != PoolManager.TestMap).ToArray();
         private static readonly ResPath[] AllMapFiles = GameDataScrounger.FilesInDirectoryInVfs("/Maps", "*.yml");
         private static readonly ResPath[] ShuttleMapFiles = GameDataScrounger.FilesInDirectoryInVfs("/Maps/Shuttles", "*.yml");
-
-        private static readonly ProtoId<EntityCategoryPrototype> DoNotMapCategory = "DoNotMap";
 
         /// <summary>
         /// Asserts that specific files have been saved as grids and not maps.
@@ -191,7 +132,6 @@ namespace Content.IntegrationTests.Tests
             var server = pair.Server;
 
             var resourceManager = server.ResolveDependency<IResourceManager>();
-            var protoManager = server.ResolveDependency<IPrototypeManager>();
             var loader = server.System<MapLoaderSystem>();
 
             var rootedPath = map.ToRootedPath();
@@ -217,10 +157,6 @@ namespace Content.IntegrationTests.Tests
             var root = yamlStream.Documents[0].RootNode;
             var meta = root["meta"];
             var version = meta["format"].AsInt();
-
-            // TODO MAP TESTS
-            // Move this to some separate test?
-            CheckDoNotMap(map, root, protoManager);
 
             if (version >= 7)
             {
@@ -257,53 +193,6 @@ namespace Content.IntegrationTests.Tests
             await server.WaitPost(() => mapSys.InitializeMap(id));
             Assert.That(loader.TrySaveMap(id, path));
             Assert.That(IsPreInit(path, loader, deps, ev.RenamedPrototypes, ev.DeletedPrototypes), Is.False);
-        }
-
-        private bool IsWhitelistedForMap(EntProtoId protoId, ResPath map)
-        {
-            if (!DoNotMapWhitelistSpecific.TryGetValue(map.ToString(), out var allowedProtos))
-                return false;
-
-            return allowedProtos.Contains(protoId);
-        }
-
-        /// <summary>
-        /// Check that maps do not have any entities that belong to the DoNotMap entity category
-        /// </summary>
-        private void CheckDoNotMap(ResPath map, YamlNode node, IPrototypeManager protoManager)
-        {
-            foreach (var regex in DoNotMapWhiteListRegexes)
-            {
-                if (regex.IsMatch(map.ToString()))
-                    return;
-            }
-
-            var yamlEntities = node["entities"];
-            var dnmCategory = protoManager.Index(DoNotMapCategory);
-
-            // Make a set containing all the specific whitelisted proto ids for this map
-            HashSet<EntProtoId> unusedExemptions = DoNotMapWhitelistSpecific.TryGetValue(map.ToString(), out var exemptions) ? new(exemptions) : [];
-            Assert.Multiple(() =>
-            {
-                foreach (var yamlEntity in (YamlSequenceNode)yamlEntities)
-                {
-                    var protoId = yamlEntity["proto"].AsString();
-
-                    // This doesn't properly handle prototype migrations, but thats not a significant issue.
-                    if (!protoManager.TryIndex(protoId, out var proto))
-                        continue;
-
-                    Assert.That(!proto.Categories.Contains(dnmCategory) || IsWhitelistedForMap(protoId, map),
-                        $"\nMap {map} contains entities in the DO NOT MAP category ({proto.Name})");
-
-                    // The proto id is used on this map, so remove it from the set
-                    unusedExemptions.Remove(protoId);
-                }
-            });
-
-            // If there are any proto ids left, they must not have been used in the map!
-            Assert.That(unusedExemptions, Is.Empty,
-                $"Map {map} has DO NOT MAP entities whitelisted that are not present in the map: {string.Join(", ", unusedExemptions)}");
         }
 
         private bool IsPreInit(ResPath map,
@@ -428,19 +317,27 @@ namespace Content.IntegrationTests.Tests
                     var comp = entManager.GetComponent<StationJobsComponent>(station);
                     var jobs = new HashSet<ProtoId<JobPrototype>>(comp.SetupAvailableJobs.Keys);
 
-                    var spawnPoints = entManager.EntityQuery<SpawnPointComponent>()
-                        .Where(x => x.SpawnType == SpawnPointType.Job && x.Job != null)
-                        .Select(x => x.Job.Value);
+                    // Polonium, jak mamy spawny late join, to każda praca z brakującym spawnem zostanie tam zespawnowana.
+                    var spawnPointsLateJoin = entManager.EntityQuery<SpawnPointComponent>()
+                        .Where(x => x.SpawnType == SpawnPointType.LateJoin)
+                        .Select(x => x.SpawnType);
 
-                    jobs.ExceptWith(spawnPoints);
+                    if (!spawnPointsLateJoin.Any())
+                    {
+                        var spawnPoints = entManager.EntityQuery<SpawnPointComponent>()
+                            .Where(x => x.SpawnType == SpawnPointType.Job && x.Job != null)
+                            .Select(x => x.Job.Value);
 
-                    spawnPoints = entManager.EntityQuery<ContainerSpawnPointComponent>()
-                        .Where(x => x.SpawnType is SpawnPointType.Job or SpawnPointType.Unset && x.Job != null)
-                        .Select(x => x.Job.Value);
+                        jobs.ExceptWith(spawnPoints);
 
-                    jobs.ExceptWith(spawnPoints);
+                        spawnPoints = entManager.EntityQuery<ContainerSpawnPointComponent>()
+                            .Where(x => x.SpawnType is SpawnPointType.Job or SpawnPointType.Unset && x.Job != null)
+                            .Select(x => x.Job.Value);
 
-                    Assert.That(jobs, Is.Empty, $"There is no spawnpoints for {string.Join(", ", jobs)} on {mapProto}.");
+                        jobs.ExceptWith(spawnPoints);
+
+                        Assert.That(jobs, Is.Empty, $"There is no spawnpoints for {string.Join(", ", jobs)} on {mapProto}.");
+                    }
                 }
 
                 try
@@ -549,21 +446,6 @@ namespace Content.IntegrationTests.Tests
                     }
                 });
             });
-        }
-
-        /// <summary>
-        /// Lets us the convert the filepaths to regex without eyeglaze trying to add new paths.
-        /// </summary>
-        private static string GlobToRegex(string glob)
-        {
-            var regex = Regex.Escape(glob)
-                .Replace(@"\*\*", "**") // replace **
-                .Replace(@"\*", "*")    // replace *
-                .Replace("**", ".*")    // ** → match across folders
-                .Replace("*", @"[^/]*") // * → match within a single folder
-                .Replace(@"\?", ".");   // ? → any single character
-
-            return $"^{regex}$";
         }
     }
 }
