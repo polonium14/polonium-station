@@ -24,6 +24,17 @@
     - WhitelistChameleon
   - type: ProtectedFromStepTriggers
   - type: Appearance
+  - type: Stainable
+    clothingVisuals:
+      shoes:
+      - sprite: _Funkystation/Effects/blood.rsi
+        state: shoeblood
+    iconVisuals:
+    - sprite: _Funkystation/Effects/blood.rsi
+      state: shoebloodicon
+  - type: SolutionManager
+    solutions:
+    - SolutionStain
 
 - type: entity
   abstract: true

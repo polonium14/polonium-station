@@ -12,6 +12,17 @@
   - type: StaticPrice
     price: 25
   - type: Appearance
+  - type: SolutionManager
+    solutions:
+    - SolutionStain
+  - type: Stainable
+    clothingVisuals:
+      mask:
+      - sprite: _Funkystation/Effects/blood.rsi
+        state: maskblood
+    iconVisuals:
+    - sprite: _Funkystation/Effects/blood.rsi
+      state: maskbloodicon
 
 - type: entity
   abstract: true
@@ -55,3 +66,6 @@
     tags:
     - ClothMade
     - Recyclable
+  - type: SolutionManager
+    solutions:
+    - SolutionStain
