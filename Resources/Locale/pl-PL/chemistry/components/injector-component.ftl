@@ -5,7 +5,7 @@ injector-inject-text = Wstrzyknij
 injector-invalid-injector-toggle-mode = Nieprawidłowy
 injector-volume-label =
     Objętość: [color=white]{ $currentVolume }/{ $totalVolume }[/color]
-    Tryb: [color=white]{ $modeString }[/color] ([color=white]{ $transferVolume }u[/color])
+    Tryb: [color=white]{ $modeString }[/color]
 
 ## Entity
 
