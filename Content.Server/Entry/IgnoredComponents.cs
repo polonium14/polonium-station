@@ -22,6 +22,7 @@ namespace Content.Server.Entry
             "AnomalyScannerScreen",
             "MultipartMachineGhost",
             "DirectionalArrowIndicator"
+            "EdgeTrim" // Funky Change
         };
     }
 }
