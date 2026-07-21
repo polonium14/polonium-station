@@ -21855,6 +21855,11 @@ entities:
     - type: Transform
       pos: 7.5,-4.5
       parent: 2
+    - type: DeviceLinkSource
+      linkedPorts:
+        6355:
+        - - BodyScannerSender
+          - BodyScannerReceiver
 - proto: ComputerCargoBounty
   entities:
   - uid: 3329

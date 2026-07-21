@@ -29839,6 +29839,11 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 20.5,-15.5
       parent: 2
+    - type: DeviceLinkSource
+      linkedPorts:
+        8181:
+        - - BodyScannerSender
+          - BodyScannerReceiver
 - proto: ComputerCargoBounty
   entities:
   - uid: 4688

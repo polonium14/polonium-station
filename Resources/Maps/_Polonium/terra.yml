@@ -28943,12 +28943,22 @@ entities:
       rot: 3.141592653589793 rad
       pos: 8.5,-22.5
       parent: 2
+    - type: DeviceLinkSource
+      linkedPorts:
+        4385:
+        - - BodyScannerSender
+          - BodyScannerReceiver
   - uid: 7929
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 9.5,-3.5
       parent: 7677
+    - type: DeviceLinkSource
+      linkedPorts:
+        8228:
+        - - BodyScannerSender
+          - BodyScannerReceiver
 - proto: ComputerBroken
   entities:
   - uid: 7930
@@ -59750,7 +59760,6 @@ entities:
   - uid: 5690
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
       pos: 42.5,8.5
       parent: 2
 - proto: VendingMachineCuraDrobe

@@ -44579,18 +44579,33 @@ entities:
     - type: Transform
       pos: 65.5,-3.5
       parent: 2
+    - type: DeviceLinkSource
+      linkedPorts:
+        24:
+        - - BodyScannerSender
+          - BodyScannerReceiver
   - uid: 1911
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 62.5,-11.5
       parent: 2
+    - type: DeviceLinkSource
+      linkedPorts:
+        5085:
+        - - BodyScannerSender
+          - BodyScannerReceiver
   - uid: 11401
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 66.5,-11.5
       parent: 2
+    - type: DeviceLinkSource
+      linkedPorts:
+        11399:
+        - - BodyScannerSender
+          - BodyScannerReceiver
 - proto: ComputerBroken
   entities:
   - uid: 14974

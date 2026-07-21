@@ -64324,24 +64324,33 @@ entities:
     - type: Transform
       pos: 10.5,44.5
       parent: 2
-    - type: BodyScanner
-      operatingTable: 16933
+    - type: DeviceLinkSource
+      linkedPorts:
+        16933:
+        - - BodyScannerSender
+          - BodyScannerReceiver
   - uid: 9200
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -29.5,55.5
       parent: 2
-    - type: BodyScanner
-      operatingTable: 16935
+    - type: DeviceLinkSource
+      linkedPorts:
+        16935:
+        - - BodyScannerSender
+          - BodyScannerReceiver
   - uid: 9201
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 26.5,44.5
       parent: 2
-    - type: BodyScanner
-      operatingTable: 16932
+    - type: DeviceLinkSource
+      linkedPorts:
+        16932:
+        - - BodyScannerSender
+          - BodyScannerReceiver
 - proto: ComputerBroken
   entities:
   - uid: 9202
@@ -121545,21 +121554,11 @@ entities:
     - type: Transform
       pos: 26.5,45.5
       parent: 2
-    - type: DeviceLinkSource
-      linkedPorts:
-        9201:
-        - - OperatingTable
-          - OperatingTableReceiver
   - uid: 16933
     components:
     - type: Transform
       pos: 11.5,44.5
       parent: 2
-    - type: DeviceLinkSource
-      linkedPorts:
-        9199:
-        - - OperatingTable
-          - OperatingTableReceiver
   - uid: 16934
     components:
     - type: Transform
@@ -121570,11 +121569,6 @@ entities:
     - type: Transform
       pos: -29.5,54.5
       parent: 2
-    - type: DeviceLinkSource
-      linkedPorts:
-        9200:
-        - - OperatingTable
-          - OperatingTableReceiver
 - proto: OreBag
   entities:
   - uid: 16936
@@ -144546,7 +144540,6 @@ entities:
   - uid: 20805
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: -46.5,9.5
       parent: 2
 - proto: VendingMachineClothing

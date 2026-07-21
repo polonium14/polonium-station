@@ -24294,7 +24294,6 @@ entities:
   - uid: 2556
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: -10.5,5.5
       parent: 2
 - proto: VendingMachineDinnerware
