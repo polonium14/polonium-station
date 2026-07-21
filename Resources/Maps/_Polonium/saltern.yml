@@ -29831,7 +29831,7 @@ entities:
         8069:
         - - ArtifactAnalyzerSender
           - ArtifactAnalyzerReceiver
-- proto: computerBodyScanner
+- proto: ComputerBodyScanner
   entities:
   - uid: 4687
     components:

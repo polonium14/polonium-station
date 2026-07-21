@@ -17,7 +17,7 @@ public sealed partial class BodyScannerConsoleComponent : Component
     /// <summary>
     /// The device-link source port this console sends its bed link from. Must match the sink
     /// port granted to operating tables/medical beds (see <c>computers.yml</c>'s
-    /// <c>computerBodyScanner</c> and <c>operating_table.yml</c>/<c>beds.yml</c>).
+    /// <c>ComputerBodyScanner</c> and <c>operating_table.yml</c>/<c>beds.yml</c>).
     /// </summary>
     public const string LinkPort = "BodyScannerSender";
 

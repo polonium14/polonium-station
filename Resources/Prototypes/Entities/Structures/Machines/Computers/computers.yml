@@ -769,7 +769,7 @@
 
 - type: entity
   parent: BaseComputerAiAccess
-  id: computerBodyScanner
+  id: ComputerBodyScanner
   name: body scanner computer
   description: A body scanner. Link it to an operating table or medical bed with a network configurator to see live patient data.
   components:
