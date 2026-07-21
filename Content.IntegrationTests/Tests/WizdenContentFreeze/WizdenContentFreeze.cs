@@ -25,11 +25,11 @@ public sealed class WizdenContentFreeze : GameTest
         var protoMan = server.ProtoMan;
 
         var recipesCount = protoMan.Count<FoodRecipePrototype>();
-        var recipesLimit = 221; // Polonium (218+some more recipes)
+        var recipesLimit = 227; // Polonium +3, Funky +6
 
         if (recipesCount > recipesLimit)
         {
-            Assert.Fail($"PLEASE STOP ADDING NEW MICROWAVE RECIPES. MICROWAVE RECIPES ARE FROZEN AND NEED TO BE REPLACED WITH PROPER COOKING MECHANICS! See https://github.com/space-wizards/space-station-14/issues/8524. Keep it under {recipesLimit}. Current count: {recipesCount}"); // please forgive me
+            Assert.Fail($"PROSIMY O ZAPRZESTANIE DODAWANIA NOWYCH PRZEPISÓW NA POTRAWY Z MIKROFALI. ONE SĄ NIEAKTUALNE I NALEŻY JE ZASTĄPIĆ PRZEPISAMI OPARTYMI NA WŁAŚCIWYCH ZASADACH GOTOWANIA! Zobacz https://github.com/space-wizards/space-station-14/issues/8524. Nie przekraczaj limitu {recipesLimit}. Aktualna liczba: {recipesCount}"); // please forgive me
         }
 
         if (recipesCount < recipesLimit)
