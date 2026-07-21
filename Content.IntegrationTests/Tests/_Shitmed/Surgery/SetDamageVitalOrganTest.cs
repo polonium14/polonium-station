@@ -33,6 +33,8 @@ namespace Content.IntegrationTests.Tests._Shitmed.Surgery;
 [TestOf(typeof(SurgerySystem))]
 public sealed class SetDamageVitalOrganTest : GameTest
 {
+    private static readonly ProtoId<DamageTypePrototype> BluntDamageType = "Blunt";
+
     [TestPrototypes]
     private const string Prototypes = @"
 - type: entity
@@ -87,7 +89,7 @@ public sealed class SetDamageVitalOrganTest : GameTest
 
         await server.WaitPost(() =>
         {
-            var proto = sProtoMan.Index<DamageTypePrototype>("Blunt");
+            var proto = sProtoMan.Index(BluntDamageType);
             var damage = new DamageSpecifier(proto, FixedPoint2.New(5));
             var ev = new SurgeryStepDamageEvent(user, body, heart, heart, damage, 1f);
             sEntMan.EventBus.RaiseLocalEvent(body, ref ev);

@@ -61,10 +61,10 @@ public sealed class HealthAnalyzerValidScanTargetTest : GameTest
 
         await server.WaitAssertion(() =>
         {
-            var bodylessResult = (bool) validScanTargetMethod.Invoke(sHealthAnalyzer, new object?[] { bodylessMob })!;
+            var bodylessResult = (bool) validScanTargetMethod.Invoke(sHealthAnalyzer, new object[] { bodylessMob })!;
             Assert.That(bodylessResult, Is.False, "A MobState-only target with no BodyComponent should be rejected up front, not let the DoAfter start.");
 
-            var realResult = (bool) validScanTargetMethod.Invoke(sHealthAnalyzer, new object?[] { realMob })!;
+            var realResult = (bool) validScanTargetMethod.Invoke(sHealthAnalyzer, new object[] { realMob })!;
             Assert.That(realResult, Is.True, "A real target with both MobState and Body should still be accepted.");
         });
     }

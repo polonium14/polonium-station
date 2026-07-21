@@ -29,6 +29,7 @@ namespace Content.IntegrationTests.Tests._Shitmed.Body;
 public sealed class TraumaBoneBreakTest : GameTest
 {
     private static readonly ProtoId<DamageTypePrototype> BluntDamageType = "Blunt";
+    private static readonly ProtoId<DamageTypePrototype> PoisonDamageType = "Poison";
 
     [TestPrototypes]
     private const string Prototypes = @"
@@ -518,7 +519,7 @@ public sealed class TraumaBoneBreakTest : GameTest
         // DamageableComponent.Damage total from the wound-healing path already covered above.
         await server.WaitPost(() =>
         {
-            var poisonProto = sProtoMan.Index<DamageTypePrototype>("Poison");
+            var poisonProto = sProtoMan.Index(PoisonDamageType);
             sDamageable.TryChangeDamage(organ, new DamageSpecifier(poisonProto, FixedPoint2.New(10)), ignoreResistances: true, origin: attacker);
         });
 

@@ -47,6 +47,8 @@ namespace Content.IntegrationTests.Tests._Shitmed.Body;
 [TestOf(typeof(HealingSystem))]
 public sealed class HealingWoundlessOrganDamageTest : GameTest
 {
+    private static readonly ProtoId<DamageTypePrototype> HeatDamageType = "Heat";
+
     [TestPrototypes]
     private const string Prototypes = @"
 - type: entity
@@ -147,7 +149,7 @@ public sealed class HealingWoundlessOrganDamageTest : GameTest
         // 0.8) - real damage, no wound.
         await server.WaitPost(() =>
         {
-            var proto = sProtoMan.Index<DamageTypePrototype>("Heat");
+            var proto = sProtoMan.Index(HeatDamageType);
             sDamageable.TryChangeDamage(patient, new DamageSpecifier(proto, FixedPoint2.New("2.5")), ignoreResistances: true, origin: null);
         });
 
