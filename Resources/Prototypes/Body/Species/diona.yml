@@ -95,13 +95,6 @@
     baseDecayRate: 0.0083
   - type: Damageable
     damageModifierSet: Diona
-  - type: DamageVisuals
-    damageOverlayGroups:
-      Brute:
-        sprite: Mobs/Effects/brute_damage.rsi
-        color: "#cd7314"
-      Burn:
-        sprite: Mobs/Effects/burn_damage.rsi
   - type: Butcherable
     spawned:
       - id: FoodMeatPlant
@@ -218,21 +211,82 @@
   - type: Sprite
     sprite: Mobs/Species/Diona/parts.rsi
 
+
 - type: entity
   parent: [ OrganBaseTorso, OrganDionaExternal ]
   id: OrganDionaTorso
+  components:
+  - type: Damageable
+  - type: Injurable
+    damageContainer: Biological
+  - type: Nerve
+  - type: Woundable
+    integrityCap: 200
+    thresholds:
+      Healthy: 200
+      Minor: 190
+      Moderate: 180
+      Severe: 160
+      Critical: 140
+      Mangled: 125
+      Severed: 110
 
 - type: entity
   parent: [ OrganBaseHead, OrganDionaExternal ]
   id: OrganDionaHead
+  components:
+  - type: Damageable
+  - type: Injurable
+    damageContainer: Biological
+  - type: Nerve
+  - type: Woundable
+    integrityCap: 125
+    thresholds:
+      Healthy: 125
+      Minor: 115
+      Moderate: 105
+      Severe: 85
+      Critical: 65
+      Mangled: 50
+      Severed: 35
 
 - type: entity
   parent: [ OrganBaseArmLeft, OrganDionaExternal ]
   id: OrganDionaArmLeft
+  components:
+  - type: Damageable
+  - type: Injurable
+    damageContainer: Biological
+  - type: Nerve
+  - type: Woundable
+    integrityCap: 80
+    thresholds:
+      Healthy: 80
+      Minor: 70
+      Moderate: 60
+      Severe: 40
+      Critical: 20
+      Mangled: 5
+      Severed: -10
 
 - type: entity
   parent: [ OrganBaseArmRight, OrganDionaExternal ]
   id: OrganDionaArmRight
+  components:
+  - type: Damageable
+  - type: Injurable
+    damageContainer: Biological
+  - type: Nerve
+  - type: Woundable
+    integrityCap: 80
+    thresholds:
+      Healthy: 80
+      Minor: 70
+      Moderate: 60
+      Severe: 40
+      Critical: 20
+      Mangled: 5
+      Severed: -10
 
 - type: entity
   parent: [ OrganBaseHandLeft, OrganDionaExternal ]
@@ -245,10 +299,40 @@
 - type: entity
   parent: [ OrganBaseLegLeft, OrganDionaExternal ]
   id: OrganDionaLegLeft
+  components:
+  - type: Damageable
+  - type: Injurable
+    damageContainer: Biological
+  - type: Nerve
+  - type: Woundable
+    integrityCap: 80
+    thresholds:
+      Healthy: 80
+      Minor: 70
+      Moderate: 60
+      Severe: 40
+      Critical: 20
+      Mangled: 5
+      Severed: -10
 
 - type: entity
   parent: [ OrganBaseLegRight, OrganDionaExternal ]
   id: OrganDionaLegRight
+  components:
+  - type: Damageable
+  - type: Injurable
+    damageContainer: Biological
+  - type: Nerve
+  - type: Woundable
+    integrityCap: 80
+    thresholds:
+      Healthy: 80
+      Minor: 70
+      Moderate: 60
+      Severe: 40
+      Critical: 20
+      Mangled: 5
+      Severed: -10
 
 - type: entity
   parent: [ OrganBaseFootLeft, OrganDionaExternal ]
@@ -261,6 +345,13 @@
 - type: entity
   parent: [ OrganBaseBrain, OrganDionaInternal ]
   id: OrganDionaBrain
+  components:
+  - type: OrganIntegrity
+    integrityCap: 56
+    integrityThresholds:
+      Normal: 56
+      Damaged: 16
+      Destroyed: 0
 
 - type: entity
   parent: [ OrganDionaVisual, OrganBaseEyes, OrganDionaInternal ]
@@ -270,6 +361,12 @@
     data:
       sprite: Mobs/Customization/eyes.rsi
       state: diona
+  - type: OrganIntegrity
+    integrityCap: 34
+    integrityThresholds:
+      Normal: 34
+      Damaged: 8
+      Destroyed: 0
 
 - type: entity
   parent: [ OrganBaseLungs, OrganDionaInternal, OrganDionaMetabolizer ]
@@ -278,6 +375,12 @@
   - type: Sprite
     layers:
     - state: lungs
+  - type: OrganIntegrity
+    integrityCap: 42
+    integrityThresholds:
+      Normal: 42
+      Damaged: 12
+      Destroyed: 0
 
 - type: entity
   parent: [ OrganBaseStomach, OrganDionaInternal, OrganDionaMetabolizer ]
@@ -286,6 +389,12 @@
   - type: Metabolizer
     maxReagents: 6
     stages: [ Digestion, Bloodstream, Metabolites ]
+  - type: OrganIntegrity
+    integrityCap: 70
+    integrityThresholds:
+      Normal: 70
+      Damaged: 19
+      Destroyed: 0
 
 - type: entity
   parent: OrganDionaBrain

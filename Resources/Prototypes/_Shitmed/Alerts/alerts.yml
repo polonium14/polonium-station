@@ -1,0 +1,15 @@
+- type: alert
+  id: BrokenBones
+  icons:
+    - sprite: /Textures/_Shitmed/Interface/Alerts/alerts.rsi
+      state: brokenbones
+  name: alerts-broken-bones-name
+  description: alerts-broken-bones-desc
+
+- type: alert
+  id: LegsCollapsed
+  icons:
+    - sprite: /Textures/Interface/Alerts/stunnable.rsi
+      state: knocked-down
+  name: alerts-legs-collapsed-name
+  description: alerts-legs-collapsed-desc

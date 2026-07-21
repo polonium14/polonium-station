@@ -1,0 +1,51 @@
+condition-body-unrevivable = • {$entity} has a particularly weak constitution. They cannot withstand the shock of a defibrillator.
+
+condition-body-trauma-BoneDamage-Normal = • The {$woundable} has some very minor bone damage.
+condition-body-trauma-BoneDamage-Damaged = • The {$woundable}'s has some bone damage.
+condition-body-trauma-BoneDamage-Cracked = • The {$woundable}'s bone looks almost broken...
+condition-body-trauma-BoneDamage-Broken = • The {$woundable}'s bone is broken!
+condition-body-trauma-OrganDamage = • The {$woundable} has some damage on its organs.
+condition-body-trauma-VeinsDamage = • The {$woundable} has some damage on its veins.
+condition-body-trauma-NerveDamage = • The {$woundable} has some damage on its nerves.
+condition-body-trauma-Dismemberment = • The {$woundable} is missing a limb.
+
+condition-body-bleeding-Head = • {$entity}'s head is bleeding.
+condition-body-bleeding-Chest = • {$entity}'s torso is bleeding.
+condition-body-bleeding-LeftArm = • {$entity}'s left arm is bleeding.
+condition-body-bleeding-RightArm = • {$entity}'s right arm is bleeding.
+condition-body-bleeding-LeftLeg = • {$entity}'s left leg is bleeding.
+condition-body-bleeding-RightLeg = • {$entity}'s right leg is bleeding.
+
+condition-body-tourniquet-Head = • {$entity} has a tourniquet on their head.
+condition-body-tourniquet-Chest = • {$entity} has a tourniquet on their torso.
+condition-body-tourniquet-LeftArm = • {$entity} has a tourniquet on their left arm.
+condition-body-tourniquet-RightArm = • {$entity} has a tourniquet on their right arm.
+condition-body-tourniquet-LeftLeg = • {$entity} has a tourniquet on their left leg.
+condition-body-tourniquet-RightLeg = • {$entity} has a tourniquet on their right leg.
+
+condition-body-unfinished-surgery-Head = • {$entity} has an unfinished surgery on their head.
+condition-body-unfinished-surgery-Chest = • {$entity} has an unfinished surgery on their torso.
+condition-body-unfinished-surgery-LeftArm = • {$entity} has an unfinished surgery on their left arm.
+condition-body-unfinished-surgery-RightArm = • {$entity} has an unfinished surgery on their right arm.
+condition-body-unfinished-surgery-LeftLeg = • {$entity} has an unfinished surgery on their left leg.
+condition-body-unfinished-surgery-RightLeg = • {$entity} has an unfinished surgery on their right leg.
+
+condition-organ-damage-Normal = • The {$organ} is mostly good.
+condition-organ-damage-Damaged = • The {$organ} is damaged.
+condition-organ-damage-Destroyed = • The {$organ} is ruined...
+
+condition-organ-missing-Brain = • {$entity} is missing a brain!
+condition-organ-missing-Eyes = • {$entity} is missing their eyes.
+condition-organ-missing-Tongue = • {$entity} is missing their tongue.
+condition-organ-missing-Appendix = • {$entity} is missing their appendix.
+condition-organ-missing-Ears = • {$entity} is missing their ears.
+condition-organ-missing-Lungs = • {$entity} is missing their lungs!
+condition-organ-missing-Heart = • {$entity} is missing their heart!
+condition-organ-missing-Stomach = • {$entity} is missing their stomach.
+condition-organ-missing-Liver = • {$entity} is missing their liver.
+condition-organ-missing-Kidneys = • {$entity} is missing their kidneys.
+
+condition-none = • No conditions detected.
+group-organ-status = {$organ} at {$capacity}% functioning capacity
+group-solution-name = {$solution}
+group-solution-contents = {$reagent}: {$quantity}

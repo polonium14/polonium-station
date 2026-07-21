@@ -1,0 +1,30 @@
+inspect-part-status-line = {$possessive} {$part} is {$status}.
+inspect-part-status-line-trauma-only = {$possessive} {$part} {$status}.
+inspect-part-status-title = You check yourself for injuries.
+inspect-part-status-title-other = You check {$entity} for injuries.
+inspect-part-status-line-styleless = {$possessive} {$part} is {$status}.
+inspect-part-status-line-trauma-only-styleless = {$possessive} {$part} {$status}.
+inspect-part-status-title-styleless = You check yourself for injuries.
+inspect-part-status-title-other-styleless = You check {$entity} for injuries.
+inspect-part-status-fine = fine
+inspect-part-status-comma = ,{" "}
+inspect-part-status-conjunction = it appears to be{" "}
+inspect-part-status-conjunction2 = . It also{" "}
+inspect-part-status-conjunction3 = It{" "}
+inspect-part-status-and = and{" "}
+inspect-part-status-you = Your
+inspect-part-status-their = Their
+
+examine-border-line = ═════════════════════
+
+target-zone-head = head
+target-zone-chest = chest
+target-zone-groin = groin
+target-zone-leftarm = left arm
+target-zone-rightarm = right arm
+target-zone-lefthand = left hand
+target-zone-righthand = right hand
+target-zone-leftleg = left leg
+target-zone-rightleg = right leg
+target-zone-leftfoot = left foot
+target-zone-rightfoot = right foot

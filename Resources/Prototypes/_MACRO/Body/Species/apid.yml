@@ -185,11 +185,6 @@
       reagents:
       - ReagentId: InsectBlood
         Quantity: 300
-  - type: DamageVisuals
-    damageOverlayGroups:
-      Brute:
-        sprite: _MACRO/Mobs/Effects/apid_brute_damage.rsi # technically this is only brute sprites for the chest. but that doesn't matter
-        color: "#808A51"
   - type: MothAccent
   - type: Vocal
     emoteSounds: UnisexMoth
@@ -308,9 +303,25 @@
   parent: [ OrganApidVisual, OrganBaseEyes, OrganApidInternal ]
   id: OrganApidEyes
 
+
 - type: entity
   parent: [ OrganBaseTorso, OrganApidExternal ]
   id: OrganApidTorso
+  components:
+  - type: Damageable
+  - type: Injurable
+    damageContainer: Biological
+  - type: Nerve
+  - type: Woundable
+    integrityCap: 200
+    thresholds:
+      Healthy: 200
+      Minor: 190
+      Moderate: 180
+      Severe: 160
+      Critical: 140
+      Mangled: 125
+      Severed: 110
 
 - type: entity
   parent: [ OrganBaseHead, OrganApidExternal ]
@@ -319,14 +330,58 @@
   - type: VisualOrganMarkings
     hideableLayers:
     - enum.HumanoidVisualLayers.HeadTop
+  - type: Damageable
+  - type: Injurable
+    damageContainer: Biological
+  - type: Nerve
+  - type: Woundable
+    integrityCap: 125
+    thresholds:
+      Healthy: 125
+      Minor: 115
+      Moderate: 105
+      Severe: 85
+      Critical: 65
+      Mangled: 50
+      Severed: 35
 
 - type: entity
   parent: [ OrganBaseArmLeft, OrganApidExternal ]
   id: OrganApidArmLeft
+  components:
+  - type: Damageable
+  - type: Injurable
+    damageContainer: Biological
+  - type: Nerve
+  - type: Woundable
+    integrityCap: 80
+    thresholds:
+      Healthy: 80
+      Minor: 70
+      Moderate: 60
+      Severe: 40
+      Critical: 20
+      Mangled: 5
+      Severed: -10
 
 - type: entity
   parent: [ OrganBaseArmRight, OrganApidExternal ]
   id: OrganApidArmRight
+  components:
+  - type: Damageable
+  - type: Injurable
+    damageContainer: Biological
+  - type: Nerve
+  - type: Woundable
+    integrityCap: 80
+    thresholds:
+      Healthy: 80
+      Minor: 70
+      Moderate: 60
+      Severe: 40
+      Critical: 20
+      Mangled: 5
+      Severed: -10
 
 - type: entity
   parent: [ OrganBaseHandLeftInactive, OrganApidExternal ]
@@ -339,10 +394,40 @@
 - type: entity
   parent: [ OrganBaseLegLeft, OrganApidExternal ]
   id: OrganApidLegLeft
+  components:
+  - type: Damageable
+  - type: Injurable
+    damageContainer: Biological
+  - type: Nerve
+  - type: Woundable
+    integrityCap: 80
+    thresholds:
+      Healthy: 80
+      Minor: 70
+      Moderate: 60
+      Severe: 40
+      Critical: 20
+      Mangled: 5
+      Severed: -10
 
 - type: entity
   parent: [ OrganBaseLegRight, OrganApidExternal ]
   id: OrganApidLegRight
+  components:
+  - type: Damageable
+  - type: Injurable
+    damageContainer: Biological
+  - type: Nerve
+  - type: Woundable
+    integrityCap: 80
+    thresholds:
+      Healthy: 80
+      Minor: 70
+      Moderate: 60
+      Severe: 40
+      Critical: 20
+      Mangled: 5
+      Severed: -10
 
 - type: entity
   parent: [ OrganBaseFootLeft, OrganApidExternal ]

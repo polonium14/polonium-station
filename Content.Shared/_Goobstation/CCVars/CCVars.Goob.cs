@@ -42,4 +42,14 @@ public sealed partial class GoobCVars
         CVarDef.Create("gamedirector.roundstart_chaos_score_multiplier", 1f, CVar.SERVERONLY);
 
     #endregion
+
+    #region Medical
+
+    /// <summary>
+    /// A multiplier for bloodloss damage and heal.
+    /// </summary>
+    public static readonly CVarDef<float> BleedMultiplier =
+        CVarDef.Create("medical.bloodloss_multiplier", 4.0f, CVar.SERVER);
+
+    #endregion
 }

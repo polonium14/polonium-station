@@ -204,6 +204,7 @@
     markingData:
       group: Reptilian
 
+
 - type: entity
   parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganReptilianExternal ]
   id: OrganReptilianTorso
@@ -211,6 +212,20 @@
   - type: VisualOrganMarkings
     hideableLayers:
     - enum.HumanoidVisualLayers.Tail
+  - type: Damageable
+  - type: Injurable
+    damageContainer: Biological
+  - type: Nerve
+  - type: Woundable
+    integrityCap: 200
+    thresholds:
+      Healthy: 200
+      Minor: 190
+      Moderate: 180
+      Severe: 160
+      Critical: 140
+      Mangled: 125
+      Severed: 110
 
 - type: entity
   parent: [ OrganBaseHeadSexed, OrganBaseHead, OrganReptilianExternal ]
@@ -221,14 +236,58 @@
     - enum.HumanoidVisualLayers.Snout
     - enum.HumanoidVisualLayers.HeadTop
     - enum.HumanoidVisualLayers.HeadSide
+  - type: Damageable
+  - type: Injurable
+    damageContainer: Biological
+  - type: Nerve
+  - type: Woundable
+    integrityCap: 125
+    thresholds:
+      Healthy: 125
+      Minor: 115
+      Moderate: 105
+      Severe: 85
+      Critical: 65
+      Mangled: 50
+      Severed: 35
 
 - type: entity
   parent: [ OrganBaseArmLeft, OrganReptilianExternal ]
   id: OrganReptilianArmLeft
+  components:
+  - type: Damageable
+  - type: Injurable
+    damageContainer: Biological
+  - type: Nerve
+  - type: Woundable
+    integrityCap: 80
+    thresholds:
+      Healthy: 80
+      Minor: 70
+      Moderate: 60
+      Severe: 40
+      Critical: 20
+      Mangled: 5
+      Severed: -10
 
 - type: entity
   parent: [ OrganBaseArmRight, OrganReptilianExternal ]
   id: OrganReptilianArmRight
+  components:
+  - type: Damageable
+  - type: Injurable
+    damageContainer: Biological
+  - type: Nerve
+  - type: Woundable
+    integrityCap: 80
+    thresholds:
+      Healthy: 80
+      Minor: 70
+      Moderate: 60
+      Severe: 40
+      Critical: 20
+      Mangled: 5
+      Severed: -10
 
 - type: entity
   parent: [ OrganBaseHandLeft, OrganReptilianExternal ]
@@ -241,10 +300,40 @@
 - type: entity
   parent: [ OrganBaseLegLeft, OrganReptilianExternal ]
   id: OrganReptilianLegLeft
+  components:
+  - type: Damageable
+  - type: Injurable
+    damageContainer: Biological
+  - type: Nerve
+  - type: Woundable
+    integrityCap: 80
+    thresholds:
+      Healthy: 80
+      Minor: 70
+      Moderate: 60
+      Severe: 40
+      Critical: 20
+      Mangled: 5
+      Severed: -10
 
 - type: entity
   parent: [ OrganBaseLegRight, OrganReptilianExternal ]
   id: OrganReptilianLegRight
+  components:
+  - type: Damageable
+  - type: Injurable
+    damageContainer: Biological
+  - type: Nerve
+  - type: Woundable
+    integrityCap: 80
+    thresholds:
+      Healthy: 80
+      Minor: 70
+      Moderate: 60
+      Severe: 40
+      Critical: 20
+      Mangled: 5
+      Severed: -10
 
 - type: entity
   parent: [ OrganBaseFootLeft, OrganReptilianExternal ]
@@ -257,6 +346,13 @@
 - type: entity
   parent: [ OrganBaseBrain, OrganSpriteHumanInternal, OrganReptilianInternal ]
   id: OrganReptilianBrain
+  components:
+  - type: OrganIntegrity
+    integrityCap: 30
+    integrityThresholds:
+      Normal: 30
+      Damaged: 6
+      Destroyed: 0
 
 - type: entity
   parent: [ OrganBaseEyes, OrganReptilianInternal, OrganReptilianExternal ]
@@ -265,26 +361,67 @@
   - type: VisualOrgan
     data:
       sprite: Mobs/Customization/eyes.rsi
+  - type: OrganIntegrity
+    integrityCap: 24
+    integrityThresholds:
+      Normal: 24
+      Damaged: 4
+      Destroyed: 0
 
 - type: entity
   parent: [ OrganBaseTongue, OrganReptilianInternal ]
   id: OrganReptilianTongue
+  components:
+  - type: OrganIntegrity
+    integrityCap: 30
+    integrityThresholds:
+      Normal: 30
+      Damaged: 6
+      Destroyed: 0
 
 - type: entity
   parent: [ OrganBaseAppendix, OrganSpriteHumanInternal, OrganReptilianInternal ]
   id: OrganReptilianAppendix
+  components:
+  - type: OrganIntegrity
+    integrityCap: 30
+    integrityThresholds:
+      Normal: 30
+      Damaged: 6
+      Destroyed: 0
 
 - type: entity
   parent: [ OrganBaseEars, OrganSpriteHumanInternal, OrganReptilianInternal ]
   id: OrganReptilianEars
+  components:
+  - type: OrganIntegrity
+    integrityCap: 30
+    integrityThresholds:
+      Normal: 30
+      Damaged: 6
+      Destroyed: 0
 
 - type: entity
   parent: [ OrganBaseLungs, OrganReptilianInternal, OrganReptilianMetabolizer ]
   id: OrganReptilianLungs
+  components:
+  - type: OrganIntegrity
+    integrityCap: 34
+    integrityThresholds:
+      Normal: 34
+      Damaged: 9
+      Destroyed: 0
 
 - type: entity
   parent: [ OrganBaseHeart, OrganReptilianInternal, OrganReptilianMetabolizer ]
   id: OrganReptilianHeart
+  components:
+  - type: OrganIntegrity
+    integrityCap: 28
+    integrityThresholds:
+      Normal: 28
+      Damaged: 6
+      Destroyed: 0
 
 - type: entity
   parent: [ OrganBaseStomach, OrganReptilianInternal, OrganReptilianMetabolizer ]
@@ -299,11 +436,31 @@
       - Pill
       - Crayon
       - Paper
+  - type: OrganIntegrity
+    integrityCap: 56
+    integrityThresholds:
+      Normal: 56
+      Damaged: 16
+      Destroyed: 0
 
 - type: entity
   parent: [ OrganBaseLiver, OrganSpriteHumanInternal, OrganReptilianInternal, OrganReptilianMetabolizer ]
   id: OrganReptilianLiver
+  components:
+  - type: OrganIntegrity
+    integrityCap: 34
+    integrityThresholds:
+      Normal: 34
+      Damaged: 8
+      Destroyed: 0
 
 - type: entity
   parent: [ OrganBaseKidneys, OrganSpriteHumanInternal, OrganReptilianInternal, OrganReptilianMetabolizer ]
   id: OrganReptilianKidneys
+  components:
+  - type: OrganIntegrity
+    integrityCap: 42
+    integrityThresholds:
+      Normal: 42
+      Damaged: 12
+      Destroyed: 0

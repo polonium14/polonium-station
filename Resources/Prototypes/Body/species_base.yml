@@ -10,21 +10,9 @@
   id: BaseSpeciesMob
   save: false
   components:
-  - type: DamageVisuals
-    thresholds: [ 10, 20, 30, 50, 70, 100 ]
-    targetLayers:
-    - "enum.HumanoidVisualLayers.Chest"
-    - "enum.HumanoidVisualLayers.Head"
-    - "enum.HumanoidVisualLayers.LArm"
-    - "enum.HumanoidVisualLayers.LLeg"
-    - "enum.HumanoidVisualLayers.RArm"
-    - "enum.HumanoidVisualLayers.RLeg"
-    damageOverlayGroups:
-      Brute:
-        sprite: Mobs/Effects/brute_damage.rsi
-        color: "#FF0000"
-      Burn:
-        sprite: Mobs/Effects/burn_damage.rsi
+  - type: Targeting
+  - type: Consciousness
+    threshold: 95
   - type: StatusIcon
     bounds: -0.5,-0.5,0.5,0.5
   - type: JobStatus
@@ -130,6 +118,8 @@
         type: HumanoidMarkingModifierBoundUserInterface
       enum.StrippingUiKey.Key:
         type: StrippableBoundUserInterface
+      enum.SurgeryUIKey.Key:
+        type: SurgeryBui
   - type: Puller
   - type: Speech
     speechSounds: Alto
@@ -172,15 +162,6 @@
       types:
         Blunt: 0.50
         Heat: 0.1
-  - type: PassiveDamage
-    allowedStates:
-    - Alive
-    damage:
-      types:
-        Heat: -0.07
-        Blunt: -0.05
-        Piercing: -0.05
-        Slash: -0.05
   - type: Fingerprint
   - type: Blindable
   - type: Temperature

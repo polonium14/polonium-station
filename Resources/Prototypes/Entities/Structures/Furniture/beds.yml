@@ -80,6 +80,9 @@
     guides:
     - MedicalDoctor
   - type: AmbientMusicMarkerMedical
+  - type: DeviceLinkSink
+    ports:
+      - BodyScannerReceiver
 
 - type: entity
   parent: Bed
