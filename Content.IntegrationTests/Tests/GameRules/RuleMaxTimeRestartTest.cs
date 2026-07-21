@@ -1,5 +1,6 @@
 using Content.IntegrationTests.Fixtures;
 using Content.Server.GameTicking;
+using Content.Server.GameTicking.Presets;
 using Content.Server.GameTicking.Rules;
 using Content.Server.GameTicking.Rules.Components;
 using Content.Shared.GameTicking.Components;
@@ -44,6 +45,7 @@ namespace Content.IntegrationTests.Tests.GameRules
             {
                 Assert.That(sGameTicker.RunLevel, Is.EqualTo(GameRunLevel.PreRoundLobby));
                 maxTime.RoundMaxTime = TimeSpan.FromSeconds(3);
+                sGameTicker.SetGamePreset((GamePresetPrototype?) null);
                 sGameTicker.StartRound();
             });
 
