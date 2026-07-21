@@ -963,8 +963,31 @@ CableApcStackLingering10: CableApcStack10
 # 2026-07-20
 RPDRecharging: RPD
 
-# 2026-07-21
-GunSafePistolRg2: GunSafePistolMk58
-
 # 2025-12-22 - Restructuring of nuclear reactor prototypes to allow for better expedition experiences
 BaseNuclearReactor: NuclearReactorNormal
+
+# 2026-07-21
+MedicalBiofabricator: null
+CrashCart: null
+CrashCartFilled: null
+SurgeryKitFilled: ClothingBackpackDuffelSurgeryFilled
+GunSafePistolRg2: GunSafePistolMk58
+ComputerDnaScanner: null
+HandheldGeneticAnalyzer: null
+CMBloodPackFull: Bloodpack
+CMIV: null
+ParamedHypo: null
+MailTeleporter: CargoMailTeleporter
+MailPipe: null
+MailBend: null
+MailTrunk: null
+GasExtractorOxygenStation: GasMinerOxygenStation
+GasExtractorNitrogenStation: GasMinerNitrogenStation
+GasExtractorCarbonDioxide: GasMinerCarbonDioxide
+GasExtractorPlasma: GasMinerPlasma
+GasExtractorWaterVapor: GasMinerWaterVapor
+CargoCart: MailCart
+CartridgeEmergency: EmergencyMedipen
+CassetteTape: null
+TapeRecorder: null
+ClothingUniformJumpsuitAncientRep: ClothingUniformJumpsuitNanotrasen

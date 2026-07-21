@@ -1,0 +1,11 @@
+ent-MoneyCabinet = money cabinet
+    .desc = There is a small label that reads "For Emergency use only".
+ent-MoneyCabinetOpen = { ent-MoneyCabinet }
+    .suffix = Open
+    .desc = { ent-MoneyCabinet.desc }
+ent-MoneyCabinetFilled = { ent-MoneyCabinet }
+    .suffix = Filled
+    .desc = { ent-MoneyCabinet.desc }
+ent-MoneyCabinetFilledOpen = { ent-MoneyCabinetFilled }
+    .suffix = Filled, Open
+    .desc = { ent-MoneyCabinetFilled.desc }

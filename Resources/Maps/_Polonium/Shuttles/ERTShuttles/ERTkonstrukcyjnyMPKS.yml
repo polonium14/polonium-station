@@ -4219,7 +4219,7 @@ entities:
     - type: Transform
       pos: -1.5,5.5
       parent: 1
-- proto: SpawnMechRipley2
+- proto: SpawnMechRipley
   entities:
   - uid: 706
     components:

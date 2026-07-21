@@ -4,3 +4,7 @@ ent-UniformScrubsColorGreen = green scrubs
     .desc = A combination of comfort and utility intended to make removing every last organ someone has and selling them to a space robot much more official looking.
 ent-UniformScrubsColorBlue = blue scrubs
     .desc = A combination of comfort and utility intended to make removing every last organ someone has and selling them to a space robot much more official looking.
+ent-UniformScrubsColorBlack = coroner scrubs
+    .desc = Black, menacing scrubs worn by coroners. Smells of formaldehyde.
+ent-UniformScrubsColorBlackSleeveless = sleeveless coroner scrubs
+    .desc = Black, menacing scrubs worn by coroners. The sleeves just got in the way.

@@ -43075,13 +43075,13 @@ entities:
     - type: Transform
       pos: -0.3030796,22.832315
       parent: 2
-#- proto: MailTeleporter
-#  entities:
-#  - uid: 6302
-#    components:
-#    - type: Transform
-#      pos: -15.5,15.5
-#      parent: 2
+- proto: MailTeleporter
+  entities:
+  - uid: 6302
+    components:
+    - type: Transform
+      pos: -15.5,15.5
+      parent: 2
 - proto: MaintenanceFluffSpawner
   entities:
   - uid: 6303

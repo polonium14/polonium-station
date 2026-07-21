@@ -52,6 +52,9 @@
         mask:
         - ItemMask
   - type: Appearance
+  - type: Tag # Funky - MoneyCabinet cash whitelist
+    tags:
+    - Cash
 
 - type: material
   id: Credit

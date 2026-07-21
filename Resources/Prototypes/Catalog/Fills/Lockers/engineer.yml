@@ -184,6 +184,20 @@
           tableId: FillEngineerHardsuit
 
 - type: entity
+  id: LockerEngineerFilledFireSuit # Funkystation - engineering lockers with the fire suit, for more variety in engineering lockers
+  suffix: Filled, FireSuit
+  parent: LockerEngineer
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - !type:NestedSelector
+          tableId: FillLockerEngineer
+        - !type:NestedSelector
+          tableId: FillEngineerFireSuit
+
+- type: entity
   id: LockerEngineerFilled
   suffix: Filled
   parent: LockerEngineer
@@ -216,6 +230,16 @@
     - id: OxygenTankFilled
     - id: ClothingShoesBootsMag
     - id: ClothingMaskBreath
+
+- type: entityTable
+  id: FillEngineerFireSuit
+  table: !type:AllSelector
+    children:
+    - id: ClothingOuterSuitAtmosFire
+    - id: ClothingHeadHelmetAtmosFire
+    - id: ClothingMaskGasAtmos
+    - id: OxygenTankFilled
+    - id: ClothingShoesBootsMag
 
 - type: entity
   id: ClosetRadiationSuitFilled

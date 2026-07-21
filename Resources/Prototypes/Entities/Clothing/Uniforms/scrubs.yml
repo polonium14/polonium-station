@@ -30,3 +30,25 @@
     sprite: Clothing/Uniforms/Scrubs/blue.rsi
   - type: Clothing
     sprite: Clothing/Uniforms/Scrubs/blue.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: UniformScrubsColorBlack
+  name: coroner scrubs
+  description: Black, menacing scrubs worn by coroners. Smells of formaldehyde.
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Clothing/Uniforms/Scrubs/black.rsi
+  - type: Clothing
+    sprite: _Funkystation/Clothing/Uniforms/Scrubs/black.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: UniformScrubsColorBlackSleeveless
+  name: sleeveless coroner scrubs
+  description: Black, menacing scrubs worn by coroners. The sleeves just got in the way.
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Clothing/Uniforms/Scrubs/blacksleeveless.rsi
+  - type: Clothing
+    sprite: _Funkystation/Clothing/Uniforms/Scrubs/blacksleeveless.rsi

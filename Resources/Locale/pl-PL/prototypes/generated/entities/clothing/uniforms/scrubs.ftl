@@ -4,3 +4,7 @@ ent-UniformScrubsColorGreen = zielona szata
     .desc = Połączenie wygody i funkcjonalności, mające na celu uczynienie usuwania każdego ostatniego organu kogoś i sprzedawania go kosmicznemu robotowi znacznie bardziej oficjalnym.
 ent-UniformScrubsColorBlue = niebieska szata
     .desc = Połączenie wygody i funkcjonalności, mające na celu uczynienie usuwania każdego ostatniego organu kogoś i sprzedawania go kosmicznemu robotowi znacznie bardziej oficjalnym.
+ent-UniformScrubsColorBlack = czarna szata koronera
+    .desc = Czarne, złowieszcze szaty noszone przez koronerów. Pachną formaldehydem.
+ent-UniformScrubsColorBlackSleeveless = czarna szata bez rękawów
+    .desc = Czarne, złowieszcze szaty noszone przez koronerów. Rękawy tylko przeszkadzały.

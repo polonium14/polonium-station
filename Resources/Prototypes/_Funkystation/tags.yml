@@ -1,3 +1,6 @@
+- type: Tag # Funky - MoneyCabinet cash whitelist
+  id: Cash
+
 - type: Tag # Funky atmos - metal hydrogen
   id: AtmosFireSuit
 

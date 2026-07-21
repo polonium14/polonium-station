@@ -53108,7 +53108,7 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#990000FF'
-- proto: GasFilterFlippedAlt1
+- proto: GasFilterFlipped
   entities:
   - uid: 15188
     components:
@@ -77728,128 +77728,12 @@ entities:
     - type: Transform
       pos: 44.79035,43.386646
       parent: 2
-- proto: MailBend
-  entities:
-  - uid: 7603
-    components:
-    - type: Transform
-      pos: 42.5,-6.5
-      parent: 2
-  - uid: 16118
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 42.5,-12.5
-      parent: 2
-- proto: MailingUnit
-  entities:
-  - uid: 13499
-    components:
-    - type: MetaData
-      name: mailing unit (kitchen)
-    - type: Transform
-      pos: 41.5,-6.5
-      parent: 2
-    - type: MailingUnit
-      tag: Botany
-    - type: Configuration
-      config:
-        tag: Botany
-  - uid: 14978
-    components:
-    - type: MetaData
-      name: mailing unit (botany)
-    - type: Transform
-      pos: 35.5,-12.5
-      parent: 2
-    - type: MailingUnit
-      tag: Kitchen
-    - type: Configuration
-      config:
-        tag: Kitchen
-- proto: MailPipe
-  entities:
-  - uid: 2479
-    components:
-    - type: Transform
-      pos: 42.5,-10.5
-      parent: 2
-  - uid: 4001
-    components:
-    - type: Transform
-      pos: 42.5,-9.5
-      parent: 2
-  - uid: 4306
-    components:
-    - type: Transform
-      pos: 42.5,-7.5
-      parent: 2
-  - uid: 6830
-    components:
-    - type: Transform
-      pos: 42.5,-8.5
-      parent: 2
-  - uid: 16117
-    components:
-    - type: Transform
-      pos: 42.5,-11.5
-      parent: 2
-  - uid: 16119
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 41.5,-12.5
-      parent: 2
-  - uid: 16120
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 40.5,-12.5
-      parent: 2
-  - uid: 16121
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 39.5,-12.5
-      parent: 2
-  - uid: 16122
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 38.5,-12.5
-      parent: 2
-  - uid: 16123
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 37.5,-12.5
-      parent: 2
-  - uid: 16124
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 36.5,-12.5
-      parent: 2
-- proto: MailTeleporter
+- proto: CargoMailTeleporter
   entities:
   - uid: 15416
     components:
     - type: Transform
       pos: 12.5,28.5
-      parent: 2
-- proto: MailTrunk
-  entities:
-  - uid: 4519
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 35.5,-12.5
-      parent: 2
-  - uid: 5643
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 41.5,-6.5
       parent: 2
 - proto: MaintenanceFluffSpawner
   entities:

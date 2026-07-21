@@ -1,0 +1,9 @@
+# SPDX-FileCopyrightText: 2026 Polonium Station contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Alias used by maps; fill already includes ClothingOuterHardsuitBrigmedic.
+- type: entity
+  id: LockerBrigmedicFilledHardsuit
+  suffix: Brigmedic, Filled, Hardsuit
+  parent: LockerBrigmedicFilled
