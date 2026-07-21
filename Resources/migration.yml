@@ -970,7 +970,6 @@ BaseNuclearReactor: NuclearReactorNormal
 MedicalBiofabricator: null
 CrashCart: null
 CrashCartFilled: null
-SurgeryKitFilled: ClothingBackpackDuffelSurgeryFilled
 GunSafePistolRg2: GunSafePistolMk58
 ComputerDnaScanner: null
 HandheldGeneticAnalyzer: null

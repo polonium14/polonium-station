@@ -216,6 +216,7 @@
     - id: HandheldCrewMonitor
     - id: Hypospray
     - id: MedTekCartridge
+    - id: SurgeryKitFilled
     # Standard command gear
     - id: RubberStampCMO
     - id: ClothingHeadsetAltMedical
