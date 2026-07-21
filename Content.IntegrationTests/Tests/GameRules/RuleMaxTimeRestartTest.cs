@@ -45,7 +45,7 @@ namespace Content.IntegrationTests.Tests.GameRules
             {
                 Assert.That(sGameTicker.RunLevel, Is.EqualTo(GameRunLevel.PreRoundLobby));
                 maxTime.RoundMaxTime = TimeSpan.FromSeconds(3);
-                sGameTicker.SetGamePreset((GamePresetPrototype?) null);
+                sGameTicker.SetGamePreset((GamePresetPrototype) null);
                 sGameTicker.StartRound();
             });
 
