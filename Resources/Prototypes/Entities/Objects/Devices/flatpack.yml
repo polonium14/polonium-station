@@ -318,3 +318,14 @@
     - state: overlay
       color: "#D381C9"
     - state: icon-default
+
+- type: entity
+  parent: BaseFlatpack
+  id: ComputerBodyScannerFlatpack
+  name: body scanner flatpack
+  description: A flatpack used for constructing a body scanner computer.
+  components:
+  - type: Item
+    size: Normal
+  - type: Flatpack
+    entity: ComputerBodyScanner
