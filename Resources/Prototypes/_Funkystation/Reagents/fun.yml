@@ -13,11 +13,11 @@
   boilingPoint: 100.0
   meltingPoint: 0.0
   metabolisms:
-    Drink:
+    Digestion:
       effects:
       - !type:SatiateHunger
         factor: 1.5
-    Poison:
+    Bloodstream:
       effects:
       - !type:HealthChange
         damage:
