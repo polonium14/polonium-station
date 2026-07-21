@@ -22,22 +22,57 @@
 - type: entity
   parent: [ OrganBaseLungs, OrganAnimalInternal, OrganAnimalMetabolizer ]
   id: OrganAnimalLungs
+  components:
+  - type: OrganIntegrity
+    integrityCap: 34
+    integrityThresholds:
+      Normal: 34
+      Damaged: 8
+      Destroyed: 0
 
 - type: entity
   parent: [ OrganBaseHeart, OrganAnimalInternal, OrganAnimalMetabolizer ]
   id: OrganAnimalHeart
+  components:
+  - type: OrganIntegrity
+    integrityCap: 28
+    integrityThresholds:
+      Normal: 28
+      Damaged: 6
+      Destroyed: 0
 
 - type: entity
   parent: [ OrganBaseStomach, OrganAnimalInternal, OrganAnimalMetabolizer ]
   id: OrganAnimalStomach
+  components:
+  - type: OrganIntegrity
+    integrityCap: 56
+    integrityThresholds:
+      Normal: 56
+      Damaged: 16
+      Destroyed: 0
 
 - type: entity
   parent: [ OrganBaseLiver, OrganAnimalInternal, OrganAnimalMetabolizer ]
   id: OrganAnimalLiver
+  components:
+  - type: OrganIntegrity
+    integrityCap: 34
+    integrityThresholds:
+      Normal: 34
+      Damaged: 8
+      Destroyed: 0
 
 - type: entity
   parent: [ OrganBaseKidneys, OrganAnimalInternal, OrganAnimalMetabolizer ]
   id: OrganAnimalKidneys
+  components:
+  - type: OrganIntegrity
+    integrityCap: 34
+    integrityThresholds:
+      Normal: 34
+      Damaged: 8
+      Destroyed: 0
 
 - type: entity
   id: BaseMobAnimal

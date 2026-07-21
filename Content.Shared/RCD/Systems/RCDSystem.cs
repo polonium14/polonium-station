@@ -341,7 +341,7 @@ public partial class RCDSystem : EntitySystem
             return;
 
         // Finalize the operation
-        FinalizeRCDOperation(uid, component, mapGridData.Value, args.Direction, args.Target, args.User);
+        FinalizeRCDOperation(uid, component, mapGridData.Value, args.Target, args.User);
 
         // Play audio and consume charges
         _audio.PlayPredicted(component.SuccessSound, uid, args.User);
@@ -648,7 +648,7 @@ public partial class RCDSystem : EntitySystem
 
     #region Entity construction/deconstruction
 
-    private void FinalizeRCDOperation(EntityUid uid, RCDComponent component, MapGridData mapGridData, Direction direction, EntityUid? target, EntityUid user)
+    private void FinalizeRCDOperation(EntityUid uid, RCDComponent component, MapGridData mapGridData, EntityUid? target, EntityUid user)
     {
         if (!_net.IsServer)
             return;
@@ -684,17 +684,42 @@ public partial class RCDSystem : EntitySystem
                 // Funky - end of changes
 
                 // Funky - Calculate rotation and apply it before spawning
+                // Reads component.ConstructionDirection live rather than the Direction that was
+                // snapshotted into the DoAfter event when placement started - the event's copy
+                // goes stale if the player rotates the ghost while the (networked, delayed)
+                // DoAfter is still running, so the entity would spawn facing whatever direction
+                // was current at the START of the click instead of what the ghost actually
+                // showed at the moment placement completed. Bug report: "RPD sometimes ignores
+                // rotation of the construction ghost when placing pipes."
                 var rotation = component.CachedPrototype.Rotation switch
                 {
                     RcdRotation.Fixed => Angle.Zero,
                     RcdRotation.Camera => Transform(uid).LocalRotation,
-                    RcdRotation.User => direction.ToAngle(),
+                    RcdRotation.User => component.ConstructionDirection.ToAngle(),
                     _ => Angle.Zero // Fallback
                 };
 
+                // Spawns with the rotation applied atomically (via SpawnAttachedTo's rotation
+                // parameter), rather than spawning first and rotating as a follow-up call. Pipe
+                // entities anchor immediately on spawn (Transform.anchored: true is a prototype
+                // default) - anchoring synchronously triggers PipeRestrictOverlapSystem's
+                // conflict check, which used to run against the entity's default (unrotated)
+                // transform, since the follow-up SetLocalRotation call hadn't happened yet.
+                // A pipe that legitimately needed a 90-degree rotation to cross an existing pipe
+                // without conflicting would get checked at 0 degrees instead - genuinely
+                // conflicting with whatever was already there - and get auto-unanchored by that
+                // system's own (otherwise correct) safety net. Bug report: "placing a pipe using
+                // RPD over an existing one to cross them does not anchor the second pipe."
+                //
+                // Uses SpawnAttachedTo (EntityCoordinates, grid-parented) rather than the
+                // MapCoordinates+rotation Spawn overload - that overload's rotation is WORLD
+                // rotation (MapCoordinates carries no parent), which put pipes at the wrong
+                // angle on any grid that isn't itself at world rotation 0 (basically always,
+                // once a station/shuttle sits at anything but a cardinal angle) - the rotation
+                // that matters here is relative to the grid, the same as the SetLocalRotation
+                // call this replaced.
                 var entityCoords = _mapSystem.GridTileToLocal(mapGridData.GridUid, mapGridData.Component, mapGridData.Position);
-                var ent = Spawn(proto, entityCoords);
-                _transformSystem.SetLocalRotation(ent, rotation);
+                var ent = _entityManager.SpawnAttachedTo(proto, entityCoords, rotation: rotation);
                 // End of funky changes
 
                 // Funky - handled above

@@ -54,6 +54,11 @@
   id: StatusEffectStaminaLow
   name: stamina low
 
+- type: entity
+  parent: StatusEffectSlowdown
+  id: OrgansDamagedSlowdownEffect
+  name: organ damage slowdown
+
 # Makes you more slippery, or perhaps less slippery.
 - type: entity
   parent: MobStatusEffectDebuff # Debatable if this should be MobStatusEffectBase or not

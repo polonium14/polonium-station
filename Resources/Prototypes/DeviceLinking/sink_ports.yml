@@ -84,6 +84,11 @@
   description: signal-port-description-artifact-analyzer-receiver
 
 - type: sinkPort
+  id: BodyScannerReceiver
+  name: signal-port-name-body-scanner-receiver
+  description: signal-port-description-body-scanner-receiver
+
+- type: sinkPort
   id: InputA
   name: signal-port-name-logic-input-a
   description: signal-port-description-logic-input-a

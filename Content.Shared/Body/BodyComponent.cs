@@ -1,5 +1,6 @@
 using Robust.Shared.Containers;
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Body;
 
@@ -25,6 +26,19 @@ public sealed partial class BodyComponent : Component
     /// </summary>
     [DataField]
     public bool ThermalVisibility = true;
+
+    [ViewVariables, Access(Other = AccessPermissions.ReadWrite)]
+    public TimeSpan HealAt;
+
+    /// <summary>
+    /// Every vital organ category this body has ever had inserted into it. Grows monotonically
+    /// (never shrinks on removal) so it doubles as a manifest of what the body is supposed to
+    /// have - diffing this against currently-present organs is how HealthAnalyzerSystem reports
+    /// a missing heart/lungs/etc. Limbs are deliberately excluded (see BodySystem.OnBodyEntInserted);
+    /// dismemberment already has its own visible state and shouldn't be double-reported here.
+    /// </summary>
+    [ViewVariables, Access(typeof(BodySystem), Other = AccessPermissions.Read)]
+    public HashSet<ProtoId<OrganCategoryPrototype>> ExpectedOrgans = new();
 }
 
 /// <summary>

@@ -50,4 +50,13 @@
         Orientation="Vertical">
     </BoxContainer>
 
+    <PanelContainer Name="WoundsDivider" Visible="False" StyleClasses="LowDivider" />
+
+    <BoxContainer
+        Name="WoundsContainer"
+        Visible="False"
+        Margin="0 5 0 5"
+        Orientation="Vertical">
+    </BoxContainer>
+
 </BoxContainer>

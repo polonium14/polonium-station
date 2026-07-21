@@ -124,6 +124,11 @@ public sealed partial class SleepingSystem : EntitySystem
             if (!TryComp<BuckleComponent>(ent, out var buckleComp) || !buckleComp.Buckled)
             {
                 EnsureComp<KnockedDownComponent>(ent);
+                // If a stand-up DoAfter was already running (e.g. from a knockdown that landed
+                // moments before the sleep status finished applying), cancel it here too - relying
+                // solely on OnStandUpAttempt means the bar can flash/keep retrying until that
+                // DoAfter resolves.
+                _stun.CancelKnockdownDoAfter(ent.Owner);
             }
 
             if (TryComp<SleepEmitSoundComponent>(ent, out var sleepSound))
@@ -150,6 +155,13 @@ public sealed partial class SleepingSystem : EntitySystem
 
     private void OnCompInit(Entity<SleepingComponent> ent, ref ComponentInit args)
     {
+        // Networked component state application can re-run component lifecycle events on the
+        // client during reconciliation. Without this guard, that spuriously toggles sleep state
+        // client-side (SleepStateChangedEvent -> wake -> TryStanding -> a real predicted stand-up
+        // DoAfter) even though the entity never actually woke up on the server.
+        if (_gameTiming.ApplyingState)
+            return;
+
         var ev = new SleepStateChangedEvent(true);
         RaiseLocalEvent(ent, ref ev);
         _blindableSystem.UpdateIsBlind(ent.Owner);
@@ -158,6 +170,9 @@ public sealed partial class SleepingSystem : EntitySystem
 
     private void OnComponentRemoved(Entity<SleepingComponent> ent, ref ComponentRemove args)
     {
+        if (_gameTiming.ApplyingState)
+            return;
+
         _actionsSystem.RemoveAction(ent.Owner, ent.Comp.WakeAction);
 
         var ev = new SleepStateChangedEvent(false);

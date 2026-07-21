@@ -1,0 +1,115 @@
+
+- type: soundCollection
+  id: PainRattles
+  files:
+    - /Audio/Effects/bone_rattle.ogg
+
+- type: soundCollection
+  id: PainScreamsShortMale
+  files:
+    - /Audio/Voice/Human/malescream_1.ogg
+    - /Audio/Voice/Human/malescream_2.ogg
+    - /Audio/Voice/Human/malescream_3.ogg
+
+- type: soundCollection
+  id: PainScreamsShortFemale
+  files:
+    - /Audio/Voice/Human/femalescream_1.ogg
+    - /Audio/Voice/Human/femalescream_2.ogg
+    - /Audio/Voice/Human/femalescream_3.ogg
+
+- type: soundCollection
+  id: AgonyScreamsMale
+  files:
+    - /Audio/Voice/Human/malescream_4.ogg
+    - /Audio/Voice/Human/malescream_5.ogg
+    - /Audio/Voice/Human/malescream_6.ogg
+
+- type: soundCollection
+  id: AgonyScreamsFemale
+  files:
+    - /Audio/Voice/Human/femalescream_4.ogg
+    - /Audio/Voice/Human/femalescream_5.ogg
+
+- type: soundCollection
+  id: PainShockScreamsMale
+  files:
+    - /Audio/Voice/Human/malescream_1.ogg
+    - /Audio/Voice/Human/malescream_4.ogg
+
+- type: soundCollection
+  id: PainShockScreamsFemale
+  files:
+    - /Audio/Voice/Human/femalescream_1.ogg
+    - /Audio/Voice/Human/femalescream_4.ogg
+
+- type: soundCollection
+  id: CritWhimpersMale
+  files:
+    - /Audio/Voice/Human/cry_male_1.ogg
+    - /Audio/Voice/Human/cry_male_2.ogg
+
+- type: soundCollection
+  id: CritWhimpersFemale
+  files:
+    - /Audio/Voice/Human/cry_female_1.ogg
+    - /Audio/Voice/Human/cry_female_2.ogg
+
+- type: soundCollection
+  id: PainShockWhimpersMale
+  files:
+    - /Audio/Voice/Human/cry_male_3.ogg
+    - /Audio/Voice/Human/cry_male_4.ogg
+
+- type: soundCollection
+  id: PainShockWhimpersFemale
+  files:
+    - /Audio/Voice/Human/cry_female_3.ogg
+    - /Audio/Voice/Human/cry_female_4.ogg
+
+- type: soundCollection
+  id: OrganDamagePainedMale
+  files:
+    - /Audio/Voice/Human/malescream_2.ogg
+    - /Audio/Voice/Human/cry_male_1.ogg
+
+- type: soundCollection
+  id: OrganDamagePainedFemale
+  files:
+    - /Audio/Voice/Human/femalescream_2.ogg
+    - /Audio/Voice/Human/cry_female_1.ogg
+
+- type: soundCollection
+  id: OrganDamageWhimpersMale
+  files:
+    - /Audio/Voice/Human/cry_male_2.ogg
+    - /Audio/Voice/Human/cry_male_3.ogg
+
+- type: soundCollection
+  id: OrganDamageWhimpersFemale
+  files:
+    - /Audio/Voice/Human/cry_female_2.ogg
+    - /Audio/Voice/Human/cry_female_3.ogg
+
+- type: soundCollection
+  id: WoundableDelimbed
+  files:
+    - /Audio/Effects/gib1.ogg
+    - /Audio/Effects/gib2.ogg
+
+- type: soundCollection
+  id: WoundableDestroyed
+  files:
+    - /Audio/Effects/gib2.ogg
+    - /Audio/Effects/gib3.ogg
+
+- type: soundCollection
+  id: BoneGone
+  files:
+    - /Audio/Effects/bone_rattle.ogg
+
+- type: soundCollection
+  id: OrganDestroyed
+  files:
+    - /Audio/Effects/gib1.ogg
+    - /Audio/Effects/gib3.ogg

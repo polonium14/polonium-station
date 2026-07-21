@@ -1,3 +1,4 @@
+using Content.Shared._Shitmed.Medical.Surgery.Traumas.Components;
 using Content.Shared.DragDrop;
 using Robust.Shared.Containers;
 
@@ -61,6 +62,11 @@ public sealed partial class BodySystem : EntitySystem
 
         var ev = new OrganGotInsertedEvent(ent);
         RaiseLocalEvent(args.Entity, ref ev);
+
+        // Vital organs only - limbs already have their own visible "missing" state via
+        // dismemberment, so they're excluded to avoid double-reporting in HealthAnalyzer.
+        if (organ.Category is { } category && HasComp<OrganIntegrityComponent>(args.Entity))
+            ent.Comp.ExpectedOrgans.Add(category);
 
         if (organ.Body != ent)
         {

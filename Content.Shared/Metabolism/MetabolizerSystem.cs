@@ -57,6 +57,7 @@ public sealed partial class MetabolizerSystem : EntitySystem
         base.Update(frameTime);
 
         var query = EntityQueryEnumerator<MetabolizerComponent>();
+        var toUpdate = new List<(EntityUid Uid, MetabolizerComponent Comp)>();
 
         while (query.MoveNext(out var uid, out var comp))
         {
@@ -65,6 +66,11 @@ public sealed partial class MetabolizerSystem : EntitySystem
                 continue;
 
             comp.NextUpdate += comp.AdjustedUpdateInterval;
+            toUpdate.Add((uid, comp));
+        }
+
+        foreach (var (uid, comp) in toUpdate)
+        {
             TryMetabolize((uid, comp));
             Dirty(uid, comp);
         }

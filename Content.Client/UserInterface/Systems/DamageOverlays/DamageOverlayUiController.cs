@@ -28,6 +28,10 @@ using Robust.Client.Player;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controllers;
 using Robust.Shared.Player;
+using Robust.Shared.Timing;
+
+using Content.Shared.Body;
+using Content.Shared._Shitmed.Medical.Surgery.Consciousness.Components;
 
 namespace Content.Client.UserInterface.Systems.DamageOverlays;
 
@@ -41,6 +45,7 @@ public sealed partial class DamageOverlayUiController : UIController
     [UISystemDependency] private readonly StatusEffectsSystem _statusEffects = default!;
     [UISystemDependency] private readonly DamageableSystem _damageable = default!;
     private Overlays.DamageOverlay _overlay = default!;
+    private EntityUid? _attachedEntity;
 
     public override void Initialize()
     {
@@ -51,9 +56,24 @@ public sealed partial class DamageOverlayUiController : UIController
         SubscribeLocalEvent<MobThresholdChecked>(OnThresholdCheck);
     }
 
+    public override void FrameUpdate(FrameEventArgs args)
+    {
+        base.FrameUpdate(args);
+
+        if (_attachedEntity is not { } entity
+            || !EntityManager.EntityExists(entity)
+            || !EntityManager.HasComponent<BodyComponent>(entity)
+            || !EntityManager.HasComponent<ConsciousnessComponent>(entity)
+            || !EntityManager.TryGetComponent<MobStateComponent>(entity, out var mobState))
+            return;
+
+        UpdateOverlays(entity, mobState);
+    }
+
     private void OnPlayerAttach(LocalPlayerAttachedEvent args)
     {
         ClearOverlay();
+        _attachedEntity = args.Entity;
         if (!EntityManager.TryGetComponent<MobStateComponent>(args.Entity, out var mobState))
             return;
         if (mobState.CurrentState != MobState.Dead)
@@ -63,6 +83,7 @@ public sealed partial class DamageOverlayUiController : UIController
 
     private void OnPlayerDetached(LocalPlayerDetachedEvent args)
     {
+        _attachedEntity = null;
         _overlayManager.RemoveOverlay(_overlay);
         ClearOverlay();
     }
@@ -93,7 +114,7 @@ public sealed partial class DamageOverlayUiController : UIController
     }
 
     //TODO: Jezi: adjust oxygen and hp overlays to use appropriate systems once bodysim is implemented
-    private void UpdateOverlays(EntityUid entity, MobStateComponent? mobState, DamageableComponent? damageable = null, MobThresholdsComponent? thresholds = null, InjurableComponent? injurable = null)
+    private void UpdateOverlays(EntityUid entity, MobStateComponent? mobState, DamageableComponent? damageable = null, MobThresholdsComponent? thresholds = null, InjurableComponent? injurable = null, BodyComponent? body = null)
     {
         if (mobState == null && !EntityManager.TryGetComponent(entity, out mobState) ||
             thresholds == null && !EntityManager.TryGetComponent(entity, out thresholds) ||
@@ -101,18 +122,62 @@ public sealed partial class DamageOverlayUiController : UIController
             injurable == null && !EntityManager.TryGetComponent(entity, out injurable))
             return;
 
-        if (!_mobThresholdSystem.TryGetIncapThreshold(entity, out var foundThreshold, thresholds))
-            return; //this entity cannot die or crit!!
-
         if (!thresholds.ShowOverlays)
         {
             ClearOverlay();
             return; //this entity intentionally has no overlays
         }
 
+        _overlay.State = mobState.CurrentState;
+
+        if (body == null)
+            EntityManager.TryGetComponent(entity, out body);
+
+        if (body != null && EntityManager.TryGetComponent<ConsciousnessComponent>(entity, out var consciousness))
+        {
+            if (mobState.CurrentState == MobState.Dead)
+            {
+                _overlay.PainLevel = 0;
+                _overlay.CritLevel = 0;
+                return;
+            }
+
+            _overlay.DeadLevel = 0;
+
+            if (!consciousness.IsConscious)
+            {
+                _overlay.PainLevel = 0;
+                _overlay.CritLevel = consciousness.Threshold > 0
+                    ? FixedPoint2.Min(1f, (consciousness.Threshold - consciousness.Consciousness) / consciousness.Threshold).Float()
+                    : 1f;
+                return;
+            }
+
+            _overlay.CritLevel = 0;
+
+            if (consciousness.Consciousness <= 0 || consciousness.Consciousness >= consciousness.Cap)
+            {
+                _overlay.PainLevel = 0;
+                return;
+            }
+
+            _overlay.PainLevel = FixedPoint2.Min(1f,
+                (consciousness.Cap - consciousness.Consciousness) / (consciousness.Cap - consciousness.Threshold))
+                .Float();
+
+            if (_overlay.PainLevel < 0.05f) // Don't show damage overlay if they're near enough to max.
+                _overlay.PainLevel = 0;
+
+
+            return;
+        }
+
+        // Bodyless entities: legacy raw-DamageableComponent path, unchanged.
+        if (!_mobThresholdSystem.TryGetIncapThreshold(entity, out var foundThreshold, thresholds))
+            return; //this entity cannot die or crit!!
+
         var damagePerGroup = _damageable.GetDamagePerGroup((entity, damageable));
         var critThreshold = foundThreshold.Value;
-        _overlay.State = mobState.CurrentState;
 
         switch (mobState.CurrentState)
         {

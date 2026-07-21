@@ -122,3 +122,5 @@ reagent-desc-arcryox = A sickeningly blue cryogenics chemical that is able to he
 reagent-name-warfarin = warfarin
 
 reagent-desc-warfarin = Commonly used as an anticoagulant medication. Causes blood to have difficulty forming clots. Can cause internal bleeding when overdosed.
+
+reagent-name-osteodine = osteodyna

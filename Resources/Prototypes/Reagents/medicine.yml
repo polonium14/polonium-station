@@ -1555,3 +1555,55 @@
           reagent: Heparin
           min: 15
         amount: 0.25
+
+- type: reagent
+  id: Osteodine
+  name: reagent-name-osteodine
+  group: Medicine
+  desc: reagent-desc-osteodine
+  physicalDesc: reagent-physical-desc-milky
+  flavor: medicine
+  color: "#FAFAFA"
+  metabolisms:
+    Bloodstream:
+      effects:
+      # Heals bones gradually as this metabolizes - see HealBones' doc comment. A dose of
+      # exactly FullHealDose (25u) finishes healing every bone on the same tick it finishes
+      # metabolizing; less heals proportionally less, more just finishes early. OD threshold
+      # below is intentionally left at 30.1, not 25.1 - a full 30u injector dose heals clean
+      # with 5u to spare before overdosing.
+      - !type:HealBones
+        fullHealDose: 25
+      # Overdose: strictly above 30, not the cure's own 25u threshold - deliberately kept at
+      # the injector's full 30u capacity so using the whole pen never overdoses,
+      # mirroring Bicaridine/Dylovene's pattern of layering harmful side effects on top once
+      # the dose crosses the line.
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentCondition
+          reagent: Osteodine
+          min: 30.1
+        damage:
+          types:
+            Blunt: 1
+            Poison: 1
+      - !type:Jitter
+        conditions:
+        - !type:ReagentCondition
+          reagent: Osteodine
+          min: 30.1
+      - !type:PopupMessage
+        conditions:
+        - !type:ReagentCondition
+          reagent: Osteodine
+          min: 30.1
+        type: Local
+        visualType: Medium
+        messages: [ "generic-reagent-effect-nauseous" ]
+        probability: 0.2
+      - !type:Vomit
+        conditions:
+        - !type:ReagentCondition
+          reagent: Osteodine
+          min: 30.1
+        probability: 0.02

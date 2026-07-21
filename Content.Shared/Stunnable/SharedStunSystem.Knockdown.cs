@@ -1,4 +1,5 @@
 using Content.Shared.Alert;
+using Content.Shared.Bed.Sleep;
 using Content.Shared.Buckle.Components;
 using Content.Shared.CCVar;
 using Content.Shared.Damage.Components;
@@ -9,6 +10,7 @@ using Content.Shared.Gravity;
 using Content.Shared.Hands;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Input;
+using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Events;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Popups;
@@ -35,9 +37,11 @@ public abstract partial class SharedStunSystem
     [Dependency] private SharedPhysicsSystem _physics = default!;
     [Dependency] private StandingStateSystem _standingState = default!;
     [Dependency] private IConfigurationManager _cfgManager = default!;
+    [Dependency] private MobStateSystem _mobState = default!;
 
     [Dependency] private EntityQuery<CrawlerComponent> _crawlerQuery = default!;
     [Dependency] private EntityQuery<FixturesComponent> _fixtureQuery = default!;
+    [Dependency] private EntityQuery<SleepingComponent> _sleepingQuery = default!;
 
     public static readonly ProtoId<AlertPrototype> KnockdownAlert = "Knockdown";
 
@@ -90,6 +94,20 @@ public abstract partial class SharedStunSystem
         {
             // If it's null then we don't want to stand up
             if (!knockedDown.AutoStand || knockedDown.DoAfterId.HasValue || knockedDown.NextUpdate > GameTiming.CurTime)
+                continue;
+
+            // While critical/dead, KnockdownOver's CanMove check will never pass (MobStateSystem
+            // blocks movement while incapacitated) - retrying every tick forever here is a no-op
+            // that just burns CPU and never resolves until something else (healing) changes their
+            // MobState. Once they're no longer incapacitated, this loop picks the attempt back up
+            // on its own the very next tick - no separate retrigger needed.
+            if (_mobState.IsIncapacitated(uid))
+                continue;
+
+            // Sleeping mobs are knocked down on purpose and shouldn't be auto-standing at all -
+            // skip them outright instead of relying on StandUpAttemptEvent cancellation, which
+            // still lets a stand-up DoAfter (and its progress bar) start for one tick.
+            if (_sleepingQuery.HasComp(uid))
                 continue;
 
             TryStanding(uid);
@@ -281,7 +299,15 @@ public abstract partial class SharedStunSystem
             return true;
 
         if (!KnockdownOver((entity, entity.Comp)))
+        {
+            // Blocked entirely (e.g. still critical/dead) rather than just on cooldown - tell the
+            // player why instead of a silent, endlessly-repeating no-op. See Update()'s AutoStand
+            // loop, which skips incapacitated entities so this doesn't spam every tick.
+            if (_mobState.IsIncapacitated(entity.Owner))
+                _popup.PopupClient(Loc.GetString("knockdown-component-stand-incapacitated"), entity, entity, PopupType.SmallCaution);
+
             return false;
+        }
 
         if (!_crawlerQuery.TryComp(entity, out var crawler) || !_cfgManager.GetCVar(CCVars.MovementCrawling))
         {

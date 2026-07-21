@@ -181,3 +181,6 @@ reagent-desc-necrosol = Substancja nekrotyczna, która podobno potrafi leczyć z
 reagent-name-warfarin = warfarin
 
 reagent-desc-warfarin = Commonly used as an anticoagulant medication. Causes blood to have difficulty forming clots. Can cause internal bleeding when overdosed.
+
+reagent-name-osteodine = osteodine
+reagent-desc-osteodine = A milk-white regenerative compound that knits shattered bone back together. A full 25 units in the bloodstream at once will completely mend every break in the body. Overdose causes nausea and joint pain.

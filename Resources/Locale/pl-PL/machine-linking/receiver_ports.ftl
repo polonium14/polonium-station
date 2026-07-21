@@ -42,6 +42,12 @@ signal-port-name-artifact-analyzer-sender = Console
 signal-port-description-artifact-analyzer-sender = Analysis console signal sender
 signal-port-name-artifact-analyzer-receiver = Pad
 signal-port-description-artifact-analyzer-receiver = Artifact analyzer signal receiver
+
+signal-port-name-body-scanner-sender = Konsola skanera ciała
+signal-port-description-body-scanner-sender = Nadajnik sygnału konsoli skanera ciała
+
+signal-port-name-body-scanner-receiver = Łóżko
+signal-port-description-body-scanner-receiver = Odbiornik sygnału łóżka skanera ciała
 signal-port-name-set-particle-delta = Set particle type: delta
 signal-port-description-set-particle-delta = Sets the type of particle this device emits to delta.
 signal-port-name-set-particle-epsilon = Set particle type: epsilon

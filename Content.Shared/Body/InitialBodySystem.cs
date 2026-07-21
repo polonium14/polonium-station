@@ -1,4 +1,5 @@
 using System.Numerics;
+using Content.Shared._Shitmed.Medical.Surgery;
 using Robust.Shared.Containers;
 using Robust.Shared.Map;
 
@@ -43,5 +44,7 @@ public sealed partial class InitialBodySystem : EntitySystem
                 Del(spawn);
             }
         }
+
+        EnsureComp<SurgeryTargetComponent>(ent);
     }
 }

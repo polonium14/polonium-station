@@ -21,6 +21,7 @@
   parent: BaseItem
   components:
   - type: Organ
+  - type: Appearance
 
 - type: entity
   id: OrganBaseOrganic
@@ -56,6 +57,16 @@
     layer: enum.HumanoidVisualLayers.Chest
     data:
       state: torso
+  - type: WoundableVisuals
+    thresholds: [ 10, 20, 30, 50, 70, 100 ]
+    occupiedLayer: Chest
+    damageOverlayGroups:
+      Brute:
+        sprite: _Shitmed/Mobs/Effects/brute_damage.rsi
+        color: "#FF0000"
+      Burn:
+        sprite: _Shitmed/Mobs/Effects/burn_damage.rsi
+    bleedingOverlay: _Shitmed/Mobs/Effects/bleeding_damage.rsi
   - type: VisualOrganMarkings
     markingData:
       layers:
@@ -81,6 +92,16 @@
     layer: enum.HumanoidVisualLayers.Head
     data:
       state: head
+  - type: WoundableVisuals
+    thresholds: [ 10, 20, 30, 50, 70, 100 ]
+    occupiedLayer: Head
+    damageOverlayGroups:
+      Brute:
+        sprite: _Shitmed/Mobs/Effects/brute_damage.rsi
+        color: "#FF0000"
+      Burn:
+        sprite: _Shitmed/Mobs/Effects/burn_damage.rsi
+    bleedingOverlay: _Shitmed/Mobs/Effects/bleeding_damage.rsi
   - type: VisualOrganMarkings
     hideableLayers:
     - enum.HumanoidVisualLayers.Hair
@@ -108,6 +129,16 @@
     layer: enum.HumanoidVisualLayers.LArm
     data:
       state: l_arm
+  - type: WoundableVisuals
+    thresholds: [ 10, 20, 30, 50, 70, 100 ]
+    occupiedLayer: LArm
+    damageOverlayGroups:
+      Brute:
+        sprite: _Shitmed/Mobs/Effects/brute_damage.rsi
+        color: "#FF0000"
+      Burn:
+        sprite: _Shitmed/Mobs/Effects/burn_damage.rsi
+    bleedingOverlay: _Shitmed/Mobs/Effects/bleeding_damage.rsi
   - type: VisualOrganMarkings
     markingData:
       layers:
@@ -127,6 +158,16 @@
     layer: enum.HumanoidVisualLayers.RArm
     data:
       state: r_arm
+  - type: WoundableVisuals
+    thresholds: [ 10, 20, 30, 50, 70, 100 ]
+    occupiedLayer: RArm
+    damageOverlayGroups:
+      Brute:
+        sprite: _Shitmed/Mobs/Effects/brute_damage.rsi
+        color: "#FF0000"
+      Burn:
+        sprite: _Shitmed/Mobs/Effects/burn_damage.rsi
+    bleedingOverlay: _Shitmed/Mobs/Effects/bleeding_damage.rsi
   - type: VisualOrganMarkings
     markingData:
       layers:
@@ -192,6 +233,16 @@
     layer: enum.HumanoidVisualLayers.LLeg
     data:
       state: l_leg
+  - type: WoundableVisuals
+    thresholds: [ 10, 20, 30, 50, 70, 100 ]
+    occupiedLayer: LLeg
+    damageOverlayGroups:
+      Brute:
+        sprite: _Shitmed/Mobs/Effects/brute_damage.rsi
+        color: "#FF0000"
+      Burn:
+        sprite: _Shitmed/Mobs/Effects/burn_damage.rsi
+    bleedingOverlay: _Shitmed/Mobs/Effects/bleeding_damage.rsi
   - type: VisualOrganMarkings
     markingData:
       layers:
@@ -211,6 +262,16 @@
     layer: enum.HumanoidVisualLayers.RLeg
     data:
       state: r_leg
+  - type: WoundableVisuals
+    thresholds: [ 10, 20, 30, 50, 70, 100 ]
+    occupiedLayer: RLeg
+    damageOverlayGroups:
+      Brute:
+        sprite: _Shitmed/Mobs/Effects/brute_damage.rsi
+        color: "#FF0000"
+      Burn:
+        sprite: _Shitmed/Mobs/Effects/burn_damage.rsi
+    bleedingOverlay: _Shitmed/Mobs/Effects/bleeding_damage.rsi
   - type: VisualOrganMarkings
     markingData:
       layers:
@@ -275,6 +336,10 @@
   - type: Examiner
   - type: BlockMovement
   - type: BadFood
+  - type: ConsciousnessRequired
+    identifier: nerveSystem
+    causesDeath: true
+  - type: NerveSystem
   - type: Solution
     solution:
       reagents:
