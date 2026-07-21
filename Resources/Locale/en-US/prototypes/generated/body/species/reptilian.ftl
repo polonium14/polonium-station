@@ -2,7 +2,6 @@ ent-AppearanceReptilian = reptilian appearance
     .desc = { ent-BaseSpeciesAppearance.desc }
 ent-MobReptilian = Urist McScales
     .desc = { ent-AppearanceReptilian.desc }
-  .suffix = Urisst' Mzhand
 ent-OrganReptilian = { ent-OrganBaseOrganic }
     .suffix = Reptilian
     .desc = { ent-OrganBaseOrganic.desc }

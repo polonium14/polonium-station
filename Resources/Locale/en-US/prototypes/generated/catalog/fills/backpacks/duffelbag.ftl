@@ -1,9 +1,7 @@
 ent-ClothingBackpackDuffelSurgeryFilled = surgical duffel bag
     .desc = A large duffel bag for holding extra medical supplies - this one seems to be designed for holding surgical tools.
-  .suffix = NIE MAPOWAĆ
 ent-ClothingBackpackDuffelSyndicateFilledMedical = syndicate surgical duffel bag
     .desc = A large duffel bag containing a full suite of surgical tools.
-  .suffix = NIE MAPOWAĆ
 ent-ClothingBackpackDuffelSyndicateFilledMedicine = syndicate medicine duffel bag
     .desc = A large duffel bag containing essential medicinal reagents.
 ent-ClothingBackpackDuffelSyndicateFilledShotgun = Bulldog bundle

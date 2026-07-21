@@ -45,7 +45,6 @@ ent-OrganVoxEars = { ent-OrganBaseEars }
     .desc = { ent-OrganBaseEars.desc }
 ent-OrganVoxLungs = { ent-OrganBaseLungs }
     .desc = { ent-OrganBaseLungs.desc }
-  .suffix = voks
 ent-OrganVoxHeart = { ent-OrganBaseHeart }
     .desc = { ent-OrganBaseHeart.desc }
 ent-OrganVoxStomach = { ent-OrganBaseStomach }

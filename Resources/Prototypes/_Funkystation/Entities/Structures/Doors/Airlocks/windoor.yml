@@ -1,0 +1,8 @@
+- type: entity
+  parent: WindoorSecureServiceLocked
+  id: WindoorReporterLocked
+  suffix: Reporter, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsReporter ]

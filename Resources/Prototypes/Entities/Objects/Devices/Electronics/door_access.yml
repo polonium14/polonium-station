@@ -97,6 +97,14 @@
 
 - type: entity
   parent: DoorElectronics
+  id: DoorElectronicsReporter
+  suffix: Reporter, Locked
+  components:
+  - type: AccessReader
+    access: [["Reporter"]]
+
+- type: entity
+  parent: DoorElectronics
   id: DoorElectronicsService
   suffix: Service, Locked
   components:

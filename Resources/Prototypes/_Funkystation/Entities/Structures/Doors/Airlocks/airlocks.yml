@@ -1,0 +1,40 @@
+- type: entity
+  parent: AirlockMaint
+  id: AirlockMaintCargo
+  name: cargo maintenance access
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Structures/Doors/Airlocks/Standard/maint_cargo.rsi
+  - type: Wires
+    layoutId: AirlockCargo
+
+- type: entity
+  parent: AirlockServiceLocked
+  id: AirlockReporterLocked
+  suffix: Reporter, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsReporter ]
+
+- type: entity
+  parent: AirlockServiceGlassLocked
+  id: AirlockReporterGlassLocked
+  suffix: Reporter, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsReporter ]
+
+- type: entity
+  parent: AirlockMaint
+  id: AirlockMaintReporter
+  name: reporter maintenance access
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Structures/Doors/Airlocks/Standard/maint_service.rsi
+  - type: Wires
+    layoutId: AirlockService
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsReporter ]

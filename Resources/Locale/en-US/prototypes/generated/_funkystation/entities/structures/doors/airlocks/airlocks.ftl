@@ -1,0 +1,10 @@
+ent-AirlockMaintCargo = cargo maintenance access
+    .desc = { ent-AirlockMaint.desc }
+ent-AirlockReporterLocked = { ent-AirlockServiceLocked }
+    .suffix = Reporter, Locked
+    .desc = { ent-AirlockServiceLocked.desc }
+ent-AirlockReporterGlassLocked = { ent-AirlockServiceGlassLocked }
+    .suffix = Reporter, Locked
+    .desc = { ent-AirlockServiceGlassLocked.desc }
+ent-AirlockMaintReporter = reporter maintenance access
+    .desc = { ent-AirlockMaint.desc }
