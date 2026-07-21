@@ -65,6 +65,7 @@ namespace Content.IntegrationTests.Tests
         {
             // Funkystation edit - allow DNM disablers and such on base maps
             {"/Maps/bagel.yml", ["RubberStampMime", "GunSafeDisabler"]}, // Mime stamp is original
+            {"/Maps/_Polonium/cluster.yml", ["RubberStampMime"]},
             {"/Maps/reach.yml", ["HandheldCrewMonitor", "Stunbaton"]}, // HH crew monitor is original
             {"/Maps/plasma.yml", ["GunSafeDisabler"]},
             {"/Maps/packed.yml", ["GunSafeDisabler"]},
