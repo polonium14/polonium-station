@@ -1,5 +1,5 @@
-ent-FoodSnackBase = { ent-FoodBase }
-    .desc = { ent-FoodBase.desc }
+ent-FoodSnackBase = { ent-SolutionTiny }
+    .desc = { ent-SolutionTiny.desc }
 ent-FoodSnackBoritos = boritos
     .desc = Chrupiące, słone chipsy tortilli. Można z nich zrobić nachosy.
 ent-FoodSnackCnDs = C&Ds
@@ -49,7 +49,7 @@ ent-FoodSnackMREBrownieOpen = brownie
     .suffix = MRE
 ent-FoodSnackSwirlLollipop = lizak spiralny
     .desc = Wirujące kółko czystego cukru. Kto teraz jest największym dzieckiem na placu zabaw?
-ent-FoodPacketTrash = { ent-BaseItem }
+ent-FoodPacketTrash = { ent-SolutionFood }
     .desc = To śmieci.
 ent-FoodPacketBoritosTrash = opakowanie boritos
     .desc = { ent-FoodPacketTrash.desc }
@@ -85,5 +85,3 @@ ent-FoodCookieFortune = wróżba z ciasteczka
     .desc = Wróżba brzmi: Koniec bliski... i to twoja wina.
 ent-FoodPacketMRETrash = opakowanie MRE
     .desc = Uniwersalne opakowanie na różne wojskowe racje.
-
-

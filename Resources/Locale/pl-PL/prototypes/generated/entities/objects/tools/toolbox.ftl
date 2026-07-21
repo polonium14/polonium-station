@@ -15,3 +15,5 @@ ent-ToolboxSyndicate = podejrzana skrzynka narzędziowa
     .desc = Złowrogo wyglądająca skrzynka wypełniona elitarnymi narzędziami Syndykatu.
 ent-ToolboxGolden = złota skrzynka narzędziowa
     .desc = Solidna, złota skrzynka. Biedak zabiłby za coś takiego.
+ent-Foolbox = foolbox
+    .desc = A toolbox for fools, stocked with clowning equipment.

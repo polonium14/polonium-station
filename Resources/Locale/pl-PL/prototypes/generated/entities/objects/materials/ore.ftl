@@ -1,4 +1,4 @@
-ent-OreBase = { ent-BaseItem }
+ent-OreBase = { ent-MaterialBase }
     .desc = Kawałek nieoczyszczonej rudy.
 ent-GoldOre = ruda złota
     .suffix = Pełny

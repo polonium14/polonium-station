@@ -50,3 +50,23 @@ injector-component-spray-injecting-target = {CAPITALIZE(THE($user))} is trying t
 
 ## Target Popup Success messages
 injector-component-feel-prick-message = You feel a tiny prick!
+
+injector-draw-text = Pobierz
+
+injector-inject-text = Wstrzyknij
+
+injector-invalid-injector-toggle-mode = Nieprawidłowy
+
+injector-component-drawing-text = Pobieranie
+
+injector-component-injecting-text = Wstrzykiwanie
+
+injector-component-drawing-user = Zaczynasz pobierać igłą.
+
+injector-component-injecting-user = Zaczynasz wstrzykiwać igłą.
+
+injector-component-drawing-target = { CAPITALIZE($user) } próbuje pobrać krew igłą z ciebie!
+
+injector-component-injecting-target = { CAPITALIZE($user) } próbuje wstrzyknąć ci coś igłą!
+
+injector-component-deny-user = Egzoszkielet jest zbyt gruby!

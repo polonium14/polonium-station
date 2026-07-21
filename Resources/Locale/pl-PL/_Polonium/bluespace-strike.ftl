@@ -13,11 +13,8 @@ admin-bluespace-strike-eui-label-confirm = Ognia!
 cmd-artbs-desc = Otwiera UI celowania uderzenia bluespace.
 cmd-artbs-help = Użycie: artbs
 
-ent-BluespaceStrikeMarker = {""}
-    .desc = Lepiej biegnij.
 
-ent-BluespaceStrikeIncoming = {""}
-    .desc = Nadlatuje.
 
-ent-BluespaceStrikeController = uderzenie bluespace
-    .desc = {""}
+
+
+

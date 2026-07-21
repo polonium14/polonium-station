@@ -1,2 +1,0 @@
-ent-AlertMalfCpuSpriteView = { "" }
-    .desc = { "" }

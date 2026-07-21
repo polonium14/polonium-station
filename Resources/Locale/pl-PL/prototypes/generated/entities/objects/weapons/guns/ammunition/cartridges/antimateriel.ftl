@@ -1,2 +1,2 @@
 ent-CartridgeAntiMateriel = nabój (.60 przeciwmateriałowy)
-    .desc = { ent-BaseCartridge.desc }
+    .desc = A high-power cartridge used by high-precision rifles.

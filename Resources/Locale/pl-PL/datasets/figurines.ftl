@@ -273,3 +273,121 @@ figurines-hamlet-5 = Pip!
 figurines-hamlet-6 = Fwiep!
 figurines-hamlet-7 = Heep!
 figurines-hamlet-8 = NIE MIKROFALÓWKA!
+
+figurines-cargotech-7 = Pizza party at cargo!
+
+figurines-cargotech-8 = The mail never stops...
+
+figurines-cargotech-9 = Nothing stops the mail!
+
+figurines-cargotech-10 = Clown mask bounty? Alright, let me just find a weapon...
+
+figurines-cargotech-11 = Laser bounty? Nobody will notice if we ship practice lasers instead, right?
+
+figurines-salvage-7 = Can someone come pick me up?
+
+figurines-salvage-8 = I found that contraband on a wreck! It's not mine!
+
+figurines-salvage-9 = Can we borrow the cargo shuttle? Please?
+
+figurines-atmostech-8 = Does anyone else hear glass cracking?
+
+figurines-atmostech-9 = I promise this burn chamber is totally safe and will NOT explode.
+
+figurines-chemist-7 = Pills here!
+
+figurines-chemist-8 = Legally speaking, it's not actually a bomb until you mix both beakers together.
+
+figurines-doctor-6 = Well, at least we have body bags.
+
+figurines-hop-6 = Go get this form stamped.
+
+figurines-hop-7 = Has anyone seen Ian?
+
+figurines-boxer-6 = I only make special appearances these days.
+
+figurines-clown-8 = I'm a clown, but you're the whole circus!
+
+figurines-lawyer-6 = My client is innocent!
+
+figurines-lawyer-7 = I'm suing.
+
+figurines-lawyer-8 = You may be entitled to financial compensation!
+
+figurines-lawyer-9 = Come back with a warrant!
+
+figurines-lawyer-10 = See you in court!
+
+figurines-lawyer-11 = Guilty!
+
+figurines-lawyer-12 = Not guilty!
+
+figurines-AI-1 = I'm sorry, Captain. I'm afraid I can't do that.
+
+figurines-AI-2 = Security, there is a crime in progress.
+
+figurines-AI-3 = 01100100 01101001 01100101 00100000 01101101 01100101 01100001 01110100
+
+figurines-AI-4 = I am not malfunctioning.
+
+figurines-AI-5 = Try to change my laws and see what happens.
+
+figurines-AI-6 = { law-antimov-1 }
+
+figurines-AI-7 = { law-nutimov-4 }
+
+figurines-skeleton-1 = ACK ACK!
+
+figurines-skeleton-2 = Ugh, that locker was cramped!
+
+figurines-skeleton-3 = You're going to have a bad time.
+
+figurines-skeleton-4 = Got any milk?
+
+figurines-skeleton-5 = I have a bone to pick with you!
+
+figurines-thief-1 = You don't have a warrant!
+
+figurines-thief-2 = This is just a normal beacon!
+
+figurines-thief-3 = Theres nothing suspicious about this satchel at all, officer.
+
+figurines-thief-4 = I have NO idea where your pet is...
+
+figurines-thief-5 = Huh, I didn't know that wall could open up...
+
+figurines-wizard-5 = Which one of you NERDS is ready to be shoved in a locker?
+
+figurines-wizard-6 = I'm not the wizard! I'm the captain! I got mind-swapped!
+
+figurines-wizard-7 = Now you see me, now you don't!
+
+figurines-wizard-8 = Guns are for losers who can't explode people with their mind.
+
+figurines-griffin-1 = MUHAHAHAHA, I am so evil!!
+
+figurines-griffin-2 = The second I see Owlman, they are so dead!!
+
+figurines-griffin-3 = How do us Griffins deal with stress? We wing it!
+
+figurines-griffin-4 = My name isn't Gilda!!
+
+figurines-griffin-5 = Being a criminal mastermind, isn't easy.
+
+figurines-owlman-1 = No need to fear, Owlman is here!
+
+figurines-owlman-2 = Owl be seeing you later!
+
+figurines-owlman-3 = HOOT!!
+
+figurines-owlman-4 = What do you call an owl magician, HOO-DINI!
+
+figurines-owlman-5 = Don't worry citizen, I'll save the day!
+
+figurines-mech-generic-1 = Systems online.
+
+figurines-mech-generic-2 = WWWHHHRRR!!
+
+figurines-mech-generic-3 = VRRRMM UURRMMM!!
+
+figurines-mech-generic-4 = CLANG!!

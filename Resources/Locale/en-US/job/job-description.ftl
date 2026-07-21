@@ -1,4 +1,4 @@
-﻿# Command
+# Command
 job-description-captain = Manage the resources and personnel of the entire station. Work alongside the other heads of staff to ensure the station's crew remain content and productive.
 job-description-ce = Manage the resources and personnel of the Engineering department to ensure the station remains intact, functional, and habitable.
 job-description-cmo = Manage the resources and personnel of the Medical department to ensure the station's crew remain alive and in good health.
@@ -62,3 +62,18 @@ job-description-ertleader = Lead the Emergency Response Team to protect and pres
 job-description-ertmedic = Ensure that the station's crew have their injuries treated.
 job-description-ertsecurity = Ensure that any threats to the station are eliminated.
 job-description-visitor = Enjoy your visit to the station!
+
+job-description-boxer = Wywalcz swoją drogę na szczyt! Wyzwij kierownika personelu i zostań aresztowany gdy wygrasz.
+
+job-description-brigmedic = Walcz na tyłach departamentu ochrony, o życia swoich towarzyszy! Jesteś pierwszą i ostatnią nadzieją swojego zespołu. Niech cię Hippokrates błogosławi.
+
+job-description-centcomoff = Zachowuj się jak ambasador najnowszej stacji w flocie Nanotrasen.
+
+job-description-zookeeper = Wystawiaj radosne ekspozycje słodkich zwierząt i kosmicznych karpi.
+
+# event-restricted jobs
+job-description-command-maid = Clean the bridge, command rooms, and everything else that command tells you to.
+
+job-description-security-clown = Do security's job, but don't forget to do it with your clown spice.
+
+job-description-party-maker = Throw the biggest party ever at this station!

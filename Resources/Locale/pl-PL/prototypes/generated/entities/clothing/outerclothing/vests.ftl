@@ -1,12 +1,8 @@
-ent-ClothingOuterVestWeb = kamizelka taktyczna
-    .desc = Syntetyczna kamizelka pancerna. Posiada dodatkowe taśmy i płyty balistyczne.
-ent-ClothingOuterVestWebElite = aramidowa kamizelka taktyczna
-    .desc = Syntetyczna kamizelka pancerna. Posiada dodatkowe taśmy i włókna odporne na ciepło.
-ent-ClothingOuterVestWebMerc = kamizelka najemnika
-    .desc = Wysokiej jakości kamizelka pancerna wykonana z twardego materiału syntetycznego. Jest zaskakująco elastyczna i lekka, mimo solidnego opancerzenia.
-ent-ClothingOuterVestDetective = kamizelka detektywa
-    .desc = Pancerna kamizelka nieugiętego prywatnego detektywa.
 ent-ClothingOuterVestHazard = kamizelka odblaskowa
     .desc = Kamizelka o wysokiej widoczności używana w strefach roboczych.
 ent-ClothingOuterVest = kamizelka
     .desc = Schludna kamizelka barmana, wzmocniona kewlarem.
+ent-ClothingOuterVestTank = tank harness
+    .desc = A simple harness that can hold a gas tank.
+ent-ClothingOuterVestPress = press vest
+    .desc = A cloth vest for the fearless reporter in the field. Go land an interview with that space dragon!

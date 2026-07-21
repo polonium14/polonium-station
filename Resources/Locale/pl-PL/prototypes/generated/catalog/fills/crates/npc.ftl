@@ -48,3 +48,5 @@ ent-CrateNPCKangaroo = skrzynia z kangurem
     .desc = Skrzynia zawierająca kangura.
 ent-CrateNPCMothroach = skrzynia z ćmaraluchami
     .desc = Skrzynia zawierająca cztery ćmaraluchy.
+ent-CrateNPCSheep = sheep crate
+    .desc = A crate containing a single sheep.

@@ -24,3 +24,5 @@ disposal-unit-state-Flushed = Budowanie ciśnienia
 disposal-unit-state-Pressurizing = Budowanie ciśnienia
 # putting people in
 disposal-unit-being-inserted = { CAPITALIZE($user) } próbuje włożyć cię do zsypu!
+
+disposal-unit-is-full = There's no more room inside.

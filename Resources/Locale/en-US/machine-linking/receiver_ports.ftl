@@ -89,3 +89,11 @@ signal-port-description-logic-enable = Only loads the input signal into the memo
 
 signal-port-name-logic-random-input = Input Signal
 signal-port-description-logic-random-input = Receives any signal to trigger a random output.
+
+signal-port-name-trigger = Trigger
+
+signal-port-description-trigger = Triggers some mechanism on the device.
+
+signal-port-name-timer = Timer
+
+signal-port-description-timer = Starts the timer countdown of the device.

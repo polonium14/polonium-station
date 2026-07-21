@@ -125,3 +125,7 @@ alerts-stealthy-desc = Whether you are currently pickpocketing. Click to toggle.
 
 alerts-prying-name = Prying
 alerts-prying-desc = You can innately pry doors open using alternative interaction.
+
+alerts-cocooned-name = [color=yellow]Cocooned[/color]
+
+alerts-cocooned-desc = You're [color=yellow]wrapped in a cocoon[/color] and can't move or use your hands.

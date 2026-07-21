@@ -82,3 +82,11 @@ chat-emote-msg-whine = whines.
 chat-emote-msg-howl = howls.
 chat-emote-msg-growl = growls.
 chat-emote-msg-flap = flaps {POSS-ADJ($entity)} wings.
+
+chat-emote-name-coo = Gruchanie
+
+chat-emote-name-yap = Skomlenie
+
+chat-emote-name-gekker = Gekker
+
+chat-emote-msg-coo = grucha.

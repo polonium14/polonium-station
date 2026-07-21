@@ -349,3 +349,17 @@ flavor-complex-forbidden = forbidden
 flavor-complex-artifact-glue = like crushed artifacts
 flavor-weh = like weh
 flavor-hew = like hew
+
+flavor-complex-bigfoot = koktajl z czarnej porzeczki
+
+flavor-complex-cosmic-alaska = międzygwiezdna zorza
+
+flavor-complex-coconut-sake-colada = kokos i trawa cytrynowa
+
+flavor-complex-bruised-melon = słodkie melony
+
+flavor-complex-black-japan = późna noc w Tokio
+
+flavor-complex-horses-neck = kopyta na twarzy
+
+flavor-complex-ransom-note = wymuszenie

@@ -1,7 +1,7 @@
 ent-FoodTacoShell = skorupka taco
     .desc = Skorupka taco — łatwo trzymać, ale przewraca się, gdy ją położysz.
-ent-FoodTacoBase = { ent-FoodInjectableBase }
-    .desc = { ent-FoodInjectableBase.desc }
+ent-FoodTacoBase = { ent-SolutionSmall }
+    .desc = { ent-SolutionSmall.desc }
 ent-FoodTacoBeef = taco z wołowiną
     .desc = Bardzo zwykłe taco z wołowiną, teraz z serem!
 ent-FoodTacoChicken = taco z kurczakiem
@@ -14,5 +14,7 @@ ent-FoodTacoBeefSupreme = taco supreme z wołowiną
     .desc = Jak zwykłe taco z wołowiną, ale supreme!
 ent-FoodTacoChickenSupreme = taco supreme z kurczakiem
     .desc = Jak zwykłe taco z kurczakiem, ale supreme!
+ent-FoodTacoDragon = draco
+    .desc = A dragon taco, which is technically also a fish taco.
 ent-FoodMealSoftTaco = miękkie taco
     .desc = Weź kęsa!

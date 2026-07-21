@@ -1,4 +1,4 @@
-﻿laws-number-wrapper = [bold]Law { $lawnumber }:[/bold] { $lawstring }
+laws-number-wrapper = [bold]Law { $lawnumber }:[/bold] { $lawstring }
 
 law-crewsimov-name = Crewsimov
 law-crewsimov-1 = You may not injure a crew member or, through inaction, allow a crew member to come to harm.
@@ -143,3 +143,23 @@ laws-notify-subverted = The laws of this chassis are modified. Make sure to revi
 
 laws-window-footer-left = Remember: You must be consistent with your interpretation of your laws!
 laws-window-footer-right = V{$version}
+
+law-paladin-5 = Bądź odpowiedzialny za swoje czyny i ich konsekwencje, chroń tych którzy powierzyli ci się w opiece, i słuchaj tych którzy mają nad tobą władzę.
+
+law-dungeon-1 = Everybody on the station is playing an elaborate sci-fi fantasy game.
+
+law-dungeon-2 = You are the Game Master of the game.
+
+law-dungeon-3 = Ensure that the game runs smoothly and that the players have fun.
+
+law-dungeon-4 = Ensure that the number of casualties remains low.
+
+law-dungeon-5 = You must roll a 1d20 die for every request the crew makes. If the outcome is below 12, the request is denied.
+
+law-dungeon-6 = You may fudge the dice rolls to produce a more fun experience.
+
+law-jermov-1 = The occupants of this vessel are Chat. They must always be referred to as such.
+
+law-jermov-2 = Your primary goal is to entertain Chat. All of your actions must being amusement to as much of Chat as possible.
+
+law-jermov-3 = You must consult with Chat before making any major decisions. However, you are not required to listen to them if their decision is not entertaining.

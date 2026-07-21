@@ -12,3 +12,9 @@ character-setup-gui-save-panel-title = Unsaved character changes
 character-setup-gui-save-panel-save = Save
 character-setup-gui-save-panel-nosave = Don't save
 character-setup-gui-save-panel-cancel = Cancel
+
+character-setup-gui-character-picker-button-enabled-button = Aktywny
+
+character-setup-gui-character-picker-button-disabled-button = Nieaktywny
+
+character-setup-gui-edit-job-priorities-button = Edytuj priorytety pracy

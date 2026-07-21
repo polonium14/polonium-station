@@ -1,7 +1,5 @@
 ent-CrateFoodPizza = ratunkowa dostawa pizzy
     .desc = Dołóż swoją cegiełkę do walki z głodem na stacji, rozdając pizzę niedofinansowanym działom! Zawiera 4 pizze.
-ent-CrateFoodPizzaLarge = katastroficzna dostawa pizzy
-    .desc = W ostateczności, gdy wszystko inne zawiedzie, pociesz się faktem, że jeszcze więcej pizzy rozwiąże każdy problem. Zawiera 16 pizz.
 ent-CrateFoodMRE = skrzynia z MRE
     .desc = Posiłki typu wojskowego, gotowe wyżywić cały dział.
 ent-CrateFoodCooking = skrzynia z zaopatrzeniem kuchennym
@@ -12,8 +10,6 @@ ent-CrateFoodBarSupply = skrzynia z zaopatrzeniem barmańskim
     .desc = Dodatkowe wyposażenie baru na wypadek, gdyby klaun został w barze bez nadzoru.
 ent-CrateFoodSoftdrinks = skrzynia z napojami bezalkoholowymi
     .desc = Wybór napojów gazowanych idealnych na małą imprezę, bez konieczności opróżniania automatów. Zawiera 14 napojów.
-ent-CrateFoodSoftdrinksLarge = zbiorcza skrzynia z napojami bezalkoholowymi
-    .desc = Mnóstwo napojów prosto z automatów Centcomm, bo przecież i tak nie opuszczasz swojego działu. Zawiera 32 napoje.
 ent-CrateFoodGetMore = skrzynia Getmore Bakemore
     .desc = Markowe przekąski i półprodukty do pieczenia Getmore dla kreatywnego szefa kuchni, a wszystko to bez opróżniania stacyjnych automatów!
 ent-CrateFoodIceCream = dostawa lodów

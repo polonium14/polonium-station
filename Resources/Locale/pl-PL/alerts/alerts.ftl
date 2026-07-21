@@ -86,3 +86,7 @@ alerts-stealthy-desc = Czy aktualnie dokonujesz kieszonkowania. Kliknij, aby prz
 alerts-knockdown-name = [color=yellow]Knocked Down[/color]
 
 alerts-knockdown-desc = You're [color=yellow]Knocked Down[/color]! Something has slipped or pushed you over, encumbering your movement.
+
+alerts-prying-name = Prying
+
+alerts-prying-desc = You can innately pry doors open using alternative interaction.

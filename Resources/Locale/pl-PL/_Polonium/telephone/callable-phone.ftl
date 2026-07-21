@@ -41,3 +41,8 @@ callable-phone-centcomm-admin-took-ic = { $admin } przejął rozmowę przez słu
 callable-phone-window-relay-label = Źródło:
 callable-phone-window-answer-call = Odbierz
 callable-phone-window-end-call = Odrzuć
+
+# Optional directory names for red phones (set phoneName on CallablePhone in map/prototype)
+callable-phone-example-bridge = Bridge
+
+callable-phone-example-medbay = Medbay

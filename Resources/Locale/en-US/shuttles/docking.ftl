@@ -6,3 +6,9 @@ cmd-dock-help = dock <airlock entityuid1> <airlock entityuid2>
 
 cmd-dock-success = Successfully docked
 cmd-dock-fail = Unable to dock
+
+cmd-dock-args = Niepoprawna liczba argumentów
+
+cmd-dock-invalid = Niepoprawne EntityUid { $entity }
+
+cmd-dock-found = Nie znaleziono docking component na { $airlock }

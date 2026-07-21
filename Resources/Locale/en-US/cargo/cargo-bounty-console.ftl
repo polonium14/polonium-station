@@ -1,4 +1,4 @@
-﻿bounty-console-menu-title = Cargo bounty console
+bounty-console-menu-title = Cargo bounty console
 bounty-console-label-button-text = Print label
 bounty-console-skip-button-text = Skip
 bounty-console-time-label = Time: [color=orange]{$time}[/color]
@@ -24,3 +24,17 @@ bounty-console-tab-history-label = History
 bounty-console-history-empty-label = No bounty history found
 bounty-console-history-notice-completed-label = [color=limegreen]Completed[/color]
 bounty-console-history-notice-skipped-label = [color=red]Skipped[/color] by {$id}
+
+bounty-console-manifest-entry-reagent =
+    { $amount ->
+        [1] { $item }
+       *[other] { $item } { $amount }u
+    }
+
+bounty-console-manifest-entry-gas =
+    { $amount ->
+        [1] { $item }
+       *[other] { $item } { $amount }mol
+    }
+
+bounty-console-category-description = { $category } Żądanie: { $id }

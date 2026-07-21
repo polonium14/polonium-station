@@ -1,2 +1,14 @@
 ent-BaseTowel = base towel
     .desc = If you want to survive out here, you gotta know where your towel is.
+ent-TowelColorWhite = white towel
+    .desc = { ent-BaseTowel.desc }
+    .suffix = folded
+ent-TowelColorNT = Nanotrasen branded towel
+    .desc = { ent-BaseTowel.desc }
+    .suffix = folded
+ent-TowelColorCentcom = centcomm towel
+    .desc = { ent-BaseTowel.desc }
+    .suffix = folded
+ent-TowelColorSyndicate = syndicate towel
+    .desc = { ent-BaseTowel.desc }
+    .suffix = folded

@@ -1,5 +1,7 @@
 ent-DoorRemoteDefault = pilot do śluz
     .desc = Gadżet, który może zdalnie otwierać i blokować drzwi.
+ent-DoorRemoteCanEletrifyDoors = { ent-DoorRemoteDefault }
+    .desc = { ent-DoorRemoteDefault.desc }
 ent-DoorRemoteCommand = pilot do śluz dowództwa
     .desc = { ent-DoorRemoteDefault.desc }
 ent-DoorRemoteCustom = niestandardowy pilot do śluz
@@ -19,5 +21,7 @@ ent-DoorRemoteMedical = pilot do śluz medycznych
 ent-DoorRemoteEngineering = pilot do śluz inżynieryjnych
     .desc = { ent-DoorRemoteDefault.desc }
 ent-DoorRemoteAll = super pilot do śluz
+    .desc = A gadget which can open and bolt doors remotely. This one works even on wooden doors!
     .suffix = Admeme
-    .desc = { ent-DoorRemoteDefault.desc }
+ent-DoorRemoteXenoborg = xenoborg door remote
+    .desc = { ent-DoorRemoteCanEletrifyDoors.desc }

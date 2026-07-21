@@ -30,3 +30,5 @@ scramble-implant-activated-popup = Twój wygłąd się zmienia!
 
 deathrattle-implant-dead-message = { $user } zmarł(-a) w { $position }.
 deathrattle-implant-critical-message = Oznaki życia { $user } są krytyczne, natychmiastowa pomoc jest wymagana w { $position }.
+
+implanter-component-draw-target = {CAPITALIZE(THE({$user}))} is trying to extract something from you!

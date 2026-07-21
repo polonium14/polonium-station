@@ -1,0 +1,13 @@
+ent-ElectricalDisruptionKit = electrical disruption kit
+    .suffix = Filled
+    .desc = { ent-BoxCardboard.desc }
+ent-ChemicalSynthesisKit = chemical synthesis kit
+    .desc = A starter kit for the aspiring chemist, includes two vials of vestine for all your criminal needs!
+ent-ThrowingKnivesKit = throwing knives kit
+    .desc = A set of 8 syndicate branded throwing knives, perfect for embedding into the body of your victims.
+ent-BoxDeathRattleImplants = deathrattle implant box
+    .desc = Six deathrattle implants for the whole squad.
+ent-CombatBakeryKit = combat bakery kit
+    .desc = A kit of clandestine baked weapons.
+ent-SyndimovCircuitKit = syndimov circuit kit
+    .desc = A kit containing an electronics board with the Syndimov lawset and a Syndicate ID.

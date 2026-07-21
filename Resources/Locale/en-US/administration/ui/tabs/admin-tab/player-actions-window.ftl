@@ -8,3 +8,9 @@ admin-player-actions-window-admin-logs = Admin Logs
 admin-player-actions-window-admin-fax = Admin Fax
 admin-player-actions-window-admin-chat = Admin Chat
 admin-player-actions-window-entity-search = Entity Search
+
+admin-player-actions-window-title = Panel działań gracza
+
+admin-player-actions-window-teleport = Teleportacja
+
+admin-player-actions-window-admin-notes = Notatki administratora

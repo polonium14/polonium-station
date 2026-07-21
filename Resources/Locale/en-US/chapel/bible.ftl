@@ -16,3 +16,5 @@ necro-heal-success-self = You hit {THE($target)} with {THE($bible)}, and {POSS-A
 necro-heal-success-others = {CAPITALIZE(THE($user))} hits {THE($target)} with {THE($bible)}, and {POSS-ADJ($target)} flesh warps as it melts!
 necro-heal-fail-self = You hit {THE($target)} with {THE($bible)}, and it lands with a sad thwack, failing to smite {OBJECT($target)}.
 necro-heal-fail-others = {CAPITALIZE(THE($user))} hits {THE($target)} with {THE($bible)}, and it lands with a sad thack, failing to smite {OBJECT($target)}.
+
+bible-religion-opposing = The book objects!

@@ -8,3 +8,7 @@ ent-ArrowImprovisedPlasma = strzała z odłamka plazmy
     .desc = Ulubiony pocisk szarego koszula. Teraz z dodatkową śmiertelnością!
 ent-ArrowImprovisedUranium = strzała z odłamka uranu
     .desc = Ulubiony pocisk szarego koszula. Teraz z dodatkowym promieniowaniem!
+ent-ArrowImprovisedCarp = carp tooth arrow
+    .desc = The salvager's preferred arrow. Kill your enemies with the teeth of their families.
+ent-ArrowCard = cardboard arrow
+    .desc = Careful, you'll poke an eye out!

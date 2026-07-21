@@ -26,3 +26,7 @@ reagent-desc-grey-matter = Sok myśli, rzecz która wypływa z twoich uszu.
 reagent-name-unholy-blood = unholy blood
 
 reagent-desc-unholy-blood = A cursed substance that pulses with dark energy. Those touched by the cult bleed this profane fluid.
+
+reagent-name-sulfur-blood = sulfuric blood
+
+reagent-desc-sulfur-blood = Feels almost acidic.

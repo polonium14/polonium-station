@@ -402,3 +402,5 @@ figurines-mech-generic-1 = Systems online.
 figurines-mech-generic-2 = WWWHHHRRR!!
 figurines-mech-generic-3 = VRRRMM UURRMMM!!
 figurines-mech-generic-4 = CLANG!!
+
+figurines-qm-9 = 99% hazardzistów przestaje tuż przed wygraną!

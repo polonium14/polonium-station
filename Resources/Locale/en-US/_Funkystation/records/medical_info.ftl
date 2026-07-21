@@ -1,0 +1,56 @@
+medical-info-no-info = Brak informacji medycznych.
+# categories
+medical-info-category-allergies = Alergie
+medical-info-category-prescriptions = Recepty
+medical-info-category-family-history = Historia medyczna rodziny
+# allergies
+medical-info-allergies-dander = Łupież
+medical-info-allergies-eggs = Jaja
+medical-info-allergies-fragrances = Perfumy
+medical-info-allergies-hugs = Uściski
+medical-info-allergies-latex = Lateks
+medical-info-allergies-milk = Mleko
+medical-info-allergies-mold = Pleśń
+medical-info-allergies-nickel = Nikiel
+medical-info-allergies-nuts = Orzechy
+medical-info-allergies-pollen = Pyłki
+medical-info-allergies-shellfish = Skorupiaki
+medical-info-allergies-wheat = Pszenica
+# prescriptions
+medical-info-prescriptions-antacids = Antacydy
+medical-info-prescriptions-antianxiety = Leki przeciwlękowe
+medical-info-prescriptions-antiarrhythmics = Leki przeciwarytmiczne
+medical-info-prescriptions-antidepressants = Leki przeciwdepresyjne
+medical-info-prescriptions-anticonvulsants = Leki przeciwdrgawkowe
+medical-info-prescriptions-antiepileptics = Leki przeciwpadaczkowe
+medical-info-prescriptions-antihistamines = Leki przeciwhistaminowe
+medical-info-prescriptions-antipsychotics = Leki przeciwpsychotyczne
+medical-info-prescriptions-betablockers = Betablokery
+medical-info-prescriptions-bloodthinners = Leki rozrzedzające krew
+medical-info-prescriptions-hormones = Hormony
+medical-info-prescriptions-immunosuppressives = Leki immunosupresyjne
+medical-info-prescriptions-painrelievers = Środki przeciwbólowe
+medical-info-prescriptions-sleepingdrugs = Leki nasenne
+# family history
+medical-info-familyhistory-anemia = Niedokrwistość
+medical-info-familyhistory-arthritis = Zapalenie stawów
+medical-info-familyhistory-asthma = Astma
+medical-info-familyhistory-autoimmune = Zaburzenia autoimmunologiczne
+medical-info-familyhistory-bloodclots = Zakrzepy krwi
+medical-info-familyhistory-cancer = Rak
+medical-info-familyhistory-chronicpain = Przewlekły ból
+medical-info-familyhistory-depression = Depresja
+medical-info-familyhistory-diabetes = Cukrzyca
+medical-info-familyhistory-heartdisease = Choroby serca
+medical-info-familyhistory-bloodpressure = Nadciśnienie
+medical-info-familyhistory-hiv = HIV
+medical-info-familyhistory-kidneydisease = Choroba nerek
+medical-info-familyhistory-kidneystones = Kamienie nerkowe
+medical-info-familyhistory-liverdisease = Choroba wątroby
+medical-info-familyhistory-lungdisease = Choroba płuc
+medical-info-familyhistory-migraines = Migreny
+medical-info-familyhistory-neuroaversion = Neurowrażliwość
+medical-info-familyhistory-osteoporosis = Osteoporoza
+medical-info-familyhistory-seizures = Napady padaczkowe
+medical-info-familyhistory-sleepapnea = Bezdech senny
+medical-info-familyhistory-stroke = Udar

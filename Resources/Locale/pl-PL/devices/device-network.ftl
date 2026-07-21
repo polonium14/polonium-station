@@ -50,3 +50,6 @@ device-net-id-wireless = Wireless
 device-net-id-apc = Apc
 device-net-id-atmos-devices = Atmos Devices
 device-net-id-reserved = Reserved
+
+# Unknown
+device-address-unknown = ????-????

@@ -18,3 +18,5 @@ changelog-tab-title-Rules = Rules
 
 cmd-changelog-desc = Opens the changelog.
 cmd-changelog-help = Usage: changelog
+
+changelog-tab-title-Funkylog = Funkylog

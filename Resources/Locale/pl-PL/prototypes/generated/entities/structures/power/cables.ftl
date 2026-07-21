@@ -1,5 +1,7 @@
-ent-CableBase = { "" }
+ent-CablePhysBase = { "" }
     .desc = { "" }
+ent-CableBase = { ent-CablePhysBase }
+    .desc = { ent-CablePhysBase.desc }
 ent-CableHV = kabel zasilania WN
     .desc = Pomarańczowy kabel zasilania wysokiego napięcia.
     .gender = male
@@ -21,3 +23,5 @@ ent-CableApcExtensionUncuttable = { ent-CableApcExtension }
     .suffix = uncuttable
     .desc = { ent-CableApcExtension.desc }
     .gender = male
+ent-CableDet = explosive cord
+    .desc = Spaghetti for people who hate walls.

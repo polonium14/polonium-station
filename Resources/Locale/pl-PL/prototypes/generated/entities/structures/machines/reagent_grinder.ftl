@@ -1,5 +1,11 @@
 ent-KitchenReagentGrinder = młynek
     .desc = Od BlenderTech. Czy się zblenduje? Zobaczmy!
     .suffix = młynek / sokowirówka
+ent-KitchenReagentGrinderBeaker = { ent-KitchenReagentGrinder }
+    .suffix = beaker
+    .desc = { ent-KitchenReagentGrinder.desc }
+ent-KitchenReagentGrinderBeakerLarge = { ent-KitchenReagentGrinder }
+    .suffix = large beaker
+    .desc = { ent-KitchenReagentGrinder.desc }
 ent-ReagentGrinderIndustrial = przemysłowy młynek
     .desc = Młynek do celów przemysłowych.

@@ -142,3 +142,479 @@ bounty-description-cotton-boll = A massive swarm of mothroaches ate all the pape
 bounty-description-microwave-machine-board = Mr. Giggles thought it'd be funny to stick forks in all the kitchen microwaves. Help us replace them before the chefs start making clown burgers.
 bounty-description-flashes = GREETINGS \[Station] WE REQUIRE 6 FLASHES DUE TO A NORMAL \[TrainingExercise] WITH SECURITY. EVERYTHING IS \[Normal].
 bounty-description-ring = On this EXTRAORDINARY day there will be a wedding between the Gelts, but Mr. Gelt has lost the rings. They need a new pair.
+
+bounty-item-ammunition-box = skrzynka amunicji
+
+bounty-item-atmos-fire-suit = kombinezon przeciwpożarowy atmosferyczny
+
+bounty-item-clown-costume = strój klauna
+
+bounty-item-balloon = balon
+
+bounty-item-banana-peel = skórka od banana
+
+bounty-item-clown-mask = maska klauna
+
+bounty-item-clown-shoes = buty klauna
+
+bounty-item-bike-horn = klakson rowerowy
+
+bounty-item-bloodpack = worek z krwią
+
+bounty-item-board-game = gra planszowa
+
+bounty-item-bodybag = worek na zwłoki
+
+bounty-item-book = książka
+
+bounty-item-ambrosia = ambrozja
+
+bounty-item-borg-module-cargo = moduł cyborga cargo
+
+bounty-item-advanced-mop = zaawansowany mop
+
+bounty-item-cake = ciasto
+
+bounty-item-arrow = strzała
+
+bounty-item-borg-arm = ramię robota
+
+bounty-item-borg-head = głowa robota
+
+bounty-item-borg-leg = noga robota
+
+bounty-item-borg-torso = tułów robota
+
+# TODO przetłumaczyć leki
+bounty-item-brutepack = Brute topical
+
+bounty-item-borg-module-engineering = moduł inżynieryjnego robota
+
+bounty-item-borg-module-generic = moduł typowego robota
+
+bounty-item-borg-module-janitor = moduł woźnego robota
+
+bounty-item-borg-module-medical = moduł medycznego robota
+
+bounty-item-borg-module-service = moduł usługowego robota
+
+bounty-item-bot = bot
+
+bounty-item-cleaver = tasak
+
+bounty-item-cloth-made = jedzenie z tkaniny
+
+bounty-item-combat-knife = nóż bojowy
+
+bounty-item-cryobeaker = zlewka kriostatyczna
+
+bounty-item-dice = kostka do gry
+
+bounty-item-drink-bottle = butelka z napojem
+
+bounty-item-dropper = zakraplacz
+
+bounty-item-eyes = oczy
+
+bounty-item-gauze = rolki gazy
+
+bounty-item-gps = GPS
+
+bounty-item-grenade = granat wybuchowy
+
+bounty-item-grenade-flashbang = granat hukowy
+
+bounty-item-holofan-projector = projektor holowentylatorowy
+
+bounty-item-holosign-projector = projektor holoznaków
+
+bounty-item-instrument-brass = instrument dęty blaszany
+
+bounty-item-instrument-keyed = instrument klawiszowy
+
+bounty-item-instrument-string = instrument strunowy
+
+bounty-item-jaws-of-life = nożyce hydrauliczne
+
+bounty-item-kidney = nerka
+
+bounty-item-kitchen-knife = nóż kuchenny
+
+bounty-item-liver = wątroba
+
+bounty-item-ointment = maść na oparzenia
+
+bounty-item-pickaxe = kilof
+
+bounty-item-potato = ziemniak
+
+bounty-item-powerdrill = wiertarka elektryczna
+
+bounty-item-reptilian-food = jedzenie dla jaszczuroludzi
+
+bounty-item-sidearm = broń boczna
+
+bounty-item-stomach = żołądek
+
+bounty-item-stun-baton = pałka ogłuszająca
+
+bounty-item-surgery-tool = narzędzie chirurgiczne
+
+bounty-item-rollerskates = rolki
+
+bounty-item-taser = taser lub obezwładniacz
+
+bounty-item-toy-sidearm = zabawkowy pistolet
+
+bounty-item-wheat = pszenica
+
+bounty-item-Hydrogen = wodór
+
+bounty-item-Oxygen = tlen
+
+bounty-item-Nitrogen = azot
+
+bounty-item-Water = woda
+
+bounty-item-Iodine = jod
+
+bounty-item-Lithium = lit
+
+bounty-item-Fluorine = fluor
+
+bounty-item-Copper = miedź
+
+bounty-item-Aluminum = aluminium
+
+bounty-item-Mercury = rtęć
+
+bounty-item-Radium = rad
+
+bounty-item-Liquid-Silver = srebro
+
+bounty-item-Liquid-Gold = złoto
+
+bounty-item-Liquid-Plasma = plazma
+
+bounty-item-Oil = olej
+
+bounty-item-Table-Salt = sól kuchenna
+
+bounty-item-Acetone = aceton
+
+bounty-item-Ash = popiół
+
+bounty-item-Benzene = benzen
+
+bounty-item-Hydroxide = wodorotlenek
+
+bounty-item-Fersilicite = ferrokrzem
+
+bounty-item-Sodium-Polyacrylate = poliakrylan sodu
+
+bounty-item-Mannitol = mannitol
+
+bounty-item-Impedrezene = impedryzyna
+
+bounty-item-Space-Mirage = kosmiczny miraż
+
+bounty-item-Synaptizine = synaptyzyna
+
+bounty-item-Foaming-Agent = środek pieniący
+
+bounty-item-Saline = sól fizjologiczna
+
+bounty-item-Space-Cleaner = kosmomyj
+
+bounty-item-Sodium-Carbonate = węglan sodu
+
+bounty-item-Sodium-Hydroxide = wodorotlenek sody
+
+bounty-item-Sulfuric-Acid = kwas siarkowy
+
+bounty-item-Phenol = fenol
+
+bounty-item-Dexalin = deksalina
+
+bounty-item-Hyronalin = hyronalina
+
+bounty-item-Ipecac = ipekak
+
+bounty-item-Inaprovaline = inaprowalina
+
+bounty-item-Cryoxadone = krioksadon
+
+bounty-item-Napalm = napalm
+
+bounty-item-Thermite = termit
+
+bounty-item-Charcoal = węgiel drzewny
+
+bounty-item-Cryptobiolin = kryptobiolina
+
+bounty-item-ChloralHydrate = wodzian chloralu
+
+bounty-item-Fluorosurfactant = fluorosurfaktant
+
+bounty-item-Fluorosulfuric-Acid = kwas fluorosiarkowy
+
+bounty-item-Tranexamic-Acid = kwas traneksamiczny
+
+bounty-item-Fat = tłuszcz
+
+bounty-item-Lipozine = lipozyna
+
+bounty-item-Heparin = heparyna
+
+bounty-item-Haloperidol = haloperidol
+
+bounty-item-Bleach = wybielacz
+
+bounty-item-Space-Lube = kosmosmar
+
+bounty-item-Unstable-Mutagen = niestabilny mutagen
+
+bounty-item-Oculine = okulina
+
+bounty-item-Ethylredoxrazine = etyloredoksrazyna
+
+bounty-item-Bruizine = siniakozyna
+
+bounty-item-Ephedrine = efedryna
+
+bounty-item-Arithrazine = arytrazyna
+
+bounty-item-Phalanximine = falanksymina
+
+bounty-item-Leporazine = leporazyna
+
+bounty-item-Tricordrazine = trójkordrazyna
+
+bounty-item-Stellibinin = stellibinyna
+
+bounty-item-Aloe = aloes
+
+bounty-item-Siderlac = siderlak
+
+bounty-item-Histamine = histamina
+
+bounty-item-THC = THC
+
+bounty-item-Desoxyephedrine = dezoksyefedryna
+
+bounty-item-Licoxide = likoksyd
+
+bounty-item-Razorium = brzytworium
+
+bounty-item-Diphenhydramine = difenhydramina
+
+bounty-item-Sigynate = syginat
+
+bounty-item-Doxarubixadone = doksarubiksadon
+
+bounty-item-Ichor = posoka
+
+bounty-item-Robust-Harvest = urodzajnik
+
+bounty-item-Left-4-Zed = left-4-zed
+
+bounty-item-gin-tonic = gin i tonik
+
+bounty-item-saline = sól fizjologiczna
+
+bounty-item-arithrazine = arytrazyna
+
+bounty-item-dexalin = deksalina
+
+bounty-item-space-cleaner = kosmomyj
+
+bounty-item-super-bite-burger = burger super kęs
+
+bounty-item-sloppy-joe = burger sloppy joe
+
+bounty-item-slop-bowl = miska pomyj
+
+bounty-item-waffles = gofry
+
+bounty-item-cuban-nachos = kubańskie nachos
+
+bounty-item-valid-salad = prawidłowa sałatka
+
+bounty-item-enchiladas = enchilady
+
+bounty-item-fruit-salad = sałatka owocowa
+
+bounty-item-chow-mein = makaron chow mein
+
+bounty-item-gyros = gyros
+
+bounty-item-stew = gulasz
+
+bounty-item-tech-disk-terminal = płyta główna terminala dysków technicznych
+
+bounty-item-artifact-crusher = płyta główna kruszarki artefaktów
+
+bounty-item-anomaly-syncronizer = płyta główna synchronizatora anomalii
+
+bounty-item-experimental-vessel-machine-board = płyta główna eksperymentalnego naczynia na anomalie
+
+bounty-item-advanced-syringe = zaawansowana strzykawka
+
+bounty-item-chimp-handcannon = rewolwer M.A.Ł.P.K.A.
+
+bounty-item-force-field-projector = projektor pola siłowego
+
+bounty-item-particle-decelerator = przenośny decelerator cząsteczek
+
+bounty-item-night-vision-goggles = noktowizor
+
+bounty-item-anomaly-locator = lokator anomalii
+
+bounty-item-gorilla-gauntlet = rękawica G.O.R.Y.L.
+
+bounty-item-scrap-plate = zbroja płytowa ze złomu
+
+bounty-item-scrap-helmet = hełm ze złomu
+
+bounty-item-fire-bomb = bomba zapalająca
+
+bounty-item-improvised-bow = improwizowany łuk
+
+bounty-item-improvised-shotgun = improwizowana strzelba
+
+bounty-item-makeshift-shield = prowizoryczna tarcza
+
+bounty-item-wooden-buckler = drewniany puklerz
+
+bounty-item-makeshift-stunprod = prowizoryczny oścień ogłuszający
+
+bounty-item-makeshift-bola = prowizoryczna bola
+
+bounty-item-svalinn-pistol = pistolet svalinn
+
+bounty-item-disabler-smg = pistolet maszynowy obezwładniający
+
+bounty-item-truncheon = pałka policyjna
+
+bounty-item-xray-cannon = działo rentgenowskie
+
+bounty-item-laser-cannon = działo laserowe
+
+bounty-item-security-hud = HUD ochrony
+
+bounty-item-medsec-hud = HUD medyczno-ochronny
+
+bounty-item-cybernetic-security-eyes = cybernetyczne oczy ochrony
+
+bounty-item-explosive-payload = ładunek wybuchowy
+
+bounty-item-biosynthectic-eyes = biosyntetyczne oczy
+
+bounty-item-biosynthectic-lung = biosyntetyczne płuca
+
+bounty-item-biosynthectic-liver = biosyntetyczna wątroba
+
+bounty-item-biosynthectic-heart = biosyntetyczne serce
+
+bounty-item-autoinjector-cartrige = wkład do autostrzykawki
+
+bounty-item-medical-autoinjector = autostrzykawka
+
+bounty-item-health-analyzer = analizator zdrowia
+
+bounty-item-cybernetic-medical-eyes = cybernetyczne oczy medyczne
+
+bounty-item-defibrillator = defibrylator
+
+bounty-item-medical-hud = HUD medyczny
+
+bounty-item-surgery-advanced-tool = zaawansowane narzędzie chirurgiczne
+
+bounty-item-bahama-mama = Bahama Mama
+
+bounty-item-erika-suprise = Niespodzianka Eriki
+
+bounty-item-bloody-mary = Krwawa Mary
+
+bounty-item-blue-hawaiian = Blue Hawaiian
+
+bounty-item-citrus-bikeshed = citrus bikeshed
+
+bounty-item-andalusia = Andalusia
+
+bounty-item-watermelon-wakeup = arbuzowe przebudzenie
+
+bounty-item-xeno-basher = Xeno Basher
+
+bounty-item-cogchamp = Cogchamp
+
+bounty-item-demons-blood = Krew Demona
+
+bounty-item-cosmopolitan = kosmopolitan
+
+bounty-item-beepsky-smash = Beepsky smash
+
+bounty-item-classic-martini = klasyczne martini
+
+bounty-item-tritium = trytium
+
+bounty-item-frezon = mrożon
+
+bounty-item-healium = leczelium
+
+bounty-item-nitrium = nitrium
+
+bounty-item-pluoxium = pluoksium
+
+bounty-item-posca = posca
+
+bounty-item-the-martinez = Martinez
+
+bounty-item-doctors-delight = Rozkosz Doktora
+
+bounty-item-tayquila = tayquila
+
+bounty-item-fever-dream = gorączkowy sen
+
+bounty-item-gargle-blaster = Pan-Galaktyczny Blaster Gargle
+
+bounty-description-clown-costume = Z powodu ostatniego incyntentu w ogrodzie głaskania karpi, niefortunnie straciliśmy klauna Bonobobonobo. Wyślij nam nowy kostium, aby dzieci mogły go zobaczyć raz jeszcze.
+
+bounty-description-rollerskates = Ochrona CentComm proponuje nową strategię pomagającą funkcjonariuszom wygrywać pościgi piesze. Wyślij im kilka par, żeby mogli się przekonać, jak zły to pomysł.
+
+# Categories
+bounty-category-botany = Botanika
+
+bounty-category-science = Nauka
+
+bounty-category-misc = Ogólne
+
+bounty-category-medical = Medycyna
+
+bounty-category-kitchen = Kuchnia
+
+bounty-category-salvage = Odzysk
+
+bounty-category-clown = Klaun
+
+bounty-category-security = Ochrona
+
+bounty-category-weaponry = Zbrojownia
+
+bounty-category-clothing = Odzież
+
+bounty-category-library = Biblioteka
+
+bounty-category-atmospherics = Atmosferyka
+
+bounty-category-robotics = Robotyka
+
+bounty-category-music = Muzyka
+
+bounty-category-bar = Bar
+
+bounty-category-engineering = Inżynieria
+
+bounty-category-janitor = Sprzątanie
+
+bounty-category-chemistry = Chemia

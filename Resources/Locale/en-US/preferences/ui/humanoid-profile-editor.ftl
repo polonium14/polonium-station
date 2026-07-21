@@ -77,3 +77,7 @@ humanoid-profile-editor-voice-masculine = Masculine
 humanoid-profile-editor-voice-feminine = Feminine
 humanoid-profile-editor-voice-neutral = Neutral
 humanoid-profile-editor-voice-none = Unnamed Voice
+
+trait-category-alcohol-tolerance = Tolerancja alkoholu
+
+trait-category-vision-tolerance = Tolerancja wzroku

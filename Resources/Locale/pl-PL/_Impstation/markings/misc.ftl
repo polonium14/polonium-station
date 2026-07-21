@@ -224,3 +224,7 @@ marking-VoxLFootScales = Łuski na Stopie L
 marking-VoxLLegScales = Łuski na Nodze L
 marking-VoxRFootScales = Łuski na Stopie P
 marking-VoxRLegScales = Łuski na Nodze P
+
+marking-ImpVoxTailSplit = Twinned
+
+marking-ImpVoxTailSplit-voxtailsplit = Twinned

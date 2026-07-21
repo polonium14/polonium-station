@@ -87,3 +87,9 @@ server-ban-string-never = never
 
 # Kick on ban
 ban-kick-reason = You have been banned
+
+cmd-ban-invalid-round = { $round } nie jest prawidłowym numerem rundy!
+
+cmd-ban-hint-round = [numer rundy sytuacji]
+
+cmd-banlistF-hint = <name/user ID>

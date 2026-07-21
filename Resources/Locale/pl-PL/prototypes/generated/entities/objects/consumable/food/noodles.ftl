@@ -1,4 +1,4 @@
-ent-FoodNoodlesBase = { ent-FoodInjectableBase }
+ent-FoodNoodlesBase = { ent-SolutionSmall }
     .desc = To dopiero porządny makaron!
 ent-FoodNoodlesBoiled = ugotowany makaron spaghetti
     .desc = Zwykła porcja makaronu — brakuje dodatków.

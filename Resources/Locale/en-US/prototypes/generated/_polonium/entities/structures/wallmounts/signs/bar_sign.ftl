@@ -1,4 +1,4 @@
 ent-BarSignZabka = Zabka
     .desc = Leading galaxy food corporation for the working class.
-ent-BarSignSzkodnik = At the Pest's
-    .desc = Don't be a pest! The sign features the titular bar pest.
+ent-BarSignSzkodnik = U Szkodnika
+    .desc = Nie bądź szkodnikiem! Na grafice można zobaczyć tytułowego barowego szkodnika.

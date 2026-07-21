@@ -1,3 +1,5 @@
+ent-BasePDACartridge = { ent-BaseItem }
+    .desc = { ent-BaseItem.desc }
 ent-NotekeeperCartridge = katridż notatek
     .desc = Program do prowadzenia notatek.
 ent-NanoTaskCartridge = katridż NanoTask
@@ -16,7 +18,5 @@ ent-MedTekCartridge = katridż MedTek
     .desc = Program, który zapewnia narzędzia diagnostyki medycznej.
 ent-AstroNavCartridge = katridż AstroNav
     .desc = Program do nawigacji, który zapewnia współrzędne GPS.
-ent-WordleCartridge = katridż Wordle
-    .desc = Program do gry w Wordle, grę polegającą na zgadywaniu słów.
 ent-PlantScanCartridge = katridż PlantScan
     .desc = Program, który zapewnia narzędzia do analizy botanicznej.

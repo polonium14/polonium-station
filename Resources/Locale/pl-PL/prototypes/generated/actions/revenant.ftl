@@ -6,5 +6,3 @@ ent-ActionRevenantOverloadLights = Przeciążenie świateł
     .desc = Kosztuje 40 Esencji.
 ent-ActionRevenantMalfunction = Awaria
     .desc = Kosztuje 60 Esencji.
-ent-ActionRevenantBloodWriting = Krwawe pismo
-    .desc = Kosztuje 2 Esencje za glif.

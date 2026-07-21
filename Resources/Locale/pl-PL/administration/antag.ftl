@@ -28,3 +28,6 @@ admin-verb-text-make-wizard = Make Wizard
 admin-verb-text-make-space-ninja = Make Ninja
 
 admin-verb-text-make-bloodcult = Make Blood Cultist
+
+admin-verb-make-changeling = Zamień cel w zmianokształtnego.
+admin-verb-text-make-changeling = Zrób Zmianokształtnego

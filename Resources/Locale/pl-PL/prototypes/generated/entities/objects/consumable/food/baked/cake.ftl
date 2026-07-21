@@ -1,6 +1,6 @@
-ent-FoodCakeBase = { ent-FoodInjectableBase }
-    .desc = { ent-FoodInjectableBase.desc }
-ent-FoodCakeSliceBase = { ent-FoodCakeBase }
+ent-FoodCakeBase = { ent-SolutionNormal }
+    .desc = { ent-SolutionNormal.desc }
+ent-FoodCakeSliceBase = { ent-SolutionVeryTiny }
     .desc = Tylko kawałek ciasta — wystarczy dla każdego.
 ent-FoodCakeBlueberry = ciasto jagodowe
     .desc = Barwi zęby.

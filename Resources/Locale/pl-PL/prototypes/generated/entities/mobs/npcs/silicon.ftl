@@ -1,5 +1,7 @@
-ent-MobSiliconBase = { ent-BaseMob }
+ent-MobRobotic = { ent-BaseMob }
     .desc = { ent-BaseMob.desc }
+ent-MobSiliconBase = { ent-MobRobotic }
+    .desc = { ent-MobRobotic.desc }
 ent-MobFireBot = pożarbot
     .desc = Mały robot gaśniczy. Wygląda na dość zaniepokojonego.
     .gender = male
@@ -21,3 +23,5 @@ ent-MobMimeBot = mimbot
 ent-MobSupplyBot = ładubot
     .desc = Dostarcza ładunek!
     .gender = male
+ent-MobHugBot = hugbot
+    .desc = Awww, who needs a hug?

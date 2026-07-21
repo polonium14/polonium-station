@@ -1,0 +1,10 @@
+ent-SmokeGrenade = granat dymny
+    .desc = Taktyczny granat, który po użyciu uwalnia dużą, długo utrzymującą się chmurę dymu.
+ent-CleanerGrenade = czystonat
+    .desc = Specjalny granat dla sprzątaczy, uwalniający dużą chmurę piany do czyszczenia przestrzeni.
+ent-TearGasGrenade = granat z gazem łzawiącym
+    .desc = Granat do kontroli tłumu z gazem łzawiącym. Powoduje podrażnienie, ból i sprawia, że płaczesz jak bóbr.
+ent-MetalFoamGrenade = granat z metalową pianką
+    .desc = Narzędzie awaryjne do łatania dziur. Prawie tak dobre jak prawdziwe ściany.
+ent-AirGrenade = granat powietrzny
+    .desc = Specjalny granat chemiczny w stanie stałym, używany do szybkiego uwalniania standardowego powietrza w przestrzeni. Wypełnia do 30 kafelków!

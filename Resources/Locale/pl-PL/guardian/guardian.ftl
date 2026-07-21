@@ -21,3 +21,11 @@ guardian-host-critical-warn = YOUR HOST IS WOUNDED!
 guardian-host-death-warn = YOUR FORM SUCCUMBS TO NONEXISTENCE!
 guardian-death-warn = YOUR BODY IS PIERCED BY SUBATOMIC PAIN AS IT DISINTEGRATES!
 guardian-attack-host = You cannot attack your host.
+
+guardian-injector-empty-invalid-creation = The injector is spent.
+
+guardian-injector-empty-examine = [color=#ba1919]The injector is spent.[/color]
+
+guardian-deck-invalid-creation = The deck can only provide one guardian at a time!
+
+guardian-deck-used-examine = [color=#ba1919]The deck's seal has been broken.[/color]

@@ -1,4 +1,4 @@
-﻿### Localization for role ban command
+### Localization for role ban command
 
 cmd-roleban-desc = Bans a player from a role
 cmd-roleban-help = Usage: roleban <name or user ID> <job> <reason> [duration in minutes, leave out or 0 for permanent ban]
@@ -52,3 +52,9 @@ cmd-roleban-until =  until {$expires}
 # Department bans
 cmd-departmentban-desc = Bans a player from the roles comprising a department
 cmd-departmentban-help = Usage: departmentban <name or user ID> <department> <reason> [duration in minutes, leave out or 0 for permanent ban]
+
+cmd-roleban-hint-round = Numer rundy sytuacji
+
+cmd-roleban-round-parse = "{ $round }" nie jest numerem rundy.
+
+cmd-roleban-existing = { $target } już ma bana na { $role }.

@@ -1,0 +1,12 @@
+ent-ClothingOuterHardsuitEVA = EVA suit
+    .desc = A lightweight space suit with the basic ability to protect the wearer from the vacuum of space.
+ent-ClothingOuterEVASuitSyndicate = syndicate EVA suit
+    .desc = Has a tag on the back that reads: 'Totally not property of an enemy corporation, honest!'
+ent-ClothingOuterSuitEmergency = emergency pressure suit
+    .desc = This bulky, uninsulated pressure suit was clearly not meant for extended use in outer space, despite NanoTrasen's claims that it passes corporate regulations.
+ent-ClothingOuterHardsuitEVAPrisoner = prisoner pressure suit
+    .desc = An emergency pressure suit meant for prisoners. It's not fully rated for extended use in outer space, but some wardens consider the lack of thermal insulation a feature.
+ent-ClothingOuterHardsuitAncientEVA = NTSRA voidsuit
+    .desc = An ancient space suit, designed by the NTSRA branch of CentComm. It is very finely crafted, allowing for greater mobility than most modern space suits.
+ent-ClothingOuterHardsuitVoidParamed = paramedic void suit
+    .desc = A void suit made for paramedics.

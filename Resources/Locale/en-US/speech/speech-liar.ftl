@@ -123,3 +123,25 @@ liar-word-replacement-38 = innocent
 
 liar-word-39 = innocent
 liar-word-replacement-39 = guilty
+
+liar-word-34-2 = ya
+
+liar-word-40 = like
+
+liar-word-replacement-40 = don't like
+
+liar-word-41 = good
+
+liar-word-replacement-41 = bad
+
+liar-word-42 = bad
+
+liar-word-replacement-42 = good
+
+liar-word-43 = want
+
+liar-word-replacement-43 = "don't want"
+
+liar-word-44 = not
+
+liar-word-replacement-44 = ""

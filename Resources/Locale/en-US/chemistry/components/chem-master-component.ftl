@@ -40,3 +40,35 @@ chem-master-window-beaker-empty-text = Beaker Empty
 chem-master-window-beaker-low-text = Not enough solution in beaker
 chem-master-output-source = Packaging source:
 chem-master-no-source = No Source
+
+chem-master-window-pill-buffer-tab = Bufor pigułek
+
+chem-master-window-amount-placeholder = Przenoszona ilość
+
+chem-master-window-pill-buffer-text = Bufor pigułek
+
+chem-master-window-pill-buffer-label = bufor pigułek:
+
+chem-master-window-pill-buffer-empty-text = Bufor pigułek jest pusty.
+
+chem-master-window-pill-buffer-low-text = Za mało roztworu w buforze pigułek
+
+chem-master-window-save-as-frequent-label = Zapisz jako ulubione
+
+chem-master-window-set-amount-label = Ustaw ilość
+
+chem-master-window-sort-method-tooltip = Wybierz metodę sortowania bufora.
+
+chem-master-window-sort-method-Time-text = Ostatnio dodane
+
+chem-master-window-sort-method-Alphabetical-text = Kolejność alfabetyczna
+
+chem-master-window-sort-method-Amount-text = Ilość
+
+chem-master-window-transferring-label = Przenoszenie: [color={ $color }]{ $quantity }[/color]
+
+chem-master-window-transferring-default-label = Przenoszenie: [color=#ffffff]50[/color]
+
+chem-master-window-reagent-move-button = Przenieś
+
+chem-master-window-number-label = Liczba:

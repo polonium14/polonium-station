@@ -395,3 +395,95 @@ marking-MothLArmWitchwing = Moth Left Arm (Witch Wing)
 
 marking-MothRArmWitchwing-witchwing_r_arm = Right Arm
 marking-MothRArmWitchwing = Moth Right Arm (Witch Wing)
+
+marking-MothWingsDefault-default_primary = Primary
+
+marking-MothWingsDefault-default_secondary = Secondary
+
+marking-MothWingsCharred-charred_primary = Primary
+
+marking-MothWingsCharred-charred_secondary = Secondary
+
+marking-MothWingsDbushy-dbushy_tertiary = Tertiary
+
+marking-MothWingsDfan-dfan_primary = Primary
+
+marking-MothWingsDfan-dfan_secondary = Secondary
+
+marking-MothWingsFeathery-feathery_primary = Primary
+
+marking-MothWingsFeathery-feathery_secondary = Secondary
+
+marking-MothWingsFirewatch-firewatch_tertiary = Tertiary
+
+marking-MothWingsGothic-gothic_primary = Primary
+
+marking-MothWingsGothic-gothic_secondary = Secondary
+
+marking-MothWingsGothic-gothic_tertiary = Tertiary
+
+marking-MothWingsJungle-jungle_primary = Primary
+
+marking-MothWingsJungle-jungle_secondary = Secondary
+
+marking-MothWingsJungle-jungle_tertiary = Tertiary
+
+marking-MothWingsLadybug-ladybug_primary = Primary
+
+marking-MothWingsLadybug-ladybug_secondary = Secondary
+
+marking-MothWingsLadybug-ladybug_tertiary = Tertiary
+
+marking-MothWingsMaple-maple_tertiary = Tertiary
+
+marking-MothWingsMoffra-moffra_tertiary = Tertiary
+
+marking-MothWingsOakworm-oakworm_primary = Primary
+
+marking-MothWingsOakworm-oakworm_secondary = Secondary
+
+marking-MothWingsOakworm-oakworm_tertiary = Tertiary
+
+marking-MothWingsPlasmafire-plasmafire_tertiary = Tertiary
+
+marking-MothWingsPointy-pointy_primary = Primary
+
+marking-MothWingsPointy-pointy_secondary = Secondary
+
+marking-MothWingsPointy-pointy_tertiary = Tertiary
+
+marking-MothWingsRoyal-royal_tertiary = Tertiary
+
+marking-MothWingsStellar-stellar_primary = Primary
+
+marking-MothWingsStellar-stellar_secondary = Secondary
+
+marking-MothWingsStellar-stellar_tertiary = Tertiary
+
+marking-MothWingsSwirly-swirly_primary = Primary
+
+marking-MothWingsSwirly-swirly_secondary = Secondary
+
+marking-MothWingsSwirly-swirly_tertiary = Tertiary
+
+marking-MothWingsWhitefly-whitefly_primary = Primary
+
+marking-MothWingsWhitefly-whitefly_secondary = Secondary
+
+marking-MothWingsWhitefly-whitefly_tertiary = Tertiary
+
+marking-MothWingsWitchwing-witchwing_primary = Primary
+
+marking-MothWingsWitchwing-witchwing_secondary = Secondary
+
+marking-MothWingsWitchwing-witchwing_tertiary = Tertiary
+
+marking-MothWingsUnderwing-underwing_tertiary = Tertiary
+
+marking-MothWingsOrigins-origins_primary = Primary
+
+marking-MothWingsOrigins-origins_secondary = Secondary
+
+marking-MothWingsOrigins-origins_tertiary = Tertiary
+
+marking-MothWingsOrigins = Wings (Origins)

@@ -246,3 +246,327 @@ accent-cowboy-replacement-82 = hollered
 
 accent-cowboy-words-83 = yelling
 accent-cowboy-replacement-83 = hollering
+
+accent-cowboy-words-32-2 = greytiders
+
+accent-cowboy-words-39-2 = hey
+
+accent-cowboy-words-39-3 = hi
+
+accent-cowboy-words-52-2 = nukie
+
+accent-cowboy-words-53-2 = operators
+
+accent-cowboy-words-53-3 = ops
+
+accent-cowboy-words-69-2 = head of security
+
+accent-cowboy-words-69-3 = head of law
+
+accent-cowboy-words-69-4 = head of sec
+
+accent-cowboy-words-70-2 = security officer
+
+accent-cowboy-words-70-3 = sec officer
+
+accent-cowboy-words-70-4 = law officer
+
+accent-cowboy-words-71-2 = security
+
+accent-cowboy-words-76-2 = stolen
+
+accent-cowboy-words-78-2 = thanks
+
+accent-cowboy-words-84 = thank you
+
+accent-cowboy-replacement-84 = much obliged
+
+accent-cowboy-words-85 = thanks
+
+accent-cowboy-replacement-85 = much obliged
+
+accent-cowboy-words-86 = thief
+
+accent-cowboy-replacement-86 = rustler
+
+accent-cowboy-words-87 = thieves
+
+accent-cowboy-replacement-87 = rustlers
+
+accent-cowboy-words-88 = think
+
+accent-cowboy-replacement-88 = reckon
+
+accent-cowboy-words-89 = tired
+
+accent-cowboy-replacement-89 = dragged out
+
+accent-cowboy-words-90 = toilet
+
+accent-cowboy-replacement-90 = outhouse
+
+accent-cowboy-words-91 = totally
+
+accent-cowboy-replacement-91 = plumb
+
+accent-cowboy-words-92 = traitor
+
+accent-cowboy-replacement-92 = outlaw
+
+accent-cowboy-words-93 = traitors
+
+accent-cowboy-replacement-93 = outlaws
+
+accent-cowboy-words-94 = very
+
+accent-cowboy-replacement-94 = mighty
+
+accent-cowboy-words-95 = worried
+
+accent-cowboy-replacement-95 = rattled
+
+accent-cowboy-words-96 = wow
+
+accent-cowboy-replacement-96 = by gum
+
+accent-cowboy-words-97 = yell
+
+accent-cowboy-replacement-97 = holler
+
+accent-cowboy-words-98 = yelled
+
+accent-cowboy-replacement-98 = hollered
+
+accent-cowboy-words-99 = yelling
+
+accent-cowboy-words-100 = morgues
+
+accent-cowboy-replacement-100 = boothills
+
+accent-cowboy-words-101 = captain
+
+accent-cowboy-replacement-101 = foreman
+
+accent-cowboy-words-102 = captains
+
+accent-cowboy-replacement-102 = foremen
+
+accent-cowboy-words-103 = revolver
+
+accent-cowboy-replacement-103 = six-shooter
+
+accent-cowboy-words-104 = revolvers
+
+accent-cowboy-replacement-104 = six-shooters
+
+accent-cowboy-words-105 = girl
+
+accent-cowboy-replacement-105 = filly
+
+accent-cowboy-words-106 = girls
+
+accent-cowboy-replacement-106 = fillies
+
+accent-cowboy-words-107 = an elf
+
+accent-cowboy-replacement-107 = a long-ear
+
+accent-cowboy-words-108 = elf
+
+accent-cowboy-replacement-108 = long-ear
+
+accent-cowboy-words-109 = elves
+
+accent-cowboy-replacement-109 = long-ears
+
+accent-cowboy-words-110 = vulpkanin
+
+accent-cowboy-words-110-2 = vulp
+
+accent-cowboy-replacement-110 = fuzztail
+
+accent-cowboy-words-111 = vulpkanins
+
+accent-cowboy-words-111-2 = vulps
+
+accent-cowboy-replacement-111 = fuzztails
+
+accent-cowboy-words-112 = salvager
+
+accent-cowboy-replacement-112 = prospector
+
+accent-cowboy-words-113 = salvagers
+
+accent-cowboy-replacement-113 = prospectors
+
+accent-cowboy-words-114 = mining
+
+accent-cowboy-replacement-114 = gophering
+
+accent-cowboy-words-115 = an old station
+
+accent-cowboy-replacement-115 = a ghost town
+
+accent-cowboy-words-116 = old station
+
+accent-cowboy-replacement-116 = ghost town
+
+accent-cowboy-words-117 = visitor
+
+accent-cowboy-replacement-117 = johnny-come-lately
+
+accent-cowboy-words-118 = visitors
+
+accent-cowboy-replacement-118 = johnnies-come-lately
+
+accent-cowboy-words-119 = fly
+
+accent-cowboy-replacement-119 = kite
+
+accent-cowboy-words-120 = flying
+
+accent-cowboy-replacement-120 = kiting
+
+accent-cowboy-words-121 = flew
+
+accent-cowboy-replacement-121 = kited
+
+accent-cowboy-words-122 = senior
+
+accent-cowboy-replacement-122 = long-horn
+
+accent-cowboy-words-123 = seniors
+
+accent-cowboy-replacement-123 = long-horns
+
+accent-cowboy-words-124 = kitchen
+
+accent-cowboy-replacement-124 = mess-hall
+
+accent-cowboy-words-125 = rodentia
+
+accent-cowboy-replacement-125 = pack-rat
+
+accent-cowboy-words-126 = rodentias
+
+accent-cowboy-replacement-126 = pack-rats
+
+accent-cowboy-words-127 = snake
+
+accent-cowboy-replacement-127 = sidewinder
+
+accent-cowboy-words-128 = snakes
+
+accent-cowboy-replacement-128 = sidewinders
+
+accent-cowboy-words-129 = nanotrasen representative
+
+accent-cowboy-words-129-2 = ntr
+
+accent-cowboy-replacement-129 = regulator
+
+accent-cowboy-words-130 = nanotrasen representatives
+
+accent-cowboy-words-130-2 = ntrs
+
+accent-cowboy-replacement-130 = regulators
+
+accent-cowboy-words-131 = difficult
+
+accent-cowboy-replacement-131 = scaly
+
+accent-cowboy-words-132 = cigar
+
+accent-cowboy-replacement-132 = seegar
+
+accent-cowboy-words-133 = cigars
+
+accent-cowboy-replacement-133 = seegars
+
+accent-cowboy-words-134 = cigarette
+
+accent-cowboy-replacement-134 = smoke
+
+accent-cowboy-words-135 = cigarettes
+
+accent-cowboy-replacement-135 = smokes
+
+accent-cowboy-words-136 = an enforcer
+
+accent-cowboy-replacement-136 = a smoothbore
+
+accent-cowboy-words-137 = shotgun
+
+accent-cowboy-words-137-2 = kammerer
+
+accent-cowboy-words-137-3 = enforcer
+
+accent-cowboy-replacement-137 = smoothbore
+
+accent-cowboy-words-138 = shotguns
+
+accent-cowboy-words-138-2 = kammerers
+
+accent-cowboy-words-138-3 = enforcers
+
+accent-cowboy-replacement-138 = smoothbores
+
+accent-cowboy-words-139 = knife
+
+accent-cowboy-replacement-139 = toothpick
+
+accent-cowboy-words-140 = knives
+
+accent-cowboy-replacement-140 = toothpicks
+
+accent-cowboy-words-141 = shuttle
+
+accent-cowboy-replacement-141 = space wagon
+
+accent-cowboy-words-142 = shuttles
+
+accent-cowboy-replacement-142 = space wagons
+
+accent-cowboy-words-143 = request computer
+
+accent-cowboy-replacement-143 = wish book
+
+accent-cowboy-words-144 = magistrate
+
+accent-cowboy-words-144-2 = magi
+
+accent-cowboy-replacement-144 = justice of the peace
+
+accent-cowboy-words-145 = magistrates
+
+accent-cowboy-words-145-2 = magis
+
+accent-cowboy-replacement-145 = justices of the peace
+
+accent-cowboy-words-146 = duffel bags
+
+accent-cowboy-replacement-146 = packs
+
+accent-cowboy-words-147 = backpacks
+
+accent-cowboy-words-147-2 = satchels
+
+accent-cowboy-words-147-3 = duffels
+
+accent-cowboy-words-147-4 = bags
+
+accent-cowboy-replacement-147 = packs
+
+accent-cowboy-words-148 = backpack
+
+accent-cowboy-words-148-2 = satchel
+
+accent-cowboy-words-148-3 = duffel bag
+
+accent-cowboy-words-148-4 = duffel
+
+accent-cowboy-words-148-5 = bag
+
+accent-cowboy-replacement-148 = pack
+
+accent-cowboy-replacement-99 = hollering

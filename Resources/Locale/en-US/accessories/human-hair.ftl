@@ -610,3 +610,5 @@ marking-HumanHairTerminal = Terminal
 marking-HumanHairTerminal-terminal = Primary
 marking-HumanHairTerminal-terminal_highlight = Highlight
 marking-HumanHairTerminal-terminal_headband = Headband
+
+marking-HumanHairShoulderLengthOverEye = Do ramion na oko

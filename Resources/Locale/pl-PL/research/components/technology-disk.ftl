@@ -7,3 +7,7 @@ tech-disk-ui-name = terminal dyskietek technologicznych
 tech-disk-ui-total-label = Jest { $amount } wiedzy na wybranym serwerze
 tech-disk-ui-cost-label = Każda dyskietka kosztuje { $amount } wiedzy przy wydruku
 tech-disk-ui-print-button = Drukuj dyskietkę
+
+tech-disk-examine-desc = [color=lightGray]A disk for the R&D server containing a [bold]Tier {$tier} {$branch}[/bold] branch research technology.[/color]
+
+tech-disk-examine-desc-unknown = [color=lightGray]A disk for the R&D server containing research technology.[/color]

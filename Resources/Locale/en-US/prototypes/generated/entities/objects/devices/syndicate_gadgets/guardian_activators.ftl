@@ -1,0 +1,10 @@
+ent-HoloparasiteInjector = holoparasite injector
+    .desc = A complex artwork of handheld machinery allowing the user to host a holoparasite guardian.
+ent-HoloClownInjector = holoclown injector
+    .desc = A complex artwork of handheld machinery allowing the user to host a holoclown guardian.
+ent-GuardianDeck = guardian deck
+    .desc = A deck of guardian tarot cards, capable of binding a personal guardian to your body.
+ent-BoxHoloparasite = holoparasite box
+    .desc = A box containing a holoparasite injector.
+ent-BoxHoloclown = holoclown box
+    .desc = A box containing a holoclown injector.

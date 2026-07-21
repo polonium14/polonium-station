@@ -5,3 +5,21 @@ job-name-central-command-intern = Stażysta Centralnego Dowództwa
 job-name-space-cowboy = Kowboj Kosmiczny
 JobCentralCommandIntern = Stażysta Centralnego Dowództwa
 JobSpaceCowboy = Kowboj Kosmiczny
+
+job-name-cci = Central Command Intern
+
+job-name-cco = Central Command Official
+
+job-name-cl = Corporate Liaison
+
+job-name-cowboy = Space Cowboy
+
+job-name-deputy = Deputy
+
+job-name-fitness-instructor = Fitness Instructor
+
+job-name-hd = Hospitality Director
+
+job-name-iaa = Internal Affairs Agent
+
+job-name-xo = Executive Officer

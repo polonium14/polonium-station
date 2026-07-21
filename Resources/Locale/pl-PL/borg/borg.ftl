@@ -54,3 +54,7 @@ borg-type-service-transponder = cyborg serwisowy
 borg-module-action-name = Activate {$moduleName}
 
 borg-module-action-description = Select the {$moduleName}, enabling you to use the tools it provides.
+
+borg-module-incompatible = This module isn't compatible with {THE($existing)}...
+
+borg-module-prerequisite-unfulfilled = This module requires another module to function...

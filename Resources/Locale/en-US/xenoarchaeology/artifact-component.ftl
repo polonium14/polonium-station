@@ -1,4 +1,4 @@
-﻿### Verbs
+### Verbs
 artifact-verb-make-always-active = Make artifact always active
 artifact-verb-activate = Activate artifact
 
@@ -20,3 +20,7 @@ artifact-node-class-3 = [color=#a9ff38]Pneumatic[/color]
 artifact-node-class-4 = [color=#2bfff8]Archon[/color]
 artifact-node-class-5 = [color=#7883ff]Luminary[/color]
 artifact-node-class-6 = [color=#be78ff]Demiurge[/color]
+
+cmd-parse-failure-unlocknode-arg-num = Nieprawidłowa liczba argumentów
+
+cmd-parse-failure-unlocknode-invalid-entity = Podany netEntity nie jest prawidłowym węzłem

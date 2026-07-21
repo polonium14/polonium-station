@@ -1,0 +1,14 @@
+ent-ExplosionEffectGrenade = { "" }
+    .desc = { "" }
+ent-ExplosionEffectGrenadeShockWave = { "" }
+    .desc = { "" }
+ent-ExplosionEffectGrenadeSmoke = { "" }
+    .desc = { "" }
+ent-ExplosionEffectGrenadeEmbers = { "" }
+    .desc = { "" }
+ent-ExplosionEffectGrenadeGlowingEmbers = { "" }
+    .desc = { "" }
+ent-ExplosionEffectShrapnel1 = { "" }
+    .desc = { "" }
+ent-ExplosionEffectShrapnel2 = { ent-ExplosionEffectShrapnel1 }
+    .desc = { ent-ExplosionEffectShrapnel1.desc }

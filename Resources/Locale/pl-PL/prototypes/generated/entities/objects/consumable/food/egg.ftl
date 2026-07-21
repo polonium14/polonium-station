@@ -1,4 +1,4 @@
-ent-FoodEggBase = { ent-FoodInjectableBase }
+ent-FoodEggBase = { ent-SolutionVeryTiny }
     .desc = Jajko!
 ent-Eggshells = skorupki jajeczne
     .desc = Po nich właśnie chodzisz, koleś.

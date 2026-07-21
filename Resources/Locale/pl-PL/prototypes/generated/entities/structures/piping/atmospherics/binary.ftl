@@ -23,7 +23,3 @@ ent-HeatExchanger = radiator
 ent-HeatExchangerBend = { ent-HeatExchanger }
     .suffix = Zgięcie
     .desc = { ent-HeatExchanger.desc }
-ent-HeatPump = pompa ciepła
-    .desc = Pompa, która przemieszcza ciepło z jednej strony na drugą.
-ent-GasTemperatureGate = zawór temperaturowy
-    .desc = Zawór pasywny, który otwiera się, gdy temperatura jest powyżej lub poniżej ustawionego progu.

@@ -104,3 +104,7 @@ petting-failure-mail-teleporter = You reach out to pet { $target }, but { SUBJEC
 petting-success-scurret = You pet {THE($target)} on {POSS-ADJ($target)} legally distinct head.
 
 petting-failure-scurret = You reach out to pet {THE($target)}, but {SUBJECT($target)} does a backflip!
+
+petting-success-sheep = You pet {THE($target)} on {POSS-ADJ($target)} soft fluffy head.
+
+petting-failure-sheep = You reach out to pet {THE($target)}, but {SUBJECT($target)} stubbornly {CONJUGATE-BASIC($target, "refuse", "refuses")}!

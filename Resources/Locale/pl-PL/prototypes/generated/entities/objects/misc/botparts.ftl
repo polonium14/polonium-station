@@ -1,2 +1,16 @@
 ent-ProximitySensor = czujnik zbliżeniowy
     .desc = Wykrywa obiekty w bliskiej odległości.
+ent-PartSilicon = { ent-BaseItem }
+    .desc = { ent-BaseItem.desc }
+ent-LeftArmBorg = lewe ramię cyborga
+    .desc = { ent-PartSilicon.desc }
+ent-RightArmBorg = prawe ramię cyborga
+    .desc = { ent-PartSilicon.desc }
+ent-LeftLegBorg = lewa noga cyborga
+    .desc = { ent-PartSilicon.desc }
+ent-RightLegBorg = prawa noga cyborga
+    .desc = { ent-PartSilicon.desc }
+ent-LightHeadBorg = głowa cyborga
+    .desc = { ent-PartSilicon.desc }
+ent-TorsoBorg = korpus cyborga
+    .desc = { ent-PartSilicon.desc }

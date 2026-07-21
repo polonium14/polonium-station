@@ -8,3 +8,6 @@ command-description-inventory-tryput = Tries to put a given entity on the first 
 command-description-inventory-tryspawn = Tries to spawn a given prototype on the first piped entity that has a slot matching the given flag, failing if any item is in currently in that slot.
 command-description-inventory-ensure = Puts a given entity on the first piped entity that has a slot matching the given flag if none exists, passing through the UID of whatever is in the slot by the end.
 command-description-inventory-ensurespawn = Spawns a given prototype on the first piped entity that has a slot matching the given flag if none exists, passing through the UID of whatever is in the slot by the end.
+
+command-description-inventory-contents =
+    Gets the entities in the inventory slots of the piped entities and passes them along.

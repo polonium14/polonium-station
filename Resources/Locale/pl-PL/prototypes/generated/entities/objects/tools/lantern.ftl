@@ -3,6 +3,3 @@ ent-Lantern = latarnia
 ent-LanternFlash = { ent-Lantern }
     .suffix = Błysk
     .desc = { ent-Lantern.desc }
-ent-EmptyLantern = { ent-Lantern }
-    .suffix = Pusta
-    .desc = { ent-Lantern.desc }

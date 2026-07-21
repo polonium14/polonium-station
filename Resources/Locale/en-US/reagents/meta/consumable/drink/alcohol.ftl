@@ -361,3 +361,35 @@ reagent-desc-zombiecocktail = It gets in your head. Your he-eyeh-ead.
 
 reagent-name-bacchus-blessing = bacchus's blessing
 reagent-desc-bacchus-blessing = You didn't think it was possible for a liquid to be so utterly revolting. Are you sure about this...?
+
+reagent-name-bigfoot = wielka stopa
+
+reagent-desc-bigfoot = Według Klubu Kryptozoologicznego Eta Scorpii, to ulubiony napój legendarnego kryptydy-małpoluda, Wielkiej Stopy. Według prawdziwych naukowców, Wielka Stopa nie miałaby składników potrzebnych do przygotowania tego koktajlu.
+
+reagent-name-kira-special = Kira special
+
+reagent-desc-kira-special = Niech żyje facet, którego wszyscy mylili z dziewczyną. Baka!
+
+reagent-name-black-japan = Black Japan
+
+reagent-desc-black-japan = Nowatorska mieszanka ciemnego piwa i likieru melonowego. Kanpai!
+
+reagent-name-bruised-melon = poobijany melon
+
+reagent-desc-bruised-melon = Wciąż pozostaje tajemnicą, jak ktoś zdołał poobijać koktajl.
+
+reagent-name-coconut-sake-colada = kokosowa colada z sake
+
+reagent-desc-coconut-sake-colada = Japońska wariacja na temat Pina Colady.
+
+reagent-name-cosmic-alaska = kosmiczna alaska
+
+reagent-desc-cosmic-alaska = Narodowy napój Gliese 1132b.
+
+reagent-name-horses-neck = końska szyja
+
+reagent-desc-horses-neck = Mimo nazwy nie zawiera żadnych koni. Jednak to, czy koń mógłby przygotować ten drink, jest kwestią wciąż dyskutowaną przez barmanów.
+
+reagent-name-ransom-note = list z okupem
+
+reagent-desc-ransom-note = Pytasz, co wzięto jako zakładnika? Twoją trzeźwość, oczywiście.

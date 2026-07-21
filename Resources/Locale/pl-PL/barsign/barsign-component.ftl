@@ -136,3 +136,5 @@ barsign-prototype-description-empbarsign = Coś poszło bardzo nie tak.
 ## SignOff
 
 barsign-prototype-description-sign-off = Ten szyld chyba jest wyłączony.
+
+barsign-prototype-name-empbarsign = glitchy bar sign 

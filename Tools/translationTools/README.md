@@ -26,7 +26,7 @@ translation.bat
 ./translation.sh
 ```
 
-Te skrypty sekwencyjnie uruchomią skrypty `yamlextractor.py`, `keyfinder.py`, `clean_duplicates.py` oraz `clean_empty.py`. Automatyzują cały proces synchronizacji tłumaczeń.
+Te skrypty sekwencyjnie uruchomią skrypty `yamlextractor.py`, `merge_generated_structure.py`, `keyfinder.py`, `clean_duplicates.py` oraz `clean_empty.py`. Automatyzują cały proces synchronizacji tłumaczeń.
 
 ## Poszczególne narzędzia
 
@@ -59,6 +59,11 @@ Wyodrębnia klucze (nazwy, opisy, sufiksy, itp.) z plików YAML (prototypów) i 
 - Uruchamiany automatycznie przez `translation.bat`/`translation.sh` (tryb `both`).
 - Aktualizuje pliki punktowo; niezmiennione bloki pozostają bez zmian.
 - Przy nietypowych myślnikach uruchom dodatkowo `dash_normalizer.py` po generacji.
+
+### 1b. `merge_generated_structure.py`
+Po `yamlextractor` aktualizuje strukturę Fluent w `pl-PL/prototypes/generated` według `en-US` (referencje do rodziców, atrybuty z YAML), zachowując polskie literały (nazwy, opisy, sufiksy, `.gender`).
+
+**Po co:** samo `yamlextractor` nie nadpisuje istniejących plików pl-PL — bez tego kroku zostają stare odwołania typu `{ ent-OldParent }`, które psują lokalizację i YAMLLinter.
 
 ### 2. `keyfinder.py`
 Synchronizuje klucze i pliki między en-US a pl-PL w plikach Fluent (.ftl).
@@ -125,7 +130,7 @@ python clean_duplicates.py --locale both
 Czyści strukturę katalogów lokalizacji usuwając puste pliki i puste foldery.
 
 **Co robi:**
-1. Odnajduje katalog główny projektu po pliku `SpaceStation14.sln`.
+1. Odnajduje katalog główny projektu po pliku `SpaceStation14.sln` / `SpaceStation14.slnx`.
 2. Ustawia katalog bazowy: `Resources/Locale`.
 3. Rekurencyjnie przechodzi przez wszystkie podfoldery.
 4. Usuwa pliki o rozmiarze 0 bajtów oraz pliki zawierające wyłącznie białe znaki (spacje, tabulatory, puste linie).

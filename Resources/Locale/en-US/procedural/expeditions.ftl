@@ -57,3 +57,12 @@ salvage-dungeon-mod-snowy-labs = Snowy labs
 salvage-dungeon-mod-experiment = Experiment
 salvage-dungeon-mod-haunted = Haunted
 salvage-dungeon-mod-mineshaft = Mineshaft
+
+salvage-expedition-structure-examine = To jest [color=#B02E26]destrukcyjny[/color] cel
+
+salvage-expedition-structure-remaining =
+    { $count ->
+        [one] { $count } struktura pozostała.
+        [few] { $count } struktury pozostały.
+       *[other] { $count } struktur pozostało.
+    }

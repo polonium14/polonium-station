@@ -1,5 +1,3 @@
-ent-MobHuman = Urist McHands
-    .desc = { ent-BaseMobHuman.desc }
 ent-MobHumanSyndicateAgentBase = agent syndykatu
     .suffix = Człowiek, Podstawowy
     .desc = { ent-MobHuman.desc }

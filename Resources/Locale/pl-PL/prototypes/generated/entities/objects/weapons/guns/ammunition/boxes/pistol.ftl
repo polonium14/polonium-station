@@ -1,10 +1,10 @@
 ent-BaseMagazineBoxPistol = skrzynka amunicji (.35 auto)
     .desc = { ent-BaseItem.desc }
 ent-MagazineBoxPistol = skrzynka amunicji (.35 auto)
-    .desc = { ent-BaseMagazineBoxPistol.desc }
+    .desc = A cardboard box of .35 auto rounds. Intended to hold general-purpose kinetic ammunition.
 ent-MagazineBoxPistolPractice = skrzynka amunicji (.35 auto treningowe)
-    .desc = { ent-BaseMagazineBoxPistol.desc }
+    .desc = A cardboard box of .35 auto rounds. Intended to hold harmless practice ammunition.
 ent-MagazineBoxPistolIncendiary = skrzynka amunicji (.35 auto zapalające)
-    .desc = { ent-BaseMagazineBoxPistol.desc }
+    .desc = A cardboard box of .35 auto rounds. Intended to hold self-igniting incendiary ammunition.
 ent-MagazineBoxPistolUranium = skrzynka amunicji (.35 auto uranowe)
-    .desc = { ent-BaseMagazineBoxPistol.desc }
+    .desc = A cardboard box of .35 auto rounds. Intended to hold exotic uranium-core ammunition.

@@ -1,0 +1,17 @@
+ent-AirlockShuttle = external airlock
+    .desc = Necessary for connecting two space craft together.
+    .suffix = Docking
+ent-AirlockGlassShuttle = { ent-AirlockShuttle }
+    .suffix = Glass, Docking
+    .desc = { ent-AirlockShuttle.desc }
+ent-AirlockShuttleAssembly = external airlock assembly
+    .desc = An incomplete structure necessary for connecting two space craft together.
+    .suffix = Docking
+ent-AirlockGlassShuttleSyndicate = { ent-AirlockGlassShuttle }
+    .desc = { ent-AirlockGlassShuttle.desc }
+  .suffix = Szklana, dokowanie
+ent-AirlockShuttleSyndicate = { ent-AirlockShuttle }
+    .desc = { ent-AirlockShuttle.desc }
+  .suffix = Dokowanie
+ent-AirlockShuttleXenoborg = { ent-AirlockShuttle }
+    .desc = { ent-AirlockShuttle.desc }

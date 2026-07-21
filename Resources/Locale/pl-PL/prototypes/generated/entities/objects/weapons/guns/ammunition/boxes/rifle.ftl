@@ -1,12 +1,13 @@
 ent-BaseMagazineBoxRifle = { ent-BaseItem }
     .desc = { ent-BaseItem.desc }
 ent-MagazineBoxRifleBig = skrzynka amunicji (.20 karabinowe)
+    .suffix = Big
     .desc = { ent-BaseMagazineBoxRifle.desc }
 ent-MagazineBoxRifle = skrzynka amunicji (.20 karabinowe)
-    .desc = { ent-BaseMagazineBoxRifle.desc }
+    .desc = A cardboard box of .20 rifle rounds. Intended to hold general-purpose kinetic ammunition.
 ent-MagazineBoxRiflePractice = skrzynka amunicji (.20 karabinowe treningowe)
-    .desc = { ent-BaseMagazineBoxRifle.desc }
+    .desc = A cardboard box of .20 rifle rounds. Intended to hold harmless practice ammunition.
 ent-MagazineBoxRifleIncendiary = skrzynka amunicji (.20 karabinowe zapalające)
-    .desc = { ent-BaseMagazineBoxRifle.desc }
+    .desc = A cardboard box of .20 rifle rounds. Intended to hold self-igniting incendiary ammunition.
 ent-MagazineBoxRifleUranium = skrzynka amunicji (.20 karabinowe uranowe)
-    .desc = { ent-BaseMagazineBoxRifle.desc }
+    .desc = A cardboard box of .20 rifle rounds. Intended to hold exotic uranium-core ammunition.

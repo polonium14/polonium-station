@@ -7,3 +7,5 @@ entity-category-name-donotmap = Nie mapować
 entity-category-suffix-donotmap = NIE MAPOWAĆ
 
 entity-category-name-status-effects = Status Effects
+
+entity-category-name-xeno-artifact-effects = Xeno Artifact Effects

@@ -55,3 +55,18 @@ station-ai-hologram-male = Male appearance
 station-ai-hologram-face = Disembodied head
 station-ai-hologram-cat = Cat form
 station-ai-hologram-dog = Corgi form
+
+ai-core-under-attack = WARNING: Your AI core is under attack!
+
+# Examine messages for AI core damage levels
+station-ai-core-damaged-1 = The core is in perfect condition.
+
+station-ai-core-damaged-2 = The AI core shows minor signs of wear with a few small scratches on its surface.
+
+station-ai-core-damaged-3 = [color=yellow]The AI core has visible damage with several dents and cracks.[/color]
+
+station-ai-core-damaged-4 = [color=orange]The AI core is heavily damaged, with its panels peeling off. [/color]
+
+station-ai-core-damaged-5 = [color=red]The AI core is critically damaged, bearly holding together with exposed circuitry and sparking components.[/color]
+
+station-ai-hologram-fumo = Fumo appearence

@@ -14,3 +14,5 @@ cargoproduct-category-name-science = Rozwój
 cargoproduct-category-name-security = Bezpieczeństwo
 cargoproduct-category-name-service = Obsługa
 cargoproduct-category-name-shuttle = Wahadłowce
+
+cargoproduct-category-name-instruments = Instruments

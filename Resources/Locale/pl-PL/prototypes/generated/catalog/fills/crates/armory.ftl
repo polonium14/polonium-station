@@ -12,3 +12,5 @@ ent-CrateArmoryPistols = skrzynia z pistoletami
     .desc = Zawiera dwa standardowe pistolety NT z czterema magazynkami. Wymaga dostępu do Zbrojowni, aby otworzyć.
 ent-CrateSecurityRiot = skrzynia z wyposażeniem do tłumienia zamieszek
     .desc = Zawiera dwa komplety pancerza przeciwzamieszkowego, hełmy, maski gazowe i tarcze oraz cztery granaty z gazem łzawiącym. Wymaga dostępu do Zbrojowni, aby otworzyć.
+ent-CrateArmoryRifle = rifle crate
+    .desc = Contains two high-powered assault rifles with four mags. Requires Armory access to open.

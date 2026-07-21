@@ -1,0 +1,10 @@
+ent-BaseChangelingObjective = { ent-BaseObjective }
+    .desc = { ent-BaseObjective.desc }
+ent-ChangelingSurviveObjective = Survive.
+    .desc = We must stay alive at all cost.
+ent-ChangelingUniqueIdentityObjective = { ent-BaseChangelingObjective }
+    .desc = { ent-BaseChangelingObjective.desc }
+ent-ChangelingEscapeIdentityObjective = { ent-BaseChangelingObjective }
+    .desc = We must escape with the target person's identity and wear an ID card with their name on it.
+ent-ChangelingKillRandomPersonObjective = { ent-BaseChangelingObjective }
+    .desc = This person is our prey. We must ensure they stay dead on the station.

@@ -61,3 +61,11 @@ lathe-category-steel-tile = Steel
 lathe-category-white-tile = White
 
 lathe-category-wood-tile = Wood
+
+lathe-category-shuttle-tile = Shuttle
+
+lathe-category-plastic-tile = Plastic
+
+lathe-category-precious-tile = Precious
+
+lathe-category-industrial-tile = Industrial

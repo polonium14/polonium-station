@@ -1,4 +1,4 @@
-ent-SheetOtherBase = { ent-BaseItem }
+ent-SheetOtherBase = { ent-BaseSheet }
     .desc = Arkusz materiału, często używany na stacji w różnych zastosowaniach.
 ent-SheetPaper = papier
     .suffix = Pełny
@@ -14,9 +14,6 @@ ent-SheetPlasma10 = { ent-SheetPlasma }
     .desc = { ent-SheetPlasma.desc }
 ent-SheetPlasma1 = plazma
     .suffix = Pojedynczy
-    .desc = { ent-SheetPlasma.desc }
-ent-SheetPlasmaLingering0 = plazma
-    .suffix = 0, Pozostałość
     .desc = { ent-SheetPlasma.desc }
 ent-SheetPlastic = plastik
     .suffix = Pełny

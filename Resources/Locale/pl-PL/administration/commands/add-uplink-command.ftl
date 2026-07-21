@@ -9,3 +9,7 @@ add-uplink-command-error-2 = Failed to add uplink to the player
 cmd-adduplink-desc = Creates uplink on selected item and link it to users account
 
 cmd-adduplink-help = Usage: adduplink [username] [item-id] [discountEnabled]
+
+add-uplink-command-success-pda = Uplink added to player PDA with code {$code}
+
+add-uplink-command-success-implant = Uplink added to player as an implant

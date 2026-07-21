@@ -36,3 +36,7 @@ role-subtype-wizard = Wizard
 role-subtype-xenoborg = Xenoborg
 role-subtype-xenoborg-core = Xenoborg Core
 role-subtype-changeling = Changeling
+
+role-type-malfunctioning-silicon-name = Niesprawny Humanoid Silikonowy
+
+role-type-malfunctioning-silicon-color = #d82000

@@ -4,160 +4,160 @@
 # https://en.wikipedia.org/wiki/Scottish_English
 # https://www.cs.stir.ac.uk/~kjt/general/scots.html
 
-accent-scottish-words-1 = girl
-accent-scottish-words-replace-1 = lassie
-accent-scottish-words-2 = boy
-accent-scottish-words-replace-2 = laddie
-accent-scottish-words-3 = man
-accent-scottish-words-replace-3 = lad
-accent-scottish-words-4 = woman
-accent-scottish-words-replace-4 = lass
-accent-scottish-words-5 = do
-accent-scottish-words-replace-5 = dae
-accent-scottish-words-6 = don't
-accent-scottish-words-replace-6 = dinnae
-accent-scottish-words-7 = dont
-accent-scottish-words-replace-7 = dinnae
-accent-scottish-words-8 = i'm
-accent-scottish-words-replace-8 = A'm
-accent-scottish-words-9 = im
-accent-scottish-words-replace-9 = am
-accent-scottish-words-10 = going
-accent-scottish-words-replace-10 = gaun
-accent-scottish-words-11 = know
-accent-scottish-words-replace-11 = ken
-accent-scottish-words-12 = i
-accent-scottish-words-replace-12 = Ah
-accent-scottish-words-13 = you're
-accent-scottish-words-replace-13 = ye're
-accent-scottish-words-14 = youre
-accent-scottish-words-replace-14 = yere
-accent-scottish-words-15 = you
-accent-scottish-words-replace-15 = ye
-accent-scottish-words-16 = i'll
-accent-scottish-words-replace-16 = A'll
-accent-scottish-words-17 = ill
-accent-scottish-words-replace-17 = all
-accent-scottish-words-18 = of
-accent-scottish-words-replace-18 = ae
-accent-scottish-words-19 = was
-accent-scottish-words-replace-19 = wis
-accent-scottish-words-20 = can't
-accent-scottish-words-replace-20 = cannae
-accent-scottish-words-21 = cant
-accent-scottish-words-replace-21 = cannae
-accent-scottish-words-22 = yourself
-accent-scottish-words-replace-22 = yersel
-accent-scottish-words-23 = where
-accent-scottish-words-replace-23 = whaur
-accent-scottish-words-24 = oh
-accent-scottish-words-replace-24 = ach
-accent-scottish-words-25 = little
-accent-scottish-words-replace-25 = wee
-accent-scottish-words-26 = small
-accent-scottish-words-replace-26 = wee
-accent-scottish-words-27 = shit
-accent-scottish-words-replace-27 = shite
-accent-scottish-words-28 = yeah
-accent-scottish-words-replace-28 = aye
-accent-scottish-words-29 = yea
-accent-scottish-words-replace-29 = aye
-accent-scottish-words-30 = yes
-accent-scottish-words-replace-30 = aye
-accent-scottish-words-31 = too
-accent-scottish-words-replace-31 = tae
-accent-scottish-words-32 = my
-accent-scottish-words-replace-32 = me
-accent-scottish-words-33 = not
-accent-scottish-words-replace-33 = nae
-accent-scottish-words-34 = dad
-accent-scottish-words-replace-34 = da
-accent-scottish-words-35 = mom
-accent-scottish-words-replace-35 = maw
-accent-scottish-words-36 = newbie
-accent-scottish-words-replace-36 = greenbeard
-accent-scottish-words-37 = noob
-accent-scottish-words-replace-37 = greenbeard
-accent-scottish-words-38 = noobie
-accent-scottish-words-replace-38 = greenbeard
-accent-scottish-words-39 = professional
-accent-scottish-words-replace-39 = greybeard
-accent-scottish-words-40 = veteran
-accent-scottish-words-replace-40 = greybeard
-accent-scottish-words-41 = fuck
-accent-scottish-words-replace-41 = sod
-accent-scottish-words-42 = would
-accent-scottish-words-replace-42 = wou
-accent-scottish-words-43 = should
-accent-scottish-words-replace-43 = shou
-accent-scottish-words-44 = could
-accent-scottish-words-replace-44 = cou
-accent-scottish-words-45 = would've
-accent-scottish-words-replace-45 = wou'hae
-accent-scottish-words-46 = should've
-accent-scottish-words-replace-46 = shou'hae
-accent-scottish-words-47 = could've
-accent-scottish-words-replace-47 = cou'hae
-accent-scottish-words-48 = wouldve
-accent-scottish-words-replace-48 = wouhae
-accent-scottish-words-49 = shouldve
-accent-scottish-words-replace-49 = shouhae
-accent-scottish-words-50 = couldve
-accent-scottish-words-replace-50 = couhae
-accent-scottish-words-51 = would'nt
-accent-scottish-words-replace-51 = wou'nae
-accent-scottish-words-52 = should'nt
-accent-scottish-words-replace-52 = shou'nae
-accent-scottish-words-53 = could'nt
-accent-scottish-words-replace-53 = cou'nae
-accent-scottish-words-54 = wouldnt
-accent-scottish-words-replace-54 = wounae
-accent-scottish-words-55 = shouldnt
-accent-scottish-words-replace-55 = shounae
-accent-scottish-words-56 = couldnt
-accent-scottish-words-replace-56 = counae
-accent-scottish-words-57 = have
-accent-scottish-words-replace-57 = hae
-accent-scottish-words-58 = no
-accent-scottish-words-replace-58 = nae
-accent-scottish-words-59 = to
-accent-scottish-words-replace-59 = ta
-accent-scottish-words-60 = the
-accent-scottish-words-replace-60 = tha
-accent-scottish-words-61 = have
-accent-scottish-words-replace-61 = hae
-accent-scottish-words-62 = are
-accent-scottish-words-replace-62 = be
-accent-scottish-words-63 = is
-accent-scottish-words-replace-63 = be
-accent-scottish-words-64 = am
-accent-scottish-words-replace-64 = be
-accent-scottish-words-66 = food
-accent-scottish-words-replace-66 = grub
-accent-scottish-words-67 = have
-accent-scottish-words-replace-67 = hae
-accent-scottish-words-68 = hey
-accent-scottish-words-replace-68 = oi
-accent-scottish-words-69 = what
-accent-scottish-words-replace-69 = wot
-accent-scottish-words-70 = where
-accent-scottish-words-replace-70 = whaur
-accent-scottish-words-71 = when
-accent-scottish-words-replace-71 = wen
-accent-scottish-words-72 = myself
-accent-scottish-words-replace-72 = mesel
-accent-scottish-words-73 = himself
-accent-scottish-words-replace-73 = hesel
-accent-scottish-words-74 = herself
-accent-scottish-words-replace-74 = shesel
-accent-scottish-words-75 = move
-accent-scottish-words-replace-75 = moev
-accent-scottish-words-76 = moving
-accent-scottish-words-replace-76 = moeven
-accent-scottish-words-77 = wasn't
-accent-scottish-words-replace-77 = wis'nae
-accent-scottish-words-78 = wasnt
-accent-scottish-words-replace-78 = wisnae
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 accent-scottish-words-79 = wizard
 accent-scottish-words-replace-79 = wizer
 accent-scottish-words-80 = fool

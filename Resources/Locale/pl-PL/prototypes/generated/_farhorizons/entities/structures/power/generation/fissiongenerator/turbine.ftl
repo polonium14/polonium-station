@@ -1,10 +1,12 @@
 ent-Turbine = turbina gazowa
     .desc = Duża turbina używana do generowania energii przy użyciu gorącego gazu.
 ent-TurbineSmall = mała turbina gazowa
-    .desc = { ent-Turbine.desc }
+    .desc = A small turbine used for generating power using hot gas.
 ent-TurbineFlowArrow = { "" }
     .desc = { "" }
 ent-TurbineSmallFlowArrow = { ent-TurbineFlowArrow }
     .desc = { ent-TurbineFlowArrow.desc }
-ent-TurbineGasPipe = { ent-GasPipeBase }
-    .desc = { ent-GasPipeBase.desc }
+ent-TurbineGasPipe = { "" }
+    .desc = { "" }
+ent-GasTurbineAlarmEntity = { "" }
+    .desc = { "" }

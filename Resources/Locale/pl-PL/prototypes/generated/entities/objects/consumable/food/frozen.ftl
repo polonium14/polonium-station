@@ -1,5 +1,5 @@
-ent-FoodFrozenBase = { ent-FoodInjectableBase }
-    .desc = { ent-FoodInjectableBase.desc }
+ent-FoodFrozenBase = { ent-SolutionVeryTiny }
+    .desc = { ent-SolutionVeryTiny.desc }
 ent-FoodFrozenSandwich = lody sandwich
     .desc = Przenośne lody we własnym opakowaniu.
 ent-FoodFrozenSandwichStrawberry = truskawkowe lody sandwich

@@ -67,8 +67,7 @@ def syncs_en_from_pl(mode: str) -> bool:
 
 ######################################### Configuration ################################################################
 
-# Lista folderów, które należy zignorować przy tworzeniu par plików
-IGNORED_FOLDERS: typing.List[str] = ['robust-toolbox', 'datasets']
+IGNORED_FOLDERS: typing.List[str] = []
 
 ######################################### Description #####################################################################
 # Przeprowadza aktualizację kluczy. Znajduje pliki z angielskim tłumaczeniem i sprawdza, czy istnieje polski odpowiednik

@@ -1,4 +1,4 @@
-﻿## Species Names
+## Species Names
 
 species-name-human = Human
 species-name-dwarf = Dwarf
@@ -15,3 +15,7 @@ species-name-vulpkanin = Vulpkanin
 ## Misc species things
 
 snail-hurt-by-salt-popup = The salty solution burns like acid!
+
+species-name-monkey = Małpa
+
+species-name-kobold = Kobold

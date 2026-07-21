@@ -24,3 +24,7 @@ tool-quality-digging-name = kopania
 tool-quality-digging-tool-name = łopata
 tool-quality-brushing-name = szczotkowania
 tool-quality-brushing-tool-name = druciak
+
+tool-quality-shearing-name = Shearing
+
+tool-quality-shearing-tool-name = Wirecutter

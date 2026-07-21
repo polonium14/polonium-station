@@ -1,8 +1,13 @@
 ent-BorSniperMagazineBase = Magazynek Alexis-BOR (.30 rifle any)
+    .desc = { ent-BaseItem.desc }
 ent-BorSniperMagazine = Magazynek Alexis-BOR (.30 rifle)
+    .desc = { ent-BorSniperMagazineBase.desc }
 ent-BorSniperMagazineEmpty = Magazynek Alexis-BOR (.30 rifle dowlone)
-    .desc = Magazynek do karabinu Alexis-BOR.
     .suffix = (pusty)
+    .desc = { ent-BorSniperMagazineBase.desc }
 ent-BorSniperMagazinePractice = Magazynek Alexis-BOR (.30 rifle ślepaki)
+    .desc = { ent-BorSniperMagazineBase.desc }
 ent-BorSniperMagazineIncendiary = Magazynek Alexis-BOR (.30 rifle samozapalające)
+    .desc = { ent-BorSniperMagazineBase.desc }
 ent-BorSniperMagazineUranium = Magazynek Alexis-BOR (.30 rifle uranowe)
+    .desc = { ent-BorSniperMagazineBase.desc }

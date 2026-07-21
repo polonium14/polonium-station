@@ -55,3 +55,5 @@ shuttle-console-docks-label = Docks
 
 shuttle-console-undock-fail = Undocking failed
 shuttle-console-dock-fail = Docking failed
+
+shuttle-console-static = Grid is static

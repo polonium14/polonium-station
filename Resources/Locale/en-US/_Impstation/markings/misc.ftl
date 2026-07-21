@@ -223,3 +223,5 @@ marking-VoxLFootScales = Foot Scales L
 marking-VoxLLegScales = Leg Scales L
 marking-VoxRFootScales = Foot Scales R
 marking-VoxRLegScales = Leg Scales R
+
+marking-VoxTailSplit-voxtailsplit = Bliźniaczy

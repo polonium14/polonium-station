@@ -9,3 +9,7 @@ signal-port-description-gas-turbine-speed-low = Speed is lower than optimal.
 
 signal-port-name-gas-turbine-data-sender = Gas Turbine
 signal-port-description-gas-turbine-data-sender = Sending info about a gas turbine to a monitor.
+
+signal-port-name-vitals-monitor-sender = Monitor Życiowych Funkcji
+
+signal-port-description-vitals-monitor-sender = Odbieranie informacji o stanie pacjenta z Łóżka Medycznego lub Łóżka Stazy.

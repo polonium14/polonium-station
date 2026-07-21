@@ -219,3 +219,88 @@ loadout-group-brigmedic-jumpsuit = Brigmedic jumpsuit
 loadout-group-brigmedic-backpack = Brigmedic backpack
 loadout-group-brigmedic-outerclothing = Brigmedic outer clothing
 loadout-group-brigmedic-glasses = Brigmedic glasses
+
+loadout-group-jobtoys = Zabawki
+
+loadout-group-survival-salvage-extended = Rozszerzona skrzynka przetrwania
+
+loadout-group-captain-shoes = Kapitan – buty
+
+loadout-group-hop-shoes = Kierownik personelu – buty
+
+loadout-group-civilian-neck = Cywilny – szyja
+
+loadout-group-service-neck = Serwis – szyja
+
+loadout-group-generic-hats = Czapki
+
+loadout-group-service_jumpsuit = Kombinezon serwisowy
+
+loadout-group-generic-outerclothing = Odzież wierzchnia
+
+loadout-group-generic-shoes = Buty
+
+loadout-group-chaplain-weapon = Kapłan – broń
+
+loadout-group-janitor-shoes = Sprzątacz – kalosze
+
+loadout-group-clown-mask = Klaun – maska
+
+loadout-group-cargo-technician-neck = Technik Logistyk – szyja
+
+loadout-group-salvage-specialist-head = Technik Odzysku – nakrycie głowy
+
+loadout-group-salvage-specialist-jumpsuit = Technik Odzysku – kombinezon
+
+loadout-group-salvage-specialist-neck = Technik Odzysku – szyja
+
+loadout-group-salvage-specialist-id = Technik Odzysku – ID
+
+loadout-group-chief-engineer-belt = Naczelny Inżynier – pas
+
+loadout-group-engineering-goggles = Inżynieryjne gogle
+
+loadout-group-station-engineer-neck = Inżynier stacji – szyja
+
+loadout-group-station-engineer-belt = Inżynier stacji – pas
+
+loadout-group-atmospheric-technician-head = Technik atmosfery – nakrycie głowy
+
+loadout-group-atmospheric-technician-belt = Technik atmosfery – pas
+
+loadout-group-roboticist-id = Robotyk – ID
+
+loadout-group-roboticist-glasses = Okulary diagnostyczne
+
+loadout-group-scientist-glasses = Naukowiec – okulary
+
+loadout-group-security-glasses = Okulary ochrony
+
+loadout-group-security-weapon = Broń ochrony
+
+loadout-group-detective-id = Detektyw – ID
+
+loadout-group-detective-weapon = Detektyw – broń
+
+# Medical
+loadout-group-medical-gloves = Medyczne rękawice
+
+loadout-group-medical-neck = Medyczny – szyja
+
+loadout-group-medical-doctor-glasses = Medyczne okulary
+
+loadout-group-chemist-gloves = Chemik – rękawice
+
+loadout-group-chemist-shoes = Chemik – buty
+
+loadout-group-medical-chemist-glasses = Okulary chemika
+
+loadout-group-medical-chemist-head = Chemik – nakrycie głowy
+
+loadout-group-paramedic-glasses = Paramedic glasses
+
+loadout-group-medical-glasses = Medyczne okulary
+
+loadout-group-boxer-jumpsuit = Bokser – kombinezon
+
+loadout-group-boxer-gloves = Bokser – rękawice

@@ -1,5 +1,5 @@
 ent-ReinforcedWindow = okno wzmocnione
-    .desc = { ent-Window.desc }
+    .desc = { ent-BaseDeltaPressureReinforcedGlass.desc }
 ent-WindowReinforcedDirectional = kierunkowe okno wzmocnione
     .desc = Nie rozmazuj szkła tam na dole.
 ent-ReinforcedWindowDiagonal = { ent-ReinforcedWindow }

@@ -16,14 +16,15 @@ from datetime import datetime
 
 
 def find_top_level_dir(start_dir: str) -> str:
-    marker_file = 'SpaceStation14.sln'
+    markers = ('SpaceStation14.sln', 'SpaceStation14.slnx')
     current_dir = start_dir
     while True:
-        if marker_file in os.listdir(current_dir):
+        entries = set(os.listdir(current_dir))
+        if any(marker in entries for marker in markers):
             return current_dir
         parent_dir = os.path.dirname(current_dir)
         if parent_dir == current_dir:
-            print(f"Nie udało się znaleźć {marker_file} zaczynając od {start_dir}")
+            print(f"Nie udało się znaleźć {' / '.join(markers)} zaczynając od {start_dir}")
             exit(-1)
         current_dir = parent_dir
 

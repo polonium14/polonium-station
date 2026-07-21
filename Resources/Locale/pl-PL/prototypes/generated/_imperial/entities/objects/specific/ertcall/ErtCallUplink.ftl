@@ -28,4 +28,3 @@ ent-ERTUplinkDeadSquad = Terminal WTH szwadronu śmierci
 ent-ERTUplinkDebug = Terminal WTH
     .desc = Terminal Warp To Hand. Eksperymentalne urządzenie teleportujące przedmioty prosto w dłonie użytkownika.
     .suffix = DEBUG
- 

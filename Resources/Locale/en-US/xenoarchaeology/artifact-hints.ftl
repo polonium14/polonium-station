@@ -79,3 +79,11 @@ xenoarch-trigger-examine-timer = Carvings and scratches cover the surface... You
 ### Effects hints
 xenoarch-effect-puddle = Produces puddle of following reagents: {$reagent}
 xenoarch-effect-foam = Produces foam of following reagents: {$reagent}
+
+xenoarch-trigger-tip-rolling = Wałkowanie
+
+xenoarch-trigger-tip-slicing = Cięcie
+
+xenoarch-trigger-examine-rolling = Zrób z tego pizzę.
+
+xenoarch-trigger-examine-slicing = Potnij to na kawałki.

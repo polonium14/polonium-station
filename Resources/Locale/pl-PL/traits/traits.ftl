@@ -69,3 +69,6 @@ trait-monochromacy-desc = You are fully colorblind, everything you perceive rang
 trait-hemophilia-name = Hemophilia
 
 trait-hemophilia-desc = Your body fails to make blood clots.
+
+trait-scottish-name = Szkocki akcent
+trait-scottish-desc = Twoja szkocka duma jest tak silna, jak twój akcent!

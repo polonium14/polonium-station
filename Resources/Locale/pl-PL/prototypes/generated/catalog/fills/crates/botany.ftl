@@ -6,3 +6,5 @@ ent-CrateHydroponicsTools = skrzynia z wyposażeniem hydroponicznym
     .desc = Zaopatrzenie do uprawy wspaniałego ogrodu! Zawiera butelki z opryskiem, toporek, motykę, kosę, a także parę skórzanych rękawic i fartuch botanika.
 ent-CrateHydroponicsSeeds = skrzynia nasion
     .desc = Wielkie rzeczy mają skromne początki. Zawiera dwanaście różnych rodzajów nasion.
+ent-CrateHydroponicsTray = hydroponics tray crate
+    .desc = Contains a hydroponics tray flatpack.

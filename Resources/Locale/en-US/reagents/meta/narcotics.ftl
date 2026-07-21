@@ -39,3 +39,26 @@ reagent-desc-tear-gas = A chemical that causes severe irritation and crying, com
 
 reagent-name-happiness = happiness
 reagent-desc-happiness = Fills you with ecstatic numbness and causes minor brain damage. Highly addictive. If overdosed causes sudden mood swings.
+
+reagent-name-forever-weed = wieczne ziele
+
+reagent-desc-forever-weed = Pieczenie tęczowej marihuany spowodowało zmiany chemiczne. Nie metabolizuje się całkowicie samodzielnie, wywołuje halucynacje i paranoję.
+
+reagent-name-cryanobalamin = krianobalamina
+
+reagent-desc-cryanobalamin = Dawniej popularny dodatek do napojów energetycznych, który służył do przywracania wytrzymałości. Obecnie zakazany w użytku komercyjnym ze względu na właściwości rakotwórcze.
+
+nicotine-effect-dull-ache = Czujesz lekki ból w klatce piersiowej.
+
+nicotine-effect-sharp-pain = Czujesz ostry ból w klatce piersiowej.
+
+reagent-name-liftloversspecial = pudzian specjal
+
+reagent-desc-liftloversspecial = Koktajl chemiczny, który szybko przywraca wytrzymałość. Pomimo oficjalnego zakazu, pozostaje popularnym napojem na czarnym rynku wśród miłośników fitnessu. Rakotwórczy w dużych dawkach.
+
+reagent-name-morphine = morfina
+
+reagent-desc-morphine = Silny środek przeciwbólowy, który pozwala pacjentowi na bezbolesne poddanie się zabiegowi chirurgicznemu, nawet w stanie przytomności. Silnie uzależniający w przypadku nadużywania. Przedawkowanie może powodować trudności w oddychaniu.
+
+reagent-name-nitrosyl-plasmide = nitrosyl plasmide
+reagent-desc-nitrosyl-plasmide = A powerful stimulant that can prevent drowsiness, stuns and knock downs.

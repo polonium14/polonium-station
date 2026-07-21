@@ -80,3 +80,11 @@ research-technology-clowning-utilities = Clowning Utilities
 research-technology-quantum-fiber-weaving = Quantum Fiber Weaving
 research-technology-bluespace-chemistry = Bluespace Chemistry
 research-technology-night-vision = Night Vision
+
+research-technology-portable-fission = Portable Fission
+
+research-technology-homebrewed-implants = Homebrewed Implants
+
+research-technology-shuttle-salvage-weapons = Technologia Wyrzutni Odzyskowych
+
+research-technology-shuttle-salvage-equipment = Technologia Sprzętu Promów Odzyskowychresearch-technology-night-vision = Noktowizja

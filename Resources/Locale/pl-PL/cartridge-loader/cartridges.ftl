@@ -96,3 +96,5 @@ wanted-list-status-label = [color=darkgray]status:[/color] { $status ->
 wanted-list-history-table-time-col = Czas
 wanted-list-history-table-reason-col = Przestępstwo
 wanted-list-history-table-initiator-col = Inicjator
+
+crew-manifest-cartridge-loading-failed = Failed to load crew manifest!

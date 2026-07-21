@@ -26,3 +26,9 @@ implanter-label-draw = [color=red]{$implantName}[/color]
     Mode: [color=white]{$modeString}[/color]
 
 implanter-contained-implant-text = [color=green]{$desc}[/color]
+
+scramble-implant-activated-popup = Twój wygłąd się zmienia!
+
+deathrattle-implant-dead-message = { $user } zmarł(-a) w { $position }.
+
+deathrattle-implant-critical-message = Oznaki życia { $user } są krytyczne, natychmiastowa pomoc jest wymagana w { $position }.

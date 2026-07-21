@@ -53,3 +53,9 @@ shell-argument-username-optional-hint = [nazwa użytkownika]
 shell-can-only-run-from-pre-round-lobby = You can only run this command while the game is in the pre-round lobby.
 
 shell-can-only-run-while-round-is-active = You can only run this command while the game is in a round.
+
+shell-unknown-error = An unknown error has occured.
+
+shell-invalid-bool-value = Invalid boolean: '{$value}'
+
+shell-argument-chat-invalid = Argument {$index} must be a valid chat!

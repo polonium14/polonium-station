@@ -1,4 +1,4 @@
-﻿# Window headers
+# Window headers
 holopad-window-title = {CAPITALIZE($title)}
 holopad-window-subtitle = [color=white][bold]Holographic communication system[/bold][/color]
 holopad-window-options = [color=darkgray][font size=10][italic]Please select an option from the list below[/italic][/font][/color]
@@ -159,3 +159,6 @@ holopad-station-cargo-bay = Station - Cargo Bay
 
 # CentComm
 holopad-centcomm-evac = CentComm - Evacuation Shuttle
+
+# Holopad actions
+activate-holopad-projector-verb = Activate holopad projector

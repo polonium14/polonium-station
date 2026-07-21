@@ -47,3 +47,7 @@ preset-no-one-ready = Can't start {$presetName}. No players are ready.
 game-run-level-PreRoundLobby = Pre-round lobby
 game-run-level-InRound = In round
 game-run-level-PostRound = Post round
+
+game-ticker-player-no-character-for-job-available-when-joining = Podczas próby dołączenia do gry nie było dostępnych żadnych postaci dla wybranego stanowiska { $job }.
+
+latejoin-arrival-announcement-ai = SI stacji "{ $character }" została załadowana i uruchomiona.

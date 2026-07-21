@@ -126,12 +126,165 @@ def _remove_keys_from_content(content: str, keys: typing.AbstractSet[str]) -> ty
     return _remove_spans(content, spans), len(spans)
 
 
+def _pattern_value_text(value) -> str:
+    if value is None:
+        return ''
+    return FluentSerializer(with_junk=True).serialize(ast.Resource(body=[
+        ast.Message(id=ast.Identifier('__tmp'), value=value)
+    ])).replace('__tmp = ', '', 1).strip()
+
+
+def _entry_fingerprint(entry: typing.Union[ast.Message, ast.Term]) -> str:
+    parts = [_pattern_value_text(getattr(entry, 'value', None))]
+    for attr in getattr(entry, 'attributes', None) or []:
+        if attr.id.name == 'gender':
+            continue
+        parts.append(f'{attr.id.name}={_pattern_value_text(attr.value)}')
+    return '\n'.join(parts)
+
+
+def detect_key_renames(old_text: str, new_text: str) -> typing.Dict[str, str]:
+    """Mapuje stary_klucz -> nowy_klucz gdy angielska treść (name/desc) jest identyczna."""
+    if not old_text.strip() or not new_text.strip():
+        return {}
+
+    old_keys = _collect_keys_by_id(parser.parse(old_text))
+    new_keys = _collect_keys_by_id(parser.parse(new_text))
+    removed = set(old_keys) - set(new_keys)
+    added = set(new_keys) - set(old_keys)
+    if not removed or not added:
+        return {}
+
+    old_by_fp: typing.Dict[str, typing.List[str]] = {}
+    for key in removed:
+        fp = _entry_fingerprint(old_keys[key])
+        if not fp.strip():
+            continue
+        old_by_fp.setdefault(fp, []).append(key)
+
+    new_by_fp: typing.Dict[str, typing.List[str]] = {}
+    for key in added:
+        fp = _entry_fingerprint(new_keys[key])
+        if not fp.strip():
+            continue
+        new_by_fp.setdefault(fp, []).append(key)
+
+    renames: typing.Dict[str, str] = {}
+    for fp, old_list in old_by_fp.items():
+        new_list = new_by_fp.get(fp)
+        if len(old_list) == 1 and new_list and len(new_list) == 1:
+            renames[old_list[0]] = new_list[0]
+    return renames
+
+
+def _extract_entries_by_keys(
+    content: str, keys: typing.AbstractSet[str]
+) -> typing.Dict[str, str]:
+    if not content.strip() or not keys:
+        return {}
+    parsed = parser.parse(content)
+    result: typing.Dict[str, str] = {}
+    for element in parsed.body:
+        if not isinstance(element, ENTRY_TYPES):
+            continue
+        key_name = FluentAstAbstract.get_id_name(element)
+        if key_name in keys:
+            result[key_name] = _extract_span_text(content, element).strip('\n')
+    return result
+
+
+def upsert_entries(content: str, entries: typing.Dict[str, str]) -> typing.Tuple[str, int]:
+    """Wstawia/nadpisuje bloki wiadomości; zwraca (nowa_treść, liczba_zmian)."""
+    if not entries:
+        return content, 0
+
+    changed = 0
+    existing = _collect_keys_by_id(parser.parse(content)) if content.strip() else {}
+    to_replace = {k: v for k, v in entries.items() if k in existing}
+    to_append = {k: v for k, v in entries.items() if k not in existing}
+
+    if to_replace:
+        parsed = parser.parse(content)
+        spans_and_text: typing.List[typing.Tuple[int, int, str]] = []
+        for element in parsed.body:
+            if not isinstance(element, ENTRY_TYPES) or not element.span:
+                continue
+            key_name = FluentAstAbstract.get_id_name(element)
+            if key_name in to_replace:
+                spans_and_text.append((element.span.start, element.span.end, to_replace[key_name]))
+                changed += 1
+        for start, end, text in sorted(spans_and_text, key=lambda item: item[0], reverse=True):
+            content = content[:start] + text + content[end:]
+
+    if to_append:
+        blocks = [content.rstrip('\n')] if content.strip() else []
+        for key in sorted(to_append):
+            blocks.append(to_append[key].strip('\n'))
+            changed += 1
+        content = '\n\n'.join(block for block in blocks if block) + '\n'
+
+    return content, changed
+
+
+def apply_key_renames_to_content(content: str, renames: typing.Dict[str, str]) -> typing.Tuple[str, int]:
+    """Zmienia identyfikatory wiadomości old->new, zachowując polską treść."""
+    if not renames or not content.strip():
+        return content, 0
+
+    parsed = parser.parse(content)
+    keys = _collect_keys_by_id(parsed)
+    applied = 0
+    # Najpierw zbierz treści starych kluczy, potem usuń stare i upsert pod nowymi ID
+    migrate: typing.Dict[str, str] = {}
+    remove_keys: typing.Set[str] = set()
+
+    for old_key, new_key in renames.items():
+        old_entry = keys.get(old_key)
+        if not old_entry or not old_entry.span:
+            continue
+        if new_key in keys:
+            # Nowy klucz już jest — jeśli wygląda na angielski stub, nadpisz polskim
+            # Zawsze preferuj istniejącą polską treść ze starego klucza
+            pass
+        snippet = _extract_span_text(content, old_entry).strip('\n')
+        # Podmień identyfikator w pierwszej linii bloku
+        lines = snippet.split('\n')
+        if not lines:
+            continue
+        if old_key.startswith('-'):
+            # term: -name
+            lines[0] = re.sub(
+                rf'^-{re.escape(old_key[1:])}\b',
+                f'-{new_key[1:]}' if new_key.startswith('-') else f'-{new_key}',
+                lines[0],
+                count=1,
+            )
+        else:
+            lines[0] = re.sub(
+                rf'^{re.escape(old_key)}\b',
+                new_key,
+                lines[0],
+                count=1,
+            )
+        migrate[new_key] = '\n'.join(lines)
+        remove_keys.add(old_key)
+        applied += 1
+
+    if not applied:
+        return content, 0
+
+    content, _ = _remove_keys_from_content(content, remove_keys)
+    content, _ = upsert_entries(content, migrate)
+    return content, applied
+
+
 class LocaleKeyRegistry:
     """Indeks kluczy ent-* w generated — unika pełnego skanowania przy każdym pliku YAML."""
 
     def __init__(self, locale_generated_root: str):
         self.locale_generated_root = locale_generated_root
         self.key_to_file: typing.Dict[str, str] = {}
+        self.claimed_keys: typing.Set[str] = set()
         self._pending_removals: typing.Dict[str, typing.Set[str]] = {}
         self._build_index()
 
@@ -163,9 +316,11 @@ class LocaleKeyRegistry:
             if stale_path and stale_path != canonical_path:
                 self._pending_removals.setdefault(stale_path, set()).add(key)
             self.key_to_file[key] = canonical_path
+            self.claimed_keys.add(key)
 
-    def flush(self) -> int:
+    def flush(self, migrate: bool = False) -> int:
         removed_total = 0
+        migrated_total = 0
 
         for file_path, keys in self._pending_removals.items():
             if not keys or not os.path.isfile(file_path):
@@ -173,6 +328,27 @@ class LocaleKeyRegistry:
 
             fluent_file = FluentFile(file_path)
             content = fluent_file.read_data()
+
+            if migrate:
+                extracted = _extract_entries_by_keys(content, keys)
+                by_canonical: typing.Dict[str, typing.Dict[str, str]] = {}
+                for key, snippet in extracted.items():
+                    canonical = self.key_to_file.get(key)
+                    if not canonical or canonical == os.path.normpath(file_path):
+                        continue
+                    by_canonical.setdefault(canonical, {})[key] = snippet
+
+                for canonical, entries in by_canonical.items():
+                    canonical_file = FluentFile(canonical)
+                    if os.path.isfile(canonical):
+                        canonical_content = canonical_file.read_data()
+                    else:
+                        canonical_content = ''
+                    new_canonical, changed = upsert_entries(canonical_content, entries)
+                    if changed:
+                        canonical_file.save_data(new_canonical)
+                        migrated_total += changed
+
             new_content, removed = _remove_keys_from_content(content, keys)
             if not removed:
                 continue
@@ -181,6 +357,37 @@ class LocaleKeyRegistry:
             removed_total += removed
 
         self._pending_removals.clear()
+        if migrate and migrated_total:
+            logging.info(f'Zmigrowano {migrated_total} tłumaczeń do kanonicznych ścieżek')
+        return removed_total
+
+    def prune_keys_not_in(self, keep_keys: typing.AbstractSet[str]) -> int:
+        """Usuwa z generated klucze spoza keep_keys (nieużywane / usunięte prototypy)."""
+        if not os.path.isdir(self.locale_generated_root):
+            return 0
+
+        removed_total = 0
+        for dirpath, _, filenames in os.walk(self.locale_generated_root):
+            for filename in filenames:
+                if not filename.endswith('.ftl'):
+                    continue
+                file_path = os.path.normpath(os.path.join(dirpath, filename))
+                fluent_file = FluentFile(file_path)
+                try:
+                    content = fluent_file.read_data()
+                except OSError:
+                    continue
+                present = _collect_message_keys_fast(content)
+                obsolete = present - keep_keys
+                if not obsolete:
+                    continue
+                new_content, removed = _remove_keys_from_content(content, obsolete)
+                if removed:
+                    fluent_file.save_data(new_content)
+                    removed_total += removed
+                    for key in obsolete:
+                        if self.key_to_file.get(key) == file_path:
+                            self.key_to_file.pop(key, None)
         return removed_total
 
 
@@ -190,6 +397,7 @@ class YAMLExtractor:
         self.yaml_files = yaml_files
         self.en_registry = LocaleKeyRegistry(project.en_locale_prototypes_dir_path)
         self.pl_registry = LocaleKeyRegistry(project.pl_locale_prototypes_dir_path)
+        self._pending_pl_renames: typing.List[typing.Tuple[str, typing.Dict[str, str]]] = []
 
     def execute(self):
         for yaml_file in self.yaml_files:
@@ -211,12 +419,23 @@ class YAMLExtractor:
             en_fluent_file_path = self.create_en_fluent_file(relative_parent_dir, file_name, pretty_fluent_file_serialized)
             self.create_pl_fluent_file_from_en(en_fluent_file_path)
 
-        removed_en = self.en_registry.flush()
-        removed_pl = self.pl_registry.flush()
+        self._apply_pending_pl_renames()
+
+        removed_en = self.en_registry.flush(migrate=False)
+        removed_pl = self.pl_registry.flush(migrate=True)
         if removed_en or removed_pl:
             logging.info(
-                f'Usunięto zduplikowane klucze: en-US={removed_en}, pl-PL={removed_pl}'
+                f'Usunięto zduplikowane/przeniesione klucze: en-US={removed_en}, pl-PL={removed_pl}'
             )
+
+        # Po ekstrakcji en-US jest źródłem prawdy dla generated — usuń nieużywane klucze z pl-PL
+        keep_keys = set(self.en_registry.claimed_keys)
+        pruned_pl = self.pl_registry.prune_keys_not_in(keep_keys)
+        if pruned_pl:
+            logging.info(f'Usunięto nieużywane klucze z pl-PL/prototypes/generated: {pruned_pl}')
+        pruned_en = self.en_registry.prune_keys_not_in(keep_keys)
+        if pruned_en:
+            logging.info(f'Usunięto nieużywane klucze z en-US/prototypes/generated: {pruned_en}')
 
     @classmethod
     def serialize_yaml_element(cls, element):
@@ -259,6 +478,14 @@ class YAMLExtractor:
 
         if os.path.isfile(en_fluent_file.full_path):
             existing_data = en_fluent_file.read_data()
+            renames = detect_key_renames(existing_data, file_data)
+            if renames:
+                pl_path = en_fluent_file.full_path.replace('en-US', 'pl-PL')
+                self._pending_pl_renames.append((pl_path, renames))
+                logging.info(
+                    f'Wykryto {len(renames)} zmian kluczy w {en_fluent_file.full_path}: '
+                    + ', '.join(f'{o}->{n}' for o, n in list(renames.items())[:5])
+                )
             file_data = preserve_existing_attributes(file_data, existing_data, PRESERVED_ATTRIBUTE_NAMES)
             if file_data == existing_data:
                 self._publish_canonical_keys(en_fluent_file.full_path, file_data)
@@ -268,6 +495,57 @@ class YAMLExtractor:
         self._publish_canonical_keys(en_fluent_file.full_path, file_data)
 
         return en_fluent_file.full_path
+
+    def _apply_pending_pl_renames(self) -> None:
+        total = 0
+        for pl_path, renames in self._pending_pl_renames:
+            # Szukaj starych kluczy też w innych plikach pl (gdy ścieżka się rozjechała)
+            for old_key, new_key in list(renames.items()):
+                stale_path = self.pl_registry.key_to_file.get(old_key)
+                if stale_path and os.path.normpath(stale_path) != os.path.normpath(pl_path):
+                    if not os.path.isfile(stale_path):
+                        continue
+                    stale_file = FluentFile(stale_path)
+                    stale_content = stale_file.read_data()
+                    extracted = _extract_entries_by_keys(stale_content, {old_key})
+                    if old_key not in extracted:
+                        continue
+                    snippet = extracted[old_key]
+                    lines = snippet.split('\n')
+                    if old_key.startswith('-'):
+                        lines[0] = re.sub(
+                            rf'^-{re.escape(old_key[1:])}\b',
+                            f'-{new_key[1:]}' if new_key.startswith('-') else f'-{new_key}',
+                            lines[0],
+                            count=1,
+                        )
+                    else:
+                        lines[0] = re.sub(rf'^{re.escape(old_key)}\b', new_key, lines[0], count=1)
+                    target = FluentFile(pl_path)
+                    target_content = target.read_data() if os.path.isfile(pl_path) else ''
+                    target_content, _ = upsert_entries(target_content, {new_key: '\n'.join(lines)})
+                    target.save_data(target_content)
+                    stale_content, _ = _remove_keys_from_content(stale_content, {old_key})
+                    stale_file.save_data(stale_content)
+                    self.pl_registry.key_to_file[new_key] = os.path.normpath(pl_path)
+                    self.pl_registry.key_to_file.pop(old_key, None)
+                    total += 1
+                    continue
+
+            if not os.path.isfile(pl_path):
+                continue
+            pl_file = FluentFile(pl_path)
+            content = pl_file.read_data()
+            new_content, applied = apply_key_renames_to_content(content, renames)
+            if applied:
+                pl_file.save_data(new_content)
+                for old_key, new_key in renames.items():
+                    self.pl_registry.key_to_file.pop(old_key, None)
+                    self.pl_registry.key_to_file[new_key] = os.path.normpath(pl_path)
+                total += applied
+        self._pending_pl_renames.clear()
+        if total:
+            logging.info(f'Zastosowano {total} zmian kluczy w pl-PL (zachowano tłumaczenia)')
 
     @staticmethod
     def _is_missing_or_empty_ftl(file_path: str) -> bool:

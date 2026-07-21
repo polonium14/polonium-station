@@ -101,3 +101,11 @@ cargo-acquisition-slip-body = [head=3]Asset Detail[/head]
     {"[head=3]Purchase Detail[/head]"}
     {"[bold]Orderer:[/bold]"} {$orderer}
     {"[bold]Reason:[/bold]"} {$reason}
+
+cargo-console-menu-order-reason-description = Powód: { $reason }
+
+cargo-console-menu-cargo-order-row-approve-button = Akceptuj
+
+cargo-console-menu-cargo-order-row-cancel-button = Anuluj
+
+cargo-funding-alloc-console-label-help = Logistyka otrzymuje { $percent }% wszystkich zysków. Reszta jest rozdzielana jak wskazano poniżej:

@@ -1,7 +1,7 @@
 ent-MouseMigration = { ent-BaseStationEventShortDelay }
     .desc = { ent-BaseStationEventShortDelay.desc }
-ent-KingRatMigration = { ent-BaseStationEventLongDelay }
-    .desc = { ent-BaseStationEventLongDelay.desc }
+ent-KingRatMigration = { ent-BaseStationEventShortDelay }
+    .desc = { ent-BaseStationEventShortDelay.desc }
 ent-MiniDragonMigration = { ent-BaseStationEventLongDelay }
     .desc = { ent-BaseStationEventLongDelay.desc }
 ent-CockroachMigration = { ent-BaseStationEventShortDelay }
@@ -9,4 +9,6 @@ ent-CockroachMigration = { ent-BaseStationEventShortDelay }
 ent-SnailMigrationLowPop = { ent-BaseStationEventShortDelay }
     .desc = { ent-BaseStationEventShortDelay.desc }
 ent-SnailMigration = { ent-BaseStationEventShortDelay }
+    .desc = { ent-BaseStationEventShortDelay.desc }
+ent-RandomCritterHorde = { ent-BaseStationEventShortDelay }
     .desc = { ent-BaseStationEventShortDelay.desc }

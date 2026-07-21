@@ -367,3 +367,55 @@ ghost-role-information-wizard-desc = YER A WIZARD! Show the station what your ma
 
 ghost-role-information-emotional-support-scurret-name = Emotional Support Scurret
 ghost-role-information-emotional-support-scurret-description = Support the crew, be adorable, say "wa" a lot.
+
+# funkystation
+ghost-role-information-big-familiar-rules =
+    You are a [color=#6495ed][bold]Familiar[/bold][/color]. Serve the interests of your master, whatever those may be. You should generally not seek to harm the station and its crew.
+    You don't remember any of your previous life, and you don't remember anything you learned as a ghost.
+    You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc.
+    You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
+
+# funkystation
+ghost-role-information-skeleton-rules =
+    You are a [color=yellow][bold]Skeleton[/bold][/color]. You are a former member of crew and are considered crew.
+    Be as silly as possible.
+    You are free to self antag as long as it's funny.
+    Keep crew harm to a minimum.
+
+# funkystation
+ghost-role-information-neanderthal-rules =
+    You are a [color=yellow][bold]Neanderthal[/bold][/color]. You are freshly thawed out of a block of ice and have no idea where you are.
+    While your existence may be tolerated by the crew and Central Command, you are free to act as an antagonist or a non antagonist.
+    Though you are more beast than man, you should still generally follow escalation rules, as others will have to do with you.
+    You are not allowed to remember any knowledge about life or how to use objects beyond the absolute basics, such as how to swing a stick.
+    You do not understand the languages of others, nor do you possess the ability to communicate with others beyond grunting and gesturing.
+    You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
+    You are [color=red]NOT[/color] allowed to cause mass station destruction, such as releasing the singularity from containment.
+
+ghost-role-information-shiva-name = Shiva the Spider
+
+ghost-role-information-shiva-description = Head Of Security's most trusted pet. First defender of the station.
+
+ghost-role-information-shiva-rules =
+    You are [bold]Shiva the Spider[/bold]. The Head of Security's highly trained and most trusted pet.
+    You are part of security, and as such are held to higher standards.
+    Be a good spider and dont hinder the crew. Use your fangs only when it is needed.
+
+    You don't remember any of your previous life, and you don't remember anything you learned as a ghost.
+    You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc.
+    You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
+
+# funkystation
+ghost-role-information-neanderthal-description = You are a freshly unfrozen neanderthal. You have no idea what is going on, where this is, what anything is, or who anyone else is.
+
+# funkystation
+ghost-role-information-neanderthal-name = Unfrozen Neanderthal
+
+# funkystation
+ghost-role-information-celedon-name = Celedon, Animal Lab Rescue
+
+ghost-role-information-celedon-description = Follow and obey the zookeeper. They must gain your trust first though, you still remember the experiments from the genetics lab on Europa.
+
+roles-ghost-cryopod-sleeper-name = old cryogenics pod sleeper
+
+roles-ghost-cryopod-sleeper-objective = Work as a team with your fellow survivors aboard a ruined, ancient space station.

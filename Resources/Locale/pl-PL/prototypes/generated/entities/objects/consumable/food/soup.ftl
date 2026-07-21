@@ -1,5 +1,5 @@
-ent-FoodBowlBase = { ent-FoodInjectableBase }
-    .desc = { ent-FoodInjectableBase.desc }
+ent-FoodBowlBase = { ent-SolutionSmall }
+    .desc = { ent-SolutionSmall.desc }
 ent-FoodSoupPea = zupa grochowa
     .desc = Skromna zupa z rozdrobnionego grochu.
 ent-FoodSaladAesir = sałatka aesir

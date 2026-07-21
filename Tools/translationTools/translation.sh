@@ -30,6 +30,7 @@ if [ -n "$PIP" ]; then
 fi
 
 $PY ./yamlextractor.py
+$PY ./merge_generated_structure.py
 $PY ./keyfinder.py
 $PY ./clean_duplicates.py
 $PY ./clean_empty.py

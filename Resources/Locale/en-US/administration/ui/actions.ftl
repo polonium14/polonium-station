@@ -16,3 +16,5 @@ admin-player-actions-clone-message = Spawn a copy of this character, without tra
 admin-player-actions-follow = Follow
 admin-player-actions-check-afk = Check AFK
 admin-player-actions-confirm = Are you sure?
+
+admin-player-actions-bans = Lista banów

@@ -115,3 +115,5 @@ comp-kitchen-spike-hooked = [color=red]{ CAPITALIZE($victim) } jest na tym kolcu
 comp-kitchen-spike-victim-examine = [color=orange]{ CAPITALIZE(SUBJECT($target)) } wygląda chudo.[/color]
 
 comp-kitchen-spike-deconstruct-occupied = Next, [color=red]unhook the body[/color].
+
+comp-kitchen-spike-need-tool-quality = { $quality } tool required to butcher { THE($target) }.

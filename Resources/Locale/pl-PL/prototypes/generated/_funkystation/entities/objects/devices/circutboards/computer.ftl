@@ -10,5 +10,3 @@ ent-EngiCommsComputerCircuitboard = konsola komunikacyjna inżynieryjna (płytka
     .desc = Płytka drukowana do konsoli komunikacyjnej inżynieryjnej.
 ent-MedicalCommsComputerCircuitboard = konsola komunikacyjna medyczna (płytka konsolowa)
     .desc = Płytka drukowana do konsoli komunikacyjnej medycznej.
-ent-CargoRequestAtmosphericsComputerCircuitboard = konsola rezerw atmosferycznych (płytka konsolowa)
-    .desc = Płytka drukowana do konsoli rezerw atmosferycznych.

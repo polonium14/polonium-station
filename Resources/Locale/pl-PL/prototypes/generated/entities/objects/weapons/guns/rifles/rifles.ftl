@@ -2,11 +2,12 @@ ent-BaseWeaponRifle = BaseWeaponRifle
     .desc = Celuj i strzelaj.
 ent-WeaponRifleAk = AKMS
     .desc = Ikoniczna broń wojenna. Używa amunicji kalibru .30.
-ent-WeaponRifleM90GrenadeLauncher = M-90gl
-    .desc = Starszy karabinek bullpup z dołączonym granatnikiem podlufowym. Używa amunicji kalibru .20.
 ent-WeaponRifleLecter = Lekter
     .desc = Wysokiej klasy wojskowy karabin szturmowy. Używa amunicji kalibru .30.
+ent-WeaponRifleLecterXL8 = XL8
+    .desc =
+        The Experimental Lecter 8
+        An unreasonably expensive military grade assault rifle with integrated optic.
+        Uses .20 rifle ammo.
 ent-WeaponRifleEstoc = Estoc DMR
     .desc = Karabin snajperski, preferowany do walki na średnim i dalekim dystansie. Wykorzystuje amunicję kalibru .20.
-ent-WeaponRifleFoam = Foam Force Astro Ace
-    .desc = Wysokiej jakości karabin na piankę. Jego plastik jest wytrzymały, a mechanizmy solidne.

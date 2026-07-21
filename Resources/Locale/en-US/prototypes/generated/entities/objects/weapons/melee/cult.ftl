@@ -1,0 +1,17 @@
+ent-RitualDagger = ritual dagger
+    .desc = A strange dagger used by sinister groups for rituals and sacrifices.
+ent-EldritchBlade = eldritch blade
+    .desc = A sword humming with unholy energy.
+ent-UnholyHalberd = unholy halberd
+    .desc = A poleaxe that seems to be linked to its wielder.
+ent-CultDagger = cult dagger
+    .desc = A sickening, crude bone blade. Tar-like ooze drips from the edge, poisoning your foes and protecting allies from your strikes. Useful as both a melee weapon and a throwing knife. Your veins pulse in anticipation - images of runes already flashing into your mind as you hold it.
+ent-CultDaggerCurved = cult dagger
+    .suffix = Curved
+    .desc = { ent-CultDagger.desc }
+ent-CultDaggerSerrated = cult dagger
+    .suffix = Serrated
+    .desc = { ent-CultDagger.desc }
+ent-CultDaggerStraight = cult dagger
+    .suffix = Straight
+    .desc = { ent-CultDagger.desc }

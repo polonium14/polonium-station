@@ -1,4 +1,4 @@
-﻿zombie-title = Zombies
+zombie-title = Zombies
 zombie-description = The undead have been unleashed on the station! Work with the crew to survive the outbreak and secure the station.
 
 zombieteors-title = Zombieteors
@@ -33,3 +33,5 @@ zombie-round-end-survivor-count = {$count ->
     *[other] There were only {$count} survivors left:
 }
 zombie-round-end-user-was-survivor = - [color=White]{$name}[/color] ([color=gray]{$username}[/color]) survived the outbreak.
+
+zombie-start-announcement = Potwierdzono zagrożenie biologiczne poziomu 7 na pokładzie stacji. Cały personel jest zobowiązany do podjęcia działań mających na celu powstrzymanie kontaminacji.

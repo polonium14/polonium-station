@@ -16,3 +16,7 @@ store-preset-name-uplink = Uplink
 store-preset-name-spellbook = Spellbook
 store-preset-name-nukie-delivery = NukeOps Bluespace Delivery
 store-preset-name-changeling = DNA Store
+
+store-ui-default-refund-text = Zwrot
+
+store-ui-default-search-text = Szukaj

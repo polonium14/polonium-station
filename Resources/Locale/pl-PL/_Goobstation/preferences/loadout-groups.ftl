@@ -13,7 +13,7 @@ loadout-group-bso-backpack = Oficer Niebieskiej Tarczy – plecak
 loadout-group-bso-jumpsuit = Oficer Niebieskiej Tarczy – kombinezon
 loadout-group-bso-outer = Oficer Niebieskiej Tarczy – pancerz
 loadout-group-bso-neck = Oficer Niebieskiej Tarczy – szyja
-loadout-group-reporter-outerclothing = Reporter – odzież wierzchnia
+
 loadout-group-nct-head = Szkoleniowiec Kadr Nanotrasen – nakrycie głowy
 loadout-group-nct-backpack = Szkoleniowiec Kadr Nanotrasen – plecak
 loadout-group-nct-jumpsuit = Szkoleniowiec Kadr Nanotrasen – kombinezon

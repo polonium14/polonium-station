@@ -56,3 +56,16 @@ lathe-category-command = Command
 lathe-category-hats = Hats
 lathe-category-jumpsuits = Jumpsuits
 lathe-category-neck = Neck
+
+# Cutter
+lathe-category-concrete = Betonowe
+
+lathe-category-dark = Ciemne
+
+lathe-category-maints = Serwisowe
+
+lathe-category-steel = Stalowe
+
+lathe-category-white = Białe
+
+lathe-category-wood = Drewniane

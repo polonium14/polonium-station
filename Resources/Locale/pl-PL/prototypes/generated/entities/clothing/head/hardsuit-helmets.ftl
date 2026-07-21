@@ -1,5 +1,3 @@
-ent-ClothingHeadHelmetHardsuitBasic = basic hardsuit helmet
-    .desc = A basic-looking hardsuit helmet that provides minor protection against most sources of damage.
 ent-ClothingHeadHelmetHardsuitAtmos = atmos hardsuit helmet
     .desc = A special hardsuit helmet designed for working in low-pressure, high thermal environments.
 ent-ClothingHeadHelmetHardsuitEngineering = engineering hardsuit helmet
@@ -72,3 +70,5 @@ ent-ClothingHeadHelmetHardsuitMime = mime hardsuit helmet
     .desc = A mime hardsuit helmet.
 ent-ClothingHeadHelmetHardsuitSanta = Santa's hardsuit helmet
     .desc = A festive-looking hardsuit helmet that provides the jolly gift-giver protection from low-pressure environments.
+ent-ActionToggleHelmetVisor = Toggle Visor
+    .desc = Flips the helmet visor up or down.

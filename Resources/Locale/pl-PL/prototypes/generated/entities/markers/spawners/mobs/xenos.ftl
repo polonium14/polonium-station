@@ -19,3 +19,6 @@ ent-SpawnMobXenoRunner = spawner kseno
 ent-SpawnMobXenoSpitter = spawner kseno
     .suffix = Plujący
     .desc = { ent-MarkerBase.desc }
+ent-SpawnMobXenoLonePraetorian = Xeno Spawner
+    .suffix = Lone Praetorian, Exo Station
+    .desc = { ent-MarkerBase.desc }

@@ -1,6 +1,8 @@
 ent-RehydratableItem = { ent-BaseItem }
     .desc = { ent-BaseItem.desc }
-ent-RehydratableAnimalCube = { ent-RehydratableItem }
+ent-SolutionCube = cube
+    .desc = if you're reading this, nuh uh! file a bug report.
+ent-RehydratableAnimalCube = { ent-SolutionTiny }
     .desc = Po prostu dodaj wody!
 ent-MonkeyCube = kostka z małpami
     .desc = { ent-RehydratableAnimalCube.desc }

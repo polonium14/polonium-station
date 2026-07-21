@@ -5,8 +5,6 @@ ent-MobGoliath = goliat
     .gender = male
 ent-ActionGoliathTentacle = [color=red]Uderzenie macką[/color]
     .desc = Użyj swoich macek, aby złapać i ogłuszyć wybranego gracza!
-ent-ActionGoliathTentacleNerfed = { ent-ActionGoliathTentacle }
-    .desc = { ent-ActionGoliathTentacle.desc }
 ent-GoliathTentacle = macka
     .desc = { "" }
     .gender = female

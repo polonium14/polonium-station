@@ -123,3 +123,29 @@ marking-LizardSnoutVisageSharp-visage_sharp = Lizard Visage (Sharp)
 
 marking-LizardSnoutVisageRound = Lizard Visage (Round)
 marking-LizardSnoutVisageRound-visage_round = Lizard Visage (Round)
+
+marking-LizardTailLarge-tail_large_primary = Lizard Tail Primary (Large)
+
+marking-LizardTailLarge-tail_large_secondary = Lizard Tail Secondary (Large)
+
+marking-LizardTailSpikes-tail_spikes_primary = Lizard Tail Primary (Spiky)
+
+marking-LizardTailSpikes-tail_spikes_secondary = Lizard Tail Secondary (Spiky)
+
+marking-LizardTailSpikes-tail_spikes_tertiary = Lizard Tail Tertiary (Spiky)
+
+marking-LizardTailTiger-tail_tiger_primary = Lizard Tail Primary (Light Tiger Stripes)
+
+marking-LizardTailTiger-tail_tiger_secondary = Lizard Tail Secondary (Light Tiger Stripes)
+
+marking-LizardTailTiger-tail_tiger_tertiary = Lizard Tail Tertiary (Light Tiger Stripes)
+
+marking-LizardTailTiger = Lizard Tail (Light Tiger Stripes)
+
+marking-LizardSnoutRound-snout_round_primary = Lizard Snout Primary (Round)
+
+marking-LizardSnoutRound-snout_round_secondary = Lizard Snout Secondary (Round)
+
+marking-LizardSnoutSharp-snout_sharp_primary = Lizard Snout Primary (Sharp)
+
+marking-LizardSnoutSharp-snout_sharp_secondary = Lizard Snout Secondary (Sharp)

@@ -77,3 +77,35 @@ trait-hemophilia-desc = Your body fails to make blood clots.
 
 trait-impaired-mobility-name = Impaired Mobility
 trait-impaired-mobility-desc = You have difficulty moving without a mobility aid.
+
+trait-monochromancy-name = Monochromancy
+
+trait-monochromancy-desc = You are fully colorblind, everything you perceive ranges from blacks to whites.
+
+trait-pirate-accent-name = Pirate accent
+
+trait-pirate-accent-desc = You can't stop speaking like a pirate!
+
+trait-atheist-name = Atheist
+
+trait-atheist-desc = You are an Atheist. You cannot pray.
+
+trait-buddhist-name = Buddhist
+
+trait-buddhist-desc = You are a Buddhist.
+
+trait-christian-name = Christian
+
+trait-christian-desc = You are a Christian.
+
+trait-italian-name = Italian accent
+
+trait-italian-desc = Mamma mia! You seem to have lived in space Italy!
+
+trait-russian-name = Russian accent
+
+trait-russian-desc = Niko, it's Roman! Let's go bowling!
+
+trait-species-restricted = Your species cannot take this trait.
+
+trait-prerequisite-required = This trait requires the { $prerequisite } trait.

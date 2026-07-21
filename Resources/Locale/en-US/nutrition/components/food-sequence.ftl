@@ -173,3 +173,25 @@ food-sequence-taco-gen = taco with {$content}
 # SKEWER
 
 food-sequence-skewer-gen = {$content} kebab
+
+food-sequence-content-animal-brain = animal brain
+
+food-sequence-content-cooked-bacon = bacon
+
+food-sequence-content-patty = meat patty
+
+food-sequence-content-dragon-cooked = dragon steak
+
+food-sequence-content-dragoncutlet-cooked = dragon cutlet
+
+food-sequence-content-bacon-cooked = bacon
+
+food-sequence-content-meatball-cooked = meatball
+
+food-sequence-content-chanterelle = chanterelle
+
+food-sequence-content-chevre-disk = chevre
+
+food-sequence-content-tofu-slice = tofu
+
+food-sequence-content-roingus = roingus

@@ -1,0 +1,9 @@
+ent-MobSkeletonPirate = skeleton pirate
+    .desc = { ent-MobSkeletonPerson.desc }
+  .gender = male
+ent-MobSkeletonBiker = skeleton biker
+    .desc = { ent-MobSkeletonPerson.desc }
+  .gender = male
+ent-MobSkeletonCloset = closet skeleton
+    .desc = { ent-MobSkeletonPerson.desc }
+  .gender = male

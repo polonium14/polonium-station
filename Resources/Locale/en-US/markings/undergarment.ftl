@@ -52,3 +52,5 @@ marking-UndergarmentBottomBriefsVulpkanin = Briefs
 marking-UndergarmentBottomBriefsVulpkanin-briefs_vulpkanin = Briefs
 marking-UndergarmentBottomSatinVulpkanin = Satin
 marking-UndergarmentBottomSatinVulpkanin-satin_vulpkanin = Satin
+
+marking-UndergarmentBottomBoxersVox-boxers_vox = Boxers

@@ -1,5 +1,5 @@
 ent-FoodMysteryMeat = raw mystery meat
-    .desc = Grinded-down organic bits and pieces, coagulated into a slab of ambiguous protein.
+    .desc = Ground-down organic bits and pieces, coagulated into a slab of ambiguous protein.
 ent-FoodMysteryMeatCooked = cooked mystery meat
     .desc = A little more edible than when it was raw. Still just as ambiguous though.
 ent-FoodMysteryCutlet = raw mystery cutlet

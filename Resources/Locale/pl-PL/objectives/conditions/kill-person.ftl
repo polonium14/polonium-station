@@ -7,3 +7,5 @@ objective-condition-maroon-person-title =
         [epicene] dotarłu
        *[neuter] dotarło
     } do Centralnego Dowództwa.
+
+objective-condition-kill-station-ai = Destroy {$targetName}, {CAPITALIZE($job)} and ensure they remain out of commission.

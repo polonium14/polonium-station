@@ -153,3 +153,31 @@ reagent-desc-haloperidol = Removes most stimulating and hallucinogenic drugs. Re
 
 reagent-name-heparin = heparin
 reagent-desc-heparin = Commonly used as an anticoagulant medication. Causes blood to have difficulty forming clots. Can cause internal bleeding when overdosed.
+
+reagent-name-ambuzol-1 = ambuzol I
+
+reagent-desc-ambuzol-1 = The ambuzol seems perfectly adept at wiping out the infection before it takes hold.
+
+reagent-name-ambuzol-2 = ambuzol II
+
+reagent-desc-ambuzol-2 = Ambuzol two, prevents bites from forming infections.
+
+reagent-name-ambuzol-3 = ambuzol III
+
+reagent-desc-ambuzol-3 = Ambuzol three, for those patients already suffering from a rampant zombie tumor.
+
+reagent-name-ambuzol-4 = ambuzol IV
+
+reagent-desc-ambuzol-4 = Ambuzol four, for those deeply infected.
+
+reagent-name-ambuzol-5 = ambuzol V
+
+reagent-desc-ambuzol-5 = Complete immunity from the Zombie Virus, no matter the strength of the infection.
+
+reagent-name-necrosol = śmierciosol
+
+reagent-desc-necrosol = Substancja nekrotyczna, która podobno potrafi leczyć zamrożone zwłoki. Stosowana w małych dawkach może leczyć i odmładzać rośliny.
+
+reagent-name-warfarin = warfarin
+
+reagent-desc-warfarin = Commonly used as an anticoagulant medication. Causes blood to have difficulty forming clots. Can cause internal bleeding when overdosed.

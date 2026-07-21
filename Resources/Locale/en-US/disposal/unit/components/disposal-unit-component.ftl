@@ -26,3 +26,5 @@ disposal-unit-state-Pressurizing = Pressurizing
 
 # putting people in
 disposal-unit-being-inserted = {CAPITALIZE($user)} is trying to force you into a disposal chute!
+
+disposal-self-insert-verb-get-data-text = Wskocz

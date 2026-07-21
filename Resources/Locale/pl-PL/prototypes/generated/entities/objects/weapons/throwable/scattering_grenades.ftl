@@ -1,8 +1,8 @@
-ent-ScatteringGrenadeBase = { ent-BaseItem }
-    .desc = { ent-BaseItem.desc }
+ent-ScatteringGrenadeBase = { ent-GrenadeBase }
+    .desc = { ent-GrenadeBase.desc }
 ent-ClusterBang = granat klastrowy błyskowy
     .desc = Może być używany tylko z granatami błyskowo-hukowymi. Wybucha kilka razy.
-ent-ClusterBangFull = { ent-ClusterBang }
+ent-ClusterBangFull = clusterbang
     .desc = Wypuszcza trzy granaty błyskowo-hukowe po upływie czasu.
     .suffix = Pełny
 ent-ClusterGrenade = granat klastrowy

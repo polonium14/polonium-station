@@ -73,3 +73,5 @@ wire-letter-name-chi = Chi
 wire-letter-name-psi = Psi
 
 wire-letter-name-omega = Omega
+
+wires-panel-verb-view-panel = View maintenance panel

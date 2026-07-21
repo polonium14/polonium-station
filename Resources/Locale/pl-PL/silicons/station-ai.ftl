@@ -59,3 +59,5 @@ station-ai-ghost-role-name = Station AI
 station-ai-ghost-role-description = Serve the station crew as its ever watchful AI.
 
 ai-device-no-access = You have no access to this device
+
+station-ai-core-taking-damage = Your AI core is sustaining physical damage.

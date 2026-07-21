@@ -1,0 +1,14 @@
+ent-FuClothingUniformJumpsuitHydroponics = hydroponics jumpsuit
+    .desc = Has a strong earthy smell to it.
+ent-FuClothingUniformJumpsuitHydroponicsDirty = hydroponics jumpsuit
+    .desc = Has a strong earthy smell to it. The dirt won't come out, no matter how hard one tries...
+ent-FuClothingUniformShirtPantstHydroponics = hydroponics uniform
+    .desc = A comfortable shirt and cargo pants. A simple worker's fit.
+ent-FuClothingUniformShirtPantstHydroponicsOveralls = hydroponics uniform
+    .desc = A comfortable shirt and overalls. A simple worker's fit.
+ent-FuClothingUniformShirtPantstHydroponicsOverallsTurtle = hydroponics uniform
+    .desc = A comfortable sweater and overalls. A simple worker's fit. Cozy.
+ent-FuClothingUniformJumperskirtHydroponics = hydroponics jumper skirt
+    .desc = A jumper skirt, for that authentic old-timey feel.
+ent-FuClothingUniformJumperskirtHydroponicsTurtle = hydroponics jumper skirt
+    .desc = A jumper skirt, for that authentic old-timey feel. Cozy.

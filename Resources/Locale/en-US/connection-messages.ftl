@@ -1,4 +1,4 @@
-﻿cmd-whitelistadd-desc = Adds the player with the given username to the server whitelist.
+cmd-whitelistadd-desc = Adds the player with the given username to the server whitelist.
 cmd-whitelistadd-help = Usage: whitelistadd <username or User ID>
 cmd-whitelistadd-existing = {$username} is already on the whitelist!
 cmd-whitelistadd-added = {$username} added to the whitelist
@@ -62,3 +62,5 @@ ipintel-unknown = This server uses an auditing system with external verification
 ipintel-suspicious = You seem to be attempting to connect using a datacenter, proxy, VPN or otherwise suspicious connection. For administrative reasons, we do not allow these connections to play. If you have a VPN or similar enabled, please turn it off and attempt to reconnect or contact the administration team of the server for assistance on how to continue if you believe this is false or require using these services to play.
 
 hwid-required = Your client has refused to send a hardware id. Please contact the administration team for further assistance.
+
+ban-banned-4 = Próby takie jak ominięcie bana przez utworzenie nowego konta będą zarejestrowane.

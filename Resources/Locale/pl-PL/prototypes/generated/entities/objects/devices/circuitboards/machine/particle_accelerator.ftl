@@ -1,4 +1,3 @@
-# Akcelerator Cząstek
 ent-MachineParticleAcceleratorEndCapCircuitboard = płytka drukowana zakończenia AC
     .desc = Płytka drukowana do zakończenia akceleratora cząsteczek.
 ent-MachineParticleAcceleratorFuelChamberCircuitboard = płytka drukowana komory paliwowej AC

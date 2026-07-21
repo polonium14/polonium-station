@@ -13,11 +13,8 @@ admin-bluespace-strike-eui-label-confirm = Fire!
 cmd-artbs-desc = Opens the bluespace strike targeting UI.
 cmd-artbs-help = Usage: artbs
 
-ent-BluespaceStrikeMarker = {""}
-    .desc = Better run.
 
-ent-BluespaceStrikeIncoming = {""}
-    .desc = Incoming.
 
-ent-BluespaceStrikeController = bluespace strike
-    .desc = {""}
+
+
+

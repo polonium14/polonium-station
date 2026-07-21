@@ -1,0 +1,10 @@
+ent-ActionReplicatorSpawnNest = Manufacture Nest
+    .desc = Create a new nest for your hive.
+ent-ActionReplicatorUpgrade2 = Upgrade (Tier 2)
+    .desc = Gather nanites. Gain manipulation.
+ent-ActionReplicatorUpgrade3 = Upgrade (Tier 3)
+    .desc = Gather nanites. Become stronger.
+ent-ActionReplicatorTeleportPrey = Hive Recall
+    .desc = Channel nanites to pull an incapacitated target to a random spot 8-10 tiles away on this grid.
+ent-ToggleThermalVision = Switch Thermal vision
+    .desc = Switches Thermal vision.

@@ -15,3 +15,11 @@ signal-port-description-gas-turbine-receiver-decrease = Decreases the stator loa
 
 signal-port-name-gas-turbine-data-receiver = Turbine Monitor
 signal-port-description-gas-turbine-data-receiver = Receiving info about a gas turbine.
+
+signal-port-name-vitals-monitor-receiver-med = Łóżko Medyczne
+
+signal-port-description-vitals-monitor-receiver-med = Wysyłanie informacji o stanie pacjenta do Monitora Życiowych Funkcji.
+
+signal-port-name-vitals-monitor-receiver-stasis = Łóżko Stazy
+
+signal-port-description-vitals-monitor-receiver-stasis = Wysyłanie informacji o stanie pacjenta do Monitora Życiowych Funkcji.

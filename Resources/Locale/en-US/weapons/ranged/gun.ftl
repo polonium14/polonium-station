@@ -54,3 +54,7 @@ gun-speedloader-empty = Speedloader empty
 # GunSpreadModifier
 examine-gun-spread-modifier-reduction = The spread has been reduced by [color=yellow]{$percentage}%[/color].
 examine-gun-spread-modifier-increase = The spread has been increased by [color=yellow]{$percentage}%[/color].
+
+gun-clumsy = Broń wybucha ci w twarz!
+
+gun-set-fire-mode = Ustawiono tryb { $mode }

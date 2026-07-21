@@ -146,3 +146,20 @@ chat-speech-verb-wawa-2 = states
 chat-speech-verb-wawa-3 = declares
 
 chat-speech-verb-wawa-4 = ponders
+
+chat-manager-dead-chat-enabled-message = Dead chat has been enabled.
+
+chat-manager-dead-chat-disabled-message = Dead chat has been disabled.
+
+# Unicode U+201C and U+201D Double quotes.
+chat-manager-speech-double-quote-begin = “
+
+chat-manager-speech-double-quote-end = ”
+
+chat-manager-follow-button = (F)
+
+chat-speech-verb-name-sheep = Sheep
+
+chat-speech-verb-sheep-1 = bleats
+
+chat-speech-verb-sheep-2 = baas

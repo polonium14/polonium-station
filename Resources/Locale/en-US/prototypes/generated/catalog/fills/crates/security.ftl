@@ -1,0 +1,16 @@
+ent-CrateSecurityArmor = armor crate
+    .desc = Contains three bulletproof vests. Requires Security access to open.
+ent-CrateSecurityHelmet = helmet crate
+    .desc = Contains three standard-issue brain buckets. Requires Security access to open.
+ent-CrateSecurityNonlethal = less-lethals crate
+    .desc = Contains a mix of nightsticks, flashes, shell guns, and beanbag shells. Requires Security access to open.
+ent-CrateSecuritySupplies = security supplies crate
+    .desc = Contains various supplies for the station's Security team. Requires Security access to open.
+ent-CrateRestraints = restraints crate
+    .desc = Contains two boxes each of handcuffs and zipties. Requires Security access to open.
+ent-CrateSecurityBiosuit = security bio suit crate
+    .desc = Contains 2 biohazard suits to ensure that no disease will distract you from your duties. Requires Security access to open.
+ent-CrateSecurityTrackingMindshieldImplants = implanter crate
+    .desc = Contains 4 MindShield implants and 4 tracking implant. Requires Security access to open.
+ent-CrateSecNonlethalThrowables = nonlethal throwables crate
+    .desc = Contains one box each of flashbangs, stingers, tear gas grenades, and four bolas. Requires Security access to open.

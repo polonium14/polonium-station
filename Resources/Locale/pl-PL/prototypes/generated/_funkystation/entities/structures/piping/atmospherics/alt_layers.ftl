@@ -1,0 +1,16 @@
+ent-GasVentPumpAlt1 = { ent-GasPipeLayerAlt1 }
+    .desc = { ent-GasPipeLayerAlt1.desc }
+ent-GasVentPumpAlt2 = { ent-GasPipeLayerAlt2 }
+    .desc = { ent-GasPipeLayerAlt2.desc }
+ent-GasPassiveVentAlt1 = { ent-GasPipeLayerAlt1 }
+    .desc = { ent-GasPipeLayerAlt1.desc }
+ent-GasPassiveVentAlt2 = { ent-GasPipeLayerAlt2 }
+    .desc = { ent-GasPipeLayerAlt2.desc }
+ent-GasVentScrubberAlt1 = { ent-GasPipeLayerAlt1 }
+    .desc = { ent-GasPipeLayerAlt1.desc }
+ent-GasVentScrubberAlt2 = { ent-GasPipeLayerAlt2 }
+    .desc = { ent-GasPipeLayerAlt2.desc }
+ent-GasOutletInjectorAlt1 = { ent-GasPipeLayerAlt1 }
+    .desc = { ent-GasPipeLayerAlt1.desc }
+ent-GasOutletInjectorAlt2 = { ent-GasPipeLayerAlt2 }
+    .desc = { ent-GasPipeLayerAlt2.desc }

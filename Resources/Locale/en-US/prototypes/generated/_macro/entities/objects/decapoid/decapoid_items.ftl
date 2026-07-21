@@ -1,0 +1,14 @@
+ent-DecapoidClawItem = decapoid claw
+    .desc = A large claw. Not very good for fine manipulation, but very strong and very sharp.
+    .suffix = Unremoveable
+ent-DecapoidBreathingApparatus = vaporizer
+    .desc = A neck-mounted breathing apparatus for Decapoids. Moistens your gills, if you have them. Also functions as a brain-to-voice translator.
+ent-DecapoidBreathingApparatusClown = clown vaporizer
+    .desc = A neck-mounted breathing apparatus for Decapoids. Moistens your gills, if you have them. Also functions as a brain-to-voice translator. This one has been modified by a clown to complement their outfit...
+ent-DecapoidBreathingApparatusMime = mime vaporizer
+    .desc = A neck-mounted breathing apparatus for Decapoids. Moistens your gills, if you have them. Also functions as a brain-to-voice translator. This one has been modified by a mime to complement their outfit...
+ent-DecapoidVaporTank = vapor tank
+    .desc = An alien contraption consisting of two tanks. The smaller tank takes in water and converts it into vapor, which is stored in the larger tank. It can hold 5 L of gas, and 30u of fluid.
+ent-DecapoidVaporTankFilled = vapor tank
+    .suffix = Filled
+    .desc = { ent-DecapoidVaporTank.desc }

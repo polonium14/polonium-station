@@ -1,7 +1,9 @@
 ent-ActionRevertPolymorph = Przywróć postać
     .desc = Powróć do swojej oryginalnej formy.
-ent-ActionPolymorph = { "" }
-    .desc = { "" }
+ent-ActionRevertPolymorphConfirm = { ent-ActionRevertPolymorph }
+    .desc = { ent-ActionRevertPolymorph.desc }
+ent-BaseActionPolymorph = { ent-BaseAction }
+    .desc = { ent-BaseAction.desc }
 ent-ActionPolymorphWizardSpider = Polimorfia w pająka
     .desc = Przemienia cię w pająka.
 ent-ActionPolymorphWizardRod = Postać pręta

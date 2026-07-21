@@ -115,3 +115,5 @@ cargo-console-menu-order-row-button-cancel = Cancel
 cargo-console-menu-order-row-alerts-reason-absent = The reason is not specified
 
 cargo-console-menu-order-row-alerts-requester-unknown = Unknown
+
+cargo-console-menu-order-capacity-number = {$count}/{$capacity}

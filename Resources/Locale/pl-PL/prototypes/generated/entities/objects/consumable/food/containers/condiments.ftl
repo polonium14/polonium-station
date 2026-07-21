@@ -1,7 +1,9 @@
-ent-BaseFoodCondiment = { ent-BaseItem }
-    .desc = { ent-BaseItem.desc }
+ent-BaseFoodCondiment = { ent-SolutionFood }
+    .desc = { ent-SolutionFood.desc }
 ent-BaseFoodCondimentPacket = saszetka przypraw
     .desc = Mała plastikowa saszetka z przyprawami do jedzenia.
+ent-BaseFoodCondimentPacketDrink = { ent-BaseFoodCondimentPacket }
+    .desc = { ent-BaseFoodCondimentPacket.desc }
 ent-FoodCondimentPacketAstrotame = Astrotame
     .desc = Słodycz tysiąca cukrów bez kalorii.
 ent-FoodCondimentPacketBbq = sos BBQ

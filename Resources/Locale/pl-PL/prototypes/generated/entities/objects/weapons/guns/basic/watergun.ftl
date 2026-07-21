@@ -1,5 +1,5 @@
-ent-WeaponWaterGunBase = { ent-BaseItem }
-    .desc = { ent-BaseItem.desc }
+ent-WeaponWaterGunBase = { ent-SolutionGun }
+    .desc = { ent-SolutionGun.desc }
 ent-WeaponWaterPistol = pistolet na wodę
     .desc = Najmniejsza z broni wodnych. Przysięgasz, że spust nic nie robi.
 ent-WeaponWaterBlaster = blaster na wodę

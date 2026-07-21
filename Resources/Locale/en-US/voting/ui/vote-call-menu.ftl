@@ -40,3 +40,7 @@ ui-vote-fluff = Powered by Robust™ Anti-Tamper Technology
 
 cmd-votemenu-desc = Opens the voting menu.
 cmd-votemenu-help = Usage: votemenu
+
+ui-vote-menu-command-description = Opens the voting menu
+
+ui-vote-menu-command-help-text = Usage: votemenu

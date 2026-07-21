@@ -8,5 +8,3 @@ ent-BulletMagnumAP = kula (.45 magnum przeciwpancerne)
     .desc = { ent-BaseBulletAP.desc }
 ent-BulletMagnumUranium = kula (.45 magnum uranowe)
     .desc = { ent-BaseBulletUranium.desc }
-ent-BulletMagnumSilver = kula (.45 magnum srebrne)
-    .desc = { ent-BaseBullet.desc }

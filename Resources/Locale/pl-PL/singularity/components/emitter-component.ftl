@@ -9,3 +9,11 @@ comp-emitter-turned-off = The { $target } turns off.
 comp-emitter-not-anchored = The { $target } isn't anchored to the ground!
 emitter-component-current-type = The current selected type is: { $type }.
 emitter-component-type-set = Type set to: { $type }
+
+emitter-destroyed-broadcast = A powered emitter {$location} has been destroyed.
+
+emitter-deconstructed-broadcast = A powered emitter {$location} has been deconstructed.
+
+emitter-unlocked-broadcast = A powered emitter {$location} has been unlocked.
+
+emitter-unpowered-broadcast = A powered emitter {$location} has lost power.
