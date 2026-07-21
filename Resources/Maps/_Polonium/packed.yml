@@ -8378,35 +8378,6 @@ entities:
     - type: InstantAction
       originalIconColor: '#FFFFFFFF'
       container: 8485
-- proto: ActionToggleLight
-  entities:
-  - uid: 5311
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 16850
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 16850
-  - uid: 10675
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 10674
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 10674
-  - uid: 16973
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 4018
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 4018
 - proto: AirAlarm
   entities:
   - uid: 5
@@ -77033,23 +77004,16 @@ entities:
       pos: 32.735523,41.90346
       parent: 2
     - type: HandheldLight
-      toggleActionEntity: 16973
     - type: ContainerContainer
       containers:
         cell_slot: !type:ContainerSlot
           showEnts: False
           occludes: True
           ent: null
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 16973
     - type: Physics
       angularDamping: 0
       linearDamping: 0
       canCollide: True
-    - type: ActionsContainer
   - uid: 5183
     components:
     - type: Transform
@@ -77066,23 +77030,16 @@ entities:
       pos: 88.42184,1.9512138
       parent: 2
     - type: HandheldLight
-      toggleActionEntity: 10675
     - type: ContainerContainer
       containers:
         cell_slot: !type:ContainerSlot
           showEnts: False
           occludes: True
           ent: null
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 10675
     - type: Physics
       angularDamping: 0
       linearDamping: 0
       canCollide: True
-    - type: ActionsContainer
   - uid: 11417
     components:
     - type: Transform
@@ -77129,23 +77086,16 @@ entities:
       pos: 69.50834,-12.237511
       parent: 2
     - type: HandheldLight
-      toggleActionEntity: 5311
     - type: ContainerContainer
       containers:
         cell_slot: !type:ContainerSlot
           showEnts: False
           occludes: True
           ent: null
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 5311
     - type: Physics
       angularDamping: 0
       linearDamping: 0
       canCollide: True
-    - type: ActionsContainer
 - proto: LampInterrogator
   entities:
   - uid: 9324
@@ -81057,7 +81007,6 @@ entities:
       parent: 2
     - type: ApcPowerReceiver
       powerLoad: 0
-    - type: Timer
   - uid: 5282
     components:
     - type: Transform
@@ -81354,7 +81303,6 @@ entities:
       parent: 2
     - type: ApcPowerReceiver
       powerLoad: 0
-    - type: Timer
   - uid: 7568
     components:
     - type: Transform

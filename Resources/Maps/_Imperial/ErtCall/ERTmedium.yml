@@ -896,13 +896,6 @@ entities:
     - type: InstantAction
       originalIconColor: '#FFFFFFFF'
       container: 310
-  - uid: 812
-    components:
-    - type: Transform
-      parent: 786
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 786
   - uid: 846
     components:
     - type: Transform
@@ -910,15 +903,6 @@ entities:
     - type: InstantAction
       originalIconColor: '#FFFFFFFF'
       container: 845
-- proto: ActionToggleJetpack
-  entities:
-  - uid: 810
-    components:
-    - type: Transform
-      parent: 786
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 786
 - proto: AdvMopItem
   entities:
   - uid: 345
@@ -5318,19 +5302,10 @@ entities:
     - type: Transform
       parent: 471
     - type: GasTank
-      toggleActionEntity: 812
     - type: Jetpack
-      toggleActionEntity: 810
     - type: Physics
       canCollide: False
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 810
-          - 812
     - type: InsideEntityStorage
-    - type: ActionsContainer
     missingComponents:
     - Tag
     - StealTarget

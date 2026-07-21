@@ -695,46 +695,6 @@ entities:
         chunkSize: 4
     - type: GasTileOverlay
     - type: RadiationGridResistance
-- proto: ActionToggleInternals
-  entities:
-  - uid: 80
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 76
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 76
-  - uid: 122
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 120
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 120
-- proto: ActionToggleJetpack
-  entities:
-  - uid: 77
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 76
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 76
-  - uid: 121
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 120
-    - type: InstantAction
-      originalIconColor: '#FFFFFFFF'
-      container: 120
 - proto: AirAlarm
   entities:
   - uid: 497
@@ -3285,38 +3245,20 @@ entities:
       pos: 2.2525835,9.646424
       parent: 1
     - type: GasTank
-      toggleActionEntity: 80
     - type: Jetpack
-      toggleActionEntity: 77
     - type: Physics
       angularDamping: 0
       linearDamping: 0
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 77
-          - 80
   - uid: 120
     components:
     - type: Transform
       pos: 2.5963335,9.630799
       parent: 1
     - type: GasTank
-      toggleActionEntity: 122
     - type: Jetpack
-      toggleActionEntity: 121
     - type: Physics
       angularDamping: 0
       linearDamping: 0
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 121
-          - 122
 - proto: KnifePlastic
   entities:
   - uid: 289
