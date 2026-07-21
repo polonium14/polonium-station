@@ -1,0 +1,11 @@
+ent-GeigerMount = uchwyt na licznik Geigera
+    .desc = Mały, montowany na ścianie licznik Geigera. Gwarancja traci ważność po otwarciu.
+ent-GeigerMountOpen = { ent-GeigerMount }
+    .suffix = Otwarte
+    .desc = { ent-GeigerMount.desc }
+ent-GeigerMountFilled = { ent-GeigerMount }
+    .suffix = Wypełnione
+    .desc = { ent-GeigerMount.desc }
+ent-GeigerMountFilledOpen = { ent-GeigerMountFilled }
+    .suffix = Wypełnione, Otwarte
+    .desc = { ent-GeigerMountFilled.desc }
