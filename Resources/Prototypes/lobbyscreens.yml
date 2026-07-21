@@ -126,3 +126,9 @@
   background: /Textures/LobbyScreens/PewnaSmierc.png
   title: lobby-state-background-certaindeath-title
   artist: lobby-state-background-certaindeath-artist
+
+- type: lobbyBackground
+  id: Jerzy
+  background: /Textures/LobbyScreens/jerzy.png
+  title: lobby-state-background-jerzy-title
+  artist: lobby-state-background-jerzy-artist
