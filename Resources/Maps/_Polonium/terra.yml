@@ -45456,13 +45456,13 @@ entities:
     - type: Transform
       pos: 5.453645,20.585024
       parent: 6952
-#- proto: GunSafePistolRg2
-#  entities:
-#  - uid: 4183
-#    components:
-#    - type: Transform
-#      pos: 6.5,-0.5
-#      parent: 2
+- proto: GunSafePistolRg2
+  entities:
+  - uid: 4183
+    components:
+    - type: Transform
+      pos: 6.5,-0.5
+      parent: 2
 - proto: GunSafeRifleLecter
   entities:
   - uid: 2305
