@@ -26,11 +26,9 @@ lobby-state-background-drunkardsspree-title = Drunkards' Spree
 lobby-state-background-drunkardsspree-artist = Saver310
 lobby-state-background-certaindeath-title = Pewna Śmierć
 lobby-state-background-certaindeath-artist = Saver310
-
 lobby-state-background-invisiblewall-title = Invisible Wall
-
 lobby-state-background-invisiblewall-artist = Vandersloot
-
 lobby-state-background-stationisafuck-title = Station Is a Fuck
-
 lobby-state-background-stationisafuck-artist = fuzyfries
+lobby-state-background-jerzy-title = Obiad Jerzego
+lobby-state-background-jerzy-artist = Saver310

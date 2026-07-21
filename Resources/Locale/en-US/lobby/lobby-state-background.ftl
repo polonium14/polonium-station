@@ -45,3 +45,6 @@ lobby-state-background-drunkardsspree-artist = Saver310
 
 lobby-state-background-certaindeath-title = Certain Death
 lobby-state-background-certaindeath-artist = Saver310
+
+lobby-state-background-jerzy-title = Obiad Jerzego
+lobby-state-background-jerzy-artist = Saver310
