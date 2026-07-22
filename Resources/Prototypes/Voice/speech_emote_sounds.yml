@@ -94,6 +94,8 @@
       path: /Audio/Voice/Reptilian/reptilian_scream.ogg
     Laugh:
       path: /Audio/Animals/lizard_happy.ogg
+    Hiss:
+      path: /Audio/Animals/snake_hiss.ogg
     Honk:
       collection: BikeHorn
     Whistle:
@@ -119,6 +121,8 @@
       path: /Audio/Voice/Reptilian/reptilian_scream.ogg
     Laugh:
       path: /Audio/Animals/lizard_happy.ogg
+    Hiss:
+      path: /Audio/Animals/snake_hiss.ogg
     Honk:
       collection: BikeHorn
     Whistle:
