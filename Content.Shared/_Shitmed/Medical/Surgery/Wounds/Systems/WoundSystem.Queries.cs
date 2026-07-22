@@ -146,6 +146,23 @@ public sealed partial class WoundSystem
         return _damageable.GetPositiveDamage((woundable, damageable)).DamageDict.GetValueOrDefault(damageType);
     }
 
+    public FixedPoint2 GetOrganlessDamage(EntityUid mob, string damageType)
+    {
+        var mobDamage = GetTypeDamage(mob, damageType);
+
+        if (!TryComp<BodyComponent>(mob, out var body) || body.Organs is null)
+            return mobDamage;
+
+        var organDamage = FixedPoint2.Zero;
+        foreach (var organ in body.Organs.ContainedEntities)
+        {
+            if (HasComp<WoundableComponent>(organ))
+                organDamage += GetTypeDamage(organ, damageType);
+        }
+
+        return FixedPoint2.Max(mobDamage - organDamage, FixedPoint2.Zero);
+    }
+
     public bool HasWoundsExceedingMangleSeverity(EntityUid woundable, WoundableComponent? component = null)
     {
         return GetWoundableWounds(woundable, component)

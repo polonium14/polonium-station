@@ -159,15 +159,17 @@ public sealed partial class HealingSystem : EntitySystem
                     }
                     else
                     {
-                        // Targeted organ has no wound and no raw damage of this type at all -
-                        // nothing on this organ to heal. Leaving mobOnlyHeal at its full nominal
-                        // `scaled` value here would drain the mob's aggregate pool unclamped and
-                        // ungated even though the targeted part is uninjured, desyncing mob-total
-                        // from organ-total the same way the wound/raw-damage branches above guard
-                        // against, and in practice healing whatever OTHER limb holds a wound of
-                        // this type instead of the one actually targeted.
+                        // Targeted organ has no wound and no raw damage of this type at all.
+                        // Leaving mobOnlyHeal at its full nominal `scaled` value here would drain
+                        // the mob's aggregate pool unclamped and ungated even though the targeted
+                        // part is uninjured, in practice healing whatever OTHER limb holds a
+                        // wound of this type instead of the one actually targeted - so first
+                        // floor at whatever of the mob's damage isn't accounted for by ANY organ
+                        // (e.g. SkipDamageBridgeComponent damage, which never reaches a limb) and
+                        // only heal that genuinely wound-less remainder.
                         actualOrganHeal.DamageDict[type] = FixedPoint2.Zero;
-                        mobOnlyHeal.DamageDict[type] = FixedPoint2.Zero;
+                        var woundless = _wound.GetOrganlessDamage(target.Owner, type);
+                        mobOnlyHeal.DamageDict[type] = -FixedPoint2.Min(-amount, woundless);
                     }
                 }
 
