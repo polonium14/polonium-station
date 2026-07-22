@@ -28935,7 +28935,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 38.5,-20.5
       parent: 2
-- proto: computerBodyScanner
+- proto: ComputerBodyScanner
   entities:
   - uid: 2447
     components:

@@ -12,7 +12,7 @@ using Robust.Shared.Timing;
 namespace Content.Server.Medical;
 
 /// <summary>
-/// Drives the body scanner console (<c>computerBodyScanner</c>). The console carries no scanner
+/// Drives the body scanner console (<c>ComputerBodyScanner</c>). The console carries no scanner
 /// of its own - it's a <see cref="DeviceLinkSourceComponent"/> pointed (via the network
 /// configurator, same as every other linkable machine) at an operating table or medical bed's
 /// <see cref="DeviceLinkSinkComponent"/>. On a periodic refresh while its BUI is open, this

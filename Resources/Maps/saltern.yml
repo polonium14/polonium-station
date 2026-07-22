@@ -27825,7 +27825,7 @@ entities:
         9418:
         - - ArtifactAnalyzerSender
           - ArtifactAnalyzerReceiver
-- proto: computerBodyScanner
+- proto: ComputerBodyScanner
   entities:
   - uid: 7285
     components:

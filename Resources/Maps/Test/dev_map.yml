@@ -9062,7 +9062,7 @@ entities:
     - type: Transform
       pos: 46.5,53.5
       parent: 1
-- proto: computerBodyScanner
+- proto: ComputerBodyScanner
   entities:
   - uid: 1221
     components:

@@ -69,11 +69,13 @@
     containers:
       entity_storage: !type:AllSelector
         children:
+        - id: ComputerBodyScannerFlatpack
+        - id: Multitool
         - id: Scalpel
         - id: Retractor
         - id: Cautery
         - id: Drill
-        - id: Saw
+        - id: SawElectric
         - id: Hemostat
         - id: ClothingMaskSterile
         - id: BoneGel
