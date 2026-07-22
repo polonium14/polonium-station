@@ -3,6 +3,9 @@
   name: job-name-centcommoff
   description: job-description-centcommoff
   playTimeTracker: JobCentralCommandOfficial
+  requirements:
+  - !type:AgeRequirement
+    requiredAge: 21
   setPreference: false
   startingGear: CentcommGear
   icon: "JobIconNanotrasen"

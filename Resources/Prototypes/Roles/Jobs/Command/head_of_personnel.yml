@@ -4,21 +4,14 @@
   description: job-description-hop
   playTimeTracker: JobHeadOfPersonnel
   requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 25h
     - !type:DepartmentTimeRequirement
-      department: Engineering
-      time: 2.5h
-    - !type:DepartmentTimeRequirement
-      department: Medical
-      time: 2.5h
-    - !type:DepartmentTimeRequirement
-      department: Science
-      time: 2.5h
+      department: Civilian
+      time: 5h
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 2.5h
-    - !type:DepartmentTimeRequirement
-      department: Command
-      time: 2.5h
+      time: 5h
   weight: 20
   startingGear: HoPGear
   icon: "JobIconHeadOfPersonnel"

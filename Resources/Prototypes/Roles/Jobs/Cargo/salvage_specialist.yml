@@ -4,9 +4,11 @@
   description: job-description-salvagespec
   playTimeTracker: JobSalvageSpecialist
   requirements:
-    - !type:DepartmentTimeRequirement
-      department: Cargo
-      time: 2.5h
+    - !type:RoleTimeRequirement
+      role: JobCargoTechnician
+      time: 1h
+    - !type:OverallPlaytimeRequirement
+      time: 3h
   icon: "JobIconShaftMiner"
   startingGear: SalvageSpecialistGear
   supervisors: job-supervisors-qm

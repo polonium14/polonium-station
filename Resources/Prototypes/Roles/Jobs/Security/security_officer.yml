@@ -6,7 +6,11 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 4h
+      time: 5h
+    - !type:TraitsRequirement # Funky
+      inverted: true
+      traits:
+      - Pacifist
   startingGear: SecurityOfficerGear
   icon: "JobIconSecurityOfficer"
   supervisors: job-supervisors-hos
