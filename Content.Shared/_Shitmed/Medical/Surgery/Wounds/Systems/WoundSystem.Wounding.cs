@@ -25,9 +25,6 @@ public sealed partial class WoundSystem
 
     private void OnWoundableInit(Entity<WoundableComponent> ent, ref ComponentInit args)
     {
-        ent.Comp.Wounds = _container.EnsureContainer<Container>(ent, WoundableComponent.WoundContainerId);
-        ent.Comp.Bone = _container.EnsureContainer<Container>(ent, WoundableComponent.BoneContainerId);
-
         ent.Comp.SortedThresholds = ent.Comp.Thresholds
             .OrderByDescending(kv => kv.Value)
             .ToArray();
@@ -38,6 +35,9 @@ public sealed partial class WoundSystem
 
     private void OnWoundableMapInit(Entity<WoundableComponent> ent, ref MapInitEvent args)
     {
+        ent.Comp.Wounds = _container.EnsureContainer<Container>(ent, WoundableComponent.WoundContainerId);
+        ent.Comp.Bone = _container.EnsureContainer<Container>(ent, WoundableComponent.BoneContainerId);
+
         if (HasComp<BonelessComponent>(ent) || ent.Comp.Bone is not { } boneContainer)
             return;
 
