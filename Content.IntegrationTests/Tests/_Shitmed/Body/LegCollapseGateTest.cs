@@ -136,7 +136,7 @@ public sealed class LegCollapseGateTest : GameTest
             var legs = new List<EntityUid>();
             foreach (var organ in body.Organs!.ContainedEntities)
             {
-                if (sEntMan.TryGetComponent(organ, out OrganComponent? organComp)
+                if (sEntMan.TryGetComponent(organ, out OrganComponent organComp)
                     && organComp.Category?.Id is "LegLeft" or "LegRight")
                 {
                     legs.Add(organ);
