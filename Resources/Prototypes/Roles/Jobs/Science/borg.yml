@@ -6,9 +6,7 @@
   requirements:
   - !type:RoleTimeRequirement
     role: JobBorg
-    time: 20h
-  - !type:OverallPlaytimeRequirement
-    time: 25h
+    time: 5h
   weight: 10
   icon: JobIconStationAi
   supervisors: job-supervisors-rd
@@ -23,7 +21,7 @@
   playTimeTracker: JobBorg
   requirements:
     - !type:OverallPlaytimeRequirement
-      time: 20h
+      time: 10h
   icon: JobIconBorg
   supervisors: job-supervisors-rd
   jobEntity: PlayerBorgBattery

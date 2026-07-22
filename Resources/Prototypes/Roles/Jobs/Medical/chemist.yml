@@ -4,10 +4,8 @@
   description: job-description-chemist
   playTimeTracker: JobChemist
   requirements:
-    - !type:OverallPlaytimeRequirement #different chems
-      time: 2h
-    - !type:RoleTimeRequirement
-      role: JobMedicalDoctor
+    - !type:DepartmentTimeRequirement
+      department: Medical
       time: 5h
   startingGear: ChemistGear
   icon: "JobIconChemist"
