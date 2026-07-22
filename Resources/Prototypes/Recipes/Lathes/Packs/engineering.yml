@@ -46,7 +46,6 @@
   - CellRechargerCircuitboard
   - WeaponCapacitorRechargerCircuitboard
   - FreezerElectronics
-  - MusicTechFabCircuitboard
 
 - type: latheRecipePack
   id: EngineeringBoardsStatic
@@ -87,6 +86,7 @@
   - PortableGeneratorSuperPacmanMachineCircuitboard
   - PortableGeneratorJrPacmanMachineCircuitboard
   - EmitterCircuitboard
+  - MusicTechFabCircuitboard
   - TelecomServerCircuitboard
   - SMESAdvancedMachineCircuitboard
   - HolopadMachineCircuitboard

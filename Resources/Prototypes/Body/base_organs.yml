@@ -29,6 +29,11 @@
   abstract: true
   parent: [ OrganBase, SolutionFood, SolutionTiny ]
   components:
+  # Woundable organs get their Wounds/Bone containers created on ComponentInit
+  # (WoundSystem.OnWoundableInit), which implicitly adds ContainerManagerComponent - declared
+  # here up front (empty, matching an uninitialized organ's actual state) so PrototypeSaveTest
+  # doesn't see it as gained at spawn. Harmless for non-woundable organs, which never populate it.
+  - type: ContainerContainer
   - type: FlavorProfile
     flavors:
     - chicken # INTRODUCING OUR NEW EVERY-MEAT BURRITO, IT'S GOT EVERY MEAT!

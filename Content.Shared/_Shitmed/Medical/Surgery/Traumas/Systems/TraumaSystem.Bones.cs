@@ -111,6 +111,9 @@ public partial class TraumaSystem
 
     private bool IsLegless(Entity<BodyComponent> body)
     {
+        if (body.Comp.Organs is null || body.Comp.Organs.ContainedEntities.Count == 0)
+            return false;
+
         return GetLegMultiplier(body, "LegLeft", "FootLeft") <= 0f
             && GetLegMultiplier(body, "LegRight", "FootRight") <= 0f;
     }

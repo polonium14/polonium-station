@@ -16,6 +16,7 @@ using Content.Shared.FixedPoint;
 using NUnit.Framework;
 using Robust.Shared.Containers;
 using Robust.Shared.GameObjects;
+using Robust.Shared.Localization;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 
@@ -86,6 +87,7 @@ public sealed class WoundVisibilityTest : GameTest
         var sWound = server.ResolveDependency<IEntitySystemManager>().GetEntitySystem<WoundSystem>();
         var sPartStatus = server.ResolveDependency<IEntitySystemManager>().GetEntitySystem<PartStatusSystem>();
         var sProtoMan = server.ResolveDependency<IPrototypeManager>();
+        var fine = server.ResolveDependency<ILocalizationManager>().GetString("inspect-part-status-fine");
         var map = await pair.CreateTestMap();
         var coords = new MapCoordinates(Vector2.Zero, map.MapId);
 
@@ -128,13 +130,13 @@ public sealed class WoundVisibilityTest : GameTest
             // Above the health analyzer's HandScanner tier - should be invisible to it too.
             woundComp.WoundVisibility = WoundVisibility.AdvancedScanner;
             var hiddenText = sPartStatus.GetPartStatusDescriptions(victim)[TargetBodyPart.Chest];
-            Assert.That(hiddenText, Does.Contain("fine"),
+            Assert.That(hiddenText, Does.Contain(fine),
                 "An AdvancedScanner-tier wound should be hidden from a HandScanner-tier health analyzer scan.");
 
             // At the health analyzer's own tier - should now be visible.
             woundComp.WoundVisibility = WoundVisibility.HandScanner;
             var visibleText = sPartStatus.GetPartStatusDescriptions(victim)[TargetBodyPart.Chest];
-            Assert.That(visibleText, Does.Not.Contain("fine"),
+            Assert.That(visibleText, Does.Not.Contain(fine),
                 "A HandScanner-tier wound should be visible to a HandScanner-tier health analyzer scan.");
         });
     }
