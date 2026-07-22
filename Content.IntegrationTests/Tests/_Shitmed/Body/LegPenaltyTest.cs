@@ -103,6 +103,64 @@ public sealed class LegPenaltyTest : GameTest
         });
     }
 
+    private static void MendBone(IEntityManager sEntMan, TraumaSystem sTrauma, BodyComponent body, ProtoId<OrganCategoryPrototype> category)
+    {
+        Assert.That(LimbTargetMap.TryGetOrganByCategory(sEntMan, body, category, out var organ), Is.True);
+        var woundable = sEntMan.GetComponent<WoundableComponent>(organ);
+        Assert.That(woundable.Bone, Is.Not.Null);
+
+        var bone = woundable.Bone!.ContainedEntities[0];
+        sTrauma.SetBoneIntegrity(bone, sEntMan.GetComponent<BoneComponent>(bone).IntegrityCap);
+    }
+
+    [Test]
+    public async Task BrokenLegsBlockStandingUntilMended()
+    {
+        var pair = Pair;
+        var server = pair.Server;
+        var sEntMan = server.ResolveDependency<Robust.Shared.GameObjects.IEntityManager>();
+        var sTrauma = server.System<TraumaSystem>();
+        var sMovement = server.System<MovementSpeedModifierSystem>();
+        var sStanding = server.System<StandingStateSystem>();
+
+        var map = await pair.CreateTestMap();
+        var coords = new MapCoordinates(Vector2.Zero, map.MapId);
+
+        EntityUid human = default;
+        await server.WaitPost(() =>
+        {
+            human = sEntMan.SpawnEntity("MobHuman", coords);
+        });
+
+        await pair.RunTicksSync(10);
+
+        await server.WaitAssertion(() =>
+        {
+            var body = sEntMan.GetComponent<BodyComponent>(human);
+
+            BreakBone(sEntMan, sTrauma, body, "LegLeft");
+            BreakBone(sEntMan, sTrauma, body, "LegRight");
+
+            sMovement.RefreshMovementSpeedModifiers(human);
+
+            Assert.That(sStanding.IsDown(human), Is.True,
+                "breaking both leg bones should knock the mob down");
+
+            Assert.That(sStanding.Stand(human), Is.False,
+                "a mob with both leg bones broken should not be able to stand up");
+            Assert.That(sStanding.IsDown(human), Is.True,
+                "a mob with both leg bones broken should still be down after a stand attempt");
+
+            MendBone(sEntMan, sTrauma, body, "LegLeft");
+            MendBone(sEntMan, sTrauma, body, "LegRight");
+
+            Assert.That(sStanding.Stand(human), Is.True,
+                "a mob whose leg bones were mended should be able to stand back up");
+            Assert.That(sStanding.IsDown(human), Is.False,
+                "a mob whose leg bones were mended should be standing after a successful stand attempt");
+        });
+    }
+
     [Test]
     public async Task AllFourLimbsBrokenLeavesTheMobUnableToMoveAtAll()
     {

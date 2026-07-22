@@ -31,6 +31,12 @@ public sealed partial class WoundSystem
 
         if (ent.Comp.WoundableIntegrity <= FixedPoint2.Zero)
             ent.Comp.WoundableIntegrity = ent.Comp.IntegrityCap;
+
+        if (_net.IsClient)
+        {
+            ent.Comp.Wounds ??= _container.EnsureContainer<Container>(ent, WoundableComponent.WoundContainerId);
+            ent.Comp.Bone ??= _container.EnsureContainer<Container>(ent, WoundableComponent.BoneContainerId);
+        }
     }
 
     private void OnWoundableMapInit(Entity<WoundableComponent> ent, ref MapInitEvent args)

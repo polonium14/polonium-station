@@ -132,7 +132,7 @@ public sealed partial class SprinterComponent : Component
     {
         DamageDict = new Dictionary<ProtoId<DamageTypePrototype>, FixedPoint2>
         {
-            { "Blunt", 7 },
+            { "Blunt", 2 },     // NFZ-med
         }
     };
 
