@@ -161,18 +161,24 @@ namespace Content.Shared.Preferences
             _traitPreferences = traitPreferences;
             _loadouts = loadouts;
 
-            var hasHighPrority = false;
-            foreach (var (key, value) in _jobPriorities)
+            var hasHighPriority = false;
+            foreach (var key in _jobPriorities.Keys.ToArray())
             {
+                var value = _jobPriorities[key];
+
                 if (value == JobPriority.Never)
+                {
                     _jobPriorities.Remove(key);
-                else if (value != JobPriority.High)
+                    continue;
+                }
+
+                if (value != JobPriority.High)
                     continue;
 
-                if (hasHighPrority)
+                if (hasHighPriority)
                     _jobPriorities[key] = JobPriority.Medium;
 
-                hasHighPrority = true;
+                hasHighPriority = true;
             }
         }
 
