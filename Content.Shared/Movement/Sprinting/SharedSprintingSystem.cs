@@ -14,6 +14,7 @@ using Content.Shared.Bed.Sleep;
 using Content.Shared.Buckle.Components;
 using Content.Shared.CCVar;
 using Content.Shared.Cuffs.Components;
+using Content.Shared._Shitmed.Body;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Gravity;
 using Content.Shared.Humanoid;
@@ -73,7 +74,7 @@ public abstract partial class SharedSprintingSystem : EntitySystem
         SubscribeLocalEvent<SprinterComponent, ToggleWalkEvent>(OnToggleWalk);
         SubscribeLocalEvent<SprinterComponent, KnockedDownEvent>(OnSprintDisablingEvent);
         SubscribeLocalEvent<SprinterComponent, StunnedEvent>(OnSprintDisablingEvent);
-        SubscribeLocalEvent<SprinterComponent, DownedEvent>(OnSprintDisablingEvent);
+        SubscribeLocalEvent<SprinterComponent, DownedEvent>(OnDowned);
         SubscribeLocalEvent<CuffableComponent, SprintAttemptEvent>(OnCuffableSprintAttempt);
         SubscribeLocalEvent<StandingStateComponent, SprintAttemptEvent>(OnStandingStateSprintAttempt);
         SubscribeLocalEvent<SprinterComponent, EntityZombifiedEvent>(OnZombified);
@@ -352,11 +353,13 @@ public abstract partial class SharedSprintingSystem : EntitySystem
     #region Misc.Handlers
     private void OnMobStateChangedEvent(EntityUid uid, SprinterComponent component, MobStateChangedEvent args)
     {
-        if (!component.IsSprinting
-            || args.NewMobState is MobState.Critical or MobState.Dead)
+        if (!component.IsSprinting)
             return;
 
-        ToggleSprint(args.Target, component, false, gracefulStop: false);
+        if (args.NewMobState is not (MobState.Critical or MobState.Dead))
+            return;
+
+        ToggleSprint(args.Target, component, false);
     }
 
     private void OnSleep(EntityUid uid, SprinterComponent component, ref SleepStateChangedEvent args)
@@ -382,6 +385,16 @@ public abstract partial class SharedSprintingSystem : EntitySystem
             return;
 
         ToggleSprint(uid, component, false, gracefulStop: false);
+    }
+
+    // Down() is also used by leg-collapse trauma. Abrupt-stop blunt there cracked legs further
+    // and locked players into a stand→refresh→fall loop. KnockedDown/Stunned still punish hard.
+    private void OnDowned(EntityUid uid, SprinterComponent component, ref DownedEvent args)
+    {
+        if (!component.IsSprinting)
+            return;
+
+        ToggleSprint(uid, component, false);
     }
     private void OnZombified(EntityUid uid, SprinterComponent component, ref EntityZombifiedEvent args) =>
         component.SprintSpeedMultiplier *= 0.9f; // We dont want super fast zombies do we?

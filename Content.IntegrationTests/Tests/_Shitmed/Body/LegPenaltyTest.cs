@@ -49,6 +49,68 @@ public sealed class LegPenaltyTest : GameTest
         });
     }
 
+    [Test]
+    public async Task SpeedRefreshWhileDownDoesNotPreventLaterStandingWithHealthyLegs()
+    {
+        var pair = Pair;
+        var server = pair.Server;
+        var sEntMan = server.ResolveDependency<Robust.Shared.GameObjects.IEntityManager>();
+        var sMovement = server.System<MovementSpeedModifierSystem>();
+        var sStanding = server.System<StandingStateSystem>();
+
+        var map = await pair.CreateTestMap();
+        var coords = new MapCoordinates(Vector2.Zero, map.MapId);
+
+        EntityUid human = default;
+        await server.WaitPost(() =>
+        {
+            human = sEntMan.SpawnEntity("MobHuman", coords);
+        });
+
+        await pair.RunTicksSync(10);
+
+        await server.WaitAssertion(() =>
+        {
+            // Simulate crawl/knockdown, then the movespeed refreshes that sprint/equip trigger.
+            Assert.That(sStanding.Down(human), Is.True);
+            sMovement.RefreshMovementSpeedModifiers(human);
+            sMovement.RefreshMovementSpeedModifiers(human);
+
+            Assert.That(sStanding.Stand(human), Is.True,
+                "healthy legs must still be able to stand after movespeed refreshes while downed");
+            Assert.That(sEntMan.GetComponent<StandingStateComponent>(human).Standing, Is.True);
+        });
+    }
+
+    [Test]
+    public async Task GastropoidIsNotForcedDownByLegTraumaLogic()
+    {
+        var pair = Pair;
+        var server = pair.Server;
+        var sEntMan = server.ResolveDependency<Robust.Shared.GameObjects.IEntityManager>();
+        var sMovement = server.System<MovementSpeedModifierSystem>();
+
+        var map = await pair.CreateTestMap();
+        var coords = new MapCoordinates(Vector2.Zero, map.MapId);
+
+        EntityUid snail = default;
+        await server.WaitPost(() =>
+        {
+            snail = sEntMan.SpawnEntity("MobGastropoid", coords);
+        });
+
+        await pair.RunTicksSync(10);
+
+        await server.WaitAssertion(() =>
+        {
+            sMovement.RefreshMovementSpeedModifiers(snail);
+
+            var standing = sEntMan.GetComponent<StandingStateComponent>(snail);
+            Assert.That(standing.Standing, Is.True,
+                "legless-by-design species must not be collapsed by bipedal leg trauma movement");
+        });
+    }
+
     private static void BreakBone(IEntityManager sEntMan, TraumaSystem sTrauma, BodyComponent body, ProtoId<OrganCategoryPrototype> category)
     {
         Assert.That(LimbTargetMap.TryGetOrganByCategory(sEntMan, body, category, out var organ), Is.True);
@@ -59,6 +121,17 @@ public sealed class LegPenaltyTest : GameTest
         sTrauma.SetBoneIntegrity(bone, 0);
     }
 
+    private static void CrackBone(IEntityManager sEntMan, TraumaSystem sTrauma, BodyComponent body, ProtoId<OrganCategoryPrototype> category)
+    {
+        Assert.That(LimbTargetMap.TryGetOrganByCategory(sEntMan, body, category, out var organ), Is.True);
+        var woundable = sEntMan.GetComponent<WoundableComponent>(organ);
+        Assert.That(woundable.Bone, Is.Not.Null);
+
+        var bone = woundable.Bone!.ContainedEntities[0];
+        // Cracked threshold is integrity >= 10 and < 25 (see TraumaSystem.Data bone thresholds)
+        sTrauma.SetBoneIntegrity(bone, 10);
+    }
+
     [Test]
     public async Task BothLegsBrokenCrawlsOnHealthyArmsAndCollapsesTheMob()
     {
@@ -66,7 +139,6 @@ public sealed class LegPenaltyTest : GameTest
         var server = pair.Server;
         var sEntMan = server.ResolveDependency<Robust.Shared.GameObjects.IEntityManager>();
         var sTrauma = server.System<TraumaSystem>();
-        var sMovement = server.System<MovementSpeedModifierSystem>();
 
         var map = await pair.CreateTestMap();
         var coords = new MapCoordinates(Vector2.Zero, map.MapId);
@@ -84,9 +156,8 @@ public sealed class LegPenaltyTest : GameTest
             var body = sEntMan.GetComponent<BodyComponent>(human);
 
             BreakBone(sEntMan, sTrauma, body, "LegLeft");
-            BreakBone(sEntMan, sTrauma, body, "LegRight");
 
-            sMovement.RefreshMovementSpeedModifiers(human);
+            BreakBone(sEntMan, sTrauma, body, "LegRight");
 
             var moveComp = sEntMan.GetComponent<MovementSpeedModifierComponent>(human);
             Assert.That(moveComp.WalkSpeedModifier, Is.EqualTo(0.125f).Within(0.01f),
@@ -100,6 +171,40 @@ public sealed class LegPenaltyTest : GameTest
             sEntMan.EventBus.RaiseLocalEvent(human, standAttempt);
             Assert.That(standAttempt.Cancelled, Is.True,
                 "a legless mob should not be able to stand back up");
+        });
+    }
+
+    [Test]
+    public async Task BrokenPlusCrackedLegsCollapsesAndBlocksStanding()
+    {
+        var pair = Pair;
+        var server = pair.Server;
+        var sEntMan = server.ResolveDependency<Robust.Shared.GameObjects.IEntityManager>();
+        var sTrauma = server.System<TraumaSystem>();
+
+        var map = await pair.CreateTestMap();
+        var coords = new MapCoordinates(Vector2.Zero, map.MapId);
+
+        EntityUid human = default;
+        await server.WaitPost(() =>
+        {
+            human = sEntMan.SpawnEntity("MobHuman", coords);
+        });
+
+        await pair.RunTicksSync(10);
+
+        await server.WaitAssertion(() =>
+        {
+            var body = sEntMan.GetComponent<BodyComponent>(human);
+            BreakBone(sEntMan, sTrauma, body, "LegLeft");
+            CrackBone(sEntMan, sTrauma, body, "LegRight");
+
+            Assert.That(sEntMan.GetComponent<StandingStateComponent>(human).Standing, Is.False,
+                "broken + cracked legs are below the collapse threshold");
+
+            var standAttempt = new StandAttemptEvent();
+            sEntMan.EventBus.RaiseLocalEvent(human, standAttempt);
+            Assert.That(standAttempt.Cancelled, Is.True);
         });
     }
 

@@ -91,16 +91,22 @@ public partial class TraumaSystem
 
         var legless = IsLegless(body);
 
-        var multiplier = legless || _standing.IsDown(body.Owner)
+        var isDown = _standing.IsDown(body.Owner);
+
+        var standingMultiplier =
+            (GetLegMultiplier(body, "LegLeft", "FootLeft") + GetLegMultiplier(body, "LegRight", "FootRight")) / 2f;
+
+        var shouldCollapse = !isDown && standingMultiplier < LegCollapseSpeedThreshold;
+        var multiplier = legless || isDown || shouldCollapse
             ? GetCrawlMultiplier(body)
-            : (GetLegMultiplier(body, "LegLeft", "FootLeft") + GetLegMultiplier(body, "LegRight", "FootRight")) / 2f;
+            : standingMultiplier;
 
         args.ModifySpeed(multiplier);
 
-        if (multiplier < LegCollapseSpeedThreshold)
+        if (shouldCollapse)
             _standing.Down(body);
 
-        if (legless)
+        if (legless || standingMultiplier < LegCollapseSpeedThreshold)
             _alert.ShowAlert(body.Owner, _legsCollapsedAlertId);
         else
             _alert.ClearAlert(body.Owner, _legsCollapsedAlertId);
@@ -108,7 +114,15 @@ public partial class TraumaSystem
 
     private void OnStandAttempt(Entity<BodyComponent> body, ref StandAttemptEvent args)
     {
-        if (IsLegDependent(body) && IsLegless(body))
+        if (IsLegDependent(body) && IsLegless(body)) {
+            args.Cancel();
+            return;
+        }
+
+        var standingMultiplier =
+            (GetLegMultiplier(body, "LegLeft", "FootLeft") + GetLegMultiplier(body, "LegRight", "FootRight")) / 2f;
+
+        if (standingMultiplier < LegCollapseSpeedThreshold)
             args.Cancel();
     }
 
@@ -151,18 +165,21 @@ public partial class TraumaSystem
         ProtoId<OrganCategoryPrototype> legCategory,
         ProtoId<OrganCategoryPrototype> footCategory)
     {
-        if (!LimbTargetMap.TryGetOrganByCategory(EntityManager, body, legCategory, out var legOrgan)
-            || !TryComp<WoundableComponent>(legOrgan, out var legWoundable)
-            || !TryGetBoneSeverity(legWoundable, out var legSeverity))
+        if (!LimbTargetMap.TryGetOrganByCategory(EntityManager, body, legCategory, out var legOrgan))
             return 0f;
 
-        var legMultiplier = legSeverity switch
+        var legMultiplier = 1f;
+        if (TryComp<WoundableComponent>(legOrgan, out var legWoundable)
+            && TryGetBoneSeverity(legWoundable, out var legSeverity))
         {
-            BoneSeverity.Cracked => 0.5f,
-            BoneSeverity.Damaged => 1f / 1.6f,
-            BoneSeverity.Broken => 0f,
-            _ => 1f,
-        };
+            legMultiplier = legSeverity switch
+            {
+                BoneSeverity.Cracked => 0.5f,
+                BoneSeverity.Damaged => 1f / 1.6f,
+                BoneSeverity.Broken => 0f,
+                _ => 1f,
+            };
+        }
 
         if (legMultiplier == 0f)
             return 0f;
@@ -189,10 +206,12 @@ public partial class TraumaSystem
 
     private float GetLimbMultiplier(Entity<BodyComponent> body, ProtoId<OrganCategoryPrototype> category)
     {
-        if (!LimbTargetMap.TryGetOrganByCategory(EntityManager, body, category, out var organ)
-            || !TryComp<WoundableComponent>(organ, out var woundable)
-            || !TryGetBoneSeverity(woundable, out var severity))
+        if (!LimbTargetMap.TryGetOrganByCategory(EntityManager, body, category, out var organ))
             return 0f;
+
+        if (!TryComp<WoundableComponent>(organ, out var woundable)
+            || !TryGetBoneSeverity(woundable, out var severity))
+            return 1f;
 
         return severity switch
         {
