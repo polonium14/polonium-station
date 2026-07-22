@@ -17,9 +17,9 @@ cargo-console-menu-categories-label = Kategorie:{ " " }
 cargo-console-menu-search-bar-placeholder = Szukaj
 cargo-console-menu-requests-label = Prośby
 cargo-console-menu-orders-label = Zamówienia
-cargo-console-menu-order-reason-description = Powód: { $reason }
+cargo-console-menu-order-reason-description = Powód: { $orderReason }
 cargo-console-menu-populate-categories-all-text = Wszystko
-cargo-console-menu-populate-orders-cargo-order-row-product-name-text = { $productName } (x{ $orderAmount }) przez { $orderRequester } z [color={ $accountColor }]{ $account }[/color]
+cargo-console-menu-populate-orders-cargo-order-row-product-name-text = Zamówiono przez: {$orderRequester} z [color={$accountColor}]{$account}[/color]
 cargo-console-menu-cargo-order-row-approve-button = Akceptuj
 cargo-console-menu-cargo-order-row-cancel-button = Anuluj
 cargo-console-menu-tab-title-orders = Zamówienia
@@ -61,7 +61,7 @@ cargo-console-paper-print-name = Zamówienie #{ $orderNumber }
 cargo-console-paper-print-text = [head=2]Zamówienie #{ $orderNumber }[/head]
     { "[bold]Przedmiot:[/bold]" } { $itemName } (x{ $orderQuantity })
     { "[bold]Zamówiony przez:[/bold]" } { $requester }
-    
+
     { "[head=3]Informacja o zamówieniu[/head]" }
     { "[bold]Płatnik[/bold]:" } { $account } [font="Monospace"]\[{ $accountcode }\][/font]
     { "[bold]Akceptowane przez:[/bold]" } { $approver }
@@ -95,7 +95,7 @@ cargo-acquisition-slip-body = [head=3]Szczegóły mienia[/head]
     { "[bold]Koszt jednostkowy:[/bold" }] ${ $unit }
     { "[bold]Liczba:[/bold]" } { $amount }
     { "[bold]Koszt:[/bold]" } ${ $cost }
-    
+
     { "[head=3]Szczegóły zakupu[/head]" }
     { "[bold]Zamawiający:[/bold]" } { $orderer }
     { "[bold]Powód:[/bold]" } { $reason }
