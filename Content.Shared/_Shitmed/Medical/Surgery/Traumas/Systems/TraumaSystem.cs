@@ -38,6 +38,7 @@ public sealed partial class TraumaSystem : EntitySystem
     [Dependency] private MobStateSystem _mobState = default!;
     [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private AlertsSystem _alert = default!;
+    [Dependency] private InitialBodySystem _initialBody = default!;
 
     private string _brokenBonesAlertId = "BrokenBones";
     private string _legsCollapsedAlertId = "LegsCollapsed";
