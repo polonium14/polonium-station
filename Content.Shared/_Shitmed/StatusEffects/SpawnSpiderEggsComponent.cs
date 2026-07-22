@@ -8,5 +8,5 @@ namespace Content.Shared._Shitmed.StatusEffects;
 [RegisterComponent, NetworkedComponent]
 public sealed partial class SpawnSpiderEggsComponent : SpawnEntityEffectComponent
 {
-    public override string EntityPrototype { get; set; } = "EggSpiderFertilized";
+    public override string EntityPrototype { get; set; } = "EggSpider";
 }

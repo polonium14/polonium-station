@@ -8,8 +8,12 @@
       time: 10h
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 10h
+      time: 40h
       inverted: true # stop playing intern if you're good at security!
+    - !type:TraitsRequirement # Funky
+      inverted: true
+      traits:
+      - Pacifist
   startingGear: SecurityCadetGear
   icon: "JobIconSecurityCadet"
   supervisors: job-supervisors-security

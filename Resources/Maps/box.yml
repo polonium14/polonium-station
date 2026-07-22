@@ -74157,7 +74157,7 @@ entities:
     - type: Transform
       pos: 7.5,-46.5
       parent: 8364
-- proto: computerBodyScanner
+- proto: ComputerBodyScanner
   entities:
   - uid: 2390
     components:

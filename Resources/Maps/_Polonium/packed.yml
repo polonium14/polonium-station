@@ -44572,7 +44572,7 @@ entities:
         15151:
         - - ArtifactAnalyzerSender
           - ArtifactAnalyzerReceiver
-- proto: computerBodyScanner
+- proto: ComputerBodyScanner
   entities:
   - uid: 31
     components:

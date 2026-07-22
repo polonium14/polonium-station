@@ -19,8 +19,8 @@
             #central command
             StationAi: [ 1, 1 ]
             NanotrasenRepresentative: [ 1, 1 ] # Polonium
-            InternalAffairsAgent: [ 2, 2 ]
-            Magistrate: [ 1, 1 ]
+#            InternalAffairsAgent: [ 2, 2 ]
+#            Magistrate: [ 1, 1 ]
             #command
             Captain: [ 1, 1 ]
             HeadOfPersonnel: [ 1, 1 ]

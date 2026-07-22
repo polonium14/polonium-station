@@ -11,7 +11,7 @@ jobs:
     if: github.actor != 'Polonium-bot' && github.actor != 'PJBot' && github.actor != 'github-actions[bot]' && github.actor != 'github-actions'
     runs-on: ubuntu-latest
     steps:
-    - uses: actions-ecosystem/action-add-labels@v1
+    - uses: actions-ecosystem/action-add-labels@v1.1.3
       if: join(github.event.issue.labels) == ''
       with:
-        labels: "S: Untriaged"
+        labels: "S: Niesortowane"

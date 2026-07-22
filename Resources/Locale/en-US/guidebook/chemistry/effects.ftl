@@ -1,18 +1,3 @@
--create-3rd-person =
-    { $chance ->
-        [1] Tworzy
-       *[other] tworzyć
-    }
--cause-3rd-person =
-    { $chance ->
-        [1] Powoduje
-       *[other] powodować
-    }
--satiate-3rd-person =
-    { $chance ->
-        [1] Zaspokaja
-       *[other] zaspokajać
-    }
 reagent-effect-guidebook-create-entity-reaction-effect =
     { $chance ->
         [1] Tworzy

@@ -86,6 +86,9 @@ public partial class TraumaSystem
         if (!LimbTargetMap.TryGetOrganByCategory(EntityManager, body, "Torso", out _))
             return;
 
+        if (!IsLegDependent(body))
+            return;
+
         var legless = IsLegless(body);
 
         var multiplier = legless || _standing.IsDown(body.Owner)
@@ -105,12 +108,30 @@ public partial class TraumaSystem
 
     private void OnStandAttempt(Entity<BodyComponent> body, ref StandAttemptEvent args)
     {
-        if (IsLegless(body))
+        if (IsLegDependent(body) && IsLegless(body))
             args.Cancel();
+    }
+
+    /// <summary>
+    /// Whether this body's species is anatomically expected to have legs at all. Bodies that
+    /// were never meant to have any (borg chassis have no InitialBody; leg-free species like
+    /// gastropoids have a manifest without leg categories) locomote without them and are exempt
+    /// from leg collapse - otherwise IsLegless would read their normal anatomy as "both legs
+    /// gone" and permanently force them down. InitialBodyComponent persists on the mob after
+    /// spawn, so its manifest doubles as the expected-anatomy record; a mob whose legs are
+    /// dismembered mid-round still counts as leg-dependent and collapses as intended.
+    /// </summary>
+    private bool IsLegDependent(Entity<BodyComponent> body)
+    {
+        return _initialBody.ExpectsOrgan(body.Owner, "LegLeft")
+            || _initialBody.ExpectsOrgan(body.Owner, "LegRight");
     }
 
     private bool IsLegless(Entity<BodyComponent> body)
     {
+        if (body.Comp.Organs is null || body.Comp.Organs.ContainedEntities.Count == 0)
+            return false;
+
         return GetLegMultiplier(body, "LegLeft", "FootLeft") <= 0f
             && GetLegMultiplier(body, "LegRight", "FootRight") <= 0f;
     }

@@ -6,16 +6,19 @@
   requirements:
     - !type:RoleTimeRequirement
       role: JobWarden
-      time: 3h
-    - !type:RoleTimeRequirement
-      role: JobDetective
-      time: 1h # knowing how to use the tools is important
+      time: 10h
     - !type:RoleTimeRequirement
       role: JobSecurityOfficer
-      time: 5h
+      time: 20h
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 10h
+      time: 30h
+    - !type:OverallPlaytimeRequirement
+      time: 40h
+    - !type:TraitsRequirement # Funky
+      inverted: true
+      traits:
+      - Pacifist
   weight: 10
   startingGear: HoSGear
   icon: "JobIconHeadOfSecurity"

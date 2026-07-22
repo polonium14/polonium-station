@@ -2,6 +2,7 @@ using System.Numerics;
 using Content.Shared._Shitmed.Medical.Surgery;
 using Robust.Shared.Containers;
 using Robust.Shared.Map;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Body;
 
@@ -46,5 +47,14 @@ public sealed partial class InitialBodySystem : EntitySystem
         }
 
         EnsureComp<SurgeryTargetComponent>(ent);
+    }
+
+    /// <summary>
+    /// Whether this body's initial-organ manifest includes the given category - i.e. whether
+    /// the species is anatomically expected to have one, regardless of what's currently attached.
+    /// </summary>
+    public bool ExpectsOrgan(Entity<InitialBodyComponent?> ent, ProtoId<OrganCategoryPrototype> category)
+    {
+        return Resolve(ent, ref ent.Comp, false) && ent.Comp.Organs.ContainsKey(category);
     }
 }
