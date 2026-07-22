@@ -20,10 +20,10 @@
   setPreference: false
   requirements:
     - !type:OverallPlaytimeRequirement
-      time: 72000 #20 hrs
+      time: 10h # 10 hours
     - !type:RoleTimeRequirement
       role: JobLawyer
-      time: 18000 #5 hrs
+      time: 2.5h # 2.5 hours
   weight: 0
   startingGear: InternalAffairsAgentGear
   icon: "JobIconInternalAffairsAgent"
@@ -61,3 +61,4 @@
     - Flash
     - BluespaceLifelineImplanter
     - BoxFolderCentComClipboard
+

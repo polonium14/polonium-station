@@ -7,7 +7,7 @@
   # guides: [ BloodCult ] # TODO: Add BloodCult guide entry
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 36000 # 10h
+    time: 18000 # 10h
 
 - type: startingGear
   id: BloodCultistGear

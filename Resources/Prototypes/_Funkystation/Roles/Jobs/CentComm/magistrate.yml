@@ -19,13 +19,13 @@
   requirements:
   - !type:RoleTimeRequirement
     role: JobHeadOfSecurity
-    time: 54000 #15 hrs - to unlock HOS, you need to play security for 35 hours (10 warden, 20 secoff, 5 cadet).
+    time: 7.5h # 7.5 hours
   - !type:DepartmentTimeRequirement
     department: CentralCommand
-    time: 72000 #20 hrs - not NT rep hours, as that requires command role time - too stringent. IAA will do.
+    time: 10h # 10 hours
   - !type:DepartmentTimeRequirement
     department: Security
-    time: 270000 #75 hrs - to demand 25 hours of security in addition to the 20 hour HOS requirement, which implies 50 total hours in security roles once complete.
+    time: 37.5h # 37.5 hours
   weight: 0
   startingGear: MagistrateGear
   icon: "JobIconMagistrate"
@@ -68,3 +68,4 @@
     - BookSpaceLaw
     - BluespaceLifelineImplanter
     - BoxFolderCentComClipboard
+

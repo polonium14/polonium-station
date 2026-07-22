@@ -28,13 +28,13 @@
   playTimeTracker: JobBlueshieldOfficer
   requirements:
     - !type:OverallPlaytimeRequirement
-      time: 72000 #20 hrs
+      time: 10h # 10 hours
     - !type:DepartmentTimeRequirement
       department: Medical
-      time: 18000 # 5 hours
+      time: 2.5h # 2.5 hours
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 36000 # 10 hours
+      time: 5h # 5 hours
   weight: 20
   startingGear: BlueshieldOfficerGear
   icon: "JobIconBlueshieldOfficer"
@@ -79,3 +79,4 @@
     back:
     - Flash
     - BluespaceLifelineImplanter #DeathAcidifierImplanter
+

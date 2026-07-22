@@ -7,7 +7,7 @@
   guides: [ Zombies ]
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 1h
+    time: 0.5h
 
 - type: antagSpecifier
   parent: RestrictedAntag

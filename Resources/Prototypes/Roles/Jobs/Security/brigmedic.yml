@@ -6,9 +6,9 @@
   requirements:
   - !type:DepartmentTimeRequirement
     department: Medical
-    time: 14400
+    time: 7200
   - !type:OverallPlaytimeRequirement
-    time: 36000 #10 hrs
+    time: 5h # 5 hours
   startingGear: BrigmedicGear
   icon: "JobIconBrigmedic"
   supervisors: job-supervisors-hos
@@ -39,3 +39,4 @@
     gloves: ClothingHandsGlovesNitrile
     shoes: ClothingShoesColorRed
     belt: ClothingBeltMedicalFilled
+

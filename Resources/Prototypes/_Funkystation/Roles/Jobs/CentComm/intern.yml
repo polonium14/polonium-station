@@ -6,10 +6,10 @@
   setPreference: false
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 360000 #100 hrs
+    time: 50h # 50 hours
   - !type:DepartmentTimeRequirement
     department: CentralCommand
-    time: 72000 #20 hours
+    time: 10h # 10 hours
   weight: 0
   startingGear: CentralCommandInternGear
   icon: JobIconCentralCommandIntern
@@ -41,3 +41,4 @@
   storage:
     back:
     - BookSpaceLaw
+

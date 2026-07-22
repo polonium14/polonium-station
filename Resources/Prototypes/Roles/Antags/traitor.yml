@@ -7,7 +7,7 @@
   guides: [ Traitors ]
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 1h
+    time: 0.5h
 
 - type: antagSpecifier
   abstract: true
@@ -34,7 +34,7 @@
   guides: [ Traitors ]
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 1h
+    time: 0.5h
 
 - type: antagSpecifier
   parent: BaseTraitor

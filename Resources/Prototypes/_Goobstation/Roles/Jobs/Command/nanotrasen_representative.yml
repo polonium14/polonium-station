@@ -28,10 +28,10 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Command
-      time: 144000 #40 hrs
+      time: 20h # 20 hours
     - !type:RoleTimeRequirement
       role: JobInternalAffairsAgent
-      time: 36000 #10 hrs
+      time: 5h # 5 hours
   weight: 20
   startingGear: NanotrasenRepresentativeGear
   icon: "JobIconNanotrasenRepresentative"
@@ -68,3 +68,4 @@
     - Flash
     - BluespaceLifelineImplanter
     - BoxFolderCentComClipboard
+
