@@ -1,26 +1,60 @@
-﻿"Changes: Sprites":
+﻿# SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2024 TsjipTsjip <19798667+TsjipTsjip@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 deathride58 <deathride58@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
+"Zmiany: Sprite":
 - changed-files:
   - any-glob-to-any-file: '**/*.rsi/*.png'
 
-"Changes: Map":
+"Zmiany: Mapa":
 - changed-files:
   - any-glob-to-any-file:
     - 'Resources/Maps/**/*.yml'
     - 'Resources/Prototypes/Maps/**/*.yml'
 
-"Changes: UI":
+"Zmiany: UI":
 - changed-files:
   - any-glob-to-any-file: '**/*.xaml*'
 
-"Changes: Shaders":
+"Zmiany: Shadery":
 - changed-files:
   - any-glob-to-any-file: '**/*.swsl'
 
-"Changes: Audio":
+"Zmiany: Audio":
 - changed-files:
   - any-glob-to-any-file: '**/*.ogg'
 
-"Changes: No C#":
+"Zmiany: Brak C#":
 - changed-files:
   # Equiv to any-glob-to-all as long as this has one matcher. If ALL changed files are not C# files, then apply label.
   - all-globs-to-all-files: "!**/*.cs"
+
+"O: C#":
+- changed-files:
+  - any-glob-to-any-file: "**/*.cs"
+
+"O: Tłumaczenie":
+- changed-files:
+  - any-glob-to-any-file: '**/*.ftl'
+
+"Zmiany: Skrypty":
+- changed-files:
+  - any-glob-to-any-file: 'Tools/**'
+  - any-glob-to-any-file: 'Scripts/**'
+
+"Zmiany: Assety":
+- changed-files:
+  - all-globs-to-any-file: ['**/*.png', '!**/*.rsi/*.png']
+  - any-glob-to-any-file: '**/*.ogg'
+  - any-glob-to-any-file: '**/*.svg'
+  - any-glob-to-any-file: '**/*.ico'
+
+"O: Dokumentacja":
+- changed-files:
+  - any-glob-to-any-file: 'Resources/ServerInfo/**/*.xml'
