@@ -14,7 +14,20 @@ concurrency:
 
 jobs:
   build:
-    if: github.actor != 'Polonium-bot' && github.actor != 'PJBot' && github.actor != 'github-actions[bot]' && github.actor != 'github-actions' && github.event.pull_request.draft == false
+    if: >-
+      github.actor != 'Polonium-bot' && github.actor != 'PJBot' &&
+      github.actor != 'github-actions[bot]' && github.actor != 'github-actions' &&
+      (github.event_name != 'pull_request' ||
+        (github.event.pull_request.user.login != 'Polonium-bot' &&
+         github.event.pull_request.user.login != 'PJBot' &&
+         github.event.pull_request.user.login != 'github-actions[bot]' &&
+         github.event.pull_request.user.login != 'github-actions')) &&
+      (github.event_name != 'push' ||
+        (github.event.pusher.name != 'Polonium-bot' &&
+         github.event.pusher.name != 'PJBot' &&
+         github.event.pusher.name != 'github-actions[bot]' &&
+         github.event.pusher.name != 'github-actions')) &&
+      (github.event_name != 'pull_request' || github.event.pull_request.draft == false)
     strategy:
       matrix:
         os: [ubuntu-latest]
@@ -52,7 +65,7 @@ jobs:
         run: dotnet run --project Content.MapRenderer Dev
 
   ci-success:
-    name: Build & Test Debug
+    name: Build & Test Map Renderer
     needs:
       - build
     runs-on: ubuntu-latest
