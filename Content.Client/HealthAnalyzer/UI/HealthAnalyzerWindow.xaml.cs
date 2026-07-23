@@ -214,7 +214,13 @@ public sealed partial class HealthAnalyzerWindow : FancyWindow
         // Whole-body view has no single DamageableComponent that sums every limb (the mob's
         // own pool tracks whatever's dealt directly to it, not a total of its organs - see
         // BodyDamageBridgeSystem), so it's computed here by adding up every organ's damage.
-        var bodyDamage = isPart ? _damageable.GetAllDamage(damageSource) : GetBodyDamage(_target.Value);
+        // Mobs without TargetingComponent (corgi, cat, crab) never get their damage bridged
+        // to limb organs at all, so fall back to the mob's own DamageableComponent for those.
+        var bodyDamage = isPart
+            ? _damageable.GetAllDamage(damageSource)
+            : _entityManager.HasComponent<TargetingComponent>(_target.Value)
+                ? GetBodyDamage(_target.Value)
+                : _damageable.GetAllDamage(_target.Value);
 
         ReturnButton.Visible = isPart;
         PartNameLabel.Visible = isPart;
