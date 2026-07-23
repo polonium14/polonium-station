@@ -55,7 +55,7 @@ public abstract partial class SharedSurgerySystem
         SubSurgery<SurgeryAffixOrganStepComponent>(OnAffixOrganStep, OnAffixOrganCheck);
         SubSurgery<SurgeryTraumaTreatmentStepComponent>(OnTraumaTreatmentStep, OnTraumaTreatmentCheck);
         SubSurgery<SurgeryBleedsTreatmentStepComponent>(OnBleedsTreatmentStep, OnBleedsTreatmentCheck);
-        SubSurgery<SurgeryStepPainInflicterComponent>(OnPainInflicterStep, OnPainInflicterCheck);
+        SubscribeLocalEvent<SurgeryStepPainInflicterComponent, SurgeryStepEvent>(OnPainInflicterStep);
         Subs.BuiEvents<SurgeryTargetComponent>(SurgeryUIKey.Key, subs =>
         {
             subs.Event<SurgeryStepChosenBuiMsg>(OnSurgeryTargetStepChosen);
@@ -502,16 +502,6 @@ public abstract partial class SharedSurgerySystem
         }
     }
 
-    private void OnPainInflicterCheck(Entity<SurgeryStepPainInflicterComponent> ent, ref SurgeryStepCompleteCheckEvent args)
-    {
-        if (!_consciousness.TryGetNerveSystem(args.Body, out var nerveSys))
-            return;
-
-        if (!_pain.TryGetPainModifier(nerveSys.Value.Owner, args.Part, "SurgeryPain_wound", out _, nerveSys)
-            && !_pain.TryGetPainModifier(nerveSys.Value.Owner, args.Part, "SurgeryPain_trauma", out _, nerveSys))
-            args.Cancelled = true;
-    }
-
     private void OnSurgeryTargetStepChosen(Entity<SurgeryTargetComponent> ent, ref SurgeryStepChosenBuiMsg args)
     {
         if (!_timing.IsFirstTimePredicted)
@@ -788,7 +778,11 @@ public abstract partial class SharedSurgerySystem
                 return true;
 
             if (!IsStepComplete(body, part, surgeryStep, surgery))
+            {
+                if (_net.IsServer)
+                    Log.Warning($"Surgery {ToPrettyString(surgery)}: step {step} blocked because {surgeryStep} reads as incomplete on {ToPrettyString(part)} of {ToPrettyString(body)}.");
                 return false;
+            }
         }
 
         return true;

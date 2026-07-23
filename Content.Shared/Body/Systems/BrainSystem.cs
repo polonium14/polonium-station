@@ -4,12 +4,14 @@ using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Pointing;
+using Robust.Shared.Timing;
 
 namespace Content.Shared.Body.Systems;
 
 public sealed partial class BrainSystem : EntitySystem
 {
     [Dependency] private SharedMindSystem _mindSystem = default!;
+    [Dependency] private IGameTiming _timing = default!;
 
     public override void Initialize()
     {
@@ -22,6 +24,12 @@ public sealed partial class BrainSystem : EntitySystem
 
     private void HandleMind(EntityUid newEntity, EntityUid oldEntity)
     {
+        // EnsureComp of networked MindContainer/GhostOnMove during client state application
+        // corrupts NetComponents mid-iteration in ResetPredictedEntities. Mind transfer is
+        // server-authoritative and replicates on its own.
+        if (_timing.ApplyingState)
+            return;
+
         if (TerminatingOrDeleted(newEntity) || TerminatingOrDeleted(oldEntity))
             return;
 

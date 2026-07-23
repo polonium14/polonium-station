@@ -141,10 +141,24 @@ public abstract partial class SharedSurgerySystem : EntitySystem
         if (_net.IsClient)
             return;
 
-        if (args.Event.Target is not { } target
-            || !IsSurgeryValid(ent, target, args.Event.Surgery, args.Event.Step, args.Event.User, out var surgery, out var part, out var _)
-            || IsStepComplete(ent, part, args.Event.Step, surgery))
+        if (args.Event.Target is not { } target)
+        {
             args.Cancel();
+            return;
+        }
+
+        if (!IsSurgeryValid(ent, target, args.Event.Surgery, args.Event.Step, args.Event.User, out var surgery, out var part, out var _))
+        {
+            Log.Warning($"Cancelling surgery doafter mid-way: {args.Event.Surgery}/{args.Event.Step} on {ToPrettyString(target)} of {ToPrettyString(ent)} - IsSurgeryValid failed.");
+            args.Cancel();
+            return;
+        }
+
+        if (IsStepComplete(ent, part, args.Event.Step, surgery))
+        {
+            Log.Warning($"Cancelling surgery doafter mid-way: {args.Event.Surgery}/{args.Event.Step} on {ToPrettyString(target)} of {ToPrettyString(ent)} - step already complete.");
+            args.Cancel();
+        }
     }
 
     private void OnTargetDoAfter(Entity<SurgeryTargetComponent> ent, ref SurgeryDoAfterEvent args)
