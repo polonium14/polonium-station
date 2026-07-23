@@ -1,0 +1,44 @@
+- type: entity
+  name: Tactical Igniter
+  parent: [SolutionToolThermiteIgniter, BaseWelder]
+  id: TacticalIgniter
+  description: "A small welder like device to ignite thermite. Terrible as a welder."
+  components:
+  - type: Sprite
+    sprite: Objects/Tools/welder_mini.rsi
+  - type: Item
+    size: Tiny
+    sprite: Objects/Tools/welder_mini.rsi
+  - type: RefillableSolution
+  - type: Tool
+    speedModifier: 0.2
+  - type: PointLight
+    enabled: false
+    radius: 1.0
+    color: orange
+  - type: IgnitionSource
+    temperature: 300
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 3
+  - type: ItemToggleMeleeWeapon
+    activatedDamage:
+      types:
+        Heat: 5
+  - type: ItemToggleSize
+    activatedSize: Medium
+  - type: Welder
+    fuelConsumption: 1.5
+    fuelLitCost: 0
+
+- type: entity
+  parent: [SolutionWelder, SolutionToolVeryTiny]
+  id: SolutionToolThermiteIgniter
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: WeldingFuel
+        Quantity: 7.5
