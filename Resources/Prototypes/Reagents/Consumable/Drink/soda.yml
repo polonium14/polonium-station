@@ -83,6 +83,12 @@
   physicalDesc: reagent-physical-desc-fizzy
   flavor: soda
   color: "#2E6671"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/glass_clear.rsi
+    state: icon
+  metamorphicMaxFillLevels: 9
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: true
 
 - type: reagent
   id: DrGibb
@@ -107,6 +113,12 @@
   physicalDesc: reagent-physical-desc-fizzy
   flavor: energydrink
   color: "#ffffbf"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/glass_clear.rsi
+    state: icon
+  metamorphicMaxFillLevels: 9
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: true
   metabolisms:
     Digestion:
       metabolites:
@@ -128,6 +140,12 @@
   physicalDesc: reagent-physical-desc-fizzy
   flavor: grapesoda
   color: "#ae94a6"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/glass_clear.rsi
+    state: icon
+  metamorphicMaxFillLevels: 9
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: true
 
 - type: reagent
   id: IceCream
@@ -154,6 +172,12 @@
   physicalDesc: reagent-physical-desc-fizzy
   flavor: lemonlimesoda
   color: "#878F00"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/glass_clear.rsi
+    state: icon
+  metamorphicMaxFillLevels: 9
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: true
 
 - type: reagent
   id: LemonLimeCranberry
@@ -163,6 +187,12 @@
   physicalDesc: reagent-physical-desc-fizzy
   flavor: lemonlimecranberrysoda
   color: "#803C53"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/glass_clear.rsi
+    state: icon
+  metamorphicMaxFillLevels: 9
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: true
 
 - type: reagent
   id: PwrGame
@@ -172,6 +202,12 @@
   physicalDesc: reagent-physical-desc-fizzy
   flavor: pwrgamesoda
   color: "#9385bf"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/glass_clear.rsi
+    state: icon
+  metamorphicMaxFillLevels: 9
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: true
   fizziness: 0.9 # gamers crave the fizz
 
 - type: reagent
@@ -278,6 +314,12 @@
   physicalDesc: reagent-physical-desc-fizzy
   flavor: starkistsoda
   color: "#9F3400"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/glass_clear.rsi
+    state: icon
+  metamorphicMaxFillLevels: 9
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: true
 
 - type: reagent
   id: FourteenLoko
@@ -317,6 +359,7 @@
   physicalDesc: reagent-physical-desc-fizzy
   flavor: metallic
   color: "#66538F"
+
 
 # backported missing drinks for funky drinks - Yaket
 - type: reagent
@@ -358,8 +401,8 @@
   flavor: 24voltenergy
   color: "#a5e65d"
   metamorphicSprite:
-    sprite: Objects/Consumable/Drinks/glass_collins_shape.rsi
+    sprite: Objects/Consumable/Drinks/glass_clear.rsi
     state: icon
-  metamorphicMaxFillLevels: 3
-  metamorphicFillBaseName: fill
+  metamorphicMaxFillLevels: 9
+  metamorphicFillBaseName: fill-
   metamorphicChangeColor: true
