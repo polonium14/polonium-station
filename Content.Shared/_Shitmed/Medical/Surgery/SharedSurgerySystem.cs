@@ -169,6 +169,16 @@ public abstract partial class SharedSurgerySystem : EntitySystem
 
         if (args.Cancelled)
         {
+            var alreadyComplete = args.Target is { } cancelledPart
+                && IsSurgeryValid(ent, cancelledPart, args.Surgery, args.Step, args.User, out var cancelledSurgery, out _, out _)
+                && IsStepComplete(ent, cancelledPart, args.Step, cancelledSurgery);
+
+            if (!alreadyComplete)
+            {
+                Log.Warning($"Surgery step {args.Step} of {args.Surgery} on {ToPrettyString(ent)} was cancelled for {ToPrettyString(args.User)}.");
+                _popup.PopupClient(Loc.GetString("surgery-error-step-interrupted"), args.User, args.User, PopupType.SmallCaution);
+            }
+
             RaiseStepFailed(args.User, ent, args.Surgery, args.Step);
             return;
         }
