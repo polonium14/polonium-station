@@ -114,7 +114,11 @@ public partial class TraumaSystem
 
     private void OnStandAttempt(Entity<BodyComponent> body, ref StandAttemptEvent args)
     {
-        if (IsLegDependent(body) && IsLegless(body)) {
+        if (!IsLegDependent(body))
+            return;
+
+        if (IsLegless(body))
+        {
             args.Cancel();
             return;
         }
