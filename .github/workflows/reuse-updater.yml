@@ -58,8 +58,11 @@ jobs:
             cp Tools/update_pr_reuse_headers.py /tmp/update_pr_reuse_headers.py
           elif curl -o /tmp/update_pr_reuse_headers.py -sf "https://raw.githubusercontent.com/${GH_REPO}/refs/heads/${{ github.head_ref }}/Tools/update_pr_reuse_headers.py"; then
             echo "Using script from PR branch."
+          elif curl -o /tmp/update_pr_reuse_headers.py -sf "https://raw.githubusercontent.com/${GH_REPO}/refs/heads/${{ github.base_ref }}/Tools/update_pr_reuse_headers.py"; then
+            echo "Using script from base branch."
           else
-            curl -o /tmp/update_pr_reuse_headers.py -s "https://raw.githubusercontent.com/${GH_REPO}/refs/heads/${{ github.base_ref }}/Tools/update_pr_reuse_headers.py"
+            echo "Error: Could not find Tools/update_pr_reuse_headers.py in the checkout or on GitHub."
+            exit 1
           fi
 
           echo "Fetching files for PR #${PR_NUMBER} in repo ${GH_REPO}"
