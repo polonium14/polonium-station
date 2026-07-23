@@ -49,3 +49,6 @@ condition-none = • No conditions detected.
 group-organ-status = {$organ} at {$capacity}% functioning capacity
 group-solution-name = {$solution}
 group-solution-contents = {$reagent}: {$quantity}
+group-solution-name-bloodstream = Bloodstream
+group-solution-name-metabolites = Metabolites
+group-solution-name-print = Surface Contaminants

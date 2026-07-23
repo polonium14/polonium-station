@@ -395,7 +395,14 @@ public sealed partial class HealthAnalyzerSystem : BaseAnalyzerSystem<HealthAnal
                 if (name is null || name == BloodstreamComponent.DefaultBloodTemporarySolutionName)
                     continue;
 
-                solutions[GetNetEntity(solution)] = new NamedSolution(name, solution.Comp.Solution);
+                var displayName = name switch
+                {
+                    BloodstreamComponent.DefaultBloodSolutionName => Loc.GetString("group-solution-name-bloodstream"),
+                    BloodstreamComponent.DefaultMetabolitesSolutionName => Loc.GetString("group-solution-name-metabolites"),
+                    "print" => Loc.GetString("group-solution-name-print"),
+                    _ => name,
+                };
+                solutions[GetNetEntity(solution)] = new NamedSolution(displayName, solution.Comp.Solution);
             }
         }
 
