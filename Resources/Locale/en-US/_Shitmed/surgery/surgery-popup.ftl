@@ -6,20 +6,25 @@ surgery-popup-step-SurgeryStepPriseOpenBones = {$user} is prising the bones open
 surgery-popup-step-SurgeryStepCloseBones = {$user} is closing the bones on {$target}'s {$part}.
 surgery-popup-step-SurgeryStepMendRibcage = {$user} is mending the ribcage on {$target}'s {$part}.
 surgery-popup-step-SurgeryStepCloseIncision = {$user} is closing the incision on {$target}'s {$part}.
+surgery-popup-step-SurgeryStepCloseBloodOutputs = {$user} is closing off the blood vessels on {$target}'s {$part}.
+surgery-popup-step-SurgeryStepSealBones = {$user} is sealing the bones on {$target}'s {$part}.
+surgery-popup-step-SurgeryStepSealSkull = {$user} is sealing the skull on {$target}'s {$part}.
+surgery-popup-step-SurgeryStepSealRibcage = {$user} is sealing the ribcage on {$target}'s {$part}.
+surgery-popup-step-SurgeryStepMendBones = {$user} is mending the bones on {$target}'s {$part}.
+surgery-popup-step-SurgeryStepHealOrgans = {$user} is healing the organs on {$target}'s {$part}.
+surgery-popup-step-SurgeryStepRemoveSeveredSkin = {$user} is removing the severed skin from {$target}'s {$part}.
+surgery-popup-step-SurgeryStepRemoveLeftoverBones = {$user} is removing the leftover bones from {$target}'s {$part}.
+surgery-popup-step-SurgeryStepSealDismembermentWound = {$user} is sealing the dismemberment wound on {$target}'s {$part}.
 
-surgery-popup-step-SurgeryStepInsertFeature = {$user} is inserting something onto {$target}'s {$part}!
-surgery-popup-procedure-SurgeryAttachHead-step-SurgeryStepInsertFeature = {$user} is attaching a head onto {$target}'s {$part}!
-surgery-popup-procedure-SurgeryAttachLeftArm-step-SurgeryStepInsertFeature = {$user} is attaching a left arm onto {$target}'s {$part}!
-surgery-popup-procedure-SurgeryAttachRightArm-step-SurgeryStepInsertFeature = {$user} is attaching a right arm onto {$target}'s {$part}!
-surgery-popup-procedure-SurgeryAttachLeftLeg-step-SurgeryStepInsertFeature = {$user} is attaching a left leg onto {$target}'s {$part}!
-surgery-popup-procedure-SurgeryAttachRightLeg-step-SurgeryStepInsertFeature = {$user} is attaching a right leg onto {$target}'s {$part}!
-surgery-popup-procedure-SurgeryAttachLeftHand-step-SurgeryStepInsertFeature = {$user} is attaching a left hand onto {$target}'s {$part}!
-surgery-popup-procedure-SurgeryAttachRightHand-step-SurgeryStepInsertFeature = {$user} is attaching a right hand onto {$target}'s {$part}!
-surgery-popup-procedure-SurgeryAttachLeftFoot-step-SurgeryStepInsertFeature = {$user} is attaching a left foot onto {$target}'s {$part}!
-surgery-popup-procedure-SurgeryAttachRightFoot-step-SurgeryStepInsertFeature = {$user} is attaching a right foot onto {$target}'s {$part}!
-surgery-popup-procedure-SurgeryAttachLegs-step-SurgeryStepInsertFeature = {$user} is attaching legs onto {$target}'s {$part}!
-surgery-popup-procedure-SurgeryAttachHands-step-SurgeryStepInsertFeature = {$user} is attaching hands onto {$target}'s {$part}!
-surgery-popup-procedure-SurgeryAttachFeet-step-SurgeryStepInsertFeature = {$user} is attaching feet onto {$target}'s {$part}!
+surgery-popup-step-SurgeryStepInsertHead = {$user} is attaching a head onto {$target}'s {$part}!
+surgery-popup-step-SurgeryStepInsertArmLeft = {$user} is attaching a left arm onto {$target}'s {$part}!
+surgery-popup-step-SurgeryStepInsertArmRight = {$user} is attaching a right arm onto {$target}'s {$part}!
+surgery-popup-step-SurgeryStepInsertLegLeft = {$user} is attaching a left leg onto {$target}'s {$part}!
+surgery-popup-step-SurgeryStepInsertLegRight = {$user} is attaching a right leg onto {$target}'s {$part}!
+surgery-popup-step-SurgeryStepInsertHandLeft = {$user} is attaching a left hand onto {$target}'s {$part}!
+surgery-popup-step-SurgeryStepInsertHandRight = {$user} is attaching a right hand onto {$target}'s {$part}!
+surgery-popup-step-SurgeryStepInsertFootLeft = {$user} is attaching a left foot onto {$target}'s {$part}!
+surgery-popup-step-SurgeryStepInsertFootRight = {$user} is attaching a right foot onto {$target}'s {$part}!
 
 surgery-popup-step-SurgeryStepSealWounds = {$user} is sealing the wounds on {$target}'s {$part}.
 surgery-popup-step-SurgeryStepSawFeature = {$user} is sawing through the bones on {$target}'s {$part}.
@@ -44,7 +49,7 @@ surgery-popup-procedure-SurgeryRemoveZombieRoboTumor-step-SurgeryStepRemoveOrgan
 surgery-popup-procedure-SurgeryRemoveEyes-step-SurgeryStepRemoveOrgan = {$user} is removing the eyes from {$target}'s {$part}!
 surgery-popup-procedure-SurgeryRemoveStomach-step-SurgeryStepRemoveOrgan = {$user} is removing the stomach from {$target}'s {$part}!
 
-surgery-popup-procedure-SurgeryInsertBrain-step-SurgeryStepInsertOrgan = {$user} is inserting a brain into {$target}'s {$part}!
+surgery-popup-step-SurgeryStepInsertBrain = {$user} is inserting a brain into {$target}'s {$part}!
 surgery-popup-step-SurgeryStepInsertLungs = {$user} is inserting lungs into {$target}'s {$part}!
 surgery-popup-step-SurgeryStepInsertLiver = {$user} is inserting a liver into {$target}'s {$part}!
 surgery-popup-step-SurgeryStepInsertEyes = {$user} is inserting eyes into {$target}'s {$part}!
