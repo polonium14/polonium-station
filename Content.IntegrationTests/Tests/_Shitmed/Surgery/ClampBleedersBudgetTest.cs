@@ -105,7 +105,7 @@ public sealed class ClampBleedersBudgetTest : GameTest
         // wound2 (Scaling 5) only gets that remaining 1 point: 5 - 1 = 4, still bleeding.
         await server.WaitPost(() =>
         {
-            var ev = new SurgeryStepEvent(organ, organ, organ, stepEnt, stepEnt, stepEnt, true);
+            var ev = new SurgeryStepEvent(organ, organ, organ, stepEnt, stepEnt, stepEnt);
             sEntMan.EventBus.RaiseLocalEvent(stepEnt, ref ev);
         });
 

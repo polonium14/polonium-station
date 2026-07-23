@@ -149,7 +149,7 @@ public sealed class BurnSurgeryAvailableBelowWoundThresholdTest : GameTest
         {
             await server.WaitPost(() =>
             {
-                var ev = new SurgeryStepEvent(victim, victim, torso, EntityUid.Invalid, burnSurgeryEnt!.Value, stepEnt!.Value, false);
+                var ev = new SurgeryStepEvent(victim, victim, torso, EntityUid.Invalid, burnSurgeryEnt!.Value, stepEnt!.Value);
                 sEntMan.EventBus.RaiseLocalEvent(stepEnt!.Value, ref ev);
             });
 

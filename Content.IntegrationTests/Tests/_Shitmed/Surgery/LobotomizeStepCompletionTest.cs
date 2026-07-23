@@ -1,7 +1,6 @@
 using System.Numerics;
 using Content.IntegrationTests.Fixtures;
 using Content.Server._Shitmed.Medical.Surgery;
-using Content.Shared._Shitmed.Medical.Surgery.Steps;
 using Content.Shared._Shitmed.Medical.Surgery.Steps.Parts;
 using Content.Shared.Body;
 using Robust.Shared.Containers;
@@ -59,10 +58,7 @@ public sealed class LobotomizeStepCompletionTest : GameTest
             Assert.That(stepEnt, Is.Not.Null, "SurgeryStepLobotomize should resolve to a real singleton entity.");
 
             var surgeryEnt = sSurgery.GetSingleton("SurgeryLobotomize");
-            var ev = new SurgeryStepCompleteCheckEvent(victim, brain, surgeryEnt!.Value);
-            sEntMan.EventBus.RaiseLocalEvent(stepEnt!.Value, ref ev);
-
-            Assert.That(ev.Cancelled, Is.True,
+            Assert.That(sSurgery.IsStepComplete(victim, brain, "SurgeryStepLobotomize", surgeryEnt!.Value), Is.False,
                 "The lobotomize step should NOT be complete before the drill has ever been used on this brain - it was previously always reporting complete instantly, matching the reported bug.");
         });
 
@@ -76,12 +72,8 @@ public sealed class LobotomizeStepCompletionTest : GameTest
 
         await server.WaitAssertion(() =>
         {
-            var stepEnt = sSurgery.GetSingleton("SurgeryStepLobotomize");
             var surgeryEnt = sSurgery.GetSingleton("SurgeryLobotomize");
-            var ev = new SurgeryStepCompleteCheckEvent(victim, brain, surgeryEnt!.Value);
-            sEntMan.EventBus.RaiseLocalEvent(stepEnt!.Value, ref ev);
-
-            Assert.That(ev.Cancelled, Is.False,
+            Assert.That(sSurgery.IsStepComplete(victim, brain, "SurgeryStepLobotomize", surgeryEnt!.Value), Is.True,
                 "Once the drill has marked the brain as Lobotomized, the step should report complete.");
         });
     }
@@ -117,12 +109,8 @@ public sealed class LobotomizeStepCompletionTest : GameTest
 
         await server.WaitAssertion(() =>
         {
-            var stepEnt = sSurgery.GetSingleton("SurgeryStepMendBrainTissue");
             var surgeryEnt = sSurgery.GetSingleton("SurgeryMendBrainTissue");
-            var ev = new SurgeryStepCompleteCheckEvent(victim, brain, surgeryEnt!.Value);
-            sEntMan.EventBus.RaiseLocalEvent(stepEnt!.Value, ref ev);
-
-            Assert.That(ev.Cancelled, Is.True,
+            Assert.That(sSurgery.IsStepComplete(victim, brain, "SurgeryStepMendBrainTissue", surgeryEnt!.Value), Is.False,
                 "Mending brain tissue on a still-lobotomized brain shouldn't be complete yet.");
         });
 
@@ -135,12 +123,8 @@ public sealed class LobotomizeStepCompletionTest : GameTest
 
         await server.WaitAssertion(() =>
         {
-            var stepEnt = sSurgery.GetSingleton("SurgeryStepMendBrainTissue");
             var surgeryEnt = sSurgery.GetSingleton("SurgeryMendBrainTissue");
-            var ev = new SurgeryStepCompleteCheckEvent(victim, brain, surgeryEnt!.Value);
-            sEntMan.EventBus.RaiseLocalEvent(stepEnt!.Value, ref ev);
-
-            Assert.That(ev.Cancelled, Is.False,
+            Assert.That(sSurgery.IsStepComplete(victim, brain, "SurgeryStepMendBrainTissue", surgeryEnt!.Value), Is.True,
                 "Once the Lobotomized marker is cleared (hemostat step performed), mending should report complete.");
         });
     }

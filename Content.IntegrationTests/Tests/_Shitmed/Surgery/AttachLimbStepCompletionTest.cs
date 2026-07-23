@@ -1,7 +1,6 @@
 using System.Numerics;
 using Content.IntegrationTests.Fixtures;
 using Content.Server._Shitmed.Medical.Surgery;
-using Content.Shared._Shitmed.Medical.Surgery.Steps;
 using Content.Shared.Body;
 using Robust.Shared.Containers;
 using Robust.Shared.GameObjects;
@@ -84,10 +83,7 @@ public sealed class AttachLimbStepCompletionTest : GameTest
 
             // args.Part is the Torso (the body part the player targets this surgery on) -
             // the previous bug checked Torso's own attachment, which is always true.
-            var ev = new SurgeryStepCompleteCheckEvent(victim, torso, surgeryEnt!.Value);
-            sEntMan.EventBus.RaiseLocalEvent(stepEnt!.Value, ref ev);
-
-            Assert.That(ev.Cancelled, Is.True,
+            Assert.That(sSurgery.IsStepComplete(victim, torso, "SurgeryStepInsertFeature", surgeryEnt!.Value), Is.False,
                 "The reattach step should NOT be complete before the arm has actually been reinserted - it was previously always reporting complete instantly, matching the reported bug.");
         });
 
@@ -104,12 +100,8 @@ public sealed class AttachLimbStepCompletionTest : GameTest
 
         await server.WaitAssertion(() =>
         {
-            var stepEnt = sSurgery.GetSingleton("SurgeryStepInsertFeature");
             var surgeryEnt = sSurgery.GetSingleton("SurgeryAttachLeftArm");
-            var ev = new SurgeryStepCompleteCheckEvent(victim, torso, surgeryEnt!.Value);
-            sEntMan.EventBus.RaiseLocalEvent(stepEnt!.Value, ref ev);
-
-            Assert.That(ev.Cancelled, Is.False,
+            Assert.That(sSurgery.IsStepComplete(victim, torso, "SurgeryStepInsertFeature", surgeryEnt!.Value), Is.True,
                 "Once the arm is actually back in the body's Organs container, the step should report complete.");
         });
     }

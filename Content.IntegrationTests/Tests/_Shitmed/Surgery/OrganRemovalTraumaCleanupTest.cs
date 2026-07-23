@@ -142,7 +142,7 @@ public sealed class OrganRemovalTraumaCleanupTest : GameTest
 
         await server.WaitPost(() =>
         {
-            var ev = new SurgeryStepEvent(user, body, torso, EntityUid.Invalid, surgery, step, true);
+            var ev = new SurgeryStepEvent(user, body, torso, EntityUid.Invalid, surgery, step);
             sEntMan.EventBus.RaiseLocalEvent(step, ref ev);
         });
 

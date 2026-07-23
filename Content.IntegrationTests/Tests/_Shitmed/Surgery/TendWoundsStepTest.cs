@@ -152,7 +152,7 @@ public sealed class TendWoundsStepTest : GameTest
             var surgeryEnt = sSurgery.GetSingleton("SurgeryTendWoundsBrute");
             Assert.That(surgeryEnt, Is.Not.Null, "SurgeryTendWoundsBrute should resolve to a real singleton entity.");
 
-            var ev = new SurgeryStepEvent(victim, victim, torso, EntityUid.Invalid, surgeryEnt!.Value, stepEnt!.Value, false);
+            var ev = new SurgeryStepEvent(victim, victim, torso, EntityUid.Invalid, surgeryEnt!.Value, stepEnt!.Value);
             Assert.DoesNotThrow(() => sEntMan.EventBus.RaiseLocalEvent(stepEnt!.Value, ref ev),
                 "OnTendWoundsStep previously threw KeyNotFoundException here for both Brute and Burn - the live server crash this test guards against.");
         });
@@ -250,7 +250,7 @@ public sealed class TendWoundsStepTest : GameTest
         {
             await server.WaitPost(() =>
             {
-                var ev = new SurgeryStepEvent(victim, victim, torso, EntityUid.Invalid, surgeryEnt!.Value, stepEnt!.Value, false);
+                var ev = new SurgeryStepEvent(victim, victim, torso, EntityUid.Invalid, surgeryEnt!.Value, stepEnt!.Value);
                 sEntMan.EventBus.RaiseLocalEvent(stepEnt!.Value, ref ev);
             });
 
