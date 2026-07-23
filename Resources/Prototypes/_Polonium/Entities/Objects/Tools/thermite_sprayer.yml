@@ -1,6 +1,6 @@
 - type: entity
   name: Thermite sprayer
-  parent: [SolutionThermiteSprayer, BaseSecurityContraband]
+  parent: [SolutionThermiteSprayer, BaseSecurityContraband, BaseItem]
   id: ThermiteSparyer
   description: A light and compact fibreglass-framed device for applying thermite to walls...yes it is a modified fire extinguisher.
   components:
@@ -35,6 +35,9 @@
         enum.ToggleableVisuals.Layer:
           True: { state: fire_extinguisher_open }
           False: { state: fire_extinguisher_closed }
+  - type: Tag
+    tags:
+    - FireExtinguisher
   - type: Sprite
     sprite: Objects/Misc/fire_extinguisher_mini.rsi
     layers:
@@ -56,7 +59,7 @@
       Glass: 40
 
 - type: entity
-  parent: [SolutionSpray, SolutionToolTiny]
+  parent: [SolutionSpray, SolutionTiny]
   id: SolutionThermiteSprayer
   categories: [ HideSpawnMenu ]
   components:
@@ -64,4 +67,4 @@
     solution:
       reagents:
       - ReagentId: Thermite
-        Quantity: 15 # should be enough for 3 walls. Pleanty for security needs. Worst case go beg chemistry.
+        Quantity: 30 # should be enough for 3 walls. Pleanty for security needs. Worst case go beg chemistry.

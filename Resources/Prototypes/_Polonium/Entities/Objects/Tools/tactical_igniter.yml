@@ -17,7 +17,7 @@
     radius: 1.0
     color: orange
   - type: IgnitionSource
-    temperature: 300
+    temperature: 400
   - type: MeleeWeapon
     damage:
       types:
@@ -31,9 +31,12 @@
   - type: Welder
     fuelConsumption: 1.5
     fuelLitCost: 0
+  - type: Tag
+    tags:
+    - TacticalIgniter
 
 - type: entity
-  parent: [SolutionWelder, SolutionToolVeryTiny]
+  parent: [SolutionWelder, SolutionToolTiny]
   id: SolutionToolThermiteIgniter
   categories: [ HideSpawnMenu ]
   components:
@@ -41,4 +44,4 @@
     solution:
       reagents:
       - ReagentId: WeldingFuel
-        Quantity: 7.5
+        Quantity: 15
