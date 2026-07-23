@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: Samuka
-  changes:
-  - message: The xenoborg camera monitor now shows the names of each xenoborg.
-    type: Tweak
-  id: 9358
-  time: '2026-01-07T16:38:00.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42205
 - author: SomegnihT
   changes:
   - message: Vox now properly say they turn into fried chicken upon getting enough
@@ -4048,3 +4041,13 @@
   id: 9865
   time: '2026-07-23T11:37:34.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/791
+- author: nikita
+  changes:
+  - message: "Naprawiono crash klienta zwi\u0105zany z widoczno\u015Bci\u0105 SI"
+    type: Fix
+  - message: "Naprawiono b\u0142\u0119dy r\xF3wnoleg\u0142ego obliczania widoczno\u015B\
+      ci SI"
+    type: Fix
+  id: 9866
+  time: '2026-07-23T17:27:38.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/798
