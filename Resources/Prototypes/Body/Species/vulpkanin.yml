@@ -151,7 +151,7 @@
   - type: Speech
     speechSounds: Vulpkanin
     speechVerb: Vulpkanin
-    allowedEmotes: [ 'Bark', 'Snarl', 'Whine', 'Howl', 'Growl' ]
+    allowedEmotes: [ 'Bark', 'Snarl', 'Whine', 'Howl', 'Growl', 'Yap', 'Gekker' ]
   - type: TypingIndicator
     proto: vulpkanin
   - type: Vocal

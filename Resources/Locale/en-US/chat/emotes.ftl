@@ -6,10 +6,15 @@ chat-emote-name-sigh = Sigh
 chat-emote-name-whistle = Whistle
 chat-emote-name-crying = Cry
 chat-emote-name-squish = Squish
+chat-emote-name-bubble = Bubble
+chat-emote-name-slosh = Slosh
+chat-emote-name-pop = Pop
+chat-emote-name-fizz = Fizz
 chat-emote-name-chitter = Chitter
 chat-emote-name-squeak = Squeak
 chat-emote-name-thump = Thump Tail
 chat-emote-name-click = Click
+chat-emote-name-coo = Coo
 chat-emote-name-clap = Clap
 chat-emote-name-clap-single = Single Clap
 chat-emote-name-snap = Snap
@@ -39,6 +44,8 @@ chat-emote-name-whine = Whine
 chat-emote-name-howl = Howl
 chat-emote-name-growl = Growl
 chat-emote-name-flap = Flap Wings
+chat-emote-name-yap = Yap
+chat-emote-name-gekker = Gekker
 
 # Message
 chat-emote-msg-scream = screams!
@@ -48,10 +55,15 @@ chat-emote-msg-sigh = sighs.
 chat-emote-msg-whistle = whistles.
 chat-emote-msg-crying = cries.
 chat-emote-msg-squish = squishes.
+chat-emote-msg-bubble = bubbles.
+chat-emote-msg-slosh = sloshes.
+chat-emote-msg-pop = pops.
+chat-emote-msg-fizz = fizzes.
 chat-emote-msg-chitter = chitters.
 chat-emote-msg-squeak = squeaks.
 chat-emote-msg-thump = thumps {POSS-ADJ($entity)} tail.
 chat-emote-msg-click = clicks.
+chat-emote-msg-coo = coos.
 chat-emote-msg-clap = claps!
 chat-emote-msg-clap-single = claps {POSS-ADJ($entity)} hands together.
 chat-emote-msg-snap = snaps {POSS-ADJ($entity)} fingers.
@@ -82,11 +94,5 @@ chat-emote-msg-whine = whines.
 chat-emote-msg-howl = howls.
 chat-emote-msg-growl = growls.
 chat-emote-msg-flap = flaps {POSS-ADJ($entity)} wings.
-
-chat-emote-name-coo = Gruchanie
-
-chat-emote-name-yap = Skomlenie
-
-chat-emote-name-gekker = Gekker
-
-chat-emote-msg-coo = grucha.
+chat-emote-msg-yap = yaps.
+chat-emote-msg-gekker = gekkers.

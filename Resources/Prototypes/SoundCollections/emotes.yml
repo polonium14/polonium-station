@@ -94,6 +94,29 @@
     - /Audio/Voice/Slime/slime_squish.ogg
 
 - type: soundCollection
+  id: Bubbles
+  files:
+    - /Audio/Effects/Chemistry/bubbles.ogg
+
+- type: soundCollection
+  id: Sloshes
+  files:
+    - /Audio/Effects/Fluids/slosh.ogg
+
+- type: soundCollection
+  id: Pops
+  files:
+    - /Audio/Voice/Slime/slime_pop_1.ogg
+    - /Audio/Voice/Slime/slime_pop_2.ogg
+
+- type: soundCollection
+  id: Fizzes
+  files:
+    - /Audio/Voice/Slime/slime_fizz_1.ogg
+    - /Audio/Voice/Slime/slime_fizz_2.ogg
+    - /Audio/Voice/Slime/slime_fizz_3.ogg
+
+- type: soundCollection
   id: Weh
   files:
   - /Audio/Items/Toys/weh.ogg
@@ -145,3 +168,9 @@
   id: XenoborgPing
   files:
   - /Audio/Voice/Xenoborg/xenoborg_ping.ogg
+
+- type: soundCollection
+  id: VoxCoo
+  files:
+    - /Audio/_Impstation/Voice/Vox/voxcoo1.ogg
+    - /Audio/_Impstation/Voice/Vox/voxcoo2.ogg
