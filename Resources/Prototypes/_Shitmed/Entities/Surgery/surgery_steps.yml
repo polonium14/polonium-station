@@ -502,6 +502,7 @@
     sprite: _Shitmed/Objects/Specific/Medical/Surgery/hemostat.rsi
     state: hemostat
   - type: SurgeryTendWoundsEffect
+    healMultiplier: 0.12
     damage:
       types:
         Blunt: 0
@@ -523,6 +524,7 @@
     state: hemostat
   - type: SurgeryTendWoundsEffect
     mainGroup: Burn
+    healMultiplier: 0.3
     damage:
       types:
         Heat: 0
