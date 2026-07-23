@@ -13,6 +13,6 @@ surgery-ui-window-steps-error-tools = Brakujące narzędzia.
 surgery-ui-window-steps-error-previous = Musisz najpierw ukończyć poprzedni krok.
 surgery-ui-window-steps-error-completed = Ten krok jest już wykonany.
 surgery-error-laying = Muszą leżeć!
-surgery-error-step-interrupted = Operacja nie powiodła się - sytuacja się zmieniła!
+surgery-error-step-interrupted = Operacja nie powiodła się.
 surgery-error-self-surgery = Nie możesz przeprowadzić operacji na sobie!
 surgery-part-damage-evaded = { $user } ledwo uniknął!
