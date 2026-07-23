@@ -1,14 +1,4 @@
 ﻿Entries:
-- author: ScarKy0
-  changes:
-  - message: The Chameleon Projector now requires a battery to operate. It spawns
-      with a medium powercell, giving it a starting battery life of 3 minutes.
-    type: Add
-  - message: Lowered the price of the Chameleon Projector to 3TC.
-    type: Tweak
-  id: 9357
-  time: '2026-01-07T06:05:08.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42271
 - author: Samuka
   changes:
   - message: The xenoborg camera monitor now shows the names of each xenoborg.
@@ -4051,3 +4041,10 @@
   id: 9864
   time: '2026-07-23T11:22:13.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/789
+- author: Yaket
+  changes:
+  - message: "Naprawiono brak widocznych napoj\xF3w w szkle metamorficznym"
+    type: Fix
+  id: 9865
+  time: '2026-07-23T11:37:34.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/791
