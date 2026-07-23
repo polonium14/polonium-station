@@ -31,7 +31,7 @@
   parent: BaseThermitePack
   id: ThermitePack
   name: Thermite Pack
-  description: A box for tactical deployment of thermite based breaching.
+  description: "A box for tactical deployment of thermite based breaching. On the side there is write: ONLY FOR PEACE SPREADING!"
   components:
   - type: EntityTableContainerFill
     containers:
