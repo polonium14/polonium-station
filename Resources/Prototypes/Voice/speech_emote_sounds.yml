@@ -140,6 +140,14 @@
   sounds:
     Squish:
       collection: Squishes
+    Bubble:
+      collection: Bubbles
+    Slosh:
+      collection: Sloshes
+    Pop:
+      collection: Pops
+    Fizz:
+      collection: Fizzes
     Scream:
       collection: MaleScreams
     Laugh:
@@ -185,6 +193,14 @@
   sounds:
     Squish:
       collection: Squishes
+    Bubble:
+      collection: Bubbles
+    Slosh:
+      collection: Sloshes
+    Pop:
+      collection: Pops
+    Fizz:
+      collection: Fizzes
     Scream:
       collection: FemaleScreams
     Laugh:
@@ -242,6 +258,10 @@
       path: /Audio/Voice/Vox/vox_click.ogg
     Chitter:
       path: /Audio/Voice/Vox/vox_chitter.ogg
+    Coo:
+      collection: VoxCoo
+      params:
+        volume: -7
     Honk:
       collection: BikeHorn
     Crying:
@@ -554,6 +574,10 @@
       collection: VulpkaninWhines
     Howl:
       collection: VulpkaninHowls
+    Yap:
+      collection: VulpkaninYap
+    Gekker:
+      collection: VulpkaninGekker
     Weh:
       collection: Weh
     Hew:
@@ -597,6 +621,10 @@
       collection: VulpkaninWhines
     Howl:
       collection: VulpkaninHowls
+    Yap:
+      collection: VulpkaninYap
+    Gekker:
+      collection: VulpkaninGekker
     Weh:
       collection: Weh
     Hew:
