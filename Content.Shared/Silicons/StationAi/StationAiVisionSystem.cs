@@ -1,3 +1,4 @@
+using System.Collections.Concurrent;
 using Content.Shared.Power.EntitySystems;
 using Content.Shared.StationAi;
 using Robust.Shared.Map.Components;
@@ -25,7 +26,7 @@ public sealed partial class StationAiVisionSystem : EntitySystem
 
     [Dependency] private EntityQuery<OccluderComponent> _occluderQuery = default!;
 
-    [ThreadStatic] private static VisionScratch? _scratch;
+    private readonly ConcurrentDictionary<int, VisionScratch> _scratches = new();
 
     /// <summary>
     /// Returns whether a tile is accessible based on vision.
@@ -207,26 +208,28 @@ public sealed partial class StationAiVisionSystem : EntitySystem
 
     private VisionScratch GetScratch()
     {
-        if (_scratch != null)
-            return _scratch;
+        return _scratches.GetOrAdd(Environment.CurrentManagedThreadId, _ =>
+        {
+            var scratch = new VisionScratch();
 
-        var scratch = new VisionScratch();
-        scratch.SeedJob = new SeedJob
-        {
-            System = this,
-            Seeds = scratch.Seeds,
-        };
-        scratch.Job = new ViewJob
-        {
-            EntManager = EntityManager,
-            Maps = _maps,
-            System = this,
-            Xforms = _xforms,
-            VisibleTiles = scratch.SingleTiles,
-            Opaque = scratch.Opaque,
-            ViewportTiles = scratch.ViewportTiles,
-        };
-        return _scratch = scratch;
+            scratch.SeedJob = new SeedJob
+            {
+                System = this,
+                Seeds = scratch.Seeds,
+            };
+            
+            scratch.Job = new ViewJob
+            {
+                EntManager = EntityManager,
+                Maps = _maps,
+                System = this,
+                Xforms = _xforms,
+                VisibleTiles = scratch.SingleTiles,
+                Opaque = scratch.Opaque,
+                ViewportTiles = scratch.ViewportTiles,
+            };
+            return scratch;
+        });
     }
 
     private int GetMaxDelta(Vector2i tile, Vector2i center)
