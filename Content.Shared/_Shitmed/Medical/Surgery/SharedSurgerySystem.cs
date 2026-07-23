@@ -169,8 +169,7 @@ public abstract partial class SharedSurgerySystem : EntitySystem
 
         if (args.Cancelled)
         {
-            var failEv = new SurgeryStepFailedEvent(args.User, ent, args.Surgery, args.Step);
-            RaiseLocalEvent(args.User, ref failEv);
+            RaiseStepFailed(args.User, ent, args.Surgery, args.Step);
             return;
         }
 
@@ -189,8 +188,7 @@ public abstract partial class SharedSurgerySystem : EntitySystem
         if (!valid || !PreviousStepsComplete(ent, part, surgery, args.Step, args.User))
         {
             _popup.PopupClient(Loc.GetString("surgery-error-step-interrupted"), args.User, args.User, PopupType.SmallCaution);
-            var failEv = new SurgeryStepFailedEvent(args.User, ent, args.Surgery, args.Step);
-            RaiseLocalEvent(args.User, ref failEv);
+            RaiseStepFailed(args.User, ent, args.Surgery, args.Step);
             return;
         }
 
@@ -217,6 +215,12 @@ public abstract partial class SharedSurgerySystem : EntitySystem
         }
 
         RefreshUI(ent);
+    }
+
+    private void RaiseStepFailed(EntityUid user, EntityUid body, EntProtoId surgery, EntProtoId step)
+    {
+        var failEv = new SurgeryStepFailedEvent(user, body, surgery, step);
+        RaiseLocalEvent(user, ref failEv);
     }
 
     private void OnCloseIncisionValid(Entity<SurgeryCloseIncisionConditionComponent> ent, ref SurgeryValidEvent args)
