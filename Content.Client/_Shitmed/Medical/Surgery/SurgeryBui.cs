@@ -27,7 +27,7 @@ public sealed partial class SurgeryBui : BoundUserInterface
 
     protected override void ReceiveMessage(BoundUserInterfaceMessage message)
     {
-        if (_window is null
+        if (_window is null or { Disposed: true }
             || message is not SurgeryBuiRefreshMessage)
             return;
 
@@ -39,6 +39,9 @@ public sealed partial class SurgeryBui : BoundUserInterface
         if (state is not SurgeryBuiState s)
             return;
 
+        if (_window is { Disposed: true })
+            _window = null;
+
         Update(s);
     }
 
@@ -46,7 +49,10 @@ public sealed partial class SurgeryBui : BoundUserInterface
     {
         base.Dispose(disposing);
         if (disposing)
+        {
             _window?.Dispose();
+            _window = null;
+        }
     }
 
     private void Update(SurgeryBuiState state)
@@ -320,7 +326,8 @@ public sealed partial class SurgeryBui : BoundUserInterface
         if (_window == null)
             return;
 
-        _window.PartsButton.Parent!.Margin = new Thickness(0, 0, 0, 10);
+        if (_window.PartsButton.Parent is { } partsRow)
+            partsRow.Margin = new Thickness(0, 0, 0, 10);
 
         _window.Parts.Visible = type == ViewType.Parts;
         _window.PartsButton.Disabled = type == ViewType.Parts;
