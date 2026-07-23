@@ -59,6 +59,10 @@ public abstract partial class SharedCryostorageSystem : EntitySystem
         if (args.Container.ID != comp.ContainerId)
             return;
 
+        // Found out during test run
+        if (Timing.ApplyingState)
+            return;
+
         _appearance.SetData(ent, CryostorageVisuals.Full, true);
         if (!Timing.IsFirstTimePredicted)
             return;
