@@ -156,7 +156,8 @@ public abstract partial class SharedSurgerySystem : EntitySystem
 
         if (IsStepComplete(ent, part, args.Event.Step, surgery))
         {
-            Log.Warning($"Cancelling surgery doafter mid-way: {args.Event.Surgery}/{args.Event.Step} on {ToPrettyString(target)} of {ToPrettyString(ent)} - step already complete.");
+            if (!args.Event.Repeat)
+                Log.Warning($"Cancelling surgery doafter mid-way: {args.Event.Surgery}/{args.Event.Step} on {ToPrettyString(target)} of {ToPrettyString(ent)} - step already complete.");
             args.Cancel();
         }
     }
@@ -178,10 +179,15 @@ public abstract partial class SharedSurgerySystem : EntitySystem
         if (args.Handled || args.Target is not { } target)
             return;
 
-        if (!IsSurgeryValid(ent, target, args.Surgery, args.Step, args.User, out var surgery, out var part, out var step)
-            || !PreviousStepsComplete(ent, part, surgery, args.Step, args.User))
-        {
+        var valid = IsSurgeryValid(ent, target, args.Surgery, args.Step, args.User, out var surgery, out var part, out var step);
+
+        // PreviousStepsComplete logs its own, more specific warning (which step blocks and why),
+        // so only the validity failure needs one here.
+        if (!valid)
             Log.Warning($"Surgery step {args.Step} of {args.Surgery} on {ToPrettyString(ent)} (part {ToPrettyString(target)}) became invalid before {ToPrettyString(args.User)} finished it.");
+
+        if (!valid || !PreviousStepsComplete(ent, part, surgery, args.Step, args.User))
+        {
             _popup.PopupClient(Loc.GetString("surgery-error-step-interrupted"), args.User, args.User, PopupType.SmallCaution);
             var failEv = new SurgeryStepFailedEvent(args.User, ent, args.Surgery, args.Step);
             RaiseLocalEvent(args.User, ref failEv);
@@ -197,7 +203,7 @@ public abstract partial class SharedSurgerySystem : EntitySystem
         var complete = IsStepComplete(ent, part, args.Step, surgery);
 
         args.Repeat = HasComp<SurgeryRepeatableStepComponent>(step) && !complete;
-        var ev = new SurgeryStepEvent(args.User, ent, part, tool, surgery, step, complete);
+        var ev = new SurgeryStepEvent(args.User, ent, part, tool, surgery, step);
         RaiseLocalEvent(step, ref ev);
         RaiseLocalEvent(args.User, ref ev);
 
