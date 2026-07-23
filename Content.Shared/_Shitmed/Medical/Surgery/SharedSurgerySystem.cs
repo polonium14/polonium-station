@@ -133,8 +133,7 @@ public abstract partial class SharedSurgerySystem : EntitySystem
     private void OnBeforeTargetDoAfter(Entity<SurgeryTargetComponent> ent,
         ref DoAfterAttemptEvent<SurgeryDoAfterEvent> args)
     {
-        if (_net.IsClient
-            || !args.Event.Repeat) // We only wanna do this laggy shit on repeatables. One-time stuff idc.
+        if (_net.IsClient)
             return;
 
         if (args.Event.Target is not { } target
@@ -157,12 +156,16 @@ public abstract partial class SharedSurgerySystem : EntitySystem
 
         var tool = _hands.GetActiveItemOrSelf(args.User);
 
-        if (args.Handled
-            || args.Target is not { } target
-            || !IsSurgeryValid(ent, target, args.Surgery, args.Step, args.User, out var surgery, out var part, out var step)
+        if (args.Handled || args.Target is not { } target)
+            return;
+
+        if (!IsSurgeryValid(ent, target, args.Surgery, args.Step, args.User, out var surgery, out var part, out var step)
             || !PreviousStepsComplete(ent, part, surgery, args.Step, args.User))
         {
-            Log.Warning($"{ToPrettyString(args.User)} tried to start invalid surgery.");
+            Log.Warning($"Surgery step {args.Step} of {args.Surgery} on {ToPrettyString(ent)} (part {ToPrettyString(target)}) became invalid before {ToPrettyString(args.User)} finished it.");
+            _popup.PopupClient(Loc.GetString("surgery-error-step-interrupted"), args.User, args.User, PopupType.SmallCaution);
+            var failEv = new SurgeryStepFailedEvent(args.User, ent, args.Surgery, args.Step);
+            RaiseLocalEvent(args.User, ref failEv);
             return;
         }
 
