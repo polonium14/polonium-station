@@ -67,4 +67,4 @@
     solution:
       reagents:
       - ReagentId: Thermite
-        Quantity: 30 # should be enough for 3 walls. Pleanty for security needs. Worst case go beg chemistry.
+        Quantity: 30 # allows up to 6 walls. Plenty for security needs; worst case, ask chemistry.
