@@ -144,6 +144,9 @@ public partial class ConsciousnessSystem
         if (component.Identifier == NerveSystemIdentifier)
             consciousness.NerveSystem = (uid, Comp<NerveSystemComponent>(uid));
 
+        if (_timing.ApplyingState)
+            return;
+
         CheckRequiredParts(body, consciousness);
     }
 
@@ -170,6 +173,9 @@ public partial class ConsciousnessSystem
 
         if (component.Identifier == NerveSystemIdentifier)
             consciousness.NerveSystem = default;
+
+        if (_timing.ApplyingState)
+            return;
 
         CheckRequiredParts(oldBody, consciousness);
     }
