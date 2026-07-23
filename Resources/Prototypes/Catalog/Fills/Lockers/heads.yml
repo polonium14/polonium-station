@@ -335,6 +335,7 @@
     - id: WeaponDisabler
     - id: WantedListCartridge
     - id: DrinkHosFlask
+    - id: ThermitePack
     - id: PlushieLizardJobHeadofsecurity
       prob: 0.02
 
