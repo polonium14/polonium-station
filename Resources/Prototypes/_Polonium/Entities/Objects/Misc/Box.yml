@@ -5,7 +5,7 @@
   components:
   - type: Appearance
   - type: Storage
-    maxItemSize: Medium
+    maxItemSize: Normal
     grid:
     - 0,0,3,1
     whitelist:
@@ -23,6 +23,9 @@
     layers:
       - state: box
       - state: flare
+  - item:
+    shape:
+    - 0,0,3,1
 
 - type: entity
   parent: BaseThermitePack
