@@ -27,7 +27,7 @@
       types:
         Heat: 5
   - type: ItemToggleSize
-    activatedSize: Medium
+    activatedSize: Normal
   - type: Welder
     fuelConsumption: 1.5
     fuelLitCost: 0
