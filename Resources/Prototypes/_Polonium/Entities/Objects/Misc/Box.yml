@@ -23,7 +23,7 @@
     layers:
       - state: box
       - state: flare
-  - item:
+  - type: Item
     shape:
     - 0,0,3,1
 
