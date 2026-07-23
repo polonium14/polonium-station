@@ -33,6 +33,12 @@
   physicalDesc: reagent-physical-desc-aromatic
   flavor: chocolate
   color: "#664300"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/glass_clear.rsi
+    state: icon
+  metamorphicMaxFillLevels: 9
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: true
   recognizable: true
   metabolisms:
     Digestion:
@@ -47,6 +53,12 @@
   physicalDesc: reagent-physical-desc-creamy
   flavor: creamy
   color: "#DFD7AF"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/glass_clear.rsi
+    state: icon
+  metamorphicMaxFillLevels: 9
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: true
   metabolisms:
     Digestion:
       effects:
@@ -61,6 +73,12 @@
   physicalDesc: reagent-physical-desc-milky
   flavor: nutty
   color: "#f4eadb"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/glass_clear.rsi
+    state: icon
+  metamorphicMaxFillLevels: 9
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: true
   metabolisms:
     Digestion:
       effects:
@@ -75,6 +93,12 @@
   physicalDesc: reagent-physical-desc-syrupy
   flavor: creamy
   color: "#FFEABF"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/glass_clear.rsi
+    state: icon
+  metamorphicMaxFillLevels: 9
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: true
   metabolisms:
     Digestion:
       effects:
@@ -207,6 +231,12 @@
   physicalDesc: reagent-physical-desc-sickly
   flavor: bitter
   color: "#6600CC"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/glass_clear.rsi
+    state: icon
+  metamorphicMaxFillLevels: 9
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: true
   metabolisms:
     Digestion:
       effects:
@@ -245,6 +275,12 @@
   physicalDesc: reagent-physical-desc-opaque
   flavor: milk
   color: "#DFDFDF"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/glass_clear.rsi
+    state: icon
+  metamorphicMaxFillLevels: 9
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: true
   recognizable: true
   plantMetabolism:
     - !type:PlantAdjustNutrition
@@ -277,6 +313,12 @@
   physicalDesc: reagent-physical-desc-refreshing
   flavor: oats
   color: "#DEDACD"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/glass_clear.rsi
+    state: icon
+  metamorphicMaxFillLevels: 9
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: true
   recognizable: true
   metabolisms:
     Digestion:
@@ -301,6 +343,12 @@
   physicalDesc: reagent-physical-desc-putrid
   flavor: terrible
   color: "#faffba"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/glass_clear.rsi
+    state: icon
+  metamorphicMaxFillLevels: 9
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: true
   metabolisms:
     Digestion:
       effects:
@@ -358,6 +406,12 @@
   physicalDesc: reagent-physical-desc-fizzy
   flavor: fizzy
   color: "#619494"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/glass_clear.rsi
+    state: icon
+  metamorphicMaxFillLevels: 9
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: true
   fizziness: 0.8
 
 - type: reagent
@@ -430,6 +484,12 @@
   physicalDesc: reagent-physical-desc-translucent
   flavor: water
   color: "#75b1f0"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/glass_clear.rsi
+    state: icon
+  metamorphicMaxFillLevels: 9
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: true
   recognizable: true
   boilingPoint: 100.0
   meltingPoint: 0.0
@@ -533,6 +593,12 @@
   physicalDesc: reagent-physical-desc-wormy
   flavor: cheapnoodles
   color: "#664300"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/glass_clear.rsi
+    state: icon
+  metamorphicMaxFillLevels: 9
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: true
   metabolisms:
     Digestion:
       effects:
@@ -547,6 +613,12 @@
   physicalDesc: reagent-physical-desc-wormy
   flavor: cheapnoodles
   color: "#664300"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/glass_clear.rsi
+    state: icon
+  metamorphicMaxFillLevels: 9
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: true
   metabolisms:
     Digestion:
       effects:
@@ -583,6 +655,12 @@
   physicalDesc: reagent-physical-desc-creamy
   flavor: pilk
   color: "#e7c69f"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/glass_clear.rsi
+    state: icon
+  metamorphicMaxFillLevels: 9
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: true
   metabolisms:
     Digestion:
       effects:
@@ -598,6 +676,12 @@
   physicalDesc: reagent-physical-desc-sour
   flavor: bitter
   color: "#B3B599"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/glass_clear.rsi
+    state: icon
+  metamorphicMaxFillLevels: 9
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: true
   #Macrocosm start
   metabolisms:
     Bloodstream:
@@ -651,6 +735,12 @@
   physicalDesc: reagent-physical-desc-murky
   flavor: mopwata
   color: "#59502b"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/glass_clear.rsi
+    state: icon
+  metamorphicMaxFillLevels: 9
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: true
   metabolisms:
     Digestion:
       effects:

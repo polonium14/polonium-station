@@ -34,10 +34,10 @@
   flavor: peggnog
   color: "#ffca95"
   metamorphicSprite:
-    sprite: Objects/Consumable/Drinks/glass_collins_shape.rsi
+    sprite: Objects/Consumable/Drinks/glass_clear.rsi
     state: icon
-  metamorphicMaxFillLevels: 3
-  metamorphicFillBaseName: fill
+  metamorphicMaxFillLevels: 9
+  metamorphicFillBaseName: fill-
   metamorphicChangeColor: true
   recognizable: true
   metabolisms:

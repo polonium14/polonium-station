@@ -7,6 +7,12 @@
   flavor: apple
   color: "#FDAD01"
   recognizable: true
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/glass_clear.rsi
+    state: icon
+  metamorphicMaxFillLevels: 9
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: true
 
 - type: reagent
   id: JuiceBanana
@@ -16,6 +22,12 @@
   physicalDesc: reagent-physical-desc-crisp
   flavor: banana
   color: "#FFE777"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/glass_clear.rsi
+    state: icon
+  metamorphicMaxFillLevels: 9
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: true
 
 - type: reagent
   id: JuiceBerry
@@ -25,6 +37,12 @@
   physicalDesc: reagent-physical-desc-sweet
   flavor: berry
   color: "#660099"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/glass_clear.rsi
+    state: icon
+  metamorphicMaxFillLevels: 9
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: true
 
 - type: reagent
   id: JuiceBluePumpkin
@@ -34,6 +52,12 @@
   physicalDesc: reagent-physical-desc-strong-smelling
   flavor: bluepumpkin
   color: "#00BFFF"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/glass_clear.rsi
+    state: icon
+  metamorphicMaxFillLevels: 9
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: true
 
 - type: reagent
   id: JuiceBungo
@@ -43,6 +67,12 @@
   physicalDesc: reagent-physical-desc-tart
   flavor: bungo
   color: "#F9E43D"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/glass_clear.rsi
+    state: icon
+  metamorphicMaxFillLevels: 9
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: true
 
 - type: reagent
   id: JuiceCarrot
@@ -52,6 +82,12 @@
   physicalDesc: reagent-physical-desc-crisp
   flavor: carrot
   color: "#FF8820"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/glass_clear.rsi
+    state: icon
+  metamorphicMaxFillLevels: 9
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: true
   metabolisms:
     Digestion:
       metabolites:
@@ -66,6 +102,12 @@
   physicalDesc: reagent-physical-desc-crisp
   flavor: juice
   color: "#512284"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/glass_clear.rsi
+    state: icon
+  metamorphicMaxFillLevels: 9
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: true
 
 - type: reagent
   id: JuiceLemon
@@ -90,6 +132,12 @@
   physicalDesc: reagent-physical-desc-citric
   flavor: sour
   color: "#99bb43"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/glass_clear.rsi
+    state: icon
+  metamorphicMaxFillLevels: 9
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: true
 
 # /datum/reagent/drink/orangejuice/on_mob_life(var/mob/living/M)
 
@@ -122,6 +170,12 @@
   physicalDesc: reagent-physical-desc-tropical
   flavor: pineapple
   color: yellow
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/glass_clear.rsi
+    state: icon
+  metamorphicMaxFillLevels: 9
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: true
 
 - type: reagent
   id: JuiceTomato
@@ -131,6 +185,12 @@
   physicalDesc: reagent-physical-desc-saucey
   flavor: tomato
   color: "#731008"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/glass_clear.rsi
+    state: icon
+  metamorphicMaxFillLevels: 9
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: true
 
 - type: reagent
   id: JuiceWatermelon
@@ -155,3 +215,9 @@
   physicalDesc: reagent-physical-desc-sweet
   flavor: cherry
   color: "#84031a"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/glass_clear.rsi
+    state: icon
+  metamorphicMaxFillLevels: 9
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: true
