@@ -1,6 +1,6 @@
 using System.Numerics;
 using Content.IntegrationTests.Fixtures;
-using Content.Server._Shitmed.Medical.Surgery;
+using Content.Shared._Shitmed.Medical.Surgery;
 using Content.Shared._Shitmed.Medical.Surgery.Steps.Parts;
 using Content.Shared.Body;
 using Content.Shared.Body.Components;
@@ -143,6 +143,10 @@ public sealed class UnfinishedSurgeryBleedingPenaltyTest : GameTest
         {
             Assert.That(sEntMan.HasComponent<UnfinishedSurgeryPenaltyComponent>(mob), Is.False,
                 "Finishing the surgery should remove the penalty tracking component.");
+
+            var bloodstream = sEntMan.GetComponent<BloodstreamComponent>(mob);
+            Assert.That(bloodstream.BleedAmount, Is.EqualTo(0f),
+                "Finishing the surgery should also stop the bleed the penalty applied - the incision is closed.");
         });
     }
 
