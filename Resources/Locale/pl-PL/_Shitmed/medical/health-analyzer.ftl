@@ -49,3 +49,6 @@ condition-none = • Nie wykryto żadnych nieprawidłowości.
 group-organ-status = {$organ}: {$capacity}% wydajności
 group-solution-name = {$solution}
 group-solution-contents = {$reagent}: {$quantity}
+group-solution-name-bloodstream = Krwiobieg
+group-solution-name-metabolites = Metabolity
+group-solution-name-print = Zanieczyszczenia powierzchniowe

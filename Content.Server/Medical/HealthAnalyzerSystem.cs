@@ -15,7 +15,6 @@
 // SPDX-FileCopyrightText: 2024 Brandon Hu <103440971+Brandon-Huu@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Cojoke <83733158+Cojoke-dot@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Milon <plmilonpl@gmail.com>
-// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
 // SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Rainfey <rainfey0+github@gmail.com>
 // SPDX-FileCopyrightText: 2024 Saphire Lattice <lattice@saphi.re>
@@ -34,7 +33,12 @@
 // SPDX-FileCopyrightText: 2025 Zachary Higgs <compgeek223@gmail.com>
 // SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2026 Fruitsalad <949631+Fruitsalad@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 Maciej Walendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
 // SPDX-FileCopyrightText: 2026 Vanessa <908648+ShepardToTheStars@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 maciejwalendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 nikitosych <174215049+nikitosych@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2026 taydeo <tay@funkystation.org>
 // SPDX-FileCopyrightText: 2026 taydeo <td12233a@gmail.com>
 //
@@ -395,7 +399,14 @@ public sealed partial class HealthAnalyzerSystem : BaseAnalyzerSystem<HealthAnal
                 if (name is null || name == BloodstreamComponent.DefaultBloodTemporarySolutionName)
                     continue;
 
-                solutions[GetNetEntity(solution)] = new NamedSolution(name, solution.Comp.Solution);
+                var displayName = name switch
+                {
+                    BloodstreamComponent.DefaultBloodSolutionName => Loc.GetString("group-solution-name-bloodstream"),
+                    BloodstreamComponent.DefaultMetabolitesSolutionName => Loc.GetString("group-solution-name-metabolites"),
+                    "print" => Loc.GetString("group-solution-name-print"),
+                    _ => name,
+                };
+                solutions[GetNetEntity(solution)] = new NamedSolution(displayName, solution.Comp.Solution);
             }
         }
 
