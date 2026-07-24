@@ -2,6 +2,7 @@ using System.Linq;
 using Content.IntegrationTests.Fixtures;
 using Content.Server.Antag.Components;
 using Content.Server.GameTicking;
+using Content.Server.GameTicking.Presets;
 using Content.Server.GameTicking.Rules;
 using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Mind;
@@ -86,6 +87,8 @@ public sealed class TraitorRuleTest : GameTest
         TraitorRuleComponent traitorRule = null;
         await server.WaitPost(() =>
         {
+            ticker.SetGamePreset((GamePresetPrototype?) null);
+
             var gameRuleEnt = ticker.AddGameRule(TraitorGameRuleProtoId);
             Assert.That(entMan.TryGetComponent(gameRuleEnt, out traitorRule));
 
