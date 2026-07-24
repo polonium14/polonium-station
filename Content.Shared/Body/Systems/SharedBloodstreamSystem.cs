@@ -497,6 +497,8 @@ public abstract partial class SharedBloodstreamSystem : EntitySystem
         TryBleedOut(entity.AsNullable(), ev.BleedAmount);
 
         // Bleed rate is reduced by the bleed reduction amount in the bloodstream component.
+        // Systems that want to hold bleeding open (e.g. UnfinishedSurgeryPenaltySystem's
+        // surgical incision) do so by lowering BleedReductionAmount via BleedModifierEvent.
         TryModifyBleedAmount(entity.AsNullable(), -ev.BleedReductionAmount);
     }
 
@@ -558,7 +560,11 @@ public abstract partial class SharedBloodstreamSystem : EntitySystem
         if (!Resolve(ent, ref ent.Comp, logMissing: false))
             return false;
 
-        ent.Comp.BleedAmountNotFromWounds = Math.Max(ent.Comp.BleedAmountNotFromWounds + amount, 0);
+        // Clamped to MaxBleedAmount: BleedAmount itself is display-clamped in
+        // RecomputeBleedAmount, so an uncapped raw pool would silently accumulate "debt"
+        // above the cap that clotting then has to pay off before the visible bleed rate
+        // ever starts dropping.
+        ent.Comp.BleedAmountNotFromWounds = Math.Clamp(ent.Comp.BleedAmountNotFromWounds + amount, 0, ent.Comp.MaxBleedAmount);
         RecomputeBleedAmount(ent, ent.Comp);
         return true;
     }
