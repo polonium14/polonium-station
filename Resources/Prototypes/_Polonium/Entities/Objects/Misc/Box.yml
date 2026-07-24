@@ -11,6 +11,7 @@
     whitelist:
       tags:
       - Spray
+      - FireExtinguisher
       - TacticalIgniter
       - Pill
   - type: PhysicalComposition
