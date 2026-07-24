@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: mikeysaurus
-  changes:
-  - message: All non-arrivals shuttles are defaulted to have a 60 second cooldown
-      before they can FTL again.
-    type: Tweak
-  id: 9367
-  time: '2026-01-09T06:58:22.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42209
 - author: perryprog
   changes:
   - message: Added a button to the smart fridge UI to remove empty entries.
@@ -4056,3 +4048,18 @@
   id: 9874
   time: '2026-07-24T19:10:37.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/808
+- author: nikita
+  changes:
+  - message: "\u015Bluzy przeciwpo\u017Carowe teraz s\u0105 boltowane natychmiastowo\
+      \ po zg\u0142oszeniu niebezpiecze\u0144stwa przez AirAlarm / AtmosAlarm"
+    type: Tweak
+  - message: "zaboltowane \u015Bluzy przeciwpo\u017Carowe teraz da si\u0119 otworzy\u0107\
+      \ za pomoc\u0105 \u0142omu lub jaws of life - boltuj\u0105 si\u0119 ponownie\
+      \ po 2 sekundach"
+    type: Tweak
+  - message: "zaboltowanymi \u015Bluzami przeciwpo\u017Carowymi teraz da si\u0119\
+      \ sterowa\u0107 za pomoc\u0105 pilotu"
+    type: Tweak
+  id: 9875
+  time: '2026-07-24T22:49:43.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/810
