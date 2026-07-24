@@ -1,4 +1,9 @@
-﻿using Content.Server.Atmos.Monitor.Systems;
+// SPDX-FileCopyrightText: 2026 MaiaArai <158123176+YaraaraY@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 nikitosych <174215049+nikitosych@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Server.Atmos.Monitor.Systems;
 using Content.Server.Doors.Systems;
 using Content.Shared._Funkystation.FirelockBolt.Components;
 using Content.Shared._Funkystation.FirelockBolt.EntitySystems;
