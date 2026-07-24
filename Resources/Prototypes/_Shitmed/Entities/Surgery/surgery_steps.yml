@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2026 Maciej Walendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 maciejwalendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 
 - type: entity
   abstract: true
@@ -502,6 +507,7 @@
     sprite: _Shitmed/Objects/Specific/Medical/Surgery/hemostat.rsi
     state: hemostat
   - type: SurgeryTendWoundsEffect
+    healMultiplier: 0.12
     damage:
       types:
         Blunt: 0
@@ -523,6 +529,7 @@
     state: hemostat
   - type: SurgeryTendWoundsEffect
     mainGroup: Burn
+    healMultiplier: 0.3
     damage:
       types:
         Heat: 0
