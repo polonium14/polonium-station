@@ -117,13 +117,13 @@ namespace Content.Server.Doors.Systems
                     // Funky change
                     if (door.State == DoorState.Open)
                     {
+                        // Set before close so firelock bolts as soon as it finishes closing
+                        firelock.Pressure = pressure;
+                        firelock.Temperature = fire;
+                        Dirty(uid, firelock);
+
                         if (pressure || fire)
                         {
-                            // Set before close so firelock bolts as soon as it finishes closing
-                            firelock.Pressure = pressure;
-                            firelock.Temperature = fire;
-                            Dirty(uid, firelock);
-                            
                             EmergencyPressureStop(uid, firelock, door);
                         }
                     }

@@ -284,6 +284,7 @@
   - type: Tag
     tags:
     - ForceNoFixRotations # Prevent fixrotations from targeting these, since the base Firelock is targeted
+    - DoorRemoteWhitelist
   - type: Door
     occludes: false
   - type: Physics
