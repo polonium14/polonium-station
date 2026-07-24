@@ -17,6 +17,7 @@ using JetBrains.Annotations;
 using Robust.Server.Player;
 using Robust.Shared.Audio;
 using Robust.Shared.Player;
+using Robust.Shared.Timing;
 
 namespace Content.Server._Polonium.BluespaceStrike;
 
@@ -30,7 +31,9 @@ public sealed class BluespaceStrikeEui : BaseEui
     private readonly ServerGlobalSoundSystem _globalSound;
     private readonly IAdminLogManager _adminLog;
     private readonly IPlayerManager _playerManager;
+    private readonly IGameTiming _timing;
     private readonly ISawmill _sawmill;
+    private TimeSpan _nextArtillerySound = TimeSpan.Zero;
 
     public BluespaceStrikeEui()
     {
@@ -42,6 +45,7 @@ public sealed class BluespaceStrikeEui : BaseEui
         _globalSound = sys.GetEntitySystem<ServerGlobalSoundSystem>();
         _adminLog = IoCManager.Resolve<IAdminLogManager>();
         _playerManager = IoCManager.Resolve<IPlayerManager>();
+        _timing = IoCManager.Resolve<IGameTiming>();
         _sawmill = IoCManager.Resolve<ILogManager>().GetSawmill("bluespace-strike");
     }
 
@@ -162,11 +166,16 @@ public sealed class BluespaceStrikeEui : BaseEui
 
     private void HandlePlayArtillerySound()
     {
+        if (_timing.CurTime < _nextArtillerySound)
+            return;
+
+        // playglobalsound <path> <volume>
         var audio = AudioParams.Default
             .WithVolume(BluespaceStrikeComponent.ArtilleryAnnounceVolume)
             .AddVolume(-8);
         var filter = Filter.Empty().AddAllPlayers(_playerManager);
         _globalSound.PlayAdminGlobal(filter, BluespaceStrikeComponent.ArtilleryAnnounceSound, audio);
+        _nextArtillerySound = _timing.CurTime + BluespaceStrikeComponent.ArtilleryAnnounceCooldown;
 
         _adminLog.Add(LogType.Action, LogImpact.Medium,
             $"{Player} played bluespace artillery announce sound via artbs EUI");

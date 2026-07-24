@@ -15,7 +15,8 @@ public sealed partial class ChatSystem
         string? sender = null,
         bool playSound = true,
         SoundSpecifier? announcementSound = null,
-        Color? colorOverride = null
+        Color? colorOverride = null,
+        bool centComAnnouncement = false
         )
     {
         sender ??= Loc.GetString("chat-manager-sender-announcement");
@@ -25,7 +26,7 @@ public sealed partial class ChatSystem
         if (playSound)
         {
             // Polonium
-            var sound = announcementSound ?? (sender == Loc.GetString("admin-announce-announcer-default")
+            var sound = announcementSound ?? (centComAnnouncement
                 ? CCAnnouncementSound
                 : DefaultAnnouncementSound);
 

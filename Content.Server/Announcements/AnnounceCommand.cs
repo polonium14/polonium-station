@@ -52,8 +52,8 @@ public sealed partial class AnnounceCommand : LocalizedEntityCommands
         var message = args[0];
         var sender = Loc.GetString("cmd-announce-sender");
         var color = Color.Gold;
-
         SoundSpecifier? sound = null;
+        var centComAnnouncement = args.Length < 2;
 
         // Optional sender argument
         if (args.Length >= 2)
@@ -77,7 +77,7 @@ public sealed partial class AnnounceCommand : LocalizedEntityCommands
         if (args.Length >= 4)
             sound = new SoundPathSpecifier(args[3]);
 
-        _chat.DispatchGlobalAnnouncement(message, sender, true, sound, color);
+        _chat.DispatchGlobalAnnouncement(message, sender, true, sound, color, centComAnnouncement);
         shell.WriteLine(Loc.GetString("shell-command-success"));
     }
 

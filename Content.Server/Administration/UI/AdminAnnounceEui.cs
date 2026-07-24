@@ -50,7 +50,12 @@ namespace Content.Server.Administration.UI
                             break;
                         // TODO: Per-station announcement support
                         case AdminAnnounceType.Station:
-                            _chatSystem.DispatchGlobalAnnouncement(doAnnounce.Announcement, doAnnounce.Announcer, colorOverride: Color.Gold);
+                            var centCom = doAnnounce.Announcer == Loc.GetString("admin-announce-announcer-default");
+                            _chatSystem.DispatchGlobalAnnouncement(
+                                doAnnounce.Announcement,
+                                doAnnounce.Announcer,
+                                colorOverride: Color.Gold,
+                                centComAnnouncement: centCom);
                             break;
                     }
 
