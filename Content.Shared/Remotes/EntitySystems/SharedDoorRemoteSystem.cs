@@ -1,3 +1,5 @@
+using Content.Shared._Funkystation.FirelockBolt.Components;
+using Content.Shared._Funkystation.FirelockBolt.EntitySystems;
 using Content.Shared.Access.Components;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Database;
@@ -27,6 +29,7 @@ public abstract partial class SharedDoorRemoteSystem : EntitySystem
     [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private ISharedAdminLogManager _adminLogger = default!;
     [Dependency] private TagSystem _tagSystem = default!;
+    [Dependency] private SharedFirelockBoltControlSystem _firelockBolts = default!;
     [Dependency] protected IGameTiming Timing = default!;
 
 
@@ -109,10 +112,23 @@ public abstract partial class SharedDoorRemoteSystem : EntitySystem
                 {
                     if (!boltsComp.BoltWireCut)
                     {
-                        _doorSystem.SetBoltsDown((args.Target.Value, boltsComp), !boltsComp.BoltsDown, user: args.User, predicted: true);
+                        var willBolt = !boltsComp.BoltsDown;
+
+                        if (TryComp<FirelockBoltControlComponent>(args.Target, out var firelockBolts))
+                        {
+                            _firelockBolts.SetOverride((args.Target.Value, firelockBolts), !willBolt, playSound: false);
+                            
+                            if (willBolt)
+                                _doorSystem.SetBoltsDown((args.Target.Value, boltsComp), true, user: args.User, predicted: true);
+                        }
+                        else
+                        {
+                            _doorSystem.SetBoltsDown((args.Target.Value, boltsComp), willBolt, user: args.User, predicted: true);
+                        }
+
                         _adminLogger.Add(LogType.Action,
                             LogImpact.Medium,
-                            $"{ToPrettyString(args.User):player} used {ToPrettyString(args.Used)} on {ToPrettyString(args.Target.Value)} to {(boltsComp.BoltsDown ? "" : "un")}bolt it");
+                            $"{ToPrettyString(args.User):player} used {ToPrettyString(args.Used)} on {ToPrettyString(args.Target.Value)} to {(willBolt ? "" : "un")}bolt it");
                     }
                 }
 

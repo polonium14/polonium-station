@@ -67,6 +67,12 @@ public abstract partial class SharedFirelockSystem : EntitySystem
         if (args.Cancelled || !component.Powered || args.StrongPry || args.PryPowered)
             return;
 
+        if (component.IsLocked)
+            return;
+
+        if (TryComp<DoorBoltComponent>(uid, out var bolt) && bolt.BoltsDown)
+            return;
+
         args.Cancelled = true;
     }
 

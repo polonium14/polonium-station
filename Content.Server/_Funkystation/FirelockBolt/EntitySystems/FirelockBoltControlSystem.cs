@@ -3,7 +3,6 @@ using Content.Server.Doors.Systems;
 using Content.Shared._Funkystation.FirelockBolt.Components;
 using Content.Shared._Funkystation.FirelockBolt.EntitySystems;
 using Content.Shared.Atmos.Monitor;
-using Content.Shared.Doors.Components;
 
 namespace Content.Server._Funkystation.FirelockBolt.EntitySystems;
 
@@ -18,27 +17,12 @@ public sealed partial class FirelockBoltControlSystem : SharedFirelockBoltContro
 
     private void OnAtmosAlarm(EntityUid uid, FirelockBoltControlComponent component, AtmosAlarmEvent args)
     {
-        component.AlarmActive = args.AlarmType != AtmosAlarmType.Normal;
+        component.AlarmActive = args.AlarmType == AtmosAlarmType.Danger;
         Dirty(uid, component);
 
-        if (component.Override)
-            return;
-
-        if (component.AlarmActive)
-        {
-            // If an alarm is triggered and the door is closed, bolt
-            if (DoorQuery.TryComp(uid, out var door) && (door.State == DoorState.Closed || door.State == DoorState.Welded))
-            {
-                if (DoorBoltQuery.TryComp(uid, out var bolt))
-                    DoorSystem.SetBoltsDown((uid, bolt), true);
-            }
-        }
-        else
-        {
-            // If the alarm clears, unbolt
-            if (DoorBoltQuery.TryComp(uid, out var bolt))
-                DoorSystem.SetBoltsDown((uid, bolt), false);
-        }
+        // bolt/unbolt immediately when air alarm (or fire alarm) status changes
+        if (!component.Override)
+            UpdateHazardBolts((uid, component));
 
         PushState((uid, component));
     }
