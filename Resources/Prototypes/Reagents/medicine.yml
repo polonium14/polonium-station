@@ -734,7 +734,7 @@
         - !type:SatiateThirst
           factor: 6
         - !type:ModifyBloodLevel
-          amount: 6
+          amount: 12 # NFZ bumped 6 -> 12
     #Macrocosm edit start
         - !type:HealthChange
           conditions:
