@@ -1,2 +1,2 @@
-ent-ThermiteSparyer = { "Natryskiwacz Termitu" }
-    .desc = { "Lekkie i poręczne użądzenie z włukna szklanego do nakładania temitu na ściany...tak to jest zmodyfikowana gaśnica." }
+ent-TacticalIgniter = { "podpalarka taktyczna" }
+    .desc = { "Małe użądzenie podobne do spawarki do podpalania termitu. Tragiczne w roli spawarki." }
