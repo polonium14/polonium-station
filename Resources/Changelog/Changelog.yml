@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: Princess-Cheeseballs
-  changes:
-  - message: Audio will now play properly when toggling internals.
-    type: Fix
-  id: 9362
-  time: '2026-01-08T11:03:07.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42304
 - author: aada
   changes:
   - message: The handheld health analyzer no longer requires a battery.
@@ -4051,3 +4044,10 @@
   id: 9869
   time: '2026-07-24T08:58:47.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/800
+- author: haze
+  changes:
+  - message: "HUD doll pokazuje stan zdrowia zamiast b\xF3lu."
+    type: Tweak
+  id: 9870
+  time: '2026-07-24T10:27:28.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/805
