@@ -49,7 +49,7 @@ public sealed partial class TargetingSystem : SharedTargetingSystem
         }
         else if (args is { OldMobState: MobState.Dead, NewMobState: MobState.Alive or MobState.Critical })
         {
-            component.BodyStatus = _woundSystem.GetWoundableStatesOnBodyPainFeels(uid);
+            component.BodyStatus = _woundSystem.GetDamageableStatesOnBody(uid);
             changed = true;
         }
 

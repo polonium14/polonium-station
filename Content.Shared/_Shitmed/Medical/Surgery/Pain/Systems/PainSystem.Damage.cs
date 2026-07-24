@@ -533,7 +533,7 @@ public partial class PainSystem
         if (!TryComp<TargetingComponent>(body, out var targeting))
             return;
 
-        targeting.BodyStatus = _wound.GetWoundableStatesOnBodyPainFeels(body);
+        targeting.BodyStatus = _wound.GetDamageableStatesOnBody(body);
         Dirty(body, targeting);
 
         if (_net.IsServer)

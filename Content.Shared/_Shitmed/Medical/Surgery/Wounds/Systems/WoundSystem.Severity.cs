@@ -253,9 +253,8 @@ public sealed partial class WoundSystem
     /// <summary>
     /// Pushes this limb's severity into the owning mob's TargetingComponent.BodyStatus and
     /// notifies the client to refresh the targeting/health-analyzer UI. Uses
-    /// GetWoundableStatesOnBodyPainFeels rather than the plain GetWoundableStatesOnBody -
-    /// BodyStatus feeds the PartStatus doll HUD widget, which is meant to show what the mob
-    /// itself perceives (pain-feels-weighted), not raw wound state.
+    /// GetDamageableStatesOnBody - the same proc the health analyzer's doll reads - so the
+    /// PartStatus doll HUD widget always matches the analyzer.
     /// </summary>
     private void SyncTargetingBodyStatus(EntityUid woundable)
     {
@@ -265,7 +264,7 @@ public sealed partial class WoundSystem
         if (!TryComp<TargetingComponent>(body, out var targeting))
             return;
 
-        targeting.BodyStatus = GetWoundableStatesOnBodyPainFeels(body);
+        targeting.BodyStatus = GetDamageableStatesOnBody(body);
         Dirty(body, targeting);
 
         RaiseNetworkEvent(new TargetIntegrityChangeEvent(GetNetEntity(body)), body);

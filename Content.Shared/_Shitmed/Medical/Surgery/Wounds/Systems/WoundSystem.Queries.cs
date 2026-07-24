@@ -1,6 +1,5 @@
 using System.Linq;
 using Content.Shared._Shitmed.Body;
-using Content.Shared._Shitmed.Medical.Surgery.Pain.Components;
 using Content.Shared._Shitmed.Medical.Surgery.Wounds.Components;
 using Content.Shared._Shitmed.Targeting;
 using Content.Shared.Body;
@@ -194,68 +193,6 @@ public sealed partial class WoundSystem
                 continue;
 
             result[target] = woundable.WoundableSeverity;
-        }
-
-        return result;
-    }
-
-    /// <summary>
-    /// Same as <see cref="GetWoundableStatesOnBody"/> but each limb-organ's bucket is
-    /// re-derived from WoundableIntegrity weighted by that limb's NerveComponent.PainFeels
-    /// (1 by default, pushed up/down by tourniquets/painkillers/nerve damage via
-    /// PainSystem.TryAddPainFeelsModifier) instead of just reading the cached
-    /// WoundableSeverity directly - a numbed limb reads healthier on the doll than its actual
-    /// wound state, matching what the mob would subjectively perceive checking themselves
-    /// over, not the limb's objective condition. Organs without a NerveComponent (shouldn't
-    /// normally happen for a woundable limb, but not asserted) fall back to the unweighted
-    /// WoundableSeverity.
-    /// </summary>
-    public Dictionary<TargetBodyPart, WoundableSeverity> GetWoundableStatesOnBodyPainFeels(EntityUid mob)
-    {
-        var result = new Dictionary<TargetBodyPart, WoundableSeverity>();
-
-        foreach (var part in SharedTargetingSystem.GetValidParts())
-        {
-            result[part] = WoundableSeverity.Severed;
-        }
-
-        if (!TryComp<BodyComponent>(mob, out var body) || body.Organs is null)
-            return result;
-
-        foreach (var organ in body.Organs.ContainedEntities)
-        {
-            if (!TryComp<OrganComponent>(organ, out var organComp)
-                || organComp.Category is not { } category
-                || !LimbTargetMap.TryGetTarget(category, out var target)
-                || !TryComp<WoundableComponent>(organ, out var woundable))
-                continue;
-
-            if (!TryComp<NerveComponent>(organ, out var nerve))
-            {
-                result[target] = woundable.WoundableSeverity;
-                continue;
-            }
-
-            var damageFeeling = woundable.WoundableIntegrity * nerve.PainFeels;
-            var severity = woundable.WoundableSeverity;
-
-            if (damageFeeling >= woundable.IntegrityCap)
-            {
-                severity = WoundableSeverity.Healthy;
-            }
-            else if (woundable.SortedThresholds is { } sorted)
-            {
-                foreach (var (candidate, threshold) in sorted)
-                {
-                    if (candidate == WoundableSeverity.Severed)
-                        continue;
-
-                    if (damageFeeling <= threshold)
-                        severity = candidate;
-                }
-            }
-
-            result[target] = severity;
         }
 
         return result;
