@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: aada
-  changes:
-  - message: Toy swords now deal a very small amount of stamina damage for proper
-      sword fights.
-    type: Tweak
-  id: 9360
-  time: '2026-01-07T22:03:27.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42184
 - author: kontakt
   changes:
   - message: The Ninja's spider clan charge must now be planted on a wall or window.
@@ -4051,3 +4043,11 @@
   id: 9867
   time: '2026-07-24T06:42:56.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/799
+- author: haze
+  changes:
+  - message: "Podniesiono mno\u017Cnik leczenia obra\u017Ce\u0144 obuchowych i oparze\u0144\
+      \ podczas operacji!"
+    type: Tweak
+  id: 9868
+  time: '2026-07-24T07:40:13.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/801
