@@ -71,6 +71,11 @@ public sealed partial class BluespaceStrikeEui : BaseEui
         SendMessage(new BluespaceStrikeEuiMsg.Confirm(epicenter, radius, delaySeconds, showMarkersAndSound));
     }
 
+    public void PlayArtillerySound()
+    {
+        SendMessage(new BluespaceStrikeEuiMsg.PlayArtillerySound());
+    }
+
     public override void HandleState(EuiStateBase state)
     {
         if (state is not BluespaceStrikeEuiState strikeState)

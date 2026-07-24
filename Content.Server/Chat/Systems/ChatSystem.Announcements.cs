@@ -24,7 +24,13 @@ public sealed partial class ChatSystem
         _chatManager.ChatMessageToAll(ChatChannel.Radio, message, wrappedMessage, default, false, true, colorOverride);
         if (playSound)
         {
-            _audio.PlayGlobal(announcementSound ?? DefaultAnnouncementSound, Filter.Broadcast(), true, AudioParams.Default.WithVolume(-2f));
+            // Polonium
+            var sound = announcementSound ?? (sender == Loc.GetString("admin-announce-announcer-default")
+                ? CCAnnouncementSound
+                : DefaultAnnouncementSound);
+
+            _audio.PlayGlobal(sound, Filter.Broadcast(), true,
+                AudioParams.Default.WithVolume(announcementSound != null ? -2f : -3f));
         }
         _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Global station announcement from {sender}: {message}");
     }

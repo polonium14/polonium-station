@@ -19,7 +19,6 @@
 using Content.Server.Administration;
 using Content.Server.Chat.Systems;
 using Content.Shared.Administration;
-using Content.Shared.Chat;
 using Robust.Shared.Audio;
 using Robust.Shared.Console;
 using Robust.Shared.ContentPack;
@@ -53,7 +52,8 @@ public sealed partial class AnnounceCommand : LocalizedEntityCommands
         var message = args[0];
         var sender = Loc.GetString("cmd-announce-sender");
         var color = Color.Gold;
-        var sound = SharedChatSystem.DefaultAnnouncementSound;
+
+        SoundSpecifier? sound = null;
 
         // Optional sender argument
         if (args.Length >= 2)

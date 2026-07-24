@@ -57,6 +57,9 @@ public static class BluespaceStrikeEuiMsg
             ShowMarkersAndSound = showMarkersAndSound;
         }
     }
+
+    [Serializable, NetSerializable]
+    public sealed class PlayArtillerySound : EuiMessageBase;
 }
 
 [Serializable, NetSerializable]

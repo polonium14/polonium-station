@@ -24,6 +24,8 @@ public sealed partial class BluespaceStrikeComponent : Component
     public const float MaxMarkerRadius = 100f;
 
     public const string ExplosionType = "BluespaceArtillery";
+    public const string ArtilleryAnnounceSound = "/Audio/_Polonium/Admeme/artyleria.ogg";
+    public const float ArtilleryAnnounceVolume = 25f;
     public static readonly EntProtoId ControllerPrototype = "BluespaceStrikeController";
     public static readonly EntProtoId MarkerPrototype = "BluespaceStrikeMarker";
     public static readonly EntProtoId IncomingPrototype = "BluespaceStrikeIncoming";

@@ -345,7 +345,7 @@
     weight: 4
   - type: MeteorSwarm
     announcement: station-event-bio-swarm-start-announcement
-    announcementSound: /Audio/Announcements/attention.ogg
+    announcementSound: /Audio/_Polonium/Announcements/attention.ogg
     meteors:
       MeteorFlesh: 1
     waves:
@@ -363,7 +363,7 @@
     weight: 5
   - type: MeteorSwarm
     announcement: station-event-bio-swarm-start-announcement
-    announcementSound: /Audio/Announcements/attention.ogg
+    announcementSound: /Audio/_Polonium/Announcements/attention.ogg
     meteors:
       MeteorKudzu: 1
     waves:

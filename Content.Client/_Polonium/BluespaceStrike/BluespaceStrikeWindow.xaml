@@ -1,7 +1,7 @@
 <DefaultWindow
     xmlns="https://spacestation14.io"
     Title="{Loc 'admin-bluespace-strike-eui-title'}"
-    SetHeight="420">
+    SetHeight="460">
     <BoxContainer Name="MainContainer" Orientation="Vertical">
 
         <BoxContainer Orientation="Horizontal">
@@ -41,6 +41,7 @@
 
         <Control MinSize="0 20"/>
 
+        <Button Name="PlayArtillerySound" Text="{Loc 'admin-bluespace-strike-eui-label-play-artillery'}" />
         <Button Name="Confirm" Text="{Loc 'admin-bluespace-strike-eui-label-confirm'}" />
     </BoxContainer>
 </DefaultWindow>
