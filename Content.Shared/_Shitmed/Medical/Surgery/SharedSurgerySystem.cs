@@ -350,7 +350,8 @@ public abstract partial class SharedSurgerySystem : EntitySystem
             return;
         }
 
-        if (LimbTargetMap.TryGetOrganByCategory(EntityManager, body, ent.Comp.Category, out _))
+        if (LimbTargetMap.TryGetOrganByCategory(EntityManager, body, ent.Comp.Category, out var limb)
+            && !HasComp<BodyPartReattachedComponent>(limb))
             args.Cancelled = true;
     }
 
