@@ -17,6 +17,10 @@ public abstract partial class SharedExplosionEffectSystem : EntitySystem
 
     private void OnExplosionEffectTriggered(Entity<ExplosionEffectComponent> ent, ref ExplosiveTriggeredEvent args)
     {
+        // avoid spawning/throwing during deletion
+        if (TerminatingOrDeleted(ent))
+            return;
+
         foreach (var effect in ent.Comp.VisualEffects)
         {
             SpawnNextToOrDrop(effect, ent);
@@ -32,7 +36,7 @@ public abstract partial class SharedExplosionEffectSystem : EntitySystem
                     var angle = _random.NextAngle();
                     var direction = angle.ToVec().Normalized() * 10;
                     var shrapnel = SpawnNextToOrDrop(effect, ent);
-                    if (Exists(shrapnel))
+                    if (Exists(shrapnel) && !TerminatingOrDeleted(shrapnel))
                     {
                         _throwing.TryThrow(shrapnel, direction, ent.Comp.ShrapnelSpeed / 10);
                     }
