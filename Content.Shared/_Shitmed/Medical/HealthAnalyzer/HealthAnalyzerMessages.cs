@@ -22,6 +22,8 @@ public abstract class HealthAnalyzerBaseMessage : BoundUserInterfaceMessage
     public readonly Dictionary<TargetBodyPart, WoundableSeverity>? Body;
     public readonly Dictionary<TargetBodyPart, bool> Bleeding;
 
+    public readonly bool SystemicBleeding;
+
     public readonly Dictionary<TargetBodyPart, bool> Tourniqueted;
 
     public readonly Dictionary<TargetBodyPart, bool> UnfinishedSurgery;
@@ -36,6 +38,7 @@ public abstract class HealthAnalyzerBaseMessage : BoundUserInterfaceMessage
         HealthAnalyzerMode activeMode,
         Dictionary<TargetBodyPart, WoundableSeverity>? body,
         Dictionary<TargetBodyPart, bool> bleeding,
+        bool systemicBleeding,
         Dictionary<TargetBodyPart, bool> tourniqueted,
         Dictionary<TargetBodyPart, bool> unfinishedSurgery,
         List<ProtoId<OrganCategoryPrototype>> missingOrgans)
@@ -47,6 +50,7 @@ public abstract class HealthAnalyzerBaseMessage : BoundUserInterfaceMessage
         ActiveMode = activeMode;
         Body = body;
         Bleeding = bleeding;
+        SystemicBleeding = systemicBleeding;
         Tourniqueted = tourniqueted;
         UnfinishedSurgery = unfinishedSurgery;
         MissingOrgans = missingOrgans;
@@ -69,12 +73,13 @@ public sealed class HealthAnalyzerBodyMessage : HealthAnalyzerBaseMessage
         bool unrevivable,
         Dictionary<TargetBodyPart, WoundableSeverity>? body,
         Dictionary<TargetBodyPart, bool> bleeding,
+        bool systemicBleeding,
         Dictionary<TargetBodyPart, bool> tourniqueted,
         Dictionary<TargetBodyPart, bool> unfinishedSurgery,
         List<ProtoId<OrganCategoryPrototype>> missingOrgans,
         Dictionary<NetEntity, List<WoundableTraumaData>> traumas,
         NetEntity? selectedPart)
-        : base(targetEntity, temperature, bloodLevel, scanMode, HealthAnalyzerMode.Body, body, bleeding, tourniqueted, unfinishedSurgery, missingOrgans)
+        : base(targetEntity, temperature, bloodLevel, scanMode, HealthAnalyzerMode.Body, body, bleeding, systemicBleeding, tourniqueted, unfinishedSurgery, missingOrgans)
     {
         Unrevivable = unrevivable;
         SelectedPart = selectedPart;
@@ -110,11 +115,12 @@ public sealed class HealthAnalyzerOrgansMessage : HealthAnalyzerBaseMessage
         bool? scanMode,
         Dictionary<TargetBodyPart, WoundableSeverity>? body,
         Dictionary<TargetBodyPart, bool> bleeding,
+        bool systemicBleeding,
         Dictionary<TargetBodyPart, bool> tourniqueted,
         Dictionary<TargetBodyPart, bool> unfinishedSurgery,
         List<ProtoId<OrganCategoryPrototype>> missingOrgans,
         Dictionary<NetEntity, OrganTraumaData> organs)
-        : base(targetEntity, temperature, bloodLevel, scanMode, HealthAnalyzerMode.Organs, body, bleeding, tourniqueted, unfinishedSurgery, missingOrgans)
+        : base(targetEntity, temperature, bloodLevel, scanMode, HealthAnalyzerMode.Organs, body, bleeding, systemicBleeding, tourniqueted, unfinishedSurgery, missingOrgans)
     {
         Organs = organs;
     }
@@ -133,11 +139,12 @@ public sealed class HealthAnalyzerChemicalsMessage : HealthAnalyzerBaseMessage
         bool? scanMode,
         Dictionary<TargetBodyPart, WoundableSeverity>? body,
         Dictionary<TargetBodyPart, bool> bleeding,
+        bool systemicBleeding,
         Dictionary<TargetBodyPart, bool> tourniqueted,
         Dictionary<TargetBodyPart, bool> unfinishedSurgery,
         List<ProtoId<OrganCategoryPrototype>> missingOrgans,
         Dictionary<NetEntity, NamedSolution> solutions)
-        : base(targetEntity, temperature, bloodLevel, scanMode, HealthAnalyzerMode.Chemicals, body, bleeding, tourniqueted, unfinishedSurgery, missingOrgans)
+        : base(targetEntity, temperature, bloodLevel, scanMode, HealthAnalyzerMode.Chemicals, body, bleeding, systemicBleeding, tourniqueted, unfinishedSurgery, missingOrgans)
     {
         Solutions = solutions;
     }

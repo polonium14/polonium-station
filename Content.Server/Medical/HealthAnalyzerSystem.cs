@@ -180,7 +180,7 @@ public sealed partial class HealthAnalyzerSystem : BaseAnalyzerSystem<HealthAnal
         {
             _uiSystem.ServerSendUiMessage(uiEntity, uiKey, new HealthAnalyzerBodyMessage(
                 null, float.NaN, float.NaN, null, false, null,
-                new(), new(), new(), new(), new(), null));
+                new(), false, new(), new(), new(), new(), null));
             return;
         }
 
@@ -194,6 +194,8 @@ public sealed partial class HealthAnalyzerSystem : BaseAnalyzerSystem<HealthAnal
 
         var bodyStatus = _woundSystem.GetDamageableStatesOnBody(validTarget);
         var bleeding = FetchBleedData(body);
+        var systemicBleeding = TryComp<BloodstreamComponent>(validTarget, out var bloodstreamComp)
+            && bloodstreamComp.BleedAmountNotFromWounds > 0;
         var tourniqueted = FetchTourniquetData(body);
         var unfinishedSurgery = FetchUnfinishedSurgeryData(body);
         var missingOrgans = FetchMissingOrgansData(body);
@@ -202,13 +204,13 @@ public sealed partial class HealthAnalyzerSystem : BaseAnalyzerSystem<HealthAnal
         {
             case HealthAnalyzerMode.Organs:
                 _uiSystem.ServerSendUiMessage(uiEntity, uiKey, new HealthAnalyzerOrgansMessage(
-                    GetNetEntity(validTarget), bodyTemperature, bloodAmount, scanMode, bodyStatus, bleeding, tourniqueted, unfinishedSurgery, missingOrgans,
+                    GetNetEntity(validTarget), bodyTemperature, bloodAmount, scanMode, bodyStatus, bleeding, systemicBleeding, tourniqueted, unfinishedSurgery, missingOrgans,
                     FetchOrganData(body)));
                 break;
 
             case HealthAnalyzerMode.Chemicals:
                 _uiSystem.ServerSendUiMessage(uiEntity, uiKey, new HealthAnalyzerChemicalsMessage(
-                    GetNetEntity(validTarget), bodyTemperature, bloodAmount, scanMode, bodyStatus, bleeding, tourniqueted, unfinishedSurgery, missingOrgans,
+                    GetNetEntity(validTarget), bodyTemperature, bloodAmount, scanMode, bodyStatus, bleeding, systemicBleeding, tourniqueted, unfinishedSurgery, missingOrgans,
                     FetchChemicalData(validTarget, body)));
                 break;
 
@@ -217,7 +219,7 @@ public sealed partial class HealthAnalyzerSystem : BaseAnalyzerSystem<HealthAnal
                 var unrevivable = TryComp<UnrevivableComponent>(validTarget, out var unrevivableComp) && unrevivableComp.Analyzable;
 
                 _uiSystem.ServerSendUiMessage(uiEntity, uiKey, new HealthAnalyzerBodyMessage(
-                    GetNetEntity(validTarget), bodyTemperature, bloodAmount, scanMode, unrevivable, bodyStatus, bleeding, tourniqueted, unfinishedSurgery, missingOrgans,
+                    GetNetEntity(validTarget), bodyTemperature, bloodAmount, scanMode, unrevivable, bodyStatus, bleeding, systemicBleeding, tourniqueted, unfinishedSurgery, missingOrgans,
                     FetchTraumaData(body), part != null ? GetNetEntity(part.Value) : null));
                 break;
         }

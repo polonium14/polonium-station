@@ -234,7 +234,7 @@ public sealed partial class HealthAnalyzerWindow : FancyWindow
                 ? Identity.Name(part.Value, _entityManager)
                 : Loc.GetString("health-analyzer-window-entity-unknown-value-text");
 
-        var showAlerts = msg.Unrevivable || msg.Bleeding.Values.Any(v => v);
+        var showAlerts = msg.Unrevivable || msg.SystemicBleeding || msg.Bleeding.Values.Any(v => v);
         AlertsDivider.Visible = showAlerts;
         AlertsContainer.Visible = showAlerts;
 
@@ -301,6 +301,13 @@ public sealed partial class HealthAnalyzerWindow : FancyWindow
                 Margin = new Thickness(0, 4),
             });
         }
+
+        if (msg.SystemicBleeding)
+            ConditionsListContainer.AddChild(new RichTextLabel
+            {
+                Text = Loc.GetString("condition-body-bleeding-systemic", ("entity", Identity.Name(_target.Value, _entityManager))),
+                Margin = new Thickness(0, 4),
+            });
 
         foreach (var (bodyPart, hasTourniquet) in msg.Tourniqueted)
         {
