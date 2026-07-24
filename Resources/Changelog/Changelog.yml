@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: kontakt
-  changes:
-  - message: The Ninja's spider clan charge must now be planted on a wall or window.
-    type: Tweak
-  id: 9361
-  time: '2026-01-07T22:19:41.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/41208
 - author: Princess-Cheeseballs
   changes:
   - message: Audio will now play properly when toggling internals.
@@ -4051,3 +4044,10 @@
   id: 9868
   time: '2026-07-24T07:40:13.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/801
+- author: haze
+  changes:
+  - message: "Dodano brakuj\u0105ce lokalizacje operacji."
+    type: Fix
+  id: 9869
+  time: '2026-07-24T08:58:47.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/800
