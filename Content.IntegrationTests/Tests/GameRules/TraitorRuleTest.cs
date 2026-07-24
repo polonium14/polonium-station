@@ -87,7 +87,7 @@ public sealed class TraitorRuleTest : GameTest
         TraitorRuleComponent traitorRule = null;
         await server.WaitPost(() =>
         {
-            ticker.SetGamePreset((GamePresetPrototype?) null);
+            ticker.SetGamePreset((GamePresetPrototype) null);
 
             var gameRuleEnt = ticker.AddGameRule(TraitorGameRuleProtoId);
             Assert.That(entMan.TryGetComponent(gameRuleEnt, out traitorRule));
