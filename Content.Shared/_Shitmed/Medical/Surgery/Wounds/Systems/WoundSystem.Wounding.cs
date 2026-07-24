@@ -102,6 +102,7 @@ public sealed partial class WoundSystem
         if (!_net.IsServer || !ent.Comp.AllowWounds || !_timing.IsFirstTimePredicted || _suppressWoundInduction)
             return;
 
+        var tookDamage = false;
         foreach (var (damageType, damageValue) in args.Damage.DamageDict)
         {
             if (damageValue == FixedPoint2.Zero)
@@ -125,10 +126,12 @@ public sealed partial class WoundSystem
                 woundTarget = (redirect, redirectComp);
             }
 
-            TryInduceWound(woundTarget, damageType, damageValue, out _, woundTarget.Comp);
+            tookDamage |= TryInduceWound(woundTarget, damageType, damageValue, out _, woundTarget.Comp)
+                || IsWoundPrototypeValid($"Wound{damageType}");
         }
 
-        ent.Comp.LastDamageTime = _timing.CurTime;
+        if (tookDamage)
+            ent.Comp.LastDamageTime = _timing.CurTime;
 
         UpdateWoundableIntegrity(ent, ent.Comp);
         CheckWoundableSeverityThresholds(ent, ent.Comp);
