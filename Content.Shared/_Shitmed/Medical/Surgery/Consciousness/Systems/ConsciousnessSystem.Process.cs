@@ -123,13 +123,7 @@ public partial class ConsciousnessSystem
     {
         var body = args.Target;
 
-        // CheckRequiredParts can cascade into mob state changes that add/remove networked
-        // components - unsafe during client state application (corrupts NetComponents
-        // mid-iteration in ResetPredictedEntities). The server state carries the results.
-        if (_timing.ApplyingState)
-            return;
-
-        if (!_timing.IsFirstTimePredicted || !TryComp<ConsciousnessComponent>(body, out var consciousness))
+       if (!_timing.IsFirstTimePredicted || !TryComp<ConsciousnessComponent>(body, out var consciousness))
             return;
 
         var component = ent.Comp;
