@@ -1,20 +1,4 @@
 ﻿Entries:
-- author: LevitatingTree
-  changes:
-  - message: Saying ":?" now lets you shrug like "idk" used to.
-    type: Add
-  id: 9365
-  time: '2026-01-08T19:52:57.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/41236
-- author: B_Kirill, ScarKy0
-  changes:
-  - message: Added a bonfire with stake that sets the attached entities on fire.
-    type: Add
-  - message: A bonfire and a bonfire with stake can now be constructed.
-    type: Add
-  id: 9366
-  time: '2026-01-09T04:14:07.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42211
 - author: mikeysaurus
   changes:
   - message: All non-arrivals shuttles are defaulted to have a 60 second cooldown
@@ -4189,3 +4173,31 @@
   id: 9896
   time: '2026-07-24T12:04:24.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/806
+- author: Koilak
+  changes:
+  - message: "Zestaw do spalania \u015Bcian dla Komendanta"
+    type: Add
+  id: 9872
+  time: '2026-07-24T13:38:38.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/796
+- author: haze
+  changes:
+  - message: "Naprawiono walidacj\u0119 krok\xF3w chirurgii"
+    type: Fix
+  - message: Naprawiono surgury BUI disposal
+    type: Fix
+  - message: "Naprawiono \"Musisz najpierw uko\u0144czy\u0107 poprzedni krok\""
+    type: Fix
+  - message: "Moby bez ko\u0144czyn poprawnie wstaj\u0105 po powaleniu"
+    type: Fix
+  id: 9873
+  time: '2026-07-24T14:09:54.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/792
+- author: nikita
+  changes:
+  - message: "Naprawiono b\u0142\u0119dy zwi\u0105zane z emocjami w parze, pojawiaj\u0105\
+      ce si\u0119 w okre\u015Blonych warunkach"
+    type: Fix
+  id: 9874
+  time: '2026-07-24T19:10:37.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/808

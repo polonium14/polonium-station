@@ -1,3 +1,8 @@
+// SPDX-FileCopyrightText: 2026 Maciej Walendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 maciejwalendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Shitmed.Medical.Surgery;
@@ -6,7 +11,7 @@ namespace Content.Shared._Shitmed.Medical.Surgery;
 /// Raised on the step entity and the user after doing a step.
 /// </summary>
 [ByRefEvent]
-public record struct SurgeryStepEvent(EntityUid User, EntityUid Body, EntityUid Part, EntityUid Tool, EntityUid Surgery, EntityUid Step, bool Complete);
+public record struct SurgeryStepEvent(EntityUid User, EntityUid Body, EntityUid Part, EntityUid Tool, EntityUid Surgery, EntityUid Step);
 
 /// <summary>
 /// Raised on the user after failing to do a step for any reason.

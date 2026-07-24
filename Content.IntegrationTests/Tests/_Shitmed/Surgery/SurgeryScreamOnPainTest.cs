@@ -1,3 +1,8 @@
+// SPDX-FileCopyrightText: 2026 Maciej Walendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 maciejwalendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Numerics;
 using Content.IntegrationTests.Fixtures;
 using Content.IntegrationTests.Tests.Helpers;
@@ -76,7 +81,7 @@ public sealed class SurgeryScreamOnPainTest : GameTest
             Assert.That(sEntMan.HasComponent<SurgeryStepEmoteEffectComponent>(stepEnt!.Value),
                 Is.True, "Setup: SurgeryStepSawBones should carry SurgeryStepEmoteEffectComponent (the fix under test).");
 
-            var ev = new SurgeryStepEvent(victim, victim, victim, tool, default, stepEnt!.Value, true);
+            var ev = new SurgeryStepEvent(victim, victim, victim, tool, default, stepEnt!.Value);
             sEntMan.EventBus.RaiseLocalEvent(stepEnt.Value, ref ev);
         });
 
@@ -125,7 +130,7 @@ public sealed class SurgeryScreamOnPainTest : GameTest
             var stepEnt = sSurgery.GetSingleton("SurgeryStepSawBones");
             Assert.That(stepEnt, Is.Not.Null, "SurgeryStepSawBones should resolve to a real singleton entity.");
 
-            var ev = new SurgeryStepEvent(victim, victim, victim, tool, default, stepEnt!.Value, true);
+            var ev = new SurgeryStepEvent(victim, victim, victim, tool, default, stepEnt!.Value);
             sEntMan.EventBus.RaiseLocalEvent(stepEnt.Value, ref ev);
         });
 

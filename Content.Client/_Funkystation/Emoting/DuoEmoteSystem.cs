@@ -96,6 +96,9 @@ public sealed partial class DuoEmoteSystem : SharedDuoEmoteSystem
         var initiator = GetEntity(ev.Initiator);
         var partner = GetEntity(ev.Partner);
 
+        if (!Exists(initiator) || !Exists(partner))
+            return;
+
         // Base lunge animation
         PlayLunge(initiator, partner);
         PlayLunge(partner, initiator);
@@ -109,8 +112,11 @@ public sealed partial class DuoEmoteSystem : SharedDuoEmoteSystem
 
     private void PlayLunge(EntityUid uid, EntityUid toward)
     {
-        var myPos = _xform.GetMapCoordinates(uid).Position;
-        var theirPos = _xform.GetMapCoordinates(toward).Position;
+        if (!TryComp(uid, out TransformComponent? myXform) || !TryComp(toward, out TransformComponent? theirXform))
+            return;
+
+        var myPos = _xform.GetMapCoordinates(myXform).Position;
+        var theirPos = _xform.GetMapCoordinates(theirXform).Position;
         var dir = theirPos - myPos;
 
         if (dir == Vector2.Zero)

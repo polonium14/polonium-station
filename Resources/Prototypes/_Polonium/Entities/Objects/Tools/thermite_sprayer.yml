@@ -1,0 +1,70 @@
+- type: entity
+  name: Thermite sprayer
+  parent: [SolutionThermiteSprayer, BaseSecurityContraband, BaseItem]
+  id: ThermiteSparyer
+  description: A light and compact fibreglass-framed device for applying thermite to walls...yes it is a modified fire extinguisher.
+  components:
+  - type: UseDelay
+  - type: Spray
+    transferAmount: 5
+    pushbackAmount: 10
+    spraySound:
+      path: /Audio/Effects/extinguish.ogg
+    sprayedPrototype: ExtinguisherSpray
+    vaporAmount: 1
+    vaporSpread: 0
+    sprayVelocity: 0.5
+  - type: ItemToggle
+    soundActivate:
+      path: /Audio/Machines/button.ogg
+      params:
+        variation: 0.125
+        volume: -4
+    soundDeactivate:
+      path: /Audio/Machines/button.ogg
+      params:
+        variation: 0.125
+        volume: -4
+    verbToggleOn: fire-extinguisher-component-verb-remove
+    verbToggleOff: fire-extinguisher-component-verb-engage
+  - type: SpraySafety
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleableVisuals.Enabled:
+        enum.ToggleableVisuals.Layer:
+          True: { state: fire_extinguisher_open }
+          False: { state: fire_extinguisher_closed }
+  - type: Tag
+    tags:
+    - FireExtinguisher
+  - type: Sprite
+    sprite: Objects/Misc/fire_extinguisher_mini.rsi
+    layers:
+        - state: fire_extinguisher_closed
+          map: [ "enabled" ]
+  - type: Item
+    sprite: Objects/Misc/fire_extinguisher_mini.rsi
+    size: Small
+  - type: MeleeWeapon
+    wideAnimationRotation: 180
+    damage:
+      types:
+        Blunt: 3 #completely ineffective; your fists are better
+    soundHit:
+      path: /Audio/Effects/weak_hit1.ogg
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 50
+      Glass: 40
+
+- type: entity
+  parent: [SolutionSpray, SolutionTiny]
+  id: SolutionThermiteSprayer
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Thermite
+        Quantity: 30 # allows up to 6 walls. Plenty for security needs; worst case, ask chemistry.

@@ -1,3 +1,9 @@
+// SPDX-FileCopyrightText: 2026 Maciej Walendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 maciejwalendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 nikitosych <174215049+nikitosych@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Linq;
 using Content.Shared._Shitmed.Body;
 using Content.Shared._Shitmed.Medical.Surgery.Traumas.Components;
@@ -114,7 +120,11 @@ public partial class TraumaSystem
 
     private void OnStandAttempt(Entity<BodyComponent> body, ref StandAttemptEvent args)
     {
-        if (IsLegDependent(body) && IsLegless(body)) {
+        if (!IsLegDependent(body))
+            return;
+
+        if (IsLegless(body))
+        {
             args.Cancel();
             return;
         }

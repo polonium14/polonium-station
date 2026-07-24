@@ -32,21 +32,18 @@ public sealed partial class StainSystem : SharedStainSystem
 
         var spriteEnt = new Entity<SpriteComponent?>(ent.Owner, args.Sprite);
 
-        var layers = new List<int>(ent.Comp.RevealedLayers);
-        layers.Sort((a, b) => b.CompareTo(a));
-
-        foreach (var layer in layers)
+        foreach (var key in ent.Comp.RevealedLayers)
         {
-            _sprite.RemoveLayer(spriteEnt, layer);
+            _sprite.RemoveLayer(spriteEnt, key, logMissing: false);
         }
 
         ent.Comp.RevealedLayers.Clear();
 
-        foreach (var (_, layerData) in BuildVisuals(ent, ent.Comp.IconVisuals, "icon"))
+        foreach (var (key, layerData) in BuildVisuals(ent, ent.Comp.IconVisuals, "icon"))
         {
-#pragma warning disable CS0618
-            ent.Comp.RevealedLayers.Add(args.Sprite.AddLayer(layerData));
-#pragma warning restore CS0618
+            var index = _sprite.AddLayer(spriteEnt, layerData, null);
+            _sprite.LayerMapSet(spriteEnt, key, index);
+            ent.Comp.RevealedLayers.Add(key);
         }
     }
 

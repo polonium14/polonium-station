@@ -1,3 +1,8 @@
+// SPDX-FileCopyrightText: 2026 Maciej Walendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 maciejwalendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Client._Shitmed.Choice.UI;
 using Content.Client.Administration.UI.CustomControls;
 using Content.Shared._Shitmed.Medical.Surgery;
@@ -27,7 +32,7 @@ public sealed partial class SurgeryBui : BoundUserInterface
 
     protected override void ReceiveMessage(BoundUserInterfaceMessage message)
     {
-        if (_window is null
+        if (_window is null or { Disposed: true }
             || message is not SurgeryBuiRefreshMessage)
             return;
 
@@ -39,6 +44,9 @@ public sealed partial class SurgeryBui : BoundUserInterface
         if (state is not SurgeryBuiState s)
             return;
 
+        if (_window is { Disposed: true })
+            _window = null;
+
         Update(s);
     }
 
@@ -46,7 +54,10 @@ public sealed partial class SurgeryBui : BoundUserInterface
     {
         base.Dispose(disposing);
         if (disposing)
+        {
             _window?.Dispose();
+            _window = null;
+        }
     }
 
     private void Update(SurgeryBuiState state)
@@ -320,7 +331,8 @@ public sealed partial class SurgeryBui : BoundUserInterface
         if (_window == null)
             return;
 
-        _window.PartsButton.Parent!.Margin = new Thickness(0, 0, 0, 10);
+        if (_window.PartsButton.Parent is { } partsRow)
+            partsRow.Margin = new Thickness(0, 0, 0, 10);
 
         _window.Parts.Visible = type == ViewType.Parts;
         _window.PartsButton.Disabled = type == ViewType.Parts;

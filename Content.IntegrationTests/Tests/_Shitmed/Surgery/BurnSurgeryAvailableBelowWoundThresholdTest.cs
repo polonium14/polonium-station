@@ -1,3 +1,8 @@
+// SPDX-FileCopyrightText: 2026 Maciej Walendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 maciejwalendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Linq;
 using System.Numerics;
 using Content.IntegrationTests.Fixtures;
@@ -149,7 +154,7 @@ public sealed class BurnSurgeryAvailableBelowWoundThresholdTest : GameTest
         {
             await server.WaitPost(() =>
             {
-                var ev = new SurgeryStepEvent(victim, victim, torso, EntityUid.Invalid, burnSurgeryEnt!.Value, stepEnt!.Value, false);
+                var ev = new SurgeryStepEvent(victim, victim, torso, EntityUid.Invalid, burnSurgeryEnt!.Value, stepEnt!.Value);
                 sEntMan.EventBus.RaiseLocalEvent(stepEnt!.Value, ref ev);
             });
 

@@ -1,0 +1,43 @@
+- type: entity
+  parent: BoxBase
+  id: BaseThermitePack
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Appearance
+  - type: Storage
+    maxItemSize: Normal
+    grid:
+    - 0,0,3,1
+    whitelist:
+      tags:
+      - FireExtinguisher
+      - TacticalIgniter
+      - Pill
+  - type: PhysicalComposition
+    materialComposition:
+      Cardboard: 50
+      Cloth: 10
+  - type: StaticPrice
+    price: 15
+  - type: Sprite
+    layers:
+      - state: box
+      - state: flare
+  - type: Item
+    shape:
+    - 0,0,3,1
+
+- type: entity
+  parent: BaseThermitePack
+  id: ThermitePack
+  name: Thermite Pack
+  description: "A box for tactical deployment of thermite based breaching. On the side there is write: ONLY FOR PEACE SPREADING!"
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+       children:
+        - id: FireExtinguisher
+        - id: ThermiteSparyer
+        - id: TacticalIgniter
+        - id: PillDermaline
