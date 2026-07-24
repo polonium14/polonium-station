@@ -15,19 +15,18 @@ concurrency:
 jobs:
   build:
     if: >-
-      github.actor != 'Polonium-bot' && github.actor != 'PJBot' &&
-      github.actor != 'github-actions[bot]' && github.actor != 'github-actions' &&
-      (github.event_name != 'pull_request' ||
-        (github.event.pull_request.user.login != 'Polonium-bot' &&
-         github.event.pull_request.user.login != 'PJBot' &&
-         github.event.pull_request.user.login != 'github-actions[bot]' &&
-         github.event.pull_request.user.login != 'github-actions')) &&
-      (github.event_name != 'push' ||
-        (github.event.pusher.name != 'Polonium-bot' &&
-         github.event.pusher.name != 'PJBot' &&
-         github.event.pusher.name != 'github-actions[bot]' &&
-         github.event.pusher.name != 'github-actions')) &&
-      (github.event_name != 'pull_request' || github.event.pull_request.draft == false)
+      !contains(fromJSON('["Polonium-bot","PJBot","github-actions[bot]","github-actions"]'), github.actor) &&
+      (github.event_name != 'pull_request' || (
+        !contains(fromJSON('["Polonium-bot","PJBot","github-actions[bot]","github-actions"]'), github.event.pull_request.user.login) &&
+        github.event.pull_request.draft == false
+      )) &&
+      (github.event_name != 'push' || (
+        !contains(fromJSON('["Polonium-bot","PJBot","github-actions[bot]","github-actions"]'), github.event.pusher.name) &&
+        !contains(fromJSON('["Polonium-bot","PJBot","github-actions[bot]","github-actions"]'), github.event.head_commit.author.name) &&
+        !contains(fromJSON('["Polonium-bot","PJBot","github-actions[bot]","github-actions"]'), github.event.head_commit.author.username) &&
+        !contains(fromJSON('["Polonium-bot","PJBot","github-actions[bot]","github-actions"]'), github.event.head_commit.committer.name) &&
+        !contains(fromJSON('["Polonium-bot","PJBot","github-actions[bot]","github-actions"]'), github.event.head_commit.committer.username)
+      ))
     strategy:
       matrix:
         os: [ubuntu-latest]
