@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: aada
-  changes:
-  - message: The handheld health analyzer no longer requires a battery.
-    type: Tweak
-  id: 9363
-  time: '2026-01-08T19:38:23.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42292
 - author: perryprog
   changes:
   - message: The go go hat can now only retrieve and store items when worn.
@@ -4051,3 +4044,10 @@
   id: 9870
   time: '2026-07-24T10:27:28.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/805
+- author: haze
+  changes:
+  - message: "Przywr\xF3cono poprawne warto\u015Bci bloodpack\xF3w i soli fizjologicznej"
+    type: Tweak
+  id: 9871
+  time: '2026-07-24T12:04:24.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/806
