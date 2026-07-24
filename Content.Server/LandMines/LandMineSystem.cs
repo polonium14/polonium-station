@@ -28,6 +28,9 @@ public sealed partial class LandMineSystem : EntitySystem
     /// </summary>
     private void HandleStepOnTriggered(EntityUid uid, LandMineComponent component, ref StepTriggeredOnEvent args)
     {
+        if (TerminatingOrDeleted(uid))
+            return;
+
         if (!string.IsNullOrEmpty(component.TriggerText))
         {
             _popupSystem.PopupCoordinates(
@@ -44,6 +47,9 @@ public sealed partial class LandMineSystem : EntitySystem
     /// </summary>
     private void HandleStepOffTriggered(EntityUid uid, LandMineComponent component, ref StepTriggeredOffEvent args)
     {
+        if (TerminatingOrDeleted(uid))
+            return;
+
         // TODO: Adjust to the new trigger system
         _trigger.Trigger(uid, args.Tripper, TriggerSystem.DefaultTriggerKey);
     }
