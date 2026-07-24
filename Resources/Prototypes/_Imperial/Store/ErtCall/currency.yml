@@ -35,7 +35,7 @@
 
 - type: stack
   id: BlueSpaceCube
-  name: blueSpaceCube
+  name: stack-blue-space-cube
   icon: _Imperial/Objects/Specific/ErtCall/bluespacecube.rsi
   spawn: BlueSpaceCube1
 

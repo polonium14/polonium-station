@@ -4175,12 +4175,17 @@
   id: 9894
   time: '2026-07-23T06:39:04.0000000+00:00'
   url: https://github.com/space-wizards/space-station-14/pull/43315
+- author: haze
+  changes:
+  - message: "HUD doll pokazuje stan zdrowia zamiast b\xF3lu."
+    type: Tweak
+  id: 9895
   time: '2026-07-24T10:27:28.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/805
 - author: haze
   changes:
   - message: "Przywr\xF3cono poprawne warto\u015Bci bloodpack\xF3w i soli fizjologicznej"
     type: Tweak
-  id: 9871
+  id: 9896
   time: '2026-07-24T12:04:24.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/806

@@ -8,7 +8,7 @@
 - type: entity
   id: LockerBlueshieldOfficer
   name: blueshield officer locker
-  parent: LockerBaseSecure
+  parent: LockerBase # i hope this works
   components:
   - type: Appearance
   - type: Sprite
@@ -23,7 +23,7 @@
 - type: entity
   id: LockerNanorep
   name: nanotrasen representative locker
-  parent: LockerBaseSecure
+  parent: LockerBase
   components:
   - type: Appearance
   - type: Sprite

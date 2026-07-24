@@ -13,3 +13,5 @@ location-powersink = powersink
 location-immovable-rod = immovable rod
 location-nuke-disk = nuke disk
 location-nuclear-bomb = nuclear bomb
+location-supermatter = supermatter
+location-nuclear-reactor = nuclear reactor
