@@ -148,9 +148,6 @@ public partial class ConsciousnessSystem
     {
         var oldBody = args.Target;
 
-        if (_timing.ApplyingState)
-            return;
-
         if (!_timing.IsFirstTimePredicted || !TryComp<ConsciousnessComponent>(oldBody, out var consciousness))
             return;
 
