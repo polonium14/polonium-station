@@ -13,7 +13,7 @@
     sprayedPrototype: ExtinguisherSpray
     vaporAmount: 1
     vaporSpread: 0
-    sprayVelocity: 0.5
+    sprayVelocity: 1
   - type: ItemToggle
     soundActivate:
       path: /Audio/Machines/button.ogg
