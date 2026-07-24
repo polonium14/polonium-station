@@ -28,3 +28,5 @@ ent-ActionChangelingTakeOverCorpse = Take Over Corpse
     .desc = Infest a corpse to return to your true form.
 ent-ActionChangelingNightVision = Toggle Night Vision
     .desc = Turns our night vision on/off.
+ent-ActionChangelingScreech = Screech
+    .desc = We produce a deafening screech that weakens those around us.

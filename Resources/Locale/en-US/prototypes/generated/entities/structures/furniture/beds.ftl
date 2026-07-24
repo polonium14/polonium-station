@@ -1,3 +1,5 @@
+ent-BaseBed = { ent-BaseStructure }
+    .desc = { ent-BaseStructure.desc }
 ent-Bed = bed
     .desc = This is used to lie in, sleep in or strap on. Resting here provides extremely slow healing.
 ent-MedicalBed = medical bed

@@ -1,9 +1,7 @@
 ent-CrateMedicalSupplies = medical supplies crate
     .desc = Basic medical supplies.
 ent-CrateChemistrySupplies = chemistry supplies crate
-    .desc = Basic chemistry supplies.
-ent-CrateChemistryVials = vial supply crate
-    .desc = Crate filled with a box of vials.
+    .desc = A crate containing assorted laboratory glassware, droppers, syringes, and pill canisters. Chemicals sold separately.
 ent-CrateMindShieldImplants = MindShield implant crate
     .desc = Crate filled with 3 MindShield implants.
 ent-CrateMedicalSurgery = surgical supplies crate

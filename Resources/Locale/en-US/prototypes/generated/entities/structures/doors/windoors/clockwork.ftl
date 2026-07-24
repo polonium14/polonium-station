@@ -1,2 +1,2 @@
 ent-BaseClockworkWindoor = clockwork windoor
-    .desc = { ent-BaseWindoor.desc }
+    .desc = { ent-BaseWindoorGeneric.desc }

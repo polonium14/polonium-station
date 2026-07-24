@@ -490,3 +490,15 @@ entity-effect-guidebook-add-reagent-to-bloodstream =
         [1] Injects
         *[other] inject
     } {$quantity} of {$reagent} directly into the bloodstream
+
+entity-effect-guidebook-heal-bones =
+    { $chance ->
+        [1] Heals
+        *[other] heal
+    } all broken and fractured bones in the body
+
+entity-effect-disarm =
+    { $chance ->
+        [1] Disarms
+        *[other] disarms
+    } the entity

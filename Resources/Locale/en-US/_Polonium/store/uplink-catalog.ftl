@@ -1,2 +1,16 @@
-﻿uplink-syndicate-dinocube-box-name = Syndicate Dino Box
 uplink-syndicate-dinocube-box-desc = A box containing 6 random compacted dinosaurs, these cubes turn into a variety of angry prehistoric wildlife after coming into contact with water.
+uplink-pistol-vis-mps-name = VIS MPS .35
+uplink-pistol-vis-mps-desc = A compact .35 caliber VIS MPS pistol used by Polish security forces across the galaxy. Reliable in close-range combat with a good balance of firepower and recoil control.
+uplink-pistol-vis-mps-magazine-name = VIS MPS Magazine
+uplink-pistol-vis-mps-magazine-desc = A 25-round magazine for the .35 caliber VIS MPS pistol.
+uplink-pistol-pmm-name = PMM Model-X
+uplink-pistol-pmm-desc = A .35 caliber modular PDW submachine gun popular with security forces and private contractors on many space stations.
+uplink-pistol-pmm-magazine-name = PMM Magazine
+uplink-pistol-pmm-magazine-desc = A 30-round .35 caliber magazine for the PMM Model-X.
+uplink-rifle-beryl-name = Beryl wz. 96
+uplink-rifle-beryl-desc = An iconic Polish .30 assault rifle. High rate of fire and muzzle velocity at the cost of long burst accuracy.
+uplink-sniper-bor-name = BOR .30
+uplink-sniper-bor-desc = An advanced .30 caliber sniper rifle used by military and special forces across the galaxy. Excellent long-range accuracy and stopping power.
+uplink-sniper-bor-magazine-name = BOR .30 Magazine
+uplink-sniper-bor-magazine-desc = A 10-round magazine for the BOR .30 sniper rifle.
+uplink-syndicate-dinocube-box-name = Syndicate Dino Box
