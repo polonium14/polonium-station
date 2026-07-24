@@ -15,7 +15,8 @@ public sealed partial class ChatSystem
         string? sender = null,
         bool playSound = true,
         SoundSpecifier? announcementSound = null,
-        Color? colorOverride = null
+        Color? colorOverride = null,
+        bool centComAnnouncement = false
         )
     {
         sender ??= Loc.GetString("chat-manager-sender-announcement");
@@ -24,7 +25,13 @@ public sealed partial class ChatSystem
         _chatManager.ChatMessageToAll(ChatChannel.Radio, message, wrappedMessage, default, false, true, colorOverride);
         if (playSound)
         {
-            _audio.PlayGlobal(announcementSound ?? DefaultAnnouncementSound, Filter.Broadcast(), true, AudioParams.Default.WithVolume(-2f));
+            // Polonium
+            var sound = announcementSound ?? (centComAnnouncement
+                ? CCAnnouncementSound
+                : DefaultAnnouncementSound);
+
+            _audio.PlayGlobal(sound, Filter.Broadcast(), true,
+                AudioParams.Default.WithVolume(announcementSound != null ? -2f : -3f));
         }
         _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Global station announcement from {sender}: {message}");
     }

@@ -5,6 +5,7 @@
 
 using Content.Server.Administration.Logs;
 using Content.Server.AlertLevel;
+using Content.Server.Audio;
 using Content.Server.EUI;
 using Content.Server.Explosion.EntitySystems;
 using Content.Server.Station.Systems;
@@ -13,6 +14,10 @@ using Content.Shared.Administration;
 using Content.Shared.Database;
 using Content.Shared.Eui;
 using JetBrains.Annotations;
+using Robust.Server.Player;
+using Robust.Shared.Audio;
+using Robust.Shared.Player;
+using Robust.Shared.Timing;
 
 namespace Content.Server._Polonium.BluespaceStrike;
 
@@ -23,8 +28,12 @@ public sealed class BluespaceStrikeEui : BaseEui
     private readonly ExplosionSystem _explosion;
     private readonly AlertLevelSystem _alertLevel;
     private readonly StationSystem _station;
+    private readonly ServerGlobalSoundSystem _globalSound;
     private readonly IAdminLogManager _adminLog;
+    private readonly IPlayerManager _playerManager;
+    private readonly IGameTiming _timing;
     private readonly ISawmill _sawmill;
+    private TimeSpan _nextArtillerySound = TimeSpan.Zero;
 
     public BluespaceStrikeEui()
     {
@@ -33,7 +42,10 @@ public sealed class BluespaceStrikeEui : BaseEui
         _explosion = sys.GetEntitySystem<ExplosionSystem>();
         _alertLevel = sys.GetEntitySystem<AlertLevelSystem>();
         _station = sys.GetEntitySystem<StationSystem>();
+        _globalSound = sys.GetEntitySystem<ServerGlobalSoundSystem>();
         _adminLog = IoCManager.Resolve<IAdminLogManager>();
+        _playerManager = IoCManager.Resolve<IPlayerManager>();
+        _timing = IoCManager.Resolve<IGameTiming>();
         _sawmill = IoCManager.Resolve<ILogManager>().GetSawmill("bluespace-strike");
     }
 
@@ -71,6 +83,9 @@ public sealed class BluespaceStrikeEui : BaseEui
                 break;
             case BluespaceStrikeEuiMsg.Confirm confirm:
                 HandleConfirm(confirm);
+                break;
+            case BluespaceStrikeEuiMsg.PlayArtillerySound:
+                HandlePlayArtillerySound();
                 break;
         }
     }
@@ -147,5 +162,22 @@ public sealed class BluespaceStrikeEui : BaseEui
 
         _adminLog.Add(LogType.Action, LogImpact.High,
             $"{Player} confirmed bluespace strike EUI at {confirm.Epicenter} r={confirm.Radius} t={confirm.DelaySeconds}s warn={confirm.ShowMarkersAndSound}");
+    }
+
+    private void HandlePlayArtillerySound()
+    {
+        if (_timing.CurTime < _nextArtillerySound)
+            return;
+
+        // playglobalsound <path> <volume>
+        var audio = AudioParams.Default
+            .WithVolume(BluespaceStrikeComponent.ArtilleryAnnounceVolume)
+            .AddVolume(-8);
+        var filter = Filter.Empty().AddAllPlayers(_playerManager);
+        _globalSound.PlayAdminGlobal(filter, BluespaceStrikeComponent.ArtilleryAnnounceSound, audio);
+        _nextArtillerySound = _timing.CurTime + BluespaceStrikeComponent.ArtilleryAnnounceCooldown;
+
+        _adminLog.Add(LogType.Action, LogImpact.Medium,
+            $"{Player} played bluespace artillery announce sound via artbs EUI");
     }
 }

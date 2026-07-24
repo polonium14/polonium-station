@@ -8,6 +8,7 @@ admin-bluespace-strike-eui-label-markers = Markers + air-raid sound
 admin-bluespace-strike-eui-warning-not-epsilon = Warning! Alert code is not Epsilon. Make sure you know what you are doing.
 admin-bluespace-strike-eui-label-radius = Radius (max 100)
 admin-bluespace-strike-eui-label-delay = Delay (1–300 s)
+admin-bluespace-strike-eui-label-play-artillery = Play artillery sound
 admin-bluespace-strike-eui-label-confirm = Fire!
 
 cmd-artbs-desc = Opens the bluespace strike targeting UI.

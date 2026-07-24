@@ -41,6 +41,7 @@ public sealed partial class BluespaceStrikeWindow : DefaultWindow
 
         MapOptions.OnItemSelected += MapSelected;
         Recentre.OnPressed += _ => SetLocation();
+        PlayArtillerySound.OnPressed += _ => _eui.PlayArtillerySound();
         Confirm.OnPressed += SubmitButtonOnOnPressed;
 
         Preview.OnToggled += _ => UpdatePreview();
