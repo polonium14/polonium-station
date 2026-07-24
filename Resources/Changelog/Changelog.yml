@@ -1,13 +1,4 @@
 ﻿Entries:
-- author: B_Kirill, ScarKy0
-  changes:
-  - message: Added a bonfire with stake that sets the attached entities on fire.
-    type: Add
-  - message: A bonfire and a bonfire with stake can now be constructed.
-    type: Add
-  id: 9366
-  time: '2026-01-09T04:14:07.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42211
 - author: mikeysaurus
   changes:
   - message: All non-arrivals shuttles are defaulted to have a 60 second cooldown
@@ -4057,3 +4048,11 @@
   id: 9873
   time: '2026-07-24T14:09:54.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/792
+- author: nikita
+  changes:
+  - message: "Naprawiono b\u0142\u0119dy zwi\u0105zane z emocjami w parze, pojawiaj\u0105\
+      ce si\u0119 w okre\u015Blonych warunkach"
+    type: Fix
+  id: 9874
+  time: '2026-07-24T19:10:37.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/808
