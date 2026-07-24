@@ -72,7 +72,7 @@ public sealed partial class GasFilterBoundUserInterface(EntityUid owner, Enum ui
         SendPredictedMessage(new GasFilterChangeRateMessage(rate));
     }
 
-    private void OnFilterGasesChanged(HashSet<Gas> gases) // Funky - for filtering of multiple gases
+    private void OnFilterGasesChanged(HashSet<Gas> gases)
     {
         SendPredictedMessage(new GasFilterChangeGasesMessage(gases));
     }
