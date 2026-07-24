@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: SomegnihT
-  changes:
-  - message: Vox now properly say they turn into fried chicken upon getting enough
-      heat damage
-    type: Fix
-  id: 9359
-  time: '2026-01-07T19:37:53.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42280
 - author: aada
   changes:
   - message: Toy swords now deal a very small amount of stamina damage for proper
@@ -4051,3 +4043,11 @@
   id: 9866
   time: '2026-07-23T17:27:38.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/798
+- author: haze
+  changes:
+  - message: "Naprawiono health analyzer, tak \u017Ceby dzia\u0142a\u0142 ze zwierz\u0119\
+      tami"
+    type: Fix
+  id: 9867
+  time: '2026-07-24T06:42:56.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/799
