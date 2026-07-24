@@ -20,7 +20,6 @@ using Content.Shared.Gravity;
 using Content.Shared.Humanoid;
 using Content.Shared.Input;
 using Content.Shared.Jittering;
-using Content.Shared.Mech.Components;
 using Content.Shared.Mech.EntitySystems;
 using Content.Shared.Mobs;
 using Content.Shared.Movement.Components;
@@ -30,6 +29,7 @@ using Content.Shared.Popups;
 using Content.Shared.Rounding;
 using Content.Shared.Standing;
 using Content.Shared.Stunnable;
+using Content.Shared.Vehicle.Components;
 using Content.Shared.Zombies;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
@@ -79,7 +79,7 @@ public abstract partial class SharedSprintingSystem : EntitySystem
         SubscribeLocalEvent<StandingStateComponent, SprintAttemptEvent>(OnStandingStateSprintAttempt);
         SubscribeLocalEvent<SprinterComponent, EntityZombifiedEvent>(OnZombified);
         SubscribeLocalEvent<BuckleComponent, SprintAttemptEvent>(OnBuckleSprintAttempt);
-        SubscribeLocalEvent<MechPilotComponent, SprintAttemptEvent>(OnMechPilotSprintAttempt);
+        SubscribeLocalEvent<VehicleOperatorComponent, SprintAttemptEvent>(OnMechPilotSprintAttempt);
         SubscribeLocalEvent<SprinterComponent, MechEntryEvent>(OnMechEntry);
         SubscribeLocalEvent<SlowedDownComponent, RefreshMovementSpeedModifiersEvent>(OnSlowedDownRefresh);
 
@@ -409,9 +409,10 @@ public abstract partial class SharedSprintingSystem : EntitySystem
         args.Cancel();
     }
 
-    private void OnMechPilotSprintAttempt(EntityUid uid, MechPilotComponent component, ref SprintAttemptEvent args)
+    private void OnMechPilotSprintAttempt(EntityUid uid, VehicleOperatorComponent component, ref SprintAttemptEvent args)
     {
-        if (!TryComp<SprinterComponent>(component.Mech, out var sprinterComponent)
+        if (component.Vehicle is not { } vehicle
+            || !TryComp<SprinterComponent>(vehicle, out var sprinterComponent)
             || sprinterComponent.IsSprinting)
             return;
 

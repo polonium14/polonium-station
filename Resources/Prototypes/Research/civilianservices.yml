@@ -149,6 +149,7 @@
   - MegaSprayBottle
   - BorgModuleAdvancedCleaning
   - WashingMachineCircuitboard
+  - TrashBagHolding
 
 - type: technology
   id: HONKMech

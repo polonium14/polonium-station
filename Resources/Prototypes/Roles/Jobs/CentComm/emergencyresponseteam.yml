@@ -547,6 +547,28 @@
   storage:
     back:
     - TrashBag
+    - SoapNT
+    - Plunger
+    - Screwdriver
+    - AdvMopItem
+    - GrenadeCleanade
+    - GrenadeCleanade # End of first line
+    - GrenadeCleanade
+    - GrenadeCleanade
+    - GrenadeCleanade
+    - GrenadeCleanade
     - Holoprojector
     - CrowbarRed
     - BoxSurvivalSecurity
+    - WeaponPistolMk58
+    - MagazinePistol
+    - EmergencyMedipen
+
+- type: chameleonOutfit
+  id: ERTJanitorChameleonOutfit
+  job: ERTJanitor
+  hasMindShield: true
+  equipment:
+    head: ClothingHeadHelmetHardsuitERTJanitor
+    neck: ClothingNeckScarfStripedPurple
+    eyes: ClothingEyesGlassesSunglasses
