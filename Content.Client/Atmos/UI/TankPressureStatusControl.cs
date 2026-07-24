@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Pok <113675512+Pok27@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Client.Items.UI;
 using Content.Client.Message;
 using Content.Client.Stylesheets;

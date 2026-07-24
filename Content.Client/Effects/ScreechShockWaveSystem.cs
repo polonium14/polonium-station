@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 KeTuFaisPiKiNut <85769816+ketufaispikinut@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Client.Overlays;
 using Content.Shared.Screech;
 using Robust.Client.Graphics;

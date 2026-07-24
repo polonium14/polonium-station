@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 psykana <36602558+psykana@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Atmos.Piping.Trinary.Components;
 using Content.Shared.Atmos.Piping.Trinary.EntitySystems;
 using Robust.Client.GameObjects;
