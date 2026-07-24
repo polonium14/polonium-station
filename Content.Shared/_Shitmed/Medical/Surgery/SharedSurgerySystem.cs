@@ -1,3 +1,8 @@
+// SPDX-FileCopyrightText: 2026 Maciej Walendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 maciejwalendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared._Shitmed.Body;
 using Content.Shared._Shitmed.Medical.Surgery.Conditions;
 using Content.Shared._Shitmed.Medical.Surgery.Consciousness.Systems;
@@ -133,14 +138,28 @@ public abstract partial class SharedSurgerySystem : EntitySystem
     private void OnBeforeTargetDoAfter(Entity<SurgeryTargetComponent> ent,
         ref DoAfterAttemptEvent<SurgeryDoAfterEvent> args)
     {
-        if (_net.IsClient
-            || !args.Event.Repeat) // We only wanna do this laggy shit on repeatables. One-time stuff idc.
+        if (_net.IsClient)
             return;
 
-        if (args.Event.Target is not { } target
-            || !IsSurgeryValid(ent, target, args.Event.Surgery, args.Event.Step, args.Event.User, out var surgery, out var part, out var _)
-            || IsStepComplete(ent, part, args.Event.Step, surgery))
+        if (args.Event.Target is not { } target)
+        {
             args.Cancel();
+            return;
+        }
+
+        if (!IsSurgeryValid(ent, target, args.Event.Surgery, args.Event.Step, args.Event.User, out var surgery, out var part, out var _))
+        {
+            Log.Warning($"Cancelling surgery doafter mid-way: {args.Event.Surgery}/{args.Event.Step} on {ToPrettyString(target)} of {ToPrettyString(ent)} - IsSurgeryValid failed.");
+            args.Cancel();
+            return;
+        }
+
+        if (IsStepComplete(ent, part, args.Event.Step, surgery))
+        {
+            if (!args.Event.Repeat)
+                Log.Warning($"Cancelling surgery doafter mid-way: {args.Event.Surgery}/{args.Event.Step} on {ToPrettyString(target)} of {ToPrettyString(ent)} - step already complete.");
+            args.Cancel();
+        }
     }
 
     private void OnTargetDoAfter(Entity<SurgeryTargetComponent> ent, ref SurgeryDoAfterEvent args)
@@ -150,19 +169,36 @@ public abstract partial class SharedSurgerySystem : EntitySystem
 
         if (args.Cancelled)
         {
-            var failEv = new SurgeryStepFailedEvent(args.User, ent, args.Surgery, args.Step);
-            RaiseLocalEvent(args.User, ref failEv);
+            var alreadyComplete = args.Target is { } cancelledPart
+                && IsSurgeryValid(ent, cancelledPart, args.Surgery, args.Step, args.User, out var cancelledSurgery, out _, out _)
+                && IsStepComplete(ent, cancelledPart, args.Step, cancelledSurgery);
+
+            if (!alreadyComplete)
+            {
+                Log.Warning($"Surgery step {args.Step} of {args.Surgery} on {ToPrettyString(ent)} was cancelled for {ToPrettyString(args.User)}.");
+                _popup.PopupClient(Loc.GetString("surgery-error-step-interrupted"), args.User, args.User, PopupType.SmallCaution);
+            }
+
+            RaiseStepFailed(args.User, ent, args.Surgery, args.Step);
             return;
         }
 
         var tool = _hands.GetActiveItemOrSelf(args.User);
 
-        if (args.Handled
-            || args.Target is not { } target
-            || !IsSurgeryValid(ent, target, args.Surgery, args.Step, args.User, out var surgery, out var part, out var step)
-            || !PreviousStepsComplete(ent, part, surgery, args.Step, args.User))
+        if (args.Handled || args.Target is not { } target)
+            return;
+
+        var valid = IsSurgeryValid(ent, target, args.Surgery, args.Step, args.User, out var surgery, out var part, out var step);
+
+        // PreviousStepsComplete logs its own, more specific warning (which step blocks and why),
+        // so only the validity failure needs one here.
+        if (!valid)
+            Log.Warning($"Surgery step {args.Step} of {args.Surgery} on {ToPrettyString(ent)} (part {ToPrettyString(target)}) became invalid before {ToPrettyString(args.User)} finished it.");
+
+        if (!valid || !PreviousStepsComplete(ent, part, surgery, args.Step, args.User))
         {
-            Log.Warning($"{ToPrettyString(args.User)} tried to start invalid surgery.");
+            _popup.PopupClient(Loc.GetString("surgery-error-step-interrupted"), args.User, args.User, PopupType.SmallCaution);
+            RaiseStepFailed(args.User, ent, args.Surgery, args.Step);
             return;
         }
 
@@ -175,7 +211,7 @@ public abstract partial class SharedSurgerySystem : EntitySystem
         var complete = IsStepComplete(ent, part, args.Step, surgery);
 
         args.Repeat = HasComp<SurgeryRepeatableStepComponent>(step) && !complete;
-        var ev = new SurgeryStepEvent(args.User, ent, part, tool, surgery, step, complete);
+        var ev = new SurgeryStepEvent(args.User, ent, part, tool, surgery, step);
         RaiseLocalEvent(step, ref ev);
         RaiseLocalEvent(args.User, ref ev);
 
@@ -189,6 +225,12 @@ public abstract partial class SharedSurgerySystem : EntitySystem
         }
 
         RefreshUI(ent);
+    }
+
+    private void RaiseStepFailed(EntityUid user, EntityUid body, EntProtoId surgery, EntProtoId step)
+    {
+        var failEv = new SurgeryStepFailedEvent(user, body, surgery, step);
+        RaiseLocalEvent(user, ref failEv);
     }
 
     private void OnCloseIncisionValid(Entity<SurgeryCloseIncisionConditionComponent> ent, ref SurgeryValidEvent args)

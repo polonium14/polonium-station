@@ -1,3 +1,8 @@
+// SPDX-FileCopyrightText: 2026 Maciej Walendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 maciejwalendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Linq;
 using Content.Shared._Shitmed.Body;
 using Content.Shared._Shitmed.Medical.Surgery.Conditions;
@@ -42,41 +47,23 @@ public abstract partial class SharedSurgerySystem
         _toolQuery = GetEntityQuery<SurgeryToolComponent>();
 
         SubscribeLocalEvent<SurgeryStepComponent, SurgeryStepEvent>(OnToolStep);
-        SubscribeLocalEvent<SurgeryStepComponent, SurgeryStepCompleteCheckEvent>(OnToolCheck);
         SubscribeLocalEvent<SurgeryStepComponent, SurgeryCanPerformStepEvent>(OnToolCanPerform);
         SubscribeLocalEvent<SurgeryOperatingTableConditionComponent, SurgeryCanPerformStepEvent>(OnTableCanPerform);
 
-        SubSurgery<SurgeryTendWoundsEffectComponent>(OnTendWoundsStep, OnTendWoundsCheck);
-        SubSurgery<SurgeryAddPartStepComponent>(OnAddPartStep, OnAddPartCheck);
-        SubSurgery<SurgeryAffixPartStepComponent>(OnAffixPartStep, OnAffixPartCheck);
-        SubSurgery<SurgeryRemovePartStepComponent>(OnRemovePartStep, OnRemovePartCheck);
-        SubSurgery<SurgeryAddOrganStepComponent>(OnAddOrganStep, OnAddOrganCheck);
-        SubSurgery<SurgeryRemoveOrganStepComponent>(OnRemoveOrganStep, OnRemoveOrganCheck);
-        SubSurgery<SurgeryAffixOrganStepComponent>(OnAffixOrganStep, OnAffixOrganCheck);
-        SubSurgery<SurgeryTraumaTreatmentStepComponent>(OnTraumaTreatmentStep, OnTraumaTreatmentCheck);
-        SubSurgery<SurgeryBleedsTreatmentStepComponent>(OnBleedsTreatmentStep, OnBleedsTreatmentCheck);
-        SubSurgery<SurgeryStepPainInflicterComponent>(OnPainInflicterStep, OnPainInflicterCheck);
+        SubscribeLocalEvent<SurgeryTendWoundsEffectComponent, SurgeryStepEvent>(OnTendWoundsStep);
+        SubscribeLocalEvent<SurgeryAddPartStepComponent, SurgeryStepEvent>(OnAddPartStep);
+        SubscribeLocalEvent<SurgeryAffixPartStepComponent, SurgeryStepEvent>(OnAffixPartStep);
+        SubscribeLocalEvent<SurgeryRemovePartStepComponent, SurgeryStepEvent>(OnRemovePartStep);
+        SubscribeLocalEvent<SurgeryAddOrganStepComponent, SurgeryStepEvent>(OnAddOrganStep);
+        SubscribeLocalEvent<SurgeryRemoveOrganStepComponent, SurgeryStepEvent>(OnRemoveOrganStep);
+        SubscribeLocalEvent<SurgeryAffixOrganStepComponent, SurgeryStepEvent>(OnAffixOrganStep);
+        SubscribeLocalEvent<SurgeryTraumaTreatmentStepComponent, SurgeryStepEvent>(OnTraumaTreatmentStep);
+        SubscribeLocalEvent<SurgeryBleedsTreatmentStepComponent, SurgeryStepEvent>(OnBleedsTreatmentStep);
+        SubscribeLocalEvent<SurgeryStepPainInflicterComponent, SurgeryStepEvent>(OnPainInflicterStep);
         Subs.BuiEvents<SurgeryTargetComponent>(SurgeryUIKey.Key, subs =>
         {
             subs.Event<SurgeryStepChosenBuiMsg>(OnSurgeryTargetStepChosen);
         });
-
-        SubscribeLocalEvent<SurgeryStepCavityEffectComponent, SurgeryStepCompleteCheckEvent>(OnUnimplementedStepCheck);
-        SubscribeLocalEvent<SurgeryAddMarkingStepComponent, SurgeryStepCompleteCheckEvent>(OnUnimplementedStepCheck);
-        SubscribeLocalEvent<SurgeryRemoveMarkingStepComponent, SurgeryStepCompleteCheckEvent>(OnUnimplementedStepCheck);
-    }
-
-    private void OnUnimplementedStepCheck<TComp>(Entity<TComp> ent, ref SurgeryStepCompleteCheckEvent args) where TComp : IComponent
-    {
-        Log.Error($"Surgery step {ent} references {typeof(TComp).Name}, which is ported but not implemented in this fork. Refusing to complete the step.");
-        args.Cancelled = true;
-    }
-
-    private void SubSurgery<TComp>(EntityEventRefHandler<TComp, SurgeryStepEvent> onStep,
-        EntityEventRefHandler<TComp, SurgeryStepCompleteCheckEvent> onComplete) where TComp : IComponent
-    {
-        SubscribeLocalEvent(onStep);
-        SubscribeLocalEvent(onComplete);
     }
 
     #region Event Methods
@@ -98,18 +85,12 @@ public abstract partial class SharedSurgerySystem
         AddOrRemoveComponentsToEntity(args.Body, comp.BodyRemove, true);
     }
 
-    private void OnToolCheck(Entity<SurgeryStepComponent> ent, ref SurgeryStepCompleteCheckEvent args)
+    private bool ToolStepComplete(SurgeryStepComponent comp, EntityUid body, EntityUid part)
     {
-        if (CheckComponentChanges(ent.Comp, args))
-            args.Cancelled = true;
-    }
-
-    private bool CheckComponentChanges(SurgeryStepComponent comp, SurgeryStepCompleteCheckEvent args)
-    {
-        return TryToolCheck(comp.Add, args.Part) ||
-               TryToolCheck(comp.Remove, args.Part, checkMissing: false) ||
-               TryToolCheck(comp.BodyAdd, args.Body) ||
-               TryToolCheck(comp.BodyRemove, args.Body, checkMissing: false);
+        return !(TryToolCheck(comp.Add, part) ||
+                 TryToolCheck(comp.Remove, part, checkMissing: false) ||
+                 TryToolCheck(comp.BodyAdd, body) ||
+                 TryToolCheck(comp.BodyRemove, body, checkMissing: false));
     }
 
     private void OnToolCanPerform(Entity<SurgeryStepComponent> ent, ref SurgeryCanPerformStepEvent args)
@@ -206,10 +187,9 @@ public abstract partial class SharedSurgerySystem
         RaiseLocalEvent(args.Body, ref ev);
     }
 
-    private void OnTendWoundsCheck(Entity<SurgeryTendWoundsEffectComponent> ent, ref SurgeryStepCompleteCheckEvent args)
+    private bool TendWoundsComplete(SurgeryTendWoundsEffectComponent comp, EntityUid part)
     {
-        if (_wounds.HasDamageOfGroup(args.Part, ent.Comp.MainGroup) || _wounds.GetGroupDamage(args.Part, ent.Comp.MainGroup) > 0)
-            args.Cancelled = true;
+        return !_wounds.HasDamageOfGroup(part, comp.MainGroup) && _wounds.GetGroupDamage(part, comp.MainGroup) <= 0;
     }
 
     private void OnAddPartStep(Entity<SurgeryAddPartStepComponent> ent, ref SurgeryStepEvent args)
@@ -239,20 +219,18 @@ public abstract partial class SharedSurgerySystem
         RemComp<BodyPartReattachedComponent>(args.Part);
     }
 
-    private void OnAffixPartCheck(Entity<SurgeryAffixPartStepComponent> ent, ref SurgeryStepCompleteCheckEvent args)
+    private bool AffixPartComplete(EntityUid part)
     {
-        if (HasComp<BodyPartReattachedComponent>(args.Part))
-            args.Cancelled = true;
+        return !HasComp<BodyPartReattachedComponent>(part);
     }
 
-    private void OnAddPartCheck(Entity<SurgeryAddPartStepComponent> ent, ref SurgeryStepCompleteCheckEvent args)
+    private bool AddPartComplete(EntityUid body, EntityUid surgery)
     {
-        if (!TryComp(args.Surgery, out SurgeryPartRemovedConditionComponent? removedComp)
-            || !TryComp<BodyComponent>(args.Body, out var body))
-            return;
+        if (!TryComp(surgery, out SurgeryPartRemovedConditionComponent? removedComp)
+            || !TryComp<BodyComponent>(body, out var bodyComp))
+            return true;
 
-        if (!LimbTargetMap.TryGetOrganByCategory(EntityManager, body, removedComp.Category, out _))
-            args.Cancelled = true;
+        return LimbTargetMap.TryGetOrganByCategory(EntityManager, bodyComp, removedComp.Category, out _);
     }
 
     private void OnRemovePartStep(Entity<SurgeryRemovePartStepComponent> ent, ref SurgeryStepEvent args)
@@ -275,10 +253,9 @@ public abstract partial class SharedSurgerySystem
         _hands.TryPickupAnyHand(args.User, args.Part);
     }
 
-    private void OnRemovePartCheck(Entity<SurgeryRemovePartStepComponent> ent, ref SurgeryStepCompleteCheckEvent args)
+    private bool RemovePartComplete(EntityUid body, EntityUid part)
     {
-        if (!_organQuery.TryComp(args.Part, out var organ) || organ.Body == args.Body)
-            args.Cancelled = true;
+        return _organQuery.TryComp(part, out var organ) && organ.Body != body;
     }
 
     private void OnAddOrganStep(Entity<SurgeryAddOrganStepComponent> ent, ref SurgeryStepEvent args)
@@ -297,19 +274,17 @@ public abstract partial class SharedSurgerySystem
 
         var ev = new SurgeryStepDamageChangeEvent(args.User, args.Body, args.Part, ent);
         RaiseLocalEvent(ent, ref ev);
-        args.Complete = true;
     }
 
-    private void OnAddOrganCheck(Entity<SurgeryAddOrganStepComponent> ent, ref SurgeryStepCompleteCheckEvent args)
+    private bool AddOrganComplete(EntityUid body, EntityUid part, EntityUid surgery)
     {
-        if (!TryComp<SurgeryOrganConditionComponent>(args.Surgery, out var organComp)
-            || !_organQuery.TryComp(args.Part, out var partOrgan)
-            || partOrgan.Body != args.Body
-            || !TryComp<BodyComponent>(args.Body, out var body))
-            return;
+        if (!TryComp<SurgeryOrganConditionComponent>(surgery, out var organComp)
+            || !_organQuery.TryComp(part, out var partOrgan)
+            || partOrgan.Body != body
+            || !TryComp<BodyComponent>(body, out var bodyComp))
+            return true;
 
-        if (!LimbTargetMap.TryGetOrganByCategory(EntityManager, body, organComp.Category, out _))
-            args.Cancelled = true;
+        return LimbTargetMap.TryGetOrganByCategory(EntityManager, bodyComp, organComp.Category, out _);
     }
 
     private void OnAffixOrganStep(Entity<SurgeryAffixOrganStepComponent> ent, ref SurgeryStepEvent args)
@@ -324,17 +299,16 @@ public abstract partial class SharedSurgerySystem
         RemComp<OrganReattachedComponent>(organUid);
     }
 
-    private void OnAffixOrganCheck(Entity<SurgeryAffixOrganStepComponent> ent, ref SurgeryStepCompleteCheckEvent args)
+    private bool AffixOrganComplete(EntityUid body, EntityUid surgery)
     {
-        if (!TryComp(args.Surgery, out SurgeryOrganConditionComponent? organComp) || !organComp.Reattaching)
-            return;
+        if (!TryComp(surgery, out SurgeryOrganConditionComponent? organComp) || !organComp.Reattaching)
+            return true;
 
-        if (!TryComp<BodyComponent>(args.Body, out var body)
-            || !LimbTargetMap.TryGetOrganByCategory(EntityManager, body, organComp.Category, out var organUid))
-            return;
+        if (!TryComp<BodyComponent>(body, out var bodyComp)
+            || !LimbTargetMap.TryGetOrganByCategory(EntityManager, bodyComp, organComp.Category, out var organUid))
+            return true;
 
-        if (HasComp<OrganReattachedComponent>(organUid))
-            args.Cancelled = true;
+        return !HasComp<OrganReattachedComponent>(organUid);
     }
 
     private void OnRemoveOrganStep(Entity<SurgeryRemoveOrganStepComponent> ent, ref SurgeryStepEvent args)
@@ -349,16 +323,15 @@ public abstract partial class SharedSurgerySystem
         _hands.TryPickupAnyHand(args.User, organUid);
     }
 
-    private void OnRemoveOrganCheck(Entity<SurgeryRemoveOrganStepComponent> ent, ref SurgeryStepCompleteCheckEvent args)
+    private bool RemoveOrganComplete(EntityUid body, EntityUid part, EntityUid surgery)
     {
-        if (!TryComp<SurgeryOrganConditionComponent>(args.Surgery, out var organComp)
-            || !_organQuery.TryComp(args.Part, out var partOrgan)
-            || partOrgan.Body != args.Body
-            || !TryComp<BodyComponent>(args.Body, out var body))
-            return;
+        if (!TryComp<SurgeryOrganConditionComponent>(surgery, out var organComp)
+            || !_organQuery.TryComp(part, out var partOrgan)
+            || partOrgan.Body != body
+            || !TryComp<BodyComponent>(body, out var bodyComp))
+            return true;
 
-        if (LimbTargetMap.TryGetOrganByCategory(EntityManager, body, organComp.Category, out _))
-            args.Cancelled = true;
+        return !LimbTargetMap.TryGetOrganByCategory(EntityManager, bodyComp, organComp.Category, out _);
     }
 
     private void OnTraumaTreatmentStep(Entity<SurgeryTraumaTreatmentStepComponent> ent, ref SurgeryStepEvent args)
@@ -422,10 +395,9 @@ public abstract partial class SharedSurgerySystem
         }
     }
 
-    private void OnTraumaTreatmentCheck(Entity<SurgeryTraumaTreatmentStepComponent> ent, ref SurgeryStepCompleteCheckEvent args)
+    private bool TraumaTreatmentComplete(SurgeryTraumaTreatmentStepComponent comp, EntityUid part)
     {
-        if (_trauma.HasWoundableTrauma(args.Part, ent.Comp.TraumaType))
-            args.Cancelled = true;
+        return !_trauma.HasWoundableTrauma(part, comp.TraumaType);
     }
 
     private void OnBleedsTreatmentStep(Entity<SurgeryBleedsTreatmentStepComponent> ent, ref SurgeryStepEvent args)
@@ -456,17 +428,16 @@ public abstract partial class SharedSurgerySystem
         }
     }
 
-    private void OnBleedsTreatmentCheck(Entity<SurgeryBleedsTreatmentStepComponent> ent, ref SurgeryStepCompleteCheckEvent args)
+    private bool BleedsTreatmentComplete(EntityUid part)
     {
-        foreach (var woundEnt in _wounds.GetWoundableWounds(args.Part))
+        foreach (var woundEnt in _wounds.GetWoundableWounds(part))
         {
-            if (!TryComp<BleedInflicterComponent>(woundEnt, out var bleedsInflicter)
-                || !bleedsInflicter.IsBleeding)
-                continue;
-
-            args.Cancelled = true;
-            break;
+            if (TryComp<BleedInflicterComponent>(woundEnt, out var bleedsInflicter)
+                && bleedsInflicter.IsBleeding)
+                return false;
         }
+
+        return true;
     }
 
     private void OnPainInflicterStep(Entity<SurgeryStepPainInflicterComponent> ent, ref SurgeryStepEvent args)
@@ -500,16 +471,6 @@ public abstract partial class SharedSurgerySystem
                 nerveSys,
                 ent.Comp.PainDuration);
         }
-    }
-
-    private void OnPainInflicterCheck(Entity<SurgeryStepPainInflicterComponent> ent, ref SurgeryStepCompleteCheckEvent args)
-    {
-        if (!_consciousness.TryGetNerveSystem(args.Body, out var nerveSys))
-            return;
-
-        if (!_pain.TryGetPainModifier(nerveSys.Value.Owner, args.Part, "SurgeryPain_wound", out _, nerveSys)
-            && !_pain.TryGetPainModifier(nerveSys.Value.Owner, args.Part, "SurgeryPain_trauma", out _, nerveSys))
-            args.Cancelled = true;
     }
 
     private void OnSurgeryTargetStepChosen(Entity<SurgeryTargetComponent> ent, ref SurgeryStepChosenBuiMsg args)
@@ -788,7 +749,11 @@ public abstract partial class SharedSurgerySystem
                 return true;
 
             if (!IsStepComplete(body, part, surgeryStep, surgery))
+            {
+                if (_net.IsServer)
+                    Log.Warning($"Surgery {ToPrettyString(surgery)}: step {step} blocked because {surgeryStep} reads as incomplete on {ToPrettyString(part)} of {ToPrettyString(body)}.");
                 return false;
+            }
         }
 
         return true;
@@ -848,14 +813,69 @@ public abstract partial class SharedSurgerySystem
         return CanPerformStep(user, body, part, step, tool, doPopup, out popup, out _, out _);
     }
 
-    private bool IsStepComplete(EntityUid body, EntityUid part, EntProtoId step, EntityUid surgery)
+    /// <summary>
+    /// Single owner of step-completion semantics. Deliberately a closed dispatch over known
+    /// step-type components rather than an open event: with an event, any system could hook
+    /// in extra completion criteria unnoticed (the pain system once made "is the patient
+    /// still hurting" a completion requirement, breaking surgeries ~30s after each step).
+    /// A step is complete iff every criterion of every step-type component it carries holds.
+    /// New step types must be added here explicitly.
+    /// </summary>
+    public bool IsStepComplete(EntityUid body, EntityUid part, EntProtoId step, EntityUid surgery)
     {
         if (GetSingleton(step) is not { } stepEnt)
             return false;
 
-        var ev = new SurgeryStepCompleteCheckEvent(body, part, surgery);
-        RaiseLocalEvent(stepEnt, ref ev);
-        return !ev.Cancelled;
+        // Ported-but-unimplemented step types can never complete.
+        if (HasComp<SurgeryStepCavityEffectComponent>(stepEnt)
+            || HasComp<SurgeryAddMarkingStepComponent>(stepEnt)
+            || HasComp<SurgeryRemoveMarkingStepComponent>(stepEnt))
+        {
+            Log.Error($"Surgery step {ToPrettyString(stepEnt)} uses a step type that is ported but not implemented in this fork. Refusing to complete the step.");
+            return false;
+        }
+
+        if (_stepQuery.TryComp(stepEnt, out var stepComp)
+            && !ToolStepComplete(stepComp, body, part))
+            return false;
+
+        if (TryComp<SurgeryTendWoundsEffectComponent>(stepEnt, out var tendComp)
+            && !TendWoundsComplete(tendComp, part))
+            return false;
+
+        if (HasComp<SurgeryAddPartStepComponent>(stepEnt)
+            && !AddPartComplete(body, surgery))
+            return false;
+
+        if (HasComp<SurgeryAffixPartStepComponent>(stepEnt)
+            && !AffixPartComplete(part))
+            return false;
+
+        if (HasComp<SurgeryRemovePartStepComponent>(stepEnt)
+            && !RemovePartComplete(body, part))
+            return false;
+
+        if (HasComp<SurgeryAddOrganStepComponent>(stepEnt)
+            && !AddOrganComplete(body, part, surgery))
+            return false;
+
+        if (HasComp<SurgeryRemoveOrganStepComponent>(stepEnt)
+            && !RemoveOrganComplete(body, part, surgery))
+            return false;
+
+        if (HasComp<SurgeryAffixOrganStepComponent>(stepEnt)
+            && !AffixOrganComplete(body, surgery))
+            return false;
+
+        if (TryComp<SurgeryTraumaTreatmentStepComponent>(stepEnt, out var traumaComp)
+            && !TraumaTreatmentComplete(traumaComp, part))
+            return false;
+
+        if (HasComp<SurgeryBleedsTreatmentStepComponent>(stepEnt)
+            && !BleedsTreatmentComplete(part))
+            return false;
+
+        return true;
     }
 
     private ISurgeryToolComponent? GetSurgeryComp(EntityUid tool, IComponent component)

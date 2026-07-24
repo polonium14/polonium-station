@@ -1,3 +1,8 @@
+// SPDX-FileCopyrightText: 2026 Maciej Walendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 maciejwalendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Numerics;
 using Content.IntegrationTests.Fixtures;
 using Content.Shared._Shitmed.Medical.Surgery;
@@ -105,7 +110,7 @@ public sealed class ClampBleedersBudgetTest : GameTest
         // wound2 (Scaling 5) only gets that remaining 1 point: 5 - 1 = 4, still bleeding.
         await server.WaitPost(() =>
         {
-            var ev = new SurgeryStepEvent(organ, organ, organ, stepEnt, stepEnt, stepEnt, true);
+            var ev = new SurgeryStepEvent(organ, organ, organ, stepEnt, stepEnt, stepEnt);
             sEntMan.EventBus.RaiseLocalEvent(stepEnt, ref ev);
         });
 

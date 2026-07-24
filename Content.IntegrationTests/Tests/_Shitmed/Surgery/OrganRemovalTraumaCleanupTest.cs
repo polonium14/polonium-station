@@ -1,3 +1,8 @@
+// SPDX-FileCopyrightText: 2026 Maciej Walendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 maciejwalendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Numerics;
 using Content.IntegrationTests.Fixtures;
 using Content.Server._Shitmed.Medical.Surgery;
@@ -142,7 +147,7 @@ public sealed class OrganRemovalTraumaCleanupTest : GameTest
 
         await server.WaitPost(() =>
         {
-            var ev = new SurgeryStepEvent(user, body, torso, EntityUid.Invalid, surgery, step, true);
+            var ev = new SurgeryStepEvent(user, body, torso, EntityUid.Invalid, surgery, step);
             sEntMan.EventBus.RaiseLocalEvent(step, ref ev);
         });
 
