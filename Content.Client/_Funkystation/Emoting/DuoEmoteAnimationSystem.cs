@@ -39,6 +39,12 @@ public sealed partial class DuoEmoteAnimationSystem : EntitySystem
         if (!_registry.TryGetValue(id, out var handler))
             return false;
 
+        if (!Exists(initiator) || 
+            !Exists(partner) ||
+            !HasComp<TransformComponent>(initiator) ||
+            !HasComp<TransformComponent>(partner))
+            return false;
+
         handler(initiator, partner);
         handler(partner, initiator);
 
