@@ -1,5 +1,7 @@
 using Content.Shared._Shitmed.Medical.Surgery.Pain.Components;
+using Content.Shared._Shitmed.Medical.Surgery.Traumas;
 using Content.Shared._Shitmed.Medical.Surgery.Wounds;
+using Content.Shared._Shitmed.Medical.Surgery.Wounds.Components;
 using Content.Shared.Body;
 using Content.Shared.FixedPoint;
 
@@ -12,6 +14,7 @@ public partial class PainSystem
         // Pain management hooks.
         SubscribeLocalEvent<PainInflicterComponent, WoundRemovedEvent>(OnPainRemoved);
         SubscribeLocalEvent<PainInflicterComponent, WoundSeverityPointChangedEvent>(OnPainChanged);
+        SubscribeLocalEvent<WoundableComponent, TraumaBeingRemovedEvent>(OnTraumaBeingRemoved);
     }
 
     private const string PainModifierIdentifier = "WoundPain";
@@ -131,6 +134,19 @@ public partial class PainSystem
             TryRemovePainModifier(nerveSys.Value, args.Component.HoldingWoundable, PainTraumaticModifierIdentifier);
         else
             TryChangePainModifier(nerveSys.Value, args.Component.HoldingWoundable, PainTraumaticModifierIdentifier, traumaticPain);
+    }
+
+    private void OnTraumaBeingRemoved(Entity<WoundableComponent> woundable, ref TraumaBeingRemovedEvent args)
+    {
+        if (args.TraumaType != TraumaType.BoneDamage)
+            return;
+
+        if (!TryComp<OrganComponent>(woundable, out var organ)
+            || organ.Body is not { } body
+            || !_consciousness.TryGetNerveSystem(body, out var nerveSys))
+            return;
+
+        TryRemovePainModifier(nerveSys.Value, woundable.Owner, "BoneDamage", nerveSys.Value.Comp);
     }
 
     #endregion
