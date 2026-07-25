@@ -3075,22 +3075,7 @@
       whitelist:
         tags:
           - ErtUplinkDeadSquad
-          
-- type: listing
-  id: ErtCallUplinkGrenadeBlastDeadSquad
-  name: ert-uplink-ErtCallUplinkGrenadeBlast-name
-  description: ert-uplink-ErtCallGrenadeBlast-desc
-  productEntity: GrenadeBlast
-  cost:
-    BlueSpaceCube: 10
-  categories:
-  - ERTUplinkAmmoCombat
-  conditions:
-    - !type:StoreWhitelistCondition
-      whitelist:
-        tags:
-          - ErtUplinkDeadSquad  
-
+           
 - type: listing
   id: ErtCallUplinkGrenadeFragDeadSquad
   name: ert-uplink-ErtCallUplinkGrenadeFrag-name
