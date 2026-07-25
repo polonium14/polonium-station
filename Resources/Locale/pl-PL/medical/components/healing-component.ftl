@@ -9,3 +9,4 @@ medical-item-stop-bleeding =
     } krwawić
 medical-item-stop-bleeding-self = Zatrzymujesz krwawienie
 medical-item-popup-target = { CAPITALIZE($user) } próbuje cię leczyć przy użyciu { $item }!
+medical-item-requires-surgery = Zrobiono wszystko, co możliwe. { CAPITALIZE($target) } potrzebuje operacji.
