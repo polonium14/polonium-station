@@ -70,9 +70,13 @@
   - type: HealOnBuckle
     damage:
       types:
-        Poison: -0.2
-        Cold: -0.4
-        Blunt: -0.2
+        Poison: -0.1
+        Heat: -0.05
+        Shock: -0.05
+        Cold: -0.05
+        Blunt: -0.05
+        Piercing: -0.05
+        Slash: -0.05
   - type: Construction
     graph: bed
     node: medicalbed
