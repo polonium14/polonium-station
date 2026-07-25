@@ -1632,6 +1632,22 @@
       blacklist:
         tags:
           - ErtUplinkDeadSquad
+          - type: listing
+
+- type: listing 
+  id: ErtCallUplinkWeaponRifleLecterXL8
+  name: ert-uplink-ErtCallUplinkWeaponRifleLecterXL8-name
+  description: ert-uplink-ErtCallUplinkWeaponRifleLecterXL8-desc
+  productEntity: WeaponRifleLecterXL8
+  cost:
+    BlueSpaceCube: 9
+  categories:
+  - ERTUplinkWeaponCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
                     
 # Death Squad isolated pricing (mirrors ERT catalog at DS rates)
 - type: listing
