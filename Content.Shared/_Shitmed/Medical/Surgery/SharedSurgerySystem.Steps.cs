@@ -168,9 +168,6 @@ public abstract partial class SharedSurgerySystem
         // step would be a no-op despite OnWoundedValid making it available for this case.
         var bonus = ent.Comp.HealMultiplier * (severity > 0 ? severity : rawDamage);
 
-        if (_mobState.IsDead(args.Body))
-            bonus *= 0.2;
-
         // The bonus is a percentage of what's left, so it decays toward zero the longer
         // healing goes on - without a floor, repeated clicks approach but never actually
         // reach full heal. Guarantee at least 1 point of progress per click.
