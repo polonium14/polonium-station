@@ -1,6 +1,4 @@
 alerts-broken-bones-name = Złamane kości
 alerts-broken-bones-desc = Masz co najmniej jedną złamaną kość. Jak najszybciej udaj się po pomoc medyczną.
-
-alerts-legs-collapsed-name = Legs Collapsed
-
-alerts-legs-collapsed-desc = Your legs can't support you. You can only crawl until a leg is mended or reattached.
+alerts-legs-collapsed-name = Połamane nogi
+alerts-legs-collapsed-desc = Nogi nie są w stanie cię utrzymać. Dopóki noga się nie zrośnie lub nie zostanie naprawiona, możesz się tylko czołgać.

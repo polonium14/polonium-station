@@ -125,4 +125,4 @@ reagent-desc-warfarin = Commonly used as an anticoagulant medication. Causes blo
 
 reagent-name-osteodine = osteodyna
 
-reagent-desc-osteodine = A milk-white regenerative compound that knits shattered bone back together. A full 25 units in the bloodstream at once will completely mend every break in the body. Overdose causes nausea and joint pain.
+reagent-desc-osteodine = Mlecznobiały związek regeneracyjny, który zrasta strzaskane kości. 25 jednostek w krwiobiegu zrasta wszystkie złamania w ciele. Przedawkowanie powoduje mdłości i ból stawów.
