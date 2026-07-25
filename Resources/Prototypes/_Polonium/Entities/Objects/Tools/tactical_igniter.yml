@@ -29,7 +29,7 @@
   - type: ItemToggleSize
     activatedSize: Normal
   - type: Welder
-    fuelConsumption: 1.5
+    fuelConsumption: 1
     fuelLitCost: 0
   - type: Tag
     tags:
