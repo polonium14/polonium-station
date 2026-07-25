@@ -2,7 +2,7 @@
   name: telecrystal
   parent: [BaseItem, BaseSyndicateContraband]
   id: Telecrystal
-  # Goobstation - Telecrystal rework
+  # Goobstation - Telecrystal rework # Polonium revert
   suffix: 100 TC
   description: It seems to be pulsing with suspiciously enticing energies.
   components:
@@ -82,19 +82,49 @@
     tags:
     - NukeOpsUplink
 
-# goobstation - duke nukies
+# goobstation - duke nukies # Polonium project forky - back to the old ways - change start
 - type: entity
   parent: BaseUplinkRadio
-  id: BaseUplinkRadio50TC
-  suffix: 50 TC
+  id: BaseUplinkRadio10TC
+  suffix: 10 TC
   components:
   - type: Store
     balance:
-      Telecrystal: 50
+      Telecrystal: 10
 
 - type: entity
   parent: BaseUplinkRadio
-  # Polonium - 25 TC
+  # Polonium - 5 TC
+  id: BaseUplinkRadio5TC
+  suffix: 5 TC
+  components:
+  - type: Store
+    balance:
+      Telecrystal: 5
+
+# Nukeops reinforcement variant with 7 TC # Polonium change 50 -> 7TC
+- type: entity
+  parent: BaseUplinkRadioNukeopsReinforcement
+  id: BaseUplinkRadio7TCNukeOps
+  suffix: 7 TC, Nukeops Reinforcement # Polonium - just enough for a hardsuit and a pistol - Note: if you get the reinforcement on a discout you gain 0 TC, otherwise you loose 4
+  components:
+  - type: Store
+    balance:
+      Telecrystal: 7
+
+- type: entity
+  parent: BaseUplinkRadio
+  # Goobstation - Telecrystal rework # Polonium revert
+  id: BaseUplinkRadio20TC
+  suffix: 20 TC
+  components:
+  - type: Store
+    balance:
+      Telecrystal: 20
+
+- type: entity
+  parent: BaseUplinkRadio
+  # Goobstation - Telecrystal rework # Polonium revert
   id: BaseUplinkRadio25TC
   suffix: 25 TC
   components:
@@ -102,55 +132,25 @@
     balance:
       Telecrystal: 25
 
-# Nukeops reinforcement variant with 50 TC
 - type: entity
-  parent: BaseUplinkRadioNukeopsReinforcement
-  id: BaseUplinkRadio50TCNukeops
-  suffix: 50 TC, Nukeops Reinforcement
+  parent: BaseUplinkRadio
+  # Goobstation - Telecrystal rework # Polonium revert
+  id: BaseUplinkRadio40TC
+  suffix: 40 TC
   components:
   - type: Store
     balance:
-      Telecrystal: 50
+      Telecrystal: 40
 
 - type: entity
   parent: BaseUplinkRadio
-  # Goobstation - Telecrystal rework
-  id: BaseUplinkRadio100TC
-  suffix: 100 TC
+  # Goobstation - Telecrystal rework # Polonium revert
+  id: BaseUplinkRadio60TC
+  suffix: 60 TC, LoneOps
   components:
   - type: Store
     balance:
-      Telecrystal: 100
-
-- type: entity
-  parent: BaseUplinkRadio
-  # Goobstation - Telecrystal rework
-  id: BaseUplinkRadio125TC
-  suffix: 125 TC
-  components:
-  - type: Store
-    balance:
-      Telecrystal: 125
-
-- type: entity
-  parent: BaseUplinkRadio
-  # Goobstation - Telecrystal rework
-  id: BaseUplinkRadio200TC
-  suffix: 200 TC
-  components:
-  - type: Store
-    balance:
-      Telecrystal: 200
-
-- type: entity
-  parent: BaseUplinkRadio
-  # Goobstation - Telecrystal rework
-  id: BaseUplinkRadio350TC
-  suffix: 350 TC, LoneOps
-  components:
-  - type: Store
-    balance:
-      Telecrystal: 350
+      Telecrystal: 60
   - type: Tag
     tags:
     - NukeOpsUplink
@@ -162,5 +162,5 @@
   components:
   - type: Store
     balance:
-      # Goobstation - Telecrystal rework
+      # Goobstation - Telecrystal rework # Polonium revert - this can actually stay this high, its a debug
       Telecrystal: 999999

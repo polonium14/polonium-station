@@ -9,6 +9,24 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+# Polonium project forky change start
+
+# - type: entity
+#   parent: Telecrystal
+#   id: Telecrystal5
+#   suffix: 5 TC
+#   components:
+#   - type: Stack
+#     count: 5
+
+# - type: entity
+#   parent: Telecrystal
+#   id: Telecrystal10
+#   suffix: 10 TC
+#   components:
+#   - type: Stack
+#     count: 10
+
 - type: entity
   parent: Telecrystal
   id: Telecrystal15
@@ -27,27 +45,11 @@
 
 - type: entity
   parent: Telecrystal
-  id: Telecrystal25
-  suffix: 25 TC
-  components:
-  - type: Stack
-    count: 25
-
-- type: entity
-  parent: Telecrystal
   id: Telecrystal30
   suffix: 30 TC
   components:
   - type: Stack
     count: 30
-
-- type: entity
-  parent: Telecrystal
-  id: Telecrystal35
-  suffix: 35 TC
-  components:
-  - type: Stack
-    count: 35
 
 - type: entity
   parent: Telecrystal
@@ -59,37 +61,39 @@
 
 - type: entity
   parent: Telecrystal
-  id: Telecrystal50
-  suffix: 50 TC
+  id: Telecrystal60
+  suffix: 60 TC
   components:
   - type: Stack
-    count: 50
+    count: 60
 
 - type: entity
   parent: Telecrystal
-  id: Telecrystal250
-  suffix: 250 TC
+  id: Telecrystal80
+  suffix: 80 TC
   components:
   - type: Stack
-    count: 250
+    count: 80
 
 - type: entity
   parent: Telecrystal
-  id: Telecrystal500
-  suffix: 500 TC
+  id: Telecrystal150
+  suffix: 150 TC
   components:
   - type: Stack
-    count: 500
+    count: 150
 
 #this uplink MUST be used for nukeops, as it has the tag for filtering the listing.
 - type: entity
   parent: BaseUplinkRadio
-  id: BaseUplinkRadio225TC
-  suffix: 225 TC, NukeOps
+  id: BaseUplinkRadio40TCNukeOps
+  suffix: 40 TC, NukeOps
   components:
   - type: Store
     balance:
-      Telecrystal: 225
+      Telecrystal: 40
   - type: Tag
     tags:
     - NukeOpsUplink
+
+# Polonium project forky change end

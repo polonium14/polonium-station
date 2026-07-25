@@ -7,7 +7,7 @@
   name: Wz.96 Beryl
   parent: [BaseWeaponRifle, BaseSecurityContraband]
   id: WeaponRifleBeryl
-  description: An iconic polish weapon of war. Uses .30 rifle ammo.
+  description: An iconic polish weapon of war. Uses .20 rifle ammo.
   components:
   - type: Item
     size: Huge

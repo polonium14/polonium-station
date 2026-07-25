@@ -965,7 +965,7 @@
   icon: { sprite:  Objects/Misc/monkeycube.rsi, state: box}
   productEntity: SyndicateDinoBox
   cost:
-    Telecrystal: 75 #25% discount for nukies. probably remove this but i want to see at least 1 dino ops
+    Telecrystal: 15 #25% discount for nukies. probably remove this but i want to see at least 1 dino ops # polonium TC change revert
   categories:
   - UplinkDisruption
   conditions:
@@ -2188,7 +2188,7 @@
   icon: { sprite:  Objects/Misc/monkeycube.rsi, state: box}
   productEntity: SyndicateDinoBox
   cost:
-    Telecrystal: 100
+    Telecrystal: 20 # polonium fix
   categories:
   - UplinkJob
   conditions:
