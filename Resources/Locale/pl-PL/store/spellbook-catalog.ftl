@@ -62,3 +62,7 @@ spellbook-upgrade-fireball-name = Upgrade Fireball
 spellbook-upgrade-fireball-description = Upgrades Fireball to a maximum of level 3!
 spellbook-upgrade-jaunt-name = Upgrade Ethereal Jaunt
 spellbook-upgrade-jaunt-description = Upgrades Jaunt to a maximum of level 3!
+
+spellbook-guardian-deck-name = Tarot Deck
+
+spellbook-guardian-deck-description = A bizarre deck of card that grants you a spectral guardian when used.

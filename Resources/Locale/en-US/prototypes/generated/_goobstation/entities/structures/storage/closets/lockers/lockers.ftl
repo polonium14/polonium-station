@@ -1,4 +1,4 @@
 ent-LockerBlueshieldOfficer = blueshield officer locker
-    .desc = { ent-LockerBaseSecure.desc }
+    .desc = { ent-LockerBase.desc }
 ent-LockerNanorep = nanotrasen representative locker
-    .desc = { ent-LockerBaseSecure.desc }
+    .desc = { ent-LockerBase.desc }

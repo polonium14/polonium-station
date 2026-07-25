@@ -27,3 +27,6 @@ ent-AdminInstantEffectGravityWell = { ent-AdminInstantEffectBase }
 ent-AdminInstantEffectLightning = { ent-AdminInstantEffectBase }
     .suffix = Lightning
     .desc = { ent-AdminInstantEffectBase.desc }
+ent-AdminInstantEffectScreech = { ent-AdminInstantEffectBase }
+    .suffix = Screech
+    .desc = { ent-AdminInstantEffectBase.desc }

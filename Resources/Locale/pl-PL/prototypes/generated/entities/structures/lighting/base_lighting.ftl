@@ -1,3 +1,5 @@
+ent-BaseWallLight = { "" }
+    .desc = { "" }
 ent-AlwaysPoweredWallLight = light
     .desc = An always powered light.
     .suffix = Always powered

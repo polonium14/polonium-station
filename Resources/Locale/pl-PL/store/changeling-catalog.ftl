@@ -32,3 +32,7 @@ changeling-catalog-last-resort-desc = Rozbij obecne ciało i uciekaj jako słaby
 
 changeling-catalog-night-vision-name = Noktowizja
 changeling-catalog-night-vision-desc = Modyfikujesz fotoreceptory i wyostrzasz zmysły, by widzieć w całkowitej ciemności.
+
+changeling-catalog-screech-name = Screech [TEMPORARY]
+
+changeling-catalog-screech-desc = We let out a powerful screech that disarms people who hear it without adequate ear protection. THIS ACTION WILL BE MOVED TO THE HORROR FORM WHEN IT IS IMPLEMENTED.

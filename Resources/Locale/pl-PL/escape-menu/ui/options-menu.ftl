@@ -436,3 +436,5 @@ ui-options-admin-overlay-ghost-hide-distance = Zasięg ukrywania nakładki ducha
 
 ui-options-admin-strip-overlay-title = Nakładka przeszukiwania
 ui-options-admin-strip-overlay-setting = Domyślnie pokazuj nakładkę przeszukiwania
+
+ui-options-sharpness = Sharpness:

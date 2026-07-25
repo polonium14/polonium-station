@@ -1,3 +1,5 @@
+ent-BaseAsteroidRock = { ent-BaseWall }
+    .desc = { ent-BaseWall.desc }
 ent-AsteroidRock = asteroid rock
     .desc = A rocky asteroid.
 ent-BaseRockGibtonite = { "" }

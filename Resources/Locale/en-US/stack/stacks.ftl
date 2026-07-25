@@ -272,3 +272,4 @@ stack-plasma-marble-floor = plasmarble floor
 stack-uranium-marble-floor = uranium marble floor
 stack-astro-ironsand-floor = astro-ironsand floor
 stack-astro-ironsand-floor-borderless = borderless astro-ironsand floor
+stack-blue-space-cube = blue space cube

@@ -1,7 +1,5 @@
 ent-CrateSecurityArmor = armor crate
-    .desc = Contains three bulletproof vests. Requires Security access to open.
-ent-CrateSecurityHelmet = helmet crate
-    .desc = Contains three standard-issue brain buckets. Requires Security access to open.
+    .desc = Contains three standard-issue helmets and three bulletproof vests. Requires Security access to open.
 ent-CrateSecurityNonlethal = less-lethals crate
     .desc = Contains a mix of nightsticks, flashes, shell guns, and beanbag shells. Requires Security access to open.
 ent-CrateSecuritySupplies = security supplies crate

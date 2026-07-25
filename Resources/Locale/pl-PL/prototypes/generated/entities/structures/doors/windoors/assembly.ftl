@@ -1,5 +1,7 @@
-ent-WindoorAssembly = konstrukcja okna przesuwnego
-    .desc = Otwiera się, zamyka i przez nią widać!
+ent-BaseWindoorAssembly = windoor assembly
+    .desc = It opens, it closes, and you can see through it!
+ent-WindoorAssembly = { ent-BaseWindoorAssembly }
+    .desc = { ent-BaseWindoorAssembly.desc }
 ent-WindoorAssemblySecure = konstrukcja bezpiecznego okna przesuwnego
     .desc = Otwiera się, zamyka i przez nią widać! Ta wygląda na wytrzymałą.
 ent-WindoorAssemblyClockwork = konstrukcja zegarmistrzowskiego okna przesuwnego

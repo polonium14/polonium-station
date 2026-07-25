@@ -1,7 +1,5 @@
 ent-CrateSecurityArmor = skrzynia z kamizelkami kuloodpornymi
     .desc = Zawiera trzy kamizelki kuloodporne. Wymaga dostępu do ochrony, aby otworzyć.
-ent-CrateSecurityHelmet = skrzynia z hełmami
-    .desc = Zawiera trzy standardowe hełmy. Wymaga dostępu do ochrony, aby otworzyć.
 ent-CrateSecurityNonlethal = skrzynia z bronią nieśmiercionośną
     .desc = Zawiera mieszankę rozbrajaczy, pałek ogłuszających i granatów błyskowych. Wymaga dostępu do ochrony, aby otworzyć.
 ent-CrateSecuritySupplies = skrzynia z zapasami ochrony

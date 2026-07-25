@@ -1,0 +1,41 @@
+# Pointless
+
+uplink-barber-scissors-name = Nożyczki Fryzjerskie
+uplink-barber-scissors-desc = Dobry narzędzie do nadania współpracownikowi ładnej fryzury, chyba że chcesz użyć go na sobie.
+uplink-snack-box-name = Syndykatowa Pudełko Przekąsek
+uplink-snack-box-desc = Pudełko zawierające pyszne przekąski i napoje do spożycia samemu lub z zespołem. Zawiera 1 zabawkę, której nie chciałeś.
+uplink-clothing-conducting-gloves-name = Rękawice Przewodzące
+uplink-clothing-conducting-gloves-desc = Wyglądają dokładnie jak izolowane rękawice, ale rażą cię znacznie mocniej niż gdybyś nie miał nic! Najlepiej podarować je pasażerom, których naprawdę nie lubisz.
+# Pointless
+uplink-revolver-cap-gun-name = Pistolet na Kapiszony
+uplink-revolver-cap-gun-desc = Wygląda prawie jak prawdziwy! Dla dzieci powyżej 8 lat.
+uplink-syndicate-stamp-name = Pieczątka Syndykatu
+uplink-syndicate-stamp-desc = Pieczątka do oznaczania ważnych dokumentów.
+uplink-cat-ears-name = Kocie Uszy
+uplink-cat-ears-desc = UwU
+uplink-outlaw-hat-name = Kapelusz Wyjęty spod Prawa
+uplink-outlaw-hat-desc = Kapelusz, który sprawia, że wyglądasz, jakbyś nosił pistolet z nacięciem, numer jeden i dziewiętnaście więcej.
+uplink-outlaw-glasses-name = Okulary Wyjęte spod Prawa
+uplink-outlaw-glasses-desc = Niezbędne dla każdego szanującego się tajnego agenta.
+uplink-costume-pyjama-name = Torba na Piżamy Syndykatu
+uplink-costume-pyjama-desc = Zawiera 3 pary piżam syndykatu i 4 pluszaki na najlepszą noc filmową.
+uplink-costume-clown-name = Torba z Kostiumem Klauna
+uplink-costume-clown-desc = Zawiera kompletny strój klauna. W zestawie PDA i radio służbowe.
+uplink-carp-suit-bundle-name = Torba z Kostiumem Karpia
+uplink-carp-suit-bundle-desc = Zawiera kostium karpia i kilku przyjaciół do zabawy.
+uplink-operative-suit-name = Kombinezon Operacyjny
+uplink-operative-suit-desc = Kombinezon dla naszych nuklearnych agentów z wysokiej jakości tkaniny, aby wyróżniać się, bez innych korzyści poza wyglądem.
+uplink-operative-skirt-name = Spódnica Operacyjna
+uplink-operative-skirt-desc = Spódnica dla naszych nuklearnych agentów z wysokiej jakości tkaniny, aby wyróżniać się, bez innych korzyści poza wyglądem.
+uplink-balloon-name = SyndyBalon
+uplink-balloon-desc = Wręczany najodważniejszym duszom, które przetrwały przejażdżkę "atomowym tornadem" w Syndieland.
+uplink-scarf-syndie-red-name = Pasiasty czerwony szalik syndykatu
+uplink-scarf-syndie-red-desc = Stylowy pasiasty czerwony szalik syndykatu. Idealny zimowy dodatek dla osób z wyczuciem mody i tych, którzy mają ochotę coś ukraść.
+uplink-scarf-syndie-green-name = Pasiasty zielony szalik syndykatu
+uplink-scarf-syndie-green-desc = Stylowy pasiasty zielony szalik syndykatu. Idealny zimowy dodatek dla osób z wyczuciem mody i tych, którzy mają ochotę coś ukraść.
+uplink-business-card-name = Wizytówka Syndykatu
+uplink-business-card-desc = Wizytówka, którą możesz dać komuś, aby pokazać swoje zaangażowanie w syndykat lub zostawić na miejscu zbrodni, aby wyśmiać detektywa. Możesz kupić nie więcej niż trzy.
+uplink-decoy-kit-name = Zestaw Przynęty
+uplink-decoy-kit-desc = Najnowocześniejsza technologia rozpraszania uwagi prosto z RND. Zawiera pięć realistycznych balonów, cztery granaty przynęty i kilka petard!
+uplink-contraband-lighter-name = Skrzynka z Nielegalnym Zapalniczką
+uplink-contraband-lighter-desc = Tajemnicza skrzynka gwarantująca zawartość zapalniczki z logo syndykatu. Nie wymaga paliwa.

@@ -1,5 +1,7 @@
-ent-BaseTarget = { ent-BaseStructureDynamic }
+ent-BaseTargetIndestructible = { ent-BaseStructureDynamic }
     .desc = { ent-BaseStructureDynamic.desc }
+ent-BaseTarget = { ent-BaseTargetIndestructible }
+    .desc = { ent-BaseTargetIndestructible.desc }
 ent-TargetHuman = human target
     .desc = A shooting target. This one is a human.
 ent-TargetSyndicate = syndicate target
