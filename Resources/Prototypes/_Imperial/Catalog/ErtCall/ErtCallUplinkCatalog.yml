@@ -3095,7 +3095,7 @@
   id: ErtCallUplinkGrenadeFragDeadSquad
   name: ert-uplink-ErtCallUplinkGrenadeFrag-name
   description: ert-uplink-ErtCallUplinkGrenadeFrag-desc
-  productEntity: GrenadeBlast
+  productEntity: GrenadeFrag
   cost:
     BlueSpaceCube: 6
   categories:
