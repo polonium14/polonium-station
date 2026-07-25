@@ -22,7 +22,6 @@ using Content.Shared.Hands;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction;
 using Content.Shared.Inventory;
-using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Prototypes;
 using Content.Shared.Stacks;
@@ -47,7 +46,6 @@ public abstract partial class SharedSurgerySystem : EntitySystem
     [Dependency] private SharedContainerSystem _container = default!;
     [Dependency] private INetManager _net = default!;
     [Dependency] private InventorySystem _inventory = default!;
-    [Dependency] private MobStateSystem _mobState = default!;
     [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private IPrototypeManager _prototypes = default!;
     [Dependency] private RotateToFaceSystem _rotateToFace = default!;
