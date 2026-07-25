@@ -1,3 +1,5 @@
+ent-BaseDeskBell = { ent-BaseItem }
+    .desc = { ent-BaseItem.desc }
 ent-EmptyDeskBell = unfinished desk bell
     .desc = An empty bell missing its noise maker.
 ent-DeskBell = desk bell

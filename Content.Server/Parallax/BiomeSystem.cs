@@ -470,12 +470,24 @@ public sealed partial class BiomeSystem : SharedBiomeSystem
             }
             catch (Exception e)
             {
-
                 Log.Error($"Failed loading biome chunk {chunk} on {ToPrettyString(gridUid)}: {e}");
 
-                var rollback = new List<(Vector2i, Tile)>(ChunkSize * ChunkSize);
-
-                UnloadChunk(component, gridUid, grid, chunk, seed, rollback);
+                try
+                {
+                    var rollback = new List<(Vector2i, Tile)>(ChunkSize * ChunkSize);
+                    UnloadChunk(component, gridUid, grid, chunk, seed, rollback);
+                }
+                catch (Exception rollbackEx)
+                {
+                    Log.Error($"Failed rolling back biome chunk {chunk} on {ToPrettyString(gridUid)}: {rollbackEx}");
+                }
+                finally
+                {
+                    // usuwamy nawet jeśli rollback zdechnie
+                    component.LoadedChunks.Remove(chunk);
+                    component.LoadedEntities.Remove(chunk);
+                    component.LoadedDecals.Remove(chunk);
+                }
             }
         }
     }

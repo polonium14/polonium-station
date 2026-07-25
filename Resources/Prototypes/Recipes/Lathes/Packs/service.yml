@@ -58,6 +58,7 @@
   - ClothingBackpackWaterTank
   - MegaSprayBottle
   - WashingMachineCircuitboard
+  - TrashBagHolding
 
 - type: latheRecipePack
   id: Instruments

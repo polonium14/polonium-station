@@ -8,6 +8,8 @@
 
 # maps
 /Resources/Maps/ @willowzeta
+/Resources/Prototypes/Maps/** @Emisse @ArtisticRoomba
+/Resources/Maps/** @Emisse @ArtisticRoomba
 
 # audio
 /Resources/Audio/ @vectorassembly
@@ -20,3 +22,17 @@
 
 # github
 /.github/ @taydeo @Komonighub
+
+/Content.*/HeatContainer/ @slarticodefast
+
+/Content.*/Stunnable/ @Princess-Cheeseballs
+/Content.*/Nutrition/ @Princess-Cheeseballs
+/Content.*/EntityEffects @Princess-Cheeseballs @sowelipililimute
+
+# SKREEEE
+/Content.*.Database/ @DrSmugleaf
+/Content.Shared.Database/Log*.cs @DrSmugleaf @crazybrain23
+
+/Content.Server/Discord/ @Simyon264
+
+/Content.*/Atmos/** @ArtisticRoomba

@@ -4,4 +4,3 @@ ent-BlueSpaceCube = blue space cube
 ent-BlueSpaceCube1 = { ent-BlueSpaceCube }
     .suffix = 1 BCC
     .desc = { ent-BlueSpaceCube.desc }
-blueSpaceCube = KBS

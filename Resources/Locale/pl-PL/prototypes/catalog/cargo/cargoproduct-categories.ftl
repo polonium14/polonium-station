@@ -16,3 +16,7 @@ cargoproduct-category-name-service = Obsługa
 cargoproduct-category-name-shuttle = Wahadłowce
 
 cargoproduct-category-name-instruments = Instruments
+
+cargoproduct-category-name-janitorial = Janitorial
+
+cargoproduct-category-name-space = Space

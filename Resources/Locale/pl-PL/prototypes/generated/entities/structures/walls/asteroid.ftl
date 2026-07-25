@@ -1,3 +1,5 @@
+ent-BaseAsteroidRock = { ent-BaseWall }
+    .desc = { ent-BaseWall.desc }
 ent-AsteroidRock = skała asteroidowa
     .desc = Skała asteroidowa.
 ent-BaseRockGibtonite = { "" }

@@ -1,5 +1,7 @@
-ent-WindoorAssembly = windoor assembly
+ent-BaseWindoorAssembly = windoor assembly
     .desc = It opens, it closes, and you can see through it!
+ent-WindoorAssembly = { ent-BaseWindoorAssembly }
+    .desc = { ent-BaseWindoorAssembly.desc }
 ent-WindoorAssemblySecure = secure windoor assembly
     .desc = It opens, it closes, and you can see through it! This one looks tough.
 ent-WindoorAssemblyClockwork = clockwork windoor assembly
