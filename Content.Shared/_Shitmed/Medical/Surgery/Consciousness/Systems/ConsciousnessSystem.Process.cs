@@ -61,7 +61,7 @@ public partial class ConsciousnessSystem
 
     private void OnMobStateChanged(EntityUid uid, ConsciousnessComponent component, MobStateChangedEvent args)
     {
-        if (component.NerveSystem != default)
+        if (component.NerveSystem != default && !TerminatingOrDeleted(component.NerveSystem))
             _pain.HandleMobStateChanged(component.NerveSystem, args);
 
         if (args.NewMobState == MobState.Dead)

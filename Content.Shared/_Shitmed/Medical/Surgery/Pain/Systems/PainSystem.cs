@@ -8,6 +8,7 @@ using Content.Shared._Shitmed.CCVar;
 using Content.Shared._Shitmed.Medical.Surgery.Consciousness.Systems;
 using Content.Shared._Shitmed.Medical.Surgery.Pain.Components;
 using Content.Shared._Shitmed.Medical.Surgery.Traumas.Systems;
+using Content.Shared._Shitmed.Medical.Surgery.Wounds.Components;
 using Content.Shared._Shitmed.Medical.Surgery.Wounds.Systems;
 using Content.Shared.Body;
 using Content.Shared.FixedPoint;
@@ -170,8 +171,9 @@ public sealed partial class PainSystem : EntitySystem
         // per-woundable pain modifiers behind (their owning wound is gone, but nothing
         // ever re-scanned to remove the modifier once the mob could act on it again). Reconcile
         // every woundable's modifier against its actual current wounds so pain can't stay stuck
-        // above zero forever on an otherwise fully-healed revived mob.
-        if (args.OldMobState == MobState.Dead && args.NewMobState != MobState.Dead)
+        // above zero forever on an otherwise fully-healed revived mob. Server-only, same rule as
+        // Update - the modifier dictionary is authoritative state the client just receives.
+        if (_net.IsServer && args.OldMobState == MobState.Dead && args.NewMobState != MobState.Dead)
             ReconcileWoundPainModifiers(uid, args.Target, nerveSys);
     }
 
@@ -182,6 +184,10 @@ public sealed partial class PainSystem : EntitySystem
 
         foreach (var organ in bodyComp.Organs.ContainedEntities)
         {
+            // Not every organ is woundable (brains, eyes) - GetWoundableWounds errors out on those.
+            if (!HasComp<WoundableComponent>(organ))
+                continue;
+
             var woundPain = FixedPoint2.Zero;
             var traumaticPain = FixedPoint2.Zero;
 
