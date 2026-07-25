@@ -131,8 +131,7 @@ public sealed partial class WoundSystem
                 woundTarget = (redirect, redirectComp);
             }
 
-            tookDamage |= TryInduceWound(woundTarget, damageType, damageValue, out _, woundTarget.Comp)
-                || IsWoundPrototypeValid($"Wound{damageType}");
+            tookDamage |= TryInduceWound(woundTarget, damageType, damageValue, out _, woundTarget.Comp);
         }
 
         if (tookDamage)
