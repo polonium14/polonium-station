@@ -289,9 +289,22 @@ public abstract partial class SharedBloodstreamSystem
     {
         if (!CanWoundBleed(uid, component)
             || !TryComp<WoundableComponent>(args.Component.HoldingWoundable, out var woundable)
-            || !woundable.CanBleed
-            || args.NewSeverity < component.SeverityThreshold
-            || args.NewSeverity < args.OldSeverity)
+            || !woundable.CanBleed)
+            return;
+
+        if (args.NewSeverity < args.OldSeverity)
+        {
+            var healedCap = args.NewSeverity * _cfg.GetCVar(SurgeryCVars.BleedingSeverityTrade);
+            if (component.BleedingAmountRaw > healedCap)
+            {
+                component.BleedingAmountRaw = healedCap;
+                Dirty(uid, component);
+            }
+
+            return;
+        }
+
+        if (args.NewSeverity < component.SeverityThreshold)
             return;
 
         var severityDelta = args.NewSeverity - args.OldSeverity;
