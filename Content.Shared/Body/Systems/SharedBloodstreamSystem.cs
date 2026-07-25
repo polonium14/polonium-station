@@ -556,13 +556,30 @@ public abstract partial class SharedBloodstreamSystem : EntitySystem
         var ev = new BleedModifierEvent(entity.Comp.BleedAmount, entity.Comp.BleedReductionAmount);
         RaiseLocalEvent(entity, ref ev);
 
-        // Blood is removed from the bloodstream at a 1-1 rate with the bleed amount
-        TryBleedOut(entity.AsNullable(), ev.BleedAmount);
+        // Blood is removed 1-1 with the bleed amount, then scaled by mob state. The state
+        // multiplier is applied after the event so modifiers (hemophilia, surgical incisions)
+        // still compute against the real bleed rate and state scales whatever they settled on.
+        TryBleedOut(entity.AsNullable(), ev.BleedAmount * GetStateBleedMultiplier(entity));
 
         // Bleed rate is reduced by the bleed reduction amount in the bloodstream component.
         // Systems that want to hold bleeding open (e.g. UnfinishedSurgeryPenaltySystem's
         // surgical incision) do so by lowering BleedReductionAmount via BleedModifierEvent.
+        // Deliberately unscaled - a downed body bleeds slower, but its wounds still clot on
+        // the same timeline, so bleeding doesn't become effectively permanent while crit.
         TryModifyBleedAmount(entity.AsNullable(), -ev.BleedReductionAmount);
+    }
+
+    /// <summary>
+    /// How much of the current bleed rate actually leaves the body, based on mob state.
+    /// </summary>
+    private float GetStateBleedMultiplier(Entity<BloodstreamComponent> entity)
+    {
+        if (_mobStateSystem.IsDead(entity))
+            return entity.Comp.DeadBleedMultiplier;
+
+        return _mobStateSystem.IsCritical(entity)
+            ? entity.Comp.CritBleedMultiplier
+            : 1f;
     }
 
     /// <summary>

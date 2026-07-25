@@ -81,6 +81,19 @@ public sealed partial class BloodstreamComponent : Component
     public float MaxBleedAmount = 10.0f;
 
     /// <summary>
+    /// Multiplier on blood actually lost per tick while in critical condition. A body that
+    /// isn't circulating properly doesn't pump itself dry at the same rate a running one does.
+    /// Only scales the blood loss - <see cref="BleedReductionAmount"/> still clots at full
+    /// speed, so wounds close on the same timeline regardless of state.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public float CritBleedMultiplier = 0.75f;
+
+    /// <inheritdoc cref="CritBleedMultiplier"/>
+    [DataField, AutoNetworkedField]
+    public float DeadBleedMultiplier = 0.2f;
+
+    /// <summary>
     /// What percentage of current blood is necessary to avoid dealing blood loss damage?
     /// </summary>
     [DataField, AutoNetworkedField]
