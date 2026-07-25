@@ -101,15 +101,14 @@ public sealed class SurgeryStepCompletionPersistsTest : GameTest
                 Is.True,
                 "Setup: a real MobHuman should have a nerve system.");
             nerveSystemOwner = nerveSys!.Value.Owner;
-            Assert.That(sPain.TryGetPainModifier(nerveSystemOwner, head, "SurgeryPain_wound", out _),
+            Assert.That(sPain.TryGetPainModifier(nerveSystemOwner, head, "SurgeryPain", out _),
                 Is.True,
                 "Setup: the scalpel cut should have inflicted real SurgeryPain on the head's nerve.");
         });
 
         await server.WaitPost(() =>
         {
-            sPain.TryRemovePainModifier(nerveSystemOwner, head, "SurgeryPain_wound");
-            sPain.TryRemovePainModifier(nerveSystemOwner, head, "SurgeryPain_trauma");
+            sPain.TryRemovePainModifier(nerveSystemOwner, head, "SurgeryPain");
         });
 
         await pair.RunTicksSync(5);
