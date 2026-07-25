@@ -35,7 +35,7 @@ namespace Content.IntegrationTests.Tests._Shitmed.Body;
 [TestOf(typeof(HealthAnalyzerSystem))]
 public sealed class HealthAnalyzerTourniquetTest : GameTest
 {
-    private static readonly ProtoId<DamageTypePrototype> BluntDamageType = "Blunt";
+    private static readonly ProtoId<DamageTypePrototype> PiercingDamageType = "Piercing";
 
     [TestPrototypes]
     private const string Prototypes = @"
@@ -127,7 +127,7 @@ public sealed class HealthAnalyzerTourniquetTest : GameTest
         // Wound both limbs so there's a wound to carry the tourniquet's bleed modifier.
         await server.WaitPost(() =>
         {
-            var proto = sProtoMan.Index(BluntDamageType);
+            var proto = sProtoMan.Index(PiercingDamageType);
             sDamageable.TryChangeDamage(arm, new DamageSpecifier(proto, FixedPoint2.New(20)), ignoreResistances: true, origin: self);
             sDamageable.TryChangeDamage(leg, new DamageSpecifier(proto, FixedPoint2.New(20)), ignoreResistances: true, origin: self);
         });

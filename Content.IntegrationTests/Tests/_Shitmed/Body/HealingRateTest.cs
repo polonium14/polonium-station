@@ -23,7 +23,7 @@ namespace Content.IntegrationTests.Tests._Shitmed.Body;
 [TestOf(typeof(Content.Shared.Medical.Healing.HealingSystem))]
 public sealed class HealingRateTest : GameTest
 {
-    private static readonly ProtoId<DamageTypePrototype> BluntDamageType = "Blunt";
+    private static readonly ProtoId<DamageTypePrototype> PiercingDamageType = "Piercing";
 
     [TestPrototypes]
     private const string Prototypes = @"
@@ -64,7 +64,7 @@ public sealed class HealingRateTest : GameTest
   - type: Healing
     damage:
       types:
-        Blunt: -20
+        Piercing: -20
 
 - type: entity
   id: HealRateTestSuture
@@ -72,7 +72,7 @@ public sealed class HealingRateTest : GameTest
   - type: Healing
     damage:
       types:
-        Blunt: -20
+        Piercing: -20
     bloodlossModifier: -999
 ";
 
@@ -107,12 +107,12 @@ public sealed class HealingRateTest : GameTest
 
         // Deal damage to the MOB, attacker's default TargetingComponent selection (Chest ->
         // Torso), letting BodyDamageBridgeSystem mirror it onto the organ and create a real
-        // wound - the same path a combat hit takes. 20 Blunt in one hit crosses the bleed
+        // wound - the same path a combat hit takes. 20 Piercing in one hit crosses the bleed
         // severity threshold, so this wound starts actively bleeding (matches the "bones break
         // reliably" magnitude TraumaBoneBreakTest uses for the same reason).
         await server.WaitPost(() =>
         {
-            var proto = sProtoMan.Index(BluntDamageType);
+            var proto = sProtoMan.Index(PiercingDamageType);
             sDamageable.TryChangeDamage(victim, new DamageSpecifier(proto, FixedPoint2.New(20)), ignoreResistances: false, origin: attacker);
         });
 
@@ -220,7 +220,7 @@ public sealed class HealingRateTest : GameTest
             var organHealed = organBefore - organAfter;
             var woundHealed = woundBefore - woundAfter;
 
-            Assert.That(woundHealed, Is.EqualTo(FixedPoint2.New(20)), "The suture's -20 Blunt should fully heal the 20-severity wound once bleeding is stopped first.");
+            Assert.That(woundHealed, Is.EqualTo(FixedPoint2.New(20)), "The suture's -20 Piercing should fully heal the 20-severity wound once bleeding is stopped first.");
             Assert.That(organHealed, Is.EqualTo(woundHealed), "The organ's raw damage should drop by exactly what the wound actually absorbed.");
             Assert.That(mobHealed, Is.EqualTo(woundHealed), "The mob's raw damage should drop by exactly what the wound actually absorbed, not the nominal item amount.");
         });
@@ -261,7 +261,7 @@ public sealed class HealingRateTest : GameTest
         // no origin, marker present, so this never reaches the organ or creates any wound.
         await server.WaitPost(() =>
         {
-            var proto = sProtoMan.Index(BluntDamageType);
+            var proto = sProtoMan.Index(PiercingDamageType);
             sEntMan.AddComponent<Content.Shared._Shitmed.Body.SkipDamageBridgeComponent>(victim);
             sDamageable.TryChangeDamage(victim, new DamageSpecifier(proto, FixedPoint2.New(15)));
             sEntMan.RemoveComponent<Content.Shared._Shitmed.Body.SkipDamageBridgeComponent>(victim);
@@ -290,7 +290,7 @@ public sealed class HealingRateTest : GameTest
 #pragma warning restore CS0618
 
             Assert.That(mobBefore - mobAfter, Is.EqualTo(FixedPoint2.New(15)),
-                "The suture's -20 Blunt should fully heal the mob's 15 wound-less damage, floored at what's really there rather than blocked entirely by the missing wound.");
+                "The suture's -20 Piercing should fully heal the mob's 15 wound-less damage, floored at what's really there rather than blocked entirely by the missing wound.");
             Assert.That(organAfter, Is.EqualTo(FixedPoint2.Zero),
                 "The organ had nothing to heal and should stay untouched.");
         });

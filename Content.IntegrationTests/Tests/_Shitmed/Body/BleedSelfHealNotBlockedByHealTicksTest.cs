@@ -23,7 +23,7 @@ namespace Content.IntegrationTests.Tests._Shitmed.Body;
 [TestOf(typeof(Content.Shared._Shitmed.Medical.Surgery.Wounds.Systems.WoundSystem))]
 public sealed class BleedSelfHealNotBlockedByHealTicksTest : GameTest
 {
-    private static readonly ProtoId<DamageTypePrototype> BluntDamageType = "Blunt";
+    private static readonly ProtoId<DamageTypePrototype> PiercingDamageType = "Piercing";
     private static readonly ProtoId<DamageTypePrototype> AsphyxiationDamageType = "Asphyxiation";
 
     [TestPrototypes]
@@ -93,7 +93,7 @@ public sealed class BleedSelfHealNotBlockedByHealTicksTest : GameTest
 
         await server.WaitPost(() =>
         {
-            var proto = sProtoMan.Index(BluntDamageType);
+            var proto = sProtoMan.Index(PiercingDamageType);
             sDamageable.TryChangeDamage(victim, new DamageSpecifier(proto, FixedPoint2.New(10)), ignoreResistances: false, origin: attacker);
         });
 
