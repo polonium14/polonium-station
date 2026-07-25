@@ -48,6 +48,7 @@ public sealed partial class WoundSystem
 
             bleeds.BleedingAmountRaw = FixedPoint2.Zero;
             bleeds.Scaling = FixedPoint2.Zero;
+            bleeds.ScalingLimit = BleedInflicterComponent.DefaultScalingLimit;
             bleeds.IsBleeding = false;
             Dirty(wound, bleeds);
             haltedAny = true;
@@ -75,6 +76,7 @@ public sealed partial class WoundSystem
                 bleeds.BleedingAmountRaw = FixedPoint2.Zero;
                 bleeds.IsBleeding = false;
                 bleeds.Scaling = FixedPoint2.Zero;
+                bleeds.ScalingLimit = BleedInflicterComponent.DefaultScalingLimit;
             }
             else
             {

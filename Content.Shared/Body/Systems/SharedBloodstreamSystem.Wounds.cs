@@ -289,11 +289,8 @@ public abstract partial class SharedBloodstreamSystem
             || args.NewSeverity < args.OldSeverity)
             return;
 
-        var oldBleedsAmount = args.OldSeverity * _cfg.GetCVar(SurgeryCVars.BleedingSeverityTrade);
-        component.BleedingAmountRaw = args.NewSeverity * _cfg.GetCVar(SurgeryCVars.BleedingSeverityTrade);
-
-        var severityPenalty = component.BleedingAmountRaw - oldBleedsAmount / _cfg.GetCVar(SurgeryCVars.BleedsScalingTime);
-        component.SeverityPenalty += severityPenalty;
+        var severityDelta = args.NewSeverity - args.OldSeverity;
+        component.BleedingAmountRaw += severityDelta * _cfg.GetCVar(SurgeryCVars.BleedingSeverityTrade);
 
         var formula = (float) (args.NewSeverity / _cfg.GetCVar(SurgeryCVars.BleedsScalingTime) * component.ScalingSpeed);
         component.ScalingFinishesAt = _timing.CurTime + TimeSpan.FromSeconds(formula);
