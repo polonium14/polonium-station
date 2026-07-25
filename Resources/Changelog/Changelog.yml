@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: perryprog
-  changes:
-  - message: Added a button to the smart fridge UI to remove empty entries.
-    type: Add
-  id: 9368
-  time: '2026-01-09T15:02:32.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/39195
 - author: B_Kirill
   changes:
   - message: Projectiles like bullets, rockets and fireballs no longer slow down during
@@ -4063,3 +4056,12 @@
   id: 9875
   time: '2026-07-24T22:49:43.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/810
+- author: Nikita
+  changes:
+  - message: "Naprawiono czarne p\u0142ytki na mapach z worldgen"
+    type: Fix
+  - message: Naprawiono crashe na mapach z worldgen
+    type: Fix
+  id: 9876
+  time: '2026-07-25T08:23:50.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/813
