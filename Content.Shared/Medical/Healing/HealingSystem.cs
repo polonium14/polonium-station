@@ -264,6 +264,9 @@ public sealed partial class HealingSystem : EntitySystem
             {
                 if (_wound.GetTypeDamage(organ, type.Key) > 0)
                     return true;
+
+                if (_wound.GetOrganlessDamage(target.Owner, type.Key) > 0)
+                    return true;
             }
         }
         else
