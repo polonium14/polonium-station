@@ -129,16 +129,22 @@ public sealed partial class EvenHealthChangeEntityEffectSystem : EntityEffectSys
         // also fan back out to every organ via BodyDamageBridgeSystem's untargeted heal path,
         // which would double up on the per-organ shares above. Only add/remove the guard if we
         // weren't already inside one, so we don't strip a guard an outer caller still needs.
+        // try/finally because the marker suppresses all bridged damage while it's present - if
+        // the heal throws, a plain sequential RemComp would be skipped and this mob would
+        // silently stop receiving organ->mob damage for the rest of the round.
         var hadSkip = HasComp<SkipDamageBridgeComponent>(target);
         if (!hadSkip)
             AddComp<SkipDamageBridgeComponent>(target);
 
-        var applied = -_damageable.HealEvenly(target, -share, group).GetTotal();
-
-        if (!hadSkip)
-            RemComp<SkipDamageBridgeComponent>(target);
-
-        return applied;
+        try
+        {
+            return -_damageable.HealEvenly(target, -share, group).GetTotal();
+        }
+        finally
+        {
+            if (!hadSkip)
+                RemComp<SkipDamageBridgeComponent>(target);
+        }
     }
 }
 

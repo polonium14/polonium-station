@@ -143,9 +143,18 @@ public sealed partial class BodyDamageBridgeSystem : EntitySystem
         if (!TryComp<OrganComponent>(uid, out var organ) || organ.Body is not { } body)
             return;
 
+        // try/finally because the marker suppresses all bridged damage while it's present - if
+        // TryChangeDamage throws, a plain sequential RemComp would be skipped and this body would
+        // silently stop receiving organ->mob damage for the rest of the round.
         AddComp<SkipDamageBridgeComponent>(body);
-        _damageable.TryChangeDamage(body, delta, ignoreResistances: true, interruptsDoAfters: false, origin: args.Origin);
-        RemComp<SkipDamageBridgeComponent>(body);
+        try
+        {
+            _damageable.TryChangeDamage(body, delta, ignoreResistances: true, interruptsDoAfters: false, origin: args.Origin);
+        }
+        finally
+        {
+            RemComp<SkipDamageBridgeComponent>(body);
+        }
     }
 
     private static float GetPartDamageWeight(TargetBodyPart target)
