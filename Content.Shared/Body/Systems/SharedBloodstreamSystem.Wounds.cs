@@ -307,8 +307,17 @@ public abstract partial class SharedBloodstreamSystem
         if (args.NewSeverity < component.SeverityThreshold)
             return;
 
-        var severityDelta = args.NewSeverity - args.OldSeverity;
-        component.BleedingAmountRaw += severityDelta * _cfg.GetCVar(SurgeryCVars.BleedingSeverityTrade);
+        // Growing past the threshold for the first time has to land on the same bleed a wound
+        // born at that size gets from OnWoundAdded - the sub-threshold portion never accrued,
+        // so seed from the whole severity rather than just this hit's delta. Growth on a wound
+        // that was already past the threshold keeps accruing by delta, so a partial cautery
+        // (which lowers BleedingAmountRaw without touching severity) isn't handed back.
+        var crossedFromBelow = args.OldSeverity < component.SeverityThreshold;
+
+        if (crossedFromBelow)
+            component.BleedingAmountRaw = args.NewSeverity * _cfg.GetCVar(SurgeryCVars.BleedingSeverityTrade);
+        else
+            component.BleedingAmountRaw += (args.NewSeverity - args.OldSeverity) * _cfg.GetCVar(SurgeryCVars.BleedingSeverityTrade);
 
         var formula = (float) (args.NewSeverity / _cfg.GetCVar(SurgeryCVars.BleedsScalingTime) * component.ScalingSpeed);
         component.ScalingFinishesAt = _timing.CurTime + TimeSpan.FromSeconds(formula);
@@ -316,9 +325,14 @@ public abstract partial class SharedBloodstreamSystem
 
         if (!component.IsBleeding)
         {
-            component.ScalingLimit += 0.6;
+            // Only a genuine reopening earns the scaling bump - a wound whose bleed was stopped
+            // and then torn open again. A wound merely growing past the threshold for the first
+            // time has to match one born above it, and OnWoundAdded leaves ScalingLimit alone;
+            // bumping it here too would just move the same-severity gap to the scaling side.
+            if (!crossedFromBelow)
+                component.ScalingLimit += 0.6;
+
             component.IsBleeding = true;
-            // When bleeding is reopened, the severity is increased
         }
 
         // dummy fix as me and pretty much nobody else currently knows HOW EXACTLY was is supposed to work, womp womp
