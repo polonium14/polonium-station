@@ -330,7 +330,7 @@ ert-uplink-ErtCallUplinkDoubleEmergencyOxygenTankFilled-desc = Wysokiej klasy, d
 ert-uplink-ErtCallUplinkDoubleEmergencyNitrogenTankFilled-name = Podwójna awaryjna butla z azotem
 ert-uplink-ErtCallUplinkDoubleEmergencyNitrogenTankFilled-desc = Wysokiej klasy, dwuzbiornikowy awaryjny zasobnik podtrzymania życia. Jak na swój rozmiar mieści sporo azotu. Może pomieścić 2,5 L gazu.
 
-ert-uplink-ErtCallUplinkBoneAutoInjector-name = bone auto-injector
+ert-uplink-ErtCallUplinkBoneAutoInjector-name = Medipen osteodyny
 ert-uplink-ErtCallUplinkBoneAutoInjector-desc = Jednorazowa dawka osteodyny, przeznaczona do szybkiego leczenia złamanych kości.
 
 ert-uplink-ErtCallUplinkSurgeryKitFilled-name = Zestaw chirurgiczny
