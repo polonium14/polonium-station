@@ -117,14 +117,11 @@
   description: ert-uplink-ErtCallUplinkMagazineRifle-desc
   productEntity: MagazineRifle
   cost:
-    BlueSpaceCube: 3
+    BlueSpaceCube: 2
   categories:
   - ERTUplinkAmmoCombat
   conditions:
     - !type:StoreWhitelistCondition
-      whitelist:
-        tags:
-          - ErtUplinkCombat
       blacklist:
         tags:
           - ErtUplinkDeadSquad
@@ -1448,7 +1445,7 @@
   description: ert-uplink-ErtCallUplinkWeaponBORGun-desc
   productEntity: WeaponBORSniperGun
   cost:
-    BlueSpaceCube: 10
+    BlueSpaceCube: 7
   categories:
   - ERTUplinkWeaponCombat
   conditions:
@@ -1619,6 +1616,21 @@
           - ErtUplinkDeadSquad
 
 - type: listing
+  id: ErtCallUplinkSurgeryKitFilled
+  name: ert-uplink-ErtCallUplinkSurgeryKitFilled-name
+  description: ert-uplink-ErtCallUplinkSurgeryKitFilled-desc
+  productEntity: SurgeryKitFilled
+  cost:
+    BlueSpaceCube: 5
+  categories:
+  - ERTUplinkMedial
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad           
+
+- type: listing
   id: ErtCallUplinkHandHeldMassScanner
   name: ert-uplink-ErtCallUplinkHandHeldMassScanner-name
   description: ert-uplink-ErtCallUplinkHandHeldMassScanner-desc
@@ -1632,7 +1644,22 @@
       blacklist:
         tags:
           - ErtUplinkDeadSquad
-                    
+          
+- type: listing
+  id: ErtCallUplinkWeaponRifleLecterXL8
+  name: ert-uplink-ErtCallUplinkWeaponRifleLecterXL8-name
+  description: ert-uplink-ErtCallUplinkWeaponRifleLecterXL8-desc
+  productEntity: WeaponRifleLecterXL8
+  cost:
+    BlueSpaceCube: 9
+  categories:
+  - ERTUplinkWeaponCombat
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - ErtUplinkDeadSquad
+          
 # Death Squad isolated pricing (mirrors ERT catalog at DS rates)
 - type: listing
   id: ErtCallUplinkStunbatonDeadSquad
@@ -1715,7 +1742,7 @@
   description: ert-uplink-ErtCallUplinkMagazineRifle-desc
   productEntity: MagazineRifle
   cost:
-    BlueSpaceCube: 6
+    BlueSpaceCube: 4
   categories:
   - ERTUplinkAmmoCombat
   conditions:
@@ -2842,7 +2869,7 @@
   description: ert-uplink-ErtCallUplinkWeaponBORGun-desc
   productEntity: WeaponBORSniperGun
   cost:
-    BlueSpaceCube: 20
+    BlueSpaceCube: 14
   categories:
   - ERTUplinkWeaponCombat
   conditions:
@@ -3002,6 +3029,21 @@
           - ErtUplinkDeadSquad
 
 - type: listing
+  id: ErtCallUplinkSurgeryKitFilledDeadSquad
+  name: ert-uplink-ErtCallUplinkSurgeryKitFilled-name
+  description: ert-uplink-ErtCallUplinkSurgeryKitFilled-desc
+  productEntity: SurgeryKitFilled
+  cost:
+    BlueSpaceCube: 10
+  categories:
+  - ERTUplinkMedial
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - ErtUplinkDeadSquad          
+
+- type: listing
   id: ErtCallUplinkHandHeldMassScannerDeadSquad
   name: ert-uplink-ErtCallUplinkHandHeldMassScanner-name
   description: ert-uplink-ErtCallUplinkHandHeldMassScanner-desc
@@ -3076,21 +3118,6 @@
         tags:
           - ErtUplinkDeadSquad
           
-- type: listing
-  id: ErtCallUplinkGrenadeBlastDeadSquad
-  name: ert-uplink-ErtCallUplinkGrenadeBlast-name
-  description: ert-uplink-ErtCallGrenadeBlast-desc
-  productEntity: GrenadeBlast
-  cost:
-    BlueSpaceCube: 10
-  categories:
-  - ERTUplinkAmmoCombat
-  conditions:
-    - !type:StoreWhitelistCondition
-      whitelist:
-        tags:
-          - ErtUplinkDeadSquad  
-
 - type: listing
   id: ErtCallUplinkGrenadeFragDeadSquad
   name: ert-uplink-ErtCallUplinkGrenadeFrag-name
