@@ -15,7 +15,7 @@ condition-body-bleeding-LeftArm = • {$entity} krwawi z lewego ramienia.
 condition-body-bleeding-RightArm = • {$entity} krwawi z prawego ramienia.
 condition-body-bleeding-LeftLeg = • {$entity} krwawi z lewej nogi.
 condition-body-bleeding-RightLeg = • {$entity} krwawi z prawej nogi.
-condition-body-bleeding-systemic = • {$entity} krwawi w wyniku niedokończonej operacji!
+condition-body-bleeding-systemic = • {$entity} skądś krwawi.
 
 condition-body-tourniquet-Head = • {$entity} ma opaskę uciskową na głowie.
 condition-body-tourniquet-Chest = • {$entity} ma opaskę uciskową na klatce piersiowej.

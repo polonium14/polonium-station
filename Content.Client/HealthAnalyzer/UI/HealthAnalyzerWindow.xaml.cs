@@ -234,7 +234,7 @@ public sealed partial class HealthAnalyzerWindow : FancyWindow
                 ? Identity.Name(part.Value, _entityManager)
                 : Loc.GetString("health-analyzer-window-entity-unknown-value-text");
 
-        var showAlerts = msg.Unrevivable || msg.SystemicBleeding || msg.Bleeding.Values.Any(v => v);
+        var showAlerts = msg.Unrevivable || msg.Bleeding.Values.Any(v => v);
         AlertsDivider.Visible = showAlerts;
         AlertsContainer.Visible = showAlerts;
 
