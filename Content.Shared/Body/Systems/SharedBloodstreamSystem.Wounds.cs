@@ -302,6 +302,19 @@ public abstract partial class SharedBloodstreamSystem
 
         if (args.NewSeverity < args.OldSeverity)
         {
+            // Healed back under the gate that would have started the bleed in the first place -
+            // OnWoundAdded and the growth path below both refuse to bleed there, so leaving a
+            // proportional trickle here is the only way a sub-threshold wound bleeds at all.
+            // It also traps the wound: OnWoundHealAttempt blocks passive healing while
+            // IsBleeding, so the residual would keep the wound from ever closing on its own.
+            if (args.NewSeverity < component.SeverityThreshold)
+            {
+                component.BleedingAmountRaw = FixedPoint2.Zero;
+                component.IsBleeding = false;
+                Dirty(uid, component);
+                return;
+            }
+
             var healedCap = args.NewSeverity * _cfg.GetCVar(SurgeryCVars.BleedingSeverityTrade);
             if (component.BleedingAmountRaw > healedCap)
             {
