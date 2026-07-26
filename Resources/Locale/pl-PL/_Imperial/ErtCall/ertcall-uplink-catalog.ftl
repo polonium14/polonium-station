@@ -18,13 +18,13 @@ ert-uplink-ErtCallUplinkMagazineBoxMagnum-desc = Pudełko naboi magnum wysokiej 
 ert-uplink-ErtCallUplinkSpeedLoaderMagnum-name = Bębenek .45 magnum
 ert-uplink-ErtCallUplinkSpeedLoaderMagnum-desc = Szybki bębenek do rewolwerów magnum.
 
-ert-uplink-ErtCallUplinkMagazinePistol-name = Magazynek pistoletowy
-ert-uplink-ErtCallUplinkMagazinePistol-desc = Standardowy magazynek do pistoletu.
+ert-uplink-ErtCallUplinkMagazinePistol-name = Magazynek pistoletowy (.35 auto)
+ert-uplink-ErtCallUplinkMagazinePistol-desc = Standardowe naboje .35 auto.
 
-ert-uplink-ErtCallUplinkMagazineRifle-name = Magazynek karabinowy
-ert-uplink-ErtCallUplinkMagazineRifle-desc = Standardowa amunicja karabinowa.
+ert-uplink-ErtCallUplinkMagazineRifle-name = Magazynek (.20 karabinowe)
+ert-uplink-ErtCallUplinkMagazineRifle-desc = Standardowe naboje .20 karabinowe
 
-ert-uplink-ErtCallUplinkMagazineBoxAntiMateriel-name = Pudełko amunicji przeciwmateriałowej
+ert-uplink-ErtCallUplinkMagazineBoxAntiMateriel-name = Pudełko amunicji przeciwmateriałowej (.60 przeciwmateriałowe)
 ert-uplink-ErtCallUplinkMagazineBoxAntiMateriel-desc = Naboje przeciwmateriałowe dużego kalibru.
 
 ert-uplink-ErtCallUplinkMagazineLethalshot-name = Magazynek do strzelby (śrut)
@@ -165,13 +165,13 @@ ert-uplink-ErtCallUplinkWeaponPulsePistol-desc = Kompaktowa energetyczna broń b
 ert-uplink-ErtCallUplinkWeaponDisabler-name = Ogłuszacz
 ert-uplink-ErtCallUplinkWeaponDisabler-desc = Niegroźna broń energetyczna do obezwładniania.
 
-ert-uplink-ErtCallUplinkWeaponPistolMk58-name = Pistolet Mk58
+ert-uplink-ErtCallUplinkWeaponPistolMk58-name = Pistolet Mk58 (.35 auto)
 ert-uplink-ErtCallUplinkWeaponPistolMk58-desc = Standardowa balistyczna broń boczna.
 
-ert-uplink-ErtCallUplinkWeaponRevolverMateba-name = Rewolwer Mateba
+ert-uplink-ErtCallUplinkWeaponRevolverMateba-name = Rewolwer Mateba (.45 magnum)
 ert-uplink-ErtCallUplinkWeaponRevolverMateba-desc = Potężny półautomatyczny rewolwer.
 
-ert-uplink-ErtCallUplinkWeaponRifleLecter-name = Karabin Lecter
+ert-uplink-ErtCallUplinkWeaponRifleLecter-name = Karabin Lecter (.20 karabinowe)
 ert-uplink-ErtCallUplinkWeaponRifleLecter-desc = Karabin kinetyczny dużej mocy.
 
 ert-uplink-ErtCallUplinkWeaponPulseCarbine-name = Karabinek pulsacyjny
@@ -192,7 +192,7 @@ ert-uplink-ErtCallUplinkWeaponTaser-desc = Ogłusza cele ładunkiem elektrycznym
 ert-uplink-ErtCallUplinkWeaponAdvancedLaser-name = Zaawansowany laser
 ert-uplink-ErtCallUplinkWeaponAdvancedLaser-desc = Ulepszona energetyczna broń boczna.
 
-ert-uplink-ErtCallUplinkWeaponSniperHristov-name = Karabin snajperski "Chrystow"
+ert-uplink-ErtCallUplinkWeaponSniperHristov-name = Karabin snajperski "Chrystow" (.60 przeciwmateriałowe)
 ert-uplink-ErtCallUplinkWeaponSniperHristov-desc = Precyzyjny karabin dalekiego zasięgu.
 
 ert-uplink-ErtCallUplinkWeaponShotgunKammerer-name = Strzelba Kammerer
@@ -258,7 +258,7 @@ ert-uplink-ErtCallUplinkClothingShoesBootsMag-desc = Buty magnetyczne do EVA i s
 ert-uplink-ErtCallUplinkCrowbar-name = Łom
 ert-uplink-ErtCallUplinkCrowbar-desc = Narzędzie do wyważania drzwi i skrzyń.
 
-ert-uplink-ErtCallUplinkWeaponL6Saw-name = LKM L6
+ert-uplink-ErtCallUplinkWeaponL6Saw-name = LKM L6 (.30 karabinowe)
 ert-uplink-ErtCallUplinkWeaponL6Saw-desc = Broń do tłumienia ogniem o wysokiej szybkostrzelności.
 
 ert-uplink-ErtCallUplinkMagazineLightRifleBox-name = Pudełko amunicji .30 karabinowej
@@ -267,22 +267,22 @@ ert-uplink-ErtCallUplinkMagazineLightRifleBox-desc = Duża ilość naboi .30 kar
 ert-uplink-ErtCallUplinkEnergyShield-name = Tarcza energetyczna
 ert-uplink-ErtCallUplinkEnergyShield-desc = Rozkładana osobista bariera energetyczna.
 
-ert-uplink-ErtCallUplinkWeaponWeaponVisMPSPistol-name = Pistolet Vis MPS
+ert-uplink-ErtCallUplinkWeaponWeaponVisMPSPistol-name = Pistolet Vis MPS (.35 auto)
 ert-uplink-ErtCallUplinkWeaponWeaponVisMPSPistol-desc = Zaawansowana balistyczna broń boczna.
 
-ert-uplink-ErtCallUplinkWeaponPMMGun-name = PMM Model-X
+ert-uplink-ErtCallUplinkWeaponPMMGun-name = PMM Model-X (.35 auto)
 ert-uplink-ErtCallUplinkWeaponPMMGun-desc = Kompaktowa broń automatyczna.
 
-ert-uplink-ErtCallUplinkWeaponBORGun-name = Snajperka BOR
+ert-uplink-ErtCallUplinkWeaponBORGun-name = Snajperka BOR (.30 karabinowe)
 ert-uplink-ErtCallUplinkWeaponBORGun-desc = Precyzyjny karabin dużego kalibru.
 
-ert-uplink-ErtCallUplinkWeaponWeaponVisMPSPistolMagazine-name = Magazynek Vis MPS
+ert-uplink-ErtCallUplinkWeaponWeaponVisMPSPistolMagazine-name = Magazynek Vis MPS (.35 auto)
 ert-uplink-ErtCallUplinkWeaponWeaponVisMPSPistolMagazine-desc = Magazynek do pistoletu Vis MPS.
 
-ert-uplink-ErtCallUplinkWeaponPMMGunMagazine-name = Magazynek PMM
+ert-uplink-ErtCallUplinkWeaponPMMGunMagazine-name = Magazynek PMM (.35 auto)
 ert-uplink-ErtCallUplinkWeaponPMMGunMagazine-desc = Magazynek do PMM Model-X.
 
-ert-uplink-ErtCallUplinkWeaponBORGunMagazine-name = Magazynek BOR
+ert-uplink-ErtCallUplinkWeaponBORGunMagazine-name = Magazynek BOR (.30 karabinowe)
 ert-uplink-ErtCallUplinkWeaponBORGunMagazine-desc = Amunicja do snajperki BOR.
 
 ert-uplink-ErtCallUplinkWeaponLaserCellMG-name = EM72 Ashstorm
@@ -323,3 +323,46 @@ ert-uplink-ErtCallUplinkEngineerHardsuit-desc = Ochronny skafander noszony przez
 
 ert-uplink-ErtCallUplinkJanitorHardsuit-name = Skafander woźnego JSR
 ert-uplink-ErtCallUplinkJanitorHardsuit-desc = Ochronny skafander noszony przez woźnych jednostki szybkiego reagowania.
+
+ert-uplink-ErtCallUplinkDoubleEmergencyOxygenTankFilled-name = Podwójna awaryjna butla z tlenem
+ert-uplink-ErtCallUplinkDoubleEmergencyOxygenTankFilled-desc = Wysokiej klasy, dwuzbiornikowy awaryjny zasobnik podtrzymania życia. Jak na swój rozmiar mieści sporo tlenu. Może pomieścić 2,5 L gazu.
+
+ert-uplink-ErtCallUplinkDoubleEmergencyNitrogenTankFilled-name = Podwójna awaryjna butla z azotem
+ert-uplink-ErtCallUplinkDoubleEmergencyNitrogenTankFilled-desc = Wysokiej klasy, dwuzbiornikowy awaryjny zasobnik podtrzymania życia. Jak na swój rozmiar mieści sporo azotu. Może pomieścić 2,5 L gazu.
+
+ert-uplink-ErtCallUplinkBoneAutoInjector-name = Medipen osteodyny
+ert-uplink-ErtCallUplinkBoneAutoInjector-desc = Jednorazowa dawka osteodyny, przeznaczona do szybkiego leczenia złamanych kości.
+
+ert-uplink-ErtCallUplinkSurgeryKitFilled-name = Zestaw chirurgiczny
+ert-uplink-ErtCallUplinkSurgeryKitFilled-desc = Zestaw chirurgiczny zawierający wszystkie podstawowe narzędzia.
+
+ert-uplink-ErtCallUplinkHandHeldMassScanner-name = Ręczny skaner masy
+ert-uplink-ErtCallUplinkHandHeldMassScanner-desc = Ręczny skaner masy.
+
+ert-uplink-ErtCallPinpointerNuclear-name = Pinpointer
+ert-uplink-ErtCallPinpointerNuclear-desc = Ręczne urządzenie śledzące. Chociaż zazwyczaj ma ono znacznie większe możliwości, to zostało skonfigurowane tak, aby namierzać określone sygnały. Trzymaj je w pozycji pionowej, aby zachować dokładność.
+
+ert-uplink-ErtCallUplinkWeaponSubMachineGunAtreides-name = Atryda (.35 auto)
+ert-uplink-ErtCallUplinkWeaponSubMachineGunAtreides-desc = Pla-ket-ket-ket-ket! Używa amunicji .35 auto.
+
+ert-uplink-ErtCallUplinkMagazinePistolSubMachineGun-name = magazynek do PM (.35 auto)
+ert-uplink-ErtCallUplinkMagazinePistolSubMachineGun-desc = 30 nabojowy magazynek do pistoletów maszynowych.
+
+ert-uplink-ErtCallUplinkWeaponLauncherHydraLethal-name = Granatnik Hydra
+ert-uplink-ErtCallUplinkWeaponLauncherHydraLethal-desc = Rewolwerowy granatnik zdolny rozwiązać większość twoich problemów.
+
+ert-uplink-ErtCallUplinkGrenadeFrag-name = Granat Odłamkowy
+ert-uplink-ErtCallUplinkGrenadeFrag-desc = Granat Odłamkowy o szerokim polu rażenia.
+
+ert-uplink-ErtCallUplinkGrenadeBlast-name = Granat Burzący
+ert-uplink-ErtCallUplinkGrenadeBlast-desc = Granat Burzący do niszczenia struktur i celów opancerzonych.
+
+ert-uplink-ErtCallUplinkWeaponRifleLecterXL8-name = XL8 (.20 karabinowe)
+ert-uplink-ErtCallUplinkWeaponRifleLecterXL8-desc = Eksperymentalna modyfikacja lektera z zintegrowanym celownikiem, cholernie drogi.
+
+
+
+
+
+
+
