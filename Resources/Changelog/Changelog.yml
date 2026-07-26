@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: ArtisticRoomba
-  changes:
-  - message: The TEG now produces 75% more power. This is to counteract tritium fires
-      no longer producing 10x the amount of heat they used to output, due to a bug.
-    type: Tweak
-  id: 9400
-  time: '2026-01-15T05:40:22.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42421
 - author: kontakt
   changes:
   - message: Cancer mice are now significantly more radioactive.
@@ -4121,3 +4113,10 @@
   id: 9900
   time: '2026-07-26T14:01:34.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/818
+- author: nikita
+  changes:
+  - message: "Podmieniono na mapie centcomm 6 telefon\xF3w na 1 telefon CD"
+    type: Tweak
+  id: 9901
+  time: '2026-07-26T18:28:31.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/825
