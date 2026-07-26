@@ -1,15 +1,9 @@
-// SPDX-FileCopyrightText: 2026 MaiaArai <158123176+YaraaraY@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2026 nikitosych <174215049+nikitosych@users.noreply.github.com>
-//
-// SPDX-License-Identifier: AGPL-3.0-or-later
-
-using Content.Shared._Funkystation.FirelockBolt.Components;
+﻿using Content.Shared._Funkystation.FirelockBolt.Components;
 using Content.Shared.DoAfter;
 using Content.Shared.Doors;
 using Content.Shared.Doors.Components;
 using Content.Shared.Doors.Systems;
 using Content.Shared.Interaction;
-using Content.Shared.Prying.Components;
 using Content.Shared.Verbs;
 using Content.Shared.Wires;
 using Robust.Shared.Audio.Systems;
@@ -27,7 +21,6 @@ public abstract partial class SharedFirelockBoltControlSystem : EntitySystem
     [Dependency] private IGameTiming _timing = null!;
     [Dependency] protected EntityQuery<DoorBoltComponent> DoorBoltQuery = default!;
     [Dependency] protected EntityQuery<DoorComponent> DoorQuery = default!;
-    [Dependency] private EntityQuery<FirelockComponent> _firelockQuery;
     [Dependency] private EntityQuery<WiresPanelComponent> _wiresPanelQuery;
 
     public override void Initialize()
@@ -42,10 +35,6 @@ public abstract partial class SharedFirelockBoltControlSystem : EntitySystem
         SubscribeLocalEvent<FirelockBoltControlComponent, GetVerbsEvent<AlternativeVerb>>(OnGetVerbs);
         SubscribeLocalEvent<FirelockBoltControlComponent, BoundUIOpenedEvent>(OnBuiOpened);
         SubscribeLocalEvent<FirelockBoltControlComponent, FirelockOverrideSetMessage>(OnOverrideSetMessage);
-        // after DoorBolt so crowbar can still get through hazard bolts
-        SubscribeLocalEvent<FirelockBoltControlComponent, BeforePryEvent>(OnBeforePry, after: new[] { typeof(SharedDoorSystem) });
-
-        SubscribeLocalEvent<FirelockBoltControlComponent, PriedEvent>(OnPried, before: new[] { typeof(SharedDoorSystem) });
     }
 
     private void OnDoorStateChanged(Entity<FirelockBoltControlComponent> ent, ref DoorStateChangedEvent args)
@@ -145,25 +134,6 @@ public abstract partial class SharedFirelockBoltControlSystem : EntitySystem
         SetOverride(ent, args.TargetOverride);
     }
 
-    private void OnBeforePry(Entity<FirelockBoltControlComponent> ent, ref BeforePryEvent args)
-    {
-        if (!args.Cancelled || ent.Comp.Override)
-            return;
-
-        if (!DoorBoltQuery.TryComp(ent.Owner, out var bolt) || !bolt.BoltsDown)
-            return;
-
-        args.Cancelled = false;
-        args.Message = null;
-    }
-
-    private void OnPried(Entity<FirelockBoltControlComponent> ent, ref PriedEvent args)
-    {
-        // drop bolts before StartOpening runs
-        if (DoorBoltQuery.TryComp(ent.Owner, out var bolt) && bolt.BoltsDown)
-            DoorSystem.SetBoltsDown((ent.Owner, bolt), false, args.User, predicted: true);
-    }
-
     private void ApplyBoltForDoorState(Entity<FirelockBoltControlComponent> ent, DoorState state)
     {
         if (ent.Comp.Override || !DoorBoltQuery.TryComp(ent.Owner, out var bolt))
@@ -172,54 +142,25 @@ public abstract partial class SharedFirelockBoltControlSystem : EntitySystem
         switch (state)
         {
             case DoorState.Closing:
+                // if the door starts closing within 1.5 seconds of a player clicking it, it's a manual close, don't bolt
                 ent.Comp.IsManualClose = (_timing.CurTime - ent.Comp.LastManualInteractionTime) < TimeSpan.FromSeconds(1.5);
                 break;
 
             case DoorState.Closed:
             case DoorState.Welded:
-
-                UpdateHazardBolts(ent);
-
+                // bolt shut if it was automatically closed
+                if (ent.Comp.AlarmActive || !ent.Comp.IsManualClose)
+                    DoorSystem.SetBoltsDown((ent.Owner, bolt), true, predicted: true);
                 break;
 
             case DoorState.Open:
                 DoorSystem.SetBoltsDown((ent.Owner, bolt), false, predicted: true);
-
                 ent.Comp.IsManualClose = false;
-
                 break;
         }
     }
 
-    public void UpdateHazardBolts(Entity<FirelockBoltControlComponent> ent, FirelockComponent? firelock = null, DoorComponent? door = null)
-    {
-        if (ent.Comp.Override)
-            return;
-
-        if (firelock == null && !_firelockQuery.TryComp(ent.Owner, out firelock))
-            return;
-
-        if (door == null && !DoorQuery.TryComp(ent.Owner, out door))
-            return;
-
-        if (!DoorBoltQuery.TryComp(ent.Owner, out var bolt))
-            return;
-
-        var shouldBolt = (door.State == DoorState.Closed || door.State == DoorState.Welded)
-            && (ent.Comp.AlarmActive || firelock.IsLocked);
-
-        if (bolt.BoltsDown == shouldBolt)
-            return;
-
-        DoorSystem.SetBoltsDown((ent.Owner, bolt), shouldBolt, predicted: true);
-        
-        PushState(ent);
-    }
-
-    /// <summary>
-    /// While on, hazard wont rebolt this door
-    /// </summary>
-    public void SetOverride(Entity<FirelockBoltControlComponent> ent, bool value, bool playSound = true)
+    private void SetOverride(Entity<FirelockBoltControlComponent> ent, bool value)
     {
         if (ent.Comp.Override == value)
             return;
@@ -227,20 +168,17 @@ public abstract partial class SharedFirelockBoltControlSystem : EntitySystem
         ent.Comp.Override = value;
         Dirty(ent, ent.Comp);
 
-        if (playSound)
-        {
-            var sound = value ? ent.Comp.EnableSound : ent.Comp.DisableSound;
-            _audio.PlayPvs(sound, ent.Owner);
-        }
+        var sound = value ? ent.Comp.EnableSound : ent.Comp.DisableSound;
+        _audio.PlayPvs(sound, ent.Owner);
 
         if (value)
         {
             if (DoorBoltQuery.TryComp(ent.Owner, out var bolt))
                 DoorSystem.SetBoltsDown((ent.Owner, bolt), false);
         }
-        else
+        else if (DoorQuery.TryComp(ent.Owner, out var door))
         {
-            UpdateHazardBolts(ent);
+            ApplyBoltForDoorState(ent, door.State);
         }
 
         PushState(ent);
