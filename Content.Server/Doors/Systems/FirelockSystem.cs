@@ -79,10 +79,6 @@ namespace Content.Server.Doors.Systems
         {
             component.Powered = args.Powered;
             Dirty(uid, component);
-
-            // drop bolts when power dies, reevaluate when it comes back
-            if (_boltControlQuery.TryComp(uid, out var boltControl))
-                _firelockBolts.UpdateHazardBolts((uid, boltControl), component);
         }
 
         public override void Update(float frameTime)
@@ -97,9 +93,9 @@ namespace Content.Server.Doors.Systems
             var query = EntityQueryEnumerator<FirelockComponent, DoorComponent>();
             while (query.MoveNext(out var uid, out var firelock, out var door))
             {
-                // reclose on Danger even without power - bolts still need power
                 if (_atmosAlarmQuery.TryComp(uid, out var alarmable)
                     && alarmable.LastAlarmState == AtmosAlarmType.Danger
+                    && this.IsPowered(uid, EntityManager)
                     && door.State == DoorState.Open)
                 {
                     EmergencyPressureStop(uid, firelock, door);
@@ -155,21 +151,19 @@ namespace Content.Server.Doors.Systems
 
         private void OnAtmosAlarm(EntityUid uid, FirelockComponent component, AtmosAlarmEvent args)
         {
+            if (!this.IsPowered(uid, EntityManager))
+                return;
+
             if (!TryComp<DoorComponent>(uid, out var doorComponent))
                 return;
 
             if (args.AlarmType == AtmosAlarmType.Normal)
             {
-                // opening still needs power
-                if (!this.IsPowered(uid, EntityManager))
-                    return;
-
                 if (doorComponent.State == DoorState.Closed)
                     _doorSystem.TryOpen(uid);
             }
             else if (args.AlarmType == AtmosAlarmType.Danger)
             {
-                // close even when unpowered
                 EmergencyPressureStop(uid, component, doorComponent);
             }
         }

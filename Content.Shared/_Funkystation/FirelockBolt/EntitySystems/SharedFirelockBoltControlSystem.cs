@@ -159,9 +159,9 @@ public abstract partial class SharedFirelockBoltControlSystem : EntitySystem
 
     private void OnPried(Entity<FirelockBoltControlComponent> ent, ref PriedEvent args)
     {
-        // drop bolts before StartOpening, even when unpowered
+        // drop bolts before StartOpening runs
         if (DoorBoltQuery.TryComp(ent.Owner, out var bolt) && bolt.BoltsDown)
-            DoorSystem.SetBoltsDown((ent.Owner, bolt), false, args.User, predicted: true, force: true);
+            DoorSystem.SetBoltsDown((ent.Owner, bolt), false, args.User, predicted: true);
     }
 
     private void ApplyBoltForDoorState(Entity<FirelockBoltControlComponent> ent, DoorState state)
@@ -177,12 +177,16 @@ public abstract partial class SharedFirelockBoltControlSystem : EntitySystem
 
             case DoorState.Closed:
             case DoorState.Welded:
+
                 UpdateHazardBolts(ent);
+
                 break;
 
             case DoorState.Open:
-                DoorSystem.SetBoltsDown((ent.Owner, bolt), false, predicted: true, force: true);
+                DoorSystem.SetBoltsDown((ent.Owner, bolt), false, predicted: true);
+
                 ent.Comp.IsManualClose = false;
+
                 break;
         }
     }
@@ -201,14 +205,14 @@ public abstract partial class SharedFirelockBoltControlSystem : EntitySystem
         if (!DoorBoltQuery.TryComp(ent.Owner, out var bolt))
             return;
 
-        var shouldBolt = firelock.Powered
-            && (door.State == DoorState.Closed || door.State == DoorState.Welded)
+        var shouldBolt = (door.State == DoorState.Closed || door.State == DoorState.Welded)
             && (ent.Comp.AlarmActive || firelock.IsLocked);
 
         if (bolt.BoltsDown == shouldBolt)
             return;
 
-        DoorSystem.SetBoltsDown((ent.Owner, bolt), shouldBolt, predicted: true, force: !shouldBolt);
+        DoorSystem.SetBoltsDown((ent.Owner, bolt), shouldBolt, predicted: true);
+        
         PushState(ent);
     }
 
@@ -232,7 +236,7 @@ public abstract partial class SharedFirelockBoltControlSystem : EntitySystem
         if (value)
         {
             if (DoorBoltQuery.TryComp(ent.Owner, out var bolt))
-                DoorSystem.SetBoltsDown((ent.Owner, bolt), false, force: true);
+                DoorSystem.SetBoltsDown((ent.Owner, bolt), false);
         }
         else
         {
