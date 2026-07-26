@@ -334,7 +334,8 @@ namespace Content.Shared.Movement.Systems
         {
             // Relayed movement just uses the same keybinds given we're moving the relayed entity
             // the same as us.
-            if (!MoverQuery.Resolve(entity, ref entity.Comp))
+            
+            if (!MoverQuery.Resolve(entity, ref entity.Comp, false)) // false: some entities get stray input without an InputMover
                 return;
 
             // TODO: Should move this into HandleMobMovement itself.
