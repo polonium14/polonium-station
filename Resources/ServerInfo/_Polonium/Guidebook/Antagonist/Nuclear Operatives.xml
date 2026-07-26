@@ -55,7 +55,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   Każdy członek twojej drużyny otrzymał [color=#7ee8f7]uplink[/color], dzięki któremu może kupić wszystko, co będzie potrzebne do wykonania misji, podobnie jak w przypadku [textlink="zdrajców" link="Traitors"].
 
   <Box>
-    <GuideEntityEmbed Entity="BaseUplinkRadio200TC" Caption="uplink"/>
+    <GuideEntityEmbed Entity="BaseUplinkRadio40TC" Caption="uplink"/>
   </Box>
 
   Możesz kupować ten sam rodzaj wyposażenia, co zdrajcy, ale masz do dyspozycji sprzęt wyższej jakości i więcej telekryształów do wydania.
@@ -74,7 +74,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     <GuideEntityEmbed Entity="ClothingEyesGlassesOutlawGlasses" Caption="Bezsensowne"/>
   </Box>
 
-  Będziesz musiał również zdecydować, czy chcesz [color=#ff8a8a]wypowiedzieć wojnę[/color], czy nie. Jeśli to zrobisz, twoja drużyna otrzyma [bold]po 200 dodatkowych telekryształów[/bold].
+  Będziesz musiał również zdecydować, czy chcesz [color=#ff8a8a]wypowiedzieć wojnę[/color], czy nie. Jeśli to zrobisz, twoja drużyna otrzyma [bold]po 40 dodatkowych telekryształów[/bold].
   Jednak załoga natychmiast dowie się o twoim istnieniu i będzie miała mnóstwo czasu, by przygotować się na twoje przybycie.
 
   Tylko [bold]dowódca[/bold] może wypowiedzieć wojnę. Zdecyduj się szybko, [italic]to oferta ograniczona czasowo![/italic]

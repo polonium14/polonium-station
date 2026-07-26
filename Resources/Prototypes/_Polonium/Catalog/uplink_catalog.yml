@@ -10,12 +10,12 @@
   description: uplink-pistol-vis-mps-desc
   productEntity: WeaponVisMPSPistol
   cost:
-    Telecrystal: 12
+    Telecrystal: 3
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Telecrystal: 2
   categories:
   - UplinkWeaponry
-  conditions:
-  - !type:ListingLimitedStockCondition
-    stock: 1
 
 - type: listing
   id: UplinkPistolVisMPSMagazine
@@ -23,7 +23,7 @@
   description: uplink-pistol-vis-mps-magazine-desc
   productEntity: WeaponVisMPSPistolMagazine
   cost:
-    Telecrystal: 2
+    Telecrystal: 1
   categories:
   - UplinkAmmo
 
@@ -33,12 +33,12 @@
   description: uplink-pistol-pmm-desc
   productEntity: PMMMachineGun
   cost:
-    Telecrystal: 40
+    Telecrystal: 15
+  discountCategory: veryRareDiscounts
+  discountDownTo:
+    Telecrystal: 9
   categories:
   - UplinkWeaponry
-  conditions:
-  - !type:ListingLimitedStockCondition
-    stock: 1
 
 - type: listing
   id: UplinkPistolPMMMagazine
@@ -46,7 +46,7 @@
   description: uplink-pistol-pmm-magazine-desc
   productEntity: PMMMachineGunMagazine
   cost:
-    Telecrystal: 9
+    Telecrystal: 2
   categories:
   - UplinkAmmo
 
@@ -56,12 +56,12 @@
   description: uplink-rifle-beryl-desc
   productEntity: WeaponRifleBeryl
   cost:
-    Telecrystal: 45
+    Telecrystal: 18
+  discountCategory: veryRareDiscounts
+  discountDownTo:
+    Telecrystal: 14
   categories:
   - UplinkWeaponry
-  conditions:
-  - !type:ListingLimitedStockCondition
-    stock: 1
 
 - type: listing
   id: UplinkSniperBor
@@ -69,12 +69,12 @@
   description: uplink-sniper-bor-desc
   productEntity: WeaponBORSniperGun
   cost:
-    Telecrystal: 55
+    Telecrystal: 7
+  discountCategory: veryRareDiscounts
+  discountDownTo:
+    Telecrystal: 4
   categories:
   - UplinkWeaponry
-  conditions:
-  - !type:ListingLimitedStockCondition
-    stock: 1
 
 - type: listing
   id: UplinkSniperBorMagazine
@@ -82,7 +82,7 @@
   description: uplink-sniper-bor-magazine-desc
   productEntity: BorSniperMagazine
   cost:
-    Telecrystal: 8
+    Telecrystal: 1
   categories:
   - UplinkAmmo
 
@@ -93,7 +93,7 @@
   icon: { sprite: Objects/Misc/monkeycube.rsi, state: box}
   productEntity: SyndicateDinoBox
   cost:
-    Telecrystal: 100
+    Telecrystal: 15 # Polonium rebalnacing and deflation
   categories:
   - UplinkJob
   conditions:
@@ -109,7 +109,7 @@
   icon: { sprite: Objects/Misc/monkeycube.rsi, state: box}
   productEntity: SyndicateDinoBox
   cost:
-    Telecrystal: 75 #25% discount for nukies. probably remove this but i want to see at least 1 dino ops
+    Telecrystal: 10 #25% discount for nukies. probably remove this but i want to see at least 1 dino ops # Polonium TC uninflation and rebalancing
   categories:
   - UplinkDisruption
   conditions:
