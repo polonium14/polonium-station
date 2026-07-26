@@ -103,7 +103,7 @@
       nameSegments:
         - NamesMilitaryFirstLeader
         - NamesMilitaryLast
-        nameFormat: name-format-ert
+      nameFormat: name-format-ert
     - type: NpcFactionMember
       factions:
       - NanoTrasen
