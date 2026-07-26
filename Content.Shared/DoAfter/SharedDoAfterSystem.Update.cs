@@ -209,7 +209,7 @@ public abstract partial class SharedDoAfterSystem : EntitySystem
         {
             var movementEntity = doAfter.MovementEntity;
             //var movementXform = Transform(movementEntity);
-            
+
             if (!TryComp(movementEntity, out TransformComponent? movementXform))
                 return true;
 
@@ -223,7 +223,7 @@ public abstract partial class SharedDoAfterSystem : EntitySystem
                 if (!TryComp(target, out TransformComponent? targetXform))
                     return true;
 
-                if (targetXform.Coordinates.TryDistance(EntityManager, movementXform.Coordinates, out var distance) ||
+                if (targetXform.Coordinates.TryDistance(EntityManager, movementXform.Coordinates, out var distance) &&
                     Math.Abs(distance - doAfter.TargetDistance) > args.MovementThreshold)
                     return true;
             }
