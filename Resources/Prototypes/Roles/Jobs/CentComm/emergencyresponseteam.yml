@@ -63,6 +63,14 @@
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant, DeathRattleImplantCentcomm ]
+  # funky - ghostjobs
+  - !type:AddComponentSpecial
+    components:
+    - type: RandomMetadata
+      nameSegments:
+      - NamesMilitaryFirstLeader
+      - NamesMilitaryLast
+      nameFormat: name-format-ert
 
 - type: startingGear
   id: ERTLeaderGear
@@ -166,6 +174,7 @@
       nameSegments:
       - NamesMilitaryFirst
       - NamesMilitaryLast
+      nameFormat: name-format-ert
   # end funky
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant, DeathRattleImplantCentcomm ]
@@ -248,6 +257,7 @@
       nameSegments:
       - NamesMilitaryFirst
       - NamesMilitaryLast
+      nameFormat: name-format-ert
   # end funky
 
 - type: startingGear
@@ -332,6 +342,7 @@
       nameSegments:
       - NamesMilitaryFirst
       - NamesMilitaryLast
+      nameFormat: name-format-ert
   # end funky
 
 
@@ -438,6 +449,7 @@
       nameSegments:
       - NamesMilitaryFirst
       - NamesMilitaryLast
+      nameFormat: name-format-ert
   # end funky
 
 - type: startingGear
@@ -507,6 +519,7 @@
       nameSegments:
       - NamesMilitaryFirst
       - NamesMilitaryLast
+      nameFormat: name-format-ert
   # end funky
 
 - type: startingGear

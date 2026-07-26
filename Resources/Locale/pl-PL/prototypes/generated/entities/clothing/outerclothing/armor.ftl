@@ -1,10 +1,10 @@
-ent-ClothingOuterArmorBase = armor vest
-    .desc = A standard Type I armored vest that provides decent protection against most types of damage.
-ent-ClothingOuterArmorBasic = { ent-BaseSecurityContraband }
-    .desc = { ent-BaseSecurityContraband.desc }
-ent-ClothingOuterArmorBasicSlim = armor vest
-    .desc = A slim Type I armored vest that provides decent protection against most types of damage.
-    .suffix = slim
+ent-ClothingOuterArmorBase = kamizelka ochronna
+    .desc = Standardowa kamizelka pancerna typu I, zapewniająca przyzwoitą ochronę przed większością rodzajów obrażeń.
+ent-ClothingOuterArmorBasic = { ent-ClothingOuterArmorBase }
+    .desc = { ent-ClothingOuterArmorBase.desc }
+ent-ClothingOuterArmorBasicSlim = kamizelka ochronna
+    .desc = Smukła kamizelka pancerna typu I, zapewniająca przyzwoitą ochronę przed większością rodzajów obrażeń.
+    .suffix = smukła
 ent-ClothingOuterArmorBulletproof = bulletproof suit
     .desc = A Type III heavy bulletproof suit that excels in protecting the wearer against traditional projectile weaponry and explosives to a minor extent.
 ent-ClothingOuterArmorReflective = reflective vest

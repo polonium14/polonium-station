@@ -53,3 +53,9 @@ roles-antag-pirate-name = Pirate
 
 roles-antag-malfunctioning-ai-name = Malfunctioning AI
 roles-antag-malfunctioning-ai-objective = Sabotage the station as a malfunctioning AI.
+
+roles-antag-mothership-core-name = Mothership Core
+roles-antag-mothership-core-objective = Guide xenoborgs to collect materials and brains to grow the xenoborg army.
+
+roles-antag-xenoborg-name = Xenoborg
+roles-antag-xenoborg-objective = Protect the mothership core and help convert sentient life into xenoborgs.

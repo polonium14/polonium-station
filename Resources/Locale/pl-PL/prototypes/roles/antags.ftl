@@ -31,5 +31,11 @@ roles-antag-thief-objective = Dołącz do swojej kolekcji parę rzeczy NT, bez u
 roles-antag-dragon-name = Smok kosmiczny
 roles-antag-dragon-objective = Stwórz armię karpi aby przejąć to terytorium.
 roles-antag-pirate-name = Pirat
-roles-antag-malfunctioning-ai-name = Malfunctioning AI
-roles-antag-malfunctioning-ai-objective = Sabotage the station as a malfunctioning AI.
+roles-antag-malfunctioning-ai-name = Uszkodzona SI
+roles-antag-malfunctioning-ai-objective = Sabotaż stacji jako uszkodzona SI.
+
+roles-antag-mothership-core-name = Rdzeń statku-matki
+roles-antag-mothership-core-objective = Prowadź ksenoborgi — zbieraj materiały i mózgi, aby powiększać armię ksenoborgów.
+
+roles-antag-xenoborg-name = Ksenoborg
+roles-antag-xenoborg-objective = Chroń rdzeń statku-matki i pomagaj przemieniać świadome istoty w ksenoborgi.

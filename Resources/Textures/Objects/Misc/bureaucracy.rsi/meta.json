@@ -224,6 +224,18 @@
     },
     {
       "name": "paper_stamp-wizard"
+    },
+    {
+      "name": "paper_stamp-nanorep"
+    },
+    {
+      "name": "paper_stamp-iaa"
+    },
+    {
+      "name": "paper_stamp-magi"
+    },
+    {
+      "name": "paper_stamp-cci"
     }
   ]
 }

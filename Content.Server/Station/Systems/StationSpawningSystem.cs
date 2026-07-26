@@ -158,12 +158,13 @@ public sealed partial class StationSpawningSystem : SharedStationSpawningSystem
         var gearEquippedEv = new StartingGearEquippedEvent(entity.Value);
         RaiseLocalEvent(entity.Value, ref gearEquippedEv);
 
+        DoJobSpecials(job, entity.Value);
+
         if (prototype != null && TryComp(entity.Value, out MetaDataComponent? metaData))
         {
             SetPdaAndIdCardData(entity.Value, metaData.EntityName, prototype, station);
         }
 
-        DoJobSpecials(job, entity.Value);
         _identity.QueueIdentityUpdate(entity.Value);
         return entity.Value;
     }
