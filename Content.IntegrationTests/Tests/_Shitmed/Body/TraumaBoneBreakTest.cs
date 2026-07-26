@@ -372,7 +372,7 @@ public sealed class TraumaBoneBreakTest : GameTest
         await server.WaitPost(() =>
         {
             var proto = sProtoMan.Index(PiercingDamageType);
-            // WoundBlunt's BleedInflicter has severityThreshold: 8 - a 20-severity hit clears it.
+            // WoundPiercing's BleedInflicter has severityThreshold: 9 - a 20-severity hit clears it.
             sDamageable.TryChangeDamage(organ, new DamageSpecifier(proto, FixedPoint2.New(20)), ignoreResistances: true, origin: attacker);
         });
 
@@ -621,7 +621,7 @@ public sealed class TraumaBoneBreakTest : GameTest
         await server.WaitPost(() =>
         {
             var proto = sProtoMan.Index(PiercingDamageType);
-            // WoundBlunt's BleedInflicter has severityThreshold: 8 - a 20-severity hit clears it.
+            // WoundPiercing's BleedInflicter has severityThreshold: 9 - a 20-severity hit clears it.
             sDamageable.TryChangeDamage(organ, new DamageSpecifier(proto, FixedPoint2.New(20)), ignoreResistances: true, origin: attacker);
         });
 
@@ -785,7 +785,7 @@ public sealed class TraumaBoneBreakTest : GameTest
         await server.WaitPost(() =>
         {
             var proto = sProtoMan.Index(PiercingDamageType);
-            // WoundBlunt's BleedInflicter has severityThreshold: 8 - a 20-severity hit clears it.
+            // WoundPiercing's BleedInflicter has severityThreshold: 9 - a 20-severity hit clears it.
             // Dealt to the mob (not the organ directly) so BodyDamageBridgeSystem mirrors it,
             // same as the mob's own bleed-wiring test above.
             sDamageable.TryChangeDamage(victim, new DamageSpecifier(proto, FixedPoint2.New(20)), ignoreResistances: false, origin: attacker);
