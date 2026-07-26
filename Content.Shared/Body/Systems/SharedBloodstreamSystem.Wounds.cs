@@ -258,8 +258,14 @@ public abstract partial class SharedBloodstreamSystem
 
     private void OnWoundAdded(EntityUid uid, BleedInflicterComponent component, ref WoundAddedEvent args)
     {
-        if (!CanWoundBleed(uid, component)
-            || args.Component.WoundSeverityPoint < component.SeverityThreshold
+        // WoundableComponent.CanBleed is a static property of the limb, so a woundable that can
+        // never bleed never accrues. CanWoundBleed is deliberately NOT checked here: it's a
+        // runtime suppression (tourniquets flip it via BleedingModifiers), and UpdateWounds
+        // re-derives IsBleeding from it every tick while RecomputeWoundableBleeds only sums
+        // wounds that are actually bleeding - so the effect is already held off. Skipping the
+        // accrual too would permanently under-credit any wound inflicted under a tourniquet,
+        // which then bleeds far less than its severity once the clamp comes off.
+        if (args.Component.WoundSeverityPoint < component.SeverityThreshold
             || !args.Woundable.CanBleed)
             return;
 
@@ -269,7 +275,7 @@ public abstract partial class SharedBloodstreamSystem
         var formula = (float) (args.Component.WoundSeverityPoint / _cfg.GetCVar(SurgeryCVars.BleedsScalingTime) * component.ScalingSpeed);
         component.ScalingFinishesAt = _timing.CurTime + TimeSpan.FromSeconds(formula);
         component.ScalingStartsAt = _timing.CurTime;
-        component.IsBleeding = true;
+        component.IsBleeding = CanWoundBleed(uid, component);
 
         Dirty(uid, component);
     }
@@ -287,8 +293,10 @@ public abstract partial class SharedBloodstreamSystem
         BleedInflicterComponent component,
         ref WoundSeverityPointChangedEvent args)
     {
-        if (!CanWoundBleed(uid, component)
-            || !TryComp<WoundableComponent>(args.Component.HoldingWoundable, out var woundable)
+        // Same reasoning as OnWoundAdded: accrual tracks severity regardless of a tourniquet,
+        // and IsBleeding below (plus UpdateWounds every tick) is what actually holds the bleed
+        // off while the limb is clamped.
+        if (!TryComp<WoundableComponent>(args.Component.HoldingWoundable, out var woundable)
             || !woundable.CanBleed)
             return;
 
@@ -323,7 +331,10 @@ public abstract partial class SharedBloodstreamSystem
         component.ScalingFinishesAt = _timing.CurTime + TimeSpan.FromSeconds(formula);
         component.ScalingStartsAt = _timing.CurTime;
 
-        if (!component.IsBleeding)
+        // The CanWoundBleed test matters here: under a tourniquet UpdateWounds keeps IsBleeding
+        // false every tick, so without it each further hit would read as a fresh reopening and
+        // stack another +0.6 onto ScalingLimit without bound.
+        if (CanWoundBleed(uid, component) && !component.IsBleeding)
         {
             // Only a genuine reopening earns the scaling bump - a wound whose bleed was stopped
             // and then torn open again. A wound merely growing past the threshold for the first
