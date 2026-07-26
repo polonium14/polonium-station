@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: kontakt
-  changes:
-  - message: Cancer mice are now significantly more radioactive.
-    type: Tweak
-  id: 9401
-  time: '2026-01-15T16:46:46.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42298
 - author: Samuka
   changes:
   - message: The heavy xenoborg can now slowly move in space like the scout and stealth
@@ -4120,3 +4113,20 @@
   id: 9901
   time: '2026-07-26T18:28:31.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/825
+- author: Nikita
+  changes:
+  - message: "Naprawiono ERROR zamiast sprite'a papieru z niekt\xF3rymi piecz\u0105\
+      tkami"
+    type: Fix
+  - message: "Naprawiono brakuj\u0105ce t\u0142umaczenia \"armored vest\""
+    type: Fix
+  - message: "Naprawiono brakuj\u0105ce t\u0142umaczenia UI konstruowania"
+    type: Fix
+  - message: "Naprawiono brakuj\u0105ce t\u0142umaczenia niekt\xF3rych antagonist\xF3\
+      w"
+    type: Fix
+  - message: "JSR i S\u015A teraz dostaj\u0105 normalne imiona"
+    type: Tweak
+  id: 9902
+  time: '2026-07-26T19:16:57.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/826
