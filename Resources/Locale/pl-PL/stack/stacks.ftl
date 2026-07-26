@@ -312,3 +312,5 @@ stack-white-steel-horizontal-slats-tile-bordered = white steel bordered horizont
 stack-white-steel-vertical-slats-tile-bordered = white steel bordered vertical slat tile
 
 stack-white-steel-slats-tile-continuous = white steel continuous slat tile
+
+stack-blue-space-cube = kostka blue space

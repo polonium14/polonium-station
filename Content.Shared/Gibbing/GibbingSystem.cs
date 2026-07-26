@@ -2,6 +2,7 @@ using Content.Shared.Destructible;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Audio;
 using Robust.Shared.Network;
+using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Random;
 
@@ -19,8 +20,12 @@ public sealed partial class GibbingSystem : EntitySystem
     private static readonly SoundSpecifier? GibSound = new SoundCollectionSpecifier("gib", AudioParams.Default.WithVariation(0.025f));
 
     /// <summary>
-    /// Gibs an entity.
+    /// Attempts to gib an entity.
     /// </summary>
+    /// <remarks>
+    /// <see cref="SharedDestructibleSystem.DestroyEntity" /> gets the final say on if an entity ends up deleted.
+    /// If you want to intercept gibbing, intercept <see cref="DestructionAttemptEvent" />
+    /// </remarks>
     /// <param name="ent">The entity to gib.</param>
     /// <param name="dropGiblets">Whether or not to drop giblets.</param>
     /// <param name="user">The user gibbing the entity, if any.</param>
@@ -63,9 +68,13 @@ public sealed partial class GibbingSystem : EntitySystem
 
     private void FlingDroppedEntity(EntityUid target)
     {
+        if (!TryComp<PhysicsComponent>(target, out var body))
+            // Polonium: if the entity has no body, it's not a giblet (i hope so)
+            return;
+
         var impulse = GibletLaunchImpulse + _random.NextFloat(GibletLaunchImpulseVariance);
         var scatterVec = _random.NextAngle().ToVec() * impulse;
-        _physics.ApplyLinearImpulse(target, scatterVec);
+        _physics.ApplyLinearImpulse(target, scatterVec, body: body);
     }
 }
 

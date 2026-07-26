@@ -12,7 +12,7 @@
     sprite: Clothing/Head/Hats/beret_security_medic.rsi
 
 - type: entity
-  parent: ClothingHeadHelmetBasic
+  parent: [ClothingHeadHelmetArmoredBase, BaseSecurityContraband]
   id: ClothingHeadHelmetSecurityMedic
   name: security medic helmet
   description: A standard issue combat helmet for security medics. Has decent tensile strength and armor. Keep your head down.
@@ -21,6 +21,13 @@
     sprite: Clothing/Head/Helmets/security_medic.rsi
   - type: Clothing
     sprite: Clothing/Head/Helmets/security_medic.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - SecurityHelmet
+  - type: HideLayerClothing
+    layers:
+      Hair: HEAD
 
 - type: entity
   parent: ClothingOuterArmorBasic

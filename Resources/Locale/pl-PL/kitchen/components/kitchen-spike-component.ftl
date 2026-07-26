@@ -117,3 +117,5 @@ comp-kitchen-spike-victim-examine = [color=orange]{ CAPITALIZE(SUBJECT($target))
 comp-kitchen-spike-deconstruct-occupied = Next, [color=red]unhook the body[/color].
 
 comp-kitchen-spike-need-tool-quality = { $quality } tool required to butcher { THE($target) }.
+
+comp-kitchen-spike-butcher-empty = { CAPITALIZE(THE($victim)) } has no meat left to butcher!

@@ -1,3 +1,8 @@
+// SPDX-FileCopyrightText: 2026 Maciej Walendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 maciejwalendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.FixedPoint;
@@ -79,10 +84,13 @@ public sealed partial class WoundableComponent : Component
     public FixedPoint2 Bleeds;
 
     /// <summary>
-    /// How much bleeding will be treated per tick.
+    /// How much bleeding will be treated per tick on each wound this limb holds - unlike
+    /// <see cref="HealAbility"/> it is not shared between them, so recovery does not slow down as
+    /// bleeders accumulate. Only applies while <see cref="CanHealBleeds"/>, i.e. minor bleeding -
+    /// heavy bleeding (at or above <see cref="BleedsThreshold"/>) never closes on its own.
     /// </summary>
     [ViewVariables, DataField]
-    public FixedPoint2 BleedingTreatmentAbility = 0.01f;
+    public FixedPoint2 BleedingTreatmentAbility = 0.05f;
 
     /// <summary>
     /// Bleed level above which passive bleed-healing halts.

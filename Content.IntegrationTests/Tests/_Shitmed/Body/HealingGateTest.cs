@@ -1,3 +1,8 @@
+// SPDX-FileCopyrightText: 2026 Maciej Walendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 maciejwalendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Numerics;
 using Content.IntegrationTests.Fixtures;
 using Content.Shared._Shitmed.Medical.Surgery.Wounds.Components;
@@ -113,9 +118,10 @@ public sealed class HealingGateTest : GameTest
 
         // Wound both limbs at once - torso via the targeted mob hit (bridges to the organ),
         // head dealt directly since there's only one TargetingComponent selection available.
-        // Halt bleeding on both immediately after - WoundBlunt has no BleedInflicter override
-        // (default severityThreshold 0, so any severity bleeds), and an actively-bleeding wound
-        // is a separate blocker (CanHealWound) this test isn't trying to exercise.
+        // The halt calls are belt-and-braces: WoundBlunt carries no BleedInflicter at all, so
+        // these blunt wounds can't bleed to begin with. They stay in so the test keeps testing
+        // the damage-time gate alone if the damage type or wound prototype ever changes - an
+        // actively-bleeding wound is a separate blocker (CanHealWound) and would muddy this.
         await server.WaitPost(() =>
         {
             var proto = sProtoMan.Index(BluntDamageType);

@@ -44,6 +44,37 @@ public abstract partial class SharedGunSystem
         Subs.CVar(_config, RMCCVars.RMCGunPrediction, v => GunPrediction = v, true);
     }
 
+    private void InitializeTargetedProjectile()
+    {
+        SubscribeLocalEvent<TargetedByProjectilesComponent, EntityTerminatingEvent>(OnProjectileTargetTerminating);
+        SubscribeLocalEvent<TargetedProjectileComponent, ComponentShutdown>(OnTargetedProjectileShutdown);
+    }
+
+    private void OnProjectileTargetTerminating(EntityUid uid, TargetedByProjectilesComponent component, ref EntityTerminatingEvent args)
+    {
+        foreach (var proj in component.Projectiles)
+        {
+            if (!TryComp(proj, out TargetedProjectileComponent? targeted) || targeted.Target != uid)
+                continue;
+
+            targeted.Target = null;
+            Dirty(proj, targeted);
+        }
+    }
+
+    private void OnTargetedProjectileShutdown(Entity<TargetedProjectileComponent> ent, ref ComponentShutdown args)
+    {
+        if (ent.Comp.Target is not { } target || TerminatingOrDeleted(target))
+            return;
+
+        if (!TryComp(target, out TargetedByProjectilesComponent? tracked))
+            return;
+
+        tracked.Projectiles.Remove(ent.Owner);
+        if (tracked.Projectiles.Count == 0)
+            RemComp<TargetedByProjectilesComponent>(target);
+    }
+
     public void ResetShotCounter(Entity<GunComponent> gun)
     {
         if (gun.Comp.ShotCounter == 0)
@@ -501,6 +532,9 @@ public abstract partial class SharedGunSystem
             var targeted = EnsureComp<TargetedProjectileComponent>(uid);
             targeted.Target = target;
             Dirty(uid, targeted);
+
+            var tracked = EnsureComp<TargetedByProjectilesComponent>(target);
+            tracked.Projectiles.Add(uid);
         }
 
         if (!HasComp<ProjectileComponent>(uid))

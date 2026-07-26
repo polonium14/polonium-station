@@ -320,77 +320,93 @@ public sealed partial class BiomeSystem : SharedBiomeSystem
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
-        var biomes = AllEntityQuery<BiomeComponent>();
 
-        while (biomes.MoveNext(out var biome))
+        ClearActiveChunks();
+
+        try
         {
-            if (biome.LifeStage < ComponentLifeStage.Running)
-                continue;
+            var biomes = AllEntityQuery<BiomeComponent>();
 
-            _activeChunks.Add(biome, _tilePool.Get());
-            _markerChunks.GetOrNew(biome);
-        }
-
-        // Get chunks in range
-        foreach (var pSession in Filter.GetAllPlayers(_playerManager))
-        {
-            if (_xformQuery.TryGetComponent(pSession.AttachedEntity, out var xform) &&
-                _handledEntities.Add(pSession.AttachedEntity.Value) &&
-                 _biomeQuery.TryGetComponent(xform.MapUid, out var biome) &&
-                biome.Enabled &&
-                CanLoad(pSession.AttachedEntity.Value))
+            while (biomes.MoveNext(out var biome))
             {
-                var worldPos = _transform.GetWorldPosition(xform);
-                AddChunksInRange(biome, worldPos);
-
-                foreach (var layer in biome.MarkerLayers)
-                {
-                    var layerProto = ProtoMan.Index(layer);
-                    AddMarkerChunksInRange(biome, worldPos, layerProto);
-                }
-            }
-
-            foreach (var viewer in pSession.ViewSubscriptions)
-            {
-                if (!_handledEntities.Add(viewer) ||
-                    !_xformQuery.TryGetComponent(viewer, out xform) ||
-                    !_biomeQuery.TryGetComponent(xform.MapUid, out biome) ||
-                    !biome.Enabled ||
-                    !CanLoad(viewer))
-                {
+                if (biome.LifeStage < ComponentLifeStage.Running)
                     continue;
+
+                if (!_activeChunks.TryAdd(biome, _tilePool.Get()))
+                    continue;
+
+                _markerChunks.GetOrNew(biome);
+            }
+
+            // Get chunks in range
+            foreach (var pSession in Filter.GetAllPlayers(_playerManager))
+            {
+                if (_xformQuery.TryGetComponent(pSession.AttachedEntity, out var xform) &&
+                    _handledEntities.Add(pSession.AttachedEntity.Value) &&
+                     _biomeQuery.TryGetComponent(xform.MapUid, out var biome) &&
+                    biome.Enabled &&
+                    CanLoad(pSession.AttachedEntity.Value))
+                {
+                    var worldPos = _transform.GetWorldPosition(xform);
+                    AddChunksInRange(biome, worldPos);
+
+                    foreach (var layer in biome.MarkerLayers)
+                    {
+                        var layerProto = ProtoMan.Index(layer);
+                        AddMarkerChunksInRange(biome, worldPos, layerProto);
+                    }
                 }
 
-                var worldPos = _transform.GetWorldPosition(xform);
-                AddChunksInRange(biome, worldPos);
-
-                foreach (var layer in biome.MarkerLayers)
+                foreach (var viewer in pSession.ViewSubscriptions)
                 {
-                    var layerProto = ProtoMan.Index(layer);
-                    AddMarkerChunksInRange(biome, worldPos, layerProto);
+                    if (!_handledEntities.Add(viewer) ||
+                        !_xformQuery.TryGetComponent(viewer, out xform) ||
+                        !_biomeQuery.TryGetComponent(xform.MapUid, out biome) ||
+                        !biome.Enabled ||
+                        !CanLoad(viewer))
+                    {
+                        continue;
+                    }
+
+                    var worldPos = _transform.GetWorldPosition(xform);
+                    AddChunksInRange(biome, worldPos);
+
+                    foreach (var layer in biome.MarkerLayers)
+                    {
+                        var layerProto = ProtoMan.Index(layer);
+                        
+                        AddMarkerChunksInRange(biome, worldPos, layerProto);
+                    }
                 }
             }
+
+            var loadBiomes = AllEntityQuery<BiomeComponent, MapGridComponent>();
+
+            while (loadBiomes.MoveNext(out var gridUid, out var biome, out var grid))
+            {
+                // If not MapInit don't run it.
+                if (biome.LifeStage < ComponentLifeStage.Running)
+                    continue;
+
+                if (!biome.Enabled)
+                    continue;
+
+                // Load new chunks
+                LoadChunks(biome, gridUid, grid, biome.Seed);
+                // Unload old chunks
+                UnloadChunks(biome, gridUid, grid, biome.Seed);
+            }
         }
-
-        var loadBiomes = AllEntityQuery<BiomeComponent, MapGridComponent>();
-
-        while (loadBiomes.MoveNext(out var gridUid, out var biome, out var grid))
+        finally
         {
-            // If not MapInit don't run it.
-            if (biome.LifeStage < ComponentLifeStage.Running)
-                continue;
-
-            if (!biome.Enabled)
-                continue;
-
-            // Load new chunks
-            LoadChunks(biome, gridUid, grid, biome.Seed);
-            // Unload old chunks
-            UnloadChunks(biome, gridUid, grid, biome.Seed);
+            // Clear even on throw, otherwise next tick dies on Add and tiles stay empty
+            _handledEntities.Clear();
+            ClearActiveChunks();
         }
+    }
 
-        _handledEntities.Clear();
-
+    private void ClearActiveChunks()
+    {
         foreach (var tiles in _activeChunks.Values)
         {
             _tilePool.Return(tiles);
@@ -447,8 +463,32 @@ public sealed partial class BiomeSystem : SharedBiomeSystem
             if (!component.LoadedChunks.Add(chunk))
                 continue;
 
-            // Load NOW!
-            LoadChunk(component, gridUid, grid, chunk, seed);
+            // Load NOW! 
+            try
+            {
+                LoadChunk(component, gridUid, grid, chunk, seed);
+            }
+            catch (Exception e)
+            {
+                Log.Error($"Failed loading biome chunk {chunk} on {ToPrettyString(gridUid)}: {e}");
+
+                try
+                {
+                    var rollback = new List<(Vector2i, Tile)>(ChunkSize * ChunkSize);
+                    UnloadChunk(component, gridUid, grid, chunk, seed, rollback);
+                }
+                catch (Exception rollbackEx)
+                {
+                    Log.Error($"Failed rolling back biome chunk {chunk} on {ToPrettyString(gridUid)}: {rollbackEx}");
+                }
+                finally
+                {
+                    // usuwamy nawet jeśli rollback zdechnie
+                    component.LoadedChunks.Remove(chunk);
+                    component.LoadedEntities.Remove(chunk);
+                    component.LoadedDecals.Remove(chunk);
+                }
+            }
         }
     }
 
@@ -770,6 +810,11 @@ public sealed partial class BiomeSystem : SharedBiomeSystem
         modified ??= _tilePool.Get();
         _tiles.Clear();
 
+        var loadedEntities = new Dictionary<EntityUid, Vector2i>();
+        var loadedDecals = new Dictionary<uint, Vector2i>();
+        component.LoadedEntities[chunk] = loadedEntities;
+        component.LoadedDecals[chunk] = loadedDecals;
+
         // Set tiles first
         for (var x = 0; x < ChunkSize; x++)
         {
@@ -796,9 +841,6 @@ public sealed partial class BiomeSystem : SharedBiomeSystem
         _tiles.Clear();
 
         // Now do entities
-        var loadedEntities = new Dictionary<EntityUid, Vector2i>();
-        component.LoadedEntities.Add(chunk, loadedEntities);
-
         for (var x = 0; x < ChunkSize; x++)
         {
             for (var y = 0; y < ChunkSize; y++)
@@ -829,9 +871,6 @@ public sealed partial class BiomeSystem : SharedBiomeSystem
         }
 
         // Decals
-        var loadedDecals = new Dictionary<uint, Vector2i>();
-        component.LoadedDecals.Add(chunk, loadedDecals);
-
         for (var x = 0; x < ChunkSize; x++)
         {
             for (var y = 0; y < ChunkSize; y++)
@@ -880,7 +919,15 @@ public sealed partial class BiomeSystem : SharedBiomeSystem
         var active = _activeChunks[component];
         List<(Vector2i, Tile)>? tiles = null;
 
+        // Snapshot
+        var loaded = new ValueList<Vector2i>(component.LoadedChunks.Count);
+        
         foreach (var chunk in component.LoadedChunks)
+        {
+            loaded.Add(chunk);
+        }
+
+        foreach (var chunk in loaded)
         {
             if (active.Contains(chunk) || !component.LoadedChunks.Remove(chunk))
                 continue;
@@ -900,49 +947,55 @@ public sealed partial class BiomeSystem : SharedBiomeSystem
         component.ModifiedTiles.TryGetValue(chunk, out var modified);
         modified ??= new HashSet<Vector2i>();
 
-        // Delete decals
-        foreach (var (dec, indices) in component.LoadedDecals[chunk])
+        // decals (might not be there if load died early)
+        if (component.LoadedDecals.TryGetValue(chunk, out var loadedDecals))
         {
-            // If we couldn't remove it then flag the tile to never be touched.
-            if (!_decals.RemoveDecal(gridUid, dec))
+            foreach (var (dec, indices) in loadedDecals)
             {
-                modified.Add(indices);
+                // If we couldn't remove it then flag the tile to never be touched.
+                if (!_decals.RemoveDecal(gridUid, dec))
+                {
+                    modified.Add(indices);
+                }
             }
-        }
 
-        component.LoadedDecals.Remove(chunk);
+            component.LoadedDecals.Remove(chunk);
+        }
 
         // Delete entities
         // Ideally any entities that aren't modified just get deleted and re-generated later
         // This is because if we want to save the map (e.g. persistent server) it makes the file much smaller
         // and also if the map is enormous will make stuff like physics broadphase much faster
-        foreach (var (ent, tile) in component.LoadedEntities[chunk])
+        if (component.LoadedEntities.TryGetValue(chunk, out var loadedEntities))
         {
-            if (Deleted(ent) || !TryComp(ent, out TransformComponent? xform))
+            foreach (var (ent, tile) in loadedEntities)
             {
-                modified.Add(tile);
-                continue;
+                if (Deleted(ent) || !TryComp(ent, out TransformComponent? xform))
+                {
+                    modified.Add(tile);
+                    continue;
+                }
+
+                // If moved
+                var entTile = _mapSystem.LocalToTile(gridUid, grid, xform.Coordinates);
+
+                if (!xform.Anchored || entTile != tile)
+                {
+                    modified.Add(tile);
+                    continue;
+                }
+
+                if (!EntityManager.IsDefault(ent))
+                {
+                    modified.Add(tile);
+                    continue;
+                }
+
+                Del(ent);
             }
 
-            // It's moved
-            var entTile = _mapSystem.LocalToTile(gridUid, grid, xform.Coordinates);
-
-            if (!xform.Anchored || entTile != tile)
-            {
-                modified.Add(tile);
-                continue;
-            }
-
-            if (!EntityManager.IsDefault(ent))
-            {
-                modified.Add(tile);
-                continue;
-            }
-
-            Del(ent);
+            component.LoadedEntities.Remove(chunk);
         }
-
-        component.LoadedEntities.Remove(chunk);
 
         // Unset tiles (if the data is custom)
 

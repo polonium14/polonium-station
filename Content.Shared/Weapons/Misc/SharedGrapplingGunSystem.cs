@@ -57,6 +57,16 @@ public abstract partial class SharedGrapplingGunSystem : VirtualController
     [SubscribeLocalEvent]
     private void OnGrappleJointRemoved(Entity<GrapplingProjectileComponent> entity, ref JointRemovedEvent args)
     {
+        // Polonium: Prefer Ungrapple so gun drops its networked Projectile ref instamntly
+        if (TryComp<ProjectileComponent>(entity, out var projectile) &&
+            projectile.Weapon is { } weapon &&
+            TryComp<GrapplingGunComponent>(weapon, out var gun) &&
+            gun.Projectile == entity.Owner)
+        {
+            Ungrapple((weapon, gun), true);
+            return;
+        }
+
         if (_netManager.IsServer)
             QueueDel(entity);
     }
@@ -64,6 +74,21 @@ public abstract partial class SharedGrapplingGunSystem : VirtualController
     [SubscribeLocalEvent]
     private void OnGrappleProjectileShutdown(Entity<GrapplingProjectileComponent> ent, ref ComponentShutdown args)
     {
+        if (TryComp<ProjectileComponent>(ent, out var projectileComp) &&
+            projectileComp.Weapon is { } weapon &&
+            !TerminatingOrDeleted(weapon) &&
+            TryComp<GrapplingGunComponent>(weapon, out var gun) &&
+            gun.Projectile == ent.Owner)
+        {
+            _appearance.SetData(weapon, SharedTetherGunSystem.TetherVisualsStatus.Key, true);
+            SetReeling((weapon, gun), false, null);
+
+            gun.Projectile = null;
+
+            DirtyField(weapon, gun, nameof(GrapplingGunComponent.Projectile));
+            _gun.ChangeBasicEntityAmmoCount(weapon, 1);
+        }
+
         if (!TryComp<EmbeddableProjectileComponent>(ent, out var embedComp) || embedComp.EmbeddedIntoUid == null)
             return;
 
@@ -345,6 +370,10 @@ public abstract partial class SharedGrapplingGunSystem : VirtualController
         if (grapple.Comp.Projectile is not { } projectile)
             return;
 
+        // Current tick must clear the networked ref first. QueueDel is deferred and PVS can run first
+        grapple.Comp.Projectile = null;
+        DirtyField(grapple.Owner, grapple.Comp, nameof(GrapplingGunComponent.Projectile));
+
         if (isBreak && Timing.IsFirstTimePredicted)
         {
             if (user != null)
@@ -355,12 +384,10 @@ public abstract partial class SharedGrapplingGunSystem : VirtualController
 
         _appearance.SetData(grapple.Owner, SharedTetherGunSystem.TetherVisualsStatus.Key, true);
 
-        if (_netManager.IsServer)
+        if (_netManager.IsServer && !TerminatingOrDeleted(projectile))
             QueueDel(projectile);
 
         SetReeling(grapple, false, user);
-        grapple.Comp.Projectile = null;
-        DirtyField(grapple.Owner, grapple.Comp, nameof(GrapplingGunComponent.Projectile));
         _gun.ChangeBasicEntityAmmoCount(grapple.Owner, 1);
     }
 

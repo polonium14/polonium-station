@@ -256,6 +256,8 @@ public sealed partial class GunPredictionSystem : SharedGunPredictionSystem
             _predictedHits.Clear();
         }
 
+        PrunePredictedProjectileClientEnts();
+
         var predicted = EntityQueryEnumerator<PredictedProjectileHitComponent, TransformComponent>();
         while (predicted.MoveNext(out var uid, out var hit, out var xform))
         {

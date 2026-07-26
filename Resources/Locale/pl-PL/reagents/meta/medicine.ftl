@@ -124,3 +124,5 @@ reagent-name-warfarin = warfarin
 reagent-desc-warfarin = Commonly used as an anticoagulant medication. Causes blood to have difficulty forming clots. Can cause internal bleeding when overdosed.
 
 reagent-name-osteodine = osteodyna
+
+reagent-desc-osteodine = Mlecznobiały związek regeneracyjny, który zrasta strzaskane kości. 25 jednostek w krwiobiegu zrasta wszystkie złamania w ciele. Przedawkowanie powoduje mdłości i ból stawów.

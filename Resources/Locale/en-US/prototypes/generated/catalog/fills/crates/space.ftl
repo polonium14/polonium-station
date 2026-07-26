@@ -1,0 +1,12 @@
+ent-CrateEvaKit = EVA kit
+    .desc = A set consisting of two prestigious EVA suits and helmets. Requires Command access to open.
+ent-CrateSpaceJetpack = jetpack crate
+    .desc = Two jetpacks for those who don't know how to use fire extinguishers.
+ent-CrateSpaceMiniJetpack = mini jetpack crate
+    .desc = Two mini jetpacks for those who want an extra challenge.
+ent-CrateSpaceGyroscope = gyroscope crate
+    .desc = Contains a gyroscope flatpack.
+ent-CrateSpaceThruster = thruster crate
+    .desc = Contains a thruster flatpack.
+ent-CrateSpaceShuttlePower = shuttle powering crate
+    .desc = A crate containing all needs for shuttle powering.

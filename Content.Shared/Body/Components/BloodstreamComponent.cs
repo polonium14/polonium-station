@@ -1,3 +1,17 @@
+// SPDX-FileCopyrightText: 2025 Ignaz "Ian" Kraft <ignaz.k@live.de>
+// SPDX-FileCopyrightText: 2025 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Nikovnik <116634167+nkokic@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 Maciej Walendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 Princess Cheeseballs <66055347+Princess-Cheeseballs@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 maciejwalendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 pathetic meowmeow <uhhadd@gmail.com>
+// SPDX-FileCopyrightText: 2026 taydeo <tay@funkystation.org>
+// SPDX-FileCopyrightText: 2026 taydeo <td12233a@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Alert;
 using Content.Shared.Body.Systems;
 using Content.Shared.Chemistry.Components;
@@ -81,6 +95,19 @@ public sealed partial class BloodstreamComponent : Component
     public float MaxBleedAmount = 10.0f;
 
     /// <summary>
+    /// Multiplier on blood actually lost per tick while in critical condition. A body that
+    /// isn't circulating properly doesn't pump itself dry at the same rate a running one does.
+    /// Only scales the blood loss - <see cref="BleedReductionAmount"/> still clots at full
+    /// speed, so wounds close on the same timeline regardless of state.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public float CritBleedMultiplier = 0.75f;
+
+    /// <inheritdoc cref="CritBleedMultiplier"/>
+    [DataField, AutoNetworkedField]
+    public float DeadBleedMultiplier = 0.2f;
+
+    /// <summary>
     /// What percentage of current blood is necessary to avoid dealing blood loss damage?
     /// </summary>
     [DataField, AutoNetworkedField]
@@ -132,14 +159,14 @@ public sealed partial class BloodstreamComponent : Component
     /// <summary>
     /// The sound to be played when some damage actually heals bleeding rather than starting it.
     /// </summary>
-    [DataField]
+    [DataField, AutoNetworkedField]
     public SoundSpecifier BloodHealedSound = new SoundPathSpecifier("/Audio/Effects/lightburn.ogg");
 
     /// <summary>
     /// The minimum amount damage reduction needed to play the healing sound/popup.
     /// This prevents tiny amounts of heat damage from spamming the sound, e.g. spacing.
     /// </summary>
-    [DataField]
+    [DataField, AutoNetworkedField]
     public float BloodHealedSoundThreshold = -0.1f;
 
     // TODO probably damage bleed thresholds.

@@ -244,13 +244,13 @@ public sealed partial class WoundSystem
             }
         }
 
-        if (component.WoundableSeverity == old)
-            return;
+        if (component.WoundableSeverity != old)
+        {
+            Dirty(woundable, component);
 
-        Dirty(woundable, component);
-
-        var evt = new WoundableSeverityChangedEvent(woundable, old, component.WoundableSeverity);
-        RaiseLocalEvent(woundable, ref evt);
+            var evt = new WoundableSeverityChangedEvent(woundable, old, component.WoundableSeverity);
+            RaiseLocalEvent(woundable, ref evt);
+        }
 
         SyncTargetingBodyStatus(woundable);
     }
@@ -263,15 +263,38 @@ public sealed partial class WoundSystem
     /// </summary>
     private void SyncTargetingBodyStatus(EntityUid woundable)
     {
+        if (!_net.IsServer)
+            return;
+
         if (!TryComp<OrganComponent>(woundable, out var organ) || organ.Body is not { } body)
             return;
 
         if (!TryComp<TargetingComponent>(body, out var targeting))
             return;
 
-        targeting.BodyStatus = GetDamageableStatesOnBody(body);
+        var newStatus = GetDamageableStatesOnBody(body);
+        if (BodyStatusEquals(targeting.BodyStatus, newStatus))
+            return;
+
+        targeting.BodyStatus = newStatus;
         Dirty(body, targeting);
 
         RaiseNetworkEvent(new TargetIntegrityChangeEvent(GetNetEntity(body)), body);
+    }
+
+    private static bool BodyStatusEquals(
+        Dictionary<TargetBodyPart, WoundableSeverity> current,
+        Dictionary<TargetBodyPart, WoundableSeverity> updated)
+    {
+        if (current.Count != updated.Count)
+            return false;
+
+        foreach (var (part, severity) in updated)
+        {
+            if (!current.TryGetValue(part, out var currentSeverity) || currentSeverity != severity)
+                return false;
+        }
+
+        return true;
     }
 }

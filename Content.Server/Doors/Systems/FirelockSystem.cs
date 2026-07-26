@@ -1,9 +1,43 @@
+// SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Moony <moony@hellomouse.net>
+// SPDX-FileCopyrightText: 2022 Paul Ritter <ritter.paul1@googlemail.com>
+// SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 corentt <36075110+corentt@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 moonheart08 <moonheart08@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 vulppine <vulppine@gmail.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Theomund <34360334+Theomund@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Tom Leys <tom@crump-leys.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2024 Cojoke <83733158+Cojoke-dot@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Partmedia <kevinz5000@gmail.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 Dmitry <57028746+DIMMoon1@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 Eveloop <26272940+eveloop@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 MaiaArai <158123176+YaraaraY@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2026 Princess Cheeseballs <66055347+Princess-Cheeseballs@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 nikitosych <174215049+nikitosych@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 taydeo <tay@funkystation.org>
+// SPDX-FileCopyrightText: 2026 taydeo <td12233a@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.Atmos.Components;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Atmos.Monitor.Components;
 using Content.Server.Atmos.Monitor.Systems;
 using Content.Server.Power.EntitySystems;
 using Content.Server.Shuttles.Components;
+using Content.Server._Funkystation.FirelockBolt.EntitySystems;
+using Content.Shared._Funkystation.FirelockBolt.Components;
 using Content.Shared.Atmos;
 using Content.Shared.Atmos.Components;
 using Content.Shared.Atmos.Monitor;
@@ -22,11 +56,13 @@ namespace Content.Server.Doors.Systems
         [Dependency] private SharedAppearanceSystem _appearance = default!;
         [Dependency] private SharedMapSystem _mapping = default!;
         [Dependency] private PointLightSystem _pointLight = default!;
+        [Dependency] private FirelockBoltControlSystem _firelockBolts = default!;
 
         [Dependency] private EntityQuery<AtmosAlarmableComponent> _atmosAlarmQuery = default!;
         [Dependency] private EntityQuery<AirtightComponent> _airtightQuery = default!;
         [Dependency] private EntityQuery<AppearanceComponent> _appearanceQuery = default!;
         [Dependency] private EntityQuery<PointLightComponent> _pointLightQuery = default!;
+        [Dependency] private EntityQuery<FirelockBoltControlComponent> _boltControlQuery = default!;
 
         private const int UpdateInterval = 30;
         private int _accumulatedTicks;
@@ -43,6 +79,10 @@ namespace Content.Server.Doors.Systems
         {
             component.Powered = args.Powered;
             Dirty(uid, component);
+
+            // drop bolts when power dies, reevaluate when it comes back
+            if (_boltControlQuery.TryComp(uid, out var boltControl))
+                _firelockBolts.UpdateHazardBolts((uid, boltControl), component);
         }
 
         public override void Update(float frameTime)
@@ -57,9 +97,9 @@ namespace Content.Server.Doors.Systems
             var query = EntityQueryEnumerator<FirelockComponent, DoorComponent>();
             while (query.MoveNext(out var uid, out var firelock, out var door))
             {
+                // reclose on Danger even without power - bolts still need power
                 if (_atmosAlarmQuery.TryComp(uid, out var alarmable)
                     && alarmable.LastAlarmState == AtmosAlarmType.Danger
-                    && this.IsPowered(uid, EntityManager)
                     && door.State == DoorState.Open)
                 {
                     EmergencyPressureStop(uid, firelock, door);
@@ -77,11 +117,16 @@ namespace Content.Server.Doors.Systems
                 if (_airtightQuery.TryGetComponent(uid, out var airtight)
                     && _appearanceQuery.TryGetComponent(uid, out var appearance))
                 {
-                    var (pressure, fire) = CheckPressureAndFire(uid, firelock, airtight);
+                    var (pressure, fire) = CheckPressureAndFire(uid, firelock, airtight, door.State == DoorState.Open); // open firelocks arent AirBlocked so we have to opt into the pressure check
 
                     // Funky change
                     if (door.State == DoorState.Open)
                     {
+                        // Set before close so firelock bolts as soon as it finishes closing
+                        firelock.Pressure = pressure;
+                        firelock.Temperature = fire;
+                        Dirty(uid, firelock);
+
                         if (pressure || fire)
                         {
                             EmergencyPressureStop(uid, firelock, door);
@@ -89,7 +134,6 @@ namespace Content.Server.Doors.Systems
                     }
                     else
                     {
-
                         _appearance.SetData(uid, DoorVisuals.ClosedLights, fire || pressure, appearance);
                         firelock.Temperature = fire;
                         firelock.Pressure = pressure;
@@ -101,6 +145,9 @@ namespace Content.Server.Doors.Systems
                         {
                             _pointLight.SetEnabled(uid, fire | pressure, pointLight);
                         }
+
+                        if (_boltControlQuery.TryComp(uid, out var boltControl))
+                            _firelockBolts.UpdateHazardBolts((uid, boltControl), firelock, door);
                     }
                 }
             }
@@ -108,19 +155,21 @@ namespace Content.Server.Doors.Systems
 
         private void OnAtmosAlarm(EntityUid uid, FirelockComponent component, AtmosAlarmEvent args)
         {
-            if (!this.IsPowered(uid, EntityManager))
-                return;
-
             if (!TryComp<DoorComponent>(uid, out var doorComponent))
                 return;
 
             if (args.AlarmType == AtmosAlarmType.Normal)
             {
+                // opening still needs power
+                if (!this.IsPowered(uid, EntityManager))
+                    return;
+
                 if (doorComponent.State == DoorState.Closed)
                     _doorSystem.TryOpen(uid);
             }
             else if (args.AlarmType == AtmosAlarmType.Danger)
             {
+                // close even when unpowered
                 EmergencyPressureStop(uid, component, doorComponent);
             }
         }

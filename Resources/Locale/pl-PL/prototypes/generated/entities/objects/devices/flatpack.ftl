@@ -38,3 +38,5 @@ ent-SyndicateMicrowaveFlatpack = donk co. microwave flatpack
     .desc = A flatpack used for constructing a microwave too hot for Nanotrasen to handle.
 ent-MachineAnomalyVesselFlatpack = anomaly vessel flatpack
     .desc = A flatpack used for constructing an anomaly vessel.
+ent-ComputerBodyScannerFlatpack = body scanner flatpack
+    .desc = A flatpack used for constructing a body scanner computer.

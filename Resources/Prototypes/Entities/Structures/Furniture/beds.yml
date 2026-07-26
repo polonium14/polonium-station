@@ -1,8 +1,45 @@
+# SPDX-FileCopyrightText: 2020 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2020 Acruid <shatter66@gmail.com>
+# SPDX-FileCopyrightText: 2020 Hugo Laloge <hugo.laloge@gmail.com>
+# SPDX-FileCopyrightText: 2020 Paul Ritter <ritter.paul1@googlemail.com>
+# SPDX-FileCopyrightText: 2020 Víctor Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2021 Swept <sweptwastaken@protonmail.com>
+# SPDX-FileCopyrightText: 2021 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2021 mirrorcult <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2021 tmtmtl30 <53132901+tmtmtl30@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Jacob Tong <10494922+ShadowCommander@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Lamrr <96937466+Lamrr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Peptide90 <78795277+Peptide90@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Profane McBane <profanedbane+github@gmail.com>
+# SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Emisse <99158783+Emisse@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Nim <128169402+Nimfar11@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 PixelTK <85175107+PixelTheKermit@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Sir Winters <7543955+Owai-Seek@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Tunguso4ka <71643624+Tunguso4ka@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 lzk <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2025 B_Kirill <153602297+B-Kirill@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Perry Fraser <perryprog@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 Jessica M <jessica@jessicamaybe.com>
+# SPDX-FileCopyrightText: 2026 Maciej Walendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 maciejwalendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 nikitosych <174215049+nikitosych@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 pathetic meowmeow <uhhadd@gmail.com>
+# SPDX-FileCopyrightText: 2026 taydeo <tay@funkystation.org>
+# SPDX-FileCopyrightText: 2026 taydeo <td12233a@gmail.com>
+# SPDX-FileCopyrightText: 2026 āda <ss.adasts@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
-  name: bed
-  id: Bed
+  abstract: true
   parent: BaseStructure
-  description: This is used to lie in, sleep in or strap on. Resting here provides extremely slow healing.
+  id: BaseBed
   components:
   - type: HealOnBuckle
     damage:
@@ -39,6 +76,18 @@
     damageModifierSet: Metallic
   - type: Injurable
     damageContainer: Inorganic
+  - type: Transform
+    anchored: true
+    noRot: true
+  - type: Anchorable
+  - type: Pullable
+
+- type: entity
+  parent: BaseBed
+  id: Bed
+  name: bed
+  description: This is used to lie in, sleep in or strap on. Resting here provides extremely slow healing.
+  components:
   - type: Destructible
     thresholds:
     - trigger:
@@ -52,12 +101,6 @@
           SheetSteel1:
             min: 1
             max: 2
-  - type: Transform
-    anchored: true
-    noRot: true
-  - type: Anchorable
-  - type: Pullable
-
 
 - type: entity
   parent: Bed
@@ -70,9 +113,13 @@
   - type: HealOnBuckle
     damage:
       types:
-        Poison: -0.2
-        Cold: -0.4
-        Blunt: -0.2
+        Poison: -0.1
+        Heat: -0.05
+        Shock: -0.05
+        Cold: -0.05
+        Blunt: -0.05
+        Piercing: -0.05
+        Slash: -0.05
   - type: Construction
     graph: bed
     node: medicalbed
@@ -85,7 +132,7 @@
       - BodyScannerReceiver
 
 - type: entity
-  parent: Bed
+  parent: BaseBed
   id: DogBed
   name: dog bed
   description: A comfy-looking dog bed. You can even strap your pet in, in case the gravity turns off.
@@ -129,7 +176,7 @@
     damageModifierSet: Inflatable
 
 - type: entity
-  parent: Bed
+  parent: BaseBed
   id: WebBed
   name: web bed
   description: You got webbed.
@@ -160,7 +207,7 @@
     node: bed
 
 - type: entity
-  parent: Bed
+  parent: BaseBed
   id: PsychBed
   name: psychologist bed
   description: An upholstered bed for the psychological care of patients.

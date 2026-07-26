@@ -1,0 +1,39 @@
+# Disruption
+
+uplink-singularity-grenade-name = Granat Osobliwości
+uplink-singularity-grenade-desc = Granat, który symuluje moc osobliwości, generując potężne pole grawitacyjne.
+uplink-access-breaker-name = Zakłócacz dostępu
+uplink-access-breaker-desc = Zhakowany konfigurator dostępu i dobry przyjaciel emag. To urządzenie potrafi otwierać zamki powietrzne oraz usuwać wymagania dostępu z urządzeń stacji. Ładuje się automatycznie.
+uplink-emag-name = Emag
+uplink-emag-desc = Wizytówka syndykatu, ten sekwencer potrafi manipulować różnymi urządzeniami stacji. Ładuje się automatycznie.
+uplink-radio-jammer-name = Zagłuszacz Radiowy
+uplink-radio-jammer-desc = To urządzenie zakłóca wszelką pobliską komunikację radiową oraz czujniki kombinezonu po aktywacji.
+uplink-syndicate-weapon-module-name = Moduł Broni Cyborga
+uplink-syndicate-weapon-module-desc = Ulepsza cyborga zarówno o maczetę, jak i zaawansowany laser.
+uplink-disposable-turret-name = Jednorazowa Wieżyczka Balistyczna
+uplink-disposable-turret-desc = Wygląda i działa jak normalna skrzynka narzędziowa. Po uderzeniu w skrzynkę zamienia się w wieżyczkę balistyczną, teoretycznie strzelając do wszystkich oprócz członków syndykatu. Można ją ponownie przekształcić w skrzynkę narzędziową za pomocą śrubokręta i naprawić za pomocą klucza.
+uplink-syndicate-martyr-module-name = Moduł Męczennika Cyborga
+uplink-syndicate-martyr-module-desc = Zamienia twojego zhakowanego cyborga w chodzącą bombę za pomocą tego modułu. Upewnij się, że są lojalni wobec twojej sprawy, wyniki mogą się różnić.
+uplink-soap-name = Mydło
+uplink-soap-desc = Niezaufane mydło. Pachnie strachem.
+uplink-slipocalypse-clustersoap-name = Mydło Klasterowe Ślizgokalipsy
+uplink-slipocalypse-clustersoap-desc = Rozrzuca małe kawałki mydła marki syndykatu po rzuceniu, te kawałki mydła parują po 60 sekundach.
+# Narzędzia
+uplink-toolbox-name = Skrzynka Narzędziowa
+uplink-toolbox-desc = Pełen zestaw narzędzi dla mechanicznie uzdolnionego zdrajcy. Zawiera parę izolowanych rękawic bojowych oraz maskę gazową Syndykatu.
+uplink-syndicate-jaws-of-life-name = Szczęki Życia
+uplink-syndicate-jaws-of-life-desc = Połączone narzędzie do podważania i cięcia. Przydatne do wchodzenia na stację lub do jej działów.
+uplink-duffel-surgery-name = Torba Chirurgiczna
+uplink-duffel-surgery-desc = Duża torba zawierająca pełen zestaw narzędzi chirurgicznych.
+uplink-syndimov-law-name = Zestaw Praw Syndi Law
+uplink-syndimov-law-desc = Subwersywny zestaw praw do użycia, gdy chcesz przekonać SI na swoją stronę. Zawiera kartę ID Syndykatu.
+uplink-antimov-law-name = Płytka Praw Antimova
+uplink-antimov-law-desc = Bardzo niebezpieczny zestaw praw do użycia, gdy chcesz, aby A.I. oszalało, używaj ostrożnie.
+uplink-surplus-bundle-name = Zestaw Nadwyżkowy
+uplink-surplus-bundle-desc = Zawiera 50 telekryształów całkowicie losowych przedmiotów Syndykatu. Mogą to być bezużyteczne śmieci lub naprawdę dobre przedmioty.
+uplink-starter-kit-name = Podstawowy Zestaw Operacyjny
+uplink-starter-kit-desc = Zawiera 40 telekryształów podstawowego wyposażenia operacyjnego. Dla tych operacyjnych, którzy po prostu nie wiedzą, co powinni kupić.
+uplink-singularity-beacon-name = Beacon Singularności
+uplink-singularity-beacon-desc = Urządzenie przyciągające singularności. Musi być zakotwiczone i zasilane. Powoduje wzrost singularności po ich spożyciu.
+uplink-cameraBug-name = Podsłuch Kamerowy
+uplink-cameraBug-desc = Przenośne urządzenie umożliwiające podgląd kamer stacji.

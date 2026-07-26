@@ -1,3 +1,5 @@
+ent-BaseFoodPlate = { ent-BaseItem }
+    .desc = { ent-BaseItem.desc }
 ent-FoodPlate = duży talerz
     .desc = Duży talerz, świetny do chleba.
 ent-FoodPlateTrash = rozbita talerz

@@ -75,19 +75,20 @@ public abstract partial class SharedDoorSystem
         UpdateBoltLightStatus(ent);
     }
 
-    public void SetBoltsDown(Entity<DoorBoltComponent> ent, bool value, EntityUid? user = null, bool predicted = false)
+    public void SetBoltsDown(Entity<DoorBoltComponent> ent, bool value, EntityUid? user = null, bool predicted = false, bool force = false)
     {
-        TrySetBoltDown(ent, value, user, predicted);
+        TrySetBoltDown(ent, value, user, predicted, force);
     }
 
     public bool TrySetBoltDown(
         Entity<DoorBoltComponent> ent,
         bool value,
         EntityUid? user = null,
-        bool predicted = false
+        bool predicted = false,
+        bool force = false
     )
     {
-        if (!_powerReceiver.IsPowered(ent.Owner))
+        if (!force && !_powerReceiver.IsPowered(ent.Owner))
             return false;
         if (ent.Comp.BoltsDown == value)
             return false;

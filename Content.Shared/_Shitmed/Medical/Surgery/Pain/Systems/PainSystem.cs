@@ -1,8 +1,14 @@
+// SPDX-FileCopyrightText: 2026 Maciej Walendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 maciejwalendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Linq;
 using Content.Shared._Shitmed.CCVar;
 using Content.Shared._Shitmed.Medical.Surgery.Consciousness.Systems;
 using Content.Shared._Shitmed.Medical.Surgery.Pain.Components;
 using Content.Shared._Shitmed.Medical.Surgery.Traumas.Systems;
+using Content.Shared._Shitmed.Medical.Surgery.Wounds.Components;
 using Content.Shared._Shitmed.Medical.Surgery.Wounds.Systems;
 using Content.Shared.Body;
 using Content.Shared.FixedPoint;
@@ -54,7 +60,6 @@ public sealed partial class PainSystem : EntitySystem
         SubscribeLocalEvent<NerveComponent, OrganGotInsertedEvent>(OnOrganInserted);
         SubscribeLocalEvent<NerveComponent, OrganGotRemovedEvent>(OnOrganRemoved);
 
-        SubscribeLocalEvent<NerveSystemComponent, MobStateChangedEvent>(OnMobStateChanged);
         SubscribeLocalEvent<NerveSystemComponent, EntityTerminatingEvent>(OnNerveSystemTerminating);
 
         _screamsEnabled = _cfg.GetCVar(SurgeryCVars.PainScreams);
@@ -140,8 +145,11 @@ public sealed partial class PainSystem : EntitySystem
         }
     }
 
-    private void OnMobStateChanged(EntityUid uid, NerveSystemComponent nerveSys, MobStateChangedEvent args)
+    public void HandleMobStateChanged(Entity<NerveSystemComponent> nerveSysEnt, MobStateChangedEvent args)
     {
+        var uid = nerveSysEnt.Owner;
+        var nerveSys = nerveSysEnt.Comp;
+
         switch (args.NewMobState)
         {
             case MobState.Critical:
@@ -156,6 +164,58 @@ public sealed partial class PainSystem : EntitySystem
             case MobState.Dead:
                 CleanupSounds(nerveSys);
                 break;
+        }
+
+        // Leaving Dead (revived) - UpdatePainThreshold's effect side skips entirely
+        // while IsDead, and healing that happens on a still-Dead mob can leave stale
+        // per-woundable pain modifiers behind (their owning wound is gone, but nothing
+        // ever re-scanned to remove the modifier once the mob could act on it again). Reconcile
+        // every woundable's modifier against its actual current wounds so pain can't stay stuck
+        // above zero forever on an otherwise fully-healed revived mob. Server-only, same rule as
+        // Update - the modifier dictionary is authoritative state the client just receives.
+        if (_net.IsServer && args.OldMobState == MobState.Dead && args.NewMobState != MobState.Dead)
+            ReconcileWoundPainModifiers(uid, args.Target, nerveSys);
+    }
+
+    private void ReconcileWoundPainModifiers(EntityUid uid, EntityUid body, NerveSystemComponent nerveSys)
+    {
+        if (!TryComp<BodyComponent>(body, out var bodyComp) || bodyComp.Organs is null)
+            return;
+
+        foreach (var organ in bodyComp.Organs.ContainedEntities)
+        {
+            // Not every organ is woundable (brains, eyes) - GetWoundableWounds errors out on those.
+            if (!HasComp<WoundableComponent>(organ))
+                continue;
+
+            var woundPain = FixedPoint2.Zero;
+            var traumaticPain = FixedPoint2.Zero;
+
+            foreach (var (woundId, _) in _wound.GetWoundableWounds(organ))
+            {
+                if (!TryComp<PainInflicterComponent>(woundId, out var painInflicter))
+                    continue;
+
+                switch (painInflicter.PainType)
+                {
+                    case PainDamageTypes.TraumaticPain:
+                        traumaticPain += painInflicter.Pain;
+                        break;
+                    default:
+                        woundPain += painInflicter.Pain;
+                        break;
+                }
+            }
+
+            if (woundPain <= 0)
+                TryRemovePainModifier(uid, organ, PainModifierIdentifier, nerveSys);
+            else
+                TryChangePainModifier(uid, organ, PainModifierIdentifier, woundPain, nerveSys);
+
+            if (traumaticPain <= 0)
+                TryRemovePainModifier(uid, organ, PainTraumaticModifierIdentifier, nerveSys);
+            else
+                TryChangePainModifier(uid, organ, PainTraumaticModifierIdentifier, traumaticPain, nerveSys);
         }
     }
 

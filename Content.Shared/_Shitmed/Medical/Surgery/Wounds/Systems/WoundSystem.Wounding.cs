@@ -1,3 +1,8 @@
+// SPDX-FileCopyrightText: 2026 Maciej Walendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 maciejwalendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Linq;
 using System.Numerics;
 using Content.Shared._Shitmed.Medical.Surgery.Traumas.Components;
@@ -102,6 +107,7 @@ public sealed partial class WoundSystem
         if (!_net.IsServer || !ent.Comp.AllowWounds || !_timing.IsFirstTimePredicted || _suppressWoundInduction)
             return;
 
+        var tookDamage = false;
         foreach (var (damageType, damageValue) in args.Damage.DamageDict)
         {
             if (damageValue == FixedPoint2.Zero)
@@ -125,10 +131,11 @@ public sealed partial class WoundSystem
                 woundTarget = (redirect, redirectComp);
             }
 
-            TryInduceWound(woundTarget, damageType, damageValue, out _, woundTarget.Comp);
+            tookDamage |= TryInduceWound(woundTarget, damageType, damageValue, out _, woundTarget.Comp);
         }
 
-        ent.Comp.LastDamageTime = _timing.CurTime;
+        if (tookDamage)
+            ent.Comp.LastDamageTime = _timing.CurTime;
 
         UpdateWoundableIntegrity(ent, ent.Comp);
         CheckWoundableSeverityThresholds(ent, ent.Comp);

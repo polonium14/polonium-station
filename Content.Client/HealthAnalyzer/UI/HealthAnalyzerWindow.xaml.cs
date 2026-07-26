@@ -302,6 +302,13 @@ public sealed partial class HealthAnalyzerWindow : FancyWindow
             });
         }
 
+        if (msg.SystemicBleeding)
+            ConditionsListContainer.AddChild(new RichTextLabel
+            {
+                Text = Loc.GetString("condition-body-bleeding-systemic", ("entity", Identity.Name(_target.Value, _entityManager))),
+                Margin = new Thickness(0, 4),
+            });
+
         foreach (var (bodyPart, hasTourniquet) in msg.Tourniqueted)
         {
             if (!hasTourniquet || isPart && bodyPart != selectedBodyPart)

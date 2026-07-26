@@ -248,7 +248,7 @@
         Blunt: -10
         Piercing: -10
         Slash: -10
-    bloodlossModifier: -10 # a suture should stop ongoing bleeding
+    bloodlossModifier: -5 # a suture should stop ongoing bleeding
     healingBeginSound:
       path: "/Audio/Items/Medical/brutepack_begin.ogg"
       params:
@@ -368,7 +368,7 @@
       types:
         Slash: -5
         Piercing: -10
-    bloodlossModifier: -10
+    bloodlossModifier: -2.5
     healingBeginSound:
       path: "/Audio/Items/Medical/brutepack_begin.ogg"
       params:
@@ -434,7 +434,7 @@
         Cold: -50
         Shock: -50
         Poison: -150
-    bloodlossModifier: -20
+    bloodlossModifier: -10
     delay: 1
     selfHealPenaltyMultiplier: 0
     healingBeginSound:

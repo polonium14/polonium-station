@@ -61,19 +61,30 @@ public partial class ConsciousnessSystem
 
     private void OnMobStateChanged(EntityUid uid, ConsciousnessComponent component, MobStateChangedEvent args)
     {
-        if (args.NewMobState != MobState.Dead)
+        if (component.NerveSystem != default && !TerminatingOrDeleted(component.NerveSystem))
+            _pain.HandleMobStateChanged(component.NerveSystem, args);
+
+        if (args.NewMobState == MobState.Dead)
+        {
+            AddConsciousnessModifier(uid, uid, -component.Cap, "DeathThreshold", ConsciousnessModType.Pain, consciousness: component);
+            // To prevent people from suddenly resurrecting while being dead. whoops
+
+            foreach (var multiplier in
+                     component.Multipliers.Where(multiplier => multiplier.Value.Type != ConsciousnessModType.Pain).ToList())
+                RemoveConsciousnessMultiplier(uid, multiplier.Key.Item1, multiplier.Key.Item2, component);
+
+            foreach (var modifier in
+                     component.Modifiers.Where(modifier => modifier.Value.Type != ConsciousnessModType.Pain).ToList())
+                RemoveConsciousnessModifier(uid, modifier.Key.Item1, modifier.Key.Item2, component);
+
             return;
+        }
 
-        AddConsciousnessModifier(uid, uid, -component.Cap, "DeathThreshold", ConsciousnessModType.Pain, consciousness: component);
-        // To prevent people from suddenly resurrecting while being dead. whoops
-
-        foreach (var multiplier in
-                 component.Multipliers.Where(multiplier => multiplier.Value.Type != ConsciousnessModType.Pain).ToList())
-            RemoveConsciousnessMultiplier(uid, multiplier.Key.Item1, multiplier.Key.Item2, component);
-
-        foreach (var modifier in
-                 component.Modifiers.Where(modifier => modifier.Value.Type != ConsciousnessModType.Pain).ToList())
-            RemoveConsciousnessModifier(uid, modifier.Key.Item1, modifier.Key.Item2, component);
+        // Leaving Dead (revived) - DeathThreshold was only ever meant to hold while actually
+        // dead. Without this, it never gets removed by anything and permanently caps this
+        // mob's consciousness at -Cap for the rest of its life, healed or not.
+        if (args.OldMobState == MobState.Dead)
+            RemoveConsciousnessModifier(uid, uid, "DeathThreshold", component);
     }
 
     private void OnRejuvenate(EntityUid uid, ConsciousnessComponent component, RejuvenateEvent args)

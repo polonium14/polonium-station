@@ -3,7 +3,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Server.Ghost.Roles.Events;
+using Content.Shared.Ghost;
 using Content.Shared._Impstation.Replicator;
 using Content.Shared._Impstation.SpawnedFromTracker;
 using Content.Shared.Actions;

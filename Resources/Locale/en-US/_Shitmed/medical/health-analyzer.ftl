@@ -15,6 +15,7 @@ condition-body-bleeding-LeftArm = • {$entity}'s left arm is bleeding.
 condition-body-bleeding-RightArm = • {$entity}'s right arm is bleeding.
 condition-body-bleeding-LeftLeg = • {$entity}'s left leg is bleeding.
 condition-body-bleeding-RightLeg = • {$entity}'s right leg is bleeding.
+condition-body-bleeding-systemic = • {$entity} is bleeding from somewhere.
 
 condition-body-tourniquet-Head = • {$entity} has a tourniquet on their head.
 condition-body-tourniquet-Chest = • {$entity} has a tourniquet on their torso.

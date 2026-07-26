@@ -102,25 +102,14 @@ public partial class PainSystem
         if (!Resolve(uid, ref nerveSys, false))
             return false;
 
-        // Create a modifier for WoundPain
-        var woundModifier = new PainModifier(
+        var modifier = new PainModifier(
             change,
             MetaData(nerveUid).EntityPrototype!.ID,
-            PainDamageTypes.WoundPain,
+            painType,
             _timing.CurTime + time
         );
 
-        // Create a modifier for TraumaticPain
-        var traumaModifier = new PainModifier(
-            change,
-            MetaData(nerveUid).EntityPrototype!.ID,
-            PainDamageTypes.TraumaticPain,
-            _timing.CurTime + time
-        );
-
-        // Add both modifiers
-        nerveSys.Modifiers[(nerveUid, $"{identifier}_wound")] = woundModifier;
-        nerveSys.Modifiers[(nerveUid, $"{identifier}_trauma")] = traumaModifier;
+        nerveSys.Modifiers[(nerveUid, identifier)] = modifier;
 
         var ev = new PainModifierAddedEvent(uid, nerveUid, change);
         RaiseLocalEvent(uid, ref ev);
