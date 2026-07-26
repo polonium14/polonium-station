@@ -13,6 +13,8 @@ public sealed partial class DeviceListSystem : SharedDeviceListSystem
     [Dependency] private NetworkConfiguratorSystem _configurator = default!;
     [Dependency] private EntityQuery<DeviceNetworkComponent> _deviceNetworkQuery = default!;
 
+    private float _pruneAccum;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -20,6 +22,25 @@ public sealed partial class DeviceListSystem : SharedDeviceListSystem
         SubscribeLocalEvent<DeviceListComponent, BeforeBroadcastAttemptEvent>(OnBeforeBroadcast);
         SubscribeLocalEvent<DeviceListComponent, BeforePacketSentEvent>(OnBeforePacketSent);
         SubscribeLocalEvent<BeforeSerializationEvent>(OnMapSave);
+    }
+    
+    // Na liście urządzeń mogą pozostać odnośniki do już usuniętych encji, jeśli delete nie został wykonany w DeviceNetwork.Shutdown()
+    // Musimy sprzątać te odnośniki z DeviceListComponent.Devices przed każdym broadcastem i wysyłaniem pakietów
+    public override void Update(float frameTime)
+    {
+        _pruneAccum += frameTime;
+
+        if (_pruneAccum < 1f)
+            return;
+
+        _pruneAccum = 0f;
+        
+        var query = EntityQueryEnumerator<DeviceListComponent>();
+
+        while (query.MoveNext(out var uid, out var list))
+        {
+            PruneDeletedDevices(uid, list);
+        }
     }
 
     private void OnShutdown(EntityUid uid, DeviceListComponent component, ComponentShutdown args)
@@ -84,6 +105,8 @@ public sealed partial class DeviceListSystem : SharedDeviceListSystem
     /// </summary>
     private void OnBeforeBroadcast(EntityUid uid, DeviceListComponent component, BeforeBroadcastAttemptEvent args)
     {
+        PruneDeletedDevices(uid, component);
+
         //Don't filter anything if the device list is empty
         if (component.Devices.Count == 0)
         {

@@ -13,6 +13,24 @@ public abstract class SharedDeviceListSystem : EntitySystem
         }
         return component.Devices;
     }
+
+    /// <summary>
+    /// Clean deleted or invalid device uids.
+    /// </summary>
+    protected bool PruneDeletedDevices(EntityUid uid, DeviceListComponent list)
+    {
+        var temp = list.Devices.ToList();
+
+        // if we did not remove any devices
+        if (list.Devices.RemoveWhere(d => TerminatingOrDeleted(d)) == 0)
+            return false;
+
+        RaiseLocalEvent(uid, new DeviceListUpdateEvent(temp, list.Devices.ToList()));
+
+        Dirty(uid, list);
+
+        return true;
+    }
 }
 
 public sealed class DeviceListUpdateEvent : EntityEventArgs
