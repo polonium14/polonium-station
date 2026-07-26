@@ -232,7 +232,7 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
 
             if (chaosScore == null)
             {
-                Log.Error($"Tried running roundstart event {entProto.ID}, but chaos score was null");
+                Log.Warning($"Tried running roundstart event {entProto.ID}, but chaos score was null");
                 continue;
             }
 
@@ -392,7 +392,7 @@ public sealed partial class SecretPlusSystem : GameRuleSystem<SecretPlusComponen
             var chaosScore = GetChaosScore(ev.Proto, ev.RuleComp);
             if (chaosScore == null)
             {
-                Log.Error($"Tried running event {ev.Proto.ID}, but chaos score was null");
+                Log.Warning($"Tried running event {ev.Proto.ID}, but chaos score was null");
                 continue;
             }
 
