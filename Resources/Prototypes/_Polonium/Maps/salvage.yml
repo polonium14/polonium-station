@@ -1,0 +1,4 @@
+- type: salvageMap
+  id: AbandonedEvacShuttle
+  mapPath: /Maps/_Polonium/Events/abandoned_evac.yml
+  sizeString: salvage-map-wreck-size-medium
