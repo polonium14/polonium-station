@@ -7,16 +7,15 @@ station-goal-start = [color=#b8972d]███[/color][color=#1d7a1d]░███
     ==================================================[bold]
                                              CEL STACJI[/bold]
     ==================================================[bold]
-    Celem zmiany stacji { $station } jest jej utrzymanie w stanie operacyjnym przez co najmniej 2 godziny.[/bold]
+    Celem zmiany stacji { $station } jest jej utrzymanie w stanie operacyjnym przez co najmniej 2 godziny oraz wykonanie zadania opisanego poniżej. Wszystkie cele zmiany są [bold]obowiązkowe[/bold].[/bold]
     
-    Załoga stacji powinna również wykonać zadanie poboczne [bold]na życzenie załogi[/bold].
-    
-    Przy wykonaniu głównego [bold]lub[/bold] pobocznego celu otrzymasz pełną pensję, ale stracisz premię.
-    Przy wykonaniu głównego [bold]i[/bold] pobocznego celu otrzymasz pełną pensję i premię.
+    Pełna pensja i premia przysługują wyłącznie po wykonaniu [bold]wszystkich[/bold] celów zmiany.
+    Niewykonanie choćby jednego celu skutkuje ucięciem wynagrodzenia.
 station-goal-end =
     Mają Państwo prawo na wezwanie wahadłowca ewakuacyjnego w przypadku:
-    - Wykonania co najmniej jednego z celów
+    - Wykonania wszystkich obowiązkowych celów
     - Sytuacji awaryjnej na stacji
+    - Zgody lub nakazu z Centralnego Dowództwa
     
     W przypadku sytuacji awaryjnej na stacji, należy niezwłocznie powiadomić Centralne Dowództwo o zaistniałej sytuacji.
     
@@ -26,7 +25,7 @@ station-goal-end =
 station-goal-singularity =
     { station-goal-start }[bold]
     
-    Pobocznym celem jest skonstruowanie generatora opartego na singularności.[/bold]
+    Obowiązkowym celem jest skonstruowanie generatora opartego na singularności.[/bold]
     
     Wszystkie części do celu muszą być zamówione lub zebrane na stacji. Kategorycznie zabrania się używania już istniejących komórek lub komponentów do budowy.
     
@@ -37,7 +36,7 @@ station-goal-singularity =
 station-goal-solar-panels =
     { station-goal-start }[bold]
     
-    Pobocznym celem jest skonstruowanie sieci paneli słonecznych.[/bold]
+    Obowiązkowym celem jest skonstruowanie sieci paneli słonecznych.[/bold]
     
     Wymagania:
     - Sieć musi składać się z co najmniej dwóch gałęzi, umieszczonych na przeciwległych końcach stacji.
@@ -48,7 +47,7 @@ station-goal-solar-panels =
 station-goal-artifacts =
     { station-goal-start }[bold]
     
-    Pobocznym celem jest znalezienie i zbadanie artefaktów.[/bold]
+    Obowiązkowym celem jest znalezienie i zbadanie artefaktów.[/bold]
     
     Załoga stacji musi znaleźć co najmniej dwa artefakty w dowolny sposób, inny niż zakup.
     
@@ -61,7 +60,7 @@ station-goal-artifacts =
 station-goal-bank =
     { station-goal-start }[bold]
     
-    Pobocznym celem jest postawienie orbitalnego magazynu z zapasami i technologiami.[/bold]
+    Obowiązkowym celem jest postawienie orbitalnego magazynu z zapasami i technologiami.[/bold]
     
     Magazyn musi być umieszczony w kosmosie, oddzielnie od głównej stacji, chroniony przed meteorytami i posiadać autonomiczne zasilanie.
     
@@ -104,7 +103,7 @@ station-goal-bank =
 station-goal-zoo =
     { station-goal-start }[bold]
     
-    Pobocznym celem jest poprawienie warunków rekreacyjnych personelu stacji.[/bold]
+    Obowiązkowym celem jest poprawienie warunków rekreacyjnych personelu stacji.[/bold]
     
     W tym celu dział inżynieryjny musi zbudować zoo z co najmniej 3 (trzema) wybiegami. Na każdy wybieg przypada jeden gatunek. Każdy wybieg musi być wyposażony w pożywienie dla konkretnego gatunku oraz robota sprzątającego. Powierzchnia każdego wybiegu wynosi co najmniej 16 m².
     
@@ -114,7 +113,7 @@ station-goal-zoo =
 station-goal-mining-outpost =
     { station-goal-start }[bold]
     
-    Pobocznym celem jest zbudowanie orbitalnego górniczego posterunku.[/bold]
+    Obowiązkowym celem jest zbudowanie orbitalnego górniczego posterunku.[/bold]
     
     Posterunek musi być umieszczony w kosmosie, oddzielnie od głównej stacji, chroniony przed meteorytami i posiadać autonomiczne zasilanie, grawitację i atmosferę.
     
@@ -125,7 +124,7 @@ station-goal-mining-outpost =
 station-goal-tesla =
     { station-goal-start }[bold]
     
-    Pobocznym celem jest zbudowanie generatora opartego na tesli.[/bold]
+    Obowiązkowym celem jest zbudowanie generatora opartego na tesli.[/bold]
     
     Wszystkie elementy celu muszą być zamówione lub złożone na stacji. Kategorycznie zabrania się używania już istniejących klatek lub komponentów do budowy.
     
@@ -136,7 +135,7 @@ station-goal-tesla =
 station-goal-security =
     { station-goal-start }[bold]
     
-    Celem pobocznym jest budowa i zaopatrzenie kompleksu treningowego dla Działu Ochrony, z następczą weryfikacją składu.[/bold]
+    Obowiązkowym celem jest budowa i zaopatrzenie kompleksu treningowego dla Działu Ochrony, z następczą weryfikacją składu.[/bold]
     W przyszłości ta stacja zostanie przeniesiona do sektora graniczącego z niebezpiecznym.
     
     Zadaniem działu inżynieryjnego jest budowa kompleksu treningowego w postaci toru przeszkód. Minimalny czas przejścia dla przeciętnego, przygotowanego oficera to około 30 sekund.
@@ -154,7 +153,7 @@ station-goal-security =
 station-goal-shuttle-med =
     { station-goal-start }[bold]
     
-    Celem pobocznym jest budowa pilotowanego wahadłowca medycznego.[/bold]
+    Obowiązkowym celem jest budowa pilotowanego wahadłowca medycznego.[/bold]
     
     Wahadłowiec musi spełniać następujące wymagania:
     1. Zapewnione stabilne źródło zasilania i zapasowa bateria SMES.
@@ -173,7 +172,7 @@ station-goal-shuttle-med =
 station-goal-shuttle-sec =
     { station-goal-start }[bold]
     
-    Celem pobocznym jest budowa pilotowanego wahadłowca desantowego.[/bold]
+    Obowiązkowym celem jest budowa pilotowanego wahadłowca desantowego.[/bold]
     
     Wahadłowiec musi spełniać następujące wymagania:
     1. Zapewnione stabilne źródło zasilania i zapasowa bateria SMES.
@@ -192,7 +191,7 @@ station-goal-shuttle-sec =
 station-goal-shuttle-rnd =
     { station-goal-start }[bold]
     
-    Celem pobocznym jest budowa pilotowanego wahadłowca badawczego.[/bold]
+    Obowiązkowym celem jest budowa pilotowanego wahadłowca badawczego.[/bold]
     
     Wahadłowiec musi spełniać następujące wymagania:
     1. Zapewnione stabilne źródło zasilania i zapasowa bateria SMES.
@@ -209,7 +208,7 @@ station-goal-shuttle-rnd =
 station-goal-shuttle-srv =
     { station-goal-start }[bold]
     
-    Celem pobocznym jest budowa pilotowanego wahadłowca pasażerskiego.[/bold]
+    Obowiązkowym celem jest budowa pilotowanego wahadłowca pasażerskiego.[/bold]
     
     Wahadłowiec musi spełniać następujące wymagania:
     1. Zapewnione stabilne źródło zasilania i zapasowa bateria SMES.
@@ -229,7 +228,7 @@ station-goal-shuttle-srv =
 station-goal-shuttle-emergency =
     { station-goal-start }[bold]
     
-    Celem pobocznym jest budowa pilotowanego wahadłowca ratunkowego.[/bold]
+    Obowiązkowym celem jest budowa pilotowanego wahadłowca ratunkowego.[/bold]
     
     Wahadłowiec musi spełniać następujące wymagania:
     1. Zapewnione stabilne źródło zasilania i zapasowa bateria SMES.
@@ -246,7 +245,7 @@ station-goal-shuttle-emergency =
 station-goal-theatre =
     { station-goal-start }[bold]
     
-    Celem pobocznym jest budowa strefy teatralnej.[/bold]
+    Obowiązkowym celem jest budowa strefy teatralnej.[/bold]
     Na tej stacji odbędą się negocjacje z dużymi firmami w celu zawarcia umów partnerskich. Ważne jest zapewnienie ciepłego przyjęcia gości.
     
     Strefa teatralna powinna obejmować:
@@ -263,7 +262,7 @@ station-goal-theatre =
 station-goal-ai =
     { station-goal-start }[bold]
     
-    Celem pobocznym jest budowa autonomicznego modułu SI.[/bold]
+    Obowiązkowym celem jest budowa autonomicznego modułu SI.[/bold]
     Po zakończeniu budowy moduł powinien zostać odłączony od stacji i wysłany na dryf w przestrzeni kosmicznej.
     
     Wymagania:
@@ -284,7 +283,7 @@ station-goal-ai =
 station-goal-botany =
     { station-goal-start }[bold]
     
-    Celem pobocznym jest budowa szklarni i wyhodowanie roślin przystosowanych do temperatury.[/bold]
+    Obowiązkowym celem jest budowa szklarni i wyhodowanie roślin przystosowanych do temperatury.[/bold]
     
     Na stacji lub w jej pobliżu należy zbudować trzy przedziały z kontrolowanym klimatem:
     - Przedział o temperaturze 5°C.
@@ -299,7 +298,7 @@ station-goal-botany =
 station-goal-bunker =
     { station-goal-start }[bold]
     
-    Celem pobocznym jest przystosowanie stacji do silnych przepływów hiperenergetycznych.[/bold]
+    Obowiązkowym celem jest przystosowanie stacji do silnych przepływów hiperenergetycznych.[/bold]
     
     Należy dobudować po jednym pomieszczeniu, zwanym dalej "bunkrem", dla następujących działów: Ochrony, Medycznego i Dowódczego. W nich załoga stacji mogłaby się schronić przed skutkami przepływów hiperenergetycznych.
     
@@ -322,7 +321,7 @@ station-goal-bunker =
 #     { station-goal-start }[bold]
 
 
-#     Celem pobocznym jest zakończenie prac budowlanych na stacji.[/bold]
+#     Obowiązkowym celem jest zakończenie prac budowlanych na stacji.[/bold]
 
 
 #     Należy dobudować każdemu działowi pomieszczenia niezbędne do ich skutecznej pracy. Trzeba też zbudować kuchnię i hydroponikę dla działu serwisowego, zbrojownię i miejsce przetrzymywania więźniów dla Ochrony, oraz zapewnić pasażerom swobodny przejazd do odlotu bez konieczności wychodzenia w otwartą przestrzeń kosmiczną.
@@ -336,7 +335,7 @@ station-goal-bunker =
 #     { station-goal-start }[bold]
 
 
-#     Celem pobocznym jest odtworzenie opuszczonego sektora ksenobiologii działu naukowego.[/bold]
+#     Obowiązkowym celem jest odtworzenie opuszczonego sektora ksenobiologii działu naukowego.[/bold]
 
 
 #     Należy w pełni przywrócić zasilanie, atmosferę, doprowadzić wygląd do stanu pierwotnego oraz złapać co najmniej trzy slimy dowolnych form do klatek ksenobiologicznych w celu ich badania przez kolejną zmianę.
@@ -347,7 +346,7 @@ station-goal-bunker =
 #     { station-goal-start }[bold]
 
 
-#     Celem pobocznym jest odtworzenie opuszczonego sektora wirusologii działu medycznego.[/bold]
+#     Obowiązkowym celem jest odtworzenie opuszczonego sektora wirusologii działu medycznego.[/bold]
 
 
 #     Należy w pełni przywrócić zasilanie, atmosferę, doprowadzić wygląd do stanu pierwotnego. Następnie w sterylnych warunkach wirusologii przeprowadzić syntezę 500u (pięciuset jednostek) ambuzolu; do tego zapewniono 3 (trzy) pigułki romerolu.
@@ -358,7 +357,7 @@ station-goal-bunker =
 #     { station-goal-start }[bold]
 
 
-#     Celem pobocznym jest zapewnienie bezpieczeństwa w subsektorze Split.[/bold]
+#     Obowiązkowym celem jest zapewnienie bezpieczeństwa w subsektorze Split.[/bold]
 
 
 #     Załoga musi zapewniać bezpieczeństwo subsektora Split przez całą zmianę, aby stacje Mayhen i Lumber mogły pomyślnie zakończyć swoje zadania na zmianę.
@@ -372,7 +371,7 @@ station-goal-bunker =
 #     { station-goal-start }[bold]
 
 
-#     Celem pobocznym jest odtworzenie opuszczonej stacji Vasilisk, znajdującej się w części centralnej.[/bold]
+#     Obowiązkowym celem jest odtworzenie opuszczonej stacji Vasilisk, znajdującej się w części centralnej.[/bold]
 
 
 #     Należy siłami Ochrony i Odzysku w razie potrzeby (na wniosek techników odzysku) pozbyć się wrogiej fauny utrudniającej prowadzenie prac.
