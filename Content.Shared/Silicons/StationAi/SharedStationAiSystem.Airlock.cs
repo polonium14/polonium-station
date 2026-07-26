@@ -1,3 +1,4 @@
+using Content.Shared._Funkystation.FirelockBolt.Components;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Database;
 using Content.Shared.Doors.Components;
@@ -39,12 +40,31 @@ public abstract partial class SharedStationAiSystem
             return;
         }
 
-        var setResult = _doors.TrySetBoltDown((ent, component), args.Bolted, args.User, predicted: true);
+        bool setResult;
+        string? failReason = null;
+        if (TryComp<FirelockBoltControlComponent>(ent, out var firelockBolts))
+        {
+            setResult = _firelockBolts.TrySetBoltsFromRemote(
+                (ent, firelockBolts),
+                args.Bolted,
+                out failReason,
+                args.User,
+                predicted: true);
+
+            if (!setResult && failReason != null)
+                _popup.PopupEntity(Loc.GetString(failReason), args.User, args.User);
+        }
+        else
+        {
+            setResult = _doors.TrySetBoltDown((ent, component), args.Bolted, args.User, predicted: true);
+        }
+
         if (!setResult)
         {
             _adminLogger.Add(LogType.Action,
                 $"{args.User} was unable to change bolt status on {ent} to [{args.Bolted}] using the Station AI radial.");
-            ShowDeviceNotRespondingPopup(args.User);
+            if (failReason == null)
+                ShowDeviceNotRespondingPopup(args.User);
         }
         else
         {

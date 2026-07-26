@@ -25,6 +25,9 @@ public sealed partial class FirelockBoltControlComponent : Component
     [DataField, AutoNetworkedField]
     public bool IsManualClose;
 
+    [DataField, AutoNetworkedField]
+    public bool IsRemoteBolted;
+
     /// <summary>
     /// Sound played when the manual override is engaged
     /// </summary>

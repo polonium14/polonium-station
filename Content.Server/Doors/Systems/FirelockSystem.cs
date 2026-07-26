@@ -4,6 +4,8 @@ using Content.Server.Atmos.Monitor.Components;
 using Content.Server.Atmos.Monitor.Systems;
 using Content.Server.Power.EntitySystems;
 using Content.Server.Shuttles.Components;
+using Content.Server._Funkystation.FirelockBolt.EntitySystems;
+using Content.Shared._Funkystation.FirelockBolt.Components;
 using Content.Shared.Atmos;
 using Content.Shared.Atmos.Components;
 using Content.Shared.Atmos.Monitor;
@@ -22,11 +24,13 @@ namespace Content.Server.Doors.Systems
         [Dependency] private SharedAppearanceSystem _appearance = default!;
         [Dependency] private SharedMapSystem _mapping = default!;
         [Dependency] private PointLightSystem _pointLight = default!;
+        [Dependency] private FirelockBoltControlSystem _firelockBolts = default!;
 
         [Dependency] private EntityQuery<AtmosAlarmableComponent> _atmosAlarmQuery = default!;
         [Dependency] private EntityQuery<AirtightComponent> _airtightQuery = default!;
         [Dependency] private EntityQuery<AppearanceComponent> _appearanceQuery = default!;
         [Dependency] private EntityQuery<PointLightComponent> _pointLightQuery = default!;
+        [Dependency] private EntityQuery<FirelockBoltControlComponent> _boltControlQuery = default!;
 
         private const int UpdateInterval = 30;
         private int _accumulatedTicks;
@@ -36,13 +40,18 @@ namespace Content.Server.Doors.Systems
             base.Initialize();
 
             SubscribeLocalEvent<FirelockComponent, AtmosAlarmEvent>(OnAtmosAlarm);
-            SubscribeLocalEvent<FirelockComponent, PowerChangedEvent>(PowerChanged);
+
+            SubscribeLocalEvent<FirelockComponent, PowerChangedEvent>(PowerChanged, before: new[] { typeof(AtmosAlarmableSystem) });
         }
 
         private void PowerChanged(EntityUid uid, FirelockComponent component, ref PowerChangedEvent args)
         {
             component.Powered = args.Powered;
             Dirty(uid, component);
+
+            // blackout must not drop bolts
+            if (args.Powered && _boltControlQuery.TryComp(uid, out var boltControl))
+                _firelockBolts.UpdateHazardBolts((uid, boltControl), component);
         }
 
         public override void Update(float frameTime)
@@ -53,19 +62,16 @@ namespace Content.Server.Doors.Systems
 
             _accumulatedTicks = 0;
 
-
             var query = EntityQueryEnumerator<FirelockComponent, DoorComponent>();
             while (query.MoveNext(out var uid, out var firelock, out var door))
             {
                 if (_atmosAlarmQuery.TryComp(uid, out var alarmable)
                     && alarmable.LastAlarmState == AtmosAlarmType.Danger
-                    && this.IsPowered(uid, EntityManager)
                     && door.State == DoorState.Open)
                 {
                     EmergencyPressureStop(uid, firelock, door);
                 }
 
-                // only bother to check pressure on doors that are some variation of closed.
                 if (door.State != DoorState.Closed
                     && door.State != DoorState.Welded
                     && door.State != DoorState.Denying
@@ -77,19 +83,20 @@ namespace Content.Server.Doors.Systems
                 if (_airtightQuery.TryGetComponent(uid, out var airtight)
                     && _appearanceQuery.TryGetComponent(uid, out var appearance))
                 {
-                    var (pressure, fire) = CheckPressureAndFire(uid, firelock, airtight);
+                    var (pressure, fire) = CheckPressureAndFire(uid, firelock, airtight, door.State == DoorState.Open);
 
                     // Funky change
                     if (door.State == DoorState.Open)
                     {
+                        firelock.Pressure = pressure;
+                        firelock.Temperature = fire;
+                        Dirty(uid, firelock);
+
                         if (pressure || fire)
-                        {
                             EmergencyPressureStop(uid, firelock, door);
-                        }
                     }
                     else
                     {
-
                         _appearance.SetData(uid, DoorVisuals.ClosedLights, fire || pressure, appearance);
                         firelock.Temperature = fire;
                         firelock.Pressure = pressure;
@@ -98,9 +105,10 @@ namespace Content.Server.Doors.Systems
                         Dirty(uid, firelock);
 
                         if (_pointLightQuery.TryComp(uid, out var pointLight))
-                        {
                             _pointLight.SetEnabled(uid, fire | pressure, pointLight);
-                        }
+
+                        if (_boltControlQuery.TryComp(uid, out var boltControl))
+                            _firelockBolts.UpdateHazardBolts((uid, boltControl), firelock, door);
                     }
                 }
             }
@@ -108,14 +116,20 @@ namespace Content.Server.Doors.Systems
 
         private void OnAtmosAlarm(EntityUid uid, FirelockComponent component, AtmosAlarmEvent args)
         {
-            if (!this.IsPowered(uid, EntityManager))
-                return;
-
             if (!TryComp<DoorComponent>(uid, out var doorComponent))
                 return;
 
             if (args.AlarmType == AtmosAlarmType.Normal)
             {
+                if (!this.IsPowered(uid, EntityManager))
+                    return;
+
+                if (component.IsLocked)
+                    return;
+
+                if (TryComp<DoorBoltComponent>(uid, out var bolt) && bolt.BoltsDown)
+                    return;
+
                 if (doorComponent.State == DoorState.Closed)
                     _doorSystem.TryOpen(uid);
             }

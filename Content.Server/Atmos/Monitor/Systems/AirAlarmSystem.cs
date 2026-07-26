@@ -3,6 +3,7 @@ using Content.Server.DeviceLinking.Systems;
 using Content.Server.DeviceNetwork.Systems;
 using Content.Server.Popups;
 using Content.Server.Power.EntitySystems;
+using Content.Server._Funkystation.FirelockBolt.EntitySystems;
 using Content.Shared.Access.Components;
 using Content.Shared.Access.Systems;
 using Content.Shared.Administration.Logs;
@@ -43,6 +44,7 @@ public sealed partial class AirAlarmSystem : EntitySystem
     [Dependency] private DeviceNetworkSystem _deviceNet = default!;
     [Dependency] private DeviceLinkSystem _deviceLink = default!;
     [Dependency] private DeviceListSystem _deviceList = default!;
+    [Dependency] private FirelockBoltControlSystem _firelockBolts = default!;
     [Dependency] private PopupSystem _popup = default!;
     [Dependency] private UserInterfaceSystem _ui = default!;
     [Dependency] private EntityQuery<DeviceNetworkComponent> _deviceNetworkQuery = default!;
@@ -441,6 +443,9 @@ public sealed partial class AirAlarmSystem : EntitySystem
         }
 
         UpdateUI(uid, component);
+
+        // dont wait for network for firelocks
+        _firelockBolts.PushAlarmToDeviceList(uid, args.AlarmType);
     }
 
     private string GetPort(AirAlarmComponent comp)
