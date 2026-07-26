@@ -1,17 +1,3 @@
-// SPDX-FileCopyrightText: 2024 Jake Huxell <JakeHuxell@pm.me>
-// SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Fildrance <fildrance@gmail.com>
-// SPDX-FileCopyrightText: 2025 Samuka <47865393+Samuka-C@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2026 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-// SPDX-FileCopyrightText: 2026 Velken <8467292+Velken@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2026 Whatstone <166147148+whatston3@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2026 lunarcomets <140772713+lunarcomets@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2026 nikitosych <174215049+nikitosych@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2026 taydeo <tay@funkystation.org>
-// SPDX-FileCopyrightText: 2026 taydeo <td12233a@gmail.com>
-//
-// SPDX-License-Identifier: AGPL-3.0-or-later
-
 using Content.Shared._Funkystation.FirelockBolt.Components;
 using Content.Shared._Funkystation.FirelockBolt.EntitySystems;
 using Content.Shared.Access.Components;
@@ -88,6 +74,15 @@ public abstract partial class SharedDoorRemoteSystem : EntitySystem
             return;
         }
 
+        // Remote control is blocked while lever override is on
+        if (TryComp<FirelockBoltControlComponent>(args.Target, out var firelockBolts)
+            && !_firelockBolts.CanRemoteControl((args.Target.Value, firelockBolts), out var overrideReason)
+            && overrideReason != null)
+        {
+            _popup.PopupEntity(Loc.GetString(overrideReason), args.User, args.User);
+            return;
+        }
+
         var accessTarget = args.Used;
         // This covers the accesses the REMOTE has, and is not effected by the user's ID card.
         if (entity.Comp.IncludeUserAccess) // Allows some door remotes to inherit the user's access.
@@ -128,12 +123,19 @@ public abstract partial class SharedDoorRemoteSystem : EntitySystem
                     {
                         var willBolt = !boltsComp.BoltsDown;
 
-                        if (TryComp<FirelockBoltControlComponent>(args.Target, out var firelockBolts))
+                        if (firelockBolts != null)
                         {
-                            _firelockBolts.SetOverride((args.Target.Value, firelockBolts), !willBolt, playSound: false);
-                            
-                            if (willBolt)
-                                _doorSystem.SetBoltsDown((args.Target.Value, boltsComp), true, user: args.User, predicted: true);
+                            if (!_firelockBolts.TrySetBoltsFromRemote(
+                                    (args.Target.Value, firelockBolts),
+                                    willBolt,
+                                    out var failReason,
+                                    args.User,
+                                    predicted: true))
+                            {
+                                if (failReason != null)
+                                    _popup.PopupEntity(Loc.GetString(failReason), args.User, args.User);
+                                break;
+                            }
                         }
                         else
                         {

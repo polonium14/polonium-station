@@ -88,6 +88,7 @@ public abstract partial class SharedDoorSystem
         bool force = false
     )
     {
+        // force = firelock pry/override can drop bolts without power
         if (!force && !_powerReceiver.IsPowered(ent.Owner))
             return false;
         if (ent.Comp.BoltsDown == value)
