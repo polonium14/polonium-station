@@ -27,7 +27,6 @@ public abstract partial class SharedBorgSystem
         SubscribeLocalEvent<ItemBorgModuleComponent, ComponentStartup>(OnProvideItemStartup);
         SubscribeLocalEvent<ItemBorgModuleComponent, BorgModuleSelectedEvent>(OnItemModuleSelected);
         SubscribeLocalEvent<ItemBorgModuleComponent, BorgModuleUnselectedEvent>(OnItemModuleUnselected);
-
         SubscribeLocalEvent<ComponentBorgModuleComponent, BorgModuleInstalledEvent>(OnComponentModuleInstalled);
         SubscribeLocalEvent<ComponentBorgModuleComponent, BorgModuleUninstalledEvent>(OnComponentModuleUninstalled);
 
@@ -110,7 +109,13 @@ public abstract partial class SharedBorgSystem
 
                 var handId = $"{GetNetEntity(module.Owner)}-hand-{i}";
                 if (itemModuleComp.StoredItems.TryGetValue(handId, out var item))
+                {
+
+                    if (TerminatingOrDeleted(item))
+                        continue;
+
                     _container.Remove(item, container, destination: coordinates);
+                }
             }
 
             itemModuleComp.StoredItems.Clear();
@@ -226,8 +231,18 @@ public abstract partial class SharedBorgSystem
             {
                 if (module.Comp.StoredItems.TryGetValue(handId, out var storedItem))
                 {
-                    item = storedItem;
-                    // DoPickup handles removing the item from the container.
+                    if (TerminatingOrDeleted(storedItem))
+                    {
+                        module.Comp.StoredItems.Remove(handId);
+                        // respawn corrupted item from hand proto if any
+                        if (hand.Item is { } deadProto)
+                            item = PredictedSpawnAtPosition(deadProto, xform.Coordinates);
+                    }
+                    else
+                    {
+                        item = storedItem;
+                        // DoPickup handles removing the item from the container.
+                    }
                 }
             }
             else if (hand.Item is { } itemProto)

@@ -108,7 +108,8 @@ public sealed partial class BodyDamageBridgeSystem : EntitySystem
         if (body.Organs is null)
             return;
 
-        foreach (var contained in body.Organs.ContainedEntities)
+        // copy because TryChangeDamage can yank organs out during foreach
+        foreach (var contained in body.Organs.ContainedEntities.ToArray())
         {
             if (!TryComp<OrganComponent>(contained, out var organComp)
                 || organComp.Category is not { } category

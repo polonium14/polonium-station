@@ -159,6 +159,11 @@ namespace Content.Shared.Movement.Systems
 
         private void OnMoverGetState(Entity<InputMoverComponent> entity, ref ComponentGetState args)
         {
+            if (entity.Comp.RelativeEntity is { } rel && TerminatingOrDeleted(rel))
+            {
+                entity.Comp.RelativeEntity = null;
+            }
+
             args.State = new InputMoverComponentState()
             {
                 CanMove = entity.Comp.CanMove,
@@ -334,7 +339,8 @@ namespace Content.Shared.Movement.Systems
         {
             // Relayed movement just uses the same keybinds given we're moving the relayed entity
             // the same as us.
-            if (!MoverQuery.Resolve(entity, ref entity.Comp))
+            
+            if (!MoverQuery.Resolve(entity, ref entity.Comp, false)) // false: some entities get stray input without an InputMover
                 return;
 
             // TODO: Should move this into HandleMobMovement itself.

@@ -347,7 +347,7 @@ public abstract partial class SharedHandsSystem
     /// </summary>
     public void SwapHands(Entity<HandsComponent?> ent, bool checkActionBlocker = false, bool reverse = false)
     {
-        if (!Resolve(ent, ref ent.Comp))
+        if (!Resolve(ent, ref ent.Comp, false))
             return;
 
         if (checkActionBlocker && !_actionBlocker.CanInteract(ent.Owner, null))

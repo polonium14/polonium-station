@@ -20,6 +20,19 @@ public abstract partial class SharedGunPredictionSystem : EntitySystem
         Subs.CVar(_config, RMCCVars.RMCGunPrediction, v => GunPrediction = v, true);
     }
 
+    protected void PrunePredictedProjectileClientEnts()
+    {
+        var query = EntityQueryEnumerator<PredictedProjectileServerComponent>();
+        while (query.MoveNext(out var uid, out var comp))
+        {
+            if (comp.ClientEnt is not { } clientEnt || !TerminatingOrDeleted(clientEnt))
+                continue;
+
+            comp.ClientEnt = null;
+            Dirty(uid, comp);
+        }
+    }
+
     public List<EntityUid>? ShootRequested(
         NetEntity netGun,
         NetCoordinates coordinates,
