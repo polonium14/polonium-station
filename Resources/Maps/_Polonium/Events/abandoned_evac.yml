@@ -525,7 +525,7 @@ entities:
 
         Nie pomogl.
 
-        Oni pływają w prozni lepiej niz my w powietrzu.
+        Oni plywaja w prozni lepiej niz my w powietrzu.
     - type: Physics
       canCollide: False
   - uid: 215
@@ -537,14 +537,14 @@ entities:
       parent: 130
     - type: Paper
       content: >-
-        day 3 without power
+        dzien 3 bez pradu
 
-        something ate the ticks
+        cos zjadlo kleszcze
 
-        something bigger is coming for the something that ate the ticks
+        cos wiekszego idzie po tym, co zjadlo kleszcze
 
 
-        i can hear teeth on the hull
+        slysze zeby na kadlubie
     - type: Physics
       canCollide: False
   - uid: 216
