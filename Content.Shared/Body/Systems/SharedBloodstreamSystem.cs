@@ -816,6 +816,8 @@ public abstract partial class SharedBloodstreamSystem : EntitySystem
         cloneComp.UpdateIntervalMultiplier = source.Comp.UpdateIntervalMultiplier;
         cloneComp.BleedReductionAmount = source.Comp.BleedReductionAmount;
         cloneComp.MaxBleedAmount = source.Comp.MaxBleedAmount;
+        cloneComp.CritBleedMultiplier = source.Comp.CritBleedMultiplier;
+        cloneComp.DeadBleedMultiplier = source.Comp.DeadBleedMultiplier;
         cloneComp.BloodlossThreshold = source.Comp.BloodlossThreshold;
         cloneComp.BloodlossDamage = new DamageSpecifier(source.Comp.BloodlossDamage);
         cloneComp.BloodlossHealDamage = new DamageSpecifier(source.Comp.BloodlossHealDamage);
