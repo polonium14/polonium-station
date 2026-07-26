@@ -19,16 +19,24 @@ public abstract class SharedDeviceListSystem : EntitySystem
     /// </summary>
     protected bool PruneDeletedDevices(EntityUid uid, DeviceListComponent list)
     {
-        var temp = list.Devices.ToList();
-
-        // if we did not remove any devices
-        if (list.Devices.RemoveWhere(d => TerminatingOrDeleted(d)) == 0)
+        if (!list.Devices.Any(d => TerminatingOrDeleted(d)))
             return false;
 
+        var temp = list.Devices.ToList();
+
+        // reverse index may still exist whoile device is Terminating
+        foreach (var device in temp)
+        {
+            if (!TerminatingOrDeleted(device))
+                continue;
+
+            if (TryComp(device, out DeviceNetworkComponent? net))
+                net.DeviceLists.Remove(uid);
+        }
+
+        list.Devices.RemoveWhere(d => TerminatingOrDeleted(d));
         RaiseLocalEvent(uid, new DeviceListUpdateEvent(temp, list.Devices.ToList()));
-
         Dirty(uid, list);
-
         return true;
     }
 }
