@@ -285,7 +285,7 @@ public abstract partial class SharedBloodstreamSystem
         if (args.IgnoreBlockers)
             return;
 
-        if (component.IsBleeding)
+        if (component.IsBleeding || component.BleedingAmountRaw > 0)
             args.Cancelled = true;
     }
 
