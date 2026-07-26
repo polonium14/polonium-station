@@ -1,3 +1,9 @@
+// SPDX-FileCopyrightText: 2026 Maciej Walendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 maciejwalendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared._Shitmed.CCVar;
 using Content.Shared._Shitmed.Medical.Surgery.Consciousness.Systems;
 using Content.Shared._Shitmed.Medical.Surgery.Traumas.Components;
@@ -253,8 +259,14 @@ public abstract partial class SharedBloodstreamSystem
 
     private void OnWoundAdded(EntityUid uid, BleedInflicterComponent component, ref WoundAddedEvent args)
     {
-        if (!CanWoundBleed(uid, component)
-            || args.Component.WoundSeverityPoint < component.SeverityThreshold
+        // WoundableComponent.CanBleed is a static property of the limb, so a woundable that can
+        // never bleed never accrues. CanWoundBleed is deliberately NOT checked here: it's a
+        // runtime suppression (tourniquets flip it via BleedingModifiers), and UpdateWounds
+        // re-derives IsBleeding from it every tick while RecomputeWoundableBleeds only sums
+        // wounds that are actually bleeding - so the effect is already held off. Skipping the
+        // accrual too would permanently under-credit any wound inflicted under a tourniquet,
+        // which then bleeds far less than its severity once the clamp comes off.
+        if (args.Component.WoundSeverityPoint < component.SeverityThreshold
             || !args.Woundable.CanBleed)
             return;
 
@@ -264,7 +276,7 @@ public abstract partial class SharedBloodstreamSystem
         var formula = (float) (args.Component.WoundSeverityPoint / _cfg.GetCVar(SurgeryCVars.BleedsScalingTime) * component.ScalingSpeed);
         component.ScalingFinishesAt = _timing.CurTime + TimeSpan.FromSeconds(formula);
         component.ScalingStartsAt = _timing.CurTime;
-        component.IsBleeding = true;
+        component.IsBleeding = CanWoundBleed(uid, component);
 
         Dirty(uid, component);
     }
@@ -274,7 +286,7 @@ public abstract partial class SharedBloodstreamSystem
         if (args.IgnoreBlockers)
             return;
 
-        if (component.IsBleeding)
+        if (component.IsBleeding || component.BleedingAmountRaw > 0)
             args.Cancelled = true;
     }
 
@@ -282,28 +294,70 @@ public abstract partial class SharedBloodstreamSystem
         BleedInflicterComponent component,
         ref WoundSeverityPointChangedEvent args)
     {
-        if (!CanWoundBleed(uid, component)
-            || !TryComp<WoundableComponent>(args.Component.HoldingWoundable, out var woundable)
-            || !woundable.CanBleed
-            || args.NewSeverity < component.SeverityThreshold
-            || args.NewSeverity < args.OldSeverity)
+        // Same reasoning as OnWoundAdded: accrual tracks severity regardless of a tourniquet,
+        // and IsBleeding below (plus UpdateWounds every tick) is what actually holds the bleed
+        // off while the limb is clamped.
+        if (!TryComp<WoundableComponent>(args.Component.HoldingWoundable, out var woundable)
+            || !woundable.CanBleed)
             return;
 
-        var oldBleedsAmount = args.OldSeverity * _cfg.GetCVar(SurgeryCVars.BleedingSeverityTrade);
-        component.BleedingAmountRaw = args.NewSeverity * _cfg.GetCVar(SurgeryCVars.BleedingSeverityTrade);
+        if (args.NewSeverity < args.OldSeverity)
+        {
+            // Healed back under the gate that would have started the bleed in the first place -
+            // OnWoundAdded and the growth path below both refuse to bleed there, so leaving a
+            // proportional trickle here is the only way a sub-threshold wound bleeds at all.
+            // It also traps the wound: OnWoundHealAttempt blocks passive healing while
+            // IsBleeding, so the residual would keep the wound from ever closing on its own.
+            if (args.NewSeverity < component.SeverityThreshold)
+            {
+                component.BleedingAmountRaw = FixedPoint2.Zero;
+                component.IsBleeding = false;
+                Dirty(uid, component);
+                return;
+            }
 
-        var severityPenalty = component.BleedingAmountRaw - oldBleedsAmount / _cfg.GetCVar(SurgeryCVars.BleedsScalingTime);
-        component.SeverityPenalty += severityPenalty;
+            var healedCap = args.NewSeverity * _cfg.GetCVar(SurgeryCVars.BleedingSeverityTrade);
+            if (component.BleedingAmountRaw > healedCap)
+            {
+                component.BleedingAmountRaw = healedCap;
+                Dirty(uid, component);
+            }
+
+            return;
+        }
+
+        if (args.NewSeverity < component.SeverityThreshold)
+            return;
+
+        // Growing past the threshold for the first time has to land on the same bleed a wound
+        // born at that size gets from OnWoundAdded - the sub-threshold portion never accrued,
+        // so seed from the whole severity rather than just this hit's delta. Growth on a wound
+        // that was already past the threshold keeps accruing by delta, so a partial cautery
+        // (which lowers BleedingAmountRaw without touching severity) isn't handed back.
+        var crossedFromBelow = args.OldSeverity < component.SeverityThreshold;
+
+        if (crossedFromBelow)
+            component.BleedingAmountRaw = args.NewSeverity * _cfg.GetCVar(SurgeryCVars.BleedingSeverityTrade);
+        else
+            component.BleedingAmountRaw += (args.NewSeverity - args.OldSeverity) * _cfg.GetCVar(SurgeryCVars.BleedingSeverityTrade);
 
         var formula = (float) (args.NewSeverity / _cfg.GetCVar(SurgeryCVars.BleedsScalingTime) * component.ScalingSpeed);
         component.ScalingFinishesAt = _timing.CurTime + TimeSpan.FromSeconds(formula);
         component.ScalingStartsAt = _timing.CurTime;
 
-        if (!component.IsBleeding)
+        // The CanWoundBleed test matters here: under a tourniquet UpdateWounds keeps IsBleeding
+        // false every tick, so without it each further hit would read as a fresh reopening and
+        // stack another +0.6 onto ScalingLimit without bound.
+        if (CanWoundBleed(uid, component) && !component.IsBleeding)
         {
-            component.ScalingLimit += 0.6;
+            // Only a genuine reopening earns the scaling bump - a wound whose bleed was stopped
+            // and then torn open again. A wound merely growing past the threshold for the first
+            // time has to match one born above it, and OnWoundAdded leaves ScalingLimit alone;
+            // bumping it here too would just move the same-severity gap to the scaling side.
+            if (!crossedFromBelow)
+                component.ScalingLimit += 0.6;
+
             component.IsBleeding = true;
-            // When bleeding is reopened, the severity is increased
         }
 
         // dummy fix as me and pretty much nobody else currently knows HOW EXACTLY was is supposed to work, womp womp

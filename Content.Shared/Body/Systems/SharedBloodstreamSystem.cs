@@ -1,3 +1,64 @@
+// SPDX-FileCopyrightText: 2022 EmoGarbage404 <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Jezithyr <Jezithyr.@gmail.com>
+// SPDX-FileCopyrightText: 2022 Jezithyr <Jezithyr@gmail.com>
+// SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Will Robson <WPRobson@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 keronshb <54602815+keronshb@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Emisse <99158783+Emisse@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Ilushkins33 <128389588+Ilushkins33@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Jezithyr <jezithyr@gmail.com>
+// SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2023 LankLTE <135308300+LankLTE@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Phill101 <28949487+Phill101@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Phill101 <holypics4@gmail.com>
+// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Vordenburg <114301317+Vordenburg@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Whisper <121047731+QuietlyWhisper@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 faint <46868845+ficcialfaint@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 0x6273 <0x40@keemail.me>
+// SPDX-FileCopyrightText: 2024 Cojoke <83733158+Cojoke-dot@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 LordCarve <27449516+LordCarve@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 beck-thompson <107373427+beck-thompson@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 themias <89101928+themias@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Łukasz Lindert <lukasz.lindert@protonmail.com>
+// SPDX-FileCopyrightText: 2025 DrSmugleaf <10968691+DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Fildrance <fildrance@gmail.com>
+// SPDX-FileCopyrightText: 2025 Hannah Giovanna Dawson <karakkaraz@gmail.com>
+// SPDX-FileCopyrightText: 2025 Ignaz "Ian" Kraft <ignaz.k@live.de>
+// SPDX-FileCopyrightText: 2025 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Nikovnik <116634167+nkokic@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Orsoniks <orsoniksstuff@gmail.com>
+// SPDX-FileCopyrightText: 2025 PJB3005 <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2025 Princess Cheeseballs <66055347+Pronana@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 ScarKy0 <scarky0@onet.eu>
+// SPDX-FileCopyrightText: 2025 TheFlyingSentry <AFlyingSentry@gmail.com>
+// SPDX-FileCopyrightText: 2025 Vasilis The Pikachu <vasilis@pikachu.systems>
+// SPDX-FileCopyrightText: 2025 Zachary Higgs <compgeek223@gmail.com>
+// SPDX-FileCopyrightText: 2026 Maciej Walendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 MaiaArai <158123176+YaraaraY@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2026 Princess Cheeseballs <66055347+Princess-Cheeseballs@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 Whatstone <166147148+whatston3@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 YaraaraY <158123176+YaraaraY@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 maciejwalendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 nikitosych <174215049+nikitosych@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 pathetic meowmeow <uhhadd@gmail.com>
+// SPDX-FileCopyrightText: 2026 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 taydeo <tay@funkystation.org>
+// SPDX-FileCopyrightText: 2026 taydeo <td12233a@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared._Shitmed.Medical.Surgery.Wounds.Components;
 using Content.Shared.Alert;
 using Content.Shared.Body;
@@ -495,11 +556,30 @@ public abstract partial class SharedBloodstreamSystem : EntitySystem
         var ev = new BleedModifierEvent(entity.Comp.BleedAmount, entity.Comp.BleedReductionAmount);
         RaiseLocalEvent(entity, ref ev);
 
-        // Blood is removed from the bloodstream at a 1-1 rate with the bleed amount
-        TryBleedOut(entity.AsNullable(), ev.BleedAmount);
+        // Blood is removed 1-1 with the bleed amount, then scaled by mob state. The state
+        // multiplier is applied after the event so modifiers (hemophilia, surgical incisions)
+        // still compute against the real bleed rate and state scales whatever they settled on.
+        TryBleedOut(entity.AsNullable(), ev.BleedAmount * GetStateBleedMultiplier(entity));
 
         // Bleed rate is reduced by the bleed reduction amount in the bloodstream component.
+        // Systems that want to hold bleeding open (e.g. UnfinishedSurgeryPenaltySystem's
+        // surgical incision) do so by lowering BleedReductionAmount via BleedModifierEvent.
+        // Deliberately unscaled - a downed body bleeds slower, but its wounds still clot on
+        // the same timeline, so bleeding doesn't become effectively permanent while crit.
         TryModifyBleedAmount(entity.AsNullable(), -ev.BleedReductionAmount);
+    }
+
+    /// <summary>
+    /// How much of the current bleed rate actually leaves the body, based on mob state.
+    /// </summary>
+    private float GetStateBleedMultiplier(Entity<BloodstreamComponent> entity)
+    {
+        if (_mobStateSystem.IsDead(entity))
+            return entity.Comp.DeadBleedMultiplier;
+
+        return _mobStateSystem.IsCritical(entity)
+            ? entity.Comp.CritBleedMultiplier
+            : 1f;
     }
 
     /// <summary>
@@ -560,7 +640,11 @@ public abstract partial class SharedBloodstreamSystem : EntitySystem
         if (!Resolve(ent, ref ent.Comp, logMissing: false))
             return false;
 
-        ent.Comp.BleedAmountNotFromWounds = Math.Max(ent.Comp.BleedAmountNotFromWounds + amount, 0);
+        // Clamped to MaxBleedAmount: BleedAmount itself is display-clamped in
+        // RecomputeBleedAmount, so an uncapped raw pool would silently accumulate "debt"
+        // above the cap that clotting then has to pay off before the visible bleed rate
+        // ever starts dropping.
+        ent.Comp.BleedAmountNotFromWounds = Math.Clamp(ent.Comp.BleedAmountNotFromWounds + amount, 0, ent.Comp.MaxBleedAmount);
         RecomputeBleedAmount(ent, ent.Comp);
         return true;
     }
@@ -732,6 +816,8 @@ public abstract partial class SharedBloodstreamSystem : EntitySystem
         cloneComp.UpdateIntervalMultiplier = source.Comp.UpdateIntervalMultiplier;
         cloneComp.BleedReductionAmount = source.Comp.BleedReductionAmount;
         cloneComp.MaxBleedAmount = source.Comp.MaxBleedAmount;
+        cloneComp.CritBleedMultiplier = source.Comp.CritBleedMultiplier;
+        cloneComp.DeadBleedMultiplier = source.Comp.DeadBleedMultiplier;
         cloneComp.BloodlossThreshold = source.Comp.BloodlossThreshold;
         cloneComp.BloodlossDamage = new DamageSpecifier(source.Comp.BloodlossDamage);
         cloneComp.BloodlossHealDamage = new DamageSpecifier(source.Comp.BloodlossHealDamage);

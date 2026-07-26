@@ -1,6 +1,6 @@
 
 reagent-name-heparin = heparyna
-reagent-desc-heparin = Szybko działająca toksyna, która błyskawicznie rozrzedza krew i otwiera rany.
+reagent-desc-heparin = Powszechnie stosowany lek przeciwzakrzepowy. Utrudnia krwi tworzenie skrzepów. Przedawkowany może wywołać krwotok wewnętrzny.
 reagent-name-rhigoxane = rygoksan
 reagent-desc-rhigoxane = Toksyna, która błyskawicznie zamraża wszystko, z czym się zetknie.
 reagent-name-spewium = wymiotum

@@ -44,9 +44,6 @@
       BoneDamage: 1
   - type: PainInflicter
     multiplier: 0.87
-  - type: BleedInflicter
-    scalingSpeed: 0.8
-    severityThreshold: 8
 
 - type: entity
   id: WoundPiercing
@@ -151,6 +148,7 @@
     multiplier: 0.67
   - type: BleedInflicter
     scalingSpeed: 1.7
+    severityThreshold: 5
 
 - type: entity
   id: WoundHeat

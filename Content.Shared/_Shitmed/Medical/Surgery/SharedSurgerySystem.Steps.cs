@@ -168,9 +168,6 @@ public abstract partial class SharedSurgerySystem
         // step would be a no-op despite OnWoundedValid making it available for this case.
         var bonus = ent.Comp.HealMultiplier * (severity > 0 ? severity : rawDamage);
 
-        if (_mobState.IsDead(args.Body))
-            bonus *= 0.2;
-
         // The bonus is a percentage of what's left, so it decays toward zero the longer
         // healing goes on - without a floor, repeated clicks approach but never actually
         // reach full heal. Guarantee at least 1 point of progress per click.
@@ -211,17 +208,29 @@ public abstract partial class SharedSurgerySystem
             _trauma.RefreshLimbMovementSpeed(args.Body);
     }
 
-    private void OnAffixPartStep(Entity<SurgeryAffixPartStepComponent> ent, ref SurgeryStepEvent args)
+    private EntityUid ResolveAffixPartTarget(EntityUid body, EntityUid part, EntityUid surgery)
     {
-        if (HasComp<WoundableComponent>(args.Part))
-            _wounds.TryHealWoundsOnWoundable(args.Part, FixedPoint2.New(12), out _);
+        if (TryComp(surgery, out SurgeryPartRemovedConditionComponent? removedComp)
+            && TryComp<BodyComponent>(body, out var bodyComp)
+            && LimbTargetMap.TryGetOrganByCategory(EntityManager, bodyComp, removedComp.Category, out var limb))
+            return limb;
 
-        RemComp<BodyPartReattachedComponent>(args.Part);
+        return part;
     }
 
-    private bool AffixPartComplete(EntityUid part)
+    private void OnAffixPartStep(Entity<SurgeryAffixPartStepComponent> ent, ref SurgeryStepEvent args)
     {
-        return !HasComp<BodyPartReattachedComponent>(part);
+        var target = ResolveAffixPartTarget(args.Body, args.Part, args.Surgery);
+
+        if (HasComp<WoundableComponent>(target))
+            _wounds.TryHealWoundsOnWoundable(target, FixedPoint2.New(12), out _);
+
+        RemComp<BodyPartReattachedComponent>(target);
+    }
+
+    private bool AffixPartComplete(EntityUid body, EntityUid part, EntityUid surgery)
+    {
+        return !HasComp<BodyPartReattachedComponent>(ResolveAffixPartTarget(body, part, surgery));
     }
 
     private bool AddPartComplete(EntityUid body, EntityUid surgery)
@@ -848,7 +857,7 @@ public abstract partial class SharedSurgerySystem
             return false;
 
         if (HasComp<SurgeryAffixPartStepComponent>(stepEnt)
-            && !AffixPartComplete(part))
+            && !AffixPartComplete(body, part, surgery))
             return false;
 
         if (HasComp<SurgeryRemovePartStepComponent>(stepEnt)

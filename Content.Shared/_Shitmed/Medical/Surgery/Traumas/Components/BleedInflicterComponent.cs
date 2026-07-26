@@ -1,3 +1,8 @@
+// SPDX-FileCopyrightText: 2026 Maciej Walendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 maciejwalendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.FixedPoint;
 using Robust.Shared.GameStates;
 
@@ -38,13 +43,12 @@ public sealed partial class BleedInflicterComponent : Component
     public FixedPoint2 ScalingSpeed = FixedPoint2.New(1);
 
     [ViewVariables(VVAccess.ReadOnly), AutoNetworkedField]
-    public FixedPoint2 SeverityPenalty = FixedPoint2.New(1);
-
-    [ViewVariables(VVAccess.ReadOnly), AutoNetworkedField]
     public FixedPoint2 Scaling = FixedPoint2.New(1);
 
     [DataField, ViewVariables(VVAccess.ReadOnly), AutoNetworkedField]
-    public FixedPoint2 ScalingLimit = FixedPoint2.New(1.4);
+    public FixedPoint2 ScalingLimit = DefaultScalingLimit;
+
+    public static readonly FixedPoint2 DefaultScalingLimit = FixedPoint2.New(1.4);
 
     [ViewVariables(VVAccess.ReadOnly), AutoNetworkedField]
     public Dictionary<string, (int Priority, bool CanBleed)> BleedingModifiers = new();

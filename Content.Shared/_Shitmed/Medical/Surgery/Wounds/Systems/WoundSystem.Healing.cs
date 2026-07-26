@@ -1,3 +1,8 @@
+// SPDX-FileCopyrightText: 2026 Maciej Walendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 maciejwalendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Linq;
 using Content.Shared._Shitmed.Medical.Surgery.Traumas.Components;
 using Content.Shared._Shitmed.Medical.Surgery.Wounds.Components;
@@ -12,8 +17,11 @@ public sealed partial class WoundSystem
 {
     private void ProcessHealing(Entity<WoundableComponent> ent)
     {
+        // perWound: BleedingTreatmentAbility is a per-tick rate the limb applies to each wound it
+        // holds, unlike an item's bloodlossModifier which is one budget spent across the limb.
+        // Splitting it would silently slow natural bleed recovery in proportion to wound count.
         if (ent.Comp.CanHealBleeds)
-            TryHealBleedingWounds(ent, ent.Comp.BleedingTreatmentAbility, out _, ent.Comp);
+            TryHealBleedingWounds(ent, ent.Comp.BleedingTreatmentAbility, out _, ent.Comp, perWound: true);
 
         if (ent.Comp.CanHealDamage
             && TryHealWoundsOnWoundable(ent, ent.Comp.HealAbility, out _, out var healedByType, ent.Comp)
@@ -48,6 +56,7 @@ public sealed partial class WoundSystem
 
             bleeds.BleedingAmountRaw = FixedPoint2.Zero;
             bleeds.Scaling = FixedPoint2.Zero;
+            bleeds.ScalingLimit = BleedInflicterComponent.DefaultScalingLimit;
             bleeds.IsBleeding = false;
             Dirty(wound, bleeds);
             haltedAny = true;
@@ -57,29 +66,54 @@ public sealed partial class WoundSystem
         return haltedAny;
     }
 
-    public bool TryHealBleedingWounds(EntityUid woundable, FixedPoint2 bleedStopAbility, out FixedPoint2 healed, WoundableComponent? component = null)
+    /// <param name="perWound">
+    ///     Give every wound the full <paramref name="bleedStopAbility"/> instead of splitting one
+    ///     budget across them. For the passive regeneration tick, which is a rate the limb sustains
+    ///     against each wound, not a consumable an item spends on the limb as a whole.
+    /// </param>
+    public bool TryHealBleedingWounds(EntityUid woundable,
+        FixedPoint2 bleedStopAbility,
+        out FixedPoint2 healed,
+        WoundableComponent? component = null,
+        bool perWound = false)
     {
         healed = FixedPoint2.Zero;
 
         if (!Resolve(woundable, ref component) || component.Bleeds <= FixedPoint2.Zero || bleedStopAbility <= FixedPoint2.Zero)
             return false;
 
+        var remaining = bleedStopAbility;
         foreach (var wound in GetWoundableWounds(woundable, component).ToList())
         {
+            if (perWound)
+                remaining = bleedStopAbility;
+
+            if (remaining <= FixedPoint2.Zero)
+                break;
+
             if (!TryComp<BleedInflicterComponent>(wound, out var bleeds) || !bleeds.IsBleeding)
                 continue;
 
-            if (bleedStopAbility >= bleeds.BleedingAmount)
+            var bleedingAmount = bleeds.BleedingAmount;
+            if (remaining >= bleedingAmount)
             {
-                healed += bleeds.BleedingAmount;
+                remaining -= bleedingAmount;
+                healed += bleedingAmount;
                 bleeds.BleedingAmountRaw = FixedPoint2.Zero;
                 bleeds.IsBleeding = false;
                 bleeds.Scaling = FixedPoint2.Zero;
+                bleeds.ScalingLimit = BleedInflicterComponent.DefaultScalingLimit;
             }
             else
             {
-                bleeds.BleedingAmountRaw -= bleedStopAbility;
-                healed += bleedStopAbility;
+                var rawDelta = remaining / bleeds.Scaling;
+
+                if (rawDelta <= FixedPoint2.Zero)
+                    rawDelta = FixedPoint2.New(0.01);
+
+                bleeds.BleedingAmountRaw -= rawDelta;
+                healed += remaining;
+                remaining = FixedPoint2.Zero;
             }
 
             Dirty(wound, bleeds);

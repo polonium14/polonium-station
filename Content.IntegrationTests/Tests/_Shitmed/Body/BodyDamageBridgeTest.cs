@@ -1,3 +1,8 @@
+// SPDX-FileCopyrightText: 2026 Maciej Walendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 maciejwalendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Linq;
 using System.Numerics;
 using Content.IntegrationTests.Fixtures;
@@ -175,7 +180,7 @@ public sealed class BodyDamageBridgeTest : GameTest
                 Assert.That(painInflicter.RawPain, Is.EqualTo(FixedPoint2.New(10)));
 
                 var nerveSystem = sEntMan.GetComponent<NerveSystemComponent>(brain);
-                Assert.That(nerveSystem.Pain, Is.EqualTo(FixedPoint2.New(17.4)));
+                Assert.That(nerveSystem.Pain, Is.EqualTo(FixedPoint2.New(8.7)));
 
                 // Consciousness: pain should have registered as a negative consciousness
                 // modifier on the mob, pulling its computed Consciousness value down from Cap
@@ -183,8 +188,8 @@ public sealed class BodyDamageBridgeTest : GameTest
                 // -nerveSys.Pain).
                 var consciousness = sEntMan.GetComponent<ConsciousnessComponent>(victim);
                 Assert.That(consciousness.Modifiers, Does.ContainKey((brain, "WoundPain")));
-                Assert.That(consciousness.Modifiers[(brain, "WoundPain")].Change, Is.EqualTo(FixedPoint2.New(-17.4)));
-                Assert.That(consciousness.Consciousness, Is.EqualTo(consciousness.Cap - FixedPoint2.New(17.4)));
+                Assert.That(consciousness.Modifiers[(brain, "WoundPain")].Change, Is.EqualTo(FixedPoint2.New(-8.7)));
+                Assert.That(consciousness.Consciousness, Is.EqualTo(consciousness.Cap - FixedPoint2.New(8.7)));
             });
         });
 
@@ -210,10 +215,10 @@ public sealed class BodyDamageBridgeTest : GameTest
                 Assert.That(woundComp.DamageType.Id, Is.EqualTo("Blunt"));
 
                 var nerveSystem = cEntMan.GetComponent<NerveSystemComponent>(clientBrain);
-                Assert.That(nerveSystem.Pain, Is.EqualTo(FixedPoint2.New(17.4)));
+                Assert.That(nerveSystem.Pain, Is.EqualTo(FixedPoint2.New(8.7)));
 
                 var consciousness = cEntMan.GetComponent<ConsciousnessComponent>(clientVictim);
-                Assert.That(consciousness.Consciousness, Is.EqualTo(consciousness.Cap - FixedPoint2.New(17.4)));
+                Assert.That(consciousness.Consciousness, Is.EqualTo(consciousness.Cap - FixedPoint2.New(8.7)));
             });
         });
     }

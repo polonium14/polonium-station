@@ -1,3 +1,8 @@
+// SPDX-FileCopyrightText: 2026 Maciej Walendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 maciejwalendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Linq;
 using System.Numerics;
 using Content.IntegrationTests.Fixtures;
@@ -27,6 +32,7 @@ namespace Content.IntegrationTests.Tests._Shitmed.Body;
 public sealed class WoundVisibilityTest : GameTest
 {
     private static readonly ProtoId<DamageTypePrototype> BluntDamageType = "Blunt";
+    private static readonly ProtoId<DamageTypePrototype> PiercingDamageType = "Piercing";
 
     [TestPrototypes]
     private const string Prototypes = @"
@@ -113,7 +119,7 @@ public sealed class WoundVisibilityTest : GameTest
 
         await server.WaitPost(() =>
         {
-            var proto = sProtoMan.Index(BluntDamageType);
+            var proto = sProtoMan.Index(PiercingDamageType);
             sDamageable.TryChangeDamage(organ, new DamageSpecifier(proto, FixedPoint2.New(20)), ignoreResistances: true, origin: attacker);
         });
 
