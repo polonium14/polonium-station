@@ -84,9 +84,10 @@ public sealed partial class WoundableComponent : Component
     public FixedPoint2 Bleeds;
 
     /// <summary>
-    /// How much bleeding will be treated per tick. Only applies while <see cref="CanHealBleeds"/>,
-    /// i.e. minor bleeding - heavy bleeding (at or above <see cref="BleedsThreshold"/>) never
-    /// closes on its own.
+    /// How much bleeding will be treated per tick on each wound this limb holds - unlike
+    /// <see cref="HealAbility"/> it is not shared between them, so recovery does not slow down as
+    /// bleeders accumulate. Only applies while <see cref="CanHealBleeds"/>, i.e. minor bleeding -
+    /// heavy bleeding (at or above <see cref="BleedsThreshold"/>) never closes on its own.
     /// </summary>
     [ViewVariables, DataField]
     public FixedPoint2 BleedingTreatmentAbility = 0.05f;
