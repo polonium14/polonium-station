@@ -51,7 +51,7 @@ namespace Content.Server.Doors.Systems
 
             // blackout must not drop bolts
             if (args.Powered && _boltControlQuery.TryComp(uid, out var boltControl))
-                _firelockBolts.UpdateHazardBolts((uid, boltControl), component);
+                _firelockBolts.RefreshAlarmBolts((uid, boltControl));
         }
 
         public override void Update(float frameTime)

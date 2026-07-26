@@ -89,15 +89,6 @@ public sealed partial class FirelockBoltControlSystem : SharedFirelockBoltContro
     private void ApplyAlarmState(Entity<FirelockBoltControlComponent> ent, AtmosAlarmType alarmType)
     {
         var alarmActive = alarmType == AtmosAlarmType.Danger;
-
-        if (!alarmActive
-            && TryComp<FirelockComponent>(ent.Owner, out var firelock)
-            && !firelock.Powered)
-        {
-            PushState(ent);
-            return;
-        }
-
         if (ent.Comp.AlarmActive != alarmActive)
         {
             ent.Comp.AlarmActive = alarmActive;
@@ -108,5 +99,17 @@ public sealed partial class FirelockBoltControlSystem : SharedFirelockBoltContro
             UpdateHazardBolts(ent);
 
         PushState(ent);
+    }
+
+    public void RefreshAlarmBolts(Entity<FirelockBoltControlComponent> ent)
+    {
+        var alarmType = AtmosAlarmType.Normal;
+        if (_alarmableQuery.TryComp(ent.Owner, out var alarmable)
+            && alarmable.LastAlarmState != AtmosAlarmType.Invalid)
+        {
+            alarmType = alarmable.LastAlarmState;
+        }
+
+        ApplyAlarmState(ent, alarmType);
     }
 }
