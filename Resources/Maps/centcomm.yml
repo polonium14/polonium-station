@@ -44357,37 +44357,12 @@ entities:
     - type: Transform
       pos: -3.598611,-0.49923915
       parent: 1668
-- proto: PhoneInstrument
+- proto: CallablePhoneInstrumentCentComm
   entities:
   - uid: 1384
     components:
     - type: Transform
       pos: 0.51263905,1.1600976
-      parent: 1668
-  - uid: 2029
-    components:
-    - type: Transform
-      pos: 28.45356,27.588108
-      parent: 1668
-  - uid: 2849
-    components:
-    - type: Transform
-      pos: -16.54149,11.627905
-      parent: 1668
-  - uid: 4764
-    components:
-    - type: Transform
-      pos: -3.5407324,-49.447086
-      parent: 1668
-  - uid: 6763
-    components:
-    - type: Transform
-      pos: -44.811134,-4.457982
-      parent: 1668
-  - uid: 9609
-    components:
-    - type: Transform
-      pos: -36.167408,11.646058
       parent: 1668
 - proto: PlaqueAtmos
   entities:
