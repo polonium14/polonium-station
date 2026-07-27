@@ -22,9 +22,21 @@ public sealed partial class AnimatedEmotesSystem : EntitySystem
         SubscribeLocalEvent<AnimatedEmotesComponent, AnimationJumpEmoteEvent>(OnJump);
     }
 
-    // Animations writing the same sprite property share a key, so they can never fight over it.
+    // One key per sprite property an emote writes, so emotes touching different properties can overlap.
     private const string RotationAnimationKey = "emoteAnimRotation";
     private const string OffsetAnimationKey = "emoteAnimOffset";
+
+    // Spin cycles the sprite's facing rather than rotating it, so it can't use the animation player.
+    private static readonly Direction[] SpinDirections =
+    {
+        Direction.West,
+        Direction.North,
+        Direction.East,
+        Direction.South,
+    };
+
+    private const int SpinSteps = 8;
+    private const float SpinStepTime = 0.075f;
 
     public void PlayEmote(EntityUid uid, Animation anim, string animationKey)
     {
@@ -76,38 +88,41 @@ public sealed partial class AnimatedEmotesSystem : EntitySystem
     }
     private void OnSpin(Entity<AnimatedEmotesComponent> ent, ref AnimationSpinEmoteEvent args)
     {
-        if (!TryComp<SpriteComponent>(ent, out var sprite))
+        // Mobs are noRot, so rotating them draws nothing. Step the sprite through its four facings
+        // instead, which is what a spin is supposed to look like.
+        if (!TryComp<SpriteComponent>(ent, out var sprite) || HasComp<SpinningEmoteComponent>(ent))
             return;
 
-        // Mobs are noRot, so LocalRotation is dropped from the render matrix and only picks the
-        // RSI direction. Spin the sprite instead, same as flip.
-        var startRot = sprite.Rotation;
-        var a = new Animation
+        var spin = AddComp<SpinningEmoteComponent>(ent);
+        spin.PreviousDirection = sprite.DirectionOverride;
+        spin.PreviousEnabled = sprite.EnableDirectionOverride;
+
+        sprite.DirectionOverride = SpinDirections[0];
+        sprite.EnableDirectionOverride = true;
+    }
+
+    public override void FrameUpdate(float frameTime)
+    {
+        var query = EntityQueryEnumerator<SpinningEmoteComponent, SpriteComponent>();
+        while (query.MoveNext(out var uid, out var spin, out var sprite))
         {
-            Length = TimeSpan.FromMilliseconds(600),
-            AnimationTracks =
+            spin.Accumulator += frameTime;
+            if (spin.Accumulator < SpinStepTime)
+                continue;
+
+            spin.Accumulator -= SpinStepTime;
+            spin.Step++;
+
+            if (spin.Step >= SpinSteps)
             {
-                new AnimationTrackComponentProperty
-                {
-                    ComponentType = typeof(SpriteComponent),
-                    Property = nameof(SpriteComponent.Rotation),
-                    InterpolationMode = AnimationInterpolationMode.Linear,
-                    KeyFrames =
-                    {
-                        new AnimationTrackProperty.KeyFrame(startRot, 0f),
-                        new AnimationTrackProperty.KeyFrame(startRot + Angle.FromDegrees(90), 0.075f),
-                        new AnimationTrackProperty.KeyFrame(startRot + Angle.FromDegrees(180), 0.075f),
-                        new AnimationTrackProperty.KeyFrame(startRot + Angle.FromDegrees(270), 0.075f),
-                        new AnimationTrackProperty.KeyFrame(startRot + Angle.FromDegrees(360), 0.075f),
-                        new AnimationTrackProperty.KeyFrame(startRot + Angle.FromDegrees(450), 0.075f),
-                        new AnimationTrackProperty.KeyFrame(startRot + Angle.FromDegrees(540), 0.075f),
-                        new AnimationTrackProperty.KeyFrame(startRot + Angle.FromDegrees(630), 0.075f),
-                        new AnimationTrackProperty.KeyFrame(startRot + Angle.FromDegrees(720), 0.075f),
-                    }
-                }
+                sprite.DirectionOverride = spin.PreviousDirection;
+                sprite.EnableDirectionOverride = spin.PreviousEnabled;
+                RemCompDeferred<SpinningEmoteComponent>(uid);
+                continue;
             }
-        };
-        PlayEmote(ent, a, RotationAnimationKey);
+
+            sprite.DirectionOverride = SpinDirections[spin.Step % SpinDirections.Length];
+        }
     }
     private void OnJump(Entity<AnimatedEmotesComponent> ent, ref AnimationJumpEmoteEvent args)
     {
