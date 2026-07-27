@@ -89,8 +89,10 @@ public sealed partial class CrewManifestCartridgeSystem : EntitySystem
         {
             if (_unsecureViewersAllowed)
             {
-                _cartridgeLoader.InstallProgram((loaderUid, comp), CartridgePrototypeName, false);
-                return;
+                if (!_cartridgeLoader.HasProgram<CrewManifestCartridgeComponent>((loaderUid, comp)))
+                    _cartridgeLoader.InstallProgram((loaderUid, comp), CartridgePrototypeName, false);
+
+                continue;
             }
 
             if (_cartridgeLoader.TryGetProgram<CrewManifestCartridgeComponent>((loaderUid, comp)) is { } program)
