@@ -1,13 +1,4 @@
 ﻿Entries:
-- author: aada
-  changes:
-  - message: New tiny and cute vials that hold 10 units.
-    type: Add
-  - message: Vials can now be closed to avoid spilling.
-    type: Tweak
-  id: 9406
-  time: '2026-01-15T19:00:27.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/36132
 - author: ScarKy0
   changes:
   - message: Added the Paper Centrifuge! A craftable, makeshift centrifudge primarly
@@ -4129,3 +4120,10 @@
   id: 9906
   time: '2026-07-27T14:09:23.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/838
+- author: haze
+  changes:
+  - message: "Naprawiono kartrid\u017Ce PDA (w tym manifest za\u0142ogi)"
+    type: Fix
+  id: 9907
+  time: '2026-07-27T15:31:06.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/832
