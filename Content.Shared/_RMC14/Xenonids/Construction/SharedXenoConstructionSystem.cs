@@ -160,9 +160,13 @@ public sealed partial class SharedXenoConstructionSystem : EntitySystem
             return;
 
         var coordinates = GetCoordinates(args.Coordinates);
-        if (!coordinates.IsValid(EntityManager) ||
-            !xeno.Comp.CanBuild.Contains(args.StructureId) ||
-            !CanSecreteOnTile(xeno, coordinates, args.StructureId, checkPlasma: false))
+        if (!coordinates.IsValid(EntityManager))
+            return;
+
+        if (!xeno.Comp.CanBuild.Contains(args.StructureId))
+            return;
+
+        if (!CanSecreteOnTile(xeno, coordinates, args.StructureId, checkPlasma: false))
             return;
 
         if (GetStructurePlasmaCost(args.StructureId) is { } cost &&

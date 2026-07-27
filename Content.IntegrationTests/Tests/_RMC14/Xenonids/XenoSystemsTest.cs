@@ -117,6 +117,10 @@ public sealed class XenoSystemsTest : GameTest
 
         await Pair.Server.WaitPost(() =>
         {
+            // CreateTestMap only tiles (0,0) - need plating next door so weeds can anchor
+            var mapSys = SEntMan.System<SharedMapSystem>();
+            mapSys.SetTile(map.Grid, buildCoords, map.Tile.Tile);
+
             var drone = SSpawnAtPosition("CMXenoDrone", droneCoords);
             SSpawnAtPosition("XenoWeeds", buildCoords);
 
