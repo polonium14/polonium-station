@@ -29,6 +29,7 @@
 // SPDX-FileCopyrightText: 2026 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2026 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
 // SPDX-FileCopyrightText: 2026 Winkarst-cpu <74284083+Winkarst-cpu@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 maciejwalendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2026 taydeo <tay@funkystation.org>
 // SPDX-FileCopyrightText: 2026 taydeo <td12233a@gmail.com>
 //
@@ -280,6 +281,12 @@ namespace Content.Server.Voting.Managers
 
             vote.OnFinished += (_, args) =>
             {
+                if (vote.CastVotes.Count == 0)
+                {
+                    _adminLogger.Add(LogType.Vote, LogImpact.Low, $"Preset vote finished with no votes cast; keeping current preset.");
+                    return;
+                }
+
                 string picked;
                 if (args.Winner == null)
                 {
@@ -327,6 +334,12 @@ namespace Content.Server.Voting.Managers
 
             vote.OnFinished += (_, args) =>
             {
+                if (vote.CastVotes.Count == 0)
+                {
+                    _adminLogger.Add(LogType.Vote, LogImpact.Low, $"Map vote finished with no votes cast; keeping current map.");
+                    return;
+                }
+
                 GameMapPrototype picked;
                 if (args.Winner == null)
                 {
