@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-NC-3.0",
-  "copyright": "vectorassembly, edit to paramedic by RosySaturniidae | pda-syndi-commander/corpsman/operative by Archee1 (Github) and pda-ninja by ThatGuyUSA (Github), taken from tgstation at https://github.com/tgstation/tgstation/commit/59f2a4e10e5ba36033c9734ddebfbbdc6157472d (CC-BY-SA-3.0) | pda-seniorcourier from the same tgstation-derived set (CC-BY-SA-3.0)",
+  "copyright": "vectorassembly, edit to paramedic by RosySaturniidae. The following states are NOT covered by the license declared above and remain CC-BY-SA-3.0: pda-syndi-commander, pda-syndi-corpsman, pda-syndi-operative by Archee1 (Github), pda-ninja by ThatGuyUSA (Github), pda-seniorcourier from tgstation at https://github.com/tgstation/tgstation/commit/59f2a4e10e5ba36033c9734ddebfbbdc6157472d",
   "size": {
     "x": 32,
     "y": 32
