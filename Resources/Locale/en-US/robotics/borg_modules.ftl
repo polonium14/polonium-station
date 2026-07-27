@@ -12,6 +12,7 @@ borg-slot-soap-empty = Soap
 borg-slot-instruments-empty = Instruments
 borg-slot-beakers-empty = Beakers
 borg-slot-brains-empty = Brains and MMIs
+borg-slot-organs-empty = Organs and limbs
 borg-slot-modules-empty = Modules
 borg-slot-powercell-empty = Powercells
 borg-slot-inflatable-door-empty = Inflatable Door
