@@ -101,7 +101,7 @@ delivery-spam-centcomm-retribution = [color=red] TO JEST OFICALNE ZAWIADOMIENIE 
     Szanowny Panie, Pani lub Inny Nieistotny personelu stacji
 
     Jeśli nie życzysz sobie, aby ta stacja została uznana za Nierentowną w oczach
-    { "[head=2][italic] Naszego Wielkiego i Wspaniałego [color=blue]Nanotransen[[/color][/head]" }
+    { "[head=2][italic] Naszego Wielkiego i Wspaniałego [color=blue]Nanotransen[/color][/italic][/head]" }
     To musisz zorganizować wysyłkę trzech [color=blue]Nt[/color] Standardowych Stosów [color=blue]nt[/color] Standardowych Sztabek Złota do Odległych Placówek Handlowych twojej stacji w ciągu 5 [color=blue]nT[/color] Standardowych zmian roboczych.
 
     { "[head=2][color=red]ZIGNORUJ TO POLECENIE NA RYZYKO ODWETU ZE STRONY [color=green]CENTCO[/color]!!!!![/head][/color]" }
@@ -201,7 +201,7 @@ delivery-spam-parents-need-money = [bold]Witaj Dziecko,[/bold]
     jeśli nie dostaniemy tych pieniędzy w 10 dni, to rzond zabierze nam dom rodzinny i będziemy bezdomni.
 
     { "[bold]dziękujemy i kochamy cię,[/bold]" }
-    { "[italic]rodzice[/italics]" }
+    { "[italic]rodzice[/italic]" }
 delivery-spam-voyage-advertisement = [head=2]Dołącz do nas w dziewiczym rejsie...[/head]
 
          ░█▀▀░█▀▀░░░█▀▄░█▀▀░█░░░█▀█░█░█░█▀█░█▀▄
@@ -320,7 +320,7 @@ delivery-spam-6 =   ZAWIADOMIENIE OD NANOTRASN!!
                     Szanowny Panie, Pani lub Inny Nieistotny personelu stacji
 
                     Jeśli nie życzysz sobie, aby ta stacja została uznana za Nierentowną w oczach
-                    {"[head=2][italic] Naszego Wielkiego i Wspaniałego [color=blue]Nanotransen[[/color][/head]"}
+                    {"[head=2][italic] Naszego Wielkiego i Wspaniałego [color=blue]Nanotransen[/color][/italic][/head]"}
                     To musisz zorganizować wysyłkę trzech [color=blue]Nt[/color] Standardowych Stosów [color=blue]nt[/color] Standardowych Sztabek Złota do Odległych Placówek Handlowych twojej stacji w ciągu 5 [color=blue]nT[/color] Standardowych zmian roboczych.
 
                     {"[head=2][color=red]ZIGNORUJ TO POLECENIE NA RYZYKO ODWETU ZE STRONY [color=green]CENTCO[/color]!!!!![/head][/color]"}
