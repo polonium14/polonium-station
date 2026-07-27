@@ -93,6 +93,7 @@
   - type: MindContainer
   - type: RequireProjectileTarget
     active: False
+  - type: AnimatedEmotes # Goobstation - animated emotes
   - type: Sprinter
 
 # The progenitor. This should only container the most basic components possible.

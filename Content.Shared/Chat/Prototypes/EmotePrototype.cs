@@ -68,6 +68,14 @@ public sealed partial class EmotePrototype : IPrototype
     /// </summary>
     [DataField]
     public HashSet<string> ChatTriggers = new();
+
+    // Goobstation - animated emotes
+    /// <summary>
+    ///     Event raised on the emoting entity when the emote activates.
+    ///     Used by animated emotes (flip, spin, jump) to drive client-side animations.
+    /// </summary>
+    [DataField]
+    public object? Event = null;
 }
 
 /// <summary>
