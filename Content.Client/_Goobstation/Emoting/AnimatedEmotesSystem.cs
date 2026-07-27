@@ -4,11 +4,10 @@ using Content.Shared.Emoting;
 using Robust.Client.Animations;
 using Robust.Client.GameObjects;
 using Robust.Shared.Animations;
-using Robust.Shared.GameStates;
 
 namespace Content.Client.Emoting;
 
-public sealed partial class AnimatedEmotesSystem : SharedAnimatedEmotesSystem
+public sealed partial class AnimatedEmotesSystem : EntitySystem
 {
     [Dependency] private AnimationPlayerSystem _anim = default!;
 
@@ -16,7 +15,7 @@ public sealed partial class AnimatedEmotesSystem : SharedAnimatedEmotesSystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<AnimatedEmotesComponent, ComponentHandleState>(OnHandleState);
+        SubscribeNetworkEvent<AnimatedEmoteEvent>(OnAnimatedEmote);
 
         SubscribeLocalEvent<AnimatedEmotesComponent, AnimationFlipEmoteEvent>(OnFlip);
         SubscribeLocalEvent<AnimatedEmotesComponent, AnimationSpinEmoteEvent>(OnSpin);
@@ -35,14 +34,16 @@ public sealed partial class AnimatedEmotesSystem : SharedAnimatedEmotesSystem
         _anim.Play(uid, anim, animationKey);
     }
 
-    private void OnHandleState(EntityUid uid, AnimatedEmotesComponent component, ref ComponentHandleState args)
+    private void OnAnimatedEmote(AnimatedEmoteEvent ev)
     {
-        if (args.Current is not AnimatedEmotesComponentState state
-        || !ProtoMan.TryIndex<EmotePrototype>(state.Emote, out var emote))
+        if (!TryGetEntity(ev.Entity, out var uid)
+        || !HasComp<AnimatedEmotesComponent>(uid)
+        || !ProtoMan.TryIndex(ev.Emote, out var emote)
+        || emote.Event == null)
             return;
 
-        if (emote.Event != null)
-            RaiseLocalEvent(uid, emote.Event);
+        // Cast keeps dispatch on the runtime type, so the right animation handler is picked.
+        RaiseLocalEvent(uid.Value, (object) emote.Event);
     }
 
     private void OnFlip(Entity<AnimatedEmotesComponent> ent, ref AnimationFlipEmoteEvent args)

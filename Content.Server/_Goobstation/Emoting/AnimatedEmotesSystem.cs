@@ -1,11 +1,12 @@
 using Content.Shared.Chat;
 using Content.Shared.Chat.Prototypes;
 using Content.Shared.Emoting;
+using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server.Emoting;
 
-public sealed partial class AnimatedEmotesSystem : SharedAnimatedEmotesSystem
+public sealed partial class AnimatedEmotesSystem : EntitySystem
 {
     public override void Initialize()
     {
@@ -16,12 +17,15 @@ public sealed partial class AnimatedEmotesSystem : SharedAnimatedEmotesSystem
 
     private void OnEmote(EntityUid uid, AnimatedEmotesComponent component, ref EmoteEvent args)
     {
-        PlayEmoteAnimation(uid, component, args.Emote.ID);
+        // Every emote in the game raises this, but only a handful animate.
+        if (args.Emote.Event == null)
+            return;
+
+        PlayEmoteAnimation(uid, args.Emote.ID);
     }
 
-    public void PlayEmoteAnimation(EntityUid uid, AnimatedEmotesComponent component, ProtoId<EmotePrototype> prot)
+    public void PlayEmoteAnimation(EntityUid uid, ProtoId<EmotePrototype> prot)
     {
-        component.Emote = prot;
-        Dirty(uid, component);
+        RaiseNetworkEvent(new AnimatedEmoteEvent(GetNetEntity(uid), prot), Filter.Pvs(uid));
     }
 }
