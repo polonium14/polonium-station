@@ -23,7 +23,11 @@ public sealed partial class AnimatedEmotesSystem : SharedAnimatedEmotesSystem
         SubscribeLocalEvent<AnimatedEmotesComponent, AnimationJumpEmoteEvent>(OnJump);
     }
 
-    public void PlayEmote(EntityUid uid, Animation anim, string animationKey = "emoteAnimKeyId")
+    // Animations writing the same sprite property share a key, so they can never fight over it.
+    private const string RotationAnimationKey = "emoteAnimRotation";
+    private const string OffsetAnimationKey = "emoteAnimOffset";
+
+    public void PlayEmote(EntityUid uid, Animation anim, string animationKey)
     {
         if (_anim.HasRunningAnimation(uid, animationKey))
             return;
@@ -43,6 +47,11 @@ public sealed partial class AnimatedEmotesSystem : SharedAnimatedEmotesSystem
 
     private void OnFlip(Entity<AnimatedEmotesComponent> ent, ref AnimationFlipEmoteEvent args)
     {
+        if (!TryComp<SpriteComponent>(ent, out var sprite))
+            return;
+
+        // Offset from the current rotation, otherwise a downed mob ends up standing upright.
+        var startRot = sprite.Rotation;
         var a = new Animation
         {
             Length = TimeSpan.FromMilliseconds(500),
@@ -55,14 +64,14 @@ public sealed partial class AnimatedEmotesSystem : SharedAnimatedEmotesSystem
                     InterpolationMode = AnimationInterpolationMode.Linear,
                     KeyFrames =
                     {
-                        new AnimationTrackProperty.KeyFrame(Angle.Zero, 0f),
-                        new AnimationTrackProperty.KeyFrame(Angle.FromDegrees(180), 0.25f),
-                        new AnimationTrackProperty.KeyFrame(Angle.FromDegrees(360), 0.25f),
+                        new AnimationTrackProperty.KeyFrame(startRot, 0f),
+                        new AnimationTrackProperty.KeyFrame(startRot + Angle.FromDegrees(180), 0.25f),
+                        new AnimationTrackProperty.KeyFrame(startRot + Angle.FromDegrees(360), 0.25f),
                     }
                 }
             }
         };
-        PlayEmote(ent, a);
+        PlayEmote(ent, a, RotationAnimationKey);
     }
     private void OnSpin(Entity<AnimatedEmotesComponent> ent, ref AnimationSpinEmoteEvent args)
     {
@@ -95,6 +104,11 @@ public sealed partial class AnimatedEmotesSystem : SharedAnimatedEmotesSystem
     }
     private void OnJump(Entity<AnimatedEmotesComponent> ent, ref AnimationJumpEmoteEvent args)
     {
+        if (!TryComp<SpriteComponent>(ent, out var sprite))
+            return;
+
+        // Offset from the current offset, otherwise this cancels jittering and stun shakes.
+        var startOffset = sprite.Offset;
         var a = new Animation
         {
             Length = TimeSpan.FromMilliseconds(250),
@@ -107,13 +121,13 @@ public sealed partial class AnimatedEmotesSystem : SharedAnimatedEmotesSystem
                     InterpolationMode = AnimationInterpolationMode.Cubic,
                     KeyFrames =
                     {
-                        new AnimationTrackProperty.KeyFrame(Vector2.Zero, 0f),
-                        new AnimationTrackProperty.KeyFrame(new Vector2(0, .35f), 0.125f),
-                        new AnimationTrackProperty.KeyFrame(Vector2.Zero, 0.125f),
+                        new AnimationTrackProperty.KeyFrame(startOffset, 0f),
+                        new AnimationTrackProperty.KeyFrame(startOffset + new Vector2(0, .35f), 0.125f),
+                        new AnimationTrackProperty.KeyFrame(startOffset, 0.125f),
                     }
                 }
             }
         };
-        PlayEmote(ent, a);
+        PlayEmote(ent, a, OffsetAnimationKey);
     }
 }
