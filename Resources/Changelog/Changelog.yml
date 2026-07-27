@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: Orsoniks
-  changes:
-  - message: Health examine colours now reflect the medicines used to heal that type
-      of damage.
-    type: Tweak
-  id: 9405
-  time: '2026-01-15T18:42:32.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/38231
 - author: aada
   changes:
   - message: New tiny and cute vials that hold 10 units.
@@ -4130,3 +4122,10 @@
   id: 9905
   time: '2026-07-27T12:15:58.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/835
+- author: haze
+  changes:
+  - message: Naprawiono generowanie losowych imion ERT
+    type: Fix
+  id: 9906
+  time: '2026-07-27T14:09:23.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/838
