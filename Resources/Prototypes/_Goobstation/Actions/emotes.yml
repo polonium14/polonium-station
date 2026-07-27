@@ -1,6 +1,8 @@
 - type: emote
   id: Flip
   name: chat-emote-name-flip
+  category: General
+  icon: Interface/VerbIcons/flip.svg.192dpi.png
   blacklist:
     components:
       - PAI
@@ -8,16 +10,19 @@
   chatTriggers:
   - flip
   - flips
-  - flips.
-  - flips!
   - does a flip
-  - does a flip.
-  - does a flip!
+  - salto
+  - robi salto
+  - zrobił salto
+  - zrobiła salto
+  - fika koziołka
   event: !type:AnimationFlipEmoteEvent
 
 - type: emote
   id: Spin
   name: chat-emote-name-spin
+  category: General
+  icon: Interface/VerbIcons/rotate_cw.svg.192dpi.png
   blacklist:
     components:
       - PAI
@@ -25,13 +30,19 @@
   chatTriggers:
   - spin
   - spins
-  - spins.
-  - spins!
+  - kręci się
+  - obraca się
+  - zakręcił się
+  - zakręciła się
   event: !type:AnimationSpinEmoteEvent
 
 - type: emote
   id: Jump
   name: chat-emote-name-jump
+  category: General
+  icon:
+    sprite: Interface/Actions/jump.rsi
+    state: icon
   blacklist:
     components:
       - PAI
@@ -39,6 +50,10 @@
   chatTriggers:
   - jump
   - jumps
-  - jumps.
-  - jumps!
+  - skacze
+  - podskakuje
+  - skoczył
+  - skoczyła
+  - podskoczył
+  - podskoczyła
   event: !type:AnimationJumpEmoteEvent
