@@ -75,7 +75,7 @@ public sealed partial class EmotePrototype : IPrototype
     ///     Used by animated emotes (flip, spin, jump) to drive client-side animations.
     /// </summary>
     [DataField]
-    public object? Event = null;
+    public EntityEventArgs? Event = null;
 }
 
 /// <summary>
