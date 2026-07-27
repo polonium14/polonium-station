@@ -1,0 +1,63 @@
+- type: entity
+  parent: CMXenoDeveloped
+  id: CMXenoHivelord
+  name: Hivelord
+  description: A builder of really big hives.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Mobs/Xenonids/Hivelord/hivelord.rsi
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      550: Critical
+      650: Dead
+  - type: Xeno
+    tier: 2
+    unlockAt: 180
+    emoteSounds: XenoRoyal
+    actionIds:
+    - ActionXenoRest
+    - ActionXenoTailStab
+    - ActionXenoPlantWeeds
+    - ActionXenoChooseStructure
+    - ActionXenoSecreteStructure
+    - ActionXenoAcidNormal
+    - ActionXenoResinSurge
+    - ActionXenoPheromones
+  - type: XenoHeavy
+  - type: XenoAcid
+  - type: XenoResinSurge
+  - type: XenoTailStab
+  - type: XenoPheromones
+    pheromonesMultiplier: 2.5
+    pheroSuffix: hivelord
+  - type: Vocal
+    emoteSounds: XenoRoyal
+  - type: XenoPlasma
+    plasma: 1000
+    maxPlasma: 1000
+    plasmaRegenOnWeeds: 5.5
+  - type: XenoConstruction
+    buildDelay: 1
+    canUpgrade: true
+    canBuild:
+    - WallXenoResin
+    - WallXenoMembrane
+    - DoorXenoResin
+    - WallXenoResinThick
+    - WallXenoMembraneThick
+    - DoorXenoResinThick
+    - XenoStickyResin
+    - XenoFastResin
+    - XenoResinSpikes
+    - XenoAcidTurret
+  - type: XenoDevolve
+    devolvesTo:
+    - CMXenoDrone
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 1.66
+    baseSprintSpeed: 3
+  - type: MeleeWeapon
+    damage:
+      types:
+        Slash: 22

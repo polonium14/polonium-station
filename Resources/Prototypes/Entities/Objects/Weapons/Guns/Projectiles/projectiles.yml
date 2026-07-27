@@ -1009,7 +1009,7 @@
     - type: Projectile
       damage:
         types:
-          Caustic: 5
+          Caustic: 3.5 # Polonium: nerfed for xenos
     - type: Sprite
       sprite: Objects/Weapons/Guns/Projectiles/xeno_toxic.rsi
       layers:

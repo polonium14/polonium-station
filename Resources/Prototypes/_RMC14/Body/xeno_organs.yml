@@ -1,0 +1,66 @@
+- type: entity
+  parent: OrganBaseOrganic
+  id: OrganXenoBase
+  abstract: true
+  components:
+  - type: GibbableOrgan
+  - type: Sprite
+    sprite: _RMC14/Objects/Xeno/xeno_organs.rsi
+    state: heart_t1
+  - type: FlavorProfile
+    flavors:
+    - meaty
+    - acid
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: SulfuricAcid
+        Quantity: 10
+      - ReagentId: UncookedAnimalProteins
+        Quantity: 10
+
+- type: entity
+  parent: OrganXenoBase
+  id: OrganXenoHeart
+  name: acidic heart
+  description: An acidic heart torn from a xenomorph. It still twitches.
+  components:
+  - type: Organ
+    category: Heart
+  - type: Sprite
+    state: heart_t2
+  - type: Item
+    size: Small
+
+- type: entity
+  parent: OrganXenoBase
+  id: OrganXenoPlasmaVessel
+  name: plasma vessel
+  description: A pulsing organ that once stored xenomorph plasma.
+  components:
+  - type: Organ
+    category: Liver
+  - type: Sprite
+    state: heart_t1
+  - type: Item
+    size: Small
+
+- type: entity
+  parent: OrganXenoBase
+  id: OrganXenoAcidGland
+  name: acid gland
+  description: A swollen gland dripping with corrosive acid.
+  components:
+  - type: Organ
+    category: Stomach
+  - type: Sprite
+    state: heart_t3
+  - type: Item
+    size: Small
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: SulfuricAcid
+        Quantity: 25
+      - ReagentId: UncookedAnimalProteins
+        Quantity: 5

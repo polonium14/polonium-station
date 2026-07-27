@@ -1,0 +1,269 @@
+- type: entity
+  parent: BaseAction
+  id: ActionXenoTailStab
+  name: Tail Stab
+  description: Stab a nearby target with your tail.
+  components:
+  - type: Action
+    useDelay: 8
+    itemIconStyle: BigAction
+    icon:
+      sprite: _RMC14/Actions/xeno_actions.rsi
+      state: tail_attack
+  - type: TargetAction
+    range: 2.5
+    interactOnMiss: false
+  - type: EntityTargetAction
+    canTargetSelf: false
+    whitelist:
+      components:
+      - MobState
+    event: !type:XenoTailStabActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenoLeap
+  name: Leap
+  description: Leap toward a location and knock down nearby hosts.
+  components:
+  - type: Action
+    useDelay: 6
+    itemIconStyle: BigAction
+    icon:
+      sprite: _RMC14/Actions/xeno_actions.rsi
+      state: pounce
+  - type: TargetAction
+    range: 6
+    checkCanAccess: false
+  - type: WorldTargetAction
+    event: !type:XenoLeapActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenoSpit
+  name: Spit
+  description: Spit acid at a target location.
+  components:
+  - type: Action
+    useDelay: 2
+    itemIconStyle: BigAction
+    icon:
+      sprite: _RMC14/Actions/xeno_actions.rsi
+      state: xeno_spit
+  - type: TargetAction
+    range: 0
+    checkCanAccess: false
+  - type: WorldTargetAction
+    event: !type:XenoSpitActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenoCrest
+  name: Crest Defense
+  description: Lower your crest to reduce incoming damage and resist knockdown, at the cost of speed.
+  components:
+  - type: Action
+    useDelay: 1
+    itemIconStyle: BigAction
+    icon:
+      sprite: _RMC14/Actions/xeno_actions.rsi
+      state: crest_defense
+  - type: InstantAction
+    event: !type:XenoCrestActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenoFortify
+  name: Fortify
+  description: Dig in and become immobile. Greatly reduce damage taken; you cannot attack hosts.
+  components:
+  - type: Action
+    useDelay: 1
+    itemIconStyle: BigAction
+    icon:
+      sprite: _RMC14/Actions/xeno_actions.rsi
+      state: fortify
+  - type: InstantAction
+    event: !type:XenoFortifyActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenoHeadbutt
+  name: Headbutt
+  description: Charge into a target and knock them back.
+  components:
+  - type: Action
+    useDelay: 6
+    itemIconStyle: BigAction
+    icon:
+      sprite: _RMC14/Actions/xeno_actions.rsi
+      state: headbutt
+  - type: TargetAction
+    range: 5
+    interactOnMiss: false
+  - type: EntityTargetAction
+    canTargetSelf: false
+    whitelist:
+      components:
+      - MobState
+    event: !type:XenoHeadbuttActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenoTailSweep
+  name: Tail Sweep
+  description: Sweep your tail around you, knocking down nearby hosts.
+  components:
+  - type: Action
+    useDelay: 15
+    itemIconStyle: BigAction
+    icon:
+      sprite: _RMC14/Actions/xeno_actions.rsi
+      state: tail_sweep
+  - type: InstantAction
+    event: !type:XenoTailSweepActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenoCharge
+  name: Charge
+  description: Charge toward a location and smash through hosts.
+  components:
+  - type: Action
+    useDelay: 12
+    itemIconStyle: BigAction
+    icon:
+      sprite: _RMC14/Actions/xeno_actions.rsi
+      state: charge
+  - type: TargetAction
+    range: 8
+    checkCanAccess: false
+  - type: WorldTargetAction
+    event: !type:XenoChargeActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenoPunch
+  name: Punch
+  description: Punch a nearby host, knocking them back and slowing them.
+  components:
+  - type: Action
+    useDelay: 4
+    itemIconStyle: BigAction
+    icon:
+      sprite: _RMC14/Actions/xeno_actions.rsi
+      state: punch
+  - type: TargetAction
+    range: 1.5
+    interactOnMiss: false
+  - type: EntityTargetAction
+    canTargetSelf: false
+    whitelist:
+      components:
+      - MobState
+    event: !type:XenoPunchActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenoLunge
+  name: Lunge
+  description: Lunge at a target, stun them, and drag them to you.
+  components:
+  - type: Action
+    useDelay: 8
+    itemIconStyle: BigAction
+    icon:
+      sprite: _RMC14/Actions/xeno_actions.rsi
+      state: lunge
+  - type: TargetAction
+    range: 5
+    checkCanAccess: false
+    interactOnMiss: false
+  - type: EntityTargetAction
+    canTargetSelf: false
+    whitelist:
+      components:
+      - MobState
+    event: !type:XenoLungeActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenoFling
+  name: Fling
+  description: Fling a nearby host away, stunning and slowing them.
+  components:
+  - type: Action
+    useDelay: 8
+    itemIconStyle: BigAction
+    icon:
+      sprite: _RMC14/Actions/xeno_actions.rsi
+      state: fling
+  - type: TargetAction
+    range: 1.5
+    interactOnMiss: false
+  - type: EntityTargetAction
+    canTargetSelf: false
+    whitelist:
+      components:
+      - MobState
+    event: !type:XenoFlingActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenoInvisibility
+  name: Cloak
+  description: Cloak yourself from sight.
+  components:
+  - type: Action
+    useDelay: 5
+    itemIconStyle: BigAction
+    icon:
+      sprite: _RMC14/Actions/xeno_actions.rsi
+      state: lurker_invisibility
+  - type: InstantAction
+    event: !type:XenoInvisibilityActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenoScreech
+  name: Screech
+  description: Unleash a stunning screech.
+  components:
+  - type: Action
+    useDelay: 50
+    itemIconStyle: BigAction
+    icon:
+      sprite: _RMC14/Actions/xeno_actions.rsi
+      state: screech
+  - type: InstantAction
+    event: !type:XenoScreechActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenoPheromones
+  name: Emit Pheromones
+  description: Emit a recovery aura that speeds nearby hive members.
+  components:
+  - type: Action
+    useDelay: 1
+    itemIconStyle: BigAction
+    icon:
+      sprite: _RMC14/Actions/xeno_actions.rsi
+      state: emit_pheromones
+  - type: InstantAction
+    event: !type:XenoPheromonesActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenoLayEgg
+  name: Lay Egg
+  description: Lay a xenonid egg on weeds beneath you.
+  components:
+  - type: Action
+    useDelay: 5
+    itemIconStyle: BigAction
+    icon:
+      sprite: _RMC14/Actions/xeno_actions.rsi
+      state: grow_ovipositor
+  - type: InstantAction
+    event: !type:XenoLayEggActionEvent

@@ -12,3 +12,11 @@
     initialDuration: 15
     joinExtendsDurationBy: 0
     maxDuration: 15
+
+# xenomorph larva ghost role
+- type: ghostRoleRaffleSettings
+  id: xeno-larva
+  settings:
+    initialDuration: 30
+    joinExtendsDurationBy: 0
+    maxDuration: 30

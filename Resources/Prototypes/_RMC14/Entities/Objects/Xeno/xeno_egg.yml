@@ -1,0 +1,38 @@
+- type: entity
+  parent: BaseItem
+  id: XenoEgg
+  name: xenonid egg
+  description: A large mottled egg. It will hatch into a larva when ready.
+  components:
+  - type: Transform
+    anchored: true
+  - type: Sprite
+    sprite: _RMC14/Structures/Xenos/xeno_egg.rsi
+    state: egg
+  - type: Item
+    size: Normal
+  - type: XenoEgg
+  - type: HiveMember
+  - type: StepTrigger
+    requiredTriggeredSpeed: 0
+    intersectRatio: 0.2
+  - type: Fixtures
+    fixtures:
+      slips:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.2,-0.2,0.2,0.2"
+        hard: false
+        layer:
+        - SlipLayer
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 20
+        mask:
+        - ItemMask
+  - type: CollisionWake
+    enabled: false
+  - type: Physics
+    bodyType: Static

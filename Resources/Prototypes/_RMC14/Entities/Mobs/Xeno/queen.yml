@@ -1,0 +1,71 @@
+- type: entity
+  parent: CMXenoDeveloped
+  id: CMXenoQueen
+  name: Queen
+  description: A huge, looming alien creature. The biggest and the baddest.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Mobs/Xenonids/Queen/queen.rsi
+    layers:
+    - map: [ "enum.XenoVisualLayers.Base" ]
+      state: alive
+    - map: [ "enum.XenoVisualLayers.Ovipositor" ]
+      sprite: _RMC14/Mobs/Xenonids/Queen/ovipositor.rsi
+      state: normal
+      visible: false
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      900: Critical
+      1000: Dead
+  - type: Xeno
+    tier: 0
+    bypassTierCount: true
+    unlockAt: 0
+    emoteSounds: XenoRoyal
+    actionIds:
+    - ActionXenoRest
+    - ActionXenoTailStab
+    - ActionXenoPlantWeeds
+    - ActionXenoChooseStructure
+    - ActionXenoSecreteStructure
+    - ActionXenoAcidNormal
+    - ActionXenoResinSurge
+    - ActionXenoPheromones
+    - ActionXenoScreech
+    - ActionXenoLayEgg
+  - type: XenoHeavy
+  - type: XenoAcid
+  - type: XenoResinSurge
+  - type: XenoTailStab
+  - type: XenoPheromones
+    pheromonesMultiplier: 4
+    pheroSuffix: queen
+  - type: Vocal
+    emoteSounds: XenoRoyal
+  - type: XenoScreech
+  - type: XenoOvipositorCapable
+  - type: XenoEvolutionGranter
+  - type: XenoPlasma
+    plasma: 1000
+    maxPlasma: 1000
+    plasmaRegenOnWeeds: 5
+  - type: XenoConstruction
+    buildDelay: 2
+    canUpgrade: true
+    canBuild:
+    - WallXenoResin
+    - WallXenoMembrane
+    - DoorXenoResin
+    - XenoStickyResin
+    - XenoFastResin
+    - XenoResinSpikes
+    - XenoAcidTurret
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 1.4
+    baseSprintSpeed: 2.5
+  - type: MeleeWeapon
+    damage:
+      types:
+        Slash: 50
+  - type: XenoOmitNumber
