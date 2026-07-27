@@ -1,6 +1,7 @@
 using Content.Client.UserInterface.Fragments;
 using Content.Shared.CartridgeLoader;
 using Robust.Client.UserInterface;
+using Robust.Shared.Timing;
 
 namespace Content.Client.CartridgeLoader;
 
@@ -18,9 +19,12 @@ public abstract class CartridgeLoaderBoundUserInterface : BoundUserInterface
 
     private IEntityManager _entManager;
 
+    private IGameTiming _timing;
+
     protected CartridgeLoaderBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
     {
         _entManager = IoCManager.Resolve<IEntityManager>();
+        _timing = IoCManager.Resolve<IGameTiming>();
     }
 
     protected override void UpdateState(BoundUserInterfaceState state)
@@ -39,28 +43,28 @@ public abstract class CartridgeLoaderBoundUserInterface : BoundUserInterface
 
         var activeUI = _entManager.GetEntity(loaderUiState.ActiveUI);
 
+        // Prevent the active program's UI from getting rebuilt and attached multiple times.
+        if (_activeProgram == activeUI && _activeUiFragment is not null)
+            return;
+
         _activeProgram = activeUI;
 
         var ui = RetrieveCartridgeUI(activeUI);
         var comp = RetrieveCartridgeComponent(activeUI);
         var control = ui?.GetUIFragmentRoot();
 
-        //Prevent the same UI fragment from getting disposed and attached multiple times
-        if (_activeUiFragment?.GetType() == control?.GetType())
-            return;
-
         if (_activeUiFragment is not null)
             DetachCartridgeUI(_activeUiFragment);
 
         if (control is not null && _activeProgram.HasValue)
-        {
             AttachCartridgeUI(control, Loc.GetString(comp?.ProgramName ?? "default-program-name"));
-            SendCartridgeUiReadyEvent(_activeProgram.Value);
-        }
 
         _activeCartridgeUI = ui;
         _activeUiFragment?.Dispose();
         _activeUiFragment = control;
+
+        if (control is not null && _activeProgram.HasValue)
+            SendCartridgeUiReadyEvent(_activeProgram.Value);
     }
 
     protected void ActivateCartridge(EntityUid cartridgeUid)
@@ -132,7 +136,10 @@ public abstract class CartridgeLoaderBoundUserInterface : BoundUserInterface
     private void SendCartridgeUiReadyEvent(EntityUid cartridgeUid)
     {
         var message = new CartridgeLoaderUiMessage(_entManager.GetNetEntity(cartridgeUid), CartridgeUiMessageAction.UIReady);
-        SendMessage(message);
+        if (_timing.InPrediction && _timing.IsFirstTimePredicted)
+            SendPredictedMessage(message);
+        else
+            SendMessage(message);
     }
 
     private UIFragment? RetrieveCartridgeUI(EntityUid? cartridgeUid)

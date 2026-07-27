@@ -23,6 +23,9 @@ public sealed partial class CartridgeLoaderSystem
                 UninstallProgram(ent, cartridge);
                 break;
             case CartridgeUiMessageAction.UIReady:
+                if (!_timing.IsFirstTimePredicted)
+                    break;
+
                 if (ent.Comp.ActiveProgram is { } foreground)
                 {
                     var evt = new CartridgeUiReadyEvent(ent);
