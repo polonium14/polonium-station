@@ -134,7 +134,7 @@
         components:
         - PAI
     penSlot:
-#      startingItem: Pen # funky # you get to ask for a pen from the HoP/cargo! hope this leads to shenanigans
+      startingItem: Pen
       priority: -1
       whitelist:
         tags:
