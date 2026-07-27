@@ -83,6 +83,9 @@
             "name":"defib-module"
         },
         {
+            "name":"surgery-module"
+        },
+        {
             "name":"node-scanner-module"
         },
         {

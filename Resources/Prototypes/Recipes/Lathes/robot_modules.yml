@@ -75,6 +75,11 @@
   id: BorgModuleAdvancedTopical
   result: BorgModuleAdvancedTopical
 
+- type: latheRecipe
+  parent: BaseBorgModuleRecipe
+  id: BorgModuleSurgery
+  result: BorgModuleSurgery
+
 # Science Modules
 
 # Service Modules

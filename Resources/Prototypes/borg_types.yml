@@ -162,6 +162,7 @@
   - BorgModuleChemical
   - BorgModuleTopicals
   - BorgModuleRescue
+  - BorgModuleSurgery
 
   radioChannels:
   - Science

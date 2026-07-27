@@ -1033,6 +1033,29 @@
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: adv-chem-module }
 
+- type: entity
+  id: BorgModuleSurgery
+  parent: [ BaseBorgModuleMedical, BaseProviderBorgModule ]
+  name: surgery cyborg module
+  description: A full set of surgical tools, so your cyborg can open crew up and put them back together again.
+  components:
+  - type: Sprite
+    layers:
+    - state: medical
+    - state: icon-surgery
+  - type: ItemBorgModule
+    hands:
+    - item: Scalpel
+    - item: Hemostat
+    - item: Retractor
+    - item: Cautery
+    - item: Drill
+    - item: SawElectric
+    - item: BoneGel
+    - item: MedicalStitches
+  - type: BorgModuleIcon
+    icon: { sprite: Interface/Actions/actions_borg.rsi, state: surgery-module }
+
 # science modules
 # todo: if science ever gets their own custom robot, add more "sci" modules.
 - type: entity
