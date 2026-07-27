@@ -280,6 +280,12 @@ namespace Content.Server.Voting.Managers
 
             vote.OnFinished += (_, args) =>
             {
+                if (vote.CastVotes.Count == 0)
+                {
+                    _adminLogger.Add(LogType.Vote, LogImpact.Low, $"Preset vote finished with no votes cast; keeping current preset.");
+                    return;
+                }
+
                 string picked;
                 if (args.Winner == null)
                 {
@@ -327,6 +333,12 @@ namespace Content.Server.Voting.Managers
 
             vote.OnFinished += (_, args) =>
             {
+                if (vote.CastVotes.Count == 0)
+                {
+                    _adminLogger.Add(LogType.Vote, LogImpact.Low, $"Map vote finished with no votes cast; keeping current map.");
+                    return;
+                }
+
                 GameMapPrototype picked;
                 if (args.Winner == null)
                 {
