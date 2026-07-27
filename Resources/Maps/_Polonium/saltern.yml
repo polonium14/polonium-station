@@ -24055,6 +24055,13 @@ entities:
     - type: Transform
       pos: 28.5,10.5
       parent: 2
+- proto: CargoMailTeleporter
+  entities:
+  - uid: 8079
+    components:
+    - type: Transform
+      pos: 21.5,10.5
+      parent: 2
 - proto: CargoTechFab
   entities:
   - uid: 3633

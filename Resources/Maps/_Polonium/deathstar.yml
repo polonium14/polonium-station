@@ -10287,6 +10287,13 @@ entities:
     - type: Physics
       angularDamping: 0
       linearDamping: 0
+- proto: CargoMailTeleporter
+  entities:
+  - uid: 995
+    components:
+    - type: Transform
+      pos: 13.5,3.5
+      parent: 2
 - proto: Carpet
   entities:
   - uid: 996
