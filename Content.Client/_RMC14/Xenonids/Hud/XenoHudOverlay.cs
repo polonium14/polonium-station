@@ -23,7 +23,7 @@ using static Robust.Shared.Utility.SpriteSpecifier;
 
 namespace Content.Client._RMC14.Xenonids.Hud;
 
-public sealed class XenoHudOverlay : Overlay
+public sealed partial class XenoHudOverlay : Overlay
 {
     [Dependency] private IEntityManager _entity = default!;
     [Dependency] private IPlayerManager _players = default!;
@@ -47,6 +47,7 @@ public sealed class XenoHudOverlay : Overlay
     private readonly ShaderInstance _shader;
     private readonly ResPath _rsiPath = new("/Textures/_RMC14/Interface/xeno_hud.rsi");
     private static readonly ProtoId<HealthIconPrototype> DeadIconId = "HealthIconDead";
+    private static readonly ProtoId<ShaderPrototype> UnshadedShader = "unshaded";
 
     public override OverlaySpace Space => OverlaySpace.WorldSpaceBelowFOV;
 
@@ -67,7 +68,7 @@ public sealed class XenoHudOverlay : Overlay
         _xenoPlasmaQuery = _entity.GetEntityQuery<XenoPlasmaComponent>();
         _xformQuery = _entity.GetEntityQuery<TransformComponent>();
 
-        _shader = _prototype.Index<ShaderPrototype>("unshaded").Instance();
+        _shader = _prototype.Index(UnshadedShader).Instance();
         ZIndex = 1;
     }
 

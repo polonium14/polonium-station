@@ -13,7 +13,7 @@ using static Robust.Shared.Utility.SpriteSpecifier;
 
 namespace Content.Client._RMC14.Xenonids.Pheromones;
 
-public sealed class XenoPheromonesOverlay : Overlay
+public sealed partial class XenoPheromonesOverlay : Overlay
 {
     [Dependency] private IEntityManager _entity = default!;
     [Dependency] private IPlayerManager _players = default!;
@@ -26,6 +26,7 @@ public sealed class XenoPheromonesOverlay : Overlay
     private readonly ShaderInstance _shader;
 
     private static readonly ResPath HudRsi = new("/Textures/_RMC14/Interface/xeno_pheromones_hud.rsi");
+    private static readonly ProtoId<ShaderPrototype> UnshadedShader = "unshaded";
 
     public override OverlaySpace Space => OverlaySpace.WorldSpace;
 
@@ -36,7 +37,7 @@ public sealed class XenoPheromonesOverlay : Overlay
         _sprite = _entity.System<SpriteSystem>();
         _transform = _entity.System<TransformSystem>();
         _xformQuery = _entity.GetEntityQuery<TransformComponent>();
-        _shader = _prototype.Index<ShaderPrototype>("unshaded").Instance();
+        _shader = _prototype.Index(UnshadedShader).Instance();
     }
 
     protected override void Draw(in OverlayDrawArgs args)

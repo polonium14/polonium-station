@@ -2,7 +2,7 @@ using Robust.Client.Graphics;
 
 namespace Content.Client._RMC14.Xenonids.Pheromones;
 
-public sealed class XenoPheromonesOverlaySystem : EntitySystem
+public sealed partial class XenoPheromonesOverlaySystem : EntitySystem
 {
     [Dependency] private IOverlayManager _overlay = default!;
 

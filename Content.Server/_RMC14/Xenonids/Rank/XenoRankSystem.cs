@@ -12,11 +12,11 @@ using Robust.Shared.Player;
 
 namespace Content.Server._RMC14.Xenonids.Rank;
 
-public sealed class XenoRankSystem : EntitySystem
+public sealed partial class XenoRankSystem : EntitySystem
 {
-    [Dependency] private readonly IConfigurationManager _config = default!;
-    [Dependency] private readonly NameModifierSystem _nameModifier = default!;
-    [Dependency] private readonly ISharedPlaytimeManager _playtime = default!;
+    [Dependency] private IConfigurationManager _config = default!;
+    [Dependency] private NameModifierSystem _nameModifier = default!;
+    [Dependency] private ISharedPlaytimeManager _playtime = default!;
 
     private TimeSpan _rankTwoTime;
     private TimeSpan _rankThreeTime;

@@ -10,11 +10,11 @@ using Robust.Shared.Random;
 
 namespace Content.Server._RMC14.Xenonids.Name;
 
-public sealed class XenoNameSystem : SharedXenoNameSystem
+public sealed partial class XenoNameSystem : SharedXenoNameSystem
 {
-    [Dependency] private readonly NameModifierSystem _nameModifier = default!;
-    [Dependency] private readonly IPrototypeManager _proto = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private NameModifierSystem _nameModifier = default!;
+    [Dependency] private IPrototypeManager _proto = default!;
+    [Dependency] private IRobustRandom _random = default!;
 
     private static readonly ProtoId<LocalizedDatasetPrototype> PrefixDataset = "NamesXenoPrefix";
 
