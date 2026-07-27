@@ -1,0 +1,63 @@
+# SPDX-FileCopyrightText: 2026 maciejwalendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: emote
+  id: Flip
+  name: chat-emote-name-flip
+  category: General
+  icon: Interface/VerbIcons/flip.svg.192dpi.png
+  blacklist:
+    components:
+      - PAI
+  chatMessages: ["chat-emote-msg-flip"]
+  chatTriggers:
+  - flip
+  - flips
+  - does a flip
+  - salto
+  - robi salto
+  - zrobił salto
+  - zrobiła salto
+  - fika koziołka
+  event: !type:AnimationFlipEmoteEvent
+
+- type: emote
+  id: Spin
+  name: chat-emote-name-spin
+  category: General
+  icon: Interface/VerbIcons/rotate_cw.svg.192dpi.png
+  blacklist:
+    components:
+      - PAI
+  chatMessages: ["chat-emote-msg-spin"]
+  chatTriggers:
+  - spin
+  - spins
+  - kręci się
+  - obraca się
+  - zakręcił się
+  - zakręciła się
+  event: !type:AnimationSpinEmoteEvent
+
+- type: emote
+  id: Jump
+  name: chat-emote-name-jump
+  category: General
+  icon:
+    sprite: Interface/Actions/jump.rsi
+    state: icon
+  blacklist:
+    components:
+      - PAI
+  chatMessages: ["chat-emote-msg-jump"]
+  chatTriggers:
+  - jump
+  - jumps
+  - skacze
+  - podskakuje
+  - skoczył
+  - skoczyła
+  - podskoczył
+  - podskoczyła
+  event: !type:AnimationJumpEmoteEvent
