@@ -1,3 +1,17 @@
+// SPDX-FileCopyrightText: 2023 Phill101 <28949487+Phill101@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Phill101 <holypics4@gmail.com>
+// SPDX-FileCopyrightText: 2023 Vordenburg <114301317+Vordenburg@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2026 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2026 Schuyler Duryee <skywd7766@gmail.com>
+// SPDX-FileCopyrightText: 2026 maciejwalendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 pathetic meowmeow <uhhadd@gmail.com>
+// SPDX-FileCopyrightText: 2026 taydeo <tay@funkystation.org>
+// SPDX-FileCopyrightText: 2026 taydeo <td12233a@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.CrewManifest;
 using Content.Server.Station.Systems;
 using Content.Shared.CartridgeLoader;
@@ -89,8 +103,10 @@ public sealed partial class CrewManifestCartridgeSystem : EntitySystem
         {
             if (_unsecureViewersAllowed)
             {
-                _cartridgeLoader.InstallProgram((loaderUid, comp), CartridgePrototypeName, false);
-                return;
+                if (!_cartridgeLoader.HasProgram<CrewManifestCartridgeComponent>((loaderUid, comp)))
+                    _cartridgeLoader.InstallProgram((loaderUid, comp), CartridgePrototypeName, false);
+
+                continue;
             }
 
             if (_cartridgeLoader.TryGetProgram<CrewManifestCartridgeComponent>((loaderUid, comp)) is { } program)
