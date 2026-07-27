@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: B_Kirill
-  changes:
-  - message: Added camera map. Cutting MAP wire hides camera from map while keeping
-      it accessible in camera list.
-    type: Add
-  id: 9409
-  time: '2026-01-15T21:37:19.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/39684
 - author: ScarKy0
   changes:
   - message: Added Makeshift and Regular Mortar&Pestle! It can be found in the nutrimax
@@ -4128,3 +4120,10 @@
   id: 9908
   time: '2026-07-27T15:40:59.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/839
+- author: haze
+  changes:
+  - message: "Dodano brakuj\u0105ce emotki (flip, spin etc.)"
+    type: Add
+  id: 9909
+  time: '2026-07-27T21:44:41.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/840
