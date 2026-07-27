@@ -10,7 +10,6 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   # Vulpkanin
   <Box>
     <GuideEntityEmbed Entity="MobVulpkanin" Caption=""/>
-    <GuideEntityEmbed Entity="MobVulpkaninClassic" Caption=""/>
   </Box>
 
   Vulpkanin are fox-human hybrids, sporting distinct ears and tails.
