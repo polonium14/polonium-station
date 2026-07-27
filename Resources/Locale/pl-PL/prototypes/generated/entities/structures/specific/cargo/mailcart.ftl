@@ -1,2 +1,2 @@
-ent-MailCart = mailcart
-    .desc = Not distance nor tide can stop the mail.
+ent-MailCart = wózek pocztowy
+    .desc = Dostarczaj paczki ze stylem i wydajnością.
