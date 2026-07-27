@@ -49,3 +49,7 @@ ent-CMXenoRavager = niszczyciel
 ent-CMXenoQueen = królowa
     .desc = Ogromna, majestatyczna obca istota. Największa i najgroźniejsza.
     .gender = female
+
+ent-CMXenoMaid = ksenopokojówka
+    .desc = Słodka, dopóki się nie zdenerwuje.
+    .gender = female

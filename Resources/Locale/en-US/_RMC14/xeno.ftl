@@ -72,6 +72,7 @@ cm-job-name-xeno-crusher = Crusher
 cm-job-name-xeno-praetorian = Praetorian
 cm-job-name-xeno-ravager = Ravager
 cm-job-name-xeno-queen = Queen
+cm-job-name-xeno-maid = Xeno Maid
 
 ## Ghost roles
 cm-xeno-larva-ghost-name = Xenomorph Larva

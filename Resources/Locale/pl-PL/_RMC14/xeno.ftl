@@ -72,6 +72,7 @@ cm-job-name-xeno-crusher = Kruszarz
 cm-job-name-xeno-praetorian = Pretorian
 cm-job-name-xeno-ravager = Niszczyciel
 cm-job-name-xeno-queen = Królowa
+cm-job-name-xeno-maid = Ksenopokojówka
 
 ## Ghost roles
 cm-xeno-larva-ghost-name = Larwa ksenomorfa

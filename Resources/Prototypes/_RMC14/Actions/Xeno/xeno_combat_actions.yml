@@ -127,7 +127,7 @@
   parent: BaseAction
   id: ActionXenoCharge
   name: Charge
-  description: Charge toward a location and smash through hosts.
+  description: Charge toward a location, knocking down hosts you smash into.
   components:
   - type: Action
     useDelay: 12

@@ -25,8 +25,6 @@ namespace Content.Shared._RMC14.Xenonids;
 
 public sealed partial class XenoSystem : EntitySystem
 {
-    private const float PlasmaRegenMultiplier = 5f;
-
     [Dependency] private SharedActionsSystem _action = default!;
     [Dependency] private SharedAppearanceSystem _appearance = default!;
     [Dependency] private IConfigurationManager _config = default!;
@@ -48,6 +46,7 @@ public sealed partial class XenoSystem : EntitySystem
     private float _xenoDamageDealtMultiplier = 1f;
     private float _xenoDamageReceivedMultiplier = 1f;
     private float _xenoSpeedMultiplier = 1f;
+    private float _xenoPlasmaRegenMultiplier = 1.05f;
 
     public override void Initialize()
     {
@@ -77,6 +76,7 @@ public sealed partial class XenoSystem : EntitySystem
         Subs.CVar(_config, RMCCVars.RMCXenoDamageDealtMultiplier, v => _xenoDamageDealtMultiplier = v, true);
         Subs.CVar(_config, RMCCVars.RMCXenoDamageReceivedMultiplier, v => _xenoDamageReceivedMultiplier = v, true);
         Subs.CVar(_config, RMCCVars.RMCXenoSpeedMultiplier, UpdateXenoSpeedMultiplier, true);
+        Subs.CVar(_config, RMCCVars.RMCXenoPlasmaRegenMultiplier, v => _xenoPlasmaRegenMultiplier = v, true);
     }
 
     private void OnXenoMapInit(Entity<XenoComponent> xeno, ref MapInitEvent args)
@@ -269,7 +269,7 @@ public sealed partial class XenoSystem : EntitySystem
             {
                 if (_xenoPlasmaQuery.TryComp(uid, out var plasmaOff))
                 {
-                    var amount = FixedPoint2.Max(plasmaOff.PlasmaRegenOffWeeds * plasmaOff.MaxPlasma / 100 / 2 * PlasmaRegenMultiplier, 0.01);
+                    var amount = FixedPoint2.Max(plasmaOff.PlasmaRegenOffWeeds * plasmaOff.MaxPlasma / 100 / 2 * _xenoPlasmaRegenMultiplier, 0.01);
                     _xenoPlasma.RegenPlasma((uid, plasmaOff), amount);
                 }
 
@@ -282,7 +282,7 @@ public sealed partial class XenoSystem : EntitySystem
 
             if (_xenoPlasmaQuery.TryComp(uid, out var plasma))
             {
-                var plasmaRestored = plasma.PlasmaRegenOnWeeds * plasma.MaxPlasma / 100 / 2 * PlasmaRegenMultiplier;
+                var plasmaRestored = plasma.PlasmaRegenOnWeeds * plasma.MaxPlasma / 100 / 2 * _xenoPlasmaRegenMultiplier;
                 _xenoPlasma.RegenPlasma((uid, plasma), plasmaRestored);
 
                 if (_xenoRecoveryQuery.TryComp(uid, out var recovery))

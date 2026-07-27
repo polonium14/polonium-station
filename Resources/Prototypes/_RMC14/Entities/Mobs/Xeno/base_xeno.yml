@@ -34,6 +34,7 @@
   - type: MindContainer
   - type: Physics
     bodyType: KinematicController
+  - type: GravityAffected
   - type: Fixtures
     fixtures:
       fix1:
@@ -51,6 +52,27 @@
     layers:
     - map: [ "enum.XenoVisualLayers.Base" ]
       state: alive
+  - type: AtmosExposed
+  - type: Temperature
+    currentTemperature: 310.15
+    specificHeat: 42
+  - type: TemperatureDamage
+    heatDamageThreshold: 360
+    coldDamageThreshold: 260
+    coldDamage:
+      types:
+        Cold: 0.1
+    heatDamage:
+      types:
+        Heat: 0.5
+  - type: ThermalRegulator
+    metabolismHeat: 800
+    radiatedHeat: 100
+    implicitHeatRegulation: 500
+    sweatHeatRegulation: 0
+    shiveringHeatRegulation: 1000
+    normalBodyTemperature: 310.15
+    thermalRegulationTemperatureThreshold: 2
   - type: Xeno
   - type: XenoFriendly
   - type: XenoRegen

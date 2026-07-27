@@ -1,8 +1,11 @@
 using System.Numerics;
+using Content.Shared._RMC14.Xenonids.Animation;
 using Content.Shared._RMC14.Xenonids.Crest;
 using Content.Shared._RMC14.Xenonids.Fortify;
+using Content.Shared.Coordinates;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Systems;
+using Content.Shared.Effects;
 using Content.Shared.FixedPoint;
 using Content.Shared.Interaction;
 using Content.Shared.Mobs.Components;
@@ -13,6 +16,7 @@ using Robust.Shared.Network;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Systems;
+using Robust.Shared.Player;
 using Robust.Shared.Timing;
 
 namespace Content.Shared._RMC14.Xenonids.Headbutt;
@@ -20,6 +24,7 @@ namespace Content.Shared._RMC14.Xenonids.Headbutt;
 public sealed partial class XenoHeadbuttSystem : EntitySystem
 {
     [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private SharedColorFlashEffectSystem _colorFlash = default!;
     [Dependency] private DamageableSystem _damageable = default!;
     [Dependency] private SharedInteractionSystem _interaction = default!;
     [Dependency] private INetManager _net = default!;
@@ -29,6 +34,7 @@ public sealed partial class XenoHeadbuttSystem : EntitySystem
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private ThrownItemSystem _thrownItem = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
+    [Dependency] private XenoAnimationsSystem _xenoAnimations = default!;
 
     private EntityQuery<PhysicsComponent> _physicsQuery;
     private EntityQuery<ThrownItemComponent> _thrownItemQuery;
@@ -100,8 +106,11 @@ public sealed partial class XenoHeadbuttSystem : EntitySystem
             _thrownItem.StopThrow(xeno, thrown);
         }
 
-        if (_timing.IsFirstTimePredicted)
+        if (_timing.IsFirstTimePredicted && xeno.Comp.Charge is { } charge)
+        {
             xeno.Comp.Charge = null;
+            _xenoAnimations.PlayLungeAnimationEvent(xeno, charge);
+        }
 
         if (_net.IsClient)
             return;
@@ -113,7 +122,11 @@ public sealed partial class XenoHeadbuttSystem : EntitySystem
             damage += xeno.Comp.CrestedDamageReduction;
 
         if (damage.GetTotal() > FixedPoint2.Zero)
+        {
             _damageable.TryChangeDamage(targetId, damage, origin: xeno);
+            var filter = Filter.Pvs(targetId, entityManager: EntityManager).RemoveWhereAttachedEntity(o => o == xeno.Owner);
+            _colorFlash.RaiseEffect(Color.Red, new List<EntityUid> { targetId }, filter);
+        }
 
         var knockRange = xeno.Comp.ThrowForce;
         if ((TryComp(xeno, out XenoCrestComponent? crest2) && crest2.Lowered) ||
@@ -128,6 +141,7 @@ public sealed partial class XenoHeadbuttSystem : EntitySystem
         if (direction != default)
             _throwing.TryThrow(targetId, direction.Normalized() * knockRange, xeno.Comp.ThrowSpeed, xeno);
 
+        SpawnAttachedTo(xeno.Comp.Effect, targetId.ToCoordinates());
         StopHeadbutt(xeno);
     }
 

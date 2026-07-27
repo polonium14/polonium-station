@@ -10,7 +10,6 @@ using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Standing;
 using Content.Shared.Stunnable;
-using Content.Shared.Throwing;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Network;
 using Robust.Shared.Physics;
@@ -32,7 +31,6 @@ public sealed partial class XenoLeapSystem : EntitySystem
     [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private StandingStateSystem _standing = default!;
     [Dependency] private SharedStunSystem _stun = default!;
-    [Dependency] private ThrowingSystem _throwing = default!;
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
     [Dependency] private XenoPlasmaSystem _plasma = default!;
@@ -49,8 +47,6 @@ public sealed partial class XenoLeapSystem : EntitySystem
         SubscribeLocalEvent<XenoLeapComponent, XenoLeapDoAfterEvent>(OnLeapDoAfter);
 
         SubscribeLocalEvent<XenoLeapingComponent, StartCollideEvent>(OnLeapingCollide);
-        SubscribeLocalEvent<XenoLeapingComponent, LandEvent>(OnLeapingLand);
-        SubscribeLocalEvent<XenoLeapingComponent, StopThrowEvent>(OnLeapingStopThrow);
         SubscribeLocalEvent<XenoLeapingComponent, ComponentRemove>(OnLeapingRemove);
         SubscribeLocalEvent<XenoLeapingComponent, PhysicsSleepEvent>(OnLeapingSleep);
     }
@@ -93,9 +89,6 @@ public sealed partial class XenoLeapSystem : EntitySystem
             return;
         }
 
-        if (_net.IsClient)
-            return;
-
         if (!_physicsQuery.TryGetComponent(xeno, out var physics))
             return;
 
@@ -125,6 +118,8 @@ public sealed partial class XenoLeapSystem : EntitySystem
         var distance = Math.Clamp(length, 0.1f, xeno.Comp.Range.Float());
         direction *= distance / length;
 
+        var impulse = direction.Normalized() * xeno.Comp.Strength * physics.Mass;
+
         leaping.Origin = _transform.GetMoverCoordinates(xeno);
         leaping.ParalyzeTime = xeno.Comp.KnockdownTime;
         leaping.LeapSound = xeno.Comp.LeapSound;
@@ -134,6 +129,9 @@ public sealed partial class XenoLeapSystem : EntitySystem
         leaping.LeapEndTime = _timing.CurTime + TimeSpan.FromSeconds(direction.Length() / xeno.Comp.Strength);
         Dirty(xeno, leaping);
 
+        _physics.ApplyLinearImpulse(xeno, impulse, body: physics);
+        _physics.SetBodyStatus(xeno, physics, BodyStatus.InAir);
+
         if (_fixturesQuery.TryGetComponent(xeno, out var fixtures) && fixtures.Fixtures.Count > 0)
         {
             var fixture = fixtures.Fixtures.First();
@@ -141,16 +139,6 @@ public sealed partial class XenoLeapSystem : EntitySystem
             _physics.SetCollisionMask(xeno, fixture.Key, fixture.Value, mask);
         }
 
-        _throwing.TryThrow(
-            xeno,
-            direction,
-            xeno.Comp.Strength,
-            xeno,
-            pushbackRatio: 0,
-            recoil: false,
-            doSpin: false);
-
-        // same-tile / already touching
         foreach (var ent in _physics.GetContactingEntities(xeno.Owner, physics))
         {
             if (_hive.FromSameHive(xeno.Owner, ent))
@@ -163,39 +151,16 @@ public sealed partial class XenoLeapSystem : EntitySystem
 
     private void OnLeapingCollide(Entity<XenoLeapingComponent> xeno, ref StartCollideEvent args)
     {
-        if (_net.IsClient)
-            return;
-
         ApplyLeapHit(xeno, args.OtherEntity);
-    }
-
-    private void OnLeapingLand(Entity<XenoLeapingComponent> ent, ref LandEvent args)
-    {
-        if (_net.IsClient)
-            return;
-
-        StopLeap(ent);
-    }
-
-    private void OnLeapingStopThrow(Entity<XenoLeapingComponent> ent, ref StopThrowEvent args)
-    {
-        if (_net.IsClient)
-            return;
-
-        StopLeap(ent);
     }
 
     private void OnLeapingRemove(Entity<XenoLeapingComponent> ent, ref ComponentRemove args)
     {
-        if (_net.IsServer)
-            RestorePhysics(ent);
+        RestorePhysics(ent);
     }
 
     private void OnLeapingSleep(Entity<XenoLeapingComponent> ent, ref PhysicsSleepEvent args)
     {
-        if (_net.IsClient)
-            return;
-
         StopLeap(ent);
     }
 
@@ -234,11 +199,8 @@ public sealed partial class XenoLeapSystem : EntitySystem
         var canKnockdown = !xeno.Comp.KnockdownRequiresInvisibility ||
                            (TryComp(xeno, out XenoInvisibilityComponent? invis) && invis.Active);
 
-        if (canKnockdown)
-        {
-            if (_net.IsServer)
-                _stun.TryUpdateParalyzeDuration(target, xeno.Comp.ParalyzeTime);
-        }
+        if (canKnockdown && _net.IsServer)
+            _stun.TryUpdateParalyzeDuration(target, xeno.Comp.ParalyzeTime);
 
         if (!xeno.Comp.PlayedSound)
         {
@@ -275,9 +237,6 @@ public sealed partial class XenoLeapSystem : EntitySystem
 
     public override void Update(float frameTime)
     {
-        if (_net.IsClient)
-            return;
-
         var time = _timing.CurTime;
         var leaping = EntityQueryEnumerator<XenoLeapingComponent>();
         while (leaping.MoveNext(out var uid, out var comp))

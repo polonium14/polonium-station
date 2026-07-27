@@ -1,11 +1,14 @@
 using Content.Shared._RMC14.Xenonids.Plasma;
+using Content.Shared.Coordinates;
 using Content.Shared.Damage.Systems;
+using Content.Shared.Effects;
 using Content.Shared.Interaction;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Stunnable;
 using Content.Shared.Throwing;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Network;
+using Robust.Shared.Player;
 using Robust.Shared.Timing;
 
 namespace Content.Shared._RMC14.Xenonids.Sweep;
@@ -13,10 +16,12 @@ namespace Content.Shared._RMC14.Xenonids.Sweep;
 public sealed partial class XenoTailSweepSystem : EntitySystem
 {
     [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private SharedColorFlashEffectSystem _colorFlash = default!;
     [Dependency] private DamageableSystem _damageable = default!;
     [Dependency] private EntityLookupSystem _entityLookup = default!;
     [Dependency] private SharedInteractionSystem _interact = default!;
     [Dependency] private INetManager _net = default!;
+    [Dependency] private RotateToFaceSystem _rotateTo = default!;
     [Dependency] private SharedStunSystem _stun = default!;
     [Dependency] private ThrowingSystem _throwing = default!;
     [Dependency] private IGameTiming _timing = default!;
@@ -48,6 +53,7 @@ public sealed partial class XenoTailSweepSystem : EntitySystem
 
         args.Handled = true;
         _audio.PlayPredicted(xeno.Comp.Sound, xeno, xeno);
+        EnsureComp<XenoSweepingComponent>(xeno);
 
         if (_net.IsClient)
             return;
@@ -73,12 +79,54 @@ public sealed partial class XenoTailSweepSystem : EntitySystem
             _damageable.TryChangeDamage(mob, xeno.Comp.Damage, origin: xeno);
             _stun.TryUpdateParalyzeDuration(mob, xeno.Comp.ParalyzeTime);
 
+            var filter = Filter.Pvs(mob, entityManager: EntityManager);
+            _colorFlash.RaiseEffect(Color.Red, new List<EntityUid> { mob }, filter);
+
             var targetPos = _transform.GetWorldPosition(mob);
             var direction = targetPos - origin;
             if (direction != default)
                 _throwing.TryThrow(mob, direction.Normalized() * xeno.Comp.KnockBackDistance, 8f, xeno);
 
             _audio.PlayPvs(xeno.Comp.HitSound, mob);
+            SpawnAttachedTo(xeno.Comp.HitEffect, mob.ToCoordinates());
+        }
+    }
+
+    public override void Update(float frameTime)
+    {
+        var query = EntityQueryEnumerator<XenoSweepingComponent, TransformComponent>();
+        while (query.MoveNext(out var uid, out var sweeping, out var xform))
+        {
+            if (sweeping.NextRotation > _timing.CurTime)
+                continue;
+
+            if (sweeping.TotalRotations >= sweeping.MaxRotations)
+            {
+                RemCompDeferred<XenoSweepingComponent>(uid);
+                continue;
+            }
+
+            sweeping.TotalRotations++;
+            sweeping.NextRotation = _timing.CurTime + sweeping.Delay;
+            sweeping.LastDirection ??= _transform.GetWorldRotation(xform).GetDir();
+
+            var nextAngle = sweeping.LastDirection.Value.ToAngle() + Angle.FromDegrees(90);
+            sweeping.LastDirection = nextAngle.GetDir();
+
+            Dirty(uid, sweeping);
+            _rotateTo.TryFaceAngle(uid, nextAngle, xform);
+        }
+    }
+
+    public override void FrameUpdate(float frameTime)
+    {
+        var query = EntityQueryEnumerator<XenoSweepingComponent, TransformComponent>();
+        while (query.MoveNext(out var uid, out var sweeping, out var xform))
+        {
+            if (sweeping.LastDirection is not { } direction)
+                continue;
+
+            _rotateTo.TryFaceAngle(uid, direction.ToAngle(), xform);
         }
     }
 }

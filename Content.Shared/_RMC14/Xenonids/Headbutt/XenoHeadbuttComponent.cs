@@ -40,5 +40,8 @@ public sealed partial class XenoHeadbuttComponent : Component
     public SoundSpecifier Sound = new SoundPathSpecifier("/Audio/_RMC14/Xeno/alien_claw_block.ogg");
 
     [DataField, AutoNetworkedField]
+    public EntProtoId Effect = "CMEffectPunch";
+
+    [DataField, AutoNetworkedField]
     public Vector2? Charge;
 }

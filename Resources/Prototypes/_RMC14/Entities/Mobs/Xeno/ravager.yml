@@ -14,13 +14,27 @@
   - type: Xeno
     tier: 3
     unlockAt: 900
+    emoteSounds: XenoRoyal
     actionIds:
     - ActionXenoRest
     - ActionXenoTailStab
     - ActionXenoCharge
+    - ActionXenoHeadbutt
+    - ActionXenoTailSweep
   - type: XenoHeavy
   - type: XenoCharge
+  - type: XenoHeadbutt
+    damage:
+      types:
+        Blunt: 40
+  - type: XenoTailSweep
+    plasmaCost: 20
+    damage:
+      types:
+        Slash: 40
   - type: XenoTailStab
+  - type: Vocal
+    emoteSounds: XenoRoyal
   - type: XenoPlasma
     plasma: 300
     maxPlasma: 300

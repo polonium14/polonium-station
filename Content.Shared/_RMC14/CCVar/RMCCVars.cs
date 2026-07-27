@@ -35,13 +35,16 @@ public sealed partial class RMCCVars : CVars
         CVarDef.Create("rmc.lag_compensation_margin_tiles", 0.25f, CVar.REPLICATED | CVar.SERVER);
 
     public static readonly CVarDef<float> RMCXenoDamageDealtMultiplier =
-        CVarDef.Create("rmc.xeno_damage_dealt_multiplier", 1f, CVar.REPLICATED | CVar.SERVER);
+        CVarDef.Create("rmc.xeno_damage_dealt_multiplier", 0.7f, CVar.REPLICATED | CVar.SERVER);
 
     public static readonly CVarDef<float> RMCXenoDamageReceivedMultiplier =
-        CVarDef.Create("rmc.xeno_damage_received_multiplier", 1f, CVar.REPLICATED | CVar.SERVER);
+        CVarDef.Create("rmc.xeno_damage_received_multiplier", 1.5f, CVar.REPLICATED | CVar.SERVER);
 
     public static readonly CVarDef<float> RMCXenoSpeedMultiplier =
         CVarDef.Create("rmc.xeno_speed_multiplier", 1f, CVar.REPLICATED | CVar.SERVER);
+
+    public static readonly CVarDef<float> RMCXenoPlasmaRegenMultiplier =
+        CVarDef.Create("rmc.xeno_plasma_regen_multiplier", 1.05f, CVar.REPLICATED | CVar.SERVER);
 
     // 999 = always accumulate during a normal round
     public static readonly CVarDef<float> RMCEvolutionPointsAccumulateBeforeMinutes =
