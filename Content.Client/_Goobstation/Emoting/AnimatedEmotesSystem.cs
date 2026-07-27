@@ -75,6 +75,12 @@ public sealed partial class AnimatedEmotesSystem : SharedAnimatedEmotesSystem
     }
     private void OnSpin(Entity<AnimatedEmotesComponent> ent, ref AnimationSpinEmoteEvent args)
     {
+        if (!TryComp<SpriteComponent>(ent, out var sprite))
+            return;
+
+        // Mobs are noRot, so LocalRotation is dropped from the render matrix and only picks the
+        // RSI direction. Spin the sprite instead, same as flip.
+        var startRot = sprite.Rotation;
         var a = new Animation
         {
             Length = TimeSpan.FromMilliseconds(600),
@@ -82,25 +88,25 @@ public sealed partial class AnimatedEmotesSystem : SharedAnimatedEmotesSystem
             {
                 new AnimationTrackComponentProperty
                 {
-                    ComponentType = typeof(TransformComponent),
-                    Property = nameof(TransformComponent.LocalRotation),
+                    ComponentType = typeof(SpriteComponent),
+                    Property = nameof(SpriteComponent.Rotation),
                     InterpolationMode = AnimationInterpolationMode.Linear,
                     KeyFrames =
                     {
-                        new AnimationTrackProperty.KeyFrame(Angle.FromDegrees(0), 0f),
-                        new AnimationTrackProperty.KeyFrame(Angle.FromDegrees(90), 0.075f),
-                        new AnimationTrackProperty.KeyFrame(Angle.FromDegrees(180), 0.075f),
-                        new AnimationTrackProperty.KeyFrame(Angle.FromDegrees(270), 0.075f),
-                        new AnimationTrackProperty.KeyFrame(Angle.Zero, 0.075f),
-                        new AnimationTrackProperty.KeyFrame(Angle.FromDegrees(90), 0.075f),
-                        new AnimationTrackProperty.KeyFrame(Angle.FromDegrees(180), 0.075f),
-                        new AnimationTrackProperty.KeyFrame(Angle.FromDegrees(270), 0.075f),
-                        new AnimationTrackProperty.KeyFrame(Angle.Zero, 0.075f),
+                        new AnimationTrackProperty.KeyFrame(startRot, 0f),
+                        new AnimationTrackProperty.KeyFrame(startRot + Angle.FromDegrees(90), 0.075f),
+                        new AnimationTrackProperty.KeyFrame(startRot + Angle.FromDegrees(180), 0.075f),
+                        new AnimationTrackProperty.KeyFrame(startRot + Angle.FromDegrees(270), 0.075f),
+                        new AnimationTrackProperty.KeyFrame(startRot + Angle.FromDegrees(360), 0.075f),
+                        new AnimationTrackProperty.KeyFrame(startRot + Angle.FromDegrees(450), 0.075f),
+                        new AnimationTrackProperty.KeyFrame(startRot + Angle.FromDegrees(540), 0.075f),
+                        new AnimationTrackProperty.KeyFrame(startRot + Angle.FromDegrees(630), 0.075f),
+                        new AnimationTrackProperty.KeyFrame(startRot + Angle.FromDegrees(720), 0.075f),
                     }
                 }
             }
         };
-        PlayEmote(ent, a, "emoteAnimSpin");
+        PlayEmote(ent, a, RotationAnimationKey);
     }
     private void OnJump(Entity<AnimatedEmotesComponent> ent, ref AnimationJumpEmoteEvent args)
     {
