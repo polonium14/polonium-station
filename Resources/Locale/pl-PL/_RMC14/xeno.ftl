@@ -9,7 +9,6 @@ rmc-action-xeno-plant-weeds = Zasadź chwasty
 rmc-action-xeno-choose-structure = Wybierz strukturę żywicy
 rmc-action-xeno-secrete-structure = Wydziel żywicę
 rmc-action-xeno-acid = Żrący kwas
-rmc-action-xeno-resin-surge = Impuls żywicy
 
 ## Plasma / acid
 cm-xeno-not-enough-plasma = Nie masz wystarczająco plazmy!
@@ -24,7 +23,6 @@ cm-xeno-weeds-source-already-here = Tutaj już są chwasty!
 cm-xeno-cant-build-here = Nie możesz tu tego zbudować!
 cm-xeno-cant-reach-there = Nie możesz tam dosięgnąć!
 cm-xeno-construction-failed-need-weeds = Możemy kształtować tylko na chwastach. Znajdź żywicę zanim zaczniesz budować!
-rmc-xeno-resin-surge-see-fail = Nie możesz tam wypuścić impulsu żywicy!
 
 ## Evolution
 rmc-xeno-evolution-ui-title = Ewolucja Ula

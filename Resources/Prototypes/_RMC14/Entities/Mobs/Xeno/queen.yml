@@ -30,13 +30,11 @@
     - ActionXenoChooseStructure
     - ActionXenoSecreteStructure
     - ActionXenoAcidNormal
-    - ActionXenoResinSurge
     - ActionXenoPheromones
     - ActionXenoScreech
     - ActionXenoLayEgg
   - type: XenoHeavy
   - type: XenoAcid
-  - type: XenoResinSurge
   - type: XenoTailStab
   - type: XenoPheromones
     pheromonesMultiplier: 4

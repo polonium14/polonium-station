@@ -11,7 +11,6 @@ using Content.Shared._RMC14.Xenonids.Construction.FloorResin;
 using Content.Shared._RMC14.Xenonids.Egg;
 using Content.Shared._RMC14.Xenonids.Evolution;
 using Content.Shared._RMC14.Xenonids.Plasma;
-using Content.Shared._RMC14.Xenonids.ResinSurge;
 using Content.Shared._RMC14.Xenonids.Weeds;
 using Content.Shared.Alert;
 using Content.Shared.DoAfter;
@@ -135,29 +134,6 @@ public sealed class XenoSystemsTest : GameTest
             Assert.That(
                 walls.Any(w => SComp<MetaDataComponent>(w).EntityPrototype?.ID == "WallXenoResin"),
                 Is.True);
-        });
-    }
-
-    [Test]
-    public async Task ResinSurgeSticky()
-    {
-        var map = await Pair.CreateTestMap();
-        var droneCoords = map.GridCoords.Offset(new Vector2(0.5f, 0.5f));
-        var targetCoords = map.GridCoords.Offset(new Vector2(2.5f, 0.5f));
-
-        await Pair.Server.WaitPost(() =>
-        {
-            var drone = SSpawnAtPosition("CMXenoDrone", droneCoords);
-            var netCoords = SEntMan.GetNetCoordinates(targetCoords);
-            var ev = new ResinSurgeStickyResinDoafter(netCoords, 0);
-            var doAfterArgs = new DoAfterArgs(SEntMan, drone, TimeSpan.Zero, ev, drone);
-            ev.DoAfter = new Content.Shared.DoAfter.DoAfter(0, doAfterArgs, TimeSpan.Zero);
-
-            SEntMan.EventBus.RaiseLocalEvent(drone, ev);
-
-            var sticky = SEntMan.System<EntityLookupSystem>()
-                .GetEntitiesInRange<XenoStickyResinComponent>(targetCoords, 2.0f);
-            Assert.That(sticky, Is.Not.Empty);
         });
     }
 

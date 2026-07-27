@@ -123,22 +123,3 @@
       plasmaCost: 75
       time: 300
       dps: 4
-
-- type: entity
-  parent: BaseAction
-  id: ActionXenoResinSurge
-  name: Resin Surge
-  description: Surge sticky resin or reinforce a resin structure.
-  components:
-  - type: Action
-    useDelay: 10
-    itemIconStyle: BigAction
-    icon:
-      sprite: _RMC14/Actions/xeno_actions.rsi
-      state: gardener_resin_surge
-  - type: TargetAction
-    range: 7
-    checkCanAccess: false
-  - type: WorldTargetAction
-    event: !type:XenoResinSurgeActionEvent
-      plasmaCost: 100

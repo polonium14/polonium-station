@@ -21,11 +21,9 @@
     - ActionXenoChooseStructure
     - ActionXenoSecreteStructure
     - ActionXenoAcidWeak
-    - ActionXenoResinSurge
     - ActionXenoPheromones
   - type: XenoLight
   - type: XenoAcid
-  - type: XenoResinSurge
   - type: XenoTailStab
   - type: XenoPheromones
     pheromonesMultiplier: 2

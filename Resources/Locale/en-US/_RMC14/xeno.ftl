@@ -9,7 +9,6 @@ rmc-action-xeno-plant-weeds = Plant Weeds
 rmc-action-xeno-choose-structure = Choose Resin Structure
 rmc-action-xeno-secrete-structure = Secrete Resin
 rmc-action-xeno-acid = Corrosive Acid
-rmc-action-xeno-resin-surge = Resin Surge
 
 ## Plasma / acid
 cm-xeno-not-enough-plasma = You don't have enough plasma!
@@ -24,7 +23,6 @@ cm-xeno-weeds-source-already-here = There are already weeds here!
 cm-xeno-cant-build-here = You can't build that here!
 cm-xeno-cant-reach-there = You can't reach there!
 cm-xeno-construction-failed-need-weeds = We can only shape on weeds. Find some resin before you start building!
-rmc-xeno-resin-surge-see-fail = You can't surge resin there!
 
 ## Evolution
 rmc-xeno-evolution-ui-title = Hive Evolution
