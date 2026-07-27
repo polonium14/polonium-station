@@ -1108,6 +1108,24 @@
     - item: SawElectric
     - item: BoneGel
     - item: MedicalStitches
+    - hand:
+        emptyRepresentative: OrganHumanLiver
+        emptyLabel: borg-slot-organs-empty
+        whitelist:
+          components:
+          - Organ
+    - hand:
+        emptyRepresentative: OrganHumanHeart
+        emptyLabel: borg-slot-organs-empty
+        whitelist:
+          components:
+          - Organ
+    - hand:
+        emptyRepresentative: OrganHumanHeart
+        emptyLabel: borg-slot-organs-empty
+        whitelist:
+          components:
+          - Organ
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: surgery-module }
 
