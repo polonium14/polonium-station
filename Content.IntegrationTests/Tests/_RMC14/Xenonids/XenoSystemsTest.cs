@@ -76,10 +76,10 @@ public sealed class XenoSystemsTest : GameTest
             var plasma = SEntity<XenoPlasmaComponent>(drone);
             _plasma.SetPlasma(plasma, 100);
 
-            Assert.That(_plasma.TryRemovePlasma(plasma, 50), Is.True);
+            Assert.That(_plasma.TryRemovePlasma(drone, 50), Is.True);
             Assert.That(SComp<XenoPlasmaComponent>(drone).Plasma, Is.EqualTo((FixedPoint2)50));
 
-            _plasma.RegenPlasma(plasma, 25);
+            _plasma.RegenPlasma(drone, 25);
             Assert.That(SComp<XenoPlasmaComponent>(drone).Plasma, Is.EqualTo((FixedPoint2)75));
         });
     }
