@@ -291,7 +291,7 @@ public sealed class XenoSystemsTest : GameTest
 
             Assert.That(SEntMan.TryGetComponent(drone, out AlertsComponent? alerts), Is.True);
             Assert.That(
-                SEntMan.System<AlertsSystem>().IsShowingAlert(drone, "XenoPlasma"),
+                SEntMan.System<AlertsSystem>().IsShowingAlert((drone.Owner, alerts), "XenoPlasma"),
                 Is.True,
                 "Plasma alert should remain after evolution");
         });
