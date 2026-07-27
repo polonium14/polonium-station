@@ -1,0 +1,18 @@
+- type: species
+  id: VulpkaninClassic
+  name: species-name-vulp
+  roundStart: true
+  prototype: MobVulpkaninClassic
+  defaultSkinTone: "#985629" # classic default fur
+  dollPrototype: AppearanceVulpkaninClassic
+  skinColoration: Hues # classic vulps could be any hue; VulpkaninColors clamps saturation per hue
+  maleFirstNames: names_vulpkanin_male
+  femaleFirstNames: names_vulpkanin_female
+  lastNames: names_vulpkanin_last
+  defaultSoundsBySex:
+  - MaleVulpkanin
+  - FemaleVulpkanin
+  - MaleVulpkanin
+  voices:
+  - MaleVulpkanin
+  - FemaleVulpkanin

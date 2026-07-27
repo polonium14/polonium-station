@@ -1,0 +1,408 @@
+- type: entity
+  parent: BaseSpeciesAppearance
+  id: AppearanceVulpkaninClassic
+  categories: [ HideSpawnMenu ]
+  name: vulpkanin (classic) appearance
+  components:
+  - type: InitialBody
+    organs:
+      Torso: OrganVulpkaninClassicTorso
+      Head: OrganVulpkaninClassicHead
+      ArmLeft: OrganVulpkaninClassicArmLeft
+      ArmRight: OrganVulpkaninClassicArmRight
+      HandRight: OrganVulpkaninClassicHandRight
+      HandLeft: OrganVulpkaninClassicHandLeft
+      LegLeft: OrganVulpkaninClassicLegLeft
+      LegRight: OrganVulpkaninClassicLegRight
+      FootLeft: OrganVulpkaninClassicFootLeft
+      FootRight: OrganVulpkaninClassicFootRight
+      Brain: OrganVulpkaninClassicBrain
+      Eyes: OrganVulpkaninClassicEyes
+      Tongue: OrganVulpkaninClassicTongue
+      Appendix: OrganVulpkaninClassicAppendix
+      Ears: OrganVulpkaninClassicEars
+      Lungs: OrganVulpkaninClassicLungs
+      Heart: OrganVulpkaninClassicHeart
+      Stomach: OrganVulpkaninClassicStomach
+      Liver: OrganVulpkaninClassicLiver
+      Kidneys: OrganVulpkaninClassicKidneys
+  - type: HumanoidProfile
+    species: VulpkaninClassic
+  - type: Inventory
+    speciesId: vulpkanin
+
+- type: entity
+  parent:
+  - AppearanceVulpkaninClassic
+  - BaseSpeciesMobOrganic
+  id: MobVulpkaninClassic
+  name: Urist McArfArf
+  suffix: classic # shares its name with MobVulpkanin on purpose; disambiguate the spawn menu
+  components:
+  - type: MessyDrinker
+    spillChance: 0.33
+  - type: Speech
+    speechSounds: Vulpkanin
+    speechVerb: Vulpkanin
+    allowedEmotes: [ 'Bark', 'Snarl', 'Whine', 'Howl', 'Growl', 'Yap', 'Gekker' ]
+  - type: TypingIndicator
+    proto: vulpkanin
+  - type: Vocal
+    emoteSounds: MaleVulpkanin
+  - type: Damageable
+    damageModifierSet: Vulpkanin
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Weapons/pierce.ogg
+    animation: WeaponArcClaw
+    damage:
+      types:
+        Piercing: 2
+        Slash: 3
+  - type: Temperature
+    specificHeat: 44
+  - type: TemperatureDamage
+    heatDamageThreshold: 320
+    coldDamageThreshold: 230
+    coldDamage:
+      types:
+        Cold: 0.05 # Per second, scales with temperature & other constants
+    heatDamage:
+      types:
+        Heat: 2.5 # Per second, scales with temperature & other constants
+  - type: Wagging
+    action: ActionToggleWaggingVulpkanin
+  - type: TemperatureProtection
+    heatingCoefficient: 1.2
+    coolingCoefficient: 0.3
+  - type: JumpAbility
+    action: ActionVulpkaninGravityJump
+    canCollide: true
+    jumpDistance: 3
+    jumpSound:
+      path: /Audio/Weapons/punchmiss.ogg
+      params:
+        pitch: 1.33
+        volume: -5
+        variation: 0.05
+  - type: Bloodstream
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: SulfurBlood
+        Quantity: 600
+  - type: CreamPied
+    sprite:
+      sprite: Effects/creampie.rsi
+      state: creampie_vulpkanin
+  - type: TailDuoEmote # Funky Change
+
+- type: entity
+  parent: OrganBaseOrganic
+  id: OrganVulpkaninClassic
+  abstract: true
+  suffix: vulpkanin classic
+
+- type: entity
+  id: OrganVulpkaninClassicMetabolizer
+  abstract: true
+  components:
+  - type: Metabolizer
+    metabolizerTypes: [ Animal ]
+
+- type: entity
+  parent: OrganVulpkaninClassic
+  id: OrganVulpkaninClassicInternal
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Vulpkanin/organs.rsi
+
+- type: entity
+  id: OrganVulpkaninClassicVisual
+  abstract: true
+  components:
+  - type: VisualOrgan
+    data:
+      sprite: Mobs/Species/VulpkaninClassic/parts.rsi
+  - type: VisualOrganMarkings
+    markingData:
+      group: Vulpkanin
+
+- type: entity
+  parent: [ OrganVulpkaninClassic, OrganVulpkaninClassicVisual ]
+  id: OrganVulpkaninClassicExternal
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/VulpkaninClassic/parts.rsi
+
+
+- type: entity
+  parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganVulpkaninClassicExternal ]
+  id: OrganVulpkaninClassicTorso
+  components:
+  - type: Sprite
+    state: torso_m
+  - type: VisualOrgan
+    data:
+      state: torso_m
+    sexStateOverrides:
+      Male: torso_m
+      Female: torso_f
+  - type: Damageable
+  - type: Injurable
+    damageContainer: Biological
+  - type: Nerve
+  - type: Woundable
+    integrityCap: 200
+    thresholds:
+      Healthy: 200
+      Minor: 190
+      Moderate: 180
+      Severe: 160
+      Critical: 140
+      Mangled: 125
+      Severed: 110
+
+- type: entity
+  parent: [ OrganBaseHeadSexed, OrganBaseHead, OrganVulpkaninClassicExternal ]
+  id: OrganVulpkaninClassicHead
+  components:
+  - type: Sprite
+    state: head_m
+  - type: VisualOrgan
+    data:
+      state: head_m
+    sexStateOverrides:
+      Male: head_m
+      Female: head_f
+  - type: VisualOrganMarkings
+    hideableLayers:
+    - enum.HumanoidVisualLayers.Snout
+    - enum.HumanoidVisualLayers.HeadTop
+    - enum.HumanoidVisualLayers.HeadSide
+    - enum.HumanoidVisualLayers.Hair
+    - enum.HumanoidVisualLayers.FacialHair
+    dependentHidingLayers:
+      enum.HumanoidVisualLayers.Snout:
+      - enum.HumanoidVisualLayers.SnoutCover
+  - type: Damageable
+  - type: Injurable
+    damageContainer: Biological
+  - type: Nerve
+  - type: Woundable
+    integrityCap: 125
+    thresholds:
+      Healthy: 125
+      Minor: 115
+      Moderate: 105
+      Severe: 85
+      Critical: 65
+      Mangled: 50
+      Severed: 35
+
+- type: entity
+  parent: [ OrganBaseArmLeft, OrganVulpkaninClassicExternal ]
+  id: OrganVulpkaninClassicArmLeft
+  components:
+  - type: Damageable
+  - type: Injurable
+    damageContainer: Biological
+  - type: Nerve
+  - type: Woundable
+    integrityCap: 80
+    thresholds:
+      Healthy: 80
+      Minor: 70
+      Moderate: 60
+      Severe: 40
+      Critical: 20
+      Mangled: 5
+      Severed: -10
+
+- type: entity
+  parent: [ OrganBaseArmRight, OrganVulpkaninClassicExternal ]
+  id: OrganVulpkaninClassicArmRight
+  components:
+  - type: Damageable
+  - type: Injurable
+    damageContainer: Biological
+  - type: Nerve
+  - type: Woundable
+    integrityCap: 80
+    thresholds:
+      Healthy: 80
+      Minor: 70
+      Moderate: 60
+      Severe: 40
+      Critical: 20
+      Mangled: 5
+      Severed: -10
+
+- type: entity
+  parent: [ OrganBaseHandLeft, OrganVulpkaninClassicExternal ]
+  id: OrganVulpkaninClassicHandLeft
+
+- type: entity
+  parent: [ OrganBaseHandRight, OrganVulpkaninClassicExternal ]
+  id: OrganVulpkaninClassicHandRight
+
+- type: entity
+  parent: [ OrganBaseLegLeft, OrganVulpkaninClassicExternal ]
+  id: OrganVulpkaninClassicLegLeft
+  components:
+  - type: Damageable
+  - type: Injurable
+    damageContainer: Biological
+  - type: Nerve
+  - type: Woundable
+    integrityCap: 80
+    thresholds:
+      Healthy: 80
+      Minor: 70
+      Moderate: 60
+      Severe: 40
+      Critical: 20
+      Mangled: 5
+      Severed: -10
+
+- type: entity
+  parent: [ OrganBaseLegRight, OrganVulpkaninClassicExternal ]
+  id: OrganVulpkaninClassicLegRight
+  components:
+  - type: Damageable
+  - type: Injurable
+    damageContainer: Biological
+  - type: Nerve
+  - type: Woundable
+    integrityCap: 80
+    thresholds:
+      Healthy: 80
+      Minor: 70
+      Moderate: 60
+      Severe: 40
+      Critical: 20
+      Mangled: 5
+      Severed: -10
+
+- type: entity
+  parent: [ OrganBaseFootLeft, OrganVulpkaninClassicExternal ]
+  id: OrganVulpkaninClassicFootLeft
+
+- type: entity
+  parent: [ OrganBaseFootRight, OrganVulpkaninClassicExternal ]
+  id: OrganVulpkaninClassicFootRight
+
+- type: entity
+  parent: [ OrganBaseBrain, OrganSpriteHumanInternal, OrganVulpkaninClassicInternal ]
+  id: OrganVulpkaninClassicBrain
+  components:
+  - type: OrganIntegrity
+    integrityCap: 30
+    integrityThresholds:
+      Normal: 30
+      Damaged: 6
+      Destroyed: 0
+
+- type: entity
+  parent: [ OrganVulpkaninClassicVisual, OrganBaseEyes, OrganVulpkaninClassicInternal ]
+  id: OrganVulpkaninClassicEyes
+  components:
+  - type: VisualOrgan
+    data:
+      sprite: Mobs/Customization/eyes.rsi
+      state: eyes
+  - type: OrganIntegrity
+    integrityCap: 24
+    integrityThresholds:
+      Normal: 24
+      Damaged: 4
+      Destroyed: 0
+
+- type: entity
+  parent: [ OrganBaseTongue, OrganVulpkaninClassicInternal ]
+  id: OrganVulpkaninClassicTongue
+  components:
+  - type: OrganIntegrity
+    integrityCap: 30
+    integrityThresholds:
+      Normal: 30
+      Damaged: 6
+      Destroyed: 0
+
+- type: entity
+  parent: [ OrganBaseAppendix, OrganVulpkaninClassicInternal ]
+  id: OrganVulpkaninClassicAppendix
+  components:
+  - type: OrganIntegrity
+    integrityCap: 30
+    integrityThresholds:
+      Normal: 30
+      Damaged: 6
+      Destroyed: 0
+
+- type: entity
+  parent: [ OrganBaseEars, OrganVulpkaninClassicInternal ]
+  id: OrganVulpkaninClassicEars
+  components:
+  - type: OrganIntegrity
+    integrityCap: 30
+    integrityThresholds:
+      Normal: 30
+      Damaged: 6
+      Destroyed: 0
+
+- type: entity
+  parent: [ OrganBaseLungs, OrganVulpkaninClassicInternal, OrganVulpkaninClassicMetabolizer ]
+  id: OrganVulpkaninClassicLungs
+  components:
+  - type: OrganIntegrity
+    integrityCap: 34
+    integrityThresholds:
+      Normal: 34
+      Damaged: 9
+      Destroyed: 0
+
+- type: entity
+  parent: [ OrganBaseHeart, OrganVulpkaninClassicInternal, OrganVulpkaninClassicMetabolizer ]
+  id: OrganVulpkaninClassicHeart
+  components:
+  - type: OrganIntegrity
+    integrityCap: 34
+    integrityThresholds:
+      Normal: 34
+      Damaged: 9
+      Destroyed: 0
+
+- type: entity
+  parent: [ OrganBaseStomach, OrganVulpkaninClassicInternal, OrganVulpkaninClassicMetabolizer ]
+  id: OrganVulpkaninClassicStomach
+  components:
+  - type: OrganIntegrity
+    integrityCap: 88
+    integrityThresholds:
+      Normal: 88
+      Damaged: 17
+      Destroyed: 0
+
+- type: entity
+  parent: [ OrganBaseLiver, OrganVulpkaninClassicInternal, OrganVulpkaninClassicMetabolizer ]
+  id: OrganVulpkaninClassicLiver
+  components:
+  - type: OrganIntegrity
+    integrityCap: 42
+    integrityThresholds:
+      Normal: 42
+      Damaged: 12
+      Destroyed: 0
+
+- type: entity
+  parent: [ OrganBaseKidneys, OrganVulpkaninClassicInternal, OrganVulpkaninClassicMetabolizer ]
+  id: OrganVulpkaninClassicKidneys
+  components:
+  - type: OrganIntegrity
+    integrityCap: 42
+    integrityThresholds:
+      Normal: 42
+      Damaged: 12
+      Destroyed: 0

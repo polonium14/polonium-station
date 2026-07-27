@@ -70,7 +70,7 @@ public sealed partial class CCVars
     ///     This only affects the first time a character is made for an account, nothing else.
     /// </summary>
     public static readonly CVarDef<string> ICNewAccountSpeciesBlacklist =
-        CVarDef.Create("ic.blacklist_species_new_account", "Diona,Vulpkanin,Vox,SlimePerson", CVar.SERVER);
+        CVarDef.Create("ic.blacklist_species_new_account", "Diona,Vulpkanin,VulpkaninClassic,Vox,SlimePerson", CVar.SERVER);
 
     /// <summary>
     ///     Control displaying SSD indicators near players
