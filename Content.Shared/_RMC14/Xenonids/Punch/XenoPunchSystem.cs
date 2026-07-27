@@ -12,7 +12,7 @@ using Robust.Shared.Timing;
 
 namespace Content.Shared._RMC14.Xenonids.Punch;
 
-public sealed class XenoPunchSystem : EntitySystem
+public sealed partial class XenoPunchSystem : EntitySystem
 {
     [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private DamageableSystem _damageable = default!;

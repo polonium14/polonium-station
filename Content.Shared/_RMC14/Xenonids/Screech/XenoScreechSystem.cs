@@ -9,7 +9,7 @@ using Robust.Shared.Timing;
 
 namespace Content.Shared._RMC14.Xenonids.Screech;
 
-public sealed class XenoScreechSystem : EntitySystem
+public sealed partial class XenoScreechSystem : EntitySystem
 {
     [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private EntityLookupSystem _lookup = default!;

@@ -10,7 +10,7 @@ using Robust.Shared.Timing;
 
 namespace Content.Shared._RMC14.Xenonids.Fling;
 
-public sealed class XenoFlingSystem : EntitySystem
+public sealed partial class XenoFlingSystem : EntitySystem
 {
     [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private DamageableSystem _damageable = default!;

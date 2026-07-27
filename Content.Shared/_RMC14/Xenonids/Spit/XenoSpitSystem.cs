@@ -7,7 +7,7 @@ using Robust.Shared.Timing;
 
 namespace Content.Shared._RMC14.Xenonids.Spit;
 
-public sealed class XenoSpitSystem : EntitySystem
+public sealed partial class XenoSpitSystem : EntitySystem
 {
     [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private SharedGunSystem _gun = default!;

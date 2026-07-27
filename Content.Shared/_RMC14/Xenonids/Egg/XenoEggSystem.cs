@@ -14,7 +14,7 @@ using Robust.Shared.Timing;
 
 namespace Content.Shared._RMC14.Xenonids.Egg;
 
-public sealed class XenoEggSystem : EntitySystem
+public sealed partial class XenoEggSystem : EntitySystem
 {
     [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private SharedDoAfterSystem _doAfter = default!;

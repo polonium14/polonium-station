@@ -17,7 +17,7 @@ using Robust.Shared.Timing;
 
 namespace Content.Shared._RMC14.Xenonids.Evolution;
 
-public sealed class XenoEvolutionSystem : EntitySystem
+public sealed partial class XenoEvolutionSystem : EntitySystem
 {
     [Dependency] private SharedActionsSystem _action = default!;
     [Dependency] private IConfigurationManager _config = default!;

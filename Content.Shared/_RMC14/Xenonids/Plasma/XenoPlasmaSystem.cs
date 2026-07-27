@@ -8,7 +8,7 @@ using Robust.Shared.Player;
 
 namespace Content.Shared._RMC14.Xenonids.Plasma;
 
-public sealed class XenoPlasmaSystem : EntitySystem
+public sealed partial class XenoPlasmaSystem : EntitySystem
 {
     [Dependency] private AlertsSystem _alerts = default!;
     [Dependency] private INetManager _net = default!;

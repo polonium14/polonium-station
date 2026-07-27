@@ -6,11 +6,11 @@ using Robust.Shared.Network;
 
 namespace Content.Shared._RMC14.Xenonids.Name;
 
-public abstract class SharedXenoNameSystem : EntitySystem
+public abstract partial class SharedXenoNameSystem : EntitySystem
 {
-    [Dependency] private readonly SharedMindSystem _mind = default!;
-    [Dependency] private readonly NameModifierSystem _nameModifier = default!;
-    [Dependency] private readonly INetManager _net = default!;
+    [Dependency] private SharedMindSystem _mind = default!;
+    [Dependency] private NameModifierSystem _nameModifier = default!;
+    [Dependency] private INetManager _net = default!;
 
     private const string DefaultPrefix = "XX";
 

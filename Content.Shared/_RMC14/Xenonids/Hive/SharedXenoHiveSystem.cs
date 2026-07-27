@@ -8,10 +8,10 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared._RMC14.Xenonids.Hive;
 
-public abstract class SharedXenoHiveSystem : EntitySystem
+public abstract partial class SharedXenoHiveSystem : EntitySystem
 {
-    [Dependency] private readonly MobStateSystem _mobState = default!;
-    [Dependency] private readonly INetManager _net = default!;
+    [Dependency] private MobStateSystem _mobState = default!;
+    [Dependency] private INetManager _net = default!;
 
     private EntityQuery<HiveComponent> _hiveQuery;
     private EntityQuery<HiveMemberComponent> _memberQuery;

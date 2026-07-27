@@ -17,7 +17,7 @@ using Robust.Shared.Timing;
 
 namespace Content.Shared._RMC14.Xenonids.Pheromones;
 
-public sealed class XenoPheromonesSystem : EntitySystem
+public sealed partial class XenoPheromonesSystem : EntitySystem
 {
     private static readonly EntProtoId PheromonesAction = "ActionXenoPheromones";
 
