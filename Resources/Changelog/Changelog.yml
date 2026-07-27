@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: ScarKy0
-  changes:
-  - message: Added the Paper Centrifuge! A craftable, makeshift centrifudge primarly
-      usable in maintenance chemistry.
-    type: Add
-  id: 9407
-  time: '2026-01-15T20:01:06.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42040
 - author: B_Kirill
   changes:
   - message: Added camera map. Cutting MAP wire hides camera from map while keeping
@@ -4127,3 +4119,12 @@
   id: 9907
   time: '2026-07-27T15:31:06.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/832
+- author: haze
+  changes:
+  - message: "Przywr\xF3cono brakuj\u0105ce mail teleportery"
+    type: Add
+  - message: "Dodano polskie t\u0142umaczenia"
+    type: Add
+  id: 9908
+  time: '2026-07-27T15:40:59.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/839
