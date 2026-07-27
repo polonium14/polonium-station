@@ -7,6 +7,7 @@ using Content.Shared.Chat.Prototypes;
 using Content.Shared.Emoting;
 using Robust.Client.Animations;
 using Robust.Client.GameObjects;
+using Robust.Client.Graphics;
 using Robust.Shared.Animations;
 
 namespace Content.Client.Emoting;
@@ -14,6 +15,8 @@ namespace Content.Client.Emoting;
 public sealed partial class AnimatedEmotesSystem : EntitySystem
 {
     [Dependency] private AnimationPlayerSystem _anim = default!;
+    [Dependency] private SharedTransformSystem _transform = default!;
+    [Dependency] private IEyeManager _eye = default!;
 
     public override void Initialize()
     {
@@ -101,7 +104,16 @@ public sealed partial class AnimatedEmotesSystem : EntitySystem
         spin.PreviousDirection = sprite.DirectionOverride;
         spin.PreviousEnabled = sprite.EnableDirectionOverride;
 
-        sprite.DirectionOverride = SpinDirections[0];
+        var startIndex = Array.IndexOf(SpinDirections, sprite.EnableDirectionOverride
+            ? sprite.DirectionOverride
+            : (_transform.GetWorldRotation(ent.Owner) + _eye.CurrentEye.Rotation).GetCardinalDir());
+
+        if (startIndex < 0)
+            startIndex = 0;
+
+        spin.StartIndex = startIndex;
+
+        sprite.DirectionOverride = SpinDirections[startIndex];
         sprite.EnableDirectionOverride = true;
     }
 
@@ -111,21 +123,22 @@ public sealed partial class AnimatedEmotesSystem : EntitySystem
         while (query.MoveNext(out var uid, out var spin, out var sprite))
         {
             spin.Accumulator += frameTime;
-            if (spin.Accumulator < SpinStepTime)
-                continue;
 
-            spin.Accumulator -= SpinStepTime;
-            spin.Step++;
-
-            if (spin.Step >= SpinSteps)
+            while (spin.Accumulator >= SpinStepTime)
             {
-                sprite.DirectionOverride = spin.PreviousDirection;
-                sprite.EnableDirectionOverride = spin.PreviousEnabled;
-                RemCompDeferred<SpinningEmoteComponent>(uid);
-                continue;
-            }
+                spin.Accumulator -= SpinStepTime;
+                spin.Step++;
 
-            sprite.DirectionOverride = SpinDirections[spin.Step % SpinDirections.Length];
+                if (spin.Step >= SpinSteps)
+                {
+                    sprite.DirectionOverride = spin.PreviousDirection;
+                    sprite.EnableDirectionOverride = spin.PreviousEnabled;
+                    RemCompDeferred<SpinningEmoteComponent>(uid);
+                    break;
+                }
+
+                sprite.DirectionOverride = SpinDirections[(spin.StartIndex + spin.Step) % SpinDirections.Length];
+            }
         }
     }
     private void OnJump(Entity<AnimatedEmotesComponent> ent, ref AnimationJumpEmoteEvent args)

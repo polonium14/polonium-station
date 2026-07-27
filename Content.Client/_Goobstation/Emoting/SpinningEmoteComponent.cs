@@ -24,6 +24,12 @@ public sealed partial class SpinningEmoteComponent : Component
     public int Step;
 
     /// <summary>
+    ///     Index into the spin's facing cycle that the sprite started on, so the spin picks up from
+    ///     whatever direction it was already showing.
+    /// </summary>
+    public int StartIndex;
+
+    /// <summary>
     ///     Sprite override state from before the spin, restored once it ends.
     /// </summary>
     public Direction PreviousDirection;
