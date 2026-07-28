@@ -2,10 +2,10 @@ ent-ClothingCyberneticProtoVisoreBasic = Cybernetic Visor
     .desc = Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. The most common simplest model
 
 ent-ClothingCyberneticProtoVisoreEngi = Engineer's Cybernetic Visor
-    .desc = Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This version is space proof, has a built in T-ray scanner and provides some protection against welding arcs. Not as good as a designated mask however.
+    .desc = Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This version is space proof, has a built in T-ray scanner and provides some protection against welding arcs for up to 10 secounds of continous welding. Not as good as a designated mask, however it will adapt itself to fix the newly acquired sight error.
 
 ent-ClothingCyberneticProtoVisoreCE = CE's Cybernetic Visor
-    .desc = Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This version is space proof, comes with enviroment thermal sensors, T-ray scanner and allows you to weld without limits, not to mention built in NVG, altough of very poor quality.
+    .desc = Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This version has all the gadgets a HOS might want, that being, Space protection, security HUDs AND some very poorly working NVG sensors.
 
 ent-ClothingCyberneticProtoVisoreMedical = Doctors's Cybernetic Visor
     .desc = Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This version has a built in health HUD display.

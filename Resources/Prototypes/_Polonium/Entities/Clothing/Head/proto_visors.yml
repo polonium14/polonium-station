@@ -88,7 +88,7 @@
   parent: [ClothingCyberneticProtoVisorBase, ClothingCyberneticProtoVisorBaseSpaceProof, BaseEngineeringContraband]
   id: ClothingCyberneticProtoVisorEngi
   name: Engineer's Cybernetic Visor
-  description: Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This version is space proof, has a built in T-ray scanner and provides some protection against welding arcs. Not as good as a designated mask however.
+  description: Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This version is space proof, has a built in T-ray scanner and provides some protection against welding arcs for up to 10 secounds of continous welding. Not as good as a designated mask, however it will adapt itself to fix the newly acquired sight error.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -101,18 +101,16 @@
       - state: helmet-internals
       - state: eyes-engineering
         shader: unshaded
-  - type: GenericVisualizer
-    visuals:
-      enum.TrayScannerVisual.Visual:
-        base:
-          On: { state: tray-on }
-          Off: { state: tray-off }
-  - type: TrayScanner
-    toggleAction: ActionToggleTrayScanner
-    soundOn:
-      path: /Audio/Items/flashlight_on.ogg
-    soundOff:
-      path: /Audio/Items/flashlight_off.ogg
+#  - type: TrayScanner #T-rays dont work on head
+#    toggleAction: ActionToggleTrayScanner
+#    soundOn:
+#      path: /Audio/Items/flashlight_on.ogg
+#    soundOff:
+#      path: /Audio/Items/flashlight_off.ogg
+#  - type: GoggleShader
+#    shader: Goggles
+#    color: '#5AB43CCC'
+#    enabled: false
   - type: EyeProtection
     protectionTime: 10
 
@@ -133,18 +131,16 @@
       - state: helmet-internals
       - state: eyes-ce
         shader: unshaded
-  - type: GenericVisualizer
-    visuals:
-      enum.TrayScannerVisual.Visual:
-        base:
-          On: { state: tray-on }
-          Off: { state: tray-off }
-  - type: TrayScanner
-    toggleAction: ActionToggleTrayScanner
-    soundOn:
-      path: /Audio/Items/flashlight_on.ogg
-    soundOff:
-      path: /Audio/Items/flashlight_off.ogg
+#  - type: TrayScanner #T-rays dont work on head
+#    toggleAction: ActionToggleTrayScanner
+#    soundOn:
+#      path: /Audio/Items/flashlight_on.ogg
+#    soundOff:
+#      path: /Audio/Items/flashlight_off.ogg
+#  - type: GoggleShader
+#    shader: Goggles
+#    color: '#5AB43CCC'
+#    enabled: false
   - type: EyeProtection
   - type: ThermalSight # Fancy
 
@@ -300,7 +296,7 @@
   parent: [ClothingCyberneticProtoVisorSecurity, ClothingCyberneticProtoVisorBaseSpaceProof, ClothingCyberneticProtoVisorBaseNVG, BaseCommandContraband]
   id: ClothingCyberneticProtoVisorHOS
   name: HOS's Cybernetic Visor
-  description: Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This version has all the gadgets a HOS might want: Space protection, security HUDs AND some very poorly working NVG sensors.
+  description: Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This version has all the gadgets a HOS might want, that being, Space protection, security HUDs AND some very poorly working NVG sensors.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -340,7 +336,6 @@
   id: ClothingCyberneticProtoVisorQM
   name: QM's Cybernetic Visor
   description: Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This version has some poor quality NVGs for piloting the shuttle when the lights break as well as space protection for not dying when ATS explodes, altough you may have bigger problems than.
-  components:
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -447,18 +442,16 @@
     - Biological
     - Inorganic
     - Silicon
-  - type: GenericVisualizer
-    visuals:
-      enum.TrayScannerVisual.Visual:
-        base:
-          On: { state: tray-on }
-          Off: { state: tray-off }
-  - type: TrayScanner
-    toggleAction: ActionToggleTrayScanner
-    soundOn:
-      path: /Audio/Items/flashlight_on.ogg
-    soundOff:
-      path: /Audio/Items/flashlight_off.ogg
+#  - type: TrayScanner #T-rays dont work on head
+#    toggleAction: ActionToggleTrayScanner
+#    soundOn:
+#      path: /Audio/Items/flashlight_on.ogg
+#    soundOff:
+#      path: /Audio/Items/flashlight_off.ogg
+#  - type: GoggleShader
+#    shader: Goggles
+#    color: '#5AB43CCC'
+#    enabled: false
   - type: ThermalSight
   - type: SolutionScanner
   - type: EyeProtection
