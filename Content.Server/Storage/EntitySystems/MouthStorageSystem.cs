@@ -1,0 +1,40 @@
+using Content.Server.Speech.EntitySystems;
+using Content.Shared.Nutrition;
+using Content.Shared.Speech;
+using Content.Shared.Storage;
+using Content.Shared.Storage.Components;
+using Content.Shared.Storage.EntitySystems;
+
+namespace Content.Server.Storage.EntitySystems;
+
+public sealed partial class MouthStorageSystem : SharedMouthStorageSystem
+{
+    [Dependency] private ReplacementAccentSystem _replacement = default!;
+
+    public override void Initialize()
+    {
+        base.Initialize();
+        SubscribeLocalEvent<MouthStorageComponent, AccentGetEvent>(OnAccent);
+        SubscribeLocalEvent<MouthStorageComponent, IngestionAttemptEvent>(OnIngestAttempt);
+    }
+
+    // Force you to mumble if you have items in your mouth.
+    private void OnAccent(EntityUid uid, MouthStorageComponent component, ref AccentGetEvent args)
+    {
+        if (IsMouthBlocked(component))
+            args.Message = _replacement.ApplyReplacements(args.Message, "mumble");
+    }
+
+    // Attempting to eat or drink anything with items in your mouth won't work.
+    private void OnIngestAttempt(EntityUid uid, MouthStorageComponent component, ref IngestionAttemptEvent args)
+    {
+        if (!IsMouthBlocked(component))
+            return;
+
+        if (!TryComp<StorageComponent>(component.MouthId, out var storage))
+            return;
+
+        args.Blocker = storage.Container.ContainedEntities[0];
+        args.Cancelled = true;
+    }
+}
