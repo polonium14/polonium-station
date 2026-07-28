@@ -30,8 +30,7 @@
     - Reptilian
     - SlimePerson
     # Goobstation
-    # TEMP: disabled until guidebook entity embeds are fixed
-    # - Felinid
+    - Felinid
     - Gingerbread
     # - Harpy
     - Vox
@@ -83,11 +82,10 @@
   text: "/ServerInfo/_Polonium/Guidebook/_Stub.xml"
 
 # Goobstation
-# TEMP: disabled until guidebook entity embeds are fixed
-#- type: guideEntry
-#  id: Felinid
-#  name: species-name-felinid
-#  text: "/ServerInfo/_Polonium/Guidebook/Mobs/Felinid.xml"
+- type: guideEntry
+  id: Felinid
+  name: species-name-felinid
+  text: "/ServerInfo/_Polonium/Guidebook/Mobs/Felinid.xml"
 
 - type: guideEntry
   id: Gingerbread

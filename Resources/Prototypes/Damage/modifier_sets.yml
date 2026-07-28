@@ -329,3 +329,11 @@
   coefficients:
     Heat: 1.15
     Cold: 0.85
+
+# Felinids are frail
+- type: damageModifierSet
+  id: Felinid
+  coefficients:
+    Blunt: 1.15
+    Slash: 1.15
+    Piercing: 1.15

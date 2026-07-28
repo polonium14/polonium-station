@@ -14,9 +14,11 @@
     - Arachnid
     - Diona
     - Dwarf
+    - Felinid
     - Human
     - Moth
     - Reptilian
+    - Thaven
     - Vulpkanin
     # macro below
     - Gray
@@ -77,8 +79,10 @@
     - Arachnid
     - Diona
     - Dwarf
+    - Felinid
     - Human
     - Reptilian
+    - Thaven
     - Vulpkanin
     # macro below
     - Gray

@@ -1959,6 +1959,7 @@
   - type: Item
     size: Tiny
     heldPrefix: 0
+  - type: FelinidFood # lets felinids eat the mouse out of hand, see Content.Server/Abilities/Felinid/FelinidSystem.cs
   - type: Clothing
     quickEquip: false
     sprite: Mobs/Animals/mouse.rsi
