@@ -435,7 +435,7 @@
   physicalDesc: reagent-physical-desc-strong-smelling
   flavor: vodka
   color: "#d1d1d155"
-  flammability: 2 # Funky change
+  flammability: 1 # Funky change   # POLONIUM: balance (additionally it doesn't make much sense that 40% vodka is level 2 but 40% gin is 1)
   recognizable: true
   metamorphicSprite:
     sprite: Objects/Consumable/Drinks/ginvodkaglass.rsi
@@ -456,7 +456,7 @@
   physicalDesc: reagent-physical-desc-strong-smelling
   flavor: whiskey
   color: "#ee7732"
-  flammability: 2 # Funky change
+  flammability: 1 # Funky change   # POLONIUM: balance
   recognizable: true
   metamorphicSprite:
     sprite: Objects/Consumable/Drinks/whiskeyglass.rsi
