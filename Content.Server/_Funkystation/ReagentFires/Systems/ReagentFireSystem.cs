@@ -500,7 +500,8 @@ namespace Content.Server._Funkystation.ReagentFires.Systems
                 }
 
                 var standingEntities = new HashSet<EntityUid>();
-                _lookup.GetLocalEntitiesIntersecting(gridUid.Value, tilePos, standingEntities, 0f);
+                // Polonium: NFZ change
+                _lookup.GetLocalEntitiesIntersecting(gridUid.Value, tilePos, standingEntities, 0f, LookupFlags.Uncontained);
 
                 var structuralProto = _prototypeManager.Index<DamageTypePrototype>(StructuralDamage);
                 var heatProto = _prototypeManager.Index<DamageTypePrototype>(HeatDamage);

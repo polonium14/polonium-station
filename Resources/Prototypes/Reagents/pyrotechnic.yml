@@ -168,7 +168,7 @@
   recognizable: true
   boilingPoint: -84.7 # Acetylene. Close enough.
   meltingPoint: -80.7
-  flammability: 2 # Funky change
+  flammability: 3 # Funky change # !!! POLONIUM: 2 was too lean: naked pawns couldn't catch fire from stading in flames
   friction: 0.4
   tileReactions:
   - !type:FlammableTileReaction {}
