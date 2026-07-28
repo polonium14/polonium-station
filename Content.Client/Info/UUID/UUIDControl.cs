@@ -8,10 +8,12 @@ namespace Content.Client.Info.UUID;
 public sealed class UUIDControl : BoxContainer
 {
     private UUIDWindow? _uuidWindow;
+    private readonly IConfigurationManager _cfg;
+    private readonly Button _uuidButton;
 
     public UUIDControl()
     {
-        var cfg = IoCManager.Resolve<IConfigurationManager>();
+        _cfg = IoCManager.Resolve<IConfigurationManager>();
 
         var buttons = new BoxContainer
         {
@@ -19,10 +21,7 @@ public sealed class UUIDControl : BoxContainer
         };
         AddChild(buttons);
 
-        if (!cfg.GetCVar(CCVars.ShowUUIDButton))
-            return;
-
-        var uuidButton = new Button
+        _uuidButton = new Button
         {
             // ReSharper disable once StringLiteralTypo
             Text = "Pokaż UUID",
@@ -30,11 +29,29 @@ public sealed class UUIDControl : BoxContainer
             ClipText = false,
             VerticalExpand = false,
             Margin = new Thickness(3, 3, 3, 3),
+            Visible = false,
         };
 
-        uuidButton.OnPressed += _ => ToggleUUIDWindow();
+        _uuidButton.OnPressed += _ => ToggleUUIDWindow();
+        buttons.AddChild(_uuidButton);
+    }
 
-        buttons.AddChild(uuidButton);
+    protected override void EnteredTree()
+    {
+        base.EnteredTree();
+        _cfg.OnValueChanged(CCVars.ShowUUIDButton, OnShowUUIDChanged, invokeImmediately: true);
+    }
+
+    protected override void ExitedTree()
+    {
+        base.ExitedTree();
+        _cfg.UnsubValueChanged(CCVars.ShowUUIDButton, OnShowUUIDChanged);
+    }
+
+    private void OnShowUUIDChanged(bool show)
+    {
+        _uuidButton.Visible = show;
+        Visible = show;
     }
 
     // ReSharper disable once InconsistentNaming
