@@ -21,6 +21,8 @@
     offset: 0,0.2
     color: "#CCFFCC" # this will match the colour of the beast's eyes when worn, this is just a default.
     containerOccluded: true # this makes the mantle illuminate itself.
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
   - type: Item
     size: Huge
   - type: Tag # Overwrite the TagComponent from the parent to get rid of ClothMade because it's funny when a mothroach eats this ultra specialized bit of equipment, but only the first time.
@@ -45,9 +47,15 @@
   id: ClothingCyberneticProtoVisorBaseNVG
   abstract: true
   components:
-    - type: NightVision
-      isEquipment: true
-      color: "#0D0D0D"
+  - type: NightVision
+    relayOverlay: true
+    enabled: false
+    action: ActionToggleNightVision
+    overlayColor: "#0D0D0DFF"
+    lightingColor: "#0D0D0DFF"
+    noiseAmount: 5
+    noiseMultiplier: 1
+    prioritized: true
 
 # Basic Forms
 - type: entity
@@ -267,7 +275,11 @@
   name: Officer's Cybernetic Visor
   description: Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This version comes with fancy displays for catching criminals.
   components:
+  - type: Sprite
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    state: icon-security
   - type: Clothing
+    sprite: _Omu/Clothing/Head/mantle.rsi
     clothingVisuals:
       head:
       - state: helmet-security
@@ -407,8 +419,14 @@
       - state: eyes-centralcommand
         shader: unshaded
   - type: NightVision
-    isEquipment: true
-    color: "#000000" # Even worse than what other heads get bc "Broken"
+    relayOverlay: true
+    enabled: false
+    action: ActionToggleNightVision
+    overlayColor: "#000000FF"
+    lightingColor: "#FFFFFFFF"
+    noiseAmount: 5
+    noiseMultiplier: 1
+    prioritized: true # Even worse than what other heads get bc "Broken"
   - type: ShowJobIcons
 
 # The Evil CC corporate version
@@ -456,5 +474,11 @@
   - type: SolutionScanner
   - type: EyeProtection
   - type: NightVision
-    isEquipment: true
-    color: "#CCFFCC" # Only visor without black NVG
+    relayOverlay: true
+    enabled: false
+    action: ActionToggleNightVision
+    overlayColor: "#CCFFCCFF"
+    lightingColor: "#CCFFCCFF"
+    noiseAmount: 5
+    noiseMultiplier: 1
+    prioritized: true # Only visor without black NVG
