@@ -1,16 +1,4 @@
 ﻿Entries:
-- author: Kowlin
-  changes:
-  - message: All intern jobs now lock out after 10 hours, up from 5 hours.
-    type: Tweak
-  - message: Security Officer now requires 4 hours of Security Cadet, up from 2.5
-      hours.
-    type: Tweak
-  - message: Head of Security now requires 3 hours of Warden, up from 1 hour.
-    type: Tweak
-  id: 9415
-  time: '2026-01-17T20:24:42.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42372
 - author: sowelipililimute
   changes:
   - message: Vox can eat trash again.
@@ -4123,3 +4111,11 @@
   id: 9914
   time: '2026-07-28T16:44:48.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/849
+- author: Czuat
+  changes:
+  - message: "Dodano w\xF3zki inwalidzkie do Nanomeda plus, Fabrykatora medycznego\
+      \ oraz autotokarki"
+    type: Add
+  id: 9915
+  time: '2026-07-28T18:05:50.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/850
