@@ -1,50 +1,50 @@
-- type: trait
-  id: ProtoVisor
-  name: trait-proto-visor-name
-  description: trait-proto-visor-desc
-  category: Quirks
-  whitelist:
-    components:
-      - Blindable
-  components:
-  - type: PermanentBlindness
-    blindness: 5 # Slightly worse than NearSighted (4) so that the visor is superior and people don't just use normla glasses (they still work as a backup if you loose your mantle) .
-  functions:
-    - !type:TraitGiveEquipmentIfHasJobs 
-      jobEquipment:
-        # engineering mantle for engineers
-        AtmosphericTechnician: ClothingCyberneticBeastMantleWorkAtmospherics # special one for atmosians because burn chamber
-        StationEngineer: ClothingCyberneticBeastMantleWorkEngineering
-        TechnicalAssistant: ClothingCyberneticBeastMantleWorkEngineering
-        # salvage mantle for salvagers
-        SalvageSpecialist: ClothingCyberneticBeastMantleWorkSalvage
-        ShaftMiner: ClothingCyberneticBeastMantleWorkSalvage
-        # sec mantle for secoffs
-        Detective: ClothingCyberneticBeastMantleSecurity
-        SecurityCadet: ClothingCyberneticBeastMantleSecurity
-        SecurityOfficer: ClothingCyberneticBeastMantleSecurity
-        Warden: ClothingCyberneticBeastMantleSecurity
-        SecuritySergeant: ClothingCyberneticBeastMantleSecurity
-        # med mantle for doctors (and brigmedic, actually corpsman)
-        Chemist: ClothingCyberneticBeastMantleMedicalChemist
-        MedicalDoctor: ClothingCyberneticBeastMantleMedical
-        MedicalIntern: ClothingCyberneticBeastMantleMedical
-        Paramedic: ClothingCyberneticBeastMantleMedicalParamedic # paramedic mantle variant with internals
-        Brigmedic: ClothingCyberneticBeastMantleCorpsman
-        Virologist: ClothingCyberneticBeastMantleMedical
-        # tossup of mantles for command.
-        Captain: ClothingCyberneticBeastMantleCommand
-        ChiefEngineer: ClothingCyberneticBeastMantleWorkChiefEngineering
-        ChiefMedicalOfficer: ClothingCyberneticBeastMantleMedicalCMO
-        HeadOfPersonnel: ClothingCyberneticBeastMantleCommand
-        HeadOfSecurity: ClothingCyberneticBeastMantleHeadofSecurity
-        Quartermaster: ClothingCyberneticBeastMantleSupply
-        ResearchDirector: ClothingCyberneticBeastMantleScienceCommand
-        AdministrativeAssistant: ClothingCyberneticBeastMantleCommand
-        #Mantles for Central Command
-        BlueshieldOfficer: ClothingCyberneticBeastMantleBlueshieldOfficer
-        NanotrasenRepresentative: ClothingCyberneticBeastMantleCentralCommandNoThermal
-        # Bartender mantle
-        Bartender: ClothingCyberneticBeastMantleBar
-      # If they have none of the specified jobs:
-      equipmentUnmet: ClothingCyberneticBeastMantle
+#- type: trait
+#  id: ProtoVisor
+#  name: trait-proto-visor-name
+#  description: trait-proto-visor-desc
+#  category: Quirks
+#  whitelist:
+#    components:
+#      - Blindable
+#  components:
+#  - type: PermanentBlindness
+#    blindness: 5 # Slightly worse than NearSighted (4) so that the visor is superior and people don't just use normla glasses (they still work as a backup if you loose your mantle) .
+#  functions:
+#    - !type:TraitGiveEquipmentIfHasJobs 
+#      jobEquipment:
+#        # engineering mantle for engineers
+#        AtmosphericTechnician: ClothingCyberneticBeastMantleWorkAtmospherics # special one for atmosians because burn chamber
+#        StationEngineer: ClothingCyberneticBeastMantleWorkEngineering
+#        TechnicalAssistant: ClothingCyberneticBeastMantleWorkEngineering
+#        # salvage mantle for salvagers
+#        SalvageSpecialist: ClothingCyberneticBeastMantleWorkSalvage
+#        ShaftMiner: ClothingCyberneticBeastMantleWorkSalvage
+#        # sec mantle for secoffs
+#        Detective: ClothingCyberneticBeastMantleSecurity
+#        SecurityCadet: ClothingCyberneticBeastMantleSecurity
+#        SecurityOfficer: ClothingCyberneticBeastMantleSecurity
+#        Warden: ClothingCyberneticBeastMantleSecurity
+#        SecuritySergeant: ClothingCyberneticBeastMantleSecurity
+#        # med mantle for doctors (and brigmedic, actually corpsman)
+#        Chemist: ClothingCyberneticBeastMantleMedicalChemist
+#        MedicalDoctor: ClothingCyberneticBeastMantleMedical
+#        MedicalIntern: ClothingCyberneticBeastMantleMedical
+#        Paramedic: ClothingCyberneticBeastMantleMedicalParamedic # paramedic mantle variant with internals
+#        Brigmedic: ClothingCyberneticBeastMantleCorpsman
+#        Virologist: ClothingCyberneticBeastMantleMedical
+#        # tossup of mantles for command.
+#        Captain: ClothingCyberneticBeastMantleCommand
+#        ChiefEngineer: ClothingCyberneticBeastMantleWorkChiefEngineering
+#        ChiefMedicalOfficer: ClothingCyberneticBeastMantleMedicalCMO
+#        HeadOfPersonnel: ClothingCyberneticBeastMantleCommand
+#        HeadOfSecurity: ClothingCyberneticBeastMantleHeadofSecurity
+#        Quartermaster: ClothingCyberneticBeastMantleSupply
+#        ResearchDirector: ClothingCyberneticBeastMantleScienceCommand
+#        AdministrativeAssistant: ClothingCyberneticBeastMantleCommand
+#        #Mantles for Central Command
+#        BlueshieldOfficer: ClothingCyberneticBeastMantleBlueshieldOfficer
+#        NanotrasenRepresentative: ClothingCyberneticBeastMantleCentralCommandNoThermal
+#        # Bartender mantle
+#        Bartender: ClothingCyberneticBeastMantleBar
+#      # If they have none of the specified jobs:
+#      equipmentUnmet: ClothingCyberneticBeastMantle
