@@ -1,14 +1,4 @@
 ﻿Entries:
-- author: Samuka
-  changes:
-  - message: The mothership now starts with more materials so there is less need to
-      salvage for them.
-    type: Tweak
-  - message: Xenoborgs guidebook entry got updated in regards to preparation and tactics.
-    type: Tweak
-  id: 9414
-  time: '2026-01-16T17:19:48.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42448
 - author: Kowlin
   changes:
   - message: All intern jobs now lock out after 10 hours, up from 5 hours.
@@ -4122,3 +4112,14 @@
   id: 9913
   time: '2026-07-28T05:06:17.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/833
+- author: haze
+  changes:
+  - message: "Zmniejszono intensywno\u015B\u0107 po\u017Car\xF3w (welding fuel, vodka,\
+      \ whiskey)"
+    type: Tweak
+  - message: "Organy nie dostaj\u0105 dodatkowych obra\u017Ce\u0144 od po\u017Car\xF3\
+      w"
+    type: Fix
+  id: 9914
+  time: '2026-07-28T16:44:48.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/849

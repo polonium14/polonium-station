@@ -59,6 +59,9 @@
 # SPDX-FileCopyrightText: 2026 MaiaArai <158123176+YaraaraY@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2026 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
 # SPDX-FileCopyrightText: 2026 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 TheYaket <54752691+TheYaket@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 maciejwalendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 nikitosych <174215049+nikitosych@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2026 pathetic meowmeow <uhhadd@gmail.com>
 # SPDX-FileCopyrightText: 2026 taydeo <tay@funkystation.org>
 # SPDX-FileCopyrightText: 2026 taydeo <td12233a@gmail.com>
@@ -435,7 +438,7 @@
   physicalDesc: reagent-physical-desc-strong-smelling
   flavor: vodka
   color: "#d1d1d155"
-  flammability: 2 # Funky change
+  flammability: 1 # Funky change   # POLONIUM: balance (additionally it doesn't make much sense that 40% vodka is level 2 but 40% gin is 1)
   recognizable: true
   metamorphicSprite:
     sprite: Objects/Consumable/Drinks/ginvodkaglass.rsi
@@ -456,7 +459,7 @@
   physicalDesc: reagent-physical-desc-strong-smelling
   flavor: whiskey
   color: "#ee7732"
-  flammability: 2 # Funky change
+  flammability: 1 # Funky change   # POLONIUM: balance
   recognizable: true
   metamorphicSprite:
     sprite: Objects/Consumable/Drinks/whiskeyglass.rsi
