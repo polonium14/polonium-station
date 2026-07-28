@@ -168,7 +168,7 @@
   recognizable: true
   boilingPoint: -84.7 # Acetylene. Close enough.
   meltingPoint: -80.7
-  flammability: 5 # Funky change; Polonium change (nerfed fire time)
+  flammability: 2 # Funky change
   friction: 0.4
   tileReactions:
   - !type:FlammableTileReaction {}
