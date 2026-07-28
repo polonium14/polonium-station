@@ -32,7 +32,7 @@
     # Goobstation
     - Felinid
     - Gingerbread
-    # - Harpy
+    - Harpy
     - Vox
     - Vulpkanin
     - Rodentia
@@ -92,10 +92,10 @@
   name: species-name-gingerbread
   text: "/ServerInfo/_Polonium/Guidebook/Mobs/Gingerbread.xml"
 
-#- type: guideEntry
-#  id: Harpy
-#  name: species-name-harpy
-#  text: "/ServerInfo/_Polonium/Guidebook/Mobs/Harpy.xml"
+- type: guideEntry
+  id: Harpy
+  name: species-name-harpy
+  text: "/ServerInfo/_Polonium/Guidebook/Mobs/Harpy.xml"
 
 - type: guideEntry
   id: Vox

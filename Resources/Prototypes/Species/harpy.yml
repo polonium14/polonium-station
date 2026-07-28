@@ -1,0 +1,14 @@
+- type: species
+  id: Harpy
+  name: species-name-harpy
+  roundStart: true
+  prototype: MobHarpy
+  dollPrototype: AppearanceHarpy
+  skinColoration: HumanToned
+  defaultSoundsBySex:
+  - SoundsHarpyMale
+  - SoundsHarpyFemale
+  - SoundsHarpyFemale
+  voices:
+  - SoundsHarpyMale
+  - SoundsHarpyFemale

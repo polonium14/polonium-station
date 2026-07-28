@@ -992,3 +992,150 @@
     DefaultDeathgasp:
       collection: FemaleDeathGasp
 
+# Harpy Sounds (mimicry: harpies can imitate most station noises)
+- type: emoteSounds
+  id: SoundsHarpyMale
+  voiceSelectorName: humanoid-profile-editor-voice-masculine
+  params:
+    variation: 0.125
+  sounds:
+    Scream:
+      collection: HarpyMaleScreams
+    Laugh:
+      collection: HarpyMaleLaugh
+    Sneeze:
+      collection: MaleSneezes
+    Cough:
+      collection: MaleCoughs
+    Sigh:
+      collection: MaleSigh
+    Crying:
+      collection: MaleCry
+    Whistle:
+      collection: Whistles
+    Hiss:
+      collection: HarpyHisses
+    Meow:
+      collection: HarpyMeows
+    Mew:
+      collection: HarpyMews
+    Growl:
+      collection: HarpyGrowls
+    Purr:
+      collection: HarpyPurrs
+    Ring:
+      collection: HarpyRings
+    Pew:
+      collection: HarpyPews
+    Bang:
+      collection: HarpyBangs
+    Beep:
+      collection: HarpyBeeps
+    Rev:
+      collection: HarpyRevs
+#    Click:
+#      collection: HarpyClicks
+    Chitter:
+      collection: HarpyChitter
+    Squeak:
+      collection: HarpySqueak
+    Caw:
+      collection: HarpyCaws
+    Chirp:
+      collection: HarpyChirps
+    Snarl:
+      collection: VulpkaninSnarls
+    Bark:
+      collection: VulpkaninBarks
+    Whine:
+      collection: VulpkaninWhines
+    Howl:
+      collection: VulpkaninHowls
+    Awoo:
+      collection: VulpkaninHowls
+    Honk:
+      collection: HarpyHonks
+    Weh:
+      collection: Weh
+    Gasp:
+      collection: MaleGasp
+    DefaultDeathgasp:
+      collection: MaleDeathGasp
+    Gekker:
+      collection: VulpkaninGekker
+    Yap:
+      collection: VulpkaninYap
+
+- type: emoteSounds
+  id: SoundsHarpyFemale
+  voiceSelectorName: humanoid-profile-editor-voice-feminine
+  params:
+    variation: 0.125
+  sounds:
+    Scream:
+      collection: HarpyFemaleScreams
+    Laugh:
+      collection: HarpyFemaleLaugh
+    Sneeze:
+      collection: FemaleSneezes
+    Cough:
+      collection: FemaleCoughs
+    Sigh:
+      collection: FemaleSigh
+    Crying:
+      collection: FemaleCry
+    Whistle:
+      collection: Whistles
+    Hiss:
+      collection: HarpyHisses
+    Meow:
+      collection: HarpyMeows
+    Mew:
+      collection: HarpyMews
+    Growl:
+      collection: HarpyGrowls
+    Purr:
+      collection: HarpyPurrs
+    Ring:
+      collection: HarpyRings
+    Pew:
+      collection: HarpyPews
+    Bang:
+      collection: HarpyBangs
+    Beep:
+      collection: HarpyBeeps
+    Rev:
+      collection: HarpyRevs
+#    Click:
+#      collection: HarpyClicks
+    Chitter:
+      collection: HarpyChitter
+    Squeak:
+      collection: HarpySqueak
+    Caw:
+      collection: HarpyCaws
+    Chirp:
+      collection: HarpyChirps
+    Snarl:
+      collection: VulpkaninSnarls
+    Bark:
+      collection: VulpkaninBarks
+    Whine:
+      collection: VulpkaninWhines
+    Howl:
+      collection: VulpkaninHowls
+    Awoo:
+      collection: VulpkaninHowls
+    Honk:
+      collection: HarpyHonks
+    Weh:
+      collection: Weh
+    Gasp:
+      collection: FemaleGasp
+    DefaultDeathgasp:
+      collection: FemaleDeathGasp
+    Gekker:
+      collection: VulpkaninGekker
+    Yap:
+      collection: VulpkaninYap
+

@@ -1,0 +1,15 @@
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 corresp0nd <46357632+corresp0nd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- files: ["caw1.ogg"]
+  license: "CC-BY-SA-4.0"
+  copyright: "Original sound by https://xeno-canto.org/756861"
+  source: "https://xeno-canto.org/756861"
+
+  files: ["chirp1.ogg"]
+  license: "CC-BY-SA-4.0"
+  copyright: "Original sound by https://xeno-canto.org/797998"
+  source: "https://xeno-canto.org/797998"

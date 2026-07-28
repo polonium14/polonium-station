@@ -53,3 +53,12 @@
     path: /Audio/_EE/Supermatter/status/bloblarm.ogg
   exclaimSound:
     path: /Audio/_EE/Supermatter/status/bloblarm.ogg
+
+- type: speechSounds
+  id: Harpy
+  saySound:
+    path: /Audio/_DV/Voice/Harpy/chirp1.ogg
+  askSound:
+    path: /Audio/_DV/Voice/Harpy/chirp1.ogg
+  exclaimSound:
+    path: /Audio/_DV/Voice/Harpy/chirp1.ogg
