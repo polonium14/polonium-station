@@ -201,11 +201,19 @@
   parent: RollerBedSpawnFolded
   id: CheapRollerBedSpawnFolded
   result: CheapRollerBedSpawnFolded
-
+  
 - type: latheRecipe
   parent: RollerBedSpawnFolded
   id: EmergencyRollerBedSpawnFolded
   result: EmergencyRollerBedSpawnFolded
+
+- type: latheRecipe # Polonium Addition
+  id: VehicleWheelchair
+  result: VehicleWheelchair
+  completetime: 4
+  materials:
+    Steel: 600
+    Plastic: 300   
 
 - type: latheRecipe
   id: WhiteCane
