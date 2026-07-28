@@ -9,8 +9,8 @@ namespace Content.Client.Info.UUID;
 [GenerateTypedNameReferences]
 public sealed partial class UUIDWindow : DefaultWindow
 {
-    [Dependency] private readonly IPlayerManager _player = default!;
-    [Dependency] private readonly IClipboardManager _clipboard = default!;
+    [Dependency] private IPlayerManager _player = default!;
+    [Dependency] private IClipboardManager _clipboard = default!;
 
     public UUIDWindow()
     {
