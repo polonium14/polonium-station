@@ -1,6 +1,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Runtime.InteropServices;
+using Content.Server._Polonium.Supporters;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
 using Content.Server.Administration.Systems;
@@ -296,7 +297,14 @@ internal sealed partial class ChatManager : IChatManager
             var prefs = _preferencesManager.GetPreferences(player.UserId);
             colorOverride = prefs.AdminOOCColor;
         }
-        if (  _netConfigManager.GetClientCVar(player.Channel, CCVars.ShowOocPatronColor) && player.Channel.UserData.PatronTier is { } patron && PatronOocColors.TryGetValue(patron, out var patronColor))
+        if (_entityManager.System<SupporterSystem>().TryGetNameColor(player.UserId, out var supporterColor))
+        {
+            wrappedMessage = Loc.GetString("chat-manager-send-ooc-supporter-wrap-message",
+                ("color", supporterColor),
+                ("playerName", player.Name),
+                ("message", FormattedMessage.EscapeText(message)));
+        }
+        else if (_netConfigManager.GetClientCVar(player.Channel, CCVars.ShowOocPatronColor) && player.Channel.UserData.PatronTier is { } patron && PatronOocColors.TryGetValue(patron, out var patronColor))
         {
             wrappedMessage = Loc.GetString("chat-manager-send-ooc-patron-wrap-message", ("patronColor", patronColor),("playerName", player.Name), ("message", FormattedMessage.EscapeText(message)));
         }
@@ -316,9 +324,22 @@ internal sealed partial class ChatManager : IChatManager
         }
 
         var clients = _adminManager.ActiveAdmins.Select(p => p.Channel);
-        var wrappedMessage = Loc.GetString("chat-manager-send-admin-chat-wrap-message",
-                                        ("adminChannelName", Loc.GetString("chat-manager-admin-channel-name")),
-                                        ("playerName", player.Name), ("message", FormattedMessage.EscapeText(message)));
+        string wrappedMessage;
+        if (_entityManager.System<SupporterSystem>().TryGetNameColor(player.UserId, out var supporterColor))
+        {
+            wrappedMessage = Loc.GetString("chat-manager-send-admin-chat-supporter-wrap-message",
+                ("adminChannelName", Loc.GetString("chat-manager-admin-channel-name")),
+                ("color", supporterColor),
+                ("playerName", player.Name),
+                ("message", FormattedMessage.EscapeText(message)));
+        }
+        else
+        {
+            wrappedMessage = Loc.GetString("chat-manager-send-admin-chat-wrap-message",
+                ("adminChannelName", Loc.GetString("chat-manager-admin-channel-name")),
+                ("playerName", player.Name),
+                ("message", FormattedMessage.EscapeText(message)));
+        }
 
         foreach (var client in clients)
         {

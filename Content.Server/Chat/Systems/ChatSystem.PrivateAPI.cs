@@ -229,9 +229,20 @@ public sealed partial class ChatSystem
         if (!_critLoocEnabled && _mobStateSystem.IsCritical(source))
             return;
 
-        var wrappedMessage = Loc.GetString("chat-manager-entity-looc-wrap-message",
-            ("entityName", name),
-            ("message", FormattedMessage.EscapeText(message)));
+        string wrappedMessage;
+        if (_supporters.TryGetNameColor(player.UserId, out var supporterColor))
+        {
+            wrappedMessage = Loc.GetString("chat-manager-entity-looc-supporter-wrap-message",
+                ("color", supporterColor),
+                ("entityName", name),
+                ("message", FormattedMessage.EscapeText(message)));
+        }
+        else
+        {
+            wrappedMessage = Loc.GetString("chat-manager-entity-looc-wrap-message",
+                ("entityName", name),
+                ("message", FormattedMessage.EscapeText(message)));
+        }
 
         SendInVoiceRange(ChatChannel.LOOC, message, wrappedMessage, source, hideChat ? ChatTransmitRange.HideChat : ChatTransmitRange.Normal, player.UserId);
         _adminLogger.Add(LogType.Chat, LogImpact.Low, $"LOOC from {source}: {message}");
