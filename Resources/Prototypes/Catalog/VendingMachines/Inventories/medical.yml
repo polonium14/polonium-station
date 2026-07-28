@@ -75,6 +75,7 @@
     Defibrillator: 2 # Easily shared between several people
     Syringe: 4
     PillCanisterTricordrazine: 4
+    VehicleWheelchair: 2 # Polonium Change
     ClothingOuterHospitalGown: 2 # Not a popular item, so less stock
   contrabandInventory:
     PillCanisterRandom: 3
