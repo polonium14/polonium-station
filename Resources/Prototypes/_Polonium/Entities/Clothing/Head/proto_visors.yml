@@ -1,0 +1,434 @@
+
+# IMPORTANT: Code is a changed version by Resources\Prototypes\_Omu\Entities\Clothing\Head\mantles.txt for the purpose of fixing fork differences
+# Litteraly making this into fancy glasses that go on your head...
+# Balanced by the fact you can't make them and if someone steals it than well, you have poor vision even with glasses for the rest of your life.
+# Also... SPACE >:3 (though Head's get Space Proof version)
+
+# Abstract parents
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingCyberneticBeastMantleBase
+  abstract: true
+  components:
+  - type: VisionCorrection
+    correctionPower: 16 # fixes ANY eye damage to the minimum allowed value
+  - type: HideLayerClothing
+    slots:
+    - Snout
+  - type: PointLight # the glow is subtle. It's just enough to make the mantle visible in pitch black lighting, but won't help you see much.
+    radius: 1.45
+    energy: 0.6
+    offset: 0,0.2
+    color: "#CCFFCC" # this will match the colour of the beast's eyes when worn, this is just a default.
+    containerOccluded: true # this makes the mantle illuminate itself.
+  - type: Item
+    size: Normal
+  - type: Tag # Overwrite the TagComponent from the parent to get rid of ClothMade because it's funny when a mothroach eats this ultra specialized bit of equipment, but only the first time.
+    tags:
+    - WhitelistChameleon
+  - type: StealTarget
+    stealGroup: ClothingEyesHuds # It goes on the head...but why not?
+  - type: IdentityBlocker
+  - type: IngestionBlocker
+
+- type: entity
+  parent: ClothingCyberneticBeastMantleBase
+  id: ClothingCyberneticBeastMantleBaseSpaceProof
+  abstract: true
+  components:
+  - type: PressureProtection
+    highPressureMultiplier: 0.1
+    lowPressureMultiplier: 1000
+
+- type: entity
+  parent: ClothingCyberneticBeastMantleBase
+  id: ClothingCyberneticBeastMantleBaseNVG
+  abstract: true
+  components:
+    - type: NightVision
+      isEquipment: true
+      color: "#0D0D0D"
+
+# Basic Forms
+- type: entity
+  parent: ClothingCyberneticBeastMantleBase
+  id: ClothingCyberneticBeastMantleBasic
+  name: Cybernetic Visor
+  description: "Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems."
+  components:
+  - type: Sprite
+    sprite: _Omu/Clothing/Head/mantle.rsi
+  - type: Clothing
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    clothingVisuals:
+      head:
+      - state: helmet
+      - state: eyes
+        shader: unshaded
+
+- type: entity
+  parent: [ClothingCyberneticBeastMantleBase, ClothingCyberneticBeastMantleBaseSpaceProof]
+  id: ClothingCyberneticBeastMantleSpaceProof # Here basicly just for if Admin wants to spawn it.
+  name: Space Proof Cybernetic Visor
+  description: "Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This one comes with aditional seals to make is space proof."
+  components:
+  - type: Sprite
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    state: icon-work
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: helmet
+      - state: helmet-internals
+      - state: eyes
+        shader: unshaded
+
+# Engi
+- type: entity
+  parent: [ClothingCyberneticBeastMantleBase, ClothingCyberneticBeastMantleBaseSpaceProof, BaseEngineeringContraband]
+  id: ClothingCyberneticBeastMantleEngi
+  name: Engineer's Cybernetic Visor
+  description: "Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems."
+  components:
+  - type: Sprite
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    state: icon-work
+  - type: Clothing
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    clothingVisuals:
+      head:
+      - state: helmet-engineering
+      - state: helmet-internals
+      - state: eyes-engineering
+        shader: unshaded
+
+- type: entity
+  parent: [ClothingCyberneticBeastMantleEngi, ClothingCyberneticBeastMantleBaseNVG, BaseCommandContraband]
+  id: ClothingCyberneticBeastMantleCE
+  name: CE's Cybernetic Visor
+  description: "Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems."
+  components:
+  - type: Sprite
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    state: icon-ce
+  - type: Clothing
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    clothingVisuals:
+      head:
+      - state: helmet-ce
+      - state: helmet-internals
+      - state: eyes-ce
+        shader: unshaded
+
+# Medical
+
+- type: entity
+  parent: [ClothingCyberneticBeastMantleBase, BaseMedicalContraband]
+  id: ClothingCyberneticBeastMantleMedical
+  name: Doctors's Cybernetic Visor
+  description: "Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems."
+  components:
+  - type: Sprite
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    state: icon-medical
+  - type: Clothing
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    clothingVisuals:
+      head:
+      - state: helmet-medical
+      - state: eyes-medical
+        shader: unshaded
+  - type: ShowHealthBars
+  - type: ShowHealthIcons
+
+- type: entity
+  parent: [ClothingCyberneticBeastMantleMedical, ClothingCyberneticBeastMantleBaseSpaceProof]
+  id: ClothingCyberneticBeastMantleParamed
+  name: Paramedic's Cybernetic Visor
+  description: "Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems."
+  components:
+  - type: Sprite
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    state: icon-paramedic
+  - type: Clothing
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    clothingVisuals:
+      head:
+      - state: helmet-medical
+      - state: helmet-internals-medical
+      - state: eyes-medical
+        shader: unshaded
+
+- type: entity
+  parent: [ClothingCyberneticBeastMantleMedical]
+  id: ClothingCyberneticBeastMantleChem
+  name: Chemist's Cybernetic Visor
+  description: "Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems."
+  components:
+  - type: Sprite
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    state: icon-chem
+  - type: Clothing
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    clothingVisuals:
+      head:
+      - state: helmet-chem
+      - state: eyes-chem
+        shader: unshaded
+
+- type: entity
+  parent: [ClothingCyberneticBeastMantleMedical, ClothingCyberneticBeastMantleBaseSpaceProof, ClothingCyberneticBeastMantleBaseNVG, BaseCommandContraband]
+  id: ClothingCyberneticBeastMantleCMO
+  name: CMO's Cybernetic Visor
+  description: "Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems."
+  components:
+  - type: Sprite
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    state: icon-cmo
+  - type: Clothing
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    clothingVisuals:
+      head:
+      - state: helmet-cmo
+      - state: helmet-internals-medical
+      - state: eyes-cmo
+        shader: unshaded
+
+# Science RD
+
+- type: entity
+  parent: [ClothingCyberneticBeastMantleBasic, ClothingCyberneticBeastMantleBaseSpaceProof, ClothingCyberneticBeastMantleBaseNVG, BaseCommandContraband]
+  id: ClothingCyberneticBeastMantleRD
+  name: RD's Cybernetic Visor
+  description: "Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems."
+  components:
+  - type: Sprite
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    state: icon-rd
+  - type: Clothing
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    clothingVisuals:
+      head:
+      - state: helmet-rd
+      - state: helmet-internals
+      - state: eyes-rd
+        shader: unshaded
+
+# Service
+- type: entity
+  parent: [ClothingCyberneticBeastMantleBasic, BaseCivilianContraband]
+  id: ClothingCyberneticBeastMantleBar
+  name: Bartender's Cybernetic Visor
+  description: "Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems."
+  components:
+  - type: Sprite
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    state: icon-bar
+  - type: Clothing
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    clothingVisuals:
+      head:
+      - state: helmet-bar
+      - state: eyes-bar
+        shader: unshaded
+
+# Secruity
+- type: entity
+  parent: [ClothingCyberneticBeastMantleBase, BaseSecurityContraband]
+  id: ClothingCyberneticBeastMantleSecurity
+  name: Officer's Cybernetic Visor
+  description: "Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This one comes with fancy displays for catching criminals."
+  components:
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: helmet-security
+      - state: eyes-security
+        shader: unshaded
+  - type: FlashImmunity
+  - type: ShowJobIcons
+  - type: ShowMindShieldIcons
+  - type: ShowCriminalRecordIcons
+  - type: ShowContrabandDetails
+
+- type: entity
+  parent: [ClothingCyberneticBeastMantleMedical, ClothingCyberneticBeastMantleSecurity]
+  id: ClothingCyberneticBeastMantleBrigmedic
+  name: Cybernetic Visor
+  description: "Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems."
+  components:
+  - type: Clothing
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    clothingVisuals:
+      head:
+      - state: helmet-corpsman
+      - state: eyes-corpsman
+        shader: unshaded
+
+- type: entity
+  parent: [ClothingCyberneticBeastMantleSecurity, ClothingCyberneticBeastMantleBaseSpaceProof, ClothingCyberneticBeastMantleBaseNVG, BaseCommandContraband]
+  id: ClothingCyberneticBeastMantleHOS
+  name: HOS's Cybernetic Visor
+  description: "Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems."
+  components:
+  - type: Sprite
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    state: icon-hos
+  - type: Clothing
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    clothingVisuals:
+      head:
+      - state: helmet-hos
+      - state: helmet-internals
+      - state: eyes-hos
+        shader: unshaded
+
+
+# Supply
+
+- type: entity
+  parent: [ClothingCyberneticBeastMantleBasic, ClothingCyberneticBeastMantleBaseSpaceProof, BaseCargoContraband]
+  id: ClothingCyberneticBeastMantleSalvage
+  name: Salvager's Cybernetic Visor
+  description: "Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems."
+  components:
+  - type: Sprite
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    state: icon-salvage
+  - type: Clothing
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    clothingVisuals:
+      head:
+      - state: helmet-salvage
+      - state: helmet-internals
+      - state: eyes-salvage
+        shader: unshaded
+
+- type: entity
+  parent: [ClothingCyberneticBeastMantleSecurity, ClothingCyberneticBeastMantleBaseSpaceProof, ClothingCyberneticBeastMantleBaseNVG, BaseCommandContraband]
+  id: ClothingCyberneticBeastMantleHOS
+  name: HOS's Cybernetic Visor
+  description: "Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems."
+  components:
+  components:
+  - type: Sprite
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    state: icon-qm
+  - type: Clothing
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    clothingVisuals:
+      head:
+      - state: helmet-qm
+      - state: helmet-internals
+      - state: eyes-qm
+        shader: unshaded
+  - type: FlashImmunity
+
+# Command
+
+- type: entity
+  parent: [ClothingCyberneticBeastMantleBasic, ClothingCyberneticBeastMantleBaseSpaceProof, ClothingCyberneticBeastMantleBaseNVG, BaseCommandContraband]
+  id: ClothingCyberneticBeastMantleHOP
+  name: HOP's Cybernetic Visor
+  description: "Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems."
+  components:
+  - type: Sprite
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    state: icon-command
+  - type: Clothing
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    clothingVisuals:
+      head:
+      - state: helmet-command
+      - state: eyes-command
+        shader: unshaded
+  - type: FlashImmunity
+  - type: ShowJobIcons
+
+- type: entity
+  parent: [ClothingCyberneticBeastMantleBasic, ClothingCyberneticBeastMantleBaseSpaceProof, ClothingCyberneticBeastMantleBaseNVG, BaseCommandContraband]
+  id: ClothingCyberneticBeastMantleCaptain
+  name: Captain's Cybernetic Visor
+  description: "Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems."
+  components:
+  - type: Sprite
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    state: icon-bso
+  - type: Clothing
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    clothingVisuals:
+      head:
+      - state: helmet-bso # Using BSO sprite for captain, normal command sprite for HOP
+      - state: helmet-internals
+      - state: eyes-bso
+        shader: unshaded
+  - type: FlashImmunity
+  - type: ShowJobIcons
+
+# CentComm
+
+- type: entity
+  parent: [ClothingCyberneticBeastMantleBasic, ClothingCyberneticBeastMantleBaseNVG, BaseCentcommContraband] # NTR doesnt get a space proof visor MUHAHAHA!
+  id: ClothingCyberneticBeastMantleNTR
+  name: NTR's Cybernetic Visor
+  description: "Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems."
+  components:
+  - type: Sprite
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    state: icon-centralcommand
+  - type: Clothing
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    clothingVisuals:
+      head:
+      - state: helmet-centralcommand
+      - state: eyes-centralcommand
+        shader: unshaded
+  - type: FlashImmunity
+  - type: ShowJobIcons
+
+# The Evil CC corporate version
+- type: entity
+  parent: [ClothingCyberneticBeastMantleBasic, ClothingCyberneticBeastMantleBaseSpaceProof, ClothingCyberneticBeastMantleBaseNVG, BaseCentcommContraband] 
+  id: ClothingCyberneticBeastMantleCentCom
+  name: Central Command's Cybernetic Visor
+  description: "Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems."
+  suffix: DO NOT MAP
+  components:
+  - type: Sprite
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    state: icon-centralcommand
+  - type: Clothing
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    clothingVisuals:
+      head:
+      - state: helmet-centralcommand
+      - state: helmet-internals
+      - state: eyes-centralcommand
+        shader: unshaded
+  - type: FlashImmunity
+  - type: ShowJobIcons
+  - type: ShowMindShieldIcons
+  - type: ShowCriminalRecordIcons
+  - type: ShowContrabandDetails
+  - type: ShowHungerIcons
+  - type: ShowThirstIcons
+  - type: ShowHealthBars
+    damageContainers:
+    - Biological
+    - Inorganic
+    - Silicon
+  - type: GenericVisualizer
+    visuals:
+      enum.TrayScannerVisual.Visual:
+        base:
+          On: { state: tray-on }
+          Off: { state: tray-off }
+  - type: TrayScanner
+    toggleAction: ActionToggleTrayScanner
+    soundOn:
+      path: /Audio/Items/flashlight_on.ogg
+    soundOff:
+      path: /Audio/Items/flashlight_off.ogg
+  - type: ThermalSight
+  - type: SolutionScanner
+  - type: EyeProtection
