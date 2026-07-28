@@ -18,8 +18,9 @@ public sealed partial class BluespaceStrikeComponent : Component
 {
     public const float MinDelaySeconds = 1f;
     public const float MaxDelaySeconds = 300f;
-    public const float DefaultSlope = 5f;
-    public const float DefaultMaxIntensity = 100f;
+    public const float MaxMarkersDelaySeconds = 15f;
+    public const float DefaultSlope = 50f;
+    public const float DefaultMaxIntensity = 200f;
     public const float FallDurationSeconds = 0.9f;
     public const float MaxMarkerRadius = 100f;
 
@@ -30,6 +31,11 @@ public sealed partial class BluespaceStrikeComponent : Component
     public static readonly EntProtoId ControllerPrototype = "BluespaceStrikeController";
     public static readonly EntProtoId MarkerPrototype = "BluespaceStrikeMarker";
     public static readonly EntProtoId IncomingPrototype = "BluespaceStrikeIncoming";
+
+    public static float GetMathRadius(float userRadius)
+    {
+        return userRadius + DefaultMaxIntensity / DefaultSlope;
+    }
 
     [DataField(customTypeSerializer: typeof(TimeOffsetSerializer)), AutoNetworkedField, AutoPausedField]
     public TimeSpan DetonateAt;

@@ -122,7 +122,10 @@ public sealed class BluespaceStrikeEui : BaseEui
 
         var slope = BluespaceStrikeComponent.DefaultSlope;
         var maxIntensity = BluespaceStrikeComponent.DefaultMaxIntensity;
-        var totalIntensity = _explosion.RadiusToIntensity(request.Radius, slope, maxIntensity);
+        var totalIntensity = _explosion.RadiusToIntensity(
+            BluespaceStrikeComponent.GetMathRadius(request.Radius),
+            slope,
+            maxIntensity);
 
         if (totalIntensity <= 0)
             return;
