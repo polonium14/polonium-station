@@ -1,0 +1,27 @@
+<Control xmlns="https://spacestation14.io">
+    <BoxContainer Margin="8,0,8,8" Orientation="Vertical">
+        <BoxContainer Orientation="Horizontal">
+            <Label Name="ItemName" HorizontalExpand="True" Access="Public" />
+        </BoxContainer>
+        <PanelContainer StyleClasses="HighDivider" Margin="0,1,0,2"/>
+        <BoxContainer HorizontalExpand="True" Orientation="Horizontal">
+            <BoxContainer Orientation="Vertical" VerticalAlignment="Center" Margin="0,0,4,0">
+                <TextureRect
+                    Name="ItemTexture"
+                    Margin="0,0,4,0"
+                    MinSize="48 48"
+                    Stretch="KeepAspectCentered"
+                    Access="Public" />
+                <Button
+                    Name="BuyButton"
+                    MinWidth="64"
+                    MaxHeight="48"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Top"
+                    Margin="0,4,0,0"
+                    Access="Public" />
+            </BoxContainer>
+            <RichTextLabel Name="ItemDescription" VerticalAlignment="Top" Access="Public"/>
+        </BoxContainer>
+    </BoxContainer>
+</Control>

@@ -1,0 +1,23 @@
+- type: entity
+  id: XenoAcidNormal
+  name: corrosive acid
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _RMC14/Effects/xeno_acid.rsi
+    state: acid_normal
+    drawdepth: Effects
+  - type: Transform
+    noRot: true
+
+- type: entity
+  id: XenoAcidWeak
+  name: weak corrosive acid
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _RMC14/Effects/xeno_acid.rsi
+    state: acid_weak
+    drawdepth: Effects
+  - type: Transform
+    noRot: true

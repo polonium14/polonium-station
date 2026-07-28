@@ -1,0 +1,5 @@
+- type: localizedDataset
+  id: NamesXenoPrefix
+  values:
+    prefix: names-xeno-prefix-dataset-
+    count: 36

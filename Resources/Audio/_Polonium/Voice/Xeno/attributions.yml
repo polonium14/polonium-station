@@ -1,0 +1,23 @@
+# SPDX-FileCopyrightText: 2026 nikitosych <174215049+nikitosych@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- files: ["xeno1.ogg"]
+  copyright: "qubodup"
+  license: "CC-BY-4.0"
+  source: "https://freesound.org/people/qubodup/sounds/219945/"
+
+- files: ["xeno2.ogg"]
+  copyright: "frasbr"
+  license: "CC-BY-3.0"
+  source: "https://freesound.org/people/frasbr/sounds/145729/"
+
+- files: ["xeno3.ogg"]
+  copyright: "barrypirro"
+  license: "CC0-1.0"
+  source: "https://freesound.org/people/barrypirro/sounds/530573/"
+
+- files: ["xeno4.ogg"]
+  copyright: "filip_stefanowski"
+  license: "CC-BY-3.0"
+  source: "https://freesound.org/people/filip_stefanowski/sounds/322999/"

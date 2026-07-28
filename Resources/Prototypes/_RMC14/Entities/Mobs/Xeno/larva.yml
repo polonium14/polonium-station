@@ -1,0 +1,78 @@
+- type: entity
+  parent: CMXenoBase
+  id: CMXenoLarva
+  name: Larva
+  description: A wriggling alien larva.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Mobs/Xenonids/Larva/larva.rsi
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      35: Critical
+      70: Dead
+  - type: Xeno
+    tier: 0
+    unlockAt: 0
+    emoteSounds: Larva
+    actionIds:
+    - ActionXenoRest
+  - type: Speech
+    speechSounds: XenonidLarva
+    allowedEmotes: [ "XenoRoar", "Scream" ]
+  - type: Vocal
+    emoteSounds: Larva
+    wilhelmProbability: 0
+  - type: XenoRegen
+    healOffWeeds: true
+  - type: XenoLight
+  - type: XenoPlasma
+    plasma: 10
+    maxPlasma: 10
+    plasmaRegenOnWeeds: 0.1
+  - type: XenoEvolution
+    canEvolveWithoutGranter: true
+    requiresGranter: false
+    max: 60
+    pointsPerSecond: 0.5
+    evolvesTo:
+    - CMXenoDrone
+    - CMXenoRunner
+    - CMXenoSentinel
+    - CMXenoDefender
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.25
+        density: 100
+        mask:
+        - SmallMobMask
+        layer:
+        - SmallMobLayer
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 3.7
+    baseSprintSpeed: 6.7
+  - type: MeleeWeapon
+    damage:
+      types:
+        Slash: 5
+  - type: GhostRole
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
+    name: cm-xeno-larva-ghost-name
+    description: cm-xeno-larva-ghost-description
+    rules: cm-xeno-larva-ghost-rules
+    raffle:
+      settings: xeno-larva
+    mindRoles:
+    - MindRoleGhostRoleTeamAntagonist
+  - type: GhostTakeoverAvailable
+  - type: XenoRankNames
+    rankNames:
+      0: rmc-xeno-young-larva
+      2: rmc-xeno-mature-larva
+      3: rmc-xeno-elder-larva
+      4: rmc-xeno-elder-larva

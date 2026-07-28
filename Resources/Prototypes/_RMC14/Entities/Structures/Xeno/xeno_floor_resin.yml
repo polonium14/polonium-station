@@ -1,0 +1,104 @@
+- type: entity
+  id: XenoBaseFloorResin
+  abstract: true
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
+  components:
+  - type: Transform
+    anchored: true
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        layer:
+        - SlipLayer
+        mask:
+        - ItemMask
+        density: 1000
+        hard: false
+  - type: Clickable
+  - type: Sprite
+    sprite: _RMC14/Structures/Xenos/xeno_floor_resins.rsi
+    drawdepth: FloorObjects
+    state: sticky
+  - type: Damageable
+  - type: Injurable
+    damageContainer: StructuralXeno
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 45
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: XenoConstruct
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        collection: XenoResinBreak
+
+- type: entity
+  parent: XenoBaseFloorResin
+  id: XenoStickyResin
+  name: sticky resin
+  description: A layer of disgusting sticky slime.
+  components:
+  - type: Sprite
+    state: sticky
+  - type: XenoStickyResin
+    speedMultiplier: 0.4
+  - type: XenoConstructionPlasmaCost
+    plasma: 66
+
+- type: entity
+  parent: XenoStickyResin
+  id: XenoStickyResinWeak
+  name: weak sticky resin
+  description: A thin and weak layer of disgusting sticky slime.
+  components:
+  - type: Sprite
+    state: sticky_weak
+  - type: XenoStickyResin
+    speedMultiplier: 0.55
+  - type: TimedDespawn
+    lifetime: 20
+
+- type: entity
+  parent: XenoBaseFloorResin
+  id: XenoFastResin
+  name: fast resin
+  description: A layer of disgusting sleek slime.
+  components:
+  - type: Sprite
+    state: fast
+  - type: XenoStickyResin
+    speedMultiplier: 1.33
+  - type: XenoConstructionPlasmaCost
+    plasma: 42
+
+- type: entity
+  parent: XenoBaseFloorResin
+  id: XenoResinSpikes
+  name: resin spikes
+  description: A small cluster of bone spikes.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Structures/Xenos/xeno_resin_spikes.rsi
+    state: resin_spike
+  - type: XenoConstructionPlasmaCost
+    plasma: 60
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 60
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]

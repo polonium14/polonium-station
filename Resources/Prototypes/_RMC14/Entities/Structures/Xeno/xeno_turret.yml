@@ -1,0 +1,24 @@
+- type: entity
+  parent: WeaponTurretXeno
+  id: XenoAcidTurret
+  name: xeno acid turret
+  description: A living turret that spits acid at hostiles.
+  suffix: Constructible
+  components:
+  - type: Transform
+    anchored: true
+  - type: XenoConstruct
+  - type: XenoConstructionPlasmaCost
+    plasma: 500
+  - type: HiveMember
+  - type: XenoFriendly
+  - type: AllowWeedSpread
+  - type: Corrodible
+    isCorrodible: true
+    structure: true
+  - type: Injurable
+    damageContainer: StructuralXeno
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        collection: XenoResinBreak

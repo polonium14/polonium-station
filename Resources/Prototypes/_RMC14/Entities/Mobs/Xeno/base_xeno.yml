@@ -1,0 +1,181 @@
+- type: entity
+  id: CMXenoBase
+  parent: BaseMobDestructible
+  abstract: true
+  save: false
+  components:
+  - type: ZombieImmune
+  - type: Damageable
+  - type: Injurable
+    damageContainer: Xeno
+  - type: MobState
+    allowedStates:
+    - Alive
+    - Critical
+    - Dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      200: Critical
+      300: Dead
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.2
+    baseSprintSpeed: 4
+  - type: Input
+    context: "human"
+  - type: InputMover
+  - type: MobMover
+  - type: Actions
+  - type: Alerts
+  - type: Appearance
+  - type: DoAfter
+  - type: Clickable
+  - type: InteractionOutline
+  - type: MindContainer
+  - type: Physics
+    bodyType: KinematicController
+  - type: GravityAffected
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 185
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    layers:
+    - map: [ "enum.XenoVisualLayers.Base" ]
+      state: alive
+  - type: AtmosExposed
+  - type: Temperature
+    currentTemperature: 310.15
+    specificHeat: 42
+  - type: TemperatureDamage
+    heatDamageThreshold: 360
+    coldDamageThreshold: 260
+    coldDamage:
+      types:
+        Cold: 0.1
+    heatDamage:
+      types:
+        Heat: 0.5
+  - type: ThermalRegulator
+    metabolismHeat: 800
+    radiatedHeat: 100
+    implicitHeatRegulation: 500
+    sweatHeatRegulation: 0
+    shiveringHeatRegulation: 1000
+    normalBodyTemperature: 310.15
+    thermalRegulationTemperatureThreshold: 2
+  - type: Xeno
+  - type: XenoFriendly
+  - type: XenoRegen
+    healOffWeeds: true
+  - type: XenoStateVisuals
+  - type: AffectableByWeeds
+  - type: HiveMember
+  - type: AutoAssignHive
+    hiveId: CMXenoHive
+  - type: Body
+  - type: EntityTableContainerFill
+    containers:
+      body_organs: !type:AllSelector
+        children:
+        - id: OrganXenoHeart
+        - id: OrganXenoPlasmaVessel
+        - id: OrganXenoAcidGland
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatXeno
+      amount: 5
+  - type: SpawnOnGib
+    spawn:
+    - id: FoodMeatXeno
+      amount: 3
+  - type: Speech
+    speechVerb: Xeno
+    speechSounds: Xenonid
+    allowedEmotes: [ "Growl", "Hiss", "XenoRoar", "XenoHelp", "XenoTailSwipe", "Scream" ]
+  - type: Vocal
+    emoteSounds: Xeno
+    wilhelmProbability: 0
+  - type: Emoting
+  - type: TypingIndicator
+    proto: alien
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Hivemind
+  - type: ActiveRadio
+    channels:
+    - Hivemind
+  - type: UserInterface
+    interfaces:
+      enum.XenoEvolutionUIKey.Key:
+        type: XenoEvolutionBui
+      enum.XenoChooseStructureUI.Key:
+        type: XenoChooseStructureBui
+      enum.XenoPheromonesUI.Key:
+        type: XenoPheromonesBui
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+  - type: MeleeWeapon
+    altDisarm: false
+    angle: 0
+    soundHit:
+      collection: RCMXenoClaw
+    animation: WeaponArcBite
+    damage:
+      types:
+        Slash: 12
+  - type: CombatMode
+  - type: StandingState
+  - type: StatusEffects
+    allowed:
+    - Electrocution
+    - Pacified
+    - Flashed
+    - Adrenaline
+    - Stun
+    - SlowedDown
+    - Drunk
+    - Muted
+  - type: Examiner
+  - type: Eye
+  - type: ContentEye
+  - type: NoSlip
+  - type: Pullable
+  - type: AssignXenoName
+  - type: XenoRankNames
+
+- type: entity
+  abstract: true
+  parent: CMXenoBase
+  id: CMXenoDeveloped
+  components:
+  - type: XenoRegen
+    healOffWeeds: false
+  - type: Puller
+    needsHands: false
+  - type: Prying
+    pryPowered: true
+    force: true
+    speedModifier: 2.5
+    useSound:
+      path: /Audio/Machines/airlock_creaking.ogg
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - FootstepSound
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: XenoFootstepLarge
+      params:
+        volume: -4

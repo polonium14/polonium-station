@@ -1,0 +1,20 @@
+using Robust.Shared.GameStates;
+
+namespace Content.Shared._RMC14.Xenonids.Acid;
+
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
+[Access(typeof(SharedXenoAcidSystem))]
+public sealed partial class CorrodibleComponent : Component
+{
+    [DataField, AutoNetworkedField]
+    public bool IsCorrodible = true;
+
+    [DataField, AutoNetworkedField]
+    public TimeSpan TimeToApply = TimeSpan.FromSeconds(4);
+
+    [DataField, AutoNetworkedField]
+    public bool Structure;
+
+    [DataField, AutoNetworkedField]
+    public XenoAcidStrength MinimumAcidStrength = XenoAcidStrength.Weak;
+}

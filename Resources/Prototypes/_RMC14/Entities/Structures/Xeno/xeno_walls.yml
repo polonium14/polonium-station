@@ -1,0 +1,174 @@
+- type: entity
+  abstract: true
+  parent: BaseWall
+  id: CMBaseWallXeno
+  name: resin wall
+  description: Weird slime solidified into a wall.
+  components:
+  - type: Damageable
+  - type: Injurable
+    damageContainer: StructuralXeno
+  - type: Occluder
+  - type: Airtight
+  - type: XenoConstruct
+  - type: Corrodible
+    isCorrodible: true
+    structure: true
+  - type: AllowWeedSpread
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        collection: XenoResinBreak
+  - type: PlacementReplacement
+    key: walls
+
+- type: entity
+  parent: CMBaseWallXeno
+  id: WallXenoResin
+  name: resin wall
+  description: Weird slime solidified into a wall.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Structures/Xenos/xeno_resin_wall.rsi
+  - type: Icon
+    sprite: _RMC14/Structures/Xenos/xeno_resin_wall.rsi
+    state: resin
+  - type: IconSmooth
+    key: walls
+    base: resin
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 900
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: XenoConstructionPlasmaCost
+    plasma: 144
+  - type: XenoStructureUpgradeable
+    to: WallXenoResinThick
+    cost: 60
+
+- type: entity
+  parent: WallXenoResin
+  id: WallXenoResinThick
+  name: thick resin wall
+  description: Weird slime solidified into a thick wall.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Structures/Xenos/xeno_resin_wall.rsi
+  - type: Icon
+    sprite: _RMC14/Structures/Xenos/xeno_resin_wall.rsi
+    state: thickresin
+  - type: IconSmooth
+    key: walls
+    base: thickresin
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1350
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: XenoConstructionPlasmaCost
+    plasma: 204
+
+- type: entity
+  parent: CMBaseWallXeno
+  id: WallXenoResinWeak
+  name: weak resin wall
+  description: Weird slime solidified into a wall. It already looks on the verge of collapsing...
+  components:
+  - type: Sprite
+    sprite: _RMC14/Structures/Xenos/xeno_resin_wall.rsi
+  - type: Icon
+    sprite: _RMC14/Structures/Xenos/xeno_resin_wall.rsi
+    state: resin
+  - type: IconSmooth
+    key: walls
+    base: resin
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: TimedDespawn
+    lifetime: 5
+
+- type: entity
+  abstract: true
+  parent: CMBaseWallXeno
+  id: BaseMembraneXeno
+  name: resin membrane
+  components:
+  - type: Occluder
+    enabled: false
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        mask:
+        - FullTileMask
+        layer:
+        - GlassLayer
+        density: 1000
+  - type: XenoConstructionPlasmaCost
+    plasma: 114
+
+- type: entity
+  parent: BaseMembraneXeno
+  id: WallXenoMembrane
+  name: resin membrane
+  description: Weird slime translucent enough to let light pass through.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Structures/Xenos/xeno_resin_wall.rsi
+  - type: Icon
+    sprite: _RMC14/Structures/Xenos/xeno_resin_wall.rsi
+    state: membrane
+  - type: IconSmooth
+    key: walls
+    base: membrane
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: XenoStructureUpgradeable
+    to: WallXenoMembraneThick
+    cost: 30
+
+- type: entity
+  parent: BaseMembraneXeno
+  id: WallXenoMembraneThick
+  name: thick resin membrane
+  description: Weird thick slime just translucent enough to let light pass through.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Structures/Xenos/xeno_resin_wall.rsi
+  - type: Icon
+    sprite: _RMC14/Structures/Xenos/xeno_resin_wall.rsi
+    state: thickmembrane
+  - type: IconSmooth
+    key: walls
+    base: thickmembrane
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 600
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: XenoConstructionPlasmaCost
+    plasma: 144

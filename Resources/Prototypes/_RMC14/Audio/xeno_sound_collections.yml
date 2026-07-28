@@ -1,0 +1,20 @@
+- type: soundCollection
+  id: XenoSpitAcid
+  files:
+  - /Audio/_RMC14/Xeno/alien_spitacid.ogg
+  - /Audio/_RMC14/Xeno/alien_spitacid2.ogg
+
+- type: soundCollection
+  id: XenoTailSwipe
+  files:
+  - /Audio/_RMC14/Xeno/alien_tail_swipe1.ogg
+  - /Audio/_RMC14/Xeno/alien_tail_swipe2.ogg
+  - /Audio/_RMC14/Xeno/alien_tail_swipe3.ogg
+
+- type: soundCollection
+  id: XenoAcidSizzle
+  files:
+  - /Audio/_RMC14/Xeno/acid_sizzle1.ogg
+  - /Audio/_RMC14/Xeno/acid_sizzle2.ogg
+  - /Audio/_RMC14/Xeno/acid_sizzle3.ogg
+  - /Audio/_RMC14/Xeno/acid_sizzle4.ogg
