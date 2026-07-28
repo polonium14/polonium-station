@@ -1,20 +1,4 @@
 ﻿Entries:
-- author: sowelipililimute
-  changes:
-  - message: Using a core pinpointer piece on another piece no longer causes you to
-      start an unintended construction recipe.
-    type: Fix
-  id: 9412
-  time: '2026-01-16T02:09:01.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42446
-- author: neomoth
-  changes:
-  - message: Fix zombie resistance, instead of making you more likely to be infected,
-      it now properly makes you less likely to be infected.
-    type: Fix
-  id: 9413
-  time: '2026-01-16T08:40:47.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42451
 - author: Samuka
   changes:
   - message: The mothership now starts with more materials so there is less need to
@@ -4120,3 +4104,21 @@
   id: 9911
   time: '2026-07-27T22:08:29.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/843
+- author: haze
+  changes:
+  - message: "Przywr\xF3cono mo\u017Cliwo\u015B\u0107 wyboru starego wulpa."
+    type: Add
+  id: 9912
+  time: '2026-07-28T14:11:54.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/842
+- author: nikita
+  changes:
+  - message: "Dodano ksenomorfy (kast\u0119 od larwy do Kr\xF3lowy) z budow\u0105\
+      \ ula, plazm\u0105, feromonami i podstawowymi umiej\u0119tno\u015Bciami bojowymi\
+      \ - nowi antagoni\u015Bci!"
+    type: Add
+  - message: "Dodano ksenopokoj\xF3wk\u0119"
+    type: Add
+  id: 9913
+  time: '2026-07-28T05:06:17.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/833
