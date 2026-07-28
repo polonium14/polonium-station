@@ -54,7 +54,7 @@
   parent: ClothingCyberneticBeastMantleBase
   id: ClothingCyberneticBeastMantleBasic
   name: Cybernetic Visor
-  description: "Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. The most common simplest model"
+  description: Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. The most common simplest model.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -70,7 +70,7 @@
   parent: [ClothingCyberneticBeastMantleBase, ClothingCyberneticBeastMantleBaseSpaceProof]
   id: ClothingCyberneticBeastMantleSpaceProof # Here basicly just for if Admin wants to spawn it.
   name: Space Proof Cybernetic Visor
-  description: "Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This one comes with aditional seals to make it space proof."
+  description: Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This one comes with aditional seals to make it space proof.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -88,7 +88,7 @@
   parent: [ClothingCyberneticBeastMantleBase, ClothingCyberneticBeastMantleBaseSpaceProof, BaseEngineeringContraband]
   id: ClothingCyberneticBeastMantleEngi
   name: Engineer's Cybernetic Visor
-  description: "Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This version is space proof, has a built in T-ray scanner and provides some protection against welding arcs. Not as good as a designated mask however."
+  description: Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This version is space proof, has a built in T-ray scanner and provides some protection against welding arcs. Not as good as a designated mask however.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -120,7 +120,7 @@
   parent: [ClothingCyberneticBeastMantleEngi, ClothingCyberneticBeastMantleBaseNVG, BaseCommandContraband]
   id: ClothingCyberneticBeastMantleCE
   name: CE's Cybernetic Visor
-  description: "Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This version is space proof, comes with enviroment thermal sensors, T-ray scanner and allows you to weld without limits, not to mention built in NVG, altough of very poor quality."
+  description: Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This version is space proof, comes with enviroment thermal sensors, T-ray scanner and allows you to weld without limits, not to mention built in NVG, altough of very poor quality.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -154,7 +154,7 @@
   parent: [ClothingCyberneticBeastMantleBase, BaseMedicalContraband]
   id: ClothingCyberneticBeastMantleMedical
   name: Doctors's Cybernetic Visor
-  description: "Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This version has a built in health HUD display."
+  description: Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This version has a built in health HUD display.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -173,7 +173,7 @@
   parent: [ClothingCyberneticBeastMantleMedical, ClothingCyberneticBeastMantleBaseSpaceProof]
   id: ClothingCyberneticBeastMantleParamed
   name: Paramedic's Cybernetic Visor
-  description: "Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This version not only comes with a health HUD but also space protection"
+  description: Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This version not only comes with a health HUD but also space protection.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -191,7 +191,7 @@
   parent: [ClothingCyberneticBeastMantleMedical]
   id: ClothingCyberneticBeastMantleChem
   name: Chemist's Cybernetic Visor
-  description: "Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This version, in addition to the health HUD, comes with a chemical scanner"
+  description: Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This version, in addition to the health HUD, comes with a chemical scanner.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -209,7 +209,7 @@
   parent: [ClothingCyberneticBeastMantleMedical, ClothingCyberneticBeastMantleBaseSpaceProof, ClothingCyberneticBeastMantleBaseNVG, BaseCommandContraband]
   id: ClothingCyberneticBeastMantleCMO
   name: CMO's Cybernetic Visor
-  description: "Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This version has everything a CMO might need. It's space proof, has a chemical scanner, alongside a health HUD and as a bonus it also has NVG sensors, even if they are terrible at their job."
+  description: Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This version has everything a CMO might need. It's space proof, has a chemical scanner, alongside a health HUD and as a bonus it also has NVG sensors, even if they are terrible at their job.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -230,7 +230,7 @@
   parent: [ClothingCyberneticBeastMantleBasic, ClothingCyberneticBeastMantleBaseSpaceProof, ClothingCyberneticBeastMantleBaseNVG, BaseCommandContraband]
   id: ClothingCyberneticBeastMantleRD
   name: RD's Cybernetic Visor
-  description: "Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This version has space protection and poor quality NVGs"
+  description: Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This version has space protection and poor quality NVGs
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -248,8 +248,8 @@
 - type: entity
   parent: [ClothingCyberneticBeastMantleBasic, BaseCivilianContraband]
   id: ClothingCyberneticBeastMantleService
-  name: Bartender's Cybernetic Visor
-  description: "Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This version comes with basic nurishment and thirst analysis for organic beings."
+  name: Service Worker's Cybernetic Visor
+  description: Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This version comes with basic nurishment and thirst analysis for organic beings.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -269,7 +269,7 @@
   parent: [ClothingCyberneticBeastMantleBase, BaseSecurityContraband]
   id: ClothingCyberneticBeastMantleSecurity
   name: Officer's Cybernetic Visor
-  description: "Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This version comes with fancy displays for catching criminals."
+  description: Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This version comes with fancy displays for catching criminals.
   components:
   - type: Clothing
     clothingVisuals:
@@ -285,8 +285,8 @@
 - type: entity
   parent: [ClothingCyberneticBeastMantleMedical, ClothingCyberneticBeastMantleSecurity]
   id: ClothingCyberneticBeastMantleBrigmedic
-  name: Cybernetic Visor
-  description: "Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This version, alongside fancy anti-criminal HUD has a health HUD. Perfect for knowing who to not heal."
+  name: Brigmedic's Cybernetic Visor
+  description: Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This version, alongside fancy anti-criminal HUD has a health HUD. Perfect for knowing who to not heal.
   components:
   - type: Clothing
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -300,7 +300,7 @@
   parent: [ClothingCyberneticBeastMantleSecurity, ClothingCyberneticBeastMantleBaseSpaceProof, ClothingCyberneticBeastMantleBaseNVG, BaseCommandContraband]
   id: ClothingCyberneticBeastMantleHOS
   name: HOS's Cybernetic Visor
-  description: "Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This version has all the gadgets a HOS might want: Space protection, security HUDs AND some very poorly working NVG sensors."
+  description: Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This version has all the gadgets a HOS might want: Space protection, security HUDs AND some very poorly working NVG sensors.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -321,7 +321,7 @@
   parent: [ClothingCyberneticBeastMantleBasic, ClothingCyberneticBeastMantleBaseSpaceProof, BaseCargoContraband]
   id: ClothingCyberneticBeastMantleSalvage
   name: Salvager's Cybernetic Visor
-  description: "Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This version comes with space protecion, now go die for cargonia!"
+  description: Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This version comes with space protecion, now go die for cargonia!
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -339,7 +339,7 @@
   parent: [ClothingCyberneticBeastMantleSecurity, ClothingCyberneticBeastMantleBaseSpaceProof, ClothingCyberneticBeastMantleBaseNVG, BaseCommandContraband]
   id: ClothingCyberneticBeastMantleQM
   name: QM's Cybernetic Visor
-  description: "Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This version has some poor quality NVGs for piloting the shuttle when the lights break as well as space protection for not dying when ATS explodes, altough you may have bigger problems than."
+  description: Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This version has some poor quality NVGs for piloting the shuttle when the lights break as well as space protection for not dying when ATS explodes, altough you may have bigger problems than.
   components:
   components:
   - type: Sprite
@@ -360,7 +360,7 @@
   parent: [ClothingCyberneticBeastMantleBasic, ClothingCyberneticBeastMantleBaseSpaceProof, ClothingCyberneticBeastMantleBaseNVG, BaseCommandContraband]
   id: ClothingCyberneticBeastMantleHOP
   name: HOP's Cybernetic Visor
-  description: "Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This version comes with space protection, poor quality NVG sensors and job identification display."
+  description: Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This version comes with space protection, poor quality NVG sensors and job identification display.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -378,7 +378,7 @@
   parent: [ClothingCyberneticBeastMantleBasic, ClothingCyberneticBeastMantleBaseSpaceProof, ClothingCyberneticBeastMantleBaseNVG, BaseCommandContraband]
   id: ClothingCyberneticBeastMantleCaptain
   name: Captain's Cybernetic Visor
-  description: "Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This version has, space protection, job identifier and some TERRIBLE NVGs."
+  description: Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This version has, space protection, job identifier and some TERRIBLE NVGs.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -399,7 +399,7 @@
   parent: [ClothingCyberneticBeastMantleBasic, ClothingCyberneticBeastMantleBaseNVG, BaseCentcommContraband] # NTR doesnt get a space proof visor MUHAHAHA!
   id: ClothingCyberneticBeastMantleNTR
   name: NTR's Cybernetic Visor
-  description: "Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This version is a proof CC is being cheap on you. It only has some broken NVGs, not to mention the space proofing broke and just got removed."
+  description: Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This version is a proof CC is being cheap on you. It only has some broken NVGs, not to mention the space proofing broke and just got removed.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -421,7 +421,7 @@
   parent: [ClothingCyberneticBeastMantleBasic, ClothingCyberneticBeastMantleBaseSpaceProof, BaseCentcommContraband] 
   id: ClothingCyberneticBeastMantleCentCom
   name: Central Command's Cybernetic Visor
-  description: "Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This version comes with EVERYTHING you would ever want. NOW WE ARE TALKING BABY!"
+  description: Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This version comes with EVERYTHING you would ever want. NOW WE ARE TALKING BABY!
   suffix: DO NOT MAP
   components:
   - type: Sprite
