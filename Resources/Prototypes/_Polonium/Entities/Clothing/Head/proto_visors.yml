@@ -51,11 +51,10 @@
     relayOverlay: true
     enabled: false
     action: ActionToggleNightVision
-    overlayColor: "#0D0D0DFF"
-    lightingColor: "#0D0D0DFF"
-    noiseAmount: 5
-    noiseMultiplier: 1
-    prioritized: true
+    overlayColor: "#030303FF"
+    lightingColor: "#505050FF"
+    noiseAmount: 15
+    noiseMultiplier: 3
 
 # Basic Forms
 - type: entity
@@ -109,16 +108,16 @@
       - state: helmet-internals
       - state: eyes-engineering
         shader: unshaded
-#  - type: TrayScanner #T-rays dont work on head
-#    toggleAction: ActionToggleTrayScanner
-#    soundOn:
-#      path: /Audio/Items/flashlight_on.ogg
-#    soundOff:
-#      path: /Audio/Items/flashlight_off.ogg
-#  - type: GoggleShader
-#    shader: Goggles
-#    color: '#5AB43CCC'
-#    enabled: false
+  - type: TrayScanner #T-rays dont work on head - to be fixed
+    toggleAction: ActionToggleTrayScanner
+    soundOn:
+      path: /Audio/Items/flashlight_on.ogg
+    soundOff:
+      path: /Audio/Items/flashlight_off.ogg
+  - type: GoggleShader
+    shader: Goggles
+    color: '#5AB43CCC'
+    enabled: false
   - type: EyeProtection
     protectionTime: 10
 
@@ -139,16 +138,16 @@
       - state: helmet-internals
       - state: eyes-ce
         shader: unshaded
-#  - type: TrayScanner #T-rays dont work on head
-#    toggleAction: ActionToggleTrayScanner
-#    soundOn:
-#      path: /Audio/Items/flashlight_on.ogg
-#    soundOff:
-#      path: /Audio/Items/flashlight_off.ogg
-#  - type: GoggleShader
-#    shader: Goggles
-#    color: '#5AB43CCC'
-#    enabled: false
+  - type: TrayScanner #T-rays dont work on head - to be fixed
+    toggleAction: ActionToggleTrayScanner
+    soundOn:
+      path: /Audio/Items/flashlight_on.ogg
+    soundOff:
+      path: /Audio/Items/flashlight_off.ogg
+  - type: GoggleShader
+    shader: Goggles
+    color: '#5AB43CCC'
+    enabled: false
   - type: EyeProtection
   - type: ThermalSight # Fancy
 
@@ -423,10 +422,10 @@
     enabled: false
     action: ActionToggleNightVision
     overlayColor: "#000000FF"
-    lightingColor: "#FFFFFFFF"
+    lightingColor: "#00000000"
     noiseAmount: 5
     noiseMultiplier: 1
-    prioritized: true # Even worse than what other heads get bc "Broken"
+    prioritized: true # Even worse than what other heads get bc "Broken" - Pure black
   - type: ShowJobIcons
 
 # The Evil CC corporate version
@@ -460,16 +459,16 @@
     - Biological
     - Inorganic
     - Silicon
-#  - type: TrayScanner #T-rays dont work on head
-#    toggleAction: ActionToggleTrayScanner
-#    soundOn:
-#      path: /Audio/Items/flashlight_on.ogg
-#    soundOff:
-#      path: /Audio/Items/flashlight_off.ogg
-#  - type: GoggleShader
-#    shader: Goggles
-#    color: '#5AB43CCC'
-#    enabled: false
+  - type: TrayScanner #T-rays dont work on head - to be fixed
+    toggleAction: ActionToggleTrayScanner
+    soundOn:
+      path: /Audio/Items/flashlight_on.ogg
+    soundOff:
+      path: /Audio/Items/flashlight_off.ogg
+  - type: GoggleShader
+    shader: Goggles
+    color: '#5AB43CCC'
+    enabled: false
   - type: ThermalSight
   - type: SolutionScanner
   - type: EyeProtection
