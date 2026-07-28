@@ -33,8 +33,8 @@ public abstract partial class SharedMouthStorageSystem : EntitySystem
 
     protected bool IsMouthBlocked(MouthStorageComponent component)
     {
-using Content.Shared.Storage.Components;
-using Content.Shared.Storage;
+        return TryComp<StorageComponent>(component.MouthId, out var storage)
+               && storage.Container.ContainedEntities.Count > 0;
     }
 
     private void OnMouthStorageInit(EntityUid uid, MouthStorageComponent component, MapInitEvent args)
