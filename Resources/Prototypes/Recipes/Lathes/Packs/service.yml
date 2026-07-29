@@ -37,6 +37,7 @@
   - BoozeDispenserMachineCircuitboard
   - SodaDispenserMachineCircuitboard
   - SmartFridgeCircuitboard
+  - KaucjomatMachineCircuitboard # Polonium
 
 - type: latheRecipePack
   id: HydroponicsStatic

@@ -28,6 +28,9 @@
     - !type:NestedSelector
       weight: 5
       tableId: AllBananaPeelsTable
+    - !type:NestedSelector # Polonium - empty cans and bottles for the kaucjomat
+      weight: 25
+      tableId: PoloniumEmptyDrinkTrash
 
 - type: entityTable # max size 1x2
   id: AllBananaPeelsTable

@@ -592,6 +592,7 @@
   - type: Tag
     tags:
     - Beer
+    - DrinkBottle # Polonium - overriding the tag list here dropped the one inherited from DrinkBottleGlassBase
 
 - type: entity
   parent: DrinkBottleBeer
