@@ -23,7 +23,7 @@ ent-ClothingHeadProtoVisoreCMO = CMO's Cybernetic Visor
     .desc = Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. This version has everything a CMO might need. It's space proof, has a chemical scanner, alongside a health HUD and as a bonus it also has NVG sensors, even if they are terrible at their job.
 
 ent-ClothingHeadProtoVisoreRD = RD's Cybernetic Visor
-    .desc = Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. This version has space protection and poor quality NVGs
+    .desc = Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. This version has space protection and poor quality NVGs.
 
 ent-ClothingHeadProtoVisoreService = Service Worker's Cybernetic Visor
     .desc = Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. This version comes with basic nurishment and thirst analysis for organic beings.

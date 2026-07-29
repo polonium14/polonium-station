@@ -1,57 +1,59 @@
-ent-ClothingHeadProtoVisoreBasic = Cybernetic Visor
-    .desc = Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. The most common simplest model.
+ent-ClothingHeadProtoVisoreBasic = Wizjer Cybernetyczny
+    .desc = Wysoce wyspecjalizowane wyposażenie zapewniające dodatkowe informacje o środowisku, jako bonus powoduje pernamentne problemy z widzeniem. Najpopularniejszy i najprostszy model.
 
-ent-ClothingHeadProtoVisoreSpaceProof = Space Proof Cybernetic Visor
-    .desc = Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. This version comes with aditional seals to make it space proof.
+ent-ClothingHeadProtoVisoreSpaceProof = Szczelny Wizjer Cybernetyczny
+    .desc = Wysoce wyspecjalizowane wyposażenie zapewniające dodatkowe informacje o środowisku, jako bonus powoduje pernamentne problemy z widzeniem. Ta wersja ma dodatkowe uszczelki by być odporna na próżnie.
 
-ent-ClothingHeadProtoVisoreEngi = Engineer's Cybernetic Visor
-    .desc = Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. This version is space proof, has a built in T-ray scanner and provides some protection against welding arcs for up to 10 secounds of continous welding. Not as good as a designated mask, however it will adapt itself to fix the newly acquired sight error.
+ent-ClothingHeadProtoVisoreEngi = Wizjer Cybernetyczny Inżyniera
+    .desc = Wysoce wyspecjalizowane wyposażenie zapewniające dodatkowe informacje o środowisku, jako bonus powoduje pernamentne problemy z widzeniem. Ta wersja jest odporna na próżnie, ma wbudowany skanner T-ray oraz zapewnia protekcje przed łukami spawalniczymi do 10 sekund. Nie tak dobra jak dedykowana maska, jednak zdolna do adaptacji i korekcji nowo nabytych wad wzroku.
 
-ent-ClothingHeadProtoVisoreCE = CE's Cybernetic Visor
-    .desc = Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. This version has all the gadgets a HOS might want, that being, Space protection, security HUDs AND some very poorly working NVG sensors.
+ent-ClothingHeadProtoVisoreCE = Wizjer Cybernetyczny GI
+    .desc = Wysoce wyspecjalizowane wyposażenie zapewniające dodatkowe informacje o środowisku, jako bonus powoduje pernamentne problemy z widzeniem. Ta wersja jest odporna na próżnie, przychodzi także wraz z sensorami termicznymi, skanerem T-ray oraz pozwala na spawanie bez limity, nie wspominając o noktowizji tragicznej jakości
+    , comes with enviroment thermal sensors, T-ray scanner and allows you to weld without limits, not to mention built in NVG, altough of very poor quality.
 
-ent-ClothingHeadProtoVisoreMedical = Doctors's Cybernetic Visor
-    .desc = Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. This version has a built in health HUD display.
+ent-ClothingHeadProtoVisoreMedical = Wizjer Cybernetyczny Doktora
+    .desc = Wysoce wyspecjalizowane wyposażenie zapewniające dodatkowe informacje o środowisku, jako bonus powoduje pernamentne problemy z widzeniem. Ta wersja ma wbudowany HUD medyczny.
 
-ent-ClothingHeadProtoVisoreParamed = Paramedic's Cybernetic Visor
-    .desc = Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. This version not only comes with a health HUD but also space protection.
+ent-ClothingHeadProtoVisoreParamed = Wizjer Cybernetyczny Paramedyka
+    .desc = Wysoce wyspecjalizowane wyposażenie zapewniające dodatkowe informacje o środowisku, jako bonus powoduje pernamentne problemy z widzeniem. Ta wersja nie tylko przychodzi z HUDem medycznym ale także odpornością na próżnie.
 
-ent-ClothingHeadProtoVisoreChem = Chemist's Cybernetic Visor
-    .desc = Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. This version, in addition to the health HUD, comes with a chemical scanner.
+ent-ClothingHeadProtoVisoreChem = Wizjer Cybernetyczny Chemika
+    .desc = Wysoce wyspecjalizowane wyposażenie zapewniające dodatkowe informacje o środowisku, jako bonus powoduje pernamentne problemy z widzeniem. Ta wersja, w dodtaku do HUDu medycznego zawiera skanner chemikaliów.
 
-ent-ClothingHeadProtoVisoreCMO = CMO's Cybernetic Visor
-    .desc = Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. This version has everything a CMO might need. It's space proof, has a chemical scanner, alongside a health HUD and as a bonus it also has NVG sensors, even if they are terrible at their job.
+ent-ClothingHeadProtoVisoreCMO = Wizjer Cybernetyczny Ordynatora
+    .desc = Wysoce wyspecjalizowane wyposażenie zapewniające dodatkowe informacje o środowisku, jako bonus powoduje pernamentne problemy z widzeniem. Ta wersja posiada wszystko co ordynator potrzebuje. Jest odporna na próżnie, ma skaner chemikaliów, do tego medyczny HUD a jako dodatek także sensory noktowizyjne, choć są one tragiczne w swojej robocie.
 
-ent-ClothingHeadProtoVisoreRD = RD's Cybernetic Visor
-    .desc = Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. This version has space protection and poor quality NVGs
+ent-ClothingHeadProtoVisoreRD = Wizjer Cybernetyczny KB
+    .desc = Wysoce wyspecjalizowane wyposażenie zapewniające dodatkowe informacje o środowisku, jako bonus powoduje pernamentne problemy z widzeniem. Ta wersja jest odporna na próżnie oraz posiada noktowizje kwesstionowalnej jakości.
 
-ent-ClothingHeadProtoVisoreService = Service Worker's Cybernetic Visor
-    .desc = Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. This version comes with basic nurishment and thirst analysis for organic beings.
+ent-ClothingHeadProtoVisoreService = Wizjer Cybernetyczny Serwisu
+    .desc = Wysoce wyspecjalizowane wyposażenie zapewniające dodatkowe informacje o środowisku, jako bonus powoduje pernamentne problemy z widzeniem. Ta wersja zawiera skanery napojenia oraz nasycenia istot biologicznych.
 
-ent-ClothingHeadProtoVisoreSecurity = Officer's Cybernetic Visor
-    .desc = Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. This version comes with fancy displays for catching criminals.
+ent-ClothingHeadProtoVisoreSecurity = Wizjer Cybernetyczny Oficera
+    .desc = Wysoce wyspecjalizowane wyposażenie zapewniające dodatkowe informacje o środowisku, jako bonus powoduje pernamentne problemy z widzeniem. Ta wersja przychodzi z zaawansowanymi wyświetlaczami do łapania złodziei.
 
-ent-ClothingHeadProtoVisoreBrigmedic = Brigmedic's Cybernetic Visor
-    .desc = Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. This version, alongside fancy anti-criminal HUD has a health HUD. Perfect for knowing who to not heal.
+ent-ClothingHeadProtoVisoreBrigmedic = Wizjer Cybernetyczny Medyka Więziennego
+    .desc = Wysoce wyspecjalizowane wyposażenie zapewniające dodatkowe informacje o środowisku, jako bonus powoduje pernamentne problemy z widzeniem. Ta wersja, wraz z wymyślnym HUDem anty-kryminalistycznym zawiera także HUD medyczny. Perfekcyjne połączenie by wiedzieć kogo NIE leczyć.
 
-ent-ClothingHeadProtoVisoreHOS = HOS's Cybernetic Visor
-    .desc = Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. This version has all the gadgets a HOS might want: Space protection, security HUDs AND some very poorly working NVG sensors.
+ent-ClothingHeadProtoVisoreHOS = Wizjer Cybernetyczny Komednanta
+    .desc = Wysoce wyspecjalizowane wyposażenie zapewniające dodatkowe informacje o środowisku, jako bonus powoduje pernamentne problemy z widzeniem. Ta wersja ma wszystkie gadżety które Komednatn może chcieć: Ochrone próżniową, HUD ochronny ORAZ bardzo źle działające sensory noktowizyjne.
+    has all the gadgets a HOS might want: Space protection, security HUDs AND some very poorly working NVG sensors.
 
-ent-ClothingHeadProtoVisoreSalvage = Salvager's Cybernetic Visor
-    .desc = Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. This version comes with space protecion, now go die for cargonia!
+ent-ClothingHeadProtoVisoreSalvage = Wizjer Cybernetyczny Technika ds. Odzysku
+    .desc = Wysoce wyspecjalizowane wyposażenie zapewniające dodatkowe informacje o środowisku, jako bonus powoduje pernamentne problemy z widzeniem. Ta wersja posiada ochrone przed próżnią, teraz idź umierać za suwerenne państwo logistyki!
 
-ent-ClothingHeadProtoVisoreQM = QM's Cybernetic Visor
-    .desc = Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. This version has some poor quality NVGs for piloting the shuttle when the lights break as well as space protection for not dying when ATS explodes, altough you may have bigger problems than.
+ent-ClothingHeadProtoVisoreQM = Wizjer Cybernetyczny Kwatermistrza
+    .desc = Wysoce wyspecjalizowane wyposażenie zapewniające dodatkowe informacje o środowisku, jako bonus powoduje pernamentne problemy z widzeniem. Ta wersja ma kiepskiej jakości nakotowizje do pilotowanie wachadłowca bez świateł, wraz z odpornością na próżne na ten czas gdy ATS wybuchnie, choć wtedy masz większe problemy na głowie.
 
-ent-ClothingHeadProtoVisoreHOP = HOP's Cybernetic Visor
-    .desc = Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. This version comes with space protection, poor quality NVG sensors and job identification display.
+ent-ClothingHeadProtoVisoreHOP = Wizjer Cybernetyczny KP
+    .desc = Wysoce wyspecjalizowane wyposażenie zapewniające dodatkowe informacje o środowisku, jako bonus powoduje pernamentne problemy z widzeniem. Ta wersja przychodzi z ochroną próżniową, złej jakości noktowizje oraz indentyfikacje posady.
 
-ent-ClothingHeadProtoVisoreCaptain = Captain's Cybernetic Visor
-    .desc = Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. This version has, space protection, job identifier and some TERRIBLE NVGs.
+ent-ClothingHeadProtoVisoreCaptain = Wizjer Cybernetyczny Kapitana
+    .desc = Wysoce wyspecjalizowane wyposażenie zapewniające dodatkowe informacje o środowisku, jako bonus powoduje pernamentne problemy z widzeniem. Ta wersja ma ochronę przed próżnią, indentyfikacje posady oraz TRAGICZNEJ jakości noktowizje.
 
-ent-ClothingHeadProtoVisoreNTR = NTR's Cybernetic Visor
-    .desc = Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. This version is a proof CC is being cheap on you. It only has some broken NVGs, not to mention the space proofing broke and just got removed.
+ent-ClothingHeadProtoVisoreNTR = Wizjer Cybernetyczny PNT
+    .desc = Wysoce wyspecjalizowane wyposażenie zapewniające dodatkowe informacje o środowisku, jako bonus powoduje pernamentne problemy z widzeniem. Ta wersja jest dowodem że CD na tobie skąpi. Posiada wyłącznie zepsute sensory noktowizyjne, nie wspominając że uszczelki anty-próżniowe się zepsuły i zostały po prostu wyrzucone.
 
-ent-ClothingHeadProtoVisoreCentCom = Central Command's Cybernetic Visor
-    .desc = Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. This version comes with EVERYTHING you would ever want. NOW WE ARE TALKING BABY!
+ent-ClothingHeadProtoVisoreCentCom = Wizjer Cybernetyczny Centralnego Dowództwa
+    .desc = Wysoce wyspecjalizowane wyposażenie zapewniające dodatkowe informacje o środowisku, jako bonus powoduje pernamentne problemy z widzeniem. Ta wersja przychodzi z WSZYSTKIM czego możesz potrzebować. TO SIĘ NAZYWA LUKSUS!
 

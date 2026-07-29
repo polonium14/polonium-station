@@ -257,7 +257,7 @@
   parent: [ClothingHeadProtoVisorBasic, ClothingHeadProtoVisorBaseSpaceProof, ClothingHeadProtoVisorBaseNVG, BaseCommandContraband]
   id: ClothingHeadProtoVisorRD
   name: RD's Cybernetic Visor
-  description: Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. This version has space protection and poor quality NVGs
+  description: Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. This version has space protection and poor quality NVGs.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -331,7 +331,7 @@
   parent: [ClothingHeadProtoVisorSecurity, ClothingHeadProtoVisorBaseSpaceProof, ClothingHeadProtoVisorBaseNVG, BaseCommandContraband]
   id: ClothingHeadProtoVisorHOS
   name: HOS's Cybernetic Visor
-  description: Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. This version has all the gadgets a HOS might want, that being, Space protection, security HUDs AND some very poorly working NVG sensors.
+  description: "Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. This version has all the gadgets a HOS might want: that being, Space protection, security HUDs AND some very poorly working NVG sensors."
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
