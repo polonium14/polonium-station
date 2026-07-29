@@ -62,6 +62,15 @@
   - type: MovementSpeedModifier
     baseWalkSpeed: 1.4
     baseSprintSpeed: 2.5
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - FootstepSound
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: XenoFootstepLarge
+      params:
+        volume: 0
   - type: MeleeWeapon
     damage:
       types:

@@ -37,6 +37,7 @@ cm-xeno-evolution-start = You begin to evolve...
 cm-xeno-evolution-end = You emerge as a new caste!
 cm-xeno-evolution-failed-points = You need more evolution points!
 cm-xeno-evolution-failed-hive-shaken = The hive is too shaken to evolve further!
+cm-xeno-evolution-failed-caste-limit = The hive already has {$limit} living {$caste} - you cannot evolve into this caste right now.
 cm-xeno-evolution-ready = You feel ready to evolve!
 rmc-xeno-evolution-failed-queen-exists = There is already a Queen!
 rmc-new-queen = A new Queen has risen!
@@ -84,6 +85,8 @@ cm-xeno-egg-failed-must-weeds = The egg must be planted on weeds.
 cm-xeno-egg-failed-need-grid = You need to be on a solid surface to lay an egg.
 cm-xeno-egg-failed-already-there = There's already an egg there.
 cm-xeno-egg-lay-start = You begin laying an egg...
+cm-xeno-egg-lay-cooldown = You must wait before laying another egg.
+cm-xeno-egg-lay-ready = You are ready to lay another egg.
 
 ## Leap
 cm-xeno-leap-cancelled = You stop yourself from leaping!

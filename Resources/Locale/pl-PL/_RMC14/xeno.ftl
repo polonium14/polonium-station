@@ -37,6 +37,7 @@ cm-xeno-evolution-start = Zaczynasz ewoluować...
 cm-xeno-evolution-end = Wyłaniasz się jako nowa kasta!
 cm-xeno-evolution-failed-points = Potrzebujesz więcej punktów ewolucji!
 cm-xeno-evolution-failed-hive-shaken = Ul jest zbyt wstrząśnięty, by ewoluować dalej!
+cm-xeno-evolution-failed-caste-limit = W ulu jest już {$limit} żywych {$caste} - nie możesz teraz ewoluować w tę kastę.
 cm-xeno-evolution-ready = Czujesz, że jesteś gotowy do ewolucji!
 rmc-xeno-evolution-failed-queen-exists = Królowa już istnieje!
 rmc-new-queen = Powstała nowa Królowa!
@@ -84,6 +85,8 @@ cm-xeno-egg-failed-must-weeds = Jajo musi zostać złożone na chwastach.
 cm-xeno-egg-failed-need-grid = Musisz stać na stałym podłożu, aby złożyć jajo.
 cm-xeno-egg-failed-already-there = Tu już jest jajo.
 cm-xeno-egg-lay-start = Zaczynasz składać jajo...
+cm-xeno-egg-lay-cooldown = Musisz poczekać, zanim złożysz kolejne jajo.
+cm-xeno-egg-lay-ready = Możesz złożyć kolejne jajo.
 
 ## Leap
 cm-xeno-leap-cancelled = Przerywasz skok!

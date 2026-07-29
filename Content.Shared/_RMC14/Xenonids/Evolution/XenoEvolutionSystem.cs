@@ -1,4 +1,5 @@
 using Content.Shared._RMC14.CCVar;
+using Content.Shared._RMC14.Xenonids;
 using Content.Shared._RMC14.Xenonids.Announce;
 using Content.Shared._RMC14.Xenonids.Hive;
 using Content.Shared.Actions;
@@ -38,6 +39,8 @@ public sealed partial class XenoEvolutionSystem : EntitySystem
     private TimeSpan _evolutionAccumulatePointsBefore;
     private float _evolutionPointsRate;
 
+    private Dictionary<EntProtoId, int> _casteLimits = new();
+
     private readonly HashSet<EntityUid> _intersecting = new();
 
     public override void Initialize()
@@ -59,6 +62,56 @@ public sealed partial class XenoEvolutionSystem : EntitySystem
         Subs.CVar(_config, RMCCVars.RMCEvolutionPointsAccumulateBeforeMinutes,
             v => _evolutionAccumulatePointsBefore = TimeSpan.FromMinutes(v), true);
         Subs.CVar(_config, RMCCVars.RMCEvolutionPointsRate, v => _evolutionPointsRate = v, true);
+        Subs.CVar(_config, RMCCVars.RMCXenoEvolutionCasteLimits, OnCasteLimitsChanged, true);
+    }
+
+    private void OnCasteLimitsChanged(string value)
+    {
+        _casteLimits = ParseCasteLimits(value);
+    }
+
+    public static Dictionary<EntProtoId, int> ParseCasteLimits(string value)
+    {
+        var limits = new Dictionary<EntProtoId, int>();
+        if (string.IsNullOrWhiteSpace(value))
+            return limits;
+
+        foreach (var entry in value.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries))
+        {
+            var parts = entry.Split('=', 2, StringSplitOptions.TrimEntries);
+            if (parts.Length != 2 || string.IsNullOrWhiteSpace(parts[0]) || !int.TryParse(parts[1], out var limit) || limit <= 0)
+                continue;
+
+            limits.TryAdd(new EntProtoId(parts[0]), limit);
+        }
+
+        return limits;
+    }
+
+    public int GetAliveCasteCount(EntProtoId proto)
+    {
+        var count = 0;
+        var query = EntityQueryEnumerator<XenoComponent>();
+        while (query.MoveNext(out var uid, out _))
+        {
+            if (_mobState.IsDead(uid))
+                continue;
+
+            if (MetaData(uid).EntityPrototype?.ID is not { } protoId || protoId != proto)
+                continue;
+
+            count++;
+        }
+
+        return count;
+    }
+
+    public bool IsCasteLimitReached(EntProtoId proto, out int limit)
+    {
+        if (!_casteLimits.TryGetValue(proto, out limit))
+            return false;
+
+        return GetAliveCasteCount(proto) >= limit;
     }
 
     private void OnXenoEvolveMapInit(Entity<XenoEvolutionComponent> ent, ref MapInitEvent args)
@@ -93,12 +146,13 @@ public sealed partial class XenoEvolutionSystem : EntitySystem
         }
 
         var ev = new XenoEvolutionDoAfterEvent(args.Choice);
-        var doAfter = new DoAfterArgs(EntityManager, xeno, xeno.Comp.EvolutionDelay, ev, xeno)
+        var delay = GetEvolutionDelay(xeno, args.Choice);
+        var doAfter = new DoAfterArgs(EntityManager, xeno, delay, ev, xeno)
         {
             BreakOnMove = false,
         };
 
-        if (xeno.Comp.EvolutionDelay > TimeSpan.Zero)
+        if (delay > TimeSpan.Zero)
             _popup.PopupClient(Loc.GetString("cm-xeno-evolution-start"), xeno, xeno);
 
         _doAfter.TryStartDoAfter(doAfter);
@@ -191,7 +245,33 @@ public sealed partial class XenoEvolutionSystem : EntitySystem
             return false;
         }
 
+        if (IsCasteLimitReached(newXeno, out var limit))
+        {
+            if (doPopup)
+            {
+                var casteName = prototype?.Name ?? newXeno.ToString();
+                _popup.PopupEntity(
+                    Loc.GetString("cm-xeno-evolution-failed-caste-limit", ("caste", casteName), ("limit", limit)),
+                    xeno,
+                    xeno,
+                    PopupType.MediumCaution);
+            }
+
+            return false;
+        }
+
         return true;
+    }
+
+    private TimeSpan GetEvolutionDelay(Entity<XenoEvolutionComponent> xeno, EntProtoId choice)
+    {
+        if (_prototypes.TryIndex(choice, out EntityPrototype? prototype) &&
+            prototype.TryGetComponent<XenoEvolutionGranterComponent>(out _, Factory))
+        {
+            return xeno.Comp.QueenEvolutionDelay;
+        }
+
+        return xeno.Comp.EvolutionDelay;
     }
 
     public bool HasLivingGranter()
@@ -261,6 +341,7 @@ public sealed partial class XenoEvolutionSystem : EntitySystem
 
         var time = _timing.CurTime;
         var roundDuration = _gameTicker.RoundDuration();
+        var hasLivingQueen = HasLivingGranter();
 
         // stop accumulating after the cvar cutoff - but still clean newly evolved
         if (roundDuration <= _evolutionAccumulatePointsBefore)
@@ -271,6 +352,11 @@ public sealed partial class XenoEvolutionSystem : EntitySystem
                 if (evolution.Max <= FixedPoint2.Zero)
                     continue;
 
+                if (!hasLivingQueen)
+                {
+                    evolution.LastPointsAt = time;
+                    continue;
+                }
                 if (evolution.Points >= evolution.Max)
                 {
                     if (!evolution.GotPopup)

@@ -17,11 +17,11 @@
     actionIds:
     - ActionXenoRest
     - ActionXenoTailStab
-    - ActionXenoSpit
+    - ActionXenoSlowingSpit
     - ActionXenoAcidWeak
   - type: XenoLight
   - type: XenoAcid
-  - type: XenoSpit
+  - type: XenoSlowingSpit
   - type: XenoTailStab
   - type: XenoPlasma
     plasma: 400

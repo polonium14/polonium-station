@@ -1,110 +1,62 @@
-using Content.Shared._RMC14.CCVar;
 using Content.Shared._RMC14.Xenonids;
-using Content.Shared._RMC14.Xenonids.Name;
+using Content.Shared._RMC14.Xenonids.Evolution;
 using Content.Shared._RMC14.Xenonids.Rank;
-using Content.Shared.Mind;
-using Content.Shared.Mind.Components;
-using Content.Shared.NameModifier.EntitySystems;
-using Content.Shared.Players.PlayTimeTracking;
-using Robust.Server.Player;
-using Robust.Shared.Configuration;
-using Robust.Shared.Player;
+using Content.Shared.FixedPoint;
 
 namespace Content.Server._RMC14.Xenonids.Rank;
 
 public sealed partial class XenoRankSystem : EntitySystem
 {
-    [Dependency] private IConfigurationManager _config = default!;
-    [Dependency] private NameModifierSystem _nameModifier = default!;
-    [Dependency] private ISharedPlaytimeManager _playtime = default!;
-
-    private TimeSpan _rankTwoTime;
-    private TimeSpan _rankThreeTime;
-    private TimeSpan _rankFourTime;
-    private TimeSpan _rankFiveTime;
-    private TimeSpan _rankSixTime;
-
     public override void Initialize()
     {
-        SubscribeLocalEvent<XenoComponent, MindAddedMessage>(OnXenoMindAdded);
-        SubscribeLocalEvent<XenoRankComponent, RefreshNameModifiersEvent>(OnRankRefreshName, before: [typeof(SharedXenoNameSystem)]);
-
-        Subs.CVar(_config, RMCCVars.RMCPlaytimeBronzeMedalTimeHours, v => _rankTwoTime = TimeSpan.FromHours(v), true);
-        Subs.CVar(_config, RMCCVars.RMCPlaytimeSilverMedalTimeHours, v => _rankThreeTime = TimeSpan.FromHours(v), true);
-        Subs.CVar(_config, RMCCVars.RMCPlaytimeGoldMedalTimeHours, v => _rankFourTime = TimeSpan.FromHours(v), true);
-        Subs.CVar(_config, RMCCVars.RMCPlaytimePlatinumMedalTimeHours, v => _rankFiveTime = TimeSpan.FromHours(v), true);
-        Subs.CVar(_config, RMCCVars.RMCPlaytimeRubyMedalTimeHours, v => _rankSixTime = TimeSpan.FromHours(v), true);
+        SubscribeLocalEvent<XenoComponent, AfterNewXenoEvolvedEvent>(OnAfterEvolved);
     }
 
-    private void OnXenoMindAdded(Entity<XenoComponent> xeno, ref MindAddedMessage args)
+    private void OnAfterEvolved(Entity<XenoComponent> ent, ref AfterNewXenoEvolvedEvent args)
     {
-        if (!TryComp(xeno, out ActorComponent? actor))
-            return;
-
-        UpdateRank(xeno, actor.PlayerSession);
+        UpdateRank(ent.Owner);
     }
 
-    private void OnRankRefreshName(Entity<XenoRankComponent> ent, ref RefreshNameModifiersEvent args)
+    public override void Update(float frameTime)
     {
-        if (!TryComp<XenoRankNamesComponent>(ent, out var rankNamesComp))
-            return;
-
-        if (!rankNamesComp.RankNames.TryGetValue(ent.Comp.Rank, out var rank))
-            return;
-
-        args.AddModifier(rank);
+        var query = EntityQueryEnumerator<XenoEvolutionComponent, XenoComponent>();
+        while (query.MoveNext(out var uid, out _, out _))
+            UpdateRank(uid);
     }
 
-    private void UpdateRank(EntityUid xeno, ICommonSession player)
+    private void UpdateRank(EntityUid xeno)
     {
         if (!HasComp<XenoComponent>(xeno))
             return;
 
-        var time = GetXenoPlaytime(player);
-
-        int rank;
-        try
-        {
-            if (time > _rankSixTime)
-                rank = 6;
-            else if (time > _rankFiveTime)
-                rank = 5;
-            else if (time > _rankFourTime)
-                rank = 4;
-            else if (time > _rankThreeTime)
-                rank = 3;
-            else if (time > _rankTwoTime)
-                rank = 2;
-            else
-                rank = 0;
-        }
-        catch
-        {
-            rank = 0;
-        }
-
+        var rank = GetEvolutionRank(xeno);
         var rankComp = EnsureComp<XenoRankComponent>(xeno);
         if (rankComp.Rank == rank)
             return;
 
         rankComp.Rank = rank;
         Dirty(xeno, rankComp);
-        _nameModifier.RefreshNameModifiers(xeno);
     }
 
-    private TimeSpan GetXenoPlaytime(ICommonSession player)
+    // same chevron steps as before - just progress to Max instead of playtime
+    private int GetEvolutionRank(EntityUid xeno)
     {
-        var total = TimeSpan.Zero;
-        try
-        {
-            foreach (var (_, time) in _playtime.GetPlayTimes(player))
-                total += time;
-        }
-        catch (Exception e)
-        {
-            Log.Error($"Error reading xeno playtime for rank:\n{e}");
-        }
+        if (!TryComp(xeno, out XenoEvolutionComponent? evolution) || evolution.Max <= FixedPoint2.Zero)
+            return 0;
 
-        return total;
+        var ratio = (evolution.Points / evolution.Max).Float();
+
+        if (ratio >= 1f)
+            return 6;
+        if (ratio > 0.99f)
+            return 5;
+        if (ratio > 0.6f)
+            return 4;
+        if (ratio > 0.4f)
+            return 3;
+        if (ratio > 0.2f)
+            return 2;
+
+        return 0;
     }
 }

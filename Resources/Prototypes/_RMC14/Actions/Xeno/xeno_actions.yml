@@ -83,7 +83,7 @@
   description: Melt a structure or object with acid.
   components:
   - type: Action
-    useDelay: 1
+    useDelay: 1.5
     itemIconStyle: BigAction
     icon:
       sprite: _RMC14/Actions/xeno_actions.rsi
@@ -107,7 +107,7 @@
   description: Slowly melt a structure or object with weak acid.
   components:
   - type: Action
-    useDelay: 1
+    useDelay: 1.5
     itemIconStyle: BigAction
     icon:
       sprite: _RMC14/Actions/xeno_actions.rsi
@@ -123,3 +123,21 @@
       plasmaCost: 75
       time: 300
       dps: 4
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenoNightVision
+  name: Night Vision
+  description: Toggle your xenomorph night vision on or off.
+  components:
+  - type: Action
+    useDelay: 0.5
+    itemIconStyle: BigAction
+    icon:
+      sprite: _RMC14/Actions/xeno_actions.rsi
+      state: queen_eye
+    iconOn:
+      sprite: _RMC14/Actions/xeno_actions.rsi
+      state: queen_eye
+  - type: InstantAction
+    event: !type:ToggleNightVisionEvent {}

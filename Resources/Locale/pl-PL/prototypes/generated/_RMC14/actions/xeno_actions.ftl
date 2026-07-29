@@ -41,4 +41,6 @@ ent-ActionXenoScreech = Wrzask
 ent-ActionXenoPheromones = Emituj feromony
     .desc = Wybierz aurę feromonów wzmacniającą siostry ula. Kosztuje plazmę na start i co sekundę.
 ent-ActionXenoLayEgg = Złóż jajo
-    .desc = Stań na chwastach i po 30 sekundach złóż jajo ksenomorfa.
+    .desc = Stań na chwastach i po 35 sekundach złóż jajo ksenomorfa. Po złożeniu obowiązuje czas odnowienia.
+ent-ActionXenoNightVision = Noktowizja
+    .desc = Włącz lub wyłącz noktowizję ksenomorfa.

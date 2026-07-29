@@ -3,6 +3,7 @@ using System.Linq;
 using System.Numerics;
 using Content.IntegrationTests.Fixtures;
 using Content.IntegrationTests.Fixtures.Attributes;
+using Content.Shared._RMC14.CCVar;
 using Content.Shared._RMC14.Xenonids;
 using Content.Shared._RMC14.Xenonids.Acid;
 using Content.Shared._RMC14.Xenonids.Construction;
@@ -274,6 +275,42 @@ public sealed class XenoSystemsTest : GameTest
                 SEntMan.System<AlertsSystem>().IsShowingAlert((drone.Owner, alerts), "XenoPlasma"),
                 Is.True,
                 "Plasma alert should remain after evolution");
+        });
+    }
+
+    [Test]
+    public async Task EvolutionBlockedByCasteLimit()
+    {
+        var map = await Pair.CreateTestMap();
+
+        var coords = map.GridCoords.Offset(new Vector2(0.5f, 0.5f));
+
+        await Pair.Server.WaitPost(() =>
+        {
+            Pair.Server.CfgMan.SetCVar(RMCCVars.RMCXenoEvolutionCasteLimits, "CMXenoRavager=2");
+            SSpawnAtPosition("CMXenoQueen", coords);
+            SSpawnAtPosition("CMXenoRavager", coords);
+
+            var evoSys = SEntMan.System<XenoEvolutionSystem>();
+            var mindSys = SEntMan.System<Content.Shared.Mind.SharedMindSystem>();
+
+            Assert.That(evoSys.GetAliveCasteCount("CMXenoRavager"), Is.EqualTo(1));
+
+            var lurkerOk = SSpawnAtPosition("CMXenoLurker", coords);
+            var mindOk = mindSys.CreateMind(null, "xeno-limit-ok");
+            mindSys.TransferTo(mindOk.Owner, lurkerOk, mind: mindOk.Comp);
+
+            Assert.That(evoSys.TryForceEvolve(lurkerOk, "CMXenoRavager"), Is.True,
+                "Evolution should succeed while under caste limit");
+            Assert.That(evoSys.GetAliveCasteCount("CMXenoRavager"), Is.EqualTo(2));
+
+            var lurkerBlocked = SSpawnAtPosition("CMXenoLurker", coords);
+            var mindBlocked = mindSys.CreateMind(null, "xeno-limit-blocked");
+            mindSys.TransferTo(mindBlocked.Owner, lurkerBlocked, mind: mindBlocked.Comp);
+
+            Assert.That(evoSys.TryForceEvolve(lurkerBlocked, "CMXenoRavager"), Is.False,
+                "Evolution should be rejected once caste limit is reached");
+            Assert.That(evoSys.GetAliveCasteCount("CMXenoRavager"), Is.EqualTo(2));
         });
     }
 }

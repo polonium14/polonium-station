@@ -47,6 +47,7 @@ public sealed partial class XenoSystem : EntitySystem
     private float _xenoDamageReceivedMultiplier = 1f;
     private float _xenoSpeedMultiplier = 1f;
     private float _xenoPlasmaRegenMultiplier = 1.05f;
+    private float _xenoHealthRegenMultiplier = 1f;
 
     public override void Initialize()
     {
@@ -77,6 +78,7 @@ public sealed partial class XenoSystem : EntitySystem
         Subs.CVar(_config, RMCCVars.RMCXenoDamageReceivedMultiplier, v => _xenoDamageReceivedMultiplier = v, true);
         Subs.CVar(_config, RMCCVars.RMCXenoSpeedMultiplier, UpdateXenoSpeedMultiplier, true);
         Subs.CVar(_config, RMCCVars.RMCXenoPlasmaRegenMultiplier, v => _xenoPlasmaRegenMultiplier = v, true);
+        Subs.CVar(_config, RMCCVars.RMCXenoHealthRegenMultiplier, v => _xenoHealthRegenMultiplier = v, true);
     }
 
     private void OnXenoMapInit(Entity<XenoComponent> xeno, ref MapInitEvent args)
@@ -277,6 +279,9 @@ public sealed partial class XenoSystem : EntitySystem
             }
 
             var heal = GetWeedsHealAmount((uid, regen));
+            if (!MathHelper.CloseTo(_xenoHealthRegenMultiplier, 1))
+                heal *= _xenoHealthRegenMultiplier;
+
             if (heal > FixedPoint2.Zero)
                 HealDamage(uid, heal);
 

@@ -17,11 +17,13 @@
     actionIds:
     - ActionXenoRest
     - ActionXenoTailStab
-    - ActionXenoSpit
+    - ActionXenoSpitPraetorian
     - ActionXenoAcidNormal
   - type: XenoHeavy
   - type: XenoAcid
   - type: XenoSpit
+    projectile: XenoSpitProjectilePraetorian
+    plasmaCost: 25
   - type: XenoTailStab
   - type: XenoPlasma
     plasma: 800
