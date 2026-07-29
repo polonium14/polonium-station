@@ -88,6 +88,11 @@
     speciesId: rodentia
 
 - type: entity
+  parent: AppearanceRodentia
+  id: MobRodentiaDummy
+  categories: [ HideSpawnMenu ]
+
+- type: entity
   parent:
   - AppearanceRodentia
   - BaseSpeciesMobOrganic
