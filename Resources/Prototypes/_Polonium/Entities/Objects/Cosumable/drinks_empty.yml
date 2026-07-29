@@ -1,0 +1,325 @@
+# Empty drink containers, so the kaucjomat has something to buy back off the floor.
+
+## Cans
+
+- type: entity
+  parent: [ DrinkBaseOpenableOpen, DrinkCanBase ]
+  id: DrinkIcedTeaCanEmpty
+  name: iced tea can
+  description: A refreshing can of iced tea. Was.
+  suffix: Empty
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/ice_tea_can.rsi
+  - type: Item
+    sprite: Objects/Consumable/Drinks/ice_tea_can.rsi
+  - type: Tag
+    tags:
+    - DrinkCan
+    - Trash
+
+- type: entity
+  parent: [ DrinkBaseOpenableOpen, DrinkCanBase ]
+  id: DrinkLemonLimeCanEmpty
+  name: Smite can
+  description: You wanted ORANGE. It gave you Lemon-Lime. Now it gives you nothing.
+  suffix: Empty
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/lemon-lime.rsi
+  - type: Item
+    sprite: Objects/Consumable/Drinks/lemon-lime.rsi
+  - type: Tag
+    tags:
+    - DrinkCan
+    - Trash
+
+- type: entity
+  parent: [ DrinkBaseOpenableOpen, DrinkCanBase ]
+  id: DrinkGrapeCanEmpty
+  name: grape soda can
+  description: Sweetened drink with a grape flavor and a deep purple color. Emphasis on "was".
+  suffix: Empty
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/purple_can.rsi
+  - type: Item
+    sprite: Objects/Consumable/Drinks/purple_can.rsi
+  - type: Tag
+    tags:
+    - DrinkCan
+    - Trash
+
+- type: entity
+  parent: [ DrinkBaseOpenableOpen, DrinkCanBase ]
+  id: DrinkRootBeerCanEmpty
+  name: root beer can
+  description: Some of that tasty root beer goodness, now in a portable can! Someone got there first.
+  suffix: Empty
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/rootbeer.rsi
+  - type: Item
+    sprite: Objects/Consumable/Drinks/rootbeer.rsi
+  - type: Tag
+    tags:
+    - DrinkCan
+    - Trash
+
+- type: entity
+  parent: [ DrinkBaseOpenableOpen, DrinkCanBase ]
+  id: DrinkSpaceMountainWindCanEmpty
+  name: Space Solar Wind can
+  description: Blows right through you like a solar wind. Blew.
+  suffix: Empty
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/space_mountain_wind.rsi
+  - type: Item
+    sprite: Objects/Consumable/Drinks/space_mountain_wind.rsi
+  - type: Tag
+    tags:
+    - DrinkCan
+    - Trash
+
+- type: entity
+  parent: [ DrinkBaseOpenableOpen, DrinkCanBase ]
+  id: DrinkSpaceUpCanEmpty
+  name: Space-Up can
+  description: Tastes like a hull breach in your mouth. Tasted.
+  suffix: Empty
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/space-up.rsi
+  - type: Item
+    sprite: Objects/Consumable/Drinks/space-up.rsi
+  - type: Tag
+    tags:
+    - DrinkCan
+    - Trash
+
+- type: entity
+  parent: [ DrinkBaseOpenableOpen, DrinkCanBase ]
+  id: DrinkSolDryCanEmpty
+  name: Sol Dry can
+  description: Sweet ginger soda from outer space! All gone.
+  suffix: Empty
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/sol_dry.rsi
+  - type: Item
+    sprite: Objects/Consumable/Drinks/sol_dry.rsi
+  - type: Tag
+    tags:
+    - DrinkCan
+    - Trash
+
+- type: entity
+  parent: [ DrinkBaseOpenableOpen, DrinkCanBase ]
+  id: DrinkStarkistCanEmpty
+  name: Starkist can
+  description: The taste of a star in liquid form. And, a bit of tuna...? Nothing left of either.
+  suffix: Empty
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/starkist.rsi
+  - type: Item
+    sprite: Objects/Consumable/Drinks/starkist.rsi
+  - type: Tag
+    tags:
+    - DrinkCan
+    - Trash
+
+- type: entity
+  parent: [ DrinkBaseOpenableOpen, DrinkCanBase ]
+  id: DrinkDrGibbCanEmpty
+  name: Dr. Gibb can
+  description: A delicious blend of 42 different flavours. Had.
+  suffix: Empty
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/dr_gibb.rsi
+  - type: Item
+    sprite: Objects/Consumable/Drinks/dr_gibb.rsi
+  - type: Tag
+    tags:
+    - DrinkCan
+    - Trash
+
+- type: entity
+  parent: [ DrinkBaseOpenableOpen, DrinkCanBase ]
+  id: DrinkEnergyDrinkCanEmpty
+  name: Red Bool can
+  description: A can of Red Bool, with enough caffeine to kill a horse. Someone survived it.
+  suffix: Empty
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/energy_drink.rsi
+  - type: Item
+    sprite: Objects/Consumable/Drinks/energy_drink.rsi
+  - type: Tag
+    tags:
+    - DrinkCan
+    - Trash
+
+- type: entity
+  parent: [ DrinkBaseOpenableOpen, DrinkCanBase ]
+  id: DrinkPwrGameCanEmpty
+  name: PWR Game can
+  description: The only drink with the PWR that true gamers crave. This one is out of PWR.
+  suffix: Empty
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/pwrgame.rsi
+  - type: Item
+    sprite: Objects/Consumable/Drinks/pwrgame.rsi
+  - type: Tag
+    tags:
+    - DrinkCan
+    - Trash
+
+- type: entity
+  parent: [ DrinkBaseOpenableOpen, DrinkCanBase ]
+  id: DrinkBeerCanEmpty
+  name: beer can
+  description: Small joy, big taste, no worries! No beer either.
+  suffix: Empty
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/beer_can.rsi
+  - type: Item
+    sprite: Objects/Consumable/Drinks/beer_can.rsi
+  - type: Tag
+    tags:
+    - DrinkCan
+    - Trash
+
+- type: entity
+  parent: [ DrinkBaseOpenableOpen, DrinkCanBase ]
+  id: DrinkHakkaMateCanEmpty
+  name: hakka mate can
+  description: A bright orange can of hakka mate, a form of yerba-mate soda popular on mars! Drained.
+  suffix: Empty
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/hakkamate_can.rsi
+  - type: Item
+    sprite: Objects/Consumable/Drinks/hakkamate_can.rsi
+  - type: Tag
+    tags:
+    - DrinkCan
+    - Trash
+
+- type: entity
+  parent: [ DrinkBaseOpenableOpen, DrinkCanBase ]
+  id: DrinkMelonSodaCanEmpty
+  name: katsuga melon soda can
+  description: A can of katsuga melon soda. Had the distinct taste of melon and soda, unsurprisingly.
+  suffix: Empty
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/melonsoda_can.rsi
+  - type: Item
+    sprite: Objects/Consumable/Drinks/melonsoda_can.rsi
+  - type: Tag
+    tags:
+    - DrinkCan
+    - Trash
+
+## Plastic bottles
+
+- type: entity
+  parent: [ DrinkBaseOpenableOpen, DrinkVisualsAllFilled, DrinkBottlePlasticSmallBaseFull ]
+  id: DrinkWaterBottleEmpty
+  name: water bottle
+  description: Simple clean water of unknown origin. Was. Now it's simple clean litter of known origin.
+  suffix: Empty
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/waterbottle.rsi
+  - type: Label
+    localizedLabel: reagent-name-water
+  - type: Tag
+    tags:
+    - DrinkBottle
+    - Trash
+
+- type: entity
+  parent: [ DrinkBaseOpenableOpen, DrinkVisualsAllFilled, DrinkBottlePlasticBaseFull ]
+  id: DrinkColaBottleEmpty
+  name: Space Cola bottle
+  description: Cola. In spaaace! Was.
+  suffix: Empty
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/colabottle.rsi
+  - type: Label
+    localizedLabel: reagent-name-cola
+  - type: Tag
+    tags:
+    - DrinkBottle
+    - Trash
+
+- type: entity
+  parent: [ DrinkBaseOpenableOpen, DrinkVisualsAllFilled, DrinkBottlePlasticBaseFull ]
+  id: DrinkSpaceMountainWindBottleEmpty
+  name: Space Solar Wind bottle
+  description: Blows right through you like a solar wind. Blew.
+  suffix: Empty
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/space_mountain_wind_bottle.rsi
+  - type: Label
+    localizedLabel: reagent-name-space-mountain-wind
+  - type: Tag
+    tags:
+    - DrinkBottle
+    - Trash
+
+- type: entity
+  parent: [ DrinkBaseOpenableOpen, DrinkVisualsAllFilled, DrinkBottlePlasticBaseFull ]
+  id: DrinkSpaceUpBottleEmpty
+  name: Space-Up bottle
+  description: Tastes like a hull breach in your mouth. Tasted.
+  suffix: Empty
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/space-up_bottle.rsi
+  - type: Label
+    localizedLabel: reagent-name-space-up
+  - type: Tag
+    tags:
+    - DrinkBottle
+    - Trash
+
+- type: entity
+  parent: [ DrinkBaseOpenableOpen, DrinkVisualsAllFilled, DrinkBottlePlasticBaseFull ]
+  id: DrinkSodaWaterBottleEmpty
+  name: soda water bottle
+  description: Like water, but angry! It has calmed down.
+  suffix: Empty
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/sodawater-bottle.rsi
+  - type: Label
+    localizedLabel: reagent-name-soda-water
+  - type: Tag
+    tags:
+    - DrinkBottle
+    - Trash
+
+- type: entity
+  parent: [ DrinkBaseOpenableOpen, DrinkVisualsAllFilled, DrinkBottlePlasticBaseFull ]
+  id: DrinkTonicWaterBottleEmpty
+  name: tonic water bottle
+  description: Quinine tastes funny, but at least it'll keep that Space Malaria away. Not anymore it won't.
+  suffix: Empty
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/tonic-bottle.rsi
+  - type: Label
+    localizedLabel: reagent-name-tonic-water
+  - type: Tag
+    tags:
+    - DrinkBottle
+    - Trash
