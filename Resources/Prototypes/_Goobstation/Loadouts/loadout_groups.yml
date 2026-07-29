@@ -20,6 +20,7 @@
   - NanotrasenRepresentativeBowler
   - NanotrasenRepresentativeOutlaw
   - NanotrasenRepresentativeMAA
+  - ProtoVisorNTR # Polonium
 
 - type: loadoutGroup
   id: NanotrasenRepresentativeNeck
@@ -90,6 +91,7 @@
   loadouts:
   - NanotrasenTrainerHat
   - NanotrasenTrainerBeret
+  - ProtoVisorCentcom # Polonium - Whitelist only role for teaching newbies so the extra info shouldn't be a big problem
 
 - type: loadoutGroup
   id: NanotrasenTrainerBackpack

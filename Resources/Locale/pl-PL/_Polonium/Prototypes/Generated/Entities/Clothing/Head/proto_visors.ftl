@@ -1,54 +1,57 @@
-ent-ClothingCyberneticProtoVisoreBasic = Cybernetic Visor
-    .desc = Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. The most common simplest model
+ent-ClothingHeadProtoVisoreBasic = Cybernetic Visor
+    .desc = Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. The most common simplest model.
 
-ent-ClothingCyberneticProtoVisoreEngi = Engineer's Cybernetic Visor
-    .desc = Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This version is space proof, has a built in T-ray scanner and provides some protection against welding arcs for up to 10 secounds of continous welding. Not as good as a designated mask, however it will adapt itself to fix the newly acquired sight error.
+ent-ClothingHeadProtoVisoreSpaceProof = Space Proof Cybernetic Visor
+    .desc = Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. This version comes with aditional seals to make it space proof.
 
-ent-ClothingCyberneticProtoVisoreCE = CE's Cybernetic Visor
-    .desc = Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This version has all the gadgets a HOS might want, that being, Space protection, security HUDs AND some very poorly working NVG sensors.
+ent-ClothingHeadProtoVisoreEngi = Engineer's Cybernetic Visor
+    .desc = Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. This version is space proof, has a built in T-ray scanner and provides some protection against welding arcs for up to 10 secounds of continous welding. Not as good as a designated mask, however it will adapt itself to fix the newly acquired sight error.
 
-ent-ClothingCyberneticProtoVisoreMedical = Doctors's Cybernetic Visor
-    .desc = Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This version has a built in health HUD display.
+ent-ClothingHeadProtoVisoreCE = CE's Cybernetic Visor
+    .desc = Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. This version has all the gadgets a HOS might want, that being, Space protection, security HUDs AND some very poorly working NVG sensors.
 
-ent-ClothingCyberneticProtoVisoreParamed = Paramedic's Cybernetic Visor
-    .desc = Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This version not only comes with a health HUD but also space protection.
+ent-ClothingHeadProtoVisoreMedical = Doctors's Cybernetic Visor
+    .desc = Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. This version has a built in health HUD display.
 
-ent-ClothingCyberneticProtoVisoreChem = Chemist's Cybernetic Visor
-    .desc = Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This version, in addition to the health HUD, comes with a chemical scanner.
+ent-ClothingHeadProtoVisoreParamed = Paramedic's Cybernetic Visor
+    .desc = Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. This version not only comes with a health HUD but also space protection.
 
-ent-ClothingCyberneticProtoVisoreCMO = CMO's Cybernetic Visor
-    .desc = Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This version has everything a CMO might need. It's space proof, has a chemical scanner, alongside a health HUD and as a bonus it also has NVG sensors, even if they are terrible at their job.
+ent-ClothingHeadProtoVisoreChem = Chemist's Cybernetic Visor
+    .desc = Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. This version, in addition to the health HUD, comes with a chemical scanner.
 
-ent-ClothingCyberneticProtoVisoreRD = RD's Cybernetic Visor
-    .desc = Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This version has space protection and poor quality NVGs
+ent-ClothingHeadProtoVisoreCMO = CMO's Cybernetic Visor
+    .desc = Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. This version has everything a CMO might need. It's space proof, has a chemical scanner, alongside a health HUD and as a bonus it also has NVG sensors, even if they are terrible at their job.
 
-ent-ClothingCyberneticProtoVisoreService = Service Worker's Cybernetic Visor
-    .desc = Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This version comes with basic nurishment and thirst analysis for organic beings.
+ent-ClothingHeadProtoVisoreRD = RD's Cybernetic Visor
+    .desc = Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. This version has space protection and poor quality NVGs
 
-ent-ClothingCyberneticProtoVisoreSecurity = Officer's Cybernetic Visor
-    .desc = Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This version comes with fancy displays for catching criminals.
+ent-ClothingHeadProtoVisoreService = Service Worker's Cybernetic Visor
+    .desc = Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. This version comes with basic nurishment and thirst analysis for organic beings.
 
-ent-ClothingCyberneticProtoVisoreBrigmedic = Brigmedic's Cybernetic Visor
-    .desc = Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This version, alongside fancy anti-criminal HUD has a health HUD. Perfect for knowing who to not heal.
+ent-ClothingHeadProtoVisoreSecurity = Officer's Cybernetic Visor
+    .desc = Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. This version comes with fancy displays for catching criminals.
 
-ent-ClothingCyberneticProtoVisoreHOS = HOS's Cybernetic Visor
-    .desc = Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This version has all the gadgets a HOS might want: Space protection, security HUDs AND some very poorly working NVG sensors.
+ent-ClothingHeadProtoVisoreBrigmedic = Brigmedic's Cybernetic Visor
+    .desc = Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. This version, alongside fancy anti-criminal HUD has a health HUD. Perfect for knowing who to not heal.
 
-ent-ClothingCyberneticProtoVisoreSalvage = Salvager's Cybernetic Visor
-    .desc = Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This version comes with space protecion, now go die for cargonia!
+ent-ClothingHeadProtoVisoreHOS = HOS's Cybernetic Visor
+    .desc = Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. This version has all the gadgets a HOS might want: Space protection, security HUDs AND some very poorly working NVG sensors.
 
-ent-ClothingCyberneticProtoVisoreQM = QM's Cybernetic Visor
-    .desc = Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This version has some poor quality NVGs for piloting the shuttle when the lights break as well as space protection for not dying when ATS explodes, altough you may have bigger problems than.
+ent-ClothingHeadProtoVisoreSalvage = Salvager's Cybernetic Visor
+    .desc = Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. This version comes with space protecion, now go die for cargonia!
 
-ent-ClothingCyberneticProtoVisoreHOP = HOP's Cybernetic Visor
-    .desc = Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This version comes with space protection, poor quality NVG sensors and job identification display.
+ent-ClothingHeadProtoVisoreQM = QM's Cybernetic Visor
+    .desc = Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. This version has some poor quality NVGs for piloting the shuttle when the lights break as well as space protection for not dying when ATS explodes, altough you may have bigger problems than.
 
-ent-ClothingCyberneticProtoVisoreCaptain = Captain's Cybernetic Visor
-    .desc = Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This version has, space protection, job identifier and some TERRIBLE NVGs.
+ent-ClothingHeadProtoVisoreHOP = HOP's Cybernetic Visor
+    .desc = Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. This version comes with space protection, poor quality NVG sensors and job identification display.
 
-ent-ClothingCyberneticProtoVisoreNTR = NTR's Cybernetic Visor
-    .desc = Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This version is a proof CC is being cheap on you. It only has some broken NVGs, not to mention the space proofing broke and just got removed.
+ent-ClothingHeadProtoVisoreCaptain = Captain's Cybernetic Visor
+    .desc = Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. This version has, space protection, job identifier and some TERRIBLE NVGs.
 
-ent-ClothingCyberneticProtoVisoreCentCom = Central Command's Cybernetic Visor
-    .desc = Higly specialized equipment used for providing aditional data about the enviroment and fixing users vision problems. This version comes with EVERYTHING you would ever want. NOW WE ARE TALKING BABY!
+ent-ClothingHeadProtoVisoreNTR = NTR's Cybernetic Visor
+    .desc = Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. This version is a proof CC is being cheap on you. It only has some broken NVGs, not to mention the space proofing broke and just got removed.
+
+ent-ClothingHeadProtoVisoreCentCom = Central Command's Cybernetic Visor
+    .desc = Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. This version comes with EVERYTHING you would ever want. NOW WE ARE TALKING BABY!
 

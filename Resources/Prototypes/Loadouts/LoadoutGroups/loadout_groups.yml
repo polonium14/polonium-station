@@ -6,6 +6,7 @@
   - Glasses
   - GlassesJamjar
   - GlassesJensen
+  - ProtoVisorBasic # Polonium
 
 - type: loadoutGroup
   id: Trinkets
@@ -118,6 +119,7 @@
   loadouts:
   - CaptainHead
   - CaptainCap
+  - ProtoVisorCaptain # Polonium
 
 - type: loadoutGroup
   id: CaptainJumpsuit
@@ -164,6 +166,7 @@
   minLimit: 0
   loadouts:
   - HoPHead
+  - ProtoVisorHOP # Polonium
 
 - type: loadoutGroup
   id: HoPJumpsuit
@@ -269,6 +272,7 @@
   loadouts:
   - BartenderHead
   - BartenderBowler
+  - ProtoVisorService # Polonium
 
 - type: loadoutGroup
   id: BartenderJumpsuit
@@ -306,6 +310,7 @@
   minLimit: 0
   loadouts:
   - ChefHead
+  - ProtoVisorService # Polonium
 
 - type: loadoutGroup
   id: ChefMask
@@ -492,6 +497,7 @@
   - BotanistBandanaSkull
   - BotanistBandanaBrown
 #  - BotanistBandana
+  - ProtoVisorService # Polonium - service enough
 
 - type: loadoutGroup
   id: BotanistJumpsuit
@@ -538,6 +544,7 @@
   - JesterHat
   - JesterAltHat
   - ClownMitre
+  - ProtoVisorBasic # Polonium
 
 - type: loadoutGroup
   id: ClownJumpsuit
@@ -598,6 +605,7 @@
   - MimeHead
   - MimeFrenchBeret
   - MimeCap
+  - ProtoVisorBasic # Polonium
 
 - type: loadoutGroup
   id: MimeMask
@@ -718,6 +726,7 @@
   loadouts:
   - QuartermasterHead
   - QuartermasterBeret
+  - ProtoVisorQM # Polonium
 
 - type: loadoutGroup
   id: QuartermasterJumpsuit
@@ -763,6 +772,7 @@
   minLimit: 0
   loadouts:
   - CargoTechnicianHead
+  - ProtoVisorBasic # Polonium
 
 - type: loadoutGroup
   id: CargoTechnicianJumpsuit
@@ -842,6 +852,7 @@
   loadouts:
   - ChiefEngineerHead
   - ChiefEngineerBeret
+  - ProtoVisorCE # Polonium
 
 - type: loadoutGroup
   id: ChiefEngineerJumpsuit
@@ -902,6 +913,7 @@
   - StationEngineerHardhatOrange
   - StationEngineerHardhatRed
   - SeniorEngineerBeret
+  - ProtoVisorEngi
 
 - type: loadoutGroup
   id: StationEngineerJumpsuit
@@ -1004,6 +1016,7 @@
   minLimit: 0
   loadouts:
   - ResearchDirectorBeret
+  - ProtoVisorRD # Polonium
 
 - type: loadoutGroup
   id: ResearchDirectorNeck
@@ -1168,6 +1181,7 @@
   loadouts:
   - HeadofSecurityHead
   - HeadofSecurityBeret
+  - ProtoVisorHOS # Polonium
 
 - type: loadoutGroup
   id: HeadofSecurityJumpsuit
@@ -1210,6 +1224,7 @@
   loadouts:
   - WardenHead
   - WardenBeret
+  - ProtoVisorSecurity # Polonium
 
 - type: loadoutGroup
   id: WardenJumpsuit
@@ -1254,6 +1269,7 @@
   - SecurityBeret
   - SecurityHat
   - TrooperHat
+  - ProtoVisorSecurity # Polonium
 
 - type: loadoutGroup
   id: SecurityJumpsuit
@@ -1333,6 +1349,7 @@
   loadouts:
   - DetectiveFedora
   - DetectiveFedoraGrey
+  - ProtoVisorSecurity # Polonium
 
 - type: loadoutGroup
   id: DetectiveNeck
@@ -1372,6 +1389,7 @@
   name: loadout-group-security-cadet-hat
   loadouts:
   - CadetHat
+  - ProtoVisorSecurity # Polonium
 
 - type: loadoutGroup
   id: SecurityCadetJumpsuit
