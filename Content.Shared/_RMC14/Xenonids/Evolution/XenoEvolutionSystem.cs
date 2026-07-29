@@ -353,8 +353,10 @@ public sealed partial class XenoEvolutionSystem : EntitySystem
                     continue;
 
                 if (!hasLivingQueen)
+                {
+                    evolution.LastPointsAt = time;
                     continue;
-
+                }
                 if (evolution.Points >= evolution.Max)
                 {
                     if (!evolution.GotPopup)
