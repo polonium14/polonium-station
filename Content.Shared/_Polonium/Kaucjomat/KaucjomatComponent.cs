@@ -81,7 +81,7 @@ public sealed partial class KaucjomatComponent : Component
     /// Chance for an otherwise valid deposit to be rejected anyway.
     /// </summary>
     [DataField]
-    public float DenyChance = 0.5f;
+    public float DenyChance = 0.09f;
 
     /// <summary>
     /// How long the accept/deny face stays up before the machine goes back to idle.
