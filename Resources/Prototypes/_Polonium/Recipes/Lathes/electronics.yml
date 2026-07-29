@@ -11,3 +11,8 @@
   parent: BaseCircuitboardRecipe
   id: ShuttleGunMineralVacuumCircuitboard
   result: ShuttleGunMineralVacuumCircuitboard
+
+- type: latheRecipe
+  parent: BaseCircuitboardRecipe
+  id: KaucjomatMachineCircuitboard
+  result: KaucjomatMachineCircuitboard

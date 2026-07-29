@@ -1,0 +1,17 @@
+- type: entity
+  id: KaucjomatMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: kaucjomat machine board
+  description: A machine printed circuit board for a kaucjomat.
+  suffix: Machine Board
+  components:
+  - type: Sprite
+    state: service
+  - type: MachineBoard
+    prototype: Kaucjomat
+    stackRequirements:
+      MatterBin: 1
+      Manipulator: 1
+      Steel: 5
+      Glass: 2
+      Cable: 2
