@@ -48,7 +48,6 @@
     radius: 8
     energy: 5
   - type: BluespaceStrikeIncoming
-  - type: AnimationPlayer
   - type: Tag
     tags:
     - HideContextMenu

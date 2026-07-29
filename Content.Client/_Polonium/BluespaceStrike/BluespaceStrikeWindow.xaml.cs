@@ -48,11 +48,25 @@ public sealed partial class BluespaceStrikeWindow : DefaultWindow
         MapX.OnValueChanged += _ => UpdatePreview();
         MapY.OnValueChanged += _ => UpdatePreview();
         Radius.OnValueChanged += _ => UpdatePreview();
+        Delay.OnValueChanged += _ => UpdateMarkersConstraint();
+        UpdateMarkersConstraint();
     }
 
     public void SetEpsilonWarning(bool isEpsilon)
     {
         EpsilonWarning.Visible = !isEpsilon;
+    }
+
+    /// <summary>
+    /// Long delays cant use markers/siren - force the checkbox off and lock it.
+    /// </summary>
+    private void UpdateMarkersConstraint()
+    {
+        var allowMarkers = Delay.Value <= BluespaceStrikeComponent.MaxMarkersDelaySeconds;
+        if (!allowMarkers)
+            ShowMarkersAndSound.Pressed = false;
+
+        ShowMarkersAndSound.Disabled = !allowMarkers;
     }
 
     private void MapSelected(ItemSelectedEventArgs args)
@@ -137,10 +151,13 @@ public sealed partial class BluespaceStrikeWindow : DefaultWindow
             BluespaceStrikeComponent.MinDelaySeconds,
             BluespaceStrikeComponent.MaxDelaySeconds);
         Delay.Value = delay;
+        UpdateMarkersConstraint();
 
         var radius = Math.Clamp(Radius.Value, 0.1f, BluespaceStrikeComponent.MaxMarkerRadius);
         Radius.Value = radius;
         var coords = new MapCoordinates(new Vector2(MapX.Value, MapY.Value), _mapData[selectedId]);
-        _eui.ConfirmStrike(coords, radius, delay, ShowMarkersAndSound.Pressed);
+        var showMarkers = ShowMarkersAndSound.Pressed
+            && delay <= BluespaceStrikeComponent.MaxMarkersDelaySeconds;
+        _eui.ConfirmStrike(coords, radius, delay, showMarkers);
     }
 }
