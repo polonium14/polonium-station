@@ -67,19 +67,4 @@ public sealed partial class RMCCVars : CVars
         CVarDef.Create("rmc.xeno_evolution_caste_limits",
             "CMXenoQueen=1,CMXenoRavager=2,CMXenoCrusher=2,CMXenoPraetorian=2",
             CVar.REPLICATED | CVar.SERVER);
-
-    public static readonly CVarDef<int> RMCPlaytimeBronzeMedalTimeHours =
-        CVarDef.Create("rmc.playtime_bronze_medal_time_hours", 10, CVar.REPLICATED | CVar.SERVER);
-
-    public static readonly CVarDef<int> RMCPlaytimeSilverMedalTimeHours =
-        CVarDef.Create("rmc.playtime_silver_medal_time_hours", 25, CVar.REPLICATED | CVar.SERVER);
-
-    public static readonly CVarDef<int> RMCPlaytimeGoldMedalTimeHours =
-        CVarDef.Create("rmc.playtime_gold_medal_time_hours", 70, CVar.REPLICATED | CVar.SERVER);
-
-    public static readonly CVarDef<int> RMCPlaytimePlatinumMedalTimeHours =
-        CVarDef.Create("rmc.playtime_platinum_medal_time_hours", 175, CVar.REPLICATED | CVar.SERVER);
-
-    public static readonly CVarDef<int> RMCPlaytimeRubyMedalTimeHours =
-        CVarDef.Create("rmc.playtime_ruby_medal_time_hours", 350, CVar.REPLICATED | CVar.SERVER);
 }
