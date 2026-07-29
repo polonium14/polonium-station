@@ -288,24 +288,29 @@ public sealed class XenoSystemsTest : GameTest
         await Pair.Server.WaitPost(() =>
         {
             Pair.Server.CfgMan.SetCVar(RMCCVars.RMCXenoEvolutionCasteLimits, "CMXenoRavager=2");
-
+            SSpawnAtPosition("CMXenoQueen", coords);
             SSpawnAtPosition("CMXenoRavager", coords);
-            SSpawnAtPosition("CMXenoRavager", coords);
-        });
 
-        await Pair.Server.WaitAssertion(() =>
-        {
             var evoSys = SEntMan.System<XenoEvolutionSystem>();
-            
+            var mindSys = SEntMan.System<Content.Shared.Mind.SharedMindSystem>();
+
+            Assert.That(evoSys.GetAliveCasteCount("CMXenoRavager"), Is.EqualTo(1));
+
+            var lurkerOk = SSpawnAtPosition("CMXenoLurker", coords);
+            var mindOk = mindSys.CreateMind(null, "xeno-limit-ok");
+            mindSys.TransferTo(mindOk.Owner, lurkerOk, mind: mindOk.Comp);
+
+            Assert.That(evoSys.TryForceEvolve(lurkerOk, "CMXenoRavager"), Is.True,
+                "Evolution should succeed while under caste limit");
             Assert.That(evoSys.GetAliveCasteCount("CMXenoRavager"), Is.EqualTo(2));
 
-            var lurker = SSpawnAtPosition("CMXenoLurker", coords);
-            var mindSys = SEntMan.System<Content.Shared.Mind.SharedMindSystem>();
-            var mind = mindSys.CreateMind(null, "xeno-limit-test");
+            var lurkerBlocked = SSpawnAtPosition("CMXenoLurker", coords);
+            var mindBlocked = mindSys.CreateMind(null, "xeno-limit-blocked");
+            mindSys.TransferTo(mindBlocked.Owner, lurkerBlocked, mind: mindBlocked.Comp);
 
-            mindSys.TransferTo(mind.Owner, lurker, mind: mind.Comp);
-
-            Assert.That(evoSys.TryForceEvolve(lurker, "CMXenoRavager"), Is.False);
+            Assert.That(evoSys.TryForceEvolve(lurkerBlocked, "CMXenoRavager"), Is.False,
+                "Evolution should be rejected once caste limit is reached");
+            Assert.That(evoSys.GetAliveCasteCount("CMXenoRavager"), Is.EqualTo(2));
         });
     }
 }

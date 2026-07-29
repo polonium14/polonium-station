@@ -9,13 +9,7 @@ public sealed partial class XenoRankSystem : EntitySystem
 {
     public override void Initialize()
     {
-        SubscribeLocalEvent<XenoEvolutionComponent, MapInitEvent>(OnEvolutionMapInit);
         SubscribeLocalEvent<XenoComponent, AfterNewXenoEvolvedEvent>(OnAfterEvolved);
-    }
-
-    private void OnEvolutionMapInit(Entity<XenoEvolutionComponent> ent, ref MapInitEvent args)
-    {
-        UpdateRank(ent.Owner);
     }
 
     private void OnAfterEvolved(Entity<XenoComponent> ent, ref AfterNewXenoEvolvedEvent args)
