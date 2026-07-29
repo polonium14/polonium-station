@@ -124,6 +124,9 @@ public sealed partial class HarpySingerSystem : EntitySystem
     /// </summary>
     private void CloseMidiUi(EntityUid uid)
     {
+        if (!HasComp<HarpySingerComponent>(uid))
+            return;
+
         if (!HasComp<ActiveInstrumentComponent>(uid) || !TryComp<ActorComponent>(uid, out var actor))
             return;
 
