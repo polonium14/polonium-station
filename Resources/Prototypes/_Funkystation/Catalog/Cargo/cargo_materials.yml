@@ -8,7 +8,7 @@
     sprite: Objects/Materials/Sheets/glass.rsi
     state: glass_3
   product: CrateMaterialGlassBulk
-  cost: 4250
+  cost: 5400
   category: cargoproduct-category-name-materials
   group: market
 
@@ -18,7 +18,7 @@
     sprite: Objects/Materials/Sheets/metal.rsi
     state: steel_3
   product: CrateMaterialSteelBulk
-  cost: 4250
+  cost: 5400
   category: cargoproduct-category-name-materials
   group: market
 
@@ -28,6 +28,6 @@
     sprite: Objects/Materials/Sheets/other.rsi
     state: plastic_3
   product: CrateMaterialPlasticBulk
-  cost: 5500
+  cost: 6900
   category: cargoproduct-category-name-materials
   group: market
