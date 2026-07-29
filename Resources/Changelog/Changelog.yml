@@ -1,13 +1,6 @@
 ﻿Entries:
 - author: sowelipililimute
   changes:
-  - message: Gibbing now drops your inventory contents again.
-    type: Fix
-  id: 9417
-  time: '2026-01-18T21:25:27.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42504
-- author: sowelipililimute
-  changes:
   - message: Vent critters, rat king, etc. now ghost when dead instead of requiring
       the player to /ghost.
     type: Fix
@@ -4119,3 +4112,14 @@
   id: 9916
   time: '2026-07-29T06:37:42.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/851
+- author: nikita
+  changes:
+  - message: "Kr\xF3lowa xeno ma delaye przed nast\u0119pnym sk\u0142adaniem jaj"
+    type: Tweak
+  - message: "Stopie\u0144 xeno (medale) zale\u017C\u0105 teraz od punkt\xF3w ewolucji"
+    type: Tweak
+  - message: "Ka\u017Cde xeno ma teraz w\u0142asne odg\u0142osy krok\xF3w"
+    type: Fix
+  id: 9917
+  time: '2026-07-29T08:27:55.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/853
