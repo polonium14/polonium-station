@@ -1,6 +1,8 @@
+using Content.Shared._RMC14.CCVar;
 using Content.Shared._RMC14.Map;
 using Content.Shared._RMC14.Xenonids.Hive;
 using Content.Shared._RMC14.Xenonids.Weeds;
+using Content.Shared.Actions;
 using Content.Shared.DoAfter;
 using Content.Shared.Interaction;
 using Content.Shared.Mobs.Components;
@@ -8,15 +10,21 @@ using Content.Shared.Popups;
 using Content.Shared.StepTrigger.Systems;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Configuration;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Network;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
 namespace Content.Shared._RMC14.Xenonids.Egg;
 
 public sealed partial class XenoEggSystem : EntitySystem
 {
+    private static readonly EntProtoId LayEggAction = "ActionXenoLayEgg";
+
+    [Dependency] private SharedActionsSystem _actions = default!;
     [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private IConfigurationManager _config = default!;
     [Dependency] private SharedDoAfterSystem _doAfter = default!;
     [Dependency] private SharedXenoHiveSystem _hive = default!;
     [Dependency] private INetManager _net = default!;
@@ -28,6 +36,8 @@ public sealed partial class XenoEggSystem : EntitySystem
 
     private static readonly SoundPathSpecifier EggBurstSound = new("/Audio/_RMC14/Xeno/alien_egg_burst.ogg");
 
+    private TimeSpan _eggLayCooldown = TimeSpan.FromSeconds(300);
+
     public override void Initialize()
     {
         SubscribeLocalEvent<XenoOvipositorCapableComponent, XenoLayEggActionEvent>(OnLayEgg);
@@ -36,6 +46,13 @@ public sealed partial class XenoEggSystem : EntitySystem
         SubscribeLocalEvent<XenoEggComponent, MapInitEvent>(OnEggMapInit);
         SubscribeLocalEvent<XenoEggComponent, StepTriggeredOffEvent>(OnEggStepped);
         SubscribeLocalEvent<XenoEggComponent, ActivateInWorldEvent>(OnEggActivate);
+
+        Subs.CVar(_config, RMCCVars.RMCXenoQueenEggLayCooldownSeconds, OnEggLayCooldownChanged, true);
+    }
+
+    private void OnEggLayCooldownChanged(float seconds)
+    {
+        _eggLayCooldown = TimeSpan.FromSeconds(Math.Max(0, seconds));
     }
 
     private void OnLayEgg(Entity<XenoOvipositorCapableComponent> xeno, ref XenoLayEggActionEvent args)
@@ -43,10 +60,18 @@ public sealed partial class XenoEggSystem : EntitySystem
         if (args.Handled || _timing.ApplyingState)
             return;
 
+        if (IsOnLayCooldown(xeno))
+        {
+            _popup.PopupClient(Loc.GetString("cm-xeno-egg-lay-cooldown"), xeno, xeno);
+            return;
+        }
+
         if (!CanLayEggHere(xeno, popup: true))
             return;
 
         args.Handled = true;
+
+        _popup.PopupClient(Loc.GetString("cm-xeno-egg-lay-start"), xeno, xeno);
 
         var doAfter = new DoAfterArgs(EntityManager, xeno, xeno.Comp.LayDelay, new XenoLayEggDoAfterEvent(), xeno)
         {
@@ -67,6 +92,12 @@ public sealed partial class XenoEggSystem : EntitySystem
 
         args.Handled = true;
 
+        if (IsOnLayCooldown(xeno))
+        {
+            _popup.PopupClient(Loc.GetString("cm-xeno-egg-lay-cooldown"), xeno, xeno);
+            return;
+        }
+
         if (!CanLayEggHere(xeno, popup: true))
             return;
 
@@ -76,6 +107,31 @@ public sealed partial class XenoEggSystem : EntitySystem
         var coords = _rmcMap.SnapToGrid(_transform.GetMoverCoordinates(xeno.Owner));
         var egg = Spawn(xeno.Comp.EggPrototype, coords);
         _hive.SetSameHive(xeno.Owner, egg);
+
+        if (_eggLayCooldown > TimeSpan.Zero)
+        {
+            xeno.Comp.NextLayEgg = _timing.CurTime + _eggLayCooldown;
+            xeno.Comp.LayReadyNotified = false;
+            Dirty(xeno);
+            SetLayEggActionCooldown(xeno.Owner, _eggLayCooldown);
+        }
+    }
+
+    private bool IsOnLayCooldown(Entity<XenoOvipositorCapableComponent> xeno)
+    {
+        return xeno.Comp.NextLayEgg is { } next && _timing.CurTime < next;
+    }
+
+    private void SetLayEggActionCooldown(EntityUid xeno, TimeSpan cooldown)
+    {
+        foreach (var action in _actions.GetActions(xeno))
+        {
+            if (MetaData(action).EntityPrototype?.ID is not { } protoId || protoId != LayEggAction)
+                continue;
+
+            _actions.SetCooldown(action.Owner, cooldown);
+            return;
+        }
     }
 
     private bool CanLayEggHere(EntityUid xeno, bool popup)
@@ -153,6 +209,18 @@ public sealed partial class XenoEggSystem : EntitySystem
             return;
 
         var time = _timing.CurTime;
+
+        var queens = EntityQueryEnumerator<XenoOvipositorCapableComponent>();
+        while (queens.MoveNext(out var uid, out var capable))
+        {
+            if (capable.LayReadyNotified || capable.NextLayEgg is not { } next || time < next)
+                continue;
+
+            capable.LayReadyNotified = true;
+            Dirty(uid, capable);
+            _popup.PopupClient(Loc.GetString("cm-xeno-egg-lay-ready"), uid, uid);
+        }
+
         var eggs = EntityQueryEnumerator<XenoEggComponent>();
         while (eggs.MoveNext(out var uid, out var egg))
         {

@@ -5,7 +5,7 @@
   description: Stab a nearby target with your tail.
   components:
   - type: Action
-    useDelay: 8
+    useDelay: 12
     itemIconStyle: BigAction
     icon:
       sprite: _RMC14/Actions/xeno_actions.rsi
@@ -27,7 +27,7 @@
   description: Leap toward a location and knock down nearby hosts.
   components:
   - type: Action
-    useDelay: 6
+    useDelay: 9
     itemIconStyle: BigAction
     icon:
       sprite: _RMC14/Actions/xeno_actions.rsi
@@ -41,20 +41,47 @@
 - type: entity
   parent: BaseAction
   id: ActionXenoSpit
-  name: Spit
-  description: Spit acid at a target location.
+  name: Acid Spit
+  description: Spit acid at a target. Deals moderate damage on impact.
   components:
   - type: Action
-    useDelay: 2
+    useDelay: 3.75
     itemIconStyle: BigAction
     icon:
       sprite: _RMC14/Actions/xeno_actions.rsi
       state: xeno_spit
   - type: TargetAction
-    range: 0
+    range: 7
     checkCanAccess: false
   - type: WorldTargetAction
     event: !type:XenoSpitActionEvent
+
+- type: entity
+  parent: ActionXenoSpit
+  id: ActionXenoSpitPraetorian
+  name: Acid Spit
+  description: Spit concentrated acid at a target. Deals heavy damage on impact.
+  components:
+  - type: Action
+    useDelay: 3
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenoSlowingSpit
+  name: Slowing Spit
+  description: Spit neurotoxin that slows and briefly paralyzes the first enemy hit.
+  components:
+  - type: Action
+    useDelay: 3
+    itemIconStyle: BigAction
+    icon:
+      sprite: _RMC14/Actions/xeno_actions.rsi
+      state: shift_spit_neurotoxin
+  - type: TargetAction
+    range: 5
+    checkCanAccess: false
+  - type: WorldTargetAction
+    event: !type:XenoSlowingSpitActionEvent
 
 - type: entity
   parent: BaseAction
@@ -93,7 +120,7 @@
   description: Charge into a target and knock them back.
   components:
   - type: Action
-    useDelay: 6
+    useDelay: 9
     itemIconStyle: BigAction
     icon:
       sprite: _RMC14/Actions/xeno_actions.rsi
@@ -115,7 +142,7 @@
   description: Sweep your tail around you, knocking down nearby hosts.
   components:
   - type: Action
-    useDelay: 15
+    useDelay: 22.5
     itemIconStyle: BigAction
     icon:
       sprite: _RMC14/Actions/xeno_actions.rsi
@@ -130,7 +157,7 @@
   description: Charge toward a location, knocking down hosts you smash into.
   components:
   - type: Action
-    useDelay: 12
+    useDelay: 18
     itemIconStyle: BigAction
     icon:
       sprite: _RMC14/Actions/xeno_actions.rsi
@@ -148,7 +175,7 @@
   description: Punch a nearby host, knocking them back and slowing them.
   components:
   - type: Action
-    useDelay: 4
+    useDelay: 6
     itemIconStyle: BigAction
     icon:
       sprite: _RMC14/Actions/xeno_actions.rsi
@@ -170,7 +197,7 @@
   description: Lunge at a target, stun them, and drag them to you.
   components:
   - type: Action
-    useDelay: 8
+    useDelay: 12
     itemIconStyle: BigAction
     icon:
       sprite: _RMC14/Actions/xeno_actions.rsi
@@ -193,7 +220,7 @@
   description: Fling a nearby host away, stunning and slowing them.
   components:
   - type: Action
-    useDelay: 8
+    useDelay: 12
     itemIconStyle: BigAction
     icon:
       sprite: _RMC14/Actions/xeno_actions.rsi
@@ -215,7 +242,7 @@
   description: Cloak yourself from sight.
   components:
   - type: Action
-    useDelay: 5
+    useDelay: 7.5
     itemIconStyle: BigAction
     icon:
       sprite: _RMC14/Actions/xeno_actions.rsi
@@ -230,7 +257,7 @@
   description: Unleash a stunning screech.
   components:
   - type: Action
-    useDelay: 50
+    useDelay: 75
     itemIconStyle: BigAction
     icon:
       sprite: _RMC14/Actions/xeno_actions.rsi
@@ -257,10 +284,9 @@
   parent: BaseAction
   id: ActionXenoLayEgg
   name: Lay Egg
-  description: Lay a xenonid egg on weeds beneath you.
+  description: Stand on weeds and after 35 seconds lay a xenonid egg beneath you. Has a cooldown before you can lay again.
   components:
   - type: Action
-    useDelay: 5
     itemIconStyle: BigAction
     icon:
       sprite: _RMC14/Actions/xeno_actions.rsi

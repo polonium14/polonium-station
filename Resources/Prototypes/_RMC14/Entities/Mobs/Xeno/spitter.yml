@@ -22,7 +22,8 @@
   - type: XenoHeavy
   - type: XenoAcid
   - type: XenoSpit
-    plasmaCost: 20
+    projectile: XenoSpitProjectile
+    plasmaCost: 25
   - type: XenoTailStab
   - type: XenoPlasma
     plasma: 600

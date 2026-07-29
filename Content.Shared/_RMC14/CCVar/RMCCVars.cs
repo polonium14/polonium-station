@@ -46,12 +46,24 @@ public sealed partial class RMCCVars : CVars
     public static readonly CVarDef<float> RMCXenoPlasmaRegenMultiplier =
         CVarDef.Create("rmc.xeno_plasma_regen_multiplier", 1.05f, CVar.REPLICATED | CVar.SERVER);
 
+    public static readonly CVarDef<float> RMCXenoQueenEggLayCooldownSeconds =
+        CVarDef.Create("rmc.xeno_queen_egg_lay_cooldown_seconds", 300f, CVar.REPLICATED | CVar.SERVER);
+
     // 999 = always accumulate during a normal round
     public static readonly CVarDef<float> RMCEvolutionPointsAccumulateBeforeMinutes =
         CVarDef.Create("rmc.evolution_points_accumulate_before_minutes", 999f, CVar.REPLICATED | CVar.SERVER);
 
     public static readonly CVarDef<float> RMCEvolutionPointsRate =
         CVarDef.Create("rmc.evolution_points_rate", 0.2f, CVar.REPLICATED | CVar.SERVER);
+
+    /// <summary>
+    /// Comma separated caste limits for evolution
+    /// Counts all living xenonids of that prototype. Omitted castes have no limit.
+    /// </summary>
+    public static readonly CVarDef<string> RMCXenoEvolutionCasteLimits =
+        CVarDef.Create("rmc.xeno_evolution_caste_limits",
+            "CMXenoQueen=1,CMXenoRavager=2,CMXenoCrusher=2,CMXenoPraetorian=2",
+            CVar.REPLICATED | CVar.SERVER);
 
     public static readonly CVarDef<int> RMCPlaytimeBronzeMedalTimeHours =
         CVarDef.Create("rmc.playtime_bronze_medal_time_hours", 10, CVar.REPLICATED | CVar.SERVER);

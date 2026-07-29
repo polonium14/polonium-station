@@ -7,16 +7,16 @@ namespace Content.Shared._RMC14.Xenonids.Spit;
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 [Access(typeof(XenoSpitSystem))]
-public sealed partial class XenoSpitComponent : Component
+public sealed partial class XenoSlowingSpitComponent : Component
 {
     [DataField, AutoNetworkedField]
-    public EntProtoId Projectile = "XenoSpitProjectile";
+    public EntProtoId Projectile = "XenoSlowingSpitProjectile";
 
     [DataField, AutoNetworkedField]
-    public FixedPoint2 PlasmaCost = 25;
+    public FixedPoint2 PlasmaCost = 20;
 
     [DataField, AutoNetworkedField]
-    public float ProjectileSpeed = 20f;
+    public float ProjectileSpeed = 30f;
 
     [DataField, AutoNetworkedField]
     public SoundSpecifier Sound = new SoundCollectionSpecifier("XenoSpitAcid", AudioParams.Default.WithVolume(-10f));

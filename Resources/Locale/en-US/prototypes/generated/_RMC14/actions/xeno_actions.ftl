@@ -41,4 +41,6 @@ ent-ActionXenoScreech = Screech
 ent-ActionXenoPheromones = Emit Pheromones
     .desc = Choose a pheromone aura that buffs nearby hive sisters. Costs plasma to start and each second while active.
 ent-ActionXenoLayEgg = Lay Egg
-    .desc = Stand on weeds and after 30 seconds lay a xenonid egg beneath you.
+    .desc = Stand on weeds and after 35 seconds lay a xenonid egg beneath you. Has a cooldown before you can lay again.
+ent-ActionXenoNightVision = Night Vision
+    .desc = Toggle your xenomorph night vision on or off.

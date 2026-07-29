@@ -3,6 +3,7 @@ using System.Linq;
 using System.Numerics;
 using Content.IntegrationTests.Fixtures;
 using Content.IntegrationTests.Fixtures.Attributes;
+using Content.Shared._RMC14.CCVar;
 using Content.Shared._RMC14.Xenonids;
 using Content.Shared._RMC14.Xenonids.Acid;
 using Content.Shared._RMC14.Xenonids.Construction;
@@ -274,6 +275,37 @@ public sealed class XenoSystemsTest : GameTest
                 SEntMan.System<AlertsSystem>().IsShowingAlert((drone.Owner, alerts), "XenoPlasma"),
                 Is.True,
                 "Plasma alert should remain after evolution");
+        });
+    }
+
+    [Test]
+    public async Task EvolutionBlockedByCasteLimit()
+    {
+        var map = await Pair.CreateTestMap();
+
+        var coords = map.GridCoords.Offset(new Vector2(0.5f, 0.5f));
+
+        await Pair.Server.WaitPost(() =>
+        {
+            Pair.Server.CfgMan.SetCVar(RMCCVars.RMCXenoEvolutionCasteLimits, "CMXenoRavager=2");
+
+            SSpawnAtPosition("CMXenoRavager", coords);
+            SSpawnAtPosition("CMXenoRavager", coords);
+        });
+
+        await Pair.Server.WaitAssertion(() =>
+        {
+            var evoSys = SEntMan.System<XenoEvolutionSystem>();
+            
+            Assert.That(evoSys.GetAliveCasteCount("CMXenoRavager"), Is.EqualTo(2));
+
+            var lurker = SSpawnAtPosition("CMXenoLurker", coords);
+            var mindSys = SEntMan.System<Content.Shared.Mind.SharedMindSystem>();
+            var mind = mindSys.CreateMind(null, "xeno-limit-test");
+
+            mindSys.TransferTo(mind.Owner, lurker, mind: mind.Comp);
+
+            Assert.That(evoSys.TryForceEvolve(lurker, "CMXenoRavager"), Is.False);
         });
     }
 }

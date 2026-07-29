@@ -150,6 +150,11 @@
   - type: Examiner
   - type: Eye
   - type: ContentEye
+  - type: NightVision
+    action: ActionXenoNightVision
+    lightingColor: '#4AFF4A26'
+    overlayColor: '#4AFF4A33'
+    noiseAmount: 0.15
   - type: NoSlip
   - type: Pullable
   - type: AssignXenoName
@@ -173,9 +178,3 @@
   - type: Tag
     tags:
     - DoorBumpOpener
-    - FootstepSound
-  - type: FootstepModifier
-    footstepSoundCollection:
-      collection: XenoFootstepLarge
-      params:
-        volume: -4

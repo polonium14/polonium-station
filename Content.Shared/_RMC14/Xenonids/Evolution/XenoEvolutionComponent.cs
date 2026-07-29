@@ -25,6 +25,9 @@ public sealed partial class XenoEvolutionComponent : Component
     public TimeSpan EvolutionDelay = TimeSpan.FromSeconds(3);
 
     [DataField, AutoNetworkedField]
+    public TimeSpan QueenEvolutionDelay = TimeSpan.FromSeconds(17.5);
+
+    [DataField, AutoNetworkedField]
     public FixedPoint2 Points;
 
     [DataField, AutoNetworkedField]
