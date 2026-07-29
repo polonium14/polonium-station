@@ -1,4 +1,4 @@
-﻿[game]
+[game]
 # Straight in-game baby
 lobbyenabled = false
 # Dev map for faster loading & convenience
@@ -60,6 +60,10 @@ new_player_threshold = 120
 random_characters = true
 random_species_weights = ""
 ssd_sleep_time = 3600
+
+[rmc]
+evolution_points_rate = 5.0
+xeno_evolution_caste_limits = "CMXenoQueen=1,CMXenoRavager=2,CMXenoCrusher=2,CMXenoPraetorian=2"
 
 [database]
 # Change to postgres if needed

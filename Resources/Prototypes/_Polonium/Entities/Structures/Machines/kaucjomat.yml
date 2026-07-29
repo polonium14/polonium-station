@@ -1,0 +1,162 @@
+- type: entity
+  abstract: true
+  id: BaseKaucjomat
+  name: kaucjomat
+  description: A deposit-return machine. Feed it empty cans and bottles, get spesos back. Sometimes.
+  components:
+  - type: Kaucjomat
+    whitelist:
+      tags:
+      - Trash
+      - DrinkCan
+      - DrinkBottle
+    deposits:
+    - tag: DrinkCan
+      payout: 50
+    - tag: DrinkBottle
+      payout: 75
+  - type: AmbientSound
+    volume: -5
+    range: 5
+    enabled: false
+    sound:
+      path: /Audio/Ambience/Objects/reclaimer_ambience.ogg
+  - type: Appearance
+  - type: StaticPrice
+    price: 120
+
+- type: entity
+  parent: [ BaseKaucjomat, BaseMachinePowered, ConstructibleMachine, BaseConstructibleMachineDestructible ]
+  id: Kaucjomat
+  components:
+  - type: Machine
+    board: KaucjomatMachineCircuitboard
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+      kaucjomat_slot: !type:ContainerSlot
+  - type: Construction
+    graph: Machine
+    node: machine
+    containers:
+    - machine_parts
+    - machine_board
+    - kaucjomat_slot
+  - type: WiresPanel
+  - type: WiresVisuals
+  - type: Sprite
+    sprite: _Polonium/Structures/Machines/kaucjomat.rsi
+    snapCardinals: true
+    layers:
+    - state: "off"
+      map: ["enum.KaucjomatVisualLayers.Base"]
+    - state: screen_normal
+      map: ["enum.KaucjomatVisualLayers.Screen"]
+      shader: unshaded
+      visible: false
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+      visible: false
+  - type: GenericVisualizer
+    visuals:
+      enum.KaucjomatVisuals.State:
+        enum.KaucjomatVisualLayers.Base:
+          Off: { state: "off" }
+          Normal: { state: "off" }
+          Accept: { state: "off" }
+          Deny: { state: "off" }
+          Broken: { state: broken }
+        enum.KaucjomatVisualLayers.Screen:
+          Off: { visible: false }
+          Normal: { visible: true, state: screen_normal }
+          Accept: { visible: true, state: screen_accept }
+          Deny: { visible: true, state: screen_deny }
+          Broken: { visible: false }
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.45,0.25,0.45"
+        density: 200
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: ApcPowerReceiver
+    powerLoad: 200
+  - type: PointLight
+    enabled: false
+    castShadows: false
+    radius: 1.5
+  - type: Destructible
+    thresholds:
+    - trigger: !type:DamageTrigger
+        damage: 75
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Breakage" ]
+    - trigger: !type:DamageTrigger
+        damage: 175
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalGlassBreak
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:ChangeConstructionNodeBehavior
+        node: machineFrame
+  - type: Repairable
+    doAfterDelay: 8
+
+- type: entity
+  parent: [ BaseKaucjomat, BaseWallmountMachine ]
+  id: KaucjomatWall
+  suffix: Wall
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Machines/kaucjomat_wall.rsi
+    layers:
+    - state: "off"
+      map: ["enum.KaucjomatVisualLayers.Base"]
+    - state: screen_normal
+      map: ["enum.KaucjomatVisualLayers.Screen"]
+      shader: unshaded
+      visible: false
+  - type: GenericVisualizer
+    visuals:
+      enum.KaucjomatVisuals.State:
+        enum.KaucjomatVisualLayers.Base:
+          Off: { state: "off" }
+          Normal: { state: "off" }
+          Accept: { state: accept }
+          Deny: { state: deny }
+          Broken: { state: "off" }
+        enum.KaucjomatVisualLayers.Screen:
+          Off: { visible: false }
+          Normal: { visible: true }
+          Accept: { visible: false }
+          Deny: { visible: false }
+          Broken: { visible: false }
+  - type: ApcPowerReceiver
+    powerLoad: 200
+  - type: ContainerContainer
+    containers:
+      kaucjomat_slot: !type:ContainerSlot
+  - type: Destructible
+    thresholds:
+    - trigger: !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalGlassBreak
+      - !type:SpawnEntitiesBehavior
+        offset: 0
+        spawn:
+          SheetSteel1:
+            min: 1
+            max: 2
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]

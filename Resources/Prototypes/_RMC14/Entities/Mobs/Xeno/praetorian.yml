@@ -1,0 +1,38 @@
+- type: entity
+  parent: CMXenoDeveloped
+  id: CMXenoPraetorian
+  name: Praetorian
+  description: A huge, looming beast of an alien.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Mobs/Xenonids/Praetorian/praetorian.rsi
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      650: Critical
+      750: Dead
+  - type: Xeno
+    tier: 3
+    unlockAt: 900
+    actionIds:
+    - ActionXenoRest
+    - ActionXenoTailStab
+    - ActionXenoSpitPraetorian
+    - ActionXenoAcidNormal
+  - type: XenoHeavy
+  - type: XenoAcid
+  - type: XenoSpit
+    projectile: XenoSpitProjectilePraetorian
+    plasmaCost: 25
+  - type: XenoTailStab
+  - type: XenoPlasma
+    plasma: 800
+    maxPlasma: 800
+    plasmaRegenOnWeeds: 3
+  - type: XenoDevolve
+    devolvesTo:
+    - CMXenoSpitter
+  - type: MeleeWeapon
+    damage:
+      types:
+        Slash: 40

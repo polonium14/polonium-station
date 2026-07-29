@@ -1,4 +1,4 @@
-gun-selected-mode-examine = [color={ $color }]{ $mode }[/color] obecnym trybem strzelania.
+gun-selected-mode-examine = Obecny tryb strzelania to [color={ $color }]{ $mode }[/color].
 gun-fire-rate-examine = Szybkostrzelność wynosi [color={ $color }]{ $fireRate }[/color] na sekundę.
 gun-selector-verb = Zmień na tryb { $mode }
 gun-selected-mode = Wybrano { $mode }

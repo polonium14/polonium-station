@@ -1,0 +1,143 @@
+- type: entity
+  parent: BaseAction
+  id: ActionXenoRest
+  name: Rest
+  description: Lie down to regenerate faster.
+  components:
+  - type: Action
+    useDelay: 1
+    itemIconStyle: BigAction
+    icon:
+      sprite: _RMC14/Actions/xeno_actions.rsi
+      state: resting
+  - type: InstantAction
+    event: !type:XenoRestActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenoEvolve
+  name: Evolve
+  description: Evolve into a stronger caste.
+  components:
+  - type: Action
+    itemIconStyle: BigAction
+    icon:
+      sprite: _RMC14/Actions/xeno_actions.rsi
+      state: evolve
+  - type: InstantAction
+    event: !type:XenoOpenEvolutionsActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenoPlantWeeds
+  name: Plant Weeds
+  description: Plant a weed node under yourself that spreads across the floor.
+  components:
+  - type: Action
+    useDelay: 1
+    itemIconStyle: BigAction
+    icon:
+      sprite: _RMC14/Actions/xeno_actions.rsi
+      state: plant_weeds
+  - type: InstantAction
+    event: !type:XenoPlantWeedsActionEvent
+      plasmaCost: 90
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenoChooseStructure
+  name: Choose Resin Structure
+  description: Choose what structure to secrete next.
+  components:
+  - type: Action
+    itemIconStyle: BigAction
+    icon:
+      sprite: _RMC14/Actions/xeno_actions.rsi
+      state: place_resin
+  - type: InstantAction
+    event: !type:XenoChooseStructureActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenoSecreteStructure
+  name: Secrete Resin
+  description: Build the structure chosen with Choose Resin Structure.
+  components:
+  - type: Action
+    useDelay: 0.5
+    itemIconStyle: BigAction
+    icon:
+      sprite: _RMC14/Actions/xeno_actions.rsi
+      state: secrete_resin
+  - type: TargetAction
+    range: 0
+    checkCanAccess: false
+    repeat: true
+  - type: WorldTargetAction
+    event: !type:XenoSecreteStructureActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenoAcidNormal
+  name: Corrosive Acid
+  description: Melt a structure or object with acid.
+  components:
+  - type: Action
+    useDelay: 1.5
+    itemIconStyle: BigAction
+    icon:
+      sprite: _RMC14/Actions/xeno_actions.rsi
+      state: corrosive_acid
+  - type: TargetAction
+    range: 1.5
+    interactOnMiss: false
+  - type: EntityTargetAction
+    canTargetSelf: false
+    event: !type:XenoCorrosiveAcidEvent
+      acidId: XenoAcidNormal
+      strength: Normal
+      plasmaCost: 100
+      time: 225
+      dps: 8
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenoAcidWeak
+  name: Weak Corrosive Acid
+  description: Slowly melt a structure or object with weak acid.
+  components:
+  - type: Action
+    useDelay: 1.5
+    itemIconStyle: BigAction
+    icon:
+      sprite: _RMC14/Actions/xeno_actions.rsi
+      state: corrosive_acid
+  - type: TargetAction
+    range: 1.5
+    interactOnMiss: false
+  - type: EntityTargetAction
+    canTargetSelf: false
+    event: !type:XenoCorrosiveAcidEvent
+      acidId: XenoAcidWeak
+      strength: Weak
+      plasmaCost: 75
+      time: 300
+      dps: 4
+
+- type: entity
+  parent: BaseAction
+  id: ActionXenoNightVision
+  name: Night Vision
+  description: Toggle your xenomorph night vision on or off.
+  components:
+  - type: Action
+    useDelay: 0.5
+    itemIconStyle: BigAction
+    icon:
+      sprite: _RMC14/Actions/xeno_actions.rsi
+      state: queen_eye
+    iconOn:
+      sprite: _RMC14/Actions/xeno_actions.rsi
+      state: queen_eye
+  - type: InstantAction
+    event: !type:ToggleNightVisionEvent {}

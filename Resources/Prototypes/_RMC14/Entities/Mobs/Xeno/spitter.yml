@@ -1,0 +1,42 @@
+- type: entity
+  parent: CMXenoDeveloped
+  id: CMXenoSpitter
+  name: Spitter
+  description: A gross, oozing alien of some kind.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Mobs/Xenonids/Spitter/spitter.rsi
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      550: Critical
+      650: Dead
+  - type: Xeno
+    tier: 2
+    unlockAt: 540
+    actionIds:
+    - ActionXenoRest
+    - ActionXenoTailStab
+    - ActionXenoSpit
+    - ActionXenoAcidNormal
+  - type: XenoHeavy
+  - type: XenoAcid
+  - type: XenoSpit
+    projectile: XenoSpitProjectile
+    plasmaCost: 25
+  - type: XenoTailStab
+  - type: XenoPlasma
+    plasma: 600
+    maxPlasma: 600
+    plasmaRegenOnWeeds: 4
+  - type: XenoEvolution
+    max: 500
+    evolvesTo:
+    - CMXenoPraetorian
+  - type: XenoDevolve
+    devolvesTo:
+    - CMXenoSentinel
+  - type: MeleeWeapon
+    damage:
+      types:
+        Slash: 25

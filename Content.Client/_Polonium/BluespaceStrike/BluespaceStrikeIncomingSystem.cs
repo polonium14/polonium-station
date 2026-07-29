@@ -5,74 +5,66 @@
 
 using System.Numerics;
 using Content.Shared._Polonium.BluespaceStrike;
-using Robust.Client.Animations;
+using Robust.Client.ComponentTrees;
 using Robust.Client.GameObjects;
-using Robust.Shared.Animations;
+using Robust.Client.Timing;
+using Robust.Shared.Timing;
 
 namespace Content.Client._Polonium.BluespaceStrike;
 
 /// <summary>
 /// Animates the incoming bluespace projectile falling from above onto the strike epicenter.
+/// Uses last-applied server tick time so prediction clock lead doesnt land the bolt early.
 /// </summary>
 public sealed partial class BluespaceStrikeIncomingSystem : EntitySystem
 {
-    [Dependency] private AnimationPlayerSystem _anim = default!;
+    [Dependency] private IClientGameTiming _timing = default!;
     [Dependency] private SpriteSystem _sprite = default!;
 
-    private const string AnimationKey = "bluespace_strike_fall";
+    private static readonly Vector2 StartScale = new(5f, 5f);
+    private static readonly Vector2 EndScale = new(2.5f, 2.5f);
 
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<BluespaceStrikeIncomingComponent, ComponentStartup>(OnStartup);
+        UpdatesAfter.Add(typeof(SpriteTreeSystem));
     }
 
-    private void OnStartup(Entity<BluespaceStrikeIncomingComponent> ent, ref ComponentStartup args)
+    public override void FrameUpdate(float frameTime)
     {
-        if (!TryComp(ent, out SpriteComponent? sprite))
-            return;
+        base.FrameUpdate(frameTime);
 
-        var animPlayer = EnsureComp<AnimationPlayerComponent>(ent);
-        if (_anim.HasRunningAnimation(animPlayer, AnimationKey))
-            return;
+        var now = GetServerSyncedTime();
 
-        var duration = (float)ent.Comp.FallDuration.TotalSeconds;
-        if (duration <= 0f)
-            duration = BluespaceStrikeComponent.FallDurationSeconds;
-
-        var startOffset = new Vector2(0f, ent.Comp.StartOffsetY);
-        _sprite.SetOffset((ent.Owner, sprite), startOffset);
-
-        var animation = new Animation
+        var query = EntityQueryEnumerator<BluespaceStrikeIncomingComponent, SpriteComponent>();
+        while (query.MoveNext(out var uid, out var comp, out var sprite))
         {
-            Length = TimeSpan.FromSeconds(duration),
-            AnimationTracks =
-            {
-                new AnimationTrackComponentProperty
-                {
-                    ComponentType = typeof(SpriteComponent),
-                    Property = nameof(SpriteComponent.Offset),
-                    InterpolationMode = AnimationInterpolationMode.Linear,
-                    KeyFrames =
-                    {
-                        new AnimationTrackProperty.KeyFrame(startOffset, 0f),
-                        new AnimationTrackProperty.KeyFrame(Vector2.Zero, duration),
-                    },
-                },
-                new AnimationTrackComponentProperty
-                {
-                    ComponentType = typeof(SpriteComponent),
-                    Property = nameof(SpriteComponent.Scale),
-                    InterpolationMode = AnimationInterpolationMode.Linear,
-                    KeyFrames =
-                    {
-                        new AnimationTrackProperty.KeyFrame(new Vector2(5f, 5f), 0f),
-                        new AnimationTrackProperty.KeyFrame(new Vector2(2.5f, 2.5f), duration),
-                    },
-                },
-            },
-        };
+            if (comp.ImpactAt == default)
+                continue;
 
-        _anim.Play((ent, animPlayer), animation, AnimationKey);
+            var duration = (float)comp.FallDuration.TotalSeconds;
+            if (duration <= 0f)
+                duration = BluespaceStrikeComponent.FallDurationSeconds;
+
+            var remaining = (float)(comp.ImpactAt - now).TotalSeconds;
+            var progress = Math.Clamp(1f - remaining / duration, 0f, 1f);
+
+            var eased = progress * progress;
+            var offset = new Vector2(0f, MathHelper.Lerp(comp.StartOffsetY, 0f, eased));
+            var scale = Vector2.Lerp(StartScale, EndScale, eased);
+
+            _sprite.SetVisible((uid, sprite), true);
+            _sprite.SetOffset((uid, sprite), offset);
+            _sprite.SetScale((uid, sprite), scale);
+        }
+    }
+
+    private TimeSpan GetServerSyncedTime()
+    {
+        var ticksAhead = _timing.CurTick.Value - _timing.LastRealTick.Value;
+        if (ticksAhead <= 0)
+            return _timing.CurTime;
+
+        return _timing.CurTime - _timing.TickPeriod * ticksAhead;
     }
 }

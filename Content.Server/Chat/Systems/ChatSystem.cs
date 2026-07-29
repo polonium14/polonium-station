@@ -62,6 +62,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Globalization;
+using Content.Server._Polonium.Supporters;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
 using Content.Server.Chat.Managers;
@@ -108,6 +109,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     [Dependency] private ReplacementAccentSystem _wordreplacement = default!;
     [Dependency] private ExamineSystemShared _examineSystem = default!;
     [Dependency] private EntityQuery<GhostHearingComponent> _ghostHearingQuery = default!;
+    [Dependency] private SupporterSystem _supporters = default!;
 
     private bool _loocEnabled = true;
     private bool _deadLoocEnabled;

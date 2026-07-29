@@ -1,4 +1,10 @@
-﻿using Content.Server._Funkystation.Atmos.Events;
+// SPDX-FileCopyrightText: 2026 MaiaArai <158123176+YaraaraY@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 adamsogm <adamsong@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 maciejwalendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Server._Funkystation.Atmos.Events;
 using Content.Server._Funkystation.ReagentFires.Components;
 using Content.Server.Atmos.Components;
 using Content.Server.Atmos.EntitySystems;
@@ -500,7 +506,8 @@ namespace Content.Server._Funkystation.ReagentFires.Systems
                 }
 
                 var standingEntities = new HashSet<EntityUid>();
-                _lookup.GetLocalEntitiesIntersecting(gridUid.Value, tilePos, standingEntities, 0f);
+                // Polonium: NFZ change
+                _lookup.GetLocalEntitiesIntersecting(gridUid.Value, tilePos, standingEntities, 0f, LookupFlags.Uncontained);
 
                 var structuralProto = _prototypeManager.Index<DamageTypePrototype>(StructuralDamage);
                 var heatProto = _prototypeManager.Index<DamageTypePrototype>(HeatDamage);

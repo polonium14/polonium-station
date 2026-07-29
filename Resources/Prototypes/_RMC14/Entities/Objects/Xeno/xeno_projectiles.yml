@@ -1,0 +1,54 @@
+- type: entity
+  abstract: true
+  parent: BaseBullet
+  id: RMCXenoSpitProjectileBase
+  name: spit
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    noRot: false
+    sprite: _RMC14/Objects/Xeno/xeno_projectiles.rsi
+  - type: XenoSpitProjectile
+  - type: TimedDespawn
+    lifetime: 3
+
+- type: entity
+  parent: RMCXenoSpitProjectileBase
+  id: XenoSpitProjectile
+  components:
+  - type: Sprite
+    layers:
+    - state: xeno_acid_normal
+      shader: unshaded
+  - type: Projectile
+    damage:
+      types:
+        Caustic: 14
+
+- type: entity
+  parent: RMCXenoSpitProjectileBase
+  id: XenoSpitProjectilePraetorian
+  components:
+  - type: Sprite
+    layers:
+    - state: xeno_acid_strong
+      shader: unshaded
+  - type: Projectile
+    damage:
+      types:
+        Caustic: 24
+
+- type: entity
+  parent: RMCXenoSpitProjectileBase
+  id: XenoSlowingSpitProjectile
+  name: slowing spit
+  components:
+  - type: Sprite
+    layers:
+    - state: neurotoxin
+      shader: unshaded
+  - type: Projectile
+    damage:
+      types:
+        Caustic: 0.95
+  - type: XenoSlowingSpitProjectile

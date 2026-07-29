@@ -1,64 +1,4 @@
 ﻿Entries:
-- author: sowelipililimute
-  changes:
-  - message: Using a core pinpointer piece on another piece no longer causes you to
-      start an unintended construction recipe.
-    type: Fix
-  id: 9412
-  time: '2026-01-16T02:09:01.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42446
-- author: neomoth
-  changes:
-  - message: Fix zombie resistance, instead of making you more likely to be infected,
-      it now properly makes you less likely to be infected.
-    type: Fix
-  id: 9413
-  time: '2026-01-16T08:40:47.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42451
-- author: Samuka
-  changes:
-  - message: The mothership now starts with more materials so there is less need to
-      salvage for them.
-    type: Tweak
-  - message: Xenoborgs guidebook entry got updated in regards to preparation and tactics.
-    type: Tweak
-  id: 9414
-  time: '2026-01-16T17:19:48.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42448
-- author: Kowlin
-  changes:
-  - message: All intern jobs now lock out after 10 hours, up from 5 hours.
-    type: Tweak
-  - message: Security Officer now requires 4 hours of Security Cadet, up from 2.5
-      hours.
-    type: Tweak
-  - message: Head of Security now requires 3 hours of Warden, up from 1 hour.
-    type: Tweak
-  id: 9415
-  time: '2026-01-17T20:24:42.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42372
-- author: sowelipililimute
-  changes:
-  - message: Vox can eat trash again.
-    type: Fix
-  id: 9416
-  time: '2026-01-18T20:44:50.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42503
-- author: sowelipililimute
-  changes:
-  - message: Gibbing now drops your inventory contents again.
-    type: Fix
-  id: 9417
-  time: '2026-01-18T21:25:27.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42504
-- author: sowelipililimute
-  changes:
-  - message: Vent critters, rat king, etc. now ghost when dead instead of requiring
-      the player to /ghost.
-    type: Fix
-  id: 9418
-  time: '2026-01-18T21:41:57.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42506
 - author: Thinbug0
   changes:
   - message: Peek at the future with this new Magic 9 Ball!
@@ -4120,3 +4060,65 @@
   id: 9911
   time: '2026-07-27T22:08:29.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/843
+- author: haze
+  changes:
+  - message: "Przywr\xF3cono mo\u017Cliwo\u015B\u0107 wyboru starego wulpa."
+    type: Add
+  id: 9912
+  time: '2026-07-28T14:11:54.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/842
+- author: nikita
+  changes:
+  - message: "Dodano ksenomorfy (kast\u0119 od larwy do Kr\xF3lowy) z budow\u0105\
+      \ ula, plazm\u0105, feromonami i podstawowymi umiej\u0119tno\u015Bciami bojowymi\
+      \ - nowi antagoni\u015Bci!"
+    type: Add
+  - message: "Dodano ksenopokoj\xF3wk\u0119"
+    type: Add
+  id: 9913
+  time: '2026-07-28T05:06:17.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/833
+- author: haze
+  changes:
+  - message: "Zmniejszono intensywno\u015B\u0107 po\u017Car\xF3w (welding fuel, vodka,\
+      \ whiskey)"
+    type: Tweak
+  - message: "Organy nie dostaj\u0105 dodatkowych obra\u017Ce\u0144 od po\u017Car\xF3\
+      w"
+    type: Fix
+  id: 9914
+  time: '2026-07-28T16:44:48.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/849
+- author: Czuat
+  changes:
+  - message: "Dodano w\xF3zki inwalidzkie do Nanomeda plus, Fabrykatora medycznego\
+      \ oraz autotokarki"
+    type: Add
+  id: 9915
+  time: '2026-07-28T18:05:50.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/850
+- author: nikita
+  changes:
+  - message: "Artyleria jest teraz rzeczywi\u015Bcie zab\xF3jcza"
+    type: Tweak
+  id: 9916
+  time: '2026-07-29T06:37:42.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/851
+- author: nikita
+  changes:
+  - message: "Kr\xF3lowa xeno ma delaye przed nast\u0119pnym sk\u0142adaniem jaj"
+    type: Tweak
+  - message: "Stopie\u0144 xeno (medale) zale\u017C\u0105 teraz od punkt\xF3w ewolucji"
+    type: Tweak
+  - message: "Ka\u017Cde xeno ma teraz w\u0142asne odg\u0142osy krok\xF3w"
+    type: Fix
+  id: 9917
+  time: '2026-07-29T08:27:55.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/853
+- author: haze
+  changes:
+  - message: Dodano kaucjomat!
+    type: Add
+  id: 9918
+  time: '2026-07-29T14:45:04.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/854

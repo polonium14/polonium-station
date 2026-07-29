@@ -1,0 +1,49 @@
+- type: entity
+  parent: CMXenoDeveloped
+  id: CMXenoRunner
+  name: Runner
+  description: A small red alien that looks like it could run fairly quickly...
+  components:
+  - type: Sprite
+    sprite: _RMC14/Mobs/Xenonids/Runner/runner.rsi
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      175: Critical
+      250: Dead
+  - type: Xeno
+    tier: 1
+    unlockAt: 300
+    actionIds:
+    - ActionXenoRest
+    - ActionXenoTailStab
+    - ActionXenoLeap
+  - type: XenoLight
+  - type: XenoLeap
+    delay: 0
+    knockdownTime: 2
+    leapSound: /Audio/_RMC14/Xeno/alien_pounce.ogg
+    strength: 20
+  - type: XenoTailStab
+  - type: XenoPlasma
+    plasma: 200
+    maxPlasma: 200
+    plasmaRegenOnWeeds: 3.5
+  - type: XenoEvolution
+    canEvolveWithoutGranter: true
+    max: 200
+    evolvesTo:
+    - CMXenoLurker
+    evolvesToWithoutPoints:
+    - CMXenoQueen
+  - type: XenoDevolve
+    devolvesTo:
+    - CMXenoLarva
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 3.33
+    baseSprintSpeed: 6
+  - type: MeleeWeapon
+    attackRate: 1.4
+    damage:
+      types:
+        Slash: 22

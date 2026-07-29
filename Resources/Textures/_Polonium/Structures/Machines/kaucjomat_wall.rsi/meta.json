@@ -1,0 +1,23 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Created for Polonium Station by Mangoo (Discord: @mangoo4480)",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "off"
+        },
+        {
+            "name": "screen_normal"
+        },
+        {
+            "name": "accept"
+        },
+        {
+            "name": "deny"
+        }
+    ]
+}

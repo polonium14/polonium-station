@@ -33,4 +33,38 @@ public sealed partial class RMCCVars : CVars
 
     public static readonly CVarDef<float> RMCLagCompensationMarginTiles =
         CVarDef.Create("rmc.lag_compensation_margin_tiles", 0.25f, CVar.REPLICATED | CVar.SERVER);
+
+    public static readonly CVarDef<float> RMCXenoDamageDealtMultiplier =
+        CVarDef.Create("rmc.xeno_damage_dealt_multiplier", 0.7f, CVar.REPLICATED | CVar.SERVER);
+
+    public static readonly CVarDef<float> RMCXenoDamageReceivedMultiplier =
+        CVarDef.Create("rmc.xeno_damage_received_multiplier", 1.5f, CVar.REPLICATED | CVar.SERVER);
+
+    public static readonly CVarDef<float> RMCXenoSpeedMultiplier =
+        CVarDef.Create("rmc.xeno_speed_multiplier", 1f, CVar.REPLICATED | CVar.SERVER);
+
+    public static readonly CVarDef<float> RMCXenoPlasmaRegenMultiplier =
+        CVarDef.Create("rmc.xeno_plasma_regen_multiplier", 1.05f, CVar.REPLICATED | CVar.SERVER);
+
+    public static readonly CVarDef<float> RMCXenoHealthRegenMultiplier =
+        CVarDef.Create("rmc.xeno_health_regen_multiplier", 1f, CVar.REPLICATED | CVar.SERVER);
+
+    public static readonly CVarDef<float> RMCXenoQueenEggLayCooldownSeconds =
+        CVarDef.Create("rmc.xeno_queen_egg_lay_cooldown_seconds", 300f, CVar.REPLICATED | CVar.SERVER);
+
+    // 999 = always accumulate during a normal round
+    public static readonly CVarDef<float> RMCEvolutionPointsAccumulateBeforeMinutes =
+        CVarDef.Create("rmc.evolution_points_accumulate_before_minutes", 999f, CVar.REPLICATED | CVar.SERVER);
+
+    public static readonly CVarDef<float> RMCEvolutionPointsRate =
+        CVarDef.Create("rmc.evolution_points_rate", 0.2f, CVar.REPLICATED | CVar.SERVER);
+
+    /// <summary>
+    /// Comma separated caste limits for evolution
+    /// Counts all living xenonids of that prototype. Omitted castes have no limit.
+    /// </summary>
+    public static readonly CVarDef<string> RMCXenoEvolutionCasteLimits =
+        CVarDef.Create("rmc.xeno_evolution_caste_limits",
+            "CMXenoQueen=1,CMXenoRavager=2,CMXenoCrusher=2,CMXenoPraetorian=2",
+            CVar.REPLICATED | CVar.SERVER);
 }

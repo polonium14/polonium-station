@@ -1,0 +1,56 @@
+- type: entity
+  parent: CMXenoDeveloped
+  id: CMXenoDefender
+  name: Defender
+  description: An alien with an armored crest.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Mobs/Xenonids/Defender/defender.rsi
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      500: Critical
+      600: Dead
+  - type: Xeno
+    tier: 1
+    unlockAt: 240
+    actionIds:
+    - ActionXenoRest
+    - ActionXenoTailStab
+    - ActionXenoCrest
+    - ActionXenoFortify
+    - ActionXenoHeadbutt
+    - ActionXenoTailSweep
+  - type: XenoLight
+  - type: XenoCrest
+  - type: XenoFortify
+  - type: XenoHeadbutt
+    damage:
+      types:
+        Blunt: 30
+    crestedDamageReduction:
+      types:
+        Blunt: -10
+  - type: XenoTailSweep
+    damage:
+      types:
+        Slash: 30
+  - type: XenoTailStab
+  - type: XenoPlasma
+    plasma: 100
+    maxPlasma: 100
+    plasmaRegenOnWeeds: 5
+  - type: XenoEvolution
+    canEvolveWithoutGranter: true
+    max: 200
+    evolvesTo:
+    - CMXenoWarrior
+    evolvesToWithoutPoints:
+    - CMXenoQueen
+  - type: XenoDevolve
+    devolvesTo:
+    - CMXenoLarva
+  - type: MeleeWeapon
+    damage:
+      types:
+        Slash: 27

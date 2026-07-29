@@ -8,7 +8,7 @@ on:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number }}
-  cancel-in-progress: true
+  cancel-in-progress: ${{ !contains(fromJSON('["Polonium-bot","PJBot","github-actions[bot]","github-actions"]'), github.actor) }}
 
 jobs:
   diff:

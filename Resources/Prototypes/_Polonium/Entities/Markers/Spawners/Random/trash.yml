@@ -1,0 +1,53 @@
+# Deposit-return litter for the kaucjomat. Nested into GenericTrashItems.
+- type: entityTable
+  id: PoloniumEmptyDrinkTrash
+  table: !type:GroupSelector
+    children:
+    - !type:NestedSelector
+      weight: 6
+      tableId: PoloniumEmptyCanTrash
+    - !type:NestedSelector
+      weight: 4
+      tableId: PoloniumEmptyBottleTrash
+
+- type: entityTable
+  id: PoloniumEmptyCanTrash
+  table: !type:GroupSelector
+    children:
+    - id: DrinkColaCanEmpty
+    - id: DrinkIcedTeaCanEmpty
+    - id: DrinkLemonLimeCanEmpty
+    - id: DrinkGrapeCanEmpty
+    - id: DrinkRootBeerCanEmpty
+    - id: DrinkSpaceMountainWindCanEmpty
+    - id: DrinkSpaceUpCanEmpty
+    - id: DrinkSolDryCanEmpty
+    - id: DrinkStarkistCanEmpty
+    - id: DrinkDrGibbCanEmpty
+    - id: DrinkEnergyDrinkCanEmpty
+    - id: DrinkPwrGameCanEmpty
+    - id: DrinkBeerCanEmpty
+    - id: DrinkHakkaMateCanEmpty
+    - id: DrinkMelonSodaCanEmpty
+
+- type: entityTable
+  id: PoloniumEmptyBottleTrash
+  table: !type:GroupSelector
+    children:
+    # Plastic
+    - id: DrinkWaterBottleEmpty
+      weight: 2
+    - id: DrinkColaBottleEmpty
+    - id: DrinkSpaceMountainWindBottleEmpty
+    - id: DrinkSpaceUpBottleEmpty
+    - id: DrinkSodaWaterBottleEmpty
+    - id: DrinkTonicWaterBottleEmpty
+    # Glass - these upstream prototypes are already the empty variant
+    - id: DrinkBottleBeer
+    - id: DrinkBottleAle
+    - id: DrinkBottleVodka
+    - id: DrinkBottleRum
+    - id: DrinkBottleWhiskey
+    - id: DrinkBottleGin
+    - id: DrinkBottleWine
+      weight: 0.5

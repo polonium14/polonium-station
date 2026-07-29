@@ -245,6 +245,9 @@ namespace Content.IntegrationTests.Tests
 
                 // makes an announcement on mapInit.
                 "AnnounceOnSpawn",
+
+                // xenos spawn shared XenoHive on MapInit and leave it behind
+                "AutoAssignHive",
             };
 
             Assert.That(server.CfgMan.GetCVar(CVars.NetPVS), Is.False);

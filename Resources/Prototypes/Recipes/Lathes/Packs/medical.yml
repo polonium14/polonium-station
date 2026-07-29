@@ -47,14 +47,15 @@
   - OffsetCane
   - OffsetCaneWood
   - JetInjector
-
+  
 - type: latheRecipePack
   id: RollerBedsStatic
   recipes:
   - RollerBedSpawnFolded
   - CheapRollerBedSpawnFolded
   - EmergencyRollerBedSpawnFolded
-
+  - VehicleWheelchair # Polonium Addition
+  
 - type: latheRecipePack
   id: MedicalClothingStatic
   recipes:

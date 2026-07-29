@@ -1,0 +1,35 @@
+- type: soundCollection
+  id: RMCResinBuild
+  files:
+  - /Audio/_RMC14/Xeno/alien_resin_build1.ogg
+  - /Audio/_RMC14/Xeno/alien_resin_build2.ogg
+  - /Audio/_RMC14/Xeno/alien_resin_build3.ogg
+
+- type: soundCollection
+  id: XenoResinBreak
+  files:
+  - /Audio/_RMC14/Xeno/alien_resin_break1.ogg
+  - /Audio/_RMC14/Xeno/alien_resin_break2.ogg
+  - /Audio/_RMC14/Xeno/alien_resin_break3.ogg
+
+- type: soundCollection
+  id: RCMXenoClaw
+  files:
+  - /Audio/_RMC14/Xeno/alien_claw_flesh1.ogg
+  - /Audio/_RMC14/Xeno/alien_claw_flesh2.ogg
+  - /Audio/_RMC14/Xeno/alien_claw_flesh3.ogg
+  - /Audio/_RMC14/Xeno/alien_claw_flesh4.ogg
+  - /Audio/_RMC14/Xeno/alien_claw_flesh5.ogg
+
+- type: soundCollection
+  id: XenoDeath
+  files:
+  - /Audio/_RMC14/Xeno/alien_death.ogg
+  - /Audio/_RMC14/Xeno/alien_death2.ogg
+
+- type: soundCollection
+  id: XenoFootstepLarge
+  files:
+  - /Audio/_RMC14/Xeno/alien_footstep_large1.ogg
+  - /Audio/_RMC14/Xeno/alien_footstep_large2.ogg
+  - /Audio/_RMC14/Xeno/alien_footstep_large3.ogg

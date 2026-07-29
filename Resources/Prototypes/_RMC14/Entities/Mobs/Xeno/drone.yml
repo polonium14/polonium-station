@@ -1,0 +1,56 @@
+- type: entity
+  parent: CMXenoDeveloped
+  id: CMXenoDrone
+  name: Drone
+  description: An alien drone.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Mobs/Xenonids/Drone/drone.rsi
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      500: Critical
+      600: Dead
+  - type: Xeno
+    tier: 1
+    unlockAt: 60
+    actionIds:
+    - ActionXenoRest
+    - ActionXenoTailStab
+    - ActionXenoPlantWeeds
+    - ActionXenoChooseStructure
+    - ActionXenoSecreteStructure
+    - ActionXenoAcidWeak
+    - ActionXenoPheromones
+  - type: XenoLight
+  - type: XenoAcid
+  - type: XenoTailStab
+  - type: XenoPheromones
+    pheromonesMultiplier: 2
+  - type: XenoPlasma
+    plasma: 1000
+    maxPlasma: 1000
+    plasmaRegenOnWeeds: 4.5
+  - type: XenoConstruction
+    buildDelay: 2
+    canBuild:
+    - WallXenoResin
+    - WallXenoMembrane
+    - DoorXenoResin
+    - XenoStickyResin
+    - XenoFastResin
+    - XenoResinSpikes
+  - type: XenoEvolution
+    canEvolveWithoutGranter: true
+    max: 200
+    evolvesTo:
+    - CMXenoHivelord
+    evolvesToWithoutPoints:
+    - CMXenoQueen
+  - type: XenoDevolve
+    devolvesTo:
+    - CMXenoLarva
+  - type: MeleeWeapon
+    damage:
+      types:
+        Slash: 22

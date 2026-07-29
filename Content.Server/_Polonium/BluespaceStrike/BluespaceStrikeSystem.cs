@@ -66,9 +66,15 @@ public sealed partial class BluespaceStrikeSystem : EntitySystem
             BluespaceStrikeComponent.MinDelaySeconds,
             BluespaceStrikeComponent.MaxDelaySeconds);
 
+        if (delaySeconds > BluespaceStrikeComponent.MaxMarkersDelaySeconds)
+            showMarkersAndSound = false;
+
         var slope = BluespaceStrikeComponent.DefaultSlope;
         var maxIntensity = BluespaceStrikeComponent.DefaultMaxIntensity;
-        var totalIntensity = _explosion.RadiusToIntensity(radius, slope, maxIntensity);
+        var totalIntensity = _explosion.RadiusToIntensity(
+            BluespaceStrikeComponent.GetMathRadius(radius),
+            slope,
+            maxIntensity);
 
         if (totalIntensity <= 0)
             return null;
@@ -162,6 +168,7 @@ public sealed partial class BluespaceStrikeSystem : EntitySystem
         if (TryComp(incoming, out BluespaceStrikeIncomingComponent? incomingComp))
         {
             incomingComp.FallDuration = TimeSpan.FromSeconds(BluespaceStrikeComponent.FallDurationSeconds);
+            incomingComp.ImpactAt = ent.Comp.DetonateAt;
             Dirty(incoming, incomingComp);
         }
 

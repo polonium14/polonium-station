@@ -1,0 +1,53 @@
+- type: entity
+  parent: CMXenoDeveloped
+  id: CMXenoLurker
+  name: Lurker
+  description: A beefy, fast alien with sharp claws.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Mobs/Xenonids/Lurker/lurker.rsi
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      450: Critical
+      550: Dead
+  - type: Xeno
+    tier: 2
+    unlockAt: 540
+    actionIds:
+    - ActionXenoRest
+    - ActionXenoTailStab
+    - ActionXenoInvisibility
+    - ActionXenoLeap
+  - type: XenoLight
+  - type: XenoInvisibility
+    cloakVisibility: 0.10
+    maxCloakDuration: 30
+  - type: XenoLeap
+    plasmaCost: 20
+    delay: 0
+    knockdownTime: 5
+    moveDelayTime: 1.5
+    knockdownRequiresInvisibility: true
+    leapSound: /Audio/_RMC14/Xeno/alien_pounce.ogg
+    strength: 20
+  - type: XenoTailStab
+  - type: XenoPlasma
+    plasma: 400
+    maxPlasma: 400
+    plasmaRegenOnWeeds: 4.5
+  - type: XenoEvolution
+    max: 500
+    evolvesTo:
+    - CMXenoRavager
+  - type: XenoDevolve
+    devolvesTo:
+    - CMXenoRunner
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.7
+    baseSprintSpeed: 5
+  - type: MeleeWeapon
+    attackRate: 0.75
+    damage:
+      types:
+        Slash: 35
