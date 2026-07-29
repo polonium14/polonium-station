@@ -10,6 +10,7 @@ using Content.Shared.Audio;
 using Content.Shared.Body.Components;
 using Content.Shared.Charges.Systems;
 using Content.Shared.Hands;
+using Content.Shared.Hands.EntitySystems;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Inventory;
 using Content.Shared.Item;
@@ -34,6 +35,7 @@ public sealed partial class FelinidSystem : EntitySystem
     [Dependency] private IRobustRandom _robustRandom = default!;
     [Dependency] private PopupSystem _popupSystem = default!;
     [Dependency] private InventorySystem _inventorySystem = default!;
+    [Dependency] private SharedHandsSystem _hands = default!;
     [Dependency] private SharedAudioSystem _audio = default!;
 
     public override void Initialize()
@@ -95,6 +97,15 @@ public sealed partial class FelinidSystem : EntitySystem
     {
         if (args.Unequipped != component.EatActionTarget)
             return;
+
+        foreach (var held in _hands.EnumerateHeld(uid))
+        {
+            if (held == args.Unequipped || !HasComp<FelinidFoodComponent>(held))
+                continue;
+
+            component.EatActionTarget = held;
+            return;
+        }
 
         component.EatActionTarget = null;
         if (component.EatAction != null)
