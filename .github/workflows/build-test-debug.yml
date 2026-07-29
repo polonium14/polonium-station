@@ -10,7 +10,7 @@ on:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event_name == 'pull_request' && github.event.pull_request.number || github.ref }}
-  cancel-in-progress: ${{ github.event_name != 'merge_group' }}
+  cancel-in-progress: ${{ github.event_name != 'merge_group' && !contains(fromJSON('["Polonium-bot","PJBot","github-actions[bot]","github-actions"]'), github.actor) }}
 
 env: # Polonium: prevent dotnet from sending telemetry
   DOTNET_CLI_TELEMETRY_OPTOUT: 1
