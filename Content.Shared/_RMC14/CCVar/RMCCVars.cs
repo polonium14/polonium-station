@@ -46,6 +46,9 @@ public sealed partial class RMCCVars : CVars
     public static readonly CVarDef<float> RMCXenoPlasmaRegenMultiplier =
         CVarDef.Create("rmc.xeno_plasma_regen_multiplier", 1.05f, CVar.REPLICATED | CVar.SERVER);
 
+    public static readonly CVarDef<float> RMCXenoHealthRegenMultiplier =
+        CVarDef.Create("rmc.xeno_health_regen_multiplier", 1f, CVar.REPLICATED | CVar.SERVER);
+
     public static readonly CVarDef<float> RMCXenoQueenEggLayCooldownSeconds =
         CVarDef.Create("rmc.xeno_queen_egg_lay_cooldown_seconds", 300f, CVar.REPLICATED | CVar.SERVER);
 
