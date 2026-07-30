@@ -27,7 +27,7 @@
     slots:
       fuel:
         name: fuel slot
-        insertOnInteract: false
+        insertOnInteract: true
         ejectOnInteract: false
         whitelist:
           tags:

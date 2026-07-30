@@ -55,6 +55,11 @@
   name: plasma
   suffix: Full
   components:
+  - type: Tag
+    tags:
+    - Sheet
+    - ConstructionMaterial
+    - PlasmaSheet
   - type: PhysicalComposition
     materialComposition:
       Plasma: 100
@@ -77,7 +82,7 @@
       reagents:
       - ReagentId: Plasma
         Quantity: 10
-
+   
 - type: entity
   parent: SheetPlasma
   id: SheetPlasma10
@@ -163,6 +168,11 @@
   name: uranium
   suffix: Full
   components:
+  - type: Tag
+    tags:
+    - Sheet
+    - ConstructionMaterial
+    - UraniumSheet
   - type: Edible
     transferAmount: 10
     solution: composite
