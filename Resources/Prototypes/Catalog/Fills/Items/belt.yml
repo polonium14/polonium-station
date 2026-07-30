@@ -48,7 +48,7 @@
         - id: HolofanProjector
         - id: GasAnalyzer
         - id: trayScanner
-        - id: ClothingHeadHatWelding # Maska spawalniczo gazowa jest zbędna
+        - id: ClothingMaskWeldingGas # Jak na funky
         
 - type: entityTable
   id: BeltSecurityEntityTable
