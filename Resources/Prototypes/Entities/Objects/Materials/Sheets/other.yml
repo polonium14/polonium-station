@@ -59,7 +59,7 @@
     tags:
     - Sheet
     - ConstructionMaterial
-    - SheetPlasma
+    - PlasmaSheet
   - type: PhysicalComposition
     materialComposition:
       Plasma: 100
@@ -172,7 +172,7 @@
     tags:
     - Sheet
     - ConstructionMaterial
-    - SheetUranium
+    - UraniumSheet
   - type: Edible
     transferAmount: 10
     solution: composite
