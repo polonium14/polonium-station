@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: DDeegan
-  changes:
-  - message: Thieving Beacons set their coordinates automatically when unfolded.
-    type: Tweak
-  id: 9421
-  time: '2026-01-19T09:18:14.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42520
 - author: ArtisticRoomba
   changes:
   - message: The flashbang, explosive grenade, electrical disruptor kit, and cluster
@@ -4121,3 +4114,10 @@
   id: 9920
   time: '2026-07-30T19:27:35.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/858
+- author: Czuat
+  changes:
+  - message: "Elektrolizer gaz\xF3w przyjmuje ju\u017C paliwo"
+    type: Fix
+  id: 9921
+  time: '2026-07-30T20:13:47.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/859
