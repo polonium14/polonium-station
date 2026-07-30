@@ -31,8 +31,8 @@
         ejectOnInteract: false
         whitelist:
           tags:
-          - SheetPlasma
-          - SheetUranium
+          - PlasmaSheet
+          - UraniumSheet
         swap: false
   - type: DeviceLinkSink
     ports:
