@@ -17,12 +17,12 @@
     - Snout
   - type: PointLight # the glow is subtle. It's just enough to make the mantle visible in pitch black lighting, but won't help you see much.
     radius: 1.45
-    energy: 0.6
+    energy: 1
     offset: 0,0.2
-    color: "#CCFFCC" # this will match the colour of the beast's eyes when worn, this is just a default.
+    color: "#CCFFCC" # light green, bc thats the colour used by original mantles
     containerOccluded: true # this makes the mantle illuminate itself.
-    mask: /Textures/Effects/LightMasks/cone.png
-    autoRot: true
+#    lightMask: /Textures/Effects/LightMasks/cone.png # Masks are broken for some reason?
+    maskAutoRotate: true
   - type: Clothing
     equipDelay: 1 #Just for the equip delay
     unequipDelay: 3 # So you get annoyed at it when you need to put on a spacesuit in a hurry >:3
@@ -70,6 +70,7 @@
   - type: PressureProtection
     highPressureMultiplier: 0.1
     lowPressureMultiplier: 1000
+  - type: BreathMask
 
 - type: entity
   parent: ClothingHeadProtoVisorBase
@@ -84,18 +85,22 @@
 #    lightingColor: "#505050FF"
 #    noiseAmount: 15
 #    noiseMultiplier: 3
-  - type: PointLight # Untill NVGs get fixed
-    color: "#D3D3D3"
-    rotation: 0
-    energy: 5
-    radius: 15
+  - type: PointLight # Untill NVGs on head get fixed
+    radius: 6 # range of a normal flashight, which is still better becasue it actually iluminates stuff
+    energy: 2
+    offset: 0,0.2
+    falloff: 10 # so it iluminates decently at the source but barely helps at the edges
+    color: "#225522" # Very dark green for those of the masks that should have NVGs
+    containerOccluded: true 
+#    lightMask: /Textures/Effects/LightMasks/cone.png # Masks are broken for some reason?
+    autoRot: true
 
 # Basic Forms
 - type: entity
   parent: ClothingHeadProtoVisorBase
   id: ClothingHeadProtoVisorBasic
   name: Cybernetic Visor
-  description: Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. The most common simplest model.
+  description: Highly specialized equipment used for providing additional data about the enviroment and causing the user pernament vision problems. The most common simplest model.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -111,7 +116,7 @@
   parent: [ClothingHeadProtoVisorBase, ClothingHeadProtoVisorBaseSpaceProof]
   id: ClothingHeadProtoVisorSpaceProof # Here basicly just for if Admin wants to spawn it.
   name: Space Proof Cybernetic Visor
-  description: Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. This version comes with aditional seals to make it space proof.
+  description: Highly specialized equipment used for providing additional data about the enviroment and causing the user pernament vision problems. This version comes with additional seals to make it space proof.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -129,7 +134,7 @@
   parent: [ClothingHeadProtoVisorBase, ClothingHeadProtoVisorBaseSpaceProof, BaseEngineeringContraband]
   id: ClothingHeadProtoVisorEngi
   name: Engineer's Cybernetic Visor
-  description: Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. This version is space proof, has a built in T-ray scanner and provides some protection against welding arcs for up to 10 secounds of continous welding. Not as good as a designated mask, however it will adapt itself to fix the newly acquired sight error.
+  description: Highly specialized equipment used for providing additional data about the enviroment and causing the user pernament vision problems. This version is space proof, has a built in T-ray scanner and provides some protection against welding arcs for up to 10 secounds of continous welding. Not as good as a designated mask, however it will adapt itself to fix the newly acquired sight error.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -156,10 +161,10 @@
     protectionTime: 10
 
 - type: entity
-  parent: [ClothingHeadProtoVisorEngi, ClothingHeadProtoVisorBaseNVG, BaseCommandContraband]
+  parent: [ClothingHeadProtoVisorBaseNVG, ClothingHeadProtoVisorEngi, BaseCommandContraband]
   id: ClothingHeadProtoVisorCE
   name: CE's Cybernetic Visor
-  description: Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. This version is space proof, comes with enviroment thermal sensors, T-ray scanner and allows you to weld without limits, not to mention built in NVG, altough of very poor quality.
+  description: Highly specialized equipment used for providing additional data about the enviroment and causing the user pernament vision problems. This version is space proof, comes with enviroment thermal sensors, T-ray scanner and allows you to weld without limits, not to mention built in NVG, altough of very poor quality.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -181,7 +186,7 @@
   parent: [ClothingHeadProtoVisorBase, BaseMedicalContraband]
   id: ClothingHeadProtoVisorMedical
   name: Doctors's Cybernetic Visor
-  description: Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. This version has a built in health HUD display.
+  description: Highly specialized equipment used for providing additional data about the enviroment and causing the user pernament vision problems. This version has a built in health HUD display.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -200,7 +205,7 @@
   parent: [ClothingHeadProtoVisorMedical, ClothingHeadProtoVisorBaseSpaceProof]
   id: ClothingHeadProtoVisorParamed
   name: Paramedic's Cybernetic Visor
-  description: Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. This version not only comes with a health HUD but also space protection.
+  description: Highly specialized equipment used for providing additional data about the enviroment and causing the user pernament vision problems. This version not only comes with a health HUD but also space protection.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -218,7 +223,7 @@
   parent: [ClothingHeadProtoVisorMedical]
   id: ClothingHeadProtoVisorChem
   name: Chemist's Cybernetic Visor
-  description: Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. This version, in addition to the health HUD, comes with a chemical scanner.
+  description: Highly specialized equipment used for providing additional data about the enviroment and causing the user pernament vision problems. This version, in addition to the health HUD, comes with a chemical scanner.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -233,10 +238,10 @@
   - type: SolutionScanner
 
 - type: entity
-  parent: [ClothingHeadProtoVisorMedical, ClothingHeadProtoVisorBaseSpaceProof, ClothingHeadProtoVisorBaseNVG, BaseCommandContraband]
+  parent: [ClothingHeadProtoVisorBaseNVG, ClothingHeadProtoVisorMedical, ClothingHeadProtoVisorBaseSpaceProof, BaseCommandContraband]
   id: ClothingHeadProtoVisorCMO
   name: CMO's Cybernetic Visor
-  description: Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. This version has everything a CMO might need. It's space proof, has a chemical scanner, alongside a health HUD and as a bonus it also has NVG sensors, even if they are terrible at their job.
+  description: Highly specialized equipment used for providing additional data about the enviroment and causing the user pernament vision problems. This version has everything a CMO might need. It's space proof, has a chemical scanner, alongside a health HUD and as a bonus it also has NVG sensors, even if they are terrible at their job.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -254,10 +259,10 @@
 # Science RD
 
 - type: entity
-  parent: [ClothingHeadProtoVisorBasic, ClothingHeadProtoVisorBaseSpaceProof, ClothingHeadProtoVisorBaseNVG, BaseCommandContraband]
+  parent: [ClothingHeadProtoVisorBaseNVG, ClothingHeadProtoVisorBasic, ClothingHeadProtoVisorBaseSpaceProof, BaseCommandContraband]
   id: ClothingHeadProtoVisorRD
   name: RD's Cybernetic Visor
-  description: Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. This version has space protection and poor quality NVGs.
+  description: Highly specialized equipment used for providing additional data about the enviroment and causing the user pernament vision problems. This version has space protection and poor quality NVGs.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -276,7 +281,7 @@
   parent: [ClothingHeadProtoVisorBasic, BaseCivilianContraband]
   id: ClothingHeadProtoVisorService
   name: Service Worker's Cybernetic Visor
-  description: Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. This version comes with basic nurishment and thirst analysis for organic beings.
+  description: Highly specialized equipment used for providing additional data about the enviroment and causing the user pernament vision problems. This version comes with basic nurishment and thirst analysis for organic beings.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -296,7 +301,7 @@
   parent: [ClothingHeadProtoVisorBase, BaseSecurityContraband]
   id: ClothingHeadProtoVisorSecurity
   name: Officer's Cybernetic Visor
-  description: Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. This version comes with fancy displays for catching criminals.
+  description: Highly specialized equipment used for providing additional data about the enviroment and causing the user pernament vision problems. This version comes with fancy displays for catching criminals.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -317,7 +322,7 @@
   parent: [ClothingHeadProtoVisorMedical, ClothingHeadProtoVisorSecurity]
   id: ClothingHeadProtoVisorBrigmedic
   name: Brigmedic's Cybernetic Visor
-  description: Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. This version, alongside fancy anti-criminal HUD has a health HUD. Perfect for knowing who to not heal.
+  description: Highly specialized equipment used for providing additional data about the enviroment and causing the user pernament vision problems. This version, alongside fancy anti-criminal HUD has a health HUD. Perfect for knowing who to not heal.
   components:
   - type: Clothing
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -328,10 +333,10 @@
         shader: unshaded
 
 - type: entity
-  parent: [ClothingHeadProtoVisorSecurity, ClothingHeadProtoVisorBaseSpaceProof, ClothingHeadProtoVisorBaseNVG, BaseCommandContraband]
+  parent: [ClothingHeadProtoVisorBaseNVG, ClothingHeadProtoVisorSecurity, ClothingHeadProtoVisorBaseSpaceProof, BaseCommandContraband]
   id: ClothingHeadProtoVisorHOS
   name: HOS's Cybernetic Visor
-  description: "Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. This version has all the gadgets a HOS might want: that being, Space protection, security HUDs AND some very poorly working NVG sensors."
+  description: "Highly specialized equipment used for providing additional data about the enviroment and causing the user pernament vision problems. This version has all the gadgets a HOS might want: that being, Space protection, security HUDs AND some very poorly working NVG sensors."
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -352,7 +357,7 @@
   parent: [ClothingHeadProtoVisorBasic, ClothingHeadProtoVisorBaseSpaceProof, BaseCargoContraband]
   id: ClothingHeadProtoVisorSalvage
   name: Salvager's Cybernetic Visor
-  description: Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. This version comes with space protecion, now go die for cargonia!
+  description: Highly specialized equipment used for providing additional data about the enviroment and causing the user pernament vision problems. This version comes with space protecion, now go die for cargonia!
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -367,10 +372,10 @@
         shader: unshaded
 
 - type: entity
-  parent: [ClothingHeadProtoVisorSecurity, ClothingHeadProtoVisorBaseSpaceProof, ClothingHeadProtoVisorBaseNVG, BaseCommandContraband]
+  parent: [ClothingHeadProtoVisorBaseNVG, ClothingHeadProtoVisorSecurity, ClothingHeadProtoVisorBaseSpaceProof, BaseCommandContraband]
   id: ClothingHeadProtoVisorQM
   name: QM's Cybernetic Visor
-  description: Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. This version has some poor quality NVGs for piloting the shuttle when the lights break as well as space protection for not dying when ATS explodes, altough you may have bigger problems than.
+  description: Highly specialized equipment used for providing additional data about the enviroment and causing the user pernament vision problems. This version has some poor quality NVGs for piloting the shuttle when the lights break as well as space protection for not dying when ATS explodes, altough you may have bigger problems than.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -387,10 +392,10 @@
 # Command
 
 - type: entity
-  parent: [ClothingHeadProtoVisorBasic, ClothingHeadProtoVisorBaseSpaceProof, ClothingHeadProtoVisorBaseNVG, BaseCommandContraband]
+  parent: [ClothingHeadProtoVisorBaseNVG, ClothingHeadProtoVisorBasic, ClothingHeadProtoVisorBaseSpaceProof, BaseCommandContraband]
   id: ClothingHeadProtoVisorHOP
   name: HOP's Cybernetic Visor
-  description: Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. This version comes with space protection, poor quality NVG sensors and job identification display.
+  description: Highly specialized equipment used for providing additional data about the enviroment and causing the user pernament vision problems. This version comes with space protection, poor quality NVG sensors and job identification display.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -405,10 +410,10 @@
   - type: ShowJobIcons
 
 - type: entity
-  parent: [ClothingHeadProtoVisorBasic, ClothingHeadProtoVisorBaseSpaceProof, ClothingHeadProtoVisorBaseNVG, BaseCommandContraband]
+  parent: [ClothingHeadProtoVisorBaseNVG, ClothingHeadProtoVisorBasic, ClothingHeadProtoVisorBaseSpaceProof, BaseCommandContraband]
   id: ClothingHeadProtoVisorCaptain
   name: Captain's Cybernetic Visor
-  description: Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. This version has, space protection, job identifier and some TERRIBLE NVGs.
+  description: Highly specialized equipment used for providing additional data about the enviroment and causing the user pernament vision problems. This version has, space protection, job identifier and some TERRIBLE NVGs.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -426,10 +431,10 @@
 # CentComm
 
 - type: entity
-  parent: [ClothingHeadProtoVisorBasic, ClothingHeadProtoVisorBaseNVG, BaseCentcommContraband] # NTR doesnt get a space proof visor MUHAHAHA!
+  parent: [ClothingHeadProtoVisorBasic, BaseCentcommContraband] # NTR doesnt get a space proof visor MUHAHAHA!
   id: ClothingHeadProtoVisorNTR
   name: NTR's Cybernetic Visor
-  description: Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. This version is a proof CC is being cheap on you. It only has some broken NVGs, not to mention the space proofing broke and just got removed.
+  description: Highly specialized equipment used for providing additional data about the enviroment and causing the user pernament vision problems. This version is a proof CC is being cheap on you. It only has some broken NVGs, not to mention the space proofing broke and just got removed.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -450,6 +455,15 @@
 #    noiseAmount: 5
 #    noiseMultiplier: 1
 #    prioritized: true # Even worse than what other heads get bc "Broken" - Pure black
+  - type: PointLight # delete once NVGs get fixed
+    radius: 1.5
+    energy: 0.5
+    offset: 0,0.2
+    falloff: 10 
+    color: "#225522"
+    containerOccluded: true 
+#    lightMask: /Textures/Effects/LightMasks/cone.png # Masks are broken for some reason?
+    maskAutoRotate: true
   - type: ShowJobIcons
 
 # The Evil CC corporate version
@@ -457,7 +471,7 @@
   parent: [ClothingHeadProtoVisorBasic, ClothingHeadProtoVisorBaseSpaceProof, BaseCentcommContraband] 
   id: ClothingHeadProtoVisorCentCom
   name: Central Command's Cybernetic Visor
-  description: Higly specialized equipment used for providing aditional data about the enviroment and causing the user pernament vision problems. This version comes with EVERYTHING you would ever want. NOW WE ARE TALKING BABY!
+  description: Highly specialized equipment used for providing additional data about the enviroment and causing the user pernament vision problems. This version comes with EVERYTHING you would ever want. NOW WE ARE TALKING BABY!
   suffix: DO NOT MAP
   components:
   - type: Sprite
@@ -505,3 +519,13 @@
 #    noiseAmount: 5
 #    noiseMultiplier: 1
 #    prioritized: true # Only visor without black NVG
+  - type: PointLight # Delete once NVGs get fixed
+    radius: 8 # bigger range - same of a seclight
+    energy: 3 # slightly more energy
+    offset: 0,0.2
+    falloff: 5 # smaller falloff
+    color: "#CCFFCC" # Only well working flashlight among all the visors
+    containerOccluded: true 
+#    lightMask: /Textures/Effects/LightMasks/cone.png # Masks are broken for some reason?
+    maskAutoRotate: true
+  - type: ItemTogglePointLight

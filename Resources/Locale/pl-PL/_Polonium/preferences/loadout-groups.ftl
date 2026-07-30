@@ -1,3 +1,3 @@
-loadout-group-technical-assistant-head = Technical Assistant Head
+loadout-group-technical-assistant-head = Asystent Techniczny - nakrycie głowy
 
-loadout-group-chemist-head = Chemist Head
+loadout-group-chemist-head = Chemik - nakrycie głowy
