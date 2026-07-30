@@ -1,13 +1,4 @@
 ﻿Entries:
-- author: aada
-  changes:
-  - message: Items given to the medical department round start have been significantly
-      rebalanced. In particular, players no longer spawn with their tools and must
-      get them from a locker or vending machine.
-    type: Tweak
-  id: 9420
-  time: '2026-01-19T05:21:50.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42423
 - author: DDeegan
   changes:
   - message: Thieving Beacons set their coordinates automatically when unfolded.
@@ -4122,3 +4113,11 @@
   id: 9919
   time: '2026-07-30T09:19:04.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/847
+- author: Czuat
+  changes:
+  - message: "Naprawiono warto\u015B\u0107 \u0142adunk\xF3w skompresowanej materii\
+      \ i powinna ju\u017C odnawia\u0107 USK do pe\u0142na"
+    type: Fix
+  id: 9920
+  time: '2026-07-30T19:27:35.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/858
