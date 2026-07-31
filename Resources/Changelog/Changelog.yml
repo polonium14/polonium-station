@@ -1,24 +1,6 @@
 ﻿Entries:
 - author: Princess-Cheeseballs
   changes:
-  - message: Web Vests are now 5 TC and Bloodred Hardsuits are now 7 TC.
-    type: Tweak
-  - message: All outer clothes with pockets are now 2x3, all armored outerwear are
-      now 3x4.
-    type: Tweak
-  - message: Chameleon Kit now comes with an Agent ID card for free. Chameleon sunglasses
-      now offer flash protection. Chameleon Vests can now wear oxygen tanks.
-    type: Tweak
-  - message: Several items such as the Carp Hardsuit, Syndicate EVA Suit, Blood-Red
-      Magboots, and Syndicate Jetpack have had their costs reduced.
-    type: Tweak
-  - message: Syndicate Shoulder Holster has been removed.
-    type: Remove
-  id: 9424
-  time: '2026-01-19T22:48:48.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42482
-- author: Princess-Cheeseballs
-  changes:
   - message: Longarms in the uplink are cheaper but don't come with extra ammo.
     type: Tweak
   - message: Syndicate knuckle dusters are now 4 TC
@@ -4105,3 +4087,10 @@
   id: 9923
   time: '2026-07-31T10:18:02.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/846
+- author: Koilak
+  changes:
+  - message: Wizjery Cybernetyczne
+    type: Add
+  id: 9924
+  time: '2026-07-31T15:58:07.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/855
