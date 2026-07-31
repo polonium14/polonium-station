@@ -1,19 +1,4 @@
 ﻿Entries:
-- author: ArtisticRoomba
-  changes:
-  - message: The flashbang, explosive grenade, electrical disruptor kit, and cluster
-      grenade have been removed from the traitor uplink.
-    type: Remove
-  - message: The grenade penguin has been lowered in price to 4 TC.
-    type: Tweak
-  - message: The syndicate bomb has had its explosive power tweaked. It is now a more
-      concentrated explosion over a smaller area.
-    type: Tweak
-  - message: The EMP Grenade now detonates on impact.
-    type: Tweak
-  id: 9422
-  time: '2026-01-19T22:10:03.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42477
 - author: Princess-Cheeseballs
   changes:
   - message: Tazinide and Licoxide now are less effective at shocking and don't last
@@ -4121,3 +4106,11 @@
   id: 9921
   time: '2026-07-30T20:13:47.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/859
+- author: Czuat
+  changes:
+  - message: "Przywr\xF3cono maski spawalnicze oraz analizatory gaz\xF3w do pask\xF3\
+      w narz\u0119dziowych in\u017Cynier\xF3w"
+    type: Tweak
+  id: 9922
+  time: '2026-07-31T07:42:59.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/860
