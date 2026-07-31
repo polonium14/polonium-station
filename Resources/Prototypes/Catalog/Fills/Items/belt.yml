@@ -54,7 +54,7 @@
   id: BeltSecurityEntityTable
   table: !type:AllSelector
     children:
-    - id: Nightstick # Funky
+    - id: Stunbaton # Funky - Polonium revent - good old non-lethal that doesn't kill
     - id: Handcuffs
       amount: 2
     - id: HoloprojectorSecurity
