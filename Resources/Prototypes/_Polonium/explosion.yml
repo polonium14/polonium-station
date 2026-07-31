@@ -1,0 +1,38 @@
+
+# Polonium: bluespace artillery explosion
+- type: explosion
+  id: BluespaceArtillery
+  damagePerIntensity:
+    types:
+      Heat: 40
+      Blunt: 40
+      Piercing: 30
+      Structural: 150
+  tileBreakChance: [ 0, 1, 1 ]
+  tileBreakIntensity: [ 0, 5, 15 ]
+  tileBreakRerollReduction: 5
+  intensityPerState: 15
+  lightColor: "#55AAFF"
+  flashColor: "#4FC3F7"
+  texturePath: /Textures/_Polonium/Effects/bluespace.rsi
+  fireStates: 1
+  fireStacks: 5
+  temperature: 5000
+  maxCombineDistance: 0
+
+# Polonium explosive cord balancing - special explosion type for balancing the explosive cord
+- type: explosion
+  id: StructuralCharge # very weak unless you are a structure or if you lay a corridor full of explosive wire.
+  damagePerIntensity:
+    types:
+      Heat: 2 
+      Blunt: 1 
+      Piercing: 1
+      Structural: 100
+  tileBreakChance: [ 0, 0.5, 1 ]
+  tileBreakIntensity: [ 0, 10, 30 ]
+  tileBreakRerollReduction: 20
+  lightColor: Orange
+  texturePath: /Textures/Effects/fire.rsi
+  fireStates: 3
+  temperature: 800
