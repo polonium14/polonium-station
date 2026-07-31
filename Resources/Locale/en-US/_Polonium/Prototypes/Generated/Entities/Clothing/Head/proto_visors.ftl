@@ -1,14 +1,14 @@
 ent-ClothingHeadProtoVisoreBasic = Cybernetic Visor
-    .desc = Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. The most common simplest model.
+    .desc = Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. The most common, simplest model.
 
 ent-ClothingHeadProtoVisoreSpaceProof = Space Proof Cybernetic Visor
     .desc = Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version comes with additional seals to make it space proof.
 
 ent-ClothingHeadProtoVisoreEngi = Engineer's Cybernetic Visor
-    .desc = Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version is space proof, has a built in T-ray scanner and provides some protection against welding arcs. Not as good as a designated mask however.
+    .desc = Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version is space proof, has a built in T-ray scanner and provides some protection against welding arcs for up to 10 seconds of continuous welding. Not as good as a designated mask, however it will adapt itself to fix the newly acquired sight error.
 
 ent-ClothingHeadProtoVisoreCE = CE's Cybernetic Visor
-    .desc = Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version is space proof, comes with environment thermal sensors, T-ray scanner and allows you to weld without limits, not to mention built in NVG, altough of very poor quality.
+    .desc = Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version is space proof, comes with environment thermal sensors, T-ray scanner and allows you to weld without limits, not to mention built in NVG, although of very poor quality.
 
 ent-ClothingHeadProtoVisoreMedical = Doctors's Cybernetic Visor
     .desc = Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version has a built in health HUD display.
@@ -26,7 +26,7 @@ ent-ClothingHeadProtoVisoreRD = RD's Cybernetic Visor
     .desc = Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version has space protection and poor quality NVGs.
 
 ent-ClothingHeadProtoVisoreService = Service Worker's Cybernetic Visor
-    .desc = Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version comes with basic nurishment and thirst analysis for organic beings.
+    .desc = Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version comes with basic nourishmentand thirst analysis for organic beings.
 
 ent-ClothingHeadProtoVisoreSecurity = Officer's Cybernetic Visor
     .desc = Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version comes with fancy displays for catching criminals.
@@ -41,7 +41,7 @@ ent-ClothingHeadProtoVisoreSalvage = Salvager's Cybernetic Visor
     .desc = Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version comes with space protecion, now go die for cargonia!
 
 ent-ClothingHeadProtoVisoreQM = QM's Cybernetic Visor
-    .desc = Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version has some poor quality NVGs for piloting the shuttle when the lights break as well as space protection for not dying when ATS explodes, altough you may have bigger problems than.
+    .desc = Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version has some poor quality NVGs for piloting the shuttle when the lights break as well as space protection for not dying when ATS explodes, although you may have bigger problems.
 
 ent-ClothingHeadProtoVisoreHOP = HOP's Cybernetic Visor
     .desc = Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version comes with space protection, poor quality NVG sensors and job identification display.

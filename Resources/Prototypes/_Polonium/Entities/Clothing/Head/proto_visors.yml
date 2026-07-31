@@ -108,7 +108,7 @@
   parent: ClothingHeadProtoVisorBase
   id: ClothingHeadProtoVisorBasic
   name: Cybernetic Visor
-  description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. The most common simplest model.
+  description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. The most common, simplest model.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -142,7 +142,7 @@
   parent: [ClothingHeadProtoVisorBase, ClothingHeadProtoVisorBaseSpaceProof, BaseEngineeringContraband]
   id: ClothingHeadProtoVisorEngi
   name: Engineer's Cybernetic Visor
-  description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version is space proof, has a built in T-ray scanner and provides some protection against welding arcs for up to 10 secounds of continous welding. Not as good as a designated mask, however it will adapt itself to fix the newly acquired sight error.
+  description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version is space proof, has a built in T-ray scanner and provides some protection against welding arcs for up to 10 seconds of continuous welding. Not as good as a designated mask, however it will adapt itself to fix the newly acquired sight error.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -172,7 +172,7 @@
   parent: [ClothingHeadProtoVisorBaseNVG, ClothingHeadProtoVisorEngi, BaseCommandContraband]
   id: ClothingHeadProtoVisorCE
   name: CE's Cybernetic Visor
-  description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version is space proof, comes with environment thermal sensors, T-ray scanner and allows you to weld without limits, not to mention built in NVG, altough of very poor quality.
+  description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version is space proof, comes with environment thermal sensors, T-ray scanner and allows you to weld without limits, not to mention built in NVG, although of very poor quality.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -289,7 +289,7 @@
   parent: [ClothingHeadProtoVisorBasic, BaseCivilianContraband]
   id: ClothingHeadProtoVisorService
   name: Service Worker's Cybernetic Visor
-  description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version comes with basic nurishment and thirst analysis for organic beings.
+  description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version comes with basic nourishmentand thirst analysis for organic beings.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -365,7 +365,7 @@
   parent: [ClothingHeadProtoVisorBasic, ClothingHeadProtoVisorBaseSpaceProof, BaseCargoContraband]
   id: ClothingHeadProtoVisorSalvage
   name: Salvager's Cybernetic Visor
-  description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version comes with space protecion, now go die for cargonia!
+  description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version comes with space protection, now go die for cargonia!
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -383,7 +383,7 @@
   parent: [ClothingHeadProtoVisorBaseNVG, ClothingHeadProtoVisorBaseSpaceProof, BaseCommandContraband]
   id: ClothingHeadProtoVisorQM
   name: QM's Cybernetic Visor
-  description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version has some poor quality NVGs for piloting the shuttle when the lights break as well as space protection for not dying when ATS explodes, altough you may have bigger problems than.
+  description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version has some poor quality NVGs for piloting the shuttle when the lights break as well as space protection for not dying when ATS explodes, although you may have bigger problems.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
