@@ -1,0 +1,27 @@
+- type: loadoutGroup
+  id: SalvageSpecialistHead
+  name: loadout-group-salvage-specialist-head
+  minLimit: 0
+  loadouts:
+  - ProtoVisorSalvage 
+
+- type: loadoutGroup
+  id: AtmosphericTechnicianHead
+  name: loadout-group-atmospheric-technician-head
+  minLimit: 0
+  loadouts:
+    - ProtoVisorEngi
+
+- type: loadoutGroup
+  id: TechnicalAssistantHead
+  name: loadout-group-technical-assistant-head
+  minLimit: 0
+  loadouts:
+    - ProtoVisorEngi
+
+- type: loadoutGroup
+  id: ChemistHead
+  name: loadout-group-chemist-head
+  minLimit: 0
+  loadouts:
+    - ProtoVisorChem

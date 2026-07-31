@@ -57,6 +57,7 @@
   groups:
   - GroupTankHarness
   - MedicalMask
+  - ChemistHead
   - ChemistJumpsuit
   - ChemistBackpack
   - ChemistOuterClothing

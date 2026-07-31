@@ -1,0 +1,572 @@
+
+# IMPORTANT: Code is a changed version by Resources\Prototypes\_Omu\Entities\Clothing\Head\mantles.txt for the purpose of fixing fork differences
+# Litteraly making this into fancy glasses that go on your head...
+# Balanced by the fact you can't make them and if someone steals it than well, you have poor vision even with glasses for the rest of your life.
+# Also... SPACE >:3 (though Head's get Space Proof version)
+
+# Abstract parents
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadProtoVisorBase
+  abstract: true
+  components:
+  - type: VisionCorrection
+    correctionPower: 16 # fixes ANY eye damage to the minimum allowed value
+  - type: HideLayerClothing
+    slots:
+    - Snout
+  - type: PointLight # the glow is subtle. It's just enough to make the mantle visible in pitch black lighting, but won't help you see much.
+    radius: 1.45
+    energy: 1
+    offset: 0,0.2
+    color: "#CCFFCC" # light green, bc thats the colour used by original mantles
+    containerOccluded: true # this makes the mantle illuminate itself.
+#    lightMask: /Textures/Effects/LightMasks/cone.png # Masks are broken for some reason?
+    maskAutoRotate: true
+  - type: Clothing
+    equipDelay: 1 #Just for the equip delay
+    unequipDelay: 3 # So you get annoyed at it when you need to put on a spacesuit in a hurry >:3
+    stripDelay: 2 # Strip already gives a 4 secound delay so this makes it 6
+  - type: Item
+    size: Huge
+  - type: Tag # Overwrite the TagComponent from the parent to get rid of ClothMade because it's funny when a mothroach eats this ultra specialized bit of equipment, but only the first time.
+    tags:
+    - WhitelistChameleon
+  - type: StealTarget
+    stealGroup: ClothingEyesHuds # It goes on the head...but why not?
+  - type: IdentityBlocker
+  - type: IngestionBlocker
+  - type: TriggerOnGotEquipped
+    keyOut: ProtoVisorEquipped
+    slotFlags: HEAD
+  - type: AddComponentsOnTrigger
+    targetUser: true
+    keysIn:
+    - ProtoVisorEquipped
+    components:
+    - type: PermanentBlindness
+      blindness: 5
+  - type: DamageOnTrigger
+    targetUser: true
+    keysIn:
+    - ProtoVisorEquipped
+    damage:
+      types:
+        Blunt: 10
+  - type: StunOnTrigger # deafault 1 secound
+    keysIn:
+    - ProtoVisorEquipped
+    targetUser: true
+  - type: KnockdownOnTrigger # deafault 1 secound
+    keysIn:
+    - ProtoVisorEquipped
+    targetUser: true
+
+- type: entity
+  parent: ClothingHeadProtoVisorBase
+  id: ClothingHeadProtoVisorBaseSpaceProof
+  abstract: true
+  components:
+  - type: PressureProtection
+    highPressureMultiplier: 0.1
+    lowPressureMultiplier: 1000
+  - type: BreathMask
+
+- type: entity
+  parent: ClothingHeadProtoVisorBase
+  id: ClothingHeadProtoVisorBaseNVG
+  abstract: true
+  components:
+#  - type: NightVision # Disabled untill NVG on head fixed
+#    relayOverlay: true
+#    enabled: false
+#    action: ActionToggleNightVision
+#    overlayColor: "#030303FF"
+#    lightingColor: "#505050FF"
+#    noiseAmount: 15
+#    noiseMultiplier: 3
+  - type: PointLight # Untill NVGs on head get fixed
+    radius: 6 # range of a normal flashight, which is still better becasue it actually iluminates stuff
+    energy: 2
+    offset: 0,0.2
+    falloff: 10 # so it iluminates decently at the source but barely helps at the edges
+    color: "#225522" # Very dark green for those of the masks that should have NVGs
+    containerOccluded: true 
+#    lightMask: /Textures/Effects/LightMasks/cone.png # Masks are broken for some reason?
+    maskAutoRotate: true
+  - type: ItemTogglePointLight
+  - type: ItemToggle # Cant make it into an action on a hot bar without giving it HandheldLight component, but than it requires a cell to be togglable, got to love this code. Its not a bug, its a feature!
+    activated: true
+    onUse: false
+    soundActivate:
+      path: /Audio/Items/flashlight_on.ogg
+    soundDeactivate:
+      path: /Audio/Items/flashlight_off.ogg
+
+# Basic Forms
+- type: entity
+  parent: ClothingHeadProtoVisorBase
+  id: ClothingHeadProtoVisorBasic
+  name: Cybernetic Visor
+  description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. The most common, simplest model.
+  components:
+  - type: Sprite
+    scale: 0.8, 0.8
+    sprite: _Omu/Clothing/Head/mantle.rsi
+  - type: Clothing
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    clothingVisuals:
+      head:
+      - state: helmet
+      - state: eyes
+        shader: unshaded
+
+- type: entity
+  parent: [ClothingHeadProtoVisorBase, ClothingHeadProtoVisorBaseSpaceProof]
+  id: ClothingHeadProtoVisorSpaceProof # Here basicly just for if Admin wants to spawn it.
+  name: Space Proof Cybernetic Visor
+  description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version comes with additional seals to make it space proof.
+  components:
+  - type: Sprite
+    scale: 0.8, 0.8
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    state: icon-work
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: helmet
+      - state: helmet-internals
+      - state: eyes
+        shader: unshaded
+
+# Engi
+- type: entity
+  parent: [ClothingHeadProtoVisorBase, ClothingHeadProtoVisorBaseSpaceProof, BaseEngineeringContraband]
+  id: ClothingHeadProtoVisorEngi
+  name: Engineer's Cybernetic Visor
+  description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version is space proof, has a built in T-ray scanner and provides some protection against welding arcs for up to 10 seconds of continuous welding. Not as good as a designated mask, however it will adapt itself to fix the newly acquired sight error.
+  components:
+  - type: Sprite
+    scale: 0.8, 0.8
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    state: icon-work
+  - type: Clothing
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    clothingVisuals:
+      head:
+      - state: helmet-engineering
+      - state: helmet-internals
+      - state: eyes-engineering
+        shader: unshaded
+#  - type: TrayScanner #T-rays dont work on head - to be fixed
+#    toggleAction: ActionToggleTrayScanner
+#    soundOn:
+#      path: /Audio/Items/flashlight_on.ogg
+#    soundOff:
+#      path: /Audio/Items/flashlight_off.ogg
+#  - type: GoggleShader
+#    shader: Goggles
+#    color: '#5AB43CCC'
+#    enabled: false
+  - type: EyeProtection
+    protectionTime: 10
+
+- type: entity
+  parent: [ClothingHeadProtoVisorBaseNVG, ClothingHeadProtoVisorEngi, BaseCommandContraband]
+  id: ClothingHeadProtoVisorCE
+  name: CE's Cybernetic Visor
+  description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version is space proof, comes with environment thermal sensors, T-ray scanner and allows you to weld without limits, not to mention built in NVG, although of very poor quality.
+  components:
+  - type: Sprite
+    scale: 0.8, 0.8
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    state: icon-ce
+  - type: Clothing
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    clothingVisuals:
+      head:
+      - state: helmet-ce
+      - state: helmet-internals
+      - state: eyes-ce
+        shader: unshaded
+  - type: EyeProtection
+  - type: ThermalSight # Fancy
+
+# Medical
+
+- type: entity
+  parent: [ClothingHeadProtoVisorBase, BaseMedicalContraband]
+  id: ClothingHeadProtoVisorMedical
+  name: Doctors's Cybernetic Visor
+  description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version has a built in health HUD display.
+  components:
+  - type: Sprite
+    scale: 0.8, 0.8
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    state: icon-medical
+  - type: Clothing
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    clothingVisuals:
+      head:
+      - state: helmet-medical
+      - state: eyes-medical
+        shader: unshaded
+  - type: ShowHealthBars
+  - type: ShowHealthIcons
+
+- type: entity
+  parent: [ClothingHeadProtoVisorMedical, ClothingHeadProtoVisorBaseSpaceProof]
+  id: ClothingHeadProtoVisorParamed
+  name: Paramedic's Cybernetic Visor
+  description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version not only comes with a health HUD but also space protection.
+  components:
+  - type: Sprite
+    scale: 0.8, 0.8
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    state: icon-paramedic
+  - type: Clothing
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    clothingVisuals:
+      head:
+      - state: helmet-medical
+      - state: helmet-internals-medical
+      - state: eyes-medical
+        shader: unshaded
+
+- type: entity
+  parent: [ClothingHeadProtoVisorMedical]
+  id: ClothingHeadProtoVisorChem
+  name: Chemist's Cybernetic Visor
+  description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version, in addition to the health HUD, comes with a chemical scanner.
+  components:
+  - type: Sprite
+    scale: 0.8, 0.8
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    state: icon-chem
+  - type: Clothing
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    clothingVisuals:
+      head:
+      - state: helmet-chem
+      - state: eyes-chem
+        shader: unshaded
+  - type: SolutionScanner
+
+- type: entity
+  parent: [ClothingHeadProtoVisorBaseNVG, ClothingHeadProtoVisorMedical, ClothingHeadProtoVisorBaseSpaceProof, BaseCommandContraband]
+  id: ClothingHeadProtoVisorCMO
+  name: CMO's Cybernetic Visor
+  description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version has everything a CMO might need. It's space proof, has a chemical scanner, alongside a health HUD and as a bonus it also has NVG sensors, even if they are terrible at their job.
+  components:
+  - type: Sprite
+    scale: 0.8, 0.8
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    state: icon-cmo
+  - type: Clothing
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    clothingVisuals:
+      head:
+      - state: helmet-cmo
+      - state: helmet-internals-medical
+      - state: eyes-cmo
+        shader: unshaded
+  - type: SolutionScanner
+
+# Science RD
+
+- type: entity
+  parent: [ClothingHeadProtoVisorBaseNVG, ClothingHeadProtoVisorBasic, ClothingHeadProtoVisorBaseSpaceProof, BaseCommandContraband]
+  id: ClothingHeadProtoVisorRD
+  name: RD's Cybernetic Visor
+  description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version has space protection and poor quality NVGs.
+  components:
+  - type: Sprite
+    scale: 0.8, 0.8
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    state: icon-rd
+  - type: Clothing
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    clothingVisuals:
+      head:
+      - state: helmet-rd
+      - state: helmet-internals
+      - state: eyes-rd
+        shader: unshaded
+
+# Service
+- type: entity
+  parent: [ClothingHeadProtoVisorBasic, BaseCivilianContraband]
+  id: ClothingHeadProtoVisorService
+  name: Service Worker's Cybernetic Visor
+  description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version comes with basic nourishmentand thirst analysis for organic beings.
+  components:
+  - type: Sprite
+    scale: 0.8, 0.8
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    state: icon-bar
+  - type: Clothing
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    clothingVisuals:
+      head:
+      - state: helmet-bar
+      - state: eyes-bar
+        shader: unshaded
+  - type: ShowHungerIcons
+  - type: ShowThirstIcons
+
+# Secruity
+- type: entity
+  parent: [ClothingHeadProtoVisorBase, BaseSecurityContraband]
+  id: ClothingHeadProtoVisorSecurity
+  name: Officer's Cybernetic Visor
+  description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version comes with fancy displays for catching criminals.
+  components:
+  - type: Sprite
+    scale: 0.8, 0.8
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    state: icon-security
+  - type: Clothing
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    clothingVisuals:
+      head:
+      - state: helmet-security
+      - state: eyes-security
+        shader: unshaded
+  - type: ShowJobIcons
+  - type: ShowMindShieldIcons
+  - type: ShowCriminalRecordIcons
+  - type: ShowContrabandDetails
+
+- type: entity
+  parent: [ClothingHeadProtoVisorMedical, ClothingHeadProtoVisorSecurity]
+  id: ClothingHeadProtoVisorBrigmedic
+  name: Brigmedic's Cybernetic Visor
+  description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version, alongside fancy anti-criminal HUD has a health HUD. Perfect for knowing who to not heal.
+  components:
+  - type: Clothing
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    clothingVisuals:
+      head:
+      - state: helmet-corpsman
+      - state: eyes-corpsman
+        shader: unshaded
+
+- type: entity
+  parent: [ClothingHeadProtoVisorBaseNVG, ClothingHeadProtoVisorSecurity, ClothingHeadProtoVisorBaseSpaceProof, BaseCommandContraband]
+  id: ClothingHeadProtoVisorHOS
+  name: HOS's Cybernetic Visor
+  description: "Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version has all the gadgets a HOS might want: that being, Space protection, security HUDs AND some very poorly working NVG sensors."
+  components:
+  - type: Sprite
+    scale: 0.8, 0.8
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    state: icon-hos
+  - type: Clothing
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    clothingVisuals:
+      head:
+      - state: helmet-hos
+      - state: helmet-internals
+      - state: eyes-hos
+        shader: unshaded
+
+
+# Supply
+
+- type: entity
+  parent: [ClothingHeadProtoVisorBasic, ClothingHeadProtoVisorBaseSpaceProof, BaseCargoContraband]
+  id: ClothingHeadProtoVisorSalvage
+  name: Salvager's Cybernetic Visor
+  description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version comes with space protection, now go die for cargonia!
+  components:
+  - type: Sprite
+    scale: 0.8, 0.8
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    state: icon-salvage
+  - type: Clothing
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    clothingVisuals:
+      head:
+      - state: helmet-salvage
+      - state: helmet-internals
+      - state: eyes-salvage
+        shader: unshaded
+
+- type: entity
+  parent: [ClothingHeadProtoVisorBaseNVG, ClothingHeadProtoVisorBaseSpaceProof, BaseCommandContraband]
+  id: ClothingHeadProtoVisorQM
+  name: QM's Cybernetic Visor
+  description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version has some poor quality NVGs for piloting the shuttle when the lights break as well as space protection for not dying when ATS explodes, although you may have bigger problems.
+  components:
+  - type: Sprite
+    scale: 0.8, 0.8
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    state: icon-qm
+  - type: Clothing
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    clothingVisuals:
+      head:
+      - state: helmet-qm
+      - state: helmet-internals
+      - state: eyes-qm
+        shader: unshaded
+
+# Command
+
+- type: entity
+  parent: [ClothingHeadProtoVisorBaseNVG, ClothingHeadProtoVisorBasic, ClothingHeadProtoVisorBaseSpaceProof, BaseCommandContraband]
+  id: ClothingHeadProtoVisorHOP
+  name: HOP's Cybernetic Visor
+  description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version comes with space protection, poor quality NVG sensors and job identification display.
+  components:
+  - type: Sprite
+    scale: 0.8, 0.8
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    state: icon-command
+  - type: Clothing
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    clothingVisuals:
+      head:
+      - state: helmet-command
+      - state: eyes-command
+        shader: unshaded
+  - type: ShowJobIcons
+
+- type: entity
+  parent: [ClothingHeadProtoVisorBaseNVG, ClothingHeadProtoVisorBasic, ClothingHeadProtoVisorBaseSpaceProof, BaseCommandContraband]
+  id: ClothingHeadProtoVisorCaptain
+  name: Captain's Cybernetic Visor
+  description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version has, space protection, job identifier and some TERRIBLE NVGs.
+  components:
+  - type: Sprite
+    scale: 0.8, 0.8
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    state: icon-bso
+  - type: Clothing
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    clothingVisuals:
+      head:
+      - state: helmet-bso # Using BSO sprite for captain, normal command sprite for HOP
+      - state: helmet-internals
+      - state: eyes-bso
+        shader: unshaded
+  - type: ShowJobIcons
+
+# CentComm
+
+- type: entity
+  parent: [ClothingHeadProtoVisorBasic, BaseCentcommContraband] # NTR doesnt get a space proof visor MUHAHAHA!
+  id: ClothingHeadProtoVisorNTR
+  name: NTR's Cybernetic Visor
+  description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version is a proof CC is being cheap on you. It only has some broken NVGs, not to mention the space proofing broke and just got removed.
+  components:
+  - type: Sprite
+    scale: 0.8, 0.8
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    state: icon-centralcommand
+  - type: Clothing
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    clothingVisuals:
+      head:
+      - state: helmet-centralcommand
+      - state: eyes-centralcommand
+        shader: unshaded
+#  - type: NightVision # Disabled until NVG on head fixed
+#    relayOverlay: true
+#    enabled: false
+#    action: ActionToggleNightVision
+#    overlayColor: "#000000FF"
+#    lightingColor: "#00000000"
+#    noiseAmount: 5
+#    noiseMultiplier: 1
+#    prioritized: true # Even worse than what other heads get bc "Broken" - Pure black
+  - type: PointLight # delete once NVGs get fixed
+    radius: 1.5
+    energy: 0.5
+    offset: 0,0.2
+    falloff: 10 
+    color: "#003300" # beacause "broken"
+    containerOccluded: true 
+#    lightMask: /Textures/Effects/LightMasks/cone.png # Masks are broken for some reason?
+    maskAutoRotate: true
+  - type: ItemTogglePointLight
+  - type: ItemToggle # Cant make it into an action on a hot bar without giving it HandheldLight component, but than it requires a cell to be togglable, got to love this code. Its not a bug, its a feature!
+    activated: true
+    onUse: false
+    soundActivate:
+      path: /Audio/Items/flashlight_on.ogg
+    soundDeactivate:
+      path: /Audio/Items/flashlight_off.ogg
+  - type: ShowJobIcons
+
+# The Evil CC corporate version
+- type: entity
+  parent: [ClothingHeadProtoVisorBasic, ClothingHeadProtoVisorBaseSpaceProof, BaseCentcommContraband] 
+  id: ClothingHeadProtoVisorCentCom
+  name: Central Command's Cybernetic Visor
+  description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version comes with EVERYTHING you would ever want. NOW WE ARE TALKING BABY!
+  suffix: DO NOT MAP
+  components:
+  - type: Sprite
+    scale: 0.8, 0.8
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    state: icon-centralcommand
+  - type: Clothing
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    clothingVisuals:
+      head:
+      - state: helmet-centralcommand
+      - state: helmet-internals
+      - state: eyes-centralcommand
+        shader: unshaded
+  - type: FlashImmunity
+  - type: ShowJobIcons
+  - type: ShowMindShieldIcons
+  - type: ShowCriminalRecordIcons
+  - type: ShowContrabandDetails
+  - type: ShowHungerIcons
+  - type: ShowThirstIcons
+  - type: ShowHealthBars
+    damageContainers:
+    - Biological
+    - Inorganic
+    - Silicon
+#  - type: TrayScanner #T-rays dont work on head - to be fixed
+#    toggleAction: ActionToggleTrayScanner
+#    soundOn:
+#      path: /Audio/Items/flashlight_on.ogg
+#    soundOff:
+#      path: /Audio/Items/flashlight_off.ogg
+#  - type: GoggleShader
+#    shader: Goggles
+#    color: '#5AB43CCC'
+#    enabled: false
+  - type: ThermalSight
+  - type: SolutionScanner
+  - type: EyeProtection
+#  - type: NightVision # Disabled until NVG on head fixed
+#    relayOverlay: true
+#    enabled: false
+#    action: ActionToggleNightVision
+#    overlayColor: "#CCFFCCFF"
+#    lightingColor: "#CCFFCCFF"
+#    noiseAmount: 5
+#    noiseMultiplier: 1
+#    prioritized: true # Only visor without black NVG
+  - type: PointLight # Delete once NVGs get fixed
+    radius: 8 # bigger range - same of a seclight
+    energy: 3 # slightly more energy
+    offset: 0,0.2
+    falloff: 5 # smaller falloff
+    color: "#CCFFCC" # Only well working flashlight among all the visors
+    containerOccluded: true 
+#    lightMask: /Textures/Effects/LightMasks/cone.png # Masks are broken for some reason?
+    maskAutoRotate: true
+  - type: ItemTogglePointLight 
+  - type: ItemToggle # Cant make it into an action on a hot bar without giving it HandheldLight component, but than it requires a cell to be togglable, got to love this code. Its not a bug, its a feature!
+    activated: true
+    onUse: false
+    soundActivate:
+      path: /Audio/Items/flashlight_on.ogg
+    soundDeactivate:
+      path: /Audio/Items/flashlight_off.ogg

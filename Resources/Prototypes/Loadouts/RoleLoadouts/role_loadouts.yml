@@ -283,6 +283,7 @@
   id: JobSalvageSpecialist
   groups:
   - GroupTankHarness
+  - SalvageSpecialistHead # Polonium
   - SalvageSpecialistBackpack
   - SalvageSpecialistOuterClothing
   - SalvageSpecialistShoes
@@ -316,6 +317,7 @@
   id: JobTechnicalAssistant
   groups:
   - GroupTankHarness
+  - TechnicalAssistantHead # Polonium
   - TechnicalAssistantJumpsuit
   - StationEngineerBackpack
   - AssistiveItems
@@ -346,6 +348,7 @@
   id: JobAtmosphericTechnician
   groups:
   - GroupTankHarness
+  - StationEngineerHead # Polonium
   - AtmosphericTechnicianJumpsuit
   - AtmosphericTechnicianBackpack
   - AtmosphericTechnicianOuterClothing

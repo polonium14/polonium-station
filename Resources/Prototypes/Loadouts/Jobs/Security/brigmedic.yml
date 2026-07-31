@@ -75,6 +75,7 @@
   - BrigmedicBeret
   - SecurityMedicBeret
   - SecurityMedicHelmet
+  - ProtoVisorBrigmedic # Polonium
 
 - type: loadoutGroup
   id: BrigmedicJumpsuit

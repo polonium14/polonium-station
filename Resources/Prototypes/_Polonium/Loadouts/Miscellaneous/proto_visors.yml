@@ -1,0 +1,90 @@
+
+- type: loadout
+  id: ProtoVisorBasic
+  equipment:
+    head: ClothingHeadProtoVisorBasic
+
+- type: loadout
+  id: ProtoVisorEngi
+  equipment:
+    head: ClothingHeadProtoVisorEngi
+
+- type: loadout
+  id: ProtoVisorCE
+  equipment:
+    head: ClothingHeadProtoVisorCE
+
+- type: loadout
+  id: ProtoVisorMedical
+  equipment:
+    head: ClothingHeadProtoVisorMedical
+
+- type: loadout
+  id: ProtoVisorParamed
+  equipment:
+    head: ClothingHeadProtoVisorParamed
+
+- type: loadout
+  id: ProtoVisorChem
+  equipment:
+    head: ClothingHeadProtoVisorChem
+
+- type: loadout
+  id: ProtoVisorCMO
+  equipment:
+    head: ClothingHeadProtoVisorCMO
+
+- type: loadout
+  id: ProtoVisorRD
+  equipment:
+    head: ClothingHeadProtoVisorRD
+
+- type: loadout
+  id: ProtoVisorService
+  equipment:
+    head: ClothingHeadProtoVisorService
+
+- type: loadout
+  id: ProtoVisorSecurity
+  equipment:
+    head: ClothingHeadProtoVisorSecurity
+
+- type: loadout
+  id: ProtoVisorBrigmedic
+  equipment:
+    head: ClothingHeadProtoVisorBrigmedic
+
+- type: loadout
+  id: ProtoVisorHOS
+  equipment:
+    head: ClothingHeadProtoVisorHOS
+
+- type: loadout
+  id: ProtoVisorSalvage
+  equipment:
+    head: ClothingHeadProtoVisorSalvage
+
+- type: loadout
+  id: ProtoVisorQM
+  equipment:
+    head: ClothingHeadProtoVisorQM
+
+- type: loadout
+  id: ProtoVisorHOP
+  equipment:
+    head: ClothingHeadProtoVisorHOP
+
+- type: loadout
+  id: ProtoVisorCaptain
+  equipment:
+    head: ClothingHeadProtoVisorCaptain
+
+- type: loadout
+  id: ProtoVisorNTR
+  equipment:
+    head: ClothingHeadProtoVisorNTR
+
+- type: loadout
+  id: ProtoVisorCentcom
+  equipment:
+    head: ClothingHeadProtoVisorCentCom
