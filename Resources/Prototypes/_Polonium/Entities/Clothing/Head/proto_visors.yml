@@ -111,6 +111,7 @@
   description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. The most common, simplest model.
   components:
   - type: Sprite
+    scale: 0.8, 0.8
     sprite: _Omu/Clothing/Head/mantle.rsi
   - type: Clothing
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -127,6 +128,7 @@
   description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version comes with additional seals to make it space proof.
   components:
   - type: Sprite
+    scale: 0.8, 0.8
     sprite: _Omu/Clothing/Head/mantle.rsi
     state: icon-work
   - type: Clothing
@@ -145,6 +147,7 @@
   description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version is space proof, has a built in T-ray scanner and provides some protection against welding arcs for up to 10 seconds of continuous welding. Not as good as a designated mask, however it will adapt itself to fix the newly acquired sight error.
   components:
   - type: Sprite
+    scale: 0.8, 0.8
     sprite: _Omu/Clothing/Head/mantle.rsi
     state: icon-work
   - type: Clothing
@@ -175,6 +178,7 @@
   description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version is space proof, comes with environment thermal sensors, T-ray scanner and allows you to weld without limits, not to mention built in NVG, although of very poor quality.
   components:
   - type: Sprite
+    scale: 0.8, 0.8
     sprite: _Omu/Clothing/Head/mantle.rsi
     state: icon-ce
   - type: Clothing
@@ -197,6 +201,7 @@
   description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version has a built in health HUD display.
   components:
   - type: Sprite
+    scale: 0.8, 0.8
     sprite: _Omu/Clothing/Head/mantle.rsi
     state: icon-medical
   - type: Clothing
@@ -216,6 +221,7 @@
   description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version not only comes with a health HUD but also space protection.
   components:
   - type: Sprite
+    scale: 0.8, 0.8
     sprite: _Omu/Clothing/Head/mantle.rsi
     state: icon-paramedic
   - type: Clothing
@@ -234,6 +240,7 @@
   description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version, in addition to the health HUD, comes with a chemical scanner.
   components:
   - type: Sprite
+    scale: 0.8, 0.8
     sprite: _Omu/Clothing/Head/mantle.rsi
     state: icon-chem
   - type: Clothing
@@ -252,6 +259,7 @@
   description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version has everything a CMO might need. It's space proof, has a chemical scanner, alongside a health HUD and as a bonus it also has NVG sensors, even if they are terrible at their job.
   components:
   - type: Sprite
+    scale: 0.8, 0.8
     sprite: _Omu/Clothing/Head/mantle.rsi
     state: icon-cmo
   - type: Clothing
@@ -273,6 +281,7 @@
   description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version has space protection and poor quality NVGs.
   components:
   - type: Sprite
+    scale: 0.8, 0.8
     sprite: _Omu/Clothing/Head/mantle.rsi
     state: icon-rd
   - type: Clothing
@@ -292,6 +301,7 @@
   description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version comes with basic nourishmentand thirst analysis for organic beings.
   components:
   - type: Sprite
+    scale: 0.8, 0.8
     sprite: _Omu/Clothing/Head/mantle.rsi
     state: icon-bar
   - type: Clothing
@@ -312,6 +322,7 @@
   description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version comes with fancy displays for catching criminals.
   components:
   - type: Sprite
+    scale: 0.8, 0.8
     sprite: _Omu/Clothing/Head/mantle.rsi
     state: icon-security
   - type: Clothing
@@ -347,6 +358,7 @@
   description: "Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version has all the gadgets a HOS might want: that being, Space protection, security HUDs AND some very poorly working NVG sensors."
   components:
   - type: Sprite
+    scale: 0.8, 0.8
     sprite: _Omu/Clothing/Head/mantle.rsi
     state: icon-hos
   - type: Clothing
@@ -368,6 +380,7 @@
   description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version comes with space protection, now go die for cargonia!
   components:
   - type: Sprite
+    scale: 0.8, 0.8
     sprite: _Omu/Clothing/Head/mantle.rsi
     state: icon-salvage
   - type: Clothing
@@ -386,6 +399,7 @@
   description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version has some poor quality NVGs for piloting the shuttle when the lights break as well as space protection for not dying when ATS explodes, although you may have bigger problems.
   components:
   - type: Sprite
+    scale: 0.8, 0.8
     sprite: _Omu/Clothing/Head/mantle.rsi
     state: icon-qm
   - type: Clothing
@@ -406,6 +420,7 @@
   description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version comes with space protection, poor quality NVG sensors and job identification display.
   components:
   - type: Sprite
+    scale: 0.8, 0.8
     sprite: _Omu/Clothing/Head/mantle.rsi
     state: icon-command
   - type: Clothing
@@ -424,6 +439,7 @@
   description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version has, space protection, job identifier and some TERRIBLE NVGs.
   components:
   - type: Sprite
+    scale: 0.8, 0.8
     sprite: _Omu/Clothing/Head/mantle.rsi
     state: icon-bso
   - type: Clothing
@@ -445,6 +461,7 @@
   description: Highly specialized equipment used for providing additional data about the environment and causing the user permanent vision problems. This version is a proof CC is being cheap on you. It only has some broken NVGs, not to mention the space proofing broke and just got removed.
   components:
   - type: Sprite
+    scale: 0.8, 0.8
     sprite: _Omu/Clothing/Head/mantle.rsi
     state: icon-centralcommand
   - type: Clothing
@@ -491,6 +508,7 @@
   suffix: DO NOT MAP
   components:
   - type: Sprite
+    scale: 0.8, 0.8
     sprite: _Omu/Clothing/Head/mantle.rsi
     state: icon-centralcommand
   - type: Clothing
