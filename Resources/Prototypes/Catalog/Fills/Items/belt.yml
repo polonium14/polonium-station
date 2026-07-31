@@ -29,7 +29,9 @@
         - id: Wirecutter
         - id: Welder
         - id: Multitool
-
+        - id: GasAnalyzer # Jak na funky
+        - id: ClothingHeadHatWelding # Jak na funky
+        
 - type: entity
   id: ClothingBeltChiefEngineerFilled
   parent: ClothingBeltChiefEngineer
@@ -46,7 +48,8 @@
         - id: HolofanProjector
         - id: GasAnalyzer
         - id: trayScanner
-
+        - id: ClothingMaskWeldingGas # Jak na funky
+        
 - type: entityTable
   id: BeltSecurityEntityTable
   table: !type:AllSelector
