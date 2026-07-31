@@ -94,6 +94,14 @@
     containerOccluded: true 
 #    lightMask: /Textures/Effects/LightMasks/cone.png # Masks are broken for some reason?
     maskAutoRotate: true
+  - type: ItemTogglePointLight
+  - type: ItemToggle # Cant make it into an action on a hot bar without giving it HandheldLight component, but than it requires a cell to be togglable, got to love this code. Its not a bug, its a feature!
+    activated: true
+    onUse: false
+    soundActivate:
+      path: /Audio/Items/flashlight_on.ogg
+    soundDeactivate:
+      path: /Audio/Items/flashlight_off.ogg
 
 # Basic Forms
 - type: entity
@@ -460,10 +468,18 @@
     energy: 0.5
     offset: 0,0.2
     falloff: 10 
-    color: "#225522"
+    color: "#003300" # beacause "broken"
     containerOccluded: true 
 #    lightMask: /Textures/Effects/LightMasks/cone.png # Masks are broken for some reason?
     maskAutoRotate: true
+  - type: ItemTogglePointLight
+  - type: ItemToggle # Cant make it into an action on a hot bar without giving it HandheldLight component, but than it requires a cell to be togglable, got to love this code. Its not a bug, its a feature!
+    activated: true
+    onUse: false
+    soundActivate:
+      path: /Audio/Items/flashlight_on.ogg
+    soundDeactivate:
+      path: /Audio/Items/flashlight_off.ogg
   - type: ShowJobIcons
 
 # The Evil CC corporate version
@@ -528,4 +544,11 @@
     containerOccluded: true 
 #    lightMask: /Textures/Effects/LightMasks/cone.png # Masks are broken for some reason?
     maskAutoRotate: true
-  - type: ItemTogglePointLight
+  - type: ItemTogglePointLight 
+  - type: ItemToggle # Cant make it into an action on a hot bar without giving it HandheldLight component, but than it requires a cell to be togglable, got to love this code. Its not a bug, its a feature!
+    activated: true
+    onUse: false
+    soundActivate:
+      path: /Audio/Items/flashlight_on.ogg
+    soundDeactivate:
+      path: /Audio/Items/flashlight_off.ogg
