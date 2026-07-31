@@ -9,7 +9,7 @@
 - type: marking
   id: ArmProstheticLeft
   bodyPart: LArm
-  groupWhitelist: [Human, Reptilian, Slime, Arachnid, Vulpkanin, Thaven] # Frontier: add Felinid Funkystation: add Rodentia and Vulpkanin
+  groupWhitelist: [Human, Reptilian, Slime, Arachnid, Vulpkanin, Thaven, Felinid, Rodentia] # Frontier: add Felinid Funkystation: add Rodentia and Vulpkanin
   coloring:
     default:
       type:
@@ -22,7 +22,7 @@
 - type: marking
   id: ArmTwistingLeft
   bodyPart: LArm
-  groupWhitelist: [Human, Reptilian, Slime, Arachnid, Vulpkanin, Thaven] # Frontier: add Felinid Funkystation: add Rodentia and Vulpkanin
+  groupWhitelist: [Human, Reptilian, Slime, Arachnid, Vulpkanin, Thaven, Felinid, Rodentia] # Frontier: add Felinid Funkystation: add Rodentia and Vulpkanin
   sprites:
   - sprite: _Impstation/Mobs/Customization/scars.rsi
     state: arm_l_twisting
@@ -30,7 +30,7 @@
 - type: marking
   id: ArmProstheticRight
   bodyPart: RArm
-  groupWhitelist: [Human, Reptilian, Slime, Arachnid, Vulpkanin, Thaven] # Frontier: add Felinid Funkystation: add Rodentia and Vulpkanin
+  groupWhitelist: [Human, Reptilian, Slime, Arachnid, Vulpkanin, Thaven, Felinid, Rodentia] # Frontier: add Felinid Funkystation: add Rodentia and Vulpkanin
   coloring:
     default:
       type:
@@ -43,7 +43,7 @@
 - type: marking
   id: ArmTwistingRight
   bodyPart: RArm
-  groupWhitelist: [Human, Reptilian, Slime, Arachnid, Vulpkanin, Thaven] # Frontier: add Felinid Funkystation: add Rodentia and Vulpkanin
+  groupWhitelist: [Human, Reptilian, Slime, Arachnid, Vulpkanin, Thaven, Felinid, Rodentia] # Frontier: add Felinid Funkystation: add Rodentia and Vulpkanin
   sprites:
   - sprite: _Impstation/Mobs/Customization/scars.rsi
     state: arm_r_twisting
@@ -51,7 +51,7 @@
 - type: marking
   id: ChestBackstabbed
   bodyPart: Chest
-  groupWhitelist: [Human, Reptilian, Slime, Vulpkanin, Thaven] # Frontier: add Felinid Funkystation: add Rodentia and Vulpkanin
+  groupWhitelist: [Human, Reptilian, Slime, Vulpkanin, Thaven, Felinid, Rodentia] # Frontier: add Felinid Funkystation: add Rodentia and Vulpkanin
   sprites:
   - sprite: _Impstation/Mobs/Customization/scars.rsi
     state: chest_backstabbed
@@ -59,7 +59,7 @@
 - type: marking
   id: ChestTwistingLeft
   bodyPart: Chest
-  groupWhitelist: [Human, Reptilian, Slime, Vulpkanin, Thaven] # Frontier: add Felinid Funkystation: add Rodentia and Vulpkanin
+  groupWhitelist: [Human, Reptilian, Slime, Vulpkanin, Thaven, Felinid, Rodentia] # Frontier: add Felinid Funkystation: add Rodentia and Vulpkanin
   sprites:
   - sprite: _Impstation/Mobs/Customization/scars.rsi
     state: chest_l_twisting
@@ -67,7 +67,7 @@
 - type: marking
   id: ChestTwistingRight
   bodyPart: Chest
-  groupWhitelist: [Human, Reptilian, Slime, Vulpkanin, Thaven] # Frontier: add Felinid Funkystation: add Rodentia and Vulpkanin
+  groupWhitelist: [Human, Reptilian, Slime, Vulpkanin, Thaven, Felinid, Rodentia] # Frontier: add Felinid Funkystation: add Rodentia and Vulpkanin
   sprites:
   - sprite: _Impstation/Mobs/Customization/scars.rsi
     state: chest_r_twisting
@@ -75,7 +75,7 @@
 - type: marking
   id: ChestStar
   bodyPart: Chest
-  groupWhitelist: [Human, Reptilian, Slime, Arachnid, Vulpkanin, Thaven] # Frontier: add Felinid Funkystation: add Rodentia and Vulpkanin
+  groupWhitelist: [Human, Reptilian, Slime, Arachnid, Vulpkanin, Thaven, Felinid, Rodentia] # Frontier: add Felinid Funkystation: add Rodentia and Vulpkanin
   sprites:
   - sprite: _Impstation/Mobs/Customization/scars.rsi
     state: chest_star
@@ -83,7 +83,7 @@
 - type: marking
   id: FootProstheticLeft
   bodyPart: LFoot
-  groupWhitelist: [Human, Slime, Arachnid, Vulpkanin, Thaven] # Frontier: add Felinid Funkystation: add Rodentia and Vulpkanin
+  groupWhitelist: [Human, Slime, Arachnid, Vulpkanin, Thaven, Felinid, Rodentia] # Frontier: add Felinid Funkystation: add Rodentia and Vulpkanin
   coloring:
     default:
       type:
@@ -96,7 +96,7 @@
 - type: marking
   id: FootProstheticRight
   bodyPart: RFoot
-  groupWhitelist: [Human, Slime, Arachnid, Vulpkanin, Thaven] # Frontier: add Felinid Funkystation: add Rodentia and Vulpkanin
+  groupWhitelist: [Human, Slime, Arachnid, Vulpkanin, Thaven, Felinid, Rodentia] # Frontier: add Felinid Funkystation: add Rodentia and Vulpkanin
   coloring:
     default:
       type:
@@ -109,7 +109,7 @@
 - type: marking
   id: HandProstheticLeft
   bodyPart: LHand
-  groupWhitelist: [Human, Reptilian, Slime, Arachnid, Vulpkanin, Thaven] # Frontier: add Felinid Funkystation: add Rodentia and Vulpkanin
+  groupWhitelist: [Human, Reptilian, Slime, Arachnid, Vulpkanin, Thaven, Felinid, Rodentia] # Frontier: add Felinid Funkystation: add Rodentia and Vulpkanin
   coloring:
     default:
       type:
@@ -122,7 +122,7 @@
 - type: marking
   id: HandTwistingLeft
   bodyPart: LHand
-  groupWhitelist: [Human, Reptilian, Slime, Arachnid, Vulpkanin, Thaven] # Frontier: add Felinid Funkystation: add Rodentia and Vulpkanin
+  groupWhitelist: [Human, Reptilian, Slime, Arachnid, Vulpkanin, Thaven, Felinid, Rodentia] # Frontier: add Felinid Funkystation: add Rodentia and Vulpkanin
   sprites:
   - sprite: _Impstation/Mobs/Customization/scars.rsi
     state: hand_l_twisting
@@ -130,7 +130,7 @@
 - type: marking
   id: HandProstheticRight
   bodyPart: RHand
-  groupWhitelist: [Human, Reptilian, Slime, Arachnid, Vulpkanin, Thaven] # Frontier: add Felinid Funkystation: add Rodentia and Vulpkanin
+  groupWhitelist: [Human, Reptilian, Slime, Arachnid, Vulpkanin, Thaven, Felinid, Rodentia] # Frontier: add Felinid Funkystation: add Rodentia and Vulpkanin
   coloring:
     default:
       type:
@@ -143,7 +143,7 @@
 - type: marking
   id: HandTwistingRight
   bodyPart: RHand
-  groupWhitelist: [Human, Reptilian, Slime, Arachnid, Vulpkanin, Thaven] # Frontier: add Felinid Funkystation: add Rodentia and Vulpkanin
+  groupWhitelist: [Human, Reptilian, Slime, Arachnid, Vulpkanin, Thaven, Felinid, Rodentia] # Frontier: add Felinid Funkystation: add Rodentia and Vulpkanin
   sprites:
   - sprite: _Impstation/Mobs/Customization/scars.rsi
     state: hand_r_twisting
@@ -151,7 +151,7 @@
 - type: marking
   id: SmileScars
   bodyPart: Head
-  groupWhitelist: [Human, Slime, Vulpkanin, Thaven] # Frontier: add Felinid Funkystation: add Rodentia and Vulpkanin
+  groupWhitelist: [Human, Slime, Vulpkanin, Thaven, Felinid, Rodentia] # Frontier: add Felinid Funkystation: add Rodentia and Vulpkanin
   sprites:
   - sprite: _Impstation/Mobs/Customization/scars.rsi
     state: head_smile
@@ -159,7 +159,7 @@
 - type: marking
   id: HeadTwisting
   bodyPart: Head
-  groupWhitelist: [Human, Slime, Vulpkanin, Thaven] # Frontier: add Felinid Funkystation: add Rodentia and Vulpkanin
+  groupWhitelist: [Human, Slime, Vulpkanin, Thaven, Felinid, Rodentia] # Frontier: add Felinid Funkystation: add Rodentia and Vulpkanin
   sprites:
   - sprite: _Impstation/Mobs/Customization/scars.rsi
     state: head_twisting
@@ -167,7 +167,7 @@
 - type: marking
   id: LegProstheticLeft
   bodyPart: LLeg
-  groupWhitelist: [Human, Slime, Arachnid, Vulpkanin, Thaven] # Frontier: add Felinid Funkystation: add Rodentia and Vulpkanin
+  groupWhitelist: [Human, Slime, Arachnid, Vulpkanin, Thaven, Felinid, Rodentia] # Frontier: add Felinid Funkystation: add Rodentia and Vulpkanin
   coloring:
     default:
       type:
@@ -180,7 +180,7 @@
 - type: marking
   id: LegTwistingLeft
   bodyPart: LLeg
-  groupWhitelist: [Human, Reptilian, Slime, Arachnid, Vulpkanin, Thaven] # Frontier: add Felinid Funkystation: add Rodentia and Vulpkanin
+  groupWhitelist: [Human, Reptilian, Slime, Arachnid, Vulpkanin, Thaven, Felinid, Rodentia] # Frontier: add Felinid Funkystation: add Rodentia and Vulpkanin
   sprites:
   - sprite: _Impstation/Mobs/Customization/scars.rsi
     state: leg_l_twisting
@@ -188,7 +188,7 @@
 - type: marking
   id: LegProstheticRight
   bodyPart: RLeg
-  groupWhitelist: [Human, Slime, Arachnid, Vulpkanin, Thaven] # Frontier: add Felinid Funkystation: add Rodentia and Vulpkanin
+  groupWhitelist: [Human, Slime, Arachnid, Vulpkanin, Thaven, Felinid, Rodentia] # Frontier: add Felinid Funkystation: add Rodentia and Vulpkanin
   coloring:
     default:
       type:
@@ -201,7 +201,7 @@
 - type: marking
   id: LegTwistingRight
   bodyPart: RLeg
-  groupWhitelist: [Human, Reptilian, Slime, Arachnid, Vulpkanin, Thaven] # Frontier: add Felinid Funkystation: add Rodentia and Vulpkanin
+  groupWhitelist: [Human, Reptilian, Slime, Arachnid, Vulpkanin, Thaven, Felinid, Rodentia] # Frontier: add Felinid Funkystation: add Rodentia and Vulpkanin
   sprites:
   - sprite: _Impstation/Mobs/Customization/scars.rsi
     state: leg_r_twisting
@@ -209,7 +209,7 @@
 - type: marking
   id: TorsoIncision
   bodyPart: Chest
-  groupWhitelist: [Human, Reptilian, Slime, Arachnid, Vulpkanin, Thaven] # Frontier: add Felinid Funkystation: add Rodentia and Vulpkanin
+  groupWhitelist: [Human, Reptilian, Slime, Arachnid, Vulpkanin, Thaven, Felinid, Rodentia] # Frontier: add Felinid Funkystation: add Rodentia and Vulpkanin
   sprites:
   - sprite: _Impstation/Mobs/Customization/scars.rsi
     state: torso_incision

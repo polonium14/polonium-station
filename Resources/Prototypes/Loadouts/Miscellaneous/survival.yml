@@ -30,9 +30,13 @@
     - Arachnid
     - Diona
     - Dwarf
+    - Felinid
+    - Harpy
     - Human
     - Moth
     - Reptilian
+    - Rodentia
+    - Thaven
     - Vulpkanin
     # macro below
     - Gray
@@ -93,8 +97,12 @@
     - Arachnid
     - Diona
     - Dwarf
+    - Felinid
+    - Harpy
     - Human
     - Reptilian
+    - Rodentia
+    - Thaven
     - Vulpkanin
     # macro below
     - Gray

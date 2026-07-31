@@ -12,7 +12,7 @@
 - type: marking
   id: BurqaSolid
   bodyPart: Hair
-  groupWhitelist: [Human, Slime, Thaven] # Frontier: add Felinid
+  groupWhitelist: [Human, Slime, Thaven, Felinid] # Frontier: add Felinid
   sprites:
   - sprite: _Impstation/Mobs/Customization/headcovers.rsi
     state: burqasolid
@@ -20,7 +20,7 @@
 - type: marking
   id: HijabFashionable
   bodyPart: Hair
-  groupWhitelist: [Human, Slime, Vulpkanin, Thaven] # Frontier: add elinid, Vulpkanin
+  groupWhitelist: [Human, Slime, Vulpkanin, Thaven, Felinid] # Frontier: add elinid, Vulpkanin
   sprites:
   - sprite: _Impstation/Mobs/Customization/headcovers.rsi
     state: hijabchic
@@ -36,7 +36,7 @@
 - type: marking
   id: Niqab
   bodyPart: Hair
-  groupWhitelist: [Human, Slime, Thaven] # Frontier: add Felinid
+  groupWhitelist: [Human, Slime, Thaven, Felinid] # Frontier: add Felinid
   sprites:
   - sprite: _Impstation/Mobs/Customization/headcovers.rsi
     state: niqab

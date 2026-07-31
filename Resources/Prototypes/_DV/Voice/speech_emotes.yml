@@ -1,0 +1,113 @@
+# Harpy mimicry emotes. Gated per-species via Speech.allowedEmotes rather than tags.
+
+- type: emote
+  id: Caw
+  name: Caw
+  category: Vocal
+  available: false
+  icon: _Goobstation/Interface/Emotes/caw.png
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: [caws.]
+  chatTriggers:
+  - caws
+  - caw
+  - cawing
+  - cawed
+
+- type: emote
+  id: Ring
+  name: Ring
+  category: Vocal
+  available: false
+  icon: _Goobstation/Interface/Emotes/ring.png
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: [rings.]
+  chatTriggers:
+  - ring
+  - rings
+  - ringing
+  - ringed
+
+- type: emote
+  id: Pew
+  name: Pew
+  category: Vocal
+  available: false
+  icon: _Goobstation/Interface/Emotes/pew.png
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: [pews.]
+  chatTriggers:
+  - pew
+  - pews
+
+- type: emote
+  id: Bang
+  name: Bang
+  category: Vocal
+  available: false
+  icon: _Goobstation/Interface/Emotes/bang.png
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: [bangs.]
+  chatTriggers:
+  - bangs
+  - bang
+  - banging
+  - banged
+
+- type: emote
+  id: Rev
+  name: Rev
+  category: Vocal
+  available: false
+  icon: _Goobstation/Interface/Emotes/rev.png
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: [revs.]
+  chatTriggers:
+  - revs
+  - rev
+  - revving
+  - revved
+
+- type: emote
+  id: Awoo
+  name: Awoo
+  category: Vocal
+  available: false
+  icon: _Goobstation/Interface/Emotes/awoo.png
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: [awoos.]
+  chatTriggers:
+  - awoo
+  - awoos
+  - awooing
+  - awooed

@@ -1,0 +1,29 @@
+// SPDX-FileCopyrightText: 2026 maciejwalendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Shared.Actions;
+
+namespace Content.Shared.Harpy;
+
+public sealed partial class HarpySingerSystem : EntitySystem
+{
+    [Dependency] private SharedActionsSystem _actionsSystem = default!;
+
+    public override void Initialize()
+    {
+        base.Initialize();
+        SubscribeLocalEvent<HarpySingerComponent, ComponentStartup>(OnStartup);
+        SubscribeLocalEvent<HarpySingerComponent, ComponentShutdown>(OnShutdown);
+    }
+
+    private void OnStartup(EntityUid uid, HarpySingerComponent component, ComponentStartup args)
+    {
+        _actionsSystem.AddAction(uid, ref component.MidiAction, component.MidiActionId);
+    }
+
+    private void OnShutdown(EntityUid uid, HarpySingerComponent component, ComponentShutdown args)
+    {
+        _actionsSystem.RemoveAction(uid, component.MidiAction);
+    }
+}

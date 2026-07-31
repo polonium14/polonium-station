@@ -1,0 +1,462 @@
+# Felinids are humans with cat ears and a tail, so they reuse the human body sprites
+# and only differ in their marking group, damage/temperature stats and cat abilities.
+
+- type: markingsGroup
+  parent: Undergarments
+  id: Felinid
+  limits:
+    enum.HumanoidVisualLayers.Hair:
+      limit: 1
+      required: false
+      weight: 1
+    enum.HumanoidVisualLayers.FacialHair:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.HeadTop:
+      limit: 1
+      required: true
+      default: [ FelinidEarsBasic ]
+    enum.HumanoidVisualLayers.Tail:
+      limit: 1
+      required: true
+      default: [ FelinidTailBasic ]
+    enum.HumanoidVisualLayers.Head:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.Snout:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.Chest:
+      limit: 4
+      required: false
+    enum.HumanoidVisualLayers.LArm:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.RArm:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.LHand:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.RHand:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.LLeg:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.RLeg:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.LFoot:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.RFoot:
+      limit: 2
+      required: false
+
+- type: entity
+  parent: BaseSpeciesAppearance
+  id: AppearanceFelinid
+  categories: [ HideSpawnMenu ]
+  name: felinid appearance
+  components:
+  - type: Inventory
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female
+  - type: InitialBody
+    organs:
+      Torso: OrganFelinidTorso
+      Head: OrganFelinidHead
+      ArmLeft: OrganFelinidArmLeft
+      ArmRight: OrganFelinidArmRight
+      HandRight: OrganFelinidHandRight
+      HandLeft: OrganFelinidHandLeft
+      LegLeft: OrganFelinidLegLeft
+      LegRight: OrganFelinidLegRight
+      FootLeft: OrganFelinidFootLeft
+      FootRight: OrganFelinidFootRight
+      Brain: OrganFelinidBrain
+      Eyes: OrganFelinidEyes
+      Tongue: OrganFelinidTongue
+      Appendix: OrganFelinidAppendix
+      Ears: OrganFelinidEars
+      Lungs: OrganFelinidLungs
+      Heart: OrganFelinidHeart
+      Stomach: OrganFelinidStomach
+      Liver: OrganFelinidLiver
+      Kidneys: OrganFelinidKidneys
+  - type: HumanoidProfile
+    species: Felinid
+
+- type: entity
+  parent:
+  - AppearanceFelinid
+  - BaseSpeciesMobOrganic
+  id: MobFelinid
+  name: Urist McFelinid
+  components:
+  - type: Fixtures
+    fixtures: # felinids are smaller and lighter than humans
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.28
+        density: 140
+        restitution: 0.0
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Damageable
+    damageModifierSet: Felinid
+  - type: Speech
+    speechSounds: Alto
+    speechVerb: Felinid
+    allowedEmotes: [ 'Meow', 'Mew', 'Purr', 'Hiss', 'Growl' ]
+  - type: Vocal
+    wilhelm: "/Audio/Voice/Felinid/cat_wilhelm.ogg"
+    emoteSounds: MaleFelinid
+  - type: TypingIndicator
+    proto: felinid
+  - type: MeleeWeapon
+    soundHit:
+      collection: Punch
+    animation: WeaponArcClaw
+    damage:
+      types:
+        Slash: 4
+        Piercing: 1
+  # felinids are hairless cats, so they take more cold damage
+  - type: Temperature
+    currentTemperature: 310.15
+    specificHeat: 46
+  - type: TemperatureDamage
+    heatDamageThreshold: 325
+    coldDamageThreshold: 285
+    coldDamage:
+      types:
+        Cold: 0.5 # per second, scales with temperature & other constants
+    heatDamage:
+      types:
+        Heat: 1.5 # per second, scales with temperature & other constants
+  - type: TemperatureSpeed
+    thresholds:
+      301: 0.8
+      295: 0.6
+      285: 0.4
+  # cats get thirsty
+  - type: Thirst
+    baseDecayRate: 0.12
+  - type: DamageOnHighSpeedImpact # landing on all fours
+    damage:
+      types:
+        Blunt: 1
+  - type: Stamina # felinids take 3 disabler shots to down
+    baseCritThreshold: 75
+  - type: Reactive
+    groups:
+      Flammable: [ Touch ]
+      Extinguish: [ Touch ]
+      Acidic: [ Touch, Ingestion ]
+    reactions:
+    - reagents: [ Water, SpaceCleaner ]
+      methods: [ Touch ]
+      effects:
+      - !type:WashCreamPie
+    - reagents: [ Water ]
+      methods: [ Touch ]
+      effects:
+      - !type:Emote
+        emote: Scream
+        probability: 0.2
+  - type: Felinid
+
+- type: entity
+  parent: OrganBaseOrganic
+  id: OrganFelinid
+  abstract: true
+  suffix: felinid
+
+- type: entity
+  id: OrganFelinidMetabolizer
+  abstract: true
+  components:
+  - type: Metabolizer
+    metabolizerTypes: [ Animal ]
+
+- type: entity
+  parent: OrganFelinid
+  id: OrganFelinidInternal
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/organs.rsi
+
+- type: entity
+  parent: OrganFelinid
+  id: OrganFelinidExternal
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/parts.rsi
+  - type: VisualOrgan
+    data:
+      sprite: Mobs/Species/Human/parts.rsi
+  - type: VisualOrganMarkings
+    markingData:
+      group: Felinid
+
+
+- type: entity
+  parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganFelinidExternal ]
+  id: OrganFelinidTorso
+  components:
+  - type: Damageable
+  - type: Injurable
+    damageContainer: Biological
+  - type: Nerve
+  - type: Woundable
+    integrityCap: 200
+    thresholds:
+      Healthy: 200
+      Minor: 190
+      Moderate: 180
+      Severe: 160
+      Critical: 140
+      Mangled: 125
+      Severed: 110
+
+- type: entity
+  parent: [ OrganBaseHeadSexed, OrganBaseHead, OrganFelinidExternal ]
+  id: OrganFelinidHead
+  components:
+  - type: VisualOrganMarkings
+    hideableLayers:
+    - enum.HumanoidVisualLayers.Hair
+    - enum.HumanoidVisualLayers.Snout
+    - enum.HumanoidVisualLayers.FacialHair
+    - enum.HumanoidVisualLayers.HeadTop
+  - type: Damageable
+  - type: Injurable
+    damageContainer: Biological
+  - type: Nerve
+  - type: Woundable
+    integrityCap: 125
+    thresholds:
+      Healthy: 125
+      Minor: 115
+      Moderate: 105
+      Severe: 85
+      Critical: 65
+      Mangled: 50
+      Severed: 35
+
+- type: entity
+  parent: [ OrganBaseArmLeft, OrganFelinidExternal ]
+  id: OrganFelinidArmLeft
+  components:
+  - type: Damageable
+  - type: Injurable
+    damageContainer: Biological
+  - type: Nerve
+  - type: Woundable
+    integrityCap: 80
+    thresholds:
+      Healthy: 80
+      Minor: 70
+      Moderate: 60
+      Severe: 40
+      Critical: 20
+      Mangled: 5
+      Severed: -10
+
+- type: entity
+  parent: [ OrganBaseArmRight, OrganFelinidExternal ]
+  id: OrganFelinidArmRight
+  components:
+  - type: Damageable
+  - type: Injurable
+    damageContainer: Biological
+  - type: Nerve
+  - type: Woundable
+    integrityCap: 80
+    thresholds:
+      Healthy: 80
+      Minor: 70
+      Moderate: 60
+      Severe: 40
+      Critical: 20
+      Mangled: 5
+      Severed: -10
+
+- type: entity
+  parent: [ OrganBaseHandLeft, OrganFelinidExternal ]
+  id: OrganFelinidHandLeft
+
+- type: entity
+  parent: [ OrganBaseHandRight, OrganFelinidExternal ]
+  id: OrganFelinidHandRight
+
+- type: entity
+  parent: [ OrganBaseLegLeft, OrganFelinidExternal ]
+  id: OrganFelinidLegLeft
+  components:
+  - type: Damageable
+  - type: Injurable
+    damageContainer: Biological
+  - type: Nerve
+  - type: Woundable
+    integrityCap: 80
+    thresholds:
+      Healthy: 80
+      Minor: 70
+      Moderate: 60
+      Severe: 40
+      Critical: 20
+      Mangled: 5
+      Severed: -10
+
+- type: entity
+  parent: [ OrganBaseLegRight, OrganFelinidExternal ]
+  id: OrganFelinidLegRight
+  components:
+  - type: Damageable
+  - type: Injurable
+    damageContainer: Biological
+  - type: Nerve
+  - type: Woundable
+    integrityCap: 80
+    thresholds:
+      Healthy: 80
+      Minor: 70
+      Moderate: 60
+      Severe: 40
+      Critical: 20
+      Mangled: 5
+      Severed: -10
+
+- type: entity
+  parent: [ OrganBaseFootLeft, OrganFelinidExternal ]
+  id: OrganFelinidFootLeft
+
+- type: entity
+  parent: [ OrganBaseFootRight, OrganFelinidExternal ]
+  id: OrganFelinidFootRight
+
+
+- type: entity
+  parent: [ OrganBaseBrain, OrganFelinidInternal ]
+  id: OrganFelinidBrain
+  components:
+  - type: OrganIntegrity
+    integrityCap: 30
+    integrityThresholds:
+      Normal: 30
+      Damaged: 6
+      Destroyed: 0
+
+- type: entity
+  parent: [ OrganBaseEyes, OrganFelinidInternal, OrganFelinidExternal ]
+  id: OrganFelinidEyes
+  components:
+  - type: VisualOrgan
+    data:
+      sprite: Mobs/Customization/eyes.rsi
+  - type: OrganIntegrity
+    integrityCap: 24
+    integrityThresholds:
+      Normal: 24
+      Damaged: 4
+      Destroyed: 0
+
+- type: entity
+  parent: [ OrganBaseTongue, OrganFelinidInternal ]
+  id: OrganFelinidTongue
+  components:
+  - type: OrganIntegrity
+    integrityCap: 30
+    integrityThresholds:
+      Normal: 30
+      Damaged: 6
+      Destroyed: 0
+
+- type: entity
+  parent: [ OrganBaseAppendix, OrganFelinidInternal ]
+  id: OrganFelinidAppendix
+  components:
+  - type: OrganIntegrity
+    integrityCap: 30
+    integrityThresholds:
+      Normal: 30
+      Damaged: 6
+      Destroyed: 0
+
+- type: entity
+  parent: [ OrganBaseEars, OrganFelinidInternal ]
+  id: OrganFelinidEars
+  components:
+  - type: OrganIntegrity
+    integrityCap: 30
+    integrityThresholds:
+      Normal: 30
+      Damaged: 6
+      Destroyed: 0
+
+- type: entity
+  parent: [ OrganBaseLungs, OrganFelinidInternal, OrganFelinidMetabolizer ]
+  id: OrganFelinidLungs
+  components:
+  - type: OrganIntegrity
+    integrityCap: 34
+    integrityThresholds:
+      Normal: 34
+      Damaged: 9
+      Destroyed: 0
+
+- type: entity
+  parent: [ OrganBaseHeart, OrganFelinidInternal, OrganFelinidMetabolizer ]
+  id: OrganFelinidHeart
+  components:
+  - type: OrganIntegrity
+    integrityCap: 34
+    integrityThresholds:
+      Normal: 34
+      Damaged: 9
+      Destroyed: 0
+
+- type: entity
+  parent: [ OrganBaseStomach, OrganFelinidInternal, OrganFelinidMetabolizer ]
+  id: OrganFelinidStomach
+  components:
+  - type: OrganIntegrity
+    integrityCap: 88
+    integrityThresholds:
+      Normal: 88
+      Damaged: 17
+      Destroyed: 0
+
+- type: entity
+  parent: [ OrganBaseLiver, OrganFelinidInternal, OrganFelinidMetabolizer ]
+  id: OrganFelinidLiver
+  components:
+  - type: OrganIntegrity
+    integrityCap: 42
+    integrityThresholds:
+      Normal: 42
+      Damaged: 12
+      Destroyed: 0
+
+- type: entity
+  parent: [ OrganBaseKidneys, OrganFelinidInternal, OrganFelinidMetabolizer ]
+  id: OrganFelinidKidneys
+  components:
+  - type: OrganIntegrity
+    integrityCap: 42
+    integrityThresholds:
+      Normal: 42
+      Damaged: 12
+      Destroyed: 0

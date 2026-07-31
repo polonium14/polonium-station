@@ -1,0 +1,55 @@
+- type: marking
+  id: FelinidTailBasic
+  bodyPart: Tail
+  groupWhitelist: [ Felinid ]
+  sprites:
+  - sprite: Mobs/Customization/Felinid/felinid_tails.rsi
+    state: basic_tail_tip
+  - sprite: Mobs/Customization/Felinid/felinid_tails.rsi
+    state: basic_tail_stripes_even
+  - sprite: Mobs/Customization/Felinid/felinid_tails.rsi
+    state: basic_tail_stripes_odd
+
+- type: marking
+  id: FelinidTailBasicWithBow
+  bodyPart: Tail
+  groupWhitelist: [ Felinid ]
+  sprites:
+  - sprite: Mobs/Customization/Felinid/felinid_tails.rsi
+    state: basic_tail_tip
+  - sprite: Mobs/Customization/Felinid/felinid_tails.rsi
+    state: basic_tail_stripes_even
+  - sprite: Mobs/Customization/Felinid/felinid_tails.rsi
+    state: basic_tail_stripes_odd
+  - sprite: Mobs/Customization/Felinid/felinid_tails.rsi
+    state: basic_bow
+
+- type: marking
+  id: FelinidTailBasicWithBell
+  bodyPart: Tail
+  groupWhitelist: [ Felinid ]
+  sprites:
+  - sprite: Mobs/Customization/Felinid/felinid_tails.rsi
+    state: basic_tail_tip
+  - sprite: Mobs/Customization/Felinid/felinid_tails.rsi
+    state: basic_tail_stripes_even
+  - sprite: Mobs/Customization/Felinid/felinid_tails.rsi
+    state: basic_tail_stripes_odd
+  - sprite: Mobs/Customization/Felinid/felinid_tails.rsi
+    state: basic_bell
+
+- type: marking
+  id: FelinidTailBasicWithBowAndBell
+  bodyPart: Tail
+  groupWhitelist: [ Felinid ]
+  sprites:
+  - sprite: Mobs/Customization/Felinid/felinid_tails.rsi
+    state: basic_tail_tip
+  - sprite: Mobs/Customization/Felinid/felinid_tails.rsi
+    state: basic_tail_stripes_even
+  - sprite: Mobs/Customization/Felinid/felinid_tails.rsi
+    state: basic_tail_stripes_odd
+  - sprite: Mobs/Customization/Felinid/felinid_tails.rsi
+    state: basic_bow
+  - sprite: Mobs/Customization/Felinid/felinid_tails.rsi
+    state: basic_bell

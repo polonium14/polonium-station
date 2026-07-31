@@ -329,3 +329,27 @@
   coefficients:
     Heat: 1.15
     Cold: 0.85
+
+# Felinids are frail
+- type: damageModifierSet
+  id: Felinid
+  coefficients:
+    Blunt: 1.15
+    Slash: 1.15
+    Piercing: 1.15
+
+# Rodentia are fragile, especially to blunt
+- type: damageModifierSet
+  id: Rodentia
+  coefficients:
+    Blunt: 1.3
+    Slash: 1.15
+    Piercing: 1.15
+
+# Harpies are light-boned
+- type: damageModifierSet
+  id: Harpy
+  coefficients:
+    Blunt: 1.15
+    Slash: 1.15
+    Piercing: 1.15

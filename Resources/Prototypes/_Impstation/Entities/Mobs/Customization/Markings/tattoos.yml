@@ -8,7 +8,7 @@
 - type: marking
   id: ChestCutHere
   bodyPart: Chest
-  groupWhitelist: [Human, Arachnid, Slime, Reptilian, Thaven] # Frontier: add Felinid
+  groupWhitelist: [Human, Arachnid, Slime, Reptilian, Thaven, Felinid] # Frontier: add Felinid
   coloring:
     default:
       type:
@@ -21,7 +21,7 @@
 - type: marking
   id: ArmDollJointsTattooLeft
   bodyPart: LArm
-  groupWhitelist: [Human, Arachnid, Slime, Reptilian, Thaven] # Frontier: add Felinid
+  groupWhitelist: [Human, Arachnid, Slime, Reptilian, Thaven, Felinid] # Frontier: add Felinid
   coloring:
     default:
       type:
@@ -34,7 +34,7 @@
 - type: marking
   id: ArmDollJointsTattooRight
   bodyPart: RArm
-  groupWhitelist: [Human, Arachnid, Slime, Reptilian, Thaven] # Frontier: add Felinid
+  groupWhitelist: [Human, Arachnid, Slime, Reptilian, Thaven, Felinid] # Frontier: add Felinid
   coloring:
     default:
       type:
@@ -47,7 +47,7 @@
 - type: marking
   id: HandDollJointsTattooLeft
   bodyPart: LHand
-  groupWhitelist: [Human, Arachnid, Slime, Reptilian, Thaven] # Frontier: add Felinid
+  groupWhitelist: [Human, Arachnid, Slime, Reptilian, Thaven, Felinid] # Frontier: add Felinid
   coloring:
     default:
       type:
@@ -60,7 +60,7 @@
 - type: marking
   id: HandDollJointsTattooRight
   bodyPart: RHand
-  groupWhitelist: [Human, Arachnid, Slime, Reptilian, Thaven] # Frontier: add Felinid
+  groupWhitelist: [Human, Arachnid, Slime, Reptilian, Thaven, Felinid] # Frontier: add Felinid
   coloring:
     default:
       type:
@@ -73,7 +73,7 @@
 - type: marking
   id: LegDollJointsTattooLeft
   bodyPart: LLeg
-  groupWhitelist: [Human, Arachnid, Slime, Reptilian, Thaven] # Frontier: add Felinid
+  groupWhitelist: [Human, Arachnid, Slime, Reptilian, Thaven, Felinid] # Frontier: add Felinid
   coloring:
     default:
       type:
@@ -86,7 +86,7 @@
 - type: marking
   id: LegDollJointsTattooRight
   bodyPart: RLeg
-  groupWhitelist: [Human, Arachnid, Slime, Reptilian, Thaven] # Frontier: add Felinid
+  groupWhitelist: [Human, Arachnid, Slime, Reptilian, Thaven, Felinid] # Frontier: add Felinid
   coloring:
     default:
       type:
@@ -99,7 +99,7 @@
 - type: marking
   id: FootDollJointsTattooLeft
   bodyPart: LFoot
-  groupWhitelist: [Human, Arachnid, Slime, Thaven] # Frontier: add Felinid
+  groupWhitelist: [Human, Arachnid, Slime, Thaven, Felinid] # Frontier: add Felinid
   coloring:
     default:
       type:
@@ -112,7 +112,7 @@
 - type: marking
   id: FootDollJointsTattooRight
   bodyPart: RFoot
-  groupWhitelist: [Human, Arachnid, Slime, Thaven] # Frontier: add Felinid
+  groupWhitelist: [Human, Arachnid, Slime, Thaven, Felinid] # Frontier: add Felinid
   coloring:
     default:
       type:

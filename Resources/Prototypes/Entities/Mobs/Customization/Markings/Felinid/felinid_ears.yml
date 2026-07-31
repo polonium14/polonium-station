@@ -1,0 +1,81 @@
+- type: marking
+  id: FelinidEarsBasic
+  bodyPart: HeadTop
+  groupWhitelist: [ Felinid ]
+  sprites:
+  - sprite: Mobs/Customization/Felinid/felinid_ears.rsi
+    state: basic_outer
+  - sprite: Mobs/Customization/Felinid/felinid_ears.rsi
+    state: basic_inner
+
+- type: marking
+  id: FelinidEarsCurled
+  bodyPart: HeadTop
+  groupWhitelist: [ Felinid ]
+  sprites:
+  - sprite: Mobs/Customization/Felinid/felinid_ears.rsi
+    state: curled_outer
+  - sprite: Mobs/Customization/Felinid/felinid_ears.rsi
+    state: curled_inner
+
+- type: marking
+  id: FelinidEarsDroopy
+  bodyPart: HeadTop
+  groupWhitelist: [ Felinid ]
+  sprites:
+  - sprite: Mobs/Customization/Felinid/felinid_ears.rsi
+    state: droopy_outer
+  - sprite: Mobs/Customization/Felinid/felinid_ears.rsi
+    state: droopy_inner
+
+- type: marking
+  id: FelinidEarsFuzzy
+  bodyPart: HeadTop
+  groupWhitelist: [ Felinid ]
+  sprites:
+  - sprite: Mobs/Customization/Felinid/felinid_ears.rsi
+    state: basic_outer
+  - sprite: Mobs/Customization/Felinid/felinid_ears.rsi
+    state: fuzzy_inner
+
+- type: marking
+  id: FelinidEarsStubby
+  bodyPart: HeadTop
+  groupWhitelist: [ Felinid ]
+  sprites:
+  - sprite: Mobs/Customization/Felinid/felinid_ears.rsi
+    state: stubby_outer
+  - sprite: Mobs/Customization/Felinid/felinid_ears.rsi
+    state: stubby_inner
+
+- type: marking
+  id: FelinidEarsTall
+  bodyPart: HeadTop
+  groupWhitelist: [ Felinid ]
+  sprites:
+  - sprite: Mobs/Customization/Felinid/felinid_ears.rsi
+    state: tall_outer
+  - sprite: Mobs/Customization/Felinid/felinid_ears.rsi
+    state: tall_inner
+  - sprite: Mobs/Customization/Felinid/felinid_ears.rsi
+    state: tall_fuzz
+
+- type: marking
+  id: FelinidEarsTorn
+  bodyPart: HeadTop
+  groupWhitelist: [ Felinid ]
+  sprites:
+  - sprite: Mobs/Customization/Felinid/felinid_ears.rsi
+    state: torn_outer
+  - sprite: Mobs/Customization/Felinid/felinid_ears.rsi
+    state: torn_inner
+
+- type: marking
+  id: FelinidEarsWide
+  bodyPart: HeadTop
+  groupWhitelist: [ Felinid ]
+  sprites:
+  - sprite: Mobs/Customization/Felinid/felinid_ears.rsi
+    state: wide_outer
+  - sprite: Mobs/Customization/Felinid/felinid_ears.rsi
+    state: wide_inner
