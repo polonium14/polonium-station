@@ -6,7 +6,7 @@
   requirements:
   - !type:RoleTimeRequirement
     role: JobBorg
-    time: 2.5h
+    time: 5h
   weight: 10
   icon: JobIconStationAi
   supervisors: job-supervisors-rd

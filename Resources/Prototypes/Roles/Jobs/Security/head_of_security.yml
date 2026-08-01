@@ -6,16 +6,15 @@
   requirements:
     - !type:RoleTimeRequirement
       role: JobWarden
-      time: 1.5h
+      time: 3h
     - !type:RoleTimeRequirement
       role: JobDetective
-      time: 0.5h # knowing how to use the tools is important
-    - !type:RoleTimeRequirement
-      role: JobSecurityOfficer
-      time: 2.5h
+      time: 1h
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 5h
+      time: 30h
+    - !type:OverallPlaytimeRequirement
+      time: 20h
   weight: 10
   startingGear: HoSGear
   icon: "JobIconHeadOfSecurity"
