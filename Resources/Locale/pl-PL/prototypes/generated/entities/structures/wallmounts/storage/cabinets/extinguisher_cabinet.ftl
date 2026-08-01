@@ -1,11 +1,11 @@
-ent-ExtinguisherCabinet = extinguisher cabinet
-    .desc = A small wall mounted cabinet designed to hold a fire extinguisher.
+ent-ExtinguisherCabinet = szafka na gaśnice
+    .desc = Mała naścienna szafka przeznaczona do przechowywania gaśnicy. Gaśnica w środku prawdopodobnie pamięta czasy, gdy kontrole bezpieczeństwa były traktowane poważnie.
 ent-ExtinguisherCabinetOpen = { ent-ExtinguisherCabinet }
-    .suffix = Open
+    .suffix = Otwarte
     .desc = { ent-ExtinguisherCabinet.desc }
 ent-ExtinguisherCabinetFilled = { ent-ExtinguisherCabinet }
-    .suffix = Filled
+    .suffix = Wypełnione
     .desc = { ent-ExtinguisherCabinet.desc }
 ent-ExtinguisherCabinetFilledOpen = { ent-ExtinguisherCabinetFilled }
-    .suffix = Filled, Open
+    .suffix = Wypełnione, Otwarte
     .desc = { ent-ExtinguisherCabinetFilled.desc }

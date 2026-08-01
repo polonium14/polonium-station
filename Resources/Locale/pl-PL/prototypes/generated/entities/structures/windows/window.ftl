@@ -1,5 +1,5 @@
-ent-BaseWindowStructure = window
-    .desc = Don't smudge up the glass down there.
+ent-BaseWindowStructure = okno
+    .desc = Nie rozmazuj szkła tam na dole.
 ent-Window = { ent-BaseWindowStructure }
     .desc = { ent-BaseWindowStructure.desc }
 ent-TintedWindow = przyciemnione okno
@@ -8,7 +8,7 @@ ent-BaseRCDResistant = { "" }
     .desc = { "" }
 ent-WindowRCDResistant = { ent-Window }
     .desc = { ent-Window.desc }
-ent-BaseWindowStructureDirectional = directional window
+ent-BaseWindowStructureDirectional = kierunkowe okno
     .desc = Don't smudge up the glass down there.
 ent-WindowDirectional = { ent-BaseWindowStructureDirectional }
     .desc = { ent-BaseWindowStructureDirectional.desc }
