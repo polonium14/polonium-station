@@ -30,3 +30,34 @@
       right:
       - state: hotdog-inhand-right
 
+- type: entity
+  name: ćmohotdog
+  parent: FoodBurgerBase
+  id: FoodMothDog
+  description: Mimo tej nazwy, ten hot dog nie jest zrobiony z ćmy.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - bun
+    - cotton
+  - type: Sprite
+    sprite: _Polonium/Objects/Cosumable/Food/burger.rsi
+    state: mothdog
+  - type: Solution
+    solution:
+      maxVol: 15
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 10
+      - ReagentId: Protein
+        Quantity: 5
+  - type: Tag
+    tags:
+    - ClothMade
+  - type: Item
+    sprite: _Polonium/Objects/Cosumable/Food/burger.rsi
+    inhandVisuals:
+      left:
+      - state: mothdog-inhand-left
+      right:
+      - state: mothdog-inhand-right

@@ -43,3 +43,55 @@
     refineResult:
     - id: FoodMeatParowka
       amount: 4
+
+- type: entity
+  name: ćmoparówka
+  parent: FoodMeatBase
+  id: FoodMeatMoffParowa
+  description: Bo ćmy też chcą skosztować parówek.
+  components:
+  - type: Tag
+    tags:
+    - Raw
+    - ClothMade
+  - type: Sprite
+    sprite: _Polonium/Objects/Cosumable/Food/meat.rsi
+    state: moffparowa
+  - type: Edible
+    requiresSpecialDigestion: true
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Fiber
+        Quantity: 2
+      - ReagentId: UncookedAnimalProteins
+        Quantity: 2
+      - ReagentId: Fat
+        Quantity: 2
+
+- type: entity
+  name: pęto ćmoparówek
+  parent: [FoodMeatBase, BaseSlicingRefinableFood]
+  id: FoodMeatPetoMoffParowek
+  description: Pęto ćmoparówek, bzz!
+  components:
+  - type: Tag
+    tags:
+    - Raw
+    - ClothMade
+  - type: Sprite
+    sprite: _Polonium/Objects/Cosumable/Food/meat.rsi
+    state: petomoffparowek
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Fiber
+        Quantity: 8
+      - ReagentId: UncookedAnimalProteins
+        Quantity: 8
+      - ReagentId: Fat
+        Quantity: 8
+  - type: ToolRefinable
+    refineResult:
+    - id: FoodMeatMoffParowa
+      amount: 4
