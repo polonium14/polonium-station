@@ -258,10 +258,10 @@
   - type: CableVisualizer
     statePrefix: excable_
   - type: Explosive
-    explosionType: DemolitionCharge
-    totalIntensity: 10
-    intensitySlope: 5
-    maxIntensity: 5
+    explosionType: StructuralCharge # polonium change so it destroys reinforced walls, obliterates normall walls but stays harmless-ish otherwise (unless you lay a corridor full of it, than it can crit you and deal significant dmg to a nukie, cant wait for traps during nukeops)
+    totalIntensity: 15 
+    intensitySlope: 6 
+    maxIntensity: 15 # Won't destry a reinforced wall by its own, but will (make it into a grider) if there is a cable both on top and next to the wall - as is should be
     canCreateVacuum: false
   - type: ExplosionEffect # Funky RMC Explosions
   - type: ExplodeOnTrigger
