@@ -1,26 +1,4 @@
 ﻿Entries:
-- author: Princess-Cheeseballs
-  changes:
-  - message: Longarms in the uplink are cheaper but don't come with extra ammo.
-    type: Tweak
-  - message: Syndicate knuckle dusters are now 4 TC
-    type: Tweak
-  - message: Shotgun slugs in the uplink are now 2 TC
-    type: Tweak
-  - message: China Lake's grenades now fly slower in the air
-    type: Tweak
-  - message: Python has been removed from the uplink
-    type: Remove
-  id: 9425
-  time: '2026-01-19T23:06:47.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42468
-- author: ahandleman
-  changes:
-  - message: Fixed seeds being unique after sampling.
-    type: Fix
-  id: 9426
-  time: '2026-01-20T01:41:24.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42527
 - author: sowelipililimute
   changes:
   - message: The time-locked loadout towels have been removed.
@@ -4094,3 +4072,19 @@
   id: 9924
   time: '2026-07-31T15:58:07.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/855
+- author: Koilak
+  changes:
+  - message: Kabel Wybuchowy (Explosive Cord)
+    type: Fix
+  id: 9925
+  time: '2026-08-02T13:57:22.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/863
+- author: Koilak
+  changes:
+  - message: "Pa\u0142ki Og\u0142uszaj\u0105ce dla ochrony"
+    type: Add
+  - message: "Pa\u0142ki Policyjne dla ochrony"
+    type: Remove
+  id: 9926
+  time: '2026-08-02T13:54:39.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/862
