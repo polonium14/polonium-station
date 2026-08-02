@@ -43,6 +43,8 @@
   - type: Sprite
     sprite: _Polonium/Objects/Cosumable/Food/burger.rsi
     state: mothdog
+  - type: Edible
+    requiresSpecialDigestion: true
   - type: Solution
     solution:
       maxVol: 15
