@@ -63,11 +63,9 @@
     solution:
       reagents:
       - ReagentId: Fiber
-        Quantity: 2
-      - ReagentId: UncookedAnimalProteins
-        Quantity: 2
+        Quantity: 5
       - ReagentId: Fat
-        Quantity: 2
+        Quantity: 5
 
 - type: entity
   name: pęto ćmoparówek
@@ -82,15 +80,15 @@
   - type: Sprite
     sprite: _Polonium/Objects/Cosumable/Food/meat.rsi
     state: petomoffparowek
+  - type: Edible
+    requiresSpecialDigestion: true
   - type: Solution
     solution:
       reagents:
       - ReagentId: Fiber
-        Quantity: 8
-      - ReagentId: UncookedAnimalProteins
-        Quantity: 8
+        Quantity: 20
       - ReagentId: Fat
-        Quantity: 8
+        Quantity: 20
   - type: ToolRefinable
     refineResult:
     - id: FoodMeatMoffParowa
