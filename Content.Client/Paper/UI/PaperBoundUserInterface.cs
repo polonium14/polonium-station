@@ -40,6 +40,18 @@ public sealed class PaperBoundUserInterface : BoundUserInterface
         _window?.Populate((PaperBoundUserInterfaceState) state);
     }
 
+    /// <summary>
+    ///     Enters signature placement mode: shows a draggable, scalable preview
+    ///     of <paramref name="info"/> that the player positions before committing.
+    /// </summary>
+    public void BeginSignaturePlacement(EntityUid pen, StampDisplayInfo info)
+    {
+        _window?.BeginSignaturePlacement(info, (position, scale, rotation) =>
+        {
+            SendMessage(new PaperSignMessage(EntMan.GetNetEntity(pen), position, scale, rotation));
+        });
+    }
+
     private void InputOnTextEntered(string text)
     {
         SendMessage(new PaperInputTextMessage(text));

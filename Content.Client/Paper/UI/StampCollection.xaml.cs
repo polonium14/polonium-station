@@ -50,35 +50,43 @@ public sealed partial class StampCollection : Container
         var r = (finalSize * 0.5f).Length();
         var dtheta = -MathHelper.DegreesToRadians(90);
         var theta0 = random.Next(0, 3) * dtheta;
-        var thisCenter = PixelSizeBox.TopLeft + finalSize * UIScale * 0.5f;
+        var thisCenter = PixelSizeBox.TopLeft + finalSize * UIScale * new Vector2(0.5f, 0.75f);
 
-        // Here's where we lay out the stamps. The first stamp goes in the
-        // center of this container; subsequent stamps will chose an angle
-        // (theta) to place the center of the stamp. The stamp is moved out
-        // as far as it can in that direction, taking the size and
-        // orientation of the stamp into account.
+        var controlBox = new UIBox2(PixelSizeBox.TopLeft, PixelSizeBox.TopLeft + finalSize * UIScale);
+        var autoIndex = 0;
         for (var i = 0; i < _stamps.Count; i++)
         {
-            var stampOrientation = MathHelper.DegreesToRadians((random.NextFloat() - 0.5f) * 10.0f) ;
-            _stamps[i].Orientation = stampOrientation;
+            var stamp = _stamps[i];
+            Vector2 childCenter;
+            float stampOrientation;
 
-            var theta = theta0 + dtheta * 0.5f + dtheta * i + (i > 4 ? MathF.Log(1 + i / 4) * dtheta : 0); // There is probably a better way to lay these out, to minimize overlaps
-            var childCenterOnCircle = thisCenter;
-            if (i > 0)
+            if (stamp.HasExplicitTransform)
             {
-                // First stamp can go in the center. Subsequent stamps have to find space.
-                childCenterOnCircle += new Vector2(MathF.Cos(theta), MathF.Sin(theta)) * r * UIScale;
+                stampOrientation = stamp.Orientation;
+                childCenter = PixelSizeBox.TopLeft + finalSize * UIScale * stamp.NormalizedPosition;
+            }
+            else
+            {
+                stampOrientation = MathHelper.DegreesToRadians((random.NextFloat() - 0.5f) * 10.0f);
+                stamp.Orientation = stampOrientation;
+
+                var theta = theta0 + dtheta * 0.5f + dtheta * autoIndex + (autoIndex > 4 ? MathF.Log(1 + autoIndex / 4) * dtheta : 0); // There is probably a better way to lay these out, to minimize overlaps
+                childCenter = thisCenter;
+                if (autoIndex > 0)
+                {
+                    childCenter += new Vector2(MathF.Cos(theta), MathF.Sin(theta)) * r * UIScale;
+                }
+                autoIndex++;
             }
 
-            var childHeLocal = _stamps[i].DesiredPixelSize * 0.5f;
+            var childHeLocal = stamp.DesiredPixelSize * 0.5f;
             var c = childHeLocal * MathF.Abs(MathF.Cos(stampOrientation));
             var s = childHeLocal * MathF.Abs(MathF.Sin(stampOrientation));
             var childHePage = new Vector2(c.X + s.Y, s.X + c.Y);
-            var controlBox = new UIBox2(PixelSizeBox.TopLeft, PixelSizeBox.TopLeft + finalSize * UIScale);
-            var clampedCenter = Clamp(Shrink(controlBox, childHePage), childCenterOnCircle);
+            var clampedCenter = Clamp(Shrink(controlBox, childHePage), childCenter);
             var finalPosition = clampedCenter - childHePage;
             var finalPositionAsInt = new Vector2i((int)finalPosition.X, (int)finalPosition.Y);
-            _stamps[i].ArrangePixel(new UIBox2i(finalPositionAsInt, finalPositionAsInt + _stamps[i].DesiredPixelSize));
+            stamp.ArrangePixel(new UIBox2i(finalPositionAsInt, finalPositionAsInt + stamp.DesiredPixelSize));
         }
 
         return finalSize;

@@ -1,3 +1,4 @@
+using System.Numerics;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
@@ -55,6 +56,32 @@ public sealed partial class PaperComponent : Component
         public PaperInputTextMessage(string text)
         {
             Text = text;
+        }
+    }
+
+    /// <summary>
+    ///     Sent from the client to commit a manually-placed signature after the
+    ///     player has positioned and scaled it in the placement UI. The server
+    ///     recomputes the signer's name/color/font itself; only the transform
+    ///     is taken from the client (and clamped).
+    /// </summary>
+    [Serializable, NetSerializable]
+    public sealed class PaperSignMessage : BoundUserInterfaceMessage
+    {
+        public readonly NetEntity Pen;
+
+        public readonly Vector2 Position;
+
+        public readonly float Scale;
+
+        public readonly float Rotation;
+
+        public PaperSignMessage(NetEntity pen, Vector2 position, float scale, float rotation)
+        {
+            Pen = pen;
+            Position = position;
+            Scale = scale;
+            Rotation = rotation;
         }
     }
 

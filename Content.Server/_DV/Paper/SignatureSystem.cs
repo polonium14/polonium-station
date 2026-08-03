@@ -1,9 +1,12 @@
-using Content.Shared.Crayon;
+using System.Numerics;
 using Content.Shared._DV.Paper;
+using Content.Shared.Interaction;
 using Content.Shared.Paper;
 using Content.Shared.Popups;
+using Robust.Server.GameObjects;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Player;
+using static Content.Shared.Paper.PaperComponent;
 
 namespace Content.Server._DV.Paper;
 
@@ -12,50 +15,60 @@ public sealed partial class SignatureSystem : SharedSignatureSystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly PaperSystem _paper = default!;
+    [Dependency] private readonly SharedInteractionSystem _interaction = default!;
+    [Dependency] private readonly UserInterfaceSystem _ui = default!;
+
+    private const float MinScale = 0.25f;
+    private const float MaxScale = 4.0f;
 
     public override void Initialize()
     {
         base.Initialize();
 
-        SubscribeLocalEvent<SignatureWriterComponent, SignAttemptEvent>(OnSignAttempt);
+        SubscribeLocalEvent<PaperComponent, PaperSignMessage>(OnPaperSign);
     }
 
-    private void OnSignAttempt(Entity<SignatureWriterComponent> ent, ref SignAttemptEvent args)
+    protected override void StartSignaturePlacement(Entity<PaperComponent> paper, EntityUid signer, EntityUid pen)
     {
-        if (args.Cancelled)
+        if (!TryComp<ActorComponent>(signer, out var actor))
             return;
 
-        var paper = args.Paper;
-        var signer = args.User;
-        var pen = args.Pen;
-        var paperComp = args.Paper.Comp;
-        var signatureComp = ent.Comp;
+        // Show the document, then tell this one client to enter placement mode.
+        _ui.OpenUi(paper.Owner, PaperUiKey.Key, signer);
+        RaiseNetworkEvent(new PaperSignRequestEvent(GetNetEntity(paper.Owner), GetNetEntity(pen)), actor.PlayerSession);
+    }
 
-        var signatureName = DetermineEntitySignature(signer);
-        var signatureColor = signatureComp.Color;
-        var signatureFont = "Default"; // Noto Sans as fallback
+    private void OnPaperSign(Entity<PaperComponent> paper, ref PaperSignMessage args)
+    {
+        var signer = args.Actor;
 
-        if (signatureComp.Font is { } penFont)
-            signatureFont = penFont;
+        if (!TryGetEntity(args.Pen, out var pen))
+            return;
 
-        if (TryComp<CrayonComponent>(pen, out var crayon))
-            signatureColor = crayon.Color;
+        if (!TryComp<SignatureWriterComponent>(pen, out var signatureComp))
+            return;
 
-        var stampInfo = new StampDisplayInfo()
+        // Re-validate: the signer must still be able to reach the paper and the pen.
+        if (!_interaction.InRangeUnobstructed(signer, paper.Owner) ||
+            !_interaction.InRangeUnobstructed(signer, pen.Value))
+            return;
+
+        // Give other systems a chance to cancel (e.g. tamper-proofing).
+        var attempt = new SignAttemptEvent(paper, signer, pen.Value);
+        RaiseLocalEvent(pen.Value, ref attempt);
+        if (attempt.Cancelled)
+            return;
+
+        // The name/color/font are computed server-side; only the transform is
+        // taken from the client (and clamped).
+        var stampInfo = BuildSignatureInfo(signer, pen.Value, signatureComp);
+        stampInfo.Position = Vector2.Clamp(args.Position, Vector2.Zero, Vector2.One);
+        stampInfo.Scale = Math.Clamp(args.Scale, MinScale, MaxScale);
+        stampInfo.Rotation = args.Rotation;
+
+        if (!_paper.TryStamp(paper, stampInfo, SignatureStampState))
         {
-            StampedName = signatureName,
-            StampedColor = signatureColor,
-            HasIcon = false,
-            StampFont = signatureFont
-        };
-
-        // TODO: remove redunant contains check when TryStamp isnt a meme
-        if (paperComp.StampedBy.Contains(stampInfo) || !_paper.TryStamp(paper, stampInfo, SignatureStampState))
-        {
-            // Show an error popup.
             _popup.PopupEntity(Loc.GetString("paper-signed-failure", ("target", paper.Owner)), signer, signer, PopupType.SmallCaution);
-
-            args.Cancelled = true;
             return;
         }
 
@@ -66,6 +79,8 @@ public sealed partial class SignatureSystem : SharedSignatureSystem
         var signedSelfMessage = Loc.GetString("paper-signed-self", ("target", paper.Owner));
         _popup.PopupEntity(signedSelfMessage, signer, signer);
 
-        _audio.PlayEntity(paperComp.Sound, Filter.Pvs(signer), signer, true);
+        _audio.PlayEntity(paper.Comp.Sound, Filter.Pvs(signer), signer, true);
+
+        _paper.UpdateUserInterface(paper);
     }
 }

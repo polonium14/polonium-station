@@ -14,6 +14,7 @@
 //
 // SPDX-License-Identifier: MIT
 
+using System.Numerics;
 using Robust.Shared.Serialization;
 using Robust.Shared.Audio;
 
@@ -47,6 +48,27 @@ public partial struct StampDisplayInfo
 
     [DataField("hasIcon")]
     public bool HasIcon = true; // imp
+
+    /// <summary>
+    ///     Normalized [0,1] position within the stamp display area where this
+    ///     mark was placed. Null means "use the procedural auto-layout".
+    ///     Used by manually-placed signatures.
+    /// </summary>
+    [DataField("position")]
+    public Vector2? Position;
+
+    /// <summary>
+    ///     Scale multiplier applied to the mark's natural size. Null means 1x.
+    /// </summary>
+    [DataField("scale")]
+    public float? Scale;
+
+    /// <summary>
+    ///     Explicit orientation in radians. Null means the auto-layout picks a
+    ///     small random tilt.
+    /// </summary>
+    [DataField("rotation")]
+    public float? Rotation;
 };
 
 [RegisterComponent]

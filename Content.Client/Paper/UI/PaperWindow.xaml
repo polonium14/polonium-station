@@ -24,14 +24,18 @@
                         </BoxContainer>
                         <TextureButton Name="FooterImage" HorizontalAlignment="Center" VerticalAlignment="Top" MouseFilter="Ignore"/>
                     </BoxContainer>
-                    <paper:StampCollection Name="StampDisplay" VerticalAlignment="Bottom" Margin="6"/>
+                    <paper:StampCollection Name="StampDisplay" VerticalExpand="True" HorizontalExpand="True" Margin="6"/>
+                    <paper:SignaturePlacementControl Name="SignaturePlacement" VerticalExpand="True" HorizontalExpand="True" MinSize="150 150" Margin="6"/>
 
                 </PanelContainer>
             </ScrollContainer>
         </PanelContainer>
-        <!-- Bottom buttons for editing -->
         <BoxContainer Name="EditButtons" Orientation="Horizontal" HorizontalAlignment="Right" Margin="6">
             <Button Name="SaveButton" />
+        </BoxContainer>
+        <BoxContainer Name="SignButtons" Orientation="Horizontal" HorizontalAlignment="Right" Margin="6" Visible="False">
+            <Button Name="SignCancelButton" StyleClasses="OpenLeft" />
+            <Button Name="SignConfirmButton" StyleClasses="OpenRight" />
         </BoxContainer>
     </BoxContainer>
 </paper:PaperWindow>

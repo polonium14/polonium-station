@@ -32,6 +32,12 @@ public sealed partial class StampWidget : PanelContainer
     /// Imp edit, determines whether stamp noise is applied on the shader
     public bool StampNoise = true;
 
+    private const int BaseSignatureFontSize = 40;
+
+    public bool HasExplicitTransform;
+
+    public Vector2 NormalizedPosition;
+
     public float Orientation
     {
         get => StampedByLabel.Orientation;
@@ -46,6 +52,18 @@ public sealed partial class StampWidget : PanelContainer
             var prototypes = IoCManager.Resolve<IPrototypeManager>();
             var icon = value.StampLargeIcon;
             var hasIcon = value.HasIcon;
+            var scale = value.Scale ?? 1.0f;
+
+            if (value.Position is { } pos)
+            {
+                HasExplicitTransform = true;
+                NormalizedPosition = pos;
+            }
+            if (value.Rotation is { } rot)
+            {
+                HasExplicitTransform = true;
+                Orientation = rot;
+            }
 
             if (hasIcon)
             {
@@ -58,8 +76,8 @@ public sealed partial class StampWidget : PanelContainer
                             "/Textures/_Impstation/Interface/Paper/Stamps/" + icon + ".png");
 
                     // make stamps 50% larger to better match the original stamp sizes
-                    var width = (int)(borderImage.Texture.Width * 1.5);
-                    var height = (int)(borderImage.Texture.Height * 1.5);
+                    var width = (int)(borderImage.Texture.Width * 1.5 * scale);
+                    var height = (int)(borderImage.Texture.Height * 1.5 * scale);
                     SetSize = new Vector2(width, height);
                 }
 
@@ -83,7 +101,8 @@ public sealed partial class StampWidget : PanelContainer
                 if (value.StampFont != null && prototypes.TryIndex<FontPrototype>(value.StampFont, out var stampFont))
                     font = stampFont;
 
-                StampedByLabel.FontOverride = new VectorFont(resCache.GetResource<FontResource>(font.Path), 40);
+                var fontSize = (int)MathF.Max(1f, BaseSignatureFontSize * scale);
+                StampedByLabel.FontOverride = new VectorFont(resCache.GetResource<FontResource>(font.Path), fontSize);
             }
 
             _stampShader = prototypes.Index(PaperStampShader).InstanceUnique();

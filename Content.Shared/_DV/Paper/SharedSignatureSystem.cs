@@ -1,4 +1,5 @@
 using Content.Shared.Access.Systems;
+using Content.Shared.Crayon;
 using Content.Shared.Paper;
 using Content.Shared.Verbs;
 
@@ -7,7 +8,6 @@ namespace Content.Shared._DV.Paper;
 public abstract partial class SharedSignatureSystem : EntitySystem
 {
     [Dependency] private readonly SharedIdCardSystem _idCard = default!;
-    [Dependency] private readonly PaperSystem _paper = default!;
 
     // The sprite used to visualize "signatures" on paper entities.
     public const string SignatureStampState = "paper_stamp-signature";
@@ -43,7 +43,9 @@ public abstract partial class SharedSignatureSystem : EntitySystem
     }
 
     /// <summary>
-    ///     Tries add add a signature to the paper with signer's name.
+    ///     Validates a signing attempt and, if allowed, opens the signature
+    ///     placement UI for the signer. The signature isn't committed here; it's
+    ///     committed later when the client sends a <see cref="PaperComponent.PaperSignMessage"/>.
     /// </summary>
     public bool TrySignPaper(Entity<PaperComponent> paper, EntityUid signer, EntityUid pen, SignatureWriterComponent signatureComp)
     {
@@ -52,9 +54,41 @@ public abstract partial class SharedSignatureSystem : EntitySystem
         if (ev.Cancelled)
             return false;
 
-        _paper.UpdateUserInterface(paper);
+        StartSignaturePlacement(paper, signer, pen);
 
         return true;
+    }
+
+    /// <summary>
+    ///     Opens the placement UI. Server-only; the shared base does nothing.
+    /// </summary>
+    protected virtual void StartSignaturePlacement(Entity<PaperComponent> paper, EntityUid signer, EntityUid pen)
+    {
+    }
+
+    /// <summary>
+    ///     Builds the display info for a signature (a text-only "stamp") from the
+    ///     signer and the pen they're using, without any placement transform.
+    ///     Shared so the client can build an identical preview.
+    /// </summary>
+    public StampDisplayInfo BuildSignatureInfo(EntityUid signer, EntityUid pen, SignatureWriterComponent signatureComp)
+    {
+        var signatureColor = signatureComp.Color;
+        var signatureFont = "Default"; // Noto Sans as fallback
+
+        if (signatureComp.Font is { } penFont)
+            signatureFont = penFont;
+
+        if (TryComp<CrayonComponent>(pen, out var crayon))
+            signatureColor = crayon.Color;
+
+        return new StampDisplayInfo
+        {
+            StampedName = DetermineEntitySignature(signer),
+            StampedColor = signatureColor,
+            HasIcon = false,
+            StampFont = signatureFont,
+        };
     }
 
     public string DetermineEntitySignature(EntityUid uid)

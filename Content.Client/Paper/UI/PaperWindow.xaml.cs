@@ -43,6 +43,8 @@ namespace Content.Client.Paper.UI
 
         public event Action<string>? OnSaved;
 
+        private Action<Vector2, float, float>? _onSignConfirm;
+
         private int _MaxInputLength = -1;
         public int MaxInputLength
         {
@@ -94,6 +96,34 @@ namespace Content.Client.Paper.UI
 
             SaveButton.Text = Loc.GetString("paper-ui-save-button",
                 ("keybind", _inputManager.GetKeyFunctionButtonString(EngineKeyFunctions.MultilineTextSubmit)));
+
+            SignConfirmButton.Text = Loc.GetString("paper-ui-sign-confirm-button");
+            SignCancelButton.Text = Loc.GetString("paper-ui-sign-cancel-button");
+            SignCancelButton.OnPressed += _ => EndSignaturePlacement();
+            SignConfirmButton.OnPressed += _ =>
+            {
+                var (position, scale, rotation) = SignaturePlacement.GetResult();
+                _onSignConfirm?.Invoke(position, scale, rotation);
+                EndSignaturePlacement();
+            };
+        }
+
+        /// <summary>
+        ///     Enters signature placement mode, showing the draggable/scalable
+        ///     preview and the confirm/cancel toolbar.
+        /// </summary>
+        public void BeginSignaturePlacement(StampDisplayInfo info, Action<Vector2, float, float> onConfirm)
+        {
+            _onSignConfirm = onConfirm;
+            SignaturePlacement.Begin(info);
+            SignButtons.Visible = true;
+        }
+
+        private void EndSignaturePlacement()
+        {
+            _onSignConfirm = null;
+            SignaturePlacement.End();
+            SignButtons.Visible = false;
         }
 
         /// <summary>
