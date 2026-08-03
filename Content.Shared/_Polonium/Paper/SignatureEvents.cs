@@ -1,7 +1,7 @@
 using Content.Shared.Paper;
 using Robust.Shared.Serialization;
 
-namespace Content.Shared._DV.Paper;
+namespace Content.Shared._Polonium.Paper;
 
 /// <summary>
 /// Raised on the pen when trying to sign a paper.

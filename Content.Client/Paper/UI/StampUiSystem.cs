@@ -9,12 +9,12 @@ namespace Content.Client.Paper.UI;
 /// <summary>
 ///     Client half of the stamp placement flow. When the server asks this client
 ///     to place a stamp precisely, it opens the placement gizmo on the paper's UI
-///     (once that UI is open). Mirrors <see cref="Content.Client._DV.Paper.SignatureUiSystem"/>,
+///     (once that UI is open). Mirrors <see cref="Content.Client._Polonium.Paper.SignatureUiSystem"/>,
 ///     but stamps place move + rotate only (no scale).
 /// </summary>
-public sealed class StampUiSystem : EntitySystem
+public sealed partial class StampUiSystem : EntitySystem
 {
-    [Dependency] private readonly UserInterfaceSystem _ui = default!;
+    [Dependency] private UserInterfaceSystem _ui = default!;
 
     private struct Pending
     {

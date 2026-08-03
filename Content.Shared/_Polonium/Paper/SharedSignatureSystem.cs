@@ -3,11 +3,11 @@ using Content.Shared.Crayon;
 using Content.Shared.Paper;
 using Content.Shared.Verbs;
 
-namespace Content.Shared._DV.Paper;
+namespace Content.Shared._Polonium.Paper;
 
 public abstract partial class SharedSignatureSystem : EntitySystem
 {
-    [Dependency] private readonly SharedIdCardSystem _idCard = default!;
+    [Dependency] private SharedIdCardSystem _idCard = default!;
 
     // The sprite used to visualize "signatures" on paper entities.
     public const string SignatureStampState = "paper_stamp-signature";

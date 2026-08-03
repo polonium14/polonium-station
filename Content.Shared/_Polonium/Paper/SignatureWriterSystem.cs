@@ -2,11 +2,11 @@ using Content.Shared.Popups;
 using Content.Shared.Verbs;
 using System.Linq;
 
-namespace Content.Shared._DV.Paper;
+namespace Content.Shared._Polonium.Paper;
 
 public sealed partial class SignatureWriterSystem : EntitySystem
 {
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
 
     public override void Initialize()
     {

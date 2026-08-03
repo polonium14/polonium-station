@@ -1,23 +1,23 @@
 using System.Linq;
 using Content.Client.Paper.UI;
-using Content.Shared._DV.Paper;
+using Content.Shared._Polonium.Paper;
 using Content.Shared.Paper;
 using Robust.Client.GameObjects;
 using Robust.Client.Player;
 using Robust.Client.UserInterface;
 using static Content.Shared.Paper.PaperComponent;
 
-namespace Content.Client._DV.Paper;
+namespace Content.Client._Polonium.Paper;
 
 /// <summary>
 ///     Client half of the signature placement flow. When the server asks this
 ///     client to place a signature, it opens the signature placement gizmo on
 ///     the paper's UI (once that UI is open).
 /// </summary>
-public sealed class SignatureUiSystem : SharedSignatureSystem
+public sealed partial class SignatureUiSystem : SharedSignatureSystem
 {
-    [Dependency] private readonly UserInterfaceSystem _ui = default!;
-    [Dependency] private readonly IPlayerManager _player = default!;
+    [Dependency] private UserInterfaceSystem _ui = default!;
+    [Dependency] private IPlayerManager _player = default!;
 
     private readonly Dictionary<EntityUid, EntityUid> _pending = new();
 

@@ -1,5 +1,5 @@
 using System.Numerics;
-using Content.Shared._DV.Paper;
+using Content.Shared._Polonium.Paper;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction;
 using Content.Shared.Paper;
@@ -9,16 +9,16 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Player;
 using static Content.Shared.Paper.PaperComponent;
 
-namespace Content.Server._DV.Paper;
+namespace Content.Server._Polonium.Paper;
 
 public sealed partial class SignatureSystem : SharedSignatureSystem
 {
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly PaperSystem _paper = default!;
-    [Dependency] private readonly SharedInteractionSystem _interaction = default!;
-    [Dependency] private readonly SharedHandsSystem _hands = default!;
-    [Dependency] private readonly UserInterfaceSystem _ui = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private PaperSystem _paper = default!;
+    [Dependency] private SharedInteractionSystem _interaction = default!;
+    [Dependency] private SharedHandsSystem _hands = default!;
+    [Dependency] private UserInterfaceSystem _ui = default!;
 
     private const float MinScale = 0.25f;
     private const float MaxScale = 4.0f;
