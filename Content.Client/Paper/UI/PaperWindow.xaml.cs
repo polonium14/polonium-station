@@ -100,6 +100,9 @@ namespace Content.Client.Paper.UI
             }
         }
 
+        /// <summary>
+        /// Initializes the paper window, its controls, and user interaction handlers.
+        /// </summary>
         public PaperWindow()
         {
             IoCManager.InjectDependencies(this);
@@ -155,7 +158,9 @@ namespace Content.Client.Paper.UI
         }
 
         // Positions the SignButtons row above the signature box, right-aligned to
-        // its right edge, flipping below when there's no room above.
+        /// <summary>
+        /// Positions the signature confirmation controls beside the signature box, placing them below when space permits and above otherwise.
+        /// </summary>
         private void PositionSignButtons()
         {
             if (!SignButtons.Visible)
@@ -189,7 +194,12 @@ namespace Content.Client.Paper.UI
         /// <summary>
         ///     Enters signature placement mode, showing the draggable/scalable
         ///     preview and the confirm/cancel toolbar.
+        /// <summary>
+        /// Begins placement of a signature or stamp, saving edited content first when necessary.
         /// </summary>
+        /// <param name="info">The display information for the signature or stamp.</param>
+        /// <param name="onConfirm">The callback invoked with the placement position, scale, and rotation.</param>
+        /// <param name="allowScale">Whether the placed item can be scaled.</param>
         public void BeginSignaturePlacement(StampDisplayInfo info, Action<Vector2, float, float> onConfirm, bool allowScale = true)
         {
             if (!_populated)
@@ -229,6 +239,9 @@ namespace Content.Client.Paper.UI
             PositionSignButtons();
         }
 
+        /// <summary>
+        /// Ends the active signature placement and hides its confirmation controls.
+        /// </summary>
         private void EndSignaturePlacement()
         {
             _onSignConfirm = null;
@@ -237,12 +250,20 @@ namespace Content.Client.Paper.UI
             SignButtons.Visible = false;
         }
 
+        /// <summary>
+        /// Displays a caution popup using the specified localization identifier.
+        /// </summary>
+        /// <param name="locId">The localization identifier for the popup message.</param>
         private void SignPopup(string locId)
         {
             _sysMan.GetEntitySystem<SharedPopupSystem>()
                 .PopupCursor(Loc.GetString(locId), _playerManager.LocalEntity, PopupType.SmallCaution);
         }
 
+        /// <summary>
+        /// Updates deferred signature or stamp placement and reports when it times out.
+        /// </summary>
+        /// <param name="args">The frame update event arguments.</param>
         protected override void FrameUpdate(FrameEventArgs args)
         {
             base.FrameUpdate(args);
@@ -406,7 +427,10 @@ namespace Content.Client.Paper.UI
         /// <summary>
         ///     Initialize the paper contents, i.e. the text typed by the
         ///     user and any stamps that have peen put on the page.
+        /// <summary>
+        /// Updates the paper window with the document state and synchronizes its editing, text, and stamp displays.
         /// </summary>
+        /// <param name="state">The current document content, interaction mode, and stamped signatures.</param>
         public void Populate(PaperComponent.PaperBoundUserInterfaceState state)
         {
             bool isEditing = state.Mode == PaperComponent.PaperAction.Write;

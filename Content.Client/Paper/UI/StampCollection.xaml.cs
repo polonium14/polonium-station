@@ -34,6 +34,9 @@ public sealed partial class StampCollection : Container
     /// whole page (e.g. a blank sheet).
     public Control? TextRegion;
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="StampCollection"/> class.
+    /// </summary>
     public StampCollection()
     {
         RobustXamlLoader.Load(this);
@@ -58,6 +61,11 @@ public sealed partial class StampCollection : Container
         AddChild(s);
     }
 
+    /// <summary>
+    /// Arranges stamps within the page, preserving explicit placements and randomly placing other stamps below the text region.
+    /// </summary>
+    /// <param name="finalSize">The available size for the container.</param>
+    /// <returns>The arranged container size.</returns>
     protected override Vector2 ArrangeOverride(Vector2 finalSize)
     {
         var random = new RobustRandom();

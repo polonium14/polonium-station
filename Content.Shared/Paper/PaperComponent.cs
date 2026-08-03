@@ -75,6 +75,10 @@ public sealed partial class PaperComponent : Component
     {
         public readonly string Text;
 
+        /// <summary>
+        /// Creates a message containing text entered for the paper.
+        /// </summary>
+        /// <param name="text">The entered text.</param>
         public PaperInputTextMessage(string text)
         {
             Text = text;
@@ -98,6 +102,13 @@ public sealed partial class PaperComponent : Component
 
         public readonly float Rotation;
 
+        /// <summary>
+        /// Creates a message requesting a paper signature with the specified pen and transform.
+        /// </summary>
+        /// <param name="pen">The pen entity used for the signature.</param>
+        /// <param name="position">The signature position on the paper.</param>
+        /// <param name="scale">The signature scale.</param>
+        /// <param name="rotation">The signature rotation.</param>
         public PaperSignMessage(NetEntity pen, Vector2 position, float scale, float rotation)
         {
             Pen = pen;
@@ -123,6 +134,12 @@ public sealed partial class PaperComponent : Component
 
         public readonly float Rotation;
 
+        /// <summary>
+        /// Creates a message describing a stamp placement on paper.
+        /// </summary>
+        /// <param name="stamp">The stamp entity to place.</param>
+        /// <param name="position">The position at which to place the stamp.</param>
+        /// <param name="rotation">The stamp's rotation.</param>
         public PaperStampPlaceMessage(NetEntity stamp, Vector2 position, float rotation)
         {
             Stamp = stamp;

@@ -111,6 +111,9 @@ public sealed partial class PaperSystem : EntitySystem
         UpdateUserInterface(entity);
     }
 
+    /// <summary>
+    /// Displays the paper's text and recorded stamp names when examined at close range.
+    /// </summary>
     private void OnExamined(Entity<PaperComponent> entity, ref ExaminedEvent args)
     {
         if (!args.IsInDetailsRange)
@@ -142,6 +145,11 @@ public sealed partial class PaperSystem : EntitySystem
         }
     }
 
+    /// <summary>
+    /// Handles writing or stamping interactions with the paper.
+    /// </summary>
+    /// <param name="entity">The paper being interacted with.</param>
+    /// <param name="args">The interaction event containing the user and item used.</param>
     private void OnInteractUsing(Entity<PaperComponent> entity, ref InteractUsingEvent args)
     {
         // only allow editing if there are no stamps or when using a cyberpen
@@ -203,6 +211,11 @@ public sealed partial class PaperSystem : EntitySystem
         }
     }
 
+    /// <summary>
+    /// Creates display information for a stamp.
+    /// </summary>
+    /// <param name="stamp">The stamp component to convert.</param>
+    /// <returns>Display information containing the stamp's name, color, icon, and localization setting.</returns>
     public static StampDisplayInfo GetStampInfo(StampComponent stamp)
     {
         return new StampDisplayInfo
@@ -214,6 +227,11 @@ public sealed partial class PaperSystem : EntitySystem
         };
     }
 
+    /// <summary>
+    /// Adds a verb that allows a user to stamp the paper with the stamp they are using.
+    /// </summary>
+    /// <param name="ent">The paper entity receiving the stamp.</param>
+    /// <param name="args">The interaction verb context.</param>
     private void OnGetStampVerb(Entity<PaperComponent> ent, ref GetVerbsEvent<InteractionVerb> args)
     {
         if (!args.CanAccess || !args.CanInteract)
@@ -239,7 +257,12 @@ public sealed partial class PaperSystem : EntitySystem
     ///     Opens the paper UI and tells the requesting client to enter stamp
     ///     placement mode. The stamp isn't committed here; it's committed later
     ///     when the client sends a <see cref="PaperComponent.PaperStampPlaceMessage"/>.
+    /// <summary>
+    /// Starts stamp placement for a user by opening the paper interface and requesting client-side placement.
     /// </summary>
+    /// <param name="paper">The paper entity to stamp.</param>
+    /// <param name="user">The user placing the stamp.</param>
+    /// <param name="stamp">The stamp entity to place.</param>
     private void StartStampPlacement(Entity<PaperComponent> paper, EntityUid user, EntityUid stamp)
     {
         if (!_net.IsServer)
@@ -252,6 +275,11 @@ public sealed partial class PaperSystem : EntitySystem
         RaiseNetworkEvent(new PaperStampRequestEvent(GetNetEntity(paper.Owner), GetNetEntity(stamp)), session);
     }
 
+    /// <summary>
+    /// Validates and applies a stamp placement request to the paper.
+    /// </summary>
+    /// <param name="paper">The paper receiving the stamp.</param>
+    /// <param name="args">The stamp placement request and its actor.</param>
     private void OnPaperStamp(Entity<PaperComponent> paper, ref PaperStampPlaceMessage args)
     {
         var user = args.Actor;
@@ -298,6 +326,11 @@ public sealed partial class PaperSystem : EntitySystem
         UpdateUserInterface(paper);
     }
 
+    /// <summary>
+    /// Processes submitted paper text and returns the paper to read mode.
+    /// </summary>
+    /// <param name="entity">The paper receiving the text.</param>
+    /// <param name="args">The submitted text and actor information.</param>
     private void OnInputTextMessage(Entity<PaperComponent> entity, ref PaperInputTextMessage args)
     {
         var ev = new PaperWriteAttemptEvent(entity.Owner);
@@ -359,7 +392,12 @@ public sealed partial class PaperSystem : EntitySystem
 
     /// <summary>
     ///     Accepts the name and state to be stamped onto the paper, returns true if successful.
+    /// <summary>
+    /// Adds a stamp record to the paper and applies its visual state when the paper has not been stamped.
     /// </summary>
+    /// <param name="stampInfo">The information to record for the stamp.</param>
+    /// <param name="spriteStampState">The visual state used for the first stamp.</param>
+    /// <returns><c>true</c> after the stamp record is added.</returns>
     public bool TryStamp(Entity<PaperComponent> entity, StampDisplayInfo stampInfo, string spriteStampState)
     {
         // Every stamp action adds a new mark, even if an identical one already exists.
@@ -401,6 +439,11 @@ public sealed partial class PaperSystem : EntitySystem
         SetContent((entity, paper), content);
     }
 
+    /// <summary>
+    /// Sets the paper's content and updates its user interface and visual status.
+    /// </summary>
+    /// <param name="entity">The paper whose content should be updated.</param>
+    /// <param name="content">The text to write on the paper.</param>
     public void SetContent(Entity<PaperComponent> entity, string content)
     {
         entity.Comp.Content = content;
@@ -417,6 +460,10 @@ public sealed partial class PaperSystem : EntitySystem
         _appearance.SetData(entity, PaperVisuals.Status, status, appearance);
     }
 
+    /// <summary>
+    /// Updates the paper user interface with its current content, stamps, and interaction mode.
+    /// </summary>
+    /// <param name="entity">The paper entity whose user interface should be updated.</param>
     public void UpdateUserInterface(Entity<PaperComponent> entity)
     {
         if (!_net.IsServer)

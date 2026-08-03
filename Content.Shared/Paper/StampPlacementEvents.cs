@@ -18,6 +18,11 @@ public sealed class PaperStampRequestEvent : EntityEventArgs
     public readonly NetEntity Paper;
     public readonly NetEntity Stamp;
 
+    /// <summary>
+    /// Creates an event requesting stamp placement on a paper entity.
+    /// </summary>
+    /// <param name="paper">The paper entity receiving the stamp.</param>
+    /// <param name="stamp">The stamp entity to place.</param>
     public PaperStampRequestEvent(NetEntity paper, NetEntity stamp)
     {
         Paper = paper;

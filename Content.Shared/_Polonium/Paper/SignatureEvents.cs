@@ -25,6 +25,11 @@ public sealed class PaperSignRequestEvent : EntityEventArgs
     public readonly NetEntity Paper;
     public readonly NetEntity Pen;
 
+    /// <summary>
+    /// Creates a request to open the signature-placement interface for a paper and pen.
+    /// </summary>
+    /// <param name="paper">The network entity representing the paper.</param>
+    /// <param name="pen">The network entity representing the pen.</param>
     public PaperSignRequestEvent(NetEntity paper, NetEntity pen)
     {
         Paper = paper;

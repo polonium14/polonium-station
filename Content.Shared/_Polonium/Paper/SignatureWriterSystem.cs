@@ -12,6 +12,9 @@ public sealed partial class SignatureWriterSystem : EntitySystem
 {
     [Dependency] private SharedPopupSystem _popup = default!;
 
+    /// <summary>
+    /// Initializes event subscriptions for signature writer components.
+    /// </summary>
     public override void Initialize()
     {
         base.Initialize();
@@ -20,6 +23,12 @@ public sealed partial class SignatureWriterSystem : EntitySystem
         SubscribeLocalEvent<SignatureWriterComponent, GetVerbsEvent<AlternativeVerb>>(OnGetAltVerbs);
     }
 
+    /// <summary>
+    /// Initializes the signature writer's active color when configured colors are available.
+    /// </summary>
+    /// <param name="uid">The entity containing the signature writer component.</param>
+    /// <param name="comp">The signature writer component to initialize.</param>
+    /// <param name="args">The component initialization event arguments.</param>
     private void OnCompInit(EntityUid uid, SignatureWriterComponent comp, ref ComponentInit args)
     {
         if (comp.ColorList.Count >= 1)
@@ -29,6 +38,12 @@ public sealed partial class SignatureWriterSystem : EntitySystem
         }
     }
 
+    /// <summary>
+    /// Adds font and color selection actions when the user can access and interact with the entity.
+    /// </summary>
+    /// <param name="uid">The entity whose signature writer options are being generated.</param>
+    /// <param name="comp">The entity's signature writer component.</param>
+    /// <param name="args">The alternative verb generation event.</param>
     private void OnGetAltVerbs(EntityUid uid, SignatureWriterComponent comp, GetVerbsEvent<AlternativeVerb> args)
     {
         if (!args.CanAccess || !args.CanInteract)

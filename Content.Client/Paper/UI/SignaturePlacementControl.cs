@@ -108,6 +108,9 @@ public sealed partial class SignaturePlacementControl : Control
     private float _grabRotation;
     private float _grabPointerAngle;
 
+    /// <summary>
+    /// Initializes the signature placement control and prepares it for interaction.
+    /// </summary>
     public SignaturePlacementControl()
     {
         IoCManager.InjectDependencies(this);
@@ -117,7 +120,11 @@ public sealed partial class SignaturePlacementControl : Control
 
     /// <summary>
     ///     Starts placement of a fresh signature preview.
+    /// <summary>
+    /// Starts a signature placement session and displays the specified signature preview.
     /// </summary>
+    /// <param name="info">The signature information used to create the preview.</param>
+    /// <param name="allowScale">Whether the signature can be resized during placement.</param>
     public void Begin(StampDisplayInfo info, bool allowScale = true)
     {
         _info = info;
@@ -143,6 +150,9 @@ public sealed partial class SignaturePlacementControl : Control
         InvalidateArrange();
     }
 
+    /// <summary>
+    /// Ends the current signature placement session and hides the control.
+    /// </summary>
     public void End()
     {
         Visible = false;
@@ -154,7 +164,12 @@ public sealed partial class SignaturePlacementControl : Control
     /// <summary>
     ///     The chosen transform: normalized [0,1] position, scale multiplier and
     ///     rotation (radians).
+    /// <summary>
+    /// Gets the current signature placement, scale, and rotation.
     /// </summary>
+    /// <returns>
+    /// The clamped normalized center position, scale, and rotation normalized to the range [-π, π].
+    /// </returns>
     public (Vector2 Position, float Scale, float Rotation) GetResult()
     {
         var size = new Vector2(PixelSize.X, PixelSize.Y);
@@ -190,18 +205,31 @@ public sealed partial class SignaturePlacementControl : Control
     private Vector2 PreviewSizePx =>
         _preview != null ? new Vector2(_preview.DesiredPixelSize.X, _preview.DesiredPixelSize.Y) : Vector2.Zero;
 
+    /// <summary>
+    /// Measures the signature preview and reports no desired size for the control.
+    /// </summary>
+    /// <param name="availableSize">The available size for the control.</param>
+    /// <returns>A zero vector.</returns>
     protected override Vector2 MeasureOverride(Vector2 availableSize)
     {
         MeasurePreview();
         return Vector2.Zero;
     }
 
+    /// <summary>
+    /// Arranges the signature preview within the control's final size.
+    /// </summary>
+    /// <param name="finalSize">The available size assigned to the control.</param>
+    /// <returns>The final size assigned to the control.</returns>
     protected override Vector2 ArrangeOverride(Vector2 finalSize)
     {
         LayoutPreview(finalSize * UIScale);
         return finalSize;
     }
 
+    /// <summary>
+    /// Measures the signature preview without constraining its dimensions.
+    /// </summary>
     private void MeasurePreview()
     {
         _preview?.Measure(new Vector2(float.PositiveInfinity, float.PositiveInfinity));
@@ -209,6 +237,10 @@ public sealed partial class SignaturePlacementControl : Control
 
     private Vector2 CurrentSizePx => new(PixelSize.X, PixelSize.Y);
 
+    /// <summary>
+    /// Arranges the preview and keeps its center within the control bounds.
+    /// </summary>
+    /// <param name="sizePx">The available control size in pixels.</param>
     private void LayoutPreview(Vector2 sizePx)
     {
         if (_preview == null)
@@ -238,7 +270,10 @@ public sealed partial class SignaturePlacementControl : Control
     // The largest scale at which the ink box plus handle reach still fits inside
     // the control at ANY rotation. Sized to the box's bounding circle (diagonal)
     // rather than the current-rotation AABB, so the cap is rotation-invariant:
-    // scaling up at 45deg then resetting to 0 can't push the box off-canvas.
+    /// <summary>
+    /// Calculates the largest scale that keeps the rotated signature within the available control bounds.
+    /// </summary>
+    /// <returns>The scale permitted by the control bounds, with the configured minimum scale enforced.</returns>
     private float MaxFitScale()
     {
         var ink = BoxSizePx;
@@ -264,7 +299,12 @@ public sealed partial class SignaturePlacementControl : Control
     // Clamps the widget center so the ink box's four rotated corner handles
     // (each expanded by the handle's drawn reach) stay within [0, controlSize].
     // Slides the box inward without changing its scale; if the box is too big to
-    // fit on an axis, centers it there. Requires _preview to be arranged.
+    /// <summary>
+    /// Clamps the widget center so the rotated ink box and scaling handles remain within the control bounds.
+    /// </summary>
+    /// <param name="widgetCenter">The current center of the widget.</param>
+    /// <param name="controlSize">The size of the containing control.</param>
+    /// <returns>The adjusted widget center.</returns>
     private Vector2 ClampForHandles(Vector2 widgetCenter, Vector2 controlSize)
     {
         var inkSize = BoxSizePx;
@@ -290,6 +330,9 @@ public sealed partial class SignaturePlacementControl : Control
         return new Vector2(x, y) - offset;
     }
 
+    /// <summary>
+    /// Updates the pixel-space bounds of the signature box and notifies listeners that its layout changed.
+    /// </summary>
     private void SetBoxRect()
     {
         var o = BoxOriginPx;
@@ -323,6 +366,10 @@ public sealed partial class SignaturePlacementControl : Control
         return new Vector2(v.X * cos - v.Y * sin, v.X * sin + v.Y * cos);
     }
 
+    /// <summary>
+    /// Calculates the four corners of the preview box after applying the current rotation.
+    /// </summary>
+    /// <returns>The rotated corner positions in pixel coordinates.</returns>
     private Vector2[] RotatedCornersPx()
     {
         var o = BoxOriginPx;
@@ -340,6 +387,10 @@ public sealed partial class SignaturePlacementControl : Control
         return pts;
     }
 
+    /// <summary>
+    /// Calculates the pixel position of the rotation knob.
+    /// </summary>
+    /// <returns>The rotation knob's center position in pixels.</returns>
     private Vector2 KnobCenterPx()
     {
         var o = BoxOriginPx;
@@ -349,6 +400,11 @@ public sealed partial class SignaturePlacementControl : Control
         return c + Rotate(topMid - c, _rotation);
     }
 
+    /// <summary>
+    /// Identifies the scale handle at the specified point.
+    /// </summary>
+    /// <param name="pointPx">The point to test in pixel coordinates.</param>
+    /// <returns>The index of the hit handle, or -1 if no handle is hit.</returns>
     private int HandleAt(Vector2 pointPx)
     {
         if (_preview == null || !_allowScale)
@@ -373,6 +429,11 @@ public sealed partial class SignaturePlacementControl : Control
         return (pointPx - KnobCenterPx()).Length() <= KnobHitHalf * UIScale;
     }
 
+    /// <summary>
+    /// Determines whether a point lies within the rotated signature box.
+    /// </summary>
+    /// <param name="pointPx">The point to test, in pixel coordinates.</param>
+    /// <returns><c>true</c> if the point lies inside the rotated box, <c>false</c> otherwise.</returns>
     private bool PointInRotatedBox(Vector2 pointPx)
     {
         var c = BoxCenterPx;
@@ -382,6 +443,10 @@ public sealed partial class SignaturePlacementControl : Control
         return local.X >= o.X && local.X <= o.X + s.X && local.Y >= o.Y && local.Y <= o.Y + s.Y;
     }
 
+    /// <summary>
+    /// Begins the appropriate interaction when the user presses a supported key binding.
+    /// </summary>
+    /// <param name="args">The key binding event arguments.</param>
     protected override void KeyBindDown(GUIBoundKeyEventArgs args)
     {
         base.KeyBindDown(args);
@@ -440,6 +505,9 @@ public sealed partial class SignaturePlacementControl : Control
         }
     }
 
+    /// <summary>
+    /// Ends the active placement interaction when the UI click binding is released.
+    /// </summary>
     protected override void KeyBindUp(GUIBoundKeyEventArgs args)
     {
         base.KeyBindUp(args);
@@ -451,6 +519,9 @@ public sealed partial class SignaturePlacementControl : Control
         }
     }
 
+    /// <summary>
+    /// Clears the hovered handle and rotation knob when the pointer leaves the control.
+    /// </summary>
     protected override void MouseExited()
     {
         base.MouseExited();
@@ -458,6 +529,10 @@ public sealed partial class SignaturePlacementControl : Control
         _knobHovered = false;
     }
 
+    /// <summary>
+    /// Updates the placement preview or interaction state in response to mouse movement.
+    /// </summary>
+    /// <param name="args">The mouse movement event arguments.</param>
     protected override void MouseMove(GUIMouseMoveEventArgs args)
     {
         base.MouseMove(args);
@@ -511,6 +586,10 @@ public sealed partial class SignaturePlacementControl : Control
         }
     }
 
+    /// <summary>
+    /// Draws the rotated signature preview boundary and its interactive scaling and rotation controls.
+    /// </summary>
+    /// <param name="handle">The drawing handle used to render the control.</param>
     protected override void Draw(DrawingHandleScreen handle)
     {
         base.Draw(handle);
@@ -549,6 +628,11 @@ public sealed partial class SignaturePlacementControl : Control
         handle.DrawCircle(knob, kr, kfill);
     }
 
+    /// <summary>
+    /// Normalizes an angle to the range from -π to π.
+    /// </summary>
+    /// <param name="angle">The angle to normalize, in radians.</param>
+    /// <returns>The normalized angle, in radians.</returns>
     private static float NormalizeAngle(float angle)
     {
         var twoPi = MathF.PI * 2f;

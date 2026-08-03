@@ -27,6 +27,9 @@ public sealed partial class SignatureSystem : SharedSignatureSystem
     private const float MinScale = 0.25f;
     private const float MaxScale = 4.0f;
 
+    /// <summary>
+    /// Initializes the signature system and registers paper-signing message handling.
+    /// </summary>
     public override void Initialize()
     {
         base.Initialize();
@@ -34,6 +37,12 @@ public sealed partial class SignatureSystem : SharedSignatureSystem
         SubscribeLocalEvent<PaperComponent, PaperSignMessage>(OnPaperSign);
     }
 
+    /// <summary>
+    /// Opens the paper interface and requests signature placement for the signer.
+    /// </summary>
+    /// <param name="paper">The paper to sign.</param>
+    /// <param name="signer">The entity signing the paper.</param>
+    /// <param name="pen">The pen used for signing.</param>
     protected override void StartSignaturePlacement(Entity<PaperComponent> paper, EntityUid signer, EntityUid pen)
     {
         if (!TryComp<ActorComponent>(signer, out var actor))
@@ -44,6 +53,11 @@ public sealed partial class SignatureSystem : SharedSignatureSystem
         RaiseNetworkEvent(new PaperSignRequestEvent(GetNetEntity(paper.Owner), GetNetEntity(pen)), actor.PlayerSession);
     }
 
+    /// <summary>
+    /// Processes a signature request, validates the signing interaction, and applies the signature to the paper.
+    /// </summary>
+    /// <param name="paper">The paper receiving the signature.</param>
+    /// <param name="args">The submitted signature request.</param>
     private void OnPaperSign(Entity<PaperComponent> paper, ref PaperSignMessage args)
     {
         var signer = args.Actor;
@@ -95,7 +109,11 @@ public sealed partial class SignatureSystem : SharedSignatureSystem
     }
 
     // A client-supplied position may be NaN/Infinity; fall back to center before
-    // clamping so a bad float can't be persisted and networked to every viewer.
+    /// <summary>
+    /// Sanitizes a signature position by replacing non-finite coordinates with the document center and constraining valid coordinates to the normalized document bounds.
+    /// </summary>
+    /// <param name="pos">The signature position to sanitize.</param>
+    /// <returns>A finite position with both coordinates between 0 and 1.</returns>
     private static Vector2 SanitizePosition(Vector2 pos)
     {
         if (!float.IsFinite(pos.X) || !float.IsFinite(pos.Y))

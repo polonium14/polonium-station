@@ -33,6 +33,9 @@ public sealed partial class SignatureUiSystem : SharedSignatureSystem
 
     private const float PendingTimeout = 2f;
 
+    /// <summary>
+    /// Initializes the signature UI system and subscribes to signature request and paper UI lifecycle events.
+    /// </summary>
     public override void Initialize()
     {
         base.Initialize();
@@ -42,12 +45,19 @@ public sealed partial class SignatureUiSystem : SharedSignatureSystem
         SubscribeLocalEvent<PaperComponent, BoundUIClosedEvent>(OnBuiClosed);
     }
 
+    /// <summary>
+    /// Clears the pending signature request when the paper UI closes.
+    /// </summary>
     private void OnBuiClosed(Entity<PaperComponent> ent, ref BoundUIClosedEvent args)
     {
         if (args.UiKey is PaperUiKey.Key)
             _pending.Remove(ent.Owner);
     }
 
+    /// <summary>
+    /// Records a signature request and attempts to begin signature placement for the specified paper.
+    /// </summary>
+    /// <param name="ev">The signature request event containing the paper and pen entities.</param>
     private void OnSignRequest(PaperSignRequestEvent ev)
     {
         if (!TryGetEntity(ev.Paper, out var paper) || !TryGetEntity(ev.Pen, out var pen))
@@ -57,12 +67,21 @@ public sealed partial class SignatureUiSystem : SharedSignatureSystem
         TryBeginPlacement(paper.Value);
     }
 
+    /// <summary>
+    /// Attempts to begin signature placement when the paper interface opens.
+    /// </summary>
+    /// <param name="ent">The paper entity whose interface was opened.</param>
+    /// <param name="args">The interface-opened event data.</param>
     private void OnBuiOpened(Entity<PaperComponent> ent, ref BoundUIOpenedEvent args)
     {
         if (args.UiKey is PaperUiKey.Key)
             TryBeginPlacement(ent.Owner);
     }
 
+    /// <summary>
+    /// Updates pending signature placement requests and removes those that exceed the waiting period.
+    /// </summary>
+    /// <param name="frameTime">The elapsed time since the previous update, in seconds.</param>
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
@@ -88,7 +107,11 @@ public sealed partial class SignatureUiSystem : SharedSignatureSystem
     ///     Consumes the pending request for <paramref name="paper"/> if its UI is
     ///     open. Returns true if the request was consumed (or dropped), false if it
     ///     should keep waiting.
+    /// <summary>
+    /// Attempts to begin signature placement for a pending request on the specified paper.
     /// </summary>
+    /// <param name="paper">The paper entity associated with the signature request.</param>
+    /// <returns><c>true</c> if the request was handled or no request is pending; <c>false</c> if the paper UI is unavailable.</returns>
     private bool TryBeginPlacement(EntityUid paper)
     {
         if (!_pending.TryGetValue(paper, out var pending))

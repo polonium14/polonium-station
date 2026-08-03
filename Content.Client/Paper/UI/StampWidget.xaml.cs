@@ -129,6 +129,9 @@ public sealed partial class StampWidget : PanelContainer
         RobustXamlLoader.Load(this);
     }
 
+    /// <summary>
+    /// Draws the stamp with its configured position, orientation, and visual effects.
+    /// </summary>
     protected override void Draw(DrawingHandleScreen handle)
     {
         _stampShader?.SetParameter("objCoord", GlobalPosition * UIScale * new Vector2(1, -1));

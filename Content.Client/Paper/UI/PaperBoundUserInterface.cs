@@ -46,6 +46,9 @@ public sealed class PaperBoundUserInterface : BoundUserInterface
     {
     }
 
+    /// <summary>
+    /// Opens the paper window, configures its content and visuals, and resumes any pending signature or stamp placement.
+    /// </summary>
     protected override void Open()
     {
         base.Open();
@@ -75,6 +78,10 @@ public sealed class PaperBoundUserInterface : BoundUserInterface
         }
     }
 
+    /// <summary>
+    /// Updates the paper window with the received interface state.
+    /// </summary>
+    /// <param name="state">The current paper interface state.</param>
     protected override void UpdateState(BoundUserInterfaceState state)
     {
         base.UpdateState(state);
@@ -84,7 +91,11 @@ public sealed class PaperBoundUserInterface : BoundUserInterface
     /// <summary>
     ///     Enters signature placement mode: shows a draggable, scalable preview
     ///     of <paramref name="info"/> that the player positions before committing.
+    /// <summary>
+    /// Begins interactive placement of a signature on the paper.
     /// </summary>
+    /// <param name="pen">The entity representing the signature pen.</param>
+    /// <param name="info">The visual information for the signature.</param>
     public void BeginSignaturePlacement(EntityUid pen, StampDisplayInfo info)
     {
         if (_window == null)
@@ -103,7 +114,10 @@ public sealed class PaperBoundUserInterface : BoundUserInterface
     ///     Enters stamp placement mode: shows a draggable, rotatable (but not
     ///     scalable) preview of <paramref name="info"/> that the player positions
     ///     before committing. Mirrors <see cref="BeginSignaturePlacement"/>.
+    /// <summary>
+    /// Begins placement of a stamp in the paper interface.
     /// </summary>
+    /// <param name="info">The visual information used to display the stamp.</param>
     public void BeginStampPlacement(EntityUid stamp, StampDisplayInfo info)
     {
         if (_window == null)
@@ -118,6 +132,10 @@ public sealed class PaperBoundUserInterface : BoundUserInterface
         }, allowScale: false);
     }
 
+    /// <summary>
+    /// Sends entered text to the paper and clears the input field.
+    /// </summary>
+    /// <param name="text">The text entered by the user.</param>
     private void InputOnTextEntered(string text)
     {
         SendMessage(new PaperInputTextMessage(text));

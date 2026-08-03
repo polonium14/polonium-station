@@ -41,6 +41,9 @@ public sealed partial class StampLabel : Label
     /// top-left pivot. Set by the owning StampWidget.
     public bool PivotAboutCenter = false;
 
+    /// <summary>
+    /// Initializes a stamp label and its paper stamp shader.
+    /// </summary>
     public StampLabel()
     {
         RobustXamlLoader.Load(this);
@@ -59,6 +62,10 @@ public sealed partial class StampLabel : Label
         return desiredTextSize;
     }
 
+    /// <summary>
+    /// Renders the stamp with its configured shader, scale, rotation, and rotation pivot.
+    /// </summary>
+    /// <param name="handle">The screen drawing handle used to render the label.</param>
     protected override void Draw(DrawingHandleScreen handle)
     {
         _stampShader?.SetParameter("objCoord", GlobalPosition * UIScale * new Vector2(1, -1));

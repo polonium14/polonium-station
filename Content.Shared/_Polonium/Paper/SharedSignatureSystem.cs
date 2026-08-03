@@ -16,6 +16,9 @@ public abstract partial class SharedSignatureSystem : EntitySystem
     // The sprite used to visualize "signatures" on paper entities.
     public const string SignatureStampState = "paper_stamp-signature";
 
+    /// <summary>
+    /// Initializes the system and registers alternative verbs for paper entities.
+    /// </summary>
     public override void Initialize()
     {
         base.Initialize();
@@ -23,6 +26,11 @@ public abstract partial class SharedSignatureSystem : EntitySystem
         SubscribeLocalEvent<PaperComponent, GetVerbsEvent<AlternativeVerb>>(OnGetAltVerbs);
     }
 
+    /// <summary>
+    /// Adds a signing alternative verb when the user can interact with the paper while using a signature-writing tool.
+    /// </summary>
+    /// <param name="ent">The paper entity receiving the signature verb.</param>
+    /// <param name="args">The alternative verbs available to the user.</param>
     private void OnGetAltVerbs(Entity<PaperComponent> ent, ref GetVerbsEvent<AlternativeVerb> args)
     {
         if (!args.CanAccess || !args.CanInteract)
@@ -52,7 +60,13 @@ public abstract partial class SharedSignatureSystem : EntitySystem
     ///     Validates a signing attempt and, if allowed, opens the signature
     ///     placement UI for the signer. The signature isn't committed here; it's
     ///     committed later when the client sends a <see cref="PaperComponent.PaperSignMessage"/>.
+    /// <summary>
+    /// Attempts to begin placing a signature on paper.
     /// </summary>
+    /// <param name="paper">The paper entity to sign.</param>
+    /// <param name="signer">The entity signing the paper.</param>
+    /// <param name="pen">The entity used to sign the paper.</param>
+    /// <returns><c>true</c> if signature placement begins; <c>false</c> if the signing attempt is cancelled.</returns>
     public bool TrySignPaper(Entity<PaperComponent> paper, EntityUid signer, EntityUid pen, SignatureWriterComponent signatureComp)
     {
         var ev = new SignAttemptEvent(paper, signer, pen);
@@ -67,7 +81,12 @@ public abstract partial class SharedSignatureSystem : EntitySystem
 
     /// <summary>
     ///     Opens the placement UI. Server-only; the shared base does nothing.
+    /// <summary>
+    /// Starts placing a signature on the specified paper.
     /// </summary>
+    /// <param name="paper">The paper receiving the signature.</param>
+    /// <param name="signer">The entity signing the paper.</param>
+    /// <param name="pen">The writing instrument used for the signature.</param>
     protected virtual void StartSignaturePlacement(Entity<PaperComponent> paper, EntityUid signer, EntityUid pen)
     {
     }
@@ -76,7 +95,13 @@ public abstract partial class SharedSignatureSystem : EntitySystem
     ///     Builds the display info for a signature (a text-only "stamp") from the
     ///     signer and the pen they're using, without any placement transform.
     ///     Shared so the client can build an identical preview.
+    /// <summary>
+    /// Builds the visual information used to display a signature.
     /// </summary>
+    /// <param name="signer">The entity whose name appears on the signature.</param>
+    /// <param name="pen">The writing instrument used for the signature.</param>
+    /// <param name="signatureComp">The writing instrument's signature settings.</param>
+    /// <returns>Signature display data containing the signer's name, color, and font.</returns>
     public StampDisplayInfo BuildSignatureInfo(EntityUid signer, EntityUid pen, SignatureWriterComponent signatureComp)
     {
         var signatureColor = signatureComp.Color;
@@ -98,6 +123,11 @@ public abstract partial class SharedSignatureSystem : EntitySystem
         };
     }
 
+    /// <summary>
+    /// Determines the signature name for an entity.
+    /// </summary>
+    /// <param name="uid">The entity whose signature name is determined.</param>
+    /// <returns>The non-empty full name from the entity's ID card, or the entity's name when no suitable ID-card name is available.</returns>
     public string DetermineEntitySignature(EntityUid uid)
     {
         // If the entity has an ID, use the name on it.

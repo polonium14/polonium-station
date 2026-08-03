@@ -30,6 +30,9 @@ public sealed partial class StampUiSystem : EntitySystem
 
     private const float PendingTimeout = 2f;
 
+    /// <summary>
+    /// Initializes the system and subscribes to paper stamp placement requests.
+    /// </summary>
     public override void Initialize()
     {
         base.Initialize();
@@ -37,6 +40,10 @@ public sealed partial class StampUiSystem : EntitySystem
         SubscribeNetworkEvent<PaperStampRequestEvent>(OnStampRequest);
     }
 
+    /// <summary>
+    /// Queues a stamp placement request for the specified paper and attempts to begin placement.
+    /// </summary>
+    /// <param name="ev">The event containing the paper and stamp entity references.</param>
     private void OnStampRequest(PaperStampRequestEvent ev)
     {
         if (!TryGetEntity(ev.Paper, out var paper) || !TryGetEntity(ev.Stamp, out var stamp))
@@ -46,6 +53,10 @@ public sealed partial class StampUiSystem : EntitySystem
         TryBeginPlacement(paper.Value);
     }
 
+    /// <summary>
+    /// Retries pending stamp placement requests and removes those that remain unavailable after the timeout.
+    /// </summary>
+    /// <param name="frameTime">The elapsed time since the previous update.</param>
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
@@ -71,7 +82,11 @@ public sealed partial class StampUiSystem : EntitySystem
     ///     Consumes the pending request for <paramref name="paper"/> if its UI is
     ///     open. Returns true if the request was consumed (or dropped), false if it
     ///     should keep waiting.
+    /// <summary>
+    /// Attempts to begin stamp placement for a pending request on the specified paper.
     /// </summary>
+    /// <param name="paper">The paper entity associated with the pending stamp request.</param>
+    /// <returns><c>true</c> if the request is handled or no request exists; <c>false</c> if the paper UI is not open.</returns>
     private bool TryBeginPlacement(EntityUid paper)
     {
         if (!_pending.TryGetValue(paper, out var pending))
