@@ -10,7 +10,7 @@ namespace Content.Client.Paper.UI;
 /// <summary>
 ///     An overlay gizmo that lets the player position and scale a signature
 ///     preview inside a bounding box before committing it to a paper. Drag the
-///     body to move; drag a corner handle to scale about the center.
+///     body to move; drag a corner handle to scale from the opposite corner.
 /// </summary>
 public sealed class SignaturePlacementControl : Control
 {
@@ -58,7 +58,10 @@ public sealed class SignaturePlacementControl : Control
     private Vector2 _grabMousePx;
     private Vector2 _grabCenterPx;
     private float _grabScale;
-    private float _grabHalfDiagPx;
+    private Vector2i _grabOppositeCornerPx;
+    private Vector2 _grabSignVec;
+    private float _grabDiagPx;
+    private Vector2 _grabDiagDir;
 
     public SignaturePlacementControl()
     {
@@ -178,6 +181,32 @@ public sealed class SignaturePlacementControl : Control
         return new Vector2(x, y);
     }
 
+    private void LayoutScaledPinned()
+    {
+        if (_preview == null)
+            return;
+
+        var size = PreviewSizePx;
+        var sizeI = new Vector2i((int)size.X, (int)size.Y);
+        var o = _grabOppositeCornerPx;
+
+        var tlx = _grabSignVec.X > 0 ? o.X : o.X - sizeI.X;
+        var tly = _grabSignVec.Y > 0 ? o.Y : o.Y - sizeI.Y;
+        var topLeftI = ClampTopLeft(new Vector2i(tlx, tly), sizeI, CurrentSizePx);
+
+        _preview.ArrangePixel(new UIBox2i(topLeftI, topLeftI + sizeI));
+        _centerPx = new Vector2(topLeftI.X, topLeftI.Y) + new Vector2(sizeI.X, sizeI.Y) * 0.5f;
+    }
+
+    private static Vector2i ClampTopLeft(Vector2i topLeft, Vector2i size, Vector2 screen)
+    {
+        var maxX = (int)screen.X - size.X;
+        var maxY = (int)screen.Y - size.Y;
+        var x = maxX > 0 ? Math.Clamp(topLeft.X, 0, maxX) : topLeft.X;
+        var y = maxY > 0 ? Math.Clamp(topLeft.Y, 0, maxY) : topLeft.Y;
+        return new Vector2i(x, y);
+    }
+
     protected override void KeyBindDown(GUIBoundKeyEventArgs args)
     {
         base.KeyBindDown(args);
@@ -194,7 +223,15 @@ public sealed class SignaturePlacementControl : Control
             _pressedHandle = handleIdx;
             _grabMousePx = mouse;
             _grabScale = _scale;
-            _grabHalfDiagPx = MathF.Max(1f, (PreviewSizePx * 0.5f).Length());
+
+            var corners = CornersLocal();
+            var opp = corners[3 - handleIdx];
+            _grabOppositeCornerPx = new Vector2i((int)MathF.Round(opp.X), (int)MathF.Round(opp.Y));
+            var diag = corners[handleIdx] - opp;
+            _grabDiagPx = MathF.Max(1f, diag.Length());
+            _grabDiagDir = diag / _grabDiagPx;
+            _grabSignVec = new Vector2(diag.X >= 0 ? 1f : -1f, diag.Y >= 0 ? 1f : -1f);
+
             args.Handle();
             return;
         }
@@ -283,14 +320,15 @@ public sealed class SignaturePlacementControl : Control
                 break;
 
             case DragMode.Scale:
-                var dist = (mouse - _centerPx.Value).Length();
-                var newScale = Math.Clamp(_grabScale * (dist / _grabHalfDiagPx), MinScale, MaxScale);
+                var opp = new Vector2(_grabOppositeCornerPx.X, _grabOppositeCornerPx.Y);
+                var proj = Vector2.Dot(mouse - opp, _grabDiagDir);
+                var newScale = Math.Clamp(_grabScale * (proj / _grabDiagPx), MinScale, MaxScale);
                 if (MathF.Abs(newScale - _scale) > 0.001f)
                 {
                     _scale = newScale;
                     UpdatePreview();
                     MeasurePreview();
-                    LayoutPreview(CurrentSizePx);
+                    LayoutScaledPinned();
                 }
                 break;
         }
