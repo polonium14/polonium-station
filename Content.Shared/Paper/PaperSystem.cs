@@ -63,6 +63,12 @@ public sealed partial class PaperSystem : EntitySystem
     private static readonly ProtoId<TagPrototype> WriteIgnoreStampsTag = "WriteIgnoreStamps";
     private static readonly ProtoId<TagPrototype> WriteTag = "Write";
 
+    // Upper bound on stamps/signatures a single paper can hold. Accumulation is
+    // intended, but the list is Dirty and networked in full to every viewer,
+    // so an unbounded count is a grief/bandwidth vector. Generous enough that
+    // normal play never reaches it.
+    private const int MaxStampedBy = 64;
+
 
     public override void Initialize()
     {
@@ -185,21 +191,28 @@ public sealed partial class PaperSystem : EntitySystem
         }
 
         // If a stamp, attempt to stamp paper
-        if (TryComp<StampComponent>(args.Used, out var stampComp) && TryStamp(entity, GetStampInfo(stampComp), stampComp.StampState))
+        if (TryComp<StampComponent>(args.Used, out var stampComp))
         {
-            // successfully stamped, play popup
-            var stampPaperOtherMessage = Loc.GetString("paper-component-action-stamp-paper-other",
-                    ("user", args.User),
-                    ("target", args.Target),
-                    ("stamp", args.Used));
-            var stampPaperSelfMessage = Loc.GetString("paper-component-action-stamp-paper-self",
-                    ("target", args.Target),
-                    ("stamp", args.Used));
-            _popupSystem.PopupEntity(stampPaperSelfMessage, stampPaperOtherMessage, args.User, args.User);
+            if (TryStamp(entity, GetStampInfo(stampComp), stampComp.StampState))
+            {
+                // successfully stamped, play popup
+                var stampPaperOtherMessage = Loc.GetString("paper-component-action-stamp-paper-other",
+                        ("user", args.User),
+                        ("target", args.Target),
+                        ("stamp", args.Used));
+                var stampPaperSelfMessage = Loc.GetString("paper-component-action-stamp-paper-self",
+                        ("target", args.Target),
+                        ("stamp", args.Used));
+                _popupSystem.PopupEntity(stampPaperSelfMessage, stampPaperOtherMessage, args.User, args.User);
 
-            _audio.PlayPredicted(stampComp.Sound, entity, args.User);
+                _audio.PlayPredicted(stampComp.Sound, entity, args.User);
 
-            UpdateUserInterface(entity);
+                UpdateUserInterface(entity);
+            }
+            else if (entity.Comp.StampedBy.Count >= MaxStampedBy)
+            {
+                _popupSystem.PopupClient(Loc.GetString("paper-stamp-full", ("target", args.Target)), entity, args.User, PopupType.SmallCaution);
+            }
         }
     }
 
@@ -282,7 +295,11 @@ public sealed partial class PaperSystem : EntitySystem
         stampInfo.Scale = 1f;
 
         if (!TryStamp(paper, stampInfo, stampComp.StampState))
+        {
+            if (paper.Comp.StampedBy.Count >= MaxStampedBy)
+                _popupSystem.PopupEntity(Loc.GetString("paper-stamp-full", ("target", paper.Owner)), user, user, PopupType.SmallCaution);
             return;
+        }
 
         var stampPaperOtherMessage = Loc.GetString("paper-component-action-stamp-paper-other",
                 ("user", user),
@@ -362,6 +379,9 @@ public sealed partial class PaperSystem : EntitySystem
     /// </summary>
     public bool TryStamp(Entity<PaperComponent> entity, StampDisplayInfo stampInfo, string spriteStampState)
     {
+        if (entity.Comp.StampedBy.Count >= MaxStampedBy)
+            return false;
+
         // Every stamp action adds a new mark, even if an identical one already exists.
         entity.Comp.StampedBy.Add(stampInfo);
         Dirty(entity);

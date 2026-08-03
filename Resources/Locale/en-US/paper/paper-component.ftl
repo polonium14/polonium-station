@@ -30,5 +30,6 @@ paper-ui-stamp-save-first = You must shorten the text before stamping.
 paper-ui-stamp-failed = Couldn't stamp the document.
 
 paper-stamp-failure = You cannot stamp { $target }
+paper-stamp-full = There's no room left to stamp { $target }.
 
 paper-tamper-proof-modified-message = This page was written using tamper-proof ink.
