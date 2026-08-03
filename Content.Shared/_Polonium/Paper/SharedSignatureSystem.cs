@@ -55,11 +55,6 @@ public abstract partial class SharedSignatureSystem : EntitySystem
     /// </summary>
     public bool TrySignPaper(Entity<PaperComponent> paper, EntityUid signer, EntityUid pen, SignatureWriterComponent signatureComp)
     {
-        var ev = new SignAttemptEvent(paper, signer, pen);
-        RaiseLocalEvent(pen, ref ev);
-        if (ev.Cancelled)
-            return false;
-
         StartSignaturePlacement(paper, signer, pen);
 
         return true;

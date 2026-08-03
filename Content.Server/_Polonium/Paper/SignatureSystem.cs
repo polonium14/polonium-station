@@ -63,12 +63,6 @@ public sealed partial class SignatureSystem : SharedSignatureSystem
             return;
         }
 
-        // Give other systems a chance to cancel (e.g. tamper-proofing).
-        var attempt = new SignAttemptEvent(paper, signer, pen.Value);
-        RaiseLocalEvent(pen.Value, ref attempt);
-        if (attempt.Cancelled)
-            return;
-
         // The name/color/font are computed server-side; only the transform is
         // taken from the client (and clamped/sanitized against NaN/Infinity).
         var stampInfo = BuildSignatureInfo(signer, pen.Value, signatureComp);

@@ -2,17 +2,9 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Shared.Paper;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared._Polonium.Paper;
-
-/// <summary>
-/// Raised on the pen when trying to sign a paper.
-/// If it's cancelled the signature isn't made.
-/// </summary>
-[ByRefEvent]
-public record struct SignAttemptEvent(Entity<PaperComponent> Paper, EntityUid User, EntityUid Pen, bool Cancelled = false);
 
 /// <summary>
 /// Sent from the server to a single client to tell it to open the signature
