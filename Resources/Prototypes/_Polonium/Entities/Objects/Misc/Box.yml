@@ -74,7 +74,7 @@
     - 0,0,3,2 # Downside of the explosive proofness
 
 - type: entity
-  parent: BaseThermitePack
+  parent: BaseExplosivePack
   id: ExplosivePack
   name: explosive pack
   description: "A box for tactical deployment of explosive based breaching. On the side there is writen: ONLY FOR PEACE SPREADING!"
