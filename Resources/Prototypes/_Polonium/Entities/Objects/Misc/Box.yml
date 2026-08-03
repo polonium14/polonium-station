@@ -57,7 +57,7 @@
   - type: Storage
     maxItemSize: Normal
     grid:
-    - 0,0,3,1
+    - 0,0,3,2
   - type: PhysicalComposition
     materialComposition:
       Cardboard: 50
@@ -71,7 +71,14 @@
       - state: flare
   - type: Item
     shape:
-    - 0,0,3,2 # Downside of the explosive proofness
+    - 0,0,3,3 # Downside of the explosive proofness
+    whitelist:
+      components:
+      - Explosive
+      tags:
+      - Payload
+  - type: ExplosionResistance
+    damageCoefficient: 0.3 # 70%, so not the best, 
 
 - type: entity
   parent: BaseExplosivePack
@@ -83,7 +90,10 @@
     containers:
       storagebase: !type:AllSelector
        children:
-        - id: WiredDetonator
+        - id: EmptyDetonator
           amount: 2
         - id: RemoteSignaller
-        - id: CableDetStack10
+        - id: CableDetStack10 # 2 for completing the detonators, 8 left for KABOOM!
+        - id: SignalTrigger
+          amount: 2
+        - id: NetworkConfigurator # So its not a prop hunt once it is needed
