@@ -53,13 +53,17 @@ public sealed partial class StampLabel : Label
 
     protected override void Draw(DrawingHandleScreen handle)
     {
-        var offset = new Vector2(PixelPosition.X * MathF.Cos(Orientation) - PixelPosition.Y * MathF.Sin(Orientation),
-                PixelPosition.Y * MathF.Cos(Orientation) + PixelPosition.X * MathF.Sin(Orientation));
+        var cos = MathF.Cos(Orientation);
+        var sin = MathF.Sin(Orientation);
+        var half = (Vector2)PixelSize * _textScaling * 0.5f;
+        var rotHalf = new Vector2(half.X * cos - half.Y * sin, half.X * sin + half.Y * cos);
+        // Keeps the rect center fixed: at Orientation 0 this is GlobalPixelPosition.
+        var origin = (Vector2)GlobalPixelPosition + half - rotHalf;
 
         _stampShader?.SetParameter("objCoord", GlobalPosition * UIScale * new Vector2(1, -1));
         _stampShader?.SetParameter("useStampNoise", StampNoise); // imp
         handle.UseShader(_stampShader);
-        handle.SetTransform(GlobalPixelPosition - PixelPosition + offset, Orientation, _textScaling);
+        handle.SetTransform(origin, Orientation, _textScaling);
         base.Draw(handle);
 
         // Restore a sane transform+shader

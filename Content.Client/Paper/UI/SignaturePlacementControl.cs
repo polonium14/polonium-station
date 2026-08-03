@@ -2,19 +2,25 @@ using System;
 using System.Numerics;
 using Content.Shared.Paper;
 using Robust.Client.Graphics;
+using Robust.Client.Input;
 using Robust.Client.UserInterface;
 using Robust.Shared.Input;
+using Robust.Shared.IoC;
 using Robust.Shared.Maths;
 
 namespace Content.Client.Paper.UI;
 
 /// <summary>
-///     An overlay gizmo that lets the player position and scale a signature
-///     preview inside a bounding box before committing it to a paper. Drag the
-///     body to move; drag a corner handle to scale from the opposite corner.
+///     An overlay gizmo that lets the player position, scale and rotate a
+///     signature preview inside a bounding box before committing it to a paper.
+///     Drag the body to move; drag a corner handle to scale about the center;
+///     drag the round knob above the box to rotate about the center. Hold Shift
+///     while rotating to snap; right-click the knob to reset rotation.
 /// </summary>
-public sealed class SignaturePlacementControl : Control
+public sealed partial class SignaturePlacementControl : Control
 {
+    [Dependency] private IInputManager _inputManager = default!;
+
     // Scale bounds mirror the server-side clamp in SignatureSystem.
     private const float MinScale = 0.25f;
     private const float MaxScale = 4.0f;
@@ -31,6 +37,13 @@ public sealed class SignaturePlacementControl : Control
     // drawn handle so it's easy to click.
     private const float HandleHitHalf = 14f;
 
+    private const float KnobRadius = 6f;
+    private const float KnobHoverRadius = 9f;
+    private const float KnobHitHalf = 13f;
+    private const float KnobStalkVirtual = HandleHoverHalf + 16f;
+
+    private static readonly float SnapStep = MathHelper.DegreesToRadians(15f);
+
     private static readonly Color BoxColor = Color.FromHex("#3B7FDE");
     private static readonly Color BoxColorPressed = Color.FromHex("#8FBBF2");
 
@@ -40,10 +53,14 @@ public sealed class SignaturePlacementControl : Control
     // Index of the handle currently being dragged, or -1.
     private int _pressedHandle = -1;
 
+    private bool _knobHovered;
+    private bool _knobPressed;
+
     private StampWidget? _preview;
     private StampDisplayInfo _info;
 
     private float _scale = 1f;
+    private float _rotation;
     private int _appliedFontSize = -1;
 
     // Center of the signature box, in this control's local pixels. Null until
@@ -56,7 +73,7 @@ public sealed class SignaturePlacementControl : Control
     /// <summary>The signature box in this control's local pixels.</summary>
     public UIBox2i BoxRectPx => _boxRectPx;
 
-    /// <summary>Fires whenever the box is moved or scaled (re-arranged).</summary>
+    /// <summary>Fires whenever the box is moved, scaled or rotated (re-arranged).</summary>
     public event Action? LayoutChanged;
 
     /// <summary>
@@ -70,19 +87,23 @@ public sealed class SignaturePlacementControl : Control
         None,
         Move,
         Scale,
+        Rotate,
     }
 
     private DragMode _drag = DragMode.None;
+
     private Vector2 _grabMousePx;
+    private Vector2 _grabBoxCenter;
+
     private Vector2 _grabCenterPx;
     private float _grabScale;
-    private Vector2i _grabOppositeCornerPx;
-    private Vector2 _grabSignVec;
-    private float _grabDiagPx;
-    private Vector2 _grabDiagDir;
+    private float _grabDist;
+    private float _grabRotation;
+    private float _grabPointerAngle;
 
     public SignaturePlacementControl()
     {
+        IoCManager.InjectDependencies(this);
         MouseFilter = MouseFilterMode.Stop;
         Visible = false;
     }
@@ -94,9 +115,14 @@ public sealed class SignaturePlacementControl : Control
     {
         _info = info;
         _scale = 1f;
+        _rotation = 0f;
         _centerPx = null;
         _drag = DragMode.None;
         _appliedFontSize = -1;
+        _pressedHandle = -1;
+        _hoveredHandle = -1;
+        _knobPressed = false;
+        _knobHovered = false;
 
         if (_preview != null)
         {
@@ -113,6 +139,8 @@ public sealed class SignaturePlacementControl : Control
     {
         Visible = false;
         _drag = DragMode.None;
+        _pressedHandle = -1;
+        _knobPressed = false;
     }
 
     /// <summary>
@@ -126,14 +154,17 @@ public sealed class SignaturePlacementControl : Control
         var normalized = size.X <= 0 || size.Y <= 0
             ? new Vector2(0.5f, 0.5f)
             : new Vector2(center.X / size.X, center.Y / size.Y);
-        return (Vector2.Clamp(normalized, Vector2.Zero, Vector2.One), _scale, 0f);
+        return (Vector2.Clamp(normalized, Vector2.Zero, Vector2.One), _scale, NormalizeAngle(_rotation));
     }
 
     private void UpdatePreview()
     {
         var fontSize = (int)MathF.Max(1f, BaseFontSize * _scale);
         if (_preview != null && fontSize == _appliedFontSize)
+        {
+            _preview.Orientation = _rotation;
             return;
+        }
 
         if (_preview != null)
             RemoveChild(_preview);
@@ -142,6 +173,7 @@ public sealed class SignaturePlacementControl : Control
         var info = _info;
         info.Scale = _scale;
         _preview = new StampWidget { StampInfo = info };
+        _preview.Orientation = _rotation;
         _preview.Modulate = Color.White.WithAlpha(PreviewInkAlpha);
         AddChild(_preview);
     }
@@ -201,32 +233,6 @@ public sealed class SignaturePlacementControl : Control
         return new Vector2(x, y);
     }
 
-    private void LayoutScaledPinned()
-    {
-        if (_preview == null)
-            return;
-
-        var size = PreviewSizePx;
-        var sizeI = new Vector2i((int)size.X, (int)size.Y);
-
-        _preview.ArrangePixel(new UIBox2i(Vector2i.Zero, sizeI));
-        var inkPos = _preview.InkLabelPosPx;
-        var inkSize = _preview.InkLabelSizePx;
-        var o = _grabOppositeCornerPx;
-
-        var tlx = _grabSignVec.X > 0
-            ? o.X - (int)inkPos.X
-            : o.X - (int)inkPos.X - (int)inkSize.X;
-        var tly = _grabSignVec.Y > 0
-            ? o.Y - (int)inkPos.Y
-            : o.Y - (int)inkPos.Y - (int)inkSize.Y;
-        var topLeftI = ClampTopLeft(new Vector2i(tlx, tly), sizeI, CurrentSizePx);
-
-        _preview.ArrangePixel(new UIBox2i(topLeftI, topLeftI + sizeI));
-        _centerPx = new Vector2(topLeftI.X, topLeftI.Y) + new Vector2(sizeI.X, sizeI.Y) * 0.5f;
-        SetBoxRect();
-    }
-
     private void SetBoxRect()
     {
         var o = BoxOriginPx;
@@ -237,77 +243,45 @@ public sealed class SignaturePlacementControl : Control
         LayoutChanged?.Invoke();
     }
 
-    private static Vector2i ClampTopLeft(Vector2i topLeft, Vector2i size, Vector2 screen)
-    {
-        var maxX = (int)screen.X - size.X;
-        var maxY = (int)screen.Y - size.Y;
-        var x = maxX > 0 ? Math.Clamp(topLeft.X, 0, maxX) : topLeft.X;
-        var y = maxY > 0 ? Math.Clamp(topLeft.Y, 0, maxY) : topLeft.Y;
-        return new Vector2i(x, y);
-    }
-
-    protected override void KeyBindDown(GUIBoundKeyEventArgs args)
-    {
-        base.KeyBindDown(args);
-
-        if (args.Function != EngineKeyFunctions.UIClick || _preview == null)
-            return;
-
-        var mouse = args.RelativePosition * UIScale;
-
-        var handleIdx = HandleAt(mouse);
-        if (handleIdx >= 0)
-        {
-            _drag = DragMode.Scale;
-            _pressedHandle = handleIdx;
-            _grabMousePx = mouse;
-            _grabScale = _scale;
-
-            var corners = CornersLocal();
-            var opp = corners[3 - handleIdx];
-            _grabOppositeCornerPx = new Vector2i((int)MathF.Round(opp.X), (int)MathF.Round(opp.Y));
-            var diag = corners[handleIdx] - opp;
-            _grabDiagPx = MathF.Max(1f, diag.Length());
-            _grabDiagDir = diag / _grabDiagPx;
-            _grabSignVec = new Vector2(diag.X >= 0 ? 1f : -1f, diag.Y >= 0 ? 1f : -1f);
-
-            args.Handle();
-            return;
-        }
-
-        var o = BoxOriginPx;
-        var s = BoxSizePx;
-        if (mouse.X >= o.X && mouse.X <= o.X + s.X && mouse.Y >= o.Y && mouse.Y <= o.Y + s.Y)
-        {
-            _drag = DragMode.Move;
-            _grabMousePx = mouse;
-            _grabCenterPx = BoxCenterLocal();
-            args.Handle();
-        }
-    }
-
-    private Vector2 BoxCenterLocal()
-    {
-        return new Vector2(_preview!.PixelPosition.X, _preview.PixelPosition.Y) + PreviewSizePx * 0.5f;
-    }
-
     private Vector2 BoxOriginPx =>
         _preview == null ? Vector2.Zero
             : new Vector2(_preview.PixelPosition.X, _preview.PixelPosition.Y) + _preview.InkLabelPosPx;
 
     private Vector2 BoxSizePx => _preview == null ? Vector2.Zero : _preview.InkLabelSizePx;
 
-    private Vector2[] CornersLocal()
+    private Vector2 BoxCenterPx => BoxOriginPx + BoxSizePx * 0.5f;
+
+    private static Vector2 Rotate(Vector2 v, float angle)
+    {
+        var cos = MathF.Cos(angle);
+        var sin = MathF.Sin(angle);
+        return new Vector2(v.X * cos - v.Y * sin, v.X * sin + v.Y * cos);
+    }
+
+    private Vector2[] RotatedCornersPx()
     {
         var o = BoxOriginPx;
         var s = BoxSizePx;
-        return new[]
+        var c = o + s * 0.5f;
+        var pts = new[]
         {
             o,
             o + new Vector2(s.X, 0),
             o + new Vector2(0, s.Y),
             o + s,
         };
+        for (var i = 0; i < pts.Length; i++)
+            pts[i] = c + Rotate(pts[i] - c, _rotation);
+        return pts;
+    }
+
+    private Vector2 KnobCenterPx()
+    {
+        var o = BoxOriginPx;
+        var s = BoxSizePx;
+        var c = o + s * 0.5f;
+        var topMid = new Vector2(o.X + s.X * 0.5f, o.Y - KnobStalkVirtual * UIScale);
+        return c + Rotate(topMid - c, _rotation);
     }
 
     private int HandleAt(Vector2 pointPx)
@@ -316,7 +290,7 @@ public sealed class SignaturePlacementControl : Control
             return -1;
 
         var hit = HandleHitHalf * UIScale;
-        var corners = CornersLocal();
+        var corners = RotatedCornersPx();
         for (var i = 0; i < corners.Length; i++)
         {
             if (MathF.Abs(pointPx.X - corners[i].X) <= hit && MathF.Abs(pointPx.Y - corners[i].Y) <= hit)
@@ -326,6 +300,80 @@ public sealed class SignaturePlacementControl : Control
         return -1;
     }
 
+    private bool KnobAt(Vector2 pointPx)
+    {
+        if (_preview == null)
+            return false;
+
+        return (pointPx - KnobCenterPx()).Length() <= KnobHitHalf * UIScale;
+    }
+
+    private bool PointInRotatedBox(Vector2 pointPx)
+    {
+        var c = BoxCenterPx;
+        var local = c + Rotate(pointPx - c, -_rotation);
+        var o = BoxOriginPx;
+        var s = BoxSizePx;
+        return local.X >= o.X && local.X <= o.X + s.X && local.Y >= o.Y && local.Y <= o.Y + s.Y;
+    }
+
+    protected override void KeyBindDown(GUIBoundKeyEventArgs args)
+    {
+        base.KeyBindDown(args);
+
+        if (_preview == null)
+            return;
+
+        var mouse = args.RelativePosition * UIScale;
+
+        // Right-click the knob resets rotation to zero.
+        if (args.Function == EngineKeyFunctions.UIRightClick)
+        {
+            if (KnobAt(mouse))
+            {
+                _rotation = 0f;
+                UpdatePreview();
+                SetBoxRect();
+                args.Handle();
+            }
+            return;
+        }
+
+        if (args.Function != EngineKeyFunctions.UIClick)
+            return;
+
+        if (KnobAt(mouse))
+        {
+            _drag = DragMode.Rotate;
+            _knobPressed = true;
+            _grabCenterPx = BoxCenterPx;
+            _grabRotation = _rotation;
+            _grabPointerAngle = MathF.Atan2(mouse.Y - _grabCenterPx.Y, mouse.X - _grabCenterPx.X);
+            args.Handle();
+            return;
+        }
+
+        var handleIdx = HandleAt(mouse);
+        if (handleIdx >= 0)
+        {
+            _drag = DragMode.Scale;
+            _pressedHandle = handleIdx;
+            _grabCenterPx = _centerPx ?? BoxCenterPx;
+            _grabScale = _scale;
+            _grabDist = MathF.Max(1f, (mouse - _grabCenterPx).Length());
+            args.Handle();
+            return;
+        }
+
+        if (PointInRotatedBox(mouse))
+        {
+            _drag = DragMode.Move;
+            _grabMousePx = mouse;
+            _grabBoxCenter = _centerPx ?? BoxCenterPx;
+            args.Handle();
+        }
+    }
+
     protected override void KeyBindUp(GUIBoundKeyEventArgs args)
     {
         base.KeyBindUp(args);
@@ -333,6 +381,7 @@ public sealed class SignaturePlacementControl : Control
         {
             _drag = DragMode.None;
             _pressedHandle = -1;
+            _knobPressed = false;
         }
     }
 
@@ -340,6 +389,7 @@ public sealed class SignaturePlacementControl : Control
     {
         base.MouseExited();
         _hoveredHandle = -1;
+        _knobHovered = false;
     }
 
     protected override void MouseMove(GUIMouseMoveEventArgs args)
@@ -350,7 +400,8 @@ public sealed class SignaturePlacementControl : Control
 
         if (_drag == DragMode.None)
         {
-            _hoveredHandle = HandleAt(mouse);
+            _knobHovered = KnobAt(mouse);
+            _hoveredHandle = _knobHovered ? -1 : HandleAt(mouse);
             return;
         }
 
@@ -360,20 +411,32 @@ public sealed class SignaturePlacementControl : Control
         switch (_drag)
         {
             case DragMode.Move:
-                _centerPx = _grabCenterPx + (mouse - _grabMousePx);
+                _centerPx = _grabBoxCenter + (mouse - _grabMousePx);
                 LayoutPreview(CurrentSizePx);
                 break;
 
             case DragMode.Scale:
-                var opp = new Vector2(_grabOppositeCornerPx.X, _grabOppositeCornerPx.Y);
-                var proj = Vector2.Dot(mouse - opp, _grabDiagDir);
-                var newScale = Math.Clamp(_grabScale * (proj / _grabDiagPx), MinScale, MaxScale);
+                var dist = (mouse - _grabCenterPx).Length();
+                var newScale = Math.Clamp(_grabScale * (dist / _grabDist), MinScale, MaxScale);
                 if (MathF.Abs(newScale - _scale) > 0.001f)
                 {
                     _scale = newScale;
                     UpdatePreview();
                     MeasurePreview();
-                    LayoutScaledPinned();
+                    LayoutPreview(CurrentSizePx);
+                }
+                break;
+
+            case DragMode.Rotate:
+                var pointerAngle = MathF.Atan2(mouse.Y - _grabCenterPx.Y, mouse.X - _grabCenterPx.X);
+                var rotation = _grabRotation + (pointerAngle - _grabPointerAngle);
+                if (_inputManager.IsKeyDown(Keyboard.Key.Shift))
+                    rotation = MathF.Round(rotation / SnapStep) * SnapStep;
+                if (MathF.Abs(rotation - _rotation) > 0.0001f)
+                {
+                    _rotation = rotation;
+                    UpdatePreview();
+                    SetBoxRect();
                 }
                 break;
         }
@@ -386,18 +449,17 @@ public sealed class SignaturePlacementControl : Control
         if (_preview == null)
             return;
 
-        var tl = BoxOriginPx;
-        var size = BoxSizePx;
-        var tr = tl + new Vector2(size.X, 0);
-        var bl = tl + new Vector2(0, size.Y);
-        var br = tl + size;
+        var corners = RotatedCornersPx();
+        var tl = corners[0];
+        var tr = corners[1];
+        var bl = corners[2];
+        var br = corners[3];
 
         handle.DrawLine(tl, tr, BoxColor);
         handle.DrawLine(tr, br, BoxColor);
         handle.DrawLine(br, bl, BoxColor);
         handle.DrawLine(bl, tl, BoxColor);
 
-        var corners = new[] { tl, tr, bl, br };
         for (var i = 0; i < corners.Length; i++)
         {
             var grown = i == _hoveredHandle || i == _pressedHandle;
@@ -406,5 +468,23 @@ public sealed class SignaturePlacementControl : Control
             var box = new UIBox2(corners[i] - new Vector2(hh, hh), corners[i] + new Vector2(hh, hh));
             handle.DrawRect(box, fill);
         }
+
+        var topMid = (tl + tr) * 0.5f;
+        var knob = KnobCenterPx();
+        handle.DrawLine(topMid, knob, BoxColor);
+        var kr = (_knobPressed || _knobHovered ? KnobHoverRadius : KnobRadius) * UIScale;
+        var kfill = _knobPressed ? BoxColorPressed : BoxColor;
+        handle.DrawCircle(knob, kr, kfill);
+    }
+
+    private static float NormalizeAngle(float angle)
+    {
+        var twoPi = MathF.PI * 2f;
+        angle %= twoPi;
+        if (angle > MathF.PI)
+            angle -= twoPi;
+        else if (angle < -MathF.PI)
+            angle += twoPi;
+        return angle;
     }
 }

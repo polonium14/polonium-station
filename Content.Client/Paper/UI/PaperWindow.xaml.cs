@@ -152,8 +152,9 @@ namespace Content.Client.Paper.UI
             // BoxRectPx wraps the signature ink, so anchoring to the box edges
             // gives an equal gap above and below.
             var x = boxTopLeft.X;
-            var above = boxTopLeft.Y - btnSize.Y - clear;
-            var y = above >= 0f ? above : boxTopLeft.Y + boxSize.Y + clear;
+            var below = boxTopLeft.Y + boxSize.Y + clear;
+            var contentBottom = SignaturePlacement.Position.Y + SignaturePlacement.Size.Y;
+            var y = below + btnSize.Y <= contentBottom ? below : boxTopLeft.Y - btnSize.Y - clear;
 
             LayoutContainer.SetPosition(SignButtons, new Vector2(x, y));
         }

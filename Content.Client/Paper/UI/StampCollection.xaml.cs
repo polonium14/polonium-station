@@ -84,7 +84,7 @@ public sealed partial class StampCollection : Container
             var s = childHeLocal * MathF.Abs(MathF.Sin(stampOrientation));
             var childHePage = new Vector2(c.X + s.Y, s.X + c.Y);
             var clampedCenter = Clamp(Shrink(controlBox, childHePage), childCenter);
-            var finalPosition = clampedCenter - childHePage;
+            var finalPosition = clampedCenter - childHeLocal;
             var finalPositionAsInt = new Vector2i((int)finalPosition.X, (int)finalPosition.Y);
             stamp.ArrangePixel(new UIBox2i(finalPositionAsInt, finalPositionAsInt + stamp.DesiredPixelSize));
         }
