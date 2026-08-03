@@ -27,7 +27,7 @@
                         </BoxContainer>
                         <TextureButton Name="FooterImage" HorizontalAlignment="Center" VerticalAlignment="Top" MouseFilter="Ignore"/>
                     </BoxContainer>
-                    <paper:StampCollection Name="StampDisplay" VerticalExpand="True" HorizontalExpand="True" Margin="6"/>
+                    <paper:StampCollection Name="StampDisplay" VerticalExpand="True" HorizontalExpand="True" MinSize="150 150" Margin="6"/>
                     <paper:SignaturePlacementControl Name="SignaturePlacement" VerticalExpand="True" HorizontalExpand="True" MinSize="150 150" Margin="6"/>
                     <LayoutContainer Name="SignButtonLayer">
                         <BoxContainer Name="SignButtons" Orientation="Horizontal" Visible="False">
