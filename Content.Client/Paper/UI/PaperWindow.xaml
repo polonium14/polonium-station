@@ -15,6 +15,9 @@
                         <Control Name="TextAlignmentPadding" VerticalAlignment="Top"/>
                         <RichTextLabel Name="BlankPaperIndicator" StyleClasses="LabelWeak" VerticalAlignment="Top" HorizontalAlignment="Center"/>
                         <RichTextLabel StyleClasses="PaperWrittenText" Name="WrittenTextLabel" VerticalAlignment="Top"/>
+                        <!-- Fixed blank band reserved below the text for auto-placed stamps and
+                             manually-placed signatures. Shown only alongside written text. -->
+                        <Control Name="StampReserve" MinHeight="180" VerticalAlignment="Top" Visible="False"/>
                         <BoxContainer Name="InputContainer" StyleIdentifier="PaperContainer" Orientation="Vertical" VerticalExpand="True" VerticalAlignment="Stretch">
                             <PanelContainer StyleIdentifier="PaperEditBackground" MinHeight="100"
                                 VerticalAlignment="Stretch" VerticalExpand="True" HorizontalExpand="True">

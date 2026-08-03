@@ -21,6 +21,10 @@ public sealed partial class StampCollection : Container
     /// Seed for random number generator to place stamps deterministically
     public int PlacementSeed;
 
+    /// Height (virtual px) of the fixed blank band under the text that auto-placed
+    /// stamps scatter within. Mirrors the StampReserve spacer in PaperWindow.xaml.
+    private const float BandHeightVirtual = 180f;
+
     /// The written-text control. Auto-placed stamps scatter in the area BELOW
     /// its bottom edge so they never cover the text. Null = scatter over the
     /// whole page (e.g. a blank sheet).
@@ -95,12 +99,13 @@ public sealed partial class StampCollection : Container
             }
             else
             {
-                // Random center bounded so the whole (tilted) stamp stays on the
-                // page and its top edge clears the text.
+                // Random center bounded to the fixed band under the text so the
+                // whole (tilted) stamp stays inside it and clears the text.
+                var bandBottom = MathF.Min(controlBox.Bottom, origin.Y + textBottom + BandHeightVirtual * UIScale);
                 var minX = origin.X + childHePage.X;
                 var maxX = controlBox.Right - childHePage.X;
                 var minY = origin.Y + textBottom + childHePage.Y;
-                var maxY = controlBox.Bottom - childHePage.Y;
+                var maxY = bandBottom - childHePage.Y;
                 var cx = maxX > minX ? minX + random.NextFloat() * (maxX - minX) : (minX + maxX) * 0.5f;
                 var cy = maxY > minY ? minY + random.NextFloat() * (maxY - minY) : (minY + maxY) * 0.5f;
                 childCenter = new Vector2(cx, cy);

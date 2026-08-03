@@ -405,6 +405,8 @@ namespace Content.Client.Paper.UI
 
             WrittenTextLabel.Visible = !isEditing && state.Text.Length > 0;
             BlankPaperIndicator.Visible = !isEditing && state.Text.Length == 0;
+            // Reserve the fixed stamp/signature band only when a text block is shown.
+            StampReserve.Visible = WrittenTextLabel.Visible;
 
             StampDisplay.RemoveAllChildren();
             StampDisplay.RemoveStamps();
