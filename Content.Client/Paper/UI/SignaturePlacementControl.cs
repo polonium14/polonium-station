@@ -98,6 +98,7 @@ public sealed partial class SignaturePlacementControl : Control
     private Vector2 _grabCenterPx;
     private float _grabScale;
     private float _grabDist;
+    private float _grabMaxFit;
     private float _grabRotation;
     private float _grabPointerAngle;
 
@@ -215,22 +216,69 @@ public sealed partial class SignaturePlacementControl : Control
 
         var size = PreviewSizePx;
         var half = size * 0.5f;
-        var center = ClampCenter(_centerPx.Value, half, sizePx);
+
+        // Provisional arrange at the requested center so BoxOriginPx/BoxSizePx
+        // reflect the current ink inset, then clamp the center so the (rotated)
+        // corner scale handles stay within the control, and re-arrange.
+        ArrangePreviewAt(_centerPx.Value - half, size);
+        var center = ClampForHandles(_centerPx.Value, sizePx);
         _centerPx = center;
-        var topLeft = center - half;
-        var topLeftI = new Vector2i((int)topLeft.X, (int)topLeft.Y);
-        var sizeI = new Vector2i((int)size.X, (int)size.Y);
-        _preview.ArrangePixel(new UIBox2i(topLeftI, topLeftI + sizeI));
+        ArrangePreviewAt(center - half, size);
         SetBoxRect();
     }
 
-    private Vector2 ClampCenter(Vector2 center, Vector2 half, Vector2 size)
+    // The largest scale at which the ink box plus handle reach still fits inside
+    // the control at ANY rotation. Sized to the box's bounding circle (diagonal)
+    // rather than the current-rotation AABB, so the cap is rotation-invariant:
+    // scaling up at 45deg then resetting to 0 can't push the box off-canvas.
+    private float MaxFitScale()
     {
-        var min = half;
-        var max = size - half;
-        var x = max.X > min.X ? Math.Clamp(center.X, min.X, max.X) : center.X;
-        var y = max.Y > min.Y ? Math.Clamp(center.Y, min.Y, max.Y) : center.Y;
-        return new Vector2(x, y);
+        var ink = BoxSizePx;
+        if (ink.X <= 0 || ink.Y <= 0)
+            return MaxScale;
+
+        var diameter = MathF.Sqrt(ink.X * ink.X + ink.Y * ink.Y);
+        if (diameter <= 0)
+            return MaxScale;
+
+        var avail = CurrentSizePx - new Vector2(2f * HandleHoverHalf * UIScale);
+        var fit = MathF.Min(avail.X, avail.Y) / diameter;
+        return MathF.Max(MinScale, _scale * fit);
+    }
+
+    private void ArrangePreviewAt(Vector2 topLeft, Vector2 size)
+    {
+        var topLeftI = new Vector2i((int)topLeft.X, (int)topLeft.Y);
+        var sizeI = new Vector2i((int)size.X, (int)size.Y);
+        _preview!.ArrangePixel(new UIBox2i(topLeftI, topLeftI + sizeI));
+    }
+
+    // Clamps the widget center so the ink box's four rotated corner handles
+    // (each expanded by the handle's drawn reach) stay within [0, controlSize].
+    // Slides the box inward without changing its scale; if the box is too big to
+    // fit on an axis, centers it there. Requires _preview to be arranged.
+    private Vector2 ClampForHandles(Vector2 widgetCenter, Vector2 controlSize)
+    {
+        var inkSize = BoxSizePx;
+        if (inkSize.X <= 0 || inkSize.Y <= 0)
+            return widgetCenter;
+
+        // Ink center relative to the widget center (constant for this scale).
+        var offset = BoxCenterPx - widgetCenter;
+
+        // Rotation-aware half-extent of the ink box plus the handle's reach.
+        var boxHalf = inkSize * 0.5f;
+        var cos = MathF.Abs(MathF.Cos(_rotation));
+        var sin = MathF.Abs(MathF.Sin(_rotation));
+        var margin = new Vector2(boxHalf.X * cos + boxHalf.Y * sin, boxHalf.X * sin + boxHalf.Y * cos)
+            + new Vector2(HandleHoverHalf * UIScale);
+
+        var lo = margin;
+        var hi = controlSize - margin;
+        var ink = BoxCenterPx;
+        var x = hi.X > lo.X ? Math.Clamp(ink.X, lo.X, hi.X) : controlSize.X * 0.5f;
+        var y = hi.Y > lo.Y ? Math.Clamp(ink.Y, lo.Y, hi.Y) : controlSize.Y * 0.5f;
+        return new Vector2(x, y) - offset;
     }
 
     private void SetBoxRect()
@@ -333,7 +381,7 @@ public sealed partial class SignaturePlacementControl : Control
             {
                 _rotation = 0f;
                 UpdatePreview();
-                SetBoxRect();
+                LayoutPreview(CurrentSizePx);
                 args.Handle();
             }
             return;
@@ -361,6 +409,7 @@ public sealed partial class SignaturePlacementControl : Control
             _grabCenterPx = _centerPx ?? BoxCenterPx;
             _grabScale = _scale;
             _grabDist = MathF.Max(1f, (mouse - _grabCenterPx).Length());
+            _grabMaxFit = MaxFitScale();
             args.Handle();
             return;
         }
@@ -417,7 +466,8 @@ public sealed partial class SignaturePlacementControl : Control
 
             case DragMode.Scale:
                 var dist = (mouse - _grabCenterPx).Length();
-                var newScale = Math.Clamp(_grabScale * (dist / _grabDist), MinScale, MaxScale);
+                var target = Math.Clamp(_grabScale * (dist / _grabDist), MinScale, MaxScale);
+                var newScale = MathF.Max(MinScale, MathF.Min(target, _grabMaxFit));
                 if (MathF.Abs(newScale - _scale) > 0.001f)
                 {
                     _scale = newScale;
@@ -436,7 +486,9 @@ public sealed partial class SignaturePlacementControl : Control
                 {
                     _rotation = rotation;
                     UpdatePreview();
-                    SetBoxRect();
+                    // Re-layout (not just SetBoxRect): rotating swings the corner
+                    // handles out, so the center may need to slide to keep them in.
+                    LayoutPreview(CurrentSizePx);
                 }
                 break;
         }
