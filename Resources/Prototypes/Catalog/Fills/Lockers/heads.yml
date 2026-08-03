@@ -335,9 +335,12 @@
     - id: WeaponDisabler
     - id: WantedListCartridge
     - id: DrinkHosFlask
-    - id: ThermitePack
     - id: PlushieLizardJobHeadofsecurity
       prob: 0.02
+    - !type:GroupSelector
+      children:
+      - id: ExplosivePack
+      - id: ThermitePack
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable

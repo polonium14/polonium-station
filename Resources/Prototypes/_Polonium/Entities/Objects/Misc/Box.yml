@@ -1,3 +1,6 @@
+
+# Thermite Pack
+
 - type: entity
   parent: BoxBase
   id: BaseThermitePack
@@ -31,8 +34,8 @@
 - type: entity
   parent: BaseThermitePack
   id: ThermitePack
-  name: Thermite Pack
-  description: "A box for tactical deployment of thermite based breaching. On the side there is write: ONLY FOR PEACE SPREADING!"
+  name: thermite pack
+  description: "A box for tactical deployment of thermite based breaching. On the side there is writen: ONLY FOR PEACE SPREADING!"
   components:
   - type: EntityTableContainerFill
     containers:
@@ -42,3 +45,45 @@
         - id: ThermiteSparyer
         - id: TacticalIgniter
         - id: PillDermaline
+
+# Explosive Pack
+
+- type: entity
+  parent: BoxBase
+  id: BaseExplosivePack
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Appearance
+  - type: Storage
+    maxItemSize: Normal
+    grid:
+    - 0,0,3,1
+  - type: PhysicalComposition
+    materialComposition:
+      Cardboard: 50
+      Steel: 50 # hey it is explosion resistant in the end
+      Cloth: 10
+  - type: StaticPrice
+    price: 15
+  - type: Sprite
+    layers:
+      - state: box
+      - state: flare
+  - type: Item
+    shape:
+    - 0,0,3,2 # Downside of the explosive proofness
+
+- type: entity
+  parent: BaseThermitePack
+  id: ExplosivePack
+  name: explosive pack
+  description: "A box for tactical deployment of explosive based breaching. On the side there is writen: ONLY FOR PEACE SPREADING!"
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+       children:
+        - id: WiredDetonator
+          amount: 2
+        - id: RemoteSignaller
+        - id: CableDetStack10

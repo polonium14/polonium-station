@@ -1,2 +1,5 @@
 ent-ThermitePack = zestaw termitowy
-    .desc = Pudełko zawierające wszystko co potrzebne do zlokalizowanego użytku termitu. Na boku widnieje napis: TYLKO KU CELOM POKOJOWYM!
+    .desc = Pudełko do taktycznego włamywania przy użyciu termitu. Na boku jest napisane: TYLKO KU CELOM POKOJOWYM!
+
+ent-ExplosivePack = zestaw wybuchowy
+    .desc = Pudełko do taktycznego włamywania przy użyciu materiałów wybuchowych. Na boku jest napisane: TYLKO KU CELOM POKOJOWYM!
