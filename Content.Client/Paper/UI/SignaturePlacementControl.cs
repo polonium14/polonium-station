@@ -20,6 +20,8 @@ public sealed class SignaturePlacementControl : Control
     private const float MaxScale = 4.0f;
     private const int BaseFontSize = 40;
 
+    private const float PreviewInkAlpha = 0.5f;
+
     // Drawn half-size of a corner handle at rest / when hovered, in virtual
     // pixels (scaled by UIScale on use).
     private const float HandleHalf = 6f;
@@ -140,6 +142,7 @@ public sealed class SignaturePlacementControl : Control
         var info = _info;
         info.Scale = _scale;
         _preview = new StampWidget { StampInfo = info };
+        _preview.Modulate = Color.White.WithAlpha(PreviewInkAlpha);
         AddChild(_preview);
     }
 
