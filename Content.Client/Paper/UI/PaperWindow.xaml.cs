@@ -59,6 +59,9 @@ namespace Content.Client.Paper.UI
         private const float PendingPlacementTimeout = 30f;
         private float _pendingPlacementTime;
 
+        private bool _populated;
+        private (StampDisplayInfo Info, Action<Vector2, float, float> OnConfirm, bool AllowScale)? _deferredBegin;
+
         private int _MaxInputLength = -1;
         public int MaxInputLength
         {
@@ -165,6 +168,12 @@ namespace Content.Client.Paper.UI
         /// </summary>
         public void BeginSignaturePlacement(StampDisplayInfo info, Action<Vector2, float, float> onConfirm, bool allowScale = true)
         {
+            if (!_populated)
+            {
+                _deferredBegin = (info, onConfirm, allowScale);
+                return;
+            }
+
             _pendingPlacement = null;
 
             if (InputContainer.Visible)
@@ -421,6 +430,13 @@ namespace Content.Client.Paper.UI
             {
                 _pendingPlacement = null;
                 StartSignaturePlacement(pending.Info, pending.OnConfirm, pending.AllowScale);
+            }
+
+            _populated = true;
+            if (_deferredBegin is { } deferred)
+            {
+                _deferredBegin = null;
+                BeginSignaturePlacement(deferred.Info, deferred.OnConfirm, deferred.AllowScale);
             }
         }
 
