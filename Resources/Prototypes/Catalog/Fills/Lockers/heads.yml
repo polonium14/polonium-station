@@ -337,10 +337,11 @@
     - id: DrinkHosFlask
     - id: PlushieLizardJobHeadofsecurity
       prob: 0.02
-    - !type:GroupSelector
+    - !type:GroupSelector # Polonium addition
       children:
+      - id: ExplosivePack # 66.666%
       - id: ExplosivePack
-      - id: ThermitePack
+      - id: ThermitePack # 33.333%
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable
