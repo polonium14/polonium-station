@@ -423,7 +423,7 @@ public sealed partial class SignaturePlacementControl : Control
         {
             _drag = DragMode.Scale;
             _pressedHandle = handleIdx;
-            _grabCenterPx = _centerPx ?? BoxCenterPx;
+            _grabCenterPx = BoxCenterPx;
             _grabScale = _scale;
             _grabDist = MathF.Max(1f, (mouse - _grabCenterPx).Length());
             _grabMaxFit = MaxFitScale();
