@@ -12,4 +12,6 @@ paper-component-action-stamp-paper-self = You stamp { $target } with { $stamp }.
 # Indicator to show how full a paper is
 paper-ui-fill-level = { $currentLength }/{ $maxLength }
 paper-ui-save-button = Save ({ $keybind })
+paper-ui-sign-confirm-button = Podpisz
+paper-ui-sign-cancel-button = Anuluj
 paper-tamper-proof-modified-message = This page was written using tamper-proof ink.
