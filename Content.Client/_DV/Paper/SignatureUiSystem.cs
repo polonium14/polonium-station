@@ -1,3 +1,4 @@
+using System.Linq;
 using Content.Client.Paper.UI;
 using Content.Shared._DV.Paper;
 using Content.Shared.Paper;
@@ -48,6 +49,17 @@ public sealed class SignatureUiSystem : SharedSignatureSystem
     {
         if (args.UiKey is PaperUiKey.Key)
             TryBeginPlacement(ent.Owner);
+    }
+
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+
+        if (_pending.Count == 0)
+            return;
+
+        foreach (var paper in _pending.Keys.ToArray())
+            TryBeginPlacement(paper);
     }
 
     private void TryBeginPlacement(EntityUid paper)

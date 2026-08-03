@@ -13,6 +13,8 @@ public sealed class PaperBoundUserInterface : BoundUserInterface
     [ViewVariables]
     private PaperWindow? _window;
 
+    private (EntityUid Pen, StampDisplayInfo Info)? _pendingSign;
+
     public PaperBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
     {
     }
@@ -32,6 +34,12 @@ public sealed class PaperBoundUserInterface : BoundUserInterface
         {
             _window.InitVisuals(Owner, visuals);
         }
+
+        if (_pendingSign is { } pending)
+        {
+            _pendingSign = null;
+            BeginSignaturePlacement(pending.Pen, pending.Info);
+        }
     }
 
     protected override void UpdateState(BoundUserInterfaceState state)
@@ -46,7 +54,13 @@ public sealed class PaperBoundUserInterface : BoundUserInterface
     /// </summary>
     public void BeginSignaturePlacement(EntityUid pen, StampDisplayInfo info)
     {
-        _window?.BeginSignaturePlacement(info, (position, scale, rotation) =>
+        if (_window == null)
+        {
+            _pendingSign = (pen, info);
+            return;
+        }
+
+        _window.BeginSignaturePlacement(info, (position, scale, rotation) =>
         {
             SendMessage(new PaperSignMessage(EntMan.GetNetEntity(pen), position, scale, rotation));
         });

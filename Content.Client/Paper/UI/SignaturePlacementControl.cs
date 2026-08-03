@@ -135,7 +135,7 @@ public sealed class SignaturePlacementControl : Control
 
     protected override Vector2 ArrangeOverride(Vector2 finalSize)
     {
-        LayoutPreview();
+        LayoutPreview(finalSize * UIScale);
         return finalSize;
     }
 
@@ -144,16 +144,24 @@ public sealed class SignaturePlacementControl : Control
         _preview?.Measure(new Vector2(float.PositiveInfinity, float.PositiveInfinity));
     }
 
-    private void LayoutPreview()
+    private Vector2 CurrentSizePx => new(PixelSize.X, PixelSize.Y);
+
+    private void LayoutPreview(Vector2 sizePx)
     {
         if (_preview == null)
             return;
 
-        _centerPx ??= new Vector2(PixelSize.X, PixelSize.Y) * 0.5f;
+        if (_centerPx == null)
+        {
+            if (sizePx.X <= 0 || sizePx.Y <= 0)
+                return;
+
+            _centerPx = sizePx * 0.5f;
+        }
 
         var size = PreviewSizePx;
         var half = size * 0.5f;
-        var center = ClampCenter(_centerPx.Value, half);
+        var center = ClampCenter(_centerPx.Value, half, sizePx);
         _centerPx = center;
         var topLeft = center - half;
         var topLeftI = new Vector2i((int)topLeft.X, (int)topLeft.Y);
@@ -161,9 +169,8 @@ public sealed class SignaturePlacementControl : Control
         _preview.ArrangePixel(new UIBox2i(topLeftI, topLeftI + sizeI));
     }
 
-    private Vector2 ClampCenter(Vector2 center, Vector2 half)
+    private Vector2 ClampCenter(Vector2 center, Vector2 half, Vector2 size)
     {
-        var size = new Vector2(PixelSize.X, PixelSize.Y);
         var min = half;
         var max = size - half;
         var x = max.X > min.X ? Math.Clamp(center.X, min.X, max.X) : center.X;
@@ -272,7 +279,7 @@ public sealed class SignaturePlacementControl : Control
         {
             case DragMode.Move:
                 _centerPx = _grabCenterPx + (mouse - _grabMousePx);
-                LayoutPreview();
+                LayoutPreview(CurrentSizePx);
                 break;
 
             case DragMode.Scale:
@@ -283,7 +290,7 @@ public sealed class SignaturePlacementControl : Control
                     _scale = newScale;
                     UpdatePreview();
                     MeasurePreview();
-                    LayoutPreview();
+                    LayoutPreview(CurrentSizePx);
                 }
                 break;
         }
