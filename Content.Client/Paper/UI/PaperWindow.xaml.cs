@@ -99,6 +99,8 @@ namespace Content.Client.Paper.UI
 
             SignConfirmButton.Text = Loc.GetString("paper-ui-sign-confirm-button");
             SignCancelButton.Text = Loc.GetString("paper-ui-sign-cancel-button");
+            SignConfirmButton.ModulateSelfOverride = Color.FromHex("#1F6B2E"); // dark green
+            SignCancelButton.ModulateSelfOverride = Color.FromHex("#8B1E1E"); // dark red
             SignCancelButton.OnPressed += _ => EndSignaturePlacement();
             SignConfirmButton.OnPressed += _ =>
             {
@@ -106,6 +108,40 @@ namespace Content.Client.Paper.UI
                 _onSignConfirm?.Invoke(position, scale, rotation);
                 EndSignaturePlacement();
             };
+
+            // Keep the confirm/cancel row floating just above the signature box.
+            SignaturePlacement.LayoutChanged += PositionSignButtons;
+        }
+
+        // Positions the SignButtons row above the signature box, right-aligned to
+        // its right edge, flipping below when there's no room above.
+        private void PositionSignButtons()
+        {
+            if (!SignButtons.Visible)
+                return;
+
+            // Box rect is in the gizmo's local pixels; convert to virtual pixels
+            // in the shared PaperContent space. The gizmo's Position already
+            // includes its margin, so no extra offset is needed.
+            var box = SignaturePlacement.BoxRectPx;
+            var scale = SignaturePlacement.UIScale;
+            var origin = SignaturePlacement.Position;
+            var boxTopLeft = origin + new Vector2(box.Left, box.Top) / scale;
+            var boxSize = new Vector2(box.Width, box.Height) / scale;
+
+            var btnSize = SignButtons.DesiredSize;
+            const float gap = 4f;
+            // Corner handles extend past the box outline; clear them too so the
+            // row never sits under a handle.
+            var clear = gap + SignaturePlacement.HandleExtentVirtual;
+
+            // BoxRectPx wraps the signature ink, so anchoring to the box edges
+            // gives an equal gap above and below.
+            var x = boxTopLeft.X;
+            var above = boxTopLeft.Y - btnSize.Y - clear;
+            var y = above >= 0f ? above : boxTopLeft.Y + boxSize.Y + clear;
+
+            LayoutContainer.SetPosition(SignButtons, new Vector2(x, y));
         }
 
         /// <summary>
@@ -117,6 +153,7 @@ namespace Content.Client.Paper.UI
             _onSignConfirm = onConfirm;
             SignaturePlacement.Begin(info);
             SignButtons.Visible = true;
+            PositionSignButtons();
         }
 
         private void EndSignaturePlacement()

@@ -1,3 +1,4 @@
+using System;
 using System.Numerics;
 using Content.Shared.Paper;
 using Robust.Client.Graphics;
@@ -46,6 +47,21 @@ public sealed class SignaturePlacementControl : Control
     // Center of the signature box, in this control's local pixels. Null until
     // first arranged, at which point it defaults to the control's center.
     private Vector2? _centerPx;
+
+    // The signature box in this control's local pixels, as last arranged.
+    private UIBox2i _boxRectPx;
+
+    /// <summary>The signature box in this control's local pixels.</summary>
+    public UIBox2i BoxRectPx => _boxRectPx;
+
+    /// <summary>Fires whenever the box is moved or scaled (re-arranged).</summary>
+    public event Action? LayoutChanged;
+
+    /// <summary>
+    ///     How far, in virtual pixels, a corner handle extends past the box
+    ///     outline (uses the grown/hover size so buttons clear it in every state).
+    /// </summary>
+    public float HandleExtentVirtual => HandleHoverHalf;
 
     private enum DragMode
     {
@@ -170,6 +186,7 @@ public sealed class SignaturePlacementControl : Control
         var topLeftI = new Vector2i((int)topLeft.X, (int)topLeft.Y);
         var sizeI = new Vector2i((int)size.X, (int)size.Y);
         _preview.ArrangePixel(new UIBox2i(topLeftI, topLeftI + sizeI));
+        SetBoxRect();
     }
 
     private Vector2 ClampCenter(Vector2 center, Vector2 half, Vector2 size)
@@ -188,14 +205,26 @@ public sealed class SignaturePlacementControl : Control
 
         var size = PreviewSizePx;
         var sizeI = new Vector2i((int)size.X, (int)size.Y);
+        var deadTop = (int)DeadTopPx;
         var o = _grabOppositeCornerPx;
 
         var tlx = _grabSignVec.X > 0 ? o.X : o.X - sizeI.X;
-        var tly = _grabSignVec.Y > 0 ? o.Y : o.Y - sizeI.Y;
+        var tly = _grabSignVec.Y > 0 ? o.Y - deadTop : o.Y - sizeI.Y;
         var topLeftI = ClampTopLeft(new Vector2i(tlx, tly), sizeI, CurrentSizePx);
 
         _preview.ArrangePixel(new UIBox2i(topLeftI, topLeftI + sizeI));
         _centerPx = new Vector2(topLeftI.X, topLeftI.Y) + new Vector2(sizeI.X, sizeI.Y) * 0.5f;
+        SetBoxRect();
+    }
+
+    private void SetBoxRect()
+    {
+        var o = BoxOriginPx;
+        var s = BoxSizePx;
+        var topLeftI = new Vector2i((int)o.X, (int)o.Y);
+        var sizeI = new Vector2i((int)s.X, (int)s.Y);
+        _boxRectPx = new UIBox2i(topLeftI, topLeftI + sizeI);
+        LayoutChanged?.Invoke();
     }
 
     private static Vector2i ClampTopLeft(Vector2i topLeft, Vector2i size, Vector2 screen)
@@ -252,16 +281,27 @@ public sealed class SignaturePlacementControl : Control
         return new Vector2(_preview!.PixelPosition.X, _preview.PixelPosition.Y) + PreviewSizePx * 0.5f;
     }
 
+    // Dead space above the signature ink inside the widget, in local px. The ink
+    // hugs the widget bottom, so the visible box starts this far below the top.
+    private float DeadTopPx =>
+        _preview == null ? 0f : MathF.Max(0f, PreviewSizePx.Y - _preview.SignatureInkHeightPx * UIScale);
+
+    // The visible/interactive box (wraps the ink, not the padded widget), local px.
+    private Vector2 BoxOriginPx =>
+        _preview == null ? Vector2.Zero : new Vector2(_preview.PixelPosition.X, _preview.PixelPosition.Y + DeadTopPx);
+
+    private Vector2 BoxSizePx => new(PreviewSizePx.X, PreviewSizePx.Y - DeadTopPx);
+
     private Vector2[] CornersLocal()
     {
-        var center = BoxCenterLocal();
-        var half = PreviewSizePx * 0.5f;
+        var o = BoxOriginPx;
+        var s = BoxSizePx;
         return new[]
         {
-            center + new Vector2(-half.X, -half.Y),
-            center + new Vector2(half.X, -half.Y),
-            center + new Vector2(-half.X, half.Y),
-            center + new Vector2(half.X, half.Y),
+            o,
+            o + new Vector2(s.X, 0),
+            o + new Vector2(0, s.Y),
+            o + s,
         };
     }
 
@@ -341,8 +381,8 @@ public sealed class SignaturePlacementControl : Control
         if (_preview == null)
             return;
 
-        var tl = new Vector2(_preview.PixelPosition.X, _preview.PixelPosition.Y);
-        var size = PreviewSizePx;
+        var tl = BoxOriginPx;
+        var size = BoxSizePx;
         var tr = tl + new Vector2(size.X, 0);
         var bl = tl + new Vector2(0, size.Y);
         var br = tl + size;

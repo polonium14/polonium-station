@@ -38,6 +38,13 @@ public sealed partial class StampWidget : PanelContainer
 
     public Vector2 NormalizedPosition;
 
+    /// <summary>
+    ///     Height of the signature glyphs, in virtual pixels. The label box is
+    ///     taller than this and the ink hugs the box bottom, so the dead space on
+    ///     top is (box height - this). Zero for icon stamps.
+    /// </summary>
+    public float SignatureInkHeightPx { get; private set; }
+
     public float Orientation
     {
         get => StampedByLabel.Orientation;
@@ -102,7 +109,9 @@ public sealed partial class StampWidget : PanelContainer
                     font = stampFont;
 
                 var fontSize = (int)MathF.Max(1f, BaseSignatureFontSize * scale);
-                StampedByLabel.FontOverride = new VectorFont(resCache.GetResource<FontResource>(font.Path), fontSize);
+                var vectorFont = new VectorFont(resCache.GetResource<FontResource>(font.Path), fontSize);
+                StampedByLabel.FontOverride = vectorFont;
+                SignatureInkHeightPx = vectorFont.GetHeight(1f);
             }
 
             _stampShader = prototypes.Index(PaperStampShader).InstanceUnique();
