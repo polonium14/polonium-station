@@ -47,7 +47,7 @@
   reagents:
     Ketchup: 5
   solids:
-    FoodBreadBun: 1
+    FoodCottonBun: 1
     FoodMeatMoffParowa: 1
 
 - type: microwaveMealRecipe
