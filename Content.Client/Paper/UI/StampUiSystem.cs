@@ -1,6 +1,7 @@
 using System.Linq;
 using Content.Shared.Paper;
 using Robust.Client.GameObjects;
+using Robust.Client.UserInterface;
 using static Content.Shared.Paper.PaperComponent;
 
 namespace Content.Client.Paper.UI;
@@ -22,6 +23,8 @@ public sealed class StampUiSystem : EntitySystem
         base.Initialize();
 
         SubscribeNetworkEvent<PaperStampRequestEvent>(OnStampRequest);
+        SubscribeLocalEvent<PaperComponent, BoundUIOpenedEvent>(OnBuiOpened);
+        SubscribeLocalEvent<PaperComponent, BoundUIClosedEvent>(OnBuiClosed);
     }
 
     private void OnStampRequest(PaperStampRequestEvent ev)
@@ -31,6 +34,18 @@ public sealed class StampUiSystem : EntitySystem
 
         _pending[paper.Value] = stamp.Value;
         TryBeginPlacement(paper.Value);
+    }
+
+    private void OnBuiOpened(Entity<PaperComponent> ent, ref BoundUIOpenedEvent args)
+    {
+        if (args.UiKey is PaperUiKey.Key)
+            TryBeginPlacement(ent.Owner);
+    }
+
+    private void OnBuiClosed(Entity<PaperComponent> ent, ref BoundUIClosedEvent args)
+    {
+        if (args.UiKey is PaperUiKey.Key)
+            _pending.Remove(ent.Owner);
     }
 
     public override void Update(float frameTime)
