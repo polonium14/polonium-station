@@ -74,6 +74,8 @@ public sealed partial class StampWidget : PanelContainer
                 Orientation = rot;
             }
 
+            StampedByLabel.PivotAboutCenter = HasExplicitTransform;
+
             if (hasIcon)
             {
                 var borderImage = resCache.GetResource<TextureResource>(
@@ -126,16 +128,26 @@ public sealed partial class StampWidget : PanelContainer
 
     protected override void Draw(DrawingHandleScreen handle)
     {
-        var cos = MathF.Cos(Orientation);
-        var sin = MathF.Sin(Orientation);
-        var half = (Vector2)PixelSize * 0.5f;
-        var rotHalf = new Vector2(half.X * cos - half.Y * sin, half.X * sin + half.Y * cos);
-        var origin = GlobalPosition * UIScale + half - rotHalf;
-
         _stampShader?.SetParameter("objCoord", GlobalPosition * UIScale * new Vector2(1, -1));
         _stampShader?.SetParameter("useStampNoise", StampNoise); // imp
         handle.UseShader(_stampShader);
-        handle.SetTransform(origin, Orientation, Vector2.One);
+
+        if (HasExplicitTransform)
+        {
+            var cos = MathF.Cos(Orientation);
+            var sin = MathF.Sin(Orientation);
+            var half = (Vector2)PixelSize * 0.5f;
+            var rotHalf = new Vector2(half.X * cos - half.Y * sin, half.X * sin + half.Y * cos);
+            var origin = GlobalPosition * UIScale + half - rotHalf;
+            handle.SetTransform(origin, Orientation, Vector2.One);
+        }
+        else
+        {
+            // Auto-placed stamps: original top-left pivot (byte-identical to the
+            // pre-signature behavior).
+            handle.SetTransform(GlobalPosition * UIScale, Orientation, Vector2.One);
+        }
+
         base.Draw(handle);
 
         // Restore a sane transform+shader

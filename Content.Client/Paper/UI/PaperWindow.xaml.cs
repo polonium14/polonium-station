@@ -50,7 +50,7 @@ namespace Content.Client.Paper.UI
 
         private Action<Vector2, float, float>? _onSignConfirm;
 
-        private (StampDisplayInfo Info, Action<Vector2, float, float> OnConfirm)? _pendingPlacement;
+        private (StampDisplayInfo Info, Action<Vector2, float, float> OnConfirm, bool AllowScale)? _pendingPlacement;
 
         // How long we wait for the save to commit before giving up on the deferred
         // placement. The server sends no state if the write is rejected, so this
@@ -163,7 +163,7 @@ namespace Content.Client.Paper.UI
         ///     Enters signature placement mode, showing the draggable/scalable
         ///     preview and the confirm/cancel toolbar.
         /// </summary>
-        public void BeginSignaturePlacement(StampDisplayInfo info, Action<Vector2, float, float> onConfirm)
+        public void BeginSignaturePlacement(StampDisplayInfo info, Action<Vector2, float, float> onConfirm, bool allowScale = true)
         {
             _pendingPlacement = null;
 
@@ -172,23 +172,26 @@ namespace Content.Client.Paper.UI
                 var tooLong = MaxInputLength != -1 && Input.TextLength > MaxInputLength;
                 if (tooLong)
                 {
-                    SignPopup("paper-ui-sign-save-first");
+                    SignPopup(allowScale ? "paper-ui-sign-save-first" : "paper-ui-stamp-save-first");
                     return;
                 }
 
-                _pendingPlacement = (info, onConfirm);
+                _pendingPlacement = (info, onConfirm, allowScale);
                 _pendingPlacementTime = 0f;
                 RunOnSaved();
                 return;
             }
 
-            StartSignaturePlacement(info, onConfirm);
+            StartSignaturePlacement(info, onConfirm, allowScale);
         }
 
-        private void StartSignaturePlacement(StampDisplayInfo info, Action<Vector2, float, float> onConfirm)
+        private void StartSignaturePlacement(StampDisplayInfo info, Action<Vector2, float, float> onConfirm, bool allowScale)
         {
             _onSignConfirm = onConfirm;
-            SignaturePlacement.Begin(info);
+            SignConfirmButton.Text = Loc.GetString(allowScale
+                ? "paper-ui-sign-confirm-button"
+                : "paper-ui-stamp-confirm-button");
+            SignaturePlacement.Begin(info, allowScale);
             SignButtons.Visible = true;
             PositionSignButtons();
         }
@@ -217,8 +220,9 @@ namespace Content.Client.Paper.UI
             _pendingPlacementTime += args.DeltaSeconds;
             if (_pendingPlacementTime >= PendingPlacementTimeout)
             {
+                var allowScale = _pendingPlacement.Value.AllowScale;
                 _pendingPlacement = null;
-                SignPopup("paper-ui-sign-failed");
+                SignPopup(allowScale ? "paper-ui-sign-failed" : "paper-ui-stamp-failed");
             }
         }
 
@@ -397,10 +401,6 @@ namespace Content.Client.Paper.UI
                 Input.InsertAtCursor(state.Text);
             }
 
-            for (var i = 0; i <= state.StampedBy.Count * 3 + 1; i++)
-            {
-                msg.AddMarkupPermissive("\r\n");
-            }
             WrittenTextLabel.SetMessage(msg, UserFormattableTags.BaseAllowedTags, _writtenTextColor);
 
             WrittenTextLabel.Visible = !isEditing && state.Text.Length > 0;
@@ -408,6 +408,8 @@ namespace Content.Client.Paper.UI
 
             StampDisplay.RemoveAllChildren();
             StampDisplay.RemoveStamps();
+            // Auto-placed stamps scatter below this text, never over it.
+            StampDisplay.TextRegion = WrittenTextLabel;
             foreach(var stamper in state.StampedBy)
             {
                 StampDisplay.AddStamp(new StampWidget{ StampInfo = stamper });
@@ -416,7 +418,7 @@ namespace Content.Client.Paper.UI
             if (wasEditing && !isEditing && _pendingPlacement is { } pending)
             {
                 _pendingPlacement = null;
-                StartSignaturePlacement(pending.Info, pending.OnConfirm);
+                StartSignaturePlacement(pending.Info, pending.OnConfirm, pending.AllowScale);
             }
         }
 

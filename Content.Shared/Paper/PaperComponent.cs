@@ -85,6 +85,30 @@ public sealed partial class PaperComponent : Component
         }
     }
 
+    /// <summary>
+    ///     Sent from the client to commit a manually-placed stamp after the
+    ///     player has positioned and rotated it in the placement UI. The server
+    ///     recomputes the stamp's name/color/icon itself from the stamp item;
+    ///     only the position and rotation are taken from the client (and clamped).
+    ///     Stamps are placed at their natural size, so there is no scale field.
+    /// </summary>
+    [Serializable, NetSerializable]
+    public sealed class PaperStampPlaceMessage : BoundUserInterfaceMessage
+    {
+        public readonly NetEntity Stamp;
+
+        public readonly Vector2 Position;
+
+        public readonly float Rotation;
+
+        public PaperStampPlaceMessage(NetEntity stamp, Vector2 position, float rotation)
+        {
+            Stamp = stamp;
+            Position = position;
+            Rotation = rotation;
+        }
+    }
+
     [Serializable, NetSerializable]
     public enum PaperUiKey
     {

@@ -15,6 +15,8 @@ public sealed class PaperBoundUserInterface : BoundUserInterface
 
     private (EntityUid Pen, StampDisplayInfo Info)? _pendingSign;
 
+    private (EntityUid Stamp, StampDisplayInfo Info)? _pendingStamp;
+
     public PaperBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
     {
     }
@@ -40,6 +42,12 @@ public sealed class PaperBoundUserInterface : BoundUserInterface
             _pendingSign = null;
             BeginSignaturePlacement(pending.Pen, pending.Info);
         }
+
+        if (_pendingStamp is { } pendingStamp)
+        {
+            _pendingStamp = null;
+            BeginStampPlacement(pendingStamp.Stamp, pendingStamp.Info);
+        }
     }
 
     protected override void UpdateState(BoundUserInterfaceState state)
@@ -64,6 +72,25 @@ public sealed class PaperBoundUserInterface : BoundUserInterface
         {
             SendMessage(new PaperSignMessage(EntMan.GetNetEntity(pen), position, scale, rotation));
         });
+    }
+
+    /// <summary>
+    ///     Enters stamp placement mode: shows a draggable, rotatable (but not
+    ///     scalable) preview of <paramref name="info"/> that the player positions
+    ///     before committing. Mirrors <see cref="BeginSignaturePlacement"/>.
+    /// </summary>
+    public void BeginStampPlacement(EntityUid stamp, StampDisplayInfo info)
+    {
+        if (_window == null)
+        {
+            _pendingStamp = (stamp, info);
+            return;
+        }
+
+        _window.BeginSignaturePlacement(info, (position, _, rotation) =>
+        {
+            SendMessage(new PaperStampPlaceMessage(EntMan.GetNetEntity(stamp), position, rotation));
+        }, allowScale: false);
     }
 
     private void InputOnTextEntered(string text)

@@ -63,6 +63,8 @@ public sealed partial class SignaturePlacementControl : Control
     private float _rotation;
     private int _appliedFontSize = -1;
 
+    private bool _allowScale = true;
+
     // Center of the signature box, in this control's local pixels. Null until
     // first arranged, at which point it defaults to the control's center.
     private Vector2? _centerPx;
@@ -112,9 +114,10 @@ public sealed partial class SignaturePlacementControl : Control
     /// <summary>
     ///     Starts placement of a fresh signature preview.
     /// </summary>
-    public void Begin(StampDisplayInfo info)
+    public void Begin(StampDisplayInfo info, bool allowScale = true)
     {
         _info = info;
+        _allowScale = allowScale;
         _scale = 1f;
         _rotation = 0f;
         _centerPx = null;
@@ -173,6 +176,7 @@ public sealed partial class SignaturePlacementControl : Control
         _appliedFontSize = fontSize;
         var info = _info;
         info.Scale = _scale;
+        info.Rotation = _rotation;
         _preview = new StampWidget { StampInfo = info };
         _preview.Orientation = _rotation;
         _preview.Modulate = Color.White.WithAlpha(PreviewInkAlpha);
@@ -270,8 +274,9 @@ public sealed partial class SignaturePlacementControl : Control
         var boxHalf = inkSize * 0.5f;
         var cos = MathF.Abs(MathF.Cos(_rotation));
         var sin = MathF.Abs(MathF.Sin(_rotation));
+        var handleReach = _allowScale ? HandleHoverHalf * UIScale : 0f;
         var margin = new Vector2(boxHalf.X * cos + boxHalf.Y * sin, boxHalf.X * sin + boxHalf.Y * cos)
-            + new Vector2(HandleHoverHalf * UIScale);
+            + new Vector2(handleReach);
 
         var lo = margin;
         var hi = controlSize - margin;
@@ -291,11 +296,19 @@ public sealed partial class SignaturePlacementControl : Control
         LayoutChanged?.Invoke();
     }
 
+    private bool BoxWrapsWidget => _info.HasIcon;
+
     private Vector2 BoxOriginPx =>
         _preview == null ? Vector2.Zero
-            : new Vector2(_preview.PixelPosition.X, _preview.PixelPosition.Y) + _preview.InkLabelPosPx;
+            : BoxWrapsWidget
+                ? new Vector2(_preview.PixelPosition.X, _preview.PixelPosition.Y)
+                : new Vector2(_preview.PixelPosition.X, _preview.PixelPosition.Y) + _preview.InkLabelPosPx;
 
-    private Vector2 BoxSizePx => _preview == null ? Vector2.Zero : _preview.InkLabelSizePx;
+    private Vector2 BoxSizePx =>
+        _preview == null ? Vector2.Zero
+            : BoxWrapsWidget
+                ? new Vector2(_preview.PixelSize.X, _preview.PixelSize.Y)
+                : _preview.InkLabelSizePx;
 
     private Vector2 BoxCenterPx => BoxOriginPx + BoxSizePx * 0.5f;
 
@@ -334,7 +347,7 @@ public sealed partial class SignaturePlacementControl : Control
 
     private int HandleAt(Vector2 pointPx)
     {
-        if (_preview == null)
+        if (_preview == null || !_allowScale)
             return -1;
 
         var hit = HandleHitHalf * UIScale;
@@ -512,13 +525,16 @@ public sealed partial class SignaturePlacementControl : Control
         handle.DrawLine(br, bl, BoxColor);
         handle.DrawLine(bl, tl, BoxColor);
 
-        for (var i = 0; i < corners.Length; i++)
+        if (_allowScale)
         {
-            var grown = i == _hoveredHandle || i == _pressedHandle;
-            var hh = (grown ? HandleHoverHalf : HandleHalf) * UIScale;
-            var fill = i == _pressedHandle ? BoxColorPressed : BoxColor;
-            var box = new UIBox2(corners[i] - new Vector2(hh, hh), corners[i] + new Vector2(hh, hh));
-            handle.DrawRect(box, fill);
+            for (var i = 0; i < corners.Length; i++)
+            {
+                var grown = i == _hoveredHandle || i == _pressedHandle;
+                var hh = (grown ? HandleHoverHalf : HandleHalf) * UIScale;
+                var fill = i == _pressedHandle ? BoxColorPressed : BoxColor;
+                var box = new UIBox2(corners[i] - new Vector2(hh, hh), corners[i] + new Vector2(hh, hh));
+                handle.DrawRect(box, fill);
+            }
         }
 
         var topMid = (tl + tr) * 0.5f;

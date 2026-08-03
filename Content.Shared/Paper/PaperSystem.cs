@@ -1,4 +1,5 @@
 using System.Linq;
+using System.Numerics;
 using Content.Shared.Administration.Logs;
 using Content.Shared.UserInterface;
 using Content.Shared.Database;
@@ -7,6 +8,8 @@ using Content.Shared.Interaction;
 using Content.Shared.Random.Helpers;
 using Content.Shared.Popups;
 using Content.Shared.Tag;
+using Content.Shared.Verbs;
+using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Audio.Systems;
 using static Content.Shared.Paper.PaperComponent;
@@ -26,6 +29,8 @@ public sealed partial class PaperSystem : EntitySystem
     [Dependency] private SharedUserInterfaceSystem _uiSystem = default!;
     [Dependency] private MetaDataSystem _metaSystem = default!;
     [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private ISharedPlayerManager _player = default!;
+    [Dependency] private INetManager _net = default!;
 
     [Dependency] private EntityQuery<PaperComponent> _paperQuery = default!;
 
@@ -43,6 +48,8 @@ public sealed partial class PaperSystem : EntitySystem
         SubscribeLocalEvent<PaperComponent, ExaminedEvent>(OnExamined);
         SubscribeLocalEvent<PaperComponent, InteractUsingEvent>(OnInteractUsing);
         SubscribeLocalEvent<PaperComponent, PaperInputTextMessage>(OnInputTextMessage);
+        SubscribeLocalEvent<PaperComponent, GetVerbsEvent<InteractionVerb>>(OnGetStampVerb);
+        SubscribeLocalEvent<PaperComponent, PaperStampPlaceMessage>(OnPaperStamp);
 
         SubscribeLocalEvent<RandomPaperContentComponent, MapInitEvent>(OnRandomPaperContentMapInit);
 
@@ -170,7 +177,7 @@ public sealed partial class PaperSystem : EntitySystem
         }
     }
 
-    private static StampDisplayInfo GetStampInfo(StampComponent stamp)
+    public static StampDisplayInfo GetStampInfo(StampComponent stamp)
     {
         return new StampDisplayInfo
         {
@@ -178,6 +185,80 @@ public sealed partial class PaperSystem : EntitySystem
             StampedColor = stamp.StampedColor,
             StampLargeIcon = stamp.StampLargeIcon // imp
         };
+    }
+
+    private void OnGetStampVerb(Entity<PaperComponent> ent, ref GetVerbsEvent<InteractionVerb> args)
+    {
+        if (!args.CanAccess || !args.CanInteract)
+            return;
+
+        if (args.Using is not { } stamp || !TryComp<StampComponent>(stamp, out var stampComp))
+            return;
+
+        var user = args.User;
+        InteractionVerb verb = new()
+        {
+            Act = () =>
+            {
+                StartStampPlacement(ent, user, stamp);
+            },
+            Text = Loc.GetString("paper-stamp-verb"),
+            DoContactInteraction = true,
+        };
+        args.Verbs.Add(verb);
+    }
+
+    /// <summary>
+    ///     Opens the paper UI and tells the requesting client to enter stamp
+    ///     placement mode. The stamp isn't committed here; it's committed later
+    ///     when the client sends a <see cref="PaperComponent.PaperStampPlaceMessage"/>.
+    /// </summary>
+    private void StartStampPlacement(Entity<PaperComponent> paper, EntityUid user, EntityUid stamp)
+    {
+        if (!_net.IsServer)
+            return;
+
+        if (!_player.TryGetSessionByEntity(user, out var session))
+            return;
+
+        _uiSystem.OpenUi(paper.Owner, PaperUiKey.Key, user);
+        RaiseNetworkEvent(new PaperStampRequestEvent(GetNetEntity(paper.Owner), GetNetEntity(stamp)), session);
+    }
+
+    private void OnPaperStamp(Entity<PaperComponent> paper, ref PaperStampPlaceMessage args)
+    {
+        var user = args.Actor;
+
+        if (!TryGetEntity(args.Stamp, out var stamp))
+            return;
+
+        if (!TryComp<StampComponent>(stamp, out var stampComp))
+            return;
+
+        if (!_interaction.InRangeUnobstructed(user, paper.Owner) ||
+            !_interaction.InRangeUnobstructed(user, stamp.Value))
+            return;
+
+        var stampInfo = GetStampInfo(stampComp);
+        stampInfo.Position = Vector2.Clamp(args.Position, Vector2.Zero, Vector2.One);
+        stampInfo.Rotation = args.Rotation;
+        stampInfo.Scale = 1f;
+
+        if (!TryStamp(paper, stampInfo, stampComp.StampState))
+            return;
+
+        var stampPaperOtherMessage = Loc.GetString("paper-component-action-stamp-paper-other",
+                ("user", user),
+                ("target", paper.Owner),
+                ("stamp", stamp.Value));
+        var stampPaperSelfMessage = Loc.GetString("paper-component-action-stamp-paper-self",
+                ("target", paper.Owner),
+                ("stamp", stamp.Value));
+        _popupSystem.PopupEntity(stampPaperSelfMessage, stampPaperOtherMessage, user, user);
+
+        _audio.PlayPvs(stampComp.Sound, paper);
+
+        UpdateUserInterface(paper);
     }
 
     private void OnInputTextMessage(Entity<PaperComponent> entity, ref PaperInputTextMessage args)
