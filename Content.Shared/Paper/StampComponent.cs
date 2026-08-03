@@ -50,6 +50,16 @@ public partial struct StampDisplayInfo
     public bool HasIcon = true; // imp
 
     /// <summary>
+    ///     Whether <see cref="StampedName"/> is a localization id to be run through
+    ///     Loc.GetString (true, for stamps whose name is a loc key), or a literal
+    ///     display string to show verbatim (false, for signatures whose name is a
+    ///     raw signer name). Localizing a raw name spams warnings and can collide
+    ///     with a real Fluent id.
+    /// </summary>
+    [DataField("localizeName")]
+    public bool LocalizeName = true;
+
+    /// <summary>
     ///     Normalized [0,1] position within the stamp display area where this
     ///     mark was placed. Null means "use the procedural auto-layout".
     ///     Used by manually-placed signatures.

@@ -104,7 +104,7 @@ public sealed partial class StampWidget : PanelContainer
 
             if (icon == null)
             {
-                StampedByLabel.Text = Loc.GetString(value.StampedName);
+                StampedByLabel.Text = value.LocalizeName ? Loc.GetString(value.StampedName) : value.StampedName;
                 StampedByLabel.FontColorOverride = value.StampedColor;
                 ModulateSelfOverride = value.StampedColor;
 

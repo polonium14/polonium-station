@@ -88,6 +88,7 @@ public abstract partial class SharedSignatureSystem : EntitySystem
             StampedColor = signatureColor,
             HasIcon = false,
             StampFont = signatureFont,
+            LocalizeName = false, // a raw signer name, not a loc id
         };
     }
 

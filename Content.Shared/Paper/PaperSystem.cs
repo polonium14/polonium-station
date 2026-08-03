@@ -107,7 +107,7 @@ public sealed partial class PaperSystem : EntitySystem
             if (entity.Comp.StampedBy.Count > 0)
             {
                 var commaSeparated =
-                    string.Join(", ", entity.Comp.StampedBy.Select(s => Loc.GetString(s.StampedName)));
+                    string.Join(", ", entity.Comp.StampedBy.Select(s => s.LocalizeName ? Loc.GetString(s.StampedName) : s.StampedName));
                 args.PushMarkup(
                     Loc.GetString(
                         "paper-component-examine-detail-stamped-by",
@@ -185,7 +185,8 @@ public sealed partial class PaperSystem : EntitySystem
         {
             StampedName = stamp.StampedName,
             StampedColor = stamp.StampedColor,
-            StampLargeIcon = stamp.StampLargeIcon // imp
+            StampLargeIcon = stamp.StampLargeIcon, // imp
+            LocalizeName = true // stamp names are loc ids
         };
     }
 
