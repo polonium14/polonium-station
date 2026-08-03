@@ -208,11 +208,18 @@ public sealed class SignaturePlacementControl : Control
 
         var size = PreviewSizePx;
         var sizeI = new Vector2i((int)size.X, (int)size.Y);
-        var deadTop = (int)DeadTopPx;
+
+        _preview.ArrangePixel(new UIBox2i(Vector2i.Zero, sizeI));
+        var inkPos = _preview.InkLabelPosPx;
+        var inkSize = _preview.InkLabelSizePx;
         var o = _grabOppositeCornerPx;
 
-        var tlx = _grabSignVec.X > 0 ? o.X : o.X - sizeI.X;
-        var tly = _grabSignVec.Y > 0 ? o.Y - deadTop : o.Y - sizeI.Y;
+        var tlx = _grabSignVec.X > 0
+            ? o.X - (int)inkPos.X
+            : o.X - (int)inkPos.X - (int)inkSize.X;
+        var tly = _grabSignVec.Y > 0
+            ? o.Y - (int)inkPos.Y
+            : o.Y - (int)inkPos.Y - (int)inkSize.Y;
         var topLeftI = ClampTopLeft(new Vector2i(tlx, tly), sizeI, CurrentSizePx);
 
         _preview.ArrangePixel(new UIBox2i(topLeftI, topLeftI + sizeI));
@@ -268,13 +275,13 @@ public sealed class SignaturePlacementControl : Control
             return;
         }
 
-        var boxCenter = BoxCenterLocal();
-        var half = PreviewSizePx * 0.5f;
-        if (MathF.Abs(mouse.X - boxCenter.X) <= half.X && MathF.Abs(mouse.Y - boxCenter.Y) <= half.Y)
+        var o = BoxOriginPx;
+        var s = BoxSizePx;
+        if (mouse.X >= o.X && mouse.X <= o.X + s.X && mouse.Y >= o.Y && mouse.Y <= o.Y + s.Y)
         {
             _drag = DragMode.Move;
             _grabMousePx = mouse;
-            _grabCenterPx = boxCenter;
+            _grabCenterPx = BoxCenterLocal();
             args.Handle();
         }
     }
@@ -284,16 +291,11 @@ public sealed class SignaturePlacementControl : Control
         return new Vector2(_preview!.PixelPosition.X, _preview.PixelPosition.Y) + PreviewSizePx * 0.5f;
     }
 
-    // Dead space above the signature ink inside the widget, in local px. The ink
-    // hugs the widget bottom, so the visible box starts this far below the top.
-    private float DeadTopPx =>
-        _preview == null ? 0f : MathF.Max(0f, PreviewSizePx.Y - _preview.SignatureInkHeightPx * UIScale);
-
-    // The visible/interactive box (wraps the ink, not the padded widget), local px.
     private Vector2 BoxOriginPx =>
-        _preview == null ? Vector2.Zero : new Vector2(_preview.PixelPosition.X, _preview.PixelPosition.Y + DeadTopPx);
+        _preview == null ? Vector2.Zero
+            : new Vector2(_preview.PixelPosition.X, _preview.PixelPosition.Y) + _preview.InkLabelPosPx;
 
-    private Vector2 BoxSizePx => new(PreviewSizePx.X, PreviewSizePx.Y - DeadTopPx);
+    private Vector2 BoxSizePx => _preview == null ? Vector2.Zero : _preview.InkLabelSizePx;
 
     private Vector2[] CornersLocal()
     {
