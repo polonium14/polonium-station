@@ -4,6 +4,7 @@ using Content.Shared.Administration.Logs;
 using Content.Shared.UserInterface;
 using Content.Shared.Database;
 using Content.Shared.Examine;
+using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction;
 using Content.Shared.Random.Helpers;
 using Content.Shared.Popups;
@@ -24,6 +25,7 @@ public sealed partial class PaperSystem : EntitySystem
     [Dependency] private IRobustRandom _random = default!;
     [Dependency] private SharedAppearanceSystem _appearance = default!;
     [Dependency] private SharedInteractionSystem _interaction = default!;
+    [Dependency] private SharedHandsSystem _hands = default!;
     [Dependency] private SharedPopupSystem _popupSystem = default!;
     [Dependency] private TagSystem _tagSystem = default!;
     [Dependency] private SharedUserInterfaceSystem _uiSystem = default!;
@@ -235,13 +237,23 @@ public sealed partial class PaperSystem : EntitySystem
         if (!TryComp<StampComponent>(stamp, out var stampComp))
             return;
 
-        if (!_interaction.InRangeUnobstructed(user, paper.Owner) ||
-            !_interaction.InRangeUnobstructed(user, stamp.Value))
+        // Re-validate: the user must still hold the stamp and be able to reach the
+        // paper. A client-supplied message must not let a dropped/unheld stamp mark.
+        if (!_hands.IsHolding(user, stamp.Value) ||
+            !_interaction.InRangeUnobstructed(user, paper.Owner))
+        {
+            _popupSystem.PopupEntity(Loc.GetString("paper-stamp-failure", ("target", paper.Owner)), user, user, PopupType.SmallCaution);
             return;
+        }
 
         var stampInfo = GetStampInfo(stampComp);
-        stampInfo.Position = Vector2.Clamp(args.Position, Vector2.Zero, Vector2.One);
-        stampInfo.Rotation = args.Rotation;
+        // Sanitize the client-supplied transform against NaN/Infinity so a bad float
+        // can't be persisted and networked to every viewer.
+        var pos = args.Position;
+        if (!float.IsFinite(pos.X) || !float.IsFinite(pos.Y))
+            pos = new Vector2(0.5f, 0.5f);
+        stampInfo.Position = Vector2.Clamp(pos, Vector2.Zero, Vector2.One);
+        stampInfo.Rotation = float.IsFinite(args.Rotation) ? args.Rotation : 0f;
         stampInfo.Scale = 1f;
 
         if (!TryStamp(paper, stampInfo, stampComp.StampState))

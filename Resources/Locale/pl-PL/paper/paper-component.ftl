@@ -28,4 +28,6 @@ paper-ui-stamp-confirm-button = Ostempluj
 paper-ui-stamp-save-first = Musisz skrócić tekst przed ostemplowaniem.
 paper-ui-stamp-failed = Nie można ostemplować dokumentu.
 
+paper-stamp-failure = Nie można ostemplować { $target }
+
 paper-tamper-proof-modified-message = Ta strona została napisana atramentem odpornym na manipulacje.
