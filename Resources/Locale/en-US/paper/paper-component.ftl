@@ -20,5 +20,7 @@ paper-ui-save-button = Save ({$keybind})
 
 paper-ui-sign-confirm-button = Sign
 paper-ui-sign-cancel-button = Cancel
+paper-ui-sign-save-first = You must shorten the text before signing.
+paper-ui-sign-failed = Couldn't sign the document.
 
 paper-tamper-proof-modified-message = This page was written using tamper-proof ink.

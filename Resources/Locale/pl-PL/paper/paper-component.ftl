@@ -14,4 +14,6 @@ paper-ui-fill-level = { $currentLength }/{ $maxLength }
 paper-ui-save-button = Save ({ $keybind })
 paper-ui-sign-confirm-button = Podpisz
 paper-ui-sign-cancel-button = Anuluj
+paper-ui-sign-save-first = Musisz skrócić tekst przed podpisaniem.
+paper-ui-sign-failed = Nie można podpisać dokumentu.
 paper-tamper-proof-modified-message = This page was written using tamper-proof ink.
