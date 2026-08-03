@@ -16,15 +16,21 @@ public sealed class StampUiSystem : EntitySystem
 {
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
 
-    private readonly Dictionary<EntityUid, EntityUid> _pending = new();
+    private struct Pending
+    {
+        public EntityUid Stamp;
+        public float Elapsed;
+    }
+
+    private readonly Dictionary<EntityUid, Pending> _pending = new();
+
+    private const float PendingTimeout = 2f;
 
     public override void Initialize()
     {
         base.Initialize();
 
         SubscribeNetworkEvent<PaperStampRequestEvent>(OnStampRequest);
-        SubscribeLocalEvent<PaperComponent, BoundUIOpenedEvent>(OnBuiOpened);
-        SubscribeLocalEvent<PaperComponent, BoundUIClosedEvent>(OnBuiClosed);
     }
 
     private void OnStampRequest(PaperStampRequestEvent ev)
@@ -32,20 +38,8 @@ public sealed class StampUiSystem : EntitySystem
         if (!TryGetEntity(ev.Paper, out var paper) || !TryGetEntity(ev.Stamp, out var stamp))
             return;
 
-        _pending[paper.Value] = stamp.Value;
+        _pending[paper.Value] = new Pending { Stamp = stamp.Value };
         TryBeginPlacement(paper.Value);
-    }
-
-    private void OnBuiOpened(Entity<PaperComponent> ent, ref BoundUIOpenedEvent args)
-    {
-        if (args.UiKey is PaperUiKey.Key)
-            TryBeginPlacement(ent.Owner);
-    }
-
-    private void OnBuiClosed(Entity<PaperComponent> ent, ref BoundUIClosedEvent args)
-    {
-        if (args.UiKey is PaperUiKey.Key)
-            _pending.Remove(ent.Owner);
     }
 
     public override void Update(float frameTime)
@@ -56,23 +50,39 @@ public sealed class StampUiSystem : EntitySystem
             return;
 
         foreach (var paper in _pending.Keys.ToArray())
-            TryBeginPlacement(paper);
+        {
+            if (TryBeginPlacement(paper))
+                continue;
+
+            var pending = _pending[paper];
+            pending.Elapsed += frameTime;
+            if (pending.Elapsed >= PendingTimeout)
+                _pending.Remove(paper);
+            else
+                _pending[paper] = pending;
+        }
     }
 
-    private void TryBeginPlacement(EntityUid paper)
+    /// <summary>
+    ///     Consumes the pending request for <paramref name="paper"/> if its UI is
+    ///     open. Returns true if the request was consumed (or dropped), false if it
+    ///     should keep waiting.
+    /// </summary>
+    private bool TryBeginPlacement(EntityUid paper)
     {
-        if (!_pending.TryGetValue(paper, out var stamp))
-            return;
+        if (!_pending.TryGetValue(paper, out var pending))
+            return true;
 
         if (!_ui.TryGetOpenUi<PaperBoundUserInterface>(paper, PaperUiKey.Key, out var bui))
-            return;
+            return false;
 
         _pending.Remove(paper);
 
-        if (!TryComp<StampComponent>(stamp, out var stampComp))
-            return;
+        if (!TryComp<StampComponent>(pending.Stamp, out var stampComp))
+            return true;
 
         var info = PaperSystem.GetStampInfo(stampComp);
-        bui.BeginStampPlacement(stamp, info);
+        bui.BeginStampPlacement(pending.Stamp, info);
+        return true;
     }
 }
