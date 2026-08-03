@@ -1,0 +1,25 @@
+- type: entity
+  id: MindWipingPen
+  parent: PenCentcom
+  name: very normal CentCom pen
+  description: A VERY normal CentCom Pen. Now please just look here at it.... *click*
+  components:
+  - type: EmitSoundOnUse # Overwrite so it is audiable
+    handle: false
+  - type: UseDelay
+    delay: 1
+  - type: Flash
+    sound:
+      path: /Audio/Items/pen_click.ogg
+      params:
+        volume: 2
+        maxDistance: 5
+    flashOnMelee: false
+    flashingTime: 0
+    aoeFlashDuration: 10
+    range: 10
+    slowTo: 0.1
+  - type: PopupOnUse
+    message: Wszyscy wokół tracą pamięć całej zmiany. # for some reason "mind-wiping" doesn't want to get replaced properly here
+    popupSize: large
+    showToOthers: true
