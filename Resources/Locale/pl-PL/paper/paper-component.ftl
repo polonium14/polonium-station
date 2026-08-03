@@ -5,7 +5,7 @@ paper-ui-blank-page-message = Ta strona została celowo pozostawiona pusta
 # Shown when paper with words examined details
 paper-component-examine-detail-has-words = { CAPITALIZE($paper) } ma coś na sobie napisane.
 # Shown when paper with stamps examined
-paper-component-examine-detail-stamped-by = { CAPITALIZE($paper) } { CONJUGATE-HAVE($paper) } ostemplowany przez: { $stamps }.
+paper-component-examine-detail-stamped-by = { CAPITALIZE($paper) } został ostemplowany przez: { $stamps }.
 paper-component-illiterate = Nie umiesz pisać.
 paper-component-illiterate-mime = Twoje śluby zabraniają ci pisania.
 
