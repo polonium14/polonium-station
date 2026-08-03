@@ -1,12 +1,15 @@
+using Robust.Shared.GameStates;
+
 namespace Content.Shared._DV.Paper;
 
-[RegisterComponent]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class SignatureWriterComponent : Component
 {
     /// <summary>
     /// If this is set, the defined font will be forced for the signature.
+    /// Networked so the client preview matches the server-committed signature.
     /// </summary>
-    [DataField]
+    [DataField, AutoNetworkedField]
     public string? Font;
 
     /// <summary>
@@ -16,9 +19,10 @@ public sealed partial class SignatureWriterComponent : Component
     public Dictionary<string, string> FontList = new();
 
     /// <summary>
-    /// The color used for the signature.
+    /// The color used for the signature. Networked so the client preview matches
+    /// the server-committed signature.
     /// </summary>
-    [DataField]
+    [DataField, AutoNetworkedField]
     public Color Color = Color.FromHex("#2F4F4F");
 
     /// <summary>

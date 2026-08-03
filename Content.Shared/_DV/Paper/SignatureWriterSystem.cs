@@ -19,7 +19,10 @@ public sealed partial class SignatureWriterSystem : EntitySystem
     private void OnCompInit(EntityUid uid, SignatureWriterComponent comp, ref ComponentInit args)
     {
         if (comp.ColorList.Count >= 1)
+        {
             comp.Color = comp.ColorList.First().Value;
+            Dirty(uid, comp);
+        }
     }
 
     private void OnGetAltVerbs(EntityUid uid, SignatureWriterComponent comp, GetVerbsEvent<AlternativeVerb> args)
@@ -49,6 +52,7 @@ public sealed partial class SignatureWriterSystem : EntitySystem
                             return;
 
                         signatureComp.Font = entry.Value;
+                        Dirty(uid, signatureComp);
                         _popup.PopupEntity(Loc.GetString("signature-writer-component-font-set", ("font", entry.Key)), user, user);
                     }
                 };
@@ -78,6 +82,7 @@ public sealed partial class SignatureWriterSystem : EntitySystem
                             return;
 
                         signatureComp.Color = entry.Value;
+                        Dirty(uid, signatureComp);
                         _popup.PopupEntity(Loc.GetString("signature-writer-component-color-set", ("color", entry.Key)), user, user);
                     }
                 };
