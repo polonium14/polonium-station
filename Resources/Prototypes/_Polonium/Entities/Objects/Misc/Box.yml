@@ -35,7 +35,7 @@
   parent: BaseThermitePack
   id: ThermitePack
   name: thermite pack
-  description: "A box for tactical deployment of thermite based breaching. On the side there is writen: ONLY FOR PEACE SPREADING!"
+  description: "A box for tactical deployment of thermite based breaching. On the side there is written: ONLY FOR PEACE SPREADING!"
   components:
   - type: EntityTableContainerFill
     containers:
@@ -58,6 +58,12 @@
     maxItemSize: Normal
     grid:
     - 0,0,3,2
+    whitelist:
+      components:
+      - Explosive
+      - NetworkConfigurator # Will work with multitool too in case you want to upgrade.
+      tags:
+      - Payload
   - type: PhysicalComposition
     materialComposition:
       Cardboard: 50
@@ -73,11 +79,6 @@
     size: Huge
     shape:
     - 0,0,3,3 # Downside of the explosive proofness
-    whitelist:
-      components:
-      - Explosive
-      tags:
-      - Payload
   - type: ExplosionResistance
     damageCoefficient: 0.3 # 70%, so not the best, 
 
@@ -85,7 +86,7 @@
   parent: BaseExplosivePack
   id: ExplosivePack
   name: explosive pack
-  description: "A box for tactical deployment of explosive based breaching. On the side there is writen: ONLY FOR PEACE SPREADING!"
+  description: "A box for tactical deployment of explosive based breaching. On the side there is written: ONLY FOR PEACE SPREADING!"
   components:
   - type: EntityTableContainerFill
     containers:
