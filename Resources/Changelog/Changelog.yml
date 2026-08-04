@@ -1,16 +1,6 @@
 ﻿Entries:
 - author: sowelipililimute
   changes:
-  - message: The markings editor has been redesigned to have a better UI.
-    type: Tweak
-  - message: The character export format has changed and characters from newer servers
-      may not work when exported to older servers.
-    type: Tweak
-  id: 9428
-  time: '2026-01-20T07:23:51.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42476
-- author: sowelipililimute
-  changes:
   - message: Inflatables can now be sourced from emergency lockers.
     type: Add
   id: 9429
@@ -4088,3 +4078,17 @@
   id: 9927
   time: '2026-08-02T14:54:06.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/866
+- author: haze
+  changes:
+  - message: "Dodano funkcjonalno\u015B\u0107 skalowania, obracania i zmiany po\u0142\
+      o\u017Cenia miejsca, w kt\xF3rym ma zosta\u0107 z\u0142o\u017Cony podpis lub\
+      \ piecz\u0105tka"
+    type: Add
+  - message: "Dodano brakuj\u0105ce t\u0142umaczenia podpisywania i stemplowania papier\xF3\
+      w"
+    type: Add
+  - message: "Dodano sprity brakuj\u0105cych piecz\u0105tek"
+    type: Fix
+  id: 9928
+  time: '2026-08-04T10:20:23.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/873
