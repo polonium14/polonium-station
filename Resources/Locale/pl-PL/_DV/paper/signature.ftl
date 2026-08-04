@@ -1,9 +1,9 @@
 
-paper-sign-verb = Sign
-paper-signed-other = { CAPITALIZE($user) } signs { $target }.
-paper-signed-self = You sign { $target }.
-paper-signed-failure = You cannot sign { $target }
-verb-categories-signature-font-select = Signature font
-signature-writer-component-font-set = Signing in { $font }
-verb-categories-signature-color-select = Signature color
-signature-writer-component-color-set = Signing in { $color }
+paper-sign-verb = Podpisz
+paper-signed-other = { CAPITALIZE($user) } podpisuje { $target }.
+paper-signed-self = Podpisujesz { $target }.
+paper-signed-failure = Nie można podpisać { $target }
+verb-categories-signature-font-select = Czcionka podpisu
+signature-writer-component-font-set = Podpisywanie czcionką { $font }
+verb-categories-signature-color-select = Kolor podpisu
+signature-writer-component-color-set = Podpisywanie kolorem { $color }

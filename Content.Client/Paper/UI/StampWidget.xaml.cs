@@ -2,9 +2,12 @@
 // SPDX-FileCopyrightText: 2023 eoineoineoin <eoin.mcloughlin+gh@gmail.com>
 // SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 eoineoineoin <github@eoinrul.es>
+// SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
 // SPDX-FileCopyrightText: 2025 V <97265903+formlessnameless@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 corresp0nd <46357632+corresp0nd@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+// SPDX-FileCopyrightText: 2026 maciejwalendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 taydeo <tay@funkystation.org>
+// SPDX-FileCopyrightText: 2026 taydeo <td12233a@gmail.com>
 //
 // SPDX-License-Identifier: MIT
 
@@ -32,6 +35,21 @@ public sealed partial class StampWidget : PanelContainer
     /// Imp edit, determines whether stamp noise is applied on the shader
     public bool StampNoise = true;
 
+    private const int BaseSignatureFontSize = 40;
+
+    public bool HasExplicitTransform;
+
+    public Vector2 NormalizedPosition;
+
+    /// <summary>
+    ///     The arranged signature-ink rect within this widget (the label box),
+    ///     in physical pixels relative to the widget. The widget carries fixed
+    ///     margins around it, so the placement gizmo uses this to draw a box that
+    ///     tightly wraps the ink at any scale.
+    /// </summary>
+    public Vector2 InkLabelPosPx => StampedByLabel.PixelPosition;
+    public Vector2 InkLabelSizePx => StampedByLabel.PixelSize;
+
     public float Orientation
     {
         get => StampedByLabel.Orientation;
@@ -46,6 +64,20 @@ public sealed partial class StampWidget : PanelContainer
             var prototypes = IoCManager.Resolve<IPrototypeManager>();
             var icon = value.StampLargeIcon;
             var hasIcon = value.HasIcon;
+            var scale = value.Scale ?? 1.0f;
+
+            if (value.Position is { } pos)
+            {
+                HasExplicitTransform = true;
+                NormalizedPosition = pos;
+            }
+            if (value.Rotation is { } rot)
+            {
+                HasExplicitTransform = true;
+                Orientation = rot;
+            }
+
+            StampedByLabel.PivotAboutCenter = HasExplicitTransform;
 
             if (hasIcon)
             {
@@ -58,8 +90,8 @@ public sealed partial class StampWidget : PanelContainer
                             "/Textures/_Impstation/Interface/Paper/Stamps/" + icon + ".png");
 
                     // make stamps 50% larger to better match the original stamp sizes
-                    var width = (int)(borderImage.Texture.Width * 1.5);
-                    var height = (int)(borderImage.Texture.Height * 1.5);
+                    var width = (int)(borderImage.Texture.Width * 1.5 * scale);
+                    var height = (int)(borderImage.Texture.Height * 1.5 * scale);
                     SetSize = new Vector2(width, height);
                 }
 
@@ -75,7 +107,7 @@ public sealed partial class StampWidget : PanelContainer
 
             if (icon == null)
             {
-                StampedByLabel.Text = Loc.GetString(value.StampedName);
+                StampedByLabel.Text = value.LocalizeName ? Loc.GetString(value.StampedName) : value.StampedName;
                 StampedByLabel.FontColorOverride = value.StampedColor;
                 ModulateSelfOverride = value.StampedColor;
 
@@ -83,7 +115,9 @@ public sealed partial class StampWidget : PanelContainer
                 if (value.StampFont != null && prototypes.TryIndex<FontPrototype>(value.StampFont, out var stampFont))
                     font = stampFont;
 
-                StampedByLabel.FontOverride = new VectorFont(resCache.GetResource<FontResource>(font.Path), 40);
+                var fontSize = (int)MathF.Max(1f, BaseSignatureFontSize * scale);
+                var vectorFont = new VectorFont(resCache.GetResource<FontResource>(font.Path), fontSize);
+                StampedByLabel.FontOverride = vectorFont;
             }
 
             _stampShader = prototypes.Index(PaperStampShader).InstanceUnique();
@@ -100,7 +134,23 @@ public sealed partial class StampWidget : PanelContainer
         _stampShader?.SetParameter("objCoord", GlobalPosition * UIScale * new Vector2(1, -1));
         _stampShader?.SetParameter("useStampNoise", StampNoise); // imp
         handle.UseShader(_stampShader);
-        handle.SetTransform(GlobalPosition * UIScale, Orientation, Vector2.One);
+
+        if (HasExplicitTransform)
+        {
+            var cos = MathF.Cos(Orientation);
+            var sin = MathF.Sin(Orientation);
+            var half = (Vector2)PixelSize * 0.5f;
+            var rotHalf = new Vector2(half.X * cos - half.Y * sin, half.X * sin + half.Y * cos);
+            var origin = GlobalPosition * UIScale + half - rotHalf;
+            handle.SetTransform(origin, Orientation, Vector2.One);
+        }
+        else
+        {
+            // Auto-placed stamps: original top-left pivot (byte-identical to the
+            // pre-signature behavior).
+            handle.SetTransform(GlobalPosition * UIScale, Orientation, Vector2.One);
+        }
+
         base.Draw(handle);
 
         // Restore a sane transform+shader
