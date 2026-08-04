@@ -132,7 +132,8 @@ public sealed class PaperSignatureTest : InteractionTest
         string expectedName = default!;
         await Server.WaitPost(() => expectedName = SEntMan.GetComponent<MetaDataComponent>(SPlayer).EntityName);
 
-        await SendBui(PaperUiKey.Key, new PaperSignMessage(pen, new Vector2(0.5f, 0.5f), 1f, 0f));
+        var pos = new Vector2(0.3f, 0.7f);
+        await SendBui(PaperUiKey.Key, new PaperSignMessage(pen, pos, 1f, 0.5f));
 
         var stamps = ServerStamps();
         Assert.That(stamps, Has.Count.EqualTo(1));
@@ -142,6 +143,8 @@ public sealed class PaperSignatureTest : InteractionTest
             Assert.That(info.StampedName, Is.EqualTo(expectedName), "Server recomputes the signer name.");
             Assert.That(info.LocalizeName, Is.False, "A raw signer name is shown verbatim, not localized.");
             Assert.That(info.HasIcon, Is.False);
+            Assert.That(info.Position, Is.EqualTo(pos), "The client transform is recorded verbatim.");
+            Assert.That(info.Rotation, Is.EqualTo(0.5f));
         });
     }
 
@@ -155,20 +158,33 @@ public sealed class PaperSignatureTest : InteractionTest
         var pen = await PlaceInHands(PenProto);
         await SetupOpenPaper();
 
-        await SendBui(PaperUiKey.Key, new PaperSignMessage(pen, new Vector2(0.5f, 0.5f), 100f, 0f));
+        var pos = new Vector2(0.8f, 0.2f);
+        const float rot = 1.25f;
+
+        await SendBui(PaperUiKey.Key, new PaperSignMessage(pen, pos, 100f, rot));
         Assert.That(ServerStamps()[^1].Scale, Is.EqualTo(MaxScale), "Oversized scale clamps down.");
 
-        await SendBui(PaperUiKey.Key, new PaperSignMessage(pen, new Vector2(0.5f, 0.5f), 0.01f, 0f));
+        await SendBui(PaperUiKey.Key, new PaperSignMessage(pen, pos, 0.01f, rot));
         Assert.That(ServerStamps()[^1].Scale, Is.EqualTo(MinScale), "Undersized scale clamps up.");
 
         // A NaN scale must never be persisted; the committed value stays finite and
         // in range (the exact fallback depends on transport, so assert the invariant).
-        await SendBui(PaperUiKey.Key, new PaperSignMessage(pen, new Vector2(0.5f, 0.5f), float.NaN, 0f));
+        await SendBui(PaperUiKey.Key, new PaperSignMessage(pen, pos, float.NaN, rot));
         Assert.That(ServerStamps(), Has.Count.EqualTo(3), "NaN-scale sign should still commit a mark.");
         var committed = ServerStamps()[^1].Scale;
         Assert.That(committed, Is.Not.Null);
         Assert.That(float.IsFinite(committed!.Value), Is.True, "A NaN scale must not be persisted.");
         Assert.That(committed.Value, Is.InRange(MinScale, MaxScale));
+
+        // Clamping scale must leave the client transform untouched on every mark.
+        Assert.Multiple(() =>
+        {
+            foreach (var mark in ServerStamps())
+            {
+                Assert.That(mark.Position, Is.EqualTo(pos));
+                Assert.That(mark.Rotation, Is.EqualTo(rot));
+            }
+        });
     }
 
     /// <summary>
