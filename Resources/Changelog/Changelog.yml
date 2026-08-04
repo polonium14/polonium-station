@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: sowelipililimute
-  changes:
-  - message: Inflatables can now be sourced from emergency lockers.
-    type: Add
-  id: 9429
-  time: '2026-01-20T08:03:06.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42539
 - author: B_Kirill
   changes:
   - message: Hair styling tools, such as mirrors and scissors, now use their own names
@@ -4092,3 +4085,10 @@
   id: 9928
   time: '2026-08-04T10:20:23.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/873
+- author: haze
+  changes:
+  - message: "Borgi nie powoduj\u0105 sepsy"
+    type: Fix
+  id: 9929
+  time: '2026-08-04T10:40:37.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/876
