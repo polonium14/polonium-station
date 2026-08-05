@@ -131,6 +131,7 @@ public sealed partial class PopupSystem : SharedPopupSystem
         // WD EDIT START - Log actions in chat
         if (_shouldLogInChat &&
             _playerManager.LocalEntity != null &&
+            coordinates.IsValid(EntityManager) &&
             _examine.InRangeUnOccluded(_playerManager.LocalEntity.Value, coordinates, 10))
         {
             var fontsize = FontSizeDict.GetValueOrDefault(type, "10");
