@@ -30,7 +30,7 @@ hud-chatbox-channel-Visual = Akcje
 hud-chatbox-channel-Damage = Obrażenia
 hud-chatbox-channel-Unspecified = Nieokreślony
 hud-chatbox-highlights = Podkreślenia:
-hud-chatbox-highlights-button = Podtwierdź
+hud-chatbox-highlights-button = Potwierdź
 hud-chatbox-highlights-tooltip =
     Słowa muszą być oddzielone znakiem nowej linii,
     jeśli są zawarte w cudzysłowie, zostaną podświetlone
