@@ -61,7 +61,6 @@ ui-options-show-looc-on-head = Pokazuj wiadomości LOOC nad głowami postaci
 ui-options-fancy-speech = Pokazuj imiona w dymkach wiadomości
 ui-options-fancy-name-background = Dodaj tło imionom w dymkach wiadomości
 ui-options-chat-follow-button = Jako duch, pokaż przycisk śledzenia obok wiadomości na czacie
-ui-options-log-in-chat = Zapisuj akcje na czacie
 ui-options-vsync = VSync
 ui-options-fullscreen = Pełny ekran
 ui-options-lighting-label = Jakość oświetlenia:
