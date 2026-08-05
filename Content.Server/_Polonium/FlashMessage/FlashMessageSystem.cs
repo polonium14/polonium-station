@@ -26,6 +26,9 @@ public sealed partial class FlashMessageSystem : EntitySystem
 
     private void OnFlashed(Entity<FlashMessageComponent> ent, ref AfterFlashedEvent args)
     {
+        if (args.Used != ent.Owner)
+            return;
+
         // Private "you lost your memory" popup, seen by the target only.
         _popup.PopupEntity(Loc.GetString(ent.Comp.Popup), args.Target, args.Target);
 
