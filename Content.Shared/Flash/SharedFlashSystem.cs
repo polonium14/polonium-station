@@ -233,11 +233,18 @@ public abstract partial class SharedFlashSystem : EntitySystem
         else
             _movementMod.TryUpdateMovementSpeedModDuration(target, MovementModStatusSystem.FlashSlowdown, flashDuration, slowTo);
 
-        if (displayPopup && user != null && target != user && Exists(user.Value))
+        var showUserPopup = displayPopup && user != null && target != user && Exists(user.Value);
+        // POLONIUM CHANGE START: MINDWIPE ADMEME
+        // Let an item opt out of the default popup so it can show its own flavor instead.
+        if (showUserPopup && used != null && TryComp<FlashComponent>(used.Value, out var flashComp))
+            showUserPopup = flashComp.DisplayUserPopup;
+
+        if (showUserPopup)
         {
             _popup.PopupEntity(Loc.GetString("flash-component-user-blinds-you",
-                ("user", Identity.Entity(user.Value, EntityManager))), target, target);
+                ("user", Identity.Entity(user!.Value, EntityManager))), target, target);
         }
+        // POLONIUM CHANGE END
 
         var ev = new AfterFlashedEvent(target, user, used, melee);
         RaiseLocalEvent(target, ref ev);

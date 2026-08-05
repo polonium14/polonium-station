@@ -82,4 +82,12 @@ public sealed partial class FlashComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public float Probability = 1f;
+
+    /// <summary>
+    /// POLONIUM CHANGE - MINDWIPE ADMEME
+    /// Whether to show the default "X blinds you" popup to flashed targets.
+    /// Set false for items that provide their own popup/flavor (e.g. the mind-wiping pen).
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool DisplayUserPopup = true;
 }
