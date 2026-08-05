@@ -15,6 +15,7 @@ using Robust.Shared.Configuration;
 using Robust.Shared.Map;
 using Robust.Shared.Player;
 using Robust.Shared.Replays;
+using Robust.Shared.Utility;
 
 namespace Content.Client.Popups;
 
@@ -137,7 +138,8 @@ public sealed partial class PopupSystem : SharedPopupSystem
                 ? "#C62828"
                 : "#AEABC4";
 
-            var wrappedMessage = $"[font size={fontsize}][color={fontcolor}]{message}[/color][/font]";
+            var escapedMessage = FormattedMessage.EscapeText(message);
+            var wrappedMessage = $"[font size={fontsize}][color={fontcolor}]{escapedMessage}[/color][/font]";
             var chatMsg = new ChatMessage(ChatChannel.Emotes, message, wrappedMessage, GetNetEntity(EntityUid.Invalid), null);
             _uiManager.GetUIController<ChatUIController>().ProcessChatMessage(chatMsg);
         }
