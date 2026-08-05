@@ -62,8 +62,7 @@ public sealed partial class PopupSystem : SharedPopupSystem
         base.Initialize();
 
         // WD EDIT START - Log actions in chat
-        _shouldLogInChat = _configManager.GetCVar(GoobCVars.LogInChat);
-        _configManager.OnValueChanged(GoobCVars.LogInChat, log => { _shouldLogInChat = log; });
+        Subs.CVar(_configManager, GoobCVars.LogInChat, log => _shouldLogInChat = log, true);
         // WD EDIT END
 
         _overlay.AddOverlay(new PopupOverlay(
