@@ -25,6 +25,7 @@ hud-chatbox-channel-LOOC = LOOC
 hud-chatbox-channel-OOC = OOC
 hud-chatbox-channel-Radio = Radio
 hud-chatbox-channel-Notifications = Powiadomienia
+hud-chatbox-channel-Popup = Akcje
 hud-chatbox-channel-Server = Serwer
 hud-chatbox-channel-Visual = Akcje
 hud-chatbox-channel-Damage = Obrażenia
