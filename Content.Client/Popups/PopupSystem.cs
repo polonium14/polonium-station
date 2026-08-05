@@ -116,6 +116,9 @@ public sealed partial class PopupSystem : SharedPopupSystem
         var popupData = new WorldPopupData(message, type, coordinates, entity);
         if (_aliveWorldLabels.TryGetValue(popupData, out var existingLabel))
         {
+            // WD EDIT - Log actions in chat: intended dedup. A repeat of a still-alive popup stacks on the
+            // world label (x2/x3...) and returns here BEFORE the chat-logging block below, so spammed identical
+            // actions are logged to chat only once instead of flooding it. This is deliberate, not a missed case.
             WrapAndRepeatPopup(existingLabel, popupData.Message);
             return;
         }
@@ -129,6 +132,8 @@ public sealed partial class PopupSystem : SharedPopupSystem
         _aliveWorldLabels.Add(popupData, label);
 
         // WD EDIT START - Log actions in chat
+        // Only reached for a NEW world label (first occurrence); repeats short-circuit above by design, so chat
+        // gets one line per distinct popup rather than one per repeat.
         if (_shouldLogInChat &&
             _playerManager.LocalEntity != null &&
             coordinates.IsValid(EntityManager) &&
@@ -141,7 +146,7 @@ public sealed partial class PopupSystem : SharedPopupSystem
 
             var escapedMessage = FormattedMessage.EscapeText(message);
             var wrappedMessage = $"[font size={fontsize}][color={fontcolor}]{escapedMessage}[/color][/font]";
-            var chatMsg = new ChatMessage(ChatChannel.Emotes, message, wrappedMessage, GetNetEntity(EntityUid.Invalid), null);
+            var chatMsg = new ChatMessage(ChatChannel.Popup, message, wrappedMessage, GetNetEntity(EntityUid.Invalid), null);
             _uiManager.GetUIController<ChatUIController>().ProcessChatMessage(chatMsg);
         }
         // WD EDIT END

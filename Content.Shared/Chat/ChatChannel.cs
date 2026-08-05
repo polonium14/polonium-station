@@ -86,6 +86,11 @@ namespace Content.Shared.Chat
         Unspecified = 1 << 14,
 
         /// <summary>
+        ///     Client-side echo of world popups into chat (WD "log actions in chat").
+        /// </summary>
+        Popup = 1 << 15,
+
+        /// <summary>
         ///     Channels considered to be IC.
         /// </summary>
         IC = Local | Whisper | Radio | Dead | Emotes | Damage | Visual | Notifications,
