@@ -62,7 +62,7 @@ public sealed partial class GoobCVars
     /// Whether or not to log actions (popups) in the chat.
     /// </summary>
     public static readonly CVarDef<bool> LogInChat =
-        CVarDef.Create("chat.log_in_chat", true, CVar.CLIENT | CVar.ARCHIVE | CVar.REPLICATED);
+        CVarDef.Create("chat.log_in_chat", true, CVar.CLIENT | CVar.ARCHIVE);
 
     #endregion
 }
