@@ -1,4 +1,7 @@
 using System.Linq;
+using Content.Client.UserInterface.Systems.Chat;
+using Content.Shared._Goobstation.CCVar;
+using Content.Shared.Chat;
 using Content.Shared.Examine;
 using Content.Shared.GameTicking;
 using Content.Shared.Popups;
@@ -42,9 +45,26 @@ public sealed partial class PopupSystem : SharedPopupSystem
     public const float MaximumPopupLifetime = 5f;
     public const float PopupLifetimePerCharacter = 0.04f;
 
+    // WD EDIT START - Log actions in chat
+    private static readonly Dictionary<PopupType, string> FontSizeDict = new()
+    {
+        { PopupType.Medium, "12" },
+        { PopupType.MediumCaution, "12" },
+        { PopupType.Large, "15" },
+        { PopupType.LargeCaution, "15" }
+    };
+
+    private bool _shouldLogInChat;
+    // WD EDIT END
+
     public override void Initialize()
     {
         base.Initialize();
+
+        // WD EDIT START - Log actions in chat
+        _shouldLogInChat = _configManager.GetCVar(GoobCVars.LogInChat);
+        _configManager.OnValueChanged(GoobCVars.LogInChat, log => { _shouldLogInChat = log; });
+        // WD EDIT END
 
         _overlay.AddOverlay(new PopupOverlay(
             _configManager,
@@ -107,6 +127,22 @@ public sealed partial class PopupSystem : SharedPopupSystem
         };
 
         _aliveWorldLabels.Add(popupData, label);
+
+        // WD EDIT START - Log actions in chat
+        if (_shouldLogInChat &&
+            _playerManager.LocalEntity != null &&
+            _examine.InRangeUnOccluded(_playerManager.LocalEntity.Value, coordinates, 10))
+        {
+            var fontsize = FontSizeDict.GetValueOrDefault(type, "10");
+            var fontcolor = type is PopupType.LargeCaution or PopupType.MediumCaution or PopupType.SmallCaution
+                ? "#C62828"
+                : "#AEABC4";
+
+            var wrappedMessage = $"[font size={fontsize}][color={fontcolor}]{message}[/color][/font]";
+            var chatMsg = new ChatMessage(ChatChannel.Emotes, message, wrappedMessage, GetNetEntity(EntityUid.Invalid), null);
+            _uiManager.GetUIController<ChatUIController>().ProcessChatMessage(chatMsg);
+        }
+        // WD EDIT END
     }
 
     /// <summary>

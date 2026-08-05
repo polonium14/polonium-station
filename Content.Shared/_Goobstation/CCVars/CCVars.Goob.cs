@@ -52,4 +52,14 @@ public sealed partial class GoobCVars
         CVarDef.Create("medical.bloodloss_multiplier", 4.0f, CVar.SERVER);
 
     #endregion
+
+    #region Chat
+
+    /// <summary>
+    /// Whether or not to log actions (popups) in the chat.
+    /// </summary>
+    public static readonly CVarDef<bool> LogInChat =
+        CVarDef.Create("chat.log_in_chat", true, CVar.CLIENT | CVar.ARCHIVE | CVar.REPLICATED);
+
+    #endregion
 }
