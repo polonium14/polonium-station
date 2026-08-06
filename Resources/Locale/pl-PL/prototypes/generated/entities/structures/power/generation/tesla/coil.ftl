@@ -1,4 +1,4 @@
-ent-TeslaCoil = tesla coil
-    .desc = A machine that converts lightning strikes into an electric current.
-ent-TeslaGroundingRod = grounding rod
-    .desc = A machine that keeps lightning from striking too far away.
+ent-TeslaCoil = cewka tesli
+    .desc = Maszyna która przemienia uderzenia pioruna w prąd elektryczny.
+ent-TeslaGroundingRod = pręt uziemiający
+    .desc = Maszyna która pilnuje aby piorun nie trzasnął za daleko.
