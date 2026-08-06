@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "parowka-pinkscreen",
+  "copyright": "parowka-pinkscreen, moffparowa and petomoffparowek by pinkscreen and edited Saver310",
   "size": {
     "x": 32,
     "y": 32
@@ -12,6 +12,12 @@
       },
       {
           "name": "petoparowek"
+      },
+      {
+          "name": "moffparowa"
+      },
+      {
+          "name": "petomoffparowek"
       }
   ]
 }
