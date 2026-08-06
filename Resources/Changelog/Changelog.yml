@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: sowelipililimute
-  changes:
-  - message: Voice emotes are now correct for your character's sex
-    type: Fix
-  id: 9432
-  time: '2026-01-20T19:29:53.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42550
 - author: Velken, Murphyneko
   changes:
   - message: Station tiles and floors can now be placed on planets, asteroids and
@@ -4088,3 +4081,10 @@
   id: 9931
   time: '2026-08-06T17:45:28.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/886
+- author: Saver310
+  changes:
+  - message: "Dodano \u0107mopar\xF3wki i \u0107modogi!"
+    type: Add
+  id: 9932
+  time: '2026-08-06T19:55:10.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/869
