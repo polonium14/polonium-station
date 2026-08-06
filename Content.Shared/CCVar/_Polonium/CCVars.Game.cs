@@ -9,6 +9,18 @@ namespace Content.Shared.CCVar;
 public sealed partial class CCVars
 {
     /// <summary>
+    /// Period (seconds) over which custom objective-summary submissions are rate limited per player.
+    /// </summary>
+    public static readonly CVarDef<float> ObjectiveSummaryRateLimitPeriod =
+        CVarDef.Create("objectives.summary_rate_limit_period", 2f, CVar.SERVERONLY);
+
+    /// <summary>
+    /// How many custom objective-summary submissions a player may make within a single rate limit period.
+    /// </summary>
+    public static readonly CVarDef<int> ObjectiveSummaryRateLimitCount =
+        CVarDef.Create("objectives.summary_rate_limit_count", 5, CVar.SERVERONLY);
+
+    /// <summary>
     /// Whether the round should end when revolutionaries achieve victory.
     /// </summary>
     public static readonly CVarDef<bool> ShouldEndRoundOnRevVictory =

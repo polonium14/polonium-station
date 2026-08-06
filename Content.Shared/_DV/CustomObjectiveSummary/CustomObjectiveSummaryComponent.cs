@@ -13,6 +13,12 @@ namespace Content.Shared._DV.CustomObjectiveSummary;
 public sealed partial class CustomObjectiveSummaryComponent : Component
 {
     /// <summary>
+    ///     Hard cap on the length of a submitted summary. Enforced server-side; the client uses it for its
+    ///     character counter / submit-button gating. A malicious client cannot exceed it: the server clamps.
+    /// </summary>
+    public const int MaxSummaryLength = 1024;
+
+    /// <summary>
     ///     What the player wrote as their summary!
     /// </summary>
     [DataField, AutoNetworkedField]

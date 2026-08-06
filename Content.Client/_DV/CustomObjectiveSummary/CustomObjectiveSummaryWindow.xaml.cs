@@ -16,12 +16,12 @@ namespace Content.Client._DV.CustomObjectiveSummary;
 [GenerateTypedNameReferences]
 public sealed partial class CustomObjectiveSummaryWindow : FancyWindow
 {
-    [Dependency] private readonly IPlayerManager _players = default!;
-    [Dependency] private readonly IEntityManager _entity = default!;
+    [Dependency] private IPlayerManager _players = default!;
+    [Dependency] private IEntityManager _entity = default!;
 
     private SharedMindSystem? _mind;
 
-    private readonly int _maxLength = 1024;
+    private readonly int _maxLength = Shared._DV.CustomObjectiveSummary.CustomObjectiveSummaryComponent.MaxSummaryLength;
 
     public event Action<string>? OnSubmitted;
 
