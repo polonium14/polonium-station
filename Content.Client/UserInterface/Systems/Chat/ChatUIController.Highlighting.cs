@@ -1,9 +1,14 @@
 using System.Linq;
 using System.Text.RegularExpressions;
+using Robust.Client.Audio;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controllers;
+using Robust.Shared.Audio;
+using Robust.Shared.Player;
+using Robust.Shared.Utility;
 using Content.Shared.CCVar;
 using Content.Client.CharacterInfo;
+using Content.Client.Gameplay;
 using static Content.Client.CharacterInfo.CharacterInfoSystem;
 
 namespace Content.Client.UserInterface.Systems.Chat;
@@ -19,9 +24,21 @@ public sealed partial class ChatUIController : IOnSystemChanged<CharacterInfoSys
 
     private string _chatSpeechDoubleQuoteBegin = default!;
 
+    // Polonium - chat highlight ping sound
+    private static readonly ResPath HighlightSoundPath = new("/Audio/_Polonium/Interface/HighlightChatPings/Beep.ogg");
+
+    /// <summary>
+    ///     Time of the last highlight ping, used to debounce the sound.
+    /// </summary>
+    private TimeSpan _lastHighlightTime = TimeSpan.Zero;
+
     private static readonly Regex StartDoubleQuote = new("\"$");
     private static readonly Regex EndDoubleQuote = new("^\"|(?<=^@)\"");
     private static readonly Regex StartAtSign = new("^@");
+
+    // POLONIUM CHANGE: converts a PascalCase job prototype id ("HeadOfSecurity")
+    // into the kebab-case slug used by the "highlights-<job>" loc keys ("head-of-security").
+    private static readonly Regex JobProtoKeyRegex = new("(?<=[a-z0-9])(?=[A-Z])");
 
     /// <summary>
     ///     The list of words to be highlighted in the chatbox.
@@ -57,6 +74,31 @@ public sealed partial class ChatUIController : IOnSystemChanged<CharacterInfoSys
         }
 
         _chatSpeechDoubleQuoteBegin = _loc.GetString("chat-manager-speech-double-quote-begin");
+    }
+
+    // Polonium - chat highlight ping sound
+    /// <summary>
+    ///     Plays the highlight ping sound if it's enabled in the client's settings.
+    /// </summary>
+    private void PlayHighlightSound()
+    {
+        // Don't play sounds while the game is still loading (eg. in the lobby).
+        if (_state.CurrentState is not GameplayStateBase)
+            return;
+
+        if (!_config.GetCVar(CCVars.ChatHighlightSound))
+            return;
+
+        var volume = _config.GetCVar(CCVars.ChatHighlightVolume);
+
+        // A volume of 0 would produce -Infinity dB, so treat it as muted.
+        if (volume <= 0f)
+            return;
+
+        var volumeDb = MathF.Log10(Math.Clamp(volume, 0f, 1f)) * 20f;
+        var audioParams = AudioParams.Default.WithVolume(volumeDb);
+
+        _ent.System<AudioSystem>().PlayGlobal(HighlightSoundPath, Filter.Local(), false, audioParams);
     }
 
     public void OnSystemLoaded(CharacterInfoSystem system)
@@ -140,7 +182,7 @@ public sealed partial class ChatUIController : IOnSystemChanged<CharacterInfoSys
         if (!_charInfoIsAttach)
             return;
 
-        var (_, job, _, _, entityName) = data;
+        var (_, job, jobProto, _, _, entityName) = data; // POLONIUM CHANGE: added jobProto
 
         // Mark this entity's name as our character name for the "UpdateHighlights" function.
         var newHighlights = "@" + entityName;
@@ -154,8 +196,14 @@ public sealed partial class ChatUIController : IOnSystemChanged<CharacterInfoSys
         if (newHighlights.Count(c => c == '-') > 1)
             newHighlights = newHighlights.Split('-')[0] + "\n@" + newHighlights.Split('-')[^1];
 
-        // Convert the job title to kebab-case and use it as a key for the loc file.
-        var jobKey = job.Replace(' ', '-').ToLower();
+        // POLONIUM CHANGE START: prefer the locale-independent job prototype id when
+        // available. The localized job title differs per server locale (eg. Polish
+        // "Główny Inżynier") and cannot match the ASCII "highlights-<job>" loc keys.
+        // The proto id ("ChiefEngineer") kebab-cases to the same slug on any locale.
+        var jobKey = !string.IsNullOrEmpty(jobProto)
+            ? JobProtoKeyRegex.Replace(jobProto, "-").ToLower()
+            : job.Replace(' ', '-').ToLower();
+        // POLONIUM CHANGE END
 
         if (_loc.TryGetString($"highlights-{jobKey}", out var jobMatches))
             newHighlights += '\n' + jobMatches.Replace(", ", "\n");

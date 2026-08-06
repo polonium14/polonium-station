@@ -32,6 +32,7 @@ public sealed partial class CharacterInfoSystem : EntitySystem
 
         var objectives = new Dictionary<string, List<ObjectiveInfo>>();
         var jobTitle = Loc.GetString("character-info-no-profession");
+        string? jobProto = null; // POLONIUM CHANGE: locale-independent job id for chat highlights
         string? briefing = null;
         if (_minds.TryGetMind(entity, out var mindId, out var mind))
         {
@@ -58,10 +59,17 @@ public sealed partial class CharacterInfoSystem : EntitySystem
             if (_jobs.MindTryGetJobName(mindId, out var jobName))
                 jobTitle = jobName;
 
+            // POLONIUM CHANGE START: send the raw job prototype id so the client can
+            // build locale-independent highlight keywords (loc job titles vary per locale).
+            if (_jobs.MindTryGetJobId(mindId, out var jobId) && jobId is { } id)
+                jobProto = id.Id;
+            // POLONIUM CHANGE END
+
             // Get briefing
             briefing = _roles.MindGetBriefing(mindId);
         }
 
-        RaiseNetworkEvent(new CharacterInfoEvent(GetNetEntity(entity), jobTitle, objectives, briefing), args.SenderSession);
+        // POLONIUM CHANGE: pass jobProto
+        RaiseNetworkEvent(new CharacterInfoEvent(GetNetEntity(entity), jobTitle, jobProto, objectives, briefing), args.SenderSession);
     }
 }

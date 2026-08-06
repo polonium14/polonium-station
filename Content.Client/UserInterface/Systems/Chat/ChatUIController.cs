@@ -829,9 +829,26 @@ public sealed partial class ChatUIController : UIController
         }
 
         // Color any words chosen by the client.
+        // Polonium - track whether any highlight matched so we can play a ping sound.
+        var hadHighlight = false;
         foreach (var highlight in _highlights)
         {
-            msg.WrappedMessage = SharedChatSystem.InjectTagAroundString(msg, highlight, "color", _highlightsColor);
+            var newMessage = SharedChatSystem.InjectTagAroundString(msg, highlight, "color", _highlightsColor);
+            if (newMessage != msg.WrappedMessage)
+            {
+                hadHighlight = true;
+                msg.WrappedMessage = newMessage;
+            }
+        }
+
+        // Polonium - play a ping sound on highlight, but not for our own messages, debounced to 500ms.
+        if (hadHighlight
+            && (_player.LocalSession?.AttachedEntity is not { } localHighlightEntity
+                || msg.SenderEntity != _ent.GetNetEntity(localHighlightEntity))
+            && (_timing.CurTime - _lastHighlightTime).TotalMilliseconds >= 500)
+        {
+            _lastHighlightTime = _timing.CurTime;
+            PlayHighlightSound();
         }
 
         // Color any codewords for minds that have roles that use them

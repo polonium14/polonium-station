@@ -130,7 +130,7 @@ public sealed partial class CharacterUIController : UIController, IOnStateEntere
             return;
         }
 
-        var (entity, job, objectives, briefing, entityName) = data;
+        var (entity, job, _, objectives, briefing, entityName) = data; // POLONIUM CHANGE: skip added JobProto field
 
         _window.SpriteView.SetEntity(entity);
 

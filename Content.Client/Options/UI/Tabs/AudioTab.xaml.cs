@@ -53,6 +53,11 @@ public sealed partial class AudioTab : Control
             SliderVolumeInterface,
             scale: ContentAudioSystem.InterfaceMultiplier);
 
+        // Polonium - chat highlight ping volume
+        Control.AddOptionPercentSlider(
+            CCVars.ChatHighlightVolume,
+            SliderHighlightVolume);
+
         Control.AddOptionSlider(
             CCVars.MaxAmbientSources,
             SliderMaxAmbienceSounds,

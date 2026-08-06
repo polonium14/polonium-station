@@ -32,7 +32,8 @@ public sealed partial class CharacterInfoSystem : EntitySystem
     private void OnCharacterInfoEvent(CharacterInfoEvent msg, EntitySessionEventArgs args)
     {
         var entity = GetEntity(msg.NetEntity);
-        var data = new CharacterData(entity, msg.JobTitle, msg.Objectives, msg.Briefing, Name(entity));
+        // POLONIUM CHANGE: forward msg.JobProto
+        var data = new CharacterData(entity, msg.JobTitle, msg.JobProto, msg.Objectives, msg.Briefing, Name(entity));
 
         OnCharacterUpdate?.Invoke(data);
     }
@@ -47,6 +48,7 @@ public sealed partial class CharacterInfoSystem : EntitySystem
     public readonly record struct CharacterData(
         EntityUid Entity,
         string Job,
+        string? JobProto, // POLONIUM CHANGE: locale-independent job id for chat highlights
         Dictionary<string, List<ObjectiveInfo>> Objectives,
         string? Briefing,
         string EntityName
