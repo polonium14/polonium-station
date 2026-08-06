@@ -4,7 +4,7 @@ meta:
   engineVersion: 284.0.0
   forkId: ""
   forkVersion: ""
-  time: 08/06/2026 13:42:40
+  time: 08/06/2026 22:57:37
   entityCount: 9736
 maps:
 - 2029
@@ -60991,10 +60991,10 @@ entities:
     components:
     - type: Transform
       parent: 1668
-      pos: 12.5,26.5
+      pos: 14.5,24.5
     - type: DeviceNetwork
       deviceLists:
-      - 2213
+      - 6083
   - uid: 2158
     components:
     - type: Transform
@@ -61002,54 +61002,52 @@ entities:
       pos: 12.5,24.5
     - type: DeviceNetwork
       deviceLists:
-      - 2213
-  - uid: 2389
+      - 6083
+  - uid: 2213
     components:
     - type: Transform
       parent: 1668
       pos: 14.5,18.5
     - type: DeviceNetwork
       deviceLists:
-      - 2214
-      configurators:
-      - invalid
-  - uid: 6070
+      - 6070
+  - uid: 2214
     components:
     - type: Transform
       parent: 1668
       pos: 14.5,26.5
     - type: DeviceNetwork
       deviceLists:
-      - 2213
-  - uid: 6083
+      - 6083
+  - uid: 2389
     components:
     - type: Transform
       parent: 1668
-      pos: 14.5,24.5
+      pos: 12.5,26.5
     - type: DeviceNetwork
       deviceLists:
-      - 2213
+      - 6083
 - proto: WeaponEnergyTurretSecurityControlPanel
   entities:
-  - uid: 2213
-    components:
-    - type: Transform
-      parent: 1668
-      pos: 14.5,21.5
-    - type: DeviceList
-      devices:
-      - 6070
-      - 6083
-      - 2158
-      - 2130
-  - uid: 2214
+  - uid: 6070
     components:
     - type: Transform
       parent: 1668
       pos: 15.5,17.5
     - type: DeviceList
       devices:
+      - 2213
+  - uid: 6083
+    components:
+    - type: Transform
+      parent: 1668
+      pos: 14.5,21.5
+    - type: DeviceList
+      devices:
       - 2389
+      - 2214
+      - 2130
+      - 2158
 - proto: WeaponForceGunAdmin
   entities:
   - uid: 9550
@@ -61673,7 +61671,7 @@ entities:
         DoorStatus: True
     - type: Door
       state: Opening
-      secondsUntilStateChange: -2258.1592
+      secondsUntilStateChange: -2337.0017
     - type: Airlock
       autoClose: False
   - uid: 970
