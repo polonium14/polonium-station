@@ -1,15 +1,4 @@
 ﻿Entries:
-- author: B_Kirill
-  changes:
-  - message: Hair styling tools, such as mirrors and scissors, now use their own names
-      as UI window titles.
-    type: Tweak
-  - message: Hair styling tools, such as mirrors and scissors, no longer attempt to
-      open UI on non-humanoids.
-    type: Fix
-  id: 9430
-  time: '2026-01-20T12:15:37.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42544
 - author: insoPL
   changes:
   - message: Added icon indicating if the gloves are insulated or not.
@@ -4092,3 +4081,10 @@
   id: 9929
   time: '2026-08-04T10:40:37.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/876
+- author: pinkscreen
+  changes:
+  - message: "Zamapowano brakuj\u0105ce kaucjomaty"
+    type: Add
+  id: 9930
+  time: '2026-08-06T10:34:35.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/884
