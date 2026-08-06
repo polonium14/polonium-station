@@ -38,10 +38,18 @@ public sealed partial class CharacterInfoSystem : EntitySystem
         // POLONIUM CHANGE: resolve the localized job name client-side from the proto id, so
         // every client shows the title in its own locale (falls back to a generic label when
         // the entity has no job). JobProto is kept for the locale-independent highlight key.
-        var job = msg.JobProto is { } proto && _proto.TryIndex<JobPrototype>(proto, out var jobPrototype)
-            ? jobPrototype.LocalizedName
-            : Loc.GetString("character-info-no-profession");
-        var data = new CharacterData(entity, job, msg.JobProto, msg.Objectives, msg.Briefing, Name(entity));
+        string? jobProto = null;
+        string job;
+        if (msg.JobProto is { } proto && _proto.TryIndex<JobPrototype>(proto, out var jobPrototype))
+        {
+            job = jobPrototype.LocalizedName;
+            jobProto = proto;
+        }
+        else
+        {
+            job = Loc.GetString("character-info-no-profession");
+        }
+        var data = new CharacterData(entity, job, jobProto, msg.Objectives, msg.Briefing, Name(entity));
 
         OnCharacterUpdate?.Invoke(data);
     }
