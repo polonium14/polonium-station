@@ -76,6 +76,13 @@ public partial class ChatBox : UIWidget
         ChatInput.FilterButton.Popup.UpdateHighlights(highlights);
     }
 
+    // POLONIUM CHANGE: whether this chatbox currently displays the given channel (filter enabled).
+    // Used to gate the highlight ping so it only fires for messages the player can actually see.
+    public bool IsChannelVisible(ChatChannel channel)
+    {
+        return ChatInput.FilterButton.Popup.IsActive(channel);
+    }
+
     private void OnChannelSelect(ChatSelectChannel channel)
     {
         _controller.UpdateSelectedChannel(this);

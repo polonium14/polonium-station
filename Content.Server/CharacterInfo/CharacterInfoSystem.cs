@@ -31,8 +31,7 @@ public sealed partial class CharacterInfoSystem : EntitySystem
         var entity = args.SenderSession.AttachedEntity.Value;
 
         var objectives = new Dictionary<string, List<ObjectiveInfo>>();
-        var jobTitle = Loc.GetString("character-info-no-profession");
-        string? jobProto = null; // POLONIUM CHANGE: locale-independent job id for chat highlights
+        string? jobProto = null; // POLONIUM CHANGE: send only the locale-independent job id; client localizes it
         string? briefing = null;
         if (_minds.TryGetMind(entity, out var mindId, out var mind))
         {
@@ -56,20 +55,16 @@ public sealed partial class CharacterInfoSystem : EntitySystem
                 objectives[issuer].Add(info.Value);
             }
 
-            if (_jobs.MindTryGetJobName(mindId, out var jobName))
-                jobTitle = jobName;
-
-            // POLONIUM CHANGE START: send the raw job prototype id so the client can
-            // build locale-independent highlight keywords (loc job titles vary per locale).
+            // POLONIUM CHANGE: send the raw job prototype id; the client resolves the
+            // localized display name and the highlight key from it (loc titles vary per locale).
             if (_jobs.MindTryGetJobId(mindId, out var jobId) && jobId is { } id)
                 jobProto = id.Id;
-            // POLONIUM CHANGE END
 
             // Get briefing
             briefing = _roles.MindGetBriefing(mindId);
         }
 
-        // POLONIUM CHANGE: pass jobProto
-        RaiseNetworkEvent(new CharacterInfoEvent(GetNetEntity(entity), jobTitle, jobProto, objectives, briefing), args.SenderSession);
+        // POLONIUM CHANGE: send jobProto instead of a server-localized job title
+        RaiseNetworkEvent(new CharacterInfoEvent(GetNetEntity(entity), jobProto, objectives, briefing), args.SenderSession);
     }
 }

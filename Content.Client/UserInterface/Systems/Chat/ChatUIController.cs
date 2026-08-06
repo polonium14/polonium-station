@@ -829,7 +829,7 @@ public sealed partial class ChatUIController : UIController
         }
 
         // Color any words chosen by the client.
-        // Polonium - track whether any highlight matched so we can play a ping sound.
+        // Polonium - track whether any highlight matched so we can play a ping sound below.
         var hadHighlight = false;
         foreach (var highlight in _highlights)
         {
@@ -839,16 +839,6 @@ public sealed partial class ChatUIController : UIController
                 hadHighlight = true;
                 msg.WrappedMessage = newMessage;
             }
-        }
-
-        // Polonium - play a ping sound on highlight, but not for our own messages, debounced to 500ms.
-        if (hadHighlight
-            && (_player.LocalSession?.AttachedEntity is not { } localHighlightEntity
-                || msg.SenderEntity != _ent.GetNetEntity(localHighlightEntity))
-            && (_timing.CurTime - _lastHighlightTime).TotalMilliseconds >= 500)
-        {
-            _lastHighlightTime = _timing.CurTime;
-            PlayHighlightSound();
         }
 
         // Color any codewords for minds that have roles that use them
@@ -869,6 +859,23 @@ public sealed partial class ChatUIController : UIController
         {
             History.Add((_timing.CurTick, msg));
             MessageAdded?.Invoke(msg);
+
+            // POLONIUM CHANGE START: play the highlight ping only for a message the player can
+            // actually see. This sits inside the !HideChat gate, skips replay fast-forward
+            // (speechBubble is false there), skips our own and unattributed (OOC/admin) messages,
+            // requires a chatbox that currently shows this channel, and debounces on the monotonic
+            // RealTime clock (never rewound/reset across servers). The timestamp only advances when
+            // a sound actually plays, so a suppressed match can't eat the next real ping.
+            if (hadHighlight
+                && speechBubble
+                && !IsOwnOrUnattributedMessage(msg)
+                && _chats.Any(chat => chat.IsChannelVisible(msg.Channel))
+                && (_timing.RealTime - _lastHighlightTime).TotalMilliseconds >= 500
+                && PlayHighlightSound())
+            {
+                _lastHighlightTime = _timing.RealTime;
+            }
+            // POLONIUM CHANGE END
 
             if (!msg.Read)
             {

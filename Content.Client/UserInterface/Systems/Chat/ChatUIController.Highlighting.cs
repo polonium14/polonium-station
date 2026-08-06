@@ -4,6 +4,8 @@ using Robust.Client.Audio;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controllers;
 using Robust.Shared.Audio;
+using Robust.Shared.Audio.Systems;
+using Robust.Shared.GameObjects;
 using Robust.Shared.Player;
 using Robust.Shared.Utility;
 using Content.Shared.CCVar;
@@ -35,10 +37,6 @@ public sealed partial class ChatUIController : IOnSystemChanged<CharacterInfoSys
     private static readonly Regex StartDoubleQuote = new("\"$");
     private static readonly Regex EndDoubleQuote = new("^\"|(?<=^@)\"");
     private static readonly Regex StartAtSign = new("^@");
-
-    // POLONIUM CHANGE: converts a PascalCase job prototype id ("HeadOfSecurity")
-    // into the kebab-case slug used by the "highlights-<job>" loc keys ("head-of-security").
-    private static readonly Regex JobProtoKeyRegex = new("(?<=[a-z0-9])(?=[A-Z])");
 
     /// <summary>
     ///     The list of words to be highlighted in the chatbox.
@@ -79,26 +77,43 @@ public sealed partial class ChatUIController : IOnSystemChanged<CharacterInfoSys
     // Polonium - chat highlight ping sound
     /// <summary>
     ///     Plays the highlight ping sound if it's enabled in the client's settings.
+    ///     Returns true only if a sound was actually played, so the caller advances the
+    ///     debounce timestamp only on a real ping.
     /// </summary>
-    private void PlayHighlightSound()
+    private bool PlayHighlightSound()
     {
         // Don't play sounds while the game is still loading (eg. in the lobby).
         if (_state.CurrentState is not GameplayStateBase)
-            return;
+            return false;
 
         if (!_config.GetCVar(CCVars.ChatHighlightSound))
-            return;
+            return false;
 
-        var volume = _config.GetCVar(CCVars.ChatHighlightVolume);
+        var volume = Math.Clamp(_config.GetCVar(CCVars.ChatHighlightVolume), 0f, 1f);
 
-        // A volume of 0 would produce -Infinity dB, so treat it as muted.
+        // A gain of 0 would produce -Infinity dB, so treat it as muted.
         if (volume <= 0f)
-            return;
+            return false;
 
-        var volumeDb = MathF.Log10(Math.Clamp(volume, 0f, 1f)) * 20f;
-        var audioParams = AudioParams.Default.WithVolume(volumeDb);
+        // Use the engine's gain->dB helper (10*log10) that every other volume cvar uses,
+        // rather than a hand-rolled formula.
+        var audioParams = AudioParams.Default.WithVolume(SharedAudioSystem.GainToVolume(volume));
 
         _ent.System<AudioSystem>().PlayGlobal(HighlightSoundPath, Filter.Local(), false, audioParams);
+        return true;
+    }
+
+    /// <summary>
+    ///     Whether the message is our own entity speech, or unattributed chat (OOC/admin/server
+    ///     use an Invalid sender and an opaque per-sender key the client can't map to itself).
+    ///     In both cases we must not play a highlight ping at the local player.
+    /// </summary>
+    private bool IsOwnOrUnattributedMessage(Content.Shared.Chat.ChatMessage msg)
+    {
+        if (msg.SenderEntity == NetEntity.Invalid)
+            return true;
+
+        return _player.LocalSession?.AttachedEntity is { } ent && msg.SenderEntity == _ent.GetNetEntity(ent);
     }
 
     public void OnSystemLoaded(CharacterInfoSystem system)
@@ -196,17 +211,22 @@ public sealed partial class ChatUIController : IOnSystemChanged<CharacterInfoSys
         if (newHighlights.Count(c => c == '-') > 1)
             newHighlights = newHighlights.Split('-')[0] + "\n@" + newHighlights.Split('-')[^1];
 
-        // POLONIUM CHANGE START: prefer the locale-independent job prototype id when
-        // available. The localized job title differs per server locale (eg. Polish
-        // "Główny Inżynier") and cannot match the ASCII "highlights-<job>" loc keys.
-        // The proto id ("ChiefEngineer") kebab-cases to the same slug on any locale.
-        var jobKey = !string.IsNullOrEmpty(jobProto)
-            ? JobProtoKeyRegex.Replace(jobProto, "-").ToLower()
-            : job.Replace(' ', '-').ToLower();
-        // POLONIUM CHANGE END
+        // POLONIUM CHANGE START: resolve the job highlight keywords from the
+        // locale-independent job prototype id. The localized job title differs per server
+        // locale (eg. Polish "Główny Inżynier") and cannot match the ASCII "highlights-<job>"
+        // loc keys, whereas the proto id ("ChiefEngineer") kebab-cases to the same slug on any
+        // locale. Fall back to the localized title only if the proto lookup misses, so an
+        // unexpected casing/locale edge case degrades instead of silently dropping highlights.
+        string? jobMatches = null;
+        if (!string.IsNullOrEmpty(jobProto)
+            && _loc.TryGetString($"highlights-{CaseConversion.PascalToKebab(jobProto)}", out var protoMatches))
+            jobMatches = protoMatches;
+        else if (_loc.TryGetString($"highlights-{job.Replace(' ', '-').ToLower()}", out var titleMatches))
+            jobMatches = titleMatches;
 
-        if (_loc.TryGetString($"highlights-{jobKey}", out var jobMatches))
+        if (jobMatches != null)
             newHighlights += '\n' + jobMatches.Replace(", ", "\n");
+        // POLONIUM CHANGE END
 
         UpdateHighlights(newHighlights);
         HighlightsUpdated?.Invoke(newHighlights);
