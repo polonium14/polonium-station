@@ -4,7 +4,7 @@ meta:
   engineVersion: 284.0.0
   forkId: ""
   forkVersion: ""
-  time: 08/06/2026 13:03:02
+  time: 08/06/2026 13:25:39
   entityCount: 9736
 maps:
 - 2029
@@ -42123,7 +42123,7 @@ entities:
     components:
     - type: Transform
       parent: 1668
-      pos: 12.5,24.5
+      pos: 10.5,25.5
   - uid: 9191
     components:
     - type: Transform
@@ -42138,11 +42138,11 @@ entities:
       pos: 14.5,22.5
 - proto: GunSafeShotgunKammerer
   entities:
-  - uid: 2389
+  - uid: 6066
     components:
     - type: Transform
       parent: 1668
-      pos: 14.5,24.5
+      pos: 16.5,25.5
   - uid: 9208
     components:
     - type: Transform
@@ -60991,50 +60991,44 @@ entities:
     components:
     - type: Transform
       parent: 1668
-      pos: 16.5,25.5
+      pos: 12.5,26.5
     - type: DeviceNetwork
       deviceLists:
       - 2213
-      configurators:
-      - invalid
   - uid: 2158
     components:
     - type: Transform
       parent: 1668
-      pos: 10.5,25.5
+      pos: 12.5,24.5
     - type: DeviceNetwork
       deviceLists:
       - 2213
-      configurators:
-      - invalid
-  - uid: 6066
+  - uid: 2389
     components:
     - type: Transform
       parent: 1668
-      pos: 13.5,27.5
+      pos: 14.5,18.5
     - type: DeviceNetwork
       deviceLists:
-      - 2213
+      - 2214
       configurators:
       - invalid
   - uid: 6070
     components:
     - type: Transform
       parent: 1668
-      pos: 13.5,19.5
+      pos: 14.5,26.5
     - type: DeviceNetwork
       deviceLists:
-      - 2214
+      - 2213
   - uid: 6083
     components:
     - type: Transform
       parent: 1668
-      pos: 13.5,23.5
+      pos: 14.5,24.5
     - type: DeviceNetwork
       deviceLists:
       - 2213
-      configurators:
-      - invalid
 - proto: WeaponEnergyTurretSecurityControlPanel
   entities:
   - uid: 2213
@@ -61044,10 +61038,10 @@ entities:
       pos: 14.5,21.5
     - type: DeviceList
       devices:
-      - 2158
-      - 6066
-      - 2130
+      - 6070
       - 6083
+      - 2158
+      - 2130
   - uid: 2214
     components:
     - type: Transform
@@ -61055,7 +61049,7 @@ entities:
       pos: 15.5,17.5
     - type: DeviceList
       devices:
-      - 6070
+      - 2389
 - proto: WeaponForceGunAdmin
   entities:
   - uid: 9550
@@ -61679,7 +61673,7 @@ entities:
         DoorStatus: True
     - type: Door
       state: Opening
-      secondsUntilStateChange: -1975.7274
+      secondsUntilStateChange: -2051.3594
     - type: Airlock
       autoClose: False
   - uid: 970
