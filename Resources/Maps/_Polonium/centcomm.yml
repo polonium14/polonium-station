@@ -4,7 +4,7 @@ meta:
   engineVersion: 284.0.0
   forkId: ""
   forkVersion: ""
-  time: 08/06/2026 13:25:39
+  time: 08/06/2026 13:42:40
   entityCount: 9736
 maps:
 - 2029
@@ -5723,6 +5723,14 @@ entities:
     - type: Transform
       parent: 1668
       pos: 19.5,-50.5
+- proto: AlwaysPoweredlightPink
+  entities:
+  - uid: 6084
+    components:
+    - type: Transform
+      parent: 1668
+      rot: 3.141592653589793 rad
+      pos: -11.5,-17.5
 - proto: AlwaysPoweredLightSodium
   entities:
   - uid: 4660
@@ -46299,14 +46307,6 @@ entities:
       parent: 1668
       rot: 3.141592653589793 rad
       pos: -3.5,34.5
-- proto: PoweredlightGreen
-  entities:
-  - uid: 6086
-    components:
-    - type: Transform
-      parent: 1668
-      rot: 3.141592653589793 rad
-      pos: -11.5,-17.5
 - proto: PoweredlightLED
   entities:
   - uid: 6157
@@ -61673,7 +61673,7 @@ entities:
         DoorStatus: True
     - type: Door
       state: Opening
-      secondsUntilStateChange: -2051.3594
+      secondsUntilStateChange: -2258.1592
     - type: Airlock
       autoClose: False
   - uid: 970
