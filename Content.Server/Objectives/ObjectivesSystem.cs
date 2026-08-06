@@ -12,6 +12,8 @@ using Robust.Shared.Random;
 using System.Linq;
 using System.Text;
 using Content.Server.Objectives.Commands;
+using Content.Shared._DV.CustomObjectiveSummary;
+using Content.Shared._Funkystation.CCVars;
 using Content.Shared.CCVar;
 using Content.Shared.Prototypes;
 using Content.Shared.Roles.Jobs;
@@ -58,9 +60,15 @@ public sealed partial class ObjectivesSystem : SharedObjectivesSystem
     {
         // go through each gamerule getting data for the roundend summary.
         var summaries = new Dictionary<string, Dictionary<string, List<(EntityUid, string)>>>();
-        var query = EntityQueryEnumerator<ActiveGameRuleComponent, GameRuleComponent>();
-        while (query.MoveNext(out var uid, out _, out var comp))
+        // POLONIUM CHANGE: list every added (not-yet-ended) game rule, not only ones still holding
+        // ActiveGameRuleComponent. Antag rules that were added but lost their active component before
+        // round end (e.g. dynamic/delayed rules) would otherwise vanish from the summary entirely.
+        var query = EntityQueryEnumerator<GameRuleComponent>();
+        while (query.MoveNext(out var uid, out _))
         {
+            if (HasComp<EndedGameRuleComponent>(uid))
+                continue;
+
             var info = new ObjectivesTextGetInfoEvent(new List<(EntityUid, string)>(), string.Empty);
             RaiseLocalEvent(uid, ref info);
             if (info.Minds.Count == 0)
@@ -211,6 +219,32 @@ public sealed partial class ObjectivesSystem : SharedObjectivesSystem
             }
 
             var successRate = totalObjectives > 0 ? (float) completedObjectives / totalObjectives : 0f;
+
+            // Begin DeltaV Additions - custom objective response.
+            if (_cfg.GetCVar(CCVars_Funky.PinktextEnabled)
+                && TryComp<CustomObjectiveSummaryComponent>(mindId, out var customComp)
+                && !string.IsNullOrWhiteSpace(customComp.ObjectiveSummary))
+            {
+                // We have to spit it like this to make it readable. Yeah, it sucks but for some reason the entire thing
+                // is just one long string...
+                var words = customComp.ObjectiveSummary.Split(" ");
+                var currentLine = "";
+                foreach (var word in words)
+                {
+                    currentLine += word + " ";
+
+                    // magic number
+                    if (currentLine.Length <= 50)
+                        continue;
+
+                    agentSummary.AppendLine(Loc.GetString("custom-objective-format", ("line", currentLine)));
+                    currentLine = "";
+                }
+
+                agentSummary.AppendLine(Loc.GetString("custom-objective-format", ("line", currentLine)));
+            }
+            // End DeltaV Additions
+
             agentSummaries.Add((agentSummary.ToString(), successRate, completedObjectives));
         }
 

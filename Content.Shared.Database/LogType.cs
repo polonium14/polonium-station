@@ -490,6 +490,11 @@ public enum LogType
     SiliconLaw = 105,
 
     /// <summary>
+    /// A player wrote a custom objective summary at round end.
+    /// </summary>
+    ObjectiveSummary = 422, // DeltaV
+
+    /// <summary>
     /// SecretPlus related game interactions.
     /// </summary>
     SecretPlus = 10001,

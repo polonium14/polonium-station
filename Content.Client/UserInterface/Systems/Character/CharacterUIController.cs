@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Client._DV.CustomObjectiveSummary; // DeltaV
 using Content.Client.CharacterInfo;
 using Content.Client.Gameplay;
 using Content.Client.Stylesheets;
@@ -10,7 +11,9 @@ using Content.Shared.Input;
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
 using Content.Shared.Roles;
+using Content.Shared._Funkystation.CCVars; // funky
 using JetBrains.Annotations;
+using Robust.Shared.Configuration; // funky
 using Robust.Client.GameObjects;
 using Robust.Client.Player;
 using Robust.Client.UserInterface;
@@ -30,6 +33,8 @@ public sealed partial class CharacterUIController : UIController, IOnStateEntere
     [Dependency] private IEntityManager _ent = default!;
     [Dependency] private IPlayerManager _player = default!;
     [Dependency] private IPrototypeManager _prototypeManager = default!;
+    [Dependency] private readonly CustomObjectiveSummaryUIController _objective = default!; // DeltaV
+    [Dependency] private readonly IConfigurationManager _cfg = default!; // funky
 
     [UISystemDependency] private readonly CharacterInfoSystem _characterInfo = default!;
     [UISystemDependency] private readonly SpriteSystem _sprite = default!;
@@ -179,6 +184,20 @@ public sealed partial class CharacterUIController : UIController, IOnStateEntere
 
             _window.Objectives.AddChild(objectiveControl);
         }
+
+        // Begin DeltaV Additions - Custom objective summary
+        if (objectives.Count > 0 && _cfg.GetCVar(CCVars_Funky.PinktextEnabled)) // funky -- use cvars to configure objectives
+        {
+            var button = new Button
+            {
+                Text = Loc.GetString("custom-objective-button-text"),
+                Margin = new Thickness(0, 10, 0, 10)
+            };
+            button.OnPressed += _ => _objective.OpenWindow();
+
+            _window.Objectives.AddChild(button);
+        }
+        // End DeltaV Additions
 
         if (briefing != null)
         {
