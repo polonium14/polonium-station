@@ -11,6 +11,9 @@
                 PlaceHolder="{Loc admin-entity-search-placeholder}"
                 HorizontalExpand="True" />
             <Button
+                Name="GridFilterButton"
+                Text="{Loc admin-entity-search-filter}" />
+            <Button
                 Name="SearchButton"
                 Text="{Loc admin-entity-search-button}" />
             <Button

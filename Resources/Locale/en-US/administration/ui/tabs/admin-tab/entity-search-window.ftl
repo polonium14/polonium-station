@@ -2,6 +2,10 @@ admin-entity-search-title = Entity Search
 admin-entity-search-placeholder = Search by display name or prototype ID…
 admin-entity-search-button = Search
 admin-entity-search-next = Next
+admin-entity-search-filter = Grid filter
+admin-entity-search-grid-toggle = Filter by grid
+admin-entity-search-grid-placeholder = Grid IDs comma-separated
+admin-entity-search-grid-append = Append current grid
 admin-entity-search-empty = Type a prototype name or ID to search.
 admin-entity-search-log = {$admin} ran entity search and got {$count} results.
 

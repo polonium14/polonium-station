@@ -28,6 +28,7 @@ public sealed partial class EntitySearchEui : BaseEui
     [Dependency] private IGameTiming _gameTiming = default!;
 
     private string _query = string.Empty;
+    private HashSet<EntityUid>? _gridFilter;
     private List<(string name, string? proto, NetEntity entity)>? _matchCache;
     private int _resultsSent;
     private TimeSpan _lastSearchTime = TimeSpan.Zero;
@@ -56,6 +57,7 @@ public sealed partial class EntitySearchEui : BaseEui
 
                     _lastSearchTime = _gameTiming.CurTime;
                     _query = search.Query.Trim();
+                    _gridFilter = ParseGridFilter(search.GridFilterEnabled, search.GridFilter);
                     SendResults(replace: true);
                     break;
                 }
@@ -106,10 +108,13 @@ public sealed partial class EntitySearchEui : BaseEui
         var filter = query.Trim();
         var results = new List<(string name, string? proto, NetEntity entity)>();
 
-        var enumerator = _entities.AllEntityQueryEnumerator<MetaDataComponent>();
-        while (enumerator.MoveNext(out var uid, out var meta))
+        var enumerator = _entities.AllEntityQueryEnumerator<MetaDataComponent, TransformComponent>();
+        while (enumerator.MoveNext(out var uid, out var meta, out var xform))
         {
             if (meta.EntityLifeStage >= EntityLifeStage.Deleted)
+                continue;
+
+            if (_gridFilter != null && (xform.GridUid == null || !_gridFilter.Contains(xform.GridUid.Value)))
                 continue;
 
             var protoId = meta.EntityPrototype?.ID;
@@ -146,6 +151,26 @@ public sealed partial class EntitySearchEui : BaseEui
         _chat.SendAdminAlert(message);
         _adminLogger.Add(LogType.Action, LogImpact.Medium,
             $"{Player.Name} ran entity search and got {resultCount} results.");
+    }
+
+    // null = no filtering
+    private HashSet<EntityUid>? ParseGridFilter(bool enabled, string raw)
+    {
+        if (!enabled)
+            return null;
+
+        var parts = raw.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+        if (parts.Length == 0)
+            return null;
+
+        var set = new HashSet<EntityUid>();
+        foreach (var part in parts)
+        {
+            if (int.TryParse(part, out var id) && _entities.TryGetEntity(new NetEntity(id), out var uid))
+                set.Add(uid.Value);
+        }
+
+        return set;
     }
 
     private static bool MatchesFilter(string displayName, string? protoId, string filter)

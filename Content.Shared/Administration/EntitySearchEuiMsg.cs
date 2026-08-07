@@ -11,6 +11,12 @@ public static class EntitySearchEuiMsg
     public sealed class Search : EuiMessageBase
     {
         public string Query = string.Empty;
+
+        /// <summary>When true, only entities on a grid listed in <see cref="GridFilter"/> are returned.</summary>
+        public bool GridFilterEnabled;
+
+        /// <summary>Comma-separated grid NetEntity ids to whitelist. Empty = no filter even when enabled.</summary>
+        public string GridFilter = string.Empty;
     }
 
     [Serializable, NetSerializable]

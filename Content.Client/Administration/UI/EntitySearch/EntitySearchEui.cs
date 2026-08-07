@@ -51,7 +51,12 @@ public sealed partial class EntitySearchEui : BaseEui
 
     private void PerformSearch()
     {
-        SendMessage(new Search { Query = _window.SearchText });
+        SendMessage(new Search
+        {
+            Query = _window.SearchText,
+            GridFilterEnabled = _window.GridFilterEnabled,
+            GridFilter = _window.GridFilter,
+        });
     }
 
     private void RequestNextResults()
