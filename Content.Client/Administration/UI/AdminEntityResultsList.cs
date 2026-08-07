@@ -184,6 +184,8 @@ public static class AdminEntityResultsList
                 }
 
                 console.ExecuteCommand($"delete {entity}");
+                if (pins != null && pins.IsPinned(entity))
+                    pins.Toggle(name, proto, entity);
                 onDeleted();
                 popup.Close();
             };
