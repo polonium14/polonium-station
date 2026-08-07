@@ -1,4 +1,3 @@
-using Content.Client.Administration.UI.Tabs.AdminTab;
 using Content.Client.Eui;
 using Content.Shared.Administration;
 using Content.Shared.Eui;
@@ -6,7 +5,7 @@ using JetBrains.Annotations;
 using Robust.Shared.IoC;
 using static Content.Shared.Administration.EntitySearchEuiMsg;
 
-namespace Content.Client.Administration.UI;
+namespace Content.Client.Administration.UI.EntitySearch;
 
 [UsedImplicitly]
 public sealed partial class EntitySearchEui : BaseEui

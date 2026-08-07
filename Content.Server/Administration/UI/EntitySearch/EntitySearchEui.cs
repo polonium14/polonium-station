@@ -12,7 +12,7 @@ using Robust.Shared.IoC;
 using Robust.Shared.Timing;
 using static Content.Shared.Administration.EntitySearchEuiMsg;
 
-namespace Content.Server.Administration.UI;
+namespace Content.Server.Administration.UI.EntitySearch;
 
 public sealed partial class EntitySearchEui : BaseEui
 {

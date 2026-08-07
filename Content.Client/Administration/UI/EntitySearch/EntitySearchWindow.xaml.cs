@@ -7,7 +7,7 @@ using Robust.Client.UserInterface.XAML;
 using Robust.Shared.IoC;
 using Robust.Shared.Timing;
 
-namespace Content.Client.Administration.UI.Tabs.AdminTab;
+namespace Content.Client.Administration.UI.EntitySearch;
 
 [GenerateTypedNameReferences]
 public sealed partial class EntitySearchWindow : DefaultWindow
