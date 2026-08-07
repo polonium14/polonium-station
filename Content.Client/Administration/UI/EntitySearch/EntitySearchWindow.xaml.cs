@@ -70,16 +70,26 @@ public sealed partial class EntitySearchWindow : DefaultWindow
 
         _pins = UserInterfaceManager.GetUIController<PinnedEntitiesUIController>();
         _pins.Changed += RefreshPinned;
+        _pins.Reset += ClearResults;
 
         OnClose += () =>
         {
             _gridFilterPopup.Close();
             _gridFilterPopup.Orphan();
             _pins.Changed -= RefreshPinned;
+            _pins.Reset -= ClearResults;
         };
 
         AdminEntityResultsList.PopulateHeader(HeaderRow, _loc);
         RefreshPinned();
+    }
+
+    private void ClearResults()
+    {
+        ItemList.RemoveAllChildren();
+        _loadedCount = 0;
+        NextButton.Disabled = true;
+        StatusLabel.Text = string.Empty;
     }
 
     private void RefreshPinned()
@@ -152,9 +162,7 @@ public sealed partial class EntitySearchWindow : DefaultWindow
 
         if (string.IsNullOrWhiteSpace(SearchLineEdit.Text))
         {
-            ItemList.RemoveAllChildren();
-            _loadedCount = 0;
-            NextButton.Disabled = true;
+            ClearResults();
             StatusLabel.Text = _loc.GetString("admin-entity-search-empty");
             return;
         }

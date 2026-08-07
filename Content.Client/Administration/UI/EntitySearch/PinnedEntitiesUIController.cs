@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Content.Client.Lobby;
 using Robust.Client.UserInterface.Controllers;
 
 namespace Content.Client.Administration.UI.EntitySearch;
@@ -9,13 +10,16 @@ namespace Content.Client.Administration.UI.EntitySearch;
 ///     pins survive closing/reopening the search (but not a reconnect, since NetEntity ids are per-session).
 ///     Snapshots are cached verbatim (never refreshed), so actions on a since-deleted entity simply no-op server-side.
 /// </summary>
-public sealed class PinnedEntitiesUIController : UIController
+public sealed class PinnedEntitiesUIController : UIController, IOnStateEntered<LobbyState>
 {
     private readonly List<(string name, string? proto, NetEntity entity)> _pinned = new();
 
     public IReadOnlyList<(string name, string? proto, NetEntity entity)> Pinned => _pinned;
 
     public event Action? Changed;
+
+    /// <summary>Raised when the round ends (lobby entered); listeners should clear their search state too.</summary>
+    public event Action? Reset;
 
     public bool IsPinned(NetEntity entity) => _pinned.Any(p => p.entity == entity);
 
@@ -28,5 +32,13 @@ public sealed class PinnedEntitiesUIController : UIController
             _pinned.Add((name, proto, entity));
 
         Changed?.Invoke();
+    }
+
+    // Drop pinned entities as round ends since they go stale.
+    public void OnStateEntered(LobbyState state)
+    {
+        _pinned.Clear();
+        Changed?.Invoke();
+        Reset?.Invoke();
     }
 }
