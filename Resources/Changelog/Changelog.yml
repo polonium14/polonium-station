@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: osjarw
-  changes:
-  - message: Now the Medibot has a DoAfter bar, displaying injection progress.
-    type: Add
-  id: 9434
-  time: '2026-01-20T21:07:38.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/32932
 - author: sowelipililimute
   changes:
   - message: Species now properly render their sex-specific sprites
@@ -4089,3 +4082,10 @@
   id: 9933
   time: '2026-08-07T10:21:41.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/877
+- author: koilak i haze
+  changes:
+  - message: "D\u0142ugopis wymazuj\u0105cy pami\u0119\u0107"
+    type: Add
+  id: 9934
+  time: '2026-08-07T10:25:59.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/878
