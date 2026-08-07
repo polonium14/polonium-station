@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: Velken, Murphyneko
-  changes:
-  - message: Station tiles and floors can now be placed on planets, asteroids and
-      different platings.
-    type: Tweak
-  id: 9433
-  time: '2026-01-20T20:51:15.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42543
 - author: osjarw
   changes:
   - message: Now the Medibot has a DoAfter bar, displaying injection progress.
@@ -4088,3 +4080,12 @@
   id: 9932
   time: '2026-08-06T19:55:10.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/869
+- author: haze
+  changes:
+  - message: "Popupy zapisuj\u0105 si\u0119 do okna czatu"
+    type: Add
+  - message: "Poprawiono t\u0142umaczenia"
+    type: Fix
+  id: 9933
+  time: '2026-08-07T10:21:41.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/877
