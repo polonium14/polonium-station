@@ -36,6 +36,10 @@ hud-chatbox-highlights-tooltip =
     Słowa muszą być oddzielone znakiem nowej linii,
     jeśli są zawarte w cudzysłowie, zostaną podświetlone
     tylko wtedy, gdy są oddzielone spacjami lub znakami interpunkcyjnymi.
+    Wieloznaczniki: * pasuje do dowolnego ciągu liter, ? do jednej,
+    w obrębie jednego słowa (np. "Kapitan*").
+    Linia zaczynająca się od # jest przypięta - autouzupełnianie
+    nie usunie jej między rundami (np. #haze).
 hud-chatbox-highlights-placeholder =
     McKowalski
     "Prawo"

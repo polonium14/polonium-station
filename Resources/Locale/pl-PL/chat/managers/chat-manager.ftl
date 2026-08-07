@@ -154,10 +154,9 @@ chat-manager-dead-chat-enabled-message = Dead chat has been enabled.
 
 chat-manager-dead-chat-disabled-message = Dead chat has been disabled.
 
-# Unicode U+201C and U+201D Double quotes.
-chat-manager-speech-double-quote-begin = “
+chat-manager-speech-double-quote-begin = "
 
-chat-manager-speech-double-quote-end = ”
+chat-manager-speech-double-quote-end = "
 
 chat-manager-follow-button = (F)
 
