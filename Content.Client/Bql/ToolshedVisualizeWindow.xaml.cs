@@ -24,7 +24,7 @@ internal sealed partial class ToolshedVisualizeWindow : DefaultWindow
 
         RobustXamlLoader.Load(this);
 
-        Administration.UI.AdminEntityResultsList.PopulateHeader(HeaderRow, _loc);
+        Administration.UI.AdminEntityResultsList.PopulateHeader(HeaderRow, _loc, _resCache);
     }
 
     public void Update((string name, NetEntity entity)[] entities)
