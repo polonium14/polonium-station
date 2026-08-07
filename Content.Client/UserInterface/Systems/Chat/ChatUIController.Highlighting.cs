@@ -178,6 +178,14 @@ public sealed partial class ChatUIController : IOnSystemChanged<CharacterInfoSys
             // to make sure it matches the literal "\" before the square bracket.
             keyword = keyword.Replace(@"\[", @"\\\[");
 
+            // Polonium - user wildcards. Regex.Escape turned '*'->'\*' and '?'->'\?';
+            // rewrite those to match a run of / a single word char (\w, Unicode, so Polish
+            // ą/ń/ł/ó count) so a wildcard stays inside one word and stops at spaces AND
+            // punctuation - otherwise a trailing '*' would swallow the closing '"' of speech.
+            // Same word-char notion the "..." boundary above uses. Handy for inflected
+            // names/titles, eg. "Kapitan*" -> "Kapitanie", "Kapitana".
+            keyword = keyword.Replace(@"\*", @"\w*").Replace(@"\?", @"\w");
+
             // If present, replace the double quotes at the edges with tags
             // that make sure the words to match are separated by spaces or punctuation.
             // NOTE: The reason why we don't use \b tags is that \b doesn't match reverse slash characters "\" so
