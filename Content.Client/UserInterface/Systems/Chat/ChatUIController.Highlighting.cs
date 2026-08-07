@@ -172,14 +172,13 @@ public sealed partial class ChatUIController : IOnSystemChanged<CharacterInfoSys
 
             // Polonium - a leading '#' pins the line so autofill (OnCharacterUpdated) keeps it
             // across rounds. The '#' is only a UI/storage marker, so strip it here before it
-            // would be matched literally in chat. An otherwise-empty "#" line is skipped so it
-            // can't become an empty (match-everything) regex.
+            // would be matched literally in chat.
             if (keyword.StartsWith('#'))
-            {
                 keyword = keyword[1..].TrimStart();
-                if (keyword.Length == 0)
-                    continue;
-            }
+
+            // Skip empty keywords (eg "*", "@*", // "\"*\"", a lone "#")
+            if (keyword.Trim('@', '"', '*', '?', ' ').Length == 0)
+                continue;
 
             // Replace every "\" character with a "\\" to prevent "\n", "\0", etc...
             keyword = keyword.Replace(@"\", @"\\");
