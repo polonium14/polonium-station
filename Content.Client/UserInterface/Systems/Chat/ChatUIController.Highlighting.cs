@@ -168,8 +168,21 @@ public sealed partial class ChatUIController : IOnSystemChanged<CharacterInfoSys
 
         for (var i = 0; i < splittedHighlights.Length; i++)
         {
+            var keyword = splittedHighlights[i];
+
+            // Polonium - a leading '#' pins the line so autofill (OnCharacterUpdated) keeps it
+            // across rounds. The '#' is only a UI/storage marker, so strip it here before it
+            // would be matched literally in chat. An otherwise-empty "#" line is skipped so it
+            // can't become an empty (match-everything) regex.
+            if (keyword.StartsWith('#'))
+            {
+                keyword = keyword[1..].TrimStart();
+                if (keyword.Length == 0)
+                    continue;
+            }
+
             // Replace every "\" character with a "\\" to prevent "\n", "\0", etc...
-            var keyword = splittedHighlights[i].Replace(@"\", @"\\");
+            keyword = keyword.Replace(@"\", @"\\");
 
             // Escape the keyword to prevent special characters like "(" and ")" to be considered valid regex.
             keyword = Regex.Escape(keyword);
@@ -249,6 +262,16 @@ public sealed partial class ChatUIController : IOnSystemChanged<CharacterInfoSys
         if (jobMatches != null)
             newHighlights += '\n' + jobMatches.Replace(", ", "\n");
         // POLONIUM CHANGE END
+
+        // Polonium - carry over pinned ('#'-prefixed) lines so autofill doesn't wipe the
+        // player's own highlights when they get a new body/round. Prepend them to the freshly
+        // generated name+job list.
+        var pinned = _config.GetCVar(CCVars.ChatHighlights)
+            .Split('\n', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries)
+            .Where(l => l.StartsWith('#'))
+            .ToArray();
+        if (pinned.Length > 0)
+            newHighlights = string.Join('\n', pinned) + '\n' + newHighlights;
 
         UpdateHighlights(newHighlights);
         HighlightsUpdated?.Invoke(newHighlights);
