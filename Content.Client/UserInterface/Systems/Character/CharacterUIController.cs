@@ -57,8 +57,8 @@ public sealed partial class CharacterUIController : UIController, IOnStateEntere
     [Dependency] private IEntityManager _ent = default!;
     [Dependency] private IPlayerManager _player = default!;
     [Dependency] private IPrototypeManager _prototypeManager = default!;
-    [Dependency] private readonly CustomObjectiveSummaryUIController _objective = default!; // DeltaV
-    [Dependency] private readonly IConfigurationManager _cfg = default!; // funky
+    [Dependency] private CustomObjectiveSummaryUIController _objective = default!; // DeltaV
+    [Dependency] private IConfigurationManager _cfg = default!; // funky
 
     [UISystemDependency] private readonly CharacterInfoSystem _characterInfo = default!;
     [UISystemDependency] private readonly SpriteSystem _sprite = default!;
