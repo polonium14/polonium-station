@@ -82,6 +82,7 @@ public static class AdminEntityResultsList
         HorizontalExpand = true,
         SizeFlagsStretchRatio = ratio,
         ClipText = true,
+        ToolTip = text,
     };
 
     private static BoxContainer CreateRow(
