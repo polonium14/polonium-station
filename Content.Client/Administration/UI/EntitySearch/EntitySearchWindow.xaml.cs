@@ -34,6 +34,11 @@ public sealed partial class EntitySearchWindow : DefaultWindow
 
     public string SearchText => SearchLineEdit.Text;
 
+    public void FocusSearch()
+    {
+        SearchLineEdit.GrabKeyboardFocus();
+    }
+
     public void SetResults((string name, NetEntity entity)[] entities, bool hasNext)
     {
         _loadedCount = entities.Length;

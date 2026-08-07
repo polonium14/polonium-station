@@ -27,6 +27,7 @@ public sealed partial class EntitySearchEui : BaseEui
     {
         base.Opened();
         _window.OpenCentered();
+        _window.FocusSearch();
     }
 
     public override void Closed()
