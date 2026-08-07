@@ -40,10 +40,11 @@ public static class AdminEntityResultsList
         IClipboardManager clipboard,
         IResourceCache resCache,
         bool hasMore = false,
-        int? total = null)
+        int? total = null,
+        bool allowDelete = false)
     {
         itemList.RemoveAllChildren();
-        Append(itemList, entities, console, loc, clipboard, resCache);
+        Append(itemList, entities, console, loc, clipboard, resCache, allowDelete);
         UpdateStatus(statusLabel, entities.Length, hasMore, loc, total);
     }
 
@@ -53,11 +54,12 @@ public static class AdminEntityResultsList
         IClientConsoleHost console,
         ILocalizationManager loc,
         IClipboardManager clipboard,
-        IResourceCache resCache)
+        IResourceCache resCache,
+        bool allowDelete = false)
     {
         foreach (var (name, proto, entity) in entities)
         {
-            itemList.AddChild(CreateRow(name, proto, entity, console, loc, clipboard, resCache));
+            itemList.AddChild(CreateRow(name, proto, entity, console, loc, clipboard, resCache, allowDelete));
         }
     }
 
@@ -89,7 +91,8 @@ public static class AdminEntityResultsList
         IClientConsoleHost console,
         ILocalizationManager loc,
         IClipboardManager clipboard,
-        IResourceCache resCache)
+        IResourceCache resCache,
+        bool allowDelete)
     {
         var row = new BoxContainer { Orientation = BoxContainer.LayoutOrientation.Horizontal };
         row.AddChild(StretchLabel(entity.ToString(), IdRatio));
@@ -98,7 +101,7 @@ public static class AdminEntityResultsList
         row.AddChild(new VSeparator());
         row.AddChild(StretchLabel(proto ?? string.Empty, ProtoRatio));
         row.AddChild(new VSeparator());
-        row.AddChild(CreateActions(entity, console, loc, clipboard, resCache, () => row.Orphan()));
+        row.AddChild(CreateActions(entity, console, loc, clipboard, resCache, allowDelete, () => row.Orphan()));
         return row;
     }
 
@@ -108,6 +111,7 @@ public static class AdminEntityResultsList
         ILocalizationManager loc,
         IClipboardManager clipboard,
         IResourceCache resCache,
+        bool allowDelete,
         Action onDeleted)
     {
         var button = new Button
@@ -116,7 +120,7 @@ public static class AdminEntityResultsList
             HorizontalExpand = true,
             SizeFlagsStretchRatio = ActionsRatio,
         };
-        button.OnPressed += _ => OpenActionsMenu(entity, console, loc, clipboard, resCache, onDeleted);
+        button.OnPressed += _ => OpenActionsMenu(entity, console, loc, clipboard, resCache, allowDelete, onDeleted);
         return button;
     }
 
@@ -126,6 +130,7 @@ public static class AdminEntityResultsList
         ILocalizationManager loc,
         IClipboardManager clipboard,
         IResourceCache resCache,
+        bool allowDelete,
         Action onDeleted)
     {
         Texture Icon(string file) => resCache.GetTexture(IconsPath + file);
@@ -144,23 +149,27 @@ public static class AdminEntityResultsList
         menu.AddChild(MenuElement(loc.GetString("ui-bql-results-copy"), Icon("information.svg.192dpi.png"),
             () => { clipboard.SetText(entity.ToString()); popup.Close(); }));
 
-        // Delete arms inline: first press swaps to red "Confirm?", second press deletes. Menu stays open.
-        var delete = new AdminActionMenuElement(RedText(loc.GetString("ui-bql-results-delete")), Icon("delete.svg.192dpi.png"));
-        var armed = false;
-        delete.OnPressed += _ =>
+        // Delete is opt-in (default off)
+        if (allowDelete)
         {
-            if (!armed)
+            // Delete arms inline: first press swaps to red "Confirm?", second press deletes. Menu stays open.
+            var delete = new AdminActionMenuElement(RedText(loc.GetString("ui-bql-results-delete")), Icon("delete.svg.192dpi.png"));
+            var armed = false;
+            delete.OnPressed += _ =>
             {
-                armed = true;
-                delete.Text = RedText(loc.GetString("ui-bql-results-delete-confirm"));
-                return;
-            }
+                if (!armed)
+                {
+                    armed = true;
+                    delete.Text = RedText(loc.GetString("ui-bql-results-delete-confirm"));
+                    return;
+                }
 
-            console.ExecuteCommand($"delete {entity}");
-            onDeleted();
-            popup.Close();
-        };
-        menu.AddChild(delete);
+                console.ExecuteCommand($"delete {entity}");
+                onDeleted();
+                popup.Close();
+            };
+            menu.AddChild(delete);
+        }
 
         popup.OpenAtMouse();
     }

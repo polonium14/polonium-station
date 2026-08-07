@@ -106,14 +106,14 @@ public sealed partial class EntitySearchWindow : DefaultWindow
     public void SetResults((string name, string? proto, NetEntity entity)[] entities, bool hasNext, int total)
     {
         _loadedCount = entities.Length;
-        AdminEntityResultsList.Populate(ItemList, StatusLabel, entities, _console, _loc, _clipboard, _resCache, hasNext, total);
+        AdminEntityResultsList.Populate(ItemList, StatusLabel, entities, _console, _loc, _clipboard, _resCache, hasNext, total, allowDelete: true);
         NextButton.Disabled = !hasNext;
     }
 
     public void AddResults((string name, string? proto, NetEntity entity)[] entities, bool hasNext, int total)
     {
         _loadedCount += entities.Length;
-        AdminEntityResultsList.Append(ItemList, entities, _console, _loc, _clipboard, _resCache);
+        AdminEntityResultsList.Append(ItemList, entities, _console, _loc, _clipboard, _resCache, allowDelete: true);
         AdminEntityResultsList.UpdateStatus(StatusLabel, _loadedCount, hasNext, _loc, total);
         NextButton.Disabled = !hasNext;
     }
