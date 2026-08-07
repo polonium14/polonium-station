@@ -9,6 +9,7 @@ ui-bql-results-title = BQL results
 ui-bql-results-vv = VV
 ui-bql-results-status = { $count } entities
 ui-bql-results-status-more = { $count } entities (more available)
+ui-bql-results-status-total = { $loaded } / { $total }
 
 ui-bql-results-col-id = ID
 ui-bql-results-col-name = Name

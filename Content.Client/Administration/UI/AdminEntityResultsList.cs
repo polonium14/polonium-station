@@ -39,11 +39,12 @@ public static class AdminEntityResultsList
         ILocalizationManager loc,
         IClipboardManager clipboard,
         IResourceCache resCache,
-        bool hasMore = false)
+        bool hasMore = false,
+        int? total = null)
     {
         itemList.RemoveAllChildren();
         Append(itemList, entities, console, loc, clipboard, resCache);
-        UpdateStatus(statusLabel, entities.Length, hasMore, loc);
+        UpdateStatus(statusLabel, entities.Length, hasMore, loc, total);
     }
 
     public static void Append(
@@ -60,8 +61,14 @@ public static class AdminEntityResultsList
         }
     }
 
-    public static void UpdateStatus(Label statusLabel, int count, bool hasMore, ILocalizationManager loc)
+    public static void UpdateStatus(Label statusLabel, int count, bool hasMore, ILocalizationManager loc, int? total = null)
     {
+        if (total is { } t)
+        {
+            statusLabel.Text = loc.GetString("ui-bql-results-status-total", ("loaded", count), ("total", t));
+            return;
+        }
+
         statusLabel.Text = hasMore
             ? loc.GetString("ui-bql-results-status-more", ("count", count))
             : loc.GetString("ui-bql-results-status", ("count", count));

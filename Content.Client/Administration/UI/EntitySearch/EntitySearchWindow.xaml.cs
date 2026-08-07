@@ -45,18 +45,18 @@ public sealed partial class EntitySearchWindow : DefaultWindow
         SearchLineEdit.GrabKeyboardFocus();
     }
 
-    public void SetResults((string name, string? proto, NetEntity entity)[] entities, bool hasNext)
+    public void SetResults((string name, string? proto, NetEntity entity)[] entities, bool hasNext, int total)
     {
         _loadedCount = entities.Length;
-        AdminEntityResultsList.Populate(ItemList, StatusLabel, entities, _console, _loc, _clipboard, _resCache, hasNext);
+        AdminEntityResultsList.Populate(ItemList, StatusLabel, entities, _console, _loc, _clipboard, _resCache, hasNext, total);
         NextButton.Disabled = !hasNext;
     }
 
-    public void AddResults((string name, string? proto, NetEntity entity)[] entities, bool hasNext)
+    public void AddResults((string name, string? proto, NetEntity entity)[] entities, bool hasNext, int total)
     {
         _loadedCount += entities.Length;
         AdminEntityResultsList.Append(ItemList, entities, _console, _loc, _clipboard, _resCache);
-        AdminEntityResultsList.UpdateStatus(StatusLabel, _loadedCount, hasNext, _loc);
+        AdminEntityResultsList.UpdateStatus(StatusLabel, _loadedCount, hasNext, _loc, total);
         NextButton.Disabled = !hasNext;
     }
 
@@ -69,6 +69,12 @@ public sealed partial class EntitySearchWindow : DefaultWindow
     {
         if (_timing.CurTime < _searchCooldownEnd)
             return;
+
+        if (string.IsNullOrWhiteSpace(SearchLineEdit.Text))
+        {
+            StatusLabel.Text = _loc.GetString("admin-entity-search-empty");
+            return;
+        }
 
         _searchCooldownEnd = _timing.CurTime + EntitySearchEuiMsg.SearchCooldown;
         UpdateSearchButton();

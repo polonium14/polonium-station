@@ -44,9 +44,9 @@ public sealed partial class EntitySearchEui : BaseEui
             return;
 
         if (newResults.Replace)
-            _window.SetResults(newResults.Entities, newResults.HasNext);
+            _window.SetResults(newResults.Entities, newResults.HasNext, newResults.Total);
         else
-            _window.AddResults(newResults.Entities, newResults.HasNext);
+            _window.AddResults(newResults.Entities, newResults.HasNext, newResults.Total);
     }
 
     private void PerformSearch()
