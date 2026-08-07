@@ -1,4 +1,38 @@
+// SPDX-FileCopyrightText: 2021 Paul <ritter.paul1@googlemail.com>
+// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <gradientvera@outlook.com>
+// SPDX-FileCopyrightText: 2022 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Jack Fox <35575261+DubiousDoggo@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Vordenburg <114301317+Vordenburg@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2024 DrSmugleaf <10968691+DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 LordCarve <27449516+LordCarve@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Cooper Wallace <6856074+CooperWallace@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Milon <milonpl.git@proton.me>
+// SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2026 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2026 Whatstone <166147148+whatston3@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 maciejwalendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 nikitosych <174215049+nikitosych@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 taydeo <tay@funkystation.org>
+// SPDX-FileCopyrightText: 2026 taydeo <td12233a@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Linq;
+using Content.Client.UserInterface.Systems.Chat;
+using Content.Shared._Goobstation.CCVar;
+using Content.Shared.Chat;
 using Content.Shared.Examine;
 using Content.Shared.GameTicking;
 using Content.Shared.Popups;
@@ -12,6 +46,7 @@ using Robust.Shared.Configuration;
 using Robust.Shared.Map;
 using Robust.Shared.Player;
 using Robust.Shared.Replays;
+using Robust.Shared.Utility;
 
 namespace Content.Client.Popups;
 
@@ -42,9 +77,25 @@ public sealed partial class PopupSystem : SharedPopupSystem
     public const float MaximumPopupLifetime = 5f;
     public const float PopupLifetimePerCharacter = 0.04f;
 
+    // WD EDIT START - Log actions in chat
+    private static readonly Dictionary<PopupType, string> FontSizeDict = new()
+    {
+        { PopupType.Medium, "12" },
+        { PopupType.MediumCaution, "12" },
+        { PopupType.Large, "15" },
+        { PopupType.LargeCaution, "15" }
+    };
+
+    private bool _shouldLogInChat;
+    // WD EDIT END
+
     public override void Initialize()
     {
         base.Initialize();
+
+        // WD EDIT START - Log actions in chat
+        Subs.CVar(_configManager, GoobCVars.LogInChat, log => _shouldLogInChat = log, true);
+        // WD EDIT END
 
         _overlay.AddOverlay(new PopupOverlay(
             _configManager,
@@ -96,6 +147,9 @@ public sealed partial class PopupSystem : SharedPopupSystem
         var popupData = new WorldPopupData(message, type, coordinates, entity);
         if (_aliveWorldLabels.TryGetValue(popupData, out var existingLabel))
         {
+            // WD EDIT - Log actions in chat: intended dedup. A repeat of a still-alive popup stacks on the
+            // world label (x2/x3...) and returns here BEFORE the chat-logging block below, so spammed identical
+            // actions are logged to chat only once instead of flooding it. This is deliberate, not a missed case.
             WrapAndRepeatPopup(existingLabel, popupData.Message);
             return;
         }
@@ -107,6 +161,26 @@ public sealed partial class PopupSystem : SharedPopupSystem
         };
 
         _aliveWorldLabels.Add(popupData, label);
+
+        // WD EDIT START - Log actions in chat
+        // Only reached for a NEW world label (first occurrence); repeats short-circuit above by design, so chat
+        // gets one line per distinct popup rather than one per repeat.
+        if (_shouldLogInChat &&
+            _playerManager.LocalEntity != null &&
+            coordinates.IsValid(EntityManager) &&
+            _examine.InRangeUnOccluded(_playerManager.LocalEntity.Value, coordinates, 10))
+        {
+            var fontsize = FontSizeDict.GetValueOrDefault(type, "10");
+            var fontcolor = type is PopupType.LargeCaution or PopupType.MediumCaution or PopupType.SmallCaution
+                ? "#C62828"
+                : "#AEABC4";
+
+            var escapedMessage = FormattedMessage.EscapeText(message);
+            var wrappedMessage = $"[font size={fontsize}][color={fontcolor}]{escapedMessage}[/color][/font]";
+            var chatMsg = new ChatMessage(ChatChannel.Popup, message, wrappedMessage, GetNetEntity(EntityUid.Invalid), null);
+            _uiManager.GetUIController<ChatUIController>().ProcessChatMessage(chatMsg);
+        }
+        // WD EDIT END
     }
 
     /// <summary>

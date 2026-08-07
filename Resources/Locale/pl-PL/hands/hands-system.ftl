@@ -8,4 +8,4 @@ comp-hands-examine-empty =
        *[male] trzyma
     }.
 comp-hands-examine-wrapper = { INDEFINITE($item) } [color=paleturquoise]{ $item }[/color]
-hands-system-blocked-by = Zablokowane pzez
+hands-system-blocked-by = Zablokowane przez
