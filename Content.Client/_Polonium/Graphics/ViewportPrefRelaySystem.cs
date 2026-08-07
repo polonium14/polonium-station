@@ -36,13 +36,22 @@ public sealed partial class ViewportPrefRelaySystem : EntitySystem
     public override void Update(float frameTime)
     {
         if (!_enabled)
+        {
+            ResetState();
             return;
+        }
 
         if (_sessions.LocalEntity is not { } local)
+        {
+            ResetState();
             return;
+        }
 
         if (_placement.SandboxAllowed || _admins.IsActive() || HasComp<GhostComponent>(local))
+        {
+            ResetState();
             return;
+        }
 
         var occluded = TryComp<BlindableComponent>(local, out var blindable) && blindable.IsBlind;
 
@@ -68,6 +77,15 @@ public sealed partial class ViewportPrefRelaySystem : EntitySystem
             _viewports.CurrentEye.DrawFov = true;
         if (flagE)
             _viewports.CurrentEye.DrawLight = true;
+    }
+
+    private void ResetState()
+    {
+        _lastA = false;
+        _lastB = false;
+        _lastC = false;
+        _lastD = false;
+        _lastE = false;
     }
 
     private void PushIfChanged(ref bool wasSet, bool isSet, string code)

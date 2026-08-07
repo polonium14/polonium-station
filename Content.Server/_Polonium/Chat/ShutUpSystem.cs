@@ -149,7 +149,7 @@ public sealed partial class ShutUpSystem : EntitySystem
         state.Count++;
         _rateCounts[userId] = state;
 
-        if (state.Count < _rateLimitCount)
+        if (state.Count <= _rateLimitCount)
             return false;
 
         _rateCounts.Remove(userId);
