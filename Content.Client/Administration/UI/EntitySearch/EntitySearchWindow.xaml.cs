@@ -65,6 +65,12 @@ public sealed partial class EntitySearchWindow : DefaultWindow
 
         GridFilterButton.OnPressed += _ => OpenGridFilter();
 
+        OnClose += () =>
+        {
+            _gridFilterPopup.Close();
+            _gridFilterPopup.Orphan();
+        };
+
         AdminEntityResultsList.PopulateHeader(HeaderRow, _loc);
     }
 
