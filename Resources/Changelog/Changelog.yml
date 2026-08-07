@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: sowelipililimute
-  changes:
-  - message: Species now properly render their sex-specific sprites
-    type: Fix
-  id: 9435
-  time: '2026-01-20T21:24:06.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42554
 - author: ScarKy0
   changes:
   - message: Audio for mortars, juicers and the paperfuge can no longer be stacked
@@ -4089,3 +4082,15 @@
   id: 9934
   time: '2026-08-07T10:25:59.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/878
+- author: haze
+  changes:
+  - message: "Dodano d\u017Awi\u0119k podczas wyr\xF3\u017Cniania"
+    type: Add
+  - message: "Dodano obs\u0142ug\u0119 wildcard *, ?, # w filtrach czatu"
+    type: Add
+  - message: "Naprawiono automatyczne ustawianie listy wyr\xF3\u017Cnie\u0144 na podstawie\
+      \ imienia i nazwiska"
+    type: Fix
+  id: 9935
+  time: '2026-08-07T15:01:30.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/887
