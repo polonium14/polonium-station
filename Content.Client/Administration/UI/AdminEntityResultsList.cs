@@ -1,4 +1,5 @@
 using Content.Client.Administration.UI.CustomControls;
+using Content.Client.Administration.UI.EntitySearch;
 using Content.Client.ContextMenu.UI;
 using Content.Client.Resources;
 using Robust.Client.Console;
@@ -41,10 +42,11 @@ public static class AdminEntityResultsList
         IResourceCache resCache,
         bool hasMore = false,
         int? total = null,
-        bool allowDelete = false)
+        bool allowDelete = false,
+        PinnedEntitiesUIController? pins = null)
     {
         itemList.RemoveAllChildren();
-        Append(itemList, entities, console, loc, clipboard, resCache, allowDelete);
+        Append(itemList, entities, console, loc, clipboard, resCache, allowDelete, pins);
         UpdateStatus(statusLabel, entities.Length, hasMore, loc, total);
     }
 
@@ -55,11 +57,12 @@ public static class AdminEntityResultsList
         ILocalizationManager loc,
         IClipboardManager clipboard,
         IResourceCache resCache,
-        bool allowDelete = false)
+        bool allowDelete = false,
+        PinnedEntitiesUIController? pins = null)
     {
         foreach (var (name, proto, entity) in entities)
         {
-            itemList.AddChild(CreateRow(name, proto, entity, console, loc, clipboard, resCache, allowDelete));
+            itemList.AddChild(CreateRow(name, proto, entity, console, loc, clipboard, resCache, allowDelete, pins));
         }
     }
 
@@ -93,7 +96,8 @@ public static class AdminEntityResultsList
         ILocalizationManager loc,
         IClipboardManager clipboard,
         IResourceCache resCache,
-        bool allowDelete)
+        bool allowDelete,
+        PinnedEntitiesUIController? pins)
     {
         var row = new BoxContainer { Orientation = BoxContainer.LayoutOrientation.Horizontal };
         row.AddChild(StretchLabel(entity.ToString(), IdRatio));
@@ -102,17 +106,20 @@ public static class AdminEntityResultsList
         row.AddChild(new VSeparator());
         row.AddChild(StretchLabel(proto ?? string.Empty, ProtoRatio));
         row.AddChild(new VSeparator());
-        row.AddChild(CreateActions(entity, console, loc, clipboard, resCache, allowDelete, () => row.Orphan()));
+        row.AddChild(CreateActions(name, proto, entity, console, loc, clipboard, resCache, allowDelete, pins, () => row.Orphan()));
         return row;
     }
 
     private static Button CreateActions(
+        string name,
+        string? proto,
         NetEntity entity,
         IClientConsoleHost console,
         ILocalizationManager loc,
         IClipboardManager clipboard,
         IResourceCache resCache,
         bool allowDelete,
+        PinnedEntitiesUIController? pins,
         Action onDeleted)
     {
         var button = new Button
@@ -121,17 +128,20 @@ public static class AdminEntityResultsList
             HorizontalExpand = true,
             SizeFlagsStretchRatio = ActionsRatio,
         };
-        button.OnPressed += _ => OpenActionsMenu(entity, console, loc, clipboard, resCache, allowDelete, onDeleted);
+        button.OnPressed += _ => OpenActionsMenu(name, proto, entity, console, loc, clipboard, resCache, allowDelete, pins, onDeleted);
         return button;
     }
 
     private static void OpenActionsMenu(
+        string name,
+        string? proto,
         NetEntity entity,
         IClientConsoleHost console,
         ILocalizationManager loc,
         IClipboardManager clipboard,
         IResourceCache resCache,
         bool allowDelete,
+        PinnedEntitiesUIController? pins,
         Action onDeleted)
     {
         Texture Icon(string file) => resCache.GetTexture(IconsPath + file);
@@ -149,6 +159,14 @@ public static class AdminEntityResultsList
             () => { console.ExecuteCommand($"vv {entity}"); popup.Close(); }));
         menu.AddChild(MenuElement(loc.GetString("ui-bql-results-copy"), Icon("information.svg.192dpi.png"),
             () => { clipboard.SetText(entity.ToString()); popup.Close(); }));
+
+        // Pin is opt-in: only consumers that supply a pin store (the entity search window) get it.
+        if (pins != null)
+        {
+            var pinLabel = pins.IsPinned(entity) ? "ui-bql-results-unpin" : "ui-bql-results-pin";
+            menu.AddChild(MenuElement(loc.GetString(pinLabel), Icon("anchor.svg.192dpi.png"),
+                () => { pins.Toggle(name, proto, entity); popup.Close(); }));
+        }
 
         // Delete is opt-in (default off)
         if (allowDelete)

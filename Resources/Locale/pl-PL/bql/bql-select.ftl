@@ -34,3 +34,5 @@ ui-bql-results-follow = Śledź
 ui-bql-results-copy = Kopiuj ID
 ui-bql-results-delete = Usuń
 ui-bql-results-delete-confirm = Potwierdź?
+ui-bql-results-pin = Przypnij
+ui-bql-results-unpin = Odepnij

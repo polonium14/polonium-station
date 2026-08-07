@@ -6,6 +6,7 @@ admin-entity-search-filter = Grid filter
 admin-entity-search-grid-toggle = Filter by grid
 admin-entity-search-grid-placeholder = Grid IDs comma-separated
 admin-entity-search-grid-append = Append current grid
+admin-entity-search-pinned = Pinned
 admin-entity-search-empty = Type a prototype name or ID to search.
 admin-entity-search-log = {$admin} ran entity search and got {$count} results.
 

@@ -23,6 +23,11 @@
                 Disabled="True" />
         </BoxContainer>
         <Label Name="StatusLabel" />
+        <BoxContainer Orientation="Vertical" Name="PinnedSection" Visible="False">
+            <Label Text="{Loc admin-entity-search-pinned}" />
+            <BoxContainer Orientation="Vertical" Name="PinnedList" />
+            <cc:HSeparator />
+        </BoxContainer>
         <ScrollContainer VerticalExpand="True">
             <BoxContainer Orientation="Vertical" VerticalExpand="True">
                 <BoxContainer Orientation="Horizontal" Name="HeaderRow" />
