@@ -19,15 +19,17 @@ public static class EntitySearchEuiMsg
     [Serializable, NetSerializable]
     public sealed class NewResults : EuiMessageBase
     {
-        public NewResults((string name, NetEntity entity)[] entities, bool replace, bool hasNext)
+        public NewResults((string name, string? proto, NetEntity entity)[] entities, bool replace, bool hasNext, int total)
         {
             Entities = entities;
             Replace = replace;
             HasNext = hasNext;
+            Total = total;
         }
 
-        public (string name, NetEntity entity)[] Entities { get; }
+        public (string name, string? proto, NetEntity entity)[] Entities { get; }
         public bool Replace { get; }
         public bool HasNext { get; }
+        public int Total { get; }
     }
 }

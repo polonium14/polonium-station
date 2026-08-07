@@ -28,7 +28,7 @@ public sealed partial class EntitySearchEui : BaseEui
     [Dependency] private IGameTiming _gameTiming = default!;
 
     private string _query = string.Empty;
-    private List<(string name, NetEntity entity)>? _matchCache;
+    private List<(string name, string? proto, NetEntity entity)>? _matchCache;
     private int _resultsSent;
     private TimeSpan _lastSearchTime = TimeSpan.Zero;
 
@@ -82,29 +82,29 @@ public sealed partial class EntitySearchEui : BaseEui
         var remaining = cache.Count - _resultsSent;
         var take = Math.Min(BatchSize, remaining);
 
-        (string name, NetEntity entity)[] batch;
+        (string name, string? proto, NetEntity entity)[] batch;
         if (take == 0)
         {
             batch = [];
         }
         else
         {
-            batch = new (string name, NetEntity entity)[take];
+            batch = new (string name, string? proto, NetEntity entity)[take];
             cache.CopyTo(_resultsSent, batch, 0, take);
             _resultsSent += take;
         }
 
         var hasNext = _resultsSent < cache.Count;
-        SendMessage(new NewResults(batch, replace, hasNext));
+        SendMessage(new NewResults(batch, replace, hasNext, cache.Count));
     }
 
-    private List<(string name, NetEntity entity)> BuildMatchCache(string query)
+    private List<(string name, string? proto, NetEntity entity)> BuildMatchCache(string query)
     {
         if (string.IsNullOrWhiteSpace(query))
             return [];
 
         var filter = query.Trim();
-        var results = new List<(string name, NetEntity entity)>();
+        var results = new List<(string name, string? proto, NetEntity entity)>();
 
         var enumerator = _entities.AllEntityQueryEnumerator<MetaDataComponent>();
         while (enumerator.MoveNext(out var uid, out var meta))
@@ -120,11 +120,7 @@ public sealed partial class EntitySearchEui : BaseEui
 
             var netEntity = _entities.GetNetEntity(uid);
 
-            var label = protoId != null
-                ? $"{displayName} ({protoId}) [{netEntity}]"
-                : $"{displayName} [{netEntity}]";
-
-            results.Add((label, netEntity));
+            results.Add((displayName, protoId, netEntity));
 
             if (results.Count >= MaxMatchCount)
                 break;

@@ -7,8 +7,16 @@ cmd-bql_select-err-rest = Warning: unused part after BQL query: "{ $rest }"
 
 ui-bql-results-title = BQL results
 ui-bql-results-vv = VV
-ui-bql-results-tp = TP
-ui-bql-results-vv-tooltip = View entity variables
-ui-bql-results-tp-tooltip = Teleport to entity
 ui-bql-results-status = { $count } entities
 ui-bql-results-status-more = { $count } entities (more available)
+
+ui-bql-results-col-id = ID
+ui-bql-results-col-name = Name
+ui-bql-results-col-proto = Prototype
+ui-bql-results-col-actions = Actions
+
+ui-bql-results-actions = Actions
+ui-bql-results-follow = Follow
+ui-bql-results-copy = Copy ID
+ui-bql-results-delete = Delete
+ui-bql-results-delete-confirm = Confirm?
