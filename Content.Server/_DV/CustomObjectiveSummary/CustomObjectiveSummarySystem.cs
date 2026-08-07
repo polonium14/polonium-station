@@ -6,10 +6,12 @@
 using Content.Server.Administration.Logs;
 using Content.Server.Players.RateLimiting;
 using Content.Shared._DV.CustomObjectiveSummary;
+using Content.Shared._Funkystation.CCVars;
 using Content.Shared.CCVar;
 using Content.Shared.Database;
 using Content.Shared.Mind;
 using Content.Shared.Players.RateLimiting;
+using Robust.Shared.Configuration;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 
@@ -22,6 +24,7 @@ public sealed partial class CustomObjectiveSummarySystem : EntitySystem
     [Dependency] private ISharedPlayerManager _player = default!;
     [Dependency] private IAdminLogManager _adminLog = default!;
     [Dependency] private PlayerRateLimitManager _rateLimit = default!;
+    [Dependency] private IConfigurationManager _cfg = default!;
 
     private const string RateLimitKey = "ObjectiveSummary";
 
@@ -39,6 +42,9 @@ public sealed partial class CustomObjectiveSummarySystem : EntitySystem
 
     private void OnCustomObjectiveFeedback(CustomObjectiveClientSetObjective msg)
     {
+        if (!_cfg.GetCVar(CCVars_Funky.PinktextEnabled))
+            return;
+
         if (!_player.TryGetSessionById(msg.MsgChannel.UserId, out var session))
             return;
 
@@ -68,6 +74,9 @@ public sealed partial class CustomObjectiveSummarySystem : EntitySystem
 
     private void OnEvacShuttleLeft(EvacShuttleLeftEvent args)
     {
+        if (!_cfg.GetCVar(CCVars_Funky.PinktextEnabled))
+            return;
+
         var allMinds = _mind.GetAliveHumans();
 
         // Assumes the assistant is still there at the end of the round.
