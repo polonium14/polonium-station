@@ -61,6 +61,8 @@
     whitelist:
       components:
       - Explosive
+      - PayloadCase
+      - PayloadTrigger
       - NetworkConfigurator # Will work with multitool too in case you want to upgrade.
       tags:
       - Payload
