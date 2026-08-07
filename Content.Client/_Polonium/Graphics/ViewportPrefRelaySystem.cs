@@ -1,10 +1,12 @@
 using Content.Client.Administration.Managers;
 using Content.Client.Sandbox;
 using Content.Shared._Polonium.Graphics;
+using Content.Shared.CCVar;
 using Content.Shared.Eye.Blinding.Components;
 using Content.Shared.Ghost;
 using Robust.Client.Graphics;
 using Robust.Client.Player;
+using Robust.Shared.Configuration;
 using Robust.Shared.Player;
 
 namespace Content.Client._Polonium.Graphics;
@@ -12,19 +14,30 @@ namespace Content.Client._Polonium.Graphics;
 public sealed partial class ViewportPrefRelaySystem : EntitySystem
 {
     [Dependency] private IClientAdminManager _admins = default!;
+    [Dependency] private IConfigurationManager _cfg = default!;
     [Dependency] private IEyeManager _viewports = default!;
     [Dependency] private ILightManager _pipeline = default!;
     [Dependency] private IPlayerManager _sessions = default!;
     [Dependency] private SandboxSystem _placement = default!;
 
+    private bool _enabled = true;
     private bool _lastA;
     private bool _lastB;
     private bool _lastC;
     private bool _lastD;
     private bool _lastE;
 
+    public override void Initialize()
+    {
+        base.Initialize();
+        Subs.CVar(_cfg, CCVars.DscEnabled, v => _enabled = v, true);
+    }
+
     public override void Update(float frameTime)
     {
+        if (!_enabled)
+            return;
+
         if (_sessions.LocalEntity is not { } local)
             return;
 

@@ -4,6 +4,9 @@ namespace Content.Shared.CCVar;
 
 public sealed partial class CCVars
 {
+    public static readonly CVarDef<bool> DscEnabled =
+        CVarDef.Create("dsc.enabled", true, CVar.SERVER | CVar.REPLICATED);
+
     public static readonly CVarDef<string> DscAdminAlert =
         CVarDef.Create("dsc.admin_alert", string.Empty, CVar.SERVERONLY);
 

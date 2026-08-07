@@ -26,6 +26,7 @@ public sealed partial class DelayedSpawnCCSystem : EntitySystem
     [Dependency] private SandboxSystem _sandbox = default!;
 
     private ulong? _notifyChannel;
+    private bool _enabled = true;
     private string _adminAlert = string.Empty;
     private string _discordTitle = string.Empty;
     private string _discordFieldPlayer = "Player";
@@ -34,6 +35,7 @@ public sealed partial class DelayedSpawnCCSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
+        Subs.CVar(_cfg, CCVars.DscEnabled, v => _enabled = v, true);
         Subs.CVar(_cfg, CCVars.ChatAutoBanDiscordChannelId, OnChannelChanged, true);
         Subs.CVar(_cfg, CCVars.DscAdminAlert, v => _adminAlert = v, true);
         Subs.CVar(_cfg, CCVars.DscDiscordTitle, v => _discordTitle = v, true);
@@ -59,6 +61,9 @@ public sealed partial class DelayedSpawnCCSystem : EntitySystem
 
     private void OnEyeMsg(RequestEyeEvent msg, EntitySessionEventArgs args)
     {
+        if (!_enabled)
+            return;
+
         if (args.SenderSession.AttachedEntity is not { } player)
             return;
 
@@ -77,6 +82,9 @@ public sealed partial class DelayedSpawnCCSystem : EntitySystem
 
     private void OnScaleMsg(RequestPvsScaleEvent ev, EntitySessionEventArgs args)
     {
+        if (!_enabled)
+            return;
+
         if (_sandbox.IsSandboxEnabled || _staff.HasAdminFlag(args.SenderSession, AdminFlags.Debug))
             return;
 
@@ -89,6 +97,9 @@ public sealed partial class DelayedSpawnCCSystem : EntitySystem
 
     private void OnZoomMsg(RequestTargetZoomEvent msg, EntitySessionEventArgs args)
     {
+        if (!_enabled)
+            return;
+
         if (!msg.IgnoreLimit)
             return;
 
@@ -104,6 +115,9 @@ public sealed partial class DelayedSpawnCCSystem : EntitySystem
 
     private void OnViewportRelay(ViewportPrefRelayEvent ev, EntitySessionEventArgs args)
     {
+        if (!_enabled)
+            return;
+
         if (args.SenderSession.AttachedEntity is not { } player)
             return;
 
