@@ -37,5 +37,5 @@ public sealed partial class CCVars
     /// 0 disables spam auto-ban.
     /// </summary>
     public static readonly CVarDef<int> ChatAutoBanRateLimitCount =
-        CVarDef.Create("shutup.rate_limit_count", 6, CVar.SERVERONLY);
+        CVarDef.Create("shutup.rate_limit_count", 0, CVar.SERVERONLY);
 }
