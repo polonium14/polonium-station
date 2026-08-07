@@ -18,7 +18,11 @@ ui-bql-results-status = { $count } { $count ->
    *[many] encji
 }
 
-ui-bql-results-status-total = { $loaded } / { $total }
+ui-bql-results-status-total = { $loaded } / { $total } { $total ->
+    [one] encja
+    [few] encje
+   *[many] encji
+}
 
 ui-bql-results-col-id = ID
 ui-bql-results-col-name = Nazwa
