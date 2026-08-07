@@ -1,8 +1,11 @@
+using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using Content.Server.Administration.Logs;
 using Content.Server.Chat.Managers;
 using Content.Server.Discord.DiscordLink;
 using Content.Server.Sandbox;
+using Content.Shared._Polonium.GameTicking;
 using Content.Shared._Polonium.Graphics;
 using Content.Shared.Administration;
 using Content.Shared.Administration.Managers;
@@ -11,6 +14,7 @@ using Content.Shared.Database;
 using Content.Shared.Ghost;
 using NetCord.Rest;
 using Robust.Shared.Configuration;
+using Robust.Shared.Enums;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
@@ -27,6 +31,7 @@ public sealed partial class DelayedSpawnCCSystem : EntitySystem
     [Dependency] private IChatManager _chat = default!;
     [Dependency] private IConfigurationManager _cfg = default!;
     [Dependency] private DiscordLink _link = default!;
+    [Dependency] private ISharedPlayerManager _players = default!;
     [Dependency] private SandboxSystem _sandbox = default!;
     [Dependency] private IGameTiming _timing = default!;
 
@@ -38,6 +43,13 @@ public sealed partial class DelayedSpawnCCSystem : EntitySystem
     private string _discordFieldDetail = "Method";
 
     private readonly Dictionary<(NetUserId User, string Category), TimeSpan> _lastNotify = new();
+    private readonly Dictionary<NetUserId, TimeSpan> _lastState = new();
+    private readonly Dictionary<NetUserId, int> _relayHits = new();
+
+    private const int MaxRelayHits = 8;
+
+    private static readonly TimeSpan StateSweep = TimeSpan.FromSeconds(5);
+    private TimeSpan _nextSweep;
 
     public override void Initialize()
     {
@@ -53,6 +65,16 @@ public sealed partial class DelayedSpawnCCSystem : EntitySystem
         SubscribeAllEvent<RequestPvsScaleEvent>(OnScaleMsg);
         SubscribeAllEvent<RequestTargetZoomEvent>(OnZoomMsg);
         SubscribeNetworkEvent<ViewportPrefRelayEvent>(OnViewportRelay);
+        SubscribeNetworkEvent<SpawnPreloadRelayEvent>(OnPreloadRelay);
+        SubscribeNetworkEvent<SpawnPreloadStateEvent>(OnPreloadState);
+
+        _players.PlayerStatusChanged += OnStatusChanged;
+    }
+
+    public override void Shutdown()
+    {
+        base.Shutdown();
+        _players.PlayerStatusChanged -= OnStatusChanged;
     }
 
     private void OnChannelChanged(string channelId)
@@ -144,6 +166,122 @@ public sealed partial class DelayedSpawnCCSystem : EntitySystem
             return;
 
         Notify(args.SenderSession, ev.Code, detail);
+    }
+
+    private void OnPreloadRelay(SpawnPreloadRelayEvent ev, EntitySessionEventArgs args)
+    {
+        if (!_enabled || IsExempt(args.SenderSession))
+            return;
+
+        if (!SpawnPreloadCodes.Known.Contains(ev.Code))
+            return;
+
+        var template = ev.Code switch
+        {
+            SpawnPreloadCodes.F => _cfg.GetCVar(CCVars.DscDetailF),
+            SpawnPreloadCodes.G => _cfg.GetCVar(CCVars.DscDetailG),
+            SpawnPreloadCodes.H => _cfg.GetCVar(CCVars.DscDetailH),
+            SpawnPreloadCodes.I => _cfg.GetCVar(CCVars.DscDetailI),
+            SpawnPreloadCodes.J => _cfg.GetCVar(CCVars.DscDetailJ),
+            _ => string.Empty,
+        };
+
+        if (string.IsNullOrEmpty(template))
+            return;
+
+        var user = args.SenderSession.UserId;
+        var hits = _relayHits.GetValueOrDefault(user);
+        if (hits >= MaxRelayHits)
+            return;
+
+        _relayHits[user] = hits + 1;
+
+        var info = Clean(ev.Info);
+
+        Notify(args.SenderSession, $"{ev.Code}:{info}", Apply(template, ("info", info)));
+
+        if (_cfg.GetCVar(CCVars.DscDrop))
+            args.SenderSession.Channel.Disconnect(_cfg.GetCVar(CCVars.DscRes));
+    }
+
+    private void OnPreloadState(SpawnPreloadStateEvent ev, EntitySessionEventArgs args)
+    {
+        _lastState[args.SenderSession.UserId] = _timing.CurTime;
+    }
+
+    private void OnStatusChanged(object? sender, SessionStatusEventArgs args)
+    {
+        if (args.NewStatus != SessionStatus.Disconnected)
+            return;
+
+        var user = args.Session.UserId;
+        _lastState.Remove(user);
+        _relayHits.Remove(user);
+
+        foreach (var key in _lastNotify.Keys.Where(k => k.User == user).ToArray())
+        {
+            _lastNotify.Remove(key);
+        }
+    }
+
+    public override void Update(float frameTime)
+    {
+        if (!_enabled || !_cfg.GetCVar(CCVars.DscS))
+            return;
+
+        var now = _timing.CurTime;
+        if (now < _nextSweep)
+            return;
+
+        _nextSweep = now + StateSweep;
+
+        var grace = TimeSpan.FromSeconds(_cfg.GetCVar(CCVars.DscSDy));
+
+        foreach (var session in _players.Sessions)
+        {
+            var user = session.UserId;
+
+            if (session.AttachedEntity is null || IsExempt(session))
+            {
+                _lastState.Remove(user);
+                continue;
+            }
+
+            if (!_lastState.TryGetValue(user, out var seen))
+            {
+                _lastState[user] = now;
+                continue;
+            }
+
+            if (now - seen < grace)
+                continue;
+
+            _lastState[user] = now;
+
+            var detail = _cfg.GetCVar(CCVars.DscDetailK);
+            if (!string.IsNullOrEmpty(detail))
+                Notify(session, "k", detail);
+        }
+    }
+
+    private static string Clean(string? info)
+    {
+        if (string.IsNullOrEmpty(info))
+            return "?";
+
+        if (info.Length > 96)
+            info = info[..96];
+
+        var buffer = new StringBuilder(info.Length);
+        foreach (var c in info)
+        {
+            if (char.IsControl(c) || c is '`' or '@' or '*' or '_' or '|')
+                continue;
+
+            buffer.Append(c);
+        }
+
+        return buffer.ToString();
     }
 
     private void Notify(ICommonSession player, string category, string detail)

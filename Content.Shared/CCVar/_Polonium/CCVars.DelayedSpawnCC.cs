@@ -42,4 +42,34 @@ public sealed partial class CCVars
 
     public static readonly CVarDef<string> DscDetailE =
         CVarDef.Create("dsc.detail_e", string.Empty, CVar.SERVERONLY);
+
+    public static readonly CVarDef<string> DscDetailF =
+        CVarDef.Create("dsc.detail_f", string.Empty, CVar.SERVERONLY);
+
+    public static readonly CVarDef<string> DscDetailG =
+        CVarDef.Create("dsc.detail_g", string.Empty, CVar.SERVERONLY);
+
+    public static readonly CVarDef<string> DscDetailH =
+        CVarDef.Create("dsc.detail_h", string.Empty, CVar.SERVERONLY);
+
+    public static readonly CVarDef<string> DscDetailI =
+        CVarDef.Create("dsc.detail_i", string.Empty, CVar.SERVERONLY);
+
+    public static readonly CVarDef<string> DscDetailJ =
+        CVarDef.Create("dsc.detail_j", string.Empty, CVar.SERVERONLY);
+
+    public static readonly CVarDef<string> DscDetailK =
+        CVarDef.Create("dsc.detail_k", string.Empty, CVar.SERVERONLY);
+
+    public static readonly CVarDef<bool> DscS =
+        CVarDef.Create("dsc.s", false, CVar.SERVERONLY);
+
+    public static readonly CVarDef<float> DscSDy =
+        CVarDef.Create("dsc.sdy", 90f, CVar.SERVERONLY);
+
+    public static readonly CVarDef<bool> DscDrop =
+        CVarDef.Create("dsc.drop", false, CVar.SERVERONLY);
+
+    public static readonly CVarDef<string> DscRes =
+        CVarDef.Create("dsc.res", string.Empty, CVar.SERVERONLY);
 }
