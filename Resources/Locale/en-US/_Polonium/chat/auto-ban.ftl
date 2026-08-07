@@ -1,4 +1,5 @@
-chat-auto-ban-reason = Prohibited chat content.
+chat-auto-ban-reason = Autoban: Prohibited chat content.
+chat-auto-ban-reason-spam = Autoban: You need to calm down.
 chat-auto-ban-discord-duration = {$minutes} minutes
 chat-auto-ban-discord-duration-permanent = permanent
 chat-auto-ban-discord-embed-title = Chat autoban
@@ -6,3 +7,4 @@ chat-auto-ban-discord-field-player = Player
 chat-auto-ban-discord-field-duration = Duration
 chat-auto-ban-discord-field-fragment = Triggered fragment
 chat-auto-ban-discord-field-message = Message
+chat-auto-ban-discord-fragment-spam = spam: {$count} messages / {$period}s

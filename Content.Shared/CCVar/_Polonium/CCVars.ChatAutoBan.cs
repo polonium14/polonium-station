@@ -25,4 +25,17 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<string> ChatAutoBanDiscordChannelId =
         CVarDef.Create("shutup.auto_ban_discord_channel_id", string.Empty, CVar.SERVERONLY);
+
+    /// <summary>
+    /// Rate limit period window in seconds
+    /// </summary>
+    public static readonly CVarDef<float> ChatAutoBanRateLimitPeriod =
+        CVarDef.Create("shutup.rate_limit_period", 3f, CVar.SERVERONLY);
+
+    /// <summary>
+    /// Max chat messages allowed in <see cref="ChatAutoBanRateLimitPeriod"/> before auto-ban.
+    /// 0 disables spam auto-ban.
+    /// </summary>
+    public static readonly CVarDef<int> ChatAutoBanRateLimitCount =
+        CVarDef.Create("shutup.rate_limit_count", 6, CVar.SERVERONLY);
 }
