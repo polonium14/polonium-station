@@ -261,11 +261,11 @@ public sealed partial class ObjectivesSystem : SharedObjectivesSystem
                     if (currentLine.Length <= 50)
                         continue;
 
-                    agentSummary.AppendLine(Loc.GetString("custom-objective-format", ("line", currentLine)));
+                    agentSummary.AppendLine(Loc.GetString("custom-objective-format", ("line", FormattedMessage.EscapeText(currentLine))));
                     currentLine = "";
                 }
 
-                agentSummary.AppendLine(Loc.GetString("custom-objective-format", ("line", currentLine)));
+                agentSummary.AppendLine(Loc.GetString("custom-objective-format", ("line", FormattedMessage.EscapeText(currentLine))));
             }
             // End DeltaV Additions
 
