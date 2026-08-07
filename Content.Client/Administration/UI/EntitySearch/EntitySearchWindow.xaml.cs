@@ -136,6 +136,9 @@ public sealed partial class EntitySearchWindow : DefaultWindow
 
         if (string.IsNullOrWhiteSpace(SearchLineEdit.Text))
         {
+            ItemList.RemoveAllChildren();
+            _loadedCount = 0;
+            NextButton.Disabled = true;
             StatusLabel.Text = _loc.GetString("admin-entity-search-empty");
             return;
         }
