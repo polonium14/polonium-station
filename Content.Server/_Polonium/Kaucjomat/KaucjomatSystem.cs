@@ -6,6 +6,7 @@ using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Construction.Components;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Destructible;
+using Content.Shared.Emag.Systems;
 using Content.Shared.Interaction;
 using Content.Shared.Jittering;
 using Content.Shared.Popups;
@@ -44,6 +45,7 @@ public sealed partial class KaucjomatSystem : EntitySystem
     [Dependency] private TagSystem _tag = default!;
     [Dependency] private ThrowingSystem _throwing = default!;
     [Dependency] private EntityWhitelistSystem _whitelist = default!;
+    [Dependency] private EmagSystem _emag = default!;
 
     public override void Initialize()
     {
@@ -55,6 +57,7 @@ public sealed partial class KaucjomatSystem : EntitySystem
         SubscribeLocalEvent<KaucjomatComponent, DamageChangedEvent>(OnDamageChanged);
         SubscribeLocalEvent<KaucjomatComponent, InteractUsingEvent>(OnInteractUsing);
         SubscribeLocalEvent<KaucjomatComponent, UnanchorAttemptEvent>(OnUnanchorAttempt);
+        SubscribeLocalEvent<KaucjomatComponent, GotEmaggedEvent>(OnEmagged);
     }
 
     public override void Update(float frameTime)
@@ -65,12 +68,31 @@ public sealed partial class KaucjomatSystem : EntitySystem
         var query = EntityQueryEnumerator<KaucjomatComponent>();
         while (query.MoveNext(out var uid, out var comp))
         {
-            if (comp.ShakeEnd == null && comp.VerdictAt == null && comp.ResultEnd == null)
+            if (comp.ShakeEnd == null && comp.VerdictAt == null && comp.ResultEnd == null && comp.LastDispense == null)
                 continue;
 
             var ent = (uid, comp);
             var dead = comp.Broken || !_receiver.IsPowered(uid);
 
+            if (comp.LastDispense is not null && now > comp.LastDispense + comp.DispenseCooldown)
+            {
+                var cash = _stack.SpawnAtPosition(50, comp.Currency, EjectCoordinates(ent));
+
+                _throwing.TryThrow(cash,
+                    comp.DepositDirection,
+                    compensateFriction: true,
+                    playSound: false,
+                    doSpin: false);
+                _transform.SetLocalRotation(cash, _random.NextAngle());
+                _audio.PlayPvs(comp.SoundAccept, uid);
+
+                comp.LastDispense = now;
+                comp.DispensedAmount += 50;
+                if (comp.DispensedAmount >= comp.DispenseAmountMax)
+                {
+                    comp.LastDispense = null;
+                }
+            }
             // Rattle for the first stretch, then go quiet while it "thinks".
             if (comp.ShakeEnd != null && (now >= comp.ShakeEnd || dead))
                 StopShaking(ent);
@@ -141,6 +163,8 @@ public sealed partial class KaucjomatSystem : EntitySystem
         if (ent.Comp.Broken || !_receiver.IsPowered(ent.Owner))
             return;
 
+        if (ent.Comp.LastDispense is not null) // disabled for the emag "cutscene"
+            return;
         // Not something the machine is willing to swallow at all - let other interactions have it.
         if (_whitelist.IsWhitelistFailOrNull(ent.Comp.Whitelist, args.Used))
             return;
@@ -180,6 +204,18 @@ public sealed partial class KaucjomatSystem : EntitySystem
         ent.Comp.DepositDirection = DirectionFrom(ent.Owner, args.User);
         ent.Comp.VerdictAt = _timing.CurTime + ent.Comp.ShakeDuration + ent.Comp.PauseDuration;
         StartShaking(ent);
+    }
+
+    private void OnEmagged(Entity<KaucjomatComponent> ent, ref GotEmaggedEvent args)
+    {
+        if (!_emag.CompareFlag(args.Type, EmagType.Interaction))
+            return;
+
+        if (_emag.CheckFlag(ent, EmagType.Interaction))
+            return;
+        ent.Comp.DispenseAmountMax = _random.Next(500, 5001);
+        ent.Comp.LastDispense = _timing.CurTime;
+        args.Handled = true;
     }
 
     private void StartShaking(Entity<KaucjomatComponent> ent)
@@ -233,16 +269,18 @@ public sealed partial class KaucjomatSystem : EntitySystem
         }
 
         QueueDel(item);
+        if (!_emag.CheckFlag(ent, EmagType.Interaction)) // scammer
+        {
+            var cash = _stack.SpawnAtPosition(payout, ent.Comp.Currency, EjectCoordinates(ent));
 
-        var cash = _stack.SpawnAtPosition(payout, ent.Comp.Currency, EjectCoordinates(ent));
-
-        // doSpin would line the bills up with the throw - let them land at any angle instead.
-        _throwing.TryThrow(cash,
-            ent.Comp.DepositDirection,
-            compensateFriction: true,
-            playSound: false,
-            doSpin: false);
-        _transform.SetLocalRotation(cash, _random.NextAngle());
+            // doSpin would line the bills up with the throw - let them land at any angle instead.
+            _throwing.TryThrow(cash,
+                ent.Comp.DepositDirection,
+                compensateFriction: true,
+                playSound: false,
+                doSpin: false);
+            _transform.SetLocalRotation(cash, _random.NextAngle());
+        }
 
         _audio.PlayPvs(ent.Comp.SoundAccept, ent.Owner);
         Announce(ent, depositor, Loc.GetString("kaucjomat-accept", ("amount", payout)));
