@@ -74,7 +74,7 @@ public sealed partial class KaucjomatSystem : EntitySystem
             var ent = (uid, comp);
             var dead = comp.Broken || !_receiver.IsPowered(uid);
 
-            if (comp.LastDispense is not null && now > comp.LastDispense + comp.DispenseCooldown && !dead)
+            if (!dead && comp.LastDispense is not null && now > comp.LastDispense + comp.DispenseCooldown)
             {
                 var cash = _stack.SpawnAtPosition(50, comp.Currency, EjectCoordinates(ent));
 
@@ -213,7 +213,7 @@ public sealed partial class KaucjomatSystem : EntitySystem
 
         if (_emag.CheckFlag(ent, EmagType.Interaction))
             return;
-        ent.Comp.DispenseAmountMax = _random.Next(500, 5001);
+        ent.Comp.DispenseAmountMax = _random.Next(10, 101) * 50;
         ent.Comp.LastDispense = _timing.CurTime;
         args.Handled = true;
     }
