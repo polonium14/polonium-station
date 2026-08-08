@@ -74,7 +74,7 @@ public sealed partial class KaucjomatSystem : EntitySystem
             var ent = (uid, comp);
             var dead = comp.Broken || !_receiver.IsPowered(uid);
 
-            if (comp.LastDispense is not null && now > comp.LastDispense + comp.DispenseCooldown)
+            if (comp.LastDispense is not null && now > comp.LastDispense + comp.DispenseCooldown && !dead)
             {
                 var cash = _stack.SpawnAtPosition(50, comp.Currency, EjectCoordinates(ent));
 
