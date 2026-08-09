@@ -43,6 +43,12 @@
 
 # Civilian
 - type: roleLoadout
+  id: JobTrainee
+  groups:
+  - GroupTankHarness
+  - Survival
+
+- type: roleLoadout
   id: JobPassenger
   groups:
   - GroupTankHarness

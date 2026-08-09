@@ -306,3 +306,15 @@
 #    - MeteorSwarmScheduler
 #    - SpaceTrafficControlEventScheduler
 #    - BasicRoundstartVariation
+
+- type: gamePreset
+  id: Tutorial
+  alias:
+  - tutorial
+  name: tutorial-title
+  description: tutorial-description
+  showInVote: false
+  supportedMaps: TutorialMapPool
+  rules:
+  - TutorialSpawn
+  - RespawnDeadRule

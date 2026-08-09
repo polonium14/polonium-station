@@ -1,0 +1,253 @@
+# SPDX-FileCopyrightText: 2026 Polonium-bot <admin@ss14.pl>
+# SPDX-FileCopyrightText: 2026 nikitosych <174215049+nikitosych@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Phase A — intro + cleaning. Phase B — kitchen. Phase C — bar.
+# Phases D/E (medbay/sec) and the final outro are added later.
+
+- type: tutorialFlow
+  id: TutorialBasic
+  steps:
+  - TutorialStepWelcome
+  - TutorialStepPickUpId
+  - TutorialStepInsertIdAndPda
+  - TutorialStepGoToService
+  - TutorialStepEnterDirtyHall
+  - TutorialStepGrabTrashbag
+  - TutorialStepCollectAllTrash
+  - TutorialStepDisposeBag
+  - TutorialStepGrabBucket
+  - TutorialStepFillBucket
+  - TutorialStepFillTrolley
+  - TutorialStepGrabMop
+  - TutorialStepPullTrolley
+  - TutorialStepCleanPuddles
+  - TutorialStepFinishCleaning
+  - TutorialStepGoToKitchen
+  - TutorialStepGoToFreezer
+  - TutorialStepGetMeat
+  - TutorialStepCookSausageBread
+  - TutorialStepGoToBar
+  - TutorialStepLearnBar
+
+# 1. Welcome + walk to the ID card lying near spawn.
+- type: tutorialStep
+  id: TutorialStepWelcome
+  instruction: tutorial-step-welcome
+  navigationAnchor: trainee_id
+  completion: !type:ReachAnchorCondition
+    anchorId: trainee_id
+    range: 1.5
+
+# 2. Pick up the trainee ID card.
+- type: tutorialStep
+  id: TutorialStepPickUpId
+  instruction: tutorial-step-pick-up-id
+  navigationAnchor: trainee_id
+  completion: !type:PickUpAnchorCondition
+    anchorId: trainee_id
+
+# 3. Insert the card into the PDA, then PDA into the ID slot.
+- type: tutorialStep
+  id: TutorialStepInsertIdAndPda
+  instruction: tutorial-step-insert-id-and-pda
+  navigationAnchor: trainee_pda
+  completion: !type:SlotContainsAnchorRecursiveCondition
+    slot: id
+    anchorIds:
+    - trainee_pda
+    - trainee_id
+
+# 4. Grants Maintenance, sends to service marker.
+- type: tutorialStep
+  id: TutorialStepGoToService
+  instruction: tutorial-step-go-to-service
+  navigationAnchor: marker_service
+  onEnter:
+  - !type:GrantAccessAction
+    tags:
+    - Maintenance
+  completion: !type:ReachAnchorCondition
+    anchorId: marker_service
+    range: 1.5
+
+# 5. Locks the player in the dirty hallway, gives Janitor access, sends to janitor closet.
+# Bolt + power-off are delayed so the door actually finishes closing first.
+- type: tutorialStep
+  id: TutorialStepEnterDirtyHall
+  instruction: tutorial-step-enter-dirty-hall
+  navigationAnchor: marker_janitor
+  onEnter:
+  - !type:CloseDoorAction
+    anchorId: airlock_service
+  - !type:BoltDoorAction
+    anchorId: airlock_service
+    bolt: true
+    delay: 1.5
+  - !type:PowerDeviceAction
+    anchorId: airlock_service
+    powered: false
+    delay: 1.6
+  - !type:GrantAccessAction
+    tags:
+    - Janitor
+  completion: !type:ReachAnchorCondition
+    anchorId: marker_janitor
+    range: 1.5
+
+# 6. Pick up any trashbag.
+- type: tutorialStep
+  id: TutorialStepGrabTrashbag
+  instruction: tutorial-step-grab-trashbag
+  navigationAnchor: trashbag
+  completion: !type:PickUpAnchorCondition
+    anchorId: trashbag
+
+# 7. Clean up every trash entity on the grid.
+- type: tutorialStep
+  id: TutorialStepCollectAllTrash
+  instruction: tutorial-step-collect-all-trash
+  navigationAnchor: trash
+  completion: !type:AllAnchorsClearedCondition
+    anchorId: trash
+
+# 8. Throw the bag into any disposals. Manual ack — player tells us when they're done,
+# so we don't care which unit they used or if they fumbled the flush.
+- type: tutorialStep
+  id: TutorialStepDisposeBag
+  instruction: tutorial-step-dispose-bag
+  navigationAnchor: disposal_unit
+  completion: !type:ManualAcknowledgeCondition
+
+# 9. Pick up the bucket.
+- type: tutorialStep
+  id: TutorialStepGrabBucket
+  instruction: tutorial-step-grab-bucket
+  navigationAnchor: bucket
+  completion: !type:PickUpAnchorCondition
+    anchorId: bucket
+
+# 10. Fill the bucket from the water tank.
+- type: tutorialStep
+  id: TutorialStepFillBucket
+  instruction: tutorial-step-fill-bucket
+  navigationAnchor: watertank
+  completion: !type:ItemReagentContainsCondition
+    anchorId: bucket
+    reagent: Water
+    minUnits: 50
+
+# 11. Pour the bucket into the janitorial trolley.
+- type: tutorialStep
+  id: TutorialStepFillTrolley
+  instruction: tutorial-step-fill-trolley
+  navigationAnchor: trolley
+  completion: !type:ItemReagentContainsCondition
+    anchorId: trolley
+    reagent: Water
+    minUnits: 50
+
+# 12. Pick up the mop.
+- type: tutorialStep
+  id: TutorialStepGrabMop
+  instruction: tutorial-step-grab-mop
+  navigationAnchor: mop
+  completion: !type:PickUpAnchorCondition
+    anchorId: mop
+
+# 13. Drag the trolley around (Ctrl+LMB).
+- type: tutorialStep
+  id: TutorialStepPullTrolley
+  instruction: tutorial-step-pull-trolley
+  navigationAnchor: trolley
+  completion: !type:ItemPulledCondition
+    anchorId: trolley
+
+# 14. Mop every puddle. Manual ack — puddles can evaporate, spread by walking,
+# or new ones spawn from blood/mop, so polling "all cleared" is unreliable.
+- type: tutorialStep
+  id: TutorialStepCleanPuddles
+  instruction: tutorial-step-clean-puddles
+  navigationAnchor: puddle
+  completion: !type:ManualAcknowledgeCondition
+
+# 15. Wrap up. Manual ack — we don't actually check that anything is in the closet,
+# and "podejdź do szafki" was misread as "włóż rzeczy". Door unlocks on confirm.
+- type: tutorialStep
+  id: TutorialStepFinishCleaning
+  instruction: tutorial-step-finish-cleaning
+  navigationAnchor: janitor_closet
+  completion: !type:ManualAcknowledgeCondition
+  onComplete:
+  - !type:BoltDoorAction
+    anchorId: airlock_service
+    bolt: false
+  - !type:PowerDeviceAction
+    anchorId: airlock_service
+    powered: true
+
+# ────────────────────────────────────────────────────────────
+# Phase B — kitchen.
+# ────────────────────────────────────────────────────────────
+
+# 16. Head to the kitchen. Gets Kitchen access.
+- type: tutorialStep
+  id: TutorialStepGoToKitchen
+  instruction: tutorial-step-go-to-kitchen
+  navigationAnchor: marker_kitchen
+  onEnter:
+  - !type:GrantAccessAction
+    tags:
+    - Kitchen
+  completion: !type:ReachAnchorCondition
+    anchorId: marker_kitchen
+    range: 1.5
+
+# 17. Walk into the freezer room where the meat spike sits.
+- type: tutorialStep
+  id: TutorialStepGoToFreezer
+  instruction: tutorial-step-go-to-freezer
+  navigationAnchor: marker_kitchen_freezer
+  completion: !type:ReachAnchorCondition
+    anchorId: marker_kitchen_freezer
+    range: 1.5
+
+# 18. Open the pig crate, kill the piglet, drag it onto the spike — manual ack
+# because drag-to-spike doesn't emit a clean event we could hook into.
+- type: tutorialStep
+  id: TutorialStepGetMeat
+  instruction: tutorial-step-get-meat
+  navigationAnchor: pig
+  completion: !type:ManualAcknowledgeCondition
+
+# 19. Cook sausage bread — open guidebook, follow the recipe, microwave it.
+- type: tutorialStep
+  id: TutorialStepCookSausageBread
+  instruction: tutorial-step-cook-sausage-bread
+  navigationAnchor: kitchen_microwave
+  completion: !type:ManualAcknowledgeCondition
+
+# ────────────────────────────────────────────────────────────
+# Phase C — bar.
+# ────────────────────────────────────────────────────────────
+
+# 20. Head to the bar. Gets Bar access.
+- type: tutorialStep
+  id: TutorialStepGoToBar
+  instruction: tutorial-step-go-to-bar
+  navigationAnchor: marker_bar_inside
+  onEnter:
+  - !type:GrantAccessAction
+    tags:
+    - Bar
+  completion: !type:ReachAnchorCondition
+    anchorId: marker_bar_inside
+    range: 1.5
+
+# 21. Free-form bar practice — vendor, dispensers, guidebook. Player decides when done.
+- type: tutorialStep
+  id: TutorialStepLearnBar
+  instruction: tutorial-step-learn-bar
+  navigationAnchor: marker_bar_inside
+  completion: !type:ManualAcknowledgeCondition

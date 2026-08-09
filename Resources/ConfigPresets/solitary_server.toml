@@ -1,0 +1,113 @@
+[log]
+enabled = false
+
+[net]
+tickrate = 30
+port = 1214
+bindto = "::,0.0.0.0"
+max_connections = 60
+pvs_range = 50
+
+[status]
+enabled = true
+# bind = "*:1214"
+# connectaddress = "udp://polonium.ss14.pl:1214"
+
+[game]
+hostname = "[PL]🪐 Polonium Station | Serwer Szkoleniowy"
+# SS14 GameTicker.InitializeGamePreset() жёстко форсит "sandbox" при lobbyenabled=false,
+# игнорируя defaultpreset. Поэтому лобби включено + минимальная длительность.
+lobbyenabled = true
+lobbyduration = 5
+soft_max_players = 40
+role_timer_override = "Zeroed"
+server_full_reconnect_delay = 30
+defaultpreset = "Tutorial"
+# Late join (np. Passenger) omija SolitarySpawning — nie uruchomi TutorialBasic.
+disallowlatejoins = true
+map = "Tutorial"
+role_timers = false
+role_whitelist = false
+
+[server]
+lobby_name = "Stacja Kosmiczna 14"
+
+[whitelist]
+enabled = false
+
+[movement]
+mob_pushing = false
+
+[control]
+opaque_storage_background = true
+
+[ui]
+uuid_banner_enabled = false
+
+# [chat]
+# motd = "\n\nWitaj!\nZnajdujesz się na serwerze, który dopiero niedawno wystartował i ciągle się rozwija.\n\n(*) Podczas gry prosimy, abyś zwrócił uwagę na to, czego Twoim zdaniem brakuje do jeszcze lepszej i weselszej rozgrywki.\n\n(*) Wszelkie błędy i problemy zgłaszaj proszę na naszym Discordzie lub przez GitHub Issues\n\n(*) i nie wahaj się zwracać do administratorów w AHelp.\n\nMiłej zabawy :)"
+
+[ic]
+flavor_text = true
+
+[ooc]
+enable_during_round = false
+discord_channel_id = 1409902534243520574
+
+[vote]
+enabled = false
+auto_map_on_round_end = false
+auto_preset_on_round_end = false
+restart_enabled = false
+preset_enabled = false
+map_enabled = false
+
+[admin]
+admins_count_for_max_players = false
+admins_count_in_playercount = true
+bypass_max_players = true
+deadmin_on_join = false
+
+[ahelp]
+admin_prefix = false
+
+[hub]
+advertise = false
+tags = "lang:pl,rp:none,region:eu_e"
+server_url = "ss14://polonium.ss14.pl/"
+hub_urls = "https://hub.spacestation14.com/"
+
+[infolinks]
+discord = "http://discord.ss14.pl"
+
+[events]
+enabled = false
+
+[newlife]
+max_new_lifes = 1
+
+[funky]
+looc_budget_enabled = false
+
+[salvage]
+expedition_duration = 900
+expedition_cooldown = 500
+
+[atmos]
+space_wind = false
+space_wind_pressure_force_divisor_throw = 20
+space_wind_pressure_force_divisor_push = 3000
+
+# NB: intro.solitary_server_con_string на solitary НЕ читается (lobby выключено,
+# ProceedPromptStep там не работает). Этот CVar нужен на главном сервере, см. main_dev_server.toml.
+
+[build]
+fork_id = "polonium"
+
+[auth]
+mode = 0
+
+[database]
+engine = "sqlite"
+# Отдельная БД от main, иначе SQLite lock при одновременном запуске двух серверов.
+sqlite_dbpath = "preferences_solitary.db"

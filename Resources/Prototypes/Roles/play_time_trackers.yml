@@ -157,3 +157,6 @@
 
 - type: playTimeTracker # Polonium
   id: JobBrigmedic
+
+- type: playTimeTracker
+  id: JobTrainee

@@ -47,6 +47,7 @@ job-name-serviceworker = Service Worker
 job-name-station-ai = Station AI
 job-name-technical-assistant = Technical Assistant
 job-name-visitor = Visitor
+job-name-trainee = Tutorial Participant
 job-name-warden = Warden
 
 # unused jobs

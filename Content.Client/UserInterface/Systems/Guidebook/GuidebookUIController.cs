@@ -65,7 +65,7 @@ public sealed partial class GuidebookUIController : UIController, IOnStateEntere
         _guideWindow.OnOpen += OnWindowOpen;
 
         if (state is LobbyState &&
-            _jobRequirements.FetchOverallPlaytime() < TimeSpan.FromMinutes(PlaytimeOpenGuidebook))
+            _jobRequirements.FetchOverallPlaytime() < TimeSpan.FromMinutes(PlaytimeOpenGuidebook) && !_configuration.GetCVar(CCVars.IntroEnabled))
         {
             OpenGuidebook();
             _guideWindow.RecenterWindow(new(0.5f, 0.5f));

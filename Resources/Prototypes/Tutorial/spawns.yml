@@ -1,0 +1,15 @@
+- type: solitarySpawning
+  id: Tutorial
+  name: solitary-spawn-name-tutorial
+  description: solitary-spawn-description-tutorial
+  welcomeLoc: solitary-spawn-welcome-tutorial
+  map: Tutorial
+  # kicks off the tutorial after spawn, steps are in flows/
+  tutorialFlow: TutorialBasic
+
+- type: solitarySpawning
+  id: Death
+  name: solitary-spawn-name-tutorial
+  description: solitary-spawn-description-tutorial
+  welcomeLoc: solitary-spawn-welcome-tutorial
+  map: Empty

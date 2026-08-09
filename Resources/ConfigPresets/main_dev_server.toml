@@ -1,0 +1,96 @@
+# Dev-конфиг главного сервера. Используется парой с solitary_server.toml для проверки
+# полного перехода лобби-туториал → Redial → solitary → игровой туториал.
+# Запуск: --cvar config.presets=main_dev_server
+
+[log]
+enabled = false
+
+[net]
+tickrate = 30
+port = 1212
+bindto = "::,0.0.0.0"
+max_connections = 60
+pvs_range = 50
+
+[status]
+enabled = true
+
+[game]
+hostname = "[DEV] Polonium Main"
+lobbyduration = 30
+soft_max_players = 40
+lobbyenabled = true
+role_timer_override = "Zeroed"
+defaultpreset = "Extended"
+disallowlatejoins = false
+role_timers = false
+role_whitelist = false
+
+[server]
+lobby_name = "Polonium Dev Main"
+
+[whitelist]
+enabled = false
+
+[movement]
+mob_pushing = false
+
+[control]
+opaque_storage_background = true
+
+[ui]
+uuid_banner_enabled = false
+
+[ic]
+flavor_text = true
+
+[ooc]
+enable_during_round = false
+
+[vote]
+enabled = false
+auto_map_on_round_end = false
+auto_preset_on_round_end = false
+restart_enabled = false
+preset_enabled = false
+map_enabled = false
+
+[admin]
+admins_count_for_max_players = false
+admins_count_in_playercount = true
+bypass_max_players = true
+deadmin_on_join = false
+
+[ahelp]
+admin_prefix = false
+
+[hub]
+advertise = false
+
+[events]
+enabled = false
+
+[newlife]
+max_new_lifes = 1
+
+[funky]
+looc_budget_enabled = false
+
+[atmos]
+space_wind = false
+
+[intro]
+# Куда отправлять игрока после кнопки "Tak" в ProceedPromptStep.
+# Robust парсит это через new Uri(...) — нужен валидный URI (ss14:// или udp://).
+# В дебаге без launcher'а Redial выкинет exception — это нормально, важно что код туда дошёл.
+solitary_server_con_string = "ss14://127.0.0.1:1214"
+
+[build]
+fork_id = "polonium"
+
+[auth]
+mode = 0
+
+[database]
+engine = "sqlite"
+sqlite_dbpath = "preferences_main.db"

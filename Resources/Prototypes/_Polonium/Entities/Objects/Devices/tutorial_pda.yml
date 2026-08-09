@@ -1,0 +1,34 @@
+# SPDX-FileCopyrightText: 2026 Polonium-bot <admin@ss14.pl>
+# SPDX-FileCopyrightText: 2026 nikitosych <174215049+nikitosych@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Trainee ID + PDA. Meant to be placed on the tutorial map, not in starting gear.
+
+- type: entity
+  parent: IDCardStandard
+  id: TraineeIDCard
+  name: trainee ID card
+  description: A bright orange card for someone who's still learning.
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: decal-stripe-civillian
+    - sprite: Interface/Misc/job_icons.rsi
+      offset: "-0.125, 0.09375"
+      state: Passenger
+  - type: PresetIdCard
+    job: Trainee
+  - type: TutorialAnchor
+    anchorId: trainee_id
+
+- type: entity
+  parent: BasePDA
+  id: TraineePDA
+  name: trainee PDA
+  description: Standard-issue for new recruits. Smells like fresh plastic.
+  components:
+  - type: Pda
+  - type: PdaBorderColor
+    borderColor: "#c96b27"

@@ -24,6 +24,15 @@
 
 - type: entity
   parent: BaseGameRule
+  id: TutorialSpawn
+  components:
+  - type: SolitarySpawningRule
+    prototypes:
+    - Tutorial
+    - Death
+
+- type: entity
+  parent: BaseGameRule
   id: SubGamemodesRule
   components:
   - type: SubGamemodes

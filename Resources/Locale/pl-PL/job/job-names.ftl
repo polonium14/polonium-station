@@ -59,6 +59,7 @@ job-name-prisoner = Więzień
 job-name-security-clown = Klown Ochroniarz
 job-name-command-maid = Służąca Dowództwa
 job-name-party-maker = Organizator Imprez
+job-name-trainee = Praktykant
 job-name-roboticist = Robotyk
 job-name-syndicate = Syndykat
 job-name-unknown = Nieznany

@@ -1,6 +1,8 @@
+using Content.Client._Polonium.Tutorial.Lobby;
 using Content.Client.Changelog;
 using Content.Client.UserInterface.Systems.EscapeMenu;
 using Content.Client.UserInterface.Systems.Guidebook;
+using Content.Shared._Polonium.Tutorial.Lobby;
 using Content.Shared.CCVar;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
@@ -11,6 +13,9 @@ namespace Content.Client.Info
 {
     public sealed class LinkBanner : BoxContainer
     {
+        [Access(typeof(IClientsideNavTutorialStep), typeof(SharedTutorialLobbyManager))]
+        public Button? TutorialButton { get; }
+
         private readonly IConfigurationManager _cfg;
 
         private ValueList<(CVarDef<string> cVar, Button button)> _infoLinks;
@@ -48,6 +53,14 @@ namespace Content.Client.Info
             changelogButton.OnPressed += args => UserInterfaceManager.GetUIController<ChangelogUIController>().ToggleWindow();
             buttons.AddChild(changelogButton);
 
+            var tutorialManager = IoCManager.Resolve<TutorialManager>();
+            TutorialButton = new Button() { Text = Loc.GetString("server-info-introduction-button") };
+            TutorialButton.OnPressed += _ =>
+            {
+                tutorialManager.StartTutorial();
+            };
+            buttons.AddChild(TutorialButton);
+
             void AddInfoButton(string loc, CVarDef<string> cVar)
             {
                 var button = new Button { Text = Loc.GetString(loc) };
@@ -67,6 +80,11 @@ namespace Content.Client.Info
             foreach (var (cVar, link) in _infoLinks)
             {
                 link.Visible = _cfg.GetCVar(cVar) != "";
+            }
+
+            if (TutorialButton != null)
+            {
+                TutorialButton.Visible = _cfg.GetCVar(CCVars.IntroEnabled);
             }
         }
     }

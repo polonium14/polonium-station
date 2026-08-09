@@ -77,3 +77,5 @@ job-description-command-maid = Clean the bridge, command rooms, and everything e
 job-description-security-clown = Do security's job, but don't forget to do it with your clown spice.
 
 job-description-party-maker = Throw the biggest party ever at this station!
+
+job-description-trainee = Learn how to thrive in space.

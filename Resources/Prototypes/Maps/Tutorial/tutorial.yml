@@ -1,0 +1,14 @@
+- type: gameMap
+  id: Tutorial
+  mapName: 'Tutorial'
+  mapPath: /Maps/_Polonium/tutorial.yml
+  minPlayers: 0
+  stations:
+    Tutorial:
+      stationProto: StandardTutorialStation
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Tutorial'
+        - type: StationJobs
+          availableJobs:
+            Passenger: [ -1, -1 ] #infinite, not counted

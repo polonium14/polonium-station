@@ -36,6 +36,12 @@ public sealed partial class LobbyUIController : UIController, IOnStateEntered<Lo
     private HumanoidProfileEditor? _profileEditor;
     private CharacterSetupGuiSavePanel? _savePanel;
 
+    [Access(typeof(Content.Client._Polonium.Tutorial.Lobby.Steps.ClientsideNavTutorialStep), typeof(Content.Shared._Polonium.Tutorial.Lobby.SharedTutorialLobbyManager), typeof(Content.Client._Polonium.Tutorial.Lobby.TutorialManager))]
+    public HumanoidProfileEditor? ProfileEditor => _profileEditor;
+
+    [Access(typeof(Content.Client._Polonium.Tutorial.Lobby.Steps.ClientsideNavTutorialStep), typeof(Content.Shared._Polonium.Tutorial.Lobby.SharedTutorialLobbyManager), typeof(Content.Client._Polonium.Tutorial.Lobby.TutorialManager))]
+    public CharacterSetupGui? CharacterSetup => _characterSetup;
+
     /// <summary>
     /// This is the characher preview panel in the chat. This should only update if their character updates.
     /// </summary>
