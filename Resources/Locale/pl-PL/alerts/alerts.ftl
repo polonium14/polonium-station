@@ -85,7 +85,7 @@ alerts-stealthy-desc = Czy aktualnie dokonujesz kieszonkowania. Kliknij, aby prz
 
 alerts-knockdown-name = [color=yellow]Powalony[/color]
 
-alerts-knockdown-desc = Jesteś [color=yellow]Powalony[/color]! Coś cie przewróciło albo się poślizgnąłeś, utrudniając ci poruszanie się.
+alerts-knockdown-desc = Jesteś [color=yellow]powalony[/color]! Coś cię przewróciło albo się poślizgnąłeś, utrudniając ci poruszanie się.
 
 alerts-prying-name = Podważanie
 
