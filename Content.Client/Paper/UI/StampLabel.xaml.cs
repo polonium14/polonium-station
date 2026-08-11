@@ -1,7 +1,10 @@
 // SPDX-FileCopyrightText: 2024 eoineoineoin <github@eoinrul.es>
+// SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
 // SPDX-FileCopyrightText: 2025 V <97265903+formlessnameless@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 corresp0nd <46357632+corresp0nd@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+// SPDX-FileCopyrightText: 2026 maciejwalendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 taydeo <tay@funkystation.org>
+// SPDX-FileCopyrightText: 2026 taydeo <td12233a@gmail.com>
 //
 // SPDX-License-Identifier: MIT
 
@@ -33,6 +36,11 @@ public sealed partial class StampLabel : Label
     /// Determines whether stamp noise is applied on the shader
     public bool StampNoise = true; // imp
 
+    /// When true (signatures / manually-placed marks), the text rotates about its
+    /// rect center. When false (auto-placed stamps), it uses the original
+    /// top-left pivot. Set by the owning StampWidget.
+    public bool PivotAboutCenter = false;
+
     public StampLabel()
     {
         RobustXamlLoader.Load(this);
@@ -53,13 +61,28 @@ public sealed partial class StampLabel : Label
 
     protected override void Draw(DrawingHandleScreen handle)
     {
-        var offset = new Vector2(PixelPosition.X * MathF.Cos(Orientation) - PixelPosition.Y * MathF.Sin(Orientation),
-                PixelPosition.Y * MathF.Cos(Orientation) + PixelPosition.X * MathF.Sin(Orientation));
-
         _stampShader?.SetParameter("objCoord", GlobalPosition * UIScale * new Vector2(1, -1));
         _stampShader?.SetParameter("useStampNoise", StampNoise); // imp
         handle.UseShader(_stampShader);
-        handle.SetTransform(GlobalPixelPosition - PixelPosition + offset, Orientation, _textScaling);
+
+        if (PivotAboutCenter)
+        {
+            var cos = MathF.Cos(Orientation);
+            var sin = MathF.Sin(Orientation);
+            var half = (Vector2)PixelSize * _textScaling * 0.5f;
+            var rotHalf = new Vector2(half.X * cos - half.Y * sin, half.X * sin + half.Y * cos);
+            // Keeps the rect center fixed: at Orientation 0 this is GlobalPixelPosition.
+            var origin = (Vector2)GlobalPixelPosition + half - rotHalf;
+            handle.SetTransform(origin, Orientation, _textScaling);
+        }
+        else
+        {
+            // Original top-left pivot (pre-signature behavior).
+            var offset = new Vector2(PixelPosition.X * MathF.Cos(Orientation) - PixelPosition.Y * MathF.Sin(Orientation),
+                    PixelPosition.Y * MathF.Cos(Orientation) + PixelPosition.X * MathF.Sin(Orientation));
+            handle.SetTransform(GlobalPixelPosition - PixelPosition + offset, Orientation, _textScaling);
+        }
+
         base.Draw(handle);
 
         // Restore a sane transform+shader

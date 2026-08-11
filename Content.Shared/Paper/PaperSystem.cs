@@ -1,12 +1,40 @@
+// SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 eoineoineoin <github@eoinrul.es>
+// SPDX-FileCopyrightText: 2025 J <billsmith116@gmail.com>
+// SPDX-FileCopyrightText: 2025 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Qerd <73325910+BigfootBravo@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 ScarKy0 <scarky0@onet.eu>
+// SPDX-FileCopyrightText: 2025 Simon <63975668+Simyon264@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 SpeltIncorrectyl <66873282+SpeltIncorrectyl@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2025 Vasilis The Pikachu <vasilis@pikachu.systems>
+// SPDX-FileCopyrightText: 2025 Winkarst <74284083+Winkarst-cpu@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 themias <89101928+themias@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 xsainteer <156868231+xsainteer@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 ArtisticRoomba <145879011+ArtisticRoomba@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2026 Whatstone <166147148+whatston3@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 maciejwalendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 nikitosych <174215049+nikitosych@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 taydeo <tay@funkystation.org>
+// SPDX-FileCopyrightText: 2026 taydeo <td12233a@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Linq;
+using System.Numerics;
 using Content.Shared.Administration.Logs;
 using Content.Shared.UserInterface;
 using Content.Shared.Database;
 using Content.Shared.Examine;
+using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction;
 using Content.Shared.Random.Helpers;
 using Content.Shared.Popups;
 using Content.Shared.Tag;
+using Content.Shared.Verbs;
+using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Audio.Systems;
 using static Content.Shared.Paper.PaperComponent;
@@ -21,16 +49,25 @@ public sealed partial class PaperSystem : EntitySystem
     [Dependency] private IRobustRandom _random = default!;
     [Dependency] private SharedAppearanceSystem _appearance = default!;
     [Dependency] private SharedInteractionSystem _interaction = default!;
+    [Dependency] private SharedHandsSystem _hands = default!;
     [Dependency] private SharedPopupSystem _popupSystem = default!;
     [Dependency] private TagSystem _tagSystem = default!;
     [Dependency] private SharedUserInterfaceSystem _uiSystem = default!;
     [Dependency] private MetaDataSystem _metaSystem = default!;
     [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private ISharedPlayerManager _player = default!;
+    [Dependency] private INetManager _net = default!;
 
     [Dependency] private EntityQuery<PaperComponent> _paperQuery = default!;
 
     private static readonly ProtoId<TagPrototype> WriteIgnoreStampsTag = "WriteIgnoreStamps";
     private static readonly ProtoId<TagPrototype> WriteTag = "Write";
+
+    // Upper bound on stamps/signatures a single paper can hold. Accumulation is
+    // intended, but the list is Dirty and networked in full to every viewer,
+    // so an unbounded count is a grief/bandwidth vector. Generous enough that
+    // normal play never reaches it.
+    private const int MaxStampedBy = 64;
 
 
     public override void Initialize()
@@ -43,6 +80,8 @@ public sealed partial class PaperSystem : EntitySystem
         SubscribeLocalEvent<PaperComponent, ExaminedEvent>(OnExamined);
         SubscribeLocalEvent<PaperComponent, InteractUsingEvent>(OnInteractUsing);
         SubscribeLocalEvent<PaperComponent, PaperInputTextMessage>(OnInputTextMessage);
+        SubscribeLocalEvent<PaperComponent, GetVerbsEvent<InteractionVerb>>(OnGetStampVerb);
+        SubscribeLocalEvent<PaperComponent, PaperStampPlaceMessage>(OnPaperStamp);
 
         SubscribeLocalEvent<RandomPaperContentComponent, MapInitEvent>(OnRandomPaperContentMapInit);
 
@@ -98,7 +137,7 @@ public sealed partial class PaperSystem : EntitySystem
             if (entity.Comp.StampedBy.Count > 0)
             {
                 var commaSeparated =
-                    string.Join(", ", entity.Comp.StampedBy.Select(s => Loc.GetString(s.StampedName)));
+                    string.Join(", ", entity.Comp.StampedBy.Select(s => s.LocalizeName ? Loc.GetString(s.StampedName) : s.StampedName));
                 args.PushMarkup(
                     Loc.GetString(
                         "paper-component-examine-detail-stamped-by",
@@ -152,32 +191,128 @@ public sealed partial class PaperSystem : EntitySystem
         }
 
         // If a stamp, attempt to stamp paper
-        if (TryComp<StampComponent>(args.Used, out var stampComp) && TryStamp(entity, GetStampInfo(stampComp), stampComp.StampState))
+        if (TryComp<StampComponent>(args.Used, out var stampComp))
         {
-            // successfully stamped, play popup
-            var stampPaperOtherMessage = Loc.GetString("paper-component-action-stamp-paper-other",
-                    ("user", args.User),
-                    ("target", args.Target),
-                    ("stamp", args.Used));
-            var stampPaperSelfMessage = Loc.GetString("paper-component-action-stamp-paper-self",
-                    ("target", args.Target),
-                    ("stamp", args.Used));
-            _popupSystem.PopupEntity(stampPaperSelfMessage, stampPaperOtherMessage, args.User, args.User);
+            if (TryStamp(entity, GetStampInfo(stampComp), stampComp.StampState))
+            {
+                // successfully stamped, play popup
+                var stampPaperOtherMessage = Loc.GetString("paper-component-action-stamp-paper-other",
+                        ("user", args.User),
+                        ("target", args.Target),
+                        ("stamp", args.Used));
+                var stampPaperSelfMessage = Loc.GetString("paper-component-action-stamp-paper-self",
+                        ("target", args.Target),
+                        ("stamp", args.Used));
+                _popupSystem.PopupEntity(stampPaperSelfMessage, stampPaperOtherMessage, args.User, args.User);
 
-            _audio.PlayPredicted(stampComp.Sound, entity, args.User);
+                _audio.PlayPredicted(stampComp.Sound, entity, args.User);
 
-            UpdateUserInterface(entity);
+                UpdateUserInterface(entity);
+            }
+            else if (entity.Comp.StampedBy.Count >= MaxStampedBy)
+            {
+                _popupSystem.PopupClient(Loc.GetString("paper-stamp-full", ("target", args.Target)), entity, args.User, PopupType.SmallCaution);
+            }
         }
     }
 
-    private static StampDisplayInfo GetStampInfo(StampComponent stamp)
+    public static StampDisplayInfo GetStampInfo(StampComponent stamp)
     {
         return new StampDisplayInfo
         {
             StampedName = stamp.StampedName,
             StampedColor = stamp.StampedColor,
-            StampLargeIcon = stamp.StampLargeIcon // imp
+            StampLargeIcon = stamp.StampLargeIcon, // imp
+            LocalizeName = true // stamp names are loc ids
         };
+    }
+
+    private void OnGetStampVerb(Entity<PaperComponent> ent, ref GetVerbsEvent<InteractionVerb> args)
+    {
+        if (!args.CanAccess || !args.CanInteract)
+            return;
+
+        if (args.Using is not { } stamp || !TryComp<StampComponent>(stamp, out var stampComp))
+            return;
+
+        var user = args.User;
+        InteractionVerb verb = new()
+        {
+            Act = () =>
+            {
+                StartStampPlacement(ent, user, stamp);
+            },
+            Text = Loc.GetString("paper-stamp-verb"),
+            DoContactInteraction = true,
+        };
+        args.Verbs.Add(verb);
+    }
+
+    /// <summary>
+    ///     Opens the paper UI and tells the requesting client to enter stamp
+    ///     placement mode. The stamp isn't committed here; it's committed later
+    ///     when the client sends a <see cref="PaperComponent.PaperStampPlaceMessage"/>.
+    /// </summary>
+    private void StartStampPlacement(Entity<PaperComponent> paper, EntityUid user, EntityUid stamp)
+    {
+        if (!_net.IsServer)
+            return;
+
+        if (!_player.TryGetSessionByEntity(user, out var session))
+            return;
+
+        _uiSystem.OpenUi(paper.Owner, PaperUiKey.Key, user);
+        RaiseNetworkEvent(new PaperStampRequestEvent(GetNetEntity(paper.Owner), GetNetEntity(stamp)), session);
+    }
+
+    private void OnPaperStamp(Entity<PaperComponent> paper, ref PaperStampPlaceMessage args)
+    {
+        var user = args.Actor;
+
+        if (!TryGetEntity(args.Stamp, out var stamp))
+            return;
+
+        if (!TryComp<StampComponent>(stamp, out var stampComp))
+            return;
+
+        // Re-validate: the user must still hold the stamp and be able to reach the
+        // paper. A client-supplied message must not let a dropped/unheld stamp mark.
+        if (!_hands.IsHolding(user, stamp.Value) ||
+            !_interaction.InRangeUnobstructed(user, paper.Owner))
+        {
+            _popupSystem.PopupEntity(Loc.GetString("paper-stamp-failure", ("target", paper.Owner)), user, user, PopupType.SmallCaution);
+            return;
+        }
+
+        var stampInfo = GetStampInfo(stampComp);
+        // Sanitize the client-supplied transform against NaN/Infinity so a bad float
+        // can't be persisted and networked to every viewer.
+        var pos = args.Position;
+        if (!float.IsFinite(pos.X) || !float.IsFinite(pos.Y))
+            pos = new Vector2(0.5f, 0.5f);
+        stampInfo.Position = Vector2.Clamp(pos, Vector2.Zero, Vector2.One);
+        stampInfo.Rotation = float.IsFinite(args.Rotation) ? args.Rotation : 0f;
+        stampInfo.Scale = 1f;
+
+        if (!TryStamp(paper, stampInfo, stampComp.StampState))
+        {
+            if (paper.Comp.StampedBy.Count >= MaxStampedBy)
+                _popupSystem.PopupEntity(Loc.GetString("paper-stamp-full", ("target", paper.Owner)), user, user, PopupType.SmallCaution);
+            return;
+        }
+
+        var stampPaperOtherMessage = Loc.GetString("paper-component-action-stamp-paper-other",
+                ("user", user),
+                ("target", paper.Owner),
+                ("stamp", stamp.Value));
+        var stampPaperSelfMessage = Loc.GetString("paper-component-action-stamp-paper-self",
+                ("target", paper.Owner),
+                ("stamp", stamp.Value));
+        _popupSystem.PopupEntity(stampPaperSelfMessage, stampPaperOtherMessage, user, user);
+
+        _audio.PlayPvs(stampComp.Sound, paper);
+
+        UpdateUserInterface(paper);
     }
 
     private void OnInputTextMessage(Entity<PaperComponent> entity, ref PaperInputTextMessage args)
@@ -244,17 +379,18 @@ public sealed partial class PaperSystem : EntitySystem
     /// </summary>
     public bool TryStamp(Entity<PaperComponent> entity, StampDisplayInfo stampInfo, string spriteStampState)
     {
-        if (!entity.Comp.StampedBy.Contains(stampInfo))
+        if (entity.Comp.StampedBy.Count >= MaxStampedBy)
+            return false;
+
+        // Every stamp action adds a new mark, even if an identical one already exists.
+        entity.Comp.StampedBy.Add(stampInfo);
+        Dirty(entity);
+        if (entity.Comp.StampState == null && TryComp<AppearanceComponent>(entity, out var appearance))
         {
-            entity.Comp.StampedBy.Add(stampInfo);
-            Dirty(entity);
-            if (entity.Comp.StampState == null && TryComp<AppearanceComponent>(entity, out var appearance))
-            {
-                entity.Comp.StampState = spriteStampState;
-                // Would be nice to be able to display multiple sprites on the paper
-                // but most of the existing images overlap
-                _appearance.SetData(entity, PaperVisuals.Stamp, entity.Comp.StampState, appearance);
-            }
+            entity.Comp.StampState = spriteStampState;
+            // Would be nice to be able to display multiple sprites on the paper
+            // but most of the existing images overlap
+            _appearance.SetData(entity, PaperVisuals.Stamp, entity.Comp.StampState, appearance);
         }
         return true;
     }
@@ -301,8 +437,11 @@ public sealed partial class PaperSystem : EntitySystem
         _appearance.SetData(entity, PaperVisuals.Status, status, appearance);
     }
 
-    private void UpdateUserInterface(Entity<PaperComponent> entity)
+    public void UpdateUserInterface(Entity<PaperComponent> entity)
     {
+        if (!_net.IsServer)
+            return;
+
         _uiSystem.SetUiState(entity.Owner, PaperUiKey.Key, new PaperBoundUserInterfaceState(entity.Comp.Content, entity.Comp.StampedBy, entity.Comp.Mode));
     }
 }

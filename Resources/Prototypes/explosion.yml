@@ -190,24 +190,3 @@
   fireStates: 3
   fireStacks: 2
   temperature: 1500
-
-# Polonium: bluespace artillery explosion
-- type: explosion
-  id: BluespaceArtillery
-  damagePerIntensity:
-    types:
-      Heat: 40
-      Blunt: 40
-      Piercing: 30
-      Structural: 150
-  tileBreakChance: [ 0, 1, 1 ]
-  tileBreakIntensity: [ 0, 5, 15 ]
-  tileBreakRerollReduction: 5
-  intensityPerState: 15
-  lightColor: "#55AAFF"
-  flashColor: "#4FC3F7"
-  texturePath: /Textures/_Polonium/Effects/bluespace.rsi
-  fireStates: 1
-  fireStacks: 5
-  temperature: 5000
-  maxCombineDistance: 0

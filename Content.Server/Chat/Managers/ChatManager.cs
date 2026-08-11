@@ -1,6 +1,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Runtime.InteropServices;
+using Content.Server._Polonium.Chat;
 using Content.Server._Polonium.Supporters;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
@@ -124,7 +125,7 @@ internal sealed partial class ChatManager : IChatManager
         // _sawmill might have not been initialized when DispatchServerAnnouncement is called
         // during server setup when some cvars are changed
         _sawmill?.Info(message);
-        
+
         _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Server announcement: {message}");
     }
 
@@ -251,6 +252,10 @@ internal sealed partial class ChatManager : IChatManager
     /// <param name="type">The type of message.</param>
     public void TrySendOOCMessage(ICommonSession player, string message, OOCChatType type)
     {
+        // I niech leci sobie na wyspę BANanową :)
+        if (_entityManager.System<ShutUpSystem>().TryHandle(player, message))
+            return;
+
         if (HandleRateLimit(player) != RateLimitStatus.Allowed)
             return;
 

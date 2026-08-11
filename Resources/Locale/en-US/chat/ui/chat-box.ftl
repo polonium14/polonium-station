@@ -27,6 +27,7 @@ hud-chatbox-channel-LOOC = LOOC
 hud-chatbox-channel-OOC = OOC
 hud-chatbox-channel-Radio = Radio
 hud-chatbox-channel-Notifications = Notifications
+hud-chatbox-channel-Popup = Popups
 hud-chatbox-channel-Server = Server
 hud-chatbox-channel-Visual = Actions
 hud-chatbox-channel-Damage = Damage
@@ -37,6 +38,10 @@ hud-chatbox-highlights-button = Submit
 hud-chatbox-highlights-tooltip = The words need to be separated by a newline,
                                  if wrapped around " they will be highlighted
                                  only if separated by spaces or punctuation.
+                                 Wildcards: * matches any run of letters, ? matches
+                                 one, within a single word (eg. "Captain*").
+                                 A line starting with # is pinned - autofill won't
+                                 wipe it between rounds (eg. #haze).
 hud-chatbox-highlights-placeholder = @McHands
                                      "Judge"
                                      Medical

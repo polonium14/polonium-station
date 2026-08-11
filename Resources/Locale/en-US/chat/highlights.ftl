@@ -53,4 +53,5 @@ highlights-psychologist = Psychologist, Psychology, "Psych", Medbay, Medical, "M
 # Silicon
 highlights-personal-ai = Personal AI, "pAI"
 highlights-cyborg = Cyborg, Silicon, Borg, Robotics, "Robot"
+highlights-borg = Cyborg, Silicon, Borg, Robotics, "Robot"
 highlights-station-ai = Station AI, Silicon, "AI", "sAI"

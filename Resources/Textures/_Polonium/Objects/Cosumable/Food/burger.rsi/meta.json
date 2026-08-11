@@ -1,7 +1,7 @@
 {
     "version": 1,
     "license": "CC-BY-SA-3.0",
-    "copyright": "hotdog-pinkscreen",
+    "copyright": "hotdog-pinkscreen, mothdog by pinkscreen and edited Saver310",
     "size": {
         "x": 32,
         "y": 32
@@ -16,6 +16,17 @@
         },
         {
             "name": "hotdog-inhand-right",
+            "directions": 4
+        },
+        {
+            "name": "mothdog"
+        },
+        {
+            "name": "mothdog-inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "mothdog-inhand-right",
             "directions": 4
         }
     ]

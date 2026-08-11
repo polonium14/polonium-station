@@ -62,6 +62,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Globalization;
+using Content.Server._Polonium.Chat;
 using Content.Server._Polonium.Supporters;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
@@ -110,6 +111,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     [Dependency] private ExamineSystemShared _examineSystem = default!;
     [Dependency] private EntityQuery<GhostHearingComponent> _ghostHearingQuery = default!;
     [Dependency] private SupporterSystem _supporters = default!;
+    [Dependency] private ShutUpSystem _shutUp = default!;
 
     private bool _loocEnabled = true;
     private bool _deadLoocEnabled;
@@ -216,6 +218,9 @@ public sealed partial class ChatSystem : SharedChatSystem
         bool triggerSpeakEvent = true
     )
     {
+        if (player != null && _shutUp.TryHandle(player, message))
+            return;
+
         if (HasComp<GhostComponent>(source))
         {
             // Ghosts can only send dead chat messages, so we'll forward it to InGame OOC.
@@ -310,6 +315,9 @@ public sealed partial class ChatSystem : SharedChatSystem
         ICommonSession? player = null
         )
     {
+        if (player != null && _shutUp.TryHandle(player, message))
+            return;
+
         if (!CanSendInGame(message, shell, player))
             return;
 

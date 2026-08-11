@@ -37,3 +37,26 @@
   solids:
     FoodMeat: 1
     Paper: 1
+
+- type: microwaveMealRecipe
+  id: RecipeMothdog
+  name: przepis na ćmohotdoga
+  result: FoodMothDog
+  time: 10
+  group: Moth
+  reagents:
+    Ketchup: 5
+  solids:
+    FoodCottonBun: 1
+    FoodMeatMoffParowa: 1
+
+- type: microwaveMealRecipe
+  id: RecipePetoMoffParowek
+  name: przepis na pęto ćmoparówek
+  result: FoodMeatPetoMoffParowek
+  time: 10
+  group: Moth
+  solids:
+    FoodDoughCottonRope: 4
+    Paper: 1
+
