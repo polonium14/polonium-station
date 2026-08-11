@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: ScarKy0
-  changes:
-  - message: Audio for mortars, juicers and the paperfuge can no longer be stacked
-      infinitely.
-    type: Fix
-  id: 9436
-  time: '2026-01-20T21:40:41.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42498
 - author: Velken
   changes:
   - message: RCD can no longer spam lights in the same spot.
@@ -4094,3 +4086,10 @@
   id: 9935
   time: '2026-08-07T15:01:30.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/887
+- author: Koilak
+  changes:
+  - message: zestaw wybuchowy
+    type: Add
+  id: 9936
+  time: '2026-08-11T17:43:15.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/871
