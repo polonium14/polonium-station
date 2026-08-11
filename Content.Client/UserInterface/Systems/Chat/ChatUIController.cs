@@ -1,3 +1,44 @@
+// SPDX-FileCopyrightText: 2022 Dylan Corrales <DeathCamel58@gmail.com>
+// SPDX-FileCopyrightText: 2022 Jezithyr <Jezithyr.@gmail.com>
+// SPDX-FileCopyrightText: 2023 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 KP <13428215+nok-ko@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Kot <1192090+koteq@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Morb <14136326+Morb0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Vasilis <vasilis@pikachu.systems>
+// SPDX-FileCopyrightText: 2023 Vasilis The Pikachu <vascreeper@yahoo.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 deathride58 <deathride58@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 gus <august.eymann@gmail.ccom>
+// SPDX-FileCopyrightText: 2023 gus <august.eymann@gmail.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2023 router <messagebus@vk.com>
+// SPDX-FileCopyrightText: 2024 DrSmugleaf <10968691+DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Julian Giebel <juliangiebel@live.de>
+// SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2024 LordCarve <27449516+LordCarve@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Sk1tch <ben.peter.smith@gmail.com>
+// SPDX-FileCopyrightText: 2024 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Tainakov <136968973+Tainakov@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Brandon Li <48413902+aspiringLich@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Evelyn Gordon <evelyn.gordon20@gmail.com>
+// SPDX-FileCopyrightText: 2025 J <billsmith116@gmail.com>
+// SPDX-FileCopyrightText: 2025 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2025 lzk <124214523+lzk228@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 vitopigno <103512727+VitusVeit@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2026 maciejwalendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 taydeo <tay@funkystation.org>
+// SPDX-FileCopyrightText: 2026 taydeo <td12233a@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Globalization;
 using System.Linq;
 using System.Numerics;
@@ -535,6 +576,7 @@ public sealed partial class ChatUIController : UIController
             FilterableChannels |= ChatChannel.Radio;
             FilterableChannels |= ChatChannel.Emotes;
             FilterableChannels |= ChatChannel.Notifications;
+            FilterableChannels |= ChatChannel.Popup; // WD EDIT - Log actions in chat
 
             // Can only send local / radio / emote when attached to a non-ghost entity.
             // TODO: this logic is iffy (checking if controlling something that's NOT a ghost), is there a better way to check this?
@@ -829,9 +871,16 @@ public sealed partial class ChatUIController : UIController
         }
 
         // Color any words chosen by the client.
+        // Polonium - track whether any highlight matched so we can play a ping sound below.
+        var hadHighlight = false;
         foreach (var highlight in _highlights)
         {
-            msg.WrappedMessage = SharedChatSystem.InjectTagAroundString(msg, highlight, "color", _highlightsColor);
+            var newMessage = SharedChatSystem.InjectTagAroundString(msg, highlight, "color", _highlightsColor);
+            if (newMessage != msg.WrappedMessage)
+            {
+                hadHighlight = true;
+                msg.WrappedMessage = newMessage;
+            }
         }
 
         // Color any codewords for minds that have roles that use them
@@ -852,6 +901,23 @@ public sealed partial class ChatUIController : UIController
         {
             History.Add((_timing.CurTick, msg));
             MessageAdded?.Invoke(msg);
+
+            // POLONIUM CHANGE START: play the highlight ping only for a message the player can
+            // actually see. This sits inside the !HideChat gate, skips replay fast-forward
+            // (speechBubble is false there), skips our own and unattributed (OOC/admin) messages,
+            // requires a chatbox that currently shows this channel, and debounces on the monotonic
+            // RealTime clock (never rewound/reset across servers). The timestamp only advances when
+            // a sound actually plays, so a suppressed match can't eat the next real ping.
+            if (hadHighlight
+                && speechBubble
+                && !IsOwnOrUnattributedMessage(msg)
+                && _chats.Any(chat => chat.IsChannelVisible(msg.Channel))
+                && (_timing.RealTime - _lastHighlightTime).TotalMilliseconds >= 500
+                && PlayHighlightSound())
+            {
+                _lastHighlightTime = _timing.RealTime;
+            }
+            // POLONIUM CHANGE END
 
             if (!msg.Read)
             {

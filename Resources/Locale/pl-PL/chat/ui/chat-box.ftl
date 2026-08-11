@@ -25,16 +25,21 @@ hud-chatbox-channel-LOOC = LOOC
 hud-chatbox-channel-OOC = OOC
 hud-chatbox-channel-Radio = Radio
 hud-chatbox-channel-Notifications = Powiadomienia
+hud-chatbox-channel-Popup = Popupy
 hud-chatbox-channel-Server = Serwer
 hud-chatbox-channel-Visual = Akcje
 hud-chatbox-channel-Damage = Obrażenia
 hud-chatbox-channel-Unspecified = Nieokreślony
 hud-chatbox-highlights = Podkreślenia:
-hud-chatbox-highlights-button = Podtwierdź
+hud-chatbox-highlights-button = Potwierdź
 hud-chatbox-highlights-tooltip =
     Słowa muszą być oddzielone znakiem nowej linii,
     jeśli są zawarte w cudzysłowie, zostaną podświetlone
     tylko wtedy, gdy są oddzielone spacjami lub znakami interpunkcyjnymi.
+    Wieloznaczniki: * pasuje do dowolnego ciągu liter, ? do jednej,
+    w obrębie jednego słowa (np. "Kapitan*").
+    Linia zaczynająca się od # jest przypięta - autouzupełnianie
+    nie usunie jej między rundami (np. #haze).
 hud-chatbox-highlights-placeholder =
     McKowalski
     "Prawo"

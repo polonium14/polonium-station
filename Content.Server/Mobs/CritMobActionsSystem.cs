@@ -80,7 +80,8 @@ public sealed partial class CritMobActionsSystem : EntitySystem
                 }
                 lastWords += "...";
 
-                _chat.TrySendInGameICMessage(uid, lastWords, InGameICChatType.Whisper, ChatTransmitRange.Normal, checkRadioPrefix: false, ignoreActionBlocker: true);
+                _chat.TrySendInGameICMessage(uid, lastWords, InGameICChatType.Whisper, ChatTransmitRange.Normal,
+                    false, null, actor.PlayerSession, null, false, true);
                 _host.ExecuteCommand(actor.PlayerSession, "ghost");
             });
 

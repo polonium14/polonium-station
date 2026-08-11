@@ -3,6 +3,9 @@
 // SPDX-FileCopyrightText: 2025 misghast <51974455+misterghast@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
 // SPDX-FileCopyrightText: 2026 Damian Zieliński <zientasek.pl@gmail.com>
+// SPDX-FileCopyrightText: 2026 Maciej Walendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 maciejwalendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 nikitosych <174215049+nikitosych@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -50,6 +53,16 @@ public sealed partial class GoobCVars
     /// </summary>
     public static readonly CVarDef<float> BleedMultiplier =
         CVarDef.Create("medical.bloodloss_multiplier", 4.0f, CVar.SERVER);
+
+    #endregion
+
+    #region Chat
+
+    /// <summary>
+    /// Whether or not to log actions (popups) in the chat.
+    /// </summary>
+    public static readonly CVarDef<bool> LogInChat =
+        CVarDef.Create("chat.log_in_chat", true, CVar.CLIENT | CVar.ARCHIVE);
 
     #endregion
 }

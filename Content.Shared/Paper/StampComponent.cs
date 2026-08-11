@@ -10,10 +10,13 @@
 // SPDX-FileCopyrightText: 2024 TsjipTsjip <19798667+TsjipTsjip@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 V <97265903+formlessnameless@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 corresp0nd <46357632+corresp0nd@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+// SPDX-FileCopyrightText: 2026 maciejwalendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 taydeo <tay@funkystation.org>
+// SPDX-FileCopyrightText: 2026 taydeo <td12233a@gmail.com>
 //
 // SPDX-License-Identifier: MIT
 
+using System.Numerics;
 using Robust.Shared.Serialization;
 using Robust.Shared.Audio;
 
@@ -47,6 +50,37 @@ public partial struct StampDisplayInfo
 
     [DataField("hasIcon")]
     public bool HasIcon = true; // imp
+
+    /// <summary>
+    ///     Whether <see cref="StampedName"/> is a localization id to be run through
+    ///     Loc.GetString (true, for stamps whose name is a loc key), or a literal
+    ///     display string to show verbatim (false, for signatures whose name is a
+    ///     raw signer name). Localizing a raw name spams warnings and can collide
+    ///     with a real Fluent id.
+    /// </summary>
+    [DataField("localizeName")]
+    public bool LocalizeName = true;
+
+    /// <summary>
+    ///     Normalized [0,1] position within the stamp display area where this
+    ///     mark was placed. Null means "use the procedural auto-layout".
+    ///     Used by manually-placed signatures.
+    /// </summary>
+    [DataField("position")]
+    public Vector2? Position;
+
+    /// <summary>
+    ///     Scale multiplier applied to the mark's natural size. Null means 1x.
+    /// </summary>
+    [DataField("scale")]
+    public float? Scale;
+
+    /// <summary>
+    ///     Explicit orientation in radians. Null means the auto-layout picks a
+    ///     small random tilt.
+    /// </summary>
+    [DataField("rotation")]
+    public float? Rotation;
 };
 
 [RegisterComponent]

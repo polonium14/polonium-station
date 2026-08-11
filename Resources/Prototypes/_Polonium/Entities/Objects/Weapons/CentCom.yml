@@ -1,0 +1,27 @@
+# SPDX-FileCopyrightText: 2026 maciejwalendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: MindWipingPen
+  parent: PenCentcom
+  name: very normal CentCom pen
+  description: A VERY normal CentCom Pen. Now please just look here at it.... *click*
+  suffix: Admeme, DO NOT MAP
+  components:
+  - type: EmitSoundOnUse
+    handle: false # override so it doesn't take priority over the flash
+  - type: UseDelay
+    delay: 4 # match Flash.flashingTime
+  - type: Flash
+    flashOnMelee: false
+    flashingTime: 4
+    displayUserPopup: false # FlashMessage popup + emote replace the default "blinds you"
+    sound:
+      path: /Audio/Items/pen_click.ogg
+      params:
+        volume: 2
+        maxDistance: 5
+  - type: FlashMessage
+    popup: mind-wiping-pen-popup
+    emote: mind-wiping-pen-emote

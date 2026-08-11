@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Puro <103608145+PuroSlavKing@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 Damian Zielińsi <zientasek.pl@gmail.com>
+# SPDX-FileCopyrightText: 2026 nikitosych <174215049+nikitosych@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: job
   id: Brigmedic
   name: job-name-brigmedic
@@ -6,9 +13,10 @@
   requirements:
   - !type:DepartmentTimeRequirement
     department: Medical
-    time: 7200
-  - !type:OverallPlaytimeRequirement
-    time: 5h # 5 hours
+    time: 5h
+  - !type:DepartmentTimeRequirement
+    department: Security
+    time: 5h
   startingGear: BrigmedicGear
   icon: "JobIconBrigmedic"
   supervisors: job-supervisors-hos

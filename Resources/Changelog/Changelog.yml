@@ -1,97 +1,4 @@
 ﻿Entries:
-- author: Princess-Cheeseballs
-  changes:
-  - message: Longarms in the uplink are cheaper but don't come with extra ammo.
-    type: Tweak
-  - message: Syndicate knuckle dusters are now 4 TC
-    type: Tweak
-  - message: Shotgun slugs in the uplink are now 2 TC
-    type: Tweak
-  - message: China Lake's grenades now fly slower in the air
-    type: Tweak
-  - message: Python has been removed from the uplink
-    type: Remove
-  id: 9425
-  time: '2026-01-19T23:06:47.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42468
-- author: ahandleman
-  changes:
-  - message: Fixed seeds being unique after sampling.
-    type: Fix
-  id: 9426
-  time: '2026-01-20T01:41:24.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42527
-- author: sowelipililimute
-  changes:
-  - message: The time-locked loadout towels have been removed.
-    type: Remove
-  id: 9427
-  time: '2026-01-20T05:15:24.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42536
-- author: sowelipililimute
-  changes:
-  - message: The markings editor has been redesigned to have a better UI.
-    type: Tweak
-  - message: The character export format has changed and characters from newer servers
-      may not work when exported to older servers.
-    type: Tweak
-  id: 9428
-  time: '2026-01-20T07:23:51.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42476
-- author: sowelipililimute
-  changes:
-  - message: Inflatables can now be sourced from emergency lockers.
-    type: Add
-  id: 9429
-  time: '2026-01-20T08:03:06.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42539
-- author: B_Kirill
-  changes:
-  - message: Hair styling tools, such as mirrors and scissors, now use their own names
-      as UI window titles.
-    type: Tweak
-  - message: Hair styling tools, such as mirrors and scissors, no longer attempt to
-      open UI on non-humanoids.
-    type: Fix
-  id: 9430
-  time: '2026-01-20T12:15:37.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42544
-- author: insoPL
-  changes:
-  - message: Added icon indicating if the gloves are insulated or not.
-    type: Add
-  id: 9431
-  time: '2026-01-20T16:02:53.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42444
-- author: sowelipililimute
-  changes:
-  - message: Voice emotes are now correct for your character's sex
-    type: Fix
-  id: 9432
-  time: '2026-01-20T19:29:53.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42550
-- author: Velken, Murphyneko
-  changes:
-  - message: Station tiles and floors can now be placed on planets, asteroids and
-      different platings.
-    type: Tweak
-  id: 9433
-  time: '2026-01-20T20:51:15.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42543
-- author: osjarw
-  changes:
-  - message: Now the Medibot has a DoAfter bar, displaying injection progress.
-    type: Add
-  id: 9434
-  time: '2026-01-20T21:07:38.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/32932
-- author: sowelipililimute
-  changes:
-  - message: Species now properly render their sex-specific sprites
-    type: Fix
-  id: 9435
-  time: '2026-01-20T21:24:06.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42554
 - author: ScarKy0
   changes:
   - message: Audio for mortars, juicers and the paperfuge can no longer be stacked
@@ -4094,3 +4001,96 @@
   id: 9924
   time: '2026-07-31T15:58:07.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/855
+- author: Koilak
+  changes:
+  - message: Kabel Wybuchowy (Explosive Cord)
+    type: Fix
+  id: 9925
+  time: '2026-08-02T13:57:22.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/863
+- author: Koilak
+  changes:
+  - message: "Pa\u0142ki Og\u0142uszaj\u0105ce dla ochrony"
+    type: Add
+  - message: "Pa\u0142ki Policyjne dla ochrony"
+    type: Remove
+  id: 9926
+  time: '2026-08-02T13:54:39.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/862
+- author: Zintex
+  changes:
+  - message: "Wymagania r\xF3l takie jak sprzed rebase"
+    type: Tweak
+  id: 9927
+  time: '2026-08-02T14:54:06.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/866
+- author: haze
+  changes:
+  - message: "Dodano funkcjonalno\u015B\u0107 skalowania, obracania i zmiany po\u0142\
+      o\u017Cenia miejsca, w kt\xF3rym ma zosta\u0107 z\u0142o\u017Cony podpis lub\
+      \ piecz\u0105tka"
+    type: Add
+  - message: "Dodano brakuj\u0105ce t\u0142umaczenia podpisywania i stemplowania papier\xF3\
+      w"
+    type: Add
+  - message: "Dodano sprity brakuj\u0105cych piecz\u0105tek"
+    type: Fix
+  id: 9928
+  time: '2026-08-04T10:20:23.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/873
+- author: haze
+  changes:
+  - message: "Borgi nie powoduj\u0105 sepsy"
+    type: Fix
+  id: 9929
+  time: '2026-08-04T10:40:37.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/876
+- author: pinkscreen
+  changes:
+  - message: "Zamapowano brakuj\u0105ce kaucjomaty"
+    type: Add
+  id: 9930
+  time: '2026-08-06T10:34:35.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/884
+- author: haze
+  changes:
+  - message: "Dywany poprawnie znikaj\u0105 po zniszczeniu"
+    type: Fix
+  id: 9931
+  time: '2026-08-06T17:45:28.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/886
+- author: Saver310
+  changes:
+  - message: "Dodano \u0107mopar\xF3wki i \u0107modogi!"
+    type: Add
+  id: 9932
+  time: '2026-08-06T19:55:10.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/869
+- author: haze
+  changes:
+  - message: "Popupy zapisuj\u0105 si\u0119 do okna czatu"
+    type: Add
+  - message: "Poprawiono t\u0142umaczenia"
+    type: Fix
+  id: 9933
+  time: '2026-08-07T10:21:41.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/877
+- author: koilak i haze
+  changes:
+  - message: "D\u0142ugopis wymazuj\u0105cy pami\u0119\u0107"
+    type: Add
+  id: 9934
+  time: '2026-08-07T10:25:59.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/878
+- author: haze
+  changes:
+  - message: "Dodano d\u017Awi\u0119k podczas wyr\xF3\u017Cniania"
+    type: Add
+  - message: "Dodano obs\u0142ug\u0119 wildcard *, ?, # w filtrach czatu"
+    type: Add
+  - message: "Naprawiono automatyczne ustawianie listy wyr\xF3\u017Cnie\u0144 na podstawie\
+      \ imienia i nazwiska"
+    type: Fix
+  id: 9935
+  time: '2026-08-07T15:01:30.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/887

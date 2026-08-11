@@ -1,9 +1,30 @@
+// SPDX-FileCopyrightText: 2025 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2025 vitopigno <103512727+VitusVeit@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 vitopigno <vitopigno@gmail.com>
+// SPDX-FileCopyrightText: 2026 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2026 maciejwalendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 nikitosych <174215049+nikitosych@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 qwerltaz <69696513+qwerltaz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 taydeo <tay@funkystation.org>
+// SPDX-FileCopyrightText: 2026 taydeo <td12233a@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Linq;
 using System.Text.RegularExpressions;
+using Robust.Client.Audio;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controllers;
+using Robust.Shared.Audio;
+using Robust.Shared.Audio.Systems;
+using Robust.Shared.GameObjects;
+using Robust.Shared.Player;
+using Robust.Shared.Utility;
 using Content.Shared.CCVar;
 using Content.Client.CharacterInfo;
+using Content.Client.Gameplay;
 using static Content.Client.CharacterInfo.CharacterInfoSystem;
 
 namespace Content.Client.UserInterface.Systems.Chat;
@@ -18,6 +39,14 @@ public sealed partial class ChatUIController : IOnSystemChanged<CharacterInfoSys
     [UISystemDependency] private readonly CharacterInfoSystem _characterInfo = default!;
 
     private string _chatSpeechDoubleQuoteBegin = default!;
+
+    // Polonium - chat highlight ping sound
+    private static readonly ResPath HighlightSoundPath = new("/Audio/_Polonium/Interface/HighlightChatPings/Beep.ogg");
+
+    /// <summary>
+    ///     Time of the last highlight ping, used to debounce the sound.
+    /// </summary>
+    private TimeSpan _lastHighlightTime = TimeSpan.Zero;
 
     private static readonly Regex StartDoubleQuote = new("\"$");
     private static readonly Regex EndDoubleQuote = new("^\"|(?<=^@)\"");
@@ -59,6 +88,48 @@ public sealed partial class ChatUIController : IOnSystemChanged<CharacterInfoSys
         _chatSpeechDoubleQuoteBegin = _loc.GetString("chat-manager-speech-double-quote-begin");
     }
 
+    // Polonium - chat highlight ping sound
+    /// <summary>
+    ///     Plays the highlight ping sound if it's enabled in the client's settings.
+    ///     Returns true only if a sound was actually played, so the caller advances the
+    ///     debounce timestamp only on a real ping.
+    /// </summary>
+    private bool PlayHighlightSound()
+    {
+        // Don't play sounds while the game is still loading (eg. in the lobby).
+        if (_state.CurrentState is not GameplayStateBase)
+            return false;
+
+        if (!_config.GetCVar(CCVars.ChatHighlightSound))
+            return false;
+
+        var volume = Math.Clamp(_config.GetCVar(CCVars.ChatHighlightVolume), 0f, 1f);
+
+        // A gain of 0 would produce -Infinity dB, so treat it as muted.
+        if (volume <= 0f)
+            return false;
+
+        // Use the engine's gain->dB helper (10*log10) that every other volume cvar uses,
+        // rather than a hand-rolled formula.
+        var audioParams = AudioParams.Default.WithVolume(SharedAudioSystem.GainToVolume(volume));
+
+        _ent.System<AudioSystem>().PlayGlobal(HighlightSoundPath, Filter.Local(), false, audioParams);
+        return true;
+    }
+
+    /// <summary>
+    ///     Whether the message is our own entity speech, or unattributed chat (OOC/admin/server
+    ///     use an Invalid sender and an opaque per-sender key the client can't map to itself).
+    ///     In both cases we must not play a highlight ping at the local player.
+    /// </summary>
+    private bool IsOwnOrUnattributedMessage(Content.Shared.Chat.ChatMessage msg)
+    {
+        if (msg.SenderEntity == NetEntity.Invalid)
+            return true;
+
+        return _player.LocalSession?.AttachedEntity is { } ent && msg.SenderEntity == _ent.GetNetEntity(ent);
+    }
+
     public void OnSystemLoaded(CharacterInfoSystem system)
     {
         system.OnCharacterUpdate += OnCharacterUpdated;
@@ -97,8 +168,20 @@ public sealed partial class ChatUIController : IOnSystemChanged<CharacterInfoSys
 
         for (var i = 0; i < splittedHighlights.Length; i++)
         {
+            var keyword = splittedHighlights[i];
+
+            // Polonium - a leading '#' pins the line so autofill (OnCharacterUpdated) keeps it
+            // across rounds. The '#' is only a UI/storage marker, so strip it here before it
+            // would be matched literally in chat.
+            if (keyword.StartsWith('#'))
+                keyword = keyword[1..].TrimStart();
+
+            // Skip empty keywords (eg "*", "@*", // "\"*\"", a lone "#")
+            if (keyword.Trim('@', '"', '*', '?', ' ').Length == 0)
+                continue;
+
             // Replace every "\" character with a "\\" to prevent "\n", "\0", etc...
-            var keyword = splittedHighlights[i].Replace(@"\", @"\\");
+            keyword = keyword.Replace(@"\", @"\\");
 
             // Escape the keyword to prevent special characters like "(" and ")" to be considered valid regex.
             keyword = Regex.Escape(keyword);
@@ -106,6 +189,14 @@ public sealed partial class ChatUIController : IOnSystemChanged<CharacterInfoSys
             // 1. Since the "["s in WrappedMessage are already sanitized, add 2 extra "\"s
             // to make sure it matches the literal "\" before the square bracket.
             keyword = keyword.Replace(@"\[", @"\\\[");
+
+            // Polonium - user wildcards. Regex.Escape turned '*'->'\*' and '?'->'\?';
+            // rewrite those to match a run of / a single word char (\w, Unicode, so Polish
+            // ą/ń/ł/ó count) so a wildcard stays inside one word and stops at spaces AND
+            // punctuation - otherwise a trailing '*' would swallow the closing '"' of speech.
+            // Same word-char notion the "..." boundary above uses. Handy for inflected
+            // names/titles, eg. "Kapitan*" -> "Kapitanie", "Kapitana".
+            keyword = keyword.Replace(@"\*", @"\w*").Replace(@"\?", @"\w");
 
             // If present, replace the double quotes at the edges with tags
             // that make sure the words to match are separated by spaces or punctuation.
@@ -140,7 +231,7 @@ public sealed partial class ChatUIController : IOnSystemChanged<CharacterInfoSys
         if (!_charInfoIsAttach)
             return;
 
-        var (_, job, _, _, entityName) = data;
+        var (_, job, jobProto, _, _, entityName) = data; // POLONIUM CHANGE: added jobProto
 
         // Mark this entity's name as our character name for the "UpdateHighlights" function.
         var newHighlights = "@" + entityName;
@@ -154,11 +245,32 @@ public sealed partial class ChatUIController : IOnSystemChanged<CharacterInfoSys
         if (newHighlights.Count(c => c == '-') > 1)
             newHighlights = newHighlights.Split('-')[0] + "\n@" + newHighlights.Split('-')[^1];
 
-        // Convert the job title to kebab-case and use it as a key for the loc file.
-        var jobKey = job.Replace(' ', '-').ToLower();
+        // POLONIUM CHANGE START: resolve the job highlight keywords from the
+        // locale-independent job prototype id. The localized job title differs per server
+        // locale (eg. Polish "Główny Inżynier") and cannot match the ASCII "highlights-<job>"
+        // loc keys, whereas the proto id ("ChiefEngineer") kebab-cases to the same slug on any
+        // locale. Fall back to the localized title only if the proto lookup misses, so an
+        // unexpected casing/locale edge case degrades instead of silently dropping highlights.
+        string? jobMatches = null;
+        if (!string.IsNullOrEmpty(jobProto)
+            && _loc.TryGetString($"highlights-{CaseConversion.PascalToKebab(jobProto)}", out var protoMatches))
+            jobMatches = protoMatches;
+        else if (_loc.TryGetString($"highlights-{job.Replace(' ', '-').ToLower()}", out var titleMatches))
+            jobMatches = titleMatches;
 
-        if (_loc.TryGetString($"highlights-{jobKey}", out var jobMatches))
+        if (jobMatches != null)
             newHighlights += '\n' + jobMatches.Replace(", ", "\n");
+        // POLONIUM CHANGE END
+
+        // Polonium - carry over pinned ('#'-prefixed) lines so autofill doesn't wipe the
+        // player's own highlights when they get a new body/round. Prepend them to the freshly
+        // generated name+job list.
+        var pinned = _config.GetCVar(CCVars.ChatHighlights)
+            .Split('\n', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries)
+            .Where(l => l.StartsWith('#'))
+            .ToArray();
+        if (pinned.Length > 0)
+            newHighlights = string.Join('\n', pinned) + '\n' + newHighlights;
 
         UpdateHighlights(newHighlights);
         HighlightsUpdated?.Invoke(newHighlights);
