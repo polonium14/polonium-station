@@ -9,6 +9,7 @@ using Content.Shared.Eui;
 using Robust.Shared.Configuration;
 using Robust.Shared.GameObjects;
 using Robust.Shared.IoC;
+using Robust.Shared.Map.Components;
 using Robust.Shared.Timing;
 using static Content.Shared.Administration.EntitySearchEuiMsg;
 
@@ -166,7 +167,9 @@ public sealed partial class EntitySearchEui : BaseEui
         var set = new HashSet<EntityUid>();
         foreach (var part in parts)
         {
-            if (int.TryParse(part, out var id) && _entities.TryGetEntity(new NetEntity(id), out var uid))
+            if (int.TryParse(part, out var id)
+                && _entities.TryGetEntity(new NetEntity(id), out var uid)
+                && _entities.HasComponent<MapGridComponent>(uid.Value))
                 set.Add(uid.Value);
         }
 
