@@ -3,6 +3,8 @@ using Content.Shared.Bql;
 using Content.Shared.Eui;
 using JetBrains.Annotations;
 using Robust.Client.Console;
+using Robust.Client.ResourceManagement;
+using Robust.Client.UserInterface;
 
 namespace Content.Client.Bql;
 
@@ -15,7 +17,9 @@ public sealed class ToolshedVisualizeEui : BaseEui
     {
         _window = new ToolshedVisualizeWindow(
             IoCManager.Resolve<IClientConsoleHost>(),
-            IoCManager.Resolve<ILocalizationManager>()
+            IoCManager.Resolve<ILocalizationManager>(),
+            IoCManager.Resolve<IClipboardManager>(),
+            IoCManager.Resolve<IResourceCache>()
         );
 
         _window.OnClose += () => SendMessage(new CloseEuiMessage());

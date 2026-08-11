@@ -1,10 +1,15 @@
 ﻿<DefaultWindow
     xmlns="https://spacestation14.io"
+    xmlns:cc="clr-namespace:Content.Client.Administration.UI.CustomControls"
     Title="{Loc 'ui-bql-results-title'}">
     <BoxContainer Orientation="Vertical" MinSize="500 700">
         <Label Name="StatusLabel" />
         <ScrollContainer VerticalExpand="True">
-            <BoxContainer Orientation="Vertical" Name="ItemList" VerticalExpand="True" />
+            <BoxContainer Orientation="Vertical" VerticalExpand="True">
+                <BoxContainer Orientation="Horizontal" Name="HeaderRow" />
+                <cc:HSeparator />
+                <BoxContainer Orientation="Vertical" Name="ItemList" />
+            </BoxContainer>
         </ScrollContainer>
     </BoxContainer>
 </DefaultWindow>

@@ -6,9 +6,6 @@ cmd-bql_select-err-server-shell = Cannot be executed from server shell
 cmd-bql_select-err-rest = Warning: unused part after BQL query: "{ $rest }"
 ui-bql-results-title = BQL results
 ui-bql-results-vv = VV
-ui-bql-results-tp = TP
-ui-bql-results-vv-tooltip = Wyświetl zmienne encji
-ui-bql-results-tp-tooltip = Teleportuj do encji
 ui-bql-results-status-more = { $count } { $count ->
     [one] encja (więcej dostępnych)
     [few] encje (więcej dostępnych)
@@ -20,3 +17,22 @@ ui-bql-results-status = { $count } { $count ->
     [few] encje
    *[many] encji
 }
+
+ui-bql-results-status-total = { $loaded } / { $total } { $total ->
+    [one] encja
+    [few] encje
+   *[many] encji
+}
+
+ui-bql-results-col-id = ID
+ui-bql-results-col-name = Nazwa
+ui-bql-results-col-proto = Prototyp
+ui-bql-results-col-actions = Akcje
+
+ui-bql-results-actions = Akcje
+ui-bql-results-follow = Śledź
+ui-bql-results-copy = Kopiuj ID
+ui-bql-results-delete = Usuń
+ui-bql-results-delete-confirm = Potwierdź?
+ui-bql-results-pin = Przypnij
+ui-bql-results-unpin = Odepnij

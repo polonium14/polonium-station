@@ -9,10 +9,11 @@ using Content.Shared.Eui;
 using Robust.Shared.Configuration;
 using Robust.Shared.GameObjects;
 using Robust.Shared.IoC;
+using Robust.Shared.Map.Components;
 using Robust.Shared.Timing;
 using static Content.Shared.Administration.EntitySearchEuiMsg;
 
-namespace Content.Server.Administration.UI;
+namespace Content.Server.Administration.UI.EntitySearch;
 
 public sealed partial class EntitySearchEui : BaseEui
 {
@@ -28,7 +29,8 @@ public sealed partial class EntitySearchEui : BaseEui
     [Dependency] private IGameTiming _gameTiming = default!;
 
     private string _query = string.Empty;
-    private List<(string name, NetEntity entity)>? _matchCache;
+    private HashSet<EntityUid>? _gridFilter;
+    private List<(string name, string? proto, NetEntity entity)>? _matchCache;
     private int _resultsSent;
     private TimeSpan _lastSearchTime = TimeSpan.Zero;
 
@@ -56,6 +58,7 @@ public sealed partial class EntitySearchEui : BaseEui
 
                     _lastSearchTime = _gameTiming.CurTime;
                     _query = search.Query.Trim();
+                    _gridFilter = ParseGridFilter(search.GridFilterEnabled, search.GridFilter);
                     SendResults(replace: true);
                     break;
                 }
@@ -82,34 +85,37 @@ public sealed partial class EntitySearchEui : BaseEui
         var remaining = cache.Count - _resultsSent;
         var take = Math.Min(BatchSize, remaining);
 
-        (string name, NetEntity entity)[] batch;
+        (string name, string? proto, NetEntity entity)[] batch;
         if (take == 0)
         {
             batch = [];
         }
         else
         {
-            batch = new (string name, NetEntity entity)[take];
+            batch = new (string name, string? proto, NetEntity entity)[take];
             cache.CopyTo(_resultsSent, batch, 0, take);
             _resultsSent += take;
         }
 
         var hasNext = _resultsSent < cache.Count;
-        SendMessage(new NewResults(batch, replace, hasNext));
+        SendMessage(new NewResults(batch, replace, hasNext, cache.Count));
     }
 
-    private List<(string name, NetEntity entity)> BuildMatchCache(string query)
+    private List<(string name, string? proto, NetEntity entity)> BuildMatchCache(string query)
     {
         if (string.IsNullOrWhiteSpace(query))
             return [];
 
         var filter = query.Trim();
-        var results = new List<(string name, NetEntity entity)>();
+        var results = new List<(string name, string? proto, NetEntity entity)>();
 
-        var enumerator = _entities.AllEntityQueryEnumerator<MetaDataComponent>();
-        while (enumerator.MoveNext(out var uid, out var meta))
+        var enumerator = _entities.AllEntityQueryEnumerator<MetaDataComponent, TransformComponent>();
+        while (enumerator.MoveNext(out var uid, out var meta, out var xform))
         {
             if (meta.EntityLifeStage >= EntityLifeStage.Deleted)
+                continue;
+
+            if (_gridFilter != null && (xform.GridUid == null || !_gridFilter.Contains(xform.GridUid.Value)))
                 continue;
 
             var protoId = meta.EntityPrototype?.ID;
@@ -120,11 +126,7 @@ public sealed partial class EntitySearchEui : BaseEui
 
             var netEntity = _entities.GetNetEntity(uid);
 
-            var label = protoId != null
-                ? $"{displayName} ({protoId}) [{netEntity}]"
-                : $"{displayName} [{netEntity}]";
-
-            results.Add((label, netEntity));
+            results.Add((displayName, protoId, netEntity));
 
             if (results.Count >= MaxMatchCount)
                 break;
@@ -150,6 +152,28 @@ public sealed partial class EntitySearchEui : BaseEui
         _chat.SendAdminAlert(message);
         _adminLogger.Add(LogType.Action, LogImpact.Medium,
             $"{Player.Name} ran entity search and got {resultCount} results.");
+    }
+
+    // null = no filtering
+    private HashSet<EntityUid>? ParseGridFilter(bool enabled, string raw)
+    {
+        if (!enabled)
+            return null;
+
+        var parts = raw.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+        if (parts.Length == 0)
+            return null;
+
+        var set = new HashSet<EntityUid>();
+        foreach (var part in parts)
+        {
+            if (int.TryParse(part, out var id)
+                && _entities.TryGetEntity(new NetEntity(id), out var uid)
+                && _entities.HasComponent<MapGridComponent>(uid.Value))
+                set.Add(uid.Value);
+        }
+
+        return set;
     }
 
     private static bool MatchesFilter(string displayName, string? protoId, string filter)

@@ -1,4 +1,3 @@
-using Content.Client.Administration.UI.Tabs.AdminTab;
 using Content.Client.Eui;
 using Content.Shared.Administration;
 using Content.Shared.Eui;
@@ -6,7 +5,7 @@ using JetBrains.Annotations;
 using Robust.Shared.IoC;
 using static Content.Shared.Administration.EntitySearchEuiMsg;
 
-namespace Content.Client.Administration.UI;
+namespace Content.Client.Administration.UI.EntitySearch;
 
 [UsedImplicitly]
 public sealed partial class EntitySearchEui : BaseEui
@@ -28,6 +27,7 @@ public sealed partial class EntitySearchEui : BaseEui
     {
         base.Opened();
         _window.OpenCentered();
+        _window.FocusSearch();
     }
 
     public override void Closed()
@@ -44,14 +44,19 @@ public sealed partial class EntitySearchEui : BaseEui
             return;
 
         if (newResults.Replace)
-            _window.SetResults(newResults.Entities, newResults.HasNext);
+            _window.SetResults(newResults.Entities, newResults.HasNext, newResults.Total);
         else
-            _window.AddResults(newResults.Entities, newResults.HasNext);
+            _window.AddResults(newResults.Entities, newResults.HasNext, newResults.Total);
     }
 
     private void PerformSearch()
     {
-        SendMessage(new Search { Query = _window.SearchText });
+        SendMessage(new Search
+        {
+            Query = _window.SearchText,
+            GridFilterEnabled = _window.GridFilterEnabled,
+            GridFilter = _window.GridFilter,
+        });
     }
 
     private void RequestNextResults()
