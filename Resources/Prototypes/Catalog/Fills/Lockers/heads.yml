@@ -335,9 +335,13 @@
     - id: WeaponDisabler
     - id: WantedListCartridge
     - id: DrinkHosFlask
-    - id: ThermitePack
     - id: PlushieLizardJobHeadofsecurity
       prob: 0.02
+    - !type:GroupSelector # Polonium addition
+      children:
+      - id: ExplosivePack # 66.666%
+      - id: ExplosivePack
+      - id: ThermitePack # 33.333%
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable
