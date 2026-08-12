@@ -214,6 +214,7 @@ public sealed partial class KaucjomatSystem : EntitySystem
         if (_emag.CheckFlag(ent, EmagType.Interaction))
             return;
         ent.Comp.DispenseAmountMax = _random.Next(10, 101) * 50;
+        ent.Comp.DepositDirection = DirectionFrom(ent.Owner, args.UserUid);
         ent.Comp.LastDispense = _timing.CurTime;
         args.Handled = true;
     }
