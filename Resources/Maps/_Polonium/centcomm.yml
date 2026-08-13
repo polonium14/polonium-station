@@ -1,16 +1,16 @@
 meta:
   format: 7
-  category: Map
+  category: Grid
   engineVersion: 284.0.0
   forkId: ""
   forkVersion: ""
   time: 08/06/2026 22:57:37
   entityCount: 9736
-maps:
-- 2029
+maps: []
 grids:
 - 1668
-orphans: []
+orphans:
+- 1668
 nullspace: []
 tilemap:
   0: Space
@@ -56,7 +56,7 @@ entities:
     - type: MetaData
       name: Central Command
     - type: Transform
-      parent: 2029
+      parent: invalid
     - type: MapGrid
       chunks:
         -1,-1:
@@ -4847,16 +4847,6 @@ entities:
     - type: ExplosionAirtightGrid
     - type: TileHistory
       chunkHistory: {}
-  - uid: 2029
-    components:
-    - type: MetaData
-      name: Map Entity
-    - type: Transform
-    - type: Map
-      mapPaused: True
-    - type: GridTree
-    - type: Broadphase
-    - type: OccluderTree
 - proto: AccessConfiguratorUniversal
   entities:
   - uid: 2056
