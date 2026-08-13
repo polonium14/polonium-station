@@ -1,3 +1,3 @@
-xenoborgs-no-more-threat-mothership-core-alive-announcement = Long-range sensors indicate that all xenoborgs were destroyed. The mothership core remains adrift in space.
-xenoborgs-no-more-threat-mothership-core-dead-announcement = Long-range sensors indicate that all xenoborgs were destroyed along side the mothership core.
-mothership-destroyed-announcement = Long-range sensors indicate that the mothership core was destroyed.
+xenoborgs-no-more-threat-mothership-core-alive-announcement = Sensory dalekiego zasięgu wskazują na to, że wszystkie ksenoborgi zostały zniszczone. Rdzeń statku matki wciąż dryfuje w przestrzeni kosmicznej.
+xenoborgs-no-more-threat-mothership-core-dead-announcement = Sensory dalekiego zasięgu wskazują na to, że wszystkie ksenoborgi oraz rdzeń statku matki zostały zniszczone.
+mothership-destroyed-announcement = Sensory dalekiego zasięgu wskazują na to, że rdzeń statku matki został zniszczony.

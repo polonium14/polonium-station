@@ -83,10 +83,10 @@ alerts-rooted-desc = Jesteś przytwierdzony do ziemi. Nie możesz się poślizgn
 alerts-stealthy-name = Kieszonkowiec
 alerts-stealthy-desc = Czy aktualnie dokonujesz kieszonkowania. Kliknij, aby przełączyć.
 
-alerts-knockdown-name = [color=yellow]Knocked Down[/color]
+alerts-knockdown-name = [color=yellow]Powalony[/color]
 
-alerts-knockdown-desc = You're [color=yellow]Knocked Down[/color]! Something has slipped or pushed you over, encumbering your movement.
+alerts-knockdown-desc = Jesteś [color=yellow]powalony[/color]! Coś cię przewróciło albo się poślizgnąłeś, utrudniając ci poruszanie się.
 
-alerts-prying-name = Prying
+alerts-prying-name = Podważanie
 
-alerts-prying-desc = You can innately pry doors open using alternative interaction.
+alerts-prying-desc = Masz wrodzoną możliwość podważania drzwi używając alternatywnej interakcji.

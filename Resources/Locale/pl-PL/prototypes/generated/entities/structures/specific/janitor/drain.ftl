@@ -1,4 +1,4 @@
-ent-FloorDrain = drain
-    .desc = Drains puddles around it. Useful for dumping mop buckets or keeping certain rooms clean.
+ent-FloorDrain = odpływ
+    .desc = Odpływ do drenażu okolicznych kałuż. Użyteczne do opróżniania wiadrów z mopem lub utrzymywania pomieszczeń w czystości.
 ent-SolutionDrainNormal = { ent-SolutionDrain }
     .desc = { ent-SolutionDrain.desc }

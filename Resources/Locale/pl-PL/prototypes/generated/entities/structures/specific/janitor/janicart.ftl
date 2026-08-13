@@ -1,9 +1,9 @@
-ent-MopBucket = mop bucket
-    .desc = Holds water and the tears of the janitor.
-ent-MopBucketFull = mop bucket
-    .suffix = full
+ent-MopBucket = wiadro do mopa
+    .desc = Trzyma wodę i łzy woźnego.
+ent-MopBucketFull = wiadro do mopa
+    .suffix = Pełne
     .desc = { ent-MopBucket.desc }
-ent-MopBucketCubeWrapped = mop bucket cube
-    .desc = Unwrap this to get a mop bucket cube.
-ent-JanitorialTrolley = janitorial trolley
-    .desc = This is the alpha and omega of sanitation.
+ent-MopBucketCubeWrapped = kostka z wiadrem do mopa
+    .desc = Rozpakuj aby dostać kostke na wiadro do mopa.
+ent-JanitorialTrolley = wózek woźnego
+    .desc = To jest alfa i omega sanitacji.
