@@ -1,13 +1,4 @@
 ﻿Entries:
-- author: Velken
-  changes:
-  - message: RCD can no longer spam lights in the same spot.
-    type: Fix
-  - message: RCD can no longer be used to destroy indestructible tiles.
-    type: Fix
-  id: 9437
-  time: '2026-01-20T22:04:09.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42556
 - author: sowelipililimute
   changes:
   - message: Clothing now hides your body when it should, and doesn't show your body
@@ -4093,3 +4084,12 @@
   id: 9936
   time: '2026-08-11T17:43:15.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/871
+- author: Elperson
+  changes:
+  - message: "Dodano mo\u017Cliwo\u015B\u0107 emagowania kaucjomatu"
+    type: Add
+  - message: "Usuni\u0119to receptury do wytwarzania p\u0142ytek drukowanych kaucjomatu"
+    type: Remove
+  id: 9937
+  time: '2026-08-13T17:20:55.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/894
