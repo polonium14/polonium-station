@@ -4,8 +4,8 @@ meta:
   engineVersion: 284.0.0
   forkId: ""
   forkVersion: ""
-  time: 08/06/2026 09:25:21
-  entityCount: 4358
+  time: 08/14/2026 11:37:39
+  entityCount: 4360
 maps:
 - 1
 grids:
@@ -23706,6 +23706,20 @@ entities:
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 6.5,2.5
+- proto: VehicleJanicart
+  entities:
+  - uid: 2080
+    components:
+    - type: Transform
+      parent: 2
+      pos: -1.5122321,-11.43826
+- proto: VehicleKeyJanicart
+  entities:
+  - uid: 2265
+    components:
+    - type: Transform
+      parent: 2
+      pos: -2.496607,-12.547635
 - proto: VendingMachineAtmosDrobe
   entities:
   - uid: 1215
