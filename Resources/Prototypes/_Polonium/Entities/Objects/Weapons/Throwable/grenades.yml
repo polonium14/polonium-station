@@ -10,9 +10,9 @@
   - type: ReleaseGasOnTrigger
     keysIn:
     - timer
-    removeFraction: 0.25
+    removeFraction: 0.75
     air:
       volume: 1000
       moles:
-        Halon: 500
+        Halon: 300
       temperature: 293.15
