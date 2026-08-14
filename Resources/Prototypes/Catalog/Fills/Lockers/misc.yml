@@ -142,6 +142,7 @@
         weight: 98
       - id: SprayBottleWater #It's just budget cut after budget cut man
         weight: 2
+    - id: HalonGrenade # Polonium
 
 - type: entity
   id: ClosetFireFilled
