@@ -1,0 +1,18 @@
+# Polonium - Halon firefighting grenade
+- type: entity
+  parent: AirGrenade
+  id: HalonGrenade
+  name: halon grenade
+  description: An emergency firefighting grenade that floods an area with halon gas, smothering fires by devouring their oxygen. Do not deploy where people still need to breathe.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Weapons/Grenades/halonade.rsi
+  - type: ReleaseGasOnTrigger
+    keysIn:
+    - timer
+    removeFraction: 0.25
+    air:
+      volume: 1000
+      moles:
+        Halon: 500
+      temperature: 293.15
