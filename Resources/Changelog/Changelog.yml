@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: kipdotnet
-  changes:
-  - message: The "Lizard Power" graffiti decal has been replaced.
-    type: Tweak
-  id: 9439
-  time: '2026-01-20T22:39:51.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42541
 - author: ArtisticRoomba
   changes:
   - message: Powernet consumers like lathes, computers, blenders, centrifuges, electrolyzers,
@@ -4092,3 +4085,10 @@
   id: 9938
   time: '2026-08-13T17:25:03.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/865
+- author: haze
+  changes:
+  - message: Dodano granaty halonowe
+    type: Add
+  id: 9939
+  time: '2026-08-15T09:21:49.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/899
