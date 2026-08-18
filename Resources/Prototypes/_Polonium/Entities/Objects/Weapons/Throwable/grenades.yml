@@ -20,7 +20,8 @@
 # Polonium - Piemageddon grenade: chains into itself three times before scattering pies
 - type: entity
   parent: [VolatileGrenadeBase, TimerGrenadeBase]
-  id: PiemageddonGrenade
+  id: PiemageddonGrenadeAdmeme
+  suffix: Admeme
   name: Piemageddon grenade
   description: Chains into more of itself three times, before erupting into a storm of pies.
   components:
@@ -30,7 +31,7 @@
     - state: icon
       map: ["enum.TriggerVisualLayers.Base"]
   - type: PiemageddonGrenade
-    fillPrototype: PiemageddonChain2
+    fillPrototype: PiemageddonChain2Admeme
     count: 3
     distance: 4
     velocity: 6
@@ -50,7 +51,8 @@
 
 - type: entity
   parent: [VolatileGrenadeBase, TimerGrenadeBase]
-  id: PiemageddonChain2
+  id: PiemageddonChain2Admeme
+  suffix: Admeme
   name: Piemageddon grenade
   categories: [ HideSpawnMenu ]
   components:
@@ -60,14 +62,15 @@
     - state: icon
       map: ["enum.TriggerVisualLayers.Base"]
   - type: PiemageddonGrenade
-    fillPrototype: PiemageddonChain3
+    fillPrototype: PiemageddonChain3Admeme
     count: 3
     distance: 4
     velocity: 6
 
 - type: entity
   parent: [VolatileGrenadeBase, TimerGrenadeBase]
-  id: PiemageddonChain3
+  id: PiemageddonChain3Admeme
+  suffix: Admeme
   name: Piemageddon grenade
   categories: [ HideSpawnMenu ]
   components:
@@ -77,14 +80,15 @@
     - state: icon
       map: ["enum.TriggerVisualLayers.Base"]
   - type: PiemageddonGrenade
-    fillPrototype: PiemageddonTerminal
+    fillPrototype: PiemageddonTerminalAdmeme
     count: 3
     distance: 4
     velocity: 6
 
 - type: entity
   parent: [VolatileGrenadeBase, TimerGrenadeBase]
-  id: PiemageddonTerminal
+  id: PiemageddonTerminalAdmeme
+  suffix: Admeme
   name: Piemageddon pie
   categories: [ HideSpawnMenu ]
   components:
