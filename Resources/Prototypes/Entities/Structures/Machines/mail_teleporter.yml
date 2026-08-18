@@ -1,7 +1,7 @@
 - type: entity
   id: CargoMailTeleporter
   parent: [ BaseMachinePowered, ConstructibleMachine, BaseConstructibleMachineDestructible ]
-  name: Paczkomat
+  name: mail teleporter
   description: Periodically teleports in mail to deliver across the station.
   components:
   - type: Fixtures
