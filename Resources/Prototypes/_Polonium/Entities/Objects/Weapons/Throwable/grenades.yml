@@ -26,7 +26,7 @@
   description: Chains into more of itself three times, before erupting into a storm of pies.
   components:
   - type: Sprite
-    sprite: _Polonium/Objects/Weapons/Grenades/clusterbomb.rsi
+    sprite: _Polonium/Objects/Weapons/Grenades/piemagedon.rsi
     layers:
     - state: icon
       map: ["enum.TriggerVisualLayers.Base"]
@@ -57,7 +57,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: _Polonium/Objects/Weapons/Grenades/clusterbomb.rsi
+    sprite: _Polonium/Objects/Weapons/Grenades/piemagedon.rsi
     layers:
     - state: icon
       map: ["enum.TriggerVisualLayers.Base"]
@@ -75,7 +75,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: _Polonium/Objects/Weapons/Grenades/clusterbomb.rsi
+    sprite: _Polonium/Objects/Weapons/Grenades/piemagedon.rsi
     layers:
     - state: icon
       map: ["enum.TriggerVisualLayers.Base"]
@@ -93,7 +93,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: _Polonium/Objects/Weapons/Grenades/clusterbomb.rsi
+    sprite: _Polonium/Objects/Weapons/Grenades/piemagedon.rsi
     layers:
     - state: icon
       map: ["enum.TriggerVisualLayers.Base"]
