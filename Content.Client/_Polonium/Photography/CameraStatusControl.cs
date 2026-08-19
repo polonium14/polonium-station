@@ -12,14 +12,14 @@ namespace Content.Client._Polonium.Photography;
 public sealed class CameraStatusControl : Control
 {
     private readonly EntityUid _owner;
-    private readonly IEntityManager _entMan;
+    private readonly ItemToggleSystem _toggle;
     private readonly RichTextLabel _label;
     private bool? _lastState;
 
     public CameraStatusControl(EntityUid owner, IEntityManager entMan)
     {
         _owner = owner;
-        _entMan = entMan;
+        _toggle = entMan.System<ItemToggleSystem>();
         _label = new RichTextLabel { StyleClasses = { StyleNano.StyleClassItemStatus } };
         AddChild(_label);
         Update();
@@ -33,7 +33,7 @@ public sealed class CameraStatusControl : Control
 
     private void Update()
     {
-        var on = _entMan.System<ItemToggleSystem>().IsActivated(_owner);
+        var on = _toggle.IsActivated(_owner);
         if (_lastState == on)
             return;
 
