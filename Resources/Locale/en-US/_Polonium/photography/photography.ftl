@@ -16,3 +16,5 @@ admin-photo-unavailable = Photo unavailable.
 admin-photo-number = Photo #{$id}
 admin-photo-no-subject = no subject
 admin-photo-list-item = #{$id} - {$shooter} - {$subject}
+
+admin-alert-photo-header = Photo:{" "}

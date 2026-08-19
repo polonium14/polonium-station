@@ -13,7 +13,7 @@ public sealed partial class PhotosCommand : IConsoleCommand
 
     public string Command => "photos";
     public string Description => "Open the admin viewer for photos captured with cameras this round.";
-    public string Help => "photos";
+    public string Help => "photos [id] - pass an id to open focused on that photo (falls back to the list if it's gone).";
 
     public void Execute(IConsoleShell shell, string argStr, string[] args)
     {
@@ -23,6 +23,7 @@ public sealed partial class PhotosCommand : IConsoleCommand
             return;
         }
 
-        _eui.OpenEui(new AdminPhotoEui(), player);
+        int? focus = args.Length > 0 && int.TryParse(args[0], out var id) ? id : null;
+        _eui.OpenEui(new AdminPhotoEui(focus), player);
     }
 }

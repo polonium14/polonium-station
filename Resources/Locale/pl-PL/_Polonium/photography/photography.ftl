@@ -16,3 +16,5 @@ admin-photo-unavailable = Zdjęcie niedostępne.
 admin-photo-number = Zdjęcie #{$id}
 admin-photo-no-subject = brak obiektu
 admin-photo-list-item = #{$id} - {$shooter} - {$subject}
+
+admin-alert-photo-header = Zdjęcie:{" "}

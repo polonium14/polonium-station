@@ -150,8 +150,8 @@ public sealed partial class PoloniumPhotographySystem : SharedPoloniumPhotograph
             _photoNames[photoId] = name;
         _photoShooters[photoId] = pending.Session.Name;
 
-        _adminLog.Add(LogType.Action, LogImpact.High,
-            $"{ToPrettyString(pending.User):actor} took photo id {photoId} (subject: {pending.SubjectName ?? "none"})");
+        _adminLog.Add(LogType.Action, LogImpact.Extreme,
+            $"{pending.Session:player} took photo id {new LoggablePhotoId(photoId)} (subject: {pending.SubjectName ?? "none"})");
 
         var spawned = Spawn(pending.Photograph, pending.Coords);
         var photoComp = EnsureComp<PoloniumPhotographComponent>(spawned);

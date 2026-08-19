@@ -22,10 +22,11 @@ public sealed partial class AdminPhotoEui : BaseEui
 
     private int? _selected;
 
-    public AdminPhotoEui()
+    public AdminPhotoEui(int? focus = null)
     {
         IoCManager.InjectDependencies(this);
         _photography = _entMan.System<PoloniumPhotographySystem>();
+        _selected = focus;
     }
 
     public override void Opened()

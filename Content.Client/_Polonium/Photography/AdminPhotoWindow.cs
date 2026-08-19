@@ -27,6 +27,7 @@ public sealed partial class AdminPhotoWindow : DefaultWindow
     private readonly List<int> _ids = new();
     private int? _shownId;
     private OwnedTexture? _texture;
+    private bool _populating;
 
     public event Action<int>? OnSelect;
     public event Action<int>? OnDelete;
@@ -47,6 +48,8 @@ public sealed partial class AdminPhotoWindow : DefaultWindow
         };
         _list.OnItemSelected += args =>
         {
+            if (_populating)
+                return;
             if (args.ItemIndex < _ids.Count)
                 OnSelect?.Invoke(_ids[args.ItemIndex]);
         };
@@ -92,6 +95,8 @@ public sealed partial class AdminPhotoWindow : DefaultWindow
 
     public void Populate(AdminPhotoEuiState state)
     {
+        _populating = true;
+
         _list.Clear();
         _ids.Clear();
         foreach (var p in state.Photos)
@@ -103,7 +108,17 @@ public sealed partial class AdminPhotoWindow : DefaultWindow
 
         _shownId = state.SelectedId;
         _delete.Disabled = _shownId == null;
+
+        if (_shownId is { } sel)
+        {
+            var index = _ids.IndexOf(sel);
+            if (index >= 0)
+                _list[index].Selected = true;
+        }
+
         ShowImage(state.SelectedData);
+
+        _populating = false;
     }
 
     private void ShowImage(byte[]? data)

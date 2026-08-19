@@ -512,6 +512,10 @@ public sealed partial class AdminLogManager : SharedAdminLogManager, IAdminLogMa
 
             if (CreateCordLinks(coords, out var cordLinks))
                 _chat.SendAdminAlertNoFormatOrEscape(cordLinks);
+
+            // POLONIUM CHANGE: clickable "open this photo" link (impl in AdminLogManager.PhotoLinks.cs).
+            if (CreatePhotoLinks(GetPhotoIds(handler.Values), out var photoLinks))
+                _chat.SendAdminAlertNoFormatOrEscape(photoLinks);
         }
     }
 
