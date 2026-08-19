@@ -1,14 +1,4 @@
 ﻿Entries:
-- author: SabreML
-  changes:
-  - message: Added a colour picker and colour palette selector to the Spraypainter's
-      decal menu.
-    type: Add
-  - message: Made a few other tweaks to the Spraypainter's UI as well.
-    type: Tweak
-  id: 9446
-  time: '2026-01-22T18:02:54.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/41943
 - author: Minerva
   changes:
   - message: Defibrillator cabinets can now be constructed and deconstructed.
@@ -4082,3 +4072,10 @@
   id: 9945
   time: '2026-08-19T13:03:15.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/907
+- author: haze
+  changes:
+  - message: Dodano aparat fotograficzny!
+    type: Add
+  id: 9946
+  time: '2026-08-19T15:04:02.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/909
