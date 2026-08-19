@@ -16,3 +16,96 @@
       moles:
         Halon: 300
       temperature: 293.15
+
+# Polonium - Piemageddon grenade: chains into itself three times before scattering pies
+- type: entity
+  parent: [VolatileGrenadeBase, TimerGrenadeBase]
+  id: PiemageddonGrenadeAdmeme
+  suffix: Admeme
+  name: Piemageddon grenade
+  description: Chains into more of itself three times, before erupting into a storm of pies.
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Weapons/Grenades/piemagedon.rsi
+    layers:
+    - state: icon
+      map: ["enum.TriggerVisualLayers.Base"]
+  - type: PiemageddonGrenade
+    fillPrototype: PiemageddonChain2Admeme
+    count: 3
+    distance: 4
+    velocity: 6
+  - type: TimerTrigger
+    beepSound:
+      path: "/Audio/Effects/beep1.ogg"
+      params:
+        volume: 5
+    initialBeepDelay: 0
+    beepInterval: 0.5
+  - type: EmitSoundOnTrigger
+    keysIn:
+    - timer
+    sound:
+      path: "/Audio/Machines/door_lock_off.ogg"
+    positional: true
+
+- type: entity
+  parent: [VolatileGrenadeBase, TimerGrenadeBase]
+  id: PiemageddonChain2Admeme
+  suffix: Admeme
+  name: Piemageddon grenade
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Weapons/Grenades/piemagedon.rsi
+    layers:
+    - state: icon
+      map: ["enum.TriggerVisualLayers.Base"]
+  - type: PiemageddonGrenade
+    fillPrototype: PiemageddonChain3Admeme
+    count: 3
+    distance: 4
+    velocity: 6
+
+- type: entity
+  parent: [VolatileGrenadeBase, TimerGrenadeBase]
+  id: PiemageddonChain3Admeme
+  suffix: Admeme
+  name: Piemageddon grenade
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Weapons/Grenades/piemagedon.rsi
+    layers:
+    - state: icon
+      map: ["enum.TriggerVisualLayers.Base"]
+  - type: PiemageddonGrenade
+    fillPrototype: PiemageddonTerminalAdmeme
+    count: 3
+    distance: 4
+    velocity: 6
+
+- type: entity
+  parent: [VolatileGrenadeBase, TimerGrenadeBase]
+  id: PiemageddonTerminalAdmeme
+  suffix: Admeme
+  name: Piemageddon pie
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Polonium/Objects/Weapons/Grenades/piemagedon.rsi
+    layers:
+    - state: icon
+      map: ["enum.TriggerVisualLayers.Base"]
+  - type: PiemageddonGrenade
+    fillPrototype: FoodPieBananaCream
+    count: 15
+    distance: 4
+    velocity: 6
+    triggerContents: false
+  - type: EmitSoundOnTrigger
+    keysIn:
+    - timer
+    sound:
+      path: "/Audio/Items/bikehorn.ogg"
+    positional: true
