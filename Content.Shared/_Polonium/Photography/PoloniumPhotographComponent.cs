@@ -12,6 +12,6 @@ namespace Content.Shared._Polonium.Photography;
 public sealed partial class PoloniumPhotographComponent : Component
 {
     /// <summary>Key into the server's <c>PhotoStorageManager</c>. 0 means "no image yet" (e.g. the client never answered a capture request).</summary>
-    [DataField, AutoNetworkedField]
+    [AutoNetworkedField]
     public int PhotoId;
 }
