@@ -161,7 +161,7 @@
     - id: FlippoEngravedLighter
     - id: FlashlightSeclite
     - id: ForensicScanner
-    - id: PoloniumCamera
+    - id: PoloniumCamera # POLONIUM CHANGE
     - id: LogProbeCartridge
     - id: BoxForensicPad
     - id: DrinkDetFlask
