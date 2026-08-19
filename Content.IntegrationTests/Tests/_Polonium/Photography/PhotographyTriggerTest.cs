@@ -50,7 +50,9 @@ public sealed class PhotographyTriggerTest : InteractionTest
 
         // Arm the flash, then shoot. This runs the world-burst path (light + area blind);
         // the assertion is that a token is still issued and nothing threw.
-        await Server.WaitPost(() => toggle.TrySetActive(ToServer(cam), true));
+        var armed = false;
+        await Server.WaitPost(() => armed = toggle.TrySetActive(ToServer(cam), true));
+        Assert.That(armed, Is.True, "The flash must arm before the flash-on shot, or this degrades to a flash-off test.");
         await RunTicks(1);
 
         await Interact();
