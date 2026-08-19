@@ -1,23 +1,6 @@
 ﻿Entries:
 - author: ArtisticRoomba
   changes:
-  - message: Powernet consumers like lathes, computers, blenders, centrifuges, electrolyzers,
-      grinders, holopads, microwaves, etc. now have simple dynamic power consumption
-      behavior. When not in use, they will consume either little or no power, and
-      while in use, they will consume a sane amount of power.
-    type: Add
-  id: 9440
-  time: '2026-01-21T04:21:38.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/41961
-- author: sowelipililimute
-  changes:
-  - message: Cat tails are no longer accessible to humans.
-    type: Fix
-  id: 9441
-  time: '2026-01-22T02:43:47.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42579
-- author: ArtisticRoomba
-  changes:
   - message: Extra-bright lantern has been removed from the traitor uplink.
     type: Remove
   - message: Stealthbox has been buffed significantly, you'll be able to remain in
@@ -4092,3 +4075,17 @@
   id: 9939
   time: '2026-08-15T09:21:49.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/899
+- author: pinkscreen
+  changes:
+  - message: zmapowano janicarty na naszych mapach.
+    type: Add
+  id: 9940
+  time: '2026-08-19T09:54:22.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/898
+- author: pinkscreen
+  changes:
+  - message: Dodano Piemagedon
+    type: Add
+  id: 9941
+  time: '2026-08-19T09:52:24.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/906
