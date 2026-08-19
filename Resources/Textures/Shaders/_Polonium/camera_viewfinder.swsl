@@ -7,22 +7,23 @@ uniform highp float BORDER_PX;     // border thickness, px
 uniform highp vec3 BORDER_COLOR;   // border colour
 
 void fragment() {
-    highp vec3 orig = texture(SCREEN_TEXTURE, UV).xyz;
+    highp vec2 suv = FRAGCOORD.xy * SCREEN_PIXEL_SIZE;
+    highp vec3 orig = zTextureSpec(SCREEN_TEXTURE, suv).xyz;
 
     highp vec2 o = SCREEN_PIXEL_SIZE * BLUR;
     highp vec3 blurred = orig;
-    blurred += texture(SCREEN_TEXTURE, UV + vec2(o.x, 0.0)).xyz;
-    blurred += texture(SCREEN_TEXTURE, UV + vec2(-o.x, 0.0)).xyz;
-    blurred += texture(SCREEN_TEXTURE, UV + vec2(0.0, o.y)).xyz;
-    blurred += texture(SCREEN_TEXTURE, UV + vec2(0.0, -o.y)).xyz;
-    blurred += texture(SCREEN_TEXTURE, UV + vec2(o.x, o.y)).xyz;
-    blurred += texture(SCREEN_TEXTURE, UV + vec2(-o.x, o.y)).xyz;
-    blurred += texture(SCREEN_TEXTURE, UV + vec2(o.x, -o.y)).xyz;
-    blurred += texture(SCREEN_TEXTURE, UV + vec2(-o.x, -o.y)).xyz;
+    blurred += zTextureSpec(SCREEN_TEXTURE, suv + vec2(o.x, 0.0)).xyz;
+    blurred += zTextureSpec(SCREEN_TEXTURE, suv + vec2(-o.x, 0.0)).xyz;
+    blurred += zTextureSpec(SCREEN_TEXTURE, suv + vec2(0.0, o.y)).xyz;
+    blurred += zTextureSpec(SCREEN_TEXTURE, suv + vec2(0.0, -o.y)).xyz;
+    blurred += zTextureSpec(SCREEN_TEXTURE, suv + vec2(o.x, o.y)).xyz;
+    blurred += zTextureSpec(SCREEN_TEXTURE, suv + vec2(-o.x, o.y)).xyz;
+    blurred += zTextureSpec(SCREEN_TEXTURE, suv + vec2(o.x, -o.y)).xyz;
+    blurred += zTextureSpec(SCREEN_TEXTURE, suv + vec2(-o.x, -o.y)).xyz;
     blurred /= 9.0;
     blurred *= DIM;
 
-    highp vec2 px = vec2(UV.x, 1.0 - UV.y) / SCREEN_PIXEL_SIZE;
+    highp vec2 px = vec2(suv.x, 1.0 - suv.y) / SCREEN_PIXEL_SIZE;
     highp vec2 d = abs(px - CENTER_PX) - HALF_PX;
     highp float outside = max(d.x, d.y);
 
