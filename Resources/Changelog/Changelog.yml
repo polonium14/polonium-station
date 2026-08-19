@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: Absotively
-  changes:
-  - message: APC power toggle and midi channel window "show track names" button now
-      use switch-style buttons
-    type: Tweak
-  id: 9445
-  time: '2026-01-22T17:46:58.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/39161
 - author: SabreML
   changes:
   - message: Added a colour picker and colour palette selector to the Spraypainter's
@@ -4083,3 +4075,10 @@
   id: 9944
   time: '2026-08-19T11:30:56.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/908
+- author: pinkscreen
+  changes:
+  - message: Nowy sprite mailboxa teraz jako cargomat
+    type: Add
+  id: 9945
+  time: '2026-08-19T13:03:15.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/907
