@@ -1,0 +1,4 @@
+- type: shader
+  id: PoloniumCameraViewfinder
+  kind: source
+  path: "/Textures/Shaders/_Polonium/camera_viewfinder.swsl"

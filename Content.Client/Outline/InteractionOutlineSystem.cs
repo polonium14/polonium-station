@@ -30,6 +30,13 @@ public sealed partial class InteractionOutlineSystem : EntitySystem
     private bool _enabled = true;
 
     /// <summary>
+    ///     POLONIUM CHANGE!
+    ///     Current value of the temporary-disable flag, so a caller that disables the
+    ///     outline can restore the prior state instead of clobbering another system's disable.
+    /// </summary>
+    public bool Enabled => _enabled;
+
+    /// <summary>
     ///     Whether to draw the outline at all. Overrides <see cref="_enabled"/>.
     /// </summary>
     private bool _cvarEnabled = true;
