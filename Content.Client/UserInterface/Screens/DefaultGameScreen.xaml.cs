@@ -33,12 +33,14 @@ public sealed partial class DefaultGameScreen : InGameScreen
         SetAnchorAndMarginPreset(Hotbar, LayoutPreset.BottomWide, margin: 5);
         SetAnchorAndMarginPreset(Chat, LayoutPreset.TopRight, margin: 10);
         SetAnchorAndMarginPreset(Alerts, LayoutPreset.TopRight, margin: 10);
+        SetGrowHorizontal(Alerts, GrowDirection.Begin);
         SetAnchorAndMarginPreset(Targeting, LayoutPreset.BottomRight, margin: 5);
 
         Chat.OnResized += ChatOnResized;
         Chat.OnChatResizeFinish += ChatOnResizeFinish;
 
         MainViewport.OnResized += ResizeActionContainer;
+        MainViewport.OnResized += ResizeAlertsContainer;
         Inventory.OnResized += ResizeActionContainer;
     }
 
@@ -46,6 +48,12 @@ public sealed partial class DefaultGameScreen : InGameScreen
     {
         float indent = Inventory.Size.Y + TopBar.Size.Y + 40;
         Actions.ActionsContainer.MaxGridHeight = MainViewport.Size.Y - indent;
+    }
+
+    private void ResizeAlertsContainer()
+    {
+        float indent = Chat.Size.Y + Targeting.Size.Y + 120;
+        Alerts.AlertContainer.MaxGridHeight = Math.Max(MainViewport.Size.Y - indent, 1);
     }
 
     private void ChatOnResizeFinish(Vector2 _)
@@ -59,6 +67,7 @@ public sealed partial class DefaultGameScreen : InGameScreen
     {
         var marginBottom = Chat.GetValue<float>(MarginBottomProperty);
         SetMarginTop(Alerts, marginBottom);
+        ResizeAlertsContainer();
     }
 
     public override ChatBox ChatBox => Chat;
@@ -69,5 +78,6 @@ public sealed partial class DefaultGameScreen : InGameScreen
         SetMarginBottom(Chat, size.X);
         SetMarginLeft(Chat, size.Y);
         SetMarginTop(Alerts, size.X);
+        ResizeAlertsContainer();
     }
 }
