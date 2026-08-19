@@ -12,11 +12,11 @@ namespace Content.Server._Polonium.Photography;
 
 /// <summary>Server half of the admin photo viewer.</summary>
 [UsedImplicitly]
-public sealed class AdminPhotoEui : BaseEui
+public sealed partial class AdminPhotoEui : BaseEui
 {
-    [Dependency] private readonly IEntityManager _entMan = default!;
-    [Dependency] private readonly IAdminManager _admin = default!;
-    [Dependency] private readonly IAdminLogManager _adminLog = default!;
+    [Dependency] private IEntityManager _entMan = default!;
+    [Dependency] private IAdminManager _admin = default!;
+    [Dependency] private IAdminLogManager _adminLog = default!;
 
     private readonly PoloniumPhotographySystem _photography;
 

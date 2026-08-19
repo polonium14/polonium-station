@@ -9,7 +9,7 @@ using SixLabors.ImageSharp.PixelFormats;
 namespace Content.Client._Polonium.Photography;
 
 /// <summary>Client half: on a server capture request, hands the target to the capture control, which renders the player's view, crops around the target, grades + packs to RGB565, and sends it up.</summary>
-public sealed class PoloniumPhotographySystem : SharedPoloniumPhotographySystem
+public sealed partial class PoloniumPhotographySystem : SharedPoloniumPhotographySystem
 {
     [Dependency] private IClyde _clyde = default!;
     [Dependency] private IUserInterfaceManager _ui = default!;

@@ -20,7 +20,7 @@ namespace Content.Client._Polonium.Photography;
 /// Rendered from the PLAYER's eye with FOV on, then cropped to a <see cref="PhotographyConstants.PhotoSizePixels"/>-square around the target, so the camera sees exactly what the player sees (walls occlude, glass shows through) and never ends up "inside" a wall the way an eye at the subject would.
 /// Flash captures spawn a client-only point light at the target just before <c>Render()</c> and delete it right after; it lands this frame because the light-tree query flushes pending inserts before rendering and <c>Render()</c> is synchronous.
 /// </summary>
-public sealed class PhotographyCaptureControl : Control, IDisposable
+public sealed partial class PhotographyCaptureControl : Control, IDisposable
 {
     private const int Crop = PhotographyConstants.PhotoSizePixels;
     private const int Tile = PhotographyConstants.PixelsPerTile;
@@ -176,7 +176,7 @@ public sealed class PhotographyCaptureControl : Control, IDisposable
         return light;
     }
 
-    public void Dispose()
+    public new void Dispose()
     {
         _disposed = true;
         _queue.Clear();

@@ -9,12 +9,12 @@ using Robust.Shared.Prototypes;
 namespace Content.Client._Polonium.Photography;
 
 /// <summary>Screen-space viewfinder: via <c>camera_viewfinder.swsl</c>, dims + blurs everything except the sharp window around the shot's target. <see cref="CameraViewfinderSystem"/> updates the window each frame; this overlay feeds it to the shader.</summary>
-public sealed class CameraViewfinderOverlay : Overlay
+public sealed partial class CameraViewfinderOverlay : Overlay
 {
     private static readonly ProtoId<ShaderPrototype> ShaderProto = "PoloniumCameraViewfinder";
 
-    [Dependency] private readonly IEyeManager _eye = default!;
-    [Dependency] private readonly IPrototypeManager _proto = default!;
+    [Dependency] private IEyeManager _eye = default!;
+    [Dependency] private IPrototypeManager _proto = default!;
 
     private readonly ShaderInstance _shader;
 

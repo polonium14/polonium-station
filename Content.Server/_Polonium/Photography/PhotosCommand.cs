@@ -7,9 +7,9 @@ namespace Content.Server._Polonium.Photography;
 
 /// <summary>Opens the admin photo viewer to review and delete this round's captured photos.</summary>
 [AdminCommand(AdminFlags.Admin)]
-public sealed class PhotosCommand : IConsoleCommand
+public sealed partial class PhotosCommand : IConsoleCommand
 {
-    [Dependency] private readonly EuiManager _eui = default!;
+    [Dependency] private EuiManager _eui = default!;
 
     public string Command => "photos";
     public string Description => "Open the admin viewer for photos captured with cameras this round.";

@@ -11,11 +11,11 @@ using SixLabors.ImageSharp.PixelFormats;
 namespace Content.Client._Polonium.Photography;
 
 /// <summary>Shows a developed photograph as a bare polaroid - no window chrome, just the card: pixel image in a dark inset on off-white paper, fat bottom caption strip, top-right X, drag-to-move. Texture is built from the unpacked RGB565 blob (no image decoder runs).</summary>
-public sealed class PhotoViewerWindow : BaseWindow
+public sealed partial class PhotoViewerWindow : BaseWindow
 {
     [Dependency] private IClyde _clyde = default!;
 
-    private const int Size = PhotographyConstants.PhotoSizePixels;
+    private new const int Size = PhotographyConstants.PhotoSizePixels;
     private const int Scale = 3;
 
     private static readonly Color PaperColor = Color.FromHex("#F3EFE4");

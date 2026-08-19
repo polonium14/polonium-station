@@ -12,11 +12,11 @@ using SixLabors.ImageSharp.PixelFormats;
 namespace Content.Client._Polonium.Photography;
 
 /// <summary>Admin window listing every photo captured this round.</summary>
-public sealed class AdminPhotoWindow : DefaultWindow
+public sealed partial class AdminPhotoWindow : DefaultWindow
 {
-    [Dependency] private readonly IClyde _clyde = default!;
+    [Dependency] private IClyde _clyde = default!;
 
-    private const int Size = PhotographyConstants.PhotoSizePixels;
+    private new const int Size = PhotographyConstants.PhotoSizePixels;
     private const int Scale = 2;
 
     private readonly ItemList _list;

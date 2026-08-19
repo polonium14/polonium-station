@@ -28,7 +28,7 @@ namespace Content.Server._Polonium.Photography;
 /// memory) and a photograph entity carrying only the storage id is spawned. The blob streams
 /// to a single viewer via the BUI state, never an auto-networked field.
 /// </summary>
-public sealed class PoloniumPhotographySystem : SharedPoloniumPhotographySystem
+public sealed partial class PoloniumPhotographySystem : SharedPoloniumPhotographySystem
 {
     [Dependency] private UserInterfaceSystem _ui = default!;
     [Dependency] private SharedHandsSystem _hands = default!;

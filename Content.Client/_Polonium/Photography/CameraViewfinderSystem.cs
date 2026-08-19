@@ -18,17 +18,17 @@ using Robust.Shared.Maths;
 namespace Content.Client._Polonium.Photography;
 
 /// <summary>Drives the <see cref="CameraViewfinderOverlay"/> while a camera is in the active hand and the cursor is over the game view: each frame resolves the target (entity under cursor, else cursor tile), eases the window toward it, and reddens the border when the shot is blocked by line of sight / range.</summary>
-public sealed class CameraViewfinderSystem : EntitySystem
+public sealed partial class CameraViewfinderSystem : EntitySystem
 {
-    [Dependency] private readonly IPlayerManager _player = default!;
-    [Dependency] private readonly IUserInterfaceManager _ui = default!;
-    [Dependency] private readonly IInputManager _input = default!;
-    [Dependency] private readonly IOverlayManager _overlay = default!;
-    [Dependency] private readonly IStateManager _state = default!;
-    [Dependency] private readonly SharedHandsSystem _hands = default!;
-    [Dependency] private readonly ExamineSystemShared _examine = default!;
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly InventorySystem _inventory = default!;
+    [Dependency] private IPlayerManager _player = default!;
+    [Dependency] private IUserInterfaceManager _ui = default!;
+    [Dependency] private IInputManager _input = default!;
+    [Dependency] private IOverlayManager _overlay = default!;
+    [Dependency] private IStateManager _state = default!;
+    [Dependency] private SharedHandsSystem _hands = default!;
+    [Dependency] private ExamineSystemShared _examine = default!;
+    [Dependency] private SharedTransformSystem _transform = default!;
+    [Dependency] private InventorySystem _inventory = default!;
 
     private const float LerpFactor = 20f;
 
