@@ -1,0 +1,57 @@
+uniform sampler2D SCREEN_TEXTURE;
+uniform highp vec2 CENTER_PX;      // window centre, screen px
+uniform highp vec2 HALF_PX;        // window half-extents, screen px
+uniform highp float DIM;           // outside brightness multiplier (0..1)
+uniform highp float BLUR;          // blur sample offset scale, px
+uniform highp float BORDER_PX;     // border thickness, px
+uniform highp vec3 BORDER_COLOR;   // border colour
+
+void fragment() {
+    highp vec2 suv = FRAGCOORD.xy * SCREEN_PIXEL_SIZE;
+    highp vec3 orig = zTextureSpec(SCREEN_TEXTURE, suv).xyz;
+
+    highp vec2 o = SCREEN_PIXEL_SIZE * BLUR;
+    highp vec3 blurred = orig;
+    blurred += zTextureSpec(SCREEN_TEXTURE, suv + vec2(o.x, 0.0)).xyz;
+    blurred += zTextureSpec(SCREEN_TEXTURE, suv + vec2(-o.x, 0.0)).xyz;
+    blurred += zTextureSpec(SCREEN_TEXTURE, suv + vec2(0.0, o.y)).xyz;
+    blurred += zTextureSpec(SCREEN_TEXTURE, suv + vec2(0.0, -o.y)).xyz;
+    blurred += zTextureSpec(SCREEN_TEXTURE, suv + vec2(o.x, o.y)).xyz;
+    blurred += zTextureSpec(SCREEN_TEXTURE, suv + vec2(-o.x, o.y)).xyz;
+    blurred += zTextureSpec(SCREEN_TEXTURE, suv + vec2(o.x, -o.y)).xyz;
+    blurred += zTextureSpec(SCREEN_TEXTURE, suv + vec2(-o.x, -o.y)).xyz;
+    blurred /= 9.0;
+    blurred *= DIM;
+
+    highp vec2 px = vec2(suv.x, 1.0 - suv.y) / SCREEN_PIXEL_SIZE;
+    highp vec2 d = abs(px - CENTER_PX) - HALF_PX;
+    highp float outside = max(d.x, d.y);
+
+    highp float mask = step(0.0, outside);
+    highp vec3 col = mix(orig, blurred, mask);
+
+    highp vec2 rel = px - CENTER_PX;
+    highp vec2 a = abs(rel);
+    highp float t = BORDER_PX;                       // line half-thickness, px
+    highp float base = min(HALF_PX.x, HALF_PX.y);    // square-safe scale
+
+    highp float armO = base * 0.28;
+    highp float vO = step(abs(a.x - HALF_PX.x), t) * step(HALF_PX.y - armO, a.y) * step(a.y, HALF_PX.y + t);
+    highp float hO = step(abs(a.y - HALF_PX.y), t) * step(HALF_PX.x - armO, a.x) * step(a.x, HALF_PX.x + t);
+    highp float outerB = max(vO, hO);
+
+    highp vec2 innerH = HALF_PX * 0.42;
+    highp float armI = base * 0.14;
+    highp float vI = step(abs(a.x - innerH.x), t) * step(innerH.y - armI, a.y) * step(a.y, innerH.y + t);
+    highp float hI = step(abs(a.y - innerH.y), t) * step(innerH.x - armI, a.x) * step(a.x, innerH.x + t);
+    highp float innerB = max(vI, hI);
+
+    highp float rad = base * 0.14;
+    highp float ring = step(abs(length(rel) - rad), t);
+    highp float circle = ring * step(base * 0.05, a.x);
+
+    highp float reticle = max(max(outerB, innerB), circle);
+    col = mix(col, BORDER_COLOR, reticle);
+
+    COLOR = vec4(col, 1.0);
+}
