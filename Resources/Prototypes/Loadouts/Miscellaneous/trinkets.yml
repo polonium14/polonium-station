@@ -47,6 +47,18 @@
     - PlushieCirno
 
 - type: loadout
+  id: PlushieItanKio
+  storage:
+    back:
+    - PlushieItanKio
+
+- type: loadout
+  id: PlushieMothDeathshead
+  storage:
+    back:
+    - PlushieMothDeathshead
+
+- type: loadout
   id: ThreeCandles
   dummyEntity: LoadoutDummyCandles
   storage:

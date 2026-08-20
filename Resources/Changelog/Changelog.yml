@@ -1,18 +1,4 @@
 ﻿Entries:
-- author: sowelipililimute
-  changes:
-  - message: Arachnids can now eat raw meat again.
-    type: Fix
-  id: 9448
-  time: '2026-01-22T21:14:52.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42529
-- author: sowelipililimute
-  changes:
-  - message: Hands will no longer sometimes display in the wrong order.
-    type: Fix
-  id: 9449
-  time: '2026-01-22T21:47:37.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42534
 - author: Bhijn and Myr
   changes:
   - message: Grappling hooks have been reworked. They are now physics-driven, meaning
@@ -4079,3 +4065,18 @@
   id: 9947
   time: '2026-08-19T22:41:57.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/915
+- author: notsssnek
+  changes:
+  - message: "Umo\u017Cliwiono zbieranie z\u0142omu do scrap bag\xF3w"
+    type: Tweak
+  id: 9948
+  time: '2026-08-20T09:43:04.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/916
+- author: haze
+  changes:
+  - message: "Dodano wiadomo\u015B\u0107 dotycz\u0105c\u0105 wype\u0142nienia cel\xF3\
+      w antaga"
+    type: Add
+  id: 9949
+  time: '2026-08-20T09:59:33.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/888
