@@ -1,25 +1,4 @@
 ﻿Entries:
-- author: Bhijn and Myr
-  changes:
-  - message: Grappling hooks have been reworked. They are now physics-driven, meaning
-      that they use actual physical forces to retract.
-    type: Tweak
-  - message: The majority of known exploits of grappling hooks have been fixed as
-      a result. You can no longer clip into walls via grappling hook, and you can
-      no longer teleport your friends across the station by having them hook onto
-      an object and stay still.
-    type: Fix
-  id: 9450
-  time: '2026-01-22T22:30:46.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42409
-- author: B_Kirill
-  changes:
-  - message: Fixed construction preview ghost sprite offset not matching the original
-      entity.
-    type: Fix
-  id: 9451
-  time: '2026-01-22T22:47:33.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42193
 - author: Beck, Julian
   changes:
   - message: Added feedback popups that players get at the end of the round! They
@@ -4080,3 +4059,20 @@
   id: 9949
   time: '2026-08-20T09:59:33.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/888
+- author: Saver310
+  changes:
+  - message: Przeportowano pluszaki
+    type: Add
+  id: 9950
+  time: '2026-08-20T14:24:35.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/774
+- author: Saver310
+  changes:
+  - message: "Przet\u0142umaczenie plakat\xF3w Bunt, Czysto\u015B\u0107, Zakaz ERP,\
+      \ Karabin Jonowy, Kosmiczne Gliny i Podaj Prawa"
+    type: Add
+  - message: "Drobne zmiany w t\u0142umaczeniach"
+    type: Tweak
+  id: 9951
+  time: '2026-08-20T14:24:04.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/918
