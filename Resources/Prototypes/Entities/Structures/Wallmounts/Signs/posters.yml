@@ -510,6 +510,7 @@
   description: "There are 3 shards and a singularity.  The shards are singing.  The engineers are crying."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster53_contraband
 
 - type: entity
@@ -780,6 +781,7 @@
   description: "A poster instructing the viewer not to ask about things they aren't meant to know."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster16_legit
 
 - type: entity
@@ -789,6 +791,7 @@
   description: " A poster encouraging you to work for your future."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster17_legit
 
 - type: entity
