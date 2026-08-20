@@ -821,6 +821,7 @@
   description: "A poster instructing the viewer to report suspicious activity to the security force."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster21_legit
 
 - type: entity
@@ -830,6 +831,7 @@
   description: "A poster encouraging the swift reporting of crime or seditious behavior to station security."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster22_legit
 
 - type: entity
@@ -867,6 +869,7 @@
   description: "A reprint of a poster from 2505, commemorating the 50th Anniversary of Nanoposters Manufacturing, a subsidiary of Nanotrasen."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster26_legit
 
 - type: entity
@@ -1138,6 +1141,7 @@
   description: "Think three times before opening the airlock to hydroponics, a red threat might be hiding there."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster56_legit
 
 #maps

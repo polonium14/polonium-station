@@ -20,13 +20,25 @@
             "name": "poster13_legit"
         },
         {
+            "name": "poster21_legit"
+        },
+        {
+            "name": "poster22_legit"
+        },
+        {
             "name": "poster23_legit"
+        },
+        {
+            "name": "poster26_legit"
         },
         {
             "name": "poster34_legit"
         },
         {
             "name": "poster56_contraband"
+        },
+        {
+            "name": "poster56_legit"
         }
     ]
 }
