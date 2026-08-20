@@ -655,6 +655,7 @@
   description: "A poster warning of the dangers of poor hygiene."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster3_legit
 
 - type: entity
@@ -934,6 +935,7 @@
   description: "This poster reminds the crew that Eroticism and Pornography are banned on Nanotrasen stations."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster34_legit
 
 - type: entity
