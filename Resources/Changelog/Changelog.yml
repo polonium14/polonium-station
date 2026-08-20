@@ -1,13 +1,4 @@
 ﻿Entries:
-- author: Beck, Julian
-  changes:
-  - message: Added feedback popups that players get at the end of the round! They
-      will list all "test" PRs or PRs that people want feedback on. Right now they
-      will link to a form thread
-    type: Add
-  id: 9452
-  time: '2026-01-22T22:47:33.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/41352
 - author: archee1
   changes:
   - message: thief's 'Steal the beer goggles' objective has been replaced with 'Steal
@@ -4076,3 +4067,10 @@
   id: 9951
   time: '2026-08-20T14:24:04.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/918
+- author: Saver310
+  changes:
+  - message: Dodano nowe sprity dla cargomatu
+    type: Add
+  id: 9952
+  time: '2026-08-20T14:46:42.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/917
