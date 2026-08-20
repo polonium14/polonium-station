@@ -722,6 +722,7 @@
   description: "A poster instructing the viewer to walk instead of running."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster10_legit
 
 - type: entity
@@ -741,6 +742,7 @@
   description: "Ian is love, Ian is life."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster12_legit
 
 - type: entity
