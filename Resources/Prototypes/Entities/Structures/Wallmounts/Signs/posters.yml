@@ -537,6 +537,7 @@
   description: "Revolutionist propaganda, manufactured by the Syndicate."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster56_contraband
 
 - type: entity
@@ -838,6 +839,7 @@
   description: "A poster displaying an Ion Rifle."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster23_legit
 
 - type: entity
