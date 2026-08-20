@@ -728,6 +728,7 @@
   description: "A poster instructing cyborgs to state their laws."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster11_legit
 
 - type: entity
@@ -746,6 +747,7 @@
   description: "A poster advertising the television show Space Cops."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster13_legit
 
 - type: entity
