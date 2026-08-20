@@ -687,6 +687,7 @@
   description: "A poster blessing this area."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster6_legit
 
 - type: entity
@@ -696,6 +697,7 @@
   description: "A poster depicting an atom."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster7_legit
 
 - type: entity
