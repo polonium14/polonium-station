@@ -666,6 +666,7 @@
   description: "A poster encouraging you to help fellow crewmembers."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster4_legit
 
 - type: entity
@@ -675,6 +676,7 @@
   description: "A poster glorifying the engineering team."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster5_legit
 
 - type: entity
