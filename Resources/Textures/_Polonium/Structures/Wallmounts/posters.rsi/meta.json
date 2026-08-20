@@ -5,10 +5,28 @@
         "y": 32
     },
     "license": "CC-BY-NC-SA-3.0",
-    "copyright": "Made by Polonium Station (https://github.com/polonium14/polonium-station) [add link to commit when taking from Polonium Station]",
+    "copyright": "Made by Polonium Station (https://github.com/polonium14/polonium-station), translated posters by Saver310",
     "states": [
         {
             "name": "nfz"
+        },
+        {
+            "name": "poster3_legit"
+        },
+        {
+            "name": "poster11_legit"
+        },
+        {
+            "name": "poster13_legit"
+        },
+        {
+            "name": "poster23_legit"
+        },
+        {
+            "name": "poster34_legit"
+        },
+        {
+            "name": "poster56_contraband"
         }
     ]
 }

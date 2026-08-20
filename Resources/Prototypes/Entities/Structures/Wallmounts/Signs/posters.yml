@@ -537,6 +537,7 @@
   description: "Revolutionist propaganda, manufactured by the Syndicate."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster56_contraband
 
 - type: entity
@@ -655,6 +656,7 @@
   description: "A poster warning of the dangers of poor hygiene."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster3_legit
 
 - type: entity
@@ -727,6 +729,7 @@
   description: "A poster instructing cyborgs to state their laws."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster11_legit
 
 - type: entity
@@ -745,6 +748,7 @@
   description: "A poster advertising the television show Space Cops."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster13_legit
 
 - type: entity
@@ -835,6 +839,7 @@
   description: "A poster displaying an Ion Rifle."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster23_legit
 
 - type: entity
@@ -934,6 +939,7 @@
   description: "This poster reminds the crew that Eroticism and Pornography are banned on Nanotrasen stations."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster34_legit
 
 - type: entity
