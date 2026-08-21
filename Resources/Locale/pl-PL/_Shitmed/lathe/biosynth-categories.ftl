@@ -1,0 +1,13 @@
+lathe-category-biosynth-arachnid = Arachnid
+lathe-category-biosynth-diona = Diona
+lathe-category-biosynth-dwarf = Dwarf
+lathe-category-biosynth-felinid = Felinid
+lathe-category-biosynth-gingerbread = Gingerbread
+lathe-category-biosynth-harpy = Harpy
+lathe-category-biosynth-human = Human
+lathe-category-biosynth-moth = Moth
+lathe-category-biosynth-reptilian = Reptilian
+lathe-category-biosynth-rodentia = Rodentia
+lathe-category-biosynth-thaven = Thaven
+lathe-category-biosynth-vox = Vox
+lathe-category-biosynth-vulpkanin = Vulpkanin
