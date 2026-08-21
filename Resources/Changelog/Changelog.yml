@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: archee1
-  changes:
-  - message: thief's 'Steal the beer goggles' objective has been replaced with 'Steal
-      the HUDs' collection objective, requiring varied HUD eyewear items.
-    type: Tweak
-  id: 9453
-  time: '2026-01-22T23:04:31.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/38043
 - author: sowelipililimute
   changes:
   - message: Drinking or eating things now gradually trickles into the bloodstream,
@@ -4074,3 +4066,10 @@
   id: 9952
   time: '2026-08-20T14:46:42.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/917
+- author: Saver310
+  changes:
+  - message: "Przet\u0142umaczenie grafik plakat\xF3w"
+    type: Add
+  id: 9953
+  time: '2026-08-21T08:16:15.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/919
