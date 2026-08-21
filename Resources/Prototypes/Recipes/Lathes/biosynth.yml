@@ -1,0 +1,110 @@
+# Medical biofabricator recipes - fabricate bio-synthetic organs/limbs from biomass.
+# Ported from polonium-old (rehydrateable.yml); pizza-arm emag recipes intentionally omitted.
+
+- type: latheRecipe
+  id: SynthHeart
+  result: BioSynthHeart
+  completetime: 10
+  materials:
+    Biomass: 10
+
+- type: latheRecipe
+  id: SynthLungs
+  result: BioSynthLungs
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthLiver
+  result: BioSynthLiver
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthEyes
+  result: BioSynthEyes
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthStomach
+  result: BioSynthStomach
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthLeftArm
+  result: BioSynthLeftArm
+  completetime: 10
+  materials:
+    Biomass: 6
+
+- type: latheRecipe
+  id: SynthLeftHand
+  result: BioSynthLeftHand
+  completetime: 10
+  materials:
+    Biomass: 3
+
+- type: latheRecipe
+  id: SynthRightArm
+  result: BioSynthRightArm
+  completetime: 10
+  materials:
+    Biomass: 6
+
+- type: latheRecipe
+  id: SynthRightHand
+  result: BioSynthRightHand
+  completetime: 10
+  materials:
+    Biomass: 3
+
+- type: latheRecipe
+  id: SynthLeftLeg
+  result: BioSynthLeftLeg
+  completetime: 10
+  materials:
+    Biomass: 6
+
+- type: latheRecipe
+  id: SynthRightLeg
+  result: BioSynthRightLeg
+  completetime: 10
+  materials:
+    Biomass: 6
+
+- type: latheRecipe
+  id: SynthLeftFoot
+  result: BioSynthLeftFoot
+  completetime: 10
+  materials:
+    Biomass: 3
+
+- type: latheRecipe
+  id: SynthRightFoot
+  result: BioSynthRightFoot
+  completetime: 10
+  materials:
+    Biomass: 3
+
+- type: latheRecipePack
+  id: MedicalBiofabStatic
+  recipes:
+  - SynthLiver
+  - SynthHeart
+  - SynthLungs
+  - SynthEyes
+  - SynthStomach
+  - SynthLeftLeg
+  - SynthRightLeg
+  - SynthLeftFoot
+  - SynthRightFoot
+  - SynthLeftArm
+  - SynthRightArm
+  - SynthLeftHand
+  - SynthRightHand
