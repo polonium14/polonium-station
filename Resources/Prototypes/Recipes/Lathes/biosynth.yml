@@ -1,93 +1,1443 @@
-# Medical biofabricator recipes - fabricate bio-synthetic organs/limbs from biomass.
-# Ported from polonium-old (rehydrateable.yml); pizza-arm emag recipes intentionally omitted.
+- type: latheCategory
+  id: BiosynthArachnid
+  name: lathe-category-biosynth-arachnid
+
+- type: latheCategory
+  id: BiosynthDiona
+  name: lathe-category-biosynth-diona
+
+- type: latheCategory
+  id: BiosynthDwarf
+  name: lathe-category-biosynth-dwarf
+
+- type: latheCategory
+  id: BiosynthFelinid
+  name: lathe-category-biosynth-felinid
+
+- type: latheCategory
+  id: BiosynthGingerbread
+  name: lathe-category-biosynth-gingerbread
+
+- type: latheCategory
+  id: BiosynthHarpy
+  name: lathe-category-biosynth-harpy
+
+- type: latheCategory
+  id: BiosynthHuman
+  name: lathe-category-biosynth-human
+
+- type: latheCategory
+  id: BiosynthMoth
+  name: lathe-category-biosynth-moth
+
+- type: latheCategory
+  id: BiosynthReptilian
+  name: lathe-category-biosynth-reptilian
+
+- type: latheCategory
+  id: BiosynthRodentia
+  name: lathe-category-biosynth-rodentia
+
+- type: latheCategory
+  id: BiosynthThaven
+  name: lathe-category-biosynth-thaven
+
+- type: latheCategory
+  id: BiosynthVox
+  name: lathe-category-biosynth-vox
+
+- type: latheCategory
+  id: BiosynthVulpkanin
+  name: lathe-category-biosynth-vulpkanin
 
 - type: latheRecipe
-  id: SynthHeart
-  result: BioSynthHeart
+  id: SynthArachnidHeart
+  result: OrganArachnidHeart
+  categories: [ BiosynthArachnid ]
   completetime: 10
   materials:
     Biomass: 10
 
 - type: latheRecipe
-  id: SynthLungs
-  result: BioSynthLungs
+  id: SynthArachnidLiver
+  result: OrganArachnidLiver
+  categories: [ BiosynthArachnid ]
   completetime: 10
   materials:
     Biomass: 4
 
 - type: latheRecipe
-  id: SynthLiver
-  result: BioSynthLiver
+  id: SynthArachnidLungs
+  result: OrganArachnidLungs
+  categories: [ BiosynthArachnid ]
   completetime: 10
   materials:
     Biomass: 4
 
 - type: latheRecipe
-  id: SynthEyes
-  result: BioSynthEyes
+  id: SynthArachnidEyes
+  result: OrganArachnidEyes
+  categories: [ BiosynthArachnid ]
   completetime: 10
   materials:
     Biomass: 4
 
 - type: latheRecipe
-  id: SynthStomach
-  result: BioSynthStomach
+  id: SynthArachnidStomach
+  result: OrganArachnidStomach
+  categories: [ BiosynthArachnid ]
   completetime: 10
   materials:
     Biomass: 4
 
 - type: latheRecipe
-  id: SynthLeftArm
-  result: BioSynthLeftArm
+  id: SynthArachnidHead
+  result: OrganArachnidHead
+  categories: [ BiosynthArachnid ]
+  completetime: 10
+  materials:
+    Biomass: 8
+
+- type: latheRecipe
+  id: SynthArachnidArmLeft
+  result: OrganArachnidArmLeft
+  categories: [ BiosynthArachnid ]
   completetime: 10
   materials:
     Biomass: 6
 
 - type: latheRecipe
-  id: SynthLeftHand
-  result: BioSynthLeftHand
+  id: SynthArachnidArmRight
+  result: OrganArachnidArmRight
+  categories: [ BiosynthArachnid ]
+  completetime: 10
+  materials:
+    Biomass: 6
+
+- type: latheRecipe
+  id: SynthArachnidHandLeft
+  result: OrganArachnidHandLeft
+  categories: [ BiosynthArachnid ]
   completetime: 10
   materials:
     Biomass: 3
 
 - type: latheRecipe
-  id: SynthRightArm
-  result: BioSynthRightArm
-  completetime: 10
-  materials:
-    Biomass: 6
-
-- type: latheRecipe
-  id: SynthRightHand
-  result: BioSynthRightHand
+  id: SynthArachnidHandRight
+  result: OrganArachnidHandRight
+  categories: [ BiosynthArachnid ]
   completetime: 10
   materials:
     Biomass: 3
 
 - type: latheRecipe
-  id: SynthLeftLeg
-  result: BioSynthLeftLeg
+  id: SynthArachnidLegLeft
+  result: OrganArachnidLegLeft
+  categories: [ BiosynthArachnid ]
   completetime: 10
   materials:
     Biomass: 6
 
 - type: latheRecipe
-  id: SynthRightLeg
-  result: BioSynthRightLeg
+  id: SynthArachnidLegRight
+  result: OrganArachnidLegRight
+  categories: [ BiosynthArachnid ]
   completetime: 10
   materials:
     Biomass: 6
 
 - type: latheRecipe
-  id: SynthLeftFoot
-  result: BioSynthLeftFoot
+  id: SynthArachnidFootLeft
+  result: OrganArachnidFootLeft
+  categories: [ BiosynthArachnid ]
   completetime: 10
   materials:
     Biomass: 3
 
 - type: latheRecipe
-  id: SynthRightFoot
-  result: BioSynthRightFoot
+  id: SynthArachnidFootRight
+  result: OrganArachnidFootRight
+  categories: [ BiosynthArachnid ]
+  completetime: 10
+  materials:
+    Biomass: 3
+
+- type: latheRecipe
+  id: SynthDionaLungs
+  result: OrganDionaLungs
+  categories: [ BiosynthDiona ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthDionaEyes
+  result: OrganDionaEyes
+  categories: [ BiosynthDiona ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthDionaStomach
+  result: OrganDionaStomach
+  categories: [ BiosynthDiona ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthDionaHead
+  result: OrganDionaHead
+  categories: [ BiosynthDiona ]
+  completetime: 10
+  materials:
+    Biomass: 8
+
+- type: latheRecipe
+  id: SynthDionaArmLeft
+  result: OrganDionaArmLeft
+  categories: [ BiosynthDiona ]
+  completetime: 10
+  materials:
+    Biomass: 6
+
+- type: latheRecipe
+  id: SynthDionaArmRight
+  result: OrganDionaArmRight
+  categories: [ BiosynthDiona ]
+  completetime: 10
+  materials:
+    Biomass: 6
+
+- type: latheRecipe
+  id: SynthDionaHandLeft
+  result: OrganDionaHandLeft
+  categories: [ BiosynthDiona ]
+  completetime: 10
+  materials:
+    Biomass: 3
+
+- type: latheRecipe
+  id: SynthDionaHandRight
+  result: OrganDionaHandRight
+  categories: [ BiosynthDiona ]
+  completetime: 10
+  materials:
+    Biomass: 3
+
+- type: latheRecipe
+  id: SynthDionaLegLeft
+  result: OrganDionaLegLeft
+  categories: [ BiosynthDiona ]
+  completetime: 10
+  materials:
+    Biomass: 6
+
+- type: latheRecipe
+  id: SynthDionaLegRight
+  result: OrganDionaLegRight
+  categories: [ BiosynthDiona ]
+  completetime: 10
+  materials:
+    Biomass: 6
+
+- type: latheRecipe
+  id: SynthDionaFootLeft
+  result: OrganDionaFootLeft
+  categories: [ BiosynthDiona ]
+  completetime: 10
+  materials:
+    Biomass: 3
+
+- type: latheRecipe
+  id: SynthDionaFootRight
+  result: OrganDionaFootRight
+  categories: [ BiosynthDiona ]
+  completetime: 10
+  materials:
+    Biomass: 3
+
+- type: latheRecipe
+  id: SynthDwarfHeart
+  result: OrganDwarfHeart
+  categories: [ BiosynthDwarf ]
+  completetime: 10
+  materials:
+    Biomass: 10
+
+- type: latheRecipe
+  id: SynthDwarfLiver
+  result: OrganDwarfLiver
+  categories: [ BiosynthDwarf ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthDwarfEyes
+  result: OrganDwarfEyes
+  categories: [ BiosynthDwarf ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthDwarfStomach
+  result: OrganDwarfStomach
+  categories: [ BiosynthDwarf ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthDwarfHead
+  result: OrganDwarfHead
+  categories: [ BiosynthDwarf ]
+  completetime: 10
+  materials:
+    Biomass: 8
+
+- type: latheRecipe
+  id: SynthDwarfArmLeft
+  result: OrganDwarfArmLeft
+  categories: [ BiosynthDwarf ]
+  completetime: 10
+  materials:
+    Biomass: 6
+
+- type: latheRecipe
+  id: SynthDwarfArmRight
+  result: OrganDwarfArmRight
+  categories: [ BiosynthDwarf ]
+  completetime: 10
+  materials:
+    Biomass: 6
+
+- type: latheRecipe
+  id: SynthDwarfHandLeft
+  result: OrganDwarfHandLeft
+  categories: [ BiosynthDwarf ]
+  completetime: 10
+  materials:
+    Biomass: 3
+
+- type: latheRecipe
+  id: SynthDwarfHandRight
+  result: OrganDwarfHandRight
+  categories: [ BiosynthDwarf ]
+  completetime: 10
+  materials:
+    Biomass: 3
+
+- type: latheRecipe
+  id: SynthDwarfLegLeft
+  result: OrganDwarfLegLeft
+  categories: [ BiosynthDwarf ]
+  completetime: 10
+  materials:
+    Biomass: 6
+
+- type: latheRecipe
+  id: SynthDwarfLegRight
+  result: OrganDwarfLegRight
+  categories: [ BiosynthDwarf ]
+  completetime: 10
+  materials:
+    Biomass: 6
+
+- type: latheRecipe
+  id: SynthDwarfFootLeft
+  result: OrganDwarfFootLeft
+  categories: [ BiosynthDwarf ]
+  completetime: 10
+  materials:
+    Biomass: 3
+
+- type: latheRecipe
+  id: SynthDwarfFootRight
+  result: OrganDwarfFootRight
+  categories: [ BiosynthDwarf ]
+  completetime: 10
+  materials:
+    Biomass: 3
+
+- type: latheRecipe
+  id: SynthFelinidHeart
+  result: OrganFelinidHeart
+  categories: [ BiosynthFelinid ]
+  completetime: 10
+  materials:
+    Biomass: 10
+
+- type: latheRecipe
+  id: SynthFelinidLiver
+  result: OrganFelinidLiver
+  categories: [ BiosynthFelinid ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthFelinidLungs
+  result: OrganFelinidLungs
+  categories: [ BiosynthFelinid ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthFelinidEyes
+  result: OrganFelinidEyes
+  categories: [ BiosynthFelinid ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthFelinidStomach
+  result: OrganFelinidStomach
+  categories: [ BiosynthFelinid ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthFelinidHead
+  result: OrganFelinidHead
+  categories: [ BiosynthFelinid ]
+  completetime: 10
+  materials:
+    Biomass: 8
+
+- type: latheRecipe
+  id: SynthFelinidArmLeft
+  result: OrganFelinidArmLeft
+  categories: [ BiosynthFelinid ]
+  completetime: 10
+  materials:
+    Biomass: 6
+
+- type: latheRecipe
+  id: SynthFelinidArmRight
+  result: OrganFelinidArmRight
+  categories: [ BiosynthFelinid ]
+  completetime: 10
+  materials:
+    Biomass: 6
+
+- type: latheRecipe
+  id: SynthFelinidHandLeft
+  result: OrganFelinidHandLeft
+  categories: [ BiosynthFelinid ]
+  completetime: 10
+  materials:
+    Biomass: 3
+
+- type: latheRecipe
+  id: SynthFelinidHandRight
+  result: OrganFelinidHandRight
+  categories: [ BiosynthFelinid ]
+  completetime: 10
+  materials:
+    Biomass: 3
+
+- type: latheRecipe
+  id: SynthFelinidLegLeft
+  result: OrganFelinidLegLeft
+  categories: [ BiosynthFelinid ]
+  completetime: 10
+  materials:
+    Biomass: 6
+
+- type: latheRecipe
+  id: SynthFelinidLegRight
+  result: OrganFelinidLegRight
+  categories: [ BiosynthFelinid ]
+  completetime: 10
+  materials:
+    Biomass: 6
+
+- type: latheRecipe
+  id: SynthFelinidFootLeft
+  result: OrganFelinidFootLeft
+  categories: [ BiosynthFelinid ]
+  completetime: 10
+  materials:
+    Biomass: 3
+
+- type: latheRecipe
+  id: SynthFelinidFootRight
+  result: OrganFelinidFootRight
+  categories: [ BiosynthFelinid ]
+  completetime: 10
+  materials:
+    Biomass: 3
+
+- type: latheRecipe
+  id: SynthGingerbreadHead
+  result: OrganGingerbreadHead
+  categories: [ BiosynthGingerbread ]
+  completetime: 10
+  materials:
+    Biomass: 8
+
+- type: latheRecipe
+  id: SynthGingerbreadArmLeft
+  result: OrganGingerbreadArmLeft
+  categories: [ BiosynthGingerbread ]
+  completetime: 10
+  materials:
+    Biomass: 6
+
+- type: latheRecipe
+  id: SynthGingerbreadArmRight
+  result: OrganGingerbreadArmRight
+  categories: [ BiosynthGingerbread ]
+  completetime: 10
+  materials:
+    Biomass: 6
+
+- type: latheRecipe
+  id: SynthGingerbreadHandLeft
+  result: OrganGingerbreadHandLeft
+  categories: [ BiosynthGingerbread ]
+  completetime: 10
+  materials:
+    Biomass: 3
+
+- type: latheRecipe
+  id: SynthGingerbreadHandRight
+  result: OrganGingerbreadHandRight
+  categories: [ BiosynthGingerbread ]
+  completetime: 10
+  materials:
+    Biomass: 3
+
+- type: latheRecipe
+  id: SynthGingerbreadLegLeft
+  result: OrganGingerbreadLegLeft
+  categories: [ BiosynthGingerbread ]
+  completetime: 10
+  materials:
+    Biomass: 6
+
+- type: latheRecipe
+  id: SynthGingerbreadLegRight
+  result: OrganGingerbreadLegRight
+  categories: [ BiosynthGingerbread ]
+  completetime: 10
+  materials:
+    Biomass: 6
+
+- type: latheRecipe
+  id: SynthGingerbreadFootLeft
+  result: OrganGingerbreadFootLeft
+  categories: [ BiosynthGingerbread ]
+  completetime: 10
+  materials:
+    Biomass: 3
+
+- type: latheRecipe
+  id: SynthGingerbreadFootRight
+  result: OrganGingerbreadFootRight
+  categories: [ BiosynthGingerbread ]
+  completetime: 10
+  materials:
+    Biomass: 3
+
+- type: latheRecipe
+  id: SynthHarpyHeart
+  result: OrganHarpyHeart
+  categories: [ BiosynthHarpy ]
+  completetime: 10
+  materials:
+    Biomass: 10
+
+- type: latheRecipe
+  id: SynthHarpyLiver
+  result: OrganHarpyLiver
+  categories: [ BiosynthHarpy ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthHarpyLungs
+  result: OrganHarpyLungs
+  categories: [ BiosynthHarpy ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthHarpyEyes
+  result: OrganHarpyEyes
+  categories: [ BiosynthHarpy ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthHarpyStomach
+  result: OrganHarpyStomach
+  categories: [ BiosynthHarpy ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthHarpyHead
+  result: OrganHarpyHead
+  categories: [ BiosynthHarpy ]
+  completetime: 10
+  materials:
+    Biomass: 8
+
+- type: latheRecipe
+  id: SynthHarpyArmLeft
+  result: OrganHarpyArmLeft
+  categories: [ BiosynthHarpy ]
+  completetime: 10
+  materials:
+    Biomass: 6
+
+- type: latheRecipe
+  id: SynthHarpyArmRight
+  result: OrganHarpyArmRight
+  categories: [ BiosynthHarpy ]
+  completetime: 10
+  materials:
+    Biomass: 6
+
+- type: latheRecipe
+  id: SynthHarpyHandLeft
+  result: OrganHarpyHandLeft
+  categories: [ BiosynthHarpy ]
+  completetime: 10
+  materials:
+    Biomass: 3
+
+- type: latheRecipe
+  id: SynthHarpyHandRight
+  result: OrganHarpyHandRight
+  categories: [ BiosynthHarpy ]
+  completetime: 10
+  materials:
+    Biomass: 3
+
+- type: latheRecipe
+  id: SynthHarpyLegLeft
+  result: OrganHarpyLegLeft
+  categories: [ BiosynthHarpy ]
+  completetime: 10
+  materials:
+    Biomass: 6
+
+- type: latheRecipe
+  id: SynthHarpyLegRight
+  result: OrganHarpyLegRight
+  categories: [ BiosynthHarpy ]
+  completetime: 10
+  materials:
+    Biomass: 6
+
+- type: latheRecipe
+  id: SynthHarpyFootLeft
+  result: OrganHarpyFootLeft
+  categories: [ BiosynthHarpy ]
+  completetime: 10
+  materials:
+    Biomass: 3
+
+- type: latheRecipe
+  id: SynthHarpyFootRight
+  result: OrganHarpyFootRight
+  categories: [ BiosynthHarpy ]
+  completetime: 10
+  materials:
+    Biomass: 3
+
+- type: latheRecipe
+  id: SynthHumanHeart
+  result: OrganHumanHeart
+  categories: [ BiosynthHuman ]
+  completetime: 10
+  materials:
+    Biomass: 10
+
+- type: latheRecipe
+  id: SynthHumanLiver
+  result: OrganHumanLiver
+  categories: [ BiosynthHuman ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthHumanLungs
+  result: OrganHumanLungs
+  categories: [ BiosynthHuman ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthHumanEyes
+  result: OrganHumanEyes
+  categories: [ BiosynthHuman ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthHumanStomach
+  result: OrganHumanStomach
+  categories: [ BiosynthHuman ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthHumanHead
+  result: OrganHumanHead
+  categories: [ BiosynthHuman ]
+  completetime: 10
+  materials:
+    Biomass: 8
+
+- type: latheRecipe
+  id: SynthHumanArmLeft
+  result: OrganHumanArmLeft
+  categories: [ BiosynthHuman ]
+  completetime: 10
+  materials:
+    Biomass: 6
+
+- type: latheRecipe
+  id: SynthHumanArmRight
+  result: OrganHumanArmRight
+  categories: [ BiosynthHuman ]
+  completetime: 10
+  materials:
+    Biomass: 6
+
+- type: latheRecipe
+  id: SynthHumanHandLeft
+  result: OrganHumanHandLeft
+  categories: [ BiosynthHuman ]
+  completetime: 10
+  materials:
+    Biomass: 3
+
+- type: latheRecipe
+  id: SynthHumanHandRight
+  result: OrganHumanHandRight
+  categories: [ BiosynthHuman ]
+  completetime: 10
+  materials:
+    Biomass: 3
+
+- type: latheRecipe
+  id: SynthHumanLegLeft
+  result: OrganHumanLegLeft
+  categories: [ BiosynthHuman ]
+  completetime: 10
+  materials:
+    Biomass: 6
+
+- type: latheRecipe
+  id: SynthHumanLegRight
+  result: OrganHumanLegRight
+  categories: [ BiosynthHuman ]
+  completetime: 10
+  materials:
+    Biomass: 6
+
+- type: latheRecipe
+  id: SynthHumanFootLeft
+  result: OrganHumanFootLeft
+  categories: [ BiosynthHuman ]
+  completetime: 10
+  materials:
+    Biomass: 3
+
+- type: latheRecipe
+  id: SynthHumanFootRight
+  result: OrganHumanFootRight
+  categories: [ BiosynthHuman ]
+  completetime: 10
+  materials:
+    Biomass: 3
+
+- type: latheRecipe
+  id: SynthMothHeart
+  result: OrganMothHeart
+  categories: [ BiosynthMoth ]
+  completetime: 10
+  materials:
+    Biomass: 10
+
+- type: latheRecipe
+  id: SynthMothLiver
+  result: OrganMothLiver
+  categories: [ BiosynthMoth ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthMothLungs
+  result: OrganMothLungs
+  categories: [ BiosynthMoth ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthMothEyes
+  result: OrganMothEyes
+  categories: [ BiosynthMoth ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthMothStomach
+  result: OrganMothStomach
+  categories: [ BiosynthMoth ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthMothHead
+  result: OrganMothHead
+  categories: [ BiosynthMoth ]
+  completetime: 10
+  materials:
+    Biomass: 8
+
+- type: latheRecipe
+  id: SynthMothArmLeft
+  result: OrganMothArmLeft
+  categories: [ BiosynthMoth ]
+  completetime: 10
+  materials:
+    Biomass: 6
+
+- type: latheRecipe
+  id: SynthMothArmRight
+  result: OrganMothArmRight
+  categories: [ BiosynthMoth ]
+  completetime: 10
+  materials:
+    Biomass: 6
+
+- type: latheRecipe
+  id: SynthMothHandLeft
+  result: OrganMothHandLeft
+  categories: [ BiosynthMoth ]
+  completetime: 10
+  materials:
+    Biomass: 3
+
+- type: latheRecipe
+  id: SynthMothHandRight
+  result: OrganMothHandRight
+  categories: [ BiosynthMoth ]
+  completetime: 10
+  materials:
+    Biomass: 3
+
+- type: latheRecipe
+  id: SynthMothLegLeft
+  result: OrganMothLegLeft
+  categories: [ BiosynthMoth ]
+  completetime: 10
+  materials:
+    Biomass: 6
+
+- type: latheRecipe
+  id: SynthMothLegRight
+  result: OrganMothLegRight
+  categories: [ BiosynthMoth ]
+  completetime: 10
+  materials:
+    Biomass: 6
+
+- type: latheRecipe
+  id: SynthMothFootLeft
+  result: OrganMothFootLeft
+  categories: [ BiosynthMoth ]
+  completetime: 10
+  materials:
+    Biomass: 3
+
+- type: latheRecipe
+  id: SynthMothFootRight
+  result: OrganMothFootRight
+  categories: [ BiosynthMoth ]
+  completetime: 10
+  materials:
+    Biomass: 3
+
+- type: latheRecipe
+  id: SynthReptilianHeart
+  result: OrganReptilianHeart
+  categories: [ BiosynthReptilian ]
+  completetime: 10
+  materials:
+    Biomass: 10
+
+- type: latheRecipe
+  id: SynthReptilianLiver
+  result: OrganReptilianLiver
+  categories: [ BiosynthReptilian ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthReptilianLungs
+  result: OrganReptilianLungs
+  categories: [ BiosynthReptilian ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthReptilianEyes
+  result: OrganReptilianEyes
+  categories: [ BiosynthReptilian ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthReptilianStomach
+  result: OrganReptilianStomach
+  categories: [ BiosynthReptilian ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthReptilianHead
+  result: OrganReptilianHead
+  categories: [ BiosynthReptilian ]
+  completetime: 10
+  materials:
+    Biomass: 8
+
+- type: latheRecipe
+  id: SynthReptilianArmLeft
+  result: OrganReptilianArmLeft
+  categories: [ BiosynthReptilian ]
+  completetime: 10
+  materials:
+    Biomass: 6
+
+- type: latheRecipe
+  id: SynthReptilianArmRight
+  result: OrganReptilianArmRight
+  categories: [ BiosynthReptilian ]
+  completetime: 10
+  materials:
+    Biomass: 6
+
+- type: latheRecipe
+  id: SynthReptilianHandLeft
+  result: OrganReptilianHandLeft
+  categories: [ BiosynthReptilian ]
+  completetime: 10
+  materials:
+    Biomass: 3
+
+- type: latheRecipe
+  id: SynthReptilianHandRight
+  result: OrganReptilianHandRight
+  categories: [ BiosynthReptilian ]
+  completetime: 10
+  materials:
+    Biomass: 3
+
+- type: latheRecipe
+  id: SynthReptilianLegLeft
+  result: OrganReptilianLegLeft
+  categories: [ BiosynthReptilian ]
+  completetime: 10
+  materials:
+    Biomass: 6
+
+- type: latheRecipe
+  id: SynthReptilianLegRight
+  result: OrganReptilianLegRight
+  categories: [ BiosynthReptilian ]
+  completetime: 10
+  materials:
+    Biomass: 6
+
+- type: latheRecipe
+  id: SynthReptilianFootLeft
+  result: OrganReptilianFootLeft
+  categories: [ BiosynthReptilian ]
+  completetime: 10
+  materials:
+    Biomass: 3
+
+- type: latheRecipe
+  id: SynthReptilianFootRight
+  result: OrganReptilianFootRight
+  categories: [ BiosynthReptilian ]
+  completetime: 10
+  materials:
+    Biomass: 3
+
+- type: latheRecipe
+  id: SynthRodentiaHeart
+  result: OrganRodentiaHeart
+  categories: [ BiosynthRodentia ]
+  completetime: 10
+  materials:
+    Biomass: 10
+
+- type: latheRecipe
+  id: SynthRodentiaLiver
+  result: OrganRodentiaLiver
+  categories: [ BiosynthRodentia ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthRodentiaLungs
+  result: OrganRodentiaLungs
+  categories: [ BiosynthRodentia ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthRodentiaEyes
+  result: OrganRodentiaEyes
+  categories: [ BiosynthRodentia ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthRodentiaStomach
+  result: OrganRodentiaStomach
+  categories: [ BiosynthRodentia ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthRodentiaHead
+  result: OrganRodentiaHead
+  categories: [ BiosynthRodentia ]
+  completetime: 10
+  materials:
+    Biomass: 8
+
+- type: latheRecipe
+  id: SynthRodentiaArmLeft
+  result: OrganRodentiaArmLeft
+  categories: [ BiosynthRodentia ]
+  completetime: 10
+  materials:
+    Biomass: 6
+
+- type: latheRecipe
+  id: SynthRodentiaArmRight
+  result: OrganRodentiaArmRight
+  categories: [ BiosynthRodentia ]
+  completetime: 10
+  materials:
+    Biomass: 6
+
+- type: latheRecipe
+  id: SynthRodentiaHandLeft
+  result: OrganRodentiaHandLeft
+  categories: [ BiosynthRodentia ]
+  completetime: 10
+  materials:
+    Biomass: 3
+
+- type: latheRecipe
+  id: SynthRodentiaHandRight
+  result: OrganRodentiaHandRight
+  categories: [ BiosynthRodentia ]
+  completetime: 10
+  materials:
+    Biomass: 3
+
+- type: latheRecipe
+  id: SynthRodentiaLegLeft
+  result: OrganRodentiaLegLeft
+  categories: [ BiosynthRodentia ]
+  completetime: 10
+  materials:
+    Biomass: 6
+
+- type: latheRecipe
+  id: SynthRodentiaLegRight
+  result: OrganRodentiaLegRight
+  categories: [ BiosynthRodentia ]
+  completetime: 10
+  materials:
+    Biomass: 6
+
+- type: latheRecipe
+  id: SynthRodentiaFootLeft
+  result: OrganRodentiaFootLeft
+  categories: [ BiosynthRodentia ]
+  completetime: 10
+  materials:
+    Biomass: 3
+
+- type: latheRecipe
+  id: SynthRodentiaFootRight
+  result: OrganRodentiaFootRight
+  categories: [ BiosynthRodentia ]
+  completetime: 10
+  materials:
+    Biomass: 3
+
+- type: latheRecipe
+  id: SynthThavenHeart
+  result: OrganThavenHeart
+  categories: [ BiosynthThaven ]
+  completetime: 10
+  materials:
+    Biomass: 10
+
+- type: latheRecipe
+  id: SynthThavenLiver
+  result: OrganThavenLiver
+  categories: [ BiosynthThaven ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthThavenLungs
+  result: OrganThavenLungs
+  categories: [ BiosynthThaven ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthThavenEyes
+  result: OrganThavenEyes
+  categories: [ BiosynthThaven ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthThavenStomach
+  result: OrganThavenStomach
+  categories: [ BiosynthThaven ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthThavenHead
+  result: OrganThavenHead
+  categories: [ BiosynthThaven ]
+  completetime: 10
+  materials:
+    Biomass: 8
+
+- type: latheRecipe
+  id: SynthThavenArmLeft
+  result: OrganThavenArmLeft
+  categories: [ BiosynthThaven ]
+  completetime: 10
+  materials:
+    Biomass: 6
+
+- type: latheRecipe
+  id: SynthThavenArmRight
+  result: OrganThavenArmRight
+  categories: [ BiosynthThaven ]
+  completetime: 10
+  materials:
+    Biomass: 6
+
+- type: latheRecipe
+  id: SynthThavenHandLeft
+  result: OrganThavenHandLeft
+  categories: [ BiosynthThaven ]
+  completetime: 10
+  materials:
+    Biomass: 3
+
+- type: latheRecipe
+  id: SynthThavenHandRight
+  result: OrganThavenHandRight
+  categories: [ BiosynthThaven ]
+  completetime: 10
+  materials:
+    Biomass: 3
+
+- type: latheRecipe
+  id: SynthThavenLegLeft
+  result: OrganThavenLegLeft
+  categories: [ BiosynthThaven ]
+  completetime: 10
+  materials:
+    Biomass: 6
+
+- type: latheRecipe
+  id: SynthThavenLegRight
+  result: OrganThavenLegRight
+  categories: [ BiosynthThaven ]
+  completetime: 10
+  materials:
+    Biomass: 6
+
+- type: latheRecipe
+  id: SynthThavenFootLeft
+  result: OrganThavenFootLeft
+  categories: [ BiosynthThaven ]
+  completetime: 10
+  materials:
+    Biomass: 3
+
+- type: latheRecipe
+  id: SynthThavenFootRight
+  result: OrganThavenFootRight
+  categories: [ BiosynthThaven ]
+  completetime: 10
+  materials:
+    Biomass: 3
+
+- type: latheRecipe
+  id: SynthVoxHeart
+  result: OrganVoxHeart
+  categories: [ BiosynthVox ]
+  completetime: 10
+  materials:
+    Biomass: 10
+
+- type: latheRecipe
+  id: SynthVoxLiver
+  result: OrganVoxLiver
+  categories: [ BiosynthVox ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthVoxLungs
+  result: OrganVoxLungs
+  categories: [ BiosynthVox ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthVoxEyes
+  result: OrganVoxEyes
+  categories: [ BiosynthVox ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthVoxStomach
+  result: OrganVoxStomach
+  categories: [ BiosynthVox ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthVoxHead
+  result: OrganVoxHead
+  categories: [ BiosynthVox ]
+  completetime: 10
+  materials:
+    Biomass: 8
+
+- type: latheRecipe
+  id: SynthVoxArmLeft
+  result: OrganVoxArmLeft
+  categories: [ BiosynthVox ]
+  completetime: 10
+  materials:
+    Biomass: 6
+
+- type: latheRecipe
+  id: SynthVoxArmRight
+  result: OrganVoxArmRight
+  categories: [ BiosynthVox ]
+  completetime: 10
+  materials:
+    Biomass: 6
+
+- type: latheRecipe
+  id: SynthVoxHandLeft
+  result: OrganVoxHandLeft
+  categories: [ BiosynthVox ]
+  completetime: 10
+  materials:
+    Biomass: 3
+
+- type: latheRecipe
+  id: SynthVoxHandRight
+  result: OrganVoxHandRight
+  categories: [ BiosynthVox ]
+  completetime: 10
+  materials:
+    Biomass: 3
+
+- type: latheRecipe
+  id: SynthVoxLegLeft
+  result: OrganVoxLegLeft
+  categories: [ BiosynthVox ]
+  completetime: 10
+  materials:
+    Biomass: 6
+
+- type: latheRecipe
+  id: SynthVoxLegRight
+  result: OrganVoxLegRight
+  categories: [ BiosynthVox ]
+  completetime: 10
+  materials:
+    Biomass: 6
+
+- type: latheRecipe
+  id: SynthVoxFootLeft
+  result: OrganVoxFootLeft
+  categories: [ BiosynthVox ]
+  completetime: 10
+  materials:
+    Biomass: 3
+
+- type: latheRecipe
+  id: SynthVoxFootRight
+  result: OrganVoxFootRight
+  categories: [ BiosynthVox ]
+  completetime: 10
+  materials:
+    Biomass: 3
+
+- type: latheRecipe
+  id: SynthVulpkaninHeart
+  result: OrganVulpkaninHeart
+  categories: [ BiosynthVulpkanin ]
+  completetime: 10
+  materials:
+    Biomass: 10
+
+- type: latheRecipe
+  id: SynthVulpkaninLiver
+  result: OrganVulpkaninLiver
+  categories: [ BiosynthVulpkanin ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthVulpkaninLungs
+  result: OrganVulpkaninLungs
+  categories: [ BiosynthVulpkanin ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthVulpkaninEyes
+  result: OrganVulpkaninEyes
+  categories: [ BiosynthVulpkanin ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthVulpkaninStomach
+  result: OrganVulpkaninStomach
+  categories: [ BiosynthVulpkanin ]
+  completetime: 10
+  materials:
+    Biomass: 4
+
+- type: latheRecipe
+  id: SynthVulpkaninHead
+  result: OrganVulpkaninHead
+  categories: [ BiosynthVulpkanin ]
+  completetime: 10
+  materials:
+    Biomass: 8
+
+- type: latheRecipe
+  id: SynthVulpkaninArmLeft
+  result: OrganVulpkaninArmLeft
+  categories: [ BiosynthVulpkanin ]
+  completetime: 10
+  materials:
+    Biomass: 6
+
+- type: latheRecipe
+  id: SynthVulpkaninArmRight
+  result: OrganVulpkaninArmRight
+  categories: [ BiosynthVulpkanin ]
+  completetime: 10
+  materials:
+    Biomass: 6
+
+- type: latheRecipe
+  id: SynthVulpkaninHandLeft
+  result: OrganVulpkaninHandLeft
+  categories: [ BiosynthVulpkanin ]
+  completetime: 10
+  materials:
+    Biomass: 3
+
+- type: latheRecipe
+  id: SynthVulpkaninHandRight
+  result: OrganVulpkaninHandRight
+  categories: [ BiosynthVulpkanin ]
+  completetime: 10
+  materials:
+    Biomass: 3
+
+- type: latheRecipe
+  id: SynthVulpkaninLegLeft
+  result: OrganVulpkaninLegLeft
+  categories: [ BiosynthVulpkanin ]
+  completetime: 10
+  materials:
+    Biomass: 6
+
+- type: latheRecipe
+  id: SynthVulpkaninLegRight
+  result: OrganVulpkaninLegRight
+  categories: [ BiosynthVulpkanin ]
+  completetime: 10
+  materials:
+    Biomass: 6
+
+- type: latheRecipe
+  id: SynthVulpkaninFootLeft
+  result: OrganVulpkaninFootLeft
+  categories: [ BiosynthVulpkanin ]
+  completetime: 10
+  materials:
+    Biomass: 3
+
+- type: latheRecipe
+  id: SynthVulpkaninFootRight
+  result: OrganVulpkaninFootRight
+  categories: [ BiosynthVulpkanin ]
   completetime: 10
   materials:
     Biomass: 3
@@ -95,16 +1445,177 @@
 - type: latheRecipePack
   id: MedicalBiofabStatic
   recipes:
-  - SynthLiver
-  - SynthHeart
-  - SynthLungs
-  - SynthEyes
-  - SynthStomach
-  - SynthLeftLeg
-  - SynthRightLeg
-  - SynthLeftFoot
-  - SynthRightFoot
-  - SynthLeftArm
-  - SynthRightArm
-  - SynthLeftHand
-  - SynthRightHand
+  - SynthArachnidHeart
+  - SynthArachnidLiver
+  - SynthArachnidLungs
+  - SynthArachnidEyes
+  - SynthArachnidStomach
+  - SynthArachnidHead
+  - SynthArachnidArmLeft
+  - SynthArachnidArmRight
+  - SynthArachnidHandLeft
+  - SynthArachnidHandRight
+  - SynthArachnidLegLeft
+  - SynthArachnidLegRight
+  - SynthArachnidFootLeft
+  - SynthArachnidFootRight
+  - SynthDionaLungs
+  - SynthDionaEyes
+  - SynthDionaStomach
+  - SynthDionaHead
+  - SynthDionaArmLeft
+  - SynthDionaArmRight
+  - SynthDionaHandLeft
+  - SynthDionaHandRight
+  - SynthDionaLegLeft
+  - SynthDionaLegRight
+  - SynthDionaFootLeft
+  - SynthDionaFootRight
+  - SynthDwarfHeart
+  - SynthDwarfLiver
+  - SynthDwarfEyes
+  - SynthDwarfStomach
+  - SynthDwarfHead
+  - SynthDwarfArmLeft
+  - SynthDwarfArmRight
+  - SynthDwarfHandLeft
+  - SynthDwarfHandRight
+  - SynthDwarfLegLeft
+  - SynthDwarfLegRight
+  - SynthDwarfFootLeft
+  - SynthDwarfFootRight
+  - SynthFelinidHeart
+  - SynthFelinidLiver
+  - SynthFelinidLungs
+  - SynthFelinidEyes
+  - SynthFelinidStomach
+  - SynthFelinidHead
+  - SynthFelinidArmLeft
+  - SynthFelinidArmRight
+  - SynthFelinidHandLeft
+  - SynthFelinidHandRight
+  - SynthFelinidLegLeft
+  - SynthFelinidLegRight
+  - SynthFelinidFootLeft
+  - SynthFelinidFootRight
+  - SynthGingerbreadHead
+  - SynthGingerbreadArmLeft
+  - SynthGingerbreadArmRight
+  - SynthGingerbreadHandLeft
+  - SynthGingerbreadHandRight
+  - SynthGingerbreadLegLeft
+  - SynthGingerbreadLegRight
+  - SynthGingerbreadFootLeft
+  - SynthGingerbreadFootRight
+  - SynthHarpyHeart
+  - SynthHarpyLiver
+  - SynthHarpyLungs
+  - SynthHarpyEyes
+  - SynthHarpyStomach
+  - SynthHarpyHead
+  - SynthHarpyArmLeft
+  - SynthHarpyArmRight
+  - SynthHarpyHandLeft
+  - SynthHarpyHandRight
+  - SynthHarpyLegLeft
+  - SynthHarpyLegRight
+  - SynthHarpyFootLeft
+  - SynthHarpyFootRight
+  - SynthHumanHeart
+  - SynthHumanLiver
+  - SynthHumanLungs
+  - SynthHumanEyes
+  - SynthHumanStomach
+  - SynthHumanHead
+  - SynthHumanArmLeft
+  - SynthHumanArmRight
+  - SynthHumanHandLeft
+  - SynthHumanHandRight
+  - SynthHumanLegLeft
+  - SynthHumanLegRight
+  - SynthHumanFootLeft
+  - SynthHumanFootRight
+  - SynthMothHeart
+  - SynthMothLiver
+  - SynthMothLungs
+  - SynthMothEyes
+  - SynthMothStomach
+  - SynthMothHead
+  - SynthMothArmLeft
+  - SynthMothArmRight
+  - SynthMothHandLeft
+  - SynthMothHandRight
+  - SynthMothLegLeft
+  - SynthMothLegRight
+  - SynthMothFootLeft
+  - SynthMothFootRight
+  - SynthReptilianHeart
+  - SynthReptilianLiver
+  - SynthReptilianLungs
+  - SynthReptilianEyes
+  - SynthReptilianStomach
+  - SynthReptilianHead
+  - SynthReptilianArmLeft
+  - SynthReptilianArmRight
+  - SynthReptilianHandLeft
+  - SynthReptilianHandRight
+  - SynthReptilianLegLeft
+  - SynthReptilianLegRight
+  - SynthReptilianFootLeft
+  - SynthReptilianFootRight
+  - SynthRodentiaHeart
+  - SynthRodentiaLiver
+  - SynthRodentiaLungs
+  - SynthRodentiaEyes
+  - SynthRodentiaStomach
+  - SynthRodentiaHead
+  - SynthRodentiaArmLeft
+  - SynthRodentiaArmRight
+  - SynthRodentiaHandLeft
+  - SynthRodentiaHandRight
+  - SynthRodentiaLegLeft
+  - SynthRodentiaLegRight
+  - SynthRodentiaFootLeft
+  - SynthRodentiaFootRight
+  - SynthThavenHeart
+  - SynthThavenLiver
+  - SynthThavenLungs
+  - SynthThavenEyes
+  - SynthThavenStomach
+  - SynthThavenHead
+  - SynthThavenArmLeft
+  - SynthThavenArmRight
+  - SynthThavenHandLeft
+  - SynthThavenHandRight
+  - SynthThavenLegLeft
+  - SynthThavenLegRight
+  - SynthThavenFootLeft
+  - SynthThavenFootRight
+  - SynthVoxHeart
+  - SynthVoxLiver
+  - SynthVoxLungs
+  - SynthVoxEyes
+  - SynthVoxStomach
+  - SynthVoxHead
+  - SynthVoxArmLeft
+  - SynthVoxArmRight
+  - SynthVoxHandLeft
+  - SynthVoxHandRight
+  - SynthVoxLegLeft
+  - SynthVoxLegRight
+  - SynthVoxFootLeft
+  - SynthVoxFootRight
+  - SynthVulpkaninHeart
+  - SynthVulpkaninLiver
+  - SynthVulpkaninLungs
+  - SynthVulpkaninEyes
+  - SynthVulpkaninStomach
+  - SynthVulpkaninHead
+  - SynthVulpkaninArmLeft
+  - SynthVulpkaninArmRight
+  - SynthVulpkaninHandLeft
+  - SynthVulpkaninHandRight
+  - SynthVulpkaninLegLeft
+  - SynthVulpkaninLegRight
+  - SynthVulpkaninFootLeft
+  - SynthVulpkaninFootRight
