@@ -83,7 +83,9 @@
     solution:
       reagents:
       - ReagentId: Water
-        Quantity: 120
+        Quantity: 60
+      - ReagentId: ExtinguishingAgent # polonium change
+        Quantity: 60
 
 - type: entity
   parent: [SolutionFireExtinguisherLarge, FireExtinguisher]
@@ -100,7 +102,9 @@
     solution:
       reagents:
       - ReagentId: Water
-        Quantity: 240
+        Quantity: 120
+      - ReagentId: ExtinguishingAgent # polonium change
+        Quantity: 120
 
 - type: entity
   name: extinguisher spray
@@ -155,7 +159,9 @@
     solution:
       reagents:
       - ReagentId: Water
-        Quantity: 60
+        Quantity: 30
+      - ReagentId: ExtinguishingAgent # polonium change
+        Quantity: 30
 
 # used for a engi xenoborg module
 - type: entity
@@ -168,4 +174,6 @@
     generated:
       reagents:
       - ReagentId: Water
-        Quantity: 1
+        Quantity: 0.5
+      - ReagentId: ExtinguishingAgent # polonium change
+        Quantity: 0.5
