@@ -17,13 +17,3 @@
   - type: Sprite
     sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: seksixeno
-
-- type: entity
-  parent: PosterBase
-  id: PosterContrabandDoERP
-  name: "Do ERP"
-  description: "This poster reminds the crew that- hold up..."
-  components:
-  - type: Sprite
-    sprite: _Polonium/Structures/Wallmounts/posters.rsi
-    state: roberp
