@@ -510,6 +510,7 @@
   description: "There are 3 shards and a singularity.  The shards are singing.  The engineers are crying."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster53_contraband
 
 - type: entity
@@ -666,6 +667,7 @@
   description: "A poster encouraging you to help fellow crewmembers."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster4_legit
 
 - type: entity
@@ -675,6 +677,7 @@
   description: "A poster glorifying the engineering team."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster5_legit
 
 - type: entity
@@ -684,6 +687,7 @@
   description: "A poster blessing this area."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster6_legit
 
 - type: entity
@@ -693,6 +697,7 @@
   description: "A poster depicting an atom."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster7_legit
 
 - type: entity
@@ -720,6 +725,7 @@
   description: "A poster instructing the viewer to walk instead of running."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster10_legit
 
 - type: entity
@@ -739,6 +745,7 @@
   description: "Ian is love, Ian is life."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster12_legit
 
 - type: entity
@@ -776,6 +783,7 @@
   description: "A poster instructing the viewer not to ask about things they aren't meant to know."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster16_legit
 
 - type: entity
@@ -785,6 +793,7 @@
   description: " A poster encouraging you to work for your future."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster17_legit
 
 - type: entity
@@ -821,6 +830,7 @@
   description: "A poster instructing the viewer to report suspicious activity to the security force."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster21_legit
 
 - type: entity
@@ -830,6 +840,7 @@
   description: "A poster encouraging the swift reporting of crime or seditious behavior to station security."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster22_legit
 
 - type: entity
@@ -867,6 +878,7 @@
   description: "A reprint of a poster from 2505, commemorating the 50th Anniversary of Nanoposters Manufacturing, a subsidiary of Nanotrasen."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster26_legit
 
 - type: entity
@@ -1138,6 +1150,7 @@
   description: "Think three times before opening the airlock to hydroponics, a red threat might be hiding there."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster56_legit
 
 #maps

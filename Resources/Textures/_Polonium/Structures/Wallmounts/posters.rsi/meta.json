@@ -14,19 +14,58 @@
             "name": "poster3_legit"
         },
         {
+            "name": "poster4_legit"
+        },
+        {
+            "name": "poster5_legit"
+        },
+        {
+            "name": "poster6_legit"
+        },
+        {
+            "name": "poster7_legit"
+        },
+        {
+            "name": "poster10_legit"
+        },
+        {
             "name": "poster11_legit"
+        },
+        {
+            "name": "poster12_legit"
         },
         {
             "name": "poster13_legit"
         },
         {
+            "name": "poster16_legit"
+        },
+        {
+            "name": "poster17_legit"
+        },
+        {
+            "name": "poster21_legit"
+        },
+        {
+            "name": "poster22_legit"
+        },
+        {
             "name": "poster23_legit"
+        },
+        {
+            "name": "poster26_legit"
         },
         {
             "name": "poster34_legit"
         },
         {
+            "name": "poster53_contraband"
+        },
+        {
             "name": "poster56_contraband"
+        },
+        {
+            "name": "poster56_legit"
         }
     ]
 }
