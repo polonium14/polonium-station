@@ -168,7 +168,7 @@
   parent: [ FireExtinguisher, BaseXenoborgContraband ]
   id: SelfRechargingFireExtinguisher
   name: self-recharging fire extinguisher
-  description: It extinguishes fires. it slowly refills with water.
+  description: It extinguishes fires. it slowly refills itself. # Polonium change
   components:
   - type: SolutionRegeneration
     generated:

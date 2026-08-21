@@ -13,7 +13,7 @@
     ExtinguishingAgent: 5 # 10u -> 5u so it's not SUPER easy to mass produce.
   effects:
     - !type:AdjustSolutionThermalEnergy # The temperature stays exacly the same
-      delta: -1,465.75
+      delta: -1465.75
 
 - type: reaction
   id: ExtinguishingAgentBreakdown
@@ -28,4 +28,4 @@
     Oxygen: 2
   effects:
     - !type:AdjustSolutionThermalEnergy # The temperature stays exacly the same
-      delta: 1,465.75
+      delta: 1465.75
