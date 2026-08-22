@@ -886,7 +886,7 @@
   name: energy magnum
   parent: [BaseWeaponBatterySmall, BaseGrandTheftContraband]
   id: WeaponEnergyMagnum
-  description: A high powered self-charging energy pistol designed for elite security personnel. It has has two firing modes, allowing for either high damage or window piercing. # Funky
+  description:  high powered self-charging energy pistol designed for elite security personnel. It has has three firing modes allowing for either high damage, window piercing, or non-lethal disabling.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Battery/energy_magnum.rsi
