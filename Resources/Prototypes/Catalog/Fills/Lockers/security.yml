@@ -49,20 +49,20 @@
       prob: 0.02
     - !type:GroupSelector # polonium addition
       children:
-      - !type:AllSelector # 10% chance
+      - !type:AllSelector # 12% chance
         children:
         - id: WeaponShotgunEnforcerRubber
         - id: BoxBeanbag
-        weight: 10
+        weight: 12
       - !type:AllSelector # 20% chance
         children:
         - id: WeaponShotgunDoubleBarreledRubber
         - id: BoxBeanbag
         weight: 20
-      - id: WeaponEnergyShotgun # 60% chance
-        weight: 60
-      - id: WeaponDisablerSMG # Budget cuts; 9% chance
-        weight: 9
+      - id: WeaponEnergyShotgun # 69% chance
+        weight: 65
+      - id: WeaponDisablerSMG # Budget cuts; 12% chance
+        weight: 12
       - id: GunpetInstrument # VERY Budget "gun"; 0.999% chance
         weight: 0.999
       - !type:AllSelector # Specific meme request so only 0.001%
