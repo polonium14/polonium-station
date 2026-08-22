@@ -13,22 +13,6 @@
     - id: FoodShrimpRaw
       amount: 6
 
-- type: entityTable
-  id: RandomDonkpocketTable
-  table: !type:GroupSelector
-    children:
-    - id: FoodBoxDonkpocket
-    - id: FoodBoxDonkpocketSpicy
-    - id: FoodBoxDonkpocketTeriyaki
-    - id: FoodBoxDonkpocketPizza
-    - id: FoodBoxDonkpocketCarp
-    - id: FoodBoxDonkpocketBerry
-    - id: FoodBoxDonkpocketHonk
-    - id: FoodBoxDonkpocketDink
-    - id: FoodBoxDonkpocketStonk
-      weight: 0.2
-    - id: FoodBoxDonkpocketMoth
-
 - type: entity
   id: CrateFoodRandomDonkPocket
   parent: CratePlastic
