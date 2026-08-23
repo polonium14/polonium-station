@@ -29,6 +29,7 @@
     footstepSoundCollection: !type:SoundCollectionSpecifier
       collection: FootstepPuddle
   - type: Damageable
+  - type: Injurable
     damageContainer: Biological
   - type: SanguinePool
     trailPrototype: PuddleBlood

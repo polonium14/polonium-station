@@ -51,5 +51,6 @@
   - type: Appearance
   - type: VampireDecoyAppearance
   - type: Damageable
+  - type: Injurable
     damageContainer: Biological
   - type: VampireDecoy

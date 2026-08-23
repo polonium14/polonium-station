@@ -53,6 +53,7 @@
           layer:
             - WallLayer
     - type: Damageable
+    - type: Injurable
       damageContainer: Biological
     - type: Destructible
       thresholds:
@@ -331,6 +332,7 @@
   categories: [HideSpawnMenu]
   components:
     - type: Damageable
+    - type: Injurable
       damageContainer: ShadowHaze
     - type: Destructible
       thresholds:
