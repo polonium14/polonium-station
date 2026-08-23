@@ -1,17 +1,4 @@
 ﻿Entries:
-- author: sowelipililimute
-  changes:
-  - message: Drinking or eating things now gradually trickles into the bloodstream,
-      instead of being a fixed delay
-    type: Tweak
-  - message: Reagent effect groups are now stages of metabolism in the guidebook
-    type: Tweak
-  - message: Many reagents that break down into other ones have clearer guidebook
-      descriptions and slightly adjusted behaviour
-    type: Tweak
-  id: 9454
-  time: '2026-01-23T02:05:59.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42172
 - author: Princess-Cheeseballs
   changes:
   - message: Added the Syndimov Lawboard to the Traitor Uplink.
@@ -4073,3 +4060,10 @@
   id: 9953
   time: '2026-08-21T08:16:15.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/919
+- author: Saver310
+  changes:
+  - message: "Dodano kategori\u0119 dla zabawek w bibelotach"
+    type: Add
+  id: 9954
+  time: '2026-08-23T07:51:40.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/922
