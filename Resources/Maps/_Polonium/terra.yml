@@ -30043,8 +30043,6 @@ entities:
     - type: Transform
       parent: 2
       pos: 16.5,-12.5
-    - type: NavMapBeacon
-      text: Кабинет психолога
     - type: WarpPoint
       location: Gabinet psychologa
   - uid: 2572
@@ -30151,7 +30149,7 @@ entities:
       parent: 2
       pos: 38.5,3.5
     - type: NavMapBeacon
-      text: Репортёр
+      text: Reporter
     - type: WarpPoint
       location: Biuro reportera
   - uid: 2584
@@ -30160,7 +30158,7 @@ entities:
       parent: 2
       pos: 31.5,32.5
     - type: NavMapBeacon
-      text: Зоотехник
+      text: Zoolog
     - type: WarpPoint
       location: Biuro zoologa
 - proto: DefaultStationBeaconSolars
