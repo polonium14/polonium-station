@@ -118,6 +118,12 @@
         type: StrippableBoundUserInterface
       enum.SurgeryUIKey.Key:
         type: SurgeryBui
+      # starlight start
+      enum.VampireClassUiKey.Key:
+        type: VampireClassBui
+      enum.VampireLocateUiKey.Key:
+        type: VampireLocateBui
+      # starlight end
   - type: Puller
   - type: Speech
     speechSounds: Alto

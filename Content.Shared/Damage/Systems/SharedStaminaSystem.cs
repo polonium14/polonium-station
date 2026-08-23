@@ -473,7 +473,7 @@ public abstract partial class SharedStaminaSystem : EntitySystem
         _adminLogger.Add(LogType.Stamina, LogImpact.Medium, $"{ToPrettyString(uid):user} entered stamina crit");
     }
 
-    private void ExitStamCrit(EntityUid uid, StaminaComponent? component = null)
+    public void ExitStamCrit(EntityUid uid, StaminaComponent? component = null)
     {
         if (!Resolve(uid, ref component) ||
             !component.Critical)
@@ -496,7 +496,7 @@ public abstract partial class SharedStaminaSystem : EntitySystem
     /// This modifier is saved to the Stamina Low Status Effect entity's <see cref="MovementModStatusEffectComponent"/>.
     /// </summary>
     /// <param name="ent">Entity to update</param>
-    private void AdjustStatus(Entity<StaminaComponent?> ent)
+    public void AdjustStatus(Entity<StaminaComponent?> ent)
     {
         if (!Resolve(ent, ref ent.Comp))
             return;
