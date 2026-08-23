@@ -369,7 +369,7 @@ public sealed partial class DantalionSystem : EntitySystem
         if (!HasComp<HumanoidProfileComponent>(target))
             return false;
 
-        if (!TryComp<MobStateComponent>(target, out var mobState) || mobState.CurrentState == Shared.Mobs.MobState.Dead)
+        if (!TryComp<MobStateComponent>(target, out var mobState) || mobState.CurrentState == MobState.Dead)
             return false;
 
         if (HasComp<VampireComponent>(target) || HasComp<VampireThrallComponent>(target))
@@ -571,7 +571,7 @@ public sealed partial class DantalionSystem : EntitySystem
         var xform = Transform(uid);
         var spawnCoords = _transform.GetMapCoordinates(xform);
 
-        var decoy = EntityManager.SpawnEntity("VampireDecoyEntity", spawnCoords);
+        var decoy = Spawn("VampireDecoyEntity", spawnCoords);
 
         if (TryComp<VampireDecoyAppearanceComponent>(decoy, out var decoyAppearance))
         {
@@ -661,7 +661,7 @@ public sealed partial class DantalionSystem : EntitySystem
                 Dirty(thrall, stamina);
             }
 
-            var rallyEffect = EntityManager.SpawnEntity(dantalion.RallyOverlayEffect, Transform(thrall).Coordinates);
+            var rallyEffect = Spawn(dantalion.RallyOverlayEffect, Transform(thrall).Coordinates);
             _transform.SetParent(rallyEffect, thrall);
 
             ralliedCount++;

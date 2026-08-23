@@ -147,12 +147,12 @@ public sealed partial class HemomancerSystem : EntitySystem
         var uid = args.Performer;
         var active = EnsureComp<ActiveVampireHemomancerClawsComponent>(uid);
 
-        if (active.SpawnedClaws != null && EntityManager.EntityExists(active.SpawnedClaws.Value))
+        if (active.SpawnedClaws != null && Exists(active.SpawnedClaws.Value))
         {
             var oldClaws = active.SpawnedClaws.Value;
             active.SpawnedClaws = null;
             RemComp<UnremoveableComponent>(oldClaws);
-            EntityManager.DeleteEntity(oldClaws);
+            Del(oldClaws);
         }
 
         if (TryComp<HandsComponent>(uid, out var handsComp))
@@ -163,7 +163,7 @@ public sealed partial class HemomancerSystem : EntitySystem
         }
 
         var coords = Transform(uid).Coordinates;
-        var claws = EntityManager.SpawnEntity("VampiricClawsItem", coords);
+        var claws = Spawn("VampiricClawsItem", coords);
         active.SpawnedClaws = claws;
 
         if (TryComp<VampireComponent>(uid, out var vampire))
@@ -183,7 +183,7 @@ public sealed partial class HemomancerSystem : EntitySystem
             }
 
             RemComp<UnremoveableComponent>(claws);
-            EntityManager.DeleteEntity(claws);
+            Del(claws);
             return;
         }
 
@@ -276,7 +276,7 @@ public sealed partial class HemomancerSystem : EntitySystem
                     continue;
                 }
 
-                var poisonSpec = new DamageSpecifier(_proto.Index<DamageTypePrototype>(_poisonTypeId), pending.ToxinDamage);
+                var poisonSpec = new DamageSpecifier(_proto.Index(_poisonTypeId), pending.ToxinDamage);
                 _damageableSystem.TryChangeDamage(target, poisonSpec, true, origin: performerUid);
                 _movementMod.TryAddMovementSpeedModDuration(target, MovementModStatusSystem.FlashSlowdown, pending.SlowDuration, pending.SlowMultiplier);
                 hitEnemies.Add(target);
@@ -298,7 +298,7 @@ public sealed partial class HemomancerSystem : EntitySystem
                 || _vampire.IsTileBlockedByEntities(coords))
                 continue;
 
-            EntityManager.SpawnEntity(tendrilVisualId, coords);
+            Spawn(tendrilVisualId, coords);
         }
     }
 
@@ -353,7 +353,7 @@ public sealed partial class HemomancerSystem : EntitySystem
         foreach (var pos in successfulPositions)
         {
             var barrierCoords = tileCoords.WithPosition(pos);
-            var barrier = EntityManager.SpawnEntity(args.BarrierPrototype, barrierCoords);
+            var barrier = Spawn(args.BarrierPrototype, barrierCoords);
             var preventComp = EnsureComp<PreventCollideComponent>(barrier);
             preventComp.Uid = args.Performer;
             Dirty(barrier, preventComp);
@@ -508,7 +508,7 @@ public sealed partial class HemomancerSystem : EntitySystem
         if (!_vampire.CheckAndConsumeBloodCost(uid, comp, args.Action.Owner))
             return;
 
-        var blunt = _proto.Index<DamageTypePrototype>(_bluntTypeId);
+        var blunt = _proto.Index(_bluntTypeId);
         foreach (var targetUid in targetsToDamage)
         {
             var spec = new DamageSpecifier(blunt, args.Damage);
@@ -721,7 +721,7 @@ public sealed partial class HemomancerSystem : EntitySystem
         var count = currentTargets.Count;
         if (count > 0)
         {
-            var bluntType = _proto.Index<DamageTypePrototype>(_bluntTypeId);
+            var bluntType = _proto.Index(_bluntTypeId);
             foreach (var target in currentTargets)
             {
                 var dmgSpec = new DamageSpecifier(bluntType, active.Damage);
@@ -729,8 +729,8 @@ public sealed partial class HemomancerSystem : EntitySystem
             }
 
             var selfHealSpec = new DamageSpecifier();
-            selfHealSpec += new DamageSpecifier(_proto.Index<DamageGroupPrototype>(_bruteGroupId), -(active.HealBrute * count));
-            selfHealSpec += new DamageSpecifier(_proto.Index<DamageGroupPrototype>(_burnGroupId), -(active.HealBurn * count));
+            selfHealSpec += new DamageSpecifier(_proto.Index(_bruteGroupId), -(active.HealBrute * count));
+            selfHealSpec += new DamageSpecifier(_proto.Index(_burnGroupId), -(active.HealBurn * count));
             _damageableSystem.TryChangeDamage(uid, selfHealSpec, true);
 
             if (TryComp<StaminaComponent>(uid, out var stam))
