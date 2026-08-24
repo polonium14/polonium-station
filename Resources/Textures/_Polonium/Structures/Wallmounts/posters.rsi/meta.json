@@ -5,10 +5,13 @@
         "y": 32
     },
     "license": "CC-BY-NC-SA-3.0",
-    "copyright": "Made by Polonium Station (https://github.com/polonium14/polonium-station), translated posters by Saver310",
+    "copyright": "Made by Polonium Station (https://github.com/polonium14/polonium-station), translated posters and seksixeno edited by Saver310",
     "states": [
         {
             "name": "nfz"
+        },
+        {
+            "name": "seksixeno"
         },
         {
             "name": "poster3_legit"

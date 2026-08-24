@@ -7,3 +7,13 @@
   - type: Sprite
     sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: nfz
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandLustyExomorph
+  name: "Lusty Exomorph"
+  description: "A heretical poster depicting the titular star of an equally heretical book."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
+    state: seksixeno
