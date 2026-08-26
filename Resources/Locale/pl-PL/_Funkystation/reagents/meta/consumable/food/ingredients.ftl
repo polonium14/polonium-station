@@ -1,5 +1,4 @@
-
-reagent-name-liquidpie = płynne ciasto
-reagent-desc-liquidpie = Zmielone ciasto bananowe
-reagent-name-cheesium = serowium
-reagent-desc-cheesium = Ser?
+reagent-name-liquidpie = liquid pie
+reagent-desc-liquidpie = Pulped banana cream pie.
+reagent-name-cheesium = cheesium
+reagent-desc-cheesium = Cheese?
