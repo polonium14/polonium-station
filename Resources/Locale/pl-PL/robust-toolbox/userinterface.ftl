@@ -1,2 +1,2 @@
-popup-copy-button = Kopiuj
-popup-title = Uwaga!
+popup-copy-button = Copy
+popup-title = Alert!
