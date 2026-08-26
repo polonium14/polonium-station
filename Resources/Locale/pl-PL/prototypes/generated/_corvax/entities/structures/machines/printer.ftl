@@ -1,2 +1,2 @@
-ent-PrinterDoc = drukarka dokumentów
-    .desc = Biurokratyczna doskonałość. Przechowuje bazę wszystkich dokumentów NanoTrasen. Aby szybko wypełnić dokumenty danymi osobowymi, użyj gniazda na kartę identyfikacyjną. Drukowanie jest możliwe po załadowaniu papieru.
+ent-PrinterDoc = document printer
+    .desc = Bureaucratic perfection. Stores the database of all Nanotrasen documents. For rapid pre-filling of documents with your personal details, use the ID card slot. Printing is available provided paper is supplied.
