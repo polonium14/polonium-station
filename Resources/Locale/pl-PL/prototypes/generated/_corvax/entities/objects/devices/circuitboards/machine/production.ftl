@@ -1,2 +1,2 @@
-ent-PrinterDocMachineCircuitboard = drukarka dokumentów (płytka maszynowa)
-    .desc = Płytka drukowana do drukarki dokumentów.
+ent-PrinterDocMachineCircuitboard = document printer machine board
+    .desc = A machine printed circuit board for a document printer
