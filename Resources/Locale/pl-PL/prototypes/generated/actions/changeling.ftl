@@ -4,8 +4,8 @@ ent-ActionChangelingBiodegrade = Biodegrade
     .desc = Vomit acid over your restraints, setting yourself free.
 ent-ActionChangelingDevour = [color=red]Devour[/color]
     .desc = Consume the essence of your victims and subsume their identity and mind into your own.
-ent-ActionChangelingTransform = Transformacja
-    .desc = Przemień się w innego humanoida. Nie obejmuje ubrań. Kosztuje 5 chemikaliów.
+ent-ActionChangelingTransform = [color=red]Transform[/color]
+    .desc = Transform and assume the identities of those you have devoured.
 ent-ActionChangelingStore = DNA Store
     .desc = Opens the ability store.
 ent-ActionChangelingVoiceMimic = Voice Mimicry
