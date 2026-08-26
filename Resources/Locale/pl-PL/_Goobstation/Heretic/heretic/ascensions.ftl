@@ -1,4 +1,3 @@
-
 heretic-ascension-ash =
     The Watch is dead. the Nightwatcher burned with it, yet his fire burns evermore.
     For the Nightwatcher brought forth the rite to mankind! His gaze endures, and now I am one with the flames.
