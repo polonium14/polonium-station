@@ -1,2 +1,2 @@
 # Button text in lobby/escape menu
-ui-vote-menu-button = Rozpocznij głosowanie
+ui-vote-menu-button = Call vote
