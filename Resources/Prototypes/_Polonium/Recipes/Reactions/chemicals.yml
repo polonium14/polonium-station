@@ -1,0 +1,31 @@
+
+- type: reaction
+  id: ExtinguishingAgent
+  maxTemp: 300 # So it just barely triggers at room temperature
+  reactants:
+    CarbonDioxide:
+      amount: 3
+    Nitrogen:
+      amount: 4
+    Water:
+      amount: 3
+  products:
+    ExtinguishingAgent: 5 # 10u -> 5u so it's not SUPER easy to mass produce.
+  effects:
+    - !type:AdjustSolutionThermalEnergy # The temperature stays exacly the same
+      delta: -1465.75
+
+- type: reaction
+  id: ExtinguishingAgentBreakdown
+  minTemp: 570
+  reactants:
+    ExtinguishingAgent:
+      amount: 5
+  products: # Breaks CO2 into what it is made of too (not H2O becasue that would trigger ammonia to create itself). Yes, I am aware you can't make CO2, you need to condensate it from gas form, that is on purpose so a reagent for fighting fires requires atmos involvement.
+    Carbon: 1
+    Nitrogen: 4
+    Water: 3
+    Oxygen: 2
+  effects:
+    - !type:AdjustSolutionThermalEnergy # The temperature stays exacly the same
+      delta: 1465.75
