@@ -1,4 +1,3 @@
-
 # Abilities
 changeling-biomass-deficit = Not enough biomass!
 changeling-chemicals-deficit = Not enough chemicals!
