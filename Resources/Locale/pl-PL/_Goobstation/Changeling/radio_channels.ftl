@@ -1,1 +1,1 @@
-chat-radio-hivemind = Umysł Ula
+chat-radio-hivemind = Hivemind
