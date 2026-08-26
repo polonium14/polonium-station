@@ -1,9 +1,9 @@
-ent-DinosaurSpawnerRandom = losowy generator dinozaurów
-    .suffix = NIE MAPOWAĆ
+ent-DinosaurSpawnerRandom = random dinosaur spawner
+    .suffix = DO NOT MAP
     .desc = { ent-MarkerBase.desc }
-ent-DinosaurSpawnerEasy = generator szczeliny dinozaurów (łatwy)
+ent-DinosaurSpawnerEasy = dinosaur rift spawner (easy)
     .desc = { ent-MarkerBase.desc }
-ent-DinosaurSpawnerMedium = generator szczeliny dinozaurów (średni)
+ent-DinosaurSpawnerMedium = dinosaur rift spawner (medium)
     .desc = { ent-MarkerBase.desc }
-ent-DinosaurSpawnerHard = generator szczeliny dinozaurów (trudny)
+ent-DinosaurSpawnerHard = dinosaur rift spawner (hard)
     .desc = { ent-MarkerBase.desc }
