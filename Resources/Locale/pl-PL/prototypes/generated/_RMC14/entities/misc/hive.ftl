@@ -1,3 +1,3 @@
-ent-CMXenoHive = Domyślny Ul
+ent-CMXenoHive = Default Hive
     .desc = { "" }
     .gender = male
