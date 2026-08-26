@@ -1,3 +1,2 @@
-
 drunkard-title = The Drunkard
 drunkard-description = A fun ol' time watching everyuthing fall apart and everywun die...
