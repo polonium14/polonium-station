@@ -1,8 +1,8 @@
-ent-BasePKAUpgrade = modkit do APK
-    .desc = Zestaw modernizujący do akceleratora protokinetycznego.
-ent-PKAUpgradeDamage = modkit do APK (obrażenia)
+ent-BasePKAUpgrade = PKA modkit
+    .desc = A modkit for a proto-kinetic accelerator.
+ent-PKAUpgradeDamage = PKA modkit (damage)
     .desc = { ent-BasePKAUpgrade.desc }
-ent-PKAUpgradeRange = modkit do APK (zasięg)
+ent-PKAUpgradeRange = PKA modkit (range)
     .desc = { ent-BasePKAUpgrade.desc }
-ent-PKAUpgradeFireRate = modkit do APK (szybkość strzału)
+ent-PKAUpgradeFireRate = PKA modkit (fire rate)
     .desc = { ent-BasePKAUpgrade.desc }
