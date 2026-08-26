@@ -1,1 +1,1 @@
-particle-accelerator-admin-power-strength-warning = Zmieniono moc AKCEL { $machine } na { $powerState } na koordynatach: { $coordinates }
+particle-accelerator-admin-power-strength-warning = changed PA power of { $machine } to { $powerState } at coordinates: { $coordinates }
