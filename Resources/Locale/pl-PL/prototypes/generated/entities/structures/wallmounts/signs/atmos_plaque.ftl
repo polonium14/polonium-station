@@ -1,4 +1,4 @@
-ent-PlaqueAtmos = atmos plaque
+ent-PlaqueAtmos = atmos plaque spawner
     .suffix = Spawner
     .desc = { ent-MarkerBase.desc }
 ent-PlaqueAtmosFEA = FEA Atmospherics Division plaque
