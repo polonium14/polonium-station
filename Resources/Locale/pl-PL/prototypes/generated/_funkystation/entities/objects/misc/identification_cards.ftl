@@ -1,12 +1,12 @@
-ent-InternalAffairsAgentIDCard = identyfikator Agenta Spraw Wewnętrznych
+ent-InternalAffairsAgentIDCard = internal affairs agent ID card
     .desc = You wouldn't lose this, would you?
-ent-MagistrateIDCard = identyfikator sędziego
+ent-MagistrateIDCard = magistrate ID card
     .desc = { ent-IDCardStandard.desc }
-ent-BlueshieldOfficerIDCard = identyfikator oficera "Niebieskiej Tarczy"
+ent-BlueshieldOfficerIDCard = blueshield officer ID card
     .desc = { ent-IDCardStandard.desc }
-ent-NanotrasenRepresentativeIDCard = identyfikator przedstawiciela Nanotrasen
+ent-NanotrasenRepresentativeIDCard = nanotrasen representative ID card
     .desc = { ent-IDCardStandard.desc }
 ent-NanotrasenCareerTrainerIDCard = nanotrasen career trainer ID card
     .desc = { ent-IDCardStandard.desc }
-ent-CentcomInternIDCard = identyfikator stażysty Centralnego Dowództwa
+ent-CentcomInternIDCard = central command intern ID card
     .desc = { ent-IDCardStandard.desc }
