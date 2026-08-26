@@ -12,7 +12,7 @@ ion-storm-crew = CREW
 ion-storm-people = PEOPLE
 
 ion-storm-adjective-things = {$adjective} THINGS
-ion-storm-x-and-y = {$x} AND {$y} { $number } { $adjective }
+ion-storm-x-and-y = {$x} AND {$y}
 
 # subjects can generally be threats or jobs or objects
 # thing is specified above it

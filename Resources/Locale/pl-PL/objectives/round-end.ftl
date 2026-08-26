@@ -20,7 +20,7 @@ objectives-with-objectives =
         [epicene] byłu
        *[neuter] było
     } { $agent } z następującymi zadaniami:
-objectives-objective-success = { $objective } | [color=green]Sukces![/color] { $progress }
+objectives-objective-success = { $objective } | [color=green]Sukces![/color]
 objectives-objective-partial-success = { $objective } | [color=yellow]W większości sukces![/color] ({ $progress }%)
 objectives-objective-partial-failure = { $objective } | [color=orange]Po części porażka![/color] ({ $progress }%)
 objectives-objective-fail = { $objective } | [color=red]Porażka![/color] ({ $progress }%)
