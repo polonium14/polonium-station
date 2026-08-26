@@ -1,4 +1,3 @@
-
 revolutionaries-lose-announcement-shuttle-call = Na podstawie danych z naszych czujników dalekiego zasięgu, wrogie komórki rewolucyjne na stacji zostały stłumione i zneutralizowane. Wezwano wahadłowiec ewakuacyjny, przewidywany czas przybycia: { $time } { $units }.
 revolutionaries-lose-announcement = Na podstawie danych z naszych czujników dalekiego zasięgu, wrogie komórki rewolucyjne na stacji zostały stłumione i zneutralizowane.
 revolutionaries-win-announcement-shuttle-call =
