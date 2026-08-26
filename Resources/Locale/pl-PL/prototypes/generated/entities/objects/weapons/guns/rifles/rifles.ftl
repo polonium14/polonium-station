@@ -1,13 +1,17 @@
 ent-BaseWeaponRifle = BaseWeaponRifle
-    .desc = Celuj i strzelaj.
+    .desc = A rooty tooty point and shooty.
 ent-WeaponRifleAk = AKMS
-    .desc = Ikoniczna broń wojenna. Używa amunicji kalibru .30.
-ent-WeaponRifleLecter = Lekter
-    .desc = Wysokiej klasy wojskowy karabin szturmowy. Używa amunicji kalibru .20.
+    .desc = A somewhat battered combat rifle of a design originating from old Earth. Favored by criminals, militias, and terrorists due to its famed reliability and easy-to-manufacture design. Feeds from .30 rifle magazines.
+ent-WeaponRifleLecter = Lecter
+    .desc =
+        Popular gas-operated combat rifle used heavily by Nanotrasen and SolGov. Operating in semi or fully automatic, its accuracy, stopping power, and reliability make it excel in all manner of environments.
+        Feeds from .20 rifle magazines.
 ent-WeaponRifleLecterXL8 = XL8
     .desc =
-        Eksperymentalny Lekter 8
-        Nieracjonalnie drogi karabin szturmowy klasy wojskowej ze zintegrowaną optyką. 
-        Używa amunicji .20 karabinowej.
+        The Experimental Lecter 8
+        An unreasonably expensive military grade assault rifle with integrated optic.
+        Uses .20 rifle ammo.
 ent-WeaponRifleEstoc = Estoc DMR
-    .desc = Karabin snajperski, preferowany do walki na średnim i dalekim dystansie. Wykorzystuje amunicję kalibru .20.
+    .desc =
+        A designated marksman rifle firing in 3-round bursts. The Estoc was designed as the Lecter’s long-range counterpart, equipped with an extended 20-inch barrel and telescopic sight.
+        Feeds from .20 rifle magazines.
