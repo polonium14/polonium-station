@@ -20,5 +20,5 @@ ent-Telecrystal150 = { ent-Telecrystal }
     .suffix = 150 TC
     .desc = { ent-Telecrystal.desc }
 ent-BaseUplinkRadio40TCNukeOps = { ent-BaseUplinkRadio }
-    .suffix = 225 TC, operatorzy nuklearni
+    .suffix = 40 TC, NukeOps
     .desc = { ent-BaseUplinkRadio.desc }
