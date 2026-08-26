@@ -1,9 +1,9 @@
-ent-AppearanceHarpy = wygląd harpii
+ent-AppearanceHarpy = harpy appearance
     .desc = { ent-BaseSpeciesAppearance.desc }
 ent-MobHarpy = Urist McHarpy
     .desc = { ent-AppearanceHarpy.desc }
 ent-OrganHarpy = { ent-OrganBaseOrganic }
-    .suffix = harpia
+    .suffix = harpy
     .desc = { ent-OrganBaseOrganic.desc }
 ent-OrganHarpyMetabolizer = { "" }
     .desc = { "" }
