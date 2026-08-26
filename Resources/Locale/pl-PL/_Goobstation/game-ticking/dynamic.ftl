@@ -1,4 +1,3 @@
-
 dynamic-roundend-totalthreat = Total threat points: { $points }.
 dynamic-roundend-points-roundstart = Roundstart budget: { $points }.
 dynamic-roundend-points-midround = Midround budget: { $points }.
