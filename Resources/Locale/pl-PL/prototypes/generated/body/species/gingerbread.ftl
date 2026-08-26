@@ -1,6 +1,6 @@
 ent-AppearanceGingerbread = gingerbread appearance
     .desc = { ent-BaseSpeciesAppearance.desc }
-ent-MobGingerbread = Urist McCiasteczko
+ent-MobGingerbread = Urist McCookie
     .desc = { ent-AppearanceGingerbread.desc }
 ent-OrganGingerbread = { ent-OrganBaseOrganic }
     .suffix = gingerbread
@@ -27,6 +27,6 @@ ent-OrganGingerbreadFootLeft = { ent-OrganBaseFootLeft }
     .desc = { ent-OrganBaseFootLeft.desc }
 ent-OrganGingerbreadFootRight = { ent-OrganBaseFootRight }
     .desc = { ent-OrganBaseFootRight.desc }
-ent-MobGingerbreadAI = człowiek piernik
+ent-MobGingerbreadAI = gingerbread man
     .desc = { ent-MobGingerbread.desc }
     .gender = male
