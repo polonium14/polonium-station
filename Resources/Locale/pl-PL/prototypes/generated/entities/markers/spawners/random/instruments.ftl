@@ -1,2 +1,2 @@
-ent-RandomInstruments = spawner losowych instrumentów
+ent-RandomInstruments = random instruments spawner
     .desc = { ent-MarkerBase.desc }
