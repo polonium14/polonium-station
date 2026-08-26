@@ -1,1 +1,1 @@
-admin-shuttle-title = Wezwij wahadłowiec
+admin-shuttle-title = (Re)call shuttle
