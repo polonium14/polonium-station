@@ -1,5 +1,4 @@
 # Names
-chat-emote-name-hiss = Syczenie
-
+chat-emote-name-hiss = Hiss
 # Message
-chat-emote-msg-hiss = syczy.
+chat-emote-msg-hiss = hisses.
