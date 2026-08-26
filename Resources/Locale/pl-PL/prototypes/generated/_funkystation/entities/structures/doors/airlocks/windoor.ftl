@@ -1,3 +1,3 @@
 ent-WindoorReporterLocked = { ent-WindoorSecureServiceLocked }
-    .suffix = Reporter, Zablokowane
+    .suffix = Reporter, Locked
     .desc = { ent-WindoorSecureServiceLocked.desc }
