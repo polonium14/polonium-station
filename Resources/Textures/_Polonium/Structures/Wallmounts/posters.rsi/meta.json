@@ -14,6 +14,9 @@
             "name": "seksixeno"
         },
         {
+            "name": "poster1_legit"
+        },
+        {
             "name": "poster3_legit"
         },
         {
@@ -41,10 +44,22 @@
             "name": "poster13_legit"
         },
         {
+            "name": "poster14_contraband"
+        },
+        {
+            "name": "poster16_contraband"
+        },
+        {
             "name": "poster16_legit"
         },
         {
             "name": "poster17_legit"
+        },
+        {
+            "name": "poster19_legit"
+        },
+        {
+            "name": "poster20_legit"
         },
         {
             "name": "poster21_legit"
@@ -53,22 +68,46 @@
             "name": "poster22_legit"
         },
         {
+            "name": "poster23_contraband"
+        },
+        {
             "name": "poster23_legit"
+        },
+        {
+            "name": "poster25_contraband"
         },
         {
             "name": "poster26_legit"
         },
         {
+            "name": "poster29_contraband"
+        },
+        {
+            "name": "poster29_legit"
+        },
+        {
             "name": "poster34_legit"
         },
         {
+            "name": "poster35_contraband"
+        },
+        {
+            "name": "poster39_legit"
+        },
+        {
             "name": "poster53_contraband"
+        },
+        {
+            "name": "poster55_contraband"
         },
         {
             "name": "poster56_contraband"
         },
         {
             "name": "poster56_legit"
+        },
+        {
+            "name": "poster60_contraband"
         }
     ]
 }

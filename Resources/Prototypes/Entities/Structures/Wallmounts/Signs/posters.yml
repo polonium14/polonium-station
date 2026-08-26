@@ -176,6 +176,7 @@
   description: "This poster promotes rank gluttony."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster14_contraband
 
 - type: entity
@@ -194,6 +195,7 @@
   description: "A poster that positions the seat of power outside Nanotrasen."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster16_contraband
 
 - type: entity
@@ -257,6 +259,7 @@
   description: "A poster urging the viewer to rebel against Nanotrasen."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster23_contraband
 
 - type: entity
@@ -275,6 +278,7 @@
   description: "Who cares about lung cancer when you're high as a kite?"
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster25_contraband
 
 - type: entity
@@ -311,6 +315,7 @@
   description: "All the colors of the bloody murder rainbow."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster29_contraband
 
 - type: entity
@@ -356,6 +361,7 @@
   description: "This poster commemorates the bravery of the rogue drone; once exiled, and then ultimately destroyed by CentComm."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster35_contraband
 
 - type: entity
@@ -529,6 +535,7 @@
   description: "A poster depicting a grey shirted man holding a crowbar with the word Rise written below it."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster55_contraband
 
 - type: entity
@@ -575,6 +582,7 @@
   description: "Enlist with the Gorlex Marauders today! See the galaxy, kill corpos, get paid!"
   components:
     - type: Sprite
+      sprite: _Polonium/Structures/Wallmounts/posters.rsi
       state: poster60_contraband
 
 - type: entity
@@ -639,6 +647,7 @@
   description: "A poster glorifying the station's security force."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster1_legit
 
 - type: entity
@@ -812,6 +821,7 @@
   description: "A poster instructing the viewer to wear internals in the rare environments where there is no oxygen or the air has been rendered toxic."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster19_legit
 
 - type: entity
@@ -821,6 +831,7 @@
   description: "A poster instructing the viewer to wear eye protection when dealing with chemicals, smoke, or bright lights."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster20_legit
 
 - type: entity
@@ -906,6 +917,7 @@
   description: "Enlist in the Nanotrasen Deathsquadron reserves today!"
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster29_legit
 
 - type: entity
@@ -997,6 +1009,7 @@
   description: "A poster reminding you that security is watching your every move."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster39_legit
 
 - type: entity
