@@ -97,6 +97,7 @@
   description: "See the galaxy! Shatter corrupt megacorporations! Join today!"
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster5_contraband
 
 - type: entity
@@ -115,6 +116,7 @@
   description: "A poster advertising a rival corporate brand of cigarettes."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster7_contraband
 
 - type: entity
@@ -133,6 +135,7 @@
   description: "This poster references the uproar that followed Nanotrasen's financial cuts toward insulated-glove purchases."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster9_contraband
 
 - type: entity
@@ -730,6 +733,7 @@
   description: "Arf arf. Yap."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster8_legit
 
 - type: entity
@@ -739,6 +743,7 @@
   description: "A poster instructing the viewer to obey authority."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster9_legit
 
 - type: entity
