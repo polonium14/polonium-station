@@ -1,2 +1,1 @@
-
 fibers-metallic = metallic
