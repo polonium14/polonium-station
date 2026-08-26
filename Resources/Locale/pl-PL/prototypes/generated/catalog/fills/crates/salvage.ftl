@@ -1,8 +1,8 @@
-ent-CrateSalvageEquipment = skrzynia z ekwipunkiem odzyskowym
-    .desc = Dla odważnych. Zawiera skafander Spationaught, butle z powietrzem, buty magnetyczne, pas narzędziowy, PKA, GPS oraz radio.
-    .suffix = Uzupełniony
+ent-CrateSalvageEquipment = salvage equipment crate
+    .desc = For the daring.
+    .suffix = Filled
 ent-CrateSalvageAssortedGoodies = { ent-CrateGenericSteel }
-    .suffix = Uzupełniony, Losowy odzysk
+    .suffix = Filled, Salvage Random
     .desc = { ent-CrateGenericSteel.desc }
 ent-CrateCrusherDagger = crusher dagger crate
     .desc = Contains 4 crusher daggers for use by salvage.
