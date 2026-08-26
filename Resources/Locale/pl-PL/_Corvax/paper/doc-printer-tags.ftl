@@ -1,8 +1,8 @@
 doc-text-printer-default-station = NT-XX-###
-doc-text-printer-default-name = <Wprowadź imię i nazwisko>
-doc-text-printer-default-job = <Wprowadź stanowisko>
-doc-var-station = :STACJA:
-doc-var-date = :DATA:
-doc-var-name = :IMIĘ_NAZWISKO:
-doc-var-job = :STANOWISKO:
-IdSlot = Karta ID
+doc-text-printer-default-name = <Enter full name>
+doc-text-printer-default-job = <Enter job title>
+doc-var-station = :STATION:
+doc-var-date = :DATE:
+doc-var-name = :NAME:
+doc-var-job = :JOB:
+IdSlot = ID card
