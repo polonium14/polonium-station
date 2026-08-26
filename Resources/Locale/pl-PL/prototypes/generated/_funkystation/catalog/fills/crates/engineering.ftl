@@ -1,2 +1,2 @@
-ent-CrateEngineeringTEG = skrzynia z TEG
-    .desc = Zawiera centrum TEG oraz dwa odpowiadające mu cyrkulatory.
+ent-CrateEngineeringTEG = TEG crate
+    .desc = Contains the center of a TEG and two circulators to match.
