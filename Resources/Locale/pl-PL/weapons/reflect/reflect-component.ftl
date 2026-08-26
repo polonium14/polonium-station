@@ -1,1 +1,1 @@
-reflect-shot = Odbito!
+reflect-shot = Reflected!
