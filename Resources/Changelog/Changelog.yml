@@ -1,26 +1,4 @@
 ﻿Entries:
-- author: ScholarNZL
-  changes:
-  - message: Fixed a dev environment crash related to construction event validation.
-    type: Fix
-  id: 9461
-  time: '2026-01-26T06:12:02.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/41396
-- author: B_Kirill
-  changes:
-  - message: Fixed being able to pick up chameleon projector disguises via context
-      menu.
-    type: Fix
-  id: 9462
-  time: '2026-01-26T14:03:39.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42656
-- author: Ohelig
-  changes:
-  - message: Empty gas canisters now have a populated UI.
-    type: Fix
-  id: 9463
-  time: '2026-01-26T15:02:20.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42616
 - author: notquitehadouken
   changes:
   - message: Doors close on clown spider webs now
@@ -4036,3 +4014,26 @@
   id: 9960
   time: '2026-08-26T12:57:46.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/937
+- author: Saver310
+  changes:
+  - message: "Usuni\u0119to ruskie oznaczenia na mapie Kolonia Terra"
+    type: Remove
+  id: 9961
+  time: '2026-08-26T19:32:27.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/932
+- author: Koilak
+  changes:
+  - message: "Mi\u0142o\u015B\u0107 dla nadzorcy (teraz dostaje bro\u0144 do szafki)"
+    type: Add
+  id: 9962
+  time: '2026-08-26T19:34:13.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/926
+- author: Yaket
+  changes:
+  - message: "Przywr\xF3cono skrzynki z donk pocketami do logistyki."
+    type: Add
+  - message: Przeniesiono krewetki z kategorii serwis do jedzenia.
+    type: Tweak
+  id: 9963
+  time: '2026-08-26T19:31:18.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/929
