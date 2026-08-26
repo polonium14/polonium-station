@@ -1,4 +1,4 @@
-ent-ClothingEyesNightVisionGoggles = gogle noktowizyjne
-    .desc = Zaawansowany wyświetlacz nagłowny zapewniający dane ID i widzenie w całkowitej ciemności.
-ent-ClothingEyesNightVisionSecurityGoggles = gogle noktowizyjne ochrony
+ent-ClothingEyesNightVisionGoggles = night vision goggles
+    .desc = An advanced heads-up display which provides id data and vision in complete darkness.
+ent-ClothingEyesNightVisionSecurityGoggles = night vision security goggles
     .desc = { ent-ClothingEyesNightVisionGoggles.desc }
