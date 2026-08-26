@@ -1,7 +1,7 @@
-spider-web-action-nogrid = Nie ma podłogi pod tobą!
-spider-web-action-success = Stawiasz pajączynę wokół siebie.
-spider-web-action-fail = Nie możesz postawić tutaj pajęczyny! Nie ma tu miejsca.
-sericulture-failure-hunger = Jesteś za głodny, by postawić więcej pajęczyny!
+spider-web-action-nogrid = There is no floor under you!
+spider-web-action-success = You place webs around you.
+spider-web-action-fail = You can't place webs here! All cardinal directions already have webs!
+sericulture-failure-hunger = Your stomach is too empty to make any more webs!
 arachnid-wrap-failure-hunger = Twój żołądek jest zbyt pusty na to!
 arachnid-wrap-invalid-target = Możesz kokonić tylko humanoidalną zdobycz.
 arachnid-wrap-already = Już są w kokonie!
