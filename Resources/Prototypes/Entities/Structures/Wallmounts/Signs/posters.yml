@@ -232,6 +232,7 @@
   description: "Being fancy can be for any borg, just need a suit."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster20_contraband
 
 - type: entity
@@ -241,6 +242,7 @@
   description: "Borg Fancy, Now only taking the most fancy."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster21_contraband
 
 - type: entity
