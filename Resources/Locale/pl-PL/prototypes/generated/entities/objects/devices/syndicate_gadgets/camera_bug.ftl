@@ -1,2 +1,2 @@
-ent-CameraBug = haker kamer
-    .desc = Nielegalne urządzenie syndykatu, które pozwala na włamanie się do sieci kamer stacji.
+ent-CameraBug = camera bug
+    .desc = An illegal syndicate device that allows you to hack into the station's camera network.
