@@ -1,5 +1,5 @@
 ### Loc for the various UI-related verbs
 
-ui-verb-toggle-open = Otwórz UI
-verb-instrument-openui = Włącz Muzykę
-ui-needs-anchor = Najpierw go przymocuj!
+ui-verb-toggle-open = Toggle UI
+verb-instrument-openui = Play Music
+ui-needs-anchor = Anchor it first!
