@@ -10,5 +10,5 @@ ent-DecapoidBreathingApparatusMime = mime vaporizer
 ent-DecapoidVaporTank = vapor tank
     .desc = An alien contraption consisting of two tanks. The smaller tank takes in water and converts it into vapor, which is stored in the larger tank. It can hold 5 L of gas, and 30u of fluid.
 ent-DecapoidVaporTankFilled = vapor tank
-    .suffix = Wypełnione
+    .suffix = Filled
     .desc = { ent-DecapoidVaporTank.desc }
