@@ -1,2 +1,2 @@
-ent-MailCart = wózek pocztowy
-    .desc = Dostarczaj paczki ze stylem i wydajnością.
+ent-MailCart = mail cart
+    .desc = Deliver packages with style and efficiency.
