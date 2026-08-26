@@ -1,6 +1,6 @@
 ent-DisposalUnitBase = { ent-BaseMachinePowered }
-    .desc = Pneumatyczna jednostka utylizacji odpadów.
-ent-DisposalUnit = blok utylizacyjny
+    .desc = A pneumatic waste disposal unit.
+ent-DisposalUnit = disposal unit
     .desc = { ent-DisposalUnitBase.desc }
-ent-MailingUnit = blok pocztowy
-    .desc = Pneumatyczna jednostka dostarczania poczty.
+ent-MailingUnit = mailing unit
+    .desc = A pneumatic mail delivery unit.
