@@ -1,4 +1,4 @@
-construction-examine-condition-entity-anchored = Najpierw przykrzyć do podłogi.
-construction-examine-condition-entity-unanchored = Najpierw odkręć od podłogi.
-construction-step-condition-entity-anchored = Musi być przykręcone do podłogi.
-construction-step-condition-entity-unanchored = Musi być odkręcone od podłogi.
+construction-examine-condition-entity-anchored = First, anchor it.
+construction-examine-condition-entity-unanchored = First, unanchor it.
+construction-step-condition-entity-anchored = It must be anchored.
+construction-step-condition-entity-unanchored = It must be unanchored.
