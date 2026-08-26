@@ -1,8 +1,8 @@
-ent-FireBomb = boba zapalająca
-    .desc = Słabe, improwizowane urządzenie zapalające.
-ent-FireBombEmpty = bomba zapalająca
-    .desc = Słabe, improwizowane urządzenie zapalające. Nie ma paliwa.
-    .suffix = pusta
+ent-FireBomb = fire bomb
+    .desc = A weak, improvised incendiary device.
+ent-FireBombEmpty = fire bomb
+    .desc = A weak, improvised incendiary device. This one has no fuel.
+    .suffix = empty
 ent-FireBombFuel = { ent-FireBombEmpty }
-    .desc = Słabe, improwizowane urządzenie zapalające. Nie ma przewodów.
-    .suffix = paliwo
+    .desc = A weak, improvised incendiary device. This one is missing wires.
+    .suffix = fuel
