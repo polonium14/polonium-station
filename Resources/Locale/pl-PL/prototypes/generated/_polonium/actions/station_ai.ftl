@@ -1,4 +1,4 @@
-ent-ActionStationAiExternalLockdown = Totalna blokada
-    .desc = Zablokuj wszystkie zewnętrzne śluz powietrzne na stacji.
-ent-ActionAGhostExternalLockdown = Totalna blokada
-    .desc = Zablokuj wszystkie zewnętrzne śluz powietrzne na stacji.
+ent-ActionStationAiExternalLockdown = Total lockdown
+    .desc = Bolt all external airlocks on the station.
+ent-ActionAGhostExternalLockdown = Total lockdown
+    .desc = Bolt all external airlocks on the station.
