@@ -1,4 +1,4 @@
 ## EnterVerb
 
-medical-scanner-verb-enter = Wejdź
-medical-scanner-verb-noun-occupant = Zajemca
+medical-scanner-verb-enter = Enter
+medical-scanner-verb-noun-occupant = occupant
