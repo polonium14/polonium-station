@@ -1,8 +1,8 @@
 ent-BaseDelivery = { ent-BaseItem }
     .desc = { ent-BaseItem.desc }
-ent-PackageDelivery = paczka
+ent-PackageDelivery = package
     .desc = { ent-BaseDelivery.desc }
-ent-LetterDelivery = list
+ent-LetterDelivery = letter
     .desc = { ent-BaseDelivery.desc }
 ent-DeliveryModifierPriority = { "" }
     .desc = Components to add when a delivery is rolled as priority.
