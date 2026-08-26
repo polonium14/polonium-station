@@ -1,1 +1,1 @@
-rule-traitor-added-announcement = Witajcie, załogo! Miłej zmiany!
+rule-traitor-added-announcement = Hello crew! Have a good shift!
