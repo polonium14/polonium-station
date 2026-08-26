@@ -1,4 +1,3 @@
-
 action-name-hairball = Cough Up Hairball
 action-description-hairball = Purge some of your chemstream, and gain a cool hairball to throw at people.
 hairball-mask = Take off your { $mask } first.
