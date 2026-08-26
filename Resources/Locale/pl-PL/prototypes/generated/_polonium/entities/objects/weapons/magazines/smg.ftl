@@ -1,4 +1,4 @@
-ent-PMMMachineGunMagazineBase = Magazynek PMM Model-X (.35 auto dowolny)
+ent-PMMMachineGunMagazineBase = Magazynek PMM Model-X (.35 auto any)
     .desc = { ent-BaseItem.desc }
 ent-PMMMachineGunMagazine = Magazynek PMM Model-X (.35 auto )
     .desc = { ent-PMMMachineGunMagazineBase.desc }
@@ -6,8 +6,8 @@ ent-PMMMachineGunMagazineUranium = Magazynek PMM Model-X (.35 auto uranium)
     .desc = { ent-PMMMachineGunMagazineBase.desc }
 ent-PMMMachineGunMagazineIncendiary = Magazynek PMM Model-X (.35 auto incendiary)
     .desc = { ent-PMMMachineGunMagazineBase.desc }
-ent-PMMMachineGunMagazinePractice = Magazynek PMM Model-X (.35 auto treningowe)
+ent-PMMMachineGunMagazinePractice = Magazynek PMM Model-X (.35 auto practice)
     .desc = { ent-PMMMachineGunMagazineBase.desc }
-ent-PMMMachineGunMagazineEmpty = Magazynek PMM Model-X (.35 auto dowolny)
+ent-PMMMachineGunMagazineEmpty = Magazynek PMM Model-X (.35 auto any)
     .suffix = (pusty)
     .desc = { ent-PMMMachineGunMagazineBase.desc }
