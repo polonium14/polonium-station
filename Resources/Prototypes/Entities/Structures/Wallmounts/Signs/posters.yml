@@ -252,6 +252,7 @@
   description: "A poster mocking CentComm's denial of the existence of the derelict station near Space Station 13."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster22_contraband
 
 - type: entity
@@ -327,6 +328,7 @@
   description: "Looking at this poster makes you want to kill."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster30_contraband
 
 - type: entity
@@ -938,6 +940,7 @@
   description: "A poster boasting about the superiority of 12 gauge shotgun shells."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster31_legit
 
 - type: entity
