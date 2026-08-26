@@ -1,3 +1,3 @@
-ent-CMXenoLurker = czyhacz
-    .desc = Krępy, szybki obcy z ostrymi pazurami.
+ent-CMXenoLurker = Lurker
+    .desc = A beefy, fast alien with sharp claws.
     .gender = male
