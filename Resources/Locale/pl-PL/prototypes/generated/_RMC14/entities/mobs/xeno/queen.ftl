@@ -1,3 +1,3 @@
-ent-CMXenoQueen = królowa
-    .desc = Ogromna, majestatyczna obca istota. Największa i najgroźniejsza.
+ent-CMXenoQueen = Queen
+    .desc = A huge, looming alien creature. The biggest and the baddest.
     .gender = female
