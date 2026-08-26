@@ -1,3 +1,3 @@
-dragon-round-end-agent-name = smok
-objective-issuer-dragon = [color=#7567b6]Kosmiczny smok[/color]
-dragon-role-briefing = Przyzwij 3 karpiowe wyrwy i przejmij ten sektor! Stacja znajduje się na { $direction }.
+dragon-round-end-agent-name = dragon
+objective-issuer-dragon = [color=#7567b6]Space Dragon[/color]
+dragon-role-briefing = Summon 3 carp rifts and take over this quadrant! The station is located { $direction }.
