@@ -1,2 +1,2 @@
-ent-MailSpamLetter = list reklamowy
-    .desc = Nawet kosmos nie jest bezpieczny od reklam wysyłanych pocztą.
+ent-MailSpamLetter = spam letter
+    .desc = Even space isn't safe from junk mail.
