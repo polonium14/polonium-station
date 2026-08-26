@@ -1,1 +1,1 @@
-particle-accelerator-control-box-component-wires-update-limiter-on-pulse = Skrzynka kontrolna warkota
+particle-accelerator-control-box-component-wires-update-limiter-on-pulse = The control box makes a whirring noise.
