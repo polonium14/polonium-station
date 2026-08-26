@@ -1,2 +1,2 @@
-ent-SpationautUpgradeKit = zestaw ulepszeń spationauta
-    .desc = Pudełko zawierające różne części przeznaczone do modyfikacji i dostosowania standardowego kombinezonu spationauta.
+ent-SpationautUpgradeKit = spationaut upgrade kit
+    .desc = A box containing various parts intended to modify and tweak a standard spationaut hardsuit.
