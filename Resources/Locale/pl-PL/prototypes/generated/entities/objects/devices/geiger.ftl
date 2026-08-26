@@ -1,5 +1,5 @@
-ent-GeigerCounter = licznik Geigera
-    .desc = Ręczne urządzenie używane do wykrywania i pomiaru impulsów promieniowania.
+ent-GeigerCounter = Geiger counter
+    .desc = A handheld device used for detecting and measuring radiation pulses.
 ent-GeigerCounterActive = { ent-GeigerCounter }
-    .suffix = Aktywny
+    .suffix = Active
     .desc = { ent-GeigerCounter.desc }
