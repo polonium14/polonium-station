@@ -1,2 +1,2 @@
-ent-FoodBakedMuffinCloth = szmuffinka
-    .desc = Babeczka zrobiona ze szmatek.
+ent-FoodBakedMuffinCloth = moffin
+    .desc = A muffin made of cloth.
