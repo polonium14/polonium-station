@@ -1,3 +1,3 @@
-ent-CMXenoHivelord = władca ula
-    .desc = Budowniczy naprawdę wielkich uli.
+ent-CMXenoHivelord = Hivelord
+    .desc = A builder of really big hives.
     .gender = male
