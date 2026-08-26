@@ -1,38 +1,27 @@
-changeling-catalog-arm-blade-name = Wysuwane Ostrze z Ramienia
-changeling-catalog-arm-blade-desc = Przekształć ramię w przerażające ostrze z ciała. Można przełączać.
-
-changeling-catalog-flesh-clothing-name = Odzież z Ciała
-changeling-catalog-flesh-clothing-desc = Powierzchnia twojego ciała dostosuje się, naśladując ubranie osoby, w którą się przekształcasz. Te ubrania są jednak niefunkcjonalne i łatwo cię zdemaskują, jeśli ktoś spróbuje je zdjąć. Można przełączać.
-
-changeling-catalog-voice-mimic-name = Naśladowanie Głosu
-changeling-catalog-voice-mimic-desc = Zmieniaj wokalne współrzędne według woli, naśladując istniejących (i wymyślonych) członków załogi. Idealne do zwabiania ofiar.
-
-changeling-catalog-biodegrade-name = Biodegradacja
-changeling-catalog-biodegrade-desc = Uczysz się wykorzystywać gruczoły kwasowe w swoim ciele, by wymiotować kwasem na kajdany i uwolnić się.
-
-changeling-catalog-sting-dna-name = Ekstrakcja DNA
-changeling-catalog-sting-dna-desc = Uczysz się używać żądła, by wchłonąć tożsamość nieświadomych ofiar. Nie dodaje DNA do twojego magazynu ani postępu celu.
-
-changeling-catalog-blind-sting-name = Ukąszenie Oślepienia
-changeling-catalog-blind-sting-desc = Powoduje tymczasową ślepotę u celu. Dobre do ucieczki lub rozpoczęcia walki. Można użyć na sobie.
-
-changeling-catalog-cryogenic-sting-name = Ukąszenie Kriogeniczne
-changeling-catalog-cryogenic-sting-desc = Spowalnia ruchy celu. Idealne, by ofiara nie mogła uciec. Można użyć na sobie.
-
-changeling-catalog-lethal-sting-name = Śmiertelne Ukąszenie
-changeling-catalog-lethal-sting-desc = Powoduje bardzo powolne obrażenia u celu. Bezużyteczne w walce, ale zapewnia, że będzie potrzebował pomocy medycznej. Można użyć na sobie.
-
-changeling-catalog-hallucinogenic-sting-name = Ukąszenie Halucynogenne
-changeling-catalog-hallucinogenic-sting-desc = Powoduje u celu odurzenie i trudności z mówieniem. Wprowadza zamęt w załodze. Można użyć na sobie.
-
-changeling-catalog-last-resort-name = Ostatnia Deska Ratunku
-changeling-catalog-last-resort-desc = Rozbij obecne ciało i uciekaj jako słaby ślimak-głowa. Jeśli zainfekujesz ludzkie zwłoki, możesz wrócić do pełnego ciała changelinga.
-
-                                      Uwaga! To resetuje twój postęp jako changeling, usuwając zakupy ze sklepu i wchłonięte tożsamości!
-
-changeling-catalog-night-vision-name = Noktowizja
-changeling-catalog-night-vision-desc = Modyfikujesz fotoreceptory i wyostrzasz zmysły, by widzieć w całkowitej ciemności.
-
+changeling-catalog-arm-blade-name = Retractable Arm Blade
+changeling-catalog-arm-blade-desc = Transform your arm into a terrifying flesh blade. Can be toggled.
+changeling-catalog-flesh-clothing-name = Flesh Clothing
+changeling-catalog-flesh-clothing-desc = Your body's surface will adapt to mirror the clothing of any person you are transforming into. However, these clothing items are non-functional and will make you easy to identify as a changeling if someone tries to remove them. Can be toggled.
+changeling-catalog-voice-mimic-name = Voice Mimicry
+changeling-catalog-voice-mimic-desc = Change your vocal coords at will to imitate existing (and imaginary) crew members. Perfect for luring in prey.
+changeling-catalog-biodegrade-name = Biodegrade
+changeling-catalog-biodegrade-desc = You learn to utilize acid glands within your body to vomit acid over constraints, setting yourself free.
+changeling-catalog-sting-dna-name = Extract DNA
+changeling-catalog-sting-dna-desc = Learn to utilize your stinger to absorb the identity of unsuspecting victims. Does not grant DNA to your store or objective progress.
+changeling-catalog-blind-sting-name = Blind Sting
+changeling-catalog-blind-sting-desc = Causes temporary blindness in the target. Good to escape or initiate a fight. Can be used on self.
+changeling-catalog-cryogenic-sting-name = Cryogenic Sting
+changeling-catalog-cryogenic-sting-desc = Causes movement slowdown in the target. Perfect for keeping prey from running away. Can be used on self.
+changeling-catalog-lethal-sting-name = Lethal Sting
+changeling-catalog-lethal-sting-desc = Causes very slow damage to the target. Useless in combat, but ensures they will require medical attention. Can be used on self.
+changeling-catalog-hallucinogenic-sting-name = Hallucinogenic Sting
+changeling-catalog-hallucinogenic-sting-desc = Causes the target to get high and have difficulty speaking. Causes confusion among the crew. Can be used on self.
 changeling-catalog-screech-name = Screech [TEMPORARY]
-
 changeling-catalog-screech-desc = We let out a powerful screech that disarms people who hear it without adequate ear protection. THIS ACTION WILL BE MOVED TO THE HORROR FORM WHEN IT IS IMPLEMENTED.
+changeling-catalog-last-resort-name = Last Resort
+changeling-catalog-last-resort-desc =
+    Gib your current body and escape as a weak head slug. If you infest a humanoid corpse, you can return to a full changeling body.
+    
+    Warning! This resets your progress as a changeling, removing your store purchases and absorbed identities!
+changeling-catalog-night-vision-name = Night Vision
+changeling-catalog-night-vision-desc = You modify your photoreceptors and heighten your senses as to become able to see in complete darkness.
