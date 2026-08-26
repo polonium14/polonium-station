@@ -1,2 +1,2 @@
-ent-ActionOpenMouthStorage = Otwórz schowek w policzkach
-    .desc = Pozwala chować przedmioty w policzkach.
+ent-ActionOpenMouthStorage = Open cheek storage
+    .desc = Allows you to store items in your cheeks.
