@@ -1,3 +1,3 @@
-ent-CMXenoCrusher = kruszarz
-    .desc = Ogromny obcy z ogromnym opancerzonym grzebieniem.
+ent-CMXenoCrusher = Crusher
+    .desc = A huge alien with an enormous armored crest.
     .gender = male
