@@ -347,6 +347,7 @@
   description: "Fight things for no reason, like a man!"
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster32_contraband
 
 - type: entity
@@ -356,6 +357,7 @@
   description: "The Griffin commands you to be the worst you can be. Will you?"
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster33_contraband
 
 - type: entity
@@ -950,6 +952,7 @@
   description: "I told you to shake it, no stirring."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster32_legit
 
 - type: entity
@@ -959,6 +962,7 @@
   description: "The Owl would do his best to protect the station. Will you?"
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster33_legit
 
 - type: entity
