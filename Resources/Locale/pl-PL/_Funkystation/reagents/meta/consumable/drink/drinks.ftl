@@ -1,4 +1,3 @@
-
 reagent-name-eggnog = eggnog
 reagent-desc-eggnog = The nonalcoholic variant, unfortunately.
 reagent-name-peggnog = peggnog
