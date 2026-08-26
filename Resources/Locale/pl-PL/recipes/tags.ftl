@@ -8,6 +8,7 @@ construction-graph-tag-clown-bike-horn = bike horn
 construction-graph-tag-clowne-horn = broken bike horn
 construction-graph-tag-happy-honk-meal = happy honk meal
 construction-graph-tag-woeful-cluwne-meal = woeful cluwne meal
+construction-graph-tag-boxhug = a box of hugs
 # mime
 construction-graph-tag-suspenders = suspenders
 construction-graph-tag-mime-meal = mime edition happy honk meal
@@ -64,6 +65,9 @@ construction-graph-tag-corgi-hide = corgi hide
 construction-graph-tag-apron = an apron
 construction-graph-tag-utility-belt = a utility belt
 soil-construction-graph-any-mushroom = any mushroom
+construction-graph-tag-mop-basic = mop
+construction-graph-tag-paper = office paper
+construction-graph-tag-core-pinpointer-piece = piece of core pinpointer
 # toys
 construction-graph-tag-rubber-ducky = a rubber ducky
 construction-graph-tag-ghost = ghost soft toy
@@ -91,6 +95,7 @@ construction-graph-tag-ripley-peripherals-control-module = ripley peripherals co
 construction-graph-tag-door-electronics-circuit-board = door electronics circuit board
 construction-graph-tag-firelock-electronics-circuit-board = firelock electronics circuit board
 construction-graph-tag-conveyor-belt-assembly = conveyor belt assembly
+construction-graph-tag-station-ai-core-electronics = station AI core electronics
 # tools
 construction-graph-tag-multitool = a multitool
 construction-graph-tag-health-analyzer = health analyzer
@@ -111,6 +116,7 @@ construction-graph-tag-wallmount-substation-circuit-board = wallmount substation
 construction-graph-tag-surveillance-camera-monitor-board = surveillance camera monitor board
 construction-graph-tag-television-board = television board
 construction-graph-tag-freezer-electronics = freezer electronics
+construction-graph-tag-turret-control-electronics = sentry turret control panel electronics
 # crystals
 construction-graph-tag-cyan-crystal-shard = cyan crystal shard
 construction-graph-tag-blue-crystal-shard = blue crystal shard
@@ -121,7 +127,7 @@ construction-graph-tag-green-crystal-shard = green crystal shard
 construction-graph-tag-yellow-crystal-shard = yellow crystal shard
 construction-graph-tag-black-crystal-shard = black crystal shard
 # unknown
-construction-graph-tag-weapon-pistol-chimp-upgrade-kit = układ modernizacyjny rewolweru M.A.Ł.P.K.A.
+construction-graph-tag-weapon-pistol-chimp-upgrade-kit = pistol CHIMP upgrade kit
 construction-graph-tag-torch = torch
 # atmos
 construction-graph-tag-fire-extinguisher = fire extinguisher
@@ -130,18 +136,5 @@ construction-graph-tag-fire-helmet = fire helmet
 construction-graph-tag-spationaut-hardsuit = spationaut hardsuit
 # clothing
 construction-graph-tag-backpack = backpack
-
-construction-graph-tag-boxhug = a box of hugs
-
-construction-graph-tag-mop-basic = mop
-
-construction-graph-tag-paper = office paper
-
-construction-graph-tag-core-pinpointer-piece = piece of core pinpointer
-
-construction-graph-tag-station-ai-core-electronics = station AI core electronics
-
-construction-graph-tag-turret-control-electronics = sentry turret control panel electronics
-
 # chemistry
 construction-graph-tag-centrifuge-compatible = centrifugable container
