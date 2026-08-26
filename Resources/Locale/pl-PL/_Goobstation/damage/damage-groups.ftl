@@ -1,2 +1,1 @@
-
 damage-group-electronic = Electronic
