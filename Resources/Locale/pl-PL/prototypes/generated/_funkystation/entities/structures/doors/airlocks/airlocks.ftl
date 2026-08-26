@@ -1,10 +1,10 @@
-ent-AirlockMaintCargo = dostęp do tuneli technicznych logistyki
+ent-AirlockMaintCargo = cargo maintenance access
     .desc = { ent-AirlockMaint.desc }
 ent-AirlockReporterLocked = { ent-AirlockServiceLocked }
-    .suffix = Reporter, Zablokowane
+    .suffix = Reporter, Locked
     .desc = { ent-AirlockServiceLocked.desc }
 ent-AirlockReporterGlassLocked = { ent-AirlockServiceGlassLocked }
-    .suffix = Reporter, Zablokowane
+    .suffix = Reporter, Locked
     .desc = { ent-AirlockServiceGlassLocked.desc }
-ent-AirlockMaintReporter = dostęp do tuneli technicznych reportera
+ent-AirlockMaintReporter = reporter maintenance access
     .desc = { ent-AirlockMaint.desc }
