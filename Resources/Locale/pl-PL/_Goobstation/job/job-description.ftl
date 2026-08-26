@@ -1,3 +1,2 @@
-
 job-description-hecu = Fufill the orders of your supervisor, no matter the morales.
-job-description-nct = Szkol personel stacji w procedurach działowych i pomagaj nowym pracownikom w onboardingu. Odpowiadasz Przedstawicielowi Nanotrasen i Centralnemu Dowództwu.
+job-description-nct = Train station crew in departmental procedures and assist new hires with onboarding. You answer to the Nanotrasen Representative and Central Command.
