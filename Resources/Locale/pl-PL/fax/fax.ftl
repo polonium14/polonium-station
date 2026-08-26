@@ -3,8 +3,8 @@ fax-machine-popup-received = Received correspondence from { $from }.
 fax-machine-popup-name-long = Fax name is too long
 fax-machine-popup-name-exist = Fax with same name already exist in network
 fax-machine-popup-name-set = Fax name has been updated
-fax-machine-popup-error = ERROR — jam in paper feed
-fax-machine-popup-copy-error = ERROR — unable to copy!
+fax-machine-popup-error = ERROR - jam in paper feed
+fax-machine-popup-copy-error = ERROR - unable to copy!
 fax-machine-dialog-rename = Rename
 fax-machine-dialog-field-name = Name
 fax-machine-ui-window = Fax Machine
@@ -22,10 +22,9 @@ fax-machine-ui-paper-inserted = Paper in tray
 fax-machine-ui-paper-not-inserted = No paper
 fax-machine-chat-notify = Received new fax message from "{ $fax }" fax
 fax-machine-printed-paper-name = printed paper
-
 fax-machine-sender-info =
     ─────────────────────────────────────
     Fax sent
-    from: {$sender_name} [address: {$sender_addr}]
-    to: {$recipient_name} [address: {$recipient_addr}]
-    at: {$time}
+    from: { $sender_name } [address: { $sender_addr }]
+    to: { $recipient_name } [address: { $recipient_addr }]
+    at: { $time }
