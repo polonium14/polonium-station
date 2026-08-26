@@ -1,6 +1,6 @@
 ent-BaseDispenser = { ent-SolutionTank }
     .desc = { ent-SolutionTank.desc }
-ent-CleanerDispenser = dozownik środka czyszczącego
-    .desc = Naścienny dozownik reagentów.
-ent-FuelDispenser = dozownik paliwa
-    .desc = Naścienny dozownik paliwa.
+ent-CleanerDispenser = space cleaner dispenser
+    .desc = Wallmount Space Cleaner dispenser.
+ent-FuelDispenser = fuel dispenser
+    .desc = Wallmount Fuel dispenser.
