@@ -1,4 +1,4 @@
-ent-AppearanceFelinid = wygląd felinida
+ent-AppearanceFelinid = felinid appearance
     .desc = { ent-BaseSpeciesAppearance.desc }
 ent-MobFelinid = Urist McFelinid
     .desc = { ent-AppearanceFelinid.desc }
