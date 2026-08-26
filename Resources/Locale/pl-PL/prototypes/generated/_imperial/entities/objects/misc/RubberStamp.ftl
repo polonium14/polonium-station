@@ -1,6 +1,6 @@
-ent-RubberStampERTLeader = pieczątka lidera JSR
-    .suffix = JSR
+ent-RubberStampERTLeader = ERT Leader rubber stamp
+    .suffix = Phantom4502
     .desc = { ent-RubberStampBase.desc }
-ent-RubberStampCBURNLeader = pieczątka lidera RCBZ
-    .suffix = RCBZ
+ent-RubberStampCBURNLeader = CBURN Leader rubber stamp
+    .suffix = Phantom4502
     .desc = { ent-RubberStampBase.desc }
