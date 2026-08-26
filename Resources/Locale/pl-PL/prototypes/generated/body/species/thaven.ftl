@@ -1,6 +1,6 @@
 ent-AppearanceThaven = thaven appearance
     .desc = { ent-BaseSpeciesAppearance.desc }
-ent-MobThaven = Urist McUszaty
+ent-MobThaven = Urist McEars
     .desc = { ent-AppearanceThaven.desc }
 ent-OrganThaven = { ent-OrganBaseOrganic }
     .suffix = thaven
