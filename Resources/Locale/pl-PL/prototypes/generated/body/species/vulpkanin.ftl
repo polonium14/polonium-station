@@ -1,6 +1,6 @@
 ent-AppearanceVulpkanin = vulpkanin appearance
     .desc = { ent-BaseSpeciesAppearance.desc }
-ent-MobVulpkanin = Urist McWulp
+ent-MobVulpkanin = Urist McArfArf
     .desc = { ent-AppearanceVulpkanin.desc }
 ent-OrganVulpkanin = { ent-OrganBaseOrganic }
     .suffix = vulpkanin
