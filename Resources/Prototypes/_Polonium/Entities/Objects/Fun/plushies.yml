@@ -1,8 +1,8 @@
 - type: entity
   parent: BasePlushie
   id: PlushieItanKio
-  name: Pluszak Itan-Kio
-  description: Pluszowa reprezentacja bardzo (nie)kompetentnego technika atmosferyki
+  name: Itan-Kio plushie
+  description: A plush representation of a very (in)competent atmospheric technician.
   components:
   - type: Sprite
     sprite: _Polonium/Objects/Fun/Plushies/ItanKio-Plush.rsi
@@ -35,9 +35,9 @@
 - type: entity
   parent: BaseItem
   id: ItanKioGoBoom
-  name: Pluszak Itan-Kio
-  description: "Instrukcja obsługi: Przykręć jego ogon i rzuć w ofiarę twojego wyboru"
-  suffix: BOMBA, NIE MAPOWAĆ
+  name: Itan-Kio plushie
+  description: "User manual: Twist its tail and throw it at a victim of your choosing."
+  suffix: BOMB, DO NOT MAP
   components:
   - type: Sprite
     sprite: _Polonium/Objects/Fun/Plushies/ItanKio-Plush.rsi
@@ -82,8 +82,8 @@
 - type: entity
   parent: PlushieMoth
   id: PlushieMothDeathshead
-  name: pluszak Asa Trupiogłowego
-  description: Puszysty pluszak przypominający pewnego barmana ćmę. Widnieje na nim mały napis "Nie dawać whiskey po północy".
+  name: deathshead moth plushie
+  description: A fluffy plushie resembling a certain moth bartender. A small inscription reads "Don't serve whiskey after midnight".
   components:
   - type: Sprite
     sprite: _Polonium/Objects/Fun/Plushies/deathshead.rsi

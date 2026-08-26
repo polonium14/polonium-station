@@ -1,29 +1,4 @@
 ﻿Entries:
-- author: alexalexmax
-  changes:
-  - message: Tasers no longer slow holoparasites down.
-    type: Fix
-  id: 9456
-  time: '2026-01-24T04:18:37.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42315
-- author: Hitlinemoss
-  changes:
-  - message: The "Auto-fill the highlights with the character's information" accessibility
-      option has been renamed to "Automatically set the highlights list based on your
-      character's name and job".
-    type: Tweak
-  - message: More automatic job-text highlights have been added.
-    type: Tweak
-  id: 9457
-  time: '2026-01-24T21:06:28.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42630
-- author: SlamBamActionman
-  changes:
-  - message: Added an toggle for "hold-to-attack" under the accessibility tab.
-    type: Add
-  id: 9458
-  time: '2026-01-25T22:30:52.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42596
 - author: roryflowers
   changes:
   - message: Tritium's thermal output is increased to its previous value, to reenable
@@ -4039,3 +4014,27 @@
   id: 9955
   time: '2026-08-24T17:54:18.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/921
+- author: Koilak
+  changes:
+  - message: "Dodano tryby nie-\u015Bmierciono\u015Bne dla Strzelby Energetycznej\
+      \ oraz Energy Magnum'a"
+    type: Add
+  id: 9956
+  time: '2026-08-26T07:07:54.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/923
+- author: Koilak
+  changes:
+  - message: "Dodano \u015Arodek Ga\u015Bniczy"
+    type: Add
+  - message: "Zawarto\u015B\u0107 ga\u015Bnic (1:1 \u015Arodek Ga\u015Bniczy:Woda)"
+    type: Tweak
+  id: 9957
+  time: '2026-08-26T07:14:14.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/920
+- author: Saver310
+  changes:
+  - message: "Przet\u0142umaczenie grafik plakat\xF3w"
+    type: Add
+  id: 9958
+  time: '2026-08-26T10:02:21.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/934

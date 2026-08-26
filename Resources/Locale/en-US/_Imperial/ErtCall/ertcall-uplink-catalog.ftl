@@ -323,3 +323,51 @@ ert-uplink-ErtCallUplinkEngineerHardsuit-desc = A protective hardsuit worn by th
 
 ert-uplink-ErtCallUplinkJanitorHardsuit-name = ERT janitor's hardsuit
 ert-uplink-ErtCallUplinkJanitorHardsuit-desc = A protective hardsuit worn by the janitors of an emergency response team.
+
+ert-uplink-ErtCallUplinkDoubleEmergencyOxygenTankFilled-name = Podwójna awaryjna butla z tlenem
+
+ert-uplink-ErtCallUplinkDoubleEmergencyOxygenTankFilled-desc = Wysokiej klasy, dwuzbiornikowy awaryjny zasobnik podtrzymania życia. Jak na swój rozmiar mieści sporo tlenu. Może pomieścić 2,5 L gazu.
+
+ert-uplink-ErtCallUplinkDoubleEmergencyNitrogenTankFilled-name = Podwójna awaryjna butla z azotem
+
+ert-uplink-ErtCallUplinkDoubleEmergencyNitrogenTankFilled-desc = Wysokiej klasy, dwuzbiornikowy awaryjny zasobnik podtrzymania życia. Jak na swój rozmiar mieści sporo azotu. Może pomieścić 2,5 L gazu.
+
+ert-uplink-ErtCallUplinkBoneAutoInjector-name = Medipen osteodyny
+
+ert-uplink-ErtCallUplinkBoneAutoInjector-desc = Jednorazowa dawka osteodyny, przeznaczona do szybkiego leczenia złamanych kości.
+
+ert-uplink-ErtCallUplinkSurgeryKitFilled-name = Zestaw chirurgiczny
+
+ert-uplink-ErtCallUplinkSurgeryKitFilled-desc = Zestaw chirurgiczny zawierający wszystkie podstawowe narzędzia.
+
+ert-uplink-ErtCallUplinkHandHeldMassScanner-name = Ręczny skaner masy
+
+ert-uplink-ErtCallUplinkHandHeldMassScanner-desc = Ręczny skaner masy.
+
+ert-uplink-ErtCallPinpointerNuclear-name = Pinpointer
+
+ert-uplink-ErtCallPinpointerNuclear-desc = Ręczne urządzenie śledzące. Chociaż zazwyczaj ma ono znacznie większe możliwości, to zostało skonfigurowane tak, aby namierzać określone sygnały. Trzymaj je w pozycji pionowej, aby zachować dokładność.
+
+ert-uplink-ErtCallUplinkWeaponSubMachineGunAtreides-name = Atryda (.35 auto)
+
+ert-uplink-ErtCallUplinkWeaponSubMachineGunAtreides-desc = Pla-ket-ket-ket-ket! Używa amunicji .35 auto.
+
+ert-uplink-ErtCallUplinkMagazinePistolSubMachineGun-name = magazynek do PM (.35 auto)
+
+ert-uplink-ErtCallUplinkMagazinePistolSubMachineGun-desc = 30 nabojowy magazynek do pistoletów maszynowych.
+
+ert-uplink-ErtCallUplinkWeaponLauncherHydraLethal-name = Granatnik Hydra
+
+ert-uplink-ErtCallUplinkWeaponLauncherHydraLethal-desc = Rewolwerowy granatnik zdolny rozwiązać większość twoich problemów.
+
+ert-uplink-ErtCallUplinkGrenadeFrag-name = Granat Odłamkowy
+
+ert-uplink-ErtCallUplinkGrenadeFrag-desc = Granat Odłamkowy o szerokim polu rażenia.
+
+ert-uplink-ErtCallUplinkGrenadeBlast-name = Granat Burzący
+
+ert-uplink-ErtCallUplinkGrenadeBlast-desc = Granat Burzący do niszczenia struktur i celów opancerzonych.
+
+ert-uplink-ErtCallUplinkWeaponRifleLecterXL8-name = XL8 (.20 karabinowe)
+
+ert-uplink-ErtCallUplinkWeaponRifleLecterXL8-desc = Eksperymentalna modyfikacja lektera z zintegrowanym celownikiem, cholernie drogi.

@@ -1,3 +1,3 @@
 ent-EmergencyNitrousOxideTankFilled = { ent-EmergencyNitrousOxideTank }
-    .suffix = Filled
+    .suffix = Wypełnione
     .desc = { ent-EmergencyNitrousOxideTank.desc }

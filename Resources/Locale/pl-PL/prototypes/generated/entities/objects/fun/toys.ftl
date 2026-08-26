@@ -23,5 +23,5 @@ ent-SpectralLocator = { ent-SpectralLocatorUnpowered }
     .desc = { ent-SpectralLocatorUnpowered.desc }
     .suffix = Powered
 ent-SpectralLocatorEmpty = { ent-SpectralLocator }
-    .suffix = Empty
+    .suffix = Puste
     .desc = { ent-SpectralLocator.desc }

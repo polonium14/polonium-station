@@ -91,10 +91,7 @@ malf-store-category-disruption = Zakłócenia
 # =====================
 # Currency
 # =====================
-CPU = CPU
-# =====================
-# Window / UI
-# =====================
+
 malf-ai-viewport-window-title = Rzutnia SI
 malf-ai-viewport-window-info = Cel: mapa { $map }, x: { $x }, y: { $y }
 malfai-viewport-name = Ustaw rzutnię
@@ -105,8 +102,7 @@ malfai-viewport-desc = Wybierz płytkę, aby wyśrodkować na niej zdalne okno r
 # =====================
 
 # Detonate RCDs
-detonate_rcd_warning = Czujesz, jak twój USK gwałtownie się przegrzewa!
-# Doomsday Protocol
+
 malfai-doomsday-popup-not-malf = Tylko uszkodzona SI może aktywować Protokół Zagłady.
 malfai-doomsday-popup-already-active = Protokół Zagłady jest już aktywny!
 malfai-doomsday-popup-need-core = Musisz znajdować się w swoim rdzeniu, aby uruchomić Protokół Zagłady.

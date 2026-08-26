@@ -7,3 +7,7 @@ color-selector-sliders-value = V
 color-selector-sliders-alpha = A
 color-selector-sliders-rgb = RGB
 color-selector-sliders-hsv = HSV
+
+color-selector-input-hex = Hex
+
+option-button-filter = Filter

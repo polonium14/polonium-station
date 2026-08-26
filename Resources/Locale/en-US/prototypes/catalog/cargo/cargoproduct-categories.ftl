@@ -16,3 +16,5 @@ cargoproduct-category-name-science = Science
 cargoproduct-category-name-security = Security
 cargoproduct-category-name-service = Service
 cargoproduct-category-name-space = Space
+
+cargoproduct-category-name-shuttle = Wahadłowce

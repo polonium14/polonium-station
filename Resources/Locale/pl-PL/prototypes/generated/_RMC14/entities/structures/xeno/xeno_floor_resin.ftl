@@ -1,0 +1,10 @@
+ent-XenoBaseFloorResin = { "" }
+    .desc = { "" }
+ent-XenoStickyResin = lepka żywica
+    .desc = Warstwa obrzydliwego lepkiego śluzu.
+ent-XenoStickyResinWeak = słaba lepka żywica
+    .desc = Cienka i słaba warstwa obrzydliwego lepkiego śluzu.
+ent-XenoFastResin = szybka żywica
+    .desc = Warstwa obrzydliwego gładkiego śluzu.
+ent-XenoResinSpikes = kolce żywiczne
+    .desc = Małe skupisko kostnych kolców.

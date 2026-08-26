@@ -4,11 +4,8 @@
 
 # arachnids
 # Konflikty z Resources\Locale\pl-PL\_Impstation\markings\arachnid.ftl są wykomentowane
-# marking-SpiderMirror = Mirror
 marking-SpiderMirror-spidermirror = Lustro
-# marking-SpiderGlowEyes = Glowing Eyes
 marking-SpiderGlowEyes-spidergloweyes = Świecące oczy
-# marking-SpiderEyesMulti = Multicolor Eyes
 marking-SpiderEyesMulti-spidereyesmulti1 = Górne
 marking-SpiderEyesMulti-spidereyesmulti2 = Środkowe górne
 marking-SpiderEyesMulti-spidereyesmulti3 = Środkowe dolne
