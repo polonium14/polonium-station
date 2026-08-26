@@ -1,3 +1,3 @@
-ent-CMXenoDefender = obrońca
-    .desc = Obcy z opancerzonym grzebieniem.
+ent-CMXenoDefender = Defender
+    .desc = An alien with an armored crest.
     .gender = male
