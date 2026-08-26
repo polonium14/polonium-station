@@ -1,11 +1,12 @@
-zombie-transform = { CAPITALIZE($target) } zamienił się w zombie!
-zombie-infection-greeting = Stałeś się zombie. Twoim celem jest wyszukiwanie żywych i próba zarażenia ich. Współpracuj z innymi zombie oraz pozostałymi początkowo zainfekowanymi, aby przejąć stację.
+zombie-transform = { CAPITALIZE(THE($target)) } turned into a zombie!
+zombie-infection-greeting = You have become a zombie. Your goal is to seek out the living and to try to infect them.  Work together with the other zombies and remaining initial infected to overtake the station.
 zombie-generic = zombie
-zombie-name-prefix = zombiak { $baseName }
-zombie-role-desc = Złowroga istota powstała z martwych.
-zombie-role-rules = Jesteś [color={ role-type-team-antagonist-color }][bold]{ role-type-team-antagonist-name }[/bold][/color]. Szukaj żywych i gryź ich, aby ich zarazić i przemienić w zombie. Współpracuj z innymi zombie oraz początkowo zainfekowanymi, by przejąć stację.
-zombie-permadeath = Tym razem jesteś naprawdę martwy.
-zombification-resistance-coefficient-value = - Szansa na [color=violet]infekcję[/color] zmniejszona o [color=lightblue]{ $value }%[/color].
+zombie-name-prefix = zombified { $baseName }
+zombie-role-desc = A malevolent creature of the dead.
+zombie-role-rules = You are a [color={ role-type-team-antagonist-color }][bold]{ role-type-team-antagonist-name }[/bold][/color]. Search out the living and bite them in order to infect them and turn them into zombies. Work together with the other zombies and remaining initial infected to overtake the station.
+zombie-permadeath = This time, you're dead for real.
+zombification-resistance-coefficient-value = - [color=violet]Infection[/color] chance reduced by [color=lightblue]{ $value }%[/color].
+zombie-roleban-ghosted = You have been ghosted because you are banned from playing the Zombie role.
 zombie-tumor-infection-contracted = Czujesz, jak dziwne odczucie rozchodzi się po twoim ciele...
 zombie-tumor-infection-symptoms-start = Zaczynasz czuć się źle. Coś jest bardzo nie tak...
 zombie-tumor-removed = Guz zombie został usunięty. Czujesz, jak infekcja ustępuje.
@@ -25,5 +26,3 @@ zombie-robotumor-sickness-3 = Wykrywasz wiele usterek systemu.
 zombie-robotumor-advanced-1 = BŁĄD KRYTYCZNY: Układy logiczne niestabilne.
 zombie-robotumor-advanced-2 = OSTRZEŻENIE: W pamięci wykryto wrogie podprogramy!
 zombie-tumor-ability-gained = Czujesz przytłaczającą potrzebę, by ulec infekcji...
-
-zombie-roleban-ghosted = You have been ghosted because you are banned from playing the Zombie role.
