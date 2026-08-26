@@ -1,8 +1,8 @@
-ent-ActionRevenantShop = Sklep
-    .desc = Otwiera sklep z umiejętnościami.
-ent-ActionRevenantDefile = Zbezczeszczenie
-    .desc = Kosztuje 30 Esencji.
-ent-ActionRevenantOverloadLights = Przeciążenie świateł
-    .desc = Kosztuje 40 Esencji.
-ent-ActionRevenantMalfunction = Awaria
-    .desc = Kosztuje 60 Esencji.
+ent-ActionRevenantShop = Shop
+    .desc = Opens the ability shop.
+ent-ActionRevenantDefile = Defile
+    .desc = Costs 30 Essence.
+ent-ActionRevenantOverloadLights = Overload Lights
+    .desc = Costs 40 Essence.
+ent-ActionRevenantMalfunction = Malfunction
+    .desc = Costs 60 Essence.
