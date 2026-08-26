@@ -1,9 +1,9 @@
 ent-ShuttleGunSeismicCircuitboard = EXP-SMC "KosmoWstrząs" machine board
     .desc = A machine printed circuit board for an EXP-SMC "KosmoWstrząs".
-    .suffix = Płytka maszynowa
+    .suffix = Machine Board
 ent-ShuttleGunMineralVacuumCircuitboard = MNV-EX "Mineral Vacuum" machine board
     .desc = A machine printed circuit board for an MNV-EX "Mineral Vacuum".
-    .suffix = Płytka maszynowa
+    .suffix = Machine Board
 ent-ShuttleGunPlasmaCutterCircuitboard = PLM-CTT "Shuttle Cutter" machine board
     .desc = A machine printed circuit board for an PLM-CTT "Shuttle Cutter".
-    .suffix = Płytka maszynowa
+    .suffix = Machine Board
