@@ -1,55 +1,45 @@
 # antag selection
 roles-antag-changeling-name = Changeling
-roles-antag-changeling-objective = Inteligentny drapieżnik, który przejmuje tożsamości swoich ofiar.
-
+roles-antag-changeling-objective = A intelligent predator that assumes the identities of its victims.
 # devour
-changeling-devour-attempt-failed-cannot-devour = Nie możemy tego pożreć!
-changeling-devour-attempt-failed-already-devoured = Już strawiliśmy to ciało!
-changeling-devour-attempt-failed-devoured-recently = To ciało jest zbyt okaleczone, by je pożreć!
-changeling-devour-attempt-failed-not-dead = To ciało wciąż żyje! Nie możemy pożreć żywego!
-changeling-devour-attempt-failed-rotting = Ten trup składa się wyłącznie ze zgnitej biomasy.
-changeling-devour-attempt-failed-protected = Biomasa tej ofiary jest chroniona przez pancerz!
-changeling-devour-attempt-failed-no-space = Przekroczyliśmy maksymalną liczbę przebrań!
-
-changeling-devour-begin-windup-self = Nasze nienaturalne usta ukazują się z kosmicznym głodem.
-changeling-devour-begin-windup-others = { CAPITALIZE(POSS-ADJ($user)) } nienaturalne usta ukazują się z kosmicznym głodem.
-changeling-devour-begin-consume-self = Nienaturalne usta wgryzają się głęboko w ofiarę.
-changeling-devour-begin-consume-others = { CAPITALIZE(POSS-ADJ($user)) } nienaturalne usta wgryzają się głęboko w { POSS-ADJ($user) } ofiarę.
-changeling-devour-consume-complete-self = Nasze nienaturalne usta cofają się, biomasa została strawiona.
-changeling-devour-consume-complete-others = { CAPITALIZE(POSS-ADJ($user)) } nienaturalne usta cofają się.
-
+changeling-devour-attempt-failed-cannot-devour = We cannot devour this!
+changeling-devour-attempt-failed-already-devoured = We already consumed this body!
+changeling-devour-attempt-failed-devoured-recently = This body is too mangled to devour!
+changeling-devour-attempt-failed-not-dead = This body yet lives! We cannot consume it alive!
+changeling-devour-attempt-failed-rotting = This corpse has only rotted biomass.
+changeling-devour-attempt-failed-protected = This victim's biomass is protected by armor!
+changeling-devour-attempt-failed-no-space = We have exceeded the maximum number of disguises!
+changeling-devour-begin-windup-self = Our uncanny mouth reveals itself with otherworldly hunger.
+changeling-devour-begin-windup-others = { CAPITALIZE(POSS-ADJ($user)) } uncanny mouth reveals itself with otherworldly hunger.
+changeling-devour-begin-consume-self = The uncanny mouth digs deep into its victim.
+changeling-devour-begin-consume-others = { CAPITALIZE(POSS-ADJ($user)) } uncanny mouth digs deep into { POSS-ADJ($user) } victim.
+changeling-devour-consume-complete-self = Our uncanny mouth retreats, biomass consumed.
+changeling-devour-consume-complete-others = { CAPITALIZE(POSS-ADJ($user)) } uncanny mouth retreats.
 # transformation
-changeling-transform-attempt-self = Nasze kości pękają, mięśnie rwą się, jedno ciało staje się innym.
-changeling-transform-attempt-others = { CAPITALIZE(POSS-ADJ($user)) } kości pękają, mięśnie rwą się, ciało przekształca się w inne.
-
+changeling-transform-attempt-self = Our bones snap, muscles tear, one flesh becomes another.
+changeling-transform-attempt-others = { CAPITALIZE(POSS-ADJ($user)) } bones snap, muscles tear, body shifts into another.
 # transformation BUI
-changeling-transform-bui-select-entity = {$entity}
-changeling-transform-bui-drop-identity-menu = Usuń pożartą tożsamość z pamięci.
-changeling-transform-bui-drop-identity-entity = Usuń {$entity}
-changeling-transform-bui-drop-identity-entity-popup = Usunęliśmy {$entity} z naszej pamięci.
-changeling-transform-bui-drop-identity-cannot-drop = Nie możemy usunąć naszej obecnej tożsamości.
-
+changeling-transform-bui-select-entity = { $entity }
+changeling-transform-bui-drop-identity-menu = Drop a devoured identity from your memory.
+changeling-transform-bui-drop-identity-entity = Drop { $entity }
+changeling-transform-bui-drop-identity-entity-popup = We dropped { $entity } from our memory.
+changeling-transform-bui-drop-identity-cannot-drop = We cannot drop our current identity.
 # voice mimicry
-changeling-voice-mimic-window-title = Naśladowanie głosu
-
+changeling-voice-mimic-window-title = Voice Mimicry
 # flesh clothing
-changeling-flesh-clothing-removed-popop = {CAPITALIZE(THE($item))} rozpada się w cielesne szczątki!
-changeling-flesh-clothing-examine-wearer = [color=crimson]Ten przedmiot to zamaskowana część twojego ciała. Zniknie, jeśli go zdejmiesz![/color]
-changeling-flesh-clothing-alert-name = Zdolność odzieży z ciała
-changeling-flesh-clothing-alert-desc = Czy transformacja odzieży jest włączona. Kliknij, aby przełączyć.
-
+changeling-flesh-clothing-removed-popop = { CAPITALIZE(THE($item)) } falls apart into fleshy remains!
+changeling-flesh-clothing-examine-wearer = [color=crimson]This item is a camouflaged part of your body. It will disappear if you unequip it![/color]
+changeling-flesh-clothing-alert-name = Flesh Clothing Ability
+changeling-flesh-clothing-alert-desc = Whether clothing transformation is enabled. Click to toggle.
 # biodegrade
-changeling-biodegrade-used-popup = {CAPITALIZE(THE($user))} wymiotuje kwasem na {POSS-ADJ($user)} {$restraint}!
-changeling-biodegrade-used-popup-self = Wymiotujemy kwasem na nasze {$restraint}!
-
+changeling-biodegrade-used-popup = { CAPITALIZE(THE($user)) } vomits acid over { POSS-ADJ($user) } { $restraint }!
+changeling-biodegrade-used-popup-self = We vomit acid over our { $restraint }!
 # last resort
-changeling-takeover-not-dead = To ciało wciąż żyje! Nie możemy go infekować, gdy żyje.
-changeling-takeover-is-changeling = To ciało odrzuca naszą próbę przejęcia!
-changeling-takeover-start-others = {CAPITALIZE(THE($user))} zaczyna wpełzać do trupa!
-changeling-takeover-success-self = Pomyślnie zainfekowaliśmy ciało i przyjęliśmy jego formę.
-
+changeling-takeover-not-dead = This body yet lives! We cannot infest it alive.
+changeling-takeover-is-changeling = This body rejects our attempts to take over!
+changeling-takeover-start-others = { CAPITALIZE(THE($user)) } begins to crawl inside the corpse!
+changeling-takeover-success-self = We have successfully infested the body and assumed its form.
 # stings
-changeling-sting-success = Cicho ukąsiliśmy {THE($target)}!
-
+changeling-sting-success = We silently sting { THE($target) }!
 # other
-changeling-paused-map-name = Mapa przechowywania tożsamości changelinga
+changeling-paused-map-name = Changeling identity storage map
