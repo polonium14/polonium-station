@@ -1,2 +1,2 @@
-ent-MedicalScanner = skaner medyczny
-    .desc = Duży skaner medyczny.
+ent-MedicalScanner = medical scanner
+    .desc = A bulky medical scanner.
