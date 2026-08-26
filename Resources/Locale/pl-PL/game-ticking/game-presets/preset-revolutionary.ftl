@@ -1,71 +1,66 @@
 ## Rev Head
 
-roles-antag-rev-head-name = Główny Rewolucjonista
-roles-antag-rev-head-objective = Twoim celem jest przejęcie stacji poprzez konwertowanie ludzi na swoją sprawę i zabicie całego personelu Dowództwa na stacji.
+roles-antag-rev-head-name = Head Revolutionary
+roles-antag-rev-head-objective = Your objective is to take over the station by converting people to your cause and eliminating all members of Command.
 head-rev-role-greeting =
-    Jesteś Głównym Rewolucjonistą.
-    Twoim zadaniem jest usunięcie całego Dowództwa ze stacji poprzez konwersję, śmierć lub uwięzienie.
-    Syndykat wyposażył cię w flash, który konwertuje załogę na twoją stronę.
-    Uwaga, nie zadziała to na osoby z Mindshieldem lub noszące ochronę oczu.
+    You are a head revolutionary. You are tasked with removing all of Command from power through death, restraint, or conversion.
+    The Syndicate has sponsored you with a flash that converts others to your cause. Beware, this won't work on those with eye protection or mindshield implants. Remember that Command and Security are implanted with mindshields as part of the hiring process.
     Viva la revolución!
 head-rev-briefing =
-    Używaj flashy, aby konwertować ludzi na swoją sprawę.
-    Pozbądź się lub przekonwertuj wszystkich szefów, aby przejąć kontrolę nad stacją.
-head-rev-break-mindshield = Mindshield został zniszczony!
+    Use flashes to convert people to your cause.
+    Kill, restrain, or convert all members of Command to take over the station.
+head-rev-break-mindshield = The mindshield implant was destroyed!
 
 ## Rev
 
-roles-antag-rev-name = Rewolucjonista
-roles-antag-rev-objective = Twoim celem jest zapewnienie bezpieczeństwa i wykonywanie poleceń Głównych Rewolucjonistów oraz pozbycie się lub konwersja całego personelu Dowództwa na stacji.
-rev-break-control = { $name } przypomniał sobie swoją prawdziwą lojalność!
+roles-antag-rev-name = Revolutionary
+roles-antag-rev-objective = Your objective is to ensure the safety and follow the orders of the head revolutionaries, and to help them take over the station by eliminating all members of Command.
+rev-break-control = { $name } has remembered their true allegiance!
 rev-role-greeting =
-    Jesteś Rewolucjonistą.
-    Twoim zadaniem jest przejęcie stacji i ochrona Głównych Rewolucjonistów.
-    Pozbądź się lub przekonwertuj cały personel Dowództwa.
+    You are a revolutionary. You are tasked with protecting the head revolutionaries and helping them take over the station.
+    The revolution must work together to kill, restrain, or convert all members of Command.
     Viva la revolución!
+rev-briefing = Help the head revolutionaries kill, restrain, or convert all members of Command to take over the station.
+
+## General
+
+rev-title = Revolutionaries
+rev-description = Revolutionaries hidden among the crew are seeking to convert others to their cause and overthrow Command.
+rev-not-enough-ready-players = Not enough players readied up for the game. There were { $readyPlayersCount } players readied up out of { $minimumPlayers } needed. Can't start Revolutionaries.
+rev-no-one-ready = No players readied up! Can't start Revolutionaries.
+rev-no-heads = There were no Head Revolutionaries to be selected. Can't start Revolutionaries.
+rev-won = The head revolutionaries survived and successfully seized control of the station.
+rev-lost = All head revolutionaries have died, and Command survived.
+rev-stalemate = Both Command and the head revolutionaries have all died. It's a draw.
+rev-reverse-stalemate = Both Command and the head revolutionaries survived.
+rev-headrev-count =
+    { $initialCount ->
+        [one] There was one head revolutionary:
+       *[other] There were { $initialCount } head revolutionaries:
+    }
+rev-headrev-name-user = [color=#5e9cff]{ $name }[/color] ([color=gray]{ $username }[/color]) converted { $count } { $count ->
+        [one] person
+       *[other] people
+    }
+rev-headrev-name = [color=#5e9cff]{ $name }[/color] converted { $count } { $count ->
+        [one] person
+       *[other] people
+    }
+
+## Deconverted window
+
+rev-deconverted-title = Deconverted!
+rev-deconverted-text =
+    As the last head revolutionary has died, the revolution is over.
     
-    rev-briefing = Pomóż swoim Głównym Rewolucjonistom pozbyć się dowództwa, aby przejąć kontrolę nad stacją.
+    You are no longer a revolutionary, so be nice.
+rev-deconverted-confirm = Confirm
 rev-lieutenant-greeting =
     You are a Revolutionary Lieutenant.
     You are able to see your comrades, but are unable to convert anyone.
     Lead your department and co-ordinate with your fellow revolutionaries and head revolutionaries.
     Viva la revolución!
-
-## General
-
-rev-briefing = Help your head revolutionaries convert or get rid of every head to take over the station.
-rev-title = Rewolucjoniści
-rev-description = Rewolucjoniści są wśród nas.
-rev-not-enough-ready-players = Za mało graczy przygotowanych do gry. Gotowych było { $readyPlayersCount } graczy z wymaganych { $minimumPlayers }. Nie można rozpocząć Rewolucji.
-rev-no-one-ready = Żaden gracz nie jest gotowy! Nie można rozpocząć Rewolucji.
-rev-no-heads = Nie wybrano żadnego Głównego Rewolucjonisty. Nie można rozpocząć Rewolucji.
-rev-won = Główni Rewolucjoniści przetrwali i skutecznie przejęli kontrolę nad stacją.
-rev-lost = Dowództwo przetrwało i zabiło wszystkich Głównych Rewolucjonistów.
-rev-stalemate = Wszyscy Główni Rewolucjoniści i Dowództwo zginęli. Remis.
-rev-reverse-stalemate = Zarówno Dowództwo, jak i Główni Rewolucjoniści przetrwali.
-rev-headrev-count =
-    { $initialCount ->
-        [one] Był jeden Główny Rewolucjonista:
-       *[other] Było { $initialCount } Głównych Rewolucjonistów:
-    }
 rev-total-victory = All of Command and Head Revs survived, with all of Command being converted.
-rev-headrev-name-user = [color=#5e9cff]{ $name }[/color] ([color=gray]{ $username }[/color]) skonwertował(a) { $count } { $count ->
-        [one] osobę
-       *[other] osoby
-    }
-rev-headrev-name = [color=#5e9cff]{ $name }[/color] skonwertował(a) { $count } { $count ->
-        [one] osobę
-       *[other] osoby
-    }
-
-## Deconverted window
-
-rev-deconverted-title = Dekonwertowany!
-rev-deconverted-text =
-    Gdy ostatni Główny Rewolucjonista zginął, rewolucja dobiegła końca.
-    
-    Nie jesteś już rewolucjonistą, więc zachowuj się przyzwoicie.
-rev-deconverted-confirm = Potwierdź
 rev-headrev-must-return = The Revolution is leaderless. We must return to the station within a minute!
 rev-headrev-returned = A Head Revolutionary has returned to the station, the Revolution continues!
 rev-headrev-abandoned = You have disgraced the revolution by abandoning your station. The Revolution is over.
