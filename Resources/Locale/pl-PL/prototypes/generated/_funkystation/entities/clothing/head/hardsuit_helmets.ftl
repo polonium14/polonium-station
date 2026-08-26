@@ -1,2 +1,2 @@
-ent-ClothingHeadHelmetHelldiver = helm taktyczny NT-01
-    .desc = Ta zbroja jest standardowym wyposażeniem NanoTrasen, wykonana z tego samego stopu tytanu co kadłub Goliatha.
+ent-ClothingHeadHelmetHelldiver = diving hardsuit helmet
+    .desc = A unique variant of the classic mining hardsuit helmet, given to only the most dedicated of salvagers.
