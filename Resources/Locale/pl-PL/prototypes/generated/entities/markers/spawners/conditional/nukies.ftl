@@ -1,2 +1,2 @@
-ent-SpawnPointNukies = nukiarze
+ent-SpawnPointNukies = nukies
     .desc = { ent-MarkerBase.desc }
