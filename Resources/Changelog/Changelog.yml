@@ -1,11 +1,4 @@
 ﻿Entries:
-- author: SlamBamActionman
-  changes:
-  - message: Added an toggle for "hold-to-attack" under the accessibility tab.
-    type: Add
-  id: 9458
-  time: '2026-01-25T22:30:52.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42596
 - author: roryflowers
   changes:
   - message: Tritium's thermal output is increased to its previous value, to reenable
@@ -4038,3 +4031,10 @@
   id: 9957
   time: '2026-08-26T07:14:14.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/920
+- author: Saver310
+  changes:
+  - message: "Przet\u0142umaczenie grafik plakat\xF3w"
+    type: Add
+  id: 9958
+  time: '2026-08-26T10:02:21.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/934
