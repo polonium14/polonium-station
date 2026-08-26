@@ -1,2 +1,2 @@
 ent-OperatingTable = operating table
-    .desc = Used for advanced medical procedures.
+    .desc = Special medical table for surgery. Speeds up surgical steps performed on a patient buckled to it.
