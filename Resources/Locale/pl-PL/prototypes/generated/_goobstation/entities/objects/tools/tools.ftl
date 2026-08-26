@@ -1,9 +1,9 @@
-ent-SonicScrewdriver = śrubokręt soniczny
+ent-SonicScrewdriver = sonic screwdriver
     .desc = Wzzzzz....
-ent-RCDChrono = futurystyczny USK
-    .desc = Narzędzie, które potrafi zbudować stację od zera w kilka minut.
-ent-HandheldFax = przenośny faks
-    .desc = Narzędzie, które potrafi wysyłać tony papieru do Centralnego Dowództwa.
-ent-HandheldFaxNanorep = przenośny faks Przedstawiciela Nanotrasen
-    .suffix = Przedstawiciel Nanotrasen
+ent-RCDChrono = futuristic RCD
+    .desc = A tool that can build a station from scratch in minutes.
+ent-HandheldFax = handheld fax
+    .desc = A tool that can send ton of paper on Centcomm fax.
+ent-HandheldFaxNanorep = nanotrasen representative handheld fax
+    .suffix = Nanotrasen Representative
     .desc = { ent-HandheldFax.desc }
