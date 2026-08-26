@@ -1,13 +1,13 @@
 ent-PresentBase = present
     .desc = A little box with incredible surprises inside.
 ent-Present = { ent-PresentBase }
-    .suffix = Puste
+    .suffix = Empty
     .desc = { ent-PresentBase.desc }
 ent-PresentRandomUnsafe = { ent-PresentBase }
-    .suffix = Wypełnione, any item
+    .suffix = Filled, any item
     .desc = { ent-PresentBase.desc }
 ent-PresentRandomInsane = { ent-PresentRandomUnsafe }
-    .suffix = Wypełnione, any entity
+    .suffix = Filled, any entity
     .desc = { ent-PresentRandomUnsafe.desc }
 ent-PresentRandom = { ent-PresentBase }
     .suffix = Filled Safe
