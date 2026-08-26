@@ -1,12 +1,12 @@
-# Kategorie sklepu WTH (ERT / JSR / Death Squad)
+# WTH store categories (ERT / Death Squad)
 
-ert-uplink-melee = Walka wręcz
-ert-uplink-weapons = Broń
-ert-uplink-ammunition = Amunicja
-ert-uplink-secondary-weapons = Broń dodatkowa
-ert-uplink-explosives = Materiały wybuchowe
-ert-uplink-medicine = Medycyna
-ert-uplink-engineering = Inżynieria
-ert-uplink-utilities = Wyposażenie
-ert-uplink-janitorial = Sprzątanie
-ert-uplink-other = Inne
+ert-uplink-melee = Melee
+ert-uplink-weapons = Weapons
+ert-uplink-ammunition = Ammunition
+ert-uplink-secondary-weapons = Secondary Weapons
+ert-uplink-explosives = Explosives
+ert-uplink-medicine = Medicine
+ert-uplink-engineering = Engineering
+ert-uplink-utilities = Utilities
+ert-uplink-janitorial = Janitorial
+ert-uplink-other = Other
