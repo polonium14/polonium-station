@@ -126,6 +126,7 @@
   description: "A rebellious poster symbolizing passenger solidarity."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster8_contraband
 
 - type: entity
