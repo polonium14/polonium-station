@@ -1,2 +1,2 @@
-ent-Binoculars = lornetka
-    .desc = Służy do obserwacji na duże odległości.
+ent-Binoculars = binoculars
+    .desc = Used for long-distance surveillance.
