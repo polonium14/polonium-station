@@ -1,5 +1,5 @@
-holopad-general-ntrep = CentComm — Przedstawiciel Nanotrasen
-holopad-general-ia = CentComm — Sprawy wewnętrzne
-holopad-general-magi = CentComm — Sędzia
-holopad-general-service = Usługi — Ogólne
-holopad-genetics = Genetyka
+holopad-general-ntrep = CentComm — Nanotrasen Representative
+holopad-general-ia = CentComm — Internal Affairs
+holopad-general-magi = CentComm — Magistrate
+holopad-general-service = Service — General
+holopad-genetics = Genetics
