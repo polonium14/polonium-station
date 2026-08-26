@@ -1,2 +1,2 @@
-extended-title = Rozszerzona
-extended-description = Spokojna rozgrywka. Wymagana interwencja administratora.
+extended-title = Extended
+extended-description = A calm experience. Admin intervention required.
