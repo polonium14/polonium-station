@@ -1,4 +1,4 @@
-ent-RadioHandheld = radiotelefon
-    .desc = Wygodny ręczny radiotelefon.
-ent-RadioHandheldSecurity = radiotelefon ochrony
-    .desc = Wygodny ręczny radiotelefon ochrony.
+ent-RadioHandheld = handheld radio
+    .desc = A handy handheld radio.
+ent-RadioHandheldSecurity = security radio
+    .desc = A handy security radio.
