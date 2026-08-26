@@ -1,21 +1,20 @@
 # Ammo
 
-# Ammo
-uplink-pistol-magazine-name = Magazynek do pistoletu (.35 auto)
-uplink-pistol-magazine-desc = Magazynek do pistoletu z 10 nabojami. Kompatybilny z Viperem.
-uplink-pistol-magazine-c20r-name = Magazynek do SMG (.35 auto)
-uplink-pistol-magazine-c20r-desc = Magazynek do karabinu z 30 nabojami. Kompatybilny z C-20r.
-uplink-magazine-bulldog-pellet-name = Bębenkowy magazynek (.50 śrut)
-uplink-magazine-bulldog-pellet-desc = Magazynek do strzelby z 8 nabojami wypełnionymi śrutem. Kompatybilny z Bulldogiem.
-uplink-magazine-bulldog-slug-name = Bębenkowy magazynek (.50 jednolite)
-uplink-magazine-bulldog-slug-desc = Magazynek do strzelby z 8 nabojami wypełnionymi jednolitymi pociskami. Kompatybilny z Bulldogiem.
-uplink-pistol-magazine-caseless-name = Magazynek do pistoletu (.25 bezłuskowy)
-uplink-pistol-magazine-caseless-desc = Magazynek do pistoletu z 10 nabojami. Kompatybilny z Cobrą.
-uplink-mosin-ammo-name = Pudełko z amunicją (.30 karabin)
-uplink-mosin-ammo-desc = Pudełko zawierające 60 nabojów do karabinu nadwyżkowego.
-uplink-estoc-ammo-name = Magazynek do karabinu (.20 rifle)
-uplink-estoc-ammo-desc = Magazynek do karabinu z 25 nabojami. Kompatybilny z Estoc DMR.
-uplink-sniper-ammo-name = Pudełko z amunicją (.60 antymateriałowe)
-uplink-sniper-ammo-desc = Pudełko zawierające 10 nabojów do karabinu snajperskiego Hristov.
-uplink-ammo-bundle-name = Zestaw Amunicji
-uplink-ammo-bundle-desc = Przeładowanie! Zawiera 4 magazynki do C-20r, 4 bębny do Bulldog i 2 skrzynki amunicji do L6 SAW.
+uplink-pistol-magazine-name = Pistol Magazine (.35 auto)
+uplink-pistol-magazine-desc = Pistol magazine with 15 cartridges. Compatible with the Viper.
+uplink-pistol-magazine-c20r-name = SMG magazine (.35 auto)
+uplink-pistol-magazine-c20r-desc = SMG magazine with 30 cartridges. Compatible with C-20r.
+uplink-magazine-bulldog-pellet-name = Drum magazine (.50 pellet)
+uplink-magazine-bulldog-pellet-desc = Shotgun magazine with 8 shells filled with buckshot. Compatible with the Bulldog.
+uplink-magazine-bulldog-slug-name = Drum magazine (.50 slug)
+uplink-magazine-bulldog-slug-desc = Shotgun magazine with 8 shells filled with slugs. Compatible with the Bulldog.
+uplink-pistol-magazine-caseless-name = Pistol Magazine (.25 caseless)
+uplink-pistol-magazine-caseless-desc = Pistol magazine with 10 cartridges. Compatible with the Cobra.
+uplink-mosin-ammo-name = Ammunition box (.30 rifle)
+uplink-mosin-ammo-desc = A box of 60 cartridges for the surplus rifle.
+uplink-estoc-ammo-name = Rifle magazine (.20 rifle)
+uplink-estoc-ammo-desc = A rifle magazine with 25 cartridges. Compatible with the Estoc DMR.
+uplink-sniper-ammo-name = Ammunition box (.60 antimateriel)
+uplink-sniper-ammo-desc = A box of 10 cartridges for the Hristov sniper rifle.
+uplink-ammo-bundle-name = Ammo Bundle
+uplink-ammo-bundle-desc = Reloading! Contains 4 magazines for the C-20r, 4 drums for the Bulldog, 3 magazines for the Estoc DMR, and 2 ammo boxes for the L6 SAW.
