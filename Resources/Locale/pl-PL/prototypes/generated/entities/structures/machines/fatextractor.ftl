@@ -1,2 +1,2 @@
-ent-FatExtractor = ekstraktor lipidów
-    .desc = Bezpiecznie i efektywnie usuwa nadmiar tłuszczu z obiektu.
+ent-FatExtractor = lipid extractor
+    .desc = Safely and efficiently extracts excess fat from a subject.
