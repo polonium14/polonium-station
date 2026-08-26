@@ -1,2 +1,1 @@
-
-store-category-uplink-sales = Wyprzedaż!
+store-category-uplink-sales = Sales!
