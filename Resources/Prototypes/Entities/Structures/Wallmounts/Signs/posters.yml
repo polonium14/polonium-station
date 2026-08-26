@@ -533,6 +533,7 @@
   description: "A poster depicting a grey shirted man holding a crowbar with the word Rise written below it."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster55_contraband
 
 - type: entity
@@ -913,6 +914,7 @@
   description: "Enlist in the Nanotrasen Deathsquadron reserves today!"
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster29_legit
 
 - type: entity
@@ -1004,6 +1006,7 @@
   description: "A poster reminding you that security is watching your every move."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster39_legit
 
 - type: entity
