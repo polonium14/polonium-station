@@ -1,11 +1,11 @@
 ent-PartBase = { ent-MaterialBase }
     .desc = { ent-MaterialBase.desc }
-ent-PartRodMetal = metalowy pręt
-    .suffix = Pełny
+ent-PartRodMetal = metal rod
+    .suffix = Full
     .desc = { ent-PartBase.desc }
-ent-PartRodMetal10 = metalowy pręt
+ent-PartRodMetal10 = metal rod
     .suffix = 10
     .desc = { ent-PartRodMetal.desc }
-ent-PartRodMetal1 = metalowy pręt
-    .suffix = Pojedynczy
+ent-PartRodMetal1 = metal rod
+    .suffix = Single
     .desc = { ent-PartRodMetal.desc }
