@@ -1,6 +1,6 @@
 ent-MobBatRemilia = Remilia
-    .desc = Ulubienica kapłana. Lubi owoce.
+    .desc = The chaplain's familiar. Likes fruit.
     .gender = female
-ent-MobCorgiCerberus = Cerber
-    .desc = Ten piesek nie jest przyjazny.
+ent-MobCorgiCerberus = Cerberus
+    .desc = This pupper is not wholesome.
     .gender = male
