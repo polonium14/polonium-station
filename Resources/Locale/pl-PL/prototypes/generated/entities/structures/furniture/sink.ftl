@@ -1,6 +1,6 @@
 ent-SinkEmpty = sink
     .desc = The faucets have been tightened to the maximum possible torque but are still known to drip.
-    .suffix = Puste
+    .suffix = Empty
 ent-Sink = { ent-SinkEmpty }
     .suffix = Water
     .desc = { ent-SinkEmpty.desc }
