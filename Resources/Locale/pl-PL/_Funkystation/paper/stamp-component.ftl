@@ -1,4 +1,3 @@
-
-stamp-component-stamped-name-iaa = Sprawy Wewnętrzne
+stamp-component-stamped-name-iaa = Internal Affairs
 stamp-component-stamped-name-borg = Cyborg
-stamp-component-stamped-name-cci = Stażysta Centralnego Dowództwa
+stamp-component-stamped-name-cci = Central Command Intern
