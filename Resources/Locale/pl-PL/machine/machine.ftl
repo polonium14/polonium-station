@@ -1,17 +1,17 @@
-machine-insert-item = { CAPITALIZE($user) } włożył { $item } do { $machine }.
-machine-upgrade-examinable-verb-text = Ulepszenia
-machine-upgrade-examinable-verb-message = Przeglądnij ulepszenia maszyny.
-machine-upgrade-increased-by-percentage = [color=yellow]{ CAPITALIZE($upgraded) }[/color] Zwiększono o { $percent }%.
-machine-upgrade-decreased-by-percentage = [color=yellow]{ CAPITALIZE($upgraded) }[/color] Zmniejszono o { $percent }%.
-machine-upgrade-increased-by-amount = [color=yellow]{ CAPITALIZE($upgraded) }[/color] Zwiększono o { $difference }.
-machine-upgrade-decreased-by-amount = [color=yellow]{ CAPITALIZE($upgraded) }[/color] Zmniejszono o { $difference }.
-machine-upgrade-not-upgraded = [color=yellow]{ CAPITALIZE($upgraded) }[/color] nie ulepszono.
-machine-part-name-capacitor = Kondensator
+machine-insert-item = { CAPITALIZE(THE($user)) } inserted { THE($item) } into { THE($machine) }.
+machine-upgrade-examinable-verb-text = Upgrades
+machine-upgrade-examinable-verb-message = Examine the machine upgrades.
+machine-upgrade-increased-by-percentage = [color=yellow]{ CAPITALIZE($upgraded) }[/color] increased by { $percent }%.
+machine-upgrade-decreased-by-percentage = [color=yellow]{ CAPITALIZE($upgraded) }[/color] decreased by { $percent }%.
+machine-upgrade-increased-by-amount = [color=yellow]{ CAPITALIZE($upgraded) }[/color] increased by { $difference }.
+machine-upgrade-decreased-by-amount = [color=yellow]{ CAPITALIZE($upgraded) }[/color] decreased by { $difference }.
+machine-upgrade-not-upgraded = [color=yellow]{ CAPITALIZE($upgraded) }[/color] not upgraded.
+machine-part-name-capacitor = Capacitor
 machine-part-name-manipulator = Manipulator
-machine-part-name-matter-bin = Pojemnik na materię
-machine-part-name-power-cell = Bateria
-two-way-lever-left = pchnij w lewo
-two-way-lever-right = pchnij w prawo
-two-way-lever-cant = nie można pchnąć dźwigni w tę stronę!
-recycler-count-items = Zrecyklingowano { $items } obiektów.
-machine-already-in-use = { CAPITALIZE($machine) } jest już w użyciu.
+machine-part-name-matter-bin = Matter Bin
+machine-part-name-power-cell = Power Cell
+two-way-lever-left = push left
+two-way-lever-right = push right
+two-way-lever-cant = can't push the lever that way!
+recycler-count-items = Recycled { $items } objects.
+machine-already-in-use = { CAPITALIZE(THE($machine)) } is already in use.
