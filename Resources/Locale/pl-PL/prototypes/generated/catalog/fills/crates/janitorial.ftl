@@ -10,5 +10,5 @@ ent-CrateJanitorialHolidayLights = holiday lights crate
     .desc = Deck the halls with these festive holiday lights! Contains twelve red light tubes and twelve green light tubes.
 ent-CrateJanitorialMousetraps = mousetraps crate
     .desc = Mousetraps, for when all of service is being haunted by an entire horde of rats. Use sparingly... or not.
-ent-CrateJanitorBiosuit = skrzynia kombinezonów biologicznych dozorcy
-    .desc = Zawiera 2 skafandry biologiczne, dzięki którym żadna choroba nie odciągnie cię od sprzątania.
+ent-CrateJanitorBiosuit = janitor bio suit crate
+    .desc = Contains 2 biohazard suits to ensure that no disease will distract you from cleaning.
