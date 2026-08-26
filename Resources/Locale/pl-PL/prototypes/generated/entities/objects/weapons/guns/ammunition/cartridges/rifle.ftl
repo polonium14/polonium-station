@@ -1,10 +1,10 @@
-ent-BaseCartridgeRifle = nabój (.20 karabinowe)
+ent-BaseCartridgeRifle = cartridge (.20 rifle)
     .desc = { ent-BaseCartridge.desc }
-ent-CartridgeRifle = nabój (.20 karabinowe)
+ent-CartridgeRifle = cartridge (.20 rifle)
     .desc = A modern intermediate cartridge for combat rifles. Standard kinetic ammunition is common and useful in most situations.
-ent-CartridgeRiflePractice = nabój (.20 karabinowe treningowe)
+ent-CartridgeRiflePractice = cartridge (.20 rifle practice)
     .desc = A modern intermediate cartridge for combat rifles. Practice ammunition fires a chalk projectile that stings a little, but otherwise causes no lasting damage.
-ent-CartridgeRifleIncendiary = nabój (.20 karabinowe zapalające)
+ent-CartridgeRifleIncendiary = cartridge (.20 rifle incendiary)
     .desc = A modern intermediate cartridge for combat rifles. Incendiary ammunition contains a self-igniting compound that sets targets ablaze.
-ent-CartridgeRifleUranium = nabój (.20 karabinowe uranowe)
+ent-CartridgeRifleUranium = cartridge (.20 rifle uranium)
     .desc = A modern intermediate cartridge for combat rifles. Uranium ammunition replaces the lead core of the bullet with fissile material, irradiating targets from the inside.
