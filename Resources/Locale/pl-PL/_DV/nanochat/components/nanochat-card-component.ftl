@@ -1,4 +1,3 @@
-
 # Examine
 nanochat-card-examine-no-number = The NanoChat card has not been assigned a number yet.
 nanochat-card-examine-number = The NanoChat card displays #{ $number }.
