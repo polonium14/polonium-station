@@ -1,3 +1,3 @@
-ent-KaucjomatMachineCircuitboard = kaucjomat (płytka maszynowa)
-    .desc = Płytka maszynowa do kaucjomatu.
-    .suffix = Płytka maszynowa
+ent-KaucjomatMachineCircuitboard = kaucjomat machine board
+    .desc = A machine printed circuit board for a kaucjomat.
+    .suffix = Machine Board
