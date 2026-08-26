@@ -278,6 +278,7 @@
   description: "Who cares about lung cancer when you're high as a kite?"
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster25_contraband
 
 - type: entity
