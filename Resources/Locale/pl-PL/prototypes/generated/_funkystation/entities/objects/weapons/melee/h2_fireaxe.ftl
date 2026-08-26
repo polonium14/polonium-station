@@ -1,2 +1,2 @@
-ent-MetalHydrogenAxe = topór z metalicznego wodoru
-    .desc = Lekka łom z ostrzem topora strażackiego. Łatwiej go nosić przy kombinezonie bez poświęcania plecaka.
+ent-MetalHydrogenAxe = metal hydrogen axe
+    .desc = A lightweight crowbar with an extremely sharp fire axe head attached.
