@@ -1,10 +1,10 @@
 ent-BaseSpellbook = spellbook
     .desc = { ent-BaseItem.desc }
-ent-WizardsGrimoire = księga czarodzieja
+ent-WizardsGrimoire = wizard's grimoire
     .desc = A heavy tome containing complicated arcane formulae for preparing magic spells and conjuring supernatural equipment. Decades of study went into researching this collection of mystical secrets; now go use them to ruin someone's day.
     .suffix = Wizard
 ent-WizardsGrimoireNoRefund = { ent-WizardsGrimoire }
-    .suffix = Wizard, No Refund
+    .suffix = Wizard, no refunding
     .desc = { ent-WizardsGrimoire.desc }
 ent-WizardsGrimoireDebug = { ent-WizardsGrimoire }
     .desc = A heavy tome containing complicated arcane formulae for preparing magic spells and conjuring supernatural equipment. Someone wrote "FOR EXPERIMENTAL USE ONLY" on the inside cover.
