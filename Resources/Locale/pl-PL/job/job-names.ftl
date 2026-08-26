@@ -1,142 +1,123 @@
-job-name-warden = Nadzorca Ochrony
-job-name-security = Oficer Ochrony
-job-name-cadet = Kadet Ochrony
-job-name-hos = Komendant
-job-name-detective = Detektyw
-job-name-brigmedic = Medyk Więzienny
+job-name-atmostech = Atmospheric Technician
+job-name-bartender = Bartender
 job-name-borg = Cyborg
-job-name-scientist = Naukowiec
-job-name-research-assistant = Asystent Naukowy
-job-name-rd = Kierownik Badań
-job-name-psychologist = Psycholog
-job-name-intern = Stażysta Medyczny
-job-name-doctor = Doktor Medyczny
-job-name-paramedic = Ratownik
-job-name-cmo = Ordynator
-job-name-chemist = Chemik
-job-name-technical-assistant = Pomocnik Techniczny
-job-name-engineer = Inżynier Stacji
-job-name-atmostech = Technik Atmosferyki
-job-name-hop = Kierownik Personelu
-job-name-captain = Kapitan
-job-name-serviceworker = Pracownik Obsługi
-job-name-centcomoff = Urzędnik Centralnego Dowództwa
-job-name-cburn = Oficer kwarantanny Centralnego Dowództwa
-job-name-deathsquad = Agent CentComm
-job-name-reporter = Dziennikarz
-job-name-musician = Muzyk
-job-name-librarian = Bibliotekarz
-job-name-lawyer = Prawnik
-job-name-mime = Mim
-job-name-ce = Główny Inżynier
-job-name-janitor = Woźny
-job-name-chaplain = Kapłan
-job-name-botanist = Botanik
-job-name-bartender = Barman
-job-name-passenger = Pasażer
-job-name-salvagespec = Specjalista ds. Odzysku
-job-name-station-ai = SI Stacji
-job-name-qm = Kwatermistrz
-job-name-cargotech = Logistyk
-job-name-chef = Kucharz
-job-name-clown = Klaun
-job-name-ertleader = Lider JSR
-job-name-ertchaplain = Kapłan JSR
-job-name-ertengineer = Inżynier JSR
-job-name-ertsecurity = Ochrona JSR
-job-name-ertmedic = Medyk JSR
-job-name-ertjanitor = Sprzątacz JSR
-job-name-boxer = Bokser
-job-name-zookeeper = Zoolog
-job-name-visitor = Gość
+job-name-botanist = Botanist
+job-name-brigmedic = Brigmedic
+job-name-cadet = Security Cadet
+job-name-captain = Captain
+job-name-cargotech = Cargo Technician
+job-name-cburn = CentComm Quarantine Officer
+job-name-ce = Chief Engineer
+job-name-centcommoff = CentComm Official
+job-name-chef = Chef
+job-name-chaplain = Chaplain
+job-name-chemist = Chemist
+job-name-clown = Clown
+job-name-cluwne = Cluwne
+job-name-cmo = Chief Medical Officer
+job-name-deathsquad = Death Squad
+job-name-detective = Detective
+job-name-doctor = Medical Doctor
+job-name-engineer = Station Engineer
+job-name-ertchaplain = ERT Chaplain
+job-name-ertengineer = ERT Engineer
+job-name-ertjanitor = ERT Janitor
+job-name-ertleader = ERT Leader
+job-name-ertmedic = ERT Medic
+job-name-ertsecurity = ERT Security
+job-name-hop = Head of Personnel
+job-name-hos = Head of Security
+job-name-intern = Medical Intern
+job-name-janitor = Janitor
+job-name-lawyer = Lawyer
+job-name-librarian = Librarian
+job-name-mime = Mime
+job-name-musician = Musician
+job-name-paramedic = Paramedic
+job-name-passenger = Passenger
+job-name-psychologist = Psychologist
+job-name-qm = Quartermaster
+job-name-rd = Research Director
+job-name-reporter = Reporter
+job-name-research-assistant = Research Assistant
+job-name-salvagespec = Salvage Specialist
+job-name-scientist = Scientist
+job-name-security = Security Officer
+job-name-serviceworker = Service Worker
+job-name-station-ai = Station AI
+job-name-technical-assistant = Technical Assistant
+job-name-visitor = Visitor
+job-name-warden = Warden
 # unused jobs
 # these are required for the agent ID job icon tooltips
 # I am keeping them for roleplaying opportunities
-job-name-geneticist = Genetyk
-job-name-no-id = Brakuje ID
-job-name-prisoner = Więzień
-# event-restricted jobs
-
-
-
-job-name-unknown = Nieznany
-job-name-virologist = Wirusolog
-job-name-zombie = Żywy Trup
-# Job titles
-job-title-visitor = Hospitator
-job-title-cluwne = Cluwne
-job-title-universal = Uniwersalny
-# Role timers - Make these alphabetical or I cut you
-JobAtmosphericTechnician = Technik Atmosferyki
-JobBartender = Barman
-JobBorg = Cyborg
-JobBotanist = Botanik
-
-JobCaptain = Kapitan
-JobCargoTechnician = Technik Logistyki
-JobCentralCommandOfficial = Urzędnik CentComm
-JobChaplain = Kapłan
-JobChef = Kucharz
-JobChemist = Chemik
-JobChiefEngineer = Główny Inżynier
-JobChiefMedicalOfficer = Ordynator
-JobClown = Klaun
-JobDetective = Detektyw
-JobBrigmedic = Brigmedic
-
-JobERTChaplain = Kapłan JSR
-JobERTEngineer = Inżynier JSR
-JobERTJanitor = Sprzątacz JSR
-JobERTLeader = Lider JSR
-JobERTMedical = Medyk JSR
-JobERTSecurity = Ochrona JSR
-JobHeadOfPersonnel = Kierownik Personelu
-JobHeadOfSecurity = Komendant
-JobJanitor = Woźny
-JobLawyer = Prawnik
-JobLibrarian = Bibliotekarz
-JobMedicalDoctor = Doktor Medyczny
-JobMedicalIntern = Stażysta Medyczny
-JobMime = Mim
-JobMusician = Muzyk
-JobParamedic = Ratownik
-JobPassenger = Pasażer
-JobPsychologist = Psycholog
-
-JobQuartermaster = Kierownik Logistyki
-JobReporter = Dziennikarz
-JobResearchAssistant = Asystent Naukowy
-JobResearchDirector = Kierownik Badań
-JobSalvageSpecialist = Technik Odzysku
-JobScientist = Naukowiec
-JobSecurityCadet = Kadet Ochrony
-JobSecurityOfficer = Oficer Ochrony
-JobServiceWorker = Pracownik Obsługi
-
-JobStationAi = SI Stacji
-JobStationEngineer = Inżynier Stacji
-JobTechnicalAssistant = Pomocnik Techniczny
-JobVisitor = Wizytor
-JobWarden = Nadzorca Ochrony
-
-
-job-name-centcommoff = CentComm Official
-
-job-name-cluwne = Cluwne
-
+job-name-geneticist = Geneticist
+job-name-boxer = Boxer
+job-name-no-id = No ID
+job-name-prisoner = Prisoner
+job-name-roboticist = Roboticist
+job-name-unknown = Unknown
+job-name-virologist = Virologist
+job-name-zookeeper = Zookeeper
 # antagonist jobs
 job-name-ninja = Ninja
-
-job-name-syndicate-commander = Syndicate Commander
-
-job-name-syndicate-corpsman = Syndicate Corpsman
-
-job-name-syndicate-operative = Syndicate Operative
-
-job-name-pirate = Pirate
-
-job-name-wizard = Wizard
-
-job-name-roboticist = Roboticist
-
 job-name-syndicate = Syndicate
+job-name-syndicate-commander = Syndicate Commander
+job-name-syndicate-corpsman = Syndicate Corpsman
+job-name-syndicate-operative = Syndicate Operative
+job-name-pirate = Pirate
+job-name-wizard = Wizard
+job-name-zombie = Zombie
+# Job titles
+job-title-cluwne = Cluwne
+job-title-universal = Universal
+job-title-visitor = Visitor
+# Role timers - Make these alphabetical or I cut you
+JobAtmosphericTechnician = Atmospheric Technician
+JobBartender = Bartender
+JobBorg = Borg
+JobBotanist = Botanist
+JobCaptain = Captain
+JobCargoTechnician = Cargo Technician
+JobCentralCommandOfficial = Central Command Official
+JobChaplain = Chaplain
+JobChef = Chef
+JobChemist = Chemist
+JobChiefEngineer = Chief Engineer
+JobChiefMedicalOfficer = Chief Medical Officer
+JobClown = Clown
+JobDetective = Detective
+JobBrigmedic = Brigmedic
+JobERTChaplain = ERT Chaplain
+JobERTEngineer = ERT Engineer
+JobERTJanitor = ERT Janitor
+JobERTLeader = ERT Leader
+JobERTMedical = ERT Medical
+JobERTSecurity = ERT Security
+JobHeadOfPersonnel = Head of Personnel
+JobHeadOfSecurity = Head of Security
+JobJanitor = Janitor
+JobLawyer = Lawyer
+JobLibrarian = Librarian
+JobMedicalDoctor = Medical doctor
+JobMedicalIntern = Medical intern
+JobMime = Mime
+JobMusician = Musician
+JobParamedic = Paramedic
+JobPassenger = Passenger
+JobPsychologist = Psychologist
+JobQuartermaster = Quartermaster
+JobReporter = Reporter
+JobResearchAssistant = Research Assistant
+JobResearchDirector = Research Director
+JobSalvageSpecialist = Salvage Specialist
+JobScientist = Scientist
+JobSecurityCadet = Security Cadet
+JobSecurityOfficer = Security Officer
+JobServiceWorker = Service Worker
+JobStationAi = Station AI
+JobStationEngineer = Station Engineer
+JobTechnicalAssistant = Technical Assistant
+JobVisitor = Visitor
+JobWarden = Warden
+job-name-centcomoff = Urzędnik Centralnego Dowództwa
