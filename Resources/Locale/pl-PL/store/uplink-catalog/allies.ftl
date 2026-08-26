@@ -1,21 +1,20 @@
 # Allies
 
-# Utility
-uplink-holopara-kit-name = Zestaw Holopasożyta
+uplink-holopara-kit-name = Holoparasite Kit
 uplink-holopara-kit-desc =
-    Duma i radość korporacji Cybersun. Zawiera iniektor będący hostem dla świadomego, metafizycznego strażnika wykonanego z twardego światła, który spoczywa w ciele użytkownika, gdy nie jest aktywny.
-    Strażnik potrafi zadawać błyskawiczne serie ciosów i jest odporny na niebezpieczne warunki środowiskowe oraz wysoce wytrzymały na urazy bezpośrednie, jednak dzieli wszelkie otrzymane obrażenia ze swoim nosicielem.
-uplink-reinforcement-radio-name = Teleporter Wzmocnień
-uplink-reinforcement-radio-traitor-desc = Radio w agencie wzmocnień o niezwykle wątpliwej jakości. Brak przycisku wyłączania, kup to, jeśli jesteś gotów na zabawę. Przywołaj medyka, szpiega lub złodzieja, aby ci pomogli. Powodzenia.
-uplink-reinforcement-radio-nukeops-name = Teleporter Operatywów Nuklearnych
-uplink-reinforcement-radio-nukeops-desc = Radio w operatywie nuklearnym o niezwykle wątpliwej jakości. Brak przycisku wyłączania, kup to, jeśli jesteś gotów na zabawę. Mają podstawowy sprzęt operatywa nuklearnego.
-uplink-reinforcement-radio-cyborg-assault-name = Teleporter Szturmowego Cyborga Syndykatu
-uplink-reinforcement-radio-cyborg-assault-desc = Smukła, zabójcza maszyna z dostępem do Miecza Energetycznego, LMG, Sekwencera Kryptograficznego i Wskaźnika.
-uplink-reinforcement-radio-ancestor-name = Teleporter Wzmocnień Genetycznego Przodka
-uplink-reinforcement-radio-ancestor-desc = Przywołaj wyszkolonego przodka do pomocy. Zawiera pojedynczego papierosa syndykatu.
-uplink-carp-dehydrated-name = Odwodniona Kosmiczna Karaś
-uplink-carp-dehydrated-desc = Wygląda jak pluszowa zabawka, ale po dodaniu wody staje się prawdziwym kosmicznym karasiem!
-uplink-mobcat-microbomb-name = Teleporter SyndyKota
-uplink-mobcat-microbomb-desc = Przywołaj pomocnego kota wyposażonego w implant mikro-bomby. Eksploduje, gdy zostanie poważnie ranny. Może boleśnie ugryźć.
-uplink-syndicate-pai-name = Osobiste urządzenie pSI Syndykatu
-uplink-syndicate-pai-desc = Wariant pSI Syndykatu z dostępem do kanału radiowego Syndykatu. Nie gwarantujemy ich użyteczności.
+    The pride and joy of Cybersun. Contains an injector that hosts a sentient metaphysical guardian made of hard light which resides in the user's body when not active.
+    The guardian can punch rapidly and is immune to hazardous environments while being resistant to direct trauma, but shares any damage it takes with the user.
+uplink-reinforcement-radio-name = Reinforcement Teleporter
+uplink-reinforcement-radio-traitor-desc = Radio in a reinforcement agent of extremely questionable quality. No off button, buy this if you're ready to party. Call in a medic or spy or thief to help you out. Good luck.
+uplink-reinforcement-radio-nukeops-name = Nuclear Operative Teleporter
+uplink-reinforcement-radio-nukeops-desc = Radio in a nuclear operative of extremely questionable quality. No off button, buy this if you're ready to party. They have basic nuclear operative gear.
+uplink-reinforcement-radio-cyborg-assault-name = Syndicate Assault Cyborg Teleporter
+uplink-reinforcement-radio-cyborg-assault-desc = A lean, mean killing machine with access to an Energy Sword, LMG, Cryptographic Sequencer, and a Pinpointer.
+uplink-reinforcement-radio-ancestor-name = Genetic Ancestor Reinforcement Teleporter
+uplink-reinforcement-radio-ancestor-desc = Call in a trained ancestor of your choosing to assist you. Comes with a single syndicate cigarette.
+uplink-carp-dehydrated-name = Dehydrated Space Carp
+uplink-carp-dehydrated-desc = Looks like a plush toy carp, but just add water and it becomes a real-life space carp!
+uplink-mobcat-microbomb-name = SyndiCat Teleporter
+uplink-mobcat-microbomb-desc = Call in a handy cat equipped with a microbomb implant. Explodes when seriously injured. Can bite painfully.
+uplink-syndicate-pai-name = Syndicate personal ai device
+uplink-syndicate-pai-desc = A Syndicate variant of the pAI with access to the Syndicate radio channel. We do not guarantee their usefulness.
