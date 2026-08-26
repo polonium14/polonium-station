@@ -176,6 +176,7 @@
   description: "This poster promotes rank gluttony."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster14_contraband
 
 - type: entity
@@ -194,6 +195,7 @@
   description: "A poster that positions the seat of power outside Nanotrasen."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster16_contraband
 
 - type: entity
@@ -639,6 +641,7 @@
   description: "A poster glorifying the station's security force."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster1_legit
 
 - type: entity
