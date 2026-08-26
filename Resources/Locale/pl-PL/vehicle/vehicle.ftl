@@ -1,1 +1,1 @@
-vehicle-slot-component-slot-name-keys = kluczyki
+﻿vehicle-slot-component-slot-name-keys = keys
