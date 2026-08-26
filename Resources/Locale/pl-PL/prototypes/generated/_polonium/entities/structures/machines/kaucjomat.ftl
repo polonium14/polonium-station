@@ -1,7 +1,7 @@
 ent-BaseKaucjomat = kaucjomat
-    .desc = Automat kaucyjny. Wrzuć puste puszki i butelki, czasem dostaniesz spesosy z powrotem.
+    .desc = A deposit-return machine. Feed it empty cans and bottles, get spesos back. Sometimes.
 ent-Kaucjomat = { ent-BaseKaucjomat }
     .desc = { ent-BaseKaucjomat.desc }
 ent-KaucjomatWall = { ent-BaseKaucjomat }
-    .suffix = Naścienna
+    .suffix = Wall
     .desc = { ent-BaseKaucjomat.desc }
