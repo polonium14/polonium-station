@@ -1,11 +1,11 @@
-ent-AppearanceRodentia = wygląd gryzonia
+ent-AppearanceRodentia = rodentia appearance
     .desc = { ent-BaseSpeciesAppearance.desc }
 ent-MobRodentiaDummy = { ent-AppearanceRodentia }
     .desc = { ent-AppearanceRodentia.desc }
 ent-MobRodentia = Urist McRat
     .desc = { ent-AppearanceRodentia.desc }
 ent-OrganRodentia = { ent-OrganBaseOrganic }
-    .suffix = gryzoń
+    .suffix = rodentia
     .desc = { ent-OrganBaseOrganic.desc }
 ent-OrganRodentiaMetabolizer = { "" }
     .desc = { "" }
