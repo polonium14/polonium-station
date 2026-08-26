@@ -1,3 +1,3 @@
-ent-CMXenoRavager = niszczyciel
-    .desc = Ogromny, paskudny czerwony obcy z ogromnymi szponami jak kosy.
+ent-CMXenoRavager = Ravager
+    .desc = A huge, nasty red alien with enormous scythed claws.
     .gender = male
