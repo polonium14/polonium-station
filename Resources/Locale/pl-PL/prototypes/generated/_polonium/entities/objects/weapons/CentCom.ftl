@@ -1,3 +1,3 @@
-ent-MindWipingPen = bardzo normalny długopis CD
-    .desc = BARDZO normalny długopis CD. Teraz proszę spójrz tu na niego.... *klik*
+ent-MindWipingPen = very normal CentCom pen
+    .desc = A VERY normal CentCom Pen. Now please just look here at it.... *click*
     .suffix = Admeme, DO NOT MAP
