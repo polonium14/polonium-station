@@ -1,2 +1,2 @@
-ent-CheekStorage = schowek w policzkach
-    .desc = Policzki zwierzęcia, w których da się schować drobne przedmioty.
+ent-CheekStorage = cheek storage
+    .desc = The cheeks of an animal, capable of storing small objects.
