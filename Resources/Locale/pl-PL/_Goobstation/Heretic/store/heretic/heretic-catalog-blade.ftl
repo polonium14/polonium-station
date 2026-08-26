@@ -1,4 +1,3 @@
-
 knowledge-path-blade-s1-name = The Cutting Edge
 knowledge-path-blade-s1-desc = Follow the path of blades. Transmute a knife with two bars of silver into a sundered blade.
 knowledge-path-blade-s2-name = Grasp of the Blade
