@@ -1,4 +1,3 @@
-
 drunken-resilience-trait-name = Pijacki Upór
 drunken-resilience-trait-desc = Nie ma nic lepszego od zimnego browarka. Kiedy jesteś pijany, powoli leczysz się z ran.
 trait-self-aware-name = Samo-Świadomość
