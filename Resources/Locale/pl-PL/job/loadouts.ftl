@@ -1,3 +1,3 @@
-loadout-window = Wyposażenie
-loadout-none = Brak
-loadout-window-title-loadout = Wyposażenie { $job }
+loadout-window = Loadout
+loadout-none = None
+loadout-window-title-loadout = { $job } loadout
