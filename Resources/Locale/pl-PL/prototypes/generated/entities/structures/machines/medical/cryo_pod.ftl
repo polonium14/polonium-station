@@ -1,5 +1,5 @@
-ent-CryoPod = kriokomora
-    .desc = Specjalne urządzenie przeznaczone do tworzenia bezpiecznego środowiska dla użycia chemikaliów reagujących w zimnych warunkach.
+ent-CryoPod = cryo pod
+    .desc = A special machine intended to create a safe environment for the use of chemicals that react in cold environments.
 ent-SolutionCryoBuffer = { ent-SolutionSmall }
     .desc = { ent-SolutionSmall.desc }
 ent-CryoPodDestroyed = destroyed cryo pod
