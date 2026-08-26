@@ -1,4 +1,4 @@
-secret-title = Sekret
-secret-description = To sekret dla wszystkich. Napotykane zagrożenia są losowe.
-dynamic-title = Dynamiczny
-dynamic-description = Nikt nie wie, co nadchodzi. Możesz napotkać dowolną liczbę zagrożeń.
+secret-title = Secret
+secret-description = It's a secret to everyone. The threats you encounter are randomized.
+dynamic-title = Dynamic
+dynamic-description = No one knows what's coming. You can encounter any number of threats.
