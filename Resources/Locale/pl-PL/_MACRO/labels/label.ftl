@@ -1,3 +1,3 @@
 label-box-survival-h2o = H2O
-label-pill-emergency = awaryjne
-label-drink-funny-water = zabawna woda
+label-pill-emergency = emergency
+label-drink-funny-water = funny water
