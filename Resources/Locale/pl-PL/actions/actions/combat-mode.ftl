@@ -1,2 +1,2 @@
-action-popup-combat-disabled = Tryb walki wyłączony
-action-popup-combat-enabled = Tryb walki włączony
+action-popup-combat-disabled = Combat mode disabled
+action-popup-combat-enabled = Combat mode enabled
