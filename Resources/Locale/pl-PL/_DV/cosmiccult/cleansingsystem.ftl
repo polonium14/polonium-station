@@ -1,4 +1,3 @@
-
 cosmic-oubliette-random-horror =
     { $COUNT ->
         [1] Czujesz, jakby twoja głowa była rozrywana na strzępy.
