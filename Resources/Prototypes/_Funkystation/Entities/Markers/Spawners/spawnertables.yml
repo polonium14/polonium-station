@@ -45,6 +45,13 @@
     - id: FoodBoxDonkpocketSpicy
     - id: FoodBoxDonkpocketTeriyaki
     - id: FoodBoxDonkpocketPizza
+    - id: FoodBoxDonkpocketCarp
+    - id: FoodBoxDonkpocketBerry
+    - id: FoodBoxDonkpocketHonk
+    - id: FoodBoxDonkpocketDink
+    - id: FoodBoxDonkpocketStonk
+      weight: 0.2
+    - id: FoodBoxDonkpocketMoth
 
 - type: entityTable
   id: MaintLocker50
