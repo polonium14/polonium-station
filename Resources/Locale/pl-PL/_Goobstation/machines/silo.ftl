@@ -1,4 +1,3 @@
-
 lathe-menu-connected-to-silo-message = Connected to silo.
 signal-port-name-material-silo = Material silo
 signal-port-description-material-silo = Bluespace storage for station materials
