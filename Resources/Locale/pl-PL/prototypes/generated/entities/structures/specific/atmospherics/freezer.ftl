@@ -1,5 +1,5 @@
 ent-AirSensorFreezerBase = { ent-AirSensorBase }
-    .suffix = Atmosfera Zamrażalnika
+    .suffix = Freezer Atmosphere
     .desc = { ent-AirSensorBase.desc }
 ent-AirSensorFreezer = { ent-AirSensorFreezerBase }
     .desc = { ent-AirSensorFreezerBase.desc }
@@ -8,5 +8,5 @@ ent-GasVentPumpFreezer = { ent-AirSensorFreezerBase }
 ent-GasVentScrubberFreezer = { ent-AirSensorFreezerBase }
     .desc = { ent-AirSensorFreezerBase.desc }
 ent-AirAlarmFreezer = { ent-AirAlarm }
-    .suffix = Atmosfera Zamrażalnika, Automatyczny tryb wyłączony
+    .suffix = Freezer Atmosphere, auto mode disabled
     .desc = { ent-AirAlarm.desc }
