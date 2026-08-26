@@ -1,37 +1,36 @@
-shared-solution-container-component-on-examine-main-text = Zawiera {INDEFINITE($desc)} [color={$color}]{$colorName} {$desc}[/color] { $chemCount ->
-    [1] substancję chemiczną.
-   *[other] mieszaninę chemikaliów.
+shared-solution-container-component-on-examine-main-text =
+    It contains { INDEFINITE($desc) } [color={ $color }]{ $colorName } { $desc }[/color] { $chemCount ->
+        [1] chemical.
+       *[other] mixture of chemicals.
     }
-
-examinable-solution-has-recognizable-chemicals = Rozpoznajesz w roztworze {$recognizedString}.
-examinable-solution-recognized = [color={$color}]{$chemical}[/color]
-
-examinable-solution-on-examine-volume = Zawarty roztwór { $fillLevel ->
-    [exact] zawiera [color=white]{$current}/{$max}u[/color].
-   *[other] jest [bold]{ -solution-vague-fill-level(fillLevel: $fillLevel) }[/bold].
+examinable-solution-has-recognizable-chemicals = You can recognize { $recognizedString } in the solution.
+examinable-solution-recognized = [color={ $color }]{ $chemical }[/color]
+examinable-solution-on-examine-volume = The contained solution is { $fillLevel ->
+    [exact] holding [color=white]{$current}/{$max}u[/color].
+   *[other] [bold]{ -solution-vague-fill-level(fillLevel: $fillLevel) }[/bold].
 }
 
-examinable-solution-on-examine-volume-no-max = Zawarty roztwór { $fillLevel ->
-    [exact] zawiera [color=white]{$current}u[/color].
-   *[other] jest [bold]{ -solution-vague-fill-level(fillLevel: $fillLevel) }[/bold].
+examinable-solution-on-examine-volume-no-max = The contained solution is { $fillLevel ->
+    [exact] holding [color=white]{$current}u[/color].
+   *[other] [bold]{ -solution-vague-fill-level(fillLevel: $fillLevel) }[/bold].
 }
 
-examinable-solution-on-examine-volume-puddle = Kałuża { $fillLevel ->
-    [exact] ma [color=white]{$current}u[/color].
-    [full] jest ogromna i przelewa się!
-    [mostlyfull] jest ogromna i przelewa się!
-    [halffull] jest głęboka i płynie.
-    [halfempty] jest bardzo głęboka.
-   *[mostlyempty] zbiera się w kałużę.
-    [empty] tworzy kilka małych kałuż.
-}
-
+examinable-solution-on-examine-volume-puddle =
+    The puddle is { $fillLevel ->
+        [exact] [color=white]{ $current }u[/color].
+        [full] huge and overflowing!
+        [mostlyfull] huge and overflowing!
+        [halffull] deep and flowing.
+        [halfempty] very deep.
+       *[mostlyempty] pooling together.
+        [empty] forming multiple small pools.
+    }
 -solution-vague-fill-level =
     { $fillLevel ->
-        [full] [color=white]pełny[/color]
-        [mostlyfull] [color=#DFDFDF]prawie pełny[/color]
-        [halffull] [color=#C8C8C8]w połowie pełny[/color]
-        [halfempty] [color=#C8C8C8]w połowie pusty[/color]
-        [mostlyempty] [color=#A4A4A4]prawie pusty[/color]
-       *[empty] [color=gray]pusty[/color]
+        [full] [color=white]Full[/color]
+        [mostlyfull] [color=#DFDFDF]Mostly Full[/color]
+        [halffull] [color=#C8C8C8]Half Full[/color]
+        [halfempty] [color=#C8C8C8]Half Empty[/color]
+        [mostlyempty] [color=#A4A4A4]Mostly Empty[/color]
+       *[empty] [color=gray]Empty[/color]
     }
