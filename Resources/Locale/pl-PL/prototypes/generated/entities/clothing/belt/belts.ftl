@@ -1,7 +1,7 @@
 ent-ClothingBeltSheath = sabre sheath
     .desc = An ornate sheath designed to hold an officer's blade.
 ent-ClothingBeltQuiver = quiver
-    .desc = Can hold up to 15 arrows, and fits snug around your waist.
+    .desc = Can hold up to 16 arrows, and fits snug around your waist.
 ent-ClothingBeltBandolier = bandolier
     .desc = A bandolier for holding shotgun ammunition.
 ent-ClothingBeltWand = wand belt
