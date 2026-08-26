@@ -1,7 +1,7 @@
 ent-ClothingHeadHelmetEVA = EVA helmet
     .desc = An old-but-gold helmet designed for extravehicular activites. Infamous for making security officers paranoid.
-ent-ClothingHeadHelmetEVALarge = EVA helmet
-    .desc = An old-but-gold helmet designed for extravehicular activites.
+ent-ClothingHeadHelmetEVALarge = emergency helmet
+    .desc = Hard to believe this cheap-looking thing is airtight, but it is.
 ent-ClothingHeadHelmetSyndicate = syndicate EVA helmet
     .desc = A simple, stylish EVA helmet. Designed for maximum humble space-badassery.
 ent-ClothingHeadHelmetCosmonaut = cosmonaut helmet
