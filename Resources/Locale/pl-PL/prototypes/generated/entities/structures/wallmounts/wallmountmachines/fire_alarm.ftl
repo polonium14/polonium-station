@@ -1,8 +1,8 @@
-ent-FireAlarm = alarm pożarowy
-    .desc = Alarm pożarowy. pikantne!
-ent-FireAlarmAssembly = konstrukcja alarmu pożarowego
-    .desc = konstrukcja alarmu pożarowego. łagodne.
+ent-FireAlarm = fire alarm
+    .desc = A fire alarm. Spicy!
+ent-FireAlarmAssembly = fire alarm assembly
+    .desc = A fire alarm assembly. Very mild.
 ent-FireAlarmXeno = { ent-FireAlarm }
-    .desc = Alarm pożarowy kosmitów. Działa tak samo.
+    .desc = An alien fire alarm. Works just the same!
 ent-FireAlarmAssemblyXeno = { ent-FireAlarmAssembly }
-    .desc = Alarm pożarowy kosmitów. Powodzenia z kablami.
+    .desc = An alien fire alarm assembly. Good luck with the wires.
