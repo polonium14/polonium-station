@@ -1,6 +1,6 @@
-ent-SpawnMobXenoEasy = spawner kseno
-    .suffix = Łatwy, Losowy
+ent-SpawnMobXenoEasy = Xeno Spawner
+    .suffix = Easy, Random
     .desc = { ent-MarkerBase.desc }
-ent-SpawnMobXenoHard = spawner kseno
-    .suffix = Trudny, Losowy
+ent-SpawnMobXenoHard = Xeno Spawner
+    .suffix = Hard, Random
     .desc = { ent-MarkerBase.desc }
