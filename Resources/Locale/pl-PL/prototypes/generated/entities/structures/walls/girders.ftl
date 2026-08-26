@@ -1,6 +1,6 @@
-ent-Girder = szkielet konstrukcyjny
-    .desc = Metalowa konstrukcja nośna wykonana ze stalowych płyt. Aby stała się ścianą, należy pokryć ją kolejną warstwą płyt.
-ent-ReinforcedGirder = wzmocniony szkielet konstrukcyjny
-    .desc = Wzmocniona konstrukcja nośna wykonana z płyt stalowych i plastalowych. Aby stała się wzmocnioną ścianą, należy pokryć ją warstwą płyt z plastali.
-ent-ClockworkGirder = szkielet konstrukcyjny zegarmistrzowski
-    .desc = Metalowa konstrukcja nośna wykonana z  mosiężnych płyt. Można ją przekształcić w ścianę poprzez dodanie kolejnych mosiężnych płyt.
+ent-Girder = girder
+    .desc = A large structural assembly made out of metal; It requires a layer of metal before it can be considered a wall.
+ent-ReinforcedGirder = reinforced girder
+    .desc = A large structural assembly made out of metal and plasteel; It requires a layer of plasteel before it can be considered a reinforced wall.
+ent-ClockworkGirder = wall gear
+    .desc = A large gear with mounting brackets for additional plating; This could be made into a wall with more brass plating.
