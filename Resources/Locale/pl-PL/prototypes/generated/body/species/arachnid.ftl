@@ -1,6 +1,6 @@
 ent-AppearanceArachnid = arachnid appearance
     .desc = { ent-BaseSpeciesAppearance.desc }
-ent-MobArachnid = Urist McSieć
+ent-MobArachnid = Urist McWebs
     .desc = { ent-AppearanceArachnid.desc }
 ent-OrganArachnid = { ent-OrganBaseOrganic }
     .suffix = Arachnid
