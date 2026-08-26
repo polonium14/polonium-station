@@ -1,2 +1,2 @@
-nuke-ops-no-more-threat-announcement-shuttle-call = Na podstawie danych zebranych przez nasze czujniki dalekiego zasięgu zagrożenie nuklearne zostało wyeliminowane. Wezwano wahadłowiec ewakuacyjny. Przewidywany czas przybycia: { $time } { $units }. Mogą Państwo cofnąć wahadłowiec, aby przedłużyć zmianę.
-nuke-ops-no-more-threat-announcement = Na podstawie danych zebranych przez nasze czujniki dalekiego zasięgu zagrożenie nuklearne zostało wyeliminowane. Wahadłowiec ewakuacyjny jest już wezwany.
+nuke-ops-no-more-threat-announcement-shuttle-call = Long-range sensors indicate the nuclear threat has been eliminated. The emergency shuttle has been called. ETA: { $time } { $units }. You may recall the shuttle to extend the shift.
+nuke-ops-no-more-threat-announcement = Long-range sensors indicate the nuclear threat has been eliminated. The emergency shuttle is already en route.
