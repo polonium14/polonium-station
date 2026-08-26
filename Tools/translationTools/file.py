@@ -30,9 +30,19 @@ class File:
 
     def save_data(self, file_data: typing.AnyStr):
         os.makedirs(os.path.dirname(self.full_path), exist_ok=True)
-        file = open(self.full_path, 'w', encoding='utf8')
-        file.write(file_data)
-        file.close()
+        text = file_data.replace('\r\n', '\n').replace('\r', '\n')
+        newline = '\n'
+        if os.path.isfile(self.full_path):
+            with open(self.full_path, 'rb') as raw:
+                sample = raw.read(8192)
+            if b'\r\n' in sample:
+                newline = '\r\n'
+        elif os.name == 'nt':
+            newline = '\r\n'
+        if newline != '\n':
+            text = text.replace('\n', newline)
+        with open(self.full_path, 'w', encoding='utf8', newline='') as file:
+            file.write(text)
 
     def get_relative_path(self, base_path):
         return os.path.relpath(self.full_path, base_path)

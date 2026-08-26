@@ -1,6 +1,6 @@
-ent-Girder = karkas
-    .desc = Duży zespół konstrukcyjny wykonany z metalu. Aby można go było uznać za ścianę, musi być pokryty warstwą metalu.
-ent-ReinforcedGirder = wzmocniony karkas
-    .desc = Duży zespół konstrukcyjny wykonany z metalu i plastyku. Aby można go było uznać za wzmocnioną ścianę, musi być pokryty warstwą plastyku.
-ent-ClockworkGirder = karkas zegarmistrzowski
-    .desc = Duży zespół konstrukcyjny z uchwytami montażowymi na dodatkowe płyty. Można go przekształcić w ścianę z większą ilością mosiężnych płyt.
+ent-Girder = szkielet konstrukcyjny
+    .desc = Metalowa konstrukcja nośna wykonana ze stalowych płyt. Aby stała się ścianą, należy pokryć ją kolejną warstwą płyt.
+ent-ReinforcedGirder = wzmocniony szkielet konstrukcyjny
+    .desc = Wzmocniona konstrukcja nośna wykonana z płyt stalowych i plastalowych. Aby stała się wzmocnioną ścianą, należy pokryć ją warstwą płyt z plastali.
+ent-ClockworkGirder = szkielet konstrukcyjny zegarmistrzowski
+    .desc = Metalowa konstrukcja nośna wykonana z  mosiężnych płyt. Można ją przekształcić w ścianę poprzez dodanie kolejnych mosiężnych płyt.

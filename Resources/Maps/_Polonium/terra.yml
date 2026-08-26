@@ -4,8 +4,8 @@ meta:
   engineVersion: 284.0.0
   forkId: ""
   forkVersion: ""
-  time: 08/06/2026 09:33:12
-  entityCount: 9126
+  time: 08/14/2026 11:44:39
+  entityCount: 9128
 maps:
 - 1
 grids:
@@ -30043,8 +30043,6 @@ entities:
     - type: Transform
       parent: 2
       pos: 16.5,-12.5
-    - type: NavMapBeacon
-      text: Кабинет психолога
     - type: WarpPoint
       location: Gabinet psychologa
   - uid: 2572
@@ -30151,7 +30149,7 @@ entities:
       parent: 2
       pos: 38.5,3.5
     - type: NavMapBeacon
-      text: Репортёр
+      text: Reporter
     - type: WarpPoint
       location: Biuro reportera
   - uid: 2584
@@ -30160,7 +30158,7 @@ entities:
       parent: 2
       pos: 31.5,32.5
     - type: NavMapBeacon
-      text: Зоотехник
+      text: Zoolog
     - type: WarpPoint
       location: Biuro zoologa
 - proto: DefaultStationBeaconSolars
@@ -59059,6 +59057,20 @@ entities:
     - type: Transform
       parent: 2
       pos: 37.466045,-16.326931
+- proto: VehicleJanicart
+  entities:
+  - uid: 4954
+    components:
+    - type: Transform
+      parent: 2
+      pos: 31.504951,-4.468649
+- proto: VehicleKeyJanicart
+  entities:
+  - uid: 5371
+    components:
+    - type: Transform
+      parent: 2
+      pos: 31.598701,-5.218649
 - proto: VendingBarDrobe
   entities:
   - uid: 5673

@@ -1,0 +1,40 @@
+name: Locale Check
+
+on:
+  push:
+    branches: [ master, staging, stable ]
+    paths:
+      - 'Resources/Locale/**'
+      - 'crowdin.yml'
+      - 'Tools/translationTools/check_locales.py'
+      - '.github/workflows/check-locales.yml'
+  merge_group:
+  pull_request:
+    types: [ opened, reopened, synchronize, ready_for_review ]
+    paths:
+      - 'Resources/Locale/**'
+      - 'crowdin.yml'
+      - 'Tools/translationTools/check_locales.py'
+      - '.github/workflows/check-locales.yml'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event_name == 'pull_request' && github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name != 'merge_group' && !contains(fromJSON('["Polonium-bot","PJBot","github-actions[bot]","github-actions"]'), github.actor) }}
+
+jobs:
+  locale-check:
+    name: Locale Check
+    if: >-
+      !contains(fromJSON('["Polonium-bot","PJBot","github-actions[bot]","github-actions"]'), github.actor) &&
+      (github.event_name != 'pull_request' || (
+        !contains(fromJSON('["Polonium-bot","PJBot","github-actions[bot]","github-actions"]'), github.event.pull_request.user.login) &&
+        github.event.pull_request.draft == false
+      )) &&
+      (github.event_name != 'push' || (
+        !contains(fromJSON('["Polonium-bot","PJBot","github-actions[bot]","github-actions"]'), github.event.pusher.name)
+      ))
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Check locale sync
+        run: python3 Tools/translationTools/check_locales.py

@@ -4,8 +4,8 @@ meta:
   engineVersion: 284.0.0
   forkId: ""
   forkVersion: ""
-  time: 08/06/2026 09:28:18
-  entityCount: 16998
+  time: 08/14/2026 11:40:51
+  entityCount: 17000
 maps:
 - 4480
 grids:
@@ -9722,7 +9722,7 @@ entities:
       pos: 33.5,6.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -91061.01
+      secondsUntilStateChange: -91103.414
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -10600,7 +10600,7 @@ entities:
       pos: 39.5,7.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -72260
+      secondsUntilStateChange: -72302.41
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -95188,6 +95188,20 @@ entities:
     - type: Transform
       parent: 2
       pos: 82.4805,-4.37438
+- proto: VehicleJanicart
+  entities:
+  - uid: 2479
+    components:
+    - type: Transform
+      parent: 2
+      pos: 3.4599714,-5.4028296
+- proto: VehicleKeyJanicart
+  entities:
+  - uid: 3000
+    components:
+    - type: Transform
+      parent: 2
+      pos: 6.3974714,-4.5434546
 - proto: VendingBarDrobe
   entities:
   - uid: 4407

@@ -1,5 +1,5 @@
 ent-IngotPlutonium = plutonium bar
-    .suffix = Full
+    .suffix = Pełne
     .desc = { ent-IngotBase.desc }
 ent-IngotPlutonium1 = plutonium bar
     .suffix = Single

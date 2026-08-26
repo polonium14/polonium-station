@@ -23,3 +23,9 @@ job-name-hd = Hospitality Director
 job-name-iaa = Internal Affairs Agent
 
 job-name-xo = Executive Officer
+
+job-name-command-maid = Command Maid
+
+job-name-party-maker = Party Maker
+
+job-name-security-clown = Security Clown

@@ -1,10 +1,10 @@
 
-marking-TattooEyeshadowVoxSmall-tattoo_eyeshadow_small = Eyeshadow (Small)
-marking-TattooEyeshadowVoxSmall = Eyeshadow (Small)
-marking-TattooEyeshadowVoxMedium-tattoo_eyeshadow_medium = Eyeshadow (Medium)
-marking-TattooEyeshadowVoxMedium = Eyeshadow (Medium)
-marking-TattooEyeshadowVoxLarge-tattoo_eyeshadow_Large = Eyeshadow (Large)
-marking-TattooEyeshadowVoxLarge = Eyeshadow (Large)
+
+
+
+
+
+
 marking-VoxTattooEyeliner-eyeliner = Eyeliner
 marking-VoxTattooEyeliner = Eyeliner
 marking-VoxVisage-visage = Visage (Full)
@@ -57,10 +57,10 @@ marking-VoxScarEyeRightSmall-vox_scar_eye_right_small = Right Eye Scar (Small)
 marking-VoxScarEyeRightSmall = Small Eye Scar (Right)
 marking-VoxScarEyeLeftSmall-vox_scar_eye_left_small = Left Eye Scar (Small)
 marking-VoxScarEyeLeftSmall = Small Eye Scar (Left)
-marking-TattooEyeVoxRight-tattoo_eye_vox_r = Right Eye
-marking-TattooEyeVoxRight = Right Eye
-marking-TattooEyeVoxLeft-tattoo_eye_vox_l = Left Eye
-marking-TattooEyeVoxLeft = Left Eye
+
+
+
+
 marking-VoxTailShort-vox_tail_small = Vox Tail (Short)
 marking-VoxTailShort = Vox Tail (Short)
 marking-VoxTailBig-vox_tail_big = Vox Tail (Big)
@@ -95,3 +95,9 @@ marking-TattooVoxUnderbelly = Underbelly
 marking-VoxTail-vox_tail = Vox Tail (Medium)
 
 marking-VoxTailSplit-vox_tail_split = Vox Tail (Split)
+
+marking-VoxBeak = Beak (Pointed)
+
+marking-VoxTail = Vox Tail (Medium)
+
+marking-VoxTailSplit = Vox Tail (Split)

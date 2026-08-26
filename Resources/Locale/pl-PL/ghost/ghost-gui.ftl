@@ -7,7 +7,7 @@ ghost-gui-toggle-self-ghost-visibility-popup-on = Enabled visibility of your gho
 ghost-gui-toggle-self-ghost-visibility-popup-off = Disabled visibility of your ghost.
 ghost-gui-toggle-other-ghosts-visibility-popup-on = Enabled visibility of other ghosts.
 ghost-gui-toggle-other-ghosts-visibility-popup-off = Disabled visibility of other ghosts.
-#end Funkystation
+# end Funkystation
 
 ghost-gui-toggle-ghost-visibility-popup-off = Wyłączono widoczność duchów.
 ghost-gui-toggle-lighting-manager-popup-normal = Normalne światło.

@@ -1,0 +1,39 @@
+<DefaultWindow
+    xmlns="https://spacestation14.io"
+    xmlns:cc="clr-namespace:Content.Client.Administration.UI.CustomControls"
+    Title="{Loc admin-entity-search-title}"
+    MinSize="500 400"
+    SetSize="760 560">
+    <BoxContainer Orientation="Vertical">
+        <BoxContainer Orientation="Horizontal" SeparationOverride="4">
+            <LineEdit
+                Name="SearchLineEdit"
+                PlaceHolder="{Loc admin-entity-search-placeholder}"
+                HorizontalExpand="True" />
+            <Button
+                Name="GridFilterButton"
+                Text="{Loc admin-entity-search-filter}" />
+            <Button
+                Name="SearchButton"
+                Text="{Loc admin-entity-search-button}" />
+            <Button
+                Name="NextButton"
+                Text="{Loc admin-entity-search-next}"
+                StyleClasses="OpenLeft"
+                Disabled="True" />
+        </BoxContainer>
+        <Label Name="StatusLabel" />
+        <BoxContainer Orientation="Vertical" Name="PinnedSection" Visible="False">
+            <Label Text="{Loc admin-entity-search-pinned}" />
+            <BoxContainer Orientation="Vertical" Name="PinnedList" />
+            <cc:HSeparator />
+        </BoxContainer>
+        <ScrollContainer VerticalExpand="True">
+            <BoxContainer Orientation="Vertical" VerticalExpand="True">
+                <BoxContainer Orientation="Horizontal" Name="HeaderRow" />
+                <cc:HSeparator />
+                <BoxContainer Orientation="Vertical" Name="ItemList" />
+            </BoxContainer>
+        </ScrollContainer>
+    </BoxContainer>
+</DefaultWindow>

@@ -9,5 +9,5 @@ ent-Musket = muszkiet
 ent-WeaponPistolFlintlock = pistolet skałkowy
     .desc = Towarzysz pirata. Yarrr! Używa amunicji .60 przeciwmateriałowej.
 ent-WeaponPistolFlintlockEmpty = { ent-WeaponPistolFlintlock }
-    .suffix = Empty
+    .suffix = Puste
     .desc = { ent-WeaponPistolFlintlock.desc }

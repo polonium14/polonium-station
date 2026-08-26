@@ -4,8 +4,8 @@ meta:
   engineVersion: 284.0.0
   forkId: ""
   forkVersion: ""
-  time: 08/06/2026 09:21:34
-  entityCount: 12966
+  time: 08/14/2026 11:34:36
+  entityCount: 12968
 maps:
 - 1
 grids:
@@ -6780,7 +6780,7 @@ entities:
       pos: -3.5,8.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -2618.5095
+      secondsUntilStateChange: -2663.6719
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -7088,7 +7088,7 @@ entities:
       pos: -28.5,22.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -71871.375
+      secondsUntilStateChange: -71916.54
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -7273,7 +7273,7 @@ entities:
       pos: 10.5,18.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -25898.525
+      secondsUntilStateChange: -25943.688
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -7579,7 +7579,7 @@ entities:
       pos: 6.5,2.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -57273.453
+      secondsUntilStateChange: -57318.617
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -37260,7 +37260,7 @@ entities:
       pos: -8.5,-4.5
     - type: Door
       state: Closing
-      secondsUntilStateChange: -53777.27
+      secondsUntilStateChange: -53822.434
   - uid: 5668
     components:
     - type: Transform
@@ -57573,7 +57573,7 @@ entities:
       pos: -17.5,-53.5
     - type: Door
       state: Closing
-      secondsUntilStateChange: -1074.8779
+      secondsUntilStateChange: -1120.0404
   - uid: 8613
     components:
     - type: Transform
@@ -73699,6 +73699,20 @@ entities:
     - type: Transform
       parent: 2
       pos: -14.498325,-10.477551
+- proto: VehicleJanicart
+  entities:
+  - uid: 6
+    components:
+    - type: Transform
+      parent: 2
+      pos: 14.478115,-0.49895453
+- proto: VehicleKeyJanicart
+  entities:
+  - uid: 8
+    components:
+    - type: Transform
+      parent: 2
+      pos: 14.728115,-1.1708295
 - proto: VendingBarDrobe
   entities:
   - uid: 11158

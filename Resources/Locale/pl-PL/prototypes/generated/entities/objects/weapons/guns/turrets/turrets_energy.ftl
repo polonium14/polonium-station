@@ -1,11 +1,11 @@
-ent-WeaponEnergyTurretStationBase = sentry turret
-    .desc = A high-tech autonomous weapons system designed to keep unauthorized personnel out of sensitive areas.
+ent-WeaponEnergyTurretStationBase = wieżyczka wartownicza
+    .desc = Zaawansowany autonomiczny system obronny przeznaczony do ochrony newralgicznych obszarów przed nieupoważnionym personelem.
 ent-WeaponEnergyTurretAI = { ent-WeaponEnergyTurretStationBase }
-    .suffix = AI, Silicon
+    .suffix = AI, Silikon
     .desc = { ent-WeaponEnergyTurretStationBase.desc }
 ent-WeaponEnergyTurretSecurity = { ent-WeaponEnergyTurretStationBase }
-    .suffix = Security
+    .suffix = Ochrona
     .desc = { ent-WeaponEnergyTurretStationBase.desc }
 ent-WeaponEnergyTurretCommand = { ent-WeaponEnergyTurretStationBase }
-    .suffix = Command
+    .suffix = Dowództwo
     .desc = { ent-WeaponEnergyTurretStationBase.desc }

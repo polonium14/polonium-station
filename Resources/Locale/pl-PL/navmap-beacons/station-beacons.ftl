@@ -74,31 +74,31 @@ station-beacon-cryosleep = Kriosen
 station-beacon-escape-pod = Pod Ewak.
 station-beacon-vox = Pokój Voxów
 station-beacon-centcomm-office = Biuro CD
-station-beacon-internal-affairs = Sprawy Wewnętrzne
-station-beacon-ntrep = Przedstawiciel Nanotrasen
-station-beacon-magi = Sędzia
-station-beacon-security-briefing = Odprawa Ochrony
-station-beacon-firing-range = Strzelnica
-station-beacon-triage = Segregacja
-station-beacon-emergency-room = Izba Przyjęć
-station-beacon-ICU = OIOM
-station-beacon-paramedic = Punkt Ratowników
-station-beacon-infirmary = Ambulatorium
-station-beacon-cans-sci = Magazyn Kanistrów Naukowych
-station-beacon-xenobio = Laboratorium Ksenobiologii
-station-beacon-genetics = Genetyka
-station-beacon-cargo-docks = Doki Logistyki
-station-beacon-salv-docks = Doki Złomiarzy
-station-beacon-supermatter = Supermatteria
-station-beacon-hfr = Obszar HFR
-station-beacon-clown = Klaun
-station-beacon-mime = Mim
-station-beacon-music-room = Pokój Muzyczny
-station-beacon-clown-cave = Jaskinia Klauna
-station-beacon-mime-abode = Siedziba Mima
-station-beacon-gym = Siłownia
-station-beacon-boxing = Klub Bokserski
-station-beacon-disposals-odd = Utylizacja...?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 station-beacon-solars-N = Solary Północ
 

@@ -56,8 +56,8 @@ reagent-name-mechanotoxin = mechanotoksyna
 reagent-desc-mechanotoxin = Neurotoksyna używana jako jad przez niektóre gatunki pająków. Po nagromadzeniu hamuje ruch.
 reagent-name-toxintrash = śmieciotoksyna
 reagent-desc-toxintrash = Strasznie śmierdzący płyn. Śmiertelnie niebezpieczny dla osób niebędących voksami.
-reagent-name-bz-metabolites = Metabolity BZ
-reagent-desc-bz-metabolites = Produkt uboczny BZ, który niszczy rezerwy chemiczne istot podatnych na zmiany.
+
+
 
 reagent-name-hemorrhinol = hemorrhinol
 

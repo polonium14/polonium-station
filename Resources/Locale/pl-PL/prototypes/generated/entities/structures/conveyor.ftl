@@ -1,5 +1,5 @@
-ent-ConveyorBelt = conveyor belt
-    .desc = A conveyor belt, commonly used to transport large numbers of items elsewhere quite quickly.
-ent-ConveyorBeltAssembly = conveyor belt
-    .desc = A conveyor belt assembly. Used to construct a conveyor belt.
-    .suffix = assembly
+ent-ConveyorBelt = pas taśmociągowy
+    .desc = Pas taśmociągowy często używany do transportu dużej ilości rzeczy w krótkim czasie.
+ent-ConveyorBeltAssembly = pas taśmociągowy
+    .desc = Konstrukcja pasa taśmociągowego. Używany do konstrukcji pasów taśmociągowych.
+    .suffix = Konstrukcja

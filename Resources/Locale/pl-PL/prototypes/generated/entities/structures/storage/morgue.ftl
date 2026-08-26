@@ -1,4 +1,4 @@
-ent-Morgue = morgue
-    .desc = Used to store bodies until someone fetches them. Includes a high-tech alert system for false-positives!
-ent-Crematorium = crematorium
-    .desc = A human incinerator. Works well on barbecue nights.
+ent-Morgue = kostnica
+    .desc = Służy do przechowywania ciał, dopóki ktoś ich nie odbierze. Wyposażona w nowoczesny system, który upewnia się, że nikt żywy nie powinien trafić tu przez pomyłkę.
+ent-Crematorium = krematorium
+    .desc = Spalarnia zwłok. Świetnie się nadaje jako grill.

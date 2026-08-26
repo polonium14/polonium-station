@@ -4,6 +4,7 @@ using Content.Shared.Tag;
 using Content.Shared.Whitelist;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Random;
 
 namespace Content.Shared._Polonium.Kaucjomat;
 
@@ -143,6 +144,22 @@ public sealed partial class KaucjomatComponent : Component
 
     [ViewVariables]
     public bool Broken;
+
+    // emag related variables below
+    /// <summary>
+    /// Time the emagged machine last dispensed money, this variable's state also triggers the emag logic.
+    /// </summary>
+    [ViewVariables(VVAccess.ReadOnly)]
+    public TimeSpan? LastDispense;
+
+    [ViewVariables]
+    public TimeSpan DispenseCooldown = TimeSpan.FromMilliseconds(300);
+    [ViewVariables]
+    public int DispenseAmountMax;
+
+    [ViewVariables]
+    public int DispensedAmount = 0;
+
 }
 
 [DataDefinition]

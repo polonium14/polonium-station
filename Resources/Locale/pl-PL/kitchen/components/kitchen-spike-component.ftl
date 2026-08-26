@@ -66,13 +66,7 @@ comp-kitchen-spike-begin-unhook-self = Zaczynasz zciągać się z { $hook }!
 comp-kitchen-spike-begin-unhook-self-other = { CAPITALIZE($victim) } zaczyna zciągać się z { $hook }!
 comp-kitchen-spike-begin-unhook-other-self = Zaczynasz zciągać { CAPITALIZE($victim) } z { $hook }!
 comp-kitchen-spike-begin-unhook-other = { CAPITALIZE($user) } zaczyna zciągać { CAPITALIZE($victim) } z { $hook }!
-comp-kitchen-spike-unhook-self =
-    { GENDER($victim) ->
-        [male] Zciągnąłeś
-        [female] Zciągnełaś
-        [epicene] Zciągnełuś
-       *[neuter] Zciągnołoś
-    } się z { $hook }!
+comp-kitchen-spike-unhook-self = Zciągasz się z { $hook }!
 comp-kitchen-spike-unhook-self-other =
     { CAPITALIZE($victim) } { GENDER($victim) ->
         [male] zciągnął
@@ -96,13 +90,7 @@ comp-kitchen-spike-unhook-other =
     } { CAPITALIZE($victim) } z { $hook }!
 comp-kitchen-spike-begin-butcher-self = Zaczynasz rozkładać { $victim }!
 comp-kitchen-spike-begin-butcher = { CAPITALIZE($user) } zaczyna rozkładać { $victim }!
-comp-kitchen-spike-butcher-self =
-    { GENDER($user) ->
-        [male] Rozłożyłeś
-        [female] Rozłożyłaś
-        [epicene] Rozłożyłuś
-       *[neuter] Rozłożyłoś
-    } { $victim }!
+comp-kitchen-spike-butcher-self = Rozkładasz { $victim }!
 comp-kitchen-spike-butcher =
     { CAPITALIZE($user) } { GENDER($user) ->
         [male] rozłożył

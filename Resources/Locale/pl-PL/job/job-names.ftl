@@ -56,12 +56,9 @@ job-name-geneticist = Genetyk
 job-name-no-id = Brakuje ID
 job-name-prisoner = Więzień
 # event-restricted jobs
-job-name-security-clown = Klown Ochroniarz
-job-name-command-maid = Służąca Dowództwa
-job-name-party-maker = Organizator Imprez
-job-name-trainee = Praktykant
-job-name-roboticist = Robotyk
-job-name-syndicate = Syndykat
+
+
+
 job-name-unknown = Nieznany
 job-name-virologist = Wirusolog
 job-name-zombie = Żywy Trup
@@ -74,7 +71,7 @@ JobAtmosphericTechnician = Technik Atmosferyki
 JobBartender = Barman
 JobBorg = Cyborg
 JobBotanist = Botanik
-JobBoxer = Bokser
+
 JobCaptain = Kapitan
 JobCargoTechnician = Technik Logistyki
 JobCentralCommandOfficial = Urzędnik CentComm
@@ -86,7 +83,7 @@ JobChiefMedicalOfficer = Ordynator
 JobClown = Klaun
 JobDetective = Detektyw
 JobBrigmedic = Brigmedic
-JobCommandMaid = Command Maid
+
 JobERTChaplain = Kapłan JSR
 JobERTEngineer = Inżynier JSR
 JobERTJanitor = Sprzątacz JSR
@@ -105,7 +102,7 @@ JobMusician = Muzyk
 JobParamedic = Ratownik
 JobPassenger = Pasażer
 JobPsychologist = Psycholog
-JobPartyMaker = Wodzirej
+
 JobQuartermaster = Kierownik Logistyki
 JobReporter = Dziennikarz
 JobResearchAssistant = Asystent Naukowy
@@ -115,13 +112,13 @@ JobScientist = Naukowiec
 JobSecurityCadet = Kadet Ochrony
 JobSecurityOfficer = Oficer Ochrony
 JobServiceWorker = Pracownik Obsługi
-JobSecurityClown = Klown Ochroniarz
+
 JobStationAi = SI Stacji
 JobStationEngineer = Inżynier Stacji
 JobTechnicalAssistant = Pomocnik Techniczny
 JobVisitor = Wizytor
 JobWarden = Nadzorca Ochrony
-JobZookeeper = Opiekun Zoo
+
 
 job-name-centcommoff = CentComm Official
 
@@ -139,3 +136,7 @@ job-name-syndicate-operative = Syndicate Operative
 job-name-pirate = Pirate
 
 job-name-wizard = Wizard
+
+job-name-roboticist = Roboticist
+
+job-name-syndicate = Syndicate

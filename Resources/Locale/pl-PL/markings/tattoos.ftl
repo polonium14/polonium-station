@@ -46,3 +46,23 @@ marking-TattooEyeshadowLowerReptilian = Eyeshadow (Lower)
 marking-TattooVoxTailRing-tattoo_vox_tail_ring = Tail Ring
 
 marking-TattooVoxTailRing = Tail Ring
+
+marking-TattooEyeVoxLeft = Left Eye
+
+marking-TattooEyeVoxLeft-tattoo_eye_vox_l = Left Eye
+
+marking-TattooEyeVoxRight = Right Eye
+
+marking-TattooEyeVoxRight-tattoo_eye_vox_r = Right Eye
+
+marking-TattooEyeshadowVoxLarge = Eyeshadow (Large)
+
+marking-TattooEyeshadowVoxLarge-tattoo_eyeshadow_Large = Eyeshadow (Large)
+
+marking-TattooEyeshadowVoxMedium = Eyeshadow (Medium)
+
+marking-TattooEyeshadowVoxMedium-tattoo_eyeshadow_medium = Eyeshadow (Medium)
+
+marking-TattooEyeshadowVoxSmall = Eyeshadow (Small)
+
+marking-TattooEyeshadowVoxSmall-tattoo_eyeshadow_small = Eyeshadow (Small)

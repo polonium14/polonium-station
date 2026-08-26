@@ -1,2 +1,2 @@
-ent-Rack = rack
-    .desc = A rack for storing things on.
+ent-Rack = półka
+    .desc = Półka do przechowywania rzeczy.

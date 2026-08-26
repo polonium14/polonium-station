@@ -1,9 +1,9 @@
-ent-BaseBigBox = cardboard box
-    .desc = Huh? Just a box...
+ent-BaseBigBox = pudło kartonowe
+    .desc = Hm? to tylko pudło...
 ent-StealthBox = { ent-BaseBigBox }
-    .desc = Kept ya waiting, huh?
-    .suffix = stealth
+    .desc = Hm? to tylko pudło... lepiej go nie zgub.
+    .suffix = skradanie
 ent-BigBox = { ent-BaseBigBox }
     .desc = { ent-BaseBigBox.desc }
-ent-GhostBox = ghost box
-    .desc = Beware!
+ent-GhostBox = pudło duch
+    .desc = straszne.

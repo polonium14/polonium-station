@@ -66,6 +66,7 @@
     - id: PosterContrabandExoAcid
     - id: PosterContrabandExoRun
     - id: PosterContrabandExoChomp
+    - id: PosterContrabandLustyExomorph
 
 - type: entityTable
   id: LegitPosterTable

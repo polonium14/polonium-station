@@ -1,8 +1,8 @@
-welder-component-welder-not-lit-message = Spawarka jest wyłączona!
-welder-component-cannot-weld-message = Spawarka nie ma wystarczającej ilości paliwa do tego!
-welder-component-no-fuel-message = Spawarka nie ma paliwa!
+welder-component-welder-not-lit-message = { $owner } jest wyłączona!
+welder-component-cannot-weld-message = { $owner } nie ma wystarczającej ilości paliwa do tego!
+welder-component-no-fuel-message = { $owner } nie ma paliwa!
 welder-component-no-fuel-in-tank =
-    { CAPITALIZE($owner) } jest { GENDER($owner) ->
+    { CAPITALIZE($target) } jest { GENDER($target) ->
         [male] pusty
         [female] pusta
         [epicene] pustu
@@ -24,4 +24,4 @@ welder-component-suicide-lit-message = Zaspawujesz każdy swój otwór!
 welder-component-suicide-unlit-others-message = { CAPITALIZE($victim) } bije się niezapaloną spawarką!
 welder-component-suicide-unlit-message = Pobiłeś się na śmierć spawarką!
 welder-component-after-interact-refueled-message = Paliwo napełnione!
-welder-component-already-full = Spawarka jest już pełna!
+welder-component-already-full = { $owner } jest już pełna!

@@ -1,4 +1,4 @@
-ent-ContainmentFieldGenerator = containment field generator
-    .desc = A machine that generates a containment field when powered by an emitter. Keeps the Singularity docile.
-ent-ContainmentField = containment field
-    .desc = A containment field that repels gravitational singularities.
+ent-ContainmentFieldGenerator = generator pola siłowego
+    .desc = Maszyna która generuje pole siłowe gdy zostaje zasilony przez emiter. Trzyma osobliwość oraz teslę w ryzach.
+ent-ContainmentField = pole siłowe
+    .desc = Pole siłowe które odpiera grawitacyjną osobliwość oraz teslę.

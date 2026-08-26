@@ -18,6 +18,7 @@ ent-ClosetBombFilled = { ent-ClosetBomb }
     .desc = { ent-ClosetBomb.desc }
 ent-GunSafeDisabler = disabler safe
     .desc = { ent-GunSafeBaseSecure.desc }
+    .suffix = NIE MAPOWAĆ
 ent-GunSafePistolMk58 = mk58 safe
     .desc = { ent-GunSafeBaseSecure.desc }
 ent-GunSafeRifleLecter = lecter safe

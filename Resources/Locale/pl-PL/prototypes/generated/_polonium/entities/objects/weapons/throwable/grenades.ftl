@@ -1,0 +1,14 @@
+ent-HalonGrenade = granat halonowy
+    .desc = Awaryjny granat gaśniczy, który zalewa obszar halonem, tłumiąc pożary poprzez pochłanianie tlenu. Nie używać tam, gdzie ludzie jeszcze muszą oddychać.
+ent-PiemageddonGrenadeAdmeme = granat Piemageddon
+    .desc = Łańcuchuje się jeszcze trzy razy, zanim wybuchnie burzą ciast.
+    .suffix = Admeme
+ent-PiemageddonChain2Admeme = granat Piemageddon
+    .suffix = Admeme
+    .desc = { ent-VolatileGrenadeBase.desc }
+ent-PiemageddonChain3Admeme = granat Piemageddon
+    .suffix = Admeme
+    .desc = { ent-VolatileGrenadeBase.desc }
+ent-PiemageddonTerminalAdmeme = ciasto Piemageddon
+    .suffix = Admeme
+    .desc = { ent-VolatileGrenadeBase.desc }

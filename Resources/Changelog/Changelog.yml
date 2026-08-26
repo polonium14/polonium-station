@@ -1,246 +1,4 @@
 ﻿Entries:
-- author: ScarKy0
-  changes:
-  - message: Audio for mortars, juicers and the paperfuge can no longer be stacked
-      infinitely.
-    type: Fix
-  id: 9436
-  time: '2026-01-20T21:40:41.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42498
-- author: Velken
-  changes:
-  - message: RCD can no longer spam lights in the same spot.
-    type: Fix
-  - message: RCD can no longer be used to destroy indestructible tiles.
-    type: Fix
-  id: 9437
-  time: '2026-01-20T22:04:09.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42556
-- author: sowelipililimute
-  changes:
-  - message: Clothing now hides your body when it should, and doesn't show your body
-      when it shouldn't.
-    type: Fix
-  id: 9438
-  time: '2026-01-20T22:39:51.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42553
-- author: kipdotnet
-  changes:
-  - message: The "Lizard Power" graffiti decal has been replaced.
-    type: Tweak
-  id: 9439
-  time: '2026-01-20T22:39:51.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42541
-- author: ArtisticRoomba
-  changes:
-  - message: Powernet consumers like lathes, computers, blenders, centrifuges, electrolyzers,
-      grinders, holopads, microwaves, etc. now have simple dynamic power consumption
-      behavior. When not in use, they will consume either little or no power, and
-      while in use, they will consume a sane amount of power.
-    type: Add
-  id: 9440
-  time: '2026-01-21T04:21:38.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/41961
-- author: sowelipililimute
-  changes:
-  - message: Cat tails are no longer accessible to humans.
-    type: Fix
-  id: 9441
-  time: '2026-01-22T02:43:47.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42579
-- author: ArtisticRoomba
-  changes:
-  - message: Extra-bright lantern has been removed from the traitor uplink.
-    type: Remove
-  - message: Stealthbox has been buffed significantly, you'll be able to remain in
-      stealth for much longer when moving at speed.
-    type: Tweak
-  - message: Decoy bundle has been moved to the Useless category and reduced to 1
-      TC in the traitor uplink.
-    type: Tweak
-  id: 9442
-  time: '2026-01-22T07:45:20.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42510
-- author: ScarKy0
-  changes:
-  - message: Force-prying crit borgs now also opens their panel.
-    type: Tweak
-  id: 9443
-  time: '2026-01-22T09:59:49.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42460
-- author: VlaDOS1408
-  changes:
-  - message: The cargo request console UI has been redesigned.
-    type: Tweak
-  id: 9444
-  time: '2026-01-22T16:53:48.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/34052
-- author: Absotively
-  changes:
-  - message: APC power toggle and midi channel window "show track names" button now
-      use switch-style buttons
-    type: Tweak
-  id: 9445
-  time: '2026-01-22T17:46:58.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/39161
-- author: SabreML
-  changes:
-  - message: Added a colour picker and colour palette selector to the Spraypainter's
-      decal menu.
-    type: Add
-  - message: Made a few other tweaks to the Spraypainter's UI as well.
-    type: Tweak
-  id: 9446
-  time: '2026-01-22T18:02:54.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/41943
-- author: Minerva
-  changes:
-  - message: Defibrillator cabinets can now be constructed and deconstructed.
-    type: Add
-  id: 9447
-  time: '2026-01-22T18:43:26.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42571
-- author: sowelipililimute
-  changes:
-  - message: Arachnids can now eat raw meat again.
-    type: Fix
-  id: 9448
-  time: '2026-01-22T21:14:52.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42529
-- author: sowelipililimute
-  changes:
-  - message: Hands will no longer sometimes display in the wrong order.
-    type: Fix
-  id: 9449
-  time: '2026-01-22T21:47:37.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42534
-- author: Bhijn and Myr
-  changes:
-  - message: Grappling hooks have been reworked. They are now physics-driven, meaning
-      that they use actual physical forces to retract.
-    type: Tweak
-  - message: The majority of known exploits of grappling hooks have been fixed as
-      a result. You can no longer clip into walls via grappling hook, and you can
-      no longer teleport your friends across the station by having them hook onto
-      an object and stay still.
-    type: Fix
-  id: 9450
-  time: '2026-01-22T22:30:46.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42409
-- author: B_Kirill
-  changes:
-  - message: Fixed construction preview ghost sprite offset not matching the original
-      entity.
-    type: Fix
-  id: 9451
-  time: '2026-01-22T22:47:33.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42193
-- author: Beck, Julian
-  changes:
-  - message: Added feedback popups that players get at the end of the round! They
-      will list all "test" PRs or PRs that people want feedback on. Right now they
-      will link to a form thread
-    type: Add
-  id: 9452
-  time: '2026-01-22T22:47:33.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/41352
-- author: archee1
-  changes:
-  - message: thief's 'Steal the beer goggles' objective has been replaced with 'Steal
-      the HUDs' collection objective, requiring varied HUD eyewear items.
-    type: Tweak
-  id: 9453
-  time: '2026-01-22T23:04:31.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/38043
-- author: sowelipililimute
-  changes:
-  - message: Drinking or eating things now gradually trickles into the bloodstream,
-      instead of being a fixed delay
-    type: Tweak
-  - message: Reagent effect groups are now stages of metabolism in the guidebook
-    type: Tweak
-  - message: Many reagents that break down into other ones have clearer guidebook
-      descriptions and slightly adjusted behaviour
-    type: Tweak
-  id: 9454
-  time: '2026-01-23T02:05:59.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42172
-- author: Princess-Cheeseballs
-  changes:
-  - message: Added the Syndimov Lawboard to the Traitor Uplink.
-    type: Add
-  - message: You can now get Pythons and Cat Ears in the Syndicate Snack box.
-    type: Add
-  - message: Removed Whitehole Grenade, Necronomicon, Explosive Banana Peel and Super
-      Surplus crates from the uplink.
-    type: Remove
-  - message: Removed Singularity Beacon and Antimov Lawboard from the Traitor Uplink.
-    type: Remove
-  - message: Several less used uplink items have had their costs reduced.
-    type: Tweak
-  - message: Clustersoap and Cluster Bananas now explodes into soaplets when thrown
-      and no longer needs to be primed. The Clustersoap has been reduced to 1 TC as
-      well.
-    type: Tweak
-  - message: Martyr Cyborgs now start glowing red before exploding.
-    type: Tweak
-  - message: Scram Implanter's range has been crunched down to 10-15 tiles from 0-100.
-    type: Tweak
-  - message: Rigged Boxing Gloves have had their overall time to stun increased but
-      are also now available for all Traitors to purchase.
-    type: Tweak
-  - message: Combat bakery kit now comes with a flatpack microwave instead of a machine
-      board. The throwing croissants and baguette have been made equivalent in damage
-      to other Traitor uplink items as well.
-    type: Tweak
-  - message: Holoclowns no longer try to attack their host.
-    type: Fix
-  - message: Singularity grenade shouldn't throw you inside walls anymore
-    type: Fix
-  id: 9455
-  time: '2026-01-24T00:26:43.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42582
-- author: alexalexmax
-  changes:
-  - message: Tasers no longer slow holoparasites down.
-    type: Fix
-  id: 9456
-  time: '2026-01-24T04:18:37.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42315
-- author: Hitlinemoss
-  changes:
-  - message: The "Auto-fill the highlights with the character's information" accessibility
-      option has been renamed to "Automatically set the highlights list based on your
-      character's name and job".
-    type: Tweak
-  - message: More automatic job-text highlights have been added.
-    type: Tweak
-  id: 9457
-  time: '2026-01-24T21:06:28.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42630
-- author: SlamBamActionman
-  changes:
-  - message: Added an toggle for "hold-to-attack" under the accessibility tab.
-    type: Add
-  id: 9458
-  time: '2026-01-25T22:30:52.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42596
-- author: roryflowers
-  changes:
-  - message: Tritium's thermal output is increased to its previous value, to reenable
-      maxcap explosives and make the TEG easier to run.
-    type: Fix
-  id: 9459
-  time: '2026-01-26T00:39:55.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42641
-- author: SlamBamActionman
-  changes:
-  - message: Crowbars are now consistent with other 1x2 items in terms of storage,
-      e.g. in pockets.
-    type: Tweak
-  id: 9460
-  time: '2026-01-26T01:35:49.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42585
 - author: ScholarNZL
   changes:
   - message: Fixed a dev environment crash related to construction event validation.
@@ -4094,3 +3852,187 @@
   id: 9935
   time: '2026-08-07T15:01:30.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/887
+- author: Koilak
+  changes:
+  - message: zestaw wybuchowy
+    type: Add
+  id: 9936
+  time: '2026-08-11T17:43:15.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/871
+- author: Elperson
+  changes:
+  - message: "Dodano mo\u017Cliwo\u015B\u0107 emagowania kaucjomatu"
+    type: Add
+  - message: "Usuni\u0119to receptury do wytwarzania p\u0142ytek drukowanych kaucjomatu"
+    type: Remove
+  id: 9937
+  time: '2026-08-13T17:20:55.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/894
+- author: Czuat
+  changes:
+  - message: "uzupe\u0142nienie t\u0142umacze\u0144"
+    type: Add
+  id: 9938
+  time: '2026-08-13T17:25:03.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/865
+- author: haze
+  changes:
+  - message: Dodano granaty halonowe
+    type: Add
+  id: 9939
+  time: '2026-08-15T09:21:49.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/899
+- author: pinkscreen
+  changes:
+  - message: zmapowano janicarty na naszych mapach.
+    type: Add
+  id: 9940
+  time: '2026-08-19T09:54:22.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/898
+- author: pinkscreen
+  changes:
+  - message: Dodano Piemagedon
+    type: Add
+  id: 9941
+  time: '2026-08-19T09:52:24.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/906
+- author: haze
+  changes:
+  - message: "Naprawiono \u017Car\xF3wki"
+    type: Fix
+  id: 9942
+  time: '2026-08-19T10:18:32.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/901
+- author: haze
+  changes:
+  - message: Naprawiono windoory
+    type: Fix
+  id: 9943
+  time: '2026-08-19T10:18:11.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/902
+- author: haze
+  changes:
+  - message: "Naprawiono nak\u0142adaj\u0105ce si\u0119 statusy UI"
+    type: Fix
+  id: 9944
+  time: '2026-08-19T11:30:56.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/908
+- author: pinkscreen
+  changes:
+  - message: Nowy sprite mailboxa teraz jako cargomat
+    type: Add
+  id: 9945
+  time: '2026-08-19T13:03:15.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/907
+- author: haze
+  changes:
+  - message: Dodano aparat fotograficzny!
+    type: Add
+  id: 9946
+  time: '2026-08-19T15:04:02.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/909
+- author: haze
+  changes:
+  - message: Dodano Polonium Reach
+    type: Add
+  id: 9947
+  time: '2026-08-19T22:41:57.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/915
+- author: notsssnek
+  changes:
+  - message: "Umo\u017Cliwiono zbieranie z\u0142omu do scrap bag\xF3w"
+    type: Tweak
+  id: 9948
+  time: '2026-08-20T09:43:04.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/916
+- author: haze
+  changes:
+  - message: "Dodano wiadomo\u015B\u0107 dotycz\u0105c\u0105 wype\u0142nienia cel\xF3\
+      w antaga"
+    type: Add
+  id: 9949
+  time: '2026-08-20T09:59:33.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/888
+- author: Saver310
+  changes:
+  - message: Przeportowano pluszaki
+    type: Add
+  id: 9950
+  time: '2026-08-20T14:24:35.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/774
+- author: Saver310
+  changes:
+  - message: "Przet\u0142umaczenie plakat\xF3w Bunt, Czysto\u015B\u0107, Zakaz ERP,\
+      \ Karabin Jonowy, Kosmiczne Gliny i Podaj Prawa"
+    type: Add
+  - message: "Drobne zmiany w t\u0142umaczeniach"
+    type: Tweak
+  id: 9951
+  time: '2026-08-20T14:24:04.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/918
+- author: Saver310
+  changes:
+  - message: Dodano nowe sprity dla cargomatu
+    type: Add
+  id: 9952
+  time: '2026-08-20T14:46:42.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/917
+- author: Saver310
+  changes:
+  - message: "Przet\u0142umaczenie grafik plakat\xF3w"
+    type: Add
+  id: 9953
+  time: '2026-08-21T08:16:15.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/919
+- author: Saver310
+  changes:
+  - message: "Dodano kategori\u0119 dla zabawek w bibelotach"
+    type: Add
+  id: 9954
+  time: '2026-08-23T07:51:40.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/922
+- author: Saver310
+  changes:
+  - message: Dodano heretyczny plakat "Jurna Egzomorfka"
+    type: Add
+  id: 9955
+  time: '2026-08-24T17:54:18.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/921
+- author: Koilak
+  changes:
+  - message: "Dodano tryby nie-\u015Bmierciono\u015Bne dla Strzelby Energetycznej\
+      \ oraz Energy Magnum'a"
+    type: Add
+  id: 9956
+  time: '2026-08-26T07:07:54.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/923
+- author: Koilak
+  changes:
+  - message: "Dodano \u015Arodek Ga\u015Bniczy"
+    type: Add
+  - message: "Zawarto\u015B\u0107 ga\u015Bnic (1:1 \u015Arodek Ga\u015Bniczy:Woda)"
+    type: Tweak
+  id: 9957
+  time: '2026-08-26T07:14:14.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/920
+- author: Saver310
+  changes:
+  - message: "Przet\u0142umaczenie grafik plakat\xF3w"
+    type: Add
+  id: 9958
+  time: '2026-08-26T10:02:21.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/934
+- author: Saver310
+  changes:
+  - message: "Dodano nowy odg\u0142os RoundEnd. Jedziemy, jedziemy!"
+    type: Add
+  id: 9959
+  time: '2026-08-26T10:40:39.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/935
+- author: Saver310
+  changes:
+  - message: "Przet\u0142umaczenie grafik plakat\xF3w"
+    type: Add
+  id: 9960
+  time: '2026-08-26T12:57:46.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/937

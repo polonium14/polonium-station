@@ -1,5 +1,5 @@
-ent-GasPipeSansLayersIndestructible = gas pipe
-    .desc = Holds gas.
+ent-GasPipeSansLayersIndestructible = rura gazowa
+    .desc = Trzyma gaz.
 ent-GasPipeSansLayers = { ent-GasPipeSansLayersIndestructible }
     .desc = { ent-GasPipeSansLayersIndestructible.desc }
 ent-BaseGasPipeLayers = { "" }

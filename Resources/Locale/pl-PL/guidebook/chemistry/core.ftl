@@ -1,10 +1,13 @@
 guidebook-reagent-effect-description =
-    { $chance ->
+    { $quantity ->
+        [0] { "" }
+       *[other] Jeśli jest przynajmniej { $quantity }u { $reagent },{ " " }
+    }{ $chance ->
         [1] { $effect }
        *[other] Ma { NATURALPERCENT($chance, 2) } szansę na { $effect }
     }{ $conditionCount ->
         [0] .
-       *[other] { " " }, gdy { $conditions }.
+       *[other] { " " }gdy { $conditions }.
     }
 guidebook-reagent-name = [bold][color={ $color }]{ CAPITALIZE($name) }[/color][/bold]
 guidebook-reagent-recipes-header = Przepis

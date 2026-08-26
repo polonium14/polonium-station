@@ -16,6 +16,7 @@
   - /Audio/Announcements/RoundEnd/stalemate.ogg
   - /Audio/_Polonium/Announcements/RoundEnd/ale_urwal.ogg
   - /Audio/_Polonium/Announcements/RoundEnd/jestem_hardkorem.ogg
+  - /Audio/_Polonium/Announcements/RoundEnd/malina.ogg
 
 - type: soundCollection
   id: PowerOn

@@ -1,5 +1,5 @@
-ent-ParticleAcceleratorFuelChamber = PA fuel chamber
-    .desc = Formally known as the EM Acceleration Chamber. This is where the Alpha particles are accelerated to radical speeds.
-ent-ParticleAcceleratorFuelChamberUnfinished = PA fuel chamber
-    .desc = Formally known as the EM Acceleration Chamber. This is where the Alpha particles are accelerated to radical speeds. It looks unfinished.
-    .suffix = Unfinished
+ent-ParticleAcceleratorFuelChamber = komora paliwa AKCEL
+    .desc = Formalnie znana jako elektromagnetyczna komora przyspieszająca. W tym miejscu cząstki alfa są rozpędzane do ekstremalnych prędkości.
+ent-ParticleAcceleratorFuelChamberUnfinished = komora paliwa AKCEL
+    .desc = Formalnie znana jako elektromagnetyczna komora przyspieszająca. W tym miejscu cząstki alfa są rozpędzane do ekstremalnych prędkości. wygląda na niedokończony.
+    .suffix = Niedokończony

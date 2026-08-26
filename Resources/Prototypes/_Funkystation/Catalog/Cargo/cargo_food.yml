@@ -1,0 +1,20 @@
+#moved shrimps to cargo_food, makes more sense imo - Yaket
+- type: cargoProduct
+  id: ServiceFoodShrimpRaw
+  icon:
+    sprite: _Funkystation/Objects/Consumable/Food/meat.rsi
+    state: shrimpfried
+  product: CrateFoodShrimpRaw
+  cost: 350
+  category: cargoproduct-category-name-food
+  group: market
+
+- type: cargoProduct
+  id: FoodRandomDonkpocket
+  icon:
+    sprite: Objects/Consumable/Food/Baked/donkpocket.rsi
+    state: plain
+  product: CrateFoodRandomDonkPocket
+  cost: 1500
+  category: cargoproduct-category-name-food
+  group: market

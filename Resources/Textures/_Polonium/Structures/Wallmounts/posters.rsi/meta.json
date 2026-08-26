@@ -5,10 +5,187 @@
         "y": 32
     },
     "license": "CC-BY-NC-SA-3.0",
-    "copyright": "Made by Polonium Station (https://github.com/polonium14/polonium-station) [add link to commit when taking from Polonium Station]",
+    "copyright": "Made by Polonium Station (https://github.com/polonium14/polonium-station), translated posters and seksixeno edited by Saver310",
     "states": [
         {
             "name": "nfz"
+        },
+        {
+            "name": "seksixeno"
+        },
+        {
+            "name": "poster1_legit"
+        },
+        {
+            "name": "poster3_contraband"
+        },
+        {
+            "name": "poster3_legit"
+        },
+        {
+            "name": "poster4_contraband"
+        },
+        {
+            "name": "poster4_legit"
+        },
+        {
+            "name": "poster5_contraband"
+        },
+        {
+            "name": "poster5_legit"
+        },
+        {
+            "name": "poster6_legit"
+        },
+        {
+            "name": "poster7_contraband"
+        },
+        {
+            "name": "poster7_legit"
+        },
+        {
+            "name": "poster8_contraband"
+        },
+        {
+            "name": "poster8_legit"
+        },
+        {
+            "name": "poster9_contraband"
+        },
+        {
+            "name": "poster9_legit"
+        },
+        {
+            "name": "poster10_legit"
+        },
+        {
+            "name": "poster11_legit"
+        },
+        {
+            "name": "poster12_legit"
+        },
+        {
+            "name": "poster13_legit"
+        },
+        {
+            "name": "poster14_contraband"
+        },
+        {
+            "name": "poster16_contraband"
+        },
+        {
+            "name": "poster16_legit"
+        },
+        {
+            "name": "poster17_legit"
+        },
+        {
+            "name": "poster19_legit"
+        },
+        {
+            "name": "poster20_contraband"
+        },
+        {
+            "name": "poster20_legit"
+        },
+        {
+            "name": "poster21_contraband"
+        },
+        {
+            "name": "poster21_legit"
+        },
+        {
+            "name": "poster22_contraband"
+        },
+        {
+            "name": "poster22_legit"
+        },
+        {
+            "name": "poster23_contraband"
+        },
+        {
+            "name": "poster23_legit"
+        },
+        {
+            "name": "poster25_contraband"
+        },
+        {
+            "name": "poster26_legit"
+        },
+        {
+            "name": "poster29_contraband"
+        },
+        {
+            "name": "poster29_legit"
+        },
+        {
+            "name": "poster30_contraband"
+        },
+        {
+            "name": "poster31_legit"
+        },
+        {
+            "name": "poster32_contraband"
+        },
+        {
+            "name": "poster32_legit"
+        },
+        {
+            "name": "poster33_contraband"
+        },
+        {
+            "name": "poster33_legit"
+        },
+        {
+            "name": "poster34_legit"
+        },
+        {
+            "name": "poster35_contraband"
+        },
+        {
+            "name": "poster37_legit"
+        },
+        {
+            "name": "poster38_legit"
+        },
+        {
+            "name": "poster39_legit"
+        },
+        {
+            "name": "poster46_contraband"
+        },
+        {
+            "name": "poster48_contraband"
+        },
+        {
+            "name": "poster53_contraband"
+        },
+        {
+            "name": "poster55_contraband"
+        },
+        {
+            "name": "poster55_legit"
+        },
+        {
+            "name": "poster56_contraband"
+        },
+        {
+            "name": "poster56_legit"
+        },
+        {
+            "name": "poster60_contraband"
+        },
+        {
+            "name": "poster63_contraband"
+        },
+        {
+            "name": "poster64_contraband"
+        },
+        {
+            "name": "poster65_contraband"
+        },
+        {
+            "name": "poster66_contraband"
         }
     ]
 }

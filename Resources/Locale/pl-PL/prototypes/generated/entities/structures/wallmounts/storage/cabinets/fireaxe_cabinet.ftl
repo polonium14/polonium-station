@@ -1,11 +1,11 @@
-ent-FireAxeCabinet = fire axe cabinet
-    .desc = There is a small label that reads "For Emergency use only" along with details for safe use of the axe. As if.
+ent-FireAxeCabinet = gablota na siekiere strażacką
+    .desc = Jest mała etykieta która ma napisane "Do użytku w sytuacjach awaryjnych" oraz detale o bezpiecznym użytkowaniu siekiery, która nie bardzo cie przekonuje.
 ent-FireAxeCabinetOpen = { ent-FireAxeCabinet }
-    .suffix = Open
+    .suffix = Otwarte
     .desc = { ent-FireAxeCabinet.desc }
 ent-FireAxeCabinetFilled = { ent-FireAxeCabinet }
-    .suffix = Filled
+    .suffix = Wypełnione
     .desc = { ent-FireAxeCabinet.desc }
 ent-FireAxeCabinetFilledOpen = { ent-FireAxeCabinetFilled }
-    .suffix = Filled, Open
+    .suffix = Wypełnione, Otwarte
     .desc = { ent-FireAxeCabinetFilled.desc }

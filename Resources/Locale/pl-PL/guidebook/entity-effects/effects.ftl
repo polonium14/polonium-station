@@ -502,3 +502,21 @@ entity-effect-disarm =
         [1] Disarms
         *[other] disarms
     } the entity
+
+-cause-3rd-person =
+    { $chance ->
+        [1] Causes
+        *[other] cause
+    }
+
+-create-3rd-person =
+    { $chance ->
+        [1] Creates
+        *[other] create
+    }
+
+-satiate-3rd-person =
+    { $chance ->
+        [1] Satiates
+        *[other] satiate
+    }

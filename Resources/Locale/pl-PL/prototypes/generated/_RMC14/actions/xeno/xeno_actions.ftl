@@ -1,0 +1,16 @@
+ent-ActionXenoRest = Odpoczynek
+    .desc = Połóż się, aby szybciej się regenerować.
+ent-ActionXenoEvolve = Ewolucja
+    .desc = Ewoluuj w silniejszą kastę.
+ent-ActionXenoPlantWeeds = Zasadź chwasty
+    .desc = Zasadź węzeł chwastów, który rozprzestrzenia się po podłodze.
+ent-ActionXenoChooseStructure = Wybierz strukturę żywicy
+    .desc = Wybierz następną strukturę do wydzielenia.
+ent-ActionXenoSecreteStructure = Wydziel żywicę
+    .desc = Zbuduj strukturę wybraną za pomocą akcji Wybierz strukturę żywicy.
+ent-ActionXenoAcidNormal = Żrący kwas
+    .desc = Stop strukturę lub obiekt kwasem.
+ent-ActionXenoAcidWeak = Słaby żrący kwas
+    .desc = Powoli top strukturę lub obiekt słabym kwasem.
+ent-ActionXenoNightVision = Noktowizja
+    .desc = Włącz lub wyłącz noktowizję ksenomorfa.

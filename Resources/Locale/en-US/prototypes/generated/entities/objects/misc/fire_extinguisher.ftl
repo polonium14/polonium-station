@@ -15,4 +15,4 @@ ent-FireExtinguisherMini = pocket fire extinguisher
 ent-SolutionFireExtinguisherMini = { ent-SolutionSpray }
     .desc = { ent-SolutionSpray.desc }
 ent-SelfRechargingFireExtinguisher = self-recharging fire extinguisher
-    .desc = It extinguishes fires. it slowly refills with water.
+    .desc = It extinguishes fires. it slowly refills itself.

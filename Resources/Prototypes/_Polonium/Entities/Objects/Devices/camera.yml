@@ -1,0 +1,55 @@
+- type: entity
+  parent: BaseItem
+  id: PoloniumCamera
+  name: camera
+  description: Captures photos. Duh?
+  components:
+  - type: PoloniumCamera
+  - type: LimitedCharges
+    maxCharges: 8
+  - type: Sprite
+    sprite: Objects/Devices/travel_camera.rsi
+    state: icon
+  - type: ItemToggle
+    onUse: false
+    onActivate: false
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 0
+  - type: UseDelay
+  - type: StaticPrice
+    price: 100
+  - type: Clothing
+    slots:
+    - NECK
+    sprite: Objects/Devices/travel_camera.rsi
+
+- type: entity
+  parent: BaseItem
+  id: PoloniumPhotograph
+  name: photograph
+  description: A developed photograph. Activate it in hand to look at the picture.
+  components:
+  - type: PoloniumPhotograph
+  - type: Sprite
+    sprite: Objects/Misc/photograph.rsi
+    layers:
+    - state: black
+  - type: RandomSprite
+    available:
+      - "0":
+          black:
+          red:
+          blue:
+          green:
+          yellow:
+          purple:
+          rainbow:
+  - type: ActivatableUI
+    key: enum.PhotoViewerUiKey.Key
+    requiresComplex: false
+  - type: UserInterface
+    interfaces:
+      enum.PhotoViewerUiKey.Key:
+        type: PhotoViewerBoundUserInterface

@@ -1,9 +1,9 @@
-ent-RadiationCollector = radiation collector
-    .desc = A machine that collects radiation and turns it into power. Requires plasma gas to function.
-    .suffix = Empty tank
+ent-RadiationCollector = kolektor promieniowania
+    .desc = Maszyna które zbiera promieniowanie i zamienia je w moc. Wymaga gazu plazmowego w zbiorniku do funkcjonowania.
+    .suffix = Pusty Zbiornik
 ent-RadiationCollectorNoTank = { ent-RadiationCollector }
-    .suffix = No tank
+    .suffix = Bez Zbiornika
     .desc = { ent-RadiationCollector.desc }
 ent-RadiationCollectorFullTank = { ent-RadiationCollector }
-    .suffix = Filled tank
+    .suffix = Pełny Zbiornik
     .desc = { ent-RadiationCollector.desc }

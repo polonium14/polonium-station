@@ -1,0 +1,2 @@
+ent-CMEffectScreech = { "" }
+    .desc = { "" }

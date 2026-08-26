@@ -1,3 +1,3 @@
 ent-LockerParamedicFilledHardsuit = { ent-LockerParamedic }
-    .suffix = Filled, Hardsuit
+    .suffix = Wypełnione, Hardsuit
     .desc = { ent-LockerParamedic.desc }

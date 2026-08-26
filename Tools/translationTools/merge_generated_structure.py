@@ -11,6 +11,13 @@ from fluent.syntax import ast, FluentParser, FluentSerializer
 from fluentast import FluentAstAbstract
 from file import FluentFile
 from project import Project
+from ftl_relocator import (
+    LocaleKeyIndex,
+    collect_message_keys_fast,
+    extract_span_text,
+    fingerprint_entry,
+    upsert_entries,
+)
 
 ENTRY_TYPES = (ast.Message, ast.Term)
 parser = FluentParser()
@@ -88,27 +95,43 @@ def merge_entry(
     return merged
 
 
-def merge_file(en_text: str, pl_text: str) -> str:
+def merge_file_preserve(en_text: str, pl_text: str) -> str:
+    # nie serializuj calego pliku - komentarze i puste linie zostaja
+    if not pl_text.strip():
+        return en_text
+
     en_parsed = parser.parse(en_text)
-    pl_parsed = parser.parse(pl_text) if pl_text.strip() else ast.Resource(body=[])
-    pl_keys = collect_keys(pl_parsed)
+    pl_keys = collect_keys(parser.parse(pl_text))
+    to_upsert: Dict[str, str] = {}
 
-    new_body = []
     for element in en_parsed.body:
-        if isinstance(element, ENTRY_TYPES):
-            key = FluentAstAbstract.get_id_name(element)
-            new_body.append(merge_entry(element, pl_keys.get(key) if key else None))
-        else:
-            new_body.append(element)
+        if not isinstance(element, ENTRY_TYPES):
+            continue
+        key = FluentAstAbstract.get_id_name(element)
+        if not key:
+            continue
+        pl_entry = pl_keys.get(key)
+        merged = merge_entry(element, pl_entry)
+        if pl_entry is None:
+            if key in collect_message_keys_fast(pl_text):
+                continue
+            to_upsert[key] = extract_span_text(en_text, element).strip('\n')
+            continue
+        if fingerprint_entry(merged) == fingerprint_entry(pl_entry):
+            continue
+        to_upsert[key] = serializer.serialize(ast.Resource(body=[merged])).strip()
 
-    # Zachowaj wpisy tylko w pl, które nie są w en? Nie — generated: en jest źródłem prawdy.
-    return serializer.serialize(ast.Resource(body=new_body))
+    if not to_upsert:
+        return pl_text
+    patched, _ = upsert_entries(pl_text, to_upsert, overwrite=True)
+    return patched
 
 
 def main() -> None:
     project = Project()
     en_root = project.en_locale_prototypes_dir_path
     pl_root = project.pl_locale_prototypes_dir_path
+    pl_index = LocaleKeyIndex(project.pl_locale_dir_path)
     changed = 0
 
     for dirpath, _, filenames in os.walk(en_root):
@@ -124,10 +147,13 @@ def main() -> None:
             if not en_text.strip():
                 continue
 
+            # tlumaczenie siedzi w starym pliku - ciagnij je tutaj zanim zmergujesz strukture
+            pl_index.move_keys_to(pl_path, collect_message_keys_fast(en_text), overwrite=True)
+
             pl_file = FluentFile(pl_path)
             pl_text = pl_file.read_data() if os.path.isfile(pl_path) else ''
 
-            merged = merge_file(en_text, pl_text)
+            merged = merge_file_preserve(en_text, pl_text)
             if merged != pl_text:
                 pl_file.save_data(merged)
                 changed += 1

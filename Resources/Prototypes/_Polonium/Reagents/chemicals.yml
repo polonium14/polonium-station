@@ -1,0 +1,40 @@
+
+- type: reagent
+  id: ExtinguishingAgent
+  name: reagent-name-extinguishing-agent
+  desc: reagent-desc-extinguishing-agent
+  absorbent: true
+  physicalDesc: reagent-physical-desc-powdery
+  flavor: metallic # Thats what the internet says
+  color: "#cdcdcd"
+  recognizable: true
+  boilingPoint: 5000.0 # Based on ABC Dry Chemical (I ain't a chemist, so don't ask me what that is) but it will decompose back into its components above 570 degress Kelvin (~297 degrees Celsius).
+  meltingPoint: 200.0
+  flammability: -50 # It is meant to specificly be VERY not flammable
+  friction: 1.3 # Idk, its a powder like thing ig?
+  tileReactions:
+  - !type:SpillTileReaction 
+  viscosity: 0.1 # Spraying it from an extinguisher makes it leave puddles on the floor, making it MUCH more effective than eg. water
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:HealthChange # can't imagine its healthy
+        damage:
+          types:
+            Poison: 1
+            Caustic: 1
+    Digestion:
+      effects:
+      - !type:HealthChange # If you decide to eat it, you get more damage, its called natural selection
+        damage:
+          types:
+            Poison: 1
+            Caustic: 1
+      - !type:PopupMessage
+        type: Local
+        visualType: MediumCaution
+        messages: [ "generic-reagent-effect-burning-insides" ]
+        probability: 0.25
+      - !type:Emote
+        emote: Scream
+        probability: 0.1

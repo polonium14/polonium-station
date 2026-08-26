@@ -21,6 +21,7 @@ ent-SpectralLocatorUnpowered = spectral locator
     .suffix = Always Powered
 ent-SpectralLocator = { ent-SpectralLocatorUnpowered }
     .desc = { ent-SpectralLocatorUnpowered.desc }
+    .suffix = Powered
 ent-SpectralLocatorEmpty = { ent-SpectralLocator }
     .suffix = Empty
     .desc = { ent-SpectralLocator.desc }

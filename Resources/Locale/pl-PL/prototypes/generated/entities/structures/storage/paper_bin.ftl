@@ -1,6 +1,6 @@
-ent-PaperBin = paper bin
-    .desc = What secrets lie at the bottom of its endless stack?
-    .suffix = Empty
+ent-PaperBin = pojemnik na papier
+    .desc = Jakie sekrety leżą na dnie tego niekończącego się stosu?
+    .suffix = Pusty
 ent-PaperBin5 = { ent-PaperBin }
     .suffix = 5
     .desc = { ent-PaperBin.desc }

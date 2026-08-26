@@ -3,7 +3,6 @@ set-game-preset-command-help-text = setgamepreset <id> [liczba rund, domyślnie 
 set-game-preset-optional-argument-not-integer = Jeśli podano drugi argument, musi on być liczbą.
 set-game-preset-preset-error = Nie można znaleźć trybu gry „{ $preset }”
 set-game-preset-preset-set = Set game preset to "{ $preset }"
-#set-game-preset-preset-set = Ustawiono tryb gry na „{$preset}”
 set-game-preset-preset-set-finite = Ustawiono tryb gry na „{ $preset }” na następne { $rounds } rund(y).
 set-game-preset-command-hint-1 = <id>
 set-game-preset-command-hint-2 = [liczba rund]

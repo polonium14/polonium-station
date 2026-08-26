@@ -4,6 +4,7 @@ ent-BoxCardboardSmall = small cardboard box
     .desc = A small cardboard box for storing things.
 ent-BoxHug = box of hugs
     .desc = A special box for sensitive people.
+    .suffix = Ratunkowe
 ent-BoxLightbulb = lightbulb box
     .desc = This box is shaped on the inside so that only light tubes and bulbs fit.
 ent-BoxWarmLightbulb = lightbulb box warm

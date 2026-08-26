@@ -866,10 +866,13 @@
   - type: BatteryAmmoProvider
     proto: BulletLaserSpreadNarrow
     fireCost: 80
-  - type: BatteryWeaponFireModes # Funky - Removed disabler mode
+  - type: BatteryWeaponFireModes
     fireModes:
     - proto: BulletLaserSpreadNarrow
       fireCost: 80
+    - proto: BulletDisablerSmgSpread
+      fireCost: 48
+      pacifismAllowedMode: true
   - type: Item
     size: Large
     sprite: Objects/Weapons/Guns/Battery/inhands_64x.rsi
@@ -883,7 +886,7 @@
   name: energy magnum
   parent: [BaseWeaponBatterySmall, BaseGrandTheftContraband]
   id: WeaponEnergyMagnum
-  description: A high powered self-charging energy pistol designed for elite security personnel. It has has two firing modes, allowing for either high damage or window piercing. # Funky
+  description:  high powered self-charging energy pistol designed for elite security personnel. It has has three firing modes allowing for either high damage, window piercing, or non-lethal disabling.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Battery/energy_magnum.rsi
@@ -913,12 +916,14 @@
   - type: BatteryAmmoProvider
     proto: BulletLaserMagnum
     fireCost: 150
-  - type: BatteryWeaponFireModes # Funky - Removed disabler mode
+  - type: BatteryWeaponFireModes
     fireModes:
     - proto: BulletLaserMagnum
       fireCost: 150
     - proto: BulletLaserWindowPiercingMagnum
       fireCost: 150
+    - proto: BulletDisabler
+      fireCost: 62.5
   - type: BatterySelfRecharger
     autoRechargeRate: 48
     autoRechargePauseTime: 10

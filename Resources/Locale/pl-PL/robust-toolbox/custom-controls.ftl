@@ -22,3 +22,7 @@ output-panel-scroll-down-button-text = Przewiń w dół
 ## Common Used
 
 window-erase-button-text = Usuwanie
+
+entity-spawn-window-no-description = No description
+
+## TileSpawnWindow

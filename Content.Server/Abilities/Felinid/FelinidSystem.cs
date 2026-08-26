@@ -109,7 +109,10 @@ public sealed partial class FelinidSystem : EntitySystem
 
         component.EatActionTarget = null;
         if (component.EatAction != null)
+        {
             _actionsSystem.RemoveAction(uid, component.EatAction.Value);
+            component.EatAction = null;
+        }
     }
 
     private void OnHairball(EntityUid uid, FelinidComponent component, HairballActionEvent args)
@@ -166,7 +169,10 @@ public sealed partial class FelinidSystem : EntitySystem
         _hungerSystem.ModifyHunger(uid, 50f, hunger);
 
         if (component.EatAction != null)
+        {
             _actionsSystem.RemoveAction(uid, component.EatAction.Value);
+            component.EatAction = null;
+        }
     }
 
     private void SpawnHairball(EntityUid uid, FelinidComponent component)

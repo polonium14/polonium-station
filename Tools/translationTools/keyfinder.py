@@ -13,6 +13,7 @@
 # Skrypt jest odpowiednikiem sync_locales.py
 
 import argparse
+import os
 import typing
 import logging
 
@@ -20,9 +21,9 @@ from pydash import py_
 
 from file import FluentFile
 from fluentast import FluentAstAbstract
-from fluentformatter import FluentFormatter
 from project import Project
 from fluent.syntax import ast, FluentSerializer
+from ftl_relocator import LocaleKeyIndex, collect_message_keys_fast, same_path
 
 ENTRY_TYPES = (ast.Message, ast.Term)
 
@@ -108,6 +109,8 @@ class FilesFinder:
 
     def execute(self):
         self.created_files = []
+        self.pl_index = LocaleKeyIndex(self.project.pl_locale_dir_path)
+        self.en_index = LocaleKeyIndex(self.project.en_locale_dir_path)
         groups = self.get_files_pars()
         keys_without_pair = list(filter(lambda g: len(groups[g]) < 2, groups))
 
@@ -149,6 +152,10 @@ class FilesFinder:
         pl_file_path = en_file.full_path.replace('en-US', 'pl-PL')
         pl_file = FluentFile(pl_file_path)
         pl_file.save_data(en_file_data)
+        keys = collect_message_keys_fast(en_file_data)
+        moved = self.pl_index.move_keys_to(pl_file_path, keys, overwrite=True)
+        if moved:
+            logging.info(f'Przeniesiono {moved} istniejących kluczy do {pl_file_path}')
 
         logging.info(f'Utworzono plik {pl_file_path} z tłumaczeniami z angielskiego pliku')
 
@@ -160,6 +167,10 @@ class FilesFinder:
         en_file_path = pl_file.full_path.replace('pl-PL', 'en-US')
         en_file = FluentFile(en_file_path)
         en_file.save_data(pl_file_data)
+        keys = collect_message_keys_fast(pl_file_data)
+        moved = self.en_index.move_keys_to(en_file_path, keys, overwrite=True)
+        if moved:
+            logging.info(f'Przeniesiono {moved} istniejących kluczy do {en_file_path}')
 
         logging.info(f'Utworzono plik {en_file_path} z tłumaczeniami z polskiego pliku')
 
@@ -173,12 +184,20 @@ class FilesFinder:
 
 
 class KeyFinder:
-    def __init__(self, files_dict, sync_mode: str = SYNC_MODE_BOTH):
+    def __init__(
+        self,
+        files_dict,
+        sync_mode: str = SYNC_MODE_BOTH,
+        pl_index: typing.Optional[LocaleKeyIndex] = None,
+        en_index: typing.Optional[LocaleKeyIndex] = None,
+    ):
         self.files_dict = files_dict
         self.sync_mode = sync_mode
         self.changed_files: typing.List[FluentFile] = []
         self.pl_global_keys = set()
         self.en_global_keys = set()
+        self.pl_index = pl_index or LocaleKeyIndex(project.pl_locale_dir_path)
+        self.en_index = en_index or LocaleKeyIndex(project.en_locale_dir_path)
         self._collect_global_keys()
 
     @staticmethod
@@ -195,10 +214,14 @@ class KeyFinder:
     @staticmethod
     def _indent_attribute_snippet(snippet: str) -> str:
         lines = snippet.split('\n')
-        return '\n'.join(
-            f'  {line}' if line.startswith('.') and not line.startswith('  ') else line
-            for line in lines
-        )
+        out = []
+        for line in lines:
+            stripped = line.lstrip(' ')
+            if stripped.startswith('.') and not line.startswith('    .'):
+                out.append('    ' + stripped)
+            else:
+                out.append(line)
+        return '\n'.join(out)
 
     @staticmethod
     def _extract_span_text(source: str, element) -> str:
@@ -212,16 +235,11 @@ class KeyFinder:
                 if relative_file.locale not in ('pl-PL', 'en-US'):
                     continue
                 try:
-                    parsed = relative_file.file.parse_data(relative_file.file.read_data())
+                    content = relative_file.file.read_data()
                 except Exception:
                     continue
                 target = self.pl_global_keys if relative_file.locale == 'pl-PL' else self.en_global_keys
-                for element in parsed.body:
-                    if not isinstance(element, ENTRY_TYPES):
-                        continue
-                    key_name = FluentAstAbstract.get_id_name(element)
-                    if key_name:
-                        target.add(key_name)
+                target.update(collect_message_keys_fast(content))
 
     def execute(self) -> typing.List[FluentFile]:
         self.changed_files = []
@@ -254,6 +272,7 @@ class KeyFinder:
                 target_text=pl_text,
                 target_keys=self._collect_keys_by_id(pl_parsed),
                 global_keys=self.pl_global_keys,
+                key_index=self.pl_index,
             )
 
         if syncs_en_from_pl(self.sync_mode):
@@ -264,6 +283,7 @@ class KeyFinder:
                 target_text=en_text,
                 target_keys=self._collect_keys_by_id(en_parsed),
                 global_keys=self.en_global_keys,
+                key_index=self.en_index,
             )
         elif syncs_pl_from_en(self.sync_mode):
             self.log_not_exist_en_files(en_file, pl_parsed, en_parsed)
@@ -276,10 +296,36 @@ class KeyFinder:
         target_text: str,
         target_keys: typing.Dict[str, typing.Union[ast.Message, ast.Term]],
         global_keys: typing.Set[str],
+        key_index: LocaleKeyIndex,
     ):
+        # stub w kanonicznym pliku nie wygra z prawdziwym tlumaczeniem gdzie indziej
+        canonical = os.path.normpath(target_file.full_path)
+        relocate_keys: typing.List[str] = []
+        for source_entry in source_parsed.body:
+            if not isinstance(source_entry, ENTRY_TYPES):
+                continue
+            key_name = FluentAstAbstract.get_id_name(source_entry)
+            if not key_name:
+                continue
+            if any(not same_path(path, canonical) for path in key_index.locations(key_name)):
+                relocate_keys.append(key_name)
+
+        if relocate_keys:
+            moved = key_index.move_keys_to(target_file.full_path, relocate_keys, overwrite=True)
+            if moved:
+                target_text = target_file.read_data()
+                target_parsed = target_file.parse_data(target_text)
+                target_keys = self._collect_keys_by_id(target_parsed)
+                for key_name in relocate_keys:
+                    global_keys.add(key_name)
+                    logging.info(f'Przeniesiono klucz "{key_name}" do {target_file.full_path}')
+                if target_file not in self.changed_files:
+                    self.changed_files.append(target_file)
+
         append_snippets: typing.List[str] = []
         insertions: typing.List[typing.Tuple[int, str]] = []
         added_keys: typing.List[str] = []
+        target_text_keys = collect_message_keys_fast(target_text)
 
         for source_entry in source_parsed.body:
             if not isinstance(source_entry, ENTRY_TYPES):
@@ -291,9 +337,10 @@ class KeyFinder:
 
             target_entry = target_keys.get(key_name)
             if target_entry is None:
-                if key_name in global_keys:
+                if key_name in global_keys or key_name in target_text_keys:
                     continue
                 append_snippets.append(self._extract_span_text(source_text, source_entry))
+                target_text_keys.add(key_name)
                 target_keys[key_name] = source_entry
                 global_keys.add(key_name)
                 added_keys.append(key_name)
@@ -361,11 +408,15 @@ def main(argv=None):
     files_finder = FilesFinder(project, sync_mode=sync_mode)
     print('Sprawdzam aktualności plików ...')
     created_files = files_finder.execute()
-    if len(created_files):
-        print('Formatuję utworzone pliki ...')
-        FluentFormatter.format(created_files)
+    if created_files:
+        print(f'Utworzono {len(created_files)} brakujących plików (bez formatowania).')
     print('Sprawdzam aktualność kluczy ...')
-    key_finder = KeyFinder(files_finder.get_files_pars(), sync_mode=sync_mode)
+    key_finder = KeyFinder(
+        files_finder.get_files_pars(),
+        sync_mode=sync_mode,
+        pl_index=getattr(files_finder, 'pl_index', None),
+        en_index=getattr(files_finder, 'en_index', None),
+    )
     changed_files = key_finder.execute()
     if len(changed_files):
         print(f'Zaktualizowano {len(changed_files)} plików (bez przeformatowania).')

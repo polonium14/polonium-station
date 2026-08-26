@@ -1,0 +1,3 @@
+ent-CMXenoRunner = biegacz
+    .desc = Mały czerwony obcy, który wygląda, jakby potrafił szybko biegać...
+    .gender = male

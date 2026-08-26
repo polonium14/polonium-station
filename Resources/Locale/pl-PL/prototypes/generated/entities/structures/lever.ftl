@@ -1,2 +1,2 @@
-ent-TwoWayLever = two way lever
-    .desc = A two way lever.
+ent-TwoWayLever = Dwu kierunkowa dźwignia
+    .desc = Dwu kierunkowa dźwignia.
