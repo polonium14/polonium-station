@@ -1,3 +1,3 @@
-ent-CMXenoSpitter = plujący
-    .desc = Obrzydliwy, ociekający obcy jakiegoś rodzaju.
+ent-CMXenoSpitter = Spitter
+    .desc = A gross, oozing alien of some kind.
     .gender = male
