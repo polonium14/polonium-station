@@ -1,4 +1,4 @@
-ent-DoorXenoResin = drzwi żywiczne
-    .desc = Drzwi zrobione z żywicy.
-ent-DoorXenoResinThick = grube drzwi żywiczne
-    .desc = Grube drzwi z żywicy.
+ent-DoorXenoResin = resin door
+    .desc = A door made of resin.
+ent-DoorXenoResinThick = thick resin door
+    .desc = A thick resin door.
