@@ -2,19 +2,19 @@ ent-PortableGeneratorBase = { ent-BaseMachine }
     .desc = { ent-BaseMachine.desc }
 ent-PortableGeneratorSwitchableBase = { ent-PortableGeneratorBase }
     .desc = { ent-PortableGeneratorBase.desc }
-ent-PortableGeneratorPacman = przenośny generator typu P.A.C.M.A.N.
+ent-PortableGeneratorPacman = P.A.C.M.A.N.-type portable generator
     .desc =
-        Elastyczny generator awaryjny przeznaczony do zasilania różnorodnych urządzeń.
-        Zasilany arkuszami stałej plazmy i przystosowany do mocy wyjściowej do 30 kW.
-    .suffix = Plazma, 30 kW
-ent-PortableGeneratorSuperPacman = przenośny generator typu S.U.P.E.R.P.A.C.M.A.N.
+        A flexible backup generator for powering a variety of equipment.
+        Runs off solid plasma sheets and is rated for up to 30 kW.
+    .suffix = Plasma, 30 kW
+ent-PortableGeneratorSuperPacman = S.U.P.E.R.P.A.C.M.A.N.-type portable generator
     .desc =
-        Zaawansowany generator przeznaczony do zasilania działów.
-        Zasilany arkuszami uranu i przystosowany do mocy wyjściowej do 50 kW.
-    .suffix = Uran, 50 kW
-ent-PortableGeneratorJrPacman = przenośny generator typu J.R.P.A.C.M.A.N.
+        An advanced generator for powering departments.
+        Runs off uranium sheets and is rated for up to 50 kW.
+    .suffix = Uranium, 50 kW
+ent-PortableGeneratorJrPacman = J.R.P.A.C.M.A.N.-type portable generator
     .desc =
-        Niewielki generator awaryjny przeznaczony do zasilania pojedynczych pomieszczeń.
-        Zasilany paliwem spawalniczym i zapewnia moc do 8 kW.
-        Przeznaczone dla osób w wieku 3 lat i starszych.
-    .suffix = Paliwo Spawalnicze, 8 kW
+        A small generator capable of powering individual rooms, in case of emergencies.
+        Runs off welding fuel and is rated for up to 8 kW.
+        Rated ages 3 and up.
+    .suffix = Welding Fuel, 8 kW
