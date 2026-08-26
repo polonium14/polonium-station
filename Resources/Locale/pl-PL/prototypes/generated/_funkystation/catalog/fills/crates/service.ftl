@@ -1,2 +1,2 @@
-ent-CrateServiceWashingMachineSet = Zestaw do samodzielnego montażu pralki
-    .desc = Zmęczony wymuszaniem ubrań z ręki? Ten zestaw do samodzielnego montażu pralki Cię pokryje.
+ent-CrateServiceWashingMachineSet = DIY washing machine kit
+    .desc = A Nanotrasen Commercial Model-C washing machine, disassembled and ready for shipping. Contains small parts that may be ingested by infants.
