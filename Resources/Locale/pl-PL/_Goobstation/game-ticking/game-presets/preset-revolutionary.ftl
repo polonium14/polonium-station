@@ -1,4 +1,3 @@
-
 rev-eotr-gain =
     With the last head of department gone, you are now surrounded by followers of the new unstable regime.
     
