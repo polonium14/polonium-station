@@ -1,2 +1,2 @@
-ent-ClothingNeckSecurityBowtie = formalna mucha
-    .desc = Nieco zbyt duża przypinana mucha. Kiedyś oficerom wydawano klasyczne muchy, ale zbyt wielu z nich pojawiało się bez nich, mówiąc „nie umiałem jej zawiązać”.
+ent-ClothingNeckSecurityBowtie = formal bowtie
+    .desc = A slightly oversized clip-on bowtie. Officers used to be issued classic bowties, but too many showed up without one reportedly saying "I couldn't tie it".
