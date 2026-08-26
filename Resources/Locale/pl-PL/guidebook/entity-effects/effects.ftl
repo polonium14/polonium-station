@@ -1,3 +1,18 @@
+-create-3rd-person =
+    { $chance ->
+        [1] Creates
+       *[other] create
+    }
+-cause-3rd-person =
+    { $chance ->
+        [1] Causes
+       *[other] cause
+    }
+-satiate-3rd-person =
+    { $chance ->
+        [1] Satiates
+       *[other] satiate
+    }
 entity-effect-guidebook-spawn-entity =
     { $chance ->
         [1] Creates
@@ -116,22 +131,22 @@ entity-effect-guidebook-status-effect =
             { $chance ->
                 [1] Causes
                *[other] cause
-            } { LOC($key) } for at least { NATURALFIXED($time, 3) } { MANY("second", $time) } without accumulation
+            } { $key } for at least { NATURALFIXED($time, 3) } { MANY("second", $time) } without accumulation
         [add]
             { $chance ->
                 [1] Causes
                *[other] cause
-            } { LOC($key) } for at least { NATURALFIXED($time, 3) } { MANY("second", $time) } with accumulation
+            } { $key } for at least { NATURALFIXED($time, 3) } { MANY("second", $time) } with accumulation
         [set]
             { $chance ->
                 [1] Causes
                *[other] cause
-            } { LOC($key) } for at least { NATURALFIXED($time, 3) } { MANY("second", $time) } without accumulation
+            } { $key } for at least { NATURALFIXED($time, 3) } { MANY("second", $time) } without accumulation
        *[remove]
             { $chance ->
                 [1] Removes
                *[other] remove
-            } { NATURALFIXED($time, 3) } { MANY("second", $time) } of { LOC($key) }
+            } { NATURALFIXED($time, 3) } { MANY("second", $time) } of { $key }
     } { $delay ->
         [0] immediately
        *[other] after a { NATURALFIXED($delay, 3) } second delay
@@ -142,22 +157,22 @@ entity-effect-guidebook-status-effect-indef =
             { $chance ->
                 [1] Causes
                *[other] cause
-            } permanent { LOC($key) }
+            } permanent { $key }
         [add]
             { $chance ->
                 [1] Causes
                *[other] cause
-            } permanent { LOC($key) }
+            } permanent { $key }
         [set]
             { $chance ->
                 [1] Causes
                *[other] cause
-            } permanent { LOC($key) }
+            } permanent { $key }
        *[remove]
             { $chance ->
                 [1] Removes
                *[other] remove
-            } { LOC($key) }
+            } { $key }
     } { $delay ->
         [0] immediately
        *[other] after a { NATURALFIXED($delay, 3) } second delay
@@ -414,6 +429,11 @@ entity-effect-guidebook-innoculate-zombie-infection =
         [1] Cures
        *[other] cure
     } an ongoing zombie infection, and provides immunity to future infections
+entity-effect-guidebook-heal-bones =
+    { $chance ->
+        [1] Heals
+       *[other] heal
+    } all broken and fractured bones in the body
 entity-effect-guidebook-reduce-rotting =
     { $chance ->
         [1] Regenerates
@@ -440,8 +460,8 @@ entity-effect-guidebook-plant-attribute =
         [1] Adjusts
        *[other] adjust
     } { $attribute } by { $positive ->
-        [true] [color=red]{ $amount }[/color]
-       *[false] [color=green]{ $amount }[/color]
+        [false] [color=red]{ $amount }[/color]
+       *[true] [color=green]{ $amount }[/color]
     }
 entity-effect-guidebook-plant-cryoxadone =
     { $chance ->
@@ -453,6 +473,11 @@ entity-effect-guidebook-plant-phalanximine =
         [1] Restores
        *[other] restore
     } viability to a plant rendered nonviable by a mutation
+entity-effect-guidebook-plant-remove-kudzu =
+    { $chance ->
+        [1] Removes
+       *[other] remove
+    } kudzu weed growth from a plant
 entity-effect-guidebook-plant-diethylamine =
     { $chance ->
         [1] Increases
@@ -478,45 +503,13 @@ entity-effect-guidebook-plant-mutate-chemicals =
         [1] Mutates
        *[other] mutate
     } a plant to produce { $name }
-
-entity-effect-guidebook-plant-remove-kudzu =
-    { $chance ->
-        [1] Removes
-        *[other] remove
-    } kudzu weed growth from a plant
-
 entity-effect-guidebook-add-reagent-to-bloodstream =
     { $chance ->
         [1] Injects
-        *[other] inject
-    } {$quantity} of {$reagent} directly into the bloodstream
-
-entity-effect-guidebook-heal-bones =
-    { $chance ->
-        [1] Heals
-        *[other] heal
-    } all broken and fractured bones in the body
-
+       *[other] inject
+    } { $quantity } of { $reagent } directly into the bloodstream
 entity-effect-disarm =
     { $chance ->
         [1] Disarms
-        *[other] disarms
+       *[other] disarms
     } the entity
-
--cause-3rd-person =
-    { $chance ->
-        [1] Causes
-        *[other] cause
-    }
-
--create-3rd-person =
-    { $chance ->
-        [1] Creates
-        *[other] create
-    }
-
--satiate-3rd-person =
-    { $chance ->
-        [1] Satiates
-        *[other] satiate
-    }
