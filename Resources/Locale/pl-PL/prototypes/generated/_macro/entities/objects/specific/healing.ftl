@@ -1,3 +1,3 @@
 ent-PillEmergency = pill
-    .suffix = Emergency
+    .suffix = Awaryjne
     .desc = { ent-Pill.desc }

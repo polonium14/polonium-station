@@ -2,7 +2,7 @@ welder-component-welder-not-lit-message = Spawarka jest wyłączona!
 welder-component-cannot-weld-message = Spawarka nie ma wystarczającej ilości paliwa do tego!
 welder-component-no-fuel-message = Spawarka nie ma paliwa!
 welder-component-no-fuel-in-tank =
-    { CAPITALIZE($owner) } jest { GENDER($owner) ->
+    { CAPITALIZE($target) } jest { GENDER($target) ->
         [male] pusty
         [female] pusta
         [epicene] pustu

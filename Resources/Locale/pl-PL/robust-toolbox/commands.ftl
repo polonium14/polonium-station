@@ -517,3 +517,17 @@ cmd-localization_set_culture-desc = Ustawia DefaultCulture dla klienta Localizat
 cmd-localization_set_culture-help = Użycie: localization_set_culture <nazwaKultury>
 cmd-localization_set_culture-culture-name = <nazwaKultury>
 cmd-localization_set_culture-changed = Lokalizacja zmieniona na { $code } ({ $nativeName } / { $englishName })
+
+cmd-pausemap-desc = Pauses a map, pausing all simulation processing on it.
+
+cmd-pausemap-help = Usage: pausemap <map ID>
+
+cmd-unpausemap-desc = Unpauses a map, resuming all simulation processing on it.
+
+cmd-unpausemap-help = Usage: unpausemap <map ID>
+
+cmd-querymappaused-desc = Check whether a map is paused or not.
+
+cmd-querymappaused-help = Usage: querymappaused <map ID>
+
+cmd-addmap-hint-2 = runMapInit [true / false]

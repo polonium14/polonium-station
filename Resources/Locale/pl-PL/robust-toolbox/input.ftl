@@ -74,3 +74,9 @@ input-key-RSystem-mac = Prawy Cmd
 input-key-LSystem-linux = Lewy Meta
 input-key-RSystem-linux = Prawy Meta
 input-key-unknown = <nieznany klawisz>
+
+input-key-Alt-mac = ⌥
+
+input-key-CapsLock = Caps Lock
+
+input-key-ScrollLock = Scroll Lock

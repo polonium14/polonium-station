@@ -29,5 +29,5 @@ ent-CrayonPurple = purple crayon
 ent-CrayonBoxEmpty = crayon box
     .desc = It's a box of crayons.
 ent-CrayonBox = { ent-CrayonBoxEmpty }
-    .suffix = Filled
+    .suffix = Wypełnione
     .desc = { ent-CrayonBoxEmpty.desc }

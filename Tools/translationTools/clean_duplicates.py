@@ -12,12 +12,14 @@
 
 import argparse
 import os
+import re
 import typing
 from datetime import datetime
 
 from fluent.syntax import ast, FluentParser
 
 ENTRY_TYPES = (ast.Message,)
+KEY_RE = re.compile(r'^(-?[A-Za-z][A-Za-z0-9_-]*)\s*=', re.MULTILINE)
 
 
 def find_top_level_dir(start_dir: str) -> str:
@@ -62,20 +64,36 @@ def read_file_text(file_path: str) -> typing.Optional[str]:
 
 
 def write_file_text(file_path: str, content: str) -> None:
-    with open(file_path, 'w', encoding='utf-8', newline='\n') as file:
-        file.write(content)
+    text = content.replace('\r\n', '\n').replace('\r', '\n')
+    newline = '\n'
+    if os.path.isfile(file_path):
+        with open(file_path, 'rb') as raw:
+            sample = raw.read(8192)
+        if b'\r\n' in sample:
+            newline = '\r\n'
+    elif os.name == 'nt':
+        newline = '\r\n'
+    if newline != '\n':
+        text = text.replace('\n', newline)
+    with open(file_path, 'w', encoding='utf-8', newline='') as file:
+        file.write(text)
 
 
 def find_ent_occurrences(content: str) -> typing.List[typing.Tuple[str, int, int]]:
     occurrences: typing.List[typing.Tuple[str, int, int]] = []
     parsed = FluentParser().parse(content)
     for element in parsed.body:
-        if not isinstance(element, ENTRY_TYPES):
+        if isinstance(element, ENTRY_TYPES):
+            key = element.id.name
+            if not element.span:
+                continue
+            occurrences.append((key, element.span.start, element.span.end))
             continue
-        key = element.id.name
-        if not element.span:
+        if not isinstance(element, ast.Junk) or not element.span or not element.content:
             continue
-        occurrences.append((key, element.span.start, element.span.end))
+        for match in KEY_RE.finditer(element.content):
+            start = element.span.start + match.start()
+            occurrences.append((match.group(1), start, element.span.end))
     return occurrences
 
 

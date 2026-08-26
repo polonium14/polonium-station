@@ -126,13 +126,3 @@ JobVisitor = Visitor
 JobWarden = Warden
 
 job-name-centcomoff = Urzędnik Centralnego Dowództwa
-
-JobBoxer = Bokser
-
-JobCommandMaid = Command Maid
-
-JobPartyMaker = Wodzirej
-
-JobSecurityClown = Klown Ochroniarz
-
-JobZookeeper = Opiekun Zoo
