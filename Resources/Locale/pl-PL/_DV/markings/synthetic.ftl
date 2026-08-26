@@ -1,4 +1,3 @@
-
 # Antennae
 marking-SynthAntennaBasic = Synth Antenna Basic
 marking-SynthAntennaBasic-synth_antenna_basic = Primary
