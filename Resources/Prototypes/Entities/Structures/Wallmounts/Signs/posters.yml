@@ -259,6 +259,7 @@
   description: "A poster urging the viewer to rebel against Nanotrasen."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster23_contraband
 
 - type: entity
