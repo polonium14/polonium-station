@@ -1,1 +1,1 @@
-tab-container-not-tab-title-provided = Bez nazwy
+tab-container-not-tab-title-provided = No title
