@@ -1,3 +1,3 @@
-item-toggle-activate = Aktywuj
-item-toggle-deactivate = Dezaktywuj
-item-toggle-size-fail = Nie mieści się.
+item-toggle-activate = Activate
+item-toggle-deactivate = Deactivate
+item-toggle-size-fail = Doesn't fit.
