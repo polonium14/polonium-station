@@ -1,1 +1,1 @@
-set-outfit-verb-get-data-text = Ustaw strój
+set-outfit-verb-get-data-text = Set Outfit
