@@ -1,11 +1,9 @@
-self-inspect-trauma-BoneDamage = boli w środku
-inspect-trauma-BoneDamage = wygląda na zwichniętą
-
-popup-trauma-BoneDamage-Normal = { $part } wygląda już w porządku.
-popup-trauma-BoneDamage-Damaged = { $part } boli od uszkodzenia.
-popup-trauma-BoneDamage-Cracked = { $part } trzeszczy złowieszczo!
-popup-trauma-BoneDamage-Broken = { $part } pęka z przerażającym trzaskiem!
-
-popup-trauma-OrganDamage-Normal = { $part } znów funkcjonuje prawidłowo.
-popup-trauma-OrganDamage-Damaged = { $part } boli od uszkodzenia.
-popup-trauma-OrganDamage-Destroyed = { $part } ulega całkowitemu zniszczeniu!
+self-inspect-trauma-BoneDamage = hurts inside
+inspect-trauma-BoneDamage = looks dislocated
+popup-trauma-BoneDamage-Normal = Your { $part } feels fine again.
+popup-trauma-BoneDamage-Damaged = Your { $part } aches painfully.
+popup-trauma-BoneDamage-Cracked = Your { $part } cracks ominously!
+popup-trauma-BoneDamage-Broken = Your { $part } snaps with a sickening crack!
+popup-trauma-OrganDamage-Normal = Your { $part } feels normal again.
+popup-trauma-OrganDamage-Damaged = Your { $part } aches with damage.
+popup-trauma-OrganDamage-Destroyed = Your { $part } is completely destroyed!
