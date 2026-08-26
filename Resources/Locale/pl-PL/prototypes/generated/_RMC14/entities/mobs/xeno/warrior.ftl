@@ -1,3 +1,3 @@
-ent-CMXenoWarrior = wojownik
-    .desc = Krępy obcy z opancerzonym pancerzem.
+ent-CMXenoWarrior = Warrior
+    .desc = A beefy alien with an armored carapace.
     .gender = male
