@@ -1,6 +1,6 @@
-ent-BoxDonkSoftBase = pudełko na piankowe strzałki
+ent-BoxDonkSoftBase = toy ammunition box
     .desc = { ent-BaseItem.desc }
-ent-BoxDonkSoftBox = pudełko na piankowe strzałki
+ent-BoxDonkSoftBox = foam dart box
     .desc = A cardboard box of foam darts.
-ent-BoxCartridgeCap = pudełko na naboje do pistoletów na kapiszony
+ent-BoxCartridgeCap = cap gun cartridge box
     .desc = A cardboard box of cap gun cartridges.
