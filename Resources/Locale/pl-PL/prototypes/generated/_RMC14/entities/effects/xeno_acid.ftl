@@ -1,6 +1,6 @@
-ent-XenoAcidNormal = żrący kwas
+ent-XenoAcidNormal = corrosive acid
     .desc = { "" }
     .gender = male
-ent-XenoAcidWeak = słaby żrący kwas
+ent-XenoAcidWeak = weak corrosive acid
     .desc = { "" }
     .gender = male
