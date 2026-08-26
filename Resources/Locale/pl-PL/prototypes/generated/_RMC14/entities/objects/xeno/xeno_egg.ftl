@@ -1,3 +1,3 @@
-ent-XenoEgg = jajo ksenomorfa
-    .desc = Duże cętkowane jajo. Wykluje się z niego larwa, gdy będzie gotowe.
+ent-XenoEgg = xenonid egg
+    .desc = A large mottled egg. It will hatch into a larva when ready.
     .gender = neuter
