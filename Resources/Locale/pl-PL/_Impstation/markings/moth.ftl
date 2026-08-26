@@ -1,4 +1,3 @@
-
 marking-MothBodyClaw = Claw Scars
 marking-MothBodyClaw-moth_body_claw = Claw Scars
 marking-MothBurnLeft = Burn Scar (Left)
