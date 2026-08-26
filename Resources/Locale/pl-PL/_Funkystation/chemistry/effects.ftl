@@ -1,4 +1,3 @@
-
 reagent-effect-guidebook-cure-changeling =
     { $chance ->
         [1] Usuwa każdą
