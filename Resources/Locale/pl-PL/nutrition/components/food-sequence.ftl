@@ -38,7 +38,6 @@ food-sequence-content-chevre = chèvre
 food-sequence-content-tofu = tofu
 food-sequence-content-brain = brain
 food-sequence-content-tongue = tongue
-food-sequence-content-animal-brain = animal brain
 food-sequence-content-ears = ear
 food-sequence-content-stomach = stomach
 food-sequence-content-liver = liver
@@ -46,7 +45,6 @@ food-sequence-content-clump = clump
 food-sequence-content-raw-meat = raw meat
 food-sequence-content-meat = meat
 food-sequence-content-carp = carp meat
-food-sequence-content-cooked-bacon = bacon
 food-sequence-content-bear = bear meat
 food-sequence-content-penguin = penguin meat
 food-sequence-content-corgi = corgi meat
@@ -55,8 +53,6 @@ food-sequence-content-rat = rat
 food-sequence-content-lizard = lizard meat
 food-sequence-content-plant = plant meat
 food-sequence-content-rotten = rotten meat
-food-sequence-content-mystery-meat = mystery meat
-food-sequence-content-mysterycutlet-cooked = mystery cutlet
 food-sequence-content-spider = spider legs
 food-sequence-content-carrot = carrot
 food-sequence-content-cabbage = cabbage
@@ -64,7 +60,7 @@ food-sequence-content-garlic = garlic
 food-sequence-content-pineapple = pineapple
 food-sequence-content-onion = onion
 food-sequence-content-ambrosia = ambrosia
-food-sequence-content-galaxy = gwiaździk
+food-sequence-content-galaxy = galaxythistle
 food-sequence-content-glasstle = glasstle
 food-sequence-content-gatfruit = gatfruit
 food-sequence-content-koibean = koibean
@@ -81,18 +77,12 @@ food-sequence-content-spacemans-trumpet = spaceman's trupmet
 food-sequence-content-cherry = cherry
 food-sequence-content-snail = snail
 food-sequence-content-anomaly-berry = anomaly berry
+# added missing - Yaket
+food-sequence-content-mystery-meat = mystery meat
+food-sequence-content-mysterycutlet-cooked = mystery cutlet
 
 # BURGERS
 
-food-sequence-content-patty = meat patty
-food-sequence-content-dragon-cooked = dragon steak
-food-sequence-content-dragoncutlet-cooked = dragon cutlet
-food-sequence-content-bacon-cooked = bacon
-food-sequence-content-meatball-cooked = meatball
-food-sequence-content-chanterelle = chanterelle
-food-sequence-content-chevre-disk = chevre
-food-sequence-content-tofu-slice = tofu
-food-sequence-content-roingus = roingus
 food-sequence-burger-gen = { $content }burger
 food-sequence-burger-content-raw-meat = raw
 food-sequence-burger-content-meat = meaty
@@ -167,8 +157,11 @@ food-sequence-cotton-burger-content-plushie-xeno = xeno
 food-sequence-cotton-burger-content-plushie-penguin = peng
 food-sequence-cotton-burger-content-plushie-human = uristmc
 food-sequence-cotton-burger-content-plushie-moth = fluff
+food-sequence-cotton-burger-content-plushie-vulp = vulp
 food-sequence-cotton-burger-content-plushie-ian = corgi
 food-sequence-cotton-burger-content-among-pequeno = sus
+food-sequence-cotton-burger-content-plushie-sheep = wooly
+food-sequence-cotton-burger-content-plushie-sheepspace = cosmicwooly
 
 # TACO
 
@@ -177,9 +170,14 @@ food-sequence-taco-gen = taco with { $content }
 # SKEWER
 
 food-sequence-skewer-gen = { $content } kebab
-
-food-sequence-cotton-burger-content-plushie-vulp = vulp
-
-food-sequence-cotton-burger-content-plushie-sheep = wooly
-
-food-sequence-cotton-burger-content-plushie-sheepspace = cosmicwooly
+food-sequence-content-animal-brain = animal brain
+food-sequence-content-cooked-bacon = bacon
+food-sequence-content-patty = meat patty
+food-sequence-content-dragon-cooked = dragon steak
+food-sequence-content-dragoncutlet-cooked = dragon cutlet
+food-sequence-content-bacon-cooked = bacon
+food-sequence-content-meatball-cooked = meatball
+food-sequence-content-chanterelle = chanterelle
+food-sequence-content-chevre-disk = chevre
+food-sequence-content-tofu-slice = tofu
+food-sequence-content-roingus = roingus
