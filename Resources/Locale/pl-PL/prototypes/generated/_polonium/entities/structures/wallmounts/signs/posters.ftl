@@ -1,4 +1,4 @@
 ent-NFZLogo = NFZ Logo
-    .desc = Nano Fundusz Zdrowia – Najlepsza korporacja ubezpieczeniowa w galaktyce!
-ent-PosterContrabandLustyExomorph = Jurna Egzomorfka
-    .desc = Heretycki plakat przedstawiający tytułową gwiazdę równie heretyckiej książki.
+    .desc = Nano Fundusz Zdrowia - The best health insurance company in the galaxy.
+ent-PosterContrabandLustyExomorph = Lusty Exomorph
+    .desc = A heretical poster depicting the titular star of an equally heretical book.
