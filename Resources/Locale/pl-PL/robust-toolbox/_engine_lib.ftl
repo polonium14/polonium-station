@@ -1,81 +1,84 @@
 # Used internally by the THE() function.
 zzzz-the =
     { PROPER($ent) ->
-       *[false] { $ent }
+       *[false] the { $ent }
         [true] { $ent }
     }
 # Used internally by the SUBJECT() function.
 zzzz-subject-pronoun =
     { GENDER($ent) ->
-        [male] on
-        [female] ona
-        [epicene] onu
-       *[neuter] ono
+        [male] he
+        [female] she
+        [epicene] they
+       *[neuter] it
     }
 # Used internally by the OBJECT() function.
 zzzz-object-pronoun =
     { GENDER($ent) ->
-        [male] jego
-        [female] ją
-        [epicene] jeno
-       *[neuter] je
+        [male] him
+        [female] her
+        [epicene] them
+       *[neuter] it
     }
 # Used internally by the DAT-OBJ() function.
 # Not used in en-US. Created to support other languages.
 # (e.g., "to him," "for her")
 zzzz-dat-object =
     { GENDER($ent) ->
-        [male] jemu
-        [female] jej
-        [epicene] jenu
-       *[neuter] mu
+        [male] him
+        [female] her
+        [epicene] them
+       *[neuter] it
     }
 # Used internally by the GENITIVE() function.
 # Not used in en-US. Created to support other languages.
 # e.g., "у него" (Russian), "seines Vaters" (German).
 zzzz-genitive =
     { GENDER($ent) ->
-        [male] jego
-        [female] jej
-        [epicene] jeno
-       *[neuter] jego
+        [male] his
+        [female] her
+        [epicene] their
+       *[neuter] its
     }
 # Used internally by the POSS-PRONOUN() function.
 zzzz-possessive-pronoun =
     { GENDER($ent) ->
-        [male] jego
-        [female] jej
-        [epicene] jenu
-       *[neuter] jego
+        [male] his
+        [female] hers
+        [epicene] theirs
+       *[neuter] its
     }
 # Used internally by the POSS-ADJ() function.
 zzzz-possessive-adjective =
     { GENDER($ent) ->
-        [male] jego
-        [female] jej
-        [epicene] jeno
-       *[neuter] jego
+        [male] his
+        [female] her
+        [epicene] their
+       *[neuter] its
     }
 # Used internally by the REFLEXIVE() function.
 zzzz-reflexive-pronoun =
     { GENDER($ent) ->
-        [male] się
-        [female] się
-        [epicene] się
-       *[neuter] się
+        [male] himself
+        [female] herself
+        [epicene] themselves
+       *[neuter] itself
     }
 # Used internally by the CONJUGATE-BE() function.
 zzzz-conjugate-be =
     { GENDER($ent) ->
-       *[other] jest
+        [epicene] are
+       *[other] is
     }
 # Used internally by the CONJUGATE-HAVE() function.
 zzzz-conjugate-have =
     { GENDER($ent) ->
-       *[other] ma
+        [epicene] have
+       *[other] has
     }
 # Used internally by the CONJUGATE-BASIC() function.
 zzzz-conjugate-basic =
     { GENDER($ent) ->
+        [epicene] { $first }
        *[other] { $second }
     }
