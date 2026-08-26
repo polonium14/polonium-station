@@ -315,6 +315,7 @@
   description: "All the colors of the bloody murder rainbow."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster29_contraband
 
 - type: entity
@@ -360,6 +361,7 @@
   description: "This poster commemorates the bravery of the rogue drone; once exiled, and then ultimately destroyed by CentComm."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster35_contraband
 
 - type: entity
@@ -580,6 +582,7 @@
   description: "Enlist with the Gorlex Marauders today! See the galaxy, kill corpos, get paid!"
   components:
     - type: Sprite
+      sprite: _Polonium/Structures/Wallmounts/posters.rsi
       state: poster60_contraband
 
 - type: entity

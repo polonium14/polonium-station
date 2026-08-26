@@ -80,10 +80,16 @@
             "name": "poster26_legit"
         },
         {
+            "name": "poster29_contraband"
+        },
+        {
             "name": "poster29_legit"
         },
         {
             "name": "poster34_legit"
+        },
+        {
+            "name": "poster35_contraband"
         },
         {
             "name": "poster39_legit"
@@ -99,6 +105,9 @@
         },
         {
             "name": "poster56_legit"
+        },
+        {
+            "name": "poster60_contraband"
         }
     ]
 }
