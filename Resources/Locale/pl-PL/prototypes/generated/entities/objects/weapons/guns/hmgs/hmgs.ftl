@@ -1,4 +1,4 @@
 ent-BaseWeaponHeavyMachineGun = BaseWeaponHeavyMachineGun
-    .desc = Spryskaj i módl się.
+    .desc = Spray and pray.
 ent-WeaponMinigun = minigun
-    .desc = Wzzzzzt! Rahrahrahrah! Wrrrrr! Używa amunicji karabinowej .10.
+    .desc = Vzzzzzt! Rahrahrahrah! Vrrrrr! Uses .10 rifle ammo.
