@@ -1,11 +1,4 @@
-cmd-togglechat-desc = Włącza lub wyłącza wskazany czat na serwerze.
-cmd-togglechat-help = Użycie: togglechat [nazwa czatu] LUB togglechat [nazwa czatu] [wartość]
-
-cmd-setdeadchat-looc-enabled = Czat zmarłych został włączony.
-cmd-setdeadchat-looc-disabled = Czat zmarłych został wyłączony.
-
-
-
-
-
-
+cmd-togglechat-desc = Toggles the specified chat on/off for the server.
+cmd-togglechat-help = Usage: togglechat [chat name] OR togglechat [chat name] [value]
+cmd-setdeadchat-looc-enabled = Dead chat has been enabled.
+cmd-setdeadchat-looc-disabled = Dead chat has been disabled.
