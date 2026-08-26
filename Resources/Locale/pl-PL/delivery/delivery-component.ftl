@@ -1,28 +1,27 @@
-delivery-recipient-examine = Adresat: { $recipient }, { $job }.
-delivery-already-opened-examine = Przesyłka została już otwarta.
-delivery-earnings-examine = Dostarczenie tej przesyłki przyniesie stacji [color=yellow]{ $spesos }[/color] spesos.
-delivery-recipient-no-name = Bez nazwiska
-delivery-recipient-no-job = Nieznane
-delivery-unlocked-self = Odblokowujesz odciskiem palca: { $delivery }.
-delivery-opened-self = Otwierasz: { $delivery }.
-delivery-unlocked-others = { CAPITALIZE($recipient) } odblokowuje odciskiem palca: { $delivery }.
-delivery-opened-others = { CAPITALIZE($recipient) } otwiera: { $delivery }.
-delivery-unlock-verb = Odblokuj
-delivery-open-verb = Otwórz
-delivery-slice-verb = Rozetnij
+delivery-recipient-examine = This one is meant for { $recipient }, { $job }.
+delivery-already-opened-examine = It was already opened.
+delivery-earnings-examine = Delivering this will earn the station [color=yellow]{ $spesos }[/color] spesos.
+delivery-recipient-no-name = Unnamed
+delivery-recipient-no-job = Unknown
+delivery-unlocked-self = You unlock the { $delivery } with your fingerprint.
+delivery-opened-self = You open the { $delivery }.
+delivery-unlocked-others = { CAPITALIZE($recipient) } unlocked the { $delivery } with { POSS-ADJ($possadj) } fingerprint.
+delivery-opened-others = { CAPITALIZE($recipient) } opened the { $delivery }.
+delivery-unlock-verb = Unlock
+delivery-open-verb = Open
+delivery-slice-verb = Slice open
 delivery-teleporter-amount-examine =
     { $amount ->
-        [one] Zawiera [color=yellow]{ $amount }[/color] przesyłkę.
-        [few] Zawiera [color=yellow]{ $amount }[/color] przesyłki.
-       *[many] Zawiera [color=yellow]{ $amount }[/color] przesyłek.
+        [one] It contains [color=yellow]{ $amount }[/color] delivery.
+       *[other] It contains [color=yellow]{ $amount }[/color] deliveries.
     }
-delivery-teleporter-empty = { CAPITALIZE($entity) } jest pusty.
-delivery-teleporter-empty-verb = Zabierz pocztę
+delivery-teleporter-empty = The { $entity } is empty.
+delivery-teleporter-empty-verb = Take mail
 # modifiers
-delivery-priority-examine = [color=orange]PRIORYTET[/color] - { $type }. Masz jeszcze [color=orange]{ $time }[/color] czasu na dostarczenie, aby otrzymać bonus.
-delivery-priority-delivered-examine = [color=orange]PRIORYTET[/color] - { $type }. Dostarczono na czas.
-delivery-priority-expired-examine = [color=orange]PRIORYTET[/color] - { $type }. Czas minął.
-delivery-fragile-examine = [color=red]OSTROŻNIE[/color] - { $type }. Dostarcz w całości, aby otrzymać bonus.
-delivery-fragile-broken-examine = [color=red]OSTROŻNIE[/color] - { $type }. Widoczne są poważne uszkodzenia.
-delivery-bomb-examine = [color=purple]BOMBA[/color] - { $type }. O nie.
-delivery-bomb-primed-examine = [color=purple]BOMBA[/color] - { $type }. Czytanie tego to strata czasu.
+delivery-priority-examine = This is a [color=orange]priority { $type }[/color]. You have [color=orange]{ $time }[/color] left to deliver it to get a bonus.
+delivery-priority-delivered-examine = This is a [color=orange]priority { $type }[/color]. It got delivered on time.
+delivery-priority-expired-examine = This is a [color=orange]priority { $type }[/color]. It ran out of time.
+delivery-fragile-examine = This is a [color=red]fragile { $type }[/color]. Deliver it intact for a bonus.
+delivery-fragile-broken-examine = This is a [color=red]fragile { $type }[/color]. It looks badly damaged.
+delivery-bomb-examine = This is a [color=purple]bomb { $type }[/color]. Oh no.
+delivery-bomb-primed-examine = This is a [color=purple]bomb { $type }[/color]. Reading this is a bad use of your time.
