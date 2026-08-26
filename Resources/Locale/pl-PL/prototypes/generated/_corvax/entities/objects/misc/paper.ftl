@@ -1,2 +1,2 @@
-ent-StationGoalPaper = wiadomość CD o celu stacji
-    .desc = Wygląda na to, że macie dużo pracy do wykonania.
+ent-StationGoalPaper = station goal centcomm message
+    .desc = It looks like you have a lot of work to do.
