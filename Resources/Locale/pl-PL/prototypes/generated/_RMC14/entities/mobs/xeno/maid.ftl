@@ -1,3 +1,3 @@
-ent-CMXenoMaid = ksenopokojówka
-    .desc = Słodka, dopóki się nie zdenerwuje.
+ent-CMXenoMaid = Xeno Maid
+    .desc = Cute until fed up.
     .gender = female
