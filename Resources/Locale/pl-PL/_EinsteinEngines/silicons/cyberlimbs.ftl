@@ -1,4 +1,3 @@
-
 marking-MobIPCHeadDefault = Standard Operational Monitor
 marking-MobIPCTorsoDefault = Standard Robotic Chassis
 marking-MobIPCTorsoFemaleDefault = Standard Robotic Chassis
