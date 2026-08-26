@@ -1,3 +1,3 @@
-ent-MobHellspawn = pomiot piekła
-    .desc = Niepowstrzymana siła rzezi.
+ent-MobHellspawn = hellspawn
+    .desc = An unstoppable force of carnage.
     .gender = male
