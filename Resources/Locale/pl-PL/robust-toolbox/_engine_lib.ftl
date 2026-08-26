@@ -77,5 +77,6 @@ zzzz-conjugate-have =
 # Used internally by the CONJUGATE-BASIC() function.
 zzzz-conjugate-basic =
     { GENDER($ent) ->
+        [epicene] { $first }
        *[other] { $second }
     }

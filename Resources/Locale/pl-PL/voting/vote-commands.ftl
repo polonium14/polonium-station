@@ -12,8 +12,8 @@ cmd-createvote-arg-vote-type = <typ głosowania>
 
 cmd-customvote-desc = Tworzy niestandardowe głosowanie
 cmd-customvote-help = Użycie: customvote <tytuł> <opcja1> <opcja2> [opcja3...]
-cmd-customvote-on-finished-tie = Remis pomiędzy: { $ties }!
-cmd-customvote-on-finished-win = Wygrywa { $winner }!
+cmd-customvote-on-finished-tie = Głosowanie '{ $title }' zakończone: remis pomiędzy { $ties }!
+cmd-customvote-on-finished-win = Głosowanie '{ $title }' zakończone: wygrywa { $winner }!
 cmd-customvote-arg-title = <tytuł>
 cmd-customvote-arg-option-n = <opcja{ $n }>
 
