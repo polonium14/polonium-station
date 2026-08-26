@@ -1,8 +1,8 @@
-ent-StationAnchorBase = kotwica stacji
-    .desc = Uniemożliwia stacją przemieszczanie się.
+ent-StationAnchorBase = station anchor
+    .desc = Prevents stations from moving.
     .suffix = On
 ent-StationAnchorIndestructible = { ent-StationAnchorBase }
-    .suffix = Niezniszczalny, Niezasilony
+    .suffix = Indestructible, Unpowered
     .desc = { ent-StationAnchorBase.desc }
 ent-StationAnchor = { ent-StationAnchorBase }
     .desc = { ent-StationAnchorBase.desc }
