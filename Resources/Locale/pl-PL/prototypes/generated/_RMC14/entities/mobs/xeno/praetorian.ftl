@@ -1,3 +1,3 @@
-ent-CMXenoPraetorian = pretorian
-    .desc = Ogromna, groźna bestia obcego.
+ent-CMXenoPraetorian = Praetorian
+    .desc = A huge, looming beast of an alien.
     .gender = male
