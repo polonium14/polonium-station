@@ -17,7 +17,7 @@ cargo-console-menu-categories-label = Kategorie:{ " " }
 cargo-console-menu-search-bar-placeholder = Szukaj
 cargo-console-menu-requests-label = Prośby
 cargo-console-menu-orders-label = Zamówienia
-cargo-console-menu-order-reason-description = Powód: { $orderReason }
+cargo-console-menu-order-reason-description = Powód: { $reason }
 cargo-console-menu-populate-categories-all-text = Wszystko
 cargo-console-menu-populate-orders-cargo-order-row-product-name-text = Zamówiono przez: {$orderRequester} z [color={$accountColor}]{$account}[/color]
 cargo-console-menu-cargo-order-row-approve-button = Akceptuj

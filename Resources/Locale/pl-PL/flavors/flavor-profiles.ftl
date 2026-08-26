@@ -312,7 +312,6 @@ flavor-complex-demons-blood = siódmy krąg piekła
 flavor-complex-devils-kiss = kanibalizm
 flavor-complex-driest-martini = pijany mim
 # Konflikt z Resources\Locale\pl-PL\_Funkystation\flavors\flavor-profiles.ftl
-# flavor-complex-eggnog = roztopiony krem jajeczny
 flavor-complex-erika-surprise = błąd barmana
 flavor-complex-gin-fizz = orzeźwiająco i cytrynowo
 flavor-complex-gildlager = złoto cara

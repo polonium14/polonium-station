@@ -1,0 +1,14 @@
+ent-CMBaseWallXeno = ściana żywiczna
+    .desc = Dziwny śluz zestalony w ścianę.
+ent-WallXenoResin = ściana żywiczna
+    .desc = Dziwny śluz zestalony w ścianę.
+ent-WallXenoResinThick = gruba ściana żywiczna
+    .desc = Dziwny śluz zestalony w grubą ścianę.
+ent-WallXenoResinWeak = słaba ściana żywiczna
+    .desc = Dziwny śluz zestalony w ścianę. Już wygląda, jakby zaraz się zawaliła...
+ent-BaseMembraneXeno = membrana żywiczna
+    .desc = { ent-CMBaseWallXeno.desc }
+ent-WallXenoMembrane = membrana żywiczna
+    .desc = Dziwny śluz wystarczająco przezroczysty, by przepuszczać światło.
+ent-WallXenoMembraneThick = gruba membrana żywiczna
+    .desc = Dziwny gruby śluz ledwie wystarczająco przezroczysty, by przepuszczać światło.

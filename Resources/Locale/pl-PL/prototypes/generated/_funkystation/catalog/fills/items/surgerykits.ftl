@@ -1,3 +1,3 @@
 ent-SurgeryKitFilled = { ent-SurgeryKit }
-    .suffix = Filled
+    .suffix = Wypełnione
     .desc = { ent-SurgeryKit.desc }

@@ -1,6 +1,6 @@
 ent-DresserBlueshieldOfficerFilled = { ent-Dresser }
-    .suffix = Filled, Blueshield
+    .suffix = Wypełnione, Blueshield
     .desc = { ent-Dresser.desc }
 ent-DresserNanorepFilled = { ent-Dresser }
-    .suffix = Filled, Nanorep
+    .suffix = Wypełnione, Nanorep
     .desc = { ent-Dresser.desc }

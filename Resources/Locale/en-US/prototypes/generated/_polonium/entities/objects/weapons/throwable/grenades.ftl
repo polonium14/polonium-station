@@ -1,0 +1,14 @@
+ent-HalonGrenade = halon grenade
+    .desc = An emergency firefighting grenade that floods an area with halon gas, smothering fires by devouring their oxygen. Do not deploy where people still need to breathe.
+ent-PiemageddonGrenadeAdmeme = Piemageddon grenade
+    .desc = Chains into more of itself three times, before erupting into a storm of pies.
+    .suffix = Admeme
+ent-PiemageddonChain2Admeme = Piemageddon grenade
+    .suffix = Admeme
+    .desc = { ent-VolatileGrenadeBase.desc }
+ent-PiemageddonChain3Admeme = Piemageddon grenade
+    .suffix = Admeme
+    .desc = { ent-VolatileGrenadeBase.desc }
+ent-PiemageddonTerminalAdmeme = Piemageddon pie
+    .suffix = Admeme
+    .desc = { ent-VolatileGrenadeBase.desc }

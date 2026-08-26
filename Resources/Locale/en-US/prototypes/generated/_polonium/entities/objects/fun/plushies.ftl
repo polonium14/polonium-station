@@ -1,7 +1,7 @@
-ent-PlushieItanKio = Pluszak Itan-Kio
-    .desc = Pluszowa reprezentacja bardzo (nie)kompetentnego technika atmosferyki
-ent-ItanKioGoBoom = Pluszak Itan-Kio
-    .desc = Instrukcja obsługi: Przykręć jego ogon i rzuć w ofiarę twojego wyboru
-    .suffix = BOMBA, NIE MAPOWAĆ
-ent-PlushieMothDeathshead = pluszak Asa Trupiogłowego
-    .desc = Puszysty pluszak przypominający pewnego barmana ćmę. Widnieje na nim mały napis "Nie dawać whiskey po północy".
+ent-PlushieItanKio = Itan-Kio plushie
+    .desc = A plush representation of a very (in)competent atmospheric technician.
+ent-ItanKioGoBoom = Itan-Kio plushie
+    .desc = User manual: Twist its tail and throw it at a victim of your choosing.
+    .suffix = BOMB, DO NOT MAP
+ent-PlushieMothDeathshead = deathshead moth plushie
+    .desc = A fluffy plushie resembling a certain moth bartender. A small inscription reads "Don't serve whiskey after midnight".

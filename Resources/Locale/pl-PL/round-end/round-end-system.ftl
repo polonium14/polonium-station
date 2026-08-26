@@ -6,5 +6,5 @@ round-end-system-shuttle-auto-called-announcement = Automatyczny wahadłowiec zm
 round-end-system-shuttle-recalled-announcement = Wahadłowiec awaryjny został odwołany.
 round-end-system-shuttle-sender-announcement = Stacja
 round-end-system-round-restart-eta-announcement = Restart rundy za { $time } { $units }...
-eta-units-minutes = minut
-eta-units-seconds = sekund
+eta-units-minutes = minut { $amount }
+eta-units-seconds = sekund { $amount }

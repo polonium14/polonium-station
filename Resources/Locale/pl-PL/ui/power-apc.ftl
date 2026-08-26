@@ -11,6 +11,6 @@ apc-menu-power-state-none = Brak
 # Tekst pomocniczy na dole
 apc-menu-flavor-left = Skontaktuj się z inżynierem w celu uzyskania pomocy.
 apc-menu-flavor-right = wersja 1.2
-apc-menu-power-state-label-text = { POWERWATTS($power) }
+apc-menu-power-state-label-text = { POWERWATTS($power) } { $maxLoad }
 
 apc-menu-power-state-label-tripped = OVERLOAD

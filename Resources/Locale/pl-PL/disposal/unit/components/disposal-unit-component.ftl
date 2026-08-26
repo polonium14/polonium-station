@@ -1,6 +1,6 @@
 ## UI
 
-ui-disposal-unit-title = Zsyp
+ui-disposal-unit-title = Zsyp { $name }
 ui-disposal-unit-label-state = Stan:
 ui-disposal-unit-label-pressure = Ciśnienie:
 ui-disposal-unit-label-status = Gotowy

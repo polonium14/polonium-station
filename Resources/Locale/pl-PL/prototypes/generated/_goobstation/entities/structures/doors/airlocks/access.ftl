@@ -1,12 +1,12 @@
 ent-AirlockCentralCommandCommandLocked = { ent-AirlockCentralCommand }
-    .suffix = Command, Locked
+    .suffix = Dowództwo, Zablokowane
     .desc = { ent-AirlockCentralCommand.desc }
 ent-AirlockCentralCommandCommandGlassLocked = { ent-AirlockCentralCommandGlass }
-    .suffix = Command, Locked
+    .suffix = Dowództwo, Zablokowane
     .desc = { ent-AirlockCentralCommandGlass.desc }
 ent-AirlockCommandCommandLocked = { ent-AirlockCommand }
-    .suffix = CentCommCap, Locked
+    .suffix = CentCommCap, Zablokowane
     .desc = { ent-AirlockCommand.desc }
 ent-AirlockCommandCommandGlassLocked = { ent-AirlockCommandGlass }
-    .suffix = CentCommCap, Locked
+    .suffix = CentCommCap, Zablokowane
     .desc = { ent-AirlockCommandGlass.desc }

@@ -1,4 +1,4 @@
-guidebook-reagent-effect-description =
+guidebook-reagent-effect-description = { $quantity } { $reagent }
     { $chance ->
         [1] { $effect }
        *[other] Ma { NATURALPERCENT($chance, 2) } szansę na { $effect }

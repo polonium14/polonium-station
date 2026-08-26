@@ -3,11 +3,8 @@
 
 # arachnids
 # Konflikty z Resources\Locale\pl-PL\_Impstation\markings\arachnid.ftl są wykomentowane
-# marking-SpiderMirror = Mirror
 marking-SpiderMirror-spidermirror = Lustro
-# marking-SpiderGlowEyes = Glowing Eyes
 marking-SpiderGlowEyes-spidergloweyes = Świecące oczy
-# marking-SpiderEyesMulti = Multicolor Eyes
 marking-SpiderEyesMulti-spidereyesmulti1 = Górne
 marking-SpiderEyesMulti-spidereyesmulti2 = Środkowe górne
 marking-SpiderEyesMulti-spidereyesmulti3 = Środkowe dolne
@@ -209,22 +206,24 @@ marking-VoxBelly = Brzuch
 marking-VoxBelly-voxbelly = Brzuch
 marking-VoxTailBalled = Młockarz
 marking-VoxTailBalled-voxtailballed = Młockarz
-marking-VoxTailSplit = Bliźniaczy
+
 marking-VoxTailSplit-voxtailsplit = Bliźniaczy
 # upstream vox markings dont have localized names. lmfao
 # these are just straight up broken and shouldnt be visible from the markings menu period but ALAS im not skilled enough to remove them so you get this stupid botch job instead
 # moving this furniture a few inches to the left -cc
-marking-VoxBeak = Domyślny Dziób [NIE UŻYWAĆ]
+
 marking-VoxLArmScales = Łuski na Ramieniu L
 marking-VoxLHandScales = Łuski na Dłoni L
 marking-VoxRArmScales = Łuski na Ramieniu P
 marking-VoxRHandScales = Łuski na Dłoni P
-marking-VoxTail = Domyślny Ogon [NIE UŻYWAĆ]
-marking-VoxLFootScales = Łuski na Stopie L
-marking-VoxLLegScales = Łuski na Nodze L
+
 marking-VoxRFootScales = Łuski na Stopie P
 marking-VoxRLegScales = Łuski na Nodze P
 
 marking-ImpVoxTailSplit = Twinned
 
 marking-ImpVoxTailSplit-voxtailsplit = Twinned
+
+marking-VoxLFootScales = Foot Scales L
+
+marking-VoxLLegScales = Leg Scales L

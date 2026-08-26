@@ -44,7 +44,7 @@ thaven-mood-radio-only-desc = You firmly believe in the freedom of information. 
 thaven-mood-proper-storage-name = Proper Handling
 thaven-mood-proper-storage-desc = It is unacceptable to allow personal belongings to touch the floor. Your possessions should be properly stored, placed on tables, or exchanged by hand.
 
-thaven-mood-swearing-good-name = !@$%#ing @$^%*#@!$
+thaven-mood-swearing-good-name = !@$%#ing @$^%*#@!$ { $p }
 thaven-mood-swearing-good-desc = Swearing is the spice of any conversation, and should be used as much as reasonably possible.
 
 thaven-mood-statement-only-name = Asking Questions Is Rude
@@ -122,7 +122,7 @@ thaven-mood-centrist-desc = You are ambivalent towards any and all decisions, an
 thaven-mood-public-sector-name = Public Sector
 thaven-mood-public-sector-desc = Your job should not be done in private if it can be helped. If at all possible, you should renovate the facilities to allow public access to your workplace.
 
-thaven-mood-speech-restriction-name = {$speechType ->
+thaven-mood-speech-restriction-name = {$speechType -> { $p }
 *[FullNameAndTitle] Full Name And Title
 [NamesAreRude] Names Are Rude
 [Clarity] Clarity Is Vital

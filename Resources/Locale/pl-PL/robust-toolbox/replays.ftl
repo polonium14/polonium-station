@@ -13,10 +13,10 @@ cmd-replay-load-help = replay_load <folder powtórki>
 cmd-replay-load-hint = Folder powtórki
 cmd-replay-skip-desc = Przeskakuje do przodu lub do tyłu w czasie.
 cmd-replay-skip-help = replay_skip <tik lub przedział czasowy>
-cmd-replay-skip-hint = Tiki lub przedział czasowy (GG:MM:SS).
+cmd-replay-skip-hint = Tiki lub przedział czasowy (GG: MM:SS).
 cmd-replay-set-time-desc = Skacza do przodu lub do tyłu do zaznaczonego czasu.
 cmd-replay-set-time-help = replay_set <tik lub czas>
-cmd-replay-set-time-hint = Tik lub przedział czasowy (GG:MM:SS), zaczynając od
+cmd-replay-set-time-hint = Tik lub przedział czasowy (GG: MM:SS), zaczynając od
 cmd-replay-error-time = "{ $time }" nie jest liczbą całkowitą lub przedziałem czasowym.
 cmd-replay-error-args = Błędna ilość argumentów.
 cmd-replay-error-no-replay = Aktualnie nie odtwarzasz powtórkę.
@@ -46,3 +46,7 @@ replay-time-box-replay-time-label = Czas Nagrywania: { $current } / { $end }  ({
 replay-time-box-server-time-label = Czas Serwera: { $current } / { $end }
 replay-time-box-index-label = Indeks: { $current } / { $total }
 replay-time-box-tick-label = Tik: { $current } / { $total }
+
+cmd-replay-toggle-screenshot-mode-desc = Toggles screenshot mode for replays, hiding the replay control widget.
+
+cmd-replay-toggle-screenshot-mode-help = replay_toggle_screenshot_mode

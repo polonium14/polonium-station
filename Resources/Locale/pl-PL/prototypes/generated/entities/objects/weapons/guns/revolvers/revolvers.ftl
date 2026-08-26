@@ -17,5 +17,5 @@ ent-WeaponRevolverPythonAP = { ent-WeaponRevolverPython }
 ent-WeaponRevolverPirate = piracki rewolwer
     .desc = Surowy rewolwer jednoprzyciskowy wykonany ręcznie przez kosmicznego pirata. Stary i pokryty rdzą, jakoś nadal działa. Ładuje 5 nabojów kalibru .45 magnum.
 ent-WeaponRevolverPirateEmpty = { ent-WeaponRevolverPirate }
-    .suffix = Empty
+    .suffix = Puste
     .desc = { ent-WeaponRevolverPirate.desc }

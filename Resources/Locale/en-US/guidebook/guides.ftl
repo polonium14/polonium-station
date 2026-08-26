@@ -96,7 +96,6 @@ guide-entry-criminal-records = Criminal Records
 guide-entry-command = Command
 guide-entry-service = Service
 # Funkystaion - Genetics
-#guide-entry-genetics = Genetyka
 guide-entry-newplayer = New? Start here!
 guide-entry-charactercreation = Creating Characters
 guide-entry-species = Species

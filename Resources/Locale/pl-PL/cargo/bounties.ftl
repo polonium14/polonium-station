@@ -353,9 +353,8 @@ bounty-description-bedsheet = Ktoś w Atmosie wciąż przykręca grzejnik, a my 
 bounty-description-bandana = Bzzzt... Transmisja z planety więziennej OC-1001: Przeorganizowujemy... naszą strukturę dowodzenia. Wyślij nam bandany, żebyśmy mogli odróżnić gan- to znaczy, działy.
 bounty-description-steak = Kucharz wegetarianin odmawia robienia nam czegokolwiek z mięsem, a jaszczury stają się niespokojne. Czy możesz przemycić nam kilka steków, żeby ich uszczęśliwić?
 bounty-description-banana = Cześć stacjo! Botanika nie chce mi dać więcej. Powiedzieli, że wyślizgnięcie HoS-a przez otwartą śluzę nie było śmieszne! Możecie w to uwierzyć? Pomóżcie mi! HONK.
-bounty-description-tooth-space-carp = Kilku gości z "Antypodów" potrzebuje zębów do wykonania swojego tradycyjnego stroju. Wyślij im kilka od kosmicznych karpi.
-bounty-description-tooth-sharkminnow = Szef kuchni twierdzi, że zęby rekina-strzebli są jakimś wysokiej jakości nożem. Nie wiem, o co im chodzi, ale chcą zestaw. Wyślij im to.
-# Categories
+
+
 bounty-category-botany = Botanika
 bounty-category-science = Nauka
 bounty-category-misc = Ogólne

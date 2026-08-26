@@ -1,0 +1,16 @@
+ent-ActionXenoRest = Rest
+    .desc = Lie down to regenerate faster.
+ent-ActionXenoEvolve = Evolve
+    .desc = Evolve into a stronger caste.
+ent-ActionXenoPlantWeeds = Plant Weeds
+    .desc = Plant a weed node under yourself that spreads across the floor.
+ent-ActionXenoChooseStructure = Choose Resin Structure
+    .desc = Choose what structure to secrete next.
+ent-ActionXenoSecreteStructure = Secrete Resin
+    .desc = Build the structure chosen with Choose Resin Structure.
+ent-ActionXenoAcidNormal = Corrosive Acid
+    .desc = Melt a structure or object with acid.
+ent-ActionXenoAcidWeak = Weak Corrosive Acid
+    .desc = Slowly melt a structure or object with weak acid.
+ent-ActionXenoNightVision = Night Vision
+    .desc = Toggle your xenomorph night vision on or off.

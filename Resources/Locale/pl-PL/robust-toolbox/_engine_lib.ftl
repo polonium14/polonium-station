@@ -75,7 +75,7 @@ zzzz-conjugate-have =
        *[other] ma
     }
 # Used internally by the CONJUGATE-BASIC() function.
-zzzz-conjugate-basic =
+zzzz-conjugate-basic = { $first }
     { GENDER($ent) ->
        *[other] { $second }
     }
