@@ -1,2 +1,2 @@
-ent-Emitter = emiter
-    .desc = Ciężki laser przemysłowy. Po włączeniu strzela bez przerwy.
+ent-Emitter = emitter
+    .desc = A heavy duty industrial laser. Shoots non-stop when turned on.
