@@ -1,2 +1,2 @@
-ent-ClothingHeadHatCadetSecurity = biała czapka marynarska kadeta
-    .desc = Czysta, biała czapka dla nowo zwerbowanego! Miejmy nadzieję, że pozostanie czysta.
+ent-ClothingHeadHatCadetSecurity = cadet's white sailor hat
+    .desc = A clean, white hat for the newly enlisted! Here's hoping it stays clean.
