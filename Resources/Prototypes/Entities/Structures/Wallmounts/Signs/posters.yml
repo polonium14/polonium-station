@@ -620,6 +620,7 @@
   description: "This poster depicts something you will never find."
   components:
     - type: Sprite
+      sprite: _Polonium/Structures/Wallmounts/posters.rsi
       state: poster63_contraband
 
 - type: entity
@@ -629,6 +630,7 @@
   description: "This poster warns you about an exomorph's acidic spit. Not that such exomorphs are real... Right?"
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster64_contraband
 
 - type: entity
@@ -638,6 +640,7 @@
   description: "This poster warns you about an athletic exomorph capable of dragging away anyone who gets caught; so don't get caught!"
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster65_contraband
 
 - type: entity
@@ -647,6 +650,7 @@
   description: "This poster warns you about the lethal bites exomorphs can have. Don't become an alien snack!"
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster66_contraband
 
 # Legit
@@ -1169,6 +1173,7 @@
   description: "A poster advertising Helio Logistics and their adorable mascot. The slogan reads 'Come rain or shine, we deliver on time.'"
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster55_legit
 
 - type: entity
