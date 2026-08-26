@@ -1,8 +1,8 @@
-ent-BorSniperMagazineBase = Magazynek Alexis-BOR (.30 rifle dowlony)
+ent-BorSniperMagazineBase = Magazynek Alexis-BOR (.30 rifle any)
     .desc = { ent-BaseItem.desc }
 ent-BorSniperMagazine = Magazynek Alexis-BOR (.30 rifle)
     .desc = { ent-BorSniperMagazineBase.desc }
-ent-BorSniperMagazineEmpty = Magazynek Alexis-BOR (.30 rifle dowlony)
+ent-BorSniperMagazineEmpty = Magazynek Alexis-BOR (.30 rifle dowlone)
     .suffix = (pusty)
     .desc = { ent-BorSniperMagazineBase.desc }
 ent-BorSniperMagazinePractice = Magazynek Alexis-BOR (.30 rifle ślepaki)
