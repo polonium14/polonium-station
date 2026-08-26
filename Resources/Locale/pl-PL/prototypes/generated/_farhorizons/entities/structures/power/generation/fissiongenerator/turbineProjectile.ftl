@@ -1,2 +1,2 @@
-ent-TurbineBladeShrapnel = łopatka turbiny
+ent-TurbineBladeShrapnel = turbine blade
     .desc = { "" }
