@@ -1,7 +1,7 @@
-ent-ReinforcedUraniumWindow = okno uranowe wzmocnione
+ent-ReinforcedUraniumWindow = reinforced uranium window
     .desc = { ent-BaseDeltaPressureReinforcedPlasma.desc }
-ent-UraniumReinforcedWindowDirectional = kierunkowe okno uranowe wzmocnione
+ent-UraniumReinforcedWindowDirectional = directional reinforced uranium window
     .desc = { ent-BaseDeltaPressureReinforcedPlasmaQuarter.desc }
 ent-ReinforcedUraniumWindowDiagonal = { ent-ReinforcedUraniumWindow }
-    .suffix = diagonalne
+    .suffix = diagonal
     .desc = { ent-ReinforcedUraniumWindow.desc }
