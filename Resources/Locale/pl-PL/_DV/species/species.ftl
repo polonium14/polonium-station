@@ -1,6 +1,4 @@
-
 ## Species Names
-
 
 species-name-harpy = Harpia
 species-name-rodentia = Gryzoń
