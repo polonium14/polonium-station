@@ -1,6 +1,6 @@
-ent-BaseMagazinePistolCaselessRifle = magazynek do pistoletu (.25 bezłuskowe)
+ent-BaseMagazinePistolCaselessRifle = pistol magazine (.25 caseless)
     .desc = { ent-BaseItem.desc }
-ent-MagazinePistolCaselessRifle = magazynek do pistoletu (.25 bezłuskowe)
-    .desc = 10-rundowy magazynek do pistoletu Kobra. Przeznaczony do przechowywania amunicji kinetycznej ogólnego przeznaczenia.
-ent-MagazinePistolCaselessRiflePractice = magazynek do pistoletu (.25 bezłuskowe treningowe)
-    .desc = 10-rundowy magazynek do pistoletu Kobra. Przeznaczony do przechowywania niegroźnej amunicji kredowej.
+ent-MagazinePistolCaselessRifle = pistol magazine (.25 caseless)
+    .desc = 10-round magazine for the Cobra pistol. Intended to hold general-purpose kinetic ammunition.
+ent-MagazinePistolCaselessRiflePractice = pistol magazine (.25 caseless practice)
+    .desc = 10-round magazine for the Cobra pistol. Intended to hold harmless practice ammunition.
