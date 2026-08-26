@@ -17,6 +17,9 @@
             "name": "poster1_legit"
         },
         {
+            "name": "poster3_contraband"
+        },
+        {
             "name": "poster3_legit"
         },
         {
@@ -117,6 +120,12 @@
         },
         {
             "name": "poster35_contraband"
+        },
+        {
+            "name": "poster37_legit"
+        },
+        {
+            "name": "poster38_legit"
         },
         {
             "name": "poster39_legit"

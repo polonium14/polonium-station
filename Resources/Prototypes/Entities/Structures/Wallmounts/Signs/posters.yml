@@ -77,6 +77,7 @@
   description: "A poster condemning the station's security forces."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster3_contraband
 
 - type: entity
@@ -1000,6 +1001,7 @@
   description: "Nanotrasen has issued posters, like this one, to all stations reminding them that rumours of a gas giant are false."
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster37_legit
 
 - type: entity
@@ -1009,6 +1011,7 @@
   description: A poster advertising a long delayed project, it still claims it to be 'just a week away...'
   components:
   - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster38_legit
 
 - type: entity
