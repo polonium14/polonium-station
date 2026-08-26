@@ -1,2 +1,2 @@
-ent-MailBag = torba na pocztę
-    .desc = Torba do noszenia poczty po stacji. Wykonana z garbowanej skóry kosmicznego niedźwiedzia.
+ent-MailBag = mail bag
+    .desc = A bag for carrying mail around the station. Made from tanned space bear hide.
