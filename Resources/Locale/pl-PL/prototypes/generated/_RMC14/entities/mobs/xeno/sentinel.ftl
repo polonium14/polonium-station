@@ -1,3 +1,3 @@
-ent-CMXenoSentinel = wartownik
-    .desc = Wężowaty, plujący rodzaj obcego.
+ent-CMXenoSentinel = Sentinel
+    .desc = A slithery, spitting kind of alien.
     .gender = male
