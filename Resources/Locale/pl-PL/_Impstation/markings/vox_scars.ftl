@@ -1,4 +1,3 @@
-
 marking-ScarsVoxRoadrashLeftHead-roadrash_l_head = Road Rash (Left)
 marking-ScarsVoxRoadrashLeftHead = Road Rash (Left)
 marking-ScarsVoxRoadrashRightHead-roadrash_r_head = Road Rash (Right)
