@@ -1,4 +1,4 @@
-ent-RadioHandheldCargo = radio logistyczne
-    .desc = Małe radio przenośne dostrojone do częstotliwości radiowej logistyki.
-ent-RadioHandheldCommand = radio dowodzenia
-    .desc = Małe radio przenośne dostrojone do częstotliwości radiowej dowodzenia.
+ent-RadioHandheldCargo = supply handheld radio
+    .desc = A handheld radio tuned to the supply radio frequency.
+ent-RadioHandheldCommand = command handheld radio
+    .desc = A handheld radio tuned to the command radio frequency.
