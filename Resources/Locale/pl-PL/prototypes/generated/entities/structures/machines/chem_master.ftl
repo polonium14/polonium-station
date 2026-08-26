@@ -1,2 +1,2 @@
 ent-ChemMaster = ChemMaster 4000
-    .desc = Przemysłowy manipulator chemiczny z funkcją produkcji tabletek i butelek.
+    .desc = An industrial grade chemical manipulator with pill and bottle production included.
