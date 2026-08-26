@@ -1,4 +1,4 @@
-ent-RandomAnomalySpawner = spawner losowej anomalii
+ent-RandomAnomalySpawner = random anomaly spawner
     .desc = { ent-MarkerBase.desc }
 ent-RandomRockAnomalySpawner = random rock anomaly spawner
     .desc = { ent-MarkerBase.desc }
