@@ -1,4 +1,4 @@
-ent-ActionHarpyPlayMidi = Graj MIDI
-    .desc = Śpiewaj ile wlezie! Kliknij siebie PPM, aby wybrać instrument.
-ent-ActionSyrinxChangeVoiceMask = Ustaw imię
-    .desc = Zmień imię, które słyszą inni, na coś innego.
+ent-ActionHarpyPlayMidi = Play MIDI
+    .desc = Sing your heart out! Right click yourself to set an instrument.
+ent-ActionSyrinxChangeVoiceMask = Set name
+    .desc = Change the name others hear to something else.
