@@ -1,4 +1,3 @@
-
 mindcontrol-popup-start = You are mindcontrolled
 mindcontrol-popup-stop = You feel a fog lift from your mind
 mindcontrol-briefing-start = You are mindcontrolled. Obey { $master }
