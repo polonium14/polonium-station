@@ -1,6 +1,6 @@
 ent-AppearanceMoth = moth appearance
     .desc = { ent-BaseSpeciesAppearance.desc }
-ent-MobMoth = Urist McĆma
+ent-MobMoth = Urist McFluff
     .desc = { ent-AppearanceMoth.desc }
 ent-OrganMoth = { ent-OrganBaseOrganic }
     .suffix = Moth
