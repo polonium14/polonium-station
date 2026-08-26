@@ -1,15 +1,15 @@
 main-menu-invalid-username-with-reason =
-    Nieprawidłowa nazwa użytkownika:
+    Invalid username:
     { $invalidReason }
-main-menu-invalid-username = Nieprawidłowa nazwa użytkownika
+main-menu-invalid-username = Invalid username
 main-menu-failed-to-connect =
-    Nie udało się połączyć:
+    Failed to connect:
     { $reason }
-main-menu-username-label = Nazwa użytkownika:
-main-menu-username-text = Nazwa użytkownika
-main-menu-address-label = Adres serwera:
-main-menu-join-public-server-button = Dołącz do publicznego serwera
-main-menu-join-public-server-button-tooltip = Nie można połączyć się z publicznym serwerem w wersji debug.
-main-menu-direct-connect-button = Połącz bezpośrednio
-main-menu-options-button = Opcje
-main-menu-quit-button = Wyjdź
+main-menu-username-label = Username:
+main-menu-username-text = Username
+main-menu-address-label = Server Address:
+main-menu-join-public-server-button = Join Public Server
+main-menu-join-public-server-button-tooltip = Cannot connect to public server with a debug build.
+main-menu-direct-connect-button = Direct Connect
+main-menu-options-button = Options
+main-menu-quit-button = Quit
