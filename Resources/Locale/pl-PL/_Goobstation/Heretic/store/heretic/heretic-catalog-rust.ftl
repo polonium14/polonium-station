@@ -1,4 +1,3 @@
-
 knowledge-path-rust-s1-name = Blacksmith's Tale
 knowledge-path-rust-s1-desc = Follow the rust path. Transmute a knife and a trash item into a rusty blade.
 knowledge-path-rust-s2-name = Grasp of Rust
