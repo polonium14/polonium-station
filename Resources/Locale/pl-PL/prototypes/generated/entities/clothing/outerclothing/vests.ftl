@@ -1,7 +1,7 @@
-ent-ClothingOuterVestHazard = kamizelka odblaskowa
-    .desc = Kamizelka o wysokiej widoczności używana w strefach roboczych.
-ent-ClothingOuterVest = kamizelka
-    .desc = Schludna kamizelka barmana, wzmocniona kewlarem.
+ent-ClothingOuterVestHazard = hi-viz vest
+    .desc = A high-visibility vest used in work zones.
+ent-ClothingOuterVest = vest
+    .desc = A thick vest with a rubbery, water-resistant shell.
 ent-ClothingOuterVestTank = tank harness
     .desc = A simple harness that can hold a gas tank.
 ent-ClothingOuterVestPress = press vest
