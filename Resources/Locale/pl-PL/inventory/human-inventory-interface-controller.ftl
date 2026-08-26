@@ -1,1 +1,1 @@
-human-inventory-window-title = Twój Ekwipunek
+human-inventory-window-title = Your Inventory
