@@ -1,5 +1,5 @@
 ent-PenExploding = { ent-Pen }
-    .suffix = Eksplodujący
+    .suffix = Exploding
     .desc = { ent-Pen.desc }
-ent-PenExplodingBox = pudełko z eksplodującym długopisem
-    .desc = Małe pudełko zawierające eksplodujący długopis. Opakowanie rozpada się po otwarciu, nie pozostawiając żadnych dowodów.
+ent-PenExplodingBox = exploding pen box
+    .desc = A small box containing an exploding pen. Packaging disintegrates when opened, leaving no evidence behind.
