@@ -1,7 +1,7 @@
-ent-ReinforcedWindow = okno wzmocnione
+ent-ReinforcedWindow = reinforced window
     .desc = { ent-BaseDeltaPressureReinforcedGlass.desc }
-ent-WindowReinforcedDirectional = kierunkowe okno wzmocnione
+ent-WindowReinforcedDirectional = directional reinforced window
     .desc = { ent-BaseDeltaPressureReinforcedGlassQuarter.desc }
 ent-ReinforcedWindowDiagonal = { ent-ReinforcedWindow }
-    .suffix = diagonalne
+    .suffix = diagonal
     .desc = { ent-ReinforcedWindow.desc }
