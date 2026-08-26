@@ -1,14 +1,5 @@
-# Tego pliku nie tłumaczyć w całości.
-# Polskie zamienniki dodawaj w chatsan-polonium.ftl
-# Poniżej nadpisania skrótów, które muszą być po polsku zamiast angielskiego chatsan.
-
-chatsan-replacement-1 = O mój Boże
-chatsan-replacement-12 = będąc szczerym
-chatsan-replacement-please = proszę
-chatsan-replacement-26 = Tak przy okazji
-chatsan-replacement-55 = szczerze mówiąc
-
 chatsan-word-1 = omg
+chatsan-replacement-1 = oh my god
 chatsan-word-2 = omfg
 chatsan-replacement-2 = oh my fucking god
 chatsan-word-3 = ong
@@ -28,6 +19,7 @@ chatsan-replacement-9 = i know, right
 chatsan-word-10 = idc
 chatsan-replacement-10 = i don't care
 chatsan-word-12 = tbh
+chatsan-replacement-12 = to be honest
 chatsan-word-13 = lmk
 chatsan-replacement-13 = let me know
 chatsan-word-14 = ur
@@ -47,11 +39,13 @@ chatsan-replacement-20 = in my opinion
 chatsan-word-21 = pls
 chatsan-word-22 = plz
 chatsan-word-23 = plox
+chatsan-replacement-please = please
 chatsan-word-24 = fr
 chatsan-replacement-24 = for real
 chatsan-word-25 = brb
 chatsan-replacement-25 = be right back
 chatsan-word-26 = btw
+chatsan-replacement-26 = by the way
 chatsan-word-27 = jk
 chatsan-replacement-27 = just kidding
 chatsan-word-28 = thx
@@ -108,6 +102,7 @@ chatsan-replacement-53 = where are you
 chatsan-word-54 = fs
 chatsan-replacement-54 = for sure
 chatsan-word-55 = ngl
+chatsan-replacement-55 = not gonna lie
 chatsan-word-56 = fml
 chatsan-replacement-56 = fuck my life
 chatsan-word-57 = wtaf
@@ -132,9 +127,7 @@ chatsan-word-66 = smth
 chatsan-replacement-66 = something
 chatsan-word-67 = allg
 chatsan-replacement-67 = all good
-chatsan-word-68 = alr
-chatsan-replacement-68 = alright
-
+chatsan-word-68 = idk
+chatsan-replacement-68 = i don't know
 chatsan-word-69 = wya
-
 chatsan-replacement-69 = where you at
