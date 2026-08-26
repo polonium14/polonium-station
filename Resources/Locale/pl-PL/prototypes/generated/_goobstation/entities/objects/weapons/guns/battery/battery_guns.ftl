@@ -1,2 +1,2 @@
-ent-WeaponEnergyRevolver = Rewolwer energetyczny EG-4
-    .desc = Wysoce zaawansowany rewolwer energetyczny zdolny do strzelania zarówno śmiercionośnymi, jak i ogłuszającymi pociskami.
+ent-WeaponEnergyRevolver = EG-4 energy revolver
+    .desc = A highly advanced energy revolver.
