@@ -1,7 +1,7 @@
 ent-BaseChangelingObjective = { ent-BaseObjective }
     .desc = { ent-BaseObjective.desc }
-ent-ChangelingSurviveObjective = Przetrwaj
-    .desc = Muszę przetrwać za wszelką cenę.
+ent-ChangelingSurviveObjective = Survive.
+    .desc = We must stay alive at all cost.
 ent-ChangelingUniqueIdentityObjective = { ent-BaseChangelingObjective }
     .desc = { ent-BaseChangelingObjective.desc }
 ent-ChangelingEscapeIdentityObjective = { ent-BaseChangelingObjective }
