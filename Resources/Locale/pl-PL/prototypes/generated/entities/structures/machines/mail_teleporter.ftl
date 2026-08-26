@@ -1,2 +1,2 @@
-ent-CargoMailTeleporter = Cargomat
-    .desc = Okresowo teleportuje przesyłki do doręczenia na całej stacji.
+ent-CargoMailTeleporter = mail teleporter
+    .desc = Periodically teleports in mail to deliver across the station.
