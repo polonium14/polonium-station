@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: roryflowers
-  changes:
-  - message: Tritium's thermal output is increased to its previous value, to reenable
-      maxcap explosives and make the TEG easier to run.
-    type: Fix
-  id: 9459
-  time: '2026-01-26T00:39:55.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42641
 - author: SlamBamActionman
   changes:
   - message: Crowbars are now consistent with other 1x2 items in terms of storage,
@@ -4038,3 +4030,10 @@
   id: 9958
   time: '2026-08-26T10:02:21.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/934
+- author: Saver310
+  changes:
+  - message: "Dodano nowy odg\u0142os RoundEnd. Jedziemy, jedziemy!"
+    type: Add
+  id: 9959
+  time: '2026-08-26T10:40:39.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/935
