@@ -1,3 +1,3 @@
-ent-CMXenoDrone = dron
-    .desc = Obcy dron.
+ent-CMXenoDrone = Drone
+    .desc = An alien drone.
     .gender = male
