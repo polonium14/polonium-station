@@ -193,3 +193,24 @@ thaven-mood-petrock-desc = One of your inanimate possessions is very dear to you
 
 thaven-mood-hardsuits-good-name = {$clothes} Are So In Right Now!
 thaven-mood-hardsuits-good-desc = They are absolutely the pinnacle of fashion. You and everybody else utterly need to be wearing these to stay in style. Anyone who is not wearing these are quite unfashionable.
+
+thaven-mood-speech-restriction-name =
+    { $speechType ->
+       *[FullNameAndTitle] Pełne Imię i Tytuł
+        [NamesAreRude] Po Imieniu To Chamstwo
+        [Clarity] Wyraźność Jest Kluczowa
+        [SwearingGood] !@rwa J$p&#@*ole!
+        [StatementOnly] Zadawnie Pytań Jest Chamskie
+        [Imitation] Chce Być Jak Ty
+        [Unclarity] Nie Wszystko Jest Pewne
+        [SwearingBad] Nie Przeklinaj
+        [QuestionOnly] Nie Wszystko Jest Pewne?
+        [MustAnswer] Centrum uniwersum
+        [OnlyWhisper] Wewnętrzny Głos
+        [OnlyYell] Zewnętrzny Głos
+        [Rhyme] Poeta
+        [Alliterate] Absolutnie Aliterazuje Akapity
+        [ThirdPerson] Trzecia Osoba
+        [TitleCase] Wielkie Litery
+        [GreySpeak] Ufomowa Jest Teraz Popularna
+    }

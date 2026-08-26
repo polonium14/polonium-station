@@ -7,11 +7,13 @@
 import os
 import re
 import typing
+from collections import defaultdict
 
 from fluent.syntax import ast
 from fluent.syntax.parser import FluentParser
 from fluent.syntax.serializer import FluentSerializer
 
+from ftl_relocator import fingerprint_entry, messages_equivalent, same_path, upsert_entries as reloc_upsert_entries, remove_keys_from_content as reloc_remove_keys
 from file import YAMLFile, FluentFile
 from fluentast import FluentSerializedMessage, FluentAstAttributeFactory, FluentAstAbstract
 from fluentformatter import FluentFormatter
@@ -36,10 +38,14 @@ def _collect_keys_by_id(parsed: ast.Resource) -> typing.Dict[str, typing.Union[a
 
 def _indent_attribute_snippet(snippet: str) -> str:
     lines = snippet.split('\n')
-    return '\n'.join(
-        f'  {line}' if line.startswith('.') and not line.startswith('  ') else line
-        for line in lines
-    )
+    out = []
+    for line in lines:
+        stripped = line.lstrip(' ')
+        if stripped.startswith('.') and not line.startswith('    .'):
+            out.append('    ' + stripped)
+        else:
+            out.append(line)
+    return '\n'.join(out)
 
 
 def _extract_span_text(source: str, element) -> str:
@@ -108,22 +114,7 @@ def _remove_spans(content: str, spans: typing.List[typing.Tuple[int, int]]) -> s
 
 
 def _remove_keys_from_content(content: str, keys: typing.AbstractSet[str]) -> typing.Tuple[str, int]:
-    if not keys or not content.strip():
-        return content, 0
-
-    parsed = parser.parse(content)
-    spans = []
-    for element in parsed.body:
-        if not isinstance(element, ENTRY_TYPES):
-            continue
-        key_name = FluentAstAbstract.get_id_name(element)
-        if key_name in keys and element.span:
-            spans.append((element.span.start, element.span.end))
-
-    if not spans:
-        return content, 0
-
-    return _remove_spans(content, spans), len(spans)
+    return reloc_remove_keys(content, keys)
 
 
 def _pattern_value_text(value) -> str:
@@ -195,35 +186,27 @@ def _extract_entries_by_keys(
 
 def upsert_entries(content: str, entries: typing.Dict[str, str]) -> typing.Tuple[str, int]:
     """Wstawia/nadpisuje bloki wiadomości; zwraca (nowa_treść, liczba_zmian)."""
-    if not entries:
-        return content, 0
+    return reloc_upsert_entries(content, entries, overwrite=True)
 
-    changed = 0
-    existing = _collect_keys_by_id(parser.parse(content)) if content.strip() else {}
-    to_replace = {k: v for k, v in entries.items() if k in existing}
-    to_append = {k: v for k, v in entries.items() if k not in existing}
 
-    if to_replace:
-        parsed = parser.parse(content)
-        spans_and_text: typing.List[typing.Tuple[int, int, str]] = []
-        for element in parsed.body:
-            if not isinstance(element, ENTRY_TYPES) or not element.span:
-                continue
-            key_name = FluentAstAbstract.get_id_name(element)
-            if key_name in to_replace:
-                spans_and_text.append((element.span.start, element.span.end, to_replace[key_name]))
-                changed += 1
-        for start, end, text in sorted(spans_and_text, key=lambda item: item[0], reverse=True):
-            content = content[:start] + text + content[end:]
-
-    if to_append:
-        blocks = [content.rstrip('\n')] if content.strip() else []
-        for key in sorted(to_append):
-            blocks.append(to_append[key].strip('\n'))
-            changed += 1
-        content = '\n\n'.join(block for block in blocks if block) + '\n'
-
-    return content, changed
+def _patch_existing_with_generated(existing: str, generated: str) -> str:
+    # nie przepisuj calego pliku - tylko klucze ktore sie faktycznie zmienily
+    gen_parsed = parser.parse(generated)
+    exist_keys = _collect_keys_by_id(parser.parse(existing)) if existing.strip() else {}
+    to_upsert: typing.Dict[str, str] = {}
+    for element in gen_parsed.body:
+        if not isinstance(element, ENTRY_TYPES):
+            continue
+        name = FluentAstAbstract.get_id_name(element)
+        if not name:
+            continue
+        old = exist_keys.get(name)
+        if old is None or fingerprint_entry(element) != fingerprint_entry(old):
+            to_upsert[name] = _extract_span_text(generated, element).strip('\n')
+    if not to_upsert:
+        return existing
+    patched, _ = upsert_entries(existing, to_upsert)
+    return patched
 
 
 def apply_key_renames_to_content(content: str, renames: typing.Dict[str, str]) -> typing.Tuple[str, int]:
@@ -279,20 +262,24 @@ def apply_key_renames_to_content(content: str, renames: typing.Dict[str, str]) -
 
 
 class LocaleKeyRegistry:
-    """Indeks kluczy ent-* w generated — unika pełnego skanowania przy każdym pliku YAML."""
+    """Indeks kluczy w całej locale — generated to tylko kanoniczna ścieżka po YAML."""
 
-    def __init__(self, locale_generated_root: str):
+    def __init__(self, locale_generated_root: str, locale_root: typing.Optional[str] = None):
         self.locale_generated_root = locale_generated_root
+        self.locale_root = locale_root or locale_generated_root
+        self.key_to_files: typing.Dict[str, typing.Set[str]] = defaultdict(set)
         self.key_to_file: typing.Dict[str, str] = {}
         self.claimed_keys: typing.Set[str] = set()
         self._pending_removals: typing.Dict[str, typing.Set[str]] = {}
         self._build_index()
 
     def _build_index(self) -> None:
-        if not os.path.isdir(self.locale_generated_root):
+        if not os.path.isdir(self.locale_root):
             return
 
-        for dirpath, _, filenames in os.walk(self.locale_generated_root):
+        skip = {'datasets', '.git', 'bin', 'obj'}
+        for dirpath, dirnames, filenames in os.walk(self.locale_root):
+            dirnames[:] = [d for d in dirnames if d not in skip]
             for filename in filenames:
                 if not filename.endswith('.ftl'):
                     continue
@@ -304,6 +291,7 @@ class LocaleKeyRegistry:
                     continue
 
                 for key in _collect_message_keys_fast(content):
+                    self.key_to_files[key].add(file_path)
                     self.key_to_file[key] = file_path
 
     def claim_keys(self, canonical_path: str, keys: typing.AbstractSet[str]) -> None:
@@ -312,9 +300,10 @@ class LocaleKeyRegistry:
 
         canonical_path = os.path.normpath(canonical_path)
         for key in keys:
-            stale_path = self.key_to_file.get(key)
-            if stale_path and stale_path != canonical_path:
-                self._pending_removals.setdefault(stale_path, set()).add(key)
+            for stale_path in self.key_to_files.get(key, set()):
+                if not same_path(stale_path, canonical_path):
+                    self._pending_removals.setdefault(stale_path, set()).add(key)
+            self.key_to_files[key] = {canonical_path}
             self.key_to_file[key] = canonical_path
             self.claimed_keys.add(key)
 
@@ -334,7 +323,7 @@ class LocaleKeyRegistry:
                 by_canonical: typing.Dict[str, typing.Dict[str, str]] = {}
                 for key, snippet in extracted.items():
                     canonical = self.key_to_file.get(key)
-                    if not canonical or canonical == os.path.normpath(file_path):
+                    if not canonical or same_path(canonical, file_path):
                         continue
                     by_canonical.setdefault(canonical, {})[key] = snippet
 
@@ -349,11 +338,20 @@ class LocaleKeyRegistry:
                         canonical_file.save_data(new_canonical)
                         migrated_total += changed
 
-            new_content, removed = _remove_keys_from_content(content, keys)
+            keys_to_remove = {
+                key for key in keys
+                if not same_path(self.key_to_file.get(key, ''), file_path)
+            }
+            if not keys_to_remove:
+                continue
+
+            new_content, removed = _remove_keys_from_content(content, keys_to_remove)
             if not removed:
                 continue
 
             fluent_file.save_data(new_content)
+            if not new_content.strip() and os.path.isfile(file_path):
+                os.remove(file_path)
             removed_total += removed
 
         self._pending_removals.clear()
@@ -395,8 +393,12 @@ class LocaleKeyRegistry:
 class YAMLExtractor:
     def __init__(self, yaml_files):
         self.yaml_files = yaml_files
-        self.en_registry = LocaleKeyRegistry(project.en_locale_prototypes_dir_path)
-        self.pl_registry = LocaleKeyRegistry(project.pl_locale_prototypes_dir_path)
+        self.en_registry = LocaleKeyRegistry(
+            project.en_locale_prototypes_dir_path, project.en_locale_dir_path,
+        )
+        self.pl_registry = LocaleKeyRegistry(
+            project.pl_locale_prototypes_dir_path, project.pl_locale_dir_path,
+        )
         self._pending_pl_renames: typing.List[typing.Tuple[str, typing.Dict[str, str]]] = []
 
     def execute(self):
@@ -487,9 +489,14 @@ class YAMLExtractor:
                     + ', '.join(f'{o}->{n}' for o, n in list(renames.items())[:5])
                 )
             file_data = preserve_existing_attributes(file_data, existing_data, PRESERVED_ATTRIBUTE_NAMES)
-            if file_data == existing_data:
+            if messages_equivalent(file_data, existing_data):
                 self._publish_canonical_keys(en_fluent_file.full_path, file_data)
                 return en_fluent_file.full_path
+            patched = _patch_existing_with_generated(existing_data, file_data)
+            self._publish_canonical_keys(en_fluent_file.full_path, file_data)
+            if patched != existing_data:
+                en_fluent_file.save_data(patched)
+            return en_fluent_file.full_path
 
         en_fluent_file.save_data(file_data)
         self._publish_canonical_keys(en_fluent_file.full_path, file_data)
@@ -557,7 +564,7 @@ class YAMLExtractor:
         pl_file_full_path = en_analog_file_path.replace('en-US', 'pl-PL')
 
         if not self._is_missing_or_empty_ftl(pl_file_full_path):
-            return
+            return pl_file_full_path
 
         en_file = FluentFile(f'{en_analog_file_path}')
         pl_data = en_file.read_data()

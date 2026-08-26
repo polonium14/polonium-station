@@ -11,6 +11,7 @@ from fluent.syntax import ast, FluentParser, FluentSerializer
 from fluentast import FluentAstAbstract
 from file import FluentFile
 from project import Project
+from ftl_relocator import LocaleKeyIndex
 
 ENTRY_TYPES = (ast.Message, ast.Term)
 
@@ -79,10 +80,14 @@ def _collect_keys_by_id(parsed: ast.Resource) -> Dict[str, Union[ast.Message, as
 
 def _indent_attribute_snippet(snippet: str) -> str:
     lines = snippet.split('\n')
-    return '\n'.join(
-        f'  {line}' if line.startswith('.') and not line.startswith('  ') else line
-        for line in lines
-    )
+    out = []
+    for line in lines:
+        stripped = line.lstrip(' ')
+        if stripped.startswith('.') and not line.startswith('    .'):
+            out.append('    ' + stripped)
+        else:
+            out.append(line)
+    return '\n'.join(out)
 
 
 def _extract_span_text(source: str, element) -> str:
@@ -164,8 +169,10 @@ def sync_missing_keys_in_file(
     return new_text, added_keys
 
 
-def fix_key_differences(en_root: Path, pl_root: Path, common_files: Set[str]) -> int:
+def fix_key_differences(en_root: Path, pl_root: Path, common_files: Set[str], project: Project) -> int:
     files_changed = 0
+    pl_index = LocaleKeyIndex(project.pl_locale_dir_path)
+    en_index = LocaleKeyIndex(project.en_locale_dir_path)
     pl_locale_keys = collect_locale_message_keys(pl_root)
     en_locale_keys = collect_locale_message_keys(en_root)
 
@@ -181,6 +188,21 @@ def fix_key_differences(en_root: Path, pl_root: Path, common_files: Set[str]) ->
         pl_keys = _collect_keys_by_id(pl_parsed)
         en_keys = _collect_keys_by_id(en_parsed)
 
+        # przenies nawet gdy tu juz jest stub skopiowany z drugiej locale
+        moved_pl = pl_index.move_keys_to(pl_file.full_path, list(en_keys), overwrite=True)
+        if moved_pl:
+            pl_text = pl_file.read_data()
+            pl_parsed = pl_file.parse_data(pl_text)
+            pl_keys = _collect_keys_by_id(pl_parsed)
+            print(f'  pl-PL {rel_path}: przeniesiono {moved_pl}')
+
+        moved_en = en_index.move_keys_to(en_file.full_path, list(pl_keys), overwrite=True)
+        if moved_en:
+            en_text = en_file.read_data()
+            en_parsed = en_file.parse_data(en_text)
+            en_keys = _collect_keys_by_id(en_parsed)
+            print(f'  en-US {rel_path}: przeniesiono {moved_en}')
+
         new_pl, pl_added = sync_missing_keys_in_file(
             en_text, en_parsed, pl_text, dict(pl_keys), pl_locale_keys,
         )
@@ -188,7 +210,7 @@ def fix_key_differences(en_root: Path, pl_root: Path, common_files: Set[str]) ->
             pl_text, pl_parsed, en_text, dict(en_keys), en_locale_keys,
         )
 
-        changed = False
+        changed = bool(moved_pl or moved_en)
         if new_pl != pl_text:
             pl_file.save_data(new_pl)
             changed = True
@@ -403,7 +425,7 @@ def main(argv=None) -> int:
         if args.fix:
             common_files = en_files & pl_files
             print('=== Uzupełnianie brakujących kluczy (prototypes/generated) ===')
-            changed = fix_key_differences(en_root, pl_root, common_files)
+            changed = fix_key_differences(en_root, pl_root, common_files, project)
             print(f'\nZmieniono plików: {changed}')
             print()
 

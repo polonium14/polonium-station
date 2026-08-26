@@ -62,8 +62,19 @@ def read_file_text(file_path: str) -> typing.Optional[str]:
 
 
 def write_file_text(file_path: str, content: str) -> None:
-    with open(file_path, 'w', encoding='utf-8', newline='\n') as file:
-        file.write(content)
+    text = content.replace('\r\n', '\n').replace('\r', '\n')
+    newline = '\n'
+    if os.path.isfile(file_path):
+        with open(file_path, 'rb') as raw:
+            sample = raw.read(8192)
+        if b'\r\n' in sample:
+            newline = '\r\n'
+    elif os.name == 'nt':
+        newline = '\r\n'
+    if newline != '\n':
+        text = text.replace('\n', newline)
+    with open(file_path, 'w', encoding='utf-8', newline='') as file:
+        file.write(text)
 
 
 def find_ent_occurrences(content: str) -> typing.List[typing.Tuple[str, int, int]]:
