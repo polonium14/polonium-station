@@ -193,6 +193,7 @@ def _patch_existing_with_generated(existing: str, generated: str) -> str:
     # nie przepisuj calego pliku - tylko klucze ktore sie faktycznie zmienily
     gen_parsed = parser.parse(generated)
     exist_keys = _collect_keys_by_id(parser.parse(existing)) if existing.strip() else {}
+    existing_text_keys = _collect_message_keys_fast(existing)
     to_upsert: typing.Dict[str, str] = {}
     for element in gen_parsed.body:
         if not isinstance(element, ENTRY_TYPES):
@@ -201,7 +202,12 @@ def _patch_existing_with_generated(existing: str, generated: str) -> str:
         if not name:
             continue
         old = exist_keys.get(name)
-        if old is None or fingerprint_entry(element) != fingerprint_entry(old):
+        if old is None:
+            if name in existing_text_keys:
+                continue
+            to_upsert[name] = _extract_span_text(generated, element).strip('\n')
+            continue
+        if fingerprint_entry(element) != fingerprint_entry(old):
             to_upsert[name] = _extract_span_text(generated, element).strip('\n')
     if not to_upsert:
         return existing

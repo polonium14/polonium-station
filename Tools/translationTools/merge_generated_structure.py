@@ -113,6 +113,8 @@ def merge_file_preserve(en_text: str, pl_text: str) -> str:
         pl_entry = pl_keys.get(key)
         merged = merge_entry(element, pl_entry)
         if pl_entry is None:
+            if key in collect_message_keys_fast(pl_text):
+                continue
             to_upsert[key] = extract_span_text(en_text, element).strip('\n')
             continue
         if fingerprint_entry(merged) == fingerprint_entry(pl_entry):

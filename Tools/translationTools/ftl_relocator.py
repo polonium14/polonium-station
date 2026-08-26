@@ -148,8 +148,12 @@ def upsert_entries(content: str, entries: Dict[str, str], overwrite: bool = True
 
     changed = 0
     existing = collect_keys_by_id(PARSER.parse(content)) if content.strip() else {}
+    text_keys = collect_message_keys_fast(content)
     to_replace = {k: v for k, v in entries.items() if k in existing} if overwrite else {}
-    to_append = {k: v for k, v in entries.items() if k not in existing}
+    to_append = {
+        k: v for k, v in entries.items()
+        if k not in existing and k not in text_keys
+    }
 
     if to_replace:
         parsed = PARSER.parse(content)

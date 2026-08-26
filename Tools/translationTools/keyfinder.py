@@ -235,16 +235,11 @@ class KeyFinder:
                 if relative_file.locale not in ('pl-PL', 'en-US'):
                     continue
                 try:
-                    parsed = relative_file.file.parse_data(relative_file.file.read_data())
+                    content = relative_file.file.read_data()
                 except Exception:
                     continue
                 target = self.pl_global_keys if relative_file.locale == 'pl-PL' else self.en_global_keys
-                for element in parsed.body:
-                    if not isinstance(element, ENTRY_TYPES):
-                        continue
-                    key_name = FluentAstAbstract.get_id_name(element)
-                    if key_name:
-                        target.add(key_name)
+                target.update(collect_message_keys_fast(content))
 
     def execute(self) -> typing.List[FluentFile]:
         self.changed_files = []
@@ -330,6 +325,7 @@ class KeyFinder:
         append_snippets: typing.List[str] = []
         insertions: typing.List[typing.Tuple[int, str]] = []
         added_keys: typing.List[str] = []
+        target_text_keys = collect_message_keys_fast(target_text)
 
         for source_entry in source_parsed.body:
             if not isinstance(source_entry, ENTRY_TYPES):
@@ -341,9 +337,10 @@ class KeyFinder:
 
             target_entry = target_keys.get(key_name)
             if target_entry is None:
-                if key_name in global_keys:
+                if key_name in global_keys or key_name in target_text_keys:
                     continue
                 append_snippets.append(self._extract_span_text(source_text, source_entry))
+                target_text_keys.add(key_name)
                 target_keys[key_name] = source_entry
                 global_keys.add(key_name)
                 added_keys.append(key_name)

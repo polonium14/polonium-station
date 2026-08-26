@@ -12,12 +12,14 @@
 
 import argparse
 import os
+import re
 import typing
 from datetime import datetime
 
 from fluent.syntax import ast, FluentParser
 
 ENTRY_TYPES = (ast.Message,)
+KEY_RE = re.compile(r'^(-?[A-Za-z][A-Za-z0-9_-]*)\s*=', re.MULTILINE)
 
 
 def find_top_level_dir(start_dir: str) -> str:
@@ -81,12 +83,17 @@ def find_ent_occurrences(content: str) -> typing.List[typing.Tuple[str, int, int
     occurrences: typing.List[typing.Tuple[str, int, int]] = []
     parsed = FluentParser().parse(content)
     for element in parsed.body:
-        if not isinstance(element, ENTRY_TYPES):
+        if isinstance(element, ENTRY_TYPES):
+            key = element.id.name
+            if not element.span:
+                continue
+            occurrences.append((key, element.span.start, element.span.end))
             continue
-        key = element.id.name
-        if not element.span:
+        if not isinstance(element, ast.Junk) or not element.span or not element.content:
             continue
-        occurrences.append((key, element.span.start, element.span.end))
+        for match in KEY_RE.finditer(element.content):
+            start = element.span.start + match.start()
+            occurrences.append((match.group(1), start, element.span.end))
     return occurrences
 
 
