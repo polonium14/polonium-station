@@ -16,8 +16,10 @@ signal-port-name-dockstatus = Dock status
 signal-port-description-dockstatus = This port is invoked with HIGH when docked and LOW when undocked.
 signal-port-name-middle = Middle
 signal-port-description-middle = This port is invoked whenever the lever is moved to the neutral position.
-signal-port-name-timer-trigger = Timer Trigger
-signal-port-description-timer-trigger = This port is invoked whenever the timer triggers.
+signal-port-name-trigger-sender = Trigger
+signal-port-description-trigger-sender = This port is invoked whenever the device triggers.
+signal-port-name-timer-trigger = Timer
+signal-port-description-timer-trigger = This port is invoked whenever the timer is up.
 signal-port-name-timer-start = Timer Start
 signal-port-description-timer-start = This port is invoked whenever the timer starts.
 signal-port-name-logic-output = Output
@@ -48,7 +50,3 @@ signal-port-name-power-discharging = Discharging
 signal-port-description-power-discharging = This port is invoked with HIGH when the battery is losing charge and LOW when not.
 signal-port-name-item-detected = Detected
 signal-port-description-item-detected = This port is invoked whenever the transmitter detects an item.
-
-signal-port-name-trigger-sender = Trigger
-
-signal-port-description-trigger-sender = This port is invoked whenever the device triggers.
