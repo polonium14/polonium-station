@@ -1,3 +1,3 @@
-ent-XenoAcidTurret = ksenoturret kwasowa
-    .desc = Żywa wieżyczka plująca kwasem w przeciwników.
+ent-XenoAcidTurret = xeno acid turret
+    .desc = A living turret that spits acid at hostiles.
     .suffix = Constructible
