@@ -1,6 +1,6 @@
 ent-AppearanceVox = vox appearance
     .desc = { ent-BaseSpeciesAppearance.desc }
-ent-MobVox = Uristititi McVoks
+ent-MobVox = Urist McVox
     .desc = { ent-AppearanceVox.desc }
 ent-OrganVox = { ent-OrganBaseOrganic }
     .suffix = Vox
