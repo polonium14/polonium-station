@@ -5,4 +5,4 @@ ent-BalloonSyn = syndie balloon
 ent-BalloonNT = nanotrasen balloon
     .desc = Specially designed to inflict maximum psychological damage to Syndicate operatives.
 ent-BalloonCorgi = corgi balloon
-    .desc = Just like owning a real dog — but a lot floatier.
+    .desc = Just like owning a real dog - but a lot floatier.
