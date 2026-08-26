@@ -1,2 +1,2 @@
-ent-ActionConfigureMeleeSpeech = Ustaw okrzyk bojowy
-    .desc = Ustaw własny okrzyk bojowy, który wzniesiesz podczas ataku!
+ent-ActionConfigureMeleeSpeech = Set Battlecry
+    .desc = Set a custom battlecry for when you attack!
