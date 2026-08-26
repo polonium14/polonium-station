@@ -1,4 +1,4 @@
-ent-XenoWeeds = chwasty
-    .desc = Dziwne czarne chwasty...
-ent-XenoWeedsSource = węzeł chwastów
-    .desc = Dziwny, pulsujący węzeł.
+ent-XenoWeeds = weeds
+    .desc = Weird black weeds...
+ent-XenoWeedsSource = weed node
+    .desc = A weird, pulsating node.
