@@ -1,2 +1,2 @@
-narsie-has-risen = NAR'SI SIĘ PRZEBUDZIŁ
+narsie-has-risen = NAR'SIE HAS RISEN
 narsie-has-risen-sender = ???
