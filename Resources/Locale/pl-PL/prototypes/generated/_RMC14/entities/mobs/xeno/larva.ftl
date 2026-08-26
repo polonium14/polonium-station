@@ -1,3 +1,3 @@
-ent-CMXenoLarva = larwa
-    .desc = Wijąca się obca larwa.
+ent-CMXenoLarva = Larva
+    .desc = A wriggling alien larva.
     .gender = female
