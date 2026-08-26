@@ -1,6 +1,6 @@
-ent-BaseLockerTeleporter = teleporter wyposażenia specjalnego
-    .desc = Urządzenie, które pozwala na zamówienie dostawy specjalnego wyposażenia.
-ent-BlueshieldOfficerLockerTeleporter = teleporter szafki oficera niebieskiej tarczy
-    .desc = Urządzenie, które pozwala na zamówienie dostawy szafki oficera niebieskiej tarczy.
-ent-NanorepLockerTeleporter = teleporter szafki przedstawiciela Nanotrasen
-    .desc = Urządzenie, które pozwala na zamówienie dostawy szafki przedstawiciela Nanotrasen.
+ent-BaseLockerTeleporter = special equipment teleporter
+    .desc = Device that allows you to request delivery of special equipment.
+ent-BlueshieldOfficerLockerTeleporter = blueshield locker teleporter
+    .desc = Device that allows you to request delivery of blueshield officer locker.
+ent-NanorepLockerTeleporter = nanotrasen representative locker teleporter
+    .desc = Device that allows you to request delivery of nanotrasen representative locker.
