@@ -1,4 +1,5 @@
-admin-ui-panic-bunker-window-title = Bunkier Paniki
+﻿admin-ui-panic-bunker-window-title = Panic Bunker
+
 admin-ui-panic-bunker-enabled = Bunkier Paniki włączony
 admin-ui-panic-bunker-disabled = Bunkier Paniki wyłączony
 admin-ui-panic-bunker-tooltip = Bunkier paniki ogranicza możliwość dołączania graczy, jeśli ich konto jest zbyt nowe lub nie mają wystarczającego łącznego czasu gry na tym serwerze.
