@@ -10,16 +10,6 @@ bounty-console-manifest-entry =
        *[other] { $item } x{ $amount }
     }
 bounty-console-manifest-reward = Nagroda: ${ $reward }
-bounty-console-manifest-entry-reagent =
-    { $amount ->
-        [1] { $item }
-       *[other] { $item } { $amount }u
-    }
-bounty-console-manifest-entry-gas =
-    { $amount ->
-        [1] { $item }
-       *[other] { $item } { $amount }mol
-    }
 bounty-console-description-label = [color=gray]{ $description }[/color]
 bounty-console-id-label = ID#{ $id }
 bounty-console-flavor-left = Żądania zbierane z lokalnych nieuczciwych handlarzy.
@@ -31,4 +21,14 @@ bounty-console-tab-history-label = Historia
 bounty-console-history-empty-label = Brak histori żądań
 bounty-console-history-notice-completed-label = [color=limegreen]Wypełnione[/color]
 bounty-console-history-notice-skipped-label = [color=red]Pominięte[/color] przez { $id }
+bounty-console-manifest-entry-reagent =
+    { $amount ->
+        [1] { $item }
+       *[other] { $item } { $amount }u
+    }
+bounty-console-manifest-entry-gas =
+    { $amount ->
+        [1] { $item }
+       *[other] { $item } { $amount }mol
+    }
 bounty-console-category-description = { $category } Żądanie: { $id }
