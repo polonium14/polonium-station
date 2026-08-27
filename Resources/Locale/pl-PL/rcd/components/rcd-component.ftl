@@ -32,14 +32,14 @@ rcd-component-windows-and-grilles = Okna i kraty
 rcd-component-airlocks = Śluzy
 rcd-component-electrical = Instalacje elektryczne
 rcd-component-lighting = Oświetlenie
-
-### Prototype names (note: constructable items will be puralized)
-
 rcd-component-piping = Rurociągi
 rcd-component-atmosphericutility = Narzędzia atmosferyczne
 rcd-component-pumpsvalves = Pompy i zawory
 rcd-component-vents = Wentylacja
 rcd-component-sensorsmonitors = Czujniki i monitory
+
+### Prototype names (note: constructable items will be puralized)
+
 rcd-component-deconstruct = demontaż
 rcd-component-floor-steel = stalowa płytka
 rcd-component-plating = pokrycie korpusu
