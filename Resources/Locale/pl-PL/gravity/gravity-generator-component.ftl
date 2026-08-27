@@ -1,5 +1,6 @@
 ### Gravity Generator
 
+
 ## UI
 
 gravity-generator-window-title = Gravity Generator
@@ -28,5 +29,7 @@ gravity-generator-window-power-label = { $draw } / { $max } W
 
 gravity-generator-window-eta-none = N/A
 gravity-generator-window-eta-value = { TOSTRING($left, "m\\:ss") }
+
+## Popup
 
 gravity-generator-unanchoring-failed = Can't unanchor an active gravity generator.
