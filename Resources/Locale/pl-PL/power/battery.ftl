@@ -1,4 +1,4 @@
-## Strings for the battery (SMES/substation) menu
+﻿## Strings for the battery (SMES/substation) menu
 
 battery-menu-footer-left = Niebezpieczeństwo: wysokie napięcie
 battery-menu-footer-right = 7.2 REW. 6
