@@ -1,5 +1,4 @@
-## TabletopGameComponent
-
+﻿## TabletopGameComponent
 tabletop-verb-play-game = Zagraj
 tabletop-verb-dump-pieces = Zrzuć pionki
 tabletop-default-board-name = Gra planszowa
