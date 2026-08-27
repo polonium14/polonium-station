@@ -13,6 +13,10 @@ admin-smite-stomach-removal-self = Twój żołądek wydaje się pusty...
 admin-smite-run-walk-swap-prompt = Musisz nacisnąć shift, aby biegać!
 admin-smite-super-speed-prompt = Poruszasz się z prędkością mach 0.8!
 admin-smite-lung-removal-self = Nie możesz oddychać!
+admin-smite-silicon-laws-bound-self = You are suddenly compelled to follow a strict set of laws!
+
+## Smite names
+
 admin-smite-explode-name = Eksplozja
 admin-smite-chess-dimension-name = Wymiar Szachowy
 admin-smite-set-alight-name = Podpalenie
@@ -32,6 +36,7 @@ admin-smite-buffering-name = Buforowanie
 admin-smite-become-instrument-name = Zamiana w Instrument
 admin-smite-remove-gravity-name = Usunięcie Grawitacji
 admin-smite-reptilian-species-swap-name = Zamiana w Gada
+admin-smite-vulpkanin-species-swap-name = Become Vulpkanin
 admin-smite-locker-stuff-name = Wepchnięcie do Szafki
 admin-smite-headstand-name = Stanie na Głowie
 admin-smite-become-mouse-name = Zamiana w Myszkę
@@ -53,7 +58,16 @@ admin-smite-vomit-organs-name = Wymiot Organami
 admin-smite-ghostkick-name = Kop Duchowy
 admin-smite-nyanify-name = Kocie Uszy
 admin-smite-kill-sign-name = Znak Śmierci
+admin-smite-kill-sign-hidden-name = Hidden Kill Sign
 admin-smite-omni-accent-name = Omni-Akcent
+admin-smite-crawler-name = Crawler
+admin-smite-homing-rod-name = Homing Rod
+admin-smite-homing-rod-slow-name = Slowming Rod
+admin-smite-silicon-laws-bound-name = Zostań Silikonem
+admin-smite-make-stinky-name = Nadaj smród
+
+## Smite descriptions
+
 admin-smite-explode-description = Eksploduj ich.
 admin-smite-chess-dimension-description = Wygnanie do Wymiaru Szachowego.
 admin-smite-set-alight-description = Sprawia, że płoną.
@@ -70,6 +84,7 @@ admin-smite-become-bread-description = Zamienia ich w chleb. Naprawdę, tylko to
 admin-smite-ghostkick-description = Cicho wyrzuca gracza, zrywając połączenie.
 admin-smite-nyanify-description = Na siłę dodaje kocie uszy, bez ucieczki.
 admin-smite-kill-sign-description = Oznacza gracza do zabicia przez innych.
+admin-smite-kill-sign-hidden-description = Marks a player for death by their fellows. Hidden from the targeted player.
 admin-smite-cluwne-description = Zmienia ich w klauna. Strój nie może być zdjęty, a reszta załogi może ich dowolnie zabić.
 admin-smite-anger-pointing-arrows-description = Rozwściecza strzałki, które eksplodując atakują cel.
 admin-smite-dust-description = Redukuje cel do małej kupki popiołu.
@@ -77,6 +92,7 @@ admin-smite-buffering-description = Sprawia, że cel losowo zaczyna „buforowa�
 admin-smite-become-instrument-description = Zamienia ich w supersynth. Naprawdę, to wszystko.
 admin-smite-remove-gravity-description = Daje im antygrawitację.
 admin-smite-reptilian-species-swap-description = Zmienia ich gatunek na Gada. Przydatne wobec rasistów kosmicznych.
+admin-smite-vulpkanin-species-swap-description = It changes their species to Vulpkanin. Useful for people who were being space racist.
 admin-smite-locker-stuff-description = Wpycha ich do (zaspawanej) szafki.
 admin-smite-headstand-description = Odwraca ich sprite do góry nogami.
 admin-smite-become-mouse-description = Zamienia ich w mysz. Pisk!
@@ -92,9 +108,16 @@ admin-smite-disarm-prone-description = Sprawia, że zawsze zostają rozbrojeni i
 admin-smite-garbage-can-description = Zamienia ich w kosz na śmieci, aby podkreślić, czym ci przypominają.
 admin-smite-super-bonk-description = Uderza nimi o każdy stół na stacji i dalej.
 admin-smite-super-bonk-lite-description = Uderza nimi o każdy stół na stacji i dalej. Kończy się, gdy cel umrze.
-admin-smite-terminate-description = Tworzy rolę ducha Terminatora z celem zabicia ich.
 admin-smite-super-slip-description = Poślizguje ich bardzo, bardzo mocno.
 admin-smite-omni-accent-description = Sprawia, że cel mówi niemal każdym dostępnym akcentem.
+admin-smite-crawler-description = Makes the target fall down and be unable to stand up. Remove their hands too for added effect!
+admin-smite-homing-rod-description = Launches a homing immovable rod straight at them.
+admin-smite-homing-rod-slow-description = Launches a slow moving homing immovable rod straight at them.
+admin-smite-silicon-laws-bound-description = Sprawia, że cel jest związany prawami silikonu. Prawo 2: wyskocz przez okno.
+admin-smite-make-stinky-description = Sprawia, że cel śmierdzi, zmuszając go do uwalniania amoniaku. Fuu!
+
+## Tricks descriptions
+
 admin-trick-unbolt-description = Odblokowuje wskazane drzwi.
 admin-trick-bolt-description = Blokuje wskazane drzwi.
 admin-trick-emergency-access-on-description = Włącza dostęp awaryjny dla wskazanych drzwi.
@@ -126,33 +149,4 @@ admin-trick-pause-map-description = Pauzuje wybraną mapę. Uwaga: nie całkowic
 admin-trick-snap-joints-description = Usuwa wszystkie fizyczne połączenia obiektu. Niestety nie łamie każdej kości w ich ciele.
 admin-trick-minigun-fire-description = Sprawia, że wskazana broń strzela jak minigun (bardzo szybko).
 admin-trick-set-bullet-amount-description = Ustawia ilość niewystrzelonych pocisków w broni.
-
-admin-smite-silicon-laws-bound-self = You are suddenly compelled to follow a strict set of laws!
-
-admin-smite-vulpkanin-species-swap-name = Become Vulpkanin
-
-admin-smite-kill-sign-hidden-name = Hidden Kill Sign
-
-admin-smite-crawler-name = Crawler
-
-admin-smite-homing-rod-name = Homing Rod
-
-admin-smite-homing-rod-slow-name = Slowming Rod
-
-admin-smite-silicon-laws-bound-name = Zostań Silikonem
-
-admin-smite-make-stinky-name = Nadaj smród
-
-admin-smite-kill-sign-hidden-description = Marks a player for death by their fellows. Hidden from the targeted player.
-
-admin-smite-vulpkanin-species-swap-description = It changes their species to Vulpkanin. Useful for people who were being space racist.
-
-admin-smite-crawler-description = Makes the target fall down and be unable to stand up. Remove their hands too for added effect!
-
-admin-smite-homing-rod-description = Launches a homing immovable rod straight at them.
-
-admin-smite-homing-rod-slow-description = Launches a slow moving homing immovable rod straight at them.
-
-admin-smite-silicon-laws-bound-description = Sprawia, że cel jest związany prawami silikonu. Prawo 2: wyskocz przez okno.
-
-admin-smite-make-stinky-description = Sprawia, że cel śmierdzi, zmuszając go do uwalniania amoniaku. Fuu!
+admin-smite-terminate-description = Tworzy rolę ducha Terminatora z celem zabicia ich.
