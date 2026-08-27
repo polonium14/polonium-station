@@ -1,4 +1,4 @@
-price-gun-pricing-result = Urządzenie wycenia { $object } na { $price } speso.
+﻿price-gun-pricing-result = The device deems {THE($object)} to be worth {$price} spesos.
 price-gun-verb-text = Wycena
 price-gun-verb-message = Wyceń { $object }.
 price-gun-bounty-complete = Urządzenie potwierdza spełnienie rządania przez zawartość pojemnika.
