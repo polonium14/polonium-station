@@ -5,9 +5,7 @@ microwave-component-interact-using-broken = Jest zepsuta!
 microwave-component-interact-using-container-full = Pojemnik jest pełny!
 microwave-component-interact-using-transfer-success = Przeniesiono { $amount }u
 microwave-component-interact-using-transfer-fail = To nie zadziała!
-microwave-component-suicide-multi-head-others-message = { CAPITALIZE($victim) } próbują upiec swoje głowy!
 microwave-component-suicide-others-message = { CAPITALIZE($victim) } próbuje upiec swoją głowę!
-microwave-component-suicide-multi-head-message = Upiekliście swoje głowy!
 microwave-component-suicide-message =
     { GENDER($victim) ->
         [male] Upiekłeś
@@ -32,3 +30,5 @@ microwave-menu-eject-all-tooltip = Wyparowywuje wszelkie płyny, zwraca obiekty 
 microwave-menu-instant-button = NATYCHMIASTOWE
 microwave-menu-footer-flavor-left = Nie wkładaj żadnej elektroniki, metali lub stworzeń żywych.
 microwave-menu-footer-flavor-right = w1.5
+microwave-component-suicide-multi-head-others-message = { CAPITALIZE($victim) } próbują upiec swoje głowy!
+microwave-component-suicide-multi-head-message = Upiekliście swoje głowy!
