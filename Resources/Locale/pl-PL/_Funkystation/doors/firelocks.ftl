@@ -1,4 +1,4 @@
-firelock-bolt-control-window-title = Nadpisanie bolców
+﻿firelock-bolt-control-window-title = Bolt Override
 firelock-bolt-control-window-status-locked = ZABOLTOWANE
 firelock-bolt-control-window-status-unlocked = ODBLOKOWANE
 firelock-bolt-control-window-status-override = NADPISANIE AKTYWNE
