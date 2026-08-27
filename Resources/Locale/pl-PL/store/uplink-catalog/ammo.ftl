@@ -1,6 +1,5 @@
 # Ammo
 
-# Ammo
 uplink-pistol-magazine-name = Magazynek do pistoletu (.35 auto)
 uplink-pistol-magazine-desc = Magazynek do pistoletu z 10 nabojami. Kompatybilny z Viperem.
 uplink-pistol-magazine-c20r-name = Magazynek do SMG (.35 auto)
