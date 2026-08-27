@@ -1,4 +1,3 @@
-
 admin-verb-make-cosmiccultist = Zmień cel w kosmicznego kultystę.
 admin-verb-text-make-cosmiccultist = Zmień w kosmicznego kultystę
 cmd-cultify-borg-hint = cyborg do uwięzienia w kaplicy (NetEntity lub nazwa użytkownika)
