@@ -1,5 +1,4 @@
 lathe-menu-title = Menu Tokarki
-# a może obrabiarka, brzmi bardziej uniwersalnie tbh
 lathe-menu-queue = Kolejka
 lathe-menu-server-list = Lista serwerów
 lathe-menu-sync = Synchronizuj
@@ -23,8 +22,6 @@ lathe-menu-material-amount =
         [1] { NATURALFIXED($amount, 2) } { $unit }
        *[other] { NATURALFIXED($amount, 2) } { $unit }
     }
-# "Brakuje 1 arkusze", ale brzmi lepiej niż "arkuszes". To jedyne rozwiązanie.
-# Chyba że wymyślisz funkcję do odmiany wszystkich rzeczowników w języku polskim.
 lathe-menu-material-amount-missing =
     { $amount ->
         [1] { NATURALFIXED($amount, 2) } { $unit } { $material } ([color=red]Brakuje { NATURALFIXED($missingAmount, 2) } { $unit }[/color])
@@ -35,15 +32,9 @@ lathe-menu-silo-linked-message = Silos połączony
 lathe-menu-fabricating-message = Wytwarzanie...
 lathe-menu-materials-title = Materiały
 lathe-menu-queue-title = Kolejka budowania
-
 lathe-menu-delete-fabricating-tooltip = Cancel printing the current item.
-
 lathe-menu-delete-item-tooltip = Cancel printing this batch.
-
 lathe-menu-move-up-tooltip = Move this batch ahead in the queue.
-
 lathe-menu-move-down-tooltip = Move this batch back in the queue.
-
-lathe-menu-item-single = {$index}. {$name}
-
-lathe-menu-item-batch = {$index}. {$name} ({$printed}/{$total})
+lathe-menu-item-single = { $index }. { $name }
+lathe-menu-item-batch = { $index }. { $name } ({ $printed }/{ $total })
