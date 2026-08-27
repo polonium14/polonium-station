@@ -1,4 +1,4 @@
-quick-dialog-ui-integer = Liczba..
+﻿quick-dialog-ui-integer = Integer..
 quick-dialog-ui-float = Ilość..
 quick-dialog-ui-short-text = Krótki napis..
 quick-dialog-ui-long-text = Długi napis..
