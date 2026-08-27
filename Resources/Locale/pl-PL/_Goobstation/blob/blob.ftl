@@ -1,4 +1,3 @@
-
 objective-issuer-blob = Blob
 ghost-role-information-blobbernaut-name = Blobbernaut
 ghost-role-information-blobbernaut-description = Jesteś blobbernautem. Musisz bronić Rdzenia Bloba za wszelką cenę.
