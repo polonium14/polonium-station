@@ -1,4 +1,3 @@
-
 flavor-base-whimsy = whimsical
 flavor-complex-thavenflesh = like salt and suffering
 flavor-complex-carpflesh = like alkali and ozone
