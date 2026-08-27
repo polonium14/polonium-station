@@ -6,6 +6,8 @@ cmd-replay-pause-desc = Wstrzymuje odtwarzanie powtórki.
 cmd-replay-pause-help = replay_pause
 cmd-replay-toggle-desc = Wznawia lub wstrzymuje odtwarzanie powtórki.
 cmd-replay-toggle-help = replay_toggle
+cmd-replay-toggle-screenshot-mode-desc = Toggles screenshot mode for replays, hiding the replay control widget.
+cmd-replay-toggle-screenshot-mode-help = replay_toggle_screenshot_mode
 cmd-replay-stop-desc = Zatrzymuje i rozładowuje powtórkę.
 cmd-replay-stop-help = replay_stop
 cmd-replay-load-desc = Załadowuje i rozpoczyna powtórkę.
@@ -46,7 +48,3 @@ replay-time-box-replay-time-label = Czas Nagrywania: { $current } / { $end }  ({
 replay-time-box-server-time-label = Czas Serwera: { $current } / { $end }
 replay-time-box-index-label = Indeks: { $current } / { $total }
 replay-time-box-tick-label = Tik: { $current } / { $total }
-
-cmd-replay-toggle-screenshot-mode-desc = Toggles screenshot mode for replays, hiding the replay control widget.
-
-cmd-replay-toggle-screenshot-mode-help = replay_toggle_screenshot_mode
