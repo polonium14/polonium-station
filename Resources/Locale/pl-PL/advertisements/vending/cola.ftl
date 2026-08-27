@@ -1,4 +1,4 @@
-advertisement-cola-1 = Orzeźwiające!
+﻿advertisement-cola-1 = Refreshing!
 advertisement-cola-2 = Mamy nadzieję, że jesteście spragnieni!
 advertisement-cola-3 = Ponad milion sprzedanych napojów!
 advertisement-cola-4 = Spragniony? A może coli?
