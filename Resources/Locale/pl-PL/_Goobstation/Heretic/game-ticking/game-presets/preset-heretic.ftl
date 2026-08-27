@@ -1,4 +1,3 @@
-
 heretic-roundend-name = heretic
 roundend-prepend-heretic-ascension-success = { $name }, [color=green] has Ascended![/color]
 roundend-prepend-heretic-ascension-fail = { $name }, [color=red] has failed![/color]
