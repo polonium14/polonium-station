@@ -1,4 +1,3 @@
-
 moods-ui-menu-title = Twoje Nastroje
 moods-ui-shared-mood = Współdzielone
 thaven-moods-update-notify = Czujesz Zmiane W Twoim Nastroju!
