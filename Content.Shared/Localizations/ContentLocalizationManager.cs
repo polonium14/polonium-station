@@ -68,11 +68,27 @@ namespace Content.Shared.Localizations
             _loc.AddFunction(culture, "NATURALFIXED", FormatNaturalFixed);
             _loc.AddFunction(culture, "NATURALPERCENT", FormatNaturalPercent);
             _loc.AddFunction(culture, "PLAYTIME", FormatPlaytime);
-            _loc.AddFunction(culture, "MANY", FormatMany);
             _loc.AddFunction(culture, "GASQUANTITY", FormatGasQuantity); // Frontier
 
-            _loc.AddFunction(cultureEn, "MAKEPLURAL", FormatMakePlural);
-            _loc.AddFunction(cultureEn, "MANY", FormatMany);
+            // skipped function as they are breaking Polish grammar
+            _loc.AddFunction(culture, "THE", FormatPassthrough);
+            _loc.AddFunction(culture, "MAKEPLURAL", FormatPassthrough);
+            _loc.AddFunction(culture, "MANY", FormatPassthrough);
+            _loc.AddFunction(culture, "INDEFINITE", FormatEmpty);
+            _loc.AddFunction(cultureEn, "THE", FormatPassthrough);
+            _loc.AddFunction(cultureEn, "MAKEPLURAL", FormatPassthrough);
+            _loc.AddFunction(cultureEn, "MANY", FormatPassthrough);
+            _loc.AddFunction(cultureEn, "INDEFINITE", FormatEmpty);
+        }
+
+        private static ILocValue FormatPassthrough(LocArgs args)
+        {
+            return args.Args.Count > 0 ? args.Args[0] : new LocValueString("");
+        }
+
+        private static ILocValue FormatEmpty(LocArgs args)
+        {
+            return new LocValueString("");
         }
 
         private ILocValue FormatMany(LocArgs args)
