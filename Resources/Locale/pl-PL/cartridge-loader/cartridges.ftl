@@ -1,5 +1,3 @@
-# Polskie tłumaczenie przez: @Tofi-Dev
-
 device-pda-slot-component-slot-name-cartridge = Kartridż
 default-program-name = Program
 notekeeper-program-name = Notatnik
@@ -7,6 +5,7 @@ nano-task-program-name = NanoTask
 news-read-program-name = Wiadomości Stacyjne
 crew-manifest-program-name = Manifest Załogi
 crew-manifest-cartridge-loading = Ładowanie ...
+crew-manifest-cartridge-loading-failed = Failed to load crew manifest!
 net-probe-program-name = NetProbe
 net-probe-scan = Zeskanowano { $device }!
 net-probe-label-name = Nazwa
@@ -20,7 +19,6 @@ log-probe-label-accessor = Odblokowane przez:
 log-probe-label-number = #
 log-probe-print-button = Wydrukuj Logi
 log-probe-printout-device = Zeskanowane Urządzenie: { $name }
-wordle-program-name = Wordle
 log-probe-printout-header = Najnowsze logi:
 log-probe-printout-entry = #{ $number } / { $time } / { $accessor }
 astro-nav-program-name = AstroNav
@@ -96,5 +94,4 @@ wanted-list-status-label = [color=darkgray]status:[/color] { $status ->
 wanted-list-history-table-time-col = Czas
 wanted-list-history-table-reason-col = Przestępstwo
 wanted-list-history-table-initiator-col = Inicjator
-
-crew-manifest-cartridge-loading-failed = Failed to load crew manifest!
+wordle-program-name = Wordle
