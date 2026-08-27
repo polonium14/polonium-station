@@ -12,7 +12,6 @@ uplink-encryption-key-name = Klucze Szyfrujące Syndykatu
 uplink-encryption-key-desc = Dwa klucze szyfrujące umożliwiające dostęp do tajnej częstotliwości naszych specjalnych agentów. Przekaż zapasowy przyjacielowi, ale upewnij się, że nie wpadnie w ręce wroga.
 uplink-binary-translator-key-name = Klucz Tłumacza Binarnych
 uplink-binary-translator-key-desc = Pozwala na dostęp do binarnego kanału silikonów. Nie rozmawiaj na nim jednak, przynajmniej nie bez maski głosowej.
-# Misc
 uplink-cyberpen-name = Długopis Cybersun
 uplink-cyberpen-desc = Długopis działu prawnego Cybersun, nieoceniony do fałszowania dokumentów i ucieczki z więzień. Pachnie nieco twardym światłem i wojennym zyskiem.
 uplink-decoy-disk-name = Fałszywy Dysk Nuklearny
