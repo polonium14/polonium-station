@@ -1,4 +1,3 @@
-
 surgery-verb-text = Rozpocznij operację
 surgery-verb-message = Rozpocznij operację na tym bycie.
 surgery-ui-window-title = Chirurgia
