@@ -28,6 +28,8 @@ reagent-name-milk = mleko
 reagent-desc-milk = Nieprzezroczysta biała ciecz produkowana przez gruczoły mlekowe ssaków.
 reagent-name-milk-goat = mleko kozie
 reagent-desc-milk-goat = Nieprzezroczysta biała ciecz produkowana przez kozę. Wysoka zawartość maślanki.
+reagent-name-milk-sheep = sheep's milk
+reagent-desc-milk-sheep = An opaque white liquid produced by a sheep. High in fat.
 reagent-name-milk-oat = mleko owsiane
 reagent-desc-milk-oat = Zaskakująco smaczne.
 reagent-name-milk-soy = mleko sojowe
@@ -64,7 +66,3 @@ reagent-name-mopwata = mopwoda
 reagent-desc-mopwata = Brudna, stojąca woda z mopa.
 reagent-name-orange-lime-soda = citrus bikeshed
 reagent-desc-orange-lime-soda = Ta soda powinna być pomarańczowa! Nie, powinna być cytrynowo-limonkowa!
-
-reagent-name-milk-sheep = sheep's milk
-
-reagent-desc-milk-sheep = An opaque white liquid produced by a sheep. High in fat.
