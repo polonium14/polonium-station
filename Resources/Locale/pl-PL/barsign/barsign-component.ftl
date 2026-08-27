@@ -4,6 +4,7 @@ barsign-ui-set-label = Ustaw Znak:
 
 # Bar signs prototypes
 
+
 ## The Harmbaton
 
 barsign-prototype-name-harmbaton = The Harmbaton
@@ -131,10 +132,9 @@ barsign-prototype-description-whiskeyechoes = Elitarny bar dla elitarnych oper�
 
 ## EmpBarSign
 
+barsign-prototype-name-empbarsign = glitchy bar sign
 barsign-prototype-description-empbarsign = Coś poszło bardzo nie tak.
 
 ## SignOff
 
 barsign-prototype-description-sign-off = Ten szyld chyba jest wyłączony.
-
-barsign-prototype-name-empbarsign = glitchy bar sign 
