@@ -337,6 +337,9 @@ Dzięki temu unikasz bałaganu w commitach i możesz spokojnie pracować równol
 
 ## 3. Jak tłumaczyć grę?
 
+> [!IMPORTANT]
+> Poniższe informacje dotyczą wyłącznie zaawansowanego tłumaczenia. Do ogólnej lokalizacji używamy [projektu na Crowdinie](https://crowdin.com/project/space-station-14-polska), gdzie odbywa się większość prac.
+
 1. Lokalizacja plików
 
 Wszystkie teksty wyświetlane w interfejsie gry (dialogi, nazwy ról, opisy przedmiotów) znajdują się w dedykowanym katalogu zasobów: `Resources/Locale/`. Każdy język ma swój własny podkatalog (np. `pl-PL` dla polskiego).
@@ -374,7 +377,39 @@ ent-MobAngryBeeWeak = { ent-MobAngryBee }     # odniesienie do klucza innego pli
     .gender = female
 ```
 
-Po dodaniu nowego prototypu do gry, należy pamiętać o dodaniu jego tłumaczenia w odpowiednim pliku `.ftl`. Mamy specjalne [skrypty](https://github.com/polonium14/polonium-station/tree/master/Tools/translationTools) do automatycznego generowania szkieletów plików tłumaczeń dla nowych prototypów.
+
+## 4. Szybkie generowanie tłumaczeń (`translation.bat` / `translation.sh`)
+
+Po dodaniu nowego przedmiotu, moba albo innego prototypu YAML nie musisz ręcznie tworzyć plików `.ftl`. Mamy specjalne [skrypty](https://github.com/polonium14/polonium-station/tree/master/Tools/translationTools), które same wyciągają nazwy, opisy i sufiksy z prototypów, a potem wygenerują (albo uzupełnią) szkielety tłumaczeń.
+
+**Potrzebujesz:** [Pythona 3.9](https://www.python.org/downloads) lub nowszego. Przy pierwszym uruchomieniu skrypt sam doinstaluje zależności.
+
+**Jak użyć:**
+
+1. Wejdź do katalogu `Tools/translationTools`.
+2. Uruchom:
+   - **Windows:** `translation.bat`
+   - **Linux / macOS:** `./translation.sh`
+3. Skrypt wygeneruje brakujące wpisy w:
+   - `Resources/Locale/en-US/prototypes/generated/`
+   - `Resources/Locale/pl-PL/prototypes/generated/`
+4. Otwórz nowy plik `.ftl` po stronie `pl-PL` i zamień angielskie szkice na polskie nazwy i opisy.
+
+Istniejące polskie tłumaczenia zostaną zachowane — skrypt dopisuje tylko to, czego jeszcze nie ma. Struktura folderów w `generated/` odpowiada ścieżkom prototypów (np. prototyp `Resources/Prototypes/Entities/Objects/foo.yml` trafi do `.../prototypes/generated/entities/objects/foo.ftl`).
+
+Szczegółowy opis narzędzi znajdziesz w [README narzędzi tłumaczeniowych](https://github.com/polonium14/polonium-station/blob/master/Tools/translationTools/README.md).
+
+## 5. Jak wygenerować zdjęcie mapy (dla PRów lub na Discorda)?
+
+**Potrzebujesz:** [dotnet SDK v10](https://aka.ms/dotnet-download) lub nowszy.
+
+**Jak użyć:**
+
+1. Wejdź do katalogu korzenia repozytorium.
+2. Uruchom: `dotnet run --project MapRenderer <nazwa_mapy>`. 
+  - Nazwy map muszą odpowiadać nazwom prototypów map w katalogu `Resources/Prototypes/Maps/` ([przykład](https://github.com/polonium14/polonium-station/blob/2beb68aec6959004ed86a71b449d6fddfa2777e6/Resources/Prototypes/Maps/reach.yml#L15)).
+3. Skrypt wygeneruje zdjęcie mapy i zapisze je w katalogu `Resources/MapImages/`. Możesz go skopiować i wrzucać do dowolnego miejsca!
+
 
 ---
 
