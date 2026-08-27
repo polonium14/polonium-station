@@ -14,5 +14,4 @@ mixing-verb-shake = potrząśnij
 default-mixing-success = Mieszasz { $mixed } z { $mixer }
 bible-mixing-success = Pobłogosławiasz { $mixed } z { $mixer }
 spoon-mixing-success = Mieszasz { $mixed } z { $mixer }
-
-handheld-centrifuge-success = You seperate chemicals in the {$mixed}
+handheld-centrifuge-success = You seperate chemicals in the { $mixed }
