@@ -1,4 +1,3 @@
-
 carry-verb = Nieść
 carry-too-heavy = Nie jesteś wystarczająco silny.
 carry-started = { $carrier } próbuje cię podnieść!
