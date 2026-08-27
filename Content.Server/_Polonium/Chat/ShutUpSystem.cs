@@ -1,6 +1,7 @@
 using System.Threading.Tasks;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
+using Content.Server.Chat.Managers;
 using Content.Server.Connection;
 using Content.Server.Discord.DiscordLink;
 using Content.Shared.CCVar;
@@ -24,6 +25,7 @@ public sealed partial class ShutUpSystem : EntitySystem
     [Dependency] private IAdminLogManager _adminLogger = default!;
     [Dependency] private IAdminManager _adminManager = default!;
     [Dependency] private IBanManager _bans = default!;
+    [Dependency] private IChatManager _chat = default!;
     [Dependency] private IConfigurationManager _cfg = default!;
     [Dependency] private DiscordLink _discordLink = default!;
     [Dependency] private ILogManager _logManager = default!;
@@ -176,6 +178,17 @@ public sealed partial class ShutUpSystem : EntitySystem
 
         _bans.CreateServerBan(banInfo);
 
+        var durationText = minutes > 0
+            ? Loc.GetString("chat-auto-ban-admin-duration", ("minutes", minutes))
+            : Loc.GetString("chat-auto-ban-admin-duration-permanent");
+
+        _chat.SendAdminAlert(Loc.GetString("chat-auto-ban-admin-alert",
+            ("player", player.Name),
+            ("duration", durationText),
+            ("reason", reason),
+            ("fragment", fragment),
+            ("message", TruncateForAdminChat(message))));
+
         _adminLogger.Add(LogType.AdminMessage, LogImpact.High,
             $"Chat autoban of {player:Player} for message: {message}");
 
@@ -206,6 +219,12 @@ public sealed partial class ShutUpSystem : EntitySystem
     {
         const int maxContentLength = 508;
         return value.Length <= maxContentLength ? value : value[..maxContentLength];
+    }
+
+    private static string TruncateForAdminChat(string value)
+    {
+        const int maxLength = 200;
+        return value.Length <= maxLength ? value : $"{value[..maxLength]}...";
     }
 
     private async Task SendDiscordLog(string playerName, string userId, string message, string fragment, int minutes)

@@ -8,7 +8,7 @@ public sealed partial class CCVars
         CVarDef.Create("dsc.enabled", true, CVar.SERVER | CVar.REPLICATED);
 
     public static readonly CVarDef<string> DscAdminAlert =
-        CVarDef.Create("dsc.admin_alert", string.Empty, CVar.SERVERONLY);
+        CVarDef.Create("dsc.admin_alert", "{player}: {detail}", CVar.SERVERONLY);
 
     public static readonly CVarDef<string> DscDiscordTitle =
         CVarDef.Create("dsc.discord_title", string.Empty, CVar.SERVERONLY);

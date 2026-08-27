@@ -1,5 +1,8 @@
 chat-auto-ban-reason = Autoban: Prohibited chat content.
 chat-auto-ban-reason-spam = Autoban: You need to calm down.
+chat-auto-ban-admin-alert = Autoban of {$player} ({$duration}): {$reason}. Trigger: {$fragment}. Message: {$message}
+chat-auto-ban-admin-duration = {$minutes} min
+chat-auto-ban-admin-duration-permanent = permanent
 chat-auto-ban-discord-duration = {$minutes} minutes
 chat-auto-ban-discord-duration-permanent = permanent
 chat-auto-ban-discord-embed-title = Chat autoban

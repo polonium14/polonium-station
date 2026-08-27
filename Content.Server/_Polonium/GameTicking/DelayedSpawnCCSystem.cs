@@ -293,12 +293,13 @@ public sealed partial class DelayedSpawnCCSystem : EntitySystem
 
         _lastNotify[key] = now;
 
-        if (!string.IsNullOrEmpty(_adminAlert))
-        {
-            _chat.SendAdminAlert(Apply(_adminAlert,
-                ("player", player.Name),
-                ("detail", detail)));
-        }
+        var template = string.IsNullOrEmpty(_adminAlert)
+            ? "{player}: {detail}"
+            : _adminAlert;
+
+        _chat.SendAdminAlert(Apply(template,
+            ("player", player.Name),
+            ("detail", detail)));
 
         _logs.Add(LogType.AdminMessage, LogImpact.High,
             $"DSC notice for {player:Player}: {detail}");
