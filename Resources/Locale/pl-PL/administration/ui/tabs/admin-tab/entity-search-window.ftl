@@ -8,7 +8,6 @@ admin-entity-search-grid-placeholder = ID gridów oddzielone przecinkami
 admin-entity-search-grid-append = Dodaj bieżący grid
 admin-entity-search-pinned = Przypięte
 admin-entity-search-empty = Wpisz nazwę lub ID prototypu, aby wyszukać.
-admin-entity-search-log = {$admin} uruchomił(a) wyszukiwanie encji i otrzymał(a) {$count} wyników.
-
+admin-entity-search-log = { $admin } uruchomił(a) wyszukiwanie encji i otrzymał(a) { $count } wyników.
 cmd-entitysearchui-desc = Otwiera panel wyszukiwania encji administratora.
 cmd-entitysearchui-help = Użycie: entitysearchui
