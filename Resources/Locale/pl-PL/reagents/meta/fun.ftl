@@ -6,8 +6,8 @@ reagent-name-buzzochloric-bees = buzochlorek pszczół
 reagent-desc-buzzochloric-bees = Pszczóły w płynie... o boże to PSZCZOŁY W PŁYNIE! POMO-
 reagent-name-ground-bee = zmielona pszczoła
 reagent-desc-ground-bee = pszczela zmielizna. ochyda.
-reagent-name-saxoite = saksoityt
-reagent-desc-saxoite = Pachnie jak jazz.
+reagent-name-brass = brass
+reagent-desc-brass = Smells like clockwork.
 reagent-name-licoxide = likoksyd
 reagent-desc-licoxide = Syntetyczny kwas akumulatorowy. Wygląda... elektryzująco.
 reagent-name-razorium = brzytworium
@@ -22,15 +22,9 @@ reagent-name-hew = sok powodujący Hew
 reagent-desc-hew = Czysta esencja odwrotnego pluszaka jaszurki, powoduje Hew!
 reagent-name-corgiessence = corgium
 reagent-desc-corgiessence = Smakuje jak karma dla psów. Najwyraźniej to kwestia gustu.
-
 reagent-name-catessence = felinase
-
 reagent-desc-catessence = A type of carcinogenic enzyme known to break down proteins found within the vocal cords of most animals. Mixing is NOT recommended.
-
 reagent-name-canidessence = caninase
-
 reagent-desc-canidessence = A type of carcinogenic enzyme known to break down proteins found within the vocal cords of most animals. Mixing is NOT recommended.
-
-reagent-name-brass = brass
-
-reagent-desc-brass = Smells like clockwork.
+reagent-name-saxoite = saksoityt
+reagent-desc-saxoite = Pachnie jak jazz.

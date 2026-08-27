@@ -10,7 +10,5 @@ fold-zip-verb = Zapnij
 fold-unzip-verb = Rozepnij
 fold-verb-clothing-jacket = Ściągnij Kurtkę
 unfold-verb-clothing-jacket = Założ Kurtkę
-
 fold-lower-visor-verb = Lower visor
-
 fold-raise-visor-verb = Raise visor

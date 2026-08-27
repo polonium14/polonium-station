@@ -3,11 +3,16 @@ materials-glass = szkło
 materials-reinforced-glass = wzmocnione szkło
 materials-plasma-glass = szkło plazmowe
 materials-reinforced-plasma-glass = wzmocnione szkło plazmowe
+materials-uranium-glass = uranium glass
+materials-reinforced-uranium-glass = reinforced uranium glass
+materials-runed-glass = runed glass
 # Metals
 materials-steel = stal
 materials-gold = złoto
 materials-silver = srebro
 materials-plasteel = plastal
+materials-runed-steel = runed steel
+materials-runed-plasteel = runed plasteel
 # Other
 materials-biomass = biomasa
 materials-cardboard = tektura
@@ -36,13 +41,3 @@ materials-raw-uranium = surowy uran
 materials-raw-bananium = surowy banan
 materials-raw-salt = surowa sól
 materials-raw-diamond = surowy diament
-
-materials-uranium-glass = uranium glass
-
-materials-reinforced-uranium-glass = reinforced uranium glass
-
-materials-runed-glass = runed glass
-
-materials-runed-steel = runed steel
-
-materials-runed-plasteel = runed plasteel

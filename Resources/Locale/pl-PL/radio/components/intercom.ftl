@@ -1,4 +1,4 @@
-intercom-menu-title = Awiofon
+﻿intercom-menu-title = Intercom
 intercom-channel-label = Kanał:
 intercom-button-text-mic = Mik.
 intercom-button-text-speaker = Głoś.

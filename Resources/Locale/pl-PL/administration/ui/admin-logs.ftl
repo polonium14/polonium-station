@@ -1,4 +1,4 @@
-admin-logs-title = Dzienniki Administracyjne
+﻿admin-logs-title = Admin Logs Panel
 admin-logs-count = Pokazano { $showing }/{ $total } z rundy { $round }
 admin-logs-export = Eksportuj
 admin-logs-pop-out = Własne okno

@@ -1,4 +1,3 @@
-
 marking-ThavenHairAfro = Afro
 marking-ThavenHairAfro2 = Afro 2
 marking-ThavenHairBigafro = Afro (duże)

@@ -6,6 +6,8 @@ reagent-name-sodium-carbonate = węglan sodu
 reagent-desc-sodium-carbonate = Biała, bezwonna, sól rozpuszczalna w wodzie pozostawiająca roztwór alkaiczny. Również znany jako soda kalcynowana.
 reagent-name-artifexium = artifeksium
 reagent-desc-artifexium = Lawendowa mieszanka mikroskopijnych fragmentów artefaktów i silnego kwasu. Ma właściwość aktywowania artefaktów.
+reagent-name-artifact-glue = artifact glue
+reagent-desc-artifact-glue = Mixture of glue and artifexium. It can restore durability of nodes in artifact on touch.
 reagent-name-benzene = benzen
 reagent-desc-benzene = Aromatyczny, lekko rakotwórczy, pierścień węgli. Podstawa dla wielu związków organicznych.
 reagent-name-hydroxide = wodorotlenek
@@ -20,11 +22,5 @@ reagent-name-cellulose = celuloza
 reagent-desc-cellulose = Krystaliczny polimer polidekstrozy, rośliny bez tego nie mogą się obejść.
 reagent-name-rororium = rororium
 reagent-desc-rororium = Dziwna substancja która wypełnia rdzenie władców roju którzy panoszą się po asteroidach górniczych. Uważana za źródło ich zdolności regeneracyjnych.
-
-reagent-name-artifact-glue = artifact glue
-
-reagent-desc-artifact-glue = Mixture of glue and artifexium. It can restore durability of nodes in artifact on touch.
-
 reagent-name-lye = lye
-
 reagent-desc-lye = A translucent, orange, alkaline solution used in traditional soap production.

@@ -17,6 +17,7 @@ reagent-desc-dermaline = Zaawansowany środek chemiczny, który jest skuteczniej
 reagent-name-dexalin = deksalina
 reagent-desc-dexalin = Stosowany w leczeniu lekkiego niedotlenienia i utraty krwi. Wymagany odczynnik do wytworzenia Deksaliny Plus.
 reagent-name-dexalin-plus = deksalina plus
+reagent-name-dexalin-plus-saline = dexalin plus & saline
 reagent-desc-dexalin-plus = Stosowany w leczeniu skrajnych przypadków niedotlenienia i utraty krwi. Wypłukuje kardiotoksyne z krwiobiegu.
 reagent-name-epinephrine = epinefryna
 reagent-desc-epinephrine = Skuteczny środek stabilizujący, stosowany w celu uchronienia osoby w stanie krytycznym przed uduszeniem i opatrzenia drobnych obrażeń podczas stanu krytycznego. Wypłukuje Kardiotoksyne z krwiobiegu, zużywając więcej adrenaliny, ale może zwiększyć poziom histaminy. Pomaga skrócić czas ogłuszenia. Często występuje w postaci strzykawek ratunkowych.
@@ -39,16 +40,6 @@ reagent-desc-polypyrylium-oligomers = Fioletowa mieszanina krótkich łańcuchó
 reagent-name-ambuzol = ambuzol
 reagent-desc-ambuzol = Wysoce zaawansowana technologicznie substancja, która jest w stanie zatrzymać rozwój infekcji zombie.
 reagent-name-ambuzol-plus = ambuzol plus
-reagent-name-ambuzol-1 = ambuzol I
-reagent-desc-ambuzol-1 = The ambuzol seems perfectly adept at wiping out the infection before it takes hold.
-reagent-name-ambuzol-2 = ambuzol II
-reagent-desc-ambuzol-2 = Ambuzol two, prevents bites from forming infections.
-reagent-name-ambuzol-3 = ambuzol III
-reagent-desc-ambuzol-3 = Ambuzol three, for those patients already suffering from a rampant zombie tumor.
-reagent-name-ambuzol-4 = ambuzol IV
-reagent-desc-ambuzol-4 = Ambuzol four, for those deeply infected.
-reagent-name-ambuzol-5 = ambuzol V
-reagent-desc-ambuzol-5 = Complete immunity from the Zombie Virus, no matter the strength of the infection.
 reagent-desc-ambuzol-plus = Wzbogacony dodatkowo o omnizynę, uodpornia organizmy żywe na zakażenie.
 reagent-name-pulped-banana-peel = rozdrobniona skórka banana
 reagent-desc-pulped-banana-peel = rozdrobniona skórka banana ma zastosowanie w tamowaniu krwawienia.
@@ -85,19 +76,21 @@ reagent-desc-saline = Mieszanina soli i wody. Powszechnie stosowana w leczeniu o
 reagent-name-lacerinol = skaleczyna
 reagent-desc-lacerinol = To dość nieaktywna substancja chemiczna, która zwiększa syntezę kolagenu do niewiarygodnych poziomów, lecząc rany cięte.
 reagent-name-puncturase = kłujorazyna
+reagent-name-puncturase-tranexamic = puncturase & tranexamic
 reagent-desc-puncturase = Musujący związek chemiczny, który pomaga w odbudowie uszkodzeń powstałych w wyniku przekłucia, pozostawiając niewielkie uszkodzenia tkanek.
 reagent-name-bruizine = siniakozyna
 reagent-desc-bruizine = Pierwotnie substancja ta była stosowana jako lek na kaszel, ale okazało się, że jest niezwykle skuteczna w leczeniu urazów tępych.
 reagent-name-holywater = woda święcona
 reagent-desc-holywater = Najczystsza i najświętsza woda pochodząca prosto z rąk boga, ma magiczną moc leczenia ran.
 reagent-name-pyrazine = poparzyna
+reagent-name-pyrazine-dermaline = pyrazine & dermaline
 reagent-desc-pyrazine = Skutecznie leczy oparzenia od najgorętszych pożarów. Przedawkowanie powoduje masywne krwawienie wewnętrzne.
 reagent-name-insuzine = porażyna
 reagent-desc-insuzine = Szybko regeneruje martwą tkankę powstałą w wyniku porażenia prądem, ale jednocześnie lekko chłodzi. W przypadku przedawkowania całkowicie zamraża pacjenta.
 reagent-name-opporozidone = opporozydon
 reagent-desc-opporozidone = Trudny do syntezy kriogeniczny lek służący do regeneracji gnijących tkanek i mózgu.
-reagent-name-necrosol = śmierciosol
-reagent-desc-necrosol = Substancja nekrotyczna, która podobno potrafi leczyć zamrożone zwłoki. Stosowana w małych dawkach może leczyć i odmładzać rośliny.
+reagent-name-arcryox = arcryox
+reagent-desc-arcryox = A sickeningly blue cryogenics chemical that is able to heal extreme wounds even on the dead. It has trouble stabilizing patients however.
 reagent-name-aloxadone = aloksadon
 reagent-desc-aloxadone = Środek kriogeniczny. Stosowany w leczeniu poważnych oparzeń i odmrożeń poprzez regenerację uszkodzonych tkanek. Działa niezależnie od tego, czy pacjent żyje, czy nie.
 reagent-name-mannitol = mannitol
@@ -108,25 +101,21 @@ reagent-name-potassium-iodide = jodek potasu
 reagent-desc-potassium-iodide = Zmniejsza szkodliwe skutki promieniowania o 90%. Wyłącznie do stosowania profilaktycznego.
 reagent-name-haloperidol = haloperidol
 reagent-desc-haloperidol = Usuwa większość substancji pobudzających i halucynogennych. Zmniejsza działanie narkotyczne i drżenie. Powoduje senność.
-
-reagent-name-dexalin-plus-saline = dexalin plus & saline
-
-reagent-name-puncturase-tranexamic = puncturase & tranexamic
-
-reagent-name-pyrazine-dermaline = pyrazine & dermaline
-
-reagent-name-arcryox = arcryox
-
-reagent-desc-arcryox = A sickeningly blue cryogenics chemical that is able to heal extreme wounds even on the dead. It has trouble stabilizing patients however.
-
-reagent-name-warfarin = warfarin
-
-reagent-desc-warfarin = Commonly used as an anticoagulant medication. Causes blood to have difficulty forming clots. Can cause internal bleeding when overdosed.
-
-reagent-name-osteodine = osteodyna
-
-reagent-desc-osteodine = Mlecznobiały związek regeneracyjny, który zrasta strzaskane kości. 25 jednostek w krwiobiegu zrasta wszystkie złamania w ciele. Przedawkowanie powoduje mdłości i ból stawów.
-
-reagent-desc-heparin = Commonly used as an anticoagulant medication. Causes blood to have difficulty forming clots. Can cause internal bleeding when overdosed.
-
 reagent-name-heparin = heparin
+reagent-desc-heparin = Commonly used as an anticoagulant medication. Causes blood to have difficulty forming clots. Can cause internal bleeding when overdosed.
+reagent-name-ambuzol-1 = ambuzol I
+reagent-desc-ambuzol-1 = The ambuzol seems perfectly adept at wiping out the infection before it takes hold.
+reagent-name-ambuzol-2 = ambuzol II
+reagent-desc-ambuzol-2 = Ambuzol two, prevents bites from forming infections.
+reagent-name-ambuzol-3 = ambuzol III
+reagent-desc-ambuzol-3 = Ambuzol three, for those patients already suffering from a rampant zombie tumor.
+reagent-name-ambuzol-4 = ambuzol IV
+reagent-desc-ambuzol-4 = Ambuzol four, for those deeply infected.
+reagent-name-ambuzol-5 = ambuzol V
+reagent-desc-ambuzol-5 = Complete immunity from the Zombie Virus, no matter the strength of the infection.
+reagent-name-necrosol = śmierciosol
+reagent-desc-necrosol = Substancja nekrotyczna, która podobno potrafi leczyć zamrożone zwłoki. Stosowana w małych dawkach może leczyć i odmładzać rośliny.
+reagent-name-warfarin = warfarin
+reagent-desc-warfarin = Commonly used as an anticoagulant medication. Causes blood to have difficulty forming clots. Can cause internal bleeding when overdosed.
+reagent-name-osteodine = osteodyna
+reagent-desc-osteodine = Mlecznobiały związek regeneracyjny, który zrasta strzaskane kości. 25 jednostek w krwiobiegu zrasta wszystkie złamania w ciele. Przedawkowanie powoduje mdłości i ból stawów.

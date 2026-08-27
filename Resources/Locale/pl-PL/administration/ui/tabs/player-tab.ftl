@@ -1,4 +1,4 @@
-player-tab-player-count = Graczy: { $count }
+﻿player-tab-player-count = Players: { $count }
 player-tab-username = Nazwa używkownika
 player-tab-character = Postać
 player-tab-job = Zawód

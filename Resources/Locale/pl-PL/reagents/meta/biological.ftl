@@ -10,11 +10,13 @@ reagent-name-hemocyanin-blood = niebieska krew
 reagent-desc-hemocyanin-blood = Zawiera miedź w przeciwieństwie do żelaza, nadając jej charakterystyczny niebieski kolor.
 reagent-name-ammonia-blood = krew beztlenowa
 reagent-desc-ammonia-blood = Nic innego w całej galaktyce nie pachnie tak okropnie.
+reagent-name-sulfur-blood = sulfuric blood
+reagent-desc-sulfur-blood = Feels almost acidic.
 reagent-name-zombie-blood = krew żywego trupa
 reagent-desc-zombie-blood = Spożycie nie jest wskazane. Umożliwia przeprowadzanie szczepień przeciwko zarazie.
+reagent-name-unholy-blood = unholy blood
+reagent-desc-unholy-blood = A cursed substance that pulses with dark energy. Those touched by the cult bleed this profane fluid.
 reagent-name-ichor = posoka
-reagent-name-sanguine-perniculate = szkarłatny pernikulat
-reagent-desc-sanguine-perniculate = Ciemnoczerwona krew, która zdaje się wić w maleficznym, złowrogim ruchu. Dotknięcie jej budzi uczucie niepokoju.
 reagent-desc-ichor = Ekstremalnie mocny środek regeneracyjny, udoskonalony przez ewolucję kosmicznej fauny. Produkowana przez system trawienny smoka i traktowana egzotycznie ze względu na gigantyczny wysiłek wymagany do pozyskania.
 reagent-name-fat = tłuszcz
 reagent-desc-fat = Nieważne jak pozyskane, jego zastosowanie jest ważne.
@@ -22,11 +24,5 @@ reagent-name-vomit = wymiociny
 reagent-desc-vomit = Widzisz parę kawałków czyjegoś posiłku w nich.
 reagent-name-grey-matter = szara materia
 reagent-desc-grey-matter = Sok myśli, rzecz która wypływa z twoich uszu.
-
-reagent-name-unholy-blood = unholy blood
-
-reagent-desc-unholy-blood = A cursed substance that pulses with dark energy. Those touched by the cult bleed this profane fluid.
-
-reagent-name-sulfur-blood = sulfuric blood
-
-reagent-desc-sulfur-blood = Feels almost acidic.
+reagent-name-sanguine-perniculate = szkarłatny pernikulat
+reagent-desc-sanguine-perniculate = Ciemnoczerwona krew, która zdaje się wić w maleficznym, złowrogim ruchu. Dotknięcie jej budzi uczucie niepokoju.

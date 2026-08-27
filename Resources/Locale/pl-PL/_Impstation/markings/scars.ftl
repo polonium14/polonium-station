@@ -1,4 +1,3 @@
-
 marking-ArmProstheticLeft = Proteza (Lewe ramię)
 marking-ArmProstheticLeft-arm_r_prosthetic = Proteza (Lewe ramię)
 marking-ArmProstheticLeft-arm_l_prosthetic = Proteza (Lewe ramię)

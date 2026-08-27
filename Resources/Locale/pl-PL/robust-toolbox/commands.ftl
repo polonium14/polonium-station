@@ -1,8 +1,8 @@
-### Lokalizacja dla poleceń konsoli silnika
+### Localization for engine console commands
 
 cmd-hint-float = [float]
 
-## ogólne błędy poleceń
+## generic command errors
 
 cmd-invalid-arg-number-error = Nieprawidłowa liczba argumentów.
 cmd-parse-failure-integer = { $arg } nie jest prawidłową liczbą całkowitą.
@@ -19,7 +19,7 @@ cmd-error-file-not-found = Nie można znaleźć pliku: { $file }.
 cmd-error-dir-not-found = Nie można znaleźć katalogu: { $dir }.
 cmd-failure-no-attached-entity = Do tej powłoki nie jest przypisana żadna encja.
 
-## polecenie 'help'
+## 'help' command
 
 cmd-help-desc = Wyświetla ogólną pomoc lub tekst pomocy dla konkretnego polecenia
 cmd-help-help =
@@ -35,7 +35,7 @@ cmd-help-top = { $command } — { $description }
 cmd-help-invalid-args = Nieprawidłowa liczba argumentów.
 cmd-help-arg-cmdname = [nazwa polecenia]
 
-## polecenie 'cvar'
+## 'cvar' command
 
 cmd-cvar-desc = Pobiera lub ustawia zmienną CVar.
 cmd-cvar-help =
@@ -50,14 +50,14 @@ cmd-cvar-compl-list = Lista dostępnych CVarów
 cmd-cvar-arg-name = <nazwa | ?>
 cmd-cvar-value-hidden = <wartość ukryta>
 
-## polecenie 'cvar_subs'
+## 'cvar_subs' command
 
 cmd-cvar_subs-desc = Wyświetla subskrypcje OnValueChanged dla CVara.
 cmd-cvar_subs-help = Użycie: { $command } <nazwa>
 cmd-cvar_subs-invalid-args = Należy podać dokładnie jeden argument.
 cmd-cvar_subs-arg-name = <nazwa>
 
-## polecenie 'list'
+## 'list' command
 
 cmd-list-desc = Wyświetla listę dostępnych poleceń, z opcjonalnym filtrem
 cmd-list-help =
@@ -67,7 +67,7 @@ cmd-list-help =
 cmd-list-heading = NAZWA POLECENIA       OPIS{ "\u000A" }-------------------------{ "\u000A" }
 cmd-list-arg-filter = [filtr]
 
-## polecenie '>' (remote exec)
+## '>' command, aka remote exec
 
 cmd-remoteexec-desc = Wykonuje polecenia po stronie serwera
 cmd-remoteexec-help =
@@ -75,7 +75,7 @@ cmd-remoteexec-help =
     Wykonuje polecenie na serwerze.
     Jest to konieczne, jeśli istnieje polecenie o tej samej nazwie po stronie klienta, ponieważ zwykłe uruchomienie spowodowałoby uruchomienie polecenia klienta.
 
-## polecenie 'gc'
+## 'gc' command
 
 cmd-gc-desc = Uruchamia GC (Garbage Collector)
 cmd-gc-help =
@@ -86,7 +86,7 @@ cmd-gc-help =
 cmd-gc-failed-parse = Nie udało się sparsować argumentu.
 cmd-gc-arg-generation = [generacja]
 
-## polecenie 'gcf'
+## 'gcf' command
 
 cmd-gcf-desc = Uruchamia pełny GC, z kompaktowaniem LOH i wszystkiego.
 cmd-gcf-help =
@@ -94,7 +94,7 @@ cmd-gcf-help =
     Wykonuje pełny GC.Collect(2, GCCollectionMode.Forced, true, true), dodatkowo kompaktując LOH.
     Może to spowodować zawieszenie na setki milisekund – ostrzeżenie.
 
-## polecenie 'gc_mode'
+## 'gc_mode' command
 
 cmd-gc_mode-desc = Zmienia/odczytuje tryb opóźnienia GC
 cmd-gc_mode-help =
@@ -109,7 +109,7 @@ cmd-gc_mode-attempt = próba zmiany trybu GC: { $prevMode } -> { $mode }
 cmd-gc_mode-result = ustawiony tryb opóźnienia GC: { $mode }
 cmd-gc_mode-arg-type = [typ]
 
-## polecenie 'mem'
+## 'mem' command
 
 cmd-mem-desc = Wyświetla informacje o zarządzanej pamięci
 cmd-mem-help = Użycie: { $command }
@@ -117,16 +117,16 @@ cmd-mem-report =
     Rozmiar sterty: { TOSTRING($heapSize, "N0") }
     Całkowita alokacja: { TOSTRING($totalAllocated, "N0") }
 
-## polecenie 'physics'
+## 'physics' command
 
 cmd-physics-overlay = { $overlay } nie jest rozpoznaną nakładką
 
-## polecenie 'lsasm'
+## 'lsasm' command
 
 cmd-lsasm-desc = Wyświetla listę załadowanych assembly według kontekstu
 cmd-lsasm-help = Użycie: lsasm
 
-## polecenie 'exec'
+## 'exec' command
 
 cmd-exec-desc = Wykonuje plik skryptu z zapisywalnego katalogu danych gry
 cmd-exec-help =
@@ -134,14 +134,14 @@ cmd-exec-help =
     Każda linia w pliku jest wykonywana jako pojedyncze polecenie, chyba że zaczyna się od #
 cmd-exec-arg-filename = <plik>
 
-## polecenie 'dump_net_comps'
+## 'dump_net_comps' command
 
 cmd-dump_net_comps-desc = Wyświetla tabelę komponentów sieciowych.
 cmd-dump_net_comps-help = Użycie: { $command }
 cmd-dump_net_comps-error-writeable = Rejestracja wciąż możliwa do zapisu, identyfikatory sieciowe nie zostały wygenerowane.
 cmd-dump_net_comps-header = Rejestracje komponentów sieciowych:
 
-## polecenie 'dump_event_tables'
+## 'dump_event_tables' command
 
 cmd-dump_event_tables-desc = Wyświetla tabele zdarzeń skierowanych dla encji.
 cmd-dump_event_tables-help = Użycie: { $command } <entityUid>
@@ -149,7 +149,7 @@ cmd-dump_event_tables-missing-arg-entity = Brak argumentu encji
 cmd-dump_event_tables-error-entity = Nieprawidłowa encja
 cmd-dump_event_tables-arg-entity = <entityUid>
 
-## polecenie 'monitor'
+## 'monitor' command
 
 cmd-monitor-desc = Przełącza monitor debugowy w menu F3.
 cmd-monitor-help =
@@ -162,13 +162,13 @@ cmd-monitor-arg-count = Brak argumentu monitora
 cmd-monitor-minus-all-hint = Ukrywa wszystkie monitory
 cmd-monitor-plus-all-hint = Pokazuje wszystkie monitory
 
-## polecenie 'setambientlight'
+## 'setambientlight' command
 
 cmd-set-ambient-light-desc = Umożliwia ustawienie światła otoczenia dla wybranej mapy, w przestrzeni SRGB.
 cmd-set-ambient-light-help = { $command } [mapid] [r g b a]
 cmd-set-ambient-light-parse = Nie można sparsować argumentów jako wartości bajtowych dla koloru.
 
-## Polecenia mapowania
+## Mapping commands
 
 cmd-savemap-desc = Zapisuje mapę na dysk. Nie zapisze mapy po inicjalizacji, chyba że wymuszone.
 cmd-savemap-help = { $command } <MapID> <Ścieżka> [force]
@@ -192,9 +192,10 @@ cmd-hint-loadmap-rotation = [rotacja]
 cmd-hint-loadmap-uids = [float]
 cmd-hint-savebp-id = <Grid EntityID>
 
-## polecenie 'flushcookies'
+## 'flushcookies' command
 
-# Uwaga: polecenie flushcookies pochodzi z Robust.Client.WebView, nie z głównego kodu silnika.
+
+# Note: the flushcookies command is from Robust.Client.WebView, it's not in the main engine code.
 
 cmd-flushcookies-desc = Zapisuje pamięć cookie CEF na dysk
 cmd-flushcookies-help =
@@ -206,13 +207,13 @@ cmd-rldrsc-desc = Przeładowuje zasób.
 cmd-rldrsc-help = Użycie: { $command } <ścieżka> <typ>
 cmd-gridtc-desc = Pobiera liczbę kafelków w siatce.
 cmd-gridtc-help = Użycie: { $command } <gridId>
-# Polecenia po stronie klienta
+# Client-side commands
 cmd-guidump-desc = Zrzuca drzewo GUI do pliku /guidump.txt w danych użytkownika.
 cmd-guidump-help = Użycie: { $command }
 cmd-uitest-desc = Otwiera przykładowe okno testowe UI
 cmd-uitest-help = Użycie: { $command }
 
-## polecenie 'uitest2'
+## 'uitest2' command
 
 cmd-uitest2-desc = Otwiera okno testowe UI kontrolki systemowej
 cmd-uitest2-help = Użycie: { $command } <zakładka>
@@ -245,7 +246,7 @@ cmd-cldbglyr-help =
 cmd-key-info-desc = Pobiera informacje o klawiszu.
 cmd-key-info-help = Użycie: { $command } <Klawisz>
 
-## polecenie 'bind'
+## 'bind' command
 
 cmd-bind-desc = Przypisuje kombinację klawiszy do polecenia wejściowego.
 cmd-bind-help =
@@ -287,6 +288,12 @@ cmd-addmap-desc = Dodaje nową pustą mapę do rundy. Jeśli mapID już istnieje
 cmd-addmap-help = { $command } <mapID> [pre-init]
 cmd-rmmap-desc = Usuwa mapę ze świata. Nie można usunąć nullspace.
 cmd-rmmap-help = { $command } <mapId>
+cmd-pausemap-desc = Pauses a map, pausing all simulation processing on it.
+cmd-pausemap-help = Usage: pausemap <map ID>
+cmd-unpausemap-desc = Unpauses a map, resuming all simulation processing on it.
+cmd-unpausemap-help = Usage: unpausemap <map ID>
+cmd-querymappaused-desc = Check whether a map is paused or not.
+cmd-querymappaused-help = Usage: querymappaused <map ID>
 cmd-savegrid-desc = Zapisuje grid na dysk.
 cmd-savegrid-help = { $command } <gridID> <Ścieżka>
 cmd-testbed-desc = Ładuje środowisko testowe fizyki na wybranej mapie.
@@ -294,7 +301,9 @@ cmd-testbed-help = { $command } <mapid> <test>
 
 ## 'flushcookies' command
 
-# Uwaga: komenda flushcookies pochodzi z Robust.Client.WebView, nie jest częścią głównego silnika.
+
+# Note: the flushcookies command is from Robust.Client.WebView, it's not in the main engine code.
+
 
 ## 'addcomp' command
 
@@ -394,8 +403,6 @@ cmd-spawn-desc = Spawnuje encję określonego typu.
 cmd-spawn-help = { $command } <prototyp> LUB spawn <prototyp> <ID encji względnej> LUB spawn <prototyp> <x> <y>
 cmd-cspawn-desc = Spawnuje encję po stronie klienta u stóp gracza.
 cmd-cspawn-help = { $command } <typ encji>
-cmd-scale-desc = Zwiększa lub zmniejsza rozmiar encji w prosty sposób.
-cmd-scale-help = scale <entityUid> <float>
 cmd-dumpentities-desc = Zrzuca listę encji.
 cmd-dumpentities-help = { $command } listę encji z UID-ami i prototypami.
 cmd-getcomponentregistration-desc = Pobiera informacje o rejestracji komponentu.
@@ -517,17 +524,6 @@ cmd-localization_set_culture-desc = Ustawia DefaultCulture dla klienta Localizat
 cmd-localization_set_culture-help = Użycie: { $command } <nazwaKultury>
 cmd-localization_set_culture-culture-name = <nazwaKultury>
 cmd-localization_set_culture-changed = Lokalizacja zmieniona na { $code } ({ $nativeName } / { $englishName })
-
-cmd-pausemap-desc = Pauses a map, pausing all simulation processing on it.
-
-cmd-pausemap-help = Usage: pausemap <map ID>
-
-cmd-unpausemap-desc = Unpauses a map, resuming all simulation processing on it.
-
-cmd-unpausemap-help = Usage: unpausemap <map ID>
-
-cmd-querymappaused-desc = Check whether a map is paused or not.
-
-cmd-querymappaused-help = Usage: querymappaused <map ID>
-
 cmd-addmap-hint-2 = runMapInit [true / false]
+cmd-scale-desc = Zwiększa lub zmniejsza rozmiar encji w prosty sposób.
+cmd-scale-help = scale <entityUid> <float>

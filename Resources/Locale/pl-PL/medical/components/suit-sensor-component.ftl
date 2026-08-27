@@ -1,9 +1,16 @@
-## Modes
+﻿## Modes
 
 suit-sensor-mode-off = Wył.
 suit-sensor-mode-binary = Binarne
 suit-sensor-mode-vitals = Żywotne
 suit-sensor-mode-cords = Współrzędne
+
+## Descriptions
+
+suit-sensor-description-off = Nothing is reported to the station.
+suit-sensor-description-binary = Wearer death is reported to the station.
+suit-sensor-description-vitals = General wearer health status is reported to the station.
+suit-sensor-description-cords = Wearer health status and position are reported to the station.
 
 ## Popups
 
@@ -20,11 +27,3 @@ suit-sensor-examine-off = Wygląda że czujniki są [color=darkred]wyłączone[/
 suit-sensor-examine-binary = Binarne czujniki życia zdają się być włączone.
 suit-sensor-examine-vitals = Czujniki stanu życia zdają się być włączone.
 suit-sensor-examine-cords = Czujniki stanu życia i współrzędnych zdają się być włączone.
-
-suit-sensor-description-off = Nothing is reported to the station.
-
-suit-sensor-description-binary = Wearer death is reported to the station.
-
-suit-sensor-description-vitals = General wearer health status is reported to the station.
-
-suit-sensor-description-cords = Wearer health status and position are reported to the station.

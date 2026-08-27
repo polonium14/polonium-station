@@ -1,4 +1,4 @@
-### Portal verb text
+﻿### Portal verb text
 
 portal-component-ghost-traverse = Traverse
 portal-component-no-linked-entities = Can't ghost traverse a portal that doesn't have exactly 1 linked portal

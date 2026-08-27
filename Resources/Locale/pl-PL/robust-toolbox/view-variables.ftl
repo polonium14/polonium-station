@@ -25,8 +25,8 @@ vv-sound-loop = Pętla
 vv-sound-play-offset = Przesunięcie Odtwarzania (s)
 vv-sound-variation = Wariacja tonu
 
+## ProtoId
+
 vv-protoid-id-placeholder = Prototype ID
-
 vv-protoid-select-button-label = Select
-
 vv-protoid-addwindow-title = Set Prototype

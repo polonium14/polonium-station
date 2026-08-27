@@ -1,6 +1,8 @@
 ## UI
 
 cargo-console-menu-title = Konsola zamówień logistycznych
+cargo-console-menu-flavor-left = Order even more pizza boxes than usual!
+cargo-console-menu-flavor-right = v2.1
 cargo-console-menu-account-name-label = Konto:{ " " }
 cargo-console-menu-account-name-none-text = Żadne
 cargo-console-menu-account-name-format = [bold][color={ $color }]{ $name }[/color][/bold] [font="Monospace"]\[{ $code }\][/font]
@@ -11,17 +13,21 @@ cargo-console-menu-points-amount = ${ $amount }
 cargo-console-menu-shuttle-status-label = Stan wahadłowca:{ " " }
 cargo-console-menu-shuttle-status-away-text = Oddalony
 cargo-console-menu-order-capacity-label = Pojemność zamówień:{ " " }
+cargo-console-menu-order-capacity-number = { $count }/{ $capacity }
 cargo-console-menu-call-shuttle-button = Aktywuj platformę teleportującą
 cargo-console-menu-permissions-button = Uprawnienia
 cargo-console-menu-categories-label = Kategorie:{ " " }
 cargo-console-menu-search-bar-placeholder = Szukaj
 cargo-console-menu-requests-label = Prośby
 cargo-console-menu-orders-label = Zamówienia
-cargo-console-menu-order-reason-description = Powód: { $reason }
 cargo-console-menu-populate-categories-all-text = Wszystko
-cargo-console-menu-populate-orders-cargo-order-row-product-name-text = Zamówiono przez: {$orderRequester} z [color={$accountColor}]{$account}[/color]
-cargo-console-menu-cargo-order-row-approve-button = Akceptuj
-cargo-console-menu-cargo-order-row-cancel-button = Anuluj
+cargo-console-menu-order-row-title = { $productName } (x{ $orderAmount } for { $orderPrice }$)
+cargo-console-menu-populate-orders-cargo-order-row-product-name-text = Zamówiono przez: { $orderRequester } z [color={ $accountColor }]{ $account }[/color]
+cargo-console-menu-order-row-product-description = Reason: { $orderReason }
+cargo-console-menu-order-row-button-approve = Approve
+cargo-console-menu-order-row-button-cancel = Cancel
+cargo-console-menu-order-row-alerts-reason-absent = The reason is not specified
+cargo-console-menu-order-row-alerts-requester-unknown = Unknown
 cargo-console-menu-tab-title-orders = Zamówienia
 cargo-console-menu-tab-title-funds = Transfery
 cargo-console-menu-account-action-transfer-limit = [bold]Limit transferu:[/bold] ${ $limit }
@@ -61,7 +67,7 @@ cargo-console-paper-print-name = Zamówienie #{ $orderNumber }
 cargo-console-paper-print-text = [head=2]Zamówienie #{ $orderNumber }[/head]
     { "[bold]Przedmiot:[/bold]" } { $itemName } (x{ $orderQuantity })
     { "[bold]Zamówiony przez:[/bold]" } { $requester }
-
+    
     { "[head=3]Informacja o zamówieniu[/head]" }
     { "[bold]Płatnik[/bold]:" } { $account } [font="Monospace"]\[{ $accountcode }\][/font]
     { "[bold]Akceptowane przez:[/bold]" } { $approver }
@@ -79,15 +85,14 @@ cargo-funding-alloc-console-label-code = [bold] Kod [/bold]
 cargo-funding-alloc-console-label-balance = [bold] Balans [/bold]
 cargo-funding-alloc-console-label-cut = [bold] Podział zysku (%) [/bold]
 cargo-funding-alloc-console-label-primary-cut = Udział logistyki w zyskach ze źródeł otwartych (%):
-cargo-funding-alloc-console-label-help = Logistyka otrzymuje { $percent }% wszystkich zysków. Reszta jest rozdzielana jak wskazano poniżej:
 cargo-funding-alloc-console-label-lockbox-cut = Udział logistyki w zyskach ze sprzedaży skrzyń zamkniętych (%):
-cargo-funding-alloc-console-label-help-non-adjustible = Logistyka otrzymuje {$percent}% zysków ze sprzedaży skrzyń otwartych. Reszta jest rozdzielona jak niżej:
+cargo-funding-alloc-console-label-help-non-adjustible = Logistyka otrzymuje { $percent }% zysków ze sprzedaży skrzyń otwartych. Reszta jest rozdzielona jak niżej:
 cargo-funding-alloc-console-label-help-adjustible = Pozostałe zyski ze źródeł otwartych są rozdzielane jak niżej:
 cargo-funding-alloc-console-button-save = Zapisz zmiany
 cargo-funding-alloc-console-label-save-fail = [bold]Rozdział zysków nieprawidłowy![/bold] [color=red]({ $pos ->
         [1] +
        *[-1] -
-    }{$val}%)[/color]
+    }{ $val }%)[/color]
 # Slip template
 cargo-acquisition-slip-body = [head=3]Szczegóły mienia[/head]
     { "[bold]Produkt:[/bold]" } { $product }
@@ -95,25 +100,11 @@ cargo-acquisition-slip-body = [head=3]Szczegóły mienia[/head]
     { "[bold]Koszt jednostkowy:[/bold" }] ${ $unit }
     { "[bold]Liczba:[/bold]" } { $amount }
     { "[bold]Koszt:[/bold]" } ${ $cost }
-
+    
     { "[head=3]Szczegóły zakupu[/head]" }
     { "[bold]Zamawiający:[/bold]" } { $orderer }
     { "[bold]Powód:[/bold]" } { $reason }
-
-cargo-console-menu-flavor-left = Order even more pizza boxes than usual!
-
-cargo-console-menu-flavor-right = v2.1
-
-cargo-console-menu-order-row-title = {$productName} (x{$orderAmount} for {$orderPrice}$)
-
-cargo-console-menu-order-row-product-description = Reason: {$orderReason}
-
-cargo-console-menu-order-row-button-approve = Approve
-
-cargo-console-menu-order-row-button-cancel = Cancel
-
-cargo-console-menu-order-row-alerts-reason-absent = The reason is not specified
-
-cargo-console-menu-order-row-alerts-requester-unknown = Unknown
-
-cargo-console-menu-order-capacity-number = {$count}/{$capacity}
+cargo-console-menu-order-reason-description = Powód: { $reason }
+cargo-console-menu-cargo-order-row-approve-button = Akceptuj
+cargo-console-menu-cargo-order-row-cancel-button = Anuluj
+cargo-funding-alloc-console-label-help = Logistyka otrzymuje { $percent }% wszystkich zysków. Reszta jest rozdzielana jak wskazano poniżej:

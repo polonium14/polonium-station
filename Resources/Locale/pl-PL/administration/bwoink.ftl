@@ -1,4 +1,5 @@
 bwoink-user-title = Wiadomość Administracyjna
+bwoink-admin-title = Admin Help
 bwoink-system-starmute-message-no-other-users = *System: Nikt nie może odebrać twojej wiadomości. Spróbuj zpingować administratorów na Discordzie.
 bwoink-system-messages-being-relayed-to-discord =
     Wszystkie wiadomości są przekazywane administratorom na Discordzie.
@@ -25,9 +26,4 @@ bwoink-system-player-reconnecting = podłączył się ponownie.
 bwoink-system-player-banned = został zbanowany z powodu: { $banReason }
 bwoink-message-admin-only = (Tylko Admini)
 bwoink-message-silent = (C)
-
-# C - cichy
-
-bwoink-admin-title = Admin Help
-
 bwoink-message-name-link = (?)

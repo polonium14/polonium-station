@@ -1,8 +1,3 @@
-### Commands
-
-cmd-parse-failure-unlocknode-arg-num = Nieprawidłowa liczba argumentów
-cmd-parse-failure-unlocknode-invalid-entity = Podany netEntity nie jest prawidłowym węzłem
-
 ### Verbs
 
 artifact-verb-make-always-active = Ustaw artefakt jako zawsze aktywny
@@ -28,3 +23,5 @@ artifact-node-class-3 = [color=#a9ff38]Pneumatyczny[/color]
 artifact-node-class-4 = [color=#2bfff8]Archon[/color]
 artifact-node-class-5 = [color=#7883ff]Luminaryczny[/color]
 artifact-node-class-6 = [color=#be78ff]Demiurg[/color]
+cmd-parse-failure-unlocknode-arg-num = Nieprawidłowa liczba argumentów
+cmd-parse-failure-unlocknode-invalid-entity = Podany netEntity nie jest prawidłowym węzłem

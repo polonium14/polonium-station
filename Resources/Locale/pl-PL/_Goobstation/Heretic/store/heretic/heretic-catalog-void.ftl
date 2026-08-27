@@ -1,4 +1,3 @@
-
 knowledge-path-void-s1-name = Glimmer of Winter
 knowledge-path-void-s1-desc =
     I feel a shimmer in the air, the air around me gets colder.

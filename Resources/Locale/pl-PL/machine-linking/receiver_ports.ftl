@@ -16,10 +16,8 @@ signal-port-name-close = Close
 signal-port-description-close = Closes a device.
 signal-port-name-doorbolt = Door bolt
 signal-port-description-doorbolt = Bolts door when HIGH.
-signal-port-name-trigger = Trigger
-signal-port-description-trigger = Triggers some mechanism on the device.
-signal-port-name-timer = Timer
-signal-port-description-timer = Starts the timer countdown of the device.
+signal-port-name-trigger-receiver = Trigger
+signal-port-description-trigger-receiver = Triggers some mechanism on the device.
 signal-port-name-order-sender = Order sender
 signal-port-description-order-sender = Cargo console order sender
 signal-port-name-order-receiver = Order receiver
@@ -42,10 +40,8 @@ signal-port-name-artifact-analyzer-sender = Console
 signal-port-description-artifact-analyzer-sender = Analysis console signal sender
 signal-port-name-artifact-analyzer-receiver = Pad
 signal-port-description-artifact-analyzer-receiver = Artifact analyzer signal receiver
-
 signal-port-name-body-scanner-sender = Konsola skanera ciała
 signal-port-description-body-scanner-sender = Nadajnik sygnału konsoli skanera ciała
-
 signal-port-name-body-scanner-receiver = Łóżko
 signal-port-description-body-scanner-receiver = Odbiornik sygnału łóżka skanera ciała
 signal-port-name-set-particle-delta = Set particle type: delta
@@ -65,11 +61,9 @@ signal-port-description-logic-input = Input to the edge detector, cannot be a pu
 signal-port-description-logic-memory-input = Signal to load into the memory cell, when enabled.
 signal-port-name-logic-enable = Enable
 signal-port-description-logic-enable = Only loads the input signal into the memory cell when HIGH.
-
-signal-port-name-trigger-receiver = Trigger
-
-signal-port-description-trigger-receiver = Triggers some mechanism on the device.
-
 signal-port-name-logic-random-input = Input Signal
-
 signal-port-description-logic-random-input = Receives any signal to trigger a random output.
+signal-port-name-trigger = Trigger
+signal-port-description-trigger = Triggers some mechanism on the device.
+signal-port-name-timer = Timer
+signal-port-description-timer = Starts the timer countdown of the device.

@@ -1,4 +1,4 @@
-advertisement-discount-1 = Discount Dan, to gość!
+﻿advertisement-discount-1 = Discount Dan, he's the man!
 advertisement-discount-2 = Nie ma nic lepszego na świecie niż kęs tajemnicy.
 advertisement-discount-3 = Nie słuchaj tych innych maszyn, kup mój produkt!
 advertisement-discount-4 = Ilość ponad jakość!

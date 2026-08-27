@@ -1,4 +1,4 @@
-# Popups
+﻿# Popups
 
 network-configurator-device-saved = Urządzenie sieciowe { $device } o adresie { $address } zostało pomyślnie zapisane!
 network-configurator-device-failed = Nie udało się zapisać urządzenia sieciowego { $device }! Nie przypisano adresu!
@@ -22,11 +22,17 @@ network-configurator-link = Łączenie
 network-configurator-title-saved-devices = Zapisane urządzenia
 network-configurator-title-device-configuration = Konfiguracja urządzenia
 network-configurator-ui-clear-button = Wyczyść
-network-configurator-ui-count-label = { $count } { $count ->
-    [one] urządzenie
-    [few] urządzenia
-   *[many] urządzeń
-}
+network-configurator-ui-count-label =
+    { $count } { $count ->
+        [one] urządzenie
+        [few] urządzenia
+       *[many] urządzeń
+    }
+network-configurator-text-set = Set
+network-configurator-text-add = Add
+network-configurator-text-clear = Clear
+network-configurator-text-copy = Copy
+network-configurator-text-show = Show
 # tooltips
 network-configurator-tooltip-set = Ustawia listę urządzeń docelowych
 network-configurator-tooltip-add = Dodaje do listy urządzeń docelowych
@@ -46,13 +52,3 @@ network-configurator-item-status-label =
 # command
 cmd-clearnetworklinkoverlays-desc = Usuń wszystkie nakładki połączeń sieciowych.
 cmd-clearnetworklinkoverlays-help = Sposób użycia: clearnetworklinkoverlays
-
-network-configurator-text-set = Set
-
-network-configurator-text-add = Add
-
-network-configurator-text-clear = Clear
-
-network-configurator-text-copy = Copy
-
-network-configurator-text-show = Show

@@ -1,4 +1,4 @@
-# UI
+﻿# UI
 ban-list-bans = Bany
 ban-list-role-bans = Bany Ról
 ban-list-header-ids = Identyfikatory

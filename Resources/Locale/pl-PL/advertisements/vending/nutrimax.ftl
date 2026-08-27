@@ -1,4 +1,4 @@
-advertisement-nutrimax-1 = Lubimy rośliny!
+﻿advertisement-nutrimax-1 = We like plants!
 advertisement-nutrimax-2 = Nie chcesz trochę?
 advertisement-nutrimax-3 = Najbardziej zielone kciuki w historii.
 advertisement-nutrimax-4 = Lubimy wielkie rośliny.

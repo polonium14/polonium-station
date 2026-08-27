@@ -18,6 +18,7 @@ ui-vote-map-tie = Remis w głosowaniu na mapę! Wybieramy... { $picked }
 ui-vote-map-win = { $winner } wygrała głosowanie na mapę!
 ui-vote-map-notlobby = Głosowanie za mapą jest ważne tylko w lobby przedrundowym!
 ui-vote-map-notlobby-time = Głosowanie za mapą jest ważne tylko w lobby przed rundą, w której pozostało { $time }!
+ui-vote-map-invalid = { $winner } became invalid after the map vote! It will not be selected!
 # Votekick votes
 ui-vote-votekick-unknown-initiator = Gracz
 ui-vote-votekick-unknown-target = Nieznany Gracz
@@ -29,5 +30,3 @@ ui-vote-votekick-success = Votekick gracza { $target } powiódł się. Powód vo
 ui-vote-votekick-failure = Votekick gracza { $target } nie powiódł się. Powód votekick'a: { $reason }
 ui-vote-votekick-not-enough-eligible = Niewystarczająco upoważnionych aktywnych graczy, aby rozpocząć głosowanie: { $voters }/{ $requirement }
 ui-vote-votekick-server-cancelled = Votekick gracza { $target } został anulowane przez serwer.
-
-ui-vote-map-invalid = { $winner } became invalid after the map vote! It will not be selected!

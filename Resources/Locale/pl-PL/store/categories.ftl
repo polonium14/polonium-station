@@ -11,8 +11,8 @@ store-category-implants = Implanty
 store-category-allies = Sojusznicy
 store-category-job = Praca
 store-category-wearables = Wyposażenie
-store-category-pointless = Bezsensowne
 store-discounted-items = Wyprzedaż!
+store-category-pointless = Bezsensowne
 # Revenant
 store-category-abilities = Umiejętności
 # Wizard

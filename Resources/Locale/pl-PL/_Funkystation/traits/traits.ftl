@@ -1,4 +1,3 @@
-
 trait-funky-name = Fajny Akcent
 trait-funky-desc = Dodaj trochę fajności do swoich wypowiedzi.
 trait-british-name = Brytyjski Akcent
