@@ -8,7 +8,6 @@ comp-storage-cant-drop = Nie możesz puścić { $entity }!
 comp-storage-window-title = Przedmiot w pojemniku
 comp-storage-window-weight = { $weight }/{ $maxWeight }, Maksymalny rozmiar: { $size }
 comp-storage-window-slots = Miejsca: { $itemCount }/{ $maxCount }, Maksymalny rozmiar: { $size }
+comp-storage-window-dummy = Dummy
 comp-storage-verb-open-storage = Otwórz pojemnik
 comp-storage-verb-close-storage = Zamknij pojemnik
-
-comp-storage-window-dummy = Dummy
