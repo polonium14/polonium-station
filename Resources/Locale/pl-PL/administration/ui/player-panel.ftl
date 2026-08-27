@@ -6,6 +6,8 @@ player-panel-rolebans = Łącznie banów ról: { $totalRoleBans }
 player-panel-notes = Łącznie notatek: { $totalNotes }
 player-panel-playtime = Łączny czas gry: { $days }d:{ $hours }h:{ $minutes }m
 player-panel-shared-connections = Współdzielonych Połączeń: { $sharedConnections }
+player-panel-trust-score = Trust Score: { TOSTRING($trustScore, "P0") }
+player-panel-account-creation = Account Created: { TOSTRING($date, "yyyy-MM-dd") }
 player-panel-copy-username = Kopiuj
 player-panel-show-notes = Notatki
 player-panel-show-bans = Pokaż Bany
@@ -21,9 +23,4 @@ player-panel-rejuvenate = Przywróć zdrowie
 player-panel-false = False
 player-panel-true = True
 player-panel-follow = Śledź
-
 player-panel-camera = Camera
-
-player-panel-trust-score = Trust Score: {TOSTRING($trustScore, "P0")}
-
-player-panel-account-creation = Account Created: {TOSTRING($date, "yyyy-MM-dd")}
