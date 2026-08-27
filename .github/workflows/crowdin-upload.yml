@@ -1,0 +1,43 @@
+# git -> Crowdin
+name: Crowdin Upload
+
+on:
+  push:
+    branches: [ master ]
+    paths:
+      - 'Resources/Locale/**'
+      - 'crowdin.yml'
+      - '.github/workflows/crowdin-upload.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: crowdin
+  cancel-in-progress: false
+
+jobs:
+  upload:
+    name: Upload to Crowdin
+    if: >-
+      github.repository == 'polonium14/polonium-station' &&
+      (github.event_name == 'workflow_dispatch' || (
+        !contains(fromJSON('["Polonium-bot","PJBot","github-actions[bot]","github-actions"]'), github.actor) &&
+        !contains(fromJSON('["Polonium-bot","PJBot","github-actions[bot]","github-actions"]'), github.event.pusher.name)
+      ))
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v7
+      - name: Upload sources and pl-PL
+        uses: crowdin/github-action@v2
+        with:
+          upload_sources: true
+          upload_translations: true
+          download_translations: false
+          download_sources: false
+          upload_language: pl
+          auto_approve_imported: true
+          import_eq_suggestions: false
+          config: crowdin.yml
+        env:
+          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
+          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
