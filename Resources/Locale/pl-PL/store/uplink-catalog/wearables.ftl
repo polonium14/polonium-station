@@ -4,7 +4,6 @@ uplink-black-jetpack-name = Czarny Dżetpack
 uplink-black-jetpack-desc = Czarny dżetpack. Pozwala latać w przestrzeni kosmicznej. Uzupełnianie paliwa nie jest wliczone, używaj go oszczędnie.
 uplink-chest-rig-name = Kamizelka taktyczna
 uplink-chest-rig-desc = Taktyczna uprząż odporna na wybuchy, używana do przechowywania przedmiotów zdrajcy.
-# Armor
 uplink-chameleon-name = Zestaw Kameleona
 uplink-chameleon-desc = Plecak pełen przedmiotów zawierających technologię kameleona, pozwalającą na przebranie się za praktycznie wszystko na stacji i więcej!
 uplink-clothing-no-slips-shoes-name = Buty Antypoślizgowe
