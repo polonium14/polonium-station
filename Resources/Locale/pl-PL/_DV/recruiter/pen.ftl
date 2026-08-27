@@ -1,4 +1,3 @@
-
 recruiter-pen-bound = You instinctively click your trusty { $pen }.
 recruiter-pen-prick-forbidden = Something deep inside you won't let you prick your thumb on the { $pen }...
 recruiter-pen-prick-full = { CAPITALIZE($pen) } is full!
