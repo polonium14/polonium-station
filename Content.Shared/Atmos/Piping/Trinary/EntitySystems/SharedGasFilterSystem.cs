@@ -1,3 +1,4 @@
+using System.Linq;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Atmos.EntitySystems;
 using Content.Shared.Atmos.Piping.Trinary.Components;
@@ -31,11 +32,10 @@ public abstract partial class SharedGasFilterSystem : EntitySystem
         }
 
         var gasName = Loc.GetString("comp-gas-filter-ui-filter-gas-none");
-        if (ent.Comp.FilteredGas.HasValue)
-        {
-            var gas = _atmosphereSystem.GetGas((Gas)ent.Comp.FilteredGas);
-            gasName = Loc.GetString(gas.Name);
-        }
+        if (ent.Comp.FilterGases.Count > 0)
+            gasName = string.Join(", ", ent.Comp.FilterGases.Select(g => Loc.GetString(_atmosphereSystem.GetGas(g).Name)));
+        else if (ent.Comp.FilteredGas.HasValue)
+            gasName = Loc.GetString(_atmosphereSystem.GetGas((Gas)ent.Comp.FilteredGas).Name);
 
         if (Loc.TryGetString("comp-gas-filter-filtered-gas-examine",
                 out var filteredGasStr,
