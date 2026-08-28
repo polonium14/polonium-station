@@ -3,7 +3,9 @@ using Content.Shared.EntityEffects;
 using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server.BloodCult.EntityEffects.Effects;
+// Polonium: EntityEffect base is Shared, so the client reads rune prototypes referencing
+// !type:DeleteEntityEffect too — the effect (and its system) must live in Shared to resolve.
+namespace Content.Shared.BloodCult.EntityEffects.Effects;
 
 /// <summary>
 /// Entity effect that deletes the target entity when triggered.
