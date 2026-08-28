@@ -45852,7 +45852,7 @@ entities:
     - type: Transform
       parent: 2
       pos: -21.597107,5.693544
-- proto: LightReplacerEmpty
+- proto: LightReplacerFilled
   entities:
   - uid: 4255
     components:
