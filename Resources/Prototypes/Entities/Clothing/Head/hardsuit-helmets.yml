@@ -180,6 +180,8 @@
   components:
   - type: Sprite
     sprite: _Funkystation/Clothing/Head/Hardsuits/salvage.rsi
+    layers:
+    - state: icon
   - type: Clothing
     sprite: _Funkystation/Clothing/Head/Hardsuits/salvage.rsi
   - type: PressureProtection
@@ -439,6 +441,8 @@
   components:
   - type: Sprite
     sprite: _Funkystation/Clothing/Head/Hardsuits/luxury.rsi
+    layers:
+    - state: icon
   - type: Clothing
     sprite: _Funkystation/Clothing/Head/Hardsuits/luxury.rsi
   - type: PressureProtection
