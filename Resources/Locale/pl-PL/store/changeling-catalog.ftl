@@ -16,8 +16,8 @@ changeling-catalog-lethal-sting-name = Śmiertelne Ukąszenie
 changeling-catalog-lethal-sting-desc = Powoduje bardzo powolne obrażenia u celu. Bezużyteczne w walce, ale zapewnia, że będzie potrzebował pomocy medycznej. Można użyć na sobie.
 changeling-catalog-hallucinogenic-sting-name = Ukąszenie Halucynogenne
 changeling-catalog-hallucinogenic-sting-desc = Powoduje u celu odurzenie i trudności z mówieniem. Wprowadza zamęt w załodze. Można użyć na sobie.
-changeling-catalog-screech-name = Screech [TEMPORARY]
-changeling-catalog-screech-desc = We let out a powerful screech that disarms people who hear it without adequate ear protection. THIS ACTION WILL BE MOVED TO THE HORROR FORM WHEN IT IS IMPLEMENTED.
+changeling-catalog-screech-name = Wrzeszcz [TYMCZASOWE}
+changeling-catalog-screech-desc = Wyzwalamy z siebie potężny wrzask, który rozbraja każdego w zasięgu bez odpowiedniej ochrony słuchu. TA AKCJA ZOSTANIE PRZENIESIONA DO FORMY HORRORU, KIEDY ZOSTANIE ZAIMPLEMENTOWANA.
 changeling-catalog-last-resort-name = Ostatnia Deska Ratunku
 changeling-catalog-last-resort-desc =
     Rozbij obecne ciało i uciekaj jako słaby ślimak-głowa. Jeśli zainfekujesz ludzkie zwłoki, możesz wrócić do pełnego ciała changelinga.

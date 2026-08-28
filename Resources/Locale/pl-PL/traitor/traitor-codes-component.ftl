@@ -1,3 +1,3 @@
-traitor-codes-message-singular = syndicate codeword:
-traitor-codes-message-plural = syndicate codewords:
-traitor-codes-none = no known codewords
+traitor-codes-message-singular = słowo kluczowe syndykatu:
+traitor-codes-message-plural = słowa kluczowe syndykatu:
+traitor-codes-none = brak znany słów kluczowych

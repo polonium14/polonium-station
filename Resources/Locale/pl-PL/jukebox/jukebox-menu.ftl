@@ -1,5 +1,5 @@
-jukebox-menu-title = Jukebox
-jukebox-menu-selectedsong = Selected Song:
-jukebox-menu-buttonplay = Play
-jukebox-menu-buttonpause = Pause
-jukebox-menu-buttonstop = Stop
+jukebox-menu-title = Szafa grająca
+jukebox-menu-selectedsong = Wybrany utwór:
+jukebox-menu-buttonplay = Odtwórz
+jukebox-menu-buttonpause = Pauza
+jukebox-menu-buttonstop = Zatrzymaj

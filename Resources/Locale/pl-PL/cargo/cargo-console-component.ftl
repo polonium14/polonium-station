@@ -1,7 +1,7 @@
 ## UI
 
 cargo-console-menu-title = Konsola zamówień logistycznych
-cargo-console-menu-flavor-left = Order even more pizza boxes than usual!
+cargo-console-menu-flavor-left = Zamów jeszcze więcej pizzy niż zwykle!
 cargo-console-menu-flavor-right = v2.1
 cargo-console-menu-account-name-label = Konto:{ " " }
 cargo-console-menu-account-name-none-text = Żadne
@@ -23,11 +23,11 @@ cargo-console-menu-orders-label = Zamówienia
 cargo-console-menu-populate-categories-all-text = Wszystko
 cargo-console-menu-order-row-title = { $productName } (x{ $orderAmount } for { $orderPrice }$)
 cargo-console-menu-populate-orders-cargo-order-row-product-name-text = Zamówiono przez: { $orderRequester } z [color={ $accountColor }]{ $account }[/color]
-cargo-console-menu-order-row-product-description = Reason: { $orderReason }
-cargo-console-menu-order-row-button-approve = Approve
-cargo-console-menu-order-row-button-cancel = Cancel
-cargo-console-menu-order-row-alerts-reason-absent = The reason is not specified
-cargo-console-menu-order-row-alerts-requester-unknown = Unknown
+cargo-console-menu-order-row-product-description = Powód: { $orderReason }
+cargo-console-menu-order-row-button-approve = Akceptuj
+cargo-console-menu-order-row-button-cancel = Anuluj
+cargo-console-menu-order-row-alerts-reason-absent = Powód nie został określony
+cargo-console-menu-order-row-alerts-requester-unknown = Nieznany
 cargo-console-menu-tab-title-orders = Zamówienia
 cargo-console-menu-tab-title-funds = Transfery
 cargo-console-menu-account-action-transfer-limit = [bold]Limit transferu:[/bold] ${ $limit }

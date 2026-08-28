@@ -1,2 +1,2 @@
-ent-BooksBag = books bag
-    .desc = A refined bag to carry your own library.
+ent-BooksBag = torba na książki
+    .desc = Elegancka torba, w której zmieścisz swoją własną bibliotekę.

@@ -13,4 +13,4 @@ necro-heal-success-self = Uderzasz { $target } { $bible }, a { $target } ciało 
 necro-heal-success-others = { CAPITALIZE($user) } uderza { $target } { $bible }, a { $target } ciało deformuje się i topnieje!
 necro-heal-fail-self = Uderzasz { $target } { $bible }, a ono spada z cichym trzaskiem, nie mogąc zranić { $target }.
 necro-heal-fail-others = { CAPITALIZE($user) } uderza { $target } { $bible }, a ono spada z cichym trzaskiem, nie mogąc zranić { $target }.
-bible-religion-opposing = The book objects!
+bible-religion-opposing = Książka się sprzeciwia!

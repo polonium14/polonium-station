@@ -1,2 +1,2 @@
-reagent-effect-status-effect-Anesthesia = surgical anesthesia
-reagent-effect-status-effect-PainNumbness = inability to sense pain
+reagent-effect-status-effect-Anesthesia = znieczulenie chirurgiczne
+reagent-effect-status-effect-PainNumbness = niezdolność do odczuwania bólu

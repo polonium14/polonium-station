@@ -1,2 +1,2 @@
-clothing-metal-hydrogen-armor = metal hydrogen armor
-clothing-atmos-fire-suit = atmos fire suit
+clothing-metal-hydrogen-armor = Zbroja z metalu wodorowego
+clothing-atmos-fire-suit = Atmosferyczny strój pożarny

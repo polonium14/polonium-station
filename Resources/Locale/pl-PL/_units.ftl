@@ -20,21 +20,21 @@ units-si-y = Y
 
 ### Long form
 
-units-si--y-long = yocto
+units-si--y-long = yokto
 units-si--z-long = zepto
 units-si--a-long = atto
 units-si--f-long = femto
-units-si--p-long = pico
-units-si--n-long = nnano
-units-si--u-long = micro
-units-si--m-long = milli
+units-si--p-long = piko
+units-si--n-long = nano
+units-si--u-long = mikro
+units-si--m-long = mili
 units-si-long = { "" }
 units-si-k-long = kilo
 units-si-m-long = mega
 units-si-g-long = giga
 units-si-t-long = tera
 units-si-p-long = peta
-units-si-e-long = exa
+units-si-e-long = eksa
 units-si-z-long = zetta
 units-si-y-long = yotta
 
@@ -46,12 +46,12 @@ units-pascal = Pa
 units-k-pascal = kPa
 units-m-pascal = MPa
 units-g-pascal = GPa
-units-u--pascal-long = Micropascal
-units-m--pascal-long = Millipascal
-units-pascal-long = Pascal
-units-k-pascal-long = Kilopascal
-units-m-pascal-long = Megapascal
-units-g-pascal-long = Gigapascal
+units-u--pascal-long = Mikropaskal
+units-m--pascal-long = Milipaskal
+units-pascal-long = Paskal
+units-k-pascal-long = Kilopaskal
+units-m-pascal-long = Megapaskal
+units-g-pascal-long = Gigapaskal
 
 ## Watts (Power)
 
@@ -61,12 +61,12 @@ units-watt = W
 units-k-watt = kW
 units-m-watt = MW
 units-g-watt = GW
-units-u--watt-long = Microwatt
-units-m--watt-long = Milliwatt
-units-watt-long = Watt
-units-k-watt-long = Kilowatt
-units-m-watt-long = Megawatt
-units-g-watt-long = Gigawatt
+units-u--watt-long = Mikrowat
+units-m--watt-long = Miliwat
+units-watt-long = Wat
+units-k-watt-long = Kilowat
+units-m-watt-long = Megawat
+units-g-watt-long = Gigawat
 
 ## Joule (Energy)
 
@@ -75,11 +75,11 @@ units-m--joule = mJ
 units-joule = J
 units-k-joule = kJ
 units-m-joule = MJ
-units-u--joule-long = Microjoule
-units-m--joule-long = Millijoule
-units-joule-long = Joule
-units-k-joule-long = Kilojoule
-units-m-joule-long = Megajoule
+units-u--joule-long = Mikrodżul
+units-m--joule-long = Milidżul
+units-joule-long = Dżul
+units-k-joule-long = Kilodżul
+units-m-joule-long = Megadżul
 
 ## Kelvin (Temperature)
 
@@ -89,9 +89,9 @@ units-kelvin = K
 units-k-kelvin = kK
 units-m-kelvin = MK
 units-g-kelvin = GK
-units-u--kelvin-long = Microkelvin
-units-m--kelvin-long = Millikelvin
-units-kelvin-long = Kelvin
-units-k-kelvin-long = Kilokelvin
-units-m-kelvin-long = Megakelvin
-units-g-kelvin-long = Gigakelvin
+units-u--kelvin-long = Mikrokelwin
+units-m--kelvin-long = Milikelwin
+units-kelvin-long = Kelwin
+units-k-kelvin-long = Kilokelwin
+units-m-kelvin-long = Megakelwin
+units-g-kelvin-long = Gigakelwin

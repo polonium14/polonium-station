@@ -5,4 +5,4 @@ recruiter-pen-pricked = You prick your thumb on { $pen } and it fills up with yo
 recruiter-pen-locked = { CAPITALIZE($pen) }'s clicker is jammed!
 recruiter-pen-empty = { CAPITALIZE($pen) } has no ink in it... Perhaps give it a click?
 recruiter-pen-sign-forbidden = Something deep inside you won't let you sign using { $pen }...
-recruiter-pen-name = recruiter pen
+recruiter-pen-name = Długopis rekrutera

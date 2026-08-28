@@ -1,6 +1,6 @@
-container-verb-text-enter = Enter
-container-verb-text-empty = Empty
+container-verb-text-enter = Wprowadź
+container-verb-text-empty = Pusty
 
 ## missed
 
-container-thrown-missed = Missed!
+container-thrown-missed = Chybiony!

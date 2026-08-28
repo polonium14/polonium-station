@@ -4,4 +4,4 @@ admin-smite-bluespace-name = Bluespace
 
 ## Descriptions
 
-admin-smite-bluespace-description = Bluespace this object to 'safety'.
+admin-smite-bluespace-description = Przenieś ten obiekt do 'bezpieczeństwa' przez Bluespace
