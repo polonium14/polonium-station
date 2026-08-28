@@ -594,6 +594,7 @@
 
 - type: entity
   id: OrganBaseHeadSexed
+  name: head
   abstract: true
   components:
   - type: Sprite
@@ -607,6 +608,7 @@
 
 - type: entity
   id: OrganBaseTorsoSexed
+  name: torso
   abstract: true
   components:
   - type: Sprite
