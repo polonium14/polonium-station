@@ -8,3 +8,7 @@ ui-escape-wiki = Wiki
 ui-escape-disconnect = Rozłącz
 ui-escape-quit = Wyjdź
 ui-escape-feedback = Feedback
+
+ui-escape-remarks = Admin Remarks
+
+ui-escape-remarks-button-disabled = This functionality has been disabled by the server.

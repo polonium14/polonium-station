@@ -9,3 +9,5 @@ comp-gas-filter-ui-filter-gas-confirm = Ustaw Gaz
 comp-gas-filter-ui-filter-gas-none = Żaden
 comp-gas-filter-ui-filter-gas-all = Wszystkie
 comp-gas-filter-ui-needs-anchor = Anchor it first!
+
+comp-gas-filter-filtered-gas-examine = It is filtering [color={$statusColor}]{$filteredGas}[/color].

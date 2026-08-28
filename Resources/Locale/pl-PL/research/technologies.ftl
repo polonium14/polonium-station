@@ -80,3 +80,5 @@ research-technology-portable-fission = Portable Fission
 research-technology-homebrewed-implants = Homebrewed Implants
 research-technology-shuttle-salvage-weapons = Technologia Wyrzutni Odzyskowych
 research-technology-shuttle-salvage-equipment = Technologia Sprzętu Promów Odzyskowychresearch-technology-night-vision = Noktowizja
+
+research-technology-telesci = TeleSci

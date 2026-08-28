@@ -327,7 +327,6 @@ flavor-complex-manhattan-project = Teraz stałem się Śmiercią, niszczycielem 
 flavor-complex-margarita = bardzo zły kac
 flavor-complex-martini = film szpiegowski
 flavor-complex-mojito = wejście w cień po pobycie na gorącym słońcu
-flavor-complex-neurotoxin = podziemna placówka badawcza
 flavor-complex-patron = serenada mariachi
 flavor-complex-radler = lemoniada z prądem
 flavor-complex-red-mead = wikińska bitwa

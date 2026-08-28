@@ -5,3 +5,5 @@ clumsy-gun-fail-message = The gun blows up in your face!
 clumsy-hypospray-fail-message = Oops! You injected yourself.
 clumsy-catch-fail-message-user = { CAPITALIZE(THE($item)) } hits your head!
 clumsy-catch-fail-message-others = { CAPITALIZE(THE($item)) } hits { THE($catcher) }'s head!
+
+clumsy-defibrillator-fail-message = Oops! You zapped yourself.

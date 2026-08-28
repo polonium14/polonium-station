@@ -7,3 +7,5 @@ name-identifier-format-silicon = Si-{ $number }
 name-identifier-format-xenoborg = Xi-{ $number }
 name-identifier-format-station-ai = AI-{ $number }
 name-identifier-format-telepad = TELE-{ $number }
+
+name-identifier-format-parens = ({$number})

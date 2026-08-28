@@ -67,3 +67,11 @@ signal-port-name-trigger = Trigger
 signal-port-description-trigger = Triggers some mechanism on the device.
 signal-port-name-timer = Timer
 signal-port-description-timer = Starts the timer countdown of the device.
+
+signal-port-name-target-receiver = Target receiver
+
+signal-port-description-target-receiver = Receives target information from a target finder.
+
+signal-port-name-target-source = Target Finder
+
+signal-port-description-target-source = Sends target information to a target receiver.

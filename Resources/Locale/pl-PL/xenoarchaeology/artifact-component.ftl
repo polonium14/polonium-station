@@ -25,3 +25,5 @@ artifact-node-class-5 = [color=#7883ff]Luminaryczny[/color]
 artifact-node-class-6 = [color=#be78ff]Demiurg[/color]
 cmd-parse-failure-unlocknode-arg-num = Nieprawidłowa liczba argumentów
 cmd-parse-failure-unlocknode-invalid-entity = Podany netEntity nie jest prawidłowym węzłem
+
+artifact-unlock-state-continue = The shifting continues, intensifying...
