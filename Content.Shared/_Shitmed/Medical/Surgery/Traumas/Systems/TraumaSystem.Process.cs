@@ -534,6 +534,9 @@ public partial class TraumaSystem
         if (TerminatingOrDeleted(inflicter) || inflicter.Comp.TraumaContainer is null)
             return EntityUid.Invalid;
 
+        if (!_net.IsServer)
+            return EntityUid.Invalid;
+
         foreach (var trauma in inflicter.Comp.TraumaContainer.ContainedEntities)
         {
             var containedTraumaComp = Comp<TraumaComponent>(trauma);

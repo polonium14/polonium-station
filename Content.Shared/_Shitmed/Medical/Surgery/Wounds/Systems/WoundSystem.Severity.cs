@@ -216,7 +216,7 @@ public sealed partial class WoundSystem
             UpdateWoundableAppearance(woundableUid, woundable);
         }
 
-        QueueDel(wound);
+        PredictedQueueDel(wound);
     }
 
     private void CheckWoundableSeverityThresholds(EntityUid woundable, WoundableComponent? component = null)
