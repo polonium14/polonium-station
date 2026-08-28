@@ -9,7 +9,6 @@ using Content.Shared.Fluids;
 using Content.Shared.Fluids.Components;
 using Content.Shared.Interaction;
 using Content.Shared.Timing;
-using Content.Shared.Forensics.Systems;
 using Content.Shared.Forensics.Components;
 
 namespace Content.Server.BloodCult.EntitySystems;

@@ -16,7 +16,6 @@ using System.Linq;
 using Content.Shared.Chemistry;
 using Content.Shared.Damage.Systems;
 using Content.Server.Destructible;
-using Content.Shared.Forensics.Systems;
 using Content.Shared.Forensics.Components;
 
 namespace Content.Server._Funkystation.WashingMachine;

@@ -20,7 +20,6 @@ using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
-using Content.Shared.Forensics.Systems;
 using Content.Shared.Forensics.Components;
 
 namespace Content.Server._Funkystation.WallStains.Systems;

@@ -69,7 +69,6 @@ using Content.Shared.Chat;
 using Robust.Shared.Console;
 using Content.Server.Administration;
 using Content.Shared.Administration;
-using Content.Shared.Speech;
 using Content.Server.Speech.Components;
 using Content.Shared.Emoting;
 using Content.Shared.Actions;
@@ -193,7 +192,7 @@ public sealed partial class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleCo
 	[Dependency] private ActionContainerSystem _actionContainer = default!;
 	[Dependency] private SharedPointLightSystem _pointLight = default!;
 	[Dependency] private SharedUserInterfaceSystem _uiSystem = default!;
-    [Dependency] private AliveHumanoidTargetSystem _target = default!; 
+    [Dependency] private AliveHumanoidTargetSystem _target = default!;
 
 	public readonly string CultComponentId = "BloodCultist";
 

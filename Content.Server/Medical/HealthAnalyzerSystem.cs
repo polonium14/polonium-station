@@ -79,7 +79,6 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.Timing;
-using Content.Server.Body.Systems;
 
 using Robust.Shared.Prototypes;
 using Content.Shared.Body.Systems;
