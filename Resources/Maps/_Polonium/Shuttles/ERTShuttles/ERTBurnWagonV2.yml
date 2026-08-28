@@ -404,7 +404,6 @@ entities:
   - uid: 85
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
       pos: 3.5,-12.5
       parent: 1
 - proto: AirlockShuttleSyndicate
@@ -1245,10 +1244,10 @@ entities:
         Wiecie, o co chodzi.
 
 
-        Wchodzicie, zabijacie zombie, zabezpieczacie prom ewakuacyjny. Upewnijcie się, że żadne zombie nie dotrą do CD (Centralnego Dowództwa). 
+        Wchodzicie, zabijacie zombie, zabezpieczacie prom ewakuacyjny. Upewnijcie się, że żadne zombie nie dotrą do CD (Centralnego Dowództwa).
 
 
-        Zabezpieczcie wszystkich ocalałych; lekarze i personel CD (Centralnego Dowództwa) mają najwyższy priorytet.  
+        Zabezpieczcie wszystkich ocalałych; lekarze i personel CD (Centralnego Dowództwa) mają najwyższy priorytet.
 
 
         Wiemy, że nikt z was nie umie operować, więc lekarze będą bardzo ważni. Dodatkowy Ambuzol+ (nie zwykły Ambuzol, tylko ten z symbolem plusa na końcu) dawajcie wyłącznie lekarzom, aby mogli wyleczyć się z choroby zombie i wyleczyć pozostałych ocalałych.
@@ -1257,7 +1256,7 @@ entities:
         Wierzymy w was i zapewniliśmy dodatkowe racje żywnościowe (znajdziecie je na swoich siedzeniach) na tę bardzo ważną misję.
 
 
-        Powodzenia! 
+        Powodzenia!
     - type: Physics
       angularDamping: 0
       linearDamping: 0
@@ -1271,10 +1270,10 @@ entities:
         Wiecie, o co chodzi.
 
 
-        Wchodzicie, zabijacie zombie, zabezpieczacie prom ewakuacyjny. Upewnijcie się, że żadne zombie nie dotrą do CD (Centralnego Dowództwa). 
+        Wchodzicie, zabijacie zombie, zabezpieczacie prom ewakuacyjny. Upewnijcie się, że żadne zombie nie dotrą do CD (Centralnego Dowództwa).
 
 
-        Zabezpieczcie wszystkich ocalałych; lekarze i personel CD (Centralnego Dowództwa) mają najwyższy priorytet.  
+        Zabezpieczcie wszystkich ocalałych; lekarze i personel CD (Centralnego Dowództwa) mają najwyższy priorytet.
 
 
         Wiemy, że nikt z was nie umie operować, więc lekarze będą bardzo ważni. Dodatkowy Ambuzol+ (nie zwykły Ambuzol, tylko ten z symbolem plusa na końcu) dawajcie wyłącznie lekarzom, aby mogli wyleczyć się z choroby zombie i wyleczyć pozostałych ocalałych.
@@ -1283,7 +1282,7 @@ entities:
         Wierzymy w was i zapewniliśmy dodatkowe racje żywnościowe (znajdziecie je na swoich siedzeniach) na tę bardzo ważną misję.
 
 
-        Powodzenia! 
+        Powodzenia!
     - type: Physics
       angularDamping: 0
       linearDamping: 0
@@ -1297,10 +1296,10 @@ entities:
         Wiecie, o co chodzi.
 
 
-        Wchodzicie, zabijacie zombie, zabezpieczacie prom ewakuacyjny. Upewnijcie się, że żadne zombie nie dotrą do CD (Centralnego Dowództwa). 
+        Wchodzicie, zabijacie zombie, zabezpieczacie prom ewakuacyjny. Upewnijcie się, że żadne zombie nie dotrą do CD (Centralnego Dowództwa).
 
 
-        Zabezpieczcie wszystkich ocalałych; lekarze i personel CD (Centralnego Dowództwa) mają najwyższy priorytet.  
+        Zabezpieczcie wszystkich ocalałych; lekarze i personel CD (Centralnego Dowództwa) mają najwyższy priorytet.
 
 
         Wiemy, że nikt z was nie umie operować, więc lekarze będą bardzo ważni. Dodatkowy Ambuzol+ (nie zwykły Ambuzol, tylko ten z symbolem plusa na końcu) dawajcie wyłącznie lekarzom, aby mogli wyleczyć się z choroby zombie i wyleczyć pozostałych ocalałych.
@@ -1309,7 +1308,7 @@ entities:
         Wierzymy w was i zapewniliśmy dodatkowe racje żywnościowe (znajdziecie je na swoich siedzeniach) na tę bardzo ważną misję.
 
 
-        Powodzenia! 
+        Powodzenia!
     - type: Physics
       angularDamping: 0
       linearDamping: 0
@@ -1323,10 +1322,10 @@ entities:
         Wiecie, o co chodzi.
 
 
-        Wchodzicie, zabijacie zombie, zabezpieczacie prom ewakuacyjny. Upewnijcie się, że żadne zombie nie dotrą do CD (Centralnego Dowództwa). 
+        Wchodzicie, zabijacie zombie, zabezpieczacie prom ewakuacyjny. Upewnijcie się, że żadne zombie nie dotrą do CD (Centralnego Dowództwa).
 
 
-        Zabezpieczcie wszystkich ocalałych; lekarze i personel CD (Centralnego Dowództwa) mają najwyższy priorytet.  
+        Zabezpieczcie wszystkich ocalałych; lekarze i personel CD (Centralnego Dowództwa) mają najwyższy priorytet.
 
 
         Wiemy, że nikt z was nie umie operować, więc lekarze będą bardzo ważni. Dodatkowy Ambuzol+ (nie zwykły Ambuzol, tylko ten z symbolem plusa na końcu) dawajcie wyłącznie lekarzom, aby mogli wyleczyć się z choroby zombie i wyleczyć pozostałych ocalałych.
@@ -1335,7 +1334,7 @@ entities:
         Wierzymy w was i zapewniliśmy dodatkowe racje żywnościowe (znajdziecie je na swoich siedzeniach) na tę bardzo ważną misję.
 
 
-        Powodzenia! 
+        Powodzenia!
   - uid: 241
     components:
     - type: Transform
@@ -1346,10 +1345,10 @@ entities:
         Wiecie, o co chodzi.
 
 
-        Wchodzicie, zabijacie zombie, zabezpieczacie prom ewakuacyjny. Upewnijcie się, że żadne zombie nie dotrą do CD (Centralnego Dowództwa). 
+        Wchodzicie, zabijacie zombie, zabezpieczacie prom ewakuacyjny. Upewnijcie się, że żadne zombie nie dotrą do CD (Centralnego Dowództwa).
 
 
-        Zabezpieczcie wszystkich ocalałych; lekarze i personel CD (Centralnego Dowództwa) mają najwyższy priorytet.  
+        Zabezpieczcie wszystkich ocalałych; lekarze i personel CD (Centralnego Dowództwa) mają najwyższy priorytet.
 
 
         Wiemy, że nikt z was nie umie operować, więc lekarze będą bardzo ważni. Dodatkowy Ambuzol+ (nie zwykły Ambuzol, tylko ten z symbolem plusa na końcu) dawajcie wyłącznie lekarzom, aby mogli wyleczyć się z choroby zombie i wyleczyć pozostałych ocalałych.
@@ -1358,7 +1357,7 @@ entities:
         Wierzymy w was i zapewniliśmy dodatkowe racje żywnościowe (znajdziecie je na swoich siedzeniach) na tę bardzo ważną misję.
 
 
-        Powodzenia! 
+        Powodzenia!
   - uid: 242
     components:
     - type: Transform
@@ -1369,10 +1368,10 @@ entities:
         Wiecie, o co chodzi.
 
 
-        Wchodzicie, zabijacie zombie, zabezpieczacie prom ewakuacyjny. Upewnijcie się, że żadne zombie nie dotrą do CD (Centralnego Dowództwa). 
+        Wchodzicie, zabijacie zombie, zabezpieczacie prom ewakuacyjny. Upewnijcie się, że żadne zombie nie dotrą do CD (Centralnego Dowództwa).
 
 
-        Zabezpieczcie wszystkich ocalałych; lekarze i personel CD (Centralnego Dowództwa) mają najwyższy priorytet.  
+        Zabezpieczcie wszystkich ocalałych; lekarze i personel CD (Centralnego Dowództwa) mają najwyższy priorytet.
 
 
         Wiemy, że nikt z was nie umie operować, więc lekarze będą bardzo ważni. Dodatkowy Ambuzol+ (nie zwykły Ambuzol, tylko ten z symbolem plusa na końcu) dawajcie wyłącznie lekarzom, aby mogli wyleczyć się z choroby zombie i wyleczyć pozostałych ocalałych.
@@ -1381,7 +1380,7 @@ entities:
         Wierzymy w was i zapewniliśmy dodatkowe racje żywnościowe (znajdziecie je na swoich siedzeniach) na tę bardzo ważną misję.
 
 
-        Powodzenia! 
+        Powodzenia!
   - uid: 243
     components:
     - type: Transform
@@ -1392,10 +1391,10 @@ entities:
         Wiecie, o co chodzi.
 
 
-        Wchodzicie, zabijacie zombie, zabezpieczacie prom ewakuacyjny. Upewnijcie się, że żadne zombie nie dotrą do CD (Centralnego Dowództwa). 
+        Wchodzicie, zabijacie zombie, zabezpieczacie prom ewakuacyjny. Upewnijcie się, że żadne zombie nie dotrą do CD (Centralnego Dowództwa).
 
 
-        Zabezpieczcie wszystkich ocalałych; lekarze i personel CD (Centralnego Dowództwa) mają najwyższy priorytet.  
+        Zabezpieczcie wszystkich ocalałych; lekarze i personel CD (Centralnego Dowództwa) mają najwyższy priorytet.
 
 
         Wiemy, że nikt z was nie umie operować, więc lekarze będą bardzo ważni. Dodatkowy Ambuzol+ (nie zwykły Ambuzol, tylko ten z symbolem plusa na końcu) dawajcie wyłącznie lekarzom, aby mogli wyleczyć się z choroby zombie i wyleczyć pozostałych ocalałych.
@@ -1404,7 +1403,7 @@ entities:
         Wierzymy w was i zapewniliśmy dodatkowe racje żywnościowe (znajdziecie je na swoich siedzeniach) na tę bardzo ważną misję.
 
 
-        Powodzenia! 
+        Powodzenia!
   - uid: 244
     components:
     - type: Transform
@@ -1415,10 +1414,10 @@ entities:
         Wiecie, o co chodzi.
 
 
-        Wchodzicie, zabijacie zombie, zabezpieczacie prom ewakuacyjny. Upewnijcie się, że żadne zombie nie dotrą do CD (Centralnego Dowództwa). 
+        Wchodzicie, zabijacie zombie, zabezpieczacie prom ewakuacyjny. Upewnijcie się, że żadne zombie nie dotrą do CD (Centralnego Dowództwa).
 
 
-        Zabezpieczcie wszystkich ocalałych; lekarze i personel CD (Centralnego Dowództwa) mają najwyższy priorytet.  
+        Zabezpieczcie wszystkich ocalałych; lekarze i personel CD (Centralnego Dowództwa) mają najwyższy priorytet.
 
 
         Wiemy, że nikt z was nie umie operować, więc lekarze będą bardzo ważni. Dodatkowy Ambuzol+ (nie zwykły Ambuzol, tylko ten z symbolem plusa na końcu) dawajcie wyłącznie lekarzom, aby mogli wyleczyć się z choroby zombie i wyleczyć pozostałych ocalałych.
@@ -1427,7 +1426,7 @@ entities:
         Wierzymy w was i zapewniliśmy dodatkowe racje żywnościowe (znajdziecie je na swoich siedzeniach) na tę bardzo ważną misję.
 
 
-        Powodzenia! 
+        Powodzenia!
   - uid: 245
     components:
     - type: Transform
@@ -1438,10 +1437,10 @@ entities:
         Wiecie, o co chodzi.
 
 
-        Wchodzicie, zabijacie zombie, zabezpieczacie prom ewakuacyjny. Upewnijcie się, że żadne zombie nie dotrą do CD (Centralnego Dowództwa). 
+        Wchodzicie, zabijacie zombie, zabezpieczacie prom ewakuacyjny. Upewnijcie się, że żadne zombie nie dotrą do CD (Centralnego Dowództwa).
 
 
-        Zabezpieczcie wszystkich ocalałych; lekarze i personel CD (Centralnego Dowództwa) mają najwyższy priorytet.  
+        Zabezpieczcie wszystkich ocalałych; lekarze i personel CD (Centralnego Dowództwa) mają najwyższy priorytet.
 
 
         Wiemy, że nikt z was nie umie operować, więc lekarze będą bardzo ważni. Dodatkowy Ambuzol+ (nie zwykły Ambuzol, tylko ten z symbolem plusa na końcu) dawajcie wyłącznie lekarzom, aby mogli wyleczyć się z choroby zombie i wyleczyć pozostałych ocalałych.
@@ -1450,7 +1449,7 @@ entities:
         Wierzymy w was i zapewniliśmy dodatkowe racje żywnościowe (znajdziecie je na swoich siedzeniach) na tę bardzo ważną misję.
 
 
-        Powodzenia! 
+        Powodzenia!
   - uid: 246
     components:
     - type: Transform
@@ -1461,10 +1460,10 @@ entities:
         Wiecie, o co chodzi.
 
 
-        Wchodzicie, zabijacie zombie, zabezpieczacie prom ewakuacyjny. Upewnijcie się, że żadne zombie nie dotrą do CD (Centralnego Dowództwa). 
+        Wchodzicie, zabijacie zombie, zabezpieczacie prom ewakuacyjny. Upewnijcie się, że żadne zombie nie dotrą do CD (Centralnego Dowództwa).
 
 
-        Zabezpieczcie wszystkich ocalałych; lekarze i personel CD (Centralnego Dowództwa) mają najwyższy priorytet.  
+        Zabezpieczcie wszystkich ocalałych; lekarze i personel CD (Centralnego Dowództwa) mają najwyższy priorytet.
 
 
         Wiemy, że nikt z was nie umie operować, więc lekarze będą bardzo ważni. Dodatkowy Ambuzol+ (nie zwykły Ambuzol, tylko ten z symbolem plusa na końcu) dawajcie wyłącznie lekarzom, aby mogli wyleczyć się z choroby zombie i wyleczyć pozostałych ocalałych.
@@ -1473,7 +1472,7 @@ entities:
         Wierzymy w was i zapewniliśmy dodatkowe racje żywnościowe (znajdziecie je na swoich siedzeniach) na tę bardzo ważną misję.
 
 
-        Powodzenia! 
+        Powodzenia!
 - proto: PillAmbuzolPlus
   entities:
   - uid: 226

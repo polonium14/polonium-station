@@ -425,7 +425,6 @@ entities:
   - uid: 85
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
       pos: 3.5,-12.5
       parent: 1
 - proto: AirlockShuttleSyndicate
@@ -1266,10 +1265,10 @@ entities:
         You know the drill.
 
 
-        Go in, kill zombies, secure the evac shuttle. Make sure no zeds make it to CC (Central Command). 
+        Go in, kill zombies, secure the evac shuttle. Make sure no zeds make it to CC (Central Command).
 
 
-        Secure any survivors; doctors and CC (Central Command) staff are top priority. 
+        Secure any survivors; doctors and CC (Central Command) staff are top priority.
 
 
         We know none of you know how to do surgery, so doctors will be important. Only give your extra Ambuzol+ (Not the normal ambuzol, the one with a plus symbol at the end) to doctors so they can be cured of the zombie disease and cure the other survivors.
@@ -1278,7 +1277,7 @@ entities:
         We believe in you, and have given you extra rations (found on your seats) for this very big and important mission.
 
 
-        Good luck! 
+        Good luck!
     - type: Physics
       angularDamping: 0
       linearDamping: 0
@@ -1292,10 +1291,10 @@ entities:
         You know the drill.
 
 
-        Go in, kill zombies, secure the evac shuttle. Make sure no zeds make it to CC (Central Command). 
+        Go in, kill zombies, secure the evac shuttle. Make sure no zeds make it to CC (Central Command).
 
 
-        Secure any survivors; doctors and CC (Central Command) staff are top priority. 
+        Secure any survivors; doctors and CC (Central Command) staff are top priority.
 
 
         We know none of you know how to do surgery, so doctors will be important. Only give your extra Ambuzol+ (Not the normal ambuzol, the one with a plus symbol at the end) to doctors so they can be cured of the zombie disease and cure the other survivors.
@@ -1304,7 +1303,7 @@ entities:
         We believe in you, and have given you extra rations (found on your seats) for this very big and important mission.
 
 
-        Good luck! 
+        Good luck!
     - type: Physics
       angularDamping: 0
       linearDamping: 0
@@ -1318,10 +1317,10 @@ entities:
         You know the drill.
 
 
-        Go in, kill zombies, secure the evac shuttle. Make sure no zeds make it to CC (Central Command). 
+        Go in, kill zombies, secure the evac shuttle. Make sure no zeds make it to CC (Central Command).
 
 
-        Secure any survivors; doctors and CC (Central Command) staff are top priority. 
+        Secure any survivors; doctors and CC (Central Command) staff are top priority.
 
 
         We know none of you know how to do surgery, so doctors will be important. Only give your extra Ambuzol+ (Not the normal ambuzol, the one with a plus symbol at the end) to doctors so they can be cured of the zombie disease and cure the other survivors.
@@ -1330,7 +1329,7 @@ entities:
         We believe in you, and have given you extra rations (found on your seats) for this very big and important mission.
 
 
-        Good luck! 
+        Good luck!
     - type: Physics
       angularDamping: 0
       linearDamping: 0
@@ -1344,10 +1343,10 @@ entities:
         You know the drill.
 
 
-        Go in, kill zombies, secure the evac shuttle. Make sure no zeds make it to CC (Central Command). 
+        Go in, kill zombies, secure the evac shuttle. Make sure no zeds make it to CC (Central Command).
 
 
-        Secure any survivors; doctors and CC (Central Command) staff are top priority. 
+        Secure any survivors; doctors and CC (Central Command) staff are top priority.
 
 
         We know none of you know how to do surgery, so doctors will be important. Only give your extra Ambuzol+ (Not the normal ambuzol, the one with a plus symbol at the end) to doctors so they can be cured of the zombie disease and cure the other survivors.
@@ -1356,7 +1355,7 @@ entities:
         We believe in you, and have given you extra rations (found on your seats) for this very big and important mission.
 
 
-        Good luck! 
+        Good luck!
   - uid: 241
     components:
     - type: Transform
@@ -1367,10 +1366,10 @@ entities:
         You know the drill.
 
 
-        Go in, kill zombies, secure the evac shuttle. Make sure no zeds make it to CC (Central Command). 
+        Go in, kill zombies, secure the evac shuttle. Make sure no zeds make it to CC (Central Command).
 
 
-        Secure any survivors; doctors and CC (Central Command) staff are top priority. 
+        Secure any survivors; doctors and CC (Central Command) staff are top priority.
 
 
         We know none of you know how to do surgery, so doctors will be important. Only give your extra Ambuzol+ (Not the normal ambuzol, the one with a plus symbol at the end) to doctors so they can be cured of the zombie disease and cure the other survivors.
@@ -1379,7 +1378,7 @@ entities:
         We believe in you, and have given you extra rations (found on your seats) for this very big and important mission.
 
 
-        Good luck! 
+        Good luck!
   - uid: 242
     components:
     - type: Transform
@@ -1390,10 +1389,10 @@ entities:
         You know the drill.
 
 
-        Go in, kill zombies, secure the evac shuttle. Make sure no zeds make it to CC (Central Command). 
+        Go in, kill zombies, secure the evac shuttle. Make sure no zeds make it to CC (Central Command).
 
 
-        Secure any survivors; doctors and CC (Central Command) staff are top priority. 
+        Secure any survivors; doctors and CC (Central Command) staff are top priority.
 
 
         We know none of you know how to do surgery, so doctors will be important. Only give your extra Ambuzol+ (Not the normal ambuzol, the one with a plus symbol at the end) to doctors so they can be cured of the zombie disease and cure the other survivors.
@@ -1402,7 +1401,7 @@ entities:
         We believe in you, and have given you extra rations (found on your seats) for this very big and important mission.
 
 
-        Good luck! 
+        Good luck!
   - uid: 243
     components:
     - type: Transform
@@ -1413,10 +1412,10 @@ entities:
         You know the drill.
 
 
-        Go in, kill zombies, secure the evac shuttle. Make sure no zeds make it to CC (Central Command). 
+        Go in, kill zombies, secure the evac shuttle. Make sure no zeds make it to CC (Central Command).
 
 
-        Secure any survivors; doctors and CC (Central Command) staff are top priority. 
+        Secure any survivors; doctors and CC (Central Command) staff are top priority.
 
 
         We know none of you know how to do surgery, so doctors will be important. Only give your extra Ambuzol+ (Not the normal ambuzol, the one with a plus symbol at the end) to doctors so they can be cured of the zombie disease and cure the other survivors.
@@ -1425,7 +1424,7 @@ entities:
         We believe in you, and have given you extra rations (found on your seats) for this very big and important mission.
 
 
-        Good luck! 
+        Good luck!
   - uid: 244
     components:
     - type: Transform
@@ -1436,10 +1435,10 @@ entities:
         You know the drill.
 
 
-        Go in, kill zombies, secure the evac shuttle. Make sure no zeds make it to CC (Central Command). 
+        Go in, kill zombies, secure the evac shuttle. Make sure no zeds make it to CC (Central Command).
 
 
-        Secure any survivors; doctors and CC (Central Command) staff are top priority. 
+        Secure any survivors; doctors and CC (Central Command) staff are top priority.
 
 
         We know none of you know how to do surgery, so doctors will be important. Only give your extra Ambuzol+ (Not the normal ambuzol, the one with a plus symbol at the end) to doctors so they can be cured of the zombie disease and cure the other survivors.
@@ -1448,7 +1447,7 @@ entities:
         We believe in you, and have given you extra rations (found on your seats) for this very big and important mission.
 
 
-        Good luck! 
+        Good luck!
   - uid: 245
     components:
     - type: Transform
@@ -1459,10 +1458,10 @@ entities:
         You know the drill.
 
 
-        Go in, kill zombies, secure the evac shuttle. Make sure no zeds make it to CC (Central Command). 
+        Go in, kill zombies, secure the evac shuttle. Make sure no zeds make it to CC (Central Command).
 
 
-        Secure any survivors; doctors and CC (Central Command) staff are top priority. 
+        Secure any survivors; doctors and CC (Central Command) staff are top priority.
 
 
         We know none of you know how to do surgery, so doctors will be important. Only give your extra Ambuzol+ (Not the normal ambuzol, the one with a plus symbol at the end) to doctors so they can be cured of the zombie disease and cure the other survivors.
@@ -1471,7 +1470,7 @@ entities:
         We believe in you, and have given you extra rations (found on your seats) for this very big and important mission.
 
 
-        Good luck! 
+        Good luck!
   - uid: 246
     components:
     - type: Transform
@@ -1482,10 +1481,10 @@ entities:
         You know the drill.
 
 
-        Go in, kill zombies, secure the evac shuttle. Make sure no zeds make it to CC (Central Command). 
+        Go in, kill zombies, secure the evac shuttle. Make sure no zeds make it to CC (Central Command).
 
 
-        Secure any survivors; doctors and CC (Central Command) staff are top priority. 
+        Secure any survivors; doctors and CC (Central Command) staff are top priority.
 
 
         We know none of you know how to do surgery, so doctors will be important. Only give your extra Ambuzol+ (Not the normal ambuzol, the one with a plus symbol at the end) to doctors so they can be cured of the zombie disease and cure the other survivors.
@@ -1494,7 +1493,7 @@ entities:
         We believe in you, and have given you extra rations (found on your seats) for this very big and important mission.
 
 
-        Good luck! 
+        Good luck!
 - proto: PillAmbuzolPlus
   entities:
   - uid: 226

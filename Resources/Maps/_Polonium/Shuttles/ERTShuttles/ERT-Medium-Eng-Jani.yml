@@ -684,7 +684,6 @@ entities:
   - uid: 4
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
       pos: -4.5,10.5
       parent: 1
 - proto: AirlockCentralCommandLocked
@@ -700,12 +699,12 @@ entities:
   - uid: 10
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: -0.5,10.5
       parent: 1
   - uid: 302
     components:
     - type: Transform
+      rot: 1.5707963267948966 rad
       pos: -3.5,3.5
       parent: 1
 - proto: AirlockGlassShuttle
@@ -737,6 +736,7 @@ entities:
   - uid: 324
     components:
     - type: Transform
+      rot: 1.5707963267948966 rad
       pos: -0.5,3.5
       parent: 1
 - proto: APCBasic
@@ -2243,6 +2243,7 @@ entities:
   - uid: 122
     components:
     - type: Transform
+      rot: 1.5707963267948966 rad
       pos: -3.5,0.5
       parent: 1
     - type: DeviceNetwork
@@ -2285,7 +2286,6 @@ entities:
   - uid: 334
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
       pos: -2.5,7.5
       parent: 1
     - type: DeviceNetwork
@@ -2296,7 +2296,6 @@ entities:
   - uid: 335
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
       pos: -1.5,7.5
       parent: 1
     - type: DeviceNetwork

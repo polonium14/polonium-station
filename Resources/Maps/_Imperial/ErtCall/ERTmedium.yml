@@ -955,6 +955,7 @@ entities:
   - uid: 21
     components:
     - type: Transform
+      rot: 1.5707963267948966 rad
       pos: -5.5,8.5
       parent: 1
   - uid: 439
@@ -965,16 +966,19 @@ entities:
   - uid: 532
     components:
     - type: Transform
+      rot: 1.5707963267948966 rad
       pos: 6.5,8.5
       parent: 1
   - uid: 583
     components:
     - type: Transform
+      rot: 1.5707963267948966 rad
       pos: -5.5,6.5
       parent: 1
   - uid: 584
     components:
     - type: Transform
+      rot: 1.5707963267948966 rad
       pos: 6.5,6.5
       parent: 1
 - proto: AirlockCentralCommandLocked
@@ -1007,6 +1011,7 @@ entities:
   - uid: 80
     components:
     - type: Transform
+      rot: 1.5707963267948966 rad
       pos: -2.5,-11.5
       parent: 1
   - uid: 444
@@ -1017,6 +1022,7 @@ entities:
   - uid: 602
     components:
     - type: Transform
+      rot: 1.5707963267948966 rad
       pos: 3.5,-11.5
       parent: 1
 - proto: AirlockExternalGlassShuttleLocked
@@ -1092,11 +1098,13 @@ entities:
   - uid: 37
     components:
     - type: Transform
+      rot: 1.5707963267948966 rad
       pos: -5.5,2.5
       parent: 1
   - uid: 54
     components:
     - type: Transform
+      rot: 1.5707963267948966 rad
       pos: 6.5,2.5
       parent: 1
   - uid: 55
@@ -1336,31 +1344,37 @@ entities:
   - uid: 1077
     components:
     - type: Transform
+      rot: 1.5707963267948966 rad
       pos: 10.5,8.5
       parent: 1
   - uid: 1078
     components:
     - type: Transform
+      rot: 1.5707963267948966 rad
       pos: 10.5,7.5
       parent: 1
   - uid: 1079
     components:
     - type: Transform
+      rot: 1.5707963267948966 rad
       pos: 10.5,6.5
       parent: 1
   - uid: 1080
     components:
     - type: Transform
+      rot: 1.5707963267948966 rad
       pos: -9.5,6.5
       parent: 1
   - uid: 1081
     components:
     - type: Transform
+      rot: 1.5707963267948966 rad
       pos: -9.5,7.5
       parent: 1
   - uid: 1082
     components:
     - type: Transform
+      rot: 1.5707963267948966 rad
       pos: -9.5,8.5
       parent: 1
 - proto: BoxFolderClipboard
@@ -5224,16 +5238,19 @@ entities:
   - uid: 26
     components:
     - type: Transform
+      rot: 1.5707963267948966 rad
       pos: 3.5,15.5
       parent: 1
   - uid: 56
     components:
     - type: Transform
+      rot: 1.5707963267948966 rad
       pos: 3.5,-4.5
       parent: 1
   - uid: 160
     components:
     - type: Transform
+      rot: 1.5707963267948966 rad
       pos: -2.5,-4.5
       parent: 1
   - uid: 485
