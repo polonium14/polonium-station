@@ -91,18 +91,37 @@ public sealed partial class RCDMenu : RadialMenu
                 ProtoId = protoId,
             };
 
-            if (proto.Sprite != null)
+            // Polonium: render the built entity's full (multi-layer) sprite so pumps/vents/alarms show all
+            // their layers - pipe underlay, device body, indicator lights - from the entity's own (upstream)
+            // textures, rather than a single RSI state. Falls back to the prototype's Sprite for modes with
+            // no representative entity (deconstruct, tile construction).
+            Control? icon = null;
+
+            if (proto.Mode == RcdMode.ConstructObject && proto.Prototype != null)
             {
-                var tex = new TextureRect()
+                var view = new EntityPrototypeView()
+                {
+                    SetSize = new Vector2(64f, 64f),
+                    Stretch = SpriteView.StretchMode.Fill,
+                    VerticalAlignment = VAlignment.Center,
+                    HorizontalAlignment = HAlignment.Center,
+                };
+                view.SetPrototype(proto.Prototype);
+                icon = view;
+            }
+            else if (proto.Sprite != null)
+            {
+                icon = new TextureRect()
                 {
                     VerticalAlignment = VAlignment.Center,
                     HorizontalAlignment = HAlignment.Center,
                     Texture = _sprites.Frame0(proto.Sprite),
                     TextureScale = new Vector2(2f, 2f),
                 };
-
-                button.AddChild(tex);
             }
+
+            if (icon != null)
+                button.AddChild(icon);
 
             parent.AddChild(button);
 
