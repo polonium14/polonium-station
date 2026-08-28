@@ -559,7 +559,7 @@
       shader: unshaded
   - type: AtmosPipeLayers
     pipeLayer: !type:CreateVariants
-      values: [ 0, 1, 2 ] 
+      values: [ 0, 1, 2 ]
     spriteLayersRsiPaths:
       enum.PipeVisualLayers.Pipe:
         Primary: Structures/Piping/Atmospherics/pipe.rsi
@@ -613,27 +613,38 @@
     - GasRecycling
   - type: TegCirculator
 
+# Polonium: multi-pipe-layer radiators.
 - type: entity
   parent: GasBinaryBase
-  id: HeatExchanger
+  id: !type:CreateVariants
+    values: [ HeatExchanger, HeatExchangerAlt1, HeatExchangerAlt2 ]
   name: radiator
   description: Transfers heat between the pipe and its surroundings.
+  categories: !type:CreateVariants
+    sequences: [ [ ], [ HideSpawnMenu ], [ HideSpawnMenu ] ]
   placement:
-    mode: SnapgridCenter
+    mode: AlignAtmosPipeLayers
   components:
   - type: Transform
     noRot: false
   - type: Sprite
-    sprite: Structures/Piping/Atmospherics/heatexchanger.rsi
+    sprite: !type:CreateVariants
+      values: [ Structures/Piping/Atmospherics/heatexchanger.rsi, Structures/Piping/Atmospherics/heatexchanger_alt1.rsi, Structures/Piping/Atmospherics/heatexchanger_alt2.rsi ]
     layers:
-    - sprite: Structures/Piping/Atmospherics/pipe.rsi
+    - sprite: !type:CreateVariants
+        values: [ Structures/Piping/Atmospherics/pipe.rsi, Structures/Piping/Atmospherics/pipe_alt1.rsi, Structures/Piping/Atmospherics/pipe_alt2.rsi ]
       state: pipeStraight
       map: [ "enum.PipeVisualLayers.Pipe" ]
     - state: heStraight
       map: [ "enum.SubfloorLayers.FirstLayer" ]
   - type: AtmosPipeLayers
-    spriteRsiPaths: {}
-    numberOfPipeLayers: 1
+    # Override GasBinaryBase's pump-oriented spriteRsiPaths
+    spriteRsiPaths:
+      Primary: Structures/Piping/Atmospherics/heatexchanger.rsi
+      Secondary: Structures/Piping/Atmospherics/heatexchanger_alt1.rsi
+      Tertiary: Structures/Piping/Atmospherics/heatexchanger_alt2.rsi
+    pipeLayer: !type:CreateVariants
+      values: [ 0, 1, 2 ]
   - type: SubFloorHide
     visibleLayers:
     - enum.SubfloorLayers.FirstLayer
@@ -653,7 +664,8 @@
         pipeDirection: South
   - type: Construction
     graph: GasBinary
-    node: radiator
+    node: !type:CreateVariants
+      values: [ radiator, radiatorAlt1, radiatorAlt2 ]
   - type: AtmosMonitoringConsoleDevice
     navMapBlip: Thermoregulator
   - type: GuideHelp
@@ -662,19 +674,30 @@
 
 - type: entity
   parent: HeatExchanger
-  id: HeatExchangerBend
+  id: !type:CreateVariants
+    values: [ HeatExchangerBend, HeatExchangerBendAlt1, HeatExchangerBendAlt2 ]
   suffix: Bend
+  categories: !type:CreateVariants
+    sequences: [ [ ], [ HideSpawnMenu ], [ HideSpawnMenu ] ]
+  placement:
+    mode: AlignAtmosPipeLayers
   components:
     - type: SubFloorHide
       visibleLayers:
       - enum.SubfloorLayers.FirstLayer
     - type: Sprite
+      sprite: !type:CreateVariants
+        values: [ Structures/Piping/Atmospherics/heatexchanger.rsi, Structures/Piping/Atmospherics/heatexchanger_alt1.rsi, Structures/Piping/Atmospherics/heatexchanger_alt2.rsi ]
       layers:
-      - sprite: Structures/Piping/Atmospherics/pipe.rsi
+      - sprite: !type:CreateVariants
+          values: [ Structures/Piping/Atmospherics/pipe.rsi, Structures/Piping/Atmospherics/pipe_alt1.rsi, Structures/Piping/Atmospherics/pipe_alt2.rsi ]
         state: pipeBend
         map: [ "enum.PipeVisualLayers.Pipe" ]
       - state: heBend
         map: [ "enum.SubfloorLayers.FirstLayer" ]
+    - type: AtmosPipeLayers
+      pipeLayer: !type:CreateVariants
+        values: [ 0, 1, 2 ]
     - type: NodeContainer
       nodes:
         inlet:
@@ -687,4 +710,5 @@
           pipeDirection: West
     - type: Construction
       graph: GasBinary
-      node: bendradiator
+      node: !type:CreateVariants
+        values: [ bendradiator, bendradiatorAlt1, bendradiatorAlt2 ]
