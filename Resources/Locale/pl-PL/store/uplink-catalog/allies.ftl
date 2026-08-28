@@ -1,6 +1,5 @@
 # Allies
 
-# Utility
 uplink-holopara-kit-name = Zestaw Holopasożyta
 uplink-holopara-kit-desc =
     Duma i radość korporacji Cybersun. Zawiera iniektor będący hostem dla świadomego, metafizycznego strażnika wykonanego z twardego światła, który spoczywa w ciele użytkownika, gdy nie jest aktywny.

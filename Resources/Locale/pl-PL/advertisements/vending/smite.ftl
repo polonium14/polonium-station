@@ -1,4 +1,4 @@
-advertisement-smite-1 = SMITE! Ukarz swoje pragnienie!
+﻿advertisement-smite-1 = SMITE! Ban your thirst!
 advertisement-smite-2 = Eldrycki wybuch cytryny i limonki!
 advertisement-smite-3 = Sprzedano ponad milion napojów!
 advertisement-smite-4 = SMITE! Rzuć 2k8 na SMAK.

@@ -1,4 +1,4 @@
-# Kategorie sklepu WTH (ERT / JSR / Death Squad)
+# WTH store categories (ERT / Death Squad)
 
 ert-uplink-melee = Walka wręcz
 ert-uplink-weapons = Broń

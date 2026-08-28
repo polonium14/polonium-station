@@ -1,22 +1,20 @@
-inspect-part-status-line = {$possessive} {$part} jest {$status}.
-inspect-part-status-line-trauma-only = {$possessive} {$part} {$status}.
+inspect-part-status-line = { $possessive } { $part } jest { $status }.
+inspect-part-status-line-trauma-only = { $possessive } { $part } { $status }.
 inspect-part-status-title = Sprawdzasz się pod kątem obrażeń.
-inspect-part-status-title-other = Sprawdzasz {$entity} pod kątem obrażeń.
-inspect-part-status-line-styleless = {$possessive} {$part} jest {$status}.
-inspect-part-status-line-trauma-only-styleless = {$possessive} {$part} {$status}.
+inspect-part-status-title-other = Sprawdzasz { $entity } pod kątem obrażeń.
+inspect-part-status-line-styleless = { $possessive } { $part } jest { $status }.
+inspect-part-status-line-trauma-only-styleless = { $possessive } { $part } { $status }.
 inspect-part-status-title-styleless = Sprawdzasz się pod kątem obrażeń.
-inspect-part-status-title-other-styleless = Sprawdzasz {$entity} pod kątem obrażeń.
+inspect-part-status-title-other-styleless = Sprawdzasz { $entity } pod kątem obrażeń.
 inspect-part-status-fine = w porządku
-inspect-part-status-comma = ,{" "}
-inspect-part-status-conjunction = jest też{" "}
-inspect-part-status-conjunction2 = . Ponadto{" "}
-inspect-part-status-conjunction3 = To{" "}
-inspect-part-status-and = i{" "}
+inspect-part-status-comma = ,{ " " }
+inspect-part-status-conjunction = jest też{ " " }
+inspect-part-status-conjunction2 = . Ponadto{ " " }
+inspect-part-status-conjunction3 = To{ " " }
+inspect-part-status-and = i{ " " }
 inspect-part-status-you = Twoja
 inspect-part-status-their = Jego/jej
-
 examine-border-line = ═════════════════════
-
 target-zone-head = głowa
 target-zone-chest = klatka piersiowa
 target-zone-groin = pachwina

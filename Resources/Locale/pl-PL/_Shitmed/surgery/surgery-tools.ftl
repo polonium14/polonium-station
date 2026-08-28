@@ -1,4 +1,3 @@
-
 surgery-tool-turn-on = Najpierw włącz to!
 surgery-tool-reload = Najpierw przeładuj!
 surgery-tool-match-light = Najpierw zapal!

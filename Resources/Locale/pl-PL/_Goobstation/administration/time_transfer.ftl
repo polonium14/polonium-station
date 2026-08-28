@@ -1,4 +1,3 @@
-
 time-transfer-panel-title = Time Transfer
 time-transfer-panel-player-label = Player
 time-transfer-panel-time = Time

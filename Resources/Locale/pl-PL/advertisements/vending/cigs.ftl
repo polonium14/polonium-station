@@ -1,4 +1,4 @@
-advertisement-cigs-1 = Kosmiczne fajki smakują tak, jak papierosy powinny.
+﻿advertisement-cigs-1 = Space cigs taste good like a cigarette should.
 advertisement-cigs-2 = Wolę klucz niż zmianę.
 advertisement-cigs-3 = Pal!
 advertisement-cigs-4 = Nie wierz raportom – zapal dziś!

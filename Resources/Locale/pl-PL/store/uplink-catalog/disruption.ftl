@@ -18,7 +18,6 @@ uplink-soap-name = Mydło
 uplink-soap-desc = Niezaufane mydło. Pachnie strachem.
 uplink-slipocalypse-clustersoap-name = Mydło Klasterowe Ślizgokalipsy
 uplink-slipocalypse-clustersoap-desc = Rozrzuca małe kawałki mydła marki syndykatu po rzuceniu, te kawałki mydła parują po 60 sekundach.
-# Narzędzia
 uplink-toolbox-name = Skrzynka Narzędziowa
 uplink-toolbox-desc = Pełen zestaw narzędzi dla mechanicznie uzdolnionego zdrajcy. Zawiera parę izolowanych rękawic bojowych oraz maskę gazową Syndykatu.
 uplink-syndicate-jaws-of-life-name = Szczęki Życia

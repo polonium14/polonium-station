@@ -13,13 +13,10 @@ chat-radio-service = Usługi
 chat-radio-supply = Zaopatrzenie
 chat-radio-syndicate = Syndykat
 chat-radio-freelance = Niezależny
-
-# literal translation to wolny strzelec ale byloby to za dlugie
-
 # not headset but whatever
 chat-radio-handheld = Radiotelefon
 chat-radio-binary = Binarny
-# funkystation specific
-chat-radio-emergency = Awaryjny
 chat-radio-xenoborg = Ksenoborg
 chat-radio-mothership = Statek-matka
+# funkystation specific
+chat-radio-emergency = Awaryjny

@@ -1,5 +1,6 @@
 tiles-space = kosmos
 tiles-plating = poszycie
+tiles-rcd-plating = RCD plating
 tiles-lattice = kratownica
 tiles-lattice-train = powiększona kratownica
 tiles-steel-floor = stalowa podłoga
@@ -13,6 +14,9 @@ tiles-steel-floor-herringbone = stalowa jodełka
 tiles-steel-floor-diagonal-mini = stalowe ukośne mini-płytki
 tiles-steel-floor-checker-dark = stalowe ciemne płytki w szachownicę
 tiles-steel-floor-checker-light = stalowe jasne płytki w szachownicę
+tiles-steel-floor-slats-continuous = steel continuous slat tile
+tiles-steel-floor-vertical-slats-bordered = steel vertical bordered slat tile
+tiles-steel-floor-horizontal-slats-bordered = steel horizontal bordered slat tile
 tiles-plastic-floor = plastikowa podłoga
 tiles-wood = drewno
 tiles-white-floor = biała stalowa podłoga
@@ -24,6 +28,9 @@ tiles-white-floor-mono = biała stalowa jednolita podłoga
 tiles-white-floor-pavement-vertical = biały stalowy pionowy chodnik
 tiles-white-floor-herringbone = biała stalowa jodełka
 tiles-white-floor-diagonal-mini = białe stalowe ukośne mini-płytki
+tiles-white-floor-slats-continuous = white steel continuous slat tile
+tiles-white-floor-vertical-slats-bordered = white steel vertical bordered slat tile
+tiles-white-floor-horizontal-slats-bordered = white steel horizontal bordered slat tile
 tiles-plastic-white-floor = biała plastikowa podłoga
 tiles-dark-floor = ciemna stalowa podłoga
 tiles-dark-floor-mini = ciemne stalowe mini-płytki
@@ -34,6 +41,9 @@ tiles-dark-floor-mono = ciemna stalowa jednolita podłoga
 tiles-dark-floor-pavement-vertical = ciemny pionowy stalowy chodnik
 tiles-dark-floor-herringbone = ciemna stalowa jodełka
 tiles-dark-floor-diagonal-mini = ciemne stalowe ukośne mini-płytki
+tiles-dark-floor-slats-continuous = dark steel continuous slat tile
+tiles-dark-floor-vertical-slats-bordered = dark steel vertical bordered slat tile
+tiles-dark-floor-horizontal-slats-bordered = dark steel horizontal bordered slat tile
 tiles-plastic-dark-floor = ciemna plastikowa podłoga
 tiles-techmaint-floor = podłoga tuneli tech.
 tiles-techmaint-floor-dark = ciemna podłoga tuneli tech.
@@ -119,81 +129,43 @@ tiles-wood2 = podłoga z wzorem drewna
 tiles-desert-floor = podłoga pustynna
 tiles-low-desert-floor = podłoga niskiej pustyni
 tiles-grass-planet-floor = trawiasta podłoga planetarna
+tiles-dirt-planet-floor = dirt planet floor
 tiles-basalt-floor = bazaltowa podłoga
 tiles-snow-floor = śnieżna podłoga
 tiles-wood3 = połamana podłoga z drewna
 tiles-hull = poszycie kadłuba
 tiles-hull-reinforced = wzmocnione poszycie kadłuba
-tiles-hull-invisible = niewidzialna płyta kadłuba
-tiles-invisible-floor = niewidzialna płyta podłogowa
 tiles-web = płytka z pajęczyny
 tiles-chromite = chromit
 tiles-astro-grass = astro-trawa
+tiles-dark-astro-grass = dark astro-grass
+tiles-light-astro-grass = light astro-grass
 tiles-mowed-astro-grass = skoszona astro-trawa
 tiles-jungle-astro-grass = astro-trawa dżungli
 tiles-astro-ice = astro-lód
 tiles-astro-snow = astro-śnieg
 tiles-astro-asteroid-sand = asteroidowy astro-piasek
 tiles-astro-asteroid-sand-borderless = asteroidowy bezkrawędziowy astro-piasek
+tiles-astro-ironsand = astro-ironsand
+tiles-astro-ironsand-borderless = borderless astro-ironsand
+tiles-desert-astro-sand = desert astro-sand
 tiles-wood-large = duże drewno
 tiles-xeno-floor = podłoga xeno
 tiles-xeno-steel = stalowa płytka xeno
 tiles-xeno-steel-corner = nażona stalowa płytka xeno
 tiles-xeno-maint = płytka techniczna xeno
-tiles-dark-squiggly = ciemne stalowe powykrzywiane płytki
-
-tiles-rcd-plating = RCD plating
-
-tiles-dirt-planet-floor = dirt planet floor
-
-tiles-dark-astro-grass = dark astro-grass
-
-tiles-light-astro-grass = light astro-grass
-
-tiles-astro-ironsand = astro-ironsand
-
-tiles-astro-ironsand-borderless = borderless astro-ironsand
-
-tiles-desert-astro-sand = desert astro-sand
-
 tiles-xenoborg-floor = xenoborg tile
-
+tiles-dark-squiggly = ciemne stalowe powykrzywiane płytki
 tiles-white-marble = white marble tile
-
 tiles-dark-marble = dark marble tile
-
 tiles-plasma-marble = plasmarble tile
-
 tiles-uranium-marble = uranium marble tile
-
 tiles-ironsand-plating = ironsand plating
-
 tiles-ironsand-tile = ironsand tile
-
 tiles-ironsand-concrete-tile = ironsand concrete tile
-
 tiles-ironsand-concrete-slab = ironsand concrete slab
-
 tiles-ironsand-concrete-smooth = smooth ironsand concrete floor
-
 tiles-ironsand-packed = packed ironsand
-
 tiles-ironsand-paved = paved ironsand
-
-tiles-steel-floor-slats-continuous = steel continuous slat tile
-
-tiles-steel-floor-vertical-slats-bordered = steel vertical bordered slat tile
-
-tiles-steel-floor-horizontal-slats-bordered = steel horizontal bordered slat tile
-
-tiles-white-floor-slats-continuous = white steel continuous slat tile
-
-tiles-white-floor-vertical-slats-bordered = white steel vertical bordered slat tile
-
-tiles-white-floor-horizontal-slats-bordered = white steel horizontal bordered slat tile
-
-tiles-dark-floor-slats-continuous = dark steel continuous slat tile
-
-tiles-dark-floor-vertical-slats-bordered = dark steel vertical bordered slat tile
-
-tiles-dark-floor-horizontal-slats-bordered = dark steel horizontal bordered slat tile
+tiles-hull-invisible = niewidzialna płyta kadłuba
+tiles-invisible-floor = niewidzialna płyta podłogowa

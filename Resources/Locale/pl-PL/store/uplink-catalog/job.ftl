@@ -1,6 +1,5 @@
 # Job
 
-# Job Specific
 uplink-gatfruit-seeds-name = Paczka Nasion Gatfruktu
 uplink-gatfruit-seeds-desc = A kto powiedział, że broń nie rośnie na drzewach?
 uplink-holy-hand-grenade-name = Granat Świętej Ręki

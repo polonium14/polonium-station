@@ -1,19 +1,16 @@
 ### Generic, general words, which fit into multiple contexts
 
-generic-article-a = to
 generic-not-available-shorthand = N/D
+generic-article-a = to
 generic-article-an = to
+generic-and = and
+generic-or = or
 generic-unknown = nieznany
 generic-unknown-title = Nieznany
 generic-error = błąd
 generic-invalid = nieprawidłowy
 generic-hours = godziny
 generic-minutes = minuty
+generic-seconds = seconds
 generic-playtime-title = Czas gry
 generic-confirm = Potwierdź
-
-generic-and = and
-
-generic-or = or
-
-generic-seconds = seconds

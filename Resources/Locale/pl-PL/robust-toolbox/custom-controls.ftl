@@ -1,10 +1,9 @@
 ## EntitySpawnWindow
 
 entity-spawn-window-title = Panel Spawnowania Encji
-window-search-bar-placeholder = Wyszukaj
-window-clear-button = Wyczyść
 entity-spawn-window-replace-button-text = Zamień
 entity-spawn-window-override-menu-tooltip = Nadpisz rozmieszczenie
+entity-spawn-window-no-description = No description
 
 ## TileSpawnWindow
 
@@ -22,7 +21,5 @@ output-panel-scroll-down-button-text = Przewiń w dół
 ## Common Used
 
 window-erase-button-text = Usuwanie
-
-entity-spawn-window-no-description = No description
-
-## TileSpawnWindow
+window-search-bar-placeholder = Wyszukaj
+window-clear-button = Wyczyść

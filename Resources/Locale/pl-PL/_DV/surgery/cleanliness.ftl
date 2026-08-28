@@ -1,4 +1,3 @@
-
 surgery-cleanliness-0 = It's pristine
 surgery-cleanliness-1 = It's a little dirty
 surgery-cleanliness-2 = It's somewhat dirty

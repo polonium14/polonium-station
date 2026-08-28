@@ -1,6 +1,5 @@
 # Implants
 
-# Implants
 uplink-storage-implanter-name = Implantator Pamięci
 uplink-storage-implanter-desc = Ukryj przedmioty w sobie za pomocą nowej technologii bluespace!
 uplink-freedom-implanter-name = Implantator Wolności

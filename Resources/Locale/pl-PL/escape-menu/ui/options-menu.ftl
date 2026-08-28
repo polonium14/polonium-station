@@ -8,11 +8,9 @@ ui-options-tab-controls = Sterowanie
 ui-options-tab-audio = Dźwięk
 ui-options-tab-network = Sieć
 ui-options-tab-misc = Ogólne
-
 ui-options-apply = Zapisz i zastosuj
 ui-options-reset-all = Resetuj zmiany
 ui-options-default = Przywróć domyślne
-
 ui-options-value-percent = { TOSTRING($value, "P0") }
 
 # Misc/General menu
@@ -48,8 +46,6 @@ ui-options-display-label = Ekran
 ui-options-quality-label = Jakość
 ui-options-misc-label = Różne
 ui-options-interface-label = Interfejs
-
-
 ui-options-auto-fill-highlights = Automatycznie ustaw listę wyróżnień na podstawie imienia i stanowiska twojej postaci
 ui-options-highlights-color = Kolor wyróżnienia:
 ui-options-highlights-color-example = To jest wyróżniony tekst.
@@ -92,34 +88,35 @@ ui-options-vp-stretch = Rozciągnij widok, aby dopasować go do okna gry
 ui-options-vp-scale = Stała skala widoku:
 ui-options-vp-scale-value = x{ $scale }
 ui-options-vp-integer-scaling = Preferuj skalowanie całkowite (może powodować czarne pasy/przycięcia)
-ui-options-vp-integer-scaling-tooltip = Jeśli ta opcja jest włączona, widok będzie skalowany z użyciem wartości całkowitej
-                                        przy określonych rozdzielczościach. Daje to wyraźniejsze tekstury, ale często
-                                        powoduje pojawienie się czarnych pasów u góry/dołu ekranu lub obcięcie
-                                        części widoku.
+ui-options-vp-integer-scaling-tooltip =
+    Jeśli ta opcja jest włączona, widok będzie skalowany z użyciem wartości całkowitej
+    przy określonych rozdzielczościach. Daje to wyraźniejsze tekstury, ale często
+    powoduje pojawienie się czarnych pasów u góry/dołu ekranu lub obcięcie
+    części widoku.
 ui-options-filter-label = Filtr skalowania:
 ui-options-filter-nearest = Najbliższy (bez wygładzania)
 ui-options-filter-bilinear = Dwuliniowy (wygładzony)
 ui-options-vp-vertical-fit = Dopasowanie widoku w pionie
-ui-options-vp-vertical-fit-tooltip = Po włączeniu główny widok całkowicie ignoruje oś poziomą przy dopasowywaniu do ekranu.
-                                     Jeśli ekran jest mniejszy niż widok, spowoduje to obcięcie obrazu w poziomie.
+ui-options-vp-vertical-fit-tooltip =
+    Po włączeniu główny widok całkowicie ignoruje oś poziomą przy dopasowywaniu do ekranu.
+    Jeśli ekran jest mniejszy niż widok, spowoduje to obcięcie obrazu w poziomie.
 ui-options-vp-low-res = Widok w niskiej rozdzielczości
 ui-options-parallax-low-quality = Paralaksa niskiej jakości (tło)
 ui-options-ambient-occlusion = Pokaż ambient occlusion
 ui-options-fps-counter = Pokaż licznik FPS
 ui-options-vp-width = Szerokość widoku:
 ui-options-hud-layout = Układ HUD:
+ui-options-sharpness = Sharpness:
 
 ## Controls menu
 
 ui-options-hold-to-attack-melee = Przytrzymaj, aby atakować (walka wręcz)
 ui-options-hold-to-attack-ranged = Przytrzymaj, aby atakować (broń dystansowa)
-
 ui-options-binds-reset-all = Resetuj WSZYSTKIE przypisania klawiszy
 ui-options-binds-explanation = Kliknij, aby zmienić przypisanie, kliknij prawym, aby wyczyścić
 ui-options-unbound = Nieprzypisany
 ui-options-bind-reset = Resetuj
 ui-options-key-prompt = Naciśnij klawisz...
-
 ui-options-header-movement = Ruch
 ui-options-header-camera = Kamera
 ui-options-header-interaction-basic = Podstawowa interakcja
@@ -136,25 +133,21 @@ ui-options-header-text-cursor-select = Zaznaczanie tekstu
 ui-options-header-text-edit = Edycja tekstu
 ui-options-header-text-chat = Czat
 ui-options-header-text-other = Inne pola tekstowe
-
 ui-options-hotkey-keymap = Używaj układu US QWERTY
 ui-options-hotkey-toggle-walk = Przełącz chodzenie
 ui-options-hotkey-toggle-sprint = Przełącz bieg
-
 ui-options-function-move-up = Ruch w górę
 ui-options-function-move-left = Ruch w lewo
 ui-options-function-move-down = Ruch w dół
 ui-options-function-move-right = Ruch w prawo
 ui-options-function-walk = Chodzenie
 ui-options-function-toggle-knockdown = Przełącz pełzanie
-
 ui-options-function-camera-rotate-left = Obróć w lewo
 ui-options-function-camera-rotate-right = Obróć w prawo
 ui-options-function-camera-reset = Resetuj
 ui-options-function-zoom-in = Przybliż
 ui-options-function-zoom-out = Oddal
 ui-options-function-reset-zoom = Resetuj powiększenie
-
 ui-options-function-use = Użyj
 ui-options-function-use-secondary = Użyj drugorzędnie
 ui-options-function-alt-use = Użyj alternatywnie
@@ -171,7 +164,6 @@ ui-options-function-move-stored-item = Przenieś przechowywany przedmiot
 ui-options-function-rotate-stored-item = Obróć przechowywany przedmiot
 ui-options-function-save-item-location = Zapisz położenie przedmiotu
 ui-options-static-storage-ui = Zablokuj okno ekwipunku do paska skrótów
-
 ui-options-function-smart-equip-backpack = Szybkie wyposażenie do plecaka
 ui-options-function-smart-equip-belt = Szybkie wyposażenie do pasa
 ui-options-function-smart-equip-suit-storage = Szybkie wyposażenie do kieszeni kombinezonu
@@ -187,7 +179,6 @@ ui-options-function-point = Wskaż miejsce
 ui-options-function-rotate-object-clockwise = Obróć zgodnie z ruchem wskazówek zegara
 ui-options-function-rotate-object-counterclockwise = Obróć przeciwnie do ruchu wskazówek zegara
 ui-options-function-flip-object = Odwróć
-
 ui-options-function-focus-chat-input-window = Skup się na czacie
 ui-options-function-focus-local-chat-window = Skup się na czacie (IC)
 ui-options-function-focus-emote = Skup się na czacie (emocje)
@@ -218,11 +209,9 @@ ui-options-function-window-close-all = Zamknij wszystkie okna
 ui-options-function-window-close-recent = Zamknij ostatnie okno
 ui-options-function-show-escape-menu = Przełącz menu gry
 ui-options-function-escape-context = Zamknij ostatnie okno lub przełącz menu gry
-
 ui-options-function-take-screenshot = Zrób zrzut ekranu
 ui-options-function-take-screenshot-no-ui = Zrób zrzut ekranu (bez UI)
 ui-options-function-toggle-fullscreen = Przełącz tryb pełnoekranowy
-
 ui-options-function-editor-place-object = Umieść obiekt
 ui-options-function-editor-cancel-place = Anuluj umieszczanie
 ui-options-function-editor-grid-place = Umieść w siatce
@@ -230,7 +219,6 @@ ui-options-function-editor-line-place = Umieść linię
 ui-options-function-editor-rotate-object = Obróć
 ui-options-function-editor-flip-object = Odwróć
 ui-options-function-editor-copy-object = Skopiuj
-
 ui-options-function-show-debug-console = Otwórz konsolę
 ui-options-function-show-debug-monitors = Pokaż monitory debugowania
 ui-options-function-inspect-entity = Sprawdź encję
@@ -240,7 +228,6 @@ ui-options-function-inspect-server-component-tooltip = Otwiera okno ViewVariable
 ui-options-function-inspect-client-component = Sprawdź komponent klienta
 ui-options-function-inspect-client-component-tooltip = Otwiera okno ViewVariables z komponentem klienta ustawionym poleceniem "quickinspect" dla encji pod kursorem.
 ui-options-function-hide-ui = Ukryj UI
-
 ui-options-function-hotbar1 = Slot paska skrótów 1
 ui-options-function-hotbar2 = Slot paska skrótów 2
 ui-options-function-hotbar3 = Slot paska skrótów 3
@@ -281,7 +268,6 @@ ui-options-function-loadoutshift7 = Zestaw paska skrótów Shift+7
 ui-options-function-loadoutshift8 = Zestaw paska skrótów Shift+8
 ui-options-function-loadoutshift9 = Zestaw paska skrótów Shift+9
 ui-options-function-loadoutshift0 = Zestaw paska skrótów Shift+0
-
 ui-options-function-shuttle-strafe-up = Przesuń w górę
 ui-options-function-shuttle-strafe-right = Przesuń w prawo
 ui-options-function-shuttle-strafe-left = Przesuń w lewo
@@ -289,7 +275,6 @@ ui-options-function-shuttle-strafe-down = Przesuń w dół
 ui-options-function-shuttle-rotate-left = Obróć w lewo
 ui-options-function-shuttle-rotate-right = Obróć w prawo
 ui-options-function-shuttle-brake = Hamuj
-
 ui-options-function-text-cursor-left = Przesuń kursor w lewo
 ui-options-function-text-cursor-right = Przesuń kursor w prawo
 ui-options-function-text-cursor-up = Przesuń kursor w górę
@@ -329,49 +314,52 @@ ui-options-function-text-complete-prev = Uzupełnij poprzedni
 ## Network menu
 
 ui-options-net-predict = Przewidywanie po stronie klienta
-
 ui-options-net-interp-ratio = Rozmiar bufora stanu
-ui-options-net-interp-ratio-tooltip = Zwiększenie tej wartości zwykle czyni grę bardziej odporną
-                                      na utratę pakietów serwer->klient, ale skutecznie dodaje
-                                      nieco opóźnienia i wymaga od klienta przewidywania
-                                      większej liczby przyszłych taktów.
-
+ui-options-net-interp-ratio-tooltip =
+    Zwiększenie tej wartości zwykle czyni grę bardziej odporną
+    na utratę pakietów serwer->klient, ale skutecznie dodaje
+    nieco opóźnienia i wymaga od klienta przewidywania
+    większej liczby przyszłych taktów.
 ui-options-net-predict-tick-bias = Bias taktu przewidywania
-ui-options-net-predict-tick-bias-tooltip = Zwiększenie tej wartości zwykle czyni grę bardziej odporną
-                                           na utratę pakietów klient->serwer, ale skutecznie dodaje
-                                           nieco opóźnienia i wymaga od klienta przewidywania
-                                           większej liczby przyszłych taktów.
-
+ui-options-net-predict-tick-bias-tooltip =
+    Zwiększenie tej wartości zwykle czyni grę bardziej odporną
+    na utratę pakietów klient->serwer, ale skutecznie dodaje
+    nieco opóźnienia i wymaga od klienta przewidywania
+    większej liczby przyszłych taktów.
 ui-options-net-pvs-spawn = Budżet spawnu encji PVS
-ui-options-net-pvs-spawn-tooltip = Ogranicza tempo, z jakim serwer wysyła klientowi nowo
-                                       spawnowane encje. Obniżenie może zmniejszyć
-                                       zacięcia przy spawnie, ale może powodować pop-in.
-
+ui-options-net-pvs-spawn-tooltip =
+    Ogranicza tempo, z jakim serwer wysyła klientowi nowo
+    spawnowane encje. Obniżenie może zmniejszyć
+    zacięcia przy spawnie, ale może powodować pop-in.
 ui-options-net-pvs-entry = Budżet encji PVS
-ui-options-net-pvs-entry-tooltip = Ogranicza tempo, z jakim serwer wysyła klientowi nowo
-                                       widoczne encje. Obniżenie może zmniejszyć
-                                       zacięcia, ale może powodować pop-in.
-
+ui-options-net-pvs-entry-tooltip =
+    Ogranicza tempo, z jakim serwer wysyła klientowi nowo
+    widoczne encje. Obniżenie może zmniejszyć
+    zacięcia, ale może powodować pop-in.
 ui-options-net-pvs-leave = Tempo odłączania PVS
-ui-options-net-pvs-leave-tooltip = Ogranicza tempo, z jakim klient usuwa
-                                       encje poza polem widzenia. Obniżenie może zmniejszyć
-                                       zacięcia podczas chodzenia, ale czasem może powodować
-                                       błędne przewidywania i inne problemy.
+ui-options-net-pvs-leave-tooltip =
+    Ogranicza tempo, z jakim klient usuwa
+    encje poza polem widzenia. Obniżenie może zmniejszyć
+    zacięcia podczas chodzenia, ale czasem może powodować
+    błędne przewidywania i inne problemy.
 
 ## Toggle window console command
+
 cmd-options-desc = Otwiera menu ustawień, opcjonalnie z wybraną kartą.
 cmd-options-help = Użycie: options [tab]
 
 ## Accessibility menu
 
+ui-options-accessibility-header-reduced-motion = Ograniczony ruch
 ui-options-accessibility-header-visuals = Wizualne
 ui-options-accessibility-header-content = Treść
-ui-options-accessibility-header-reduced-motion = Ograniczony ruch
-
 ui-options-enable-color-name = Dodaj kolory do imion postaci
 ui-options-colorblind-friendly = Tryb przyjazny dla daltonistów
 ui-options-reduced-motion = Ogranicz ogólne efekty wizualne
 ui-options-reduced-motion-tooltip = Włącz, aby pokazywać alternatywne sprite'y z ograniczonym ruchem dla niektórych przedmiotów.
+
+# accessibility option tooltips taken from CVar summary blocks.
+
 ui-options-disable-ai-static = Statyka kamery SI
 ui-options-disable-ai-static-tooltip = Zastępuje efekt statycznej kamery SI zwykłym gradientem.
 ui-options-disable-blurry-vision = Rozmazany wzrok
@@ -389,54 +377,42 @@ ui-options-disable-rainbow-overlay-tooltip = Zastępuje ruch w shaderze tęczy s
 ui-options-disable-singulo-warp = Osobliwość
 ui-options-disable-singulo-warp-tooltip = Wyłącza efekt wypaczania ekranu przy osobliwości.
 ui-options-screen-shake-intensity = Intensywność trzęsienia ekranu
-
 ui-options-chat-window-opacity = Przezroczystość okna czatu
 ui-options-speech-bubble-text-opacity = Przezroczystość tekstu w dymkach
 ui-options-speech-bubble-speaker-opacity = Przezroczystość mówiącego w dymkach
 ui-options-speech-bubble-background-opacity = Przezroczystość tła w dymkach
-
 ui-options-censor-nudity = Cenzuruj nagość postaci
 
 ## Admin menu
 
 ui-options-admin-player-panel = Lista graczy w menu admina
-
 ui-options-admin-player-tab-symbol-setting = Symbole antagonistów w kolumnie postaci
 ui-options-admin-player-tab-symbol-setting-off = Bez symbolu antagonisty
 ui-options-admin-player-tab-symbol-setting-basic = Pokaż standardowy symbol antagonisty
 ui-options-admin-player-tab-symbol-setting-specific = Pokaż konkretny symbol antagonisty
-
 ui-options-admin-player-tab-role-setting = Ustawienia wyświetlania ról
 ui-options-admin-player-tab-role-setting-roletype = Pokaż typ roli
 ui-options-admin-player-tab-role-setting-subtype = Pokaż podtyp
 ui-options-admin-player-tab-role-setting-roletypesubtype = Pokaż typ i podtyp roli
 ui-options-admin-player-tab-role-setting-subtyperoletype = Pokaż podtyp i typ roli
-
 ui-options-admin-player-tab-color-setting = Ustawienia kolorów
 ui-options-admin-player-tab-color-setting-off = Nie lubię kolorów
 ui-options-admin-player-tab-color-setting-character = Koloruj imiona postaci antagonistów
 ui-options-admin-player-tab-color-setting-roletype = Koloruj wszystkie typy ról
 ui-options-admin-player-tab-color-setting-both = Koloruj oba
-
 ui-options-admin-overlay-title = Nakładka admina
-
 ui-options-admin-overlay-antag-format = Styl etykiety antagonisty
 ui-options-admin-overlay-antag-format-binary = Pokaż status antagonisty
 ui-options-admin-overlay-antag-format-roletype = Pokaż typ roli
 ui-options-admin-overlay-antag-format-subtype = Pokaż podtyp
-
 ui-options-admin-overlay-antag-symbol = Styl symbolu antagonisty
 ui-options-admin-overlay-antag-symbol-off = Bez symbolu antagonisty
 ui-options-admin-overlay-antag-symbol-basic = Pokaż standardowy symbol antagonisty
 ui-options-admin-overlay-antag-symbol-specific = Pokaż konkretny symbol antagonisty
-
 ui-options-admin-enable-overlay-playtime = Pokaż czas gry
 ui-options-admin-enable-overlay-starting-job = Pokaż początkową pracę
 ui-options-admin-overlay-merge-distance = Odległość scalania stosów
 ui-options-admin-overlay-ghost-fade-distance = Zasięg zanikania nakładki ducha od kursora
 ui-options-admin-overlay-ghost-hide-distance = Zasięg ukrywania nakładki ducha od kursora
-
 ui-options-admin-strip-overlay-title = Nakładka przeszukiwania
 ui-options-admin-strip-overlay-setting = Domyślnie pokazuj nakładkę przeszukiwania
-
-ui-options-sharpness = Sharpness:

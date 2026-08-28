@@ -2,6 +2,7 @@ input-key-Escape = Escape
 input-key-Control = Control
 input-key-Shift = Shift
 input-key-Alt = Alt
+input-key-Alt-mac = ⌥
 input-key-Menu = Menu
 input-key-F1 = F1
 input-key-F2 = F2
@@ -67,6 +68,8 @@ input-key-MouseButton6 = Przycisk myszy 6
 input-key-MouseButton7 = Przycisk myszy 7
 input-key-MouseButton8 = Przycisk myszy 8
 input-key-MouseButton9 = Przycisk myszy 9
+input-key-CapsLock = Caps Lock
+input-key-ScrollLock = Scroll Lock
 input-key-LSystem-win = Lewy Win
 input-key-RSystem-win = Prawy Win
 input-key-LSystem-mac = Lewy Cmd
@@ -74,9 +77,3 @@ input-key-RSystem-mac = Prawy Cmd
 input-key-LSystem-linux = Lewy Meta
 input-key-RSystem-linux = Prawy Meta
 input-key-unknown = <nieznany klawisz>
-
-input-key-Alt-mac = ⌥
-
-input-key-CapsLock = Caps Lock
-
-input-key-ScrollLock = Scroll Lock

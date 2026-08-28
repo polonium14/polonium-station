@@ -6,6 +6,8 @@ tool-quality-screwing-name = przykręcania
 tool-quality-screwing-tool-name = śrubokręt
 tool-quality-cutting-name = przycinania
 tool-quality-cutting-tool-name = przecinak do kabli
+tool-quality-shearing-name = Shearing
+tool-quality-shearing-tool-name = Wirecutter
 tool-quality-welding-name = spawania
 tool-quality-welding-tool-name = spawarka
 tool-quality-pulsing-name = próbkowania impulsami
@@ -24,7 +26,3 @@ tool-quality-digging-name = kopania
 tool-quality-digging-tool-name = łopata
 tool-quality-brushing-name = szczotkowania
 tool-quality-brushing-tool-name = druciak
-
-tool-quality-shearing-name = Shearing
-
-tool-quality-shearing-tool-name = Wirecutter

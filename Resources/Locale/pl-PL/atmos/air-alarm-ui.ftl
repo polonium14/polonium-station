@@ -1,7 +1,9 @@
 # UI
 
+
 ## Window
 
+air-alarm-ui-title = Air Alarm
 air-alarm-ui-access-denied = Brak wystarczających uprawnień!
 air-alarm-ui-window-pressure-label = Ciśnienie
 air-alarm-ui-window-temperature-label = Temperatura
@@ -38,8 +40,17 @@ air-alarm-ui-mode-wide-filtering = Filtrowanie (szerokie)
 air-alarm-ui-mode-fill = Napełnianie
 air-alarm-ui-mode-panic = Tryb paniki
 air-alarm-ui-mode-none = Brak
+air-alarm-ui-pump-direction-siphoning = Siphoning
+air-alarm-ui-pump-direction-scrubbing = Scrubbing
+air-alarm-ui-pump-direction-releasing = Releasing
+air-alarm-ui-pressure-bound-nobound = No Bound
+air-alarm-ui-pressure-bound-internalbound = Internal Bound
+air-alarm-ui-pressure-bound-externalbound = External Bound
+air-alarm-ui-pressure-bound-both = Both
+air-alarm-ui-widget-gas-filters = Gas Filters
 
 ## Widgets
+
 
 ### General
 
@@ -61,6 +72,8 @@ air-alarm-ui-vent-internal-bound-label = Granica wewnętrzna
 air-alarm-ui-scrubber-pump-direction-label = Kierunek
 air-alarm-ui-scrubber-volume-rate-label = Prędkość (L)
 air-alarm-ui-scrubber-wide-net-label = WideNet
+air-alarm-ui-scrubber-select-all-gases-label = Select all
+air-alarm-ui-scrubber-deselect-all-gases-label = Deselect all
 
 ### Thresholds
 
@@ -75,25 +88,3 @@ air-alarm-ui-thresholds-upper-warning-bound = Ostrzeżenie powyżej
 air-alarm-ui-thresholds-lower-warning-bound = Ostrzeżenie poniżej
 air-alarm-ui-thresholds-copy = Skopiuj progi do wszystkich urządzeń
 air-alarm-ui-thresholds-copy-tooltip = Kopiuje progi czujników tego urządzenia do wszystkich urządzeń w tej zakładce alarmu powietrza.
-
-air-alarm-ui-title = Air Alarm
-
-air-alarm-ui-pump-direction-siphoning = Siphoning
-
-air-alarm-ui-pump-direction-scrubbing = Scrubbing
-
-air-alarm-ui-pump-direction-releasing = Releasing
-
-air-alarm-ui-pressure-bound-nobound = No Bound
-
-air-alarm-ui-pressure-bound-internalbound = Internal Bound
-
-air-alarm-ui-pressure-bound-externalbound = External Bound
-
-air-alarm-ui-pressure-bound-both = Both
-
-air-alarm-ui-widget-gas-filters = Gas Filters
-
-air-alarm-ui-scrubber-select-all-gases-label = Select all
-
-air-alarm-ui-scrubber-deselect-all-gases-label = Deselect all

@@ -1,4 +1,4 @@
-advertisement-bruiseomat-1 = GŁOSUJE NA WOJNE!!!
+﻿advertisement-bruiseomat-1 = I VOTE WAROPS!!!
 advertisement-bruiseomat-2 = Kto ma TC?
 advertisement-bruiseomat-3 = Ktoś kupił EMAGa?
 advertisement-bruiseomat-4 = Chcę wrócić na swoją stację...

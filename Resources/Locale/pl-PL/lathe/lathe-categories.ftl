@@ -4,7 +4,6 @@ lathe-category-clothing = Ubrania
 lathe-category-lights = Światła
 lathe-category-machines = Maszyny
 lathe-category-parts = Części
-lathe-category-tiles = Płytki
 lathe-category-tools = Narzędzia
 lathe-category-weapons = Broń
 # Biogen
@@ -21,12 +20,20 @@ lathe-category-security = Ochrona
 lathe-category-service = Usługowe
 lathe-category-supply = Zaopatrzeniowe
 # Cutter
-lathe-category-concrete = Betonowe
-lathe-category-dark = Ciemne
-lathe-category-maints = Serwisowe
-lathe-category-steel = Stalowe
-lathe-category-white = Białe
-lathe-category-wood = Drewniane
+lathe-category-tiles = Płytki
+lathe-category-circuit-tile = Circuit
+lathe-category-concrete-tile = Concrete
+lathe-category-dark-tile = Dark
+lathe-category-faux-tile = Faux
+lathe-category-maints-tile = Maints
+lathe-category-marble = Marble
+lathe-category-steel-tile = Steel
+lathe-category-shuttle-tile = Shuttle
+lathe-category-white-tile = White
+lathe-category-wood-tile = Wood
+lathe-category-plastic-tile = Plastic
+lathe-category-precious-tile = Precious
+lathe-category-industrial-tile = Industrial
 # Science
 lathe-category-mechs = Mechy
 lathe-category-modules = Moduły
@@ -43,29 +50,10 @@ lathe-category-command = Dowództwo
 lathe-category-hats = Czapki
 lathe-category-jumpsuits = Kombinezony
 lathe-category-neck = Szyja
-
-lathe-category-circuit-tile = Circuit
-
-lathe-category-concrete-tile = Concrete
-
-lathe-category-dark-tile = Dark
-
-lathe-category-faux-tile = Faux
-
-lathe-category-maints-tile = Maints
-
-lathe-category-marble = Marble
-
-lathe-category-steel-tile = Steel
-
-lathe-category-white-tile = White
-
-lathe-category-wood-tile = Wood
-
-lathe-category-shuttle-tile = Shuttle
-
-lathe-category-plastic-tile = Plastic
-
-lathe-category-precious-tile = Precious
-
-lathe-category-industrial-tile = Industrial
+# Cutter
+lathe-category-concrete = Betonowe
+lathe-category-dark = Ciemne
+lathe-category-maints = Serwisowe
+lathe-category-steel = Stalowe
+lathe-category-white = Białe
+lathe-category-wood = Drewniane

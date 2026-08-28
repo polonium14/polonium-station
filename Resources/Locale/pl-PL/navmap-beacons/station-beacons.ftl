@@ -41,6 +41,14 @@ station-beacon-engineering = Inżynieria
 station-beacon-ce = GI
 station-beacon-ame = SAM
 station-beacon-solars = Solary
+station-beacon-solars-N = Solary Północ
+station-beacon-solars-NE = Solary Północny-Wschód
+station-beacon-solars-E = Solary Wschód
+station-beacon-solars-SE = Solary Południowy-Wschód
+station-beacon-solars-S = Solary Południe
+station-beacon-solars-SW = Solars SW
+station-beacon-solars-W = Solary Zachód
+station-beacon-solars-NW = Solary Północny-Zachód
 station-beacon-gravgen = Grawitacja
 station-beacon-pa = Sterowanie AC
 station-beacon-smes = SMES
@@ -72,62 +80,13 @@ station-beacon-tools = Narzędzia
 station-beacon-disposals = Utylizacja
 station-beacon-cryosleep = Kriosen
 station-beacon-escape-pod = Pod Ewak.
+station-beacon-escape-pod-N = Kapsuła Ewak. N
+station-beacon-escape-pod-NE = Escape Pod NE
+station-beacon-escape-pod-E = Escape Pod E
+station-beacon-escape-pod-SE = Escape Pod SE
+station-beacon-escape-pod-S = Escape Pod S
+station-beacon-escape-pod-SW = Escape Pod SW
+station-beacon-escape-pod-W = Escape Pod W
+station-beacon-escape-pod-NW = Escape Pod NW
 station-beacon-vox = Pokój Voxów
 station-beacon-centcomm-office = Biuro CD
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-station-beacon-solars-N = Solary Północ
-
-station-beacon-solars-NE = Solary Północny-Wschód
-
-station-beacon-solars-E = Solary Wschód
-
-station-beacon-solars-SE = Solary Południowy-Wschód
-
-station-beacon-solars-S = Solary Południe
-
-station-beacon-solars-W = Solary Zachód
-
-station-beacon-solars-NW = Solary Północny-Zachód
-
-station-beacon-escape-pod-N = Kapsuła Ewak. N
-
-station-beacon-escape-pod-NE = Escape Pod NE
-
-station-beacon-escape-pod-E = Escape Pod E
-
-station-beacon-escape-pod-SE = Escape Pod SE
-
-station-beacon-escape-pod-S = Escape Pod S
-
-station-beacon-escape-pod-SW = Escape Pod SW
-
-station-beacon-escape-pod-W = Escape Pod W
-
-station-beacon-escape-pod-NW = Escape Pod NW
-
-station-beacon-solars-SW = Solars SW

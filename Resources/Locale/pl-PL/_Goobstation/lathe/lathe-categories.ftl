@@ -1,4 +1,3 @@
-
 lathe-category-mechs-vim = Vim
 lathe-category-mechs-honker = H.O.N.K.
 lathe-category-mechs-hamptr = H.A.M.P.T.R.

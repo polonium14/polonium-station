@@ -1,4 +1,3 @@
-
 influence-type-active = Active
 influence-type-passive = Passive
 

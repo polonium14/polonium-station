@@ -1,5 +1,4 @@
 job-supervisors-centcom = centralnemu dowództwu
-job-supervisors-central-commanders = urzędnikom centralnego dowództwa
 job-supervisors-captain = kapitanowi
 job-supervisors-hop = kierownikowi kadrowemu
 job-supervisors-hos = komendantowi
@@ -8,12 +7,12 @@ job-supervisors-cmo = ordynatorowi
 job-supervisors-rd = kierownikowi badań
 job-supervisors-qm = głównemu logistykowi
 job-supervisors-service = kucharzom, rolnikom, barmanom i kierownikowi kadrowemu
-job-supervisors-command = dowództwu stacji
 job-supervisors-engineering = inżynierom stacji, technikom środowiskowym i głównemu inżynierowi
 job-supervisors-medicine = doktorom medycznym, ratownikom, chemikom i ordynatorowi
 job-supervisors-security = ochroniarzom, strażnikowi i komendantowi
 job-supervisors-science = naukowcom i kierownikowi badań
 job-supervisors-hire = komukolwiek kto cię zatrudnił
 job-supervisors-everyone = absolutnie wszystkim
-
 job-supervisors-nobody = nobody
+job-supervisors-central-commanders = urzędnikom centralnego dowództwa
+job-supervisors-command = dowództwu stacji

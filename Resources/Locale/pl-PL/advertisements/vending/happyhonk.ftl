@@ -1,4 +1,4 @@
-advertisement-happyhonk-1 = Trąb! Trąb! Czemu dziś nie zamówić Happy Honk Meal?
+﻿advertisement-happyhonk-1 = Honk! Honk! Why not order a Happy Honk Meal today?
 advertisement-happyhonk-2 = Klaunom należy się uścisk, jeśli spotkasz jednego, pokaż swoją wdzięczność.
 advertisement-happyhonk-3 = Jeśli znajdziesz Złotego Trębacza, módl się do bogów – masz niesamowite szczęście.
 advertisement-happyhonk-4 = Happy Honk: to posiłek, to okazja, a do tego plastikowa zabawka, która sprawi, że piszczysz.

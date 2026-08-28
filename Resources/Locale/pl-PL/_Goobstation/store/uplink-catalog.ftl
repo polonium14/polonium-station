@@ -1,4 +1,3 @@
-
 # Surplus Hardsuits
 
 uplink-hardsuit-syndiemedic-name = Kombinezon próżniowy Agenta Gorlex
@@ -58,14 +57,6 @@ uplink-shotgun-magazine-slug-name = Bęben do strzelby (12 gauge, breneka)
 uplink-shotgun-magazine-slug-desc = Bęben do strzelby z 8 nabojami typu breneka. Kompatybilny z Bulldogiem.
 
 # Burner not added yet
-
-
-
-
-
-
-
-
 
 
 # Mechs

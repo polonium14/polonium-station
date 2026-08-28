@@ -17,6 +17,6 @@ particle-accelerator-control-menu-draw-value = [font="Monospace"]{ $watts }/{ $l
 particle-accelerator-control-menu-draw-not-available = [font="Monospace"][color=gray]N/A[/color][/font]
 particle-accelerator-control-menu-flavor-left = Trzymaj klauna z dala od tej konsoli!
 particle-accelerator-control-menu-flavor-right = v 1.6
-particle-accelerator-radio-message-on =  Zasilanie AKCEL zostało włączone.
+particle-accelerator-radio-message-on = Zasilanie AKCEL zostało włączone.
 particle-accelerator-radio-message-off = Zasilanie AKCEL zostało wyłączone.
 particle-accelerator-radio-message-num = Siła AKCEL została ustawiona na poziom { $level }.

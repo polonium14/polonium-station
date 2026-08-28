@@ -1,4 +1,4 @@
-## Damage command loc.
+﻿## Damage command loc.
 
 damage-command-description = Dodaj lub usuń obrażenia encji.
 damage-command-help = Użycie: { $command } <typ/grupa> <amount> [ignoreResistances] [uid]

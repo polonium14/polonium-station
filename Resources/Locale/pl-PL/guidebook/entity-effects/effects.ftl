@@ -1,3 +1,18 @@
+-create-3rd-person =
+    { $chance ->
+        [1] Creates
+       *[other] create
+    }
+-cause-3rd-person =
+    { $chance ->
+        [1] Causes
+       *[other] cause
+    }
+-satiate-3rd-person =
+    { $chance ->
+        [1] Satiates
+       *[other] satiate
+    }
 entity-effect-guidebook-spawn-entity =
     { $chance ->
         [1] Creates
@@ -414,6 +429,11 @@ entity-effect-guidebook-innoculate-zombie-infection =
         [1] Cures
        *[other] cure
     } an ongoing zombie infection, and provides immunity to future infections
+entity-effect-guidebook-heal-bones =
+    { $chance ->
+        [1] Heals
+       *[other] heal
+    } all broken and fractured bones in the body
 entity-effect-guidebook-reduce-rotting =
     { $chance ->
         [1] Regenerates
@@ -453,6 +473,11 @@ entity-effect-guidebook-plant-phalanximine =
         [1] Restores
        *[other] restore
     } viability to a plant rendered nonviable by a mutation
+entity-effect-guidebook-plant-remove-kudzu =
+    { $chance ->
+        [1] Removes
+       *[other] remove
+    } kudzu weed growth from a plant
 entity-effect-guidebook-plant-diethylamine =
     { $chance ->
         [1] Increases
@@ -478,45 +503,13 @@ entity-effect-guidebook-plant-mutate-chemicals =
         [1] Mutates
        *[other] mutate
     } a plant to produce { $name }
-
-entity-effect-guidebook-plant-remove-kudzu =
-    { $chance ->
-        [1] Removes
-        *[other] remove
-    } kudzu weed growth from a plant
-
 entity-effect-guidebook-add-reagent-to-bloodstream =
     { $chance ->
         [1] Injects
-        *[other] inject
-    } {$quantity} of {$reagent} directly into the bloodstream
-
-entity-effect-guidebook-heal-bones =
-    { $chance ->
-        [1] Heals
-        *[other] heal
-    } all broken and fractured bones in the body
-
+       *[other] inject
+    } { $quantity } of { $reagent } directly into the bloodstream
 entity-effect-disarm =
     { $chance ->
         [1] Disarms
-        *[other] disarms
+       *[other] disarms
     } the entity
-
--cause-3rd-person =
-    { $chance ->
-        [1] Causes
-        *[other] cause
-    }
-
--create-3rd-person =
-    { $chance ->
-        [1] Creates
-        *[other] create
-    }
-
--satiate-3rd-person =
-    { $chance ->
-        [1] Satiates
-        *[other] satiate
-    }

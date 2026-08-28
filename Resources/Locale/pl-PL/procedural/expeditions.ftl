@@ -1,10 +1,3 @@
-salvage-expedition-structure-examine = To jest [color=#B02E26]destrukcyjny[/color] cel
-salvage-expedition-structure-remaining =
-    { $count ->
-        [one] { $count } struktura pozostała.
-        [few] { $count } struktury pozostały.
-       *[other] { $count } struktur pozostało.
-    }
 salvage-expedition-type = Misja
 salvage-expedition-window-title = Ekspedycje eksploracyjne
 salvage-expedition-window-difficulty = Trudność:
@@ -53,3 +46,10 @@ salvage-dungeon-mod-snowy-labs = Śnieżne laboratoria
 salvage-dungeon-mod-experiment = Eksperyment
 salvage-dungeon-mod-haunted = Nawiedzony
 salvage-dungeon-mod-mineshaft = Szyb kopalniany
+salvage-expedition-structure-examine = To jest [color=#B02E26]destrukcyjny[/color] cel
+salvage-expedition-structure-remaining =
+    { $count ->
+        [one] { $count } struktura pozostała.
+        [few] { $count } struktury pozostały.
+       *[other] { $count } struktur pozostało.
+    }

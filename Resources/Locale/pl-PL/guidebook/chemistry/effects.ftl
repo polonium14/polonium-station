@@ -1,9 +1,6 @@
-
-
-
 reagent-effect-guidebook-create-entity-reaction-effect =
     { $chance ->
-            *[other] { $amount } { MAKEPLURAL($entname) }
+       *[other] { $amount } { MAKEPLURAL($entname) }
     }
 reagent-effect-guidebook-explosion-reaction-effect =
     { $chance ->

@@ -1,4 +1,3 @@
-
 supermatter-announcer = System Silnika Supermaterii
 supermatter-examine-integrity = Integralność silnika wynosi [color=yellow]{ $integrity }%[/color].
 supermatter-healing = Krystaliczna hiperstruktura powraca do bezpiecznych parametrów operacyjnych. Integralność: { $integrity }%.

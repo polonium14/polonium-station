@@ -1,4 +1,4 @@
-# Examine text
+﻿# Examine text
 comp-ghost-examine-time-minutes =
     Zmarł(-a) [color=yellow]{ $minutes ->
         [one] minutę

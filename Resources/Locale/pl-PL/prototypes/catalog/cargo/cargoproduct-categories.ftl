@@ -7,16 +7,13 @@ cargoproduct-category-name-engineering = Inżynieryjne
 cargoproduct-category-name-food = Jedzenie
 cargoproduct-category-name-fun = Rozrywka
 cargoproduct-category-name-hydroponics = Hydroponiczne
+cargoproduct-category-name-instruments = Instruments
+cargoproduct-category-name-janitorial = Janitorial
 cargoproduct-category-name-livestock = Inwentarz żywy
 cargoproduct-category-name-materials = Materiały
 cargoproduct-category-name-medical = Medyczne
 cargoproduct-category-name-science = Rozwój
 cargoproduct-category-name-security = Bezpieczeństwo
 cargoproduct-category-name-service = Obsługa
-cargoproduct-category-name-shuttle = Wahadłowce
-
-cargoproduct-category-name-instruments = Instruments
-
-cargoproduct-category-name-janitorial = Janitorial
-
 cargoproduct-category-name-space = Space
+cargoproduct-category-name-shuttle = Wahadłowce
