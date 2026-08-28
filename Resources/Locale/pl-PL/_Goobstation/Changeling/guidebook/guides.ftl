@@ -1,2 +1,0 @@
-
-guide-entry-changelings = Changelings
