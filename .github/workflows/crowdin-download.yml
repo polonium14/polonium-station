@@ -22,6 +22,8 @@ jobs:
     timeout-minutes: 180
     steps:
       - uses: actions/checkout@v7
+        with:
+          token: ${{ secrets.BOT_TOKEN }}
 
       - name: Download translations
         uses: crowdin/github-action@v2
@@ -40,6 +42,6 @@ jobs:
           commit_message: New Crowdin translations [ci skip]
           config: crowdin.yml
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
           CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
           CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
