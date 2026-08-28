@@ -58,21 +58,25 @@ namespace Content.Shared.Localizations
             _loc.LoadCulture(cultureEn);
             _loc.SetFallbackCluture(cultureEn);
 
-            _loc.AddFunction(culture, "PRESSURE", FormatPressure);
-            _loc.AddFunction(culture, "POWERWATTS", FormatPowerWatts);
-            _loc.AddFunction(culture, "POWERJOULES", FormatPowerJoules);
-            _loc.AddFunction(culture, "ENERGYWATTHOURS", FormatEnergyWattHours);
-            _loc.AddFunction(culture, "UNITS", FormatUnits);
-            _loc.AddFunction(culture, "TOSTRING", args => FormatToString(culture, args));
-            _loc.AddFunction(culture, "LOC", FormatLoc);
-            _loc.AddFunction(culture, "NATURALFIXED", FormatNaturalFixed);
-            _loc.AddFunction(culture, "NATURALPERCENT", FormatNaturalPercent);
-            _loc.AddFunction(culture, "PLAYTIME", FormatPlaytime);
-            _loc.AddFunction(culture, "MANY", FormatMany);
-            _loc.AddFunction(culture, "GASQUANTITY", FormatGasQuantity); // Frontier
-
-            _loc.AddFunction(cultureEn, "MAKEPLURAL", FormatMakePlural);
-            _loc.AddFunction(cultureEn, "MANY", FormatMany);
+            // Polonium: the fork runs pl-PL as primary with en-US fallback, so every content
+            // Fluent function must be registered for BOTH cultures. en-US fallback strings
+            // (guidebook/examine text) call NATURALFIXED etc. and error out if it's pl-PL only.
+            foreach (var c in new[] { culture, cultureEn })
+            {
+                _loc.AddFunction(c, "PRESSURE", FormatPressure);
+                _loc.AddFunction(c, "POWERWATTS", FormatPowerWatts);
+                _loc.AddFunction(c, "POWERJOULES", FormatPowerJoules);
+                _loc.AddFunction(c, "ENERGYWATTHOURS", FormatEnergyWattHours);
+                _loc.AddFunction(c, "UNITS", FormatUnits);
+                _loc.AddFunction(c, "TOSTRING", args => FormatToString(c, args));
+                _loc.AddFunction(c, "LOC", FormatLoc);
+                _loc.AddFunction(c, "NATURALFIXED", FormatNaturalFixed);
+                _loc.AddFunction(c, "NATURALPERCENT", FormatNaturalPercent);
+                _loc.AddFunction(c, "PLAYTIME", FormatPlaytime);
+                _loc.AddFunction(c, "MANY", FormatMany);
+                _loc.AddFunction(c, "GASQUANTITY", FormatGasQuantity); // Frontier
+                _loc.AddFunction(c, "MAKEPLURAL", FormatMakePlural);
+            }
         }
 
         private ILocValue FormatMany(LocArgs args)
