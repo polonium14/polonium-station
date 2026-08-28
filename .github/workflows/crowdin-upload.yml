@@ -37,6 +37,7 @@ jobs:
           upload_language: pl
           auto_approve_imported: true
           import_eq_suggestions: false
+          crowdin_branch_name: master
           config: crowdin.yml
         env:
           CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
