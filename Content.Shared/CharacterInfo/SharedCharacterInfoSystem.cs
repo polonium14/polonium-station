@@ -12,6 +12,8 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared.Objectives;
+using Content.Shared.Roles;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared.CharacterInfo;
@@ -31,19 +33,15 @@ public sealed class RequestCharacterInfoEvent : EntityEventArgs
 public sealed class CharacterInfoEvent : EntityEventArgs
 {
     public readonly NetEntity NetEntity;
-    // POLONIUM CHANGE: send only the locale-independent job prototype id (null if the
-    // entity has no job). The client resolves both the localized display name and the chat
-    // highlight key from it, so there is a single source of truth over the wire.
-    public readonly string? JobProto;
+    public readonly ProtoId<JobPrototype>? Job;
     public readonly Dictionary<string, List<ObjectiveInfo>> Objectives;
     public readonly string? Briefing;
 
-    // POLONIUM CHANGE: jobProto replaces the previously server-localized jobTitle
-    public CharacterInfoEvent(NetEntity netEntity, string? jobProto, Dictionary<string, List<ObjectiveInfo>> objectives, string? briefing)
+    public CharacterInfoEvent(NetEntity netEntity, Dictionary<string, List<ObjectiveInfo>> objectives, string? briefing, ProtoId<JobPrototype>? job)
     {
         NetEntity = netEntity;
-        JobProto = jobProto;
         Objectives = objectives;
         Briefing = briefing;
+        Job = job;
     }
 }

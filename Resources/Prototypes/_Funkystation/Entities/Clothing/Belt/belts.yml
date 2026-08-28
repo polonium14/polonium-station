@@ -23,8 +23,8 @@
       - CombatKnife
       - Truncheon
       - HandGrenade
+      - Stunbaton # Polonium: Stunbaton is a Tag now, not a component
       components:
-      - Stunbaton
       - FlashOnTrigger
       - SmokeOnTrigger
       - Flash

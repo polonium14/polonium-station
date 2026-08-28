@@ -305,6 +305,9 @@ public abstract partial class SharedGunSystem : EntitySystem
             Projectiles.SetShooter(uid, projectile, shooter.Value);
 
         TransformSystem.SetWorldRotation(uid, direction.ToWorldAngle() + projectile.Angle);
+
+        var ev = new ProjectileShotEvent();
+        RaiseLocalEvent(uid, ref ev);
     }
 
     /// <summary>
@@ -356,7 +359,9 @@ public abstract partial class SharedGunSystem : EntitySystem
         }
         if (playSound && TryComp<CartridgeAmmoComponent>(entity, out var cartridge))
         {
-            Audio.PlayPvs(cartridge.EjectSound, entity, AudioParams.Default.WithVariation(SharedContentAudioSystem.DefaultVariation).WithVolume(-1f));
+            var audioParams = cartridge.EjectSound?.Params ?? AudioParams.Default;
+            audioParams = audioParams.AddVolume(-1f).WithVariation(SharedContentAudioSystem.DefaultVariation);
+            Audio.PlayPvs(cartridge.EjectSound, entity, audioParams);
         }
     }
 
@@ -431,14 +436,14 @@ public abstract partial class SharedGunSystem : EntitySystem
                 rangedSound.SoundTypes?.TryGetValue(type, out var damageSoundType) == true &&
                 filter.Count > 0)
             {
-                Audio.PlayEntity(damageSoundType, filter, otherEntity, true, AudioParams.Default.WithVariation(DamagePitchVariation));
+                Audio.PlayEntity(damageSoundType, filter, otherEntity, true, (damageSoundType?.Params ?? AudioParams.Default).WithVariation(DamagePitchVariation));
                 playedSound = true;
             }
             else if (type != null &&
                      rangedSound.SoundGroups?.TryGetValue(type, out var damageSoundGroup) == true &&
                      filter.Count > 0)
             {
-                Audio.PlayEntity(damageSoundGroup, filter, otherEntity, true, AudioParams.Default.WithVariation(DamagePitchVariation));
+                Audio.PlayEntity(damageSoundGroup, filter, otherEntity, true, (damageSoundGroup?.Params ?? AudioParams.Default).WithVariation(DamagePitchVariation));
                 playedSound = true;
             }
         }
@@ -630,6 +635,7 @@ public enum AmmoVisuals : byte
     AmmoCount,
     AmmoMax,
     HasAmmo, // used for generic visualizers. c# stuff can just check ammocount != 0
+    IsFull, // used for generic visualizers. c# stuff can just check ammocount == ammomax
     MagLoaded,
     BoltClosed,
 }

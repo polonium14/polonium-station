@@ -14,6 +14,7 @@ using Content.Shared.GameTicking.Components;
 using Content.Shared.Mind.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
+using Content.Shared.Body.Systems;
 
 namespace Content.Server.BloodCult.EntitySystems;
 

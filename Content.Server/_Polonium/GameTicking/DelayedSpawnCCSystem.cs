@@ -19,6 +19,7 @@ using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
 using static Content.Shared.Movement.Systems.SharedContentEyeSystem;
+using Content.Shared.Ghost.Components;
 
 namespace Content.Server._Polonium.GameTicking;
 

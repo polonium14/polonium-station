@@ -1,0 +1,18 @@
+- type: entity
+  id: BaseStationAlertLevels
+  abstract: true
+  components:
+  - type: AlertLevel
+    availableAlertLevels:
+    - Blue
+    - DeltaNuke
+    - Epsilon
+    - Gamma
+    - Green
+    - Red
+    - Violet
+    - Yellow
+    # Polonium / Impstation custom alert levels
+    - Amber
+    - Cyan
+    - Octarine

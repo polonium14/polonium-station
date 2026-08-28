@@ -73,7 +73,7 @@ public sealed partial class StationAiVisionSystem : EntitySystem
         // Skip occluders step if we're just doing range checks.
         if (!fastPath)
         {
-            var tileEnumerator = _maps.GetLocalTilesEnumerator(grid, grid, expandedBounds, ignoreEmpty: false);
+            var tileEnumerator = _maps.GetLocalTilesIntersecting(grid, grid, expandedBounds, ignoreEmpty: false);
 
             // Get all other relevant tiles.
             while (tileEnumerator.MoveNext(out var tileRef))
@@ -166,7 +166,7 @@ public sealed partial class StationAiVisionSystem : EntitySystem
             return;
 
         // Get viewport tiles
-        var tileEnumerator = _maps.GetLocalTilesEnumerator(grid, grid, localAabb, ignoreEmpty: false);
+        var tileEnumerator = _maps.GetLocalTilesIntersecting(grid, grid, localAabb, ignoreEmpty: false);
 
         while (tileEnumerator.MoveNext(out var tileRef))
         {
@@ -178,7 +178,7 @@ public sealed partial class StationAiVisionSystem : EntitySystem
             viewportTiles.Add(tileRef.GridIndices);
         }
 
-        tileEnumerator = _maps.GetLocalTilesEnumerator(grid, grid, enlargedLocalAabb, ignoreEmpty: false);
+        tileEnumerator = _maps.GetLocalTilesIntersecting(grid, grid, enlargedLocalAabb, ignoreEmpty: false);
 
         while (tileEnumerator.MoveNext(out var tileRef))
         {

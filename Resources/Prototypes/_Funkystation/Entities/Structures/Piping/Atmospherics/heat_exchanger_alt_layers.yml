@@ -1,0 +1,84 @@
+# SPDX-FileCopyrightText: 2026 Polonium-bot <admin@ss14.pl>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Alt pipe-layer heat exchangers (upstream left HeatExchanger single-layer: numberOfPipeLayers 1).
+# Preserved from the fork alt-layer subsystem; migrated from the old GasPipeLayerAlt parent marker
+# to upstream's AtmosPipeLayers pipeLayer index (1 = secondary, 2 = tertiary). Built via the
+# radiatorAlt*/bendradiatorAlt* nodes in the GasBinary construction graph.
+
+- type: entity
+  parent: HeatExchanger
+  id: HeatExchangerAlt1
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Structures/Piping/Atmospherics/heatexchanger_alt1.rsi
+    layers:
+    - sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
+      state: pipeStraight
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: heStraight
+      map: [ "enum.SubfloorLayers.FirstLayer" ]
+  - type: AtmosPipeLayers
+    numberOfPipeLayers: 3
+    pipeLayer: 1
+  - type: Construction
+    node: radiatorAlt1
+
+- type: entity
+  parent: HeatExchanger
+  id: HeatExchangerAlt2
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Structures/Piping/Atmospherics/heatexchanger_alt2.rsi
+    layers:
+    - sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
+      state: pipeStraight
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: heStraight
+      map: [ "enum.SubfloorLayers.FirstLayer" ]
+  - type: AtmosPipeLayers
+    numberOfPipeLayers: 3
+    pipeLayer: 2
+  - type: Construction
+    node: radiatorAlt2
+
+- type: entity
+  parent: HeatExchangerBend
+  id: HeatExchangerBendAlt1
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Structures/Piping/Atmospherics/heatexchanger_alt1.rsi
+    layers:
+    - sprite: Structures/Piping/Atmospherics/pipe_alt1.rsi
+      state: pipeBend
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: heBend
+      map: [ "enum.SubfloorLayers.FirstLayer" ]
+  - type: AtmosPipeLayers
+    numberOfPipeLayers: 3
+    pipeLayer: 1
+  - type: Construction
+    node: bendradiatorAlt1
+
+- type: entity
+  parent: HeatExchangerBend
+  id: HeatExchangerBendAlt2
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Structures/Piping/Atmospherics/heatexchanger_alt2.rsi
+    layers:
+    - sprite: Structures/Piping/Atmospherics/pipe_alt2.rsi
+      state: pipeBend
+      map: [ "enum.PipeVisualLayers.Pipe" ]
+    - state: heBend
+      map: [ "enum.SubfloorLayers.FirstLayer" ]
+  - type: AtmosPipeLayers
+    numberOfPipeLayers: 3
+    pipeLayer: 2
+  - type: Construction
+    node: bendradiatorAlt2

@@ -6,7 +6,10 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Action
-    icon: Interface/Actions/verbiconfangs.png
+  - type: Sprite
+    layers:
+    - texture: Interface/Actions/verbiconfangs.png
+      map: ["enum.ActionVisuals.Icon"]
   - type: InstantAction
     event: !type:EatMouseActionEvent
 
@@ -20,7 +23,11 @@
   - type: LimitedCharges
     maxCharges: 1
   - type: Action
-    icon: { sprite: Objects/Specific/Species/felinid.rsi, state: icon }
     useDelay: 30
+  - type: Sprite
+    sprite: Objects/Specific/Species/felinid.rsi
+    layers:
+    - state: icon
+      map: ["enum.ActionVisuals.Icon"]
   - type: InstantAction
     event: !type:HairballActionEvent

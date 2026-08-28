@@ -1,0 +1,27 @@
+# Polonium: the fork adds a Janitor department airlock (upstream has no AirlockJanitor).
+# These lived in base airlocks.yml at fork HEAD; the upstream merge took upstream's airlocks.yml
+# and dropped them. Referenced by Paintables/airlock_groups.yml — restored fork-scoped so a
+# future upstream merge can't drop them again.
+- type: entity
+  parent: Airlock
+  id: AirlockJanitor
+  suffix: Janitor
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Doors/Airlocks/Standard/janitor.rsi
+  - type: Paintable
+    group: AirlockStandard
+  - type: Wires
+    layoutId: AirlockService
+
+- type: entity
+  parent: AirlockGlass
+  id: AirlockJanitorGlass
+  suffix: Janitor
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Doors/Airlocks/Glass/janitor.rsi
+  - type: Paintable
+    group: AirlockGlass
+  - type: Wires
+    layoutId: AirlockService

@@ -34,6 +34,7 @@ using Robust.Shared.Random;
 using Robust.Shared.Replays;
 using System.Linq;
 using Content.Server.Speech;
+using Content.Shared.Speech.EntitySystems;
 
 namespace Content.Server.Telephone;
 

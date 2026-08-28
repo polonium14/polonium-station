@@ -89,6 +89,7 @@ public partial class RCDSystem : EntitySystem
     private readonly ProtoId<RCDPrototype> _deconstructLatticeProto = "DeconstructLattice";
     private static readonly ProtoId<TagPrototype> CatwalkTag = "Catwalk";
     private AtmosPipeLayer _currentLayer = AtmosPipeLayer.Primary; // Funky - Current layer for RPD
+    private static readonly LocId DefaultPrototypeNameLocId = "generic-unknown-title";
 
     private HashSet<EntityUid> _intersectingEntities = new();
 
@@ -108,6 +109,19 @@ public partial class RCDSystem : EntitySystem
         SubscribeNetworkEvent<RCDConstructionGhostRotationEvent>(OnRCDconstructionGhostRotationEvent);
         SubscribeNetworkEvent<RCDConstructionGhostFlipEvent>(OnRCDConstructionGhostFlipEvent);
 
+    }
+
+    /// <summary>
+    /// Gets the display name of a given RCDPrototype.
+    /// </summary>
+    public string GetPrototypeName(RCDPrototype prototype)
+    {
+        if (prototype.SetName != null)
+            return Loc.GetString(prototype.SetName);
+        else if (prototype.Prototype != null)
+            return ProtoMan.Index(prototype.Prototype).Name; // already localized
+        else
+            return Loc.GetString(DefaultPrototypeNameLocId);
     }
 
     #region Event handling
@@ -158,18 +172,14 @@ public partial class RCDSystem : EntitySystem
         // Update cached prototype if required
         UpdateCachedPrototype(uid, component);
 
-        var msg = Loc.GetString("rcd-component-examine-mode-details", ("mode", Loc.GetString(component.CachedPrototype.SetName)));
+        var displayName = GetPrototypeName(component.CachedPrototype);
+
+        string msg;
 
         if (component.CachedPrototype.Mode == RcdMode.ConstructTile || component.CachedPrototype.Mode == RcdMode.ConstructObject)
-        {
-            var name = Loc.GetString(component.CachedPrototype.SetName);
-
-            if (component.CachedPrototype.Prototype != null &&
-                _protoManager.TryIndex(component.CachedPrototype.Prototype, out var proto))
-                name = proto.Name;
-
-            msg = Loc.GetString("rcd-component-examine-build-details", ("name", name));
-        }
+            msg = Loc.GetString("rcd-component-examine-build-details", ("name", displayName));
+        else
+            msg = Loc.GetString("rcd-component-examine-mode-details", ("mode", displayName));
 
         args.PushMarkup(msg);
     }
@@ -514,7 +524,7 @@ public partial class RCDSystem : EntitySystem
             if (component.CachedPrototype.Prototype != null &&
                 _tileDefMan.TryGetDefinition(component.CachedPrototype.Prototype, out var replacementDef))
             {
-                var replacementContentDef = (ContentTileDefinition) replacementDef;
+                var replacementContentDef = (ContentTileDefinition)replacementDef;
 
                 if (replacementContentDef.BaseTurf != tileDef.ID &&
                     !replacementContentDef.BaseWhitelist.Contains(tileDef.ID))
@@ -671,17 +681,6 @@ public partial class RCDSystem : EntitySystem
                     ? component.CachedPrototype.MirrorPrototype
                     : component.CachedPrototype.Prototype;
 
-                // Funky - Determine the correct prototype based on selected layer for RPD
-                if (component.IsRpd && !component.CachedPrototype.NoLayers)
-                {
-                    if (_protoManager.TryIndex<EntityPrototype>(proto, out var entityProto) &&
-                        entityProto.TryGetComponent<AtmosPipeLayersComponent>(out var atmosPipeLayers, _entityManager.ComponentFactory) &&
-                        _pipeLayersSystem.TryGetAlternativePrototype(atmosPipeLayers, _currentLayer, out var newProtoId))
-                    {
-                        proto = newProtoId;
-                    }
-                }
-                // Funky - end of changes
 
                 // Funky - Calculate rotation and apply it before spawning
                 // Reads component.ConstructionDirection live rather than the Direction that was
@@ -720,6 +719,9 @@ public partial class RCDSystem : EntitySystem
                 // call this replaced.
                 var entityCoords = _mapSystem.GridTileToLocal(mapGridData.GridUid, mapGridData.Component, mapGridData.Position);
                 var ent = _entityManager.SpawnAttachedTo(proto, entityCoords, rotation: rotation);
+                // Funky - apply the selected RPD pipe layer to the freshly spawned entity
+                if (component.IsRpd && !component.CachedPrototype.NoLayers && TryComp<AtmosPipeLayersComponent>(ent, out var pipeLayers))
+                    _pipeLayersSystem.SetPipeLayer((ent, pipeLayers), _currentLayer);
                 // End of funky changes
 
                 // Funky - handled above

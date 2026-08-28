@@ -15,3 +15,8 @@ location-nuke-disk = nuke disk
 location-nuclear-bomb = nuclear bomb
 location-supermatter = supermatter
 location-nuclear-reactor = nuclear reactor
+# Markers
+
+# Mobs
+
+# Objects

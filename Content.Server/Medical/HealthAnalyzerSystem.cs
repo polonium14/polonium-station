@@ -77,7 +77,12 @@ using Content.Shared.Temperature.Components;
 using Content.Shared.Traits.Assorted;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Containers;
+using Robust.Shared.Timing;
+using Content.Server.Body.Systems;
+
 using Robust.Shared.Prototypes;
+using Content.Shared.Body.Systems;
 namespace Content.Server.Medical;
 
 public sealed partial class HealthAnalyzerSystem : BaseAnalyzerSystem<HealthAnalyzerComponent, HealthAnalyzerDoAfterEvent>
@@ -186,7 +191,7 @@ public sealed partial class HealthAnalyzerSystem : BaseAnalyzerSystem<HealthAnal
 
         var bodyTemperature = float.NaN;
         if (TryComp<TemperatureComponent>(validTarget, out var temp))
-            bodyTemperature = temp.CurrentTemperature;
+            bodyTemperature = temp.Temperature;
 
         var bloodAmount = float.NaN;
         if (HasComp<BloodstreamComponent>(validTarget))
@@ -436,7 +441,7 @@ public sealed partial class HealthAnalyzerSystem : BaseAnalyzerSystem<HealthAnal
         var bodyTemperature = float.NaN;
 
         if (TryComp<TemperatureComponent>(entity, out var temp))
-            bodyTemperature = temp.CurrentTemperature;
+            bodyTemperature = temp.Temperature;
 
         var bloodAmount = float.NaN;
         var bleeding = false;

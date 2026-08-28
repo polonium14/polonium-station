@@ -24,7 +24,7 @@ using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
-using Content.Server.Speech.Prototypes;
+using Content.Shared.Speech;
 using Content.Shared.BloodCult;
 using Content.Shared.BloodCult.Components;
 using Content.Shared.Roles.Components;
@@ -81,6 +81,9 @@ using Content.Shared.Storage;
 using Content.Shared.Storage.EntitySystems;
 using Content.Shared.UserInterface;
 using Robust.Shared.GameObjects;
+using Content.Shared.Ghost.Components;
+using Content.Shared.Speech.Components;
+using Content.Shared.Speech.Prototypes;
 
 namespace Content.Server.GameTicking.Rules;
 

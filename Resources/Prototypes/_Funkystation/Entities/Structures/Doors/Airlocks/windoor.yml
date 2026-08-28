@@ -1,5 +1,5 @@
 - type: entity
-  parent: WindoorSecureServiceLocked
+  parent: WindoorServiceLocked # Polonium: WindoorSecureServiceLocked renamed upstream
   id: WindoorReporterLocked
   suffix: Reporter, Locked
   components:

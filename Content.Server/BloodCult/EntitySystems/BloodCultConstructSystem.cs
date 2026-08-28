@@ -33,6 +33,8 @@ using Content.Shared.Weapons.Melee;
 using Content.Shared.Weapons.Melee.Events;
 using Robust.Shared.Player;
 using Content.Shared.Damage.Components;
+using Content.Shared.Speech.Components;
+using Content.Shared.Speech.EntitySystems;
 
 namespace Content.Server.BloodCult.EntitySystems;
 
@@ -50,6 +52,7 @@ public sealed partial class BloodCultConstructSystem : EntitySystem
 	[Dependency] private SharedActionsSystem _actions = default!;
 	[Dependency] private ActionContainerSystem _actionContainer = default!;
 	[Dependency] private SharedMeleeWeaponSystem _melee = default!;
+	[Dependency] private ReplacementAccentSystem _replacementAccent = default!;
 
 	/// <summary>
 	/// Grants the Commune action to a juggernaut
@@ -195,7 +198,7 @@ public sealed partial class BloodCultConstructSystem : EntitySystem
 
 		// Ensure juggernaut has the correct accent (juggernaut voice masking for text replacement)
 		// This can coexist with SpeechComponent - SpeechComponent handles sounds, ReplacementAccentComponent handles text
-		EnsureComp<ReplacementAccentComponent>(juggernaut).Accent = "juggernaut";
+		_replacementAccent.ApplyAccent(juggernaut, "juggernaut");
 
 		// Ensure juggernaut is in the BloodCultist faction (remove any crew alignment)
 		// Use ClearFactions and AddFaction to ensure proper faction alignment after mind transfer
@@ -256,7 +259,7 @@ public sealed partial class BloodCultConstructSystem : EntitySystem
 
 		// Ensure juggernaut has the correct accent (juggernaut voice masking for text replacement)
 		// This can coexist with SpeechComponent - SpeechComponent handles sounds, ReplacementAccentComponent handles text
-		EnsureComp<ReplacementAccentComponent>(juggernaut).Accent = "juggernaut";
+		_replacementAccent.ApplyAccent(juggernaut, "juggernaut");
 
 		// Ensure juggernaut is in the BloodCultist faction (remove any crew alignment)
 		// Use ClearFactions and AddFaction to ensure proper faction alignment after mind transfer

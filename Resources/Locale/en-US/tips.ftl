@@ -176,3 +176,4 @@ tips-dataset-172 = Changelings are capable of disguising as any crew member they
 tips-dataset-173 = As an Atmospheric Technician, you can use freezers to cool oxygen or nitrogen to store more mols of gas in the same amount of pressure. This allows you to lower the pressure output on your tank, which lets you breathe from it longer.
 tips-dataset-174 = You're able to create makeshift armor and weaponry using gear commonly found in maintenance. While incredibly slow and difficult to use well, it's typically better than nothing.
 tips-dataset-175 = The Cybersun pen and the Central Command pen can write over papers after they have been stamped or signed. They are also incredibly effective in combat.
+tips-dataset-176 = Lottery crates can very rarely contain The Throngler.

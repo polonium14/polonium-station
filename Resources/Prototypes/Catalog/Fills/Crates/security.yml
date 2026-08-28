@@ -23,7 +23,7 @@
     containers:
       entity_storage: !type:AllSelector
         children:
-        - id: Nightstick
+        - id: Stunbaton # Polonium: was 'Nightstick' (item never created); reverted to Stunbaton
           amount: 3
         - id: BoxFlashbang
         - id: Flash

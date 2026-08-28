@@ -22,6 +22,8 @@ using Content.Shared.Station;
 using Content.Shared.Station.Components;
 using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
+using Content.Shared.AlertLevel;
+using Content.Shared.Ghost.Components;
 
 namespace Content.Server._Polonium.StationAi;
 
@@ -62,7 +64,7 @@ public sealed partial class ExternalLockdownSystem : EntitySystem
         SubscribeLocalEvent<BypassInteractionChecksComponent, MapInitEvent>(OnAdminObserverMapInit); // This component exists only in aghost, god please don't let this component be added to any other entity
     }
 
-    private void OnAlertLevelChanged(AlertLevelChangedEvent args)
+    private void OnAlertLevelChanged(ref AlertLevelChangedEvent args)
     {
         if (args.AlertLevel == EpsilonAlertLevel)
         {

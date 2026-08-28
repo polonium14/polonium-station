@@ -16,9 +16,11 @@
   components:
   - type: Action
     priority: -20
-    icon:
-      sprite: _Goobstation/Effects/bluespace_lifeline.rsi
-      state: bluespace_lifeline
+  - type: Sprite
+    sprite: _Goobstation/Effects/bluespace_lifeline.rsi
+    layers:
+    - state: bluespace_lifeline
+      map: ["enum.ActionVisuals.Icon"]
   - type: InstantAction
     event: !type:ActivateImplantEvent
 
@@ -31,8 +33,10 @@
   - type: Action
     useDelay: 35
     priority: -20
-    icon:
-      sprite: Objects/Weapons/Grenades/smoke.rsi
-      state: icon
+  - type: Sprite
+    sprite: Objects/Weapons/Grenades/smoke.rsi
+    layers:
+    - state: icon
+      map: ["enum.ActionVisuals.Icon"]
   - type: InstantAction
     event: !type:ActivateImplantEvent

@@ -110,7 +110,7 @@
         Blunt: 0.50
         Heat: 0.1
   - type: Temperature # temperature values taken from reptilian species
-    currentTemperature: 310.15
+    temperature: 310.15
     specificHeat: 42
   - type: TemperatureDamage
     heatDamageThreshold: 400

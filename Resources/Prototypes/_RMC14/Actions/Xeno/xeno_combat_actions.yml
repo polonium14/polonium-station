@@ -7,9 +7,11 @@
   - type: Action
     useDelay: 12
     itemIconStyle: BigAction
-    icon:
-      sprite: _RMC14/Actions/xeno_actions.rsi
-      state: tail_attack
+  - type: Sprite
+    sprite: _RMC14/Actions/xeno_actions.rsi
+    layers:
+    - state: tail_attack
+      map: ["enum.ActionVisuals.Icon"]
   - type: TargetAction
     range: 2.5
     interactOnMiss: false
@@ -29,9 +31,11 @@
   - type: Action
     useDelay: 9
     itemIconStyle: BigAction
-    icon:
-      sprite: _RMC14/Actions/xeno_actions.rsi
-      state: pounce
+  - type: Sprite
+    sprite: _RMC14/Actions/xeno_actions.rsi
+    layers:
+    - state: pounce
+      map: ["enum.ActionVisuals.Icon"]
   - type: TargetAction
     range: 6
     checkCanAccess: false
@@ -47,9 +51,11 @@
   - type: Action
     useDelay: 3.75
     itemIconStyle: BigAction
-    icon:
-      sprite: _RMC14/Actions/xeno_actions.rsi
-      state: xeno_spit
+  - type: Sprite
+    sprite: _RMC14/Actions/xeno_actions.rsi
+    layers:
+    - state: xeno_spit
+      map: ["enum.ActionVisuals.Icon"]
   - type: TargetAction
     range: 7
     checkCanAccess: false
@@ -74,9 +80,11 @@
   - type: Action
     useDelay: 3
     itemIconStyle: BigAction
-    icon:
-      sprite: _RMC14/Actions/xeno_actions.rsi
-      state: shift_spit_neurotoxin
+  - type: Sprite
+    sprite: _RMC14/Actions/xeno_actions.rsi
+    layers:
+    - state: shift_spit_neurotoxin
+      map: ["enum.ActionVisuals.Icon"]
   - type: TargetAction
     range: 5
     checkCanAccess: false
@@ -92,9 +100,11 @@
   - type: Action
     useDelay: 1
     itemIconStyle: BigAction
-    icon:
-      sprite: _RMC14/Actions/xeno_actions.rsi
-      state: crest_defense
+  - type: Sprite
+    sprite: _RMC14/Actions/xeno_actions.rsi
+    layers:
+    - state: crest_defense
+      map: ["enum.ActionVisuals.Icon"]
   - type: InstantAction
     event: !type:XenoCrestActionEvent
 
@@ -107,9 +117,11 @@
   - type: Action
     useDelay: 1
     itemIconStyle: BigAction
-    icon:
-      sprite: _RMC14/Actions/xeno_actions.rsi
-      state: fortify
+  - type: Sprite
+    sprite: _RMC14/Actions/xeno_actions.rsi
+    layers:
+    - state: fortify
+      map: ["enum.ActionVisuals.Icon"]
   - type: InstantAction
     event: !type:XenoFortifyActionEvent
 
@@ -122,9 +134,11 @@
   - type: Action
     useDelay: 9
     itemIconStyle: BigAction
-    icon:
-      sprite: _RMC14/Actions/xeno_actions.rsi
-      state: headbutt
+  - type: Sprite
+    sprite: _RMC14/Actions/xeno_actions.rsi
+    layers:
+    - state: headbutt
+      map: ["enum.ActionVisuals.Icon"]
   - type: TargetAction
     range: 5
     interactOnMiss: false
@@ -144,9 +158,11 @@
   - type: Action
     useDelay: 22.5
     itemIconStyle: BigAction
-    icon:
-      sprite: _RMC14/Actions/xeno_actions.rsi
-      state: tail_sweep
+  - type: Sprite
+    sprite: _RMC14/Actions/xeno_actions.rsi
+    layers:
+    - state: tail_sweep
+      map: ["enum.ActionVisuals.Icon"]
   - type: InstantAction
     event: !type:XenoTailSweepActionEvent
 
@@ -159,9 +175,11 @@
   - type: Action
     useDelay: 18
     itemIconStyle: BigAction
-    icon:
-      sprite: _RMC14/Actions/xeno_actions.rsi
-      state: charge
+  - type: Sprite
+    sprite: _RMC14/Actions/xeno_actions.rsi
+    layers:
+    - state: charge
+      map: ["enum.ActionVisuals.Icon"]
   - type: TargetAction
     range: 8
     checkCanAccess: false
@@ -177,9 +195,11 @@
   - type: Action
     useDelay: 6
     itemIconStyle: BigAction
-    icon:
-      sprite: _RMC14/Actions/xeno_actions.rsi
-      state: punch
+  - type: Sprite
+    sprite: _RMC14/Actions/xeno_actions.rsi
+    layers:
+    - state: punch
+      map: ["enum.ActionVisuals.Icon"]
   - type: TargetAction
     range: 1.5
     interactOnMiss: false
@@ -199,9 +219,11 @@
   - type: Action
     useDelay: 12
     itemIconStyle: BigAction
-    icon:
-      sprite: _RMC14/Actions/xeno_actions.rsi
-      state: lunge
+  - type: Sprite
+    sprite: _RMC14/Actions/xeno_actions.rsi
+    layers:
+    - state: lunge
+      map: ["enum.ActionVisuals.Icon"]
   - type: TargetAction
     range: 5
     checkCanAccess: false
@@ -222,9 +244,11 @@
   - type: Action
     useDelay: 12
     itemIconStyle: BigAction
-    icon:
-      sprite: _RMC14/Actions/xeno_actions.rsi
-      state: fling
+  - type: Sprite
+    sprite: _RMC14/Actions/xeno_actions.rsi
+    layers:
+    - state: fling
+      map: ["enum.ActionVisuals.Icon"]
   - type: TargetAction
     range: 1.5
     interactOnMiss: false
@@ -244,9 +268,11 @@
   - type: Action
     useDelay: 7.5
     itemIconStyle: BigAction
-    icon:
-      sprite: _RMC14/Actions/xeno_actions.rsi
-      state: lurker_invisibility
+  - type: Sprite
+    sprite: _RMC14/Actions/xeno_actions.rsi
+    layers:
+    - state: lurker_invisibility
+      map: ["enum.ActionVisuals.Icon"]
   - type: InstantAction
     event: !type:XenoInvisibilityActionEvent
 
@@ -259,9 +285,11 @@
   - type: Action
     useDelay: 75
     itemIconStyle: BigAction
-    icon:
-      sprite: _RMC14/Actions/xeno_actions.rsi
-      state: screech
+  - type: Sprite
+    sprite: _RMC14/Actions/xeno_actions.rsi
+    layers:
+    - state: screech
+      map: ["enum.ActionVisuals.Icon"]
   - type: InstantAction
     event: !type:XenoScreechActionEvent
 
@@ -274,9 +302,11 @@
   - type: Action
     useDelay: 1
     itemIconStyle: BigAction
-    icon:
-      sprite: _RMC14/Actions/xeno_actions.rsi
-      state: emit_pheromones
+  - type: Sprite
+    sprite: _RMC14/Actions/xeno_actions.rsi
+    layers:
+    - state: emit_pheromones
+      map: ["enum.ActionVisuals.Icon"]
   - type: InstantAction
     event: !type:XenoPheromonesActionEvent
 
@@ -288,8 +318,10 @@
   components:
   - type: Action
     itemIconStyle: BigAction
-    icon:
-      sprite: _RMC14/Actions/xeno_actions.rsi
-      state: grow_ovipositor
+  - type: Sprite
+    sprite: _RMC14/Actions/xeno_actions.rsi
+    layers:
+    - state: grow_ovipositor
+      map: ["enum.ActionVisuals.Icon"]
   - type: InstantAction
     event: !type:XenoLayEggActionEvent

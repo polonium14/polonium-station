@@ -142,7 +142,7 @@ public sealed partial class WoundSystem
     /// <summary>
     /// Recomputes WoundableComponent.Bleeds by summing BleedingAmount across every currently-
     /// bleeding wound in this woundable's Wounds container. Called every tick from
-    /// SharedBloodstreamSystem's Update loop rather than owned by BloodstreamSystem directly,
+    /// BloodstreamSystem's Update loop rather than owned by BloodstreamSystem directly,
     /// since WoundableComponent's write access is scoped to this system.
     /// </summary>
     public void RecomputeWoundableBleeds(EntityUid woundable, WoundableComponent? component = null)

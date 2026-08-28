@@ -17,6 +17,7 @@ using Content.Shared.Item;
 using Content.Shared.Medical;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Nutrition.EntitySystems;
+using Content.Shared.Nutrition.Prototypes;
 using Content.Shared.Popups;
 using Content.Shared.StatusEffect;
 using Content.Shared.Throwing;
@@ -29,7 +30,9 @@ public sealed partial class FelinidSystem : EntitySystem
 {
     [Dependency] private SharedActionsSystem _actionsSystem = default!;
     [Dependency] private SharedChargesSystem _charges = default!;
-    [Dependency] private HungerSystem _hungerSystem = default!;
+    [Dependency] private SatiationSystem _satiation = default!;
+
+    private static readonly SatiationValue OverfedThreshold = "Overfed";
     [Dependency] private VomitSystem _vomitSystem = default!;
     [Dependency] private SolutionContainerSystem _solutionSystem = default!;
     [Dependency] private IRobustRandom _robustRandom = default!;
@@ -137,10 +140,10 @@ public sealed partial class FelinidSystem : EntitySystem
         if (component.EatActionTarget == null)
             return;
 
-        if (!TryComp<HungerComponent>(uid, out var hunger))
+        if (!TryComp<SatiationComponent>(uid, out var satiation))
             return;
 
-        if (hunger.CurrentThreshold == HungerThreshold.Overfed)
+        if (_satiation.IsValueInRange((uid, satiation), SatiationSystem.Hunger, above: OverfedThreshold))
         {
             _popupSystem.PopupEntity(Loc.GetString("food-system-you-cannot-eat-any-more"), uid, uid, PopupType.SmallCaution);
             return;
@@ -166,7 +169,7 @@ public sealed partial class FelinidSystem : EntitySystem
 
         _audio.PlayPvs("/Audio/Items/eating_1.ogg", uid, AudioHelpers.WithVariation(0.15f));
 
-        _hungerSystem.ModifyHunger(uid, 50f, hunger);
+        _satiation.ModifyValue((uid, satiation), SatiationSystem.Hunger, 50f);
 
         if (component.EatAction != null)
         {

@@ -1,5 +1,5 @@
 ﻿using Content.Server.Atmos.Components;
-using Content.Server.Forensics;
+using Content.Shared.Forensics.Systems;
 using Content.Shared._Funkystation.WallStains;
 using Content.Shared._Funkystation.WallStains.Components;
 using Content.Shared.Chemistry;
@@ -20,6 +20,8 @@ using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+using Content.Shared.Forensics.Systems;
+using Content.Shared.Forensics.Components;
 
 namespace Content.Server._Funkystation.WallStains.Systems;
 

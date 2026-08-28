@@ -178,28 +178,10 @@ public sealed partial class AlignRPDAtmosPipeLayers : PlacementMode
         if (!currentProto.TryGetComponent<AtmosPipeLayersComponent>(out var atmosPipeLayers, _entityManager.ComponentFactory))
             return;
 
-        if (!_pipeLayersSystem.TryGetAlternativePrototype(atmosPipeLayers, layer, out var newProtoId))
-            return;
-
-        if (_protoManager.TryIndex<EntityPrototype>(newProtoId, out var newProto))
-        {
-            // Update the placed prototype
-            pManager.CurrentPermission.EntityType = newProtoId;
-
-            // Update the appearance of the ghost sprite
-            if (newProto.TryGetComponent<SpriteComponent>(out var sprite, _entityManager.ComponentFactory))
-            {
-                var textures = new List<IDirectionalTextureProvider>();
-
-                foreach (var spriteLayer in sprite.AllLayers)
-                {
-                    if (spriteLayer.ActualRsi?.Path != null && spriteLayer.RsiState.Name != null)
-                        textures.Add(_spriteSystem.RsiStateLike(new SpriteSpecifier.Rsi(spriteLayer.ActualRsi.Path, spriteLayer.RsiState.Name)));
-                }
-
-                pManager.CurrentTextures = textures;
-            }
-        }
+        // Upstream's pipe-layer model applies the selected layer via AtmosPipeLayersComponent on the
+        // placed entity (see RCDSystem.SetPipeLayer) rather than swapping to a per-layer prototype, so
+        // there is no alternative prototype to preview here. Placement still lands on the chosen layer.
+        _ = (atmosPipeLayers, layer);
     }
 
     public override bool IsValidPosition(EntityCoordinates position)

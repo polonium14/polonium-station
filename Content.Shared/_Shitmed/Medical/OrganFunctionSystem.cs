@@ -7,6 +7,7 @@ using Content.Shared.Body;
 using Content.Shared.Eye.Blinding.Components;
 using Content.Shared.Eye.Blinding.Systems;
 using Content.Shared.Speech.Muting;
+using Content.Shared.StatusEffectNew;
 using Robust.Shared.Timing;
 
 namespace Content.Shared._Shitmed.Medical;
@@ -14,6 +15,7 @@ namespace Content.Shared._Shitmed.Medical;
 public sealed partial class OrganFunctionSystem : EntitySystem
 {
     [Dependency] private BlindableSystem _blindable = default!;
+    [Dependency] private StatusEffectsSystem _statusEffect = default!;
     [Dependency] private IGameTiming _timing = default!;
 
     public override void Initialize()
@@ -51,7 +53,7 @@ public sealed partial class OrganFunctionSystem : EntitySystem
                 break;
 
             case "Tongue":
-                EnsureComp<MutedComponent>(args.Target);
+                _statusEffect.TryUpdateStatusEffectDuration(args.Target, "StatusEffectMuted");
                 break;
         }
     }
@@ -76,7 +78,7 @@ public sealed partial class OrganFunctionSystem : EntitySystem
                 break;
 
             case "Tongue":
-                RemComp<MutedComponent>(args.Target);
+                _statusEffect.TryRemoveStatusEffect(args.Target, "StatusEffectMuted");
                 break;
         }
     }

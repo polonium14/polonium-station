@@ -20,3 +20,5 @@ store-preset-name-changeling = DNA Store
 store-ui-default-refund-text = Zwrot
 
 store-ui-default-search-text = Szukaj
+
+store-listing-locked = Locked

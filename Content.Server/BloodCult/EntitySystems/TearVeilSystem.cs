@@ -21,6 +21,7 @@ using Content.Server.Station.Components;
 using Content.Shared.Station.Components;
 using Content.Shared.Mind.Components;
 using Content.Server.Chat.Systems;
+using Content.Shared.AlertLevel;
 
 namespace Content.Server.BloodCult.EntitySystems
 {

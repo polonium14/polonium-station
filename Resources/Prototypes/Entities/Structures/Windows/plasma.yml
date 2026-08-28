@@ -1,22 +1,20 @@
 - type: entity
   id: PlasmaWindow
   name: plasma window
-  parent: [BaseDeltaPressurePlasma, BaseWindowStructure, BaseRCDResistant]
+  parent: [BaseDeltaPressurePlasma, BaseWindowStructure, BaseRCDResistant, StructureHealthBarrier]
   components:
   - type: Sprite
-    sprite: _DV/Structures/Windows/plasma_window.rsi
+    sprite: Structures/Windows/window-plasma.rsi
   - type: Icon
-    sprite: _DV/Structures/Windows/plasma_window.rsi
+    sprite: Structures/Windows/window-plasma.rsi
     state: full
   - type: Damageable
-    damageModifierSet: Glass
-  - type: Injurable
-    damageContainer: StructuralInorganic
+    damageModifierSet: GlassPlasmaMod
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 75
+        damage: 80
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -26,8 +24,6 @@
           ShardGlassPlasma:
             min: 1
             max: 2
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
   - type: IconSmooth
     base: pwindow
   - type: Construction
@@ -35,7 +31,7 @@
     node: plasmaWindow
   - type: Appearance
   - type: DamageVisuals
-    thresholds: [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+    thresholds: [5, 10, 20]
     damageDivisor: 3
     trackAllDamage: true
     damageOverlay:
@@ -47,15 +43,15 @@
 
 - type: entity
   id: PlasmaWindowDirectional
-  parent: [BaseDeltaPressurePlasmaQuarter, BaseWindowStructureDirectional, BaseRCDResistant]
+  parent: [BaseDeltaPressurePlasmaQuarter, BaseWindowStructureDirectional, BaseRCDResistant, StructureHealthBarrierWeak]
   name: directional plasma window
   description: Don't smudge up the glass down there.
   components:
   - type: Sprite
-    sprite: _DV/Structures/Windows/directional.rsi
+    sprite: Structures/Windows/directional.rsi
     state: plasma_window
   - type: Icon
-    sprite: _DV/Structures/Windows/directional.rsi
+    sprite: Structures/Windows/directional.rsi
     state: plasma_window
   - type: Construction
     graph: WindowDirectional
@@ -68,14 +64,12 @@
     damageOverlay:
       sprite: Structures/Windows/cracks_directional.rsi
   - type: Damageable
-    damageModifierSet: Glass
-  - type: Injurable
-    damageContainer: StructuralInorganic
+    damageModifierSet: GlassPlasmaMod
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 37
+        damage: 30
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -85,12 +79,41 @@
           ShardGlassPlasma:
             min: 1
             max: 1
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
   - type: StaticPrice
     price: 50
   - type: RadiationBlocker
     resistance: 1
+
+- type: entity
+  parent: PlasmaWindowDirectional
+  id: PlasmaWindowDirectionalCorner
+  suffix: Corner
+  components:
+  - type: Sprite
+    sprite: Structures/Windows/directional.rsi
+    state: plasma_window_corner
+  - type: Icon
+    sprite: Structures/Windows/directional.rsi
+    state: plasma_window_corner
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,-0.28125,-0.28125"
+        density: 1500
+        mask:
+        - FullTileMask
+        layer:
+        - GlassLayer
+  - type: Construction
+    graph: WindowDirectionalCorner
+    node: plasmaWindowDirectionalCorner
+  - type: DamageVisuals
+    thresholds: [5, 10, 20]
+    trackAllDamage: true
+    damageOverlay:
+      sprite: Structures/Windows/cracks_directional_corner.rsi
 
 - type: entity
   parent: PlasmaWindow
@@ -103,7 +126,7 @@
   components:
   - type: Sprite
     drawdepth: WallTops
-    sprite: Structures/Windows/plasma_diagonal.rsi
+    sprite: Structures/Windows/window-diagonal-plasma.rsi
     state: state0
   - type: Tag
     tags:
@@ -111,10 +134,10 @@
     - Window
   - type: IconSmooth
     mode: Diagonal
-    key: windows
+    key: walls
     base: state
   - type: Icon
-    sprite: Structures/Windows/plasma_diagonal.rsi
+    sprite: Structures/Windows/window-diagonal-plasma.rsi
     state: state0
   - type: Fixtures
     fixtures:
@@ -135,9 +158,8 @@
     - South
     - East
   - type: DamageVisuals
-    thresholds: [5, 10, 20]
     damageOverlay:
-      sprite: Structures/Windows/cracks_diagonal.rsi
+      sprite: Structures/Windows/cracks-diagonal.rsi
   - type: Construction
     graph: WindowDiagonal
     node: plasmaWindowDiagonal

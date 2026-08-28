@@ -44482,30 +44482,6 @@ entities:
     - type: Transform
       parent: 2
       pos: 50.5,28.5
-    - type: Gateway
-      enabled: True
-      closeSound: !type:SoundPathSpecifier
-        path: /Audio/Effects/Lightning/lightningbolt.ogg
-        params:
-          volume: 0
-          variation: null
-          rolloffFactor: 1
-          referenceDistance: 1
-          playOffsetSeconds: 0
-          pitch: 1
-          maxDistance: 10
-          loop: False
-      accessDeniedSound: !type:SoundPathSpecifier
-        path: /Audio/Machines/custom_deny.ogg
-        params:
-          volume: 0
-          variation: null
-          rolloffFactor: 1
-          referenceDistance: 1
-          playOffsetSeconds: 0
-          pitch: 1
-          maxDistance: 10
-          loop: False
     - type: Portal
       randomTeleport: False
       departureSound: !type:SoundPathSpecifier
@@ -44513,12 +44489,6 @@ entities:
       canTeleportToOtherMaps: True
       arrivalSound: !type:SoundPathSpecifier
         path: /Audio/Effects/teleport_arrival.ogg
-    - type: GatewayGenerator
-      unlockCooldown: 900
-      mobLayers:
-      - Carps
-      - Xenos
-      generated: []
 - proto: GeneratorBasic
   entities:
   - uid: 8168

@@ -60,8 +60,6 @@
   - type: StatusEffects
     allowed:
     - Electrocution
-    - PressureImmunity
-    - Muted
     - Pacified
     - Flashed
     - Adrenaline
@@ -153,24 +151,29 @@
   - MobFlammable
   - BaseSpeciesMob
   - BaseMobDestructible
+  - BaseHungerThirstSlowdown
   id: BaseSpeciesMobOrganic
   save: false
   components:
-  - type: Hunger
-  - type: Thirst
+  - type: Satiation
+    satiations:
+      Hunger:
+        prototype: NormalSatiationHunger
+      Thirst:
+        prototype: NormalSatiationThirst
   - type: Barotrauma
     damage:
       types:
         Blunt: 0.50
         Heat: 0.1
+  # Polonium: PassiveDamage removed — the _Shitmed medical model keeps mob HP == Σ organ HP,
+  # so passive mob-level healing would desync that invariant. Healing is organ/surgery-driven.
   - type: Fingerprint
   - type: Blindable
   - type: Temperature
-    currentTemperature: 310.15
-    specificHeat: 42
   - type: TemperatureDamage
-    heatDamageThreshold: 325
-    coldDamageThreshold: 260
+    heatDamageThreshold: 316.15
+    coldDamageThreshold: 273.15
     coldDamage:
       types:
         Cold: 0.1 #per second, scales with temperature & other constants

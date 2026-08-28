@@ -63,6 +63,7 @@ public sealed partial class ChatUIController : IOnSystemChanged<CharacterInfoSys
     private string? _highlightsColor;
 
     private bool _autoFillHighlightsEnabled;
+    private string _autoHighlights = "";
 
     /// <summary>
     ///     The boolean that keeps track of the 'OnCharacterUpdated' event, whenever it's a player attaching or opening the character info panel.
@@ -73,7 +74,14 @@ public sealed partial class ChatUIController : IOnSystemChanged<CharacterInfoSys
 
     private void InitializeHighlights()
     {
-        _config.OnValueChanged(CCVars.ChatAutoFillHighlights, (value) => { _autoFillHighlightsEnabled = value; }, true);
+        _config.OnValueChanged(CCVars.ChatAutoFillHighlights, (value) =>
+        {
+            _autoFillHighlightsEnabled = value;
+            if (value)
+                UpdateAutoFillHighlights();
+            else
+                ReloadHighlights();
+        }, true);
 
         _config.OnValueChanged(CCVars.ChatHighlightsColor, (value) => { _highlightsColor = value; }, true);
 
@@ -148,7 +156,7 @@ public sealed partial class ChatUIController : IOnSystemChanged<CharacterInfoSys
         // If auto highlights are enabled generate a request for new character info
         // that will be used to determine the highlights.
         _charInfoIsAttach = true;
-        _characterInfo.RequestCharacterInfo();
+        _characterInfo?.RequestCharacterInfo();
     }
 
     public void UpdateHighlights(string newHighlights, bool firstLoad = false)
@@ -160,11 +168,26 @@ public sealed partial class ChatUIController : IOnSystemChanged<CharacterInfoSys
         _config.SetCVar(CCVars.ChatHighlights, newHighlights);
         _config.SaveToFile();
 
+        ReloadHighlights();
+        HighlightsUpdated?.Invoke(newHighlights);
+    }
+
+    public void ReloadHighlights()
+    {
         _highlights.Clear();
+
+        var combined = _config.GetCVar(CCVars.ChatHighlights);
+        if (_autoFillHighlightsEnabled && !string.IsNullOrEmpty(_autoHighlights))
+        {
+            if (string.IsNullOrEmpty(combined))
+                combined = _autoHighlights;
+            else
+                combined += "\n" + _autoHighlights;
+        }
 
         // We first subdivide the highlights based on newlines to prevent replacing
         // a valid "\n" tag and adding it to the final regex.
-        var splittedHighlights = newHighlights.Split('\n', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+        var splittedHighlights = combined.Split('\n', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
 
         for (var i = 0; i < splittedHighlights.Length; i++)
         {
@@ -231,7 +254,7 @@ public sealed partial class ChatUIController : IOnSystemChanged<CharacterInfoSys
         if (!_charInfoIsAttach)
             return;
 
-        var (_, job, jobProto, _, _, entityName) = data; // POLONIUM CHANGE: added jobProto
+        var (_, _, _, job, entityName) = data;
 
         // Mark this entity's name as our character name for the "UpdateHighlights" function.
         var newHighlights = "@" + entityName;
@@ -245,22 +268,17 @@ public sealed partial class ChatUIController : IOnSystemChanged<CharacterInfoSys
         if (newHighlights.Count(c => c == '-') > 1)
             newHighlights = newHighlights.Split('-')[0] + "\n@" + newHighlights.Split('-')[^1];
 
-        // POLONIUM CHANGE START: resolve the job highlight keywords from the
-        // locale-independent job prototype id. The localized job title differs per server
-        // locale (eg. Polish "Główny Inżynier") and cannot match the ASCII "highlights-<job>"
-        // loc keys, whereas the proto id ("ChiefEngineer") kebab-cases to the same slug on any
-        // locale. Fall back to the localized title only if the proto lookup misses, so an
-        // unexpected casing/locale edge case degrades instead of silently dropping highlights.
+        // POLONIUM CHANGE: resolve the job highlight keywords from the locale-independent job
+        // prototype id. The localized job title differs per server locale (eg. Polish "Główny
+        // Inżynier") and cannot match the ASCII "highlights-<job>" loc keys, whereas the proto id
+        // ("ChiefEngineer") kebab-cases to the same slug on any locale.
         string? jobMatches = null;
-        if (!string.IsNullOrEmpty(jobProto)
-            && _loc.TryGetString($"highlights-{CaseConversion.PascalToKebab(jobProto)}", out var protoMatches))
+        if (job is { } jobId
+            && _loc.TryGetString($"highlights-{CaseConversion.PascalToKebab(jobId.Id)}", out var protoMatches))
             jobMatches = protoMatches;
-        else if (_loc.TryGetString($"highlights-{job.Replace(' ', '-').ToLower()}", out var titleMatches))
-            jobMatches = titleMatches;
 
         if (jobMatches != null)
             newHighlights += '\n' + jobMatches.Replace(", ", "\n");
-        // POLONIUM CHANGE END
 
         // Polonium - carry over pinned ('#'-prefixed) lines so autofill doesn't wipe the
         // player's own highlights when they get a new body/round. Prepend them to the freshly
@@ -272,8 +290,8 @@ public sealed partial class ChatUIController : IOnSystemChanged<CharacterInfoSys
         if (pinned.Length > 0)
             newHighlights = string.Join('\n', pinned) + '\n' + newHighlights;
 
-        UpdateHighlights(newHighlights);
-        HighlightsUpdated?.Invoke(newHighlights);
+        _autoHighlights = newHighlights;
+        ReloadHighlights();
         _charInfoIsAttach = false;
     }
 }

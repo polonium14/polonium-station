@@ -155,6 +155,11 @@
   kind: source
   path: "/Textures/Shaders/heatBlur.swsl"
 
+- type: shader
+  id: ScreechShockWave
+  kind: source
+  path: "/Textures/Shaders/screech_shock_wave.swsl"
+
 # Funky RMC Explosions
 - type: shader
   id: ShockWave
@@ -171,11 +176,6 @@
   id: Shockwave
   kind: source
   path: "/Textures/Shaders/shockwave.swsl"
-
-- type: shader
-  id: ScreechShockWave
-  kind: source
-  path: "/Textures/Shaders/screech_shock_wave.swsl"
 
 - type: shader
   id: NightVision

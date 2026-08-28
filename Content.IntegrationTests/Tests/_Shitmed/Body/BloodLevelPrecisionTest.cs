@@ -18,7 +18,7 @@ public sealed class BloodLevelPrecisionTest : GameTest
         var pair = Pair;
         var server = pair.Server;
         var sEntMan = server.ResolveDependency<IEntityManager>();
-        var sBloodstream = server.ResolveDependency<IEntitySystemManager>().GetEntitySystem<SharedBloodstreamSystem>();
+        var sBloodstream = server.ResolveDependency<IEntitySystemManager>().GetEntitySystem<BloodstreamSystem>();
         var map = await pair.CreateTestMap();
         var coords = new MapCoordinates(Vector2.Zero, map.MapId);
 

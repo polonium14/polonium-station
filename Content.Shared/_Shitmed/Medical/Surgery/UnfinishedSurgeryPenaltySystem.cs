@@ -18,7 +18,7 @@ public sealed partial class UnfinishedSurgeryPenaltySystem : EntitySystem
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private INetManager _net = default!;
     [Dependency] private SharedSurgerySystem _surgery = default!;
-    [Dependency] private SharedBloodstreamSystem _bloodstream = default!;
+    [Dependency] private BloodstreamSystem _bloodstream = default!;
 
     private static readonly TimeSpan TickInterval = TimeSpan.FromSeconds(3);
 

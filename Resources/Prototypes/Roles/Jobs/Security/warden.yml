@@ -62,7 +62,6 @@
     - !type:DepartmentTimeRequirement
       department: Security
       time: 15h
-  weight: 5
   startingGear: WardenGear
   icon: "JobIconWarden"
   supervisors: job-supervisors-hos

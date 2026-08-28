@@ -54,7 +54,7 @@
       state: alive
   - type: AtmosExposed
   - type: Temperature
-    currentTemperature: 310.15
+    temperature: 310.15
     specificHeat: 42
   - type: TemperatureDamage
     heatDamageThreshold: 360
