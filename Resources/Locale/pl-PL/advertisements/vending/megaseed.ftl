@@ -1,4 +1,4 @@
-advertisement-megaseed-1 = Lubimy rośliny!
+﻿advertisement-megaseed-1 = We like plants!
 advertisement-megaseed-2 = Wyhoduj trochę plonów
 advertisement-megaseed-3 = Rośnij, maluszku, rośnij!
 advertisement-megaseed-4 = O, tak, synu!

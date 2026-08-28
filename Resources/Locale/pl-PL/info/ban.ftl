@@ -4,13 +4,11 @@ cmd-ban-help = Użycie: ban <nazwa albo id gracza> <powód> [długość w minuta
 cmd-ban-player = Nie znaleziono takiego gracza o podanej nazwie.
 cmd-ban-invalid-minutes = { $minutes } nie jest prawidłową liczbą minut!
 cmd-ban-invalid-severity = { $severity } nie jest prawidłowym poziomem surowości!
-cmd-ban-invalid-round = { $round } nie jest prawidłowym numerem rundy!
 cmd-ban-invalid-arguments = Nieprawidłowa liczba argumentów
 cmd-ban-hint = <nazwa/ID użytkownika>
 cmd-ban-hint-reason = <powód>
 cmd-ban-hint-duration = [czas trwania]
 cmd-ban-hint-severity = [poziom surowości]
-cmd-ban-hint-round = [numer rundy sytuacji]
 cmd-ban-hint-duration-1 = Permanentny
 cmd-ban-hint-duration-2 = 1 dzień
 cmd-ban-hint-duration-3 = 3 dni
@@ -27,7 +25,6 @@ cmd-banlist-desc = Wyświetla aktywne bany użytkownika.
 cmd-banlist-help = Użycie: banlist <nazwa lub ID użytkownika>
 cmd-banlist-empty = Nie znaleziono aktywnych banów dla { $user }
 cmd-banlist-hint = <nazwa/ID użytkownika>
-cmd-banlistF-hint = <name/user ID>
 cmd-ban_exemption_update-desc = Ustawia wyjątek od określonego rodzaju bana dla gracza.
 cmd-ban_exemption_update-help =
     Użycie: ban_exemption_update <gracz> <flaga> [<flaga> [...]]
@@ -45,6 +42,7 @@ cmd-ban_exemption_get-nargs = Oczekiwano dokładnie 1 argumentu
 cmd-ban_exemption_get-none = Użytkownik nie jest wyłączony z żadnych banów.
 cmd-ban_exemption_get-show = Użytkownik jest wyłączony z następujących banów: { $flags }.
 cmd-ban_exemption_get-arg-player = <gracz>
+# Ban panel
 ban-panel-title = Panel banów
 ban-panel-player = Gracz
 ban-panel-ip = IP
@@ -71,13 +69,15 @@ ban-panel-years = Lata
 ban-panel-permanent = Stały
 ban-panel-ip-hwid-tooltip = Pozostaw puste i zaznacz poniżej, aby użyć danych z ostatniego połączenia
 ban-panel-severity = Surowość:
-ban-panel-erase = Usuń wiadomości na czacie i gracza z rundy
 ban-panel-situation-round = Runda sytuacji:
+ban-panel-erase = Usuń wiadomości na czacie i gracza z rundy
+ban-panel-expiry-error = err
 # Ban string
 server-ban-string = { $admin } utworzył ban serwerowy o surowości { $severity }, który wygasa { $expires } dla [{ $name }, { $ip }, { $hwid }], z powodem: { $reason }
 server-ban-string-no-pii = { $admin } utworzył ban serwerowy o surowości { $severity }, który wygasa { $expires } dla { $name } z powodem: { $reason }
 server-ban-string-never = nigdy
 # Kick on ban
 ban-kick-reason = Zostałeś zbanowany
-
-ban-panel-expiry-error = err
+cmd-ban-invalid-round = { $round } nie jest prawidłowym numerem rundy!
+cmd-ban-hint-round = [numer rundy sytuacji]
+cmd-banlistF-hint = <name/user ID>

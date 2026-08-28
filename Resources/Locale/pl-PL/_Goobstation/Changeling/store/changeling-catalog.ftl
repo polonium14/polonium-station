@@ -1,4 +1,3 @@
-
 # combat
 
 evolutionmenu-combat-armblade-name = Arm Blade

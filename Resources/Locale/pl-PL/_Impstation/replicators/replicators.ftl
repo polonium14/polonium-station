@@ -19,7 +19,6 @@ replicator-nest-level5 = Jak nadal jest niezniszczony?!
 # the default message for when we run out of custom levelup messages.
 replicator-nest-levelup = Z gniazda dochodzi sporo odgłosów.
 replicator-nest-destroyed = Twoje gniazdo zostało zniszczone. Wybrano replikator, który je zastąpi.
-
 replicator-teleport-prey-fail-not-incapacitated = Cel nie jest ogłuszony ani powalony.
 replicator-teleport-prey-fail-replicator = Nie możesz przywołać innego replikatora.
 replicator-teleport-prey-fail-nest = Nie możesz przywołać gniazda.

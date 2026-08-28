@@ -1,2 +1,2 @@
-armable-examine-armed = { CAPITALIZE($name) } jest [color=red]uzbrojona[/color].
+﻿armable-examine-armed = {CAPITALIZE(THE($name))} is [color=red]armed[/color].
 armable-examine-not-armed = { CAPITALIZE($name) } musi zostać uzbrojona.

@@ -1,4 +1,3 @@
-
 signal-port-name-supermatter-inactive = Inactive
 signal-port-description-supermatter-inactive = This port is invoked when the supermatter is inactive.
 signal-port-name-supermatter-normal = Normal

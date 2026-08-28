@@ -3,8 +3,8 @@ gun-fire-rate-examine = Szybkostrzelność wynosi [color={ $color }]{ $fireRate 
 gun-selector-verb = Zmień na tryb { $mode }
 gun-selected-mode = Wybrano { $mode }
 gun-disabled = Nie możesz używać tej broni!
-gun-clumsy = Broń wybucha ci w twarz!
-gun-set-fire-mode = Ustawiono tryb { $mode }
+gun-set-fire-mode-examine = Set to [color=yellow]{ $mode }[/color].
+gun-set-fire-mode-popup = Changed to { $mode }
 gun-magazine-whitelist-fail = To się nie zmieści w broni!
 gun-magazine-fired-empty = Nie ma amunicji!
 # SelectiveFire
@@ -57,9 +57,7 @@ gun-revolver-spin = Zakręć bębnem
 gun-revolver-spun = Przekręć bembenek
 gun-speedloader-empty = Ładownik pusty
 # GunSpreadModifier
-examine-gun-spread-modifier-reduction = Rozrzut zmniejszony o [color=yellow]{$percentage}%[/color].
-examine-gun-spread-modifier-increase = Rozrzut zwiększony o [color=yellow]{$percentage}%[/color].
-
-gun-set-fire-mode-examine = Set to [color=yellow]{$mode}[/color].
-
-gun-set-fire-mode-popup = Changed to {$mode}
+examine-gun-spread-modifier-reduction = Rozrzut zmniejszony o [color=yellow]{ $percentage }%[/color].
+examine-gun-spread-modifier-increase = Rozrzut zwiększony o [color=yellow]{ $percentage }%[/color].
+gun-clumsy = Broń wybucha ci w twarz!
+gun-set-fire-mode = Ustawiono tryb { $mode }

@@ -11,12 +11,12 @@ ui-disposal-unit-button-power = Zasilanie
 ## Verbs
 
 disposal-flush-verb-get-data-text = Wyślij
-disposal-self-insert-verb-get-data-text = Wskocz
 disposal-eject-verb-get-data-text = Wyjmij zawartość
 
-## No hands
+## Errors
 
 disposal-unit-no-hands = Nie masz rąk!
+disposal-unit-is-full = There's no more room inside.
 # state
 disposal-unit-state-Ready = Gotowy
 # Yes I want it to always say Pressurizing
@@ -24,5 +24,4 @@ disposal-unit-state-Flushed = Budowanie ciśnienia
 disposal-unit-state-Pressurizing = Budowanie ciśnienia
 # putting people in
 disposal-unit-being-inserted = { CAPITALIZE($user) } próbuje włożyć cię do zsypu!
-
-disposal-unit-is-full = There's no more room inside.
+disposal-self-insert-verb-get-data-text = Wskocz

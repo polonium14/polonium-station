@@ -1,4 +1,4 @@
-# Rules
+﻿# Rules
 
 ui-rules-header = Oficjalne zasady serwera Polonium Station
 ui-rules-header-rp = Oficjalne zasady serwera roleplay Polonium Station

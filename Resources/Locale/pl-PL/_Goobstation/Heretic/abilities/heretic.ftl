@@ -1,4 +1,3 @@
-
 heretic-ability-fail = Failed to cast
 heretic-ability-fail-magicitem = You cannot cast this without a focus!
 heretic-ability-fail-notarget = Couldn't find a valid target!

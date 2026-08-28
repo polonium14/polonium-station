@@ -1,4 +1,3 @@
-
 knowledge-path-flesh-s1-name = Principle of Hunger
 knowledge-path-flesh-s1-desc =
     Hundreds of us starved, but not me... I found strength in my greed.

@@ -1,4 +1,3 @@
-
 ghost-role-information-dino-name = Dinosaur
 ghost-role-information-dino-description = A Mesozoic soldier, ready to live or die for the Dino Wars.
 ghost-role-information-dino-compy-name = Compsognathus

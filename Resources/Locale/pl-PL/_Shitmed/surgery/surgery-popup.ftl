@@ -1,4 +1,3 @@
-
 surgery-popup-step-SurgeryStepOpenIncisionScalpel = { $user } wykonuje nacięcie na { $part } { $target }.
 surgery-popup-step-SurgeryStepClampBleeders = { $user } zaciska krwawiące naczynia na { $part } { $target }.
 surgery-popup-step-SurgeryStepRetractSkin = { $user } odciąga skórę na { $part } { $target }.
@@ -36,6 +35,7 @@ surgery-popup-step-SurgeryStepSealTendWound = { $user } uszczelnia rany na { $pa
 surgery-popup-step-SurgeryStepInsertItem = { $user } wkłada coś do { $part } { $target }!
 surgery-popup-step-SurgeryStepRemoveItem = { $user } wyjmuje coś z { $part } { $target }!
 surgery-popup-step-SurgeryStepRemoveOrgan = { $user } wyjmuje organ z { $part } { $target }!
+surgery-popup-step-SurgeryStepRemoveVitalOrgan = { $user } wyjmuje organ z { $part } { $target }!
 surgery-popup-step-SurgeryStepInsertOrgan = { $user } wkłada organ do { $part } { $target }!
 surgery-popup-procedure-SurgeryRemoveBrain-step-SurgeryStepRemoveOrgan = { $user } wyjmuje mózg z { $part } { $target }!
 surgery-popup-procedure-SurgeryRemoveHeart-step-SurgeryStepRemoveOrgan = { $user } wyjmuje serce z { $part } { $target }!
@@ -54,4 +54,3 @@ surgery-popup-step-SurgeryStepInsertStomach = { $user } wkłada żołądek do { 
 surgery-popup-step-SurgeryStepSealOrganWound = { $user } uszczelnia rany na { $part } { $target }.
 surgery-popup-step-SurgeryStepLobotomize = { $user } lobotomizuje { $target }!
 surgery-popup-step-SurgeryStepMendBrainTissue = { $user } regeneruje tkankę mózgową na { $part } { $target }.
-surgery-popup-step-SurgeryStepRemoveVitalOrgan = { $user } wyjmuje organ z { $part } { $target }!

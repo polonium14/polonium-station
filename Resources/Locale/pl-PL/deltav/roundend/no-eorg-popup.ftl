@@ -1,4 +1,3 @@
-
 no-eorg-popup-title = Polonium Station
 no-eorg-popup-label = Koniec Rundy!
 no-eorg-popup-message = Fajnie, że przetrwałeś do końca! Przypominamy, że [bold]griefing po zakończeniu rundy (EORG)[/bold] w dalszym ciągu jest zabroniony. Pozostań w swojej roli i poczekaj z nami na powrót do lobby. Dziękujemy za przestrzeganie zasad!

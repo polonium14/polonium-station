@@ -16,12 +16,14 @@ criminal-records-status-detained = Zatrzymany
 criminal-records-status-suspected = Podejrzany
 criminal-records-status-discharged = Zwolniony
 criminal-records-status-paroled = Warunkowo zwolniony
+criminal-records-status-hostile = Hostile
+criminal-records-status-eliminated = Eliminated
 criminal-records-console-wanted-reason = Powód poszukiwania
 criminal-records-console-suspected-reason = Powód podejrzenia
 criminal-records-console-reason = Powód
 criminal-records-console-reason-placeholder = Na przykład: { $placeholder }
 
-## Historia przestępstw
+## Crime History
 
 criminal-records-console-crime-history = Historia przestępstw
 criminal-records-history-placeholder = Wpisz tutaj przestępstwo
@@ -30,7 +32,7 @@ criminal-records-add-history = Dodaj
 criminal-records-delete-history = Usuń
 criminal-records-permission-denied = Brak uprawnień
 
-## Powiadomienia na kanale ochrony
+## Security channel notifications
 
 criminal-records-console-wanted = { $name } ({ $job }) został oznaczony jako poszukiwany przez { $officer } za: { $reason }.
 criminal-records-console-not-wanted = { $officer } usunął status poszukiwanego z { $name } ({ $job }).
@@ -40,9 +42,13 @@ criminal-records-console-detained = { $name } ({ $job }) został zatrzymany prze
 criminal-records-console-released = { $name } ({ $job }) został wypuszczony przez { $officer }.
 criminal-records-console-paroled = { $name } ({ $job }) został warunkowo zwolniony przez { $officer }.
 criminal-records-console-not-parole = { $officer } usunął status warunkowego zwolnienia z { $name } ({ $job }).
+criminal-records-console-hostile = { $name } ({ $job }) was marked as hostile by { $officer } for: { $reason }.
+criminal-records-console-not-hostile = { $name } ({ $job }) no longer marked as hostile by { $officer }.
+criminal-records-console-eliminated = { $name } ({ $job }) was marked as eliminated by { $officer }.
+criminal-records-console-not-eliminated = { $name } ({ $job }) no longer marked as eliminated by { $officer }.
 criminal-records-console-unknown-officer = <nieznany>
 
-## Filtry
+## Filters
 
 criminal-records-filter-placeholder = Wpisz tekst i naciśnij "Enter"
 criminal-records-name-filter = Imię i nazwisko
@@ -51,19 +57,7 @@ criminal-records-dna-filter = DNA
 criminal-records-job-filter = Zawód
 criminal-records-species-filter = Gatunek
 
-## Automatyczne wpisy do historii aresztowań
+## Arrest auto history lines
 
 criminal-records-console-auto-history = ARESZTOWANY: { $reason }
 criminal-records-console-unspecified-reason = <nieokreślony powód>
-
-criminal-records-status-hostile = Hostile
-
-criminal-records-status-eliminated = Eliminated
-
-criminal-records-console-hostile = {$name} ({$job}) was marked as hostile by {$officer} for: {$reason}.
-
-criminal-records-console-not-hostile = {$name} ({$job}) no longer marked as hostile by {$officer}.
-
-criminal-records-console-eliminated = {$name} ({$job}) was marked as eliminated by {$officer}.
-
-criminal-records-console-not-eliminated = {$name} ({$job}) no longer marked as eliminated by {$officer}.

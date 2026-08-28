@@ -60,8 +60,6 @@ xenoarch-trigger-tip-prying = Podważanie
 xenoarch-trigger-tip-screwing = Wkręcanie
 xenoarch-trigger-tip-pulsing = Impulsowanie
 xenoarch-trigger-tip-pressure-low = Niskie ciśnienie
-xenoarch-trigger-tip-rolling = Wałkowanie
-xenoarch-trigger-tip-slicing = Cięcie
 xenoarch-trigger-tip-pressure-high = Wysokie ciśnienie
 xenoarch-trigger-tip-examine = Dokładne oględziny
 xenoarch-trigger-tip-timer = Regularna samoaktywacja
@@ -77,10 +75,12 @@ xenoarch-trigger-examine-prying = Z powierzchni unosi się panel.
 xenoarch-trigger-examine-screwing = Jest tam wypukły fragment z małym wgłębieniem.
 xenoarch-trigger-examine-pulsing = Z powierzchni artefaktu wystaje odsłonięta dioda.
 xenoarch-trigger-examine-timer = Powierzchnię pokrywają rzeźbienia i zadrapania... Ledwo da się dostrzec liczbę: [italic]{ $time }[/italic]
-xenoarch-trigger-examine-rolling = Zrób z tego pizzę.
-xenoarch-trigger-examine-slicing = Potnij to na kawałki.
 
 ### Effects hints
 
 xenoarch-effect-puddle = Tworzy kałużę następujących reagentów: { $reagent }
 xenoarch-effect-foam = Wytwarza pianę z następujących reagentów: { $reagent }
+xenoarch-trigger-tip-rolling = Wałkowanie
+xenoarch-trigger-tip-slicing = Cięcie
+xenoarch-trigger-examine-rolling = Zrób z tego pizzę.
+xenoarch-trigger-examine-slicing = Potnij to na kawałki.

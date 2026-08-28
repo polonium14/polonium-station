@@ -1,4 +1,3 @@
-
 cult-glyph-target-dead = Wpływ glifu nie ma żadnego efektu na zmarłych..
 cult-glyph-not-enough-cultists = Niewystarczająca liczba kultystów obecnych, aby przywołać glif!
 cult-glyph-conditions-not-met = Brak odpowiednich celów w zasięgu glifu!

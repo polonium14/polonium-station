@@ -11,7 +11,7 @@ steal-target-groups-captain-id-card = ID kapitana
 steal-target-groups-jetpack-captain-filled = plecak odrzutowy kapitana
 steal-target-groups-weapon-antique-laser = antyczny pistolet laserowy
 steal-target-groups-nuke-disk = dysk autoryzacji bomby nuklearnej
-steal-target-groups-weapon-energy-shot-gun = strzelba energetyczna
+steal-target-groups-weapon-energy-magnum = energy magnum
 # Thief Collection
 steal-target-groups-figurines = figurka
 steal-target-groups-heads-cloaks = płaszcz szefa
@@ -22,7 +22,9 @@ steal-target-groups-encryption-keys = karta szyfrująca
 steal-target-groups-technology-disks = dyskietka technologiczna
 steal-target-groups-mail = korespondencja
 steal-target-groups-id-cards = karta ID
+steal-target-groups-officer-handguns = security officer's handgun
 steal-target-groups-lamps = LAMPA
+steal-target-groups-huds = HUD
 # Thief single item
 steal-target-groups-forensic-scanner = skaner kryminalistyczny
 steal-target-groups-flippo-engraved-lighter = wygrawerowana zapalniczka detektywa
@@ -36,12 +38,12 @@ steal-target-groups-fire-axe = siekiera
 steal-target-groups-ame-part-flatpack = flatpak silnika antymaterii
 steal-target-groups-salvage-expeditions-computer-circuitboard = płyta maszynowa ekspedycji odzyskowych
 steal-target-groups-cargo-shuttle-console-circuitboard = płyta maszynowa wahadłowca logistycznego
-steal-target-groups-salvage-shuttle-console-circuitboard = płyta konsolowa wahadhłowca odzyskowego
-steal-target-groups-clothing-eyes-hud-beer = gogle piwne
 steal-target-groups-bible = biblia
 steal-target-groups-clothing-neck-goldmedal = złoty medal załoganta
 steal-target-groups-clothing-neck-clownmedal = medal błazna
 steal-target-groups-wanted-list-cartridge = karta listy poszukiwanych
+steal-target-groups-belt-ce = chief engineer's toolbelt
+steal-target-groups-captain-sword = captain's sabre
 # Thief structures
 steal-target-groups-teg = część TEG
 steal-target-groups-freezer-heater = termomaszyna chłodząca lub termomaszyna grzejąca
@@ -62,13 +64,6 @@ steal-target-groups-animal-morty = Morty
 steal-target-groups-animal-renault = Renolt
 steal-target-groups-animal-shiva = Śiwa
 steal-target-groups-animal-tropico = Tropiko
-
-steal-target-groups-weapon-energy-magnum = energy magnum
-
-steal-target-groups-officer-handguns = security officer's handgun
-
-steal-target-groups-huds = HUD
-
-steal-target-groups-belt-ce = chief engineer's toolbelt
-
-steal-target-groups-captain-sword = captain's sabre
+steal-target-groups-weapon-energy-shot-gun = strzelba energetyczna
+steal-target-groups-salvage-shuttle-console-circuitboard = płyta konsolowa wahadhłowca odzyskowego
+steal-target-groups-clothing-eyes-hud-beer = gogle piwne

@@ -22,11 +22,11 @@ alerts-walking-name = Chodzenie
 alerts-walking-desc = Poruszasz się powoli, idąc.
 alerts-stunned-name = [color=yellow]Ogłuszony[/color]
 alerts-stunned-desc = Jesteś [color=yellow]ogłuszony[/color]! Coś utrudnia ci poruszanie się lub interakcję z przedmiotami.
+alerts-knockdown-name = [color=yellow]Powalony[/color]
+alerts-knockdown-desc = Jesteś [color=yellow]powalony[/color]! Coś cię przewróciło albo się poślizgnąłeś, utrudniając ci poruszanie się.
 alerts-handcuffed-name = [color=yellow]Zakuty[/color]
 alerts-handcuffed-desc = Jesteś [color=yellow]zakuty[/color] i nie możesz używać rąk. Jeśli ktoś cię ciągnie, nie będziesz mógł się opierać.
 alerts-ensnared-name = [color=yellow]Uwięziony[/color]
-alerts-cocooned-name = [color=yellow]Cocooned[/color]
-alerts-cocooned-desc = You're [color=yellow]wrapped in a cocoon[/color] and can't move or use your hands.
 alerts-ensnared-desc = Jesteś [color=yellow]uwięziony[/color], co utrudnia ci poruszanie się.
 alerts-buckled-name = [color=yellow]Zapięty[/color]
 alerts-buckled-desc = Jesteś [color=yellow]przypięty[/color] do czegoś. Kliknij alert, aby się odpiąć, chyba że jesteś [color=yellow]zakuty.[/color]
@@ -82,11 +82,7 @@ alerts-rooted-name = Zakorzeniony
 alerts-rooted-desc = Jesteś przytwierdzony do ziemi. Nie możesz się poślizgnąć, ale pochłaniasz płyny spod siebie.
 alerts-stealthy-name = Kieszonkowiec
 alerts-stealthy-desc = Czy aktualnie dokonujesz kieszonkowania. Kliknij, aby przełączyć.
-
-alerts-knockdown-name = [color=yellow]Powalony[/color]
-
-alerts-knockdown-desc = Jesteś [color=yellow]powalony[/color]! Coś cię przewróciło albo się poślizgnąłeś, utrudniając ci poruszanie się.
-
 alerts-prying-name = Podważanie
-
 alerts-prying-desc = Masz wrodzoną możliwość podważania drzwi używając alternatywnej interakcji.
+alerts-cocooned-name = [color=yellow]Cocooned[/color]
+alerts-cocooned-desc = You're [color=yellow]wrapped in a cocoon[/color] and can't move or use your hands.

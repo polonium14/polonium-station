@@ -1,4 +1,4 @@
-action-popup-blocking-user = Podnosisz { $shield }!
+﻿action-popup-blocking-user = You raise your {$shield}!
 action-popup-blocking-disabling-user = Chowasz { $shield }!
 action-popup-blocking-other = { CAPITALIZE($blockerName) } podnosi { POSS-ADJ($blockerName) } { $shield }!
 action-popup-blocking-disabling-other = { CAPITALIZE($blockerName) } chowa { POSS-ADJ($blockerName) } { $shield }!

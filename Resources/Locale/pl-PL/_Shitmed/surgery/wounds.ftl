@@ -3,7 +3,6 @@ inspect-wound-moderate = obolała
 inspect-wound-severe = poważnie uszkodzona
 inspect-wound-critical = okaleczona
 inspect-wound-loss = kompletnie okaleczona
-
 inspect-wound-Bleeding-minor = lekko krwawi
 inspect-wound-Bleeding-moderate = krwawi
 inspect-wound-Bleeding-severe = obficie krwawi

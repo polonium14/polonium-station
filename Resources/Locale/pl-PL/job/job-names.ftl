@@ -1,77 +1,82 @@
-job-name-warden = Nadzorca Ochrony
-job-name-security = Oficer Ochrony
-job-name-cadet = Kadet Ochrony
-job-name-hos = Komendant
-job-name-detective = Detektyw
-job-name-brigmedic = Medyk Więzienny
-job-name-borg = Cyborg
-job-name-scientist = Naukowiec
-job-name-research-assistant = Asystent Naukowy
-job-name-rd = Kierownik Badań
-job-name-psychologist = Psycholog
-job-name-intern = Stażysta Medyczny
-job-name-doctor = Doktor Medyczny
-job-name-paramedic = Ratownik
-job-name-cmo = Ordynator
-job-name-chemist = Chemik
-job-name-technical-assistant = Pomocnik Techniczny
-job-name-engineer = Inżynier Stacji
 job-name-atmostech = Technik Atmosferyki
-job-name-hop = Kierownik Personelu
-job-name-captain = Kapitan
-job-name-serviceworker = Pracownik Obsługi
-job-name-centcomoff = Urzędnik Centralnego Dowództwa
-job-name-cburn = Oficer kwarantanny Centralnego Dowództwa
-job-name-deathsquad = Agent CentComm
-job-name-reporter = Dziennikarz
-job-name-musician = Muzyk
-job-name-librarian = Bibliotekarz
-job-name-lawyer = Prawnik
-job-name-mime = Mim
-job-name-ce = Główny Inżynier
-job-name-janitor = Woźny
-job-name-chaplain = Kapłan
-job-name-botanist = Botanik
 job-name-bartender = Barman
-job-name-passenger = Pasażer
-job-name-salvagespec = Specjalista ds. Odzysku
-job-name-station-ai = SI Stacji
-job-name-qm = Kwatermistrz
+job-name-borg = Cyborg
+job-name-botanist = Botanik
+job-name-brigmedic = Medyk Więzienny
+job-name-cadet = Kadet Ochrony
+job-name-captain = Kapitan
 job-name-cargotech = Logistyk
+job-name-cburn = Oficer kwarantanny Centralnego Dowództwa
+job-name-ce = Główny Inżynier
+job-name-centcommoff = CentComm Official
 job-name-chef = Kucharz
+job-name-chaplain = Kapłan
+job-name-chemist = Chemik
 job-name-clown = Klaun
-job-name-ertleader = Lider JSR
+job-name-cluwne = Cluwne
+job-name-cmo = Ordynator
+job-name-deathsquad = Agent CentComm
+job-name-detective = Detektyw
+job-name-doctor = Doktor Medyczny
+job-name-engineer = Inżynier Stacji
 job-name-ertchaplain = Kapłan JSR
 job-name-ertengineer = Inżynier JSR
-job-name-ertsecurity = Ochrona JSR
-job-name-ertmedic = Medyk JSR
 job-name-ertjanitor = Sprzątacz JSR
-job-name-boxer = Bokser
-job-name-zookeeper = Zoolog
+job-name-ertleader = Lider JSR
+job-name-ertmedic = Medyk JSR
+job-name-ertsecurity = Ochrona JSR
+job-name-hop = Kierownik Personelu
+job-name-hos = Komendant
+job-name-intern = Stażysta Medyczny
+job-name-janitor = Woźny
+job-name-lawyer = Prawnik
+job-name-librarian = Bibliotekarz
+job-name-mime = Mim
+job-name-musician = Muzyk
+job-name-paramedic = Ratownik
+job-name-passenger = Pasażer
+job-name-psychologist = Psycholog
+job-name-qm = Kwatermistrz
+job-name-rd = Kierownik Badań
+job-name-reporter = Dziennikarz
+job-name-research-assistant = Asystent Naukowy
+job-name-salvagespec = Specjalista ds. Odzysku
+job-name-scientist = Naukowiec
+job-name-security = Oficer Ochrony
+job-name-serviceworker = Pracownik Obsługi
+job-name-station-ai = SI Stacji
+job-name-technical-assistant = Pomocnik Techniczny
 job-name-visitor = Gość
+job-name-warden = Nadzorca Ochrony
 # unused jobs
 # these are required for the agent ID job icon tooltips
 # I am keeping them for roleplaying opportunities
 job-name-geneticist = Genetyk
+job-name-boxer = Bokser
 job-name-no-id = Brakuje ID
 job-name-prisoner = Więzień
-# event-restricted jobs
-
-
-
+job-name-roboticist = Roboticist
 job-name-unknown = Nieznany
 job-name-virologist = Wirusolog
+job-name-zookeeper = Zoolog
+# antagonist jobs
+job-name-ninja = Ninja
+job-name-syndicate = Syndicate
+job-name-syndicate-commander = Syndicate Commander
+job-name-syndicate-corpsman = Syndicate Corpsman
+job-name-syndicate-operative = Syndicate Operative
+job-name-pirate = Pirate
+job-name-wizard = Wizard
 job-name-zombie = Żywy Trup
 # Job titles
-job-title-visitor = Hospitator
 job-title-cluwne = Cluwne
 job-title-universal = Uniwersalny
+job-title-visitor = Hospitator
 # Role timers - Make these alphabetical or I cut you
 JobAtmosphericTechnician = Technik Atmosferyki
 JobBartender = Barman
 JobBorg = Cyborg
 JobBotanist = Botanik
-
 JobCaptain = Kapitan
 JobCargoTechnician = Technik Logistyki
 JobCentralCommandOfficial = Urzędnik CentComm
@@ -83,7 +88,6 @@ JobChiefMedicalOfficer = Ordynator
 JobClown = Klaun
 JobDetective = Detektyw
 JobBrigmedic = Brigmedic
-
 JobERTChaplain = Kapłan JSR
 JobERTEngineer = Inżynier JSR
 JobERTJanitor = Sprzątacz JSR
@@ -102,7 +106,6 @@ JobMusician = Muzyk
 JobParamedic = Ratownik
 JobPassenger = Pasażer
 JobPsychologist = Psycholog
-
 JobQuartermaster = Kierownik Logistyki
 JobReporter = Dziennikarz
 JobResearchAssistant = Asystent Naukowy
@@ -112,31 +115,9 @@ JobScientist = Naukowiec
 JobSecurityCadet = Kadet Ochrony
 JobSecurityOfficer = Oficer Ochrony
 JobServiceWorker = Pracownik Obsługi
-
 JobStationAi = SI Stacji
 JobStationEngineer = Inżynier Stacji
 JobTechnicalAssistant = Pomocnik Techniczny
 JobVisitor = Wizytor
 JobWarden = Nadzorca Ochrony
-
-
-job-name-centcommoff = CentComm Official
-
-job-name-cluwne = Cluwne
-
-# antagonist jobs
-job-name-ninja = Ninja
-
-job-name-syndicate-commander = Syndicate Commander
-
-job-name-syndicate-corpsman = Syndicate Corpsman
-
-job-name-syndicate-operative = Syndicate Operative
-
-job-name-pirate = Pirate
-
-job-name-wizard = Wizard
-
-job-name-roboticist = Roboticist
-
-job-name-syndicate = Syndicate
+job-name-centcomoff = Urzędnik Centralnego Dowództwa

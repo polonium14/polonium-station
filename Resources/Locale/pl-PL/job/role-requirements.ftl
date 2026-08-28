@@ -1,4 +1,4 @@
-role-timer-department-insufficient = Potrzebujesz [color=yellow]{ $time }[/color] więcej czasu gry w [color={ $departmentColor }]{ $department }[/color] aby to odblokować.
+﻿role-timer-department-insufficient = You require [color=yellow]{$time}[/color] more playtime in the [color={$departmentColor}]{$department}[/color] department to unlock this.
 role-timer-department-too-high = Potrzebujesz [color=yellow]{ $time }[/color] mniej czasu gry w [color={ $departmentColor }]{ $department }[/color] aby to odblokować. (Czy naprawdę planujesz wybrać rolę stażysty?)
 role-timer-overall-insufficient = Potrzebujesz [color=yellow]{ $time }[/color] więcej ogólnego czasu gry aby to odblokować.
 role-timer-overall-too-high = Potrzebujesz [color=yellow]{ $time }[/color] mniej ogólnego czasu gry aby to odblokować. (Czy naprawdę planujesz wybrać rolę stażysty?)

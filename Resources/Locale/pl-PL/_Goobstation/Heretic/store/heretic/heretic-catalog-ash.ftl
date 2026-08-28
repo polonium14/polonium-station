@@ -1,4 +1,3 @@
-
 knowledge-path-ash-s1-name = Nightwatcher's Secret
 knowledge-path-ash-s1-desc =
     The City Guard know their watch. If you ask them at night, they may tell you about the ashy lantern.

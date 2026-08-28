@@ -1,4 +1,5 @@
-admin-ui-baby-jail-window-title = Więzienie dla nowicjuszy
+﻿admin-ui-baby-jail-window-title = Baby Jail
+
 admin-ui-baby-jail-enabled = Więzienie dla nowicjuszy włączone
 admin-ui-baby-jail-disabled = Więzienie dla nowicjuszy wyłączone
 admin-ui-baby-jail-tooltip = Więzienie dla nowicjuszy ogranicza możliwość dołączania graczy, których konto jest zbyt stare lub mają zbyt duży ogólny czas gry na tym serwerze.

@@ -1,4 +1,3 @@
-
 marking-RobotAntennaTv = Tv
 marking-RobotAntennaTesla = Tesla
 marking-RobotAntennaLightb = Light (alt)

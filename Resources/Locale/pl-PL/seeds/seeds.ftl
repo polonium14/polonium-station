@@ -1,4 +1,5 @@
 # Nouns
+# Nouns
 seeds-noun-seeds = nasiona
 seeds-noun-spores = zarodniki
 # Seeds

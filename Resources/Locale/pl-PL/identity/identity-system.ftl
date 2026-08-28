@@ -1,4 +1,5 @@
-identity-unknown-name = ???
+﻿identity-unknown-name = ???
+
 identity-age-young = w młodym wieku
 identity-age-middle-aged = w średnim wieku
 identity-age-old = w dojrzałym wieku

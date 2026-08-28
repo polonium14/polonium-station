@@ -1,6 +1,5 @@
 # Weaponry
 
-# Weapons
 uplink-pistol-viper-name = Żmija
 uplink-pistol-viper-desc = Mały, łatwy do ukrycia, ale nieco słaby pistolet. Wyposażony w całkowicie automatyczny mechanizm spustowy. Wykorzystuje magazynki pistoletowe (kaliber .35 auto).
 uplink-pistol-cobra-name = Cobra

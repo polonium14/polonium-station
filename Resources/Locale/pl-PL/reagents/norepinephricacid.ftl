@@ -1,4 +1,4 @@
-norepinephricacid-effect-eyelids = Twoje powieki gwałtownie drgają.
+﻿norepinephricacid-effect-eyelids = Your eyelids are rapidly twitching.
 norepinephricacid-effect-eyes-itch = Twoje oczy swędzą.
 norepinephricacid-effect-vision-fade = Czujesz, że powoli tracisz wzrok.
 norepinephricacid-effect-vision-fail = Czujesz, że wzrok Cię zawodzi.

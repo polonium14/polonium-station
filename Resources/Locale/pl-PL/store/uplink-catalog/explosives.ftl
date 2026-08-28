@@ -1,6 +1,5 @@
 # Explosives
 
-# Explosives
 uplink-explosive-grenade-name = Granat Wybuchowy
 uplink-explosive-grenade-desc = Prosty granat z 3,5-sekundowym lontem, przeznaczony do ranienia personelu. Powoduje minimalne uszkodzenia kadłuba.
 uplink-smoke-grenade-name = Granat Dymny

@@ -1,4 +1,3 @@
-
 # HumanoidMarkingModifierWindow.xaml
 
 modify-markings-title = Modify Markings

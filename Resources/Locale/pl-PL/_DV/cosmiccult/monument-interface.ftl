@@ -1,4 +1,3 @@
-
 # General
 monument-interface-title = The Monument
 monument-interface-occupied = Someone else is using that right now.

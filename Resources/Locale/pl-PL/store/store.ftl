@@ -1,8 +1,7 @@
 store-ui-default-title = Sklep
 store-ui-default-withdraw-text = Wypłać
+store-ui-refund-text = Refund
 store-ui-balance-display = { $currency }: { $amount }
-store-ui-default-refund-text = Zwrot
-store-ui-default-search-text = Szukaj
 store-ui-price-display = { $amount } { $currency }
 store-ui-discount-display-with-currency = { $amount } taniej ({ $currency })
 store-ui-discount-display = ({ $amount } taniej!)
@@ -13,9 +12,7 @@ store-ui-button-out-of-stock = { "" } (brak w magazynie)
 store-not-account-owner = Ten { $store } nie jest z tobą powiązany!
 store-preset-name-uplink = Uplink
 store-preset-name-spellbook = Księga zaklęć
-
-store-ui-refund-text = Refund
-
 store-preset-name-nukie-delivery = NukeOps Bluespace Delivery
-
 store-preset-name-changeling = DNA Store
+store-ui-default-refund-text = Zwrot
+store-ui-default-search-text = Szukaj

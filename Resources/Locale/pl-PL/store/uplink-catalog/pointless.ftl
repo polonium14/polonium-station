@@ -6,7 +6,6 @@ uplink-snack-box-name = Syndykatowa Pudełko Przekąsek
 uplink-snack-box-desc = Pudełko zawierające pyszne przekąski i napoje do spożycia samemu lub z zespołem. Zawiera 1 zabawkę, której nie chciałeś.
 uplink-clothing-conducting-gloves-name = Rękawice Przewodzące
 uplink-clothing-conducting-gloves-desc = Wyglądają dokładnie jak izolowane rękawice, ale rażą cię znacznie mocniej niż gdybyś nie miał nic! Najlepiej podarować je pasażerom, których naprawdę nie lubisz.
-# Pointless
 uplink-revolver-cap-gun-name = Pistolet na Kapiszony
 uplink-revolver-cap-gun-desc = Wygląda prawie jak prawdziwy! Dla dzieci powyżej 8 lat.
 uplink-syndicate-stamp-name = Pieczątka Syndykatu

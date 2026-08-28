@@ -7,6 +7,10 @@ admin-verb-make-pirate = Zamień cel w pirata. Uwaga: nie zmienia zasad gry.
 admin-verb-make-head-rev = Zamień cel w Głównego Rewolucjonistę.
 admin-verb-make-thief = Zamień cel w złodzieja.
 admin-verb-make-paradox-clone = Utwórz ducha-klona paradoksalnego na podstawie celu.
+admin-verb-make-wizard = Make the target into a Wizard.
+admin-verb-make-space-ninja = Make the target into a Space Ninja.
+admin-verb-make-changeling = Zamień cel w zmianokształtnego.
+admin-verb-make-bloodcult = Make the target into a Blood Cultist.
 admin-verb-text-make-traitor = Zrób Zdrajcę
 admin-verb-text-make-initial-infected = Zrób Początkowo Zainfekowanego
 admin-verb-text-make-zombie = Zrób Zombie
@@ -15,19 +19,8 @@ admin-verb-text-make-pirate = Zrób Pirata
 admin-verb-text-make-head-rev = Zrób Głównego Rewolucjonistę
 admin-verb-text-make-thief = Zrób Złodzieja
 admin-verb-text-make-paradox-clone = Utwórz Klona Paradoksalnego
-admin-overlay-antag-classic = ANTAG
-
-admin-verb-make-wizard = Make the target into a Wizard.
-
-admin-verb-make-space-ninja = Make the target into a Space Ninja.
-
-admin-verb-make-bloodcult = Make the target into a Blood Cultist.
-
 admin-verb-text-make-wizard = Make Wizard
-
 admin-verb-text-make-space-ninja = Make Ninja
-
-admin-verb-text-make-bloodcult = Make Blood Cultist
-
-admin-verb-make-changeling = Zamień cel w zmianokształtnego.
 admin-verb-text-make-changeling = Zrób Zmianokształtnego
+admin-verb-text-make-bloodcult = Make Blood Cultist
+admin-overlay-antag-classic = ANTAG
