@@ -81,8 +81,10 @@ public sealed class ChatHighlightTest : GameTest
         Assert.That(activeHighlights, Contains.Item("ling"));
         Assert.That(activeHighlights, Contains.Item("rev"));
         // Auto:
-        Assert.That(activeHighlights, Contains.Item("Captain"));
-        Assert.That(activeHighlights, Contains.Item("(?<!\\w)Cap(?!\\w)")); // "Cap" becomes regex-escaped and word-bounded
+        // Polonium: default locale is pl-PL, so highlights-captain resolves to the
+        // polish keywords (Kapitan, "Kap", Mostek, Dowództwo) rather than the upstream en-US.
+        Assert.That(activeHighlights, Contains.Item("Kapitan"));
+        Assert.That(activeHighlights, Contains.Item("(?<!\\w)Kap(?!\\w)")); // "Kap" becomes regex-escaped and word-bounded
 
         // 5. Disable auto-fill highlights and verify auto-filled highlights are removed
         _configManager.SetCVar(CCVars.ChatAutoFillHighlights, false);
@@ -155,7 +157,8 @@ public sealed class ChatHighlightTest : GameTest
         activeHighlights = (List<string>)highlightsField.GetValue(chatController)!;
         Assert.That(activeHighlights, Contains.Item("ling"));
         Assert.That(activeHighlights, Contains.Item("rev"));
-        Assert.That(activeHighlights, Contains.Item("Captain"));
-        Assert.That(activeHighlights, Contains.Item("(?<!\\w)Cap(?!\\w)"));
+        // Polonium: pl-PL default locale
+        Assert.That(activeHighlights, Contains.Item("Kapitan"));
+        Assert.That(activeHighlights, Contains.Item("(?<!\\w)Kap(?!\\w)"));
     }
 }
