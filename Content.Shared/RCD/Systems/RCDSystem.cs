@@ -88,7 +88,6 @@ public partial class RCDSystem : EntitySystem
     private readonly ProtoId<RCDPrototype> _deconstructTileProto = "DeconstructTile";
     private readonly ProtoId<RCDPrototype> _deconstructLatticeProto = "DeconstructLattice";
     private static readonly ProtoId<TagPrototype> CatwalkTag = "Catwalk";
-    private AtmosPipeLayer _currentLayer = AtmosPipeLayer.Primary; // Funky - Current layer for RPD
     private static readonly LocId DefaultPrototypeNameLocId = "generic-unknown-title";
 
     private HashSet<EntityUid> _intersectingEntities = new();
@@ -202,8 +201,11 @@ public partial class RCDSystem : EntitySystem
             return;
         }
 
-        // Funky - Update prototype for RPD based on last selected layer
-        // calculate the layer based on the mouse click location and player rotation
+        // Polonium - determine the RPD pipe layer from the mouse click location and player rotation.
+        // Snapshotted into the DoAfter event below so the layer applied when the operation finalizes
+        // is the one chosen at click time; a shared field raced across concurrent (and cross-player)
+        // placements while their DoAfters were in flight.
+        var pipeLayer = AtmosPipeLayer.Primary;
         if (component.IsRpd && !component.CachedPrototype.NoLayers)
         {
             var tileRef = _mapSystem.GetTileRef(mapGridData.Value.GridUid, mapGridData.Value.Component, mapGridData.Value.Location);
@@ -212,15 +214,13 @@ public partial class RCDSystem : EntitySystem
             var mouseCoordsDiff = args.ClickLocation.Position - tileCenter - new Vector2(0.5f, 0.5f);
             var mouseDeadzoneRadius = 0.25f;
 
-            _currentLayer = AtmosPipeLayer.Primary;
-
             if (mouseCoordsDiff.Length() > mouseDeadzoneRadius && component.LastKnownEyeRotation.HasValue)
             {
                 var gridRotation = _transformSystem.GetWorldRotation(mapGridData.Value.GridUid);
                 var angle = new Angle(mouseCoordsDiff);
                 var eyeRotation = new Angle(component.LastKnownEyeRotation.Value);
                 var direction = (angle + eyeRotation + gridRotation + Math.PI / 2).GetCardinalDir();
-                _currentLayer = (direction == Direction.North || direction == Direction.East) ? AtmosPipeLayer.Secondary : AtmosPipeLayer.Tertiary;
+                pipeLayer = (direction == Direction.North || direction == Direction.East) ? AtmosPipeLayer.Secondary : AtmosPipeLayer.Tertiary;
             }
         }
         // Funky - end of changes
@@ -288,7 +288,7 @@ public partial class RCDSystem : EntitySystem
 
         // Try to start the do after
         var effect = Spawn(effectPrototype, mapGridData.Value.Location);
-        var ev = new RCDDoAfterEvent(GetNetCoordinates(mapGridData.Value.Location), component.ConstructionDirection, component.ProtoId, cost, GetNetEntity(effect));
+        var ev = new RCDDoAfterEvent(GetNetCoordinates(mapGridData.Value.Location), component.ConstructionDirection, component.ProtoId, cost, GetNetEntity(effect), pipeLayer);
 
         var doAfterArgs = new DoAfterArgs(EntityManager, user, delay, ev, uid, target: args.Target, used: uid)
         {
@@ -351,7 +351,7 @@ public partial class RCDSystem : EntitySystem
             return;
 
         // Finalize the operation
-        FinalizeRCDOperation(uid, component, mapGridData.Value, args.Target, args.User);
+        FinalizeRCDOperation(uid, component, mapGridData.Value, args.Target, args.User, args.PipeLayer);
 
         // Play audio and consume charges
         _audio.PlayPredicted(component.SuccessSound, uid, args.User);
@@ -658,7 +658,7 @@ public partial class RCDSystem : EntitySystem
 
     #region Entity construction/deconstruction
 
-    private void FinalizeRCDOperation(EntityUid uid, RCDComponent component, MapGridData mapGridData, EntityUid? target, EntityUid user)
+    private void FinalizeRCDOperation(EntityUid uid, RCDComponent component, MapGridData mapGridData, EntityUid? target, EntityUid user, AtmosPipeLayer pipeLayer = AtmosPipeLayer.Primary)
     {
         if (!_net.IsServer)
             return;
@@ -717,11 +717,27 @@ public partial class RCDSystem : EntitySystem
                 // once a station/shuttle sits at anything but a cardinal angle) - the rotation
                 // that matters here is relative to the grid, the same as the SetLocalRotation
                 // call this replaced.
+                // Polonium - resolve the per-layer pipe variant and spawn it directly so the pipe is born
+                // on the selected layer. Spawning the Primary variant and calling SetPipeLayer afterwards
+                // loses to the anchor-time PipeRestrictOverlap check, which runs at spawn (i.e. Primary)
+                // and unanchors a secondary pipe placed to cross an existing primary one - exactly the
+                // case pipe layers exist for. Uses the same CreateVariants collection upstream's
+                // AlignAtmosPipeLayers placement mode uses; the AtmosPipeLayer enum order
+                // (Primary=0, Secondary=1, Tertiary=2) matches the variant collection index.
+                var spawnedLayerVariant = false;
+                if (component.IsRpd && !component.CachedPrototype.NoLayers && pipeLayer != AtmosPipeLayer.Primary &&
+                    _protoManager.TryGetVariantCollection<EntityPrototype>(proto, out var pipeVariants) &&
+                    (int) pipeLayer < pipeVariants.Count)
+                {
+                    proto = pipeVariants[(int) pipeLayer].Id;
+                    spawnedLayerVariant = true;
+                }
+
                 var entityCoords = _mapSystem.GridTileToLocal(mapGridData.GridUid, mapGridData.Component, mapGridData.Position);
                 var ent = _entityManager.SpawnAttachedTo(proto, entityCoords, rotation: rotation);
-                // Funky - apply the selected RPD pipe layer to the freshly spawned entity
-                if (component.IsRpd && !component.CachedPrototype.NoLayers && TryComp<AtmosPipeLayersComponent>(ent, out var pipeLayers))
-                    _pipeLayersSystem.SetPipeLayer((ent, pipeLayers), _currentLayer);
+                // Funky - fallback for layered pipes that aren't part of a variant collection
+                if (!spawnedLayerVariant && component.IsRpd && !component.CachedPrototype.NoLayers && TryComp<AtmosPipeLayersComponent>(ent, out var pipeLayers))
+                    _pipeLayersSystem.SetPipeLayer((ent, pipeLayers), pipeLayer);
                 // End of funky changes
 
                 // Funky - handled above
@@ -853,15 +869,20 @@ public sealed partial class RCDDoAfterEvent : DoAfterEvent
     [DataField("fx")]
     public NetEntity? Effect { get; private set; } = null;
 
+    // Polonium - the RPD pipe layer chosen at click time, applied when the operation finalizes.
+    [DataField]
+    public AtmosPipeLayer PipeLayer { get; private set; } = AtmosPipeLayer.Primary;
+
     private RCDDoAfterEvent() { }
 
-    public RCDDoAfterEvent(NetCoordinates location, Direction direction, ProtoId<RCDPrototype> startingProtoId, FixedPoint2 cost, NetEntity? effect = null)
+    public RCDDoAfterEvent(NetCoordinates location, Direction direction, ProtoId<RCDPrototype> startingProtoId, FixedPoint2 cost, NetEntity? effect = null, AtmosPipeLayer pipeLayer = AtmosPipeLayer.Primary)
     {
         Location = location;
         Direction = direction;
         StartingProtoId = startingProtoId;
         Cost = cost;
         Effect = effect;
+        PipeLayer = pipeLayer;
     }
 
     public override DoAfterEvent Clone() => this;
