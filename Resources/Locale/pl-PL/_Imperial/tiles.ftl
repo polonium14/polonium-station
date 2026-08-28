@@ -1,0 +1,9 @@
+tiles-dark-imperial-maint = dark imperial maint
+tiles-lattice-corner1 = lattice corner1
+tiles-lattice-corner2 = lattice corner2
+tiles-lattice-corner3 = lattice corner3
+tiles-lattice-corner4 = lattice corner4
+tiles-lattice-small1 = lattice small1
+tiles-lattice-small2 = lattice small2
+tiles-lattice-small3 = lattice small3
+tiles-lattice-small4 = lattice small4
