@@ -1,19 +1,4 @@
 ﻿Entries:
-- author: notquitehadouken
-  changes:
-  - message: Doors close on clown spider webs now
-    type: Fix
-  id: 9464
-  time: '2026-01-26T15:19:39.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42589
-- author: Marlyn
-  changes:
-  - message: Opporozidone no longer has instarot issues that get worse the longer
-      the server has been running
-    type: Fix
-  id: 9465
-  time: '2026-01-26T15:45:24.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42472
 - author: PJB3005
   changes:
   - message: Job lizard plushies can be found in various lockers around the station
@@ -4037,3 +4022,17 @@
   id: 9963
   time: '2026-08-26T19:31:18.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/929
+- author: haze
+  changes:
+  - message: Upstream merge!
+    type: Add
+  id: 9964
+  time: '2026-08-29T15:11:52.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/944
+- author: Saver310
+  changes:
+  - message: "Naprawiono t\u0142umaczenia plakat\xF3w"
+    type: Fix
+  id: 9965
+  time: '2026-08-29T22:49:29.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/947
