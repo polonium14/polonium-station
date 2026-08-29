@@ -246,13 +246,16 @@ public sealed partial class TextScreenSystem : VisualizerSystem<TextScreenVisual
         if (character == null)
             return null;
 
+        // POLONIUM: Lowercase first: states are lowercase, and CharStatePairs only keys the lowercase diacritics.
+        var chr = char.ToLowerInvariant(character.Value);
+
         // First checks if its one of our special characters
-        if (CharStatePairs.TryGetValue(character.Value, out var value))
+        if (CharStatePairs.TryGetValue(chr, out var value))
             return value;
 
         // Or else it checks if its a normal letter or digit
-        if (char.IsLetterOrDigit(character.Value))
-            return character.Value.ToString().ToLower();
+        if (char.IsLetterOrDigit(chr))
+            return chr.ToString();
 
         return null;
     }
