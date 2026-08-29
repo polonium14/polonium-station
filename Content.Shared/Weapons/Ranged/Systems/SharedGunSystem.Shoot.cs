@@ -317,7 +317,7 @@ public abstract partial class SharedGunSystem
             if (selfEvent.Cancelled)
             {
                 userImpulse = false;
-                return null;
+                return [];
             }
         }
 
