@@ -53,9 +53,9 @@
   description: A uniform issued to the Nanotrasen troops, usually it comes with a car.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/security.rsi
+    sprite: Clothing/Uniforms/Jumpsuits/Security/security.rsi
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/security.rsi
+    sprite: Clothing/Uniforms/Jumpsuits/Security/security.rsi
 
 - type: entity
   parent: [ClothingUniformBase, BaseSecurityContraband]
@@ -64,9 +64,9 @@
   description: A uniform made of strong material, for day to day wear.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/security_blue.rsi
+    sprite: Clothing/Uniforms/Jumpsuits/Security/security_blue.rsi
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/security_blue.rsi
+    sprite: Clothing/Uniforms/Jumpsuits/Security/security_blue.rsi
 
 - type: entity
   parent: [ClothingUniformBase, BaseSecurityContraband]
@@ -75,9 +75,9 @@
   description: A uniform made of strong material, for day to day wear. Awarded to senior officers so they feel better about their time spent on the force.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/security_grey.rsi
+    sprite: Clothing/Uniforms/Jumpsuits/Security/security_grey.rsi
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/security_grey.rsi
+    sprite: Clothing/Uniforms/Jumpsuits/Security/security_grey.rsi
 
 - type: entity
   parent: [ClothingUniformBase, BaseSecurityContraband]
@@ -86,9 +86,9 @@
   description: A uniform made of strong material, for special occasions.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/security_trooper.rsi
+    sprite: Clothing/Uniforms/Jumpsuits/Security/security_trooper.rsi
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/security_trooper.rsi
+    sprite: Clothing/Uniforms/Jumpsuits/Security/security_trooper.rsi
 
 # Head of security uniforms (Tea)
 
@@ -99,9 +99,9 @@
   description: The head of security's service uniform, for when you anticipate a war on mothroaches.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/hos.rsi
+    sprite: Clothing/Uniforms/Jumpsuits/Security/hos.rsi
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/hos.rsi
+    sprite: Clothing/Uniforms/Jumpsuits/Security/hos.rsi
 
 - type: entity
   parent: [ClothingUniformBase, BaseSecurityContraband]
@@ -110,9 +110,9 @@
   description: The head of security's dress uniform, for day to day wear.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/hos_alt.rsi
+    sprite: Clothing/Uniforms/Jumpsuits/Security/hos_alt.rsi
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/hos_alt.rsi
+    sprite: Clothing/Uniforms/Jumpsuits/Security/hos_alt.rsi
 
 - type: entity
   parent: [ClothingUniformBase, BaseSecurityContraband]
@@ -121,9 +121,9 @@
   description: The head of security's formal uniform, for special occasions
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/hos_parade.rsi
+    sprite: Clothing/Uniforms/Jumpsuits/Security/hos_parade.rsi
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/hos_parade.rsi
+    sprite: Clothing/Uniforms/Jumpsuits/Security/hos_parade.rsi
 
 # Cadet uniform (Tea)
 
@@ -134,6 +134,6 @@
   description: A uniform made of strong material, providing robust protection.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/security.rsi
+    sprite: Clothing/Uniforms/Jumpsuits/Security/security.rsi
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/security.rsi
+    sprite: Clothing/Uniforms/Jumpsuits/Security/security.rsi

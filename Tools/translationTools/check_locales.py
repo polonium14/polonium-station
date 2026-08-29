@@ -16,6 +16,9 @@ WALK_SKIP_DIR_NAMES = {'.git', 'bin', 'obj'}
 CROWDIN_YML = 'crowdin.yml'
 CROWDIN_SOURCE_PREFIX = '/Resources/Locale/en-US/'
 IGNORE_LINE_RE = re.compile(r'^\s*-\s+(/Resources/Locale/en-US/\S+)\s*$')
+# Źródło en-US dla tych ścieżek leży w submodule RobustToolbox, nie w Resources/Locale/en-US,
+# więc para en-US/pl-PL nigdy się tu nie zejdzie (ta sama zasada co keyfinder.py).
+EXTRA_IGNORE_PATTERNS = ('robust-toolbox',)
 KEY_RE = re.compile(r'^(-?[A-Za-z][A-Za-z0-9_-]*)\s*=(.*)$')
 ATTR_RE = re.compile(r'^\s+\.([A-Za-z][A-Za-z0-9_-]*)\s*=')
 MAX_ANNOTATIONS = 60
@@ -196,7 +199,7 @@ def check_locales(repo_root: Path, limit: int) -> int:
         print(f'Brak katalogu {locale_root}')
         return 1
 
-    ignore_patterns = load_crowdin_ignore_patterns(repo_root)
+    ignore_patterns = load_crowdin_ignore_patterns(repo_root) + list(EXTRA_IGNORE_PATTERNS)
 
     present_locales = sorted(
         path.name for path in locale_root.iterdir() if path.is_dir()
@@ -359,7 +362,7 @@ def check_locales(repo_root: Path, limit: int) -> int:
             print(f'Ignorowane locale (poza checkiem): {", ".join(ignored)}')
     print(f'en-US plików: {len(en_files)}')
     print(f'pl-PL plików: {len(pl_files)}')
-    print(f'Ignore Crowdin ({CROWDIN_YML}): {", ".join(ignore_patterns)}')
+    print(f'Ignore ({CROWDIN_YML} + skrypt): {", ".join(ignore_patterns)}')
     print()
 
     for kind, title in order:

@@ -9,6 +9,7 @@ using Robust.Shared.Prototypes;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Chemistry.Components;
 using Robust.Shared.GameObjects;
+using Content.Shared.Body.Systems;
 
 namespace Content.Server.BloodCult.EntityEffects;
 

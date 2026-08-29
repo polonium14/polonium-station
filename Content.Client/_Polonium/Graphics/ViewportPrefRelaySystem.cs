@@ -8,6 +8,7 @@ using Robust.Client.Graphics;
 using Robust.Client.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Player;
+using Content.Shared.Ghost.Components;
 
 namespace Content.Client._Polonium.Graphics;
 

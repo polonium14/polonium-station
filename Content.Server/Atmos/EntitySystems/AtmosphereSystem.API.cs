@@ -214,7 +214,7 @@ public partial class AtmosphereSystem
 
         // We either don't have a grid, or the event wasn't handled.
         // Let the map handle it instead, and also broadcast the event.
-        if (map is { } mapEnt && _mapAtmosQuery.Resolve(mapEnt, ref mapEnt.Comp))
+        if (map is { } mapEnt && _mapAtmosQuery.Resolve(mapEnt, ref mapEnt.Comp, false)) // Polonium: no MapAtmosphere is normal (falls through to space gas below), do not log
         {
             mixtures ??= new GasMixture?[tiles.Count];
             for (var i = 0; i < tiles.Count; i++)

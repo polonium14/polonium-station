@@ -8,3 +8,31 @@ plant-attribute-mutation-level = poziom mutacji
 plant-attribute-pests = poziom szkodników
 plant-attribute-mutation-mod = modyfikator mutacji
 plant-attribute-health = zdrowie
+
+plant-attribute-water-consumption = water consumption
+
+plant-attribute-weed-tolerance = weed tolerance
+
+plant-attribute-toxins-tolerance = toxins tolerance
+
+plant-attribute-nutrient-consumption = nutrient consumption
+
+plant-attribute-pest-tolerance = pest tolerance
+
+plant-attribute-endurance = endurance
+
+plant-attribute-yield = yield
+
+plant-attribute-lifespan = lifespan
+
+plant-attribute-maturation = maturation
+
+plant-attribute-production = production
+
+plant-attribute-low-heat-tolerance = low heat tolerance
+
+plant-attribute-high-heat-tolerance = high heat tolerance
+
+plant-attribute-low-pressure-tolerance = low pressure tolerance
+
+plant-attribute-high-pressure-tolerance = high pressure tolerance

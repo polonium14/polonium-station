@@ -11,3 +11,4 @@ metabolizer-type-moth = Moth
 metabolizer-type-arachnid = Arachnid
 
 metabolizer-type-zombie-tumor = Zombie Tumor
+metabolizer-type-changeling = Changeling

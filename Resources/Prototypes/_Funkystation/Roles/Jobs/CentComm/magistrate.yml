@@ -26,7 +26,6 @@
   - !type:DepartmentTimeRequirement
     department: Security
     time: 37.5h # 37.5 hours
-  weight: 0
   startingGear: MagistrateGear
   icon: "JobIconMagistrate"
   requireAdminNotify: true

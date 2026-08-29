@@ -29,15 +29,15 @@ public sealed class PhotographSubjectNameTest : InteractionTest
         await SpawnTarget(TargetProto);
         await PlaceInHands(CameraProto);
 
-        // Shoot the target: issues capture token #1 with the subject name frozen.
+        // Shoot the target: issues a capture token with the subject name frozen.
         await Interact();
 
         string expected = default!;
         await Server.WaitPost(() => expected = Identity.Name(STarget!.Value, SEntMan));
 
-        // Answer token id 1 (deterministic first shot of a fresh round) with a valid-length,
-        // content-irrelevant payload; no GPU render. StoredCount below fails loudly if wrong.
-        await SubmitPhoto(1);
+        // Answer the outstanding token with a valid-length, content-irrelevant payload;
+        // no GPU render. StoredCount below fails loudly if wrong.
+        await SubmitPhoto();
 
         Assert.That(sys.StoredCount, Is.EqualTo(1), "The hand-submitted photo must have been stored.");
 
@@ -57,7 +57,7 @@ public sealed class PhotographSubjectNameTest : InteractionTest
         var tile = MapData.GridCoords.Offset(new Vector2(1f, 0f));
         await Interact(null, tile);
 
-        await SubmitPhoto(1);
+        await SubmitPhoto();
         Assert.That(sys.StoredCount, Is.EqualTo(1), "The hand-submitted photo must have been stored.");
 
         var text = await ExaminePhotograph();
@@ -66,9 +66,16 @@ public sealed class PhotographSubjectNameTest : InteractionTest
     }
 
     /// <summary>Send a <see cref="SubmitPhotoEvent"/> from the client session, bypassing
-    /// the client render, and let it land server-side.</summary>
-    private async Task SubmitPhoto(int captureId)
+    /// the client render, and let it land server-side. Reads the live token rather than
+    /// assuming one: the id counter only resets on round restart, which a pooled test pair
+    /// does not always do.</summary>
+    private async Task SubmitPhoto()
     {
+        var captureId = 0;
+        await Server.WaitPost(() =>
+            captureId = SEntMan.System<PoloniumPhotographySystem>().PendingCaptureId ?? 0);
+        Assert.That(captureId, Is.Not.Zero, "The shutter press must have issued a capture token.");
+
         var blob = new byte[PhotographyConstants.PhotoByteLength];
         await Client.WaitPost(() =>
             CEntMan.EntityNetManager!.SendSystemNetworkMessage(new SubmitPhotoEvent(captureId, blob)));

@@ -1,4 +1,4 @@
-using Content.Server.Forensics;
+using Content.Shared.Forensics.Systems;
 using Content.Server.Fluids.EntitySystems;
 using Content.Shared.BloodCult.Components;
 using Content.Shared.Chemistry.Components;
@@ -9,6 +9,7 @@ using Content.Shared.Fluids;
 using Content.Shared.Fluids.Components;
 using Content.Shared.Interaction;
 using Content.Shared.Timing;
+using Content.Shared.Forensics.Components;
 
 namespace Content.Server.BloodCult.EntitySystems;
 
@@ -70,7 +71,7 @@ public sealed partial class BloodCultRuneCleaningSystem : EntitySystem
 		// Use the forensics system to clean the rune
 		// Create a temporary CleansForensics component for the mop
 		var cleansForensics = EnsureComp<CleansForensicsComponent>(mop);
-		cleansForensics.CleanDelay = 3f; // Mops are slower than soap
+		cleansForensics.CleanDelay = TimeSpan.FromSeconds(3); // Mops are slower than soap
 
 		return _forensics.TryStartCleaning((mop, cleansForensics), user, target);
 	}

@@ -311,8 +311,10 @@
       - state: helmet-bar
       - state: eyes-bar
         shader: unshaded
-  - type: ShowHungerIcons
-  - type: ShowThirstIcons
+  - type: ShowSatiationIcons
+    shownTypes:
+    - Hunger
+    - Thirst
 
 # Secruity
 - type: entity
@@ -524,8 +526,10 @@
   - type: ShowMindShieldIcons
   - type: ShowCriminalRecordIcons
   - type: ShowContrabandDetails
-  - type: ShowHungerIcons
-  - type: ShowThirstIcons
+  - type: ShowSatiationIcons
+    shownTypes:
+    - Hunger
+    - Thirst
   - type: ShowHealthBars
     damageContainers:
     - Biological

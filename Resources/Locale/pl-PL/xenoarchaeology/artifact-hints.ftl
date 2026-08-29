@@ -84,3 +84,27 @@ xenoarch-trigger-tip-rolling = Wałkowanie
 xenoarch-trigger-tip-slicing = Cięcie
 xenoarch-trigger-examine-rolling = Zrób z tego pizzę.
 xenoarch-trigger-examine-slicing = Potnij to na kawałki.
+
+xenoarch-trigger-tip-microwave = Microwave radiation
+
+xenoarch-trigger-tip-money = Bribery
+
+xenoarch-trigger-tip-knowledge = Knowledge Intake
+
+xenoarch-trigger-tip-carbs = Carbohydrate Intake
+
+xenoarch-trigger-tip-meat = Protein Intake
+
+xenoarch-trigger-tip-produce = Healthy Produce Intake
+
+xenoarch-trigger-tip-stamp = Bureaucratic Approval
+
+xenoarch-trigger-tip-shock = Electrical Shock
+
+xenoarch-trigger-tip-particle = Singularity-Effecting Particles
+
+xenoarch-trigger-tip-anomparticle = Anomaly-Effecting Particles
+
+xenoarch-trigger-tip-stamina-damage = Organic Exhaustion
+
+xenoarch-trigger-tip-laser = High-Intensity photon impacts

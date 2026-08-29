@@ -18,6 +18,7 @@ using Robust.Server.Player;
 using Robust.Shared.Audio;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
+using Content.Shared.AlertLevel;
 
 namespace Content.Server._Polonium.BluespaceStrike;
 
@@ -110,7 +111,10 @@ public sealed class BluespaceStrikeEui : BaseEui
         if (station == null)
             return (false, string.Empty);
 
-        var level = _alertLevel.GetLevel(station.Value);
+        if (!_alertLevel.TryGetLevel(station.Value, out var levelProto))
+            return (false, string.Empty);
+
+        var level = levelProto.Value.Id;
         var isEpsilon = string.Equals(level, "epsilon", StringComparison.OrdinalIgnoreCase);
         return (isEpsilon, level);
     }

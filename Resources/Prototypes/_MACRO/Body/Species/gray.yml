@@ -424,8 +424,8 @@
   id: BaseMobGray
   abstract: true
   components:
-  - type: Hunger
-  - type: Thirst
+  # Polonium: Hunger/Thirst → Satiation; no fork overrides here, so BaseSpeciesMobOrganic's
+  # default Satiation applies and the bare declarations are dropped.
   - type: Icon
     sprite: _MACRO/Mobs/Species/Gray/parts.rsi
     state: full

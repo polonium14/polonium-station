@@ -304,3 +304,8 @@ loadout-group-medical-glasses = Medyczne okulary
 loadout-group-boxer-jumpsuit = Bokser – kombinezon
 
 loadout-group-boxer-gloves = Bokser – rękawice
+
+loadout-group-tramdriver-jumpsuit = Tram driver jumpsuit
+loadout-group-tramdriver-outerclothing = Tram driver suit
+loadout-group-tramdriver-hat = Tram driver hat
+loadout-group-tramdriver-gloves = Tram driver gloves

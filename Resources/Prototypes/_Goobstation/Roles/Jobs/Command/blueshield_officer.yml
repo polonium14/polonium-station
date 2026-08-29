@@ -35,7 +35,6 @@
     - !type:DepartmentTimeRequirement
       department: Security
       time: 5h # 5 hours
-  weight: 20
   startingGear: BlueshieldOfficerGear
   icon: "JobIconBlueshieldOfficer"
   requireAdminNotify: true

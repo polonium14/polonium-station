@@ -10,6 +10,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using static Robust.Shared.Utility.SpriteSpecifier;
+using Content.Shared.Ghost.Components;
 
 namespace Content.Client._RMC14.Xenonids.Pheromones;
 

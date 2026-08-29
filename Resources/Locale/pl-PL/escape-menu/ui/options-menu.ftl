@@ -416,3 +416,15 @@ ui-options-admin-overlay-ghost-fade-distance = Zasięg zanikania nakładki ducha
 ui-options-admin-overlay-ghost-hide-distance = Zasięg ukrywania nakładki ducha od kursora
 ui-options-admin-strip-overlay-title = Nakładka przeszukiwania
 ui-options-admin-strip-overlay-setting = Domyślnie pokazuj nakładkę przeszukiwania
+
+ui-options-mute-unfocused = Mute audio when unfocused
+
+ui-options-audio-device = Output device:
+
+ui-options-audio-device-default = System default
+
+ui-options-max-fps = Maximum FPS:
+
+ui-options-max-fps-display-rate = Display Rate
+
+ui-options-max-fps-tooltip = Maximum framerate the client should run at. Set to 0 for no limit. This has no effect if VSync is enabled.

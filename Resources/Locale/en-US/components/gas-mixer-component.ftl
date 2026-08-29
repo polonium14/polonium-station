@@ -13,3 +13,4 @@ comp-gas-mixer-ui-mixer-status = Status:
 comp-gas-mixer-ui-status-enabled = On
 
 comp-gas-mixer-ui-status-disabled = Off
+comp-gas-mixer-ratio-examine = The side port ratio is [color={$statusColor}]{$sidePortRatio}[/color].

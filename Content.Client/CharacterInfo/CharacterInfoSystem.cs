@@ -25,7 +25,6 @@ namespace Content.Client.CharacterInfo;
 public sealed partial class CharacterInfoSystem : EntitySystem
 {
     [Dependency] private IPlayerManager _players = default!;
-    [Dependency] private IPrototypeManager _proto = default!; // POLONIUM CHANGE: localize job name from proto id
 
     public event Action<CharacterData>? OnCharacterUpdate;
 
@@ -50,21 +49,7 @@ public sealed partial class CharacterInfoSystem : EntitySystem
     private void OnCharacterInfoEvent(CharacterInfoEvent msg, EntitySessionEventArgs args)
     {
         var entity = GetEntity(msg.NetEntity);
-        // POLONIUM CHANGE: resolve the localized job name client-side from the proto id, so
-        // every client shows the title in its own locale (falls back to a generic label when
-        // the entity has no job). JobProto is kept for the locale-independent highlight key.
-        string? jobProto = null;
-        string job;
-        if (msg.JobProto is { } proto && _proto.TryIndex<JobPrototype>(proto, out var jobPrototype))
-        {
-            job = jobPrototype.LocalizedName;
-            jobProto = proto;
-        }
-        else
-        {
-            job = Loc.GetString("character-info-no-profession");
-        }
-        var data = new CharacterData(entity, job, jobProto, msg.Objectives, msg.Briefing, Name(entity));
+        var data = new CharacterData(entity, msg.Objectives, msg.Briefing, msg.Job, Name(entity));
 
         OnCharacterUpdate?.Invoke(data);
     }
@@ -78,10 +63,9 @@ public sealed partial class CharacterInfoSystem : EntitySystem
 
     public readonly record struct CharacterData(
         EntityUid Entity,
-        string Job,
-        string? JobProto, // POLONIUM CHANGE: locale-independent job id for chat highlights
         Dictionary<string, List<ObjectiveInfo>> Objectives,
         string? Briefing,
+        ProtoId<JobPrototype>? JobId,
         string EntityName
     );
 

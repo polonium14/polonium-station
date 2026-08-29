@@ -28,6 +28,8 @@ using Content.Shared.CharacterInfo;
 using Content.Shared.Objectives;
 using Content.Shared.Objectives.Components;
 using Content.Shared.Objectives.Systems;
+using Content.Shared.Roles;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server.CharacterInfo;
 
@@ -54,8 +56,8 @@ public sealed partial class CharacterInfoSystem : EntitySystem
         var entity = args.SenderSession.AttachedEntity.Value;
 
         var objectives = new Dictionary<string, List<ObjectiveInfo>>();
-        string? jobProto = null; // POLONIUM CHANGE: send only the locale-independent job id; client localizes it
         string? briefing = null;
+        ProtoId<JobPrototype>? job = null;
         if (_minds.TryGetMind(entity, out var mindId, out var mind))
         {
             // Get objectives
@@ -78,16 +80,13 @@ public sealed partial class CharacterInfoSystem : EntitySystem
                 objectives[issuer].Add(info.Value);
             }
 
-            // POLONIUM CHANGE: send the raw job prototype id; the client resolves the
-            // localized display name and the highlight key from it (loc titles vary per locale).
-            if (_jobs.MindTryGetJobId(mindId, out var jobId) && jobId is { } id)
-                jobProto = id.Id;
+            if (_jobs.MindTryGetJob(mindId, out var j))
+                job = j;
 
             // Get briefing
             briefing = _roles.MindGetBriefing(mindId);
         }
 
-        // POLONIUM CHANGE: send jobProto instead of a server-localized job title
-        RaiseNetworkEvent(new CharacterInfoEvent(GetNetEntity(entity), jobProto, objectives, briefing), args.SenderSession);
+        RaiseNetworkEvent(new CharacterInfoEvent(GetNetEntity(entity), objectives, briefing, job), args.SenderSession);
     }
 }

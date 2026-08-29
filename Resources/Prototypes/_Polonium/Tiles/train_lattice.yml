@@ -1,0 +1,12 @@
+# Polonium: TrainLattice tile lived in base Tiles/plating.yml at fork HEAD; the upstream
+# merge took upstream's plating.yml and dropped it (plus its texture, restored from HEAD).
+# Referenced by plating.yml baseWhitelist and 3 maps' tilemaps — restored fork-scoped so it
+# survives future upstream merges.
+- type: tile
+  id: TrainLattice
+  parent: Lattice
+  name: tiles-lattice-train
+  sprite: /Textures/Tiles/latticeTrain.png
+  variants: 1 # Polonium: single-variant 32x32 texture; override Lattice's inherited variants: 3
+  footstepSounds:
+    collection: FootstepPlating

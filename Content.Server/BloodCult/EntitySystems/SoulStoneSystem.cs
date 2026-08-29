@@ -32,6 +32,7 @@ using Content.Shared.Speech;
 using Content.Shared.Emoting;
 using Content.Shared.Effects;
 using System.Collections.Generic;
+using Content.Shared.Body.Systems;
 
 namespace Content.Server.BloodCult.EntitySystems;
 

@@ -20,7 +20,7 @@ using Robust.Shared.Prototypes;
 namespace Content.IntegrationTests.Tests._Shitmed.Body;
 
 [TestFixture]
-[TestOf(typeof(SharedBloodstreamSystem))]
+[TestOf(typeof(BloodstreamSystem))]
 public sealed class MobStateBleedMultiplierTest : GameTest
 {
     private static readonly ProtoId<DamageTypePrototype> BluntDamageType = "Blunt";
@@ -57,7 +57,7 @@ public sealed class MobStateBleedMultiplierTest : GameTest
 
         var sEntMan = server.ResolveDependency<IEntityManager>();
         var sSystems = server.ResolveDependency<IEntitySystemManager>();
-        var sBloodstream = sSystems.GetEntitySystem<SharedBloodstreamSystem>();
+        var sBloodstream = sSystems.GetEntitySystem<BloodstreamSystem>();
         var sDamageable = sSystems.GetEntitySystem<DamageableSystem>();
         var sMobState = sSystems.GetEntitySystem<MobStateSystem>();
         var sProtoMan = server.ResolveDependency<IPrototypeManager>();

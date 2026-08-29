@@ -1,37 +1,10 @@
-# SPDX-FileCopyrightText: 2020 Ygg01 <daniel.fath7@gmail.com>
-# SPDX-FileCopyrightText: 2020 moonheart08 <moonheart08@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2021 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2021 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2021 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-# SPDX-FileCopyrightText: 2021 Swept <sweptwastaken@protonmail.com>
-# SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <zddm@outlook.es>
-# SPDX-FileCopyrightText: 2021 Visne <39844191+Visne@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2021 metalgearsloth <comedian_vs_clown@hotmail.com>
-# SPDX-FileCopyrightText: 2021 mirrorcult <lunarautomaton6@gmail.com>
-# SPDX-FileCopyrightText: 2022 Jacob Tong <10494922+ShadowCommander@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 lzk <124214523+lzk228@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Connor Huffine <chuffine@gmail.com>
-# SPDX-FileCopyrightText: 2025 Southbridge <7013162+southbridge-fur@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Tao <56692749+TaoNewt@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 qwerltaz <msmarcinpl@gmail.com>
-# SPDX-FileCopyrightText: 2026 Nikita (Nick) <174215049+nikitosych@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2026 kosticia <kosticia46@gmail.com>
-# SPDX-FileCopyrightText: 2026 maciejwalendziuk <15122746+maciejwalendziuk@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2026 pathetic meowmeow <uhhadd@gmail.com>
-# SPDX-FileCopyrightText: 2026 taydeo <tay@funkystation.org>
-# SPDX-FileCopyrightText: 2026 taydeo <td12233a@gmail.com>
-# SPDX-FileCopyrightText: 2026 āda <ss.adasts@gmail.com>
-#
-# SPDX-License-Identifier: AGPL-3.0-or-later
-
+# TODO move all of this to tiles once tile smoothing is supported
 - type: entity
-  parent: BaseStructure
+  abstract: true
+  parent: [ BaseStructure, StructureHealthFurnitureWeak ]
   id: CarpetBase
   name: carpet
   description: "Fancy walking surface."
-  abstract: true
   components:
   - type: Sprite
     drawdepth: FloorTiles
@@ -56,16 +29,7 @@
         layer:
         - DoorPassable
   - type: Damageable
-  - type: Injurable
-    damageContainer: Inorganic
-  - type: Destructible
-    thresholds:
-    - trigger: &DamageTrigger10
-        !type:DamageTrigger
-        damage: 10
-        behaviors:
-        - !type:DoActsBehavior
-          acts: [ "Destruction" ]
+    damageModifierSet: ThreadMod
   - type: TrayScanReveal
   - type: ToolRefinable
     refineResult:
@@ -82,10 +46,10 @@
     sprite: Structures/Furniture/Carpets/red_carpet.rsi
   - type: Destructible
     thresholds:
-    - trigger: *DamageTrigger10
+    - trigger: &DamageFurnitureWeak
+        !type:DamageTrigger
+        damage: 5
       behaviors:
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
       - !type:SpawnEntitiesBehavior
         spawn:
           FloorCarpetItemRed: &BaseCarpetSpawn
@@ -104,10 +68,8 @@
     sprite: Structures/Furniture/Carpets/black_carpet.rsi
   - type: Destructible
     thresholds:
-    - trigger: *DamageTrigger10
+    - trigger: *DamageFurnitureWeak
       behaviors:
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
       - !type:SpawnEntitiesBehavior
         spawn:
           FloorCarpetItemBlack: *BaseCarpetSpawn
@@ -124,10 +86,8 @@
     sprite: Structures/Furniture/Carpets/pink_carpet.rsi
   - type: Destructible
     thresholds:
-    - trigger: *DamageTrigger10
+    - trigger: *DamageFurnitureWeak
       behaviors:
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
       - !type:SpawnEntitiesBehavior
         spawn:
           FloorCarpetItemPink: *BaseCarpetSpawn
@@ -144,10 +104,8 @@
     sprite: Structures/Furniture/Carpets/blue_carpet.rsi
   - type: Destructible
     thresholds:
-    - trigger: *DamageTrigger10
+    - trigger: *DamageFurnitureWeak
       behaviors:
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
       - !type:SpawnEntitiesBehavior
         spawn:
           FloorCarpetItemBlue: *BaseCarpetSpawn
@@ -164,10 +122,8 @@
     sprite: Structures/Furniture/Carpets/green_carpet.rsi
   - type: Destructible
     thresholds:
-    - trigger: *DamageTrigger10
+    - trigger: *DamageFurnitureWeak
       behaviors:
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
       - !type:SpawnEntitiesBehavior
         spawn:
           FloorCarpetItemGreen: *BaseCarpetSpawn
@@ -184,10 +140,8 @@
     sprite: Structures/Furniture/Carpets/orange_carpet.rsi
   - type: Destructible
     thresholds:
-    - trigger: *DamageTrigger10
+    - trigger: *DamageFurnitureWeak
       behaviors:
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
       - !type:SpawnEntitiesBehavior
         spawn:
           FloorCarpetItemOrange: *BaseCarpetSpawn
@@ -204,10 +158,8 @@
     sprite: Structures/Furniture/Carpets/skyblue_carpet.rsi
   - type: Destructible
     thresholds:
-    - trigger: *DamageTrigger10
+    - trigger: *DamageFurnitureWeak
       behaviors:
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
       - !type:SpawnEntitiesBehavior
         spawn:
           FloorCarpetItemSkyBlue: *BaseCarpetSpawn
@@ -224,10 +176,8 @@
     sprite: Structures/Furniture/Carpets/purple_carpet.rsi
   - type: Destructible
     thresholds:
-    - trigger: *DamageTrigger10
+    - trigger: *DamageFurnitureWeak
       behaviors:
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
       - !type:SpawnEntitiesBehavior
         spawn:
           FloorCarpetItemPurple: *BaseCarpetSpawn
@@ -244,10 +194,8 @@
     sprite: Structures/Furniture/Carpets/cyan_carpet.rsi
   - type: Destructible
     thresholds:
-    - trigger: *DamageTrigger10
+    - trigger: *DamageFurnitureWeak
       behaviors:
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
       - !type:SpawnEntitiesBehavior
         spawn:
           FloorCarpetItemCyan: *BaseCarpetSpawn
@@ -264,10 +212,8 @@
     sprite: Structures/Furniture/Carpets/white_carpet.rsi
   - type: Destructible
     thresholds:
-    - trigger: *DamageTrigger10
+    - trigger: *DamageFurnitureWeak
       behaviors:
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
       - !type:SpawnEntitiesBehavior
         spawn:
           FloorCarpetItemWhite: *BaseCarpetSpawn
@@ -296,7 +242,7 @@
     damageContainer: Inorganic
   - type: Destructible
     thresholds:
-    - trigger: *DamageTrigger10
+    - trigger: *DamageFurnitureWeak
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
@@ -305,7 +251,7 @@
 #cardpet
 
 - type: entity
-  parent: BaseStructure
+  parent: [ BaseStructure, StructureHealthFurnitureWeak ]
   id: CarpetCard
   name: cardboard "carpet"
   description: "Even lino is better."
@@ -330,15 +276,11 @@
   - type: Clickable
   - type: Fixtures
   - type: Damageable
-    damageModifierSet: Card
-  - type: Injurable
-    damageContainer: Inorganic
+    damageModifierSet: CardboardMod
   - type: Destructible
     thresholds:
-    - trigger: *DamageTrigger10
+    - trigger: *DamageFurnitureWeak
       behaviors:
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
       - !type:SpawnEntitiesBehavior
         spawn:
           MaterialCardboard: *BaseCarpetSpawn

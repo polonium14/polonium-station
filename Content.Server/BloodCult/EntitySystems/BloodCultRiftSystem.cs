@@ -34,6 +34,7 @@ using Robust.Shared.Random;
 using Robust.Server.GameObjects;
 using Robust.Shared.Timing;
 using Robust.Shared.Maths;
+using Content.Shared.Ghost.Components;
 
 namespace Content.Server.BloodCult.EntitySystems;
 

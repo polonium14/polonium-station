@@ -7,7 +7,10 @@
   components:
   - type: Action
     checkCanInteract: false
-    icon: _DV/Interface/Actions/harpy_sing.png
+  - type: Sprite
+    layers:
+    - texture: _DV/Interface/Actions/harpy_sing.png
+      map: ["enum.ActionVisuals.Icon"]
   - type: InstantAction
     event: !type:OpenUiActionEvent
       key: enum.InstrumentUiKey.Key
@@ -21,6 +24,9 @@
   components:
   - type: Action
     itemIconStyle: BigAction
-    icon: _DV/Interface/Actions/harpy_syrinx.png
+  - type: Sprite
+    layers:
+    - texture: _DV/Interface/Actions/harpy_syrinx.png
+      map: ["enum.ActionVisuals.Icon"]
   - type: InstantAction
     event: !type:VoiceMaskSetNameEvent

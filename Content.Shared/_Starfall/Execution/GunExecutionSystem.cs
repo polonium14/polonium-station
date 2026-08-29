@@ -1,3 +1,4 @@
+using Content.Shared.Suicide;
 using System.Linq;
 using Content.Shared._Starfall.Weapons;
 using Content.Shared.Chat;

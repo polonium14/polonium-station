@@ -14,8 +14,11 @@
   components:
   - type: Action
     itemIconStyle: NoItem
-    icon: _Impstation/Interface/Actions/spawn_nest.png
     useDelay: 20
+  - type: Sprite
+    layers:
+    - texture: _Impstation/Interface/Actions/spawn_nest.png
+      map: ["enum.ActionVisuals.Icon"]
   - type: InstantAction
     event: !type:ReplicatorSpawnNestActionEvent
 
@@ -27,8 +30,11 @@
   components:
   - type: Action
     itemIconStyle: NoItem
-    icon: _Impstation/Interface/Actions/replicator_level2.png
     useDelay: 20
+  - type: Sprite
+    layers:
+    - texture: _Impstation/Interface/Actions/replicator_level2.png
+      map: ["enum.ActionVisuals.Icon"]
   - type: InstantAction
     event: !type:ReplicatorUpgrade2ActionEvent
 
@@ -40,8 +46,11 @@
   components:
   - type: Action
     itemIconStyle: NoItem
-    icon: _Impstation/Interface/Actions/replicator_level3.png
     useDelay: 20
+  - type: Sprite
+    layers:
+    - texture: _Impstation/Interface/Actions/replicator_level3.png
+      map: ["enum.ActionVisuals.Icon"]
   - type: InstantAction
     event: !type:ReplicatorUpgrade3ActionEvent
 
@@ -53,14 +62,16 @@
   components:
   - type: Action
     itemIconStyle: NoItem
-    icon:
-      sprite: Objects/Magic/magicactions.rsi
-      state: blink
     useDelay: 2
     sound:
       path: /Audio/Magic/blink.ogg
       params:
         volume: -4
+  - type: Sprite
+    sprite: Objects/Magic/magicactions.rsi
+    layers:
+    - state: blink
+      map: ["enum.ActionVisuals.Icon"]
   - type: TargetAction
     repeat: false
     deselectOnMiss: true
@@ -87,8 +98,10 @@
   - type: Action
     itemIconStyle: BigAction
     priority: -20
-    icon:
-      sprite: _Impstation/Mobs/Replicator/replicator.rsi
-      state: icon
+  - type: Sprite
+    sprite: _Impstation/Mobs/Replicator/replicator.rsi
+    layers:
+    - state: icon
+      map: ["enum.ActionVisuals.Icon"]
   - type: InstantAction
     event: !type:ToggleThermalVisionEvent

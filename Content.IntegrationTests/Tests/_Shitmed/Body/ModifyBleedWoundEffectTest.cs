@@ -25,14 +25,14 @@ namespace Content.IntegrationTests.Tests._Shitmed.Body;
 /// <summary>
 /// User report: "chems that stop bleeding should stop bleeding - now they do nothing". Root
 /// cause: ModifyBleedEntityEffectSystem (the effect backing reagents like Tranexamic Acid)
-/// only ever called SharedBloodstreamSystem.TryModifyBleedAmount, which exclusively writes
+/// only ever called BloodstreamSystem.TryModifyBleedAmount, which exclusively writes
 /// BleedAmountNotFromWounds - but mobs with organ-based wound support bleed entirely through
 /// BleedAmountFromWounds, which is independently recomputed every tick straight from each
-/// organ's own BleedInflicterComponent state (see SharedBloodstreamSystem.Wounds.cs's
+/// organ's own BleedInflicterComponent state (see BloodstreamSystem.Wounds.cs's
 /// UpdateWounds). Any reduction the reagent applied was silently undone within one tick, same
 /// bug class already fixed once for topical healing items in HealingSystem.cs's
 /// BloodlossModifier branch. Fixed by routing negative (bleed-reducing) amounts through
-/// SharedBloodstreamSystem.TryHealWoundBleeding, which reduces every wound-bearing organ's real
+/// BloodstreamSystem.TryHealWoundBleeding, which reduces every wound-bearing organ's real
 /// BleedInflicterComponent state via WoundSystem.TryHealBleedingWounds instead.
 ///
 /// Goes through the real SharedEntityEffectsSystem.ApplyEffect entry point (not a direct call

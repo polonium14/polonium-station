@@ -7,9 +7,11 @@
   - type: Action
     useDelay: 1
     itemIconStyle: BigAction
-    icon:
-      sprite: _RMC14/Actions/xeno_actions.rsi
-      state: resting
+  - type: Sprite
+    sprite: _RMC14/Actions/xeno_actions.rsi
+    layers:
+    - state: resting
+      map: ["enum.ActionVisuals.Icon"]
   - type: InstantAction
     event: !type:XenoRestActionEvent
 
@@ -21,9 +23,11 @@
   components:
   - type: Action
     itemIconStyle: BigAction
-    icon:
-      sprite: _RMC14/Actions/xeno_actions.rsi
-      state: evolve
+  - type: Sprite
+    sprite: _RMC14/Actions/xeno_actions.rsi
+    layers:
+    - state: evolve
+      map: ["enum.ActionVisuals.Icon"]
   - type: InstantAction
     event: !type:XenoOpenEvolutionsActionEvent
 
@@ -36,9 +40,11 @@
   - type: Action
     useDelay: 1
     itemIconStyle: BigAction
-    icon:
-      sprite: _RMC14/Actions/xeno_actions.rsi
-      state: plant_weeds
+  - type: Sprite
+    sprite: _RMC14/Actions/xeno_actions.rsi
+    layers:
+    - state: plant_weeds
+      map: ["enum.ActionVisuals.Icon"]
   - type: InstantAction
     event: !type:XenoPlantWeedsActionEvent
       plasmaCost: 90
@@ -51,9 +57,11 @@
   components:
   - type: Action
     itemIconStyle: BigAction
-    icon:
-      sprite: _RMC14/Actions/xeno_actions.rsi
-      state: place_resin
+  - type: Sprite
+    sprite: _RMC14/Actions/xeno_actions.rsi
+    layers:
+    - state: place_resin
+      map: ["enum.ActionVisuals.Icon"]
   - type: InstantAction
     event: !type:XenoChooseStructureActionEvent
 
@@ -66,9 +74,11 @@
   - type: Action
     useDelay: 0.5
     itemIconStyle: BigAction
-    icon:
-      sprite: _RMC14/Actions/xeno_actions.rsi
-      state: secrete_resin
+  - type: Sprite
+    sprite: _RMC14/Actions/xeno_actions.rsi
+    layers:
+    - state: secrete_resin
+      map: ["enum.ActionVisuals.Icon"]
   - type: TargetAction
     range: 0
     checkCanAccess: false
@@ -85,9 +95,11 @@
   - type: Action
     useDelay: 1.5
     itemIconStyle: BigAction
-    icon:
-      sprite: _RMC14/Actions/xeno_actions.rsi
-      state: corrosive_acid
+  - type: Sprite
+    sprite: _RMC14/Actions/xeno_actions.rsi
+    layers:
+    - state: corrosive_acid
+      map: ["enum.ActionVisuals.Icon"]
   - type: TargetAction
     range: 1.5
     interactOnMiss: false
@@ -109,9 +121,11 @@
   - type: Action
     useDelay: 1.5
     itemIconStyle: BigAction
-    icon:
-      sprite: _RMC14/Actions/xeno_actions.rsi
-      state: corrosive_acid
+  - type: Sprite
+    sprite: _RMC14/Actions/xeno_actions.rsi
+    layers:
+    - state: corrosive_acid
+      map: ["enum.ActionVisuals.Icon"]
   - type: TargetAction
     range: 1.5
     interactOnMiss: false
@@ -133,11 +147,13 @@
   - type: Action
     useDelay: 0.5
     itemIconStyle: BigAction
-    icon:
-      sprite: _RMC14/Actions/xeno_actions.rsi
-      state: queen_eye
-    iconOn:
-      sprite: _RMC14/Actions/xeno_actions.rsi
-      state: queen_eye
+  - type: Sprite
+    sprite: _RMC14/Actions/xeno_actions.rsi
+    layers:
+    - state: queen_eye
+      map: ["enum.ActionVisuals.Icon"]
+    - state: queen_eye
+      map: ["enum.ActionVisuals.IconToggled"]
+      visible: false
   - type: InstantAction
     event: !type:ToggleNightVisionEvent {}

@@ -24,7 +24,7 @@ using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
-using Content.Server.Speech.Prototypes;
+using Content.Shared.Speech;
 using Content.Shared.BloodCult;
 using Content.Shared.BloodCult.Components;
 using Content.Shared.Roles.Components;
@@ -69,7 +69,6 @@ using Content.Shared.Chat;
 using Robust.Shared.Console;
 using Content.Server.Administration;
 using Content.Shared.Administration;
-using Content.Shared.Speech;
 using Content.Server.Speech.Components;
 using Content.Shared.Emoting;
 using Content.Shared.Actions;
@@ -81,6 +80,9 @@ using Content.Shared.Storage;
 using Content.Shared.Storage.EntitySystems;
 using Content.Shared.UserInterface;
 using Robust.Shared.GameObjects;
+using Content.Shared.Ghost.Components;
+using Content.Shared.Speech.Components;
+using Content.Shared.Speech.Prototypes;
 
 namespace Content.Server.GameTicking.Rules;
 
@@ -190,7 +192,7 @@ public sealed partial class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleCo
 	[Dependency] private ActionContainerSystem _actionContainer = default!;
 	[Dependency] private SharedPointLightSystem _pointLight = default!;
 	[Dependency] private SharedUserInterfaceSystem _uiSystem = default!;
-    [Dependency] private AliveHumanoidTargetSystem _target = default!; 
+    [Dependency] private AliveHumanoidTargetSystem _target = default!;
 
 	public readonly string CultComponentId = "BloodCultist";
 

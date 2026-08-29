@@ -55,3 +55,37 @@ highlights-personal-ai = Osobista SI, "pAI", "pSI"
 highlights-cyborg = Cyborg, Silikon, Borg, Robotyka, "Robot"
 highlights-borg = Cyborg, Silikon, Borg, Robotyka, "Robot"
 highlights-station-ai = SI Stacji, Silikon, "AI", "sAI"
+
+highlights-headofpersonnel = Head Of Personnel, "HoP", Service, "Bridge", "Command"
+
+highlights-chiefengineer = Chief Engineer, "CE", Engineering, Engineer, "Engi", "Bridge", "Command"
+
+highlights-chiefmedicalofficer = Chief Medical Officer, "CMO", Medbay, Medical, "Med", "Bridge", "Command"
+
+highlights-headofsecurity = Head of Security, "HoS", Armory, Security, "Sec", "Bridge", "Command"
+
+highlights-researchdirector = Research Director, "RD", Science, "Sci", "RND", "R&D", "Bridge", "Command"
+
+highlights-securitycadet = Security Cadet, Secoff, Cadet, Armory, Security, "Sec"
+
+highlights-securityofficer = Security Officer, Secoff, Officer, Armory, Security, "Sec"
+
+# Cargo
+highlights-cargotechnician = Cargo Technician, Cargo Tech, "Cargo", Supply
+
+highlights-salvagespecialist = Salvage Specialist, Salvager, Salvage, "Salv", Miner, "Cargo", Supply
+
+# Engineering
+highlights-atmospherictechnician = Atmospheric Technician, Atmos Tech, Atmospheric, Engineering, "Atmos", "Engi"
+
+highlights-stationengineer = Station Engineer, Engineering, Engineer, "Engi"
+
+highlights-technicalassistant = Technical Assistant, Tech Assistant, Engineering, Engineer, "Engi"
+
+highlights-medicaldoctor = Medical Doctor, Doctor, "Doc", Medbay, Medical, "Med"
+
+highlights-medicalintern = Medical Intern, Intern, Medbay, Medical, "Med"
+
+highlights-researchassistant = Research Assistant, Science, "Sci", "RND", "R&D"
+
+highlights-serviceworker = Service Worker, Service, "Serv"

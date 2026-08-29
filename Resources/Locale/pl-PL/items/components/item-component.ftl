@@ -12,3 +12,5 @@ item-component-size-Normal = średni
 item-component-size-Large = duży
 item-component-size-Huge = wielki
 item-component-size-Ginormous = ogromny
+
+item-component-size-Colossal = colossal

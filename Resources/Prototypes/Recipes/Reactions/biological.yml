@@ -105,9 +105,9 @@
     ZombieBlood:
       amount: 4
   products:
-    Mold: 2
+    Romerodone: 2
     Protein: 1
-    Toxin: 1
+    Mold: 1
 
 - type: reaction
   id: UnholyBloodPurification
@@ -122,27 +122,3 @@
       duration: 8
       sound:
         path: /Audio/Effects/smoke.ogg
-
-- type: reaction
-  id: CognizineCreateSlime
-  quantized: true
-  reactants:
-    Cognizine:
-      amount: 5
-    Slime:
-      amount: 15
-  effects:
-  - !type:SpawnEntity
-    entity: MobAdultSlimesGreen
-
-- type: reaction
-  id: VestineCreateSlime
-  quantized: true
-  reactants:
-    Vestine:
-      amount: 5
-    Slime:
-      amount: 15
-  effects:
-  - !type:SpawnEntity
-    entity: MobAdultSlimesGreenAngry

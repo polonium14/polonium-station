@@ -10,7 +10,6 @@
   - !type:DepartmentTimeRequirement
     department: CentralCommand
     time: 10h # 10 hours
-  weight: 0
   startingGear: CentralCommandInternGear
   icon: JobIconCentralCommandIntern
   requireAdminNotify: true

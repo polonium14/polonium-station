@@ -6,8 +6,8 @@
   components:
   - type: Sprite
     sprite: _Imperial/Objects/Weapons/Melee/stunbaton.rsi
-  - type: Stunbaton
-    energyPerUse: 25
+  # Polonium: upstream dropped StunbatonComponent for the generic ItemToggle charge system
+  # (inherited from parent Stunbaton). This variant only overrides sprite + battery size.
   - type: Battery
     maxCharge: 2000
     startingCharge: 2000

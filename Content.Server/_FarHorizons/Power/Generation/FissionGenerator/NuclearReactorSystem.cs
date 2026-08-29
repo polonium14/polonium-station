@@ -37,6 +37,7 @@ using Content.Shared.Damage.Systems;
 using System.Diagnostics.CodeAnalysis;
 using Content.Server.Radiation.Systems;
 using Content.Shared.Atmos.Components;
+using Content.Shared.AlertLevel;
 
 namespace Content.Server._FarHorizons.Power.Generation.FissionGenerator;
 

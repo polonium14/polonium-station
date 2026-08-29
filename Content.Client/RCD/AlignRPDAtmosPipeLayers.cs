@@ -168,22 +168,29 @@ public sealed partial class AlignRPDAtmosPipeLayers : PlacementMode
 
     private void UpdatePlacer(AtmosPipeLayer layer)
     {
-        // Try to get alternative prototypes from the entity atmos pipe layer component
         if (pManager.CurrentPermission?.EntityType == null)
             return;
 
-        if (!_protoManager.TryIndex<EntityPrototype>(pManager.CurrentPermission.EntityType, out var currentProto))
+        // Determine the current entity prototype to be placed
+        if (!_protoManager.Resolve<EntityPrototype>(pManager.CurrentPermission.EntityType, out var currentPrototype))
             return;
 
-        if (!currentProto.TryGetComponent<AtmosPipeLayersComponent>(out var atmosPipeLayers, _entityManager.ComponentFactory))
+        // The prototype must be part of a variant collection (the per-layer pipe CreateVariants set)
+        if (!_protoManager.TryGetVariantCollection<EntityPrototype>(currentPrototype, out var altPrototypes))
             return;
 
-        if (!_pipeLayersSystem.TryGetAlternativePrototype(atmosPipeLayers, layer, out var newProtoId))
+        // The target layer must be a valid index in the variant collection
+        if ((int) layer >= altPrototypes.Count)
             return;
 
-        if (_protoManager.TryIndex<EntityPrototype>(newProtoId, out var newProto))
+        // Get the entity prototype ID for the target layer
+        var newProtoId = altPrototypes[(int) layer];
+
+        if (_protoManager.Resolve(newProtoId, out var newProto))
         {
-            // Update the placed prototype
+            // Update the previewed prototype so the ghost shows the correct per-layer offset. This is
+            // cosmetic only - the RPD build is driven by the RCD prototype server-side, which resolves
+            // the same variant from the chosen layer in RCDSystem.FinalizeRCDOperation.
             pManager.CurrentPermission.EntityType = newProtoId;
 
             // Update the appearance of the ghost sprite

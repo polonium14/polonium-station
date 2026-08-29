@@ -225,6 +225,10 @@
   - type: GameRule
     chaosScore: 60
   - type: BreakerFlipRule
+    blacklist:
+      components:
+        - ProtectedGrid
+
 
 - type: entity
   id: BureaucraticError
@@ -449,8 +453,8 @@
       path: /Audio/_Polonium/Announcements/power_off.ogg
       params:
         volume: -4
-    duration: 60
-    maxDuration: 120
+    duration: 50
+    maxDuration: 100
     eventType: Interference
   - type: GameRule
     chaosScore: 80

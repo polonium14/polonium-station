@@ -1,21 +1,16 @@
 - type: entity
   abstract: true
-  parent: BaseSign
+  parent: BaseSignWeak
   id: PosterBase
   components:
   - type: Sprite
     sprite: Structures/Wallmounts/posters.rsi
-  - type: Damageable
-    damageModifierSet: Card
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
         damage: 5
       behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          path: /Audio/Effects/poster_broken.ogg
       - !type:SpawnEntitiesBehavior
         spawn:
           PosterBroken:
@@ -27,7 +22,7 @@
     node: start
 
 - type: entity
-  parent: BaseSign
+  parent: BaseSignWeak
   id: PosterBroken
   name: broken poster
   description: "You can't make out anything from the poster's original print. It's ruined."
@@ -36,17 +31,6 @@
     drawdepth: WallTops
     sprite: Structures/Wallmounts/posters.rsi
     state: poster_broken
-  - type: Damageable
-    damageModifierSet: Card
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 5
-      behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          path: /Audio/Effects/poster_broken.ogg
   - type: Construction
     graph: PosterGraph
     node: tornPoster
@@ -77,7 +61,6 @@
   description: "A poster condemning the station's security forces."
   components:
   - type: Sprite
-    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster3_contraband
 
 - type: entity
@@ -87,7 +70,6 @@
   description: "A conspiratorial poster about dangerous alien lifeforms."
   components:
   - type: Sprite
-    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster4_contraband
 
 - type: entity
@@ -97,7 +79,6 @@
   description: "See the galaxy! Shatter corrupt megacorporations! Join today!"
   components:
   - type: Sprite
-    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster5_contraband
 
 - type: entity
@@ -116,7 +97,6 @@
   description: "A poster advertising a rival corporate brand of cigarettes."
   components:
   - type: Sprite
-    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster7_contraband
 
 - type: entity
@@ -126,7 +106,6 @@
   description: "A rebellious poster symbolizing passenger solidarity."
   components:
   - type: Sprite
-    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster8_contraband
 
 - type: entity
@@ -136,7 +115,6 @@
   description: "This poster references the uproar that followed Nanotrasen's financial cuts toward insulated-glove purchases."
   components:
   - type: Sprite
-    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster9_contraband
 
 - type: entity
@@ -182,7 +160,6 @@
   description: "This poster promotes rank gluttony."
   components:
   - type: Sprite
-    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster14_contraband
 
 - type: entity
@@ -201,7 +178,6 @@
   description: "A poster that positions the seat of power outside Nanotrasen."
   components:
   - type: Sprite
-    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster16_contraband
 
 - type: entity
@@ -238,7 +214,6 @@
   description: "Being fancy can be for any borg, just need a suit."
   components:
   - type: Sprite
-    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster20_contraband
 
 - type: entity
@@ -248,7 +223,6 @@
   description: "Borg Fancy, Now only taking the most fancy."
   components:
   - type: Sprite
-    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster21_contraband
 
 - type: entity
@@ -258,7 +232,6 @@
   description: "A poster mocking CentComm's denial of the existence of the derelict station near Space Station 13."
   components:
   - type: Sprite
-    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster22_contraband
 
 - type: entity
@@ -268,7 +241,6 @@
   description: "A poster urging the viewer to rebel against Nanotrasen."
   components:
   - type: Sprite
-    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster23_contraband
 
 - type: entity
@@ -287,7 +259,6 @@
   description: "Who cares about lung cancer when you're high as a kite?"
   components:
   - type: Sprite
-    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster25_contraband
 
 - type: entity
@@ -324,7 +295,6 @@
   description: "All the colors of the bloody murder rainbow."
   components:
   - type: Sprite
-    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster29_contraband
 
 - type: entity
@@ -334,7 +304,6 @@
   description: "Looking at this poster makes you want to kill."
   components:
   - type: Sprite
-    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster30_contraband
 
 - type: entity
@@ -353,7 +322,6 @@
   description: "Fight things for no reason, like a man!"
   components:
   - type: Sprite
-    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster32_contraband
 
 - type: entity
@@ -363,7 +331,6 @@
   description: "The Griffin commands you to be the worst you can be. Will you?"
   components:
   - type: Sprite
-    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster33_contraband
 
 - type: entity
@@ -373,7 +340,6 @@
   description: "This poster commemorates the bravery of the rogue drone; once exiled, and then ultimately destroyed by CentComm."
   components:
   - type: Sprite
-    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster35_contraband
 
 - type: entity
@@ -473,7 +439,6 @@
   description: "A poster about traitors begging for more."
   components:
   - type: Sprite
-    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster46_contraband
 
 - type: entity
@@ -492,7 +457,6 @@
   description: "Don't believe everything you see on a poster, patriots. All the lizards at central command don't want to answer this SIMPLE QUESTION: WHERE IS THE GAS MINER MINING FROM, CENTCOMM?"
   components:
   - type: Sprite
-    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster48_contraband
 
 - type: entity
@@ -530,7 +494,6 @@
   description: "There are 3 shards and a singularity.  The shards are singing.  The engineers are crying."
   components:
   - type: Sprite
-    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster53_contraband
 
 - type: entity
@@ -549,7 +512,6 @@
   description: "A poster depicting a grey shirted man holding a crowbar with the word Rise written below it."
   components:
   - type: Sprite
-    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster55_contraband
 
 - type: entity
@@ -559,7 +521,6 @@
   description: "Revolutionist propaganda, manufactured by the Syndicate."
   components:
   - type: Sprite
-    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster56_contraband
 
 - type: entity
@@ -596,7 +557,6 @@
   description: "Enlist with the Gorlex Marauders today! See the galaxy, kill corpos, get paid!"
   components:
     - type: Sprite
-      sprite: _Polonium/Structures/Wallmounts/posters.rsi
       state: poster60_contraband
 
 - type: entity
@@ -624,7 +584,6 @@
   description: "This poster depicts something you will never find."
   components:
     - type: Sprite
-      sprite: _Polonium/Structures/Wallmounts/posters.rsi
       state: poster63_contraband
 
 - type: entity
@@ -634,7 +593,6 @@
   description: "This poster warns you about an exomorph's acidic spit. Not that such exomorphs are real... Right?"
   components:
   - type: Sprite
-    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster64_contraband
 
 - type: entity
@@ -644,7 +602,6 @@
   description: "This poster warns you about an athletic exomorph capable of dragging away anyone who gets caught; so don't get caught!"
   components:
   - type: Sprite
-    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster65_contraband
 
 - type: entity
@@ -654,7 +611,6 @@
   description: "This poster warns you about the lethal bites exomorphs can have. Don't become an alien snack!"
   components:
   - type: Sprite
-    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster66_contraband
 
 # Legit
@@ -665,7 +621,6 @@
   description: "A poster glorifying the station's security force."
   components:
   - type: Sprite
-    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster1_legit
 
 - type: entity
@@ -684,7 +639,6 @@
   description: "A poster warning of the dangers of poor hygiene."
   components:
   - type: Sprite
-    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster3_legit
 
 - type: entity
@@ -694,7 +648,6 @@
   description: "A poster encouraging you to help fellow crewmembers."
   components:
   - type: Sprite
-    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster4_legit
 
 - type: entity
@@ -704,7 +657,6 @@
   description: "A poster glorifying the engineering team."
   components:
   - type: Sprite
-    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster5_legit
 
 - type: entity
@@ -714,7 +666,6 @@
   description: "A poster blessing this area."
   components:
   - type: Sprite
-    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster6_legit
 
 - type: entity
@@ -724,7 +675,6 @@
   description: "A poster depicting an atom."
   components:
   - type: Sprite
-    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster7_legit
 
 - type: entity
@@ -734,7 +684,6 @@
   description: "Arf arf. Yap."
   components:
   - type: Sprite
-    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster8_legit
 
 - type: entity
@@ -744,7 +693,6 @@
   description: "A poster instructing the viewer to obey authority."
   components:
   - type: Sprite
-    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster9_legit
 
 - type: entity
@@ -754,7 +702,6 @@
   description: "A poster instructing the viewer to walk instead of running."
   components:
   - type: Sprite
-    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster10_legit
 
 - type: entity
@@ -764,7 +711,6 @@
   description: "A poster instructing cyborgs to state their laws."
   components:
   - type: Sprite
-    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster11_legit
 
 - type: entity
@@ -774,7 +720,6 @@
   description: "Ian is love, Ian is life."
   components:
   - type: Sprite
-    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster12_legit
 
 - type: entity
@@ -784,7 +729,6 @@
   description: "A poster advertising the television show Space Cops."
   components:
   - type: Sprite
-    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster13_legit
 
 - type: entity
@@ -812,7 +756,6 @@
   description: "A poster instructing the viewer not to ask about things they aren't meant to know."
   components:
   - type: Sprite
-    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster16_legit
 
 - type: entity
@@ -822,7 +765,6 @@
   description: " A poster encouraging you to work for your future."
   components:
   - type: Sprite
-    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster17_legit
 
 - type: entity
@@ -841,7 +783,6 @@
   description: "A poster instructing the viewer to wear internals in the rare environments where there is no oxygen or the air has been rendered toxic."
   components:
   - type: Sprite
-    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster19_legit
 
 - type: entity
@@ -851,7 +792,6 @@
   description: "A poster instructing the viewer to wear eye protection when dealing with chemicals, smoke, or bright lights."
   components:
   - type: Sprite
-    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster20_legit
 
 - type: entity
@@ -861,7 +801,6 @@
   description: "A poster instructing the viewer to report suspicious activity to the security force."
   components:
   - type: Sprite
-    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster21_legit
 
 - type: entity
@@ -871,7 +810,6 @@
   description: "A poster encouraging the swift reporting of crime or seditious behavior to station security."
   components:
   - type: Sprite
-    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster22_legit
 
 - type: entity
@@ -881,7 +819,6 @@
   description: "A poster displaying an Ion Rifle."
   components:
   - type: Sprite
-    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster23_legit
 
 - type: entity
@@ -909,7 +846,6 @@
   description: "A reprint of a poster from 2505, commemorating the 50th Anniversary of Nanoposters Manufacturing, a subsidiary of Nanotrasen."
   components:
   - type: Sprite
-    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster26_legit
 
 - type: entity
@@ -937,7 +873,6 @@
   description: "Enlist in the Nanotrasen Deathsquadron reserves today!"
   components:
   - type: Sprite
-    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster29_legit
 
 - type: entity
@@ -956,7 +891,6 @@
   description: "A poster boasting about the superiority of 12 gauge shotgun shells."
   components:
   - type: Sprite
-    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster31_legit
 
 - type: entity
@@ -966,7 +900,6 @@
   description: "I told you to shake it, no stirring."
   components:
   - type: Sprite
-    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster32_legit
 
 - type: entity
@@ -976,7 +909,6 @@
   description: "The Owl would do his best to protect the station. Will you?"
   components:
   - type: Sprite
-    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster33_legit
 
 - type: entity
@@ -986,7 +918,6 @@
   description: "This poster reminds the crew that Eroticism and Pornography are banned on Nanotrasen stations."
   components:
   - type: Sprite
-    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster34_legit
 
 - type: entity
@@ -1014,7 +945,6 @@
   description: "Nanotrasen has issued posters, like this one, to all stations reminding them that rumours of a gas giant are false."
   components:
   - type: Sprite
-    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster37_legit
 
 - type: entity
@@ -1024,7 +954,6 @@
   description: A poster advertising a long delayed project, it still claims it to be 'just a week away...'
   components:
   - type: Sprite
-    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster38_legit
 
 - type: entity
@@ -1034,7 +963,6 @@
   description: "A poster reminding you that security is watching your every move."
   components:
   - type: Sprite
-    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster39_legit
 
 - type: entity
@@ -1179,7 +1107,6 @@
   description: "A poster advertising Helio Logistics and their adorable mascot. The slogan reads 'Come rain or shine, we deliver on time.'"
   components:
   - type: Sprite
-    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster55_legit
 
 - type: entity
@@ -1189,7 +1116,6 @@
   description: "Think three times before opening the airlock to hydroponics, a red threat might be hiding there."
   components:
   - type: Sprite
-    sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: poster56_legit
 
 #maps

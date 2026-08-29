@@ -11,8 +11,10 @@
   components:
   - type: Action
     useDelay: 0.5
-    icon:
-      sprite: Interface/Actions/actions_borg.rsi
-      state: state-laws
+  - type: Sprite
+    sprite: Interface/Actions/actions_borg.rsi
+    layers:
+    - state: state-laws
+      map: ["enum.ActionVisuals.Icon"]
   - type: InstantAction
     event: !type:ToggleMoodsScreenEvent

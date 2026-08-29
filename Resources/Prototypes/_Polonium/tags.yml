@@ -4,6 +4,12 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
+# Polonium: marks clumsy mobs (clown/monkey/kobold/decapoid) so the _Starfall toy-gun
+# self-execution whitelist can detect them (upstream moved clumsiness to status effects,
+# which whitelists can't check). Applied to those mobs' Tag components.
+- type: Tag
+  id: Clumsy
+
 - type: Tag
   id: BorSniperMagazine
 

@@ -13,7 +13,7 @@
       - !type:Oxygenate
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Human, Animal, Rat, Plant, Apid, Thaven ] #Macrocosm, add Apid
+          type: [ Human, Animal, Rat, Plant, Apid, Thaven, Arachnid ] # fork: Apid/Thaven (Macrocosm); upstream: Arachnid
       # Convert Oxygen into CO2.
       - !type:ModifyLungGas
         conditions:
@@ -333,7 +333,6 @@
           type: [ Thaven ]
           inverted: true
         emote: Laugh
-        showInChat: true
         probability: 0.1
       - !type:Emote
         minScale: 0.2
@@ -345,7 +344,6 @@
           type: [ Thaven ]
           inverted: true
         emote: Scream
-        showInChat: true
         probability: 0.01
       - !type:PopupMessage
         minScale: 0.5

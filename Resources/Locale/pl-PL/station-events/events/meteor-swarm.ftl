@@ -1,4 +1,4 @@
-﻿station-event-meteor-swarm-start-announcement = Meteors have been detected on collision course with the station.
+station-event-meteor-swarm-start-announcement = Meteors have been detected on collision course with the station.
 station-event-meteor-swarm-end-announcement = Rój meteorów minął. Proszę wrócić do stanowisk pracy.
 station-event-space-dust-start-announcement = Stacja przechodzi przez chmurę pyłu kosmicznego, należy spodziewać się drobnych uszkodzeń wyposażenia zewnętrznego.
 station-event-meteor-urist-start-announcement = Stacja zderzyła się z niezidentyfikowanym rojem szczątków. Prosimy zachować spokój i ich nie słuchać.
@@ -6,4 +6,3 @@ station-event-meteor-cow-start-announcement = Stacja zderzyła się z niezidenty
 station-event-meteor-clown-start-announcement = Stacja zderzyła się z niezidentyfikowanym rojem szczątków. HONK! Natychmiast ewakuować magazyn gazu rozweselającego.
 station-event-meteor-potato-start-announcement = Stacja zderzyła się z niezidentyfikowanym rojem szczątków. Wykryto wysokie stężenie skrobi.
 station-event-fun-swarm-start-announcement = Stacja zderzyła się z niezidentyfikowanym rojem szczątków. Prosimy odpowiednio panikować.
-station-event-bio-swarm-start-announcement = Wykryto meteoryty na kursie kolizyjnym ze stacją. Wykryto aktywność biologiczną.

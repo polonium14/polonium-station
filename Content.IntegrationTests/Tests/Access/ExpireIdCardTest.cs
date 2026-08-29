@@ -46,7 +46,6 @@ namespace Content.IntegrationTests.Tests.Access
             AccessComponent accessComp = default!;
             var expirationTimeInSeconds = 2.0f;
             var expireTime = TimeSpan.FromSeconds(expirationTimeInSeconds);
-            TimeSpan expectedExpireTime = default;
 
             await Pair.Server.WaitPost(() =>
             {
@@ -67,17 +66,14 @@ namespace Content.IntegrationTests.Tests.Access
                 Assert.That(expireComp.ExpireMessage, Is.EqualTo(new LocId("genpop-prisoner-id-expire")));
             }
 
-            // Set the expire time to the future (must run on server thread)
-            await Pair.Server.WaitPost(() =>
-            {
-                expectedExpireTime = _gameTiming.CurTime + expireTime;
-                _sharedIdCardSystem.SetExpireTime(ent, expectedExpireTime);
-            });
+            // Set the expire time to the future
+            var absoluteExpireTime = _gameTiming.CurTime + expireTime;
+            _sharedIdCardSystem.SetExpireTime(ent, absoluteExpireTime);
             using (Assert.EnterMultipleScope())
             {
                 Assert.That(expireComp.Expired, Is.False);
                 Assert.That(expireComp.Permanent, Is.False);
-                Assert.That(expireComp.ExpireTime, Is.EqualTo(expectedExpireTime));
+                Assert.That(expireComp.ExpireTime, Is.EqualTo(absoluteExpireTime));
                 Assert.That(accessComp.Tags, Is.EqualTo(new HashSet<ProtoId<AccessLevelPrototype>> { GenpopEnter }));
             }
 

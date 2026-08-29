@@ -75,7 +75,6 @@ public sealed partial class HealthAnalyzerWindow : FancyWindow
 
     private EntityUid _spriteViewEntity;
 
-    [ValidatePrototypeId<EntityPrototype>]
     private readonly EntProtoId _bodyView = "AlertSpriteView";
 
     private readonly Dictionary<TargetBodyPart, TextureButton> _bodyPartControls;
