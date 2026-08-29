@@ -162,10 +162,9 @@ namespace Content.Server.Doors.Systems
             }
 
             var xform = Transform(uid);
-            // Funky change
+            // Space maps have no MapAtmosphereComponent, so checking for it disabled every firelock off-planet.
             if (!HasComp<GridAtmosphereComponent>(xform.ParentUid) ||
-                !HasComp<MapGridComponent>(xform.ParentUid) ||
-                !HasComp<MapAtmosphereComponent>(xform.MapUid))
+                !HasComp<MapGridComponent>(xform.ParentUid))
             {
                 return (false, false);
             }
