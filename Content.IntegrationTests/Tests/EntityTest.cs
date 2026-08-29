@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using System.Text;
@@ -47,9 +47,10 @@ namespace Content.IntegrationTests.Tests
             var prototypeMan = server.ResolveDependency<IPrototypeManager>();
             var mapSystem = entityMan.System<SharedMapSystem>();
 
+            var protoIds = new List<string>();
             await server.WaitPost(() =>
             {
-                var protoIds = prototypeMan
+                protoIds = prototypeMan
                     .EnumeratePrototypes<EntityPrototype>()
                     .Where(p => !p.Abstract)
                     .Where(p => !pair.IsTestPrototype(p))
@@ -57,41 +58,54 @@ namespace Content.IntegrationTests.Tests
                     .Where(p => !p.Components.ContainsKey("RoomFill")) // This comp can delete all entities, and spawn others
                     .Select(p => p.ID)
                     .ToList();
-
-                foreach (var protoId in protoIds)
-                {
-                    mapSystem.CreateMap(out var mapId);
-                    var grid = mapSystem.CreateGridEntity(mapId);
-                    // TODO: Fix this better in engine.
-                    mapSystem.SetTile(grid.Owner, grid.Comp, Vector2i.Zero, new Tile(1));
-                    var coord = new EntityCoordinates(grid.Owner, 0, 0);
-                    entityMan.SpawnEntity(protoId, coord);
-                }
             });
 
-            await server.WaitRunTicks(450); // 15 seconds, enough to trigger most update loops
+            // Polonium: spawn in batches instead of holding every prototype (each on its own map) alive
+            // at once. The all-at-once version peaks at ~12+ GB of live heap, which scales with content
+            // and no longer fits a 16 GB CI runner. Every entity still lives on its own map and still
+            // gets the same 450 ticks of update loops; entities in different batches never interacted
+            // anyway, since isolating them per-map is the whole point of this test.
+            const int batchSize = 1500;
 
-            await server.WaitPost(() =>
+            foreach (var batch in protoIds.Chunk(batchSize))
             {
-                static IEnumerable<(EntityUid, TComp)> Query<TComp>(IEntityManager entityMan)
-                    where TComp : Component
+                await server.WaitPost(() =>
                 {
-                    var query = entityMan.AllEntityQueryEnumerator<TComp>();
-                    while (query.MoveNext(out var uid, out var meta))
+                    foreach (var protoId in batch)
                     {
-                        yield return (uid, meta);
+                        mapSystem.CreateMap(out var mapId);
+                        var grid = mapSystem.CreateGridEntity(mapId);
+                        // TODO: Fix this better in engine.
+                        mapSystem.SetTile(grid.Owner, grid.Comp, Vector2i.Zero, new Tile(1));
+                        var coord = new EntityCoordinates(grid.Owner, 0, 0);
+                        entityMan.SpawnEntity(protoId, coord);
                     }
-                }
+                });
 
-                var entityMetas = Query<MetaDataComponent>(entityMan).ToList();
-                foreach (var (uid, meta) in entityMetas)
+                await server.WaitRunTicks(450); // 15 seconds, enough to trigger most update loops
+
+                await server.WaitPost(() =>
                 {
-                    if (!meta.EntityDeleted)
-                        entityMan.DeleteEntity(uid);
-                }
+                    static IEnumerable<(EntityUid, TComp)> Query<TComp>(IEntityManager entityMan)
+                        where TComp : Component
+                    {
+                        var query = entityMan.AllEntityQueryEnumerator<TComp>();
+                        while (query.MoveNext(out var uid, out var meta))
+                        {
+                            yield return (uid, meta);
+                        }
+                    }
 
-                Assert.That(entityMan.EntityCount, Is.Zero);
-            });
+                    var entityMetas = Query<MetaDataComponent>(entityMan).ToList();
+                    foreach (var (uid, meta) in entityMetas)
+                    {
+                        if (!meta.EntityDeleted)
+                            entityMan.DeleteEntity(uid);
+                    }
+
+                    Assert.That(entityMan.EntityCount, Is.Zero);
+                });
+            }
         }
 
         [Test]
@@ -172,47 +186,64 @@ namespace Content.IntegrationTests.Tests
                 .Select(p => p.ID)
                 .ToList();
 
-            await server.WaitPost(() =>
+            // Polonium: spawn in batches instead of holding every prototype (each with its own map
+            // and grid, mirrored on the client with PVS off) alive at once. The all-at-once version
+            // scales with content and OOMs a 16 GB CI runner; batching bounds the live set while
+            // still dirtying and syncing every networked component of every prototype.
+            const int batchSize = 1000;
+            var clientEntMan = client.ResolveDependency<IEntityManager>();
+            var maxClientEntities = 0;
+
+            foreach (var batch in protoIds.Chunk(batchSize))
             {
-                foreach (var protoId in protoIds)
+                await server.WaitPost(() =>
                 {
-                    mapSys.CreateMap(out var mapId);
-                    var grid = mapSys.CreateGridEntity(mapId);
-                    var ent = sEntMan.SpawnEntity(protoId, new EntityCoordinates(grid.Owner, 0.5f, 0.5f));
-                    foreach (var (_, component) in sEntMan.GetNetComponents(ent))
+                    foreach (var protoId in batch)
                     {
-                        sEntMan.Dirty(ent, component);
+                        mapSys.CreateMap(out var mapId);
+                        var grid = mapSys.CreateGridEntity(mapId);
+                        var ent = sEntMan.SpawnEntity(protoId, new EntityCoordinates(grid.Owner, 0.5f, 0.5f));
+                        foreach (var (_, component) in sEntMan.GetNetComponents(ent))
+                        {
+                            sEntMan.Dirty(ent, component);
+                        }
                     }
-                }
-            });
+                });
 
-            await pair.RunUntilSynced();
+                await pair.RunUntilSynced();
 
-            // Make sure the client actually received the entities
-            // 500 is completely arbitrary. Note that the client & sever entity counts aren't expected to match.
-            Assert.That(client.ResolveDependency<IEntityManager>().EntityCount, Is.GreaterThan(500));
+                // Note that the client & sever entity counts aren't expected to match.
+                maxClientEntities = Math.Max(maxClientEntities, clientEntMan.EntityCount);
 
-            await server.WaitPost(() =>
-            {
-                static IEnumerable<(EntityUid, TComp)> Query<TComp>(IEntityManager entityMan)
-                    where TComp : Component
+                await server.WaitPost(() =>
                 {
-                    var query = entityMan.AllEntityQueryEnumerator<TComp>();
-                    while (query.MoveNext(out var uid, out var meta))
+                    static IEnumerable<(EntityUid, TComp)> Query<TComp>(IEntityManager entityMan)
+                        where TComp : Component
                     {
-                        yield return (uid, meta);
+                        var query = entityMan.AllEntityQueryEnumerator<TComp>();
+                        while (query.MoveNext(out var uid, out var meta))
+                        {
+                            yield return (uid, meta);
+                        }
                     }
-                }
 
-                var entityMetas = Query<MetaDataComponent>(sEntMan).ToList();
-                foreach (var (uid, meta) in entityMetas)
-                {
-                    if (!meta.EntityDeleted)
-                        sEntMan.DeleteEntity(uid);
-                }
+                    var entityMetas = Query<MetaDataComponent>(sEntMan).ToList();
+                    foreach (var (uid, meta) in entityMetas)
+                    {
+                        if (!meta.EntityDeleted)
+                            sEntMan.DeleteEntity(uid);
+                    }
 
-                Assert.That(sEntMan.EntityCount, Is.Zero);
-            });
+                    Assert.That(sEntMan.EntityCount, Is.Zero);
+                });
+
+                // Let the deletions replicate so client-side memory stays bounded too.
+                await pair.RunUntilSynced();
+            }
+
+            // Make sure the client actually received the entities.
+            // 500 is completely arbitrary (inherited from the unbatched upstream version).
+            Assert.That(maxClientEntities, Is.GreaterThan(500));
         }
 
         /// <summary>

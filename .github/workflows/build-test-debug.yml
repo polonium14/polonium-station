@@ -73,6 +73,13 @@ jobs:
       shell: pwsh
       run: |
         $env:DOTNET_gcServer=1
+        # Polonium: cap the managed heap at 14 GB (hex bytes). The suite peaks at ~11.7 GB after
+        # batching the EntityTest spawn-everything cases (see EntityTest.cs); without a cap, memory
+        # creep from new content wedges the 16 GB runner in silent 30+ minute GC thrash. With the
+        # cap, exceeding the budget is a fast, attributed OutOfMemoryException test failure instead.
+        # 14 GB managed + ~1 GB native sits close to the runner's physical limit - if runs start
+        # slowing down near the cap, lower it before trusting durations again.
+        $env:DOTNET_GCHeapHardLimit="0x380000000"
         dotnet test --no-build --configuration DebugOpt Content.IntegrationTests/Content.IntegrationTests.csproj -- NUnit.ConsoleOut=0 NUnit.MapWarningTo=Failed NUnit.TestOutputXml="logs" NUnit.WorkDirectory="$(pwd)/test_results"
 
     - name: Archive NUnit3 test results.
