@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Content.Server.Administration.Logs;
 using Content.Shared._Polonium.Photography;
 using Content.Shared.Database;
@@ -57,6 +58,9 @@ public sealed partial class PoloniumPhotographySystem : SharedPoloniumPhotograph
     private int _nextPhotoId = 1;
 
     public int PendingCount => _pending.Count;
+
+    /// <summary>The oldest outstanding capture token, or null if none is open.</summary>
+    public int? PendingCaptureId => _pending.Count > 0 ? _pending.Keys.First() : null;
 
     public int StoredCount => _photos.Count;
 
