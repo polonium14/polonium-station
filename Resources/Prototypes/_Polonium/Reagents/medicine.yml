@@ -1,0 +1,20 @@
+- type: reagent
+  id: Nanobots
+  name: reagent-name-nanobots
+  group: Medicine
+  desc: reagent-desc-nanobots
+  physicalDesc: reagent-physical-desc-thick-and-grainy
+  flavor: medicine
+  color: "#add8e6"
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:EvenHealthChange
+        conditions:
+        - !type:MobStateCondition # no healing in crit
+          mobstate: Alive
+        damage:
+          Burn: -0.1
+          Toxin: -0.1
+          Airloss: -0.1
+          Brute: -0.1

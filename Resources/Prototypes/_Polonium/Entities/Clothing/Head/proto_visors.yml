@@ -61,6 +61,23 @@
     keysIn:
     - ProtoVisorEquipped
     targetUser: true
+  - type: ToggleComponentsOnTrigger
+    keysIn:
+    - ProtoVisorEquipped
+    targetUser: false
+    Components:
+    - type: RepeatingTrigger
+      delay: 60
+      nextTrigger: 1
+      keyOut: ProtoVisorInject
+    - type: AddSolutionOnTrigger
+      targetUser: true
+      keysIn: ProtoVisorInject
+      solution: BloodStream
+      addedSolution:
+        reagents:
+        - ReagentId: Nanobots
+          Quantity: 0.5
 
 - type: entity
   parent: ClothingHeadProtoVisorBase
