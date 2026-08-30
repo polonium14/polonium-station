@@ -163501,4 +163501,28 @@ entities:
     - type: Transform
       parent: 2
       pos: -32.45012,52.5351
+- proto: CrashCartFilled
+  entities:
+  - uid: 24491
+    components:
+    - type: Transform
+      parent: 2
+      pos: 11.5,34.5
+  - uid: 24492
+    components:
+    - type: Transform
+      parent: 2
+      pos: 11.5,33.5
+- proto: CrashCart
+  entities:
+  - uid: 24493
+    components:
+    - type: Transform
+      parent: 2
+      pos: 17.5,34.5
+  - uid: 24494
+    components:
+    - type: Transform
+      parent: 2
+      pos: 17.5,33.5
 ...
