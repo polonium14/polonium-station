@@ -1,20 +1,4 @@
 ﻿Entries:
-- author: Princess-Cheeseballs
-  changes:
-  - message: Friendly visitor shuttles will no longer spawn.
-    type: Remove
-  - message: Syndicate Evac pod will no longer spawn.
-    type: Remove
-  id: 9471
-  time: '2026-01-27T23:03:05.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/41915
-- author: Velken
-  changes:
-  - message: Fixed some explosions ignoring indestructible tiles.
-    type: Fix
-  id: 9472
-  time: '2026-01-28T00:37:53.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42682
 - author: ShepardToTheStars
   changes:
   - message: The health analyzer and the MedTek PDA app now reactivate once you get
@@ -4031,3 +4015,19 @@
   id: 9970
   time: '2026-08-30T13:36:03.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/950
+- author: haze
+  changes:
+  - message: Poprawiono USR
+    type: Tweak
+  id: 9971
+  time: '2026-08-30T15:09:52.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/953
+- author: haze
+  changes:
+  - message: Dodano crash carty!
+    type: Add
+  - message: "Przywr\xF3cono crash carty na Gax"
+    type: Tweak
+  id: 9972
+  time: '2026-08-30T15:06:17.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/954
