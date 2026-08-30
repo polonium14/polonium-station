@@ -16,7 +16,7 @@ namespace Content.Tests.Client
         [TestCase('7', "7")]
         [TestCase(' ', "blank")]
         [TestCase('~', null)]
-        public void GetStateFromChar(char chr, string? expected)
+        public void GetStateFromChar(char chr, string expected)
         {
             Assert.That(TextScreenSystem.GetStateFromChar(chr), Is.EqualTo(expected));
         }
