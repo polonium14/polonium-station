@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: ScholarNZL
-  changes:
-  - message: Fixed an exploit where deconstructing a meat spike with the correct timing
-      could delete someone being hooked onto it.
-    type: Fix
-  id: 9468
-  time: '2026-01-27T04:24:58.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42644
 - author: B_Kirill
   changes:
   - message: Fireplaces can now ignite gases.
@@ -4034,3 +4026,11 @@
   id: 9967
   time: '2026-08-30T12:05:50.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/948
+- author: haze
+  changes:
+  - message: "Odczyty gazu cryopod\xF3w wahaj\u0105 si\u0119 podczas sch\u0142adzania\
+      \ cia\u0142a"
+    type: Fix
+  id: 9968
+  time: '2026-08-30T13:17:00.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/949
