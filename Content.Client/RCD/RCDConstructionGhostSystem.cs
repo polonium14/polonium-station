@@ -100,6 +100,11 @@ public sealed partial class RCDConstructionGhostSystem : EntitySystem
 
         var heldEntity = _handsSystem.GetActiveItem(player.Value);
 
+        // Don't open the placement overlay for client-side RCDs.
+        // This may happen when predictively spawning one in your hands (e.g. borg modules).
+        if (heldEntity != null && IsClientSide(heldEntity.Value))
+            return;
+
         if (!TryComp<RCDComponent>(heldEntity, out var rcd))
         {
             // If the player was holding an RCD, but is no longer, cancel placement
