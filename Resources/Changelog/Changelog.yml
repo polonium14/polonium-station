@@ -1,21 +1,4 @@
 ﻿Entries:
-- author: B_Kirill
-  changes:
-  - message: Fireplaces can now ignite gases.
-    type: Tweak
-  - message: Entities buckled to the bonfire with stake no longer suffocate in the
-      walls above the bonfire.
-    type: Fix
-  id: 9469
-  time: '2026-01-27T13:35:54.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42675
-- author: ScholarNZL
-  changes:
-  - message: Removed a duplicate disposal bin entity in Kitchen.
-    type: Tweak
-  id: 9470
-  time: '2026-01-27T21:01:59.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42670
 - author: Princess-Cheeseballs
   changes:
   - message: Friendly visitor shuttles will no longer spawn.
@@ -4034,3 +4017,17 @@
   id: 9968
   time: '2026-08-30T13:17:00.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/949
+- author: haze
+  changes:
+  - message: "Zdj\u0119cia wchodz\u0105 do folder\xF3w!"
+    type: Tweak
+  id: 9969
+  time: '2026-08-30T13:36:17.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/951
+- author: haze
+  changes:
+  - message: Naprawiono kompaktowy UI!
+    type: Fix
+  id: 9970
+  time: '2026-08-30T13:36:03.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/950
