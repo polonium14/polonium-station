@@ -162,8 +162,8 @@
     - id: ClothingHeadsetAltEngineering
     - id: DoorRemoteEngineering
     - id: BoxCECircuitboards
-    - id: RCD
-    - id: RCDAmmo
+    - id: RCDRecharging
+    - id: RPDRecharging
     - id: RubberStampCE
     - id: MetalFoamGrenade
     - id: PlushieLizardJobChiefengineer
