@@ -418,6 +418,18 @@
     rechargeDuration: 10
 
 - type: entity
+  id: RPDRecharging
+  parent: RPD
+  name: experimental RPD
+  description: A rapid pipe dispenser fitted with an internal fabricator, slowly producing its own compressed matter.
+  suffix: AutoRecharge
+  components:
+  - type: LimitedCharges
+    maxCharges: 300
+  - type: AutoRecharge
+    rechargeDuration: 10
+
+- type: entity
   id: RCDExperimental
   parent: RCD
   suffix: Admeme
