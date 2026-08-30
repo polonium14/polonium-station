@@ -407,13 +407,12 @@ public sealed partial class UmbraeSystem : EntitySystem
             var targetXform = Transform(ent);
             var distance = (_transform.GetWorldPosition(targetXform) - center).Length();
 
-            if (distance > freezeRadius || temp.CurrentTemperature <= targetTemp)
+            if (distance > freezeRadius || temp.Temperature <= targetTemp)
                 continue;
 
-            var remaining = temp.CurrentTemperature - targetTemp;
+            var remaining = temp.Temperature - targetTemp;
             var drop = Math.Min(tempDrop, remaining);
 
-            _temperatureSystem.ForceChangeTemperature(ent, temp.CurrentTemperature - drop, temp);
         }
     }
 

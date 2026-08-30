@@ -459,8 +459,7 @@ public sealed partial class VampireSystem : EntitySystem
             if (action != null)
                 comp.ActionEntities[actionId] = action.Value;
         }
-        RemComp<HungerComponent>(uid);
-        RemComp<ThirstComponent>(uid);
+        RemComp<SatiationComponent>(uid);
         RemComp<RespiratorComponent>(uid);
 
         _alerts.ClearAlertCategory(uid, "Hunger");
