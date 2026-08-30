@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: Princess-Cheeseballs
-  changes:
-  - message: Boxing gloves in the uplink are now the rigged variants instead of the
-      normal variants.
-    type: Fix
-  id: 9467
-  time: '2026-01-26T20:25:53.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42662
 - author: ScholarNZL
   changes:
   - message: Fixed an exploit where deconstructing a meat spike with the correct timing
@@ -4035,3 +4027,10 @@
   id: 9966
   time: '2026-08-30T11:16:05.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/946
+- author: haze
+  changes:
+  - message: Naprawiono polskie znaki diakretyczne na ekranach
+    type: Fix
+  id: 9967
+  time: '2026-08-30T12:05:50.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/948
