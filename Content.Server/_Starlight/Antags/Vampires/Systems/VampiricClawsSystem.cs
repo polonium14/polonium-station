@@ -16,7 +16,7 @@ namespace Content.Server._Starlight.Antags.Vampires.Systems;
 public sealed partial class VampiricClawsSystem : EntitySystem
 {
     [Dependency] private SharedPopupSystem _popup = default!;
-    [Dependency] private SharedBloodstreamSystem _bloodstream = default!;
+    [Dependency] private BloodstreamSystem _bloodstream = default!;
     [Dependency] private VampireSystem _vampire = default!;
 
     public override void Initialize()

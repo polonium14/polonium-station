@@ -51,7 +51,7 @@ public sealed partial class VampireSystem : EntitySystem
     #endregion
     [Dependency] private ActionsSystem _actions = default!;
     [Dependency] private AlertsSystem _alerts = default!;
-    [Dependency] private SharedBloodstreamSystem _blood = default!;
+    [Dependency] private BloodstreamSystem _blood = default!;
     [Dependency] private IPrototypeManager _proto = default!;
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private SharedDoAfterSystem _doAfter = default!;
