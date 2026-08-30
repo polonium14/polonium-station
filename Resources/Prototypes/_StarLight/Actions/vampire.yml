@@ -10,12 +10,14 @@
       useDelay: 2 # Toggle
       itemIconStyle: NoItem
       priority: 1
-      icon:
-        sprite: _Starlight/Vampire/actions_vampire.rsi
-        state: fangs_retracted
-      iconOn:
-        sprite: _Starlight/Vampire/actions_vampire.rsi
-        state: fangs_extended
+    - type: Sprite
+      sprite: _Starlight/Vampire/actions_vampire.rsi
+      layers:
+      - state: fangs_retracted
+        map: ["enum.ActionVisuals.Icon"]
+      - state: fangs_extended
+        map: ["enum.ActionVisuals.IconToggled"]
+        visible: false
     - type: InstantAction
       event: !type:VampireToggleFangsActionEvent {}
     - type: VampireAction
@@ -32,9 +34,11 @@
       useDelay: 60
       itemIconStyle: NoItem
       priority: 2
-      icon:
-        sprite: _Starlight/Vampire/actions_vampire.rsi
-        state: glare
+    - type: Sprite
+      sprite: _Starlight/Vampire/actions_vampire.rsi
+      layers:
+      - state: glare
+        map: ["enum.ActionVisuals.Icon"]
     - type: InstantAction
       event: !type:VampireGlareActionEvent
         dotTickCount: 10
@@ -53,9 +57,11 @@
       useDelay: 120
       itemIconStyle: NoItem
       priority: 25
-      icon:
-        sprite: _Starlight/Vampire/actions_vampire.rsi
-        state: sleep_icon
+    - type: Sprite
+      sprite: _Starlight/Vampire/actions_vampire.rsi
+      layers:
+      - state: sleep_icon
+        map: ["enum.ActionVisuals.Icon"]
     - type: TargetAction
       range: 2
       checkCanAccess: false
@@ -82,9 +88,11 @@
       priority: 3
       checkCanInteract: false
       checkConsciousness: false
-      icon:
-        sprite: _Starlight/Vampire/actions_vampire.rsi
-        state: rejuvinate
+    - type: Sprite
+      sprite: _Starlight/Vampire/actions_vampire.rsi
+      layers:
+      - state: rejuvinate
+        map: ["enum.ActionVisuals.Icon"]
     - type: InstantAction
       event: !type:VampireRejuvenateIActionEvent {}
     - type: VampireAction
@@ -103,9 +111,11 @@
       priority: 4
       checkCanInteract: false
       checkConsciousness: false
-      icon:
-        sprite: _Starlight/Vampire/actions_vampire.rsi
-        state: rejuvinate
+    - type: Sprite
+      sprite: _Starlight/Vampire/actions_vampire.rsi
+      layers:
+      - state: rejuvinate
+        map: ["enum.ActionVisuals.Icon"]
     - type: InstantAction
       event: !type:VampireRejuvenateIIActionEvent
         reagentPurgeAmount: 10
@@ -133,9 +143,11 @@
       useDelay: 2 # Toggle
       itemIconStyle: NoItem
       priority: 5
-      icon:
-        sprite: _Starlight/Vampire/actions_vampire.rsi
-        state: select_class
+    - type: Sprite
+      sprite: _Starlight/Vampire/actions_vampire.rsi
+      layers:
+      - state: select_class
+        map: ["enum.ActionVisuals.Icon"]
     - type: InstantAction
       event: !type:VampireClassSelectActionEvent {}
     - type: VampireAction
@@ -154,9 +166,11 @@
       useDelay: 30
       itemIconStyle: NoItem
       priority: 10
-      icon:
-        sprite: _Starlight/Vampire/Haemomancer.rsi
-        state: claws
+    - type: Sprite
+      sprite: _Starlight/Vampire/Haemomancer.rsi
+      layers:
+      - state: claws
+        map: ["enum.ActionVisuals.Icon"]
     - type: InstantAction
       event: !type:VampireHemomancerClawsActionEvent {}
     - type: VampireAction
@@ -174,9 +188,11 @@
       useDelay: 30
       itemIconStyle: NoItem
       priority: 13
-      icon:
-        sprite: _Starlight/Vampire/Haemomancer.rsi
-        state: blood_pool
+    - type: Sprite
+      sprite: _Starlight/Vampire/Haemomancer.rsi
+      layers:
+      - state: blood_pool
+        map: ["enum.ActionVisuals.Icon"]
     - type: InstantAction
       event: !type:VampireSanguinePoolActionEvent {}
     - type: VampireAction
@@ -194,9 +210,11 @@
       useDelay: 30
       itemIconStyle: NoItem
       priority: 11
-      icon:
-        sprite: _Starlight/Vampire/Haemomancer.rsi
-        state: blood_tendrils
+    - type: Sprite
+      sprite: _Starlight/Vampire/Haemomancer.rsi
+      layers:
+      - state: blood_tendrils
+        map: ["enum.ActionVisuals.Icon"]
     - type: TargetAction
       checkCanAccess: false
       range: 7
@@ -217,9 +235,11 @@
       useDelay: 60
       itemIconStyle: NoItem
       priority: 12
-      icon:
-        sprite: _Starlight/Vampire/Haemomancer.rsi
-        state: blood_barrier
+    - type: Sprite
+      sprite: _Starlight/Vampire/Haemomancer.rsi
+      layers:
+      - state: blood_barrier
+        map: ["enum.ActionVisuals.Icon"]
     - type: TargetAction
       checkCanAccess: false
       range: 6
@@ -241,9 +261,11 @@
       useDelay: 40
       itemIconStyle: NoItem
       priority: 14
-      icon:
-        sprite: _Starlight/Vampire/Haemomancer.rsi
-        state: predator_sense
+    - type: Sprite
+      sprite: _Starlight/Vampire/Haemomancer.rsi
+      layers:
+      - state: predator_sense
+        map: ["enum.ActionVisuals.Icon"]
     - type: InstantAction
       event: !type:VampireLocateMindActionEvent {}
     - type: VampireAction
@@ -261,9 +283,11 @@
       useDelay: 90
       itemIconStyle: NoItem
       priority: 13
-      icon:
-        sprite: _Starlight/Vampire/Haemomancer.rsi
-        state: blood_spikes
+    - type: Sprite
+      sprite: _Starlight/Vampire/Haemomancer.rsi
+      layers:
+      - state: blood_spikes
+        map: ["enum.ActionVisuals.Icon"]
     - type: InstantAction
       event: !type:VampireBloodEruptionActionEvent
         range: 10
@@ -285,9 +309,11 @@
       useDelay: 1 # Toggle
       itemIconStyle: NoItem
       priority: 14
-      icon:
-        sprite: _Starlight/Vampire/Haemomancer.rsi
-        state: blood_rite
+    - type: Sprite
+      sprite: _Starlight/Vampire/Haemomancer.rsi
+      layers:
+      - state: blood_rite
+        map: ["enum.ActionVisuals.Icon"]
     - type: InstantAction
       event: !type:VampireBloodBringersRiteActionEvent
         range: 4
@@ -317,9 +343,11 @@
       useDelay: 2 # Toggle
       itemIconStyle: NoItem
       priority: 15
-      icon:
-        sprite: _Starlight/Vampire/Umbrae.rsi
-        state: cloak_of_darkness
+    - type: Sprite
+      sprite: _Starlight/Vampire/Umbrae.rsi
+      layers:
+      - state: cloak_of_darkness
+        map: ["enum.ActionVisuals.Icon"]
     - type: InstantAction
       event: !type:VampireCloakOfDarknessActionEvent {}
     - type: VampireAction
@@ -337,9 +365,11 @@
       useDelay: 25
       itemIconStyle: NoItem
       priority: 16
-      icon:
-        sprite: _Starlight/Vampire/Umbrae.rsi
-        state: shadow_snare
+    - type: Sprite
+      sprite: _Starlight/Vampire/Umbrae.rsi
+      layers:
+      - state: shadow_snare
+        map: ["enum.ActionVisuals.Icon"]
     - type: TargetAction
       checkCanAccess: false
       range: 15
@@ -360,9 +390,11 @@
       useDelay: 60 # 1min
       itemIconStyle: NoItem
       priority: 20
-      icon:
-        sprite: _Starlight/Vampire/Umbrae.rsi
-        state: shadow_anchor
+    - type: Sprite
+      sprite: _Starlight/Vampire/Umbrae.rsi
+      layers:
+      - state: shadow_anchor
+        map: ["enum.ActionVisuals.Icon"]
     - type: InstantAction
       event: !type:VampireShadowAnchorActionEvent {}
     - type: VampireAction
@@ -380,9 +412,11 @@
       useDelay: 30
       itemIconStyle: NoItem
       priority: 21
-      icon:
-        sprite: _Starlight/Vampire/Umbrae.rsi
-        state: shadow_boxing
+    - type: Sprite
+      sprite: _Starlight/Vampire/Umbrae.rsi
+      layers:
+      - state: shadow_boxing
+        map: ["enum.ActionVisuals.Icon"]
     - type: TargetAction
       interactOnMiss: false
       range: 2
@@ -414,9 +448,11 @@
       useDelay: 40
       itemIconStyle: NoItem
       priority: 17
-      icon:
-        sprite: _Starlight/Vampire/Umbrae.rsi
-        state: dark_passage
+    - type: Sprite
+      sprite: _Starlight/Vampire/Umbrae.rsi
+      layers:
+      - state: dark_passage
+        map: ["enum.ActionVisuals.Icon"]
     - type: TargetAction
       range: 15
       repeat: false
@@ -438,9 +474,11 @@
       useDelay: 20
       itemIconStyle: NoItem
       priority: 18
-      icon:
-        sprite: _Starlight/Vampire/Umbrae.rsi
-        state: extinguish
+    - type: Sprite
+      sprite: _Starlight/Vampire/Umbrae.rsi
+      layers:
+      - state: extinguish
+        map: ["enum.ActionVisuals.Icon"]
     - type: InstantAction
       event: !type:VampireExtinguishActionEvent {}
     - type: VampireAction
@@ -458,9 +496,11 @@
       useDelay: 2 # Toggle
       itemIconStyle: NoItem
       priority: 19
-      icon:
-        sprite: _Starlight/Vampire/Umbrae.rsi
-        state: eternal_darkness
+    - type: Sprite
+      sprite: _Starlight/Vampire/Umbrae.rsi
+      layers:
+      - state: eternal_darkness
+        map: ["enum.ActionVisuals.Icon"]
     - type: InstantAction
       event: !type:VampireEternalDarknessActionEvent
         maxTicks: 360
@@ -487,9 +527,11 @@
       useDelay: 1 # Jus no CD
       itemIconStyle: NoItem
       priority: 25
-      icon:
-        sprite: _Starlight/Vampire/Dantalion.rsi
-        state: enthrall
+    - type: Sprite
+      sprite: _Starlight/Vampire/Dantalion.rsi
+      layers:
+      - state: enthrall
+        map: ["enum.ActionVisuals.Icon"]
     - type: TargetAction
       range: 2
       checkCanAccess: false
@@ -515,9 +557,11 @@
       useDelay: 30
       itemIconStyle: NoItem
       priority: 26
-      icon:
-        sprite: _Starlight/Vampire/Dantalion.rsi
-        state: pacify
+    - type: Sprite
+      sprite: _Starlight/Vampire/Dantalion.rsi
+      layers:
+      - state: pacify
+        map: ["enum.ActionVisuals.Icon"]
     - type: TargetAction
       range: 7
       checkCanAccess: false
@@ -544,9 +588,11 @@
       useDelay: 30
       itemIconStyle: NoItem
       priority: 27
-      icon:
-        sprite: _Starlight/Vampire/Dantalion.rsi
-        state: subspace_swap
+    - type: Sprite
+      sprite: _Starlight/Vampire/Dantalion.rsi
+      layers:
+      - state: subspace_swap
+        map: ["enum.ActionVisuals.Icon"]
     - type: TargetAction
       range: 7
       checkCanAccess: false
@@ -582,9 +628,11 @@
       useDelay: 40
       itemIconStyle: NoItem
       priority: 28
-      icon:
-        sprite: _Starlight/Vampire/Dantalion.rsi
-        state: decoy
+    - type: Sprite
+      sprite: _Starlight/Vampire/Dantalion.rsi
+      layers:
+      - state: decoy
+        map: ["enum.ActionVisuals.Icon"]
     - type: InstantAction
       event: !type:VampireDecoyActionEvent
         decoyDuration: 6
@@ -604,9 +652,11 @@
       useDelay: 100
       itemIconStyle: NoItem
       priority: 29
-      icon:
-        sprite: _Starlight/Vampire/Dantalion.rsi
-        state: thralls_up
+    - type: Sprite
+      sprite: _Starlight/Vampire/Dantalion.rsi
+      layers:
+      - state: thralls_up
+        map: ["enum.ActionVisuals.Icon"]
     - type: InstantAction
       event: !type:VampireRallyThrallsActionEvent
     - type: VampireAction
@@ -624,9 +674,11 @@
       useDelay: 2 # Toggle
       itemIconStyle: NoItem
       priority: 30
-      icon:
-        sprite: _Starlight/Vampire/Dantalion.rsi
-        state: blood_bond
+    - type: Sprite
+      sprite: _Starlight/Vampire/Dantalion.rsi
+      layers:
+      - state: blood_bond
+        map: ["enum.ActionVisuals.Icon"]
     - type: InstantAction
       event: !type:VampireBloodBondActionEvent
         range: 3
@@ -648,9 +700,11 @@
       useDelay: 180 # 3min
       itemIconStyle: NoItem
       priority: 31
-      icon:
-        sprite: _Starlight/Vampire/Dantalion.rsi
-        state: hysteria
+    - type: Sprite
+      sprite: _Starlight/Vampire/Dantalion.rsi
+      layers:
+      - state: hysteria
+        map: ["enum.ActionVisuals.Icon"]
     - type: InstantAction
       event: !type:VampireMassHysteriaActionEvent
         range: 8
@@ -681,9 +735,11 @@
       useDelay: 40
       itemIconStyle: NoItem
       priority: 40
-      icon:
-        sprite: _Starlight/Vampire/Gargantua.rsi
-        state: blood_swell
+    - type: Sprite
+      sprite: _Starlight/Vampire/Gargantua.rsi
+      layers:
+      - state: blood_swell
+        map: ["enum.ActionVisuals.Icon"]
     - type: InstantAction
       event: !type:VampireBloodSwellActionEvent
         duration: 30
@@ -715,9 +771,11 @@
       useDelay: 30
       itemIconStyle: NoItem
       priority: 41
-      icon:
-        sprite: _Starlight/Vampire/Gargantua.rsi
-        state: blood_rush
+    - type: Sprite
+      sprite: _Starlight/Vampire/Gargantua.rsi
+      layers:
+      - state: blood_rush
+        map: ["enum.ActionVisuals.Icon"]
     - type: InstantAction
       event: !type:VampireBloodRushActionEvent
         duration: 10
@@ -737,9 +795,11 @@
       useDelay: 60
       itemIconStyle: NoItem
       priority: 42
-      icon:
-        sprite: _Starlight/Vampire/Gargantua.rsi
-        state: seismic_stomp
+    - type: Sprite
+      sprite: _Starlight/Vampire/Gargantua.rsi
+      layers:
+      - state: seismic_stomp
+        map: ["enum.ActionVisuals.Icon"]
     - type: InstantAction
       event: !type:VampireSeismicStompActionEvent
     - type: VampireAction
@@ -757,9 +817,11 @@
       useDelay: 2 # Toggle
       itemIconStyle: NoItem
       priority: 43
-      icon:
-        sprite: _Starlight/Vampire/Gargantua.rsi
-        state: overwhelming_force
+    - type: Sprite
+      sprite: _Starlight/Vampire/Gargantua.rsi
+      layers:
+      - state: overwhelming_force
+        map: ["enum.ActionVisuals.Icon"]
     - type: InstantAction
       event: !type:VampireOverwhelmingForceActionEvent {}
     - type: VampireAction
@@ -777,9 +839,11 @@
       useDelay: 30
       itemIconStyle: NoItem
       priority: 44
-      icon:
-        sprite: _Starlight/Vampire/Gargantua.rsi
-        state: demonic_grasp
+    - type: Sprite
+      sprite: _Starlight/Vampire/Gargantua.rsi
+      layers:
+      - state: demonic_grasp
+        map: ["enum.ActionVisuals.Icon"]
     - type: TargetAction
       checkCanAccess: false
       range: 15
@@ -806,9 +870,11 @@
       useDelay: 30
       itemIconStyle: NoItem
       priority: 45
-      icon:
-        sprite: _Starlight/Vampire/Gargantua.rsi
-        state: charge
+    - type: Sprite
+      sprite: _Starlight/Vampire/Gargantua.rsi
+      layers:
+      - state: charge
+        map: ["enum.ActionVisuals.Icon"]
     - type: TargetAction
       checkCanAccess: false
       range: -1
