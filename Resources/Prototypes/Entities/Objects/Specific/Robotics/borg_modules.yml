@@ -839,7 +839,7 @@
 - type: entity
   id: BorgModuleRCD
   parent: [ BaseBorgModuleEngineering, BaseProviderBorgModule ]
-  name: engineering cyborg module
+  name: atmos cyborg module
   components:
   - type: Sprite
     layers:
@@ -848,6 +848,7 @@
   - type: ItemBorgModule
     hands:
     - item: RCDRecharging
+    - item: RPDRecharging
     - item: BorgFireExtinguisher
     - item: BorgHandheldGPSBasic
     - item: GasAnalyzer
