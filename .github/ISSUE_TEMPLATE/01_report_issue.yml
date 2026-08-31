@@ -4,7 +4,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Dziękujemy za poświecenie czasu na zgłoszenie problemu. Ten formularz jest dla problemów, które nie pasują do innych formularzy.
+        Dziękujemy za poświęcenie czasu na zgłoszenie problemu. Ten formularz jest dla problemów, które nie pasują do innych formularzy.
   - type: textarea
     attributes:
       label: Opis
