@@ -36,7 +36,6 @@
   - GenpopLeave
   - Reporter #funkystation
   - Robotics #funkystation
-  - Library #funkystation
 
 - type: accessGroup
   id: General
