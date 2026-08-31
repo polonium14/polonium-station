@@ -39,21 +39,11 @@ SPDX-License-Identifier: MIT
             <TextureRect VerticalAlignment="Center" HorizontalAlignment="Center" TextureScale="2 2" TexturePath="/Textures/Interface/Radial/RCD/lighting.png"/>
         </ui:RadialMenuButtonWithSector>
 
-        <ui:RadialMenuButtonWithSector StyleClasses="RadialMenuButton" SetSize="64 64" ToolTip="{Loc 'rcd-component-piping'}" TargetLayerControlName="Piping" Visible="False">
-            <TextureRect VerticalAlignment="Center" HorizontalAlignment="Center" TextureScale="2 2" TexturePath="/Textures/Interface/Radial/RPD/fourway.png"/>
-        </ui:RadialMenuButtonWithSector>
-        <ui:RadialMenuButtonWithSector StyleClasses="RadialMenuButton" SetSize="64 64" ToolTip="{Loc 'rcd-component-atmosphericutility'}" TargetLayerControlName="AtmosphericUtility" Visible="False">
-            <TextureRect VerticalAlignment="Center" HorizontalAlignment="Center" TextureScale="2 2" TexturePath="/Textures/Interface/Radial/RPD/port.png"/>
-        </ui:RadialMenuButtonWithSector>
-        <ui:RadialMenuButtonWithSector StyleClasses="RadialMenuButton" SetSize="64 64" ToolTip="{Loc 'rcd-component-pumpsvalves'}" TargetLayerControlName="PumpsValves" Visible="False">
-            <TextureRect VerticalAlignment="Center" HorizontalAlignment="Center" TextureScale="2 2" TexturePath="/Textures/Interface/Radial/RPD/pump_volume.png"/>
-        </ui:RadialMenuButtonWithSector>
-        <ui:RadialMenuButtonWithSector StyleClasses="RadialMenuButton" SetSize="64 64" ToolTip="{Loc 'rcd-component-vents'}" TargetLayerControlName="Vents" Visible="False">
-            <TextureRect VerticalAlignment="Center" HorizontalAlignment="Center" TextureScale="2 2" TexturePath="/Textures/Interface/Radial/RPD/vent_passive.png"/>
-        </ui:RadialMenuButtonWithSector>
-        <ui:RadialMenuButtonWithSector StyleClasses="RadialMenuButton" SetSize="64 64" ToolTip="{Loc 'rcd-component-sensorsmonitors'}" TargetLayerControlName="SensorsMonitors" Visible="False">
-            <TextureRect VerticalAlignment="Center" HorizontalAlignment="Center" TextureScale="2 2" TexturePath="/Textures/Interface/Radial/RPD/alarm.png"/>
-        </ui:RadialMenuButtonWithSector>
+        <ui:RadialMenuButtonWithSector StyleClasses="RadialMenuButton" SetSize="64 64" ToolTip="{Loc 'rcd-component-piping'}" TargetLayerControlName="Piping" Visible="False"/>
+        <ui:RadialMenuButtonWithSector StyleClasses="RadialMenuButton" SetSize="64 64" ToolTip="{Loc 'rcd-component-atmosphericutility'}" TargetLayerControlName="AtmosphericUtility" Visible="False"/>
+        <ui:RadialMenuButtonWithSector StyleClasses="RadialMenuButton" SetSize="64 64" ToolTip="{Loc 'rcd-component-pumpsvalves'}" TargetLayerControlName="PumpsValves" Visible="False"/>
+        <ui:RadialMenuButtonWithSector StyleClasses="RadialMenuButton" SetSize="64 64" ToolTip="{Loc 'rcd-component-vents'}" TargetLayerControlName="Vents" Visible="False"/>
+        <ui:RadialMenuButtonWithSector StyleClasses="RadialMenuButton" SetSize="64 64" ToolTip="{Loc 'rcd-component-sensorsmonitors'}" TargetLayerControlName="SensorsMonitors" Visible="False"/>
     </ui:RadialContainer>
 
     <!-- Walls and flooring -->

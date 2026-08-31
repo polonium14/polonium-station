@@ -135,6 +135,7 @@ public sealed partial class RCDMenu : RadialMenu
                 if (castChild.TargetLayerControlName == proto.Category)
                 {
                     castChild.Visible = true;
+                    TrySetCategoryIcon(castChild, proto.Category);
                     break;
                 }
             }
@@ -145,6 +146,37 @@ public sealed partial class RCDMenu : RadialMenu
         {
             AddRCDMenuButtonOnClickActions(child);
         }
+    }
+
+    /// <summary>
+    /// Atmos categories used to point at /Textures/Interface/Radial/RPD icons.
+    /// Draw the representative entity's own sprite instead.
+    /// </summary>
+    private static readonly Dictionary<string, EntProtoId> CategoryIcons = new()
+    {
+        ["Piping"] = "GasPipeFourway",
+        ["PumpsValves"] = "GasVolumePump",
+        ["AtmosphericUtility"] = "GasPort",
+        ["Vents"] = "GasPassiveVent",
+        ["SensorsMonitors"] = "AirAlarm",
+    };
+
+    private static void TrySetCategoryIcon(RadialMenuButtonWithSector button, string category)
+    {
+        // Refresh() can run more than once; only the first pass needs to build the icon.
+        if (button.ChildCount > 0 || !CategoryIcons.TryGetValue(category, out var protoId))
+            return;
+
+        var view = new EntityPrototypeView()
+        {
+            SetSize = new Vector2(64f, 64f),
+            Stretch = SpriteView.StretchMode.Fill,
+            VerticalAlignment = VAlignment.Center,
+            HorizontalAlignment = HAlignment.Center,
+        };
+
+        view.SetPrototype(protoId);
+        button.AddChild(view);
     }
 
     private static string OopsConcat(string a, string b)
