@@ -1,5 +1,5 @@
 name: Zgłoś Problem
-description: Dla problemów, które nie są pasują do innych formularzy zgłoszeniowych.
+description: Dla problemów, które nie pasują do innych formularzy zgłoszeniowych.
 body:
   - type: markdown
     attributes:
