@@ -35,6 +35,8 @@ public sealed partial class RCDConstructionGhostSystem : EntitySystem
     private string _rpdPlacementMode = typeof(AlignRPDAtmosPipeLayers).Name;
     private Direction _placementDirection = default;
     private bool _useMirrorPrototype = false;
+    private EntityUid? _layeredPlacerEntity;
+    private string? _layeredPlacerProto;
     public override void Initialize()
     {
         base.Initialize();
@@ -134,11 +136,21 @@ public sealed partial class RCDConstructionGhostSystem : EntitySystem
         // Polonium - an RPD with a layered recipe gets the layer-aware placement mode instead.
         if (HasComp<RPDComponent>(heldEntity) && useProto != null && !rcd.CachedPrototype.NoLayers)
         {
-            _placementManager.Clear();
-            CreateLayeredPlacer(heldEntity.Value, rcd, useProto);
+            // placerEntity being null means placement was cleared out from under us, so rebuild.
+            if (placerEntity == null || heldEntity != _layeredPlacerEntity || useProto != _layeredPlacerProto)
+            {
+                _layeredPlacerEntity = heldEntity;
+                _layeredPlacerProto = useProto;
+
+                _placementManager.Clear();
+                CreateLayeredPlacer(heldEntity.Value, rcd, useProto);
+            }
         }
         else if (heldEntity != placerEntity || useProto != placerProto)
         {
+            _layeredPlacerEntity = null;
+            _layeredPlacerProto = null;
+
             _placementManager.Clear();
             CreatePlacer(heldEntity.Value, rcd, useProto);
         }

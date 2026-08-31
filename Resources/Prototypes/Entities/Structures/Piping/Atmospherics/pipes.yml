@@ -18,6 +18,11 @@
   - type: Anchorable
   - type: Rotatable
     increment: 90
+  - type: RCDDeconstructable
+    cost: 5
+    delay: 2
+    fx: EffectRCDDeconstruct2
+  - type: RPDDeconstructable
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/pipe.rsi
     drawdepth: ThinPipe
@@ -26,9 +31,7 @@
   - type: PipeAppearance
   - type: PipeColorVisuals
   - type: NodeContainer
-  # Polonium - PipeRestrictOverlap lives on GasPipeNoOverlap, not here, so atmos devices (vents,
-  # pumps, valves...) can share a tile with a pipe running under them. Devices are kept from
-  # stacking on each other by the Unstackable tag instead.
+  - type: PipeRestrictOverlap
   - type: AtmosUnsafeUnanchor
   - type: AtmosPipeColor
   - type: AtmosMonitoringConsoleDevice
@@ -82,19 +85,10 @@
   parent: [ GasPipeSansLayers, BaseGasPipeLayers ]
   id: GasPipeBase
 
-# Polonium - only bare pipes restrict overlap with each other; atmos devices deliberately do not,
-# so a pipe can run under a vent/pump on the same tile.
-- type: entity
-  abstract: true
-  parent: GasPipeBase
-  id: GasPipeNoOverlap
-  components:
-  - type: PipeRestrictOverlap
-
 #Note: The PipeDirection of the PipeNode should be the south-facing version, because the entity starts at an angle of 0 (south)
 
 - type: entity
-  parent: GasPipeNoOverlap
+  parent: GasPipeBase
   id: !type:CreateVariants
     values: [ GasPipeHalf, GasPipeHalfAlt1, GasPipeHalfAlt2 ]
   suffix: Half
@@ -134,7 +128,7 @@
     - PipeNetworks
 
 - type: entity
-  parent: GasPipeNoOverlap
+  parent: GasPipeBase
   id: !type:CreateVariants
     values: [ GasPipeStraight, GasPipeStraightAlt1, GasPipeStraightAlt2 ]
   suffix: Straight
@@ -181,7 +175,7 @@
     - PipeNetworks
 
 - type: entity
-  parent: GasPipeNoOverlap
+  parent: GasPipeBase
   id: !type:CreateVariants
     values: [ GasPipeBend, GasPipeBendAlt1, GasPipeBendAlt2 ]
   suffix: Bend
@@ -235,7 +229,7 @@
     - PipeNetworks
 
 - type: entity
-  parent: GasPipeNoOverlap
+  parent: GasPipeBase
   id: !type:CreateVariants
     values: [ GasPipeTJunction, GasPipeTJunctionAlt1, GasPipeTJunctionAlt2 ]
   suffix: TJunction
@@ -282,7 +276,7 @@
     - PipeNetworks
 
 - type: entity
-  parent: GasPipeNoOverlap
+  parent: GasPipeBase
   id: !type:CreateVariants
     values: [ GasPipeFourway, GasPipeFourwayAlt1, GasPipeFourwayAlt2 ]
   suffix: Fourway
@@ -336,7 +330,6 @@
   name: broken pipe
   description: It used to hold gas.
   components:
-  - type: PipeRestrictOverlap # Polonium - a broken pipe still occupies its layer, same as before the GasPipeNoOverlap split
   - type: Sprite
     layers:
     - state: pipeBroken

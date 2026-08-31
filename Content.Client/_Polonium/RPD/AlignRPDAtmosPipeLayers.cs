@@ -53,8 +53,8 @@ public sealed partial class AlignRPDAtmosPipeLayers : PlacementMode
     private const float GuideOffset = 0.21875f;
 
     private EntityCoordinates _mouseCoordsRaw = default;
-    private static AtmosPipeLayer _currentLayer = AtmosPipeLayer.Primary;
-    private static float? _currentEyeRotation = null;
+    private AtmosPipeLayer _currentLayer = AtmosPipeLayer.Primary;
+    private float? _currentEyeRotation = null;
     private Color _guideColor = new(0, 0, 0.5785f);
     private TimeSpan _lastLayerSendTime = TimeSpan.Zero;
 
