@@ -56,9 +56,11 @@
     size: Tiny
     inhandVisuals:
       left:
-      - state: paper-inhand-left
+      - sprite: Objects/Misc/bureaucracy.rsi
+        state: paper-inhand-left
       right:
-      - state: paper-inhand-right
+      - sprite: Objects/Misc/bureaucracy.rsi
+        state: paper-inhand-right
   - type: PhysicalComposition
 
 - type: entity
