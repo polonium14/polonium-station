@@ -61,6 +61,7 @@
   supervisors: job-supervisors-captain
   access:
   - Research
+  - Robotics
   - Command
   - Maintenance
   - ResearchDirector
