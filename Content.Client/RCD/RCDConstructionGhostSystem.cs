@@ -14,12 +14,13 @@ using Content.Shared.RCD;
 using Content.Shared.RCD.Components;
 using Content.Shared.RCD.Systems;
 using Content.Client.Hands.Systems;
+using Content.Client._Polonium.RPD; // Polonium - RPD placement mode
+using Content.Shared._Polonium.RPD;
 using Robust.Client.Placement;
 using Robust.Client.Player;
 using Robust.Shared.Enums;
 using Robust.Shared.Input;
 using Robust.Shared.Input.Binding;
-using Robust.Shared.Prototypes;
 
 namespace Content.Client.RCD;
 
@@ -28,7 +29,6 @@ public sealed partial class RCDConstructionGhostSystem : EntitySystem
     [Dependency] private IPlayerManager _playerManager = default!;
     [Dependency] private RCDSystem _rcdSystem = default!;
     [Dependency] private IPlacementManager _placementManager = default!;
-    [Dependency] private IPrototypeManager _protoManager = default!; // Added for prototype access
     [Dependency] private HandsSystem _handsSystem = default!;
 
     private string _placementMode = typeof(AlignRCDConstruction).Name;
@@ -131,8 +131,8 @@ public sealed partial class RCDConstructionGhostSystem : EntitySystem
         _rcdSystem.UpdateCachedPrototype(heldEntity.Value, rcd);
         var useProto = (_useMirrorPrototype && !string.IsNullOrEmpty(rcd.CachedPrototype.MirrorPrototype)) ? rcd.CachedPrototype.MirrorPrototype : rcd.CachedPrototype.Prototype;
 
-        // Funky - Check if RPD and prototype supports layered placement
-        if (rcd.IsRpd && useProto != null && _protoManager.TryIndex<RCDPrototype>(rcd.CachedPrototype.ID, out var rcdProto) && !rcdProto.NoLayers)
+        // Polonium - an RPD with a layered recipe gets the layer-aware placement mode instead.
+        if (HasComp<RPDComponent>(heldEntity) && useProto != null && !rcd.CachedPrototype.NoLayers)
         {
             _placementManager.Clear();
             CreateLayeredPlacer(heldEntity.Value, rcd, useProto);

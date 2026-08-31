@@ -144,8 +144,8 @@ public sealed partial class RCDPrototype : IPrototype
     public int? MenuOrder { get; private set; }
 
     /// <summary>
-    /// Funky
-    /// Determines whether this prototype uses layered placement (true for traditional placement, false for layered). Only applies to RPD.
+    /// Polonium - opts this recipe out of per-pipe-layer placement. Only the RPD reads it;
+    /// see Content.Shared._Polonium.RPD.RPDSystem.
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadOnly)]
     public bool NoLayers { get; private set; } = false;

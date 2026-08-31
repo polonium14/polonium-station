@@ -18,6 +18,7 @@ public sealed partial class PipeRestrictOverlapSystem : EntitySystem
     [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private SharedTransformSystem _xform = default!;
     [Dependency] private EntityQuery<NodeContainerComponent> _nodeContainerQuery = default!;
+    [Dependency] private EntityQuery<PipeRestrictOverlapComponent> _restrictOverlapQuery = default!;
 
     private readonly List<EntityUid> _anchoredEntities = new();
 
@@ -91,6 +92,12 @@ public sealed partial class PipeRestrictOverlapSystem : EntitySystem
                 continue;
 
             if (!_nodeContainerQuery.TryComp(otherEnt, out var otherComp))
+                continue;
+
+            // Polonium - only entities that opted into overlap restriction block each other. Atmos
+            // devices (vents, pumps, valves...) deliberately lack the component so a pipe can run
+            // under them; without this skip the pipe side of that pair would still be blocked.
+            if (!_restrictOverlapQuery.HasComp(otherEnt))
                 continue;
 
             if (PipeNodesOverlap(ent, (otherEnt, otherComp, Transform(otherEnt))))

@@ -3,6 +3,7 @@ using Content.Client.Hands.Systems;
 using Content.Shared.Atmos.Components;
 using Content.Shared.Atmos.EntitySystems;
 using Content.Shared.Construction.Prototypes;
+using Content.Shared._Polonium.RPD;
 using Content.Shared.Hands.Components;
 using Content.Shared.Interaction;
 using Content.Shared.RCD;
@@ -20,7 +21,7 @@ using Robust.Shared.Utility;
 using System.Numerics;
 using static Robust.Client.Placement.PlacementManager;
 
-namespace Content.Client.RCD;
+namespace Content.Client._Polonium.RPD;
 
 /// <summary>
 /// Funkystation

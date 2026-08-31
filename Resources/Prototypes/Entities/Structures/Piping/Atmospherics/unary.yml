@@ -270,7 +270,8 @@
       key: enum.ThermomachineUiKey.Key
     - type: WiresPanel
     - type: WiresVisuals
-    - type: PipeRestrictOverlap
+    # Polonium - device-on-pipe stacking: atmos machines don't reserve the tile, a pipe may run under them
+    # - type: PipeRestrictOverlap
     - type: NodeContainer
       nodes:
         pipe:
@@ -513,7 +514,8 @@
         Secondary: Structures/Piping/Atmospherics/condenser_alt1.rsi
         Tertiary: Structures/Piping/Atmospherics/condenser_alt2.rsi
   - type: AtmosDevice
-  - type: PipeRestrictOverlap
+  # Polonium - device-on-pipe stacking: atmos machines don't reserve the tile, a pipe may run under them
+  # - type: PipeRestrictOverlap
   - type: ApcPowerReceiver
     powerLoad: 10000
   - type: Machine
