@@ -15,7 +15,7 @@ body:
       required: true
   - type: textarea
     attributes:
-      label: Odtworzenie
+      label: Lista kroków do odtworzenia
       description: Lista kroków wymaganych, aby odtworzyć problem.
       placeholder: |
         1.
@@ -26,7 +26,7 @@ body:
       required: true
   - type: textarea
     attributes:
-      label: Dodatkowy Kontekst.
+      label: Dodatkowy kontekst
       description: W tym polu można dopisać dodatkowy kontekst związany z problemem.
     validations:
       required: false
