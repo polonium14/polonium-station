@@ -1,19 +1,4 @@
 ﻿Entries:
-- author: Huaqas
-  changes:
-  - message: Removed the Reptilian laugh sound effect due to copyright concerns.
-    type: Remove
-  id: 9474
-  time: '2026-01-28T11:55:00.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42594
-- author: SlamBamActionman
-  changes:
-  - message: Silicons now see an indicator for jobs that are considered "crew" under
-      the normal crewsimov lawset.
-    type: Add
-  id: 9475
-  time: '2026-01-29T07:13:48.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/37038
 - author: Princess-Cheeseballs
   changes:
   - message: Estoc DMR is now only purchasable by Nukies
@@ -4030,3 +4015,20 @@
   id: 9973
   time: '2026-08-31T19:34:44.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/958
+- author: Saver310
+  changes:
+  - message: Wywalono PosterContrabandLustyExomorph z migration.yml
+    type: Fix
+  id: 9974
+  time: '2026-08-31T20:13:26.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/957
+- author: Yaket
+  changes:
+  - message: "Przywr\xF3cono odpowiednim cz\u0142onkom dow\xF3dztwa dost\u0119py do\
+      \ Robotics i Reportera"
+    type: Fix
+  - message: "Przywr\xF3cono extended access do Robotics naukowcom"
+    type: Fix
+  id: 9975
+  time: '2026-08-31T20:13:11.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/959
