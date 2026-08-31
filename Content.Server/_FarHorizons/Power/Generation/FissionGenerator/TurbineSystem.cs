@@ -78,6 +78,7 @@ public sealed partial class TurbineSystem : SharedTurbineSystem
         SubscribeLocalEvent<TurbineComponent, TurbineChangeStatorLoadMessage>(OnTurbineStatorLoadChanged);
 
         SubscribeLocalEvent<TurbineComponent, SignalReceivedEvent>(OnSignalReceived);
+        SubscribeLocalEvent<TurbineComponent, SignalReceivedEvent<LogicStatePayload>>(OnLogicSignalReceived); // Polonium
         SubscribeLocalEvent<TurbineComponent, PortDisconnectedEvent>(OnPortDisconnected);
 
         SubscribeLocalEvent<TurbineComponent, AnchorStateChangedEvent>(OnAnchorChanged);
@@ -400,14 +401,22 @@ public sealed partial class TurbineSystem : SharedTurbineSystem
     }
     #endregion
 
+    // Polonium: logic states arrive as a separate payload event since Wizden #44346
     private void OnSignalReceived(EntityUid uid, TurbineComponent comp, ref SignalReceivedEvent args)
     {
-        var state = SignalState.Momentary;
-        args.Data?.TryGetValue(DeviceNetworkConstants.LogicState, out state);
+        HandleSignal(uid, comp, args.Port, SignalState.Momentary, args.Trigger);
+    }
 
-        if (args.Port == comp.StatorLoadIncreasePort)
+    private void OnLogicSignalReceived(EntityUid uid, TurbineComponent comp, ref SignalReceivedEvent<LogicStatePayload> args)
+    {
+        HandleSignal(uid, comp, args.Port, args.Data.State, args.Trigger);
+    }
+
+    private void HandleSignal(EntityUid uid, TurbineComponent comp, string port, SignalState state, EntityUid? trigger)
+    {
+        if (port == comp.StatorLoadIncreasePort)
             comp.IncreasePortState = state;
-        else if (args.Port == comp.StatorLoadDecreasePort)
+        else if (port == comp.StatorLoadDecreasePort)
             comp.DecreasePortState = state;
 
         var logtext = "maintain";
@@ -416,7 +425,7 @@ public sealed partial class TurbineSystem : SharedTurbineSystem
         else if (comp.DecreasePortState != SignalState.Low && comp.IncreasePortState == SignalState.Low)
             logtext = "decrease";
 
-        _adminLogger.Add(LogType.Action, $"{ToPrettyString(args.Trigger):trigger} set the stator load on {ToPrettyString(uid):target} to {logtext}");
+        _adminLogger.Add(LogType.Action, $"{ToPrettyString(trigger):trigger} set the stator load on {ToPrettyString(uid):target} to {logtext}");
     }
 
     private void OnPortDisconnected(EntityUid uid, TurbineComponent comp, ref PortDisconnectedEvent args)
