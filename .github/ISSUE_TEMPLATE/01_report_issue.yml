@@ -1,30 +1,22 @@
-name: Report an issue
-description: For issues that are not related to any other issue form.
+name: Zgłoś Problem
+description: Dla problemów, które nie są pasują do innych formularzy zgłoszeniowych.
 body:
   - type: markdown
     attributes:
       value: |
-        Thank you for taking the time to fill out an issue. This template is intended for any issues that do not fit other issue templates.
-        For feedback or help running Funky Station, please join our [Discord](https://discord.gg/funkyss14).
-  - type: input
-    attributes:
-      label: What version did the issue occur in?
-      description: You can find the version by opening the changelog in-game and looking at the bottom right corner of the changelog window.
-      placeholder: funky/aa1337b
-    validations:
-      required: false
+        Dziękujemy za poświecenie czasu na zgłoszenie problemu. Ten formularz jest dla problemów, które nie pasują do innych formularzy.
   - type: textarea
     attributes:
-      label: Description
+      label: Opis
       description: |
-        A clear and concise description of what the issue is.
-        If the issue is visual in nature, consider posting a screenshot.
+        Jasny i zwięzły opis problemu.
+        Jeżeli problem jest wizualny, dołącz zrzut ekranu.
     validations:
       required: true
   - type: textarea
     attributes:
-      label: Reproduction
-      description: List the steps required to reproduce the issue.
+      label: Odtworzenie
+      description: Lista kroków wymaganych, aby odtworzyć problem.
       placeholder: |
         1.
         2.
@@ -34,8 +26,8 @@ body:
       required: true
   - type: textarea
     attributes:
-      label: Additional Context
-      description: Add any other additional context about the issue here.
+      label: Dodatkowy Kontekst.
+      description: W tym polu można dopisać dodatkowy kontekst związany z problemem.
     validations:
       required: false
 
