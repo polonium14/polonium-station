@@ -23,13 +23,13 @@ namespace Content.Shared._Polonium.RPD;
 /// Hangs off the hook events RCDSystem raises rather than living inside it, so upstream RCD stays
 /// mergeable.
 /// </remarks>
-public sealed class RPDSystem : EntitySystem
+public sealed partial class RPDSystem : EntitySystem
 {
-    [Dependency] private readonly IPrototypeManager _protoManager = default!;
-    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
-    [Dependency] private readonly SharedAtmosPipeLayersSystem _pipeLayers = default!;
-    [Dependency] private readonly SharedHandsSystem _hands = default!;
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private IPrototypeManager _protoManager = default!;
+    [Dependency] private SharedAppearanceSystem _appearance = default!;
+    [Dependency] private SharedAtmosPipeLayersSystem _pipeLayers = default!;
+    [Dependency] private SharedHandsSystem _hands = default!;
+    [Dependency] private SharedTransformSystem _transform = default!;
 
     /// <summary>
     /// How far from the tile centre the cursor has to sit before it counts as aiming at a
