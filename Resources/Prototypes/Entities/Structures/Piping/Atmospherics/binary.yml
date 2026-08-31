@@ -574,7 +574,8 @@
           False: { state: unlit }
   - type: PipeColorVisuals
   - type: GasRecycler
-  - type: PipeRestrictOverlap
+  # Polonium - device-on-pipe stacking: atmos machines don't reserve the tile, a pipe may run under them
+  # - type: PipeRestrictOverlap
   - type: NodeContainer
     nodes:
       inlet:

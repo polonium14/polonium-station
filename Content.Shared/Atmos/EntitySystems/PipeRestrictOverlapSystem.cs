@@ -4,6 +4,8 @@ using Content.Shared.Atmos.Components;
 using Content.Shared.Construction.Components;
 using Content.Shared.NodeContainer;
 using Content.Shared.Popups;
+using Content.Shared.Tag;
+using Robust.Shared.Prototypes;
 using JetBrains.Annotations;
 using Robust.Shared.Map.Components;
 
@@ -17,9 +19,13 @@ public sealed partial class PipeRestrictOverlapSystem : EntitySystem
     [Dependency] private SharedMapSystem _map = default!;
     [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private SharedTransformSystem _xform = default!;
+    [Dependency] private TagSystem _tags = default!;
     [Dependency] private EntityQuery<NodeContainerComponent> _nodeContainerQuery = default!;
+    [Dependency] private EntityQuery<AtmosPipeLayersComponent> _pipeLayersQuery = default!;
 
     private readonly List<EntityUid> _anchoredEntities = new();
+
+    private static readonly ProtoId<TagPrototype> Unstackable = "Unstackable";
 
     // begin funky
     public readonly record struct ProposedPipe(
@@ -84,6 +90,8 @@ public sealed partial class PipeRestrictOverlapSystem : EntitySystem
         _anchoredEntities.Clear();
         _map.GetAnchoredEntities((grid, gridComp), indices, _anchoredEntities);
 
+        var entIsDevice = _tags.HasTag(ent.Owner, Unstackable);
+
         foreach (var otherEnt in _anchoredEntities)
         {
             // this should never actually happen but just for safety
@@ -93,11 +101,29 @@ public sealed partial class PipeRestrictOverlapSystem : EntitySystem
             if (!_nodeContainerQuery.TryComp(otherEnt, out var otherComp))
                 continue;
 
+            var otherIsDevice = _tags.HasTag(otherEnt, Unstackable);
+
+            if (entIsDevice != otherIsDevice)
+                continue;
+
+            if (entIsDevice)
+            {
+                if (GetPipeLayer(ent.Owner) == GetPipeLayer(otherEnt))
+                    return true;
+
+                continue;
+            }
+
             if (PipeNodesOverlap(ent, (otherEnt, otherComp, Transform(otherEnt))))
                 return true;
         }
 
         return false;
+    }
+
+    private AtmosPipeLayer GetPipeLayer(EntityUid uid)
+    {
+        return _pipeLayersQuery.TryComp(uid, out var layers) ? layers.CurrentPipeLayer : AtmosPipeLayer.Primary;
     }
 
     public bool PipeNodesOverlap(Entity<NodeContainerComponent, TransformComponent> ent, Entity<NodeContainerComponent, TransformComponent> other)

@@ -18,6 +18,11 @@
   - type: Anchorable
   - type: Rotatable
     increment: 90
+  - type: RCDDeconstructable
+    cost: 5
+    delay: 2
+    fx: EffectRCDDeconstruct2
+  - type: RPDDeconstructable
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/pipe.rsi
     drawdepth: ThinPipe

@@ -4,13 +4,14 @@
 
 using Content.Shared.RCD;
 using Content.Shared.RCD.Components;
+using Content.Shared._Polonium.RPD;
 using Robust.Client.Graphics;
 using Robust.Client.Input;
 using Robust.Client.UserInterface;
 using Robust.Shared;
 using Robust.Shared.Prototypes;
 
-namespace Content.Client.RCD;
+namespace Content.Client._Polonium.RPD;
 
 public sealed partial class RPDMenuBoundUserInterface : BoundUserInterface
 {
@@ -45,7 +46,7 @@ public sealed partial class RPDMenuBoundUserInterface : BoundUserInterface
     {
         base.Open();
 
-        if (!_entityManager.HasComponent<RCDComponent>(Owner))
+        if (!_entityManager.HasComponent<RPDComponent>(Owner))
             return;
 
         _menu = this.CreateWindow<RPDMenu>();
@@ -53,7 +54,7 @@ public sealed partial class RPDMenuBoundUserInterface : BoundUserInterface
         _menu.ColorSelected += OnColorSelected;
         _menu.SendRCDSystemMessageAction += OnRCDSystemMessage;
 
-        string selectedColor = _entityManager.TryGetComponent<RCDComponent>(Owner, out var comp) && _palette.ContainsKey(comp.PipeColor.Key)
+        string selectedColor = _entityManager.TryGetComponent<RPDComponent>(Owner, out var comp) && _palette.ContainsKey(comp.PipeColor.Key)
             ? comp.PipeColor.Key
             : "default";
         _menu.Populate(_palette, selectedColor);
@@ -67,7 +68,7 @@ public sealed partial class RPDMenuBoundUserInterface : BoundUserInterface
         if (_palette.TryGetValue(colorKey, out var color))
         {
             var pipeColor = (colorKey, color);
-            SendMessage(new RCDColorChangeMessage(_entityManager.GetNetEntity(Owner), pipeColor));
+            SendMessage(new RPDColorChangeMessage(_entityManager.GetNetEntity(Owner), pipeColor));
         }
     }
 

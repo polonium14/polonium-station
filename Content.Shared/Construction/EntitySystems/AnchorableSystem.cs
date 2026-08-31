@@ -1,4 +1,5 @@
 using Content.Shared.Administration.Logs;
+using Content.Shared.Atmos.Components;
 using Content.Shared.Examine;
 using Content.Shared.Construction.Components;
 using Content.Shared.Containers.ItemSlots;
@@ -393,10 +394,15 @@ public sealed partial class AnchorableSystem : EntitySystem
         DebugTools.Assert(!Transform(uid).Anchored);
 
         // If we are unstackable, iterate through any other entities anchored on the current square
-        return _tagSystem.HasTag(uid, Unstackable) && AnyUnstackablesAnchoredAt(location);
+        return _tagSystem.HasTag(uid, Unstackable) && AnyUnstackablesAnchoredAt(location, uid);
     }
 
-    public bool AnyUnstackablesAnchoredAt(EntityCoordinates location)
+    /// <param name="stacking">
+    /// Polonium - the entity being anchored, if known. Anchored entities sitting on a different atmos pipe
+    /// layer than this one are ignored: pipe layers exist precisely so two devices can share a tile without
+    /// their contents mixing, and the Unstackable tag predates them.
+    /// </param>
+    public bool AnyUnstackablesAnchoredAt(EntityCoordinates location, EntityUid? stacking = null)
     {
         var gridUid = _transformSystem.GetGrid(location);
 
@@ -408,11 +414,23 @@ public sealed partial class AnchorableSystem : EntitySystem
         while (enumerator.MoveNext(out var entity))
         {
             // If we find another unstackable here, return true.
-            if (_tagSystem.HasTag(entity.Value, Unstackable))
-                return true;
+            if (!_tagSystem.HasTag(entity.Value, Unstackable))
+                continue;
+
+            if (stacking != null && OnDifferentPipeLayers(stacking.Value, entity.Value))
+                continue;
+
+            return true;
         }
 
         return false;
+    }
+
+    private bool OnDifferentPipeLayers(EntityUid a, EntityUid b)
+    {
+        return TryComp<AtmosPipeLayersComponent>(a, out var layerA) &&
+               TryComp<AtmosPipeLayersComponent>(b, out var layerB) &&
+               layerA.CurrentPipeLayer != layerB.CurrentPipeLayer;
     }
 
     [Serializable, NetSerializable]

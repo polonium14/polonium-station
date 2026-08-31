@@ -73,7 +73,7 @@
     cost: 15
     delay: 2
     fx: EffectRCDDeconstruct2
-    rpd: true
+  - type: RPDDeconstructable # Polonium
   - type: Appearance
   - type: WiresVisuals
   - type: Sprite

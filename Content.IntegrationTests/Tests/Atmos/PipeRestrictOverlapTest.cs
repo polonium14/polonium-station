@@ -1,6 +1,8 @@
 using System.Numerics;
 using Content.IntegrationTests.Tests.Interaction;
 using Content.Shared.Atmos;
+using Content.Shared.Construction.Components;
+using Content.Shared.Construction.EntitySystems;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Maths;
@@ -74,6 +76,128 @@ public sealed class PipeRestrictOverlapTest : InteractionTest
                 "Pipe A (unrotated, North-South) should stay anchored - nothing else was on the tile when it anchored.");
             Assert.That(xformB.Anchored, Is.True,
                 "Pipe B (rotated 90 degrees, East-West) should ALSO stay anchored - it doesn't share any port direction with pipe A, so PipeRestrictOverlapSystem's conflict check should not fire. If this fails, the 'crossing pipe doesn't auto-anchor' report has a second, independent cause beyond the RCD rotation bug.");
+        });
+    }
+
+    [TestCase("GasVentPump", "GasVentPumpAlt1")]       // device over device, different layers
+    [TestCase("GasPressurePump", "GasPressurePumpAlt1")]
+    [TestCase("GasPipeStraight", "GasPipeStraightAlt1")] // pipe over pipe, different layers
+    [TestCase("GasPipeStraight", "GasVentPump")]        // pipe under device, same layer
+    [TestCase("GasVentPump", "GasPipeStraight")]        // device over pipe, same layer
+    public async Task CanWrenchAnchorOntoOccupiedTile(string firstId, string secondId)
+    {
+        var coords = new EntityCoordinates(SPlayer, new Vector2(0, 1));
+        coords = Transform.WithEntityId(coords, MapData.Grid);
+        var netCoords = SEntMan.GetNetCoordinates(coords);
+
+        await SetTile(PlatingRCD, netCoords, MapData.Grid);
+
+        EntityUid first = default;
+        EntityUid second = default;
+
+        await Server.WaitPost(() =>
+        {
+            var sCoords = SEntMan.GetCoordinates(netCoords);
+            first = SEntMan.SpawnAttachedTo(firstId, sCoords, rotation: Angle.Zero);
+            second = SEntMan.SpawnAttachedTo(secondId, sCoords, rotation: Angle.Zero);
+
+            SEntMan.System<SharedTransformSystem>()
+                .Unanchor(second, SEntMan.GetComponent<TransformComponent>(second));
+        });
+
+        await RunTicks(5);
+
+        await Server.WaitAssertion(() =>
+        {
+            var anchorable = SEntMan.System<AnchorableSystem>();
+            var xform = SEntMan.GetComponent<TransformComponent>(second);
+
+            Assert.That(SEntMan.GetComponent<TransformComponent>(first).Anchored, Is.True,
+                $"{firstId} should have stayed anchored on an empty tile.");
+
+            var attempt = new AnchorAttemptEvent(SPlayer, SPlayer);
+            SEntMan.EventBus.RaiseLocalEvent(second, attempt);
+
+            Assert.Multiple(() =>
+            {
+                Assert.That(attempt.Cancelled, Is.False,
+                    $"PipeRestrictOverlap blocked anchoring {secondId} over {firstId}.");
+                Assert.That(anchorable.CanAnchorAt(second, xform.Coordinates), Is.True,
+                    $"TileFree blocked anchoring {secondId} over {firstId}.");
+                Assert.That(anchorable.AnyUnstackable(second, xform.Coordinates), Is.False,
+                    $"The Unstackable tag blocked anchoring {secondId} over {firstId}.");
+            });
+        });
+    }
+
+    [TestCase("GasVentPump", "GasVentPump")]             // two devices, same layer
+    [TestCase("GasPipeStraight", "GasPipeStraight")]     // two pipes, same layer and direction
+    [TestCase("GasVentPump", "GasPressurePump")]         // different devices, same layer
+    public async Task CannotWrenchAnchorOntoSameLayer(string firstId, string secondId)
+    {
+        var coords = new EntityCoordinates(SPlayer, new Vector2(0, 1));
+        coords = Transform.WithEntityId(coords, MapData.Grid);
+        var netCoords = SEntMan.GetNetCoordinates(coords);
+
+        await SetTile(PlatingRCD, netCoords, MapData.Grid);
+
+        EntityUid first = default;
+        EntityUid second = default;
+
+        await Server.WaitPost(() =>
+        {
+            var sCoords = SEntMan.GetCoordinates(netCoords);
+            first = SEntMan.SpawnAttachedTo(firstId, sCoords, rotation: Angle.Zero);
+            second = SEntMan.SpawnAttachedTo(secondId, sCoords, rotation: Angle.Zero);
+            SEntMan.System<SharedTransformSystem>()
+                .Unanchor(second, SEntMan.GetComponent<TransformComponent>(second));
+        });
+
+        await RunTicks(5);
+
+        await Server.WaitAssertion(() =>
+        {
+            var anchorable = SEntMan.System<AnchorableSystem>();
+            var xform = SEntMan.GetComponent<TransformComponent>(second);
+
+            var attempt = new AnchorAttemptEvent(SPlayer, SPlayer);
+            SEntMan.EventBus.RaiseLocalEvent(second, attempt);
+
+            Assert.That(attempt.Cancelled || anchorable.AnyUnstackable(second, xform.Coordinates), Is.True,
+                $"{secondId} was allowed to anchor over {firstId} on the same pipe layer - the layer-aware gates have been loosened too far.");
+        });
+    }
+
+    [TestCase("HeatExchanger", "HeatExchanger")]
+    [TestCase("GasVentPump", "GasVentPump")]
+    [TestCase("GasPressurePump", "GasPressurePump")]
+    [TestCase("GasPipeStraight", "GasPipeStraight")]
+    public async Task CannotSpawnAnchoredOntoSameLayer(string firstId, string secondId)
+    {
+        var coords = new EntityCoordinates(SPlayer, new Vector2(0, 1));
+        coords = Transform.WithEntityId(coords, MapData.Grid);
+        var netCoords = SEntMan.GetNetCoordinates(coords);
+
+        await SetTile(PlatingRCD, netCoords, MapData.Grid);
+
+        EntityUid first = default;
+        EntityUid second = default;
+
+        await Server.WaitPost(() =>
+        {
+            var sCoords = SEntMan.GetCoordinates(netCoords);
+            first = SEntMan.SpawnAttachedTo(firstId, sCoords, rotation: Angle.Zero);
+            second = SEntMan.SpawnAttachedTo(secondId, sCoords, rotation: Angle.Zero);
+        });
+
+        await RunTicks(10);
+
+        await Server.WaitAssertion(() =>
+        {
+            Assert.That(SEntMan.GetComponent<TransformComponent>(first).Anchored, Is.True,
+                $"{firstId} should have stayed anchored on an empty tile.");
+            Assert.That(SEntMan.GetComponent<TransformComponent>(second).Anchored, Is.False,
+                $"{secondId} anchored itself on top of an identical {firstId} on the same pipe layer. Nothing checks the Unstackable tag on the spawn-anchor path the RPD builds through.");
         });
     }
 }
