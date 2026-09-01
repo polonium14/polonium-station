@@ -14,7 +14,9 @@ on:
 
 jobs:
   add-contributor:
-    if: github.event.pull_request.merged == true
+    if: >-
+      github.event.pull_request.merged == true &&
+      !contains(fromJSON('["Polonium-bot","PJBot","github-actions[bot]","github-actions"]'), github.event.pull_request.user.login)
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -61,5 +63,5 @@ jobs:
           git config user.email "${{ vars.CHANGELOG_EMAIL }}"
           git add Resources/Credits/SS14PL.txt
           git diff --cached --quiet && echo "No changes" && exit 0
-          git commit -m "chore: add ${{ github.event.pull_request.user.login }} to credits"
+          git commit -m "chore: add ${{ github.event.pull_request.user.login }} to credits [ci skip]"
           git push

@@ -21,7 +21,11 @@ jobs:
       github.repository == 'polonium14/polonium-station' &&
       (github.event_name == 'workflow_dispatch' || (
         !contains(fromJSON('["Polonium-bot","PJBot","github-actions[bot]","github-actions"]'), github.actor) &&
-        !contains(fromJSON('["Polonium-bot","PJBot","github-actions[bot]","github-actions"]'), github.event.pusher.name)
+        !contains(fromJSON('["Polonium-bot","PJBot","github-actions[bot]","github-actions"]'), github.event.pusher.name) &&
+        !contains(fromJSON('["Polonium-bot","PJBot","github-actions[bot]","github-actions"]'), github.event.head_commit.author.name) &&
+        !contains(fromJSON('["Polonium-bot","PJBot","github-actions[bot]","github-actions"]'), github.event.head_commit.author.username) &&
+        !contains(fromJSON('["Polonium-bot","PJBot","github-actions[bot]","github-actions"]'), github.event.head_commit.committer.name) &&
+        !contains(fromJSON('["Polonium-bot","PJBot","github-actions[bot]","github-actions"]'), github.event.head_commit.committer.username)
       ))
     runs-on: ubuntu-latest
     timeout-minutes: 180
