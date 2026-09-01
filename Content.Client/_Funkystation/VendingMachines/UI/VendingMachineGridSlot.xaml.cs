@@ -75,14 +75,22 @@ public sealed partial class VendingMachineGridSlot : PanelContainer
             var tooltipText = proto.Name;
 
             if (proto.Components.TryGetValue("Label", out var labelEntry) &&
-                labelEntry.Component is LabelComponent label &&
-                !string.IsNullOrWhiteSpace(label.CurrentLabel))
+                labelEntry.Component is LabelComponent label)
             {
-                var labelText = _loc.TryGetString(label.CurrentLabel, out var localized)
-                    ? localized
-                    : label.CurrentLabel;
+                // Prototypes define the label via LocalizedLabel; CurrentLabel is only
+                // set on map init once the entity is spawned, so fall back when null.
+                var labelId = label.CurrentLabel;
+                if (string.IsNullOrWhiteSpace(labelId))
+                    labelId = label.LocalizedLabel;
 
-                tooltipText = $"{proto.Name} ({labelText})";
+                if (!string.IsNullOrWhiteSpace(labelId))
+                {
+                    var labelText = _loc.TryGetString(labelId, out var localized)
+                        ? localized
+                        : labelId;
+
+                    tooltipText = $"{proto.Name} ({labelText})";
+                }
             }
 
             ToolTip = string.IsNullOrWhiteSpace(proto.Description)
