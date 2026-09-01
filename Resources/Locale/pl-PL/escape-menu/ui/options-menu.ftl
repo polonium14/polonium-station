@@ -2,7 +2,7 @@
 
 ui-options-title = Ustawienia Gry
 ui-options-tab-accessibility = Ułatwienia Dostępu
-ui-options-tab-admin = Admin
+ui-options-tab-admin = Administrator
 ui-options-tab-graphics = Wideo
 ui-options-tab-controls = Sterowanie
 ui-options-tab-audio = Dźwięk
