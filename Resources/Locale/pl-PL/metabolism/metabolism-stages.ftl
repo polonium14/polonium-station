@@ -1,5 +1,5 @@
-metabolism-stage-respiration = Respiration
+metabolism-stage-respiration = Respiracja
 metabolism-stage-digestion = Digestion
-metabolism-stage-bloodstream = Bloodstream
-metabolism-stage-metabolites = Metabolites
-metabolism-stage-plant = Plant Metabolism
+metabolism-stage-bloodstream = Skład krwi
+metabolism-stage-metabolites = Metabolizm
+metabolism-stage-plant = Metabolizm roślin
