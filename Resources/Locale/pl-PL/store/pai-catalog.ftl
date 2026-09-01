@@ -1,8 +1,8 @@
-pai-mass-scanner-name = Mass Scanner
-pai-mass-scanner-desc = Enables you to scan nearby masses to assist in navigation.
+pai-mass-scanner-name = Skaner Masy
+pai-mass-scanner-desc = Umożliwia skanowanie pobliskich mas aby pomóc w nawigacji.
 pai-midi-player-name = MIDI Player
-pai-midi-player-desc = Enables you to play music to entertain your owner.
-pai-station-map-name = Station Map
-pai-station-map-desc = Enables you to view the station map to assist in navigation.
-pai-enable-encryption-name = Encryption Keys
-pai-enable-encryption-desc = Enables you to accept encryption keys to hear more radio channels.
+pai-midi-player-desc = Umożliwia odtwarzanie muzyki w celu zabawiania twojego właściciela.
+pai-station-map-name = Mapa Stacji
+pai-station-map-desc = Umożliwia przeglądanie mapy stacji, aby pomóc w nawigacji.
+pai-enable-encryption-name = Klucze Szyfrowania
+pai-enable-encryption-desc = Umożliwia akceptowanie kluczy szyfrowania, aby usłyszeć więcej kanałów radiowych.
