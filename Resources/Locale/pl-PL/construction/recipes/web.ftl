@@ -1,1 +1,1 @@
-construction-recipe-silk-woven-cloth = silk cloth
+construction-recipe-silk-woven-cloth = jedwabna tkanina
