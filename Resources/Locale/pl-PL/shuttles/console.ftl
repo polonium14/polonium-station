@@ -48,4 +48,4 @@ shuttle-console-dock = Dokuj
 shuttle-console-docks-label = Doki
 shuttle-console-undock-fail = Niepowodzenie odłączenia
 shuttle-console-dock-fail = Niepowodzenie dokowania
-shuttle-console-static = Grid is static
+shuttle-console-static = Siatka jest statyczna
