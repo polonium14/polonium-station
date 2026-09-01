@@ -53,7 +53,7 @@ xenoarch-trigger-tip-ammonia = Amoniak
 xenoarch-trigger-tip-n2o = Podtlenek azotu
 xenoarch-trigger-tip-frezon = Frezon
 xenoarch-trigger-tip-radiation = Promieniowanie
-xenoarch-trigger-tip-microwave = Microwave radiation
+xenoarch-trigger-tip-microwave = Promieniowanie mikrofalowe
 xenoarch-trigger-tip-brute-damage = Obrażenia fizyczne
 xenoarch-trigger-tip-interaction = Interakcja fizyczna
 xenoarch-trigger-tip-wrenching = Dokręcanie
@@ -68,17 +68,17 @@ xenoarch-trigger-tip-blood = Krew
 xenoarch-trigger-tip-throw = Zostanie rzuconym
 xenoarch-trigger-tip-death = Śmierć
 xenoarch-trigger-tip-magnet = Fale magnetyczne
-xenoarch-trigger-tip-money = Bribery
-xenoarch-trigger-tip-knowledge = Knowledge Intake
-xenoarch-trigger-tip-carbs = Carbohydrate Intake
-xenoarch-trigger-tip-meat = Protein Intake
-xenoarch-trigger-tip-produce = Healthy Produce Intake
-xenoarch-trigger-tip-stamp = Bureaucratic Approval
-xenoarch-trigger-tip-shock = Electrical Shock
-xenoarch-trigger-tip-particle = Singularity-Effecting Particles
-xenoarch-trigger-tip-anomparticle = Anomaly-Effecting Particles
-xenoarch-trigger-tip-stamina-damage = Organic Exhaustion
-xenoarch-trigger-tip-laser = High-Intensity photon impacts
+xenoarch-trigger-tip-money = Przekupstwo
+xenoarch-trigger-tip-knowledge = Pobór Wiedzy
+xenoarch-trigger-tip-carbs = Spożycie węglowodanów
+xenoarch-trigger-tip-meat = Spożycie białka
+xenoarch-trigger-tip-produce = Zdrowe spożycie produktów
+xenoarch-trigger-tip-stamp = Aprobata Biurkracji
+xenoarch-trigger-tip-shock = Wstrząs elektryczny
+xenoarch-trigger-tip-particle = Cząsteczki powodujące efekt osobliwości
+xenoarch-trigger-tip-anomparticle = Cząstki powodujące skutki anomaliowe 
+xenoarch-trigger-tip-stamina-damage = Wyczerpanie organiczne
+xenoarch-trigger-tip-laser = Wpływ fotonu o wysokiej intensywności
 
 ### Description hints
 
