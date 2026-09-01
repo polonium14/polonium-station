@@ -1,1 +1,1 @@
-fibers-metallic = metallic
+fibers-metallic = metaliczne
