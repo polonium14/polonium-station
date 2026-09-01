@@ -21,7 +21,7 @@ lathe-category-service = Usługowe
 lathe-category-supply = Zaopatrzeniowe
 # Cutter
 lathe-category-tiles = Płytki
-lathe-category-circuit-tile = Circuit
+lathe-category-circuit-tile = Obwód
 lathe-category-concrete-tile = Concrete
 lathe-category-dark-tile = Dark
 lathe-category-faux-tile = Faux
