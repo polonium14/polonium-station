@@ -1,8 +1,8 @@
-metabolism-group-poison = Poison
-metabolism-group-medicine = Medicine
-metabolism-group-narcotic = Narcotic
-metabolism-group-alcohol = Alcohol
-metabolism-group-food = Food
-metabolism-group-drink = Drink
-metabolism-group-gas = Gas
-metabolism-group-plant-metabolisms = Plant Metabolism
+metabolism-group-poison = Trucizna
+metabolism-group-medicine = Leki
+metabolism-group-narcotic = Narkotyki
+metabolism-group-alcohol = Alkohole
+metabolism-group-food = Jedzenie
+metabolism-group-drink = Napoje
+metabolism-group-gas = Gazy
+metabolism-group-plant-metabolisms = Metabolizm roślin
