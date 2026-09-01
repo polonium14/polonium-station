@@ -7,7 +7,7 @@ barsign-ui-set-label = Ustaw Znak:
 
 ## The Harmbaton
 
-barsign-prototype-name-harmbaton = The Harmbaton
+barsign-prototype-name-harmbaton = Pała do bicia
 barsign-prototype-description-harmbaton = Świetne miejsce do jedzenia zarówno dla ochroniarzy, jak i pasażerów.
 
 ## The Singulo
@@ -27,7 +27,7 @@ barsign-prototype-description-officer-beersky = Człowieku, te drinki są genial
 
 ## The Outer Spess
 
-barsign-prototype-name-outer-spess = The Outer Spess
+barsign-prototype-name-outer-spess = Kosmiczne Rubieże
 barsign-prototype-description-outer-spess = Ten bar tak naprawdę nie znajduje się w przestrzeni kosmicznej.
 
 ## The Coderbus
@@ -127,12 +127,12 @@ barsign-prototype-description-maltroach = Pisk!
 
 ## Whiskey Echoes
 
-barsign-prototype-name-whiskeyechoes = Whiskey Echoes
+barsign-prototype-name-whiskeyechoes = Whiskey Moją Żoną
 barsign-prototype-description-whiskeyechoes = Elitarny bar dla elitarnych oper–chwila, to stacja Nanotrasen. Dlaczego ten szyld jest w bazie?
 
 ## EmpBarSign
 
-barsign-prototype-name-empbarsign = glitchy bar sign
+barsign-prototype-name-empbarsign = zglitchowany szyld baru
 barsign-prototype-description-empbarsign = Coś poszło bardzo nie tak.
 
 ## SignOff
