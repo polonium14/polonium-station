@@ -5,7 +5,7 @@ nano-task-program-name = NanoTask
 news-read-program-name = Wiadomości Stacyjne
 crew-manifest-program-name = Manifest Załogi
 crew-manifest-cartridge-loading = Ładowanie ...
-crew-manifest-cartridge-loading-failed = Failed to load crew manifest!
+crew-manifest-cartridge-loading-failed = Nie można załadować stanu załogi!
 net-probe-program-name = NetProbe
 net-probe-scan = Zeskanowano { $device }!
 net-probe-label-name = Nazwa
@@ -21,9 +21,9 @@ log-probe-print-button = Wydrukuj Logi
 log-probe-printout-device = Zeskanowane Urządzenie: { $name }
 log-probe-printout-header = Najnowsze logi:
 log-probe-printout-entry = #{ $number } / { $time } / { $accessor }
-astro-nav-program-name = AstroNav
-med-tek-program-name = MedTek
-plant-scan-program-name = PlantScan
+astro-nav-program-name = AstroNaw
+med-tek-program-name = MedTech
+plant-scan-program-name = RoślinSkan
 
 # NanoTask cartridge
 
