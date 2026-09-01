@@ -1,6 +1,6 @@
 # Uplink
-store-category-debug = debug category
-store-category-debug2 = debug category 2
+store-category-debug = kategoria debugowania
+store-category-debug2 = kategoria debugowania 2
 store-category-weapons = Broń
 store-category-ammo = Amunicja
 store-category-explosives = Materiały wybuchowe
@@ -17,11 +17,11 @@ store-discounted-items = Wyprzedaż!
 # Revenant
 store-category-abilities = Umiejętności
 # Wizard
-store-caregory-spellbook-offensive = Offensive Spells
-store-caregory-spellbook-defensive = Defensive Spells
-store-caregory-spellbook-utility = Utility Spells
-store-caregory-spellbook-equipment = Wizard Equipment
-store-caregory-spellbook-events = Event Spells
+store-caregory-spellbook-offensive = Ofensywne zaklęcia
+store-caregory-spellbook-defensive = Defensywne zaklęcia
+store-caregory-spellbook-utility = Zaklęcia użytkowe
+store-caregory-spellbook-equipment = Wyposażenie Czarodzieja
+store-caregory-spellbook-events = Zaklęcia wydarzeń
 # Nukie Delivery
 store-category-nukie-delivery = Offers
 # Changeling
