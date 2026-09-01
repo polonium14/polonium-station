@@ -1,8 +1,8 @@
-smart-fridge-component-try-eject-unknown-entry = Invalid selection!
-smart-fridge-component-try-eject-out-of-stock = Out of stock!
-smart-fridge-component-try-eject-access-denied = Access denied!
-smart-fridge-component-search-filter = Search...
-smart-fridge-component-title = SmartFridge
+smart-fridge-component-try-eject-unknown-entry = Nieprawidłowy wybór!
+smart-fridge-component-try-eject-out-of-stock = Brak na stanie!
+smart-fridge-component-try-eject-access-denied = Odmowa dostępu!
+smart-fridge-component-search-filter = Szukaj...
+smart-fridge-component-title = InteligentaLodówka
 smart-fridge-list-item = { $item } [{ $amount }]
 smart-fridge-request-generic = All sales final
-smart-fridge-request-chemistry = Request refills from chemistry
+smart-fridge-request-chemistry = Poproś chemika o uzupełnienie
