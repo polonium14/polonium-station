@@ -1,9 +1,9 @@
-war-declarator-not-working = The device makes beeping noises, but nothing happens...
-war-declarator-ui-header = Declaration of War
-war-declarator-ui-war-button = DECLARE WAR!
-war-declarator-ui-try-war-button = Try to declare war
+war-declarator-not-working = Urządzenie brzęczy, ale nic się nie dzieje...
+war-declarator-ui-header = Wypowiedzenie wojny
+war-declarator-ui-war-button = WYPOWIEDZ WOJNĘ!
+war-declarator-ui-try-war-button = Spróbuj wypowiedzieć wojnę
 war-declarator-conditions-small-crew = There are not enough nuclear operatives to declare war!
-war-declarator-conditions-left-outpost = Shuttle left the syndicate outpost
+war-declarator-conditions-left-outpost = Statek opuścił bazę wypadową syndykatu.
 war-declarator-conditions-time-out = War declaration time passed
 war-declarator-conditions-ready = Shuttle can leave the outpost!
 war-declarator-conditions-unknown = Unknown
