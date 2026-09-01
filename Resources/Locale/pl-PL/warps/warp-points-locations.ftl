@@ -1,15 +1,24 @@
 # Markers
-location-beacon = beacon
+location-beacon = nadajnik
 # Mobs
-location-nar-sie = Nar'Sie
+location-nar-sie = Nar'Si
 location-ratvar = Ratvar
-location-mothership-core = Mothership Core
+location-mothership-core = Rdzeń statku-matki
 # Objects
-location-tesla-ball = tesla ball
-location-singularity = singularity
-location-powersink = powersink
-location-immovable-rod = immovable rod
-location-nuke-disk = nuke disk
-location-nuclear-bomb = nuclear bomb
+location-tesla-ball = cewka tesli
+location-singularity = osobliwość
+location-powersink = pochłaniacz mocy
+location-immovable-rod = niepowstrzymany pręt
+location-nuke-disk = dysk nuklearny
+location-nuclear-bomb = bomba atomowa
 location-supermatter = supermateria
 location-nuclear-reactor = reaktor jądrowy
+
+# Markers
+
+
+# Mobs
+
+
+# Objects
+

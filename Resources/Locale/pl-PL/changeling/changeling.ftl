@@ -41,13 +41,10 @@ changeling-takeover-start-others = { CAPITALIZE(THE($user)) } zaczyna wpełzać 
 changeling-takeover-success-self = Pomyślnie zainfekowaliśmy ciało i przyjęliśmy jego formę.
 # stings
 changeling-sting-success = Cicho ukąsiliśmy { THE($target) }!
-# other
-changeling-paused-map-name = Mapa przechowywania tożsamości changelinga
-
 # mindshield
 changeling-fake-mindshield-enabled = We emit fake mindshield waves.
-
 changeling-fake-mindshield-disabled = We stop emitting fake mindshield waves.
-
 # chemicals
 changeling-not-enough-chemicals = We don't have enough Chemicals.
+# other
+changeling-paused-map-name = Mapa przechowywania tożsamości changelinga

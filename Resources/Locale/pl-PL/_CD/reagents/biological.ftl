@@ -1,2 +1,2 @@
 reagent-name-synth-blood = synthblood
-reagent-desc-synth-blood = Silvery synthetic blood. It glints efficiently in the light.
+reagent-desc-synth-blood = Srebrna krew syntetyczna. Glinuje skutecznie w świetle.

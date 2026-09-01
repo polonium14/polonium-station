@@ -23,9 +23,7 @@ forensic-scanner-verb-message = Perform a forensic scan
 forensics-dna-unknown = unknown DNA
 forensics-verb-text = Remove evidence
 forensics-verb-message = Remove fingerprints and DNA residues from the object!
+forensics-cleaning-user = You begin cleaning the evidence off of { THE($target) }...
+forensics-cleaning-others = { CAPITALIZE($user) } begins cleaning the evidence off of { THE($target) }.
 forensics-cleaning-cannot-clean = There is nothing cleanable on { $target }!
 forensic-pad-gloves = { CAPITALIZE($target) } is wearing gloves.
-
-forensics-cleaning-user = You begin cleaning the evidence off of {THE($target)}...
-
-forensics-cleaning-others = {CAPITALIZE($user)} begins cleaning the evidence off of {THE($target)}.
