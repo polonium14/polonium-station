@@ -1,6 +1,6 @@
 ﻿## Default
 teleportation-menu-default-window-title = Menu teleportacji
-teleportation-menu-destination-obstructed = You don't feel like you went anywhere...
+teleportation-menu-destination-obstructed = Masz wrażenie, że nigdzie się nie przemieściłeś....
 
 ## Wizard
 
