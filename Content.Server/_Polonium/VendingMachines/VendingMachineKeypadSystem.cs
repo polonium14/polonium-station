@@ -1,10 +1,10 @@
-﻿using Content.Shared._Funkystation.VendingMachines;
+﻿using Content.Shared._Polonium.VendingMachines;
 using Content.Shared.VendingMachines;
 using Content.Shared.VendingMachines.Components;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 
-namespace Content.Server._Funkystation.VendingMachines;
+namespace Content.Server._Polonium.VendingMachines;
 
 public sealed partial class VendingMachineKeypadSystem : EntitySystem
 {

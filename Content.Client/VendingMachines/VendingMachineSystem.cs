@@ -1,5 +1,5 @@
 using System.Linq;
-using Content.Client._Funkystation.VendingMachines;
+using Content.Client._Polonium.VendingMachines;
 using Content.Client.VendingMachines.Components;
 using Content.Shared.Power;
 using Content.Shared.Power.EntitySystems;
@@ -7,6 +7,7 @@ using Content.Shared.VendingMachines;
 using Content.Shared.VendingMachines.Components;
 using Robust.Client.Animations;
 using Robust.Client.GameObjects;
+using Robust.Client.UserInterface;
 using Robust.Shared.GameStates;
 
 namespace Content.Client.VendingMachines;

@@ -7,7 +7,7 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Input;
 
-namespace Content.Client._Funkystation.VendingMachines.UI;
+namespace Content.Client._Polonium.VendingMachines.UI;
 
 [GenerateTypedNameReferences]
 public sealed partial class VendingMachineKeypadKey : LayoutContainer

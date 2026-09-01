@@ -1,4 +1,4 @@
-﻿namespace Content.Client._Funkystation.VendingMachines;
+﻿namespace Content.Client._Polonium.VendingMachines;
 
 /// <summary>
 /// made so VendingMachineSystem can push state to either the upstream vending ui or the funky keypad ui without knowing which is open

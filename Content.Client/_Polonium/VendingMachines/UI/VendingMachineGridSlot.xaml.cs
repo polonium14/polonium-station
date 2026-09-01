@@ -8,7 +8,7 @@ using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
-namespace Content.Client._Funkystation.VendingMachines.UI;
+namespace Content.Client._Polonium.VendingMachines.UI;
 
 [GenerateTypedNameReferences]
 public sealed partial class VendingMachineGridSlot : PanelContainer

@@ -1,4 +1,4 @@
-﻿using Content.Client._Funkystation.VendingMachines.UI;
+﻿using Content.Client._Polonium.VendingMachines.UI;
 using Content.Client.VendingMachines;
 using Content.Shared.Access.Systems;
 using Content.Shared.VendingMachines;
@@ -6,10 +6,10 @@ using JetBrains.Annotations;
 using Robust.Client.Player;
 using Robust.Client.UserInterface;
 using System.Linq;
-using Content.Shared._Funkystation.VendingMachines;
+using Content.Shared._Polonium.VendingMachines;
 using Content.Shared.VendingMachines.Components;
 
-namespace Content.Client._Funkystation.VendingMachines;
+namespace Content.Client._Polonium.VendingMachines;
 
 [UsedImplicitly]
 public sealed class VendingMachineKeypadBoundUserInterface(EntityUid owner, Enum uiKey)

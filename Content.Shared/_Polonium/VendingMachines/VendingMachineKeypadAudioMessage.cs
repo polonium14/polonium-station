@@ -1,6 +1,6 @@
 ﻿using Robust.Shared.Serialization;
 
-namespace Content.Shared._Funkystation.VendingMachines;
+namespace Content.Shared._Polonium.VendingMachines;
 
 [Serializable, NetSerializable]
 public enum VendingMachineKeypadSound : byte
