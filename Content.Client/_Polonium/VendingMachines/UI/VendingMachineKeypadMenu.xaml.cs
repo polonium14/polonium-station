@@ -37,6 +37,7 @@ public sealed partial class VendingMachineKeypadMenu : FancyWindow
     private float _chuteRattleTimer;
     private bool _cursorVisible = true;
     private bool _showingFeedback;
+    private bool _enabled = true;
 
     // flavor text
     private readonly string[] _successPhrases = [ "[ ENJOY ]", "[ THX! ]", "[ YUM! ]", "[ VEND ]" ];
@@ -117,6 +118,7 @@ public sealed partial class VendingMachineKeypadMenu : FancyWindow
 
     public void Populate(List<VendingMachineInventoryEntry> inventory, bool enabled)
     {
+        _enabled = enabled;
         ItemGrid.RemoveAllChildren();
         _slots.Clear();
 
@@ -141,6 +143,7 @@ public sealed partial class VendingMachineKeypadMenu : FancyWindow
 
     public void UpdateAmounts(List<VendingMachineInventoryEntry> inventory, bool enabled)
     {
+        _enabled = enabled;
         if (inventory.Count != _slots.Count)
         {
             Populate(inventory, enabled);
@@ -271,6 +274,11 @@ public sealed partial class VendingMachineKeypadMenu : FancyWindow
     private void SubmitBuffer()
     {
         if (_showingFeedback)
+            return;
+
+        // machine is mid-eject (or otherwise disabled): reject the code
+        // without playing feedback or starting the vend animation.
+        if (!_enabled)
             return;
 
         if (_bufferLetter is not { } letter || _bufferNumber is not { } number)
