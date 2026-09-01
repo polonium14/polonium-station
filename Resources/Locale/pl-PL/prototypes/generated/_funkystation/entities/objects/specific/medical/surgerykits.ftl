@@ -1,2 +1,2 @@
 ent-SurgeryKit = surgery kit
-    .desc = Basic, but professional kit. Contains basic necessities for surgery.
+    .desc = Podstawowy, profesjonalny zestaw. Zawiera podstawowe rzeczy potrzebne do operowania.
