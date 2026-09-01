@@ -1,3 +1,3 @@
 # ToiletLidClosed
-construction-examine-condition-toilet-lid-closed = Use a [color=yellow]crowbar[/color] to close the lid.
-construction-step-condition-toilet-lid-closed = Make sure the toilet lid is closed.
+construction-examine-condition-toilet-lid-closed = Użyj [color=yellow]łom[/color] aby zamknąć pokrywkę.
+construction-step-condition-toilet-lid-closed = Upewnić się, że pokrywka toalety jest zamknięta.
