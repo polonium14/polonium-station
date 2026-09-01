@@ -7,6 +7,6 @@ ui-escape-guidebook = Podręcznik
 ui-escape-wiki = Wiki
 ui-escape-disconnect = Rozłącz
 ui-escape-quit = Wyjdź
-ui-escape-feedback = Feedback
+ui-escape-feedback = Opinie
 ui-escape-remarks = Admin Remarks
 ui-escape-remarks-button-disabled = This functionality has been disabled by the server.
