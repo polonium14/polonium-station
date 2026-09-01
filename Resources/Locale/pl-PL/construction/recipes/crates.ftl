@@ -1,5 +1,5 @@
-construction-recipe-crate-freezer = crate freezer
-construction-recipe-big-box = large cardboard box
+construction-recipe-crate-freezer = zamrażarka skrzyniowa
+construction-recipe-big-box = duże kartonowe pudełko
 construction-recipe-box-cardboard = small cardboard box
-construction-recipe-box-cardboard-small = small cardboard box
-construction-recipe-box-tote = circuit tote
+construction-recipe-box-cardboard-small = małe kartonowe pudełko
+construction-recipe-box-tote = torba na obwody
