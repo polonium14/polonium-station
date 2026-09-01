@@ -1,2 +1,2 @@
-ent-DeployableBarrier = deployable barrier
-    .desc = A deployable barrier. Swipe your ID card to lock/unlock it.
+ent-DeployableBarrier = rozkładana bariera
+    .desc = Rozkładana bariera. Zeskanuj swoje ID, aby zablokować/odblokować
