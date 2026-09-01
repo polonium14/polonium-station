@@ -1,5 +1,5 @@
-ent-EvidenceMarker = evidence marker
-    .desc = A numbered yellow marker, useful for labeling evidence on a crime scene.
+ent-EvidenceMarker = znacznik dowodu
+    .desc = Numerowany żółty znacznik, przydatny do oznaczania dowodów na miejscu zbrodni.
 ent-EvidenceMarkerOne = { ent-EvidenceMarker }
     .desc = { ent-EvidenceMarker.desc }
 ent-EvidenceMarkerTwo = { ent-EvidenceMarker }
@@ -18,5 +18,5 @@ ent-EvidenceMarkerEight = { ent-EvidenceMarker }
     .desc = { ent-EvidenceMarker.desc }
 ent-EvidenceMarkerNine = { ent-EvidenceMarker }
     .desc = { ent-EvidenceMarker.desc }
-ent-BoxEvidenceMarkers = evidence marker box
-    .desc = A pack of numbered yellow markers, useful for labeling evidence on a crime scene.
+ent-BoxEvidenceMarkers = pudełko znaczników dowodu
+    .desc = Pudełko numerowanych żółtych znaczników, przydatnych do oznaczania dowodów na miejscu zbrodni.
