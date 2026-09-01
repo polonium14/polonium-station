@@ -1,16 +1,16 @@
-ghost-role-information-space-cowboy-name = Space Cowboy
-ghost-role-information-space-cowboy-description = Ride free cowboy, space is just another wild west to explore.
-ghost-role-information-space-cowboy-rules = You are a free agent. You are free to be crew aligned,an antagonist or anything in between but senseless murdering and major station sabotage is not allowed. You are not to travel to Centcomm on evac, space is your home not a corpo office.
-ghost-role-information-cleanbot-name = Cleanbot
-ghost-role-information-cleanbot-description = You might be small, and you might be slow, but no puddle shall question your power!
+ghost-role-information-space-cowboy-name = Kosmiczny Kowboj
+ghost-role-information-space-cowboy-description = Jeździj wolnej cowboy, kosmos to tylko kolejny dziki zachód do odkrycia.
+ghost-role-information-space-cowboy-rules = Jesteś wolnym agentem. Możesz być po stronie załogi, antagonistą lub czymkolwiek pomiędzy ale bezsensowne morderstwo i poważny sabotaż stacji nie jest dozwolony. Nie leć do Centralnego Dowództwa podczas ewakuacji, kosmos jest twoim domem nie biuro korporacji.
+ghost-role-information-cleanbot-name = Czystobot
+ghost-role-information-cleanbot-description = Może jesteś mały, i być może jesteś powolny, ale żadna plama nie może kwestionować twojej potęgi!
 ghost-role-information-cleanbot-rules =
-    You are [bold]Cleanbot[/bold], a premium unit designed by Nanotrasen for automatisation of custodial work!
-    Under no circumstance should you abandon your war on dirtiness, meaning DON'T IGNORE PUDDLES.
-    Outside that, however, you are free to choose your friends and enemies yourself. You are not under Crewsimov, and don't need to follow anyone's orders.
+    Jesteś [bold]Czystobotem[/bold], jednostką premium stworzoną przez Nanotrasen w celu automatyzacji pracy woźnego!
+    W żadnym wypadku nie powinieneś porzucić swojej wojny z brudem, co oznacza, NIE IGNORUJ PLAM.
+    Poza tym możesz samodzielnie wybrać swoich przyjaciół i wrogów. Nie jesteś pod Crewsimovem więc nie musisz się stosować do rozkazów.
     
-    You don't remember any of your previous life, and you don't remember anything you learned as a ghost.
-    You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc.
-    You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
+    Nie pamiętasz swojego poprzedniego życia i nie pamiętasz niczego czego dowiedziałeś się jako duch.
+    Możesz pamiętać wiedzę ogólną o grze, czyli jak gotować, jak używać obiektów itp.
+    Całkowicie [color=red]NIE[/color] możesz pamiętać, mówić imienia, wyglądu itp. swojej poprzedniej postaci.
 ghost-role-information-medibot-name = Medibot
 ghost-role-information-medibot-description = Physician's best friend.
 ghost-role-information-medibot-rules =
