@@ -51,7 +51,7 @@ anomaly-sync-examine-connected = Jest [color=darkgreen]podłączona[/color] do a
 anomaly-sync-examine-not-connected = Nie jest [color=darkred]podłączona[/color] do anomalii.
 anomaly-sync-connect-verb-text = Podłącz anomalię
 anomaly-sync-connect-verb-message = Podłącz pobliską anomalię do { $machine }.
-anomaly-sync-disconnect-verb-text = Detach anomaly
+anomaly-sync-disconnect-verb-text = Odłącz anomalię
 anomaly-sync-disconnect-verb-message = Detach the connected anomaly from { $machine }.
 anomaly-generator-ui-title = Generator anomalii
 anomaly-generator-fuel-display = Paliwo:
@@ -90,4 +90,4 @@ anomaly-behavior-inconstancy = [color=crimson]Wykryto nietrwałość. Typy cząs
 anomaly-behavior-fast = [color=crimson]Częstotliwość pulsacji jest znacznie zwiększona.[/color]
 anomaly-behavior-strenght = [color=crimson]Moc pulsacji jest znacznie zwiększona.[/color]
 anomaly-behavior-moving = [color=crimson]Wykryto niestabilność współrzędnych.[/color]
-anomaly-secret-admin = [color=red](ERROR)[/color]
+anomaly-secret-admin = [color=red](BŁĄD)[/color]
