@@ -45,12 +45,16 @@
     size: Tiny
     inhandVisuals:
       left:
-      - state: stamp-inhand-left
-      - state: handle-inhand-left
+      - sprite: Objects/Misc/stamps.rsi
+        state: stamp-inhand-left
+      - sprite: Objects/Misc/stamps.rsi
+        state: handle-inhand-left
         color: "#f8f8f8"
       right:
-      - state: stamp-inhand-right
-      - state: handle-inhand-right
+      - sprite: Objects/Misc/stamps.rsi
+        state: stamp-inhand-right
+      - sprite: Objects/Misc/stamps.rsi
+        state: handle-inhand-right
         color: "#f8f8f8"
   - type: StealTarget
     stealGroup: Stamp
