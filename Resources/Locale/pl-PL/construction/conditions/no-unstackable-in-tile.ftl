@@ -1,3 +1,3 @@
-construction-step-condition-no-unstackable-in-tile = You cannot make a stack of similar devices.
+construction-step-condition-no-unstackable-in-tile = Nie możesz utworzyć stosu z tych urządzeń
 pipe-restrict-overlap-popup-blocked = { CAPITALIZE($pipe) } doesn't fit over the other pipes!
-device-restrict-overlap-popup-blocked = { CAPITALIZE($device) } doesn't fit over other devices!
+device-restrict-overlap-popup-blocked = { CAPITALIZE($device) } nie pasuje na pozostałe urządzenia!
