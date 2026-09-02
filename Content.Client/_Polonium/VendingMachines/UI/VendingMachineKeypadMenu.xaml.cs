@@ -153,7 +153,18 @@ public sealed partial class VendingMachineKeypadMenu : FancyWindow
         }
 
         BuildLetterGrid();
-        ClearBuffer();
+
+        // keep a half-typed code across inventory refreshes, dropping it only
+        // if its row fell off the rebuilt grid; during feedback the buffer is
+        // already empty and the label holds feedback text, so just re-apply
+        // highlights to the new slots.
+        if (_bufferLetter is { } bufferLetter && bufferLetter - 'A' >= _rowCount)
+            _bufferLetter = null;
+
+        if (_showingFeedback)
+            UpdateHighlights();
+        else
+            UpdateBufferLabel();
     }
 
     public void UpdateAmounts(List<VendingMachineInventoryEntry> inventory)
