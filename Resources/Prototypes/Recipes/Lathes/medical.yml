@@ -201,7 +201,7 @@
   parent: RollerBedSpawnFolded
   id: CheapRollerBedSpawnFolded
   result: CheapRollerBedSpawnFolded
-  
+
 - type: latheRecipe
   parent: RollerBedSpawnFolded
   id: EmergencyRollerBedSpawnFolded
@@ -213,7 +213,7 @@
   completetime: 4
   materials:
     Steel: 600
-    Plastic: 300   
+    Plastic: 300
 
 - type: latheRecipe
   id: WhiteCane
@@ -282,3 +282,25 @@
     Plastic: 250
     Silver: 400
     Gold: 50 # A bit of gold for the gold ornaments on it!
+
+- type: latheRecipe
+  id: IVDripFlatpack
+  result: IVDripFlatpack
+  completetime: 4
+  materials:
+    Steel: 1000
+    Plastic: 500
+
+- type: latheRecipe
+  id: IVBag
+  result: IVBag
+  completetime: 2
+  materials:
+    Plastic: 250
+
+- type: latheRecipe
+  id: BoneGel
+  result: BoneGel
+  completetime: 2
+  materials:
+    Plastic: 200

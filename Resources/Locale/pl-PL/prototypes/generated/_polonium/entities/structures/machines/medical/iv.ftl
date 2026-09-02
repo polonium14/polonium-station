@@ -1,0 +1,11 @@
+ent-IVDrip = stojak na kroplówkę
+    .suffix = kroplówka, pusty
+    .desc = Stojak utrzymujący worki kroplówki w pionie. Podaje płyny podłączonemu pacjentowi lub pobiera od niego krew.
+ent-IVBag = worek kroplówki
+    .suffix = pusty
+    .desc = Worek kroplówki. Zawiera płyny, zwykle używane do transfuzji.
+ent-IVBagSaline = { ent-IVBag }
+    .suffix = sól fizjologiczna
+    .desc = { ent-IVBag.desc }
+ent-IVDripFlatpack = flatpack stojak na kroplówkę
+    .desc = Flatpack służący do zbudowania stojaka na kroplówkę.

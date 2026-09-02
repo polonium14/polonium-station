@@ -47,7 +47,10 @@
   - OffsetCane
   - OffsetCaneWood
   - JetInjector
-  
+  - IVDripFlatpack
+  - IVBag
+  - BoneGel
+
 - type: latheRecipePack
   id: RollerBedsStatic
   recipes:
@@ -55,7 +58,7 @@
   - CheapRollerBedSpawnFolded
   - EmergencyRollerBedSpawnFolded
   - VehicleWheelchair # Polonium Addition
-  
+
 - type: latheRecipePack
   id: MedicalClothingStatic
   recipes:
