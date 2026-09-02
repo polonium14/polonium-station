@@ -1,6 +1,5 @@
 using Content.Client.UserInterface.Controls;
 using Content.Client.VendingMachines.UI;
-using Content.Client._Polonium.VendingMachines;
 using Content.Shared.VendingMachines;
 using Robust.Client.UserInterface;
 using Robust.Shared.Input;
@@ -9,7 +8,7 @@ using Content.Shared.VendingMachines.Components;
 
 namespace Content.Client.VendingMachines;
 
-public sealed class VendingMachineBoundUserInterface(EntityUid owner, Enum uiKey) : BoundUserInterface(owner, uiKey), IVendingMachineBoundUi
+public sealed class VendingMachineBoundUserInterface(EntityUid owner, Enum uiKey) : BoundUserInterface(owner, uiKey)
 {
     [ViewVariables]
     private VendingMachineMenu? _menu;

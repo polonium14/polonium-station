@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Client._Polonium.VendingMachines;
 using Content.Client.VendingMachines.Components;
@@ -7,7 +8,6 @@ using Content.Shared.VendingMachines;
 using Content.Shared.VendingMachines.Components;
 using Robust.Client.Animations;
 using Robust.Client.GameObjects;
-using Robust.Client.UserInterface;
 using Robust.Shared.GameStates;
 
 namespace Content.Client.VendingMachines;
@@ -24,8 +24,7 @@ public sealed partial class VendingMachineSystem : SharedVendingMachineSystem
         if (!Resolve(entity, ref entity.Comp))
             return;
 
-        if (UISystem.TryGetOpenUi<BoundUserInterface>(entity.Owner, VendingMachineUiKey.Key, out var baseBui) &&
-            baseBui is IVendingMachineBoundUi bui)
+        if (TryGetOpenUi(entity.Owner, out var bui))
         {
             bui.UpdateAmounts();
         }
@@ -62,14 +61,13 @@ public sealed partial class VendingMachineSystem : SharedVendingMachineSystem
         if (brokenChanged)
             TryUpdateVisualState((uid, component));
 
-        if (UISystem.TryGetOpenUi<BoundUserInterface>(uid, VendingMachineUiKey.Key, out var baseBui) &&
-            baseBui is IVendingMachineBoundUi bui)
-        {
-            if (fullUiUpdate)
-                bui.Refresh();
-            else
-                bui.UpdateAmounts();
-        }
+        if (!TryGetOpenUi(uid, out var bui))
+            return;
+
+        if (fullUiUpdate)
+            bui.Refresh();
+        else
+            bui.UpdateAmounts();
     }
 
     [SubscribeLocalEvent]
@@ -246,5 +244,10 @@ public sealed partial class VendingMachineSystem : SharedVendingMachineSystem
             return;
 
         _sprite.LayerSetVisible(sprite.AsNullable(), actualLayer, false);
+    }
+
+    private bool TryGetOpenUi(EntityUid uid, [NotNullWhen(true)] out VendingMachineKeypadBoundUserInterface? bui)
+    {
+        return UISystem.TryGetOpenUi(uid, VendingMachineUiKey.Key, out bui);
     }
 }
