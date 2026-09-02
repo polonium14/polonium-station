@@ -8,6 +8,8 @@ using Content.Shared.Movement.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Network;
 using Robust.Shared.Physics.Events;
+using Robust.Shared.Random;
+using Robust.Shared.Spawners;
 using Robust.Shared.Timing;
 
 namespace Content.Shared._RMC14.Xenonids.Weeds;
@@ -19,6 +21,7 @@ public abstract partial class SharedXenoWeedsSystem : EntitySystem
     [Dependency] private SharedXenoHiveSystem _hive = default!;
     [Dependency] private MovementSpeedModifierSystem _movementSpeed = default!;
     [Dependency] private INetManager _net = default!;
+    [Dependency] private IRobustRandom _random = default!;
     [Dependency] private RMCMapSystem _rmcMap = default!;
     [Dependency] private IGameTiming _timing = default!;
 
@@ -37,6 +40,7 @@ public abstract partial class SharedXenoWeedsSystem : EntitySystem
 
         SubscribeLocalEvent<XenoWeedsComponent, MapInitEvent>(OnWeedsMapInit);
         SubscribeLocalEvent<XenoWeedsComponent, AnchorStateChangedEvent>(OnWeedsAnchorChanged);
+        SubscribeLocalEvent<XenoWeedsComponent, EntityTerminatingEvent>(OnWeedsTerminating);
         SubscribeLocalEvent<XenoWeedsComponent, StartCollideEvent>(OnWeedsStartCollide);
         SubscribeLocalEvent<XenoWeedsComponent, EndCollideEvent>(OnWeedsEndCollide);
 
@@ -69,6 +73,66 @@ public abstract partial class SharedXenoWeedsSystem : EntitySystem
     {
         if (_net.IsServer && !args.Anchored)
             QueueDel(weeds);
+    }
+
+    private void OnWeedsTerminating(Entity<XenoWeedsComponent> ent, ref EntityTerminatingEvent args)
+    {
+        if (!_net.IsServer)
+            return;
+
+        if (!ent.Comp.IsSource)
+        {
+            if (ent.Comp.Source is { } source && TryComp(source, out XenoWeedsComponent? weeds))
+            {
+                weeds.Spread.Remove(ent);
+                Dirty(source, weeds);
+            }
+
+            return;
+        }
+
+        var toDelete = new HashSet<EntityUid>(ent.Comp.Spread);
+        var query = EntityQueryEnumerator<XenoWeedsComponent>();
+        while (query.MoveNext(out var uid, out var weeds))
+        {
+            if (weeds.Source == ent.Owner)
+                toDelete.Add(uid);
+        }
+
+        foreach (var spread in toDelete)
+        {
+            if (TerminatingOrDeleted(spread))
+                continue;
+
+            if (TryComp(spread, out XenoWeedsComponent? weeds))
+            {
+                weeds.Source = null;
+                Dirty(spread, weeds);
+            }
+
+            var timed = EnsureComp<TimedDespawnComponent>(spread);
+            var offset = _random.Next(ent.Comp.MinRandomDelete, ent.Comp.MaxRandomDelete);
+            timed.Lifetime = (float)offset.TotalSeconds;
+        }
+
+        ent.Comp.Spread.Clear();
+    }
+
+    public void AssignSource(EntityUid weeds, EntityUid source)
+    {
+        if (TryComp(weeds, out XenoWeedsComponent? weedsComp))
+        {
+            weedsComp.IsSource = false;
+            weedsComp.Source = source;
+            weedsComp.Spreads = true;
+            Dirty(weeds, weedsComp);
+        }
+
+        if (!TryComp(source, out XenoWeedsComponent? sourceComp))
+            return;
+
+        sourceComp.Spread.Add(weeds);
+        Dirty(source, sourceComp);
     }
 
     private void OnWeedsStartCollide(Entity<XenoWeedsComponent> ent, ref StartCollideEvent args)

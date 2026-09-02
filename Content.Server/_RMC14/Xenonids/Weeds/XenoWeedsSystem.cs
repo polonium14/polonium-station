@@ -82,14 +82,7 @@ public sealed partial class XenoWeedsSystem : SharedXenoWeedsSystem
                     continue;
 
                 var spawned = Spawn(weeds.Spawns, coords);
-                if (TryComp(spawned, out XenoWeedsComponent? childWeeds))
-                {
-                    childWeeds.IsSource = false;
-                    childWeeds.Source = source;
-                    childWeeds.Spreads = true;
-                    Dirty(spawned, childWeeds);
-                }
-
+                AssignSource(spawned, source.Value);
                 _hive.SetSameHive(uid, spawned);
             }
         }
