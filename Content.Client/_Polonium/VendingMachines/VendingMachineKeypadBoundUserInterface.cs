@@ -66,6 +66,9 @@ public sealed partial class VendingMachineKeypadBoundUserInterface(EntityUid own
         if (selectedItem == null)
             return VendingMachineKeypadFeedback.Invalid;
 
+        if (selectedItem.Amount == 0)
+            return VendingMachineKeypadFeedback.Empty;
+
         // live machine state, mirroring TryEjectVendorItem guard. A mid-eject,
         // broken, or unpowered machine silently swallows the code instead of
         // playing success feedback for a vend the server will drop.
