@@ -30,9 +30,9 @@ public sealed partial class VendingMachineGridSlot : PanelContainer
     private bool _pendingSoldOut;
 
     // highlighting
-    private readonly StyleBoxFlat _normalStyle = new() { BackgroundColor = new Color(30, 30, 40), BorderColor = new Color(90, 90, 105), BorderThickness = new Thickness(1) };
-    private readonly StyleBoxFlat _rowMatchStyle = new() { BackgroundColor = new Color(40, 50, 70), BorderColor = new Color(120, 140, 190), BorderThickness = new Thickness(2) };
-    private readonly StyleBoxFlat _exactMatchStyle = new() { BackgroundColor = new Color(40, 70, 40), BorderColor = new Color(100, 255, 100), BorderThickness = new Thickness(2) };
+    private static readonly StyleBoxFlat NormalStyle = new() { BackgroundColor = new Color(30, 30, 40), BorderColor = new Color(90, 90, 105), BorderThickness = new Thickness(1) };
+    private static readonly StyleBoxFlat RowMatchStyle = new() { BackgroundColor = new Color(40, 50, 70), BorderColor = new Color(120, 140, 190), BorderThickness = new Thickness(2) };
+    private static readonly StyleBoxFlat ExactMatchStyle = new() { BackgroundColor = new Color(40, 70, 40), BorderColor = new Color(100, 255, 100), BorderThickness = new Thickness(2) };
 
     public bool SoldOut { get; private set; }
 
@@ -44,7 +44,7 @@ public sealed partial class VendingMachineGridSlot : PanelContainer
 
         MinSize = SetSize = new Vector2(SlotSize, SlotSize);
 
-        PanelOverride = _normalStyle;
+        PanelOverride = NormalStyle;
 
         SlotLayout.SetSize = new Vector2(SlotSize, SlotSize);
         LayoutContainer.SetPosition(SlotLayout, Vector2.Zero);
@@ -119,11 +119,11 @@ public sealed partial class VendingMachineGridSlot : PanelContainer
     public void SetHighlight(bool isRowMatch, bool isExactMatch)
     {
         if (isExactMatch)
-            PanelOverride = _exactMatchStyle;
+            PanelOverride = ExactMatchStyle;
         else if (isRowMatch)
-            PanelOverride = _rowMatchStyle;
+            PanelOverride = RowMatchStyle;
         else
-            PanelOverride = _normalStyle;
+            PanelOverride = NormalStyle;
     }
 
     private void ApplySoldOutState(bool soldOut)
