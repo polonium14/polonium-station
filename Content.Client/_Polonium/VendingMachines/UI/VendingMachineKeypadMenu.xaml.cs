@@ -10,6 +10,14 @@ using FancyWindow = Content.Client.UserInterface.Controls.FancyWindow;
 
 namespace Content.Client._Polonium.VendingMachines.UI;
 
+public enum VendingMachineKeypadFeedback : byte
+{
+    Success,
+    Empty,   // slot sold out
+    Invalid, // incomplete or unmapped code
+    Denied,  // access denied
+}
+
 [GenerateTypedNameReferences]
 public sealed partial class VendingMachineKeypadMenu : FancyWindow
 {
@@ -17,7 +25,7 @@ public sealed partial class VendingMachineKeypadMenu : FancyWindow
     [Dependency] private IEntityManager _entManager = null!;
     private readonly SharedAudioSystem _audio;
 
-    public event Func<int, bool>? OnCodeEntered;
+    public event Func<int, VendingMachineKeypadFeedback>? OnCodeEntered;
     public event Action<VendingMachineKeypadSound, float>? OnAudioPlayed;
 
     private readonly List<VendingMachineGridSlot> _slots = new();
@@ -40,7 +48,13 @@ public sealed partial class VendingMachineKeypadMenu : FancyWindow
     private bool _enabled = true;
 
     // flavor text
-    private readonly string[] _successPhrases = [ "[ ENJOY ]", "[ THX! ]", "[ YUM! ]", "[ VEND ]" ];
+    private readonly string[] _successPhrases =
+    [
+        "vending-machine-keypad-feedback-success-1",
+        "vending-machine-keypad-feedback-success-2",
+        "vending-machine-keypad-feedback-success-3",
+        "vending-machine-keypad-feedback-success-4",
+    ];
 
     // nuke C scale
     private readonly int[] _bluesScale = [0, 2, 3, 4, 5, 6, 7, 9, 10];
@@ -285,7 +299,7 @@ public sealed partial class VendingMachineKeypadMenu : FancyWindow
 
         if (_bufferLetter is not { } letter || _bufferNumber is not { } number)
         {
-            ShowFeedback(false);
+            ShowFeedback(VendingMachineKeypadFeedback.Invalid);
             return;
         }
 
@@ -297,39 +311,38 @@ public sealed partial class VendingMachineKeypadMenu : FancyWindow
             var slot = _slots[index];
             if (slot.SoldOut)
             {
-                ShowFeedback(false);
+                ShowFeedback(VendingMachineKeypadFeedback.Empty);
                 return;
             }
 
-            // check access
-            var allowed = OnCodeEntered?.Invoke(index) ?? true;
-            if (!allowed)
+            var feedback = OnCodeEntered?.Invoke(index) ?? VendingMachineKeypadFeedback.Success;
+            if (feedback != VendingMachineKeypadFeedback.Success)
             {
-                ShowFeedback(false);
+                ShowFeedback(feedback);
                 return;
             }
 
-            ShowFeedback(true);
+            ShowFeedback(VendingMachineKeypadFeedback.Success);
 
             _chuteRattleDelay = 0.55f;
             _chuteRattleTimer = 0.35f;
         }
         else
         {
-            ShowFeedback(false);
+            ShowFeedback(VendingMachineKeypadFeedback.Invalid);
         }
     }
 
-    private void ShowFeedback(bool success)
+    private void ShowFeedback(VendingMachineKeypadFeedback feedback)
     {
         _bufferLetter = null;
         _bufferNumber = null;
         _showingFeedback = true;
 
-        if (success)
+        if (feedback == VendingMachineKeypadFeedback.Success)
         {
             BufferLabel.FontColorOverride = Color.Green;
-            BufferLabel.Text = _random.Pick(_successPhrases);
+            BufferLabel.Text = Loc.GetString(_random.Pick(_successPhrases));
             GreenLed.Modulate = _greenOnColor;
             PlayKeypadSound(VendingMachineKeypadSound.Success);
 
@@ -338,7 +351,12 @@ public sealed partial class VendingMachineKeypadMenu : FancyWindow
         else
         {
             BufferLabel.FontColorOverride = Color.Red;
-            BufferLabel.Text = "[ EMPTY ]";
+            BufferLabel.Text = Loc.GetString(feedback switch
+            {
+                VendingMachineKeypadFeedback.Empty => "vending-machine-keypad-feedback-empty",
+                VendingMachineKeypadFeedback.Denied => "vending-machine-keypad-feedback-denied",
+                _ => "vending-machine-keypad-feedback-invalid",
+            });
             RedLed.Modulate = _redOnColor;
             PlayKeypadSound(VendingMachineKeypadSound.Error);
         }

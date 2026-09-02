@@ -58,12 +58,12 @@ public sealed class VendingMachineKeypadBoundUserInterface(EntityUid owner, Enum
         SendMessage(new VendingMachineKeypadAudioMessage(type, pitch));
     }
 
-    private bool OnCodeEntered(int slotIndex)
+    private VendingMachineKeypadFeedback OnCodeEntered(int slotIndex)
     {
         var selectedItem = _cachedInventory.ElementAtOrDefault(slotIndex);
 
         if (selectedItem == null)
-            return false;
+            return VendingMachineKeypadFeedback.Invalid;
 
         // check access
         var playerManager = IoCManager.Resolve<IPlayerManager>();
@@ -72,7 +72,7 @@ public sealed class VendingMachineKeypadBoundUserInterface(EntityUid owner, Enum
             var accessSystem = EntMan.System<AccessReaderSystem>();
             if (!accessSystem.IsAllowed(player, Owner))
             {
-                return false;
+                return VendingMachineKeypadFeedback.Denied;
             }
         }
 
@@ -80,7 +80,7 @@ public sealed class VendingMachineKeypadBoundUserInterface(EntityUid owner, Enum
         _menu?.PlayVendAnimation(slotIndex);
 
         SendPredictedMessage(new VendingMachineEjectMessage(selectedItem.Type, selectedItem.ID));
-        return true;
+        return VendingMachineKeypadFeedback.Success;
     }
 
     protected override void Dispose(bool disposing)
