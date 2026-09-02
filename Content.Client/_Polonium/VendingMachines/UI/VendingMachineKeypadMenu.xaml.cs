@@ -193,12 +193,15 @@ public sealed partial class VendingMachineKeypadMenu : FancyWindow
         {
             _chuteRattleTimer -= args.DeltaSeconds;
 
-            var offset = _random.NextFloat(-2f, 2f);
-            DispenseChute.Margin = new Thickness(0, offset, 0, -offset);
-        }
-        else
-        {
-            DispenseChute.Margin = new Thickness(0);
+            if (_chuteRattleTimer > 0)
+            {
+                var offset = _random.NextFloat(-2f, 2f);
+                DispenseChute.Margin = new Thickness(0, offset, 0, -offset);
+            }
+            else
+            {
+                DispenseChute.Margin = new Thickness(0);
+            }
         }
 
         if (_showingFeedback)
