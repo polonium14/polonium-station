@@ -82,6 +82,9 @@ public sealed partial class VendingMachineKeypadMenu : FancyWindow
         clearKey.SetTint(Color.FromHex("#ffb3b3"), Color.FromHex("#ffcccc"), Color.FromHex("#800000"));
         clearKey.OnKeyPressed += () =>
         {
+            if (_showingFeedback)
+                return;
+
             PlayKeypadSound(VendingMachineKeypadSound.Beep, 0.7f);
             ClearBuffer();
         };
