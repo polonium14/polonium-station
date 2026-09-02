@@ -121,9 +121,18 @@
 - type: entity
   parent: IVBag
   id: IVBagSaline
-  name: IV bag
   suffix: Saline
   components:
+  # same convention as the chem jugs: the vending UI reads LabelComponent straight off
+  # the prototype and formats it as "IV bag (saline)", localised, without spawning anything
+  - type: Label
+    localizedLabel: reagent-name-saline
+  # the vendor icon is a nullspace dummy entity, which still runs MapInit, so the client
+  # recomputes the fill layer from these fields rather than from the sprite spec - a
+  # dummy has no networked solution, so seed them to what a full saline bag looks like
+  - type: IVBag
+    fillPercentage: 1
+    fillColor: "#0064C8"
   - type: Solution
     id: pack
     solution:
