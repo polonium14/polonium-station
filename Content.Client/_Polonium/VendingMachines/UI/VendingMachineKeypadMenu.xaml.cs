@@ -29,6 +29,8 @@ public sealed partial class VendingMachineKeypadMenu : FancyWindow
     public event Func<int, VendingMachineKeypadFeedback>? OnCodeEntered;
     public event Action<VendingMachineKeypadSound, float>? OnAudioPlayed;
 
+    private const int SlotsPerRow = 10;
+
     private readonly List<VendingMachineGridSlot> _slots = new();
 
     public EntityUid VendingMachineOwner;
@@ -137,8 +139,7 @@ public sealed partial class VendingMachineKeypadMenu : FancyWindow
         ItemGrid.RemoveAllChildren();
         _slots.Clear();
 
-        // map 10 slots per letter
-        _rowCount = inventory.Count == 0 ? 0 : (inventory.Count - 1) / 10 + 1;
+        _rowCount = inventory.Count == 0 ? 0 : (inventory.Count - 1) / SlotsPerRow + 1;
 
         for (var i = 0; i < inventory.Count; i++)
         {
@@ -308,7 +309,7 @@ public sealed partial class VendingMachineKeypadMenu : FancyWindow
         }
 
         var row = letter - 'A';
-        var index = row * 10 + number;
+        var index = row * SlotsPerRow + number;
 
         if (index >= 0 && index < _slots.Count)
         {
@@ -412,8 +413,8 @@ public sealed partial class VendingMachineKeypadMenu : FancyWindow
     {
         for (var i = 0; i < _slots.Count; i++)
         {
-            var row = i / 10;
-            var col = i % 10;
+            var row = i / SlotsPerRow;
+            var col = i % SlotsPerRow;
             var letter = (char)('A' + row);
 
             var isRowMatch = _bufferLetter == letter;
@@ -425,8 +426,8 @@ public sealed partial class VendingMachineKeypadMenu : FancyWindow
 
     private static string GetCode(int index)
     {
-        var row = index / 10;
-        var col = index % 10;
+        var row = index / SlotsPerRow;
+        var col = index % SlotsPerRow;
         var letter = (char)('A' + row);
         return $"{letter}{col}";
     }
