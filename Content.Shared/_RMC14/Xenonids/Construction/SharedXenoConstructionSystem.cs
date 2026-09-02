@@ -1,28 +1,39 @@
 using Content.Shared._RMC14.Map;
+using Content.Shared._RMC14.Xenonids;
 using Content.Shared._RMC14.Xenonids.Construction.Events;
 using Content.Shared._RMC14.Xenonids.Hive;
 using Content.Shared._RMC14.Xenonids.Plasma;
 using Content.Shared._RMC14.Xenonids.Weeds;
+using Content.Shared.Body;
 using Content.Shared.DoAfter;
+using Content.Shared.Doors;
+using Content.Shared.Doors.Components;
+using Content.Shared.Doors.Systems;
 using Content.Shared.FixedPoint;
+using Content.Shared.Interaction;
 using Content.Shared.Popups;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Timing;
 
 namespace Content.Shared._RMC14.Xenonids.Construction;
 
 public sealed partial class SharedXenoConstructionSystem : EntitySystem
 {
+    private static readonly TimeSpan ResinDoorAutoCloseDelay = TimeSpan.FromSeconds(5);
+
     [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private IComponentFactory _compFactory = default!;
     [Dependency] private SharedDoAfterSystem _doAfter = default!;
+    [Dependency] private SharedDoorSystem _doors = default!;
     [Dependency] private SharedXenoHiveSystem _hive = default!;
     [Dependency] private INetManager _net = default!;
     [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private IPrototypeManager _prototype = default!;
     [Dependency] private RMCMapSystem _rmcMap = default!;
+    [Dependency] private IGameTiming _timing = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
     [Dependency] private SharedUserInterfaceSystem _ui = default!;
     [Dependency] private XenoPlasmaSystem _plasma = default!;
@@ -34,11 +45,42 @@ public sealed partial class SharedXenoConstructionSystem : EntitySystem
         SubscribeLocalEvent<XenoConstructionComponent, XenoChooseStructureActionEvent>(OnChooseStructure);
         SubscribeLocalEvent<XenoConstructionComponent, XenoSecreteStructureActionEvent>(OnSecreteStructure);
         SubscribeLocalEvent<XenoConstructionComponent, XenoSecreteStructureDoAfterEvent>(OnSecreteStructureDoAfter);
+        SubscribeLocalEvent<XenoConstructComponent, DoorStateChangedEvent>(OnConstructDoorStateChanged);
+        SubscribeLocalEvent<XenoConstructComponent, ActivateInWorldEvent>(OnConstructDoorActivate, before: [typeof(SharedDoorSystem)]);
 
         Subs.BuiEvents<XenoConstructionComponent>(XenoChooseStructureUI.Key, subs =>
         {
             subs.Event<XenoChooseStructureMessage>(OnChooseStructureMessage);
         });
+    }
+
+    private void OnConstructDoorStateChanged(Entity<XenoConstructComponent> ent, ref DoorStateChangedEvent args)
+    {
+        if (_timing.ApplyingState)
+            return;
+
+        if (args.State != DoorState.Open)
+            return;
+
+        if (!HasComp<DoorComponent>(ent))
+            return;
+
+        _doors.SetNextStateChange(ent, ResinDoorAutoCloseDelay);
+    }
+
+    private void OnConstructDoorActivate(Entity<XenoConstructComponent> ent, ref ActivateInWorldEvent args)
+    {
+        if (args.Handled)
+            return;
+
+        if (!TryComp<DoorComponent>(ent, out var door) || !door.ClickOpen)
+            return;
+
+        if (!HasComp<XenoComponent>(args.User) && !HasComp<VisualBodyComponent>(args.User))
+            return;
+
+        if (_doors.TryToggleDoor(ent, door, args.User, predicted: true))
+            args.Handled = true;
     }
 
     private void OnPlantWeeds(Entity<XenoConstructionComponent> xeno, ref XenoPlantWeedsActionEvent args)

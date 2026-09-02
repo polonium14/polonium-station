@@ -11,6 +11,9 @@
       0: Alive
       650: Critical
       750: Dead
+  - type: XenoEnvironmentVulnerability
+    fire: 0.95
+    space: 0.9
   - type: Xeno
     tier: 3
     unlockAt: 900

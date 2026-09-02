@@ -23,6 +23,15 @@ public sealed partial class XenoWeedsComponent : Component
     public EntityUid? Source;
 
     [DataField, AutoNetworkedField]
+    public List<EntityUid> Spread = new();
+
+    [DataField, AutoNetworkedField]
+    public TimeSpan MinRandomDelete = TimeSpan.FromSeconds(9);
+
+    [DataField, AutoNetworkedField]
+    public TimeSpan MaxRandomDelete = TimeSpan.FromSeconds(10);
+
+    [DataField, AutoNetworkedField]
     public float SpeedMultiplierXeno = 1f;
 
     [DataField, AutoNetworkedField]

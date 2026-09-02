@@ -18,6 +18,9 @@
       0: Alive
       900: Critical
       1000: Dead
+  - type: XenoEnvironmentVulnerability
+    fire: 0.85
+    space: 0.85
   - type: Xeno
     tier: 0
     bypassTierCount: true
