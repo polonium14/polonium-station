@@ -82,8 +82,7 @@ public sealed partial class VendingMachineKeypadMenu : FancyWindow
         clearKey.SetTint(Color.FromHex("#ffb3b3"), Color.FromHex("#ffcccc"), Color.FromHex("#800000"));
         clearKey.OnKeyPressed += () =>
         {
-            _audio.PlayPredicted(new SoundPathSpecifier("/Audio/Machines/Nuke/general_beep.ogg"), VendingMachineOwner, User, new AudioParams().WithVolume(-4f).WithPitchScale(0.7f));
-            OnAudioPlayed?.Invoke(VendingMachineKeypadSound.Beep, 0.7f);
+            PlayKeypadSound(VendingMachineKeypadSound.Beep, 0.7f);
             ClearBuffer();
         };
         NumpadGrid.AddChild(clearKey);
@@ -217,8 +216,7 @@ public sealed partial class VendingMachineKeypadMenu : FancyWindow
             _inactivityTimer += args.DeltaSeconds;
             if (_inactivityTimer >= 15f)
             {
-                _audio.PlayPredicted(new SoundPathSpecifier("/Audio/Machines/button.ogg"), VendingMachineOwner, User, new AudioParams().WithVolume(-6f).WithPitchScale(0.6f));
-                OnAudioPlayed?.Invoke(VendingMachineKeypadSound.Timeout, 0.6f);
+                PlayKeypadSound(VendingMachineKeypadSound.Timeout, 0.6f);
 
                 _bufferLetter = null;
                 _bufferNumber = null;
@@ -233,8 +231,7 @@ public sealed partial class VendingMachineKeypadMenu : FancyWindow
         if (_showingFeedback)
             return;
 
-        _audio.PlayPredicted(new SoundPathSpecifier("/Audio/Machines/Nuke/general_beep.ogg"), VendingMachineOwner, User, new AudioParams().WithVolume(-4f).WithPitchScale(pitch));
-        OnAudioPlayed?.Invoke(VendingMachineKeypadSound.Beep, pitch);
+        PlayKeypadSound(VendingMachineKeypadSound.Beep, pitch);
 
         _bufferLetter = letter;
         _cursorVisible = true;
@@ -248,8 +245,7 @@ public sealed partial class VendingMachineKeypadMenu : FancyWindow
         if (_showingFeedback)
             return;
 
-        _audio.PlayPredicted(new SoundPathSpecifier("/Audio/Machines/Nuke/general_beep.ogg"), VendingMachineOwner, User, new AudioParams().WithVolume(-4f).WithPitchScale(pitch));
-        OnAudioPlayed?.Invoke(VendingMachineKeypadSound.Beep, pitch);
+        PlayKeypadSound(VendingMachineKeypadSound.Beep, pitch);
 
         _bufferNumber = number;
         _cursorVisible = true;
@@ -324,15 +320,12 @@ public sealed partial class VendingMachineKeypadMenu : FancyWindow
         _bufferNumber = null;
         _showingFeedback = true;
 
-        var audio = IoCManager.Resolve<IEntityManager>().System<SharedAudioSystem>();
-
         if (success)
         {
             BufferLabel.FontColorOverride = Color.Green;
             BufferLabel.Text = _random.Pick(_successPhrases);
             GreenLed.Modulate = _greenOnColor;
-            audio.PlayPredicted(new SoundPathSpecifier("/Audio/Machines/vending_jingle.ogg"), VendingMachineOwner, User, new AudioParams().WithVolume(-4f));
-            OnAudioPlayed?.Invoke(VendingMachineKeypadSound.Success, 1f);
+            PlayKeypadSound(VendingMachineKeypadSound.Success);
 
             _powerSagTimer = 0.15f;
         }
@@ -341,8 +334,7 @@ public sealed partial class VendingMachineKeypadMenu : FancyWindow
             BufferLabel.FontColorOverride = Color.Red;
             BufferLabel.Text = "[ EMPTY ]";
             RedLed.Modulate = _redOnColor;
-            audio.PlayPredicted(new SoundPathSpecifier("/Audio/Machines/buzz-two.ogg"), VendingMachineOwner, User, new AudioParams().WithVolume(-4f));
-            OnAudioPlayed?.Invoke(VendingMachineKeypadSound.Error, 1f);
+            PlayKeypadSound(VendingMachineKeypadSound.Error);
         }
 
         UpdateHighlights();
@@ -358,6 +350,13 @@ public sealed partial class VendingMachineKeypadMenu : FancyWindow
             BufferLabel.FontColorOverride = Color.FromHex("#33ff33");
             UpdateBufferLabel();
         });
+    }
+
+    private void PlayKeypadSound(VendingMachineKeypadSound sound, float pitch = 1f)
+    {
+        var (path, volume) = VendingMachineKeypadSounds.Get(sound);
+        _audio.PlayPredicted(new SoundPathSpecifier(path), VendingMachineOwner, User, new AudioParams().WithVolume(volume).WithPitchScale(pitch));
+        OnAudioPlayed?.Invoke(sound, pitch);
     }
 
     private void ResetLedIndicators()

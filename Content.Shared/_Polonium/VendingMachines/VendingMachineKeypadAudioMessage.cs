@@ -18,3 +18,15 @@ public sealed class VendingMachineKeypadAudioMessage(VendingMachineKeypadSound s
     public readonly VendingMachineKeypadSound SoundType = soundType;
     public readonly float Pitch = pitch;
 }
+
+public static class VendingMachineKeypadSounds
+{
+    public static (string Path, float Volume) Get(VendingMachineKeypadSound sound) => sound switch
+    {
+        VendingMachineKeypadSound.Beep => ("/Audio/Machines/Nuke/general_beep.ogg", -4f),
+        VendingMachineKeypadSound.Success => ("/Audio/Machines/vending_jingle.ogg", -4f),
+        VendingMachineKeypadSound.Error => ("/Audio/Machines/buzz-two.ogg", -4f),
+        VendingMachineKeypadSound.Timeout => ("/Audio/Machines/button.ogg", -6f),
+        _ => (string.Empty, 0f),
+    };
+}
