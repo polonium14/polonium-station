@@ -1,18 +1,4 @@
 ﻿Entries:
-- author: jessicamaybe
-  changes:
-  - message: Mobs that don't need internals no longer have the internals indicator
-    type: Tweak
-  id: 9477
-  time: '2026-01-30T05:30:13.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/42705
-- author: Thinbug0
-  changes:
-  - message: Ghosts appearances will now change depending on their cause of death
-    type: Add
-  id: 9478
-  time: '2026-01-30T23:31:08.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/37949
 - author: SlamBamActionman
   changes:
   - message: Mime PDAs no longer have the NanoTask and Notekeeper applications installed
@@ -4032,3 +4018,27 @@
   id: 9976
   time: '2026-08-31T21:02:56.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/960
+- author: Nikita
+  changes:
+  - message: "Xeno s\u0105 teraz podatni na ogie\u0144, pr\xF3\u017Cni\u0119 i nisk\u0105\
+      \ temperatur\u0119."
+    type: Tweak
+  - message: "Rozpowszechnianie trawy xeno zmieniono na 1 p\u0142ytk\u0119 w 6 sekund\
+      \ (zamiast 3.33)"
+    type: Tweak
+  - message: "Xeno maj\u0105 teraz reakcj\u0119 cia\u0142 na chemikalia"
+    type: Tweak
+  - message: "Xeno teraz mog\u0105 otwiera\u0107 w\u0142asne drzwi"
+    type: Fix
+  - message: "Naprawiono zabaw\u0119!"
+    type: Fix
+  id: 9977
+  time: '2026-09-02T11:02:05.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/964
+- author: Saver310
+  changes:
+  - message: "Zast\u0105piono kontrowersyjne imi\u0119 dla szkieleta"
+    type: Tweak
+  id: 9978
+  time: '2026-09-02T11:02:16.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/941
