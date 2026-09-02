@@ -162,8 +162,8 @@
   - type: PlantGrowth
     waterConsumption: 0.6
   - type: PlantAtmospheric
-    lowHeatTolerance: 278 # 5°C
-    highHeatTolerance: 298 # 25°C
+    lowHeatTolerance: 288 # 15°C
+    highHeatTolerance: 308 # 35°C
   - type: PlantChemicals
     chemicals:
       Vitamin:
@@ -197,8 +197,8 @@
   - type: PlantGrowth
     waterConsumption: 0.6
   - type: PlantAtmospheric
-    lowHeatTolerance: 278 # 5°C
-    highHeatTolerance: 298 # 25°C
+    lowHeatTolerance: 288 # 15°C
+    highHeatTolerance: 308 # 35°C
   - type: PlantChemicals
     chemicals:
       MuteToxin:
@@ -539,8 +539,8 @@
   - type: PlantHarvest
     harvestRepeat: Repeat
   - type: PlantAtmospheric
-    lowHeatTolerance: 278 # 5°C
-    highHeatTolerance: 298 # 25°C
+    lowHeatTolerance: 288 # 15°C
+    highHeatTolerance: 308 # 35°C
   - type: PlantChemicals
     chemicals:
       Sugar:
@@ -572,8 +572,8 @@
   - type: PlantGrowth
     waterConsumption: 0.6
   - type: PlantAtmospheric
-    lowHeatTolerance: 278 # 5°C
-    highHeatTolerance: 298 # 25°C
+    lowHeatTolerance: 288 # 15°C
+    highHeatTolerance: 308 # 35°C
   - type: PlantChemicals
     chemicals:
       Vitamin:
@@ -603,8 +603,8 @@
   - type: PlantHarvest
     harvestRepeat: Repeat
   - type: PlantAtmospheric
-    lowHeatTolerance: 278 # 5°C
-    highHeatTolerance: 298 # 25°C
+    lowHeatTolerance: 288 # 15°C
+    highHeatTolerance: 308 # 35°C
 
 - type: entity
   parent: BasePlant
@@ -631,8 +631,8 @@
     waterConsumption: 0.6
     nutrientConsumption: 0.5
   - type: PlantAtmospheric
-    lowHeatTolerance: 278 # 5°C
-    highHeatTolerance: 298 # 25°C
+    lowHeatTolerance: 288 # 15°C
+    highHeatTolerance: 308 # 35°C
   - type: PlantTraitLigneous
 
 - type: entity
@@ -659,8 +659,8 @@
     waterConsumption: 0.6
     nutrientConsumption: 0.8
   - type: PlantAtmospheric
-    lowHeatTolerance: 278 # 5°C
-    highHeatTolerance: 298 # 25°C
+    lowHeatTolerance: 288 # 15°C
+    highHeatTolerance: 308 # 35°C
   - type: PlantTraitLigneous
 
 - type: entity
@@ -688,8 +688,8 @@
     waterConsumption: 0.6
     nutrientConsumption: 0.4
   - type: PlantAtmospheric
-    lowHeatTolerance: 278 # 5°C
-    highHeatTolerance: 298 # 25°C
+    lowHeatTolerance: 288 # 15°C
+    highHeatTolerance: 308 # 35°C
   - type: PlantChemicals
     chemicals:
       Nutriment:
@@ -771,8 +771,8 @@
     waterConsumption: 0.6
     nutrientConsumption: 0.7
   - type: PlantAtmospheric
-    lowHeatTolerance: 278 # 5°C
-    highHeatTolerance: 298 # 25°C
+    lowHeatTolerance: 288 # 15°C
+    highHeatTolerance: 308 # 35°C
   - type: PlantChemicals
     chemicals:
       Blood:
@@ -811,8 +811,8 @@
     waterConsumption: 0.6
     nutrientConsumption: 0.7
   - type: PlantAtmospheric
-    lowHeatTolerance: 278 # 5°C
-    highHeatTolerance: 298 # 25°C
+    lowHeatTolerance: 288 # 15°C
+    highHeatTolerance: 308 # 35°C
   - type: PlantChemicals
     chemicals:
       Blood:
@@ -847,8 +847,8 @@
   - type: PlantHarvest
     harvestRepeat: Repeat
   - type: PlantAtmospheric
-    lowHeatTolerance: 278 # 5°C
-    highHeatTolerance: 298 # 25°C
+    lowHeatTolerance: 288 # 15°C
+    highHeatTolerance: 308 # 35°C
   - type: PlantChemicals
     chemicals:
       Nutriment:
@@ -1015,8 +1015,8 @@
   - type: PlantGrowth
     waterConsumption: 0.6
   - type: PlantAtmospheric
-    lowHeatTolerance: 278 # 5°C
-    highHeatTolerance: 298 # 25°C
+    lowHeatTolerance: 288 # 15°C
+    highHeatTolerance: 308 # 35°C
   - type: PlantChemicals
     chemicals:
       Nutriment:
@@ -1054,8 +1054,8 @@
     waterConsumption: 0.6
     nutrientConsumption: 0.5
   - type: PlantAtmospheric
-    lowHeatTolerance: 278 # 5°C
-    highHeatTolerance: 298 # 25°C
+    lowHeatTolerance: 288 # 15°C
+    highHeatTolerance: 308 # 35°C
   - type: PlantChemicals
     chemicals:
       Nutriment:
@@ -1095,8 +1095,8 @@
   - type: PlantGrowth
     waterConsumption: 0.6
   - type: PlantAtmospheric
-    lowHeatTolerance: 278 # 5°C
-    highHeatTolerance: 298 # 25°C
+    lowHeatTolerance: 288 # 15°C
+    highHeatTolerance: 308 # 35°C
   - type: PlantChemicals
     chemicals:
       Nutriment:
@@ -1136,8 +1136,8 @@
     waterConsumption: 0.6
     nutrientConsumption: 0.5
   - type: PlantAtmospheric
-    lowHeatTolerance: 278 # 5°C
-    highHeatTolerance: 298 # 25°C
+    lowHeatTolerance: 288 # 15°C
+    highHeatTolerance: 308 # 35°C
   - type: PlantChemicals
     chemicals:
       Nutriment:
@@ -1168,8 +1168,8 @@
   - type: PlantGrowth
     nutrientConsumption: 0.5
   - type: PlantAtmospheric
-    lowHeatTolerance: 278 # 5°C
-    highHeatTolerance: 298 # 25°C
+    lowHeatTolerance: 288 # 15°C
+    highHeatTolerance: 308 # 35°C
   - type: PlantChemicals
     chemicals:
       Egg:
@@ -1202,8 +1202,8 @@
   - type: PlantGrowth
     waterConsumption: 0.4
   - type: PlantAtmospheric
-    lowHeatTolerance: 278 # 5°C
-    highHeatTolerance: 298 # 25°C
+    lowHeatTolerance: 288 # 15°C
+    highHeatTolerance: 308 # 35°C
   - type: PlantChemicals
     chemicals:
       THC:
@@ -1235,8 +1235,8 @@
   - type: PlantGrowth
     nutrientConsumption: 0.5
   - type: PlantAtmospheric
-    lowHeatTolerance: 278 # 5°C
-    highHeatTolerance: 298 # 25°C
+    lowHeatTolerance: 288 # 15°C
+    highHeatTolerance: 308 # 35°C
   - type: PlantChemicals
     chemicals:
       SpaceDrugs:
@@ -1283,8 +1283,8 @@
   - type: PlantGrowth
     waterConsumption: 0.4
   - type: PlantAtmospheric
-    lowHeatTolerance: 278 # 5°C
-    highHeatTolerance: 298 # 25°C
+    lowHeatTolerance: 288 # 15°C
+    highHeatTolerance: 308 # 35°C
   - type: PlantChemicals
     chemicals:
       Nicotine:
@@ -1315,8 +1315,8 @@
   - type: PlantGrowth
     waterConsumption: 0.6
   - type: PlantAtmospheric
-    lowHeatTolerance: 278 # 5°C
-    highHeatTolerance: 298 # 25°C
+    lowHeatTolerance: 288 # 15°C
+    highHeatTolerance: 308 # 35°C
   - type: PlantChemicals
     chemicals:
       Histamine:
@@ -1349,8 +1349,8 @@
     waterConsumption: 0.7
     nutrientConsumption: 0.8
   - type: PlantAtmospheric
-    lowHeatTolerance: 278 # 5°C
-    highHeatTolerance: 298 # 25°C
+    lowHeatTolerance: 288 # 15°C
+    highHeatTolerance: 308 # 35°C
   - type: PlantChemicals
     chemicals:
       SulfuricAcid:
@@ -1384,8 +1384,8 @@
   - type: PlantHarvest
     harvestRepeat: Repeat
   - type: PlantAtmospheric
-    lowHeatTolerance: 278 # 5°C
-    highHeatTolerance: 298 # 25°C
+    lowHeatTolerance: 288 # 15°C
+    highHeatTolerance: 308 # 35°C
   - type: PlantChemicals
     chemicals:
       CapsaicinOil:
@@ -1422,8 +1422,8 @@
   - type: PlantHarvest
     harvestRepeat: Repeat
   - type: PlantAtmospheric
-    lowHeatTolerance: 278 # 5°C
-    highHeatTolerance: 298 # 25°C
+    lowHeatTolerance: 288 # 15°C
+    highHeatTolerance: 308 # 35°C
   - type: PlantChemicals
     chemicals:
       FrostOil:
@@ -2077,8 +2077,8 @@
     waterConsumption: 1.0
     nutrientConsumption: 0.8
   - type: PlantAtmospheric
-    lowHeatTolerance: 278 # 5°C
-    highHeatTolerance: 298 # 25°C
+    lowHeatTolerance: 288 # 15°C
+    highHeatTolerance: 308 # 35°C
   - type: PlantChemicals
     chemicals:
       Vitamin:
@@ -2146,8 +2146,8 @@
   - type: PlantGrowth
     waterConsumption: 0.6
   - type: PlantAtmospheric
-    lowHeatTolerance: 278 # 5°C
-    highHeatTolerance: 298 # 25°C
+    lowHeatTolerance: 288 # 15°C
+    highHeatTolerance: 308 # 35°C
   - type: PlantChemicals
     chemicals:
       Nutriment:
@@ -2253,8 +2253,8 @@
     potency: 10
     growthStages: 3
   - type: PlantAtmospheric
-    lowHeatTolerance: 278 # 5°C
-    highHeatTolerance: 298 # 25°C
+    lowHeatTolerance: 288 # 15°C
+    highHeatTolerance: 308 # 35°C
   - type: PlantChemicals
     chemicals:
       PumpkinFlesh:
@@ -2286,8 +2286,8 @@
     potency: 10
     growthStages: 3
   - type: PlantAtmospheric
-    lowHeatTolerance: 278 # 5°C
-    highHeatTolerance: 298 # 25°C
+    lowHeatTolerance: 288 # 15°C
+    highHeatTolerance: 308 # 35°C
   - type: PlantChemicals
     chemicals:
       Ammonia:
