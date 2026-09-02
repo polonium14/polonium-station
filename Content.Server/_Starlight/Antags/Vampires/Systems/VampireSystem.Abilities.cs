@@ -611,8 +611,8 @@ public sealed partial class VampireSystem : EntitySystem
             //A little bit of additional damage to disincentivize blood donations
             var biteDamage = new DamageSpecifier();
             biteDamage += new DamageSpecifier(_proto.Index<DamageTypePrototype>(_pierceTypeId), comp.SipPierceDamage * actualSipAmount); //5 pierce per 10u
-            _damageableSystem.TryChangeDamage(target, biteDamage, ignoreResistances: true);
-            _blood.TryModifyBleedAmount(target, 1);
+            _damageableSystem.TryChangeDamage(target, biteDamage, ignoreResistances: true, origin:uid);
+            //_blood.TryModifyBleedAmount(target, 1);
 
 
             //Add in blindness instead of cancer
