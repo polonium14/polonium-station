@@ -1,5 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using Content.Client._Polonium.VendingMachines;
 using Content.Client.VendingMachines.Components;
 using Content.Shared.Power;
 using Content.Shared.Power.EntitySystems;
@@ -245,7 +246,7 @@ public sealed partial class VendingMachineSystem : SharedVendingMachineSystem
         _sprite.LayerSetVisible(sprite.AsNullable(), actualLayer, false);
     }
 
-    private bool TryGetOpenUi(EntityUid uid, [NotNullWhen(true)] out VendingMachineBoundUserInterface? bui)
+    private bool TryGetOpenUi(EntityUid uid, [NotNullWhen(true)] out VendingMachineKeypadBoundUserInterface? bui)
     {
         return UISystem.TryGetOpenUi(uid, VendingMachineUiKey.Key, out bui);
     }

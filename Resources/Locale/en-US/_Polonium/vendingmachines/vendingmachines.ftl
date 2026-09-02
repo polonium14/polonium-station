@@ -1,0 +1,14 @@
+﻿vending-machine-keypad-sold-out = SOLD OUT
+vending-machine-keypad-clear = CLR
+vending-machine-keypad-enter = ENT
+vending-machine-keypad-dispense = DISPENSE
+vending-machine-keypad-target = TARGET
+vending-machine-keypad-row = ROW
+vending-machine-keypad-col = COL
+vending-machine-keypad-feedback-success-1 = [ ENJOY ]
+vending-machine-keypad-feedback-success-2 = [ THX! ]
+vending-machine-keypad-feedback-success-3 = [ YUM! ]
+vending-machine-keypad-feedback-success-4 = [ VEND ]
+vending-machine-keypad-feedback-empty = [ EMPTY ]
+vending-machine-keypad-feedback-invalid = [ ERROR ]
+vending-machine-keypad-feedback-denied = [ DENIED ]

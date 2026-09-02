@@ -1,0 +1,14 @@
+﻿vending-machine-keypad-sold-out = WYPRZEDANE
+vending-machine-keypad-clear = CLR
+vending-machine-keypad-enter = ENT
+vending-machine-keypad-dispense = WYDAJ
+vending-machine-keypad-target = CEL
+vending-machine-keypad-row = WIERSZ
+vending-machine-keypad-col = KOLUMNA
+vending-machine-keypad-feedback-success-1 = [ MIŁEGO ]
+vending-machine-keypad-feedback-success-2 = [ DZIĘKI ]
+vending-machine-keypad-feedback-success-3 = [ PYCHA ]
+vending-machine-keypad-feedback-success-4 = [ WYDANO ]
+vending-machine-keypad-feedback-empty = [ BRAK ]
+vending-machine-keypad-feedback-invalid = [ BŁĄD ]
+vending-machine-keypad-feedback-denied = [ ODMOWA ]
