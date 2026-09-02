@@ -1,0 +1,11 @@
+ent-IVDrip = IV stand
+    .suffix = IV, empty
+    .desc = A stand meant to hold IV bags upright, injecting or drawing from patients attached to it.
+ent-IVBag = IV bag
+    .suffix = empty
+    .desc = An IV bag. Contains fluids, typically used for transfusions.
+ent-IVBagSaline = { ent-IVBag }
+    .suffix = Saline
+    .desc = { ent-IVBag.desc }
+ent-IVDripFlatpack = IV stand flatpack
+    .desc = A flatpack used for constructing an IV stand.
