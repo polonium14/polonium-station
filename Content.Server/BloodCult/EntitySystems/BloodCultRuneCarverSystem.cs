@@ -33,6 +33,7 @@ using Content.Shared.Body.Components;
 using Content.Shared.BloodCult;
 using Content.Shared.BloodCult.Components;
 using Content.Shared.UserInterface;
+using Content.Shared.Body.Systems;
 
 namespace Content.Server.BloodCult.EntitySystems;
 

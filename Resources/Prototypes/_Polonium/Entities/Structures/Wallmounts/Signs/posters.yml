@@ -17,3 +17,13 @@
   - type: Sprite
     sprite: _Polonium/Structures/Wallmounts/posters.rsi
     state: seksixeno
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandAzOgonkiem
+  name: "Ą"
+  description: "A poster depicting the letter A with an ogonek glowing in red and orange."
+  components:
+  - type: Sprite
+    sprite: _Polonium/Structures/Wallmounts/posters.rsi
+    state: azogonkiem

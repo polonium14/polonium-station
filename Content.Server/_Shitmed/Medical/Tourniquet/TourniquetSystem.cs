@@ -30,7 +30,7 @@ public sealed partial class TourniquetSystem : EntitySystem
     [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private SharedHandsSystem _hands = default!;
     [Dependency] private PainSystem _pain = default!;
-    [Dependency] private SharedBloodstreamSystem _bloodstream = default!;
+    [Dependency] private BloodstreamSystem _bloodstream = default!;
 
     private const string TourniquetContainerId = "Tourniquet";
 

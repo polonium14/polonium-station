@@ -16,7 +16,19 @@ concurrency:
 jobs:
   validate_rsis:
     name: Validate RSIs
-    if: github.actor != 'Polonium-bot' && github.actor != 'PJBot' && github.actor != 'github-actions[bot]' && github.actor != 'github-actions' && github.event.pull_request.draft == false
+    if: >-
+      !contains(fromJSON('["Polonium-bot","PJBot","github-actions[bot]","github-actions"]'), github.actor) &&
+      (github.event_name != 'pull_request' || (
+        !contains(fromJSON('["Polonium-bot","PJBot","github-actions[bot]","github-actions"]'), github.event.pull_request.user.login) &&
+        github.event.pull_request.draft == false
+      )) &&
+      (github.event_name != 'push' || (
+        !contains(fromJSON('["Polonium-bot","PJBot","github-actions[bot]","github-actions"]'), github.event.pusher.name) &&
+        !contains(fromJSON('["Polonium-bot","PJBot","github-actions[bot]","github-actions"]'), github.event.head_commit.author.name) &&
+        !contains(fromJSON('["Polonium-bot","PJBot","github-actions[bot]","github-actions"]'), github.event.head_commit.author.username) &&
+        !contains(fromJSON('["Polonium-bot","PJBot","github-actions[bot]","github-actions"]'), github.event.head_commit.committer.name) &&
+        !contains(fromJSON('["Polonium-bot","PJBot","github-actions[bot]","github-actions"]'), github.event.head_commit.committer.username)
+      ))
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7

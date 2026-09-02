@@ -9,6 +9,7 @@
     sprite: _Goobstation/Clothing/Head/Hardsuits/bso.rsi
   - type: Clothing
     sprite: _Goobstation/Clothing/Head/Hardsuits/bso.rsi
+    clothingVisuals: {}
   - type: PointLight
     color: "#4d7ae3"
     rotation: 30

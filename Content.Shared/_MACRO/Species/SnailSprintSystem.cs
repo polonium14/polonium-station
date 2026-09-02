@@ -26,7 +26,7 @@ public sealed partial class SharedSnailSprintSystem : EntitySystem
     [Dependency] private SharedMapSystem _mapSystem = default!;
     [Dependency] private SharedPopupSystem _popupSystem = default!;
     [Dependency] private SharedPuddleSystem _puddleSystem = default!;
-    [Dependency] private ThirstSystem _thirstSystem = default!;
+    [Dependency] private SatiationSystem _satiation = default!;
 
     public override void Initialize()
     {
@@ -61,8 +61,8 @@ public sealed partial class SharedSnailSprintSystem : EntitySystem
     private void OnSnailSprintAction(Entity<SnailSprintComponent> ent, ref SnailSprintActionEvent args)
     {
         // prevent the action and let the player know if their thirst value is too low to use it.
-        if (TryComp<ThirstComponent>(ent.Owner, out var thirstComp)
-            && thirstComp.CurrentThirstThreshold < ent.Comp.MinThirstThreshold)
+        if (TryComp<SatiationComponent>(ent.Owner, out var satiationComp)
+            && !_satiation.IsValueInRange((ent.Owner, satiationComp), SatiationSystem.Thirst, above: ent.Comp.MinThirstThreshold))
         {
             _popupSystem.PopupClient(Loc.GetString(ent.Comp.FailedPopup), ent.Owner, ent.Owner);
             return;
@@ -148,9 +148,9 @@ public sealed partial class SharedSnailSprintSystem : EntitySystem
         _movementSpeedModifier.RefreshMovementSpeedModifiers(ent.Owner);
 
         // remove the thirst cost from total thirst
-        if (TryComp<ThirstComponent>(ent.Owner, out var thirstComp))
+        if (TryComp<SatiationComponent>(ent.Owner, out var satiationComp))
         {
-            _thirstSystem.ModifyThirst(ent.Owner, thirstComp, -ent.Comp.ThirstCost);
+            _satiation.ModifyValue((ent.Owner, satiationComp), SatiationSystem.Thirst, -ent.Comp.ThirstCost);
         }
     }
 

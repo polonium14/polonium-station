@@ -7,14 +7,13 @@
   components:
   - type: Action
     itemIconStyle: NoItem
-    icon:
-      sprite: BloodCult/spells_cultist.rsi
-      state: study_veil
   - type: InstantAction
     event: !type:EventCultistStudyVeil {}
   - type: Sprite
     sprite: BloodCult/spells_cultist.rsi
-    state: study_veil
+    layers:
+    - state: study_veil
+      map: ["enum.ActionVisuals.Icon"]
   - type: CultistSpell
     abilityId: StudyVeil
     charges: 1
@@ -30,14 +29,13 @@
   components:
   - type: Action
     itemIconStyle: NoItem
-    icon:
-      sprite: BloodCult/spells_cultist.rsi
-      state: commune
   - type: InstantAction
     event: !type:BloodCultCommuneEvent {}
   - type: Sprite
     sprite: BloodCult/spells_cultist.rsi
-    state: commune
+    layers:
+    - state: commune
+      map: ["enum.ActionVisuals.Icon"]
   - type: CultistSpell
     abilityId: Commune
     charges: 1
@@ -53,14 +51,13 @@
   components:
   - type: Action
     itemIconStyle: NoItem
-    icon:
-      sprite: BloodCult/spells_cultist.rsi
-      state: spell_select
   - type: InstantAction
     event: !type:BloodCultSpellsEvent {}
   - type: Sprite
     sprite: BloodCult/spells_cultist.rsi
-    state: spell_select
+    layers:
+    - state: spell_select
+      map: ["enum.ActionVisuals.Icon"]
   - type: CultistSpell
     abilityId: SpellsSelect
     charges: 1
@@ -79,12 +76,11 @@
     state: summon_dagger
   - type: Sprite
     sprite: BloodCult/spells_cultist.rsi
-    state: summon_dagger
+    layers:
+    - state: summon_dagger
+      map: ["enum.ActionVisuals.Icon"]
   - type: Action
     itemIconStyle: NoItem
-    icon:
-      sprite: BloodCult/spells_cultist.rsi
-      state: summon_dagger
   - type: InstantAction
     event: !type:EventCultistSummonDagger {}
   - type: CultistSpell
@@ -102,18 +98,17 @@
   components:
   - type: Action
     itemIconStyle: NoItem
-    icon:
-      sprite: BloodCult/spells_cultist.rsi
-      state: stun
-    iconOn:
-      sprite: BloodCult/spells_cultist.rsi
-      state: stun_selected
   - type: Icon
     sprite: BloodCult/spells_cultist.rsi
     state: stun
   - type: Sprite
     sprite: BloodCult/spells_cultist.rsi
-    state: stun
+    layers:
+    - state: stun
+      map: ["enum.ActionVisuals.Icon"]
+    - state: stun_selected
+      map: ["enum.ActionVisuals.IconToggled"]
+      visible: false
   - type: TargetAction
     targetingIndicator: true
   - type: EntityTargetAction
@@ -140,18 +135,17 @@
   components:
   - type: Action
     itemIconStyle: NoItem
-    icon:
-      sprite: BloodCult/spells_cultist.rsi
-      state: twisted_construction
-    iconOn:
-      sprite: BloodCult/spells_cultist.rsi
-      state: twisted_construction
   - type: Icon
     sprite: BloodCult/spells_cultist.rsi
     state: twisted_construction
   - type: Sprite
     sprite: BloodCult/spells_cultist.rsi
-    state: twisted_construction
+    layers:
+    - state: twisted_construction
+      map: ["enum.ActionVisuals.Icon"]
+    - state: twisted_construction
+      map: ["enum.ActionVisuals.IconToggled"]
+      visible: false
   - type: TargetAction
     targetingIndicator: true
     checkCanAccess: false

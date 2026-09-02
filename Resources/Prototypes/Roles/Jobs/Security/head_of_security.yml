@@ -70,7 +70,6 @@
       time: 30h
     - !type:OverallPlaytimeRequirement
       time: 20h
-  weight: 10
   startingGear: HoSGear
   icon: "JobIconHeadOfSecurity"
   supervisors: job-supervisors-captain

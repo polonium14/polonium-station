@@ -13,6 +13,7 @@ using Robust.Server.Audio;
 using Robust.Shared.Audio;
 using Robust.Shared.Map;
 using Robust.Shared.Timing;
+using Content.Shared.AlertLevel;
 
 namespace Content.Server._Polonium.BluespaceStrike;
 
@@ -39,7 +40,7 @@ public sealed partial class BluespaceStrikeSystem : EntitySystem
 
     public void UnregisterEui(BluespaceStrikeEui eui) => _openEuis.Remove(eui);
 
-    private void OnAlertLevelChanged(AlertLevelChangedEvent args)
+    private void OnAlertLevelChanged(ref AlertLevelChangedEvent args)
     {
         foreach (var eui in _openEuis)
         {

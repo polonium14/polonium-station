@@ -8,6 +8,7 @@ using Content.Shared.Speech;
 using Content.Shared.Storage;
 using Content.Shared.Storage.Components;
 using Content.Shared.Storage.EntitySystems;
+using Content.Shared.Speech.EntitySystems;
 
 namespace Content.Server.Storage.EntitySystems;
 

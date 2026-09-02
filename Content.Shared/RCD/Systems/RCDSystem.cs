@@ -53,8 +53,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Shared.FixedPoint;
 using Content.Shared.Atmos.Components;
-using Content.Shared.Atmos.EntitySystems;
-using System.Numerics;
+using Content.Shared._Polonium.RPD; // Polonium - RPD hook events
 
 namespace Content.Shared.RCD.Systems;
 
@@ -78,9 +77,6 @@ public partial class RCDSystem : EntitySystem
     [Dependency] private IPrototypeManager _protoManager = default!;
     [Dependency] private SharedMapSystem _mapSystem = default!;
     [Dependency] private TagSystem _tags = default!;
-    [Dependency] private SharedAppearanceSystem _appearanceSystem = default!;
-    [Dependency] private SharedTransformSystem _transformSystem = default!;
-    [Dependency] private SharedAtmosPipeLayersSystem _pipeLayersSystem = default!;
     [Dependency] private IEntityManager _entityManager = default!;
 
     private readonly int _instantConstructionDelay = 0;
@@ -88,7 +84,7 @@ public partial class RCDSystem : EntitySystem
     private readonly ProtoId<RCDPrototype> _deconstructTileProto = "DeconstructTile";
     private readonly ProtoId<RCDPrototype> _deconstructLatticeProto = "DeconstructLattice";
     private static readonly ProtoId<TagPrototype> CatwalkTag = "Catwalk";
-    private AtmosPipeLayer _currentLayer = AtmosPipeLayer.Primary; // Funky - Current layer for RPD
+    private static readonly LocId DefaultPrototypeNameLocId = "generic-unknown-title";
 
     private HashSet<EntityUid> _intersectingEntities = new();
 
@@ -102,12 +98,23 @@ public partial class RCDSystem : EntitySystem
         SubscribeLocalEvent<RCDComponent, RCDDoAfterEvent>(OnDoAfter);
         SubscribeLocalEvent<RCDComponent, DoAfterAttemptEvent<RCDDoAfterEvent>>(OnDoAfterAttempt);
         SubscribeLocalEvent<RCDComponent, RCDSystemMessage>(OnRCDSystemMessage);
-        SubscribeLocalEvent<RCDComponent, RCDColorChangeMessage>(OnColorChange); // Funkystation - Handle rpd color changes
 
-        SubscribeNetworkEvent<RPDEyeRotationEvent>(OnRPDEyeRotationEvent);
         SubscribeNetworkEvent<RCDConstructionGhostRotationEvent>(OnRCDconstructionGhostRotationEvent);
         SubscribeNetworkEvent<RCDConstructionGhostFlipEvent>(OnRCDConstructionGhostFlipEvent);
 
+    }
+
+    /// <summary>
+    /// Gets the display name of a given RCDPrototype.
+    /// </summary>
+    public string GetPrototypeName(RCDPrototype prototype)
+    {
+        if (prototype.SetName != null)
+            return Loc.GetString(prototype.SetName);
+        else if (prototype.Prototype != null)
+            return ProtoMan.Index(prototype.Prototype).Name; // already localized
+        else
+            return Loc.GetString(DefaultPrototypeNameLocId);
     }
 
     #region Event handling
@@ -126,13 +133,6 @@ public partial class RCDSystem : EntitySystem
 
         // The RCD has no valid recipes somehow? Get rid of it
         QueueDel(uid);
-    }
-
-    // Funkystation - Handle rpd color changes
-    private void OnColorChange(Entity<RCDComponent> entity, ref RCDColorChangeMessage args)
-    {
-        entity.Comp.PipeColor = args.PipeColor;
-        Dirty(entity); // Mark component as dirty to sync with clients
     }
 
     private void OnRCDSystemMessage(EntityUid uid, RCDComponent component, RCDSystemMessage args)
@@ -158,18 +158,14 @@ public partial class RCDSystem : EntitySystem
         // Update cached prototype if required
         UpdateCachedPrototype(uid, component);
 
-        var msg = Loc.GetString("rcd-component-examine-mode-details", ("mode", Loc.GetString(component.CachedPrototype.SetName)));
+        var displayName = GetPrototypeName(component.CachedPrototype);
+
+        string msg;
 
         if (component.CachedPrototype.Mode == RcdMode.ConstructTile || component.CachedPrototype.Mode == RcdMode.ConstructObject)
-        {
-            var name = Loc.GetString(component.CachedPrototype.SetName);
-
-            if (component.CachedPrototype.Prototype != null &&
-                _protoManager.TryIndex(component.CachedPrototype.Prototype, out var proto))
-                name = proto.Name;
-
-            msg = Loc.GetString("rcd-component-examine-build-details", ("name", name));
-        }
+            msg = Loc.GetString("rcd-component-examine-build-details", ("name", displayName));
+        else
+            msg = Loc.GetString("rcd-component-examine-mode-details", ("mode", displayName));
 
         args.PushMarkup(msg);
     }
@@ -192,34 +188,20 @@ public partial class RCDSystem : EntitySystem
             return;
         }
 
-        // Funky - Update prototype for RPD based on last selected layer
-        // calculate the layer based on the mouse click location and player rotation
-        if (component.IsRpd && !component.CachedPrototype.NoLayers)
-        {
-            var tileRef = _mapSystem.GetTileRef(mapGridData.Value.GridUid, mapGridData.Value.Component, mapGridData.Value.Location);
-            var tileSize = mapGridData.Value.Component.TileSize;
-            var tileCenter = new Vector2(tileRef.X + tileSize / 2, tileRef.Y + tileSize / 2);
-            var mouseCoordsDiff = args.ClickLocation.Position - tileCenter - new Vector2(0.5f, 0.5f);
-            var mouseDeadzoneRadius = 0.25f;
-
-            _currentLayer = AtmosPipeLayer.Primary;
-
-            if (mouseCoordsDiff.Length() > mouseDeadzoneRadius && component.LastKnownEyeRotation.HasValue)
-            {
-                var gridRotation = _transformSystem.GetWorldRotation(mapGridData.Value.GridUid);
-                var angle = new Angle(mouseCoordsDiff);
-                var eyeRotation = new Angle(component.LastKnownEyeRotation.Value);
-                var direction = (angle + eyeRotation + gridRotation + Math.PI / 2).GetCardinalDir();
-                _currentLayer = (direction == Direction.North || direction == Direction.East) ? AtmosPipeLayer.Secondary : AtmosPipeLayer.Tertiary;
-            }
-        }
-        // Funky - end of changes
-
         if (!IsRCDOperationStillValid(uid, component, mapGridData.Value, args.Target, args.User))
             return;
 
         if (!_net.IsServer)
             return;
+
+        // Polonium - let an RPD pick the atmos pipe layer the player aimed at. Snapshotted into the
+        // DoAfter below so the layer applied when the operation finalizes is the one chosen at click
+        // time; a shared field raced across concurrent (and cross-player) placements while their
+        // DoAfters were in flight. See RPDSystem.
+        var layerEv = new RPDPipeLayerSelectEvent(args.ClickLocation, mapGridData.Value);
+        RaiseLocalEvent(uid, ref layerEv);
+        var pipeLayer = layerEv.Layer;
+        // Polonium - end
 
         // Get the starting cost, delay, and effect from the prototype
         var cost = component.CachedPrototype.Cost;
@@ -278,7 +260,7 @@ public partial class RCDSystem : EntitySystem
 
         // Try to start the do after
         var effect = Spawn(effectPrototype, mapGridData.Value.Location);
-        var ev = new RCDDoAfterEvent(GetNetCoordinates(mapGridData.Value.Location), component.ConstructionDirection, component.ProtoId, cost, GetNetEntity(effect));
+        var ev = new RCDDoAfterEvent(GetNetCoordinates(mapGridData.Value.Location), component.ConstructionDirection, component.ProtoId, cost, GetNetEntity(effect), pipeLayer);
 
         var doAfterArgs = new DoAfterArgs(EntityManager, user, delay, ev, uid, target: args.Target, used: uid)
         {
@@ -341,7 +323,7 @@ public partial class RCDSystem : EntitySystem
             return;
 
         // Finalize the operation
-        FinalizeRCDOperation(uid, component, mapGridData.Value, args.Target, args.User);
+        FinalizeRCDOperation(uid, component, mapGridData.Value, args.Target, args.User, args.PipeLayer);
 
         // Play audio and consume charges
         _audio.PlayPredicted(component.SuccessSound, uid, args.User);
@@ -386,28 +368,6 @@ public partial class RCDSystem : EntitySystem
         rcd.UseMirrorPrototype = ev.UseMirrorPrototype;
         Dirty(uid, rcd);
     }
-
-    // Funky - Very dumb was of getting player rotation for pipe layer selection
-    private void OnRPDEyeRotationEvent(RPDEyeRotationEvent ev, EntitySessionEventArgs session)
-    {
-        var uid = GetEntity(ev.NetEntity);
-
-        if (session.SenderSession.AttachedEntity is not { } player)
-            return;
-
-        if (_hands.GetActiveItem(player) != uid)
-            return;
-
-        if (!TryComp<RCDComponent>(uid, out var rcd))
-            return;
-
-        // Update the layer if different
-        if (rcd.LastKnownEyeRotation != ev.EyeRotation)
-        {
-            rcd.LastKnownEyeRotation = ev.EyeRotation;
-        }
-    }
-
 
     #endregion
 
@@ -514,7 +474,7 @@ public partial class RCDSystem : EntitySystem
             if (component.CachedPrototype.Prototype != null &&
                 _tileDefMan.TryGetDefinition(component.CachedPrototype.Prototype, out var replacementDef))
             {
-                var replacementContentDef = (ContentTileDefinition) replacementDef;
+                var replacementContentDef = (ContentTileDefinition)replacementDef;
 
                 if (replacementContentDef.BaseTurf != tileDef.ID &&
                     !replacementContentDef.BaseWhitelist.Contains(tileDef.ID))
@@ -579,16 +539,23 @@ public partial class RCDSystem : EntitySystem
 
     private bool IsDeconstructionStillValid(EntityUid uid, RCDComponent component, MapGridData mapGridData, EntityUid? target, EntityUid user, bool popMsgs = true)
     {
+        // Polonium - let an RPD veto anything outside its whitelist (it only takes apart piping,
+        // and never tiles). See RPDSystem.
+        var deconstructEv = new RPDDeconstructAttemptEvent(target);
+        RaiseLocalEvent(uid, ref deconstructEv);
+
+        if (deconstructEv.Cancelled)
+        {
+            if (popMsgs)
+                _popup.PopupClient(Loc.GetString("rcd-component-deconstruct-target-not-on-whitelist-message"), uid, user);
+
+            return false;
+        }
+        // Polonium - end
+
         // Attempt to deconstruct a floor tile
         if (target == null)
         {
-            if (component.IsRpd)
-            {
-                if (popMsgs)
-                    _popup.PopupClient(Loc.GetString("rcd-component-deconstruct-target-not-on-whitelist-message"), uid, user);
-
-                return false;
-            }
             // The tile is empty
             if (mapGridData.Tile.Tile.IsEmpty)
             {
@@ -622,17 +589,8 @@ public partial class RCDSystem : EntitySystem
         // Attempt to deconstruct an object
         else
         {
-            // The object is not in the RPD whitelist
-            if (!TryComp<RCDDeconstructableComponent>(target, out var deconstructible) || !deconstructible.RpdDeconstructable && component.IsRpd)
-            {
-                if (popMsgs)
-                    _popup.PopupClient(Loc.GetString("rcd-component-deconstruct-target-not-on-whitelist-message"), uid, user);
-
-                return false;
-            }
-
             // The object is not in the whitelist
-            if (!deconstructible.Deconstructable)
+            if (!TryComp<RCDDeconstructableComponent>(target, out var deconstructible) || !deconstructible.Deconstructable)
             {
                 if (popMsgs)
                     _popup.PopupClient(Loc.GetString("rcd-component-deconstruct-target-not-on-whitelist-message"), uid, user);
@@ -648,7 +606,7 @@ public partial class RCDSystem : EntitySystem
 
     #region Entity construction/deconstruction
 
-    private void FinalizeRCDOperation(EntityUid uid, RCDComponent component, MapGridData mapGridData, EntityUid? target, EntityUid user)
+    private void FinalizeRCDOperation(EntityUid uid, RCDComponent component, MapGridData mapGridData, EntityUid? target, EntityUid user, AtmosPipeLayer pipeLayer = AtmosPipeLayer.Primary)
     {
         if (!_net.IsServer)
             return;
@@ -671,17 +629,6 @@ public partial class RCDSystem : EntitySystem
                     ? component.CachedPrototype.MirrorPrototype
                     : component.CachedPrototype.Prototype;
 
-                // Funky - Determine the correct prototype based on selected layer for RPD
-                if (component.IsRpd && !component.CachedPrototype.NoLayers)
-                {
-                    if (_protoManager.TryIndex<EntityPrototype>(proto, out var entityProto) &&
-                        entityProto.TryGetComponent<AtmosPipeLayersComponent>(out var atmosPipeLayers, _entityManager.ComponentFactory) &&
-                        _pipeLayersSystem.TryGetAlternativePrototype(atmosPipeLayers, _currentLayer, out var newProtoId))
-                    {
-                        proto = newProtoId;
-                    }
-                }
-                // Funky - end of changes
 
                 // Funky - Calculate rotation and apply it before spawning
                 // Reads component.ConstructionDirection live rather than the Direction that was
@@ -718,19 +665,21 @@ public partial class RCDSystem : EntitySystem
                 // once a station/shuttle sits at anything but a cardinal angle) - the rotation
                 // that matters here is relative to the grid, the same as the SetLocalRotation
                 // call this replaced.
+                // Polonium - let an RPD swap in the pipe variant that belongs to the chosen layer, so
+                // the pipe is born on that layer rather than being moved onto it after spawning. See
+                // RPDSystem for why that distinction matters.
+                var protoEv = new RPDConstructPrototypeEvent(proto, pipeLayer);
+                RaiseLocalEvent(uid, ref protoEv);
+                proto = protoEv.Prototype;
+                // Polonium - end
+
                 var entityCoords = _mapSystem.GridTileToLocal(mapGridData.GridUid, mapGridData.Component, mapGridData.Position);
                 var ent = _entityManager.SpawnAttachedTo(proto, entityCoords, rotation: rotation);
-                // End of funky changes
 
-                // Funky - handled above
-                // var ent = Spawn(proto, _mapSystem.GridTileToLocal(mapGridData.GridUid, mapGridData.Component, mapGridData.Position));
-
-
-                // Apply color if the entity has PipeColorVisualsComponent and PipeColor is not "default"
-                if (component.PipeColor.Key != "default" && component.PipeColor.Color != null)
-                {
-                    _appearanceSystem.SetData(ent, Atmos.Piping.PipeColorVisuals.Color, component.PipeColor.Color.Value);
-                }
+                // Polonium - RPD post-spawn work: pipe layer fallback and pipe colouring.
+                var constructedEv = new RPDObjectConstructedEvent(ent, pipeLayer);
+                RaiseLocalEvent(uid, ref constructedEv);
+                // Polonium - end
 
                 // Funky - handled above
                 // switch (component.CachedPrototype.Rotation)
@@ -851,15 +800,20 @@ public sealed partial class RCDDoAfterEvent : DoAfterEvent
     [DataField("fx")]
     public NetEntity? Effect { get; private set; } = null;
 
+    // Polonium - the RPD pipe layer chosen at click time, applied when the operation finalizes.
+    [DataField]
+    public AtmosPipeLayer PipeLayer { get; private set; } = AtmosPipeLayer.Primary;
+
     private RCDDoAfterEvent() { }
 
-    public RCDDoAfterEvent(NetCoordinates location, Direction direction, ProtoId<RCDPrototype> startingProtoId, FixedPoint2 cost, NetEntity? effect = null)
+    public RCDDoAfterEvent(NetCoordinates location, Direction direction, ProtoId<RCDPrototype> startingProtoId, FixedPoint2 cost, NetEntity? effect = null, AtmosPipeLayer pipeLayer = AtmosPipeLayer.Primary)
     {
         Location = location;
         Direction = direction;
         StartingProtoId = startingProtoId;
         Cost = cost;
         Effect = effect;
+        PipeLayer = pipeLayer;
     }
 
     public override DoAfterEvent Clone() => this;

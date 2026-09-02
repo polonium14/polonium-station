@@ -34,7 +34,7 @@ namespace Content.IntegrationTests.Tests._Shitmed.Body;
 /// +0.6 bump meant for reopening a stopped bleed, which OnWoundAdded never applies.
 /// </summary>
 [TestFixture]
-[TestOf(typeof(SharedBloodstreamSystem))]
+[TestOf(typeof(BloodstreamSystem))]
 public sealed class BleedThresholdCrossingParityTest : GameTest
 {
     // Piercing bleeds from severity 9, so 6 leaves the wound under the threshold and 12 clears it.

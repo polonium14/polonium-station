@@ -5,14 +5,8 @@
   description: Transparent and hardened, yet slightly sticky to the touch.
   components:
   - type: Sprite
-    sprite: Structures/Windows/xeno_resin.rsi
+    sprite: Structures/Windows/exo-resin.rsi
   - type: Icon
-    sprite: Structures/Windows/xeno_resin.rsi
+    sprite: Structures/Windows/exo-resin.rsi
   - type: IconSmooth
     base: xwindow
-  - type: DamageVisuals
-    thresholds: [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
-    damageDivisor: 4
-    trackAllDamage: true
-    damageOverlay:
-      sprite: Structures/Windows/cracks.rsi

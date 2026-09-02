@@ -181,7 +181,8 @@
           nodeGroupID: Teg
 
     - type: AtmosUnsafeUnanchor
-    - type: PipeRestrictOverlap
+    # Polonium - device-on-pipe stacking: atmos machines don't reserve the tile, a pipe may run under them
+    # - type: PipeRestrictOverlap
     - type: TegCirculator
     - type: StealTarget
       stealGroup: Teg

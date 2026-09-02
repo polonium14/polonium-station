@@ -92,6 +92,13 @@
   - type: HumanoidProfile
     species: Felinid
 
+# Polonium: upstream replaced ThirstComponent with the Satiation system; port the
+# fork's faster-thirst tuning as a child satiation prototype (base rate is -0.1).
+- type: satiation
+  parent: NormalSatiationThirst
+  id: FelinidThirst
+  baseChangeRate: -0.12 # cats get thirsty
+
 - type: entity
   parent:
   - AppearanceFelinid
@@ -132,7 +139,7 @@
         Piercing: 1
   # felinids are hairless cats, so they take more cold damage
   - type: Temperature
-    currentTemperature: 310.15
+    temperature: 310.15
     specificHeat: 46
   - type: TemperatureDamage
     heatDamageThreshold: 325
@@ -149,8 +156,12 @@
       295: 0.6
       285: 0.4
   # cats get thirsty
-  - type: Thirst
-    baseDecayRate: 0.12
+  - type: Satiation
+    satiations:
+      Hunger:
+        prototype: NormalSatiationHunger
+      Thirst:
+        prototype: FelinidThirst
   - type: DamageOnHighSpeedImpact # landing on all fours
     damage:
       types:

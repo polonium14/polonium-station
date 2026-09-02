@@ -1,0 +1,28 @@
+# SPDX-FileCopyrightText: 2026 Polonium-bot <admin@ss14.pl>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Robotics airlocks — the fork keeps Robotics as its own department (access level,
+# DoorElectronicsRobotics, AirlockRoboticsLocked in access.yml, used on maps).
+# Upstream folded Robotics into Science and removed these base entities, so they are
+# restored here.
+
+- type: entity
+  parent: Airlock
+  id: AirlockRobotics
+  suffix: Robotics
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/robotics.rsi
+  - type: Paintable
+    group: AirlockStandard
+
+- type: entity
+  parent: AirlockGlass
+  id: AirlockRoboticsGlass
+  suffix: Robotics
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Glass/robotics.rsi
+  - type: Paintable
+    group: AirlockGlass

@@ -9,7 +9,6 @@
       path: /Audio/Items/wirecutter_drop.ogg
   - type: Tag
     tags:
-    - PlantSampleTaker
     - Wirecutter
   - type: Sprite
     sprite: Objects/Tools/wirecutters.rsi
@@ -44,6 +43,7 @@
       Steel: 100
   - type: StaticPrice
     price: 30
+  - type: BotanySampleTaker
 
 - type: entity
   name: screwdriver
@@ -264,7 +264,7 @@
   - type: MultipleTool
     statusShowBehavior: true
     entries:
-      - behavior: Screwing
+      - behavior: [ Screwing ]
         sprite:
           sprite: Objects/Tools/drill.rsi
           state: drill_screw
@@ -276,7 +276,7 @@
           path: /Audio/Items/change_drill.ogg
           params:
             volume: -5
-      - behavior: Anchoring
+      - behavior: [ Anchoring ]
         sprite:
           sprite: Objects/Tools/drill.rsi
           state: drill_bolt
@@ -357,47 +357,6 @@
     key: enum.RcdUiKey.Key
 
 - type: entity
-  id: RPD
-  parent: RCD
-  name: RPD
-  description: A device used to rapidly pipe things.
-  components:
-  - type: RCD
-    isRpd: true
-    availablePrototypes:
-    - PipeFourway
-    - PipeStraight
-    - PipeBend
-    - PipeTJunction
-    - PipeHalf
-    - ManifoldGas
-    - OutletInjector
-    - ManualValve
-    - VolumetricPump
-    - PressurePump
-    - VentScrubber
-    - PressureValve
-    - PressureRegulator
-    - DualPortVent
-    - VentGas
-    - VentPassive
-    - MixerGas
-    - Radiator
-    - RadiatorBend
-    - SignalValve
-    - CanisterPort
-    - FilterGas
-    - Alarm
-    - Sensor
-    - SensorPipe
-    - Deconstruct
-  - type: LimitedCharges
-    maxCharges: 450
-  - type: Sprite
-    sprite: Objects/Tools/rpd.rsi
-
-
-- type: entity
   id: RCDEmpty
   parent: RCD
   suffix: Empty
@@ -473,7 +432,7 @@
   - type: MultipleTool
     statusShowBehavior: true
     entries:
-      - behavior: Screwing
+      - behavior: [ Screwing ]
         sprite:
           sprite: Objects/Tools/omnitool.rsi
           state: omnitool-screwing
@@ -481,7 +440,7 @@
           path: /Audio/Items/drill_use.ogg
         changeSound:
           path: /Audio/Items/change_drill.ogg
-      - behavior: Prying
+      - behavior: [ Prying ]
         sprite:
           sprite: Objects/Tools/omnitool.rsi
           state: omnitool-prying
@@ -489,7 +448,7 @@
           path: /Audio/Items/jaws_pry.ogg
         changeSound:
           path: /Audio/Items/change_drill.ogg
-      - behavior: Anchoring
+      - behavior: [ Anchoring ]
         sprite:
           sprite: Objects/Tools/omnitool.rsi
           state: omnitool-wrenching
@@ -497,7 +456,7 @@
           path: /Audio/Items/ratchet.ogg
         changeSound:
           path: /Audio/Items/change_drill.ogg
-      - behavior: Cutting
+      - behavior: [ Cutting ]
         sprite:
           sprite: Objects/Tools/omnitool.rsi
           state: omnitool-snipping
@@ -505,7 +464,7 @@
           path: /Audio/Items/jaws_cut.ogg
         changeSound:
           path: /Audio/Items/change_drill.ogg
-      - behavior: Pulsing
+      - behavior: [ Pulsing ]
         sprite:
           sprite: Objects/Tools/omnitool.rsi
           state: omnitool-pulsing

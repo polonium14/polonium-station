@@ -53,6 +53,8 @@ using Content.Server.Speech.Components;
 using Content.Shared.Emoting;
 using Content.Shared.NPC.Systems;
 using Content.Shared.NPC.Components;
+using Content.Shared.Body.Systems;
+using Content.Shared.Speech.Components;
 
 namespace Content.Server.BloodCult.EntitySystems
 {

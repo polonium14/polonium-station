@@ -17,6 +17,7 @@ using Content.Shared.FixedPoint;
 using Content.Shared.Popups;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
+using Content.Shared.Body.Systems;
 
 namespace Content.Server.BloodCult.EntitySystems;
 

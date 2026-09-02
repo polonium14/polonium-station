@@ -1,0 +1,13 @@
+# Polonium: FloorCaveDrought lived in base Tiles/floors.yml at fork HEAD; the upstream merge
+# took upstream's floors.yml and dropped it (plus its texture, restored from HEAD).
+# Referenced by _Corvax/Procedural/biome_templates.yml — restored fork-scoped.
+- type: tile
+  id: FloorCaveDrought
+  name: tiles-cave-drought
+  sprite: /Textures/Tiles/cavedrought.png
+  variants: 8
+  baseTurf: Space
+  isSubfloor: true
+  footstepSounds:
+    collection: FootstepAsteroid
+  heatCapacity: 10000

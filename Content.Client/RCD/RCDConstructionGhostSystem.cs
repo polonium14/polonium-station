@@ -14,12 +14,13 @@ using Content.Shared.RCD;
 using Content.Shared.RCD.Components;
 using Content.Shared.RCD.Systems;
 using Content.Client.Hands.Systems;
+using Content.Client._Polonium.RPD; // Polonium - RPD placement mode
+using Content.Shared._Polonium.RPD;
 using Robust.Client.Placement;
 using Robust.Client.Player;
 using Robust.Shared.Enums;
 using Robust.Shared.Input;
 using Robust.Shared.Input.Binding;
-using Robust.Shared.Prototypes;
 
 namespace Content.Client.RCD;
 
@@ -28,13 +29,14 @@ public sealed partial class RCDConstructionGhostSystem : EntitySystem
     [Dependency] private IPlayerManager _playerManager = default!;
     [Dependency] private RCDSystem _rcdSystem = default!;
     [Dependency] private IPlacementManager _placementManager = default!;
-    [Dependency] private IPrototypeManager _protoManager = default!; // Added for prototype access
     [Dependency] private HandsSystem _handsSystem = default!;
 
     private string _placementMode = typeof(AlignRCDConstruction).Name;
     private string _rpdPlacementMode = typeof(AlignRPDAtmosPipeLayers).Name;
     private Direction _placementDirection = default;
     private bool _useMirrorPrototype = false;
+    private EntityUid? _layeredPlacerEntity;
+    private string? _layeredPlacerProto;
     public override void Initialize()
     {
         base.Initialize();
@@ -100,6 +102,17 @@ public sealed partial class RCDConstructionGhostSystem : EntitySystem
 
         var heldEntity = _handsSystem.GetActiveItem(player.Value);
 
+        // Don't open the placement overlay for client-side RCDs.
+        // This may happen when predictively spawning one in your hands (e.g. borg modules).
+        if (heldEntity != null && IsClientSide(heldEntity.Value))
+        {
+            // Cancel any placement left over from a previously held (server-side) RCD
+            if (placerIsRCD)
+                _placementManager.Clear();
+
+            return;
+        }
+
         if (!TryComp<RCDComponent>(heldEntity, out var rcd))
         {
             // If the player was holding an RCD, but is no longer, cancel placement
@@ -120,14 +133,24 @@ public sealed partial class RCDConstructionGhostSystem : EntitySystem
         _rcdSystem.UpdateCachedPrototype(heldEntity.Value, rcd);
         var useProto = (_useMirrorPrototype && !string.IsNullOrEmpty(rcd.CachedPrototype.MirrorPrototype)) ? rcd.CachedPrototype.MirrorPrototype : rcd.CachedPrototype.Prototype;
 
-        // Funky - Check if RPD and prototype supports layered placement
-        if (rcd.IsRpd && useProto != null && _protoManager.TryIndex<RCDPrototype>(rcd.CachedPrototype.ID, out var rcdProto) && !rcdProto.NoLayers)
+        // Polonium - an RPD with a layered recipe gets the layer-aware placement mode instead.
+        if (HasComp<RPDComponent>(heldEntity) && useProto != null && !rcd.CachedPrototype.NoLayers)
         {
-            _placementManager.Clear();
-            CreateLayeredPlacer(heldEntity.Value, rcd, useProto);
+            // placerEntity being null means placement was cleared out from under us, so rebuild.
+            if (placerEntity == null || heldEntity != _layeredPlacerEntity || useProto != _layeredPlacerProto)
+            {
+                _layeredPlacerEntity = heldEntity;
+                _layeredPlacerProto = useProto;
+
+                _placementManager.Clear();
+                CreateLayeredPlacer(heldEntity.Value, rcd, useProto);
+            }
         }
         else if (heldEntity != placerEntity || useProto != placerProto)
         {
+            _layeredPlacerEntity = null;
+            _layeredPlacerProto = null;
+
             _placementManager.Clear();
             CreatePlacer(heldEntity.Value, rcd, useProto);
         }

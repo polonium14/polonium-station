@@ -7,7 +7,7 @@ using Content.Shared.NPC.Systems;
 
 namespace Content.Client.NPC.Systems;
 
-public sealed class NPCSystem : SharedNPCSystem
+public sealed partial class NPCSystem : SharedNPCSystem
 {
     public override bool IsNpc(EntityUid uid)
     {

@@ -170,6 +170,25 @@
   - type: HumanoidProfile
     species: Decapoid
 
+# Polonium: upstream refactors — ThirstComponent → Satiation, ClumsyComponent → status effects.
+- type: satiation
+  parent: NormalSatiationThirst
+  id: DecapoidThirst
+  baseChangeRate: 0 # never gets thirsty
+
+# Decapoids were clumsy with guns only (all other clumsy types disabled); keep the crab-snap sound.
+- type: entity
+  parent: MobStatusEffectBase
+  id: StatusEffectClumsyDecapoid
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ClumsyGunStatusEffect
+    failDamage:
+      types:
+        Blunt: 5
+    clumsySound:
+      path: /Audio/_MACRO/Effects/Clumsy/crab_snap.ogg
+
 - type: entity
   parent:
   - AppearanceDecapoid
@@ -181,9 +200,12 @@
     damage:
       types:
         Blunt: 0 # immune to space
-  - type: Hunger
-  - type: Thirst
-    baseDecayRate: -1 # Make it so they never get thirsty. We can't just remove the component
+  - type: Satiation
+    satiations:
+      Hunger:
+        prototype: NormalSatiationHunger
+      Thirst:
+        prototype: DecapoidThirst # never gets thirsty
   - type: TemperatureDamage
     heatDamageThreshold: 380 # slightly more vulnerable to heat
     coldDamageThreshold: 0 # immune to space
@@ -194,23 +216,23 @@
       types:
         Heat : 1.5
   - type: Temperature
-    currentTemperature: 310
+    temperature: 310
     specificHeat: 42
   - type: TemperatureSpeed
     thresholds:
       293: 1.0
       280: 1.0
       260: 1.0
-  - type: Clumsy
-    clumsyVaulting: false
-    clumsyHypo: false
-    clumsyDefib: false
-    clumsyCatching: false
-    gunShootFailDamage:
-      types:
-        Blunt: 5
-    clumsySound:
-      path: /Audio/_MACRO/Effects/Clumsy/crab_snap.ogg # the game gets really touchy about having that initial forward slash.
+  - type: PermanentStatusEffects
+    statusEffects:
+    - StatusEffectClumsyDecapoid # gun-only clumsy (see prototype above)
+  - type: Tag # Polonium: re-list inherited tags (Tag inheritance replaces) + Clumsy for the toy-gun whitelist
+    tags:
+    - CanPilot
+    - FootstepSound
+    - DoorBumpOpener
+    - AnomalyHost
+    - Clumsy
   - type: Bloodstream
     bloodReferenceSolution:
       reagents:

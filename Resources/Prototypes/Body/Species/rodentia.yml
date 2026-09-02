@@ -92,6 +92,13 @@
   id: MobRodentiaDummy
   categories: [ HideSpawnMenu ]
 
+# Polonium: upstream replaced HungerComponent with the Satiation system; port the
+# fork's "33% faster hunger" as a child satiation prototype (base rate is -0.01666).
+- type: satiation
+  parent: NormalSatiationHunger
+  id: RodentiaHunger
+  baseChangeRate: -0.02216 # 33% faster than usual
+
 - type: entity
   parent:
   - AppearanceRodentia
@@ -114,8 +121,12 @@
   - type: Icon
     sprite: Mobs/Species/Rodentia/parts.rsi
     state: full
-  - type: Hunger
-    baseDecayRate: 0.0467 # 33% faster than usual
+  - type: Satiation
+    satiations:
+      Hunger:
+        prototype: RodentiaHunger
+      Thirst:
+        prototype: NormalSatiationThirst
   - type: Damageable
     damageModifierSet: Rodentia
   - type: Speech

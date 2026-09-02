@@ -1,9 +1,9 @@
 - type: entity
-  id: BaseFirelock
   abstract: true
-  parent: BaseStructure
+  parent: [ BaseStructure, StructureHealthDoor ]
+  id: BaseFirelock
   name: firelock
-  description: A maintenance panel tray sits on the mechanism's surface, along with a marked pry point for forcing the firelock open when unpowered.
+  description: Apply crowbar.
   components:
   - type: Anchorable
     flags:
@@ -20,52 +20,53 @@
     receiveFrequencyId: AtmosMonitor
   - type: DeviceNetworkRequiresPower
   - type: InteractionOutline
-  - type: Damageable
-    damageModifierSet: StructuralMetallicStrong
-  - type: Injurable
-    damageContainer: StructuralInorganic
   - type: RCDDeconstructable
-    cost: 40 # Funkystation
+    cost: 4
     delay: 6
     fx: EffectRCDDeconstruct6
-  - type: Tag
-    tags:
-    - ForceFixRotations # Allow fixrotations to target these
-    - DoorRemoteWhitelist # Polonium
+  - type: Damageable
+    damageModifierSet: PlasteelStaticMod
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 500
+        damage: 200
       behaviors:
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
+      # TODO this should go to the broken node first
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalSlam
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/firelock.rsi
-    snapCardinals: true
+    sprite: Structures/Doors/Airlocks/Standard/firelock-base.rsi
     layers:
     - state: closed
-      map: [ "enum.DoorVisualLayers.Base" ]
+      map: ["enum.DoorVisualLayers.Base"]
     - state: closed_unlit
       shader: unshaded
-      map: [ "enum.DoorVisualLayers.BaseUnlit" ]
+      sprite: Structures/Doors/Airlocks/Effects/airlock-effects-firelock.rsi
+      map: ["enum.DoorVisualLayers.BaseUnlit"]
       visible: false
     - state: welded
-      map: [ "enum.WeldableLayers.BaseWelded" ]
+      sprite: Structures/Doors/Airlocks/Effects/airlock-effects-firelock.rsi
+      map: ["enum.WeldableLayers.BaseWelded"]
     - state: bolted_unlit
       shader: unshaded
-      map: [ "enum.DoorVisualLayers.BaseBolted" ]
+      sprite: Structures/Doors/Airlocks/Effects/airlock-effects-firelock.rsi
+      map: ["enum.DoorVisualLayers.BaseBolted"]
       visible: false
     - state: panel_open
-      map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+      sprite: Structures/Doors/Airlocks/Effects/airlock-effects.rsi
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
     - state: pressure_unlit
       visible: false
       shader: unshaded
-      map: [ "enum.FirelockVisualLayersPressure.Base" ]
+      sprite: Structures/Doors/Airlocks/Effects/airlock-effects-firelock.rsi
+      map: ["enum.FirelockVisualLayersPressure.Base"]
     - state: temperature_unlit
       visible: false
       shader: unshaded
-      map: [ "enum.FirelockVisualLayersTemperature.Base" ]
+      sprite: Structures/Doors/Airlocks/Effects/airlock-effects-firelock.rsi
+      map: ["enum.FirelockVisualLayersTemperature.Base"]
   - type: GenericVisualizer
     visuals:
       enum.FirelockVisuals.PressureWarning:
@@ -112,8 +113,6 @@
     fuel: 5
     time: 3
   - type: Firelock
-  - type: DoorBolt # Funky change
-  - type: FirelockBoltControl # Funky change
   - type: Appearance
   - type: WiresVisuals
   - type: WiresPanel
@@ -121,8 +120,6 @@
     interfaces:
       enum.WiresUiKey.Key:
         type: WiresBoundUserInterface
-      enum.FirelockOverrideUiKey.Key: # Funky change
-        type: FirelockOverrideBoundUserInterface # Funky change
   - type: Physics
     canCollide: false
   - type: Airtight
@@ -135,7 +132,7 @@
   - type: WallMount
     arc: 360
   - type: StaticPrice
-    price: 150
+    price: 200
   - type: AccessReader
     access: [ [ "Engineering" ] ]
     examinationText: access-reader-examination-functionality-restricted
@@ -154,12 +151,20 @@
     - Fires
     - Spacing
   - type: SyncSprite
+  - type: PlacementReplacement
+    key: firelocks
+  - type: StationAiWhitelist
+  - type: StructureAligner
+    alignerType:
+    - Firelock
+  - type: StructureAlignerPylon
+    pylons:
+    - Firelock
 
 - type: entity
   id: Firelock
   parent: BaseFirelock
   components:
-  - type: StationAiWhitelist
   - type: ContainerContainer
     containers:
       board: !type:Container
@@ -177,64 +182,88 @@
   parent: Firelock
   name: glass firelock
   components:
-  - type: StationAiWhitelist
-  - type: Sprite
-    sprite: Structures/Doors/Airlocks/Glass/firelock.rsi
-  - type: Occluder
-    enabled: false
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.49,-0.49,0.49,0.49"  # don't want this colliding with walls or they won't close
-        mask:
-        - Impassable
-        - HighImpassable
-        layer:
-        - GlassAirlockLayer
-  - type: Door
-    occludes: false
-  - type: Construction
-    node: FirelockGlass
+    - type: Sprite
+      sprite: Structures/Doors/Airlocks/Glass/firelock-base.rsi
+    - type: Occluder
+      enabled: false
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeAabb
+            bounds: "-0.49,-0.49,0.49,0.49"  # don't want this colliding with walls or they won't close
+          mask:
+          - Impassable
+          - HighImpassable
+          layer:
+          - GlassAirlockLayer
+    - type: Door
+      occludes: false
+    - type: Construction
+      node: FirelockGlass
 
 - type: entity
   id: FirelockEdge
   parent: Firelock
   name: firelock
   components:
-  - type: StationAiWhitelist
-  - type: Sprite
-    sprite: Structures/Doors/edge_door_hazard.rsi
-    snapCardinals: false
-  - type: Airtight
-    airBlocked: false
-    noAirWhenFullyAirBlocked: false
-    airBlockedDirection:
-    - South
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.49,-0.49,0.49,-0.2" # don't want this colliding with walls or they won't close
-        mask:
-        - Impassable
-        - HighImpassable
-        layer:
-        - GlassAirlockLayer
-  - type: Occluder
-    enabled: false
-  - type: Tag
-    tags:
-    - ForceNoFixRotations # Prevent fixrotations from targeting these, since the base Firelock is targeted
-    - DoorRemoteWhitelist
-  - type: Door
-    occludes: false
-  - type: Physics
-    canCollide: false
-  - type: StaticPrice
-    price: 100
-  - type: Construction
-    graph: Firelock
-    node: FirelockEdge
+    - type: Sprite
+      sprite: Structures/Doors/Misc/edge_door_hazard.rsi
+      snapCardinals: false
+      layers:
+      - state: closed
+        map: [ "enum.DoorVisualLayers.Base" ]
+      - state: closed_unlit
+        shader: unshaded
+        sprite: Structures/Doors/Misc/edge_door_hazard.rsi
+        map: [ "enum.DoorVisualLayers.BaseUnlit" ]
+        visible: false
+      - state: welded
+        sprite: Structures/Doors/Misc/edge_door_hazard.rsi
+        map: [ "enum.WeldableLayers.BaseWelded" ]
+      - state: bolted_unlit
+        shader: unshaded
+        sprite: Structures/Doors/Misc/edge_door_hazard.rsi
+        map: [ "enum.DoorVisualLayers.BaseBolted" ]
+        visible: false
+      - state: panel_open
+        sprite: Structures/Doors/Airlocks/Effects/airlock-effects.rsi
+        map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+      - state: pressure_unlit
+        visible: false
+        shader: unshaded
+        sprite: Structures/Doors/Misc/edge_door_hazard.rsi
+        map: [ "enum.FirelockVisualLayersPressure.Base" ]
+      - state: temperature_unlit
+        visible: false
+        shader: unshaded
+        sprite: Structures/Doors/Misc/edge_door_hazard.rsi
+        map: [ "enum.FirelockVisualLayersTemperature.Base" ]
+    - type: Airtight
+      airBlocked: false
+      noAirWhenFullyAirBlocked: false
+      airBlockedDirection:
+        - South
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeAabb
+            bounds: "-0.49,-0.49,0.49,-0.2" # don't want this colliding with walls or they won't close
+          mask:
+          - Impassable
+          - HighImpassable
+          layer:
+          - GlassAirlockLayer
+    - type: Occluder
+      enabled: false
+    - type: Door
+      occludes: false
+    - type: Physics
+      canCollide: false
+    - type: Construction
+      graph: Firelock
+      node: FirelockEdge
+    - type: StructureAligner
+      alignerType:
+      - DoNotAlign

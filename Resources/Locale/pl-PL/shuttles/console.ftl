@@ -20,7 +20,6 @@ shuttle-console-iff-label = { $name } ({ $distance }m)
 shuttle-console-exclusion = Strefa wykluczona
 shuttle-console-nav-settings = Ustawienia
 shuttle-console-iff-toggle = Pokaż IFF
-shuttle-console-dock-toggle = Pokaż porty dokowania
 
 # MAP
 
@@ -46,3 +45,11 @@ shuttle-console-docks-label = Doki
 shuttle-console-undock-fail = Niepowodzenie odłączenia
 shuttle-console-dock-fail = Niepowodzenie dokowania
 shuttle-console-static = Grid is static
+
+shuttle-console-nav-legend = Legend
+
+shuttle-console-nav-other-dock = External Docks
+
+shuttle-console-nav-cargo-dock = Cargo Docks
+
+shuttle-console-nav-arrivals-dock = Arrivals Docks

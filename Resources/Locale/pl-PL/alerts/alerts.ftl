@@ -20,8 +20,6 @@ alerts-weightless-desc =
     Magnetyczne buty lub plecak odrzutowy pomogą ci się lepiej poruszać.
 alerts-walking-name = Chodzenie
 alerts-walking-desc = Poruszasz się powoli, idąc.
-alerts-stunned-name = [color=yellow]Ogłuszony[/color]
-alerts-stunned-desc = Jesteś [color=yellow]ogłuszony[/color]! Coś utrudnia ci poruszanie się lub interakcję z przedmiotami.
 alerts-knockdown-name = [color=yellow]Powalony[/color]
 alerts-knockdown-desc = Jesteś [color=yellow]powalony[/color]! Coś cię przewróciło albo się poślizgnąłeś, utrudniając ci poruszanie się.
 alerts-handcuffed-name = [color=yellow]Zakuty[/color]
@@ -54,10 +52,6 @@ alerts-thirsty-name = [color=yellow]Spragniony[/color]
 alerts-thirsty-desc = Przydałoby się coś do picia.
 alerts-parched-name = [color=red]Wysuszony[/color]
 alerts-parched-desc = Jesteś bardzo spragniony. Pragnienie utrudnia ci poruszanie się.
-alerts-muted-name = Niemy
-alerts-muted-desc = Straciłeś zdolność mówienia.
-alerts-vow-silence-name = Przysięga milczenia
-alerts-vow-silence-desc = Złożyłeś przysięgę zakazującą werbalnej lub pisemnej komunikacji jako część inicjacji w Mystiko Tagma Mimon. Kliknij, aby złamać przysięgę.
 alerts-vow-broken-name = Przysięga złamana
 alerts-vow-broken-desc = Złamałeś przysięgi wobec wszystkich mimów. Możesz mówić i pisać, ale straciłeś swoje moce na co najmniej 5 minut!!! Kliknij, aby spróbować ponownie złożyć przysięgę.
 alerts-pulled-name = Ciągnięty
@@ -68,8 +62,6 @@ alerts-bleed-name = [color=red]Krwawienie[/color]
 alerts-bleed-desc = Krwawisz.
 alerts-pacified-name = [color=green]Uspokojony[/color]
 alerts-pacified-desc = Jesteś uspokojony; nie będziesz mógł skrzywdzić żywych istot.
-alerts-adrenaline-name = [color=red]Adrenalina[/color]
-alerts-adrenaline-desc = Jesteś pełen adrenaliny: ból cię nie spowolni.
 alerts-suit-power-name = Moc skafandra
 alerts-suit-power-desc = Ile energii ma twój skafander kosmicznego ninja.
 alerts-magboots-name = Magnetyczne buty
@@ -86,3 +78,7 @@ alerts-prying-name = Podważanie
 alerts-prying-desc = Masz wrodzoną możliwość podważania drzwi używając alternatywnej interakcji.
 alerts-cocooned-name = [color=yellow]Cocooned[/color]
 alerts-cocooned-desc = You're [color=yellow]wrapped in a cocoon[/color] and can't move or use your hands.
+
+alerts-changeling-chemicals-name = Chemicals
+
+alerts-changeling-chemicals-desc = The chemicals stored within our glands. We use them for many of our abilities to function. They regenerate over time.

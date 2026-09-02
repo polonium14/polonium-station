@@ -13,6 +13,7 @@
   components:
   - type: VendingMachine
     pack: MailDrobeInventory
+  - type: VendingMachineVisuals
     offState: off
     brokenState: broken
     normalState: normal-unshaded

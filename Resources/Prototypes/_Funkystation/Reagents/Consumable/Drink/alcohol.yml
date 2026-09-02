@@ -23,7 +23,8 @@
       metabolites:
         Ethanol: 0.07
       effects:
-      - !type:SatiateThirst
+      - !type:Satiate
+        satiationType: Thirst
         factor: 2
 
 - type: reagent
@@ -45,7 +46,8 @@
       metabolites:
         Ethanol: 0.15
       effects:
-      - !type:SatiateThirst
+      - !type:Satiate
+        satiationType: Thirst
         factor: 2
 
 - type: reagent
@@ -68,7 +70,8 @@
         Ethanol: 0.2
         SpaceDrugs: 0.2
       effects:
-      - !type:SatiateThirst
+      - !type:Satiate
+        satiationType: Thirst
         factor: -1
 
 - type: reagent
@@ -90,7 +93,8 @@
       metabolites:
         Ethanol: 0.07
       effects:
-      - !type:SatiateThirst
+      - !type:Satiate
+        satiationType: Thirst
         factor: 2
 
 - type: reagent
@@ -112,7 +116,8 @@
       metabolites:
         Ethanol: 0.07
       effects:
-      - !type:SatiateThirst
+      - !type:Satiate
+        satiationType: Thirst
         factor: 2
 
 - type: reagent
@@ -209,7 +214,8 @@
       metabolites:
         Ethanol: 0.03
       effects:
-      - !type:SatiateThirst
+      - !type:Satiate
+        satiationType: Thirst
         factor: 1
       - !type:HealthChange
         damage:
@@ -254,7 +260,8 @@
       metabolites:
         Ethanol: 0.03
       effects:
-      - !type:SatiateThirst
+      - !type:Satiate
+        satiationType: Thirst
         factor: 2
 
 - type: reagent
@@ -361,7 +368,8 @@
       metabolites:
         Ethanol: -0.15
       effects:
-      - !type:SatiateThirst
+      - !type:Satiate
+        satiationType: Thirst
         factor: 2
 
 - type: reagent
@@ -383,7 +391,8 @@
       metabolites:
         Ethanol: 0.17
       effects:
-      - !type:SatiateThirst
+      - !type:Satiate
+        satiationType: Thirst
         factor: 2
 
 - type: reagent

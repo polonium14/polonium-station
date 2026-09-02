@@ -12,9 +12,11 @@
     priority: -8
     itemIconStyle: BigAction
     useDelay: 30
-    icon:
-      sprite: _Polonium/Actions/AI/lockdown.rsi
-      state: l
+  - type: Sprite
+    sprite: _Polonium/Actions/AI/lockdown.rsi
+    layers:
+    - state: l
+      map: ["enum.ActionVisuals.Icon"]
   - type: InstantAction
     event: !type:StationAiExternalLockdownEvent
 
@@ -28,9 +30,11 @@
     priority: -8
     itemIconStyle: BigAction
     useDelay: 10
-    icon:
-      sprite: _Polonium/Actions/AI/lockdown.rsi
-      state: l
     keywords: [ "AI", "lockdown", "airlock", "bolt" ]
+  - type: Sprite
+    sprite: _Polonium/Actions/AI/lockdown.rsi
+    layers:
+    - state: l
+      map: ["enum.ActionVisuals.Icon"]
   - type: InstantAction
     event: !type:StationAiExternalLockdownEvent

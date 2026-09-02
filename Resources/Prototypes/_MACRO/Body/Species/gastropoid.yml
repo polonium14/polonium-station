@@ -139,7 +139,7 @@
       types:
         Heat : 1.5 #per second, scales with temperature & other constants
   - type: Temperature
-    currentTemperature: 310
+    temperature: 310
     specificHeat: 42
   - type: TemperatureSpeed
     thresholds: # removes their temp speed restrictions. this is hacky and sucks.

@@ -31,6 +31,8 @@ using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
 using Robust.Shared.Configuration;
+using Content.Shared.Speech.EntitySystems;
+using Content.Shared.Ghost.Components;
 
 namespace Content.Server._Polonium.CallablePhone;
 
@@ -452,7 +454,7 @@ public sealed partial class CallablePhoneSystem : SharedCallablePhoneSystem
         if (IsHandsetInCradle(phone))
             return false;
 
-        if (!_itemSlots.TryGetSlot(phone, CallablePhoneComponent.HandsetSlotId, out var slot) ||
+        if (!_itemSlots.TryGetSlot(phone.Owner, CallablePhoneComponent.HandsetSlotId, out var slot) ||
             slot.ContainerSlot == null ||
             slot.HasItem)
         {
@@ -483,7 +485,7 @@ public sealed partial class CallablePhoneSystem : SharedCallablePhoneSystem
         }
 
         return _itemSlots.TryInsert(
-            phone,
+            phone.Owner,
             CallablePhoneComponent.HandsetSlotId,
             handset.Value,
             user: null,
@@ -1386,7 +1388,7 @@ public sealed partial class CallablePhoneSystem : SharedCallablePhoneSystem
 
     private void LinkHandsetInSlot(Entity<CallablePhoneComponent> entity)
     {
-        var handset = _itemSlots.GetItemOrNull(entity, CallablePhoneComponent.HandsetSlotId);
+        var handset = _itemSlots.GetItemOrNull(entity.Owner, CallablePhoneComponent.HandsetSlotId);
         if (handset == null)
             return;
 

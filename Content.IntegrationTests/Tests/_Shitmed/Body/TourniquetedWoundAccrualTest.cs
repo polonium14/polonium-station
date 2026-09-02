@@ -33,7 +33,7 @@ namespace Content.IntegrationTests.Tests._Shitmed.Body;
 /// nothing leaks out while the clamp is on.
 /// </summary>
 [TestFixture]
-[TestOf(typeof(SharedBloodstreamSystem))]
+[TestOf(typeof(BloodstreamSystem))]
 public sealed class TourniquetedWoundAccrualTest : GameTest
 {
     private static readonly ProtoId<DamageTypePrototype> PiercingDamageType = "Piercing";
@@ -85,7 +85,7 @@ public sealed class TourniquetedWoundAccrualTest : GameTest
         var sSystems = server.ResolveDependency<IEntitySystemManager>();
         var sDamageable = sSystems.GetEntitySystem<DamageableSystem>();
         var sWound = sSystems.GetEntitySystem<WoundSystem>();
-        var sBloodstream = sSystems.GetEntitySystem<SharedBloodstreamSystem>();
+        var sBloodstream = sSystems.GetEntitySystem<BloodstreamSystem>();
         var sProtoMan = server.ResolveDependency<IPrototypeManager>();
 
         var map = await pair.CreateTestMap();

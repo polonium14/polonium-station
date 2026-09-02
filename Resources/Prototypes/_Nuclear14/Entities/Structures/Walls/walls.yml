@@ -90,7 +90,7 @@
         spawn:
           MaterialWoodPlank1:
             min: 0
-            max: 2
+            max: 1 # Polonium: was 2 - destruction dropped more wood than the frame costs to build (material arbitrage test). Deconstruction still returns the full 2.
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
       - !type:PlaySoundBehavior

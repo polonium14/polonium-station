@@ -10,9 +10,10 @@ melee-balloon-pop =
         [female] pękneła
         [other] pękło
     }!
-# BatteryComponent
-melee-battery-examine =
-    Ma wystarczająco napięcia dla [color={ $color }]{ $count }[/color] { $count ->
-        [one] uderzenia
-       *[other] uderzeń
-    }.
+
+melee-weapon-dealt-no-damage = {CAPITALIZE(THE($weapon))} is not damaging {THE($target)}!
+
+melee-self-weapon-dealt-no-damage = You are not damaging {THE($target)}!
+
+# MeleeBatteryHitsLeftSystem
+examine-battery-hits-left = It has enough charge for [color={$color}]{$count}[/color] hits.

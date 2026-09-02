@@ -121,3 +121,7 @@ JobTechnicalAssistant = Pomocnik Techniczny
 JobVisitor = Wizytor
 JobWarden = Nadzorca Ochrony
 job-name-centcomoff = Urzędnik Centralnego Dowództwa
+
+job-name-tram-driver = Tram Driver
+
+job-name-sus = Sus

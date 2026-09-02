@@ -16,7 +16,7 @@ using Robust.Shared.Utility;
 namespace Content.Shared.RCD;
 
 /// <summary>
-/// Contains the parameters for a RCD construction / operation
+/// Contains the parameters for an RCD construction / operation
 /// </summary>
 [Prototype("rcd")]
 public sealed partial class RCDPrototype : IPrototype
@@ -31,10 +31,15 @@ public sealed partial class RCDPrototype : IPrototype
     public RcdMode Mode { get; private set; } = RcdMode.Invalid;
 
     /// <summary>
-    /// The name associated with the prototype
+    /// The name associated with the prototype.
+    /// If null, uses the prototype's name, if it exists.
+    /// Defaults to the <c>generic-unknown-title</c> LocId otherwise.
     /// </summary>
+    /// <remarks>
+    /// Use <see cref="RCDSystem.GetPrototypeName"/> instead of using this directly.
+    /// </remarks>
     [DataField("name"), ViewVariables(VVAccess.ReadOnly)]
-    public string SetName { get; private set; } = "Unknown";
+    public LocId? SetName { get; private set; }
 
     /// <summary>
     /// The name of the radial container that this prototype will be listed under on the RCD menu
@@ -46,20 +51,20 @@ public sealed partial class RCDPrototype : IPrototype
     /// Texture path for this prototypes menu icon
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadOnly)]
-    public SpriteSpecifier? Sprite { get; private set; } = null;
+    public SpriteSpecifier? Sprite { get; private set; }
 
     /// <summary>
     /// The entity prototype that will be constructed (mode dependent)
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadOnly)]
-    public string? Prototype { get; private set; } = string.Empty;
+    public string? Prototype { get; private set; }
 
     /// <summary>
     /// If the entity can be flipped, this prototype is available as an alternate (mode dependent)
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadOnly)]
     public string? MirrorPrototype { get; private set; } = string.Empty;
-    
+
     /// <summary>
     /// Number of charges consumed when the operation is completed
     /// </summary>
@@ -76,10 +81,10 @@ public sealed partial class RCDPrototype : IPrototype
     /// The visual effect that plays during this operation
     /// </summary>
     [DataField("fx"), ViewVariables(VVAccess.ReadOnly)]
-    public EntProtoId? Effect { get; private set; } = null;
+    public EntProtoId? Effect { get; private set; }
 
     /// <summary>
-    /// A list of rules that govern where the entity prototype can be contructed
+    /// A list of rules that govern where the entity prototype can be constructed
     /// </summary>
     [DataField("rules"), ViewVariables(VVAccess.ReadOnly)]
     public HashSet<RcdConstructionRule> ConstructionRules { get; private set; } = new();
@@ -100,10 +105,7 @@ public sealed partial class RCDPrototype : IPrototype
     [DataField, ViewVariables(VVAccess.ReadOnly)]
     public Box2? CollisionBounds
     {
-        get
-        {
-            return _collisionBounds;
-        }
+        get => _collisionBounds;
 
         private set
         {
@@ -119,13 +121,13 @@ public sealed partial class RCDPrototype : IPrototype
         }
     }
 
-    private Box2? _collisionBounds = null;
+    private Box2? _collisionBounds;
 
     /// <summary>
     /// The polygon shape associated with the prototype CollisionBounds (if set)
     /// </summary>
     [ViewVariables(VVAccess.ReadOnly)]
-    public PolygonShape? CollisionPolygon { get; private set; } = null;
+    public PolygonShape? CollisionPolygon { get; private set; }
 
     /// <summary>
     /// Governs how the local rotation of the constructed entity will be set
@@ -134,8 +136,16 @@ public sealed partial class RCDPrototype : IPrototype
     public RcdRotation Rotation { get; private set; } = RcdRotation.User;
 
     /// <summary>
-    /// Funky
-    /// Determines whether this prototype uses layered placement (true for traditional placement, false for layered). Only applies to RPD.
+    /// The relative order to use in the rotary menu.
+    /// Lower numbers appear before higher numbers, which appear before null.
+    /// Defaults to null.
+    /// </summary>
+    [DataField]
+    public int? MenuOrder { get; private set; }
+
+    /// <summary>
+    /// Polonium - opts this recipe out of per-pipe-layer placement. Only the RPD reads it;
+    /// see Content.Shared._Polonium.RPD.RPDSystem.
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadOnly)]
     public bool NoLayers { get; private set; } = false;

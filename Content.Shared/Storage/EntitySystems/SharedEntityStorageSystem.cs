@@ -1,12 +1,13 @@
 using System.Linq;
 using System.Numerics;
+using Content.Shared.ActionBlocker;
 using Content.Shared.Destructible;
+using Content.Shared.Explosion;
 using Content.Shared.Foldable;
 using Content.Shared.Ghost;
+using Content.Shared.Ghost.Components;
 using Content.Shared.Hands.Components;
-using Content.Shared.Explosion;
 using Content.Shared.Interaction;
-using Content.Shared.Item;
 using Content.Shared.Lock;
 using Content.Shared.Movement.Events;
 using Content.Shared.Popups;
@@ -15,8 +16,6 @@ using Content.Shared.Tools.Systems;
 using Content.Shared.Verbs;
 using Content.Shared.Wall;
 using Content.Shared.Whitelist;
-using Content.Shared.ActionBlocker;
-using Content.Shared.Mobs.Components;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.Map;
@@ -339,12 +338,21 @@ public abstract partial class SharedEntityStorageSystem : EntitySystem
         if (!Resolve(container, ref component))
             return false;
 
-        _container.Remove(toRemove, component.Contents);
+        // Get our new parent: either the grid the entity is on, or the
+        var newParent = xform.GridUid ?? xform.MapUid;
+        if (!TryComp(newParent, out TransformComponent? parentXform))
+            return false;
+
+        // Reparent the removed entity to our grid, or the map!
+        var (pos, rot) = TransformSystem.GetWorldPositionRotation(xform);
+        pos += rot.RotateVec(component.EnteringOffset);
+        pos = Vector2.Transform(pos, TransformSystem.GetInvWorldMatrix(parentXform));
+        if (!_container.Remove(toRemove, component.Contents, destination: new(newParent.Value, pos)))
+            return false;
 
         if (_container.IsEntityInContainer(container)
             && _container.TryGetOuterContainer(container, Transform(container), out var outerContainer))
         {
-
             var attemptEvent = new EntityStorageIntoContainerAttemptEvent(outerContainer);
             RaiseLocalEvent(outerContainer.Owner, ref attemptEvent);
             if (!attemptEvent.Cancelled)
@@ -355,9 +363,6 @@ public abstract partial class SharedEntityStorageSystem : EntitySystem
         }
 
         RemComp<InsideEntityStorageComponent>(toRemove);
-
-        var pos = TransformSystem.GetWorldPosition(xform) + TransformSystem.GetWorldRotation(xform).RotateVec(component.EnteringOffset);
-        TransformSystem.SetWorldPosition(toRemove, pos);
         return true;
     }
 

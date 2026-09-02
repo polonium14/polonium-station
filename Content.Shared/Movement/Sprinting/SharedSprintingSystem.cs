@@ -80,7 +80,6 @@ public abstract partial class SharedSprintingSystem : EntitySystem
         SubscribeLocalEvent<SprinterComponent, EntityZombifiedEvent>(OnZombified);
         SubscribeLocalEvent<BuckleComponent, SprintAttemptEvent>(OnBuckleSprintAttempt);
         SubscribeLocalEvent<VehicleOperatorComponent, SprintAttemptEvent>(OnMechPilotSprintAttempt);
-        SubscribeLocalEvent<SprinterComponent, MechEntryEvent>(OnMechEntry);
         SubscribeLocalEvent<SlowedDownComponent, RefreshMovementSpeedModifiersEvent>(OnSlowedDownRefresh);
 
         SprintsDelay = TimeSpan.FromSeconds(_cfg.GetCVar(CCVars.SecondsBetweenSprints));
@@ -417,14 +416,6 @@ public abstract partial class SharedSprintingSystem : EntitySystem
             return;
 
         args.Cancel();
-    }
-
-    private void OnMechEntry(EntityUid uid, SprinterComponent component, ref MechEntryEvent args)
-    {
-        if (!component.IsSprinting)
-            return;
-
-        ToggleSprint(uid, component, false);
     }
 
     private void OnSlowedDownRefresh(Entity<SlowedDownComponent> ent, ref RefreshMovementSpeedModifiersEvent args)

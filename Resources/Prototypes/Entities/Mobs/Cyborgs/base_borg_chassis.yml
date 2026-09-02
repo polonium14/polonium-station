@@ -199,7 +199,7 @@
       isLooped: true
   - type: PointLight
     enabled: false
-    mask: /Textures/Effects/LightMasks/cone.png
+    lightMask: ConeSingle
     autoRot: true
     radius: 4
     netsync: false
@@ -256,15 +256,13 @@
       - !type:PlaySoundBehavior
         sound:
           collection: MetalBreak
-      - !type:GibBehavior
-      - !type:SpawnEntitiesBehavior
-        spawn:
-          ScrapGlass:
-            min: 1
-            max: 1
-          SheetSteel:
-            min: 10
-            max: 20
+      - !type:EmptyContainersBehaviour
+        containers:
+        - borg_brain
+        - borg_module
+        - cell_slot
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
 
 - type: entity
   abstract: true
@@ -529,6 +527,8 @@
   - type: Xenoborg
   - type: BypassLock
     bypassDelay: 15 # We don't want people to easily be able to remove xenoborg brains.
+  - type: EmpResistance
+    strengthMultiplier: 0
 
 - type: entity
   abstract: true

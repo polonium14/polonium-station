@@ -75,7 +75,6 @@
       time: 1.25h
     - !type:OverallPlaytimeRequirement
       time: 25h
-  weight: 20
   startingGear: HoPGear
   icon: "JobIconHeadOfPersonnel"
   supervisors: job-supervisors-captain
@@ -98,6 +97,8 @@
   - Chemistry
   - Engineering
   - Research
+  - Robotics
+  - Reporter
   - Detective
   - Salvage
   - Security

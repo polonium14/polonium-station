@@ -10,8 +10,11 @@
   components:
   - type: Sprite
     sprite: _Goobstation/Clothing/Head/Helmets/helldiver.rsi
+    layers: # Polonium: this rsi has no icon-unshaded/light-overlay states, so drop the inherited light layers
+    - state: icon
   - type: Clothing
     sprite: _Goobstation/Clothing/Head/Helmets/helldiver.rsi
+    clothingVisuals: {}
   - type: PressureProtection
     highPressureMultiplier: 0.525
     lowPressureMultiplier: 1000

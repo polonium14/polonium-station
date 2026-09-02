@@ -20,20 +20,10 @@
             - WallLayer
     - type: IconSmooth
       key: walls
-      mode: NoSprite
-    - type: SmoothEdge
+      base: stone
     - type: Sprite
-      sprite: Structures/Walls/rock.rsi
-      layers:
-        - state: rock
-        - map: [ "enum.EdgeLayer.South" ]
-          state: rock_south
-        - map: [ "enum.EdgeLayer.East" ]
-          state: rock_east
-        - map: [ "enum.EdgeLayer.North" ]
-          state: rock_north
-        - map: [ "enum.EdgeLayer.West" ]
-          state: rock_west
+      sprite: Structures/Walls/stone-ironrock.rsi
+      state: full
 
 - type: entity
   abstract: true

@@ -13,7 +13,10 @@ concurrency:
 jobs:
   diff:
     name: Diff
-    if: github.actor != 'Polonium-bot' && github.actor != 'PJBot' && github.actor != 'github-actions[bot]' && github.actor != 'github-actions' && github.event.pull_request.draft == false
+    if: >-
+      !contains(fromJSON('["Polonium-bot","PJBot","github-actions[bot]","github-actions"]'), github.actor) &&
+      !contains(fromJSON('["Polonium-bot","PJBot","github-actions[bot]","github-actions"]'), github.event.pull_request.user.login) &&
+      github.event.pull_request.draft == false
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

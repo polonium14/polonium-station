@@ -212,3 +212,5 @@ guide-entry-metashield = Metashield
 guide-entry-namingscheme = Schemat Nazewnictwa
 guide-entry-writing = Pisanie
 guide-entry-glossary = Słownik
+
+guide-entry-changelings = Changelings

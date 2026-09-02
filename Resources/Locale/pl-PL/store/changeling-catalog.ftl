@@ -25,3 +25,11 @@ changeling-catalog-last-resort-desc =
     Uwaga! To resetuje twój postęp jako changeling, usuwając zakupy ze sklepu i wchłonięte tożsamości!
 changeling-catalog-night-vision-name = Noktowizja
 changeling-catalog-night-vision-desc = Modyfikujesz fotoreceptory i wyostrzasz zmysły, by widzieć w całkowitej ciemności.
+
+changeling-catalog-mute-sting-name = Mute Sting
+
+changeling-catalog-mute-sting-desc = Causes the target to be incapable of speech. Imperceptible until the target tries to speak. Can be used on self.
+
+changeling-catalog-voice-mindshield-name = Fake Mindshield
+
+changeling-catalog-voice-mindshield-desc = Modify your neuron's natural waves to copy those produced by Nanotrasen mindshield implants, making you look mindshielded to security members. Can be toggled.

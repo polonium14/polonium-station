@@ -128,5 +128,5 @@
   deconstructTools: [ Prying ]
   footstepSounds:
     collection: FootstepHull
-  itemDrop: FloorTileItemTechmaint
+  itemDrop: FloorTileItemSteelMaint
   heatCapacity: 10000

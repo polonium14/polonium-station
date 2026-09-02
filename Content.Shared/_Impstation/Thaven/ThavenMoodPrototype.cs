@@ -9,8 +9,6 @@ using Content.Shared.Dataset;
 using Content.Shared.Roles;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Dictionary;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Set;
 
 namespace Content.Shared._Impstation.Thaven;
 
@@ -34,7 +32,7 @@ public partial class ThavenMood
     [DataField(required: true), ViewVariables(VVAccess.ReadWrite)]
     public string MoodDesc = string.Empty;
 
-    [DataField(serverOnly: true, customTypeSerializer: typeof(PrototypeIdHashSetSerializer<ThavenMoodPrototype>))]
+    [DataField(serverOnly: true)]
     [ViewVariables(VVAccess.ReadWrite)]
     public HashSet<string> Conflicts = new();
 
@@ -46,7 +44,7 @@ public partial class ThavenMood
     public Dictionary<string, string> MoodVars = new();
 
     // begin funky
-    [DataField(serverOnly: true, customTypeSerializer: typeof(PrototypeIdHashSetSerializer<DepartmentPrototype>))]
+    [DataField(serverOnly: true)]
     [ViewVariables(VVAccess.ReadWrite)]
     public HashSet<string> JobConflicts = new();
     // end funky
@@ -83,14 +81,14 @@ public sealed partial class ThavenMoodPrototype : IPrototype
     /// <summary>
     /// A list of mood IDs that this mood will conflict with.
     /// </summary>
-    [DataField("conflicts", customTypeSerializer: typeof(PrototypeIdHashSetSerializer<ThavenMoodPrototype>))]
+    [DataField("conflicts")]
     public HashSet<string> Conflicts = new();
 
     /// <summary>
     /// Extra mood variables that will be randomly chosen and provided
     /// to the <see cref="Loc.GetString"/> call on <see cref="ThavenMood.MoodDesc"/>.
     /// </summary>
-    [DataField("moodVars", customTypeSerializer: typeof(PrototypeIdValueDictionarySerializer<string, DatasetPrototype>))]
+    [DataField("moodVars")]
     public Dictionary<string, string> MoodVarDatasets = new();
 
     /// <summary>
@@ -105,7 +103,7 @@ public sealed partial class ThavenMoodPrototype : IPrototype
     /// <summary>
     /// A list of conflicting jobs with this mood, if applicable.
     /// </summary>
-    [DataField("jobConflicts", customTypeSerializer: typeof(PrototypeIdHashSetSerializer<DepartmentPrototype>))]
+    [DataField("jobConflicts")]
     public HashSet<string> JobConflicts = new();
     // end funky
 }

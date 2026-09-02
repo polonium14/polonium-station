@@ -8,6 +8,9 @@
   - type: Action
     itemIconStyle: BigAction
     priority: -10
-    icon: _DV/Interface/Actions/mouthStorageOpen.png
+  - type: Sprite
+    layers:
+    - texture: _DV/Interface/Actions/mouthStorageOpen.png
+      map: ["enum.ActionVisuals.Icon"]
   - type: InstantAction
     event: !type:OpenStorageImplantEvent

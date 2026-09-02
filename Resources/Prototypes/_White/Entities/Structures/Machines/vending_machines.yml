@@ -6,6 +6,7 @@
   components:
   - type: VendingMachine
     pack: CaptainDrobeInventory
+  - type: VendingMachineVisuals
     offState: off
     brokenState: broken
     normalState: normal-unshaded
