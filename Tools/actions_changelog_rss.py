@@ -184,7 +184,9 @@ def generate_description_for_entries(entries: List[Any]) -> str:
         for entry in sorted(group, key=lambda x: x["time"]):
             for change in entry["changes"]:
                 emoji = TYPES_TO_EMOJI.get(change["type"], "")
-                if EXPERIMENTAL_LABEL in entry["labels"]:
+
+                # Polonium
+                if EXPERIMENTAL_LABEL in (entry.get("labels") or []):
                     emoji = f"{emoji}{EXPERIMENTAL_EMOJI}"
                 msg = change["message"]
                 desc.write(f"<li>{emoji} {html.escape(msg)}</li>")

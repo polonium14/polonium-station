@@ -24,7 +24,6 @@ jobs:
           pip install paramiko PyYAML lxml
 
       - name: Publish changelog (Discord)
-        continue-on-error: true
         run: Tools/actions_changelogs_since_last_run.py
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
