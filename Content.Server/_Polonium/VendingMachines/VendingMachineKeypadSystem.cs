@@ -51,7 +51,9 @@ public sealed partial class VendingMachineKeypadSystem : EntitySystem
         if (string.IsNullOrEmpty(soundPath))
             return;
 
-        var audioParams = new AudioParams().WithVolume(volume).WithPitchScale(args.Pitch);
+        // clamp so a modified client can't broadcast NaN/extreme pitches to everyone in range.
+        var pitch = float.IsFinite(args.Pitch) ? Math.Clamp(args.Pitch, 0.5f, 2f) : 1f;
+        var audioParams = new AudioParams().WithVolume(volume).WithPitchScale(pitch);
 
         _audio.PlayPredicted(new SoundPathSpecifier(soundPath), uid, args.Actor, audioParams);
     }
