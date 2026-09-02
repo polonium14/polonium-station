@@ -15,7 +15,7 @@ using Content.Shared.VendingMachines.Components;
 namespace Content.Client._Polonium.VendingMachines;
 
 [UsedImplicitly]
-public sealed class VendingMachineKeypadBoundUserInterface(EntityUid owner, Enum uiKey)
+public sealed partial class VendingMachineKeypadBoundUserInterface(EntityUid owner, Enum uiKey)
     : BoundUserInterface(owner, uiKey)
 {
     [Dependency] private IPlayerManager _playerManager = default!;
