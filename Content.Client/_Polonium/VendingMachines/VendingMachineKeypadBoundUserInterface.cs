@@ -1,6 +1,8 @@
 ﻿using Content.Client._Polonium.VendingMachines.UI;
 using Content.Client.VendingMachines;
+using Content.Shared.Access.Components;
 using Content.Shared.Access.Systems;
+using Content.Shared.Emag.Components;
 using Content.Shared.VendingMachines;
 using JetBrains.Annotations;
 using Robust.Client.Player;
@@ -15,6 +17,8 @@ namespace Content.Client._Polonium.VendingMachines;
 public sealed class VendingMachineKeypadBoundUserInterface(EntityUid owner, Enum uiKey)
     : BoundUserInterface(owner, uiKey), IVendingMachineBoundUi
 {
+    [Dependency] private IPlayerManager _playerManager = default!;
+
     [ViewVariables]
     private VendingMachineKeypadMenu? _menu;
 
@@ -27,7 +31,7 @@ public sealed class VendingMachineKeypadBoundUserInterface(EntityUid owner, Enum
 
         _menu = this.CreateWindowCenteredLeft<VendingMachineKeypadMenu>();
         _menu.VendingMachineOwner = Owner;
-        _menu.User = IoCManager.Resolve<IPlayerManager>().LocalSession?.AttachedEntity;
+        _menu.User = _playerManager.LocalSession?.AttachedEntity;
         _menu.Title = EntMan.GetComponent<MetaDataComponent>(Owner).EntityName;
         _menu.OnCodeEntered += OnCodeEntered;
         _menu.OnAudioPlayed += OnAudioPlayed;
@@ -65,15 +69,14 @@ public sealed class VendingMachineKeypadBoundUserInterface(EntityUid owner, Enum
         if (selectedItem == null)
             return VendingMachineKeypadFeedback.Invalid;
 
-        // check access
-        var playerManager = IoCManager.Resolve<IPlayerManager>();
-        if (playerManager.LocalSession?.AttachedEntity is { } player)
+        // check access, mirroring SharedVendingMachineSystem.IsAuthorized:
+        // no reader means public, and an emag bypasses the reader.
+        if (_playerManager.LocalSession?.AttachedEntity is { } player &&
+            EntMan.TryGetComponent(Owner, out AccessReaderComponent? accessReader) &&
+            !EntMan.System<AccessReaderSystem>().IsAllowed(player, Owner, accessReader) &&
+            !EntMan.HasComponent<EmaggedComponent>(Owner))
         {
-            var accessSystem = EntMan.System<AccessReaderSystem>();
-            if (!accessSystem.IsAllowed(player, Owner))
-            {
-                return VendingMachineKeypadFeedback.Denied;
-            }
+            return VendingMachineKeypadFeedback.Denied;
         }
 
         // optimistic
