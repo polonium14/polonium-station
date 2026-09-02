@@ -20,10 +20,14 @@ public sealed partial class VendingMachineKeypadSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<VendingMachineComponent, VendingMachineKeypadAudioMessage>(OnKeypadAudio);
+
+        Subs.BuiEvents<VendingMachineComponent>(VendingMachineUiKey.Key, subs =>
+        {
+            subs.Event<VendingMachineKeypadAudioMessage>(OnKeypadAudio);
+        });
     }
 
-    private void OnKeypadAudio(EntityUid uid, VendingMachineComponent component, VendingMachineKeypadAudioMessage args)
+    private void OnKeypadAudio(Entity<VendingMachineComponent> entity, ref VendingMachineKeypadAudioMessage args)
     {
         var now = _timing.CurTime;
 
@@ -55,6 +59,6 @@ public sealed partial class VendingMachineKeypadSystem : EntitySystem
         var pitch = float.IsFinite(args.Pitch) ? Math.Clamp(args.Pitch, 0.5f, 2f) : 1f;
         var audioParams = new AudioParams().WithVolume(volume).WithPitchScale(pitch);
 
-        _audio.PlayPredicted(new SoundPathSpecifier(soundPath), uid, args.Actor, audioParams);
+        _audio.PlayPredicted(new SoundPathSpecifier(soundPath), entity.Owner, args.Actor, audioParams);
     }
 }
