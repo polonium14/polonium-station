@@ -352,14 +352,11 @@ public abstract partial class SharedIVDripSystem : EntitySystem
 
     protected void UpdateIVVisuals(Entity<IVDripComponent> iv)
     {
-        if (_net.IsClient)
-        {
-            UpdateIVAppearance(iv);
-            return;
-        }
-
         if (!_containers.TryGetContainer(iv, iv.Comp.Slot, out var container))
             return;
+
+        var color = Color.White;
+        var percentage = 0;
 
         foreach (var entity in container.ContainedEntities)
         {
@@ -367,16 +364,16 @@ public abstract partial class SharedIVDripSystem : EntitySystem
                 !_solutionContainer.TryGetSolution(entity, pack.Solution, out _, out var solution))
                 continue;
 
-            iv.Comp.FillColor = solution.GetColor(_prototype);
-            iv.Comp.FillPercentage = (int) (FillFraction(solution) * 100);
-            Dirty(iv);
-            UpdateIVAppearance(iv);
-            return;
+            color = solution.GetColor(_prototype);
+            percentage = (int) (FillFraction(solution) * 100);
+            break;
         }
 
-        iv.Comp.FillColor = Color.White;
-        iv.Comp.FillPercentage = 0;
+        iv.Comp.FillColor = color;
+        iv.Comp.FillPercentage = percentage;
+
         Dirty(iv);
+
         UpdateIVAppearance(iv);
     }
 
