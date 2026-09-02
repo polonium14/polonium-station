@@ -14,9 +14,7 @@ using Content.Shared.Popups;
 using Content.Shared.Verbs;
 using Robust.Shared.Containers;
 using Robust.Shared.Network;
-using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Timing;
 using Content.Shared.Mobs.Components;
 
 namespace Content.Shared._Polonium.Medical.IV;
@@ -30,7 +28,6 @@ public abstract partial class SharedIVDripSystem : EntitySystem
     [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private IPrototypeManager _prototype = default!;
     [Dependency] private SharedSolutionContainerSystem _solutionContainer = default!;
-    [Dependency] private IGameTiming _timing = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
 
     private readonly HashSet<EntityUid> _packsToUpdate = [];
@@ -97,12 +94,12 @@ public abstract partial class SharedIVDripSystem : EntitySystem
         if (iv.Comp.AttachedTo == default)
             AttachIV(iv, args.User, args.Target);
         else
-            DetachIV(iv, args.User, false, true);
+            DetachIV(iv, args.User, false);
     }
 
     private void OnIVInteractHand(Entity<IVDripComponent> iv, ref InteractHandEvent args)
     {
-        DetachIV(iv, args.User, false, true);
+        DetachIV(iv, args.User, false);
     }
 
     private void OnIVVerbs(Entity<IVDripComponent> iv, ref GetVerbsEvent<InteractionVerb> args)
@@ -175,13 +172,13 @@ public abstract partial class SharedIVDripSystem : EntitySystem
         var user = args.User;
         if (pack.Comp.AttachedTo != null)
         {
-            DetachPack((pack, pack), user, false, true);
+            DetachPack(pack, user, false);
             return;
         }
 
         if (user == target)
         {
-            _popup.PopupClient(Loc.GetString("cm-blood-pack-cannot-self"), user, user);
+            _popup.PopupEntity(Loc.GetString("cm-blood-pack-cannot-self"), user, user);
             return;
         }
 
@@ -193,7 +190,7 @@ public abstract partial class SharedIVDripSystem : EntitySystem
                 ("user", user),
                 ("pack", pack.Owner),
                 ("target", target));
-            _popup.PopupPredicted(selfPoke, othersPoke, target, user);
+            _popup.PopupEntity(selfPoke, othersPoke, target, user);
         }
 
         var ev = new AttachIVBagDoAfterEvent();
@@ -218,7 +215,7 @@ public abstract partial class SharedIVDripSystem : EntitySystem
 
     private void OnIVBagUnequippedHand(Entity<IVBagComponent> pack, ref GotUnequippedHandEvent args)
     {
-        DetachPack((pack, pack), args.User, true, true);
+        DetachPack(pack, args.User, true);
     }
 
     private void OnIVBagVerbs(Entity<IVBagComponent> pack, ref GetVerbsEvent<InteractionVerb> args)
@@ -271,7 +268,7 @@ public abstract partial class SharedIVDripSystem : EntitySystem
         AttachFeedback(iv, user, to, iv.Comp.Injecting);
     }
 
-    protected void DetachIV(Entity<IVDripComponent> iv, EntityUid? user, bool rip, bool predict)
+    protected void DetachIV(Entity<IVDripComponent> iv, EntityUid? user, bool rip)
     {
         if (iv.Comp.AttachedTo is not { } target)
             return;
@@ -280,9 +277,9 @@ public abstract partial class SharedIVDripSystem : EntitySystem
         Dirty(iv);
 
         if (rip)
-            DoRip(iv.Comp.RipDamage, target, user, iv.Comp.RipEmote, predict);
+            DoRip(iv.Comp.RipDamage, target, user, iv.Comp.RipEmote);
         else
-            DoDetachFeedback(iv, target, user, predict);
+            DoDetachFeedback(iv, target, user);
     }
 
     private void AttachPack(Entity<IVBagComponent> pack, EntityUid user, EntityUid to)
@@ -296,7 +293,7 @@ public abstract partial class SharedIVDripSystem : EntitySystem
         AttachFeedback(pack, user, to, pack.Comp.Injecting);
     }
 
-    protected void DetachPack(Entity<IVBagComponent> pack, EntityUid? user, bool rip, bool predict)
+    protected void DetachPack(Entity<IVBagComponent> pack, EntityUid? user, bool rip)
     {
         if (pack.Comp.AttachedTo is not { } target)
             return;
@@ -305,9 +302,9 @@ public abstract partial class SharedIVDripSystem : EntitySystem
         Dirty(pack);
 
         if (rip)
-            DoRip(pack.Comp.RipDamage, target, user, pack.Comp.RipEmote, predict);
+            DoRip(pack.Comp.RipDamage, target, user, pack.Comp.RipEmote);
         else
-            DoDetachFeedback(pack, target, user, predict);
+            DoDetachFeedback(pack, target, user);
     }
 
     private void ToggleInject(Entity<IVDripComponent> iv, EntityUid user)
@@ -330,7 +327,7 @@ public abstract partial class SharedIVDripSystem : EntitySystem
             ? Loc.GetString("cm-iv-now-injecting")
             : Loc.GetString("cm-iv-now-taking");
 
-        _popup.PopupClient(msg, iv, user);
+        _popup.PopupEntity(msg, iv, user);
     }
 
     protected void UpdatePackVisuals(Entity<IVBagComponent> pack)
@@ -413,64 +410,42 @@ public abstract partial class SharedIVDripSystem : EntitySystem
     protected virtual void DoRip(DamageSpecifier? damage,
         EntityUid attached,
         EntityUid? user,
-        ProtoId<EmotePrototype> ripEmote,
-        bool predict)
+        ProtoId<EmotePrototype> ripEmote)
     {
         if (damage != null)
             _damageable.TryChangeDamage(attached, damage, true);
 
-        if (!_timing.IsFirstTimePredicted)
-            return;
-
-        var message = Loc.GetString("cm-iv-rip", ("target", attached));
-        if (predict)
-        {
-            _popup.PopupClient(message, attached, user);
-
-            var others = user == null ? Filter.Pvs(attached) : Filter.PvsExcept(user.Value);
-            _popup.PopupEntity(message, attached, others, true);
-        }
-        else
-        {
-            _popup.PopupEntity(message, attached);
-        }
+        // everyone in PVS sees the same message, and PopupEntity predicts itself
+        _popup.PopupEntity(Loc.GetString("cm-iv-rip", ("target", attached)), attached);
     }
 
     private void AttachFeedback(EntityUid iv, EntityUid user, EntityUid to, bool injecting)
     {
-        if (!_timing.IsFirstTimePredicted)
-            return;
+        var selfMessage = injecting ? "cm-iv-attach-self-injecting" : "cm-iv-attach-self-drawing";
+        var othersMessage = injecting ? "cm-iv-attach-others-injecting" : "cm-iv-attach-others-drawing";
 
-        var selfMessage = "cm-iv-attach-self-drawing";
-        var othersMessage = "cm-iv-attach-others-drawing";
-        if (injecting)
-        {
-            selfMessage = "cm-iv-attach-self-injecting";
-            othersMessage = "cm-iv-attach-others-injecting";
-        }
-
-        _popup.PopupClient(Loc.GetString(selfMessage, ("iv", iv), ("target", to)), to, user);
-
-        var others = Filter.PvsExcept(user);
-        _popup.PopupEntity(Loc.GetString(othersMessage, ("iv", iv), ("user", user), ("target", to)), to, others, true);
+        _popup.PopupEntity(Loc.GetString(selfMessage, ("iv", iv), ("target", to)),
+            Loc.GetString(othersMessage, ("iv", iv), ("user", user), ("target", to)),
+            to,
+            user);
     }
 
-    private void DoDetachFeedback(EntityUid iv, EntityUid attached, EntityUid? user, bool predict)
+    private void DoDetachFeedback(EntityUid iv, EntityUid attached, EntityUid? user)
     {
         var selfMessage = Loc.GetString("cm-iv-detach-self", ("iv", iv), ("target", attached));
-        if (predict)
-            _popup.PopupClient(selfMessage, attached, user);
-        else
-            _popup.PopupEntity(selfMessage, attached);
 
+        // no user means an automatic detach (walked out of range) - the "others" string
+        // interpolates $user, so there is nothing to show anyone else
         if (user == null)
+        {
+            _popup.PopupEntity(selfMessage, attached);
             return;
+        }
 
-        var others = Filter.PvsExcept(user.Value);
-        _popup.PopupEntity(Loc.GetString("cm-iv-detach-others", ("iv", iv), ("user", user), ("target", attached)),
+        _popup.PopupEntity(selfMessage,
+            Loc.GetString("cm-iv-detach-others", ("iv", iv), ("user", user), ("target", attached)),
             attached,
-            others,
-            true);
+            user);
     }
 
     public override void Update(float frameTime)

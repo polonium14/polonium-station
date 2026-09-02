@@ -33,7 +33,8 @@ public sealed partial class IVDripOverlay : Overlay
             var ivDripPosition = transformSystem.GetMapCoordinates(ivDripId);
             var attachedPosition = transformSystem.GetMapCoordinates(attachedTo);
 
-            if (ivDripPosition.MapId == MapId.Nullspace || attachedPosition.MapId == MapId.Nullspace)
+            // only draw lines belonging to the map being rendered
+            if (ivDripPosition.MapId != args.MapId || attachedPosition.MapId != args.MapId)
                 continue;
 
             var rotation = transformSystem.GetWorldRotation(ivDripId);
@@ -52,7 +53,7 @@ public sealed partial class IVDripOverlay : Overlay
             var packPosition = transformSystem.GetMapCoordinates(packId);
             var attachedPosition = transformSystem.GetMapCoordinates(attachedTo);
 
-            if (packPosition.MapId == MapId.Nullspace || attachedPosition.MapId == MapId.Nullspace)
+            if (packPosition.MapId != args.MapId || attachedPosition.MapId != args.MapId)
                 continue;
 
             handle.DrawLine(packPosition.Position, attachedPosition.Position, Color.White);
