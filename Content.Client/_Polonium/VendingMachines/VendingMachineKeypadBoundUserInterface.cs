@@ -3,6 +3,7 @@ using Content.Client.VendingMachines;
 using Content.Shared.Access.Components;
 using Content.Shared.Access.Systems;
 using Content.Shared.Emag.Components;
+using Content.Shared.Power.EntitySystems;
 using Content.Shared.VendingMachines;
 using JetBrains.Annotations;
 using Robust.Client.Player;
@@ -40,21 +41,17 @@ public sealed class VendingMachineKeypadBoundUserInterface(EntityUid owner, Enum
 
     public void Refresh()
     {
-        var enabled = EntMan.TryGetComponent(Owner, out VendingMachineEjectComponent? bendy) && !bendy.Ejecting;
-
         var system = EntMan.System<VendingMachineSystem>();
         _cachedInventory = system.GetAllInventory(Owner);
 
-        _menu?.Populate(_cachedInventory, enabled);
+        _menu?.Populate(_cachedInventory);
     }
 
     public void UpdateAmounts()
     {
-        var enabled = EntMan.TryGetComponent(Owner, out VendingMachineEjectComponent? bendy) && !bendy.Ejecting;
-
         var system = EntMan.System<VendingMachineSystem>();
         _cachedInventory = system.GetAllInventory(Owner);
-        _menu?.UpdateAmounts(_cachedInventory, enabled);
+        _menu?.UpdateAmounts(_cachedInventory);
     }
 
     private void OnAudioPlayed(VendingMachineKeypadSound type, float pitch)
@@ -68,6 +65,18 @@ public sealed class VendingMachineKeypadBoundUserInterface(EntityUid owner, Enum
 
         if (selectedItem == null)
             return VendingMachineKeypadFeedback.Invalid;
+
+        // live machine state, mirroring TryEjectVendorItem guard. A mid-eject,
+        // broken, or unpowered machine silently swallows the code instead of
+        // playing success feedback for a vend the server will drop.
+        if (EntMan.TryGetComponent(Owner, out VendingMachineEjectComponent? eject) && eject.Ejecting)
+            return VendingMachineKeypadFeedback.None;
+
+        if (EntMan.TryGetComponent(Owner, out VendingMachineComponent? vend) && vend.Broken)
+            return VendingMachineKeypadFeedback.None;
+
+        if (!EntMan.System<SharedPowerReceiverSystem>().IsPowered(Owner))
+            return VendingMachineKeypadFeedback.None;
 
         // check access, mirroring SharedVendingMachineSystem.IsAuthorized:
         // no reader means public, and an emag bypasses the reader.

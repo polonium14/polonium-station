@@ -12,6 +12,7 @@ namespace Content.Client._Polonium.VendingMachines.UI;
 
 public enum VendingMachineKeypadFeedback : byte
 {
+    None,    // machine busy/off: the keypad just doesn't respond
     Success,
     Empty,   // slot sold out
     Invalid, // incomplete or unmapped code
@@ -45,7 +46,6 @@ public sealed partial class VendingMachineKeypadMenu : FancyWindow
     private float _chuteRattleTimer;
     private bool _cursorVisible = true;
     private bool _showingFeedback;
-    private bool _enabled = true;
 
     // flavor text
     private readonly string[] _successPhrases =
@@ -132,9 +132,8 @@ public sealed partial class VendingMachineKeypadMenu : FancyWindow
         }
     }
 
-    public void Populate(List<VendingMachineInventoryEntry> inventory, bool enabled)
+    public void Populate(List<VendingMachineInventoryEntry> inventory)
     {
-        _enabled = enabled;
         ItemGrid.RemoveAllChildren();
         _slots.Clear();
 
@@ -157,12 +156,11 @@ public sealed partial class VendingMachineKeypadMenu : FancyWindow
         ClearBuffer();
     }
 
-    public void UpdateAmounts(List<VendingMachineInventoryEntry> inventory, bool enabled)
+    public void UpdateAmounts(List<VendingMachineInventoryEntry> inventory)
     {
-        _enabled = enabled;
         if (inventory.Count != _slots.Count)
         {
-            Populate(inventory, enabled);
+            Populate(inventory);
             return;
         }
 
@@ -292,11 +290,6 @@ public sealed partial class VendingMachineKeypadMenu : FancyWindow
         if (_showingFeedback)
             return;
 
-        // machine is mid-eject (or otherwise disabled): reject the code
-        // without playing feedback or starting the vend animation.
-        if (!_enabled)
-            return;
-
         if (_bufferLetter is not { } letter || _bufferNumber is not { } number)
         {
             ShowFeedback(VendingMachineKeypadFeedback.Invalid);
@@ -316,6 +309,9 @@ public sealed partial class VendingMachineKeypadMenu : FancyWindow
             }
 
             var feedback = OnCodeEntered?.Invoke(index) ?? VendingMachineKeypadFeedback.Success;
+            if (feedback == VendingMachineKeypadFeedback.None)
+                return;
+
             if (feedback != VendingMachineKeypadFeedback.Success)
             {
                 ShowFeedback(feedback);
