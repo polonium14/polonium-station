@@ -138,7 +138,7 @@ public sealed partial class VendingMachineGridSlot : PanelContainer
     {
         _animating = true;
         _animElapsed = 0f;
-        _pendingSoldOut = SoldOverlay.Visible;
+        _pendingSoldOut = SoldOut;
 
         ItemSprite.Visible = true;
         ItemSprite.Modulate = Color.White;
