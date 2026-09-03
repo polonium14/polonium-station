@@ -378,11 +378,18 @@
   components:
   - type: Metabolizer
     maxReagents: 5
+    metabolizerTypes: [ Dwarf, Human ] # Polonium: alcohol is metabolites, dwarf has to stay on the liver
 
 - type: entity
   parent: [ OrganDwarfMetabolizer, OrganHumanLiver ]
   id: OrganDwarfLiver
+  components:
+  - type: Metabolizer
+    metabolizerTypes: [ Dwarf, Human ]
 
 - type: entity
   parent: [ OrganDwarfMetabolizer, OrganHumanHeart ]
   id: OrganDwarfHeart
+  components:
+  - type: Metabolizer
+    metabolizerTypes: [ Dwarf, Human ]

@@ -248,7 +248,7 @@
   abstract: true
   components:
   - type: Metabolizer
-    metabolizerTypes: [ Allulalo ]
+    metabolizerTypes: [ Allulalo, Animal ] # Polonium: saurians eat raw meat, thats bloodstream now
     updateIntervalMultiplier: 1.5 # This should make them metabolize things twice as fast. I think. This new system is scary.
 
 - type: entity
@@ -452,13 +452,13 @@
   id: OrganAllulaloHeart
 
 - type: entity
-  parent: [ OrganBaseStomach, OrganAllulaloInternal, OrganHumanMetabolizer ]
+  parent: [ OrganBaseStomach, OrganAllulaloInternal, OrganAllulaloMetabolizer ]
   id: OrganAllulaloStomach
 
 - type: entity
-  parent: [ OrganBaseLiver, OrganAllulaloInternal, OrganHumanMetabolizer ]
+  parent: [ OrganBaseLiver, OrganAllulaloInternal, OrganAllulaloMetabolizer ]
   id: OrganAllulaloLiver
 
 - type: entity
-  parent: [ OrganBaseKidneys, OrganAllulaloInternal, OrganHumanMetabolizer ]
+  parent: [ OrganBaseKidneys, OrganAllulaloInternal, OrganAllulaloMetabolizer ]
   id: OrganAllulaloKidneys
