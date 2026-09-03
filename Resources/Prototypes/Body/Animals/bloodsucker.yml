@@ -4,7 +4,7 @@
   suffix: bloodsucker
   components:
   - type: Metabolizer
-    metabolizerTypes: [ Bloodsucker, Animal ] # Polonium: blood heal is bloodsucker, raw meat still needs animal
+    metabolizerTypes: [ Bloodsucker ]
 
 - type: entity
   id: OrganBloodsuckerStomach
