@@ -63,6 +63,7 @@
             Clown: [ 1, 1 ]
             Mime: [ 1, 1 ]
             Musician: [ 1, 1 ]
+            Reporter: [ 1,1 ]
 
         # Goobstation blob-config-start SMALL+
         # Polonium: disabled blob-config (no blob implemented yet)
