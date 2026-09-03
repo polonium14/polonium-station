@@ -35,16 +35,16 @@ SSH_PORT = 22
 RSS_FILE = "changelog.xml"
 XSL_FILE = "stylesheet.xsl"
 HOST_KEYS = [
-    "AAAAC3NzaC1lZDI1NTE5AAAAIOBpGO/Qc6X0YWuw7z+/WS/65+aewWI29oAyx+jJpCmh"
+    "AAAAC3NzaC1lZDI1NTE5AAAAIPzvoZqhVgf6cfqrTezho5KGaufW8/H1ukgAIyYe6maQ"
 ]
 
 # RSS feed parameters, change these
-FEED_TITLE       = "Space Station 14 Changelog"
-FEED_LINK        = "https://github.com/space-wizards/space-station-14/"
-FEED_DESCRIPTION = "Changelog for the official Wizard's Den branch of Space Station 14."
-FEED_LANGUAGE    = "en-US"
-FEED_GUID_PREFIX = "ss14-changelog-wizards-"
-FEED_URL         = "https://central.spacestation14.io/changelog.xml"
+FEED_TITLE       = "Polonium Changelog"
+FEED_LINK        = "https://github.com/polonium14/polonium-station"
+FEED_DESCRIPTION = "Lista zmian w Polonium Station"
+FEED_LANGUAGE    = "pl-PL"
+FEED_GUID_PREFIX = "ss14-changelog-polonium-"
+FEED_URL         = "https://central.ss14.pl/cl/changelog.xml"
 
 CHANGELOG_FILE = "Resources/Changelog/Changelog.yml"
 
