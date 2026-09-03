@@ -145,7 +145,7 @@
   abstract: true
   components:
   - type: Metabolizer
-    metabolizerTypes: [ Arachnid ]
+    metabolizerTypes: [ Arachnid, Animal ] # Polonium: raw meat is bloodstream now so heart needs Animal too
 
 - type: entity
   parent: OrganArachnid
@@ -383,7 +383,7 @@
       Destroyed: 0
 
 - type: entity
-  parent: [ OrganBaseStomach, OrganArachnidInternal, OrganAnimalMetabolizer ]
+  parent: [ OrganBaseStomach, OrganArachnidInternal, OrganArachnidMetabolizer ]
   id: OrganArachnidStomach
   components:
   - type: OrganIntegrity
@@ -394,7 +394,7 @@
       Destroyed: 0
 
 - type: entity
-  parent: [ OrganBaseLiver, OrganSpriteHumanInternal, OrganArachnidInternal, OrganAnimalMetabolizer ]
+  parent: [ OrganBaseLiver, OrganSpriteHumanInternal, OrganArachnidInternal, OrganArachnidMetabolizer ]
   id: OrganArachnidLiver
   components:
   - type: OrganIntegrity
@@ -405,7 +405,7 @@
       Destroyed: 0
 
 - type: entity
-  parent: [ OrganBaseKidneys, OrganSpriteHumanInternal, OrganArachnidInternal, OrganAnimalMetabolizer ]
+  parent: [ OrganBaseKidneys, OrganSpriteHumanInternal, OrganArachnidInternal, OrganArachnidMetabolizer ]
   id: OrganArachnidKidneys
   components:
   - type: OrganIntegrity

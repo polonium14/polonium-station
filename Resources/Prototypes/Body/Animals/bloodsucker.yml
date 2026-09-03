@@ -8,15 +8,15 @@
 
 - type: entity
   id: OrganBloodsuckerStomach
-  parent: [ OrganBloodsucker, OrganAnimalStomach ]
+  parent: [ OrganAnimalStomach, OrganBloodsucker ]
 
 - type: entity
   id: OrganBloodsuckerLiver
-  parent: [ OrganBloodsucker, OrganAnimalLiver ]
+  parent: [ OrganAnimalLiver, OrganBloodsucker ]
 
 - type: entity
   id: OrganBloodsuckerHeart
-  parent: [ OrganBloodsucker, OrganAnimalHeart ]
+  parent: [ OrganAnimalHeart, OrganBloodsucker ]
 
 - type: entity
   id: BaseMobBloodsucker
