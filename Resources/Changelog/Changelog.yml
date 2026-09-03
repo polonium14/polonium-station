@@ -1,12 +1,4 @@
 ﻿Entries:
-- author: Quantum-cross
-  changes:
-  - message: Anomalies will no longer spawn multiple things on the same tile (asteroid
-      wall, etc)
-    type: Fix
-  id: 9481
-  time: '2026-02-02T12:35:31.0000000+00:00'
-  url: https://github.com/space-wizards/space-station-14/pull/37833
 - author: Samur7
   changes:
   - message: Security bio suit now hides tails again.
@@ -4041,3 +4033,20 @@
   id: 9980
   time: '2026-09-03T18:44:57.0000000+00:00'
   url: https://github.com/polonium14/polonium-station/pull/979
+- author: Nikita
+  changes:
+  - message: "Arachnidzi, allulalo i gryzonie teraz mog\u0105 je\u015B\u0107 surowe\
+      \ mi\u0119so."
+    type: Tweak
+  - message: "\u0106my nie mog\u0105 teraz je\u015B\u0107 surowe mi\u0119so."
+    type: Tweak
+  - message: "Czosnek, czekolada, cebula teraz truj\u0105 gryzoni."
+    type: Tweak
+  - message: "Amoniak w powietrzu na gryzoni teraz dzia\u0142a jak na szczur\xF3w\
+      \ (leczy)."
+    type: Tweak
+  - message: "Apidy maj\u0105 teraz serce, w\u0105trob\u0119 i nerk\u0119"
+    type: Tweak
+  id: 9981
+  time: '2026-09-03T19:00:07.0000000+00:00'
+  url: https://github.com/polonium14/polonium-station/pull/981
