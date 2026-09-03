@@ -176,3 +176,17 @@
       - Blindable
       - BorgChassis # Polonium fix: borgs are now flashable
   - type: FlashedStatusEffect
+
+# Forces fake items into the hands/slots of the target
+- type: entity
+  parent: MobStatusEffectDebuff
+  id: StatusEffectForcedItemArmblade
+  name: forced armblade
+  components:
+  - type: ForcedItemStatusEffect
+    handItems:
+    - ArmbladeDull
+    spawnSound:
+      collection: gib # Same as ActionRetractableItemArmblade
+    despawnSound:
+      collection: gib # Same as ActionRetractableItemArmblade
