@@ -1,0 +1,58 @@
+﻿<Document>
+  # Wampir
+
+  <Box>
+    [color=#999999][italic]"Nie jesteś potworem. Jesteś głodem."[/italic][/color]
+  </Box>
+
+  Wampir to antagonista który rozpoczyna rundę jako zwykły członek załogi, ale zyskuje dostęp do zestawu nadprzyrodzonych mocy.
+  Twoja siła rośnie proporcjonalnie do [bold]całkowitej ilości wyssanej krwi[/bold], podczas gdy użycie zdolności zużywa [bold]aktualny zapas krwi[/bold].
+
+  ## Szybki start
+
+   Użyj [bold]Włącz/wyłącz kły[/bold], aby wysunąć kły.
+   Zbliż się do celu i ugryź go, aby wypić krew.
+   Śledź dwie rzeczy: [bold]całkowitą ilość wyssanej krwi[/bold] oraz [bold]aktualny zapas krwi[/bold].
+   Po osiągnięciu [bold]150 jednostek krwi[/bold] odblokowujesz wybór klasy.
+
+  [bold]Ważne ograniczenie[/bold]
+   Każdy cel ma limit ilości krwi, jaką możesz z niego wyssać(200u).
+
+  ## Podstawowe umiejętności które posiada każdy wampir
+
+  [bold]Paraliżujące Spojrzenie[/bold] — paralyzes and silences nearby targets while dealing stamina damage over time. Great for creating a fed window.
+
+  [bold]Regeneracja[/bold] — natychmiast usuwa ogłuszenia i przywraca wytrzymałość; silniejsza wersja usuwa również reagenty i leczy obrażenia wielu rodzajów.
+
+  ## System mocy: to co naprawdę ma znaczenie!
+
+   [bold]Całkowita ilość wyssanej krwi[/bold] odblokowuje nowe umiejętności (np. 150 / 250 / 400 / 600 / 800 / 1000).
+   [bold]Aktualny poziom krwi[/bold] to twoja „mana” potrzebna do używania umiejętności. Możesz mieć ponad 1000 w sumie, a mimo to w danej chwili być całkowicie pusty.
+   Niektóre zaawansowane efekty wymagają [bold]pełnej mocy[/bold] -> 1000 krwi ogółem i 8 unikalnych ofiar.
+
+  ## Wybór klasy
+
+  Twoja klasa określa twój styl gry. Możesz otworzyć te strony w dowolnym momencie:
+
+  - [textlink="Hemomancer" link="VampiresHemomancer"] — magia krwi i kontrola obszaru.
+  - [textlink="Umbrae" link="VampiresUmbrae"] — ciemność, mobilność, zasadzki.
+  - [textlink="Dantalion" link="VampiresDantalion"] — niewolnicy, iluzje, kontrola społeczna.
+  - [textlink="Gargantua" link="VampiresGargantua"] — walka wręcz, wytrzymałość, przebijanie się przez linie wroga.
+
+  ## Słabość wobec sił świętych
+
+  Wampiry są podatne na działanie sił świętych, ale [italic]tylko po tym, jak pożywiły się krwią co najmniej jednej ofiary[/italic].
+
+  [bold]Woda święcona[/bold]:
+  - Zadaje obrażenia od ognia wampirom, które się posiliły.
+  - Jeśli jeszcze nie wyssałeś krwi z nikogo, woda święcona nie ma na ciebie żadnego wpływu.
+
+  [bold]Miejsce święte[/bold]:
+  - Stojąc na kafelkach kaplicy, otrzymujesz stałe obrażenia od ognia.
+  - To również aktywuje się to dopiero po tym jak będziesz miał co najmniej jedną ofiarę.
+
+  [bold]Kapłan[/bold]:
+  - Kapłani z aktywną Biblią są [bold]odporni na zdolności wampirów[/bold].
+  - Jednak po osiągnięciu [bold]Pełnej Mocy[/bold], możesz ominąć ochronę wynikającą z wiary.
+
+</Document>

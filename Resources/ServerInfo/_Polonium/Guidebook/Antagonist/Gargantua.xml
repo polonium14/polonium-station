@@ -1,0 +1,36 @@
+﻿<Document>
+  # Wampir: Gargantua
+
+  <Box>
+    [color=#c56929][italic]"Kiedy kończy się subtelność — zaczynasz ty..."[/italic][/color]
+  </Box>
+
+  Gargantua to klasa przełomowa i walcząca. Stajesz się bezpośrednim zagrożeniem, ale płacisz za to swoją widocznością.
+  Twoim zadaniem jest wybranie momentu, w którym ukrywanie się przestaje być opłacalne, i zakończenie akcji siłą.
+
+  ## Umiejętności (Całkowity próg krwi | Koszt)
+
+  [bold](150 | 30)[/bold] Opuchnięcie Krwi
+   Tymczasowo zmniejsza otrzymywane obrażenia i skraca czas trwania ogłuszenia.
+   Ograniczenie: nie możesz używać broni palnej, gdy umiejętność jest aktywna.
+   Po osiągnięciu 400 punktów krwi zapewnia również dodatkowe obrażenia w walce wręcz.
+
+  [bold](250 | 30)[/bold] Napływ Krwi
+   Krótki skok prędkości: pościg, ucieczka lub wbicie się w formację.
+
+  [bold](250 | 30)[/bold] Seismiczny Podskok
+  Uderzenie w ziemię: powala i odrzuca pobliskie stworzenia; może rozbić płytki podłogowe.
+  Świetne do wywołania chaosu i zresetowania odległości.
+
+  [bold](600 | Toggle)[/bold] Ogromna Siła
+   Automatycznie wyłamuje drzwi bez zasilania.
+   Gdy umiejętność jest aktywna, nie można cię popchnąć ani pociągnąć.
+   Koszt to krew na drzwi (5).
+
+  [bold](800 | 20)[/bold] Demoniczny Uścisk
+   „Ręka” o zasięgu do 15 płytek: unieruchamia cel i może przyciągnąć go do ciebie w trybie walki.
+
+  [bold](1000 | 30)[/bold] Szarża
+   Szarża pozwalająca przebić się przez wrogów i wykończyć cele.
+
+</Document>
