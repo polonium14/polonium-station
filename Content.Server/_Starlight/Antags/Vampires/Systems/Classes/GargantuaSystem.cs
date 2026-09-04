@@ -82,7 +82,7 @@ public sealed partial class GargantuaSystem : EntitySystem
         SubscribeLocalEvent<ActiveBloodSwellComponent, StatusEffectRelayedEvent<BeforeStaminaDamageEvent>>(OnBloodSwellStaminaDamage);
 
         SubscribeLocalEvent<GargantuaComponent, VampireBloodDrankEvent>(OnBloodDrank);
-        SubscribeLocalEvent<GargantuaComponent, UserPriedDoorEvent>(OnDoorPried);
+        SubscribeLocalEvent<TransformComponent, PriedEvent>(OnDoorPried);
         // Status effects are raised on the status effect entity, so hook globally.
         SubscribeLocalEvent<StatusEffectComponent, StatusEffectAppliedEvent>(OnStatusEffectApplied);
     }
@@ -261,18 +261,18 @@ public sealed partial class GargantuaSystem : EntitySystem
 
     #region Overwhelming Force
 
-    private void OnDoorPried(EntityUid uid, GargantuaComponent component, ref UserPriedDoorEvent args)
+    private void OnDoorPried(EntityUid uid, TransformComponent xform, ref PriedEvent args)
     {
-
-        if (!component.OverwhelmingForceActive)
+        if (!TryComp<GargantuaComponent>(args.User, out var component)
+            || !component.OverwhelmingForceActive
+            || !TryComp<VampireComponent>(args.User, out var vampire))
+        {
             return;
+        }
 
-        if (!TryComp<VampireComponent>(uid, out var vampire))
-            return;
+        _vampire.TrySpendBlood(args.User, vampire, component.OverwhelmingForceDoorPryBloodCost, showPopup: false);
 
-        _vampire.TrySpendBlood(uid, vampire, component.OverwhelmingForceDoorPryBloodCost, showPopup: false);
-
-        _audio.PlayPvs(component.OverwhelmingForcePrySound, uid, AudioParams.Default.WithVolume(2f));
+        _audio.PlayPvs(component.OverwhelmingForcePrySound, args.User, AudioParams.Default.WithVolume(2f));
     }
 
     #endregion

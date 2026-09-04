@@ -37,7 +37,7 @@ public sealed partial class SharedGargantuaSystem : EntitySystem
         SubscribeLocalEvent<GargantuaComponent, PullAttemptEvent>(OnOverwhelmingForcePullAttempt);
         SubscribeLocalEvent<GargantuaComponent, DisarmAttemptEvent>(OnOverwhelmingForceDisarmAttempt);
         SubscribeLocalEvent<GargantuaComponent, AttemptMobTargetCollideEvent>(OnOverwhelmingForceMobPushAttempt);
-        SubscribeLocalEvent<GargantuaComponent, UserBeforePryEvent>(OnOverwhelmingForceBeforePry);
+        SubscribeLocalEvent<TransformComponent, BeforePryEvent>(OnOverwhelmingForceBeforePry);
 
         SubscribeLocalEvent<ActiveBloodSwellComponent, GetMeleeDamageEvent>(OnBloodSwellMeleeDamage);
         SubscribeLocalEvent<ActiveBloodSwellComponent, StatusEffectRelayedEvent<GetMeleeDamageEvent>>(OnBloodSwellMeleeDamage);
@@ -228,11 +228,12 @@ public sealed partial class SharedGargantuaSystem : EntitySystem
         args.Cancelled = true;
     }
 
-    private void OnOverwhelmingForceBeforePry(EntityUid uid, GargantuaComponent component, ref UserBeforePryEvent args)
+    private void OnOverwhelmingForceBeforePry(EntityUid uid, TransformComponent xform, ref BeforePryEvent args)
     {
-        if (!component.OverwhelmingForceActive
-            || !TryComp<VampireComponent>(uid, out var vampire)
-            || vampire.TotalBlood >= component.OverwhelmingForceDoorPryBloodCost)
+        if (!TryComp<GargantuaComponent>(args.User, out var component)
+            || !component.OverwhelmingForceActive
+            || !TryComp<VampireComponent>(args.User, out var vampire)
+            || vampire.DrunkBlood >= component.OverwhelmingForceDoorPryBloodCost)
         {
             return;
         }

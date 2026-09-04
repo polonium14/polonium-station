@@ -103,31 +103,3 @@ public record struct GetPryTimeModifierEvent
     }
 }
 
-//Starlight
-
-/// <summary>
-/// Raised directed on the user before they attempt to pry a target.
-/// Cancel to stop the pry before target-side pry validation runs.
-/// </summary>
-[ByRefEvent]
-public record struct UserBeforePryEvent(EntityUid Target, bool PryPowered, bool Force, bool StrongPry)
-{
-    public readonly EntityUid Target = Target;
-
-    public readonly bool PryPowered = PryPowered;
-
-    public readonly bool Force = Force;
-
-    public readonly bool StrongPry = StrongPry;
-
-    public string? Message;
-
-    public bool Cancelled;
-}
-
-[ByRefEvent]
-public readonly record struct UserPriedDoorEvent(EntityUid Door, bool Opened)
-{
-    public readonly EntityUid Door = Door;
-    public readonly bool Opened = Opened;
-}
