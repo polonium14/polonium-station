@@ -30,7 +30,7 @@
 - type: gameMap
   id: Glacier
   mapName: 'Glacier'
-  mapPath: /Maps/_Funkystation/glacier.yml
+  mapPath: /Maps/_Polonium/glacier.yml
   minPlayers: 30
   stations:
     Glacier:
