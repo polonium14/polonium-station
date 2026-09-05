@@ -66,6 +66,9 @@
     - VimPilot
   - type: StealTarget
     stealGroup: AnimalIan
+  - type: Contraband
+    severity: GrandTheft
+    allowedDepartments: [ Command ]
 
 - type: entity
   parent: [ MobCorgiIan, BaseSlicingRefinable ]
@@ -175,6 +178,9 @@
     - id: MaterialHideCorgi
   - type: StealTarget
     stealGroup: AnimalIan
+  - type: Contraband
+    severity: GrandTheft
+    allowedDepartments: [ Command ]
 
 - type: entity
   parent: [ BaseUniquePet, MobCat ]

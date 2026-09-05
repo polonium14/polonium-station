@@ -81,12 +81,12 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     </ColorBox>
     <ColorBox Color="#fd6864">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [color=black]§401 Morderstwo\n7:00 – 18:00[/color]
+        [color=black]§401 Zabójstwo\n7:00 – 18:00[/color]
       </Box>
     </ColorBox>
     <ColorBox Color="#fd6864">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        [color=black]§501 Wskrzeszenie\n26:00 – Perma[/color]
+        [color=black]§501 Reanimacja\n26:00 – Perma[/color]
       </Box>
     </ColorBox>
     <ColorBox Color="#ffce93">
@@ -228,7 +228,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   </Table>
 
   # x00 — Władza
-  Kategoria obejmuje porządek publiczny, polecenia organów władzy, areszt, procedurę osłony umysłu oraz powstanie. W ramach tej samej kategorii _XX uwzględnia się wyłącznie najcięższy zarzut.
+  Kategoria obejmuje naruszenia porządku publicznego, niewykonanie poleceń organów władzy, naruszenia zasad aresztu, procedurę osłony umysłu oraz bunt. W ramach tej samej kategorii _XX uwzględnia się wyłącznie najcięższy zarzut.
 
   ## §100 Zakłócanie porządku
   [bold]Stopień:[/bold] I · [bold]Kara:[/bold] Ostrzeżenie – 4:00
@@ -236,7 +236,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   [bold]Opis:[/bold] Zakłócanie porządku publicznego, w tym udział w zamieszkach.
 
   W szczególności:
-  - publiczna nagość, obelgi, utrudnianie pracy organom władzy, podżeganie;
+  - publiczna nagość, znieważanie innych osób, utrudnianie czynności organom władzy, podżeganie;
   - udział w grupie zakłócającej porządek publiczny.
 
   [bold]Uwagi:[/bold] Przy drobnych naruszeniach zaleca się ograniczenie kary do ostrzeżenia. Organizator zamieszek ponosi odpowiedzialność za czyny grupy; dodatkowo uwzględnia się zarzuty z kategorii mienia oraz przemocy, jeżeli zostały popełnione. Zbrojne wystąpienie zagrażające prawowitej władzy korporacji kwalifikuje się jako §500.
@@ -244,14 +244,14 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   ## §200 Nieposłuszeństwo
   [bold]Stopień:[/bold] II · [bold]Kara:[/bold] Ostrzeżenie – 7:00
 
-  [bold]Opis:[/bold] Opór wobec uzasadnionych poleceń organów władzy albo podczas legalnego zatrzymania.
+  [bold]Opis:[/bold] Stawianie oporu wobec uzasadnionych poleceń organów władzy lub podczas legalnego zatrzymania.
 
   W szczególności:
-  - odmowa wykonania legalnego polecenia, nakazu albo uprawnionego przeszukania;
-  - stawianie oporu przy aresztowaniu, zdejmowanie kajdanek, udzielanie pomocy w uniknięciu zatrzymania;
-  - naruszenie regulaminu aresztu, które nie stanowi jeszcze ucieczki.
+  - odmowa wykonania legalnego polecenia, nakazu lub poddania się uprawnionemu przeszukaniu;
+  - stawianie oporu przy aresztowaniu, samowolne zdejmowanie kajdanek, udzielanie pomocy w uniknięciu zatrzymania;
+  - naruszenie regulaminu aresztu niestanowiące ucieczki.
 
-  [bold]Uwagi:[/bold] Polecenie musi być zgodne z prawem. Ucieczka z celi kwalifikuje się jako §300.
+  [bold]Uwagi:[/bold] Wydane polecenie musi być zgodne z prawem. Ucieczka z celi kwalifikuje się jako §300.
 
   ## §300 Ucieczka z aresztu
   [bold]Stopień:[/bold] III · [bold]Kara:[/bold] 4:00 – 9:00
@@ -259,25 +259,29 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   [bold]Opis:[/bold] Wydostanie się z celi lub spod dozoru z zamiarem ucieczki.
 
   W szczególności:
-  - opuszczenie celi albo strefy aresztu bez zgody;
-  - zniszczenie zewnętrznej ściany lub okna stwarzające możliwość wyjścia;
+  - samowolne opuszczenie celi lub strefy aresztu;
+  - zniszczenie zewnętrznej ściany lub okna umożliwiające ucieczkę;
   - udzielanie pomocy innemu więźniowi w ucieczce.
 
-  [bold]Uwagi:[/bold] Karę dolicza się do aktualnego wyroku. Wielokrotne próby stanowią odrębną podstawę dożywotniego aresztu (permabrig) i nie podlegają limitowi kategorii x00. Rozbicie wewnętrznych szyb bez możliwości wyjścia kwalifikuje się jako wandalizm, a nie jako niniejszy artykuł.
+  [bold]Uwagi:[/bold] Karę dolicza się do bieżącego wyroku. Wielokrotne próby stanowią odrębną podstawę dożywotniego aresztu (permabrig) i nie podlegają limitowi kategorii x00. Uszkodzenie wewnętrznych szyb bez możliwości wyjścia kwalifikuje się jako wandalizm (§104).
 
   ## §400 Odmowa osłony umysłu
   [bold]Stopień:[/bold] IV · [bold]Kara:[/bold] Do przyjęcia – Permabrig
 
-  [bold]Opis:[/bold] Odmowa poddania się legalnej procedurze osłony umysłu przy potwierdzonym zagrożeniu praniem mózgu albo kontrolą umysłu.
+  [bold]Opis:[/bold] Odmowa poddania się legalnej procedurze osłony umysłu przy potwierdzonym zagrożeniu praniem mózgu lub kontrolą umysłu.
 
-  [bold]Uwagi:[/bold] Podejrzanego przetrzymuje się do chwili przyjęcia osłony umysłu. Neuroawersja nie zwalnia z obowiązku w sytuacji potwierdzonego zagrożenia. Awaria implantu spowodowana stanem psychicznym może stanowić podstawę do rozważenia egzekucji. Szczegóły: [textlink="Prawo Kosmiczne" link="SpaceLaw"].
+  W szczególności:
+  - odmowa współpracy przy wszczepieniu implantu, gdy ochrona posiada uzasadnioną podstawę (więzień po praniu mózgu lub nakaz wydany podczas kryzysu);
+  - brak możliwości wszczepienia implantu u niewspółpracującego więźnia.
+
+  [bold]Uwagi:[/bold] Podejrzanego przetrzymuje się do momentu przyjęcia osłony umysłu. Neuroawersja nie zwalnia z tego obowiązku w sytuacji potwierdzonego zagrożenia. Niesprawność implantu spowodowana stanem psychicznym może uzasadniać orzeczenie kary w górnej granicy §400, to jest dożywotniego aresztu (permabrig). Szczegóły: [textlink="Prawo Kosmiczne" link="SpaceLaw"].
 
   ## §500 Powstanie
   [bold]Stopień:[/bold] V · [bold]Kara:[/bold] Permabrig – Egzekucja
 
-  [bold]Opis:[/bold] Zbrojne wystąpienie grupy osób tworzące realne zagrożenie dla prawowitej władzy korporacji, powstałe żywiołowo lub w wyniku spisku.
+  [bold]Opis:[/bold] Zbrojne wystąpienie grupy osób stwarzające realne zagrożenie dla prawowitej władzy korporacji, powstałe żywiołowo lub w wyniku spisku.
 
-  [bold]Uwagi:[/bold] Wystąpienie uznaje się za zbrojne, jeżeli jego uczestnicy posiadają broń palną, broń białą albo narzędzia zdolne do szybkiego wyrządzenia poważnego uszczerbku na zdrowiu. Nieuzbrojone zakłócanie porządku pozostaje przy §100.
+  [bold]Uwagi:[/bold] Wystąpienie uznaje się za zbrojne, jeżeli jego uczestnicy posiadają broń palną, broń białą lub narzędzia zdolne do szybkiego wyrządzenia poważnego uszczerbku na zdrowiu. Nieuzbrojone zakłócanie porządku kwalifikuje się jako §100.
 
   # x01 — Przemoc
   Wobec tej samej ofiary stosuje się jeden zarzut. Każda kolejna ofiara stanowi osobny zarzut.
@@ -285,203 +289,239 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   ## §201 Napaść
   [bold]Stopień:[/bold] II · [bold]Kara:[/bold] Ostrzeżenie – 5:00
 
-  [bold]Opis:[/bold] Groźba użycia siły albo lekkie użycie siły bez zgody.
+  [bold]Opis:[/bold] Groźba użycia siły lub lekkie użycie siły bez zgody poszkodowanego.
 
   W szczególności:
-  - groźba, zastraszanie, usiłowanie uderzenia;
-  - pobicie, lekkie obrażenia, ogłuszenie, krótkotrwałe związanie.
+  - groźba bezprawna, zastraszanie, usiłowanie uderzenia;
+  - pobicie, lekkie obrażenia, ogłuszenie, krótkotrwałe uwięzienie/związanie.
 
-  [bold]Uwagi:[/bold] Niniejszego artykułu nie łączy się z §301 dotyczącym tej samej ofiary. Ciężkie rany, stan krytyczny albo bezprawne przetrzymywanie kwalifikują się jako §301.
+  [bold]Uwagi:[/bold] Niniejszego artykułu nie łączy się z §301 dotyczącym tej samej ofiary. Ciężkie rany, sprowadzenie do stanu krytycznego lub bezprawne przetrzymywanie kwalifikują się jako §301.
 
   ## §301 Uszczerbek na zdrowiu
   [bold]Stopień:[/bold] III · [bold]Kara:[/bold] 5:00 – 14:00
 
-  [bold]Opis:[/bold] Poważny uszczerbek fizyczny albo psychiczny, w tym wynikający z bezprawnego przetrzymywania.
+  [bold]Opis:[/bold] Poważny uszczerbek fizyczny lub psychiczny, w tym wynikający z bezprawnego przetrzymywania.
 
   W szczególności:
-  - ciężkie obrażenia, rany chirurgiczne, sprowadzenie do stanu krytycznego;
-  - bezprawne ograniczenie wolności, transport albo uwięzienie;
-  - uszczerbek psychiczny wynikający z przetrzymywania, szantażu albo kontroli.
+  - ciężkie obrażenia, rany wymagające interwencji chirurgicznej, sprowadzenie do stanu krytycznego;
+  - bezprawne ograniczenie wolności, wymuszone przemieszczanie lub uwięzienie;
+  - uszczerbek psychiczny wynikający z przetrzymywania, szantażu lub kontroli umysłu.
 
   [bold]Uwagi:[/bold] Śmierć ofiary kwalifikuje się jako §401.
 
-  ## §401 Morderstwo
+  ## §401 Zabójstwo
   [bold]Stopień:[/bold] IV · [bold]Kara:[/bold] 7:00 – 18:00
 
-  [bold]Opis:[/bold] Pozbawienie życia istoty rozumnej.
+  [bold]Opis:[/bold] Umyślne lub nieumyślne pozbawienie życia istoty rozumnej.
 
   W szczególności:
-  - umyślne zabójstwo (ofiara wymaga wskrzeszenia);
-  - uniemożliwianie wyciągnięcia ze stanu krytycznego, jeżeli ofiara następnie umiera.
+  - umyślne zabójstwo (gdy ciało kwalifikuje się do reanimacji/wskrzeszenia);
+  - uniemożliwianie udzielenia pomocy w stanie krytycznym, skutkujące śmiercią ofiary;
+  - doprowadzenie do samobójstwa.
 
-  [bold]Uwagi:[/bold] W razie braku zamiaru stosuje się okoliczność „brak zamiaru”. Każda ofiara stanowi osobny zarzut. Trzy lub więcej umyślnych zabójstw stanowi odrębną podstawę dożywotniego aresztu (permabrig).
+  [bold]Uwagi:[/bold] W razie braku zamiaru stosuje się okoliczność „brak zamiaru”. Każda kolejna ofiara stanowi osobny zarzut. Trzy lub więcej umyślnych zabójstw stanowi odrębną podstawę dożywotniego aresztu (permabrig).
 
-  ## §501 Uniemożliwienie wskrzeszenia
+  ## §501 Uniemożliwienie reanimacji
   [bold]Stopień:[/bold] V · [bold]Kara:[/bold] 26:00 – Permabrig
 
-  [bold]Opis:[/bold] Doprowadzenie do stanu, w którym ciała nie można wskrzesić (rozczłonkowanie, wyrzucenie w przestrzeń, ukrycie do czasu rozkładu).
+  [bold]Opis:[/bold] Doprowadzenie ciała do stanu uniemożliwiającego ponowne przywrócenie do życia (rozczłonkowanie, wyrzucenie w przestrzeń kosmiczną, ukrycie do czasu rozkładu).
 
-  [bold]Uwagi:[/bold] Zabójstwo bez zniszczenia ciała pozostaje przy §401.
+  W szczególności:
+  - rozczłonkowanie zwłok, wyrzucenie ich w przestrzeń kosmiczną, ukrycie aż do całkowitego rozkładu;
+  - jakiekolwiek inne działania trwale uniemożliwiające reanimację.
+
+  [bold]Uwagi:[/bold] Zabójstwo bez zniszczenia zwłok kwalifikuje się jako §401.
 
   # x02 — Kradzież
-  Kwalifikacja zależy od rodzaju mienia: wspólne lub działowe, osobiste, rzadkie, mienie znacznej wartości, oraz rozbój. Kategoria podlega łączeniu z wtargnięciem (odmienna kategoria XX). Wykaz mienia znacznej wartości: [textlink="Rejestr" link="SpaceLawHighValue"].
+  Kwalifikacja zależy od rodzaju mienia: wspólne lub działowe, osobiste, rzadkie, mienie znacznej wartości oraz rozbój. Kategoria podlega łączeniu z wtargnięciem (odmienna kategoria _XX). Wykaz mienia znacznej wartości: [textlink="Rejestr" link="SpaceLawHighValue"].
 
   ## §102 Drobna kradzież
   [bold]Stopień:[/bold] I · [bold]Kara:[/bold] Ostrzeżenie – 5:00
 
-  [bold]Opis:[/bold] Przywłaszczenie mienia wspólnego albo pochodzącego ze strefy, do której sprawca nie posiada dostępu.
+  [bold]Opis:[/bold] Przywłaszczenie mienia wspólnego lub pochodzącego ze strefy, do której sprawca nie posiada uprawnień dostępu.
 
   W szczególności:
-  - ekwipunek z działu, do którego sprawca nie należy;
-  - przedmioty deficytowe zabrane z miejsca, w którym są potrzebne;
-  - odmowa zwrotu ekwipunku po zwolnieniu;
-  - przedmioty o niskiej wartości: narzędzia, odzież, instrumenty.
+  - wyposażenie z działu, do którego sprawca nie należy;
+  - przedmioty deficytowe zabrane z miejsca, w którym są w danym momencie niezbędne;
+  - odmowa zwrotu wyposażenia po zakończeniu służby lub zwolnieniu;
+  - przedmioty o niskiej wartości: podstawowe narzędzia, odzież, instrumenty.
 
-  [bold]Uwagi:[/bold] W drobnych przypadkach zaleca się zwrot mienia oraz ostrzeżenie. Kradzież PDA kwalifikuje się jako §202. Kradzież rzadkiego mienia — jako §302. Kradzież mienia z [textlink="rejestru mienia znacznej wartości" link="SpaceLawHighValue"] — jako §502.
+  [bold]Uwagi:[/bold] W drobnych przypadkach zaleca się nakaz zwrotu mienia oraz ostrzeżenie. Kradzież PDA kwalifikuje się jako §202. Kradzież rzadkiego mienia — jako §302. Kradzież mienia z [textlink="rejestru mienia znacznej wartości" link="SpaceLawHighValue"] — jako §502.
 
   ## §202 Kradzież
   [bold]Stopień:[/bold] II · [bold]Kara:[/bold] 4:00 – 9:00
 
-  [bold]Opis:[/bold] Przywłaszczenie albo usiłowanie przywłaszczenia cudzego mienia osobistego.
+  [bold]Opis:[/bold] Przywłaszczenie lub usiłowanie przywłaszczenia cudzego mienia osobistego.
 
-  W szczególności: PDA, identyfikator, słuchawka, klucz szyfrujący, rzeczy osobiste, gotówka, kod genetyczny, sprzęt rehabilitacyjny.
+  W szczególności: PDA, identyfikator (karta ID), słuchawka, klucz szyfrujący, rzeczy osobiste, gotówka, kod genetyczny, sprzęt rehabilitacyjny.
 
-  [bold]Uwagi:[/bold] Identyfikator kapitana albo kierownika personelu kwalifikuje się jako §502.
+  [bold]Uwagi:[/bold] Identyfikator kapitana lub kierownika personelu oraz klucze szyfrujące zawierające dostęp do wszystkich kanałów łączności stacji kwalifikują się jako §502.
 
   ## §302 Wielka kradzież
   [bold]Stopień:[/bold] III · [bold]Kara:[/bold] 5:00 – 11:00
 
-  [bold]Opis:[/bold] Kradzież rzadkiego albo kluczowego mienia stacji, które nie figuruje w rejestrze mienia znacznej wartości.
+  [bold]Opis:[/bold] Kradzież rzadkiego lub kluczowego mienia stacji, które nie figuruje w rejestrze mienia znacznej wartości.
 
-  W szczególności: płyty konsol spoza rejestru, mechy, klucze ochrony, piloty działów, identyfikatory kierowników spoza rejestru, kombinezony, plecaki odrzutowe.
+  W szczególności: płyty konsol spoza rejestru, mechy, klucze dostępu ochrony, piloty działowe, identyfikatory kierowników spoza rejestru, kombinezony ciśnieniowe, plecaki odrzutowe.
 
   [bold]Uwagi:[/bold] Mienie z [textlink="rejestru mienia znacznej wartości" link="SpaceLawHighValue"] kwalifikuje się jako §502.
 
   ## §402 Rozbój
   [bold]Stopień:[/bold] IV · [bold]Kara:[/bold] 7:00 – 18:00
 
-  [bold]Opis:[/bold] Kradzież z użyciem przemocy groźnej dla życia albo z groźbą takiej przemocy.
+  [bold]Opis:[/bold] Kradzież dokonana z użyciem przemocy stwarzającej zagrożenie dla życia lub z groźbą jej użycia.
 
-  [bold]Uwagi:[/bold] [bold]§402 Rozbój[/bold] pochłania zarzuty napaści oraz uszczerbku na zdrowiu wynikające z tego samego zdarzenia. Jeżeli sprawca porzucił mienie i użył siły wyłącznie w celu ucieczki, czyn kwalifikuje się jako kradzież oraz §201 albo §301, a nie jako rozbój.
+  W szczególności:
+  - napad rabunkowy;
+  - zastosowanie przemocy w celu utrzymania się w posiadaniu skradzionego mienia.
+
+  [bold]Uwagi:[/bold] [bold]§402 Rozbój[/bold] pochłania zarzuty napaści oraz uszczerbku na zdrowiu wynikające z tego samego zdarzenia. Jeżeli sprawca porzucił mienie i użył siły wyłącznie w celu ucieczki, czyn kwalifikuje się jako kradzież oraz §201 lub §301, a nie jako rozbój.
 
   ## §502 Kradzież mienia znacznej wartości
   [bold]Stopień:[/bold] V · [bold]Kara:[/bold] Permabrig – Egzekucja
 
-  [bold]Opis:[/bold] Bezprawne przywłaszczenie mienia o szczególnej wartości — nielegalne przejęcie urządzeń, sprzętu lub majątku stacji oraz wahadłowców o charakterze krytycznym lub wyjątkowo cennym.
+  [bold]Opis:[/bold] Bezprawne przywłaszczenie lub zniszczenie mienia o szczególnej wartości — nielegalne przejęcie urządzeń, sprzętu lub majątku stacji oraz wahadłowców o charakterze krytycznym lub wyjątkowo cennym.
 
   W szczególności:
   - kradzież mienia figurującego w [textlink="rejestrze mienia znacznej wartości" link="SpaceLawHighValue"];
-  - karty ID z dostępem kapitana, kierownika personelu albo o analogicznych uprawnieniach;
-  - kradzież albo uprowadzenie wahadłowców;
-  - głowica nuklearna.
+  - karty ID z dostępem kapitana, kierownika personelu lub o analogicznych uprawnieniach;
+  - klucze szyfrujące zawierające dostęp do wszystkich kanałów łączności stacji;
+  - kradzież lub uprowadzenie wahadłowców;
+  - głowica nuklearna;
+  - Ian.
 
-  [bold]Uwagi:[/bold] Mieniem lub sprzętem krytycznym uznaje się elementy, bez których stacja nie jest w stanie funkcjonować. Wykaz: [textlink="Rejestr mienia znacznej wartości" link="SpaceLawHighValue"].
+  [bold]Uwagi:[/bold] Za mienie lub sprzęt o charakterze krytycznym uznaje się elementy, bez których stacja nie jest w stanie funkcjonować. Wykaz: [textlink="Rejestr mienia znacznej wartości" link="SpaceLawHighValue"].
 
   # x03 — Obrót
-  Przy §103 oraz §203 obrót (sprzedaż) mieści się w tym samym artykule. Przy broni obrót stanowi osobny artykuł (§403). Wyposażenie z [textlink="rejestru wyposażenia antykorporacyjnego" link="SpaceLawAntiCorp"] — posiadanie i obrót — kwalifikuje się jako §503.
+  W przypadku §103 oraz §203 obrót (handlowanie) zawiera się w ramach tego samego artykułu. W przypadku broni obrót stanowi osobne przestępstwo (§403). Posiadanie i obrót wyposażeniem z [textlink="rejestru wyposażenia antykorporacyjnego" link="SpaceLawAntiCorp"] kwalifikuje się jako §503.
 
   ## §103 Nielegalne substancje
   [bold]Stopień:[/bold] I · [bold]Kara:[/bold] Ostrzeżenie – 5:00
 
-  [bold]Opis:[/bold] Posiadanie, produkcja, używanie albo obrót substancjami objętymi ograniczeniami.
+  [bold]Opis:[/bold] Posiadanie, produkcja, zażywanie lub obrót substancjami objętymi ograniczeniami.
 
-  [bold]Uwagi:[/bold] W pierwszej kolejności stosuje się przepisy SPO. Personel chemiczny lub botaniczny wykonujący obowiązki zgodnie z SPO nie podlega temu artykułowi.
+  W szczególności:
+  - posiadanie i zażywanie nielegalnych substancji;
+  - produkcja, sprzedaż lub nieodpłatne rozprowadzanie.
+
+  [bold]Uwagi:[/bold] W pierwszej kolejności stosuje się przepisy SPO. Jeżeli SPO milczy na ten temat, kapitan lub najwyższy rangą dowódca może nakazać ograniczenia w drodze oficjalnego ogłoszenia. Personel chemiczny lub botaniczny wykonujący obowiązki służbowe zgodnie z SPO nie podlega pod ten artykuł.
 
   ## §203 Sprzęt ograniczony
   [bold]Stopień:[/bold] II · [bold]Kara:[/bold] Ostrzeżenie – 9:00
 
-  [bold]Opis:[/bold] Posiadanie albo obrót nieśmiercionośną kontrabandą lub sprzętem poza zakresem kompetencji.
+  [bold]Opis:[/bold] Posiadanie lub obrót nieśmiercionośną kontrabandą lub sprzętem poza zakresem uprawnień.
 
-  W szczególności: maski Syndykatu, przerobione PDA spoza rejestru, kamizelki kuloodporne i ogłuszacze bez uprawnień, sprzedaż takiego sprzętu.
+  W szczególności: maski Syndykatu, zmodyfikowane PDA spoza rejestru, kamizelki kuloodporne i paralizatory w rękach osób nieuprawnionych oraz sprzedaż takiego sprzętu.
 
-  [bold]Uwagi:[/bold] Broń, granaty oraz materiały wybuchowe kwalifikują się jako §303 albo §403. Wpis w [textlink="rejestrze wyposażenia antykorporacyjnego" link="SpaceLawAntiCorp"] — jako §503. Samo posiadanie narzędzi pochodzących z tuneli konserwacyjnych, bez dowodu kradzieży, nie stanowi podstawy zarzutu.
+  [bold]Uwagi:[/bold] Broń, granaty oraz materiały wybuchowe kwalifikują się jako §303 lub §403. Sprzęt z [textlink="rejestru wyposażenia antykorporacyjnego" link="SpaceLawAntiCorp"] — jako §503. Samo posiadanie narzędzi znalezionych w tunelach technicznych, bez dowodu kradzieży, nie stanowi podstawy do postawienia zarzutu.
 
   ## §303 Posiadanie broni
   [bold]Stopień:[/bold] III · [bold]Kara:[/bold] 5:00 – 11:00
 
-  [bold]Opis:[/bold] Posiadanie broni niezgodnej z prawem albo kontrabandowej (broń palna bez pozwolenia, ostrza, granaty, ładunki wybuchowe, broń Syndykatu spoza rejestru, wybuchowe implanty).
+  [bold]Opis:[/bold] Posiadanie broni nielegalnej lub kontrabandowej (broń palna bez zezwolenia, ostrza bojowe, granaty, ładunki wybuchowe, broń Syndykatu spoza rejestru, implanty wybuchowe).
 
-  [bold]Uwagi:[/bold] Sprzedaż kwalifikuje się jako §403. Broń figurująca w [textlink="rejestrze wyposażenia antykorporacyjnego" link="SpaceLawAntiCorp"] — jako §503.
+  [bold]Uwagi:[/bold] Sprzedaż i dystrybucja kwalifikują się jako §403. Broń z [textlink="rejestru wyposażenia antykorporacyjnego" link="SpaceLawAntiCorp"] — jako §503.
 
   ## §403 Obrót bronią
   [bold]Stopień:[/bold] IV · [bold]Kara:[/bold] 9:00 – 18:00
 
-  [bold]Opis:[/bold] Sprzedaż albo rozdawnictwo broni, części, amunicji, granatów i ładunków wybuchowych — w tym broni wytworzonej samodzielnie.
+  [bold]Opis:[/bold] Sprzedaż lub nieodpłatne rozprowadzanie broni, części broni, amunicji, granatów oraz ładunków wybuchowych — w tym broni wytworzonej samodzielnie.
 
-  [bold]Uwagi:[/bold] Posiadanie bez obrotu pozostaje przy §303. Obrót sprzętem z [textlink="rejestru wyposażenia antykorporacyjnego" link="SpaceLawAntiCorp"] kwalifikuje się jako §503.
+  [bold]Uwagi:[/bold] Samo posiadanie bez prowadzenia obrotu podlega pod §303. Obrót sprzętem z [textlink="rejestru wyposażenia antykorporacyjnego" link="SpaceLawAntiCorp"] kwalifikuje się jako §503.
 
   ## §503 Posiadanie wyposażenia antykorporacyjnego
   [bold]Stopień:[/bold] V · [bold]Kara:[/bold] Permabrig – Egzekucja
 
-  [bold]Opis:[/bold] Posiadanie lub obrót podmiotami wpisanymi do [textlink="rejestru wyposażenia antykorporacyjnego" link="SpaceLawAntiCorp"], w tym:
-  - urządzenia umożliwiające dostęp do nielegalnych rynków, na których dostępne są środki służące do celów terrorystycznych;
-  - broń jądrowa, biologiczna, strukturalna oraz środki masowego rażenia;
-  - przedmioty magiczne i anomalne, z wyjątkiem wyposażenia dozwolonego dla kapłanów i innych pracowników.
+  [bold]Opis:[/bold] Posiadanie lub obrót przedmiotami wpisanymi do [textlink="rejestru wyposażenia antykorporacyjnego" link="SpaceLawAntiCorp"], w tym:
+  - urządzenia umożliwiające dostęp do nielegalnych rynków, na których oferowane są środki służące do celów terrorystycznych;
+  - broń jądrowa, biologiczna, destrukcyjna oraz środki masowego rażenia;
+  - przedmioty magiczne i anomalne, z wyłączeniem wyposażenia dozwolonego dla kapłanów i wyznaczonego personelu.
 
-  [bold]Uwagi:[/bold] Wyjątki z rejestru zachowują dotychczasową kwalifikację (§203 albo §303). Kapłan oraz inny personel w zakresie obowiązków wynikających z SPO nie podlega z tytułu dozwolonego wyposażenia. Wykaz: [textlink="Rejestr wyposażenia antykorporacyjnego" link="SpaceLawAntiCorp"].
+  [bold]Uwagi:[/bold] Wyjątki określone w rejestrze zachowują kwalifikację z §203 lub §303. Kapłan oraz inny personel działający w ramach SPO nie odpowiadają z tego artykułu za dozwolone wyposażenie. Wykaz: [textlink="Rejestr wyposażenia antykorporacyjnego" link="SpaceLawAntiCorp"].
 
   # x04 — Mienie
-  Okrucieństwo wobec zwierząt kwalifikuje się jako §204.
+  Znęcanie się nad zwierzętami kwalifikuje się jako §204.
 
   ## §104 Wandalizm
   [bold]Stopień:[/bold] I · [bold]Kara:[/bold] Ostrzeżenie – 4:00
 
-  [bold]Opis:[/bold] Oszpecenie albo nielegalna ingerencja bez poważnego uszkodzenia (graffiti, przebudowa kosmetyczna, zaśmiecanie).
+  [bold]Opis:[/bold] Oszpecenie lub nielegalna ingerencja w mienie bez wyrządzenia poważnych uszkodzeń (graffiti, nieuprawniona przebudowa estetyczna, zaśmiecanie).
 
-  [bold]Uwagi:[/bold] Rozbite okno kwalifikuje się jako §204.
+  [bold]Uwagi:[/bold] Rozbicie okna kwalifikuje się jako §204.
 
   ## §204 Uszkodzenie mienia
   [bold]Stopień:[/bold] II · [bold]Kara:[/bold] 4:00 – 7:00
 
-  [bold]Opis:[/bold] Celowe uszkodzenie mienia albo złośliwe krzywdzenie zwierząt (z wyłączeniem legalnych testów oraz zwalczania szkodników).
+  [bold]Opis:[/bold] Celowe uszkodzenie mienia lub złośliwe krzywdzenie zwierząt (z wyłączeniem legalnych procedur medycznych/badawczych oraz zwalczania szkodników).
 
-  [bold]Uwagi:[/bold] W przypadku Iana stosuje się ten artykuł, z karą w górnej części przedziału. Sabotaż systemów stacji kwalifikuje się jako §304 albo §504.
+  W szczególności:
+  - rozbite okna, zespawane lub zablokowane drzwi, demontaż sprzętu i mebli poza własnym stanowiskiem bez zgody danego działu;
+  - złośliwe zadawanie cierpienia istocie nierozumnej.
+
+  [bold]Uwagi:[/bold] W przypadku Iana stosuje się ten artykuł, z karą w górnej granicy przedziału. Sabotaż kluczowych systemów stacji kwalifikuje się jako §304 lub §504.
 
   ## §304 Masowe niszczenie
   [bold]Stopień:[/bold] III · [bold]Kara:[/bold] 11:00 – 18:00
 
-  [bold]Opis:[/bold] Rozległe zniszczenie obszaru albo kluczowego systemu (ładunki wybuchowe, sabotaż zasilania, klonowania, atmosfery).
+  [bold]Opis:[/bold] Rozległe zniszczenie obszaru lub kluczowego systemu stacji (użycie ładunków wybuchowych, sabotaż zasilania, sekcji klonowania, systemu atmosferycznego).
+
+  [bold]Uwagi:[/bold] Celowe niszczenie całej placówki/siedliska lub doprowadzenie do samozniszczenia kwalifikuje się jako §504.
 
   ## §504 Terroryzm
   [bold]Stopień:[/bold] V · [bold]Kara:[/bold] Permabrig – Egzekucja
 
-  [bold]Opis:[/bold] Działania grożące zniszczeniem statku lub siedliska albo wymuszające decyzje przemocą na masową skalę (samozniszczenie, ładunki wybuchowe jako środek szantażu, branie zakładników, przejęcie kontroli nad statkiem).
+  [bold]Opis:[/bold] Działania grożące zniszczeniem statku lub placówki bądź wymuszające decyzje za pomocą przemocy na masową skalę (inicjacja procedury samozniszczenia, użycie ładunków wybuchowych w celu szantażu, branie zakładników, przejęcie kontroli nad statkiem).
 
-  [bold]Uwagi:[/bold] Formalna egzekucja wymaga Nakazu egzekucji. Neutralizacja w terenie na kodach wojennych albo na poziomie IV procedury stosowania siły nie stanowi egzekucji w rozumieniu niniejszego artykułu.
+  [bold]Uwagi:[/bold] Przeprowadzenie formalnej egzekucji wymaga wydania Nakazu egzekucji. Eliminacja w terenie podczas stanów wyjątkowych (kody wojenne) lub na IV poziomie stosowania siły nie stanowi egzekucji w rozumieniu niniejszego artykułu.
 
   # x05 — Teren
+  Przebywanie w strefie bez uprawnień. Kategoria podlega łączeniu z kradzieżą (odmienna kategoria _XX). Włamanie z użyciem specjalistycznych narzędzi poza zakresem uprawnień stanowi dodatkową podstawę do postawienia zarzutu z §203, jeżeli zostały spełnione jego przesłanki.
 
   ## §105 Wtargnięcie
   [bold]Stopień:[/bold] I · [bold]Kara:[/bold] Ostrzeżenie – 4:00
 
-  [bold]Opis:[/bold] Wejście na teren niezabezpieczony bez pozwolenia.
+  [bold]Opis:[/bold] Wejście na teren niezabezpieczony bez stosownego zezwolenia.
 
-  [bold]Uwagi:[/bold] W drobnych przypadkach wystarczy wyprowadzenie z terenu. Zgoda pracownika danego działu jest wystarczająca; zakaz wydany przez kierownika działu ma pierwszeństwo.
+  W szczególności: obszar działowy bez posiadanego dostępu, magazyny, tunele techniczne oraz inne strefy nieujęte w wykazie §305.
+
+  [bold]Uwagi:[/bold] W drobnych przypadkach wystarczy nakaz opuszczenia terenu lub odprowadzenie. Zgoda pracownika danego działu jest wystarczająca; zakaz wydany przez kierownika działu ma jednak charakter nadrzędny.
 
   ## §305 Wtargnięcie na teren zabezpieczony
   [bold]Stopień:[/bold] III · [bold]Kara:[/bold] 5:00 – 14:00
 
-  [bold]Opis:[/bold] Wejście bez pozwolenia na mostek, do biur kierowników, ochrony, zbrojowni, skarbca, telekomunikacji, EVA, serwerowni, jądra SI, atmosferyki, silnika lub kabiny kapitana.
+  [bold]Opis:[/bold] Wejście bez zezwolenia na mostek, do biur kierownictwa, stref ochrony, zbrojowni, skarbca, serwerowni telekomunikacji, magazynu EVA, jądra SI, sekcji atmosferycznej, maszynowni lub kajuty kapitana.
 
-  [bold]Uwagi:[/bold] §105 nie podlega łączeniu z niniejszym artykułem (ta sama kategoria XX). Włamanie z użyciem narzędzi poza zakresem kompetencji stanowi dodatkową podstawę do §203, jeżeli zostały spełnione przesłanki tego artykułu.
+  Do stref zabezpieczonych należą w szczególności:
+  - mostek, gabinety i kajuty kierowników działów, kajuta kapitana;
+  - strefy ochrony (areszt, sala odpraw, permabrig), zbrojownia, skarbiec;
+  - telekomunikacja, magazyn EVA, serwerownie, jądro SI, magazyn płyt konsolowych;
+  - sekcja atmosferyczna, generator grawitacji, przyspieszacz cząstek, maszynownia.
+
+  [bold]Uwagi:[/bold] §105 nie podlega łączeniu z niniejszym artykułem (ta sama kategoria _XX).
 
   # x06 — Zaniedbanie
+  Kategoria obejmuje zaniechanie obowiązków służbowych oraz lekkomyślne narażenie osób lub stacji na niebezpieczeństwo. Rażące zaniedbanie dotyczy kadry dowódczej oraz sytuacji skutkujących śmiercią bądź katastrofą stacji.
 
   ## §206 Zaniedbanie
   [bold]Stopień:[/bold] II · [bold]Kara:[/bold] 4:00 – 7:00
 
-  [bold]Opis:[/bold] Niewykonanie obowiązków albo lekkomyślne narażenie osób lub stacji.
+  [bold]Opis:[/bold] Niewykonanie obowiązków służbowych lub lekkomyślne narażenie zdrowia osób bądź bezpieczeństwa stacji.
 
   W szczególności:
-  - niewykonanie legalnego rozkazu kierownika własnego działu;
-  - wypadki przy pracy, zaniedbania służbowe, nieuprawnione eksperymenty na sobie, błędy medyczne;
-  - bezczynność, która mogła spowodować uszczerbek na zdrowiu lub szkodę dla stacji;
-  - nieusunięcie osłony umysłu u osoby z neuroawersją po ustąpieniu zagrożenia.
+  - odmowa wykonania legalnego polecenia kierownika własnego działu;
+  - wypadki przy pracy wynikające z zaniedbania, nieuprawnione eksperymenty medyczne/naukowe na sobie, błędy w sztuce lekarskiej;
+  - zaniechanie działania, które mogło doprowadzić do uszczerbku na zdrowiu lub szkód w mieniu stacji;
+  - nieusunięcie osłony umysłu u osoby cierpiącej na neuroawersję po ustąpieniu zagrożenia.
 
   ## §506 Rażące zaniedbanie
   [bold]Stopień:[/bold] V · [bold]Kara:[/bold] Degradacja – Permabrig
 
-  [bold]Opis:[/bold] Zaniedbanie personelu dowództwa albo skutek w postaci śmierci lub katastrofy stacji.
+  [bold]Opis:[/bold] Poważne zaniedbanie ze strony kadry dowódczej lub zaniechanie skutkujące śmiercią członków załogi bądź katastrofą stacji.
 
-  [bold]Uwagi:[/bold] Dotyczy przede wszystkim kierowników. Kara administracyjna (degradacja) nakładana jest niezależnie od kary pozbawienia wolności.
+  W szczególności:
+  - śmierć członków załogi lub poważne uszkodzenie stacji wynikające z zaniechania kierownika;
+  - nieudzielenie pomocy osobie w stanie krytycznym lub niewezwanie służb medycznych mimo istnienia takiego obowiązku i możliwości;
+  - przekroczenie uprawnień służbowych ze skutkiem ciężkim.
+
+  [bold]Uwagi:[/bold] Dotyczy przede wszystkim kierowników działów. Kara dyscyplinarna (degradacja) orzekana jest niezależnie od kary pozbawienia wolności.
 </Document>

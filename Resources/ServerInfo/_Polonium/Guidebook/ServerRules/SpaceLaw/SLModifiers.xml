@@ -36,11 +36,11 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   [bold]Utrudnianie śledztwa[/bold] — sprawca objęty śledztwem lub przebywający w areszcie nie wykonuje legalnych poleceń ochrony: wyrok zwiększa się o połowę po zsumowaniu i ograniczeniu kary.
 
   ## Łączenie kar
-  [bullet] Kary z różnych działów _XX dodaje się do siebie. W ramach jednego działu XX [bold]uwzględnia się wyłącznie najcięższy zarzut[/bold] po zastosowaniu modyfikatorów.
+  [bullet] Kary z różnych działów _XX dodaje się do siebie. W ramach jednego działu _XX [bold]uwzględnia się wyłącznie najcięższy zarzut[/bold] po zastosowaniu modyfikatorów.
 
   [bullet] Użycie przemocy (x01) wobec [bold]kolejnej ofiary[/bold] stanowi osobny zarzut, nawet w ramach tego samego działu _XX.
 
-  [bullet] Zsumowana kara nie może przekraczać [bold]półtorej wartości[/bold] najcięższego ze znajdujących się w wyroku zarzutów (po uwzględnieniu okoliczności przypisanych do artykułu). Nadmiar czasu podlega odrzuceniu. Dopiero do tej wartości stosuje się ogólne modyfikatory kary. Ograniczenie do półtorej wartości nie obejmuje recydywy ani czynów, które w wykazie przestępstw stanowią odrębną podstawę dożywotniego aresztu (permabrig).
+  [bullet] Recydywa wchodzi do wartości zarzutu przed sumowaniem. Po zsumowaniu kara nie może przekraczać [bold]półtorej wartości[/bold] najcięższego pozostałego zarzutu; nadmiar czasu podlega odrzuceniu. Dopiero do tej wartości stosuje się ogólne modyfikatory kary. Jeżeli którykolwiek z pozostałych zarzutów jest recydywą albo stanowi w wykazie przestępstw odrębną podstawę dożywotniego aresztu (permabrig), ograniczenia nie stosuje się do całego wyroku — nie wyłącznie do zwiększenia z recydywy.
 
   [bullet] Kara powyżej [bold]35 minut[/bold] oznacza dożywotni areszt (permabrig).
 
@@ -52,7 +52,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   1. Do każdego zarzutu zastosuj odpowiednie okoliczności przypisane do danego artykułu.
   2. W każdym dziale _XX pozostaw tylko jeden, najcięższy zarzut.
   3. Zsumuj kary z różnych działów _XX. Kolejną ofiarę przemocy traktuj jako osobny zarzut.
-  4. Ogranicz sumę kary do maksymalnie [bold]półtorej wartości[/bold] najcięższego pozostałego zarzutu, z wyjątkiem recydywy oraz czynów stanowiących w wykazie odrębną podstawę permabrig.
+  4. Ogranicz sumę kary do maksymalnie [bold]półtorej wartości[/bold] najcięższego pozostałego zarzutu. Recydywa jest już wliczona w wartość zarzutu. Jeżeli którykolwiek z pozostałych zarzutów jest recydywą albo stanowi w wykazie odrębną podstawę permabrig, tego ograniczenia nie stosuje się do całego wyroku — nie wyłącznie do zwiększenia z recydywy.
   5. Do wyznaczonej wartości zastosuj ogólne modyfikatory kary (dwa modyfikatory w tę samą stronę = 75%).
   6. Zaokrąglij wynik w górę do pełnej minuty.
   7. W przypadku wyroku przekraczającego 35 minut zastosuj dożywotni areszt (permabrig).
@@ -63,8 +63,8 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   - §201, naprawienie szkody: ostrzeżenie–5 min → ok. 0–3 min.
   - §102: ostrzeżenie–5 min.
   - §203: 0–9 min.
-  - Łącznie maksymalnie 17 min. Najcięższym zarzutem po uwzględnieniu okoliczności jest §203 (9 min). Półtorej tej wartości to 14 min. Wartość 17 min przekracza 14 min — kara zostaje ograniczona do 14 min.
-  - Dobrowolne zgłoszenie się −50% → [bold]7 min[/bold].
+  - Łącznie maksymalnie 17 min. Najcięższym zarzutem po uwzględnieniu okoliczności jest §203 (9 min). Półtorej tej wartości to 13,5 min. Wartość 17 min przekracza 13,5 min — kara zostaje ograniczona do 13,5 min.
+  - Dobrowolne zgłoszenie się −50% od 13,5 min → 6,75 min, następnie zaokrąglenie w górę do pełnej minuty → [bold]7 min[/bold].
 
   Gdyby w tym zdarzeniu wystąpił również zarzut §301 wobec tej samej osoby, §201 zostałby wchłonięty przez kategorię x01 — a wraz z nim wygasłaby recydywa z §201, ponieważ brakowałoby artykułu bazowego, do którego była przypisana.
 </Document>
