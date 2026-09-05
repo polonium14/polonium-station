@@ -42,7 +42,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
   [bullet] Recydywa wchodzi do wartości zarzutu przed sumowaniem. Po zsumowaniu kara nie może przekraczać [bold]półtorej wartości[/bold] najcięższego pozostałego zarzutu; nadmiar czasu podlega odrzuceniu. Dopiero do tej wartości stosuje się ogólne modyfikatory kary. Jeżeli którykolwiek z pozostałych zarzutów jest recydywą albo stanowi w wykazie przestępstw odrębną podstawę dożywotniego aresztu (permabrig), ograniczenia nie stosuje się do całego wyroku — nie wyłącznie do zwiększenia z recydywy.
 
-  [bullet] Kara powyżej [bold]35 minut[/bold] oznacza dożywotni areszt (permabrig).
+  [bullet] Przy karze powyżej [bold]35 minut[/bold] zaleca się orzeczenie dożywotniego aresztu (permabrig).
 
   [bullet] [bold]§402 Rozbój[/bold] pochłania zarzuty napaści oraz uszczerbku na zdrowiu wynikające z tego samego zdarzenia. Jeśli sprawca porzucił mienie i uderzył wyłącznie w celu ucieczki — czyn kwalifikuje się jako kradzież + §201 lub §301, a nie rozbój.
 
@@ -55,7 +55,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   4. Ogranicz sumę kary do maksymalnie [bold]półtorej wartości[/bold] najcięższego pozostałego zarzutu. Recydywa jest już wliczona w wartość zarzutu. Jeżeli którykolwiek z pozostałych zarzutów jest recydywą albo stanowi w wykazie odrębną podstawę permabrig, tego ograniczenia nie stosuje się do całego wyroku — nie wyłącznie do zwiększenia z recydywy.
   5. Do wyznaczonej wartości zastosuj ogólne modyfikatory kary (dwa modyfikatory w tę samą stronę = 75%).
   6. Zaokrąglij wynik w górę do pełnej minuty.
-  7. W przypadku wyroku przekraczającego 35 minut zastosuj dożywotni areszt (permabrig).
+  7. W przypadku wyroku przekraczającego 35 minut zaleca się orzeczenie dożywotniego aresztu (permabrig).
 
   ## Przykład
   Asystent serwisu: uderzył inną osobę, zabrał PDA, w kieszeni posiadał EMAG. Przetransportował poszkodowanego do medyka, oddał PDA i sam zgłosił się do aresztu, zanim rozpoczęto jego poszukiwania.
