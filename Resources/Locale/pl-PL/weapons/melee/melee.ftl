@@ -10,10 +10,7 @@ melee-balloon-pop =
         [female] pękneła
         [other] pękło
     }!
-
-melee-weapon-dealt-no-damage = {CAPITALIZE(THE($weapon))} is not damaging {THE($target)}!
-
-melee-self-weapon-dealt-no-damage = You are not damaging {THE($target)}!
-
+melee-weapon-dealt-no-damage = { CAPITALIZE($weapon) } nie zadaje obrazeń { $target }!
+melee-self-weapon-dealt-no-damage = Nie zadajesz obrażeń { THE($target) }!
 # MeleeBatteryHitsLeftSystem
-examine-battery-hits-left = It has enough charge for [color={$color}]{$count}[/color] hits.
+examine-battery-hits-left = Jest wystarczająco naładowany, by uderzyć [color={ $color }]{ $count }[/color] razy.

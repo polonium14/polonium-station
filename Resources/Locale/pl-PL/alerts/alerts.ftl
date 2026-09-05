@@ -78,7 +78,5 @@ alerts-prying-name = Podważanie
 alerts-prying-desc = Masz wrodzoną możliwość podważania drzwi używając alternatywnej interakcji.
 alerts-cocooned-name = [color=yellow]Cocooned[/color]
 alerts-cocooned-desc = You're [color=yellow]wrapped in a cocoon[/color] and can't move or use your hands.
-
 alerts-changeling-chemicals-name = Chemicals
-
 alerts-changeling-chemicals-desc = The chemicals stored within our glands. We use them for many of our abilities to function. They regenerate over time.

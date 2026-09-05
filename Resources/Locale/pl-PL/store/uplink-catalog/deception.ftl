@@ -24,7 +24,5 @@ uplink-travel-camera-name = Aparat Podróżny
 uplink-travel-camera-desc = Ogłuszaj ludzi swoimi umiejętnościami fotograficznymi i legalną lampą błyskową aparatu. Sprawia, że wyglądasz jak turysta.
 uplink-smuggler-satchel-name = Torba Przemytnika
 uplink-smuggler-satchel-desc = Poręczna, podejrzanie wyglądająca torba. Wystarczająco płaska, aby zmieścić się pod panelami podłogowymi.
-
 uplink-weighted-coin-name = Weighted Coin
-
 uplink-weighted-coin-desc = A special coin that always lands on tails, designed to look like the heads and tails coins found in nanotrasen stations.

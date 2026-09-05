@@ -18,4 +18,4 @@ armor-damage-type-poison = Trującego
 armor-damage-type-shock = Porażeniowego
 armor-damage-type-structural = Strukturalnego
 armor-damage-type-holy = Świętego
-armor-supermatter-immune = - [color=orange]Supermatter[/color] ashing [color=lightblue]immunity[/color].
+armor-supermatter-immune = - [color=orange]Supermateria[/color] spopiela[color=lightblue]immunity[/color].

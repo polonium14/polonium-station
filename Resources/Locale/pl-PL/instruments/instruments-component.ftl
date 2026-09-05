@@ -8,10 +8,47 @@ instruments-component-menu-no-midi-support =
     If on Linux, you may need to install
     FluidSynth or a development package
     for FluidSynth.
+instruments-component-menu-play-tab-title = Play
+instruments-component-menu-config-tab-title = Configuration
+instruments-component-menu-midi-source-button = MIDI Source
+instruments-component-menu-unknown-midi-source-button = Unknown
+instruments-component-menu-input-midi-source-button = Input
+instruments-component-menu-band-midi-source-button = Band
+instruments-component-menu-file-midi-source-button = Files
+instruments-component-menu-play-stop-button = Play
 instruments-component-menu-loop-button = Loop
+instruments-component-menu-shuffle-button = Shuffle
+instruments-component-menu-channels-label = Channels [italic](updated on playback)[/italic]
+instruments-component-menu-files-track-playtime-seconds-minutes = { $currentMinutes }:{ $currentSeconds }/{ $totalMinutes }:{ $totalSeconds }
+instruments-component-menu-files-track-playtime-seconds-minutes-hours = { $currentHours }:{ $currentMinutes }:{ $currentSeconds }/{ $totalHours }:{ $totalMinutes }:{ $totalSeconds }
+instruments-component-menu-files-file-remove-disabled-info = Stop playback and select an item to remove it.
+instruments-component-menu-files-add-button = Add
+instruments-component-menu-files-remove-button = Remove
+instruments-component-menu-files-rename-button = Rename
+instruments-component-menu-files-rename-dialog-title = Rename file
+instruments-component-menu-files-rename-dialog-prompt = New name
+instruments-component-menu-files-filter = Filter...
+instruments-component-menu-files-error = Operation failed due to an unexpected error.
+instruments-component-menu-input-notice-label =
+    Connect a MIDI device to your PC
+    and play some music.
+instruments-component-band-title-label = Bands
+instruments-component-band-refresh = Refresh
 instruments-component-channels-menu = MIDI Channel Selection
 instruments-component-channels-all-button = All
 instruments-component-channels-clear-button = Clear
+instruments-component-channels-all-channels-label = All Channels
+instruments-component-channels-percussion-channel-name = [Percussion]
+instruments-component-channels-name-display-selector-label = Display Name
+instruments-component-channels-name-display-selector-track-button = Track
+instruments-component-channels-name-display-selector-program-button = Program
+instruments-component-channels-name-display-selector-instrument-button = Instrument
+instruments-component-midi-file-collection-label = MIDI Collection
+instruments-component-midi-file-collection-size-label = { $count } MIDI files loaded
+instruments-component-midi-file-collection-open-dir-button = Open Folder
+instruments-component-midi-file-collection-reload-button = Reload Collection
+instruments-component-midi-file-collection-delete-all-button = Clear Collection
+instruments-component-menu-midi-min-volume-slider-label = MIDI Input Min Volume
 # SwappableInstrumentComponent
 swappable-instrument-component-style-set = Style set to "{ $style }"
 instruments-component-menu-midi-channel-acoustic-grand-piano = Acoustic Grand Piano
@@ -142,74 +179,3 @@ instruments-component-menu-midi-channel-telephone-ring = Telephone Ring
 instruments-component-menu-midi-channel-helicopter = Helicopter
 instruments-component-menu-midi-channel-applause = Applause
 instruments-component-menu-midi-channel-gunshot = Gunshot
-
-instruments-component-menu-play-tab-title = Play
-
-instruments-component-menu-config-tab-title = Configuration
-
-instruments-component-menu-midi-source-button = MIDI Source
-
-instruments-component-menu-unknown-midi-source-button = Unknown
-
-instruments-component-menu-input-midi-source-button = Input
-
-instruments-component-menu-band-midi-source-button = Band
-
-instruments-component-menu-file-midi-source-button = Files
-
-instruments-component-menu-play-stop-button = Play
-
-instruments-component-menu-shuffle-button = Shuffle
-
-instruments-component-menu-channels-label = Channels [italic](updated on playback)[/italic]
-
-instruments-component-menu-files-track-playtime-seconds-minutes = {$currentMinutes}:{$currentSeconds}/{$totalMinutes}:{$totalSeconds}
-
-instruments-component-menu-files-track-playtime-seconds-minutes-hours = {$currentHours}:{$currentMinutes}:{$currentSeconds}/{$totalHours}:{$totalMinutes}:{$totalSeconds}
-
-instruments-component-menu-files-file-remove-disabled-info = Stop playback and select an item to remove it.
-
-instruments-component-menu-files-add-button = Add
-
-instruments-component-menu-files-remove-button = Remove
-
-instruments-component-menu-files-rename-button = Rename
-
-instruments-component-menu-files-rename-dialog-title = Rename file
-
-instruments-component-menu-files-rename-dialog-prompt = New name
-
-instruments-component-menu-files-filter = Filter...
-
-instruments-component-menu-files-error = Operation failed due to an unexpected error.
-
-instruments-component-menu-input-notice-label = Connect a MIDI device to your PC
-                                                and play some music.
-
-instruments-component-band-title-label = Bands
-
-instruments-component-band-refresh = Refresh
-
-instruments-component-channels-all-channels-label = All Channels
-
-instruments-component-channels-percussion-channel-name = [Percussion]
-
-instruments-component-channels-name-display-selector-label = Display Name
-
-instruments-component-channels-name-display-selector-track-button = Track
-
-instruments-component-channels-name-display-selector-program-button = Program
-
-instruments-component-channels-name-display-selector-instrument-button = Instrument
-
-instruments-component-midi-file-collection-label = MIDI Collection
-
-instruments-component-midi-file-collection-size-label = {$count} MIDI files loaded
-
-instruments-component-midi-file-collection-open-dir-button = Open Folder
-
-instruments-component-midi-file-collection-reload-button = Reload Collection
-
-instruments-component-midi-file-collection-delete-all-button = Clear Collection
-
-instruments-component-menu-midi-min-volume-slider-label = MIDI Input Min Volume
