@@ -50,7 +50,6 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
 using Content.Shared._RMC14.Weapons.Ranged.Prediction;
 using Content.Shared.ActionBlocker;
@@ -67,7 +66,7 @@ using Content.Shared.Popups;
 using Content.Shared.Projectiles;
 using Content.Shared.Tag;
 using Content.Shared.Throwing;
-using Content.Shared.Timing;
+using Content.Shared.Timing.Systems;
 using Content.Shared.Verbs;
 using Content.Shared.Weapons.Hitscan.Components;
 using Content.Shared.Weapons.Melee;
